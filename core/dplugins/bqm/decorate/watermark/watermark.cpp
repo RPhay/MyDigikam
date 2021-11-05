@@ -88,31 +88,33 @@ public:
 public:
 
     explicit Private()
-      : textSettingsGroupBox            (nullptr),
-        imageSettingsGroupBox           (nullptr),
-        useAbsoluteImageSizeGroupBox    (nullptr),
-        useImageRadioButton             (nullptr),
-        ignoreWatermarkAspectCheckBox   (nullptr),
-        useAbsoluteSizeCheckBox         (nullptr),
-        useBackgroundCheckBox           (nullptr),
-        denseRepetitionCheckBox         (nullptr),
-        randomizeRotationCheckBox       (nullptr),
-        useTextRadioButton              (nullptr),
-        imageFileUrlRequester           (nullptr),
-        textEdit                        (nullptr),
-        placementPositionComboBox       (nullptr),
-        placementTypeComboBox           (nullptr),
-        rotationComboBox                (nullptr),
-        sparsityFactorSpinBox           (nullptr),
-        extendedFontChooserWidget       (nullptr),
-        fontColorButton                 (nullptr),
-        backgroundColorButton           (nullptr),
-        textOpacity                     (nullptr),
-        backgroundOpacity               (nullptr),
-        xMarginInput                    (nullptr),
-        yMarginInput                    (nullptr),
-        waterMarkSizePercent            (nullptr),
-        changeSettings                  (true)
+      : textSettingsGroupBox                      (nullptr),
+        imageSettingsGroupBox                     (nullptr),
+        useAbsoluteImageSizeGroupBox              (nullptr),
+        useImageRadioButton                       (nullptr),
+        ignoreWatermarkAspectCheckBox             (nullptr),
+        addTransparencyToWatermarkImageCheckBox   (nullptr),
+        useAbsoluteSizeCheckBox                   (nullptr),
+        useBackgroundCheckBox                     (nullptr),
+        denseRepetitionCheckBox                   (nullptr),
+        randomizeRotationCheckBox                 (nullptr),
+        useTextRadioButton                        (nullptr),
+        imageFileUrlRequester                     (nullptr),
+        textEdit                                  (nullptr),
+        placementPositionComboBox                 (nullptr),
+        placementTypeComboBox                     (nullptr),
+        rotationComboBox                          (nullptr),
+        sparsityFactorSpinBox                     (nullptr),
+        extendedFontChooserWidget                 (nullptr),
+        fontColorButton                           (nullptr),
+        backgroundColorButton                     (nullptr),
+        textOpacity                               (nullptr),
+        backgroundOpacity                         (nullptr),
+        xMarginInput                              (nullptr),
+        yMarginInput                              (nullptr),
+        waterMarkSizePercent                      (nullptr),
+        waterMarkOpacityPercent                   (nullptr),
+        changeSettings                            (true)
     {
     }
 
@@ -121,6 +123,7 @@ public:
     QGroupBox*       useAbsoluteImageSizeGroupBox ;
     QRadioButton*    useImageRadioButton;
     QCheckBox*       ignoreWatermarkAspectCheckBox;
+    QCheckBox*       addTransparencyToWatermarkImageCheckBox;
     QCheckBox*       useAbsoluteSizeCheckBox;
     QCheckBox*       useBackgroundCheckBox;
     QCheckBox*       denseRepetitionCheckBox;
@@ -144,6 +147,7 @@ public:
     DIntNumInput*    xMarginInput;
     DIntNumInput*    yMarginInput;
     DIntNumInput*    waterMarkSizePercent;
+    DIntNumInput*    waterMarkOpacityPercent;
 
     bool             changeSettings;
 };
@@ -239,6 +243,30 @@ void WaterMark::registerSettingsWidget()
     d->ignoreWatermarkAspectCheckBox->setChecked(false);
     imageSettingsGroupBoxLayout->addWidget(ignoreWatermarkAspectRatioHBox);
 
+    DHBox* const addTransparencyToWatermarkImageHBox = new DHBox();
+    addTransparencyToWatermarkImageHBox->setContentsMargins(QMargins());
+    addTransparencyToWatermarkImageHBox->setSizePolicy(QSizePolicy::Fixed, QSizePolicy::Fixed);
+    addTransparencyToWatermarkImageHBox->setSpacing(5);
+
+    d->addTransparencyToWatermarkImageCheckBox = new QCheckBox(addTransparencyToWatermarkImageHBox);
+    d->addTransparencyToWatermarkImageCheckBox->setWhatsThis(i18n("Check this if you want watermark to be transparent"));
+    QLabel* const addTransparencyToWatermarkLabel = new QLabel(addTransparencyToWatermarkImageHBox);
+    addTransparencyToWatermarkLabel->setText(i18n("Add transparency to watermark image"));
+    d->addTransparencyToWatermarkImageCheckBox->setChecked(false);
+    imageSettingsGroupBoxLayout->addWidget(addTransparencyToWatermarkImageHBox);
+
+    DVBox* const watermarkImageOpacityBox = new DVBox();
+    watermarkImageOpacityBox->setSizePolicy(QSizePolicy::Expanding, QSizePolicy::Fixed);
+    watermarkImageOpacityBox->setSpacing(5);
+
+    QLabel* const opacityLabel = new QLabel(watermarkImageOpacityBox);
+    d->waterMarkOpacityPercent = new DIntNumInput(watermarkImageOpacityBox);
+    d->waterMarkOpacityPercent->setRange(0, 100, 1);
+    d->waterMarkOpacityPercent->setDefaultValue(100);
+    d->waterMarkOpacityPercent->setWhatsThis(i18n("Opacity of watermark"));
+    opacityLabel->setText(i18n("Opacity (%):"));
+    imageSettingsGroupBoxLayout->addWidget(watermarkImageOpacityBox);
+ 
     d->textSettingsGroupBox                       = new QGroupBox(vbox);
     d->textSettingsGroupBox->setTitle(i18n("Text settings"));
     QVBoxLayout* const textSettingsGroupBoxLayout = new QVBoxLayout;
@@ -432,6 +460,9 @@ void WaterMark::registerSettingsWidget()
     connect(d->ignoreWatermarkAspectCheckBox, SIGNAL(toggled(bool)),
             this, SLOT(slotSettingsChanged()));
 
+    connect(d->addTransparencyToWatermarkImageCheckBox, SIGNAL(toggled(bool)),
+	    this, SLOT(slotSettingsChanged()));
+
     connect(d->useAbsoluteSizeCheckBox, SIGNAL(toggled(bool)),
             this, SLOT(slotSettingsChanged()));
 
@@ -468,6 +499,9 @@ void WaterMark::registerSettingsWidget()
     connect(d->xMarginInput, SIGNAL(valueChanged(int)),
             this, SLOT(slotSettingsChanged()));
 
+    connect(d->waterMarkOpacityPercent, SIGNAL(valueChanged(int)),
+	    this, SLOT(slotSettingsChanged()));
+
     BatchTool::registerSettingsWidget();
 }
 
@@ -493,6 +527,7 @@ BatchToolSettings WaterMark::defaultSettings()
     settings.insert(QLatin1String("Watermark size"),     25);
     settings.insert(QLatin1String("X margin"),           2);
     settings.insert(QLatin1String("Y margin"),           2);
+    settings.insert(QLatin1String("Opacity"),            100);
 
     return settings;
 }
@@ -519,6 +554,7 @@ void WaterMark::slotAssignSettings2Widget()
     d->waterMarkSizePercent->setValue(settings()[QLatin1String("Watermark size")].toInt());
     d->xMarginInput->setValue(settings()[QLatin1String("X margin")].toInt());
     d->yMarginInput->setValue(settings()[QLatin1String("Y margin")].toInt());
+    d->waterMarkOpacityPercent->setValue(settings()[QLatin1String("Opacity")].toInt());
     d->changeSettings = true;
 }
 
@@ -542,7 +578,7 @@ void WaterMark::slotSettingsChanged()
     d->sparsityFactorSpinBox->setEnabled(((int)d->placementTypeComboBox->currentIndex() != Private::SpecifiedLocation));
     d->randomizeRotationCheckBox->setEnabled(((int)d->placementTypeComboBox->currentIndex() == Private::RandomRepetition));
     d->rotationComboBox->setEnabled(!(d->randomizeRotationCheckBox->isEnabled() && d->randomizeRotationCheckBox->isChecked()));
-
+    d->waterMarkOpacityPercent->setEnabled(d->addTransparencyToWatermarkImageCheckBox->isChecked());
     if (d->changeSettings)
     {
         BatchToolSettings settings;
@@ -566,6 +602,8 @@ void WaterMark::slotSettingsChanged()
         settings.insert(QLatin1String("Watermark size"),                (int)d->waterMarkSizePercent->value());
         settings.insert(QLatin1String("X margin"),                      (int)d->xMarginInput->value());
         settings.insert(QLatin1String("Y margin"),                      (int)d->yMarginInput->value());
+	settings.insert(QLatin1String("Opacity"),                       (int)d->waterMarkOpacityPercent->value());
+	settings.insert(QLatin1String("Add transparency"),              d->addTransparencyToWatermarkImageCheckBox->isChecked());
         BatchTool::slotSettingsChanged(settings);
     }
 }
@@ -604,6 +642,8 @@ bool WaterMark::toolOperations()
     int marginW                                  = lround(image().width()  * (xMargin / 100.0));
     int marginH                                  = lround(image().height() * (yMargin / 100.0));
     int rotationIndex = settings()[QLatin1String("Rotation")].toInt();
+    double opacity                               = settings()[QLatin1String("Opacity")].toInt()/100.0;
+    bool addTransparency                         = settings()[QLatin1String("Add transparency")].toBool();
 
     DImg::ANGLE rotationAngle = (rotationIndex == 1) ? DImg::ANGLE::ROT90 :
                                 (rotationIndex == 2) ? DImg::ANGLE::ROT180 :
@@ -655,6 +695,24 @@ bool WaterMark::toolOperations()
                                                         watermarkAspectRatioMode);
             watermarkImage = tempImage;
         }
+        if (addTransparency)
+        {
+		if (!watermarkImage.hasAlpha())
+                {
+                    return false;
+                }
+                for (uint i = 0 ; i < watermarkImage.width() ; i++)
+                {
+                    for (uint j = 0 ; j < watermarkImage.height() ; j++)
+                    {
+                        DColor color = watermarkImage.getPixelColor(i, j);
+                        color.setAlpha((int)(opacity*color.alpha()));
+                        watermarkImage.setPixelColor(i, j, color);
+                    }
+                }
+        }
+
+
     }
     else
     {
