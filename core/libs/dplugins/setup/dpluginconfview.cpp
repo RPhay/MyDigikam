@@ -270,14 +270,14 @@ int DPluginConfView::itemsWithVisiblyProperty() const
 
 void DPluginConfView::setFilter(const QString& filter, Qt::CaseSensitivity cs)
 {
-    d->filter  = filter;
-    bool query = false;
+    d->filter = filter;
+    int found = 0;
 
     foreach (DPluginCB* const item, d->plugBoxes)
     {
         if (item->contains(filter, cs))
         {
-            query = true;
+            found++;
             item->setHidden(false);
         }
         else
@@ -286,7 +286,7 @@ void DPluginConfView::setFilter(const QString& filter, Qt::CaseSensitivity cs)
         }
     }
 
-    emit signalSearchResult(query);
+    emit signalSearchResult(found);
 }
 
 QString DPluginConfView::filter() const

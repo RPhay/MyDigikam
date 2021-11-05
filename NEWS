@@ -3,8 +3,9 @@ digiKam 7.4.0 - Release date: 2021-xx-xx
 *****************************************************************************************************
 NEW FEATURES:
 
-Bundle  : AppImage is now compiled under Mageia 7.1 instead 6.1 for a better binary compatibility with recent Linux.
-Bundle  : AppImage use last Qt 5.15.2 and KF5 5.84 libraries.
+Bundles : AppImage is now compiled under Mageia 7.1 instead 6.1 for a better binary compatibility with recent Linux.
+Bundles : AppImage use last Qt 5.15.2 and KF5 5.84 libraries.
+Bundles : Last stable Exiv2 0.27.5 is now used to compile Windows, AppImage, and MacOS bundles.
 General : Update internal Libraw to snapshot 20210827.
 General : Integration of Image Quality Sorter Google Summer of Code project 2021
           from Phuoc Khanh LE <https://community.kde.org/GSoC/2021/StatusReports/PhuocKhanhLE>
@@ -181,7 +182,12 @@ BUGFIXES:
 165 ==> 297922 - THUMBDB : different database locations for thumbnails.
 166 ==> 444721 - Globe in Map Search loses green overlay when panned to certain angles.
 167 ==> 443349 - Pictures in "Presentation" oversharpened.
-168 ==> 
-169 ==> 
-170 ==> 
-171 ==> 
+168 ==> 444872 - Create new database.
+169 ==> 444881 - Charcoal drawing doesn't remember previous pencil size.
+170 ==> 445021 - Customize where database is saved.
+171 ==> 444028 - When starting digiKam it hangs for a very long time checking ICC repository.
+172 ==> 443818 - Last modified files on https://files.kde.org/digikam/ are dated 2021-09-05.
+173 ==> 
+174 ==> 
+175 ==> 
+

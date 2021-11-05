@@ -63,13 +63,14 @@ class Q_DECL_HIDDEN ShowfotoStackViewFavorites::Private
 public:
 
     explicit Private()
-      : addBtn        (nullptr),
-        fldBtn        (nullptr),
-        delBtn        (nullptr),
-        edtBtn        (nullptr),
-        favoritesList (nullptr),
-        topFavorites  (nullptr),
-        sidebar       (nullptr)
+      : addBtn         (nullptr),
+        fldBtn         (nullptr),
+        delBtn         (nullptr),
+        edtBtn         (nullptr),
+        favoritesList  (nullptr),
+        topFavorites   (nullptr),
+        sidebar        (nullptr),
+        favoritesFilter(nullptr)
     {
         file = QStandardPaths::writableLocation(QStandardPaths::AppDataLocation) + QLatin1String("/favorites.xml");
     }
@@ -85,6 +86,7 @@ public:
     ShowfotoStackViewFavoriteItem*  topFavorites;
     ShowfotoStackViewSideBar*       sidebar;
     QString                         file;
+    SearchTextBar*                  favoritesFilter;
 };
 
 ShowfotoStackViewFavorites::ShowfotoStackViewFavorites(ShowfotoStackViewSideBar* const sidebar)
@@ -174,14 +176,20 @@ ShowfotoStackViewFavorites::ShowfotoStackViewFavorites(ShowfotoStackViewSideBar*
     // ---
 
     d->favoritesList        = new ShowfotoStackViewFavoriteList(this);
+    d->favoritesFilter      = new SearchTextBar(this,
+                                                QLatin1String("FavoritesSearchBar"),
+                                                i18nc("@info: search text bar", "Search in Favorites...")
+                                               );
 
     grid->setAlignment(Qt::AlignTop);
-    grid->addWidget(title,             0, 0, 1, 1);
-    grid->addWidget(d->addBtn,         0, 2, 1, 1);
-    grid->addWidget(d->fldBtn,         0, 3, 1, 1);
-    grid->addWidget(d->delBtn,         0, 4, 1, 1);
-    grid->addWidget(d->edtBtn,         0, 5, 1, 1);
-    grid->addWidget(d->favoritesList,  1, 0, 1, 6);
+    grid->addWidget(title,              0, 0, 1, 1);
+    grid->addWidget(d->addBtn,          0, 2, 1, 1);
+    grid->addWidget(d->fldBtn,          0, 3, 1, 1);
+    grid->addWidget(d->delBtn,          0, 4, 1, 1);
+    grid->addWidget(d->edtBtn,          0, 5, 1, 1);
+    grid->addWidget(d->favoritesList,   1, 0, 1, 6);
+    grid->addWidget(d->favoritesFilter, 2, 0, 1, 6);
+
     grid->setRowStretch(1, 10);
     grid->setColumnStretch(1, 10);
     grid->setContentsMargins(0, 0, 0, 0);
@@ -205,6 +213,12 @@ ShowfotoStackViewFavorites::ShowfotoStackViewFavorites(ShowfotoStackViewSideBar*
 
     connect(d->favoritesList, SIGNAL(signalLoadContentsFromFiles(QStringList,QString)),
             this, SIGNAL(signalLoadContentsFromFiles(QStringList,QString)));
+
+    connect(d->favoritesFilter, SIGNAL(signalSearchTextSettings(SearchTextSettings)),
+            this, SLOT(slotSearchTextChanged(SearchTextSettings)));
+
+    connect(d->favoritesList, SIGNAL(signalSearchResult(int)),
+            this, SLOT(slotSearchResult(int)));
 }
 
 ShowfotoStackViewFavorites::~ShowfotoStackViewFavorites()
@@ -692,6 +706,16 @@ bool ShowfotoStackViewFavorites::readSettings()
 QList<QAction*> ShowfotoStackViewFavorites::pluginActions() const
 {
     return d->sidebar->pluginActions();
+}
+
+void ShowfotoStackViewFavorites::slotSearchTextChanged(const SearchTextSettings& settings)
+{
+    d->favoritesList->setFilter(settings.text, settings.caseSensitive);
+}
+
+void ShowfotoStackViewFavorites::slotSearchResult(int found)
+{
+    d->favoritesFilter->slotSearchResult(found ? true : false);
 }
 
 } // namespace ShowFoto

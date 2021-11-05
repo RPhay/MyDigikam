@@ -34,6 +34,12 @@
 #include <QStringList>
 #include <QTreeWidgetItem>
 
+// Local includes
+
+#include "searchtextbar.h"
+
+using namespace Digikam;
+
 namespace ShowFoto
 {
 
@@ -76,6 +82,8 @@ private Q_SLOTS:
     void slotAddSubFolder();
     void slotDelItem();
     void slotEditItem();
+    void slotSearchTextChanged(const SearchTextSettings& settings);
+    void slotSearchResult(int found);
 
 private:
 
