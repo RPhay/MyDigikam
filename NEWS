@@ -184,5 +184,5 @@ BUGFIXES:
 167 ==> 443349 - Pictures in "Presentation" oversharpened.
 168 ==> 444872 - Create new database.
 169 ==> 444881 - Charcoal drawing doesn't remember previous pencil size.
-170 ==> 
+170 ==> 445021 - Customize where database is saved.
 171 ==> 
