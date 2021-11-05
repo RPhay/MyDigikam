@@ -85,7 +85,7 @@ public:
 };
 
 SearchTextBar::SearchTextBar(QWidget* const parent, const QString& name, const QString& msg)
-    : QLineEdit(parent),
+    : QLineEdit        (parent),
       StateSavingObject(this),
       d                (new Private)
 {
@@ -109,16 +109,16 @@ SearchTextBar::SearchTextBar(QWidget* const parent, const QString& name, const Q
 
     connect(d->completer, QOverload<>::of(&ModelCompleter::signalActivated),
             [=]()
-            {
-                emit completerActivated();
-            }
+        {
+            emit completerActivated();
+        }
     );
 
     connect(d->completer, QOverload<const int>::of(&ModelCompleter::signalHighlighted),
             [=](const int albumId)
-            {
-                emit completerHighlighted(albumId);
-            }
+        {
+            emit completerHighlighted(albumId);
+        }
     );
 
     loadState();
@@ -262,8 +262,8 @@ void SearchTextBar::slotSearchResult(bool match)
 
     QPalette pal = palette();
     pal.setColor(QPalette::Active, QPalette::Base,
-                 match ? d->hasResultColor :
-                 d->hasNoResultColor);
+                 match ? d->hasResultColor
+                       : d->hasNoResultColor);
     pal.setColor(QPalette::Active, QPalette::Text, Qt::black);
     setPalette(pal);
 }
