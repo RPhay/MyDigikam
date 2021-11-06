@@ -99,7 +99,7 @@ inline void DecodeDeltaBytes(unsigned char *bytePtr, int cols, int channels)
   {
     unsigned char b0 = bytePtr[0];
     bytePtr += 1;
-    for (uint32_t col = 1; col < cols; ++col)
+    for (int col = 1; col < cols; ++col)
     {
       b0 += bytePtr[0];
       bytePtr[0] = b0;
@@ -130,7 +130,7 @@ inline void DecodeDeltaBytes(unsigned char *bytePtr, int cols, int channels)
     unsigned char b2 = bytePtr[2];
     unsigned char b3 = bytePtr[3];
     bytePtr += 4;
-    for (uint32_t col = 1; col < cols; ++col)
+    for (int col = 1; col < cols; ++col)
     {
       b0 += bytePtr[0];
       b1 += bytePtr[1];
@@ -275,7 +275,7 @@ static unsigned static_get4(LibRaw_abstract_datastream *stream, short _order)
 }
 
 
-void tile_stripe_data_t::init(tiff_ifd_t *ifd, const libraw_image_sizes_t& sizes,
+void tile_stripe_data_t::init(tiff_ifd_t *ifd, const libraw_image_sizes_t& sizes, 
     const unpacker_data_t& unpacker_data, short _order, LibRaw_abstract_datastream *stream)
 {
     tiled = (unpacker_data.tile_width <= sizes.raw_width) && (unpacker_data.tile_length <= sizes.raw_height);
@@ -311,14 +311,14 @@ void tile_stripe_data_t::init(tiff_ifd_t *ifd, const libraw_image_sizes_t& sizes
     {
         // ifd->bytes points to tile size table if more than 1 tile exists
         stream->seek(ifd->bytes, SEEK_SET);
-        for (size_t t = 0; t < tileCnt; ++t)
+        for (int t = 0; t < tileCnt; ++t)
         {
             tBytes[t] = static_get4(stream, _order); ;
             maxBytesInTile = MAX(maxBytesInTile, tBytes[t]);
         }
     }
     else if (striped)
-        for (size_t t = 0; t < tileCnt && t < ifd->strip_byte_counts_count; ++t)
+        for (int t = 0; t < tileCnt && t < ifd->strip_byte_counts_count; ++t)
         {
             tBytes[t] = ifd->strip_byte_counts[t];
             maxBytesInTile = MAX(maxBytesInTile, tBytes[t]);
@@ -337,7 +337,7 @@ void LibRaw::deflate_dng_load_raw()
   float max = 0.f;
 
   if (ifd->samples != 1 && ifd->samples != 3 && ifd->samples != 4)
-    throw LIBRAW_EXCEPTION_DECODE_RAW;
+    throw LIBRAW_EXCEPTION_DECODE_RAW; 
 
   if (libraw_internal_data.unpacker_data.tiff_samples != ifd->samples)
     throw LIBRAW_EXCEPTION_DECODE_RAW; // Wrong IFD
@@ -414,7 +414,7 @@ void LibRaw::deflate_dng_load_raw()
         }
       }
     }
-
+  
   imgdata.color.fmaximum = max;
 
   // Set fields according to data format
@@ -551,7 +551,7 @@ void LibRaw::convertFloatToInt(float dmin /* =4096.f */,
 }
 
 static
-#if defined(_MSC_VER)
+#if (defined(_MSC_VER) && !defined(__clang__))
 _forceinline
 #else
 inline
@@ -567,7 +567,7 @@ void swap24(uchar *data, int len)
 }
 
 static
-#if defined(_MSC_VER)
+#if (defined(_MSC_VER) && !defined(__clang__))
 _forceinline
 #else
 inline
@@ -587,14 +587,14 @@ void swap32(uchar *data, int len)
 void LibRaw::uncompressed_fp_dng_load_raw()
 {
     int iifd = find_ifd_by_offset(libraw_internal_data.unpacker_data.data_offset);
-    if (iifd < 0 || iifd > libraw_internal_data.identify_data.tiff_nifds)
+    if (iifd < 0 || iifd > (int)libraw_internal_data.identify_data.tiff_nifds)
         throw LIBRAW_EXCEPTION_DECODE_RAW;
     struct tiff_ifd_t *ifd = &tiff_ifd[iifd];
 
     float *float_raw_image = 0;
 
     if (ifd->samples != 1 && ifd->samples != 3 && ifd->samples != 4)
-        throw LIBRAW_EXCEPTION_DECODE_RAW;
+        throw LIBRAW_EXCEPTION_DECODE_RAW; 
 
     if(imgdata.idata.filters && ifd->samples > 1)
       throw LIBRAW_EXCEPTION_DECODE_RAW;
@@ -620,7 +620,7 @@ void LibRaw::uncompressed_fp_dng_load_raw()
 
     for (size_t y = 0, t = 0; y < imgdata.sizes.raw_height; y += tiles.tileHeight)
     {
-        for (size_t x = 0; x < imgdata.sizes.raw_width  && t < tiles.tileCnt; x += tiles.tileWidth, ++t)
+        for (unsigned x = 0; x < imgdata.sizes.raw_width  && t < (unsigned)tiles.tileCnt; x += tiles.tileWidth, ++t)
         {
             libraw_internal_data.internal_data.input->seek(tiles.tOffsets[t], SEEK_SET);
             size_t rowsInTile = y + tiles.tileHeight > imgdata.sizes.raw_height ? imgdata.sizes.raw_height - y : tiles.tileHeight;
@@ -629,7 +629,6 @@ void LibRaw::uncompressed_fp_dng_load_raw()
             int inrowbytes = colsInTile * bytesps * ifd->samples;
             int fullrowbytes = tiles.tileWidth *bytesps * ifd->samples;
             int outrowbytes = colsInTile * sizeof(float) * ifd->samples;
-            std::vector<uchar> vec(fullrowbytes > inrowbytes ? fullrowbytes : 0);
 
             for (size_t row = 0; row < rowsInTile; ++row) // do not process full tile if not needed
             {
@@ -679,5 +678,5 @@ void LibRaw::uncompressed_fp_dng_load_raw()
     }
 
     if (imgdata.rawparams.options & LIBRAW_RAWOPTIONS_CONVERTFLOAT_TO_INT)
-        convertFloatToInt();
+        convertFloatToInt();  
 }

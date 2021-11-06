@@ -1737,7 +1737,7 @@ int crxParamInit(CrxImage *img, CrxBandParam **param, uint64_t subbandMdatOffset
   int32_t paramLength = 2 * subbandWidth + 4;
   uint8_t *paramBuf = 0;
 #if  defined(LIBRAW_CR3_MEMPOOL)
-#if defined(LIBRAW_USE_OPENMP)
+#if defined(LIBRAW_USE_OPENMP) 
 #pragma omp critical
   {
 #else
@@ -1751,7 +1751,7 @@ int crxParamInit(CrxImage *img, CrxBandParam **param, uint64_t subbandMdatOffset
                calloc(1, sizeof(CrxBandParam) + sizeof(int32_t) * paramLength + progrDataSize);
 
 #if  defined(LIBRAW_CR3_MEMPOOL)
-#if defined(LIBRAW_USE_OPENMP)
+#if defined(LIBRAW_USE_OPENMP) 
   }
 #else
   img->input->unlock();
@@ -1818,7 +1818,7 @@ int crxSetupSubbandData(CrxImage *img, CrxPlaneComp *planeComp, const CrxTile *t
         compDataSize += 8 * sizeof(int32_t) * tile->width;
   }
 #if defined(LIBRAW_CR3_MEMPOOL)
-#if defined(LIBRAW_USE_OPENMP)
+#if defined(LIBRAW_USE_OPENMP) 
 #pragma omp critical
   {
 #else
@@ -1832,7 +1832,7 @@ int crxSetupSubbandData(CrxImage *img, CrxPlaneComp *planeComp, const CrxTile *t
 #endif
                          malloc(compDataSize);
 #if defined(LIBRAW_CR3_MEMPOOL)
-#if defined(LIBRAW_USE_OPENMP)
+#if defined(LIBRAW_USE_OPENMP) 
   }
 #else
   img->input->unlock();
@@ -2034,7 +2034,7 @@ int crxMakeQStep(CrxImage *img, CrxTile *tile, int32_t *qpTable, uint32_t totalQ
   if (img->levels > 2)
     totalHeight += qpHeight8;
 #if defined(LIBRAW_CR3_MEMPOOL)
-#if defined(LIBRAW_USE_OPENMP)
+#if defined(LIBRAW_USE_OPENMP) 
 #pragma omp critical
   {
 #else
@@ -2047,7 +2047,7 @@ int crxMakeQStep(CrxImage *img, CrxTile *tile, int32_t *qpTable, uint32_t totalQ
 #endif
                   malloc(totalHeight * qpWidth * sizeof(uint32_t) + img->levels * sizeof(CrxQStep));
 #if defined(LIBRAW_CR3_MEMPOOL)
-#if defined(LIBRAW_USE_OPENMP)
+#if defined(LIBRAW_USE_OPENMP) 
   }
 #else
   img->input->unlock();
@@ -2305,7 +2305,7 @@ int crxReadImageHeaders(crx_data_header_t *hdr, CrxImage *img, uint8_t *mdatPtr,
   if (!img->tiles)
   {
 #if defined(LIBRAW_CR3_MEMPOOL)
-#if defined(LIBRAW_USE_OPENMP)
+#if defined(LIBRAW_USE_OPENMP) 
 #pragma omp critical
     {
 #else
@@ -2321,7 +2321,7 @@ int crxReadImageHeaders(crx_data_header_t *hdr, CrxImage *img, uint8_t *mdatPtr,
                               sizeof(CrxSubband) * nTiles * img->nPlanes * img->subbandCount,
                           1);
 #if defined(LIBRAW_CR3_MEMPOOL)
-#if defined(LIBRAW_USE_OPENMP)
+#if defined(LIBRAW_USE_OPENMP) 
     }
 #else
     img->input->unlock();
@@ -2594,7 +2594,7 @@ int crxSetupImageData(crx_data_header_t *hdr, CrxImage *img, int16_t *outBuf, ui
   if (img->encType == 3 && img->nPlanes == 4 && img->nBits > 8)
   {
 #if defined(LIBRAW_CR3_MEMPOOL)
-#if defined(LIBRAW_USE_OPENMP)
+#if defined(LIBRAW_USE_OPENMP) 
 #pragma omp critical
     {
 #else
@@ -2607,7 +2607,7 @@ int crxSetupImageData(crx_data_header_t *hdr, CrxImage *img, int16_t *outBuf, ui
 #endif
                       malloc(img->planeHeight * img->planeWidth * img->nPlanes * ((img->samplePrecision + 7) >> 3));
 #if defined(LIBRAW_CR3_MEMPOOL)
-#if defined(LIBRAW_USE_OPENMP)
+#if defined(LIBRAW_USE_OPENMP) 
     }
 #else
     img->input->unlock();

@@ -198,7 +198,7 @@ void LibRaw::write_ppm_tiff()
               "P7\n# EXPTIME=%0.5f\n# TIMESTAMP=%d\n# ISOSPEED=%d\n"
               "# APERTURE=%0.1f\n# FOCALLEN=%0.1f\n# MAKE=%s\n# MODEL=%s\n"
               "WIDTH %d\nHEIGHT %d\nDEPTH %d\nMAXVAL %d\nTUPLTYPE %s\nENDHDR\n",
-              shutter, (int)timestamp, (int)iso_speed,aperture,
+              shutter, (int)timestamp, (int)iso_speed,aperture, 
 	      focal_len, make, model,
 	      width, height, colors, (1 << output_bps) - 1, cdesc);
 	    else

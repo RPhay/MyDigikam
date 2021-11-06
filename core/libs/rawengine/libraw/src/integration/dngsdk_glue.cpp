@@ -83,7 +83,11 @@ int LibRaw::valid_for_dngsdk()
   if (!imgdata.idata.dng_version)
     return 0;
 
-  if (!strcasecmp(imgdata.idata.make, "Blackmagic")
+  // All DNG larger than 2GB - to DNG SDK
+  if (libraw_internal_data.internal_data.input->size() > 2147483647ULL)
+      return 1;
+
+  if (!strcasecmp(imgdata.idata.make, "Blackmagic") 
       && (libraw_internal_data.unpacker_data.tiff_compress == 7)
       && (libraw_internal_data.unpacker_data.tiff_bps > 8)
       )
@@ -185,10 +189,10 @@ int LibRaw::try_dngsdk()
 
     //(new dng_simple_image(rawIFD->Bounds(), rawIFD->fSamplesPerPixel, rawIFD->PixelType(), host->Allocator()));
 
-    if (((libraw_internal_data.unpacker_data.tiff_compress == 34892
+    if (((libraw_internal_data.unpacker_data.tiff_compress == 34892 
         && libraw_internal_data.unpacker_data.tiff_bps == 8
         && libraw_internal_data.unpacker_data.tiff_samples == 3
-        && load_raw == &LibRaw::lossy_dng_load_raw) ||
+        && load_raw == &LibRaw::lossy_dng_load_raw) || 
 		(imgdata.rawparams.options & (LIBRAW_RAWOPTIONS_DNG_STAGE2| LIBRAW_RAWOPTIONS_DNG_STAGE3)))
         && ifdindex >= 0)
     {
@@ -390,7 +394,7 @@ int LibRaw::try_dngsdk()
   {
     return LIBRAW_UNSPECIFIED_ERROR;
   }
-
+  
   return (dngnegative || imgdata.rawdata.raw_alloc) ? LIBRAW_SUCCESS : LIBRAW_UNSPECIFIED_ERROR;
 #else
   return LIBRAW_UNSPECIFIED_ERROR;

@@ -34,7 +34,7 @@ void LibRaw::xtrans_interpolate(int passes)
                      dir[4] = {1, LIBRAW_AHD_TILE, LIBRAW_AHD_TILE + 1,
                                LIBRAW_AHD_TILE - 1};
   short allhex[3][3][2][8];
-  ushort sgrow, sgcol;
+  ushort sgrow = 0, sgcol = 0;
 
   if (width < LIBRAW_AHD_TILE || height < LIBRAW_AHD_TILE)
     throw LIBRAW_EXCEPTION_IO_CORRUPT; // too small image
@@ -175,7 +175,7 @@ void LibRaw::xtrans_interpolate(int passes)
   char** buffers = malloc_omp_buffers(buffer_count, buffer_size, "xtrans_interpolate()");
 
 #if defined(LIBRAW_USE_OPENMP)
-# pragma omp parallel for schedule(dynamic) default(none) firstprivate(buffers, allhex, passes, sgrow, sgcol, ndir) shared(dir)
+# pragma omp parallel for schedule(dynamic) default(none) firstprivate(buffers, allhex, passes, sgrow, sgcol, ndir) shared(dir) 
 #endif
     for (int top = 3; top < height - 19; top += LIBRAW_AHD_TILE - 16)
     {
@@ -418,7 +418,7 @@ void LibRaw::xtrans_interpolate(int passes)
                 }
         }
     }
-
+  
 #ifdef LIBRAW_USE_OPENMP
 #pragma omp barrier
 #endif
