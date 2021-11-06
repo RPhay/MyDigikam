@@ -287,7 +287,30 @@ public:
     QList<int> tagsForFragment(bool (QString::*stringFunction)(const QString&, Qt::CaseSensitivity cs) const,
                                const QString& fragment,
                                Qt::CaseSensitivity caseSensitivity,
-                               HiddenTagsPolicy hiddenTagsPolicy);
+                               HiddenTagsPolicy hiddenTagsPolicy)
+    {
+        checkNameHash();
+        QMultiMap<QString, int> idsMap;
+        QMultiHash<QString, int>::const_iterator it;
+        const bool excludeHiddenTags = (hiddenTagsPolicy == NoHiddenTags);
+
+        if (excludeHiddenTags)
+        {
+            checkProperties();
+        }
+
+        QReadLocker locker(&lock);
+
+        for (it = nameHash.constBegin() ; it != nameHash.constEnd() ; ++it)
+        {
+            if ((!excludeHiddenTags || !internalTags.contains(it.value())) && (it.key().*stringFunction)(fragment, caseSensitivity))
+            {
+                idsMap.insert(it.key(), it.value());
+            }
+        }
+
+        return idsMap.values();
+    }
 };
 
 // ------------------------------------------------------------------------------------------
@@ -1141,34 +1164,6 @@ QStringList TagsCache::shortenedTagPaths(const QList<int>& ids,
                                          HiddenTagsPolicy hiddenTagsPolicy) const
 {
     return ItemPropertiesTab::shortenedTagPaths(tagPaths(ids, slashPolicy, hiddenTagsPolicy));
-}
-
-QList<int> TagsCache::Private::tagsForFragment(bool (QString::*stringFunction)(const QString&, Qt::CaseSensitivity cs) const,
-                                                     const QString& fragment,
-                                                     Qt::CaseSensitivity caseSensitivity,
-                                                     HiddenTagsPolicy hiddenTagsPolicy)
-{
-    checkNameHash();
-    QMultiMap<QString, int> idsMap;
-    QMultiHash<QString, int>::const_iterator it;
-    const bool excludeHiddenTags = hiddenTagsPolicy == NoHiddenTags;
-
-    if (excludeHiddenTags)
-    {
-        checkProperties();
-    }
-
-    QReadLocker locker(&lock);
-
-    for (it = nameHash.constBegin() ; it != nameHash.constEnd() ; ++it)
-    {
-        if ((!excludeHiddenTags || !internalTags.contains(it.value())) && (it.key().*stringFunction)(fragment, caseSensitivity))
-        {
-            idsMap.insert(it.key(), it.value());
-        }
-    }
-
-    return idsMap.values();
 }
 
 QList<int> TagsCache::tagsStartingWith(const QString& fragment, Qt::CaseSensitivity caseSensitivity,
