@@ -454,6 +454,7 @@ QList<int> TagsCache::tagsForName(const QString& tagName, HiddenTagsPolicy hidde
     {
         d->checkProperties();
         QList<int> ids;
+        QReadLocker locker(&d->lock);
         QMultiHash<QString, int>::const_iterator it;
 
         for (it = d->nameHash.constFind(tagName) ; (it != d->nameHash.constEnd()) && (it.key() == tagName) ; ++it)
@@ -466,10 +467,10 @@ QList<int> TagsCache::tagsForName(const QString& tagName, HiddenTagsPolicy hidde
 
         return ids;
     }
-    else
-    {
-        return d->nameHash.values(tagName);
-    }
+
+    QReadLocker locker(&d->lock);
+
+    return d->nameHash.values(tagName);
 }
 
 int TagsCache::tagForName(const QString& tagName, int parentId) const
