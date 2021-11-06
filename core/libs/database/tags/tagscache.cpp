@@ -559,16 +559,14 @@ int TagsCache::tagForPath(const QString& path) const
     }
 
     d->checkNameHash();
-
     QReadLocker locker(&d->lock);
 
     // The last entry in the list is the leaf node tag name, we use this
     // to lookup all the tag ids with that name, then find the one
     // with a matching full path
 
-    QString const tagName = tagHierarchy.last();
-
-    int tagID             = 0;
+    int tagID       = 0;
+    QString tagName = tagHierarchy.last();
 
     for (int const id : d->nameHash.values(tagName))
     {
