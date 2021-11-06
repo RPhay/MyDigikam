@@ -250,6 +250,40 @@ public:
         }
     }
 
+    // remember to call under lock
+
+    QString tagPath(int id, LeadingSlashPolicy slashPolicy) const
+    {
+        QString path;
+        QList<TagShortInfo>::const_iterator it;
+
+        for (it = find(id) ; it != infos.constEnd() ; it = find(it->pid))
+        {
+            if (path.isNull())
+            {
+                path = it->name;
+            }
+            else
+            {
+                if ((it->name).contains(QRegExp(QLatin1String("(_Digikam_root_tag_/|/_Digikam_root_tag_|_Digikam_root_tag_)"))))
+                {
+                    continue;
+                }
+                else
+                {
+                    path = it->name + QLatin1Char('/') + path;
+                }
+            }
+        }
+
+        if (slashPolicy == IncludeLeadingSlash)
+        {
+            path.prepend(QLatin1Char('/'));
+        }
+
+        return path;
+    }
+
     QList<int> tagsForFragment(bool (QString::*stringFunction)(const QString&, Qt::CaseSensitivity cs) const,
                                const QString& fragment,
                                Qt::CaseSensitivity caseSensitivity,
@@ -388,36 +422,9 @@ QStringList TagsCache::tagNames(const QList<int>& ids, HiddenTagsPolicy hiddenTa
 QString TagsCache::tagPath(int id, LeadingSlashPolicy slashPolicy) const
 {
     d->checkInfos();
-
-    QString path;
     QReadLocker locker(&d->lock);
-    QList<TagShortInfo>::const_iterator it;
 
-    for (it = d->find(id) ; it != d->infos.constEnd() ; it = d->find(it->pid))
-    {
-        if (path.isNull())
-        {
-            path = it->name;
-        }
-        else
-        {
-            if ((it->name).contains(QRegExp(QLatin1String("(_Digikam_root_tag_/|/_Digikam_root_tag_|_Digikam_root_tag_)"))))
-            {
-                continue;
-            }
-            else
-            {
-                path = it->name + QLatin1Char('/') + path;
-            }
-        }
-    }
-
-    if (slashPolicy == IncludeLeadingSlash)
-    {
-        path.prepend(QLatin1Char('/'));
-    }
-
-    return path;
+    return d->tagPath(id, slashPolicy);
 }
 
 QStringList TagsCache::tagPaths(const QList<int>& ids, LeadingSlashPolicy slashPolicy,
@@ -565,7 +572,7 @@ int TagsCache::tagForPath(const QString& path) const
 
     for (int const id : d->nameHash.values(tagName))
     {
-        if (tagPath(id, NoLeadingSlash) == fullPath)
+        if (d->tagPath(id, NoLeadingSlash) == fullPath)
         {
             tagID = id;
             break;
