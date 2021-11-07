@@ -44,6 +44,8 @@
 
 // KDE includes
 
+#include <kconfiggroup.h>
+#include <ksharedconfig.h>
 #include <klocalizedstring.h>
 
 #ifdef HAVE_KICONTHEMES
@@ -56,6 +58,7 @@
 #include "dlayoutbox.h"
 #include "dexpanderbox.h"
 #include "drawdecoder.h"
+#include "dxmlguiwindow.h"
 #include "showfotostackviewfavoritelist.h"
 #include "showfotostackviewfavoriteitem.h"
 #include "showfotostackviewlist.h"
@@ -118,6 +121,7 @@ ShowfotoStackViewFavoriteItemDlg::ShowfotoStackViewFavoriteItemDlg(ShowfotoStack
       d      (new Private)
 {
     setModal(true);
+    setObjectName(QLatin1String("ShowfotoStackViewFavoriteItemDlg"));
 
     d->create  = create;
     d->list    = list;
@@ -285,11 +289,19 @@ ShowfotoStackViewFavoriteItemDlg::ShowfotoStackViewFavoriteItemDlg(ShowfotoStack
     // --------------------------------------------------------
 
     d->nameEdit->setFocus();
+
+    KConfigGroup group = KSharedConfig::openConfig()->group(objectName());
+    winId();
     adjustSize();
+    DXmlGuiWindow::restoreWindowSize(windowHandle(), group);
+    resize(windowHandle()->size());
 }
 
 ShowfotoStackViewFavoriteItemDlg::~ShowfotoStackViewFavoriteItemDlg()
 {
+    KConfigGroup group = KSharedConfig::openConfig()->group(objectName());
+    DXmlGuiWindow::saveWindowSize(windowHandle(), group);
+
     delete d;
 }
 

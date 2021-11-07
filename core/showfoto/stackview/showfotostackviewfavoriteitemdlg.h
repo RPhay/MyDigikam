@@ -106,7 +106,7 @@ private Q_SLOTS:
 
 private:
 
-    bool canAccept() const;
+    bool canAccept()              const;
 
 private:
 
