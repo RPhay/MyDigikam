@@ -70,23 +70,23 @@ public:
     {
     }
 
-    bool                                        create;
+    bool                           create;
 
-    DAdjustableLabel*                           hierarchyLabel;
+    DAdjustableLabel*              hierarchyLabel;
 
-    QString                                     icon;
-    QString                                     originalName;
+    QString                        icon;
+    QString                        originalName;
 
-    QDialogButtonBox*                           buttons;
+    QDialogButtonBox*              buttons;
 
-    QLineEdit*                                  nameEdit;
-    DAdjustableLabel*                           helpLabel;
-    ShowfotoStackViewFavoriteList*              list;
-    ShowfotoStackViewFavoriteItem*              pitem;
+    QLineEdit*                     nameEdit;
+    DAdjustableLabel*              helpLabel;
+    ShowfotoStackViewFavoriteList* list;
+    ShowfotoStackViewFavoriteItem* pitem;
 };
 
 ShowfotoStackViewFavoriteFolderDlg::ShowfotoStackViewFavoriteFolderDlg(ShowfotoStackViewFavoriteList* const list,
-                                                           bool create)
+                                                                       bool create)
     : QDialog(list),
       d      (new Private)
 {
@@ -238,14 +238,14 @@ bool ShowfotoStackViewFavoriteFolderDlg::favoriteFolderDialog(ShowfotoStackViewF
                                                             bool create)
 {
     QPointer<ShowfotoStackViewFavoriteFolderDlg> dlg = new ShowfotoStackViewFavoriteFolderDlg(list, create);
-    dlg->setName(name);
     dlg->setParentItem(pitem);
+    dlg->setName(name);
 
     bool valRet = dlg->exec();
 
     if (valRet == QDialog::Accepted)
     {
-        name    = dlg->name();
+        name = dlg->name();
     }
 
     delete dlg;

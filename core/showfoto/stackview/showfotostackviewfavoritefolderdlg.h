@@ -46,7 +46,7 @@ class ShowfotoStackViewFavoriteFolderDlg : public QDialog
 public:
 
     explicit ShowfotoStackViewFavoriteFolderDlg(ShowfotoStackViewFavoriteList* const list,
-                                              bool create = false);
+                                                bool create = false);
     ~ShowfotoStackViewFavoriteFolderDlg() override;
 
     void setName(const QString& name);

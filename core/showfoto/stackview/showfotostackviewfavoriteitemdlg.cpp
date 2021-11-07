@@ -209,7 +209,7 @@ ShowfotoStackViewFavoriteItemDlg::ShowfotoStackViewFavoriteItemDlg(ShowfotoStack
     d->nbImagesLabel->setFont(fnt);
 
     d->urlsEdit             = new DItemsList(page);
-    d->urlsEdit->setIsLessThanHandler(myIsLessThanHandler);
+    d->urlsEdit->setIsLessThanHandler(s_itemIsLessThanHandler);
     d->urlsEdit->setIconSize(d->list->iconSize().width());
     d->urlsEdit->setAllowRAW(true);
     d->urlsEdit->setAllowDuplicate(false);
@@ -512,6 +512,7 @@ bool ShowfotoStackViewFavoriteItemDlg::favoriteItemDialog(ShowfotoStackViewFavor
                                                           bool create)
 {
     QPointer<ShowfotoStackViewFavoriteItemDlg> dlg = new ShowfotoStackViewFavoriteItemDlg(list, create);
+    dlg->setParentItem(pitem);
     dlg->setName(name);
     dlg->setDescription(desc);
     dlg->setDate(date);
@@ -521,7 +522,6 @@ bool ShowfotoStackViewFavoriteItemDlg::favoriteItemDialog(ShowfotoStackViewFavor
     dlg->setIconSize(iconSize);
     dlg->setSortOrder(sortOrder);
     dlg->setSortRole(sortRole);
-    dlg->setParentItem(pitem);
 
     bool valRet = dlg->exec();
 
@@ -540,7 +540,7 @@ bool ShowfotoStackViewFavoriteItemDlg::favoriteItemDialog(ShowfotoStackViewFavor
     return valRet;
 }
 
-bool ShowfotoStackViewFavoriteItemDlg::myIsLessThanHandler(const QTreeWidgetItem* current, const QTreeWidgetItem& other)
+bool ShowfotoStackViewFavoriteItemDlg::s_itemIsLessThanHandler(const QTreeWidgetItem* current, const QTreeWidgetItem& other)
 {
     int result = 0;
 

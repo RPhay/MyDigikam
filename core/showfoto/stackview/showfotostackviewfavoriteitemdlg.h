@@ -95,7 +95,7 @@ public:
 
 private:
 
-    static bool myIsLessThanHandler(const QTreeWidgetItem* current, const QTreeWidgetItem& other);
+    static bool s_itemIsLessThanHandler(const QTreeWidgetItem* current, const QTreeWidgetItem& other);
 
 private Q_SLOTS:
 
