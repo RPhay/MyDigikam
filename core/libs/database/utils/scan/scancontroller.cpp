@@ -238,6 +238,7 @@ void ScanController::run()
             connectCollectionScanner(&scanner);
 
             scanner.setNeedFileCount(d->needTotalFiles);
+            scanner.setPerformFastScan(d->performFastScan);
             scanner.setDeferredFileScanning(doScanDeferred);
             scanner.setHintContainer(d->hints);
 

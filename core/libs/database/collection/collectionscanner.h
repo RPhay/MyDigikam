@@ -109,6 +109,12 @@ public:
     void setNeedFileCount(bool on);
 
     /**
+     * Call this to disable fast scan with album date check.
+     * Default is on.
+     */
+    void setPerformFastScan(bool on);
+
+    /**
      * Set an observer to be able to cancel a running scan
      */
     void setObserver(CollectionScannerObserver* const observer);

@@ -228,13 +228,14 @@ void CollectionScannerHintContainerImplementation::clear()
 // --------------------------------------------------------------------
 
 CollectionScanner::Private::Private()
-    : wantSignals(false),
-      needTotalFiles(false),
-      hints(nullptr),
-      updatingHashHint(false),
-      recordHistoryIds(false),
+    : wantSignals         (false),
+      needTotalFiles      (false),
+      performFastScan     (true),
+      hints               (nullptr),
+      updatingHashHint    (false),
+      recordHistoryIds    (false),
       deferredFileScanning(false),
-      observer(nullptr)
+      observer            (nullptr)
 {
 }
 

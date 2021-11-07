@@ -162,6 +162,7 @@ public:
     QList<int>                                    scannedAlbums;
     bool                                          wantSignals;
     bool                                          needTotalFiles;
+    bool                                          performFastScan;
 
     QDateTime                                     removedItemsTime;
 

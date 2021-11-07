@@ -153,7 +153,7 @@ public:
      * Scan Whole collection without to display a progress dialog
      * or to manage splashscreen, as for NewItemsFinder tool.
      */
-    void completeCollectionScanInBackground(bool defer);
+    void completeCollectionScanInBackground(bool defer, bool fastScan = true);
 
     /**
      * Schedules a scan of the specified part of the collection.
@@ -216,7 +216,7 @@ private:
      */
     void scanFileDirectly(const QString& filePath);
     void scanFileDirectlyNormal(const ItemInfo& info);
-    void completeCollectionScanCore(bool needTotalFiles, bool defer);
+    void completeCollectionScanCore(bool needTotalFiles, bool defer, bool fastScan);
 
     //@}
 

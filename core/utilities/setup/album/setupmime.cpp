@@ -288,7 +288,7 @@ void SetupMime::applySettings()
         CoreDbAccess().db()->setUserFilterSettings(cleanUserFilterString(d->imageFileFilterEdit->text()),
                                                    cleanUserFilterString(d->movieFileFilterEdit->text()),
                                                    cleanUserFilterString(d->audioFileFilterEdit->text()));
-        ScanController::instance()->completeCollectionScanInBackground(false);
+        ScanController::instance()->completeCollectionScanInBackground(false, false);
     }
 }
 

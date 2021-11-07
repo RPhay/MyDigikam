@@ -72,20 +72,21 @@ void ScanController::completeCollectionScan(bool defer)
     // we only need to count the files in advance
     // if we show a progress percentage in progress dialog
 
-    completeCollectionScanCore(!CollectionScanner::databaseInitialScanDone(), defer);
+    completeCollectionScanCore(!CollectionScanner::databaseInitialScanDone(), defer, false);
 
     delete d->progressDialog;
     d->progressDialog = nullptr;
 }
 
-void ScanController::completeCollectionScanInBackground(bool defer)
+void ScanController::completeCollectionScanInBackground(bool defer, bool fastScan)
 {
-    completeCollectionScanCore(true, defer);
+    completeCollectionScanCore(true, defer, fastScan);
 }
 
-void ScanController::completeCollectionScanCore(bool needTotalFiles, bool defer)
+void ScanController::completeCollectionScanCore(bool needTotalFiles, bool defer, bool fastScan)
 {
-    d->needTotalFiles = needTotalFiles;
+    d->performFastScan = fastScan;
+    d->needTotalFiles  = needTotalFiles;
 
     {
         QMutexLocker lock(&d->mutex);
@@ -98,7 +99,8 @@ void ScanController::completeCollectionScanCore(bool needTotalFiles, bool defer)
 
     d->eventLoop->exec();
 
-    d->needTotalFiles = false;
+    d->needTotalFiles  = false;
+    d->performFastScan = true;
 }
 
 void ScanController::scheduleCollectionScan(const QString& path)

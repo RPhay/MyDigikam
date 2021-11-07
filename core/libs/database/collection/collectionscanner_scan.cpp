@@ -459,7 +459,7 @@ void CollectionScanner::scanAlbumRoot(const CollectionLocation& location)
                                     getAlbumModificationMap(location.id());
     bool useFastScan = MetaEngineSettings::instance()->settings().useFastScan;
 
-    if (!useFastScan || pathDateMap.isEmpty())
+    if (!useFastScan || !d->performFastScan || pathDateMap.isEmpty())
     {
         scanAlbum(location, QLatin1String("/"));
     }

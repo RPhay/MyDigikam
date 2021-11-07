@@ -62,6 +62,7 @@ ScanController::Private::Private()
       progressDialog        (nullptr),
       advice                (ScanController::Success),
       needTotalFiles        (false),
+      performFastScan       (true),
       totalFilesToScan      (0)
 {
 }

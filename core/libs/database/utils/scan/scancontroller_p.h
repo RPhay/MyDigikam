@@ -166,6 +166,7 @@ public:
     ScanController::Advice          advice;
 
     bool                            needTotalFiles;
+    bool                            performFastScan;
     int                             totalFilesToScan;
 };
 

@@ -49,6 +49,11 @@ void CollectionScanner::setNeedFileCount(bool on)
     d->needTotalFiles = on;
 }
 
+void CollectionScanner::setPerformFastScan(bool on)
+{
+    d->performFastScan = on;
+}
+
 CollectionScannerHintContainer* CollectionScanner::createHintContainer()
 {
     return new CollectionScannerHintContainerImplementation;

@@ -208,7 +208,7 @@ void SetupCollections::applySettings()
         CoreDbAccess().db()->setUserIgnoreDirectoryFilterSettings(
                     cleanUserFilterString(d->ignoreEdit->text(), true, true));
 
-        ScanController::instance()->completeCollectionScanInBackground(false);
+        ScanController::instance()->completeCollectionScanInBackground(false, false);
     }
 }
 
