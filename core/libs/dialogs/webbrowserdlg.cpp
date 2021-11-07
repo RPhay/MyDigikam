@@ -64,10 +64,10 @@ class Q_DECL_HIDDEN WebBrowserDlg::Private
 public:
 
     explicit Private()
-      : browser(nullptr),
-        toolbar(nullptr),
+      : browser    (nullptr),
+        toolbar    (nullptr),
         progressbar(nullptr),
-        searchbar(nullptr)
+        searchbar  (nullptr)
     {
     }
 
@@ -92,7 +92,7 @@ public:
 
 WebBrowserDlg::WebBrowserDlg(const QUrl& url, QWidget* const parent, bool hideDeskBrowser)
     : QDialog(parent),
-      d(new Private)
+      d      (new Private)
 {
     setModal(false);
     setAttribute(Qt::WA_DeleteOnClose, true);

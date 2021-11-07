@@ -273,13 +273,13 @@ DeleteWidget::DeleteWidget(QWidget* const parent)
     resize(540, 370);
     setMinimumSize(QSize(420, 320));
 
-    const int spacing = QApplication::style()->pixelMetric(QStyle::PM_DefaultLayoutSpacing);
+    const int spacing  = QApplication::style()->pixelMetric(QStyle::PM_DefaultLayoutSpacing);
 
-    d->checkBoxStack = new QStackedWidget(this);
-    QLabel* logo     = new QLabel(this);
+    d->checkBoxStack   = new QStackedWidget(this);
+    QLabel* const logo = new QLabel(this);
     logo->setPixmap(QIcon::fromTheme(QLatin1String("digikam")).pixmap(QSize(48,48)));
 
-    d->warningIcon   = new QLabel(this);
+    d->warningIcon     = new QLabel(this);
     d->warningIcon->setWordWrap(false);
 
     QSizePolicy sizePolicy(QSizePolicy::Maximum, QSizePolicy::Maximum);
@@ -288,38 +288,38 @@ DeleteWidget::DeleteWidget(QWidget* const parent)
     sizePolicy.setVerticalStretch(0);
     d->warningIcon->setSizePolicy(sizePolicy);
 
-    d->deleteText     = new QLabel(this);
+    d->deleteText      = new QLabel(this);
     d->deleteText->setAlignment(Qt::AlignCenter);
     d->deleteText->setWordWrap(true);
 
-    QHBoxLayout* hbox = new QHBoxLayout();
+    QHBoxLayout* const hbox = new QHBoxLayout();
     hbox->setSpacing(spacing);
     hbox->setContentsMargins(QMargins());
     hbox->addWidget(logo);
     hbox->addWidget(d->deleteText, 10);
     hbox->addWidget(d->warningIcon);
 
-    d->fileList       = new DeleteItemList(this);
-    d->numFiles       = new QLabel(this);
+    d->fileList        = new DeleteItemList(this);
+    d->numFiles        = new QLabel(this);
     d->numFiles->setAlignment(Qt::AlignRight|Qt::AlignTrailing|Qt::AlignVCenter);
     d->numFiles->setWordWrap(false);
 
-    d->shouldDelete   = new QCheckBox(d->checkBoxStack);
+    d->shouldDelete    = new QCheckBox(d->checkBoxStack);
     d->shouldDelete->setGeometry(QRect(0, 0, 542, 32));
     d->shouldDelete->setToolTip(i18n("If checked, files will be permanently removed instead of being placed "
-                                    "in the Trash."));
+                                     "in the Trash."));
     d->shouldDelete->setWhatsThis(i18n("<p>If this box is checked, items will be "
-                                      "<b>permanently removed</b> instead of "
-                                      "being placed in the Trash.</p>"
-                                      "<p><em>Use this option with caution</em>: most filesystems "
-                                      "are unable to "
-                                      "undelete deleted items reliably.</p>"));
+                                       "<b>permanently removed</b> instead of "
+                                       "being placed in the Trash.</p>"
+                                       "<p><em>Use this option with caution</em>: most filesystems "
+                                       "are unable to "
+                                       "undelete deleted items reliably.</p>"));
     d->shouldDelete->setText(i18n("&Delete items instead of moving them to the trash"));
 
     connect(d->shouldDelete, SIGNAL(toggled(bool)),
             this, SLOT(slotShouldDelete(bool)));
 
-    d->doNotShowAgain = new QCheckBox(d->checkBoxStack);
+    d->doNotShowAgain       = new QCheckBox(d->checkBoxStack);
     d->doNotShowAgain->setGeometry(QRect(0, 0, 100, 30));
     d->doNotShowAgain->setText(i18n("Do not &ask again"));
 
@@ -335,7 +335,7 @@ DeleteWidget::DeleteWidget(QWidget* const parent)
     d->checkBoxStack->addWidget(d->doNotShowAgain);
     d->checkBoxStack->setCurrentWidget(d->shouldDelete);
 
-    bool deleteInstead = !ApplicationSettings::instance()->getUseTrash();
+    bool deleteInstead      = !ApplicationSettings::instance()->getUseTrash();
     slotShouldDelete(deleteInstead);
     d->shouldDelete->setChecked(deleteInstead);
 }
@@ -658,13 +658,17 @@ void DeleteDialog::setListMode(DeleteDialogMode::ListMode mode)
     switch (mode)
     {
         case DeleteDialogMode::Files:
+        {
             setWindowTitle(i18n("About to delete selected items"));
             break;
+        }
 
         case DeleteDialogMode::Albums:
         case DeleteDialogMode::Subalbums:
+        {
             setWindowTitle(i18n("About to delete selected albums"));
             break;
+        }
     }
 }
 
