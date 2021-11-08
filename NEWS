@@ -202,6 +202,6 @@ BUGFIXES:
 171 ==> 444028 - When starting digiKam it hangs for a very long time checking ICC repository.
 172 ==> 443818 - Last modified files on https://files.kde.org/digikam/ are dated 2021-09-05.
 173 ==> 444969 - digiKam often freezes when dropping a tag over another to merge them.
-174 ==> 
+174 ==> 444501 - Face detection, write name tags (metadata) to file - Changes date and time on photo.
 175 ==> 
 
