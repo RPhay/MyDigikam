@@ -346,15 +346,15 @@ bool ShowfotoStackViewFavoriteItemDlg::canAccept() const
         {
             if      (b1)
             {
-                d->helpLabel->setAdjustedText(i18nc("@label", "Note: item name cannot be empty!"));
+                d->helpLabel->setAdjustedText(i18nc("@label", "Note: favorite item name cannot be empty!"));
             }
             else if (b2)
             {
-                d->helpLabel->setAdjustedText(i18nc("@label", "Note: files list cannot be empty!"));
+                d->helpLabel->setAdjustedText(i18nc("@label", "Note: favorite item files list cannot be empty!"));
             }
             else if (b3)
             {
-                d->helpLabel->setAdjustedText(i18nc("@label", "Note: item name already exists in favorites list!"));
+                d->helpLabel->setAdjustedText(i18nc("@label", "Note: favorite item name already exists in hierarchy!"));
             }
         }
 
@@ -387,11 +387,11 @@ bool ShowfotoStackViewFavoriteItemDlg::canAccept() const
         {
             if      (b1)
             {
-                d->helpLabel->setAdjustedText(i18nc("@label", "Note: name cannot be empty!"));
+                d->helpLabel->setAdjustedText(i18nc("@label", "Note: favorite folder name cannot be empty!"));
             }
             else if (b3)
             {
-                d->helpLabel->setAdjustedText(i18nc("@label", "Note: name already exists in favorites list!"));
+                d->helpLabel->setAdjustedText(i18nc("@label", "Note: favorite folder name already exists in hierarchy!"));
             }
         }
 
@@ -657,6 +657,8 @@ void ShowfotoStackViewFavoriteItemDlg::slotAdvancedPropertiesChanged()
             setWindowTitle(i18nc("@title", "Edit Favorite Folder"));
         }
     }
+
+    slotModified();
 }
 
 bool ShowfotoStackViewFavoriteItemDlg::itemIsLessThanHandler(const QTreeWidgetItem* current, const QTreeWidgetItem& other)
