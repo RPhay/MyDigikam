@@ -249,10 +249,10 @@ int get_mem_stats(Digikam::KMemoryInfo::KMemoryInfoData* const data)
 #endif
 
 #ifdef Q_OS_MACOS
-    size_t vmt_size;
-    size_t uint_size;
-    u_int  page_size;
-    struct vmtotal vmt;
+    size_t  vmt_size;
+    size_t  uint64_size;
+    u_int64 page_size;
+    struct  vmtotal vmt;
 #endif
 
 #ifdef Q_OS_HPUX
@@ -524,14 +524,14 @@ int get_mem_stats(Digikam::KMemoryInfo::KMemoryInfoData* const data)
     data->platform = QLatin1String("MACOS");
 
     vmt_size       = sizeof(vmt);
-    uint_size      = sizeof(page_size);
+    uint64_size    = sizeof(page_size);
 
     if (sysctlbyname("vm.vmtotal", &vmt, &vmt_size, NULL, 0) < 0)
     {
         return 0;
     }
 
-    if (sysctlbyname("vm.stats.vm.v_page_size", &page_size, &uint_size, NULL, 0) < 0)
+    if (sysctlbyname("vm.stats.vm.v_page_size", &page_size, &uint64_size, NULL, 0) < 0)
     {
         return 0;
     }
