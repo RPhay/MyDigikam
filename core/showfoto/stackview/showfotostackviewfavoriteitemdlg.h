@@ -56,22 +56,22 @@ public:
     ~ShowfotoStackViewFavoriteItemDlg() override;
 
     void setName(const QString& name);
-    QString name()        const;
+    QString name()                const;
 
     void setDescription(const QString& desc);
-    QString description() const;
+    QString description()         const;
 
     void setDate(const QDate& name);
-    QDate date()          const;
+    QDate date()                  const;
 
     void setIcon(const QString& icon);
-    QString icon()        const;
+    QString icon()                const;
 
     void setUrls(const QList<QUrl>& urls);
-    QList<QUrl> urls()    const;
+    QList<QUrl> urls()            const;
 
     void setCurrentUrl(const QUrl& url);
-    QUrl currentUrl()     const;
+    QUrl currentUrl()             const;
 
     void setIconSize(int size);
     void setSortOrder(int order);
@@ -95,7 +95,7 @@ public:
 
 private:
 
-    static bool s_itemIsLessThanHandler(const QTreeWidgetItem* current, const QTreeWidgetItem& other);
+    static bool itemIsLessThanHandler(const QTreeWidgetItem* current, const QTreeWidgetItem& other);
 
 private Q_SLOTS:
 

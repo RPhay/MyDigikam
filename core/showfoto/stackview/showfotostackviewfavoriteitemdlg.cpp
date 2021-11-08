@@ -90,26 +90,26 @@ public:
     {
     }
 
-    bool                                        create;
+    bool                           create;
 
-    DAdjustableLabel*                           hierarchyLabel;
+    DAdjustableLabel*              hierarchyLabel;
 
-    QString                                     icon;
-    QString                                     originalName;
+    QString                        icon;
+    QString                        originalName;
 
-    QPushButton*                                iconButton;
-    QPushButton*                                resetIconButton;
+    QPushButton*                   iconButton;
+    QPushButton*                   resetIconButton;
 
-    QDialogButtonBox*                           buttons;
+    QDialogButtonBox*              buttons;
 
-    QLineEdit*                                  nameEdit;
-    QLineEdit*                                  descEdit;
-    QDateTimeEdit*                              dateEdit;
-    DItemsList*                                 urlsEdit;
-    QLabel*                                     nbImagesLabel;
-    DAdjustableLabel*                           helpLabel;
-    ShowfotoStackViewFavoriteList*              list;
-    ShowfotoStackViewFavoriteItem*              pitem;
+    QLineEdit*                     nameEdit;
+    QLineEdit*                     descEdit;
+    QDateTimeEdit*                 dateEdit;
+    DItemsList*                    urlsEdit;
+    QLabel*                        nbImagesLabel;
+    DAdjustableLabel*              helpLabel;
+    ShowfotoStackViewFavoriteList* list;
+    ShowfotoStackViewFavoriteItem* pitem;
 };
 
 static Qt::SortOrder                        s_sortOrder(Qt::AscendingOrder);
@@ -213,7 +213,7 @@ ShowfotoStackViewFavoriteItemDlg::ShowfotoStackViewFavoriteItemDlg(ShowfotoStack
     d->nbImagesLabel->setFont(fnt);
 
     d->urlsEdit             = new DItemsList(page);
-    d->urlsEdit->setIsLessThanHandler(s_itemIsLessThanHandler);
+    d->urlsEdit->setIsLessThanHandler(itemIsLessThanHandler);
     d->urlsEdit->setIconSize(d->list->iconSize().width());
     d->urlsEdit->setAllowRAW(true);
     d->urlsEdit->setAllowDuplicate(false);
@@ -221,7 +221,7 @@ ShowfotoStackViewFavoriteItemDlg::ShowfotoStackViewFavoriteItemDlg(ShowfotoStack
     d->urlsEdit->setControlButtons(DItemsList::Add | DItemsList::Remove | DItemsList::Clear);
     d->urlsEdit->listView()->setColumn(DItemsListView::Filename, i18nc("@title", "Name"), true);
     d->urlsEdit->listView()->setColumn(DItemsListView::User1,    i18nc("@title", "Size"), true);
-    d->urlsEdit->listView()->setColumn(DItemsListView::User2,    i18nc("@title", "Type"), true);
+    d->urlsEdit->listView()->setColumn(DItemsListView::User2,    i18nc("@title", "Type"), true);        // Mime-type
     d->urlsEdit->listView()->setColumn(DItemsListView::User3,    i18nc("@title", "Date"), true);
     d->urlsEdit->listView()->setColumn(DItemsListView::User4,    i18nc("@title", "Path"), true);
 
@@ -552,7 +552,7 @@ bool ShowfotoStackViewFavoriteItemDlg::favoriteItemDialog(ShowfotoStackViewFavor
     return valRet;
 }
 
-bool ShowfotoStackViewFavoriteItemDlg::s_itemIsLessThanHandler(const QTreeWidgetItem* current, const QTreeWidgetItem& other)
+bool ShowfotoStackViewFavoriteItemDlg::itemIsLessThanHandler(const QTreeWidgetItem* current, const QTreeWidgetItem& other)
 {
     int result = 0;
 
@@ -566,7 +566,7 @@ bool ShowfotoStackViewFavoriteItemDlg::s_itemIsLessThanHandler(const QTreeWidget
             break;
         }
 
-        case DItemsListView::User2:     // Type
+        case DItemsListView::User2:     // Mime-type
         {
             result = (ShowfotoItemSortSettings::naturalCompare(current->text(DItemsListView::User2),
                                                                other.text(DItemsListView::User2),

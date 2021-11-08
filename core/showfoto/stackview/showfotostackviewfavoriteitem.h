@@ -44,9 +44,9 @@ public:
 
     enum FavoriteType
     {
-        FavoriteRoot = 0,
-        FavoriteFolder,
-        FavoriteItem
+        FavoriteRoot = 0,       ///< Favorite is root item from hierarchy.
+        FavoriteFolder,         ///< Favorite is a simple folder in hierarchy.
+        FavoriteItem            ///< Favorite is a hierarchy item including all properties.
     };
 
 public:
@@ -76,13 +76,22 @@ public:
     void setCurrentUrl(const QUrl& url);
     QUrl currentUrl()         const;
 
+    /**
+     * Helper method to get a list local paths from image urls included in favorite item.
+     */
     QStringList urlsToPaths() const;
 
+public:
+
+    /**
+     * Helper static method to get hierarchy path from item. 'name' is the title and 'pitem" the parent instance.
+     */
     static QString hierarchyFromParent(const QString& name, ShowfotoStackViewFavoriteItem* const pitem);
 
 private:
 
     void updateToolTip();
+    Q_DISABLE_COPY(ShowfotoStackViewFavoriteItem)
 
 private:
 
@@ -92,8 +101,6 @@ private:
     QString     m_desc;
     QDate       m_date;
     QUrl        m_current;
-
-    Q_DISABLE_COPY(ShowfotoStackViewFavoriteItem)
 };
 
 } // namespace ShowFoto

@@ -50,7 +50,7 @@ public:
     ~ShowfotoStackViewFavoriteFolderDlg() override;
 
     void setName(const QString& name);
-    QString name()        const;
+    QString name()                  const;
 
     void setParentItem(ShowfotoStackViewFavoriteItem* const pitem);
 
@@ -67,7 +67,7 @@ private Q_SLOTS:
 
 private:
 
-    bool canAccept() const;
+    bool canAccept()                const;
 
 private:
 

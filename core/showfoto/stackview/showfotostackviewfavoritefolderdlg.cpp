@@ -233,9 +233,9 @@ void ShowfotoStackViewFavoriteFolderDlg::setParentItem(ShowfotoStackViewFavorite
 }
 
 bool ShowfotoStackViewFavoriteFolderDlg::favoriteFolderDialog(ShowfotoStackViewFavoriteList* const list,
-                                                            QString& name,
-                                                            ShowfotoStackViewFavoriteItem* const pitem,
-                                                            bool create)
+                                                              QString& name,
+                                                              ShowfotoStackViewFavoriteItem* const pitem,
+                                                              bool create)
 {
     QPointer<ShowfotoStackViewFavoriteFolderDlg> dlg = new ShowfotoStackViewFavoriteFolderDlg(list, create);
     dlg->setParentItem(pitem);

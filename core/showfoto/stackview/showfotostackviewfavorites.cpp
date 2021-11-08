@@ -284,24 +284,24 @@ void ShowfotoStackViewFavorites::slotAddFavorite(const QList<QUrl>& newUrls, con
     QUrl currentUrl                             = current;
     ShowfotoStackViewFavoriteItem* const parent = d->favoritesList->currentItem() ? dynamic_cast<ShowfotoStackViewFavoriteItem*>(d->favoritesList->currentItem())
                                                                                   : d->topFavorites;
-
-    bool ok          = ShowfotoStackViewFavoriteItemDlg::favoriteItemDialog(d->favoritesList,
-                                                                            name,
-                                                                            desc,
-                                                                            date,
-                                                                            icon,
-                                                                            urls,
-                                                                            currentUrl,
-                                                                            d->sidebar->iconSize(),
-                                                                            d->sidebar->sortOrder(),
-                                                                            d->sidebar->sortRole(),
-                                                                            parent,
-                                                                            true
-                                                                           );
+    bool ok                                     = ShowfotoStackViewFavoriteItemDlg::favoriteItemDialog(d->favoritesList,
+                                                                                                       name,
+                                                                                                       desc,
+                                                                                                       date,
+                                                                                                       icon,
+                                                                                                       urls,
+                                                                                                       currentUrl,
+                                                                                                       d->sidebar->iconSize(),
+                                                                                                       d->sidebar->sortOrder(),
+                                                                                                       d->sidebar->sortRole(),
+                                                                                                       parent,
+                                                                                                       true
+                                                                                                      );
 
     if (ok)
     {
-        ShowfotoStackViewFavoriteItem* const item = new ShowfotoStackViewFavoriteItem(parent, ShowfotoStackViewFavoriteItem::FavoriteItem);
+        ShowfotoStackViewFavoriteItem* const item = new ShowfotoStackViewFavoriteItem(parent,
+                                                                                      ShowfotoStackViewFavoriteItem::FavoriteItem);
         item->setName(name);
         item->setDescription(desc);
         item->setDate(date);
@@ -346,19 +346,18 @@ void ShowfotoStackViewFavorites::slotEditItem()
         QList<QUrl> urls                            = item->urls();
         QUrl currentUrl                             = item->currentUrl();
         ShowfotoStackViewFavoriteItem* const parent = dynamic_cast<ShowfotoStackViewFavoriteItem*>(item->parent());
-
-        bool ok = ShowfotoStackViewFavoriteItemDlg::favoriteItemDialog(d->favoritesList,
-                                                                       name,
-                                                                       desc,
-                                                                       date,
-                                                                       icon,
-                                                                       urls,
-                                                                       currentUrl,
-                                                                       d->sidebar->iconSize(),
-                                                                       d->sidebar->sortOrder(),
-                                                                       d->sidebar->sortRole(),
-                                                                       parent
-                                                                      );
+        bool ok                                     = ShowfotoStackViewFavoriteItemDlg::favoriteItemDialog(d->favoritesList,
+                                                                                                           name,
+                                                                                                           desc,
+                                                                                                           date,
+                                                                                                           icon,
+                                                                                                           urls,
+                                                                                                           currentUrl,
+                                                                                                           d->sidebar->iconSize(),
+                                                                                                           d->sidebar->sortOrder(),
+                                                                                                           d->sidebar->sortRole(),
+                                                                                                           parent
+                                                                                                          );
 
         if (ok)
         {
@@ -375,13 +374,12 @@ void ShowfotoStackViewFavorites::slotEditItem()
 
     if (item && (item->favoriteType() == ShowfotoStackViewFavoriteItem::FavoriteFolder))
     {
-        QString name = item->name();
+        QString name                                = item->name();
         ShowfotoStackViewFavoriteItem* const parent = dynamic_cast<ShowfotoStackViewFavoriteItem*>(item->parent());
-
-        bool ok = ShowfotoStackViewFavoriteFolderDlg::favoriteFolderDialog(d->favoritesList,
-                                                                           name,
-                                                                           parent
-                                                                          );
+        bool ok                                     = ShowfotoStackViewFavoriteFolderDlg::favoriteFolderDialog(d->favoritesList,
+                                                                                                               name,
+                                                                                                               parent
+                                                                                                              );
 
         if (ok)
         {
@@ -438,7 +436,7 @@ bool ShowfotoStackViewFavorites::saveSettings()
 
     // ---
 
-    QDomElement elemList = doc.createElement(QLatin1String("FavoritesList"));
+    QDomElement elemList   = doc.createElement(QLatin1String("FavoritesList"));
     docElem.appendChild(elemList);
     QTreeWidgetItemIterator it2(d->favoritesList);
 
