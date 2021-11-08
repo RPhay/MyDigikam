@@ -106,12 +106,18 @@ void ShowfotoStackViewFavoriteItem::setFavoriteType(int favoriteType)
         {
             setName(i18nc("@title", "My Favorites"));
             setIcon(0, QIcon::fromTheme(QLatin1String("folder-root")));
+            setDescription(QString());
+            setDate(QDate());
+            setUrls(QList<QUrl>());
             break;
         }
 
         case FavoriteFolder:
         {
             setIcon(0, QIcon::fromTheme(QLatin1String("folder")));
+            setDescription(QString());
+            setDate(QDate());
+            setUrls(QList<QUrl>());
             break;
         }
 
