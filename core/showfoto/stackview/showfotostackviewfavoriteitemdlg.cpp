@@ -273,7 +273,7 @@ ShowfotoStackViewFavoriteItemDlg::ShowfotoStackViewFavoriteItemDlg(ShowfotoStack
     grid->addWidget(d->urlsEdit,        6,  1, 4, 3);
     grid->addWidget(d->urlsLabel,       7,  0, 1, 1);
     grid->addWidget(d->nbImagesLabel,   8,  0, 1, 1);
-    grid->addWidget(d->helpLabel,       10, 0, 1, 3);
+    grid->addWidget(d->helpLabel,       10, 0, 1, 4);
     grid->setRowStretch(9, 10);
     grid->setColumnStretch(3, 10);
 
