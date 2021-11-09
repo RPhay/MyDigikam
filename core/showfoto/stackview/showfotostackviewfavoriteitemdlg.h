@@ -58,8 +58,8 @@ public:
     void setName(const QString& name);
     QString name()                const;
 
-    void setAdvProp(bool advProp);
-    bool advProp()                const;
+    void setFavoriteType(int favoriteType);
+    int favoriteType()            const;
 
     void setDescription(const QString& desc);
     QString description()         const;
@@ -85,7 +85,7 @@ public:
 
     static bool favoriteItemDialog(ShowfotoStackViewFavoriteList* const list,
                                    QString& name,
-                                   bool hasAdvProp,
+                                   int& favoriteType,
                                    QString& desc,
                                    QDate& date,
                                    QString& icon,
@@ -107,7 +107,7 @@ private Q_SLOTS:
     void slotIconResetClicked();
     void slotModified();
     void slotUpdateMetadata();
-    void slotAdvancedPropertiesChanged();
+    void slotTypeActivated();
 
 private:
 

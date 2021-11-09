@@ -41,7 +41,7 @@
 #include <QPushButton>
 #include <QDateTimeEdit>
 #include <QMimeDatabase>
-#include <QCheckBox>
+#include <QComboBox>
 
 // KDE includes
 
@@ -82,7 +82,7 @@ public:
         buttons        (nullptr),
         nameEdit       (nullptr),
         descEdit       (nullptr),
-        advancedPropBox(nullptr),
+        favoriteTypeBox(nullptr),
         dateEdit       (nullptr),
         urlsEdit       (nullptr),
         descLabel      (nullptr),
@@ -110,7 +110,7 @@ public:
 
     QLineEdit*                     nameEdit;
     QLineEdit*                     descEdit;
-    QCheckBox*                     advancedPropBox;
+    QComboBox*                     favoriteTypeBox;
     QDateTimeEdit*                 dateEdit;
     DItemsList*                    urlsEdit;
     QLabel*                        descLabel;
@@ -164,11 +164,16 @@ ShowfotoStackViewFavoriteItemDlg::ShowfotoStackViewFavoriteItemDlg(ShowfotoStack
 
     // --------------------------------------------------------
 
-    d->advancedPropBox      = new QCheckBox;
-    d->advancedPropBox->setText(i18nc("@option:check", "Advanced Properties Item"));
-    d->advancedPropBox->setWhatsThis(i18nc("@info:whatsthis", "Turn on this option to enable advanced properties stored "
-                                           "by the favorite item. If this option is disabled, favorite item will be a simple "
-                                           "folder in the hierarchy."));
+    QLabel* const typeLabel = new QLabel(page);
+    typeLabel->setText(i18nc("@label: favorite item type properties", "Type:"));
+
+    d->favoriteTypeBox      = new QComboBox(page);
+    d->favoriteTypeBox->addItem(i18nc("@option:combo", "Favorite Folder"), ShowfotoStackViewFavoriteItem::FavoriteFolder);
+    d->favoriteTypeBox->addItem(i18nc("@option:combo", "Favorite Item"),   ShowfotoStackViewFavoriteItem::FavoriteItem);
+    d->favoriteTypeBox->setWhatsThis(i18nc("@info:whatsthis", "A favorite Item type will host advanced properties as date, icon, "
+                                           "comment, and images list. A favorite Folder will be a simple entry in the hierarchy "
+                                           "without extra property."));
+    typeLabel->setBuddy(d->favoriteTypeBox);
 
     // --------------------------------------------------------
 
@@ -255,7 +260,8 @@ ShowfotoStackViewFavoriteItemDlg::ShowfotoStackViewFavoriteItemDlg(ShowfotoStack
     grid->addWidget(d->nameEdit,        0,  1, 1, 3);
     grid->addWidget(hierLabel,          1,  0, 1, 1);
     grid->addWidget(d->hierarchyLabel,  1,  1, 1, 3);
-    grid->addWidget(d->advancedPropBox, 2,  1, 1, 2);
+    grid->addWidget(typeLabel,          2,  0, 1, 1);
+    grid->addWidget(d->favoriteTypeBox, 2,  1, 1, 3);
     grid->addWidget(d->descLabel,       3,  0, 1, 1);
     grid->addWidget(d->descEdit,        3,  1, 1, 3);
     grid->addWidget(d->dateLabel,       4,  0, 1, 1);
@@ -280,8 +286,8 @@ ShowfotoStackViewFavoriteItemDlg::ShowfotoStackViewFavoriteItemDlg(ShowfotoStack
     connect(d->nameEdit, SIGNAL(textChanged(QString)),
             this, SLOT(slotModified()));
 
-    connect(d->advancedPropBox, SIGNAL(toggled(bool)),
-            this, SLOT(slotAdvancedPropertiesChanged()));
+    connect(d->favoriteTypeBox, SIGNAL(activated(int)),
+            this, SLOT(slotTypeActivated()));
 
     connect(d->urlsEdit, SIGNAL(signalImageListChanged()),
             this, SLOT(slotModified()));
@@ -322,7 +328,7 @@ ShowfotoStackViewFavoriteItemDlg::~ShowfotoStackViewFavoriteItemDlg()
 
 bool ShowfotoStackViewFavoriteItemDlg::canAccept() const
 {
-    if (advProp())
+    if (favoriteType() == ShowfotoStackViewFavoriteItem::FavoriteItem)
     {
         bool b1 = name().isEmpty();
         bool b2 = urls().isEmpty();
@@ -415,9 +421,9 @@ QString ShowfotoStackViewFavoriteItemDlg::name() const
     return d->nameEdit->text();
 }
 
-bool ShowfotoStackViewFavoriteItemDlg::advProp() const
+int ShowfotoStackViewFavoriteItemDlg::favoriteType() const
 {
-    return d->advancedPropBox->isChecked();
+    return d->favoriteTypeBox->currentIndex();
 }
 
 QString ShowfotoStackViewFavoriteItemDlg::description() const
@@ -451,10 +457,10 @@ void ShowfotoStackViewFavoriteItemDlg::setName(const QString& name)
     d->originalName = name;
 }
 
-void ShowfotoStackViewFavoriteItemDlg::setAdvProp(bool advProp)
+void ShowfotoStackViewFavoriteItemDlg::setFavoriteType(int favoriteType)
 {
-    d->advancedPropBox->setChecked(advProp);
-    slotAdvancedPropertiesChanged();
+    d->favoriteTypeBox->setCurrentIndex(favoriteType);
+    slotTypeActivated();
 }
 
 void ShowfotoStackViewFavoriteItemDlg::setDescription(const QString& desc)
@@ -577,7 +583,7 @@ void ShowfotoStackViewFavoriteItemDlg::slotUpdateMetadata()
 
 bool ShowfotoStackViewFavoriteItemDlg::favoriteItemDialog(ShowfotoStackViewFavoriteList* const list,
                                                           QString& name,
-                                                          bool hasAdvProp,
+                                                          int& favoriteType,
                                                           QString& desc,
                                                           QDate& date,
                                                           QString& icon,
@@ -600,19 +606,19 @@ bool ShowfotoStackViewFavoriteItemDlg::favoriteItemDialog(ShowfotoStackViewFavor
     dlg->setIconSize(iconSize);
     dlg->setSortOrder(sortOrder);
     dlg->setSortRole(sortRole);
-    dlg->setAdvProp(hasAdvProp);
+    dlg->setFavoriteType(favoriteType);
 
     bool valRet = dlg->exec();
 
     if (valRet == QDialog::Accepted)
     {
-        name       = dlg->name();
-        hasAdvProp = dlg->advProp();
-        desc       = dlg->description();
-        date       = dlg->date();
-        icon       = dlg->icon();
-        urls       = dlg->urls();
-        current    = dlg->currentUrl();
+        name         = dlg->name();
+        desc         = dlg->description();
+        date         = dlg->date();
+        icon         = dlg->icon();
+        urls         = dlg->urls();
+        current      = dlg->currentUrl();
+        favoriteType = dlg->favoriteType();
     }
 
     delete dlg;
@@ -620,9 +626,9 @@ bool ShowfotoStackViewFavoriteItemDlg::favoriteItemDialog(ShowfotoStackViewFavor
     return valRet;
 }
 
-void ShowfotoStackViewFavoriteItemDlg::slotAdvancedPropertiesChanged()
+void ShowfotoStackViewFavoriteItemDlg::slotTypeActivated()
 {
-    bool b = advProp();
+    bool b = (favoriteType() == ShowfotoStackViewFavoriteItem::FavoriteItem);
 
     d->descLabel->setEnabled(b);
     d->descEdit->setEnabled(b);

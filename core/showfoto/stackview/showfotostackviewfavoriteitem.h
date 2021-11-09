@@ -44,7 +44,7 @@ public:
 
     enum FavoriteType
     {
-        FavoriteRoot = 0,       ///< Favorite is root item from hierarchy.
+        FavoriteRoot = -1,      ///< Favorite is root item from hierarchy.
         FavoriteFolder,         ///< Favorite is a simple folder in hierarchy.
         FavoriteItem            ///< Favorite is a hierarchy item including all properties.
     };
