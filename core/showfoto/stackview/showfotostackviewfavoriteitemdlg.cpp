@@ -150,7 +150,7 @@ ShowfotoStackViewFavoriteItemDlg::ShowfotoStackViewFavoriteItemDlg(ShowfotoStack
 
     d->nameEdit             = new QLineEdit(page);
     d->nameEdit->setClearButtonEnabled(true);
-    d->nameEdit->setPlaceholderText(i18nc("@info", "Enter favorite item name here..."));
+    d->nameEdit->setPlaceholderText(i18nc("@info", "Enter favorite entry name here..."));
     d->nameEdit->setToolTip(i18nc("@info", "The favorite item name which must be unique and not empty"));
     nameLabel->setBuddy(d->nameEdit);
 
@@ -160,12 +160,12 @@ ShowfotoStackViewFavoriteItemDlg::ShowfotoStackViewFavoriteItemDlg(ShowfotoStack
     hierLabel->setText(i18nc("@label: favorite item hierarchy properties", "Hierarchy:"));
 
     d->hierarchyLabel       = new DAdjustableLabel(page);
-    d->hierarchyLabel->setToolTip(i18nc("@info", "The favorite item hierarchy which must be unique in tree-view"));
+    d->hierarchyLabel->setToolTip(i18nc("@info", "The favorite entry hierarchy which must be unique in tree-view"));
 
     // --------------------------------------------------------
 
     QLabel* const typeLabel = new QLabel(page);
-    typeLabel->setText(i18nc("@label: favorite item type properties", "Type:"));
+    typeLabel->setText(i18nc("@label: favorite entry type properties", "Type:"));
 
     d->favoriteTypeBox      = new QComboBox(page);
     d->favoriteTypeBox->addItem(i18nc("@option:combo", "Favorite Folder"), ShowfotoStackViewFavoriteItem::FavoriteFolder);
@@ -196,6 +196,7 @@ ShowfotoStackViewFavoriteItemDlg::ShowfotoStackViewFavoriteItemDlg(ShowfotoStack
     d->dateEdit->setMaximumDate(QDate::currentDate().addDays(365));
     d->dateEdit->setDisplayFormat(QLatin1String("yyyy.MM.dd"));
     d->dateEdit->setCalendarPopup(true);
+    d->dateEdit->setWhatsThis(i18nc("@info", "Select favorite item date. By default, day of item creation is assigned."));
     d->dateLabel->setBuddy(d->dateEdit);
 
     // --------------------------------------------------------
@@ -206,10 +207,12 @@ ShowfotoStackViewFavoriteItemDlg::ShowfotoStackViewFavoriteItemDlg(ShowfotoStack
     d->iconButton               = new QPushButton(page);
     d->iconButton->setFixedSize(40, 40);
     d->iconButton->setIcon(QIcon::fromTheme(d->icon));
+    d->iconButton->setWhatsThis(i18nc("@info", "Select here the icon to use for this favorite item in tree-view."));
     d->iconTextLabel->setBuddy(d->iconButton);
 
     d->resetIconButton          = new QPushButton(QIcon::fromTheme(QLatin1String("view-refresh")),
                                                   i18nc("@action:button", "Reset"), page);
+    d->resetIconButton->setWhatsThis(i18nc("@info", "Assign favorite item icon to default in tree-view."));
 
 #ifndef HAVE_KICONTHEMES
 
