@@ -170,9 +170,10 @@ ShowfotoStackViewFavoriteItemDlg::ShowfotoStackViewFavoriteItemDlg(ShowfotoStack
     d->favoriteTypeBox      = new QComboBox(page);
     d->favoriteTypeBox->addItem(i18nc("@option:combo", "Favorite Folder"), ShowfotoStackViewFavoriteItem::FavoriteFolder);
     d->favoriteTypeBox->addItem(i18nc("@option:combo", "Favorite Item"),   ShowfotoStackViewFavoriteItem::FavoriteItem);
-    d->favoriteTypeBox->setWhatsThis(i18nc("@info:whatsthis", "A favorite Item type will host advanced properties as date, icon, "
-                                           "comment, and images list. A favorite Folder will be a simple entry in the hierarchy "
-                                           "without extra property."));
+    d->favoriteTypeBox->setToolTip(i18nc("@info",
+                                         "A \"Favorite Item\" is a hierarchy entry hosting advanced properties\n"
+                                         "as date, icon, description, and images list.\n"
+                                         "A \"Favorite Folder\" is a simple entry in the hierarchy without extra property."));
     typeLabel->setBuddy(d->favoriteTypeBox);
 
     // --------------------------------------------------------
