@@ -690,6 +690,9 @@ void ShowfotoStackViewFavoriteItemDlg::slotTypeActivated()
     d->urlsEdit->setEnabled(b);
     d->urlsLabel->setEnabled(b);
     d->nbImagesLabel->setEnabled(b);
+    d->dateLowButton->setEnabled(b);
+    d->dateAvgButton->setEnabled(b);
+    d->dateHighButton->setEnabled(b);
 
     if (b)
     {
