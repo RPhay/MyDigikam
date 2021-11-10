@@ -373,22 +373,25 @@ void ShowfotoStackViewFavoriteList::setFilter(const QString& filter, Qt::CaseSen
     {
         fitem = dynamic_cast<ShowfotoStackViewFavoriteItem*>(*it);
 
-        if (fitem && fitem->name().contains(filter, cs))
+        if (fitem)
         {
-            query++;
-
-            QTreeWidgetItem* item = *it;
-
-            do
+            if (fitem->name().contains(filter, cs))
             {
-                item->setHidden(false);
-                item = item->parent();
+                query++;
+
+                QTreeWidgetItem* item = *it;
+
+                do
+                {
+                    item->setHidden(false);
+                    item = item->parent();
+                }
+                while (item);
             }
-            while (item);
-        }
-        else
-        {
-            fitem->setHidden(true);
+            else
+            {
+                fitem->setHidden(true);
+            }
         }
 
         ++it;

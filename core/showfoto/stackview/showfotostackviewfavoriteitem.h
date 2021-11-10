@@ -51,7 +51,7 @@ public:
 
 public:
 
-    ShowfotoStackViewFavoriteItem(QTreeWidget* const parent);
+    explicit ShowfotoStackViewFavoriteItem(QTreeWidget* const parent);
     ShowfotoStackViewFavoriteItem(QTreeWidgetItem* const parent, int favType);
     ~ShowfotoStackViewFavoriteItem() override;
 

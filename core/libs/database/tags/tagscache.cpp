@@ -610,9 +610,9 @@ QList<int> TagsCache::tagsForPaths(const QStringList& tagPaths) const
 
     if (!tagPaths.isEmpty())
     {
-        foreach (const QString& tagPath, tagPaths)
+        foreach (const QString& path, tagPaths)
         {
-            ids << tagForPath(tagPath);
+            ids << tagForPath(path);
         }
     }
 
@@ -727,9 +727,9 @@ QList<int> TagsCache::createTags(const QStringList& tagPaths)
 
     if (!tagPaths.isEmpty())
     {
-        foreach (const QString& tagPath, tagPaths)
+        foreach (const QString& path, tagPaths)
         {
-            ids << createTag(tagPath);
+            ids << createTag(path);
         }
     }
 
@@ -742,9 +742,9 @@ QList<int> TagsCache::getOrCreateTags(const QStringList& tagPaths)
 
     if (!tagPaths.isEmpty())
     {
-        foreach (const QString& tagPath, tagPaths)
+        foreach (const QString& path, tagPaths)
         {
-            ids << getOrCreateTag(tagPath);
+            ids << getOrCreateTag(path);
         }
     }
 
@@ -1004,9 +1004,9 @@ int TagsCache::getOrCreateInternalTag(const QString& tagName)
     // ensure the parent tag exists, including the internal property
 
     getOrCreateTagWithProperty(tagPathOfDigikamInternalTags(IncludeLeadingSlash), propertyNameDigikamInternalTag());
-    QString tagPath = tagPathOfDigikamInternalTags(IncludeLeadingSlash) + QLatin1Char('/') + tagName;
+    QString path = tagPathOfDigikamInternalTags(IncludeLeadingSlash) + QLatin1Char('/') + tagName;
 
-    return getOrCreateTagWithProperty(tagPath, propertyNameDigikamInternalTag());
+    return getOrCreateTagWithProperty(path, propertyNameDigikamInternalTag());
 }
 
 void TagsCache::slotTagChanged(const TagChangeset& changeset)

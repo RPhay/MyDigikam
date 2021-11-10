@@ -360,10 +360,7 @@ bool ShowfotoStackViewFavoriteItemDlg::canAccept() const
         bool b2 = urls().isEmpty();
         bool b3 = false;     // If dialog in edit mode, the original name can be accepted.
 
-        if (
-            d->create ||
-            (!d->create && (name() != d->originalName))
-           )
+        if (d->create || (name() != d->originalName))
         {
             b3 = d->list->findFavoriteByHierarchy(ShowfotoStackViewFavoriteItem::hierarchyFromParent(name(), d->pitem));
         }
@@ -401,10 +398,7 @@ bool ShowfotoStackViewFavoriteItemDlg::canAccept() const
         bool b1 = name().isEmpty();
         bool b3 = false;     // If dialog in edit mode, the original name can be accepted.
 
-        if (
-            d->create ||
-            (!d->create && (name() != d->originalName))
-           )
+        if (d->create || (name() != d->originalName))
         {
             b3 = d->list->findFavoriteByHierarchy(ShowfotoStackViewFavoriteItem::hierarchyFromParent(name(), d->pitem));
         }
