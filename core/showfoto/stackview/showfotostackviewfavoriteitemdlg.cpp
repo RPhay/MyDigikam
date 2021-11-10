@@ -42,6 +42,7 @@
 #include <QDateTimeEdit>
 #include <QMimeDatabase>
 #include <QComboBox>
+#include <QMessageBox>
 
 // KDE includes
 
@@ -79,6 +80,9 @@ public:
         icon           (QLatin1String("folder-favorites")),
         iconButton     (nullptr),
         resetIconButton(nullptr),
+        dateLowButton  (nullptr),
+        dateAvgButton  (nullptr),
+        dateHighButton (nullptr),
         buttons        (nullptr),
         nameEdit       (nullptr),
         descEdit       (nullptr),
@@ -105,6 +109,9 @@ public:
 
     QPushButton*                   iconButton;
     QPushButton*                   resetIconButton;
+    QPushButton*                   dateLowButton;
+    QPushButton*                   dateAvgButton;
+    QPushButton*                   dateHighButton;
 
     QDialogButtonBox*              buttons;
 
@@ -199,19 +206,24 @@ ShowfotoStackViewFavoriteItemDlg::ShowfotoStackViewFavoriteItemDlg(ShowfotoStack
     d->dateEdit->setWhatsThis(i18nc("@info", "Select favorite item date. By default, day of item creation is assigned."));
     d->dateLabel->setBuddy(d->dateEdit);
 
+    DHBox* const buttonRow  = new DHBox(page);
+    d->dateLowButton        = new QPushButton(i18nc("@action: Selects the date of the oldest image", "&Oldest"),  buttonRow);
+    d->dateAvgButton        = new QPushButton(i18nc("@action: Calculates the average date",          "&Average"), buttonRow);
+    d->dateHighButton       = new QPushButton(i18nc("@action: Selects the date of the newest image", "Newest"),   buttonRow);
+
     // --------------------------------------------------------
 
-    d->iconTextLabel = new QLabel(page);
+    d->iconTextLabel        = new QLabel(page);
     d->iconTextLabel->setText(i18nc("@label", "&Icon:"));
 
-    d->iconButton               = new QPushButton(page);
+    d->iconButton           = new QPushButton(page);
     d->iconButton->setFixedSize(40, 40);
     d->iconButton->setIcon(QIcon::fromTheme(d->icon));
     d->iconButton->setWhatsThis(i18nc("@info", "Select here the icon to use for this favorite item in tree-view."));
     d->iconTextLabel->setBuddy(d->iconButton);
 
-    d->resetIconButton          = new QPushButton(QIcon::fromTheme(QLatin1String("view-refresh")),
-                                                  i18nc("@action:button", "Reset"), page);
+    d->resetIconButton      = new QPushButton(QIcon::fromTheme(QLatin1String("view-refresh")),
+                                              i18nc("@action:button", "Reset"), page);
     d->resetIconButton->setWhatsThis(i18nc("@info", "Assign favorite item icon to default in tree-view."));
 
 #ifndef HAVE_KICONTHEMES
@@ -270,6 +282,7 @@ ShowfotoStackViewFavoriteItemDlg::ShowfotoStackViewFavoriteItemDlg(ShowfotoStack
     grid->addWidget(d->descEdit,        3,  1, 1, 3);
     grid->addWidget(d->dateLabel,       4,  0, 1, 1);
     grid->addWidget(d->dateEdit,        4,  1, 1, 3);
+    grid->addWidget(buttonRow,          4,  3, 1, 1);
     grid->addWidget(d->iconTextLabel,   5,  0, 1, 1);
     grid->addWidget(d->iconButton,      5,  1, 1, 1);
     grid->addWidget(d->resetIconButton, 5,  2, 1, 1);
@@ -310,6 +323,15 @@ ShowfotoStackViewFavoriteItemDlg::ShowfotoStackViewFavoriteItemDlg(ShowfotoStack
 
     connect(d->buttons->button(QDialogButtonBox::Cancel), SIGNAL(clicked()),
             this, SLOT(reject()));
+
+    connect(d->dateLowButton, SIGNAL(clicked()),
+            this, SLOT(slotDateLowButtonClicked()));
+
+    connect(d->dateAvgButton, SIGNAL(clicked()),
+            this, SLOT(slotDateAverageButtonClicked()));
+
+    connect(d->dateHighButton, SIGNAL(clicked()),
+            this, SLOT(slotDateHighButtonClicked()));
 
     // --------------------------------------------------------
 
@@ -418,6 +440,9 @@ void ShowfotoStackViewFavoriteItemDlg::slotModified()
     d->hierarchyLabel->setAdjustedText(ShowfotoStackViewFavoriteItem::hierarchyFromParent(name(), d->pitem));
     int numberOfImages = d->urlsEdit->imageUrls().count();
     d->nbImagesLabel->setText(i18ncp("@info", "%1 file", "%1 files", numberOfImages));
+    d->dateLowButton->setEnabled(numberOfImages > 0);
+    d->dateAvgButton->setEnabled(numberOfImages > 0);
+    d->dateHighButton->setEnabled(numberOfImages > 0);
 }
 
 QString ShowfotoStackViewFavoriteItemDlg::name() const
@@ -540,6 +565,27 @@ void ShowfotoStackViewFavoriteItemDlg::slotIconChanged()
 
 #endif
 
+}
+
+QList<QDate> ShowfotoStackViewFavoriteItemDlg::getItemDates() const
+{
+    QList<QDate> dates;
+    QDateTime dt;
+    QTreeWidgetItemIterator it(d->urlsEdit->listView());
+
+    while (*it)
+    {
+        dt = (*it)->data(DItemsListView::User3, Qt::UserRole).toDateTime();
+
+        if (dt.isValid())
+        {
+            dates << dt.date();
+        }
+
+        ++it;
+    }
+
+    return dates;
 }
 
 void ShowfotoStackViewFavoriteItemDlg::slotUpdateMetadata()
@@ -669,6 +715,61 @@ void ShowfotoStackViewFavoriteItemDlg::slotTypeActivated()
     }
 
     slotModified();
+}
+
+void ShowfotoStackViewFavoriteItemDlg::slotDateLowButtonClicked()
+{
+    setCursor(Qt::WaitCursor);
+
+    QDate lowDate = getItemDates().first();
+
+    if (lowDate.isValid())
+    {
+        d->dateEdit->setDate(lowDate);
+    }
+
+    setCursor(Qt::ArrowCursor);
+}
+
+void ShowfotoStackViewFavoriteItemDlg::slotDateHighButtonClicked()
+{
+    setCursor(Qt::WaitCursor);
+
+    QDate highDate = getItemDates().last();
+
+    if (highDate.isValid())
+    {
+        d->dateEdit->setDate(highDate);
+    }
+
+    setCursor(Qt::ArrowCursor);
+}
+
+void ShowfotoStackViewFavoriteItemDlg::slotDateAverageButtonClicked()
+{
+    setCursor(Qt::WaitCursor);
+
+    QList<QDate> dates = getItemDates();
+    qint64 julianDays  = 0;
+
+    foreach (const QDate& date, dates)
+    {
+        julianDays += date.toJulianDay();
+    }
+
+    QDate avDate       = QDate::fromJulianDay(julianDays / dates.size());
+
+    setCursor(Qt::ArrowCursor);
+
+    if (avDate.isValid())
+    {
+        d->dateEdit->setDate(avDate);
+    }
+    else
+    {
+        QMessageBox::critical(this, i18nc("@title: favorite item properties", "Could Not Calculate Average"),
+                                    i18nc("@info: favorite item properties", "Could not calculate date average for this favorite item."));
+    }
 }
 
 bool ShowfotoStackViewFavoriteItemDlg::itemIsLessThanHandler(const QTreeWidgetItem* current, const QTreeWidgetItem& other)

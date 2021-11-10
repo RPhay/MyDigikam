@@ -99,6 +99,8 @@ public:
 
 private:
 
+    QList<QDate> getItemDates() const;
+
     static bool itemIsLessThanHandler(const QTreeWidgetItem* current, const QTreeWidgetItem& other);
 
 private Q_SLOTS:
@@ -108,6 +110,9 @@ private Q_SLOTS:
     void slotModified();
     void slotUpdateMetadata();
     void slotTypeActivated();
+    void slotDateLowButtonClicked();
+    void slotDateAverageButtonClicked();
+    void slotDateHighButtonClicked();
 
 private:
 
