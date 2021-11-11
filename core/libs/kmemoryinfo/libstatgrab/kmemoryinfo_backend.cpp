@@ -91,6 +91,7 @@ static int fillMemoryInfo(Digikam::KMemoryInfo::KMemoryInfoData* const data)
 #endif
 #ifdef Q_OS_MACOS
 #include <stdio.h>
+#include <stdint.h>
 #include <sys/types.h>
 #include <sys/sysctl.h>
 #include <sys/vmmeter.h>
