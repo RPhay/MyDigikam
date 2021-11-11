@@ -175,8 +175,8 @@ ShowfotoStackViewFavoriteItemDlg::ShowfotoStackViewFavoriteItemDlg(ShowfotoStack
     typeLabel->setText(i18nc("@label: favorite entry type properties", "Type:"));
 
     d->favoriteTypeBox      = new QComboBox(page);
-    d->favoriteTypeBox->addItem(i18nc("@option:combo", "Favorite Folder"), ShowfotoStackViewFavoriteItem::FavoriteFolder);
-    d->favoriteTypeBox->addItem(i18nc("@option:combo", "Favorite Item"),   ShowfotoStackViewFavoriteItem::FavoriteItem);
+    d->favoriteTypeBox->addItem(i18nc("@item:inlistbox", "Favorite Folder"), ShowfotoStackViewFavoriteItem::FavoriteFolder);
+    d->favoriteTypeBox->addItem(i18nc("@item:inlistbox", "Favorite Item"),   ShowfotoStackViewFavoriteItem::FavoriteItem);
     d->favoriteTypeBox->setToolTip(i18nc("@info",
                                          "A \"Favorite Item\" is a hierarchy entry hosting advanced properties\n"
                                          "as date, icon, description, and images list.\n"
@@ -251,11 +251,11 @@ ShowfotoStackViewFavoriteItemDlg::ShowfotoStackViewFavoriteItemDlg(ShowfotoStack
     d->urlsEdit->setAllowDuplicate(false);
     d->urlsEdit->setControlButtonsPlacement(DItemsList::ControlButtonsBelow);
     d->urlsEdit->setControlButtons(DItemsList::Add | DItemsList::Remove | DItemsList::Clear);
-    d->urlsEdit->listView()->setColumn(DItemsListView::Filename, i18nc("@title", "Name"), true);
-    d->urlsEdit->listView()->setColumn(DItemsListView::User1,    i18nc("@title", "Size"), true);
-    d->urlsEdit->listView()->setColumn(DItemsListView::User2,    i18nc("@title", "Type"), true);        // Mime-type
-    d->urlsEdit->listView()->setColumn(DItemsListView::User3,    i18nc("@title", "Date"), true);
-    d->urlsEdit->listView()->setColumn(DItemsListView::User4,    i18nc("@title", "Path"), true);
+    d->urlsEdit->listView()->setColumn(DItemsListView::Filename, i18nc("@title:column file name",      "Name"), true);
+    d->urlsEdit->listView()->setColumn(DItemsListView::User1,    i18nc("@title:column file size",      "Size"), true);
+    d->urlsEdit->listView()->setColumn(DItemsListView::User2,    i18nc("@title:column file type-mime", "Type"), true);
+    d->urlsEdit->listView()->setColumn(DItemsListView::User3,    i18nc("@title:column file date",      "Date"), true);
+    d->urlsEdit->listView()->setColumn(DItemsListView::User4,    i18nc("@title:column file path",      "Path"), true);
 
     d->urlsEdit->setWhatsThis(i18nc("@info", "This is the list of files hosted by this favorite item.\n"
                                              "The current selected file from this list will be automatically\n"
