@@ -252,7 +252,7 @@ int get_mem_stats(Digikam::KMemoryInfo::KMemoryInfoData* const data)
 #ifdef Q_OS_MACOS
     size_t  vmt_size;
     size_t  uint64_size;
-    u_int64 page_size;
+    uint64_t page_size;
     struct  vmtotal vmt;
 #endif
 
