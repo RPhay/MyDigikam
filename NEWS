@@ -208,5 +208,5 @@ BUGFIXES:
 177 ==> 426995 - Native dark theme appear unsupported on macOS.
 178 ==> 398377 - Rename jpg and related dng file keeping the same base name.
 179 ==> 444023 - Enhanced rename.
-180 ==> 
+180 ==> 445061 - NEF from Nikon D800 and D850 not shown.
 181 ==> 
