@@ -108,6 +108,7 @@ DItemsList::DItemsList(QWidget* const parent)
 
     // --------------------------------------------------------
 
+    setIconSize(d->iconSize);
     setControlButtons(Add | Remove | MoveUp | MoveDown | Clear | Save | Load ); // add all buttons      (default)
     setControlButtonsPlacement(ControlButtonsBelow);                            // buttons on the bottom (default)
     enableDragAndDrop(true);                                                    // enable drag and drop (default)
