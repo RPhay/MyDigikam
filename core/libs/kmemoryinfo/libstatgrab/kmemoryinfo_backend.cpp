@@ -89,6 +89,7 @@ static int fillMemoryInfo(Digikam::KMemoryInfo::KMemoryInfoData* const data)
 #ifdef Q_OS_WIN
 #include <windows.h>
 #endif
+/*
 #ifdef Q_OS_MACOS
 #include <stdio.h>
 #include <stdint.h>
@@ -96,7 +97,7 @@ static int fillMemoryInfo(Digikam::KMemoryInfo::KMemoryInfoData* const data)
 #include <sys/sysctl.h>
 #include <sys/vmmeter.h>
 #endif
-
+*/
 #if defined(Q_OS_LINUX)
 char* sg_f_read_line(FILE* f, const char* string)
 {
@@ -250,10 +251,13 @@ int get_mem_stats(Digikam::KMemoryInfo::KMemoryInfoData* const data)
 #endif
 
 #ifdef Q_OS_MACOS
+    Q_UNUSED(data);
+/*
     size_t  vmt_size;
     size_t  uint64_size;
     uint64_t page_size;
     struct  vmtotal vmt;
+*/
 #endif
 
 #ifdef Q_OS_HPUX
@@ -520,7 +524,7 @@ int get_mem_stats(Digikam::KMemoryInfo::KMemoryInfoData* const data)
 
     return 1;
 #endif // Q_OS_WIN
-
+/*
 #ifdef Q_OS_MACOS
     data->platform = QLatin1String("MACOS");
 
@@ -544,7 +548,7 @@ int get_mem_stats(Digikam::KMemoryInfo::KMemoryInfoData* const data)
 
     return 1;
 #endif // Q_OS_MACOS
-
+*/
 return -1;
 }
 
