@@ -204,7 +204,7 @@ BUGFIXES:
 173 ==> 444969 - digiKam often freezes when dropping a tag over another to merge them.
 174 ==> 444501 - Face detection, write name tags (metadata) to file - Changes date and time on photo.
 175 ==> 444887 - Invoking Face Search causes application crash.
-176 ==> 
+176 ==> 445345 - When creating a new tag with a comma, the tag is truncated.
 177 ==> 
 178 ==> 
 179 ==> 
