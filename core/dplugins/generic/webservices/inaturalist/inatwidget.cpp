@@ -210,7 +210,8 @@ void INatWidget::updateLabels(const QString& name, const QString& /*url*/)
 
     if (!name.isEmpty())
     {
-        url += QLatin1String("observations/") + name;
+        url += QLatin1String("observations?place_id=any&user_id=") + name +
+               QLatin1String("&verifiable=any");
     }
 
     getHeaderLbl()->setText(i18n("<b><h2><a href=\"%1\"><font color=\"#74ac00\""

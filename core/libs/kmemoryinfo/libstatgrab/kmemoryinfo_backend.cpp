@@ -91,6 +91,7 @@ static int fillMemoryInfo(Digikam::KMemoryInfo::KMemoryInfoData* const data)
 #endif
 #ifdef Q_OS_MACOS
 #include <stdio.h>
+#include <stdint.h>
 #include <sys/types.h>
 #include <sys/sysctl.h>
 #include <sys/vmmeter.h>
@@ -251,7 +252,7 @@ int get_mem_stats(Digikam::KMemoryInfo::KMemoryInfoData* const data)
 #ifdef Q_OS_MACOS
     size_t  vmt_size;
     size_t  uint64_size;
-    u_int64 page_size;
+    uint64_t page_size;
     struct  vmtotal vmt;
 #endif
 
