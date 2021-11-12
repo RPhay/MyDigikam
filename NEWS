@@ -205,7 +205,7 @@ BUGFIXES:
 174 ==> 444501 - Face detection, write name tags (metadata) to file - Changes date and time on photo.
 175 ==> 444887 - Invoking Face Search causes application crash.
 176 ==> 445345 - When creating a new tag with a comma, the tag is truncated.
-177 ==> 
+177 ==> 426995 - Native dark theme appear unsupported on macOS.
 178 ==> 
 179 ==> 
 180 ==> 
