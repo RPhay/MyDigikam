@@ -209,4 +209,9 @@ BUGFIXES:
 178 ==> 398377 - Rename jpg and related dng file keeping the same base name.
 179 ==> 444023 - Enhanced rename.
 180 ==> 445061 - NEF from Nikon D800 and D850 not shown.
-181 ==> 
+181 ==> 445431 - Export to Local Storage" with Option "Adjust image properties" fails for certain jpgs.
+182 ==> 
+183 ==> 
+184 ==> 
+185 ==> 
+186 ==> 
