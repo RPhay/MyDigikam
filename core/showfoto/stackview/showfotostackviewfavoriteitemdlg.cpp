@@ -141,9 +141,9 @@ ShowfotoStackViewFavoriteItemDlg::ShowfotoStackViewFavoriteItemDlg(ShowfotoStack
     setModal(true);
     setObjectName(QLatin1String("ShowfotoStackViewFavoriteItemDlg"));
 
-    d->create  = create;
-    d->list    = list;
-    d->buttons = new QDialogButtonBox(QDialogButtonBox::Ok | QDialogButtonBox::Cancel, this);
+    d->create               = create;
+    d->list                 = list;
+    d->buttons              = new QDialogButtonBox(QDialogButtonBox::Ok | QDialogButtonBox::Cancel, this);
     d->buttons->button(QDialogButtonBox::Ok)->setDefault(true);
 
 
@@ -158,7 +158,7 @@ ShowfotoStackViewFavoriteItemDlg::ShowfotoStackViewFavoriteItemDlg(ShowfotoStack
     d->nameEdit             = new QLineEdit(page);
     d->nameEdit->setClearButtonEnabled(true);
     d->nameEdit->setPlaceholderText(i18nc("@info", "Enter favorite entry name here..."));
-    d->nameEdit->setToolTip(i18nc("@info", "The favorite item name which must be unique and not empty"));
+    d->nameEdit->setWhatsThis(i18nc("@info", "The favorite item name which must be unique and not empty"));
     nameLabel->setBuddy(d->nameEdit);
 
     // --------------------------------------------------------
@@ -167,7 +167,7 @@ ShowfotoStackViewFavoriteItemDlg::ShowfotoStackViewFavoriteItemDlg(ShowfotoStack
     hierLabel->setText(i18nc("@label: favorite item hierarchy properties", "Hierarchy:"));
 
     d->hierarchyLabel       = new DAdjustableLabel(page);
-    d->hierarchyLabel->setToolTip(i18nc("@info", "The favorite entry hierarchy which must be unique in tree-view"));
+    d->hierarchyLabel->setWhatsThis(i18nc("@info", "The favorite entry hierarchy which must be unique in tree-view"));
 
     // --------------------------------------------------------
 
@@ -177,10 +177,10 @@ ShowfotoStackViewFavoriteItemDlg::ShowfotoStackViewFavoriteItemDlg(ShowfotoStack
     d->favoriteTypeBox      = new QComboBox(page);
     d->favoriteTypeBox->addItem(i18nc("@item:inlistbox", "Favorite Folder"), ShowfotoStackViewFavoriteItem::FavoriteFolder);
     d->favoriteTypeBox->addItem(i18nc("@item:inlistbox", "Favorite Item"),   ShowfotoStackViewFavoriteItem::FavoriteItem);
-    d->favoriteTypeBox->setToolTip(i18nc("@info",
-                                         "A \"Favorite Item\" is a hierarchy entry hosting advanced properties\n"
-                                         "as date, icon, description, and images list.\n"
-                                         "A \"Favorite Folder\" is a simple entry in the hierarchy without extra property."));
+    d->favoriteTypeBox->setWhatsThis(i18nc("@info",
+                                           "A \"Favorite Item\" is a hierarchy entry hosting advanced properties "
+                                           "as date, icon, description, and images list. "
+                                           "A \"Favorite Folder\" is a simple entry in the hierarchy without extra property."));
     typeLabel->setBuddy(d->favoriteTypeBox);
 
     // --------------------------------------------------------
@@ -208,8 +208,11 @@ ShowfotoStackViewFavoriteItemDlg::ShowfotoStackViewFavoriteItemDlg(ShowfotoStack
 
     DHBox* const buttonRow  = new DHBox(page);
     d->dateLowButton        = new QPushButton(i18nc("@action: Selects the date of the oldest image", "&Oldest"),  buttonRow);
+    d->dateLowButton->setWhatsThis(i18nc("@info", "Use this button to select the date of the oldest image from the list."));
     d->dateAvgButton        = new QPushButton(i18nc("@action: Calculates the average date",          "&Average"), buttonRow);
+    d->dateAvgButton->setWhatsThis(i18nc("@info", "Use this button to calculates the average date of images from the list."));
     d->dateHighButton       = new QPushButton(i18nc("@action: Selects the date of the newest image", "Newest"),   buttonRow);
+    d->dateHighButton->setWhatsThis(i18nc("@info", "Use this button to select the date of the newest image from the list."));
 
     // --------------------------------------------------------
 
@@ -257,9 +260,9 @@ ShowfotoStackViewFavoriteItemDlg::ShowfotoStackViewFavoriteItemDlg(ShowfotoStack
     d->urlsEdit->listView()->setColumn(DItemsListView::User3,    i18nc("@title:column file date",      "Date"), true);
     d->urlsEdit->listView()->setColumn(DItemsListView::User4,    i18nc("@title:column file path",      "Path"), true);
 
-    d->urlsEdit->setWhatsThis(i18nc("@info", "This is the list of files hosted by this favorite item.\n"
-                                             "The current selected file from this list will be automatically\n"
-                                             "shown in editor when favorite is open. If none is selected,\n"
+    d->urlsEdit->setWhatsThis(i18nc("@info", "This is the list of files hosted by this favorite item. "
+                                             "The current selected file from this list will be automatically "
+                                             "shown in editor when favorite is open. If none is selected, "
                                              "first one from the list will be displayed."));
     d->urlsLabel->setBuddy(d->urlsEdit);
 
@@ -273,25 +276,25 @@ ShowfotoStackViewFavoriteItemDlg::ShowfotoStackViewFavoriteItemDlg(ShowfotoStack
     // --------------------------------------------------------
 
     grid->addWidget(nameLabel,          0,  0, 1, 1);
-    grid->addWidget(d->nameEdit,        0,  1, 1, 3);
+    grid->addWidget(d->nameEdit,        0,  1, 1, 4);
     grid->addWidget(hierLabel,          1,  0, 1, 1);
-    grid->addWidget(d->hierarchyLabel,  1,  1, 1, 3);
+    grid->addWidget(d->hierarchyLabel,  1,  1, 1, 4);
     grid->addWidget(typeLabel,          2,  0, 1, 1);
-    grid->addWidget(d->favoriteTypeBox, 2,  1, 1, 3);
+    grid->addWidget(d->favoriteTypeBox, 2,  1, 1, 4);
     grid->addWidget(d->descLabel,       3,  0, 1, 1);
-    grid->addWidget(d->descEdit,        3,  1, 1, 3);
+    grid->addWidget(d->descEdit,        3,  1, 1, 4);
     grid->addWidget(d->dateLabel,       4,  0, 1, 1);
     grid->addWidget(d->dateEdit,        4,  1, 1, 3);
     grid->addWidget(buttonRow,          4,  3, 1, 1);
     grid->addWidget(d->iconTextLabel,   5,  0, 1, 1);
     grid->addWidget(d->iconButton,      5,  1, 1, 1);
     grid->addWidget(d->resetIconButton, 5,  2, 1, 1);
-    grid->addWidget(d->urlsEdit,        6,  1, 4, 3);
+    grid->addWidget(d->urlsEdit,        6,  1, 4, 4);
     grid->addWidget(d->urlsLabel,       7,  0, 1, 1);
     grid->addWidget(d->nbImagesLabel,   8,  0, 1, 1);
-    grid->addWidget(d->helpLabel,       10, 0, 1, 4);
+    grid->addWidget(d->helpLabel,       10, 0, 1, 5);
     grid->setRowStretch(9, 10);
-    grid->setColumnStretch(3, 10);
+    grid->setColumnStretch(4, 10);
 
     QVBoxLayout* const vbx = new QVBoxLayout(this);
     vbx->addWidget(page);
