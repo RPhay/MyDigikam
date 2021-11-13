@@ -56,6 +56,7 @@
 // Local includes
 
 #include "digikam_globals.h"
+#include "digikam_config.h"
 #include "digikam_debug.h"
 #include "thememanager.h"
 #include "dlayoutbox.h"
@@ -277,6 +278,25 @@ MediaPlayerView::MediaPlayerView(QWidget* const parent)
     d->playerView->setFrameStyle(QFrame::StyledPanel | QFrame::Plain);
     d->playerView->setLineWidth(1);
 
+    QStringList audioBackends = d->player->audio()->backendsAvailable();
+    int audioIndex            = -1;
+
+#ifdef Q_OS_LINUX
+
+    audioIndex = audioBackends.indexOf(QLatin1String("OpenAL"));
+
+#elif defined Q_OS_WIN
+
+    audioIndex = audioBackends.indexOf(QLatin1String("DirectSound"));
+
+#endif
+
+    if (audioIndex != -1)
+    {
+        audioBackends.move(audioIndex, 0);
+        d->player->audio()->setBackends(audioBackends);
+    }
+
     QVBoxLayout* const vbox2 = new QVBoxLayout(d->playerView);
     vbox2->addWidget(vWidget,        10);
     vbox2->addWidget(hbox,            0);
@@ -354,7 +374,7 @@ MediaPlayerView::MediaPlayerView(QWidget* const parent)
 
 
     qCDebug(DIGIKAM_GENERAL_LOG) << "Audio output backends:"
-                                 << d->player->audio()->backendsAvailable();
+                                 << audioBackends;
 
     qCDebug(DIGIKAM_GENERAL_LOG) << "Number of supported audio codecs:"
                                  << AudioDecoder::supportedCodecs().count();
