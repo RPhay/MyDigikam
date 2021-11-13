@@ -206,7 +206,12 @@ BUGFIXES:
 175 ==> 444887 - Invoking Face Search causes application crash.
 176 ==> 445345 - When creating a new tag with a comma, the tag is truncated.
 177 ==> 426995 - Native dark theme appear unsupported on macOS.
-178 ==> 
-179 ==> 
-180 ==> 
-181 ==> 
+178 ==> 398377 - Rename jpg and related dng file keeping the same base name.
+179 ==> 444023 - Enhanced rename.
+180 ==> 445061 - NEF from Nikon D800 and D850 not shown.
+181 ==> 445431 - Export to Local Storage" with Option "Adjust image properties" fails for certain jpgs.
+182 ==> 
+183 ==> 
+184 ==> 
+185 ==> 
+186 ==> 

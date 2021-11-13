@@ -53,6 +53,8 @@ public:
     QString     category()        const;
     QStringList albumCategories() const;
 
+public:
+
     static bool editProps(PAlbum* const album,
                           QString&      title,
                           QString&      comments,
