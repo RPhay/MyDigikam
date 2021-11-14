@@ -42,9 +42,8 @@
 
 // QtAV includes
 
-#include <QtAV/VideoOutput.h>    // krazy:exclude=includes
-#include <QtAV/LibAVFilter.h>    // krazy:exclude=includes
-#include <QtAV/version.h>        // krazy:exclude=includes
+#include <QtAVWidgets/WidgetRenderer.h>   // krazy:exclude=includes
+#include <QtAV/version.h>                 // krazy:exclude=includes
 
 // Local includes
 
@@ -86,21 +85,19 @@ public:
 
     explicit Private()
       : iface           (nullptr),
-        rotateFilter    (nullptr),
-        videoOutput     (nullptr),
+        videoWidget     (nullptr),
         player          (nullptr),
         slider          (nullptr),
         volume          (nullptr),
         tlabel          (nullptr),
         indicator       (nullptr),
-        sliderTime      (0)
+        videoOrientation(0)
     {
     }
 
     DInfoInterface*      iface;
 
-    LibAVFilterVideo*    rotateFilter;
-    VideoOutput*         videoOutput;
+    WidgetRenderer*      videoWidget;
     AVPlayer*            player;
 
     QSlider*             slider;
@@ -109,7 +106,7 @@ public:
 
     DHBox*               indicator;
 
-    qint64               sliderTime;
+    int                  videoOrientation;
 };
 
 SlideVideo::SlideVideo(QWidget* const parent)
@@ -119,16 +116,13 @@ SlideVideo::SlideVideo(QWidget* const parent)
     setAttribute(Qt::WA_DeleteOnClose);
     setMouseTracking(true);
 
-    d->videoOutput         = new VideoOutput(this);
-    QWidget* const vWidget = d->videoOutput->widget() ? d->videoOutput->widget()
-                                                      : new QWidget(this);
+    d->videoWidget    = new WidgetRenderer(this);
+    d->videoWidget->setSizePolicy(QSizePolicy::Expanding, QSizePolicy::Expanding);
+    d->videoWidget->setOutAspectRatioMode(VideoRenderer::VideoAspectRatio);
+    d->videoWidget->setMouseTracking(true);
 
-    d->player              = new AVPlayer(this);
-    d->rotateFilter        = new LibAVFilterVideo(d->player);
-
-    d->videoOutput->setOutAspectRatioMode(VideoRenderer::VideoAspectRatio);
-    d->player->setRenderer(d->videoOutput);
-    vWidget->setMouseTracking(true);
+    d->player         = new AVPlayer(this);
+    d->player->setRenderer(d->videoWidget);
 
     d->indicator      = new DHBox(this);
     d->slider         = new QSlider(Qt::Horizontal, d->indicator);
@@ -147,9 +141,10 @@ SlideVideo::SlideVideo(QWidget* const parent)
     d->indicator->setAutoFillBackground(true);
     d->indicator->setSpacing(4);
 
+
     QGridLayout* const grid = new QGridLayout(this);
-    grid->addWidget(vWidget,      0, 0, 2, 1);
-    grid->addWidget(d->indicator, 0, 0, 1, 1); // Widget will be over player to not change layout when visibility is changed.
+    grid->addWidget(d->videoWidget, 0, 0, 2, 1);
+    grid->addWidget(d->indicator,   0, 0, 1, 1); // Widget will be over player to not change layout when visibility is changed.
     grid->setRowStretch(0, 1);
     grid->setRowStretch(1, 100);
     grid->setContentsMargins(QMargins());
@@ -171,6 +166,9 @@ SlideVideo::SlideVideo(QWidget* const parent)
 
     connect(d->volume, SIGNAL(valueChanged(int)),
             this, SLOT(slotVolumeChanged(int)));
+
+    connect(d->player, SIGNAL(stateChanged(QtAV::AVPlayer::State)),
+            this, SLOT(slotPlayerStateChanged(QtAV::AVPlayer::State)));
 
     connect(d->player, SIGNAL(mediaStatusChanged(QtAV::MediaStatus)),
             this, SLOT(slotMediaStatusChanged(QtAV::MediaStatus)));
@@ -206,7 +204,6 @@ void SlideVideo::setCurrentUrl(const QUrl& url)
 {
     d->player->stop();
 
-    int videoAngle      = 0;
     int orientation     = 0;
     bool supportedCodec = true;
 
@@ -227,28 +224,20 @@ void SlideVideo::setCurrentUrl(const QUrl& url)
         case MetaEngine::ORIENTATION_ROT_90:
         case MetaEngine::ORIENTATION_ROT_90_HFLIP:
         case MetaEngine::ORIENTATION_ROT_90_VFLIP:
-            videoAngle = 90;
+            d->videoOrientation = 90;
             break;
 
         case MetaEngine::ORIENTATION_ROT_180:
-            videoAngle = 180;
+            d->videoOrientation = 180;
             break;
 
         case MetaEngine::ORIENTATION_ROT_270:
-            videoAngle = 270;
+            d->videoOrientation = 270;
             break;
 
         default:
-            videoAngle = 0;
+            d->videoOrientation = 0;
             break;
-    }
-
-    d->rotateFilter->uninstall();
-
-    if (videoAngle != 0)
-    {
-        d->rotateFilter->installTo(d->player);
-        d->rotateFilter->setOptions(QString::fromLatin1("rotate=PI*%1").arg(videoAngle));
     }
 
     if (supportedCodec)
@@ -268,7 +257,25 @@ void SlideVideo::setCurrentUrl(const QUrl& url)
 void SlideVideo::showIndicator(bool b)
 {
     d->indicator->setVisible(b);
-    d->indicator->raise();
+}
+
+void SlideVideo::slotPlayerStateChanged(QtAV::AVPlayer::State state)
+{
+    if (state == QtAV::AVPlayer::PlayingState)
+    {
+        int rotate = 0;
+
+#if QTAV_VERSION > QTAV_VERSION_CHK(1, 12, 0)
+
+        // fix wrong rotation from QtAV git/master
+
+        rotate     = d->player->statistics().video_only.rotate;
+
+#endif
+        d->videoWidget->setOrientation((-rotate) + d->videoOrientation);
+        qCDebug(DIGIKAM_GENERAL_LOG) << "Found video orientation:"
+                                     << d->videoOrientation;
+    }
 }
 
 void SlideVideo::slotMediaStatusChanged(QtAV::MediaStatus status)
@@ -311,14 +318,6 @@ void SlideVideo::stop()
 
 void SlideVideo::slotPositionChanged(qint64 position)
 {
-    if ((d->sliderTime < position)       &&
-        ((d->sliderTime + 100) > position))
-    {
-        return;
-    }
-
-    d->sliderTime = position;
-
     if (!d->slider->isSliderDown())
     {
         d->slider->blockSignals(true);
