@@ -125,7 +125,7 @@ public: // Faces helpers
      * @param write : if true all faces will be written, else update mode:
      *                search if at least a face tag exist and write if true.
      */
-    bool setItemFacesMap(QMultiMap<QString, QVariant>& facesPath, bool write)                                           const;
+    bool setItemFacesMap(const QMultiMap<QString, QVariant>& facesPath, bool write, const QSize& size = QSize())       const;
 
     /**
      * Remove Images Face Map tags from Picassa/Metadatagroup format.

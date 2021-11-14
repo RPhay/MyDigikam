@@ -141,7 +141,7 @@ bool DMetadata::getItemFacesMap(QMultiMap<QString, QVariant>& faces) const
     return !faces.isEmpty();
 }
 
-bool DMetadata::setItemFacesMap(QMultiMap<QString, QVariant>& facesPath, bool write) const
+bool DMetadata::setItemFacesMap(const QMultiMap<QString, QVariant>& facesPath, bool write, const QSize& size) const
 {
     QString qxmpTagName    = QLatin1String("Xmp.mwg-rs.Regions/mwg-rs:RegionList");
     QString nameTagKey     = qxmpTagName + QLatin1String("[%1]/mwg-rs:Name");
@@ -152,6 +152,11 @@ bool DMetadata::setItemFacesMap(QMultiMap<QString, QVariant>& facesPath, bool wr
     QString areawTagKey    = qxmpTagName + QLatin1String("[%1]/mwg-rs:Area/stArea:w");
     QString areahTagKey    = qxmpTagName + QLatin1String("[%1]/mwg-rs:Area/stArea:h");
     QString areanormTagKey = qxmpTagName + QLatin1String("[%1]/mwg-rs:Area/stArea:unit");
+
+    QString adimTagName    = QLatin1String("Xmp.mwg-rs.Regions/mwg-rs:AppliedToDimensions");
+    QString adimhTagKey    = adimTagName + QLatin1String("/stDim:h");
+    QString adimwTagKey    = adimTagName + QLatin1String("/stDim:w");
+    QString adimpixTagKey  = adimTagName + QLatin1String("/stDim:unit");
 
     QString winQxmpTagName = QLatin1String("Xmp.MP.RegionInfo/MPRI:Regions");
     QString winRectTagKey  = winQxmpTagName + QLatin1String("[%1]/MPReg:Rectangle");
@@ -170,6 +175,33 @@ bool DMetadata::setItemFacesMap(QMultiMap<QString, QVariant>& facesPath, bool wr
     if (facesPath.isEmpty())
     {
         return removeItemFacesMap();
+    }
+
+    if (!size.isNull())
+    {
+        // Set tag AppliedToDimens, with xmp type struct
+
+        setXmpTagString(adimTagName.toLatin1().constData(),
+                        QString(),
+                        MetaEngine::StructureTag);
+
+        // Set stDim:w inside AppliedToDimens structure
+
+        setXmpTagString(adimwTagKey.toLatin1().constData(),
+                        QString::number(size.width()),
+                        MetaEngine::NormalTag);
+
+        // Set stDim:h inside AppliedToDimens structure
+
+        setXmpTagString(adimhTagKey.toLatin1().constData(),
+                        QString::number(size.height()),
+                        MetaEngine::NormalTag);
+
+        // Set stDim:unit inside AppliedToDimens structure as pixel
+
+        setXmpTagString(adimpixTagKey.toLatin1().constData(),
+                        QLatin1String("pixel"),
+                        MetaEngine::NormalTag);
     }
 
     setXmpTagString(qxmpTagName.toLatin1().constData(),
@@ -274,7 +306,7 @@ bool DMetadata::setItemFacesMap(QMultiMap<QString, QVariant>& facesPath, bool wr
                               MetaEngine::NormalTag);
         qCDebug(DIGIKAM_METAENGINE_LOG) << "    => set heigh:" << ok;
 
-        // Set stArea:unit inside Area structure  as normalized
+        // Set stArea:unit inside Area structure as normalized
 
         ok &= setXmpTagString(areanormTagKey.arg(j).toLatin1().constData(),
                               QLatin1String("normalized"),

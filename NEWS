@@ -210,8 +210,8 @@ BUGFIXES:
 179 ==> 444023 - Enhanced rename.
 180 ==> 445061 - NEF from Nikon D800 and D850 not shown.
 181 ==> 445431 - Export to Local Storage" with Option "Adjust image properties" fails for certain jpgs.
-182 ==> 
-183 ==> 
+182 ==> 429219 - MWG "Applied To" state (mwg-rs:AppliedToDimensions XMP tag) is not included when writing Face metadata to file - Use ExifTool.
+183 ==> 445440 - Add Dimensions information to mwg-rs.
 184 ==> 
 185 ==> 
 186 ==> 

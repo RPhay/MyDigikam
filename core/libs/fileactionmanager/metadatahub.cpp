@@ -82,6 +82,7 @@ public:
     int                               count;
 
     QDateTime                         dateTime;
+    QSize                             imageSize;
 
     CaptionsMap                       titles;
     CaptionsMap                       comments;
@@ -160,9 +161,10 @@ void MetadataHub::load(const ItemInfo& info)
     QList<int> tagIds = info.tagIds();
     loadTags(tagIds);
 
-    loadFaceTags(info, info.dimensions());
+    d->imageSize      = info.dimensions();
+    loadFaceTags(info, d->imageSize);
 
-    d->itemPosition = info.imagePosition();
+    d->itemPosition   = info.imagePosition();
 }
 
 /**
@@ -587,7 +589,7 @@ bool MetadataHub::writeFaceTagsMap(const DMetadata& metadata, bool saveFaces)
         }
     }
 
-    return metadata.setItemFacesMap(d->faceTagsList, saveFaces);
+    return metadata.setItemFacesMap(d->faceTagsList, saveFaces, d->imageSize);
 }
 
 QStringList MetadataHub::cleanupTags(const QStringList& toClean)
