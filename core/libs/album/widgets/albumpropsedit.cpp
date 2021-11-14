@@ -194,7 +194,7 @@ AlbumPropsEdit::AlbumPropsEdit(PAlbum* const album, bool create)
     QPushButton* const dateLowButton  = new QPushButton(i18nc("@action: Selects the date of the oldest image", "&Oldest"),  buttonRow);
     dateLowButton->setWhatsThis(i18nc("@info", "Use this button to select the date of the oldest image from album."));
     QPushButton* const dateAvgButton  = new QPushButton(i18nc("@action: Calculates the average date",          "&Average"), buttonRow);
-    dateAvgButton->setWhatsThis(i18nc("@info", "Use this button to calculates the average date of images from album."));
+    dateAvgButton->setWhatsThis(i18nc("@info", "Use this button to calculate the average date of images from album."));
     QPushButton* const dateHighButton = new QPushButton(i18nc("@action: Selects the date of the newest image", "Newest"),   buttonRow);
     dateHighButton->setWhatsThis(i18nc("@info", "Use this button to select the date of the newest image from album."));
 

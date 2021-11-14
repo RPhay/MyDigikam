@@ -210,7 +210,7 @@ ShowfotoStackViewFavoriteItemDlg::ShowfotoStackViewFavoriteItemDlg(ShowfotoStack
     d->dateLowButton        = new QPushButton(i18nc("@action: Selects the date of the oldest image", "&Oldest"),  buttonRow);
     d->dateLowButton->setWhatsThis(i18nc("@info", "Use this button to select the date of the oldest image from the list."));
     d->dateAvgButton        = new QPushButton(i18nc("@action: Calculates the average date",          "&Average"), buttonRow);
-    d->dateAvgButton->setWhatsThis(i18nc("@info", "Use this button to calculates the average date of images from the list."));
+    d->dateAvgButton->setWhatsThis(i18nc("@info", "Use this button to calculate the average date of images from the list."));
     d->dateHighButton       = new QPushButton(i18nc("@action: Selects the date of the newest image", "Newest"),   buttonRow);
     d->dateHighButton->setWhatsThis(i18nc("@info", "Use this button to select the date of the newest image from the list."));
 
