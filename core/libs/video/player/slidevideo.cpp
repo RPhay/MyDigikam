@@ -43,6 +43,7 @@
 // QtAV includes
 
 #include <QtAV/VideoOutput.h>    // krazy:exclude=includes
+#include <QtAV/LibAVFilter.h>    // krazy:exclude=includes
 #include <QtAV/version.h>        // krazy:exclude=includes
 
 // Local includes
@@ -85,19 +86,20 @@ public:
 
     explicit Private()
       : iface           (nullptr),
+        rotateFilter    (nullptr),
         videoOutput     (nullptr),
         player          (nullptr),
         slider          (nullptr),
         volume          (nullptr),
         tlabel          (nullptr),
         indicator       (nullptr),
-        videoOrientation(0),
         sliderTime      (0)
     {
     }
 
     DInfoInterface*      iface;
 
+    LibAVFilterVideo*    rotateFilter;
     VideoOutput*         videoOutput;
     AVPlayer*            player;
 
@@ -107,7 +109,6 @@ public:
 
     DHBox*               indicator;
 
-    int                  videoOrientation;
     qint64               sliderTime;
 };
 
@@ -123,6 +124,7 @@ SlideVideo::SlideVideo(QWidget* const parent)
                                                       : new QWidget(this);
 
     d->player              = new AVPlayer(this);
+    d->rotateFilter        = new LibAVFilterVideo(d->player);
 
     d->videoOutput->setOutAspectRatioMode(VideoRenderer::VideoAspectRatio);
     d->player->setRenderer(d->videoOutput);
@@ -170,9 +172,6 @@ SlideVideo::SlideVideo(QWidget* const parent)
     connect(d->volume, SIGNAL(valueChanged(int)),
             this, SLOT(slotVolumeChanged(int)));
 
-    connect(d->player, SIGNAL(stateChanged(QtAV::AVPlayer::State)),
-            this, SLOT(slotPlayerStateChanged(QtAV::AVPlayer::State)));
-
     connect(d->player, SIGNAL(mediaStatusChanged(QtAV::MediaStatus)),
             this, SLOT(slotMediaStatusChanged(QtAV::MediaStatus)));
 
@@ -207,6 +206,7 @@ void SlideVideo::setCurrentUrl(const QUrl& url)
 {
     d->player->stop();
 
+    int videoAngle      = 0;
     int orientation     = 0;
     bool supportedCodec = true;
 
@@ -227,20 +227,28 @@ void SlideVideo::setCurrentUrl(const QUrl& url)
         case MetaEngine::ORIENTATION_ROT_90:
         case MetaEngine::ORIENTATION_ROT_90_HFLIP:
         case MetaEngine::ORIENTATION_ROT_90_VFLIP:
-            d->videoOrientation = 90;
+            videoAngle = 90;
             break;
 
         case MetaEngine::ORIENTATION_ROT_180:
-            d->videoOrientation = 180;
+            videoAngle = 180;
             break;
 
         case MetaEngine::ORIENTATION_ROT_270:
-            d->videoOrientation = 270;
+            videoAngle = 270;
             break;
 
         default:
-            d->videoOrientation = 0;
+            videoAngle = 0;
             break;
+    }
+
+    d->rotateFilter->uninstall();
+
+    if (videoAngle != 0)
+    {
+        d->rotateFilter->installTo(d->player);
+        d->rotateFilter->setOptions(QString::fromLatin1("rotate=PI*%1").arg(videoAngle));
     }
 
     if (supportedCodec)
@@ -261,34 +269,6 @@ void SlideVideo::showIndicator(bool b)
 {
     d->indicator->setVisible(b);
     d->indicator->raise();
-}
-
-void SlideVideo::slotPlayerStateChanged(QtAV::AVPlayer::State state)
-{
-    if (state == QtAV::AVPlayer::PlayingState)
-    {
-        int rotate = 0;
-
-#if QTAV_VERSION > QTAV_VERSION_CHK(1, 12, 0)
-
-        // fix wrong rotation from QtAV git/master
-
-        rotate     = d->player->statistics().video_only.rotate;
-
-#endif
-
-        if (d->videoOutput->opengl() && (d->videoOrientation > 0))
-        {
-            d->videoOutput->setOrientation((-rotate) + (360 - d->videoOrientation));
-        }
-        else
-        {
-            d->videoOutput->setOrientation((-rotate) + d->videoOrientation);
-        }
-
-        qCDebug(DIGIKAM_GENERAL_LOG) << "Found video orientation:"
-                                     << d->videoOrientation;
-    }
 }
 
 void SlideVideo::slotMediaStatusChanged(QtAV::MediaStatus status)

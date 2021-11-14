@@ -45,6 +45,7 @@
 #include <QtAV/VideoDecoder.h>   // krazy:exclude=includes
 #include <QtAV/VideoCapture.h>   // krazy:exclude=includes
 #include <QtAV/VideoOutput.h>    // krazy:exclude=includes
+#include <QtAV/LibAVFilter.h>    // krazy:exclude=includes
 #include <QtAV/version.h>        // krazy:exclude=includes
 
 // KDE includes
@@ -168,12 +169,12 @@ public:
         loopPlay        (nullptr),
         toolBar         (nullptr),
         iface           (nullptr),
+        rotateFilter    (nullptr),
         videoOutput     (nullptr),
         player          (nullptr),
         slider          (nullptr),
         volume          (nullptr),
         tlabel          (nullptr),
-        videoOrientation(0),
         capturePosition (0),
         sliderTime      (0)
     {
@@ -193,6 +194,7 @@ public:
 
     DInfoInterface*      iface;
 
+    LibAVFilterVideo*    rotateFilter;
     VideoOutput*         videoOutput;
     AVPlayer*            player;
 
@@ -201,7 +203,6 @@ public:
     QLabel*              tlabel;
     QUrl                 currentItem;
 
-    int                  videoOrientation;
     qint64               capturePosition;
     qint64               sliderTime;
 };
@@ -247,6 +248,7 @@ MediaPlayerView::MediaPlayerView(QWidget* const parent)
                                                       : new QWidget(this);
 
     d->player              = new AVPlayer(this);
+    d->rotateFilter        = new LibAVFilterVideo(d->player);
 
     DHBox* const hbox      = new DHBox(this);
     d->slider              = new QSlider(Qt::Horizontal, hbox);
@@ -385,28 +387,6 @@ void MediaPlayerView::slotPlayerStateChanged(QtAV::AVPlayer::State state)
 {
     if      (state == QtAV::AVPlayer::PlayingState)
     {
-        int rotate = 0;
-
-#if QTAV_VERSION > QTAV_VERSION_CHK(1, 12, 0)
-
-        // fix wrong rotation from QtAV git/master
-
-        rotate     = d->player->statistics().video_only.rotate;
-
-#endif
-
-        if (d->videoOutput->opengl() && (d->videoOrientation > 0))
-        {
-            d->videoOutput->setOrientation((-rotate) + (360 - d->videoOrientation));
-        }
-        else
-        {
-            d->videoOutput->setOrientation((-rotate) + d->videoOrientation);
-        }
-
-        qCDebug(DIGIKAM_GENERAL_LOG) << "Found video orientation:"
-                                     << d->videoOrientation;
-
         d->playAction->setIcon(QIcon::fromTheme(QLatin1String("media-playback-pause")));
     }
     else if ((state == QtAV::AVPlayer::PausedState) ||
@@ -612,6 +592,7 @@ void MediaPlayerView::setCurrentItem(const QUrl& url, bool hasPrevious, bool has
 
     d->player->stop();
 
+    int videoAngle      = 0;
     int orientation     = 0;
     bool supportedCodec = true;
 
@@ -632,20 +613,29 @@ void MediaPlayerView::setCurrentItem(const QUrl& url, bool hasPrevious, bool has
         case MetaEngine::ORIENTATION_ROT_90:
         case MetaEngine::ORIENTATION_ROT_90_HFLIP:
         case MetaEngine::ORIENTATION_ROT_90_VFLIP:
-            d->videoOrientation = 90;
+            videoAngle = 90;
             break;
 
         case MetaEngine::ORIENTATION_ROT_180:
-            d->videoOrientation = 180;
+            videoAngle = 180;
             break;
 
         case MetaEngine::ORIENTATION_ROT_270:
-            d->videoOrientation = 270;
+            videoAngle = 270;
             break;
 
         default:
-            d->videoOrientation = 0;
+            videoAngle = 0;
             break;
+    }
+
+    d->videoOutput->setOrientation(0);
+    d->rotateFilter->uninstall();
+
+    if (videoAngle != 0)
+    {
+        d->rotateFilter->installTo(d->player);
+        d->rotateFilter->setOptions(QString::fromLatin1("rotate=PI*%1").arg(videoAngle));
     }
 
     if (supportedCodec)

@@ -68,7 +68,6 @@ Q_SIGNALS:
 
 private Q_SLOTS:
 
-    void slotPlayerStateChanged(QtAV::AVPlayer::State state);
     void slotMediaStatusChanged(QtAV::MediaStatus status);
     void slotHandlePlayerError(const QtAV::AVError& err);
 
