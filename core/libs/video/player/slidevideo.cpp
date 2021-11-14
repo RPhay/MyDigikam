@@ -267,8 +267,7 @@ void SlideVideo::slotPlayerStateChanged(QtAV::AVPlayer::State state)
 {
     if (state == QtAV::AVPlayer::PlayingState)
     {
-        int rotate      = 0;
-        int orientation = 0;
+        int rotate = 0;
 
 #if QTAV_VERSION > QTAV_VERSION_CHK(1, 12, 0)
 
@@ -280,14 +279,12 @@ void SlideVideo::slotPlayerStateChanged(QtAV::AVPlayer::State state)
 
         if (d->videoOutput->opengl() && (d->videoOrientation > 0))
         {
-            orientation = (-rotate) + (360 - d->videoOrientation);
+            d->videoOutput->setOrientation((-rotate) + (360 - d->videoOrientation));
         }
         else
         {
-            orientation = (-rotate) + d->videoOrientation;
+            d->videoOutput->setOrientation((-rotate) + d->videoOrientation);
         }
-
-        d->videoOutput->setOrientation(orientation);
 
         qCDebug(DIGIKAM_GENERAL_LOG) << "Found video orientation:"
                                      << d->videoOrientation;
