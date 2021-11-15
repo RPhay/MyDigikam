@@ -194,8 +194,8 @@ echo -e "\n---------- Strip symbols in binary files\n"
 
 if [[ $DK_DEBUG = 1 ]] ; then
 
-    find $BUNDLEDIR -name \*exe | grep -Ev '(digikam|showfoto|exiv2)' | xargs ${MXE_BUILDROOT}/usr/bin/${MXE_BUILD_TARGETS}-strip
-    find $BUNDLEDIR -name \*dll | grep -Ev '(digikam|showfoto|exiv2)' | xargs ${MXE_BUILDROOT}/usr/bin/${MXE_BUILD_TARGETS}-strip
+    find $BUNDLEDIR -name \*exe | grep -Ev '(digikam|showfoto|exiv2)' | xargs ${MXE_BUILDROOT}/usr/bin/${MXE_BUILD_TARGETS}-strip -s
+    find $BUNDLEDIR -name \*dll | grep -Ev '(digikam|showfoto|exiv2)' | xargs ${MXE_BUILDROOT}/usr/bin/${MXE_BUILD_TARGETS}-strip -s
 
 else
 
