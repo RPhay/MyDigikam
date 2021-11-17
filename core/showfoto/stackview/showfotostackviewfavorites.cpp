@@ -76,15 +76,15 @@ public:
 
 public:
 
-    QList<QAction*>                 actionsList;                    ///< used to shared actions with list-view context menu.
+    QList<QAction*>                 actionsList;                    ///< Used to shared actions with list-view context menu.
     QToolButton*                    addBtn;                         ///< Add favorite button.
     QToolButton*                    fldBtn;                         ///< Add sub-folder button.
-    QToolButton*                    delBtn;
-    QToolButton*                    edtBtn;
+    QToolButton*                    delBtn;                         ///< Delete item button.
+    QToolButton*                    edtBtn;                         ///< Edit item button.
     ShowfotoStackViewFavoriteList*  favoritesList;
-    ShowfotoStackViewFavoriteItem*  topFavorites;
+    ShowfotoStackViewFavoriteItem*  topFavorites;                   ///< Top-level parent of all favorite items.
     ShowfotoStackViewSideBar*       sidebar;
-    QString                         file;
+    QString                         file;                           ///< Path to store favorites XML data file.
     SearchTextBar*                  favoritesFilter;
 };
 

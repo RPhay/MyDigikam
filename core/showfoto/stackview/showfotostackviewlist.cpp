@@ -352,10 +352,12 @@ void ShowfotoStackViewList::contextMenuEvent(QContextMenuEvent* e)
     QMenu* const ctxmenu        = new QMenu(this);
     ctxmenu->setTitle(i18nc("@title", "Stack-View"));
 
-    QMenu* const iconMenu       = new QMenu(i18nc("@title:menu", "Thumbnail Size"), ctxmenu);
+    QMenu* const iconMenu       = new QMenu(i18nc("@title:menu", "Icon Size"), ctxmenu);
+    iconMenu->setIcon(QIcon::fromTheme(QLatin1String("file-zoom-in")));
+
     QActionGroup* const sizeGrp = new QActionGroup(iconMenu);
 
-    QAction* const sizeSmall    = iconMenu->addAction(i18nc("@action:inmenu", "Small (%1x%2)", SizeSmall, SizeSmall));
+    QAction* const sizeSmall    = iconMenu->addAction(i18nc("@action:inmenu", "Small (%1x%2)",  SizeSmall,  SizeSmall));
     sizeSmall->setCheckable(true);
     sizeGrp->addAction(sizeSmall);
 
@@ -363,11 +365,11 @@ void ShowfotoStackViewList::contextMenuEvent(QContextMenuEvent* e)
     sizeMedium->setCheckable(true);
     sizeGrp->addAction(sizeMedium);
 
-    QAction* const sizeLarge    = iconMenu->addAction(i18nc("@action:inmenu", "Large (%1x%2)", SizeLarge, SizeLarge));
+    QAction* const sizeLarge    = iconMenu->addAction(i18nc("@action:inmenu", "Large (%1x%2)",  SizeLarge,  SizeLarge));
     sizeLarge->setCheckable(true);
     sizeGrp->addAction(sizeLarge);
 
-    QAction* const sizeHuge     = iconMenu->addAction(i18nc("@action:inmenu", "Huge (%1x%2)", SizeHuge, SizeHuge));
+    QAction* const sizeHuge     = iconMenu->addAction(i18nc("@action:inmenu", "Huge (%1x%2)",   SizeHuge,   SizeHuge));
     sizeHuge->setCheckable(true);
     sizeGrp->addAction(sizeHuge);
 

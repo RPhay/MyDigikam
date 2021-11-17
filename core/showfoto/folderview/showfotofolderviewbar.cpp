@@ -77,7 +77,7 @@ public:
     {
     }
 
-    const QString              pluginFingerPrint;
+    const QString              pluginFingerPrint;           ///< Identify plugins category to host in folder-view.
     QToolButton*               previousBtn;
     QToolButton*               nextBtn;
     QToolButton*               upBtn;
@@ -92,7 +92,7 @@ public:
     QAction*                   showBookmarksAction;
     QAction*                   moreSettingsAction;
     QComboBox*                 pathEdit;
-    QList<QAction*>            actionsList;                    ///< used to shared actions with list-view context menu.
+    QList<QAction*>            actionsList;                 ///< used to shared actions with list-view context menu.
     ShowfotoFolderViewSideBar* sidebar;
     QComboBox*                 typeMimesCombo;
 };
@@ -228,7 +228,7 @@ ShowfotoFolderViewBar::ShowfotoFolderViewBar(ShowfotoFolderViewSideBar* const si
 
     d->actionsList << d->showBookmarksAction;
 
-    d->moreSettingsAction      = d->optionsMenu->addAction(i18nc("@action:inmenu", "More Settings..."));
+    d->moreSettingsAction       = d->optionsMenu->addAction(i18nc("@action:inmenu", "More Settings..."));
     d->moreSettingsAction->setObjectName(QLatin1String("MoreSettings"));
     d->moreSettingsAction->setIcon(QIcon::fromTheme(QLatin1String("configure")));
     d->moreSettingsAction->setToolTip(i18nc("@info", "Open configure dialog with more settings options"));
@@ -464,21 +464,25 @@ void ShowfotoFolderViewBar::slotOptionsChanged(QAction* action)
     if      (action == d->shortAction)
     {
         emit signalViewModeChanged(ShowfotoFolderViewList::ShortView);
+
         return;
     }
     else if (action == d->detailedAction)
     {
         emit signalViewModeChanged(ShowfotoFolderViewList::DetailledView);
+
         return;
     }
     else if (action == d->showBookmarksAction)
     {
         emit signalShowBookmarks(d->showBookmarksAction->isChecked());
+
         return;
     }
     else if (action == d->moreSettingsAction)
     {
         emit signalSetup();
+
         return;
     }
 }

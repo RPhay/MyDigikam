@@ -155,6 +155,7 @@ void ShowfotoFolderViewList::contextMenuEvent(QContextMenuEvent* e)
     ctxmenu->addAction(d->bar->toolBarAction(QLatin1String("MoreSettings")));
     ctxmenu->addSeparator();
     QMenu* const stackMenu = ctxmenu->addMenu(i18nc("@title", "Stack"));
+    stackMenu->setIcon(QIcon::fromTheme(QLatin1String("layer-visible-on")));
     stackMenu->addAction(d->bar->toolBarAction(QLatin1String("LoadContents")));
     stackMenu->addAction(d->bar->toolBarAction(QLatin1String("AppendContents")));
     stackMenu->addActions(d->bar->pluginActions());

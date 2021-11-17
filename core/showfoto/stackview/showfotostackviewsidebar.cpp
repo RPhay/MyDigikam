@@ -67,7 +67,7 @@ public:
     {
     }
 
-    const QString                        pluginFingerPrint;
+    const QString                        pluginFingerPrint;         ///< Identify plugins category to host in stack-view
     static const QString                 configIconSizeEntry;
     static const QString                 configSplitterStateEntry;
 
