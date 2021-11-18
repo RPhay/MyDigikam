@@ -10,7 +10,7 @@
 #  Copyright (c) 2008      by Adrian Schroeter <adrian at suse dot de>
 #  Copyright (c) 2012      by Pino Toscano <pino at kde dot org>
 #  Copyright (c) 2012      by Ananta Palani <anantapalani at gmail dot com>
-#  Copyright (c) 2012-2020 by Caulier Gilles <caulier dot gilles at gmail dot com>
+#  Copyright (c) 2012-2021 by Caulier Gilles <caulier dot gilles at gmail dot com>
 #
 # Redistribution and use is allowed according to the terms of the BSD license.
 # For details see the accompanying COPYING-CMAKE-SCRIPTS file..
