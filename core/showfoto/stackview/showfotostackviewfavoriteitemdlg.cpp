@@ -768,7 +768,7 @@ void ShowfotoStackViewFavoriteItemDlg::slotDateAverageButtonClicked()
     else
     {
         QMessageBox::critical(this, i18nc("@title: favorite item properties", "Could Not Calculate Average"),
-                                    i18nc("@info: favorite item properties", "Could not calculate date average for this favorite item."));
+                                    i18nc("@info: favorite item properties",  "Could not calculate date average for this favorite item."));
     }
 }
 

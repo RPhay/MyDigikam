@@ -312,7 +312,7 @@ void Showfoto::slotDroppedUrls(const QList<QUrl>& droppedUrls, bool dropped, con
 
 void Showfoto::slotOpenUrl(const ShowfotoItemInfo& info)
 {
-    if (d->thumbBar->currentInfo().isNull())
+    if (d->thumbBar->currentInfo().isNull() || info.isNull())
     {
         return;
     }
@@ -328,7 +328,7 @@ void Showfoto::slotOpenUrl(const ShowfotoItemInfo& info)
     else
     {
         QMessageBox::critical(this, i18n("Error Loading File"),
-                              i18n("Failed to load file: %1\n"
+                              i18n("Failed to load file: \"%1\"\n"
                                    "Remote file handling is not supported",
                                    info.url.fileName()));
         return;

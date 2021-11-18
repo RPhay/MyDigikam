@@ -72,12 +72,11 @@ public:
     static const QString                 configSplitterStateEntry;
 
     ShowfotoStackViewList*               view;
-
     ShowfotoStackViewFavorites*          favts;
     QSplitter*                           splitter;
 
-    QList<DPluginAction*>                dpluginActions;
-    QList<QAction*>                      pluginActions;
+    QList<DPluginAction*>                dpluginActions;            ///< List of identified DPlugins actions.
+    QList<QAction*>                      pluginActions;             ///< List of Qt actions from identified Dplugins.
     Qt::SortOrder                        sortOrder;
     ShowfotoStackViewList::StackViewRole role;
 };

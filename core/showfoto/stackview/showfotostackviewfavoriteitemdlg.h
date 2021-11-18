@@ -53,28 +53,28 @@ public:
 
     explicit ShowfotoStackViewFavoriteItemDlg(ShowfotoStackViewFavoriteList* const list,
                                               bool create = false);
-    ~ShowfotoStackViewFavoriteItemDlg() override;
+    ~ShowfotoStackViewFavoriteItemDlg()   override;
 
     void setName(const QString& name);
-    QString name()                const;
+    QString name()                  const;
 
     void setFavoriteType(int favoriteType);
-    int favoriteType()            const;
+    int favoriteType()              const;
 
     void setDescription(const QString& desc);
-    QString description()         const;
+    QString description()           const;
 
     void setDate(const QDate& name);
-    QDate date()                  const;
+    QDate date()                    const;
 
     void setIcon(const QString& icon);
-    QString icon()                const;
+    QString icon()                  const;
 
     void setUrls(const QList<QUrl>& urls);
-    QList<QUrl> urls()            const;
+    QList<QUrl> urls()              const;
 
     void setCurrentUrl(const QUrl& url);
-    QUrl currentUrl()             const;
+    QUrl currentUrl()               const;
 
     void setIconSize(int size);
     void setSortOrder(int order);
@@ -99,9 +99,10 @@ public:
 
 private:
 
-    QList<QDate> getItemDates() const;
+    QList<QDate> getItemDates()     const;
 
-    static bool itemIsLessThanHandler(const QTreeWidgetItem* current, const QTreeWidgetItem& other);
+    static bool itemIsLessThanHandler(const QTreeWidgetItem* current,
+                                      const QTreeWidgetItem& other);
 
 private Q_SLOTS:
 
@@ -116,7 +117,7 @@ private Q_SLOTS:
 
 private:
 
-    bool canAccept()              const;
+    bool canAccept()                const;
 
 private:
 
