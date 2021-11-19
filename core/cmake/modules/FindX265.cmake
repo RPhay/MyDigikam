@@ -45,11 +45,17 @@ ELSE()
 
     INCLUDE(FindPackageHandleStandardArgs)
     FIND_PACKAGE_HANDLE_STANDARD_ARGS(X265
-                                      REQUIRED_VARS X265_INCLUDE_DIRS X265_LIBRARIES
+                                      REQUIRED_VARS
+                                        X265_INCLUDE_DIRS
+                                        X265_LIBRARIES
     )
 
     # show the variables only in the advanced view
     MARK_AS_ADVANCED(X265_INCLUDE_DIRS X265_LIBRARIES X265_DEFINITIONS)
 
-ENDIF()
+    MESSAGE(STATUS "X265_FOUND        = ${X265_FOUND}")
+    MESSAGE(STATUS "X265_INCLUDE_DIRS = ${X265_INCLUDE_DIRS}")
+    MESSAGE(STATUS "X265_LIBRARIES    = ${X265_LIBRARIES}")
+    MESSAGE(STATUS "X265_DEFINITIONS  = ${X265_DEFINITIONS}")
 
+ENDIF()

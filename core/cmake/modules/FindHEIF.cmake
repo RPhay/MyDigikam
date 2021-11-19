@@ -41,8 +41,9 @@ else()
     endif()
 
     find_package_handle_standard_args(Libheif
-                                      REQUIRED_VARS HEIF_INCLUDES_DIR
-                                      HEIF_LIBRARIES
+                                      REQUIRED_VARS
+                                        HEIF_INCLUDES_DIR
+                                        HEIF_LIBRARIES
     )
 
     if(Libheif_FOUND)
