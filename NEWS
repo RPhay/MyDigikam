@@ -213,5 +213,5 @@ BUGFIXES:
 182 ==> 429219 - MWG "Applied To" state (mwg-rs:AppliedToDimensions XMP tag) is not included when writing Face metadata to file - Use ExifTool.
 183 ==> 445440 - Add Dimensions information to mwg-rs.
 184 ==> 445817 - "Ignored" under "People" can be deleted, can't be restored.
-185 ==> 
+185 ==> 445827 - Cannot navigate to next picture with arrow key if an unnamed face is displayed.
 186 ==> 
