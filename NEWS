@@ -214,4 +214,8 @@ BUGFIXES:
 183 ==> 445440 - Add Dimensions information to mwg-rs.
 184 ==> 445817 - "Ignored" under "People" can be deleted, can't be restored.
 185 ==> 445827 - Cannot navigate to next picture with arrow key if an unnamed face is displayed.
-186 ==> 
+186 ==> 445837 - Les images jpg dans collection digiKam ne sont plus visibles avec gwenview.
+187 ==> 
+188 ==> 
+189 ==> 
+190 ==> 
