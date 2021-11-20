@@ -469,7 +469,11 @@ void TagModificationHelper::slotMultipleFaceTagDel(const QList<TAlbum*>& tags)
 
     foreach (TAlbum* const selectedTag, tags)
     {
-        if (!selectedTag || selectedTag->isRoot())
+        if (!selectedTag                                            ||
+            selectedTag->isRoot()                                   ||
+            (selectedTag->id() == FaceTags::unknownPersonTagId())   ||
+            (selectedTag->id() == FaceTags::ignoredPersonTagId())   ||
+            (selectedTag->id() == FaceTags::unconfirmedPersonTagId()))
         {
             continue;
         }
@@ -551,6 +555,11 @@ void TagModificationHelper::slotMultipleFaceTagDel(const QList<TAlbum*>& tags)
                 allPersonTagsToDelete << album;
             }
         }
+    }
+
+    if (allPersonTagsToDelete.isEmpty() && allAssignedItems.isEmpty())
+    {
+        return;
     }
 
     // ask for deletion of children
