@@ -212,6 +212,6 @@ BUGFIXES:
 181 ==> 445431 - Export to Local Storage" with Option "Adjust image properties" fails for certain jpgs.
 182 ==> 429219 - MWG "Applied To" state (mwg-rs:AppliedToDimensions XMP tag) is not included when writing Face metadata to file - Use ExifTool.
 183 ==> 445440 - Add Dimensions information to mwg-rs.
-184 ==> 
+184 ==> 445817 - "Ignored" under "People" can be deleted, can't be restored.
 185 ==> 
 186 ==> 
