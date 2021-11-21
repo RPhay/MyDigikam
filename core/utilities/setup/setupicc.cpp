@@ -432,7 +432,7 @@ SetupICC::SetupICC(QDialogButtonBox* const dlgBtnBox, QWidget* const parent)
     QGridLayout* const gridProof = new QGridLayout(d->proofGB);
 
     QLabel* const proofIcon      = new QLabel;
-    proofIcon->setPixmap(QIcon::fromTheme(QLatin1String("printer")).pixmap(32));
+    proofIcon->setPixmap(QIcon::fromTheme(QLatin1String("document-print")).pixmap(32));
     QLabel* const proofLabel     = new QLabel(i18n("Output device profile:"));
     d->proofProfilesKC           = new IccProfilesComboBox;
     proofLabel->setBuddy(d->proofProfilesKC);
