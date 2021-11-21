@@ -98,7 +98,9 @@ void DigikamApp::slotThemeChanged()
     ApplicationSettings* const settings = ApplicationSettings::instance();
     QString theme                       = ThemeManager::instance()->currentThemeName();
 
-    if (qApp->activeWindow() && settings->getCurrentTheme() != theme)
+    if (qApp->activeWindow()                 &&
+        !settings->getIconTheme().isEmpty()  &&
+        (settings->getCurrentTheme() != theme))
     {
         qApp->processEvents();
 
