@@ -138,13 +138,16 @@ int main(int argc, char* argv[])
     QCommandLineParser parser;
     KAboutData::setApplicationData(aboutData);
     aboutData.setupCommandLine(&parser);
-    parser.addPositionalArgument(QLatin1String("files"), i18nc("command line option", "File(s) or folder(s) to open"), QLatin1String("[file(s) or folder(s)]"));
+    parser.addPositionalArgument(QLatin1String("files"),
+                                 i18nc("command line option", "File(s) or folder(s) to open"),
+                                 QLatin1String("[file(s) or folder(s)]"));
     parser.process(app);
     aboutData.processCommandLine(&parser);
 
     KSharedConfig::Ptr config = KSharedConfig::openConfig();
     KConfigGroup group        = config->group(QLatin1String("ImageViewer Settings"));
     QString iconTheme         = group.readEntry(QLatin1String("Icon Theme"), QString());
+    QString colorTheme        = group.readEntry(QLatin1String("Theme"), QString::fromLatin1("Standard"));
 
 #if defined Q_OS_WIN || defined Q_OS_MACOS
 
@@ -241,15 +244,21 @@ int main(int argc, char* argv[])
     }
 
     // Workaround for the automatic icon theme color
-    // in KF-5.80, depending on the color scheme.
+    // in KF-5.80/KF-5.88, depending on the color scheme.
+    // Note: In a Plasma environment, use the showFoto icon theme setting from the system.
 
-    if      (QIcon::themeName() == QLatin1String("breeze-dark"))
-    {
-        qApp->setPalette(QPalette(Qt::darkGray));
-    }
-    else if (QIcon::themeName() == QLatin1String("breeze"))
+    if (
+        (colorTheme == QLatin1String("White Balance")) ||
+        (colorTheme == QLatin1String("Standard"))      ||
+        (colorTheme == QLatin1String("High Key"))      ||
+        (colorTheme == QLatin1String("Breeze"))
+       )
     {
         qApp->setPalette(QPalette(Qt::white));
+    }
+    else
+    {
+        qApp->setPalette(QPalette(Qt::darkGray));
     }
 
 #ifdef Q_OS_WIN
