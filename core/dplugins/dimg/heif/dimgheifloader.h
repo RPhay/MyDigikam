@@ -6,7 +6,7 @@
  * Date        : 2019-09-26
  * Description : A HEIF IO file for DImg framework
  *
- * Copyright (C) 2020 by Gilles Caulier <caulier dot gilles at gmail dot com>
+ * Copyright (C) 2019-2021 by Gilles Caulier <caulier dot gilles at gmail dot com>
  *
  * Other HEIF loader implementions:
  *     https://github.com/KDE/krita/tree/master/plugins/impex/heif
@@ -68,7 +68,8 @@ private:
 
     bool isHeifSuccess(struct heif_error* const error);
 
-    // Read operations
+    /// Read operations
+
     bool readHEICColorProfile(struct heif_image_handle* const image_handle);
     bool readHEICImageByID(struct heif_context* const heif_context,
                            heif_item_id image_id);
@@ -76,7 +77,8 @@ private:
     bool readHEICImageByHandle(struct heif_image_handle* image_handle,
                                struct heif_image* heif_image, bool loadImageData);
 
-    // Save operations
+    /// Save operations
+
     bool saveHEICColorProfile(struct heif_image* const image);
 
     bool saveHEICMetadata(struct heif_context* const heif_context,

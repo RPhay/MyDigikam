@@ -6,7 +6,7 @@
  * Date        : 2019-09-26
  * Description : A HEIF IO file for DImg framework - load operations
  *
- * Copyright (C) 2020 by Gilles Caulier <caulier dot gilles at gmail dot com>
+ * Copyright (C) 2019-2021 by Gilles Caulier <caulier dot gilles at gmail dot com>
  *
  * This program is free software; you can redistribute it
  * and/or modify it under the terms of the GNU General
@@ -182,7 +182,9 @@ bool DImgHEIFLoader::readHEICColorProfile(struct heif_image_handle* const image_
     switch (heif_image_handle_get_color_profile_type(image_handle))
     {
         case heif_color_profile_type_not_present:
+        {
             break;
+        }
 
         case heif_color_profile_type_rICC:
         case heif_color_profile_type_prof:
@@ -212,8 +214,10 @@ bool DImgHEIFLoader::readHEICColorProfile(struct heif_image_handle* const image_
         }
 
         default: // heif_color_profile_type_nclx
+        {
             qCWarning(DIGIKAM_DIMG_LOG_HEIF) << "Unknown HEIF color profile type discarded";
             break;
+        }
     }
 
 #else
@@ -268,7 +272,7 @@ bool DImgHEIFLoader::readHEICImageByID(struct heif_context* const heif_context,
         if (nThumbnails > 0)
         {
             struct heif_image_handle* thumbnail_handle = nullptr;
-            error = heif_image_handle_get_thumbnail(image_handle, thumbnail_ID, &thumbnail_handle);
+            error                                      = heif_image_handle_get_thumbnail(image_handle, thumbnail_ID, &thumbnail_handle);
 
             if (!isHeifSuccess(&error))
             {
@@ -335,10 +339,10 @@ bool DImgHEIFLoader::readHEICImageByHandle(struct heif_image_handle* image_handl
     // Trace to check image size properties before decoding, as these values can be different.
 
     qCDebug(DIGIKAM_DIMG_LOG_HEIF) << "HEIF image size: ("
-                << heif_image_handle_get_width(image_handle)
-                << "x"
-                << heif_image_handle_get_height(image_handle)
-                << ")";
+                                   << heif_image_handle_get_width(image_handle)
+                                   << "x"
+                                   << heif_image_handle_get_height(image_handle)
+                                   << ")";
 
     error = heif_decode_image(image_handle,
                               &heif_image,
@@ -368,9 +372,9 @@ bool DImgHEIFLoader::readHEICImageByHandle(struct heif_image_handle* image_handl
     imageHeight()  = heif_image_get_height(heif_image, heif_channel_interleaved);
 
     qCDebug(DIGIKAM_DIMG_LOG_HEIF) << "Decoded HEIF image properties: size("
-                << imageWidth() << "x" << imageHeight()
-                << "), Alpha:" << m_hasAlpha
-                << ", Color depth :" << colorDepth;
+                                   << imageWidth() << "x" << imageHeight()
+                                   << "), Alpha:" << m_hasAlpha
+                                   << ", Color depth :" << colorDepth;
 
     if (!QSize(imageWidth(), imageHeight()).isValid())
     {
@@ -387,7 +391,7 @@ bool DImgHEIFLoader::readHEICImageByHandle(struct heif_image_handle* image_handl
     qCDebug(DIGIKAM_DIMG_LOG_HEIF) << "HEIF data container:" << ptr;
     qCDebug(DIGIKAM_DIMG_LOG_HEIF) << "HEIC bytes per line:" << stride;
 
-    if (!ptr || stride <= 0)
+    if (!ptr || (stride <= 0))
     {
         qCWarning(DIGIKAM_DIMG_LOG_HEIF) << "HEIC data pixels information not valid!";
         loadingFailed();
@@ -466,10 +470,15 @@ bool DImgHEIFLoader::readHEICImageByHandle(struct heif_image_handle* image_handl
                 if (!m_sixteenBit)   // 8 bits image.
                 {
                     // Blue
+
                     dst[0] = src[2];
+
                     // Green
+
                     dst[1] = src[1];
+
                     // Red
+
                     dst[2] = src[0];
 
                     // Alpha
@@ -490,10 +499,15 @@ bool DImgHEIFLoader::readHEICImageByHandle(struct heif_image_handle* image_handl
                 else                // 16 bits image.
                 {
                     // Blue
+
                     dst16[0] = (unsigned short)(src16[2] << colorMul);
+
                     // Green
+
                     dst16[1] = (unsigned short)(src16[1] << colorMul);
+
                     // Red
+
                     dst16[2] = (unsigned short)(src16[0] << colorMul);
 
                     // Alpha
@@ -510,7 +524,7 @@ bool DImgHEIFLoader::readHEICImageByHandle(struct heif_image_handle* image_handl
                     }
 
                         dst16 += 4;
-            }
+                }
             }
 
             if (m_observer && y >= checkPoint)

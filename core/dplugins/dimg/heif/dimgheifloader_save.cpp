@@ -6,7 +6,7 @@
  * Date        : 2019-09-26
  * Description : A HEIF IO file for DImg framework - save operations
  *
- * Copyright (C) 2020 by Gilles Caulier <caulier dot gilles at gmail dot com>
+ * Copyright (C) 2019-2021 by Gilles Caulier <caulier dot gilles at gmail dot com>
  *
  * This program is free software; you can redistribute it
  * and/or modify it under the terms of the GNU General
@@ -156,9 +156,9 @@ bool DImgHEIFLoader::save(const QString& filePath, DImgLoaderObserver* const obs
 
     fclose(file);
 
-    QVariant qualityAttr  = imageGetAttribute(QLatin1String("quality"));
-    int quality           = qualityAttr.isValid() ? qualityAttr.toInt() : 75;
-    bool lossless         = (quality == 0);
+    QVariant qualityAttr   = imageGetAttribute(QLatin1String("quality"));
+    int quality            = qualityAttr.isValid() ? qualityAttr.toInt() : 75;
+    bool lossless          = (quality == 0);
 
     // --- Determine libx265 encoder bits depth capability: 8=standard, 10, 12, or later 16.
 
@@ -193,6 +193,7 @@ bool DImgHEIFLoader::save(const QString& filePath, DImgLoaderObserver* const obs
     if (!ctx)
     {
         qCWarning(DIGIKAM_DIMG_LOG_HEIF) << "Cannot create HEIF context!";
+
         return false;
     }
 
@@ -203,6 +204,7 @@ bool DImgHEIFLoader::save(const QString& filePath, DImgLoaderObserver* const obs
     if (!isHeifSuccess(&error))
     {
         heif_context_free(ctx);
+
         return false;
     }
 
@@ -219,6 +221,7 @@ bool DImgHEIFLoader::save(const QString& filePath, DImgLoaderObserver* const obs
     {
         heif_encoder_release(encoder);
         heif_context_free(ctx);
+
         return false;
     }
 
@@ -242,6 +245,7 @@ bool DImgHEIFLoader::save(const QString& filePath, DImgLoaderObserver* const obs
     {
         heif_encoder_release(encoder);
         heif_context_free(ctx);
+
         return false;
     }
 
@@ -255,6 +259,7 @@ bool DImgHEIFLoader::save(const QString& filePath, DImgLoaderObserver* const obs
         qCWarning(DIGIKAM_DIMG_LOG_HEIF) << "HEIF data pixels information not valid!";
         heif_encoder_release(encoder);
         heif_context_free(ctx);
+
         return false;
     }
 
@@ -394,6 +399,7 @@ bool DImgHEIFLoader::save(const QString& filePath, DImgLoaderObserver* const obs
             {
                 heif_encoder_release(encoder);
                 heif_context_free(ctx);
+
                 return false;
             }
 
@@ -428,6 +434,7 @@ bool DImgHEIFLoader::save(const QString& filePath, DImgLoaderObserver* const obs
 
     // Note: Only encode preview for large image.
     // We will use the same preview size than DImg::prepareMetadataToSave()
+
     const int previewSize = 1280;
 
     if (qMin(imageWidth(), imageHeight()) > previewSize)
@@ -474,9 +481,9 @@ bool DImgHEIFLoader::save(const QString& filePath, DImgLoaderObserver* const obs
 
     heif_writer writer;
     writer.writer_api_version = 1;
-    writer.write = HeifQIODeviceWriter;
+    writer.write              = HeifQIODeviceWriter;
 
-    error = heif_context_write(ctx, &writer, (void*)filePath.toUtf8().constData());
+    error                     = heif_context_write(ctx, &writer, (void*)filePath.toUtf8().constData());
 
     if (!isHeifSuccess(&error))
     {
@@ -570,6 +577,7 @@ bool DImgHEIFLoader::saveHEICMetadata(struct heif_context* const heif_context,
         if (error.code != 0)
         {
             qCWarning(DIGIKAM_DIMG_LOG_HEIF) << "Cannot store HEIF Iptc metadata!";
+
             return false;
         }
 
@@ -586,6 +594,7 @@ bool DImgHEIFLoader::saveHEICMetadata(struct heif_context* const heif_context,
         if (error.code != 0)
         {
             qCWarning(DIGIKAM_DIMG_LOG_HEIF) << "Cannot store HEIF Xmp metadata!";
+
             return false;
         }
 
