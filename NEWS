@@ -215,7 +215,7 @@ BUGFIXES:
 184 ==> 445817 - "Ignored" under "People" can be deleted, can't be restored.
 185 ==> 445827 - Cannot navigate to next picture with arrow key if an unnamed face is displayed.
 186 ==> 445837 - JPG images from digiKam collection cannot be read with Gwenview
-187 ==> 
+187 ==> 445998 - digiKam editor always saves picture with version, never overwrites.
 188 ==> 
 189 ==> 
 190 ==> 
