@@ -83,19 +83,15 @@ Architecture and configuration to setup a continuous deployement computer.
   * Change /etc/sudoers properties to run sudo without password: "%admin ALL = (ALL) ALL" => "%admin ALL = (ALL) NOPASSWD: ALL"
   * Clone digiKam git repository in your home repository (git clone git@invent.kde.org:graphics/digikam.git).
   * From local digiKam git repository, run project/bundles/macports/makeall.sh.
-  * To update Macports PKG all the days at 23h00, run "macports_update.sh" script in background with screen CLI tool.
+  * To update Macports PKG all the days at 13h00, run "macports_update.sh" script in background with screen CLI tool.
 
 - Mageia 7.1: system is installed using MXE procedure.
   * @IP: 192.168.56.102
-  * Create a crontab task to update Windows installer:
-      # update Windows bundle all the days at 21h00
-      00 21 * * * gilles bash -l -c 'export HOME=/home/gilles && source /home/gilles/.bashrc && cd /mnt/data/7.x/project/bundles/mxe && git pull && ./update.sh 2>&1 > /tmp/mxe_update_log.txt'
+  * To update Windows installer all the days at 15h00, run "mxe_update.sh" script in background with screen CLI tool.
 
 - Mageia 7.1: system is installed using AppImage procedure.
   * @IP: 192.168.56.103
-  * Create a crontab task to update Appimage bundle:
-      # update AppImage bundle all the days at 19h00
-      00 19 * * * root bash -l -c 'export HOME=/root && source /root/.bashrc && cd /home/gilles/Documents/7.x/project/bundles/appimage && git pull && ./update.sh 2>&1 > /tmp/appimage_update_log.txt'
+  * To update Linux bundle all the days at 11h00, run "appimage_update.sh" script in background with screen CLI tool.
 
 - To start VM without GUI from command line:
 
