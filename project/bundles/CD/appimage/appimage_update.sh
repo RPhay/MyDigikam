@@ -4,7 +4,7 @@ while true;
 do
     DATE=`date +%H%M`
 
-    if [[ $DATE == "1500" ]] ; then
+    if [[ $DATE == "1100" ]] ; then
 
         echo "Linux bundle started at $(date)"
         cd /home/gilles/Documents/7.x/project/bundles/appimage

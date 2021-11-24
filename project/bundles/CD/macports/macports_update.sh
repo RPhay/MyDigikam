@@ -4,7 +4,7 @@ while true;
 do
     DATE=`date +%H%M`
 
-    if [[ $DATE == "2300" ]] ; then
+    if [[ $DATE == "1300" ]] ; then
 
         echo "macOS bundle started at $(date)"
         cd /Users/gilles/Documents/7.x/project/bundles/macports
