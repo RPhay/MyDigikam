@@ -217,5 +217,5 @@ BUGFIXES:
 186 ==> 445837 - JPG images from digiKam collection cannot be read with Gwenview
 187 ==> 445998 - digiKam editor always saves picture with version, never overwrites.
 188 ==> 446000 - digiKam does not generate thumbnails for some images.
-189 ==> 
+189 ==> 445693 - SQLite -> MySQL (recognition.db not migrated).
 190 ==> 
