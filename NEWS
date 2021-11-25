@@ -216,6 +216,6 @@ BUGFIXES:
 185 ==> 445827 - Cannot navigate to next picture with arrow key if an unnamed face is displayed.
 186 ==> 445837 - JPG images from digiKam collection cannot be read with Gwenview
 187 ==> 445998 - digiKam editor always saves picture with version, never overwrites.
-188 ==> 
+188 ==> 446000 - digiKam does not generate thumbnails for some images.
 189 ==> 
 190 ==> 
