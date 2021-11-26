@@ -810,7 +810,7 @@ HaarIface::DuplicatesResultsMap HaarIface::findDuplicates(const QSet<qlonglong>&
 
             if (!(duplicates.isEmpty()) && !((duplicates.count() == 1) && (duplicates.first() == *images2ScanIterator)))
             {
-                // Use the oldest image date or larger pixel size or larger file size as the reference image.
+                // Use the oldest image date or larger pixel/file size as the reference image.
 
                 QDateTime refDateTime;
                 quint64   refPixelSize  = 0;
