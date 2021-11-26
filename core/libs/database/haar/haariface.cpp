@@ -810,7 +810,37 @@ HaarIface::DuplicatesResultsMap HaarIface::findDuplicates(const QSet<qlonglong>&
 
             if (!(duplicates.isEmpty()) && !((duplicates.count() == 1) && (duplicates.first() == *images2ScanIterator)))
             {
-                resultsMap.insert(*images2ScanIterator, qMakePair(bestMatches.first, duplicates));
+                // Use the oldest image date or larger pixel size or larger file size as the reference image.
+
+                QDateTime refDateTime;
+                quint64   refPixelSize  = 0;
+                qlonglong refFileSize   = 0;
+                qlonglong reference     = *images2ScanIterator;
+
+                foreach (const qlonglong& refId, duplicates)
+                {
+                    ItemInfo info(refId);
+                    quint64 infoPixelSize = info.dimensions().width() *
+                                            info.dimensions().height();
+
+                    if (
+                        !refDateTime.isValid()                ||
+                        (info.dateTime()  <  refDateTime)     ||
+                        ((info.dateTime() == refDateTime)  &&
+                         (infoPixelSize   >  refPixelSize))   ||
+                        ((info.dateTime() == refDateTime)  &&
+                         (infoPixelSize   == refPixelSize) &&
+                         (info.fileSize() >  refFileSize))
+                       )
+                    {
+                        reference    = refId;
+                        refDateTime  = info.dateTime();
+                        refFileSize  = info.fileSize();
+                        refPixelSize = infoPixelSize;
+                    }
+                }
+
+                resultsMap.insert(reference, qMakePair(bestMatches.first, duplicates));
 
                 resultsCandidates << *images2ScanIterator;
                 resultsCandidates.unite(duplicates.toSet());
