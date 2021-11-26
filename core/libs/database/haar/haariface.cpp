@@ -842,7 +842,7 @@ HaarIface::DuplicatesResultsMap HaarIface::findDuplicates(const QSet<qlonglong>&
 
                 resultsMap.insert(reference, qMakePair(bestMatches.first, duplicates));
 
-                resultsCandidates << *images2ScanIterator;
+                resultsCandidates << reference;
                 resultsCandidates.unite(duplicates.toSet());
             }
         }
