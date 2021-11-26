@@ -110,6 +110,7 @@ echo "---------- Building digiKam low level dependencies with MXE"
 echo 'override MXE_PLUGIN_DIRS += plugins/gcc9' >> settings.mk
 
 make MXE_TARGETS=$MXE_BUILD_TARGETS \
+     openssl \
      cmake \
      gettext \
      freeglut \
