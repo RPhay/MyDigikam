@@ -111,8 +111,9 @@ ${MXE_BUILD_TARGETS}-cmake --build . --config RelWithDebInfo --target ext_marble
 ${MXE_BUILD_TARGETS}-cmake --build . --config RelWithDebInfo --target ext_kcalendarcore       -- -j$CPU_CORES
 
 # Marble install shared lib at wrong place.
-mv $MXE_INSTALL_PREFIX/libastro* $MXE_INSTALL_PREFIX/bin
+mv ${MXE_BUILDROOT}/usr/data $MXE_INSTALL_PREFIX/
 mv $MXE_INSTALL_PREFIX/libmarble* $MXE_INSTALL_PREFIX/bin
+mv $MXE_INSTALL_PREFIX/libastro* $MXE_INSTALL_PREFIX/bin
 
 #################################################################################################
 
