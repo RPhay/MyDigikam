@@ -1255,7 +1255,7 @@ XMP_Index XMPUtils::LookupFieldSelector_v2(const spIArrayNode & arrayNode, XMP_V
 	#define ansi_mktime		mktime
 	#define ansi_difftime	difftime
 
-	#ifdef __MINGW32__  // krazy:exclude=cpp
+	#if define (__MINGW32__)  // krazy:exclude=cpp
 		#define ansi_gmtime(tt,tm)		gmtime_s ( tm, tt )
 		#define ansi_localtime(tt,tm)	localtime_s ( tm, tt )
 	#else
@@ -1275,6 +1275,10 @@ XMP_Index XMPUtils::LookupFieldSelector_v2(const spIArrayNode & arrayNode, XMP_V
 	#define ansi_mktime		mktime
 	#define ansi_difftime	difftime
 
+        #if defined(_MSC_VER) && (_MSC_VER >= 1400)
+		#define ansi_gmtime(tt,tm)		gmtime_s ( tm, tt )
+		#define ansi_localtime(tt,tm)	localtime_s ( tm, tt )
+	#else
 		static inline void ansi_gmtime ( const ansi_tt * ttTime, ansi_tm * tmTime )
 		{
 			ansi_tm * tmx = gmtime ( ttTime );	// ! Hope that there is no race!
