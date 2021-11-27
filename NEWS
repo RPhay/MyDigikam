@@ -218,4 +218,10 @@ BUGFIXES:
 187 ==> 445998 - digiKam editor always saves picture with version, never overwrites.
 188 ==> 446000 - digiKam does not generate thumbnails for some images.
 189 ==> 445693 - SQLite -> MySQL (recognition.db not migrated).
-190 ==> 
+190 ==> 439446 - Wish: Have control over the image used as reference in similarity search.
+191 ==> 
+192 ==> 
+193 ==> 
+194 ==> 
+195 ==> 
+
