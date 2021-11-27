@@ -44,14 +44,9 @@ cd $BUILDING_DIR
 
 rm -rf $BUILDING_DIR/* || true
 
-export QTDIR5=/usr/lib/
-export QTLIB=/usr/lib/
-
 /opt/cmake/bin/cmake $ORIG_WD/../3rdparty \
       -DCMAKE_INSTALL_PREFIX:PATH=/usr \
       -DINSTALL_ROOT=/usr \
-      -DQTDIR5=/usr/lib/ \
-      -DQTLIB=/usr/lib/ \
       -DEXTERNALS_DOWNLOAD_DIR=$DOWNLOAD_DIR \
       -DENABLE_QTVERSION=$DK_QTVERSION \
       -DENABLE_QTWEBENGINE=$DK_QTWEBENGINE
