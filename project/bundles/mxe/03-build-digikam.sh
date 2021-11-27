@@ -79,9 +79,9 @@ ${MXE_BUILD_TARGETS}-cmake $ORIG_WD/../3rdparty \
                            -DEXTERNALS_DOWNLOAD_DIR=$DOWNLOAD_DIR
 
 
-#${MXE_BUILD_TARGETS}-cmake --build . --config RelWithDebInfo --target ext_exiv2      -- -j$CPU_CORES
-#${MXE_BUILD_TARGETS}-cmake --build . --config RelWithDebInfo --target ext_qtav       -- -j$CPU_CORES
-#${MXE_BUILD_TARGETS}-cmake --build . --config RelWithDebInfo --target ext_lensfun    -- -j$CPU_CORES
+${MXE_BUILD_TARGETS}-cmake --build . --config RelWithDebInfo --target ext_exiv2      -- -j$CPU_CORES
+${MXE_BUILD_TARGETS}-cmake --build . --config RelWithDebInfo --target ext_qtav       -- -j$CPU_CORES
+${MXE_BUILD_TARGETS}-cmake --build . --config RelWithDebInfo --target ext_lensfun    -- -j$CPU_CORES
 
 #################################################################################################
 # Build digiKam in temporary directory and installation
@@ -131,8 +131,8 @@ fi
 echo -e "\n\n"
 echo "---------- Configure digiKam $DK_VERSION"
 
-#sed -e "s/DIGIKAMSC_CHECKOUT_PO=OFF/DIGIKAMSC_CHECKOUT_PO=ON/g" ./bootstrap.mxe > ./tmp.mxe ; mv -f ./tmp.mxe ./bootstrap.mxe
-#sed -e "s/DIGIKAMSC_COMPILE_PO=OFF/DIGIKAMSC_COMPILE_PO=ON/g"   ./bootstrap.mxe > ./tmp.mxe ; mv -f ./tmp.mxe ./bootstrap.mxe
+sed -e "s/DIGIKAMSC_CHECKOUT_PO=OFF/DIGIKAMSC_CHECKOUT_PO=ON/g" ./bootstrap.mxe > ./tmp.mxe ; mv -f ./tmp.mxe ./bootstrap.mxe
+sed -e "s/DIGIKAMSC_COMPILE_PO=OFF/DIGIKAMSC_COMPILE_PO=ON/g"   ./bootstrap.mxe > ./tmp.mxe ; mv -f ./tmp.mxe ./bootstrap.mxe
 sed -e "s/DBUILD_TESTING=ON/DBUILD_TESTING=OFF/g"               ./bootstrap.mxe > ./tmp.mxe ; mv -f ./tmp.mxe ./bootstrap.mxe
 sed -e "s/DENABLE_DBUS=ON/DENABLE_DBUS=OFF/g"                   ./bootstrap.mxe > ./tmp.mxe ; mv -f ./tmp.mxe ./bootstrap.mxe
 sed -e "s/DENABLE_DRMINGW=OFF/DENABLE_DRMINGW=ON/g"             ./bootstrap.mxe > ./tmp.mxe ; mv -f ./tmp.mxe ./bootstrap.mxe
