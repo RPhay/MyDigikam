@@ -1255,7 +1255,7 @@ XMP_Index XMPUtils::LookupFieldSelector_v2(const spIArrayNode & arrayNode, XMP_V
 	#define ansi_mktime		mktime
 	#define ansi_difftime	difftime
 
-	#if define (__MINGW32__)  // krazy:exclude=cpp
+	#ifdef __MINGW32__  // krazy:exclude=cpp
 		#define ansi_gmtime(tt,tm)		gmtime_s ( tm, tt )
 		#define ansi_localtime(tt,tm)	localtime_s ( tm, tt )
 	#else
