@@ -220,8 +220,13 @@ BUGFIXES:
 189 ==> 445693 - SQLite -> MySQL (recognition.db not migrated).
 190 ==> 439446 - Wish: Have control over the image used as reference in similarity search.
 191 ==> 446187 - Faces not detected.
-192 ==> 
+192 ==> 445146 - 7.3.0 AppImage Randomly Crashes.
 193 ==> 
 194 ==> 
 195 ==> 
-
+196 ==> 
+197 ==> 
+198 ==> 
+199 ==> 
+200 ==> 
+201 ==> 
