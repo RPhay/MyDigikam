@@ -221,8 +221,8 @@ BUGFIXES:
 190 ==> 439446 - Wish: Have control over the image used as reference in similarity search.
 191 ==> 446187 - Faces not detected.
 192 ==> 445146 - 7.3.0 AppImage Randomly Crashes.
-193 ==> 
-194 ==> 
+193 ==> 446343 - Detect Faces and Recognize faces cannot be started for individual Albums.
+194 ==> 446347 - In advanced search the Album Filter does not include Sub-Albums (maybe Feature Request).
 195 ==> 
 196 ==> 
 197 ==> 
