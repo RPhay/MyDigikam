@@ -223,8 +223,8 @@ BUGFIXES:
 192 ==> 445146 - 7.3.0 AppImage Randomly Crashes.
 193 ==> 446343 - Detect Faces and Recognize faces cannot be started for individual Albums.
 194 ==> 446347 - In advanced search the Album Filter does not include Sub-Albums (maybe Feature Request).
-195 ==> 
-196 ==> 
+195 ==> 436286 - Cannot embed face tags into JPG image with Exiv2 and "apple-fi" XMP namespace. Use ExifTool instead.
+196 ==> 446350 - XMP metadata in iPhone pictures cannot be modified.
 197 ==> 
 198 ==> 
 199 ==> 

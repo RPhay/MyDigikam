@@ -93,6 +93,8 @@ bool MetaEngine::initializeExiv2()
         return false;
     }
 
+    registerXmpNameSpace(QLatin1String("http://ns.apple.com/faceinfo/1.0/"), QLatin1String("apple-fi"));
+
     /**
      * It cleans up memory used by Adobe XMP SDK automatically at application exit.
      * See Bug #166424 for details.
