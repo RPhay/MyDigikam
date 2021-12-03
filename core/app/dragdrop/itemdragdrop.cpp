@@ -665,7 +665,15 @@ bool ItemDragDropHandler::dropEvent(QAbstractItemView* abstractview, const QDrop
             }
             else if (choice == assignToThisAction)    // Dropped item only.
             {
-                emit assignTags(QList<ItemInfo>() << model()->imageInfo(droppedOn), tagIDs);
+                QModelIndex dropIndex            = droppedOn;
+                ItemThumbnailBar* const thumbBar = qobject_cast<ItemThumbnailBar*>(abstractview);
+
+                if (thumbBar)
+                {
+                    dropIndex = thumbBar->imageFilterModel()->mapToSourceItemModel(droppedOn);
+                }
+
+                emit assignTags(QList<ItemInfo>() << model()->imageInfo(dropIndex), tagIDs);
             }
         }
 

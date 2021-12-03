@@ -226,7 +226,7 @@ BUGFIXES:
 195 ==> 436286 - Cannot embed face tags into JPG image with Exiv2 and "apple-fi" XMP namespace. Use ExifTool instead.
 196 ==> 446350 - XMP metadata in iPhone pictures cannot be modified.
 197 ==> 446377 - File link instead of copy.
-198 ==> 
+198 ==> 446342 - Tags Drag'n'Dropped from Tag Manager not assigned correctly in Preview.
 199 ==> 
 200 ==> 
 201 ==> 
