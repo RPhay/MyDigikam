@@ -228,5 +228,5 @@ BUGFIXES:
 197 ==> 446377 - File link instead of copy.
 198 ==> 446342 - Tags Drag'n'Dropped from Tag Manager not assigned correctly in Preview.
 199 ==> 446183 - Star Rating for Picture is not read from File's metadata or read incorrectly.
-200 ==> 
+200 ==> 446089 - Photos missing from album.
 201 ==> 
