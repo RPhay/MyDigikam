@@ -230,7 +230,7 @@ BUGFIXES:
 199 ==> 446183 - Star Rating for Picture is not read from File's metadata or read incorrectly.
 200 ==> 446089 - Photos missing from album.
 201 ==> 446106 - Visually identical pictures not detected as similar.
-202 ==> 
+202 ==> 446489 - Single/unified xmp for raw and jpeg instead of two separate .xmp.
 203 ==> 
 204 ==> 
 205 ==> 
