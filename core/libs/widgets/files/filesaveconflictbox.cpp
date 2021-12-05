@@ -80,7 +80,7 @@ FileSaveConflictBox::FileSaveConflictBox(QWidget* const parent, bool addSkip)
 
     d->conflictButtonGroup->addButton(d->overwriteButton, OVERWRITE);
     d->conflictButtonGroup->addButton(d->storeDiffButton, DIFFNAME);
-    d->conflictButtonGroup->addButton(d->skipFileButton, SKIPFILE);
+    d->conflictButtonGroup->addButton(d->skipFileButton,  SKIPFILE);
 
     d->conflictButtonGroup->setExclusive(true);
     d->storeDiffButton->setChecked(true);
@@ -113,7 +113,7 @@ FileSaveConflictBox::~FileSaveConflictBox()
 
 void FileSaveConflictBox::resetToDefault()
 {
-    setConflictRule(OVERWRITE);
+    setConflictRule(DIFFNAME);
 }
 
 FileSaveConflictBox::ConflictRule FileSaveConflictBox::conflictRule() const
