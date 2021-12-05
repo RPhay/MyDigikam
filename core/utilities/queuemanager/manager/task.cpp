@@ -265,10 +265,10 @@ void Task::run()
         }
         else
         {
-            QFile::remove(outUrl.toLocalFile());
+            emitActionData(ActionData::BatchSkipped,
+                           i18n("Item exists and was skipped"), dest);
 
-            emitActionData(ActionData::BatchSkipped, i18n("Item exists and was skipped"),
-                           dest, true);
+            QFile::remove(outUrl.toLocalFile());
 
             emit signalDone();
 
