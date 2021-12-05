@@ -915,6 +915,7 @@ void QueueMgrWindow::slotAction(const ActionData& ad)
         }
 
         case ActionData::BatchDone:
+        case ActionData::BatchSkipped:
         {
             if (cItem)
             {

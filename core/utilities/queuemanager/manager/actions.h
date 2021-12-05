@@ -44,6 +44,7 @@ public:
         BatchStarted,
         BatchDone,
         BatchFailed,
+        BatchSkipped,
         BatchCanceled,
         TaskDone,
         TaskFailed,
