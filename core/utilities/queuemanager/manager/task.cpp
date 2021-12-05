@@ -248,9 +248,9 @@ void Task::run()
 
     // Move processed temp file to target
 
+    QString renameMess;
     QUrl dest = workUrl;
     dest.setPath(dest.path() + QLatin1Char('/') + d->tools.m_destFileName);
-    QString renameMess;
 
     if (QFileInfo::exists(dest.toLocalFile()))
     {
@@ -268,7 +268,7 @@ void Task::run()
             emitActionData(ActionData::BatchSkipped,
                            i18n("Item exists and was skipped"), dest);
 
-            QFile::remove(outUrl.toLocalFile());
+            removeTempFiles(QList<QUrl>() << outUrl);
 
             emit signalDone();
 
@@ -278,7 +278,7 @@ void Task::run()
 
     if (QFileInfo(outUrl.toLocalFile()).size() == 0)
     {
-        QFile::remove(outUrl.toLocalFile());
+        removeTempFiles(QList<QUrl>() << outUrl);
         dest.clear();
     }
 
