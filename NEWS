@@ -231,7 +231,7 @@ BUGFIXES:
 200 ==> 446089 - Photos missing from album.
 201 ==> 446106 - Visually identical pictures not detected as similar.
 202 ==> 446489 - Single/unified xmp for raw and jpeg instead of two separate .xmp.
-203 ==> 
+203 ==> 446466 - Under MacOS, pictures on NFS share with special characters in their album name don't show icon/image previews.
 204 ==> 
 205 ==> 
 206 ==> 
