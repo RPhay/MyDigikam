@@ -57,11 +57,11 @@ void ApplyTagsTest::testApplyTagsToMetadata()
     {
         settings.metadataWritingMode = DMetadata::WRITE_TO_FILE_ONLY;
 
-        applyTags(m_originalImageFolder + QLatin1String("20160821035715.jpg"),
+        applyTags(m_originalImageFolder + QLatin1String("2015-07-22_00001.JPG"),
                   QStringList() << QLatin1String("test"),
                   settings,
-                  false,       // NOTE: image is corrupted => no expected crash
-                  false);
+                  true,       // NOTE: image is corrupted => no expected crash
+                  true);
     }
 }
 
