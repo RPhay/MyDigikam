@@ -172,9 +172,13 @@ bool DMetadata::setItemFacesMap(const QMultiMap<QString, QVariant>& facesPath, b
         }
     }
 
+    // Remove face metadata before writing new ones to prevent problems (bug 436286).
+
+    removeItemFacesMap();
+
     if (facesPath.isEmpty())
     {
-        return removeItemFacesMap();
+        return true;
     }
 
     if (!size.isNull())
