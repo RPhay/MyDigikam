@@ -240,7 +240,7 @@ QueueSettingsView::QueueSettingsView(QWidget* const parent)
 
     // -------------
 
-    d->conflictBox    = new FileSaveConflictBox(panel);
+    d->conflictBox    = new FileSaveConflictBox(panel, true);
 
     d->asNewVersion   = new QCheckBox(i18nc("@option:check", "Save image as a newly created branch"), panel);
     d->asNewVersion->setWhatsThis(i18n("Turn on this option to save the current modifications "

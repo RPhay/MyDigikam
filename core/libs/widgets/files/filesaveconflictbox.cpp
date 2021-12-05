@@ -48,7 +48,8 @@ public:
       : conflictLabel       (nullptr),
         conflictButtonGroup (nullptr),
         storeDiffButton     (nullptr),
-        overwriteButton     (nullptr)
+        overwriteButton     (nullptr),
+        skipFileButton      (nullptr)
     {
     }
 
@@ -58,9 +59,10 @@ public:
 
     QRadioButton* storeDiffButton;
     QRadioButton* overwriteButton;
+    QRadioButton* skipFileButton;
 };
 
-FileSaveConflictBox::FileSaveConflictBox(QWidget* const parent)
+FileSaveConflictBox::FileSaveConflictBox(QWidget* const parent, bool addSkip)
     : QWidget(parent),
       d      (new Private)
 {
@@ -74,15 +76,25 @@ FileSaveConflictBox::FileSaveConflictBox(QWidget* const parent)
     d->conflictButtonGroup     = new QButtonGroup(conflictBox);
     d->storeDiffButton         = new QRadioButton(i18n("Store as a different name"), conflictBox);
     d->overwriteButton         = new QRadioButton(i18n("Overwrite automatically"),   conflictBox);
+    d->skipFileButton          = new QRadioButton(i18n("Skip automatically"),        conflictBox);
+
     d->conflictButtonGroup->addButton(d->overwriteButton, OVERWRITE);
     d->conflictButtonGroup->addButton(d->storeDiffButton, DIFFNAME);
+    d->conflictButtonGroup->addButton(d->skipFileButton, SKIPFILE);
+
     d->conflictButtonGroup->setExclusive(true);
     d->storeDiffButton->setChecked(true);
+
+    if (!addSkip)
+    {
+        d->skipFileButton->hide();
+    }
 
     vlay->setContentsMargins(spacing, spacing, spacing, spacing);
     vlay->setSpacing(spacing);
     vlay->addWidget(d->storeDiffButton);
     vlay->addWidget(d->overwriteButton);
+    vlay->addWidget(d->skipFileButton);
 
     grid->addWidget(d->conflictLabel, 1, 0, 1, 2);
     grid->addWidget(conflictBox,      2, 0, 1, 2);
@@ -106,12 +118,17 @@ void FileSaveConflictBox::resetToDefault()
 
 FileSaveConflictBox::ConflictRule FileSaveConflictBox::conflictRule() const
 {
-    return((ConflictRule)(d->conflictButtonGroup->checkedId()));
+    return ((ConflictRule)(d->conflictButtonGroup->checkedId()));
 }
 
 void FileSaveConflictBox::setConflictRule(ConflictRule r)
 {
-    d->conflictButtonGroup->button((int)r)->setChecked(true);
+    QAbstractButton* const bt = d->conflictButtonGroup->button((int)r);
+
+    if (bt)
+    {
+        bt->setChecked(true);
+    }
 }
 
 void FileSaveConflictBox::readSettings(KConfigGroup& group)

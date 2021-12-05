@@ -45,12 +45,13 @@ public:
     enum ConflictRule
     {
         OVERWRITE = 0,
-        DIFFNAME
+        DIFFNAME,
+        SKIPFILE
     };
 
 public:
 
-    explicit FileSaveConflictBox(QWidget* const parent);
+    explicit FileSaveConflictBox(QWidget* const parent, bool addSkip = false);
     ~FileSaveConflictBox() override;
 
     ConflictRule conflictRule() const;

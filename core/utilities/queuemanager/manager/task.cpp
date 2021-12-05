@@ -254,14 +254,25 @@ void Task::run()
 
     if (QFileInfo::exists(dest.toLocalFile()))
     {
-        if (d->settings.conflictRule != FileSaveConflictBox::OVERWRITE)
+        if      (d->settings.conflictRule == FileSaveConflictBox::OVERWRITE)
+        {
+            renameMess = i18n("(overwritten)");
+        }
+        else if (d->settings.conflictRule == FileSaveConflictBox::DIFFNAME)
         {
             dest       = DFileOperations::getUniqueFileUrl(dest);
             renameMess = i18n("(renamed to %1)", dest.fileName());
         }
         else
         {
-            renameMess = i18n("(overwritten)");
+            QFile::remove(outUrl.toLocalFile());
+
+            emitActionData(ActionData::BatchDone, i18n("Item exists and was skipped"),
+                           QUrl(), true);
+
+            emit signalDone();
+
+            return;
         }
     }
 

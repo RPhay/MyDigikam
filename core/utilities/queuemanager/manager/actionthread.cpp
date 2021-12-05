@@ -121,7 +121,7 @@ void ActionThread::cancel()
 
 void ActionThread::slotUpdateItemInfo(const Digikam::ActionData& ad)
 {
-    if (ad.status == ActionData::BatchDone)
+    if (ad.destUrl.isValid() && (ad.status == ActionData::BatchDone))
     {
         CollectionScanner scanner;
         ItemInfo source = ItemInfo::fromUrl(ad.fileUrl);
