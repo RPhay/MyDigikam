@@ -1131,7 +1131,7 @@ public:
      * Remove the Xmp tag 'xmpTagName' from Xmp metadata. Return true if tag is
      * removed successfully or if no tag was present.
      */
-    bool removeXmpTag(const char* xmpTagName) const;
+    bool removeXmpTag(const char* xmpTagName, bool family = false) const;
 
     /**
      * Register a namespace which Exiv2 doesn't know yet. This is only needed

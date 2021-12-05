@@ -324,42 +324,15 @@ bool DMetadata::setItemFacesMap(const QMultiMap<QString, QVariant>& facesPath, b
 bool DMetadata::removeItemFacesMap() const
 {
     QString qxmpStructName    = QLatin1String("Xmp.mwg-rs.Regions");
-    QString qxmpTagName       = QLatin1String("Xmp.mwg-rs.Regions/mwg-rs:RegionList");
-
     QString winQxmpStructName = QLatin1String("Xmp.MP.RegionInfo");
-    QString winQxmpTagName    = QLatin1String("Xmp.MP.RegionInfo/MPRI:Regions");
 
     // Remove mwg-rs tags
 
-    if (!getXmpTagString(qxmpTagName.toLatin1().constData()).isEmpty())
-    {
-        setXmpTagString(qxmpTagName.toLatin1().constData(),
-                        QString(),
-                        MetaEngine::ArrayBagTag);
-    }
-
-    if (!getXmpTagString(qxmpStructName.toLatin1().constData()).isEmpty())
-    {
-        setXmpTagString(qxmpStructName.toLatin1().constData(),
-                        QString(),
-                        MetaEngine::StructureTag);
-    }
+    removeXmpTag(qxmpStructName.toLatin1().constData(), true);
 
     // Remove MP tags
 
-    if (!getXmpTagString(winQxmpTagName.toLatin1().constData()).isEmpty())
-    {
-        setXmpTagString(winQxmpTagName.toLatin1().constData(),
-                        QString(),
-                        MetaEngine::ArrayBagTag);
-    }
-
-    if (!getXmpTagString(winQxmpStructName.toLatin1().constData()).isEmpty())
-    {
-        setXmpTagString(winQxmpStructName.toLatin1().constData(),
-                        QString(),
-                        MetaEngine::StructureTag);
-    }
+    removeXmpTag(winQxmpStructName.toLatin1().constData(), true);
 
     return true;
 }

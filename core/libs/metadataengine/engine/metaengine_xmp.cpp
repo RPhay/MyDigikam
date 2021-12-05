@@ -1216,7 +1216,7 @@ bool MetaEngine::unregisterXmpNameSpace(const QString& uri)
     return false;
 }
 
-bool MetaEngine::removeXmpTag(const char* xmpTagName) const
+bool MetaEngine::removeXmpTag(const char* xmpTagName, bool family) const
 {
 
 #ifdef _XMP_SUPPORT_
@@ -1228,7 +1228,14 @@ bool MetaEngine::removeXmpTag(const char* xmpTagName) const
 
         if (it != d->xmpMetadata().end())
         {
-            d->xmpMetadata().erase(it);
+            if (!family)
+            {
+                d->xmpMetadata().erase(it);
+            }
+            else
+            {
+                d->xmpMetadata().eraseFamily(it);
+            }
 
             return true;
         }
