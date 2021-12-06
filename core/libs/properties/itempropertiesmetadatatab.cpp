@@ -189,11 +189,11 @@ void ItemPropertiesMetadataTab::readSettings(const KConfigGroup& group)
 void ItemPropertiesMetadataTab::loadFilters()
 {
     KConfigGroup grp2 = KSharedConfig::openConfig()->group("Image Properties SideBar");
-    d->exifWidget->setTagsFilter(grp2.readEntry("EXIF Tags Filter",                 MetadataPanel::defaultExifFilter()));
-    d->makernoteWidget->setTagsFilter(grp2.readEntry("MAKERNOTE Tags Filter",       MetadataPanel::defaultMknoteFilter()));
-    d->iptcWidget->setTagsFilter(grp2.readEntry("IPTC Tags Filter",                 MetadataPanel::defaultIptcFilter()));
-    d->xmpWidget->setTagsFilter(grp2.readEntry("XMP Tags Filter",                   MetadataPanel::defaultXmpFilter()));
-    d->exifToolWidget->setTagsFilter(grp2.readEntry("EXIFTOOL Tags Filter",         MetadataPanel::defaultExifToolFilter()));
+    d->exifWidget->setTagsFilter(grp2.readEntry("EXIF Tags Filter",           QStringList()));
+    d->makernoteWidget->setTagsFilter(grp2.readEntry("MAKERNOTE Tags Filter", QStringList()));
+    d->iptcWidget->setTagsFilter(grp2.readEntry("IPTC Tags Filter",           QStringList()));
+    d->xmpWidget->setTagsFilter(grp2.readEntry("XMP Tags Filter",             QStringList()));
+    d->exifToolWidget->setTagsFilter(grp2.readEntry("EXIFTOOL Tags Filter",   QStringList()));
 }
 
 void ItemPropertiesMetadataTab::writeSettings(KConfigGroup& group)
