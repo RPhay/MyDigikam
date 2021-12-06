@@ -451,6 +451,21 @@ QStringList ExifToolWidget::getTagsFilter() const
 void ExifToolWidget::setTagsFilter(const QStringList& list)
 {
     d->tagsFilter = list;
+
+    if (d->tagsFilter.isEmpty())
+    {
+        d->customAction->setEnabled(false);
+
+        if (getMode() == CUSTOM)
+        {
+            d->noneAction->setChecked(true);
+        }
+    }
+    else
+    {
+        d->customAction->setEnabled(true);
+    }
+
     buildView();
 }
 
