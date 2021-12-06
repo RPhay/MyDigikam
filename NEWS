@@ -234,7 +234,7 @@ BUGFIXES:
 203 ==> 446466 - Under MacOS, pictures on NFS share with special characters in their album name don't show icon/image previews.
 204 ==> 446512 - Add option "ignore" in batchqueuemanager.
 205 ==> 446528 - Metadata filter in metadata tab.
-206 ==> 
+206 ==> 370491 - Checkboxes in Metadata Views Setup Don't Reflect Default Selection.
 207 ==> 
 208 ==> 
 209 ==> 
