@@ -51,7 +51,9 @@ Architecture and configuration to setup a continuous deployement computer.
 
 2/ Virtual Machines
 
-- macOS BigSur: system is installed using this GitHub repository: https://github.com/myspaghetti/macos-virtualbox (git revision b47fbd977e9d6103fb7113651839c22937d58af1) and using Macports procedure.
+- macOS BigSur: system is installed using this GitHub repository: https://github.com/myspaghetti/macos-virtualbox (git revision b47fbd977e9d6103fb7113651839c22937d58af1),
+    Mac Deploy Stick - MDS tool to download macOS ISO for update system (https://twocanoes.com/products/mac/mac-deploy-stick/),
+    and using Macports procedure.
   * @IP: 192.168.56.101
   * Apply the patch to macos-guest-virtualbox.patch and run the script to create the VM.
   * Don't touch mouse and keyboard will installing as form recognition is used to automatize all operations (aka partitions creating and formating).
