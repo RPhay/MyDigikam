@@ -172,11 +172,11 @@ void ItemPropertiesMetadataTab::readSettings(const KConfigGroup& group)
 {
     setCurrentIndex(group.readEntry("ImagePropertiesMetaData Tab",
                                     (int)Private::EXIF));
-    d->exifWidget->setMode(group.readEntry("EXIF Level",                              (int)ExifWidget::CUSTOM));
-    d->makernoteWidget->setMode(group.readEntry("MAKERNOTE Level",                    (int)MakerNoteWidget::CUSTOM));
-    d->iptcWidget->setMode(group.readEntry("IPTC Level",                              (int)IptcWidget::CUSTOM));
-    d->xmpWidget->setMode(group.readEntry("XMP Level",                                (int)XmpWidget::CUSTOM));
-    d->exifToolWidget->setMode(group.readEntry("EXIFTOOL Level",                      (int)ExifToolWidget::CUSTOM));
+    d->exifWidget->setMode(group.readEntry("EXIF Level",                              (int)ExifWidget::NONE));
+    d->makernoteWidget->setMode(group.readEntry("MAKERNOTE Level",                    (int)MakerNoteWidget::NONE));
+    d->iptcWidget->setMode(group.readEntry("IPTC Level",                              (int)IptcWidget::NONE));
+    d->xmpWidget->setMode(group.readEntry("XMP Level",                                (int)XmpWidget::NONE));
+    d->exifToolWidget->setMode(group.readEntry("EXIFTOOL Level",                      (int)ExifToolWidget::NONE));
     d->exifWidget->setCurrentItemByKey(group.readEntry("Current EXIF Item",           QString()));
     d->makernoteWidget->setCurrentItemByKey(group.readEntry("Current MAKERNOTE Item", QString()));
     d->iptcWidget->setCurrentItemByKey(group.readEntry("Current IPTC Item",           QString()));
