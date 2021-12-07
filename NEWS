@@ -235,7 +235,7 @@ BUGFIXES:
 204 ==> 446512 - Add option "ignore" in batchqueuemanager.
 205 ==> 446528 - Metadata filter in metadata tab.
 206 ==> 370491 - Checkboxes in Metadata Views Setup Don't Reflect Default Selection.
-207 ==> 
+207 ==> 446630 - Ics V or I calendar file format not recognized by Calendar creation wizzard.
 208 ==> 
 209 ==> 
 210 ==> 
