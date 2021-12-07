@@ -183,7 +183,6 @@ void Showfoto::slotSetupMetadataFilters(int tab)
 void Showfoto::slotSetupExifTool()
 {
     ShowfotoSetup::execExifTool(this);
-    d->rightSideBar->slotLoadMetadataFilters();
 }
 
 } // namespace ShowFoto
