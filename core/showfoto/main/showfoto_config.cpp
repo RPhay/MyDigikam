@@ -177,11 +177,13 @@ void Showfoto::applySortSettings()
 void Showfoto::slotSetupMetadataFilters(int tab)
 {
     ShowfotoSetup::execMetadataFilters(this, tab+1);
+    d->rightSideBar->slotLoadMetadataFilters();
 }
 
 void Showfoto::slotSetupExifTool()
 {
     ShowfotoSetup::execExifTool(this);
+    d->rightSideBar->slotLoadMetadataFilters();
 }
 
 } // namespace ShowFoto
