@@ -238,7 +238,7 @@ BUGFIXES:
 207 ==> 446630 - Ics V or I calendar file format not recognized by Calendar creation wizzard.
 208 ==> 446660 - There are 2 actions that want to use the same shortcut.
 209 ==> 446632 - New images imported with file creation instead of image creation date.
-210 ==> 
+210 ==> 446403 - Metadata not read correctly (XMP instead of EXIF).
 211 ==> 
 212 ==> 
 213 ==> 
