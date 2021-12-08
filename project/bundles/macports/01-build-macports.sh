@@ -299,7 +299,7 @@ port install \
              qt5-qttranslations \
              qt5-qtimageformats \
              qt5-sqlite-plugin \
-             qt5-mysql-plugin \
+             qt5-mysql-plugin +mariadb10_5 \
              wget +ssl \
              ImageMagick
 
