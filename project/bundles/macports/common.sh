@@ -24,9 +24,6 @@ fi
 ChecksXCodeCLI()
 {
 
-# See https://bugreports.qt.io/browse/QTBUG-85546
-export SYSTEM_VERSION_COMPAT=1
-
 xcode-select --print-path
 
 if [[ $? -ne 0 ]]; then
