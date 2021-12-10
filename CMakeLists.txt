@@ -68,11 +68,10 @@ message(STATUS "")
 find_package(ECM ${ECM_MIN_VERSION} CONFIG REQUIRED)
 set(CMAKE_MODULE_PATH ${CMAKE_SOURCE_DIR}/core/cmake/modules ${ECM_MODULE_PATH})
 
-# Cmake macros
-include(CMakePackageConfigHelpers)
-include(GenerateExportHeader)
-include(CheckFunctionExists)
-include(FeatureSummary)
+# KF5 Framework macros
+include(KDEInstallDirs)
+include(KDECMakeSettings)
+include(KDECompilerSettings)
 
 # ECM macros
 include(ECMOptionalAddSubdirectory)
@@ -86,10 +85,11 @@ include(ECMPoQmTools)
 include(ECMAddTests)
 include(ECMMarkAsTest)
 
-# KF5 Framework macros
-include(KDEInstallDirs)
-include(KDECMakeSettings)
-include(KDECompilerSettings)
+# Cmake macros
+include(CMakePackageConfigHelpers)
+include(GenerateExportHeader)
+include(CheckFunctionExists)
+include(FeatureSummary)
 
 # Local macros
 include(MacroUtils)
