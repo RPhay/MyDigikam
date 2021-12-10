@@ -240,7 +240,3 @@ BUGFIXES:
 209 ==> 446632 - New images imported with file creation instead of image creation date.
 210 ==> 446403 - Metadata not read correctly (XMP instead of EXIF).
 211 ==> 446733 - "Open in File Manager Command" not working.
-212 ==> 
-213 ==> 
-214 ==> 
-215 ==> 
