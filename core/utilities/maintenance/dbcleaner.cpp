@@ -346,17 +346,20 @@ void DbCleaner::slotCleanedFaces()
     {
         slotCleanedSimilarity();
     }
-
-    slotDone();
 }
 
 void DbCleaner::slotCleanedSimilarity()
 {
     // We cleaned the similarity db. We are done.
 
+    disconnect(d->thread, SIGNAL(signalCompleted()),
+               this, SLOT(slotCleanedSimilarity()));
+
     if (d->shrinkDatabases)
     {
         slotShrinkDatabases();
+
+        return;
     }
 
     slotDone();
@@ -366,11 +369,11 @@ void DbCleaner::slotShrinkDatabases()
 {
     setLabel(i18n("Clean up the databases : ") + i18n("shrinking databases"));
 
-    disconnect(d->thread, SIGNAL(signalCompleted()),
-               this, SLOT(slotCleanedFaces()));
-
     connect(d->thread, SIGNAL(signalFinished(bool,bool)),
             this, SLOT(slotShrinkNextDBInfo(bool,bool)));
+
+    connect(d->thread, SIGNAL(signalStarted()),
+            d->shrinkDlg, SLOT(exec()));
 
     connect(d->thread, SIGNAL(signalCompleted()),
             this, SLOT(slotDone()));
@@ -392,8 +395,6 @@ void DbCleaner::slotShrinkDatabases()
                                  << d->progressTimer->isActive();
     d->progressTimer->start(300);
 */
-
-    d->shrinkDlg->open();
 }
 
 void DbCleaner::slotAdvance()
