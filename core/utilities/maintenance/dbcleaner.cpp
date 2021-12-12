@@ -466,7 +466,6 @@ void DbCleaner::slotDone()
     if (d->shrinkDlg)
     {
         d->shrinkDlg->close();
-        d->shrinkDlg = nullptr;
     }
 
     MaintenanceTool::slotDone();
@@ -498,7 +497,7 @@ DbShrinkDialog::DbShrinkDialog(QWidget* const parent)
     : QDialog(parent),
       d      (new Private)
 {
-    setAttribute(Qt::WA_DeleteOnClose);
+    setAttribute(Qt::WA_DeleteOnClose, false);
 
     d->progressPix                  = new DWorkingPixmap(this);
     d->progressTimer                = new QTimer(parent);
