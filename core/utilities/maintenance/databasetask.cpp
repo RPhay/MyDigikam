@@ -258,17 +258,25 @@ void DatabaseTask::run()
     }
     else if (d->mode == Mode::ComputeDatabaseJunk)
     {
-        QList<qlonglong> staleImageIds;
+        QList<qlonglong> coredbItems;
         QList<int>       staleThumbIds;
         QList<Identity>  staleIdentities;
         QList<qlonglong> staleSimilarityImageIds;
-        int additionalItemsToProcess = 0;
+        int additionalItemsToProcess   = 0;
 
-        QList<qlonglong> coredbItems = CoreDbAccess().db()->getAllItems();
+        // Get the count of item entries in DB to delete.
 
-        // Get the count of image entries in DB to delete.
+        QList<qlonglong> staleImageIds = CoreDbAccess().db()->getOrphanedItemIds();
 
-        staleImageIds                = CoreDbAccess().db()->getImageIds(DatabaseItem::Status::Obsolete);
+        // Remove item ids to be deleted from the core DB.
+
+        foreach (const qlonglong& item, CoreDbAccess().db()->getAllItems())
+        {
+            if (!staleImageIds.contains(item))
+            {
+                coredbItems << item;
+            }
+        }
 
         // get the count of items to process for thumbnails cleanup it enabled.
 
@@ -466,7 +474,7 @@ void DatabaseTask::run()
                 break;
             }
 
-            CoreDbAccess().db()->deleteItem(imageId);
+            CoreDbAccess().db()->deleteOrphanedItem(imageId);
 
             emit signalFinished();
         }

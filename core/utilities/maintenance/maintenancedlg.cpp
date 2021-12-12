@@ -89,6 +89,7 @@ public:
         useMutiCoreCPU          (nullptr),
         cleanThumbsDb           (nullptr),
         cleanFacesDb            (nullptr),
+        cleanSimilarityDb       (nullptr),
         retrainAllFaces         (nullptr),
         shrinkDatabases         (nullptr),
         qualityScanMode         (nullptr),
@@ -129,6 +130,7 @@ public:
     static const QString configCleanupDatabase;
     static const QString configCleanupThumbDatabase;
     static const QString configCleanupFacesDatabase;
+    static const QString configCleanupSimilarityDatabase;
     static const QString configShrinkDatabases;
     static const QString configSyncDirection;
 
@@ -140,6 +142,7 @@ public:
     QCheckBox*           useMutiCoreCPU;
     QCheckBox*           cleanThumbsDb;
     QCheckBox*           cleanFacesDb;
+    QCheckBox*           cleanSimilarityDb;
     QCheckBox*           retrainAllFaces;
     QCheckBox*           shrinkDatabases;
     QComboBox*           qualityScanMode;
@@ -180,6 +183,7 @@ const QString MaintenanceDlg::Private::configSyncDirection(QLatin1String("SyncDi
 const QString MaintenanceDlg::Private::configCleanupDatabase(QLatin1String("CleanupDatabase"));
 const QString MaintenanceDlg::Private::configCleanupThumbDatabase(QLatin1String("CleanupThumbDatabase"));
 const QString MaintenanceDlg::Private::configCleanupFacesDatabase(QLatin1String("CleanupFacesDatabase"));
+const QString MaintenanceDlg::Private::configCleanupSimilarityDatabase(QLatin1String("CleanupSimilarityDatabase"));
 const QString MaintenanceDlg::Private::configShrinkDatabases(QLatin1String("ShrinkDatabases"));
 
 MaintenanceDlg::MaintenanceDlg(QWidget* const parent)
@@ -231,7 +235,8 @@ MaintenanceDlg::MaintenanceDlg(QWidget* const parent)
                     " in order to make sure that no database corruption occurs.</i></qt>"), d->vbox3);
     d->cleanThumbsDb           = new QCheckBox(i18n("Also clean up the thumbnail database."), d->vbox3);
     d->cleanFacesDb            = new QCheckBox(i18n("Also clean up the faces database."), d->vbox3);
-    d->shrinkDatabases         = new QCheckBox(i18n("Also shrink all databases if possible."), d->vbox3);
+    d->cleanSimilarityDb       = new QCheckBox(i18n("Also clean up the similarity database."), d->vbox3);
+    d->shrinkDatabases         = new QCheckBox(i18n("Extended clean up and shrink all databases."), d->vbox3);
     d->shrinkDatabases->setToolTip(i18n("This option leads to the vacuuming (shrinking) of the databases. "
                                         "Vacuuming is supported both for SQLite and MySQL."));
     d->expanderBox->insertItem(Private::DbCleanup, d->vbox3,
@@ -436,6 +441,7 @@ MaintenanceSettings MaintenanceDlg::settings() const
     prm.databaseCleanup                     = d->expanderBox->isChecked(Private::DbCleanup);
     prm.cleanThumbDb                        = d->cleanThumbsDb->isChecked();
     prm.cleanFacesDb                        = d->cleanFacesDb->isChecked();
+    prm.cleanSimilarityDb                   = d->cleanSimilarityDb->isChecked();
     prm.shrinkDatabases                     = d->shrinkDatabases->isChecked();
     prm.thumbnails                          = d->expanderBox->isChecked(Private::Thumbnails);
     prm.scanThumbs                          = d->scanThumbs->isChecked();
@@ -477,6 +483,7 @@ void MaintenanceDlg::readSettings()
     d->expanderBox->setChecked(Private::DbCleanup,          group.readEntry(d->configCleanupDatabase,       prm.databaseCleanup));
     d->cleanThumbsDb->setChecked(group.readEntry(d->configCleanupThumbDatabase,                             prm.cleanThumbDb));
     d->cleanFacesDb->setChecked(group.readEntry(d->configCleanupFacesDatabase,                              prm.cleanFacesDb));
+    d->cleanSimilarityDb->setChecked(group.readEntry(d->configCleanupSimilarityDatabase,                    prm.cleanSimilarityDb));
     d->shrinkDatabases->setChecked(group.readEntry(d->configShrinkDatabases,                                prm.shrinkDatabases));
 
     d->expanderBox->setChecked(Private::Thumbnails,         group.readEntry(d->configThumbnails,            prm.thumbnails));
@@ -520,26 +527,27 @@ void MaintenanceDlg::writeSettings()
 
     MaintenanceSettings prm   = settings();
 
-    group.writeEntry(d->configUseMutiCoreCPU,        prm.useMutiCoreCPU);
-    group.writeEntry(d->configNewItems,              prm.newItems);
-    group.writeEntry(d->configCleanupDatabase,       prm.databaseCleanup);
-    group.writeEntry(d->configCleanupThumbDatabase,  prm.cleanThumbDb);
-    group.writeEntry(d->configCleanupFacesDatabase,  prm.cleanFacesDb);
-    group.writeEntry(d->configShrinkDatabases,       prm.shrinkDatabases);
-    group.writeEntry(d->configThumbnails,            prm.thumbnails);
-    group.writeEntry(d->configScanThumbs,            prm.scanThumbs);
-    group.writeEntry(d->configFingerPrints,          prm.fingerPrints);
-    group.writeEntry(d->configScanFingerPrints,      prm.scanFingerPrints);
-    group.writeEntry(d->configDuplicates,            prm.duplicates);
-    group.writeEntry(d->configMinSimilarity,         prm.minSimilarity);
-    group.writeEntry(d->configMaxSimilarity,         prm.maxSimilarity);
-    group.writeEntry(d->configDuplicatesRestriction, (int)prm.duplicatesRestriction);
-    group.writeEntry(d->configFaceManagement,        prm.faceManagement);
-    group.writeEntry(d->configFaceScannedHandling,   (int)prm.faceSettings.alreadyScannedHandling);
-    group.writeEntry(d->configImageQualitySorter,    prm.qualitySort);
-    group.writeEntry(d->configQualityScanMode,       prm.qualityScanMode);
-    group.writeEntry(d->configMetadataSync,          prm.metadataSync);
-    group.writeEntry(d->configSyncDirection,         prm.syncDirection);
+    group.writeEntry(d->configUseMutiCoreCPU,             prm.useMutiCoreCPU);
+    group.writeEntry(d->configNewItems,                   prm.newItems);
+    group.writeEntry(d->configCleanupDatabase,            prm.databaseCleanup);
+    group.writeEntry(d->configCleanupThumbDatabase,       prm.cleanThumbDb);
+    group.writeEntry(d->configCleanupFacesDatabase,       prm.cleanFacesDb);
+    group.writeEntry(d->configCleanupSimilarityDatabase,  prm.cleanSimilarityDb);
+    group.writeEntry(d->configShrinkDatabases,            prm.shrinkDatabases);
+    group.writeEntry(d->configThumbnails,                 prm.thumbnails);
+    group.writeEntry(d->configScanThumbs,                 prm.scanThumbs);
+    group.writeEntry(d->configFingerPrints,               prm.fingerPrints);
+    group.writeEntry(d->configScanFingerPrints,           prm.scanFingerPrints);
+    group.writeEntry(d->configDuplicates,                 prm.duplicates);
+    group.writeEntry(d->configMinSimilarity,              prm.minSimilarity);
+    group.writeEntry(d->configMaxSimilarity,              prm.maxSimilarity);
+    group.writeEntry(d->configDuplicatesRestriction,      (int)prm.duplicatesRestriction);
+    group.writeEntry(d->configFaceManagement,             prm.faceManagement);
+    group.writeEntry(d->configFaceScannedHandling,        (int)prm.faceSettings.alreadyScannedHandling);
+    group.writeEntry(d->configImageQualitySorter,         prm.qualitySort);
+    group.writeEntry(d->configQualityScanMode,            prm.qualityScanMode);
+    group.writeEntry(d->configMetadataSync,               prm.metadataSync);
+    group.writeEntry(d->configSyncDirection,              prm.syncDirection);
 
     DXmlGuiWindow::saveWindowSize(windowHandle(), group);
 }

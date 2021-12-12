@@ -3223,6 +3223,24 @@ QVariantList CoreDB::getAllCreationDates() const
     return values;
 }
 
+QList<qlonglong> CoreDB::getOrphanedItemIds() const
+{
+    QList<QVariant> values;
+
+    d->db->execSql(QString::fromUtf8("SELECT id FROM Images "
+                                     "WHERE album NOT IN (SELECT id FROM Albums);"),
+                   &values);
+
+    QList<qlonglong> imageIds;
+
+    foreach (const QVariant& object, values)
+    {
+        imageIds << object.toLongLong();
+    }
+
+    return imageIds;
+}
+
 QDateTime CoreDB::getAlbumModificationDate(int albumID) const
 {
     QVariantList values;
@@ -4179,7 +4197,12 @@ void CoreDB::deleteItem(qlonglong imageId)
 {
     d->db->execSql(QString::fromUtf8("DELETE FROM Images WHERE id=? AND album IS NULL;"),
                    imageId);
+}
 
+void CoreDB::deleteOrphanedItem(qlonglong imageId)
+{
+    d->db->execSql(QString::fromUtf8("DELETE FROM Images WHERE id=?;"),
+                   imageId);
 }
 
 void CoreDB::removeItemsFromAlbum(int albumID, const QList<qlonglong>& ids_forInformation)
@@ -4630,6 +4653,54 @@ bool CoreDB::integrityCheck() const
 
 void CoreDB::vacuum()
 {
+    DatabaseFields::Set fields;
+
+    d->db->execSql(QString::fromUtf8("DELETE FROM ImageInformation "
+                                     "WHERE imageid NOT IN (SELECT id FROM Images);"));
+
+    d->db->execSql(QString::fromUtf8("DELETE FROM ImageProperties "
+                                     "WHERE imageid NOT IN (SELECT id FROM Images);"));
+
+    d->db->execSql(QString::fromUtf8("DELETE FROM ImagePositions "
+                                     "WHERE imageid NOT IN (SELECT id FROM Images);"));
+
+    d->db->execSql(QString::fromUtf8("DELETE FROM ImageCopyright "
+                                     "WHERE imageid NOT IN (SELECT id FROM Images);"));
+
+    d->db->execSql(QString::fromUtf8("DELETE FROM ImageComments "
+                                     "WHERE imageid NOT IN (SELECT id FROM Images);"));
+
+    d->db->execSql(QString::fromUtf8("DELETE FROM ImageMetadata "
+                                     "WHERE imageid NOT IN (SELECT id FROM Images);"));
+
+    d->db->execSql(QString::fromUtf8("DELETE FROM VideoMetadata "
+                                     "WHERE imageid NOT IN (SELECT id FROM Images);"));
+
+    d->db->execSql(QString::fromUtf8("DELETE FROM ImageHistory "
+                                     "WHERE imageid NOT IN (SELECT id FROM Images);"));
+
+    d->db->execSql(QString::fromUtf8("DELETE FROM ImageRelations "
+                                     "WHERE subject OR object NOT IN (SELECT id FROM Images);"));
+
+    fields |= DatabaseFields::ImagesAll;
+    fields |= DatabaseFields::ImageRelations;
+    fields |= DatabaseFields::ItemCommentsAll;
+    fields |= DatabaseFields::ImageMetadataAll;
+    fields |= DatabaseFields::VideoMetadataAll;
+    fields |= DatabaseFields::ItemPositionsAll;
+
+    d->db->recordChangeset(ImageChangeset(0, fields));
+
+    d->db->execSql(QString::fromUtf8("DELETE FROM ImageTags "
+                                     "WHERE imageid NOT IN (SELECT id FROM Images);"));
+
+    d->db->recordChangeset(ImageTagChangeset(0, QList<int>(), ImageTagChangeset::RemovedAll));
+
+    d->db->execSql(QString::fromUtf8("DELETE FROM ImageTagProperties "
+                                     "WHERE imageid NOT IN (SELECT id FROM Images);"));
+
+    d->db->recordChangeset(ImageTagChangeset(0, QList<int>(), ImageTagChangeset::PropertiesChanged));
+
     d->db->execDBAction(d->db->getDBAction(QString::fromUtf8("vacuumCoreDB")));
 }
 

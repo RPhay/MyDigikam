@@ -102,6 +102,7 @@ public:
     bool                                    databaseCleanup;
     bool                                    cleanThumbDb;
     bool                                    cleanFacesDb;
+    bool                                    cleanSimilarityDb;
     bool                                    shrinkDatabases;
 };
 

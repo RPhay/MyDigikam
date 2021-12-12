@@ -148,12 +148,12 @@ void DbCleaner::slotStart()
     connect(d->thread, SIGNAL(signalCompleted()),
             this, SLOT(slotCleanItems()));
 
-    connect(d->thread,SIGNAL(signalAddItemsToProcess(int)),
+    connect(d->thread, SIGNAL(signalAddItemsToProcess(int)),
             this, SLOT(slotAddItemsToProcess(int)));
 
     // Set the wiring from the data signal to the data slot.
 
-    connect(d->thread,SIGNAL(signalData(QList<qlonglong>,QList<int>,QList<Identity>,QList<qlonglong>)),
+    connect(d->thread, SIGNAL(signalData(QList<qlonglong>,QList<int>,QList<Identity>,QList<qlonglong>)),
             this, SLOT(slotFetchedData(QList<qlonglong>,QList<int>,QList<Identity>,QList<qlonglong>)));
 
     // Compute the database junk. This will lead to the call of the slot slotFetchedData.
@@ -182,17 +182,20 @@ void DbCleaner::slotFetchedData(const QList<qlonglong>& staleImageIds,
     // If we have nothing to do, finish.
     // Signal done if no elements cleanup is necessary
 
-    if (d->imagesToRemove.isEmpty() && d->staleThumbnails.isEmpty() && d->staleIdentities.isEmpty())
+    if (d->imagesToRemove.isEmpty()       &&
+        d->staleThumbnails.isEmpty()      &&
+        d->staleIdentities.isEmpty()      &&
+        d->staleImageSimilarities.isEmpty())
     {
         qCDebug(DIGIKAM_GENERAL_LOG) << "Nothing to do. Databases are clean.";
 
         if (d->shrinkDatabases)
         {
-            disconnect(d->thread, SIGNAL(signalData(QList<qlonglong>,QList<int>,QList<Identity>)),
-                       this, SLOT(slotFetchedData(QList<qlonglong>,QList<int>,QList<Identity>)));
+            disconnect(d->thread, SIGNAL(signalData(QList<qlonglong>,QList<int>,QList<Identity>,QList<qlonglong>)),
+                       this, SLOT(slotFetchedData(QList<qlonglong>,QList<int>,QList<Identity>,QList<qlonglong>)));
 
             disconnect(d->thread, SIGNAL(signalCompleted()),
-                        this, SLOT(slotCleanItems()));
+                       this, SLOT(slotCleanItems()));
 
             slotShrinkDatabases();
         }
@@ -366,9 +369,6 @@ void DbCleaner::slotShrinkDatabases()
     disconnect(d->thread, SIGNAL(signalCompleted()),
                this, SLOT(slotCleanedFaces()));
 
-    connect(d->thread, SIGNAL(signalStarted()),
-            d->shrinkDlg, SLOT(exec()));
-
     connect(d->thread, SIGNAL(signalFinished(bool,bool)),
             this, SLOT(slotShrinkNextDBInfo(bool,bool)));
 
@@ -392,6 +392,8 @@ void DbCleaner::slotShrinkDatabases()
                                  << d->progressTimer->isActive();
     d->progressTimer->start(300);
 */
+
+    d->shrinkDlg->open();
 }
 
 void DbCleaner::slotAdvance()

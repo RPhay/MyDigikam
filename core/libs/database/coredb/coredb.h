@@ -538,6 +538,12 @@ public:
     void deleteItem(qlonglong imageId);
 
     /**
+     * Deletes an item from the database without checking the album.
+     * @param imageId The id of the image.
+     */
+    void deleteOrphanedItem(qlonglong imageId);
+
+    /**
      * Marks all items in the specified album as removed,
      * resets their dirids.
      * The album can be deleted afterwards without removing
@@ -721,6 +727,11 @@ public:
      * Returns a QVariantList of creationDate of all items
      */
     QVariantList getAllCreationDates()                                                                              const;
+
+    /**
+     * Get orphaned item Ids.
+     */
+    QList<qlonglong> getOrphanedItemIds()                                                                           const;
 
     // ----------- Item properties -----------
 
