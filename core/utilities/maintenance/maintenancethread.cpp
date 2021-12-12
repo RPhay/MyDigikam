@@ -181,10 +181,10 @@ void MaintenanceThread::computeDatabaseJunk(bool thumbsDb, bool facesDb, bool si
     connect(t, SIGNAL(signalFinished()),
             this, SIGNAL(signalAdvance()));
 
-    connect(t,SIGNAL(signalAddItemsToProcess(int)),
+    connect(t, SIGNAL(signalAddItemsToProcess(int)),
             this, SIGNAL(signalAddItemsToProcess(int)));
 
-    connect(t,SIGNAL(signalData(QList<qlonglong>,QList<int>,QList<Identity>,QList<qlonglong>)),
+    connect(t, SIGNAL(signalData(QList<qlonglong>,QList<int>,QList<Identity>,QList<qlonglong>)),
             this, SIGNAL(signalData(QList<qlonglong>,QList<int>,QList<Identity>,QList<qlonglong>)));
 
     collection.insert(t, 0);

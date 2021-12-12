@@ -145,16 +145,16 @@ void DbCleaner::slotStart()
 /*
     qCDebug(DIGIKAM_GENERAL_LOG) << "Completed items at start: " << completedItems() << "/" << totalItems();
 */
-    connect(d->thread, SIGNAL(signalCompleted()),
-            this, SLOT(slotCleanItems()));
-
-    connect(d->thread, SIGNAL(signalAddItemsToProcess(int)),
-            this, SLOT(slotAddItemsToProcess(int)));
-
     // Set the wiring from the data signal to the data slot.
 
     connect(d->thread, SIGNAL(signalData(QList<qlonglong>,QList<int>,QList<Identity>,QList<qlonglong>)),
             this, SLOT(slotFetchedData(QList<qlonglong>,QList<int>,QList<Identity>,QList<qlonglong>)));
+
+    connect(d->thread, SIGNAL(signalAddItemsToProcess(int)),
+            this, SLOT(slotAddItemsToProcess(int)));
+
+    connect(d->thread, SIGNAL(signalCompleted()),
+            this, SLOT(slotCleanItems()));
 
     // Compute the database junk. This will lead to the call of the slot slotFetchedData.
 
@@ -164,7 +164,7 @@ void DbCleaner::slotStart()
 
 void DbCleaner::slotAddItemsToProcess(int count)
 {
-    setTotalItems(totalItems() + count);
+    incTotalItems(count);
 }
 
 void DbCleaner::slotFetchedData(const QList<qlonglong>& staleImageIds,
@@ -206,7 +206,11 @@ void DbCleaner::slotFetchedData(const QList<qlonglong>& staleImageIds,
         }
     }
 
-    setTotalItems(totalItems() + d->imagesToRemove.size() + d->staleThumbnails.size() + d->staleIdentities.size());
+    incTotalItems(d->imagesToRemove.size()       +
+                  d->staleThumbnails.size()      +
+                  d->staleIdentities.size()      +
+                  d->staleImageSimilarities.size()
+                 );
 
     //qCDebug(DIGIKAM_GENERAL_LOG) << "Completed items after analysis: " << completedItems() << "/" << totalItems();
 }
