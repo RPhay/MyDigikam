@@ -541,7 +541,7 @@ public:
      * Deletes an item from the database without checking the album.
      * @param imageId The id of the image.
      */
-    void deleteOrphanedItem(qlonglong imageId);
+    void deleteObsoleteItem(qlonglong imageId);
 
     /**
      * Marks all items in the specified album as removed,
@@ -729,9 +729,9 @@ public:
     QVariantList getAllCreationDates()                                                                              const;
 
     /**
-     * Get orphaned item Ids.
+     * Get obsolete item Ids.
      */
-    QList<qlonglong> getOrphanedItemIds()                                                                           const;
+    QList<qlonglong> getObsoleteItemIds()                                                                           const;
 
     // ----------- Item properties -----------
 

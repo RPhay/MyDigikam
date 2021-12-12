@@ -266,7 +266,7 @@ void DatabaseTask::run()
 
         // Get the count of item entries in DB to delete.
 
-        QList<qlonglong> staleImageIds = CoreDbAccess().db()->getOrphanedItemIds();
+        QList<qlonglong> staleImageIds = CoreDbAccess().db()->getObsoleteItemIds();
 
         // Remove item ids to be deleted from the core DB.
 
@@ -474,7 +474,7 @@ void DatabaseTask::run()
                 break;
             }
 
-            CoreDbAccess().db()->deleteOrphanedItem(imageId);
+            CoreDbAccess().db()->deleteObsoleteItem(imageId);
 
             emit signalFinished();
         }

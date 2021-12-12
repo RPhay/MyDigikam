@@ -3223,13 +3223,14 @@ QVariantList CoreDB::getAllCreationDates() const
     return values;
 }
 
-QList<qlonglong> CoreDB::getOrphanedItemIds() const
+QList<qlonglong> CoreDB::getObsoleteItemIds() const
 {
-    QList<QVariant> values;
+   QList<QVariant> values;
 
     d->db->execSql(QString::fromUtf8("SELECT id FROM Images "
-                                     "WHERE album NOT IN (SELECT id FROM Albums);"),
-                   &values);
+                                     "WHERE status=? OR album "
+                                     " NOT IN (SELECT id FROM Albums);"),
+                   DatabaseItem::Status::Obsolete, &values);
 
     QList<qlonglong> imageIds;
 
@@ -4199,7 +4200,7 @@ void CoreDB::deleteItem(qlonglong imageId)
                    imageId);
 }
 
-void CoreDB::deleteOrphanedItem(qlonglong imageId)
+void CoreDB::deleteObsoleteItem(qlonglong imageId)
 {
     d->db->execSql(QString::fromUtf8("DELETE FROM Images WHERE id=?;"),
                    imageId);
