@@ -141,7 +141,7 @@ void DbCleaner::slotStart()
 
     // Set one item to make sure that the progress bar is shown.
 
-    setTotalItems(d->databasesToAnalyseCount + d->databasesToShrinkCount);
+    setTotalItems(d->databasesToAnalyseCount);
 /*
     qCDebug(DIGIKAM_GENERAL_LOG) << "Completed items at start: " << completedItems() << "/" << totalItems();
 */
@@ -198,21 +198,26 @@ void DbCleaner::slotFetchedData(const QList<qlonglong>& staleImageIds,
                        this, SLOT(slotCleanItems()));
 
             slotShrinkDatabases();
+
+            return;
         }
         else
         {
             MaintenanceTool::slotDone();
+
             return;
         }
     }
 
-    incTotalItems(d->imagesToRemove.size()       +
+    reset();
+    setTotalItems(d->imagesToRemove.size()       +
                   d->staleThumbnails.size()      +
                   d->staleIdentities.size()      +
                   d->staleImageSimilarities.size()
                  );
-
-    //qCDebug(DIGIKAM_GENERAL_LOG) << "Completed items after analysis: " << completedItems() << "/" << totalItems();
+/*
+    qCDebug(DIGIKAM_GENERAL_LOG) << "Completed items after analysis: " << completedItems() << "/" << totalItems();
+*/
 }
 
 void DbCleaner::slotCleanItems()
@@ -371,34 +376,21 @@ void DbCleaner::slotCleanedSimilarity()
 
 void DbCleaner::slotShrinkDatabases()
 {
+    reset();
+    setTotalItems(d->databasesToShrinkCount);
     setLabel(i18n("Clean up the databases : ") + i18n("shrinking databases"));
 
     connect(d->thread, SIGNAL(signalFinished(bool,bool)),
             this, SLOT(slotShrinkNextDBInfo(bool,bool)));
 
-    connect(d->thread, SIGNAL(signalStarted()),
-            d->shrinkDlg, SLOT(exec()));
-
     connect(d->thread, SIGNAL(signalCompleted()),
             this, SLOT(slotDone()));
 
     d->thread->shrinkDatabases();
-/*
-    qCDebug(DIGIKAM_GENERAL_LOG) << "Completed items before vacuum: " << completedItems() << "/" << totalItems();
-*/
-/*
-    slotShrinkNextDBInfo(true,true);
-    qCDebug(DIGIKAM_GENERAL_LOG) << "Is timer active before start():"
-                                 << d->progressTimer->isActive();
-*/
+
+    d->shrinkDlg->open();
 
     d->thread->start();
-
-/*
-    qCDebug(DIGIKAM_GENERAL_LOG) << "Is timer active after start():"
-                                 << d->progressTimer->isActive();
-    d->progressTimer->start(300);
-*/
 }
 
 void DbCleaner::slotAdvance()
@@ -454,6 +446,8 @@ void DbCleaner::slotShrinkNextDBInfo(bool done, bool passed)
             break;
         }
     }
+
+    advance(1);
 }
 
 void DbCleaner::setUseMultiCoreCPU(bool b)
@@ -471,7 +465,8 @@ void DbCleaner::slotDone()
 {
     if (d->shrinkDlg)
     {
-        d->shrinkDlg->hide();
+        d->shrinkDlg->close();
+        d->shrinkDlg = nullptr;
     }
 
     MaintenanceTool::slotDone();
@@ -503,6 +498,8 @@ DbShrinkDialog::DbShrinkDialog(QWidget* const parent)
     : QDialog(parent),
       d      (new Private)
 {
+    setAttribute(Qt::WA_DeleteOnClose);
+
     d->progressPix                  = new DWorkingPixmap(this);
     d->progressTimer                = new QTimer(parent);
     d->statusList                   = new QListWidget(this);
