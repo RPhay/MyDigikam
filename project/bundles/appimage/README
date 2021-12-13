@@ -83,7 +83,7 @@ REQUIREMENTS
   Setup the Internet repositories and install update.
 - Install the minimum requirement to checkout the code:
   urpmi git openssh-askpass
-  git clone git://anongit.kde.org/digikam.git DK
+  git clone https://invent.kde.org/graphics/digikam.git DK
   cd DK/project/appimage.mageia/
 
 - Customize the config.sh file:
