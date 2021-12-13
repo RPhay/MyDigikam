@@ -480,7 +480,9 @@ void FaceGroup::slotIgnored(const ItemInfo&, const QVariant& faceIdentifier)
     if (faceList.size() == 5)
     {
         FaceItem* const item = d->items[faceList[4].toInt()];
-        FaceTagsIface face = d->editPipeline.editTag(d->info, item->face(), FaceTags::ignoredPersonTagId());
+        FaceTagsIface face   = d->editPipeline.editTag(d->info,
+                                                       item->face(),
+                                                       FaceTags::ignoredPersonTagId());
 
         item->setFace(face);
         item->switchMode(AssignNameWidget::ConfirmedMode);

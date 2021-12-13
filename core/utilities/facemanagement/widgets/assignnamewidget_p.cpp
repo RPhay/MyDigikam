@@ -274,10 +274,12 @@ void AssignNameWidget::Private::setSizePolicies(QSizePolicy::Policy h, QSizePoli
 {
     confirmButton->setSizePolicy(h, v);
     rejectButton->setSizePolicy(h, v);
-    if(ignoreButton != nullptr)
+
+    if (ignoreButton)
     {
         ignoreButton->setSizePolicy(h, v);
     }
+
     addTagsWidget()->setSizePolicy(h, v);
 }
 
@@ -285,7 +287,8 @@ void AssignNameWidget::Private::setToolButtonStyles(Qt::ToolButtonStyle style)
 {
     confirmButton->setToolButtonStyle(style);
     rejectButton->setToolButtonStyle(style);
-    if(ignoreButton != nullptr)
+
+    if (ignoreButton)
     {
         ignoreButton->setToolButtonStyle(style);
     }
@@ -577,9 +580,10 @@ void AssignNameWidget::Private::updateContents()
 
 void AssignNameWidget::Private::updateIgnoreButton()
 {
-    if (ignoreButton == nullptr)
+    if (!ignoreButton)
     {
-            ignoreButton = createToolButton(QIcon::fromTheme(QLatin1String("edit-undo")), i18nc("@action", "Ignore"));
+        ignoreButton = createToolButton(QIcon::fromTheme(QLatin1String("edit-undo")),
+                                        i18nc("@action", "Ignore"));
         ignoreButton->setToolTip(i18nc("@info:tooltip", "Ignore this face"));
 
         q->connect(ignoreButton, SIGNAL(clicked()),
@@ -589,7 +593,8 @@ void AssignNameWidget::Private::updateIgnoreButton()
     {
         FaceTagsIface face = FaceTagsIface::fromVariant(faceIdentifier);
 
-        if ((face.type() == FaceTagsIface::IgnoredName) || (face.type() == FaceTagsIface::UnknownName))
+        if ((face.type() == FaceTagsIface::IgnoredName) ||
+            (face.type() == FaceTagsIface::UnknownName))
         {
             ignoreButton->hide();
         }
