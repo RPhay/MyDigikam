@@ -13,7 +13,7 @@ BUGFIXES:
 004 ==> 440927 - Verifying PGP Signature Fails.
 005 ==> 432140 - Cannot reassign face to 'ignored'.
 006 ==> 422345 - The libQT5WebEngine crash.
-007 ==> 
+007 ==> 441989 - Language selection English only.
 008 ==> 
 009 ==> 
 010 ==> 
