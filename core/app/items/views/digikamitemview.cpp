@@ -396,6 +396,9 @@ void DigikamItemView::addAssignNameOverlay(ItemDelegate* delegate)
 
     connect(nameOverlay, SIGNAL(unknownFaces(QList<QModelIndex>)),
             this, SLOT(unknownFaces(QList<QModelIndex>)));
+
+    connect(nameOverlay, SIGNAL(ignoreFaces(QList<QModelIndex>)),
+            this, SLOT(ignoreFaces(QList<QModelIndex>)));
 }
 
 void DigikamItemView::confirmFaces(const QList<QModelIndex>& indexes, int tagId)
@@ -516,6 +519,28 @@ void DigikamItemView::rejectFaces(const QList<QModelIndex>& indexes)
 
             d->editPipeline.editTag(infos[i], faces[i], FaceTags::unknownPersonTagId());
         }
+    }
+}
+
+void DigikamItemView::ignoreFaces(const QList<QModelIndex>& indexes)
+{
+    QList<ItemInfo> infos;
+    QList<FaceTagsIface> faces;
+    QList<QModelIndex> sourceIndexes;
+
+    foreach (const QModelIndex& index, indexes)
+    {
+        faces         << d->faceDelegate->face(index);
+        infos         << ItemModel::retrieveItemInfo(index);
+        sourceIndexes << imageSortFilterModel()->mapToSourceItemModel(index);
+    }
+
+    imageAlbumModel()->removeIndexes(sourceIndexes);
+
+    for (int i = 0 ; i < infos.size() ; ++i)
+    {
+        d->editPipeline.editTag(infos[i], faces[i],
+                                FaceTags::ignoredPersonTagId());
     }
 }
 

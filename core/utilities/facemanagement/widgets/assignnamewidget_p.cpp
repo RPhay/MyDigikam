@@ -37,6 +37,7 @@ AssignNameWidget::Private::Private(AssignNameWidget* const q)
       lineEdit        (nullptr),
       confirmButton   (nullptr),
       rejectButton    (nullptr),
+      ignoreButton    (nullptr),
       clickLabel      (nullptr),
       modelsGiven     (false),
       tagModel        (nullptr),
@@ -83,6 +84,9 @@ void AssignNameWidget::Private::clearWidgets()
     delete rejectButton;
     rejectButton  = nullptr;
 
+    delete ignoreButton;
+    ignoreButton  = nullptr;
+
     delete clickLabel;
     clickLabel    = nullptr;
 }
@@ -106,6 +110,7 @@ void AssignNameWidget::Private::updateModes()
     {
         clearWidgets();
         checkWidgets();
+        updateIgnoreButton();
         updateLayout();
         updateVisualStyle();
     }
@@ -269,6 +274,10 @@ void AssignNameWidget::Private::setSizePolicies(QSizePolicy::Policy h, QSizePoli
 {
     confirmButton->setSizePolicy(h, v);
     rejectButton->setSizePolicy(h, v);
+    if(ignoreButton != nullptr)
+    {
+        ignoreButton->setSizePolicy(h, v);
+    }
     addTagsWidget()->setSizePolicy(h, v);
 }
 
@@ -276,6 +285,10 @@ void AssignNameWidget::Private::setToolButtonStyles(Qt::ToolButtonStyle style)
 {
     confirmButton->setToolButtonStyle(style);
     rejectButton->setToolButtonStyle(style);
+    if(ignoreButton != nullptr)
+    {
+        ignoreButton->setToolButtonStyle(style);
+    }
 }
 
 void AssignNameWidget::Private::updateLayout()
@@ -310,6 +323,7 @@ void AssignNameWidget::Private::updateLayout()
                     layout->addWidget(addTagsWidget(), 0, 0);
                     layout->addWidget(confirmButton,   0, 1);
                     layout->addWidget(rejectButton,    0, 2);
+                    layout->addWidget(ignoreButton,    0, 3);
                     layout->setColumnStretch(0, 1);
 
                     setSizePolicies(QSizePolicy::Expanding, QSizePolicy::Preferred);
@@ -322,9 +336,10 @@ void AssignNameWidget::Private::updateLayout()
                 case TwoLines:
                 case Compact:
                 {
-                    layout->addWidget(addTagsWidget(), 0, 0, 1, 2);
+                    layout->addWidget(addTagsWidget(), 0, 0, 1, 3);
                     layout->addWidget(confirmButton,   1, 0);
                     layout->addWidget(rejectButton,    1, 1);
+                    layout->addWidget(ignoreButton,    1, 2);
 
                     setSizePolicies(QSizePolicy::Expanding, QSizePolicy::Minimum);
 
@@ -560,6 +575,31 @@ void AssignNameWidget::Private::updateContents()
     }
 }
 
+void AssignNameWidget::Private::updateIgnoreButton()
+{
+    if (ignoreButton == nullptr)
+    {
+            ignoreButton = createToolButton(QIcon::fromTheme(QLatin1String("edit-undo")), i18nc("@action", "Ignore"));
+        ignoreButton->setToolTip(i18nc("@info:tooltip", "Ignore this face"));
+
+        q->connect(ignoreButton, SIGNAL(clicked()),
+                    q, SLOT(slotIgnore()));
+    }
+    else
+    {
+        FaceTagsIface face = FaceTagsIface::fromVariant(faceIdentifier);
+
+        if ((face.type() == FaceTagsIface::IgnoredName) || (face.type() == FaceTagsIface::UnknownName))
+        {
+            ignoreButton->hide();
+        }
+        else
+        {
+            ignoreButton->show();
+        }
+    }
+}
+
 void AssignNameWidget::Private::updateRejectButtonTooltip()
 {
     if (!rejectButton)
@@ -577,6 +617,8 @@ void AssignNameWidget::Private::updateRejectButtonTooltip()
     {
         rejectButton->setToolTip(i18nc("@info:tooltip", "Reject this suggestion"));
     }
+
+    updateIgnoreButton();
 }
 
 } // namespace Digikam

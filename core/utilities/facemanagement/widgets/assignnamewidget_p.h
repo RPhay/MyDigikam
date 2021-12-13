@@ -78,6 +78,8 @@ public:
      */
     void         updateRejectButtonTooltip();
 
+    void         updateIgnoreButton();
+
 private:
 
     void         clearWidgets();
@@ -114,6 +116,7 @@ public:
     AddTagsLineEdit*           lineEdit;
     QToolButton*               confirmButton;
     QToolButton*               rejectButton;
+    QToolButton*               ignoreButton;
     DClickLabel*               clickLabel;
 
     bool                       modelsGiven;

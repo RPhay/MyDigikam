@@ -100,6 +100,11 @@ public Q_SLOTS:
      */
     void rejectFaces(const QList<QModelIndex>& indexes);
 
+    /**
+     * Set Face to Ignore ID.
+     */
+    void ignoreFaces(const QList<QModelIndex>& indexes);
+
     void dragDropSort(const ItemInfo& pick, const QList<ItemInfo>& infos);
 
 Q_SIGNALS:

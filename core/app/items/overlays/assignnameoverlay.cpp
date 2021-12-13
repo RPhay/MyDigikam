@@ -155,6 +155,9 @@ void AssignNameOverlay::setActive(bool active)
         connect(assignNameWidget(), SIGNAL(rejected(ItemInfo,QVariant)),
                 this, SLOT(slotRejected(ItemInfo,QVariant)));
 
+        connect(assignNameWidget(), SIGNAL(ignored(ItemInfo,QVariant)),
+                this, SLOT(slotIgnored(ItemInfo,QVariant)));
+
         connect(assignNameWidget(), SIGNAL(ignoredClicked(ItemInfo,QVariant)),
                 this, SLOT(slotUnknown(ItemInfo,QVariant)));
 
@@ -167,6 +170,9 @@ void AssignNameOverlay::setActive(bool active)
         connect(assignNameWidget(), SIGNAL(rejected(ItemInfo,QVariant)),
                 this, SLOT(leavePersistentMode()));
 
+        connect(assignNameWidget(), SIGNAL(ignored(ItemInfo,QVariant)),
+                this, SLOT(leavePersistentMode()));
+
         connect(assignNameWidget(), SIGNAL(ignoredClicked(ItemInfo,QVariant)),
                 this, SLOT(leavePersistentMode()));
 
@@ -177,6 +183,9 @@ void AssignNameOverlay::setActive(bool active)
                 this, SLOT(storeFocus()));
 
         connect(assignNameWidget(), SIGNAL(ignoredClicked(ItemInfo,QVariant)),
+                this, SLOT(storeFocus()));
+
+        connect(assignNameWidget(), SIGNAL(ignored(ItemInfo,QVariant)),
                 this, SLOT(storeFocus()));
 
 /*
@@ -357,6 +366,15 @@ void AssignNameOverlay::slotRejected(const ItemInfo& info, const QVariant& faceI
     Q_UNUSED(faceIdentifier);
 
     emit removeFaces(affectedIndexes(index()));
+    hide();
+}
+
+void AssignNameOverlay::slotIgnored(const ItemInfo& info, const QVariant& faceIdentifier)
+{
+    Q_UNUSED(info);
+    Q_UNUSED(faceIdentifier);
+
+    emit ignoreFaces(affectedIndexes(index()));
     hide();
 }
 

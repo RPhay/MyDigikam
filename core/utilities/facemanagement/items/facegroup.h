@@ -137,6 +137,7 @@ protected Q_SLOTS:
     void slotAlbumRenamed(Album* album);
     void slotAssigned(const TaggingAction& action, const ItemInfo& info, const QVariant& faceIdentifier);
     void slotRejected(const ItemInfo& info, const QVariant& faceIdentifier);
+    void slotIgnored(const ItemInfo& info, const QVariant& faceIdentifier);
     void slotLabelClicked(const ItemInfo& info, const QVariant& faceIdentifier);
     void slotIgnoredClicked(const ItemInfo& info, const QVariant& faceIdentifier);
     void slotAddItemStarted(const QPointF& pos);

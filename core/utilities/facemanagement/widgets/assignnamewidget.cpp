@@ -270,6 +270,11 @@ void AssignNameWidget::slotReject()
     emit rejected(d->info, d->faceIdentifier);
 }
 
+void AssignNameWidget::slotIgnore()
+{
+    emit ignored(d->info, d->faceIdentifier);
+}
+
 void AssignNameWidget::slotActionActivated(const TaggingAction& action)
 {
     emit assigned(action, d->info, d->faceIdentifier);
