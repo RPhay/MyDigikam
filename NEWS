@@ -18,19 +18,19 @@ BUGFIXES:
 009 ==> 396766 - Can't add collection on removable disk.
 010 ==> 443729 - Crash on startup.
 011 ==> 434468 - Needs option to move from Unconfirmed to Ignored.
-012 ==> 
-013 ==> 
-014 ==> 
-015 ==> 
-016 ==> 
-017 ==> 
-018 ==> 
-019 ==> 
-020 ==> 
-021 ==> 
-022 ==> 
-023 ==> 
-024 ==> 
+012 ==> 442303 - Marking face as "Ignored" is not saved.
+013 ==> 442450 - Mysql-Internal crashes often.
+014 ==> 442451 - Mysql-Internal crash.
+015 ==> 443394 - Full Path for Tags not saved to image.
+016 ==> 443900 - Mysql is very slow over the internet.
+017 ==> 444423 - Problem with SQLite when installed on MacOS 11.2.3.
+018 ==> 444903 - digiKam not updating image metadata
+019 ==> 446815 - People section written 1 new.
+020 ==> 446816 - Writing people section.
+021 ==> 446818 - Face writting stage.
+022 ==> 442400 - Ambiguous Shortcuts on Ctrl+Alt+I.
+023 ==> 443544 - Two actions want to use the same shortcut: Open Command Bar and Add Images.
+024 ==> 426662 - File naming - extension aware does not work?
 025 ==> 
 026 ==> 
 027 ==> 
