@@ -15,7 +15,7 @@ BUGFIXES:
 006 ==> 422345 - The libQT5WebEngine crash.
 007 ==> 441989 - Language selection English only.
 008 ==> 444592 - Will digiKam work on MacOS Monterey?
-009 ==> 
+009 ==> 396766 - Can't add collection on removable disk.
 010 ==> 
 011 ==> 
 
