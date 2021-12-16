@@ -125,7 +125,7 @@ void dimgSampleRGBA(DImgScaleInfo* const isi, uint* const dest,
  *    clip_dx: clipped destination x location corresponding to start x
  *    clip_dy: clipped destination y location corresponding to start y
  *    clip_dw: clipped destination width
- *    clip_dh: clipped destination heigh
+ *    clip_dh: clipped destination height
  */
 void dimgSampleRGBA(DImgScaleInfo* const isi, uint* const dest,
                     int dxx, int dyy, int dw, int dh, int dow,
@@ -158,7 +158,7 @@ void dimgSampleRGBA16(DImgScaleInfo* const isi, ullong* const dest,
  *    clip_dx: clipped destination x location corresponding to start x
  *    clip_dy: clipped destination y location corresponding to start y
  *    clip_dw: clipped destination width
- *    clip_dh: clipped destination heigh
+ *    clip_dh: clipped destination height
  */
 void dimgSampleRGBA16(DImgScaleInfo* const isi, ullong* const dest,
                       int dxx, int dyy, int dw, int dh, int dow,
@@ -193,7 +193,7 @@ void dimgScaleAARGBA(DImgScaleInfo* const isi, uint* const dest,
  *    clip_dx: clipped destination x location corresponding to start x
  *    clip_dy: clipped destination y location corresponding to start y
  *    clip_dw: clipped destination width
- *    clip_dh: clipped destination heigh
+ *    clip_dh: clipped destination height
  */
 void dimgScaleAARGBA(DImgScaleInfo* const isi, uint* const dest,
                      int dxx, int dyy, int dw, int dh, int dow, int sow,
@@ -229,7 +229,7 @@ void dimgScaleAARGB(DImgScaleInfo* const isi, uint* const dest,
  *    clip_dx: clipped destination x location corresponding to start x
  *    clip_dy: clipped destination y location corresponding to start y
  *    clip_dw: clipped destination width
- *    clip_dh: clipped destination heigh
+ *    clip_dh: clipped destination height
  */
 void dimgScaleAARGB(DImgScaleInfo* const isi, uint* const dest,
                     int dxx, int dyy, int dw, int dh, int dow, int sow,
@@ -265,7 +265,7 @@ void dimgScaleAARGBA16(DImgScaleInfo* const isi, ullong* const dest,
  *    clip_dx: clipped destination x location corresponding to start x
  *    clip_dy: clipped destination y location corresponding to start y
  *    clip_dw: clipped destination width
- *    clip_dh: clipped destination heigh
+ *    clip_dh: clipped destination height
  */
 void dimgScaleAARGBA16(DImgScaleInfo* const isi, ullong* const dest,
                        int dxx, int dyy, int dw, int dh,
@@ -302,7 +302,7 @@ void dimgScaleAARGB16(DImgScaleInfo* const isi, ullong* const dest,
  *    clip_dx: clipped destination x location corresponding to start x
  *    clip_dy: clipped destination y location corresponding to start y
  *    clip_dw: clipped destination width
- *    clip_dh: clipped destination heigh
+ *    clip_dh: clipped destination height
  */
 void dimgScaleAARGB16(DImgScaleInfo* const isi, ullong* const dest,
                       int dxx, int dyy, int dw, int dh,

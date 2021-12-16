@@ -195,7 +195,7 @@ void GPSBookmarkModelHelper::slotUpdateBookmarksModel()
 {
     d->model->clear();
 
-    // iterate trough all bookmarks
+    // iterate through all bookmarks
 
     d->addBookmarkGroupToModel(d->bookmarkManager->bookmarks());
 }

@@ -76,7 +76,7 @@ public:
 };
 
 const QString WhiteBalanceTool::Private::configGroupName(QLatin1String("whitebalance Tool"));
-const QString WhiteBalanceTool::Private::configHistogramChannelEntry(QLatin1String("Histogram Chanel"));
+const QString WhiteBalanceTool::Private::configHistogramChannelEntry(QLatin1String("Histogram Channel"));
 const QString WhiteBalanceTool::Private::configHistogramScaleEntry(QLatin1String("Histogram Scale"));
 
 // --------------------------------------------------------

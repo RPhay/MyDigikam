@@ -77,7 +77,7 @@ public:
 
     /**
      * Function to re-implement to invoke Raw processor for a Raw file path.
-     * Default Raw decoding settings is also availalble.
+     * Default Raw decoding settings is also available.
      */
     virtual bool run(const QString& path, const DRawDecoding& def) = 0;
 

@@ -33,7 +33,7 @@
 #include <QGraphicsWidget>
 #include <QGraphicsSceneHoverEvent>
 
-// Local inclues
+// Local includes
 
 #include "assignnamewidget.h"
 #include "regionframeitem.h"

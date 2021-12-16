@@ -44,7 +44,7 @@ OsxCodeName
 
 #################################################################################################
 
-# Pathes rules
+# Paths rules
 ORIG_PATH="$PATH"
 ORIG_WD="`pwd`"
 
@@ -53,9 +53,9 @@ export PATH=$INSTALL_PREFIX/bin:/$INSTALL_PREFIX/sbin:$ORIG_PATH
 DKRELEASEID=`cat $ORIG_WD/data/RELEASEID.txt`
 
 #################################################################################################
-# Build icons-set ressource
+# Build icons-set resource
 
-echo -e "\n---------- Build icons-set ressource\n"
+echo -e "\n---------- Build icons-set resource\n"
 
 cd $ORIG_WD/icon-rcc
 

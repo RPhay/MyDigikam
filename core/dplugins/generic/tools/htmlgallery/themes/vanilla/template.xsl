@@ -37,7 +37,7 @@
   doctype-public="-//W3C//DTD XHTML 1.0 Strict//EN" />
 
 
-<!-- ##################### VARIABLE INITILIZATION ######################### -->
+<!-- ##################### VARIABLE INITIALIZATION ######################## -->
 <!-- Initialize some useful variables -->
 <xsl:variable name="theme" select="'grey'" />
 <xsl:variable name="outerBorder" select="boolean(0)" />

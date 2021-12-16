@@ -397,7 +397,7 @@ void INatWindow::switchUser(bool restoreToken)
     }
 
     // Pass cookies to browser; if "remember me" is checked on iNaturalist
-    // website, the brower will re-login for 14 days without user interaction.
+    // website, the browser will re-login for 14 days without user interaction.
 
     QPointer<INatBrowserDlg> dlg = new INatBrowserDlg(userName, cookies, this);
 

@@ -120,7 +120,7 @@ MetaEngine::TagsMap ExifToolParser::tagsDbToOrderedMap(const ExifToolData& tagsD
     foreach (const QString& tag, keys)
     {
         /**
-         * Tag are formated like this:
+         * Tag are formatted like this:
          *
          * EXIF.IFD0.Image.XResolution
          * EXIF.IFD0.Image.YCbCrCoefficients

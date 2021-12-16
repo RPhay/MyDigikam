@@ -119,7 +119,7 @@ void DFileSelector::slotBtnClicked()
         return;
     }
 
-    // Never pass a parent to File Dialog, else dupplicate dialogs will be shown
+    // Never pass a parent to File Dialog, else duplicate dialogs will be shown
 
     QPointer<DFileDialog> fileDlg = new DFileDialog;
 

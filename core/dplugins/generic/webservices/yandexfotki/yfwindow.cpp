@@ -495,7 +495,7 @@ void YFWindow::slotListPhotosDoneForUpload(const QList <YFPhoto>& photosList)
         DItemInfo info(d->iface->itemInfo(url));
         QScopedPointer<DMetadata> meta(new DMetadata);
 
-        // check if photo alredy uploaded
+        // check if photo already uploaded
 
         int oldPhotoId = -1;
 

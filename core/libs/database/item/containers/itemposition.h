@@ -159,7 +159,7 @@ public:
 
     /**
      * Apply all changes made to this object.
-     * (Also called from desctructor)
+     * (Also called from destructor)
      */
     void apply();
 

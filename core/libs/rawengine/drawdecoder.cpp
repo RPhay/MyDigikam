@@ -312,7 +312,7 @@ bool DRawDecoder::loadFullImage(QImage& image,
 
     if (!ret)
     {
-        qCDebug(DIGIKAM_RAWENGINE_LOG) << "Failled to load full RAW picture";
+        qCDebug(DIGIKAM_RAWENGINE_LOG) << "Failed to load full RAW picture";
 
         return false;
     }

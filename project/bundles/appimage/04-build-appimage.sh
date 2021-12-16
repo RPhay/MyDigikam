@@ -56,7 +56,7 @@ DK_RELEASEID=`cat $ORIG_WD/data/RELEASEID.txt`
 
 #################################################################################################
 
-echo -e "---------- Build icons-set ressource\n"
+echo -e "---------- Build icons-set resource\n"
 
 cd $ORIG_WD/icon-rcc
 
@@ -142,7 +142,7 @@ echo -e "------------- Copy AppImage stream data file\n"
 cp -r /usr/share/metainfo/org.kde.digikam.appdata.xml   ./usr/share/metainfo/digikam.appdata.xml
 cp -r /usr/share/metainfo/org.kde.showfoto.appdata.xml  ./usr/share/metainfo/showfoto.appdata.xml
 
-# NOTE: no ressources data are provided with QtWebKit
+# NOTE: no resources data are provided with QtWebKit
 
 if [[ $DK_QTWEBENGINE = 1 ]] ; then
 
@@ -313,7 +313,7 @@ echo -e "---------- Clean-up Bundle Directory Contents\n"
 
 # This list is taken from linuxdeplotqt
 # [https://github.com/probonopd/linuxdeployqt/blob/master/tools/linuxdeployqt/excludelist.h]
-# NOTE: libglapi is included explicity in Krita exclude list.
+# NOTE: libglapi is included explicitly in Krita exclude list.
 # NOTE: with the transition from Mageia6 to 7 to build AppImage libnss* must be included in the bundle (see bug #440689)
 EXCLUDE_FILES="\
 ld-linux.so.2 \

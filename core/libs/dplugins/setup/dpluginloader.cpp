@@ -333,4 +333,4 @@ void DPluginLoader::registerRawImportPlugins(QObject* const parent)
     }
 }
 
-} // namepace Digikam
+} // namespace Digikam

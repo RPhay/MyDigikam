@@ -45,7 +45,7 @@
 #include <QDialogButtonBox>
 #include <QNetworkCookieJar>
 
-// KDE incudes
+// KDE includes
 
 #include <klocalizedstring.h>
 

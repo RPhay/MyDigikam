@@ -6,7 +6,7 @@
 # https://www.digikam.org
 #
 # Date:        2011-11-02
-# Description: Script to drop trailling white space at end line.
+# Description: Script to drop trailing whitespace at end line.
 #
 # Copyright (C) 2011-2021 by Gilles Caulier <caulier dot gilles at gmail dot com>
 #

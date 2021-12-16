@@ -11,7 +11,7 @@
 # - Export binary path /opt/_coverity_version_/bin to PATH variable
 # - Export $DKCoverityToken Shell variable with token of digiKam project given by Coverity SCAN web interface.
 #
-# Exemple in .bashrc:
+# Example in .bashrc:
 #
 # export DKCoverityToken=xxxxxxx
 # export PATH=$PATH:/opt/cov-analysis-linux64-2020.09/bin
@@ -92,10 +92,10 @@ echo "-----------------------------"
 
 echo "Coverity Scan tarball 'myproject.tgz' uploading in progress..."
 
-# To be sure that resolv domain is in cache
+# To be sure that resolve domain is in cache
 nslookup scan5.coverity.com
 
-# To mesure uploading time
+# To measure uploading time
 SECONDS=0
 
 curl https://scan.coverity.com/builds?project=digiKam \

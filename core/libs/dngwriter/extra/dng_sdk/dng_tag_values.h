@@ -333,7 +333,7 @@ enum
 
 	pepAllowCopying				= 0,
 
-	// Can be embeded in a DNG for portable processing, but cannot be used
+	// Can be embedded in a DNG for portable processing, but cannot be used
 	// to process other files that the profile is not embedded in.
 
 	pepEmbedIfUsed				= 1,

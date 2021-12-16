@@ -424,7 +424,7 @@ int get_mem_stats(Digikam::KMemoryInfo::KMemoryInfoData* const data)
     pagesize       = getpagesize();
     data->cacheRam = cache_count * pagesize;
 
-    /* Of couse nothing is ever that simple :) And I have inactive pages to
+    /* Of course nothing is ever that simple :) And I have inactive pages to
      * deal with too. So I'm going to add them to free memory :)
      */
     data->freeRam  = (free_count*pagesize)+(inactive_count*pagesize);

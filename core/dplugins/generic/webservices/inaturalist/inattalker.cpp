@@ -450,7 +450,7 @@ int INatTalker::apiTokenExpiresIn() const
 }
 
 /**
- * We received an api token from a web brower login.
+ * We received an api token from a web browser login.
  */
 void INatTalker::slotApiToken(const QString& apiToken,
                               const QList<QNetworkCookie>& cookies)

@@ -5,7 +5,7 @@
  *
  * Date        : 2005-06-14
  * Description : digiKam 8/16 bits image management API.
- *               Contructors and destructor.
+ *               Constructors and destructor.
  *
  * Copyright (C) 2005      by Renchi Raju <renchi dot raju at gmail dot com>
  * Copyright (C) 2005-2021 by Gilles Caulier <caulier dot gilles at gmail dot com>

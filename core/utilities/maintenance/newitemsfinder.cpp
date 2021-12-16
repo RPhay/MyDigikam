@@ -71,7 +71,7 @@ NewItemsFinder::NewItemsFinder(const FinderMode mode, const QStringList& folders
 
     d->mode = mode;
 
-    // Common conections to ScanController
+    // Common connections to ScanController
 
     connect(ScanController::instance(), SIGNAL(collectionScanStarted(QString)),
             this, SLOT(slotScanStarted(QString)));
@@ -188,14 +188,14 @@ void NewItemsFinder::slotCancel()
 
 void NewItemsFinder::slotPartialScanDone(const QString& path)
 {
-    // Check if path scanned is included in planed list.
+    // Check if path scanned is included in planned list.
 
     if (d->foldersToScan.contains(path) && !d->foldersScanned.contains(path))
     {
         d->foldersScanned.append(path);
         d->foldersScanned.sort();
 
-        // Check if all planed scanning is done
+        // Check if all planned scanning is done
 
         if (d->foldersScanned == d->foldersToScan)
         {

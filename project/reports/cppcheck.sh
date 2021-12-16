@@ -41,7 +41,7 @@ for DROP_ITEM in $KRAZY_FILTERS ; do
     IGNORE_DIRS+="-i../../$DROP_ITEM/ "
 done
 
-# List sub-dirs with headers to append as cppcheck includes pathes
+# List sub-dirs with headers to append as cppcheck includes paths
 HDIRS=$(find ../../core -name '*.h' -printf '%h\n' | sort -u)
 
 for INCLUDE_PATH in $HDIRS ; do

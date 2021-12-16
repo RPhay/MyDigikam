@@ -5,7 +5,7 @@
 #
 # Requirements installed are:
 #
-# - Developement packages to compile source code.
+# - Development packages to compile source code.
 # - API doc compilation.
 # - Hanbook compilation.
 # - Cross-compiling dependencies for Windows.

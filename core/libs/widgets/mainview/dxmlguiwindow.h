@@ -160,7 +160,7 @@ public:
 
     /**
      * Register all generic plugins action to this instance.
-     * Call registerExtraPluginsActions() to plug oter kind of plugins in GUI.
+     * Call registerExtraPluginsActions() to plug other kind of plugins in GUI.
      */
     void registerPluginsActions();
     virtual void registerExtraPluginsActions(QString& /*dom*/) {};

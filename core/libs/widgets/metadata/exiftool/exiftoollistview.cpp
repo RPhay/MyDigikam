@@ -273,7 +273,7 @@ void ExifToolListView::setGroupList(const QStringList& tagsFilter, const QString
     QStringList filters = tagsFilter;
     QString groupItemName;
 
-    /** Key is formated like this:
+    /** Key is formatted like this:
      *
      * EXIF.ExifIFD.Image.ExposureCompensation
      * File.File.Other.FileType

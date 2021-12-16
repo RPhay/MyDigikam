@@ -424,7 +424,7 @@ void RGWidget::updateUIState()
 }
 
 /**
- * This slot triggeres when the button that start the reverse geocoding process is pressed.
+ * This slot triggers when the button that start the reverse geocoding process is pressed.
  */
 void RGWidget::slotButtonRGSelected()
 {

@@ -118,7 +118,7 @@ PresentationDlg::PresentationDlg(QWidget* const parent,
     d->sharedData->advancedPage = new PresentationAdvPage(this, d->sharedData);
     d->tab->addTab(d->sharedData->advancedPage,
                    QIcon::fromTheme(QLatin1String("configure")),
-                   i18nc("@title: avanced presentation settings", "Advanced"));
+                   i18nc("@title: advanced presentation settings", "Advanced"));
 
     QVBoxLayout* const mainLayout = new QVBoxLayout(this);
     mainLayout->addWidget(d->tab);

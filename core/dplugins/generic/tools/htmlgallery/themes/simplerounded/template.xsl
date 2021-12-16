@@ -74,7 +74,7 @@ listBackground - The Color of the Thumb list.
 	<xsl:variable name="numberOfCollections" select="count(collections/collection)" />
 	<xsl:variable name="numberOfListPages" select="number(ceiling($numberOfCollections div $thumbnailsPerPage))" />
 	
-	<!-- Generation of the Headder. -->
+	<!-- Generation of the Header. -->
 	<xsl:template name="head">
 		<xsl:param name="relPath" /><!-- the path to the root of the generated galery -->
 		<head>
@@ -122,7 +122,7 @@ listBackground - The Color of the Thumb list.
 	</xsl:template>
 	
 	
-<!-- Decide, wether there are more than one collections or not. -->			
+<!-- Decide, whether there are more than one collections or not. -->			
 	<xsl:template match="/">
 		<xsl:choose>
 			<xsl:when test="$numberOfCollections = 1">
@@ -160,7 +160,7 @@ listBackground - The Color of the Thumb list.
 		<xsl:param name="currentPage" /> <!-- The current Page -->
 		<xsl:param name="collectionPageCount" /> <!-- The total count of pages -->
 		<html>
-			<!-- Include the headder -->
+			<!-- Include the header -->
 			<xsl:call-template name="head">
 				<xsl:with-param name="relPath" select="$relPath" />
 			</xsl:call-template>
@@ -319,11 +319,11 @@ listBackground - The Color of the Thumb list.
 	</xsl:template>
 	
 
-<!-- ############################ The Template to gererate every single image page. ############################ -->
+<!-- ############################ The Template to generate every single image page. ############################ -->
 	<xsl:template name="imagePage">
-		<xsl:param name="iterator" /><!-- The psitoin to generate the navigation. -->
+		<xsl:param name="iterator" /><!-- The position to generate the navigation. -->
 		<html>
-			<!-- Include the headder information -->
+			<!-- Include the header information -->
 			<xsl:call-template name="head">
 				<xsl:with-param name="relPath" select="'../'" />
 			</xsl:call-template>
@@ -415,7 +415,7 @@ listBackground - The Color of the Thumb list.
 		<xsl:variable name="offset" select="number($thumbnailsPerPage  * $currentPage)"/> <!-- The offset of the current page. -->
 		
 				<html>
-					<!-- Include the headder information -->
+					<!-- Include the header information -->
 					<xsl:call-template name="head">
 						<xsl:with-param name="relPath" select="''" />
 					</xsl:call-template>

@@ -162,14 +162,14 @@ public:
 public:
 
     /**
-     * Contructor without argument. Before to use it,
+     * Constructor without argument. Before to use it,
      * you need to call in order: setSettings(), setMode(), optionally setInPaintingMask(),
      * setOriginalImage(), and necessary setup() at end.
      */
     explicit GreycstorationFilter(QObject* const parent = nullptr);
 
     /**
-     * Contructor with all arguments. Ready to use.
+     * Constructor with all arguments. Ready to use.
      */
     GreycstorationFilter(DImg* const orgImage,
                          const GreycstorationContainer& settings,

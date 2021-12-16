@@ -108,7 +108,7 @@ public:
     int  maximumNumberOfThreads()   const;
 
     /** Reset maximum number of threads used to parallelize collection of job processing to max core detected on computer.
-     *  This method is called in contructor.
+     *  This method is called in constructor.
      */
     void setDefaultMaximumNumberOfThreads();
 

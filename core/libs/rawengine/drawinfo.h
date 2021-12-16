@@ -155,7 +155,7 @@ public:
     float            baselineExposure;
 
     /**
-     * Ambient temperature in Celcius degrees.
+     * Ambient temperature in Celsius degrees.
      */
     float            ambientTemperature;
 

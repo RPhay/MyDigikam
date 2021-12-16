@@ -25,7 +25,7 @@
 |├── COPYING.LIB                                              | Internal shared libraries license                                       |
 |├── download-repos                                           | Script to download all source code including extra repositories         |
 |├── gits                                                     | Script to perform git in recursive mode over multiple repositories      |
-|├── gitup                                                    | Script to perform git pull --rebase in reccursive mode                  |
+|├── gitup                                                    | Script to perform git pull --rebase in recursive mode                   |
 |├── Mainpage.dox                                             | API documentation main page based on Doxygen                            |
 |├── Messages.sh                                              | Script to extract strings for translators                               |
 |├── NEWS                                                     | Notice to resume all project changes done at release time               |
@@ -79,14 +79,14 @@
 |│   │   │   ├── enhance                                      | All enhance item plugins                                                |
 |│   │   │   ├── filters                                      | All filter item plugins                                                 |
 |│   │   │   ├── metadata                                     | All metadata edit plugins                                               |
-|│   │   │   └── transform                                    | All tranform item plugins                                               |
+|│   │   │   └── transform                                    | All transform item plugins                                              |
 |│   │   ├── editor                                           | All Image Editor plugins                                                |
 |│   │   │   ├── colors                                       | All color adjustments plugins                                           |
 |│   │   │   ├── decorate                                     | All decorate item plugins                                               |
 |│   │   │   ├── enhance                                      | All enhance item plugins                                                |
 |│   │   │   ├── file                                         | All file processing plugins                                             |
 |│   │   │   ├── filters                                      | All filter item plugins                                                 |
-|│   │   │   └── transform                                    | All tranform item plugins                                               |
+|│   │   │   └── transform                                    | All transform item plugins                                              |
 |│   │   ├── generic                                          | All generic plugins                                                     |
 |│   │   │   ├── import                                       | Tools to import items                                                   |
 |│   │   │   ├── metadata                                     | Plugins to change items metadata                                        |
@@ -105,7 +105,7 @@
 |│   │   │   ├── haar                                         | The similarity low level algorithms to compute image finger-prints      |
 |│   │   │   ├── history                                      | The item history classes for the database                               |
 |│   │   │   ├── item                                         | The database item classes, including containers, lister, and scanner    |
-|│   │   │   ├── models                                       | The databse model classes                                               |
+|│   │   │   ├── models                                       | The database model classes                                               |
 |│   │   │   ├── server                                       | The Mysql internal server                                               |
 |│   │   │   ├── similaritydb                                 | The similarity database                                                 |
 |│   │   │   ├── tags                                         | The database tags management classes                                    |
@@ -142,10 +142,10 @@
 |│   │   ├── dplugins                                         | All shared dplugins classes are hosted here                             |
 |│   │   │   ├── core                                         | Low level classes for plugins definitions                               |
 |│   │   │   ├── iface                                        | Low level classes for host interface definitions                        |
-|│   │   │   ├── setup                                        | Classes to setup plugins in configuration pannel                        |
+|│   │   │   ├── setup                                        | Classes to setup plugins in configuration panel                         |
 |│   │   │   ├── webservices                                  | Common classes for Webservices tools                                    |
 |│   │   │   └── widgets                                      | Common widget sfor plugins                                              |
-|│   │   ├── dtrash                                           | digiKam trash manager full independant of desktop trash                 |
+|│   │   ├── dtrash                                           | digiKam trash manager full independent of desktop trash                 |
 |│   │   ├── facesengine                                      | Face detection and recognition engine + Faces database implementations  |
 |│   │   │   ├── alignment-congealing                         | Face alignment based on congealing method                               |
 |│   │   │   ├── alignment-flandmark                          | Face alignment based on flandmark method                                |
@@ -155,7 +155,7 @@
 |│   │   │   ├── opencv3-face                                 | OpenCV version 3 face management classes                                |
 |│   │   │   ├── preprocessing-tantriggs                      | Face pre-processing based on tantriggs method                           |
 |│   │   │   ├── recognition-dlib-dnn                         | Deep-learning faces recognition module                                  |
-|│   │   │   ├── recognition-opencv-eigenfaces                | Eigen faces recognition mudule                                          |
+|│   │   │   ├── recognition-opencv-eigenfaces                | Eigen faces recognition module                                          |
 |│   │   │   ├── recognition-opencv-fisherfaces               | Fisher faces recognition module                                         |
 |│   │   │   ├── recognition-opencv-lbph                      | LBPH bases faces recognition module                                     |
 |│   │   │   └── shape-predictor                              | Shape predictor algorithms                                              |
@@ -178,9 +178,9 @@
 |│   │   ├── template                                         | Metadata template support                                               |
 |│   │   ├── threadimageio                                    | Classes to process thumbs and preview extraction including video support|
 |│   │   ├── threads                                          | Classes to manage and chain threads using multi-core                    |
-|│   │   ├── timeadjust                                       | Common classes time adjustements tools                                  |
+|│   │   ├── timeadjust                                       | Common classes time adjustments tools                                   |
 |│   │   ├── transitionmngr                                   | Frames transitions manager                                              |
-|│   │   ├── versionmanager                                   | Classes to manage versionning operations                                |
+|│   │   ├── versionmanager                                   | Classes to manage versioning operations                                 |
 |│   │   ├── video                                            | Classes to play with video contents                                     |
 |│   │   └── widgets                                          | To host plenty of widgets used everywhere                               |
 |│   │       ├── colors                                       | Colors relevant views                                                   |
@@ -233,7 +233,7 @@
 |│       │   ├── manager                                      | The multi-core manager to run tools in background                       |
 |│       │   ├── tools                                        | All BQM tools classed by functions                                      |
 |│       │   └── views                                        | The BQM internal views                                                  |
-|│       ├── searchwindow                                     | The powerfull advanced search tool                                      |
+|│       ├── searchwindow                                     | The powerful advanced search tool                                       |
 |│       ├── setup                                            | All digiKam setup panel, with few ones shared with Showfoto             |
 |│       │   ├── album                                        | Album configuration views                                               |
 |│       │   ├── camera                                       | Camera configuration views                                              |
@@ -249,7 +249,7 @@
 |└── project                                                  | Extra project parts                                                     |
 |    ├── bundles                                              | Bundles build scripts                                                   |
 |    │   ├── 3rdparty                                         | External components required to build bundles                           |
-|    │   ├── CD                                               | Continuous Deployement configurations                                   |
+|    │   ├── CD                                               | Continuous deployment configurations                                    |
 |    │   ├── appimage                                         | Linux AppImage                                                          |
 |    │   ├── flatpak                                          | Linux Flatpak                                                           |
 |    │   ├── macports                                         | MacOs package                                                           |
@@ -319,7 +319,7 @@ The full list of mandatory (X) and optional (opt) external dependencies required
 | libtiff              |   X      | >= 4.0      | http://www.remotesensing.org/libtiff                  | For DImg image loader                                  |                                                                                       |
 | libpng               |   X      | >= 1.6      | http://www.libpng.org/pub/png/libpng.html             | For DImg image loader                                  |                                                                                       |
 | libjpeg              |   X      | >= 6b       | http://www.ijg.org                                    | jpeglib >= 8.0 hightly recommended for RawEngine       |                                                                                       |
-| libboost             |   X      | >= 1.55.0   | http://www.boost.org/doc/libs                         | For Versionning support                                |                                                                                       |
+| libboost             |   X      | >= 1.55.0   | http://www.boost.org/doc/libs                         | For Versioning support                                 |                                                                                       |
 | liblcms              |   X      | >= 2.x      | http://www.littlecms.com                              | For Color Management support                           |                                                                                       |
 | libexpat             |   X      | >= 2.1.0    | http://expat.sourceforge.net                          | For DNG converter                                      |                                                                                       |
 | libexiv2             |   X      | >= 0.27.0   | http://www.exiv2.org                                  | Metadata low level management.                         |                                                                                       |
@@ -498,7 +498,7 @@ To run digikam, use the following commands:
 
 The same applies for all binaries in /your/root/directory/bin/
 
-If your shell is bash, you can edit your \b .bashrc file (in $HOME) and add the follwing alias:
+If your shell is bash, you can edit your \b .bashrc file (in $HOME) and add the following alias:
 
 \code
  DIGIKAMROOT="/your/root/directory"
@@ -532,7 +532,7 @@ E.g. you can start digiKam like this on the command line with thumbnails and cor
 
 \subsection digiKamloggincat Logging Categories in digiKam
 
-All loggin categories are listed in \ref digikam_debug.cpp source code.
+All logging categories are listed in \ref digikam_debug.cpp source code.
 
 \subsection moreaboutloggincat Further Reading
 
@@ -1086,7 +1086,7 @@ git checkout master
 git checkout -b development/dplugins
 \endcode
 
-Example to delete the local 'dplugins' developement branch:
+Example to delete the local 'dplugins' development branch:
 
 \code
 git checkout master

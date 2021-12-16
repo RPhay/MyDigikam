@@ -623,7 +623,7 @@ bool ItemDragDropHandler::dropEvent(QAbstractItemView* abstractview, const QDrop
             return true;
         }
 
-        // Standart tags
+        // Standard tags
 
         QMenu popMenu(view);
 

@@ -166,7 +166,7 @@ QStringList WelcomePageView::featuresTabContent() const
     newFeatures << i18n("Improved support for UNC network paths under Windows.");
     newFeatures << i18n("Improved support for Unicode paths under Windows.");
     newFeatures << i18n("Apple bundle is now relocatable and compatible with macOS BigSur.");
-    newFeatures << i18n("New online version checker and downloader to automatize upgrade under Windows and macOS.");
+    newFeatures << i18n("New online version checker and downloader to automate upgrade under Windows and macOS.");
     newFeatures << i18n("Better support of astro FITS image format including metadata extraction support to populate the database.");
     newFeatures << i18n("Use last Exiv2 0.27.4 in all bundles with Base Media File metadata read and write support (HEIF, AVIF).");
     newFeatures << i18n("Find duplicates items is now process in parallel using multi-cores.");

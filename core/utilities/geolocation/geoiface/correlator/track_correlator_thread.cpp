@@ -76,7 +76,7 @@ void TrackCorrelatorThread::run()
             return;
         }
 
-        // GPS device are sync in time by satelite using GMT time.
+        // GPS device are sync in time by satellite using GMT time.
 
         QDateTime itemDateTime = it->dateTime.addSecs(options.secondsOffset);
         itemDateTime.setTimeZone(QTimeZone(options.timeZoneOffset));

@@ -136,7 +136,7 @@ def process(imagePath, detector, alignTool, imgDim, model):
     return model.forward()
 
 
-# contruct the argument parser and parse the arguments
+# construct the argument parser and parse the arguments
 ap = argparse.ArgumentParser()
 ap.add_argument("-d", "--dataset", required=True,
                 help="path to dataset directory")

@@ -69,7 +69,7 @@ bool ItemGPS::loadImageData()
         return true;
     }
 
-    // If item do not have any GPS data in databse, we will try to load
+    // If item do not have any GPS data in database, we will try to load
     // it from file using standard implementation from GPSItemContainer.
 
     return GPSItemContainer::loadImageData();

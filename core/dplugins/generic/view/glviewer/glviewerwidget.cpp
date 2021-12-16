@@ -244,7 +244,7 @@ GLViewerWidget::GLViewerWidget(DPlugin* const plugin, DInfoInterface* const ifac
 
     showFullScreen(); // krazy:exclude=qmethods
 
-    // let the cursor dissapear after 2sec of inactivity
+    // let the cursor disappear after 2sec of inactivity
 
     connect(&d->timerMouseMove, SIGNAL(timeout()),
             this, SLOT(slotTimeoutMouseMove()));
@@ -567,7 +567,7 @@ void GLViewerWidget::keyPressEvent(QKeyEvent* e)
             break;
         }
 
-        // toggle temorarily between "show next image" and "zoom" on mousewheel change
+        // toggle temporarily between "show next image" and "zoom" on mousewheel change
 
         case Qt::Key_Control:
         {
@@ -1021,7 +1021,7 @@ void GLViewerWidget::slotTimeoutMouseMove()
 
 /**
  * check if OpenGL engine is ready. This function is called from outside the widget.
- * If OpenGL doen't work correctly, the widget can be destroyed
+ * If OpenGL doesn't work correctly, the widget can be destroyed
  * \return OGLstate::oglNoContext No OpenGl context could be retrieved
  * \return OGLstate::oglNoRectangularTexture GLGL_ARB_texture_rectangle is not supported
  * \return OGLstate::oglOK all is fine

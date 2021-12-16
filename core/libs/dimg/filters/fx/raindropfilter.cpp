@@ -192,7 +192,7 @@ void RainDropFilter::rainDropsImageMultithreaded(const Args& prm)
  * progressMax      => Max. value for progress bar (can be different if using clipping area).
  *
  * Theory           => This functions does several math's functions and the engine
- *                     is simple to undestand, but a little hard to implement. A
+ *                     is simple to understand, but a little hard to implement. A
  *                     control will indicate if there is or not a raindrop in that
  *                     area, if not, a fisheye effect with a random size (max=MaxDropSize)
  *                     will be applied, after this, a shadow will be applied too.

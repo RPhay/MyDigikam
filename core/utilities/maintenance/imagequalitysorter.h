@@ -47,7 +47,7 @@ public:
 
     enum QualityScanMode
     {
-        AllItems = 0,        // Clean all Pick Labels assignements and re-scan all items.
+        AllItems = 0,        // Clean all Pick Labels assignments and re-scan all items.
         NonAssignedItems     // Scan only items with no Pick Labels assigned.
     };
 

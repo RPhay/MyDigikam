@@ -87,7 +87,7 @@ void AdjustCurvesToolPlugin::setup(QObject* const parent)
     ac->setIcon(icon());
     ac->setText(i18nc("@action", "Curves Adjust..."));
     ac->setObjectName(QLatin1String("editorwindow_color_adjustcurves"));
-    // NOTE: Photoshop 7 use CTRL+M (but it's used in KDE to toogle menu bar).
+    // NOTE: Photoshop 7 use CTRL+M (but it's used in KDE to toggle menu bar).
     ac->setShortcut(Qt::CTRL + Qt::SHIFT + Qt::Key_C);
     ac->setActionCategory(DPluginAction::EditorColors);
 

@@ -35,7 +35,7 @@
   doctype-system="http://www.w3.org/TR/xhtml1/DTD/xhtml1-strict.dtd"
   doctype-public="-//W3C//DTD XHTML 1.0 Strict//EN" />
 
-<!-- ##################### VARIABLE INITILIZATION ######################### -->
+<!-- ##################### VARIABLE INITIALIZATION ######################## -->
 <!-- Initialize some useful variables -->
 <xsl:variable name="theme" select="'grey'" />
 <xsl:variable name="outerBorder" select="boolean(0)" />
@@ -48,7 +48,7 @@
 <xsl:variable name="numCollections" select="count(collections/collection)"/>
         
         
-<!-- ##################### COLLECTION PAGES GENERATION ##################### -->
+<!-- ##################### COLLECTION PAGES GENERATION #################### -->
 <xsl:template name="collectionPages">
   <xsl:call-template name="collectionPages.for.loop">
     <xsl:with-param name="i" select="1"/>

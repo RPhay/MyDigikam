@@ -76,7 +76,7 @@ OPTIONS='-DBUILD_SHARED_LIBS=ON \
 
 echo "Installing to $MXE_BUILDROOT for target $MXE_BUILD_TARGETS with build mode $BUILD_TYPE and configure options $OPTIONS"
 
-# Pathes rules
+# Paths rules
 ORIG_PATH="$PATH"
 export PATH=$MXE_BUILDROOT/usr/bin:$PATH
 

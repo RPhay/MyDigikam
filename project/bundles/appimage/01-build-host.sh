@@ -179,7 +179,7 @@ rm -fr /usr/local/include/openssl || true
 echo -e "---------- Prepare Linux host to Compile Extra Dependencies\n"
 
 # Workaround for: On Mageia 6, .pc files in /usr/lib/pkgconfig are not recognized
-# However, this is where .pc files get installed when bulding libraries... (FIXME)
+# However, this is where .pc files get installed when building libraries... (FIXME)
 # I found this by comparing the output of librevenge's "make install" command
 # between Ubuntu and CentOS 6
 ln -sf /usr/share/pkgconfig /usr/lib/pkgconfig

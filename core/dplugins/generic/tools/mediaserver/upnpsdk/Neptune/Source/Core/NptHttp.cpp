@@ -325,7 +325,7 @@ NPT_HttpHeaders::GetHeaderValue(const char* name) const
 class NPT_HttpEntityBodyInputStream : public NPT_InputStream
 {
 public:
-    // constructor and desctructor
+    // constructor and destructor
     NPT_HttpEntityBodyInputStream(NPT_BufferedInputStreamReference& source,
                                   NPT_LargeSize                     size,
                                   bool                              size_is_known,

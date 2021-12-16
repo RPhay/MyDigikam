@@ -113,7 +113,7 @@ public:
         infoProvider        (nullptr),
         dbIdForReplacement  (-1),
         thumbnailSize       (0),
-        digiKamFingerPrint  (QLatin1String("Digikam Thumbnail Generator")), // Used internaly as PNG metadata. Do not use i18n.
+        digiKamFingerPrint  (QLatin1String("Digikam Thumbnail Generator")), // Used internally as PNG metadata. Do not use i18n.
         observer            (nullptr)
     {
         fastRawSettings.optimizeTimeLoading();

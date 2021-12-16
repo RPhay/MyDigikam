@@ -199,7 +199,7 @@ void SlideShowPlugin::setup(QObject* const parent)
         connect(ac, SIGNAL(triggered(bool)),
                 this, SLOT(slotShowManual()));
 
-        // See bug #425425: register all sub-actions to collection instance to be able to edit keyboard shorcuts
+        // See bug #425425: register all sub-actions to collection instance to be able to edit keyboard shortcuts
 
         KXmlGuiWindow* const gui = dynamic_cast<KXmlGuiWindow*>(parent);
 

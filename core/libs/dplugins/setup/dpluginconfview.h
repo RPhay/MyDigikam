@@ -57,7 +57,7 @@ public:
     void apply();
 
     /**
-     * Return the number of plugins actived in the list.
+     * Return the number of plugins active in the list.
      */
     int actived()                                const;
 
@@ -72,7 +72,7 @@ public:
     int itemsVisible()                           const;
 
     /**
-     * Return the number of plugins in the list with visibly properties availalble.
+     * Return the number of plugins in the list with visibly properties available.
      */
     int itemsWithVisiblyProperty()               const;
 

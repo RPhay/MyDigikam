@@ -1,7 +1,7 @@
 TODO List
 ---------
 
-- To re-init mysql database server under Linux with a clean intall, process as below :
+- To re-init mysql database server under Linux with a clean install, process as below :
 
   # su
   # rm -rf /var/lib/mysql

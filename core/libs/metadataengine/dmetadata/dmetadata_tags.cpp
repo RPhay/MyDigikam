@@ -53,7 +53,7 @@ bool DMetadata::getItemTagsPath(QStringList& tagsPath,
         QString currentNamespace                   = entry.namespaceName;
         NamespaceEntry::SpecialOptions currentOpts = entry.specialOpts;
 
-        // Some namespaces have altenative paths, we must search them both
+        // Some namespaces have alternative paths, we must search them both
 
         switch (entry.subspace)
         {

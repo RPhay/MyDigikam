@@ -77,7 +77,7 @@ echo "Clang Report $TITLE to publish is located to $SCANBUILD_DIR"
 krazySkipConfig
 
 for DROP_ITEM in $KRAZY_FILTERS ; do
-    echo -e "--- drop $DROP_ITEM from index.html with statistics adjustements"
+    echo -e "--- drop $DROP_ITEM from index.html with statistics adjustments"
 
     # List all report types including current pattern to drop.
     REPORT_ENTRIES=( $(grep $DROP_ITEM $SCANBUILD_DIR/index.html) ) || true

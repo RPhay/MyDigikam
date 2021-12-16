@@ -308,7 +308,7 @@ bool DMetadata::setItemFacesMap(const QMultiMap<QString, QVariant>& facesPath, b
         ok &= setXmpTagString(areahTagKey.arg(j).toLatin1().constData(),
                               QString::number(h),
                               MetaEngine::NormalTag);
-        qCDebug(DIGIKAM_METAENGINE_LOG) << "    => set heigh:" << ok;
+        qCDebug(DIGIKAM_METAENGINE_LOG) << "    => set height:" << ok;
 
         // Set stArea:unit inside Area structure as normalized
 

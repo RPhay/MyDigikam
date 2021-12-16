@@ -53,53 +53,53 @@ echo "-------------------------------------------------------------------"
 
 required_packages=("cmake"                   # To Compile   Source Code
                    "extra-cmake-modules"     # To Compile   Source Code
-                   "build-essential"         # To Compile   Source Code   
+                   "build-essential"         # To Compile   Source Code
 
                    "libqt5core5a"            # Qt 5 core module
-                   "libqt5gui5"              # Qt 5 Gui module   
+                   "libqt5gui5"              # Qt 5 Gui module
                    "libqt5widgets5"          # Qt 5 widget module
                    "libqt5network5"          # Qt 5 network module
-                   "libqt5sql5"              # Qt 5 SQL module 
-                   "libqt5xml5"              # Qt 5 XML module 
-                   "libqt5concurrent5"       # Qt 5 Concurrent module 
-                   "libqt5printsupport5"     # Qt 5 PrintSupport module 
-                   "libqt5svg5"              # Qt 5 Svg module 
-                   "libqt5webengine5"        # Qt 5 webengine module 
-                   
+                   "libqt5sql5"              # Qt 5 SQL module
+                   "libqt5xml5"              # Qt 5 XML module
+                   "libqt5concurrent5"       # Qt 5 Concurrent module
+                   "libqt5printsupport5"     # Qt 5 PrintSupport module
+                   "libqt5svg5"              # Qt 5 Svg module
+                   "libqt5webengine5"        # Qt 5 webengine module
+
                    "libkf5config-dev"        # Configuration settings framework for Qt
                    "libkf5xmlgui-dev"        # User configurable main windows
-                   "libkf5i18n-dev"          # Avanced internationalization framework  
+                   "libkf5i18n-dev"          # Advanced internationalization framework
                    "libkf5windowsystem-dev"  # Development files for kwindowsystem
-                   "libkf5service-dev"       # Development files for kservice   
+                   "libkf5service-dev"       # Development files for kservice
                    "libkf5solid-dev"         # Qt library to query and control hardware
                    "libkf5coreaddons-dev"    # Development files - KDE Frameworks 5 addons to QtCore
 
-                   "libopencv-dev"           # Development files for opencv   
+                   "libopencv-dev"           # Development files for opencv
                    "libpthread-stubs0-dev"   # Development files for pthread
-                   "libtiff-dev"             # Tag image file format library  
-                   "libpng-dev"              # PNG library   
+                   "libtiff-dev"             # Tag image file format library
+                   "libpng-dev"              # PNG library
                    "libjpeg-dev"             # JPEG library
-                   "libboost-all-dev"        # Boots C++ Libraries   
-                   "liblcms2-dev"            # Little CMS 2 color management library   
+                   "libboost-all-dev"        # Boots C++ Libraries
+                   "liblcms2-dev"            # Little CMS 2 color management library
                    "libexpat1-dev"           # XML parsing C library
                    "libexiv2-dev"            # Metadata manipulation library
-                    )    
+                    )
 
 
 for pkg in ${required_packages[@]}; do
 
     sudo apt-get install -y ${pkg}
-    
-    current_version=$(dpkg-query --showformat='${Version}' --show ${pkg}) 
 
-    case "${pkg}" in 
-    "cmake") 
+    current_version=$(dpkg-query --showformat='${Version}' --show ${pkg})
+
+    case "${pkg}" in
+    "cmake")
         required_version=3.3.2
         ;;
-    "extra-cmake-modules") 
+    "extra-cmake-modules")
         required_version=5.5.0
         ;;
-    "build-essential") 
+    "build-essential")
         required_version=7.2.0
         ;;
     "libqt5core5a")
@@ -216,12 +216,12 @@ optional_packages=("ruby"
                    "libkf5filemetadata-dev"             # >= 5.5.0
                    "libkf5calendarcore-dev"             # >= 5.5.0
                    "libkf5akonadicontact-dev"           # >= 4.89.0
-                   "libkf5doctools-dev" 
-                    #TODO add new optinal packages
-                    )    
-    
+                   "libkf5doctools-dev"
+                    #TODO add new optional packages
+                    )
+
 
 # for pkg in ${optional_packages[@]}; do
 #     sudo apt-get install -y ${pkg}
 #     echo "-------------------------------------------------------------------"
-# done      
+# done

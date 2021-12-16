@@ -45,7 +45,7 @@ public:
      * You need to call setupFilter() and startFilter()
      * to start the threaded computation.
      * To run filter without to use multithreading, call startFilterDirectly().
-     * NOTE: Versionning is not supported in this class
+     * NOTE: Versioning is not supported in this class
      */
     explicit DImgThreadedAnalyser(QObject* const parent = nullptr, const QString& name = QString());
 

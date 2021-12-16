@@ -58,7 +58,7 @@ public:
      * Constructor.
      *
      * @param parent the parent for qt parent child mechanism
-     * @param dialogParent paret widget for dialogs displayed by this object
+     * @param dialogParent parent widget for dialogs displayed by this object
      */
     explicit TagModificationHelper(QObject* const parent, QWidget* const dialogParent);
 

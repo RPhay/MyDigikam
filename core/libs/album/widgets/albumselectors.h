@@ -57,7 +57,7 @@ public:
 public:
 
     /**
-     * Default Contructor. 'label' is front text of label which title widget. 'configName' is name used to store
+     * Default Constructor. 'label' is front text of label which title widget. 'configName' is name used to store
      * Albums configuration in settings file. 'parent' is parent widget.
      */
     explicit AlbumSelectors(const QString& label,

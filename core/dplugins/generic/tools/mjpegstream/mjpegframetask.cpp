@@ -146,7 +146,7 @@ void MjpegFrameTask::run()
 
         for (int i = 0 ; ((i < d->settings.inputImages.count()) && !m_cancel) ; ++i)
         {
-            // One loop strem all items one by one from the ordered list
+            // One loop stream all items one by one from the ordered list
 
             if ((i == 0) && !oneLoopDone)
             {

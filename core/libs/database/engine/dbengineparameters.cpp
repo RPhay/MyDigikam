@@ -62,7 +62,7 @@ static const char* configDatabaseNameSimilarity              = "Database Name Si
 static const char* configDatabaseHostName                    = "Database Hostname";
 static const char* configDatabasePort                        = "Database Port";
 static const char* configDatabaseUsername                    = "Database Username";
-static const char* configDatabasePassword                    = "Database Password";          ///< For compatbilitity. Use crypted version instead.
+static const char* configDatabasePassword                    = "Database Password";          ///< For compatbilitity. Use encrypted version instead.
 static const char* configDatabaseEncryptedPassword           = "Database Encrypted Password";
 static const char* configDatabaseConnectOptions              = "Database Connectoptions";
 /// Legacy for older versions.

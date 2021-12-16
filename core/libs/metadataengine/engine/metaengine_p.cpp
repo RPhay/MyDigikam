@@ -642,7 +642,7 @@ QString MetaEngine::Private::detectEncodingAndDecode(const std::string& value) c
     }
 
     // Utf8 has a pretty unique byte pattern.
-    // Thats not true for ASCII, it is not possible
+    // That's not true for ASCII, it is not possible
     // to reliably autodetect different ISO-8859 charsets.
     // So we can use either local encoding, or latin1.
 

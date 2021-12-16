@@ -95,7 +95,7 @@ public:
 private:
 
     /**
-     * Run getItemInfo implementation whithout to be wrapped into GPhoto context
+     * Run getItemInfo implementation without being wrapped into GPhoto context
      */
     void getItemInfoInternal(const QString& folder, const QString& itemName, CamItemInfo& info, bool useMetadata);
 

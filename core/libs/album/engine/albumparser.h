@@ -41,12 +41,12 @@ class DIGIKAM_GUI_EXPORT AlbumParser : public ProgressItem
 public:
 
     /**
-     * Contructor to work on image list
+     * Constructor to work on image list
      */
     explicit AlbumParser(const ItemInfoList& infoList);
 
     /**
-     * Contructor to work on recursive mode from album
+     * Constructor to work on recursive mode from album
      */
     explicit AlbumParser(Album* const album);
 

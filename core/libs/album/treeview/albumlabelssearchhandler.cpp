@@ -458,11 +458,11 @@ QString AlbumLabelsSearchHandler::getDefaultTitle() const
 {
     if (d->treeWidget->isCheckable())
     {
-        return i18nc("@info: search label defaut title", "Exported Labels");
+        return i18nc("@info: search label default title", "Exported Labels");
     }
     else
     {
-        return i18nc("@info: search label defaut title", "Labels Album");
+        return i18nc("@info: search label default title", "Labels Album");
     }
 }
 

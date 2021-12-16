@@ -216,7 +216,7 @@ TileIndex TileIndex::fromCoordinates(const Digikam::GeoCoordinates& coordinate, 
 
     qint64 tileLat, tileLon;
     {
-        // this is the ony place where rounding happens
+        // this is the only place where rounding happens
 
         tileLat = static_cast<qint64>(((coordinate.lat() + 90.0)  / 180.0) * MaxLevelTileSplits);
         tileLon = static_cast<qint64>(((coordinate.lon() + 180.0) / 360.0) * MaxLevelTileSplits);

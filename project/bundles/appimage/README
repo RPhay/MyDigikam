@@ -40,7 +40,7 @@ Note : the bundle is rellocable.
     │   ├── geoservices
     │   ├── iconengines
     │   ├── imageformats
-    │   ├── kauth                                   KF5 authentification
+    │   ├── kauth                                   KF5 authentication
     │   ├── kf5                                     Generic KF5 plugins
     │   ├── mediaservice
     │   ├── org.kde.kglobalaccel5.platforms         KF5 global accelerators

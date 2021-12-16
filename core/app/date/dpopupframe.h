@@ -41,7 +41,7 @@ class DPopupFrame : public QFrame
 public:
 
     /**
-     * The contructor. Creates a dialog without buttons.
+     * The constructor. Creates a dialog without buttons.
      */
     explicit DPopupFrame(QWidget* const parent = nullptr);
 

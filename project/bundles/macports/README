@@ -3,9 +3,9 @@ RESUME
 Scripts to build binary digiKam package for MacOS
 
 These scripts build a binary digiKam package for MacOS using Macports 
-environnement and Packages application.
+environment and Packages application.
 
-These scripts follow instructions from Qt bundle deployement for MacOS as shared libraries
+These scripts follow instructions from Qt bundle deployment for MacOS as shared libraries
 available at this url: http://doc.qt.io/qt-5/osx-deployment.html
 
 

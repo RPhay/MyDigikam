@@ -1537,7 +1537,7 @@ bool GPCamera::cameraSummary(QString& summary)
         return false;
     }
 
-    // we do not expect titel/model/etc. to contain newlines,
+    // we do not expect title/model/etc. to contain newlines,
     // so we just escape HTML characters
     summary =  i18nc("@info List of device properties",
                      "Title: \"%1\"\n"

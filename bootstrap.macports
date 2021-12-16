@@ -47,7 +47,7 @@ export QTDIR=$INSTALL_PREFIX/libexec/qt5
 export QT_INCLUDE_DIR=$QTDIR/include
 export PKG_CONFIG_PATH=$INSTALL_PREFIX/lib/pkgconfig:$PKG_CONFIG_PATH
 
-# Pathes rules
+# Paths rules
 ORIG_PATH="$PATH"
 export PATH=$INSTALL_PREFIX/bin:$QTDIR/bin:$PATH
 

@@ -23,7 +23,7 @@
  * ============================================================ */
 
 // NOTE: Uncomment this line to enable detect and recognize option
-// Currently this option is hiden, since it's not handled properly and provides confusing functionality => Fix it later
+// Currently this option is hidden, since it's not handled properly and provides confusing functionality => Fix it later
 //#define ENABLE_DETECT_AND_RECOGNIZE
 
 #include "facescanwidget_p.h"

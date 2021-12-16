@@ -293,7 +293,7 @@ public:
 protected:
 
     /**
-     * Call this method in children class contructors to init signal/slots connections.
+     * Call this method in children class constructors to init signal/slots connections.
      */
     void setup();
 

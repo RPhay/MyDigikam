@@ -15,7 +15,7 @@ BUILDING_DIR="`pwd`/temp.build"
 
 ########################################################################
 
-# Target macOS achitecture: "x86_64" for Intel 64 bits, or "arm64" for Apple Silicon 64 bits.
+# Target macOS architecture: "x86_64" for Intel 64 bits, or "arm64" for Apple Silicon 64 bits.
 ARCH_TARGET="x86_64"
 
 if [[ $ARCH_TARGET = "x86_64" ]] ; then
@@ -53,7 +53,7 @@ elif [[ $ARCH_TARGET = "arm64" ]] ; then
 
 else
 
-    echo "Unsuported or invalid target architecture..."
+    echo "Unsupported or invalid target architecture..."
     exit -1
 
 fi
@@ -70,7 +70,7 @@ RELOCATE_PREFIX="/Applications/digiKam.org"
 MP_URL="https://distfiles.macports.org/MacPorts/"
 MP_BUILDTEMP=~/mptemp
 
-# Uncomment this line to force a specific version of Macports to use, else lastest will be used.
+# Uncomment this line to force a specific version of Macports to use, else latest will be used.
 #MP_VERSION="2.3.3"
 
 ########################################################################

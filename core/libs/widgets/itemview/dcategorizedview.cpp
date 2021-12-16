@@ -1118,7 +1118,7 @@ void DCategorizedView::setSelection(const QRect& rect, QItemSelectionModel::Sele
                         bottom    = tmp;
                     }
 
-                    // if the rect are on differnet lines, expand
+                    // if the rect are on different lines, expand
 
                     if      (top.top() != bottom.top())
                     {

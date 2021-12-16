@@ -166,7 +166,7 @@ void RajceTalker::slotFinished(QNetworkReply* reply)
     // Only dequeue the command after the above signal has been
     // emitted so that the users can queue other commands
     // without them being started straight away in the enqueue
-    // method which would happen if the command was dequed
+    // method which would happen if the command was dequeued
     // before the signal and the signal was emitted in the same
     // thread (which is the case (always?)).
     d->commandQueue.dequeue();

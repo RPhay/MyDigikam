@@ -797,7 +797,7 @@ void PresentationGL::printComments(QImage& layer)
         bool breakLine = false; // End Of Line found
         uint currIndex; //  Comments QString current index
 
-        // Check miminal lines dimension
+        // Check minimal lines dimension
 
         int commentsLinesLengthLocal = d->sharedData->commentsLinesLength;
 

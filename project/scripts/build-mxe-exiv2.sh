@@ -96,7 +96,7 @@ echo "Elaspsed time for script execution : $(($difftimelps / 3600 )) hours $((($
 StartScript
 ChecksCPUCores
 
-# Pathes rules
+# Paths rules
 ORIG_PATH="$PATH"
 ORIG_WD="`pwd`"
 

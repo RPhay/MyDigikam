@@ -4,7 +4,7 @@
  * https://www.digikam.org
  *
  * Date        : 2009-09-27
- * Description : Databse engine SQL query
+ * Description : Database engine SQL query
  *
  * Copyright (C) 2009-2010 by Holger Foerster <Hamsi2k at freenet dot de>
  *

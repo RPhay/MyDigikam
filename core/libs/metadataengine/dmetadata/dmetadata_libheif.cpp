@@ -76,13 +76,13 @@ void s_readHEICMetadata(struct heif_context* const heif_context, heif_item_id im
                                                                  dataIds,
                                                                  10);
 
-    qDebug(DIGIKAM_METAENGINE_LOG) << "Found" << count << "HEIF metadata chunck";
+    qDebug(DIGIKAM_METAENGINE_LOG) << "Found" << count << "HEIF metadata chunk";
 
     if (count > 0)
     {
         for (int i = 0 ; i < count ; ++i)
         {
-            qDebug(DIGIKAM_METAENGINE_LOG) << "Parsing HEIF metadata chunck:" << heif_image_handle_get_metadata_type(image_handle, dataIds[i]);
+            qDebug(DIGIKAM_METAENGINE_LOG) << "Parsing HEIF metadata chunk:" << heif_image_handle_get_metadata_type(image_handle, dataIds[i]);
 
             if (QLatin1String(heif_image_handle_get_metadata_type(image_handle, dataIds[i])) == QLatin1String("Exif"))
             {

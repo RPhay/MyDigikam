@@ -602,7 +602,7 @@ void TwTalker::getUserName()
 {
     /*
      * The endpoint below allows to get more than just account name (e.g. profile avatar, links to tweets posted, etc.)
-     * Look at debug message printed to console for futher ideas and exploitation
+     * Look at debug message printed to console for further ideas and exploration
      */
     QUrl url(QLatin1String("https://api.twitter.com/1.1/account/verify_credentials.json"));
 

@@ -77,7 +77,7 @@ public:
     bool apply(QImage& qimage);
 
     /**
-     * Closes the transform, not the profiles. Called at desctruction.
+     * Closes the transform, not the profiles. Called at destruction.
      */
     void close();
 

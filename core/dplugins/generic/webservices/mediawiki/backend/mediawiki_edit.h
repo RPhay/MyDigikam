@@ -281,7 +281,7 @@ public:
     void setToken(const QString& token);
 
     /**
-     * @brief Set the timestamp of the base revision. Leave unset to ignore conflit.
+     * @brief Set the timestamp of the base revision. Leave unset to ignore conflict.
      * @param baseTimestamp the timestamp of the base revision
      */
     void setBaseTimestamp(const QDateTime& baseTimestamp);

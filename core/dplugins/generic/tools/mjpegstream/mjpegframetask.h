@@ -75,7 +75,7 @@ private:
     QImage loadImageFromPreviewCache(const QString& path) const;
 
     /**
-     * Loop from separated main thread to render periodicaly frames for MJPEG stream.
+     * Loop from separated main thread to render periodically frames for MJPEG stream.
      * This include transition between images and effect to render items.
      * Results are sent by signalFrameChanged().
      */

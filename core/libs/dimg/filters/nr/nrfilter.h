@@ -50,7 +50,7 @@ public:
 public:
 
     /**
-     * Separated values per chanel
+     * Separated values per channel
      */
     double thresholds[3];    ///< Y, Cb, Cr thresholds.
     double softness[3];      ///< Y, Cb, Cr softness.

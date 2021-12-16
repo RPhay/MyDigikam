@@ -166,7 +166,7 @@ struct PTOType
         typedef enum
         {
             NEGATIVE      = 0,
-            POSTIVE       = 1,
+            POSITIVE      = 1,
             NEGATIVESTACK = 2,
             POSITIVESTACK = 3,
             NEGATIVELENS  = 4

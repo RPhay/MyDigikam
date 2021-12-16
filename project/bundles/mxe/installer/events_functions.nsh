@@ -110,7 +110,7 @@ Function .onInit
     uninstDone:
 
         IfErrors checkUninstallRequired
-        Delete "$R0" ; If uninstall successfule, remove uninstaller
+        Delete "$R0" ; If uninstall successful, remove uninstaller
         RMDir "$R1" ; remove previous install directory
         Goto checkUninstallRequired
 

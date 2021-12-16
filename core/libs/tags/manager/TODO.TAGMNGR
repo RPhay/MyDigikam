@@ -41,7 +41,7 @@ Gilles suggestions:
 Nepomuk implementation:
     1. Sync Tags, Comments Ratings from digikam to Nepomuk one time at start-up
     2. Sync Tags, Comments, Ratings digiKam -> Nepomuk when:
-        2.1 Tags are asigned or removed from images
+        2.1 Tags are assigned or removed from images
         2.2 Comments are added or removed
         2.3 Ratings are added or removed
 

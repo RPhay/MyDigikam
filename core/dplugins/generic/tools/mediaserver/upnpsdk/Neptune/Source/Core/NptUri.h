@@ -167,7 +167,7 @@ public:
      * Parse a URL from its fully encoded form.
      *
      * @param url The URL string in its encoded form
-     * @param default port The defautl port number, or 0 if not specified
+     * @param default port The default port number, or 0 if not specified
      */
     NPT_Result Parse(const char* url, NPT_UInt16  default_port = 0);
 

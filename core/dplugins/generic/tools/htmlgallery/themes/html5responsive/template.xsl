@@ -43,7 +43,7 @@
 			 doctype-system="about:legacy-compat" />
 	
 	
-	<!-- ##################### VARIABLE INITILIZATION ######################### -->
+	<!-- ##################### VARIABLE INITIALIZATION #################### -->
 	<!-- Initialize some useful variables -->
 	<xsl:variable name="theme" select="'grey'" />
 	<xsl:variable name="outerBorder" select="boolean(0)" />

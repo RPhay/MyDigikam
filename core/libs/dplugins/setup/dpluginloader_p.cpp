@@ -242,4 +242,4 @@ void DPluginLoader::Private::loadPlugins()
     qCDebug(DIGIKAM_GENERAL_LOG) << Q_FUNC_INFO << "Time elapsed:" << t.elapsed() << "ms";
 }
 
-} // namepace Digikam
+} // namespace Digikam

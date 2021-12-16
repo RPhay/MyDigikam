@@ -4,7 +4,7 @@
  * https://www.digikam.org
  *
  * Date        : 2021-07-24
- * Description : MJPEG stram settings container.
+ * Description : MJPEG stream settings container.
  *
  * Copyright (C) 2021 by Gilles Caulier <caulier dot gilles at gmail dot com>
  * Copyright (C) 2021 by Quoc Hưng Tran <quochungtran1999 at gmail dot com>

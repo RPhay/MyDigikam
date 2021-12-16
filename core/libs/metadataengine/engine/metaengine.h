@@ -163,7 +163,7 @@ public:
     explicit MetaEngine(const MetaEngineData& data);
 
     /**
-     * Contructor to Load Metadata from item file.
+     * Constructor to Load Metadata from item file.
      */
     explicit MetaEngine(const QString& filePath);
 
@@ -194,7 +194,7 @@ public:
 
     /**
      * Return true if library support Base Media File Format (aka CR3, HEIF, HEIC, and AVIF).
-     * Note: use this function only after to call initializeExiv2(), else false will aways returned.
+     * Note: use this function only after to call initializeExiv2(), else false will always returned.
      * The function return true only if Exiv2 >= 0.27.4 compiled with BMFF support.
      */
     static bool supportBmff();
@@ -378,7 +378,7 @@ public:
 
     /**
      * Save all metadata to a file. This one can be different than original picture to perform
-     * transfert operation Return true if metadata have been saved into file.
+     * transfer operation Return true if metadata have been saved into file.
      */
     bool save(const QString& filePath, bool setVersion = false) const;
 
@@ -733,7 +733,7 @@ public:
      * if 'inverSelection' is true.
      * if 'extractBinary" is true, tags with undefined types of data are extracted (default),
      * else contents is replaced by "Binary data ... bytes". Take a care as large binary data as
-     * origianl RAW data from DNG container can be huge and listing Exif tags from GUI can take a while.
+     * original RAW data from DNG container can be huge and listing Exif tags from GUI can take a while.
      */
     MetaEngine::MetaDataMap getExifTagsDataList(const QStringList& exifKeysFilter = QStringList(),
                                                 bool invertSelection = false,

@@ -262,7 +262,7 @@
 
         WriteUninstaller "$INSTDIR\Uninstall.exe"
 
-        ;Register uninstaller in windows registery with only the option to uninstall (no repair nor modify)
+        ;Register uninstaller in windows registry with only the option to uninstall (no repair nor modify)
 
         WriteRegStr HKLM "Software\Microsoft\Windows\CurrentVersion\Uninstall\${MY_PRODUCT}" "Comments" "${MY_PRODUCT} ${VERSION}"
         WriteRegStr HKLM "Software\Microsoft\Windows\CurrentVersion\Uninstall\${MY_PRODUCT}" "DisplayIcon" '"$INSTDIR\digikam.exe"'

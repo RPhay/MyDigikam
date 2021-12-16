@@ -563,7 +563,7 @@ vendors that are already known to LibRaw will not change.
 
  * Better makernotes parsing for many cameras
 
- * Better parsing of makernotes embeded into DNG files created by
+ * Better parsing of makernotes embedded into DNG files created by
    Adobe DNG Converter
 
  * New imgdata.params.raw_processing_options value: LIBRAW_PROCESSING_ZEROFILTERS_FOR_MONOCHROMETIFFS

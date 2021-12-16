@@ -23,7 +23,7 @@
 
 #include "photos_utest.h"
 
-// Qt incudes
+// Qt includes
 
 #include <QTest>
 #include <QImage>

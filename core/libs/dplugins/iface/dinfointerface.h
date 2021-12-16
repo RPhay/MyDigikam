@@ -169,7 +169,7 @@ public:
 
 /**
  * DItemInfo is a class to get item information from host application (Showfoto or digiKam)
- * The interface is re-implemented in host and depend how item infromation must be retrieved
+ * The interface is re-implemented in host and depend how item information must be retrieved
  * (from a database or by file metadata).
  * The easy way to use this container is given below:
  *

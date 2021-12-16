@@ -74,7 +74,7 @@ int PhotoInfo::pid() const
 
 QUrl PhotoInfo::urlMaxResolution() const
 {
-    // Photo URLs in the order of decresing size
+    // Photo URLs in the order of decreasing size
     QStringList srcKeys;
     srcKeys.append(QLatin1String("src_xxxbig"));
     srcKeys.append(QLatin1String("src_xxbig"));

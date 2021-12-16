@@ -53,7 +53,7 @@ bool WallpaperPlugin::setWallpaper(const QString& path, int layout) const
         );
 
     /**
-     * Exemple of WallPaper settings from plasma-org.kde.plasma.desktop-appletsrc:
+     * Example of WallPaper settings from plasma-org.kde.plasma.desktop-appletsrc:
      *
      * [Containments][1][Wallpaper][org.kde.image][General]
      * FillMode=2

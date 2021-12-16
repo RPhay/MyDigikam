@@ -155,7 +155,7 @@ bool RawTherapeeRawImportPlugin::run(const QString& filePath, const DRawDecoding
 #endif
 
     d->rawtherapee->setProgram(binary);
-    d->rawtherapee->setArguments(QStringList() << QLatin1String("-gimp") // Special mode used initialy as Gimp plugin
+    d->rawtherapee->setArguments(QStringList() << QLatin1String("-gimp") // Special mode used initially as Gimp plugin
                                                << filePath               // Input file
                                                << d->tempName);          // Output file
 

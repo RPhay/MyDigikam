@@ -56,7 +56,7 @@ public:
 
     /**
      * Handle rate of frame per seconds dispatched to the network [1 - 30].
-     * A low value reduce network bandwith use.
+     * A low value reduce network bandwidth use.
      * Default = 15 img/s.
      */
     bool setRate(int);

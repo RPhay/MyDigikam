@@ -191,7 +191,7 @@ echo -e "---------- Detected OSX version $MAJOR_OSX_VERSION.$MINOR_OSX_VERSION a
 
 #################################################################################################
 # Relocate list of binaries files.
-# Replace INSTALL_PREFIX by @rpath in library pathes dependencies registered in bin file.
+# Replace INSTALL_PREFIX by @rpath in library paths dependencies registered in bin file.
 # List of bin files to patch is passed as first argument.
 RelocatableBinaries()
 {

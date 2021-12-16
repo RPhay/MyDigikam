@@ -35,7 +35,7 @@
 namespace DigikamGenericGeolocationEditPlugin
 {
 
-/*! a classe derivated from GeoDataParser mainly to transform GPS data to KML
+/*! a class derivated from GeoDataParser mainly to transform GPS data to KML
  *  @author Stéphane Pontier shadow.walker@free.fr
  */
 class KMLGeoDataParser : public GeoDataParser

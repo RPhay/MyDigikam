@@ -52,7 +52,7 @@ public:
 
 public:
 
-    bool enableSorter;          ///< Global quality dectection enabler/disabler.
+    bool enableSorter;          ///< Global quality detection enabler/disabler.
 
     bool detectBlur;            ///< Enable image blur detection.
     bool detectNoise;           ///< Enable image noise detection.

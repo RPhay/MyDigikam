@@ -21,7 +21,7 @@ Others file formats are supported:
 
 Note: if ImageMagick is present, this one is used in favor than Qt plugin loaders.
 
-Uncomplete list of supported formats are listed below:
+Incomplete list of supported formats are listed below:
 
 Format   Read       Write      Description                              Codec
                     (IM only)

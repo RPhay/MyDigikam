@@ -4,7 +4,7 @@
  * https://www.digikam.org
  *
  * Date        : 2010-05-03
- * Description : a batch tool to addd film grain to images.
+ * Description : a batch tool to add film grain to images.
  *
  * Copyright (C) 2010-2021 by Gilles Caulier <caulier dot gilles at gmail dot com>
  *

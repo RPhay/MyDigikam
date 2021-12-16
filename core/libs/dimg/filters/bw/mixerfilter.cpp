@@ -4,7 +4,7 @@
  * https://www.digikam.org
  *
  * Date        : 2005-24-01
- * Description : Chanels mixer filter
+ * Description : Channels mixer filter
  *
  * Copyright (C) 2005-2021 by Gilles Caulier <caulier dot gilles at gmail dot com>
  * Copyright (C) 2010      by Martin Klapetek <martin dot klapetek at gmail dot com>

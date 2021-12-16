@@ -465,7 +465,7 @@ public:
     }
 
     /**
-     * Accessing vertices and egdes
+     * Accessing vertices and edges
      */
     const GraphContainer& getGraph() const
     {

@@ -70,7 +70,7 @@ public:
     DTrashItemInfo itemForIndex(const QModelIndex& index);
 
     /**
-     * @brief returns DTrashItemInfoList for gived indexes in model
+     * @brief returns DTrashItemInfoList for given indexes in model
      */
     DTrashItemInfoList itemsForIndexes(const QList<QModelIndex>& indexes);
 

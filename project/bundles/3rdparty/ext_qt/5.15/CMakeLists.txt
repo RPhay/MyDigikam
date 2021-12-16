@@ -64,9 +64,9 @@ ExternalProject_Add(ext_qt
                   -xcb
                   -skip qt3d                        # 3D core
                   -skip qtactiveqt                  # No need ActiveX support
-                  -skip qtandroidextras             # For embeded devices only
+                  -skip qtandroidextras             # For embedded devices only
                   -skip qtcharts                    # No need data models charts support
-                  -skip qtconnectivity              # For embeded devices only
+                  -skip qtconnectivity              # For embedded devices only
                   -skip qtdatavis3d                 # no need 3D data visualizations support
                   -skip qtdoc                       # No need documentation
                   -skip qtgamepad                   # No need gamepad hardware support.
@@ -75,24 +75,24 @@ ExternalProject_Add(ext_qt
                   -skip qtlottie                    # No need Adobe QtQuick After Effect animations integration
                   -skip qtmacextras                 # For MacOS devices only
                   -skip qtmultimedia                # No need multimedia support (replaced by QtAV+ffmpeg)
-                  -skip qtnetworkauth               # No need network authentification support.
+                  -skip qtnetworkauth               # No need network authentication support.
                   -skip qtpurchasing                # No need in-app purchase of products support
                   -skip qtquickcontrols2            # QtQuick support for QML
                   -skip qtremoteobjects             # No need sharing QObject properties between processes support
                   -skip qtscript                    # No need scripting (deprecated)
                   -skip qtscxml                     # No need SCXML state machines support
-                  -skip qtsensors                   # For embeded devices only
+                  -skip qtsensors                   # For embedded devices only
                   -skip qtserialbus                 # No need serial bus support
                   -skip qtserialport                # No need serial port support
                   -skip qtspeech                    # No need speech synthesis support
                   -skip qtvirtualkeyboard           # No need virtual keyboard support
-                  -skip qtwebglplugin               # No need browser OpenGL extention support
+                  -skip qtwebglplugin               # No need browser OpenGL extension support
                   -skip qtwebsockets                # No need websocket support
                   -skip qtwebview                   # QML extension for QWebEngine
                   -skip qtwinextras                 # For Windows devices only
                   ${DROP_QTWEBENGINE_DEPS}
 
-    # Exemple of code to install only one Qt module for hacking purpose (aka qtbase here)
+    # Example of code to install only one Qt module for hacking purpose (aka qtbase here)
     #BUILD_COMMAND cd <SOURCE_DIR> && $(MAKE) module-qtbase
     #INSTALL_COMMAND cd <SOURCE_DIR> && $(MAKE) module-qtbase-install_subtargets
 

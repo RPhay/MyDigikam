@@ -23,7 +23,7 @@ $version="1.8.3";
 # 1.1->1.2:  
 # Support for hierarchical tags was added. The script can either create
 # a hierarchical directory structure for these tags (default) or treat them 
-# as tags beeing on the same level resulting in a flat dir structure (-f)
+# as tags being on the same level resulting in a flat dir structure (-f)
 #
 # 1.2->1.3
 # Added support for multiple tags assigned to one photo. Up to now only 
@@ -367,7 +367,7 @@ sub createLinkTree{
 	# directory buth neverless
 	# refImages contains also data about photos in this album. But since it is 
 	# not cloned, the cloned root # does not exits and so the photo therin does 
-	# not exist. Thats what we check here.
+	# not exist. That's what we check here.
 	next if( ! -r "${photoRootDir}$path/$image" ); 
         $count++;
 
@@ -380,7 +380,7 @@ sub createLinkTree{
 	   # For tags that have subtags there is a path defined in qtagPath
 	   # describing the parentrelationship as directory path like "friends/family/brothers"
 	   # If it is defined we want to use this path instead of the flat tag name like "brothers"
-	   # Doing so results in a directory hirachy that maps the tags parent relationships 
+	   # Doing so results in a directory hierarchy that maps the tags parent relationships 
 	   # into the filesystem.
 	   if( $opt_flat ){
 	   	# For flat option just use the last subdirectory
@@ -601,7 +601,7 @@ sub createLinkTreeMulti{
 	# directory buth neverless
 	# refImages contains also data about photos in this album. But since it is 
 	# not cloned, the cloned root # does not exits and so the photo therin does 
-	# not exist. Thats what we check here.
+	# not exist. That's what we check here.
 	next if( ! -r "${photoRootDir}$path/$image" ); 
         $count++;
         
@@ -981,7 +981,7 @@ if( $vers >= 10 ){
     foreach $i  (keys(%albumRoots)) {
       # print "Album roots -> $i:", $albumRoots{$i}, ", ", $opt_r, "\n";
       # Extract data needed from database
-      # Interprete -r as base for all albums
+      # Interpret -r as base for all albums
       $albumRoots{$i}="$opt_r$albumRoots{$i}";
       
       $ret+=getTaggedImages(\%images, $database, $albumRoots{$i},  $i, \%paths, \%pathNames, $vers, $tage, $tagi);
