@@ -88,7 +88,7 @@ BUGFIXES:
 079 ==> 345402 - Crashed using curves adjust tool.
 080 ==> 345907 - While downloading new pictures from the SD-card of my Canon EOS 650D digicam crashes.
 081 ==> 347107 - Crash using GUI window decoration.
-082 ==> 
+082 ==> 335351 - Saving GPS correlation data lets Digikam hang in many cases.
 083 ==> 
 084 ==> 
 085 ==> 
