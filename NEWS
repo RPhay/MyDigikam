@@ -89,12 +89,22 @@ BUGFIXES:
 080 ==> 345907 - While downloading new pictures from the SD-card of my Canon EOS 650D digicam crashes.
 081 ==> 347107 - Crash using GUI window decoration.
 082 ==> 335351 - Saving GPS correlation data lets Digikam hang in many cases.
-083 ==> 
-084 ==> 
-085 ==> 
-086 ==> 
-087 ==> 
+083 ==> 196433 - Ability to sort icon-view from the camera interface.
+084 ==> 258227 - Support for Tethered shooting (transfer new images directly to the PC via e.g. USB).
+085 ==> 261177 - digiKam crashes during startup.
+086 ==> 264603 - digiKam crashes on startup.
+087 ==> 265640 - digiKam crash on startup.
 088 ==> 
 089 ==> 
 090 ==> 
 091 ==> 
+092 ==> 
+093 ==> 
+094 ==> 
+095 ==> 
+096 ==> 
+097 ==> 
+098 ==> 
+099 ==> 
+100 ==> 
+101 ==> 
