@@ -31,12 +31,70 @@ BUGFIXES:
 022 ==> 442400 - Ambiguous Shortcuts on Ctrl+Alt+I.
 023 ==> 443544 - Two actions want to use the same shortcut: Open Command Bar and Add Images.
 024 ==> 426662 - File naming - extension aware does not work?
-025 ==> 
-026 ==> 
-027 ==> 
-028 ==> 
-029 ==> 
-030 ==> 
-031 ==> 
-
-
+025 ==> 329653 - Import in existing collections (year/month).
+026 ==> 329921 - Connecting to NAS via ftp invokes error message (no function).
+027 ==> 330155 - Crash during assign tags single tag.
+028 ==> 330370 - digiKam crash when assigning tag.
+029 ==> 330633 - Crash while trying to download.
+030 ==> 330644 - Sometime crash when select a tool in the left tools-bar.
+031 ==> 330674 - digiKam photo editor crashed when using "save as new version" to a JPEG.
+032 ==> 331220 - digiKam eventually crashes at search initiation or selecting search on left sidebar.
+033 ==> 332100 - Crash while browsing album.
+034 ==> 333243 - digiKam crashed while editing photos.
+035 ==> 333389 - Crash on trying to print.
+036 ==> 333642 - Crahs of digiKam when editing pics.
+037 ==> 333660 - Crashed when clicking Image editor.
+038 ==> 333700 - Digicam crashed when adding multiple tags.
+039 ==> 333741 - digiKam repeatedly crashes.
+040 ==> 333791 - Crash when changing a tag category to a subcat of another category.
+041 ==> 333953 - digiKam crashes spontaneously.
+042 ==> 333976 - digiKam crashed when starting geolocation tool.
+043 ==> 334017 - Crash when uploading photos to Piwigo.
+044 ==> 334042 - digiKam crashed suddenly.
+045 ==> 334105 - digiKam crashes, when editing a pic.
+046 ==> 334186 - Crash in sqlite when downloading from an SD card.
+047 ==> 334189 - Crashed while browsing folder to copy into.
+048 ==> 334310 - digiKam crashes randomly but consistently.
+049 ==> 334344 - digiKam crashes while running a advanced slideshow of large (panorama) pictures.
+050 ==> 334350 - digiKam crashed while downloading photos.
+051 ==> 334443 - digiKam crashes selecting file or folder.
+052 ==> 334712 - Crash on attempting to upload multiple images to Flickr.
+053 ==> 334718 - Crashes on ubuntu 14.04 when clicking on a photo.
+054 ==> 334853 - digiKam has crashed.
+055 ==> 334986 - Crash after multiple albums created while download from SD-card.
+056 ==> 335020 - Crashed while moving photos between albums.
+057 ==> 335055 - Crashed on picture export.
+058 ==> 335059 - Crash when starting to export pictures via Facebook export.
+059 ==> 335136 - digiKam did not enlarge a photo in album.
+060 ==> 335226 - Ramdom crashs of digiKam.
+061 ==> 335234 - Crashed when switching from one album to another.
+062 ==> 335260 - digiKam random.
+063 ==> 335297 - Random crash of digiKam.
+064 ==> 335526 - digiKam crashes when adding multiple tags.
+065 ==> 335684 - Crash problem still exists.
+066 ==> 335685 - digiKam crashed again.
+067 ==> 335847 - digiKam crashes on slideshow function.
+068 ==> 336005 - Switching to a certain album causes DigiKam to crash.
+069 ==> 336208 - Stiching panorama.
+070 ==> 336260 - digiKam crashes very often.
+071 ==> 336261 - digiKam crashes very often.
+072 ==> 337018 - Crashed digiKam after removing duplicate image from panorama and retrying panorama generation.
+073 ==> 337278 - digiKam crash.
+074 ==> 338448 - digiKam crashes on selecting album/folder.
+075 ==> 341929 - digiKam crashes when changing album folders several times.
+076 ==> 342050 - Crash while permanently deleting tag from program/database.
+077 ==> 342143 - Crashed while downloading from camera.
+078 ==> 344299 - While browsing through files, digicam crashed.
+079 ==> 345402 - Crashed using curves adjust tool.
+080 ==> 345907 - While downloading new pictures from the SD-card of my Canon EOS 650D digicam crashes.
+081 ==> 347107 - Crash using GUI window decoration.
+082 ==> 
+083 ==> 
+084 ==> 
+085 ==> 
+086 ==> 
+087 ==> 
+088 ==> 
+089 ==> 
+090 ==> 
+091 ==> 
