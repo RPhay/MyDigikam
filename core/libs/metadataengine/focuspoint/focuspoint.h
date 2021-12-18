@@ -67,6 +67,7 @@ public:
     void setSize(float width, float height);
     QPointF getPosition()                                   const;
     QSizeF  getSize()                                       const;
+    QRectF  getRect()                                       const;
 
 private:
 

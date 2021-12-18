@@ -111,4 +111,9 @@ QSizeF FocusPoint::getSize() const
     return QSizeF(width, height);
 }
 
+QRectF FocusPoint::getRect() const
+{
+    return QRectF(x_position, y_position, width, height);
+}
+
 } // namespace Digikam
