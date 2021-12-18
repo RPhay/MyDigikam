@@ -47,6 +47,7 @@ class Q_DECL_HIDDEN FocusPointGroup::Private
 public:
 
     explicit Private(FocusPointGroup* const q);
+
     FocusPointItem* createItem(const FocusPoint& point);
     FocusPointItem* addItem(const FocusPoint& point);
     void applyVisible();

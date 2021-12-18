@@ -48,10 +48,10 @@ class Q_DECL_HIDDEN FocusPointItem : public RegionFrameItem       // clazy:exclu
 public:
 
     explicit FocusPointItem(QGraphicsItem* const parent);
-    ~FocusPointItem() override;
+    ~FocusPointItem()                                   override;
 
     void setPoint(const FocusPoint& point);
-    FocusPoint point()                                const;
+    FocusPoint point()                              const;
     void setEditable(bool allowEdit);
 
 protected:
