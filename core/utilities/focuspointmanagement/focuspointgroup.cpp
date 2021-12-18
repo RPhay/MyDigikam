@@ -39,10 +39,10 @@ FocusPointGroup::FocusPointGroup(GraphicsDImgView* const view)
     d->view                 = view;
     d->visibilityController = new ItemVisibilityController(this);
     d->visibilityController->setShallBeShown(false);
-
-    // connect(AlbumManager::instance(), SIGNAL(signalAlbumRenamed(Album*)),
-    //         this, SLOT(slotAlbumRenamed(Album*)));
-
+/*
+    connect(AlbumManager::instance(), SIGNAL(signalAlbumRenamed(Album*)),
+            this, SLOT(slotAlbumRenamed(Album*)));
+*/
     connect(AlbumManager::instance(), SIGNAL(signalAlbumsUpdated(int)),
             this, SLOT(slotAlbumsUpdated(int)));
 
@@ -147,6 +147,7 @@ void FocusPointGroup::aboutToSetInfoAfterRotate(const ItemInfo& info)
     {
         return;
     }
+
     clear();
 }
 
@@ -229,23 +230,24 @@ void FocusPointGroup::slotAlbumsUpdated(int type)
     load();
 }
 
-// void FocusPointGroup::slotAlbumRenamed(Album* album)
-// {
-//     if (!album || (album->type() != Album::TAG))
-//     {
-//         return;
-//     }
+/*
+void FocusPointGroup::slotAlbumRenamed(Album* album)
+{
+    if (!album || (album->type() != Album::TAG))
+    {
+        return;
+    }
 
-//     foreach (FocusPointItem* const item, d->items)
-//     {
-//         if (!item->point().isNull() &&
-//             (item->point().tagId() == album->id()))
-//         {
-//             item->updateCurrentTag();
-//         }
-//     }
-// }
-
+    foreach (FocusPointItem* const item, d->items)
+    {
+        if (!item->point().isNull() &&
+            (item->point().tagId() == album->id()))
+        {
+            item->updateCurrentTag();
+        }
+    }
+}
+*/
 
 void FocusPointGroup::addPoint()
 {
@@ -296,7 +298,7 @@ void FocusPointGroup::slotAddItemFinished(const QRectF& rect)
     if (d->manuallyAddedItem)
     {
         d->manuallyAddedItem->setRectInSceneCoordinatesAdjusted(rect);
-        QRect pointRect       = d->manuallyAddedItem->originalRect();
+        QRect pointRect            = d->manuallyAddedItem->originalRect();
         DImg preview(d->view->previewItem()->image().copy());
 
         if (!d->exifRotate)
@@ -309,12 +311,12 @@ void FocusPointGroup::slotAddItemFinished(const QRectF& rect)
 
         QRectF pointRectF = TagRegion::absoluteToRelative(pointRect, d->info.dimensions());
 
-        QScopedPointer<FocusPointsWriter> writer (new FocusPointsWriter(this, d->info.filePath()));
+        QScopedPointer<FocusPointsWriter> writer(new FocusPointsWriter(this, d->info.filePath()));
         writer->writeFocusPoint(pointRectF);
 
         FocusPoint point(pointRectF);
         point.setType(FocusPoint::TypePoint::SelectedInFocus);
-        FocusPointItem* item = d->addItem(point);
+        FocusPointItem* const item = d->addItem(point);
 
         d->visibilityController->setItemDirectlyVisible(item, true);
         d->manuallyAddWrapItem->stackBefore(item);

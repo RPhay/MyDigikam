@@ -43,12 +43,13 @@ FocusPointItem::FocusPointItem(QGraphicsItem* const parent)
       m_width        (3)
 {
     m_widgetName = new QLabel(nullptr);
-    // setHudWidget(m_widgetName);
+/*
+    setHudWidget(m_widgetName);
+*/
 }
 
 FocusPointItem::~FocusPointItem()
 {
-
 }
 
 void FocusPointItem::setPoint(const FocusPoint& point)

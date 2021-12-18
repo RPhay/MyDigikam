@@ -22,7 +22,6 @@
  *
  * ============================================================ */
 
-
 #ifndef DIGIKAM_FOCUSPOINT_GROUP_H
 #define DIGIKAM_FOCUSPOINT_GROUP_H
 
@@ -71,7 +70,7 @@ class FocusPointGroup : public QObject
 public:
 
     explicit FocusPointGroup(GraphicsDImgView* const view);
-    ~FocusPointGroup() override;
+    ~FocusPointGroup()                                                          override;
 
     bool isVisible()                                                     const;
     ItemInfo info()                                                      const;
@@ -82,6 +81,7 @@ public:
     void leaveEvent(QEvent*);
 
 public:
+
     bool isAllowedToAddFocusPoint()                                      const;
 
 public Q_SLOTS:
@@ -105,7 +105,9 @@ protected:
 
     void load();
     void clear();
-    // void applyItemGeometryChanges();
+/*
+    void applyItemGeometryChanges();
+*/
 
 protected Q_SLOTS:
 
