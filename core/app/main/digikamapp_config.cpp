@@ -96,15 +96,19 @@ void DigikamApp::slotEditKeys()
 void DigikamApp::slotThemeChanged()
 {
     ApplicationSettings* const settings = ApplicationSettings::instance();
+    bool autoChangingIconTheme          = !settings->getIconTheme().isEmpty();
     QString theme                       = ThemeManager::instance()->currentThemeName();
 
-#ifdef Q_OS_WIN
+#if defined Q_OS_WIN || defined Q_OS_MACOS
 
-    bool autoChangingIconTheme          = true;
+    autoChangingIconTheme               = true;
 
 #else
 
-    bool autoChangingIconTheme          = !settings->getIconTheme().isEmpty();
+    if (isRunningInAppImageBundle())
+    {
+        autoChangingIconTheme           = true;
+    }
 
 #endif
 
