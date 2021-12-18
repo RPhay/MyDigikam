@@ -251,11 +251,6 @@
         SetOutPath "$INSTDIR\plugins"
         File /r "${BUNDLEPATH}\plugins\*.*"
 
-        ;FIXME: Marble plugin dir
-
-        SetOutPath "$INSTDIR\"
-        File "${BUNDLEPATH}\plugins\*.dll"
-
         SetOutPath "$INSTDIR\translations"
         File /r "${BUNDLEPATH}\translations\*.*"
 

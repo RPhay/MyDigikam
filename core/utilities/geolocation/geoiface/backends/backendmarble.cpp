@@ -44,6 +44,7 @@
 #include <marble/GeoDataLatLonAltBox.h>
 #include <marble/GeoPainter.h>
 #include <marble/MarbleMap.h>
+#include <marble/MarbleDirs.h>
 #include <marble/MarbleWidget.h>
 #include <marble/ViewportParams.h>
 #include <marble/AbstractFloatItem.h>
@@ -52,12 +53,13 @@
 
 // Local includes
 
+#include "digikam_debug.h"
+#include "digikam_config.h"
 #include "backendmarblelayer.h"
 #include "abstractmarkertiler.h"
 #include "mapwidget.h"
 #include "geomodelhelper.h"
 #include "trackmanager.h"
-#include "digikam_debug.h"
 
 namespace Digikam
 {
@@ -174,6 +176,14 @@ BackendMarble::BackendMarble(const QExplicitlySharedDataPointer<GeoIfaceSharedDa
     : MapBackend(sharedData, parent),
       d         (new Private())
 {
+
+#ifdef Q_OS_WIN
+
+    Marble::MarbleDirs::setMarblePluginPath(QCoreApplication::applicationDirPath() +
+                                            QLatin1String("/plugins"));
+
+#endif
+
     d->marbleMapThemeManager = new Marble::MapThemeManager(this);
     createActions();
 }
