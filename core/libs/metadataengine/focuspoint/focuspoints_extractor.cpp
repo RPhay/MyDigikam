@@ -61,11 +61,11 @@ FocusPointsExtractor::FocusPointsExtractor(QObject* const parent,const QString& 
 
     d->exifToolAvailable = exiftool->exifToolAvailable();
     d->metadata          = exiftool->currentData();
-    d->af_points         = findAFPoints();
     d->make              = findValue(QLatin1String("EXIF.IFD0.Camera.Make")).toString();
     d->make              = d->make.split(QLatin1String(" "))[0].toUpper();
     d->model             = findValue(QLatin1String("EXIF.IFD0.Camera.Model")).toString();
     d->model             = d->model.split(QLatin1String(" "))[0].toUpper();
+    d->af_points         = findAFPoints();
 }
 
 FocusPointsExtractor::~FocusPointsExtractor()
@@ -134,28 +134,34 @@ FocusPointsExtractor::ListAFPoints FocusPointsExtractor::findAFPoints() const
         return ListAFPoints();
     }
 
-    if (!d->model.isNull())
+    if (!d->make.isNull())
     {
-        if (d->model == QLatin1String("CANON"))
+        if (d->make == QLatin1String("CANON"))
         {
+            qCDebug(DIGIKAM_METAENGINE_LOG) << "FocusPointsExtractor: use Canon makernotes";
             return getAFPoints_canon();
         }
 
-        if (d->model == QLatin1String("NIKON"))
+        if (d->make == QLatin1String("NIKON"))
         {
+            qCDebug(DIGIKAM_METAENGINE_LOG) << "FocusPointsExtractor: use Nikon makernotes";
             return getAFPoints_nikon();
         }
 
-        if (d->model == QLatin1String("PANASONIC"))
+        if (d->make == QLatin1String("PANASONIC"))
         {
+            qCDebug(DIGIKAM_METAENGINE_LOG) << "FocusPointsExtractor: use Panasonic makernotes";
             return getAFPoints_panasonic();
         }
 
-        if (d->model == QLatin1String("SONY"))
+        if (d->make == QLatin1String("SONY"))
         {
+            qCDebug(DIGIKAM_METAENGINE_LOG) << "FocusPointsExtractor: use Sony makernotes";
             return getAFPoints_sony();
         }
     }
+
+    qCDebug(DIGIKAM_METAENGINE_LOG) << "FocusPointsExtractor: use XMP information";
 
     return getAFPoints_default();
 }
