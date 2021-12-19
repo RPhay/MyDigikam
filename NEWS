@@ -95,7 +95,7 @@ BUGFIXES:
 086 ==> 264603 - digiKam crashes on startup.
 087 ==> 265640 - digiKam crash on startup.
 088 ==> 447220 - Poor visibility of sidebar icons following update 7.3 to 7.4.
-089 ==> 
+089 ==> 447223 - Updating faces database does not do anything.
 090 ==> 
 091 ==> 
 092 ==> 
