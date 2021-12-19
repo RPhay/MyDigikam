@@ -47,6 +47,8 @@ int main(int argc, char** argv)
     FocusPointsExtractor* const fpreader      = new FocusPointsExtractor(qApp, QString::fromUtf8(argv[1]));
     FocusPointsExtractor::ListAFPoints points = fpreader->get_af_points();
 
+    qCDebug(DIGIKAM_TESTS_LOG) << "Make/Model from" << argv[1] << ":" << fpreader->make() << "/" << fpreader->model();
+
     if (!points.isEmpty())
     {
         qCDebug(DIGIKAM_TESTS_LOG) << "AF Focus region found in" << argv[1] << ":" << points;

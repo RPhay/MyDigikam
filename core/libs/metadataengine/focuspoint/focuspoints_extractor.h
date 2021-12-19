@@ -65,6 +65,8 @@ public:
     ListAFPoints get_af_points();
     ListAFPoints get_af_points(FocusPoint::TypePoint type);
     bool isAFPointsReadOnly()                                                                               const;
+    QString make()                                                                                          const;
+    QString model()                                                                                         const;
 
 private:
 

@@ -47,6 +47,8 @@ public:
     bool                            exifToolAvailable;
     ExifToolParser::ExifToolData    metadata;
     bool                            afPointsReadOnly;
+    QString                         make;
+    QString                         model;
 };
 
 FocusPointsExtractor::FocusPointsExtractor(QObject* const parent,const QString& image_path)
@@ -60,6 +62,10 @@ FocusPointsExtractor::FocusPointsExtractor(QObject* const parent,const QString& 
     d->exifToolAvailable = exiftool->exifToolAvailable();
     d->metadata          = exiftool->currentData();
     d->af_points         = findAFPoints();
+    d->make              = findValue(QLatin1String("EXIF.IFD0.Camera.Make")).toString();
+    d->make              = d->make.split(QLatin1String(" "))[0].toUpper();
+    d->model             = findValue(QLatin1String("EXIF.IFD0.Camera.Model")).toString();
+    d->model             = d->model.split(QLatin1String(" "))[0].toUpper();
 }
 
 FocusPointsExtractor::~FocusPointsExtractor()
@@ -128,28 +134,24 @@ FocusPointsExtractor::ListAFPoints FocusPointsExtractor::findAFPoints() const
         return ListAFPoints();
     }
 
-    QString model = findValue(QLatin1String("EXIF.IFD0.Camera.Make")).toString();
-
-    if (!model.isNull())
+    if (!d->model.isNull())
     {
-        model = model.split(QLatin1String(" "))[0].toUpper();
-
-        if (model == QLatin1String("CANON"))
+        if (d->model == QLatin1String("CANON"))
         {
             return getAFPoints_canon();
         }
 
-        if (model == QLatin1String("NIKON"))
+        if (d->model == QLatin1String("NIKON"))
         {
             return getAFPoints_nikon();
         }
 
-        if (model == QLatin1String("PANASONIC"))
+        if (d->model == QLatin1String("PANASONIC"))
         {
             return getAFPoints_panasonic();
         }
 
-        if (model == QLatin1String("SONY"))
+        if (d->model == QLatin1String("SONY"))
         {
             return getAFPoints_sony();
         }
@@ -198,6 +200,16 @@ bool FocusPointsExtractor::isAFPointsReadOnly() const
 void FocusPointsExtractor::setAFPointsReadOnly(bool readOnly) const
 {
     d->afPointsReadOnly = readOnly;
+}
+
+QString FocusPointsExtractor::make() const
+{
+    return d->make;
+}
+
+QString FocusPointsExtractor::model() const
+{
+    return d->model;
 }
 
 } // namespace Digikam
