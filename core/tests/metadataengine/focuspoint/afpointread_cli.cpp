@@ -4,10 +4,9 @@
  * https://www.digikam.org
  *
  * Date        : 28/08/2021
- * Description : a command line tool to write focus points metadata with ExifTool
+ * Description : a command line tool to read focus points metadata with ExifTool
  *
  * Copyright (C) 2021 by Gilles Caulier <caulier dot gilles at gmail dot com>
- * Copyright (C) 2021 by Phuoc Khanh Le <phuockhanhnk94 at gmail dot com>
  *
  * This program is free software; you can redistribute it
  * and/or modify it under the terms of the GNU General
@@ -30,7 +29,7 @@
 // Local includes
 
 #include "digikam_debug.h"
-#include "focuspoints_writer.h"
+#include "focuspoints_extractor.h"
 
 using namespace Digikam;
 
@@ -40,24 +39,24 @@ int main(int argc, char** argv)
 
     if (argc != 2)
     {
-        qCDebug(DIGIKAM_TESTS_LOG) << "afpointwrite - CLI tool to write focus points metadata with ExifTool in image";
-        qCDebug(DIGIKAM_TESTS_LOG) << "Usage: <image to write>";
+        qCDebug(DIGIKAM_TESTS_LOG) << "afpointread - CLI tool to read focus points metadata with ExifTool from image";
+        qCDebug(DIGIKAM_TESTS_LOG) << "Usage: <image to read>";
         return -1;
     }
 
-    FocusPointsWriter* const fpwriter = new FocusPointsWriter(qApp, QString::fromUtf8(argv[1]));
+    FocusPointsExtractor* const fpreader      = new FocusPointsExtractor(qApp, QString::fromUtf8(argv[1]));
+    FocusPointsExtractor::ListAFPoints points = fpreader->get_af_points();
 
-    FocusPoint point =
+    if (!points.isEmpty())
     {
-        0.5,
-        0.5,
-        0.5,
-        0.5
-    };
+        qCDebug(DIGIKAM_TESTS_LOG) << "AF Focus region found in" << argv[1] << ":" << points;
+    }
+    else
+    {
+        qCDebug(DIGIKAM_TESTS_LOG) << "No AF Focus region found in" << argv[1];
+    }
 
-    fpwriter->writeFocusPoint(point);
-
-    delete fpwriter;
+    delete fpreader;
 
     return 0;
 }

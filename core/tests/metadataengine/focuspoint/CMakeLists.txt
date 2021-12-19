@@ -36,3 +36,4 @@ endmacro()
 #------------------------------------------------------------------------
 
 FOCUSPOINT_BUILD_CLITEST(afpointwrite_cli.cpp)
+FOCUSPOINT_BUILD_CLITEST(afpointread_cli.cpp)
