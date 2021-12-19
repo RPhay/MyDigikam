@@ -218,7 +218,7 @@ bool BlurDetector::isMotionBlur(const cv::Mat& frag) const
     {
         std::vector<float> list_theta;
 
-        for (const auto line : lines)
+        for (const auto& line : lines)
         {
             float theta = (line[2] == line[0]) ? 0              : qAtan((line[3] - line[1]) / (line[2] - line[0]));
             theta       = (theta < 0)          ? theta + CV_PI  : theta;
@@ -255,7 +255,7 @@ cv::Mat BlurDetector::getWeightMap(const cv::Mat& image) const
 
     if (d->have_focus_region)
     {
-        for (const auto point : d->af_points)
+        for (const auto& point : d->af_points)
         {
             QPointF pos           = point.getPosition();
             QSizeF size           = point.getSize();
@@ -263,8 +263,10 @@ cv::Mat BlurDetector::getWeightMap(const cv::Mat& image) const
             int x_position_corner = std::max(static_cast<int>((pos.x() - size.width() * 0.5  *d->ratio_expand_af_point) * image.size().width), 0);
             int y_position_corner = std::max(static_cast<int>((pos.y() - size.height() * 0.5 *d->ratio_expand_af_point) * image.size().height), 0);
 
-            int width             = std::min(image.size().width - x_position_corner, static_cast<int>(size.width() * image.size().width * d->ratio_expand_af_point) );
-            int height            = std::min(image.size().height - y_position_corner, static_cast<int>(size.height() * image.size().height * d->ratio_expand_af_point) );
+            int width             = std::min(image.size().width - x_position_corner,
+                                             static_cast<int>(size.width() * image.size().width * d->ratio_expand_af_point) );
+            int height            = std::min(image.size().height - y_position_corner,
+                                             static_cast<int>(size.height() * image.size().height * d->ratio_expand_af_point) );
 
             cv::Rect rect{
                             x_position_corner,
