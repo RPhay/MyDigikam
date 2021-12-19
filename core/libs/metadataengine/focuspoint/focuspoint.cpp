@@ -24,6 +24,10 @@
 
 #include "focuspoint.h"
 
+// KDE includes
+
+#include <klocalizedstring.h>
+
 // Local includes
 
 #include "digikam_debug.h"
@@ -81,6 +85,32 @@ FocusPoint::TypePoint FocusPoint::getType() const
     return type;
 }
 
+QString FocusPoint::getTypeDescription() const
+{
+    switch (getType())
+    {
+        case Infocus:
+        {
+            return i18nc("Focus point type description", "In Focus");
+        }
+
+        case Selected:
+        {
+            return i18nc("Focus point type description", "Selected");
+        }
+
+        case SelectedInFocus:
+        {
+            return i18nc("Focus point type description", "Selected In Focus");
+        }
+
+        default: // Inactive
+        {
+            return i18nc("Focus point type description", "Inactive");
+        }
+    }
+}
+
 QRect FocusPoint::getRectBySize(const QSize& size) const
 {
     return QRect(static_cast<int>((x_position - 0.5 * width)  * size.width()),
@@ -114,6 +144,16 @@ QSizeF FocusPoint::getSize() const
 QRectF FocusPoint::getRect() const
 {
     return QRectF(x_position, y_position, width, height);
+}
+
+QDebug operator<<(QDebug dbg, const FocusPoint& fp)
+{
+    dbg.nospace() << "FocusPoint::rectangle:"
+                  << fp.getRect() << ", ";
+    dbg.nospace() << "FocusPoint::type:"
+                  << fp.getTypeDescription();
+
+    return dbg.space();
 }
 
 } // namespace Digikam

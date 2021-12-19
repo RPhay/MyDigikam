@@ -31,6 +31,7 @@
 #include <QVariant>
 #include <QStringList>
 #include <QRectF>
+#include <QDebug>
 
 // Local includes
 
@@ -59,15 +60,16 @@ public:
     explicit FocusPoint(const QRectF& rectF);
     ~FocusPoint();
 
-    void setType(TypePoint type);
+    void      setType(TypePoint type);
     TypePoint getType()                                     const;
-    QRect getRectBySize(const QSize& size)                  const;
+    QString   getTypeDescription()                          const;
 
     void setPosition(float x_position, float y_position);
     void setSize(float width, float height);
     QPointF getPosition()                                   const;
     QSizeF  getSize()                                       const;
     QRectF  getRect()                                       const;
+    QRect   getRectBySize(const QSize& size)                const;
 
 private:
 
@@ -97,6 +99,9 @@ inline FocusPoint::TypePoint& operator&=(FocusPoint::TypePoint& type1, FocusPoin
 {
     return (type1 = type1 & type2);
 }
+
+//! qDebug() stream operator. Writes property @fp to the debug output in a nicely formatted way.
+DIGIKAM_EXPORT QDebug operator<<(QDebug dbg, const FocusPoint& fp);
 
 } // namespace Digikam
 
