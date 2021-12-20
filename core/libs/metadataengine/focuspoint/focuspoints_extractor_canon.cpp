@@ -147,6 +147,8 @@ FocusPointsExtractor::ListAFPoints FocusPointsExtractor::getAFPoints_canon() con
 
     if (imageWidth.isNull() || imageHeight.isNull())
     {
+        qCDebug(DIGIKAM_METAENGINE_LOG) << "FocusPointsExtractor: invalid Canon Camera image sizes.";
+
         return getAFPoints_default();
     }
 
@@ -160,6 +162,8 @@ FocusPointsExtractor::ListAFPoints FocusPointsExtractor::getAFPoints_canon() con
     if (((afPointWidth.isNull())   || (afPointHeight.isNull())) &&
         ((afPointWidths.isEmpty()) || (afPointHeights.isEmpty())))
     {
+        qCDebug(DIGIKAM_METAENGINE_LOG) << "FocusPointsExtractor: invalid sizes from Canon makernotes.";
+
         return getAFPoints_default();
     }
 
@@ -170,8 +174,13 @@ FocusPointsExtractor::ListAFPoints FocusPointsExtractor::getAFPoints_canon() con
 
     if (af_x_positions.isEmpty() || af_y_positions.isEmpty())
     {
+        qCDebug(DIGIKAM_METAENGINE_LOG) << "FocusPointsExtractor: invalid positions from Canon makernotes.";
+
         return getAFPoints_default();
     }
+
+    qCDebug(DIGIKAM_METAENGINE_LOG) << "FocusPointsExtractor: Canon Makernotes Focus Location:" << afPointWidth << afPointHeights
+                                                                                                << af_x_positions << af_y_positions;
 
     // Get type of af points
 
@@ -187,7 +196,6 @@ FocusPointsExtractor::ListAFPoints FocusPointsExtractor::getAFPoints_canon() con
     QString cameraType      = findValue(TagNameRoot, QLatin1String("CameraType")).toString();
 
     int yDirection          = (cameraType.toUpper() == QLatin1String("COMPACT")) ? -1 : 1;
-
 
     ListAFPoints points;
 

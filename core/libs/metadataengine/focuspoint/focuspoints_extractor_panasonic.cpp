@@ -62,17 +62,23 @@ FocusPointsExtractor::ListAFPoints FocusPointsExtractor::getAFPoints_panasonic()
 
     if (imageWidth.isNull() || imageHeight.isNull())
     {
+        qCDebug(DIGIKAM_METAENGINE_LOG) << "FocusPointsExtractor: invalid Panasonic image sizes.";
+
         return getAFPoints_default();
     }
 
     // Get af point
 
-    QStringList af_position = findValue(TagNameRoot,QLatin1String("AFPointPosition")).toString().split(QLatin1String(" "));
+    QStringList af_position = findValue(TagNameRoot, QLatin1String("AFPointPosition")).toString().split(QLatin1String(" "));
 
     if (af_position.isEmpty() || (af_position.count() == 1))
     {
+        qCDebug(DIGIKAM_METAENGINE_LOG) << "FocusPointsExtractor: invalid positions from Panasonic makernotes.";
+
         return getAFPoints_default();
     }
+
+    qCDebug(DIGIKAM_METAENGINE_LOG) << "FocusPointsExtractor: Panasonic Makernotes Focus Location:" << af_position;
 
     float af_x_position = af_position[0].toFloat();
     float af_y_position = af_position[1].toFloat();

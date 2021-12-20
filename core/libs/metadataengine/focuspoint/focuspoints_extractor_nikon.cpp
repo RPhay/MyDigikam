@@ -62,6 +62,8 @@ FocusPointsExtractor::ListAFPoints FocusPointsExtractor::getAFPoints_nikon() con
 
     if (!model.contains(QLatin1String("nikon z"), Qt::CaseInsensitive))
     {
+        qCDebug(DIGIKAM_METAENGINE_LOG) << "FocusPointsExtractor: unsupported Nikon Camera.";
+
         return getAFPoints_default();
     }
 
@@ -81,6 +83,8 @@ FocusPointsExtractor::ListAFPoints FocusPointsExtractor::getAFPoints_nikon() con
 
     if (imageWidth.isNull() || imageHeight.isNull())
     {
+        qCDebug(DIGIKAM_METAENGINE_LOG) << "FocusPointsExtractor: invalid Nikon image sizes.";
+
         return getAFPoints_default();
     }
 
@@ -91,6 +95,8 @@ FocusPointsExtractor::ListAFPoints FocusPointsExtractor::getAFPoints_nikon() con
 
     if ((afPointWidth.isNull()) || (afPointHeight.isNull()))
     {
+        qCDebug(DIGIKAM_METAENGINE_LOG) << "FocusPointsExtractor: invalid sizes from Nikon makernotes.";
+
         return getAFPoints_default();
     }
 
@@ -101,8 +107,13 @@ FocusPointsExtractor::ListAFPoints FocusPointsExtractor::getAFPoints_nikon() con
 
     if (af_x_position.isNull() || af_y_position.isNull())
     {
+        qCDebug(DIGIKAM_METAENGINE_LOG) << "FocusPointsExtractor: invalid positions from Nikon makernotes.";
+
         return getAFPoints_default();
     }
+
+    qCDebug(DIGIKAM_METAENGINE_LOG) << "FocusPointsExtractor: Nikon Makernotes Focus Location:" << afPointWidth << afPointHeight
+                                                                                                << af_x_position << af_y_position;
 
     return
     (

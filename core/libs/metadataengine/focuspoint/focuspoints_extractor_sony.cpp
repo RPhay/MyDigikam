@@ -61,12 +61,15 @@ FocusPointsExtractor::ListAFPoints FocusPointsExtractor::getAFPoints_sony() cons
     QStringList af_info = findValue(TagNameRoot, QLatin1String("FocusLocation")).toString()
                                                                                 .split(QLatin1String(" "));
 
-    qCDebug(DIGIKAM_METAENGINE_LOG) << "Sony Makernotes Focus Location:" << af_info;
 
     if (af_info.size() < 5)
     {
+        qCDebug(DIGIKAM_METAENGINE_LOG) << "Unsupported Sony Camera or 'AF Point Position' metadata tag not found.";
+
         return getAFPoints_default();
     }
+
+    qCDebug(DIGIKAM_METAENGINE_LOG) << "Sony Makernotes Focus Location:" << af_info;
 
     // Get size image
 

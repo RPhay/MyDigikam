@@ -60,6 +60,8 @@ FocusPointsExtractor::ListAFPoints FocusPointsExtractor::getAFPoints_default() c
 
     if (!desc.startsWith(QLatin1String("digikam")))
     {
+        qCDebug(DIGIKAM_METAENGINE_LOG) << "FocusPointsExtractor: cannot find digiKam XMP namespace.";
+
         return ListAFPoints();
     }
 
@@ -68,6 +70,8 @@ FocusPointsExtractor::ListAFPoints FocusPointsExtractor::getAFPoints_default() c
 
     if (af_x_position.isNull() || af_y_position.isNull())
     {
+        qCDebug(DIGIKAM_METAENGINE_LOG) << "FocusPointsExtractor: invalid positions from XMP.";
+
         return ListAFPoints();
     }
 
@@ -76,8 +80,13 @@ FocusPointsExtractor::ListAFPoints FocusPointsExtractor::getAFPoints_default() c
 
     if (afPointWidth.isNull() || afPointHeight.isNull())
     {
+        qCDebug(DIGIKAM_METAENGINE_LOG) << "FocusPointsExtractor: invalid sizes from XMP.";
+
         return ListAFPoints();
     }
+
+    qCDebug(DIGIKAM_METAENGINE_LOG) << "FocusPointsExtractor: XMP Focus Location:" << afPointWidth << afPointHeight
+                                                                                   << af_x_position << af_y_position;
 
     return
     (
