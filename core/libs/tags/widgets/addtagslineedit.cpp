@@ -172,13 +172,13 @@ void AddTagsLineEdit::setAllowExceedBound(bool value)
  */
 void AddTagsLineEdit::slotReturnPressed()
 {
-    if      (text().isEmpty())
+    if (text().isEmpty())
     {
         //focus back to mainview
 
         emit taggingActionFinished();
     }
-    else if (!d->currentTaggingAction.isValid())
+    else
     {
         emit taggingActionActivated(currentTaggingAction());
     }

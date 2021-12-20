@@ -100,7 +100,7 @@ BUGFIXES:
 091 ==> 435767 - Files with same name but different case are hidden.
 092 ==> 445948 - DK only shows one file if two files only differ in lower/upper case extension.
 093 ==> 447233 - Incorrect display of album thumbnails.
-094 ==> 
+094 ==> 447309 - Enter for People tagging to confirm second picture does not work anymore.
 095 ==> 
 096 ==> 
 097 ==> 
