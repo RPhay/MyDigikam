@@ -4,7 +4,7 @@
  * https://www.digikam.org
  *
  * Date        : 28/08/2021
- * Description : Extraction of focus points by exiftool data
+ * Description : Extraction of focus points by exiftool data - Panasonic devices
  *
  * Copyright (C) 2021 by Gilles Caulier <caulier dot gilles at gmail dot com>
  * Copyright (C) 2021 by Phuoc Khanh Le <phuockhanhnk94 at gmail dot com>
@@ -64,7 +64,7 @@ FocusPointsExtractor::ListAFPoints FocusPointsExtractor::getAFPoints_panasonic()
     {
         qCDebug(DIGIKAM_METAENGINE_LOG) << "FocusPointsExtractor: invalid Panasonic image sizes.";
 
-        return getAFPoints_default();
+        return getAFPoints_exif();
     }
 
     // Get af point
@@ -75,7 +75,7 @@ FocusPointsExtractor::ListAFPoints FocusPointsExtractor::getAFPoints_panasonic()
     {
         qCDebug(DIGIKAM_METAENGINE_LOG) << "FocusPointsExtractor: invalid positions from Panasonic makernotes.";
 
-        return getAFPoints_default();
+        return getAFPoints_exif();
     }
 
     qCDebug(DIGIKAM_METAENGINE_LOG) << "FocusPointsExtractor: Panasonic Makernotes Focus Location:" << af_position;
@@ -94,10 +94,12 @@ FocusPointsExtractor::ListAFPoints FocusPointsExtractor::getAFPoints_panasonic()
     (
         ListAFPoints
         {
-            PanasonicInternal::create_af_point(af_x_position,
+            PanasonicInternal::create_af_point(
+                                               af_x_position,
                                                af_y_position,
                                                afPointWidth,
-                                               afPointHeight)
+                                               afPointHeight
+                                              )
         }
     );
 }

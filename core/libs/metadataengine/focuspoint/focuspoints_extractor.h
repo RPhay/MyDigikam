@@ -78,11 +78,12 @@ private:
 
     ListAFPoints findAFPoints()                                                                             const;
 
-    ListAFPoints getAFPoints_default()                                                                      const;
     ListAFPoints getAFPoints_canon()                                                                        const;
+    ListAFPoints getAFPoints_exif()                                                                         const;
     ListAFPoints getAFPoints_nikon()                                                                        const;
     ListAFPoints getAFPoints_panasonic()                                                                    const;
     ListAFPoints getAFPoints_sony()                                                                         const;
+    ListAFPoints getAFPoints_xmp()                                                                          const;
 
 private:
 

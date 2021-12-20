@@ -4,7 +4,7 @@
  * https://www.digikam.org
  *
  * Date        : 28/08/2021
- * Description : Extraction of focus points by exiftool data
+ * Description : Extraction of focus points by exiftool data - Nikon devices
  *
  * Copyright (C) 2021 by Gilles Caulier <caulier dot gilles at gmail dot com>
  * Copyright (C) 2021 by Phuoc Khanh Le <phuockhanhnk94 at gmail dot com>
@@ -64,7 +64,7 @@ FocusPointsExtractor::ListAFPoints FocusPointsExtractor::getAFPoints_nikon() con
     {
         qCDebug(DIGIKAM_METAENGINE_LOG) << "FocusPointsExtractor: unsupported Nikon Camera.";
 
-        return getAFPoints_default();
+        return getAFPoints_exif();
     }
 
     // Get image size
@@ -85,7 +85,7 @@ FocusPointsExtractor::ListAFPoints FocusPointsExtractor::getAFPoints_nikon() con
     {
         qCDebug(DIGIKAM_METAENGINE_LOG) << "FocusPointsExtractor: invalid Nikon image sizes.";
 
-        return getAFPoints_default();
+        return getAFPoints_exif();
     }
 
     // Get size of point
@@ -97,7 +97,7 @@ FocusPointsExtractor::ListAFPoints FocusPointsExtractor::getAFPoints_nikon() con
     {
         qCDebug(DIGIKAM_METAENGINE_LOG) << "FocusPointsExtractor: invalid sizes from Nikon makernotes.";
 
-        return getAFPoints_default();
+        return getAFPoints_exif();
     }
 
     // Get coordinate of af points
@@ -109,7 +109,7 @@ FocusPointsExtractor::ListAFPoints FocusPointsExtractor::getAFPoints_nikon() con
     {
         qCDebug(DIGIKAM_METAENGINE_LOG) << "FocusPointsExtractor: invalid positions from Nikon makernotes.";
 
-        return getAFPoints_default();
+        return getAFPoints_exif();
     }
 
     qCDebug(DIGIKAM_METAENGINE_LOG) << "FocusPointsExtractor: Nikon Makernotes Focus Location:" << afPointWidth << afPointHeight
@@ -119,12 +119,14 @@ FocusPointsExtractor::ListAFPoints FocusPointsExtractor::getAFPoints_nikon() con
     (
         ListAFPoints
         {
-            NikonInternal::create_af_point(imageWidth.toFloat(),
+            NikonInternal::create_af_point(
+                                           imageWidth.toFloat(),
                                            imageHeight.toFloat(),
                                            afPointWidth.toFloat(),
                                            afPointHeight.toFloat(),
                                            af_x_position.toFloat(),
-                                           af_y_position.toFloat())
+                                           af_y_position.toFloat()
+                                          )
         }
     );
 }

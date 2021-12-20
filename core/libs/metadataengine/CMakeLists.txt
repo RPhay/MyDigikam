@@ -82,10 +82,11 @@ set(libdmetadata_SRCS
     ${CMAKE_CURRENT_SOURCE_DIR}/focuspoint/focuspoint.cpp
     ${CMAKE_CURRENT_SOURCE_DIR}/focuspoint/focuspoints_extractor.cpp
     ${CMAKE_CURRENT_SOURCE_DIR}/focuspoint/focuspoints_extractor_canon.cpp
+    ${CMAKE_CURRENT_SOURCE_DIR}/focuspoint/focuspoints_extractor_exif.cpp
     ${CMAKE_CURRENT_SOURCE_DIR}/focuspoint/focuspoints_extractor_nikon.cpp
     ${CMAKE_CURRENT_SOURCE_DIR}/focuspoint/focuspoints_extractor_panasonic.cpp
     ${CMAKE_CURRENT_SOURCE_DIR}/focuspoint/focuspoints_extractor_sony.cpp
-    ${CMAKE_CURRENT_SOURCE_DIR}/focuspoint/focuspoints_extractor_default.cpp
+    ${CMAKE_CURRENT_SOURCE_DIR}/focuspoint/focuspoints_extractor_xmp.cpp
     ${CMAKE_CURRENT_SOURCE_DIR}/focuspoint/focuspoints_writer.cpp
 )
 

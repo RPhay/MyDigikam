@@ -4,7 +4,7 @@
  * https://www.digikam.org
  *
  * Date        : 28/08/2021
- * Description : Extraction of focus points by exiftool data
+ * Description : Extraction of focus points by exiftool data - XMP metadata
  *
  * Copyright (C) 2021 by Gilles Caulier <caulier dot gilles at gmail dot com>
  * Copyright (C) 2021 by Phuoc Khanh Le <phuockhanhnk94 at gmail dot com>
@@ -32,7 +32,7 @@ namespace Digikam
 {
 
 // Internal function to create af point from meta data
-namespace
+namespace XmpInternal
 {
 
 FocusPoint create_af_point(float afPointWidth,
@@ -47,15 +47,14 @@ FocusPoint create_af_point(float afPointWidth,
                       FocusPoint::TypePoint::SelectedInFocus);
 }
 
-} // namespace
+} // namespace XmpInternal
 
 // Main function to extract af point
-FocusPointsExtractor::ListAFPoints FocusPointsExtractor::getAFPoints_default() const
+FocusPointsExtractor::ListAFPoints FocusPointsExtractor::getAFPoints_xmp() const
 {
     setAFPointsReadOnly(false);
 
     QString TagNameRoot    = QLatin1String("XMP.XMP-mwg-rs.Image");
-
     QString desc           = findValue(TagNameRoot, QLatin1String("RegionDescription")).toString();
 
     if (!desc.startsWith(QLatin1String("digikam")))
@@ -92,10 +91,12 @@ FocusPointsExtractor::ListAFPoints FocusPointsExtractor::getAFPoints_default() c
     (
         ListAFPoints
         {
-            create_af_point(afPointWidth.toFloat(),
-                            afPointHeight.toFloat(),
-                            af_x_position.toFloat(),
-                            af_y_position.toFloat())
+            XmpInternal::create_af_point(
+                                         afPointWidth.toFloat(),
+                                         afPointHeight.toFloat(),
+                                         af_x_position.toFloat(),
+                                         af_y_position.toFloat()
+                                        )
         }
     );
 }

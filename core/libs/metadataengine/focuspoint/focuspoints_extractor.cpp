@@ -136,34 +136,45 @@ FocusPointsExtractor::ListAFPoints FocusPointsExtractor::findAFPoints() const
 
     if (!d->make.isNull())
     {
+        if (d->make == QLatin1String("APPLE"))
+        {
+            qCDebug(DIGIKAM_METAENGINE_LOG) << "FocusPointsExtractor: use Apple Exif metadata";
+
+            return getAFPoints_exif();
+        }
+
         if (d->make == QLatin1String("CANON"))
         {
             qCDebug(DIGIKAM_METAENGINE_LOG) << "FocusPointsExtractor: use Canon makernotes";
+
             return getAFPoints_canon();
         }
 
         if (d->make == QLatin1String("NIKON"))
         {
             qCDebug(DIGIKAM_METAENGINE_LOG) << "FocusPointsExtractor: use Nikon makernotes";
+
             return getAFPoints_nikon();
         }
 
         if (d->make == QLatin1String("PANASONIC"))
         {
             qCDebug(DIGIKAM_METAENGINE_LOG) << "FocusPointsExtractor: use Panasonic makernotes";
+
             return getAFPoints_panasonic();
         }
 
         if (d->make == QLatin1String("SONY"))
         {
             qCDebug(DIGIKAM_METAENGINE_LOG) << "FocusPointsExtractor: use Sony makernotes";
+
             return getAFPoints_sony();
         }
     }
 
-    qCDebug(DIGIKAM_METAENGINE_LOG) << "FocusPointsExtractor: use XMP information";
+    qCDebug(DIGIKAM_METAENGINE_LOG) << "FocusPointsExtractor: use Exif or XMP metadata";
 
-    return getAFPoints_default();
+    return getAFPoints_exif();
 }
 
 FocusPointsExtractor::ListAFPoints FocusPointsExtractor::get_af_points(FocusPoint::TypePoint type)

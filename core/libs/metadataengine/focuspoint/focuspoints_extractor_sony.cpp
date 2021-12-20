@@ -4,7 +4,7 @@
  * https://www.digikam.org
  *
  * Date        : 28/08/2021
- * Description : Extraction of focus points by exiftool data
+ * Description : Extraction of focus points by exiftool data - Sony devices
  *
  * Copyright (C) 2021 by Gilles Caulier <caulier dot gilles at gmail dot com>
  * Copyright (C) 2021 by Phuoc Khanh Le <phuockhanhnk94 at gmail dot com>
@@ -66,7 +66,7 @@ FocusPointsExtractor::ListAFPoints FocusPointsExtractor::getAFPoints_sony() cons
     {
         qCDebug(DIGIKAM_METAENGINE_LOG) << "FocusPointsExtractor: Unsupported Sony Camera.";
 
-        return getAFPoints_default();
+        return getAFPoints_exif();
     }
 
     qCDebug(DIGIKAM_METAENGINE_LOG) << "FocusPointsExtractor: Sony Makernotes Focus Location:" << af_info;
@@ -90,12 +90,14 @@ FocusPointsExtractor::ListAFPoints FocusPointsExtractor::getAFPoints_sony() cons
     (
         ListAFPoints
         {
-            SonyInternal::create_af_point(imageWidth,
+            SonyInternal::create_af_point(
+                                          imageWidth,
                                           imageHeight,
                                           afPointWidth,
                                           afPointHeight,
                                           af_x_position,
-                                          af_y_position)
+                                          af_y_position
+                                         )
         }
     );
 }

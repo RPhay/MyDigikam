@@ -4,7 +4,7 @@
  * https://www.digikam.org
  *
  * Date        : 28/08/2021
- * Description : Extraction of focus points by exiftool data
+ * Description : Extraction of focus points by exiftool data - Canon devices
  *
  * Copyright (C) 2021 by Gilles Caulier <caulier dot gilles at gmail dot com>
  * Copyright (C) 2021 by Phuoc Khanh Le <phuockhanhnk94 at gmail dot com>
@@ -149,7 +149,7 @@ FocusPointsExtractor::ListAFPoints FocusPointsExtractor::getAFPoints_canon() con
     {
         qCDebug(DIGIKAM_METAENGINE_LOG) << "FocusPointsExtractor: invalid Canon Camera image sizes.";
 
-        return getAFPoints_default();
+        return getAFPoints_exif();
     }
 
     // Get size of af points
@@ -164,7 +164,7 @@ FocusPointsExtractor::ListAFPoints FocusPointsExtractor::getAFPoints_canon() con
     {
         qCDebug(DIGIKAM_METAENGINE_LOG) << "FocusPointsExtractor: invalid sizes from Canon makernotes.";
 
-        return getAFPoints_default();
+        return getAFPoints_exif();
     }
 
     // Get coordinate of af points
@@ -176,7 +176,7 @@ FocusPointsExtractor::ListAFPoints FocusPointsExtractor::getAFPoints_canon() con
     {
         qCDebug(DIGIKAM_METAENGINE_LOG) << "FocusPointsExtractor: invalid positions from Canon makernotes.";
 
-        return getAFPoints_default();
+        return getAFPoints_exif();
     }
 
     qCDebug(DIGIKAM_METAENGINE_LOG) << "FocusPointsExtractor: Canon Makernotes Focus Location:" << afPointWidth << afPointHeights
@@ -201,11 +201,14 @@ FocusPointsExtractor::ListAFPoints FocusPointsExtractor::getAFPoints_canon() con
 
     for (int i = 0 ; i < af_x_positions.count() ; ++i)
     {
-        float afPointWidthUsed  = (afPointWidths.isEmpty()) ? afPointWidth.toFloat()  : afPointWidths[i].toFloat();
+        float afPointWidthUsed  = (afPointWidths.isEmpty()) ? afPointWidth.toFloat()
+                                                            : afPointWidths[i].toFloat();
 
-        float afPointHeightUsed = (afPointWidths.isEmpty()) ? afPointHeight.toFloat() : afPointWidths[i].toFloat();
+        float afPointHeightUsed = (afPointWidths.isEmpty()) ? afPointHeight.toFloat()
+                                                            : afPointWidths[i].toFloat();
 
-        FocusPoint point        = CanonInternal::create_af_point(imageWidth.toFloat(),
+        FocusPoint point        = CanonInternal::create_af_point(
+                                                                 imageWidth.toFloat(),
                                                                  imageHeight.toFloat(),
                                                                  afPointWidthUsed,
                                                                  afPointHeightUsed,
@@ -214,7 +217,8 @@ FocusPointsExtractor::ListAFPoints FocusPointsExtractor::getAFPoints_canon() con
                                                                  af_selected,
                                                                  af_infocus,
                                                                  yDirection,
-                                                                 i);
+                                                                 i
+                                                                );
         points.append(point);
     }
 
