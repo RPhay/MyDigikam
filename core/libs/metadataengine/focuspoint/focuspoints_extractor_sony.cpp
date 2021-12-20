@@ -61,7 +61,6 @@ FocusPointsExtractor::ListAFPoints FocusPointsExtractor::getAFPoints_sony() cons
     QStringList af_info = findValue(TagNameRoot, QLatin1String("FocusLocation")).toString()
                                                                                 .split(QLatin1String(" "));
 
-
     if (af_info.size() < 5)
     {
         qCDebug(DIGIKAM_METAENGINE_LOG) << "FocusPointsExtractor: Unsupported Sony Camera.";
@@ -73,13 +72,13 @@ FocusPointsExtractor::ListAFPoints FocusPointsExtractor::getAFPoints_sony() cons
 
     // Get size image
 
-    float imageWidth    = af_info[0].toFloat();
-    float imageHeight   = af_info[1].toFloat();
+    float afImageWidth  = af_info[0].toFloat();
+    float afImageHeight = af_info[1].toFloat();
 
     // Get size of af points
 
-    float afPointWidth  = imageWidth  * RATIO_POINT_IMAGE;
-    float afPointHeight = imageHeight * RATIO_POINT_IMAGE;
+    float afPointWidth  = afImageWidth  * RATIO_POINT_IMAGE;
+    float afPointHeight = afImageHeight * RATIO_POINT_IMAGE;
 
     // Get coordinate of af points
 
@@ -91,8 +90,8 @@ FocusPointsExtractor::ListAFPoints FocusPointsExtractor::getAFPoints_sony() cons
         ListAFPoints
         {
             SonyInternal::create_af_point(
-                                          imageWidth,
-                                          imageHeight,
+                                          afImageWidth,
+                                          afImageHeight,
                                           afPointWidth,
                                           afPointHeight,
                                           af_x_position,

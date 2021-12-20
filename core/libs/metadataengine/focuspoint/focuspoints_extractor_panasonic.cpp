@@ -67,6 +67,8 @@ FocusPointsExtractor::ListAFPoints FocusPointsExtractor::getAFPoints_panasonic()
         return getAFPoints_exif();
     }
 
+    setOriginalSize(QSize(imageWidth.toInt(), imageHeight.toInt()));
+
     // Get af point
 
     QStringList af_position = findValue(TagNameRoot, QLatin1String("AFPointPosition")).toString().split(QLatin1String(" "));

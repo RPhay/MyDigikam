@@ -43,12 +43,13 @@ public:
     {
     }
 
-    ListAFPoints                    af_points;
-    bool                            exifToolAvailable;
-    ExifToolParser::ExifToolData    metadata;
-    bool                            afPointsReadOnly;
-    QString                         make;
-    QString                         model;
+    ListAFPoints                    af_points;          ///< List of AF points extracted from metadata.
+    bool                            exifToolAvailable;  ///< True if ExifTool binary is available.
+    ExifToolParser::ExifToolData    metadata;           ///< List of tags parsed by ExifTool.
+    bool                            afPointsReadOnly;   ///< True if AF points are read-only in metadata.
+    QString                         make;               ///< Camera Manufacturer Name
+    QString                         model;              ///< Camera Model Name.
+    QSize                           originalSize;       ///< Original size of image taken by camera
 };
 
 FocusPointsExtractor::FocusPointsExtractor(QObject* const parent,const QString& image_path)
@@ -65,6 +66,14 @@ FocusPointsExtractor::FocusPointsExtractor(QObject* const parent,const QString& 
     d->make              = d->make.split(QLatin1String(" "))[0].toUpper();
     d->model             = findValue(QLatin1String("EXIF.IFD0.Camera.Model")).toString();
     d->model             = d->model.split(QLatin1String(" "))[0].toUpper();
+
+    // NOTE: init image size properties with generic values taken from file by default,
+    //       this will be overwrited by delegate with findADPoints().
+
+    QVariant imageWidth  = findValue(QLatin1String("File.File.Image.ImageWidth"));
+    QVariant imageHeight = findValue(QLatin1String("File.File.Image.ImageHeight"));
+    setOriginalSize(QSize(imageWidth.toInt(), imageHeight.toInt()));
+
     d->af_points         = findAFPoints();
 }
 
@@ -217,6 +226,16 @@ bool FocusPointsExtractor::isAFPointsReadOnly() const
 void FocusPointsExtractor::setAFPointsReadOnly(bool readOnly) const
 {
     d->afPointsReadOnly = readOnly;
+}
+
+void FocusPointsExtractor::setOriginalSize(const QSize& size) const
+{
+    d->originalSize = size;
+}
+
+QSize FocusPointsExtractor::originalSize() const
+{
+    return d->originalSize;
 }
 
 QString FocusPointsExtractor::make() const

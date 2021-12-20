@@ -64,9 +64,11 @@ public:
 
     ListAFPoints get_af_points();
     ListAFPoints get_af_points(FocusPoint::TypePoint type);
-    bool isAFPointsReadOnly()                                                                               const;
+
+    bool    isAFPointsReadOnly()                                                                            const;
     QString make()                                                                                          const;
     QString model()                                                                                         const;
+    QSize   originalSize()                                                                                  const;
 
 private:
 
@@ -75,6 +77,7 @@ private:
     QVariant findValueFirstMatch(const QStringList& listTagNames, bool isList = false)                      const;
     QVariant findValueFirstMatch(const QString& tagNameRoot, const QStringList& keys, bool isList = false)  const;
     void setAFPointsReadOnly(bool readOnly)                                                                 const;
+    void setOriginalSize(const QSize& size)                                                                 const;
 
     ListAFPoints findAFPoints()                                                                             const;
 

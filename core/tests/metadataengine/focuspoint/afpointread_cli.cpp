@@ -48,6 +48,7 @@ int main(int argc, char** argv)
     FocusPointsExtractor::ListAFPoints points = fpreader->get_af_points();
 
     qCDebug(DIGIKAM_TESTS_LOG) << "Make/Model from" << argv[1] << ":" << fpreader->make() << "/" << fpreader->model();
+    qCDebug(DIGIKAM_TESTS_LOG) << "Original Image Size:" << fpreader->originalSize();
 
     if (!points.isEmpty())
     {
