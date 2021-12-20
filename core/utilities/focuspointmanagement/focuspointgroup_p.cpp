@@ -55,7 +55,7 @@ void FocusPointGroup::Private::applyVisible()
     }
 }
 
-FocusPointItem* FocusPointGroup::Private::createItem(const FocusPoint& point)
+FocusPointItem* FocusPointGroup::Private::createItem(const FocusPoint& point) const
 {
     FocusPointItem* const item = new FocusPointItem(view->previewItem());
     item->setPoint(point);

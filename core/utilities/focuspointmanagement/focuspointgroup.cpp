@@ -119,7 +119,7 @@ void FocusPointGroup::setVisible(bool visible)
     d->applyVisible();
 }
 
-void FocusPointGroup::setVisibleItem(RegionFrameItem* item)
+void FocusPointGroup::setVisibleItem(RegionFrameItem* const item)
 {
     d->visibilityController->setItemThatShallBeShown(item);
     d->applyVisible();
@@ -231,7 +231,7 @@ void FocusPointGroup::slotAlbumsUpdated(int type)
 }
 
 /*
-void FocusPointGroup::slotAlbumRenamed(Album* album)
+void FocusPointGroup::slotAlbumRenamed(Album* const album)
 {
     if (!album || (album->type() != Album::TAG))
     {
@@ -342,7 +342,7 @@ bool FocusPointGroup::isAllowedToAddFocusPoint() const
 {
     FocusPointsExtractor extractor(nullptr, d->info.filePath());
 
-    return !extractor.isAFPointsReadOnly();
+    return (!extractor.isAFPointsReadOnly());
 }
 
 } // namespace Digikam

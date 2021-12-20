@@ -90,7 +90,7 @@ public Q_SLOTS:
      * Shows or hides the frames
      */
     void setVisible(bool visible);
-    void setVisibleItem(RegionFrameItem* item);
+    void setVisibleItem(RegionFrameItem* const item);
 
     /**
      * Sets the current ItemInfo

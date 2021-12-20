@@ -46,10 +46,10 @@ public:
 
     enum TypePoint
     {
-        Inactive        = 0,
-        Infocus         = 1,
-        Selected        = 2,
-        SelectedInFocus = 3
+        Inactive        = 0,    ///< The AF-point is not active.
+        InFocus         = 1,    ///< The AF-point is in focus.
+        Selected        = 2,    ///< The AF-point is selected but not in focus.
+        SelectedInFocus = 3     ///< The AF-point is selected and in focus.
     };
 
 public:

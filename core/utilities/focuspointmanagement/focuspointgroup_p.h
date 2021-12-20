@@ -48,7 +48,7 @@ public:
 
     explicit Private(FocusPointGroup* const q);
 
-    FocusPointItem* createItem(const FocusPoint& point);
+    FocusPointItem* createItem(const FocusPoint& point) const;
     FocusPointItem* addItem(const FocusPoint& point);
     void applyVisible();
 

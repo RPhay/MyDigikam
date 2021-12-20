@@ -57,15 +57,27 @@ void FocusPointItem::setPoint(const FocusPoint& point)
     m_point = point;
     setEditable(false);
 
-    if (m_point.getType() == FocusPoint::TypePoint::Inactive)
+    switch (m_point.getType())
     {
-        m_color.setAlpha(130);
-        m_width = 1;
-    }
+        case FocusPoint::TypePoint::Inactive:
+        {
+            m_color.setAlpha(130);
+            m_width = 1;
+            break;
+        }
 
-    if ((m_point.getType() & FocusPoint::TypePoint::Selected) == FocusPoint::TypePoint::Selected)
-    {
-        m_color.setRed(255);
+        case FocusPoint::TypePoint::Selected:
+        case FocusPoint::TypePoint::SelectedInFocus:
+        {
+            m_color.setRed(255);
+            break;
+        }
+
+        default: // FocusPoint::TypePoint::InFocus
+        {
+            // TODO
+            break;
+        }
     }
 }
 

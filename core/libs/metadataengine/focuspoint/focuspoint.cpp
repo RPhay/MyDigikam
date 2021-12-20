@@ -89,7 +89,7 @@ QString FocusPoint::getTypeDescription() const
 {
     switch (getType())
     {
-        case Infocus:
+        case InFocus:
         {
             return i18nc("Focus point type description", "In Focus");
         }
