@@ -24,6 +24,7 @@
  * ============================================================ */
 
 #include "facegroup_p.h"
+#include "assignnamewidget_p.h"
 
 namespace Digikam
 {
