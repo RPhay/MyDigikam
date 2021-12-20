@@ -87,13 +87,6 @@ NewItemsFinder::NewItemsFinder(const FinderMode mode, const QStringList& folders
     connect(ScanController::instance(), SIGNAL(partialScanDone(QString)),
             this, SLOT(slotPartialScanDone(QString)));
 
-    // If we are scanning for newly imported files, we need to have the folders for scanning...
-
-    if ((mode == ScheduleCollectionScan) && foldersToScan.isEmpty())
-    {
-        qCWarning(DIGIKAM_GENERAL_LOG) << "NewItemsFinder called without any folders. Wrong call.";
-    }
-
     d->foldersToScan = foldersToScan;
     d->foldersToScan.sort();
 }
@@ -142,8 +135,20 @@ void NewItemsFinder::slotStart()
 
         case ScheduleCollectionScan:
         {
-            qCDebug(DIGIKAM_GENERAL_LOG) << "scan mode: ScheduleCollectionScan :: " << d->foldersToScan;
             d->foldersScanned.clear();
+
+            // If we are scanning for newly imported files, we need to have the folders for scanning...
+
+            if (d->foldersToScan.isEmpty())
+            {
+                qCWarning(DIGIKAM_GENERAL_LOG) << "NewItemsFinder called without any folders. Wrong call.";
+
+                slotDone();
+
+                return;
+            }
+
+            qCDebug(DIGIKAM_GENERAL_LOG) << "scan mode: ScheduleCollectionScan :: " << d->foldersToScan;
 
             foreach (const QString& folder, d->foldersToScan)
             {
