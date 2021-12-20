@@ -64,12 +64,12 @@ FocusPointsExtractor::ListAFPoints FocusPointsExtractor::getAFPoints_sony() cons
 
     if (af_info.size() < 5)
     {
-        qCDebug(DIGIKAM_METAENGINE_LOG) << "Unsupported Sony Camera or 'AF Point Position' metadata tag not found.";
+        qCDebug(DIGIKAM_METAENGINE_LOG) << "FocusPointsExtractor: Unsupported Sony Camera.";
 
         return getAFPoints_default();
     }
 
-    qCDebug(DIGIKAM_METAENGINE_LOG) << "Sony Makernotes Focus Location:" << af_info;
+    qCDebug(DIGIKAM_METAENGINE_LOG) << "FocusPointsExtractor: Sony Makernotes Focus Location:" << af_info;
 
     // Get size image
 
