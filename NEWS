@@ -96,10 +96,10 @@ BUGFIXES:
 087 ==> 265640 - digiKam crash on startup.
 088 ==> 447220 - Poor visibility of sidebar icons following update 7.3 to 7.4.
 089 ==> 447223 - Updating faces database does not do anything.
-090 ==> 
-091 ==> 
-092 ==> 
-093 ==> 
+090 ==> 414344 - Image names and Album names that only differ by case are treated as the same.
+091 ==> 435767 - Files with same name but different case are hidden.
+092 ==> 445948 - DK only shows one file if two files only differ in lower/upper case extension.
+093 ==> 447233 - Incorrect display of album thumbnails.
 094 ==> 
 095 ==> 
 096 ==> 

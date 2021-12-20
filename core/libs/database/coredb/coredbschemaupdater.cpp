@@ -57,7 +57,7 @@ namespace Digikam
 
 int CoreDbSchemaUpdater::schemaVersion()
 {
-    return 14;
+    return 15;
 }
 
 int CoreDbSchemaUpdater::filterSettingsVersion()
@@ -792,6 +792,14 @@ bool CoreDbSchemaUpdater::updateToVersion(int targetVersion)
             // add modificationDate column to the Albums table.
 
             return performUpdateToVersion(QLatin1String("UpdateSchemaFromV13ToV14"), 14, 5);
+        }
+
+        case 15:
+        {
+            // digiKam for database version 14 can work with version 15,
+            // now using COLLATE utf8_bin for Albums:relativePath and Images:name in MySQL.
+
+            return performUpdateToVersion(QLatin1String("UpdateSchemaFromV14ToV15"), 15, 5);
         }
 
         default:
