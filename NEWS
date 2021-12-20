@@ -101,7 +101,7 @@ BUGFIXES:
 092 ==> 445948 - DK only shows one file if two files only differ in lower/upper case extension.
 093 ==> 447233 - Incorrect display of album thumbnails.
 094 ==> 447309 - Enter for People tagging to confirm second picture does not work anymore.
-095 ==> 
+095 ==> 447283 - Updating to Digikam 7.4 - just opens Digikam 7.3.
 096 ==> 
 097 ==> 
 098 ==> 
