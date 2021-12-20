@@ -457,6 +457,23 @@ void FaceGroup::slotAssigned(const TaggingAction& action, const ItemInfo&, const
 
     item->setFace(face);
     item->switchMode(AssignNameWidget::ConfirmedMode);
+
+    focusRandomFace();
+}
+
+void FaceGroup::focusRandomFace()
+{
+    foreach (FaceItem* const item, d->items)
+    {
+        FaceTagsIface face = item->face();
+        AddTagsComboBox* comboBox = item->widget()->comboBox();
+
+        if ((comboBox) && (!face.isConfirmedName()))
+        {
+            comboBox->lineEdit()->setFocus();
+            return;
+        }
+    }
 }
 
 void FaceGroup::slotRejected(const ItemInfo&, const QVariant& faceIdentifier)
