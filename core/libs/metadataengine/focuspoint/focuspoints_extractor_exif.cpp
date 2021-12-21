@@ -53,6 +53,8 @@ FocusPoint create_af_point(float af_x_position,
 // Main function to extract af point
 FocusPointsExtractor::ListAFPoints FocusPointsExtractor::getAFPoints_exif() const
 {
+    // NOTE: See documentation of this tag contents: https://www.awaresystems.be/imaging/tiff/tifftags/privateifd/exif/subjectarea.html
+
     QStringList af_info = findValue(QLatin1String("EXIF.ExifIFD.Camera.SubjectArea")).toString()
                                                                                      .split(QLatin1String(" "));
 
