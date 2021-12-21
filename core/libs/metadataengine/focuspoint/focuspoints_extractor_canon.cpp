@@ -182,16 +182,16 @@ FocusPointsExtractor::ListAFPoints FocusPointsExtractor::getAFPoints_canon() con
         return getAFPoints_exif();
     }
 
-    qCDebug(DIGIKAM_METAENGINE_LOG) << "FocusPointsExtractor: Canon Makernotes Focus Location:" << afPointWidth << afPointHeights
-                                                                                                << af_x_positions << af_y_positions;
+    qCDebug(DIGIKAM_METAENGINE_LOG) << "FocusPointsExtractor: Canon Makernotes Focus Location:" << af_x_positions
+                                                                                                << af_y_positions
+                                                                                                << afPointWidth
+                                                                                                << afPointHeights;
 
     // Get type of af points
 
-    QStringList af_selected = findValueFirstMatch(TagNameRoot,
-                                                  QStringList()
-                                                    << QLatin1String("AFPointsSelected")
-                                                    << QLatin1String("AFPointsInFocus"),
-                                                    true).toStringList();
+    QStringList af_selected = findValueFirstMatch(TagNameRoot, QStringList() << QLatin1String("AFPointsSelected")
+                                                                             << QLatin1String("AFPointsInFocus"),
+                                                  true).toStringList();
     QStringList af_infocus  = findValue(TagNameRoot, QLatin1String("AFPointsInFocus"), true).toStringList();
 
     // Get direction

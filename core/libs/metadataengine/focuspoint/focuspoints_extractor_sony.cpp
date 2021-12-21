@@ -58,8 +58,7 @@ FocusPointsExtractor::ListAFPoints FocusPointsExtractor::getAFPoints_sony() cons
 {
     QString TagNameRoot = QLatin1String("MakerNotes.Sony.Camera");
 
-    QStringList af_info = findValue(TagNameRoot, QLatin1String("FocusLocation")).toString()
-                                                                                .split(QLatin1String(" "));
+    QStringList af_info = findValue(TagNameRoot, QLatin1String("FocusLocation")).toString().split(QLatin1String(" "));
 
     if (af_info.size() < 5)
     {

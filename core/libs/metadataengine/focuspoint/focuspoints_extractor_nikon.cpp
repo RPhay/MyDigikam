@@ -114,9 +114,11 @@ FocusPointsExtractor::ListAFPoints FocusPointsExtractor::getAFPoints_nikon() con
         return getAFPoints_exif();
     }
 
-    qCDebug(DIGIKAM_METAENGINE_LOG) << "FocusPointsExtractor: Nikon Makernotes Focus Location:" << afPointWidth << afPointHeight
-                                                                                                << af_x_position << af_y_position;
-
+    qCDebug(DIGIKAM_METAENGINE_LOG) << "FocusPointsExtractor: Nikon Makernotes Focus Location:" << af_x_position
+                                                                                                << af_y_position
+                                                                                                << afPointWidth
+                                                                                                << afPointHeight;
+                                                                                               
     return
     (
         ListAFPoints

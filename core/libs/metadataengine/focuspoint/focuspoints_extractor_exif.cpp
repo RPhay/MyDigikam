@@ -38,8 +38,7 @@ namespace ExifInternal
 FocusPoint create_af_point(float af_x_position,
                            float af_y_position,
                            float afPointWidth,
-                           float afPointHeight
-                           )
+                           float afPointHeight)
 {
     return FocusPoint(af_x_position,
                       af_y_position,
@@ -58,26 +57,69 @@ FocusPointsExtractor::ListAFPoints FocusPointsExtractor::getAFPoints_exif() cons
     QStringList af_info = findValue(QLatin1String("EXIF.ExifIFD.Camera.SubjectArea")).toString()
                                                                                      .split(QLatin1String(" "));
 
-    if (af_info.size() < 4)
+    float af_x_position = 0;
+    float af_y_position = 0;
+    float afPointWidth  = 0;
+    float afPointHeight = 0;
+
+    switch (af_info.size())
     {
-        qCDebug(DIGIKAM_METAENGINE_LOG) << "FocusPointsExtractor: Invalid Exif Subject Area.";
+        case 4:
+        {
+            // Get center coordinate of af points.
 
-        // Fail-back to XMP metadata if exists.
+            af_x_position = af_info[0].toFloat();
+            af_y_position = af_info[1].toFloat();
 
-        return getAFPoints_xmp();
+            // Get size of af area.
+
+            afPointWidth  = af_info[2].toFloat();
+            afPointHeight = af_info[3].toFloat();
+
+            break;
+        }
+
+        case 3:
+        {
+            // Get center coordinate of af points.
+
+            af_x_position = af_info[0].toFloat();
+            af_y_position = af_info[1].toFloat();
+
+            // Get size of af area (typically a circle transformed as rectangle).
+
+            afPointWidth  = af_info[3].toFloat();
+            afPointHeight = af_info[3].toFloat();
+
+            break;
+        }
+
+        case 2:
+        {
+            // Get center coordinate of af points.
+
+            af_x_position = af_info[0].toFloat();
+            af_y_position = af_info[1].toFloat();
+
+            // Get size of af area (typically a point transformed an arbritary square of size 120 pixels).
+
+            afPointWidth  = 120.0F;
+            afPointHeight = 120.0F;
+
+            break;
+        }
+
+        default:    // Other sizes are not valid
+        {
+            qCDebug(DIGIKAM_METAENGINE_LOG) << "FocusPointsExtractor: Invalid Exif Subject Area.";
+
+            // Fail-back to XMP metadata if exists.
+
+            return getAFPoints_xmp();
+        }
     }
 
     qCDebug(DIGIKAM_METAENGINE_LOG) << "FocusPointsExtractor: Exif Subject Area:" << af_info;
-
-    // Get coordinate of af points
-
-    float af_x_position = af_info[0].toFloat();
-    float af_y_position = af_info[1].toFloat();
-
-    // Get size of af area
-
-    float afPointWidth  = af_info[2].toFloat();
-    float afPointHeight = af_info[3].toFloat();
 
     return
     (

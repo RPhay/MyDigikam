@@ -84,8 +84,10 @@ FocusPointsExtractor::ListAFPoints FocusPointsExtractor::getAFPoints_xmp() const
         return ListAFPoints();
     }
 
-    qCDebug(DIGIKAM_METAENGINE_LOG) << "FocusPointsExtractor: XMP Focus Location:" << afPointWidth << afPointHeight
-                                                                                   << af_x_position << af_y_position;
+    qCDebug(DIGIKAM_METAENGINE_LOG) << "FocusPointsExtractor: XMP Focus Location:" << af_x_position
+                                                                                   << af_y_position
+                                                                                   << afPointWidth
+                                                                                   << afPointHeight;
 
     return
     (
