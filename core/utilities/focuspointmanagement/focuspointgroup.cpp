@@ -163,6 +163,7 @@ void FocusPointGroup::load()
 {
     if (d->state != NoPoints)
     {
+        qCDebug(DIGIKAM_GENERAL_LOG) << "FocusPointsGroup: no Point to show";
         return;
     }
 
@@ -174,6 +175,7 @@ void FocusPointGroup::load()
     if (d->info.isNull())
     {
         d->state = PointsLoaded;
+        qCDebug(DIGIKAM_GENERAL_LOG) << "FocusPointsGroup: no Point to load";
 
         return;
     }
@@ -198,6 +200,8 @@ void FocusPointGroup::load()
     {
         d->visibilityController->show();
     }
+
+    qCDebug(DIGIKAM_GENERAL_LOG) << "FocusPointGroup: number of points to show:" << points.size();
 }
 
 void FocusPointGroup::clear()

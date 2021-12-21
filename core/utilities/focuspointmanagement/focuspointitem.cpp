@@ -93,6 +93,7 @@ void FocusPointItem::paint(QPainter* painter, const QStyleOptionGraphicsItem*, Q
     pen.setColor(m_color);
 
     QRectF drawRect = boundingRect();
+    qCDebug(DIGIKAM_GENERAL_LOG) << "FocusPointsItem: rectangle:" << drawRect;
 
     painter->setPen(pen);
     painter->drawRect(drawRect);

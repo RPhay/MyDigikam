@@ -118,7 +118,7 @@ FocusPointsExtractor::ListAFPoints FocusPointsExtractor::getAFPoints_nikon() con
                                                                                                 << af_y_position
                                                                                                 << afPointWidth
                                                                                                 << afPointHeight;
-                                                                                               
+
     return
     (
         ListAFPoints

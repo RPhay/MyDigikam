@@ -29,6 +29,7 @@
 
 // Local includes
 
+#include "digikam_debug.h"
 #include "focuspointitem.h"
 
 namespace Digikam
