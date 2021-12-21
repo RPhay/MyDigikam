@@ -43,19 +43,16 @@ public:
 
     explicit Private()
       : threshold_edges_block   (2),
-        weight_edges_block      (120.0),
-        weight_mono_color       (10.0),
-        threshold_mono_color    (0.1),
-        alpha                   (0.026),
-        beta                    (-0.002)
+        weight_edges_block      (120.0F),
+        weight_mono_color       (10.0F),
+        threshold_mono_color    (0.1F),
+        alpha                   (0.026F),
+        beta                    (-0.002F)
     {
     }
 
     int   threshold_edges_block;
     float weight_edges_block;
-
-    int   part_size_mono_color;
-    float mono_color_threshold;
 
     float weight_mono_color;
     float threshold_mono_color;
@@ -110,7 +107,6 @@ float CompressionDetector::detect(const cv::Mat& image) const
                                                   (nb_pixels_mono_color * d->weight_mono_color + nb_pixels_edge_block * d->threshold_edges_block + nb_pixels_normal));
 
     return res;
-
 }
 
 template <typename Function>
@@ -149,7 +145,7 @@ cv::Mat CompressionDetector::detectMonoColorRegion(const cv::Mat& image) const
 
 float CompressionDetector::normalize(const float number)
 {
-    return (1.0 / (1.0 + qExp(-(number - d->alpha) / d->beta)));
+    return (1.0F / (1.0F + qExp(-(number - d->alpha) / d->beta)));
 }
 
 } // namspace Digikam

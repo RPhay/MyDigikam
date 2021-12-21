@@ -119,7 +119,7 @@ QRect FocusPoint::getRectBySize(const QSize& size) const
                  static_cast<int>(height * size.height()));
 }
 
-void FocusPoint::setPosition(float x_position, float y_position)
+void FocusPoint::setCenterPosition(float x_position, float y_position)
 {
     this->x_position = x_position;
     this->y_position = y_position;
@@ -131,7 +131,7 @@ void FocusPoint::setSize(float width, float height)
     this->height = height;
 }
 
-QPointF FocusPoint::getPosition() const
+QPointF FocusPoint::getCenterPosition() const
 {
     return QPointF(x_position, y_position);
 }
@@ -143,12 +143,16 @@ QSizeF FocusPoint::getSize() const
 
 QRectF FocusPoint::getRect() const
 {
-    return QRectF(x_position, y_position, width, height);
+    QRectF rect;
+    rect.setSize(getSize());
+    rect.moveCenter(getCenterPosition());
+
+    return rect;
 }
 
 QDebug operator<<(QDebug dbg, const FocusPoint& fp)
 {
-    dbg.nospace() << "FocusPoint::rectangle:"
+    dbg.nospace() << "FocusPoint::area:"
                   << fp.getRect() << ", ";
     dbg.nospace() << "FocusPoint::type:"
                   << fp.getTypeDescription();

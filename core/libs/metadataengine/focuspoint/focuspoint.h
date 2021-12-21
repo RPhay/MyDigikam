@@ -64,30 +64,30 @@ public:
     TypePoint getType()                                     const;
     QString   getTypeDescription()                          const;
 
-    void setPosition(float x_position, float y_position);
+    void setCenterPosition(float x_position, float y_position);
     void setSize(float width, float height);
-    QPointF getPosition()                                   const;
+    QPointF getCenterPosition()                             const;
     QSizeF  getSize()                                       const;
     QRectF  getRect()                                       const;
     QRect   getRectBySize(const QSize& size)                const;
 
 private:
 
-    float     x_position;
-    float     y_position;
-    float     width;
-    float     height;
-    TypePoint type;
+    float     x_position;       ///< X coordinate of the center of focus point area.
+    float     y_position;       ///< Y coordinate of the center of focus point area.
+    float     width;            ///< Width of focus point area.
+    float     height;           ///< Height of focus point area.
+    TypePoint type;             ///< Focus point area type. See TypePoint enum definition for details.
 };
 
 inline FocusPoint::TypePoint operator|(FocusPoint::TypePoint type1, FocusPoint::TypePoint type2)
 {
-    return static_cast<FocusPoint::TypePoint>(static_cast<int>(type1) | static_cast<int>(type2));
+    return (static_cast<FocusPoint::TypePoint>(static_cast<int>(type1) | static_cast<int>(type2)));
 }
 
 inline FocusPoint::TypePoint operator&(FocusPoint::TypePoint type1, FocusPoint::TypePoint type2)
 {
-    return static_cast<FocusPoint::TypePoint>(static_cast<int>(type1) & static_cast<int>(type2));
+    return (static_cast<FocusPoint::TypePoint>(static_cast<int>(type1) & static_cast<int>(type2)));
 }
 
 inline FocusPoint::TypePoint& operator|=(FocusPoint::TypePoint& type1, FocusPoint::TypePoint type2)

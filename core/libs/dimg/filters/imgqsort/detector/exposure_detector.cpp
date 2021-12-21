@@ -91,8 +91,8 @@ float ExposureDetector::percent_overexposed(const cv::Mat& image) const
     int demi_over_exposed_pixel = count_by_condition(image, d->threshold_demi_overexposed,d->threshold_overexposed);
     int normal_pixel            = image.total() - over_exposed_pixel - demi_over_exposed_pixel;
 
-    return static_cast<float>(static_cast<float>(over_exposed_pixel * d->weight_over_exposure + demi_over_exposed_pixel * d->weight_demi_over_exposure) /
-                              static_cast<float>(normal_pixel + over_exposed_pixel * d->weight_over_exposure + demi_over_exposed_pixel * d->weight_demi_over_exposure));
+    return (static_cast<float>(static_cast<float>(over_exposed_pixel * d->weight_over_exposure + demi_over_exposed_pixel * d->weight_demi_over_exposure) /
+                               static_cast<float>(normal_pixel + over_exposed_pixel * d->weight_over_exposure + demi_over_exposed_pixel * d->weight_demi_over_exposure)));
 }
 
 float ExposureDetector::percent_underexposed(const cv::Mat& image) const
@@ -101,8 +101,8 @@ float ExposureDetector::percent_underexposed(const cv::Mat& image) const
     int demi_under_exposed_pixel = count_by_condition(image, d->threshold_underexposed, d->threshold_demi_underexposed);
     int normal_pixel             = image.total() - under_exposed_pixel - demi_under_exposed_pixel;
 
-    return static_cast<float>(static_cast<float>(under_exposed_pixel * d->weight_under_exposure + demi_under_exposed_pixel * d->weight_demi_under_exposure) /
-                              static_cast<float>(normal_pixel + under_exposed_pixel * d->weight_under_exposure + demi_under_exposed_pixel * d->weight_demi_under_exposure));
+    return (static_cast<float>(static_cast<float>(under_exposed_pixel * d->weight_under_exposure + demi_under_exposed_pixel * d->weight_demi_under_exposure) /
+                               static_cast<float>(normal_pixel + under_exposed_pixel * d->weight_under_exposure + demi_under_exposed_pixel * d->weight_demi_under_exposure)));
 }
 
 int ExposureDetector::count_by_condition(const cv::Mat& image, int minVal, int maxVal) const

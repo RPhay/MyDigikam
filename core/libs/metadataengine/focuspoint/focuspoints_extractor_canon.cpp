@@ -43,7 +43,8 @@ void set_point_position(FocusPoint& point,
                         float af_y_position,
                         int yDirection)
 {
-    point.setPosition(0.5 + af_x_position / imageWidth, 0.5 + af_y_position * yDirection / imageHeight);
+    point.setCenterPosition(0.5 + af_x_position              / imageWidth,
+                            0.5 + af_y_position * yDirection / imageHeight);
 }
 
 void set_point_size(FocusPoint& point,

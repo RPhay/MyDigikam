@@ -68,7 +68,7 @@ void FocusPointsWriter::writeFocusPoint(const FocusPoint& point)
 {
     ExifToolParser::ExifToolData newTags;
 
-    QPointF pos = point.getPosition();
+    QPointF pos = point.getCenterPosition();
     QSizeF size = point.getSize();
 
     newTags.insert(QLatin1String("xmp:RegionAreaX"),

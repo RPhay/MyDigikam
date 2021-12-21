@@ -7,7 +7,7 @@
  * Description : Image Quality Parser - Abtrait class for detector
  *
  * Copyright (C) 2013-2021 by Gilles Caulier <caulier dot gilles at gmail dot com>
- * Copyright (C) 2021-2022 by Phuoc Khanh Le <phuockhanhnk94 at gmail dot com>
+ * Copyright (C) 2021      by Phuoc Khanh Le <phuockhanhnk94 at gmail dot com>
  *
  * This program is free software; you can redistribute it
  * and/or modify it under the terms of the GNU General

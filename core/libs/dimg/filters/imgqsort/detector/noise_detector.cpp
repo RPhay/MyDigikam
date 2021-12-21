@@ -46,12 +46,12 @@ NoiseDetector::Mat3D initFiltersHaar()
     res.reserve(SIZE_FILTER * SIZE_FILTER);
 
     float mat_base[SIZE_FILTER][SIZE_FILTER] =
-        {
-            {   0.5F,            0.5F,           0.5F,            0.5F           },
-            {   0.5F,            0.5F,          -0.5F,           -0.5F           },
-            {   0.7071F,        -0.7071F,        0.0F,            0.0F           },
-            {   0.0F,            0.0F,           0.7071F,        -0.7071F        }
-        };
+    {
+        {   0.5F,            0.5F,           0.5F,            0.5F           },
+        {   0.5F,            0.5F,          -0.5F,           -0.5F           },
+        {   0.7071F,        -0.7071F,        0.0F,            0.0F           },
+        {   0.0F,            0.0F,           0.7071F,        -0.7071F        }
+    };
 
     cv::Mat mat_base_opencv = cv::Mat(SIZE_FILTER, SIZE_FILTER, CV_32FC1, &mat_base);
 
@@ -151,11 +151,10 @@ void NoiseDetector::calculate_variance_kurtosis(const Mat3D& channels, cv::Mat& 
 
     // Calculate variance and kurtosis projection
 
-    variance = mu2 - pow_mat(mu1, 2);
+    variance    = mu2 - pow_mat(mu1, 2);
+    kurtosis    = (mu4 - 4.0 * mu1.mul(mu3) + 6.0 * pow_mat(mu1,2).mul(mu2) - 3.0 * pow_mat(mu1,4)) / pow_mat(variance, 2) - 3.0;
 
-    kurtosis = (mu4 - 4.0 * mu1.mul(mu3) + 6.0 * pow_mat(mu1,2).mul(mu2) - 3.0 * pow_mat(mu1,4)) / pow_mat(variance, 2) - 3.0;
-
-    cv::threshold(kurtosis,kurtosis,0, 0, cv::THRESH_TOZERO);
+    cv::threshold(kurtosis, kurtosis, 0, 0, cv::THRESH_TOZERO);
 }
 
 float NoiseDetector::noise_variance(const cv::Mat& variance, const cv::Mat& kurtosis) const
@@ -174,7 +173,7 @@ float NoiseDetector::noise_variance(const cv::Mat& variance, const cv::Mat& kurt
 
     float sqrtK = (a*c - b*d) / (c-b * b);
 
-    return (1.0 - a / sqrtK) / b;
+    return ((1.0F - a / sqrtK) / b);
 }
 
 cv::Mat NoiseDetector::raw_moment(const NoiseDetector::Mat3D& mat, int order) const
@@ -213,7 +212,7 @@ float NoiseDetector::mean_mat(const cv::Mat& mat) const
  */
 float NoiseDetector::normalize(const float number) const
 {
-    return 1.0 / (1.0 + qExp(-(number - d->alpha) / d->beta));
+    return (1.0F / (1.0F + qExp(-(number - d->alpha) / d->beta)));
 }
 
 } // namespace Digikam

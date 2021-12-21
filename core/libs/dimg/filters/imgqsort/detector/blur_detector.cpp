@@ -42,31 +42,31 @@ class Q_DECL_HIDDEN BlurDetector::Private
 public:
 
     explicit Private()
-      : min_abs                 (1),
-        ordre_log_filtrer       (30),
-        sigma_smooth_image      (5),
-        filtrer_defocus         (115),
+      : min_abs                 (1.0F),
+        ordre_log_filter        (30.0F),
+        sigma_smooth_image      (5.0F),
+        filter_defocus          (115.0F),
         part_size_motion_blur   (40),
-        edges_filtrer           (8),
-        theta_resolution        (CV_PI/900),
+        edges_filter            (8.0F),
+        theta_resolution        (CV_PI / 900.0),
         min_line_length         (30),
-        threshold_hough         (15),
+        threshold_hough         (15.0F),
         min_nb_lines            (3),
-        max_stddev              (0.65),
+        max_stddev              (0.65F),
         part_size_mono_color    (40),
-        mono_color_threshold    (10),
+        mono_color_threshold    (10.0F),
         have_focus_region       (false),
         ratio_expand_af_point   (2)
     {
     }
 
     float                               min_abs;
-    float                               ordre_log_filtrer;
+    float                               ordre_log_filter;
     float                               sigma_smooth_image;
-    float                               filtrer_defocus;
+    float                               filter_defocus;
 
     int                                 part_size_motion_blur;
-    float                               edges_filtrer;
+    float                               edges_filter;
     double                              theta_resolution;
     double                              min_line_length;
     float                               threshold_hough;
@@ -148,7 +148,7 @@ cv::Mat BlurDetector::detectDefocusMap(const cv::Mat& edgesMap) const
 
     cv::log(abs_map,abs_map);
 
-    abs_map /= log(d->ordre_log_filtrer);
+    abs_map        /= log(d->ordre_log_filter);
 
     // Smooth image to get blur map
 
@@ -157,9 +157,9 @@ cv::Mat BlurDetector::detectDefocusMap(const cv::Mat& edgesMap) const
 
     // Mask blurred pixel as 1 and sharp pixel 0
 
-    cv::Mat res = abs_map * 255;
+    cv::Mat res     = abs_map * 255;
 
-    cv::threshold(res, res, d->filtrer_defocus, 1, cv::THRESH_BINARY_INV);
+    cv::threshold(res, res, d->filter_defocus, 1, cv::THRESH_BINARY_INV);
 
     return res;
 }
@@ -172,19 +172,19 @@ cv::Mat BlurDetector::detectMotionBlurMap(const cv::Mat& edgesMap) const
 
     int nb_parts_row = static_cast<int>(edgesMap.size().height / d->part_size_motion_blur);
     int nb_parts_col = static_cast<int>(edgesMap.size().width  / d->part_size_motion_blur);
-
     cv::Mat res      = cv::Mat::zeros(edgesMap.size(), CV_8U);
 
     for (int i = 0 ; i < nb_parts_row ; ++i)
     {
         for (int j = 0 ; j < nb_parts_col ; ++j)
         {
-            cv::Rect rect{
-                            j*d->part_size_motion_blur,
-                            i*d->part_size_motion_blur,
-                            d->part_size_motion_blur,
-                            d->part_size_motion_blur
-                         };
+            cv::Rect rect
+            {
+                j*d->part_size_motion_blur,
+                i*d->part_size_motion_blur,
+                d->part_size_motion_blur,
+                d->part_size_motion_blur
+            };
 
             cv::Mat subImg = edgesMap(rect);
 
@@ -206,7 +206,7 @@ bool BlurDetector::isMotionBlur(const cv::Mat& frag) const
 
     cv::Mat tmp;
 
-    cv::threshold(frag, tmp, d->edges_filtrer, 255, cv::THRESH_BINARY);
+    cv::threshold(frag, tmp, d->edges_filter, 255, cv::THRESH_BINARY);
     tmp.convertTo(tmp, CV_8U);
 
     std::vector<cv::Vec4i> lines;
@@ -220,9 +220,9 @@ bool BlurDetector::isMotionBlur(const cv::Mat& frag) const
 
         for (const auto& line : lines)
         {
-            float theta = (line[2] == line[0]) ? 0              : qAtan((line[3] - line[1]) / (line[2] - line[0]));
-            theta       = (theta < 0)          ? theta + CV_PI  : theta;
-            theta       = (theta < CV_PI/20)   ?  CV_PI - theta : theta;
+            float theta = (line[2] == line[0])    ? 0.0F          : qAtan((line[3] - line[1]) / (line[2] - line[0]));
+            theta       = (theta < 0.0F)          ? theta + CV_PI : theta;
+            theta       = (theta < CV_PI / 20.0F) ? CV_PI - theta : theta;
 
             list_theta.push_back(theta);
         }
@@ -257,10 +257,10 @@ cv::Mat BlurDetector::getWeightMap(const cv::Mat& image) const
     {
         for (const auto& point : d->af_points)
         {
-            QPointF pos           = point.getPosition();
+            QPointF pos           = point.getCenterPosition();
             QSizeF size           = point.getSize();
 
-            int x_position_corner = std::max(static_cast<int>((pos.x() - size.width() * 0.5  *d->ratio_expand_af_point) * image.size().width), 0);
+            int x_position_corner = std::max(static_cast<int>((pos.x() - size.width()  * 0.5 *d->ratio_expand_af_point) * image.size().width),  0);
             int y_position_corner = std::max(static_cast<int>((pos.y() - size.height() * 0.5 *d->ratio_expand_af_point) * image.size().height), 0);
 
             int width             = std::min(image.size().width - x_position_corner,
@@ -268,12 +268,13 @@ cv::Mat BlurDetector::getWeightMap(const cv::Mat& image) const
             int height            = std::min(image.size().height - y_position_corner,
                                              static_cast<int>(size.height() * image.size().height * d->ratio_expand_af_point) );
 
-            cv::Rect rect{
-                            x_position_corner,
-                            y_position_corner,
-                            width,
-                            height
-                         };
+            cv::Rect rect
+            {
+                x_position_corner,
+                y_position_corner,
+                width,
+                height
+            };
 
             res(rect).setTo(1);
         }
@@ -301,10 +302,13 @@ cv::Mat BlurDetector::detectBackgroundRegion(const cv::Mat& image)    const
     {
         for (int j = 0 ; j < nb_parts_col ; ++j)
         {
-            cv::Rect rect{j * d->part_size_mono_color,
-                          i * d->part_size_mono_color,
-                          d->part_size_mono_color,
-                          d->part_size_mono_color};
+            cv::Rect rect
+            {
+                j * d->part_size_mono_color,
+                i * d->part_size_mono_color,
+                d->part_size_mono_color,
+                d->part_size_mono_color
+            };
 
             cv::Mat subImg = image(rect);
 
