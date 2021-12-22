@@ -42,10 +42,6 @@ FocusPointItem::FocusPointItem(QGraphicsItem* const parent)
       m_color        (QColor::fromRgb(0, 0, 0, 255)), ///< alpha is 100 to let more transparency
       m_width        (3)
 {
-    m_widgetName = new QLabel(nullptr);
-/*
-    setHudWidget(m_widgetName);
-*/
 }
 
 FocusPointItem::~FocusPointItem()

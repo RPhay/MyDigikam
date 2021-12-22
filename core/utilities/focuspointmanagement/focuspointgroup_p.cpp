@@ -77,6 +77,8 @@ FocusPointItem* FocusPointGroup::Private::createItem(const FocusPoint& point) co
 
 FocusPointItem* FocusPointGroup::Private::addItem(const FocusPoint& point)
 {
+    qCDebug(DIGIKAM_GENERAL_LOG) << "FocusPointsGroup: create item with point" << point;
+
     FocusPointItem* const item = createItem(point);
 
     visibilityController->addItem(item);

@@ -201,7 +201,7 @@ void FocusPointGroup::load()
         d->visibilityController->show();
     }
 
-    qCDebug(DIGIKAM_GENERAL_LOG) << "FocusPointGroup: number of points to show:" << points.size();
+    qCDebug(DIGIKAM_GENERAL_LOG) << "FocusPointGroup: points to show:" << points;
 }
 
 void FocusPointGroup::clear()
