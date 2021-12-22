@@ -315,17 +315,6 @@ bool MetaEngine::save(const QString& imageFilePath, bool setVersion) const
         regularFilePath = givenFileInfo.canonicalFilePath(); // Walk all the symlinks
     }
 
-    // NOTE: see B.K.O #137770 & #138540 : never touch the file if is read only.
-
-    QFileInfo finfo(regularFilePath);
-    QFileInfo dinfo(finfo.path());
-
-    if (!dinfo.isWritable())
-    {
-        qCDebug(DIGIKAM_METAENGINE_LOG) << "Dir" << dinfo.filePath() << "is read-only. Metadata not saved.";
-        return false;
-    }
-
     bool writeToFile                     = false;
     bool writeToSidecar                  = false;
     bool writeToSidecarIfFileNotPossible = false;
@@ -363,10 +352,22 @@ bool MetaEngine::save(const QString& imageFilePath, bool setVersion) const
         }
     }
 
+    // NOTE: see B.K.O #137770 & #138540 : never touch the file if is read only.
+    QFileInfo finfo(regularFilePath);
+    QFileInfo dinfo(finfo.path());
+
     if (writeToFile)
     {
-        qCDebug(DIGIKAM_METAENGINE_LOG) << "Will write Metadata to file" << finfo.absoluteFilePath();
-        writtenToFile = d->saveToFile(finfo);
+        if (!dinfo.isWritable())
+        {
+            qCDebug(DIGIKAM_METAENGINE_LOG) << "Dir" << dinfo.filePath() << "is read-only. Metadata not saved.";
+            writtenToFile = false;
+        }
+        else
+        {
+            qCDebug(DIGIKAM_METAENGINE_LOG) << "Will write Metadata to file" << finfo.absoluteFilePath();
+            writtenToFile = d->saveToFile(finfo);
+        }
 
         if (writtenToFile)
         {
@@ -377,7 +378,15 @@ bool MetaEngine::save(const QString& imageFilePath, bool setVersion) const
     if (writeToSidecar || (writeToSidecarIfFileNotPossible && !writtenToFile))
     {
         qCDebug(DIGIKAM_METAENGINE_LOG) << "Will write XMP sidecar for file" << finfo.fileName();
-        writtenToSidecar = d->saveToXMPSidecar(regularFilePath);
+
+        if (!dinfo.isWritable())
+        {
+            writtenToSidecar = d->saveToXMPSidecar(imageFilePath);
+        }
+        else
+        {
+            writtenToSidecar = d->saveToXMPSidecar(regularFilePath);
+        }
 
         if (writtenToSidecar)
         {

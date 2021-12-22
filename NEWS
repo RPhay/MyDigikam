@@ -103,7 +103,7 @@ BUGFIXES:
 094 ==> 447309 - Enter for People tagging to confirm second picture does not work anymore.
 095 ==> 447283 - Updating to Digikam 7.4 - just opens Digikam 7.3.
 096 ==> 447354 - Red eye tool creates empty image.
-097 ==> 
+097 ==> 415949 - Can't write sidecar file if image file is a symlink to readonly directory [patch].
 098 ==> 
 099 ==> 
 100 ==> 
