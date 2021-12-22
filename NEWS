@@ -102,7 +102,7 @@ BUGFIXES:
 093 ==> 447233 - Incorrect display of album thumbnails.
 094 ==> 447309 - Enter for People tagging to confirm second picture does not work anymore.
 095 ==> 447283 - Updating to Digikam 7.4 - just opens Digikam 7.3.
-096 ==> 
+096 ==> 447354 - Red eye tool creates empty image.
 097 ==> 
 098 ==> 
 099 ==> 
