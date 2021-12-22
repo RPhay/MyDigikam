@@ -4,7 +4,7 @@
  * https://www.digikam.org
  *
  * Date        : 28/08/2021
- * Description : Extraction of focus points by exiftool data
+ * Description : Focus point properties container (relative to original image size)
  *
  * Copyright (C) 2021 by Gilles Caulier <caulier dot gilles at gmail dot com>
  * Copyright (C) 2021 by Phuoc Khanh Le <phuockhanhnk94 at gmail dot com>
@@ -48,10 +48,10 @@ public:
     {
     };
 
-    float     x_position;       ///< X coordinate of the center of focus point area.
-    float     y_position;       ///< Y coordinate of the center of focus point area.
-    float     width;            ///< Width of focus point area.
-    float     height;           ///< Height of focus point area.
+    float     x_position;       ///< Relative X coordinate of the center of focus point area (depending of original image width).
+    float     y_position;       ///< Relative Y coordinate of the center of focus point area (depending of original image height).
+    float     width;            ///< Relative Width of focus point area (depending of original image width).
+    float     height;           ///< Relative Height of focus point area (depending of original image height).
     TypePoint type;             ///< Focus point area type. See TypePoint enum definition for details.
 };
 

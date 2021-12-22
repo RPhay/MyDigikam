@@ -52,7 +52,14 @@ int main(int argc, char** argv)
 
     if (!points.isEmpty())
     {
-        qCDebug(DIGIKAM_TESTS_LOG) << "AF Focus region found in" << argv[1] << ":" << points;
+        int id = 1;
+
+        foreach (const FocusPoint& fp, points)
+        {
+            qCDebug(DIGIKAM_TESTS_LOG) << id << "AF Focus region found in" << argv[1] << ":" << fp;
+            qCDebug(DIGIKAM_TESTS_LOG) << id << "AF Focus coordinates in image" << argv[1] << ":" << fp.getRectBySize(fpreader->originalSize());
+            ++id;
+        }
     }
     else
     {

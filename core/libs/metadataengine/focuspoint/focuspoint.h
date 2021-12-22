@@ -4,7 +4,7 @@
  * https://www.digikam.org
  *
  * Date        : 28/08/2021
- * Description : Extraction of focus points by exiftool data
+ * Description : Focus point properties container (relative to original image size)
  *
  * Copyright (C) 2021 by Gilles Caulier <caulier dot gilles at gmail dot com>
  * Copyright (C) 2021 by Phuoc Khanh Le <phuockhanhnk94 at gmail dot com>
@@ -54,11 +54,16 @@ public:
 
 public:
 
-    FocusPoint();
+    /**
+     * Focus point container contructors. Position and size are in float and a relative to the original image size.
+     * Typically, the area is define as percents of values depending of image size used to extract information from metadata.
+     * Like this, focus area can be drawn easily over a resized version of image.
+     */
     FocusPoint(float x_position, float y_position, float width, float height, TypePoint type);
     FocusPoint(float x_position, float y_position, float width, float height);
     explicit FocusPoint(const QRectF& rectF);
     FocusPoint(const FocusPoint& other);
+    FocusPoint();
     ~FocusPoint();
 
     /**
@@ -66,15 +71,25 @@ public:
      */
     FocusPoint& operator=(const FocusPoint& other);
 
+    /**
+     * Focus point type properties accessor. See TypePoint enum definition for details.
+     */
     void      setType(TypePoint type);
     TypePoint getType()                                     const;
     QString   getTypeDescription()                          const;
 
+    /**
+     * Accessors to relative properties of focus point area.
+     */
     void setCenterPosition(float x_position, float y_position);
     void setSize(float width, float height);
     QPointF getCenterPosition()                             const;
     QSizeF  getSize()                                       const;
     QRectF  getRect()                                       const;
+
+    /**
+     * Return the real aera properties in image coordinates depending of the size.
+     */
     QRect   getRectBySize(const QSize& size)                const;
 
 private:
@@ -83,6 +98,9 @@ private:
     QExplicitlySharedDataPointer<Private> d;
 };
 
+/**
+ * Boolean Operators over TypePoint type.
+ */
 inline FocusPoint::TypePoint operator|(FocusPoint::TypePoint type1, FocusPoint::TypePoint type2)
 {
     return (static_cast<FocusPoint::TypePoint>(static_cast<int>(type1) | static_cast<int>(type2)));
