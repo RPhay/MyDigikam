@@ -35,15 +35,17 @@ namespace Digikam
 namespace ExifInternal
 {
 
-FocusPoint create_af_point(float af_x_position,
+FocusPoint create_af_point(float imageWidth,
+                           float imageHeight,
+                           float af_x_position,
                            float af_y_position,
                            float afPointWidth,
                            float afPointHeight)
 {
-    return FocusPoint(af_x_position,
-                      af_y_position,
-                      afPointWidth,
-                      afPointHeight,
+    return FocusPoint(af_x_position / imageWidth,
+                      af_y_position / imageHeight,
+                      afPointWidth  / imageWidth,
+                      afPointHeight / imageHeight,
                       FocusPoint::TypePoint::SelectedInFocus);
 }
 
@@ -126,6 +128,8 @@ FocusPointsExtractor::ListAFPoints FocusPointsExtractor::getAFPoints_exif() cons
         ListAFPoints
         {
             ExifInternal::create_af_point(
+                                          QSizeF(originalSize()).width(),
+                                          QSizeF(originalSize()).height(),
                                           af_x_position,
                                           af_y_position,
                                           afPointWidth,
