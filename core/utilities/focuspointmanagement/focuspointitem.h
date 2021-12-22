@@ -58,7 +58,6 @@ protected:
 
     FocusPoint m_point;
     QColor     m_color;
-    QLabel*    m_widgetName;
     float      m_width;
 
 protected:
