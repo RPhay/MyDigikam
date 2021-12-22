@@ -35,54 +35,85 @@
 namespace Digikam
 {
 
+class Q_DECL_HIDDEN FocusPoint::Private : public QSharedData
+{
+public:
+
+    explicit Private()
+      : x_position(0.0),
+        y_position(0.0),
+        width     (0.0),
+        height    (0.0),
+        type      (Inactive)
+    {
+    };
+
+    float     x_position;       ///< X coordinate of the center of focus point area.
+    float     y_position;       ///< Y coordinate of the center of focus point area.
+    float     width;            ///< Width of focus point area.
+    float     height;           ///< Height of focus point area.
+    TypePoint type;             ///< Focus point area type. See TypePoint enum definition for details.
+};
+
 FocusPoint::FocusPoint()
-    : x_position(0.0),
-      y_position(0.0),
-      width     (0.0),
-      height    (0.0),
-      type      (Inactive)
+    : d(new Private)
 {
 }
 
 FocusPoint::FocusPoint(float x_position, float y_position, float width, float height, TypePoint type)
+    : d(new Private)
 {
-    this->x_position = x_position;
-    this->y_position = y_position;
-    this->width      = width;
-    this->height     = height;
-    this->type       = type;
+    d->x_position = x_position;
+    d->y_position = y_position;
+    d->width      = width;
+    d->height     = height;
+    d->type       = type;
 }
 
 FocusPoint::FocusPoint(float x_position, float y_position, float width, float height)
+    : d(new Private)
 {
-    this->x_position = x_position;
-    this->y_position = y_position;
-    this->width      = width;
-    this->height     = height;
-    this->type       = Inactive;
+    d->x_position = x_position;
+    d->y_position = y_position;
+    d->width      = width;
+    d->height     = height;
+    d->type       = Inactive;
 }
 
 FocusPoint::FocusPoint(const QRectF& rectF)
+    : d(new Private)
 {
-    this->x_position = rectF.topLeft().x() + rectF.width()  * 0.5;
-    this->y_position = rectF.topLeft().y() + rectF.height() * 0.5;
-    this->width      = rectF.width();
-    this->height     = rectF.height();
-    this->type       = Inactive;
+    d->x_position = rectF.topLeft().x() + rectF.width()  * 0.5;
+    d->y_position = rectF.topLeft().y() + rectF.height() * 0.5;
+    d->width      = rectF.width();
+    d->height     = rectF.height();
+    d->type       = Inactive;
+}
+
+FocusPoint::FocusPoint(const FocusPoint& other)
+    : d(other.d)
+{
 }
 
 FocusPoint::~FocusPoint()
 {
 }
 
+FocusPoint& FocusPoint::operator=(const FocusPoint& other)
+{
+    d = other.d;
+
+    return *this;
+}
+
 void FocusPoint::setType(TypePoint type)
 {
-    this->type       = type;
+    d->type = type;
 }
 
 FocusPoint::TypePoint FocusPoint::getType() const
 {
-    return type;
+    return d->type;
 }
 
 QString FocusPoint::getTypeDescription() const
@@ -113,32 +144,32 @@ QString FocusPoint::getTypeDescription() const
 
 QRect FocusPoint::getRectBySize(const QSize& size) const
 {
-    return QRect(static_cast<int>((x_position - 0.5 * width)  * size.width()),
-                 static_cast<int>((y_position - 0.5 * height) * size.height()),
-                 static_cast<int>(width  * size.width()),
-                 static_cast<int>(height * size.height()));
+    return QRect(static_cast<int>((d->x_position - 0.5 * d->width)  * size.width()),
+                 static_cast<int>((d->y_position - 0.5 * d->height) * size.height()),
+                 static_cast<int>(d->width  * size.width()),
+                 static_cast<int>(d->height * size.height()));
 }
 
 void FocusPoint::setCenterPosition(float x_position, float y_position)
 {
-    this->x_position = x_position;
-    this->y_position = y_position;
+    d->x_position = x_position;
+    d->y_position = y_position;
 }
 
 void FocusPoint::setSize(float width, float height)
 {
-    this->width  = width;
-    this->height = height;
+    d->width  = width;
+    d->height = height;
 }
 
 QPointF FocusPoint::getCenterPosition() const
 {
-    return QPointF(x_position, y_position);
+    return QPointF(d->x_position, d->y_position);
 }
 
 QSizeF FocusPoint::getSize() const
 {
-    return QSizeF(width, height);
+    return QSizeF(d->width, d->height);
 }
 
 QRectF FocusPoint::getRect() const

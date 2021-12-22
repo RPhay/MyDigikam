@@ -27,11 +27,11 @@
 
 // Qt includes
 
-#include <QObject>
 #include <QVariant>
 #include <QStringList>
 #include <QRectF>
 #include <QDebug>
+#include <QExplicitlySharedDataPointer>
 
 // Local includes
 
@@ -58,7 +58,13 @@ public:
     FocusPoint(float x_position, float y_position, float width, float height, TypePoint type);
     FocusPoint(float x_position, float y_position, float width, float height);
     explicit FocusPoint(const QRectF& rectF);
+    FocusPoint(const FocusPoint& other);
     ~FocusPoint();
+
+    /**
+     * Equivalent to the copy constructor
+     */
+    FocusPoint& operator=(const FocusPoint& other);
 
     void      setType(TypePoint type);
     TypePoint getType()                                     const;
@@ -73,11 +79,8 @@ public:
 
 private:
 
-    float     x_position;       ///< X coordinate of the center of focus point area.
-    float     y_position;       ///< Y coordinate of the center of focus point area.
-    float     width;            ///< Width of focus point area.
-    float     height;           ///< Height of focus point area.
-    TypePoint type;             ///< Focus point area type. See TypePoint enum definition for details.
+    class Private;
+    QExplicitlySharedDataPointer<Private> d;
 };
 
 inline FocusPoint::TypePoint operator|(FocusPoint::TypePoint type1, FocusPoint::TypePoint type2)
