@@ -28,7 +28,6 @@
 // Qt includes
 
 #include <QObject>
-#include <QLabel>
 #include <QGraphicsWidget>
 
 // Local includes
@@ -39,30 +38,18 @@
 namespace Digikam
 {
 
-class HidingStateChanger;
-
-class Q_DECL_HIDDEN FocusPointItem : public RegionFrameItem       // clazy:exclude=ctor-missing-parent-argument
+class FocusPointItem : public RegionFrameItem       // clazy:exclude=ctor-missing-parent-argument
 {
     Q_OBJECT
 
 public:
 
     explicit FocusPointItem(QGraphicsItem* const parent);
-    ~FocusPointItem()                                     override;
+    ~FocusPointItem()                                      override;
 
     void setPoint(const FocusPoint& point);
-    FocusPoint point()                              const;
+    FocusPoint point()                               const;
     void setEditable(bool allowEdit);
-
-protected:
-
-    FocusPoint m_point;
-    QColor     m_color;
-    float      m_width;
-
-protected:
-
-    void paint(QPainter* painter, const QStyleOptionGraphicsItem*, QWidget*);
 
 private:
 
@@ -70,6 +57,13 @@ private:
     FocusPointItem()                                 = delete;
     FocusPointItem(const FocusPointItem&)            = delete;
     FocusPointItem& operator=(const FocusPointItem&) = delete;
+
+    void paint(QPainter* painter, const QStyleOptionGraphicsItem*, QWidget*);
+
+private:
+
+    class Private;
+    Private* const d;
 };
 
 } // namespace Digikam

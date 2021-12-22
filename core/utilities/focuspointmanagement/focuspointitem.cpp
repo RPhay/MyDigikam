@@ -37,35 +37,50 @@
 namespace Digikam
 {
 
+class Q_DECL_HIDDEN FocusPointItem::Private
+{
+public:
+
+    explicit Private()
+        : color(QColor::fromRgb(0, 0, 0, 255)), ///< alpha is 100 to let more transparency
+          width(3.0F)
+    {
+    }
+
+    FocusPoint point;
+    QColor     color;
+    float      width;
+};
+
 FocusPointItem::FocusPointItem(QGraphicsItem* const parent)
     : RegionFrameItem(parent),
-      m_color        (QColor::fromRgb(0, 0, 0, 255)), ///< alpha is 100 to let more transparency
-      m_width        (3)
+      d              (new Private)
 {
 }
 
 FocusPointItem::~FocusPointItem()
 {
+    delete d;
 }
 
 void FocusPointItem::setPoint(const FocusPoint& point)
 {
-    m_point = point;
+    d->point = point;
     setEditable(false);
 
-    switch (m_point.getType())
+    switch (d->point.getType())
     {
         case FocusPoint::TypePoint::Inactive:
         {
-            m_color.setAlpha(130);
-            m_width = 1;
+            d->color.setAlpha(130);
+            d->width = 1;
             break;
         }
 
         case FocusPoint::TypePoint::Selected:
         case FocusPoint::TypePoint::SelectedInFocus:
         {
-            m_color.setRed(255);
+            d->color.setRed(255);
             break;
         }
 
@@ -79,14 +94,14 @@ void FocusPointItem::setPoint(const FocusPoint& point)
 
 FocusPoint FocusPointItem::point() const
 {
-    return m_point;
+    return d->point;
 }
 
 void FocusPointItem::paint(QPainter* painter, const QStyleOptionGraphicsItem*, QWidget*)
 {
     QPen pen;
-    pen.setWidth(m_width);
-    pen.setColor(m_color);
+    pen.setWidth(d->width);
+    pen.setColor(d->color);
 
     QRectF drawRect = boundingRect();
     qCDebug(DIGIKAM_GENERAL_LOG) << "FocusPointsItem: rectangle:" << drawRect;
