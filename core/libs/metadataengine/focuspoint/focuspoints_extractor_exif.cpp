@@ -68,7 +68,7 @@ FocusPointsExtractor::ListAFPoints FocusPointsExtractor::getAFPoints_exif() cons
     {
         case 4:
         {
-            // Get center coordinate of af points.
+            // Get center coordinates of AF point.
 
             af_x_position = af_info[0].toFloat();
             af_y_position = af_info[1].toFloat();
@@ -83,7 +83,7 @@ FocusPointsExtractor::ListAFPoints FocusPointsExtractor::getAFPoints_exif() cons
 
         case 3:
         {
-            // Get center coordinate of af points.
+            // Get center coordinates of AF point.
 
             af_x_position = af_info[0].toFloat();
             af_y_position = af_info[1].toFloat();
@@ -98,7 +98,7 @@ FocusPointsExtractor::ListAFPoints FocusPointsExtractor::getAFPoints_exif() cons
 
         case 2:
         {
-            // Get center coordinate of af points.
+            // Get center coordinates of AF point.
 
             af_x_position = af_info[0].toFloat();
             af_y_position = af_info[1].toFloat();
@@ -121,6 +121,8 @@ FocusPointsExtractor::ListAFPoints FocusPointsExtractor::getAFPoints_exif() cons
         }
     }
 
+    QSizeF fs = QSizeF(originalSize());
+
     qCDebug(DIGIKAM_METAENGINE_LOG) << "FocusPointsExtractor: Exif Subject Area:" << af_info;
 
     return
@@ -128,8 +130,8 @@ FocusPointsExtractor::ListAFPoints FocusPointsExtractor::getAFPoints_exif() cons
         ListAFPoints
         {
             ExifInternal::create_af_point(
-                                          QSizeF(originalSize()).width(),
-                                          QSizeF(originalSize()).height(),
+                                          fs.width(),
+                                          fs.height(),
                                           af_x_position,
                                           af_y_position,
                                           afPointWidth,
