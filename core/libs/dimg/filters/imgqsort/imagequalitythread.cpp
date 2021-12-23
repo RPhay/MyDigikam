@@ -58,11 +58,12 @@ ImageQualityThreadPool::ImageQualityThreadPool(QObject* const parent,
 ImageQualityThreadPool::~ImageQualityThreadPool()
 {
     end();
-
+/*
     for (auto& thread : m_threads)
     {
         delete thread;
     }
+*/
 }
 
 
@@ -75,10 +76,10 @@ void ImageQualityThreadPool::addDetector(const cv::Mat& image,
                                                               image,
                                                               m_calculator,
                                                               weight_quality);
-
+/*
     connect(thread, &QThread::finished,
             thread, &QObject::deleteLater);
-
+*/
     m_threads.push_back(thread);
 }
 

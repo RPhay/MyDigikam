@@ -423,10 +423,13 @@ bool MetaEngine::getExifTagRational(const char* exifTagName, long int& num, long
 
         if (it != exifData.end())
         {
-            num = (*it).toRational(component).first;
-            den = (*it).toRational(component).second;
+            if ((*it).count())
+            {
+                num = (*it).toRational(component).first;
+                den = (*it).toRational(component).second;
 
-            return true;
+                return true;
+            }
         }
     }
     catch (Exiv2::AnyError& e)
@@ -1225,7 +1228,7 @@ MetaEngine::MetaDataMap MetaEngine::getExifTagsDataList(const QStringList& exifK
                 // NOTE: special cases to render contents of these GPS info tags. See bug #435317.
                 // Check value byte size, otherwise Exiv2 crashes in the toRational() function.
 
-                if ((*md).size())
+                if ((*md).count())
                 {
                     num  = (*md).toRational().first;
                     den  = (*md).toRational().second;
@@ -1239,7 +1242,7 @@ MetaEngine::MetaDataMap MetaEngine::getExifTagsDataList(const QStringList& exifK
                 // NOTE: special cases to render contents of these GPS info tags. See bug #435317.
                 // Check value byte size, otherwise Exiv2 crashes in the toRational() function.
 
-                if ((*md).size())
+                if ((*md).count())
                 {
                     num  = (*md).toRational().first;
                     den  = (*md).toRational().second;
