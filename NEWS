@@ -105,6 +105,6 @@ BUGFIXES:
 096 ==> 447354 - Red eye tool creates empty image.
 097 ==> 415949 - Can't write sidecar file if image file is a symlink to readonly directory [patch].git 
 098 ==> 447416 - Unable to use mariadb 10 remote database with digikam 7.3.
-099 ==> 
+099 ==> 382013 - Crash during or after adding a new remote collection.
 100 ==> 
 101 ==> 
