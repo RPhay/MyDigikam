@@ -106,5 +106,15 @@ BUGFIXES:
 097 ==> 415949 - Can't write sidecar file if image file is a symlink to readonly directory [patch].git 
 098 ==> 447416 - Unable to use mariadb 10 remote database with digikam 7.3.
 099 ==> 382013 - Crash during or after adding a new remote collection.
-100 ==> 
+100 ==> 447430 - Cannot open FITS images - ImageMagick plug in mime types missing.
 101 ==> 
+102 ==> 
+103 ==> 
+104 ==> 
+105 ==> 
+106 ==> 
+107 ==> 
+108 ==> 
+109 ==> 
+110 ==> 
+111 ==> 
