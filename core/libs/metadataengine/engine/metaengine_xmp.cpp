@@ -1022,6 +1022,11 @@ QVariant MetaEngine::getXmpTagVariant(const char* xmpTagName, bool rationalAsLis
                 {
                     if (rationalAsListOfInts)
                     {
+                        if (!(*it).count())
+                        {
+                            return QVariant(QVariant::List);
+                        }
+
                         QList<QVariant> list;
                         list << (*it).toRational().first;
                         list << (*it).toRational().second;
@@ -1030,6 +1035,11 @@ QVariant MetaEngine::getXmpTagVariant(const char* xmpTagName, bool rationalAsLis
                     }
                     else
                     {
+                        if (!(*it).count())
+                        {
+                            return QVariant(QVariant::Double);
+                        }
+
                         // prefer double precision
 
                         double num = (*it).toRational().first;

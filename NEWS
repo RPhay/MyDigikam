@@ -107,7 +107,7 @@ BUGFIXES:
 098 ==> 447416 - Unable to use mariadb 10 remote database with digikam 7.3.
 099 ==> 382013 - Crash during or after adding a new remote collection.
 100 ==> 447430 - Cannot open FITS images - ImageMagick plug in mime types missing.
-101 ==> 
+101 ==> 447408 - Crash when loading metadata for specially-crafted JPEG images.
 102 ==> 
 103 ==> 
 104 ==> 
