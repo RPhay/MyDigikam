@@ -222,6 +222,7 @@ void ImageRegionWidget::exposureSettingsChanged()
 void ImageRegionWidget::ICCSettingsChanged()
 {
     d_ptr->item->clearCache();
+    slotOriginalImageRegionChanged();
     viewport()->update();
 }
 
