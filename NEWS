@@ -109,7 +109,7 @@ BUGFIXES:
 100 ==> 447430 - Cannot open FITS images - ImageMagick plug in mime types missing.
 101 ==> 447408 - Crash when loading metadata for specially-crafted JPEG images.
 102 ==> 447013 - No Local/.marble/plugins were loaded.
-103 ==> 
+103 ==> 447473 - Cannot disable completely under/over-exposure was enable when launching "Adjust Curve".
 104 ==> 
 105 ==> 
 106 ==> 
