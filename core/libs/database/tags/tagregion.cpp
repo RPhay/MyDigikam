@@ -7,6 +7,7 @@
  * Description : Tag region formatting
  *
  * Copyright (C) 2010-2011 by Marcel Wiesweg <marcel dot wiesweg at gmx dot de>
+ * Copyright (C) 2011-2021 by Gilles Caulier <caulier dot gilles at gmail dot com>
  *
  * This program is free software; you can redistribute it
  * and/or modify it under the terms of the GNU General
@@ -43,7 +44,7 @@ TagRegion::TagRegion()
 
 TagRegion::TagRegion(const QString& descriptor)
     : m_value(descriptor),
-      m_type(Invalid)
+      m_type (Invalid)
 {
     QString xmlStartDocument = QLatin1String("<?xml version=\"1.0\"?>");
     QXmlStreamReader reader(xmlStartDocument + descriptor);
@@ -68,7 +69,7 @@ TagRegion::TagRegion(const QString& descriptor)
 
 TagRegion::TagRegion(const QRect& rect)
     : m_value(rect),
-      m_type(Rect)
+      m_type (Rect)
 {
 }
 
@@ -143,13 +144,19 @@ TagRegion TagRegion::fromVariant(const QVariant& var)
     switch (var.type())
     {
         case QVariant::Rect:
+        {
             return TagRegion(var.toRect());
+        }
 
         case QVariant::String:
+        {
             return TagRegion(var.toString());
+        }
 
         default:
+        {
             return TagRegion();
+        }
     }
 }
 
@@ -297,29 +304,39 @@ void TagRegion::reverseToOrientation(QRect& region, int orientation, const QSize
     switch (orientation)
     {
         case MetaEngine::ORIENTATION_ROT_90_HFLIP:
+        {
             TagRegion::adjustToOrientation(region, MetaEngine::ORIENTATION_HFLIP,   size);
             TagRegion::adjustToOrientation(region, MetaEngine::ORIENTATION_ROT_270, size);
             break;
+        }
 
         case MetaEngine::ORIENTATION_ROT_90:
+        {
             size.transpose();
             TagRegion::adjustToOrientation(region, MetaEngine::ORIENTATION_ROT_270, size);
             break;
+        }
 
         case MetaEngine::ORIENTATION_ROT_90_VFLIP:
+        {
             size.transpose();
             TagRegion::adjustToOrientation(region, MetaEngine::ORIENTATION_VFLIP,   size);
             TagRegion::adjustToOrientation(region, MetaEngine::ORIENTATION_ROT_270, size);
             break;
+        }
 
         case MetaEngine::ORIENTATION_ROT_270:
+        {
             size.transpose();
             TagRegion::adjustToOrientation(region, MetaEngine::ORIENTATION_ROT_90,  size);
             break;
+        }
 
         default:
+        {
             TagRegion::adjustToOrientation(region, orientation,                     size);
             break;
+        }
     }
 }
 
@@ -330,16 +347,22 @@ QDebug operator<<(QDebug dbg, const TagRegion& r)
     switch (var.type())
     {
         case QVariant::Rect:
+        {
             dbg.nospace() << var.toRect();
             break;
+        }
 
         case QVariant::String:
+        {
             dbg.nospace() << var.toString();
             break;
+        }
 
         default:
+        {
             dbg.nospace() << var;
             break;
+        }
     }
 
     return dbg;

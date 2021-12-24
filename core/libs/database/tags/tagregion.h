@@ -7,6 +7,7 @@
  * Description : Tag region formatting
  *
  * Copyright (C) 2010-2011 by Marcel Wiesweg <marcel dot wiesweg at gmx dot de>
+ * Copyright (C) 2011-2021 by Gilles Caulier <caulier dot gilles at gmail dot com>
  *
  * This program is free software; you can redistribute it
  * and/or modify it under the terms of the GNU General
@@ -61,13 +62,19 @@ public:
      * and the corresponding object.
      */
 
-    /// Invalid region
+    /**
+     * Construct an invalid region.
+     */
     TagRegion();
 
-    /// Construct with the textual descriptor
+    /**
+     * Construct with the textual descriptor.
+     */
     explicit TagRegion(const QString& descriptor);
 
-    /// Construct with the region
+    /**
+     * Construct with the region.
+     */
     explicit TagRegion(const QRect& rect);
 
     Type type()                             const;
@@ -77,13 +84,19 @@ public:
 
     bool operator!=(const TagRegion& other) const;
 
-    /// Returns an XML textual representation of this region
+    /**
+     * Returns an XML textual representation of this region.
+     */
     QString toXml()                         const;
 
-    /// If type is Rect, returns the contained rectangle
+    /**
+     * If type is Rect, returns the contained rectangle.
+     */
     QRect toRect()                          const;
 
-    /// Stores in / loads from a variant. Will only use native QVariant types.
+    /**
+     * Stores in / loads from a variant. Will only use native QVariant types.
+     */
     QVariant toVariant()                    const;
     static TagRegion fromVariant(const QVariant& var);
 
@@ -99,42 +112,42 @@ public:
     bool intersects(const TagRegion& other, double fraction = 0);
 
     /**
-     * Converts detail rectangles taken from a reduced size image to the original size, and vice versa
+     * Converts detail rectangles taken from a reduced size image to the original size, and vice versa.
      */
     static QRect mapToOriginalSize(const QSize& fullImageSize, const QSize& reducedImageSize, const QRect& reducedSizeDetail);
     static QRect mapFromOriginalSize(const QSize& fullImageSize, const QSize& reducedImageSize, const QRect& fullSizeDetail);
 
     /**
-     * Takes the original and reduced size from the DImg
+     * Takes the original and reduced size from the DImg.
      */
     static QRect mapToOriginalSize(const DImg& reducedSizeImage, const QRect& reducedSizeDetail);
     static QRect mapFromOriginalSize(const DImg& reducedSizeImage, const QRect& fullSizeDetail);
 
     /**
-     * Takes a relative region and a full size and returns the absolute region
+     * Takes a relative region and a full size and returns the absolute region.
      */
     static QRect relativeToAbsolute(const QRectF& region, const QSize& fullSize);
 
     /**
-     * Takes the original and reduced size from the DImg, maps to original size
+     * Takes the original and reduced size from the DImg, maps to original size.
      */
     static QRect relativeToAbsolute(const QRectF& region, const DImg& reducedSizeImage);
 
     /**
-     *  Takes absolute region and full size to return the original relative region
-     * Used to write back rectangles into image's XMP. see MetadataHub::write
+     * Takes absolute region and full size to return the original relative region.
+     * Used to write back rectangles into image's XMP. see MetadataHub::write.
      */
     static QRectF absoluteToRelative(const QRect& region, const QSize& fullSize);
 
     /**
-     * Rotate and flip region to MetaEngine::ImageOrientation
-     * The value region are calculated for the new image orientation
+     * Rotate and flip region to MetaEngine::ImageOrientation.
+     * The value region are calculated for the new image orientation.
      */
     static QSize adjustToOrientation(QRect& region, int orientation, const QSize& fullSize);
 
     /**
-     * Reverse rotate and flip region to MetaEngine::ImageOrientation
-     * The value region are calculated for the new image orientation
+     * Reverse rotate and flip region to MetaEngine::ImageOrientation.
+     * The value region are calculated for the new image orientation.
      */
     static void reverseToOrientation(QRect& region, int orientation, const QSize& fullSize);
 
