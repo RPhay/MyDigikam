@@ -94,8 +94,6 @@ public:
      */
     QRect   getRectBySize(const QSize& size)                const;
 
-    void rotate(MetaEngine::ImageOrientation orientation);
-
 private:
 
     class Private;

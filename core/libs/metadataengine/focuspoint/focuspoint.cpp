@@ -26,7 +26,7 @@
 
 // Qt includes
 
-#include <QMatrix>
+#include <QTransform>
 
 // KDE includes
 
@@ -190,21 +190,6 @@ QRectF FocusPoint::getRect() const
     rect.moveCenter(getCenterPosition());
 
     return rect;
-}
-
-void FocusPoint::rotate(MetaEngine::ImageOrientation orientation)
-{
-    QRectF rectF   = getRect();
-    QPointF center = getCenterPosition();
-    QMatrix matrix = MetaEngineRotation::toMatrix(orientation);
-
-    if ((orientation != MetaEngine::ORIENTATION_NORMAL) &&
-        (orientation != MetaEngine::ORIENTATION_UNSPECIFIED))
-    {
-        matrix.translate(rectF.x(), rectF.y());
-        rectF = matrix.mapRect(rectF);
-        setRect(rectF);
-    }
 }
 
 QDebug operator<<(QDebug dbg, const FocusPoint& fp)

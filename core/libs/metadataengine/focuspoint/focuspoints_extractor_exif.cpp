@@ -43,13 +43,50 @@ FocusPoint create_af_point(float imageWidth,
                            float afPointHeight,
                            MetaEngine::ImageOrientation orientation)
 {
+    QRect region;
+    region.moveCenter(QPoint(af_x_position, af_y_position));
+    region.setSize(QSize(afPointWidth, afPointHeight));
+    QSize size = QSize(imageWidth, imageHeight);
 
-    FocusPoint fp(af_x_position / imageWidth,
-                  af_y_position / imageHeight,
-                  afPointWidth  / imageWidth,
-                  afPointHeight / imageHeight,
+    qCDebug(DIGIKAM_METAENGINE_LOG) << "FocusPointsExtractor: Exif Subject Area before rotation:" << region;
+
+    if      ((orientation == MetaEngine::ORIENTATION_ROT_90)       ||
+             (orientation == MetaEngine::ORIENTATION_ROT_90_HFLIP) ||
+             (orientation == MetaEngine::ORIENTATION_ROT_90_VFLIP))
+    {
+        region.moveTo(size.height() - region.y() - region.height(), region.x());
+        region.setSize(region.size().transposed());
+    }
+    else if (orientation == MetaEngine::ORIENTATION_ROT_180)
+    {
+        region.moveTo(size.width()  - region.x() - region.width(),
+                      size.height() - region.y() - region.height());
+
+    }
+    else if (orientation == MetaEngine::ORIENTATION_ROT_270)
+    {
+        region.moveTo(region.y(), size.width() - region.x() - region.width());
+        region.setSize(region.size().transposed());
+    }
+
+    if      ((orientation == MetaEngine::ORIENTATION_HFLIP) ||
+             (orientation == MetaEngine::ORIENTATION_ROT_90_HFLIP))
+    {
+        region.moveTo(size.width() - region.x() - region.width(), region.y());
+    }
+    else if ((orientation == MetaEngine::ORIENTATION_VFLIP) ||
+             (orientation == MetaEngine::ORIENTATION_ROT_90_VFLIP))
+    {
+        region.moveTo(region.x(), size.height() - region.y() - region.height());
+    }
+
+    qCDebug(DIGIKAM_METAENGINE_LOG) << "FocusPointsExtractor: Exif Subject Area after rotation:" << region;
+
+    FocusPoint fp(region.center().x() / imageWidth,
+                  region.center().y() / imageHeight,
+                  region.width()      / imageWidth,
+                  region.height()     / imageHeight,
                   FocusPoint::TypePoint::SelectedInFocus);
-    fp.rotate(orientation);
 
     return fp;
 }
