@@ -215,12 +215,14 @@ void ImageRegionWidget::slotOriginalImageRegionChanged(bool targetDone)
 void ImageRegionWidget::exposureSettingsChanged()
 {
     d_ptr->item->clearCache();
+    slotOriginalImageRegionChanged();
     viewport()->update();
 }
 
 void ImageRegionWidget::ICCSettingsChanged()
 {
     d_ptr->item->clearCache();
+    slotOriginalImageRegionChanged();
     viewport()->update();
 }
 
