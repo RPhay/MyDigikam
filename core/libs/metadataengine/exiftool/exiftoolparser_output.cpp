@@ -126,6 +126,16 @@ void ExifToolParser::slotCmdCompleted(int cmdAction,
                 }
 
                 QString desc         = propsMap.find(QLatin1String("desc")).value().toString();
+
+                // Optional numerical value extraction, if any
+
+                QString num;
+                QVariantMap::iterator it2 = propsMap.find(QLatin1String("num"));
+
+                if (it2 != propsMap.end())
+                {
+                    num = it2.value().toString();
+                }
 /*
                 qCDebug(DIGIKAM_METAENGINE_LOG) << "ExifTool json property:" << tagNameExifTool << data;
 */
@@ -140,7 +150,8 @@ void ExifToolParser::slotCmdCompleted(int cmdAction,
                 d->exifToolData.insert(tagNameExifTool, QVariantList()
                                                          << data        // ExifTool Raw data as string.
                                                          << tagType     // ExifTool data type.
-                                                         << desc);      // ExifTool tag description.
+                                                         << desc        // ExifTool tag description.
+                                                         << num);       // ExifTool numeral value if any.
             }
 
             break;

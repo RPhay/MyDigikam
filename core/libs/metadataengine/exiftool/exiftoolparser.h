@@ -54,44 +54,45 @@ public:
      *
      * With load() method, the container is used to get a map of
      * ExifTool tag name as key and tags properties as values:
-     * key    = ExifTool Tag name           (QString - ExifTool Group 0.1.2.4.6)
-     *                                      See -G Exiftool option (https://exiftool.org/exiftool_pod.html#Input-output-text-formatting).
-     * values = ExifTool Tag value          (QString).
-     *          ExifTool Tag type           (QString).
-     *          ExifTool Tag description    (QString).
+     * key    = ExifTool Tag name            (QString - ExifTool Group 0.1.2.4.6)
+     *                                       See -G Exiftool option (https://exiftool.org/exiftool_pod.html#Input-output-text-formatting).
+     * values = ExifTool Tag value           (QString).
+     *          ExifTool Tag type            (QString).
+     *          ExifTool Tag description     (QString).
+     *          ExifTool Tag numerical value (QString) - available if any .
      *
      * With loadChunk() method, the container is used to get
      * a EXV chunk as value:
-     * key   = "EXV"                        (QString).
-     * value = the Exiv2 metadata container (QByteArray).
+     * key   = "EXV"                         (QString).
+     * value = the Exiv2 metadata container  (QByteArray).
      *
      * With applyChanges() method, the container is used as argument to
      * store tupple of ExifTool tag name as key and tag value:
-     * key   = ExifTool tag name            (QString).
-     * value = ExifTool Tag value           (QString).
+     * key   = ExifTool tag name             (QString).
+     * value = ExifTool Tag value            (QString).
      *
      * With readableFormats() method, the container is used to get
      * a list of upper-case file format extensions supported by ExifTool for reading.
-     * key   = "READ_FORMAT"                (QString).
-     * value = list of pairs (ext,desc)     (QStringList)
+     * key   = "READ_FORMAT"                 (QString).
+     * value = list of pairs (ext,desc)      (QStringList)
      *
      * With writableFormats() method, the container is used to get
      * a list of upper-case file format extensions supported by ExifTool for writing.
-     * key   = "WRITE_FORMAT"               (QString).
-     * value = list of pairs (ext,desc)     (QStringList).
+     * key   = "WRITE_FORMAT"                (QString).
+     * value = list of pairs (ext,desc)      (QStringList).
      *
      * With translationsList() method, the container is used to get
      * a list of ExifTool languages available for translations.
-     * key   = "TRANSLATIONS_LIST"          (QString).
+     * key   = "TRANSLATIONS_LIST"           (QString).
      * value = list of languages as strings
-     *         (aka fr, en, de, es, etc.)   (QStringList).
+     *         (aka fr, en, de, es, etc.)    (QStringList).
      *
      * With tagsDatabase() method, the container is used as argument to
      * store tupple of ExifTool tag name as key and tag description:
-     * key    = ExifTool tag name           (QString).
-     * values = ExifTool Tag description    (QString).
-     *          ExifTool Tag type           (QString).
-     *          ExifTool Tag writable       (QString).
+     * key    = ExifTool tag name            (QString).
+     * values = ExifTool Tag description     (QString).
+     *          ExifTool Tag type            (QString).
+     *          ExifTool Tag writable        (QString).
      */
     typedef QHash<QString, QVariantList> ExifToolData;
 
