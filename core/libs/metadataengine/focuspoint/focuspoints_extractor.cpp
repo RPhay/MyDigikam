@@ -39,7 +39,8 @@ public:
 
     explicit Private()
         : exifToolAvailable(false),
-          afPointsReadOnly (true)
+          afPointsReadOnly (true),
+          orientation      (MetaEngine::ORIENTATION_UNSPECIFIED)
     {
     }
 
@@ -50,6 +51,7 @@ public:
     QString                         make;               ///< Camera Manufacturer Name
     QString                         model;              ///< Camera Model Name.
     QSize                           originalSize;       ///< Original size of image taken by camera
+    MetaEngine::ImageOrientation    orientation;        ///< Image orientation set by camera.
 };
 
 FocusPointsExtractor::FocusPointsExtractor(QObject* const parent,const QString& image_path)
@@ -73,6 +75,11 @@ FocusPointsExtractor::FocusPointsExtractor(QObject* const parent,const QString& 
     QVariant imageWidth  = findValue(QLatin1String("File.File.Image.ImageWidth"));
     QVariant imageHeight = findValue(QLatin1String("File.File.Image.ImageHeight"));
     setOriginalSize(QSize(imageWidth.toInt(), imageHeight.toInt()));
+
+    QVariant direction   = findNumValue(QLatin1String("EXIF.IFD0.Image.Orientation"));
+    d->orientation       = direction.isNull() ? MetaEngine::ORIENTATION_UNSPECIFIED
+                                              : (MetaEngine::ImageOrientation)direction.toInt();
+    qCDebug(DIGIKAM_METAENGINE_LOG) << "FocusPointsExtractor: orientation:" << d->orientation;
 
     d->af_points         = findAFPoints();
 }
@@ -99,6 +106,18 @@ QVariant FocusPointsExtractor::findValue(const QString& tagName, bool isList) co
     {
         return result[0];
     }
+}
+
+QVariant FocusPointsExtractor::findNumValue(const QString& tagName) const
+{
+    QVariantList result = d->metadata.value(tagName);
+
+    if (result.empty() || (result.size() < 4))
+    {
+        return QVariant();
+    }
+
+    return result[3];
 }
 
 QVariant FocusPointsExtractor::findValue(const QString& tagNameRoot, const QString& key, bool isList) const
@@ -246,6 +265,11 @@ QString FocusPointsExtractor::make() const
 QString FocusPointsExtractor::model() const
 {
     return d->model;
+}
+
+MetaEngine::ImageOrientation FocusPointsExtractor::orientation() const
+{
+    return d->orientation;
 }
 
 } // namespace Digikam

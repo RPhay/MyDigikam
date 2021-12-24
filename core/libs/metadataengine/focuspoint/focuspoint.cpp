@@ -24,6 +24,10 @@
 
 #include "focuspoint.h"
 
+// Qt includes
+
+#include <QMatrix>
+
 // KDE includes
 
 #include <klocalizedstring.h>
@@ -31,6 +35,8 @@
 // Local includes
 
 #include "digikam_debug.h"
+#include "metaengine.h"
+#include "metaengine_rotation.h"
 
 namespace Digikam
 {
@@ -83,11 +89,8 @@ FocusPoint::FocusPoint(float x_position, float y_position, float width, float he
 FocusPoint::FocusPoint(const QRectF& rectF)
     : d(new Private)
 {
-    d->x_position = rectF.topLeft().x() + rectF.width()  * 0.5;
-    d->y_position = rectF.topLeft().y() + rectF.height() * 0.5;
-    d->width      = rectF.width();
-    d->height     = rectF.height();
-    d->type       = Inactive;
+    setRect(rectF);
+    d->type = Inactive;
 }
 
 FocusPoint::FocusPoint(const FocusPoint& other)
@@ -172,6 +175,14 @@ QSizeF FocusPoint::getSize() const
     return QSizeF(d->width, d->height);
 }
 
+void FocusPoint::setRect(const QRectF& rectF)
+{
+    d->x_position = rectF.topLeft().x() + rectF.width()  * 0.5;
+    d->y_position = rectF.topLeft().y() + rectF.height() * 0.5;
+    d->width      = rectF.width();
+    d->height     = rectF.height();
+}
+
 QRectF FocusPoint::getRect() const
 {
     QRectF rect;
@@ -179,6 +190,21 @@ QRectF FocusPoint::getRect() const
     rect.moveCenter(getCenterPosition());
 
     return rect;
+}
+
+void FocusPoint::rotate(MetaEngine::ImageOrientation orientation)
+{
+    QRectF rectF   = getRect();
+    QPointF center = getCenterPosition();
+    QMatrix matrix = MetaEngineRotation::toMatrix(orientation);
+
+    if ((orientation != MetaEngine::ORIENTATION_NORMAL) &&
+        (orientation != MetaEngine::ORIENTATION_UNSPECIFIED))
+    {
+        matrix.translate(rectF.x(), rectF.y());
+        rectF = matrix.mapRect(rectF);
+        setRect(rectF);
+    }
 }
 
 QDebug operator<<(QDebug dbg, const FocusPoint& fp)

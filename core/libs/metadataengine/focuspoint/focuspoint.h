@@ -36,6 +36,7 @@
 // Local includes
 
 #include "digikam_export.h"
+#include "metaengine.h"
 
 namespace Digikam
 {
@@ -83,6 +84,7 @@ public:
      */
     void setCenterPosition(float x_position, float y_position);
     void setSize(float width, float height);
+    void setRect(const QRectF& rectF);
     QPointF getCenterPosition()                             const;
     QSizeF  getSize()                                       const;
     QRectF  getRect()                                       const;
@@ -91,6 +93,8 @@ public:
      * Return the real aera properties in image coordinates depending of the size.
      */
     QRect   getRectBySize(const QSize& size)                const;
+
+    void rotate(MetaEngine::ImageOrientation orientation);
 
 private:
 

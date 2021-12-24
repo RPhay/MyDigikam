@@ -40,13 +40,18 @@ FocusPoint create_af_point(float imageWidth,
                            float af_x_position,
                            float af_y_position,
                            float afPointWidth,
-                           float afPointHeight)
+                           float afPointHeight,
+                           MetaEngine::ImageOrientation orientation)
 {
-    return FocusPoint(af_x_position / imageWidth,
-                      af_y_position / imageHeight,
-                      afPointWidth  / imageWidth,
-                      afPointHeight / imageHeight,
-                      FocusPoint::TypePoint::SelectedInFocus);
+
+    FocusPoint fp(af_x_position / imageWidth,
+                  af_y_position / imageHeight,
+                  afPointWidth  / imageWidth,
+                  afPointHeight / imageHeight,
+                  FocusPoint::TypePoint::SelectedInFocus);
+    fp.rotate(orientation);
+
+    return fp;
 }
 
 } // namespace ExifInternal
@@ -135,7 +140,8 @@ FocusPointsExtractor::ListAFPoints FocusPointsExtractor::getAFPoints_exif() cons
                                           af_x_position,
                                           af_y_position,
                                           afPointWidth,
-                                          afPointHeight
+                                          afPointHeight,
+                                          orientation()
                                          )
         }
     );

@@ -35,6 +35,7 @@
 
 #include "digikam_export.h"
 #include "focuspoint.h"
+#include "metaengine.h"
 
 namespace Digikam
 {
@@ -69,6 +70,7 @@ public:
     QString make()                                                                                          const;
     QString model()                                                                                         const;
     QSize   originalSize()                                                                                  const;
+    MetaEngine::ImageOrientation orientation()                                                              const;
 
 private:
 
@@ -76,6 +78,8 @@ private:
     QVariant findValue(const QString& tagNameRoot, const QString& key, bool isList = false)                 const;
     QVariant findValueFirstMatch(const QStringList& listTagNames, bool isList = false)                      const;
     QVariant findValueFirstMatch(const QString& tagNameRoot, const QStringList& keys, bool isList = false)  const;
+    QVariant findNumValue(const QString& tagName)                                                           const;
+
     void setAFPointsReadOnly(bool readOnly)                                                                 const;
     void setOriginalSize(const QSize& size)                                                                 const;
 
