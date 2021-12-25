@@ -63,6 +63,8 @@ public:
     {
     }
 
+    DImg             targetImage;
+
     bool             capturePtMode;
 
     int              renderingPreviewMode;
@@ -163,21 +165,21 @@ QRect ImageRegionWidget::getOriginalImageRegionToRender() const
 
 void ImageRegionWidget::setPreviewImage(const DImg& img)
 {
-    DImg image = img;
-    QRect r    = d_ptr->item->getImageRegion();
-    image.resize(r.width(), r.height());
+    d_ptr->targetImage = img;
+    QRect r            = d_ptr->item->getImageRegion();
+    d_ptr->targetImage.resize(r.width(), r.height());
 
     // Because tool which only work on image data, the DImg container
     // do not contain metadata from original image. About Color Managed View, we need to
     // restore the embedded ICC color profile.
     // However, some tools may set a profile on the preview image, which we accept of course.
 
-    if (image.getIccProfile().isNull())
+    if (d_ptr->targetImage.getIccProfile().isNull())
     {
-        image.setIccProfile(d_ptr->item->image().getIccProfile());
+        d_ptr->targetImage.setIccProfile(d_ptr->item->image().getIccProfile());
     }
 
-    d_ptr->item->setTargetImage(image);
+    d_ptr->item->setTargetImage(d_ptr->targetImage);
 }
 
 DImg ImageRegionWidget::getOriginalImage() const
@@ -215,15 +217,13 @@ void ImageRegionWidget::slotOriginalImageRegionChanged(bool targetDone)
 void ImageRegionWidget::exposureSettingsChanged()
 {
     d_ptr->item->clearCache();
-    slotOriginalImageRegionChanged();
-    viewport()->update();
+    d_ptr->item->setTargetImage(d_ptr->targetImage);
 }
 
 void ImageRegionWidget::ICCSettingsChanged()
 {
     d_ptr->item->clearCache();
-    slotOriginalImageRegionChanged();
-    viewport()->update();
+    d_ptr->item->setTargetImage(d_ptr->targetImage);
 }
 
 void ImageRegionWidget::mousePressEvent(QMouseEvent* e)
