@@ -111,7 +111,8 @@ bool DMetadata::getItemTagsPath(QStringList& tagsPath,
                             return true;
                         }
                     }
-                    else if (!entry.alternativeName.isEmpty())
+
+                    if (!entry.alternativeName.isEmpty())
                     {
                         currentNamespace = entry.alternativeName;
                         currentOpts      = entry.secondNameOpts;
