@@ -183,6 +183,9 @@ public:
     bool unifyReadWrite()                                                                           const;
     void setUnifyReadWrite(bool b);
 
+    bool allTagsFromList()                                                                          const;
+    void setAllTagsFromList(bool b);
+
     void addMapping(const QString& key);
 
     QList<NamespaceEntry>& getReadMapping(const QString& key)                                       const;

@@ -67,6 +67,7 @@ public:
         revertChanges   (nullptr),
         resetButton     (nullptr),
         unifyReadWrite  (nullptr),
+        allTagsFromList (nullptr),
         namespaceView   (nullptr),
         metadataTypeSize(0),
         changed         (false)
@@ -83,6 +84,7 @@ public:
     QPushButton*                revertChanges;
     QPushButton*                resetButton;
     QCheckBox*                  unifyReadWrite;
+    QCheckBox*                  allTagsFromList;
     QList<QStandardItemModel*>  models;
     NamespaceListView*          namespaceView;
     DMetadataSettingsContainer  container;
@@ -103,9 +105,13 @@ AdvancedMetadataTab::AdvancedMetadataTab(QWidget* const parent)
     connectButtons();
 
     d->unifyReadWrite->setChecked(d->container.unifyReadWrite());
+    d->allTagsFromList->setChecked(d->container.allTagsFromList());
 
     connect(d->unifyReadWrite, SIGNAL(toggled(bool)),
             this, SLOT(slotUnifyChecked(bool)));
+
+    connect(d->allTagsFromList, SIGNAL(toggled(bool)),
+            this, SLOT(slotAllTagsChecked(bool)));
 
     connect(d->metadataType, SIGNAL(currentIndexChanged(int)),
             this, SLOT(slotIndexChanged()));
@@ -246,9 +252,18 @@ void AdvancedMetadataTab::slotUnifyChecked(bool value)
     slotIndexChanged();
 }
 
+void AdvancedMetadataTab::slotAllTagsChecked(bool value)
+{
+    d->container.setAllTagsFromList(value);
+}
+
 void AdvancedMetadataTab::slotIndexChanged()
 {
     d->namespaceView->setModel(d->models.at(getModelIndex()));
+
+    bool v = (d->metadataType->currentData().toString() ==
+              NamespaceEntry::DM_TAG_CONTAINER());
+    d->allTagsFromList->setEnabled(v);
 }
 
 void AdvancedMetadataTab::slotRevertChangesAvailable()
@@ -307,7 +322,7 @@ void AdvancedMetadataTab::setModelData(QStandardItemModel* model,
 void AdvancedMetadataTab::setUi()
 {
     QVBoxLayout* const advancedConfLayout = new QVBoxLayout(this);
-    QHBoxLayout* const topLayout          = new QHBoxLayout();
+    QGridLayout* const topLayout          = new QGridLayout();
     QHBoxLayout* const bottomLayout       = new QHBoxLayout();
 
     QLabel* const tipLabel = new QLabel(this);
@@ -320,16 +335,19 @@ void AdvancedMetadataTab::setUi()
 
     //--- Top layout ----------------
 
-    d->metadataType  = new QComboBox(this);
-    d->operationType = new QComboBox(this);
+    d->metadataType    = new QComboBox(this);
+    d->operationType   = new QComboBox(this);
 
     d->operationType->insertItems(0, QStringList() << i18n("Read Options") << i18n("Write Options"));
 
-    d->unifyReadWrite = new QCheckBox(i18n("Unify read and write"));
+    d->unifyReadWrite  = new QCheckBox(i18n("Unify read and write"));
+    d->allTagsFromList = new QCheckBox(i18n("Read all of the list for tags"));
+    d->allTagsFromList->setEnabled(false);
 
-    topLayout->addWidget(d->metadataType);
-    topLayout->addWidget(d->operationType);
-    topLayout->addWidget(d->unifyReadWrite);
+    topLayout->addWidget(d->metadataType,    0, 0, 1, 1);
+    topLayout->addWidget(d->operationType,   0, 1, 1, 1);
+    topLayout->addWidget(d->unifyReadWrite,  0, 2, 1, 1);
+    topLayout->addWidget(d->allTagsFromList, 1, 2, 1, 1);
 
     //------------ Bottom Layout-------------
 

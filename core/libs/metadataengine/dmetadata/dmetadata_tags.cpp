@@ -63,24 +63,25 @@ bool DMetadata::getItemTagsPath(QStringList& tagsPath,
                 {
                     const std::string myStr = currentNamespace.toStdString();
                     const char* nameSpace   = myStr.data();
+                    QStringList xmpTagsPath;
 
                     switch (currentOpts)
                     {
                         case NamespaceEntry::TAG_XMPBAG:
                         {
-                            tagsPath = getXmpTagStringBag(nameSpace, false);
+                            xmpTagsPath = getXmpTagStringBag(nameSpace, false);
                             break;
                         }
 
                         case NamespaceEntry::TAG_XMPSEQ:
                         {
-                            tagsPath = getXmpTagStringSeq(nameSpace, false);
+                            xmpTagsPath = getXmpTagStringSeq(nameSpace, false);
                             break;
                         }
 
                         case NamespaceEntry::TAG_ACDSEE:
                         {
-                            getACDSeeTagsPath(tagsPath);
+                            getACDSeeTagsPath(xmpTagsPath);
                             break;
                         }
 
@@ -95,15 +96,20 @@ bool DMetadata::getItemTagsPath(QStringList& tagsPath,
                         }
                     }
 
-                    if      (!tagsPath.isEmpty())
+                    if      (!xmpTagsPath.isEmpty())
                     {
                         if (entry.separator != QLatin1String("/"))
                         {
-                            tagsPath.replaceInStrings(QLatin1String("/"), QLatin1String("\\"));
-                            tagsPath.replaceInStrings(entry.separator, QLatin1String("/"));
+                            xmpTagsPath.replaceInStrings(QLatin1String("/"), QLatin1String("\\"));
+                            xmpTagsPath.replaceInStrings(entry.separator, QLatin1String("/"));
                         }
 
-                        return true;
+                        tagsPath.append(xmpTagsPath);
+
+                        if (!settings.allTagsFromList())
+                        {
+                            return true;
+                        }
                     }
                     else if (!entry.alternativeName.isEmpty())
                     {
@@ -129,24 +135,31 @@ bool DMetadata::getItemTagsPath(QStringList& tagsPath,
                 // do not support UTF-8 and have strings size limitation. But we will
                 // let the capability to import it for interworking issues.
 
-                tagsPath = getIptcKeywords();
+                QStringList iptcTagsPath;
 
-                if (!tagsPath.isEmpty())
+                iptcTagsPath = getIptcKeywords();
+
+                if (!iptcTagsPath.isEmpty())
                 {
                     // Work around to Imach tags path list hosted in IPTC with '.' as separator.
 
-                    QStringList ntp = tagsPath.replaceInStrings(entry.separator, QLatin1String("/"));
+                    QStringList ntp = iptcTagsPath.replaceInStrings(entry.separator, QLatin1String("/"));
 
                     // FIXME: The QStringList are always identical -> ntp == tagsPath.
 
-                    if (ntp != tagsPath)
+                    if (ntp != iptcTagsPath)
                     {
-                        tagsPath = ntp;
+                        iptcTagsPath = ntp;
 
                         //qCDebug(DIGIKAM_METAENGINE_LOG) << "Tags Path imported from Imach: " << tagsPath;
                     }
 
-                    return true;
+                    tagsPath.append(iptcTagsPath);
+
+                    if (!settings.allTagsFromList())
+                    {
+                        return true;
+                    }
                 }
 
                 break;
@@ -160,12 +173,17 @@ bool DMetadata::getItemTagsPath(QStringList& tagsPath,
 
                 if (!keyWords.isEmpty())
                 {
-                    tagsPath = keyWords.split(entry.separator);
+                    QStringList exifTagsPath = keyWords.split(entry.separator);
 
-                    if (!tagsPath.isEmpty())
+                    if (!exifTagsPath.isEmpty())
                     {
-                        return true;
-                    }
+                        tagsPath.append(exifTagsPath);
+
+                        if (!settings.allTagsFromList())
+                        {
+                            return true;
+                        }
+                     }
                 }
 
                 break;
@@ -178,7 +196,9 @@ bool DMetadata::getItemTagsPath(QStringList& tagsPath,
         }
     }
 
-    return false;
+    tagsPath.removeDuplicates();
+
+    return (!tagsPath.isEmpty());
 }
 
 bool DMetadata::setItemTagsPath(const QStringList& tagsPath, const DMetadataSettingsContainer& settings) const

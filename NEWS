@@ -112,7 +112,7 @@ BUGFIXES:
 103 ==> 447473 - Cannot disable completely under/over-exposure was enable when launching "Adjust Curve".
 104 ==> 447491 - No plugins were loaded...
 104 ==> 447150 - AppImage 7.4 does not work on Fedora.
-105 ==> 
+105 ==> 447503 - Problem reading Excire Foto software tags from JPEG files.
 106 ==> 
 107 ==> 
 108 ==> 

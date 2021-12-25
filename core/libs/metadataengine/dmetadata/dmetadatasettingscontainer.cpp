@@ -106,7 +106,8 @@ class Q_DECL_HIDDEN DMetadataSettingsContainer::Private
 public:
 
     explicit Private()
-      : unifyReadWrite(false)
+      : unifyReadWrite (false),
+        allTagsFromList(false)
     {
     }
 
@@ -115,6 +116,7 @@ public:
     QMap<QString, QList<NamespaceEntry> > readMappings;
     QMap<QString, QList<NamespaceEntry> > writeMappings;
     bool                                  unifyReadWrite;
+    bool                                  allTagsFromList;
 };
 
 // -------------------------------------------------------------------------------------------------
@@ -157,6 +159,16 @@ void DMetadataSettingsContainer::setUnifyReadWrite(bool b)
     d->unifyReadWrite = b;
 }
 
+bool DMetadataSettingsContainer::allTagsFromList() const
+{
+    return d->allTagsFromList;
+}
+
+void DMetadataSettingsContainer::setAllTagsFromList(bool b)
+{
+    d->allTagsFromList = b;
+}
+
 void DMetadataSettingsContainer::readFromConfig(KConfigGroup& group)
 {
     bool valid                   = true;
@@ -193,7 +205,8 @@ void DMetadataSettingsContainer::readFromConfig(KConfigGroup& group)
         defaultValues();
     }
 
-    d->unifyReadWrite = group.readEntry(QLatin1String("unifyReadWrite"), true);
+    d->unifyReadWrite  = group.readEntry(QLatin1String("unifyReadWrite"),  true);
+    d->allTagsFromList = group.readEntry(QLatin1String("allTagsFromList"), false);
 }
 
 void DMetadataSettingsContainer::writeToConfig(KConfigGroup& group) const
@@ -212,13 +225,15 @@ void DMetadataSettingsContainer::writeToConfig(KConfigGroup& group) const
         writeOneGroup(group, writeNameSpace.arg(str), getWriteMapping(str));
     }
 
-    group.writeEntry(QLatin1String("unifyReadWrite"), d->unifyReadWrite);
+    group.writeEntry(QLatin1String("unifyReadWrite"),  d->unifyReadWrite);
+    group.writeEntry(QLatin1String("allTagsFromList"), d->allTagsFromList);
     group.sync();
 }
 
 void DMetadataSettingsContainer::defaultValues()
 {
-    d->unifyReadWrite = true;
+    d->unifyReadWrite  = true;
+    d->allTagsFromList = false;
     d->writeMappings.clear();
     d->readMappings.clear();
 
