@@ -111,7 +111,7 @@ BUGFIXES:
 102 ==> 447013 - No Local/.marble/plugins were loaded.
 103 ==> 447473 - Cannot disable completely under/over-exposure was enable when launching "Adjust Curve".
 104 ==> 447491 - No plugins were loaded...
-104 ==> 
+104 ==> 447150 - AppImage 7.4 does not work on Fedora.
 105 ==> 
 106 ==> 
 107 ==> 
@@ -119,3 +119,13 @@ BUGFIXES:
 109 ==> 
 110 ==> 
 111 ==> 
+112 ==> 
+113 ==> 
+114 ==> 
+115 ==> 
+116 ==> 
+117 ==> 
+118 ==> 
+119 ==> 
+120 ==> 
+121 ==> 
