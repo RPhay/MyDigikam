@@ -342,7 +342,7 @@ void AdvancedMetadataTab::setUi()
                                                    << i18n("Write Options"));
 
     d->unifyReadWrite  = new QCheckBox(i18n("Unify read and write"));
-    d->allTagsFromList = new QCheckBox(i18n("Read all of the list for tags"));
+    d->allTagsFromList = new QCheckBox(i18n("Read all metadata for tags"));
     d->allTagsFromList->setEnabled(false);
 
     topLayout->addWidget(d->metadataType,    0, 0, 1, 1);
