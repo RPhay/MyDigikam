@@ -114,7 +114,7 @@ BUGFIXES:
 104 ==> 447150 - AppImage 7.4 does not work on Fedora.
 105 ==> 447503 - Problem reading Excire Foto software tags from JPEG files.
 106 ==> 447391 - digiKam refuses to launch with a 'version `GLIBC_2.29' not found' error.
-107 ==> 
+107 ==> 434852 - Failure to launch.
 108 ==> 
 109 ==> 
 110 ==> 
