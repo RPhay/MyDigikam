@@ -67,7 +67,7 @@ public:
         revertChanges   (nullptr),
         resetButton     (nullptr),
         unifyReadWrite  (nullptr),
-        allTagsFromList (nullptr),
+        readingAllTags  (nullptr),
         namespaceView   (nullptr),
         metadataTypeSize(0),
         changed         (false)
@@ -84,7 +84,7 @@ public:
     QPushButton*                revertChanges;
     QPushButton*                resetButton;
     QCheckBox*                  unifyReadWrite;
-    QCheckBox*                  allTagsFromList;
+    QCheckBox*                  readingAllTags;
     QList<QStandardItemModel*>  models;
     NamespaceListView*          namespaceView;
     DMetadataSettingsContainer  container;
@@ -105,12 +105,12 @@ AdvancedMetadataTab::AdvancedMetadataTab(QWidget* const parent)
     connectButtons();
 
     d->unifyReadWrite->setChecked(d->container.unifyReadWrite());
-    d->allTagsFromList->setChecked(d->container.allTagsFromList());
+    d->readingAllTags->setChecked(d->container.readingAllTags());
 
     connect(d->unifyReadWrite, SIGNAL(toggled(bool)),
             this, SLOT(slotUnifyChecked(bool)));
 
-    connect(d->allTagsFromList, SIGNAL(toggled(bool)),
+    connect(d->readingAllTags, SIGNAL(toggled(bool)),
             this, SLOT(slotAllTagsChecked(bool)));
 
     connect(d->metadataType, SIGNAL(currentIndexChanged(int)),
@@ -254,7 +254,7 @@ void AdvancedMetadataTab::slotUnifyChecked(bool value)
 
 void AdvancedMetadataTab::slotAllTagsChecked(bool value)
 {
-    d->container.setAllTagsFromList(value);
+    d->container.setReadingAllTags(value);
 }
 
 void AdvancedMetadataTab::slotIndexChanged()
@@ -263,7 +263,7 @@ void AdvancedMetadataTab::slotIndexChanged()
 
     bool val = (d->metadataType->currentData().toString() ==
                 NamespaceEntry::DM_TAG_CONTAINER());
-    d->allTagsFromList->setEnabled(val);
+    d->readingAllTags->setEnabled(val);
 }
 
 void AdvancedMetadataTab::slotRevertChangesAvailable()
@@ -335,20 +335,20 @@ void AdvancedMetadataTab::setUi()
 
     //--- Top layout ----------------
 
-    d->metadataType    = new QComboBox(this);
-    d->operationType   = new QComboBox(this);
+    d->metadataType   = new QComboBox(this);
+    d->operationType  = new QComboBox(this);
 
     d->operationType->insertItems(0, QStringList() << i18n("Read Options")
                                                    << i18n("Write Options"));
 
-    d->unifyReadWrite  = new QCheckBox(i18n("Unify read and write"));
-    d->allTagsFromList = new QCheckBox(i18n("Read all metadata for tags"));
-    d->allTagsFromList->setEnabled(false);
+    d->unifyReadWrite = new QCheckBox(i18n("Unify read and write"));
+    d->readingAllTags = new QCheckBox(i18n("Read all metadata for tags"));
+    d->readingAllTags->setEnabled(false);
 
-    topLayout->addWidget(d->metadataType,    0, 0, 1, 1);
-    topLayout->addWidget(d->operationType,   0, 1, 1, 1);
-    topLayout->addWidget(d->unifyReadWrite,  0, 2, 1, 1);
-    topLayout->addWidget(d->allTagsFromList, 1, 2, 1, 1);
+    topLayout->addWidget(d->metadataType,   0, 0, 1, 1);
+    topLayout->addWidget(d->operationType,  0, 1, 1, 1);
+    topLayout->addWidget(d->unifyReadWrite, 0, 2, 1, 1);
+    topLayout->addWidget(d->readingAllTags, 1, 2, 1, 1);
 
     //------------ Bottom Layout-------------
 

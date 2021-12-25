@@ -106,7 +106,7 @@ bool DMetadata::getItemTagsPath(QStringList& tagsPath,
 
                         tagsPath.append(xmpTagsPath);
 
-                        if (!settings.allTagsFromList())
+                        if (!settings.readingAllTags())
                         {
                             return true;
                         }
@@ -150,7 +150,7 @@ bool DMetadata::getItemTagsPath(QStringList& tagsPath,
 
                     tagsPath.append(iptcTagsPath);
 
-                    if (!settings.allTagsFromList())
+                    if (!settings.readingAllTags())
                     {
                         return true;
                     }
@@ -173,7 +173,7 @@ bool DMetadata::getItemTagsPath(QStringList& tagsPath,
                     {
                         tagsPath.append(exifTagsPath);
 
-                        if (!settings.allTagsFromList())
+                        if (!settings.readingAllTags())
                         {
                             return true;
                         }

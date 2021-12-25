@@ -183,8 +183,8 @@ public:
     bool unifyReadWrite()                                                                           const;
     void setUnifyReadWrite(bool b);
 
-    bool allTagsFromList()                                                                          const;
-    void setAllTagsFromList(bool b);
+    bool readingAllTags()                                                                           const;
+    void setReadingAllTags(bool b);
 
     void addMapping(const QString& key);
 
