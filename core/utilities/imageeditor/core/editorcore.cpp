@@ -875,7 +875,7 @@ QPixmap EditorCore::convertToPixmap(const DImg& img) const
         QPainter painter(&pix);
         QImage pureColorMask = img.pureColorMask(d->expoSettings);
         QPixmap pixMask      = QPixmap::fromImage(pureColorMask);
-        painter.drawPixmap(0, 0, pixMask, 0, 0, pixMask.width(), pixMask.height());
+        painter.drawPixmap(pix.rect(), pixMask);
     }
 
     return pix;
