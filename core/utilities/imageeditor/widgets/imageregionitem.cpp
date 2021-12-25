@@ -94,7 +94,7 @@ QRect ImageRegionItem::getImageRegion() const
     return dd->drawRect;
 }
 
-void ImageRegionItem::setTargetImage(DImg& img)
+void ImageRegionItem::setTargetImage(const DImg& img)
 {
     dd->targetPix = dd->iface->convertToPixmap(img);
     update();

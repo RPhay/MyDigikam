@@ -146,7 +146,7 @@ public:
      * Convert a DImg image to a pixmap for screen using color
      * managed view if necessary.
      */
-    QPixmap convertToPixmap(DImg& img)                      const;
+    QPixmap convertToPixmap(const DImg& img)                const;
 
     /**
      * Paint the current target preview image (or the preview image,

@@ -48,7 +48,7 @@ public:
     explicit ImageRegionItem(ImageRegionWidget* const view, bool paintExtras = true);
     ~ImageRegionItem()                                                                     override;
 
-    void setTargetImage(DImg& img);
+    void setTargetImage(const DImg& img);
     void setHighLightPoints(const QPolygon& pointsList);
     void setRenderingPreviewMode(int mode);
 
