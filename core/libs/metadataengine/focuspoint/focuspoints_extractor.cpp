@@ -209,7 +209,7 @@ FocusPointsExtractor::ListAFPoints FocusPointsExtractor::get_af_points(FocusPoin
 {
     ListAFPoints points;
 
-    for (const auto point : d->af_points)
+    for (const auto& point : d->af_points)
     {
         if (type == FocusPoint::TypePoint::Inactive)
         {
