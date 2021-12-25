@@ -115,7 +115,7 @@ BUGFIXES:
 105 ==> 447503 - Problem reading Excire Foto software tags from JPEG files.
 106 ==> 447391 - digiKam refuses to launch with a 'version `GLIBC_2.29' not found' error.
 107 ==> 434852 - Failure to launch.
-108 ==> 
+108 ==> 363412 - Tree structure is not getting read from Exif:XP* tags.
 109 ==> 
 110 ==> 
 111 ==> 

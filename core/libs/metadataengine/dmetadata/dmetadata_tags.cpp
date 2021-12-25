@@ -136,23 +136,16 @@ bool DMetadata::getItemTagsPath(QStringList& tagsPath,
                 // do not support UTF-8 and have strings size limitation. But we will
                 // let the capability to import it for interworking issues.
 
-                QStringList iptcTagsPath;
-
-                iptcTagsPath = getIptcKeywords();
+                QStringList iptcTagsPath = getIptcKeywords();
 
                 if (!iptcTagsPath.isEmpty())
                 {
-                    // Work around to Imach tags path list hosted in IPTC with '.' as separator.
+                    // Workaround to Imach tags path list hosted in IPTC with '.' as separator.
+                    // Create a new entry with "." as a separator in the advanced metadata settings.
 
-                    QStringList ntp = iptcTagsPath.replaceInStrings(entry.separator, QLatin1String("/"));
-
-                    // FIXME: The QStringList are always identical -> ntp == tagsPath.
-
-                    if (ntp != iptcTagsPath)
+                    if (!entry.separator.isEmpty())
                     {
-                        iptcTagsPath = ntp;
-
-                        //qCDebug(DIGIKAM_METAENGINE_LOG) << "Tags Path imported from Imach: " << tagsPath;
+                        iptcTagsPath.replaceInStrings(entry.separator, QLatin1String("/"));
                     }
 
                     tagsPath.append(iptcTagsPath);
