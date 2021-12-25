@@ -261,9 +261,9 @@ void AdvancedMetadataTab::slotIndexChanged()
 {
     d->namespaceView->setModel(d->models.at(getModelIndex()));
 
-    bool v = (d->metadataType->currentData().toString() ==
-              NamespaceEntry::DM_TAG_CONTAINER());
-    d->allTagsFromList->setEnabled(v);
+    bool val = (d->metadataType->currentData().toString() ==
+                NamespaceEntry::DM_TAG_CONTAINER());
+    d->allTagsFromList->setEnabled(val);
 }
 
 void AdvancedMetadataTab::slotRevertChangesAvailable()
@@ -338,7 +338,8 @@ void AdvancedMetadataTab::setUi()
     d->metadataType    = new QComboBox(this);
     d->operationType   = new QComboBox(this);
 
-    d->operationType->insertItems(0, QStringList() << i18n("Read Options") << i18n("Write Options"));
+    d->operationType->insertItems(0, QStringList() << i18n("Read Options")
+                                                   << i18n("Write Options"));
 
     d->unifyReadWrite  = new QCheckBox(i18n("Unify read and write"));
     d->allTagsFromList = new QCheckBox(i18n("Read all of the list for tags"));
