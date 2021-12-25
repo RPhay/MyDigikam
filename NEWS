@@ -98,7 +98,7 @@ BUGFIXES:
 089 ==> 447223 - Updating faces database does not do anything.
 090 ==> 414344 - Image names and Album names that only differ by case are treated as the same.
 091 ==> 435767 - Files with same name but different case are hidden.
-092 ==> 445948 - DK only shows one file if two files only differ in lower/upper case extension.
+092 ==> 445948 - digiKam only shows one file if two files only differ in lower/upper case extension.
 093 ==> 447233 - Incorrect display of album thumbnails.
 094 ==> 447309 - Enter for People tagging to confirm second picture does not work anymore.
 095 ==> 447283 - Updating to Digikam 7.4 - just opens Digikam 7.3.
@@ -113,7 +113,7 @@ BUGFIXES:
 104 ==> 447491 - No plugins were loaded...
 104 ==> 447150 - AppImage 7.4 does not work on Fedora.
 105 ==> 447503 - Problem reading Excire Foto software tags from JPEG files.
-106 ==> 
+106 ==> 447391 - digiKam refuses to launch with a 'version `GLIBC_2.29' not found' error.
 107 ==> 
 108 ==> 
 109 ==> 
