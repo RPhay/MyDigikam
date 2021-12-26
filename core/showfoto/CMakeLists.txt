@@ -104,7 +104,7 @@ elseif (APPLE)
 
 else()
 
-    add_executable(showfoto ${digikam_SRCS})
+    add_executable(showfoto ${showfoto_SRCS})
 
 endif()
 
