@@ -204,6 +204,9 @@ AlbumPropsEdit::AlbumPropsEdit(PAlbum* const album, bool create)
         setTabOrder(d->categoryCombo, d->parentCombo);
         setTabOrder(d->parentCombo, d->commentsEdit);
         setTabOrder(d->commentsEdit, d->datePicker);
+        dateHighButton->hide();
+        dateAvgButton->hide();
+        dateLowButton->hide();
     }
     else
     {
