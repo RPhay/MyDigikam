@@ -51,35 +51,35 @@ Architecture and configuration to setup a continuous deployment computer.
 
 2/ Virtual Machines
 
-- macOS BigSur: system is installed using this GitHub repository: https://github.com/myspaghetti/macos-virtualbox (git revision b47fbd977e9d6103fb7113651839c22937d58af1),
-    Mac Deploy Stick - MDS tool to download macOS ISO for update system (https://twocanoes.com/products/mac/mac-deploy-stick/),
+- macOS Catalina: system is installed using this GitHub repository: https://github.com/myspaghetti/macos-virtualbox (git revision b47fbd977e9d6103fb7113651839c22937d58af1),
     and using Macports procedure.
   * @IP: 192.168.56.101
   * Apply the patch to macos-guest-virtualbox.patch and run the script to create the VM.
   * Don't touch mouse and keyboard will installing as form recognition is used to automate all operations (aka partitions creating and formatting).
   * MacOS Catalina will be installed and first run assistant must appear.
   * Create a main user account with admin rights, disable Siri, TimeScreen, Analytics, Accessibility, TimeMachine, and don't setup an AppleID.
-  * From macOS Control Panel/Software Updates upgrade to macOS BigSur and disable auto up to date.
+  * Using Mac Deploy Stick - MDS tool to download macOS ISO for update system (https://twocanoes.com/products/mac/mac-deploy-stick/), download the last DMG public release of BigSur
   * MacOS BigSur will be installed and first run assistant will appear where nothing special must be changed compared to Catalina.
-  * From macOS Control Panel/Users & Groups change user account shell from zsh to bash and reboot the virtual machine.
-  * From macOS Control Panel/Energy Saver turn off all sleeping options.
-  * From macOS Control Panel/Desktop & Screen Saver Set no image background and turn off screen saver.
-  * From macOS Control Panel/Sound Effects disable all.
-  * From macOS Control Panel/Sharing enable remote login.
-  * From macOS Control Panel/Mouse disable natural scroll direction.
-  * From macOS Control Panel/Spotlight disable all categories.
-  * From macOS Control Panel/Siri disable all.
-  * From macOS Control Panel/Security & Privacy turn off screen lock.
-  * From macOS Control Panel/Notifications disable all.
-  * From macOS Control Panel/Display disable mirroring option in menu bar.
-  * From macOS Control Panel/Keyboard disable input option in menu bar.
-  * From macOS Control Panel/Dock & Menu Bar disable all control options in menu bar.
-  * Register a valid account in AppleStore and download XCode.
+  * From MacOS System Preferences Panel/Software Update disable auto up-to-date.
+  * From macOS System Preferences Panel/Users & Groups change user account shell from zsh to bash and reboot the virtual machine.
+  * From macOS System Preferences Panel/Energy Saver turn off all sleeping options.
+  * From macOS System Preferences Panel/Desktop & Screen Saver Set no image background and turn off screen saver.
+  * From macOS System Preferences Panel/Sound Effects disable all.
+  * From macOS System Preferences Panel/Sharing enable remote login.
+  * From macOS System Preferences Panel/Mouse disable natural scroll direction.
+  * From macOS System Preferences Panel/Spotlight disable all categories.
+  * From macOS System Preferences Panel/Siri disable all.
+  * From macOS System Preferences Panel/Security & Privacy turn off screen lock.
+  * From macOS System Preferences Panel/Notifications disable all.
+  * From macOS System Preferences Panel/Display disable mirroring option in menu bar.
+  * From macOS System Preferences Panel/Keyboard disable input option in menu bar.
+  * From macOS System Preferences Panel/Dock & Menu Bar disable all control options in menu bar.
+  * Register a valid account in AppleStore and download XCode (usually an account taken to developer.apple.com is enough).
   * Open XCode and wait to update components with sudo right.
   * From a Terminal, install XCode Command Line Tools with "sudo xcode-select --install".
   * From a Terminal, valid XCode license with "sudo xcodebuild -license".
   * Install Packages for macOS (http://s.sudre.free.fr/Software/Packages/about.html).
-  * From macOS Control Panel/Security & Privacy add Terminal and Packages rights to Full Disk Access.
+  * From macOS System Preferences Panel/Security & Privacy add Terminal and Packages rights to Full Disk Access.
   * Install .bashrc_profile, .gitconfig, and macports_update.sh to the home directory.
   * Install your public and private ssh keys for your KDE account to your home directory.
   * Change /etc/sudoers properties to run sudo without password: "%admin ALL = (ALL) ALL" => "%admin ALL = (ALL) NOPASSWD: ALL"
