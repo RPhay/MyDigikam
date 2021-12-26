@@ -117,7 +117,7 @@ BUGFIXES:
 107 ==> 434852 - Failure to launch.
 108 ==> 363412 - Tree structure is not getting read from Exif:XP* tags.
 109 ==> 447545 - Strange Automatic Date decision in "Move to..." + New Album.
-110 ==> 
+110 ==> 447510 - digikam.exe meta data is missing.
 111 ==> 
 112 ==> 
 113 ==> 
