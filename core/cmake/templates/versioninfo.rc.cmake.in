@@ -23,7 +23,7 @@ BEGIN
         BEGIN
             VALUE "CompanyName", "digiKam.org"
             VALUE "FileDescription", "${BUNDLE_APP_DESCRIPTION}"
-            VALUE "FileVersion", ${BUNDLE_SHORT_VERSION_STRING}
+            VALUE "FileVersion", "${BUNDLE_SHORT_VERSION_STRING}"
             VALUE "InternalName", "${BUNDLE_APP_NAME_STRING}"
             VALUE "LegalCopyright", "digiKam.org"
             VALUE "OriginalFilename", "${BUNDLE_APP_NAME_STRING}.exe"
