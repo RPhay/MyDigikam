@@ -76,6 +76,8 @@ set(showfoto_SRCS
     ${CMAKE_CURRENT_SOURCE_DIR}/main/main.cpp
 )
 
+# This is only required by Windows and MacOS
+
 file(GLOB ICONS_SRCS "${CMAKE_CURRENT_SOURCE_DIR}/../data/icons/apps/*-apps-showfoto.png")
 ecm_add_app_icon(showfoto_SRCS ICONS ${ICONS_SRCS})
 
@@ -84,7 +86,7 @@ add_executable(showfoto ${showfoto_SRCS})
 add_dependencies(showfoto digikam-gitversion)
 add_dependencies(showfoto digikam-builddate)
 
-# To fill plist XML file for OSX #####################################################
+# To fill plist XML file for MacOS #############
 
 set(MACOSX_APP_NAME_STRING             "showfoto")
 set(MACOSX_APP_DESCRIPTION             "Stand alone Photo Editor based on digiKam Image Editor")

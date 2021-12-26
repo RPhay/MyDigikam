@@ -11,7 +11,8 @@ set(digikam_SRCS
     main/main.cpp
 )
 
-# this is only required by Win & OSX
+# This is only required by Windows and MacOS
+
 file(GLOB ICONS_SRCS "${CMAKE_SOURCE_DIR}/core/data/icons/apps/*-apps-digikam.png")
 ecm_add_app_icon(digikam_SRCS ICONS ${ICONS_SRCS})
 
@@ -20,7 +21,7 @@ add_executable(digikam ${digikam_SRCS})
 add_dependencies(digikam digikam-gitversion)
 add_dependencies(digikam digikam-builddate)
 
-# To fill plist XML file for OSX ############
+# To fill plist XML file for MacOS ############
 
 set(MACOSX_APP_NAME_STRING             "digikam")
 set(MACOSX_APP_DESCRIPTION             "Advanced digital photo management application")
