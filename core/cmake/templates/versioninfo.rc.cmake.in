@@ -1,0 +1,38 @@
+#if defined(__MINGW64__) || defined(__MINGW32__)
+#include <afxres.h>
+#include <winresrc.h>
+#else
+#include <winres.h>
+#endif
+
+LANGUAGE LANG_ENGLISH, SUBLANG_ENGLISH_US
+#pragma code_page(65001)
+
+VS_VERSION_INFO VERSIONINFO
+FILEVERSION BUNDLE_FILE_VERSION
+PRODUCTVERSION BUNDLE_PRODUCT_VERSION
+FILEFLAGSMASK VS_FFI_FILEFLAGSMASK
+FILEFLAGS 0x0L
+FILEOS VOS__WINDOWS32
+FILETYPE VFT_APP
+FILESUBTYPE VFT2_UNKNOWN
+BEGIN
+    BLOCK "StringFileInfo"
+    BEGIN
+        BLOCK "040904E4"
+        BEGIN
+            VALUE "CompanyName", "digiKam.org"
+            VALUE "FileDescription", "${BUNDLE_APP_DESCRIPTION}"
+            VALUE "FileVersion", ${BUNDLE_SHORT_VERSION_STRING}
+            VALUE "InternalName", "${BUNDLE_APP_NAME_STRING}"
+            VALUE "LegalCopyright", "digiKam.org"
+            VALUE "OriginalFilename", "${BUNDLE_APP_NAME_STRING}.exe"
+            VALUE "ProductName", "${BUNDLE_APP_NAME_STRING}"
+            VALUE "ProductVersion", "${BUNDLE_LONG_VERSION_STRING}"
+        END
+    END
+    BLOCK "VarFileInfo"
+    BEGIN
+        VALUE "Translation", 0x0409, 1252
+    END
+END

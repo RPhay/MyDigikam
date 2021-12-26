@@ -5,31 +5,44 @@
 # Redistribution and use is allowed according to the terms of the BSD license.
 # For details see the accompanying COPYING-CMAKE-SCRIPTS file.
 
+# To fill MacOS and Windows bundles metadata
+
+set(BUNDLE_APP_NAME_STRING      "digikam")
+set(BUNDLE_APP_DESCRIPTION      "Advanced digital photo management application")
+set(BUNDLE_LONG_VERSION_STRING  ${DIGIKAM_VERSION_STRING})
+set(BUNDLE_SHORT_VERSION_STRING ${DIGIKAM_VERSION_SHORT})
+set(BUNDLE_VERSION              ${DIGIKAM_VERSION_STRING})
+
 # digiKam executable
 
 set(digikam_SRCS
     main/main.cpp
 )
 
-# This is only required by Windows and MacOS
+# Set the application icon on the application
 
 file(GLOB ICONS_SRCS "${CMAKE_SOURCE_DIR}/core/data/icons/apps/*-apps-digikam.png")
 ecm_add_app_icon(digikam_SRCS ICONS ${ICONS_SRCS})
 
-add_executable(digikam ${digikam_SRCS})
+if (WIN32)
+
+    configure_file(${CMAKE_CURRENT_SOURCE_DIR}/../cmake/templates/versioninfo.rc.cmake.in ${CMAKE_CURRENT_BINARY_DIR}/versioninfo.rc)
+    add_executable(digikam ${digikam_SRCS} ${CMAKE_CURRENT_BINARY_DIR}/versioninfo.rc)
+
+elseif (APPLE)
+
+    configure_file(${CMAKE_CURRENT_SOURCE_DIR}/../cmake/templates/Info.plist.cmake.in ${CMAKE_CURRENT_BINARY_DIR}/Info.plist)
+    add_executable(digikam ${digikam_SRCS})
+    set_target_properties(digikam PROPERTIES MACOSX_BUNDLE_INFO_PLIST ${CMAKE_CURRENT_BINARY_DIR}/Info.plist)
+
+else()
+
+    add_executable(digikam ${digikam_SRCS})
+
+endif()
 
 add_dependencies(digikam digikam-gitversion)
 add_dependencies(digikam digikam-builddate)
-
-# To fill plist XML file for MacOS ############
-
-set(MACOSX_APP_NAME_STRING             "digikam")
-set(MACOSX_APP_DESCRIPTION             "Advanced digital photo management application")
-set(MACOSX_BUNDLE_LONG_VERSION_STRING  ${DIGIKAM_VERSION_STRING})
-set(MACOSX_BUNDLE_SHORT_VERSION_STRING ${DIGIKAM_VERSION_SHORT})
-set(MACOSX_BUNDLE_BUNDLE_VERSION       ${DIGIKAM_VERSION_STRING})
-configure_file(${CMAKE_CURRENT_SOURCE_DIR}/../cmake/templates/Info.plist.cmake.in ${CMAKE_CURRENT_BINARY_DIR}/Info.plist)
-set_target_properties(digikam PROPERTIES MACOSX_BUNDLE_INFO_PLIST ${CMAKE_CURRENT_BINARY_DIR}/Info.plist)
 
 target_link_libraries(digikam
 

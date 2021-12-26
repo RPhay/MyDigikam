@@ -22,6 +22,16 @@ if(KF5IconThemes_FOUND)
     include_directories($<TARGET_PROPERTY:KF5::IconThemes,INTERFACE_INCLUDE_DIRECTORIES>)
 endif()
 
+# To fill MacOS and Windows bundles metadata
+
+set(BUNDLE_APP_NAME_STRING      "showfoto")
+set(BUNDLE_APP_DESCRIPTION      "Stand alone Photo Editor based on digiKam Image Editor")
+set(BUNDLE_LONG_VERSION_STRING  ${DIGIKAM_VERSION_STRING})
+set(BUNDLE_SHORT_VERSION_STRING ${DIGIKAM_VERSION_SHORT})
+set(BUNDLE_VERSION              ${DIGIKAM_VERSION_STRING})
+
+# Showfoto executable
+
 set(showfoto_SRCS
     ${CMAKE_CURRENT_SOURCE_DIR}/setup/showfotosetuptooltip.cpp
     ${CMAKE_CURRENT_SOURCE_DIR}/setup/showfotosetupmisc.cpp
@@ -76,25 +86,30 @@ set(showfoto_SRCS
     ${CMAKE_CURRENT_SOURCE_DIR}/main/main.cpp
 )
 
-# This is only required by Windows and MacOS
+# Set the application icon on the application
 
-file(GLOB ICONS_SRCS "${CMAKE_CURRENT_SOURCE_DIR}/../data/icons/apps/*-apps-showfoto.png")
+file(GLOB ICONS_SRCS "${CMAKE_SOURCE_DIR}/core/data/icons/apps/*-apps-showfoto.png")
 ecm_add_app_icon(showfoto_SRCS ICONS ${ICONS_SRCS})
 
-add_executable(showfoto ${showfoto_SRCS})
+if (WIN32)
+
+    configure_file(${CMAKE_CURRENT_SOURCE_DIR}/../cmake/templates/versioninfo.rc.cmake.in ${CMAKE_CURRENT_BINARY_DIR}/versioninfo.rc)
+    add_executable(showfoto ${showfoto_SRCS} ${CMAKE_CURRENT_BINARY_DIR}/versioninfo.rc)
+
+elseif (APPLE)
+
+    configure_file(${CMAKE_CURRENT_SOURCE_DIR}/../cmake/templates/Info.plist.cmake.in ${CMAKE_CURRENT_BINARY_DIR}/Info.plist)
+    add_executable(showfoto ${showfoto_SRCS})
+    set_target_properties(showfoto PROPERTIES MACOSX_BUNDLE_INFO_PLIST ${CMAKE_CURRENT_BINARY_DIR}/Info.plist)
+
+else()
+
+    add_executable(showfoto ${digikam_SRCS})
+
+endif()
 
 add_dependencies(showfoto digikam-gitversion)
 add_dependencies(showfoto digikam-builddate)
-
-# To fill plist XML file for MacOS #############
-
-set(MACOSX_APP_NAME_STRING             "showfoto")
-set(MACOSX_APP_DESCRIPTION             "Stand alone Photo Editor based on digiKam Image Editor")
-set(MACOSX_BUNDLE_LONG_VERSION_STRING  ${DIGIKAM_VERSION_STRING})
-set(MACOSX_BUNDLE_SHORT_VERSION_STRING ${DIGIKAM_VERSION_SHORT})
-set(MACOSX_BUNDLE_BUNDLE_VERSION       ${DIGIKAM_VERSION_STRING})
-configure_file(${CMAKE_CURRENT_SOURCE_DIR}/../cmake/templates/Info.plist.cmake.in ${CMAKE_CURRENT_BINARY_DIR}/Info.plist)
-set_target_properties(showfoto PROPERTIES MACOSX_BUNDLE_INFO_PLIST ${CMAKE_CURRENT_BINARY_DIR}/Info.plist)
 
 target_link_libraries(showfoto
 
