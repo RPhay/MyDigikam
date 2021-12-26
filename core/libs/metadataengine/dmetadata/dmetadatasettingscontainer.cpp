@@ -106,8 +106,8 @@ class Q_DECL_HIDDEN DMetadataSettingsContainer::Private
 public:
 
     explicit Private()
-      : unifyReadWrite (false),
-        allTagsFromList(false)
+      : unifyReadWrite(false),
+        readingAllTags(false)
     {
     }
 
@@ -116,7 +116,7 @@ public:
     QMap<QString, QList<NamespaceEntry> > readMappings;
     QMap<QString, QList<NamespaceEntry> > writeMappings;
     bool                                  unifyReadWrite;
-    bool                                  allTagsFromList;
+    bool                                  readingAllTags;
 };
 
 // -------------------------------------------------------------------------------------------------
@@ -159,14 +159,14 @@ void DMetadataSettingsContainer::setUnifyReadWrite(bool b)
     d->unifyReadWrite = b;
 }
 
-bool DMetadataSettingsContainer::allTagsFromList() const
+bool DMetadataSettingsContainer::readingAllTags() const
 {
-    return d->allTagsFromList;
+    return d->readingAllTags;
 }
 
-void DMetadataSettingsContainer::setAllTagsFromList(bool b)
+void DMetadataSettingsContainer::setReadingAllTags(bool b)
 {
-    d->allTagsFromList = b;
+    d->readingAllTags = b;
 }
 
 void DMetadataSettingsContainer::readFromConfig(KConfigGroup& group)
@@ -205,8 +205,8 @@ void DMetadataSettingsContainer::readFromConfig(KConfigGroup& group)
         defaultValues();
     }
 
-    d->unifyReadWrite  = group.readEntry(QLatin1String("unifyReadWrite"),  true);
-    d->allTagsFromList = group.readEntry(QLatin1String("allTagsFromList"), false);
+    d->unifyReadWrite = group.readEntry(QLatin1String("unifyReadWrite"), true);
+    d->readingAllTags = group.readEntry(QLatin1String("readingAllTags"), false);
 }
 
 void DMetadataSettingsContainer::writeToConfig(KConfigGroup& group) const
@@ -225,15 +225,15 @@ void DMetadataSettingsContainer::writeToConfig(KConfigGroup& group) const
         writeOneGroup(group, writeNameSpace.arg(str), getWriteMapping(str));
     }
 
-    group.writeEntry(QLatin1String("unifyReadWrite"),  d->unifyReadWrite);
-    group.writeEntry(QLatin1String("allTagsFromList"), d->allTagsFromList);
+    group.writeEntry(QLatin1String("unifyReadWrite"), d->unifyReadWrite);
+    group.writeEntry(QLatin1String("readingAllTags"), d->readingAllTags);
     group.sync();
 }
 
 void DMetadataSettingsContainer::defaultValues()
 {
-    d->unifyReadWrite  = true;
-    d->allTagsFromList = false;
+    d->unifyReadWrite = true;
+    d->readingAllTags = false;
     d->writeMappings.clear();
     d->readMappings.clear();
 
@@ -328,7 +328,6 @@ void DMetadataSettingsContainer::defaultTagValues()
     NamespaceEntry tagNs7;
     tagNs7.namespaceName    = QLatin1String("Iptc.Application2.Keywords");
     tagNs7.tagPaths         = NamespaceEntry::TAGPATH;
-    tagNs7.separator        = QLatin1Char(',');
     tagNs7.nsType           = NamespaceEntry::TAGS;
     tagNs7.index            = 6;
     tagNs7.subspace         = NamespaceEntry::IPTC;
