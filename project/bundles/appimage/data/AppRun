@@ -16,42 +16,31 @@ preload_shared_library ()
     FILE=$1
     echo -e "Check library $FILE"
 
-    if [[ "$(uname -m)" = "x86_64" ]] ; then
-
-        # 64 bits system
-
-        if   [ -f "$DIR/usr/lib64/$FILE" ] ; then
-            export LD_PRELOAD=$LD_PRELOAD:$DIR/usr/lib64/$FILE
-        elif [ -f "/usr/lib64/$FILE" ] ; then
-            export LD_PRELOAD=$LD_PRELOAD:/usr/lib64/$FILE
-        elif [ -f "/usr/lib/x86_64-linux-gnu/$FILE" ] ; then
-            export LD_PRELOAD=$LD_PRELOAD:/usr/lib/x86_64-linux-gnu/$FILE
-        elif [ -f "/lib/x86_64-linux-gnu/$FILE" ] ; then
-            export LD_PRELOAD=$LD_PRELOAD:/lib/x86_64-linux-gnu/$FILE
-        fi
-
-    else
-
-        # 32 bits system
-
-        if   [ -f "$DIR/usr/lib/$FILE" ] ; then
-            export LD_PRELOAD=$LD_PRELOAD:$DIR/usr/lib/$FILE
-        elif [ -f "/usr/lib/$FILE" ] ; then
-            export LD_PRELOAD=$LD_PRELOAD:/usr/lib/$FILE
-        elif [ -f "/usr/lib/i386-linux-gnu/$FILE" ] ; then
-            export LD_PRELOAD=$LD_PRELOAD:/usr/lib/i386-linux-gnu/$FILE
-        elif [ -f "/lib/i386-linux-gnu/$FILE" ] ; then
-            export LD_PRELOAD=$LD_PRELOAD:/lib/i386-linux-gnu/$FILE
-        fi
-
+#    if   [ -f "$DIR/usr/lib64/$FILE" ] ; then
+#        export LD_PRELOAD=$LD_PRELOAD:$DIR/usr/lib64/$FILE
+#    elif
+    if   [ -f "/usr/lib64/$FILE" ] ; then
+        export LD_PRELOAD=$LD_PRELOAD:/usr/lib64/$FILE
+    elif [ -f "/usr/lib/x86_64-linux-gnu/$FILE" ] ; then
+        export LD_PRELOAD=$LD_PRELOAD:/usr/lib/x86_64-linux-gnu/$FILE
+    elif [ -f "/lib/x86_64-linux-gnu/$FILE" ] ; then
+        export LD_PRELOAD=$LD_PRELOAD:/lib/x86_64-linux-gnu/$FILE
     fi
 }
 
+###
 
 echo "-- digiKam Linux AppImage Bundle"
 echo "-- Use 'help' as CLI argument to know all available options for digiKam application."
 echo "-- Notes: to integrate this bundle to your desktop, use AppImageLauncher."
 echo "--        to enable all debug messages on the console, use 'export QT_LOGGING_RULES=\"digikam*=true\"'."
+
+if [[ "$(uname -m)" != "x86_64" ]] ; then
+
+    echo "!!! You trying to run a 64 bits binary on a 32 bits system. Aborted !!!"
+    exit -1;
+
+fi
 
 # See bugs #414016, #414028, #415882, Qt fill log files with unwanted debug trace about locale rules.
 export QT_LOGGING_RULES="default*=false;"$QT_LOGGING_RULES
@@ -127,7 +116,7 @@ echo "-- Preloading shared libs: $LD_PRELOAD"
 
 # Parse CLI options.
 
-if [[ $1 == "showfoto" ]] ; then
+if   [[ $1 == "showfoto" ]] ; then
 
     # Run Showfoto as well.
     showfoto ${@:2}
