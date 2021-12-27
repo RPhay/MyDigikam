@@ -9,11 +9,11 @@
     <key>CFBundleExecutable</key>
     <string>${BUNDLE_APP_NAME_STRING}</string>
     <key>CFBundleGetInfoString</key>
-    <string>${BUNDLE_APP_DESCRIPTION}</string>
+    <string>${BUNDLE_APP_DESCRIPTION_STRING}</string>
     <key>CFBundleIconFile</key>
     <string>${BUNDLE_APP_NAME_STRING}_SRCS.icns</string>
     <key>CFBundleIdentifier</key>
-    <string>${BUNDLE_APP_NAME_STRING}</string>
+    <string>org.digiKam</string>
     <key>CFBundleInfoDictionaryVersion</key>
     <string>6.0</string>
     <key>CFBundleLongVersionString</key>
@@ -25,15 +25,19 @@
     <key>CFBundleShortVersionString</key>
     <string>${BUNDLE_SHORT_VERSION_STRING}</string>
     <key>CFBundleSignature</key>
-    <string>org.digiKam</string>
+    <string>DGKM</string>
     <key>CFBundleVersion</key>
-    <string>${BUNDLE_VERSION}</string>
+    <string>${BUNDLE_VERSION_STRING}</string>
     <key>CSResourcesFileMapped</key>
     <true/>
     <key>LSRequiresCarbon</key>
     <true/>
+    <key>LSMinimumSystemVersion</key>
+    <string>10.13.0</string>
+    <key>LSApplicationCategoryType</key>
+    <string>public.app-category.photography</string>
     <key>NSHumanReadableCopyright</key>
-    <string>GNU Public License, V2 or, at your option, any later version.</string>
+    <string>${BUNDLE_LEGAL_COPYRIGHT_STRING}</string>
     <key>LSEnvironment</key>
     <dict>
         <key>RasterOff</key>

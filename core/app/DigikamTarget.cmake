@@ -7,11 +7,13 @@
 
 # To fill MacOS and Windows bundles metadata
 
-set(BUNDLE_APP_NAME_STRING      "digikam")
-set(BUNDLE_APP_DESCRIPTION      "Advanced digital photo management application")
-set(BUNDLE_LONG_VERSION_STRING  ${DIGIKAM_VERSION_STRING})
-set(BUNDLE_SHORT_VERSION_STRING ${DIGIKAM_VERSION_SHORT})
-set(BUNDLE_VERSION              ${DIGIKAM_VERSION_STRING})
+set(BUNDLE_APP_NAME_STRING          "digikam")
+set(BUNDLE_APP_DESCRIPTION_STRING   "Advanced digital photo management application")
+set(BUNDLE_LEGAL_COPYRIGHT_STRING   "GNU Public License V2")
+set(BUNDLE_COMMENT_STRING           "Free and open source software to manage photo")
+set(BUNDLE_LONG_VERSION_STRING      ${DIGIKAM_VERSION_STRING})
+set(BUNDLE_SHORT_VERSION_STRING     ${DIGIKAM_VERSION_SHORT})
+set(BUNDLE_VERSION_STRING           ${DIGIKAM_VERSION_STRING})
 
 # digiKam executable
 

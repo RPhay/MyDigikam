@@ -24,11 +24,13 @@ endif()
 
 # To fill MacOS and Windows bundles metadata
 
-set(BUNDLE_APP_NAME_STRING      "showfoto")
-set(BUNDLE_APP_DESCRIPTION      "Stand alone Photo Editor based on digiKam Image Editor")
-set(BUNDLE_LONG_VERSION_STRING  ${DIGIKAM_VERSION_STRING})
-set(BUNDLE_SHORT_VERSION_STRING ${DIGIKAM_VERSION_SHORT})
-set(BUNDLE_VERSION              ${DIGIKAM_VERSION_STRING})
+set(BUNDLE_APP_NAME_STRING          "showfoto")
+set(BUNDLE_APP_DESCRIPTION_STRING   "Stand alone Photo Editor based on digiKam Image Editor")
+set(BUNDLE_LEGAL_COPYRIGHT_STRING   "GNU Public License V2")
+set(BUNDLE_COMMENT_STRING           "Free and open source software to edit photo")
+set(BUNDLE_LONG_VERSION_STRING      ${DIGIKAM_VERSION_STRING})
+set(BUNDLE_SHORT_VERSION_STRING     ${DIGIKAM_VERSION_SHORT})
+set(BUNDLE_VERSION_STRING           ${DIGIKAM_VERSION_STRING})
 
 # Showfoto executable
 
