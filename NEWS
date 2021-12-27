@@ -120,7 +120,7 @@ BUGFIXES:
 110 ==> 447510 - digikam.exe meta data is missing.
 111 ==> 339021 - Add overlay to show filename over thumbbar.
 112 ==> 376366 - Not show nothing...
-113 ==> 
+113 ==> 327509 - Thumbnails are not refreshed when new files are added to current directory.
 114 ==> 
 115 ==> 
 116 ==> 
