@@ -14,7 +14,7 @@
 preload_shared_library ()
 {
     FILE=$1
-    echo -e "$FILE "
+    echo -e "Check library $FILE"
 
     if [[ "$(uname -m)" = "x86_64" ]] ; then
 
