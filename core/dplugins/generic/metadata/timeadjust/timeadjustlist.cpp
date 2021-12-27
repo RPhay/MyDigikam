@@ -47,7 +47,7 @@ TimeAdjustList::TimeAdjustList(QWidget* const parent)
     listView()->setColumn(static_cast<Digikam::DItemsListView::ColumnType>(STATUS),
                           i18n("Status"), true);
 
-    listView()->header()->setSectionResizeMode(QHeaderView::ResizeToContents);
+    listView()->header()->setSectionResizeMode(QHeaderView::Stretch);
 }
 
 TimeAdjustList::~TimeAdjustList()
