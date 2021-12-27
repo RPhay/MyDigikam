@@ -412,7 +412,7 @@ for FILE in $EXTRA_EXCLUDE_FILES ; do
     fi
 done
 
-ln -s libssl.so.1.0.0 usr/lib/libssl.so || true
+ln -s libssl.so.1.1 usr/lib/libssl.so || true
 
 # We don't bundle the developer stuff
 rm -rf usr/include         || true
