@@ -122,12 +122,12 @@ BUGFIXES:
 112 ==> 376366 - Not show nothing...
 113 ==> 327509 - Thumbnails are not refreshed when new files are added to current directory.
 114 ==> 224923 - Metadata are ignored with remote images.
-115 ==> 447565 - Metada cannot be entered for several photos with a single action.
-116 ==> 
-117 ==> 
-118 ==> 
-119 ==> 
-120 ==> 
+115 ==> 447565 - Metadata cannot be entered for several photos with a single action.
+116 ==> 225505 - Local-contrast tool doesn't works good.
+117 ==> 219542 - Tif image fails to load, but preview is ok.
+118 ==> 194660 - "auto crop" of free rotation doesn't crop enough.
+119 ==> 144033 - ShowFoto doesn't clean the /var/tmp/ cache properly.
+120 ==> 143947 - Scroll image with keyboard.
 121 ==> 
 122 ==> 
 123 ==> 
