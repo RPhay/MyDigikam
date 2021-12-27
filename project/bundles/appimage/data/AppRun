@@ -117,8 +117,8 @@ preload_shared_library libudev.so.0
 preload_shared_library libxcb-dri3.so.0
 
 # See bug #447150
-preload_shared_library libssl.so.1.1
 preload_shared_library libcrypto.so.1.1
+preload_shared_library libssl.so.1.1
 
 #preload_shared_library libfontconfig.so.1
 #preload_shared_library libfreetype.so.6
