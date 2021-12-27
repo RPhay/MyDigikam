@@ -118,7 +118,7 @@ BUGFIXES:
 108 ==> 363412 - Tree structure is not getting read from Exif:XP* tags.
 109 ==> 447545 - Strange Automatic Date decision in "Move to..." + New Album.
 110 ==> 447510 - digikam.exe meta data is missing.
-111 ==> 
+111 ==> 339021 - Add overlay to show filename over thumbbar.
 112 ==> 
 113 ==> 
 114 ==> 
