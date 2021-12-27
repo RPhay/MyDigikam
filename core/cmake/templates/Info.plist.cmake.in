@@ -1,77 +1,51 @@
 <?xml version="1.0" encoding="UTF-8"?>
-<!DOCTYPE plist PUBLIC "-//Apple Computer//DTD PLIST 1.0//EN" "https://www.apple.com/DTDs/PropertyList-1.0.dtd">
+<!DOCTYPE plist PUBLIC "-//Apple//DTD PLIST 1.0//EN" "http://www.apple.com/DTDs/PropertyList-1.0.dtd">
 <plist version="1.0">
-
 <dict>
-
-    <key>NSPrincipalClass</key>
-    <string>NSApplication</string>
-
-    <key>CFBundleDevelopmentRegion</key>
-    <string>English</string>
-
-    <!-- Executable Name -->
-    <key>CFBundleExecutable</key>
-    <string>${BUNDLE_APP_NAME_STRING}</string>
-
-    <!-- Info for finder -->
-    <key>CFBundleGetInfoString</key>
-    <string>${BUNDLE_APP_DESCRIPTION_STRING}</string>
-
-    <key>CFBundleIconFile</key>
-    <string>${BUNDLE_APP_NAME_STRING}_SRCS.icns</string>
-
-    <!-- Name displayed -->
-    <key>CFBundleIdentifier</key>
-    <string>org.digiKam</string>
-
-    <key>CFBundleInfoDictionaryVersion</key>
-    <string>6.0</string>
-
-    <!-- Long version that include build number or git commit -->
-    <key>CFBundleLongVersionString</key>
-    <string>${BUNDLE_LONG_VERSION_STRING}</string>
-
-    <!-- Unique bundle name across AppStore -->
-    <key>CFBundleName</key>
-    <string>${BUNDLE_APP_NAME_STRING}</string>
-
-    <key>CFBundlePackageType</key>
-    <string>APPL</string>
-
-    <!-- Short Version -->
-    <key>CFBundleShortVersionString</key>
-    <string>${BUNDLE_SHORT_VERSION_STRING}</string>
-
-    <key>CFBundleSignature</key>
-    <string>DGKM</string>
-
-    <!-- Bundle Version to detect update on AppStore -->
-    <key>CFBundleVersion</key>
-    <string>${BUNDLE_VERSION_STRING}</string>
-
-    <key>CSResourcesFileMapped</key>
-    <true/>
-
-    <key>LSRequiresCarbon</key>
-    <true/>
-
-    <key>LSMinimumSystemVersion</key>
-    <string>10.13.0</string>
-
-    <key>LSApplicationCategoryType</key>
-    <string>public.app-category.photography</string>
-
-    <!-- Copyright or licence -->
-    <key>NSHumanReadableCopyright</key>
-    <string>${BUNDLE_LEGAL_COPYRIGHT_STRING}</string>
-
-    <key>LSEnvironment</key>
-    <dict>
-        <key>RasterOff</key>
-        <string>yes</string>
-    </dict>
-
+	<key>NSPrincipalClass</key>
+	<string>NSApplication</string>
+	<key>CFBundleDevelopmentRegion</key>
+	<string>English</string>
+	<key>CFBundleExecutable</key>
+	<string>${BUNDLE_APP_NAME_STRING}</string>
+	<key>CFBundleGetInfoString</key>
+	<string>${BUNDLE_APP_DESCRIPTION_STRING}</string>
+	<key>CFBundleIconFile</key>
+	<string>${BUNDLE_APP_NAME_STRING}_SRCS.icns</string>
+	<key>CFBundleIdentifier</key>
+	<string>org.digiKam</string>
+	<key>CFBundleInfoDictionaryVersion</key>
+	<string>6.0</string>
+	<key>CFBundleLongVersionString</key>
+	<string>${BUNDLE_LONG_VERSION_STRING}</string>
+	<key>CFBundleName</key>
+	<string>${BUNDLE_APP_NAME_STRING}</string>
+	<key>CFBundlePackageType</key>
+	<string>APPL</string>
+	<key>CFBundleShortVersionString</key>
+	<string>${BUNDLE_SHORT_VERSION_STRING}</string>
+	<key>CFBundleSignature</key>
+	<string>DGKM</string>
+	<key>CFBundleVersion</key>
+	<string>${BUNDLE_VERSION_STRING}</string>
+	<key>CSResourcesFileMapped</key>
+	<true/>
+	<key>LSRequiresCarbon</key>
+	<true/>
+	<key>LSMinimumSystemVersion</key>
+	<string>10.13.0</string>
+	<key>LSApplicationCategoryType</key>
+	<string>public.app-category.photography</string>
+	<key>NSHumanReadableCopyright</key>
+	<string>${BUNDLE_LEGAL_COPYRIGHT_STRING}</string>
+	<key>LSExecutableArchitectures</key>
+	<array>
+		<string>x86_64</string>
+	</array>
+	<key>LSEnvironment</key>
+	<dict>
+		<key>RasterOff</key>
+		<string>yes</string>
+	</dict>
 </dict>
-
 </plist>
