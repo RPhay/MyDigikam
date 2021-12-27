@@ -128,8 +128,8 @@ BUGFIXES:
 118 ==> 194660 - "auto crop" of free rotation doesn't crop enough.
 119 ==> 144033 - ShowFoto doesn't clean the /var/tmp/ cache properly.
 120 ==> 143947 - Scroll image with keyboard.
-121 ==> 
-122 ==> 
+121 ==> 407236 - MacOS: digiKam 6.1.0 application language switch issue.
+122 ==> 407237 - MacOS: Showfoto 6.1.0 application language switch issue
 123 ==> 
 124 ==> 
 125 ==> 
