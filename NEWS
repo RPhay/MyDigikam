@@ -133,7 +133,7 @@ BUGFIXES:
 123 ==> 447395 - digiKam freezes completely if too many pictures are processed in the Adjust Time & Date plugin.
 124 ==> 435772 - digiKam scans my entire collection every time I launch the program, even if "scan new items at startup" is disabled.
 125 ==> 447437 - Digikam::ImageQualityThread always crashing on macOS 12.1.
-126 ==> 
+126 ==> 447087 - Download new version not working.
 127 ==> 
 128 ==> 
 129 ==> 
