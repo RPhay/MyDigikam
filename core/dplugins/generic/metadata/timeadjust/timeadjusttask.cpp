@@ -52,17 +52,13 @@ public:
     {
     }
 
-    QUrl                  url;
-
     // Settings from GUI.
 
     TimeAdjustContainer   settings;
 
-    // Map of item urls and index.
-
-    QMap<QUrl, int>       itemsMap;
-
     TimeAdjustThread*     thread;
+
+    QUrl                  url;
 };
 
 TimeAdjustTask::TimeAdjustTask(const QUrl& url, TimeAdjustThread* const thread)
@@ -84,11 +80,6 @@ void TimeAdjustTask::setSettings(const TimeAdjustContainer& settings)
     d->settings = settings;
 }
 
-void TimeAdjustTask::setItemsMap(const QMap<QUrl, int>& itemsMap)
-{
-    d->itemsMap = itemsMap;
-}
-
 void TimeAdjustTask::run()
 {
     if (m_cancel)
@@ -99,7 +90,7 @@ void TimeAdjustTask::run()
     emit signalProcessStarted(d->url);
 
     QDateTime org = d->thread->readTimestamp(d->url);
-    QDateTime adj = d->settings.calculateAdjustedDate(org, d->itemsMap.value(d->url));
+    QDateTime adj = d->settings.calculateAdjustedDate(org, d->thread->indexForUrl(d->url));
 
     if (!adj.isValid())
     {
@@ -352,17 +343,13 @@ public:
     {
     }
 
-    QUrl                  url;
-
     // Settings from GUI.
 
     TimeAdjustContainer   settings;
 
-    // Map of item urls and index for preview.
-
-    QMap<QUrl, int>       itemsMap;
-
     TimeAdjustThread*     thread;
+
+    QUrl                  url;
 };
 
 TimePreviewTask::TimePreviewTask(const QUrl& url, TimeAdjustThread* const thread)
@@ -384,11 +371,6 @@ void TimePreviewTask::setSettings(const TimeAdjustContainer& settings)
     d->settings = settings;
 }
 
-void TimePreviewTask::setItemsList(const QMap<QUrl, int>& itemsMap)
-{
-    d->itemsMap = itemsMap;
-}
-
 void TimePreviewTask::run()
 {
     if (m_cancel)
@@ -397,7 +379,7 @@ void TimePreviewTask::run()
     }
 
     QDateTime org = d->thread->readTimestamp(d->url);
-    QDateTime adj = d->settings.calculateAdjustedDate(org, d->itemsMap.value(d->url));
+    QDateTime adj = d->settings.calculateAdjustedDate(org, d->thread->indexForUrl(d->url));
 
     emit signalPreviewReady(d->url, org, adj);
     emit signalDone();

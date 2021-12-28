@@ -51,6 +51,8 @@ public:
 
     TimeAdjustContainer settings;
 
+    QMap<QUrl, int>     itemsMap;
+
     DInfoInterface*     iface;
 };
 
@@ -77,13 +79,14 @@ TimeAdjustThread::~TimeAdjustThread()
 
 void TimeAdjustThread::setUpdatedDates(const QMap<QUrl, int>& itemsMap)
 {
+    d->itemsMap = itemsMap;
+
     ActionJobCollection collection;
 
     foreach (const QUrl& url, itemsMap.keys())
     {
         TimeAdjustTask* const t = new TimeAdjustTask(url, this);
         t->setSettings(d->settings);
-        t->setItemsMap(itemsMap);
 
         connect(t, SIGNAL(signalProcessStarted(QUrl)),
                 this, SIGNAL(signalProcessStarted(QUrl)));
@@ -102,13 +105,14 @@ void TimeAdjustThread::setUpdatedDates(const QMap<QUrl, int>& itemsMap)
 
 void TimeAdjustThread::setPreviewDates(const QMap<QUrl, int>& itemsMap)
 {
+    d->itemsMap = itemsMap;
+
     ActionJobCollection collection;
 
     foreach (const QUrl& url, itemsMap.keys())
     {
         TimePreviewTask* const t = new TimePreviewTask(url, this);
         t->setSettings(d->settings);
-        t->setItemsList(itemsMap);
 
         connect(t, SIGNAL(signalPreviewReady(QUrl,QDateTime,QDateTime)),
                 this, SIGNAL(signalPreviewReady(QUrl,QDateTime,QDateTime)));
@@ -259,6 +263,11 @@ QDateTime TimeAdjustThread::readMetadataTimestamp(const QUrl& url) const
     };
 
     return dateTime;
+}
+
+int TimeAdjustThread::indexForUrl(const QUrl& url) const
+{
+    return d->itemsMap.value(url);
 }
 
 } // namespace DigikamGenericTimeAdjustPlugin

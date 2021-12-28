@@ -58,6 +58,7 @@ public:
     /** Read the Used Timestamps for the url
      */
     QDateTime readTimestamp(const QUrl& url) const;
+    int       indexForUrl(const QUrl& url)   const;
 
 Q_SIGNALS:
 

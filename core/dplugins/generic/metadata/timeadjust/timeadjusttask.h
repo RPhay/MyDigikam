@@ -50,7 +50,6 @@ public:
     ~TimeAdjustTask() override;
 
     void setSettings(const TimeAdjustContainer& settings);
-    void setItemsMap(const QMap<QUrl, int>& itemsMap);
 
 Q_SIGNALS:
 
@@ -85,7 +84,6 @@ public:
     ~TimePreviewTask() override;
 
     void setSettings(const TimeAdjustContainer& settings);
-    void setItemsList(const QMap<QUrl, int>& itemsMap);
 
 Q_SIGNALS:
 
