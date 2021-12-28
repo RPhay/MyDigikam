@@ -131,7 +131,7 @@ BUGFIXES:
 121 ==> 407236 - MacOS: digiKam 6.1.0 application language switch issue.
 122 ==> 407237 - MacOS: Showfoto 6.1.0 application language switch issue
 123 ==> 447395 - digiKam freezes completely if too many pictures are processed in the Adjust Time & Date plugin.
-124 ==> 
+124 ==> 435772 - digiKam scans my entire collection every time I launch the program, even if "scan new items at startup" is disabled.
 125 ==> 
 126 ==> 
 127 ==> 
@@ -139,4 +139,13 @@ BUGFIXES:
 129 ==> 
 130 ==> 
 131 ==> 
-
+132 ==> 
+133 ==> 
+134 ==> 
+135 ==> 
+136 ==> 
+137 ==> 
+138 ==> 
+139 ==> 
+140 ==> 
+141 ==> 
