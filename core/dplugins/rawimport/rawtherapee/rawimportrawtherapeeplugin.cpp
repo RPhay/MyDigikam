@@ -6,7 +6,7 @@
  * Date        : 2019-09-18
  * Description : RawTherapee raw import plugin.
  *
- * Copyright (C) 2020 by Gilles Caulier <caulier dot gilles at gmail dot com>
+ * Copyright (C) 2019-2021 by Gilles Caulier <caulier dot gilles at gmail dot com>
  *
  * This program is free software; you can redistribute it
  * and/or modify it under the terms of the GNU General
@@ -64,7 +64,7 @@ public:
 
 RawTherapeeRawImportPlugin::RawTherapeeRawImportPlugin(QObject* const parent)
     : DPluginRawImport(parent),
-      d(new Private)
+      d               (new Private)
 {
 }
 
@@ -117,12 +117,12 @@ void RawTherapeeRawImportPlugin::setup(QObject* const /*parent*/)
 bool RawTherapeeRawImportPlugin::run(const QString& filePath, const DRawDecoding& /*def*/)
 {
     QFileInfo fileInfo(filePath);
-    d->props   = LoadingDescription(fileInfo.filePath(), LoadingDescription::ConvertForEditor);
-    d->decoded = DImg();
+    d->props       = LoadingDescription(fileInfo.filePath(), LoadingDescription::ConvertForEditor);
+    d->decoded     = DImg();
 
     QTemporaryFile tempFile;
     tempFile.open();
-    d->tempName = tempFile.fileName();
+    d->tempName    = tempFile.fileName();
 
     d->rawtherapee = new QProcess(this);
     d->rawtherapee->setProcessChannelMode(QProcess::MergedChannels);
@@ -171,23 +171,40 @@ void RawTherapeeRawImportPlugin::slotErrorOccurred(QProcess::ProcessError error)
     switch (error)
     {
         case QProcess::FailedToStart:
+        {
             qCDebug(DIGIKAM_GENERAL_LOG) << "RawTherapee :: Process has failed to start";
             break;
+        }
+
         case QProcess::Crashed:
+        {
             qCDebug(DIGIKAM_GENERAL_LOG) << "RawTherapee :: Process has crashed";
             break;
+        }
+
         case QProcess::Timedout:
+        {
             qCDebug(DIGIKAM_GENERAL_LOG) << "RawTherapee :: Process time-out";
             break;
+        }
+
         case QProcess::WriteError:
+        {
             qCDebug(DIGIKAM_GENERAL_LOG) << "RawTherapee :: Process write error";
             break;
+        }
+
         case QProcess::ReadError:
+        {
             qCDebug(DIGIKAM_GENERAL_LOG) << "RawTherapee :: Process read error";
             break;
+        }
+
         default:
+        {
             qCDebug(DIGIKAM_GENERAL_LOG) << "RawTherapee :: Process error unknown";
             break;
+        }
     }
 }
 
@@ -205,6 +222,7 @@ void RawTherapeeRawImportPlugin::slotProcessFinished(int code, QProcess::ExitSta
 
         qCDebug(DIGIKAM_GENERAL_LOG) << "Decoded image is null! Load with Native tool...";
         qCDebug(DIGIKAM_GENERAL_LOG) << d->props.filePath;
+
         emit signalLoadRaw(d->props);
     }
     else
@@ -212,6 +230,7 @@ void RawTherapeeRawImportPlugin::slotProcessFinished(int code, QProcess::ExitSta
         qCDebug(DIGIKAM_GENERAL_LOG) << "Decoded image is not null...";
         qCDebug(DIGIKAM_GENERAL_LOG) << d->props.filePath;
         d->props = LoadingDescription(d->tempName, LoadingDescription::ConvertForEditor);
+
         emit signalDecodedImage(d->props, d->decoded);
     }
 

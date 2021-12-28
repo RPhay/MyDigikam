@@ -100,6 +100,7 @@ bool RawImportNativePlugin::run(const QString& filePath, const DRawDecoding& def
     RawImport* const rawImport = new RawImport(QUrl::fromLocalFile(filePath), core);
     rawImport->setProperty("DPluginIId",      iid());
     rawImport->setProperty("DPluginIfaceIId", ifaceIid());
+    rawImport->setPlugin(this);
 
     EditorToolIface::editorToolIface()->loadTool(rawImport);
 

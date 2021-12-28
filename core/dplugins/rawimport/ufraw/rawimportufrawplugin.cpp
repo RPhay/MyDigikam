@@ -6,7 +6,7 @@
  * Date        : 2019-09-18
  * Description : UFRaw raw import plugin.
  *
- * Copyright (C) 2020 by Gilles Caulier <caulier dot gilles at gmail dot com>
+ * Copyright (C) 2019-2021 by Gilles Caulier <caulier dot gilles at gmail dot com>
  *
  * This program is free software; you can redistribute it
  * and/or modify it under the terms of the GNU General
@@ -51,7 +51,7 @@ class Q_DECL_HIDDEN UFRawRawImportPlugin::Private
 public:
 
     explicit Private()
-      : ufraw(nullptr),
+      : ufraw   (nullptr),
         tempFile(nullptr)
     {
     }
@@ -65,7 +65,7 @@ public:
 
 UFRawRawImportPlugin::UFRawRawImportPlugin(QObject* const parent)
     : DPluginRawImport(parent),
-      d(new Private)
+      d               (new Private)
 {
 }
 
@@ -164,23 +164,40 @@ void UFRawRawImportPlugin::slotErrorOccurred(QProcess::ProcessError error)
     switch (error)
     {
         case QProcess::FailedToStart:
+        {
             qCDebug(DIGIKAM_GENERAL_LOG) << "UFRaw :: Process has failed to start";
             break;
+        }
+
         case QProcess::Crashed:
+        {
             qCDebug(DIGIKAM_GENERAL_LOG) << "UFRaw :: Process has crashed";
             break;
+        }
+
         case QProcess::Timedout:
+        {
             qCDebug(DIGIKAM_GENERAL_LOG) << "UFRaw :: Process time-out";
             break;
+        }
+
         case QProcess::WriteError:
+        {
             qCDebug(DIGIKAM_GENERAL_LOG) << "UFRaw :: Process write error";
             break;
+        }
+
         case QProcess::ReadError:
+        {
             qCDebug(DIGIKAM_GENERAL_LOG) << "UFRaw :: Process read error";
             break;
+        }
+
         default:
+        {
             qCDebug(DIGIKAM_GENERAL_LOG) << "UFRaw :: Process error unknown";
             break;
+        }
     }
 }
 
@@ -198,6 +215,7 @@ void UFRawRawImportPlugin::slotProcessFinished(int code, QProcess::ExitStatus st
 
         qCDebug(DIGIKAM_GENERAL_LOG) << "Decoded image is null! Load with Native tool...";
         qCDebug(DIGIKAM_GENERAL_LOG) << d->props.filePath;
+
         emit signalLoadRaw(d->props);
     }
     else
@@ -205,6 +223,7 @@ void UFRawRawImportPlugin::slotProcessFinished(int code, QProcess::ExitStatus st
         qCDebug(DIGIKAM_GENERAL_LOG) << "Decoded image is not null...";
         qCDebug(DIGIKAM_GENERAL_LOG) << d->props.filePath;
         d->props = LoadingDescription(d->tempFile->fileName(), LoadingDescription::ConvertForEditor);
+
         emit signalDecodedImage(d->props, d->decoded);
     }
 

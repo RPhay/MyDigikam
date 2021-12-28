@@ -55,8 +55,8 @@ public:
     explicit EditorTool(QObject* const parent);
     ~EditorTool()                               override;
 
-    void setPlugin(DPluginEditor* const plugin);
-    DPluginEditor* plugin()               const;
+    void setPlugin(DPlugin* const plugin);
+    DPlugin* plugin()                     const;
 
     /**
      * Called by editor tool interface to initialized tool when all is ready, through slotInit().

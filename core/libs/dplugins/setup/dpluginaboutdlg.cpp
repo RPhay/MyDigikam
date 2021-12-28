@@ -63,7 +63,7 @@ DPluginAboutDlg::DPluginAboutDlg(DPlugin* const tool, QWidget* const parent)
                    Qt::WindowCloseButtonHint     |
                    Qt::WindowMinMaxButtonsHint);
 
-    setModal(false);
+    setModal(true);
     setWindowTitle(i18nc("@title", "About %1 Plugin", tool->name()));
 
     QDialogButtonBox* const buttons = new QDialogButtonBox(QDialogButtonBox::Ok, this);

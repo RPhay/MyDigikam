@@ -6,7 +6,7 @@
  * Date        : 2019-09-18
  * Description : DarkTable raw import plugin.
  *
- * Copyright (C) 2019      by Gilles Caulier <caulier dot gilles at gmail dot com>
+ * Copyright (C) 2019-2021 by Gilles Caulier <caulier dot gilles at gmail dot com>
  *
  * Lua script inspired from Darktable Gimp plugin by Tobias Ellinghaus
  *
@@ -107,7 +107,7 @@ const QString DarkTableRawImportPlugin::Private::luaScriptData = QLatin1String(
 
 DarkTableRawImportPlugin::DarkTableRawImportPlugin(QObject* const parent)
     : DPluginRawImport(parent),
-      d(new Private)
+      d               (new Private)
 {
     d->luaFile.open();
     QTextStream stream(&d->luaFile);
@@ -169,7 +169,7 @@ bool DarkTableRawImportPlugin::run(const QString& filePath, const DRawDecoding& 
 
     QTemporaryFile tempFile;
     tempFile.open();
-    d->tempName = tempFile.fileName();
+    d->tempName  = tempFile.fileName();
 
     d->darktable = new QProcess(this);
     d->darktable->setProcessChannelMode(QProcess::MergedChannels);
@@ -226,23 +226,40 @@ void DarkTableRawImportPlugin::slotErrorOccurred(QProcess::ProcessError error)
     switch (error)
     {
         case QProcess::FailedToStart:
+        {
             qCDebug(DIGIKAM_GENERAL_LOG) << "DarkTable :: Process has failed to start";
             break;
+        }
+
         case QProcess::Crashed:
+        {
             qCDebug(DIGIKAM_GENERAL_LOG) << "DarkTable :: Process has crashed";
             break;
+        }
+
         case QProcess::Timedout:
+        {
             qCDebug(DIGIKAM_GENERAL_LOG) << "DarkTable :: Process time-out";
             break;
+        }
+
         case QProcess::WriteError:
+        {
             qCDebug(DIGIKAM_GENERAL_LOG) << "DarkTable :: Process write error";
             break;
+        }
+
         case QProcess::ReadError:
+        {
             qCDebug(DIGIKAM_GENERAL_LOG) << "DarkTable :: Process read error";
             break;
+        }
+
         default:
+        {
             qCDebug(DIGIKAM_GENERAL_LOG) << "DarkTable :: Process error unknown";
             break;
+        }
     }
 }
 
@@ -260,6 +277,7 @@ void DarkTableRawImportPlugin::slotProcessFinished(int code, QProcess::ExitStatu
 
         qCDebug(DIGIKAM_GENERAL_LOG) << "Decoded image is null! Load with Native tool...";
         qCDebug(DIGIKAM_GENERAL_LOG) << d->props.filePath;
+
         emit signalLoadRaw(d->props);
     }
     else
@@ -267,6 +285,7 @@ void DarkTableRawImportPlugin::slotProcessFinished(int code, QProcess::ExitStatu
         qCDebug(DIGIKAM_GENERAL_LOG) << "Decoded image is not null...";
         qCDebug(DIGIKAM_GENERAL_LOG) << d->props.filePath;
         d->props = LoadingDescription(d->tempName, LoadingDescription::ConvertForEditor);
+
         emit signalDecodedImage(d->props, d->decoded);
     }
 

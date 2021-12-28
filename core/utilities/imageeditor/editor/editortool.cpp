@@ -83,7 +83,7 @@ public:
 
     FilterAction::Category category;
 
-    DPluginEditor*         plugin;
+    DPlugin*               plugin;
 };
 
 const QString EditorTool::Private::configGroupName(QLatin1String("ImageViewer Settings"));
@@ -110,7 +110,7 @@ EditorTool::~EditorTool()
     delete d;
 }
 
-void EditorTool::setPlugin(DPluginEditor* const plugin)
+void EditorTool::setPlugin(DPlugin* const plugin)
 {
     d->plugin = plugin;
     setToolName(d->plugin->name());
@@ -118,7 +118,7 @@ void EditorTool::setPlugin(DPluginEditor* const plugin)
     d->settings->setTool(this);
 }
 
-DPluginEditor* EditorTool::plugin() const
+DPlugin* EditorTool::plugin() const
 {
     return d->plugin;
 }
