@@ -84,14 +84,13 @@ public:
     /// Check if at least one option is selected
     bool atLeastOneUpdateToProcess()                                const;
 
-    QDateTime calculateAdjustedDate(const QDateTime& originalTime);
+    QDateTime calculateAdjustedDate(const QDateTime& originalTime, int index = 0);
     QDateTime getDateTimeFromUrl(const QUrl& url)                   const;
 
 public:
 
     QDateTime customDate;
     QDateTime customTime;
-    QDateTime intervalTime;
     QDateTime adjustmentTime;
 
     bool      updIfAvailable;

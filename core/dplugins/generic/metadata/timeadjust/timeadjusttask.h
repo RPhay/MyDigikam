@@ -8,7 +8,7 @@
  *
  * Copyright (C) 2012      by Smit Mehta <smit dot meh at gmail dot com>
  * Copyright (C) 2006-2021 by Gilles Caulier <caulier dot gilles at gmail dot com>
- * Copyright (c) 2018      by Maik Qualmann <metzpinguin at gmail dot com>
+ * Copyright (c) 2018-2021 by Maik Qualmann <metzpinguin at gmail dot com>
  *
  * This program is free software; you can redistribute it
  * and/or modify it under the terms of the GNU General
@@ -31,6 +31,7 @@
 
 // Local includes
 
+#include "timeadjustthread.h"
 #include "actionthreadbase.h"
 #include "timeadjustcontainer.h"
 
@@ -45,17 +46,17 @@ class TimeAdjustTask : public ActionJob
 
 public:
 
-    explicit TimeAdjustTask(const QUrl& url);
+    explicit TimeAdjustTask(const QUrl& url, TimeAdjustThread* const thread);
     ~TimeAdjustTask() override;
 
     void setSettings(const TimeAdjustContainer& settings);
-    void setItemsMap(const QMap<QUrl, QDateTime>& itemsMap);
+    void setItemsMap(const QMap<QUrl, int>& itemsMap);
 
 Q_SIGNALS:
 
     void signalProcessStarted(const QUrl&);
-    void signalProcessEnded(const QUrl&, int);
     void signalDateTimeForUrl(const QUrl&, const QDateTime&, bool);
+    void signalProcessEnded(const QUrl&, const QDateTime&, const QDateTime&, int);
 
 protected:
 
@@ -65,6 +66,39 @@ private:
 
     // Disable
     TimeAdjustTask(QObject*) = delete;
+
+private:
+
+    class Private;
+    Private* const d;
+};
+
+// ------------------------------------------------------------------
+
+class TimePreviewTask : public ActionJob
+{
+    Q_OBJECT
+
+public:
+
+    explicit TimePreviewTask(const QUrl& url, TimeAdjustThread* const thread);
+    ~TimePreviewTask() override;
+
+    void setSettings(const TimeAdjustContainer& settings);
+    void setItemsList(const QMap<QUrl, int>& itemsMap);
+
+Q_SIGNALS:
+
+    void signalPreviewReady(const QUrl&, const QDateTime&, const QDateTime&);
+
+protected:
+
+    void run() override;
+
+private:
+
+    // Disable
+    TimePreviewTask(QObject*) = delete;
 
 private:
 

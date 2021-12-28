@@ -8,7 +8,7 @@
  *
  * Copyright (C) 2012      by Smit Mehta <smit dot meh at gmail dot com>
  * Copyright (C) 2012-2015 by Gilles Caulier <caulier dot gilles at gmail dot com>
- * Copyright (c) 2018      by Maik Qualmann <metzpinguin at gmail dot com>
+ * Copyright (c) 2018-2021 by Maik Qualmann <metzpinguin at gmail dot com>
  *
  * This program is free software; you can redistribute it
  * and/or modify it under the terms of the GNU General
@@ -48,13 +48,16 @@ TimeAdjustList::TimeAdjustList(QWidget* const parent)
                           i18n("Status"), true);
 
     listView()->header()->setSectionResizeMode(QHeaderView::Stretch);
+    listView()->setUniformRowHeights(true);
 }
 
 TimeAdjustList::~TimeAdjustList()
 {
 }
 
-void TimeAdjustList::setItemDates(const QMap<QUrl, QDateTime>& map, FieldType type)
+void TimeAdjustList::setStatus(const QUrl& url,
+                               const QDateTime& org,
+                               const QDateTime& adj, int status)
 {
     QString dateTimeFormat = QLocale().dateFormat(QLocale::ShortFormat);
 
@@ -66,56 +69,71 @@ void TimeAdjustList::setItemDates(const QMap<QUrl, QDateTime>& map, FieldType ty
 
     dateTimeFormat.append(QLatin1String(" hh:mm:ss"));
 
-    foreach (const QUrl& url, map.keys())
+    DItemsListViewItem* const item = listView()->findItem(url);
+
+    if (item)
     {
-        DItemsListViewItem* const item = listView()->findItem(url);
+        QStringList errors;
 
-        if (item)
+        if (status & META_TIME_ERROR)
         {
-            QDateTime dt = map.value(url);
+            errors << i18n("Failed to update metadata timestamp");
+        }
 
-            if (dt.isValid())
-            {
-                item->setText(type, dt.toString(dateTimeFormat));
-            }
-            else
-            {
-                item->setText(type, i18n("not valid"));
-            }
+        if (status & FILE_TIME_ERROR)
+        {
+            errors << i18n("Failed to update file timestamp");
+        }
+
+        if      (status & CLRSTATUS_ERROR)
+        {
+            item->setText(STATUS, QLatin1String(""));
+        }
+        else if (errors.isEmpty())
+        {
+            item->setText(STATUS, i18n("Processed without error"));
+        }
+        else
+        {
+            item->setText(STATUS, errors.join(QLatin1String(" | ")));
+        }
+
+        if (org.isValid())
+        {
+            item->setText(TIMESTAMP_USED, org.toString(dateTimeFormat));
+        }
+        else
+        {
+            item->setText(TIMESTAMP_USED, i18n("not valid"));
+        }
+
+        if (adj.isValid())
+        {
+            item->setText(TIMESTAMP_UPDATED, adj.toString(dateTimeFormat));
+        }
+        else
+        {
+            item->setText(TIMESTAMP_UPDATED, i18n("not valid"));
         }
     }
 }
 
-void TimeAdjustList::setStatus(const QMap<QUrl, int>& status)
+void TimeAdjustList::setWaitStatus()
 {
-    foreach (const QUrl& url, status.keys())
+    QTreeWidgetItemIterator it(listView());
+
+    while (*it)
     {
-        DItemsListViewItem* const item = listView()->findItem(url);
+        DItemsListViewItem* const item = dynamic_cast<DItemsListViewItem*>(*it);
 
         if (item)
         {
-            QStringList errors;
-            int         flags = status.value(url);
-
-            if (flags & META_TIME_ERROR)
-            {
-                errors << i18n("Failed to update metadata timestamp");
-            }
-
-            if (flags & FILE_TIME_ERROR)
-            {
-                errors << i18n("Failed to update file timestamp");
-            }
-
-            if (errors.isEmpty())
-            {
-                item->setText(STATUS, i18n("Processed without error"));
-            }
-            else
-            {
-                item->setText(STATUS, errors.join(QLatin1String(" | ")));
-            }
+            item->setText(STATUS,            i18n("Please wait ..."));
+            item->setText(TIMESTAMP_USED,    QLatin1String(""));
+            item->setText(TIMESTAMP_UPDATED, QLatin1String(""));
         }
+
+        ++it;
     }
 }
 

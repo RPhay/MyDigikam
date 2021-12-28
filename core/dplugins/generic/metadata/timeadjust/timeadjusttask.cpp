@@ -8,7 +8,7 @@
  *
  * Copyright (C) 2012      by Smit Mehta <smit dot meh at gmail dot com>
  * Copyright (C) 2006-2021 by Gilles Caulier <caulier dot gilles at gmail dot com>
- * Copyright (c) 2018      by Maik Qualmann <metzpinguin at gmail dot com>
+ * Copyright (c) 2018-2021 by Maik Qualmann <metzpinguin at gmail dot com>
  *
  * This program is free software; you can redistribute it
  * and/or modify it under the terms of the GNU General
@@ -48,23 +48,29 @@ class Q_DECL_HIDDEN TimeAdjustTask::Private
 public:
 
     explicit Private()
+      : thread(nullptr)
     {
     }
 
     QUrl                  url;
 
     // Settings from GUI.
+
     TimeAdjustContainer   settings;
 
-    // Map of item urls and Updated Timestamps.
-    QMap<QUrl, QDateTime> itemsMap;
+    // Map of item urls and index.
+
+    QMap<QUrl, int>       itemsMap;
+
+    TimeAdjustThread*     thread;
 };
 
-TimeAdjustTask::TimeAdjustTask(const QUrl& url)
+TimeAdjustTask::TimeAdjustTask(const QUrl& url, TimeAdjustThread* const thread)
     : ActionJob(),
       d(new Private)
 {
-    d->url = url;
+    d->url    = url;
+    d->thread = thread;
 }
 
 TimeAdjustTask::~TimeAdjustTask()
@@ -78,7 +84,7 @@ void TimeAdjustTask::setSettings(const TimeAdjustContainer& settings)
     d->settings = settings;
 }
 
-void TimeAdjustTask::setItemsMap(const QMap<QUrl, QDateTime>& itemsMap)
+void TimeAdjustTask::setItemsMap(const QMap<QUrl, int>& itemsMap)
 {
     d->itemsMap = itemsMap;
 }
@@ -86,16 +92,24 @@ void TimeAdjustTask::setItemsMap(const QMap<QUrl, QDateTime>& itemsMap)
 void TimeAdjustTask::run()
 {
     if (m_cancel)
+    {
         return;
+    }
 
     emit signalProcessStarted(d->url);
 
-    QDateTime dt = d->itemsMap.value(d->url);
+    QDateTime org = d->thread->readTimestamp(d->url);
+    QDateTime adj = d->settings.calculateAdjustedDate(org, d->itemsMap.value(d->url));
 
-    if (!dt.isValid())
+    if (!adj.isValid())
     {
-        emit signalProcessEnded(d->url, TimeAdjustList::META_TIME_ERROR);
+        emit signalProcessEnded(d->url, org, adj, TimeAdjustList::META_TIME_ERROR);
         emit signalDone();
+        return;
+    }
+
+    if (m_cancel)
+    {
         return;
     }
 
@@ -130,7 +144,7 @@ void TimeAdjustTask::run()
                         !meta->getExifTagString("Exif.Image.DateTime").isEmpty())
                     {
                         ret &= meta->setExifTagString("Exif.Image.DateTime",
-                                                      dt.toString(exifDateTimeFormat));
+                                                      adj.toString(exifDateTimeFormat));
                     }
                 }
 
@@ -140,7 +154,7 @@ void TimeAdjustTask::run()
                         !meta->getExifTagString("Exif.Photo.DateTimeOriginal").isEmpty())
                     {
                         ret &= meta->setExifTagString("Exif.Photo.DateTimeOriginal",
-                                                      dt.toString(exifDateTimeFormat));
+                                                      adj.toString(exifDateTimeFormat));
                     }
                 }
 
@@ -150,7 +164,7 @@ void TimeAdjustTask::run()
                         !meta->getExifTagString("Exif.Photo.DateTimeDigitized").isEmpty())
                     {
                         ret &= meta->setExifTagString("Exif.Photo.DateTimeDigitized",
-                                                      dt.toString(exifDateTimeFormat));
+                                                      adj.toString(exifDateTimeFormat));
                     }
                 }
 
@@ -160,7 +174,7 @@ void TimeAdjustTask::run()
                         !meta->getExifTagString("Exif.Image.PreviewDateTime").isEmpty())
                    {
                        ret &= meta->setExifTagString("Exif.Image.PreviewDateTime",
-                                                     dt.toString(exifDateTimeFormat));
+                                                     adj.toString(exifDateTimeFormat));
                    }
                 }
             }
@@ -178,14 +192,14 @@ void TimeAdjustTask::run()
                         !meta->getIptcTagString("Iptc.Application2.DateCreated").isEmpty())
                     {
                         ret &= meta->setIptcTagString("Iptc.Application2.DateCreated",
-                                                      dt.date().toString(Qt::ISODate));
+                                                      adj.date().toString(Qt::ISODate));
                     }
 
                     if (!d->settings.updIfAvailable ||
                         !meta->getIptcTagString("Iptc.Application2.TimeCreated").isEmpty())
                     {
                         ret &= meta->setIptcTagString("Iptc.Application2.TimeCreated",
-                                                      dt.time().toString(Qt::ISODate));
+                                                      adj.time().toString(Qt::ISODate));
                     }
                 }
                 else
@@ -202,42 +216,42 @@ void TimeAdjustTask::run()
                         !meta->getXmpTagString("Xmp.exif.DateTimeOriginal").isEmpty())
                     {
                         ret &= meta->setXmpTagString("Xmp.exif.DateTimeOriginal",
-                                                     dt.toString(xmpDateTimeFormat));
+                                                     adj.toString(xmpDateTimeFormat));
                     }
 
                     if (!d->settings.updIfAvailable ||
                         !meta->getXmpTagString("Xmp.photoshop.DateCreated").isEmpty())
                     {
                         ret &= meta->setXmpTagString("Xmp.photoshop.DateCreated",
-                                                     dt.toString(xmpDateTimeFormat));
+                                                     adj.toString(xmpDateTimeFormat));
                     }
 
                     if (!d->settings.updIfAvailable ||
                         !meta->getXmpTagString("Xmp.tiff.DateTime").isEmpty())
                     {
                         ret &= meta->setXmpTagString("Xmp.tiff.DateTime",
-                                                     dt.toString(xmpDateTimeFormat));
+                                                     adj.toString(xmpDateTimeFormat));
                     }
 
                     if (!d->settings.updIfAvailable ||
                         !meta->getXmpTagString("Xmp.xmp.CreateDate").isEmpty())
                     {
                         ret &= meta->setXmpTagString("Xmp.xmp.CreateDate",
-                                                     dt.toString(xmpDateTimeFormat));
+                                                     adj.toString(xmpDateTimeFormat));
                     }
 
                     if (!d->settings.updIfAvailable ||
                         !meta->getXmpTagString("Xmp.xmp.MetadataDate").isEmpty())
                     {
                         ret &= meta->setXmpTagString("Xmp.xmp.MetadataDate",
-                                                     dt.toString(xmpDateTimeFormat));
+                                                     adj.toString(xmpDateTimeFormat));
                     }
 
                     if (!d->settings.updIfAvailable ||
                         !meta->getXmpTagString("Xmp.xmp.ModifyDate").isEmpty())
                     {
                         ret &= meta->setXmpTagString("Xmp.xmp.ModifyDate",
-                                                     dt.toString(xmpDateTimeFormat));
+                                                     adj.toString(xmpDateTimeFormat));
                     }
                 }
                 else
@@ -254,28 +268,28 @@ void TimeAdjustTask::run()
                         !meta->getXmpTagString("Xmp.video.DateTimeOriginal").isEmpty())
                     {
                         ret &= meta->setXmpTagString("Xmp.video.DateTimeOriginal",
-                                                     dt.toString(xmpDateTimeFormat));
+                                                     adj.toString(xmpDateTimeFormat));
                     }
 
                     if (!d->settings.updIfAvailable ||
                         !meta->getXmpTagString("Xmp.video.DateTimeDigitized").isEmpty())
                     {
                         ret &= meta->setXmpTagString("Xmp.video.DateTimeDigitized",
-                                                     dt.toString(xmpDateTimeFormat));
+                                                     adj.toString(xmpDateTimeFormat));
                     }
 
                     if (!d->settings.updIfAvailable ||
                         !meta->getXmpTagString("Xmp.video.ModificationDate").isEmpty())
                     {
                         ret &= meta->setXmpTagString("Xmp.video.ModificationDate",
-                                                     dt.toString(xmpDateTimeFormat));
+                                                     adj.toString(xmpDateTimeFormat));
                     }
 
                     if (!d->settings.updIfAvailable ||
                         !meta->getXmpTagString("Xmp.video.DateUTC").isEmpty())
                     {
                         ret &= meta->setXmpTagString("Xmp.video.DateUTC",
-                                                     dt.toUTC().toString(xmpDateTimeFormat));
+                                                     adj.toUTC().toString(xmpDateTimeFormat));
                     }
                 }
                 else
@@ -304,7 +318,7 @@ void TimeAdjustTask::run()
 
     if (d->settings.updFileModDate)
     {
-        if (!DFileOperations::setModificationTime(d->url.toLocalFile(), dt))
+        if (!DFileOperations::setModificationTime(d->url.toLocalFile(), adj))
         {
             status |= TimeAdjustList::FILE_TIME_ERROR;
         }
@@ -320,10 +334,72 @@ void TimeAdjustTask::run()
 
     if ((status & TimeAdjustList::META_TIME_ERROR) != TimeAdjustList::META_TIME_ERROR)
     {
-        emit signalDateTimeForUrl(d->url, dt, d->settings.updFileModDate);
+        emit signalDateTimeForUrl(d->url, adj, d->settings.updFileModDate);
     }
 
-    emit signalProcessEnded(d->url, status);
+    emit signalProcessEnded(d->url, org, adj, status);
+    emit signalDone();
+}
+
+// ------------------------------------------------------------------
+
+class Q_DECL_HIDDEN TimePreviewTask::Private
+{
+public:
+
+    explicit Private()
+      : thread(nullptr)
+    {
+    }
+
+    QUrl                  url;
+
+    // Settings from GUI.
+
+    TimeAdjustContainer   settings;
+
+    // Map of item urls and index for preview.
+
+    QMap<QUrl, int>       itemsMap;
+
+    TimeAdjustThread*     thread;
+};
+
+TimePreviewTask::TimePreviewTask(const QUrl& url, TimeAdjustThread* const thread)
+    : ActionJob(),
+      d(new Private)
+{
+    d->url    = url;
+    d->thread = thread;
+}
+
+TimePreviewTask::~TimePreviewTask()
+{
+    cancel();
+    delete d;
+}
+
+void TimePreviewTask::setSettings(const TimeAdjustContainer& settings)
+{
+    d->settings = settings;
+}
+
+void TimePreviewTask::setItemsList(const QMap<QUrl, int>& itemsMap)
+{
+    d->itemsMap = itemsMap;
+}
+
+void TimePreviewTask::run()
+{
+    if (m_cancel)
+    {
+        return;
+    }
+
+    QDateTime org = d->thread->readTimestamp(d->url);
+    QDateTime adj = d->settings.calculateAdjustedDate(org, d->itemsMap.value(d->url));
+
+    emit signalPreviewReady(d->url, org, adj);
     emit signalDone();
 }
 
