@@ -134,8 +134,8 @@ BUGFIXES:
 124 ==> 435772 - digiKam scans my entire collection every time I launch the program, even if "scan new items at startup" is disabled.
 125 ==> 447437 - Digikam::ImageQualityThread always crashing on macOS 12.1.
 126 ==> 447087 - Download new version not working.
-127 ==> 
-128 ==> 
+127 ==> 366092 - Individual database names are always reset to Database Name.
+128 ==> 373479 - Database on Server but Thumbnails local.
 129 ==> 
 130 ==> 
 131 ==> 
