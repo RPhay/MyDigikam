@@ -154,7 +154,9 @@ void ScanController::createProgressDialog()
     d->progressDialog->setWhatsThis(i18nc("@info",
                                           "This shows the progress of the scan. "
                                           "During the scan, all files on disk "
-                                          "are registered in a database."));
+                                          "are registered in a database. "
+                                          "Note: this dialog can appear automatically "
+                                          "if a previous scan of collections have not been fully completed."));
 
     d->progressDialog->setMaximum(1);
     d->progressDialog->setValue(0);
