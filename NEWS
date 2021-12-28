@@ -130,7 +130,7 @@ BUGFIXES:
 120 ==> 143947 - Scroll image with keyboard.
 121 ==> 407236 - MacOS: digiKam 6.1.0 application language switch issue.
 122 ==> 407237 - MacOS: Showfoto 6.1.0 application language switch issue
-123 ==> 
+123 ==> 447395 - digiKam freezes completely if too many pictures are processed in the Adjust Time & Date plugin.
 124 ==> 
 125 ==> 
 126 ==> 

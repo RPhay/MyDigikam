@@ -9,7 +9,7 @@
  * Copyright (C) 2012      by Smit Mehta <smit dot meh at gmail dot com>
  * Copyright (C) 2003-2005 by Jesper Pedersen <blackie at kde dot org>
  * Copyright (C) 2006-2021 by Gilles Caulier <caulier dot gilles at gmail dot com>
- * Copyright (c) 2018      by Maik Qualmann <metzpinguin at gmail dot com>
+ * Copyright (c) 2018-2021 by Maik Qualmann <metzpinguin at gmail dot com>
  *
  * This program is free software; you can redistribute it
  * and/or modify it under the terms of the GNU General
@@ -79,6 +79,7 @@ public:
 
     explicit Private()
       : settingsView(nullptr),
+        previewTimer(nullptr),
         updateTimer (nullptr),
         progressBar (nullptr),
         listView    (nullptr),
@@ -89,11 +90,9 @@ public:
 
     TimeAdjustSettings*   settingsView;
 
-    QMap<QUrl, QDateTime> itemsUsedMap;           // Map of item urls and Used Timestamps.
-    QMap<QUrl, QDateTime> itemsUpdatedMap;        // Map of item urls and Updated Timestamps.
-    QMap<QUrl, int>       itemsStatusMap;         // Map of item urls and status flag.
-    QList<QUrl>           itemsSortedList;        // List of item urls sorted in original order.
+    QMap<QUrl, int>       itemsUsedMap;           // Map of item urls and index.
 
+    QTimer*               previewTimer;
     QTimer*               updateTimer;
 
     DProgressWdg*         progressBar;
@@ -144,25 +143,29 @@ TimeAdjustDialog::TimeAdjustDialog(QWidget* const parent, DInfoInterface* const 
 
     // ----------------------------------------------------------------------------
 
+    d->previewTimer = new QTimer(this);
+    d->previewTimer->setSingleShot(true);
+    d->previewTimer->setInterval(500);
+
     d->updateTimer = new QTimer(this);
     d->updateTimer->setSingleShot(true);
-    d->updateTimer->setInterval(500);
+    d->updateTimer->setInterval(250);
+
+    connect(d->previewTimer, SIGNAL(timeout()),
+            this, SLOT(slotPreviewTimer()));
 
     connect(d->updateTimer, SIGNAL(timeout()),
-            this, SLOT(slotReadTimestamps()));
+            this, SLOT(slotUpdateTimer()));
 
     // -- Thread Slots/Signals ----------------------------------------------
 
-    d->thread = new TimeAdjustThread(this);
+    d->thread = new TimeAdjustThread(this, d->iface);
 
-    connect(d->thread, SIGNAL(finished()),
-            this, SLOT(slotThreadFinished()));
+    connect(d->thread, SIGNAL(signalProcessEnded(QUrl,QDateTime,QDateTime,int)),
+            this, SLOT(slotProcessEnded(QUrl,QDateTime,QDateTime,int)));
 
-    connect(d->thread, SIGNAL(signalProcessStarted(QUrl)),
-            this, SLOT(slotProcessStarted(QUrl)));
-
-    connect(d->thread, SIGNAL(signalProcessEnded(QUrl,int)),
-            this, SLOT(slotProcessEnded(QUrl,int)));
+    connect(d->thread, SIGNAL(signalPreviewReady(QUrl,QDateTime,QDateTime)),
+            this, SLOT(slotPreviewReady(QUrl,QDateTime,QDateTime)));
 
     connect(d->thread, SIGNAL(signalDateTimeForUrl(QUrl,QDateTime,bool)),
             d->iface, SLOT(slotDateTimeForUrl(QUrl,QDateTime,bool)));
@@ -170,53 +173,73 @@ TimeAdjustDialog::TimeAdjustDialog(QWidget* const parent, DInfoInterface* const 
     connect(d->progressBar, SIGNAL(signalProgressCanceled()),
             this, SLOT(slotCancelThread()));
 
-    // -- Dialog Slots/Signals -----------------------------------------------
+    connect(d->thread, SIGNAL(signalProcessStarted(QUrl)),
+            this, SLOT(slotProcessStarted(QUrl)));
 
-    connect(m_buttons->button(QDialogButtonBox::Ok), SIGNAL(clicked()),
-            this, SLOT(slotApplyClicked()));
+    connect(d->thread, SIGNAL(finished()),
+            this, SLOT(slotThreadFinished()));
+
+    // -- Dialog Slots/Signals -----------------------------------------------
 
     connect(m_buttons->button(QDialogButtonBox::Close), SIGNAL(clicked()),
             this, SLOT(slotCancelThread()));
 
-    connect(this, SIGNAL(finished(int)),
-            this, SLOT(slotDialogFinished()));
-
-    connect(d->settingsView, SIGNAL(signalSettingsChanged()),
+    connect(m_buttons->button(QDialogButtonBox::Ok), SIGNAL(clicked()),
             this, SLOT(slotUpdateTimestamps()));
 
     connect(d->settingsView, SIGNAL(signalSettingsChangedTool()),
-            this, SLOT(slotUpdateTimestamps()));
+            this, SLOT(slotPreviewTimestamps()));
+
+    connect(d->settingsView, SIGNAL(signalSettingsChanged()),
+            this, SLOT(slotPreviewTimestamps()));
+
+    connect(this, SIGNAL(finished(int)),
+            this, SLOT(slotDialogFinished()));
 
     // -----------------------------------------------------------------------
 
     setBusy(false);
     readSettings();
 
+    int index = 0;
+
     d->listView->setIface(d->iface);
     d->listView->loadImagesFromCurrentSelection();
 
     foreach (const QUrl& url, d->listView->imageUrls())
     {
-        d->itemsSortedList << url;
-        d->itemsUsedMap.insert(url, QDateTime());
+        d->itemsUsedMap.insert(url, index);
+        ++index;
     }
 
-    slotReadTimestamps();
+    slotPreviewTimestamps();
 }
 
 TimeAdjustDialog::~TimeAdjustDialog()
 {
+    if (d->thread->isRunning())
+    {
+        d->thread->cancel();
+        d->thread->wait();
+    }
+
     delete d;
 }
 
 void TimeAdjustDialog::closeEvent(QCloseEvent* e)
 {
-    if (!e)
+    if (d->thread->isRunning())
     {
+        d->thread->cancel();
+        d->thread->wait();
+
+        e->ignore();
+
         return;
     }
 
     slotDialogFinished();
+
     e->accept();
 }
 
@@ -285,174 +308,49 @@ void TimeAdjustDialog::saveSettings()
     group.writeEntry(QLatin1String("File Timestamp Type"),           prm.fileDateSource);
 }
 
-void TimeAdjustDialog::slotReadTimestamps()
+void TimeAdjustDialog::slotPreviewTimestamps()
 {
-    foreach (const QUrl& url, d->itemsSortedList)
+    if (d->thread->isRunning())
     {
-        d->itemsUsedMap.insert(url, QDateTime());
+        d->thread->cancel();
+        d->thread->wait();
     }
 
-    TimeAdjustContainer prm = d->settingsView->settings();
-
-    switch (prm.dateSource)
-    {
-        case TimeAdjustContainer::APPDATE:
-        {
-            readApplicationTimestamps();
-            break;
-        }
-
-        case TimeAdjustContainer::FILENAME:
-        {
-            readFileNameTimestamps();
-            break;
-        }
-
-        case TimeAdjustContainer::FILEDATE:
-        {
-            readFileTimestamps();
-            break;
-        }
-
-        case TimeAdjustContainer::METADATADATE:
-        {
-            readMetadataTimestamps();
-            break;
-        }
-
-        default:  // CUSTOMDATE
-        {
-            QDateTime dateTime(d->settingsView->settings().customDate.date(),
-                               d->settingsView->settings().customTime.time());
-
-            foreach (const QUrl& url, d->itemsSortedList)
-            {
-                d->itemsUsedMap.insert(url, dateTime);
-            }
-
-            break;
-        }
-    }
-
-    updateListView();
+    d->previewTimer->start();
 }
 
-void TimeAdjustDialog::readApplicationTimestamps()
+void TimeAdjustDialog::slotUpdateTimestamps()
 {
-    QList<QUrl> floatingDateItems;
-
-    foreach (const QUrl& url, d->itemsSortedList)
+    if (d->thread->isRunning())
     {
-        DItemInfo info(d->iface->itemInfo(url));
-
-        if (info.dateTime().isValid())
-        {
-            d->itemsUsedMap.insert(url, info.dateTime());
-        }
-        else
-        {
-            floatingDateItems.append(url);
-            d->itemsUsedMap.insert(url, QDateTime());
-        }
+        d->thread->cancel();
+        d->thread->wait();
     }
+
+    d->updateTimer->start();
 }
 
-void TimeAdjustDialog::readFileNameTimestamps()
+void TimeAdjustDialog::slotPreviewTimer()
 {
-    TimeAdjustContainer prm = d->settingsView->settings();
+    d->listView->setWaitStatus();
 
-    foreach (const QUrl& url, d->itemsSortedList)
-    {
-        d->itemsUsedMap.insert(url, prm.getDateTimeFromUrl(url));
-    }
+    d->thread->setSettings(d->settingsView->settings());
+    d->thread->setPreviewDates(d->itemsUsedMap);
+    d->thread->start();
 }
 
-void TimeAdjustDialog::readFileTimestamps()
+void TimeAdjustDialog::slotUpdateTimer()
 {
-    foreach (const QUrl& url, d->itemsSortedList)
-    {
-        QFileInfo fileInfo(url.toLocalFile());
-        d->itemsUsedMap.insert(url, fileInfo.lastModified());
-    }
-}
-
-void TimeAdjustDialog::readMetadataTimestamps()
-{
-    foreach (const QUrl& url, d->itemsSortedList)
-    {
-        QScopedPointer<DMetadata> meta(new DMetadata);
-
-        if (!meta->load(url.toLocalFile()))
-        {
-            d->itemsUsedMap.insert(url, QDateTime());
-            continue;
-        }
-
-        QDateTime curImageDateTime;
-        TimeAdjustContainer prm    = d->settingsView->settings();
-        QString exifDateTimeFormat = QLatin1String("yyyy:MM:dd hh:mm:ss");
-        QString xmpDateTimeFormat  = QLatin1String("yyyy-MM-ddThh:mm:ss");
-
-        switch (prm.metadataSource)
-        {
-            case TimeAdjustContainer::EXIFIPTCXMP:
-                curImageDateTime = meta->getItemDateTime();
-                break;
-
-            case TimeAdjustContainer::EXIFCREATED:
-                curImageDateTime = QDateTime::fromString(meta->getExifTagString("Exif.Image.DateTime"),
-                                                         exifDateTimeFormat);
-                break;
-
-            case TimeAdjustContainer::EXIFORIGINAL:
-                curImageDateTime = QDateTime::fromString(meta->getExifTagString("Exif.Photo.DateTimeOriginal"),
-                                                         exifDateTimeFormat);
-                break;
-
-            case TimeAdjustContainer::EXIFDIGITIZED:
-                curImageDateTime = QDateTime::fromString(meta->getExifTagString("Exif.Photo.DateTimeDigitized"),
-                                                         exifDateTimeFormat);
-                break;
-
-            case TimeAdjustContainer::IPTCCREATED:
-                // we have to truncate the timezone from the time, otherwise it cannot be converted to a QTime
-                curImageDateTime = QDateTime(QDate::fromString(meta->getIptcTagString("Iptc.Application2.DateCreated"),
-                                                               Qt::ISODate),
-                                             QTime::fromString(meta->getIptcTagString("Iptc.Application2.TimeCreated").left(8),
-                                                               Qt::ISODate));
-                break;
-
-            case TimeAdjustContainer::XMPCREATED:
-                curImageDateTime = QDateTime::fromString(meta->getXmpTagString("Xmp.xmp.CreateDate"),
-                                                         xmpDateTimeFormat);
-                break;
-
-            default:
-                // curImageDateTime stays invalid
-                break;
-        };
-
-        d->itemsUsedMap.insert(url, curImageDateTime);
-    }
-}
-
-void TimeAdjustDialog::slotApplyClicked()
-{
-    d->itemsStatusMap.clear();
-
-    TimeAdjustContainer prm = d->settingsView->settings();
+    d->listView->setWaitStatus();
 
     d->progressBar->show();
+    d->progressBar->setMaximum(d->itemsUsedMap.keys().size());
     d->progressBar->progressScheduled(i18nc("@info", "Adjust Time and Date"), true, true);
     d->progressBar->progressThumbnailChanged(QIcon::fromTheme(QLatin1String("appointment-new")).pixmap(22, 22));
-    d->progressBar->setMaximum(d->itemsUsedMap.keys().size());
-    d->thread->setSettings(prm);
-    d->thread->setUpdatedDates(d->itemsUpdatedMap);
 
-    if (!d->thread->isRunning())
-    {
-        d->thread->start();
-    }
+    d->thread->setSettings(d->settingsView->settings());
+    d->thread->setUpdatedDates(d->itemsUsedMap);
+    d->thread->start();
 
     setBusy(true);
 }
@@ -462,6 +360,7 @@ void TimeAdjustDialog::slotCancelThread()
     if (d->thread->isRunning())
     {
         d->thread->cancel();
+        d->thread->wait();
     }
 
     if (m_buttons->button(QDialogButtonBox::Ok)->isEnabled())
@@ -486,6 +385,7 @@ void TimeAdjustDialog::setBusy(bool busy)
     }
 
     m_buttons->button(QDialogButtonBox::Ok)->setEnabled(!busy);
+    d->settingsView->setEnabled(!busy);
 }
 
 void TimeAdjustDialog::slotProcessStarted(const QUrl& url)
@@ -493,46 +393,28 @@ void TimeAdjustDialog::slotProcessStarted(const QUrl& url)
     d->listView->processing(url);
 }
 
-void TimeAdjustDialog::slotProcessEnded(const QUrl& url, int status)
+void TimeAdjustDialog::slotPreviewReady(const QUrl& url,
+                                        const QDateTime& org,
+                                        const QDateTime& adj)
+{
+    d->listView->setStatus(url, org, adj);
+}
+
+void TimeAdjustDialog::slotProcessEnded(const QUrl& url,
+                                        const QDateTime& org,
+                                        const QDateTime& adj, int status)
 {
     d->listView->processed(url, (status == TimeAdjustList::NOPROCESS_ERROR));
-    d->itemsStatusMap.insert(url, status);
-    d->progressBar->setValue(d->progressBar->value()+1);
+    d->listView->setStatus(url, org, adj, status);
+
+    d->progressBar->setValue(d->progressBar->value() + 1);
 }
 
 void TimeAdjustDialog::slotThreadFinished()
 {
-    d->listView->setStatus(d->itemsStatusMap);
     setBusy(false);
     d->progressBar->hide();
     d->progressBar->progressCompleted();
-    saveSettings();
-}
-
-void TimeAdjustDialog::updateListView()
-{
-    QApplication::setOverrideCursor(Qt::WaitCursor);
-
-    TimeAdjustContainer prm = d->settingsView->settings();
-
-    d->listView->setItemDates(d->itemsUsedMap, TimeAdjustList::TIMESTAMP_USED);
-
-    // TODO : this loop can take a while, especially when items mist is huge.
-    //        Moving this loop code to ActionThread is the right way for the future.
-
-    foreach (const QUrl& url, d->itemsSortedList)
-    {
-        d->itemsUpdatedMap.insert(url, prm.calculateAdjustedDate(d->itemsUsedMap.value(url)));
-    }
-
-    d->listView->setItemDates(d->itemsUpdatedMap, TimeAdjustList::TIMESTAMP_UPDATED);
-
-    QApplication::restoreOverrideCursor();
-}
-
-void TimeAdjustDialog::slotUpdateTimestamps()
-{
-    d->updateTimer->start();
 }
 
 } // namespace DigikamGenericTimeAdjustPlugin

@@ -33,8 +33,8 @@ DItemsListView::DItemsListView(DItemsList* const parent)
 {
     setRootIsDecorated(false);
     setItemsExpandable(false);
-    setExpandsOnDoubleClick(false);
     setAlternatingRowColors(true);
+    setExpandsOnDoubleClick(false);
     setSelectionMode(QAbstractItemView::ExtendedSelection);
 
     enableDragAndDrop(true);

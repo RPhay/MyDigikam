@@ -8,7 +8,7 @@
  *
  * Copyright (C) 2012      by Smit Mehta <smit dot meh at gmail dot com>
  * Copyright (C) 2012-2021 by Gilles Caulier <caulier dot gilles at gmail dot com>
- * Copyright (c) 2018      by Maik Qualmann <metzpinguin at gmail dot com>
+ * Copyright (c) 2018-2021 by Maik Qualmann <metzpinguin at gmail dot com>
  *
  * This program is free software; you can redistribute it
  * and/or modify it under the terms of the GNU General
@@ -33,6 +33,7 @@
 
 // Local includes
 
+#include "dinfointerface.h"
 #include "actionthreadbase.h"
 #include "timeadjustcontainer.h"
 
@@ -47,19 +48,41 @@ class TimeAdjustThread : public ActionThreadBase
 
 public:
 
-    explicit TimeAdjustThread(QObject* const parent);
+    explicit TimeAdjustThread(QObject* const parent, DInfoInterface* const iface);
     ~TimeAdjustThread() override;
 
-    void setUpdatedDates(const QMap<QUrl, QDateTime>& itemsMap);
+    void setUpdatedDates(const QMap<QUrl, int>& itemsMap);
+    void setPreviewDates(const QMap<QUrl, int>& itemsMap);
     void setSettings(const TimeAdjustContainer& settings);
-    void cancel();
+
+    /** Read the Used Timestamps for the url
+     */
+    QDateTime readTimestamp(const QUrl& url) const;
 
 Q_SIGNALS:
 
     void signalProcessStarted(const QUrl&);
-    void signalProcessEnded(const QUrl&, int);
     void signalDateTimeForUrl(const QUrl&, const QDateTime&, bool);
-    void signalCancelTask();
+    void signalPreviewReady(const QUrl&, const QDateTime&, const QDateTime&);
+    void signalProcessEnded(const QUrl&, const QDateTime&, const QDateTime&, int);
+
+private:
+
+    /** Called by readTimestamp() to get host timestamps
+     */
+    QDateTime readApplicationTimestamp(const QUrl& url) const;
+
+    /** Called by readTimestamp() to get file name timestamp
+     */
+    QDateTime readFileNameTimestamp(const QUrl& url)    const;
+
+    /** Called by readTimestamp() to get file timestamp
+     */
+    QDateTime readFileTimestamp(const QUrl& url)        const;
+
+    /** Called by readTimestamp() to get file metadata timestamp
+     */
+    QDateTime readMetadataTimestamp(const QUrl& url)    const;
 
 public:
 
