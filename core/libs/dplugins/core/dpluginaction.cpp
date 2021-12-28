@@ -57,7 +57,9 @@ DPluginAction::ActionType DPluginAction::actionType() const
         case GenericTool:
         case GenericMetadata:
         case GenericView:
+        {
             return Generic;
+        }
 
         case EditorFile:
         case EditorColors:
@@ -65,10 +67,14 @@ DPluginAction::ActionType DPluginAction::actionType() const
         case EditorTransform:
         case EditorDecorate:
         case EditorFilters:
+        {
             return Editor;
+        }
 
         default:
+        {
             break;
+        }
     }
 
     return InvalidType;
@@ -97,31 +103,55 @@ QString DPluginAction::actionCategoryToString() const
     switch (actionCategory())
     {
         case GenericExport:
+        {
             return i18nc("@action: dplugin", "Export");
+        }
         case GenericImport:
+        {
             return i18nc("@action: dplugin", "Import");
+        }
         case GenericTool:
+        {
             return i18nc("@action: dplugin", "Tool");
+        }
         case GenericMetadata:
+        {
             return i18nc("@action: dplugin", "Metadata");
+        }
         case GenericView:
+        {
             return i18nc("@action: dplugin", "View");
+        }
 
         case EditorFile:
+        {
             return i18nc("@action: dplugin", "File");
+        }
         case EditorColors:
+        {
             return i18nc("@action: dplugin", "Color");
+        }
         case EditorEnhance:
+        {
             return i18nc("@action: dplugin", "Enhance");
+        }
         case EditorTransform:
+        {
             return i18nc("@action: dplugin", "Transform");
+        }
         case EditorDecorate:
+        {
             return i18nc("@action: dplugin", "Decorate");
+        }
         case EditorFilters:
+        {
             return i18nc("@action: dplugin", "Effects");
+        }
 
         default:
+        {
             break;
+        }
     }
 
     return i18nc("@action: dplugin", "Invalid");

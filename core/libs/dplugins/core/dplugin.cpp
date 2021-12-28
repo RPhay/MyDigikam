@@ -46,7 +46,7 @@ public:
 
 DPlugin::DPlugin(QObject* const parent)
     : QObject(parent),
-      d(new Private)
+      d      (new Private)
 {
 }
 

@@ -30,24 +30,24 @@
 namespace Digikam
 {
 
-DPluginAuthor::DPluginAuthor(const QString& n,
-                             const QString& e,
-                             const QString& y)
-    : name(n),
-      email(e),
-      years(y),
+DPluginAuthor::DPluginAuthor(const QString& _name,
+                             const QString& _email,
+                             const QString& _year)
+    : name (_name),
+      email(_email),
+      years(_year),
       roles(i18n("Developer"))
 {
 }
 
-DPluginAuthor::DPluginAuthor(const QString& n,
-                             const QString& e,
-                             const QString& y,
-                             const QString& r)
-    : name(n),
-      email(e),
-      years(y),
-      roles(r)
+DPluginAuthor::DPluginAuthor(const QString& _name,
+                             const QString& _email,
+                             const QString& _year,
+                             const QString& _role)
+    : name (_name),
+      email(_email),
+      years(_year),
+      roles(_role)
 {
 }
 
@@ -57,7 +57,13 @@ DPluginAuthor::~DPluginAuthor()
 
 QString DPluginAuthor::toString() const
 {
-    return (QString::fromLatin1("%1 <%2> %3 [%4]").arg(name).arg(email).arg(years).arg(roles));
+    return (
+            QString::fromLatin1("%1 <%2> %3 [%4]")
+            .arg(name)
+            .arg(email)
+            .arg(years)
+            .arg(roles)
+           );
 }
 
 } // namespace Digikam

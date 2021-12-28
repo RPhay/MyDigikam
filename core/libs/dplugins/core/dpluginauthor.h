@@ -39,14 +39,14 @@ class DIGIKAM_EXPORT DPluginAuthor
 {
 public:
 
-    DPluginAuthor(const QString& n,
-                  const QString& e,
-                  const QString& y);
+    DPluginAuthor(const QString& _nane,
+                  const QString& _email,
+                  const QString& _year);
 
-    DPluginAuthor(const QString& n,
-                  const QString& e,
-                  const QString& y,
-                  const QString& r);
+    DPluginAuthor(const QString& _name,
+                  const QString& _email,
+                  const QString& _year,
+                  const QString& _role);
 
     ~DPluginAuthor();
 

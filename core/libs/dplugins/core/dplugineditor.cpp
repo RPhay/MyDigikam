@@ -49,7 +49,7 @@ public:
 
 DPluginEditor::DPluginEditor(QObject* const parent)
     : DPlugin(parent),
-      d(new Private)
+      d      (new Private)
 {
 }
 
@@ -94,7 +94,7 @@ int DPluginEditor::count() const
             // NOTE: we will return the count of actions registered with the same parents,
             //       as each parent registered the same list of actions through setup().
 
-            if (!count)
+            if      (!count)
             {
                 parent = ac->parent(),
                 ++count;
@@ -133,6 +133,7 @@ QList<DPluginAction*> DPluginEditor::actions(QObject* const parent) const
     }
 
     std::sort(list.begin(), list.end(), DPluginAction::pluginActionLessThan);
+
     return list;
 }
 

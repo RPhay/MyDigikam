@@ -6,7 +6,7 @@
  * Date        : 2019-09-08
  * Description : RAW Import digiKam plugin definition.
  *
- * Copyright (C) 2020 by Gilles Caulier <caulier dot gilles at gmail dot com>
+ * Copyright (C) 2019-2021 by Gilles Caulier <caulier dot gilles at gmail dot com>
  *
  * This program is free software; you can redistribute it
  * and/or modify it under the terms of the GNU General
@@ -76,20 +76,20 @@ public:
 public:
 
     /**
-     * Function to re-implement to invoke Raw processor for a Raw file path.
-     * Default Raw decoding settings is also available.
+     * Function to re-implement used to invoke Raw processor for a Raw file path
+     * and a Default Raw decoding settings.
      */
     virtual bool run(const QString& path, const DRawDecoding& def) = 0;
 
 Q_SIGNALS:
 
     /**
-     * Signal to emit to notify host application to load Raw with these decoding settings.
+     * Signal emitted to notify host application to load Raw with these decoding settings.
      */
     void signalLoadRaw(const Digikam::LoadingDescription&);
 
     /**
-     * Signal to emit to notify host application to load pre-decoded Raw preprocessed with these decoding settings.
+     * Signal emitted to notify host application to load pre-decoded Raw preprocessed with these decoding settings.
      */
     void signalDecodedImage(const Digikam::LoadingDescription&, const Digikam::DImg&);
 };
