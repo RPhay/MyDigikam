@@ -161,8 +161,8 @@ BUGFIXES:
 151 ==> 290416 - Tilted photographs rotate watermarking.
 152 ==> 291537 - Local contrast enhancement tool: result really different than preview.
 153 ==> 298035 - Allow creation of directory trees during import.
-154 ==> 
-155 ==> 
+154 ==> 300041 - Can't multi-select tags!
+155 ==> 159209 - Wish: moving multiple albums using the tree view.
 156 ==> 
 157 ==> 
 158 ==> 
