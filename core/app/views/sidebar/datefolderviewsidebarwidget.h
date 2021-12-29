@@ -7,7 +7,7 @@
  * Description : Side Bar Widget for the date folder view.
  *
  * Copyright (C) 2009-2010 by Johannes Wienke <languitar at semipol dot de>
- * Copyright (C) 2010-2021 by Gilles Caulier <caulier dot gilles at gmail dot com>
+ * Copyright (C) 2010-2022 by Gilles Caulier <caulier dot gilles at gmail dot com>
  * Copyright (C) 2014      by Mohamed_Anwer <m_dot_anwer at gmx dot com>
  * Copyright (C) 2010      by Aditya Bhatt <adityabhatt1991 at gmail dot com>
  *

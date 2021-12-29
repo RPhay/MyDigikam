@@ -7,7 +7,7 @@
  * Description : a tool to show image using an OpenGL interface.
  *
  * Copyright (C) 2007-2008 by Markus Leuthold <kusi at forum dot titlis dot org>
- * Copyright (C) 2008-2021 by Gilles Caulier <caulier dot gilles at gmail dot com>
+ * Copyright (C) 2008-2022 by Gilles Caulier <caulier dot gilles at gmail dot com>
  *
  * This program is free software; you can redistribute it
  * and/or modify it under the terms of the GNU General

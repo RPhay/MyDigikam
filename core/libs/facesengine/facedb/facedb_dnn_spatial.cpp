@@ -6,7 +6,7 @@
  * Description : Face database interface for spatial storage of face embedding.
  *
  * Copyright (C) 2012-2013 by Marcel Wiesweg <marcel dot wiesweg at gmx dot de>
- * Copyright (C) 2010-2021 by Gilles Caulier <caulier dot gilles at gmail dot com>
+ * Copyright (C) 2010-2022 by Gilles Caulier <caulier dot gilles at gmail dot com>
  * Copyright (C)      2019 by Thanh Trung Dinh <dinhthanhtrung1996 at gmail dot com>
  * Copyright (C)      2020 by Nghia Duong <minhnghiaduong997 at gmail dot com>
  *

@@ -6,7 +6,7 @@
  * Date        : 2009-06-03
  * Description : A PGF IO file for DImg framework
  *
- * Copyright (C) 2009-2021 by Gilles Caulier <caulier dot gilles at gmail dot com>
+ * Copyright (C) 2009-2022 by Gilles Caulier <caulier dot gilles at gmail dot com>
  *
  * This implementation use LibPGF API <https://www.libpgf.org>
  *
