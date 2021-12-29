@@ -166,6 +166,6 @@ BUGFIXES:
 156 ==> 300293 - SCAN: when starting digiKam, it takes about 5 minutes.
 157 ==> 302444 - "Open in Terminal" requires Konsole to be installed (could use x-terminal-emulator).
 158 ==> 311394 - Import fails silently.
-159 ==> 
+159 ==> 447660 - Crash with "undefined symbol" when adding people tag to a photo.
 160 ==> 
 161 ==> 
