@@ -135,6 +135,8 @@ public:
     QToolButton*           useCustomDateTodayBtn;
 
     DExpanderBox*          settingsExpander;
+
+    QUrl                   currentItemUrl;
 };
 
 TimeAdjustSettings::TimeAdjustSettings(QWidget* const parent, bool timeAdjustTool)
@@ -578,10 +580,12 @@ void TimeAdjustSettings::slotDetAdjustmentByClockPhotoUrl(const QUrl& url)
 
 void TimeAdjustSettings::slotDetAdjustmentByClockPhotoDialog()
 {
-    // Determine the currently selected item and preselect it as clock photo
+    detAdjustmentByClockPhotoUrl(d->currentItemUrl);
+}
 
-    QUrl emptyUrl;
-    detAdjustmentByClockPhotoUrl(emptyUrl);
+void TimeAdjustSettings::setCurrentItemUrl(const QUrl& url)
+{
+    d->currentItemUrl = url;
 }
 
 } // namespace Digikam

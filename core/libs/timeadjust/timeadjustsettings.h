@@ -52,6 +52,7 @@ public:
     void setSettings(const TimeAdjustContainer& settings);
     TimeAdjustContainer settings() const;
     void detAdjustmentByClockPhotoUrl(const QUrl& url);
+    void setCurrentItemUrl(const QUrl& url);
 
 Q_SIGNALS:
 

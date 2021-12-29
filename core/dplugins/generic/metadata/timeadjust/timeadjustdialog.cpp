@@ -196,6 +196,13 @@ TimeAdjustDialog::TimeAdjustDialog(QWidget* const parent, DInfoInterface* const 
     connect(this, SIGNAL(finished(int)),
             this, SLOT(slotDialogFinished()));
 
+    connect(d->listView->listView(), &DItemsListView::itemSelectionChanged,
+            this, [this]()
+        {
+            d->settingsView->setCurrentItemUrl(d->listView->getCurrentUrl());
+        }
+    );
+
     // -----------------------------------------------------------------------
 
     setBusy(false);
