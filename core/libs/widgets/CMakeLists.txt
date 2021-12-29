@@ -66,6 +66,7 @@ set(libmainview_SRCS
     ${CMAKE_CURRENT_SOURCE_DIR}/mainview/thememanager_p.cpp
     ${CMAKE_CURRENT_SOURCE_DIR}/mainview/fullscreensettings.cpp
     ${CMAKE_SOURCE_DIR}/core/app/utils/digikam_globals.cpp
+    ${CMAKE_SOURCE_DIR}/core/app/utils/digikam_globals_bundles.cpp
 )
 
 set(libitemview_SRCS

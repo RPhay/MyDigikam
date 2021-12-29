@@ -188,7 +188,7 @@ int main(int argc, char* argv[])
 
     // See bug #438701
 
-    loadStdQtTranslationFiles(app);
+    installQtTranslationFiles(app);
 
     // ---
 

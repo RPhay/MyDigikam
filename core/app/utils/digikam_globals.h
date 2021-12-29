@@ -177,6 +177,13 @@ DIGIKAM_EXPORT bool isReadableImageFile(const QString& filePath);
 DIGIKAM_EXPORT void showRawCameraList();
 
 /**
+ * Style sheet for transparent QToolButtons over image and video preview.
+ */
+DIGIKAM_EXPORT QString toolButtonStyleSheet();
+
+// --- Static functions for the bundles ---
+
+/**
  * Return true if application run in AppImage bundle.
  */
 DIGIKAM_EXPORT bool isRunningInAppImageBundle();
@@ -197,19 +204,29 @@ DIGIKAM_EXPORT QProcessEnvironment adjustedEnvironmentForAppImage();
 DIGIKAM_EXPORT void tryInitDrMingw();
 
 /**
- * Style sheet for transparent QToolButtons over image and video preview.
- */
-DIGIKAM_EXPORT QString toolButtonStyleSheet();
-
-/**
  * Prefix of macOS Bundle to access to internal Unix hierarchy.
  */
 DIGIKAM_EXPORT QString macOSBundlePrefix();
 
 /**
+ * For bundles only, unload all Qt translation files at run-time in application instance.
+ */
+DIGIKAM_EXPORT void unloadQtTranslationFiles(QApplication& app);
+
+/**
  * For bundles only, load standard Qt translation files at run-time in application instance.
  */
 DIGIKAM_EXPORT void loadStdQtTranslationFiles(QApplication& app);
+
+/**
+ * For bundles only, load ECM Qt translation files at run-time in application instance.
+ */
+DIGIKAM_EXPORT void loadEcmQtTranslationFiles(QApplication& app);
+
+/**
+ * For bundles only, main function to manage all Qt translation files at run-time in application instance.
+ */
+DIGIKAM_EXPORT void installQtTranslationFiles(QApplication& app);
 
 } // namespace Digikam
 
