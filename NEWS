@@ -165,7 +165,7 @@ BUGFIXES:
 155 ==> 159209 - Wish: moving multiple albums using the tree view.
 156 ==> 300293 - SCAN: when starting digiKam, it takes about 5 minutes.
 157 ==> 302444 - "Open in Terminal" requires Konsole to be installed (could use x-terminal-emulator).
-158 ==> 
+158 ==> 311394 - Import fails silently.
 159 ==> 
 160 ==> 
 161 ==> 
