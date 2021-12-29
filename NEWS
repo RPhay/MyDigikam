@@ -139,16 +139,16 @@ BUGFIXES:
 129 ==> 276626 - Text decoration moves before placement and after undo.
 130 ==> 276846 - Nepomuk show Digikam internal/hidden tags.
 131 ==> 278540 - Sharpen tool processing very slow.
-132 ==> 
-133 ==> 
-134 ==> 
-135 ==> 
-136 ==> 
-137 ==> 
-138 ==> 
-139 ==> 
-140 ==> 
-141 ==> 
+132 ==> 275299 - Crash while navigating images.
+133 ==> 278748 - Crash when trying to use Color tool.
+134 ==> 280239 - digiKam crashes.
+135 ==> 284528 - digiKam crashes when browsing pictures with histogram displayed.
+136 ==> 285849 - digiKam crashes when resizing the crop area.
+137 ==> 286840 - digiKam crashes when try to use Color Effects from Image Editor.
+138 ==> 288823 - digiKam crash.
+139 ==> 302678 - Crash in calculate histogram (when doing Color Effects).
+140 ==> 312048 - digiKam crashes when try to edit with Color Effects.
+141 ==> 314833 - Showfoto crash.
 142 ==> 
 143 ==> 
 144 ==> 
@@ -159,3 +159,13 @@ BUGFIXES:
 149 ==> 
 150 ==> 
 151 ==> 
+152 ==> 
+153 ==> 
+154 ==> 
+155 ==> 
+156 ==> 
+157 ==> 
+158 ==> 
+159 ==> 
+160 ==> 
+161 ==> 
