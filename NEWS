@@ -138,7 +138,7 @@ BUGFIXES:
 128 ==> 373479 - Database on Server but Thumbnails local.
 129 ==> 276626 - Text decoration moves before placement and after undo.
 130 ==> 276846 - Nepomuk show Digikam internal/hidden tags.
-131 ==> 
+131 ==> 278540 - Sharpen tool processing very slow.
 132 ==> 
 133 ==> 
 134 ==> 
