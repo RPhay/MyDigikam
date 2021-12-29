@@ -6,7 +6,7 @@
  * Date        : 2019-09-20
  * Description : QImage DImg plugin.
  *
- * Copyright (C) 2020 by Gilles Caulier <caulier dot gilles at gmail dot com>
+ * Copyright (C) 2020-2021 by Gilles Caulier <caulier dot gilles at gmail dot com>
  *
  * This program is free software; you can redistribute it
  * and/or modify it under the terms of the GNU General
@@ -73,7 +73,7 @@ QString DImgQImagePlugin::description() const
 QString DImgQImagePlugin::details() const
 {
     return i18n("<p>This plugin allows users to load and save image using QImage plugins from Qt Framework.</p>"
-                "<p>See <a href='https://doc.qt.io/qt-5/qimage.html'>Qt Framework documentation</a> for details.</p>"
+                "<p>See <a href='https://doc.qt.io/qt-5/qimage.html#reading-and-writing-image-files'>Qt Framework documentation</a> for details.</p>"
     );
 }
 
