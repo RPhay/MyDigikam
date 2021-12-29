@@ -583,7 +583,8 @@ void TimeAdjustSettings::slotDetAdjustmentByClockPhotoDialog()
     detAdjustmentByClockPhotoUrl(d->currentItemUrl);
 }
 
-void TimeAdjustSettings::setCurrentItemUrl (const QUrl& url) {
+void TimeAdjustSettings::setCurrentItemUrl(const QUrl& url)
+{
     d->currentItemUrl = url;
 }
 
