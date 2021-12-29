@@ -137,7 +137,7 @@ BUGFIXES:
 127 ==> 366092 - Individual database names are always reset to Database Name.
 128 ==> 373479 - Database on Server but Thumbnails local.
 129 ==> 276626 - Text decoration moves before placement and after undo.
-130 ==> 
+130 ==> 276846 - Nepomuk show Digikam internal/hidden tags.
 131 ==> 
 132 ==> 
 133 ==> 
