@@ -160,7 +160,7 @@ BUGFIXES:
 150 ==> 287510 - Only import existing tags.
 151 ==> 290416 - Tilted photographs rotate watermarking.
 152 ==> 291537 - Local contrast enhancement tool: result really different than preview.
-153 ==> 
+153 ==> 298035 - Allow creation of directory trees during import.
 154 ==> 
 155 ==> 
 156 ==> 
