@@ -255,6 +255,22 @@ void loadStdQtTranslationFiles(QApplication& app)
             QLatin1String("qt"),
             QLatin1String("qtbase"),
             QLatin1String("qt_help"),
+
+#ifdef HAVE_QWEBENGINE
+
+            QLatin1String("qtwebengine"),
+            QLatin1String("qtdeclarative"),
+            QLatin1String("qtquickcontrols2"),
+            QLatin1String("qtmultimedia"),
+
+#endif
+
+#ifdef HAVE_QTXMLPATTERNS
+
+            QLatin1String("qtxmlpatterns"),
+
+#endif
+
         };
 
         foreach (const QString& catalog, qtCatalogs)
@@ -263,7 +279,7 @@ void loadStdQtTranslationFiles(QApplication& app)
 
             if (translator->load(locale, catalog, QLatin1String("_"), transPath))
             {
-                qCDebug(DIGIKAM_GENERAL_LOG) << "Loaded standard Qt translations"
+                qCDebug(DIGIKAM_GENERAL_LOG) << "Loaded Qt standard translations"
                                              << locale.name()
                                              << "from catalog"
                                              << catalog;
@@ -286,13 +302,19 @@ void loadEcmQtTranslationFiles(QApplication& app)
 
     const QStringList ecmCatalogs =
     {
+        QLatin1String("kauth5_qt"),
+        QLatin1String("kbookmarks5_qt"),
+        QLatin1String("kcodecs5_qt"),
         QLatin1String("kcompletion5_qt"),
         QLatin1String("kconfig5_qt"),
         QLatin1String("kcoreaddons5_qt"),
+        QLatin1String("kdbusaddons5_qt"),
+        QLatin1String("kglobalaccel5_qt"),
         QLatin1String("kitemviews5_qt"),
         QLatin1String("kwidgetsaddons5_qt"),
         QLatin1String("kwindowsystem5_qt"),
-        QLatin1String("seexpr2_qt"),
+        QLatin1String("solid5_qt"),
+        QLatin1String("kde5_xml_mimetypes"),
     };
 
     QStringList ecmLangs = KLocalizedString::languages();
@@ -328,12 +350,12 @@ void loadEcmQtTranslationFiles(QApplication& app)
 
     // The last added one has the highest precedence, so we iterate the list backwards.
 
-    QStringListIterator langIter(ecmLangs);
-    langIter.toBack();
+    QStringListIterator it(ecmLangs);
+    it.toBack();
 
-    while (langIter.hasPrevious())
+    while (it.hasPrevious())
     {
-        const QString& localeDirName = langIter.previous();
+        const QString& localeDirName = it.previous();
 
         foreach (const auto& catalog, ecmCatalogs)
         {
@@ -372,7 +394,10 @@ void loadEcmQtTranslationFiles(QApplication& app)
 
             if (translator->load(fullPath))
             {
-                qCDebug(DIGIKAM_GENERAL_LOG) << "Loaded ECM Qt translations from" << localeDirName << catalog;
+                qCDebug(DIGIKAM_GENERAL_LOG) << "Loaded Qt ECM translations"
+                                             << localeDirName
+                                             << "from catalog"
+                                             << catalog;
 
                 translator->setObjectName(QString::fromUtf8("QTranslator.%1.%2").arg(localeDirName, catalog));
                 app.installTranslator(translator);
