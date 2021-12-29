@@ -150,7 +150,7 @@ BUGFIXES:
 140 ==> 312048 - digiKam crashes when try to edit with Color Effects.
 141 ==> 314833 - Showfoto crash.
 142 ==> 282898 - Arrow key focus on left pane after applying tag by mouse.
-143 ==> 
+143 ==> 283054 - Import/add images is very slow at loading thumbnails.
 144 ==> 
 145 ==> 
 146 ==> 
