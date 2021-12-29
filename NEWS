@@ -163,7 +163,7 @@ BUGFIXES:
 153 ==> 298035 - Allow creation of directory trees during import.
 154 ==> 300041 - Can't multi-select tags!
 155 ==> 159209 - Wish: moving multiple albums using the tree view.
-156 ==> 
+156 ==> 300293 - SCAN: when starting digiKam, it takes about 5 minutes.
 157 ==> 
 158 ==> 
 159 ==> 
