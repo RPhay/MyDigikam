@@ -149,7 +149,7 @@ BUGFIXES:
 139 ==> 302678 - Crash in calculate histogram (when doing Color Effects).
 140 ==> 312048 - digiKam crashes when try to edit with Color Effects.
 141 ==> 314833 - Showfoto crash.
-142 ==> 
+142 ==> 282898 - Arrow key focus on left pane after applying tag by mouse.
 143 ==> 
 144 ==> 
 145 ==> 
