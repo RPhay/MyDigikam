@@ -49,6 +49,7 @@ TimeAdjustList::TimeAdjustList(QWidget* const parent)
 
     listView()->header()->setSectionResizeMode(QHeaderView::Stretch);
     listView()->setUniformRowHeights(true);
+    listView()->setSelectionMode(QAbstractItemView::SingleSelection);
 }
 
 TimeAdjustList::~TimeAdjustList()
