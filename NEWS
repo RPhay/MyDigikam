@@ -152,7 +152,7 @@ BUGFIXES:
 142 ==> 282898 - Arrow key focus on left pane after applying tag by mouse.
 143 ==> 283054 - Import/add images is very slow at loading thumbnails.
 144 ==> 283668 - Tag tree for assigning tags is nearly unusable now.
-145 ==> 
+145 ==> 284391 - B&W tool doesn't work in Batch Queue Manager.
 146 ==> 
 147 ==> 
 148 ==> 
