@@ -136,7 +136,7 @@ BUGFIXES:
 126 ==> 447087 - Download new version not working.
 127 ==> 366092 - Individual database names are always reset to Database Name.
 128 ==> 373479 - Database on Server but Thumbnails local.
-129 ==> 
+129 ==> 276626 - Text decoration moves before placement and after undo.
 130 ==> 
 131 ==> 
 132 ==> 
