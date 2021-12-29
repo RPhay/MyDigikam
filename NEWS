@@ -151,7 +151,7 @@ BUGFIXES:
 141 ==> 314833 - Showfoto crash.
 142 ==> 282898 - Arrow key focus on left pane after applying tag by mouse.
 143 ==> 283054 - Import/add images is very slow at loading thumbnails.
-144 ==> 
+144 ==> 283668 - Tag tree for assigning tags is nearly unusable now.
 145 ==> 
 146 ==> 
 147 ==> 
