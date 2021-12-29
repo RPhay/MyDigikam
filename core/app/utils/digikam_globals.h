@@ -39,6 +39,7 @@ class QWidget;
 class QObject;
 class QShortcut;
 class QKeySequence;
+class QApplication;
 
 /**
  * Macros for image filters.
@@ -204,6 +205,11 @@ DIGIKAM_EXPORT QString toolButtonStyleSheet();
  * Prefix of macOS Bundle to access to internal Unix hierarchy.
  */
 DIGIKAM_EXPORT QString macOSBundlePrefix();
+
+/**
+ * For bundles only, load standard Qt translation files at run-time in application instance.
+ */
+DIGIKAM_EXPORT void loadStdQtTranslationFiles(QApplication& app);
 
 } // namespace Digikam
 

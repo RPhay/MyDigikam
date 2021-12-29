@@ -34,7 +34,9 @@
 #include <QShortcut>
 #include <QApplication>
 #include <QStandardPaths>
+#include <QTranslator>
 #include <QLibrary>
+#include <QSettings>
 #include <QSysInfo>
 #include <QMimeType>
 #include <QMimeDatabase>
@@ -344,7 +346,7 @@ void tryInitDrMingw()
 
     QRegExp versionRegExp(QLatin1String("(\\d+[.]*\\d*)"));
     QSysInfo::productVersion().indexOf(versionRegExp);
-    double version = versionRegExp.capturedTexts().constFirst().toDouble();
+    double version  = versionRegExp.capturedTexts().constFirst().toDouble();
 
     if  (
          ((version < 2000.0) && (version < 10.0)) ||
@@ -352,6 +354,7 @@ void tryInitDrMingw()
         )
     {
         qCDebug(DIGIKAM_GENERAL_LOG) << "DrMinGw: unsupported Windows version" << version;
+
         return;
     }
 
@@ -363,6 +366,7 @@ void tryInitDrMingw()
     if (!hModExc)
     {
         qCDebug(DIGIKAM_GENERAL_LOG) << "DrMinGw: cannot init crash handler dll.";
+
         return;
     }
 
@@ -374,6 +378,7 @@ void tryInitDrMingw()
     if (!myExcHndlSetLogFileNameA)
     {
         qCDebug(DIGIKAM_GENERAL_LOG) << "DrMinGw: cannot init customized crash file.";
+
         return;
     }
 
@@ -420,6 +425,69 @@ QString toolButtonStyleSheet()
 QString macOSBundlePrefix()
 {
     return QString::fromUtf8("/Applications/digiKam.org/digikam.app/Contents/");
+}
+
+void loadStdQtTranslationFiles(QApplication& app)
+{
+
+#if defined Q_OS_WIN || defined Q_OS_MACOS
+
+    bool loadTranslation = true;
+
+#else
+
+    bool loadTranslation = isRunningInAppImageBundle();
+
+#endif
+
+    QString transPath    = QStandardPaths::locate(QStandardPaths::DataLocation,
+                                                  QLatin1String("translations"),
+                                                  QStandardPaths::LocateDirectory);
+
+    if (loadTranslation && !transPath.isEmpty())
+    {
+        QString klanguagePath = QStandardPaths::writableLocation(QStandardPaths::GenericConfigLocation) +
+                                QLatin1Char('/') + QLatin1String("klanguageoverridesrc");
+
+        qCDebug(DIGIKAM_GENERAL_LOG) << "Qt translations path:" << transPath;
+
+        QLocale locale;
+
+        if (!klanguagePath.isEmpty())
+        {
+            QSettings settings(klanguagePath, QSettings::IniFormat);
+            settings.beginGroup(QLatin1String("Language"));
+            QString language = settings.value(qApp->applicationName(), QString()).toString();
+            settings.endGroup();
+
+            if (!language.isEmpty())
+            {
+                locale = QLocale(language.split(QLatin1Char(':')).first());
+            }
+        }
+
+        QStringList qtCatalogs;
+        qtCatalogs << QLatin1String("qt");
+        qtCatalogs << QLatin1String("qtbase");
+        qtCatalogs << QLatin1String("qt_help");
+
+        foreach (const QString& catalog, qtCatalogs)
+        {
+            QTranslator* const translator = new QTranslator(&app);
+
+            if (translator->load(locale, catalog, QLatin1String("_"), transPath))
+            {
+                qCDebug(DIGIKAM_GENERAL_LOG) << "Loaded locale:" << locale.name()
+                                             << "from catalog:"  << catalog;
+
+                app.installTranslator(translator);
+            }
+            else
+            {
+                delete translator;
+            }
+        }
+    }
 }
 
 } // namespace Digikam
