@@ -196,8 +196,8 @@ BUGFIXES:
 186 ==> 099482 - digiKam tips database out of date.
 187 ==> 138746 - Typo "Display Adjustment" - not german.
 188 ==> 169764 - RAW file import lacks i18n support, no decoding.
-189 ==> 
-190 ==> 
+189 ==> 128626 - Wrong gender used in German translation of the photo context menu.
+190 ==> 253117 - "Niepce" is not translatable.
 191 ==> 
 192 ==> 
 193 ==> 
