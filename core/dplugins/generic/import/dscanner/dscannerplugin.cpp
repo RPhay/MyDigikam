@@ -112,8 +112,8 @@ void DigitalScannerPlugin::setup(QObject* const parent)
     ac->setObjectName(QLatin1String("import_scan"));
     ac->setActionCategory(DPluginAction::GenericImport);
 
-    connect(ac, SIGNAL(triggered(bool)),
-            this, SLOT(slotDigitalScanner()));
+    connect(ac, &DPluginAction::triggered,
+            this, &DigitalScannerPlugin::slotDigitalScanner);
 
     addAction(ac);
 }
@@ -148,8 +148,8 @@ void DigitalScannerPlugin::slotDigitalScanner()
         DInfoInterface* const iface = infoIface(sender());
         ScanDialog* const dlg       = new ScanDialog(m_saneWidget);
 
-        connect(dlg, SIGNAL(signalImportedImage(QUrl)),
-                iface, SIGNAL(signalImportedImage(QUrl)));
+        connect(dlg, &ScanDialog::signalImportedImage,
+                iface, &DInfoInterface::signalImportedImage);
 
         dlg->setTargetDir(iface->defaultUploadUrl().toLocalFile());
         dlg->setPlugin(this);
