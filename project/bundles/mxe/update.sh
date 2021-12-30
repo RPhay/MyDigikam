@@ -9,8 +9,8 @@
 #
 
 ########################################################################
-# Function to upload log files
-function UploadLogFiles()
+# Function to upload bundle log files
+function BundleUploadLogFiles()
 {
 
 if [[ $DK_UPLOAD = 1 ]] ; then
@@ -44,7 +44,7 @@ fi
 set -eE
 trap 'PREVIOUS_COMMAND=$THIS_COMMAND; THIS_COMMAND=$BASH_COMMAND' DEBUG
 trap 'echo "FAILED COMMAND: $PREVIOUS_COMMAND"' ERR
-trap UploadLogFiles ERR exit
+trap BundleUploadLogFiles ERR exit
 
 . ./config.sh
 . ./common.sh
