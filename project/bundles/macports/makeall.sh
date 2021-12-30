@@ -3,7 +3,7 @@
 # Script to run all Macports based sub-scripts to build OSX installer.
 # Possible option : "-f" to force operations without to ask confirmation to user.
 #
-# Copyright (c) 2013-2021 by Gilles Caulier  <caulier dot gilles at gmail dot com>
+# Copyright (c) 2013-2022 by Gilles Caulier  <caulier dot gilles at gmail dot com>
 #
 # Redistribution and use is allowed according to the terms of the BSD license.
 # For details see the accompanying COPYING-CMAKE-SCRIPTS file.
@@ -53,17 +53,7 @@ fi
 
 ./01-build-macports.sh
 ./02-build-extralibs.sh
-./03-build-digikam.sh
-
-sed -e "s/DK_DEBUG=1/DK_DEBUG=0/g"           ./config.sh > ./tmp.sh ; mv -f ./tmp.sh ./config.sh
-
-./04-build-installer.sh
-
-sed -e "s/DK_DEBUG=0/DK_DEBUG=1/g"           ./config.sh > ./tmp.sh ; mv -f ./tmp.sh ./config.sh
-
-./04-build-installer.sh
-
-sed -e "s/DK_DEBUG=1/DK_DEBUG=0/g"           ./config.sh > ./tmp.sh ; mv -f ./tmp.sh ./config.sh
+./update.sh
 
 echo "+++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++"
 

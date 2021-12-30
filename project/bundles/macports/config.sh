@@ -1,6 +1,6 @@
 #!/bin/bash
 
-# Copyright (c) 2013-2021 by Gilles Caulier  <caulier dot gilles at gmail dot com>
+# Copyright (c) 2013-2022 by Gilles Caulier  <caulier dot gilles at gmail dot com>
 #
 # Redistribution and use is allowed according to the terms of the BSD license.
 # For details see the accompanying COPYING-CMAKE-SCRIPTS file.
@@ -31,11 +31,11 @@ if [[ $ARCH_TARGET = "x86_64" ]] ; then
     # sudo /usr/libexec/PlistBuddy -c "Set MinimumSDKVersion 10.13" /Applications/Xcode.app/Contents/Developer/Platforms/MacOSX.platform/Info.plist
     #
     # Possible values:
-    # 12.0  : Monterey     :          : Qt                                            5.13, 5.14, 5.15
-    # 11.0  : BigSur       :          : Qt                                      5.12, 5.13, 5.14, 5.15
-    # 10.15 : Catalina     :          : Qt                                5.11, 5.12, 5.13, 5.14
-    # 10.14 : Mojave       : tested   : Qt                     5.9, 5.10, 5.11, 5.12, 5.13, 5.14
-    # 10.13 : High Sierra  : tested   : Qt                     5.9, 5.10, 5.11, 5.12, 5.13, 5.14
+    # 12.0  : Monterey     : tested   : Qt                                            5.13, 5.14, 5.15
+    # 11.0  : BigSur       : tested   : Qt                                      5.12, 5.13, 5.14, 5.15
+    # 10.15 : Catalina     : tested   : Qt                                5.11, 5.12, 5.13, 5.14, 5.15
+    # 10.14 : Mojave       : tested   : Qt                     5.9, 5.10, 5.11, 5.12, 5.13, 5.14, 5.15
+    # 10.13 : High Sierra  : tested   : Qt                     5.9, 5.10, 5.11, 5.12, 5.13, 5.14, 5.15
     # 10.12 : Sierra       : tested   : Qt                5.8, 5.9, 5.10, 5.11, 5.12, 5.13
     # 10.11 : El Capitan   : tested   : Qt 5.5, 5.6, 5.7, 5.8, 5.9, 5.10, 5.11
     # 10.10 : Yosemite     : tested   : Qt 5.5, 5.6, 5.7, 5.8, 5.9
@@ -43,6 +43,7 @@ if [[ $ARCH_TARGET = "x86_64" ]] ; then
     # 10.8  : MountainLion : tested   : Qt 5.5, 5.6, 5.7
     # 10.7  : Lion         : untested : Qt 5.5, 5.6
     # 10.6  : SnowLeopard  : untested : ???
+    #
     # Older values cannot be set as it do not support x86_64.
     OSX_MIN_TARGET="10.13"
 

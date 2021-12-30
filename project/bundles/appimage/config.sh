@@ -2,7 +2,7 @@
 
 # Configuration for script to build AppImage bundle.
 #
-# Copyright (c) 2015-2021 by Gilles Caulier  <caulier dot gilles at gmail dot com>
+# Copyright (c) 2015-2022 by Gilles Caulier  <caulier dot gilles at gmail dot com>
 #
 # Redistribution and use is allowed according to the terms of the BSD license.
 # For details see the accompanying COPYING-CMAKE-SCRIPTS file.
@@ -42,7 +42,7 @@ DK_VERSION=master
 # Installer will include or not digiKam debug symbols
 DK_DEBUG=0
 
-# Qt version to use in bundle. Possible values: 5.14, 5.15
+# Qt version to use in bundle. Possible values: 5.14, 5.15, 5.15-LTS
 DK_QTVERSION="5.15"
 
 # Option to use QtWebEngine instead QtWebkit

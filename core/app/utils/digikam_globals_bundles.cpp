@@ -140,6 +140,10 @@ QProcessEnvironment adjustedEnvironmentForAppImage()
         {
             env.remove(QLatin1String("XDG_SESSION_DESKTOP"));
         }
+
+        // See bug #414959
+
+        env.remove(QLatin1String("LD_PRELOAD"));
     }
 
     return env;
@@ -219,7 +223,7 @@ void unloadQtTranslationFiles(QApplication& app)
     // the system language QTranslator that ECMQmLoader installed instead
     // of the English one.
 
-    // ECMQmLoader creates all QTranslator's parented to the active QApp.
+    // ECMQmLoader creates all QTranslator's parented to the active QApplication instance.
 
     QList<QTranslator*> translators = app.findChildren<QTranslator*>(QString(), Qt::FindDirectChildrenOnly);
 
@@ -228,7 +232,7 @@ void unloadQtTranslationFiles(QApplication& app)
         app.removeTranslator(translator);
     }
 
-    qCDebug(DIGIKAM_GENERAL_LOG) << "Removed" << translators.size() << "QTranslator's";
+    qCDebug(DIGIKAM_GENERAL_LOG) << "Qt standard translations removed:" << translators.size();
 }
 
 void loadStdQtTranslationFiles(QApplication& app)
@@ -240,9 +244,10 @@ void loadStdQtTranslationFiles(QApplication& app)
     if (!transPath.isEmpty())
     {
         QString languagePath = QStandardPaths::writableLocation(QStandardPaths::GenericConfigLocation) +
-                               QLatin1Char('/') + QLatin1String("klanguageoverridesrc");
+                               QLatin1Char('/')                                                        +
+                               QLatin1String("klanguageoverridesrc");
 
-        qCDebug(DIGIKAM_GENERAL_LOG) << "Qt translations path:" << transPath;
+        qCDebug(DIGIKAM_GENERAL_LOG) << "Qt standard translations path:" << transPath;
 
         QLocale locale;
 
@@ -259,10 +264,28 @@ void loadStdQtTranslationFiles(QApplication& app)
             }
         }
 
-        QStringList qtCatalogs;
-        qtCatalogs << QLatin1String("qt");
-        qtCatalogs << QLatin1String("qtbase");
-        qtCatalogs << QLatin1String("qt_help");
+        const QStringList qtCatalogs =
+        {
+            QLatin1String("qt"),
+            QLatin1String("qtbase"),
+            QLatin1String("qt_help"),
+
+#ifdef HAVE_QWEBENGINE
+
+            QLatin1String("qtwebengine"),
+            QLatin1String("qtdeclarative"),
+            QLatin1String("qtquickcontrols2"),
+            QLatin1String("qtmultimedia"),
+
+#endif
+
+#ifdef HAVE_QTXMLPATTERNS
+
+            QLatin1String("qtxmlpatterns"),
+
+#endif
+
+        };
 
         foreach (const QString& catalog, qtCatalogs)
         {
@@ -270,8 +293,10 @@ void loadStdQtTranslationFiles(QApplication& app)
 
             if (translator->load(locale, catalog, QLatin1String("_"), transPath))
             {
-                qCDebug(DIGIKAM_GENERAL_LOG) << "Loaded locale:" << locale.name()
-                                             << "from catalog:"  << catalog;
+                qCDebug(DIGIKAM_GENERAL_LOG) << "Loaded Qt standard translations"
+                                             << locale.name()
+                                             << "from catalog"
+                                             << catalog;
 
                 app.installTranslator(translator);
             }
@@ -289,15 +314,21 @@ void loadEcmQtTranslationFiles(QApplication& app)
     // This function is based on the code in:
     // https://invent.kde.org/frameworks/extra-cmake-modules/-/blob/master/modules/ECMQmLoader.cpp.in
 
-    QStringList ecmCatalogs =
+    const QStringList ecmCatalogs =
     {
-        QStringLiteral("kcompletion5_qt"),
-        QStringLiteral("kconfig5_qt"),
-        QStringLiteral("kcoreaddons5_qt"),
-        QStringLiteral("kitemviews5_qt"),
-        QStringLiteral("kwidgetsaddons5_qt"),
-        QStringLiteral("kwindowsystem5_qt"),
-        QStringLiteral("seexpr2_qt"),
+        QLatin1String("kauth5_qt"),
+        QLatin1String("kbookmarks5_qt"),
+        QLatin1String("kcodecs5_qt"),
+        QLatin1String("kcompletion5_qt"),
+        QLatin1String("kconfig5_qt"),
+        QLatin1String("kcoreaddons5_qt"),
+        QLatin1String("kdbusaddons5_qt"),
+        QLatin1String("kglobalaccel5_qt"),
+        QLatin1String("kitemviews5_qt"),
+        QLatin1String("kwidgetsaddons5_qt"),
+        QLatin1String("kwindowsystem5_qt"),
+        QLatin1String("solid5_qt"),
+        QLatin1String("kde5_xml_mimetypes"),
     };
 
     QStringList ecmLangs = KLocalizedString::languages();
@@ -311,6 +342,7 @@ void loadEcmQtTranslationFiles(QApplication& app)
     {
         ecmLangs[indexOfEnUs] = langEn;
     }
+
     // We need to have "en" to the end of the list, because we explicitly
     // removed the "en" translators added by ECMQmLoader.
     // If "en" is already on the list, we truncate the ones after, because
@@ -332,12 +364,12 @@ void loadEcmQtTranslationFiles(QApplication& app)
 
     // The last added one has the highest precedence, so we iterate the list backwards.
 
-    QStringListIterator langIter(ecmLangs);
-    langIter.toBack();
+    QStringListIterator it(ecmLangs);
+    it.toBack();
 
-    while (langIter.hasPrevious())
+    while (it.hasPrevious())
     {
-        const QString& localeDirName = langIter.previous();
+        const QString& localeDirName = it.previous();
 
         foreach (const auto& catalog, ecmCatalogs)
         {
@@ -346,15 +378,16 @@ void loadEcmQtTranslationFiles(QApplication& app)
                                  QLatin1String("/LC_MESSAGES/") %
                                  catalog                        %
                                  QLatin1String(".qm");
+
             const QString root = QLibraryInfo::location(QLibraryInfo::PrefixPath);
 
-            // For AppImage, transalotion files uses AppDataLocation.
+            // For AppImage transalotion files uses AppDataLocation.
 
-            QString fullPath = QStandardPaths::locate(QStandardPaths::AppDataLocation, subPath);
+            QString fullPath   = QStandardPaths::locate(QStandardPaths::AppDataLocation, subPath);
 
             if (fullPath.isEmpty())
             {
-                // ... but distro builds probably still use GenericDataLocation, so check that too.
+                // For distro builds probably still use GenericDataLocation, so check that too.
 
                 fullPath = QStandardPaths::locate(QStandardPaths::GenericDataLocation, subPath);
             }
@@ -375,7 +408,10 @@ void loadEcmQtTranslationFiles(QApplication& app)
 
             if (translator->load(fullPath))
             {
-                qCDebug(DIGIKAM_GENERAL_LOG) << "Loaded ECM translations for" << localeDirName << catalog;
+                qCDebug(DIGIKAM_GENERAL_LOG) << "Loaded Qt ECM translations"
+                                             << localeDirName
+                                             << "from catalog"
+                                             << catalog;
 
                 translator->setObjectName(QString::fromUtf8("QTranslator.%1.%2").arg(localeDirName, catalog));
                 app.installTranslator(translator);
