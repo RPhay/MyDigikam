@@ -57,7 +57,7 @@ ChecksRunAsRoot
 ChecksXCodeCLI
 ChecksCPUCores
 
-OORIG_WD="`pwd`"
+ORIG_WD="`pwd`"
 
 echo "++++++++++++++++++++ Update MacOS Installer +++++++++++++++++++++++++++++++++++"
 echo "+++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++"
