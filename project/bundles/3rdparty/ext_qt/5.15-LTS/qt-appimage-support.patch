@@ -1,8 +1,8 @@
-diff --git a/qtbase/src/platformsupport/services/genericunix/qgenericunixservices.cpp b/qtbase/src/platformsupport/services/genericunix/qgenericunixservices.cpp
-index b583d636c0..6da547d809 100644
+diff --git a/src/platformsupport/services/genericunix/qgenericunixservices.cpp b/src/platformsupport/services/genericunix/qgenericunixservices.cpp
+index 1a3cab275d..471223fe07 100644
 --- a/qtbase/src/platformsupport/services/genericunix/qgenericunixservices.cpp
 +++ b/qtbase/src/platformsupport/services/genericunix/qgenericunixservices.cpp
-@@ -170,7 +170,66 @@ static inline bool launch(const QString &launcher, const QUrl &url)
+@@ -170,7 +170,77 @@ static inline bool launch(const QString &launcher, const QUrl &url)
      bool ok = false;
      if (!args.isEmpty()) {
          QString program = args.takeFirst();
@@ -15,6 +15,7 @@ index b583d636c0..6da547d809 100644
 +        if (env.contains(QLatin1String("APPIMAGE_ORIGINAL_LD_LIBRARY_PATH")) &&
 +            env.contains(QLatin1String("APPIMAGE_ORIGINAL_QT_PLUGIN_PATH"))  &&
 +            env.contains(QLatin1String("APPIMAGE_ORIGINAL_XDG_DATA_DIRS"))   &&
++            env.contains(QLatin1String("APPIMAGE_ORIGINAL_LD_PRELOAD"))      &&
 +            env.contains(QLatin1String("APPIMAGE_ORIGINAL_PATH")))
 +        {
 +            qDebug() << "Adjusting environment variables for AppImage bundle";
@@ -47,6 +48,16 @@ index b583d636c0..6da547d809 100644
 +            else
 +            {
 +                env.remove(QLatin1String("XDG_DATA_DIRS"));
++            }
++
++            if (!env.value(QLatin1String("APPIMAGE_ORIGINAL_LD_PRELOAD")).isEmpty())
++            {
++                env.insert(QLatin1String("LD_PRELOAD"),
++                           env.value(QLatin1String("APPIMAGE_ORIGINAL_LD_PRELOAD")));
++            }
++            else
++            {
++                env.remove(QLatin1String("LD_PRELOAD"));
 +            }
 +
 +            if (!env.value(QLatin1String("APPIMAGE_ORIGINAL_PATH")).isEmpty())
