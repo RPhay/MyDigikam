@@ -17,13 +17,23 @@ if [[ $DK_UPLOAD = 1 ]] ; then
 
     echo -e "---------- Cleanup older Windows bundle logs from files.kde.org repository \n"
 
-    sftp -q $DK_UPLOADURL:$DK_UPLOADDIR/build.logs/win64 <<< "rm build-digikam.full.log"
-    sftp -q $DK_UPLOADURL:$DK_UPLOADDIR/build.logs/win64 <<< "rm build-installer.full.log"
+    sftp -q $DK_UPLOADURL:$DK_UPLOADDIR/build.logs/win64 <<< "rm build-digikam.full.log.gz"
+    sftp -q $DK_UPLOADURL:$DK_UPLOADDIR/build.logs/win64 <<< "rm build-installer.full.log.gz"
+
+    echo -e "---------- Compress bundle log files \n"
+
+    gzip -k $ORIG_WD/logs/build-digikam.full.log $ORIG_WD/logs/build-digikam.full.log.gz
+    gzip -k $ORIG_WD/logs/build-installer.full.log $ORIG_WD/logs/build-installer.full.log.gz
 
     echo -e "---------- Upload new Windows bundle logs to files.kde.org repository \n"
 
-    rsync -r -v --progress -e ssh $ORIG_WD/logs/build-digikam.full.log $DK_UPLOADURL:$DK_UPLOADDIR/build.logs/win64
-    rsync -r -v --progress -e ssh $ORIG_WD/logs/build-installer.full.log $DK_UPLOADURL:$DK_UPLOADDIR/build.logs/win64
+    rsync -r -v --progress -e ssh $ORIG_WD/logs/build-digikam.full.log.gz $DK_UPLOADURL:$DK_UPLOADDIR/build.logs/win64
+    rsync -r -v --progress -e ssh $ORIG_WD/logs/build-installer.full.log.gz $DK_UPLOADURL:$DK_UPLOADDIR/build.logs/win64
+
+    echo -e "---------- Cleanup local bundle log file archives \n"
+
+    rm -f $ORIG_WD/logs/build-digikam.full.log.gz
+    rm -f $ORIG_WD/logs/build-installer.full.log.gz
 
 fi
 
