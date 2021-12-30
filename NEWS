@@ -190,12 +190,12 @@ BUGFIXES:
 180 ==> 091543 - Typo (lots of) in 'tip of the day'.
 181 ==> 369354 - Wrong translation for german when you search for faces.
 182 ==> 415605 - Full Screen toolbar item is shown in French while my config is in English.
-183 ==> 
-184 ==> 
-185 ==> 
-186 ==> 
-187 ==> 
-188 ==> 
+183 ==> 141635 - Unclear text in digiKam.
+184 ==> 115535 - Aspect ratio crop operation needs i18n for the string "Golden Ratio" in the aspect ratio combobox.
+185 ==> 100987 - digiKam: tip of the day typo.
+186 ==> 099482 - digiKam tips database out of date.
+187 ==> 138746 - Typo "Display Adjustment" - not german.
+188 ==> 169764 - RAW file import lacks i18n support, no decoding.
 189 ==> 
 190 ==> 
 191 ==> 
