@@ -171,11 +171,41 @@ BUGFIXES:
 161 ==> 331061 - Advanced slideshow settings window conflicts with unity and won't resize to enable access to Help, Start and Close buttons.
 162 ==> 323241 - Cannot run enfuse: enfuse: unknown option "--wExposure=1" Try "enfuse --help" for more information.
 163 ==> 316633 - Unpossible to manually put decimal geolocation metadata into a picture.
-164 ==> 
-165 ==> 
-166 ==> 
-167 ==> 
-168 ==> 
-169 ==> 
-170 ==> 
-171 ==> 
+164 ==> 435865 - The translation of the menu is not complete.
+165 ==> 436134 - Not all text are translated into Italian.
+166 ==> 415605 - Full Screen toolbar item is shown in French while my config is in English.
+167 ==> 436134 - Not all text are translated into Italian.
+168 ==> 435884 - "Vollbildmodus" is used with any language.
+169 ==> 172893 - Setup verbiage patches for slideshow and albumview.
+170 ==> 099500 - digiKam file property toolstip window: comments text interprets 'html' tags but it should not.
+171 ==> 110982 - Lack of i18n(): resizeoptionsdialog.cpp.
+172 ==> 239843 - i18n - missing message extraction in digikam/libs/imageproperties.
+173 ==> 172882 - Setup verbiage patches.
+174 ==> 142262 - French translation don't work.
+175 ==> 143449 - Rotate image -> bad string.
+176 ==> 095437 - Translation of tips does not work.
+177 ==> 144455 - Misc ebn fixes (contraction, copyright, license, spelling).
+178 ==> 262722 - Some menus are in english when the localisation is in french.
+179 ==> 093161 - Don't use i18n texts as a config value.
+180 ==> 091543 - Typo (lots of) in 'tip of the day'.
+181 ==> 369354 - Wrong translation for german when you search for faces.
+182 ==> 415605 - Full Screen toolbar item is shown in French while my config is in English.
+183 ==> 
+184 ==> 
+185 ==> 
+186 ==> 
+187 ==> 
+188 ==> 
+189 ==> 
+190 ==> 
+191 ==> 
+192 ==> 
+193 ==> 
+194 ==> 
+195 ==> 
+196 ==> 
+197 ==> 
+198 ==> 
+199 ==> 
+200 ==> 
+201 ==> 
