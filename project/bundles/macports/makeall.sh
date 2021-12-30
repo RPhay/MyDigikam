@@ -53,17 +53,7 @@ fi
 
 ./01-build-macports.sh
 ./02-build-extralibs.sh
-./03-build-digikam.sh
-
-sed -e "s/DK_DEBUG=1/DK_DEBUG=0/g"           ./config.sh > ./tmp.sh ; mv -f ./tmp.sh ./config.sh
-
-./04-build-installer.sh
-
-sed -e "s/DK_DEBUG=0/DK_DEBUG=1/g"           ./config.sh > ./tmp.sh ; mv -f ./tmp.sh ./config.sh
-
-./04-build-installer.sh
-
-sed -e "s/DK_DEBUG=1/DK_DEBUG=0/g"           ./config.sh > ./tmp.sh ; mv -f ./tmp.sh ./config.sh
+./update.sh
 
 echo "+++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++"
 
