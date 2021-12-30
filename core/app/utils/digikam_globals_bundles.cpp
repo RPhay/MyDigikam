@@ -140,10 +140,6 @@ QProcessEnvironment adjustedEnvironmentForAppImage()
         {
             env.remove(QLatin1String("XDG_SESSION_DESKTOP"));
         }
-
-        // See bug #414959
-
-        env.remove(QLatin1String("LD_PRELOAD"));
     }
 
     return env;
