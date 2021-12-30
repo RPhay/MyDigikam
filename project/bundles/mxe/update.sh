@@ -8,10 +8,33 @@
 # For details see the accompanying COPYING-CMAKE-SCRIPTS file.
 #
 
-# Halt and catch errors
+########################################################################
+# Function to upload log files
+function UploadLogFiles()
+{
+
+if [[ $DK_UPLOAD = 1 ]] ; then
+
+    echo -e "---------- Cleanup older Windows bundle logs from files.kde.org repository \n"
+
+    sftp -q $DK_UPLOADURL:$DK_UPLOADDIR/build.logs/win64 <<< "rm build-digikam.full.log"
+    sftp -q $DK_UPLOADURL:$DK_UPLOADDIR/build.logs/win64 <<< "rm build-installer.full.log"
+
+    echo -e "---------- Upload new Windows bundle logs to files.kde.org repository \n"
+
+    rsync -r -v --progress -e ssh $ORIG_WD/logs/build-digikam.full.log $DK_UPLOADURL:$DK_UPLOADDIR/build.logs/win64
+    rsync -r -v --progress -e ssh $ORIG_WD/logs/build-installer.full.log $DK_UPLOADURL:$DK_UPLOADDIR/build.logs/win64
+
+fi
+
+}
+
+
+# Halt and catch errors. Upload log files if necessary at script error or exit.
 set -eE
 trap 'PREVIOUS_COMMAND=$THIS_COMMAND; THIS_COMMAND=$BASH_COMMAND' DEBUG
 trap 'echo "FAILED COMMAND: $PREVIOUS_COMMAND"' ERR
+trap UploadLogFiles ERR exit
 
 . ./config.sh
 . ./common.sh
