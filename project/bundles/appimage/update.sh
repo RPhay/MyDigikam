@@ -45,6 +45,8 @@ trap 'PREVIOUS_COMMAND=$THIS_COMMAND; THIS_COMMAND=$BASH_COMMAND' DEBUG
 trap 'echo "FAILED COMMAND: $PREVIOUS_COMMAND"' ERR
 trap BundleUploadLogFiles ERR exit
 
+ORIG_WD="`pwd`"
+
 #################################################################################################
 # Pre-processing checks
 
@@ -54,8 +56,6 @@ StartScript
 ChecksRunAsRoot
 ChecksCPUCores
 HostAdjustments
-
-ORIG_WD="`pwd`"
 
 echo "+++++++++++++++++++++++ Update Linux AppImage bundle ++++++++++++++++++++++++++++++"
 echo "+++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++"
