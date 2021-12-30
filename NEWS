@@ -170,7 +170,7 @@ BUGFIXES:
 160 ==> 444566 - No update on Weekly Snapshots.
 161 ==> 331061 - Advanced slideshow settings window conflicts with unity and won't resize to enable access to Help, Start and Close buttons.
 162 ==> 323241 - Cannot run enfuse: enfuse: unknown option "--wExposure=1" Try "enfuse --help" for more information.
-163 ==> 
+163 ==> 316633 - Unpossible to manually put decimal geolocation metadata into a picture.
 164 ==> 
 165 ==> 
 166 ==> 
