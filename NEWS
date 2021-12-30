@@ -168,7 +168,7 @@ BUGFIXES:
 158 ==> 311394 - Import fails silently.
 159 ==> 447660 - Crash with "undefined symbol" when adding people tag to a photo.
 160 ==> 444566 - No update on Weekly Snapshots.
-161 ==> 
+161 ==> 331061 - Advanced slideshow settings window conflicts with unity and won't resize to enable access to Help, Start and Close buttons.
 162 ==> 
 163 ==> 
 164 ==> 
