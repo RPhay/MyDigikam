@@ -1,6 +1,6 @@
 #!/bin/bash
 
-# Script to run all Macports based sub-scripts to build OSX installer.
+# Script to run all Macports based sub-scripts to build MacOS installer.
 # Possible option : "-f" to force operations without to ask confirmation to user.
 #
 # Copyright (c) 2013-2022 by Gilles Caulier  <caulier dot gilles at gmail dot com>
@@ -9,6 +9,37 @@
 # For details see the accompanying COPYING-CMAKE-SCRIPTS file.
 #
 
+########################################################################
+# Function to upload host log files
+HostUploadLogFiles()
+{
+
+if [[ $DK_UPLOAD = 1 ]] ; then
+
+    echo -e "---------- Cleanup older host logs from files.kde.org repository \n"
+
+    sftp -q $DK_UPLOADURL:$DK_UPLOADDIR/build.logs/macos <<< "rm build-macports.full.log.gz"
+    sftp -q $DK_UPLOADURL:$DK_UPLOADDIR/build.logs/macos <<< "rm build-extralibs.full.log.gz"
+
+    echo -e "---------- Compress host log files \n"
+
+    gzip -k $ORIG_WD/logs/build-macports.full.log $ORIG_WD/logs/build-macports.full.log.gz   || true
+    gzip -k $ORIG_WD/logs/build-extralibs.full.log $ORIG_WD/logs/build-extralibs.full.log.gz || true
+
+    echo -e "---------- Upload new host logs to files.kde.org repository \n"
+
+    rsync -r -v --progress -e ssh $ORIG_WD/logs/build-macports.full.log.gz $DK_UPLOADURL:$DK_UPLOADDIR/build.logs/macos  || true
+    rsync -r -v --progress -e ssh $ORIG_WD/logs/build-extralibs.full.log.gz $DK_UPLOADURL:$DK_UPLOADDIR/build.logs/macos || true
+
+    echo -e "---------- Cleanup local bundle log file archives \n"
+
+    rm -f $ORIG_WD/logs/build-macports.full.log.gz  || true
+    rm -f $ORIG_WD/logs/build-extralibs.full.log.gz || true
+
+fi
+
+}
+
 # Ask to run as root
 (( EUID != 0 )) && exec sudo -- "$0" "$@"
 
@@ -16,9 +47,12 @@
 set -eE
 trap 'PREVIOUS_COMMAND=$THIS_COMMAND; THIS_COMMAND=$BASH_COMMAND' DEBUG
 trap 'echo "FAILED COMMAND: $PREVIOUS_COMMAND"' ERR
+trap HostUploadLogFiles ERR exit
 
 #################################################################################################
 # Pre-processing checks
+
+ORIG_WD="`pwd`"
 
 . ./config.sh
 . ./common.sh
@@ -27,7 +61,6 @@ ChecksRunAsRoot
 ChecksXCodeCLI
 ChecksCPUCores
 
-INSTALL_PREFIX=~/tmp
 echo "This script will build from scratch the digiKam installer for MacOS using Macports."
 echo "+++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++"
 

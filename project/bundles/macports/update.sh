@@ -50,14 +50,14 @@ trap 'PREVIOUS_COMMAND=$THIS_COMMAND; THIS_COMMAND=$BASH_COMMAND' DEBUG
 trap 'echo "FAILED COMMAND: $PREVIOUS_COMMAND"' ERR
 trap BundleUploadLogFiles ERR exit
 
+ORIG_WD="`pwd`"
+
 . ./config.sh
 . ./common.sh
 StartScript
 ChecksRunAsRoot
 ChecksXCodeCLI
 ChecksCPUCores
-
-ORIG_WD="`pwd`"
 
 echo "++++++++++++++++++++ Update MacOS Installer +++++++++++++++++++++++++++++++++++"
 echo "+++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++"
