@@ -10,12 +10,12 @@
 
 ########################################################################
 # Function to upload bundle log files
-function BundleUploadLogFiles()
+BundleUploadLogFiles()
 {
 
 if [[ $DK_UPLOAD = 1 ]] ; then
 
-    echo -e "---------- Cleanup older Windows bundle logs from files.kde.org repository \n"
+    echo -e "---------- Cleanup older bundle logs from files.kde.org repository \n"
 
     sftp -q $DK_UPLOADURL:$DK_UPLOADDIR/build.logs/win64 <<< "rm build-digikam.full.log.gz"
     sftp -q $DK_UPLOADURL:$DK_UPLOADDIR/build.logs/win64 <<< "rm build-installer.full.log.gz"
@@ -25,7 +25,7 @@ if [[ $DK_UPLOAD = 1 ]] ; then
     gzip -k $ORIG_WD/logs/build-digikam.full.log $ORIG_WD/logs/build-digikam.full.log.gz     || true
     gzip -k $ORIG_WD/logs/build-installer.full.log $ORIG_WD/logs/build-installer.full.log.gz || true
 
-    echo -e "---------- Upload new Windows bundle logs to files.kde.org repository \n"
+    echo -e "---------- Upload new bundle logs to files.kde.org repository \n"
 
     rsync -r -v --progress -e ssh $ORIG_WD/logs/build-digikam.full.log.gz $DK_UPLOADURL:$DK_UPLOADDIR/build.logs/win64   || true
     rsync -r -v --progress -e ssh $ORIG_WD/logs/build-installer.full.log.gz $DK_UPLOADURL:$DK_UPLOADDIR/build.logs/win64 || true
@@ -39,6 +39,10 @@ fi
 
 }
 
+########################################################################
+
+. ./config.sh
+. ./common.sh
 
 # Halt and catch errors. Upload log files if necessary at script error or exit.
 set -eE
@@ -46,9 +50,9 @@ trap 'PREVIOUS_COMMAND=$THIS_COMMAND; THIS_COMMAND=$BASH_COMMAND' DEBUG
 trap 'echo "FAILED COMMAND: $PREVIOUS_COMMAND"' ERR
 trap BundleUploadLogFiles ERR exit
 
-. ./config.sh
-. ./common.sh
 StartScript
+
+ORIG_WD="`pwd`"
 
 echo "++++++++++++++++   Build 64 bits Installer   ++++++++++++++++++++++++++++++++++"
 echo "+++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++"
