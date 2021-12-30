@@ -81,6 +81,16 @@ QProcessEnvironment adjustedEnvironmentForAppImage()
             env.remove(QLatin1String("XDG_DATA_DIRS"));
         }
 
+        if (!env.value(QLatin1String("APPIMAGE_ORIGINAL_LD_PRELOAD")).isEmpty())
+        {
+            env.insert(QLatin1String("LD_PRELOAD"),
+                       env.value(QLatin1String("APPIMAGE_ORIGINAL_LD_PRELOAD")));
+        }
+        else
+        {
+            env.remove(QLatin1String("LD_PRELOAD"));
+        }
+
         if (!env.value(QLatin1String("APPIMAGE_ORIGINAL_PATH")).isEmpty())
         {
             env.insert(QLatin1String("PATH"),
