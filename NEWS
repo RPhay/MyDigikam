@@ -206,12 +206,12 @@ BUGFIXES:
 196 ==> 447687 - There is no Flip/Mirror tool.
 197 ==> 147773 - Use "top tabs" for switching sidebar modes.
 198 ==> 435165 - RTL interface.
-199 ==> 
-200 ==> 
-201 ==> 
-202 ==> 
-203 ==> 
-204 ==> 
+199 ==> 431366 - Translation incomplete, conversion to DE not possible. Language selection is missing.
+200 ==> 278329 - Using DigiKam in Ubuntu 11.04 I cannot switch to another language.
+201 ==> 441989 - Language selection English only.
+202 ==> 165921 - Translation bug: Missing german translation.
+203 ==> 144590 - English labels need cleanup in digiKam.
+204 ==> 254105 - Please, split translations of string "Free" in different contexts.
 205 ==> 
 206 ==> 
 207 ==> 
