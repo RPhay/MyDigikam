@@ -205,7 +205,7 @@ BUGFIXES:
 195 ==> 447724 - Right-clicking a thumbnail produces different result in Preview and Thumbnail modes.
 196 ==> 447687 - There is no Flip/Mirror tool.
 197 ==> 147773 - Use "top tabs" for switching sidebar modes.
-198 ==> 
+198 ==> 435165 - RTL interface.
 199 ==> 
 200 ==> 
 201 ==> 
