@@ -200,8 +200,8 @@ BUGFIXES:
 190 ==> 253117 - "Niepce" is not translatable.
 191 ==> 447713 - If you de-select a sub-tag it will deselect all parents, even if there is another sub-tag left which would need the parent tags.
 192 ==> 428508 - Some pix do not show.
-193 ==> 
-194 ==> 
+193 ==> 414008 - E-Mail program does not start when using SendByMail.
+194 ==> 414000 - Running external applications from AppImage bundle.
 195 ==> 
 196 ==> 
 197 ==> 
