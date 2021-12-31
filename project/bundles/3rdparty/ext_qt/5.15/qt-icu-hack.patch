@@ -1,7 +1,7 @@
-diff --git a/qtbase/src/corelib/tools/qcollator_icu.cpp b/qtbase/src/corelib/tools/qcollator_icu.cpp
-index ab45b9a1a1..dd278b768a 100644
---- a/qtbase/src/corelib/tools/qcollator_icu.cpp
-+++ b/qtbase/src/corelib/tools/qcollator_icu.cpp
+diff --git a/qtbase/src/corelib/text/qcollator_icu.cpp b/qtbase/src/corelib/text/qcollator_icu.cpp
+index 0dca1ee9c9..e34eadecef 100644
+--- a/qtbase/src/corelib/text/qcollator_icu.cpp
++++ b/qtbase/src/corelib/text/qcollator_icu.cpp
 @@ -62,7 +62,7 @@ void QCollatorPrivate::init()
      QByteArray name = QLocalePrivate::get(locale)->bcp47Name('_');
      collator = ucol_open(name.constData(), &status);
