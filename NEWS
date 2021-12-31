@@ -202,7 +202,7 @@ BUGFIXES:
 192 ==> 428508 - Some pix do not show.
 193 ==> 414008 - E-Mail program does not start when using SendByMail.
 194 ==> 414000 - Running external applications from AppImage bundle.
-195 ==> 
+195 ==> 447724 - Right-clicking a thumbnail produces different result in Preview and Thumbnail modes.
 196 ==> 
 197 ==> 
 198 ==> 
