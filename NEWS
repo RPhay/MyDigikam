@@ -203,9 +203,19 @@ BUGFIXES:
 193 ==> 414008 - E-Mail program does not start when using SendByMail.
 194 ==> 414000 - Running external applications from AppImage bundle.
 195 ==> 447724 - Right-clicking a thumbnail produces different result in Preview and Thumbnail modes.
-196 ==> 
+196 ==> 447687 - There is no Flip/Mirror tool.
 197 ==> 
 198 ==> 
 199 ==> 
 200 ==> 
 201 ==> 
+202 ==> 
+203 ==> 
+204 ==> 
+205 ==> 
+206 ==> 
+207 ==> 
+208 ==> 
+209 ==> 
+210 ==> 
+211 ==> 
