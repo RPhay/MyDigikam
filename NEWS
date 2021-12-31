@@ -199,7 +199,7 @@ BUGFIXES:
 189 ==> 128626 - Wrong gender used in German translation of the photo context menu.
 190 ==> 253117 - "Niepce" is not translatable.
 191 ==> 447713 - If you de-select a sub-tag it will deselect all parents, even if there is another sub-tag left which would need the parent tags.
-192 ==> 
+192 ==> 428508 - Some pix do not show.
 193 ==> 
 194 ==> 
 195 ==> 
