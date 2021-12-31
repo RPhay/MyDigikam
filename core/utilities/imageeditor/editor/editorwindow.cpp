@@ -2445,7 +2445,11 @@ void EditorWindow::slotSelectionChanged(const QRect& sel)
 
 void EditorWindow::slotSelectionSetText(const QRect& sel)
 {
-    setToolInfoMessage(QString::fromLatin1("(%1, %2) (%3 x %4)").arg(sel.x()).arg(sel.y()).arg(sel.width()).arg(sel.height()));
+    setToolInfoMessage(QString::fromLatin1("(%1, %2) (%3 x %4)")
+                       .arg(sel.x())
+                       .arg(sel.y())
+                       .arg(sel.width())
+                       .arg(sel.height()));
 }
 
 void EditorWindow::slotComponentsInfo()
@@ -2458,7 +2462,8 @@ void EditorWindow::setToolStartProgress(const QString& toolName)
 {
     m_animLogo->start();
     m_nameLabel->setProgressValue(0);
-    m_nameLabel->setProgressBarMode(StatusProgressBar::CancelProgressBarMode, QString::fromUtf8("%1:").arg(toolName));
+    m_nameLabel->setProgressBarMode(StatusProgressBar::CancelProgressBarMode,
+                                    QString::fromUtf8("%1:").arg(toolName));
 }
 
 void EditorWindow::setToolProgress(int progress)
@@ -2515,11 +2520,19 @@ void EditorWindow::setupSelectToolsAction()
     // Create action model
 
     ActionItemModel* const actionModel = new ActionItemModel(this);
-    actionModel->setMode(ActionItemModel::ToplevelMenuCategory | ActionItemModel::SortCategoriesByInsertionOrder);
+    actionModel->setMode(ActionItemModel::ToplevelMenuCategory |
+                         ActionItemModel::SortCategoriesByInsertionOrder);
 
     // Builtin actions
 
     QString transformCategory = i18nc("@title Image Transform",       "Transform");
+
+    // See bug #447687
+    actionModel->addAction(d->rotateLeftAction,  transformCategory);
+    actionModel->addAction(d->rotateRightAction, transformCategory);
+    actionModel->addAction(d->flipHorizAction,   transformCategory);
+    actionModel->addAction(d->flipVertAction,    transformCategory);
+    actionModel->addAction(d->cropAction,        transformCategory);
 
     foreach (DPluginAction* const ac, DPluginLoader::instance()->pluginsActions(DPluginAction::EditorTransform, this))
     {
