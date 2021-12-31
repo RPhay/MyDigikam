@@ -319,12 +319,19 @@ void loadEcmQtTranslationFiles(QApplication& app)
         QLatin1String("kconfig5_qt"),
         QLatin1String("kcoreaddons5_qt"),
         QLatin1String("kdbusaddons5_qt"),
+        QLatin1String("kde5_xml_mimetypes"),
         QLatin1String("kglobalaccel5_qt"),
         QLatin1String("kitemviews5_qt"),
         QLatin1String("kwidgetsaddons5_qt"),
         QLatin1String("kwindowsystem5_qt"),
         QLatin1String("solid5_qt"),
-        QLatin1String("kde5_xml_mimetypes"),
+
+#ifdef HAVE_MARBLE
+
+        QLatin1String("marble_qt"),
+
+#endif
+
     };
 
     QStringList ecmLangs = KLocalizedString::languages();
