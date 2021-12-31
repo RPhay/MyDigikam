@@ -107,27 +107,27 @@ void EditorWindow::setupContextMenu()
 {
     m_contextMenu = new QMenu(this);
 
-    addAction2ContextMenu(QLatin1String("editorwindow_fullscreen"), true);
-    addAction2ContextMenu(QLatin1String("options_show_menubar"),    true);
+    addAction2ContextMenu(QLatin1String("editorwindow_fullscreen"),            true);
+    addAction2ContextMenu(QLatin1String("options_show_menubar"),               true);
     m_contextMenu->addSeparator();
 
     // --------------------------------------------------------
 
-    addAction2ContextMenu(QLatin1String("editorwindow_backward"), true);
-    addAction2ContextMenu(QLatin1String("editorwindow_forward"),  true);
+    addAction2ContextMenu(QLatin1String("editorwindow_backward"),              true);
+    addAction2ContextMenu(QLatin1String("editorwindow_forward"),               true);
     m_contextMenu->addSeparator();
 
     // --------------------------------------------------------
 
-    addAction2ContextMenu(QLatin1String("slideshow_plugin"),    true);
+    addAction2ContextMenu(QLatin1String("slideshow_plugin"),                   true);
     addAction2ContextMenu(QLatin1String("editorwindow_transform_rotateleft"),  true);
     addAction2ContextMenu(QLatin1String("editorwindow_transform_rotateright"), true);
-    addAction2ContextMenu(QLatin1String("editorwindow_transform_crop"),         true);
+    addAction2ContextMenu(QLatin1String("editorwindow_transform_crop"),        true);
     m_contextMenu->addSeparator();
 
     // --------------------------------------------------------
 
-    addAction2ContextMenu(QLatin1String("editorwindow_delete"), true);
+    addAction2ContextMenu(QLatin1String("editorwindow_delete"),                true);
 }
 
 void EditorWindow::setupStandardConnections()
@@ -1577,6 +1577,7 @@ void EditorWindow::slotSavingStarted(const QString& /*filename*/)
 void EditorWindow::slotSavingFinished(const QString& filename, bool success)
 {
     Q_UNUSED(filename);
+
     qCDebug(DIGIKAM_GENERAL_LOG) << filename << success
                                  << (m_savingContext.savingState != SavingContext::SavingStateNone);
 
@@ -1781,7 +1782,7 @@ bool EditorWindow::showFileSaveDialog(const QUrl& initialUrl, QUrl& newURL)
     imageFileSaveDialog->setFileMode(QFileDialog::AnyFile);
     imageFileSaveDialog->setNameFilters(list);
 
-    // restore old settings for the dialog
+    // Restore old settings for the dialog
 
     KSharedConfig::Ptr config         = KSharedConfig::openConfig();
     KConfigGroup group                = config->group(configGroupName());
@@ -1797,7 +1798,7 @@ bool EditorWindow::showFileSaveDialog(const QUrl& initialUrl, QUrl& newURL)
         }
     }
 
-    // adjust extension of proposed filename
+    // Adjust extension of proposed filename
 
     QString fileName             = initialUrl.fileName();
 
@@ -1894,24 +1895,24 @@ bool EditorWindow::showFileSaveDialog(const QUrl& initialUrl, QUrl& newURL)
             return false;
         }
 
-        // write settings to config
+        // Write settings to config
 
         options->applySettings();
 
         delete fileSaveOptionsDialog;
 
-        // options is now also deleted
+        // Options is now also deleted
     }
     else
     {
         delete options;
     }
 
-    // read settings from config to local container
+    // Read settings from config to local container
 
     applyIOSettings();
 
-    // select the format to save the image with
+    // Select the format to save the image with
 
     m_savingContext.format = selectValidSavingFormat(newURL);
 
@@ -1940,7 +1941,7 @@ QString EditorWindow::selectValidSavingFormat(const QUrl& targetUrl)
 {
     qCDebug(DIGIKAM_GENERAL_LOG) << "Trying to find a saving format from targetUrl = " << targetUrl;
 
-    // build a list of valid types
+    // Build a list of valid types
 
     QString all;
     supportedImageMimeTypes(QIODevice::WriteOnly, all);
@@ -1951,13 +1952,13 @@ QString EditorWindow::selectValidSavingFormat(const QUrl& targetUrl)
 
     qCDebug(DIGIKAM_GENERAL_LOG) << "Writable formats: " << validTypes;
 
-    // determine the format to use the format provided in the filename
+    // Determine the format to use the format provided in the filename
 
     QString suffix;
 
     if (targetUrl.isLocalFile())
     {
-        // for local files QFileInfo can be used
+        // For local files QFileInfo can be used
 
         QFileInfo fi(targetUrl.toLocalFile());
         suffix = fi.suffix();
@@ -1965,7 +1966,7 @@ QString EditorWindow::selectValidSavingFormat(const QUrl& targetUrl)
     }
     else
     {
-        // for remote files string manipulation is needed unfortunately
+        // For remote files string manipulation is needed unfortunately
 
         QString fileName         = targetUrl.fileName();
         const int periodLocation = fileName.lastIndexOf(QLatin1Char('.'));
@@ -1984,7 +1985,7 @@ QString EditorWindow::selectValidSavingFormat(const QUrl& targetUrl)
         return suffix;
     }
 
-    // another way to determine the format is to use the original file
+    // Another way to determine the format is to use the original file
     {
         QString originalFormat = QString::fromUtf8(QImageReader::imageFormat(m_savingContext.srcURL.toLocalFile()));
 
@@ -2022,7 +2023,7 @@ bool EditorWindow::startingSaveAs(const QUrl& url)
         return false;
     }
 
-    // if new and original URL are equal use save() ------------------------------
+    // If new and original URL are equal use save() ------------------------------
 
     QUrl currURL(m_savingContext.srcURL);
     currURL.setPath(QDir::cleanPath(currURL.path()));
@@ -2065,7 +2066,7 @@ bool EditorWindow::startingSaveAs(const QUrl& url)
     m_savingContext.executedOperation = SavingContext::SavingStateNone;
     m_savingContext.abortingSaving = false;
 
-    // in any case, destructive (Save as) or non (Export), mark as New Version
+    // In any case, destructive (Save as) or non (Export), mark as New Version
 
     m_canvas->interface()->setHistoryIsBranch(true);
 
@@ -2100,7 +2101,7 @@ bool EditorWindow::startingSaveNewVersionInFormat(const QUrl& url, const QString
 VersionFileOperation EditorWindow::saveVersionFileOperation(const QUrl& url, bool fork)
 {
     DImageHistory resolvedHistory = m_canvas->interface()->getResolvedInitialHistory();
-    DImageHistory history = m_canvas->interface()->getItemHistory();
+    DImageHistory history         = m_canvas->interface()->getItemHistory();
 
     VersionFileInfo currentName(url.adjusted(QUrl::RemoveFilename | QUrl::StripTrailingSlash).toLocalFile(),
                                 url.fileName(), m_canvas->currentImageFileFormat());
@@ -2177,6 +2178,7 @@ bool EditorWindow::startingSaveVersion(const QUrl& url, bool fork, bool saveAs, 
                                     url.fileName(),
                                     newURL.fileName()));
         qCWarning(DIGIKAM_GENERAL_LOG) << "target URL is not valid !";
+
         return false;
     }
 
@@ -2305,7 +2307,7 @@ void EditorWindow::moveFile()
 
     if (m_savingContext.executedOperation == SavingContext::SavingStateVersion)
     {
-        // check if we need to move the current file to an intermediate name
+        // Check if we need to move the current file to an intermediate name
 
         if (m_savingContext.versionFileOperation.tasks & VersionFileOperation::MoveToIntermediate)
         {
@@ -2343,7 +2345,7 @@ void EditorWindow::slotDiscardChanges()
 
 void EditorWindow::slotOpenOriginal()
 {
-    // no-op in this base class
+    // No-op in this base class
 }
 
 void EditorWindow::slotColorManagementOptionsChanged()
