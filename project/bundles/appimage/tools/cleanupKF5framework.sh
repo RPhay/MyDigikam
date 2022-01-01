@@ -20,11 +20,15 @@ trap 'echo "FAILED COMMAND: $PREVIOUS_COMMAND"' ERR
 . ../common.sh
 ChecksRunAsRoot
 
-rm -fr /usr/lib64/libKF5*
-rm -fr /usr/share/ECM
-rm -fr /usr/include/KF5
-rm -fr /usr/lib64/cmake/KF5*
-rm -fr /usr/include/marble
-rm -fr /usr/share/marble
-rm -fr /usr/lib64/marble
-rm -fr /usr/lib64/cmake/Marble
+rm -vfr /usr/lib64/libKF5*
+rm -vfr /usr/share/ECM
+rm -vfr /usr/include/KF5
+rm -vfr /usr/lib64/cmake/KF5*
+rm -vfr /usr/include/astro
+rm -vfr /usr/include/marble
+rm -vfr /usr/share/marble
+rm -vfr /usr/lib64/marble
+rm -vfr /usr/lib64/libastro*
+rm -vfr /usr/lib64/libmarble*
+rm -vfr /usr/lib64/cmake/Marble
+rm -vfr /usr/lib64/cmake/Astro
