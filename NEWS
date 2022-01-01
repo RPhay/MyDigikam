@@ -3,7 +3,7 @@ digiKam 7.5.0 - Release date: 2022-xx-xx
 *****************************************************************************************************
 NEW FEATURES:
 
-Bundles: MacOS package and Windows installer use KF5 5.89 and KAPPS 21.12.0 frameworks.
+General : MacOS package, Windows installer, and AppImage bundle use KF5 5.89 and KAPPS 21.12.0 frameworks.
 
 
 *****************************************************************************************************
