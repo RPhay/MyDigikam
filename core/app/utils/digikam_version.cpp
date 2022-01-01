@@ -63,18 +63,24 @@ const QDateTime digiKamBuildDate()
 const QString additionalInformation()
 {
     QString gitVer       = QLatin1String(GITVERSION);
-    QString ret          = i18n("IRC: irc.libera.chat - #digikam\n"
-                                "Feedback: digikam-user@kde.org\n\n"
-                                "Build date: %1 (target: %2)",
+    QString ret          = i18n("IRC: %1 - #digikam\n"
+                                "Feedback: %2\n\n"
+                                "Build date: %3 (target: %4)",
+                                QString::fromLatin1("<a href='https://libera.chat/'>irc.libera.chat</a>"),
+                                QString::fromLatin1("<a href='https://mail.kde.org/mailman/listinfo/digikam-users'>digikam-user@kde.org</a>"),
                                 QLocale().toString(digiKamBuildDate(), QLocale::ShortFormat),
                                 QLatin1String(digikam_build_type));
 
-    if (!gitVer.isEmpty() && !gitVer.startsWith(QLatin1String("unknow")) && !gitVer.startsWith(QLatin1String("export")))
+    if (!gitVer.isEmpty()                           &&
+        !gitVer.startsWith(QLatin1String("unknow")) &&
+        !gitVer.startsWith(QLatin1String("export")))
     {
-        ret = i18n("IRC: irc.libera.chat - #digikam\n"
-                   "Feedback: digikam-user@kde.org\n\n"
-                   "Build date: %1 (target: %2)\n"
-                   "Rev.: %3",
+        ret = i18n("IRC: %1 - #digikam\n"
+                   "Feedback: %2\n\n"
+                   "Build date: %3 (target: %4)\n"
+                   "Rev.: %5",
+                   QString::fromLatin1("<a href='https://libera.chat/'>irc.libera.chat</a>"),
+                   QString::fromLatin1("<a href='https://mail.kde.org/mailman/listinfo/digikam-users'>digikam-user@kde.org</a>"),
                    QLocale().toString(digiKamBuildDate(), QLocale::ShortFormat),
                    QLatin1String(digikam_build_type),
                    QString::fromLatin1("<a href='https://invent.kde.org/graphics/digikam/commit/%1'>%2</a>").arg(gitVer).arg(gitVer));
