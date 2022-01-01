@@ -544,6 +544,18 @@ void DigikamItemView::ignoreFaces(const QList<QModelIndex>& indexes)
     }
 }
 
+QList<int> DigikamItemView::getFaceIds(const QList<QModelIndex>& indexes)
+{
+    QList<int> ids;
+
+    foreach (const QModelIndex& index, indexes)
+    {
+        ids << d->faceDelegate->face(index).tagId();
+    }
+
+    return ids;
+}
+
 void DigikamItemView::activated(const ItemInfo& info, Qt::KeyboardModifiers modifiers)
 {
     if (info.isNull())

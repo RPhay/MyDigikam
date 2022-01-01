@@ -24,6 +24,8 @@
  * ============================================================ */
 
 #include "tagdragdrop.h"
+#include "facetags.h"
+#include "digikamitemview_p.h"
 
 // Qt includes
 
@@ -173,6 +175,109 @@ bool TagDragDropHandler::dropEvent(QAbstractItemView* view,
             return false;
         }
 
+        // here the user dragged a "faceitem" to a "person" album
+        if (destAlbum->hasProperty(TagPropertyName::person()))
+        {
+            // use dropped on album
+            QString targetName = destAlbum->title();
+
+            QObject* source = e->source();
+            DigikamItemView* const dview = qobject_cast<DigikamItemView*>(source);
+            if (dview)
+            {
+                // get selected indexes
+                QModelIndexList selectedIndexes = dview->selectionModel()->selectedIndexes();
+
+                // get the tag ids for each of the selected faces
+                QList<int> faceIds = dview->getFaceIds(selectedIndexes);
+
+                // create list with face names
+                QStringList faceNames;
+                foreach (const int& faceId, faceIds)
+                {
+                    if (!faceId)
+                    {
+                        return false;
+                    }
+                    faceNames << FaceTags::faceNameForTag(faceId);
+                }
+
+                // check that all selected faces are the same person
+                for (int it = 0 ; it < faceIds.count() ; ++it)
+                {
+                    qlonglong const id = faceIds.at(it);
+
+                    if (id != faceIds.first())
+                    {
+                        return false;
+                    }
+                }
+
+                // here we set a new thumbnail
+                if ((imageIDs.size() == 1) && (targetName == faceNames.first()))
+                {
+                    bool set = false;
+
+                    if (e->keyboardModifiers() == Qt::ControlModifier)
+                    {
+                        set = true;
+                    }
+                    else
+                    {
+                        QMenu popMenu(view);
+                        QAction* setAction    = nullptr;
+
+                        setAction = popMenu.addAction(i18n("Set as Tag Thumbnail"));
+                        popMenu.addSeparator();
+                        popMenu.addAction( QIcon::fromTheme(QLatin1String("dialog-cancel")), i18n("C&ancel") );
+
+                        popMenu.setMouseTracking(true);
+                        QAction* const choice = popMenu.exec(QCursor::pos());
+                        set                   = (choice == setAction);
+                    }
+                    if (set)
+                    {
+                        QString errMsg;
+                        AlbumManager::instance()->updateTAlbumIcon(destAlbum, QString(), imageIDs.first(), errMsg);
+                    }
+
+                    return true;
+                }
+
+                // here we move assign a new face tag to the selected faces
+                else if (targetName != faceNames.first())
+                {
+                    bool assign = false;
+
+                    if (e->keyboardModifiers() == Qt::ControlModifier)
+                    {
+                        assign = true;
+                    }
+                    else
+                    {
+                    QMenu popMenu(view);
+                    QAction* const assignAction = popMenu.addAction(QIcon::fromTheme(QLatin1String("tag")),
+                                                                    i18n("Change face tag(s) from '%1' to '%2'", faceNames.first(), targetName));
+                    popMenu.addSeparator();
+                    popMenu.addAction( QIcon::fromTheme(QLatin1String("dialog-cancel")), i18n("C&ancel") );
+
+                    popMenu.setMouseTracking(true);
+                    QAction* const choice       = popMenu.exec(QCursor::pos());
+                    assign                      = (choice == assignAction);
+                    }
+
+                    if (assign)
+                    {
+                        int tagId = FaceTags::getOrCreateTagForPerson(targetName, -1);
+                        dview->confirmFaces(selectedIndexes, tagId);
+                    }
+
+                    return true;
+                }
+                return false;
+            }
+        }
+
         if ((imageIDs.size() == 1) && ItemInfo(imageIDs.first()).tagIds().contains(destAlbum->id()))
         {
             // Setting the dropped image as the album thumbnail
@@ -190,11 +295,7 @@ bool TagDragDropHandler::dropEvent(QAbstractItemView* view,
                 QMenu popMenu(view);
                 QAction* setAction    = nullptr;
 
-                if (imageIDs.count() == 1)
-                {
-                    setAction = popMenu.addAction(i18n("Set as Tag Thumbnail"));
-                }
-
+                setAction = popMenu.addAction(i18n("Set as Tag Thumbnail"));
                 popMenu.addSeparator();
                 popMenu.addAction( QIcon::fromTheme(QLatin1String("dialog-cancel")), i18n("C&ancel") );
 

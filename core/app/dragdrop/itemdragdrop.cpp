@@ -469,6 +469,11 @@ bool ItemDragDropHandler::dropEvent(QAbstractItemView* abstractview, const QDrop
         }
         else if (talbum)
         {
+            if (talbum->hasProperty(TagPropertyName::person()))
+            {
+                return false;
+            }
+
             action = tagAction(e, view, droppedOn.isValid());
 
             if (action == AssignTagAction)
