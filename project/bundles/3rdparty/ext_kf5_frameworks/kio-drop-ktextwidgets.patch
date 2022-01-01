@@ -1,5 +1,5 @@
 diff --git a/autotests/jobtest.h b/autotests/jobtest.h
-index b195a3ef..c9b930cf 100644
+index 5afafceed..3f048a6dc 100644
 --- a/autotests/jobtest.h
 +++ b/autotests/jobtest.h
 @@ -12,6 +12,8 @@
@@ -12,7 +12,7 @@ index b195a3ef..c9b930cf 100644
  {
      Q_OBJECT
 diff --git a/src/core/slaveinterface.h b/src/core/slaveinterface.h
-index 839b8a38..7acdafa6 100644
+index aa7b7d0ca..58c64570f 100644
 --- a/src/core/slaveinterface.h
 +++ b/src/core/slaveinterface.h
 @@ -19,6 +19,8 @@
@@ -25,10 +25,10 @@ index 839b8a38..7acdafa6 100644
  {
  class Connection;
 diff --git a/src/filewidgets/kfilewidget.cpp b/src/filewidgets/kfilewidget.cpp
-index fbbbf433..91ee5432 100644
+index 984a6ea30..06f58a389 100644
 --- a/src/filewidgets/kfilewidget.cpp
 +++ b/src/filewidgets/kfilewidget.cpp
-@@ -260,12 +260,12 @@ public:
+@@ -263,12 +263,12 @@ public:
      bool m_confirmOverwrite = false;
      bool m_differentHierarchyLevelItemsEntered = false;
  
@@ -43,30 +43,29 @@ index fbbbf433..91ee5432 100644
  
      QSlider *m_iconSizeSlider = nullptr;
      QAction *m_zoomOutAction = nullptr;
-diff --git a/src/kcms/kio/CMakeLists.txt b/src/kcms/kio/CMakeLists.txt
-index 34291570..bcd58117 100644
---- a/src/kcms/kio/CMakeLists.txt
-+++ b/src/kcms/kio/CMakeLists.txt
-@@ -1,5 +1,5 @@
- 
+diff --git a/src/kcms/netpref/CMakeLists.txt b/src/kcms/netpref/CMakeLists.txt
+index 3a1fa11ef..a74bbe976 100644
+--- a/src/kcms/netpref/CMakeLists.txt
++++ b/src/kcms/netpref/CMakeLists.txt
+@@ -1,4 +1,4 @@
 -find_package(KF5TextWidgets ${KF_DEP_VERSION} REQUIRED)
 +#find_package(KF5TextWidgets ${KF_DEP_VERSION} REQUIRED)
  
- add_library(kcm_kio MODULE)
+ add_library(kcm_netpref MODULE)
  
-@@ -29,7 +29,7 @@ target_link_libraries(kcm_kio
+@@ -13,7 +13,7 @@ target_link_libraries(kcm_netpref
+     KF5::ConfigCore
+     KF5::ConfigWidgets
      KF5::KIOCore
-     KF5::KIOWidgets
-     KF5::ItemViews   # KTreeWidgetSearchLine
 -    KF5::TextWidgets # KPluralHandlingSpinBox
 +#    KF5::TextWidgets # KPluralHandlingSpinBox
    PRIVATE
-     KF5::I18n)
- 
-diff --git a/src/kcms/kio/netpref.cpp b/src/kcms/kio/netpref.cpp
-index acc194b4..2abce240 100644
---- a/src/kcms/kio/netpref.cpp
-+++ b/src/kcms/kio/netpref.cpp
+     KF5::I18n
+     KF5::CoreAddons
+diff --git a/src/kcms/netpref/netpref.cpp b/src/kcms/netpref/netpref.cpp
+index 02c94893f..791d72164 100644
+--- a/src/kcms/netpref/netpref.cpp
++++ b/src/kcms/netpref/netpref.cpp
 @@ -12,7 +12,7 @@
  #include <KConfigGroup>
  #include <KLocalizedString>
@@ -84,7 +83,7 @@ index acc194b4..2abce240 100644
 -    sb_socketRead->setSuffix(ki18np(" second", " seconds"));
 +    sb_socketRead = new QSpinBox(this);
 +    sb_socketRead->setSuffix(ki18np(" second", " seconds").toString());
-     connect(sb_socketRead, QOverload<int>::of(&QSpinBox::valueChanged), this, &KIOPreferences::configChanged);
+     connect(sb_socketRead, qOverload<int>(&QSpinBox::valueChanged), this, &KIOPreferences::configChanged);
      timeoutLayout->addRow(i18n("Soc&ket read:"), sb_socketRead);
  
 -    sb_proxyConnect = new KPluralHandlingSpinBox(this);
@@ -92,7 +91,7 @@ index acc194b4..2abce240 100644
      sb_proxyConnect->setValue(0);
 -    sb_proxyConnect->setSuffix(ki18np(" second", " seconds"));
 +    sb_proxyConnect->setSuffix(ki18np(" second", " seconds").toString());
-     connect(sb_proxyConnect, QOverload<int>::of(&QSpinBox::valueChanged), this, &KIOPreferences::configChanged);
+     connect(sb_proxyConnect, qOverload<int>(&QSpinBox::valueChanged), this, &KIOPreferences::configChanged);
      timeoutLayout->addRow(i18n("Pro&xy connect:"), sb_proxyConnect);
  
 -    sb_serverConnect = new KPluralHandlingSpinBox(this);
@@ -100,7 +99,7 @@ index acc194b4..2abce240 100644
      sb_serverConnect->setValue(0);
 -    sb_serverConnect->setSuffix(ki18np(" second", " seconds"));
 +    sb_serverConnect->setSuffix(ki18np(" second", " seconds").toString());
-     connect(sb_serverConnect, QOverload<int>::of(&QSpinBox::valueChanged), this, &KIOPreferences::configChanged);
+     connect(sb_serverConnect, qOverload<int>(&QSpinBox::valueChanged), this, &KIOPreferences::configChanged);
      timeoutLayout->addRow(i18n("Server co&nnect:"), sb_serverConnect);
  
 -    sb_serverResponse = new KPluralHandlingSpinBox(this);
@@ -108,7 +107,7 @@ index acc194b4..2abce240 100644
      sb_serverResponse->setValue(0);
 -    sb_serverResponse->setSuffix(ki18np(" second", " seconds"));
 +    sb_serverResponse->setSuffix(ki18np(" second", " seconds").toString());
-     connect(sb_serverResponse, QOverload<int>::of(&QSpinBox::valueChanged), this, &KIOPreferences::configChanged);
+     connect(sb_serverResponse, qOverload<int>(&QSpinBox::valueChanged), this, &KIOPreferences::configChanged);
      timeoutLayout->addRow(i18n("&Server response:"), sb_serverResponse);
  
 @@ -86,8 +86,8 @@ KIOPreferences::KIOPreferences(QWidget *parent, const QVariantList &)
@@ -119,13 +118,13 @@ index acc194b4..2abce240 100644
 -    sb_globalMinimumKeepSize->setSuffix(ki18np(" byte", " bytes"));
 +    sb_globalMinimumKeepSize = new QSpinBox(this);
 +    sb_globalMinimumKeepSize->setSuffix(ki18np(" byte", " bytes").toString());
-     connect(sb_globalMinimumKeepSize, QOverload<int>::of(&QSpinBox::valueChanged), this, &KIOPreferences::configChanged);
+     connect(sb_globalMinimumKeepSize, qOverload<int>(&QSpinBox::valueChanged), this, &KIOPreferences::configChanged);
      partialLayout->addRow(i18nc("@label:spinbox", "If cancelled, automatically delete partially uploaded files smaller than:"), sb_globalMinimumKeepSize);
  
-diff --git a/src/kcms/kio/netpref.h b/src/kcms/kio/netpref.h
-index 6e1ff0a2..c97fb0d4 100644
---- a/src/kcms/kio/netpref.h
-+++ b/src/kcms/kio/netpref.h
+diff --git a/src/kcms/netpref/netpref.h b/src/kcms/netpref/netpref.h
+index f260e52db..d7c955878 100644
+--- a/src/kcms/netpref/netpref.h
++++ b/src/kcms/netpref/netpref.h
 @@ -6,7 +6,7 @@
  class QGroupBox;
  class QCheckBox;
@@ -156,10 +155,10 @@ index 6e1ff0a2..c97fb0d4 100644
  
  #endif // NETPREF_H
 diff --git a/src/widgets/previewjob.cpp b/src/widgets/previewjob.cpp
-index f270b13d..a65a57d9 100644
+index ed5daeb0e..dd478e3e1 100644
 --- a/src/widgets/previewjob.cpp
 +++ b/src/widgets/previewjob.cpp
-@@ -179,7 +179,7 @@ void PreviewJob::setDefaultDevicePixelRatio(int defaultDevicePixelRatio)
+@@ -217,7 +217,7 @@ void PreviewJob::setDefaultDevicePixelRatio(int defaultDevicePixelRatio)
  
  void PreviewJob::setDefaultDevicePixelRatio(qreal defaultDevicePixelRatio)
  {
@@ -168,7 +167,7 @@ index f270b13d..a65a57d9 100644
  }
  
  #if KIOWIDGETS_BUILD_DEPRECATED_SINCE(4, 7)
-@@ -480,7 +480,7 @@ void KIO::PreviewJob::setDevicePixelRatio(int dpr)
+@@ -509,7 +509,7 @@ void KIO::PreviewJob::setDevicePixelRatio(int dpr)
  
  void KIO::PreviewJob::setDevicePixelRatio(qreal dpr)
  {
@@ -178,10 +177,10 @@ index f270b13d..a65a57d9 100644
  
  void PreviewJob::setIgnoreMaximumSize(bool ignoreSize)
 diff --git a/src/widgets/renamedialog.cpp b/src/widgets/renamedialog.cpp
-index 58994c7c..3a88bc87 100644
+index 9324edc56..3fbfddf8e 100644
 --- a/src/widgets/renamedialog.cpp
 +++ b/src/widgets/renamedialog.cpp
-@@ -413,10 +413,10 @@ RenameDialog::RenameDialog(QWidget *parent,
+@@ -427,10 +427,10 @@ RenameDialog::RenameDialog(QWidget *parent,
  
          // check files contents for local files
          if ((d->dest.isLocalFile() && !(_options & RenameDialog_DestIsDirectory)) && (d->src.isLocalFile() && !(_options & RenameDialog_SourceIsDirectory))) {
@@ -194,7 +193,7 @@ index 58994c7c..3a88bc87 100644
              case CompareFilesResult::Identical:
                  text = i18n("The files are identical.");
                  break;
-@@ -428,7 +428,7 @@ RenameDialog::RenameDialog(QWidget *parent,
+@@ -442,7 +442,7 @@ RenameDialog::RenameDialog(QWidget *parent,
                  break;
              }
              QLabel *filesIdenticalLabel = createLabel(this, text, true);
