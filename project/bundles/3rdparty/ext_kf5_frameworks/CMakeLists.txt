@@ -207,7 +207,7 @@ InstallKF5Component(solid               ${KF5_VERSION} ""                       
 InstallKF5Component(kcoreaddons         ${KF5_VERSION} ""                                                                   "")
 InstallKF5Component(threadweaver        ${KF5_VERSION} ""                                                                   "${MacosThreadWeaverPatch}")
 InstallKF5Component(kwindowsystem       ${KF5_VERSION} ""                                                                   "")
-InstallKF5Component(karchive            ${KF5_VERSION} ""                                                                   "karchive-drop-zstd.patch")
+InstallKF5Component(karchive            ${KF5_VERSION} ""                                                                   "")
 InstallKF5Component(kdbusaddons         ${KF5_VERSION} ""                                                                   "")
 InstallKF5Component(ki18n               ${KF5_VERSION} ""                                                                   "")
 InstallKF5Component(kcrash              ${KF5_VERSION} ""                                                                   "")
