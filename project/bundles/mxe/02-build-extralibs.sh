@@ -76,7 +76,6 @@ if [ ] ;then
 # core KF5 frameworks dependencies
 ${MXE_BUILD_TARGETS}-cmake --build . --config RelWithDebInfo --target ext_extra-cmake-modules -- -j$CPU_CORES
 ${MXE_BUILD_TARGETS}-cmake --build . --config RelWithDebInfo --target ext_kconfig             -- -j$CPU_CORES
-fi
 ${MXE_BUILD_TARGETS}-cmake --build . --config RelWithDebInfo --target ext_breeze-icons        -- -j$CPU_CORES
 ${MXE_BUILD_TARGETS}-cmake --build . --config RelWithDebInfo --target ext_kcoreaddons         -- -j$CPU_CORES
 ${MXE_BUILD_TARGETS}-cmake --build . --config RelWithDebInfo --target ext_kwindowsystem       -- -j$CPU_CORES
@@ -101,7 +100,7 @@ ${MXE_BUILD_TARGETS}-cmake --build . --config RelWithDebInfo --target ext_kbookm
 ${MXE_BUILD_TARGETS}-cmake --build . --config RelWithDebInfo --target ext_kimageformats       -- -j$CPU_CORES
 
 # Extra support for digiKam
-
+fi
 # libksane support
 ${MXE_BUILD_TARGETS}-cmake --build . --config RelWithDebInfo --target ext_libksane            -- -j$CPU_CORES
 
