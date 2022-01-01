@@ -64,7 +64,7 @@ void FacePreviewLoader::process(FacePipelineExtendedPackage::Ptr package)
     }
 
     scheduledPackages << package;
-    loadFastButLarge(package->filePath, 1600);
+    loadHighQuality(package->filePath, PreviewSettings::RawPreviewFromRawHalfSize);
 /*
     load(package->filePath, 800, MetaEngineSettings::instance()->settings().exifRotate);
     loadHighQuality(package->filePath, MetaEngineSettings::instance()->settings().exifRotate);
@@ -94,7 +94,17 @@ void FacePreviewLoader::slotImageLoaded(const LoadingDescription& loadingDescrip
         wait();
     }
 
-    package->image         = img;
+    if (qMax(img.width(), img.height()) > 2000)
+    {
+        package->image     = img.smoothScale(2000,
+                                             2000,
+                                             Qt::KeepAspectRatio);
+    }
+    else
+    {
+        package->image     = img;
+    }
+
     package->processFlags |= FacePipelinePackage::PreviewImageLoaded;
 
     emit processed(package);
