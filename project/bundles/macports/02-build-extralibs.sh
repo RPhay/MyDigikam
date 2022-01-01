@@ -112,9 +112,6 @@ mv $INSTALL_PREFIX/Marble.app/Contents/MacOS/lib/libmarble* $INSTALL_PREFIX/lib
 # Calendar support
 cmake --build . --config RelWithDebInfo --target ext_kcalendarcore       -- -j$CPU_CORES
 
-# Platform Input Context Qt plugin
-cmake --build . --config RelWithDebInfo --target ext_fcitx-qt            -- -j$CPU_CORES
-
 #################################################################################################
 
 export PATH=$ORIG_PATH

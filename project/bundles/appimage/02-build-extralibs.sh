@@ -96,6 +96,9 @@ rm -rf $BUILDING_DIR/* || true
 # Calendar support
 /opt/cmake/bin/cmake --build . --config RelWithDebInfo --target ext_kcalendarcore       -- -j$CPU_CORES
 
+# Platform Input Context Qt plugin
+/opt/cmake/bin/cmake --build . --config RelWithDebInfo --target ext_fcitx-qt            -- -j$CPU_CORES
+
 #################################################################################################
 
 TerminateScript
