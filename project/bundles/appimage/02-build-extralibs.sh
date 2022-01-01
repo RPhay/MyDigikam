@@ -86,6 +86,7 @@ rm -rf $BUILDING_DIR/* || true
 
 # Desktop integration support
 /opt/cmake/bin/cmake --build . --config RelWithDebInfo --target ext_kjobwidgets         -- -j$CPU_CORES
+
 /opt/cmake/bin/cmake --build . --config RelWithDebInfo --target ext_kio                 -- -j$CPU_CORES
 /opt/cmake/bin/cmake --build . --config RelWithDebInfo --target ext_knotifyconfig       -- -j$CPU_CORES
 /opt/cmake/bin/cmake --build . --config RelWithDebInfo --target ext_knotifications      -- -j$CPU_CORES
