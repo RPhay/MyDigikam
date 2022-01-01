@@ -287,6 +287,7 @@ port install \
              libical \
              lensfun \
              bison \
+             py-lxml \
              x265 \
              ffmpeg \
              qt5-qtbase \
