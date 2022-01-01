@@ -217,7 +217,7 @@ BUGFIXES:
 205 ==> 447620 - Loss of Copywrite Templates.
 206 ==> 446444 - SSL handshake fails with openstreetmap.
 207 ==> 434852 - Failure to launch.
-208 ==> 
+208 ==> 444479 - digiKam doesn't start, instead "cannot process schema initialization".
 209 ==> 
 210 ==> 
 211 ==> 
