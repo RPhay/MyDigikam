@@ -216,7 +216,7 @@ BUGFIXES:
 204 ==> 254105 - Please, split translations of string "Free" in different contexts.
 205 ==> 447620 - Loss of Copywrite Templates.
 206 ==> 446444 - SSL handshake fails with openstreetmap.
-207 ==> 
+207 ==> 434852 - Failure to launch.
 208 ==> 
 209 ==> 
 210 ==> 
