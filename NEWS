@@ -218,8 +218,8 @@ BUGFIXES:
 206 ==> 446444 - SSL handshake fails with openstreetmap.
 207 ==> 434852 - Failure to launch.
 208 ==> 444479 - digiKam doesn't start, instead "cannot process schema initialization".
-209 ==> 
-210 ==> 
+209 ==> 420559 - Hash mismatch.
+210 ==> 249443 - Request: Build a release package with digiKam/Showfoto and latest stable KDE.
 211 ==> 
 212 ==> 
 213 ==> 
