@@ -100,13 +100,13 @@ ${MXE_BUILD_TARGETS}-cmake --build . --config RelWithDebInfo --target ext_kbookm
 ${MXE_BUILD_TARGETS}-cmake --build . --config RelWithDebInfo --target ext_kimageformats       -- -j$CPU_CORES
 
 # Extra support for digiKam
-fi
+
 # libksane support
 ${MXE_BUILD_TARGETS}-cmake --build . --config RelWithDebInfo --target ext_libksane            -- -j$CPU_CORES
 
 # Geolocation support
 ${MXE_BUILD_TARGETS}-cmake --build . --config RelWithDebInfo --target ext_marble              -- -j$CPU_CORES
-
+fi
 # Calendar support
 ${MXE_BUILD_TARGETS}-cmake --build . --config RelWithDebInfo --target ext_kcalendarcore       -- -j$CPU_CORES
 
