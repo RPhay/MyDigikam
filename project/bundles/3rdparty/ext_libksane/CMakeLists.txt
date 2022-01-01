@@ -7,7 +7,7 @@
 #
 
 set(EXTPREFIX_libksane "${EXTPREFIX}" )
-set(KA_VERSION 21.04.3)
+set(KA_VERSION 21.12.0)
 
 GetKF5ApplicationMd5Sums(libksane ${KA_VERSION})
 
