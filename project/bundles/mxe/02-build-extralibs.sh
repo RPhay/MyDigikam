@@ -72,7 +72,7 @@ ${MXE_BUILD_TARGETS}-cmake $ORIG_WD/../3rdparty \
                            -DEXTERNALS_DOWNLOAD_DIR=$DOWNLOAD_DIR
 
 # NOTE: The order to compile each component here is very important.
-if [ ] ;then
+
 # core KF5 frameworks dependencies
 ${MXE_BUILD_TARGETS}-cmake --build . --config RelWithDebInfo --target ext_extra-cmake-modules -- -j$CPU_CORES
 ${MXE_BUILD_TARGETS}-cmake --build . --config RelWithDebInfo --target ext_kconfig             -- -j$CPU_CORES
@@ -106,12 +106,11 @@ ${MXE_BUILD_TARGETS}-cmake --build . --config RelWithDebInfo --target ext_libksa
 
 # Geolocation support
 ${MXE_BUILD_TARGETS}-cmake --build . --config RelWithDebInfo --target ext_marble              -- -j$CPU_CORES
-fi
+
 # Calendar support
 ${MXE_BUILD_TARGETS}-cmake --build . --config RelWithDebInfo --target ext_kcalendarcore       -- -j$CPU_CORES
 
 # Marble install shared lib at wrong place.
-mv ${MXE_BUILDROOT}/usr/data $MXE_INSTALL_PREFIX/
 mv $MXE_INSTALL_PREFIX/libmarble* $MXE_INSTALL_PREFIX/bin
 mv $MXE_INSTALL_PREFIX/libastro* $MXE_INSTALL_PREFIX/bin
 
