@@ -6,15 +6,15 @@
 # For details see the accompanying COPYING-CMAKE-SCRIPTS file.
 #
 
-SET(EXTPREFIX_fcitx-qt5 "${EXTPREFIX}" )
+SET(EXTPREFIX_fcitx-qt "${EXTPREFIX}" )
 
-ExternalProject_Add(ext_fcitx-qt5
+ExternalProject_Add(ext_fcitx-qt
     DOWNLOAD_DIR ${EXTERNALS_DOWNLOAD_DIR}
 
     GIT_REPOSITORY https://github.com/fcitx/fcitx-qt5.git
     GIT_TAG 1.2.6
 
-    CMAKE_ARGS -DCMAKE_INSTALL_PREFIX=${EXTPREFIX_fcitx-qt5}
+    CMAKE_ARGS -DCMAKE_INSTALL_PREFIX=${EXTPREFIX_fcitx-qt}
                -DCMAKE_BUILD_TYPE=${GLOBAL_BUILD_TYPE}
                -DENABLE_LIBRARY=OFF
                ${GLOBAL_PROFILE}
