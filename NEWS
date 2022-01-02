@@ -263,7 +263,7 @@ BUGFIXES:
 249 ==> 409081 - Editor Levels: Grey color picker has almost no effect.
 250 ==> 415719 - digiKam cannot save images in heic or heif format.
 251 ==> 419192 - Crash when updating fingerprints on windows.
-252 ==> 
+252 ==> 433659 - Startup hangs on "Checking ICC repository...".
 253 ==> 
 254 ==> 
 255 ==> 
