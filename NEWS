@@ -4,7 +4,9 @@ digiKam 7.5.0 - Release date: 2022-xx-xx
 NEW FEATURES:
 
 General : MacOS package, Windows installer, and AppImage bundle use KF5 5.89 and KAPPS 21.12.0 frameworks.
-
+General : AppImage Linux bundle now support Platform Input Context FCITX (https://fcitx-im.org/wiki/Fcitx_5).
+General : Improve RTL translations support.
+General : GUI nternationalisation and localisation updates with more than 50 languages available.
 
 *****************************************************************************************************
 BUGFIXES:
@@ -224,11 +226,20 @@ BUGFIXES:
 212 ==> 377626 - Email image not working.
 213 ==> 447793 - Database socket specification when trying to connect to mariadb server.
 214 ==> 297316 - Translations and docs off by default.
-215 ==> 
-216 ==> 
-217 ==> 
+215 ==> 387482 - Color names for Clean Frames theme are not translatable.
+216 ==> 435897 - Package fcitx support for digikam's appimage.
+217 ==> 432526 - Include Platform Input Context Qt plugin in AppImage bundle.
 218 ==> 
 219 ==> 
 220 ==> 
 221 ==> 
-
+222 ==> 
+223 ==> 
+224 ==> 
+225 ==> 
+226 ==> 
+227 ==> 
+228 ==> 
+229 ==> 
+230 ==> 
+231 ==> 
