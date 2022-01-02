@@ -264,8 +264,11 @@ bool TagDragDropHandler::dropEvent(QAbstractItemView* view,
                     {
                         QMenu popMenu(view);
                         QAction* const assignAction = popMenu.addAction(QIcon::fromTheme(QLatin1String("tag")),
-                                                                        i18n("Change face tag(s) from '%1' to '%2'", faceNames.first(),
-                                                                        targetName));
+                                                                        i18np("Change face name from '%2' to '%3'",
+                                                                              "Change face names from '%2' to '%3'",
+                                                                              faceNames.count(),
+                                                                              faceNames.first(),
+                                                                              targetName));
                         popMenu.addSeparator();
                         popMenu.addAction( QIcon::fromTheme(QLatin1String("dialog-cancel")), i18n("C&ancel") );
 
