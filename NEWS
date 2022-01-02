@@ -229,7 +229,7 @@ BUGFIXES:
 215 ==> 387482 - Color names for Clean Frames theme are not translatable.
 216 ==> 435897 - Package fcitx support for digikam's appimage.
 217 ==> 432526 - Include Platform Input Context Qt plugin in AppImage bundle.
-218 ==> 
+218 ==> 381597 - Show camera make and model in icon view.
 219 ==> 
 220 ==> 
 221 ==> 
