@@ -254,9 +254,9 @@ BUGFIXES:
 240 ==> 372369 - digiKam crashes when executing BatchQueueManager.
 241 ==> 375422 - Right click -> Cut does not delete files from source folder.
 242 ==> 384182 - Combining JPEG and RAW in thumbs view.
-243 ==> 
-244 ==> 
-245 ==> 
+243 ==> 385957 - "See more information on the Internet" For MapQuest Generates Error.
+244 ==> 386059 - Table view show incorrect dates if Exif PreviewDateTime is present (Exif Creation and Digitization dates are correct).
+245 ==> 386910 - Collection disappeared.
 246 ==> 
 247 ==> 
 248 ==> 
