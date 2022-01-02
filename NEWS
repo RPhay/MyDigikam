@@ -265,7 +265,7 @@ BUGFIXES:
 251 ==> 419192 - Crash when updating fingerprints on windows.
 252 ==> 433659 - Startup hangs on "Checking ICC repository...".
 253 ==> 435564 - The similarity finder uses about half the CPU clock speed.
-254 ==> 
+254 ==> 437682 - Strange activity - If a year (2007) with date subdirectories is selected from the Album.
 255 ==> 
 256 ==> 
 257 ==> 
