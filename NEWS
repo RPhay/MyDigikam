@@ -307,11 +307,19 @@ BUGFIXES:
 293 ==> 319676 - Mediawiki backend fails tests.
 294 ==> 313849 - Crash on clicking in BQM "Workflow" tab.
 295 ==> 447815 - Can't paste coordinates.
-296 ==> 
-297 ==> 
-298 ==> 
-299 ==> 
-300 ==> 
-301 ==> 
+296 ==> 446343 - Detect Faces and Recognize faces cannot be started for individual Albums.
+297 ==> 425085 - Export to flickr dialog only allows a single file to be selected.
+298 ==> 416745 - No relative path or deletion time displayed.
+299 ==> 401981 - "Use all cores" opens n threads but they running all at one core.
+300 ==> 392593 - Pros need this set of exports.
+301 ==> 384492 - Error migrating database from SQLite to MySQL external.
 302 ==> 
 303 ==> 
+304 ==> 
+305 ==> 
+306 ==> 
+307 ==> 
+308 ==> 
+309 ==> 
+310 ==> 
+311 ==> 
