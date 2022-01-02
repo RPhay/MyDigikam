@@ -230,7 +230,7 @@ BUGFIXES:
 216 ==> 435897 - Package fcitx support for digikam's appimage.
 217 ==> 432526 - Include Platform Input Context Qt plugin in AppImage bundle.
 218 ==> 381597 - Show camera make and model in icon view.
-219 ==> 
+219 ==> 388190 - No baloo settings.
 220 ==> 
 221 ==> 
 222 ==> 
