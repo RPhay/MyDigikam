@@ -250,7 +250,7 @@ while read lib ; do
             mkdir -p "$TEMPROOT/$dir"
         fi
 
-        echo "  $lib"
+        echo "  Copying $INSTALL_PREFIX/$lib to $TEMPROOT/$dir/"
         cp -aH "$INSTALL_PREFIX/$lib" "$TEMPROOT/$dir/"
     fi
 done
@@ -268,8 +268,8 @@ for path in $OTHER_APPS ; do
         mkdir -p "$TEMPROOT/$dir"
     fi
 
-    echo "  Copying $path"
-    cp -a "$INSTALL_PREFIX/$path" "$TEMPROOT/$dir/"
+    echo "  Copying $INSTALL_PREFIX/$path to $TEMPROOT/$dir/"
+    cp -aH "$INSTALL_PREFIX/$path" "$TEMPROOT/$dir/"
 done
 
 echo "---------- Copying directory contents..."
@@ -282,8 +282,8 @@ for path in $OTHER_DIRS ; do
         mkdir -p "$TEMPROOT/$dir"
     fi
 
-    echo "   Copying $path"
-    cp -a "$INSTALL_PREFIX/$path" "$TEMPROOT/$dir/"
+    echo "   Copying $INSTALL_PREFIX/$path to $TEMPROOT/$dir/"
+    cp -aH "$INSTALL_PREFIX/$path" "$TEMPROOT/$dir/"
 done
 
 
