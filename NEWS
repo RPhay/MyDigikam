@@ -233,7 +233,7 @@ BUGFIXES:
 219 ==> 388190 - No baloo settings.
 220 ==> 268668 - digiKam does not compile (missing header file, OS X).
 221 ==> 342625 - Can't install digiKam.
-222 ==> 
+222 ==> 365684 - Tags Manager: Crash when deleting a tag from the list of tags.
 223 ==> 
 224 ==> 
 225 ==> 
