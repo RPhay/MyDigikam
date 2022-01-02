@@ -175,6 +175,11 @@ bool TagDragDropHandler::dropEvent(QAbstractItemView* view,
             return false;
         }
 
+        if (destAlbum->id() == FaceTags::personParentTag())
+        {
+            return false;
+        }
+
         // here the user dragged a "faceitem" to a "person" album
 
         if (destAlbum->hasProperty(TagPropertyName::person()))
@@ -246,7 +251,7 @@ bool TagDragDropHandler::dropEvent(QAbstractItemView* view,
                 {
                     //here we move assign a new face tag to the selected faces
 
-                    if (FaceTags::isSystemPersonTagId(destAlbum->id()))
+                    if (destAlbum->id() == FaceTags::unconfirmedPersonTagId())
                     {
                         return false;
                     }
@@ -276,8 +281,19 @@ bool TagDragDropHandler::dropEvent(QAbstractItemView* view,
 
                     if (assign)
                     {
-                        int tagId = FaceTags::getOrCreateTagForPerson(targetName, -1);
-                        dview->confirmFaces(selectedIndexes, tagId);
+                        if (destAlbum->id() == FaceTags::unknownPersonTagId())
+                        {
+                            dview->unknownFaces(selectedIndexes);
+                        }
+                        else if (destAlbum->id() == FaceTags::ignoredPersonTagId())
+                        {
+                            dview->ignoreFaces(selectedIndexes);
+                        }
+                        else
+                        {
+                            int tagId = FaceTags::getOrCreateTagForPerson(targetName, -1);
+                            dview->confirmFaces(selectedIndexes, tagId);
+                        }
                     }
 
                     return true;
