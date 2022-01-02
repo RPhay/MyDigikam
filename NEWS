@@ -223,7 +223,7 @@ BUGFIXES:
 211 ==> 438701 - Missing translations for a few common buttons like OK and Cancel (digiKam official builds only).
 212 ==> 377626 - Email image not working.
 213 ==> 447793 - Database socket specification when trying to connect to mariadb server.
-214 ==> 
+214 ==> 297316 - Translations and docs off by default.
 215 ==> 
 216 ==> 
 217 ==> 
