@@ -247,7 +247,7 @@ BUGFIXES:
 233 ==> 328033 - Don't ask confirmation after you edit a photo but do not save it before you move to the next photo.
 234 ==> 328166 - New Feature: Allow selection of multiple images to apply transformations.
 235 ==> 328167 - New Feature: Record and Run Macros.
-236 ==> 
+236 ==> 340286 - Failing to complete Stage 1 of build Instructions on windows / outdated instructions?
 237 ==> 
 238 ==> 
 239 ==> 
