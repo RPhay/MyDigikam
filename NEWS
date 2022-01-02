@@ -240,7 +240,7 @@ BUGFIXES:
 226 ==> 446347 - In advanced search the Album Filter does not include Sub-Albums (maybe Feature Request).
 227 ==> 447767 - Face detection on Sony ARW files does not detect the correct face area.
 228 ==> 415880 - Add a way to easily correct a face name.
-229 ==> 
+229 ==> 240213 - Crop feature not implemented.
 230 ==> 
 231 ==> 
 232 ==> 
