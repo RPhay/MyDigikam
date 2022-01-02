@@ -214,11 +214,11 @@ for app in $KDE_MENU_APPS ; do
 
         if [ -d "$INSTALL_PREFIX/$searchpath/$app.app" ] ; then
 
-            echo "    Found $app in $INSTALL_PREFIX/$searchpath"
+            echo "   Found $app in $INSTALL_PREFIX/$searchpath"
 
             # Copy application directory
 
-            echo "    Copying $app"
+            echo "    Copying $app to $TEMPROOT"
             cp -pr "$INSTALL_PREFIX/$searchpath/$app.app" "$TEMPROOT"
 
             # Add executable to list of binaries for which we need to collect dependencies for
@@ -253,7 +253,7 @@ while read lib ; do
             mkdir -p "$TEMPROOT/$dir"
         fi
 
-        echo "  $lib"
+        echo "   Copying $lib"
         cp -aH "$INSTALL_PREFIX/$lib" "$TEMPROOT/$dir/"
     fi
 done
@@ -271,7 +271,7 @@ for path in $OTHER_APPS ; do
         mkdir -p "$TEMPROOT/$dir"
     fi
 
-    echo "  Copying $path"
+    echo "   Copying $INSTALL_PREFIX/$path to $TEMPROOT/$dir/"
     cp -a "$INSTALL_PREFIX/$path" "$TEMPROOT/$dir/"
 done
 
@@ -285,7 +285,7 @@ for path in $OTHER_DIRS ; do
         mkdir -p "$TEMPROOT/$dir"
     fi
 
-    echo "   Copying $path"
+    echo "   Copying $INSTALL_PREFIX/$path to $TEMPROOT/$dir/"
     cp -a "$INSTALL_PREFIX/$path" "$TEMPROOT/$dir/"
 done
 
@@ -296,7 +296,7 @@ echo "---------- Copying data files..."
 # in source code by QStandardPaths::AppDataLocation
 
 for path in $OTHER_DATA ; do
-    echo "   Copying $path"
+    echo "   Copying $INSTALL_PREFIX/$path to $TEMPROOT/digikam.app/Contents/Resources/""
     cp -a "$INSTALL_PREFIX/$path" "$TEMPROOT/digikam.app/Contents/Resources/"
 done
 
