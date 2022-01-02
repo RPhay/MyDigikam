@@ -303,9 +303,9 @@ BUGFIXES:
 289 ==> 338429 - Removal of preposition 'My' from UI wording.
 290 ==> 336127 - Rename pattern textbox not tall enough and uses hard-coded font colors [patch].
 291 ==> 334817 - digiKam crash when Geo-location a photo.
-292 ==> 
-293 ==> 
-294 ==> 
+292 ==> 323165 - Delete pictures and folders are not removed from table-view.
+293 ==> 319676 - Mediawiki backend fails tests.
+294 ==> 313849 - Crash on clicking in BQM "Workflow" tab.
 295 ==> 
 296 ==> 
 297 ==> 
