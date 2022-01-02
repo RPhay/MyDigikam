@@ -296,8 +296,8 @@ BUGFIXES:
 282 ==> 094913 - Usability: improve CTRL and SHIFT buttons behaviour in the download images dialog.
 283 ==> 091553 - Unify keyboard shortcuts.
 284 ==> 091552 - Keyboard shortcuts don't work in full-screen mode.
-285 ==> 
-286 ==> 
+285 ==> 348132 - Cannot import from MTP smartphone on smb (NAS) device.
+286 ==> 346205 - digiKam hangs often saving an edited picture back to a network share.
 287 ==> 
 288 ==> 
 289 ==> 
