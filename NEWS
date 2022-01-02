@@ -250,6 +250,16 @@ BUGFIXES:
 236 ==> 340286 - Failing to complete Stage 1 of build Instructions on windows / outdated instructions?
 237 ==> 348042 - Division by zero while scan or update the files from a network share.
 238 ==> 367536 - Assigning hierarchical tag only assigns leaf.
-239 ==> 
+239 ==> 370348 - .thumbnail directory.
 240 ==> 
 241 ==> 
+242 ==> 
+243 ==> 
+244 ==> 
+245 ==> 
+246 ==> 
+247 ==> 
+248 ==> 
+249 ==> 
+250 ==> 
+251 ==> 
