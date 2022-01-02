@@ -282,8 +282,8 @@ BUGFIXES:
 268 ==> 366202 - Cmake script does not test for QT5 mysql module availability.
 269 ==> 366150 - Tags don't appear at all.
 270 ==> 365867 - Export to remote storage fails.
-271 ==> 
-272 ==> 
+271 ==> 353861 - No menu option for face management.
+272 ==> 350915 - digiKam fails to compile with jpeg-9a [patch].
 273 ==> 
 274 ==> 
 275 ==> 
