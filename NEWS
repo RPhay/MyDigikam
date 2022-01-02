@@ -267,7 +267,7 @@ BUGFIXES:
 253 ==> 435564 - The similarity finder uses about half the CPU clock speed.
 254 ==> 437682 - Strange activity - If a year (2007) with date subdirectories is selected from the Album.
 255 ==> 442040 - Date time original does not always update correctly on maintenance read from image files.
-256 ==> 
+256 ==> 443393 - Full Path for Tags not saved to image.
 257 ==> 
 258 ==> 
 259 ==> 
