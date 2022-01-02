@@ -242,7 +242,7 @@ BUGFIXES:
 228 ==> 415880 - Add a way to easily correct a face name.
 229 ==> 240213 - Crop feature not implemented.
 230 ==> 257949 - Build fails on XP due to line too long.
-231 ==> 
+231 ==> 287272 - Two XMP tags which are not part of the XMP specification.
 232 ==> 
 233 ==> 
 234 ==> 
