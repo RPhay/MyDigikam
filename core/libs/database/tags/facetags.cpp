@@ -259,6 +259,16 @@ int FaceTags::scannedForFacesTagId()
     return TagsCache::instance()->getOrCreateInternalTag(InternalTagName::scannedForFaces()); // no i18n
 }
 
+bool FaceTags::isSystemPersonTagId(int tagId)
+{
+    return (
+            (existsIgnoredPerson()            &&
+             (tagId == ignoredPersonTagId())) ||
+            (tagId == unknownPersonTagId())   ||
+            (tagId == unconfirmedPersonTagId())
+           );
+}
+
 QMap<QString, QString> FaceTags::identityAttributes(int tagId)
 {
     QMap<QString, QString> attributes;

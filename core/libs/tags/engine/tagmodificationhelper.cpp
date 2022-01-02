@@ -469,11 +469,9 @@ void TagModificationHelper::slotMultipleFaceTagDel(const QList<TAlbum*>& tags)
 
     foreach (TAlbum* const selectedTag, tags)
     {
-        if (!selectedTag                                            ||
-            selectedTag->isRoot()                                   ||
-            (selectedTag->id() == FaceTags::unknownPersonTagId())   ||
-            (selectedTag->id() == FaceTags::ignoredPersonTagId())   ||
-            (selectedTag->id() == FaceTags::unconfirmedPersonTagId()))
+        if (!selectedTag                                   ||
+            selectedTag->isRoot()                          ||
+            FaceTags::isSystemPersonTagId(selectedTag->id()))
         {
             continue;
         }

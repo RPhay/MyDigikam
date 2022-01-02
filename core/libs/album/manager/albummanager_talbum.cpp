@@ -381,9 +381,7 @@ bool AlbumManager::deleteTAlbum(TAlbum* album, QString& errMsg, bool askUser)
         return false;
     }
 
-    if ((album->id() == FaceTags::unknownPersonTagId())   ||
-        (album->id() == FaceTags::ignoredPersonTagId())   ||
-        (album->id() == FaceTags::unconfirmedPersonTagId()))
+    if (FaceTags::isSystemPersonTagId(album->id()))
     {
         errMsg = i18n("Cannot delete required face tag");
         return false;
@@ -572,9 +570,7 @@ bool AlbumManager::mergeTAlbum(TAlbum* album, TAlbum* destAlbum, bool dialog, QS
         return false;
     }
 
-    if ((album->id() == FaceTags::unknownPersonTagId())   ||
-        (album->id() == FaceTags::ignoredPersonTagId())   ||
-        (album->id() == FaceTags::unconfirmedPersonTagId()))
+    if (FaceTags::isSystemPersonTagId(album->id()));
     {
         errMsg = i18n("Cannot merge required face tag");
         return false;

@@ -246,9 +246,7 @@ bool TagDragDropHandler::dropEvent(QAbstractItemView* view,
                 {
                     //here we move assign a new face tag to the selected faces
 
-                    if ((destAlbum->id() == FaceTags::unknownPersonTagId())   ||
-                        (destAlbum->id() == FaceTags::ignoredPersonTagId())   ||
-                        (destAlbum->id() == FaceTags::unconfirmedPersonTagId()))
+                    if (FaceTags::isSystemPersonTagId(destAlbum->id()))
                     {
                         return false;
                     }

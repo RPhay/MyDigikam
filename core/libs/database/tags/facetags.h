@@ -57,6 +57,8 @@ public:
 
     static bool           isTheIgnoredPerson(int tagId);
 
+    static bool           isSystemPersonTagId(int tagId);
+
     /**
      * Use this method with caution, as it will create
      * the Ignored Tag, if one doesn't exist already.
