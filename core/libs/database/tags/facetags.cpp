@@ -262,9 +262,8 @@ int FaceTags::scannedForFacesTagId()
 bool FaceTags::isSystemPersonTagId(int tagId)
 {
     return (
-            (existsIgnoredPerson()            &&
-             (tagId == ignoredPersonTagId())) ||
-            (tagId == unknownPersonTagId())   ||
+            (tagId == ignoredPersonTagId())  ||
+            (tagId == unknownPersonTagId())  ||
             (tagId == unconfirmedPersonTagId())
            );
 }
@@ -502,18 +501,6 @@ int FaceTags::ignoredPersonTagId()
     props.setProperty(TagPropertyName::ignoredPerson(), QString());
 
     return ignoredPersonTagId;
-}
-
-bool FaceTags::existsIgnoredPerson()
-{
-    QList<int> ids = TagsCache::instance()->tagsWithPropertyCached(TagPropertyName::ignoredPerson());
-
-    if (!ids.isEmpty())
-    {
-        return true;
-    }
-
-    return false;
 }
 
 } // Namespace Digikam

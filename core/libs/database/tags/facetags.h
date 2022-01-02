@@ -56,25 +56,9 @@ public:
     static int            unconfirmedPersonTagId();
 
     static bool           isTheIgnoredPerson(int tagId);
-
-    static bool           isSystemPersonTagId(int tagId);
-
-    /**
-     * Use this method with caution, as it will create
-     * the Ignored Tag, if one doesn't exist already.
-     * This isn't always required, as the Ignored Tag should
-     * only be created when the User wants it to.
-     * Use existsIgnoredPerson() for safety.
-     */
     static int            ignoredPersonTagId();
 
-    /**
-     * Method to check whether the Ignored Tag has been created
-     * or not. Will be used by other classes. Needed because
-     * unlike Unconfirmed and Unknown, Ignored is not created
-     * automatically at startup.
-     */
-    static bool           existsIgnoredPerson();
+    static bool           isSystemPersonTagId(int tagId);
 
     /**
      * A method to return a list of all person tags in the DB
