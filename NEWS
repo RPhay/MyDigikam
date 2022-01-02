@@ -232,7 +232,7 @@ BUGFIXES:
 218 ==> 381597 - Show camera make and model in icon view.
 219 ==> 388190 - No baloo settings.
 220 ==> 268668 - digiKam does not compile (missing header file, OS X).
-221 ==> 
+221 ==> 342625 - Can't install digiKam.
 222 ==> 
 223 ==> 
 224 ==> 
