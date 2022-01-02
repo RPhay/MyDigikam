@@ -252,7 +252,7 @@ BUGFIXES:
 238 ==> 367536 - Assigning hierarchical tag only assigns leaf.
 239 ==> 370348 - .thumbnail directory.
 240 ==> 372369 - digiKam crashes when executing BatchQueueManager.
-241 ==> 
+241 ==> 375422 - Right click -> Cut does not delete files from source folder.
 242 ==> 
 243 ==> 
 244 ==> 
