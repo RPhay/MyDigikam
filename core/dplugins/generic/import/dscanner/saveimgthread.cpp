@@ -144,23 +144,23 @@ void SaveImgThread::run()
             {
                 if      (d->frmt == KSaneWidget::FormatRGB_8_C)     // Color 8 bits
                 {
-                    dst[0]  = src[2];    // Blue
-                    dst[1]  = src[1];    // Green
-                    dst[2]  = src[0];    // Red
-                    dst[3]  = 0x00;      // Alpha
+                    dst[0] = src[2];    // Blue
+                    dst[1] = src[1];    // Green
+                    dst[2] = src[0];    // Red
+                    dst[3] = 0x00;      // Alpha
 
-                    dst    += 4;
-                    src    += 3;
+                    dst   += 4;
+                    src   += 3;
                 }
                 else if (d->frmt == KSaneWidget::FormatGrayScale8)  // Gray
                 {
-                    dst[0]  = src[0];    // Blue
-                    dst[1]  = src[0];    // Green
-                    dst[2]  = src[0];    // Red
-                    dst[3]  = 0x00;      // Alpha
+                    dst[0] = src[0];    // Blue
+                    dst[1] = src[0];    // Green
+                    dst[2] = src[0];    // Red
+                    dst[3] = 0x00;      // Alpha
 
-                    dst    += 4;
-                    src    += 1;
+                    dst   += 4;
+                    src   += 1;
                 }
                 else if (d->frmt == KSaneWidget::FormatBlackWhite)  // Lineart
                 {
@@ -168,20 +168,20 @@ void SaveImgThread::run()
                     {
                         if (*src & (1 << (7 - i)))
                         {
-                            dst[0]  = 0x00;    // Blue
-                            dst[1]  = 0x00;    // Green
-                            dst[2]  = 0x00;    // Red
-                            dst[3]  = 0x00;    // Alpha
+                            dst[0] = 0x00;    // Blue
+                            dst[1] = 0x00;    // Green
+                            dst[2] = 0x00;    // Red
+                            dst[3] = 0x00;    // Alpha
                         }
                         else
                         {
-                            dst[0]  = 0xFF;    // Blue
-                            dst[1]  = 0xFF;    // Green
-                            dst[2]  = 0xFF;    // Red
-                            dst[3]  = 0x00;    // Alpha
+                            dst[0] = 0xFF;    // Blue
+                            dst[1] = 0xFF;    // Green
+                            dst[2] = 0xFF;    // Red
+                            dst[3] = 0x00;    // Alpha
                         }
 
-                        dst        += 4;
+                        dst       += 4;
                     }
 
                     src += 1;
@@ -208,23 +208,23 @@ void SaveImgThread::run()
             {
                 if      (d->frmt == KSaneWidget::FormatRGB_16_C)    // Color 16 bits
                 {
-                    dst[0]  = src[2];    // Blue
-                    dst[1]  = src[1];    // Green
-                    dst[2]  = src[0];    // Red
-                    dst[3]  = 0x0000;    // Alpha
+                    dst[0] = src[2];    // Blue
+                    dst[1] = src[1];    // Green
+                    dst[2] = src[0];    // Red
+                    dst[3] = 0x0000;    // Alpha
 
-                    dst    += 4;
-                    src    += 3;
+                    dst   += 4;
+                    src   += 3;
                 }
                 else if (d->frmt == KSaneWidget::FormatGrayScale16) // Gray16
                 {
-                    dst[0]  = src[0];    // Blue
-                    dst[1]  = src[0];    // Green
-                    dst[2]  = src[0];    // Red
-                    dst[3]  = 0x0000;    // Alpha
+                    dst[0] = src[0];    // Blue
+                    dst[1] = src[0];    // Green
+                    dst[2] = src[0];    // Red
+                    dst[3] = 0x0000;    // Alpha
 
-                    dst    += 4;
-                    src    += 1;
+                    dst   += 4;
+                    src   += 1;
                 }
             }
 
@@ -315,23 +315,23 @@ void SaveImgThread::run()
             {
                 if      (d->imageData.format() == QImage::Format_RGBX64)    // Color 16 bits
                 {
-                    const QRgba64 *rgbData = reinterpret_cast<QRgba64*>(d->imageData.scanLine(h));
-                    dst[0]  = rgbData[w].blue();    // Blue
-                    dst[1]  = rgbData[w].green();    // Green
-                    dst[2]  = rgbData[w].red();    // Red
-                    dst[3]  = 0x0000;    // Alpha
+                    const QRgba64* rgbData = reinterpret_cast<QRgba64*>(d->imageData.scanLine(h));
+                    dst[0] = rgbData[w].blue();    // Blue
+                    dst[1] = rgbData[w].green();    // Green
+                    dst[2] = rgbData[w].red();    // Red
+                    dst[3] = 0x0000;    // Alpha
 
                     dst    += 4;
                 }
                 else if (d->imageData.format() == QImage::Format_Grayscale16) // Gray16
                 {
-                    const unsigned short *grayScale = reinterpret_cast<unsigned short*>(d->imageData.scanLine(h));
-                    dst[0]  = grayScale[w];    // Blue
-                    dst[1]  = grayScale[w];    // Green
-                    dst[2]  = grayScale[w];    // Red
-                    dst[3]  = 0x0000;    // Alpha
+                    const unsigned short* grayScale = reinterpret_cast<unsigned short*>(d->imageData.scanLine(h));
+                    dst[0] = grayScale[w];    // Blue
+                    dst[1] = grayScale[w];    // Green
+                    dst[2] = grayScale[w];    // Red
+                    dst[3] = 0x0000;    // Alpha
 
-                    dst    += 4;
+                    dst   += 4;
                 }
             }
 
