@@ -268,18 +268,49 @@ BUGFIXES:
 254 ==> 437682 - Strange activity - If a year (2007) with date subdirectories is selected from the Album.
 255 ==> 442040 - Date time original does not always update correctly on maintenance read from image files.
 256 ==> 443393 - Full Path for Tags not saved to image.
-257 ==> 
-258 ==> 
-259 ==> 
-260 ==> 
-261 ==> 
-262 ==> 
-263 ==> 
-264 ==> 
-265 ==> 
-266 ==> 
-267 ==> 
-268 ==> 
-269 ==> 
-270 ==> 
+257 ==> 444721 - Globe in Map Search loses green overlay when panned to certain angles.
+258 ==> 440118 - Adding collections is not adding any images.
+259 ==> 438223 - digiKam can't be launched.
+260 ==> 425880 - Unable to connect to a remote MariaDB server on "Driver not loaded" error.
+261 ==> 400376 - Picture with wrong GPS value -> better to display "Unavailable".
+262 ==> 396679 - Open Album in Terminal.
+263 ==> 393130 - Tag manager now opens a separate window.
+264 ==> 389653 - View albums as a flat folder list.
+265 ==> 384421 - Bad if condition in source code.
+266 ==> 383792 - New tool to export Nikon Image Space (https://www.nikonimagespace.com).
+267 ==> 371211 - No metadata editing offered anymore.
+268 ==> 366202 - Cmake script does not test for QT5 mysql module availability.
+269 ==> 366150 - Tags don't appear at all.
+270 ==> 365867 - Export to remote storage fails.
 271 ==> 
+272 ==> 
+273 ==> 
+274 ==> 
+275 ==> 
+276 ==> 
+277 ==> 
+278 ==> 
+279 ==> 
+280 ==> 
+281 ==> 
+282 ==> 
+283 ==> 
+284 ==> 
+285 ==> 
+286 ==> 
+287 ==> 
+288 ==> 
+289 ==> 
+290 ==> 
+291 ==> 
+292 ==> 
+293 ==> 
+294 ==> 
+295 ==> 
+296 ==> 
+297 ==> 
+298 ==> 
+299 ==> 
+300 ==> 
+301 ==> 
+
