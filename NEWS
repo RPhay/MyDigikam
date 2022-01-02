@@ -238,7 +238,7 @@ BUGFIXES:
 224 ==> 387645 - Workflow Process buttons.
 225 ==> 398954 - Feature request: Highlight tags of selected image(s) in tags list.
 226 ==> 446347 - In advanced search the Album Filter does not include Sub-Albums (maybe Feature Request).
-227 ==> 
+227 ==> 447767 - Face detection on Sony ARW files does not detect the correct face area.
 228 ==> 
 229 ==> 
 230 ==> 

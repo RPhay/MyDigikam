@@ -576,9 +576,11 @@ void FaceGroup::slotAddItemFinished(const QRectF& rect)
             preview.rotateAndFlip(d->info.orientation());
         }
 
-        FaceTagsIface face   = d->editPipeline.addManually(d->info, preview,
-                                                           TagRegion(faceRect));
+        TagRegion region(d->aspectRatio(faceRect, true));
 
+        FaceTagsIface face   = d->editPipeline.addManually(d->info,
+                                                           preview,
+                                                           region);
         FaceItem* const item = d->addItem(face);
         d->visibilityController->setItemDirectlyVisible(item, true);
         item->switchMode(AssignNameWidget::UnconfirmedEditMode);
@@ -631,7 +633,7 @@ void FaceGroup::applyItemGeometryChanges()
                                            d->info.dimensions());
         }
 
-        TagRegion currentRegion(faceRect);
+        TagRegion currentRegion(d->aspectRatio(faceRect, true));
 
         if (item->face().region() != currentRegion)
         {
