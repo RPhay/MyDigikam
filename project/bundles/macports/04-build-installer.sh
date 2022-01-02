@@ -99,6 +99,9 @@ KDE_APP_PATHS="\
 Applications/digiKam.org \
 "
 
+# Folder name of MariaDB (can change with later Macports installation)
+MARIADB_FOLDER_NAME="mariadb-10.5"
+
 # Other apps - non-MacOS binaries & libraries to be included with required dylibs
 OTHER_APPS="\
 lib/plugins/imageformats/*.so \
@@ -107,13 +110,13 @@ lib/plugins/digikam/generic/*.so \
 lib/plugins/digikam/editor/*.so \
 lib/plugins/digikam/dimg/*.so \
 lib/plugins/digikam/rawimport/*.so \
-lib/mariadb-10.5/bin/mysql \
-lib/mariadb-10.5/bin/mysqld \
-lib/mariadb-10.5/bin/my_print_defaults \
-lib/mariadb-10.5/bin/mysqladmin \
-lib/mariadb-10.5/bin/mysqltest \
-lib/mariadb-10.5/mysql/*.dylib \
-lib/mariadb-10.5/plugin/*.so \
+lib/$MARIADB_FOLDER_NAME/bin/mysql \
+lib/$MARIADB_FOLDER_NAME/bin/mysqld \
+lib/$MARIADB_FOLDER_NAME/bin/my_print_defaults \
+lib/$MARIADB_FOLDER_NAME/bin/mysqladmin \
+lib/$MARIADB_FOLDER_NAME/bin/mysqltest \
+lib/$MARIADB_FOLDER_NAME/mysql/*.dylib \
+lib/$MARIADB_FOLDER_NAME/plugin/*.so \
 lib/ImageMagick*/modules-Q16/coders/*.so \
 lib/ImageMagick*/modules-Q16/filters/*.so \
 bin/kbuildsycoca5 \
@@ -141,13 +144,13 @@ lib/libdigikam*.dSYM \
 lib/plugins \
 lib/libgphoto2 \
 lib/libgphoto2_port \
-lib/mariadb-10.5 \
+lib/$MARIADB_FOLDER_NAME \
 lib/ImageMagick* \
-share/mariadb \
+share/$MARIADB_FOLDER_NAME \
 share/ImageMagick* \
 etc/xdg \
 etc/ImageMagick* \
-etc/mariadb-10.5 \
+etc/$MARIADB_FOLDER_NAME \
 "
 
 #etc/sane.d \
@@ -557,12 +560,12 @@ for HPP in ${HEADERFILES[@]} ; do
 
 done
 
-rm -rfv $TEMPROOT/digikam.app/Contents/share/mariadb/mysql-test
-rm -rfv $TEMPROOT/digikam.app/Contents/share/mariadb/sql-bench
+rm -rfv $TEMPROOT/digikam.app/Contents/share/$MARIADB_FOLDER_NAME/mysql-test
+rm -rfv $TEMPROOT/digikam.app/Contents/share/$MARIADB_FOLDER_NAME/sql-bench
 
 echo -e "\n---------- Patch config and script files in bundle"
 
-MARIADBDIRS=(`find $TEMPROOT -type d -name "mariadb"`)
+MARIADBDIRS=(`find $TEMPROOT -type d -name "$MARIADB_FOLDER_NAME"`)
 
 for DIR in ${MARIADBDIRS[@]} ; do
 
