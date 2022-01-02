@@ -200,22 +200,14 @@ bool TagDragDropHandler::dropEvent(QAbstractItemView* view,
 
                 foreach (const int& faceId, faceIds)
                 {
-                    if (!faceId)
+                    // check that all selected faces are the same person
+
+                    if (!faceId || faceId != faceIds.first())
                     {
                         return false;
                     }
 
                     faceNames << FaceTags::faceNameForTag(faceId);
-                }
-
-                // check that all selected faces are the same person
-
-                for (int i = 0 ; i < faceIds.count() ; ++i)
-                {
-                    if (faceIds.at(i) != faceIds.first())
-                    {
-                        return false;
-                    }
                 }
 
                 // here we set a new thumbnail
@@ -253,6 +245,13 @@ bool TagDragDropHandler::dropEvent(QAbstractItemView* view,
                 else if (targetName != faceNames.first())
                 {
                     //here we move assign a new face tag to the selected faces
+
+                    if ((destAlbum->id() == FaceTags::unknownPersonTagId())   ||
+                        (destAlbum->id() == FaceTags::ignoredPersonTagId())   ||
+                        (destAlbum->id() == FaceTags::unconfirmedPersonTagId()))
+                    {
+                        return false;
+                    }
 
                     bool assign = false;
 
