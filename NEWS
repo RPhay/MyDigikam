@@ -299,10 +299,10 @@ BUGFIXES:
 285 ==> 348132 - Cannot import from MTP smartphone on smb (NAS) device.
 286 ==> 346205 - digiKam hangs often saving an edited picture back to a network share.
 287 ==> 415879 - Drag and drop of face to people Tag -> inappropriate popup.
-288 ==> 
-289 ==> 
-290 ==> 
-291 ==> 
+288 ==> 338887 - FILEIO : digikam generated pgf broken/incompatible.
+289 ==> 338429 - Removal of preposition 'My' from UI wording.
+290 ==> 336127 - Rename pattern textbox not tall enough and uses hard-coded font colors [patch].
+291 ==> 334817 - digiKam crash when Geo-location a photo.
 292 ==> 
 293 ==> 
 294 ==> 
