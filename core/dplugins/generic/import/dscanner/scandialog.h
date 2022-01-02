@@ -68,11 +68,17 @@ Q_SIGNALS:
     void signalImportedImage(const QUrl&);
 
 private Q_SLOTS:
+
 #if KSANE_VERSION < QT_VERSION_CHECK(21,8,0)
+
     void slotSaveImage(QByteArray&, int, int, int, int);
+
 #else
+
     void slotSaveImage(const QImage&);
+
 #endif
+
     void slotThreadProgress(const QUrl&, int);
     void slotThreadDone(const QUrl&, bool);
     void slotDialogFinished();

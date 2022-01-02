@@ -51,15 +51,20 @@ public:
     explicit Private()
     {
     }
+
 #if KSANE_VERSION < QT_VERSION_CHECK(21,8,0)
-    int        width = 0;
-    int        height = 0;
+
+    int        width        = 0;
+    int        height       = 0;
     int        bytesPerLine = 0;
-    int        frmt = 0;
+    int        frmt         = 0;
 
     QByteArray ksaneData;
+
 #else
+
     QImage     imageData;
+
 #endif
 
     QString    make;
@@ -85,6 +90,7 @@ SaveImgThread::~SaveImgThread()
 }
 
 #if KSANE_VERSION < QT_VERSION_CHECK(21,8,0)
+
 void SaveImgThread::setImageData(const QByteArray& ksaneData, int width, int height,
                                  int bytesPerLine, int ksaneFormat)
 {
@@ -94,11 +100,14 @@ void SaveImgThread::setImageData(const QByteArray& ksaneData, int width, int hei
     d->frmt         = ksaneFormat;
     d->ksaneData    = ksaneData;
 }
+
 #else
+
 void SaveImgThread::setImageData(const QImage& imageData)
 {
     d->imageData = imageData;
 }
+
 #endif
 
 void SaveImgThread::setTargetFile(const QUrl& url, const QString& format)
@@ -116,7 +125,9 @@ void SaveImgThread::setScannerModel(const QString& make, const QString& model)
 void SaveImgThread::run()
 {
     Q_EMIT signalProgress(d->newUrl, 10);
+
 #if KSANE_VERSION < QT_VERSION_CHECK(21,8,0)
+
     bool sixteenBit   = ((d->frmt == KSaneWidget::FormatRGB_16_C) ||
                          (d->frmt == KSaneWidget::FormatGrayScale16));
     DImg img((uint)d->width, (uint)d->height, sixteenBit, false);
@@ -170,7 +181,7 @@ void SaveImgThread::run()
                             dst[3]  = 0x00;    // Alpha
                         }
 
-                        dst    += 4;
+                        dst        += 4;
                     }
 
                     src += 1;
@@ -225,7 +236,9 @@ void SaveImgThread::run()
             }
         }
     }
+
 #else
+
     bool sixteenBit   = ((d->imageData.format() == QImage::Format_RGBX64) ||
                          (d->imageData.format() == QImage::Format_Grayscale16));
     DImg img((uint)d->imageData.width(), (uint)d->imageData.height(), sixteenBit, false);
@@ -241,45 +254,46 @@ void SaveImgThread::run()
             {
                 if      (d->imageData.format() == QImage::Format_RGB32)     // Color 8 bits
                 {
-                    const QRgb *rgbData = reinterpret_cast<QRgb*>(d->imageData.scanLine(h));
-                    dst[0]  = qBlue(rgbData[w]);     // Blue
-                    dst[1]  = qGreen(rgbData[w]);    // Green
-                    dst[2]  = qRed(rgbData[w]);      // Red
-                    dst[3]  = 0x00;      // Alpha
+                    const QRgb* rgbData = reinterpret_cast<QRgb*>(d->imageData.scanLine(h));
+                    dst[0] = qBlue(rgbData[w]);     // Blue
+                    dst[1] = qGreen(rgbData[w]);    // Green
+                    dst[2] = qRed(rgbData[w]);      // Red
+                    dst[3] = 0x00;                  // Alpha
 
-                    dst    += 4;
+                    dst   += 4;
                 }
                 else if (d->imageData.format() == QImage::Format_Grayscale8)  // Gray
                 {
-                    const uchar *grayScale = d->imageData.scanLine(h);
-                    dst[0]  = grayScale[w];    // Blue
-                    dst[1]  = grayScale[w];    // Green
-                    dst[2]  = grayScale[w];    // Red
-                    dst[3]  = 0x00;      // Alpha
+                    const uchar* grayScale = d->imageData.scanLine(h);
+                    dst[0] = grayScale[w];     // Blue
+                    dst[1] = grayScale[w];    // Green
+                    dst[2] = grayScale[w];    // Red
+                    dst[3] = 0x00;            // Alpha
 
-                    dst    += 4;
+                    dst   += 4;
                 }
                 else if (d->imageData.format() == QImage::Format_Mono)  // Lineart
                 {
-                    const uchar *mono = d->imageData.scanLine(h);
-                    const int index = w / 8;
-                    const int mod = w % 8;
+                    const uchar* mono = d->imageData.scanLine(h);
+                    const int index   = w / 8;
+                    const int mod     = w % 8;
+
                     if (mono[index] & (1 << mod))
                     {
-                        dst[0]  = 0x00;    // Blue
-                        dst[1]  = 0x00;    // Green
-                        dst[2]  = 0x00;    // Red
-                        dst[3]  = 0x00;    // Alpha
+                        dst[0] = 0x00;    // Blue
+                        dst[1] = 0x00;    // Green
+                        dst[2] = 0x00;    // Red
+                        dst[3] = 0x00;    // Alpha
                     }
                     else
                     {
-                        dst[0]  = 0xFF;    // Blue
-                        dst[1]  = 0xFF;    // Green
-                        dst[2]  = 0xFF;    // Red
-                        dst[3]  = 0x00;    // Alpha
+                        dst[0] = 0xFF;    // Blue
+                        dst[1] = 0xFF;    // Green
+                        dst[2] = 0xFF;    // Red
+                        dst[3] = 0x00;    // Alpha
                     }
 
-                    dst += 4;
+                    dst       += 4;
                 }
             }
 
@@ -329,7 +343,9 @@ void SaveImgThread::run()
             }
         }
     }
+
 #endif
+
     Q_EMIT signalProgress(d->newUrl, 60);
 
     bool success = img.save(d->newUrl.toLocalFile(), d->format);
@@ -339,6 +355,7 @@ void SaveImgThread::run()
     if (!success)
     {
         Q_EMIT signalComplete(d->newUrl, success);
+
         return;
     }
 

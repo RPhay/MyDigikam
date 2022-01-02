@@ -51,11 +51,16 @@ public:
 
     void setTargetFile(const QUrl& url, const QString& format);
     void setScannerModel(const QString& make, const QString& model);
+
 #if KSANE_VERSION < QT_VERSION_CHECK(21,8,0)
+
     void setImageData(const QByteArray& ksaneData, int width, int height,
                       int bytesPerLine, int ksaneFormat);
+
 #else
+
     void setImageData(const QImage& imageData);
+
 #endif
 
 Q_SIGNALS:
