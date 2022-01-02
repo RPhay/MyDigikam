@@ -99,9 +99,6 @@ KDE_APP_PATHS="\
 Applications/digiKam.org \
 "
 
-# Folder name of MariaDB (can change with later Macports installation)
-MARIADB_FOLDER_NAME="mariadb-10.5"
-
 # Other apps - non-MacOS binaries & libraries to be included with required dylibs
 OTHER_APPS="\
 lib/plugins/imageformats/*.so \
@@ -110,13 +107,13 @@ lib/plugins/digikam/generic/*.so \
 lib/plugins/digikam/editor/*.so \
 lib/plugins/digikam/dimg/*.so \
 lib/plugins/digikam/rawimport/*.so \
-lib/$MARIADB_FOLDER_NAME/bin/mysql \
-lib/$MARIADB_FOLDER_NAME/bin/mysqld \
-lib/$MARIADB_FOLDER_NAME/bin/my_print_defaults \
-lib/$MARIADB_FOLDER_NAME/bin/mysqladmin \
-lib/$MARIADB_FOLDER_NAME/bin/mysqltest \
-lib/$MARIADB_FOLDER_NAME/mysql/*.dylib \
-lib/$MARIADB_FOLDER_NAME/plugin/*.so \
+lib/mariadb-10.5/bin/mysql \
+lib/mariadb-10.5/bin/mysqld \
+lib/mariadb-10.5/bin/my_print_defaults \
+lib/mariadb-10.5/bin/mysqladmin \
+lib/mariadb-10.5/bin/mysqltest \
+lib/mariadb-10.5/mysql/*.dylib \
+lib/mariadb-10.5/plugin/*.so \
 lib/ImageMagick*/modules-Q16/coders/*.so \
 lib/ImageMagick*/modules-Q16/filters/*.so \
 bin/kbuildsycoca5 \
@@ -144,13 +141,13 @@ lib/libdigikam*.dSYM \
 lib/plugins \
 lib/libgphoto2 \
 lib/libgphoto2_port \
-lib/$MARIADB_FOLDER_NAME \
+lib/mariadb-10.5 \
 lib/ImageMagick* \
-share/$MARIADB_FOLDER_NAME \
+share/mariadb-10.5 \
 share/ImageMagick* \
 etc/xdg \
 etc/ImageMagick* \
-etc/$MARIADB_FOLDER_NAME \
+etc/mariadb-10.5 \
 "
 
 #etc/sane.d \
@@ -214,11 +211,11 @@ for app in $KDE_MENU_APPS ; do
 
         if [ -d "$INSTALL_PREFIX/$searchpath/$app.app" ] ; then
 
-            echo "   Found $app in $INSTALL_PREFIX/$searchpath"
+            echo "    Found $app in $INSTALL_PREFIX/$searchpath"
 
             # Copy application directory
 
-            echo "    Copying $app to $TEMPROOT"
+            echo "    Copying $app"
             cp -pr "$INSTALL_PREFIX/$searchpath/$app.app" "$TEMPROOT"
 
             # Add executable to list of binaries for which we need to collect dependencies for
@@ -253,7 +250,7 @@ while read lib ; do
             mkdir -p "$TEMPROOT/$dir"
         fi
 
-        echo "   Copying $lib"
+        echo "  $lib"
         cp -aH "$INSTALL_PREFIX/$lib" "$TEMPROOT/$dir/"
     fi
 done
@@ -271,7 +268,7 @@ for path in $OTHER_APPS ; do
         mkdir -p "$TEMPROOT/$dir"
     fi
 
-    echo "   Copying $INSTALL_PREFIX/$path to $TEMPROOT/$dir/"
+    echo "  Copying $path"
     cp -a "$INSTALL_PREFIX/$path" "$TEMPROOT/$dir/"
 done
 
@@ -285,7 +282,7 @@ for path in $OTHER_DIRS ; do
         mkdir -p "$TEMPROOT/$dir"
     fi
 
-    echo "   Copying $INSTALL_PREFIX/$path to $TEMPROOT/$dir/"
+    echo "   Copying $path"
     cp -a "$INSTALL_PREFIX/$path" "$TEMPROOT/$dir/"
 done
 
@@ -296,7 +293,7 @@ echo "---------- Copying data files..."
 # in source code by QStandardPaths::AppDataLocation
 
 for path in $OTHER_DATA ; do
-    echo "   Copying $INSTALL_PREFIX/$path to $TEMPROOT/digikam.app/Contents/Resources/""
+    echo "   Copying $path"
     cp -a "$INSTALL_PREFIX/$path" "$TEMPROOT/digikam.app/Contents/Resources/"
 done
 
@@ -560,12 +557,12 @@ for HPP in ${HEADERFILES[@]} ; do
 
 done
 
-rm -rfv $TEMPROOT/digikam.app/Contents/share/$MARIADB_FOLDER_NAME/mysql-test
-rm -rfv $TEMPROOT/digikam.app/Contents/share/$MARIADB_FOLDER_NAME/sql-bench
+rm -rfv $TEMPROOT/digikam.app/Contents/share/mariadb-10.5/mysql-test
+rm -rfv $TEMPROOT/digikam.app/Contents/share/mariadb-10.5/sql-bench
 
 echo -e "\n---------- Patch config and script files in bundle"
 
-MARIADBDIRS=(`find $TEMPROOT -type d -name "$MARIADB_FOLDER_NAME"`)
+MARIADBDIRS=(`find $TEMPROOT -type d -name "mariadb-10.5"`)
 
 for DIR in ${MARIADBDIRS[@]} ; do
 
@@ -600,8 +597,8 @@ done
 #################################################################################################
 # See bug #436624: move mariadb share files at basedir (this must be done after patch operations)
 
-rsync -a "$TEMPROOT/digikam.app/Contents/share/mariadb" "$TEMPROOT/digikam.app/Contents/lib/mariadb/share/"
-rm -fr "$TEMPROOT/digikam.app/Contents/share/mariadb"
+rsync -a "$TEMPROOT/digikam.app/Contents/share/mariadb-10.5" "$TEMPROOT/digikam.app/Contents/lib/mariadb-10.5/share/"
+rm -fr "$TEMPROOT/digikam.app/Contents/share/mariadb-10.5"
 
 #################################################################################################
 # Build PKG file
