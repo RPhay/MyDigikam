@@ -600,6 +600,12 @@ done
 rsync -a "$TEMPROOT/digikam.app/Contents/share/mariadb-10.5" "$TEMPROOT/digikam.app/Contents/lib/mariadb-10.5/share/"
 rm -fr "$TEMPROOT/digikam.app/Contents/share/mariadb-10.5"
 
+# At run time, digiKAm will know mariadb folder name without revision numbers.
+
+ln -sv "$TEMPROOT/digikam.app/Contents/share/mariadb-10.5" "$TEMPROOT/digikam.app/Contents/share/mariadb"
+ln -sv "$TEMPROOT/digikam.app/Contents/lib/mariadb-10.5" "$TEMPROOT/digikam.app/Contents/lib/mariadb"
+ln -sv "$TEMPROOT/digikam.app/Contents/etc/mariadb-10.5" "$TEMPROOT/digikam.app/Contents/etc/mariadb"
+
 #################################################################################################
 # Build PKG file
 
