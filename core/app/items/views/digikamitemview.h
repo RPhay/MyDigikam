@@ -105,7 +105,7 @@ public Q_SLOTS:
      */
     void ignoreFaces(const QList<QModelIndex>& indexes);
 
-    QList<int> getFaceIds(const QList<QModelIndex>& indexes);
+    QList<int> getFaceIds(const QList<QModelIndex>& indexes)             const;
 
     void dragDropSort(const ItemInfo& pick, const QList<ItemInfo>& infos);
 

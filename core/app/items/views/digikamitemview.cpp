@@ -544,7 +544,7 @@ void DigikamItemView::ignoreFaces(const QList<QModelIndex>& indexes)
     }
 }
 
-QList<int> DigikamItemView::getFaceIds(const QList<QModelIndex>& indexes)
+QList<int> DigikamItemView::getFaceIds(const QList<QModelIndex>& indexes) const
 {
     QList<int> ids;
 

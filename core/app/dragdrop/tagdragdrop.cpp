@@ -176,45 +176,51 @@ bool TagDragDropHandler::dropEvent(QAbstractItemView* view,
         }
 
         // here the user dragged a "faceitem" to a "person" album
+
         if (destAlbum->hasProperty(TagPropertyName::person()))
         {
             // use dropped on album
-            QString targetName = destAlbum->title();
 
-            QObject* source = e->source();
-            DigikamItemView* const dview = qobject_cast<DigikamItemView*>(source);
+            QString targetName           = destAlbum->title();
+            DigikamItemView* const dview = qobject_cast<DigikamItemView*>(e->source());
+
             if (dview)
             {
                 // get selected indexes
+
                 QModelIndexList selectedIndexes = dview->selectionModel()->selectedIndexes();
 
                 // get the tag ids for each of the selected faces
-                QList<int> faceIds = dview->getFaceIds(selectedIndexes);
+
+                QList<int> faceIds              = dview->getFaceIds(selectedIndexes);
 
                 // create list with face names
+
                 QStringList faceNames;
+
                 foreach (const int& faceId, faceIds)
                 {
                     if (!faceId)
                     {
                         return false;
                     }
+
                     faceNames << FaceTags::faceNameForTag(faceId);
                 }
 
                 // check that all selected faces are the same person
-                for (int it = 0 ; it < faceIds.count() ; ++it)
-                {
-                    qlonglong const id = faceIds.at(it);
 
-                    if (id != faceIds.first())
+                for (int i = 0 ; i < faceIds.count() ; ++i)
+                {
+                    if (faceIds.at(i) != faceIds.first())
                     {
                         return false;
                     }
                 }
 
                 // here we set a new thumbnail
-                if ((imageIDs.size() == 1) && (targetName == faceNames.first()))
+
+                if      ((imageIDs.size() == 1) && (targetName == faceNames.first()))
                 {
                     bool set = false;
 
@@ -235,6 +241,7 @@ bool TagDragDropHandler::dropEvent(QAbstractItemView* view,
                         QAction* const choice = popMenu.exec(QCursor::pos());
                         set                   = (choice == setAction);
                     }
+
                     if (set)
                     {
                         QString errMsg;
@@ -243,10 +250,10 @@ bool TagDragDropHandler::dropEvent(QAbstractItemView* view,
 
                     return true;
                 }
-
-                // here we move assign a new face tag to the selected faces
                 else if (targetName != faceNames.first())
                 {
+                    //here we move assign a new face tag to the selected faces
+
                     bool assign = false;
 
                     if (e->keyboardModifiers() == Qt::ControlModifier)
@@ -255,15 +262,16 @@ bool TagDragDropHandler::dropEvent(QAbstractItemView* view,
                     }
                     else
                     {
-                    QMenu popMenu(view);
-                    QAction* const assignAction = popMenu.addAction(QIcon::fromTheme(QLatin1String("tag")),
-                                                                    i18n("Change face tag(s) from '%1' to '%2'", faceNames.first(), targetName));
-                    popMenu.addSeparator();
-                    popMenu.addAction( QIcon::fromTheme(QLatin1String("dialog-cancel")), i18n("C&ancel") );
+                        QMenu popMenu(view);
+                        QAction* const assignAction = popMenu.addAction(QIcon::fromTheme(QLatin1String("tag")),
+                                                                        i18n("Change face tag(s) from '%1' to '%2'", faceNames.first(),
+                                                                        targetName));
+                        popMenu.addSeparator();
+                        popMenu.addAction( QIcon::fromTheme(QLatin1String("dialog-cancel")), i18n("C&ancel") );
 
-                    popMenu.setMouseTracking(true);
-                    QAction* const choice       = popMenu.exec(QCursor::pos());
-                    assign                      = (choice == assignAction);
+                        popMenu.setMouseTracking(true);
+                        QAction* const choice       = popMenu.exec(QCursor::pos());
+                        assign                      = (choice == assignAction);
                     }
 
                     if (assign)
@@ -274,6 +282,7 @@ bool TagDragDropHandler::dropEvent(QAbstractItemView* view,
 
                     return true;
                 }
+
                 return false;
             }
         }
