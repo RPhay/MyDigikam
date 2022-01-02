@@ -262,7 +262,7 @@ BUGFIXES:
 248 ==> 400441 - Menubar into a toolbar button.
 249 ==> 409081 - Editor Levels: Grey color picker has almost no effect.
 250 ==> 415719 - digiKam cannot save images in heic or heif format.
-251 ==> 
+251 ==> 419192 - Crash when updating fingerprints on windows.
 252 ==> 
 253 ==> 
 254 ==> 
