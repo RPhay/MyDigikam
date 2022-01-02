@@ -265,7 +265,7 @@ void SaveImgThread::run()
                 else if (d->imageData.format() == QImage::Format_Grayscale8)  // Gray
                 {
                     const uchar* grayScale = d->imageData.scanLine(h);
-                    dst[0] = grayScale[w];     // Blue
+                    dst[0] = grayScale[w];    // Blue
                     dst[1] = grayScale[w];    // Green
                     dst[2] = grayScale[w];    // Red
                     dst[3] = 0x00;            // Alpha
@@ -316,10 +316,10 @@ void SaveImgThread::run()
                 if      (d->imageData.format() == QImage::Format_RGBX64)    // Color 16 bits
                 {
                     const QRgba64* rgbData = reinterpret_cast<QRgba64*>(d->imageData.scanLine(h));
-                    dst[0] = rgbData[w].blue();    // Blue
+                    dst[0] = rgbData[w].blue();     // Blue
                     dst[1] = rgbData[w].green();    // Green
-                    dst[2] = rgbData[w].red();    // Red
-                    dst[3] = 0x0000;    // Alpha
+                    dst[2] = rgbData[w].red();      // Red
+                    dst[3] = 0x0000;                // Alpha
 
                     dst    += 4;
                 }
@@ -329,7 +329,7 @@ void SaveImgThread::run()
                     dst[0] = grayScale[w];    // Blue
                     dst[1] = grayScale[w];    // Green
                     dst[2] = grayScale[w];    // Red
-                    dst[3] = 0x0000;    // Alpha
+                    dst[3] = 0x0000;          // Alpha
 
                     dst   += 4;
                 }
