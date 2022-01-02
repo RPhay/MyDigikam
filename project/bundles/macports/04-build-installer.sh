@@ -107,13 +107,13 @@ lib/plugins/digikam/generic/*.so \
 lib/plugins/digikam/editor/*.so \
 lib/plugins/digikam/dimg/*.so \
 lib/plugins/digikam/rawimport/*.so \
-lib/mariadb/bin/mysql \
-lib/mariadb/bin/mysqld \
-lib/mariadb/bin/my_print_defaults \
-lib/mariadb/bin/mysqladmin \
-lib/mariadb/bin/mysqltest \
-lib/mariadb/mysql/*.dylib \
-lib/mariadb/plugin/*.so \
+lib/mariadb-10.5/bin/mysql \
+lib/mariadb-10.5/bin/mysqld \
+lib/mariadb-10.5/bin/my_print_defaults \
+lib/mariadb-10.5/bin/mysqladmin \
+lib/mariadb-10.5/bin/mysqltest \
+lib/mariadb-10.5/mysql/*.dylib \
+lib/mariadb-10.5/plugin/*.so \
 lib/ImageMagick*/modules-Q16/coders/*.so \
 lib/ImageMagick*/modules-Q16/filters/*.so \
 bin/kbuildsycoca5 \
@@ -141,13 +141,13 @@ lib/libdigikam*.dSYM \
 lib/plugins \
 lib/libgphoto2 \
 lib/libgphoto2_port \
-lib/mariadb \
+lib/mariadb-10.5 \
 lib/ImageMagick* \
 share/mariadb \
 share/ImageMagick* \
 etc/xdg \
 etc/ImageMagick* \
-etc/mariadb \
+etc/mariadb-10.5 \
 "
 
 #etc/sane.d \
