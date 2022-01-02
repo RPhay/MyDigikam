@@ -542,8 +542,8 @@ bool AlbumManager::moveTAlbum(TAlbum* album, TAlbum* newParent, QString& errMsg)
 
     emit signalAlbumMoved(album);
     emit signalAlbumsUpdated(Album::TAG);
-    d->currentlyMovingAlbum = nullptr;
 
+    d->currentlyMovingAlbum       = nullptr;
     TAlbum* const personParentTag = findTAlbum(FaceTags::personParentTag());
 
     if (personParentTag && personParentTag->isAncestorOf(album))
@@ -564,13 +564,13 @@ bool AlbumManager::mergeTAlbum(TAlbum* album, TAlbum* destAlbum, bool dialog, QS
         return false;
     }
 
-    if (album == d->rootTAlbum || destAlbum == d->rootTAlbum)
+    if ((album == d->rootTAlbum) || (destAlbum == d->rootTAlbum))
     {
         errMsg = i18n("Cannot merge root tag");
         return false;
     }
 
-    if (FaceTags::isSystemPersonTagId(album->id()));
+    if (FaceTags::isSystemPersonTagId(album->id()))
     {
         errMsg = i18n("Cannot merge required face tag");
         return false;
