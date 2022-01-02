@@ -243,8 +243,8 @@ BUGFIXES:
 229 ==> 240213 - Crop feature not implemented.
 230 ==> 257949 - Build fails on XP due to line too long.
 231 ==> 287272 - Two XMP tags which are not part of the XMP specification.
-232 ==> 
-233 ==> 
+232 ==> 328032 - New Feature: Use Mouse Wheel to move Forward or Back.
+233 ==> 328033 - Don't ask confirmation after you edit a photo but do not save it before you move to the next photo.
 234 ==> 
 235 ==> 
 236 ==> 
