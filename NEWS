@@ -257,7 +257,7 @@ BUGFIXES:
 243 ==> 385957 - "See more information on the Internet" For MapQuest Generates Error.
 244 ==> 386059 - Table view show incorrect dates if Exif PreviewDateTime is present (Exif Creation and Digitization dates are correct).
 245 ==> 386910 - Collection disappeared.
-246 ==> 
+246 ==> 388488 - Selectable .dtrash Location.
 247 ==> 
 248 ==> 
 249 ==> 
