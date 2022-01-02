@@ -248,7 +248,7 @@ BUGFIXES:
 234 ==> 328166 - New Feature: Allow selection of multiple images to apply transformations.
 235 ==> 328167 - New Feature: Record and Run Macros.
 236 ==> 340286 - Failing to complete Stage 1 of build Instructions on windows / outdated instructions?
-237 ==> 
+237 ==> 348042 - Division by zero while scan or update the files from a network share.
 238 ==> 
 239 ==> 
 240 ==> 
