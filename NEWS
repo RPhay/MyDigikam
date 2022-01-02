@@ -235,7 +235,7 @@ BUGFIXES:
 221 ==> 342625 - Can't install digiKam.
 222 ==> 365684 - Tags Manager: Crash when deleting a tag from the list of tags.
 223 ==> 374725 - Thumbnail is incorrect for one MOV file, shows an unrelated jpg.
-224 ==> 
+224 ==> 387645 - Workflow Process buttons.
 225 ==> 
 226 ==> 
 227 ==> 
