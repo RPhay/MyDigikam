@@ -207,6 +207,8 @@ AssignNameWidget* FaceGroup::Private::createAssignNameWidget(const FaceTagsIface
 
 QRect FaceGroup::Private::aspectRatio(const QRect& faceRect, bool revert) const
 {
+    Q_UNUSED(revert);
+/*
     QSize psize = view->previewItem()->image().size();
     psize.scale(info.dimensions(), Qt::KeepAspectRatio);
 
@@ -223,6 +225,8 @@ QRect FaceGroup::Private::aspectRatio(const QRect& faceRect, bool revert) const
                  faceRect.y() - adjY,
                  faceRect.width(),
                  faceRect.height());
+*/
+    return faceRect;
 }
 
 } // namespace Digikam
