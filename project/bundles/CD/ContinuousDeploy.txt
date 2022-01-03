@@ -79,8 +79,12 @@ Architecture and configuration to setup a continuous deployment computer.
   * From a Terminal, install XCode Command Line Tools with "sudo xcode-select --install".
   * From a Terminal, valid XCode license with "sudo xcodebuild -license".
   * Install Packages for macOS (http://s.sudre.free.fr/Software/Packages/about.html).
-  * From macOS System Preferences Panel/Security & Privacy add Terminal and /usr/local/bin/packagesbuild to the list of
-    binaries with Rights to Full Disk Access.
+  * From macOS System Preferences Panel/Security & Privacy files listed below with Rights to Full Disk Access:
+    + Terminal
+    + Packages.app
+    + /usr/local/bin/packagesbuild
+    + /Library/PrivilegedHelperTools/??.whitebox.packages/packages_builder
+    + /Library/PrivilegedHelperTools/??.whitebox.packages/packages_dispatcher
   * Install .bashrc_profile, .gitconfig, and macports_update.sh to the home directory.
   * Install your public and private ssh keys for your KDE account to your home directory.
   * Change /etc/sudoers properties to run sudo without password: "%admin ALL = (ALL) ALL" => "%admin ALL = (ALL) NOPASSWD: ALL"
