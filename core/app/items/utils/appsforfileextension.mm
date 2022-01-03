@@ -79,6 +79,11 @@ void MacApplicationForFileExtension(const QString& suffix)
     // when finished. Given a UI to choose one, you can then call
     // LSOpenFromURLSpec() to open your file with a specific application.
 
+    // TODO: host applications properties to a class with Qt containers and return it.
+    // Look how it's done in QtCore implementation:
+    // qtbase/src/plugins/platforms/cocoa/qcocoanativeinterface.mm : QCocoaNativeInterface::defaultBackgroundPixmapForQWizard()
+    // qtbase/src/corelib/io/qfilesystemengine_unix.cpp            : isPackage()
+
     // when you're finished, don't forget to release the resources or you'll leak memory
 
     CFRelease(uti);
