@@ -324,7 +324,7 @@ BUGFIXES:
 310 ==> 091917 - After renaming images all images have modification date 01/01/70.
 311 ==> 091740 - 'Unknown' album name that can't be renamed.
 312 ==> 447860 - Menu shortcut error.
-313 ==> 
+313 ==> 447888 - After OS-upgrade and moving the database to another disk, the links to the individual pictures are lost.
 314 ==> 
 315 ==> 
 316 ==> 
