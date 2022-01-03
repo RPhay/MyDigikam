@@ -602,9 +602,9 @@ rm -fr "$TEMPROOT/digikam.app/Contents/share/mariadb-10.5"
 
 # At run time, digiKam will check for mariadb folder-name without revision numbers.
 
-ln -sv "../../digikam.app/Contents/share/mariadb-10.5" "$TEMPROOT/digikam.app/Contents/share/mariadb"
-ln -sv "../../digikam.app/Contents/lib/mariadb-10.5" "$TEMPROOT/digikam.app/Contents/lib/mariadb"
-ln -sv "../../digikam.app/Contents/etc/mariadb-10.5" "$TEMPROOT/digikam.app/Contents/etc/mariadb"
+ln -sv "../../../../../digikam.app/Contents/lib/mariadb-10.5/share/mariadb-10.5" "$TEMPROOT/digikam.app/Contents/lib/mariadb-10.5/share/mariadb"
+ln -sv "../../../digikam.app/Contents/lib/mariadb-10.5"                          "$TEMPROOT/digikam.app/Contents/lib/mariadb"
+ln -sv "../../../digikam.app/Contents/etc/mariadb-10.5"                          "$TEMPROOT/digikam.app/Contents/etc/mariadb"
 
 #################################################################################################
 # Build PKG file
@@ -624,6 +624,8 @@ fi
 TARGET_INSTALLER=digiKam-$DKRELEASEID$DK_SUBVER-MacOS-x86-64$DEBUG_SUF.pkg
 TARGET_PKG_FILE=$BUILDDIR/bundle/$TARGET_INSTALLER
 echo -e "Target PKG file : $TARGET_PKG_FILE"
+
+chmod 666 $PROJECTDIR/digikam.pkgproj
 
 $PACKAGESBUILD -v "$PROJECTDIR/digikam.pkgproj" --package-version "$DKRELEASEID"
 
