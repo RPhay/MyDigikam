@@ -36,7 +36,7 @@
  */
 void MacApplicationForFileExtension(const QString& suffix)
 {
-    CFArayRef         bundleIDs    = NULL;
+    CFArayRef         bundleIDs    = nullptr;
     NSString* const   extension    = [[NSString alloc] initWithUTF8String:suffix.toUtf8().constData()];
     CFMutableArrayRef applications = CFArrayCreateMutable(kCFAllocatorDefault, 0);
 
@@ -46,27 +46,27 @@ void MacApplicationForFileExtension(const QString& suffix)
                                                            extension,
                                                            nil);
 
-    if (uti != NULL)
+    if (uti != nullptr)
     {
         // Get a list of all of the application bundle IDs that know how to handle this.
 
         bundleIDs = LSCopyAllRoleHandlersForContentType(uti, kLSRolesViewer | kLSRolesEditor);
     }
 
-    if (bundleIDs != NULL)
+    if (bundleIDs != nullptr)
     {
         // Find all the available applications with this bundle ID.
-        // getting the display name and version is left as an exercise for the reader.
+        // We can also get the display name and version if necessary.
 
         const CFIndex count = CFArrayGetCount(bundleIDs);
 
-        for (CFIndex i = 0 ; i < count ; i++)
+        for (CFIndex i = 0 ; i < count ; ++i)
         {
-            CFArrayRef appsForBundleID = LSCopyApplicationURLsForBundleIdentifier(bundleID, NULL);
+            CFArrayRef appsForBundleID = LSCopyApplicationURLsForBundleIdentifier(bundleID, nullptr);
 
-            if (appsForBundleID != NULL)
+            if (appsForBundleID != nullptr)
             {
-                // You could call CFURLResourceIsReachable() on each item before adding
+                // TODO: call CFURLResourceIsReachable() on each item before adding
                 // it to the big array of qualified applications.
 
                 CFArrayAppendArray(applications, appsForBundleID, CFRangeMake(0, CFArrayGetCount(appsForBundleID)));
