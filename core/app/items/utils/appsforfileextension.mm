@@ -30,57 +30,58 @@
 
 #import <Foundation/Foundation.h>
 
-//	given a filename extension "extension", here's how to find all of the
-//	applications known to the OS who can open files of that type.
-
-CFStringRef			uti = NULL;
-CFArrayRef			bundleIDs = NULL;
-CFMutableArrayRef	applications = NULL;
-
-applications = CFArrayCreateMutable(kCFAllocatorDefault, 0);
-
-//	Make a UTI from a filename extension
-uti = UTTypeCreatePreferredIdentifierForTag(kUTTagClassFilenameExtension,
-											extension,
-											nil);
-
-if (NULL != uti)
+/**
+ * Given a filename extension "extension", here's how to find all of the
+ * applications known to the MacOS who can open files of that type.
+ */
+void MacApplicationForFileExtension(const QString& suffix)
 {
-	//	get a list of all of the application bundle IDs that know how to handle this:
-	bundleIDs = LSCopyAllRoleHandlersForContentType(uti, kLSRolesViewer | kLSRolesEditor);
+    CFArayRef         bundleIDs    = NULL;
+    NSString* const   extension    = [[NSString alloc] initWithUTF8String:suffix.toUtf8().constData()];
+    CFMutableArrayRef applications = CFArrayCreateMutable(kCFAllocatorDefault, 0);
+
+    // Make a UTI from a filename extension.
+
+    CFStringRefuti = UTTypeCreatePreferredIdentifierForTag(kUTTagClassFilenameExtension,
+                                                           extension,
+                                                           nil);
+
+    if (uti != NULL)
+    {
+        // Get a list of all of the application bundle IDs that know how to handle this.
+
+        bundleIDs = LSCopyAllRoleHandlersForContentType(uti, kLSRolesViewer | kLSRolesEditor);
+    }
+
+    if (bundleIDs != NULL)
+    {
+        // Find all the available applications with this bundle ID.
+        // getting the display name and version is left as an exercise for the reader.
+
+        const CFIndex count = CFArrayGetCount(bundleIDs);
+
+        for (CFIndex i = 0 ; i < count ; i++)
+        {
+            CFArrayRef appsForBundleID = LSCopyApplicationURLsForBundleIdentifier(bundleID, NULL);
+
+            if (appsForBundleID != NULL)
+            {
+                // You could call CFURLResourceIsReachable() on each item before adding
+                // it to the big array of qualified applications.
+
+                CFArrayAppendArray(applications, appsForBundleID, CFRangeMake(0, CFArrayGetCount(appsForBundleID)));
+                CFRelease(appsForBundleID);
+            }
+        }
+    }
+
+    // "applications" now has an array of ALL of the possible applications
+    // when finished. Given a UI to choose one, you can then call
+    // LSOpenFromURLSpec() to open your file with a specific application.
+
+    // when you're finished, don't forget to release the resources or you'll leak memory
+
+    CFRelease(uti);
+    CFRelease(bundleIDs);
+    CFRelease(applications);
 }
-
-if (NULL != bundleIDs)
-{
-	//	find all the available applications with this bundle ID
-	//	getting the display name and version is left as an exercise for the reader.
-	
-	const CFIndex	count = CFArrayGetCount(bundleIDs);
-	
-	for (CFIndex i = 0; i < count; i++)
-	{
-		CFArrayRef	appsForBundleID = NULL;
-		
-		appsForBundleID = LSCopyApplicationURLsForBundleIdentifier(bundleID, NULL);
-		if (NULL != appsForBundleID)
-		{
-			//
-			//	you could call CFURLResourceIsReachable() on each item before adding
-			//	it to the big array of qualified applications.
-			//
-			
-			CFArrayAppendArray(applications, appsForBundleID, CFRangeMake(0, CFArrayGetCount(appsForBundleID)));
-			
-			CFRelease(appsForBundleID);
-		}
-	}
-}
-
-//	"applications" now has an array of ALL of the possible applications 
-//	when finished. Given a UI to choose one, you can then call 
-//	LSOpenFromURLSpec() to open your file with a specific application.
-
-//	when you're finished, don't forget to release the resources or you'll leak memory
-CFRelease(uti);
-CFRelease(bundleIDs);
-CFRelease(applications);
