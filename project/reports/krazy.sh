@@ -98,8 +98,8 @@ java -jar /opt/saxon/saxon9he.jar \
      ./report.krazy.xml \
      ./krazy/krazy-main.xsl \
      module=graphics \
-     submodule=digikam \
-     component=extragear
+     component= \
+     submodule=digikam
 
 cp ./krazy/style.css $REPORT_DIR/
 
