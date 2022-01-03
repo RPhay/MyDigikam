@@ -602,9 +602,9 @@ rm -fr "$TEMPROOT/digikam.app/Contents/share/mariadb-10.5"
 
 # At run time, digiKam will check for mariadb folder-name without revision numbers.
 
-ln -sv "../../digikam.app/Contents/share/mariadb-10.5" "$TEMPROOT/digikam.app/Contents/share/mariadb"
-ln -sv "../../digikam.app/Contents/lib/mariadb-10.5" "$TEMPROOT/digikam.app/Contents/lib/mariadb"
-ln -sv "../../digikam.app/Contents/etc/mariadb-10.5" "$TEMPROOT/digikam.app/Contents/etc/mariadb"
+ln -sv "../../../digikam.app/Contents/share/mariadb-10.5" "$TEMPROOT/digikam.app/Contents/share/mariadb"
+ln -sv "../../../digikam.app/Contents/lib/mariadb-10.5" "$TEMPROOT/digikam.app/Contents/lib/mariadb"
+ln -sv "../../../digikam.app/Contents/etc/mariadb-10.5" "$TEMPROOT/digikam.app/Contents/etc/mariadb"
 
 #################################################################################################
 # Build PKG file
