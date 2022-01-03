@@ -314,12 +314,23 @@ BUGFIXES:
 300 ==> 392593 - Pros need this set of exports.
 301 ==> 384492 - Error migrating database from SQLite to MySQL external.
 302 ==> 430137 - File conflict dialog: clarify "Continue".
-303 ==> 
-304 ==> 
-305 ==> 
-306 ==> 
-307 ==> 
-308 ==> 
-309 ==> 
-310 ==> 
-311 ==> 
+303 ==> 208907 - Rename Images - file extension in uppercase.
+304 ==> 144713 - Utf8 not supported in "rename images" tool.
+305 ==> 132982 - Batch rename limited, should allow renaming by patterns.
+306 ==> 108526 - Rename using exif tags.
+307 ==> 103515 - Renaming file to unknown extension makes image vanish.
+308 ==> 102322 - Wrong focus after renaming of image.
+309 ==> 099193 - Batch Rename image reset time
+310 ==> 091917 - After renaming images all images have modification date 01/01/70.
+311 ==> 091740 - 'Unknown' album name that can't be renamed.
+312 ==> 
+313 ==> 
+314 ==> 
+315 ==> 
+316 ==> 
+317 ==> 
+318 ==> 
+319 ==> 
+320 ==> 
+321 ==> 
+
