@@ -323,7 +323,7 @@ BUGFIXES:
 309 ==> 099193 - Batch Rename image reset time
 310 ==> 091917 - After renaming images all images have modification date 01/01/70.
 311 ==> 091740 - 'Unknown' album name that can't be renamed.
-312 ==> 
+312 ==> 447860 - Menu shortcut error.
 313 ==> 
 314 ==> 
 315 ==> 
@@ -333,4 +333,7 @@ BUGFIXES:
 319 ==> 
 320 ==> 
 321 ==> 
-
+322 ==> 
+323 ==> 
+324 ==> 
+325 ==> 
