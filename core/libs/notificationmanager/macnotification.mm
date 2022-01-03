@@ -3,8 +3,8 @@
  * This file is a part of digiKam project
  * https://www.digikam.org
  *
- * Date        : 2008-07-03
- * Description : Objective-C wrapper to post events on OSX notifier
+ * Date        : 2014-07-03
+ * Description : Objective-C wrapper to post events on MacOS notifier
  *
  * Copyright (C) 2014-2022 by Gilles Caulier <caulier dot gilles at gmail dot com>
  *
@@ -25,7 +25,7 @@
 
 #include <QString>
 
-// OSX header
+// MacOS header
 
 #import <Foundation/Foundation.h>
 
