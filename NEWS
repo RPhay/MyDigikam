@@ -313,7 +313,7 @@ BUGFIXES:
 299 ==> 401981 - "Use all cores" opens n threads but they running all at one core.
 300 ==> 392593 - Pros need this set of exports.
 301 ==> 384492 - Error migrating database from SQLite to MySQL external.
-302 ==> 
+302 ==> 430137 - File conflict dialog: clarify "Continue".
 303 ==> 
 304 ==> 
 305 ==> 
