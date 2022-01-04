@@ -14,6 +14,19 @@ include_directories(
     $<TARGET_PROPERTY:KF5::XmlGui,INTERFACE_INCLUDE_DIRECTORIES>
 )
 
+if(APPLE)
+    set(appforfileextension_cli_SRCS ${CMAKE_CURRENT_SOURCE_DIR}/appforfileextension_cli.cpp)
+    add_executable(appforfileextension_cli ${appforfileextension_cli_SRCS})
+    ecm_mark_nongui_executable(appforfileextension_cli)
+
+    target_link_libraries(appforfileextension_cli
+                          digikamcore
+                          digikamgui
+
+                          ${COMMON_TEST_LINK}
+)
+endif()
+
 #------------------------------------------------------------------------
 
 set(pgfscaled_cli_SRCS ${CMAKE_CURRENT_SOURCE_DIR}/pgfscaled_cli.cpp ${pgfutils_SRCS})

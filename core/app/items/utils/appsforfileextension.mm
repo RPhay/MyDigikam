@@ -44,6 +44,7 @@
 // Local includes
 
 #include "digikam_debug.h"
+#include "digikam_export.h"
 
 /**
  * Conversion helper method taken from qtbase/src/corelib/io/qsettings.cpp
@@ -234,7 +235,7 @@ static QVariant qtValue(CFPropertyListRef cfvalue)
  * applications known to the MacOS who can open files of that type.
  * Return a list of suitable bundle properties.
  */
-QList<QVariantList> MacApplicationForFileExtension(const QString& suffix)
+DIGIKAM_GUI_EXPORT QList<QVariantList> MacApplicationForFileExtension(const QString& suffix)
 {
     QList<QVariantList> appIDs;
 
