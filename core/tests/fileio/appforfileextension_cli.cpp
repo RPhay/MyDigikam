@@ -23,48 +23,48 @@
 // Qt includes
 
 #include <QString>
-#include <QVariant>
+#include <QUrl>
 #include <QList>
 
 // Local includes
 
 #include "digikam_debug.h"
 
-QList<QVariantList> MacApplicationForFileExtension(const QString& suffix);
+QList<QUrl> MacApplicationForFileExtension(const QString& suffix);
 
 int main(int /*argc*/, char** /*argv*/)
 {
     QString suffix;
-    QList<QVariantList> list;
+    QList<QUrl> list;
 
     suffix = QLatin1String("jpg");
     list   = MacApplicationForFileExtension(suffix);
 
-    qCDebug(DIGIKAM_GENERAL_LOG) << "Bundle properties for" << suffix;
+    qCDebug(DIGIKAM_GENERAL_LOG) << "MacOS Bundle urls for" << suffix;
     qCDebug(DIGIKAM_GENERAL_LOG) << list;
 
     suffix = QLatin1String("jpeg");
     list   = MacApplicationForFileExtension(suffix);
 
-    qCDebug(DIGIKAM_GENERAL_LOG) << "Bundle properties for" << suffix;
+    qCDebug(DIGIKAM_GENERAL_LOG) << "MacOS Bundle urls for" << suffix;
     qCDebug(DIGIKAM_GENERAL_LOG) << list;
 
     suffix = QLatin1String("png");
     list   = MacApplicationForFileExtension(suffix);
 
-    qCDebug(DIGIKAM_GENERAL_LOG) << "Bundle properties for" << suffix;
+    qCDebug(DIGIKAM_GENERAL_LOG) << "MacOS Bundle urls for" << suffix;
     qCDebug(DIGIKAM_GENERAL_LOG) << list;
 
     suffix = QLatin1String("tiff");
     list   = MacApplicationForFileExtension(suffix);
 
-    qCDebug(DIGIKAM_GENERAL_LOG) << "Bundle properties for" << suffix;
+    qCDebug(DIGIKAM_GENERAL_LOG) << "MacOS Bundle urls for" << suffix;
     qCDebug(DIGIKAM_GENERAL_LOG) << list;
 
     suffix = QLatin1String("tif");
     list   = MacApplicationForFileExtension(suffix);
 
-    qCDebug(DIGIKAM_GENERAL_LOG) << "Bundle properties for" << suffix;
+    qCDebug(DIGIKAM_GENERAL_LOG) << "MacOS Bundle urls for" << suffix;
     qCDebug(DIGIKAM_GENERAL_LOG) << list;
 
     return 0;
