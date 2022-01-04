@@ -43,12 +43,6 @@
 namespace Digikam
 {
 
-/**
- * Given a filename extension 'suffix', here's how to find all of the
- * applications known to the MacOS who can open files of that type.
- * Return a list of suitable MacOS bundle urls for 'suffix'.
- * First one is the default MacOS bundle application.
- */
 QList<QUrl> DServiceMenu::MacApplicationForFileExtension(const QString& suffix)
 {
     // Code inspired from: 
@@ -145,9 +139,6 @@ QList<QUrl> DServiceMenu::MacApplicationForFileExtension(const QString& suffix)
     return appUrls;
 }
 
-/**
- * Function to Call LSOpenFromURLSpec() to open your file urls with a specific application bundle url.
- */
 bool DServiceMenu::MacOpenFilesWithApplication(const QList<QUrl>& fileUrls, const QUrl& appUrl)
 {
     // Inspired from https://github.com/eep/fugu/blob/master/NSWorkspace(LaunchServices).m
@@ -184,9 +175,6 @@ bool DServiceMenu::MacOpenFilesWithApplication(const QList<QUrl>& fileUrls, cons
     return success;
 }
 
-/**
- * Return a list of common MacOS Application bundles suitbale for a list files
- */
 QList<QUrl> DServiceMenu::MacApplicationsForFiles(const QList<QUrl>& files)
 {
     if (files.isEmpty())

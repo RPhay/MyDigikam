@@ -8,12 +8,6 @@
 APPLY_COMMON_POLICIES()
 
 set(libthreadimageio_SRCS
-    ${CMAKE_CURRENT_SOURCE_DIR}/engine/dservicemenu.cpp
-    ${CMAKE_CURRENT_SOURCE_DIR}/engine/dfileoperations.cpp
-    ${CMAKE_CURRENT_SOURCE_DIR}/engine/filereadwritelock.cpp
-    ${CMAKE_CURRENT_SOURCE_DIR}/engine/managedloadsavethread.cpp
-    ${CMAKE_CURRENT_SOURCE_DIR}/engine/sharedloadsavethread.cpp
-
     ${CMAKE_CURRENT_SOURCE_DIR}/preview/previewloadthread.cpp
     ${CMAKE_CURRENT_SOURCE_DIR}/preview/previewtask.cpp
     ${CMAKE_CURRENT_SOURCE_DIR}/preview/previewsettings.cpp
@@ -33,6 +27,12 @@ set(libthreadimageio_SRCS
     ${CMAKE_CURRENT_SOURCE_DIR}/fileio/loadingcache.cpp
     ${CMAKE_CURRENT_SOURCE_DIR}/fileio/loadingcacheinterface.cpp
     ${CMAKE_CURRENT_SOURCE_DIR}/fileio/loadsavetask.cpp
+
+    ${CMAKE_CURRENT_SOURCE_DIR}/engine/dfileoperations.cpp
+    ${CMAKE_CURRENT_SOURCE_DIR}/engine/filereadwritelock.cpp
+    ${CMAKE_CURRENT_SOURCE_DIR}/engine/managedloadsavethread.cpp
+    ${CMAKE_CURRENT_SOURCE_DIR}/engine/sharedloadsavethread.cpp
+    ${CMAKE_CURRENT_SOURCE_DIR}/engine/dservicemenu_linux.cpp
 )
 
 if(APPLE)

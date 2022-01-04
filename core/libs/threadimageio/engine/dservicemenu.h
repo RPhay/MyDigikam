@@ -45,6 +45,10 @@ class DIGIKAM_EXPORT DServiceMenu
 {
 public:
 
+//@{
+
+    // Linux Services methods implemented in dservicemenu_linux.cpp
+
     /**
      * Linux only: open file urls with the service.
      */
@@ -62,14 +66,41 @@ public:
      */
     static KService::List servicesForOpenWith(const QList<QUrl>& urls);
 
+//@}
+
+//@{
+
+    // MacOS Application Bundles methods implemented in dservicemenu_mac.mm
+
 #ifdef Q_OS_MAC
 
+    /**
+     * Given a filename extension 'suffix', here's how to find all of the
+     * applications known to the MacOS who can open files of that type.
+     * Return a list of suitable MacOS bundle urls for 'suffix'.
+     * First one is the default MacOS bundle application.
+     */
     static QList<QUrl> MacApplicationForFileExtension(const QString& suffix);
-    static bool        MacOpenFilesWithApplication(const QList<QUrl>& fileUrls, const QUrl& appUrl);
+
+    /**
+     * Function to open your file urls with a specific MacOS application bundle url.
+     * Return true if application can be started.
+     */
+    static bool MacOpenFilesWithApplication(const QList<QUrl>& fileUrls, const QUrl& appUrl);
+
+    /**
+     * Return a list of common MacOS Application bundles suitable for a list of files.
+     */
     static QList<QUrl> MacApplicationsForFiles(const QList<QUrl>& files);
-    static QString     MacApplicationBundleName(const QUrl& appUrl);
+
+    /**
+     * Return the MacOS Application bundles name based on url.
+     */
+    static QString MacApplicationBundleName(const QUrl& appUrl);
 
 #endif
+
+//@}
 
 };
 
