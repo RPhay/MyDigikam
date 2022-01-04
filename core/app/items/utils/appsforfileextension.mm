@@ -27,6 +27,9 @@
 #include <QString>
 #include <QList>
 #include <QVariant>
+#include <QDateTime>
+#include <QStringList>
+#include <QDataStream>
 
 // MacOS header
 
@@ -38,6 +41,58 @@
 // Local includes
 
 #include "digikam_debug.h"
+
+/**
+ * Conversion helper method taken from qtbase/src/corelib/io/qsettings.cpp
+ */
+static QVariant stringToVariant(const QString& s)
+{
+    if (s.startsWith(QLatin1Char('@'))) {
+        if (s.endsWith(QLatin1Char(')'))) {
+            if (s.startsWith(QLatin1String("@ByteArray("))) {
+                return QVariant(QStringView{s}.mid(11, s.size() - 12).toLatin1());
+            } else if (s.startsWith(QLatin1String("@String("))) {
+                return QVariant(QStringView{s}.mid(8, s.size() - 9).toString());
+            } else if (s.startsWith(QLatin1String("@Variant("))
+                       || s.startsWith(QLatin1String("@DateTime("))) {
+                QDataStream::Version version;
+                int offset;
+                if (s.at(1) == QLatin1Char('D')) {
+                    version = QDataStream::Qt_5_6;
+                    offset = 10;
+                } else {
+                    version = QDataStream::Qt_4_0;
+                    offset = 9;
+                }
+                QByteArray a = QStringView{s}.mid(offset).toLatin1();
+                QDataStream stream(&a, QIODevice::ReadOnly);
+                stream.setVersion(version);
+                QVariant result;
+                stream >> result;
+                return result;
+            } else if (s.startsWith(QLatin1String("@Rect("))) {
+                QStringList args = QSettingsPrivate::splitArgs(s, 5);
+                if (args.size() == 4)
+                    return QVariant(QRect(args[0].toInt(), args[1].toInt(), args[2].toInt(), args[3].toInt()));
+            } else if (s.startsWith(QLatin1String("@Size("))) {
+                QStringList args = QSettingsPrivate::splitArgs(s, 5);
+                if (args.size() == 2)
+                    return QVariant(QSize(args[0].toInt(), args[1].toInt()));
+            } else if (s.startsWith(QLatin1String("@Point("))) {
+                QStringList args = QSettingsPrivate::splitArgs(s, 6);
+                if (args.size() == 2)
+                    return QVariant(QPoint(args[0].toInt(), args[1].toInt()));
+            } else if (s == QLatin1String("@Invalid()")) {
+                return QVariant();
+            }
+
+        }
+        if (s.startsWith(QLatin1String("@@")))
+            return QVariant(s.mid(1));
+    }
+
+    return QVariant(s);
+}
 
 /**
  * Conversion helper method taken from qtbase/src/corelib/io/qsettings_mac.cpp
