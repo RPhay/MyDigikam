@@ -119,7 +119,7 @@ set(libdigikamgui_SRCS
 if(APPLE)
     set(libdigikamgui_SRCS
         ${libdigikamgui_SRCS}
-#        ${CMAKE_CURRENT_SOURCE_DIR}/items/utils/appsforfileextension.mm
+        ${CMAKE_CURRENT_SOURCE_DIR}/items/utils/appsforfileextension.mm
     )
 endif()
 

@@ -32,6 +32,9 @@
 
 #import <Foundation/Foundation.h>
 
+#include <CoreFoundation/CoreFoundation.h>
+#include <CoreServices/CoreServices.h>
+
 // Local includes
 
 #include "digikam_debug.h"
@@ -50,14 +53,14 @@ QList<QVariantList> MacApplicationForFileExtension(const QString& suffix)
         return appIDs;
     }
 
-    CFArayRef         bundleIDs    = nullptr;
+    CFArrayRef        bundleIDs    = nullptr;
     NSString* const   extension    = [[NSString alloc] initWithUTF8String:suffix.toUtf8().constData()];
 
     // Make a UTI from a filename extension.
 
-    CFStringRefuti = UTTypeCreatePreferredIdentifierForTag(kUTTagClassFilenameExtension,
-                                                           extension,
-                                                           nil);
+    CFStringRef uti                = UTTypeCreatePreferredIdentifierForTag(kUTTagClassFilenameExtension,
+                                                                           extension,
+                                                                           nil);
 
     if (uti != nullptr)
     {
