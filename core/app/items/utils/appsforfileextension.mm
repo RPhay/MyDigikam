@@ -77,7 +77,8 @@ QList<QVariantList> MacApplicationForFileExtension(const QString& suffix)
 
         for (CFIndex i = 0 ; i < count ; ++i)
         {
-            CFArrayRef appsForBundleID = LSCopyApplicationURLsForBundleIdentifier(bundleID, nullptr);
+            CFStringRef val            = (CFStringRef)(CFArrayGetValueAtIndex(bundleIDs, i));
+            CFArrayRef appsForBundleID = LSCopyApplicationURLsForBundleIdentifier(val, nullptr);
 
             if (appsForBundleID != nullptr)
             {
@@ -85,11 +86,11 @@ QList<QVariantList> MacApplicationForFileExtension(const QString& suffix)
                 // it to the big array of qualified applications.
 
                 QVariantList propers;
-                CFIndex size = CFArrayGetCount(cfarray);
+                CFIndex size = CFArrayGetCount(appsForBundleID);
 
                 for (CFIndex j = 0 ; j < size ; ++j)
                 {
-                    QVariant value = qtValue(CFArrayGetValueAtIndex(appsForBundlesIDs, j));
+                    QVariant value = qtValue(CFArrayGetValueAtIndex(appsForBundleID, j));
                     propers << value;
                 }
 
@@ -109,13 +110,13 @@ QList<QVariantList> MacApplicationForFileExtension(const QString& suffix)
     // qtbase/src/corelib/io/qfilesystemengine_unix.cpp            : isPackage()
     // qtbase/src/corelib/global/qlibraryinfo.cpp                  : getRelocatablePrefix()
 
-    // when you're finished, don't forget to release the resources or you'll leak memory
+    // Release the resources.
 
-    CFRelease(uti);
+    CFRelease(uniformTypeIdentifier);
     CFRelease(bundleIDs);
 
     qCDebug(DIGIKAM_GENERAL_LOG) << "Bundle properties for" << suffix;
     qCDebug(DIGIKAM_GENERAL_LOG) << appIDs;
-    
-    return appIDs,
+
+    return appIDs;
 }
