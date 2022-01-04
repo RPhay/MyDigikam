@@ -139,3 +139,39 @@ DIGIKAM_GUI_EXPORT QList<QUrl> MacApplicationForFileExtension(const QString& suf
 
     return appUrls;
 }
+
+DIGIKAM_GUI_EXPORT bool MacOpenFileWithApplication(const QUrl& fileUrl, const QUrl& appUrl)
+{
+    // Inspired from https://github.com/eep/fugu/blob/master/NSWorkspace(LaunchServices).m
+
+    bool success           = false;
+    CFURLRef furl         = QUrl::toCFURL(fileUrl);
+    CFURLRef aurl         = QUrl::toCFURL(appUrl);
+    LSLaunchURLSpec lspec = { nullptr, nullptr, nullptr, 0, nullptr };
+    CFArrayRef arrayref   = CFArrayCreate(kCFAllocatorDefault, (const void**)&furl, 1, nullptr);
+
+    if (!arrayref)
+    {
+        return success;
+    }
+
+    lspec.appURL          = aurl;
+    lspec.itemURLs        = arrayref;
+//    lspec.passThruParams  = params;
+//    lspec.launchFlags     = flags;
+    lspec.asyncRefCon     = nullptr;
+
+    OSStatus status       = LSOpenFromURLSpec(&lspec, nullptr);
+
+    if (status == noErr)
+    {
+        success = true;
+    }
+
+    if (arrayref)
+    {
+        CFRelease(arrayref);
+    }
+
+    return success;
+}
