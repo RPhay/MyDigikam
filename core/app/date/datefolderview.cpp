@@ -152,6 +152,10 @@ void DateFolderView::slotAllAlbumsLoaded()
         AlbumManager::instance()->setCurrentAlbums(QList<Album*>() << d->dateTreeView->currentAlbum());
         slotSelectionChanged(d->dateTreeView->currentAlbum());
     }
+
+    // Workaround for bug 447874
+
+    d->dateTreeView->setSortingEnabled(true);
 }
 
 void DateFolderView::setConfigGroup(const KConfigGroup& group)
