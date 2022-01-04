@@ -32,9 +32,6 @@
 
 #import <Foundation/Foundation.h>
 
-#include <CoreFoundation/CoreFoundation.h>
-#include <CoreServices/CoreServices.h>
-
 // Local includes
 
 #include "digikam_debug.h"
@@ -43,7 +40,8 @@
 /**
  * Given a filename extension 'suffix', here's how to find all of the
  * applications known to the MacOS who can open files of that type.
- * Return a list of suitable MacOS  bundle urls for 'suffix'.
+ * Return a list of suitable MacOS bundle urls for 'suffix'.
+ * First one is the default MacOS bundle application.
  */
 DIGIKAM_GUI_EXPORT QList<QUrl> MacApplicationForFileExtension(const QString& suffix)
 {
