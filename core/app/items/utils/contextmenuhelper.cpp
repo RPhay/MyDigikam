@@ -321,7 +321,7 @@ void ContextMenuHelper::addServicesMenu(const QList<QUrl>& selectedItems)
 
         foreach (const QUrl& aurl, appUrls)
         {
-            QAction* const action = servicesMenu->addAction(aurl.fileName());
+            QAction* const action = servicesMenu->addAction(DServiceMenu::MacApplicationBundleName(aurl));
             //action->setIcon(QIcon::fromTheme(service->icon()));
             action->setData(aurl);
         }

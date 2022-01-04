@@ -61,11 +61,11 @@ int main(int argc, char** argv)
 
     if (!ret)
     {
-        qCDebug(DIGIKAM_TESTS_LOG) << "Cannot start application" << appUrl << "to open" << fname;
+        qCDebug(DIGIKAM_TESTS_LOG) << "Cannot start application" << DServiceMenu::MacApplicationBundleName(appUrl) << "to open" << fname;
         return -1;
     }
 
-    qCDebug(DIGIKAM_TESTS_LOG) << "Application" << appUrl << "started to open" << fname;
+    qCDebug(DIGIKAM_TESTS_LOG) << "Application" << DServiceMenu::MacApplicationBundleName(appUrl) << "started to open" << fname;
 
     return 0;
 }

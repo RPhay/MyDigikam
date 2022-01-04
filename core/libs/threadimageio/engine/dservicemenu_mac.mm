@@ -214,5 +214,10 @@ QList<QUrl> DServiceMenu::MacApplicationsForFiles(const QList<QUrl>& files)
     return commonAppUrls;
 }
 
+QString DServiceMenu::MacApplicationBundleName(const QUrl& appUrl)
+{
+    return (appUrl.toLocalFile().section(QLatin1Char('/'), -2, -2));
+}
+
 } // namespace Digikam
 
