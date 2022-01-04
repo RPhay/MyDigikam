@@ -325,7 +325,7 @@ BUGFIXES:
 311 ==> 091740 - 'Unknown' album name that can't be renamed.
 312 ==> 447860 - Menu shortcut error.
 313 ==> 447888 - After OS-upgrade and moving the database to another disk, the links to the individual pictures are lost.
-314 ==> 
+314 ==> 447914 - digiKam 7.4.0: Got the message that the plugins were not loaded.
 315 ==> 
 316 ==> 
 317 ==> 
