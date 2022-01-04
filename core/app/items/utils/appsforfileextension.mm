@@ -121,8 +121,8 @@ DIGIKAM_GUI_EXPORT QList<QUrl> MacApplicationForFileExtension(const QString& suf
         qCWarning(DIGIKAM_GENERAL_LOG) << "Cannot get the Application urls list for" << suffix;
     }
 
-    // "applications" now has an array of ALL of the possible applications
-    // when finished. Given a UI to choose one, you can then call
+    // appUrls is a list of ALL possible applications suitable for suffix.
+    // Given a UI to choose one, you can then call
     // LSOpenFromURLSpec() to open your file with a specific application.
 
     // TODO: host applications properties to a class with Qt containers and return it.
