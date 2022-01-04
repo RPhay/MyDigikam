@@ -57,7 +57,7 @@ int main(int argc, char** argv)
     QUrl appUrl  = list.first();
     QUrl fileUrl = QUrl::fromLocalFile(fname);
 
-    bool ret = DServiceMenu::MacOpenFileWithApplication(fileUrl, appUrl);
+    bool ret = DServiceMenu::MacOpenFilesWithApplication(QList<QUrl>() << fileUrl, appUrl);
 
     if (!ret)
     {

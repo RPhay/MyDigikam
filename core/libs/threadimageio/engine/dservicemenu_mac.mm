@@ -146,24 +146,23 @@ QList<QUrl> DServiceMenu::MacApplicationForFileExtension(const QString& suffix)
 }
 
 /**
- * Function to Call LSOpenFromURLSpec() to open your file url with a specific application bundle url.
+ * Function to Call LSOpenFromURLSpec() to open your file urls with a specific application bundle url.
  */
-bool DServiceMenu::MacOpenFileWithApplication(const QUrl& fileUrl, const QUrl& appUrl)
+bool DServiceMenu::MacOpenFilesWithApplication(const QList<QUrl>& fileUrls, const QUrl& appUrl)
 {
     // Inspired from https://github.com/eep/fugu/blob/master/NSWorkspace(LaunchServices).m
 
-    bool success          = false;
-    CFURLRef furl         = fileUrl.toCFURL();
-    CFURLRef aurl         = appUrl.toCFURL();
-    LSLaunchURLSpec lspec = { nullptr, nullptr, nullptr, 0, nullptr };
-    CFArrayRef arrayref   = CFArrayCreate(kCFAllocatorDefault, (const void**)&furl, 1, nullptr);
+    bool success               = true;
+    LSLaunchURLSpec lspec      = { nullptr, nullptr, nullptr, 0, nullptr };
+    CFMutableArrayRef arrayref = CFArrayCreateMutable(nullptr, 0, nullptr);
 
-    if (!arrayref)
+    foreach (const QUrl& fileUrl, fileUrls)
     {
-        return success;
+        CFURLRef furl = fileUrl.toCFURL();
+        CFArrayAppendValue(arrayref, furl);
     }
 
-    lspec.appURL          = aurl;
+    lspec.appURL          = appUrl.toCFURL();
     lspec.itemURLs        = arrayref;
 //    lspec.passThruParams  = params;
 //    lspec.launchFlags     = flags;
@@ -171,13 +170,10 @@ bool DServiceMenu::MacOpenFileWithApplication(const QUrl& fileUrl, const QUrl& a
 
     OSStatus status       = LSOpenFromURLSpec(&lspec, nullptr);
 
-    if (status == noErr)
+    if (status != noErr)
     {
-        success = true;
-    }
-    else
-    {
-        qCWarning(DIGIKAM_GENERAL_LOG) << "Cannot start Application Bundle url" << appUrl << "for file" << fileUrl;
+        success = false;
+        qCWarning(DIGIKAM_GENERAL_LOG) << "Cannot start Application Bundle url" << appUrl << "for files" << fileUrls;
     }
 
     if (arrayref)

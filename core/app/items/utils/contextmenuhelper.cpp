@@ -309,7 +309,28 @@ void ContextMenuHelper::addServicesMenu(const QList<QUrl>& selectedItems)
 
 #elif defined Q_OS_MAC
 
-// TODO
+    QList<QUrl> appUrls = DServiceMenu::MacApplicationsForFiles(selectedItems);
+
+    if (!appUrls.isEmpty())
+    {
+        QMenu* const servicesMenu    = new QMenu(d->parent);
+        qDeleteAll(servicesMenu->actions());
+
+        QAction* const serviceAction = servicesMenu->menuAction();
+        serviceAction->setText(i18nc("@action: context menu", "Open With"));
+
+        foreach (const QUrl& aurl, appUrls)
+        {
+            QAction* const action = servicesMenu->addAction(aurl.fileName());
+            //action->setIcon(QIcon::fromTheme(service->icon()));
+            action->setData(aurl);
+        }
+
+        addAction(serviceAction);
+
+        connect(servicesMenu, SIGNAL(triggered(QAction*)),
+                this, SLOT(slotOpenWith(QAction*)));
+    }
 
 #else // LINUX
 
@@ -386,7 +407,17 @@ void ContextMenuHelper::slotOpenWith(QAction* action)
         qCDebug(DIGIKAM_GENERAL_LOG) << "ShellExecuteEx::openas return code:" << GetLastError();
     }
 
-#else // Q_OS_WIN
+#elif defined Q_OS_MAC
+
+    QList<QUrl> list = d->selectedItems;
+    QUrl aurl        = action ? action->data().toUrl() : QUrl();
+
+    if (!aurl.isEmpty())
+    {
+        DServiceMenu::MacOpenFilesWithApplication(list, aurl);
+    }
+
+#else // LINUX
 
     KService::Ptr service;
     QList<QUrl> list = d->selectedItems;
