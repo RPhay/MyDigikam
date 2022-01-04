@@ -241,10 +241,11 @@ DIGIKAM_GUI_EXPORT QList<QVariantList> MacApplicationForFileExtension(const QStr
 
     if (suffix.isEmpty())
     {
+        qCWarning(DIGIKAM_GENERAL_LOG) << "Suffix is empty";
         return appIDs;
     }
 
-    // Make a UTI from a filename extension.
+    // Make a Uniform Type Identifier from a filename extension.
 
     CFArrayRef  bundleIDs             = nullptr;
     CFStringRef extensionRef          = suffix.toCFString();
@@ -252,6 +253,7 @@ DIGIKAM_GUI_EXPORT QList<QVariantList> MacApplicationForFileExtension(const QStr
 
     if (!UTTypeConformsTo(uniformTypeIdentifier, kUTTypeBundle))
     {
+        qCWarning(DIGIKAM_GENERAL_LOG) << "Cannot get the Uniform Type Identifier for" << suffix;
         return appIDs;
     }
 
@@ -290,6 +292,10 @@ DIGIKAM_GUI_EXPORT QList<QVariantList> MacApplicationForFileExtension(const QStr
             }
         }
     }
+    else
+    {
+        qCWarning(DIGIKAM_GENERAL_LOG) << "Cannot get the Application bundles list for" << suffix;
+    }
 
     // "applications" now has an array of ALL of the possible applications
     // when finished. Given a UI to choose one, you can then call
@@ -305,9 +311,6 @@ DIGIKAM_GUI_EXPORT QList<QVariantList> MacApplicationForFileExtension(const QStr
 
     CFRelease(uniformTypeIdentifier);
     CFRelease(bundleIDs);
-
-    qCDebug(DIGIKAM_GENERAL_LOG) << "Bundle properties for" << suffix;
-    qCDebug(DIGIKAM_GENERAL_LOG) << appIDs;
 
     return appIDs;
 }

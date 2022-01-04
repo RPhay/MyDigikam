@@ -34,9 +34,38 @@ QList<QVariantList> MacApplicationForFileExtension(const QString& suffix);
 
 int main(int /*argc*/, char** /*argv*/)
 {
-    QList<QVariantList> list = MacApplicationForFileExtension(QLatin1String("jpg"));
+    QString suffix;
+    QList<QVariantList> list;
 
-    qCDebug(DIGIKAM_GENERAL_LOG) << "Item from list:" << list.count();
+    suffix = QLatin1String("jpg");
+    list   = MacApplicationForFileExtension(suffix);
+
+    qCDebug(DIGIKAM_GENERAL_LOG) << "Bundle properties for" << suffix;
+    qCDebug(DIGIKAM_GENERAL_LOG) << list;
+
+    suffix = QLatin1String("jpeg");
+    list   = MacApplicationForFileExtension(suffix);
+
+    qCDebug(DIGIKAM_GENERAL_LOG) << "Bundle properties for" << suffix;
+    qCDebug(DIGIKAM_GENERAL_LOG) << list;
+
+    suffix = QLatin1String("png");
+    list   = MacApplicationForFileExtension(suffix);
+
+    qCDebug(DIGIKAM_GENERAL_LOG) << "Bundle properties for" << suffix;
+    qCDebug(DIGIKAM_GENERAL_LOG) << list;
+
+    suffix = QLatin1String("tiff");
+    list   = MacApplicationForFileExtension(suffix);
+
+    qCDebug(DIGIKAM_GENERAL_LOG) << "Bundle properties for" << suffix;
+    qCDebug(DIGIKAM_GENERAL_LOG) << list;
+
+    suffix = QLatin1String("tif");
+    list   = MacApplicationForFileExtension(suffix);
+
+    qCDebug(DIGIKAM_GENERAL_LOG) << "Bundle properties for" << suffix;
+    qCDebug(DIGIKAM_GENERAL_LOG) << list;
 
     return 0;
 }
