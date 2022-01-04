@@ -309,6 +309,8 @@ void ContextMenuHelper::addServicesMenu(const QList<QUrl>& selectedItems)
 
 #elif defined Q_OS_MAC
 
+// TODO
+
 #else // LINUX
 
     KService::List offers = DServiceMenu::servicesForOpenWith(selectedItems);

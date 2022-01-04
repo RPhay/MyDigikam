@@ -29,6 +29,7 @@
 #include <QString>
 #include <QList>
 #include <QUrl>
+#include <QFileInfo>
 
 // MacOS header
 
@@ -185,6 +186,36 @@ bool DServiceMenu::MacOpenFileWithApplication(const QUrl& fileUrl, const QUrl& a
     }
 
     return success;
+}
+
+/**
+ * Return a list of common MacOS Application bundles suitbale for a list files
+ */
+QList<QUrl> DServiceMenu::MacApplicationsForFiles(const QList<QUrl>& files)
+{
+    if (files.isEmpty())
+    {
+        return QList<QUrl>();
+    }
+
+    QString suffix            = QFileInfo(files.first().toLocalFile()).suffix();
+    QList<QUrl> commonAppUrls = DServiceMenu::MacApplicationForFileExtension(suffix);
+
+    foreach (const QUrl& file, files)
+    {
+        suffix            = QFileInfo(file.toLocalFile()).suffix();
+        QList<QUrl> aurls = DServiceMenu::MacApplicationForFileExtension(suffix);
+
+        foreach (const QUrl& url, aurls)
+        {
+            if (!commonAppUrls.contains(url))
+            {
+                commonAppUrls.removeAll(url);
+            }
+        }
+    }
+
+    return commonAppUrls;
 }
 
 } // namespace Digikam

@@ -66,6 +66,7 @@ public:
 
     static QList<QUrl> MacApplicationForFileExtension(const QString& suffix);
     static bool        MacOpenFileWithApplication(const QUrl& fileUrl, const QUrl& appUrl);
+    static QList<QUrl> MacApplicationsForFiles(const QList<QUrl>& files);
 
 #endif
 
