@@ -35,6 +35,13 @@ set(libthreadimageio_SRCS
     ${CMAKE_CURRENT_SOURCE_DIR}/fileio/loadsavetask.cpp
 )
 
+if(APPLE)
+    set(libthreadimageio_SRCS
+        ${libthreadimageio_SRCS}
+        ${CMAKE_CURRENT_SOURCE_DIR}/engine/dservicemenu_mac.mm
+    )
+endif()
+
 if(ENABLE_MEDIAPLAYER)
 
     set(libthreadimageio_SRCS

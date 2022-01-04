@@ -30,8 +30,9 @@
 // Local includes
 
 #include "digikam_debug.h"
+#include "dservicemenu.h"
 
-QList<QUrl> MacApplicationForFileExtension(const QString& suffix);
+using namespace Digikam;
 
 int main(int /*argc*/, char** /*argv*/)
 {
@@ -39,31 +40,31 @@ int main(int /*argc*/, char** /*argv*/)
     QList<QUrl> list;
 
     suffix = QLatin1String("jpg");
-    list   = MacApplicationForFileExtension(suffix);
+    list   = DServiceMenu::MacApplicationForFileExtension(suffix);
 
     qCDebug(DIGIKAM_TESTS_LOG) << "MacOS Bundle urls for" << suffix;
     qCDebug(DIGIKAM_TESTS_LOG) << list;
 
     suffix = QLatin1String("jpeg");
-    list   = MacApplicationForFileExtension(suffix);
+    list   = DServiceMenu::MacApplicationForFileExtension(suffix);
 
     qCDebug(DIGIKAM_TESTS_LOG) << "MacOS Bundle urls for" << suffix;
     qCDebug(DIGIKAM_TESTS_LOG) << list;
 
     suffix = QLatin1String("png");
-    list   = MacApplicationForFileExtension(suffix);
+    list   = DServiceMenu::MacApplicationForFileExtension(suffix);
 
     qCDebug(DIGIKAM_TESTS_LOG) << "MacOS Bundle urls for" << suffix;
     qCDebug(DIGIKAM_TESTS_LOG) << list;
 
     suffix = QLatin1String("tiff");
-    list   = MacApplicationForFileExtension(suffix);
+    list   = DServiceMenu::MacApplicationForFileExtension(suffix);
 
     qCDebug(DIGIKAM_TESTS_LOG) << "MacOS Bundle urls for" << suffix;
     qCDebug(DIGIKAM_TESTS_LOG) << list;
 
     suffix = QLatin1String("tif");
-    list   = MacApplicationForFileExtension(suffix);
+    list   = DServiceMenu::MacApplicationForFileExtension(suffix);
 
     qCDebug(DIGIKAM_TESTS_LOG) << "MacOS Bundle urls for" << suffix;
     qCDebug(DIGIKAM_TESTS_LOG) << list;

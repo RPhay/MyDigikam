@@ -116,13 +116,6 @@ set(libdigikamgui_SRCS
     ${digikamadaptor_SRCS}
 )
 
-if(APPLE)
-    set(libdigikamgui_SRCS
-        ${libdigikamgui_SRCS}
-        ${CMAKE_CURRENT_SOURCE_DIR}/items/utils/appsforfileextension.mm
-    )
-endif()
-
 if(${Marble_FOUND})
     set(libdigikamgui_SRCS
         ${libdigikamgui_SRCS}

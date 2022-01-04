@@ -31,9 +31,9 @@
 // Local includes
 
 #include "digikam_debug.h"
+#include "dservicemenu.h"
 
-QList<QUrl> MacApplicationForFileExtension(const QString& suffix);
-bool        MacOpenFileWithApplication(const QUrl& fileUrl, const QUrl& appUrl);
+using namespace Digikam;
 
 int main(int argc, char** argv)
 {
@@ -46,7 +46,7 @@ int main(int argc, char** argv)
 
     QString fname    = QString::fromUtf8(argv[1]);
     QString suffix   = QFileInfo(fname).suffix();
-    QList<QUrl> list = MacApplicationForFileExtension(suffix);
+    QList<QUrl> list = DServiceMenu::MacApplicationForFileExtension(suffix);
 
     if (list.isEmpty())
     {
@@ -57,7 +57,7 @@ int main(int argc, char** argv)
     QUrl appUrl  = list.first();
     QUrl fileUrl = QUrl::fromLocalFile(fname);
 
-    bool ret = MacOpenFileWithApplication(fileUrl, appUrl);
+    bool ret = DServiceMenu::MacOpenFileWithApplication(fileUrl, appUrl);
 
     if (!ret)
     {

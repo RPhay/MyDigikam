@@ -307,7 +307,9 @@ void ContextMenuHelper::addServicesMenu(const QList<QUrl>& selectedItems)
                 this, SLOT(slotOpenWith()));
     }
 
-#else // Q_OS_WIN
+#elif defined Q_OS_MAC
+
+#else // LINUX
 
     KService::List offers = DServiceMenu::servicesForOpenWith(selectedItems);
 
@@ -351,6 +353,7 @@ void ContextMenuHelper::addServicesMenu(const QList<QUrl>& selectedItems)
     }
 
 #endif // Q_OS_WIN
+
 }
 
 void ContextMenuHelper::slotOpenWith()

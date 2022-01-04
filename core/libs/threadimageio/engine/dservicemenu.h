@@ -3,8 +3,8 @@
  * This file is a part of digiKam project
  * https://www.digikam.org
  *
- * Date        : 2020-05-08
- * Description : KService menu operation methods
+ * Date        : 2014-05-08
+ * Description : Service menu operation methods
  *
  * Copyright (C) 2014-2022 by Gilles Caulier <caulier dot gilles at gmail dot com>
  *
@@ -46,21 +46,29 @@ class DIGIKAM_EXPORT DServiceMenu
 public:
 
     /**
-     * Open file urls with the service.
+     * Linux only: open file urls with the service.
      */
     static bool runFiles(KService* const service, const QList<QUrl>& urls);
 
     /**
-     * Open file urls with the application command.
+     * Linux only: open file urls with the application command.
      */
     static bool runFiles(const QString& appCmd,
                          const QList<QUrl>& urls,
                          KService* const service = nullptr);
 
     /**
-     * Return list of service available on desktop to open files.
+     * Linux only: return list of service available on desktop to open files.
      */
     static KService::List servicesForOpenWith(const QList<QUrl>& urls);
+
+#ifdef Q_OS_MAC
+
+    static QList<QUrl> MacApplicationForFileExtension(const QString& suffix);
+    static bool        MacOpenFileWithApplication(const QUrl& fileUrl, const QUrl& appUrl);
+
+#endif
+
 };
 
 } // namespace Digikam

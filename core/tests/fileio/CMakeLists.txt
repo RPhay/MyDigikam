@@ -15,24 +15,22 @@ include_directories(
 )
 
 if(APPLE)
-    set(appforfileextension_cli_SRCS ${CMAKE_CURRENT_SOURCE_DIR}/appforfileextension_cli.cpp)
-    add_executable(appforfileextension_cli ${appforfileextension_cli_SRCS})
-    ecm_mark_nongui_executable(appforfileextension_cli)
+    set(macappforfileextension_cli_SRCS ${CMAKE_CURRENT_SOURCE_DIR}/macappforfileextension_cli.cpp)
+    add_executable(macappforfileextension_cli ${macappforfileextension_cli_SRCS})
+    ecm_mark_nongui_executable(macappforfileextension_cli)
 
-    target_link_libraries(appforfileextension_cli
+    target_link_libraries(macappforfileextension_cli
                           digikamcore
-                          digikamgui
 
                           ${COMMON_TEST_LINK}
     )
 
-    set(openfilewithapplication_cli_SRCS ${CMAKE_CURRENT_SOURCE_DIR}/openfilewithapplication_cli.cpp)
-    add_executable(openfilewithapplication_cli ${openfilewithapplication_cli_SRCS})
-    ecm_mark_nongui_executable(openfilewithapplication_cli)
+    set(macopenfilewithapplication_cli_SRCS ${CMAKE_CURRENT_SOURCE_DIR}/macopenfilewithapplication_cli.cpp)
+    add_executable(macopenfilewithapplication_cli ${macopenfilewithapplication_cli_SRCS})
+    ecm_mark_nongui_executable(macopenfilewithapplication_cli)
 
-    target_link_libraries(openfilewithapplication_cli
+    target_link_libraries(macopenfilewithapplication_cli
                           digikamcore
-                          digikamgui
 
                           ${COMMON_TEST_LINK}
     )

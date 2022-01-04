@@ -3,8 +3,8 @@
  * This file is a part of digiKam project
  * https://www.digikam.org
  *
- * Date        : 2020-05-08
- * Description : KService menu operation methods
+ * Date        : 2006-05-08
+ * Description : Service menu operation methods
  *
  * Copyright (C) 2014-2022 by Gilles Caulier <caulier dot gilles at gmail dot com>
  * Copyright (C) 2006-2010 by Marcel Wiesweg <marcel dot wiesweg at gmx dot de>
