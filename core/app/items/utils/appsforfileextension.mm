@@ -45,6 +45,13 @@
  */
 DIGIKAM_GUI_EXPORT QList<QUrl> MacApplicationForFileExtension(const QString& suffix)
 {
+    // Code inspired from: 
+    // qtbase/src/plugins/platforms/cocoa/qcocoanativeinterface.mm : QCocoaNativeInterface::defaultBackgroundPixmapForQWizard()
+    // qtbase/src/corelib/io/qfilesystemengine_unix.cpp            : isPackage()
+    // qtbase/src/corelib/global/qlibraryinfo.cpp                  : getRelocatablePrefix()
+    // qtbase/src/corelib/plugin/qlibrary_unix.cpp                 : load_sys()
+
+
     QList<QUrl> appUrls;
 
     if (suffix.isEmpty())
@@ -123,14 +130,6 @@ DIGIKAM_GUI_EXPORT QList<QUrl> MacApplicationForFileExtension(const QString& suf
 
     // appUrls is a list of ALL possible applications suitable for suffix.
     // Given a UI to choose one, you can then call
-    // LSOpenFromURLSpec() to open your file with a specific application.
-
-    // TODO: host applications properties to a class with Qt containers and return it.
-    // Look how it's done in QtCore implementation:
-    // qtbase/src/plugins/platforms/cocoa/qcocoanativeinterface.mm : QCocoaNativeInterface::defaultBackgroundPixmapForQWizard()
-    // qtbase/src/corelib/io/qfilesystemengine_unix.cpp            : isPackage()
-    // qtbase/src/corelib/global/qlibraryinfo.cpp                  : getRelocatablePrefix()
-    // qtbase/src/corelib/plugin/qlibrary_unix.cpp                 : load_sys()
 
     // Release the resources.
 
@@ -140,13 +139,16 @@ DIGIKAM_GUI_EXPORT QList<QUrl> MacApplicationForFileExtension(const QString& suf
     return appUrls;
 }
 
+/**
+ * Function to Call LSOpenFromURLSpec() to open your file url with a specific application bundle url.
+ */
 DIGIKAM_GUI_EXPORT bool MacOpenFileWithApplication(const QUrl& fileUrl, const QUrl& appUrl)
 {
     // Inspired from https://github.com/eep/fugu/blob/master/NSWorkspace(LaunchServices).m
 
-    bool success           = false;
-    CFURLRef furl         = QUrl::toCFURL(fileUrl);
-    CFURLRef aurl         = QUrl::toCFURL(appUrl);
+    bool success          = false;
+    CFURLRef furl         = fileUrl.toCFURL();
+    CFURLRef aurl         = appUrl.toCFURL();
     LSLaunchURLSpec lspec = { nullptr, nullptr, nullptr, 0, nullptr };
     CFArrayRef arrayref   = CFArrayCreate(kCFAllocatorDefault, (const void**)&furl, 1, nullptr);
 
@@ -166,6 +168,10 @@ DIGIKAM_GUI_EXPORT bool MacOpenFileWithApplication(const QUrl& fileUrl, const QU
     if (status == noErr)
     {
         success = true;
+    }
+    else
+    {
+        qCWarning(DIGIKAM_GENERAL_LOG) << "Cannot start Application Bundle url" << appUrl << "for file" << fileUrl;
     }
 
     if (arrayref)
