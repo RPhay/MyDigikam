@@ -24,7 +24,18 @@ if(APPLE)
                           digikamgui
 
                           ${COMMON_TEST_LINK}
-)
+    )
+
+    set(openfilewithapplication_cli_SRCS ${CMAKE_CURRENT_SOURCE_DIR}/openfilewithapplication_cli.cpp)
+    add_executable(openfilewithapplication_cli ${openfilewithapplication_cli_SRCS})
+    ecm_mark_nongui_executable(openfilewithapplication_cli)
+
+    target_link_libraries(openfilewithapplication_cli
+                          digikamcore
+                          digikamgui
+
+                          ${COMMON_TEST_LINK}
+    )
 endif()
 
 #------------------------------------------------------------------------
