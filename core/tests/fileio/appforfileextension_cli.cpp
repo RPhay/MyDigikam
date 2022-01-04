@@ -32,9 +32,11 @@
 
 QList<QVariantList> MacApplicationForFileExtension(const QString& suffix);
 
-int main(int argc, char** argv)
+int main(int /*argc*/, char** /*argv*/)
 {
-    /*QList<QVariantList> list =*/ MacApplicationForFileExtension(QLatin1String("jpg"));
+    QList<QVariantList> list = MacApplicationForFileExtension(QLatin1String("jpg"));
+
+    qCDebug(DIGIKAM_GENERAL_LOG) << "Item from list:" << list.count();
 
     return 0;
 }
