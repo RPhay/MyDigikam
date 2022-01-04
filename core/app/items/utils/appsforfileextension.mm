@@ -30,6 +30,9 @@
 #include <QDateTime>
 #include <QStringList>
 #include <QDataStream>
+#include <QRect>
+#include <QSize>
+#include <QPoint>
 
 // MacOS header
 
@@ -162,7 +165,7 @@ static QVariant qtValue(CFPropertyListRef cfvalue)
         bool metNonString = false;
         for (CFIndex i = 0; i < size; ++i) {
             QVariant value = qtValue(CFArrayGetValueAtIndex(cfarray, i));
-            if (value.typeId() != QMetaType::QString)
+            if (value.type() != QVariant::String)
                 metNonString = true;
             list << value;
         }
