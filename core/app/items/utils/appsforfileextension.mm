@@ -45,6 +45,35 @@
 /**
  * Conversion helper method taken from qtbase/src/corelib/io/qsettings.cpp
  */
+static QStringList splitArgs(const QString& s, int idx)
+{
+    int l = s.length();
+    Q_ASSERT(l > 0);
+    Q_ASSERT(s.at(idx) == QLatin1Char('('));
+    Q_ASSERT(s.at(l - 1) == QLatin1Char(')'));
+
+    QStringList result;
+    QString item;
+
+    for (++idx; idx < l; ++idx) {
+        QChar c = s.at(idx);
+        if (c == QLatin1Char(')')) {
+            Q_ASSERT(idx == l - 1);
+            result.append(item);
+        } else if (c == QLatin1Char(' ')) {
+            result.append(item);
+            item.clear();
+        } else {
+            item.append(c);
+        }
+    }
+
+    return result;
+}
+
+/**
+ * Conversion helper method taken from qtbase/src/corelib/io/qsettings.cpp
+ */
 static QVariant stringToVariant(const QString& s)
 {
     if (s.startsWith(QLatin1Char('@'))) {
@@ -71,15 +100,15 @@ static QVariant stringToVariant(const QString& s)
                 stream >> result;
                 return result;
             } else if (s.startsWith(QLatin1String("@Rect("))) {
-                QStringList args = QSettingsPrivate::splitArgs(s, 5);
+                QStringList args = splitArgs(s, 5);
                 if (args.size() == 4)
                     return QVariant(QRect(args[0].toInt(), args[1].toInt(), args[2].toInt(), args[3].toInt()));
             } else if (s.startsWith(QLatin1String("@Size("))) {
-                QStringList args = QSettingsPrivate::splitArgs(s, 5);
+                QStringList args = splitArgs(s, 5);
                 if (args.size() == 2)
                     return QVariant(QSize(args[0].toInt(), args[1].toInt()));
             } else if (s.startsWith(QLatin1String("@Point("))) {
-                QStringList args = QSettingsPrivate::splitArgs(s, 6);
+                QStringList args = splitArgs(s, 6);
                 if (args.size() == 2)
                     return QVariant(QPoint(args[0].toInt(), args[1].toInt()));
             } else if (s == QLatin1String("@Invalid()")) {
@@ -108,7 +137,7 @@ static QVariant qtValue(CFPropertyListRef cfvalue)
         Sorted grossly from most to least frequent type.
     */
     if (typeId == CFStringGetTypeID()) {
-        return QSettingsPrivate::stringToVariant(QString::fromCFString(static_cast<CFStringRef>(cfvalue)));
+        return stringToVariant(QString::fromCFString(static_cast<CFStringRef>(cfvalue)));
     } else if (typeId == CFNumberGetTypeID()) {
         CFNumberRef cfnumber = static_cast<CFNumberRef>(cfvalue);
         if (CFNumberIsFloatType(cfnumber)) {
@@ -154,7 +183,7 @@ static QVariant qtValue(CFPropertyListRef cfvalue)
         }
 
         const QString str = QString::fromUtf8(byteArray.constData(), byteArray.size());
-        QVariant variant = QSettingsPrivate::stringToVariant(str);
+        QVariant variant = stringToVariant(str);
         if (variant == QVariant(str)) {
             // We did not find an encoded variant in the string,
             // so return the raw byte array instead.
