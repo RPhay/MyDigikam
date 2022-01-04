@@ -53,21 +53,20 @@ QList<QVariantList> MacApplicationForFileExtension(const QString& suffix)
         return appIDs;
     }
 
-    CFArrayRef        bundleIDs    = nullptr;
-    NSString* const   extension    = [[NSString alloc] initWithUTF8String:suffix.toUtf8().constData()];
-
     // Make a UTI from a filename extension.
 
-    CFStringRef uti                = UTTypeCreatePreferredIdentifierForTag(kUTTagClassFilenameExtension,
-                                                                           extension,
-                                                                           nil);
+    CFArrayRef  bundleIDs             = nullptr;
+    CFStringRef extensionRef          = suffix.toCFString();
+    CFStringRef uniformTypeIdentifier = UTTypeCreatePreferredIdentifierForTag(kUTTagClassFilenameExtension, extensionRef, nullptr);
 
-    if (uti != nullptr)
+    if (!UTTypeConformsTo(uniformTypeIdentifier, kUTTypeBundle))
     {
-        // Get a list of all of the application bundle IDs that know how to handle this.
-
-        bundleIDs = LSCopyAllRoleHandlersForContentType(uti, kLSRolesViewer | kLSRolesEditor);
+        return appIDs;
     }
+
+    // Get a list of all of the application bundle IDs that know how to handle this.
+
+    bundleIDs = LSCopyAllRoleHandlersForContentType(uniformTypeIdentifier, kLSRolesViewer | kLSRolesEditor);
 
     if (bundleIDs != nullptr)
     {
