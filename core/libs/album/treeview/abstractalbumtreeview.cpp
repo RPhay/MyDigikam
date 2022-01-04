@@ -923,6 +923,32 @@ void AbstractAlbumTreeView::slotCollapseNode()
     }
 }
 
+void AbstractAlbumTreeView::slotCollapseAllAlbums()
+{
+    QQueue<QModelIndex> greyNodes;
+    greyNodes.append(m_albumFilterModel->rootAlbumIndex());
+
+    while (!greyNodes.isEmpty())
+    {
+        QModelIndex current = greyNodes.dequeue();
+
+        if (!current.isValid())
+        {
+            continue;
+        }
+
+        int it              = 0;
+        QModelIndex child   = current.model()->index(it++, 0, current);
+
+        while (child.isValid())
+        {
+            collapse(child);
+            greyNodes.enqueue(child);
+            child = current.model()->index(it++, 0, current);
+        }
+    }
+}
+
 void AbstractAlbumTreeView::adaptColumnsOnDataChange(const QModelIndex& topLeft, const QModelIndex& bottomRight)
 {
     Q_UNUSED(topLeft);

@@ -101,6 +101,7 @@ public:
         rebuildThumbsAction     (nullptr),
         expandSelected          (nullptr),
         collapseSelected        (nullptr),
+        collapseAllAlbums       (nullptr),
         contextMenuElement      (nullptr)
     {
     }
@@ -118,6 +119,7 @@ public:
     QAction*                                  rebuildThumbsAction;
     QAction*                                  expandSelected;
     QAction*                                  collapseSelected;
+    QAction*                                  collapseAllAlbums;
 
     class AlbumSelectionTreeViewContextMenuElement;
     AlbumSelectionTreeViewContextMenuElement* contextMenuElement;
@@ -160,6 +162,7 @@ public:
 
             cmh.addAction(d->expandSelected);
             cmh.addAction(d->collapseSelected);
+            cmh.addAction(d->collapseAllAlbums);
             cmh.addSeparator();
 
             // --------------------------------------------------------
@@ -186,6 +189,7 @@ public:
 
         cmh.addAction(d->expandSelected);
         cmh.addAction(d->collapseSelected);
+        cmh.addAction(d->collapseAllAlbums);
         cmh.addSeparator();
 
         // --------------------------------------------------------
@@ -239,6 +243,9 @@ AlbumSelectionTreeView::AlbumSelectionTreeView(QWidget* const parent,
     d->collapseSelected        = new QAction(QIcon::fromTheme(QLatin1String("collapse-all")),
                                              i18n("Collapse Selected Recursively"), this);
 
+    d->collapseAllAlbums       = new QAction(QIcon::fromTheme(QLatin1String("collapse-all")),
+                                             i18n("Collapse all Albums"), this);
+
     d->findDuplAction          = new QAction(QIcon::fromTheme(QLatin1String("tools-wizard")),
                                              i18n("Find Duplicates..."), this);
 
@@ -256,6 +263,9 @@ AlbumSelectionTreeView::AlbumSelectionTreeView(QWidget* const parent,
 
     connect(d->collapseSelected, SIGNAL(triggered()),
             this, SLOT(slotCollapseNode()));
+
+    connect(d->collapseAllAlbums, SIGNAL(triggered()),
+            this, SLOT(slotCollapseAllAlbums()));
 
     connect(d->findDuplAction, SIGNAL(triggered()),
             this, SLOT(slotFindDuplicates()));

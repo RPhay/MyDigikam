@@ -328,7 +328,7 @@ BUGFIXES:
 314 ==> 447914 - digiKam 7.4.0: Got the message that the plugins were not loaded.
 315 ==> 447874 - Dates view forgets descending order.
 316 ==> 447933 - Error message at startup - no plugins loaded.
-317 ==> 
+317 ==> 447919 - Collapse all Albums/collections.
 318 ==> 
 319 ==> 
 320 ==> 
