@@ -40,6 +40,109 @@
 #include "digikam_debug.h"
 
 /**
+ * Conversion helper method taken from qtbase/src/corelib/io/qsettings_mac.cpp
+ */
+static QVariant qtValue(CFPropertyListRef cfvalue)
+{
+    if (!cfvalue)
+        return QVariant();
+
+    CFTypeID typeId = CFGetTypeID(cfvalue);
+
+    /*
+        Sorted grossly from most to least frequent type.
+    */
+    if (typeId == CFStringGetTypeID()) {
+        return QSettingsPrivate::stringToVariant(QString::fromCFString(static_cast<CFStringRef>(cfvalue)));
+    } else if (typeId == CFNumberGetTypeID()) {
+        CFNumberRef cfnumber = static_cast<CFNumberRef>(cfvalue);
+        if (CFNumberIsFloatType(cfnumber)) {
+            double d;
+            CFNumberGetValue(cfnumber, kCFNumberDoubleType, &d);
+            return d;
+        } else {
+            int i;
+            qint64 ll;
+
+            if (CFNumberGetType(cfnumber) == kCFNumberIntType) {
+                CFNumberGetValue(cfnumber, kCFNumberIntType, &i);
+                return i;
+            }
+            CFNumberGetValue(cfnumber, kCFNumberLongLongType, &ll);
+            return ll;
+        }
+    } else if (typeId == CFArrayGetTypeID()) {
+        CFArrayRef cfarray = static_cast<CFArrayRef>(cfvalue);
+        QList<QVariant> list;
+        CFIndex size = CFArrayGetCount(cfarray);
+        bool metNonString = false;
+        for (CFIndex i = 0; i < size; ++i) {
+            QVariant value = qtValue(CFArrayGetValueAtIndex(cfarray, i));
+            if (value.typeId() != QMetaType::QString)
+                metNonString = true;
+            list << value;
+        }
+        if (metNonString)
+            return list;
+        else
+            return QVariant(list).toStringList();
+    } else if (typeId == CFBooleanGetTypeID()) {
+        return (bool)CFBooleanGetValue(static_cast<CFBooleanRef>(cfvalue));
+    } else if (typeId == CFDataGetTypeID()) {
+        QByteArray byteArray = QByteArray::fromRawCFData(static_cast<CFDataRef>(cfvalue));
+
+        // Fast-path for QByteArray, so that we don't have to go
+        // though the expensive and lossy conversion via UTF-8.
+        if (!byteArray.startsWith('@')) {
+            byteArray.detach();
+            return byteArray;
+        }
+
+        const QString str = QString::fromUtf8(byteArray.constData(), byteArray.size());
+        QVariant variant = QSettingsPrivate::stringToVariant(str);
+        if (variant == QVariant(str)) {
+            // We did not find an encoded variant in the string,
+            // so return the raw byte array instead.
+            byteArray.detach();
+            return byteArray;
+        }
+
+        return variant;
+    } else if (typeId == CFDictionaryGetTypeID()) {
+        CFDictionaryRef cfdict = static_cast<CFDictionaryRef>(cfvalue);
+        CFTypeID arrayTypeId = CFArrayGetTypeID();
+        int size = (int)CFDictionaryGetCount(cfdict);
+        QVarLengthArray<CFPropertyListRef> keys(size);
+        QVarLengthArray<CFPropertyListRef> values(size);
+        CFDictionaryGetKeysAndValues(cfdict, keys.data(), values.data());
+
+        QVariantMap map;
+        for (int i = 0; i < size; ++i) {
+            QString key = QString::fromCFString(static_cast<CFStringRef>(keys[i]));
+
+            if (CFGetTypeID(values[i]) == arrayTypeId) {
+                CFArrayRef cfarray = static_cast<CFArrayRef>(values[i]);
+                CFIndex arraySize = CFArrayGetCount(cfarray);
+                QVariantList list;
+                list.reserve(arraySize);
+                for (CFIndex j = 0; j < arraySize; ++j)
+                    list.append(qtValue(CFArrayGetValueAtIndex(cfarray, j)));
+                map.insert(key, list);
+            } else {
+                map.insert(key, qtValue(values[i]));
+            }
+        }
+        return map;
+    } else if (typeId == CFDateGetTypeID()) {
+        return QDateTime::fromCFDate(static_cast<CFDateRef>(cfvalue));
+    }
+    return QVariant();
+}
+
+
+// ---------------------------------------------------------------------------------------
+
+/**
  * Given a filename extension "extension", here's how to find all of the
  * applications known to the MacOS who can open files of that type.
  * Return a list of suitable bundle properties.
