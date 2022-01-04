@@ -284,6 +284,11 @@ public Q_SLOTS:
      */
     void slotCollapseNode();
 
+    /**
+     * @brief slotCollapseAllAlbums - collapse all albums without root album
+     */
+    void slotCollapseAllAlbums();
+
 Q_SIGNALS:
 
     /// Emitted when the currently selected album changes
