@@ -25,20 +25,33 @@
 // Qt include
 
 #include <QString>
+#include <QList>
+#include <QVariant>
 
 // MacOS header
 
 #import <Foundation/Foundation.h>
 
+// Local includes
+
+#include "digikam_debug.h"
+
 /**
  * Given a filename extension "extension", here's how to find all of the
  * applications known to the MacOS who can open files of that type.
+ * Return a list of suitable bundle properties.
  */
-void MacApplicationForFileExtension(const QString& suffix)
+QList<QVariantList> MacApplicationForFileExtension(const QString& suffix)
 {
+    QList<QVariantList> appIDs;
+
+    if (suffix.isEmpty())
+    {
+        return appIDs;
+    }
+
     CFArayRef         bundleIDs    = nullptr;
     NSString* const   extension    = [[NSString alloc] initWithUTF8String:suffix.toUtf8().constData()];
-    CFMutableArrayRef applications = CFArrayCreateMutable(kCFAllocatorDefault, 0);
 
     // Make a UTI from a filename extension.
 
@@ -69,7 +82,16 @@ void MacApplicationForFileExtension(const QString& suffix)
                 // TODO: call CFURLResourceIsReachable() on each item before adding
                 // it to the big array of qualified applications.
 
-                CFArrayAppendArray(applications, appsForBundleID, CFRangeMake(0, CFArrayGetCount(appsForBundleID)));
+                QVariantList propers;
+                CFIndex size = CFArrayGetCount(cfarray);
+
+                for (CFIndex j = 0 ; j < size ; ++j)
+                {
+                    QVariant value = qtValue(CFArrayGetValueAtIndex(appsForBundlesIDs, j));
+                    propers << value;
+                }
+
+                appIDs << propers;
                 CFRelease(appsForBundleID);
             }
         }
@@ -83,10 +105,15 @@ void MacApplicationForFileExtension(const QString& suffix)
     // Look how it's done in QtCore implementation:
     // qtbase/src/plugins/platforms/cocoa/qcocoanativeinterface.mm : QCocoaNativeInterface::defaultBackgroundPixmapForQWizard()
     // qtbase/src/corelib/io/qfilesystemengine_unix.cpp            : isPackage()
+    // qtbase/src/corelib/global/qlibraryinfo.cpp                  : getRelocatablePrefix()
 
     // when you're finished, don't forget to release the resources or you'll leak memory
 
     CFRelease(uti);
     CFRelease(bundleIDs);
-    CFRelease(applications);
+
+    qCDebug(DIGIKAM_GENERAL_LOG) << "Bundle properties for" << suffix;
+    qCDebug(DIGIKAM_GENERAL_LOG) << appIDs;
+    
+    return appIDs,
 }
