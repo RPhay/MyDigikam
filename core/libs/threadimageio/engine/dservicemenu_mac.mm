@@ -22,6 +22,8 @@
  *
  * ============================================================ */
 
+#include "dservicemenu.h"
+
 // Qt include
 
 #include <QString>
@@ -37,13 +39,16 @@
 #include "digikam_debug.h"
 #include "digikam_export.h"
 
+namespace Digikam
+{
+
 /**
  * Given a filename extension 'suffix', here's how to find all of the
  * applications known to the MacOS who can open files of that type.
  * Return a list of suitable MacOS bundle urls for 'suffix'.
  * First one is the default MacOS bundle application.
  */
-DIGIKAM_GUI_EXPORT QList<QUrl> MacApplicationForFileExtension(const QString& suffix)
+QList<QUrl> DServiceMenu::MacApplicationForFileExtension(const QString& suffix)
 {
     // Code inspired from: 
     // qtbase/src/plugins/platforms/cocoa/qcocoanativeinterface.mm : QCocoaNativeInterface::defaultBackgroundPixmapForQWizard()
@@ -142,7 +147,7 @@ DIGIKAM_GUI_EXPORT QList<QUrl> MacApplicationForFileExtension(const QString& suf
 /**
  * Function to Call LSOpenFromURLSpec() to open your file url with a specific application bundle url.
  */
-DIGIKAM_GUI_EXPORT bool MacOpenFileWithApplication(const QUrl& fileUrl, const QUrl& appUrl)
+bool DServiceMenu::MacOpenFileWithApplication(const QUrl& fileUrl, const QUrl& appUrl)
 {
     // Inspired from https://github.com/eep/fugu/blob/master/NSWorkspace(LaunchServices).m
 
@@ -181,3 +186,6 @@ DIGIKAM_GUI_EXPORT bool MacOpenFileWithApplication(const QUrl& fileUrl, const QU
 
     return success;
 }
+
+} // namespace Digikam
+
