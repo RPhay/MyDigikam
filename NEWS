@@ -327,7 +327,7 @@ BUGFIXES:
 313 ==> 447888 - After OS-upgrade and moving the database to another disk, the links to the individual pictures are lost.
 314 ==> 447914 - digiKam 7.4.0: Got the message that the plugins were not loaded.
 315 ==> 447874 - Dates view forgets descending order.
-316 ==> 
+316 ==> 447933 - Error message at startup - no plugins loaded.
 317 ==> 
 318 ==> 
 319 ==> 
