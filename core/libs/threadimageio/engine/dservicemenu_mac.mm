@@ -212,19 +212,25 @@ QString DServiceMenu::MacApplicationBundleName(const QUrl& appUrl)
 
 QIcon DServiceMenu::MacApplicationBundleIcon(const QUrl& appUrl, int size)
 {
+    // Inspired from http://theocacao.com/document.page/183
+
+    // Get Image from Workspace about Application Bundle.
+
     NSWorkspace* ws          = [NSWorkspace sharedWorkspace];
     NSString* path           = appUrl.path().toNSString();
-    NSImage* icon            = [ws iconForFile: path];
+    NSImage* macIcon         = [ws iconForFile: path];
 
-    CGImageRef cgRef         = [icon CGImageForProposedRect:NULL context:nil hints:nil];
-    NSBitmapImageRep* newRep = [[NSBitmapImageRep alloc] initWithCGImage:cgRef];
-    [newRep setSize:[icon size]];
-    NSData* pngData          = [newRep representationUsingType:NSBitmapImageFileTypePNG properties:nil];
+    // Convert NSImage to QImage to QPixmap to QIcon, using PNG container in memory
+
+    CGImageRef cgRef         = [macIcon CGImageForProposedRect:NULL context:nil hints:nil];
+    NSBitmapImageRep* bitmap = [[NSBitmapImageRep alloc] initWithCGImage:cgRef];
+    [bitmap setSize:[macIcon size]];
+    NSData* pngData          = [bitmap representationUsingType:NSBitmapImageFileTypePNG properties:nil];
     QByteArray array         = QByteArray::fromNSData(pngData);
     QImage image             = QImage::fromData(array, "PNG");
     QPixmap pix              = QPixmap::fromImage(image.scaled(size, size));
 
-    [newRep autorelease];
+    [bitmap autorelease];
 
     return (QIcon(pix));
 }
