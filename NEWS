@@ -330,10 +330,17 @@ BUGFIXES:
 316 ==> 447933 - Error message at startup - no plugins loaded.
 317 ==> 447919 - Collapse all Albums/collections.
 318 ==> 294528 - Add "open with..." option to album tree-view context menu.
-319 ==> 
-320 ==> 
-321 ==> 
-322 ==> 
-323 ==> 
-324 ==> 
-325 ==> 
+319 ==> 308413 - Crashed when filling another open with command.
+320 ==> 379125 - Opening with... in file manager results in for every image digiKam instance spawns.
+321 ==> 091007 - Open categories in left pane with double-click.
+322 ==> 090183 - Slideshow with OpenGL gives me a blank screen.
+323 ==> 138404 - Won't Open Files With Mixed Case Extensions.
+324 ==> 182331 - Lower quality with open gl slide show?
+325 ==> 123129 - The image editor of digiKam does not open with a picture.
+326 ==> 
+327 ==> 
+328 ==> 
+329 ==> 
+330 ==> 
+331 ==> 
+
