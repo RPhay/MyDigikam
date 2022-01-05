@@ -137,16 +137,25 @@ void TagFolderView::addCustomContextMenuActions(ContextMenuHelper& cmh, Album* a
     cmh.addAction(d->resetIconAction);
     cmh.addSeparator();
 
-    QAction* const expandSel   = new QAction(QIcon::fromTheme(QLatin1String("expand-all")),
+    QAction* const expandSel   = new QAction(QIcon::fromTheme(QLatin1String("go-down")),
                                              i18n("Expand Selected Nodes"), this);
 
     cmh.addAction(expandSel, this, SLOT(slotExpandNode()), false);
 
-    QAction* const collapseSel = new QAction(QIcon::fromTheme(QLatin1String("collapse-all")),
+    QAction* const collapseSel = new QAction(QIcon::fromTheme(QLatin1String("go-up")),
                                              i18n("Collapse Selected Recursively"), this);
 
     cmh.addAction(collapseSel, this, SLOT(slotCollapseNode()), false);
 
+    QAction* const expandAll   = new QAction(QIcon::fromTheme(QLatin1String("expand-all")),
+                                             i18n("Expand all Tags"), this);
+
+    cmh.addAction(expandAll, this, SLOT(expandAll()), false);
+
+    QAction* const collapseAll = new QAction(QIcon::fromTheme(QLatin1String("collapse-all")),
+                                             i18n("Collapse all Tags"), this);
+
+    cmh.addAction(collapseAll, this, SLOT(slotCollapseAllNodes()), false);
     cmh.addSeparator();
 
     if (d->showFindDuplicateAction)

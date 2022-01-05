@@ -285,9 +285,9 @@ public Q_SLOTS:
     void slotCollapseNode();
 
     /**
-     * @brief slotCollapseAllAlbums - collapse all albums without root album
+     * @brief slotCollapseAllNodes - collapse all nodes without root node
      */
-    void slotCollapseAllAlbums();
+    void slotCollapseAllNodes();
 
 Q_SIGNALS:
 

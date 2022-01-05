@@ -100,6 +100,7 @@ public:
         repairHiddenAction      (nullptr),
         rebuildThumbsAction     (nullptr),
         expandSelected          (nullptr),
+        expandAllAlbums         (nullptr),
         collapseSelected        (nullptr),
         collapseAllAlbums       (nullptr),
         contextMenuElement      (nullptr)
@@ -118,6 +119,7 @@ public:
     QAction*                                  repairHiddenAction;
     QAction*                                  rebuildThumbsAction;
     QAction*                                  expandSelected;
+    QAction*                                  expandAllAlbums;
     QAction*                                  collapseSelected;
     QAction*                                  collapseAllAlbums;
 
@@ -162,6 +164,7 @@ public:
 
             cmh.addAction(d->expandSelected);
             cmh.addAction(d->collapseSelected);
+            cmh.addAction(d->expandAllAlbums);
             cmh.addAction(d->collapseAllAlbums);
             cmh.addSeparator();
 
@@ -189,6 +192,7 @@ public:
 
         cmh.addAction(d->expandSelected);
         cmh.addAction(d->collapseSelected);
+        cmh.addAction(d->expandAllAlbums);
         cmh.addAction(d->collapseAllAlbums);
         cmh.addSeparator();
 
@@ -237,10 +241,13 @@ AlbumSelectionTreeView::AlbumSelectionTreeView(QWidget* const parent,
     d->albumModificationHelper = albumModificationHelper;
     d->toolTip                 = new AlbumViewToolTip(this);
 
-    d->expandSelected          = new QAction(QIcon::fromTheme(QLatin1String("expand-all")),
+    d->expandSelected          = new QAction(QIcon::fromTheme(QLatin1String("go-down")),
                                              i18n("Expand Selected Nodes"), this);
 
-    d->collapseSelected        = new QAction(QIcon::fromTheme(QLatin1String("collapse-all")),
+    d->expandAllAlbums         = new QAction(QIcon::fromTheme(QLatin1String("expand-all")),
+                                             i18n("Expand all Albums"), this);
+
+    d->collapseSelected        = new QAction(QIcon::fromTheme(QLatin1String("go-up")),
                                              i18n("Collapse Selected Recursively"), this);
 
     d->collapseAllAlbums       = new QAction(QIcon::fromTheme(QLatin1String("collapse-all")),
@@ -261,11 +268,14 @@ AlbumSelectionTreeView::AlbumSelectionTreeView(QWidget* const parent,
     connect(d->expandSelected, SIGNAL(triggered()),
             this, SLOT(slotExpandNode()));
 
+    connect(d->expandAllAlbums, SIGNAL(triggered()),
+            this, SLOT(expandAll()));
+
     connect(d->collapseSelected, SIGNAL(triggered()),
             this, SLOT(slotCollapseNode()));
 
     connect(d->collapseAllAlbums, SIGNAL(triggered()),
-            this, SLOT(slotCollapseAllAlbums()));
+            this, SLOT(slotCollapseAllNodes()));
 
     connect(d->findDuplAction, SIGNAL(triggered()),
             this, SLOT(slotFindDuplicates()));

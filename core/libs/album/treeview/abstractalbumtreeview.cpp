@@ -923,7 +923,7 @@ void AbstractAlbumTreeView::slotCollapseNode()
     }
 }
 
-void AbstractAlbumTreeView::slotCollapseAllAlbums()
+void AbstractAlbumTreeView::slotCollapseAllNodes()
 {
     QQueue<QModelIndex> greyNodes;
     greyNodes.append(m_albumFilterModel->rootAlbumIndex());
