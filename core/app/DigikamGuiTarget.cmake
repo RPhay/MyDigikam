@@ -64,6 +64,10 @@ set(libdigikamgui_SRCS
     ${CMAKE_CURRENT_SOURCE_DIR}/items/utils/itemviewutilities.cpp
     ${CMAKE_CURRENT_SOURCE_DIR}/items/utils/tooltipfiller.cpp
     ${CMAKE_CURRENT_SOURCE_DIR}/items/utils/contextmenuhelper.cpp
+    ${CMAKE_CURRENT_SOURCE_DIR}/items/utils/contextmenuhelper_services.cpp
+    ${CMAKE_CURRENT_SOURCE_DIR}/items/utils/contextmenuhelper_tags.cpp
+    ${CMAKE_CURRENT_SOURCE_DIR}/items/utils/contextmenuhelper_albums.cpp
+    ${CMAKE_CURRENT_SOURCE_DIR}/items/utils/contextmenuhelper_groups.cpp
     ${CMAKE_CURRENT_SOURCE_DIR}/items/utils/groupingviewimplementation.cpp
     ${CMAKE_CURRENT_SOURCE_DIR}/items/utils/itemcategorydrawer.cpp
 
