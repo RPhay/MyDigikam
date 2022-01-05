@@ -27,7 +27,6 @@ if(APPLE)
 
     set(macopenfilewithapplication_cli_SRCS ${CMAKE_CURRENT_SOURCE_DIR}/macopenfilewithapplication_cli.cpp)
     add_executable(macopenfilewithapplication_cli ${macopenfilewithapplication_cli_SRCS})
-    ecm_mark_nongui_executable(macopenfilewithapplication_cli)
 
     target_link_libraries(macopenfilewithapplication_cli
                           digikamcore

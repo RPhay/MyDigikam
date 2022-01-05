@@ -30,9 +30,13 @@
 #include <QList>
 #include <QUrl>
 #include <QFileInfo>
+#include <QIcon>
+#include <QPixmap>
+#include <QSize>
 
 // MacOS header
 
+#include <AppKit/AppKit.h>
 #import <Foundation/Foundation.h>
 
 // Local includes
@@ -204,6 +208,25 @@ QList<QUrl> DServiceMenu::MacApplicationsForFiles(const QList<QUrl>& files)
 QString DServiceMenu::MacApplicationBundleName(const QUrl& appUrl)
 {
     return (appUrl.toLocalFile().section(QLatin1Char('/'), -2, -2));
+}
+
+QIcon DServiceMenu::MacApplicationBundleIcon(const QUrl& appUrl, int size)
+{
+    NSWorkspace* ws          = [NSWorkspace sharedWorkspace];
+    NSString* path           = appUrl.path().toNSString();
+    NSImage* icon            = [ws iconForFile: path];
+
+    CGImageRef cgRef         = [icon CGImageForProposedRect:NULL context:nil hints:nil];
+    NSBitmapImageRep* newRep = [[NSBitmapImageRep alloc] initWithCGImage:cgRef];
+    [newRep setSize:[icon size]];
+    NSData* pngData          = [newRep representationUsingType:NSBitmapImageFileTypePNG properties:nil];
+    QByteArray array         = QByteArray::fromNSData(pngData);
+    QImage image             = QImage::fromData(array, "PNG");
+    QPixmap pix              = QPixmap::fromImage(image.scaled(size, size));
+
+    [newRep autorelease];
+
+    return (QIcon(pix));
 }
 
 } // namespace Digikam

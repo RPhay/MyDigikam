@@ -101,6 +101,8 @@ public:
      */
     static QString MacApplicationBundleName(const QUrl& appUrl);
 
+    static QIcon MacApplicationBundleIcon(const QUrl& appUrl, int size = 32);
+
 #endif
 
 //@}
