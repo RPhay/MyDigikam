@@ -212,19 +212,27 @@ QString DServiceMenu::MacApplicationBundleName(const QUrl& appUrl)
 
 QIcon DServiceMenu::MacApplicationBundleIcon(const QUrl& appUrl, int size)
 {
-    NSWorkspace* ws          = [NSWorkspace sharedWorkspace];
-    NSString* path           = appUrl.path().toNSString();
-    NSImage* icon            = [ws iconForFile: path];
+    // Inspired from http://theocacao.com/document.page/183
 
-    CGImageRef cgRef         = [icon CGImageForProposedRect:NULL context:nil hints:nil];
-    NSBitmapImageRep* newRep = [[NSBitmapImageRep alloc] initWithCGImage:cgRef];
-    [newRep setSize:[icon size]];
-    NSData* pngData          = [newRep representationUsingType:NSBitmapImageFileTypePNG properties:nil];
-    QByteArray array         = QByteArray::fromNSData(pngData);
-    QImage image             = QImage::fromData(array, "PNG");
-    QPixmap pix              = QPixmap::fromImage(image.scaled(size, size));
+    // Get Image from Workspace about Application Bundle.
 
-    [newRep autorelease];
+    NSWorkspace* const ws          = [NSWorkspace sharedWorkspace];
+    NSString* const path           = appUrl.path().toNSString();
+    NSImage* const macIcon         = [ws iconForFile: path];
+
+    // Convert NSImage to QImage to QPixmap to QIcon, using PNG container in memory
+
+    CGImageRef cgRef               = [macIcon CGImageForProposedRect:NULL context:nil hints:nil];
+    NSBitmapImageRep* const bitmap = [[NSBitmapImageRep alloc] initWithCGImage:cgRef];
+    [bitmap setSize:[macIcon size]];
+    NSData* const pngData          = [bitmap representationUsingType:NSBitmapImageFileTypePNG properties:nil];
+    QByteArray array               = QByteArray::fromNSData(pngData);
+    QImage image                   = QImage::fromData(array, "PNG");
+    QPixmap pix                    = QPixmap::fromImage(image.scaled(size, size));
+
+    // Clenaup
+
+    [bitmap autorelease];
 
     return (QIcon(pix));
 }
