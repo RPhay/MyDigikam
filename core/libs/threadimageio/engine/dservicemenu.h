@@ -97,10 +97,13 @@ public:
     static QList<QUrl> MacApplicationsForFiles(const QList<QUrl>& files);
 
     /**
-     * Return the MacOS Application bundles name based on url.
+     * Return the MacOS Application bundle name based on url.
      */
     static QString MacApplicationBundleName(const QUrl& appUrl);
 
+    /**
+     * Return the MacOS Application bundle icon based on url.
+     */
     static QIcon MacApplicationBundleIcon(const QUrl& appUrl, int size = 32);
 
 #endif
