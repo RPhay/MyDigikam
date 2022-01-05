@@ -109,6 +109,7 @@ QList<QWidget*> SetupCollectionDelegate::createItemWidgets(const QModelIndex& /*
             this, [this, pushButton]() { emit categoryButtonPressed(pushButton->property("id").toInt()); });
 
     QToolButton* const updateButton = new QToolButton();
+    updateButton->setToolTip(i18nc("@info:tooltip", "Updates the path of the collection."));
     updateButton->setAutoRaise(true);
     list << updateButton;
 
@@ -116,6 +117,7 @@ QList<QWidget*> SetupCollectionDelegate::createItemWidgets(const QModelIndex& /*
             this, [this, updateButton]() { emit updatePressed(updateButton->property("id").toInt()); });
 
     QToolButton* const deleteButton = new QToolButton();
+    deleteButton->setToolTip(i18nc("@info:tooltip", "Removes the collection from digiKam."));
     deleteButton->setAutoRaise(true);
     list << deleteButton;
 
