@@ -90,6 +90,9 @@ public:
 
     /**
      * Return a list of common MacOS Application bundles suitable for a list of files.
+     * The function check all common Applications which can handle urls to open files.
+     * Only common Applications are returned on the list.
+     * The list can be empty if no common Application is found.
      */
     static QList<QUrl> MacApplicationsForFiles(const QList<QUrl>& files);
 

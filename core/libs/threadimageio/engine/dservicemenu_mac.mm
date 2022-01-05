@@ -45,12 +45,11 @@ namespace Digikam
 
 QList<QUrl> DServiceMenu::MacApplicationForFileExtension(const QString& suffix)
 {
-    // Code inspired from: 
+    // Code inspired from:
     // qtbase/src/plugins/platforms/cocoa/qcocoanativeinterface.mm : QCocoaNativeInterface::defaultBackgroundPixmapForQWizard()
     // qtbase/src/corelib/io/qfilesystemengine_unix.cpp            : isPackage()
     // qtbase/src/corelib/global/qlibraryinfo.cpp                  : getRelocatablePrefix()
     // qtbase/src/corelib/plugin/qlibrary_unix.cpp                 : load_sys()
-
 
     QList<QUrl> appUrls;
 
