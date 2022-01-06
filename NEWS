@@ -337,7 +337,7 @@ BUGFIXES:
 323 ==> 138404 - Won't Open Files With Mixed Case Extensions.
 324 ==> 182331 - Lower quality with open gl slide show?
 325 ==> 123129 - The image editor of digiKam does not open with a picture.
-326 ==> 
+326 ==> 432336 - Add Open With menu entry under macOS as under Linux and Windows.
 327 ==> 
 328 ==> 
 329 ==> 
