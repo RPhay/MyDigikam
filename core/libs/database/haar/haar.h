@@ -122,7 +122,7 @@ public:
     /**
      * Y/I/Q positions with largest magnitude
      */
-    Haar::Idx sig[3][Haar::NumberOfCoefficients] = { 0 };
+    Haar::Idx sig[3][Haar::NumberOfCoefficients] = { { 0 } };
 
     /**
      * YIQ for position [0,0]
@@ -159,7 +159,7 @@ public:
         // All values or false, only 2*40 are true.
 
         memset(m_indexList, 0, sizeof(MapIndexType[2 * Haar::NumberOfPixelsSquared]));
-        int x;
+        int x = 0;
 
         for (int i = 0 ; i < Haar::NumberOfCoefficients ; ++i)
         {
@@ -245,12 +245,12 @@ public:
 
     float weight(int weight, int channel) const
     {
-        return s_haar_weights[(int)m_type][weight][channel];
+        return (s_haar_weights[(int)m_type][weight][channel]);
     }
 
     float weightForAverage(int channel)   const
     {
-        return s_haar_weights[(int)m_type][0][channel];
+        return (s_haar_weights[(int)m_type][0][channel]);
     }
 
 private:
