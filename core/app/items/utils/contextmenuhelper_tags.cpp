@@ -4,7 +4,7 @@
  * https://www.digikam.org
  *
  * Date        : 2009-02-15
- * Description : contextmenu helper class - Tags options.
+ * Description : contextmenu helper class - Tags methods.
  *
  * Copyright (C) 2009-2011 by Andi Clemens <andi dot clemens at gmail dot com>
  * Copyright (C) 2010-2022 by Gilles Caulier <caulier dot gilles at gmail dot com>
@@ -213,6 +213,96 @@ void ContextMenuHelper::addCreateTagFromAddressbookMenu()
 
 #endif
 
+}
+
+void ContextMenuHelper::addGotoMenu(const imageIds& ids)
+{
+    if (d->gotoAlbumAction && d->gotoDateAction)
+    {
+        return;
+    }
+
+    setSelectedIds(ids);
+
+    // the currently selected image is always the first item
+
+    ItemInfo item;
+
+    if (!d->selectedIds.isEmpty())
+    {
+        item = ItemInfo(d->selectedIds.first());
+    }
+
+    if (item.isNull())
+    {
+        return;
+    }
+
+    // when more then one item is selected, don't add the menu
+
+    if (d->selectedIds.count() > 1)
+    {
+        return;
+    }
+
+    d->gotoAlbumAction    = new QAction(QIcon::fromTheme(QLatin1String("folder-pictures")), i18nc("@action: context menu", "Album"), this);
+    d->gotoDateAction     = new QAction(QIcon::fromTheme(QLatin1String("view-calendar")),   i18nc("@action: context menu", "Date"),  this);
+    QMenu* const gotoMenu = new QMenu(d->parent);
+    gotoMenu->addAction(d->gotoAlbumAction);
+    gotoMenu->addAction(d->gotoDateAction);
+
+    TagsPopupMenu* const gotoTagsPopup = new TagsPopupMenu(d->selectedIds, TagsPopupMenu::DISPLAY, gotoMenu);
+    QAction* const gotoTag             = gotoMenu->addMenu(gotoTagsPopup);
+    gotoTag->setIcon(QIcon::fromTheme(QLatin1String("tag")));
+    gotoTag->setText(i18nc("@action: context menu", "Tag"));
+
+    // Disable the goto Tag popup menu, if there are no tags at all.
+
+    if (!CoreDbAccess().db()->hasTags(d->selectedIds))
+    {
+        gotoTag->setEnabled(false);
+    }
+
+    /**
+     * TODO:tags to be ported to multiple selection
+     */
+
+    QList<Album*> albumList = AlbumManager::instance()->currentAlbums();
+    Album* currentAlbum     = nullptr;
+
+    if (!albumList.isEmpty())
+    {
+        currentAlbum = albumList.first();
+    }
+    else
+    {
+        return;
+    }
+
+    if      (currentAlbum->type() == Album::PHYSICAL)
+    {
+        // If the currently selected album is the same as album to
+        // which the image belongs, then disable the "Go To" Album.
+        // (Note that in recursive album view these can be different).
+
+        if (item.albumId() == currentAlbum->id())
+        {
+            d->gotoAlbumAction->setEnabled(false);
+        }
+    }
+    else if (currentAlbum->type() == Album::DATE)
+    {
+        d->gotoDateAction->setEnabled(false);
+    }
+
+    QAction* const gotoMenuAction = gotoMenu->menuAction();
+    gotoMenuAction->setIcon(QIcon::fromTheme(QLatin1String("go-jump")));
+    gotoMenuAction->setText(i18nc("@action: context menu", "Go To"));
+
+    connect(gotoTagsPopup, SIGNAL(signalTagActivated(int)),
+            this, SIGNAL(signalGotoTag(int)));
+
+    addAction(gotoMenuAction);
 }
 
 } // namespace Digikam

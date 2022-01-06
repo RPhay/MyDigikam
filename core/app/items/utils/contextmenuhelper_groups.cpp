@@ -4,7 +4,7 @@
  * https://www.digikam.org
  *
  * Date        : 2009-02-15
- * Description : contextmenu helper class - Groups options.
+ * Description : contextmenu helper class - Groups methods.
  *
  * Copyright (C) 2009-2011 by Andi Clemens <andi dot clemens at gmail dot com>
  * Copyright (C) 2010-2022 by Gilles Caulier <caulier dot gilles at gmail dot com>
