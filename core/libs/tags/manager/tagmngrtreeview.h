@@ -55,14 +55,6 @@ public:
         return m_tfilteredModel;
     }
 
-public Q_SLOTS:
-
-    /**
-     * @brief slotExpandSelected - connected to expandSel action and will
-     *                             expand selected nodes by one level
-     */
-    void slotExpandSelected();
-
 protected:
 
     /**

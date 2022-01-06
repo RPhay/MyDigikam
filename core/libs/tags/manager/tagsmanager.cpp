@@ -725,11 +725,15 @@ void TagsManager::setupActions()
     QAction* const invSel        = new QAction(QIcon::fromTheme(QLatin1String("tag-reset")),
                                                i18n("Invert Selection"), this);
 
-    QAction* const expandTree    = new QAction(QIcon::fromTheme(QLatin1String("expand-all")),
-                                               i18n("Expand Tag Tree"), this);
-
     QAction* const expandSel     = new QAction(QIcon::fromTheme(QLatin1String("go-down")),
                                                i18n("Expand Selected Nodes"), this);
+
+    QAction* const expandAll     = new QAction(QIcon::fromTheme(QLatin1String("expand-all")),
+                                               i18n("Expand Tag Tree"), this);
+
+    QAction* const collapseAll   = new QAction(QIcon::fromTheme(QLatin1String("collapse-all")),
+                                               i18n("Collapse Tag Tree"), this);
+
     QAction* const delTagFromImg = new QAction(QIcon::fromTheme(QLatin1String("tag-delete")),
                                                i18n("Remove Tag from Images"), this);
 
@@ -753,9 +757,11 @@ void TagsManager::setupActions()
     setHelpText(invSel, i18n("Invert selection. "
                              "Only visible items will be selected"));
 
-    setHelpText(expandTree, i18n("Expand tag tree by one level"));
-
     setHelpText(expandSel, i18n("Selected items will be expanded"));
+
+    setHelpText(expandAll, i18n("Expand tag tree completely"));
+
+    setHelpText(collapseAll, i18n("Collapse tag tree completely"));
 
     setHelpText(delTagFromImg, i18n("Delete selected tag(s) from images. "
                                     "Works with multiple selection."));
@@ -772,11 +778,14 @@ void TagsManager::setupActions()
     connect(invSel, SIGNAL(triggered()),
             this, SLOT(slotInvertSel()));
 
-    connect(expandTree, SIGNAL(triggered()),
+    connect(expandSel, SIGNAL(triggered()),
+            d->tagMngrView, SLOT(slotExpandNode()));
+
+    connect(expandAll, SIGNAL(triggered()),
             d->tagMngrView, SLOT(expandAll()));
 
-    connect(expandSel, SIGNAL(triggered()),
-            d->tagMngrView, SLOT(slotExpandSelected()));
+    connect(collapseAll, SIGNAL(triggered()),
+            d->tagMngrView, SLOT(slotCollapseAllNodes()));
 
     connect(delTagFromImg, SIGNAL(triggered()),
             this, SLOT(slotRemoveTagsFromImgs()));
@@ -789,8 +798,9 @@ void TagsManager::setupActions()
     organizeMenu->addAction(createTagAddr);
     organizeMenu->addAction(markUnused);
     organizeMenu->addAction(invSel);
-    organizeMenu->addAction(expandTree);
     organizeMenu->addAction(expandSel);
+    organizeMenu->addAction(expandAll);
+    organizeMenu->addAction(collapseAll);
     organizeMenu->addAction(delTagFromImg);
 
     /**

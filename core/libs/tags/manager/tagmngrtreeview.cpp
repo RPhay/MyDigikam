@@ -161,11 +161,14 @@ void TagMngrTreeView::setContexMenuItems(ContextMenuHelper& cmh, const QList<TAl
     QAction* const invSel        = new QAction(QIcon::fromTheme(QLatin1String("tag-reset")),
                                                i18n("Invert Selection"), this);
 
-    QAction* const expandTree    = new QAction(QIcon::fromTheme(QLatin1String("expand-all")),
-                                               i18n("Expand Tag Tree"), this);
-
     QAction* const expandSel     = new QAction(QIcon::fromTheme(QLatin1String("go-down")),
                                                i18n("Expand Selected Nodes"), this);
+
+    QAction* const expandAll     = new QAction(QIcon::fromTheme(QLatin1String("expand-all")),
+                                               i18n("Expand Tag Tree"), this);
+
+    QAction* const collapseAll   = new QAction(QIcon::fromTheme(QLatin1String("collapse-all")),
+                                               i18n("Collapse Tag Tree"), this);
 
     QAction* const delTagFromImg = new QAction(QIcon::fromTheme(QLatin1String("tag-delete")),
                                                i18n("Remove Tag from Images"), this);
@@ -173,8 +176,9 @@ void TagMngrTreeView::setContexMenuItems(ContextMenuHelper& cmh, const QList<TAl
     cmh.addAction(titleEdit,     d->tagMngr, SLOT(slotEditTagTitle()),       false);
     cmh.addAction(resetIcon,     d->tagMngr, SLOT(slotResetTagIcon()),       false);
     cmh.addAction(invSel,        d->tagMngr, SLOT(slotInvertSel()),          false);
-    cmh.addAction(expandTree,    this,       SLOT(expandAll()),              false);
-    cmh.addAction(expandSel,     this ,      SLOT(slotExpandSelected()),     false);
+    cmh.addAction(expandSel,     this ,      SLOT(slotExpandNode()),         false);
+    cmh.addAction(expandAll,     this,       SLOT(expandAll()),              false);
+    cmh.addAction(collapseAll,   this,       SLOT(slotCollapseAllNodes()),   false);
     cmh.addAction(delTagFromImg, d->tagMngr, SLOT(slotRemoveTagsFromImgs()), false);
 
     if (isRoot)
@@ -187,16 +191,6 @@ void TagMngrTreeView::setContexMenuItems(ContextMenuHelper& cmh, const QList<TAl
     if (albums.size() != 1)
     {
         titleEdit->setEnabled(false);
-    }
-}
-
-void TagMngrTreeView::slotExpandSelected()
-{
-    QModelIndexList list = selectionModel()->selectedIndexes();
-
-    foreach (const QModelIndex& index, list)
-    {
-        expand(index);
     }
 }
 
