@@ -19,6 +19,8 @@ BUILDING_DIR="`pwd`/temp.build"
 
 #------------
 # IMPORTANT: Target Windows architecture to build installer. Possible values: 32 or 64 bits.
+#            We do not support 32 bits anymore due to lack of memory allocation on this kind
+#            of architecture.
 MXE_ARCHBITS=64
 #------------
 
