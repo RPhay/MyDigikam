@@ -148,9 +148,12 @@ cp -r $MXE_INSTALL_PREFIX/bin/OpenAL32.dll                              $BUNDLED
 echo -e "\n---------- DrMinGw run-time"
 cp -r $MXE_INSTALL_PREFIX/bin/exchndl.dll                               $BUNDLEDIR/             2>/dev/null
 cp -r $MXE_INSTALL_PREFIX/bin/mgwhelp.dll                               $BUNDLEDIR/             2>/dev/null
-cp -r $MXE_INSTALL_PREFIX/bin/dbghelp.dll                               $BUNDLEDIR/             2>/dev/null
+cp -r $MXE_INSTALL_PREFIX/bin/dbgcore.dll                               $BUNDLEDIR/             2>/dev/null
 cp -r $MXE_INSTALL_PREFIX/bin/symsrv.dll                                $BUNDLEDIR/             2>/dev/null
 cp -r $MXE_INSTALL_PREFIX/bin/symsrv.yes                                $BUNDLEDIR/             2>/dev/null
+
+# Do not include this file from DrMinGW as it require extra devel dll from Microsoft at run-time.
+#cp -r $MXE_INSTALL_PREFIX/bin/dbghelp.dll                               $BUNDLEDIR/             2>/dev/null
 
 echo -e "\n---------- Copy executables with recursive dependencies in bundle directory\n"
 
