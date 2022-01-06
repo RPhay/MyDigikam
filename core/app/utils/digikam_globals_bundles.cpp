@@ -151,6 +151,8 @@ void tryInitDrMingw()
 #ifdef HAVE_DRMINGW
 
     qCDebug(DIGIKAM_GENERAL_LOG) << "Loading DrMinGw run-time...";
+/*
+    // Windows version check for DrMinGW 0.9.2. Check if it's always necessary with new DrMinGW version.
 
     QRegExp versionRegExp(QLatin1String("(\\d+[.]*\\d*)"));
     QSysInfo::productVersion().indexOf(versionRegExp);
@@ -165,7 +167,7 @@ void tryInitDrMingw()
 
         return;
     }
-
+*/
     QString appPath = QCoreApplication::applicationDirPath();
     QString excFile = QDir::toNativeSeparators(appPath + QLatin1String("/exchndl.dll"));
 
