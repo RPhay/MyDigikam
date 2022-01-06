@@ -1,8 +1,35 @@
 diff --git a/CMakeLists.txt b/CMakeLists.txt
-index b2bdb35..733bc95 100644
+index 9dad199..77b72f8 100644
 --- a/CMakeLists.txt
 +++ b/CMakeLists.txt
-@@ -157,8 +157,8 @@ set (MGWHELP_IMPLIB ${CMAKE_ARCHIVE_OUTPUT_DIRECTORY}/libmgwhelp.a)
+@@ -64,16 +64,16 @@ add_compiler_flags (-fno-strict-aliasing)
+ include (StaticCRT)
+ 
+ # Avoid Posix threads
+-execute_process (
+-    COMMAND "${CMAKE_COMMAND}" -E echo "#include <thread>\n#ifdef _GLIBCXX_HAS_GTHREADS\n#error _GLIBCXX_HAS_GTHREADS\n#endif"
+-    COMMAND "${CMAKE_CXX_COMPILER}" -x c++ -E -
+-    RESULT_VARIABLE STATUS_CXX11_THREADS
+-    OUTPUT_QUIET
+-    ERROR_QUIET
+-)
+-if (NOT STATUS_CXX11_THREADS EQUAL 0)
+-    message (SEND_ERROR "Win32 threads recommended.")
+-endif ()
++#execute_process (
++#    COMMAND "${CMAKE_COMMAND}" -E echo "#include <thread>\n#ifdef _GLIBCXX_HAS_GTHREADS\n#error _GLIBCXX_HAS_GTHREADS\n#endif"
++#    COMMAND "${CMAKE_CXX_COMPILER}" -x c++ -E -
++#    RESULT_VARIABLE STATUS_CXX11_THREADS
++#    OUTPUT_QUIET
++#    ERROR_QUIET
++#)
++#if (NOT STATUS_CXX11_THREADS EQUAL 0)
++#    message (SEND_ERROR "Win32 threads recommended.")
++#endif ()
+ 
+ # Enable stack protection
+ # XXX: Broken on https://gcc.gnu.org/bugzilla/show_bug.cgi?id=86832
+@@ -145,8 +145,8 @@ set (MGWHELP_IMPLIB ${CMAKE_ARCHIVE_OUTPUT_DIRECTORY}/libmgwhelp.a)
  set (EXCHNDL_IMPLIB ${CMAKE_ARCHIVE_OUTPUT_DIRECTORY}/libexchndl.a)
  
  add_subdirectory (src)
@@ -13,16 +40,3 @@ index b2bdb35..733bc95 100644
  
  
  ##############################################################################
-diff --git a/thirdparty/zlib/CMakeLists.txt b/thirdparty/zlib/CMakeLists.txt
-index bf66809..c2f3ccf 100644
---- a/thirdparty/zlib/CMakeLists.txt
-+++ b/thirdparty/zlib/CMakeLists.txt
-@@ -5,7 +5,7 @@ else ()
-     add_definitions (-DHAVE_UNISTD_H)
- endif ()
- 
--add_library (z EXCLUDE_FROM_ALL
-+add_library (z STATIC
-     adler32.c
-     compress.c
-     crc32.c

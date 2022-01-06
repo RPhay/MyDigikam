@@ -40,7 +40,7 @@ ORIG_PATH="$PATH"
 ORIG_WD="`pwd`"
 
 export PATH=$MXE_BUILDROOT/usr/bin:$MXE_INSTALL_PREFIX/qt5/bin:$PATH
-
+if [ ] ; then
 ###############################################################################################
 # Check if a previous bundle already exist
 
@@ -144,7 +144,7 @@ make MXE_TARGETS=$MXE_BUILD_TARGETS \
 echo -e "\n"
 
 #     gdb \
-
+fi
 #################################################################################################
 
 echo -e "\n"
@@ -182,8 +182,9 @@ ${MXE_BUILD_TARGETS}-cmake $ORIG_WD/../3rdparty \
 # Low level libraries
 # NOTE: The order to compile each component here is very important.
 
-${MXE_BUILD_TARGETS}-cmake --build . --config RelWithDebInfo --target ext_opencv     -- -j$CPU_CORES
+#${MXE_BUILD_TARGETS}-cmake --build . --config RelWithDebInfo --target ext_opencv     -- -j$CPU_CORES
 #${MXE_BUILD_TARGETS}-cmake --build . --config RelWithDebInfo --target ext_libgphoto2 -- -j$CPU_CORES
+
 ${MXE_BUILD_TARGETS}-cmake --build . --config RelWithDebInfo --target ext_drmingw    -- -j$CPU_CORES
 
 #################################################################################################
