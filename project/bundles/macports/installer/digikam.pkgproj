@@ -9,9 +9,15 @@
 			<array>
 				<dict>
 					<key>APPLICATION_ID</key>
+					<string>org.digiKam</string>
+					<key>STATE</key>
+					<true/>
+				</dict>
+				<dict>
+					<key>APPLICATION_ID</key>
 					<string>org.kde.digikam</string>
 					<key>STATE</key>
-					<false/>
+					<true/>
 				</dict>
 			</array>
 			<key>MUST-CLOSE-APPLICATIONS</key>
@@ -602,7 +608,7 @@
 				<key>FOLLOW_SYMBOLIC_LINKS</key>
 				<false/>
 				<key>IDENTIFIER</key>
-				<string>org.kde.digikam</string>
+				<string>org.digiKam</string>
 				<key>LOCATION</key>
 				<integer>0</integer>
 				<key>NAME</key>
@@ -618,7 +624,7 @@
 				<key>USE_HFS+_COMPRESSION</key>
 				<true/>
 				<key>VERSION</key>
-				<string>7.2.0</string>
+				<string>7.5.0</string>
 			</dict>
 			<key>TYPE</key>
 			<integer>0</integer>
