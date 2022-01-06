@@ -173,7 +173,7 @@ void TagMngrTreeView::setContexMenuItems(ContextMenuHelper& cmh, const QList<TAl
     cmh.addAction(titleEdit,     d->tagMngr, SLOT(slotEditTagTitle()),       false);
     cmh.addAction(resetIcon,     d->tagMngr, SLOT(slotResetTagIcon()),       false);
     cmh.addAction(invSel,        d->tagMngr, SLOT(slotInvertSel()),          false);
-    cmh.addAction(expandTree,    this,       SLOT(slotExpandTree()),         false);
+    cmh.addAction(expandTree,    this,       SLOT(expandAll()),              false);
     cmh.addAction(expandSel,     this ,      SLOT(slotExpandSelected()),     false);
     cmh.addAction(delTagFromImg, d->tagMngr, SLOT(slotRemoveTagsFromImgs()), false);
 
@@ -197,51 +197,6 @@ void TagMngrTreeView::slotExpandSelected()
     foreach (const QModelIndex& index, list)
     {
         expand(index);
-    }
-}
-
-void TagMngrTreeView::slotExpandTree()
-{
-    QModelIndex root                 = model()->index(0, 0);
-    QItemSelectionModel* const model = selectionModel();
-    QModelIndexList selected         = model->selectedIndexes();
-
-    QQueue<QModelIndex> greyNodes;
-
-    greyNodes.append(root);
-
-    while (!greyNodes.isEmpty())
-    {
-        QModelIndex current = greyNodes.dequeue();
-
-        if (!current.isValid())
-        {
-            continue;
-        }
-
-        if (isExpanded(current))
-        {
-            int it            = 0;
-            QModelIndex child = current.model()->index(it++, 0, current);
-
-            while (child.isValid())
-            {
-                if (isExpanded(child))
-                {
-                    greyNodes.enqueue(child);
-                }
-                else
-                {
-                    expand(child);
-                }
-
-                child = current.model()->index(it++, 0, current);
-            }
-        }
-        else
-        {
-            expand(current);
-        }
     }
 }
 

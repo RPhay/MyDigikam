@@ -58,12 +58,6 @@ public:
 public Q_SLOTS:
 
     /**
-     * @brief slotExpandTree    - connected to expandTree action and will
-     *                            expand tree by one level
-     */
-    void slotExpandTree();
-
-    /**
      * @brief slotExpandSelected - connected to expandSel action and will
      *                             expand selected nodes by one level
      */

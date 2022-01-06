@@ -725,10 +725,10 @@ void TagsManager::setupActions()
     QAction* const invSel        = new QAction(QIcon::fromTheme(QLatin1String("tag-reset")),
                                                i18n("Invert Selection"), this);
 
-    QAction* const expandTree    = new QAction(QIcon::fromTheme(QLatin1String("format-indent-more")),
+    QAction* const expandTree    = new QAction(QIcon::fromTheme(QLatin1String("expand-all")),
                                                i18n("Expand Tag Tree"), this);
 
-    QAction* const expandSel     = new QAction(QIcon::fromTheme(QLatin1String("format-indent-more")),
+    QAction* const expandSel     = new QAction(QIcon::fromTheme(QLatin1String("go-down")),
                                                i18n("Expand Selected Nodes"), this);
     QAction* const delTagFromImg = new QAction(QIcon::fromTheme(QLatin1String("tag-delete")),
                                                i18n("Remove Tag from Images"), this);
@@ -773,7 +773,7 @@ void TagsManager::setupActions()
             this, SLOT(slotInvertSel()));
 
     connect(expandTree, SIGNAL(triggered()),
-            d->tagMngrView, SLOT(slotExpandTree()));
+            d->tagMngrView, SLOT(expandAll()));
 
     connect(expandSel, SIGNAL(triggered()),
             d->tagMngrView, SLOT(slotExpandSelected()));
