@@ -225,7 +225,7 @@ QIcon DServiceMenu::MacApplicationBundleIcon(const QUrl& appUrl, int size)
     CGImageRef cgRef               = [macIcon CGImageForProposedRect:NULL context:nil hints:nil];
     NSBitmapImageRep* const bitmap = [[NSBitmapImageRep alloc] initWithCGImage:cgRef];
     [bitmap setSize:[macIcon size]];
-    NSData* const pngData          = [bitmap representationUsingType:NSBitmapImageFileTypePNG properties:nil];
+    NSData* const pngData          = [bitmap representationUsingType:NSBitmapImageFileTypePNG properties:@{}];
     QByteArray array               = QByteArray::fromNSData(pngData);
     QImage image                   = QImage::fromData(array, "PNG");
     QPixmap pix                    = QPixmap::fromImage(image.scaled(size, size));
