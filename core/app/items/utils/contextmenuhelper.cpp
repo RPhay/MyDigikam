@@ -40,7 +40,7 @@ ContextMenuHelper::~ContextMenuHelper()
     delete d;
 }
 
-void ContextMenuHelper::setItemFilterModel(ItemFilterModel* model)
+void ContextMenuHelper::setItemFilterModel(ItemFilterModel* const model)
 {
     d->imageFilterModel = model;
 }

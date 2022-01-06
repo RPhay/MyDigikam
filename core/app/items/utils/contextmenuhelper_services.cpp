@@ -123,6 +123,7 @@ void ContextMenuHelper::slotOpenWith()
 
 void ContextMenuHelper::slotOpenWith(QAction* action)
 {
+
 #ifdef Q_OS_WIN
 
     Q_UNUSED(action);

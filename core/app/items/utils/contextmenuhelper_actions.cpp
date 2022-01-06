@@ -27,7 +27,7 @@
 namespace Digikam
 {
 
-QAction* ContextMenuHelper::exec(const QPoint& pos, QAction* at)
+QAction* ContextMenuHelper::exec(const QPoint& pos, QAction* const at)
 {
     QAction* const choice = d->parent->exec(pos, at);
 
@@ -74,7 +74,7 @@ void ContextMenuHelper::addAction(const QString& name, bool addDisabled)
     addAction(action, addDisabled);
 }
 
-void ContextMenuHelper::addAction(QAction* action, bool addDisabled)
+void ContextMenuHelper::addAction(QAction* const action, bool addDisabled)
 {
     if (!action)
     {
@@ -87,7 +87,7 @@ void ContextMenuHelper::addAction(QAction* action, bool addDisabled)
     }
 }
 
-void ContextMenuHelper::addSubMenu(QMenu* subMenu)
+void ContextMenuHelper::addSubMenu(QMenu* const subMenu)
 {
     d->parent->addMenu(subMenu);
 }
@@ -97,7 +97,7 @@ void ContextMenuHelper::addSeparator()
     d->parent->addSeparator();
 }
 
-void ContextMenuHelper::addAction(QAction* action, QObject* recv, const char* slot, bool addDisabled)
+void ContextMenuHelper::addAction(QAction* const action, QObject* const recv, const char* const slot, bool addDisabled)
 {
     if (!action)
     {
@@ -130,7 +130,7 @@ void ContextMenuHelper::addStandardActionLightTable()
     addAction(action);
 }
 
-void ContextMenuHelper::addStandardActionThumbnail(const imageIds& ids, Album* album)
+void ContextMenuHelper::addStandardActionThumbnail(const imageIds& ids, Album* const album)
 {
     if (d->setThumbnailAction)
     {
@@ -155,19 +155,19 @@ void ContextMenuHelper::addStandardActionThumbnail(const imageIds& ids, Album* a
     }
 }
 
-void ContextMenuHelper::addStandardActionCut(QObject* recv, const char* slot)
+void ContextMenuHelper::addStandardActionCut(QObject* const recv, const char* const slot)
 {
     QAction* const cut = DXmlGuiWindow::buildStdAction(StdCutAction, recv, slot, d->parent);
     addAction(cut);
 }
 
-void ContextMenuHelper::addStandardActionCopy(QObject* recv, const char* slot)
+void ContextMenuHelper::addStandardActionCopy(QObject* const recv, const char* const slot)
 {
     QAction* const copy = DXmlGuiWindow::buildStdAction(StdCopyAction, recv, slot, d->parent);
     addAction(copy);
 }
 
-void ContextMenuHelper::addStandardActionPaste(QObject* recv, const char* slot)
+void ContextMenuHelper::addStandardActionPaste(QObject* const recv, const char* const slot)
 {
     QAction* const paste        = DXmlGuiWindow::buildStdAction(StdPasteAction, recv, slot, d->parent);
     const QMimeData* const data = qApp->clipboard()->mimeData(QClipboard::Clipboard);
@@ -180,7 +180,7 @@ void ContextMenuHelper::addStandardActionPaste(QObject* recv, const char* slot)
     addAction(paste, true);
 }
 
-void ContextMenuHelper::addStandardActionItemDelete(QObject* recv, const char* slot, int quantity)
+void ContextMenuHelper::addStandardActionItemDelete(QObject* const recv, const char* const slot, int quantity)
 {
     QAction* const trashAction = new QAction(QIcon::fromTheme(QLatin1String("user-trash")),
                                              i18ncp("@action:inmenu Pluralized",
@@ -192,11 +192,12 @@ void ContextMenuHelper::addStandardActionItemDelete(QObject* recv, const char* s
     addAction(trashAction);
 }
 
-void ContextMenuHelper::addIQSAction(QObject* recv, const char* slot)
+void ContextMenuHelper::addIQSAction(QObject* const recv, const char* const slot)
 {
     QAction* const IQSAction = new QAction(QIcon::fromTheme(QLatin1String("")),
                                            i18ncp("@action:inmenu Pluralized",
-                                                    "Image Quality Sort", "Image Quality Sort",1), d->parent);
+                                                  "Image Quality Sort", "Image Quality Sort",
+                                                  1), d->parent);
     connect(IQSAction, SIGNAL(triggered()),
             recv, slot);
 

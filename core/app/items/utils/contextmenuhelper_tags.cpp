@@ -27,7 +27,7 @@
 namespace Digikam
 {
 
-void ContextMenuHelper::addActionNewTag(TagModificationHelper* helper, TAlbum* tag)
+void ContextMenuHelper::addActionNewTag(TagModificationHelper* const helper, TAlbum* const tag)
 {
     QAction* const newTagAction = new QAction(QIcon::fromTheme(QLatin1String("tag-new")),
                                               i18nc("@action: context menu", "New Tag..."), this);
@@ -38,7 +38,7 @@ void ContextMenuHelper::addActionNewTag(TagModificationHelper* helper, TAlbum* t
             helper, SLOT(slotTagNew()));
 }
 
-void ContextMenuHelper::addActionDeleteTag(TagModificationHelper* helper, TAlbum* tag)
+void ContextMenuHelper::addActionDeleteTag(TagModificationHelper* const helper, TAlbum* const tag)
 {
     QAction* const deleteTagAction = new QAction(QIcon::fromTheme(QLatin1String("edit-delete")),
                                                  i18nc("@action: context menu", "Delete Tag"), this);
@@ -49,7 +49,7 @@ void ContextMenuHelper::addActionDeleteTag(TagModificationHelper* helper, TAlbum
             helper, SLOT(slotTagDelete()));
 }
 
-void ContextMenuHelper::addActionDeleteTags(TagModificationHelper* helper, const QList<TAlbum*>& tags)
+void ContextMenuHelper::addActionDeleteTags(TagModificationHelper* const helper, const QList<TAlbum*>& tags)
 {
     QAction* const deleteTagsAction = new QAction(QIcon::fromTheme(QLatin1String("edit-delete")),
                                                   i18nc("@action: context menu", "Delete Tags"), this);
@@ -60,7 +60,7 @@ void ContextMenuHelper::addActionDeleteTags(TagModificationHelper* helper, const
             helper, SLOT(slotMultipleTagDel()));
 }
 
-void ContextMenuHelper::addActionTagToFaceTag(TagModificationHelper* helper, TAlbum* tag)
+void ContextMenuHelper::addActionTagToFaceTag(TagModificationHelper* const helper, TAlbum* const tag)
 {
     QAction* const tagToFaceTagAction = new QAction(QIcon::fromTheme(QLatin1String("smiley")),
                                                     i18nc("@action: context menu", "Mark As Face Tag"), this);
@@ -71,7 +71,7 @@ void ContextMenuHelper::addActionTagToFaceTag(TagModificationHelper* helper, TAl
             helper, SLOT(slotTagToFaceTag()));
 }
 
-void ContextMenuHelper::addActionTagsToFaceTags(TagModificationHelper* helper, const QList<TAlbum*>& tags)
+void ContextMenuHelper::addActionTagsToFaceTags(TagModificationHelper* const helper, const QList<TAlbum*>& tags)
 {
     QAction* const tagToFaceTagsAction = new QAction(QIcon::fromTheme(QLatin1String("smiley")),
                                                      i18nc("@action: context menu", "Mark As Face Tags"), this);
@@ -82,7 +82,7 @@ void ContextMenuHelper::addActionTagsToFaceTags(TagModificationHelper* helper, c
             helper, SLOT(slotMultipleTagsToFaceTags()));
 }
 
-void ContextMenuHelper::addActionEditTag(TagModificationHelper* helper, TAlbum* tag)
+void ContextMenuHelper::addActionEditTag(TagModificationHelper* const helper, TAlbum* const tag)
 {
     QAction* const editTagAction = new QAction(QIcon::fromTheme(QLatin1String("tag-properties")),
                                                i18nc("@action: edit tag properties", "Properties..."), this);
@@ -97,7 +97,7 @@ void ContextMenuHelper::addActionEditTag(TagModificationHelper* helper, TAlbum* 
             helper, SLOT(slotTagEdit()));
 }
 
-void ContextMenuHelper::addActionDeleteFaceTag(TagModificationHelper* helper, TAlbum* tag)
+void ContextMenuHelper::addActionDeleteFaceTag(TagModificationHelper* const helper, TAlbum* const tag)
 {
     QAction* const deleteFaceTagAction = new QAction(QIcon::fromTheme(QLatin1String("tag")),
                                                      i18nc("@action: context menu", "Unmark Tag As Face"), this);
@@ -111,7 +111,7 @@ void ContextMenuHelper::addActionDeleteFaceTag(TagModificationHelper* helper, TA
             helper, SLOT(slotFaceTagDelete()));
 }
 
-void ContextMenuHelper::addActionDeleteFaceTags(TagModificationHelper* helper, const QList<TAlbum*>& tags)
+void ContextMenuHelper::addActionDeleteFaceTags(TagModificationHelper* const helper, const QList<TAlbum*>& tags)
 {
     QAction* const deleteFaceTagsAction = new QAction(QIcon::fromTheme(QLatin1String("tag")),
                                                       i18nc("@action: context menu", "Unmark Tags As Face"), this);

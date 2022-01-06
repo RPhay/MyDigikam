@@ -114,7 +114,7 @@ public:
      * @param action the action to add
      * @param addDisabled if set, disabled actions are added to the menu
      */
-    void addAction(QAction* action, bool addDisabled = false);
+    void addAction(QAction* const action, bool addDisabled = false);
 
     /**
      * Add a temporary action and assign it to a custom slot.
@@ -127,7 +127,7 @@ public:
      * @param slot the slot to connect the triggered action to
      * @param addDisabled if set, disabled actions are added to the menu
      */
-    void addAction(QAction* action, QObject* recv, const char* slot, bool addDisabled = false);
+    void addAction(QAction* const action, QObject* const recv, const char* const slot, bool addDisabled = false);
 
     /**
      * Add the standard cut action and connect it to the appropriate slot
@@ -135,7 +135,7 @@ public:
      * @param recv the receiver of the triggered action
      * @param slot the slot to connect the triggered action to
      */
-    void addStandardActionCut(QObject* recv, const char* slot);
+    void addStandardActionCut(QObject* const recv, const char* const slot);
 
     /**
      * Add the standard copy action and connect it to the appropriate slot
@@ -143,7 +143,7 @@ public:
      * @param recv the receiver of the triggered action
      * @param slot the slot to connect the triggered action to
      */
-    void addStandardActionCopy(QObject* recv, const char* slot);
+    void addStandardActionCopy(QObject* const recv, const char* const slot);
 
     /**
      * Add the standard paste action and connect it to the appropriate slot
@@ -151,7 +151,7 @@ public:
      * @param recv the receiver of the triggered action
      * @param slot the slot to connect the triggered action to
      */
-    void addStandardActionPaste(QObject* recv, const char* slot);
+    void addStandardActionPaste(QObject* const recv, const char* const slot);
 
     /**
      * Add the standard delete action and connect it to the appropriate slot
@@ -161,9 +161,15 @@ public:
      * @param quantity the number of the files that should be deleted. This parameter is used for
      * the action name and is normally used when deleting more then one item.
      */
-    void addStandardActionItemDelete(QObject* recv, const char* slot, int quantity = 1);
+    void addStandardActionItemDelete(QObject* const recv, const char* const slot, int quantity = 1);
 
-    void addIQSAction(QObject* recv, const char* slot);
+    /**
+     * Add the standard Image Quality Sorter action and connect it to the appropriate slot
+     *
+     * @param recv the receiver of the triggered action
+     * @param slot the slot to connect the triggered action to
+     */
+    void addIQSAction(QObject* const recv, const char* const slot);
 
     /**
      * Add the lighttable action to the menu.
@@ -184,7 +190,7 @@ public:
      * @param ids the selected items in the current view
      * @param album the current album the AlbumIconView is displaying
      */
-    void addStandardActionThumbnail(const imageIds& ids, Album* album);
+    void addStandardActionThumbnail(const imageIds& ids, Album* const album);
 
     /**
      * Add section for main views for opening and moving/going to albums.
@@ -235,33 +241,33 @@ public:
      * The tag modification helper is used to execute the action.
      * You must set the parent tag to use on modification helper.
      */
-    void addActionNewTag(TagModificationHelper* helper, TAlbum* parentTag = nullptr);
-    void addActionDeleteTag(TagModificationHelper* helper, TAlbum* tag);
-    void addActionDeleteTags(TagModificationHelper* helper, const QList<TAlbum*>& tags);
-    void addActionEditTag(TagModificationHelper* helper, TAlbum* tag);
+    void addActionNewTag(TagModificationHelper* const helper, TAlbum* const parentTag = nullptr);
+    void addActionDeleteTag(TagModificationHelper* const helper, TAlbum* const tag);
+    void addActionDeleteTags(TagModificationHelper* const helper, const QList<TAlbum*>& tags);
+    void addActionEditTag(TagModificationHelper* const helper, TAlbum* const tag);
 
     /**
      * Add action to delete tags from people sidebar.
      */
-    void addActionDeleteFaceTag(TagModificationHelper* helper, TAlbum* tag);
-    void addActionDeleteFaceTags(TagModificationHelper* helper, const QList<TAlbum*>& tags);
+    void addActionDeleteFaceTag(TagModificationHelper* const helper, TAlbum* const tag);
+    void addActionDeleteFaceTags(TagModificationHelper* const helper, const QList<TAlbum*>& tags);
 
     /**
      * Add action to set tags as face tags.
      */
-    void addActionTagToFaceTag(TagModificationHelper* helper, TAlbum* tag);
-    void addActionTagsToFaceTags(TagModificationHelper* helper, const QList<TAlbum*>& tags);
+    void addActionTagToFaceTag(TagModificationHelper* const helper, TAlbum* const tag);
+    void addActionTagsToFaceTags(TagModificationHelper* const helper, const QList<TAlbum*>& tags);
 
     /**
      * Add actions to add, remove or edit a tag.
      * The tag modification helper is used to execute the action.
      * You must set the parent tag to use on modification helper.
      */
-    void addActionNewAlbum(AlbumModificationHelper* helper, PAlbum* parentAlbum = nullptr);
-    void addActionDeleteAlbum(AlbumModificationHelper* helper, PAlbum* album);
-    void addActionEditAlbum(AlbumModificationHelper* helper, PAlbum* album);
-    void addActionRenameAlbum(AlbumModificationHelper* helper, PAlbum* album);
-    void addActionResetAlbumIcon(AlbumModificationHelper* helper, PAlbum* album);
+    void addActionNewAlbum(AlbumModificationHelper* const helper, PAlbum* const parentAlbum = nullptr);
+    void addActionDeleteAlbum(AlbumModificationHelper* const helper, PAlbum* const album);
+    void addActionEditAlbum(AlbumModificationHelper* const helper, PAlbum* const album);
+    void addActionRenameAlbum(AlbumModificationHelper* const helper, PAlbum* const album);
+    void addActionResetAlbumIcon(AlbumModificationHelper* const helper, PAlbum* const album);
 
     /**
      * Add "Assign Tags" menu.
@@ -330,19 +336,19 @@ public:
      * Set a filter model.
      * Some of the group actions will operate directly on the model.
      */
-    void setItemFilterModel(ItemFilterModel* model);
+    void setItemFilterModel(ItemFilterModel* const model);
 
     /**
      * Add a Select and Deselect menu to check and uncheck albums.
      * Note: Call setAlbumModel before, or this will have no effect.
      */
-    void addAlbumCheckUncheckActions(Album* album);
+    void addAlbumCheckUncheckActions(Album* const album);
 
     /**
      * Set an album model.
      * The check/uncheck actions will operate directly on the model.
      */
-    void setAlbumModel(AbstractCheckableAlbumModel* model);
+    void setAlbumModel(AbstractCheckableAlbumModel* const model);
 
     /**
      * Add Import Webservices actions menu.
@@ -357,7 +363,7 @@ public:
     /**
      * Add a submenu to the parent context menu.
      *
-     * @param subMenu   the submenu to be added
+     * @param subMenu the submenu to be added
      */
     void addSubMenu(QMenu* subMenu);
 
@@ -376,7 +382,7 @@ public:
      * @param at the action that should be at the position pos
      * @return the triggered action
      */
-    QAction* exec(const QPoint& pos, QAction* at = nullptr);
+    QAction* exec(const QPoint& pos, QAction* const at = nullptr);
 
 Q_SIGNALS:
 

@@ -27,7 +27,7 @@
 namespace Digikam
 {
 
-void ContextMenuHelper::addActionNewAlbum(AlbumModificationHelper* helper, PAlbum* parentAlbum)
+void ContextMenuHelper::addActionNewAlbum(AlbumModificationHelper* const helper, PAlbum* const parentAlbum)
 {
     QAction* const action = d->copyFromMainCollection(QLatin1String("album_new"));
     addAction(action);
@@ -37,7 +37,7 @@ void ContextMenuHelper::addActionNewAlbum(AlbumModificationHelper* helper, PAlbu
             helper, SLOT(slotAlbumNew()));
 }
 
-void ContextMenuHelper::addActionDeleteAlbum(AlbumModificationHelper* helper, PAlbum* album)
+void ContextMenuHelper::addActionDeleteAlbum(AlbumModificationHelper* const helper, PAlbum* const album)
 {
     QAction* const action = d->copyFromMainCollection(QLatin1String("album_delete"));
     addAction(action, !(album->isRoot() || album->isAlbumRoot()));
@@ -47,7 +47,7 @@ void ContextMenuHelper::addActionDeleteAlbum(AlbumModificationHelper* helper, PA
             helper, SLOT(slotAlbumDelete()));
 }
 
-void ContextMenuHelper::addActionEditAlbum(AlbumModificationHelper* helper, PAlbum* album)
+void ContextMenuHelper::addActionEditAlbum(AlbumModificationHelper* const helper, PAlbum* const album)
 {
     QAction* const action = d->copyFromMainCollection(QLatin1String("album_propsEdit"));
     addAction(action, !album->isRoot());
@@ -57,7 +57,7 @@ void ContextMenuHelper::addActionEditAlbum(AlbumModificationHelper* helper, PAlb
             helper, SLOT(slotAlbumEdit()));
 }
 
-void ContextMenuHelper::addActionRenameAlbum(AlbumModificationHelper* helper, PAlbum* album)
+void ContextMenuHelper::addActionRenameAlbum(AlbumModificationHelper* const helper, PAlbum* const album)
 {
     QAction* const action = d->copyFromMainCollection(QLatin1String("album_rename"));
     addAction(action, !(album->isRoot() || album->isAlbumRoot()));
@@ -67,7 +67,7 @@ void ContextMenuHelper::addActionRenameAlbum(AlbumModificationHelper* helper, PA
             helper, SLOT(slotAlbumRename()));
 }
 
-void ContextMenuHelper::addActionResetAlbumIcon(AlbumModificationHelper* helper, PAlbum* album)
+void ContextMenuHelper::addActionResetAlbumIcon(AlbumModificationHelper* const helper, PAlbum* const album)
 {
     QAction* const action = new QAction(QIcon::fromTheme(QLatin1String("view-refresh")),
                                         i18nc("@action: context menu", "Reset Album Icon"), this);
@@ -89,7 +89,7 @@ void ContextMenuHelper::setAlbumModel(AbstractCheckableAlbumModel* model)
     d->albumModel = model;
 }
 
-void ContextMenuHelper::addAlbumCheckUncheckActions(Album* album)
+void ContextMenuHelper::addAlbumCheckUncheckActions(Album* const album)
 {
     bool     enabled   = false;
     QString  allString = i18nc("@action: context menu", "All Albums");

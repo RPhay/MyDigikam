@@ -127,7 +127,7 @@ public:
 
 public:
 
-    QModelIndex indexForAlbumFromAction(QObject* sender) const
+    QModelIndex indexForAlbumFromAction(QObject* const sender) const
     {
         QAction* action = nullptr;
 
