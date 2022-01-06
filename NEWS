@@ -6,7 +6,8 @@ NEW FEATURES:
 General : MacOS package, Windows installer, and AppImage bundle use KF5 5.89 and KAPPS 21.12.0 frameworks.
 General : AppImage Linux bundle now support Platform Input Context FCITX (https://fcitx-im.org/wiki/Fcitx_5).
 General : Improve RTL translations support.
-General : GUI nternationalisation and localisation updates with more than 50 languages available.
+General : GUI internationalisation and localisation updates with more than 50 languages available.
+General : Add OpenWith contextual menu support under MacOS.
 
 *****************************************************************************************************
 BUGFIXES:
