@@ -371,8 +371,8 @@ BUGFIXES:
 356 ==> 222578 - No search box when editing coordinates.
 357 ==> 209719 - Coordinates editor shows just a blue map until one searches for a city.
 358 ==> 182609 - Geolocation > Edit Coordinates > Search text is invisible with Dark Theme.
-359 ==> 
-360 ==> 
+359 ==> 182626 - Geolocation Tab shows no country/city/town names when a photo is geo-tagged.
+360 ==> 135385 - Automatic tagging according to the gps data.
 361 ==> 
 362 ==> 
 363 ==> 
