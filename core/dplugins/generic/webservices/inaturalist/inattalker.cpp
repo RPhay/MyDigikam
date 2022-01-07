@@ -787,8 +787,9 @@ public:
 
         if (json.contains(RESULTS))
         {
-            static const QString BBOX_AREA = QLatin1String("bbox_area");
-            QJsonObject results            = json[RESULTS].toObject();
+            static const QString BBOX_AREA    = QLatin1String("bbox_area");
+            static const QString DISPLAY_NAME = QLatin1String("display_name");
+            QJsonObject results               = json[RESULTS].toObject();
             QList<Place> places;
 
             for (auto key : results.keys())
@@ -796,7 +797,7 @@ public:
                 for (auto placeValue : results.value(key).toArray())
                 {
                     QJsonObject place = placeValue.toObject();
-                    places.push_front(Place(place[NAME].toString(),
+                    places.push_front(Place(place[DISPLAY_NAME].toString(),
                                             place[BBOX_AREA].toDouble()));
                 }
             }
