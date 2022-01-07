@@ -445,6 +445,8 @@ void DigikamItemView::confirmFaces(const QList<QModelIndex>& indexes, int tagId)
     {
         d->editPipeline.confirm(infos[i], faces[i], tagId);
     }
+
+    clearSelection();
 }
 
 void DigikamItemView::removeFaces(const QList<QModelIndex>& indexes)
@@ -466,6 +468,8 @@ void DigikamItemView::removeFaces(const QList<QModelIndex>& indexes)
     {
         d->editPipeline.remove(infos[i], faces[i]);
     }
+
+    clearSelection();
 }
 
 void DigikamItemView::unknownFaces(const QList<QModelIndex>& indexes)
@@ -488,6 +492,8 @@ void DigikamItemView::unknownFaces(const QList<QModelIndex>& indexes)
         d->editPipeline.editTag(infos[i], faces[i],
                                 FaceTags::unknownPersonTagId());
     }
+
+    clearSelection();
 }
 
 void DigikamItemView::rejectFaces(const QList<QModelIndex>& indexes)
@@ -520,6 +526,8 @@ void DigikamItemView::rejectFaces(const QList<QModelIndex>& indexes)
             d->editPipeline.editTag(infos[i], faces[i], FaceTags::unknownPersonTagId());
         }
     }
+
+    clearSelection();
 }
 
 void DigikamItemView::ignoreFaces(const QList<QModelIndex>& indexes)
@@ -542,6 +550,8 @@ void DigikamItemView::ignoreFaces(const QList<QModelIndex>& indexes)
         d->editPipeline.editTag(infos[i], faces[i],
                                 FaceTags::ignoredPersonTagId());
     }
+
+    clearSelection();
 }
 
 QList<int> DigikamItemView::getFaceIds(const QList<QModelIndex>& indexes) const
@@ -752,6 +762,18 @@ void DigikamItemView::slotInitProgressIndicator()
         connect(&d->editPipeline, SIGNAL(finished()),
                 item, SLOT(slotCompleted()));
     }
+}
+
+void DigikamItemView::scrollTo(const QModelIndex& index, ScrollHint hint)
+{
+    // we do not want to change the view, when in the "Thumbnails" view in "People"
+    // see bugs 444692, 40232, ...
+    if ((viewMode() == QListView::IconMode) && (getFaceMode()))
+    {
+        return;
+    }
+
+    DCategorizedView::scrollTo(index, hint);
 }
 
 } // namespace Digikam

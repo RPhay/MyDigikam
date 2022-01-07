@@ -150,6 +150,7 @@ private Q_SLOTS:
     void slotRotateRight(const QList<QModelIndex>&);
     void slotFullscreen(const QList<QModelIndex>&);
     void slotInitProgressIndicator();
+    void scrollTo(const QModelIndex& index, ScrollHint hint = EnsureVisible) override;
 
 private:
 
