@@ -383,8 +383,8 @@ BUGFIXES:
 368 ==> 167255 - Waiting bar during geolocalisation updating.
 369 ==> 148912 - Geolocalization editor does not work with non-jpeg file types.
 370 ==> 448079 - Rebuilding thumbnails does not really rebuild thumbnails, no change in db size.
-371 ==> 
-372 ==> 
+371 ==> 436726 - Random Jumps when confirming/rejecting face suggestions.
+372 ==> 444692 - Cursor moves to another section after identifying or ignoring face.
 373 ==> 
 374 ==> 
 375 ==> 
