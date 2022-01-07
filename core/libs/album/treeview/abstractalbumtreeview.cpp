@@ -27,10 +27,6 @@
 
 #include "abstractalbumtreeview_p.h"
 
-// KDE includes
-
-#include <kconfiggroup.h>
-
 namespace Digikam
 {
 
@@ -289,7 +285,7 @@ void AbstractAlbumTreeView::slotSearchTextSettingsChanged(bool wasSearching, boo
         expandMatches(QModelIndex());
     }
 
-    // restore the tree view state if searching finished
+    // Restore the tree view state if searching finished
 
     if (wasSearching && !searched && !d->searchBackup.isEmpty())
     {
@@ -304,7 +300,7 @@ void AbstractAlbumTreeView::slotSearchTextSettingsChanged(bool wasSearching, boo
         {
             setCurrentAlbums(QList<Album*>() << d->lastSelectedAlbum, false);
 
-            // doing this twice somehow ensures that all parents are expanded
+            // Doing this twice somehow ensures that all parents are expanded
             // and we are at the right position. Maybe a hack... ;)
 
             scrollTo(m_albumFilterModel->indexForAlbum(d->lastSelectedAlbum));
@@ -327,7 +323,7 @@ bool AbstractAlbumTreeView::expandMatches(const QModelIndex& index)
 {
     bool anyMatch = false;
 
-    // expand index if a child matches
+    // Expand index if a child matches
 
     const QModelIndex source_index             = m_albumFilterModel->mapToSource(index);
     const AlbumFilterModel::MatchResult result = m_albumFilterModel->matchResult(source_index);
@@ -335,36 +331,40 @@ bool AbstractAlbumTreeView::expandMatches(const QModelIndex& index)
     switch (result)
     {
         case AlbumFilterModel::NoMatch:
-
+        {
             if (index != rootIndex())
             {
                 return false;
             }
 
             break;
+        }
 
         case AlbumFilterModel::ParentMatch:
-
+        {
             // Does not rule out additional child match, return value is unknown
 
             break;
+        }
 
         case AlbumFilterModel::DirectMatch:
-
+        {
             // Does not rule out additional child match, but we know we will return true
 
             anyMatch = true;
             break;
+        }
 
         case AlbumFilterModel::ChildMatch:
         case AlbumFilterModel::SpecialMatch:
-
+        {
             // We know already to expand, and we know already we will return true.
 
             anyMatch = true;
             expand(index);
 
             break;
+        }
     }
 
     // Recurse. Expand if children if have an (indirect) match
@@ -469,7 +469,7 @@ void AbstractAlbumTreeView::mousePressEvent(QMouseEvent* e)
 
     QTreeView::mousePressEvent(e);
 
-    if ((d->expandOnSingleClick || d->expandNewCurrent) && (e->button() == Qt::LeftButton))
+    if      ((d->expandOnSingleClick || d->expandNewCurrent) && (e->button() == Qt::LeftButton))
     {
         const QModelIndex index = indexVisuallyAt(e->pos());
 
@@ -548,7 +548,7 @@ QPixmap AbstractAlbumTreeView::pixmapForDrag(const QStyleOptionViewItem&, QList<
 
     const QVariant decoration = indexes.first().data(Qt::DecorationRole);
 
-    return decoration.value<QPixmap>();
+    return (decoration.value<QPixmap>());
 }
 
 void AbstractAlbumTreeView::dragEnterEvent(QDragEnterEvent* e)
@@ -771,7 +771,7 @@ void AbstractAlbumTreeView::restoreState(const QModelIndex& index, const QMap<in
             setExpanded(index, true);
         }
 
-        // restore the current index
+        // Restore the current index
 
         if (state.currentIndex)
         {
@@ -857,7 +857,7 @@ void AbstractAlbumTreeView::expandEverything(const QModelIndex& index)
 
 #if (QT_VERSION < QT_VERSION_CHECK(5, 13, 0))
 
-void AbstractAlbumTreeView::expandRecursively(const QModelIndex &index)
+void AbstractAlbumTreeView::expandRecursively(const QModelIndex& index)
 {
     if (index.isValid())
     {
@@ -1061,6 +1061,7 @@ void AbstractAlbumTreeView::setEnableContextMenu(const bool enable)
 bool AbstractAlbumTreeView::showContextMenuAt(QContextMenuEvent* event, Album* albumForEvent)
 {
     Q_UNUSED(event);
+
     return albumForEvent;
 }
 

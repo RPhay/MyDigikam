@@ -44,6 +44,7 @@
 // KDE includes
 
 #include <klocalizedstring.h>
+#include <kconfiggroup.h>
 
 // Local includes
 
@@ -111,7 +112,7 @@ public:
     }
 
     QSize sizeHint(const QStyleOptionViewItem& option,
-                           const QModelIndex& index) const override
+                   const QModelIndex& index) const override
     {
         QSize size = QStyledItemDelegate::sizeHint(option, index);
         size.setHeight(qMax(size.height(), m_height));
