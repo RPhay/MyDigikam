@@ -139,9 +139,11 @@ void FaceUtils::storeThumbnails(ThumbnailLoadThread* const thread,
     foreach (const FaceTagsIface& face, databaseFaces)
     {
         QList<QRect> rects;
-        rects << face.region().toRect();
-        const int margin = faceRectDisplayMargin(face.region().toRect());
-        rects << face.region().toRect().adjusted(-margin, -margin, margin, margin);
+        QRect orgRect    = face.region().toRect();
+        const int margin = faceRectDisplayMargin(orgRect);
+
+        rects << orgRect;
+        rects << orgRect.adjusted(-margin, -margin, margin, margin);
 
         foreach (const QRect& rect, rects)
         {

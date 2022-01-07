@@ -352,25 +352,33 @@ void DatabaseTask::run()
 
                     foreach (const FaceTagsIface& face, faces)
                     {
-                        const int margin = FaceUtils::faceRectDisplayMargin(face.region().toRect());
-                        QRect rect       = face.region().toRect().adjusted(-margin, -margin, margin, margin);
-                        QString r        = QString::fromLatin1("%1,%2-%3x%4").arg(rect.x())
-                                                                             .arg(rect.y())
-                                                                             .arg(rect.width())
-                                                                             .arg(rect.height());
-                        QUrlQuery q(url);
+                        QList<QRect> rects;
+                        QRect orgRect    = face.region().toRect();
+                        const int margin = FaceUtils::faceRectDisplayMargin(orgRect);
 
-                        // Remove the previous query if existent.
+                        rects << orgRect;
+                        rects << orgRect.adjusted(-margin, -margin, margin, margin);
 
-                        q.removeQueryItem(QLatin1String("rect"));
-                        q.addQueryItem(QLatin1String("rect"), r);
-                        url.setQuery(q);
+                        foreach (const QRect& rect, rects)
+                        {
+                            QString r = QString::fromLatin1("%1,%2-%3x%4").arg(rect.x())
+                                                                          .arg(rect.y())
+                                                                          .arg(rect.width())
+                                                                          .arg(rect.height());
+                            QUrlQuery q(url);
 
-                        //qCDebug(DIGIKAM_GENERAL_LOG) << "URL: " << url.toString();
+                            // Remove the previous query if existent.
 
-                        // Remove the id that is found by the custom identifier. Finding the id -1 does no harm
+                            q.removeQueryItem(QLatin1String("rect"));
+                            q.addQueryItem(QLatin1String("rect"), r);
+                            url.setQuery(q);
 
-                        thumbIds.remove(ThumbsDbAccess().db()->findByCustomIdentifier(url.toString()).id);
+                            //qCDebug(DIGIKAM_GENERAL_LOG) << "URL: " << url.toString();
+
+                            // Remove the id that is found by the custom identifier. Finding the id -1 does no harm
+
+                            thumbIds.remove(ThumbsDbAccess().db()->findByCustomIdentifier(url.toString()).id);
+                        }
                     }
                 }
 
