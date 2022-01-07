@@ -353,7 +353,7 @@ BUGFIXES:
 338 ==> 158734 - Feature Request: Ability to save commonly used GPS coordinates.
 339 ==> 154209 - In geolocalization editor, save a location by name, to reuse later.
 340 ==> 246077 - GPS Coordinates from some images not detected.
-341 ==> 
+341 ==> 233848 - Use wikimapia.org to display the map in the coordinates editor.
 342 ==> 
 343 ==> 
 344 ==> 
