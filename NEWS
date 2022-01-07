@@ -346,8 +346,8 @@ BUGFIXES:
 331 ==> 448035 - Multiple thumbs of the same symlinked image.
 332 ==> 448051 - Each time I open DigiKam I receive the message "No plugins were loaded, please check if the ...".
 333 ==> 448055 - Cannot move / reposition existing face rectangles in images.
-334 ==> 
-335 ==> 
+334 ==> 225701 - Add possibility to copy-paste tags, geolocation.
+335 ==> 225946 - Optional icon for geotagged images.
 336 ==> 
 337 ==> 
 338 ==> 
