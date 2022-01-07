@@ -150,56 +150,64 @@ void tryInitDrMingw()
 
 #ifdef HAVE_DRMINGW
 
-    qCDebug(DIGIKAM_GENERAL_LOG) << "Loading DrMinGw run-time...";
+    // Envirronnement variable under Windows to disable DrMinGw
+
+    QByteArray drmingwEnv = qgetenv("DK_DISABLE_DRMINGW");
+
+    if (drmingwEnv.isEmpty())
+    {
+
+        qCDebug(DIGIKAM_GENERAL_LOG) << "Loading DrMinGw run-time...";
 /*
-    // Windows version check for DrMinGW 0.9.2. Check if it's always necessary with new DrMinGW version.
+        // Windows version check for DrMinGW 0.9.2. It's not necessary with new DrMinGW 0.9.4 version.
 
-    QRegExp versionRegExp(QLatin1String("(\\d+[.]*\\d*)"));
-    QSysInfo::productVersion().indexOf(versionRegExp);
-    double version  = versionRegExp.capturedTexts().constFirst().toDouble();
+        QRegExp versionRegExp(QLatin1String("(\\d+[.]*\\d*)"));
+        QSysInfo::productVersion().indexOf(versionRegExp);
+        double version  = versionRegExp.capturedTexts().constFirst().toDouble();
 
-    if  (
-         ((version < 2000.0) && (version < 10.0)) ||
-         ((version > 2000.0) && (version < 2016.0))
-        )
-    {
-        qCDebug(DIGIKAM_GENERAL_LOG) << "DrMinGw: unsupported Windows version" << version;
+        if  (
+             ((version < 2000.0) && (version < 10.0)) ||
+             ((version > 2000.0) && (version < 2016.0))
+            )
+        {
+            qCDebug(DIGIKAM_GENERAL_LOG) << "DrMinGw: unsupported Windows version" << version;
 
-        return;
-    }
+            return;
+        }
 */
-    QString appPath = QCoreApplication::applicationDirPath();
-    QString excFile = QDir::toNativeSeparators(appPath + QLatin1String("/exchndl.dll"));
+        QString appPath = QCoreApplication::applicationDirPath();
+        QString excFile = QDir::toNativeSeparators(appPath + QLatin1String("/exchndl.dll"));
 
-    HMODULE hModExc = LoadLibraryW((LPCWSTR)excFile.utf16());
+        HMODULE hModExc = LoadLibraryW((LPCWSTR)excFile.utf16());
 
-    if (!hModExc)
-    {
-        qCDebug(DIGIKAM_GENERAL_LOG) << "DrMinGw: cannot init crash handler dll.";
+        if (!hModExc)
+        {
+            qCDebug(DIGIKAM_GENERAL_LOG) << "DrMinGw: cannot init crash handler dll.";
 
-        return;
+            return;
+        }
+
+        // No need to call ExcHndlInit since the crash handler is installed on DllMain
+
+        auto myExcHndlSetLogFileNameA = reinterpret_cast<BOOL (APIENTRY*)(const char*)>
+                                            (GetProcAddress(hModExc, "ExcHndlSetLogFileNameA"));
+
+        if (!myExcHndlSetLogFileNameA)
+        {
+            qCDebug(DIGIKAM_GENERAL_LOG) << "DrMinGw: cannot init customized crash file.";
+
+            return;
+        }
+
+        // Set the log file path to %LocalAppData%\digikam_crash.log
+
+        QString logPath = QStandardPaths::writableLocation(QStandardPaths::GenericConfigLocation);
+        QString logFile = QDir::toNativeSeparators(logPath + QLatin1String("/digikam_crash.log"));
+        myExcHndlSetLogFileNameA(logFile.toLocal8Bit().data());
+
+        qCDebug(DIGIKAM_GENERAL_LOG) << "DrMinGw run-time loaded.";
+        qCDebug(DIGIKAM_GENERAL_LOG) << "DrMinGw crash-file will be located at: " << logFile;
     }
-
-    // No need to call ExcHndlInit since the crash handler is installed on DllMain
-
-    auto myExcHndlSetLogFileNameA = reinterpret_cast<BOOL (APIENTRY*)(const char*)>
-                                        (GetProcAddress(hModExc, "ExcHndlSetLogFileNameA"));
-
-    if (!myExcHndlSetLogFileNameA)
-    {
-        qCDebug(DIGIKAM_GENERAL_LOG) << "DrMinGw: cannot init customized crash file.";
-
-        return;
-    }
-
-    // Set the log file path to %LocalAppData%\digikam_crash.log
-
-    QString logPath = QStandardPaths::writableLocation(QStandardPaths::GenericConfigLocation);
-    QString logFile = QDir::toNativeSeparators(logPath + QLatin1String("/digikam_crash.log"));
-    myExcHndlSetLogFileNameA(logFile.toLocal8Bit().data());
-
-    qCDebug(DIGIKAM_GENERAL_LOG) << "DrMinGw run-time loaded.";
-    qCDebug(DIGIKAM_GENERAL_LOG) << "DrMinGw crash-file will be located at: " << logFile;
 
 #endif // HAVE_DRMINGW
 
