@@ -348,9 +348,19 @@ BUGFIXES:
 333 ==> 448055 - Cannot move / reposition existing face rectangles in images.
 334 ==> 225701 - Add possibility to copy-paste tags, geolocation.
 335 ==> 225946 - Optional icon for geotagged images.
-336 ==> 
-337 ==> 
-338 ==> 
-339 ==> 
+336 ==> 216532 - Crash when starting digikam in plasma netbook mode.
+337 ==> 205806 - Geolocation placemarks for digiKam.
+338 ==> 158734 - Feature Request: Ability to save commonly used GPS coordinates.
+339 ==> 154209 - In geolocalization editor, save a location by name, to reuse later.
 340 ==> 
 341 ==> 
+342 ==> 
+343 ==> 
+344 ==> 
+345 ==> 
+346 ==> 
+347 ==> 
+348 ==> 
+349 ==> 
+350 ==> 
+351 ==> 
