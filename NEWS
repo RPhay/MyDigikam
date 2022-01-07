@@ -373,15 +373,15 @@ BUGFIXES:
 358 ==> 182609 - Geolocation > Edit Coordinates > Search text is invisible with Dark Theme.
 359 ==> 182626 - Geolocation Tab shows no country/city/town names when a photo is geo-tagged.
 360 ==> 135385 - Automatic tagging according to the gps data.
-361 ==> 
-362 ==> 
-363 ==> 
-364 ==> 
-365 ==> 
-366 ==> 
-367 ==> 
-368 ==> 
-369 ==> 
+361 ==> 175033 - Gpssync does not get any map just a grey square.
+362 ==> 174353 - Geolocation does not work anymore.
+363 ==> 158329 - Only first image is automatically geotagged.
+364 ==> 306878 - Crash after clicking Image - Geo-location.
+365 ==> 292484 - digiKam Gpssync movie error message.
+366 ==> 219874 - No more GPS coordinates allowed with edit coordinates.
+367 ==> 135452 - Improve the gui of the gpssync tool.
+368 ==> 167255 - Waiting bar during geolocalisation updating.
+369 ==> 148912 - Geolocalization editor does not work with non-jpeg file types.
 370 ==> 
 371 ==> 
 372 ==> 
