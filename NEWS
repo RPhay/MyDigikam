@@ -382,7 +382,7 @@ BUGFIXES:
 367 ==> 135452 - Improve the gui of the gpssync tool.
 368 ==> 167255 - Waiting bar during geolocalisation updating.
 369 ==> 148912 - Geolocalization editor does not work with non-jpeg file types.
-370 ==> 
+370 ==> 448079 - Rebuilding thumbnails does not really rebuild thumbnails, no change in db size.
 371 ==> 
 372 ==> 
 373 ==> 
