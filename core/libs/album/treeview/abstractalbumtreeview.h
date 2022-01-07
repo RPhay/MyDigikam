@@ -379,6 +379,12 @@ protected:
     void setAlbumFilterModel(AlbumFilterModel* const filterModel);
     void setAlbumModel(AbstractSpecificAlbumModel* const model);
 
+#if (QT_VERSION < QT_VERSION_CHECK(5, 13, 0))
+
+    void expandRecursively(const QModelIndex &index);
+
+#endif
+
 protected:
 
     AbstractSpecificAlbumModel* m_albumModel;

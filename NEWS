@@ -344,7 +344,7 @@ BUGFIXES:
 329 ==> 144834 - Picture rotate.
 330 ==> 199258 - digiKam geo give the ability to use openstreetmap in marble.
 331 ==> 448035 - Multiple thumbs of the same symlinked image.
-332 ==> 
+332 ==> 448051 - Each time I open DigiKam I receive the message "No plugins were loaded, please check if the ...".
 333 ==> 
 334 ==> 
 335 ==> 
