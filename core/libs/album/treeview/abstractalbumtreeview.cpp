@@ -862,7 +862,17 @@ void AbstractAlbumTreeView::slotExpandNode()
 
     foreach (const QModelIndex& index, selected)
     {
+
+#if (QT_VERSION >= QT_VERSION_CHECK(5, 13, 0))
+
         expandRecursively(index);
+
+#else
+
+        // TODO
+
+#endif
+
     }
 }
 
