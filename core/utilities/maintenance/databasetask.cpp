@@ -40,6 +40,7 @@
 #include "maintenancedata.h"
 #include "similaritydb.h"
 #include "similaritydbaccess.h"
+#include "faceutils.h"
 
 namespace Digikam
 {
@@ -351,8 +352,12 @@ void DatabaseTask::run()
 
                     foreach (const FaceTagsIface& face, faces)
                     {
-                        QRect rect = face.region().toRect();
-                        QString r  = QString::fromLatin1("%1,%2-%3x%4").arg(rect.x()).arg(rect.y()).arg(rect.width()).arg(rect.height());
+                        const int margin = FaceUtils::faceRectDisplayMargin(face.region().toRect());
+                        QRect rect       = face.region().toRect().adjusted(-margin, -margin, margin, margin);
+                        QString r        = QString::fromLatin1("%1,%2-%3x%4").arg(rect.x())
+                                                                             .arg(rect.y())
+                                                                             .arg(rect.width())
+                                                                             .arg(rect.height());
                         QUrlQuery q(url);
 
                         // Remove the previous query if existent.
