@@ -77,6 +77,7 @@ public:
         tags                      (nullptr),
         labelFile                 (nullptr),
         labelFolder               (nullptr),
+        labelSymlink              (nullptr),
         labelFileModifiedDate     (nullptr),
         labelFileSize             (nullptr),
         labelFileOwner            (nullptr),
@@ -121,6 +122,7 @@ public:
 
     DTextLabelValue* labelFile;
     DTextLabelValue* labelFolder;
+    DTextLabelValue* labelSymlink;
     DTextLabelValue* labelFileModifiedDate;
     DTextLabelValue* labelFileSize;
     DTextLabelValue* labelFileOwner;
@@ -176,6 +178,7 @@ ItemPropertiesTab::ItemPropertiesTab(QWidget* const parent)
 
     DTextLabelName* const file         = new DTextLabelName(i18nc("@label: item properties", "File: "),        w1);
     DTextLabelName* const folder       = new DTextLabelName(i18nc("@label: item properties", "Folder: "),      w1);
+    DTextLabelName* const symlink      = new DTextLabelName(i18nc("@label: item properties", "Symlink: "),     w1);
     DTextLabelName* const modifiedDate = new DTextLabelName(i18nc("@label: item properties", "Date: "),        w1);
     DTextLabelName* const size         = new DTextLabelName(i18nc("@label: item properties", "Size: "),        w1);
     DTextLabelName* const owner        = new DTextLabelName(i18nc("@label: item properties", "Owner: "),       w1);
@@ -183,6 +186,7 @@ ItemPropertiesTab::ItemPropertiesTab(QWidget* const parent)
 
     d->labelFile                       = new DTextLabelValue(QString(), w1);
     d->labelFolder                     = new DTextLabelValue(QString(), w1);
+    d->labelSymlink                    = new DTextLabelValue(QString(), w1);
     d->labelFileModifiedDate           = new DTextLabelValue(QString(), w1);
     d->labelFileSize                   = new DTextLabelValue(QString(), w1);
     d->labelFileOwner                  = new DTextLabelValue(QString(), w1);
@@ -192,14 +196,16 @@ ItemPropertiesTab::ItemPropertiesTab(QWidget* const parent)
     glay1->addWidget(d->labelFile,             0, 1, 1, 1);
     glay1->addWidget(folder,                   1, 0, 1, 1);
     glay1->addWidget(d->labelFolder,           1, 1, 1, 1);
-    glay1->addWidget(modifiedDate,             2, 0, 1, 1);
-    glay1->addWidget(d->labelFileModifiedDate, 2, 1, 1, 1);
-    glay1->addWidget(size,                     3, 0, 1, 1);
-    glay1->addWidget(d->labelFileSize,         3, 1, 1, 1);
-    glay1->addWidget(owner,                    4, 0, 1, 1);
-    glay1->addWidget(d->labelFileOwner,        4, 1, 1, 1);
-    glay1->addWidget(permissions,              5, 0, 1, 1);
-    glay1->addWidget(d->labelFilePermissions,  5, 1, 1, 1);
+    glay1->addWidget(symlink,                  2, 0, 1, 1);
+    glay1->addWidget(d->labelSymlink,          2, 1, 1, 1);
+    glay1->addWidget(modifiedDate,             3, 0, 1, 1);
+    glay1->addWidget(d->labelFileModifiedDate, 3, 1, 1, 1);
+    glay1->addWidget(size,                     4, 0, 1, 1);
+    glay1->addWidget(d->labelFileSize,         4, 1, 1, 1);
+    glay1->addWidget(owner,                    5, 0, 1, 1);
+    glay1->addWidget(d->labelFileOwner,        5, 1, 1, 1);
+    glay1->addWidget(permissions,              6, 0, 1, 1);
+    glay1->addWidget(d->labelFilePermissions,  6, 1, 1, 1);
     glay1->setContentsMargins(spacing, spacing, spacing, spacing);
     glay1->setColumnStretch(0, 10);
     glay1->setColumnStretch(1, 25);
@@ -406,6 +412,7 @@ void ItemPropertiesTab::setCurrentURL(const QUrl& url)
     {
         d->labelFile->setAdjustedText();
         d->labelFolder->setAdjustedText();
+        d->labelSymlink->setAdjustedText();
         d->labelFileModifiedDate->setAdjustedText();
         d->labelFileSize->setAdjustedText();
         d->labelFileOwner->setAdjustedText();
@@ -450,9 +457,12 @@ void ItemPropertiesTab::setCurrentURL(const QUrl& url)
 
     setEnabled(true);
 
-    d->labelFile->setAdjustedText(url.fileName());
-    d->labelFolder->setAdjustedText(QDir::toNativeSeparators(url.adjusted(QUrl::RemoveFilename |
-                                                                          QUrl::StripTrailingSlash).toLocalFile()));
+    QFileInfo info(url.toLocalFile());
+
+    d->labelFile->setAdjustedText(info.fileName());
+    d->labelFolder->setAdjustedText(QDir::toNativeSeparators(info.path()));
+    d->labelSymlink->setAdjustedText(!info.isSymLink() ? i18nc("@info: item properties", "No")
+                                                       : QDir::toNativeSeparators(info.canonicalPath()));
 }
 
 void ItemPropertiesTab::setPhotoInfoDisable(const bool b)
