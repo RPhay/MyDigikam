@@ -345,9 +345,9 @@ void DatabaseTask::run()
                     // Add the custom identifier.
                     // get all faces for the image and generate the custom identifiers
 
-                    QUrl url;
+                    QUrl url = QUrl::fromLocalFile(info.filePath());
                     url.setScheme(QLatin1String("detail"));
-                    url.setPath(info.filePath());
+
                     QList<FaceTagsIface> faces = editor.databaseFaces(item);
 
                     foreach (const FaceTagsIface& face, faces)
