@@ -340,8 +340,17 @@ BUGFIXES:
 325 ==> 123129 - The image editor of digiKam does not open with a picture.
 326 ==> 432336 - Add Open With menu entry under macOS as under Linux and Windows.
 327 ==> 431448 - Problem with Image Editor.
-328 ==> 
-329 ==> 
-330 ==> 
+328 ==> 114867 - Presentation function for digiKam.
+329 ==> 144834 - Picture rotate.
+330 ==> 199258 - digiKam geo give the ability to use openstreetmap in marble.
 331 ==> 
-
+332 ==> 
+333 ==> 
+334 ==> 
+335 ==> 
+336 ==> 
+337 ==> 
+338 ==> 
+339 ==> 
+340 ==> 
+341 ==> 
