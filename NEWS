@@ -368,9 +368,9 @@ BUGFIXES:
 353 ==> 261095 - Edit coordinates function should use Openstreetmap.
 354 ==> 246924 - [enhancement] add openstreetmap in gpssync.
 355 ==> 237851 - The GPSsync tool should support OpenStreetMap.
-356 ==> 
-357 ==> 
-358 ==> 
+356 ==> 222578 - No search box when editing coordinates.
+357 ==> 209719 - Coordinates editor shows just a blue map until one searches for a city.
+358 ==> 182609 - Geolocation > Edit Coordinates > Search text is invisible with Dark Theme.
 359 ==> 
 360 ==> 
 361 ==> 
