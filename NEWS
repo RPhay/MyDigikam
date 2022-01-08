@@ -392,5 +392,25 @@ BUGFIXES:
 377 ==> 094618 - PNM images are not displayed by default.
 378 ==> 140617 - Usage of 16bit color depth on raws, darkens them extrem.
 379 ==> 210779 - digikam: jpc_dec.c:1077: jpc_dec_tiledecode: Zusicherung »dec->numcomps == 3« nicht erfüllt.
-380 ==> 
-381 ==> 
+380 ==> 155124 - No Simple Way to Rotate Left/Right by 90 Degrees.
+381 ==> 336960 - digiKam crashed sitting idle in background.
+382 ==> 400604 - Excessive stat() syscalls.
+383 ==> 103618 - Save as: EXIF information not saved.
+384 ==> 235767 - Extremely slowly when handling large pictures.
+385 ==> 301537 - Wish: blank space to copy a path to.
+386 ==> 313508 - digiKam crashed.
+387 ==> 100894 - Crash when entering Image Editor.
+388 ==> 
+389 ==> 
+390 ==> 
+391 ==> 
+392 ==> 
+393 ==> 
+394 ==> 
+395 ==> 
+396 ==> 
+397 ==> 
+398 ==> 
+399 ==> 
+400 ==> 
+401 ==> 
