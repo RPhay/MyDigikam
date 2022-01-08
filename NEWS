@@ -389,8 +389,8 @@ BUGFIXES:
 374 ==> 253932 - Gpssync, not same position in Google map and in openstreetmap.
 375 ==> 278976 - Right-click geolocation context menu not available when using Google Maps.
 376 ==> 221563 - Using geotagging tool bannes me for 24 hours from google maps.
-377 ==> 
-378 ==> 
-379 ==> 
+377 ==> 094618 - PNM images are not displayed by default.
+378 ==> 140617 - Usage of 16bit color depth on raws, darkens them extrem.
+379 ==> 210779 - digikam: jpc_dec.c:1077: jpc_dec_tiledecode: Zusicherung »dec->numcomps == 3« nicht erfüllt.
 380 ==> 
 381 ==> 
