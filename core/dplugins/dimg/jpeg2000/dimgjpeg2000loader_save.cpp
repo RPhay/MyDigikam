@@ -64,6 +64,7 @@ namespace DigikamJPEG2000DImgPlugin
 
 bool DImgJPEG2000Loader::save(const QString& filePath, DImgLoaderObserver* const observer)
 {
+
 #ifdef Q_OS_WIN
 
     FILE* const file = _wfopen((const wchar_t*)filePath.utf16(), L"wb");
@@ -84,13 +85,14 @@ bool DImgJPEG2000Loader::save(const QString& filePath, DImgLoaderObserver* const
     // -------------------------------------------------------------------
     // Initialize JPEG 2000 API.
 
-    long  i, x, y;
-    unsigned long  number_components;
-
-    jas_image_t*          jp2_image   = nullptr;
-    jas_stream_t*         jp2_stream  = nullptr;
-    jas_matrix_t*         pixels[4];
-    jas_image_cmptparm_t  component_info[4];
+    long                 i                 = 0;
+    long                 x                 = 0;
+    long                 y                 = 0;
+    unsigned long        number_components = 0;
+    jas_image_t*         jp2_image         = nullptr;
+    jas_stream_t*        jp2_stream        = nullptr;
+    jas_matrix_t*        pixels[4]         = { nullptr };
+    jas_image_cmptparm_t component_info[4];
 
     int init = jas_init();
 
@@ -147,6 +149,7 @@ bool DImgJPEG2000Loader::save(const QString& filePath, DImgLoaderObserver* const
     if (number_components >= 3)     // RGB & RGBA
     {
         // Alpha Channel
+
         if (number_components == 4)
         {
             jas_image_setcmpttype(jp2_image, 3, JAS_IMAGE_CT_OPACITY);
