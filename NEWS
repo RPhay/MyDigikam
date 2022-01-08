@@ -476,7 +476,7 @@ BUGFIXES:
 461 ==> 408788 - Empty Search result -> reset -> nonempty search result.
 462 ==> 431774 - Search does not work for specific tag and folder.
 463 ==> 437845 - No mysql Qt module provided for Flatpak bundle.
-464 ==> 
+464 ==> 435229 - Opening map tab opens an extra non closeable window.
 465 ==> 
 466 ==> 
 467 ==> 
