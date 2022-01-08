@@ -179,7 +179,8 @@ public:
         editAdvancedWidget      (nullptr),
         lowerArea               (nullptr),
         keywordEdit             (nullptr),
-        advancedEditLabel       (nullptr),
+        advancedNewSearch       (nullptr),
+        advancedEditSearch      (nullptr),
         saveNameEdit            (nullptr),
         saveButton              (nullptr),
         storedKeywordEditName   (nullptr),
@@ -201,7 +202,8 @@ public:
     QStackedLayout*     lowerArea;
 
     KeywordLineEdit*    keywordEdit;
-    QPushButton*        advancedEditLabel;
+    QPushButton*        advancedNewSearch;
+    QPushButton*        advancedEditSearch;
 
     QLineEdit*          saveNameEdit;
     QToolButton*        saveButton;
@@ -260,11 +262,13 @@ SearchTabHeader::SearchTabHeader(QWidget* const parent)
     d->keywordEdit->setClearButtonEnabled(true);
     d->keywordEdit->setPlaceholderText(i18n("Enter keywords here..."));
 
-    d->advancedEditLabel      = new QPushButton(i18n("Advanced Search..."), this);
+    d->advancedNewSearch      = new QPushButton(i18n("New Advanced Search..."), this);
+    d->advancedEditSearch     = new QPushButton(i18n("Edit Current Search..."), this);
 
-    grid1->addWidget(searchLabel,          0, 0, 1, 1);
-    grid1->addWidget(d->keywordEdit,       0, 1, 1, 1);
-    grid1->addWidget(d->advancedEditLabel, 1, 0, 1, 2);
+    grid1->addWidget(searchLabel,           0, 0, 1, 1);
+    grid1->addWidget(d->keywordEdit,        0, 1, 1, 1);
+    grid1->addWidget(d->advancedNewSearch,  1, 0, 1, 2);
+    grid1->addWidget(d->advancedEditSearch, 2, 0, 1, 2);
     grid1->setContentsMargins(spacing, spacing, spacing, spacing);
     grid1->setSpacing(spacing);
 
@@ -352,8 +356,11 @@ SearchTabHeader::SearchTabHeader(QWidget* const parent)
     connect(d->keywordEdit, SIGNAL(editingFinished()),
             this, SLOT(keywordChanged()));
 
-    connect(d->advancedEditLabel, SIGNAL(clicked()),
-            this, SLOT(editCurrentAdvancedSearch()));
+    connect(d->advancedNewSearch, SIGNAL(clicked()),
+            this, SLOT(slotNewAdvancedSearch()));
+
+    connect(d->advancedEditSearch, SIGNAL(clicked()),
+            this, SLOT(slotEditCurrentSearch()));
 
     connect(d->saveNameEdit, SIGNAL(returnPressed()),
             this, SLOT(saveSearch()));
@@ -509,7 +516,15 @@ void SearchTabHeader::keywordChangedTimer()
     }
 }
 
-void SearchTabHeader::editCurrentAdvancedSearch()
+void SearchTabHeader::slotNewAdvancedSearch()
+{
+    SearchWindow* const window = searchWindow();
+    window->reset();
+    window->show();
+    window->raise();
+}
+
+void SearchTabHeader::slotEditCurrentSearch()
 {
     SAlbum* const album        = AlbumManager::instance()->findSAlbum(SAlbum::getTemporaryTitle(DatabaseSearch::AdvancedSearch));
     SearchWindow* const window = searchWindow();

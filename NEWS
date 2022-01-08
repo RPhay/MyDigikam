@@ -473,8 +473,8 @@ BUGFIXES:
 458 ==> 200427 - digiKam ,iptc, tags, hierarchy disappears.
 459 ==> 448071 - "People" tag should not depend on interface's language.
 460 ==> 395501 - Cannot define top level Tag name for faces.
-461 ==> 
-462 ==> 
+461 ==> 408788 - Empty Search result -> reset -> nonempty search result.
+462 ==> 431774 - Search does not work for specific tag and folder.
 463 ==> 
 464 ==> 
 465 ==> 
