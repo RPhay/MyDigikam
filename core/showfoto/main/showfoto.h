@@ -148,6 +148,10 @@ public Q_SLOTS:
     void slotSetup()                                        override;
     void slotSetupICC()                                     override;
 
+private Q_SLOTS:
+
+    void slotThemeChanged();
+
 private:
 
     bool setup(bool iccSetupPage = false);

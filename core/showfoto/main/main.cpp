@@ -38,8 +38,6 @@
 // KDE includes
 
 #include <klocalizedstring.h>
-#include <ksharedconfig.h>
-#include <kconfiggroup.h>
 #include <kaboutdata.h>
 
 // ImageMagick includes
@@ -142,11 +140,6 @@ int main(int argc, char* argv[])
     parser.process(app);
     aboutData.processCommandLine(&parser);
 
-    KSharedConfig::Ptr config = KSharedConfig::openConfig();
-    KConfigGroup group        = config->group(QLatin1String("ImageViewer Settings"));
-    QString iconTheme         = group.readEntry(QLatin1String("Icon Theme"), QString());
-    QString colorTheme        = group.readEntry(QLatin1String("Theme"), QString::fromLatin1("Standard"));
-
     // See bug #438701
 
     installQtTranslationFiles(app);
@@ -182,29 +175,6 @@ int main(int argc, char* argv[])
     }
 
     parser.clearPositionalArguments();
-
-    if (!iconTheme.isEmpty())
-    {
-        QIcon::setThemeName(iconTheme);
-    }
-
-    // Workaround for the automatic icon theme color
-    // in KF-5.80/KF-5.88, depending on the color scheme.
-    // Note: In a Plasma environment, use the showFoto icon theme setting from the system.
-
-    if (
-        (colorTheme == QLatin1String("White Balance")) ||
-        (colorTheme == QLatin1String("Standard"))      ||
-        (colorTheme == QLatin1String("High Key"))      ||
-        (colorTheme == QLatin1String("Breeze"))
-       )
-    {
-        qApp->setPalette(QPalette(Qt::white));
-    }
-    else
-    {
-        qApp->setPalette(QPalette(Qt::darkGray));
-    }
 
 #ifdef Q_OS_WIN
 

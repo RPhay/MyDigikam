@@ -42,9 +42,16 @@ DigikamApp::DigikamApp()
     setFullScreenOptions(FS_ALBUMGUI);
     setXMLFile(QLatin1String("digikamui5.rc"));
 
-    m_instance         = this;
-    d->config          = KSharedConfig::openConfig();
-    KConfigGroup group = d->config->group(configGroupName());
+    m_instance          = this;
+    d->config           = KSharedConfig::openConfig();
+    KConfigGroup group  = d->config->group(configGroupName());
+    KConfigGroup sgroup = d->config->group(QLatin1String("General Settings"));
+    QString iconTheme   = sgroup.readEntry(QLatin1String("Icon Theme"), QString());
+
+    if (!iconTheme.isEmpty())
+    {
+        QIcon::setThemeName(iconTheme);
+    }
 
 #ifdef HAVE_DBUS
 

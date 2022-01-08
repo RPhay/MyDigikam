@@ -44,6 +44,13 @@ Showfoto::Showfoto(const QList<QUrl>& urlList, QWidget* const)
 
     KSharedConfig::Ptr config = KSharedConfig::openConfig();
     KConfigGroup group        = config->group(configGroupName());
+    KConfigGroup sgroup       = config->group(QLatin1String("ImageViewer Settings"));
+    QString iconTheme         = sgroup.readEntry(QLatin1String("Icon Theme"), QString());
+
+    if (!iconTheme.isEmpty())
+    {
+        QIcon::setThemeName(iconTheme);
+    }
 
     if (group.readEntry(QLatin1String("ShowSplash"), true) && !qApp->isSessionRestored())
     {

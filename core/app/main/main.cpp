@@ -284,9 +284,7 @@ int main(int argc, char* argv[])
     KSharedConfig::Ptr config = KSharedConfig::openConfig();
     KConfigGroup group        = config->group(QLatin1String("General Settings"));
     QString version           = group.readEntry(QLatin1String("Version"), QString());
-    QString iconTheme         = group.readEntry(QLatin1String("Icon Theme"), QString());
     KConfigGroup mainConfig   = config->group(QLatin1String("Album Settings"));
-    QString colorTheme        = mainConfig.readEntry(QLatin1String("Theme"), QString::fromLatin1("Standard"));
 
     QString            firstAlbumPath;
     DbEngineParameters params;
@@ -345,29 +343,6 @@ int main(int argc, char* argv[])
         SimilarityDbAccess::cleanUpDatabase();
 
         return 0;
-    }
-
-    if (!iconTheme.isEmpty())
-    {
-        QIcon::setThemeName(iconTheme);
-    }
-
-    // Workaround for the automatic icon theme color
-    // in KF-5.80/KF-5.88, depending on the color scheme.
-    // Note: In a Plasma environment, use the digiKam icon theme setting from the system.
-
-    if (
-        (colorTheme == QLatin1String("White Balance")) ||
-        (colorTheme == QLatin1String("Standard"))      ||
-        (colorTheme == QLatin1String("High Key"))      ||
-        (colorTheme == QLatin1String("Breeze"))
-       )
-    {
-        qApp->setPalette(QPalette(Qt::white));
-    }
-    else
-    {
-        qApp->setPalette(QPalette(Qt::darkGray));
     }
 
 #ifdef Q_OS_WIN

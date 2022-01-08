@@ -174,6 +174,46 @@ void Showfoto::applySortSettings()
     }
 }
 
+void Showfoto::slotThemeChanged()
+{
+    QString theme = ThemeManager::instance()->currentThemeName();
+
+    if (qApp->activeWindow()                 &&
+        (d->settings->getCurrentTheme() != theme))
+    {
+        qApp->processEvents();
+
+        QColor color = qApp->palette().color(qApp->activeWindow()->backgroundRole());
+        QString iconTheme;
+        QString msgText;
+
+        if (color.lightness() > 127)
+        {
+            msgText   = i18n("You have chosen a bright color scheme. We switch "
+                             "to a dark icon theme. The icon theme is "
+                             "available after a restart of digiKam.");
+
+            iconTheme = QLatin1String("breeze");
+        }
+        else
+        {
+            msgText   = i18n("You have chosen a dark color scheme. We switch "
+                             "to a bright icon theme. The icon theme is "
+                             "available after a restart of digiKam.");
+
+            iconTheme = QLatin1String("breeze-dark");
+        }
+
+        if (d->settings->getIconTheme() != iconTheme)
+        {
+            QMessageBox::information(qApp->activeWindow(),
+                                     qApp->applicationName(), msgText);
+
+            d->settings->setIconTheme(iconTheme);
+        }
+    }
+}
+
 void Showfoto::slotSetupMetadataFilters(int tab)
 {
     ShowfotoSetup::execMetadataFilters(this, tab+1);

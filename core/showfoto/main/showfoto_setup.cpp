@@ -116,6 +116,9 @@ void Showfoto::setupConnections()
 
     connect(d->dDHandler, SIGNAL(signalDroppedUrls(QList<QUrl>,bool,QUrl)),
             this, SLOT(slotDroppedUrls(QList<QUrl>,bool,QUrl)));
+
+    connect(ThemeManager::instance(), SIGNAL(signalThemeChanged()),
+            this, SLOT(slotThemeChanged()));
 }
 
 void Showfoto::setupUserArea()
