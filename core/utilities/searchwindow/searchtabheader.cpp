@@ -72,7 +72,7 @@ public:
     {
         KSharedConfig::Ptr config = KSharedConfig::openConfig();
         KConfigGroup group        = config->group(QLatin1String("KeywordSearchEdit Settings"));
-        m_autoSearch              = group.readEntry(QLatin1String("Autostart Search"), true);
+        m_autoSearch              = group.readEntry(QLatin1String("Autostart Search"), false);
     }
 
     void showAdvancedSearch(bool hasAdvanced)
