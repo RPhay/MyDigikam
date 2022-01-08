@@ -448,11 +448,11 @@ BUGFIXES:
 433 ==> 123042 - digiKam can not save files after modifying.
 434 ==> 175630 - Setting panels of imageeditor effects should be fully visible.
 435 ==> 117945 - After trying to save changes on read-only images, the changes are lost.
-436 ==> 184639 - can not save an image twice.
+436 ==> 184639 - Can not save an image twice.
 437 ==> 324640 - After defining a section of a pic, and the attempt of saving this _section_ : will not work.
 438 ==> 094107 - Flipping Function in Image Editor is interchanged.
-439 ==> 119253 - image editor's undo is broken.
-440 ==> 087105 - wish: undo function in editor.
+439 ==> 119253 - Image editor's undo is broken.
+440 ==> 087105 - Wish: undo function in editor.
 441 ==> 121307 - Easy undo/redo with key pressed.
 442 ==> 255010 - Undo crash in digiKam Editor.
 443 ==> 372483 - Missing "include children" in maintenance dialog.
@@ -461,7 +461,17 @@ BUGFIXES:
 446 ==> 098189 - Adjusting time and date of exif does not take effect until properties are seen.
 447 ==> 263957 - Change date is written in "production date" instead of in "Changed".
 448 ==> 247141 - Unreasonable long working time when writing "Metadata in Files".
-449 ==> 
+449 ==> 283013 - Accelerating writing metadata back to image files.
 450 ==> 
 451 ==> 
 452 ==> 
+453 ==> 
+454 ==> 
+455 ==> 
+456 ==> 
+457 ==> 
+458 ==> 
+459 ==> 
+460 ==> 
+461 ==> 
+
