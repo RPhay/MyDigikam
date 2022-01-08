@@ -402,7 +402,7 @@ BUGFIXES:
 387 ==> 100894 - Crash when entering Image Editor.
 388 ==> 248037 - Making a new database.
 389 ==> 396305 - Being able to find which files which doesn't already have author, copyright, and locations tags.
-390 ==> 
+390 ==> 399506 - Integrations with FS and Internet browser.
 391 ==> 
 392 ==> 
 393 ==> 
