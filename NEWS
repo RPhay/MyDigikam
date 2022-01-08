@@ -401,7 +401,7 @@ BUGFIXES:
 386 ==> 313508 - digiKam crashed.
 387 ==> 100894 - Crash when entering Image Editor.
 388 ==> 248037 - Making a new database.
-389 ==> 
+389 ==> 396305 - Being able to find which files which doesn't already have author, copyright, and locations tags.
 390 ==> 
 391 ==> 
 392 ==> 
