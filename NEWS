@@ -465,12 +465,12 @@ BUGFIXES:
 450 ==> 142564 - digiKam-signature in iptc and exif tags.
 451 ==> 113167 - Crash when getting EXIF information.
 452 ==> 097730 - EXIF Information unavailable in Camera preview window.
-453 ==> 
-454 ==> 
-455 ==> 
-456 ==> 
-457 ==> 
-458 ==> 
+453 ==> 210226 - Adding Geolocation to image causes Flickr to not recognize EXIF data.
+454 ==> 188062 - Synchronize Images with Database does not save Copyright, Credit, Source, By-line, By-line Title in IPTC.
+455 ==> 170711 - Write single Keywords instead of Hierachy into IPTC.
+456 ==> 148182 - Iptc.Application2.Keywords appends always the 0-byte.
+457 ==> 311973 - Extra commas in IPTC keywords should be trimmed, otherwise messes up naming.
+458 ==> 200427 - digiKam ,iptc, tags, hierarchy disappears.
 459 ==> 
 460 ==> 
 461 ==> 
