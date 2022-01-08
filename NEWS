@@ -481,6 +481,6 @@ BUGFIXES:
 466 ==> 433918 - Accessibility Question.
 467 ==> 426284 - Cannot build digiKam using Craft on Windows 10. "ninja: error: 'opencv_imgcodecs-NOTFOUND'".
 468 ==> 403209 - Not able to find print assistant.
-469 ==> 
+469 ==> 395217 - Albums in tree view do not stay collapsed.
 470 ==> 
 471 ==> 
