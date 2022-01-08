@@ -471,8 +471,8 @@ BUGFIXES:
 456 ==> 148182 - Iptc.Application2.Keywords appends always the 0-byte.
 457 ==> 311973 - Extra commas in IPTC keywords should be trimmed, otherwise messes up naming.
 458 ==> 200427 - digiKam ,iptc, tags, hierarchy disappears.
-459 ==> 
-460 ==> 
+459 ==> 448071 - "People" tag should not depend on interface's language.
+460 ==> 395501 - Cannot define top level Tag name for faces.
 461 ==> 
 462 ==> 
 463 ==> 

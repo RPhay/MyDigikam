@@ -420,22 +420,38 @@ int FaceTags::personParentTag()
 
     if (!personTags.isEmpty())
     {
-        // we find the most toplevel parent tag of a person tag
+        // we find the most toplevel parent tag of person tags
 
-        QMultiMap<int, int> tiers;
+        QMap<int, int> tiers;
+        QMap<int, int>::const_iterator it;
 
         foreach (int tid, personTags)
         {
-            tiers.insert(TagsCache::instance()->parentTags(tid).size(), tid);
+            QList<int> parents = TagsCache::instance()->parentTags(tid);
+
+            if (!parents.isEmpty())
+            {
+                tiers.insert(parents.first(),
+                             tiers.value(parents.first()) + 1);
+            }
         }
 
-        QList<int> mosttoplevelTags = tiers.values(tiers.begin().key());
+        int count  = 0;
+        int person = 0;
 
-        // as a pretty weak criterion, take the largest id which usually corresponds to the latest tag creation.
+        for (it = tiers.constBegin() ; it != tiers.constEnd() ; ++it)
+        {
+            if (it.value() > count)
+            {
+                count  = it.value();
+                person = it.key();
+            }
+        }
 
-        std::sort(mosttoplevelTags.begin(), mosttoplevelTags.end());
-
-        return TagsCache::instance()->parentTag(mosttoplevelTags.last());
+        if (person != 0)
+        {
+            return person;
+        }
     }
 
     // create default
