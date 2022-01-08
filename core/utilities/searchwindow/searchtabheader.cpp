@@ -357,7 +357,7 @@ SearchTabHeader::SearchTabHeader(QWidget* const parent)
             this, SLOT(keywordChanged()));
 
     connect(d->advancedNewSearch, SIGNAL(clicked()),
-            this, SLOT(slotNewAdvancedSearch()));
+            this, SLOT(newAdvancedSearch()));
 
     connect(d->advancedEditSearch, SIGNAL(clicked()),
             this, SLOT(slotEditCurrentSearch()));
@@ -476,8 +476,6 @@ void SearchTabHeader::editSearch(SAlbum* album)
 void SearchTabHeader::newKeywordSearch()
 {
     d->keywordEdit->clear();
-    QString keywords = d->keywordEdit->text();
-    setCurrentSearch(DatabaseSearch::KeywordSearch, queryFromKeywords(keywords));
     d->keywordEdit->setFocus();
 }
 
@@ -514,14 +512,6 @@ void SearchTabHeader::keywordChangedTimer()
     {
         keywordChanged();
     }
-}
-
-void SearchTabHeader::slotNewAdvancedSearch()
-{
-    SearchWindow* const window = searchWindow();
-    window->reset();
-    window->show();
-    window->raise();
 }
 
 void SearchTabHeader::slotEditCurrentSearch()

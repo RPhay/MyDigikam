@@ -63,7 +63,6 @@ private Q_SLOTS:
 
     void keywordChanged();
     void keywordChangedTimer();
-    void slotNewAdvancedSearch();
     void slotEditCurrentSearch();
     void saveSearch();
     void storedKeywordChanged();
