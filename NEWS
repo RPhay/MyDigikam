@@ -477,7 +477,7 @@ BUGFIXES:
 462 ==> 431774 - Search does not work for specific tag and folder.
 463 ==> 437845 - No mysql Qt module provided for Flatpak bundle.
 464 ==> 435229 - Opening map tab opens an extra non closeable window.
-465 ==> 
+465 ==> 435196 - Imagemagick Loader and wmf files.
 466 ==> 
 467 ==> 
 468 ==> 
