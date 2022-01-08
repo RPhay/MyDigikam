@@ -480,7 +480,7 @@ BUGFIXES:
 465 ==> 435196 - Imagemagick Loader and wmf files.
 466 ==> 433918 - Accessibility Question.
 467 ==> 426284 - Cannot build digiKam using Craft on Windows 10. "ninja: error: 'opencv_imgcodecs-NOTFOUND'".
-468 ==> 
+468 ==> 403209 - Not able to find print assistant.
 469 ==> 
 470 ==> 
 471 ==> 
