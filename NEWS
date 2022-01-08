@@ -478,7 +478,7 @@ BUGFIXES:
 463 ==> 437845 - No mysql Qt module provided for Flatpak bundle.
 464 ==> 435229 - Opening map tab opens an extra non closeable window.
 465 ==> 435196 - Imagemagick Loader and wmf files.
-466 ==> 
+466 ==> 433918 - Accessibility Question.
 467 ==> 
 468 ==> 
 469 ==> 
