@@ -385,7 +385,7 @@ BUGFIXES:
 370 ==> 448079 - Rebuilding thumbnails does not really rebuild thumbnails, no change in db size.
 371 ==> 436726 - Random Jumps when confirming/rejecting face suggestions.
 372 ==> 444692 - Cursor moves to another section after identifying or ignoring face.
-373 ==> 
+373 ==> 447240 - After saving a .jp2 file the file could not be open.
 374 ==> 
 375 ==> 
 376 ==> 
