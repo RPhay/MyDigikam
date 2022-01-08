@@ -400,17 +400,68 @@ BUGFIXES:
 385 ==> 301537 - Wish: blank space to copy a path to.
 386 ==> 313508 - digiKam crashed.
 387 ==> 100894 - Crash when entering Image Editor.
-388 ==> 
-389 ==> 
-390 ==> 
-391 ==> 
-392 ==> 
-393 ==> 
-394 ==> 
-395 ==> 
-396 ==> 
-397 ==> 
-398 ==> 
-399 ==> 
-400 ==> 
-401 ==> 
+388 ==> 248037 - Making a new database.
+389 ==> 396305 - Being able to find which files which doesn't already have author, copyright, and locations tags.
+390 ==> 399506 - Integrations with FS and Internet browser.
+391 ==> 437193 - Starting Digikam with defined search.
+392 ==> 263061 - Add new tool to search for watermark in collections.
+393 ==> 187657 - Showoff the most common actions.
+394 ==> 160873 - Feature request multicore support.
+395 ==> 139075 - Opening a new image from main digikam then saving changes to first image results in editor overwriting new image.
+396 ==> 136060 - Doesn't save existing comments when "save image comments as embedded text" has been activated.
+397 ==> 120714 - Wish: Database understanding image 'mutations'.
+398 ==> 103351 - Multiple instances of image editor.
+399 ==> 091006 - Wish: save width of left pane on exit.
+400 ==> 098457 - Imageedit orf: bind 'home' and 'end' to goto first/last image.
+401 ==> 111695 - Single click to open image editor is really annoying when tagging.
+402 ==> 114069 - digiKam save-as empty filename field.
+403 ==> 154526 - Big screen size lead to small picture in main window and editor.
+404 ==> 097777 - Images pixelated after edit and save.
+405 ==> 126165 - Meta-bug for digikam editor tool release (digikam devels only).
+406 ==> 168461 - Info in Properties panel not updated after moving to other image.
+407 ==> 181930 - Slider for resizing does not work, i.e.shows either 1 or some extremely high number.
+408 ==> 155407 - "Save as" diaglog is quite small in the image editor.
+409 ==> 113914 - Image permissions are restricted after saving.
+410 ==> 092103 - Image viewer save warning should offer cancel and saveas.
+411 ==> 129812 - Notation should be allowed in EDITOR Window.
+412 ==> 088040 - Icons in toolbar aren't highlighted when moving the cursor over them.
+413 ==> 138055 - Usability: separate edit actions into Edit Toolbar with frequently used actions.
+414 ==> 088479 - Without write permissions in the directory I can not save a file.
+415 ==> 117376 - List of Tags in C&T panel and Image Editor.
+416 ==> 096940 - Toolbar in image editor forgets text/icon preferences.
+417 ==> 323385 - When editing a selected area, new version as _full_ pic is stored.
+418 ==> 098706 - Histogram visible while viewing photo.
+419 ==> 091759 - Opening a picture in the image editor only shows a black area and claims that the picture is 0x0 pixels in size.
+420 ==> 094512 - Add / remove tags in Image editor / Image view mode.
+421 ==> 103219 - Save action is disabled / dirty flag is cleared, even if saving failed.
+422 ==> 091486 - Saving image modified in the image viewer using Ctrl+S causes graphical glitch.
+423 ==> 131678 - Grey pictures in Digikam's image editor.
+424 ==> 097303 - digiKam image editor won't save.
+425 ==> 333000 - Exporting a photo should open its containing dir.
+426 ==> 168583 - digiKam fails to save images in home directory.
+427 ==> 382649 - Save As button freezes on second call.
+428 ==> 118404 - Make image editor interaction consistent with KPDF.
+429 ==> 299922 - File format dependent manipulating support.
+430 ==> 122585 - Cannot edit show images.
+431 ==> 118972 - Wish: Close view/edit window with escape key.
+432 ==> 144206 - Pictures rendering incorrectly when window maximized.
+433 ==> 123042 - digiKam can not save files after modifying.
+434 ==> 175630 - Setting panels of imageeditor effects should be fully visible.
+435 ==> 117945 - After trying to save changes on read-only images, the changes are lost.
+436 ==> 184639 - can not save an image twice.
+437 ==> 324640 - After defining a section of a pic, and the attempt of saving this _section_ : will not work.
+438 ==> 094107 - Flipping Function in Image Editor is interchanged.
+439 ==> 
+440 ==> 
+441 ==> 
+442 ==> 
+443 ==> 
+444 ==> 
+445 ==> 
+446 ==> 
+447 ==> 
+448 ==> 
+449 ==> 
+450 ==> 
+451 ==> 
+452 ==> 
