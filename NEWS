@@ -475,7 +475,7 @@ BUGFIXES:
 460 ==> 395501 - Cannot define top level Tag name for faces.
 461 ==> 408788 - Empty Search result -> reset -> nonempty search result.
 462 ==> 431774 - Search does not work for specific tag and folder.
-463 ==> 
+463 ==> 437845 - No mysql Qt module provided for Flatpak bundle.
 464 ==> 
 465 ==> 
 466 ==> 
