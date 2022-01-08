@@ -386,9 +386,9 @@ BUGFIXES:
 371 ==> 436726 - Random Jumps when confirming/rejecting face suggestions.
 372 ==> 444692 - Cursor moves to another section after identifying or ignoring face.
 373 ==> 447240 - After saving a .jp2 file the file could not be open.
-374 ==> 
-375 ==> 
-376 ==> 
+374 ==> 253932 - Gpssync, not same position in Google map and in openstreetmap.
+375 ==> 278976 - Right-click geolocation context menu not available when using Google Maps.
+376 ==> 221563 - Using geotagging tool bannes me for 24 hours from google maps.
 377 ==> 
 378 ==> 
 379 ==> 
