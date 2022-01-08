@@ -455,12 +455,12 @@ BUGFIXES:
 440 ==> 087105 - wish: undo function in editor.
 441 ==> 121307 - Easy undo/redo with key pressed.
 442 ==> 255010 - Undo crash in digiKam Editor.
-443 ==> 
-444 ==> 
-445 ==> 
-446 ==> 
-447 ==> 
-448 ==> 
+443 ==> 372483 - Missing "include children" in maintenance dialog.
+444 ==> 157788 - Tools -> Update Metadata Database changes timestamps of files.
+445 ==> 111047 - Wish: Save orig. time stamps to comments + restore.
+446 ==> 098189 - Adjusting time and date of exif does not take effect until properties are seen.
+447 ==> 263957 - Change date is written in "production date" instead of in "Changed".
+448 ==> 247141 - Unreasonable long working time when writing "Metadata in Files".
 449 ==> 
 450 ==> 
 451 ==> 
