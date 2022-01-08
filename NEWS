@@ -404,7 +404,7 @@ BUGFIXES:
 389 ==> 396305 - Being able to find which files which doesn't already have author, copyright, and locations tags.
 390 ==> 399506 - Integrations with FS and Internet browser.
 391 ==> 437193 - Starting Digikam with defined search.
-392 ==> 
+392 ==> 263061 - Add new tool to search for watermark in collections.
 393 ==> 
 394 ==> 
 395 ==> 
