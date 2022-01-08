@@ -479,7 +479,7 @@ BUGFIXES:
 464 ==> 435229 - Opening map tab opens an extra non closeable window.
 465 ==> 435196 - Imagemagick Loader and wmf files.
 466 ==> 433918 - Accessibility Question.
-467 ==> 
+467 ==> 426284 - Cannot build digiKam using Craft on Windows 10. "ninja: error: 'opencv_imgcodecs-NOTFOUND'".
 468 ==> 
 469 ==> 
 470 ==> 
