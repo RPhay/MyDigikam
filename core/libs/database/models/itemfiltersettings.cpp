@@ -510,6 +510,16 @@ bool ItemFilterSettings::matches(const ItemInfo& info, bool* const foundText) co
             break;
         }
 
+        case MimeFilter::JPEG2000Files:
+        {
+            if (info.format() != QLatin1String("JP2"))
+            {
+                match = false;
+            }
+
+            break;
+        }
+
         case MimeFilter::PNGFiles:
         {
             if (info.format() != QLatin1String("PNG"))

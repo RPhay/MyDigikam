@@ -43,6 +43,7 @@ public:
         ImageFiles,
         NoRAWFiles,
         JPGFiles,
+        JPEG2000Files,
         PNGFiles,
         TIFFiles,
         PGFFiles,
