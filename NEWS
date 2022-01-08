@@ -405,12 +405,32 @@ BUGFIXES:
 390 ==> 399506 - Integrations with FS and Internet browser.
 391 ==> 437193 - Starting Digikam with defined search.
 392 ==> 263061 - Add new tool to search for watermark in collections.
-393 ==> 
-394 ==> 
-395 ==> 
-396 ==> 
-397 ==> 
-398 ==> 
-399 ==> 
-400 ==> 
-401 ==> 
+393 ==> 187657 - Showoff the most common actions.
+394 ==> 160873 - Feature request multicore support.
+395 ==> 139075 - Opening a new image from main digikam then saving changes to first image results in editor overwriting new image.
+396 ==> 136060 - Doesn't save existing comments when "save image comments as embedded text" has been activated.
+397 ==> 120714 - wish: Database understanding image 'mutations'.
+398 ==> 103351 - multiple instances of image editor.
+399 ==> 091006 - wish: save width of left pane on exit.
+400 ==> 098457 - imageedit orf: bind 'home' and 'end' to goto first/last image.
+401 ==> 111695 - single click to open image editor is really annoying when tagging.
+402 ==> 114069 - digikam save-as empty filename field.
+403 ==> 154526 - big screen size lead to small picture in main window and editor.
+404 ==> 097777 - images pixelated after edit and save.
+405 ==> 126165 - meta-bug for digikam editor tool release (digikam devels only).
+406 ==> 168461 - info in Properties panel not updated after moving to other image.
+407 ==> 181930 - slider for resizing does not work, i.e.shows either 1 or some extremely high number.
+408 ==> 155407 - "Save as" diaglog is quite small in the image editor.
+409 ==> 113914 - Image permissions are restricted after saving.
+410 ==> 092103 - image viewer save warning should offer cancel and saveas.
+411 ==> 
+412 ==> 
+413 ==> 
+414 ==> 
+415 ==> 
+416 ==> 
+417 ==> 
+418 ==> 
+419 ==> 
+420 ==> 
+421 ==> 
