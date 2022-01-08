@@ -485,8 +485,8 @@ BUGFIXES:
 470 ==> 448120 - App Crashes all the time.
 471 ==> 426971 - Image editor sometimes hangs when closed via the window close button.
 472 ==> 437912 - Similarity-Duplicates digiKam closes unexpectedly.
-473 ==> 
-474 ==> 
+473 ==> 372047 - Switch from DK4 to DK5 fails: collection path contains %2F instead of /.
+474 ==> 379415 - digiKam collection location string format in 5.X different to 4.X.
 475 ==> 
 476 ==> 
 477 ==> 
