@@ -276,7 +276,13 @@ void WelcomePageView::slotThemeChanged()
                                       .arg(aboutTabContent().value(0))
                                       .arg(i18n("Background Image Credits"))
                                       .arg(featuresTabContent().value(1))
-                                      .arg(aboutTabContent().value(1));
+                                      .arg(aboutTabContent().value(1))
+                                      .arg(i18n("Author:"))
+                                      .arg(i18n("Location:"))
+                                      .arg(i18n("Date:"))
+                                      .arg(i18n("Camera:"))
+                                      .arg(i18n("Lens:"))
+    ;
 
     //qCDebug(DIGIKAM_GENERAL_LOG) << content;
 
