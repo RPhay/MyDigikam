@@ -602,20 +602,21 @@ void DigikamApp::slotImageSelected(const ItemInfoList& selection, const ItemInfo
         {
             if (numImagesWithGrouped == numImagesWithoutGrouped)
             {
-                statusBarSelectionText
-                        = i18np("No item selected (%1 item)", "No item selected (%1 items)",
-                                numImagesWithoutGrouped);
+                statusBarSelectionText = i18np("No item selected (%1 item)",
+                                               "No item selected (%1 items)",
+                                               numImagesWithoutGrouped);
                 break;
             }
 
-            statusBarSelectionText
-                        = i18np("No item selected (%1 [%2] item)",
-                                "No item selected (%1 [%2] items)",
-                                numImagesWithoutGrouped, numImagesWithGrouped);
-            statusBarSelectionToolTip
-                        = i18np("No item selected (%1 item. With grouped items: %2)",
-                                "No item selected (%1 items. With grouped items: %2)",
-                                numImagesWithoutGrouped, numImagesWithGrouped);
+            statusBarSelectionText    = i18np("No item selected (%1 [%2] item)",
+                                              "No item selected (%1 [%2] items)",
+                                              numImagesWithoutGrouped,
+                                              numImagesWithGrouped);
+
+            statusBarSelectionToolTip = i18np("No item selected (%1 item. With grouped items: %2)",
+                                              "No item selected (%1 items. With grouped items: %2)",
+                                              numImagesWithoutGrouped,
+                                              numImagesWithGrouped);
             break;
         }
 
@@ -623,10 +624,12 @@ void DigikamApp::slotImageSelected(const ItemInfoList& selection, const ItemInfo
         {
             if (numImagesWithGrouped == numImagesWithoutGrouped)
             {
-                statusBarSelectionText = i18n("%1/%2 items selected (%3/%4)",
-                                              selection.count(), numImagesWithoutGrouped,
-                                              ItemPropertiesTab::humanReadableBytesCount(selectionFileSize),
-                                              ItemPropertiesTab::humanReadableBytesCount(listAllFileSize));
+                statusBarSelectionText = i18np("1 item selected (%3/%4)",
+                                               "%1/%2 items selected (%3/%4)",
+                                               selection.count(),
+                                               numImagesWithoutGrouped,
+                                               ItemPropertiesTab::humanReadableBytesCount(selectionFileSize),
+                                               ItemPropertiesTab::humanReadableBytesCount(listAllFileSize));
                 break;
             }
 
@@ -634,28 +637,37 @@ void DigikamApp::slotImageSelected(const ItemInfoList& selection, const ItemInfo
             {
                 if (selection.count() == selectionWithoutGrouped.count())
                 {
-                    statusBarSelectionText
-                            = i18n("%1/%2 [%3] items selected (%4/%5)", selectionWithoutGrouped.count(),
-                                   numImagesWithoutGrouped, numImagesWithGrouped,
-                                   ItemPropertiesTab::humanReadableBytesCount(selectionFileSize),
-                                   ItemPropertiesTab::humanReadableBytesCount(listAllFileSize));
-                    statusBarSelectionToolTip
-                            = i18n("%1/%2 items selected. Total with grouped items: %3",
-                                   selectionWithoutGrouped.count(), numImagesWithoutGrouped,
-                                   numImagesWithGrouped);
+                    statusBarSelectionText    = i18np("1 [%3] item selected (%4/%5)",
+                                                      "%1/%2 [%3] items selected (%4/%5)",
+                                                      selectionWithoutGrouped.count(),
+                                                      numImagesWithoutGrouped,
+                                                      numImagesWithGrouped,
+                                                      ItemPropertiesTab::humanReadableBytesCount(selectionFileSize),
+                                                      ItemPropertiesTab::humanReadableBytesCount(listAllFileSize));
+
+                    statusBarSelectionToolTip = i18np("1 item selected. Total with grouped items: %3",
+                                                      "%1/%2 items selected. Total with grouped items: %3",
+                                                      selectionWithoutGrouped.count(),
+                                                      numImagesWithoutGrouped,
+                                                      numImagesWithGrouped);
                 }
                 else
                 {
-                    statusBarSelectionText
-                            = i18n("%1/%2 [%3/%4] items selected (%5/%6)",
-                                   selectionWithoutGrouped.count(), numImagesWithoutGrouped,
-                                   selection.count(), numImagesWithGrouped,
-                                   ItemPropertiesTab::humanReadableBytesCount(selectionFileSize),
-                                   ItemPropertiesTab::humanReadableBytesCount(listAllFileSize));
-                    statusBarSelectionToolTip
-                            = i18n("%1/%2 items selected. With grouped items: %3/%4",
-                                   selectionWithoutGrouped.count(), numImagesWithoutGrouped,
-                                   selection.count(), numImagesWithGrouped);
+                    statusBarSelectionText    = i18np("1 [%3/%4] item selected (%5/%6)",
+                                                      "%1/%2 [%3/%4] items selected (%5/%6)",
+                                                      selectionWithoutGrouped.count(),
+                                                      numImagesWithoutGrouped,
+                                                      selection.count(),
+                                                      numImagesWithGrouped,
+                                                      ItemPropertiesTab::humanReadableBytesCount(selectionFileSize),
+                                                      ItemPropertiesTab::humanReadableBytesCount(listAllFileSize));
+
+                    statusBarSelectionToolTip = i18np("1 item selected. With grouped items: %3/%4",
+                                                      "%1/%2 items selected. With grouped items: %3/%4",
+                                                      selectionWithoutGrouped.count(),
+                                                      numImagesWithoutGrouped,
+                                                      selection.count(),
+                                                      numImagesWithGrouped);
                 }
 
                 break;
