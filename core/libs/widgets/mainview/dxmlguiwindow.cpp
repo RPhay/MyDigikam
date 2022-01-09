@@ -976,7 +976,7 @@ void DXmlGuiWindow::setupIconTheme()
         {
             QIcon::setThemeSearchPaths(QStringList() << QIcon::themeSearchPaths() << iconsDirs);
         }
-/*
+
         if      (hasBreeze)
         {
             QIcon::setThemeName(QLatin1String("breeze"));
@@ -985,7 +985,6 @@ void DXmlGuiWindow::setupIconTheme()
         {
             QIcon::setThemeName(QLatin1String("breeze-dark"));
         }
-*/
     }
     else
     {
