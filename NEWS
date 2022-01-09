@@ -499,8 +499,8 @@ BUGFIXES:
 484 ==> 441171 - File Import can only select directories, no single files.
 485 ==> 440465 - Opening folder just opens the last folder, you cant open folder with other folders, like a tree.
 486 ==> 426678 - Drag and Drop to other windows application.
-487 ==> 
-488 ==> 
+487 ==> 431005 - Paste decimal coordinates fails.
+488 ==> 439779 - The rating and color specified outside digiKam are not updated for all sidecar file settings.
 489 ==> 
 490 ==> 
 491 ==> 
