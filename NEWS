@@ -490,7 +490,7 @@ BUGFIXES:
 475 ==> 370029 - Black and white low resolution print only.
 476 ==> 365745 - AdobeRGB Input Profile cannot be found or used.
 477 ==> 359959 - Filter panel from right sidebar requires too much horizontal space.
-478 ==> 
+478 ==> 418163 - No dark theme properly shows partly selected captions.
 479 ==> 
 480 ==> 
 481 ==> 
