@@ -269,7 +269,9 @@ void WelcomePageView::slotThemeChanged()
     QString slogan           = DAboutData::digiKamSlogan();
     QString locationHtml     = QStandardPaths::locate(QStandardPaths::GenericDataLocation, QLatin1String("digikam/about/main.html"));
     QString content          = QString::fromUtf8(fileToString(locationHtml));
-    content                  = content.arg(appTitle)
+
+    content                  = content.arg((layoutDirection() == Qt::RightToLeft) ? QLatin1String("rtl") : QLatin1String("ltr")) // For RTL issue. See bug #376438
+                                      .arg(appTitle)
                                       .arg(slogan)
                                       .arg(i18n("Welcome to digiKam %1", QLatin1String(digikam_version)))
                                       .arg(featuresTabContent().value(0))
