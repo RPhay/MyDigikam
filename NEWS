@@ -503,7 +503,7 @@ BUGFIXES:
 488 ==> 439779 - The rating and color specified outside digiKam are not updated for all sidecar file settings.
 489 ==> 425449 - Right-click geolocation context menu not working when using Google Maps.
 490 ==> 417739 - Multirow + "tag block" display for image tags?
-491 ==> 
+491 ==> 427203 - Asan error on closing digiKam.
 492 ==> 
 493 ==> 
 494 ==> 
