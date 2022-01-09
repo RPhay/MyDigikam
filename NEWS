@@ -493,7 +493,7 @@ BUGFIXES:
 478 ==> 418163 - No dark theme properly shows partly selected captions.
 479 ==> 431096 - Adding new collection scans all existing collections for new items.
 480 ==> 436625 - Face detection: Unchecking "Work on all processor cores" still uses all cpu cores.
-481 ==> 
+481 ==> 278975 - Geolocation no longer looks up altitude automatically.
 482 ==> 
 483 ==> 
 484 ==> 
