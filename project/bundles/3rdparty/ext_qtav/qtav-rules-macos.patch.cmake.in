@@ -15,7 +15,7 @@ index ef57faf6..91948294 100644
 +LIBS += -L@INSTALL_ROOT@/lib/
 +
 diff --git a/QtAV.pro b/QtAV.pro
-index a463edd0..8c4f6014 100644
+index a463edd0..f7781586 100644
 --- a/QtAV.pro
 +++ b/QtAV.pro
 @@ -2,7 +2,7 @@ include(root.pri)
@@ -27,7 +27,7 @@ index a463edd0..8c4f6014 100644
  libqtav.file = src/libQtAV.pro
  !no-widgets {
    SUBDIRS += libqtavwidgets
-@@ -12,11 +12,11 @@ libqtav.file = src/libQtAV.pro
+@@ -12,20 +12,20 @@ libqtav.file = src/libQtAV.pro
  }
  isEqual(QT_MAJOR_VERSION, 5) {
    # qtHaveModule does not exist in Qt5.0
@@ -36,15 +36,16 @@ index a463edd0..8c4f6014 100644
 -    libqmlav.file = qml/libQmlAV.pro
 -    libqmlav.depends += libqtav
 -    examples.depends += libqmlav
+-  }
 +#  isEqual(QT_MINOR_VERSION, 0)|qtHaveModule(quick) {
 +#    SUBDIRS += libqmlav
 +#    libqmlav.file = qml/libQmlAV.pro
 +#    libqmlav.depends += libqtav
 +#    examples.depends += libqmlav
-   }
++#  }
  }
  !no-examples {
-@@ -24,8 +24,8 @@ isEqual(QT_MAJOR_VERSION, 5) {
+   SUBDIRS += examples
    examples.depends += libqtav
  }
  !cross_compile:!no-tests {
