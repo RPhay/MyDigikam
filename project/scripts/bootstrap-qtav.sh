@@ -19,8 +19,10 @@ fi
 cd build
 
 export QtAvOptions='-DBUILD_EXAMPLES=OFF \
+                    -DBUILD_PLAYERS=OFF \
                     -DBUILD_TESTS=OFF \
-                    -DBUILD_QT5OPENGL=ON'
+                    -DBUILD_QT5OPENGL=ON \
+                    -DBUILD_QML=OFF'
 
 cmake -G "$MAKEFILES_TYPE" . \
       -DCMAKE_INSTALL_PREFIX=/usr \
