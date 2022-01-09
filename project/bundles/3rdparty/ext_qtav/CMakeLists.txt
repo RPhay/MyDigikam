@@ -31,6 +31,8 @@ if(MINGW)
 
         GIT_REPOSITORY https://github.com/wang-bin/QtAV.git
 
+        PATCH_COMMAND ${PATCH_COMMAND} -p1 -i ${CMAKE_CURRENT_SOURCE_DIR}/qtav-master.patch
+
         CONFIGURE_COMMAND git submodule update --init &&
                           rm -rfv ${MXE_INSTALL_PREFIX}/qt5/include/QtAV &&
                           rm -rfv ${MXE_INSTALL_PREFIX}/qt5/include/QtAVWidgets &&
@@ -69,8 +71,12 @@ elseif(APPLE)
         GIT_REPOSITORY https://github.com/wang-bin/QtAV.git
 
         PATCH_COMMAND ${PATCH_COMMAND} -p1 -i ${CMAKE_CURRENT_BINARY_DIR}/qtav-rules-macos.patch
+        PATCH_COMMAND ${PATCH_COMMAND} -p1 -i ${CMAKE_CURRENT_SOURCE_DIR}/qtav-master.patch
 
         CONFIGURE_COMMAND git submodule update --init &&
+                          rm -rfv ${CMAKE_CURRENT_BINARY_DIR}/examples/examples.pro &&
+                          rm -rfv ${CMAKE_CURRENT_BINARY_DIR}/qml/libQmlAV.pri &&
+                          rm -rfv ${CMAKE_CURRENT_BINARY_DIR}/qml/libQmlAV.pro &&
                           rm -rfv ${INSTALL_ROOT}/libexec/qt5/lib/QtAV.framework &&
                           rm -rfv ${INSTALL_ROOT}/libexec/qt5/lib/QtAVWidgets.framework &&
                           rm -rfv ${INSTALL_ROOT}/libexec/qt5/include/QtAV &&
@@ -103,6 +109,8 @@ else() #Linux
 
         GIT_REPOSITORY https://github.com/wang-bin/QtAV.git
 
+        PATCH_COMMAND ${PATCH_COMMAND} -p1 -i ${CMAKE_CURRENT_SOURCE_DIR}/qtav-master.patch
+
         CONFIGURE_COMMAND cd <SOURCE_DIR> && git submodule update --init &&
                           rm -rfv ${INSTALL_ROOT}/include/QtAV &&
                           rm -rfv ${INSTALL_ROOT}/include/QtAVWidgets &&
@@ -118,11 +126,7 @@ else() #Linux
                           $(CMAKE_COMMAND) .. -DCMAKE_INSTALL_PREFIX=${PREFIX_ext_qtav}
                                               -DCMAKE_BUILD_TYPE=${GLOBAL_BUILD_TYPE}
                                               ${GLOBAL_PROFILE}
-                                              -DBUILD_EXAMPLES=OFF
-                                              -DBUILD_TESTS=OFF
-                                              -DBUILD_PLAYERS=OFF
-                                              -DBUILD_QT5OPENGL=ON
-                                              -DBUILD_QML=OFF
+                                              ${QtAV_Conf}
 
         BUILD_COMMAND cd <SOURCE_DIR>/build && $(MAKE)
 
