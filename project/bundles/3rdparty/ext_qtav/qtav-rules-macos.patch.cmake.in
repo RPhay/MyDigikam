@@ -15,10 +15,10 @@ index ef57faf6..91948294 100644
 +LIBS += -L@INSTALL_ROOT@/lib/
 +
 diff --git a/QtAV.pro b/QtAV.pro
-index a463edd0..f7781586 100644
+index a463edd0..2ba84e97 100644
 --- a/QtAV.pro
 +++ b/QtAV.pro
-@@ -2,7 +2,7 @@ include(root.pri)
+@@ -2,30 +2,30 @@ include(root.pri)
  
  TEMPLATE = subdirs
  CONFIG -= ordered
@@ -27,7 +27,10 @@ index a463edd0..f7781586 100644
  libqtav.file = src/libQtAV.pro
  !no-widgets {
    SUBDIRS += libqtavwidgets
-@@ -12,20 +12,20 @@ libqtav.file = src/libQtAV.pro
+   libqtavwidgets.file = widgets/libQtAVWidgets.pro
+   libqtavwidgets.depends = libqtav
+-  examples.depends += libqtavwidgets #TODO: enable widgets based examples
++#  examples.depends += libqtavwidgets #TODO: enable widgets based examples
  }
  isEqual(QT_MAJOR_VERSION, 5) {
    # qtHaveModule does not exist in Qt5.0
@@ -45,8 +48,10 @@ index a463edd0..f7781586 100644
 +#  }
  }
  !no-examples {
-   SUBDIRS += examples
-   examples.depends += libqtav
+-  SUBDIRS += examples
+-  examples.depends += libqtav
++#  SUBDIRS += examples
++#  examples.depends += libqtav
  }
  !cross_compile:!no-tests {
 -  SUBDIRS += tests
