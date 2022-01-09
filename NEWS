@@ -494,7 +494,7 @@ BUGFIXES:
 479 ==> 431096 - Adding new collection scans all existing collections for new items.
 480 ==> 436625 - Face detection: Unchecking "Work on all processor cores" still uses all cpu cores.
 481 ==> 278975 - Geolocation no longer looks up altitude automatically.
-482 ==> 
+482 ==> 315603 - Light table should keep settings between 2 sessions.
 483 ==> 
 484 ==> 
 485 ==> 
