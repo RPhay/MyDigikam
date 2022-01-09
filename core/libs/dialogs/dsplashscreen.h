@@ -46,7 +46,6 @@ public:
     DSplashScreen();
     ~DSplashScreen()             override;
 
-    void setAlignment(int alignment);
     void setColor(const QColor& color);
     void setMessage(const QString& message);
 

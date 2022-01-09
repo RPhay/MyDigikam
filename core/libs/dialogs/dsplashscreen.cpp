@@ -53,7 +53,6 @@ public:
     explicit Private()
       : state               (0),
         progressBarSize     (3),
-        messageAlign        (Qt::AlignLeft),
         version             (QLatin1String(digikam_version_short)),
         messageColor        (Qt::white),
         versionColor        (Qt::white),
@@ -63,7 +62,6 @@ public:
 
     int     state;
     int     progressBarSize;
-    int     messageAlign;
 
     QString message;
     QString version;
@@ -116,15 +114,12 @@ void DSplashScreen::setColor(const QColor& color)
     d->messageColor = color;
 }
 
-void DSplashScreen::setAlignment(int alignment)
-{
-    d->messageAlign = alignment;
-}
-
 void DSplashScreen::setMessage(const QString& message)
 {
     d->message = message;
-    QSplashScreen::showMessage(d->message, d->messageAlign, d->messageColor); // krazy:exclude=qclasses
+    QSplashScreen::showMessage(d->message,                                  // krazy:exclude=qclasses
+                               (layoutDirection() == Qt::RightToLeft) ? Qt::AlignLeft : Qt::AlignRight,
+                               d->messageColor);
     slotAnimate();
     qApp->processEvents();
 }
@@ -198,7 +193,7 @@ void DSplashScreen::drawContents(QPainter* p)
     }
 
     p->setPen(d->messageColor);
-    p->drawText(r, d->messageAlign, d->message);
+    p->drawText(r, d->message);
 
     // -- Draw version string -------------------------------------------------
 
@@ -206,7 +201,7 @@ void DSplashScreen::drawContents(QPainter* p)
     QRect r2 = fontMt.boundingRect(rect(), 0, d->version);
     r2.moveTopLeft(QPoint(width()-r2.width()-10, r.y()));
     p->setPen(d->versionColor);
-    p->drawText(r2, Qt::AlignLeft, d->version);
+    p->drawText(r2, d->version);
 
     // -- Draw slogan and family ----------------------------------------------
 
@@ -216,7 +211,7 @@ void DSplashScreen::drawContents(QPainter* p)
     r.setCoords(r.x() + 190, r.y() + 215, r.x() + 462, r.y() + 315);
     p->translate(r.x(), r.y());
     QTextDocument slogan;
-    slogan.setDefaultTextOption(QTextOption(Qt::AlignRight | Qt::AlignVCenter));
+    slogan.setDefaultTextOption(QTextOption(Qt::AlignVCenter));
     slogan.setHtml(DAboutData::digiKamSloganFormated());
     slogan.setPageSize(r.size());
     slogan.setDefaultFont(fnt);
