@@ -19,12 +19,6 @@ JoinListAsString("${QtAV_Conf}" " " BASH_OPTIONS)
 
 if(MINGW)
 
-    if (${MXE_ARCHBITS} MATCHES "64")
-        set(LIB_DIR "lib_win_x86_64")
-    else()
-        set(LIB_DIR "lib_win_x86")
-    endif()
-
     ExternalProject_Add(ext_qtav
 
         DOWNLOAD_DIR ${EXTERNALS_DOWNLOAD_DIR}
@@ -38,8 +32,12 @@ if(MINGW)
                           rm -rfv ${MXE_INSTALL_PREFIX}/qt5/include/QtAVWidgets &&
                           rm -fv  ${MXE_INSTALL_PREFIX}/qt5/lib/libQtAV1.a &&
                           rm -fv  ${MXE_INSTALL_PREFIX}/qt5/lib/libQtAVWidgets1.a &&
-                          rm -fv  ${MXE_INSTALL_PREFIX}/qt5/bin/QtAV1.dll &&
-                          rm -fv  ${MXE_INSTALL_PREFIX}/qt5/bin/QtAVWidgets1.dll &&
+                          rm -fv  ${MXE_INSTALL_PREFIX}/qt5/lib/libQtAV.dll.a &&
+                          rm -fv  ${MXE_INSTALL_PREFIX}/qt5/lib/libQtAVWidgets.dll.a &&
+                          rm -fv  ${MXE_INSTALL_PREFIX}/qt5/bin/libQtAV1.dll &&
+                          rm -fv  ${MXE_INSTALL_PREFIX}/qt5/bin/libQtAVWidgets1.dll &&
+                          rm -fv  ${MXE_INSTALL_PREFIX}/qt5/bin/libQtAV.dll &&
+                          rm -fv  ${MXE_INSTALL_PREFIX}/qt5/bin/libQtAVWidgets.dll &&
                           cp ${CMAKE_CURRENT_SOURCE_DIR}/../../../../bootstrap.mxe <SOURCE_DIR>/. &&
                           <SOURCE_DIR>/bootstrap.mxe ${MXE_BUILDROOT} RelWithDebInfo ${BASH_OPTIONS}
 
@@ -48,10 +46,10 @@ if(MINGW)
 
         INSTALL_COMMAND cp -rfv <SOURCE_DIR>/src/QtAV ${MXE_INSTALL_PREFIX}/qt5/include/ &&
                         cp -rfv <SOURCE_DIR>/widgets/QtAVWidgets ${MXE_INSTALL_PREFIX}/qt5/include/ &&
-                        cp -fv  <SOURCE_DIR>/build.mxe/${LIB_DIR}/libQtAV1.a ${MXE_INSTALL_PREFIX}/qt5/lib/ &&
-                        cp -fv  <SOURCE_DIR>/build.mxe/${LIB_DIR}/libQtAVWidgets1.a ${MXE_INSTALL_PREFIX}/qt5/lib/ &&
-                        cp -fv  <SOURCE_DIR>/build.mxe/${LIB_DIR}/QtAV1.dll ${MXE_INSTALL_PREFIX}/qt5/bin/ &&
-                        cp -fv  <SOURCE_DIR>/build.mxe/${LIB_DIR}/QtAVWidgets1.dll ${MXE_INSTALL_PREFIX}/qt5/bin/
+                        cp -fv  <SOURCE_DIR>/build.mxe/lib/libQtAV.dll.a ${MXE_INSTALL_PREFIX}/qt5/lib/ &&
+                        cp -fv  <SOURCE_DIR>/build.mxe/lib/libQtAVWidgets.dll.a ${MXE_INSTALL_PREFIX}/qt5/lib/ &&
+                        cp -fv  <SOURCE_DIR>/build.mxe/bin/libQtAV.dll ${MXE_INSTALL_PREFIX}/qt5/bin/ &&
+                        cp -fv  <SOURCE_DIR>/build.mxe/bin/libQtAVWidgets.dll ${MXE_INSTALL_PREFIX}/qt5/bin/
 
         BUILD_IN_SOURCE 1
 
@@ -101,8 +99,6 @@ elseif(APPLE)
 
 else() #Linux
 
-    set(LIB_DIR "lib")
-
     ExternalProject_Add(ext_qtav
 
         DOWNLOAD_DIR ${EXTERNALS_DOWNLOAD_DIR}
@@ -132,12 +128,12 @@ else() #Linux
 
         INSTALL_COMMAND cp -rfv <SOURCE_DIR>/src/QtAV ${INSTALL_ROOT}/include/ &&
                         cp -rfv <SOURCE_DIR>/widgets/QtAVWidgets ${INSTALL_ROOT}/include/ &&
-                        cp -fv  <SOURCE_DIR>/build/${LIB_DIR}/libQtAV.so ${INSTALL_ROOT}/lib/ &&
-                        cp -fv  <SOURCE_DIR>/build/${LIB_DIR}/libQtAV.so.1 ${INSTALL_ROOT}/lib/ &&
-                        cp -fv  <SOURCE_DIR>/build/${LIB_DIR}/libQtAV.so.1.13.0 ${INSTALL_ROOT}/lib/ &&
-                        cp -fv  <SOURCE_DIR>/build/${LIB_DIR}/libQtAVWidgets.so ${INSTALL_ROOT}/lib/ &&
-                        cp -fv  <SOURCE_DIR>/build/${LIB_DIR}/libQtAVWidgets.so.1 ${INSTALL_ROOT}/lib/ &&
-                        cp -fv  <SOURCE_DIR>/build/${LIB_DIR}/libQtAVWidgets.so.1.13.0 ${INSTALL_ROOT}/lib/
+                        cp -fv  <SOURCE_DIR>/build/lib/libQtAV.so ${INSTALL_ROOT}/lib/ &&
+                        cp -fv  <SOURCE_DIR>/build/lib/libQtAV.so.1 ${INSTALL_ROOT}/lib/ &&
+                        cp -fv  <SOURCE_DIR>/build/lib/libQtAV.so.1.13.0 ${INSTALL_ROOT}/lib/ &&
+                        cp -fv  <SOURCE_DIR>/build/lib/libQtAVWidgets.so ${INSTALL_ROOT}/lib/ &&
+                        cp -fv  <SOURCE_DIR>/build/lib/libQtAVWidgets.so.1 ${INSTALL_ROOT}/lib/ &&
+                        cp -fv  <SOURCE_DIR>/build/lib/libQtAVWidgets.so.1.13.0 ${INSTALL_ROOT}/lib/
 
         UPDATE_COMMAND ""
         ALWAYS 0
