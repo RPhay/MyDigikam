@@ -496,7 +496,7 @@ BUGFIXES:
 481 ==> 278975 - Geolocation no longer looks up altitude automatically.
 482 ==> 315603 - Light table should keep settings between 2 sessions.
 483 ==> 327254 - ACL default mask is ignored or mask is changed for image editor and batch queue manager.
-484 ==> 
+484 ==> 441171 - File Import can only select directories, no single files.
 485 ==> 
 486 ==> 
 487 ==> 
