@@ -68,8 +68,8 @@ elseif(APPLE)
 
         GIT_REPOSITORY https://github.com/wang-bin/QtAV.git
 
-        PATCH_COMMAND ${PATCH_COMMAND} -p1 -i ${CMAKE_CURRENT_BINARY_DIR}/qtav-rules-macos.patch
-        PATCH_COMMAND ${PATCH_COMMAND} -p1 -i ${CMAKE_CURRENT_SOURCE_DIR}/qtav-master.patch
+        PATCH_COMMAND ${PATCH_COMMAND} -p1 -i ${CMAKE_CURRENT_BINARY_DIR}/qtav-rules-macos.patch &&
+                      ${PATCH_COMMAND} -p1 -i ${CMAKE_CURRENT_SOURCE_DIR}/qtav-master.patch
 
         CONFIGURE_COMMAND git submodule update --init &&
                           rm -rfv ${CMAKE_CURRENT_BINARY_DIR}/examples/examples.pro &&
