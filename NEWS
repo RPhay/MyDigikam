@@ -497,10 +497,20 @@ BUGFIXES:
 482 ==> 315603 - Light table should keep settings between 2 sessions.
 483 ==> 327254 - ACL default mask is ignored or mask is changed for image editor and batch queue manager.
 484 ==> 441171 - File Import can only select directories, no single files.
-485 ==> 
+485 ==> 440465 - Opening folder just opens the last folder, you cant open folder with other folders, like a tree.
 486 ==> 
 487 ==> 
 488 ==> 
 489 ==> 
 490 ==> 
 491 ==> 
+492 ==> 
+493 ==> 
+494 ==> 
+495 ==> 
+496 ==> 
+497 ==> 
+498 ==> 
+499 ==> 
+500 ==> 
+501 ==> 
