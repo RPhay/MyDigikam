@@ -68,13 +68,13 @@ elseif(APPLE)
 
         GIT_REPOSITORY https://github.com/wang-bin/QtAV.git
 
-        PATCH_COMMAND ${PATCH_COMMAND} -p1 -i ${CMAKE_CURRENT_BINARY_DIR}/qtav-rules-macos.patch
-        PATCH_COMMAND ${PATCH_COMMAND} -p1 -i ${CMAKE_CURRENT_SOURCE_DIR}/qtav-master.patch
+        PATCH_COMMAND ${PATCH_COMMAND} -p1 -i ${CMAKE_CURRENT_BINARY_DIR}/qtav-rules-macos.patch &&
+                      ${PATCH_COMMAND} -p1 -i ${CMAKE_CURRENT_SOURCE_DIR}/qtav-master.patch &&
+                      rm -fv <SOURCE_DIR>/examples/examples.pro &&
+                      rm -fv <SOURCE_DIR>/qml/libQmlAV.pri &&
+                      rm -fv <SOURCE_DIR>/qml/libQmlAV.pro
 
         CONFIGURE_COMMAND git submodule update --init &&
-                          rm -rfv ${CMAKE_CURRENT_BINARY_DIR}/examples/examples.pro &&
-                          rm -rfv ${CMAKE_CURRENT_BINARY_DIR}/qml/libQmlAV.pri &&
-                          rm -rfv ${CMAKE_CURRENT_BINARY_DIR}/qml/libQmlAV.pro &&
                           rm -rfv ${INSTALL_ROOT}/libexec/qt5/lib/QtAV.framework &&
                           rm -rfv ${INSTALL_ROOT}/libexec/qt5/lib/QtAVWidgets.framework &&
                           rm -rfv ${INSTALL_ROOT}/libexec/qt5/include/QtAV &&

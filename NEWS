@@ -501,8 +501,8 @@ BUGFIXES:
 486 ==> 426678 - Drag and Drop to other windows application.
 487 ==> 431005 - Paste decimal coordinates fails.
 488 ==> 439779 - The rating and color specified outside digiKam are not updated for all sidecar file settings.
-489 ==> 
-490 ==> 
+489 ==> 425449 - Right-click geolocation context menu not working when using Google Maps.
+490 ==> 417739 - Multirow + "tag block" display for image tags?
 491 ==> 
 492 ==> 
 493 ==> 
