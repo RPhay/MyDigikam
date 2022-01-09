@@ -491,7 +491,7 @@ BUGFIXES:
 476 ==> 365745 - AdobeRGB Input Profile cannot be found or used.
 477 ==> 359959 - Filter panel from right sidebar requires too much horizontal space.
 478 ==> 418163 - No dark theme properly shows partly selected captions.
-479 ==> 
+479 ==> 431096 - Adding new collection scans all existing collections for new items.
 480 ==> 
 481 ==> 
 482 ==> 
@@ -503,3 +503,4 @@ BUGFIXES:
 488 ==> 
 489 ==> 
 490 ==> 
+491 ==> 
