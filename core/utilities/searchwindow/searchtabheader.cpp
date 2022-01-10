@@ -319,7 +319,16 @@ SearchTabHeader::SearchTabHeader(QWidget* const parent)
 
     QVBoxLayout* const vbox1 = new QVBoxLayout;
     d->storedKeywordEditName = new DAdjustableLabel(this);
-    d->storedKeywordEditName->setElideMode(Qt::ElideRight);
+
+    if (layoutDirection() == Qt::RightToLeft)
+    {
+        d->storedKeywordEditName->setElideMode(Qt::ElideRight);
+    }
+    else
+    {
+        d->storedKeywordEditName->setElideMode(Qt::ElideLeft);
+    }
+
     d->storedKeywordEdit     = new QLineEdit(this);
 
     vbox1->addWidget(d->storedKeywordEditName);
@@ -338,7 +347,16 @@ SearchTabHeader::SearchTabHeader(QWidget* const parent)
     QVBoxLayout* const vbox2   = new QVBoxLayout;
 
     d->storedAdvancedEditName  = new DAdjustableLabel(this);
-    d->storedAdvancedEditName->setElideMode(Qt::ElideRight);
+
+    if (layoutDirection() == Qt::RightToLeft)
+    {
+        d->storedAdvancedEditName->setElideMode(Qt::ElideRight);
+    }
+    else
+    {
+        d->storedAdvancedEditName->setElideMode(Qt::ElideLeft);
+    }
+
     d->storedAdvancedEditLabel = new QPushButton(i18n("Edit..."), this);
 
     vbox2->addWidget(d->storedAdvancedEditName);

@@ -42,7 +42,16 @@ DTextLabelName::DTextLabelName(const QString& name, QWidget* const parent)
     QFont fnt;
     fnt.setItalic(true);
     setFont(fnt);
-    setAlignment(Qt::AlignRight | Qt::AlignTop);
+
+    if (layoutDirection() == Qt::RightToLeft)
+    {
+        setAlignment(Qt::AlignRight | Qt::AlignTop);
+    }
+    else
+    {
+        setAlignment(Qt::AlignLeft | Qt::AlignTop);
+    }
+
     setWordWrap(false);
 }
 
@@ -56,9 +65,19 @@ DTextLabelValue::DTextLabelValue(const QString& value, QWidget* const parent)
     : DAdjustableLabel(parent)
 {
     setAdjustedText(value);
-    setAlignment(Qt::AlignLeft | Qt::AlignTop);
+
+    if (layoutDirection() == Qt::RightToLeft)
+    {
+        setAlignment(Qt::AlignLeft | Qt::AlignTop);
+        setElideMode(Qt::ElideRight);
+    }
+    else
+    {
+        setAlignment(Qt::AlignRight | Qt::AlignTop);
+        setElideMode(Qt::ElideLeft);
+    }
+
     setWordWrap(false);
-    setElideMode(Qt::ElideRight);
 }
 
 DTextLabelValue::~DTextLabelValue()

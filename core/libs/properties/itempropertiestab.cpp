@@ -375,7 +375,15 @@ ItemPropertiesTab::ItemPropertiesTab(QWidget* const parent)
     d->labelColorLabel       = new DTextLabelValue(QString(), w5);
     d->labelRating           = new DTextLabelValue(QString(), w5);
     d->labelTags             = new DTextLabelValue(QString(), w5);
-    d->labelTags->setElideMode(Qt::ElideLeft);
+
+    if (layoutDirection() == Qt::RightToLeft)
+    {
+        d->labelTags->setElideMode(Qt::ElideLeft);
+    }
+    else
+    {
+        d->labelTags->setElideMode(Qt::ElideRight);
+    }
 
     glay5->addWidget(d->caption,         0, 0, 1, 1);
     glay5->addWidget(d->labelCaption,    0, 1, 1, 1);
