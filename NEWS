@@ -538,7 +538,7 @@ BUGFIXES:
 523 ==> 416214 - When entering a name in an unconfirmed face, sometimes the keypress acts as a shortcut and jumps to another picture.
 524 ==> 381319 - Keyboard modifier not caught when using Wacom Tablet [patch].
 525 ==> 230553 - Keys {unique} and [cam] produce strange results on importing from a flash memory card.
-526 ==> 
+526 ==> 210912 - Opening left side bar from Light Table rescales left image but not the right one.
 527 ==> 
 528 ==> 
 529 ==> 
