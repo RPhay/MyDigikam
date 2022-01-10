@@ -531,7 +531,7 @@ BUGFIXES:
 516 ==> 361137 - Inconsistent timestamp display for MP4 video files in Album View after adjusting date/time.
 517 ==> 342109 - Import folders will not select folders--only individual images.
 518 ==> 325447 - digiKam doesn't copy pictures to Samba share mounted with autofs.
-519 ==> 
+519 ==> 278331 - SETUP : digiKam does not access files on NAS.
 520 ==> 
 521 ==> 
 522 ==> 
