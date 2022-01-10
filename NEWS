@@ -536,7 +536,7 @@ BUGFIXES:
 521 ==> 232391 - PRINT : scaling images is broken.
 522 ==> 234078 - Geolocation tab from right sidebar : hide MapView for image without coordinates.
 523 ==> 416214 - When entering a name in an unconfirmed face, sometimes the keypress acts as a shortcut and jumps to another picture.
-524 ==> 
+524 ==> 381319 - Keyboard modifier not caught when using Wacom Tablet [patch].
 525 ==> 
 526 ==> 
 527 ==> 
