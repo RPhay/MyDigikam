@@ -530,7 +530,7 @@ BUGFIXES:
 515 ==> 362132 - Cannot connect to smb shared collection.
 516 ==> 361137 - Inconsistent timestamp display for MP4 video files in Album View after adjusting date/time.
 517 ==> 342109 - Import folders will not select folders--only individual images.
-518 ==> 
+518 ==> 325447 - digiKam doesn't copy pictures to Samba share mounted with autofs.
 519 ==> 
 520 ==> 
 521 ==> 
