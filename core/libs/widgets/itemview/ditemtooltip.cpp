@@ -55,6 +55,15 @@ DToolTipStyleSheet::DToolTipStyleSheet(const QFont& font)
 {
     // Note: rich-text doc https://doc.qt.io/qt-5/richtext-html-subset.html
 
+    // Fix layout following bug #376438
+
+    QString dir = QLatin1String("dir=\"rtl\"");
+
+    if (qApp->layoutDirection() == Qt::LeftToRight)
+    {
+        dir = QLatin1String("dir=\"ltr\"");
+    }
+
     QString fontSize = (font.pointSize() == -1) ? QString::fromUtf8("font-size: %1px;").arg(font.pixelSize())
                                                 : QString::fromUtf8("font-size: %1pt;").arg(font.pointSize());
 
@@ -62,35 +71,40 @@ DToolTipStyleSheet::DToolTipStyleSheet(const QFont& font)
     tipFooter        = QLatin1String("</table></qt>");
 
     headBeg          = QString::fromLatin1("<tr bgcolor=\"%1\"><td colspan=\"2\">"
-                                      "<nobr><p style=\"color:%2; font-family:%3; %4\"><center><b>")
+                                      "<nobr><p style=\"color:%2; font-family:%3; %4; %5\"><center><b>")
                        .arg(qApp->palette().color(QPalette::Base).name())
                        .arg(qApp->palette().color(QPalette::Text).name())
                        .arg(font.family())
-                       .arg(fontSize);
+                       .arg(fontSize)
+                       .arg(dir);
 
     headEnd          = QLatin1String("</b></center></p></nobr></td></tr>");
 
-    cellBeg          = QString::fromLatin1("<tr><td><nobr><p style=\"color:%1; font-family:%2; %3\">")
+    cellBeg          = QString::fromLatin1("<tr><td><nobr><p style=\"color:%1; font-family:%2; %3; %4\">")
                        .arg(qApp->palette().color(QPalette::ToolTipText).name())
                        .arg(font.family())
-                       .arg(fontSize);
+                       .arg(fontSize)
+                       .arg(dir);
 
-    cellMid          = QString::fromLatin1("</p></nobr></td><td><nobr><p style=\"color:%1; font-family:%2; %3\">")
+    cellMid          = QString::fromLatin1("</p></nobr></td><td><nobr><p style=\"color:%1; font-family:%2; %3; %4\">")
                        .arg(qApp->palette().color(QPalette::ToolTipText).name())
                        .arg(font.family())
-                       .arg(fontSize);
+                       .arg(fontSize)
+                       .arg(dir);
 
     cellEnd          = QLatin1String("</p></nobr></td></tr>");
 
-    cellSpecBeg      = QString::fromLatin1("<tr><td><nobr><p style=\"color:%1; font-family:%2; %3\">")
+    cellSpecBeg      = QString::fromLatin1("<tr><td><nobr><p style=\"color:%1; font-family:%2; %3; %4\">")
                        .arg(qApp->palette().color(QPalette::ToolTipText).name())
                        .arg(font.family())
-                       .arg(fontSize);
+                       .arg(fontSize)
+                       .arg(dir);
 
-    cellSpecMid      = QString::fromLatin1("</p></nobr></td><td><nobr><p style=\"color:%1; font-family:%2; %3\"><i>")
+    cellSpecMid      = QString::fromLatin1("</p></nobr></td><td><nobr><p style=\"color:%1; font-family:%2; %3; %4\"><i>")
                        .arg(qApp->palette().color(QPalette::ToolTipText).name())
                        .arg(font.family())
-                       .arg(fontSize);
+                       .arg(fontSize)
+                       .arg(dir);
 
     cellSpecEnd      = QLatin1String("</i></p></nobr></td></tr>");
 }
@@ -139,19 +153,29 @@ QString DToolTipStyleSheet::elidedText(const QString& str, Qt::TextElideMode eli
     switch (elideMode)
     {
         case Qt::ElideLeft:
+        {
             return QLatin1String("...") + str.right(maxStringLength-3);
+        }
 
         case Qt::ElideRight:
+        {
             return str.left(maxStringLength-3) + QLatin1String("...");
+        }
 
         case Qt::ElideMiddle:
+        {
             return str.left(maxStringLength / 2 - 2) + QLatin1String("...") + str.right(maxStringLength / 2 - 1);
+        }
 
         case Qt::ElideNone:
+        {
             return str.left(maxStringLength);
+        }
 
         default:
+        {
             return str;
+        }
     }
 }
 
@@ -390,11 +414,15 @@ bool DItemToolTip::event(QEvent* e)
         case QEvent::FocusIn:
         case QEvent::FocusOut:
         case QEvent::Wheel:
+        {
             hide();
             break;
+        }
 
         default:
+        {
             break;
+        }
     }
 
     return QLabel::event(e);
@@ -438,20 +466,28 @@ void DItemToolTip::paintEvent(QPaintEvent* e)
     switch (d->corner)
     {
         case 0:
+        {
             p.drawPixmap(3, 3, pix);
             break;
+        }
 
         case 1:
+        {
             p.drawPixmap(width() - pix.width() - 3, 3, pix);
             break;
+        }
 
         case 2:
+        {
             p.drawPixmap(3, height() - pix.height() - 3, pix);
             break;
+        }
 
         case 3:
+        {
             p.drawPixmap(width() - pix.width() - 3, height() - pix.height() - 3, pix);
             break;
+        }
     }
 }
 
