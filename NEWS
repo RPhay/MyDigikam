@@ -521,7 +521,7 @@ BUGFIXES:
 506 ==> 380968 - Separate the fields.
 507 ==> 378601 - Window opens in full screen.
 508 ==> 378115 - Upgrades lose custom toolbars.
-509 ==> 
+509 ==> 377890 - DBThumbnailsVersion does not exist error.
 510 ==> 
 511 ==> 
 512 ==> 
