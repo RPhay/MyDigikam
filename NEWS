@@ -533,7 +533,7 @@ BUGFIXES:
 518 ==> 325447 - digiKam doesn't copy pictures to Samba share mounted with autofs.
 519 ==> 278331 - SETUP : digiKam does not access files on NAS.
 520 ==> 243205 - SETUP : adding NFS4 network location to local library sees only some dirs.
-521 ==> 
+521 ==> 232391 - PRINT : scaling images is broken.
 522 ==> 
 523 ==> 
 524 ==> 
