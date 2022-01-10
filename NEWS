@@ -537,7 +537,7 @@ BUGFIXES:
 522 ==> 234078 - Geolocation tab from right sidebar : hide MapView for image without coordinates.
 523 ==> 416214 - When entering a name in an unconfirmed face, sometimes the keypress acts as a shortcut and jumps to another picture.
 524 ==> 381319 - Keyboard modifier not caught when using Wacom Tablet [patch].
-525 ==> 
+525 ==> 230553 - Keys {unique} and [cam] produce strange results on importing from a flash memory card.
 526 ==> 
 527 ==> 
 528 ==> 
