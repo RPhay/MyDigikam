@@ -511,7 +511,7 @@ BUGFIXES:
 496 ==> 400187 - Export to google photo in an existing album: bad request.
 497 ==> 398885 - Collections on removable media does not work.
 498 ==> 398126 - Group feature works across albums (undesired behaviour?)
-499 ==> 
+499 ==> 397901 - Work-around for maximum number of images in an album.
 500 ==> 
 501 ==> 
 502 ==> 
