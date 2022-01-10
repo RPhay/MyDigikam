@@ -525,7 +525,7 @@ BUGFIXES:
 510 ==> 376091 - Image Editor: how to place a signature at right bottom corner?
 511 ==> 376072 - Cursor icon is hand most of the time even if the map is not in panning mode.
 512 ==> 375886 - Search albums, include sub-tree shows all photos.
-513 ==> 
+513 ==> 375883 - Continuous processing after the progress bar finishes.
 514 ==> 
 515 ==> 
 516 ==> 
