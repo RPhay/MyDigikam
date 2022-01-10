@@ -506,7 +506,7 @@ BUGFIXES:
 491 ==> 427203 - Asan error on closing digiKam.
 492 ==> 424771 - Image disappears when performing wavelet smoothing in GMicQt.
 493 ==> 425359 - First face tag moves intermittently.
-494 ==> 
+494 ==> 408163 - Metadata selecting and editing fails for date updating.
 495 ==> 
 496 ==> 
 497 ==> 
