@@ -508,7 +508,7 @@ BUGFIXES:
 493 ==> 425359 - First face tag moves intermittently.
 494 ==> 408163 - Metadata selecting and editing fails for date updating.
 495 ==> 406255 - Geolocalisation is lost when photos from Google photos is imported in digiKam.
-496 ==> 
+496 ==> 400187 - Export to google photo in an existing album: bad request.
 497 ==> 
 498 ==> 
 499 ==> 
