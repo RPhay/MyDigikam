@@ -518,9 +518,19 @@ BUGFIXES:
 503 ==> 381928 - How to delete albums without question.
 504 ==> 381906 - IPTC & XMP Metadata are not stored into database as described in the digiKam Handbook.
 505 ==> 381591 - Rating a photo steals focus from image viewer & arrow keys.
-506 ==> 
+506 ==> 380968 - Separate the fields.
 507 ==> 
 508 ==> 
 509 ==> 
 510 ==> 
 511 ==> 
+512 ==> 
+513 ==> 
+514 ==> 
+515 ==> 
+516 ==> 
+517 ==> 
+518 ==> 
+519 ==> 
+520 ==> 
+521 ==> 
