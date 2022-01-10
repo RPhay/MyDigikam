@@ -516,7 +516,7 @@ BUGFIXES:
 501 ==> 376438 - Several i18n and RTL-layout issues.
 502 ==> 386684 - How to setup a collection with different hard drives.
 503 ==> 381928 - How to delete albums without question.
-504 ==> 
+504 ==> 381906 - IPTC & XMP Metadata are not stored into database as described in the digiKam Handbook.
 505 ==> 
 506 ==> 
 507 ==> 
