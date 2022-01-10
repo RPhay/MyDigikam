@@ -541,7 +541,7 @@ BUGFIXES:
 526 ==> 210912 - Opening left side bar from Light Table rescales left image but not the right one.
 527 ==> 210198 - Copyright and Right Usage information in Settings are not saved in template file.
 528 ==> 194777 - Synchronize images with database does not update all images if there are a lot of images in one album.
-529 ==> 
+529 ==> 410275 - Tag list disappear when drag and dropping tag to top of the list.
 530 ==> 
 531 ==> 
 532 ==> 
