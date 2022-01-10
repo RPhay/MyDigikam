@@ -528,7 +528,7 @@ BUGFIXES:
 513 ==> 375883 - Continuous processing after the progress bar finishes.
 514 ==> 374476 - Exporting to Google Photos changes File modified timestamp.
 515 ==> 362132 - Cannot connect to smb shared collection.
-516 ==> 
+516 ==> 361137 - Inconsistent timestamp display for MP4 video files in Album View after adjusting date/time.
 517 ==> 
 518 ==> 
 519 ==> 
