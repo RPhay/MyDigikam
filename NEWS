@@ -539,7 +539,7 @@ BUGFIXES:
 524 ==> 381319 - Keyboard modifier not caught when using Wacom Tablet [patch].
 525 ==> 230553 - Keys {unique} and [cam] produce strange results on importing from a flash memory card.
 526 ==> 210912 - Opening left side bar from Light Table rescales left image but not the right one.
-527 ==> 
+527 ==> 210198 - Copyright and Right Usage information in Settings are not saved in template file.
 528 ==> 
 529 ==> 
 530 ==> 
