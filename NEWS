@@ -523,7 +523,7 @@ BUGFIXES:
 508 ==> 378115 - Upgrades lose custom toolbars.
 509 ==> 377890 - DBThumbnailsVersion does not exist error.
 510 ==> 376091 - Image Editor: how to place a signature at right bottom corner?
-511 ==> 
+511 ==> 376072 - Cursor icon is hand most of the time even if the map is not in panning mode.
 512 ==> 
 513 ==> 
 514 ==> 
