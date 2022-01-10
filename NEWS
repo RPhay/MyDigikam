@@ -513,7 +513,7 @@ BUGFIXES:
 498 ==> 398126 - Group feature works across albums (undesired behaviour?)
 499 ==> 397901 - Work-around for maximum number of images in an album.
 500 ==> 389686 - People tag with frame get multiplied when image is resized.
-501 ==> 
+501 ==> 376438 - Several i18n and RTL-layout issues.
 502 ==> 
 503 ==> 
 504 ==> 
