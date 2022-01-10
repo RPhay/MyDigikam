@@ -509,7 +509,7 @@ BUGFIXES:
 494 ==> 408163 - Metadata selecting and editing fails for date updating.
 495 ==> 406255 - Geolocalisation is lost when photos from Google photos is imported in digiKam.
 496 ==> 400187 - Export to google photo in an existing album: bad request.
-497 ==> 
+497 ==> 398885 - Collections on removable media does not work.
 498 ==> 
 499 ==> 
 500 ==> 
