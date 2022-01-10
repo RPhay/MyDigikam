@@ -53,6 +53,8 @@ DToolTipStyleSheet::DToolTipStyleSheet(const QFont& font)
     : maxStringLength(30),
       unavailable    (i18n("unavailable"))
 {
+    // Note: rich-text doc https://doc.qt.io/qt-5/richtext-html-subset.html
+
     QString fontSize = (font.pointSize() == -1) ? QString::fromUtf8("font-size: %1px;").arg(font.pixelSize())
                                                 : QString::fromUtf8("font-size: %1pt;").arg(font.pointSize());
 
