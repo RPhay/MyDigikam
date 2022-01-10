@@ -514,7 +514,7 @@ BUGFIXES:
 499 ==> 397901 - Work-around for maximum number of images in an album.
 500 ==> 389686 - People tag with frame get multiplied when image is resized.
 501 ==> 376438 - Several i18n and RTL-layout issues.
-502 ==> 
+502 ==> 386684 - How to setup a collection with different hard drives.
 503 ==> 
 504 ==> 
 505 ==> 
