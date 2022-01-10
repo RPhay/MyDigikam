@@ -507,10 +507,20 @@ BUGFIXES:
 492 ==> 424771 - Image disappears when performing wavelet smoothing in GMicQt.
 493 ==> 425359 - First face tag moves intermittently.
 494 ==> 408163 - Metadata selecting and editing fails for date updating.
-495 ==> 
+495 ==> 406255 - Geolocalisation is lost when photos from Google photos is imported in digiKam.
 496 ==> 
 497 ==> 
 498 ==> 
 499 ==> 
 500 ==> 
 501 ==> 
+502 ==> 
+503 ==> 
+504 ==> 
+505 ==> 
+506 ==> 
+507 ==> 
+508 ==> 
+509 ==> 
+510 ==> 
+511 ==> 
