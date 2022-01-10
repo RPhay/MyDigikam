@@ -532,7 +532,7 @@ BUGFIXES:
 517 ==> 342109 - Import folders will not select folders--only individual images.
 518 ==> 325447 - digiKam doesn't copy pictures to Samba share mounted with autofs.
 519 ==> 278331 - SETUP : digiKam does not access files on NAS.
-520 ==> 
+520 ==> 243205 - SETUP : adding NFS4 network location to local library sees only some dirs.
 521 ==> 
 522 ==> 
 523 ==> 
