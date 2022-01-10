@@ -517,7 +517,7 @@ BUGFIXES:
 502 ==> 386684 - How to setup a collection with different hard drives.
 503 ==> 381928 - How to delete albums without question.
 504 ==> 381906 - IPTC & XMP Metadata are not stored into database as described in the digiKam Handbook.
-505 ==> 
+505 ==> 381591 - Rating a photo steals focus from image viewer & arrow keys.
 506 ==> 
 507 ==> 
 508 ==> 
