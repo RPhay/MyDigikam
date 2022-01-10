@@ -529,8 +529,28 @@ BUGFIXES:
 514 ==> 374476 - Exporting to Google Photos changes File modified timestamp.
 515 ==> 362132 - Cannot connect to smb shared collection.
 516 ==> 361137 - Inconsistent timestamp display for MP4 video files in Album View after adjusting date/time.
-517 ==> 
+517 ==> 342109 - Import folders will not select folders--only individual images.
 518 ==> 
 519 ==> 
 520 ==> 
 521 ==> 
+522 ==> 
+523 ==> 
+524 ==> 
+525 ==> 
+526 ==> 
+527 ==> 
+528 ==> 
+529 ==> 
+530 ==> 
+531 ==> 
+532 ==> 
+533 ==> 
+534 ==> 
+535 ==> 
+536 ==> 
+537 ==> 
+539 ==> 
+539 ==> 
+540 ==> 
+541 ==> 
