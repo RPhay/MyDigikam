@@ -46,6 +46,7 @@
 #include <QIcon>
 #include <QLocale>
 #include <QScopedPointer>
+#include <QStackedWidget>
 
 // KDE includes
 
@@ -79,6 +80,7 @@ public:
         latLabel                    (nullptr),
         lonLabel                    (nullptr),
         dateLabel                   (nullptr),
+        mapView                     (nullptr),
         detailsBtn                  (nullptr),
         detailsCombo                (nullptr),
         altitude                    (nullptr),
@@ -99,6 +101,7 @@ public:
     QLabel*                    lonLabel;
     QLabel*                    dateLabel;
 
+    QStackedWidget*            mapView;
     QToolButton*               detailsBtn;
     QComboBox*                 detailsCombo;
 
@@ -125,24 +128,32 @@ ItemPropertiesGPSTab::ItemPropertiesGPSTab(QWidget* const parent)
 
     // --------------------------------------------------------
 
-    QFrame* const mapPanel   = new QFrame(this);
-    mapPanel->setMinimumWidth(200);
-    mapPanel->setMinimumHeight(200);
-    mapPanel->setFrameStyle(QFrame::StyledPanel | QFrame::Sunken);
-    mapPanel->setLineWidth(style()->pixelMetric(QStyle::PM_DefaultFrameWidth));
+    d->mapView                = new QStackedWidget(this);
+    d->mapView->setMinimumWidth(200);
+    d->mapView->setMinimumHeight(200);
+    d->mapView->setFrameStyle(QFrame::StyledPanel | QFrame::Sunken);
+    d->mapView->setLineWidth(style()->pixelMetric(QStyle::PM_DefaultFrameWidth));
 
-    QVBoxLayout* const vlay2 = new QVBoxLayout(mapPanel);
-    d->map                   = new MapWidget(mapPanel);
+    QWidget* const mapPanel   = new QWidget(this);
+    QVBoxLayout* const vlay2  = new QVBoxLayout(mapPanel);
+    d->map                    = new MapWidget(mapPanel);
     d->map->setAvailableMouseModes(MouseModePan | MouseModeZoomIntoGroup);
     d->map->setVisibleMouseModes(MouseModePan | MouseModeZoomIntoGroup);
     d->map->setEnabledExtraActions(ExtraActionSticky);
     d->map->setVisibleExtraActions(ExtraActionSticky);
     d->map->setBackend(QLatin1String("marble"));
-    d->gpsItemInfoSorter     = new GPSItemInfoSorter(this);
+    d->gpsItemInfoSorter      = new GPSItemInfoSorter(this);
     d->gpsItemInfoSorter->addToMapWidget(d->map);
     vlay2->addWidget(d->map);
     vlay2->setContentsMargins(QMargins());
     vlay2->setSpacing(0);
+
+    d->mapView->insertWidget(0, mapPanel);
+
+    QLabel* const noGPSInfo   = new QLabel(i18n("No Geolocation\nInformation\nAvailable"));
+    noGPSInfo->setAlignment(Qt::AlignCenter);
+    noGPSInfo->setWordWrap(true);
+    d->mapView->insertWidget(1, noGPSInfo);
 
     // --------------------------------------------------------
 
@@ -186,7 +197,7 @@ ItemPropertiesGPSTab::ItemPropertiesGPSTab(QWidget* const parent)
 
     // --------------------------------------------------------
 
-    layout->addWidget(mapPanel,                   0, 0, 1, 2);
+    layout->addWidget(d->mapView,                 0, 0, 1, 2);
     layout->addWidget(d->altLabel,                1, 0, 1, 1);
     layout->addWidget(d->altitude,                1, 1, 1, 1);
     layout->addWidget(d->latLabel,                2, 0, 1, 1);
@@ -373,13 +384,14 @@ void ItemPropertiesGPSTab::clearGPSInfo()
     d->longitude->setAdjustedText();
     d->date->setAdjustedText();
     d->itemModel->clear();
-    d->map->setCenter(GeoCoordinates(0.0, 0.0));
+    d->mapView->setCurrentIndex(1);
     setEnabled(false);
 }
 
 void ItemPropertiesGPSTab::setGPSInfoList(const GPSItemInfo::List& list)
 {
     // Clear info label
+
     d->altitude->setAdjustedText();
     d->latitude->setAdjustedText();
     d->longitude->setAdjustedText();
@@ -388,12 +400,14 @@ void ItemPropertiesGPSTab::setGPSInfoList(const GPSItemInfo::List& list)
     d->itemModel->clear();
     d->gpsInfoList = list;
 
-    setEnabled(!list.isEmpty());
-
     if (list.isEmpty())
     {
+        clearGPSInfo();
         return;
     }
+
+    d->mapView->setCurrentIndex(0);
+    setEnabled(true);
 
     if (list.count() == 1)
     {
