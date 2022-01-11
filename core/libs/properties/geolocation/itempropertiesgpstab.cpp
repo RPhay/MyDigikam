@@ -373,6 +373,7 @@ void ItemPropertiesGPSTab::clearGPSInfo()
     d->longitude->setAdjustedText();
     d->date->setAdjustedText();
     d->itemModel->clear();
+    d->map->setCenter(GeoCoordinates(0.0, 0.0));
     setEnabled(false);
 }
 

@@ -41,7 +41,7 @@ class TrashView : public QWidget
 public:
 
     explicit TrashView(QWidget* const parent = nullptr);
-    ~TrashView() override;
+    ~TrashView()                              override;
 
     /**
      * @return model used for the view

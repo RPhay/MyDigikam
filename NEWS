@@ -515,12 +515,42 @@ BUGFIXES:
 500 ==> 389686 - People tag with frame get multiplied when image is resized.
 501 ==> 376438 - Several i18n and RTL-layout issues.
 502 ==> 386684 - How to setup a collection with different hard drives.
-503 ==> 
-504 ==> 
-505 ==> 
-506 ==> 
-507 ==> 
-508 ==> 
-509 ==> 
-510 ==> 
-511 ==> 
+503 ==> 381928 - How to delete albums without question.
+504 ==> 381906 - IPTC & XMP Metadata are not stored into database as described in the digiKam Handbook.
+505 ==> 381591 - Rating a photo steals focus from image viewer & arrow keys.
+506 ==> 380968 - Separate the fields.
+507 ==> 378601 - Window opens in full screen.
+508 ==> 378115 - Upgrades lose custom toolbars.
+509 ==> 377890 - DBThumbnailsVersion does not exist error.
+510 ==> 376091 - Image Editor: how to place a signature at right bottom corner?
+511 ==> 376072 - Cursor icon is hand most of the time even if the map is not in panning mode.
+512 ==> 375886 - Search albums, include sub-tree shows all photos.
+513 ==> 375883 - Continuous processing after the progress bar finishes.
+514 ==> 374476 - Exporting to Google Photos changes File modified timestamp.
+515 ==> 362132 - Cannot connect to smb shared collection.
+516 ==> 361137 - Inconsistent timestamp display for MP4 video files in Album View after adjusting date/time.
+517 ==> 342109 - Import folders will not select folders--only individual images.
+518 ==> 325447 - digiKam doesn't copy pictures to Samba share mounted with autofs.
+519 ==> 278331 - SETUP : digiKam does not access files on NAS.
+520 ==> 243205 - SETUP : adding NFS4 network location to local library sees only some dirs.
+521 ==> 232391 - PRINT : scaling images is broken.
+522 ==> 234078 - Geolocation tab from right sidebar : hide MapView for image without coordinates.
+523 ==> 416214 - When entering a name in an unconfirmed face, sometimes the keypress acts as a shortcut and jumps to another picture.
+524 ==> 381319 - Keyboard modifier not caught when using Wacom Tablet [patch].
+525 ==> 230553 - Keys {unique} and [cam] produce strange results on importing from a flash memory card.
+526 ==> 210912 - Opening left side bar from Light Table rescales left image but not the right one.
+527 ==> 210198 - Copyright and Right Usage information in Settings are not saved in template file.
+528 ==> 194777 - Synchronize images with database does not update all images if there are a lot of images in one album.
+529 ==> 410275 - Tag list disappear when drag and dropping tag to top of the list.
+530 ==> 226023 - Support additional file formats (pdf, svg ...).
+531 ==> 417574 - Cannot label face when selecting multiple faces (input field does not appear).
+532 ==> 272810 - Opengl Image viewer hangs.
+533 ==> 
+534 ==> 
+535 ==> 
+536 ==> 
+537 ==> 
+539 ==> 
+539 ==> 
+540 ==> 
+541 ==> 

@@ -42,6 +42,16 @@ class DTrashItemModel : public QAbstractTableModel
 
 public:
 
+    enum DTrashColumn
+    {
+        DTrashThumb      = 0,
+        DTrashRelPath,
+        DTrashTimeStamp,
+        DTrashNumCol
+    };
+
+public:
+
     explicit DTrashItemModel(QObject* const parent = nullptr);
     ~DTrashItemModel() override;
 
