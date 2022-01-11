@@ -120,7 +120,7 @@ echo -e "\n---------- Qt config"
 cp    $BUILDDIR/data/qt.conf                                            $BUNDLEDIR/                 2>/dev/null
 
 echo -e "\n---------- icons-set"
-cp    $BUILDDIR/icon-rcc/breeze-icons.rcc                               $BUNDLEDIR/brezze.rcc       2>/dev/null
+cp    $BUILDDIR/icon-rcc/breeze-icons.rcc                               $BUNDLEDIR/breeze.rcc       2>/dev/null
 cp    $BUILDDIR/icon-rcc/breeze-icons-dark.rcc                          $BUNDLEDIR/breeze-dark.rcc  2>/dev/null
 
 echo -e "\n---------- i18n"
