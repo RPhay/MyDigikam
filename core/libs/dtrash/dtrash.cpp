@@ -190,6 +190,7 @@ bool DTrash::prepareCollectionTrash(const QString& collectionPath)
         if (!isCreated)
         {
             qCDebug(DIGIKAM_IOJOB_LOG) << "DTrash: could not create trash folder for collection";
+
             return false;
         }
     }

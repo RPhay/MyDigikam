@@ -53,7 +53,7 @@ public:
 
     explicit Private()
       : thumbSize         (ThumbnailSize::Large),
-        sortColumn        (2),
+        sortColumn        (DTrashTimeStamp),
         sortOrder         (Qt::DescendingOrder),
         itemsLoadingThread(nullptr),
         thumbnailThread   (nullptr)
@@ -77,7 +77,7 @@ public:
 
 DTrashItemModel::DTrashItemModel(QObject* const parent)
     : QAbstractTableModel(parent),
-      d(new Private)
+      d                  (new Private)
 {
     qRegisterMetaType<DTrashItemInfo>("DTrashItemInfo");
     d->thumbnailThread = new ThumbnailLoadThread;
@@ -100,7 +100,7 @@ int DTrashItemModel::rowCount(const QModelIndex&) const
 
 int DTrashItemModel::columnCount(const QModelIndex&) const
 {
-    return 3;
+    return DTrashNumCol;
 }
 
 QVariant DTrashItemModel::data(const QModelIndex& index, int role) const
@@ -122,7 +122,7 @@ QVariant DTrashItemModel::data(const QModelIndex& index, int role) const
         return Qt::AlignCenter;
     }
 
-    if ((role == Qt::DecorationRole) && (index.column() == 0))
+    if ((role == Qt::DecorationRole) && (index.column() == DTrashThumb))
     {
         QPixmap pix;
         QString thumbPath;
@@ -155,19 +155,19 @@ QVariant DTrashItemModel::data(const QModelIndex& index, int role) const
         return QVariant(QVariant::Pixmap);
     }
 
-    if ((role == Qt::ToolTipRole) && (index.column() == 1))
+    if ((role == Qt::ToolTipRole) && (index.column() == DTrashRelPath))
     {
         return item.collectionRelativePath;
     }
 
     switch (index.column())
     {
-        case 1:
+        case DTrashRelPath:
         {
             return item.collectionRelativePath;
         }
 
-        case 2:
+        case DTrashTimeStamp:
         {
             QString dateTimeFormat = QLocale().dateTimeFormat();
 
@@ -200,7 +200,7 @@ void DTrashItemModel::sort(int column, Qt::SortOrder order)
     std::sort(d->data.begin(), d->data.end(),
         [column, order](const DTrashItemInfo& a, const DTrashItemInfo& b)
         {
-            if ((column == 2) && (a.deletionTimestamp != b.deletionTimestamp))
+            if ((column == DTrashTimeStamp) && (a.deletionTimestamp != b.deletionTimestamp))
             {
                 if (order == Qt::DescendingOrder)
                 {
@@ -222,8 +222,8 @@ void DTrashItemModel::sort(int column, Qt::SortOrder order)
     );
 
     const QModelIndex topLeft     = index(0, 0);
-    const QModelIndex bottomRight = index(rowCount(QModelIndex())-1,
-                                          columnCount(QModelIndex())-1);
+    const QModelIndex bottomRight = index(rowCount(QModelIndex())    - 1,
+                                          columnCount(QModelIndex()) - 1);
 
     emit dataChanged(topLeft, bottomRight);
 }
@@ -253,17 +253,25 @@ QVariant DTrashItemModel::headerData(int section, Qt::Orientation orientation, i
 
     switch (section)
     {
-        case 0:
+        case DTrashThumb:
+        {
             return i18n("Thumbnail");
+        }
 
-        case 1:
+        case DTrashRelPath:
+        {
             return i18n("Relative Path");
+        }
 
-        case 2:
+        case DTrashTimeStamp:
+        {
             return i18n("Deletion Time");
+        }
 
         default:
+        {
             return QVariant();
+        }
     }
 }
 
@@ -279,6 +287,7 @@ void DTrashItemModel::append(const DTrashItemInfo& itemInfo)
     endInsertRows();
 
     sort(d->sortColumn, d->sortOrder);
+
     emit dataChange();
 }
 
@@ -318,7 +327,7 @@ void DTrashItemModel::removeItems(const QModelIndexList& indexes)
 void DTrashItemModel::refreshLayout()
 {
     const QModelIndex topLeft     = index(0, 0);
-    const QModelIndex bottomRight = index(rowCount(QModelIndex())-1, 0);
+    const QModelIndex bottomRight = index(rowCount(QModelIndex()) - 1, 0);
 
     emit dataChanged(topLeft, bottomRight);
     emit layoutAboutToBeChanged();
@@ -342,7 +351,7 @@ void DTrashItemModel::refreshThumbnails(const LoadingDescription& desc, const QP
     }
 
     const QModelIndex topLeft     = index(0, 0);
-    const QModelIndex bottomRight = index(rowCount(QModelIndex())-1, 0);
+    const QModelIndex bottomRight = index(rowCount(QModelIndex()) - 1, 0);
 
     emit dataChanged(topLeft, bottomRight);
 }
