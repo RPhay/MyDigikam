@@ -157,14 +157,14 @@ QVariant DTrashItemModel::data(const QModelIndex& index, int role) const
 
     if ((role == Qt::ToolTipRole) && (index.column() == DTrashRelPath))
     {
-        return item.collectionRelativePath;
+        return (item.collectionRelativePath);
     }
 
     switch (index.column())
     {
         case DTrashRelPath:
         {
-            return item.collectionRelativePath;
+            return (item.collectionRelativePath);
         }
 
         case DTrashTimeStamp:
@@ -177,7 +177,7 @@ QVariant DTrashItemModel::data(const QModelIndex& index, int role) const
                                        QLatin1String("yyyy"));
             }
 
-            return item.deletionTimestamp.toString(dateTimeFormat);
+            return (item.deletionTimestamp.toString(dateTimeFormat));
         }
 
         default:

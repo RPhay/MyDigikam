@@ -158,6 +158,10 @@ void DTrash::extractJsonForItem(const QString& collPath, const QString& baseName
 
     if (!itemInfo.deletionTimestamp.isValid())
     {
+        // Failback to date encoded as string using locale.
+        // This is an older way to store date in JSOn, which do not support change in locale.
+        // This is wy ISO format is now used.
+
         itemInfo.deletionTimestamp  = QDateTime::fromString(
                                       fileInfoObj.value(DELETIONTIMESTAMP_JSON_KEY).toString());
     }
