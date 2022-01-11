@@ -543,7 +543,7 @@ BUGFIXES:
 528 ==> 194777 - Synchronize images with database does not update all images if there are a lot of images in one album.
 529 ==> 410275 - Tag list disappear when drag and dropping tag to top of the list.
 530 ==> 226023 - Support additional file formats (pdf, svg ...).
-531 ==> 
+531 ==> 417574 - Cannot label face when selecting multiple faces (input field does not appear).
 532 ==> 
 533 ==> 
 534 ==> 
