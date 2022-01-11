@@ -544,7 +544,7 @@ BUGFIXES:
 529 ==> 410275 - Tag list disappear when drag and dropping tag to top of the list.
 530 ==> 226023 - Support additional file formats (pdf, svg ...).
 531 ==> 417574 - Cannot label face when selecting multiple faces (input field does not appear).
-532 ==> 
+532 ==> 272810 - Opengl Image viewer hangs.
 533 ==> 
 534 ==> 
 535 ==> 
