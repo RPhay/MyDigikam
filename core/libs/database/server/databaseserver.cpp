@@ -462,9 +462,10 @@ bool DatabaseServer::checkAndRemoveMysqlLogs() const
 
         if (logFile.open(QFile::ReadOnly) && oldLogFile.open(QFile::Append))
         {
-            QByteArray run("run mysql_upgrade");
+            QByteArray runMaria("run mariadb-upgrade");
+            QByteArray runMysql("run mysql_upgrade");
             QByteArray ba = logFile.readAll();
-            needUpgrade   = ba.contains(run);
+            needUpgrade   = (ba.contains(runMaria) || ba.contains(runMysql));
 
             oldLogFile.write(ba);
             oldLogFile.close();
