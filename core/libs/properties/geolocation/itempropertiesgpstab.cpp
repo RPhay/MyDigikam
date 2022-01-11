@@ -129,8 +129,8 @@ ItemPropertiesGPSTab::ItemPropertiesGPSTab(QWidget* const parent)
     // --------------------------------------------------------
 
     d->mapView                = new QStackedWidget(this);
-    d->mapView->setMinimumWidth(200);
-    d->mapView->setMinimumHeight(200);
+    d->mapView->setMinimumWidth(100);
+    d->mapView->setMinimumHeight(100);
     d->mapView->setFrameStyle(QFrame::StyledPanel | QFrame::Sunken);
     d->mapView->setLineWidth(style()->pixelMetric(QStyle::PM_DefaultFrameWidth));
 
