@@ -110,32 +110,32 @@ rm -fr ./usr/plugins/konsolepart.so
 
 echo -e "------------- Copy runtime data files\n"
 
-cp -r /usr/share/digikam                  ./usr/share
-cp -r /usr/share/showfoto                 ./usr/share
-cp $ORIG_WD/icon-rcc/breeze.rcc           ./usr/share/digikam
-cp $ORIG_WD/icon-rcc/breeze-dark.rcc      ./usr/share/digikam
+cp -r /usr/share/digikam                    ./usr/share
+cp -r /usr/share/showfoto                   ./usr/share
+cp $ORIG_WD/icon-rcc/breeze-icons.rcc       ./usr/share/digikam/breeze.rcc
+cp $ORIG_WD/icon-rcc/breeze-icons-dark.rcc  ./usr/share/digikam/breeze-dark.rcc
 
 cd $APP_IMG_DIR/usr/share/showfoto
-ln -s ../digikam/breeze.rcc               breeze.rcc
-ln -s ../digikam/breeze-dark.rcc          breeze-dark.rcc
+ln -s ../digikam/breeze.rcc                 breeze.rcc
+ln -s ../digikam/breeze-dark.rcc            breeze-dark.rcc
 
 cd $APP_IMG_DIR
-cp $ORIG_WD/data/qt.conf                  ./usr/bin
-cp -r /usr/share/lensfun                  ./usr/share
-cp -r /usr/share/knotifications5          ./usr/share
-cp -r /usr/share/kservices5               ./usr/share
-cp -r /usr/share/kservicetypes5           ./usr/share
-cp -r /usr/share/kxmlgui5                 ./usr/share
-cp -r /usr/share/kf5                      ./usr/share
-cp -r /usr/share/solid                    ./usr/share
+cp $ORIG_WD/data/qt.conf                    ./usr/bin
+cp -r /usr/share/lensfun                    ./usr/share
+cp -r /usr/share/knotifications5            ./usr/share
+cp -r /usr/share/kservices5                 ./usr/share
+cp -r /usr/share/kservicetypes5             ./usr/share
+cp -r /usr/share/kxmlgui5                   ./usr/share
+cp -r /usr/share/kf5                        ./usr/share
+cp -r /usr/share/solid                      ./usr/share
 
 # depending of OpenCV version installed, data directory is not the same.
-cp -r /usr/share/OpenCV                   ./usr/share  || true
-cp -r /usr/share/opencv4                  ./usr/share  || true
+cp -r /usr/share/OpenCV                     ./usr/share  || true
+cp -r /usr/share/opencv4                    ./usr/share  || true
 
-cp -r /usr/share/dbus-1/interfaces/kf5*   ./usr/share/dbus-1/interfaces/
-cp -r /usr/share/dbus-1/services/*kde*    ./usr/share/dbus-1/services/
-cp -r /usr/${LIBSUFFIX}/libexec/kf5       ./usr/lib/libexec/
+cp -r /usr/share/dbus-1/interfaces/kf5*     ./usr/share/dbus-1/interfaces/
+cp -r /usr/share/dbus-1/services/*kde*      ./usr/share/dbus-1/services/
+cp -r /usr/${LIBSUFFIX}/libexec/kf5         ./usr/lib/libexec/
 
 echo -e "------------- Copy AppImage stream data file\n"
 
