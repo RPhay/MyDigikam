@@ -425,8 +425,8 @@ chmod 755 "$PROJECTDIR/postinstall"
 #################################################################################################
 # Copy icons-set resource files.
 
-cp $ORIG_WD/icon-rcc/breeze.rcc      $TEMPROOT/digikam.app/Contents/Resources/
-cp $ORIG_WD/icon-rcc/breeze-dark.rcc $TEMPROOT/digikam.app/Contents/Resources/
+cp $ORIG_WD/icon-rcc/breeze-icons.rcc      $TEMPROOT/digikam.app/Contents/Resources/breeze.rcc
+cp $ORIG_WD/icon-rcc/breeze-icons-dark.rcc $TEMPROOT/digikam.app/Contents/Resources/breeze-dark.rcc
 
 #################################################################################################
 # Cleanup symbols in binary files to free space.
