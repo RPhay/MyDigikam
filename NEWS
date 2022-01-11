@@ -545,12 +545,46 @@ BUGFIXES:
 530 ==> 226023 - Support additional file formats (pdf, svg ...).
 531 ==> 417574 - Cannot label face when selecting multiple faces (input field does not appear).
 532 ==> 272810 - Opengl Image viewer hangs.
-533 ==> 
-534 ==> 
-535 ==> 
-536 ==> 
-537 ==> 
-539 ==> 
-539 ==> 
-540 ==> 
-541 ==> 
+533 ==> 382455 - No menu items on Ubuntu 17.04 (Unity).
+534 ==> 366122 - Next button not activatable via Alt+N in widget.
+535 ==> 294188 - Improve keyboard shortcuts !
+536 ==> 274248 - Need shortcut for exif orientation.
+537 ==> 325786 - Small icons in the menu are incomplete.
+539 ==> 348197 - Headline in Image Editor is NOT Helpful.
+539 ==> 281690 - Ability to drag&drop images from digiKam to chrome
+540 ==> 251263 - IRC hyperlink wanted.
+541 ==> 337449 - Detach panel from main window for better multi-screen experience.
+542 ==> 337148 - Menu background colors.
+543 ==> 290933 - "about" window.
+544 ==> 225785 - Proposed Digikam Menu Changes.
+545 ==> 308878 - Better handling of window screen resolution for small display like netbook.
+546 ==> 224289 - Drag Picture digiKam pic.
+547 ==> 279457 - Shortcut conflict SHIFT + DEL.
+548 ==> 252671 - Navigation and actions dock bar [patch].
+549 ==> 273124 - digiKam icon does not scale on Ubuntu (Unity).
+550 ==> 323499 - If digiKam is in Full Screen Mode, maximized Image Editor does not cover panel areas.
+551 ==> 241729 - Provide way to fade out UI for judging image with less distracting surroundings.
+552 ==> 262702 - digiKam Causes User to Suddenly Log out in Settings Configure digikam when you choose Colours and move the Side Bar.
+553 ==> 264879 - Working with pics (f4), automatical sizing to windows doesn´t work (Strg-Alt-S).
+554 ==> 232627 - digiKam crashed while I was dragging an image to kmail across multiple desktops.
+555 ==> 225442 - Save dialog default settings as user wants.
+556 ==> 
+557 ==> 
+558 ==> 
+559 ==> 
+560 ==> 
+561 ==> 
+562 ==> 
+563 ==> 
+564 ==> 
+565 ==> 
+566 ==> 
+567 ==> 
+568 ==> 
+569 ==> 
+570 ==> 
+571 ==> 
+572 ==> 
+573 ==> 
+574 ==> 
+575 ==> 
