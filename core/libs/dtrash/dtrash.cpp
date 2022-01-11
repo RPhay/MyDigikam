@@ -154,7 +154,13 @@ void DTrash::extractJsonForItem(const QString& collPath, const QString& baseName
                                       .replace(collPath, QLatin1String(""));
 
     itemInfo.deletionTimestamp      = QDateTime::fromString(
+                                      fileInfoObj.value(DELETIONTIMESTAMP_JSON_KEY).toString(), Qt::ISODate);
+
+    if (!itemInfo.deletionTimestamp.isValid())
+    {
+        itemInfo.deletionTimestamp  = QDateTime::fromString(
                                       fileInfoObj.value(DELETIONTIMESTAMP_JSON_KEY).toString());
+    }
 
     QJsonValue imageIdValue         = fileInfoObj.value(IMAGEID_JSON_KEY);
 
@@ -201,7 +207,7 @@ QString DTrash::createJsonRecordForFile(qlonglong imageId,
     QJsonObject jsonObjForImg;
 
     QJsonValue pathJsonVal(imagePath);
-    QJsonValue timestampJsonVal(deleteTime.toString());
+    QJsonValue timestampJsonVal(deleteTime.toString(Qt::ISODate));
     QJsonValue imageIdJsonVal(QString::number(imageId));
 
     jsonObjForImg.insert(PATH_JSON_KEY, pathJsonVal);
