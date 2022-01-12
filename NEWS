@@ -596,9 +596,9 @@ BUGFIXES:
 581 ==> 162210 - GPS correlation don't get correct point.
 582 ==> 155230 - Timezones are assumed to be only in hourly increments/decrements of GMT.
 583 ==> 155401 - Geolocalization correlator dates swap.
-584 ==> 
-585 ==> 
-586 ==> 
+584 ==> 133367 - It will not delete a file from the database.
+585 ==> 139367 - digiKam quits selecting "no" when being asked to remove non existent files from database.
+586 ==> 246869 - Deleting albums, as described, is either broken or insane.
 587 ==> 
 588 ==> 
 589 ==> 
