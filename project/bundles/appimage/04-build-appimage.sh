@@ -56,23 +56,6 @@ DK_RELEASEID=`cat $ORIG_WD/data/RELEASEID.txt`
 
 #################################################################################################
 
-echo -e "---------- Build icons-set resource\n"
-
-cd $ORIG_WD/icon-rcc
-
-rm -f CMakeCache.txt > /dev/null
-rm -f *.rcc > /dev/null
-
-/opt/cmake/bin/cmake -DCMAKE_INSTALL_PREFIX="/usr" \
-      -DCMAKE_BUILD_TYPE=debug \
-      -DCMAKE_COLOR_MAKEFILE=ON \
-      -Wno-dev \
-      .
-
-make -j$CPU_CORES
-
-#################################################################################################
-
 echo -e "---------- Prepare directories in bundle\n"
 
 # Make sure we build from the /, parts of this script depends on that. We also need to run as root...
@@ -110,37 +93,37 @@ rm -fr ./usr/plugins/konsolepart.so
 
 echo -e "------------- Copy runtime data files\n"
 
-cp -r /usr/share/digikam                    ./usr/share
-cp -r /usr/share/showfoto                   ./usr/share
-cp $ORIG_WD/icon-rcc/breeze-icons.rcc       ./usr/share/digikam/breeze.rcc
-cp $ORIG_WD/icon-rcc/breeze-icons-dark.rcc  ./usr/share/digikam/breeze-dark.rcc
+cp -r /usr/share/digikam                                  ./usr/share
+cp -r /usr/share/showfoto                                 ./usr/share
+cp    /usr/share/icons/breeze/breeze-icons.rcc            ./usr/share/digikam/breeze.rcc
+cp    /usr/share/icons/breeze-dark/breeze-icons-dark.rcc  ./usr/share/digikam/breeze-dark.rcc
 
 cd $APP_IMG_DIR/usr/share/showfoto
-ln -s ../digikam/breeze.rcc                 breeze.rcc
-ln -s ../digikam/breeze-dark.rcc            breeze-dark.rcc
+ln -s ../digikam/breeze.rcc                               breeze.rcc
+ln -s ../digikam/breeze-dark.rcc                          breeze-dark.rcc
 
 cd $APP_IMG_DIR
-cp $ORIG_WD/data/qt.conf                    ./usr/bin
-cp -r /usr/share/lensfun                    ./usr/share
-cp -r /usr/share/knotifications5            ./usr/share
-cp -r /usr/share/kservices5                 ./usr/share
-cp -r /usr/share/kservicetypes5             ./usr/share
-cp -r /usr/share/kxmlgui5                   ./usr/share
-cp -r /usr/share/kf5                        ./usr/share
-cp -r /usr/share/solid                      ./usr/share
+cp $ORIG_WD/data/qt.conf                                  ./usr/bin
+cp -r /usr/share/lensfun                                  ./usr/share
+cp -r /usr/share/knotifications5                          ./usr/share
+cp -r /usr/share/kservices5                               ./usr/share
+cp -r /usr/share/kservicetypes5                           ./usr/share
+cp -r /usr/share/kxmlgui5                                 ./usr/share
+cp -r /usr/share/kf5                                      ./usr/share
+cp -r /usr/share/solid                                    ./usr/share
 
 # depending of OpenCV version installed, data directory is not the same.
-cp -r /usr/share/OpenCV                     ./usr/share  || true
-cp -r /usr/share/opencv4                    ./usr/share  || true
+cp -r /usr/share/OpenCV                                   ./usr/share  || true
+cp -r /usr/share/opencv4                                  ./usr/share  || true
 
-cp -r /usr/share/dbus-1/interfaces/kf5*     ./usr/share/dbus-1/interfaces/
-cp -r /usr/share/dbus-1/services/*kde*      ./usr/share/dbus-1/services/
-cp -r /usr/${LIBSUFFIX}/libexec/kf5         ./usr/lib/libexec/
+cp -r /usr/share/dbus-1/interfaces/kf5*                   ./usr/share/dbus-1/interfaces/
+cp -r /usr/share/dbus-1/services/*kde*                    ./usr/share/dbus-1/services/
+cp -r /usr/${LIBSUFFIX}/libexec/kf5                       ./usr/lib/libexec/
 
 echo -e "------------- Copy AppImage stream data file\n"
 
-cp -r /usr/share/metainfo/org.kde.digikam.appdata.xml   ./usr/share/metainfo/digikam.appdata.xml
-cp -r /usr/share/metainfo/org.kde.showfoto.appdata.xml  ./usr/share/metainfo/showfoto.appdata.xml
+cp -r /usr/share/metainfo/org.kde.digikam.appdata.xml     ./usr/share/metainfo/digikam.appdata.xml
+cp -r /usr/share/metainfo/org.kde.showfoto.appdata.xml    ./usr/share/metainfo/showfoto.appdata.xml
 
 # NOTE: no resources data are provided with QtWebKit
 
@@ -159,14 +142,14 @@ find  /usr/${LIBSUFFIX}/libgphoto2_port -name "*.so" -type f -exec cp {} ./usr/l
 
 echo -e "------------- Copy sane backends\n"
 
-cp -r /usr/${LIBSUFFIX}/sane              ./usr/lib
-cp -r /etc/sane.d                         ./usr/etc
+cp -r /usr/${LIBSUFFIX}/sane                            ./usr/lib
+cp -r /etc/sane.d                                       ./usr/etc
 
 echo -e "------------- Copy ImageMagick codecs\n"
 
 # NOTE: even with 64 bits, magick .so files are stored in /usr/lib
 
-cp -r /usr/lib64/ImageMagick*/modules*    ./usr/lib
+cp -r /usr/lib64/ImageMagick*/modules*                  ./usr/lib
 
 echo -e "------------- Copy I18n\n"
 

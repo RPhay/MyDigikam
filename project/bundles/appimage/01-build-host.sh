@@ -118,6 +118,7 @@ urpmi --auto \
       sane-backends \
       jasper-devel \
       nodejs-devel \
+      python3-lxml \
       ${LIBSUFFIX}openssl-devel \
       ${LIBSUFFIX}nss-devel \
       ${LIBSUFFIX}xkbcommon-devel \
