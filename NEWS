@@ -569,15 +569,15 @@ BUGFIXES:
 554 ==> 232627 - digiKam crashed while I was dragging an image to kmail across multiple desktops.
 555 ==> 225442 - Save dialog default settings as user wants.
 556 ==> 434102 - Do not move files on the hard disk, just remove from album.
-557 ==> 
-558 ==> 
-559 ==> 
-560 ==> 
-561 ==> 
-562 ==> 
-563 ==> 
-564 ==> 
-565 ==> 
+557 ==> 100991 - Improper image count after delete.
+558 ==> 199619 - Deleting image and switching to next fastly seems to confuse album list.
+559 ==> 121111 - Image Delete-feature would be useful.
+560 ==> 177093 - User should not be able to delete root album.
+561 ==> 142981 - Deleting an image from album gui denied.
+562 ==> 195494 - Deleting and cancelling a picture with the keyboard still delete the picture.
+563 ==> 261634 - Test - I'll delete it again!
+564 ==> 132974 - Deleting albums does not remove them from the album tree view.
+565 ==> 179534 - Crash when deleting album.
 566 ==> 
 567 ==> 
 568 ==> 
@@ -588,3 +588,9 @@ BUGFIXES:
 573 ==> 
 574 ==> 
 575 ==> 
+576 ==> 
+577 ==> 
+578 ==> 
+579 ==> 
+580 ==> 
+581 ==> 
