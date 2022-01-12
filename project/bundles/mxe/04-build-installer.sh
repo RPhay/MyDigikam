@@ -87,7 +87,6 @@ make -j$CPU_CORES
 mv $BUILDDIR/icon-rcc/icon-rcc-prefix/src/icon-rcc-build/icons/breeze-icons.rcc           $BUILDDIR/icon-rcc/
 mv $BUILDDIR/icon-rcc/icon-rcc-prefix/src/icon-rcc-build/icons-dark/breeze-icons-dark.rcc $BUILDDIR/icon-rcc/
 
-
 #################################################################################################
 # Copy files
 
