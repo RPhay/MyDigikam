@@ -55,6 +55,12 @@ DK_URL="http://download.kde.org/stable/digikam"
 # Location to build source code.
 DK_BUILDTEMP=~/dktemp
 
+# KDE Application version.
+DK_KA_VERSION="21.12.0"
+
+# KDE KF5 frameworks version.
+DK_KF5_VERSION="5.89"
+
 # ExifTool Windows version to embed in the bundle.
 DK_EXIFTOOL_VERSION="12.38"
 

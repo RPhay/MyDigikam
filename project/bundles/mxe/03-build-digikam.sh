@@ -76,7 +76,9 @@ ${MXE_BUILD_TARGETS}-cmake $ORIG_WD/../3rdparty \
                            -DCMAKE_LIBRARY_PATH=${CMAKE_PREFIX_PATH}/lib \
                            -DZLIB_ROOT=${CMAKE_PREFIX_PATH} \
                            -DINSTALL_ROOT=${MXE_INSTALL_PREFIX} \
-                           -DEXTERNALS_DOWNLOAD_DIR=$DOWNLOAD_DIR
+                           -DEXTERNALS_DOWNLOAD_DIR=$DOWNLOAD_DIR \
+                           -DKA_VERSION=$DK_KA_VERSION \
+                           -DKF5_VERSION=$DK_KF5_VERSION
 
 
 ${MXE_BUILD_TARGETS}-cmake --build . --config RelWithDebInfo --target ext_exiv2      -- -j$CPU_CORES
@@ -194,7 +196,9 @@ ${MXE_BUILD_TARGETS}-cmake $ORIG_WD/../3rdparty \
                            -DCMAKE_LIBRARY_PATH=${CMAKE_PREFIX_PATH}/lib \
                            -DZLIB_ROOT=${CMAKE_PREFIX_PATH} \
                            -DINSTALL_ROOT=${MXE_INSTALL_PREFIX} \
-                           -DEXTERNALS_DOWNLOAD_DIR=$DOWNLOAD_DIR
+                           -DEXTERNALS_DOWNLOAD_DIR=$DOWNLOAD_DIR \
+                           -DKA_VERSION=$DK_KA_VERSION \
+                           -DKF5_VERSION=$DK_KF5_VERSION
 
 ${MXE_BUILD_TARGETS}-cmake --build . --config RelWithDebInfo --target ext_gmic_qt    -- -j$CPU_CORES
 ${MXE_BUILD_TARGETS}-cmake --build . --config RelWithDebInfo --target ext_mosaicwall -- -j$CPU_CORES

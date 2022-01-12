@@ -69,7 +69,9 @@ ${MXE_BUILD_TARGETS}-cmake $ORIG_WD/../3rdparty \
                            -DCMAKE_LIBRARY_PATH=${CMAKE_PREFIX_PATH}/lib \
                            -DZLIB_ROOT=${CMAKE_PREFIX_PATH} \
                            -DINSTALL_ROOT=${MXE_INSTALL_PREFIX} \
-                           -DEXTERNALS_DOWNLOAD_DIR=$DOWNLOAD_DIR
+                           -DEXTERNALS_DOWNLOAD_DIR=$DOWNLOAD_DIR \
+                           -DKA_VERSION=$DK_KA_VERSION \
+                           -DKF5_VERSION=$DK_KF5_VERSION
 
 # NOTE: The order to compile each component here is very important.
 
