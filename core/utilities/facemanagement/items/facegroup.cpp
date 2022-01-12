@@ -565,7 +565,7 @@ void FaceGroup::slotAddItemFinished(const QRectF& rect)
     if (d->manuallyAddedItem)
     {
         d->manuallyAddedItem->setRectInSceneCoordinatesAdjusted(rect);
-        QRect faceRect       = d->manuallyAddedItem->originalRect();
+        QRect faceRect = d->manuallyAddedItem->originalRect();
         DImg preview(d->view->previewItem()->image().copy());
 
         if (!d->exifRotate)
@@ -576,11 +576,10 @@ void FaceGroup::slotAddItemFinished(const QRectF& rect)
             preview.rotateAndFlip(d->info.orientation());
         }
 
-        TagRegion region(d->aspectRatio(faceRect, true));
-
+        TagRegion addRegion(faceRect);
         FaceTagsIface face   = d->editPipeline.addManually(d->info,
                                                            preview,
-                                                           region);
+                                                           addRegion);
         FaceItem* const item = d->addItem(face);
         d->visibilityController->setItemDirectlyVisible(item, true);
         item->switchMode(AssignNameWidget::UnconfirmedEditMode);
@@ -633,7 +632,7 @@ void FaceGroup::applyItemGeometryChanges()
                                            d->info.dimensions());
         }
 
-        TagRegion currentRegion(d->aspectRatio(faceRect, true));
+        TagRegion currentRegion(faceRect);
 
         if (item->face().region() != currentRegion)
         {

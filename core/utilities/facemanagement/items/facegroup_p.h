@@ -77,8 +77,6 @@ public:
     void                       checkModels();
     QList<QGraphicsItem*>      hotItems(const QPointF& scenePos);
 
-    QRect aspectRatio(const QRect& faceRect, bool revert) const;
-
 public:
 
     GraphicsDImgView*          view;

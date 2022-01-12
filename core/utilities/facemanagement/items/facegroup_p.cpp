@@ -103,7 +103,7 @@ FaceItem* FaceGroup::Private::createItem(const FaceTagsIface& face)
                                         info.dimensions());
     }
 
-    item->setOriginalRect(aspectRatio(faceRect, false));
+    item->setOriginalRect(faceRect);
     item->setVisible(false);
 
     return item;
@@ -203,30 +203,6 @@ AssignNameWidget* FaceGroup::Private::createAssignNameWidget(const FaceTagsIface
                q, SLOT(slotLabelClicked(ItemInfo,QVariant)));
 
     return assignWidget;
-}
-
-QRect FaceGroup::Private::aspectRatio(const QRect& faceRect, bool revert) const
-{
-    Q_UNUSED(revert);
-/*
-    QSize psize = view->previewItem()->image().size();
-    psize.scale(info.dimensions(), Qt::KeepAspectRatio);
-
-    int adjX = (info.dimensions().width()  - psize.width())  / 2;
-    int adjY = (info.dimensions().height() - psize.height()) / 2;
-
-    if (revert)
-    {
-        adjX *= -1;
-        adjY *= -1;
-    }
-
-    return QRect(faceRect.x() - adjX,
-                 faceRect.y() - adjY,
-                 faceRect.width(),
-                 faceRect.height());
-*/
-    return faceRect;
 }
 
 } // namespace Digikam
