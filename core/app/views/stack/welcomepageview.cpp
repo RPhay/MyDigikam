@@ -168,11 +168,16 @@ QStringList WelcomePageView::featuresTabContent() const
     newFeatures << i18n("Apple bundle is now relocatable and compatible with macOS BigSur.");
     newFeatures << i18n("New online version checker and downloader to automate upgrade under Windows and macOS.");
     newFeatures << i18n("Better support of astro FITS image format including metadata extraction support to populate the database.");
-    newFeatures << i18n("Use last Exiv2 0.27.4 in all bundles with Base Media File metadata read and write support (HEIF, AVIF).");
+    newFeatures << i18n("Use last Exiv2 0.27.5 in all bundles with Base Media File metadata read and write support (HEIF, AVIF).");
     newFeatures << i18n("Find duplicates items is now process in parallel using multi-cores.");
     newFeatures << i18n("New tool to export items to iNaturatist web service.");
     newFeatures << i18n("New metadata viewer based on ExifTool.");
-    newFeatures << i18n("Integration of  Google Summer of Code project 2021 "
+    newFeatures << i18n("MacOS package, Windows installer, and AppImage bundle use KF5 5.89 and KAPPS 21.12.0 frameworks.");
+    newFeatures << i18n("AppImage Linux bundle now support <a href=\"https://fcitx-im.org/wiki/Fcitx_5\">Platform Input Context FCITX</a>.");
+    newFeatures << i18n("Improve RTL translations support.");
+    newFeatures << i18n("GUI internationalisation and localisation updates with more than 50 languages available.");
+    newFeatures << i18n("Add OpenWith contextual menu support under MacOS.");
+    newFeatures << i18n("Integration of Google Summer of Code project 2021 "
                         "<a href=\"https://community.kde.org/GSoC/2021/StatusReports/PhuocKhanhLE\">Image Quality Sorter</a>.");
     newFeatures << i18n("New tool to share items on the network with a Motion JPEG stream server.");
     newFeatures << i18n("Showfoto has a new left sidebar hosting a folder-view to quickly explore images from local file system.");
