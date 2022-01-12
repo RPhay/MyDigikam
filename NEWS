@@ -611,12 +611,12 @@ BUGFIXES:
 596 ==> 171234 - Tag names imported from older digiKam are cut off in new version.
 597 ==> 276171 - Cannot migrate from mysql to mysql.
 598 ==> 358490 - Not a problem, just an information request about "uniqueHash" field from "Images" table.
-599 ==> 
-600 ==> 
-601 ==> 
-602 ==> 
-603 ==> 
-604 ==> 
+599 ==> 300021 - Picture not showing in the thumbnails after edition.
+600 ==> 151607 - WISH: Thumbs on digiKam for archived Files.
+601 ==> 215990 - Tagging files on external media using stored metadata and thumbnails.
+602 ==> 217422 - Wrong thumbnails for NEF images.
+603 ==> 262452 - Duplicate uniqueHash (image hash) in database, wrong thumb on images.
+604 ==> 269577 - THUMBDB : When an image is deleted its thumbnail is not deleted from the db.
 605 ==> 
 606 ==> 
 607 ==> 
