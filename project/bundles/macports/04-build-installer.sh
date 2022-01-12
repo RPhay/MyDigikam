@@ -53,30 +53,6 @@ export PATH=$INSTALL_PREFIX/bin:/$INSTALL_PREFIX/sbin:$ORIG_PATH
 DKRELEASEID=`cat $ORIG_WD/data/RELEASEID.txt`
 
 #################################################################################################
-# Build icons-set resource
-
-echo -e "\n---------- Build icons-set resource\n"
-
-cd $ORIG_WD/icon-rcc
-
-rm -f CMakeCache.txt > /dev/null
-rm -f *.rcc > /dev/null
-
-cp -f $ORIG_WD/../../../bootstrap.macports .
-
-cmake -DCMAKE_INSTALL_PREFIX="$INSTALL_PREFIX" \
-      -DCMAKE_BUILD_TYPE=debug \
-      -DCMAKE_COLOR_MAKEFILE=ON \
-      -Wno-dev \
-      .
-
-make -j$CPU_CORES
-
-export PATH=$ORIG_PATH
-
-cd $ORIG_WD
-
-#################################################################################################
 # Configurations
 
 # Directory where this script is located (default - current directory)
@@ -425,8 +401,8 @@ chmod 755 "$PROJECTDIR/postinstall"
 #################################################################################################
 # Copy icons-set resource files.
 
-cp $ORIG_WD/icon-rcc/breeze-icons.rcc      $TEMPROOT/digikam.app/Contents/Resources/breeze.rcc
-cp $ORIG_WD/icon-rcc/breeze-icons-dark.rcc $TEMPROOT/digikam.app/Contents/Resources/breeze-dark.rcc
+cp $INSTALL_PREFIX/share/icons/breeze/breeze-icons.rcc           $TEMPROOT/digikam.app/Contents/Resources/breeze.rcc
+cp $INSTALL_PREFIX/share/icons/breeze-dark/breeze-icons-dark.rcc $TEMPROOT/digikam.app/Contents/Resources/breeze-dark.rcc
 
 #################################################################################################
 # Cleanup symbols in binary files to free space.

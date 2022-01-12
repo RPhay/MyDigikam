@@ -596,27 +596,27 @@ BUGFIXES:
 581 ==> 162210 - GPS correlation don't get correct point.
 582 ==> 155230 - Timezones are assumed to be only in hourly increments/decrements of GMT.
 583 ==> 155401 - Geolocalization correlator dates swap.
-584 ==> 
-585 ==> 
-586 ==> 
-587 ==> 
-588 ==> 
-589 ==> 
-590 ==> 
-591 ==> 
-592 ==> 
-593 ==> 
-594 ==> 
-595 ==> 
-596 ==> 
-597 ==> 
-598 ==> 
-599 ==> 
-600 ==> 
-601 ==> 
-602 ==> 
-603 ==> 
-604 ==> 
+584 ==> 133367 - It will not delete a file from the database.
+585 ==> 139367 - digiKam quits selecting "no" when being asked to remove non existent files from database.
+586 ==> 246869 - Deleting albums, as described, is either broken or insane.
+587 ==> 143422 - Crash click image edition.
+588 ==> 124989 - Problems with ICC profile type recognition.
+589 ==> 137750 - Color mode2 nikon d70s not recognized as adobe rgb.
+590 ==> 332598 - Seems to display wrong colours on TIFF files.
+591 ==> 131949 - No gamut limits shown in proofing profile info.
+592 ==> 152528 - Nikon D80 icc profile not recognized as input profile in Showfoto.
+593 ==> 191113 - digiKam doesn't recognize images with colorspace adobergb.
+594 ==> 125735 - Can't disable individual Monitor/Workspace/Input/Proof profiles.
+595 ==> 259182 - Jpg image shows corrupt in view and edit mode.
+596 ==> 171234 - Tag names imported from older digiKam are cut off in new version.
+597 ==> 276171 - Cannot migrate from mysql to mysql.
+598 ==> 358490 - Not a problem, just an information request about "uniqueHash" field from "Images" table.
+599 ==> 300021 - Picture not showing in the thumbnails after edition.
+600 ==> 151607 - WISH: Thumbs on digiKam for archived Files.
+601 ==> 215990 - Tagging files on external media using stored metadata and thumbnails.
+602 ==> 217422 - Wrong thumbnails for NEF images.
+603 ==> 262452 - Duplicate uniqueHash (image hash) in database, wrong thumb on images.
+604 ==> 269577 - THUMBDB : When an image is deleted its thumbnail is not deleted from the db.
 605 ==> 
 606 ==> 
 607 ==> 
