@@ -618,9 +618,9 @@ BUGFIXES:
 603 ==> 262452 - Duplicate uniqueHash (image hash) in database, wrong thumb on images.
 604 ==> 269577 - THUMBDB : When an image is deleted its thumbnail is not deleted from the db.
 605 ==> 448301 - No more interface icons.
-606 ==> 
-607 ==> 
-608 ==> 
+606 ==> 143864 - Wish: Tool to remove Chromatic Aberration from photos.
+607 ==> 116152 - Add display calibration dialog/wizard.
+608 ==> 147367 - Support for color correction of Oval frame fade using unfaded outer fame color.
 609 ==> 
 610 ==> 
 611 ==> 
