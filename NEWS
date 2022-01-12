@@ -617,7 +617,7 @@ BUGFIXES:
 602 ==> 217422 - Wrong thumbnails for NEF images.
 603 ==> 262452 - Duplicate uniqueHash (image hash) in database, wrong thumb on images.
 604 ==> 269577 - THUMBDB : When an image is deleted its thumbnail is not deleted from the db.
-605 ==> 
+605 ==> 448301 - No more interface icons.
 606 ==> 
 607 ==> 
 608 ==> 
