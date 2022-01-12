@@ -608,9 +608,9 @@ BUGFIXES:
 593 ==> 191113 - digiKam doesn't recognize images with colorspace adobergb.
 594 ==> 125735 - Can't disable individual Monitor/Workspace/Input/Proof profiles.
 595 ==> 259182 - Jpg image shows corrupt in view and edit mode.
-596 ==> 
-597 ==> 
-598 ==> 
+596 ==> 171234 - Tag names imported from older digiKam are cut off in new version.
+597 ==> 276171 - Cannot migrate from mysql to mysql.
+598 ==> 358490 - Not a problem, just an information request about "uniqueHash" field from "Images" table.
 599 ==> 
 600 ==> 
 601 ==> 
