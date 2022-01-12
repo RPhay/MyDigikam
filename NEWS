@@ -568,7 +568,7 @@ BUGFIXES:
 553 ==> 264879 - Working with pics (f4), automatical sizing to windows doesn´t work (Strg-Alt-S).
 554 ==> 232627 - digiKam crashed while I was dragging an image to kmail across multiple desktops.
 555 ==> 225442 - Save dialog default settings as user wants.
-556 ==> 
+556 ==> 434102 - Do not move files on the hard disk, just remove from album.
 557 ==> 
 558 ==> 
 559 ==> 
