@@ -14,16 +14,17 @@ endif()
 
 include (ExternalProject)
 
-ExternalProject_Add(ext_opencv
+ExternalProject_Add(icon-rcc
     DOWNLOAD_DIR ${EXTERNALS_DOWNLOAD_DIR}
 
     GIT_REPOSITORY https://invent.kde.org/frameworks/breeze-icons.git
-    GIT_TAG v${KF5_VERSION}
+    GIT_TAG v${KF5_VERSION}.0
 
-    PATCH_COMMAND ${PATCH_COMMAND} -p1 -i ${CMAKE_CURRENT_SOURCE_DIR}/opencv-mmpause-linux.patch
+    PATCH_COMMAND patch -p1 -i ${CMAKE_CURRENT_SOURCE_DIR}/breeze-mxe-linux.patch
 
     CMAKE_ARGS -DBINARY_ICONS_RESOURCE=ON -DSKIP_INSTALL_ICONS=ON
 
+    BUILD_IN_SOURCE 0
     INSTALL_COMMAND ""
     UPDATE_COMMAND ""
     ALWAYS 0

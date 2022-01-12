@@ -40,7 +40,7 @@ ORIG_PATH="$PATH"
 ORIG_WD="`pwd`"
 
 export PATH=$MXE_BUILDROOT/usr/bin:$MXE_INSTALL_PREFIX/qt5/bin:$PATH
-if [ ] ; then
+
 ###############################################################################################
 # Check if a previous bundle already exist
 
@@ -139,12 +139,14 @@ make MXE_TARGETS=$MXE_BUILD_TARGETS \
      ffmpeg \
      openal \
      libical \
-     imagemagick
+     imagemagick \
+     python3-lxml \
+     lib64qt5base5-devel
 
 echo -e "\n"
 
 #     gdb \
-fi
+
 #################################################################################################
 
 echo -e "\n"

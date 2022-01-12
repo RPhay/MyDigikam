@@ -69,15 +69,24 @@ echo -e "\n---------- Build icons-set resource\n"
 cd $ORIG_WD/icon-rcc
 
 rm -f CMakeCache.txt > /dev/null
+rm -f Makefile > /dev/null
+rm -f cmake_install.cmake > /dev/null
+rm -fr CMakeFiles > /dev/null
+rm -fr icons-rcc-prefix > /dev/null
 rm -f *.rcc > /dev/null
 
-cmake -DCMAKE_INSTALL_PREFIX="$MXE_INSTALL_PREFIX" \
-      -DCMAKE_BUILD_TYPE=RelWithDebInfo \
-      -DCMAKE_COLOR_MAKEFILE=ON \
+cmake -DCMAKE_COLOR_MAKEFILE=ON \
+      -DEXTERNALS_DOWNLOAD_DIR=$DOWNLOAD_DIR \
+      -DKA_VERSION=$DK_KA_VERSION \
+      -DKF5_VERSION=$DK_KF5_VERSION \
       -Wno-dev \
       .
 
 make -j$CPU_CORES
+
+mv $BUILDDIR/icon-rcc/icon-rcc-prefix/src/icon-rcc-build/icons/breeze-icons.rcc           $BUILDDIR/icon-rcc/
+mv $BUILDDIR/icon-rcc/icon-rcc-prefix/src/icon-rcc-build/icons-dark/breeze-icons-dark.rcc $BUILDDIR/icon-rcc/
+
 
 #################################################################################################
 # Copy files
