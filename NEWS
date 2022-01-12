@@ -581,16 +581,36 @@ BUGFIXES:
 566 ==> 338647 - GROUP : assemble files by format shows two groups of RAW files instead of one.
 567 ==> 333112 - digiKam seen to invoke a reference to google?
 568 ==> 165337 - Text overlapping box on welcome page.
-569 ==> 
-570 ==> 
-571 ==> 
-572 ==> 
-573 ==> 
-574 ==> 
-575 ==> 
-576 ==> 
+569 ==> 264720 - digiKam crashed when creating a new album from 6 selected photos all in same folder.
+570 ==> 294287 - digiKam crashes when deleting non-empty folders.
+571 ==> 116344 - Disable the button "Back" after changing album library path, if not it crashes digiKam.
+572 ==> 237625 - digiKam crashed when overwriting, or saving edited photo, or deleting photo.
+573 ==> 087805 - Can't use slash in album filename.
+574 ==> 218632 - Create folder move images.
+575 ==> 091828 - digiKam crash with non-writable "album library path".
+576 ==> 119225 - digiKam was saving images then it crashed.
 577 ==> 
 578 ==> 
 579 ==> 
 580 ==> 
 581 ==> 
+582 ==> 
+583 ==> 
+584 ==> 
+585 ==> 
+586 ==> 
+587 ==> 
+588 ==> 
+589 ==> 
+590 ==> 
+591 ==> 
+592 ==> 
+593 ==> 
+594 ==> 
+595 ==> 
+596 ==> 
+597 ==> 
+598 ==> 
+599 ==> 
+600 ==> 
+601 ==> 
