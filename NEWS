@@ -579,8 +579,8 @@ BUGFIXES:
 564 ==> 132974 - Deleting albums does not remove them from the album tree view.
 565 ==> 179534 - Crash when deleting album.
 566 ==> 338647 - GROUP : assemble files by format shows two groups of RAW files instead of one.
-567 ==> 
-568 ==> 
+567 ==> 333112 - digiKam seen to invoke a reference to google?
+568 ==> 165337 - Text overlapping box on welcome page.
 569 ==> 
 570 ==> 
 571 ==> 
