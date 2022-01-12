@@ -589,13 +589,13 @@ BUGFIXES:
 574 ==> 218632 - Create folder move images.
 575 ==> 091828 - digiKam crash with non-writable "album library path".
 576 ==> 119225 - digiKam was saving images then it crashed.
-577 ==> 
-578 ==> 
-579 ==> 
-580 ==> 
-581 ==> 
-582 ==> 
-583 ==> 
+577 ==> 155560 - GPSSync - only first image of list or currently selected image gets assigned with available tracking data.
+578 ==> 193732 - Correlator seems to adjust GPX times by local time.
+579 ==> 154214 - Gpssync fails to correlate valid points.
+580 ==> 161057 - Geotagging don't work with daylight saving time.
+581 ==> 162210 - GPS correlation don't get correct point.
+582 ==> 155230 - Timezones are assumed to be only in hourly increments/decrements of GMT.
+583 ==> 155401 - Geolocalization correlator dates swap.
 584 ==> 
 585 ==> 
 586 ==> 
@@ -614,3 +614,13 @@ BUGFIXES:
 599 ==> 
 600 ==> 
 601 ==> 
+602 ==> 
+603 ==> 
+604 ==> 
+605 ==> 
+606 ==> 
+607 ==> 
+608 ==> 
+609 ==> 
+610 ==> 
+611 ==> 
