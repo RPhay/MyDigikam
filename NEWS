@@ -653,4 +653,34 @@ BUGFIXES:
 638 ==> 168012 - Thumbnails not shown in find similar items tool so they can't be used for drag and drop.
 639 ==> 181889 - Resize image tool: click and drag the size slider does not work properly.
 640 ==> 147638 - Drag drop to a Java applet doesn't seem to work.
-641 ==> 
+641 ==> 432852 - digiKam crashes when attempting to modify geolocation data.
+642 ==> 376401 - Crash with MariaDB-Database.
+643 ==> 382482 - digiKam can not connect to the database.
+644 ==> 383204 - digiKam migration crash on cancel.
+645 ==> 389355 - digiKam crash during metadata refresh if you at same time create an new album.
+646 ==> 394387 - Segment violation trying to rebuild thumbnails/digital Prints.
+647 ==> 397588 - digiKam crashes while running BatchQueueManager (again).
+648 ==> 402714 - digiKam crash using "create stacked images" several times on 25 images from the same folder.
+649 ==> 403827 - digiKam crashes merging multiple tags to new parent.
+650 ==> 406225 - digiKam exits when trying to assign tags to large selection (using sidebar).
+651 ==> 411450 - Crash on startup in Raspbian Buster.
+652 ==> 417896 - Crash while converting RAW (Canon cr2) files (V 7 Beta 2).
+653 ==> 430858 - digiKam 7.1.0 crash Assert d in similaritydbaccess.cpp line 105.
+654 ==> 445629 - Bugs under wayland with Fedora 35 Gnome.
+655 ==> 387946 - Find new items stalls at 90%.
+656 ==> 438059 - digiKam Crash exporting a photo selection or single photo to google Drive.
+657 ==> 
+658 ==> 
+659 ==> 
+660 ==> 
+661 ==> 
+662 ==> 
+663 ==> 
+664 ==> 
+665 ==> 
+666 ==> 
+667 ==> 
+668 ==> 
+669 ==> 
+670 ==> 
+671 ==> 
