@@ -516,7 +516,7 @@ void GPSCorrelatorWidget::slotAllItemsCorrelated()
 
         QMessageBox::warning(this, i18n("Correlation finished"),
                              i18np(
-                                   "One image have been correlated. Please "
+                                   "One image out of %2 images have been correlated. Please "
                                    "check the offset and gap settings if you think "
                                    "that more images should have been correlated.",
                                    "%1 out of %2 images have been correlated. Please "
