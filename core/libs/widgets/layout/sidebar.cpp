@@ -325,7 +325,7 @@ void DMultiTabBarTab::initStyleOption(QStyleOptionToolButton* opt) const
 
     if (!icon().isNull())
     {
-        opt->iconSize = iconPixmap().size();
+        opt->iconSize = iconSize();
         opt->icon     = icon();
     }
 
@@ -336,14 +336,21 @@ void DMultiTabBarTab::initStyleOption(QStyleOptionToolButton* opt) const
         opt->text = text();
     }
 
-    if (underMouse())
+    opt->state |= QStyle::State_AutoRaise;
+
+    if (!isChecked() && !isDown())
     {
-        opt->state |= QStyle::State_AutoRaise | QStyle::State_MouseOver | QStyle::State_Raised;
+        opt->state |= QStyle::State_Raised;
+    }
+
+    if (isDown())
+    {
+        opt->state |= QStyle::State_Sunken;
     }
 
     if (isChecked())
     {
-        opt->state |= QStyle::State_Sunken | QStyle::State_On;
+        opt->state |= QStyle::State_On;
     }
 
     opt->font            = font();
