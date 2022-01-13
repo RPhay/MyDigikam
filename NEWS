@@ -623,7 +623,7 @@ BUGFIXES:
 608 ==> 147367 - Support for color correction of Oval frame fade using unfaded outer fame color.
 609 ==> 448286 - Could not move image to trash.
 610 ==> 194780 - When using synchronize images with database the creator in the xmp data is added instead of replaced.
-611 ==> 
+611 ==> 381855 - Some icons are invisible with Fusion theme.
 612 ==> 
 613 ==> 
 614 ==> 
