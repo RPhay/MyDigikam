@@ -617,7 +617,7 @@ void DigikamApp::slotImageSelected(const ItemInfoList& selection, const ItemInfo
         {
             if (numImagesWithGrouped == numImagesWithoutGrouped)
             {
-                statusBarSelectionText = i18np("1 item selected (%3/%4)",
+                statusBarSelectionText = i18np("1/%2 item selected (%3/%4)",
                                                "%1/%2 items selected (%3/%4)",
                                                selection.count(),
                                                numImagesWithoutGrouped,
@@ -630,7 +630,7 @@ void DigikamApp::slotImageSelected(const ItemInfoList& selection, const ItemInfo
             {
                 if (selection.count() == selectionWithoutGrouped.count())
                 {
-                    statusBarSelectionText    = i18np("1 [%3] item selected (%4/%5)",
+                    statusBarSelectionText    = i18np("1/%2 [%3] item selected (%4/%5)",
                                                       "%1/%2 [%3] items selected (%4/%5)",
                                                       selectionWithoutGrouped.count(),
                                                       numImagesWithoutGrouped,
@@ -638,7 +638,7 @@ void DigikamApp::slotImageSelected(const ItemInfoList& selection, const ItemInfo
                                                       ItemPropertiesTab::humanReadableBytesCount(selectionFileSize),
                                                       ItemPropertiesTab::humanReadableBytesCount(listAllFileSize));
 
-                    statusBarSelectionToolTip = i18np("1 item selected. Total with grouped items: %3",
+                    statusBarSelectionToolTip = i18np("1/%2 item selected. Total with grouped items: %3",
                                                       "%1/%2 items selected. Total with grouped items: %3",
                                                       selectionWithoutGrouped.count(),
                                                       numImagesWithoutGrouped,
@@ -646,7 +646,7 @@ void DigikamApp::slotImageSelected(const ItemInfoList& selection, const ItemInfo
                 }
                 else
                 {
-                    statusBarSelectionText    = i18np("1 [%3/%4] item selected (%5/%6)",
+                    statusBarSelectionText    = i18np("1/%2 [%3/%4] item selected (%5/%6)",
                                                       "%1/%2 [%3/%4] items selected (%5/%6)",
                                                       selectionWithoutGrouped.count(),
                                                       numImagesWithoutGrouped,
@@ -655,7 +655,7 @@ void DigikamApp::slotImageSelected(const ItemInfoList& selection, const ItemInfo
                                                       ItemPropertiesTab::humanReadableBytesCount(selectionFileSize),
                                                       ItemPropertiesTab::humanReadableBytesCount(listAllFileSize));
 
-                    statusBarSelectionToolTip = i18np("1 item selected. With grouped items: %3/%4",
+                    statusBarSelectionToolTip = i18np("1/%2 item selected. With grouped items: %3/%4",
                                                       "%1/%2 items selected. With grouped items: %3/%4",
                                                       selectionWithoutGrouped.count(),
                                                       numImagesWithoutGrouped,
