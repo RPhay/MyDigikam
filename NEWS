@@ -653,4 +653,9 @@ BUGFIXES:
 638 ==> 168012 - Thumbnails not shown in find similar items tool so they can't be used for drag and drop.
 639 ==> 181889 - Resize image tool: click and drag the size slider does not work properly.
 640 ==> 147638 - Drag drop to a Java applet doesn't seem to work.
-641 ==> 
+641 ==> 432852 - digiKam crashes when attempting to modify geolocation data.
+642 ==> 
+643 ==> 
+644 ==> 
+645 ==> 
+646 ==> 
