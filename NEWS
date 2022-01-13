@@ -624,7 +624,7 @@ BUGFIXES:
 609 ==> 448286 - Could not move image to trash.
 610 ==> 194780 - When using synchronize images with database the creator in the xmp data is added instead of replaced.
 611 ==> 381855 - Some icons are invisible with Fusion theme.
-612 ==> 
+612 ==> 436259 - Most of icons disabled after theme changes - doesn't came back by changing back previous version.
 613 ==> 
 614 ==> 
 615 ==> 
