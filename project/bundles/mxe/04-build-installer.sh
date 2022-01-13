@@ -204,13 +204,16 @@ echo -e "\n---------- Strip symbols in binary files\n"
 
 if [[ $DK_DEBUG = 1 ]] ; then
 
-    find $BUNDLEDIR -name \*exe | grep -Ev '(digikam|showfoto)' | xargs ${MXE_BUILDROOT}/usr/bin/${MXE_BUILD_TARGETS}-strip -s
-    find $BUNDLEDIR -name \*dll | grep -Ev '(digikam|showfoto)' | xargs ${MXE_BUILDROOT}/usr/bin/${MXE_BUILD_TARGETS}-strip -s
+    find $BUNDLEDIR -name \*exe | grep -Ev '(digikam|showfoto)' | xargs ${MXE_BUILDROOT}/usr/bin/${MXE_BUILD_TARGETS}-strip --strip-all
+    find $BUNDLEDIR -name \*dll | grep -Ev '(digikam|showfoto)' | xargs ${MXE_BUILDROOT}/usr/bin/${MXE_BUILD_TARGETS}-strip --strip-all
+
+    find $BUNDLEDIR -name \*exe | grep -E '(digikam|showfoto)'  | xargs ${MXE_BUILDROOT}/usr/bin/${MXE_BUILD_TARGETS}-strip --only-keep-debug
+    find $BUNDLEDIR -name \*dll | grep -E '(digikam|showfoto)'  | xargs ${MXE_BUILDROOT}/usr/bin/${MXE_BUILD_TARGETS}-strip --only-keep-debug
 
 else
 
-    find $BUNDLEDIR -name \*exe | xargs ${MXE_BUILDROOT}/usr/bin/${MXE_BUILD_TARGETS}-strip -s
-    find $BUNDLEDIR -name \*dll | xargs ${MXE_BUILDROOT}/usr/bin/${MXE_BUILD_TARGETS}-strip -s
+    find $BUNDLEDIR -name \*exe | xargs ${MXE_BUILDROOT}/usr/bin/${MXE_BUILD_TARGETS}-strip --strip-all
+    find $BUNDLEDIR -name \*dll | xargs ${MXE_BUILDROOT}/usr/bin/${MXE_BUILD_TARGETS}-strip --strip-all
 
 fi
 
