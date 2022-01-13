@@ -646,11 +646,11 @@ BUGFIXES:
 631 ==> 091551 - When panning image with the mouse in fullscreen mode, do not show scroll bars.
 632 ==> 175598 - digiKam always starts in fullscreen after a crash.
 633 ==> 434152 - Widget style 'Windows' does not use native Windows buttons and widgets.
-634 ==> 
-635 ==> 
-636 ==> 
-637 ==> 
-638 ==> 
-639 ==> 
-640 ==> 
+634 ==> 089007 - Remove the pop-up menu when dragging tags to images and vice-versa.
+635 ==> 098026 - Cannot set album thumbnail by drag'n'drop.
+636 ==> 131447 - Problem dragging folders from digikam to other places, like the desktop.
+637 ==> 166439 - Drag and drop on lighttable does not work.
+638 ==> 168012 - Thumbnails not shown in find similar items tool so they can't be used for drag and drop.
+639 ==> 181889 - Resize image tool: click and drag the size slider does not work properly.
+640 ==> 147638 - Drag drop to a Java applet doesn't seem to work.
 641 ==> 
