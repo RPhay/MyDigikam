@@ -638,7 +638,7 @@ BUGFIXES:
 623 ==> 138703 - digiKam editor window should should support mouse wheel for image change.
 624 ==> 103311 - Mouse wheel support for viewing images.
 625 ==> 173533 - Crash when deselecting a single photo with Ctrl+left mouse click.
-626 ==> 
+626 ==> 387325 - Add option to quickly view photo in full screen.
 627 ==> 
 628 ==> 
 629 ==> 
