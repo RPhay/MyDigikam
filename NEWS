@@ -667,7 +667,7 @@ BUGFIXES:
 652 ==> 417896 - Crash while converting RAW (Canon cr2) files (V 7 Beta 2).
 653 ==> 430858 - digiKam 7.1.0 crash Assert d in similaritydbaccess.cpp line 105.
 654 ==> 445629 - Bugs under wayland with Fedora 35 Gnome.
-655 ==> 
+655 ==> 387946 - Find new items stalls at 90%.
 656 ==> 
 657 ==> 
 658 ==> 
