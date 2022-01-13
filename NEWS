@@ -669,7 +669,7 @@ BUGFIXES:
 654 ==> 445629 - Bugs under wayland with Fedora 35 Gnome.
 655 ==> 387946 - Find new items stalls at 90%.
 656 ==> 438059 - digiKam Crash exporting a photo selection or single photo to google Drive.
-657 ==> 
+657 ==> 448172 - In the dark theme the light icons not working on Windows 10.
 658 ==> 
 659 ==> 
 660 ==> 
