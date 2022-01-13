@@ -411,8 +411,8 @@ echo -e "\n---------- Strip symbols in binary files\n"
 
 if [[ $DK_DEBUG = 1 ]] ; then
 
-    find $TEMPROOT -name "*.so"    | grep -Ev '(digikam|showfoto|exiv2)' | xargs strip -SXx
-    find $TEMPROOT -name "*.dylib" | grep -Ev '(digikam|showfoto|exiv2)' | xargs strip -SXx
+    find $TEMPROOT -name "*.so"    | grep -Ev '(digikam|showfoto)' | xargs strip -SXx
+    find $TEMPROOT -name "*.dylib" | grep -Ev '(digikam|showfoto)' | xargs strip -SXx
 
 else
 
