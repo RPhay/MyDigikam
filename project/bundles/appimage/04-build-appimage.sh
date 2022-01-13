@@ -411,7 +411,7 @@ rm -rf usr/share/pkgconfig || true
 echo -e "---------- Strip Symbols in Binaries Files\n"
 
 if [[ $DK_DEBUG = 1 ]] ; then
-    FILES=$(find . -type f -executable | grep -Ev '(digikam|showfoto|exiv2)')
+    FILES=$(find . -type f -executable | grep -Ev '(digikam|showfoto)')
 else
     FILES=$(find . -type f -executable)
 fi

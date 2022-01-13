@@ -175,7 +175,7 @@ QStringList WelcomePageView::featuresTabContent() const
     newFeatures << i18n("MacOS package, Windows installer, and AppImage bundle use KF5 5.89 and KAPPS 21.12.0 frameworks.");
     newFeatures << i18n("AppImage Linux bundle now support <a href=\"https://fcitx-im.org/wiki/Fcitx_5\">Platform Input Context FCITX</a>.");
     newFeatures << i18n("Improve RTL translations support.");
-    newFeatures << i18n("GUI internationalisation and localisation updates with more than 50 languages available.");
+    newFeatures << i18n("GUI internationalization and localization updates with more than 50 languages available.");
     newFeatures << i18n("Add OpenWith contextual menu support under MacOS.");
     newFeatures << i18n("Integration of Google Summer of Code project 2021 "
                         "<a href=\"https://community.kde.org/GSoC/2021/StatusReports/PhuocKhanhLE\">Image Quality Sorter</a>.");
