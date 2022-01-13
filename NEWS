@@ -632,10 +632,16 @@ BUGFIXES:
 617 ==> 183131 - Missed icons for - "Caption/Tags", "Metadata", "Image Editor", "Color Management".
 618 ==> 198201 - digiKam crashed after changing theme.
 619 ==> 113804 - When a camera is added to the toolbar, the icon is not displayed after digiKam restart.
-620 ==> 
-621 ==> 
-622 ==> 
-623 ==> 
-624 ==> 
-625 ==> 
+620 ==> 087539 - Use middle mouse button to scroll image.
+621 ==> 105007 - Crash on right mouse click in image editor.
+622 ==> 111610 - Scroll wheel zomming on image editor/viewer.
+623 ==> 138703 - digiKam editor window should should support mouse wheel for image change.
+624 ==> 103311 - Mouse wheel support for viewing images.
+625 ==> 173533 - Crash when deselecting a single photo with Ctrl+left mouse click.
 626 ==> 
+627 ==> 
+628 ==> 
+629 ==> 
+630 ==> 
+631 ==> 
+
