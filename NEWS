@@ -621,6 +621,6 @@ BUGFIXES:
 606 ==> 143864 - Wish: Tool to remove Chromatic Aberration from photos.
 607 ==> 116152 - Add display calibration dialog/wizard.
 608 ==> 147367 - Support for color correction of Oval frame fade using unfaded outer fame color.
-609 ==> 
+609 ==> 448286 - Could not move image to trash.
 610 ==> 
 611 ==> 
