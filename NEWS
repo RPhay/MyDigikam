@@ -639,9 +639,18 @@ BUGFIXES:
 624 ==> 103311 - Mouse wheel support for viewing images.
 625 ==> 173533 - Crash when deselecting a single photo with Ctrl+left mouse click.
 626 ==> 387325 - Add option to quickly view photo in full screen.
-627 ==> 
-628 ==> 
-629 ==> 
-630 ==> 
-631 ==> 
-
+627 ==> 088809 - digiKam & imageeditor: full scren buglets.
+628 ==> 089588 - No Picture in Fullscreen.
+629 ==> 181184 - In fullscreen, thumbnails rating stars follow bottom scrollbar.
+630 ==> 091550 - Hide cursor in fullscreen mode.
+631 ==> 091551 - When panning image with the mouse in fullscreen mode, do not show scroll bars.
+632 ==> 175598 - digiKam always starts in fullscreen after a crash.
+633 ==> 
+634 ==> 
+635 ==> 
+636 ==> 
+637 ==> 
+638 ==> 
+639 ==> 
+640 ==> 
+641 ==> 
