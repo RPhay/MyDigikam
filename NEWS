@@ -668,7 +668,7 @@ BUGFIXES:
 653 ==> 430858 - digiKam 7.1.0 crash Assert d in similaritydbaccess.cpp line 105.
 654 ==> 445629 - Bugs under wayland with Fedora 35 Gnome.
 655 ==> 387946 - Find new items stalls at 90%.
-656 ==> 
+656 ==> 438059 - digiKam Crash exporting a photo selection or single photo to google Drive.
 657 ==> 
 658 ==> 
 659 ==> 
