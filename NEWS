@@ -671,13 +671,13 @@ BUGFIXES:
 656 ==> 438059 - digiKam Crash exporting a photo selection or single photo to google Drive.
 657 ==> 448172 - In the dark theme the light icons not working on Windows 10.
 658 ==> 440644 - Files intermittantly dropping tags.
-659 ==> 
-660 ==> 
-661 ==> 
-662 ==> 
-663 ==> 
-664 ==> 
-665 ==> 
+659 ==> 145076 - Ctrl-Shift-S does not perform 'Save as' action.
+660 ==> 145081 - Ctrl-0 doesn't set zoom to 100%.
+661 ==> 144652 - F6 doesn't switch to next major panel.
+662 ==> 144653 - F8 doesn't allow for resizing of panels.
+663 ==> 145348 - Pressing ESC when adding a resource closes the resource dialog instead of cancelling adding a resource.
+664 ==> 154957 - "Go to next/previous item" buttons are missing keyboard shortcuts and actions.
+665 ==> 145080 - Add keyboard shortcut to go to n-th image in album (CTRL+G).
 666 ==> 
 667 ==> 
 668 ==> 
