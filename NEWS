@@ -718,5 +718,8 @@ BUGFIXES:
 703 ==> 181000 - Crash on closing Camera GUI after download+delete all.
 704 ==> 386396 - Eliminate useless and misleading libpng terminal message.
 705 ==> 428990 - High DPI scaling works on display :0 only.
-706 ==> 
-
+706 ==> 397293 - Libpng error: profile 'icc': 0h: PCS illuminant is not D50.
+707 ==> 
+708 ==> 
+709 ==> 
+710 ==> 
