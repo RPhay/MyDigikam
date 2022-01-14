@@ -708,13 +708,15 @@ BUGFIXES:
 693 ==> 308066 - MySQL: How to delete data finally.
 694 ==> 315494 - Error on startup: Failed to update the database schema from version 6 to version 7.
 695 ==> 327880 - Schema update to V 7 failed.
-696 ==> 
-697 ==> 
-698 ==> 
-699 ==> 
-700 ==> 
-701 ==> 
-702 ==> 
-
-
+696 ==> 099474 - digiKam: allow build with a sqlite installation outside the digikam source.
+697 ==> 119006 - Wrong permissions on database file.
+698 ==> 315322 - Meta data in jpg files are not visible.
+699 ==> 208839 - digiKam crashes while rebuilding thumbnail db [sqlite3_free, sqlite3Parser, sqlite3RunParser].
+700 ==> 245014 - digiKam claims for external module SQLITE.
+701 ==> 336262 - digiKam crashes very often.
+702 ==> 329697 - digiKam crash when browsing albums (qt-sqlite plugin broken due to BC issue with libsqlite).
+703 ==> 181000 - Crash on closing Camera GUI after download+delete all.
+704 ==> 
+705 ==> 
+706 ==> 
 
