@@ -229,6 +229,10 @@ protected:
      */
     virtual bool thumbbarVisibility() const;
 
+protected Q_SLOTS:
+
+    bool slotClose();
+
 private Q_SLOTS:
 
     void slotToggleFullScreen(bool);
@@ -279,6 +283,11 @@ private:
      * Return main tool bar instance created in managed window.
      */
     KToolBar* mainToolBar() const;
+
+    /**
+     * Common code to run before closing window.
+     */
+    void checkFullScreenBeforeClosing();
 
 private:
 

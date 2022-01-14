@@ -332,7 +332,7 @@ void EditorWindow::setupStandardActions()
     ac->setDefaultShortcut(m_fileDeleteAction, Qt::Key_Delete);
     m_fileDeleteAction->setEnabled(false);
 
-    QAction* const closeAction = buildStdAction(StdCloseAction, this, SLOT(close()), this);
+    QAction* const closeAction = buildStdAction(StdCloseAction, this, SLOT(slotClose()), this);
     ac->addAction(QLatin1String("editorwindow_close"), closeAction);
 
     // -- Standard 'Edit' menu actions ---------------------------------------------

@@ -247,4 +247,17 @@ void DXmlGuiWindow::customizedFullScreenMode(bool set)
     Q_UNUSED(set);
 }
 
+void DXmlGuiWindow::checkFullScreenBeforeClosing()
+{
+    if (fullScreenIsActive())
+    {
+        slotToggleFullScreen(false);
+    }
+
+    if (!testAttribute(Qt::WA_DeleteOnClose))
+    {
+        setVisible(false);
+    }
+}
+
 } // namespace Digikam

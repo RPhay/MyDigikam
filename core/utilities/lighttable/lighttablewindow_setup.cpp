@@ -103,7 +103,7 @@ void LightTableWindow::setupActions()
     ac->addAction(QLatin1String("lighttable_filefinaldelete"), d->fileDeleteFinalAction);
     ac->setDefaultShortcut(d->fileDeleteFinalAction, Qt::SHIFT + Qt::Key_Delete);
 
-    QAction* const closeAction = buildStdAction(StdCloseAction, this, SLOT(close()), this);
+    QAction* const closeAction = buildStdAction(StdCloseAction, this, SLOT(slotClose()), this);
     ac->addAction(QLatin1String("lighttable_close"), closeAction);
 
     // -- Standard 'View' menu actions ---------------------------------------------

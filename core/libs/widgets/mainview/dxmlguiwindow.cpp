@@ -52,19 +52,22 @@ QString DXmlGuiWindow::configGroupName() const
 
 void DXmlGuiWindow::closeEvent(QCloseEvent* e)
 {
-    if (fullScreenIsActive())
-    {
-        slotToggleFullScreen(false);
-    }
+    checkFullScreenBeforeClosing();
 
     if (!testAttribute(Qt::WA_DeleteOnClose))
     {
-        setVisible(false);
         e->ignore();
         return;
     }
 
     KXmlGuiWindow::closeEvent(e);
+}
+
+bool DXmlGuiWindow::slotClose()
+{
+    checkFullScreenBeforeClosing();
+
+    return close();
 }
 
 void DXmlGuiWindow::slotShowMenuBar()

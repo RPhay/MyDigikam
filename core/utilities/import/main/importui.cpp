@@ -304,7 +304,7 @@ void ImportUI::setupActions()
 
     // -----------------------------------------------------------------
 
-    QAction* const closeAction = buildStdAction(StdCloseAction, this, SLOT(close()), this);
+    QAction* const closeAction = buildStdAction(StdCloseAction, this, SLOT(slotClose()), this);
     ac->addAction(QLatin1String("importui_close"), closeAction);
 
     // -- Edit menu ----------------------------------------------------
