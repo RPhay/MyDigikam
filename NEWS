@@ -706,8 +706,8 @@ BUGFIXES:
 691 ==> 358340 - Set up digikam database MySQL.
 692 ==> 365302 - Deleted tag still present in database.
 693 ==> 308066 - MySQL: How to delete data finally.
-694 ==> 
-695 ==> 
+694 ==> 315494 - Error on startup: Failed to update the database schema from version 6 to version 7.
+695 ==> 327880 - Schema update to V 7 failed.
 696 ==> 
 697 ==> 
 698 ==> 
