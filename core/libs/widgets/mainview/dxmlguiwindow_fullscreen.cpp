@@ -254,6 +254,8 @@ void DXmlGuiWindow::checkFullScreenBeforeClosing()
         slotToggleFullScreen(false);
     }
 
+    qApp->processEvents();
+
     if (!testAttribute(Qt::WA_DeleteOnClose))
     {
         setVisible(false);
