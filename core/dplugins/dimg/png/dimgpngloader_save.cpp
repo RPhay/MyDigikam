@@ -145,7 +145,7 @@ bool DImgPNGLoader::save(const QString& filePath, DImgLoaderObserver* const obse
 
         CleanupData()
           : data(nullptr),
-            f(nullptr)
+            f   (nullptr)
         {
         }
 
@@ -192,6 +192,16 @@ bool DImgPNGLoader::save(const QString& filePath, DImgLoaderObserver* const obse
         delete cleanupData;
         return false;
     }
+
+#ifdef PNG_BENIGN_ERRORS_SUPPORTED
+
+  // Change some libpng errors to warnings (e.g. bug 386396).
+
+  png_set_benign_errors(png_ptr, true);
+
+  png_set_option(png_ptr, PNG_SKIP_sRGB_CHECK_PROFILE, PNG_OPTION_ON);
+
+#endif
 
     png_init_io(png_ptr, f);
     png_set_bgr(png_ptr);
@@ -310,6 +320,7 @@ bool DImgPNGLoader::save(const QString& filePath, DImgLoaderObserver* const obse
     }
 
     // Update 'Software' text tag.
+
     QString software  = QLatin1String("digiKam ");
     software.append(digiKamVersion());
     QString libpngver = QLatin1String(PNG_HEADER_VERSION_STRING);
