@@ -679,8 +679,42 @@ BUGFIXES:
 664 ==> 154957 - "Go to next/previous item" buttons are missing keyboard shortcuts and actions.
 665 ==> 145080 - Add keyboard shortcut to go to n-th image in album (CTRL+G).
 666 ==> 448432 - Importing images to be folderized by date causes them to be folderized by import date, not the date the picture was taken.
-667 ==> 
-668 ==> 
-669 ==> 
+667 ==> 285237 - Image conversion in batch manager as _exclusive_ task does _not_ work.
+668 ==> 282673 - Album view-> multiple selection-> rightclick-> add to batchqueue.
+669 ==> 296190 - Wish: Assing tools per photo in batch queue manager.
 670 ==> 
 671 ==> 
+672 ==> 
+673 ==> 
+674 ==> 
+675 ==> 
+676 ==> 
+677 ==> 
+678 ==> 
+679 ==> 
+680 ==> 
+681 ==> 
+682 ==> 
+683 ==> 
+684 ==> 
+685 ==> 
+686 ==> 
+687 ==> 
+688 ==> 
+689 ==> 
+690 ==> 
+691 ==> 
+692 ==> 
+693 ==> 
+694 ==> 
+695 ==> 
+696 ==> 
+697 ==> 
+698 ==> 
+699 ==> 
+700 ==> 
+701 ==> 
+702 ==> 
+
+
+
