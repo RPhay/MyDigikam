@@ -720,6 +720,10 @@ BUGFIXES:
 705 ==> 428990 - High DPI scaling works on display :0 only.
 706 ==> 397293 - Libpng error: profile 'icc': 0h: PCS illuminant is not D50.
 707 ==> 320263 - FILEIO : some PNG files are not rendered with "IDAT: CRC error".
-708 ==> 
-709 ==> 
-710 ==> 
+708 ==> 235864 - digiKam Color \ Correction \ Auto correction is white, stretch contrast is black and autoexposure is black outline.
+709 ==> 100882 - Picasa's feature : "I'm feeling lucky".
+710 ==> 196465 - Missing reset button for curve in monochrome conversion tool.
+711 ==> 229663 - Black & white filter tool show only neutral gray image.
+712 ==> 255757 - The B&W tool affect the property pannel.
+713 ==> 
+714 ==> 
