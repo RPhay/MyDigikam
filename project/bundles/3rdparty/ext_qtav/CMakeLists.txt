@@ -25,8 +25,6 @@ if(MINGW)
 
         GIT_REPOSITORY https://github.com/wang-bin/QtAV.git
 
-        PATCH_COMMAND ${PATCH_COMMAND} -p1 -i ${CMAKE_CURRENT_SOURCE_DIR}/qtav-master.patch
-
         CONFIGURE_COMMAND git submodule update --init &&
                           rm -rfv ${MXE_INSTALL_PREFIX}/qt5/include/QtAV &&
                           rm -rfv ${MXE_INSTALL_PREFIX}/qt5/include/QtAVWidgets &&
@@ -69,7 +67,6 @@ elseif(APPLE)
         GIT_REPOSITORY https://github.com/wang-bin/QtAV.git
 
         PATCH_COMMAND ${PATCH_COMMAND} -p1 -i ${CMAKE_CURRENT_BINARY_DIR}/qtav-rules-macos.patch &&
-                      ${PATCH_COMMAND} -p1 -i ${CMAKE_CURRENT_SOURCE_DIR}/qtav-master.patch &&
                       rm -fv <SOURCE_DIR>/examples/examples.pro &&
                       rm -fv <SOURCE_DIR>/qml/libQmlAV.pri &&
                       rm -fv <SOURCE_DIR>/qml/libQmlAV.pro
@@ -104,8 +101,6 @@ else() #Linux
         DOWNLOAD_DIR ${EXTERNALS_DOWNLOAD_DIR}
 
         GIT_REPOSITORY https://github.com/wang-bin/QtAV.git
-
-        PATCH_COMMAND ${PATCH_COMMAND} -p1 -i ${CMAKE_CURRENT_SOURCE_DIR}/qtav-master.patch
 
         CONFIGURE_COMMAND cd <SOURCE_DIR> && git submodule update --init &&
                           rm -rfv ${INSTALL_ROOT}/include/QtAV &&
