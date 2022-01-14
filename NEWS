@@ -692,12 +692,12 @@ BUGFIXES:
 677 ==> 096430 - Crash on moving selected images from one folder to the other.
 678 ==> 138986 - Most photographs are not shown in the main view any more.
 679 ==> 423227 - File management just deleted 1000 files.
-680 ==> 
-681 ==> 
-682 ==> 
-683 ==> 
-684 ==> 
-685 ==> 
+680 ==> 102215 - Scrolling awfully slow when photos on NFS.
+681 ==> 150938 - Album thumbnail view very slow on NFS.
+682 ==> 116252 - Failed to update db on nfs shares.
+683 ==> 121005 - digiKam won´t start when the album-path stays on nfs-volume.
+684 ==> 122516 - Album Path cannot be on Network device (Unmounted).
+685 ==> 317714 - Consider working on NFS shares a legitimate use case (even for the targeted home environment).
 686 ==> 
 687 ==> 
 688 ==> 
