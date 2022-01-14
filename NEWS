@@ -716,7 +716,7 @@ BUGFIXES:
 701 ==> 336262 - digiKam crashes very often.
 702 ==> 329697 - digiKam crash when browsing albums (qt-sqlite plugin broken due to BC issue with libsqlite).
 703 ==> 181000 - Crash on closing Camera GUI after download+delete all.
-704 ==> 
+704 ==> 386396 - Eliminate useless and misleading libpng terminal message.
 705 ==> 
 706 ==> 
 
