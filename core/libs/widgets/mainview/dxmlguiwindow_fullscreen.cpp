@@ -68,7 +68,29 @@ void DXmlGuiWindow::readFullScreenSettings(const KConfigGroup& group)
 
 void DXmlGuiWindow::slotToggleFullScreen(bool set)
 {
+
+#ifdef Q_OS_MACOS
+
+    // Work aroung Qt bug under MacOS. See bug #414117
+
+    if (set)
+    {
+        d->fullScreenParent = parentWidget();
+        setParent(nullptr);
+    }
+
+#endif
+
     KToggleFullScreenAction::setFullScreen(this, set);
+
+#ifdef Q_OS_MACOS
+
+    if (!set)
+    {
+        setParent(d->fullScreenParent);
+    }
+
+#endif
 
     customizedFullScreenMode(set);
 

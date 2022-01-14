@@ -93,6 +93,7 @@ public:
         fullScreenHideStatusBar (false),
         fsOptions               (FS_NONE),
         fullScreenAction        (nullptr),
+        fullScreenParent        (nullptr),
         fullScreenBtn           (nullptr),
         dirtyMainToolBar        (false),
         thumbbarVisibility      (true),
@@ -138,6 +139,11 @@ public:
      * Action plug in managed window to switch fullscreen state
      */
     KToggleFullScreenAction* fullScreenAction;
+
+    /**
+     * Used under MacOS only. See bug #414117
+     */
+    QWidget*                 fullScreenParent;
 
     /**
      * Show only if toolbar is hidden
