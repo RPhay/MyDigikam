@@ -719,7 +719,7 @@ BUGFIXES:
 704 ==> 386396 - Eliminate useless and misleading libpng terminal message.
 705 ==> 428990 - High DPI scaling works on display :0 only.
 706 ==> 397293 - Libpng error: profile 'icc': 0h: PCS illuminant is not D50.
-707 ==> 
+707 ==> 320263 - FILEIO : some PNG files are not rendered with "IDAT: CRC error".
 708 ==> 
 709 ==> 
 710 ==> 
