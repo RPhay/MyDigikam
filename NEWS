@@ -687,8 +687,8 @@ BUGFIXES:
 672 ==> 207058 - Renaming in BQM should be a tool.
 673 ==> 409175 - Crash in QSqlDatabase.
 674 ==> 101606 - Integration of digikam with kaddressbook.
-675 ==> 
-676 ==> 
+675 ==> 218467 - Marble 100% CPU.
+676 ==> 262111 - digiKam crash using batch tool.
 677 ==> 
 678 ==> 
 679 ==> 
