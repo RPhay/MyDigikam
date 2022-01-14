@@ -684,7 +684,7 @@ BUGFIXES:
 669 ==> 296190 - Wish: Assing tools per photo in batch queue manager.
 670 ==> 093787 - Raw converter : png output.
 671 ==> 160273 - Raw images converter - save at 16 bits per pixel 16bit 16bpp.
-672 ==> 
+672 ==> 207058 - Renaming in BQM should be a tool.
 673 ==> 
 674 ==> 
 675 ==> 
