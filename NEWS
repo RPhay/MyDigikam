@@ -678,7 +678,7 @@ BUGFIXES:
 663 ==> 145348 - Pressing ESC when adding a resource closes the resource dialog instead of cancelling adding a resource.
 664 ==> 154957 - "Go to next/previous item" buttons are missing keyboard shortcuts and actions.
 665 ==> 145080 - Add keyboard shortcut to go to n-th image in album (CTRL+G).
-666 ==> 
+666 ==> 448432 - Importing images to be folderized by date causes them to be folderized by import date, not the date the picture was taken.
 667 ==> 
 668 ==> 
 669 ==> 
