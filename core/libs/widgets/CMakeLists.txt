@@ -58,6 +58,9 @@ set(libfilestools_SRCS
 
 set(libmainview_SRCS
     ${CMAKE_CURRENT_SOURCE_DIR}/mainview/dxmlguiwindow.cpp
+    ${CMAKE_CURRENT_SOURCE_DIR}/mainview/dxmlguiwindow_actions.cpp
+    ${CMAKE_CURRENT_SOURCE_DIR}/mainview/dxmlguiwindow_fullscreen.cpp
+    ${CMAKE_CURRENT_SOURCE_DIR}/mainview/dxmlguiwindow_toolbar.cpp
     ${CMAKE_CURRENT_SOURCE_DIR}/mainview/daboutdata.cpp
     ${CMAKE_CURRENT_SOURCE_DIR}/mainview/dactivelabel.cpp
     ${CMAKE_CURRENT_SOURCE_DIR}/mainview/dzoombar.cpp
