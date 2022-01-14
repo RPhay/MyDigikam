@@ -685,8 +685,8 @@ BUGFIXES:
 670 ==> 093787 - Raw converter : png output.
 671 ==> 160273 - Raw images converter - save at 16 bits per pixel 16bit 16bpp.
 672 ==> 207058 - Renaming in BQM should be a tool.
-673 ==> 
-674 ==> 
+673 ==> 409175 - Crash in QSqlDatabase.
+674 ==> 101606 - Integration of digikam with kaddressbook.
 675 ==> 
 676 ==> 
 677 ==> 
