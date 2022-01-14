@@ -698,9 +698,9 @@ BUGFIXES:
 683 ==> 121005 - digiKam won´t start when the album-path stays on nfs-volume.
 684 ==> 122516 - Album Path cannot be on Network device (Unmounted).
 685 ==> 317714 - Consider working on NFS shares a legitimate use case (even for the targeted home environment).
-686 ==> 
-687 ==> 
-688 ==> 
+686 ==> 196986 - Crash when deleting images while viewing them.
+687 ==> 294043 - Crash after clearing tag search filter with keyboard.
+688 ==> 306236 - Crash on deleting text in tag search area.
 689 ==> 
 690 ==> 
 691 ==> 
