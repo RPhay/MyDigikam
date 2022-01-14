@@ -682,8 +682,8 @@ BUGFIXES:
 667 ==> 285237 - Image conversion in batch manager as _exclusive_ task does _not_ work.
 668 ==> 282673 - Album view-> multiple selection-> rightclick-> add to batchqueue.
 669 ==> 296190 - Wish: Assing tools per photo in batch queue manager.
-670 ==> 
-671 ==> 
+670 ==> 093787 - Raw converter : png output.
+671 ==> 160273 - Raw images converter - save at 16 bits per pixel 16bit 16bpp.
 672 ==> 
 673 ==> 
 674 ==> 
