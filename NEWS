@@ -701,11 +701,11 @@ BUGFIXES:
 686 ==> 196986 - Crash when deleting images while viewing them.
 687 ==> 294043 - Crash after clearing tag search filter with keyboard.
 688 ==> 306236 - Crash on deleting text in tag search area.
-689 ==> 
-690 ==> 
-691 ==> 
-692 ==> 
-693 ==> 
+689 ==> 262050 - Crash after new install and scan to mysql database.
+690 ==> 309856 - "mysql_install_db" location has changed in mariadb-5.5, configure fails [patch].
+691 ==> 358340 - Set up digikam database MySQL.
+692 ==> 365302 - Deleted tag still present in database.
+693 ==> 308066 - MySQL: How to delete data finally.
 694 ==> 
 695 ==> 
 696 ==> 
