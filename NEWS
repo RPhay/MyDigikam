@@ -24,7 +24,9 @@ BUGFIXES:
 015 ==> 131343 - Sending images from digiKam fails if directory name contains.
 016 ==> 107341 - Wish - photo printing colour temperature is too cool.
 017 ==> 120648 - Make fails with errors.
-018 ==> 
-019 ==> 
-020 ==> 
-021 ==> 
+018 ==> 137359 - Unclear wording in metadata editor.
+019 ==> 175304 - Db does replicate to iptc or exif.
+020 ==> 224583 - MetadataEdit writes invalid EXIF data to image.
+021 ==> 162097 - Jpeg exif comment does not appears in digikam exif editor.
+022 ==> 137660 - Duplication of keyword when editing several IPTC tags.
+023 ==> 
