@@ -742,4 +742,5 @@ BUGFIXES:
 727 ==> 376963 - Printout like a poststamp.
 728 ==> 373023 - Settings button for "Use Color Managment for printing" is not working at PrintImage dialog.
 729 ==> 401386 - Cannot save rotated image.
-730 ==> 
+730 ==> 394346 - Add new tool to Stamp an image.
+731 ==> 
