@@ -8,4 +8,5 @@ NEW FEATURES:
 BUGFIXES:
 
 001 ==> 448531 - Changelog has wrong spelling for iNaturalist web service.
-002 ==> 
+002 ==> 420543 - Batch conversion from png to jp2 fails to process random images.
+003 ==> 
