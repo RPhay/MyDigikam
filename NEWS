@@ -745,4 +745,5 @@ BUGFIXES:
 730 ==> 394346 - Add new tool to Stamp an image.
 731 ==> 154376 - Add new tool a remove contamination of camera sensor.
 732 ==> 247794 - Add new tool to use dust removal data from camera.
-733 ==> 
+733 ==> 268981 - Add DRM support in Image Editor using steganography.
+734 ==> 
