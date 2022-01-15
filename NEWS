@@ -16,4 +16,11 @@ BUGFIXES:
 007 ==> 176584 - Mousewheeling on a slideshow sometimes crash digiKam.
 008 ==> 092568 - Can we please see and assign star rating during slideshow.
 009 ==> 161885 - Support of mouse clicks in slideshow.
-010 ==> 
+010 ==> 097069 - E-mail contains comments file even if there are no comments.
+011 ==> 161114 - Resizing and emailing from digiKam results in no-more readable.
+012 ==> 155023 - Crashs when trying to send images via digiKam.
+013 ==> 105704 - Send image should use the mail client defined in KControl.
+014 ==> 150453 - Emailing a raw image creates an incorrect filename.
+015 ==> 131343 - Sending images from digiKam fails if directory name contains.
+016 ==> 
+017 ==> 
