@@ -170,7 +170,7 @@ QStringList WelcomePageView::featuresTabContent() const
     newFeatures << i18n("Better support of astro FITS image format including metadata extraction support to populate the database.");
     newFeatures << i18n("Use last Exiv2 0.27.5 in all bundles with Base Media File metadata read and write support (HEIF, AVIF).");
     newFeatures << i18n("Find duplicates items is now process in parallel using multi-cores.");
-    newFeatures << i18n("New tool to export items to iNaturatist web service.");
+    newFeatures << i18n("New tool to export items to iNaturalist web service.");
     newFeatures << i18n("New metadata viewer based on ExifTool.");
     newFeatures << i18n("MacOS package, Windows installer, and AppImage bundle use KF5 5.89 and KAPPS 21.12.0 frameworks.");
     newFeatures << i18n("AppImage Linux bundle now support <a href=\"https://fcitx-im.org/wiki/Fcitx_5\">Platform Input Context FCITX</a>.");
