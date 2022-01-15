@@ -740,6 +740,6 @@ BUGFIXES:
 725 ==> 107054 - After I crop I always get the error saving <image-name> to <foldername> failed.
 726 ==> 437162 - Ship or allow support for better colour correction.
 727 ==> 376963 - Printout like a poststamp.
-728 ==> 
+728 ==> 373023 - Settings button for "Use Color Managment for printing" is not working at PrintImage dialog.
 729 ==> 
 730 ==> 
