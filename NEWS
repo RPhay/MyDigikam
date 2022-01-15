@@ -727,10 +727,19 @@ BUGFIXES:
 712 ==> 255757 - The B&W tool affect the property pannel.
 713 ==> 448500 - Light Table left and right panel arrows not visible on dark landscape thumbnails.
 714 ==> 230554 - Channel mixer current channel is only "binary" - on or off.
-715 ==> 
-716 ==> 
-717 ==> 
-718 ==> 
-719 ==> 
-720 ==> 
-721 ==> 
+715 ==> 265209 - Incorrect Plug-In Results.
+716 ==> 290284 - digiKam crashes when try to use Color Effects from Image Editor.
+717 ==> 300690 - digiKam crashed after selecting Effects - Color Effects in Image Editor
+718 ==> 091378 - Ratio crop tool for digiKam.
+719 ==> 105284 - Crash after aspect ratio crop.
+720 ==> 106828 - digiKam Image Editor; Aspect Ratio Crop has no option to center the crop.
+721 ==> 108902 - Golden ratio aspect crop.
+722 ==> 118052 - Aspect Ratio stalls X and freezes digiKam.
+723 ==> 138931 - Allow crop maintaining H/W ratio locked; selectable ratios covering typical print sizes.
+724 ==> 152041 - Rule of Thirds Crop box.
+725 ==> 107054 - After I crop I always get the error saving <image-name> to <foldername> failed.
+726 ==> 
+727 ==> 
+728 ==> 
+729 ==> 
+730 ==> 
