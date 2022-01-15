@@ -22,5 +22,9 @@ BUGFIXES:
 013 ==> 105704 - Send image should use the mail client defined in KControl.
 014 ==> 150453 - Emailing a raw image creates an incorrect filename.
 015 ==> 131343 - Sending images from digiKam fails if directory name contains.
-016 ==> 
-017 ==> 
+016 ==> 107341 - Wish - photo printing colour temperature is too cool.
+017 ==> 120648 - Make fails with errors.
+018 ==> 
+019 ==> 
+020 ==> 
+021 ==> 
