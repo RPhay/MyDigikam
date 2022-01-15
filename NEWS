@@ -725,5 +725,6 @@ BUGFIXES:
 710 ==> 196465 - Missing reset button for curve in monochrome conversion tool.
 711 ==> 229663 - Black & white filter tool show only neutral gray image.
 712 ==> 255757 - The B&W tool affect the property pannel.
-713 ==> 
+713 ==> 448500 - Light Table left and right panel arrows not visible on dark landscape thumbnails.
 714 ==> 
+715 ==> 
