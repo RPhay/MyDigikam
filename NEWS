@@ -11,4 +11,9 @@ BUGFIXES:
 002 ==> 420543 - Batch conversion from png to jp2 fails to process random images.
 003 ==> 170131 - Create dvd menu for a slide show.
 004 ==> 091889 - wanna make photocd/ vcd of still images.
-005 ==> 
+005 ==> 096895 - Using tags images are sorted by name in slideshows even if order by date is selected.
+006 ==> 172895 - Setup verbiage patches for slideshow and albumview.
+007 ==> 176584 - Mousewheeling on a slideshow sometimes crash digiKam.
+008 ==> 
+009 ==> 
+010 ==> 
