@@ -14,6 +14,6 @@ BUGFIXES:
 005 ==> 096895 - Using tags images are sorted by name in slideshows even if order by date is selected.
 006 ==> 172895 - Setup verbiage patches for slideshow and albumview.
 007 ==> 176584 - Mousewheeling on a slideshow sometimes crash digiKam.
-008 ==> 
-009 ==> 
+008 ==> 092568 - Can we please see and assign star rating during slideshow.
+009 ==> 161885 - Support of mouse clicks in slideshow.
 010 ==> 
