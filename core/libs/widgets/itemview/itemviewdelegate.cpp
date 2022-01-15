@@ -562,15 +562,23 @@ void ItemViewDelegate::drawPanelSideIcon(QPainter* p, bool left, bool right) con
     if (left)
     {
         QRect r(3, d->rect.height()/2 - iconSize/2, iconSize, iconSize);
-        QIcon icon = QIcon::fromTheme(QLatin1String("go-previous"));
-        icon.paint(p, r);
+        p->setPen(QPen(Qt::gray));
+        p->setOpacity(0.50);
+        p->fillRect(r, Qt::SolidPattern);
+        QIcon icon = QIcon::fromTheme(QLatin1String("arrow-left"));
+        p->setOpacity(1.0);
+        icon.paint(p, r, Qt::AlignCenter, QIcon::Active, QIcon::On);
     }
 
     if (right)
     {
         QRect r(d->rect.width() - 3 - iconSize, d->rect.height()/2 - iconSize/2, iconSize, iconSize);
-        QIcon icon = QIcon::fromTheme(QLatin1String("go-next"));
-        icon.paint(p, r);
+        p->setPen(QPen(Qt::gray));
+        p->setOpacity(0.50);
+        p->fillRect(r, Qt::SolidPattern);
+        QIcon icon = QIcon::fromTheme(QLatin1String("arrow-right"));
+        p->setOpacity(1.0);
+        icon.paint(p, r, Qt::AlignCenter, QIcon::Active, QIcon::On);
     }
 }
 
