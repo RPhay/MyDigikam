@@ -33,7 +33,7 @@ BUGFIXES:
 023 ==> 281524 - Merge bracketed images.
 024 ==> 283628 - New tool : image stacking.
 025 ==> 331606 - Auto-preview.
-026 ==> 
+026 ==> 444280 - Opening raw file in image editor crashes digiKam if output color space is Raw Profile (Windows OS only).
 027 ==> 
 028 ==> 
 029 ==> 
