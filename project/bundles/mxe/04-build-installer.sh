@@ -207,8 +207,8 @@ if [[ $DK_DEBUG = 1 ]] ; then
     find $BUNDLEDIR -name \*exe | grep -Ev '(digikam|showfoto)' | xargs ${MXE_BUILDROOT}/usr/bin/${MXE_BUILD_TARGETS}-strip --strip-all
     find $BUNDLEDIR -name \*dll | grep -Ev '(digikam|showfoto)' | xargs ${MXE_BUILDROOT}/usr/bin/${MXE_BUILD_TARGETS}-strip --strip-all
 
-    find $BUNDLEDIR -name \*exe | grep -E '(digikam|showfoto)'  | xargs ${MXE_BUILDROOT}/usr/bin/${MXE_BUILD_TARGETS}-strip --only-keep-debug
-    find $BUNDLEDIR -name \*dll | grep -E '(digikam|showfoto)'  | xargs ${MXE_BUILDROOT}/usr/bin/${MXE_BUILD_TARGETS}-strip --only-keep-debug
+    find $BUNDLEDIR -name \*exe | grep -E '(digikam|showfoto)'  | xargs ${MXE_BUILDROOT}/usr/bin/${MXE_BUILD_TARGETS}-strip
+    find $BUNDLEDIR -name \*dll | grep -E '(digikam|showfoto)'  | xargs ${MXE_BUILDROOT}/usr/bin/${MXE_BUILD_TARGETS}-strip
 
 else
 
