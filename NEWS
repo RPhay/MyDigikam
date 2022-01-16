@@ -34,7 +34,7 @@ BUGFIXES:
 024 ==> 283628 - New tool : image stacking.
 025 ==> 331606 - Auto-preview.
 026 ==> 444280 - Opening raw file in image editor crashes digiKam if output color space is Raw Profile (Windows OS only).
-027 ==> 
+027 ==> 448612 - Allow sorting by Original date time.
 028 ==> 
 029 ==> 
 030 ==> 
