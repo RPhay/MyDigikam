@@ -203,7 +203,7 @@ void ThumbsDbAccess::setParameters(const DbEngineParameters& parameters)
     {
         QFileInfo thumbDB(d->parameters.databaseNameCore);
 
-        if (thumbDB.exists() && thumbDB.isDir())
+        if (thumbDB.exists() && thumbDB.isDir() && thumbDB.isAbsolute())
         {
             d->parameters.databaseType     = QLatin1String("QSQLITE");
             d->parameters.databaseNameCore = DbEngineParameters::thumbnailDatabaseFileSQLite(thumbDB.filePath());

@@ -911,7 +911,7 @@ bool DatabaseSettingsWidget::checkDatabasePath()
 bool DatabaseSettingsWidget::isNotEqualToThumbName(const QString& name)
 {
     QFileInfo thumbDB(d->dbNameThumbs->fileDlgPath());
-    bool isDir = (thumbDB.exists() && thumbDB.isDir());
+    bool isDir = (thumbDB.exists() && thumbDB.isDir() && thumbDB.isAbsolute());
 
     return (!isDir && (d->dbNameThumbs->fileDlgPath() !=  name));
 }
