@@ -76,18 +76,18 @@ BUGFIXES:
 066 ==> 097126 - digiKam html/cd export hang.
 067 ==> 088870 - Host application name invisible in generated page.
 068 ==> 098882 - Add a new property to digiKam's images which allows include/exclude from generated html gallery.
-069 ==> 
-070 ==> 
-071 ==> 
-072 ==> 
-073 ==> 
-074 ==> 
-075 ==> 
-076 ==> 
-077 ==> 
-078 ==> 
-079 ==> 
-080 ==> 
+069 ==> 319882 - Crash when stitching a panorama.
+070 ==> 332918 - Jpeg files created with the panorama tool are correctly read and displayed by digikam but are wrong and are not readable by other softwares.
+071 ==> 361316 - Fails to build with flex-2.6.0.
+072 ==> 289902 - Freezing system after updating digiKam
+073 ==> 286057 - Panorama: Error: can not read project file.
+074 ==> 151471 - Provide a tool for creating panorama photos.
+075 ==> 281794 - Panorama tool cannot find cpfind while hugin is installed.
+076 ==> 283497 - digiKam crashed when I open 3 pic from digiKam to HUGIN.
+077 ==> 302660 - Crash while trying to stitch photographs.
+078 ==> 320747 - digiKam crash, when starting panorama stitching.
+079 ==> 327107 - Panorama Stitching crashes upon start.
+080 ==> 330373 - Panorama crashes at start.
 081 ==> 
 082 ==> 
 083 ==> 
