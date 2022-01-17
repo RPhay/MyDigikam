@@ -64,7 +64,7 @@ BUGFIXES:
 054 ==> 328300 - Crashes when Ken Burns slideshow mode is selected.
 055 ==> 096261 - The photo presentation is not smooth.
 056 ==> 088063 - Qt, debian and opengl: opengl loaded via dlopen. configure test does not find it now anymore.
-057 ==> 
+057 ==> 447873 - Failed to upgrade the database schema from version 12 to version 13.
 058 ==> 
 059 ==> 
 060 ==> 
