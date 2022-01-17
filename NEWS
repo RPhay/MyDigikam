@@ -93,34 +93,34 @@ BUGFIXES:
 083 ==> 128135 - WISH: Adjust exposure etc. in terms of EV.
 084 ==> 199500 - More vignette tool settings.
 085 ==> 231562 - Change vignetting options so the image isn't getting lighter in the centre.
-086 ==> 148748 - vignetting: changing the radius using the slider changes the value in too big increments.
+086 ==> 148748 - Vignetting: changing the radius using the slider changes the value in too big increments.
 087 ==> 147435 - Resize slider in sharpness dialog doesn't work correct.
 088 ==> 121281 - sharpening photograph tool is not working.
 089 ==> 172018 - Initial cursor in the "sharpen" dialog is on the "cancel" button.
 090 ==> 123480 - Applying sharpen and blur to images in digikam image editor.
-091 ==> 096290 - the radius setting in the sharpen function does not have any.
-092 ==> 147542 - digikam editor unsharp mask cannot zoom to 100%.
+091 ==> 096290 - The radius setting in the sharpen function does not have any.
+092 ==> 147542 - digiKam editor unsharp mask cannot zoom to 100%.
 093 ==> 151172 - Unsharp Masking: Add support for fractional radius.
 094 ==> 219941 - Wish: configurable sharpness / antialiasing in viewer, slide show.
 095 ==> 225491 - Unsharp mask artifacts (value overflow?).
 096 ==> 225706 - Cannot find some functions in the menu (sharpen etc.).
-097 ==> 
-098 ==> 
-099 ==> 
-100 ==> 
-101 ==> 
-102 ==> 
-103 ==> 
-104 ==> 
-104 ==> 
-105 ==> 
-106 ==> 
-107 ==> 
-108 ==> 
-109 ==> 
-110 ==> 
-111 ==> 
-112 ==> 
+097 ==> 095495 - Filesize reduced after image rotate.
+098 ==> 274631 - Applying free rotation to image produces white pixels in some areas which should be near black.
+099 ==> 120282 - Free rotation tool results in black canvas in image editor.
+100 ==> 100880 - Auto-resize image to keep a rectangular photo.
+101 ==> 096488 - Free rotation tool not showing in menu.
+102 ==> 139742 - Free rotation in portrait mode no auto crop for biggest area.
+103 ==> 096251 - Linking fails (missing -limlib2).
+104 ==> 166579 - Free Rotation does not show image.
+104 ==> 109255 - Improvement suggestions for the Image Restoration tool.
+105 ==> 301526 - Restoration enhancement filtering crashes digiKam image editor.
+106 ==> 309857 - Crash when starting image editor >> improvements >> restaurations.
+107 ==> 311423 - Showfoto crashes during "restore photograph" resize.
+108 ==> 103243 - Logic error in image resize dialog.
+109 ==> 149284 - digiKam resize should bin pixels together.
+110 ==> 115441 - Resize EXIF-rotated images doesn't work
+111 ==> 091532 - Resize image rounding error.
+112 ==> 091793 - Trying to overwrite a file after having modified it (resized) doesn't save the file.
 113 ==> 
 114 ==> 
 115 ==> 
