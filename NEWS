@@ -88,22 +88,22 @@ BUGFIXES:
 078 ==> 320747 - digiKam crash, when starting panorama stitching.
 079 ==> 327107 - Panorama Stitching crashes upon start.
 080 ==> 330373 - Panorama crashes at start.
-081 ==> 
-082 ==> 
-083 ==> 
-084 ==> 
-085 ==> 
-086 ==> 
-087 ==> 
-088 ==> 
-089 ==> 
-090 ==> 
-091 ==> 
-092 ==> 
-093 ==> 
-094 ==> 
-095 ==> 
-096 ==> 
+081 ==> 088118 - Target image options should select new folder when created.
+082 ==> 095871 - Create Calendar cannot use 4 MPixel Image.
+083 ==> 128135 - WISH: Adjust exposure etc. in terms of EV.
+084 ==> 199500 - More vignette tool settings.
+085 ==> 231562 - Change vignetting options so the image isn't getting lighter in the centre.
+086 ==> 148748 - vignetting: changing the radius using the slider changes the value in too big increments.
+087 ==> 147435 - Resize slider in sharpness dialog doesn't work correct.
+088 ==> 121281 - sharpening photograph tool is not working.
+089 ==> 172018 - Initial cursor in the "sharpen" dialog is on the "cancel" button.
+090 ==> 123480 - Applying sharpen and blur to images in digikam image editor.
+091 ==> 096290 - the radius setting in the sharpen function does not have any.
+092 ==> 147542 - digikam editor unsharp mask cannot zoom to 100%.
+093 ==> 151172 - Unsharp Masking: Add support for fractional radius.
+094 ==> 219941 - Wish: configurable sharpness / antialiasing in viewer, slide show.
+095 ==> 225491 - Unsharp mask artifacts (value overflow?).
+096 ==> 225706 - Cannot find some functions in the menu (sharpen etc.).
 097 ==> 
 098 ==> 
 099 ==> 
