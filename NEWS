@@ -28,7 +28,7 @@ BUGFIXES:
 018 ==> 137359 - Unclear wording in metadata editor.
 019 ==> 175304 - Db does replicate to iptc or exif.
 020 ==> 224583 - MetadataEdit writes invalid EXIF data to image.
-021 ==> 162097 - Jpeg exif comment does not appears in digikam exif editor.
+021 ==> 162097 - Jpeg exif comment does not appears in digiKam exif editor.
 022 ==> 137660 - Duplication of keyword when editing several IPTC tags.
 023 ==> 281524 - Merge bracketed images.
 024 ==> 283628 - New tool : image stacking.
@@ -36,34 +36,34 @@ BUGFIXES:
 026 ==> 444280 - Opening raw file in image editor crashes digiKam if output color space is Raw Profile (Windows OS only).
 027 ==> 448612 - Allow sorting by Original date time.
 028 ==> 448597 - Error pop-up: The application was unable to start correctly (0xc0000005).
-029 ==> 
-030 ==> 
-031 ==> 
-032 ==> 
-033 ==> 
-034 ==> 
-035 ==> 
-036 ==> 
-037 ==> 
-038 ==> 
-039 ==> 
-040 ==> 
-041 ==> 
-042 ==> 
-043 ==> 
-044 ==> 
-045 ==> 
-046 ==> 
-047 ==> 
-048 ==> 
-049 ==> 
-050 ==> 
-051 ==> 
-052 ==> 
-053 ==> 
-054 ==> 
-055 ==> 
-056 ==> 
+029 ==> 126584 - Slide show craches (I guess because "Use OpenGL slide show transitions" is seleted).
+030 ==> 091360 - Randomization in the slideshow.
+031 ==> 129739 - Slideshow crash with nef files.
+032 ==> 134839 - Switch off automatic progress for dia shows.
+033 ==> 116610 - Add xscreensaver-style panning-zooming crossfade effect.
+034 ==> 110185 - Slideshow shows last 2 photos a second time, strange behavior.
+035 ==> 145613 - Advancedslideshow should disable screensaver.
+036 ==> 107410 - Screen remains black in OpenGL mode.
+037 ==> 116609 - Allow slideshow to be recursive.
+038 ==> 305433 - digiKam crash at slideshow with ken burns.
+039 ==> 141188 - Slideshow does sort images correctly.
+040 ==> 088600 - Advancedslideshow tool: better support for navigation prev/next/stop and resume.
+041 ==> 320154 - digiKam crashed at the end of the diaporama..
+042 ==> 130786 - Saving slideshow and use a differnet effect for every picture.
+043 ==> 143246 - Slideshow not sorting images by date.
+044 ==> 172738 - Crash on Quit after quickly changing between albums.
+045 ==> 173694 - Reproduceable Crash after closing the digikam application.
+046 ==> 173905 - digiKam crashes on closing the application.
+047 ==> 194355 - Diashow isn't very scalable.
+048 ==> 195702 - "delay between images" is not remembered.
+049 ==> 201719 - digiKam crash when starting slideshow.
+050 ==> 204688 - Slideshow and Xinerama is a problem.
+051 ==> 246789 - digiKam crashed attempting to get a presentation of the whole album.
+052 ==> 267571 - Loop does not work.
+053 ==> 304412 - digiKam crashes when I starts an "Advanced slideshow".
+054 ==> 328300 - Crashes when Ken Burns slideshow mode is selected.
+055 ==> 096261 - The photo presentation is not smooth.
+056 ==> 088063 - Qt, debian and opengl: opengl loaded via dlopen. configure test does not find it now anymore.
 057 ==> 
 058 ==> 
 059 ==> 
