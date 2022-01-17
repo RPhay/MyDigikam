@@ -65,17 +65,17 @@ BUGFIXES:
 055 ==> 096261 - The photo presentation is not smooth.
 056 ==> 088063 - Qt, debian and opengl: opengl loaded via dlopen. configure test does not find it now anymore.
 057 ==> 447873 - Failed to upgrade the database schema from version 12 to version 13.
-058 ==> 
-059 ==> 
-060 ==> 
-061 ==> 
-062 ==> 
-063 ==> 
-064 ==> 
-065 ==> 
-066 ==> 
-067 ==> 
-068 ==> 
+058 ==> 145757 - Images not rotated according to exif tag when exporting as HTML gallery or SimpleView.
+059 ==> 088939 - Loss of exif tags et wrong size of images during export.
+060 ==> 091590 - Bug when exporting category in HTML gallery.
+061 ==> 126097 - HTML Export: "could not create folder".
+062 ==> 134300 - Crash when exporting an album to a HTML gallery.
+063 ==> 088885 - digiKam image comments not displayed.
+064 ==> 119203 - digiKam crashed when exporting an album to a webside.
+065 ==> 100903 - HTML-Export tries do export deleted images.
+066 ==> 097126 - digiKam html/cd export hang.
+067 ==> 088870 - Host application name invisible in generated page.
+068 ==> 098882 - Add a new property to digiKam's images which allows include/exclude from generated html gallery.
 069 ==> 
 070 ==> 
 071 ==> 
