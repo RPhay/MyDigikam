@@ -135,44 +135,44 @@ BUGFIXES:
 124 ==> 148009 - Perspective control support grid missing.
 125 ==> 167316 - Allow for making pictures bigger when adjusting perspective.
 126 ==> 448585 - REPLACE INTO UniqueHashes blocks all Thumbnail related activities including loading.
-127 ==> 
-128 ==> 
-129 ==> 
-130 ==> 
-131 ==> 
-132 ==> 
-133 ==> 
-134 ==> 
-135 ==> 
-136 ==> 
-137 ==> 
-138 ==> 
-139 ==> 
-140 ==> 
-141 ==> 
-142 ==> 
-143 ==> 
-144 ==> 
-145 ==> 
-146 ==> 
-147 ==> 
-148 ==> 
-149 ==> 
-150 ==> 
-151 ==> 
-152 ==> 
-153 ==> 
-154 ==> 
-155 ==> 
-156 ==> 
-157 ==> 
-158 ==> 
-159 ==> 
-160 ==> 
-161 ==> 
-162 ==> 
-163 ==> 
-164 ==> 
+127 ==> 116886 - Proposal for adding a new destripe/denoise technique.
+128 ==> 232356 - Local contrast tool stuck at 10%.
+129 ==> 154822 - New tool to perform Image carving and resizing.
+130 ==> 095744 - digiKam crashes when selecting "Automatic level" in the editor
+131 ==> 089705 - Maintaining compatibility.
+132 ==> 145999 - Tool to save settings from previous usage.
+133 ==> 088810 - Adjust channels and other imageeditor tools look ugly in a maximized dialog window.
+134 ==> 355550 - digiKam closes at startup.
+135 ==> 347301 - Lense Correction - missing Camera and Lense.
+136 ==> 098651 - Image editor tool filter based on clens.
+137 ==> 254083 - Lens auto correction fails producing result using D700 and Zenitar 16/2.8.
+138 ==> 169214 - Lens auto correction tool should try to determine correct lens from metadata.
+139 ==> 250484 - WISH: Black Border removal.
+140 ==> 266913 - ShowFoto crashes when loading Lens autocorrection.
+141 ==> 162212 - WISH: Possiblity to set the alpha channel value in the insert text option.
+142 ==> 115849 - AdjustLevels: the "Load" button opens the "Save As..." dialog box and vice-versa.
+143 ==> 096658 - Tool suggestion: vector-based manipulation.
+144 ==> 100990 - digiKam: loading curves does not update preview.
+145 ==> 116347 - All the Image tools freeze the Image Editor and Showfoto when validating a value in a spinbox with the key ENTER.
+146 ==> 238776 - Node of curves stick to cursor.
+147 ==> 115124 - Counterintuitive handling of mouse wheel in whitebalance tool.
+148 ==> 120451 - Strange helper lines behavior in ratio crop tool.
+149 ==> 310211 - Adjusting 16-bit curves requires 32-bit precision.
+150 ==> 243596 - Multipage tiff support.
+151 ==> 328148 - Crash after hugin wrote a 60 MB tiff into some digiKam-tracked folder.
+152 ==> 154863 - Old 8bit or 16bit tiffs show pink when loaded into digikam or showfoto.
+153 ==> 154262 - Unable to load tiff file.
+154 ==> 091830 - TIFF images not drawn in digiKam.
+155 ==> 385820 - digiKam crashes when enfuse writes TIFFs.
+156 ==> 182223 - After modifiyng an image, saving to another format crashes digiKam.
+157 ==> 177422 - Crash after trying to overwrite image.
+158 ==> 140033 - digiKam and two release of libpng --- linker issue?
+159 ==> 120832 - Don´t can save images as jpg in picture editor.
+160 ==> 112801 - digiKam refuses to start: Unsupported JPEG data precision 12.
+161 ==> 119100 - Any file (jpeg format) edited/saved by digiKam can no longer be loaded by Gimp.
+162 ==> 087804 - Image editor doesn't use jpeg loss less operations.
+163 ==> 114884 - Default compression rate for Jpegs looses data, should be set to 100% quality by default.
+164 ==> 130733 - Rotating jpeg images results in smaller file size (ie losless transformation not working).
 165 ==> 
 166 ==> 
 167 ==> 
