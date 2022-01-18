@@ -134,7 +134,7 @@ BUGFIXES:
 123 ==> 138946 - Perspective adjustment: orthogonal line guides or grid.
 124 ==> 148009 - Perspective control support grid missing.
 125 ==> 167316 - Allow for making pictures bigger when adjusting perspective.
-126 ==> 
+126 ==> 448585 - REPLACE INTO UniqueHashes blocks all Thumbnail related activities including loading.
 127 ==> 
 128 ==> 
 129 ==> 
