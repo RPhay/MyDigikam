@@ -121,16 +121,16 @@ BUGFIXES:
 110 ==> 115441 - Resize EXIF-rotated images doesn't work
 111 ==> 091532 - Resize image rounding error.
 112 ==> 091793 - Trying to overwrite a file after having modified it (resized) doesn't save the file.
-113 ==> 
-114 ==> 
-115 ==> 
-116 ==> 
-117 ==> 
-118 ==> 
-119 ==> 
-120 ==> 
-121 ==> 
-122 ==> 
+113 ==> 300399 - Image view: right click should offer print option.
+114 ==> 143034 - When I print a Colour. JPG in digikam a white diagonal line cuts across the picture.
+115 ==> 091644 - High definition photos printing from KDE software : poor quality.
+116 ==> 103148 - Automatically choose best paper orientation when printing.
+117 ==> 092438 - Printing problems digiKam 7.0.
+118 ==> 092387 - Printing problems.
+119 ==> 139474 - can't print with canon CP 200.
+120 ==> 092437 - Printing problems digiKam.
+121 ==> 221744 - printing a photo using canon MP600.
+122 ==> 371831 - digiKam missing Printer Driver Properties in Image Printing Dialog.
 123 ==> 
 124 ==> 
 125 ==> 
