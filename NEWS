@@ -127,13 +127,13 @@ BUGFIXES:
 116 ==> 103148 - Automatically choose best paper orientation when printing.
 117 ==> 092438 - Printing problems digiKam 7.0.
 118 ==> 092387 - Printing problems.
-119 ==> 139474 - can't print with canon CP 200.
+119 ==> 139474 - Can't print with canon CP 200.
 120 ==> 092437 - Printing problems digiKam.
-121 ==> 221744 - printing a photo using canon MP600.
+121 ==> 221744 - Printing a photo using canon MP600.
 122 ==> 371831 - digiKam missing Printer Driver Properties in Image Printing Dialog.
-123 ==> 
-124 ==> 
-125 ==> 
+123 ==> 138946 - Perspective adjustment: orthogonal line guides or grid.
+124 ==> 148009 - Perspective control support grid missing.
+125 ==> 167316 - Allow for making pictures bigger when adjusting perspective.
 126 ==> 
 127 ==> 
 128 ==> 
