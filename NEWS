@@ -199,7 +199,7 @@ BUGFIXES:
 188 ==> 142412 - Image rotation progress dialog.
 189 ==> 271618 - digiKam crashes on start up.
 190 ==> 447638 - After applying reverse geo coding those tags are not being saved into the file automatically.
-191 ==> 
+191 ==> 359083 - digiKam doesn't read JPG XMP data written by Lightroom.
 192 ==> 
 193 ==> 
 194 ==> 
