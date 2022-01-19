@@ -212,8 +212,8 @@ BUGFIXES:
 201 ==> 337692 - Template editor with author/rights is extremly slow.
 202 ==> 117262 - Possibility of text in border.
 203 ==> 094376 - Batch process dont work (SEGFAULT) with images under tag area.
-204 ==> 
-205 ==> 
+204 ==> 196630 - Easyer colorspace handling in digiKam.
+205 ==> 241725 - Add color space conversion to batch queue manager.
 206 ==> 
 207 ==> 
 208 ==> 
