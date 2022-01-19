@@ -208,8 +208,8 @@ BUGFIXES:
 197 ==> 131384 - Wish: EXIF based rotation of images AFTER transfer.
 198 ==> 088170 - Correct exif orientation tag only work on 1st image of selection.
 199 ==> 301487 - Tool to remove orphaned xmp sidecar files.
-200 ==> 
-201 ==> 
+200 ==> 203732 - Image captions changed (from first image) when applying metadata template to group of photos.
+201 ==> 337692 - Template editor with author/rights is extremly slow.
 202 ==> 
 203 ==> 
 204 ==> 
