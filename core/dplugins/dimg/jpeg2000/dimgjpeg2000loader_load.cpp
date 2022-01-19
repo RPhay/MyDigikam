@@ -151,9 +151,10 @@ bool DImgJPEG2000Loader::load(const QString& filePath, DImgLoaderObserver* const
     int fmt   = jas_image_strtofmt(QByteArray("jp2").data());
 
     // See bug 447240 and UPSTREAM https://github.com/jasper-software/jasper/issues/315#issuecomment-1007872809
+
     qCDebug(DIGIKAM_DIMG_LOG_JP2K) << "jas_image_decode decoder options string:" << decoderOptions;
 
-    jp2_image = jas_image_decode(jp2_stream, fmt, decoderOptions.toLatin1().constData());
+    jp2_image = jas_image_decode(jp2_stream, fmt, decoderOptions.toLatin1().data());
 
     if (jp2_image == nullptr)
     {
@@ -252,7 +253,7 @@ bool DImgJPEG2000Loader::load(const QString& filePath, DImgLoaderObserver* const
                 ++number_components;
             }
 
-            // FIXME: image->colorspace=YCbCrColorspace;
+            // FIXME: image->colorspace = YCbCrColorspace;
 
             colorModel = DImg::YCBCR;
             break;
@@ -504,7 +505,7 @@ bool DImgJPEG2000Loader::load(const QString& filePath, DImgLoaderObserver* const
                 }
             }
 
-            // use 0-10% and 90-100% for pseudo-progress
+            // Use 0-10% and 90-100% for pseudo-progress
 
             if (observer && y >= (long)checkPoint)
             {
