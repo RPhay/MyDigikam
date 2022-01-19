@@ -103,53 +103,53 @@ class Q_DECL_HIDDEN MapWidget::Private
 public:
 
     explicit Private()
-      : loadedBackends(),
-        currentBackend(nullptr),
-        currentBackendName(),
-        stackedLayout(nullptr),
-        cacheCenterCoordinate(52.0,6.0),
-        cacheZoom(QLatin1String("marble:900")),
-        configurationMenu(nullptr),
-        actionGroupBackendSelection(nullptr),
-        actionZoomIn(nullptr),
-        actionZoomOut(nullptr),
-        actionShowThumbnails(nullptr),
-        mouseModesHolder(nullptr),
-        controlWidget(nullptr),
-        actionPreviewSingleItems(nullptr),
-        actionPreviewGroupedItems(nullptr),
-        actionShowNumbersOnItems(nullptr),
-        lazyReclusteringRequested(false),
-        dragDropHandler(nullptr),
-        sortMenu(nullptr),
-        actionIncreaseThumbnailSize(nullptr),
-        actionDecreaseThumbnailSize(nullptr),
-        hBoxForAdditionalControlWidgetItems(nullptr),
-        mouseModeActionGroup(nullptr),
-        actionRemoveCurrentRegionSelection(nullptr),
-        actionSetRegionSelectionMode(nullptr),
-        actionSetPanMode(nullptr),
-        actionSetZoomIntoGroupMode(nullptr),
-        actionSetRegionSelectionFromIconMode(nullptr),
-        actionSetFilterMode(nullptr),
-        actionRemoveFilter(nullptr),
-        actionSetSelectThumbnailMode(nullptr),
-        setPanModeButton(nullptr),
-        setSelectionModeButton(nullptr),
-        removeCurrentSelectionButton(nullptr),
-        setZoomModeButton(nullptr),
-        setRegionSelectionFromIconModeButton(nullptr),
-        setFilterModeButton(nullptr),
-        removeFilterModeButton(nullptr),
-        setSelectThumbnailMode(nullptr),
-        thumbnailTimer(nullptr),
-        thumbnailTimerCount(0),
-        thumbnailsHaveBeenLoaded(false),
-        availableExtraActions(),
-        visibleExtraActions(),
-        actionStickyMode(nullptr),
-        buttonStickyMode(nullptr),
-        placeholderWidget(nullptr)
+      : loadedBackends                          (),
+        currentBackend                          (nullptr),
+        currentBackendName                      (),
+        stackedLayout                           (nullptr),
+        cacheCenterCoordinate                   (52.0, 6.0),
+        cacheZoom                               (QLatin1String("marble:900")),
+        configurationMenu                       (nullptr),
+        actionGroupBackendSelection             (nullptr),
+        actionZoomIn                            (nullptr),
+        actionZoomOut                           (nullptr),
+        actionShowThumbnails                    (nullptr),
+        mouseModesHolder                        (nullptr),
+        controlWidget                           (nullptr),
+        actionPreviewSingleItems                (nullptr),
+        actionPreviewGroupedItems               (nullptr),
+        actionShowNumbersOnItems                (nullptr),
+        lazyReclusteringRequested               (false),
+        dragDropHandler                         (nullptr),
+        sortMenu                                (nullptr),
+        actionIncreaseThumbnailSize             (nullptr),
+        actionDecreaseThumbnailSize             (nullptr),
+        hBoxForAdditionalControlWidgetItems     (nullptr),
+        mouseModeActionGroup                    (nullptr),
+        actionRemoveCurrentRegionSelection      (nullptr),
+        actionSetRegionSelectionMode            (nullptr),
+        actionSetPanMode                        (nullptr),
+        actionSetZoomIntoGroupMode              (nullptr),
+        actionSetRegionSelectionFromIconMode    (nullptr),
+        actionSetFilterMode                     (nullptr),
+        actionRemoveFilter                      (nullptr),
+        actionSetSelectThumbnailMode            (nullptr),
+        setPanModeButton                        (nullptr),
+        setSelectionModeButton                  (nullptr),
+        removeCurrentSelectionButton            (nullptr),
+        setZoomModeButton                       (nullptr),
+        setRegionSelectionFromIconModeButton    (nullptr),
+        setFilterModeButton                     (nullptr),
+        removeFilterModeButton                  (nullptr),
+        setSelectThumbnailMode                  (nullptr),
+        thumbnailTimer                          (nullptr),
+        thumbnailTimerCount                     (0),
+        thumbnailsHaveBeenLoaded                (false),
+        availableExtraActions                   (),
+        visibleExtraActions                     (),
+        actionStickyMode                        (nullptr),
+        buttonStickyMode                        (nullptr),
+        placeholderWidget                       (nullptr)
     {
     }
 
@@ -216,15 +216,15 @@ public:
 
 MapWidget::MapWidget(QWidget* const parent)
     : QWidget(parent),
-      s(new GeoIfaceSharedData),
-      d(new Private)
+      s      (new GeoIfaceSharedData),
+      d      (new Private)
 {
     createActions();
 
-    s->worldMapWidget = this;
-    s->tileGrouper    = new TileGrouper(s, this);
+    s->worldMapWidget    = this;
+    s->tileGrouper       = new TileGrouper(s, this);
 
-    d->stackedLayout  = new QStackedLayout(this);
+    d->stackedLayout     = new QStackedLayout(this);
     setLayout(d->stackedLayout);
 
     d->placeholderWidget = new PlaceholderWidget();
@@ -242,7 +242,7 @@ MapWidget::MapWidget(QWidget* const parent)
 
 void MapWidget::createActions()
 {
-    d->actionZoomIn = new QAction(this);
+    d->actionZoomIn  = new QAction(this);
     d->actionZoomIn->setIcon(QIcon::fromTheme( QLatin1String("zoom-in") ));
     d->actionZoomIn->setToolTip(i18n("Zoom in"));
 
@@ -285,9 +285,9 @@ void MapWidget::createActions()
     d->actionShowNumbersOnItems->setCheckable(true);
     d->actionShowNumbersOnItems->setChecked(true);
 
-    d->actionIncreaseThumbnailSize = new QAction(i18n("T+"), this);
+    d->actionIncreaseThumbnailSize = new QAction(QLatin1String("+"), this);
     d->actionIncreaseThumbnailSize->setToolTip(i18n("Increase the thumbnail size on the map"));
-    d->actionDecreaseThumbnailSize = new QAction(i18n("T-"), this);
+    d->actionDecreaseThumbnailSize = new QAction(QLatin1String("-"), this);
     d->actionDecreaseThumbnailSize->setToolTip(i18n("Decrease the thumbnail size on the map"));
 
     d->actionRemoveCurrentRegionSelection = new QAction(this);
@@ -471,6 +471,7 @@ bool MapWidget::setBackend(const QString& backendName)
         if (backend->backendName() == backendName)
         {
             qCDebug(DIGIKAM_GEOIFACE_LOG) << QString::fromLatin1("setting backend %1").arg(backendName);
+
             d->currentBackend     = backend;
             d->currentBackendName = backendName;
 
@@ -926,6 +927,7 @@ void MapWidget::slotUpdateActionsEnabled()
     if (!s->activeState)
     {
         // this widget is not active, no need to update the action availability
+
         return;
     }
 
@@ -1103,19 +1105,25 @@ void MapWidget::getColorInfos(const GeoGroupState groupState,
     switch (groupState & SelectedMask)
     {
         case SelectedNone:
+        {
             *strokeStyle = Qt::SolidLine;
             *strokeColor = QColor(Qt::black);
             break;
+        }
 
         case SelectedSome:
+        {
             *strokeStyle = Qt::DotLine;
-            *strokeColor = QColor(Qt::blue);//67, 172, 232);
+            *strokeColor = QColor(Qt::blue); // 67, 172, 232);
             break;
+        }
 
         case SelectedAll:
+        {
             *strokeStyle = Qt::SolidLine;
-            *strokeColor = QColor(Qt::blue);//67, 172, 232);
+            *strokeColor = QColor(Qt::blue); // 67, 172, 232);
             break;
+        }
     }
 
     /**
@@ -1160,15 +1168,19 @@ void MapWidget::getColorInfos(const GeoGroupState groupState,
     switch (groupState)
     {
         case PartialAll:
+        {
             *fillColor = fillAll;
             break;
+        }
 
         case PartialSome:
+        {
             *fillColor = fillSome;
             break;
+        }
 
         case PartialNone:
-
+        {
             if (haveAnySolo)
             {
                 *fillColor = fillNone;
@@ -1179,6 +1191,7 @@ void MapWidget::getColorInfos(const GeoGroupState groupState,
             }
 
             break;
+        }
     }
 */
 }
@@ -1566,8 +1579,8 @@ void MapWidget::slotClustersClicked(const QIntList& clusterIndices)
             emit signalRegionSelectionChanged();
         }
     }
-    else if ((s->currentMouseMode == MouseModeFilter && s->selectionRectangle.first.hasCoordinates()) ||
-             (s->currentMouseMode == MouseModeSelectThumbnail) )
+    else if (((s->currentMouseMode == MouseModeFilter) && s->selectionRectangle.first.hasCoordinates()) ||
+             (s->currentMouseMode == MouseModeSelectThumbnail))
     {
         // update the selection and filtering state of the clusters
 
@@ -1797,7 +1810,7 @@ QPixmap MapWidget::getDecoratedPixmapForCluster(const int clusterId,
 
     if (displayThumbnail)
     {
-        if (markerCount==1)
+        if (markerCount == 1)
         {
             displayThumbnail = s->previewSingleItems;
         }
@@ -1947,7 +1960,7 @@ QPixmap MapWidget::getDecoratedPixmapForCluster(const int clusterId,
 
     // we do not have a thumbnail, draw the circle instead:
 
-    const int circleRadius = s->thumbnailSize/2;
+    const int circleRadius = s->thumbnailSize / 2;
     QPen circlePen;
     circlePen.setColor(strokeColor);
     circlePen.setStyle(strokeStyle);
@@ -1976,12 +1989,12 @@ QPixmap MapWidget::getDecoratedPixmapForCluster(const int clusterId,
     // update the display information stored in the cluster:
 
     cluster.pixmapType   = GeoIfaceCluster::PixmapCircle;
-    cluster.pixmapOffset = QPoint(circlePixmap.width()/2, circlePixmap.height()/2);
+    cluster.pixmapOffset = QPoint(circlePixmap.width() / 2, circlePixmap.height() / 2);
     cluster.pixmapSize   = circlePixmap.size();
 
     if (centerPoint)
     {
-        *centerPoint = QPoint(circlePixmap.width()/2, circlePixmap.height()/2);
+        *centerPoint = QPoint(circlePixmap.width() / 2, circlePixmap.height() / 2);
     }
 
     return circlePixmap;
@@ -1993,11 +2006,11 @@ void MapWidget::setThumnailSize(const int newThumbnailSize)
 
     // make sure the grouping radius is larger than the thumbnail size
 
-    if (2*s->thumbnailGroupingRadius < newThumbnailSize)
+    if (2 * s->thumbnailGroupingRadius < newThumbnailSize)
     {
         /// @todo more straightforward way for this?
 
-        s->thumbnailGroupingRadius = newThumbnailSize/2 + newThumbnailSize%2;
+        s->thumbnailGroupingRadius = newThumbnailSize / 2 + newThumbnailSize % 2;
     }
 
     if (s->showThumbnails)
@@ -2016,7 +2029,7 @@ void MapWidget::setThumbnailGroupingRadius(const int newGroupingRadius)
 
     if (2*s->thumbnailGroupingRadius < s->thumbnailSize)
     {
-        s->thumbnailSize = 2*newGroupingRadius;
+        s->thumbnailSize = 2 * newGroupingRadius;
     }
 
     if (s->showThumbnails)
@@ -2046,14 +2059,14 @@ void MapWidget::slotDecreaseThumbnailSize()
         return;
     }
 
-    if (s->thumbnailSize>GeoIfaceMinThumbnailSize)
+    if (s->thumbnailSize > GeoIfaceMinThumbnailSize)
     {
         const int newThumbnailSize = qMax(GeoIfaceMinThumbnailSize, s->thumbnailSize-5);
 
         // make sure the grouping radius is also decreased
         // this will automatically decrease the thumbnail size as well
 
-        setThumbnailGroupingRadius(newThumbnailSize/2);
+        setThumbnailGroupingRadius(newThumbnailSize / 2);
     }
 }
 
@@ -2158,7 +2171,7 @@ void MapWidget::slotUngroupedModelChanged()
     {
         for (int i = 0 ; i < s->ungroupedModels.count() ; ++i)
         {
-            if (s->ungroupedModels.at(i)->selectionModel()==senderSelectionModel)
+            if (s->ungroupedModels.at(i)->selectionModel() == senderSelectionModel)
             {
                 emit signalUngroupedModelChanged(i);
 
