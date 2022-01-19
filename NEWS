@@ -225,25 +225,25 @@ BUGFIXES:
 214 ==> 289793 - digiKam crashed during batch conversion.
 215 ==> 146489 - Converting Jpeg to PNG: Meta data lost.
 216 ==> 322977 - Recompress Images is missing from menu.
-217 ==> 
-218 ==> 
-219 ==> 
-220 ==> 
-221 ==> 
-222 ==> 
-223 ==> 
-224 ==> 
-225 ==> 
-226 ==> 
-227 ==> 
-228 ==> 
-229 ==> 
-230 ==> 
-231 ==> 
-232 ==> 
-233 ==> 
-234 ==> 
-235 ==> 
+217 ==> 252940 - QUESTION: watermark - just text?
+218 ==> 272784 - Ability to apply more than one Watermark in a single batch.
+219 ==> 276089 - Batch Queue Manager could remember (several) used watermark settings.
+220 ==> 201356 - Import with lens correction.
+221 ==> 121631 - In tools/batch dialogs, selecting "My albums" causes tool not to run.
+222 ==> 313044 - Why has "STOP" such an unmeaningful icon?
+223 ==> 094370 - Batch process dont work (SEGFAULT) with images under tag area.
+224 ==> 220142 - I was using application digiKam, tried to launch a series of batch operations and it crashed.
+225 ==> 366778 - BQM file saving options does not respect global ones.
+226 ==> 147823 - Batch processing tasks does not do the job.
+227 ==> 140345 - Batch do not work due to trying to save the result into the root directory.
+228 ==> 147889 - Replacing deleted images in panels.
+229 ==> 181221 - Lighttable crashes when playing with the zoom.
+230 ==> 210967 - Deleting left image in Light Table in Pair mode jumps to next pair [patch].
+231 ==> 183489 - Light Table steels focus.
+232 ==> 206543 - Zoom to 100% with 1 mouse click in the light table.
+233 ==> 146484 - Lighttable: images to dustbin fails.
+234 ==> 151067 - Crash while using light table.
+235 ==> 121311 - Easy comparison for a small set of pictures.
 236 ==> 
 237 ==> 
 238 ==> 
