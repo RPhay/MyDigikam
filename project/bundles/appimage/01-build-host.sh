@@ -119,6 +119,8 @@ urpmi --auto \
       jasper-devel \
       nodejs-devel \
       python3-lxml \
+      appstream \
+      openssh-askpass \
       ${LIBSUFFIX}openssl-devel \
       ${LIBSUFFIX}nss-devel \
       ${LIBSUFFIX}xkbcommon-devel \
