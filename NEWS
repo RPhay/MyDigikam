@@ -210,8 +210,8 @@ BUGFIXES:
 199 ==> 301487 - Tool to remove orphaned xmp sidecar files.
 200 ==> 203732 - Image captions changed (from first image) when applying metadata template to group of photos.
 201 ==> 337692 - Template editor with author/rights is extremly slow.
-202 ==> 
-203 ==> 
+202 ==> 117262 - Possibility of text in border.
+203 ==> 094376 - Batch process dont work (SEGFAULT) with images under tag area.
 204 ==> 
 205 ==> 
 206 ==> 
