@@ -28,7 +28,7 @@ ExternalProject_Add(ext_qt
     PATCH_COMMAND cp -f ${CMAKE_CURRENT_SOURCE_DIR}/kde-qt5-lts.sh <SOURCE_DIR>/. &&
                   <SOURCE_DIR>/kde-qt5-lts.sh                                     &&
                   ${PATCH_COMMAND} -p1 -i ${CMAKE_CURRENT_SOURCE_DIR}/qt-appimage-support.patch
-#               && ${PATCH_COMMAND} -p1 -i ${CMAKE_CURRENT_SOURCE_DIR}/qt-icu-hack.patch
+               && ${PATCH_COMMAND} -p1 -i ${CMAKE_CURRENT_SOURCE_DIR}/qt-icu-hack.patch
 
     CONFIGURE_COMMAND <SOURCE_DIR>/configure
                   -prefix ${EXTPREFIX_qt}
@@ -38,14 +38,13 @@ ExternalProject_Add(ext_qt
                   -confirm-license
                   -sql-sqlite                       # Compile Sqlite SQL plugin
                   -sql-mysql                        # Compile Mysql SQL plugin
-                  -iconv                            # International string conversion
+#                  -iconv                            # International string conversion
                   -fontconfig
                   -system-freetype                  # Use system font rendering lib https://doc.qt.io/qt-5/qtgui-attribution-freetype.html
                   -openssl-linked                   # hard link to static version of ssl libraries
                   -nomake tests                     # Do not build test codes
                   -nomake examples                  # Do not build basis example codes
                   -no-compile-examples              # Do not build extra example codes
-                  -no-icu                           # ICU do not work at run-time (FIXME later)
                   -no-qml-debug
                   -no-mtdev
                   -no-journald
