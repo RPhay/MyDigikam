@@ -11,7 +11,7 @@ BUGFIXES:
 001 ==> 448531 - Changelog has wrong spelling for iNaturalist web service.
 002 ==> 420543 - Batch conversion from png to jp2 fails to process random images.
 003 ==> 170131 - Create dvd menu for a slide show.
-004 ==> 091889 - wanna make photocd/ vcd of still images.
+004 ==> 091889 - Wanna make photocd/ vcd of still images.
 005 ==> 096895 - Using tags images are sorted by name in slideshows even if order by date is selected.
 006 ==> 172895 - Setup verbiage patches for slideshow and albumview.
 007 ==> 176584 - Mousewheeling on a slideshow sometimes crash digiKam.
@@ -95,7 +95,7 @@ BUGFIXES:
 085 ==> 231562 - Change vignetting options so the image isn't getting lighter in the centre.
 086 ==> 148748 - Vignetting: changing the radius using the slider changes the value in too big increments.
 087 ==> 147435 - Resize slider in sharpness dialog doesn't work correct.
-088 ==> 121281 - sharpening photograph tool is not working.
+088 ==> 121281 - Sharpening photograph tool is not working.
 089 ==> 172018 - Initial cursor in the "sharpen" dialog is on the "cancel" button.
 090 ==> 123480 - Applying sharpen and blur to images in digikam image editor.
 091 ==> 096290 - The radius setting in the sharpen function does not have any.
