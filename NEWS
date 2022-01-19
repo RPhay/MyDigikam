@@ -244,8 +244,8 @@ BUGFIXES:
 233 ==> 146484 - Lighttable: images to dustbin fails.
 234 ==> 151067 - Crash while using light table.
 235 ==> 121311 - Easy comparison for a small set of pictures.
-236 ==> 
-237 ==> 
+236 ==> 237682 - Crash while setup plugins.
+237 ==> 237681 - Crash in plugin interface.
 238 ==> 
 239 ==> 
 240 ==> 
