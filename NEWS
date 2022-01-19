@@ -207,7 +207,7 @@ BUGFIXES:
 196 ==> 092017 - Huge performance impact of EXIF based thumbnail rotation.
 197 ==> 131384 - Wish: EXIF based rotation of images AFTER transfer.
 198 ==> 088170 - Correct exif orientation tag only work on 1st image of selection.
-199 ==> 
+199 ==> 301487 - Tool to remove orphaned xmp sidecar files.
 200 ==> 
 201 ==> 
 202 ==> 
