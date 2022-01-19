@@ -180,7 +180,7 @@ BUGFIXES:
 169 ==> 099158 - Rotated image files in digikam will get destroyed.
 170 ==> 108683 - Auto rotation using EXIF works wrong.
 171 ==> 210424 - Occasional crash on startup.
-172 ==> 200159 - digikam almost always crash on my system.
+172 ==> 200159 - digiKam almost always crash on my system.
 173 ==> 100835 - Auto-rotate image error dialog blocks rotate cancel button.
 174 ==> 143448 - "auto rotate/flip using exif tags" rotates 90 degrees to much.
 175 ==> 134451 - Rotation modul cuts away boarder.
@@ -189,7 +189,7 @@ BUGFIXES:
 178 ==> 135512 - Rotate dialog does not close after completion.
 179 ==> 182698 - Rotate right is broken.
 180 ==> 182697 - Rotate right is broken, it rotates 180 degrees
-181 ==> 233346 - cannot rotate a picture
+181 ==> 233346 - Cannot rotate a picture
 182 ==> 233744 - digiKam picture rotation fails.
 183 ==> 253918 - digiKam segfaults on start about 60% of the time.
 184 ==> 264656 - Crashed while JPEG rotation.
@@ -198,7 +198,7 @@ BUGFIXES:
 187 ==> 306868 - Crash when I want rotate jpeg images.
 188 ==> 142412 - Image rotation progress dialog.
 189 ==> 271618 - digiKam crashes on start up.
-190 ==> 
+190 ==> 447638 - After applying reverse geo coding those tags are not being saved into the file automatically.
 191 ==> 
 192 ==> 
 193 ==> 
