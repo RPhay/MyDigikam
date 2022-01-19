@@ -174,30 +174,30 @@ BUGFIXES:
 163 ==> 114884 - Default compression rate for Jpegs looses data, should be set to 100% quality by default.
 164 ==> 130733 - Rotating jpeg images results in smaller file size (ie losless transformation not working).
 165 ==> 436533 - JPEG XL support.
-166 ==> 
-167 ==> 
-168 ==> 
-169 ==> 
-170 ==> 
-171 ==> 
-172 ==> 
-173 ==> 
-174 ==> 
-175 ==> 
-176 ==> 
-177 ==> 
-178 ==> 
-179 ==> 
-180 ==> 
-181 ==> 
-182 ==> 
-183 ==> 
-184 ==> 
-185 ==> 
-186 ==> 
-187 ==> 
-188 ==> 
-189 ==> 
+166 ==> 149358 - digiKam is slower to rotate photos.
+167 ==> 150820 - 180 rotate is missing.
+168 ==> 146381 - Image rotation splits the image with a small strip appearing on the wrong side.
+169 ==> 099158 - Rotated image files in digikam will get destroyed.
+170 ==> 108683 - Auto rotation using EXIF works wrong.
+171 ==> 210424 - Occasional crash on startup.
+172 ==> 200159 - digikam almost always crash on my system.
+173 ==> 100835 - Auto-rotate image error dialog blocks rotate cancel button.
+174 ==> 143448 - "auto rotate/flip using exif tags" rotates 90 degrees to much.
+175 ==> 134451 - Rotation modul cuts away boarder.
+176 ==> 106936 - Rotate image does not work correctly.
+177 ==> 111026 - Rotating images 90 degrees crash.
+178 ==> 135512 - Rotate dialog does not close after completion.
+179 ==> 182698 - Rotate right is broken.
+180 ==> 182697 - Rotate right is broken, it rotates 180 degrees
+181 ==> 233346 - cannot rotate a picture
+182 ==> 233744 - digiKam picture rotation fails.
+183 ==> 253918 - digiKam segfaults on start about 60% of the time.
+184 ==> 264656 - Crashed while JPEG rotation.
+185 ==> 266576 - digiKam crashes on start up.
+186 ==> 299917 - digiKam crashed on exiting and canseling rotate task that is hanging more than 5 minutes.
+187 ==> 306868 - Crash when I want rotate jpeg images.
+188 ==> 142412 - Image rotation progress dialog.
+189 ==> 271618 - digiKam crashes on start up.
 190 ==> 
 191 ==> 
 192 ==> 
