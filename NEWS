@@ -246,18 +246,18 @@ BUGFIXES:
 235 ==> 121311 - Easy comparison for a small set of pictures.
 236 ==> 237682 - Crash while setup plugins.
 237 ==> 237681 - Crash in plugin interface.
-238 ==> 
-239 ==> 
-240 ==> 
-241 ==> 
-242 ==> 
-243 ==> 
-244 ==> 
-245 ==> 
-246 ==> 
-247 ==> 
-248 ==> 
-249 ==> 
+238 ==> 150073 - Bad usability with viewing images.
+239 ==> 297292 - Display some metadata on pictures in view mode.
+240 ==> 177933 - Viewing image doesn't work.
+241 ==> 372307 - buttons for rotate does not show very well.
+242 ==> 179801 - Clicking the fuzzy search thumbnails open small pictures.
+243 ==> 253728 - Crash when clicking on thumbnail.
+244 ==> 149683 - digiKam pegs out CPU at 100% after a little usage.
+245 ==> 147260 - digikam image view does not rotate images in album view, thumbs are correct.
+246 ==> 106804 - digiKam shows weird picture skewing.
+247 ==> 253690 - Click on thumbnail to get preview is broken.
+248 ==> 173746 - digiKam doesn't show "big view".
+249 ==> 182612 - Zoom in digiKam "View Mode" - keyboard zoom does not work.
 250 ==> 
 251 ==> 
 252 ==> 
