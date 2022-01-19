@@ -173,7 +173,7 @@ BUGFIXES:
 162 ==> 087804 - Image editor doesn't use jpeg loss less operations.
 163 ==> 114884 - Default compression rate for Jpegs looses data, should be set to 100% quality by default.
 164 ==> 130733 - Rotating jpeg images results in smaller file size (ie losless transformation not working).
-165 ==> 
+165 ==> 436533 - JPEG XL support.
 166 ==> 
 167 ==> 
 168 ==> 
