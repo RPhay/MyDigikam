@@ -214,17 +214,17 @@ BUGFIXES:
 203 ==> 094376 - Batch process dont work (SEGFAULT) with images under tag area.
 204 ==> 196630 - Easyer colorspace handling in digiKam.
 205 ==> 241725 - Add color space conversion to batch queue manager.
-206 ==> 
-207 ==> 
-208 ==> 
-209 ==> 
-210 ==> 
-211 ==> 
-212 ==> 
-213 ==> 
-214 ==> 
-215 ==> 
-216 ==> 
+206 ==> 117074 - Convert to djvu in the batch conversion dialog.
+207 ==> 284785 - Crash while batch converting running and using main window.
+208 ==> 153133 - Crop images based on defined moveable area.
+209 ==> 100787 - Need to crop photographs for printing.
+210 ==> 183014 - Png converter compressor unconsistent.
+211 ==> 301585 - Easy way to convert images.
+212 ==> 099020 - Conversion of images to EPS format to use them with tex/latex documents.
+213 ==> 089720 - Batch convert from tif to jpg creates thumbnail and main jpeg with wrong names.
+214 ==> 289793 - digiKam crashed during batch conversion.
+215 ==> 146489 - Converting Jpeg to PNG: Meta data lost.
+216 ==> 322977 - Recompress Images is missing from menu.
 217 ==> 
 218 ==> 
 219 ==> 
