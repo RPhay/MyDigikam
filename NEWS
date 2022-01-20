@@ -368,7 +368,7 @@ BUGFIXES:
 356 ==> 146868 - Support for 'remote' storage systems.
 357 ==> 283480 - digiKam crash in setup.
 358 ==> 448793 - Tag shortcuts behavior not consistent when multiple photos are selected with some already containing tag.
-359 ==> 
+359 ==> 448836 - Facial metadata overwritten when trying to write new faces back to a jpg.
 360 ==> 
 361 ==> 
 362 ==> 
