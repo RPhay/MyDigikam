@@ -574,11 +574,11 @@ bool DImgPNGLoader::load(const QString& filePath, DImgLoaderObserver* const obse
         {
             if (m_sixteenBit)
             {
-                lines[i] = data + ((quintptr)i * (quintptr)width * 8);
+                lines[i] = data + ((quint64)i * (quint64)width * 8);
             }
             else
             {
-                lines[i] = data + ((quintptr)i * (quintptr)width * 4);
+                lines[i] = data + ((quint64)i * (quint64)width * 4);
             }
         }
 
