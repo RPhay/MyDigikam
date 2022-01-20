@@ -24,7 +24,10 @@ APP_IMG_DIR="/digikam.appdir"
 ########################################################################
 
 # URL to git repository to checkout digiKam source code
+# git protocol version which require a developer account with ssh keys.
 DK_GITURL="git@invent.kde.org:graphics/digikam.git"
+# https protocol version which give annonyous access.
+#DK_GITURL="https://invent.kde.org/graphics/digikam.git"
 
 # Location to build source code.
 DK_BUILDTEMP=$BUILDING_DIR/dktemp

@@ -47,7 +47,10 @@ MXE_TOOLCHAIN=${MXE_INSTALL_PREFIX}/share/cmake/mxe-conf.cmake
 #-------------------------------------------------------------------------------------------
 
 # URL to git repository to checkout digiKam source code
+# git protocol version which require a developer account with ssh keys.
 DK_GITURL="git@invent.kde.org:graphics/digikam.git"
+# https protocol version which give annonyous access.
+#DK_GITURL="https://invent.kde.org/graphics/digikam.git"
 
 # digiKam tarball information.
 DK_URL="http://download.kde.org/stable/digikam"
