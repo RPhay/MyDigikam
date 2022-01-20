@@ -369,16 +369,16 @@ BUGFIXES:
 357 ==> 283480 - digiKam crash in setup.
 358 ==> 448793 - Tag shortcuts behavior not consistent when multiple photos are selected with some already containing tag.
 359 ==> 448836 - Facial metadata overwritten when trying to write new faces back to a jpg.
-360 ==> 
-361 ==> 
-362 ==> 
-363 ==> 
-364 ==> 
-365 ==> 
-366 ==> 
-367 ==> 
-368 ==> 
-369 ==> 
+360 ==> 124428 - Conflict: can't install digiKam.
+361 ==> 124905 - digiKam crash when loading.
+362 ==> 146421 - Strange characters in .desktop files caused by improper convert to UTF-8.
+363 ==> 154213 - Crashes and logs you out when you select tools -> image viewer.
+364 ==> 195831 - Crash just after finished using "New Album from Selection".
+365 ==> 198144 - Crash during startup of digiKam.
+366 ==> 204803 - digiKam crashed after addign some new symbols to the top symbolbar.
+367 ==> 206778 - digiKam crash on launch.
+368 ==> 207889 - It has crashed, when I try to pick up picture to send it.
+369 ==> 218061 - Crash while browsing pictures.
 370 ==> 
 371 ==> 
 372 ==> 
