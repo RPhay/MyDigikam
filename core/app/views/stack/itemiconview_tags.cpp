@@ -54,6 +54,11 @@ void ItemIconView::toggleTag(int tagID)
         }
     }
 
+    if (!tagToAssign.isEmpty() && !tagToRemove.isEmpty())
+    {
+        tagToRemove.clear();
+    }
+
     FileActionMngr::instance()->assignTag(tagToAssign, tagID);
     FileActionMngr::instance()->removeTag(tagToRemove, tagID);
 }
