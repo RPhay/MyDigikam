@@ -153,7 +153,6 @@
       <image>https://www.digikam.org/img/content/about/overview_imageeditor.png</image>
     </screenshot>
   </screenshots>
-  <content_rating type="oars-1.1"/>
   <releases>
     <release date="2022-01-16" version="7.5.0"/>
     <release date="2021-12-18" version="7.4.0"/>
@@ -273,4 +272,7 @@
   <provides>
     <binary>showfoto</binary>
   </provides>
+ <content_rating type="oars-1.1">
+    <content_attribute id="money-advertising">none</content_attribute>
+  </content_rating>
 </component>

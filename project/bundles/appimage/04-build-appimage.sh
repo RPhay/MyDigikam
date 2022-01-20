@@ -120,10 +120,10 @@ cp -r /usr/share/dbus-1/interfaces/kf5*                   ./usr/share/dbus-1/int
 cp -r /usr/share/dbus-1/services/*kde*                    ./usr/share/dbus-1/services/
 cp -r /usr/${LIBSUFFIX}/libexec/kf5                       ./usr/lib/libexec/
 
-echo -e "------------- Copy AppImage stream data file\n"
+echo -e "------------- Copy AppImage stream data filess\n"
 
-cp -r /usr/share/metainfo/org.kde.digikam.appdata.xml     ./usr/share/metainfo/digikam.appdata.xml
-cp -r /usr/share/metainfo/org.kde.showfoto.appdata.xml    ./usr/share/metainfo/showfoto.appdata.xml
+cp -r /usr/share/metainfo/org.kde.digikam.appdata.xml     ./usr/share/metainfo
+cp -r /usr/share/metainfo/org.kde.showfoto.appdata.xml    ./usr/share/metainfo
 
 # NOTE: no resources data are provided with QtWebKit
 
