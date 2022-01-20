@@ -123,10 +123,7 @@ void ItemIconView::slotRemoveTag(int tagID)
      * Confirmed Tags.
      * QTimer to ensure TagRemoval is complete.
      */
-    if (!FaceTags::isTheIgnoredPerson(tagID)  &&
-        !FaceTags::isTheUnknownPerson(tagID)  &&
-        !FaceTags::isTheUnconfirmedPerson(tagID)
-       )
+    if (!FaceTags::isSystemPersonTagId(tagID))
     {
         QTimer::singleShot(200, this, [=]()
             {
