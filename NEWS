@@ -259,29 +259,29 @@ BUGFIXES:
 248 ==> 173746 - digiKam doesn't show "big view".
 249 ==> 182612 - Zoom in digiKam "View Mode" - keyboard zoom does not work.
 250 ==> 430817 - Include AppImage application stream metadata.
-251 ==> 
-252 ==> 
-253 ==> 
-254 ==> 
-255 ==> 
-256 ==> 
-257 ==> 
-258 ==> 
-259 ==> 
-260 ==> 
-261 ==> 
-262 ==> 
-263 ==> 
-264 ==> 
-265 ==> 
-266 ==> 
-267 ==> 
-268 ==> 
-269 ==> 
-270 ==> 
-271 ==> 
-272 ==> 
-273 ==> 
+251 ==> 086994 - Add 'forward' and 'backbard' buttons to info dialogs for images/collections.
+252 ==> 098305 - Don't display digikam splash screen on sessin restore.
+253 ==> 139151 - Fix menu dialog target and icons blinking witout any user intervention picture original and target, icons for preview mode, zoom, Abort, Ok buttons.
+254 ==> 091005 - Wish: save width of left pane on exit.
+255 ==> 146463 - HIG CL3: Warning messages from light table.
+256 ==> 182755 - Configure digiKam window too big.
+257 ==> 147772 - Confusing UI for re-sizing side-bars.
+258 ==> 091597 - Different date formats used in different parts of GUI.
+259 ==> 090131 - Unify image property information into consistent dialog.
+260 ==> 136332 - The font size for the Image properties in sidebar is too big
+261 ==> 092884 - Usability : The "Select Album" dialog should select the root directory by default and not the currently selected album in the top-most window.
+262 ==> 116346 - Displaying problems with the left sidebar.
+263 ==> 092350 - Tooltip shown partly off screen.
+264 ==> 090074 - Three Pane Viewing no spawning of image editing window.
+265 ==> 130952 - Bit depth not visible in GUI.
+266 ==> 177327 - Long tooltips are cut in metadata panel.
+267 ==> 141708 - Remember scroll position per view.
+268 ==> 091451 - 'delete' should use trashcan icon when 'delete moves to trash' is enabled.
+269 ==> 100472 - Add Images dialogue was misleading default action "Open".
+270 ==> 177235 - No tooltips for cut elements in metadata panel [regression].
+271 ==> 134895 - Tag thumbnails are too small.
+272 ==> 158867 - Delete photo: "Do not ask again" appears each time Digikam is run.
+273 ==> 112465 - digiKam is too amazing!
 274 ==> 
 275 ==> 
 276 ==> 
