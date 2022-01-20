@@ -282,27 +282,27 @@ BUGFIXES:
 271 ==> 134895 - Tag thumbnails are too small.
 272 ==> 158867 - Delete photo: "Do not ask again" appears each time Digikam is run.
 273 ==> 112465 - digiKam is too amazing!
-274 ==> 
-275 ==> 
-276 ==> 
-277 ==> 
-278 ==> 
-279 ==> 
-280 ==> 
-281 ==> 
-282 ==> 
-283 ==> 
-284 ==> 
-285 ==> 
-286 ==> 
-287 ==> 
-288 ==> 
-289 ==> 
-290 ==> 
-291 ==> 
-292 ==> 
-293 ==> 
-294 ==> 
+274 ==> 105697 - Showfoto shows blurred photo's in full screen mode, and crashes when going to the next photo.
+275 ==> 119580 - Showfoto crashes when enlarging an image.
+276 ==> 152217 - Showfoto crashes on exit Signal 11.
+277 ==> 204562 - Showfoto crash while quitting.
+278 ==> 205601 - Unknown showfoto crash.
+279 ==> 209050 - ShowFoto crashed on closing.
+280 ==> 231631 - Save modified file to the same file.
+281 ==> 244983 - Showfoto crashes on exit after editing, saving a photo.
+282 ==> 247908 - Tried to save a modified Photo.
+283 ==> 249605 - digiKam and showFoto crash while scaling down large image for display.
+284 ==> 250598 - digiKam (showFoto) crashes on start-up.
+285 ==> 258965 - Crash on save.
+286 ==> 269188 - Showfoto crased when opening a jpe file or a catalog.
+287 ==> 271096 - Showfoto crash.
+288 ==> 273367 - Showfoto crashes, at starting up when opening a jpg.
+289 ==> 275423 - ShowFoto crashes when viewing JPEG files.
+290 ==> 276770 - ShowFoto crashes when changing the zoom factor of an image.
+291 ==> 279987 - Showfoto crash.
+292 ==> 280357 - Showfoto crash while using sharpen.
+293 ==> 283009 - Showefoto crashes when opening a directory.
+294 ==> 300066 - ShowFoto crash when exiting.
 295 ==> 
 296 ==> 
 297 ==> 
