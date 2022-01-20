@@ -258,7 +258,7 @@ BUGFIXES:
 247 ==> 253690 - Click on thumbnail to get preview is broken.
 248 ==> 173746 - digiKam doesn't show "big view".
 249 ==> 182612 - Zoom in digiKam "View Mode" - keyboard zoom does not work.
-250 ==> 
+250 ==> 430817 - Include AppImage application stream metadata.
 251 ==> 
 252 ==> 
 253 ==> 
