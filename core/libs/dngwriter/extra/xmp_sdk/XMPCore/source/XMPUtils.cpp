@@ -6,6 +6,10 @@
 // of the Adobe license agreement accompanying it.
 // =================================================================================================
 
+#ifdef __MINGW32__  // krazy:exclude=cpp
+#   define _POSIX_THREAD_SAFE_FUNCTIONS
+#endif
+
 #include "public/include/XMP_Environment.h"	// ! This must be the first include!
 #include "XMPCore/source/XMPCore_Impl.hpp"
 
@@ -13,12 +17,7 @@
 
 #include "XMP_MD5.h"
 
-
 #include <map>
-
-#ifdef __MINGW32__  // krazy:exclude=cpp
-#   define _POSIX_THREAD_SAFE_FUNCTIONS
-#endif
 
 #include <time.h>
 #include <string.h>
