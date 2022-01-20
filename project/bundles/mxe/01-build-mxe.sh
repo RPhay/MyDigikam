@@ -128,6 +128,7 @@ make MXE_TARGETS=$MXE_BUILD_TARGETS \
      zlib \
      mman-win32 \
      pthreads \
+     libgphoto2 \
      qtbase \
      qttranslations \
      qtimageformats \
@@ -140,9 +141,7 @@ make MXE_TARGETS=$MXE_BUILD_TARGETS \
      openal \
      libical \
      imagemagick \
-     libgphoto2 \
-     python3-lxml \
-     lib64qt5base5-devel
+     python3-lxml
 
 echo -e "\n"
 
