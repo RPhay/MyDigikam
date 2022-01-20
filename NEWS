@@ -357,16 +357,16 @@ BUGFIXES:
 345 ==> 114682 - Wish: about library path.
 346 ==> 147689 - Cameras.xml file not closed.
 347 ==> 118001 - Mount command for a "directory browse camera".
-348 ==> 
-349 ==> 
-350 ==> 
-351 ==> 
-352 ==> 
-353 ==> 
-354 ==> 
-355 ==> 
-356 ==> 
-357 ==> 
+348 ==> 121649 - "mounted camera" is not visible enough in the camera configuration dialog.
+349 ==> 173215 - digiKam crash after selecting Import -> Cameras added manually -> Canon PowerShot A530.
+350 ==> 102412 - Commandline album library path.
+351 ==> 107442 - Wish: refresh imported folders.
+352 ==> 115726 - Possibility to have more than one digiKam folder.
+353 ==> 216017 - Unable to add collection directory.
+354 ==> 292251 - Crashed While trying to add camera.
+355 ==> 293591 - Ubuntu 64 Bit digiKam crashed when clicking on Configure.
+356 ==> 146868 - Support for 'remote' storage systems.
+357 ==> 283480 - digiKam crash in setup.
 358 ==> 
 359 ==> 
 360 ==> 
