@@ -303,6 +303,7 @@ BUGFIXES:
 292 ==> 280357 - Showfoto crash while using sharpen.
 293 ==> 283009 - Showefoto crashes when opening a directory.
 294 ==> 300066 - ShowFoto crash when exiting.
+<<<<<<< HEAD
 295 ==> 111875 - Crash (signal 11) when configuring ShowFoto toolbars.
 296 ==> 091850 - Make it possible to laucnh the image editor module apart from the full program (whishlist).
 297 ==> 111873 - Modifying and then navigating in the thumbbar does not update photo thumbnail.
@@ -341,7 +342,7 @@ BUGFIXES:
 330 ==> 254776 - Showfoto opens but some functions inoperable.
 331 ==> 113917 - No need to plug more than one FullScreen button on ShowFoto main toolbar.
 332 ==> 107155 - CRITICAL: ShowFoto overwrites wrong file when saving!
-333 ==> 
+333 ==> 448789 - Face region is erased when people tag is removed [patch].
 334 ==> 
 335 ==> 
 336 ==> 
