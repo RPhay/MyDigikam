@@ -212,7 +212,7 @@ QString DServiceMenu::MacApplicationBundleName(const QUrl& appUrl)
 
 QIcon DServiceMenu::MacApplicationBundleIcon(const QUrl& appUrl, int size)
 {
-    // Inspired from http://theocacao.com/document.page/183     // krazy:exclude=spelling
+    // Inspired from http://theocacao.com/document.page/183     // krazy:exclude=insecurenet
 
     // Get Image from Workspace about Application Bundle.
 
