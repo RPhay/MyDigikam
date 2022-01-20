@@ -215,43 +215,36 @@ QAction* DXmlGuiWindow::buildStdAction(StdActionType type, const QObject* const 
         case StdCopyAction:
         {
             return KStandardAction::copy(recvr, slot, parent);
-            break;
         }
 
         case StdPasteAction:
         {
             return KStandardAction::paste(recvr, slot, parent);
-            break;
         }
 
         case StdCutAction:
         {
             return KStandardAction::cut(recvr, slot, parent);
-            break;
         }
 
         case StdQuitAction:
         {
             return KStandardAction::quit(recvr, slot, parent);
-            break;
         }
 
         case StdCloseAction:
         {
             return KStandardAction::close(recvr, slot, parent);
-            break;
         }
 
         case StdZoomInAction:
         {
             return KStandardAction::zoomIn(recvr, slot, parent);
-            break;
         }
 
         case StdZoomOutAction:
         {
             return KStandardAction::zoomOut(recvr, slot, parent);
-            break;
         }
 
         case StdOpenAction:
@@ -260,37 +253,31 @@ QAction* DXmlGuiWindow::buildStdAction(StdActionType type, const QObject* const 
             // NOTE: disable false positive report from scan build about open()
             return KStandardAction::open(recvr, slot, parent);
 #endif
-            break;
         }
 
         case StdSaveAction:
         {
             return KStandardAction::save(recvr, slot, parent);
-            break;
         }
 
         case StdSaveAsAction:
         {
             return KStandardAction::saveAs(recvr, slot, parent);
-            break;
         }
 
         case StdRevertAction:
         {
             return KStandardAction::revert(recvr, slot, parent);
-            break;
         }
 
         case StdBackAction:
         {
             return KStandardAction::back(recvr, slot, parent);
-            break;
         }
 
         case StdForwardAction:
         {
             return KStandardAction::forward(recvr, slot, parent);
-            break;
         }
 
         default:
