@@ -343,20 +343,20 @@ BUGFIXES:
 331 ==> 113917 - No need to plug more than one FullScreen button on ShowFoto main toolbar.
 332 ==> 107155 - CRITICAL: ShowFoto overwrites wrong file when saving!
 333 ==> 448789 - Face region is erased when people tag is removed [patch].
-334 ==> 
-335 ==> 
-336 ==> 
-337 ==> 
-338 ==> 
-339 ==> 
-340 ==> 
-341 ==> 
-342 ==> 
-343 ==> 
-344 ==> 
-345 ==> 
-346 ==> 
-347 ==> 
+334 ==> 211359 - digiKam: no longer supports arguments?
+335 ==> 138548 - Error downloading or detecting camera when connected.
+336 ==> 173412 - Can't use a samba share for my collection?
+337 ==> 119287 - digiKam hangs at "Loading cameras".
+338 ==> 210456 - digiKam gpstracker treated as a still camera.
+339 ==> 177241 - Buttons not aligned after adding of new collection.
+340 ==> 128402 - If Album Path in digikamrc differs from default of $HOME/? then app crashes.
+341 ==> 095880 - digiKam camera autodetect allows adding one camera multiple times.
+342 ==> 106874 - Fails to connect Kodak DX4530 - Settings does not allow to enter mount path.
+343 ==> 108333 - digiKam must remember my camera.
+344 ==> 103969 - Sony dsc-p100 not detected.
+345 ==> 114682 - Wish: about library path.
+346 ==> 147689 - Cameras.xml file not closed.
+347 ==> 118001 - Mount command for a "directory browse camera".
 348 ==> 
 349 ==> 
 350 ==> 
