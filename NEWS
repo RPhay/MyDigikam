@@ -303,7 +303,7 @@ BUGFIXES:
 292 ==> 280357 - Showfoto crash while using sharpen.
 293 ==> 283009 - Showefoto crashes when opening a directory.
 294 ==> 300066 - ShowFoto crash when exiting.
-295 ==> 
+295 ==> 448789 - Face region is erased when people tag is removed [patch].
 296 ==> 
 297 ==> 
 298 ==> 

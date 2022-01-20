@@ -387,25 +387,63 @@ bool AlbumManager::deleteTAlbum(TAlbum* album, QString& errMsg, bool askUser)
         return false;
     }
 
+    QList<int> toBeDeletedTagIds;
+    toBeDeletedTagIds << album->id();
+
+    Album* subAlbum = nullptr;
+    AlbumIterator it(album);
+
+    while ((subAlbum = it.current()) != nullptr)
+    {
+        toBeDeletedTagIds << subAlbum->id();
+        ++it;
+    }
+
+    QApplication::setOverrideCursor(Qt::WaitCursor);
+
     QList<qlonglong> imageIds;
 
     if (askUser)
     {
-        imageIds = CoreDbAccess().db()->getItemIDsInTag(album->id());
+        // Recursively from all tags to delete.
+
+        imageIds = CoreDbAccess().db()->getItemIDsInTag(album->id(), true);
     }
+
+    foreach (int tagId, toBeDeletedTagIds)
+    {
+        if (FaceTags::isPerson(tagId))
+        {
+            const QList<qlonglong>& imgListIds = CoreDbAccess().db()->getItemIDsInTag(tagId);
+
+            foreach (const qlonglong& imageId, imgListIds)
+            {
+                const QList<FaceTagsIface>& facesList = FaceTagsEditor().databaseFaces(imageId);
+
+                foreach (const FaceTagsIface& face, facesList)
+                {
+                    if (face.tagId() == tagId)
+                    {
+                        FaceTagsIface unknownFace(FaceTagsIface::UnknownName, imageId,
+                                                  FaceTags::unknownPersonTagId(), face.region());
+
+                        FaceTagsEditor().removeFace(face);
+                        FaceTagsEditor().addManually(unknownFace);
+                    }
+                }
+            }
+        }
+    }
+
+    QApplication::restoreOverrideCursor();
 
     {
         CoreDbAccess access;
         ChangingDB changing(d);
-        access.db()->deleteTag(album->id());
 
-        Album* subAlbum = nullptr;
-        AlbumIterator it(album);
-
-        while ((subAlbum = it.current()) != nullptr)
+        foreach (int tagId, toBeDeletedTagIds)
         {
-            access.db()->deleteTag(subAlbum->id());
-            ++it;
+            access.db()->deleteTag(tagId);
         }
     }
 
