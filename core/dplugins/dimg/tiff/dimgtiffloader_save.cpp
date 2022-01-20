@@ -91,6 +91,7 @@ bool DImgTIFFLoader::save(const QString& filePath, DImgLoaderObserver* const obs
     TIFFSetField(tif, TIFFTAG_RESOLUTIONUNIT, RESUNIT_NONE);
 
     // Image must be compressed using deflate algorithm ?
+
     QVariant compressAttr = imageGetAttribute(QLatin1String("compress"));
     bool compress         = compressAttr.isValid() ? compressAttr.toBool() : false;
 
@@ -393,7 +394,9 @@ bool DImgTIFFLoader::save(const QString& filePath, DImgLoaderObserver* const obs
 
     QScopedPointer<DMetadata> metaDataToFile(new DMetadata(filePath));
     metaDataToFile->setData(m_image->getMetadata());
-    // see bug #211758 for these special steps needed when writing a TIFF
+
+    // See bug #211758 for these special steps needed when writing a TIFF
+
     metaDataToFile->removeExifThumbnail();
     metaDataToFile->removeExifTag("Exif.Image.ProcessingSoftware");
     metaDataToFile->applyChanges(true);
