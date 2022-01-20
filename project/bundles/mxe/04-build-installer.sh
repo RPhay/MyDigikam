@@ -163,6 +163,12 @@ cp -r $MXE_INSTALL_PREFIX/bin/symsrv.yes                                $BUNDLED
 # Do not include this file from DrMinGW as it require extra devel dll from Microsoft at run-time.
 #cp -r $MXE_INSTALL_PREFIX/bin/dbghelp.dll                               $BUNDLEDIR/                2>/dev/null
 
+echo -e "\n---------- libgphoto2 drivers"
+mkdir $BUNDLEDIR/libgphoto2                                                                         2>/dev/null
+mkdir $BUNDLEDIR/libgphoto2_port                                                                    2>/dev/null
+cp $MXE_INSTALL_PREFIX/lib/libgphoto2/*/*.dll                           $BUNDLEDIR/libgphoto2       2>/dev/null
+cp $MXE_INSTALL_PREFIX/lib/libgphoto2_port/*/*.dll                      $BUNDLEDIR/libgphoto2_port  2>/dev/null
+
 echo -e "\n---------- Copy executables with recursive dependencies in bundle directory\n"
 
 # Executables and plugins shared libraries dependencies scan ---------------------------------
@@ -183,9 +189,11 @@ for app in $EXE_FILES ; do
 done
 
 DLL_FILES="\
-`find  $MXE_INSTALL_PREFIX/lib/plugins -name "*.dll" -type f | sed 's|$MXE_INSTALL_PREFIX/libs/plugins||'` \
-`find  $MXE_INSTALL_PREFIX/qt5/plugins -name "*.dll" -type f | sed 's|$MXE_INSTALL_PREFIX/qt5/plugins||'`  \
-`find  $MXE_INSTALL_PREFIX/plugins     -name "*.dll" -type f | sed 's|$MXE_INSTALL_PREFIX/plugins/||'`     \
+`find  $MXE_INSTALL_PREFIX/lib/plugins         -name "*.dll" -type f | sed 's|$MXE_INSTALL_PREFIX/libs/plugins||'`        \
+`find  $MXE_INSTALL_PREFIX/qt5/plugins         -name "*.dll" -type f | sed 's|$MXE_INSTALL_PREFIX/qt5/plugins||'`         \
+`find  $MXE_INSTALL_PREFIX/plugins             -name "*.dll" -type f | sed 's|$MXE_INSTALL_PREFIX/plugins/||'`            \
+`find  $MXE_INSTALL_PREFIX/lib/libgphoto2      -name "*.dll" -type f | sed 's|$MXE_INSTALL_PREFIX/lib/libgphoto2||'`      \
+`find  $MXE_INSTALL_PREFIX/lib/libgphoto2_port -name "*.dll" -type f | sed 's|$MXE_INSTALL_PREFIX/lib/libgphoto2_port||'` \
 $MXE_INSTALL_PREFIX/bin/OpenAL32.dll \
 $MXE_INSTALL_PREFIX/bin/exchndl.dll  \
 $MXE_INSTALL_PREFIX/bin/mgwhelp.dll  \

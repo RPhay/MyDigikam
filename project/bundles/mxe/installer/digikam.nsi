@@ -254,6 +254,12 @@
         SetOutPath "$INSTDIR\translations"
         File /r "${BUNDLEPATH}\translations\*.*"
 
+        SetOutPath "$INSTDIR\libgphoto2"
+        File /r "${BUNDLEPATH}\libgphoto2\*.*"
+
+        SetOutPath "$INSTDIR\libgphoto2_port"
+        File /r "${BUNDLEPATH}\libgphoto2_port\*.*"
+
         ;Store installation folder
 
         WriteRegStr HKLM "Software\${MY_PRODUCT}" "" $INSTDIR
@@ -332,6 +338,8 @@
         RMDir /r "$INSTDIR\share"
         RMDir /r "$INSTDIR\plugins"
         RMDir /r "$INSTDIR\translations"
+        RMDir /r "$INSTDIR\libgphoto2"
+        RMDir /r "$INSTDIR\libgphoto2_port"
 
         ;Do not do a recursive removal of $INSTDIR because user may have accidentally installed into system critical directory!
 
