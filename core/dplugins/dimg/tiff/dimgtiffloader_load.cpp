@@ -279,9 +279,9 @@ bool DImgTIFFLoader::load(const QString& filePath, DImgLoaderObserver* const obs
                 return false;
             }
 
-            long offset     = 0;
-            long bytesRead  = 0;
-            uint checkpoint = 0;
+            qint64 offset     = 0;
+            qint64 bytesRead  = 0;
+            uint   checkpoint = 0;
 
             for (tstrip_t st = 0 ; st < num_of_strips ; ++st)
             {
@@ -482,10 +482,10 @@ bool DImgTIFFLoader::load(const QString& filePath, DImgLoaderObserver* const obs
                 return false;
             }
 
-            long  offset     = 0;
-            long  bytesRead  = 0;
-            uint  checkpoint = 0;
-            float maxValue   = 0.0;
+            qint64 offset     = 0;
+            qint64 bytesRead  = 0;
+            uint   checkpoint = 0;
+            float  maxValue   = 0.0;
 
             for (tstrip_t st = 0 ; st < num_of_strips ; ++st)
             {
@@ -702,8 +702,8 @@ bool DImgTIFFLoader::load(const QString& filePath, DImgLoaderObserver* const obs
                 return false;
             }
 
-            long offset         = 0;
-            long pixelsRead     = 0;
+            qint64 offset       = 0;
+            qint64 pixelsRead   = 0;
 
             // this is inspired by TIFFReadRGBAStrip, tif_getimage.c
 
