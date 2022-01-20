@@ -303,44 +303,44 @@ BUGFIXES:
 292 ==> 280357 - Showfoto crash while using sharpen.
 293 ==> 283009 - Showefoto crashes when opening a directory.
 294 ==> 300066 - ShowFoto crash when exiting.
-295 ==> 
-296 ==> 
-297 ==> 
-298 ==> 
-299 ==> 
-300 ==> 
-301 ==> 
-302 ==> 
-303 ==> 
-304 ==> 
-305 ==> 
-306 ==> 
-307 ==> 
-308 ==> 
-309 ==> 
-310 ==> 
-311 ==> 
-312 ==> 
-313 ==> 
-314 ==> 
-315 ==> 
-316 ==> 
-317 ==> 
-318 ==> 
-319 ==> 
-320 ==> 
-321 ==> 
-322 ==> 
-323 ==> 
-324 ==> 
-325 ==> 
-326 ==> 
-327 ==> 
-328 ==> 
-329 ==> 
-330 ==> 
-331 ==> 
-332 ==> 
+295 ==> 111875 - Crash (signal 11) when configuring ShowFoto toolbars.
+296 ==> 091850 - Make it possible to laucnh the image editor module apart from the full program (whishlist).
+297 ==> 111873 - Modifying and then navigating in the thumbbar does not update photo thumbnail.
+298 ==> 163403 - Image zoom changes when choosing a new thumbnail.
+299 ==> 155178 - Following update, showfoto crashes on sgnal 11 on selecting "Insert Text" from "Decorate" menu.
+300 ==> 173790 - Edit previews happen too soon in Showfoto.
+301 ==> 104031 - Selected item should stay centered in thumbnail bar.
+302 ==> 104980 - After discarding changes of a photo, Showfoto ask if (not yet done) changes of the next photo should be save/discard too.
+303 ==> 127244 - Stubborn Save bug in Showfoto (and associated crash).
+304 ==> 158144 - Showfoto crashs In settings window.
+305 ==> 249932 - Add OpenGL image effects when loading next image.
+306 ==> 154478 - Showfoto does not sort pictures by name.
+307 ==> 147136 - When selecting pictures from folder Showfoto got closed.
+308 ==> 179531 - Showfoto crash on saveas jpegs.
+309 ==> 275452 - ShowFoto crashed during crop process (Scheren in German).
+310 ==> 127242 - Flashing 'histogram calculation in progress' is a bit annoying.
+311 ==> 098466 - Freedesktop.org desktop entry compliant Showfoto .desktop files.
+312 ==> 154753 - Add support for JPEG data precision 12.
+313 ==> 109271 - Cant "Save As" picture opened from http url in Konqueror.
+314 ==> 099495 - Menu items active without an image loaded.
+315 ==> 256240 - Metadata RAW files IPTC->Keywords not correct to view.
+316 ==> 312549 - Showfoto does not correctly rotate images in the main view.
+317 ==> 111872 - Undoing a modification does not display the original photo.
+318 ==> 121822 - No thumbnails update after manipulation a photo in Showfoto.
+319 ==> 186645 - Showfoto is not localized.
+320 ==> 160196 - Unable to save preferences for Color Management: ManagedView.
+321 ==> 111876 - Option "Hide toolbar in fullscreen mode" does not hide the toolbar in fullscreen mode.
+322 ==> 172033 - Unable to draw rectangle from right to left.
+323 ==> 343527 - In Showfoto, i cannot discard / close the current photo.
+324 ==> 137621 - digiKam tools causes infinite loop of applying options to sample area of photo.
+325 ==> 244511 - ShowFoto crash after rotating.
+326 ==> 099494 - Showfoto: please add an b.k.o entry.
+327 ==> 093846 - Keeping compatibility in Showfoto.
+328 ==> 113919 - Thumbbar fullscreen mode configuration problem.
+329 ==> 190645 - Showfoto crash after regular update with zypper.
+330 ==> 254776 - Showfoto opens but some functions inoperable.
+331 ==> 113917 - No need to plug more than one FullScreen button on ShowFoto main toolbar.
+332 ==> 107155 - CRITICAL: ShowFoto overwrites wrong file when saving!
 333 ==> 
 334 ==> 
 335 ==> 
