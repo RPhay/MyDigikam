@@ -67,7 +67,6 @@ public:
                            const Application application);
     ~MapWidgetView()                        override;
 
-    void openAlbum(Album* const album);
     void setActive(const bool state);
     bool getActiveState()            const;
 

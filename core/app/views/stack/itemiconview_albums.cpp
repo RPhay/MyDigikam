@@ -168,14 +168,8 @@ void ItemIconView::slotAlbumSelected(const QList<Album*>& albums)
     if (albums.isEmpty() || !albums.first())
     {
         d->iconView->openAlbum(QList<Album*>());
-
-#ifdef HAVE_MARBLE
-
-        d->mapView->openAlbum(nullptr);
-
-#endif // HAVE_MARBLE
-
         slotTogglePreviewMode(ItemInfo());
+
         return;
     }
 

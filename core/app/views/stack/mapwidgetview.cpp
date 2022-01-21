@@ -70,12 +70,9 @@ class Q_DECL_HIDDEN MapWidgetView::Private
 public:
 
     explicit Private()
-       : vbox               (nullptr),
-         mapWidget          (nullptr),
+       : mapWidget          (nullptr),
          imageFilterModel   (nullptr),
-         imageModel         (nullptr),
          importFilterModel  (nullptr),
-         importModel        (nullptr),
          selectionModel     (nullptr),
          mapViewModelHelper (nullptr),
          gpsItemInfoSorter  (nullptr),
@@ -83,12 +80,9 @@ public:
     {
     }
 
-    DVBox*                     vbox;
     MapWidget*                 mapWidget;
     ItemFilterModel*           imageFilterModel;
-    ItemAlbumModel*            imageModel;
     ImportFilterModel*         importFilterModel;
-    ImportItemModel*           importModel;
     QItemSelectionModel*       selectionModel;
     MapViewModelHelper*        mapViewModelHelper;
     GPSItemInfoSorter*         gpsItemInfoSorter;
@@ -115,16 +109,22 @@ MapWidgetView::MapWidgetView(QItemSelectionModel* const selectionModel,
     switch (d->application)
     {
         case ApplicationDigikam:
+        {
             d->imageFilterModel   = dynamic_cast<ItemFilterModel*>(imageFilterModel);
-            d->imageModel         = dynamic_cast<ItemAlbumModel*>(imageFilterModel->sourceModel());
-            d->mapViewModelHelper = new MapViewModelHelper(d->selectionModel, imageFilterModel, this, ApplicationDigikam);
+            d->mapViewModelHelper = new MapViewModelHelper(d->selectionModel,
+                                                           d->imageFilterModel,
+                                                           this, ApplicationDigikam);
             break;
+        }
 
         case ApplicationImportUI:
+        {
             d->importFilterModel  = dynamic_cast<ImportFilterModel*>(imageFilterModel);
-            d->importModel        = dynamic_cast<ImportItemModel*>(imageFilterModel->sourceModel());
-            d->mapViewModelHelper = new MapViewModelHelper(d->selectionModel, d->importFilterModel, this, ApplicationImportUI);
+            d->mapViewModelHelper = new MapViewModelHelper(d->selectionModel,
+                                                           d->importFilterModel,
+                                                           this, ApplicationImportUI);
             break;
+        }
     }
 
     QVBoxLayout* const vBoxLayout = new QVBoxLayout(this);
@@ -171,18 +171,6 @@ void MapWidgetView::doSaveState()
     d->mapWidget->saveSettingsToGroup(&groupCentralMap);
 
     group.sync();
-}
-
-/**
- * @brief Switch that opens the current album.
- * @param album Current album.
- */
-void MapWidgetView::openAlbum(Album* const album)
-{
-    if (album)
-    {
-        d->imageModel->openAlbum(QList<Album*>() << album);
-    }
 }
 
 /**
@@ -242,6 +230,7 @@ MapViewModelHelper::MapViewModelHelper(QItemSelectionModel* const selection,
     switch (d->application)
     {
         case MapWidgetView::ApplicationDigikam:
+        {
             d->model               = dynamic_cast<ItemFilterModel*>(filterModel);
             d->thumbnailLoadThread = new ThumbnailLoadThread(this);
 
@@ -254,14 +243,17 @@ MapViewModelHelper::MapViewModelHelper(QItemSelectionModel* const selection,
             connect(CoreDbAccess::databaseWatch(), SIGNAL(imageChange(ImageChangeset)),
                     this, SLOT(slotImageChange(ImageChangeset)), Qt::QueuedConnection);
             break;
+        }
 
         case MapWidgetView::ApplicationImportUI:
+        {
             d->importModel = dynamic_cast<ImportFilterModel*>(filterModel);
 
             connect(ImportUI::instance()->getCameraThumbsCtrl(), SIGNAL(signalThumbInfoReady(CamItemInfo)),
                     this, SLOT(slotThumbnailLoaded(CamItemInfo)));
 
             break;
+        }
     }
 }
 
