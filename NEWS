@@ -429,7 +429,7 @@ BUGFIXES:
 418 ==> O88807 - digiKam: thumbnail stored in gdbm do not honour exif rotation info.
 419 ==> 443863 - digiKam crash on rating image.
 420 ==> 448910 - GUI remains disabled after search for similarities returns an empty result.
-421 ==> 
+421 ==> 399034 - Pictures are not centered in the map.
 422 ==> 
 423 ==> 
 424 ==> 
