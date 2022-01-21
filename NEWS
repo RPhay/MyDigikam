@@ -303,7 +303,6 @@ BUGFIXES:
 292 ==> 280357 - Showfoto crash while using sharpen.
 293 ==> 283009 - Showefoto crashes when opening a directory.
 294 ==> 300066 - ShowFoto crash when exiting.
-<<<<<<< HEAD
 295 ==> 111875 - Crash (signal 11) when configuring ShowFoto toolbars.
 296 ==> 091850 - Make it possible to laucnh the image editor module apart from the full program (whishlist).
 297 ==> 111873 - Modifying and then navigating in the thumbbar does not update photo thumbnail.
@@ -414,20 +413,20 @@ BUGFIXES:
 402 ==> 287132 - Extension file bug.
 403 ==> 315487 - Snap on send to. Crash.
 404 ==> 296484 - Sort albums by categories.
-405 ==> 
-406 ==> 
-407 ==> 
-408 ==> 
-409 ==> 
-410 ==> 
-411 ==> 
-412 ==> 
-413 ==> 
-414 ==> 
-415 ==> 
-416 ==> 
-417 ==> 
-418 ==> 
+405 ==> 156847 - Missing thumbnails in album overview.
+406 ==> 176472 - Moving/Deleting all files from an album crashes digiKam.
+407 ==> 194297 - Disable auto scroll in thumbbar.
+408 ==> 318834 - Images vanish and Properties not shown if image is picked from Image Thumbbar on right and dropped on to the Thumbbar itself.
+409 ==> 102195 - Thumb bar in image editor standalone operation.
+410 ==> 374401 - Editor view: how to hide thumbbar forever?
+411 ==> 296654 - Thumbbar can't be scaled down without doing this trick.
+412 ==> 155408 - Wish: thumbbar in the album view?
+413 ==> 191359 - Shadows around thumbnails not consistent with other KDE apps.
+414 ==> 112865 - Thumbnail generation fails on large files.
+415 ==> 112000 - Crash when overwriting images which are displayed in the thumbnail list.
+416 ==> 247940 - digiKam "spontaneous" crash.
+417 ==> 131269 - Thumbnails aren't saved / cached; Thumbnails aren't auto-generated.
+418 ==> O88807 - digiKam: thumbnail stored in gdbm do not honour exif rotation info.
 419 ==> 
 420 ==> 
 421 ==> 
