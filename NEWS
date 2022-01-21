@@ -430,14 +430,14 @@ BUGFIXES:
 419 ==> 443863 - digiKam crash on rating image.
 420 ==> 448910 - GUI remains disabled after search for similarities returns an empty result.
 421 ==> 399034 - Pictures are not centered in the map.
-422 ==> 
-423 ==> 
-424 ==> 
-425 ==> 
-426 ==> 
-427 ==> 
-428 ==> 
-429 ==> 
+422 ==> 158507 - Wish option to open album in terminal or filemanager.
+423 ==> 186205 - Can't open photo in the external application from digiKam.
+424 ==> 288977 - Sync tagged faces with Akonadi.
+425 ==> 313505 - Searching the bug-reporting item, it has disappeared.
+426 ==> 319169 - Interfaces to relevant programs such as GIMP, Photoshop, Lightroom etc.
+427 ==> 120192 - Work together with krita devs.
+428 ==> 119904 - Kde gamma module is is not available.
+429 ==> 319147 - Unable to launch bug tracking out of/from digiKam.
 430 ==> 
 431 ==> 
 432 ==> 
