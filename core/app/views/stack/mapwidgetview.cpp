@@ -192,6 +192,11 @@ void MapWidgetView::openAlbum(Album* const album)
 void MapWidgetView::setActive(const bool state)
 {
     d->mapWidget->setActive(state);
+
+    if (state)
+    {
+        d->mapWidget->adjustBoundariesToGroupedMarkers();
+    }
 }
 
 /**
