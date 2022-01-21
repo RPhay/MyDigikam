@@ -41,7 +41,7 @@ for SUBDIR in $QT_SUBDIRS ; do
     cd ..
 
 done
-exit
+
 # Remove .git sub directories
 
 GIT_SUBDIRS=$(find  . -name '.git')
@@ -54,4 +54,3 @@ for SUBDIR in $GIT_SUBDIRS ; do
     rm -fr $SUBDIR
 
 done
-
