@@ -380,7 +380,7 @@ BUGFIXES:
 368 ==> 207889 - It has crashed, when I try to pick up picture to send it.
 369 ==> 218061 - Crash while browsing pictures.
 370 ==> 302558 - Allow thinner sidebars.
-371 ==> 
+371 ==> 351348 - Title/captions not displayed in "Caption/Tags" sidebar.
 372 ==> 
 373 ==> 
 374 ==> 
