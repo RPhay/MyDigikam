@@ -73,6 +73,10 @@ public:
     ItemInfo   currentItemInfo()     const;
     CamItemInfo currentCamItemInfo() const;
 
+private Q_SLOTS:
+
+    void slotModelChanged();
+
 protected:
 
     void doLoadState()                      override;

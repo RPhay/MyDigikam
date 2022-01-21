@@ -71,7 +71,9 @@ public:
 
     explicit Private()
        : mapWidget          (nullptr),
+         imageModel         (nullptr),
          imageFilterModel   (nullptr),
+         importModel        (nullptr),
          importFilterModel  (nullptr),
          selectionModel     (nullptr),
          mapViewModelHelper (nullptr),
@@ -81,7 +83,9 @@ public:
     }
 
     MapWidget*                 mapWidget;
+    ItemAlbumModel*            imageModel;
     ItemFilterModel*           imageFilterModel;
+    ImportItemModel*           importModel;
     ImportFilterModel*         importFilterModel;
     QItemSelectionModel*       selectionModel;
     MapViewModelHelper*        mapViewModelHelper;
@@ -111,6 +115,7 @@ MapWidgetView::MapWidgetView(QItemSelectionModel* const selectionModel,
         case ApplicationDigikam:
         {
             d->imageFilterModel   = dynamic_cast<ItemFilterModel*>(imageFilterModel);
+            d->imageModel         = dynamic_cast<ItemAlbumModel*>(imageFilterModel->sourceModel());
             d->mapViewModelHelper = new MapViewModelHelper(d->selectionModel,
                                                            d->imageFilterModel,
                                                            this, ApplicationDigikam);
@@ -120,6 +125,7 @@ MapWidgetView::MapWidgetView(QItemSelectionModel* const selectionModel,
         case ApplicationImportUI:
         {
             d->importFilterModel  = dynamic_cast<ImportFilterModel*>(imageFilterModel);
+            d->importModel        = dynamic_cast<ImportItemModel*>(imageFilterModel->sourceModel());
             d->mapViewModelHelper = new MapViewModelHelper(d->selectionModel,
                                                            d->importFilterModel,
                                                            this, ApplicationImportUI);
@@ -140,6 +146,23 @@ MapWidgetView::MapWidgetView(QItemSelectionModel* const selectionModel,
     vBoxLayout->addWidget(d->mapWidget);
     vBoxLayout->addWidget(d->mapWidget->getControlWidget());
     vBoxLayout->setContentsMargins(QMargins());
+
+    switch (d->application)
+    {
+        case ApplicationDigikam:
+        {
+            connect(d->imageModel, SIGNAL(imageInfosAdded(QList<ItemInfo>)),
+                    this, SLOT(slotModelChanged()));
+            break;
+        }
+
+        case ApplicationImportUI:
+        {
+            connect(d->importModel, SIGNAL(itemInfosAdded(QList<CamItemInfo>)),
+                    this, SLOT(slotModelChanged()));
+            break;
+        }
+    }
 }
 
 /**
@@ -193,6 +216,14 @@ void MapWidgetView::setActive(const bool state)
 bool MapWidgetView::getActiveState() const
 {
     return d->mapWidget->getActiveState();
+}
+
+void MapWidgetView::slotModelChanged()
+{
+   if (d->mapWidget->getActiveState())
+   {
+       d->mapWidget->adjustBoundariesToGroupedMarkers();
+   }
 }
 
 //-------------------------------------------------------------------------------------------------------------
@@ -272,10 +303,14 @@ QAbstractItemModel* MapViewModelHelper::model() const
     switch (d->application)
     {
         case MapWidgetView::ApplicationDigikam:
+        {
             return d->model;
+        }
 
         case MapWidgetView::ApplicationImportUI:
+        {
             return d->importModel;
+        }
     }
 
     return nullptr;
