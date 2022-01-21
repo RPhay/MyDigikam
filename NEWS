@@ -438,8 +438,8 @@ BUGFIXES:
 427 ==> 120192 - Work together with krita devs.
 428 ==> 119904 - Kde gamma module is is not available.
 429 ==> 319147 - Unable to launch bug tracking out of/from digiKam.
-430 ==> 
-431 ==> 
+430 ==> 091361 - Store digikam files in ~/.digikam/.
+431 ==> 121630 - Needs better upgrade support and/or delete old rc/db files.
 432 ==> 
 433 ==> 
 434 ==> 
