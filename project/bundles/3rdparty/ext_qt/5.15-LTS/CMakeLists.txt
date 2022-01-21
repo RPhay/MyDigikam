@@ -28,6 +28,7 @@ ExternalProject_Add(ext_qt
     PATCH_COMMAND cp -f ${CMAKE_CURRENT_SOURCE_DIR}/kde-qt5-lts.sh <SOURCE_DIR>/. &&
                   <SOURCE_DIR>/kde-qt5-lts.sh                                     &&
                   ${PATCH_COMMAND} -p1 -i ${CMAKE_CURRENT_SOURCE_DIR}/qt-appimage-support.patch
+               && ${PATCH_COMMAND} -p1 -i ${CMAKE_CURRENT_SOURCE_DIR}/qt-appimage-openssl-linked.patch
                && ${PATCH_COMMAND} -p1 -i ${CMAKE_CURRENT_SOURCE_DIR}/qt-icu-hack.patch
 
     CONFIGURE_COMMAND <SOURCE_DIR>/configure
