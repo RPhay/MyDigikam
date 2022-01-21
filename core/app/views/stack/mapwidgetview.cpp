@@ -218,6 +218,50 @@ bool MapWidgetView::getActiveState() const
     return d->mapWidget->getActiveState();
 }
 
+/**
+ * @brief Returns the ItemInfo for the current image
+ */
+ItemInfo MapWidgetView::currentItemInfo() const
+{
+    /// @todo Have geoifacewidget honor the 'current index'
+    QModelIndex currentIndex = d->selectionModel->currentIndex();
+
+    if (!currentIndex.isValid())
+    {
+        /// @todo This is temporary until geoifacewidget marks a 'current index'
+        if (!d->selectionModel->hasSelection())
+        {
+            return ItemInfo();
+        }
+
+        currentIndex = d->selectionModel->selectedIndexes().first();
+    }
+
+    return d->imageFilterModel->imageInfo(currentIndex);
+}
+
+/**
+ * @brief Returns the CamItemInfo for the current image
+ */
+CamItemInfo MapWidgetView::currentCamItemInfo() const
+{
+    /// @todo Have geoifacewidget honor the 'current index'
+    QModelIndex currentIndex = d->selectionModel->currentIndex();
+
+    if (!currentIndex.isValid())
+    {
+        /// @todo This is temporary until geoifacewidget marks a 'current index'
+        if (!d->selectionModel->hasSelection())
+        {
+            return CamItemInfo();
+        }
+
+        currentIndex = d->selectionModel->selectedIndexes().first();
+    }
+
+    return d->importFilterModel->camItemInfo(currentIndex);
+}
+
 void MapWidgetView::slotModelChanged()
 {
    if (d->mapWidget->getActiveState())
@@ -665,50 +709,6 @@ void MapViewModelHelper::slotImageChange(const ImageChangeset& changeset)
             }
         }
     }
-}
-
-/**
- * @brief Returns the ItemInfo for the current image
- */
-ItemInfo MapWidgetView::currentItemInfo() const
-{
-    /// @todo Have geoifacewidget honor the 'current index'
-    QModelIndex currentIndex = d->selectionModel->currentIndex();
-
-    if (!currentIndex.isValid())
-    {
-        /// @todo This is temporary until geoifacewidget marks a 'current index'
-        if (!d->selectionModel->hasSelection())
-        {
-            return ItemInfo();
-        }
-
-        currentIndex = d->selectionModel->selectedIndexes().first();
-    }
-
-    return d->imageFilterModel->imageInfo(currentIndex);
-}
-
-/**
- * @brief Returns the CamItemInfo for the current image
- */
-CamItemInfo MapWidgetView::currentCamItemInfo() const
-{
-    /// @todo Have geoifacewidget honor the 'current index'
-    QModelIndex currentIndex = d->selectionModel->currentIndex();
-
-    if (!currentIndex.isValid())
-    {
-        /// @todo This is temporary until geoifacewidget marks a 'current index'
-        if (!d->selectionModel->hasSelection())
-        {
-            return CamItemInfo();
-        }
-
-        currentIndex = d->selectionModel->selectedIndexes().first();
-    }
-
-    return d->importFilterModel->camItemInfo(currentIndex);
 }
 
 } // namespace Digikam
