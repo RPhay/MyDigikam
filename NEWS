@@ -440,9 +440,9 @@ BUGFIXES:
 429 ==> 319147 - Unable to launch bug tracking out of/from digiKam.
 430 ==> 091361 - Store digikam files in ~/.digikam/.
 431 ==> 121630 - Needs better upgrade support and/or delete old rc/db files.
-432 ==> 
-433 ==> 
-434 ==> 
+432 ==> 178251 - Crash (signal 6) when new user uses home dir.
+433 ==> 178952 - Error when changing the database path.
+434 ==> 378591 - Selecting Database Configuration Type on first startup crashed application.
 435 ==> 
 436 ==> 
 437 ==> 
