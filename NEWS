@@ -428,7 +428,7 @@ BUGFIXES:
 417 ==> 131269 - Thumbnails aren't saved / cached; Thumbnails aren't auto-generated.
 418 ==> O88807 - digiKam: thumbnail stored in gdbm do not honour exif rotation info.
 419 ==> 443863 - digiKam crash on rating image.
-420 ==> 
+420 ==> 448910 - GUI remains disabled after search for similarities returns an empty result.
 421 ==> 
 422 ==> 
 423 ==> 
