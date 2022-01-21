@@ -43,6 +43,16 @@ for SUBDIR in $QT_SUBDIRS ; do
 
 done
 
+# QtWebEngine is pulished as LTS officially in open source, so we can checkout the stable tag as well.
+
+WEBENGINE_LTS=v5.15.8-lts
+
+echo "Branching QtWebEngine to LTS version $WEBENGINE_LTS..."
+cd qtwebengine
+git checkout $WEBENGINE_LTS || true
+cd ..
+
+
 # Remove .git sub directories for archiving purpose.
 #
 #GIT_SUBDIRS=$(find  . -name '.git')
