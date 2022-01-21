@@ -147,7 +147,7 @@ void Showfoto::setupUserArea()
     m_splitter->setFrameStyle(QFrame::NoFrame);
     m_splitter->setFrameShape(QFrame::NoFrame);
     m_splitter->setFrameShadow(QFrame::Plain);
-    m_splitter->setStretchFactor(1, 10);      // set Canvas default size to max.
+    m_splitter->setStretchFactor(m_splitter->indexOf(viewContainer), 10);      // set Canvas default size to max.
     m_splitter->setOpaqueResize(false);
 
     m_canvas->makeDefaultEditingCanvas();

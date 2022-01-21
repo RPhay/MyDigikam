@@ -61,6 +61,7 @@ ItemIconView::ItemIconView(QWidget* const parent, DModelFactory* const modelColl
     d->dockArea    = new QMainWindow(this, Qt::Widget);
     d->dockArea->setContentsMargins(QMargins());
     d->splitter->addWidget(d->dockArea);
+    d->splitter->setStretchFactor(d->splitter->indexOf(d->dockArea), 10);
 
     DVBox* const vbox = new DVBox(d->dockArea);
     d->errorWidget    = new DNotificationWidget(vbox);
