@@ -381,26 +381,26 @@ BUGFIXES:
 369 ==> 218061 - Crash while browsing pictures.
 370 ==> 302558 - Allow thinner sidebars.
 371 ==> 351348 - Title/captions not displayed in "Caption/Tags" sidebar.
-372 ==> 
-373 ==> 
-374 ==> 
-375 ==> 
-376 ==> 
-377 ==> 
-378 ==> 
-379 ==> 
-380 ==> 
-381 ==> 
-382 ==> 
-383 ==> 
-384 ==> 
-385 ==> 
-386 ==> 
-387 ==> 
-388 ==> 
-389 ==> 
-390 ==> 
-391 ==> 
+372 ==> 219438 - Crash when trying to edit an image.
+373 ==> 232734 - digiKam crashed when loading images.
+374 ==> 233345 - digiKam crashes on exit.
+375 ==> 234469 - digiKam Crashes.
+376 ==> 234586 - digiKam crashes.
+377 ==> 236621 - digiKam crash at startup.
+378 ==> 236930 - Crash just after start.
+379 ==> 236989 - digiKam crash.
+380 ==> 237981 - Crash when opening picture.
+381 ==> 238962 - digiKam crash at every start (after few seconds).
+382 ==> 240110 - Crash when trying to open digikam.
+383 ==> 245961 - digiKam crash on exit.
+384 ==> 246079 - Crash after double-click.
+385 ==> 246506 - digiKam crashes if I close the program.
+386 ==> 247469 - digiKam does not close entirely.
+387 ==> 247812 - digiKam crash on close.
+388 ==> 248028 - crash on exit.
+389 ==> 250160 - Crash on configuring Toolbar.
+390 ==> 251249 - No images visible in album view. OpenGL image viewer works though.
+391 ==> 246846 - digiKam crash while rating.
 392 ==> 
 393 ==> 
 394 ==> 
