@@ -212,9 +212,7 @@ void TagsManager::setupUi()
      connect(d->tagPropWidget, SIGNAL(signalTitleEditReady()),
              this, SLOT(slotTitleEditReady()));
 
-     d->splitter->setStretchFactor(0, 0);
-     d->splitter->setStretchFactor(1, 1);
-     d->splitter->setStretchFactor(2, 0);
+     d->splitter->setStretchFactor(d->splitter->indexOf(d->tagMngrView), 10);
 
      QWidget* const centralView    = new QWidget(this);
      QHBoxLayout* const mainLayout = new QHBoxLayout(centralView);

@@ -221,7 +221,7 @@ void ImportUI::setupUserArea()
     d->splitter->setFrameShadow(QFrame::Plain);
     d->splitter->setFrameShape(QFrame::NoFrame);
     d->splitter->setOpaqueResize(false);
-    d->splitter->setStretchFactor(0, 10);      // set iconview default size to max.
+    d->splitter->setStretchFactor(d->splitter->indexOf(vbox), 10);      // set iconview default size to max.
 
     vbox->setStretchFactor(d->view, 10);
     vbox->setStretchFactor(d->historyView, 2);

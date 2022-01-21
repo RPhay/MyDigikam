@@ -421,6 +421,7 @@ void LightTableWindow::setupUserArea()
 
     KMainWindow* const viewContainer = new KMainWindow(mainW, Qt::Widget);
     d->hSplitter->addWidget(viewContainer);
+    d->hSplitter->setStretchFactor(d->hSplitter->indexOf(viewContainer), 10);
     d->previewView                   = new LightTableView(viewContainer);
     viewContainer->setCentralWidget(d->previewView);
 
