@@ -401,19 +401,19 @@ BUGFIXES:
 389 ==> 250160 - Crash on configuring Toolbar.
 390 ==> 251249 - No images visible in album view. OpenGL image viewer works though.
 391 ==> 246846 - digiKam crash while rating.
-392 ==> 
-393 ==> 
-394 ==> 
-395 ==> 
-396 ==> 
-397 ==> 
-398 ==> 
-399 ==> 
-400 ==> 
-401 ==> 
-402 ==> 
-403 ==> 
-404 ==> 
+392 ==> 253431 - digiKam dies after normal startup.
+393 ==> 253824 - When closing digiKam the process doesnt close.
+394 ==> 255840 - digiKam refused to open.
+395 ==> 256932 - Crash when browsing.
+396 ==> 257848 - digiKam crash when selecting source library at initially start.
+397 ==> 259111 - digikam closed.
+398 ==> 259781 - digiKam crash when left open.
+399 ==> 261896 - Crash when browsing pictures.
+400 ==> 276097 - digiKam crashed when copying images to a subfolder.
+401 ==> 281322 - digiKam crash, when intensive reorganising pics from/into directories.
+402 ==> 287132 - Extension file bug.
+403 ==> 315487 - Snap on send to. Crash.
+404 ==> 296484 - Sort albums by categories.
 405 ==> 
 406 ==> 
 407 ==> 
