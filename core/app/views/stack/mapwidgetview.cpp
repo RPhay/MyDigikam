@@ -264,7 +264,7 @@ CamItemInfo MapWidgetView::currentCamItemInfo() const
 
 void MapWidgetView::slotModelChanged()
 {
-    if (d->mapWidget->getActiveState())
+   if (d->mapWidget->getActiveState())
    {
        d->mapWidget->adjustBoundariesToGroupedMarkers();
    }
