@@ -151,14 +151,14 @@ MapWidgetView::MapWidgetView(QItemSelectionModel* const selectionModel,
     {
         case ApplicationDigikam:
         {
-            connect(d->imageModel, SIGNAL(imageInfosAdded(QList<ItemInfo>)),
+            connect(d->imageModel, SIGNAL(allRefreshingFinished()),
                     this, SLOT(slotModelChanged()));
             break;
         }
 
         case ApplicationImportUI:
         {
-            connect(d->importModel, SIGNAL(itemInfosAdded(QList<CamItemInfo>)),
+            connect(d->importModel, SIGNAL(allRefreshingFinished()),
                     this, SLOT(slotModelChanged()));
             break;
         }
@@ -264,7 +264,7 @@ CamItemInfo MapWidgetView::currentCamItemInfo() const
 
 void MapWidgetView::slotModelChanged()
 {
-   if (d->mapWidget->getActiveState())
+    if (d->mapWidget->getActiveState())
    {
        d->mapWidget->adjustBoundariesToGroupedMarkers();
    }
