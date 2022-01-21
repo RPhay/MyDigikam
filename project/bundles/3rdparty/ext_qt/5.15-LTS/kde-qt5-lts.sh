@@ -11,6 +11,7 @@
 set -e
 set -C
 
+# These commands are processed previously by CMake.
 #git clone --progress --verbose --branch kde/5.15 --single-branch https://invent.kde.org/qt/qt/qt5.git kde-5.15-LTS
 #cd kde-5.15-LTS
 
