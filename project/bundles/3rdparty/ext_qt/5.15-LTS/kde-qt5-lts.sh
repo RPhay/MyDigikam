@@ -56,17 +56,21 @@ cd ..
 
 echo "List git sub-module revisions"
 
-touch kde-qt5-lts-gitrev.txt
+rm -f qt5_lts_gitrev.h
+echo "#pragma once"                  > qt5_lts_gitrev.h
+echo "#define QT5_LTS_GITREV \" \\" >> qt5_lts_gitrev.h
 
 for SUBDIR in $QT_SUBDIRS ; do
 
     cd $SUBDIR
-    echo "$(basename "$SUBDIR"):$(git rev-parse HEAD)" >> ../kde-qt5-lts-gitrev.txt
+    echo "$(basename "$SUBDIR"):$(git rev-parse HEAD) \\" >> ../qt5_lts_gitrev.h
     cd ..
 
 done
 
-cat kde-qt5-lts-gitrev.txt
+echo "\""                           >> qt5_lts_gitrev.h
+
+cat qt5_lts_gitrev.h
 
 # Remove .git sub directories for archiving purpose.
 #
