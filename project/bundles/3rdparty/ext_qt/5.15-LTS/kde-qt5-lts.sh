@@ -72,7 +72,7 @@ else
 
     cd $DOWNLOAD_DIR/kde-5.15-LTS
 
-    git pull --rebase -v --stat
+    git pull -v --stat
 
     # Remove Qt6 sub-modules
 
