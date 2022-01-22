@@ -540,22 +540,22 @@ BUGFIXES:
 529 ==> 164187 - Screen full of keywords - scroll missing.
 530 ==> 195817 - No progress information is shown when applying tag changes to a _single_ image.
 531 ==> 305446 - digiKam crashes after editing and tagging an image, then saving the changed image.
-532 ==> 
-533 ==> 
-534 ==> 
-535 ==> 
-536 ==> 
-537 ==> 
-539 ==> 
-539 ==> 
-540 ==> 
-541 ==> 
-542 ==> 
-543 ==> 
-544 ==> 
-545 ==> 
-546 ==> 
-547 ==> 
+532 ==> 196925 - "Tags aleady assigned" does not show tags already assigned.
+533 ==> 235671 - All tags no longer shown when the "Tags already assigned" button is clicked.
+534 ==> 359899 - Tags Filter panel too wide.
+535 ==> 093419 - Unecessary confirmation when setting tag.
+536 ==> 111600 - Link between addressbook contacts and people tags.
+537 ==> 116606 - Wish: I want to see again all my pictures having a tag in a flat view, not separated by albums.
+539 ==> 122194 - WISH: The ability to add descriptions and other meta information to a tag.
+539 ==> 134041 - Add contact icon to contact tag.
+540 ==> 139465 - Add labels to images.
+541 ==> 146857 - Suggestion for tagging images.
+542 ==> 149007 - Wish: Assign Hotkey to tag.
+543 ==> 158712 - No way to copy all keywords from one photo to another.
+544 ==> 159667 - Create Tag From AddressBook - Usability.
+545 ==> 165824 - Tag images in digiKam with Contacts.
+546 ==> 176005 - Wish: different view when "my tags" is clicked.
+547 ==> 183711 - Allow "pretagging" during image viewing by pressing a key.
 548 ==> 
 549 ==> 
 550 ==> 
