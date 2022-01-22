@@ -70,27 +70,33 @@ class Q_DECL_HIDDEN MapWidgetView::Private
 public:
 
     explicit Private()
-       : mapWidget          (nullptr),
-         imageModel         (nullptr),
-         imageFilterModel   (nullptr),
-         importModel        (nullptr),
-         importFilterModel  (nullptr),
-         selectionModel     (nullptr),
-         mapViewModelHelper (nullptr),
-         gpsItemInfoSorter  (nullptr),
-         application        (MapWidgetView::ApplicationDigikam)
+       : mapWidget                  (nullptr),
+         imageModel                 (nullptr),
+         imageFilterModel           (nullptr),
+         importModel                (nullptr),
+         importFilterModel          (nullptr),
+         selectionModel             (nullptr),
+         mapViewModelHelper         (nullptr),
+         gpsItemInfoSorter          (nullptr),
+         application                (MapWidgetView::ApplicationDigikam),
+         boundariesShouldBeAdjusted (false)
     {
     }
 
     MapWidget*                 mapWidget;
+
     ItemAlbumModel*            imageModel;
     ItemFilterModel*           imageFilterModel;
     ImportItemModel*           importModel;
     ImportFilterModel*         importFilterModel;
     QItemSelectionModel*       selectionModel;
+
     MapViewModelHelper*        mapViewModelHelper;
     GPSItemInfoSorter*         gpsItemInfoSorter;
+
     MapWidgetView::Application application;
+
+    bool                       boundariesShouldBeAdjusted;
 };
 
 /**
@@ -119,6 +125,9 @@ MapWidgetView::MapWidgetView(QItemSelectionModel* const selectionModel,
             d->mapViewModelHelper = new MapViewModelHelper(d->selectionModel,
                                                            d->imageFilterModel,
                                                            this, ApplicationDigikam);
+
+            connect(d->imageModel, SIGNAL(allRefreshingFinished()),
+                    this, SLOT(slotModelChanged()));
             break;
         }
 
@@ -129,6 +138,9 @@ MapWidgetView::MapWidgetView(QItemSelectionModel* const selectionModel,
             d->mapViewModelHelper = new MapViewModelHelper(d->selectionModel,
                                                            d->importFilterModel,
                                                            this, ApplicationImportUI);
+
+            connect(d->importModel, SIGNAL(allRefreshingFinished()),
+                    this, SLOT(slotModelChanged()));
             break;
         }
     }
@@ -146,23 +158,6 @@ MapWidgetView::MapWidgetView(QItemSelectionModel* const selectionModel,
     vBoxLayout->addWidget(d->mapWidget);
     vBoxLayout->addWidget(d->mapWidget->getControlWidget());
     vBoxLayout->setContentsMargins(QMargins());
-
-    switch (d->application)
-    {
-        case ApplicationDigikam:
-        {
-            connect(d->imageModel, SIGNAL(allRefreshingFinished()),
-                    this, SLOT(slotModelChanged()));
-            break;
-        }
-
-        case ApplicationImportUI:
-        {
-            connect(d->importModel, SIGNAL(allRefreshingFinished()),
-                    this, SLOT(slotModelChanged()));
-            break;
-        }
-    }
 }
 
 /**
@@ -204,8 +199,9 @@ void MapWidgetView::setActive(const bool state)
 {
     d->mapWidget->setActive(state);
 
-    if (state)
+    if (state && d->boundariesShouldBeAdjusted)
     {
+        d->boundariesShouldBeAdjusted = false;
         d->mapWidget->adjustBoundariesToGroupedMarkers();
     }
 }
@@ -264,9 +260,14 @@ CamItemInfo MapWidgetView::currentCamItemInfo() const
 
 void MapWidgetView::slotModelChanged()
 {
-   if (d->mapWidget->getActiveState())
+   if (d->mapWidget && d->mapWidget->getActiveState())
    {
+       d->boundariesShouldBeAdjusted = false;
        d->mapWidget->adjustBoundariesToGroupedMarkers();
+   }
+   else
+   {
+       d->boundariesShouldBeAdjusted = true;
    }
 }
 
