@@ -449,27 +449,27 @@ BUGFIXES:
 438 ==> 320156 - Settings don't have a default button.
 439 ==> 243107 - Crashed when opening preferences.
 440 ==> 131177 - Use date of creation instead of the date of last change.
-441 ==> 
-442 ==> 
-443 ==> 
-444 ==> 
-445 ==> 
-446 ==> 
-447 ==> 
-448 ==> 
-449 ==> 
-450 ==> 
-451 ==> 
-452 ==> 
-453 ==> 
-454 ==> 
-455 ==> 
-456 ==> 
-457 ==> 
-458 ==> 
-459 ==> 
-460 ==> 
-461 ==> 
+441 ==> 250333 - digiKam rating crash reproduceable.
+442 ==> 319283 - Differentiate "not rated" from "zero stars".
+443 ==> 172835 - The stars of the rating in the right panel are not refreshed when selecting different images.
+444 ==> 091540 - Usability: use separate windows for tag and album trees.
+445 ==> 110115 - Tagging with RMB incomplete.
+446 ==> 297294 - Right legend/tags panel: more expand/collapse.
+447 ==> 301488 - Tool to remove empty image labels (tags).
+448 ==> 418408 - For multiple selected images Tag Manager doesn't differentiate a tag if only on some of the images.
+449 ==> 242174 - Assigning keywords to more than one photo.
+450 ==> 268329 - Labels (rating, color, pick) in slideshow not alway shown correctly/sometimes forgotten.
+451 ==> 358609 - ‘Labels’ easily confused with ‘tags’ – new name?
+452 ==> 145465 - Modifying UI for removing labels.
+453 ==> 303392 - digiKam crashed if applicate Color/star or flag.
+454 ==> 091916 - Crash when adding tag in comment/tag dialog.
+455 ==> 115164 - digikam: image comments/tags dialog: group box label 'Tags' is overlaid by the |x> icon below it.
+456 ==> 092310 - wish: spell check support in picture comments.
+457 ==> 327650 - digiKam crashes when assigning a caption.
+458 ==> 147518 - Compose key doesn't work while entering comments.
+459 ==> 133488 - make it possible to enlarge image in the 'comments and tags' dialog.
+460 ==> 177608 - Wrong button text to save image tags and caption.
+461 ==> 300304 - Legends do not appear in editor.
 462 ==> 
 463 ==> 
 464 ==> 
