@@ -26,7 +26,7 @@ if [[ ! -d $DOWNLOAD_DIR/kde-5.15-LTS ]] ; then
     echo "Checkout Git module sub-directories from kde/5.15 LTS repository"
 
     cd $DOWNLOAD_DIR
-    git clone --progress --verbose --branch kde/5.15 --single-branch https://invent.kde.org/qt/qt/qt5.git kde-5.15-LTS
+    git clone --progress --verbose --branch kde/5.15 https://invent.kde.org/qt/qt/qt5.git kde-5.15-LTS
     cd kde-5.15-LTS
 
     git submodule update --init --recursive --progress
