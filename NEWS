@@ -471,53 +471,53 @@ BUGFIXES:
 460 ==> 177608 - Wrong button text to save image tags and caption.
 461 ==> 300304 - Legends do not appear in editor.
 462 ==> 382231 - First Run wizzard path.
-463 ==> 
-464 ==> 
-465 ==> 
-466 ==> 
-467 ==> 
-468 ==> 
-469 ==> 
-470 ==> 
-471 ==> 
-472 ==> 
-473 ==> 
-474 ==> 
-475 ==> 
-476 ==> 
-477 ==> 
-478 ==> 
-479 ==> 
-480 ==> 
-481 ==> 
-482 ==> 
-483 ==> 
-484 ==> 
-485 ==> 
-486 ==> 
-487 ==> 
-488 ==> 
-489 ==> 
-490 ==> 
-491 ==> 
-492 ==> 
-493 ==> 
-494 ==> 
-495 ==> 
-496 ==> 
-497 ==> 
-498 ==> 
-499 ==> 
-500 ==> 
-501 ==> 
-502 ==> 
-503 ==> 
-504 ==> 
-505 ==> 
-506 ==> 
-507 ==> 
-508 ==> 
-509 ==> 
+463 ==> 141624 - digiKam crash when assigning a new tag to a large number of photos.
+464 ==> 143135 - Many many crashes due to broken tags.
+465 ==> 149367 - Crash after clicking an existing tag while viewing an image.
+466 ==> 168846 - Crash after playing with tags (seems to be rather a crash in Qt or kdelibs).
+467 ==> 174991 - digiKam freezes when generating new tag.
+468 ==> 088121 - Tag sometimes does not accept drop of photo(s), or reports wrong tag name to drop to.
+469 ==> 089358 - Delete tag should be disabled when no tag is assigned.
+470 ==> 112799 - Hierarchical tag selection on right pane does not work correctly.
+471 ==> 136206 - Losing tags after an move or rename of imagefiles.
+472 ==> 147876 - Broken/renamed images after tagging.
+473 ==> 166663 - Tags not showing pictures without "Include Tag Subtree".
+474 ==> 181610 - Discard button not working in "Apply changes?".
+475 ==> 208621 - Checkboxes do not follow KDE's style.
+476 ==> 307219 - Very slow work when any tag have defined user icon.
+477 ==> 091537 - Usability: don't open tag's virtual folder if only 'collapse' arrow is clicked in tag tree.
+478 ==> 091849 - Support virtual folders combining tags (wishlist).
+479 ==> 111700 - Select images for display by combined tag query.
+480 ==> 182665 - Assign multiple tag photo.
+481 ==> 324917 - digiKam: loading of tag icons fails -> very high CPU usage and freezing GUI [callgrind].
+482 ==> 226816 - Crash in Digikam when trying to move tag to sub-tag.
+483 ==> 107150 - Creation of new tags fails.
+484 ==> 139035 - Moving items loses tag and rating data.
+485 ==> 315269 - Tag "_Digikam_root_tag_" is handled strangely (almost like duplicated in hierachy) on importing existing collection.
+486 ==> 116582 - Great improvements that could be made.
+487 ==> 128290 - Photo organization should be independent of file structure.
+488 ==> 153656 - Wish: user definable fields for tag and search.
+489 ==> 218034 - Wish virtual albums like tags.
+490 ==> 336107 - Ability to manage tags.
+491 ==> 110116 - Redundant tags assigned to a picture.
+492 ==> 110333 - Tag images from albumstructure.
+493 ==> 113090 - Adding tags to a whole album.
+494 ==> 118263 - Wish: be able to pull an image onto another to set it to its tags.
+495 ==> 124143 - Generate keywords from filename.
+496 ==> 128533 - Why nested tags? What about freeform/freestyle tagging?
+497 ==> 157308 - Automatically tag edited images in digiKam.
+498 ==> 218817 - Allow different sizes for album and tag icons.
+499 ==> 133944 - digiKam crashes when choosing an icon for a tag.
+500 ==> 150792 - Sigsegv when applying tags.
+501 ==> 167874 - Item count in tag and album view is not updated.
+502 ==> 099560 - Wish for ability to move album directories from disk to disk without loosing all tags.
+503 ==> 117242 - Tag hierarchy should be managed automatically.
+504 ==> 119086 - Folders (categories) for image tags.
+505 ==> 122192 - WISH: The capability to re-organise the tree of the tags.
+506 ==> 136259 - Awkward management of metadata and digikam-tags and comments.
+507 ==> 158777 - Show count of photos with assigned tag.
+508 ==> 347737 - Tagged RAW files do not show tags after round trip to RawTherapee.
+509 ==> 303714 - Tag checkboxes state changes on mouse release only.
 510 ==> 
 511 ==> 
 512 ==> 
