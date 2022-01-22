@@ -559,21 +559,21 @@ BUGFIXES:
 548 ==> 194959 - Use keyboard to assign tags.
 549 ==> 196484 - Add Tags list to ignore on import process (as Flickr geo:lon and geo:lat).
 550 ==> 252494 - Dropping a tag on an album applies it to album contents.
-551 ==> 
-552 ==> 
-553 ==> 
-554 ==> 
-555 ==> 
-556 ==> 
-557 ==> 
-558 ==> 
-559 ==> 
-560 ==> 
-561 ==> 
-562 ==> 
-563 ==> 
-564 ==> 
-565 ==> 
+551 ==> 266745 - After updating Editor starts, but most functions are unavailable to work with.
+552 ==> 093581 - Keeping kde compatibility in digiKam.
+553 ==> 304946 - Merge Conflict in branch.
+554 ==> 103959 - digiKam doesn't work after upgrading libexif.
+555 ==> 290154 - digiKam use advanced QT features without checking availability of support.
+556 ==> 268542 - COMMENT: (much) more Pros than Contras.
+557 ==> 267616 - digiKam not available ?
+558 ==> 277495 - Install digiKam on Gnome.
+559 ==> 129510 - Cannot load module « Sysinfo ».
+560 ==> 139216 - Doesn't build with gcc pre-releases.
+561 ==> 288284 - digiKam do not start.
+562 ==> 218377 - Upgrading to the latest rep digiKam on kubuntu makes digiKam not working: symbol not found.
+563 ==> 405577 - digiKam crash at every startup (symbol malloc, qtwebengine).
+564 ==> 323231 - digiKam version bump.
+565 ==> 429816 - Ubuntu with digiKam snap doesn't find Gimp as options.
 566 ==> 
 567 ==> 
 568 ==> 
