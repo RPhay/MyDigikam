@@ -17,9 +17,7 @@ IF(NOT ENABLE_QTWEBENGINE)
 ENDIF()
 
 execute_process(COMMAND
-                cp -f ${CMAKE_CURRENT_SOURCE_DIR}/kde-qt5-lts.sh ${EXTERNALS_DOWNLOAD_DIR}
-                COMMAND
-                ${EXTERNALS_DOWNLOAD_DIR}/kde-qt5-lts.sh
+                ${CMAKE_CURRENT_SOURCE_DIR}/kde-qt5-lts.sh ${EXTERNALS_DOWNLOAD_DIR}
 )
 
 ExternalProject_Add(ext_qt
