@@ -31,6 +31,10 @@
 #include <QTreeWidget>
 #include <QThreadPool>
 
+#ifdef HAVE_QWEBENGINE
+#   include <QtWebEngineWidgetsVersion>
+#endif
+
 // KDE includes
 
 #include <kxmlgui_version.h>
@@ -134,6 +138,7 @@ LibsInfoDlg::LibsInfoDlg(QWidget* const parent)
 
 #ifdef HAVE_QWEBENGINE
     list.insert(i18nc(CONTEXT, "Qt WebEngine support"),        SUPPORTED_YES);
+    list.insert(i18nc(CONTEXT, "Qt WebEngine version"),        QLatin1String(QTWEBENGINEWIDGETS_VERSION_STR));
 #else
     list.insert(i18nc(CONTEXT, "Qt Webkit support"),           SUPPORTED_YES);
 #endif
