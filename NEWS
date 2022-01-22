@@ -520,26 +520,26 @@ BUGFIXES:
 509 ==> 303714 - Tag checkboxes state changes on mouse release only.
 510 ==> 223219 - digiKam crashed when specifying/deleteing tags from within gnome.
 511 ==> 226157 - digiKam crashes when applying keyword changes.
-512 ==> 
-513 ==> 
-514 ==> 
-515 ==> 
-516 ==> 
-517 ==> 
-518 ==> 
-519 ==> 
-520 ==> 
-521 ==> 
-522 ==> 
-523 ==> 
-524 ==> 
-525 ==> 
-526 ==> 
-527 ==> 
-528 ==> 
-529 ==> 
-530 ==> 
-531 ==> 
+512 ==> 142984 - SIGSEGV setting icon for new tag.
+513 ==> 193531 - Crash when changing tags for image.
+514 ==> 218397 - digiKam crashes when creating a new tag.
+515 ==> 224589 - Applying tags crashes digiKam.
+516 ==> 224917 - digiKam crashed when setting a Tag on an image.
+517 ==> 227091 - I edit the Tag database and at the end digiKam ask to save and crashed.
+518 ==> 253551 - digiKam crashes after deleting a tag.
+519 ==> 257033 - Crash when filtering tags in "My Tags" tree list.
+520 ==> 267901 - My Tags Crash.
+521 ==> 279495 - digiKam crashes while doing mass add of tags to photos.
+522 ==> 295041 - Assigned Tags to Photos then change tag search text.
+523 ==> 300330 - Crash while appying tags.
+524 ==> 309560 - Crash when editing tags.
+525 ==> 313501 - digiKam crashes, when contributing tags (very slow tag storage).
+526 ==> 117403 - digiKam: d&d a tags on an thumbnail not currently in an existing selection of images assigns tag to all of them.
+527 ==> 137207 - Inconsitent tagging of multiple photos.
+528 ==> 140675 - Tag filters can not select the "group" tag.
+529 ==> 164187 - Screen full of keywords - scroll missing.
+530 ==> 195817 - No progress information is shown when applying tag changes to a _single_ image.
+531 ==> 305446 - digiKam crashes after editing and tagging an image, then saving the changed image.
 532 ==> 
 533 ==> 
 534 ==> 
