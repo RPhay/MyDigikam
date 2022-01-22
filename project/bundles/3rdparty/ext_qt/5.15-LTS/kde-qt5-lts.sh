@@ -118,18 +118,7 @@ cat $QT5_GITREV_HEADER
 # Copy header file in most common place on the system
 cp -f $QT5_GITREV_HEADER /usr/include/
 
-# Remove .git sub directories for archiving purpose.
-#
-#GIT_SUBDIRS=$(find  . -name '.git')
-#
-#echo "Git internal sub-directories to remove: $GIT_SUBDIRS"
-#
-#for SUBDIR in $GIT_SUBDIRS ; do
-#
-#    echo "Removing $SUBDIR..."
-#    rm -fr $SUBDIR
-#
-#done
+# NOTE: do not remove .git sub directories as these are used to compile source code.
 
 # Create a non compressed archive for cmake download stage.
 
