@@ -16,18 +16,18 @@ IF(NOT ENABLE_QTWEBENGINE)
         )
 ENDIF()
 
+execute_process(COMMAND
+                cp -f ${CMAKE_CURRENT_SOURCE_DIR}/kde-qt5-lts.sh ${EXTERNALS_DOWNLOAD_DIR}
+                COMMAND
+                ${EXTERNALS_DOWNLOAD_DIR}/kde-qt5-lts.sh
+)
+
 ExternalProject_Add(ext_qt
+
     DOWNLOAD_DIR ${EXTERNALS_DOWNLOAD_DIR}
+    URL file://${EXTERNALS_DOWNLOAD_DIR}/kde-5.15-LTS
 
-    GIT_REPOSITORY https://invent.kde.org/qt/qt/qt5.git
-    GIT_TAG kde/5.15
-
-#                  ICU_LIBS="-I${EXTPREFIX}/local/ -L${EXTPREFIX}/local/lib -licui18n -licuuc -licudata"
-
-
-    PATCH_COMMAND cp -f ${CMAKE_CURRENT_SOURCE_DIR}/kde-qt5-lts.sh <SOURCE_DIR>/. &&
-                  <SOURCE_DIR>/kde-qt5-lts.sh                                     &&
-                  ${PATCH_COMMAND} -p1 -i ${CMAKE_CURRENT_SOURCE_DIR}/qt-appimage-support.patch
+    PATCH_COMMAND ${PATCH_COMMAND} -p1 -i ${CMAKE_CURRENT_SOURCE_DIR}/qt-appimage-support.patch
                && ${PATCH_COMMAND} -p1 -i ${CMAKE_CURRENT_SOURCE_DIR}/qt-appimage-openssl-linked.patch
                && ${PATCH_COMMAND} -p1 -i ${CMAKE_CURRENT_SOURCE_DIR}/qt-icu-hack.patch
 

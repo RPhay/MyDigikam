@@ -2,6 +2,8 @@
 
 # Script to build a Qt 5.15 LST from KDE compilation patches repository.
 #
+# Arguments : $1 : download directory.
+#
 # Copyright (c) 2015-2022 by Gilles Caulier  <caulier dot gilles at gmail dot com>
 #
 # Redistribution and use is allowed according to the terms of the BSD license.
@@ -11,46 +13,69 @@
 set -e
 set -C
 
-# These commands are processed previously by CMake.
-#git clone --progress --verbose --branch kde/5.15 --single-branch https://invent.kde.org/qt/qt/qt5.git kde-5.15-LTS
-#cd kde-5.15-LTS
+if [ "$1" == "" ]; then
+    DOWNLOAD_DIR=$PWD
+else
+    DOWNLOAD_DIR=$1
+fi
 
-git submodule update --init --recursive --progress
+echo "Download directory: $DOWNLOAD_DIR"
 
-# Remove Qt6 sub-modules
+if [[ ! -f $DOWNLOAD_DIR/kde-5.15-LTS ]] ; then
 
-rm -rf                  \
-    qtcanvas3d          \
-    qtdocgallery        \
-    qtfeedback          \
-    qtpim               \
-    qtqa                \
-    qtrepotools         \
-    qtsystems
+    echo "Checkout Git module sub-directories from kde/5.15 LTS repository"
 
-# Switch sub-modules to kde/5.15 branches
+    cd $DOWNLOAD_DIR
+    git clone --progress --verbose --branch kde/5.15 --single-branch https://invent.kde.org/qt/qt/qt5.git kde-5.15-LTS
+    cd kde-5.15-LTS
 
-QT_SUBDIRS=$(ls -F | grep / | grep qt)
+    git submodule update --init --recursive --progress
 
-echo "Git module sub-directories to switch to kde/5.15 branch: $QT_SUBDIRS"
+    # Remove Qt6 sub-modules
 
-for SUBDIR in $QT_SUBDIRS ; do
+    rm -rf                  \
+        qtcanvas3d          \
+        qtdocgallery        \
+        qtfeedback          \
+        qtpim               \
+        qtqa                \
+        qtrepotools         \
+        qtsystems
 
-    echo "Branching $SUBDIR to kde/5.15..."
-    cd $SUBDIR
-    git checkout kde/5.15 || true
+    # Switch sub-modules to kde/5.15 branches
+
+    QT_SUBDIRS=$(ls -F | grep / | grep qt)
+
+    echo "Git module sub-directories to switch to kde/5.15 branch: $QT_SUBDIRS"
+
+    for SUBDIR in $QT_SUBDIRS ; do
+
+        echo "Branching $SUBDIR to kde/5.15..."
+        cd $SUBDIR
+        git checkout kde/5.15 || true
+        cd ..
+
+    done
+
+    # QtWebEngine is pulished as LTS officially in open source, so we can checkout the stable tag as well.
+
+    WEBENGINE_LTS=v5.15.8-lts
+
+    echo "Branching QtWebEngine to LTS version $WEBENGINE_LTS..."
+    cd qtwebengine
+    git checkout $WEBENGINE_LTS || true
     cd ..
 
-done
+else
 
-# QtWebEngine is pulished as LTS officially in open source, so we can checkout the stable tag as well.
+    echo "Update Git module sub-directories from kde/5.15 LTS repository"
 
-WEBENGINE_LTS=v5.15.8-lts
+    cd $DOWNLOAD_DIR/kde-5.15-LTS
 
-echo "Branching QtWebEngine to LTS version $WEBENGINE_LTS..."
-cd qtwebengine
-git checkout $WEBENGINE_LTS || true
-cd ..
+    git update
+    git submodule update --recursive --progress
+
+fi
 
 # List git revisions for all sub-modules
 
