@@ -54,23 +54,28 @@ cd ..
 
 # List git revisions for all sub-modules
 
+QT5_GITREV_HEADER=qt5_lts_gitrev.h
+
 echo "List git sub-module revisions"
 
-rm -f qt5_lts_gitrev.h
-echo "#pragma once"                  > qt5_lts_gitrev.h
-echo "#define QT5_LTS_GITREV \" \\" >> qt5_lts_gitrev.h
+rm -f $QT5_GITREV_HEADER
+echo "#pragma once"                  > $QT5_GITREV_HEADER
+echo "#define QT5_LTS_GITREV \" \\" >> $QT5_GITREV_HEADER
 
 for SUBDIR in $QT_SUBDIRS ; do
 
     cd $SUBDIR
-    echo "$(basename "$SUBDIR"):$(git rev-parse HEAD) \\" >> ../qt5_lts_gitrev.h
+    echo "$(basename "$SUBDIR"):$(git rev-parse HEAD) \\" >> ../$QT5_GITREV_HEADER
     cd ..
 
 done
 
-echo "\""                           >> qt5_lts_gitrev.h
+echo "\""                           >> $QT5_GITREV_HEADER
 
-cat qt5_lts_gitrev.h
+cat $QT5_GITREV_HEADER
+
+# Copy header file in most common place on the system
+cp -f $QT5_GITREV_HEADER /usr/include/
 
 # Remove .git sub directories for archiving purpose.
 #
