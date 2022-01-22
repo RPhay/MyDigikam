@@ -52,6 +52,21 @@ cd qtwebengine
 git checkout $WEBENGINE_LTS || true
 cd ..
 
+# List git revisions for all sub-modules
+
+echo "List git sub-module revisions"
+
+touch kde-qt5-lts-gitrev.txt
+
+for SUBDIR in $QT_SUBDIRS ; do
+
+    cd $SUBDIR
+    echo "$(basename "$SUBDIR"):$(git rev-parse HEAD)" >> ../kde-qt5-lts-gitrev.txt
+    cd ..
+
+done
+
+cat kde-qt5-lts-gitrev.txt
 
 # Remove .git sub directories for archiving purpose.
 #
