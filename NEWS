@@ -443,12 +443,12 @@ BUGFIXES:
 432 ==> 178251 - Crash (signal 6) when new user uses home dir.
 433 ==> 178952 - Error when changing the database path.
 434 ==> 378591 - Selecting Database Configuration Type on first startup crashed application.
-435 ==> 
-436 ==> 
-437 ==> 
-438 ==> 
-439 ==> 
-440 ==> 
+435 ==> 155593 - add checkbox for disabling call to utime().
+436 ==> 179274 - "XMP" not underscored in settings dialog.
+437 ==> 131212 - digiKam does not adhere to the EXIF Actions settings.
+438 ==> 320156 - Settings don't have a default button.
+439 ==> 243107 - Crashed when opening preferences.
+440 ==> 131177 - Use date of creation instead of the date of last change.
 441 ==> 
 442 ==> 
 443 ==> 
