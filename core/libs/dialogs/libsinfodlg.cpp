@@ -33,6 +33,8 @@
 
 #ifdef HAVE_QWEBENGINE
 #   include <QtWebEngineWidgetsVersion>
+#else
+#   include <QtWebKitWidgetsVersion>
 #endif
 
 // KDE includes
@@ -137,10 +139,9 @@ LibsInfoDlg::LibsInfoDlg(QWidget* const parent)
 #endif // HAVE_EIGEN3
 
 #ifdef HAVE_QWEBENGINE
-    list.insert(i18nc(CONTEXT, "Qt WebEngine support"),        SUPPORTED_YES);
     list.insert(i18nc(CONTEXT, "Qt WebEngine version"),        QLatin1String(QTWEBENGINEWIDGETS_VERSION_STR));
 #else
-    list.insert(i18nc(CONTEXT, "Qt Webkit support"),           SUPPORTED_YES);
+    list.insert(i18nc(CONTEXT, "Qt WebKit version"),           QLatin1String(QTWEBKITWIDGETS_VERSION_STR));
 #endif
 
 #ifdef HAVE_QTXMLPATTERNS
