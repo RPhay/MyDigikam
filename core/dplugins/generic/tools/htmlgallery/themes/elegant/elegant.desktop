@@ -124,6 +124,7 @@ Url=preview.png
 
 [X-HTMLGallery Parameter author]
 Name=Author
+Name[ar]=المؤلف
 Name[bg]=Автор
 Name[ca]=Autor
 Name[ca@valencia]=Autor
@@ -306,6 +307,7 @@ Caption-4=10 seconds
 
 [X-HTMLGallery Parameter style]
 Name=Style
+Name[ar]=النّمط
 Name[bg]=Стил
 Name[ca]=Estil
 Name[ca@valencia]=Estil

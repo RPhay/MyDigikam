@@ -1,5 +1,6 @@
 [Desktop Entry]
 Name=Vanilla
+Name[ar]=فانيللا
 Name[ca]=Vainilla
 Name[ca@valencia]=Vainilla
 Name[cs]=Vanilla
@@ -86,6 +87,7 @@ Url=mailto:wjarosz@ucsd.edu
 
 [X-HTMLGallery Parameter author]
 Name=Author
+Name[ar]=المؤلف
 Name[bg]=Автор
 Name[ca]=Autor
 Name[ca@valencia]=Autor
@@ -121,6 +123,7 @@ Default=
 
 [X-HTMLGallery Parameter authorEmail]
 Name=Author Email
+Name[ar]=بريد المؤلّف:
 Name[ca]=Correu de l'autor
 Name[ca@valencia]=Correu de l'autor
 Name[cs]=E-mail autora
@@ -211,6 +214,7 @@ Default=3
 
 [X-HTMLGallery Parameter style]
 Name=Style
+Name[ar]=النّمط
 Name[bg]=Стил
 Name[ca]=Estil
 Name[ca@valencia]=Estil
@@ -330,6 +334,7 @@ Caption-1=No
 
 [X-HTMLGallery Parameter thumbMargin]
 Name=Thumbnail margin
+Name[ar]=هامش المصغرة
 Name[ca]=Marge de les miniatures
 Name[ca@valencia]=Marge de les miniatures
 Name[cs]=Okraj náhledu
@@ -436,6 +441,7 @@ Caption-4=10 seconds
 
 [X-HTMLGallery Preview]
 Name=Vanilla
+Name[ar]=فانيللا
 Name[ca]=Vainilla
 Name[ca@valencia]=Vainilla
 Name[cs]=Vanilla

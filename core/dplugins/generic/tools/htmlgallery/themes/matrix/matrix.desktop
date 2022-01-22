@@ -1,6 +1,7 @@
 [Desktop Entry]
 Type=Theme
 Name=Matrix
+Name[ar]=المصفوفة
 Name[ca]=Matrix
 Name[ca@valencia]=Matrix
 Name[cs]=Matrix
@@ -96,6 +97,7 @@ Url=mailto:aurelien.gateau@free.fr
 
 [X-HTMLGallery Preview]
 Name=Matrix
+Name[ar]=المصفوفة
 Name[ca]=Matrix
 Name[ca@valencia]=Matrix
 Name[cs]=Matrix

@@ -1,6 +1,7 @@
 [Desktop Entry]
 Type=Theme
 Name=Simple
+Name[ar]=بسيط
 Name[ca]=Senzill
 Name[ca@valencia]=Senzill
 Name[cs]=Jednoduchý
@@ -94,6 +95,7 @@ Url=mailto:aurelien.gateau@free.fr
 
 [X-HTMLGallery Parameter style]
 Name=Style
+Name[ar]=النّمط
 Name[bg]=Стил
 Name[ca]=Estil
 Name[ca@valencia]=Estil
@@ -135,6 +137,7 @@ Caption-1=Dark
 
 [X-HTMLGallery Preview]
 Name=Simple
+Name[ar]=بسيط
 Name[ca]=Senzill
 Name[ca@valencia]=Senzill
 Name[cs]=Jednoduchý

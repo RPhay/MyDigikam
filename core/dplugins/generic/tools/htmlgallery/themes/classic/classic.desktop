@@ -1,6 +1,7 @@
 [Desktop Entry]
 Type=Theme
 Name=Classic
+Name[ar]=تقليدي
 Name[ca]=Clàssic
 Name[ca@valencia]=Clàssic
 Name[cs]=Klasický
@@ -62,6 +63,7 @@ Comment[zh_CN]=移植自旧版 HTML 导出插件主题
 
 [X-HTMLGallery Preview]
 Name=Classic
+Name[ar]=تقليدي
 Name[ca]=Clàssic
 Name[ca@valencia]=Clàssic
 Name[cs]=Klasický
@@ -239,6 +241,7 @@ Default=#d0ffd0
 
 [X-HTMLGallery Parameter fontSize]
 Name=Font Size
+Name[ar]=حجم الخط
 Name[ca]=Mida del tipus de lletra
 Name[ca@valencia]=Mida del tipus de lletra
 Name[cs]=Velikost písma
@@ -277,6 +280,7 @@ Max=100
 
 [X-HTMLGallery Parameter imgBorderSize]
 Name=Image Border Size
+Name[ar]=حجم حدود الصورة
 Name[ca]=Mida de la vora de la imatge
 Name[ca@valencia]=Mida de la vora de la imatge
 Name[cs]=Velikost rámečku obrázku
@@ -314,6 +318,7 @@ Max=50
 
 [X-HTMLGallery Parameter imgBorderColor]
 Name=Image Border Color
+Name[ar]=لون حدود الصورة
 Name[ca]=Color de la vora de la imatge
 Name[ca@valencia]=Color de la vora de la imatge
 Name[cs]=Barva rámečku obrázku
@@ -350,6 +355,7 @@ Default=#d0ffd0
 
 [X-HTMLGallery Parameter linkColor]
 Name=Link Color
+Name[ar]=لون الروابط
 Name[ca]=Color de l'enllaç
 Name[ca@valencia]=Color de l'enllaç
 Name[cs]=Barva odkazu

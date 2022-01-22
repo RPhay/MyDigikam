@@ -129,6 +129,7 @@ Url=preview.png
 
 [X-HTMLGallery Parameter style]
 Name=Style
+Name[ar]=النّمط
 Name[bg]=Стил
 Name[ca]=Estil
 Name[ca@valencia]=Estil

@@ -172,6 +172,7 @@ Caption-1[de]=Aus
 
 [X-HTMLGallery Parameter preload]
 Name=Preload
+Name[ar]=محملة مسبقاً
 Name[ca]=Càrrega prèvia
 Name[ca@valencia]=Càrrega prèvia
 Name[cs]=Předem načíst

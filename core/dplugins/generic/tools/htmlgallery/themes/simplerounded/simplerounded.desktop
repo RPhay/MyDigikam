@@ -90,6 +90,7 @@ Url=mailto:enaut.w@googlemail.com
 
 [X-HTMLGallery Parameter titlebar]
 Name=Title Bar
+Name[ar]=شريط العنوان
 Name[ca]=Barra de títol
 Name[ca@valencia]=Barra de títol
 Name[cs]=Titulkový pruh
