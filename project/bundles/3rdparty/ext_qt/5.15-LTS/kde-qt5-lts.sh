@@ -21,7 +21,7 @@ fi
 
 echo "Download directory: $DOWNLOAD_DIR"
 
-if [[ ! -f $DOWNLOAD_DIR/kde-5.15-LTS ]] ; then
+if [[ ! -d $DOWNLOAD_DIR/kde-5.15-LTS ]] ; then
 
     echo "Checkout Git module sub-directories from kde/5.15 LTS repository"
 
@@ -72,7 +72,21 @@ else
 
     cd $DOWNLOAD_DIR/kde-5.15-LTS
 
-    git update
+    git pull --rebase -v --stat
+
+    # Remove Qt6 sub-modules
+
+    rm -rf                  \
+        qtcanvas3d          \
+        qtdocgallery        \
+        qtfeedback          \
+        qtpim               \
+        qtqa                \
+        qtrepotools         \
+        qtsystems
+
+    QT_SUBDIRS=$(ls -F | grep / | grep qt)
+
     git submodule update --recursive --progress
 
 fi
@@ -82,6 +96,8 @@ fi
 QT5_GITREV_HEADER=qt5_lts_gitrev.h
 
 echo "List git sub-module revisions"
+
+cd $DOWNLOAD_DIR/kde-5.15-LTS
 
 rm -f $QT5_GITREV_HEADER
 echo "#pragma once"                  > $QT5_GITREV_HEADER
@@ -114,3 +130,9 @@ cp -f $QT5_GITREV_HEADER /usr/include/
 #    rm -fr $SUBDIR
 #
 #done
+
+# Create a non compressed archive for cmake download stage.
+
+echo "Archive local repository"
+
+tar -cvf $DOWNLOAD_DIR/kde-5.15-LTS.tar -C $DOWNLOAD_DIR/kde-5.15-LTS .
