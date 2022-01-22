@@ -518,8 +518,8 @@ BUGFIXES:
 507 ==> 158777 - Show count of photos with assigned tag.
 508 ==> 347737 - Tagged RAW files do not show tags after round trip to RawTherapee.
 509 ==> 303714 - Tag checkboxes state changes on mouse release only.
-510 ==> 
-511 ==> 
+510 ==> 223219 - digiKam crashed when specifying/deleteing tags from within gnome.
+511 ==> 226157 - digiKam crashes when applying keyword changes.
 512 ==> 
 513 ==> 
 514 ==> 
