@@ -556,9 +556,9 @@ BUGFIXES:
 545 ==> 165824 - Tag images in digiKam with Contacts.
 546 ==> 176005 - Wish: different view when "my tags" is clicked.
 547 ==> 183711 - Allow "pretagging" during image viewing by pressing a key.
-548 ==> 
-549 ==> 
-550 ==> 
+548 ==> 194959 - Use keyboard to assign tags.
+549 ==> 196484 - Add Tags list to ignore on import process (as Flickr geo:lon and geo:lat).
+550 ==> 252494 - Dropping a tag on an album applies it to album contents.
 551 ==> 
 552 ==> 
 553 ==> 
