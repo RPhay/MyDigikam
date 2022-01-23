@@ -21,6 +21,8 @@ fi
 
 echo "Download directory: $DOWNLOAD_DIR"
 
+# --- Create a new fresh checkout of code if do not exists yet, or just update.
+
 if [[ ! -d $DOWNLOAD_DIR/kde-5.15-LTS ]] ; then
 
     echo "Checkout Git module sub-directories from kde/5.15 LTS repository"
@@ -72,56 +74,37 @@ else
 
     cd $DOWNLOAD_DIR/kde-5.15-LTS
 
-    git pull -v --stat
-
-    # Remove Qt6 sub-modules
-
-    rm -rf                  \
-        qtcanvas3d          \
-        qtdocgallery        \
-        qtfeedback          \
-        qtpim               \
-        qtqa                \
-        qtrepotools         \
-        qtsystems
-
     QT_SUBDIRS=$(ls -F | grep / | grep qt)
 
     git submodule update --recursive --progress
 
 fi
 
-# List git revisions for all sub-modules
+# --- List git revisions for all sub-modules
 
-QT5_GITREV_HEADER=qt5_lts_gitrev.h
+QT5_GITREV_LST=qt5_lts_gitrev.txt
 
 echo "List git sub-module revisions"
 
 cd $DOWNLOAD_DIR/kde-5.15-LTS
 
-rm -f $QT5_GITREV_HEADER
-echo "#pragma once"                  > $QT5_GITREV_HEADER
-echo "#define QT5_LTS_GITREV \" \\" >> $QT5_GITREV_HEADER
+rm -f $QT5_GITREV_LST
 
 for SUBDIR in $QT_SUBDIRS ; do
 
     cd $SUBDIR
-    echo "$(basename "$SUBDIR"):$(git rev-parse HEAD) \\" >> ../$QT5_GITREV_HEADER
+    echo "$(basename "$SUBDIR"):$(git rev-parse HEAD)" >> ../$QT5_GITREV_LST
     cd ..
 
 done
 
-echo "\""                           >> $QT5_GITREV_HEADER
+cat $QT5_GITREV_LST
 
-cat $QT5_GITREV_HEADER
-
-# Copy header file in most common place on the system
-cp -f $QT5_GITREV_HEADER /usr/include/
+# --- Create a non compressed archive for cmake download stage.
 
 # NOTE: do not remove .git sub directories as these are used to compile source code.
 
-# Create a non compressed archive for cmake download stage.
-
 echo "Archive local repository"
 
+rm -f $DOWNLOAD_DIR/kde-5.15-LTS.tar
 tar -cvf $DOWNLOAD_DIR/kde-5.15-LTS.tar -C $DOWNLOAD_DIR/kde-5.15-LTS .
