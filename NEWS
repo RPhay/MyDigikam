@@ -575,7 +575,7 @@ BUGFIXES:
 564 ==> 323231 - digiKam version bump.
 565 ==> 429816 - Ubuntu with digiKam snap doesn't find Gimp as options.
 566 ==> 448466 - Remove akonadi dependency.
-567 ==> 
+567 ==> 111511 - Incorrect URL for dependencies in ./configure diagnostic message.
 568 ==> 
 569 ==> 
 570 ==> 
