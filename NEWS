@@ -620,27 +620,27 @@ BUGFIXES:
 607 ==> 088316 - Can't compile adjustlevels plugin: No rule to make target `../../digikam/digikam/libdigikam.la'.
 608 ==> 305466 - digiKam ask for debug symbol packages, whereas these are installed.
 609 ==> 114417 - Use Qt5.15 LTS source code from KDE git collection patch repository to compile AppImage bundle.
-610 ==> 
-611 ==> 
-612 ==> 
-613 ==> 
-614 ==> 
-615 ==> 
-616 ==> 
-617 ==> 
-618 ==> 
-619 ==> 
-620 ==> 
-621 ==> 
-622 ==> 
-623 ==> 
-624 ==> 
-625 ==> 
-626 ==> 
-627 ==> 
-628 ==> 
-629 ==> 
-630 ==> 
+610 ==> 353832 - Unmet dependencies error can not install software installed.
+611 ==> 103323 - digiKam crashes at startup.
+612 ==> 093816 - digiKam refuses to start and announces a "relocation error".
+613 ==> 156167 - Segmentation fault on start up
+614 ==> 221382 - digiKam Crash
+615 ==> 147227 - digiKam crash, I don't know why, but I have the bugreport.
+616 ==> 237804 - Copy pictures in other applications.
+617 ==> 150713 - Crash when selecting tools/image viewer.
+618 ==> 314385 - digiKam crashes at startup: "Creating pipes for GWakeup: Too many open files".
+619 ==> 305420 - digiKam crashes on startup.
+620 ==> 327073 - Random freezes.
+621 ==> 102881 - digiKam crashes w/ GDBM error.
+622 ==> 383851 - digiKam installed from Ubuntu Software; does not start.
+623 ==> 341652 - Database collections are removed when docker.io is installed.
+624 ==> 362569 - Digicam-dbg package incompatible with current version of digiKam.
+625 ==> 154941 - Improve exception safety with smart pointers.
+626 ==> 303114 - Closing Digikam results in crash.
+627 ==> 363362 - Crash when using configuration.
+628 ==> 276479 - Wish: add feature to copy/move image files from digikam to filemanager on non-kde desktop.
+629 ==> 139358 - Crash when closing DigiKam [backtrace].
+630 ==> 285124 - digiKam crashed while playing with effects.
 631 ==> 
 632 ==> 
 633 ==> 
