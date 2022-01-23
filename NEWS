@@ -574,7 +574,7 @@ BUGFIXES:
 563 ==> 405577 - digiKam crash at every startup (symbol malloc, qtwebengine).
 564 ==> 323231 - digiKam version bump.
 565 ==> 429816 - Ubuntu with digiKam snap doesn't find Gimp as options.
-566 ==> 
+566 ==> 448466 - Remove akonadi dependency.
 567 ==> 
 568 ==> 
 569 ==> 
