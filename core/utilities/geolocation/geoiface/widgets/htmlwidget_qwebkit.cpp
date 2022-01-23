@@ -4,7 +4,7 @@
  * https://www.digikam.org
  *
  * Date        : 2009-12-01
- * Description : Widget for displaying HTML in the backends
+ * Description : Widget for displaying HTML in the backends - QtWebKit version
  *
  * Copyright (C) 2010-2022 by Gilles Caulier <caulier dot gilles at gmail dot com>
  * Copyright (C) 2009-2011 by Michael G. Hansen <mike at mghansen dot de>
@@ -23,7 +23,7 @@
  *
  * ============================================================ */
 
-#include "htmlwidget.h"
+#include "htmlwidget_qwebkit.h"
 
 // Qt includes
 
@@ -45,12 +45,12 @@ class Q_DECL_HIDDEN HTMLWidget::Private
 public:
 
     explicit Private()
-      : parent(nullptr),
-        isReady(false),
-        selectionStatus(false),
-        firstSelectionPoint(),
-        intermediateSelectionPoint(),
-        firstSelectionScreenPoint(),
+      : parent                          (nullptr),
+        isReady                         (false),
+        selectionStatus                 (false),
+        firstSelectionPoint             (),
+        intermediateSelectionPoint      (),
+        firstSelectionScreenPoint       (),
         intermediateSelectionScreenPoint()
     {
     }
@@ -67,8 +67,8 @@ public:
 
 HTMLWidget::HTMLWidget(QWidget* const parent)
     : QWebView(parent),
-      d(new Private()),
-      s(nullptr)
+      d       (new Private()),
+      s       (nullptr)
 {
     d->parent = parent;
     setAcceptDrops(false);
@@ -284,7 +284,7 @@ bool HTMLWidget::runScript2Coordinates(const QString& scriptCode, GeoCoordinates
 
 bool HTMLWidget::eventFilter(QObject* object, QEvent* event)
 {
-    if (d->parent && object == d->parent)
+    if (d->parent && (object == d->parent))
     {
         if (event->type() == QEvent::Resize)
         {

@@ -55,7 +55,7 @@
 #ifdef HAVE_QWEBENGINE
 #   include "htmlwidget_qwebengine.h"
 #else
-#   include "htmlwidget.h"
+#   include "htmlwidget_qwebkit.h"
 #endif
 
 namespace Digikam
