@@ -52,7 +52,7 @@ BUGFIXES:
 042 ==> 130786 - Saving slideshow and use a differnet effect for every picture.
 043 ==> 143246 - Slideshow not sorting images by date.
 044 ==> 172738 - Crash on Quit after quickly changing between albums.
-045 ==> 173694 - Reproduceable Crash after closing the digikam application.
+045 ==> 173694 - Reproduceable Crash after closing the digiKam application.
 046 ==> 173905 - digiKam crashes on closing the application.
 047 ==> 194355 - Diashow isn't very scalable.
 048 ==> 195702 - "delay between images" is not remembered.
@@ -77,7 +77,7 @@ BUGFIXES:
 067 ==> 088870 - Host application name invisible in generated page.
 068 ==> 098882 - Add a new property to digiKam's images which allows include/exclude from generated html gallery.
 069 ==> 319882 - Crash when stitching a panorama.
-070 ==> 332918 - Jpeg files created with the panorama tool are correctly read and displayed by digikam but are wrong and are not readable by other softwares.
+070 ==> 332918 - Jpeg files created with the panorama tool are correctly read and displayed by digiKam but are wrong and are not readable by other softwares.
 071 ==> 361316 - Fails to build with flex-2.6.0.
 072 ==> 289902 - Freezing system after updating digiKam
 073 ==> 286057 - Panorama: Error: can not read project file.
@@ -97,7 +97,7 @@ BUGFIXES:
 087 ==> 147435 - Resize slider in sharpness dialog doesn't work correct.
 088 ==> 121281 - Sharpening photograph tool is not working.
 089 ==> 172018 - Initial cursor in the "sharpen" dialog is on the "cancel" button.
-090 ==> 123480 - Applying sharpen and blur to images in digikam image editor.
+090 ==> 123480 - Applying sharpen and blur to images in digiKam image editor.
 091 ==> 096290 - The radius setting in the sharpen function does not have any.
 092 ==> 147542 - digiKam editor unsharp mask cannot zoom to 100%.
 093 ==> 151172 - Unsharp Masking: Add support for fractional radius.
@@ -122,7 +122,7 @@ BUGFIXES:
 111 ==> 091532 - Resize image rounding error.
 112 ==> 091793 - Trying to overwrite a file after having modified it (resized) doesn't save the file.
 113 ==> 300399 - Image view: right click should offer print option.
-114 ==> 143034 - When I print a Colour. JPG in digikam a white diagonal line cuts across the picture.
+114 ==> 143034 - When I print a Colour. JPG in digiKam a white diagonal line cuts across the picture.
 115 ==> 091644 - High definition photos printing from KDE software : poor quality.
 116 ==> 103148 - Automatically choose best paper orientation when printing.
 117 ==> 092438 - Printing problems digiKam 7.0.
@@ -160,7 +160,7 @@ BUGFIXES:
 149 ==> 310211 - Adjusting 16-bit curves requires 32-bit precision.
 150 ==> 243596 - Multipage tiff support.
 151 ==> 328148 - Crash after hugin wrote a 60 MB tiff into some digiKam-tracked folder.
-152 ==> 154863 - Old 8bit or 16bit tiffs show pink when loaded into digikam or showfoto.
+152 ==> 154863 - Old 8bit or 16bit tiffs show pink when loaded into digiKam or Showfoto.
 153 ==> 154262 - Unable to load tiff file.
 154 ==> 091830 - TIFF images not drawn in digiKam.
 155 ==> 385820 - digiKam crashes when enfuse writes TIFFs.
@@ -177,7 +177,7 @@ BUGFIXES:
 166 ==> 149358 - digiKam is slower to rotate photos.
 167 ==> 150820 - 180 rotate is missing.
 168 ==> 146381 - Image rotation splits the image with a small strip appearing on the wrong side.
-169 ==> 099158 - Rotated image files in digikam will get destroyed.
+169 ==> 099158 - Rotated image files in digiKam will get destroyed.
 170 ==> 108683 - Auto rotation using EXIF works wrong.
 171 ==> 210424 - Occasional crash on startup.
 172 ==> 200159 - digiKam almost always crash on my system.
@@ -253,14 +253,14 @@ BUGFIXES:
 242 ==> 179801 - Clicking the fuzzy search thumbnails open small pictures.
 243 ==> 253728 - Crash when clicking on thumbnail.
 244 ==> 149683 - digiKam pegs out CPU at 100% after a little usage.
-245 ==> 147260 - digikam image view does not rotate images in album view, thumbs are correct.
+245 ==> 147260 - digiKam image view does not rotate images in album view, thumbs are correct.
 246 ==> 106804 - digiKam shows weird picture skewing.
 247 ==> 253690 - Click on thumbnail to get preview is broken.
 248 ==> 173746 - digiKam doesn't show "big view".
 249 ==> 182612 - Zoom in digiKam "View Mode" - keyboard zoom does not work.
 250 ==> 430817 - Include AppImage application stream metadata.
 251 ==> 086994 - Add 'forward' and 'backbard' buttons to info dialogs for images/collections.
-252 ==> 098305 - Don't display digikam splash screen on sessin restore.
+252 ==> 098305 - Don't display digiKam splash screen on sessin restore.
 253 ==> 139151 - Fix menu dialog target and icons blinking witout any user intervention picture original and target, icons for preview mode, zoom, Abort, Ok buttons.
 254 ==> 091005 - Wish: save width of left pane on exit.
 255 ==> 146463 - HIG CL3: Warning messages from light table.
@@ -286,7 +286,7 @@ BUGFIXES:
 275 ==> 119580 - Showfoto crashes when enlarging an image.
 276 ==> 152217 - Showfoto crashes on exit Signal 11.
 277 ==> 204562 - Showfoto crash while quitting.
-278 ==> 205601 - Unknown showfoto crash.
+278 ==> 205601 - Unknown Showfoto crash.
 279 ==> 209050 - ShowFoto crashed on closing.
 280 ==> 231631 - Save modified file to the same file.
 281 ==> 244983 - Showfoto crashes on exit after editing, saving a photo.
@@ -301,13 +301,13 @@ BUGFIXES:
 290 ==> 276770 - ShowFoto crashes when changing the zoom factor of an image.
 291 ==> 279987 - Showfoto crash.
 292 ==> 280357 - Showfoto crash while using sharpen.
-293 ==> 283009 - Showefoto crashes when opening a directory.
+293 ==> 283009 - Showfoto crashes when opening a directory.
 294 ==> 300066 - ShowFoto crash when exiting.
 295 ==> 111875 - Crash (signal 11) when configuring ShowFoto toolbars.
 296 ==> 091850 - Make it possible to laucnh the image editor module apart from the full program (whishlist).
 297 ==> 111873 - Modifying and then navigating in the thumbbar does not update photo thumbnail.
 298 ==> 163403 - Image zoom changes when choosing a new thumbnail.
-299 ==> 155178 - Following update, showfoto crashes on sgnal 11 on selecting "Insert Text" from "Decorate" menu.
+299 ==> 155178 - Following update, Showfoto crashes on sgnal 11 on selecting "Insert Text" from "Decorate" menu.
 300 ==> 173790 - Edit previews happen too soon in Showfoto.
 301 ==> 104031 - Selected item should stay centered in thumbnail bar.
 302 ==> 104980 - After discarding changes of a photo, Showfoto ask if (not yet done) changes of the next photo should be save/discard too.
@@ -390,7 +390,7 @@ BUGFIXES:
 379 ==> 236989 - digiKam crash.
 380 ==> 237981 - Crash when opening picture.
 381 ==> 238962 - digiKam crash at every start (after few seconds).
-382 ==> 240110 - Crash when trying to open digikam.
+382 ==> 240110 - Crash when trying to open digiKam.
 383 ==> 245961 - digiKam crash on exit.
 384 ==> 246079 - Crash after double-click.
 385 ==> 246506 - digiKam crashes if I close the program.
@@ -405,7 +405,7 @@ BUGFIXES:
 394 ==> 255840 - digiKam refused to open.
 395 ==> 256932 - Crash when browsing.
 396 ==> 257848 - digiKam crash when selecting source library at initially start.
-397 ==> 259111 - digikam closed.
+397 ==> 259111 - digiKam closed.
 398 ==> 259781 - digiKam crash when left open.
 399 ==> 261896 - Crash when browsing pictures.
 400 ==> 276097 - digiKam crashed when copying images to a subfolder.
@@ -438,7 +438,7 @@ BUGFIXES:
 427 ==> 120192 - Work together with krita devs.
 428 ==> 119904 - Kde gamma module is is not available.
 429 ==> 319147 - Unable to launch bug tracking out of/from digiKam.
-430 ==> 091361 - Store digikam files in ~/.digikam/.
+430 ==> 091361 - Store digiKam files in ~/.digikam/.
 431 ==> 121630 - Needs better upgrade support and/or delete old rc/db files.
 432 ==> 178251 - Crash (signal 6) when new user uses home dir.
 433 ==> 178952 - Error when changing the database path.
@@ -463,7 +463,7 @@ BUGFIXES:
 452 ==> 145465 - Modifying UI for removing labels.
 453 ==> 303392 - digiKam crashed if applicate Color/star or flag.
 454 ==> 091916 - Crash when adding tag in comment/tag dialog.
-455 ==> 115164 - digikam: image comments/tags dialog: group box label 'Tags' is overlaid by the |x> icon below it.
+455 ==> 115164 - digiKam: image comments/tags dialog: group box label 'Tags' is overlaid by the |x> icon below it.
 456 ==> 092310 - wish: spell check support in picture comments.
 457 ==> 327650 - digiKam crashes when assigning a caption.
 458 ==> 147518 - Compose key doesn't work while entering comments.
@@ -514,7 +514,7 @@ BUGFIXES:
 503 ==> 117242 - Tag hierarchy should be managed automatically.
 504 ==> 119086 - Folders (categories) for image tags.
 505 ==> 122192 - WISH: The capability to re-organise the tree of the tags.
-506 ==> 136259 - Awkward management of metadata and digikam-tags and comments.
+506 ==> 136259 - Awkward management of metadata and digiKam-tags and comments.
 507 ==> 158777 - Show count of photos with assigned tag.
 508 ==> 347737 - Tagged RAW files do not show tags after round trip to RawTherapee.
 509 ==> 303714 - Tag checkboxes state changes on mouse release only.
@@ -583,7 +583,7 @@ BUGFIXES:
 572 ==> 137747 - Error in 'configure', when setting 'kdelibsuff'.
 573 ==> 242405 - digiKam configure script misleading.
 574 ==> 101345 - While running ./configure error: can't find X includes.
-575 ==> 110165 - Wishlist: Would like to see digikam incorporate the todo list module from KDE PIM.
+575 ==> 110165 - Wishlist: Would like to see digiKam incorporate the todo list module from KDE PIM.
 576 ==> 279404 - digiKam nepomukservice should map people tags into pimo:Person.
 577 ==> 231364 - digiKam photo import crashes on download selected operation.
 578 ==> 149478 - Signal 11 crash viewing large album.
