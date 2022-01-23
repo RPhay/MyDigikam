@@ -82,7 +82,7 @@ fi
 
 # --- List git revisions for all sub-modules
 
-QT5_GITREV_LST=qt5_lts_gitrev.txt
+QT5_GITREV_LST=qt_manifest.txt
 
 echo "List git sub-module revisions"
 
@@ -101,6 +101,8 @@ for SUBDIR in $QT_SUBDIRS ; do
 done
 
 cat $QT5_GITREV_LST
+
+cp $QT5_GITREV_LST /usr/share/qt5
 
 # --- Create a non compressed archive for cmake download stage.
 
