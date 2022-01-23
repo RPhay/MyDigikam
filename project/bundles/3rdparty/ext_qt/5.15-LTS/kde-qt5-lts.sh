@@ -72,19 +72,6 @@ else
 
     cd $DOWNLOAD_DIR/kde-5.15-LTS
 
-    git pull -v --stat
-
-    # Remove Qt6 sub-modules
-
-    rm -rf                  \
-        qtcanvas3d          \
-        qtdocgallery        \
-        qtfeedback          \
-        qtpim               \
-        qtqa                \
-        qtrepotools         \
-        qtsystems
-
     QT_SUBDIRS=$(ls -F | grep / | grep qt)
 
     git submodule update --recursive --progress
