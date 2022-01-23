@@ -52,7 +52,7 @@ DK_VERSION=master
 DK_DEBUG=0
 
 # Qt version to use in bundle. Possible values: 5.15, 5.15-LTS
-DK_QTVERSION="5.15"
+DK_QTVERSION="5.15-LTS"
 
 # Option to use QtWebEngine instead QtWebkit
 DK_QTWEBENGINE=1
