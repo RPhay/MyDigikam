@@ -574,30 +574,30 @@ BUGFIXES:
 563 ==> 405577 - digiKam crash at every startup (symbol malloc, qtwebengine).
 564 ==> 323231 - digiKam version bump.
 565 ==> 429816 - Ubuntu with digiKam snap doesn't find Gimp as options.
-566 ==> 
-567 ==> 
-568 ==> 
-569 ==> 
-570 ==> 
-571 ==> 
-572 ==> 
-573 ==> 
-574 ==> 
-575 ==> 
-576 ==> 
-577 ==> 
-578 ==> 
-579 ==> 
-580 ==> 
-581 ==> 
-582 ==> 
-583 ==> 
-584 ==> 
-585 ==> 
-586 ==> 
-587 ==> 
-588 ==> 
-589 ==> 
+566 ==> 448466 - Remove akonadi dependency.
+567 ==> 111511 - Incorrect URL for dependencies in ./configure diagnostic message.
+568 ==> 313899 - Fix fetch_l10n.rb to work with ruby 1.9.
+569 ==> 109976 - Header-file: missing forward-declaration.
+570 ==> 110984 - The "description" string can't be internationalization in main.cpp.
+571 ==> 133349 - digiKam doc is platform-dependent (configure).
+572 ==> 137747 - Error in 'configure', when setting 'kdelibsuff'.
+573 ==> 242405 - digiKam configure script misleading.
+574 ==> 101345 - While running ./configure error: can't find X includes.
+575 ==> 110165 - Wishlist: Would like to see digikam incorporate the todo list module from KDE PIM.
+576 ==> 279404 - digiKam nepomukservice should map people tags into pimo:Person.
+577 ==> 231364 - digiKam photo import crashes on download selected operation.
+578 ==> 149478 - Signal 11 crash viewing large album.
+579 ==> 201125 - Crash on first startup.
+580 ==> 310655 - Completion of the program.
+581 ==> 246864 - DigiKam crash.
+582 ==> 292953 - digiKam and executables conflicts with standalone versions.
+583 ==> 219106 - digiKam crashs on photos download.
+584 ==> 131416 - digiKam segfaults on start.
+585 ==> 144691 - Crash while browsing and editing photos.
+586 ==> 237864 - digiKam crashes on exit.
+587 ==> 119752 - digiKam requires at least lcms >= 1.14.
+588 ==> 132625 - Crashes while browsing images [backtrace].
+589 ==> 291536 - digiKam crashes when stopped.
 590 ==> 
 591 ==> 
 592 ==> 
