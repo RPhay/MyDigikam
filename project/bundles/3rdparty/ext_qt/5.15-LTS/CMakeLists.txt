@@ -16,10 +16,6 @@ IF(NOT ENABLE_QTWEBENGINE)
         )
 ENDIF()
 
-execute_process(COMMAND
-                ${CMAKE_CURRENT_SOURCE_DIR}/kde-qt5-lts.sh ${EXTERNALS_DOWNLOAD_DIR}
-)
-
 ExternalProject_Add(ext_qt
 
     URL file://${EXTERNALS_DOWNLOAD_DIR}/kde-5.15-LTS.tar
@@ -97,4 +93,10 @@ ExternalProject_Add(ext_qt
     UPDATE_COMMAND ""
     BUILD_IN_SOURCE 1
     ALWAYS 0
+)
+
+ExternalProject_Add_step(ext_qt before_download
+
+    COMMAND ${CMAKE_CURRENT_SOURCE_DIR}/kde-qt5-lts.sh ${EXTERNALS_DOWNLOAD_DIR}
+    DEPENDERS download
 )
