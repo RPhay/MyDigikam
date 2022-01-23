@@ -470,110 +470,110 @@ BUGFIXES:
 459 ==> 133488 - make it possible to enlarge image in the 'comments and tags' dialog.
 460 ==> 177608 - Wrong button text to save image tags and caption.
 461 ==> 300304 - Legends do not appear in editor.
-462 ==> 
-463 ==> 
-464 ==> 
-465 ==> 
-466 ==> 
-467 ==> 
-468 ==> 
-469 ==> 
-470 ==> 
-471 ==> 
-472 ==> 
-473 ==> 
-474 ==> 
-475 ==> 
-476 ==> 
-477 ==> 
-478 ==> 
-479 ==> 
-480 ==> 
-481 ==> 
-482 ==> 
-483 ==> 
-484 ==> 
-485 ==> 
-486 ==> 
-487 ==> 
-488 ==> 
-489 ==> 
-490 ==> 
-491 ==> 
-492 ==> 
-493 ==> 
-494 ==> 
-495 ==> 
-496 ==> 
-497 ==> 
-498 ==> 
-499 ==> 
-500 ==> 
-501 ==> 
-502 ==> 
-503 ==> 
-504 ==> 
-505 ==> 
-506 ==> 
-507 ==> 
-508 ==> 
-509 ==> 
-510 ==> 
-511 ==> 
-512 ==> 
-513 ==> 
-514 ==> 
-515 ==> 
-516 ==> 
-517 ==> 
-518 ==> 
-519 ==> 
-520 ==> 
-521 ==> 
-522 ==> 
-523 ==> 
-524 ==> 
-525 ==> 
-526 ==> 
-527 ==> 
-528 ==> 
-529 ==> 
-530 ==> 
-531 ==> 
-532 ==> 
-533 ==> 
-534 ==> 
-535 ==> 
-536 ==> 
-537 ==> 
-539 ==> 
-539 ==> 
-540 ==> 
-541 ==> 
-542 ==> 
-543 ==> 
-544 ==> 
-545 ==> 
-546 ==> 
-547 ==> 
-548 ==> 
-549 ==> 
-550 ==> 
-551 ==> 
-552 ==> 
-553 ==> 
-554 ==> 
-555 ==> 
-556 ==> 
-557 ==> 
-558 ==> 
-559 ==> 
-560 ==> 
-561 ==> 
-562 ==> 
-563 ==> 
-564 ==> 
-565 ==> 
+462 ==> 382231 - First Run wizzard path.
+463 ==> 141624 - digiKam crash when assigning a new tag to a large number of photos.
+464 ==> 143135 - Many many crashes due to broken tags.
+465 ==> 149367 - Crash after clicking an existing tag while viewing an image.
+466 ==> 168846 - Crash after playing with tags (seems to be rather a crash in Qt or kdelibs).
+467 ==> 174991 - digiKam freezes when generating new tag.
+468 ==> 088121 - Tag sometimes does not accept drop of photo(s), or reports wrong tag name to drop to.
+469 ==> 089358 - Delete tag should be disabled when no tag is assigned.
+470 ==> 112799 - Hierarchical tag selection on right pane does not work correctly.
+471 ==> 136206 - Losing tags after an move or rename of imagefiles.
+472 ==> 147876 - Broken/renamed images after tagging.
+473 ==> 166663 - Tags not showing pictures without "Include Tag Subtree".
+474 ==> 181610 - Discard button not working in "Apply changes?".
+475 ==> 208621 - Checkboxes do not follow KDE's style.
+476 ==> 307219 - Very slow work when any tag have defined user icon.
+477 ==> 091537 - Usability: don't open tag's virtual folder if only 'collapse' arrow is clicked in tag tree.
+478 ==> 091849 - Support virtual folders combining tags (wishlist).
+479 ==> 111700 - Select images for display by combined tag query.
+480 ==> 182665 - Assign multiple tag photo.
+481 ==> 324917 - digiKam: loading of tag icons fails -> very high CPU usage and freezing GUI [callgrind].
+482 ==> 226816 - Crash in Digikam when trying to move tag to sub-tag.
+483 ==> 107150 - Creation of new tags fails.
+484 ==> 139035 - Moving items loses tag and rating data.
+485 ==> 315269 - Tag "_Digikam_root_tag_" is handled strangely (almost like duplicated in hierachy) on importing existing collection.
+486 ==> 116582 - Great improvements that could be made.
+487 ==> 128290 - Photo organization should be independent of file structure.
+488 ==> 153656 - Wish: user definable fields for tag and search.
+489 ==> 218034 - Wish virtual albums like tags.
+490 ==> 336107 - Ability to manage tags.
+491 ==> 110116 - Redundant tags assigned to a picture.
+492 ==> 110333 - Tag images from albumstructure.
+493 ==> 113090 - Adding tags to a whole album.
+494 ==> 118263 - Wish: be able to pull an image onto another to set it to its tags.
+495 ==> 124143 - Generate keywords from filename.
+496 ==> 128533 - Why nested tags? What about freeform/freestyle tagging?
+497 ==> 157308 - Automatically tag edited images in digiKam.
+498 ==> 218817 - Allow different sizes for album and tag icons.
+499 ==> 133944 - digiKam crashes when choosing an icon for a tag.
+500 ==> 150792 - Sigsegv when applying tags.
+501 ==> 167874 - Item count in tag and album view is not updated.
+502 ==> 099560 - Wish for ability to move album directories from disk to disk without loosing all tags.
+503 ==> 117242 - Tag hierarchy should be managed automatically.
+504 ==> 119086 - Folders (categories) for image tags.
+505 ==> 122192 - WISH: The capability to re-organise the tree of the tags.
+506 ==> 136259 - Awkward management of metadata and digikam-tags and comments.
+507 ==> 158777 - Show count of photos with assigned tag.
+508 ==> 347737 - Tagged RAW files do not show tags after round trip to RawTherapee.
+509 ==> 303714 - Tag checkboxes state changes on mouse release only.
+510 ==> 223219 - digiKam crashed when specifying/deleteing tags from within gnome.
+511 ==> 226157 - digiKam crashes when applying keyword changes.
+512 ==> 142984 - SIGSEGV setting icon for new tag.
+513 ==> 193531 - Crash when changing tags for image.
+514 ==> 218397 - digiKam crashes when creating a new tag.
+515 ==> 224589 - Applying tags crashes digiKam.
+516 ==> 224917 - digiKam crashed when setting a Tag on an image.
+517 ==> 227091 - I edit the Tag database and at the end digiKam ask to save and crashed.
+518 ==> 253551 - digiKam crashes after deleting a tag.
+519 ==> 257033 - Crash when filtering tags in "My Tags" tree list.
+520 ==> 267901 - My Tags Crash.
+521 ==> 279495 - digiKam crashes while doing mass add of tags to photos.
+522 ==> 295041 - Assigned Tags to Photos then change tag search text.
+523 ==> 300330 - Crash while appying tags.
+524 ==> 309560 - Crash when editing tags.
+525 ==> 313501 - digiKam crashes, when contributing tags (very slow tag storage).
+526 ==> 117403 - digiKam: d&d a tags on an thumbnail not currently in an existing selection of images assigns tag to all of them.
+527 ==> 137207 - Inconsitent tagging of multiple photos.
+528 ==> 140675 - Tag filters can not select the "group" tag.
+529 ==> 164187 - Screen full of keywords - scroll missing.
+530 ==> 195817 - No progress information is shown when applying tag changes to a _single_ image.
+531 ==> 305446 - digiKam crashes after editing and tagging an image, then saving the changed image.
+532 ==> 196925 - "Tags aleady assigned" does not show tags already assigned.
+533 ==> 235671 - All tags no longer shown when the "Tags already assigned" button is clicked.
+534 ==> 359899 - Tags Filter panel too wide.
+535 ==> 093419 - Unecessary confirmation when setting tag.
+536 ==> 111600 - Link between addressbook contacts and people tags.
+537 ==> 116606 - Wish: I want to see again all my pictures having a tag in a flat view, not separated by albums.
+539 ==> 122194 - WISH: The ability to add descriptions and other meta information to a tag.
+539 ==> 134041 - Add contact icon to contact tag.
+540 ==> 139465 - Add labels to images.
+541 ==> 146857 - Suggestion for tagging images.
+542 ==> 149007 - Wish: Assign Hotkey to tag.
+543 ==> 158712 - No way to copy all keywords from one photo to another.
+544 ==> 159667 - Create Tag From AddressBook - Usability.
+545 ==> 165824 - Tag images in digiKam with Contacts.
+546 ==> 176005 - Wish: different view when "my tags" is clicked.
+547 ==> 183711 - Allow "pretagging" during image viewing by pressing a key.
+548 ==> 194959 - Use keyboard to assign tags.
+549 ==> 196484 - Add Tags list to ignore on import process (as Flickr geo:lon and geo:lat).
+550 ==> 252494 - Dropping a tag on an album applies it to album contents.
+551 ==> 266745 - After updating Editor starts, but most functions are unavailable to work with.
+552 ==> 093581 - Keeping kde compatibility in digiKam.
+553 ==> 304946 - Merge Conflict in branch.
+554 ==> 103959 - digiKam doesn't work after upgrading libexif.
+555 ==> 290154 - digiKam use advanced QT features without checking availability of support.
+556 ==> 268542 - COMMENT: (much) more Pros than Contras.
+557 ==> 267616 - digiKam not available ?
+558 ==> 277495 - Install digiKam on Gnome.
+559 ==> 129510 - Cannot load module « Sysinfo ».
+560 ==> 139216 - Doesn't build with gcc pre-releases.
+561 ==> 288284 - digiKam do not start.
+562 ==> 218377 - Upgrading to the latest rep digiKam on kubuntu makes digiKam not working: symbol not found.
+563 ==> 405577 - digiKam crash at every startup (symbol malloc, qtwebengine).
+564 ==> 323231 - digiKam version bump.
+565 ==> 429816 - Ubuntu with digiKam snap doesn't find Gimp as options.
 566 ==> 
 567 ==> 
 568 ==> 
