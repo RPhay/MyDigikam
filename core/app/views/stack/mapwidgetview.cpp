@@ -165,7 +165,6 @@ MapWidgetView::MapWidgetView(QItemSelectionModel* const selectionModel,
  */
 MapWidgetView::~MapWidgetView()
 {
-
 }
 
 void MapWidgetView::doLoadState()
@@ -220,11 +219,13 @@ bool MapWidgetView::getActiveState() const
 ItemInfo MapWidgetView::currentItemInfo() const
 {
     /// @todo Have geoifacewidget honor the 'current index'
+
     QModelIndex currentIndex = d->selectionModel->currentIndex();
 
     if (!currentIndex.isValid())
     {
         /// @todo This is temporary until geoifacewidget marks a 'current index'
+
         if (!d->selectionModel->hasSelection())
         {
             return ItemInfo();
@@ -242,11 +243,13 @@ ItemInfo MapWidgetView::currentItemInfo() const
 CamItemInfo MapWidgetView::currentCamItemInfo() const
 {
     /// @todo Have geoifacewidget honor the 'current index'
+
     QModelIndex currentIndex = d->selectionModel->currentIndex();
 
     if (!currentIndex.isValid())
     {
         /// @todo This is temporary until geoifacewidget marks a 'current index'
+
         if (!d->selectionModel->hasSelection())
         {
             return CamItemInfo();
@@ -278,11 +281,11 @@ class Q_DECL_HIDDEN MapViewModelHelper::Private
 public:
 
     explicit Private()
-        : model(nullptr),
-          importModel(nullptr),
-          selectionModel(nullptr),
+        : model              (nullptr),
+          importModel        (nullptr),
+          selectionModel     (nullptr),
           thumbnailLoadThread(nullptr),
-          application(MapWidgetView::ApplicationDigikam)
+          application        (MapWidgetView::ApplicationDigikam)
     {
     }
 
@@ -316,8 +319,10 @@ MapViewModelHelper::MapViewModelHelper(QItemSelectionModel* const selection,
             // Note: Here we only monitor changes to the database, because changes to the model
             //       are also sent when thumbnails are generated, and we don't want to update
             //       the marker tiler for that!
+
             connect(CoreDbAccess::databaseWatch(), SIGNAL(imageChange(ImageChangeset)),
                     this, SLOT(slotImageChange(ImageChangeset)), Qt::QueuedConnection);
+
             break;
         }
 
@@ -432,7 +437,8 @@ bool MapViewModelHelper::itemCoordinates(const QModelIndex& index, GeoCoordinate
  * @brief This function retrieves the thumbnail for an index.
  * @param index The marker's index.
  * @param size The size of the thumbnail.
- * @return If the thumbnail has been loaded in the ThumbnailLoadThread instance, it is returned. If not, a QPixmap is returned and ThumbnailLoadThread's signal named signalThumbnailLoaded is emitted when the thumbnail becomes available.
+ * @return If the thumbnail has been loaded in the ThumbnailLoadThread instance, it is returned.
+ * If not, a QPixmap is returned and ThumbnailLoadThread's signal named signalThumbnailLoaded is emitted when the thumbnail becomes available.
  */
 QPixmap MapViewModelHelper::pixmapFromRepresentativeIndex(const QPersistentModelIndex& index, const QSize& size)
 {
@@ -489,6 +495,7 @@ QPersistentModelIndex MapViewModelHelper::bestRepresentativeIndexFromList(const 
     }
 
     // first convert from QPersistentModelIndex to QModelIndex
+
     QList<QModelIndex> indexList;
     QModelIndex        bestIndex;
 
@@ -503,6 +510,7 @@ QPersistentModelIndex MapViewModelHelper::bestRepresentativeIndexFromList(const 
         case MapWidgetView::ApplicationDigikam:
         {
             // now get the ItemInfos and convert them to GPSItemInfos
+
             const QList<ItemInfo> imageInfoList =  d->model->imageInfos(indexList);
             GPSItemInfo::List gpsItemInfoList;
 
@@ -519,10 +527,12 @@ QPersistentModelIndex MapViewModelHelper::bestRepresentativeIndexFromList(const 
             if (gpsItemInfoList.size()!=indexList.size())
             {
                 // this is a problem, and unexpected
+
                 return indexList.first();
             }
 
             // now determine the best available index
+
             bestIndex                     = indexList.first();
             GPSItemInfo bestGPSItemInfo = gpsItemInfoList.first();
 
@@ -545,8 +555,9 @@ QPersistentModelIndex MapViewModelHelper::bestRepresentativeIndexFromList(const 
         case MapWidgetView::ApplicationImportUI:
         {
             // now get the CamItemInfo and convert them to GPSItemInfos
+
             const QList<CamItemInfo> imageInfoList =  d->importModel->camItemInfos(indexList);
-            GPSItemInfo::List       gpsItemInfoList;
+            GPSItemInfo::List gpsItemInfoList;
 
             foreach (const CamItemInfo& imageInfo, imageInfoList)
             {
@@ -580,10 +591,12 @@ QPersistentModelIndex MapViewModelHelper::bestRepresentativeIndexFromList(const 
             if (gpsItemInfoList.size() != indexList.size())
             {
                 // this is a problem, and unexpected
+
                 return indexList.first();
             }
 
             // now determine the best available index
+
             bestIndex                   = indexList.first();
             GPSItemInfo bestGPSItemInfo = gpsItemInfoList.first();
 
@@ -605,6 +618,7 @@ QPersistentModelIndex MapViewModelHelper::bestRepresentativeIndexFromList(const 
     }
 
     // and return the index
+
     return QPersistentModelIndex(bestIndex);
 }
 
@@ -666,6 +680,7 @@ void MapViewModelHelper::onIndicesClicked(const QList<QPersistentModelIndex>& cl
     /// @todo What do we do when an image is clicked?
 
 #if 0
+
     QList<QModelIndex> indexList;
 
     for (int i = 0 ; i < clickedIndices.count() ; ++i)
@@ -684,9 +699,13 @@ void MapViewModelHelper::onIndicesClicked(const QList<QPersistentModelIndex>& cl
     }
 
     emit signalFilteredImages(imagesIdList);
+
 #else
+
     Q_UNUSED(clickedIndices);
+
 #endif
+
 }
 
 void MapViewModelHelper::slotImageChange(const ImageChangeset& changeset)
@@ -695,6 +714,7 @@ void MapViewModelHelper::slotImageChange(const ImageChangeset& changeset)
 //    const DatabaseFields::ItemPositions imagePositionChanges = changes;
 
     /// @todo More detailed check
+
     if ((changes & DatabaseFields::LatitudeNumber)  ||
         (changes & DatabaseFields::LongitudeNumber) ||
         (changes & DatabaseFields::Altitude))
