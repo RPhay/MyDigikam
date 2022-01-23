@@ -36,7 +36,10 @@ Architecture and configuration to setup a continuous deployment computer.
                8 cores.
                4Gb RAM.
                128Mb video.
-               Disk: 80Gb.
+               Disk: 80Gb (/ and /home).
+               /tmp : 20Gb on a separated partition.
+               /var : 20Gb on a separated partition.
+               swap : 20Gb on a separated partition.
                eth0: auto IP/DNS with DHCP Metric:0                                         (VM:NAT)
                eth1: manual IP/DNS: 192.168.56.102/24/192.168.56.1/192.168.56.100 Metric:10 (VM:private local Net)
 
@@ -45,7 +48,10 @@ Architecture and configuration to setup a continuous deployment computer.
                8 cores.
                4Gb RAM.
                128Mb video.
-               Disk: 80Gb.
+               Disk: 80Gb (/ and /home).
+               /tmp : 20Gb on a separated partition.
+               /var : 20Gb on a separated partition.
+               swap : 20Gb on a separated partition.
                eth0: auto IP/DNS with DHCP Metric:0                                         (VM:NAT)
                eth1: manual IP/DNS: 192.168.56.103/24/192.168.56.1/192.168.56.100 Metric:10 (VM:private local Net)
 
