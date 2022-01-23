@@ -598,7 +598,7 @@ BUGFIXES:
 587 ==> 119752 - digiKam requires at least lcms >= 1.14.
 588 ==> 132625 - Crashes while browsing images [backtrace].
 589 ==> 291536 - digiKam crashes when stopped.
-590 ==> 
+590 ==> 448988 - Non-OpenGL "Random" transitions aren't random per image.
 591 ==> 
 592 ==> 
 593 ==> 

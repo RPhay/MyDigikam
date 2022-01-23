@@ -1082,12 +1082,14 @@ void PresentationWidget::slotTimeOut()
 
             if (d->sharedData->effectName  == QLatin1String("Random")) // Take a random effect.
             {
-                if (d->currImage.isNull() || d->sharedData->urlList.isEmpty())   // End of slideshow ?
+                d->effect = getRandomEffect();
+
+                if (!d->effect)
                 {
-                    showEndOfShow();
                     return;
                 }
             }
+
             d->effectRunning = true;
 
             tmout = (this->*d->effect)(true);
