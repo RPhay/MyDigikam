@@ -1080,7 +1080,7 @@ void PresentationWidget::slotTimeOut()
                 return;
             }
 
-            if (d->sharedData->effectName  == QLatin1String("Random")) // Take a random effect.
+            if (d->sharedData->effectName == QLatin1String("Random")) // Take a random effect.
             {
                 d->effect = getRandomEffect();
 
