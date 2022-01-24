@@ -601,6 +601,9 @@ void ItemIconView::slotCheckForEmptyResult()
 
     if (album && album->isRoot())
     {
+        d->msgNotifyTimer->stop();
+        d->errorWidget->animatedHide();
+
         return;
     }
 
@@ -611,11 +614,7 @@ void ItemIconView::slotCheckForEmptyResult()
     else
     {
         d->msgNotifyTimer->stop();
-
-        if (d->errorWidget->isVisible())
-        {
-            d->errorWidget->animatedHide();
-        }
+        d->errorWidget->animatedHide();
     }
 }
 
