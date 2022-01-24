@@ -145,36 +145,53 @@ void ItemIconView::slotViewModeChanged()
     switch (viewMode())
     {
         case StackedView::IconViewMode:
+        {
             emit signalSwitchedToIconView();
             emit signalThumbSizeChanged(d->thumbSize);
             break;
+        }
 
         case StackedView::PreviewImageMode:
+        {
             emit signalSwitchedToPreview();
             slotZoomFactorChanged(d->stackedview->zoomFactor());
             break;
+        }
 
         case StackedView::WelcomePageMode:
+        {
             emit signalSwitchedToIconView();
             break;
+        }
 
         case StackedView::MediaPlayerMode:
+        {
             emit signalSwitchedToPreview();
             break;
+        }
 
         case StackedView::MapWidgetMode:
+        {
             emit signalSwitchedToMapView();
             // TODO: connect map view's zoom buttons to main status bar zoom buttons
             break;
+        }
 
         case StackedView::TableViewMode:
+        {
             emit signalSwitchedToTableView();
             emit signalThumbSizeChanged(d->thumbSize);
             break;
+        }
 
         case StackedView::TrashViewMode:
+        {
+            d->msgNotifyTimer->stop();
+            d->errorWidget->animatedHide();
+
             emit signalSwitchedToTrashView();
             break;
+        }
     }
 }
 
