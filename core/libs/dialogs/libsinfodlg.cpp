@@ -31,6 +31,9 @@
 #include <QTreeWidget>
 #include <QHeaderView>
 #include <QThreadPool>
+#include <QStandardPaths>
+#include <QFile>
+#include <QTextStream>
 
 #ifdef HAVE_QWEBENGINE
 #   include <QtWebEngineWidgetsVersion>
@@ -45,6 +48,7 @@
 
 // Local includes
 
+#include "digikam_debug.h"
 #include "drawdecoder.h"
 #include "greycstorationfilter.h"
 #include "pgfutils.h"
@@ -295,6 +299,52 @@ LibsInfoDlg::LibsInfoDlg(QWidget* const parent)
                         i18ncp(CONTEXT, "CPU core", "CPU cores", nbcore) << QString::fromLatin1("%1").arg(nbcore));
 
     // TODO: add free memory reported by kmemoryinfo at startup
+
+    // ---
+
+    const QString gitRevs = QStandardPaths::locate(QStandardPaths::AppDataLocation,
+                                                   QLatin1String("MANIFEST.txt"));
+
+    if (!gitRevs.isEmpty() && QFile::exists(gitRevs))
+    {
+        QFile file(gitRevs);
+
+        if (!file.open(QIODevice::ReadOnly))
+        {
+            return;
+        }
+
+        // NOTE: MANIFEST.txt is a text file listing all git revisions of upstream components.
+        //       On section title start with '+'.
+        //       All component revisions are listed below line by line with the name and the revision separated by ':'.
+
+        qCDebug(DIGIKAM_WIDGETS_LOG) << "Git revisions manifest file found:" << gitRevs;
+
+        QTextStream in(&file);
+        QTreeWidgetItem* manifestEntry = nullptr;
+
+        while (!in.atEnd())
+        {
+            QString line = in.readLine();
+
+            if (line.isEmpty())
+            {
+                continue;
+            }
+
+            if      (line.startsWith(QLatin1Char('+')))
+            {
+                manifestEntry = new QTreeWidgetItem(listView(), QStringList() << line.remove(QLatin1Char('+')));
+                listView()->addTopLevelItem(manifestEntry);
+            }
+            else if (manifestEntry)
+            {
+                new QTreeWidgetItem(manifestEntry, line.split(QLatin1Char(':')));
+            }
+        }
+
+        file.close();
+    }
 }
 
 LibsInfoDlg::~LibsInfoDlg()
