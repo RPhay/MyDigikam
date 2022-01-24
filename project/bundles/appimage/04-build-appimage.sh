@@ -160,7 +160,7 @@ if [[ -e /usr/translations ]]; then
     echo -e "------------- Copy Qt translations files\n"
 
     cp -r /usr/translations ./usr/share/digikam
-    ln -s ./usr/share/digikam/translations ./usr/share/showfoto/translations
+    ln -s ../digikam/translations ./usr/share/showfoto/translations
 
     # optimizations
 
@@ -207,6 +207,11 @@ echo -e "---------- Copy Marble data and plugins files\n"
 cp -r /usr/${LIBSUFFIX}/marble/plugins/ ./usr/bin/
 
 cp -r /usr/share/marble/data            ./usr/bin/
+
+echo -e "---------- Copy Git Revisions Manifest\n"
+
+cp $ORIG_WD/data/qt_manifest.txt        ./usr/share/digikam/MANIFEST.txt
+ln -s ../digikam/MANIFEST.txt           ./usr/share/showfoto/MANIFEST.txt
 
 echo -e "---------- Copy system libraries for binary compatibility\n"
 

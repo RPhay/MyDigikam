@@ -247,6 +247,8 @@ rm -rf $BUILDING_DIR/* || true
 
 /opt/cmake/bin/cmake --build . --config RelWithDebInfo --target ext_qt            -- -j$CPU_CORES    # depend of tiff, png, jpeg
 
+cp $DOWNLOAD_DIR/qt_manifest.txt $ORIG_WD/data/
+
 if [[ $DK_QTWEBENGINE = 0 ]] ; then
     /opt/cmake/bin/cmake --build . --config RelWithDebInfo --target ext_qtwebkit  -- -j$CPU_CORES    # depend of Qt and libicu
 fi

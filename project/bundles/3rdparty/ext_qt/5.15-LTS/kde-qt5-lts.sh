@@ -82,7 +82,7 @@ fi
 
 # --- List git revisions for all sub-modules
 
-QT5_GITREV_LST=qt_manifest.txt
+QT5_GITREV_LST=$DOWNLOAD_DIR/qt_manifest.txt
 
 echo "List git sub-module revisions"
 
@@ -90,19 +90,17 @@ cd $DOWNLOAD_DIR/kde-5.15-LTS
 
 rm -f $QT5_GITREV_LST
 currentDate=`date +"%Y-%m-%d"`
-echo "Snapshoot $currentDate" > $QT5_GITREV_LST
+echo "Qt Snapshoot:$currentDate" > $QT5_GITREV_LST
 
 for SUBDIR in $QT_SUBDIRS ; do
 
     cd $SUBDIR
-    echo "$(basename "$SUBDIR"):$(git rev-parse HEAD)" >> ../$QT5_GITREV_LST
+    echo "$(basename "$SUBDIR"):$(git rev-parse HEAD)" >> $QT5_GITREV_LST
     cd ..
 
 done
 
 cat $QT5_GITREV_LST
-
-cp $QT5_GITREV_LST /usr/share/qt5
 
 # --- Create a non compressed archive for cmake download stage.
 

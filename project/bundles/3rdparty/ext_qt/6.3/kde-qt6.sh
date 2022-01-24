@@ -65,27 +65,25 @@ fi
 
 # --- List git revisions for all sub-modules
 
-QT6_GITREV_LST=qt_manifest.txt
+QT6_GITREV_LST=$DOWNLOAD_DIR/qt_manifest.txt
 
 echo "List git sub-module revisions"
 
 cd $DOWNLOAD_DIR/kde-qt6
 
-rm -f $QT5_GITREV_LST
+rm -f $QT6_GITREV_LST
 currentDate=`date +"%Y-%m-%d"`
-echo "Snapshoot $currentDate" > $QT6_GITREV_LST
+echo "Qt Snapshoot:$currentDate" > $QT6_GITREV_LST
 
 for SUBDIR in $QT_SUBDIRS ; do
 
     cd $SUBDIR
-    echo "$(basename "$SUBDIR"):$(git rev-parse HEAD)" >> ../$QT6_GITREV_LST
+    echo "$(basename "$SUBDIR"):$(git rev-parse HEAD)" >> $QT6_GITREV_LST
     cd ..
 
 done
 
 cat $QT6_GITREV_LST
-
-cp $QT6_GITREV_LST /usr/share/qt6
 
 # --- Create a non compressed archive for cmake download stage.
 
