@@ -174,8 +174,6 @@ fi
 
 cd $BUILDING_DIR
 
-rm -rf $BUILDING_DIR/* || true
-
 /opt/cmake/bin/cmake $ORIG_WD/../3rdparty \
       -DCMAKE_INSTALL_PREFIX:PATH=/usr \
       -DINSTALL_ROOT=/usr \
