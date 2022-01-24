@@ -380,7 +380,6 @@ void ItemPreviewView::slotShowContextMenu(QGraphicsSceneContextMenuEvent* event)
 
     // -------------------------------------------------------
 
-    cmHelper.addAction(QLatin1String("image_add_af_point"));
     cmHelper.addAction(d->addFocusPointAction,  true);
     cmHelper.addAction(d->showFocusPointAction, true);
     cmHelper.addSeparator();
