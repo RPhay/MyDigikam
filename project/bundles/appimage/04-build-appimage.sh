@@ -350,7 +350,7 @@ libxcb.so.1 \
 
 for FILE in $EXCLUDE_FILES ; do
     if [[ -f usr/lib/${FILE} ]] ; then
-        echo -e "   ==> ${FILE} will be removed for the bundle"
+        echo -e "   ==> ${FILE} will be removed from the bundle"
         rm -f usr/lib/${FILE}
     fi
 done
@@ -395,7 +395,7 @@ libxcb-dri3.so.0 \
 
 for FILE in $EXTRA_EXCLUDE_FILES ; do
     if [[ -f usr/lib/${FILE} ]] ; then
-        echo -e "   ==> ${FILE} will be removed for the bundle"
+        echo -e "   ==> ${FILE} will be removed from the bundle"
         rm -f usr/lib/${FILE}
     fi
 done
