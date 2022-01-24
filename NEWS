@@ -315,7 +315,7 @@ BUGFIXES:
 302 ==> 104980 - After discarding changes of a photo, Showfoto ask if (not yet done) changes of the next photo should be save/discard too.
 303 ==> 127244 - Stubborn Save bug in Showfoto (and associated crash).
 304 ==> 158144 - Showfoto crashs In settings window.
-305 ==> 249932 - Add OpenGL image effects when loading next image.
+305 ==> 269993 - Subdirectories in separated + independant databases.
 306 ==> 154478 - Showfoto does not sort pictures by name.
 307 ==> 147136 - When selecting pictures from folder Showfoto got closed.
 308 ==> 179531 - Showfoto crash on saveas jpegs.
@@ -634,12 +634,12 @@ BUGFIXES:
 621 ==> 102881 - digiKam crashes w/ GDBM error.
 622 ==> 383851 - digiKam installed from Ubuntu Software; does not start.
 623 ==> 341652 - Database collections are removed when docker.io is installed.
-624 ==> 362569 - Digicam-dbg package incompatible with current version of digiKam.
+624 ==> 362569 - digiKam debug package incompatible with current version of digiKam.
 625 ==> 154941 - Improve exception safety with smart pointers.
 626 ==> 303114 - Closing Digikam results in crash.
 627 ==> 363362 - Crash when using configuration.
 628 ==> 276479 - Wish: add feature to copy/move image files from digikam to filemanager on non-kde desktop.
-629 ==> 139358 - Crash when closing DigiKam [backtrace].
+629 ==> 139358 - Crash when closing digiKam [backtrace].
 630 ==> 285124 - digiKam crashed while playing with effects.
 631 ==> 
 632 ==> 
