@@ -97,6 +97,6 @@ ExternalProject_Add(ext_qt
 
 ExternalProject_Add_step(ext_qt before_download
 
-    COMMAND ${CMAKE_CURRENT_SOURCE_DIR}/kde-qt5-lts.sh ${EXTERNALS_DOWNLOAD_DIR}
+    COMMAND ${CMAKE_CURRENT_SOURCE_DIR}/kde-qt5-lts.sh ${EXTERNALS_DOWNLOAD_DIR} ${QTWEBENGINE_VERSION}
     DEPENDERS download
 )

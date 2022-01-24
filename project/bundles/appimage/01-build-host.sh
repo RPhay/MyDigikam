@@ -237,7 +237,8 @@ rm -rf $BUILDING_DIR/* || true
       -DKA_VERSION=$DK_KA_VERSION \
       -DKF5_VERSION=$DK_KF5_VERSION \
       -DENABLE_QTVERSION=$DK_QTVERSION \
-      -DENABLE_QTWEBENGINE=$DK_QTWEBENGINE
+      -DENABLE_QTWEBENGINE=$DK_QTWEBENGINE \
+      -DQTWEBENGINE_VERSION=$DK_QTWEBENGINEVERSION
 
 # Low level libraries and Qt5 dependencies
 # NOTE: The order to compile each component here is very important.
@@ -248,6 +249,16 @@ rm -rf $BUILDING_DIR/* || true
 /opt/cmake/bin/cmake --build . --config RelWithDebInfo --target ext_qt            -- -j$CPU_CORES    # depend of tiff, png, jpeg
 
 cp $DOWNLOAD_DIR/qt_manifest.txt $ORIG_WD/data/
+
+if [[ "$DK_QTVERSION" = "5.15-LTS" && $DK_QTWEBENGINE = 1 ]] ; then
+
+    # Patch QtWebEngine cmake config files to be compatible with Qt5.15 LTS which is versionned as 5.15.3
+
+    sed -e "s/$DK_QTWEBENGINEVERSION ${_Qt5WebEngine_FIND_VERSION_EXACT}/5.15.3 ${_Qt5WebEngine_FIND_VERSION_EXACT}/g" /usr/lib/cmake/Qt5WebEngine/Qt5WebEngineConfig.cmake > ./tmp.cmake ; mv -f ./tmp.cmake /usr/lib/cmake/Qt5WebEngine/Qt5WebEngineConfig.cmake
+    sed -e "s/$DK_QTWEBENGINEVERSION ${_Qt5WebEngineCore_FIND_VERSION_EXACT}/5.15.3 ${_Qt5WebEngineCore_FIND_VERSION_EXACT}/g" /usr/lib/cmake/Qt5WebEngineCore/Qt5WebEngineCoreConfig.cmake > ./tmp.cmake ; mv -f ./tmp.cmake /usr/lib/cmake/Qt5WebEngineCore/Qt5WebEngineCoreConfig.cmake
+    sed -e "s/$DK_QTWEBENGINEVERSION ${_Qt5WebEngineWidgets_FIND_VERSION_EXACT}/5.15.3 ${_Qt5WebEngineWidgets_FIND_VERSION_EXACT}/g" /usr/lib/cmake/Qt5WebEngineWidgets/Qt5WebEngineWidgetsConfig.cmake > ./tmp.cmake ; mv -f ./tmp.cmake Qt5WebEngineWidgetsConfig.cmake
+
+fi
 
 if [[ $DK_QTWEBENGINE = 0 ]] ; then
     /opt/cmake/bin/cmake --build . --config RelWithDebInfo --target ext_qtwebkit  -- -j$CPU_CORES    # depend of Qt and libicu

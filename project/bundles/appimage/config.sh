@@ -53,8 +53,11 @@ DK_VERSION=master
 # Installer will include or not digiKam debug symbols
 DK_DEBUG=0
 
-# Qt version to use in bundle. Possible values: 5.15, 5.15-LTS
+# Qt version to use in bundle. Possible values: 5.15, 5.15-LTS, 6.3
 DK_QTVERSION="5.15-LTS"
+
+# QtWebEngine version to use in bundle when 5.15-LTS is used.
+DK_QTWEBENGINEVERSION="5.15.8"
 
 # Option to use QtWebEngine instead QtWebkit
 DK_QTWEBENGINE=1
