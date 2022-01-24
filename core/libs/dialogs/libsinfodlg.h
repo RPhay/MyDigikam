@@ -27,6 +27,7 @@
 // Qt includes
 
 #include <QMap>
+#include <QTreeWidgetItem>
 
 // Local includes
 
@@ -44,6 +45,11 @@ public:
 
     explicit LibsInfoDlg(QWidget* const parent);
     ~LibsInfoDlg();
+
+protected:
+
+    QTreeWidgetItem* m_features  = nullptr;
+    QTreeWidgetItem* m_libraries = nullptr;
 
 private:
 
