@@ -93,6 +93,7 @@ install(FILES
               ${CMAKE_SOURCE_DIR}/core/libs/widgets/graphicsview/graphicsdimgitem.h
 
               ${CMAKE_SOURCE_DIR}/core/libs/threadimageio/preview/previewsettings.h
+              ${CMAKE_SOURCE_DIR}/core/libs/threadimageio/preview/previewloadthread.h
               ${CMAKE_SOURCE_DIR}/core/libs/threadimageio/fileio/loadingdescription.h
               ${CMAKE_SOURCE_DIR}/core/libs/threadimageio/fileio/loadsavethread.h
               ${CMAKE_SOURCE_DIR}/core/libs/threadimageio/thumb/thumbnailinfo.h
