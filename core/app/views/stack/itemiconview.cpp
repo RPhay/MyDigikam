@@ -215,9 +215,14 @@ ItemIconView::ItemIconView(QWidget* const parent, DModelFactory* const modelColl
     d->selectionTimer = new QTimer(this);
     d->selectionTimer->setSingleShot(true);
     d->selectionTimer->setInterval(75);
+
     d->thumbSizeTimer = new QTimer(this);
     d->thumbSizeTimer->setSingleShot(true);
     d->thumbSizeTimer->setInterval(300);
+
+    d->msgNotifyTimer = new QTimer(this);
+    d->msgNotifyTimer->setSingleShot(true);
+    d->msgNotifyTimer->setInterval(500);
 
     d->albumHistory = new AlbumHistory();
 
@@ -310,6 +315,9 @@ void ItemIconView::setupConnections()
 
     connect(d->iconView->model(), SIGNAL(layoutChanged()),
             this, SLOT(slotImageSelected()));
+
+    connect(d->iconView->imageModel(), SIGNAL(allRefreshingFinished()),
+            this, SLOT(slotCheckForEmptyResult()));
 
     connect(d->iconView, SIGNAL(selectionChanged()),
             this, SLOT(slotImageSelected()));
@@ -457,6 +465,9 @@ void ItemIconView::setupConnections()
 
     connect(d->thumbSizeTimer, SIGNAL(timeout()),
             this, SLOT(slotThumbSizeEffect()));
+
+    connect(d->msgNotifyTimer, SIGNAL(timeout()),
+            this, SLOT(slotEmptyMessageTimer()));
 
     // -- Album Settings ----------------
 

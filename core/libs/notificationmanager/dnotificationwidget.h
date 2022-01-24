@@ -284,12 +284,15 @@ Q_SIGNALS:
      */
     void showAnimationFinished();
 
+private Q_SLOTS:
+
+    void slotTimerTimeout();
+
 protected:
 
     void paintEvent(QPaintEvent* event)   override;
     bool event(QEvent* event)             override;
     void resizeEvent(QResizeEvent* event) override;
-    void timerEvent(QTimerEvent* event)   override;
 
 private:
 
