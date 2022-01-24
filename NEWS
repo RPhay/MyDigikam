@@ -653,26 +653,26 @@ BUGFIXES:
 640 ==> 124414 - Display only new pictures.
 641 ==> 307452 - Corrupt preview images at 30 bit depth.
 642 ==> 177057 - Two View menus in menubar.
-643 ==> 139017 - OS X 10.4.8 digikam fails to detect libjpeg6b during compile.
-644 ==> 
-645 ==> 
-646 ==> 
-647 ==> 
-648 ==> 
-649 ==> 
-650 ==> 
-651 ==> 
-652 ==> 
-653 ==> 
-654 ==> 
-655 ==> 
-656 ==> 
-657 ==> 
-658 ==> 
-659 ==> 
-660 ==> 
-661 ==> 
-662 ==> 
+643 ==> 139017 - OS X 10.4.8 digiKam fails to detect libjpeg6b during compile.
+644 ==> 323935 - While declaring support of NIKON D800/D800E, camera import tool does NOT provide support.
+645 ==> 330363 - Crash during import from SD-card.
+646 ==> 293351 - Can't import from Canon G9 if the 32GB SD more the 50% full.
+647 ==> 370935 - Exporting to remote storage does not work.
+648 ==> 188855 - Subalbum created always dated 1970-01-01.
+649 ==> 331988 - No thumbnails when importing cr2 files directly from camera.
+650 ==> 242721 - digiKam crashes when importing pictures from camera.
+651 ==> 319575 - No Thumbnails on import canon 20D.
+652 ==> 298736 - digiKam and KDE don't sense Canon EOS camera, connected to the USB.
+653 ==> 307840 - digiKam ptp, only import photos.
+654 ==> 336022 - Image download from camera too slow to be useful.
+655 ==> 285059 - digiKam recognizes Canon S2 IS, but will not connect to camera to download images.
+656 ==> 252401 - digiKam crashes when downloading files from camera.
+657 ==> 293492 - digiKam crash on import from canon powershot a2200.
+658 ==> 328288 - Camera not supported.
+659 ==> 340944 - Build failed against libjpeg-turbo-1.3.90.
+660 ==> 310449 - No thumbnail preview.
+661 ==> 353674 - Operations requiring disk access are unreasonably slow.
+662 ==> 317180 - Import dialog: Capture feature unusable.
 663 ==> 
 664 ==> 
 665 ==> 
