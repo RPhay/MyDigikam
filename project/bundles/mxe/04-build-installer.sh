@@ -72,7 +72,7 @@ rm -f CMakeCache.txt > /dev/null
 rm -f Makefile > /dev/null
 rm -f cmake_install.cmake > /dev/null
 rm -fr CMakeFiles > /dev/null
-rm -fr icons-rcc-prefix > /dev/null
+rm -fr icon-rcc-prefix > /dev/null
 rm -f *.rcc > /dev/null
 
 cmake -DCMAKE_COLOR_MAKEFILE=ON \
