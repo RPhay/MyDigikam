@@ -33,6 +33,7 @@
 #include <QLabel>
 #include <QToolButton>
 #include <QTimeLine>
+#include <QTimer>
 #include <QPixmap>
 
 // Local includes
@@ -65,6 +66,7 @@ public:
     QLabel*                          textLabel;
     QToolButton*                     closeButton;
     QTimeLine*                       timeLine;
+    QTimer*                          timer;
     QIcon                            icon;
     QString                          text;
 

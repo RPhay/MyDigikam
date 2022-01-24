@@ -595,4 +595,38 @@ void ItemIconView::slotCopySelectionTo()
     d->utilities->copyItemsToExternalFolder(selectedInfoList(false, true));
 }
 
+void ItemIconView::slotCheckForEmptyResult()
+{
+    Album* const album = d->albumManager->currentAlbums().constFirst();
+
+    if (album && album->isRoot())
+    {
+        return;
+    }
+
+    if (!d->iconView->imageModel()->itemCount())
+    {
+        d->msgNotifyTimer->start();
+    }
+    else
+    {
+        d->msgNotifyTimer->stop();
+
+        if (d->errorWidget->isVisible())
+        {
+            d->errorWidget->animatedHide();
+        }
+    }
+}
+
+void ItemIconView::slotEmptyMessageTimer()
+{
+    QString message = i18n("The current query from the database returned no results. "
+                           "Change search settings or select an album with content.");
+
+    d->errorWidget->setMessageType(DNotificationWidget::Information);
+    d->errorWidget->setText(message);
+    d->errorWidget->animatedShowTemporized(5000);
+}
+
 } // namespace Digikam

@@ -43,6 +43,9 @@ DNotificationWidget::DNotificationWidget(QWidget* const parent)
       d     (new Private(this))
 {
     d->init();
+
+    connect(d->timer, SIGNAL(timeout()),
+            this, SLOT(slotTimerTimeout()));
 }
 
 DNotificationWidget::DNotificationWidget(const QString& text, QWidget* const parent)
@@ -52,6 +55,9 @@ DNotificationWidget::DNotificationWidget(const QString& text, QWidget* const par
     d->init();
     d->text = text;
     setText(d->text);
+
+    connect(d->timer, SIGNAL(timeout()),
+            this, SLOT(slotTimerTimeout()));
 }
 
 DNotificationWidget::~DNotificationWidget()
@@ -371,10 +377,10 @@ void DNotificationWidget::animatedShowTemporized(int delay)
     d->delay = delay;
     setText(d->text);
     animatedShow();
-    startTimer(1000);
+    d->timer->start();
 }
 
-void DNotificationWidget::timerEvent(QTimerEvent*)
+void DNotificationWidget::slotTimerTimeout()
 {
     d->delay -= 1000;
 

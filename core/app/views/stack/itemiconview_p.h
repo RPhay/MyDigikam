@@ -130,6 +130,7 @@ public:
         splitter                (nullptr),
         selectionTimer          (nullptr),
         thumbSizeTimer          (nullptr),
+        msgNotifyTimer          (nullptr),
         albumFolderSideBar      (nullptr),
         tagViewSideBar          (nullptr),
         labelsSideBar           (nullptr),
@@ -222,6 +223,7 @@ public:
 
     QTimer*                       selectionTimer;
     QTimer*                       thumbSizeTimer;
+    QTimer*                       msgNotifyTimer;
 
     // left side bar
 

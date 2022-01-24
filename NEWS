@@ -673,7 +673,7 @@ BUGFIXES:
 660 ==> 310449 - No thumbnail preview.
 661 ==> 353674 - Operations requiring disk access are unreasonably slow.
 662 ==> 317180 - Import dialog: Capture feature unusable.
-663 ==> 
+663 ==> 449078 - No feedback on search status.
 664 ==> 
 665 ==> 
 666 ==> 
