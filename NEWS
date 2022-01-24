@@ -651,9 +651,9 @@ BUGFIXES:
 638 ==> 160298 - An ability to set permanent destination directory.
 639 ==> 166060 - Wish: auto-create sub-albums by MONTH (instead of date) when downloading from camera.
 640 ==> 124414 - Display only new pictures.
-641 ==> 
-642 ==> 
-643 ==> 
+641 ==> 307452 - Corrupt preview images at 30 bit depth.
+642 ==> 177057 - Two View menus in menubar.
+643 ==> 139017 - OS X 10.4.8 digikam fails to detect libjpeg6b during compile.
 644 ==> 
 645 ==> 
 646 ==> 
