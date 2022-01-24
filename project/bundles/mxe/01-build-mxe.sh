@@ -140,8 +140,7 @@ make MXE_TARGETS=$MXE_BUILD_TARGETS \
      ffmpeg \
      openal \
      libical \
-     imagemagick \
-     python3-lxml
+     imagemagick
 
 echo -e "\n"
 
