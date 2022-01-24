@@ -69,6 +69,7 @@ urpmi --auto \
       icoutils                      `#  For MXE build.` \
       mingw32-nsis                  `#  For MXE build.` \
       python3-mako                  `#  For MXE build.` \
+      python3-lxml                  `#  For MXE build.` \
       python3-pygments              `#  For Continuous integration.` \
       python3-beautifulsoup4        `#  For Continuous integration.` \
       python3-soupsieve             `#  For Continuous integration.` \
