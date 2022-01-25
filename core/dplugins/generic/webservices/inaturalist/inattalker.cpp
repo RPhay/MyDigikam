@@ -1872,16 +1872,16 @@ void INatTalker::slotFinished(QNetworkReply* reply)
 void INatTalker::slotTimeout()
 {
     QList<QPair<QNetworkReply*, Request*> > timeoutList;
+    QHash<QNetworkReply*, Request*>::const_iterator it;
 
-    for (QHash<QNetworkReply*, Request*>::key_value_iterator it =
-             d->pendingRequests.keyValueBegin();
-         it != d->pendingRequests.keyValueEnd(); ++it)
+    for (it = d->pendingRequests.constBegin() ;
+         it != d->pendingRequests.constEnd() ; ++it)
     {
-        Request* request = (*it).second;
+        Request* request = it.value();
+
         if (request->isTimeout())
         {
-            timeoutList.append(QPair<QNetworkReply*, Request*>((*it).first,
-                                                               request));
+            timeoutList.append(qMakePair(it.key(), request));
         }
     }
 
