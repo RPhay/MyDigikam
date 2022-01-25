@@ -666,14 +666,15 @@ void INatTalker::loadUrl(const QUrl& imgUrl, int retries)
         const QByteArray& result = d->cachedLoadUrls.value(imgUrl);
         if (!result.isEmpty())
         {
-            qCDebug(DIGIKAM_WEBSERVICES_LOG) << "Url" << imgUrl <<
-                "found in cache.";
+            qCDebug(DIGIKAM_WEBSERVICES_LOG) << "Url" << imgUrl
+                                             << "found in cache.";
+
             emit signalLoadUrlSucceeded(imgUrl, result);
         }
         else
         {
-            qCDebug(DIGIKAM_WEBSERVICES_LOG) << "Url load of" << imgUrl <<
-                "already in progress; ignoring request.";
+            qCDebug(DIGIKAM_WEBSERVICES_LOG) << "Url load of" << imgUrl
+                                             << "already in progress; ignoring request.";
         }
 
         return;
@@ -705,9 +706,9 @@ public:
     void reportError(INatTalker&, QNetworkReply::NetworkError,
                      const QString& errorString) const override
     {
-        qCDebug(DIGIKAM_WEBSERVICES_LOG) << "Taxon auto-completion" <<
-            m_partialName << "error" << errorString << "after" <<
-            durationMilliSecs() << "msecs.";
+        qCDebug(DIGIKAM_WEBSERVICES_LOG) << "Taxon auto-completion" << m_partialName
+                                         << "error" << errorString
+                                         << "after" << durationMilliSecs() << "msecs.";
     }
 
     void parseResponse(INatTalker& talker,
@@ -1343,7 +1344,7 @@ public:
         {
             qCDebug(DIGIKAM_WEBSERVICES_LOG) << "Attempting to call "
                                                 "VerifyCreateObservation again, retry"
-                                            << m_retries+1 << "of" << MAX_RETRIES;
+                                             << m_retries+1 << "of" << MAX_RETRIES;
 
             talker.verifyCreateObservation(m_parameters, m_uploadRequest, 1,
                                            m_retries+1);
@@ -1624,10 +1625,10 @@ public:
                 }
             }
 
-            qCDebug(DIGIKAM_WEBSERVICES_LOG) << "VerifyUploadNextPhoto:" <<
-                noPhotos << "photos on server," << m_request.m_images.count() <<
-                "photos to upload," << m_request.m_totalImages <<
-                "total photos, checked in" << durationMilliSecs() << "msecs.";
+            qCDebug(DIGIKAM_WEBSERVICES_LOG) << "VerifyUploadNextPhoto:" << noPhotos
+                                             << "photos on server," << m_request.m_images.count()
+                                             << "photos to upload," << m_request.m_totalImages
+                                             << "total photos, checked in" << durationMilliSecs() << "msecs.";
 
             if      ((noPhotos + m_request.m_images.count()) ==
                      m_request.m_totalImages)
@@ -1646,8 +1647,8 @@ public:
         else
         {
             qCDebug(DIGIKAM_WEBSERVICES_LOG) << "VerifyPhotoUploadNextPhoto: "
-                "observation" << m_request.m_observationId << "NOT FOUND in" <<
-                durationMilliSecs() << "msecs.";
+                                                "observation" << m_request.m_observationId
+                                             << "NOT FOUND in" << durationMilliSecs() << "msecs.";
         }
     }
 
@@ -1699,8 +1700,8 @@ public:
                      const QString& errorString) const override
     {
         qCDebug(DIGIKAM_WEBSERVICES_LOG) << "Photo not uploaded due to "
-            "network error" << errorString << "after" <<
-            durationMilliSecs() << "msecs.";
+                                            "network error" << errorString
+                                         << "after" << durationMilliSecs() << "msecs.";
 
         if (networkErrorRetry(code))
         {
@@ -1717,10 +1718,10 @@ public:
     void parseResponse(INatTalker& talker,
                        const QByteArray& data) const override
     {
-        qCDebug(DIGIKAM_WEBSERVICES_LOG) << "Photo" <<
-            m_request.m_images.front().toLocalFile() << "to observation" <<
-            m_request.m_observationId << "uploaded in" << durationMilliSecs() <<
-            "msecs.";
+        qCDebug(DIGIKAM_WEBSERVICES_LOG) << "Photo" << m_request.m_images.front().toLocalFile()
+                                         << "to observation" << m_request.m_observationId
+                                         << "uploaded in" << durationMilliSecs() << "msecs.";
+
         static const QString PHOTO_ID = QLatin1String("photo_id");
         QJsonObject json              = parseJsonResponse(data);
 
@@ -1806,15 +1807,17 @@ public:
                      const QString& errorString) const override
     {
         qCDebug(DIGIKAM_WEBSERVICES_LOG) << "Delete observation failed with "
-            "error" << errorString << "after" << durationMilliSecs() <<
-            "msecs.";
+                                            "error" << errorString
+                                         << "after" << durationMilliSecs() << "msecs.";
 
         if (networkErrorRetry(code) && m_retries < MAX_RETRIES)
         {
             qCDebug(DIGIKAM_WEBSERVICES_LOG) << "Attempting to delete "
-                "observation" << m_observationId << "again, retry" <<
-                m_retries+1 << "of" << MAX_RETRIES;
-            talker.deleteObservation(m_observationId, m_apiKey, m_retries+1);
+                                                "observation" << m_observationId
+                                             << "again, retry" << m_retries + 1
+                                             << "of" << MAX_RETRIES;
+
+            talker.deleteObservation(m_observationId, m_apiKey, m_retries + 1);
         }
         else
         {
@@ -1826,8 +1829,9 @@ public:
 
     void parseResponse(INatTalker& talker, const QByteArray&) const override
     {
-        qCDebug(DIGIKAM_WEBSERVICES_LOG) << "Observation" <<
-            m_observationId << "deleted in" << durationMilliSecs() << "msecs.";
+        qCDebug(DIGIKAM_WEBSERVICES_LOG) << "Observation" << m_observationId
+                                         << "deleted in" << durationMilliSecs() << "msecs.";
+
         emit talker.signalObservationDeleted(m_observationId);
     }
 
