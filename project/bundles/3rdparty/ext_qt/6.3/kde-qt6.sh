@@ -73,7 +73,7 @@ cd $DOWNLOAD_DIR/kde-qt6
 
 rm -f $QT6_GITREV_LST
 currentDate=`date +"%Y-%m-%d"`
-echo "+Qt Snapshoot $currentDate" > $QT6_GITREV_LST
+echo "+QT Snapshot $currentDate" > $QT6_GITREV_LST
 
 for SUBDIR in $QT_SUBDIRS ; do
 
