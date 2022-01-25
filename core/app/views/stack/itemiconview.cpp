@@ -222,7 +222,7 @@ ItemIconView::ItemIconView(QWidget* const parent, DModelFactory* const modelColl
 
     d->msgNotifyTimer = new QTimer(this);
     d->msgNotifyTimer->setSingleShot(true);
-    d->msgNotifyTimer->setInterval(500);
+    d->msgNotifyTimer->setInterval(250);
 
     d->albumHistory = new AlbumHistory();
 
@@ -317,7 +317,7 @@ void ItemIconView::setupConnections()
             this, SLOT(slotImageSelected()));
 
     connect(d->iconView->imageModel(), SIGNAL(allRefreshingFinished()),
-            this, SLOT(slotCheckForEmptyResult()));
+            d->msgNotifyTimer, SLOT(start()));
 
     connect(d->iconView, SIGNAL(selectionChanged()),
             this, SLOT(slotImageSelected()));

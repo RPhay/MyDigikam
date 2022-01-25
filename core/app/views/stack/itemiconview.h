@@ -209,7 +209,6 @@ public Q_SLOTS:
     void slotCreateGroupByTimelapseFromSelection();
     void slotRemoveSelectedFromGroup();
     void slotUngroupSelected();
-    void slotCheckForEmptyResult();
 
 private Q_SLOTS:
 
