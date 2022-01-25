@@ -56,6 +56,8 @@
 #include "metaengine.h"
 #include "dngwriter.h"
 #include "exiftoolparser.h"
+#include "kmemoryinfo.h"
+#include "itempropertiestab.h"
 
 #ifdef HAVE_LENSFUN
 #   include "lensfuniface.h"
@@ -298,9 +300,26 @@ LibsInfoDlg::LibsInfoDlg(QWidget* const parent)
     new QTreeWidgetItem(m_features, QStringList() <<
                         i18ncp(CONTEXT, "CPU core", "CPU cores", nbcore) << QString::fromLatin1("%1").arg(nbcore));
 
-    // TODO: add free memory reported by kmemoryinfo at startup
+    KMemoryInfo memory = KMemoryInfo::currentInfo();
 
-    // ---
+    int res = memory.isValid();
+
+    if (res > 0)
+    {
+        qint64 available = memory.bytes(KMemoryInfo::TotalRam);
+        new QTreeWidgetItem(m_features, QStringList() <<
+                            i18nc(CONTEXT, "Memory available") << ItemPropertiesTab::humanReadableBytesCount(available));
+    }
+    else
+    {
+        new QTreeWidgetItem(m_features, QStringList() <<
+                            i18nc(CONTEXT, "Memory available") << i18nc("@item: information about memory", "Unknow"));
+    }
+
+    // NOTE: MANIFEST.txt is a text file generated with the bundles and listing all git revisions of rolling release components.
+    //       One section title start with '+'.
+    //       All component revisions are listed below line by line with the name and the revision separated by ':'.
+    //       More than one section can be listed in manifest.
 
     const QString gitRevs = QStandardPaths::locate(QStandardPaths::AppDataLocation,
                                                    QLatin1String("MANIFEST.txt"));
@@ -313,10 +332,6 @@ LibsInfoDlg::LibsInfoDlg(QWidget* const parent)
         {
             return;
         }
-
-        // NOTE: MANIFEST.txt is a text file listing all git revisions of upstream components.
-        //       On section title start with '+'.
-        //       All component revisions are listed below line by line with the name and the revision separated by ':'.
 
         qCDebug(DIGIKAM_WIDGETS_LOG) << "Git revisions manifest file found:" << gitRevs;
 
