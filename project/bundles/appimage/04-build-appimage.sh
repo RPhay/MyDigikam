@@ -210,7 +210,15 @@ cp -r /usr/share/marble/data            ./usr/bin/
 
 echo -e "---------- Copy Git Revisions Manifest\n"
 
-cp $ORIG_WD/data/qt_manifest.txt        ./usr/share/digikam/MANIFEST.txt  || true
+touch ./usr/share/digikam/MANIFEST.txt
+
+FILES=$(ls $ORIG_WD/data/*_manifest.txt)
+
+for FILE in $FILES ; do
+    echo $FILE
+    cat $FILE >> ./usr/share/digikam/MANIFEST.txt
+done
+
 ln -s ../digikam/MANIFEST.txt           ./usr/share/showfoto/MANIFEST.txt || true
 
 echo -e "---------- Copy system libraries for binary compatibility\n"

@@ -344,6 +344,20 @@ cp -a $TEMPROOT/lib/plugins $TEMPROOT/libexec/qt5/
 rm -rf $TEMPROOT/lib/plugins
 
 #################################################################################################
+# Merge Manifest files
+
+echo "---------- Copy Git Revisions Manifest\n"
+
+touch $TEMPROOT/Resources/MANIFEST.txt
+
+FILES=$(ls $ORIG_WD/data/*_manifest.txt)
+
+for FILE in $FILES ; do
+    echo $FILE
+    cat $FILE >> $TEMPROOT/Resources/MANIFEST.txt
+done
+
+#################################################################################################
 # Create package pre-install script
 
 echo "---------- Create package pre-install script"

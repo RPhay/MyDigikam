@@ -139,6 +139,17 @@ echo -e "\n---------- Xdg"
 cp -r $MXE_INSTALL_PREFIX/etc/xdg                                       $BUNDLEDIR/etc              2>/dev/null
 cp -r $MXE_INSTALL_PREFIX/bin/data/xdg                                  $BUNDLEDIR/share            2>/dev/null
 
+echo -e "\n---------- Copy Git Revisions Manifest"
+
+touch $BUNDLEDIR/MANIFEST.txt
+
+FILES=$(ls $ORIG_WD/data/*_manifest.txt)
+
+for FILE in $FILES ; do
+    echo $FILE
+    cat $FILE >> $BUNDLEDIR/MANIFEST.txt
+done
+
 # Plugins Shared libraries -------------------------------------------------------------------
 
 echo -e "\n---------- Qt5 plugins"

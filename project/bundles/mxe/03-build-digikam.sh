@@ -163,6 +163,7 @@ fi
 
 cat $DK_BUILDTEMP/digikam-$DK_VERSION/build.mxe/core/app/utils/digikam_version.h   | grep "digikam_version\[\]" | awk '{print $6}' | tr -d '";'  > $ORIG_WD/data/RELEASEID.txt
 cat $DK_BUILDTEMP/digikam-$DK_VERSION/build.mxe/core/app/utils/digikam_builddate.h | grep "define BUILD_DATE"   | awk '{print $3}' | tr -d '"\n' > $ORIG_WD/data/BUILDDATE.txt
+cp  $DK_BUILDTEMP/digikam-$DK_VERSION/core/libs/rawengine/libraw/libraw_manifest.txt $ORIG_WD/data
 
 echo -e "\n\n"
 echo "---------- Installing digiKam $DK_VERSION"
