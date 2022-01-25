@@ -83,7 +83,7 @@ const QString DarkTableRawImportPlugin::Private::luaScriptData = QLatin1String(
     "\n"                                                                                                    \
     "local export_filename = dt.preferences.read(\"export_on_exit\", \"export_filename\", \"string\")\n"    \
     "\n"                                                                                                    \
-    "dt.register_event(\"exit\", function()\n"                                                              \
+    "function exit_function()\n"                                                                            \
     "  -- safegurad against someone using this with their library containing 50k images\n"                  \
     "  if #dt.database > 1 then\n"                                                                          \
     "    dt.print_error(\"too many images, only exporting the first\")\n"                                   \
@@ -102,7 +102,13 @@ const QString DarkTableRawImportPlugin::Private::luaScriptData = QLatin1String(
     "    format:write_image(image, export_filename)\n"                                                      \
     "    break -- only export one image. see above for the reason\n"                                        \
     "  end\n"                                                                                               \
-    "end)\n"                                                                                                \
+    "end\n"                                                                                                 \
+    "\n"                                                                                                    \
+    "if dt.configuration.api_version_string >= \"6.2.1\" then\n"                                            \
+    "dt.register_event(\"fileraw\", \"exit\", exit_function)\n"                                             \
+    "else\n"                                                                                                \
+    "dt.register_event(\"exit\", exit_function)\n"                                                          \
+    "end\n"                                                                                                 \
 );
 
 DarkTableRawImportPlugin::DarkTableRawImportPlugin(QObject* const parent)
