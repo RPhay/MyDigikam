@@ -247,12 +247,14 @@ public:
                                const QByteArray& data) const = 0;
 
     // Has operation timed out?
+
     bool isTimeout() const
     {
         return durationMilliSecs() > 1000 * RESPONSE_TIMEOUT_SECS;
     }
 
     // How long did it take?
+
     qint64 durationMilliSecs() const
     {
         return QDateTime::currentMSecsSinceEpoch() - m_startTime;
@@ -346,7 +348,9 @@ INatTalker::INatTalker(QWidget* const parent, const QString& serviceName,
 
     connect(d->netMngr, SIGNAL(finished(QNetworkReply*)),
             this, SLOT(slotFinished(QNetworkReply*)));
-    connect(d->timer, SIGNAL(timeout()), this, SLOT(slotTimeout()));
+
+    connect(d->timer, SIGNAL(timeout()),
+            this, SLOT(slotTimeout()));
 
     d->settings = WSToolUtils::getOauthSettings(this);
     d->store    = new O0SettingsStore(d->settings,
@@ -466,6 +470,7 @@ void INatTalker::slotApiToken(const QString& apiToken,
     {
         qCDebug(DIGIKAM_WEBSERVICES_LOG) << "API token received; "
                                             "querying user info.";
+
         d->apiTokenExpires = (uint)(QDateTime::currentMSecsSinceEpoch() / 1000 +
                                     INAT_API_TOKEN_EXPIRATION);
         userInfo(cookies);
@@ -489,8 +494,8 @@ public:
     void reportError(INatTalker& talker, QNetworkReply::NetworkError,
                      const QString& errorString) const override
     {
-        qCDebug(DIGIKAM_WEBSERVICES_LOG) << "users/me error" <<
-            errorString << "after" << durationMilliSecs() << "msecs.";
+        qCDebug(DIGIKAM_WEBSERVICES_LOG) << "users/me error" << errorString
+                                         << "after" << durationMilliSecs() << "msecs.";
 
         emit talker.signalLinkingFailed(QLatin1String("user-info request "
                                                       "failed"));
@@ -608,13 +613,15 @@ public:
     void reportError(INatTalker& talker, QNetworkReply::NetworkError code,
                      const QString& errorString) const override
     {
-        qCDebug(DIGIKAM_WEBSERVICES_LOG) << "Url" << m_url << "error" <<
-            errorString << "after" << durationMilliSecs() << "msecs.";
-        if (networkErrorRetry(code) && m_retries < MAX_RETRIES)
+        qCDebug(DIGIKAM_WEBSERVICES_LOG) << "Url" << m_url << "error" << errorString
+                                         << "after" << durationMilliSecs() << "msecs.";
+
+        if      (networkErrorRetry(code) && (m_retries < MAX_RETRIES))
         {
-            qCDebug(DIGIKAM_WEBSERVICES_LOG) << "Attempting to load" << m_url <<
-                "again, retry" << m_retries+1 << "of" << MAX_RETRIES;
-            talker.loadUrl(m_url, m_retries+1);
+            qCDebug(DIGIKAM_WEBSERVICES_LOG) << "Attempting to load" << m_url << "again, retry"
+                                             << m_retries + 1 << "of" << MAX_RETRIES;
+
+            talker.loadUrl(m_url, m_retries + 1);
         }
         else if (talker.d->cachedLoadUrls.contains(m_url))
         {
@@ -625,8 +632,9 @@ public:
     void parseResponse(INatTalker& talker,
                        const QByteArray& data) const override
     {
-        qCDebug(DIGIKAM_WEBSERVICES_LOG) << "Url" << m_url <<
-            "loaded in" << durationMilliSecs() << "msecs.";
+        qCDebug(DIGIKAM_WEBSERVICES_LOG) << "Url" << m_url << "loaded in"
+                                         << durationMilliSecs() << "msecs.";
+
         talker.d->cachedLoadUrls.insert(m_url, data);
 
         emit talker.signalLoadUrlSucceeded(m_url, data);
@@ -672,6 +680,7 @@ void INatTalker::loadUrl(const QUrl& imgUrl, int retries)
     }
 
     // empty cache entry means load in progress
+
     d->cachedLoadUrls.insert(imgUrl, QByteArray());
 
     QNetworkRequest netRequest(imgUrl);
@@ -818,8 +827,8 @@ public:
     void reportError(INatTalker&, QNetworkReply::NetworkError,
                      const QString& errorString) const override
     {
-        qCDebug(DIGIKAM_WEBSERVICES_LOG) << "Nearby places error" <<
-            errorString << "after" << durationMilliSecs() << "msecs.";
+        qCDebug(DIGIKAM_WEBSERVICES_LOG) << "Nearby places error" << errorString
+                                         << "after" << durationMilliSecs() << "msecs.";
     }
 
 private:
@@ -863,6 +872,7 @@ void INatTalker::nearbyPlaces(double latitude, double longitude)
 
     QString lat = QString::number(latitude,  'f', GEOLOCATION_PRECISION);
     QString lng = QString::number(longitude, 'f', GEOLOCATION_PRECISION);
+
     qCDebug(DIGIKAM_WEBSERVICES_LOG) << "Requesting nearby places for lat"
                                      << lat << "lon" << lng;
     QUrlQuery query;
@@ -1039,8 +1049,8 @@ public:
     void reportError(INatTalker&, QNetworkReply::NetworkError,
                      const QString& errorString) const override
     {
-        qCDebug(DIGIKAM_WEBSERVICES_LOG) << "Closest observation error" <<
-            errorString << "after" << durationMilliSecs() << "msecs.";
+        qCDebug(DIGIKAM_WEBSERVICES_LOG) << "Closest observation error" << errorString
+                                         << "after" << durationMilliSecs() << "msecs.";
     }
 
 private:
@@ -1167,8 +1177,8 @@ public:
     {
         static const QString COMMON_ANCESTOR = QLatin1String("common_ancestor");
 
-        qCDebug(DIGIKAM_WEBSERVICES_LOG) << "Computer vision for" <<
-            m_imagePath << "took" << durationMilliSecs() << "msecs.";
+        qCDebug(DIGIKAM_WEBSERVICES_LOG) << "Computer vision for" << m_imagePath
+                                         << "took" << durationMilliSecs() << "msecs.";
 
         QJsonObject json = parseJsonResponse(data);
         QList<ComputerVisionScore> scores;
@@ -1194,8 +1204,8 @@ public:
     void reportError(INatTalker&, QNetworkReply::NetworkError,
                      const QString& errorString) const override
     {
-        qCDebug(DIGIKAM_WEBSERVICES_LOG) << "Computer vision error" <<
-            errorString << "after" << durationMilliSecs() << "msecs.";
+        qCDebug(DIGIKAM_WEBSERVICES_LOG) << "Computer vision error" << errorString
+                                         << "after" << durationMilliSecs() << "msecs.";
     }
 
 private:
@@ -1231,6 +1241,7 @@ void INatTalker::computerVision(const QUrl& localImage)
         qCDebug(DIGIKAM_WEBSERVICES_LOG) << "Vision identification for"
                                          << localImage.toLocalFile()
                                          << "found in cache.";
+
         emit signalComputerVisionResults(d->cachedImageScores.value(path));
 
         return;
@@ -1325,13 +1336,15 @@ public:
     void reportError(INatTalker& talker, QNetworkReply::NetworkError code,
                      const QString& errorString) const override
     {
-        qCDebug(DIGIKAM_WEBSERVICES_LOG) << "VerifyCreateObservation: " <<
-            errorString << "after" << durationMilliSecs() << "msecs.";
-        if (networkErrorRetry(code) && m_retries < MAX_RETRIES)
+        qCDebug(DIGIKAM_WEBSERVICES_LOG) << "VerifyCreateObservation: " << errorString
+                                         << "after" << durationMilliSecs() << "msecs.";
+
+        if (networkErrorRetry(code) && (m_retries < MAX_RETRIES))
         {
             qCDebug(DIGIKAM_WEBSERVICES_LOG) << "Attempting to call "
-                "VerifyCreateObservation again, retry" << m_retries+1 <<
-                "of" << MAX_RETRIES;
+                                                "VerifyCreateObservation again, retry"
+                                            << m_retries+1 << "of" << MAX_RETRIES;
+
             talker.verifyCreateObservation(m_parameters, m_uploadRequest, 1,
                                            m_retries+1);
         }
@@ -1349,23 +1362,25 @@ public:
         QJsonObject json          = parseJsonResponse(data);
         int         observationId = -1;
 
-        if (json.contains(TOTAL_RESULTS) && json.contains(PER_PAGE) &&
-            json.contains(RESULTS) && json.contains(PAGE))
+        if (json.contains(TOTAL_RESULTS) &&
+            json.contains(PER_PAGE)      &&
+            json.contains(RESULTS)       &&
+            json.contains(PAGE))
         {
             int        totalResults = json[TOTAL_RESULTS].toInt();
             int        perPage      = json[PER_PAGE].toInt();
             QJsonArray results      = json[RESULTS].toArray();
 
-            qCDebug(DIGIKAM_WEBSERVICES_LOG) << "Observation check:" <<
-                results.count() << "results of" << totalResults <<
-                "received in" << durationMilliSecs() << "msecs.";
+            qCDebug(DIGIKAM_WEBSERVICES_LOG) << "Observation check:" << results.count()
+                                             << "results of" << totalResults
+                                             << "received in" << durationMilliSecs() << "msecs.";
 
-            for (int i = 0; i < results.count(); ++i)
+            for (int i = 0 ; i < results.count() ; ++i)
             {
                 QJsonObject result = results[i].toObject();
 
-                if (result.contains(OBSERVED_ON_STRING) &&
-                    result.contains(TAXON) &&
+                if (result.contains(OBSERVED_ON_STRING)                    &&
+                    result.contains(TAXON)                                 &&
                     result[OBSERVED_ON_STRING].toString() == m_observed_on &&
                     result[TAXON].toObject()[ID].toInt() == m_taxon_id)
                 {
@@ -1375,7 +1390,8 @@ public:
             }
 
             // Not found. If the server has more results request them.
-            if (observationId < 0 && results.count() >= perPage)
+
+            if ((observationId < 0) && (results.count() >= perPage))
             {
                 talker.verifyCreateObservation(m_parameters, m_uploadRequest,
                                                json[PAGE].toInt()+1, m_retries);
@@ -1386,9 +1402,10 @@ public:
         if (observationId > 0)
         {
             qCDebug(DIGIKAM_WEBSERVICES_LOG) << "VerifyCreateObservation: "
-                "observation" << observationId << "of taxon_id" <<
-                m_taxon_id << "of" << m_observed_on <<
-                "found; uploading photos.";
+                                                "observation" << observationId
+                                             << "of taxon_id" << m_taxon_id
+                                             << "of" << m_observed_on
+                                             << "found; uploading photos.";
 
             INatTalker::PhotoUploadRequest request(m_uploadRequest);
             request.m_observationId = observationId;
@@ -1398,8 +1415,10 @@ public:
         else
         {
             qCDebug(DIGIKAM_WEBSERVICES_LOG) << "VerifyCreateObservation: "
-                "observation of taxon_id" << m_taxon_id << "at" <<
-                m_observed_on << "not found on server; uploading again.";
+                                                "observation of taxon_id"
+                                             << m_taxon_id << "at" << m_observed_on
+                                             << "not found on server; uploading again.";
+
             talker.createObservation(m_parameters, m_uploadRequest);
         }
     }
@@ -1432,20 +1451,24 @@ void INatTalker::verifyCreateObservation(const QByteArray& parameters,
 
     int     taxon_id = 0;
     QString observed_on;
+
     if (json.contains(OBSERVATION))
     {
         QJsonObject parms = json[OBSERVATION].toObject();
+
         if (parms.contains(OBSERVED_ON_STRING))
         {
             observed_on = parms[OBSERVED_ON_STRING].toString();
             query.addQueryItem(OBSERVED_ON, observed_on.left(10));
         }
+
         if (parms.contains(TAXON_ID))
         {
             taxon_id = parms[TAXON_ID].toInt();
             query.addQueryItem(TAXON_ID, QString::number(taxon_id));
         }
     }
+
     url.setQuery(query.query());
 
     QNetworkRequest netRequest(url);
@@ -1480,8 +1503,8 @@ public:
                      const QString& errorString) const override
     {
         qCDebug(DIGIKAM_WEBSERVICES_LOG) << "Observation not created due to "
-            "network error" << errorString << "after" <<
-            durationMilliSecs() << "msecs.";
+                                            "network error" << errorString
+                                         << "after" << durationMilliSecs() << "msecs.";
 
         if (networkErrorRetry(code))
         {
@@ -1498,8 +1521,8 @@ public:
     void parseResponse(INatTalker& talker,
                        const QByteArray& data) const override
     {
-        qCDebug(DIGIKAM_WEBSERVICES_LOG) << "Observation created in" <<
-            durationMilliSecs() << "msecs.";
+        qCDebug(DIGIKAM_WEBSERVICES_LOG) << "Observation created in"
+                                         << durationMilliSecs() << "msecs.";
 
         QJsonObject json = parseJsonResponse(data);
 
@@ -1554,14 +1577,15 @@ public:
     void reportError(INatTalker& talker, QNetworkReply::NetworkError code,
                      const QString& errorString) const override
     {
-        qCDebug(DIGIKAM_WEBSERVICES_LOG) << "VerifyPhotoUploadNextPhoto: " <<
-            errorString << "after" << durationMilliSecs() << "msecs.";
+        qCDebug(DIGIKAM_WEBSERVICES_LOG) << "VerifyPhotoUploadNextPhoto: " << errorString
+                                         << "after" << durationMilliSecs() << "msecs.";
 
         if (networkErrorRetry(code) && m_retries < MAX_RETRIES)
         {
             qCDebug(DIGIKAM_WEBSERVICES_LOG) << "Attempting to call "
-                "VerifyPhotoUploadNextPhoto again, retry" << m_retries+1 <<
-                "of" << MAX_RETRIES;
+                                                "VerifyPhotoUploadNextPhoto again, retry"
+                                             << m_retries + 1 << "of" << MAX_RETRIES;
+
             talker.verifyUploadNextPhoto(m_request, m_retries+1);
         }
         else
@@ -1581,8 +1605,9 @@ public:
         int lastObservationPhotoId = -1;
         int lastPhotoId            = -1;
 
-        if (json.contains(TOTAL_RESULTS) && json.contains(RESULTS) &&
-            json[TOTAL_RESULTS].toInt() == 1)
+        if (json.contains(TOTAL_RESULTS)     &&
+            json.contains(RESULTS)           &&
+            (json[TOTAL_RESULTS].toInt() == 1))
         {
             QJsonObject result = json[RESULTS].toArray()[0].toObject();
 
@@ -1604,17 +1629,17 @@ public:
                 "photos to upload," << m_request.m_totalImages <<
                 "total photos, checked in" << durationMilliSecs() << "msecs.";
 
-            if (noPhotos + m_request.m_images.count() ==
-                m_request.m_totalImages)
+            if      ((noPhotos + m_request.m_images.count()) ==
+                     m_request.m_totalImages)
             {
                 talker.uploadNextPhoto(m_request);
             }
-            else if (noPhotos + m_request.m_images.count() ==
-                     m_request.m_totalImages + 1)
+            else if ((noPhotos + m_request.m_images.count()) ==
+                     (m_request.m_totalImages + 1))
             {
                 INatTalker::PhotoUploadResult uploadResult(m_request,
-                                                       lastObservationPhotoId,
-                                                       lastPhotoId);
+                                                           lastObservationPhotoId,
+                                                           lastPhotoId);
                 emit talker.signalPhotoUploaded(uploadResult);
             }
         }
@@ -1872,22 +1897,22 @@ void INatTalker::slotFinished(QNetworkReply* reply)
 void INatTalker::slotTimeout()
 {
     QList<QPair<QNetworkReply*, Request*> > timeoutList;
+    QHash<QNetworkReply*, Request*>::const_iterator it;
 
-    for (QHash<QNetworkReply*, Request*>::key_value_iterator it =
-             d->pendingRequests.keyValueBegin();
-         it != d->pendingRequests.keyValueEnd(); ++it)
+    for (it = d->pendingRequests.constBegin() ;
+         it != d->pendingRequests.constEnd() ; ++it)
     {
-        Request* request = (*it).second;
+        Request* const request = it.value();
+
         if (request->isTimeout())
         {
-            timeoutList.append(QPair<QNetworkReply*, Request*>((*it).first,
-                                                               request));
+            timeoutList.append(qMakePair(it.key(), request));
         }
     }
 
     for (auto pair : timeoutList)
     {
-        QNetworkReply* reply = pair.first;
+        QNetworkReply* const reply = pair.first;
         d->pendingRequests.remove(reply);
 
         QNetworkReply::NetworkError errorCode = reply->error();
@@ -1903,7 +1928,7 @@ void INatTalker::slotTimeout()
                                RESPONSE_TIMEOUT_SECS);
         }
 
-        Request* request = pair.second;
+        Request* const request = pair.second;
         request->reportError(*this, errorCode, errorString);
         delete request;
     }

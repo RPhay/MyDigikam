@@ -65,7 +65,7 @@ AbstractMarkerTiler::Tile* AbstractMarkerTiler::rootTile()
         regenerateTiles();
     }
 
-    return d->rootTile.get();
+    return d->rootTile.data();
 }
 
 bool AbstractMarkerTiler::isDirty() const
