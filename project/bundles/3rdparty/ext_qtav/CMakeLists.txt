@@ -26,6 +26,9 @@ if(MINGW)
         GIT_REPOSITORY https://github.com/wang-bin/QtAV.git
 
         CONFIGURE_COMMAND git submodule update --init &&
+                          cp -f ${CMAKE_CURRENT_SOURCE_DIR}/../../../scripts/create_manifest.sh <SOURCE_DIR>/. &&
+                          cd <SOURCE_DIR> &&
+                          <SOURCE_DIR>/create_manifest.sh ${EXTERNALS_DOWNLOAD_DIR} qtav &&
                           rm -rfv ${MXE_INSTALL_PREFIX}/qt5/include/QtAV &&
                           rm -rfv ${MXE_INSTALL_PREFIX}/qt5/include/QtAVWidgets &&
                           rm -fv  ${MXE_INSTALL_PREFIX}/qt5/lib/libQtAV1.a &&
@@ -72,11 +75,14 @@ elseif(APPLE)
                       rm -fv <SOURCE_DIR>/qml/libQmlAV.pro
 
         CONFIGURE_COMMAND git submodule update --init &&
+                          cp -f ${CMAKE_CURRENT_SOURCE_DIR}/../../../scripts/create_manifest.sh <SOURCE_DIR>/. &&
+                          cd <SOURCE_DIR> &&
+                          <SOURCE_DIR>/create_manifest.sh ${EXTERNALS_DOWNLOAD_DIR} qtav &&
                           rm -rfv ${INSTALL_ROOT}/libexec/qt5/lib/QtAV.framework &&
                           rm -rfv ${INSTALL_ROOT}/libexec/qt5/lib/QtAVWidgets.framework &&
                           rm -rfv ${INSTALL_ROOT}/libexec/qt5/include/QtAV &&
                           rm -rfv ${INSTALL_ROOT}/libexec/qt5/include/QtAVWidgets &&
-                          mkdir build && cd build && qmake ..
+                          mkdir -p build && cd build && qmake ..
 
         BUILD_COMMAND cd build && $(MAKE)
 
@@ -103,6 +109,9 @@ else() #Linux
         GIT_REPOSITORY https://github.com/wang-bin/QtAV.git
 
         CONFIGURE_COMMAND cd <SOURCE_DIR> && git submodule update --init &&
+                          cp -f ${CMAKE_CURRENT_SOURCE_DIR}/../../../scripts/create_manifest.sh <SOURCE_DIR>/. &&
+                          cd <SOURCE_DIR> &&
+                          <SOURCE_DIR>/create_manifest.sh ${EXTERNALS_DOWNLOAD_DIR} qtav &&
                           rm -rfv ${INSTALL_ROOT}/include/QtAV &&
                           rm -rfv ${INSTALL_ROOT}/include/QtAVWidgets &&
                           rm -fv  ${INSTALL_ROOT}/lib/libQtAV.so &&
@@ -113,7 +122,7 @@ else() #Linux
                           rm -fv  ${INSTALL_ROOT}/lib/libQtAVWidgets.so.1 &&
                           rm -fv  ${INSTALL_ROOT}/lib/libQtAVWidgets.so.1.13 &&
                           rm -fv  ${INSTALL_ROOT}/lib/libQtAVWidgets.so.1.13.0 &&
-                          cd <SOURCE_DIR> && mkdir build && cd build &&
+                          cd <SOURCE_DIR> && mkdir -p build && cd build &&
                           $(CMAKE_COMMAND) .. -DCMAKE_INSTALL_PREFIX=${PREFIX_ext_qtav}
                                               -DCMAKE_BUILD_TYPE=${GLOBAL_BUILD_TYPE}
                                               ${GLOBAL_PROFILE}

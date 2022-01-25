@@ -28,7 +28,10 @@ if (MINGW)
         GIT_REPOSITORY https://github.com/lensfun/lensfun.git
         PATCH_COMMAND ${PATCH_COMMAND} -p1 -i ${CMAKE_CURRENT_SOURCE_DIR}/lensfun0.3.95-installdb-mxe.patch
 
-        CONFIGURE_COMMAND cp ${CMAKE_CURRENT_SOURCE_DIR}/../../../../bootstrap.mxe <SOURCE_DIR>/. &&
+        CONFIGURE_COMMAND cp -f ${CMAKE_CURRENT_SOURCE_DIR}/../../../scripts/create_manifest.sh <SOURCE_DIR>/. &&
+                          cd <SOURCE_DIR> &&
+                          <SOURCE_DIR>/create_manifest.sh ${EXTERNALS_DOWNLOAD_DIR} lensfun &&
+                          cp ${CMAKE_CURRENT_SOURCE_DIR}/../../../../bootstrap.mxe <SOURCE_DIR>/. &&
                           <SOURCE_DIR>/bootstrap.mxe ${MXE_BUILDROOT} RelWithDebInfo ${BASH_OPTIONS}
 
         BUILD_COMMAND cd <SOURCE_DIR>/build.mxe && $(MAKE)
@@ -51,7 +54,10 @@ elseif (APPLE)
 
         INSTALL_DIR ${EXTPREFIX_lensfun}
 
-        CONFIGURE_COMMAND cp -f ${CMAKE_CURRENT_SOURCE_DIR}/../../../../bootstrap.macports <SOURCE_DIR>/. &&
+        CONFIGURE_COMMAND cp -f ${CMAKE_CURRENT_SOURCE_DIR}/../../../scripts/create_manifest.sh <SOURCE_DIR>/. &&
+                          cd <SOURCE_DIR> &&
+                          <SOURCE_DIR>/create_manifest.sh ${EXTERNALS_DOWNLOAD_DIR} lensfun &&
+                          cp -f ${CMAKE_CURRENT_SOURCE_DIR}/../../../../bootstrap.macports <SOURCE_DIR>/. &&
                           <SOURCE_DIR>/bootstrap.macports ${EXTPREFIX_lensfun} RelWithDebInfo x86_64 ${BASH_OPTIONS}
 
         BUILD_COMMAND cd <SOURCE_DIR>/build && $(MAKE)
@@ -73,6 +79,10 @@ else() # Linux
         GIT_REPOSITORY https://github.com/lensfun/lensfun.git
 
         INSTALL_DIR ${EXTPREFIX_lensfun}
+
+        PATCH_COMMAND cp -f ${CMAKE_CURRENT_SOURCE_DIR}/../../../scripts/create_manifest.sh <SOURCE_DIR>/. &&
+                      cd <SOURCE_DIR> &&
+                      <SOURCE_DIR>/create_manifest.sh ${EXTERNALS_DOWNLOAD_DIR} lensfun
 
         CMAKE_ARGS -DCMAKE_INSTALL_PREFIX=${EXTPREFIX_lensfun}
                    -DCMAKE_BUILD_TYPE=${GLOBAL_BUILD_TYPE}

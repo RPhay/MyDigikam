@@ -26,12 +26,12 @@ echo "Download directory: $DOWNLOAD_DIR"
 
 GITREV_LST=$DOWNLOAD_DIR/$2_manifest.txt
 
-rm -f GITREV_LST
+rm -f $GITREV_LST
 currentDate=`date +"%Y-%m-%d"`
 upperName=`echo $2 | awk '{print toupper($0)}'`
 
 echo "+$upperName Snapshoot $currentDate" > $GITREV_LST
 
-echo "$2:$(git rev-parse HEAD)" >> $GITREV_LST
+echo "$2:$(cd $PWD && git rev-parse HEAD)" >> $GITREV_LST
 
 cat $GITREV_LST
