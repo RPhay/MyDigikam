@@ -1663,6 +1663,7 @@ void GPCamera::printGphotoErrorDescription(int errorCode)
 
 void GPCamera::getSupportedCameras(int& count, QStringList& clist)
 {
+
 #ifdef HAVE_GPHOTO2
 
     clist.clear();
@@ -1687,6 +1688,8 @@ void GPCamera::getSupportedCameras(int& count, QStringList& clist)
     }
     else
     {
+        qCDebug(DIGIKAM_IMPORTUI_LOG) << "Number of cameras supported:" << count;
+
         for (int i = 0 ; i < count ; ++i)
         {
             gp_abilities_list_get_abilities(abilList, i, &abil);
@@ -1702,6 +1705,7 @@ void GPCamera::getSupportedCameras(int& count, QStringList& clist)
 
     Q_UNUSED(count);
     Q_UNUSED(clist);
+    qCDebug(DIGIKAM_IMPORTUI_LOG) << "GPCamera::getSupportedCamerasNumber(): function not available!";
 
 #endif // HAVE_GPHOTO2
 
@@ -1709,6 +1713,7 @@ void GPCamera::getSupportedCameras(int& count, QStringList& clist)
 
 void GPCamera::getSupportedPorts(QStringList& plist)
 {
+
 #ifdef HAVE_GPHOTO2
 
     GPPortInfoList* list = nullptr;
@@ -1723,13 +1728,15 @@ void GPCamera::getSupportedPorts(QStringList& plist)
 
     if (numPorts < 0)
     {
-        qCDebug(DIGIKAM_IMPORTUI_LOG) << "Failed to get list of port!";
+        qCDebug(DIGIKAM_IMPORTUI_LOG) << "Failed to get list of ports!";
         printGphotoErrorDescription(numPorts);
         gp_port_info_list_free(list);
         return;
     }
     else
     {
+        qCDebug(DIGIKAM_IMPORTUI_LOG) << "Number of ports supported:" << numPorts;
+
         for (int i = 0 ; i < numPorts ; ++i)
         {
             gp_port_info_list_get_info(list, i, &info);
@@ -1754,6 +1761,7 @@ void GPCamera::getSupportedPorts(QStringList& plist)
 #else
 
     Q_UNUSED(plist);
+    qCDebug(DIGIKAM_IMPORTUI_LOG) << "GPCamera::getSupportedPorts(): function not available!";
 
 #endif // HAVE_GPHOTO2
 
@@ -1761,6 +1769,7 @@ void GPCamera::getSupportedPorts(QStringList& plist)
 
 void GPCamera::getCameraSupportedPorts(const QString& model, QStringList& plist)
 {
+
 #ifdef HAVE_GPHOTO2
 
     int i                         = 0;
@@ -1798,6 +1807,7 @@ void GPCamera::getCameraSupportedPorts(const QString& model, QStringList& plist)
 
     Q_UNUSED(model);
     Q_UNUSED(plist);
+    qCDebug(DIGIKAM_IMPORTUI_LOG) << "GPCamera::getCameraSupportedPorts(): function not available!";
 
 #endif // HAVE_GPHOTO2
 
@@ -1805,6 +1815,7 @@ void GPCamera::getCameraSupportedPorts(const QString& model, QStringList& plist)
 
 int GPCamera::autoDetect(QString& model, QString& port)
 {
+
 #ifdef HAVE_GPHOTO2
 
     CameraList*          camList   = nullptr;
@@ -1871,6 +1882,7 @@ int GPCamera::autoDetect(QString& model, QString& port)
 
     Q_UNUSED(model);
     Q_UNUSED(port);
+    qCDebug(DIGIKAM_IMPORTUI_LOG) << "GPCamera::autoDetect(): function not available!";
 
 #endif // HAVE_GPHOTO2
 
@@ -1879,6 +1891,7 @@ int GPCamera::autoDetect(QString& model, QString& port)
 
 bool GPCamera::findConnectedUsbCamera(int vendorId, int productId, QString& model, QString& port)
 {
+
 #ifdef HAVE_GPHOTO2
 
     CameraAbilitiesList* abilList = nullptr;
@@ -1978,8 +1991,8 @@ bool GPCamera::findConnectedUsbCamera(int vendorId, int productId, QString& mode
        if (cnt > 1)
        {
           qCWarning(DIGIKAM_IMPORTUI_LOG) << "More than one camera detected on port " << port
-                                  << ". Due to restrictions in the GPhoto2 API, "
-                                  << "only the first camera is used.";
+                                          << ". Due to restrictions in the GPhoto2 API, "
+                                          << "only the first camera is used.";
        }
 
        model   = QLatin1String(model_str);
@@ -2000,6 +2013,7 @@ bool GPCamera::findConnectedUsbCamera(int vendorId, int productId, QString& mode
     Q_UNUSED(productId);
     Q_UNUSED(model);
     Q_UNUSED(port);
+    qCDebug(DIGIKAM_IMPORTUI_LOG) << "GPCamera::findConnectedUsbCamera(): function not available!";
 
     return false;
 
