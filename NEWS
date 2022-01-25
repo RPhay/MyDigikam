@@ -675,7 +675,7 @@ BUGFIXES:
 661 ==> 353674 - Operations requiring disk access are unreasonably slow.
 662 ==> 317180 - Import dialog: Capture feature unusable.
 663 ==> 449078 - No feedback on search status.
-664 ==> 
+664 ==> 449137 - Image editor "Save changes" is malfunctioning.
 665 ==> 
 666 ==> 
 667 ==> 
