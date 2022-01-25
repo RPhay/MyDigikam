@@ -521,7 +521,7 @@ FaceTagsIface FaceTagsEditor::changeTag(const FaceTagsIface& face, int newTagId,
      * it's important to remove the association between
      * the face and the old tagId.
      *
-     * If the person is being ignored and it was an unconfirmed face,
+     * If the face is being ignored and it was an unconfirmed face,
      * don't remove a possible tag. See bug 449142
      */
 
