@@ -701,7 +701,7 @@ BUGFIXES:
 687 ==> 322656 - When opening a pic, dark areas show artefacts.
 688 ==> 143162 - Circular and elleptical selections.
 689 ==> 285157 - Exif lost and versioning disabled when editing an image developed from darktable.
-690 ==> 
+690 ==> 449107 - digiKam 7.5.0 FTBFS with Qt 5.9.5 (as found in Ubuntu Bionic 18.04).
 691 ==> 
 692 ==> 
 693 ==> 
