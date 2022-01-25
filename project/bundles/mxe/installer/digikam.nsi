@@ -238,6 +238,7 @@
         File "${BUNDLEPATH}\*.rcc"
         File "${BUNDLEPATH}\*.dll"
         File "${BUNDLEPATH}\*.yes"
+        File "${BUNDLEPATH}\*.txt"
 
         SetOutPath "$INSTDIR\etc"
         File /r "${BUNDLEPATH}\etc\*.*"
@@ -327,6 +328,7 @@
         Delete "$INSTDIR\*.rcc"
         Delete "$INSTDIR\*.dll"
         Delete "$INSTDIR\*.yes"
+        Delete "$INSTDIR\*.txt"
 
         Delete "$INSTDIR\Uninstall.exe"
         Delete "$INSTDIR\releasenotes.html"
