@@ -145,15 +145,15 @@ MapWidgetView::MapWidgetView(QItemSelectionModel* const selectionModel,
         }
     }
 
-    QVBoxLayout* const vBoxLayout = new QVBoxLayout(this);
-    d->mapWidget                  = new MapWidget(this);
+    QVBoxLayout* const vBoxLayout              = new QVBoxLayout(this);
+    d->mapWidget                               = new MapWidget(this);
     d->mapWidget->setAvailableMouseModes(MouseModePan|MouseModeZoomIntoGroup|MouseModeSelectThumbnail);
     d->mapWidget->setVisibleMouseModes(MouseModePan|MouseModeZoomIntoGroup|MouseModeSelectThumbnail);
     ItemMarkerTiler* const geoifaceMarkerModel = new ItemMarkerTiler(d->mapViewModelHelper, this);
     d->mapWidget->setGroupedModel(geoifaceMarkerModel);
     d->mapWidget->setBackend(QLatin1String("marble"));
 
-    d->gpsItemInfoSorter         = new GPSItemInfoSorter(this);
+    d->gpsItemInfoSorter                       = new GPSItemInfoSorter(this);
     d->gpsItemInfoSorter->addToMapWidget(d->mapWidget);
     vBoxLayout->addWidget(d->mapWidget);
     vBoxLayout->addWidget(d->mapWidget->getControlWidget());
@@ -407,8 +407,8 @@ bool MapViewModelHelper::itemCoordinates(const QModelIndex& index, GeoCoordinate
             }
 
             QScopedPointer<DMetadata> meta(new DMetadata(info.url().toLocalFile()));
-            double          lat, lng;
-            const bool      haveCoordinates = meta->getGPSLatitudeNumber(&lat) && meta->getGPSLongitudeNumber(&lng);
+            double     lat, lng;
+            const bool haveCoordinates = meta->getGPSLatitudeNumber(&lat) && meta->getGPSLongitudeNumber(&lng);
 
             if (!haveCoordinates)
             {
@@ -473,6 +473,7 @@ QPixmap MapViewModelHelper::pixmapFromRepresentativeIndex(const QPersistentModel
         case MapWidgetView::ApplicationImportUI:
         {
             QPixmap thumbnail = index.data(ImportItemModel::ThumbnailRole).value<QPixmap>();
+
             return thumbnail.scaled(size, Qt::KeepAspectRatio, Qt::SmoothTransformation);
         }
     }
@@ -511,7 +512,7 @@ QPersistentModelIndex MapViewModelHelper::bestRepresentativeIndexFromList(const 
         {
             // now get the ItemInfos and convert them to GPSItemInfos
 
-            const QList<ItemInfo> imageInfoList =  d->model->imageInfos(indexList);
+            const QList<ItemInfo> imageInfoList = d->model->imageInfos(indexList);
             GPSItemInfo::List gpsItemInfoList;
 
             foreach (const ItemInfo& imageInfo, imageInfoList)
@@ -524,7 +525,7 @@ QPersistentModelIndex MapViewModelHelper::bestRepresentativeIndexFromList(const 
                 }
             }
 
-            if (gpsItemInfoList.size()!=indexList.size())
+            if (gpsItemInfoList.size() != indexList.size())
             {
                 // this is a problem, and unexpected
 
@@ -533,7 +534,7 @@ QPersistentModelIndex MapViewModelHelper::bestRepresentativeIndexFromList(const 
 
             // now determine the best available index
 
-            bestIndex                     = indexList.first();
+            bestIndex                   = indexList.first();
             GPSItemInfo bestGPSItemInfo = gpsItemInfoList.first();
 
             for (int i = 1 ; i < gpsItemInfoList.count() ; ++i)
