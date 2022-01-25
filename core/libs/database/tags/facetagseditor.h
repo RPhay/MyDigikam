@@ -149,7 +149,7 @@ public:
      * Remove the given face.
      * If appropriate, the tag is also removed.
      */
-    void                removeFace(const FaceTagsIface& face);
+    void                removeFace(const FaceTagsIface& face, bool touchTags = true);
     void                removeFaces(const QList<FaceTagsIface>& faces);
 
     /**
