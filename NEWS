@@ -5,7 +5,8 @@ NEW FEATURES:
 
 General: Update Libraw to snapshoot 20220116.
 General: Use Qt5.15 LTS patches collection git repository from KDE to build AppImage Linux bundle (snapshot 2022-01-23).
-
+General: AppImage and Windows bundles use last KF5 framework 5.90.
+General: Bundles generate a manifest text file listing git revisions of all upstream libraries used by application.
 
 *****************************************************************************************************
 BUGFIXES:
