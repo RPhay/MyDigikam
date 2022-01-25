@@ -676,31 +676,31 @@ BUGFIXES:
 662 ==> 317180 - Import dialog: Capture feature unusable.
 663 ==> 449078 - No feedback on search status.
 664 ==> 449137 - Image editor "Save changes" is malfunctioning.
-665 ==> 
-666 ==> 
-667 ==> 
-668 ==> 
-669 ==> 
-670 ==> 
-671 ==> 
-672 ==> 
-673 ==> 
-674 ==> 
-675 ==> 
-676 ==> 
-677 ==> 
-678 ==> 
-679 ==> 
-680 ==> 
-681 ==> 
-682 ==> 
-683 ==> 
-684 ==> 
-685 ==> 
-686 ==> 
-687 ==> 
-688 ==> 
-689 ==> 
+665 ==> 147677 - Wish EXIF sort option.
+666 ==> 086959 - Add a correct link to bko.
+667 ==> 113916 - digiKam needs to be restarted manually after its first launch.
+668 ==> 203022 - digiKam is not listed as IPTC-compatible software.
+669 ==> 197314 - Two ways to do a simple zooming.
+670 ==> 124862 - Setup documentation for manual install excludes how to start setup.
+671 ==> 126164 - Synthesis entry for digiKam development release.
+672 ==> 112147 - digiKam tarballs missing documentation.
+673 ==> 308366 - digiKam as a "picture management program" should extend management-capabilities.
+674 ==> 109946 - Crash when saving a picture after normalization.
+675 ==> 098502 - Keyboard bindings to Zoom functions in Image Viewer.
+676 ==> 254434 - Application fail to build without handbook ("wrong doc dir specified" error).
+677 ==> 359960 - digiKam product category lacks recent versions.
+678 ==> 134307 - Remember the type of preview.
+679 ==> 160649 - Switch "Save" button to "Save as..." before there is versionning image editing.
+680 ==> 178673 - Zoom combo box shows wrong value instead of 100%.
+681 ==> 088112 - digiKam image editor used exif orientatin in opposite direction than thumbnail view of albums.
+682 ==> 092104 - Image Editor tools' handbook should not have '.
+683 ==> 300020 - Picture not showing in the thumbnails after edition.
+684 ==> 103445 - Zoom / autofit mode results in garbled display of image.
+685 ==> 148239 - Button for viewing original unfiltered image.
+686 ==> 103163 - Error found in Digikam-documentation: File-> First should be File->Last.
+687 ==> 322656 - When opening a pic, dark areas show artefacts.
+688 ==> 143162 - Circular and elleptical selections.
+689 ==> 285157 - Exif lost and versioning disabled when editing an image developed from darktable.
 690 ==> 
 691 ==> 
 692 ==> 
