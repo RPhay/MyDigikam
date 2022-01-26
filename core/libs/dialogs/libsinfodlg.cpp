@@ -313,7 +313,7 @@ LibsInfoDlg::LibsInfoDlg(QWidget* const parent)
     else
     {
         new QTreeWidgetItem(m_features, QStringList() <<
-                            i18nc(CONTEXT, "Memory available") << i18nc("@item: information about memory", "Unknow"));
+                            i18nc(CONTEXT, "Memory available") << i18nc("@item: information about memory", "Unknown"));
     }
 
     // NOTE: MANIFEST.txt is a text file generated with the bundles and listing all git revisions of rolling release components.
