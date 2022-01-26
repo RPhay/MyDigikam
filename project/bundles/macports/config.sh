@@ -89,10 +89,10 @@ DK_URL="http://download.kde.org/stable/digikam"
 DK_BUILDTEMP=~/dktemp
 
 # KDE Application version.
-DK_KA_VERSION="21.12.0"
+DK_KA_VERSION="21.12.1"
 
 # KDE KF5 frameworks version.
-DK_KF5_VERSION="5.89"
+DK_KF5_VERSION="5.90"
 
 # digiKam tag version from git. Official tarball do not include extra shared libraries.
 # The list of tags can be listed with this url: https://invent.kde.org/graphics/digikam/-/tags
@@ -114,6 +114,6 @@ DK_QTWEBENGINE=1
 DK_SIGN=0
 
 # Upload automatically bundle to files.kde.org (pre-release only).
-DK_UPLOAD=1
+DK_UPLOAD=0
 DK_UPLOADURL="digikam@deino.kde.org"
 DK_UPLOADDIR="/srv/archives/files/digikam/"
