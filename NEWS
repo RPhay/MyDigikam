@@ -704,12 +704,112 @@ BUGFIXES:
 690 ==> 449107 - digiKam 7.5.0 FTBFS with Qt 5.9.5 (as found in Ubuntu Bionic 18.04).
 691 ==> 449170 - digiKam fails to import RAW from darktable 3.8.0.
 692 ==> 445216 - Cannot use Darktable for raw image import on Mac.
-693 ==> 
-694 ==> 
-695 ==> 
-696 ==> 
-697 ==> 
-698 ==> 
-699 ==> 
-700 ==> 
-701 ==> 
+693 ==> 307253 - Rename images according to Exif date instead of file date [patch].
+694 ==> 123019 - digiKam: no support for SANYO Dsc 90, and no support foe Aosta DA 3094.
+695 ==> 178881 - Identifying already copied pictures right from the transfert window.
+696 ==> 108824 - Option to automagically lowercase downloaded filenames.
+697 ==> 091611 - Bad repainting of thumbnails from camera view.
+698 ==> 092977 - Wish: camera view - missing indication and selection for not already downloaded images.
+699 ==> 125776 - Support request for Olympus E-300.
+700 ==> 221020 - Download pcs from USB with renaming.
+701 ==> 095882 - Adding a camera in digikam does not add it to the kcontrol module.
+702 ==> 134961 - Kodak Z612 not recognized -- it works with gthumb.
+703 ==> 210206 - digiKam segfaults when importing from compactflash.
+704 ==> 182352 - digiKam import from camera sort pictures in reverse order.
+705 ==> 175914 - Select new items in camera import window selects all files / forgets status.
+706 ==> 088784 - Allow use of a batch file to download images to provide naming flexibility.
+707 ==> 310163 - digiKam crashes on importing.
+708 ==> 087067 - Wish: Normalize Exif Orientation option in camera download dialog.
+709 ==> 154881 - Renaming images upon loading from camera using exif data wanted.
+710 ==> 154061 - Convert image on copy from camera.
+711 ==> 146618 - Media viewer does not sort correctly.
+712 ==> 088783 - Allow use of a batch file to download images to provide naming flexibility.
+713 ==> 108692 - Casio Exilim Ex P600, is this camera supported by digiKam?
+714 ==> 099544 - Add camera provided date and time is writting a bad time (one hour minus).
+715 ==> 131641 - CR2 thumbnails not shown in camera GUI, no exif information available.
+716 ==> 139507 - Integrate jpegoptim software during copy transfer.
+717 ==> 106928 - digiKam custom filename format from date and time.
+718 ==> 259863 - Rename Edit menu to Select menu in import tool.
+719 ==> 148946 - Starting digiKam munges access permissions.
+720 ==> 
+721 ==> 
+722 ==> 
+723 ==> 
+724 ==> 
+725 ==> 
+726 ==> 
+727 ==> 
+728 ==> 
+729 ==> 
+730 ==> 
+731 ==> 
+732 ==> 
+733 ==> 
+734 ==> 
+735 ==> 
+736 ==> 
+737 ==> 
+738 ==> 
+739 ==> 
+740 ==> 
+741 ==> 
+742 ==> 
+743 ==> 
+744 ==> 
+745 ==> 
+746 ==> 
+747 ==> 
+748 ==> 
+749 ==> 
+750 ==> 
+751 ==> 
+752 ==> 
+753 ==> 
+754 ==> 
+755 ==> 
+756 ==> 
+757 ==> 
+758 ==> 
+759 ==> 
+760 ==> 
+761 ==> 
+762 ==> 
+763 ==> 
+764 ==> 
+765 ==> 
+766 ==> 
+767 ==> 
+768 ==> 
+769 ==> 
+770 ==> 
+771 ==> 
+772 ==> 
+773 ==> 
+774 ==> 
+775 ==> 
+776 ==> 
+777 ==> 
+778 ==> 
+779 ==> 
+780 ==> 
+781 ==> 
+782 ==> 
+783 ==> 
+784 ==> 
+785 ==> 
+786 ==> 
+787 ==> 
+788 ==> 
+789 ==> 
+790 ==> 
+791 ==> 
+792 ==> 
+793 ==> 
+794 ==> 
+795 ==> 
+796 ==> 
+797 ==> 
+798 ==> 
+799 ==> 
+800 ==> 
+801 ==> 
