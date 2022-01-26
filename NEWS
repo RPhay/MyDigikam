@@ -731,7 +731,7 @@ BUGFIXES:
 717 ==> 106928 - digiKam custom filename format from date and time.
 718 ==> 259863 - Rename Edit menu to Select menu in import tool.
 719 ==> 148946 - Starting digiKam munges access permissions.
-720 ==> 
+720 ==> 449195 - Faces not detected on group photos.
 721 ==> 
 722 ==> 
 723 ==> 
