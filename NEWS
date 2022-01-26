@@ -703,7 +703,7 @@ BUGFIXES:
 689 ==> 285157 - Exif lost and versioning disabled when editing an image developed from darktable.
 690 ==> 449107 - digiKam 7.5.0 FTBFS with Qt 5.9.5 (as found in Ubuntu Bionic 18.04).
 691 ==> 449170 - digiKam fails to import RAW from darktable 3.8.0.
-692 ==> 
+692 ==> 445216 - Cannot use Darktable for raw image import on Mac.
 693 ==> 
 694 ==> 
 695 ==> 
