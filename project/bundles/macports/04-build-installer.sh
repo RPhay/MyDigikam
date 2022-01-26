@@ -348,13 +348,13 @@ rm -rf $TEMPROOT/lib/plugins
 
 echo "---------- Copy Git Revisions Manifest\n"
 
-touch $TEMPROOT/Resources/MANIFEST.txt
+touch $TEMPROOT/digikam.app/Contents/Resources/MANIFEST.txt
 
 FILES=$(ls $ORIG_WD/data/*_manifest.txt)
 
 for FILE in $FILES ; do
     echo $FILE
-    cat $FILE >> $TEMPROOT/Resources/MANIFEST.txt
+    cat $FILE >> $TEMPROOT/digikam.app/Contents/Resources/MANIFEST.txt
 done
 
 #################################################################################################
