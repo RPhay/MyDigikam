@@ -1,13 +1,33 @@
-diff --git a/qtbase/src/network/ssl/ssl.pri b/qtbase/src/network/ssl/ssl.pri
-index 230c45c26f..242bdacada 100644
---- a/qtbase/src/network/ssl/ssl.pri
-+++ b/qtbase/src/network/ssl/ssl.pri
-@@ -118,7 +118,7 @@ qtConfig(ssl) {
-         qtConfig(openssl-linked): {
-             android {
-                 build_pass|single_android_abi: LIBS_PRIVATE += -lssl_$${QT_ARCH} -lcrypto_$${QT_ARCH}
--            } else: QMAKE_USE_FOR_PRIVATE += openssl
-+            } else: LIBS_PRIVATE += /usr/local/lib/libssl.a /usr/local/lib/libcrypto.a -ldl -lpthread
-         } else: \
-             QMAKE_USE_FOR_PRIVATE += openssl/nolink
-         win32 {
+diff --git a/src/network/CMakeLists.txt b/src/network/CMakeLists.txt
+index 96dacc06c5..b5ebcd839a 100644
+--- a/qtbase/src/network/CMakeLists.txt
++++ b/qtbase/src/network/CMakeLists.txt
+@@ -336,9 +336,10 @@ qt_internal_extend_target(Network CONDITION QT_FEATURE_ocsp AND QT_FEATURE_opens
+ 
+ qt_internal_extend_target(Network CONDITION QT_FEATURE_openssl AND QT_FEATURE_openssl_linked AND QT_FEATURE_ssl
+     LIBRARIES
+-        WrapOpenSSL::WrapOpenSSL
+-    PRIVATE_MODULE_INTERFACE
+-        WrapOpenSSL::WrapOpenSSL
++    /usr/local/lib/libssl.a
++    /usr/local/lib/libcrypto.a
++    dl
++    pthread
+ )
+ 
+ qt_internal_extend_target(Network CONDITION QT_FEATURE_openssl AND QT_FEATURE_ssl AND NOT QT_FEATURE_openssl_linked
+diff --git a/src/plugins/tls/openssl/CMakeLists.txt b/src/plugins/tls/openssl/CMakeLists.txt
+index 78c1089823..1cc1707151 100644
+--- a/qtbase/src/plugins/tls/openssl/CMakeLists.txt
++++ b/qtbase/src/plugins/tls/openssl/CMakeLists.txt
+@@ -17,6 +17,10 @@ qt_internal_add_plugin(QTlsBackendOpenSSLPlugin
+     LIBRARIES
+         Qt::NetworkPrivate
+         Qt::CorePrivate
++        /usr/local/lib/libssl.a
++        /usr/local/lib/libcrypto.a
++        dl
++        pthread
+     DEFINES
+         OPENSSL_API_COMPAT=0x10100000L
+ )

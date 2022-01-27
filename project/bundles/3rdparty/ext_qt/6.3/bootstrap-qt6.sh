@@ -43,7 +43,6 @@ OPENSSL_LIBS='-L$EXT_PREFIX/local/include/openssl/ -l$EXT_PREFIX/local/lib/libss
                   -no-directfb                          `#  .` \
                   -no-linuxfb                           `#  .` \
                   -no-libproxy                          `#  .` \
-                  -no-iconv                             `#  No International string conversion.` \
                   -no-pch                               `#  .` \
                   -qt-zlib                              `#  .` \
                   -qt-pcre                              `#  .` \
