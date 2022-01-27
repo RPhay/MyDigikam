@@ -135,6 +135,7 @@ urpmi --auto \
       ${LIBSUFFIX}xcursor-devel \
       ${LIBSUFFIX}xcomposite-devel \
       ${LIBSUFFIX}xrender-devel \
+      ${LIBSUFFIX}xscrnsaver-devel \
       ${LIBSUFFIX}ltdl-devel \
       ${LIBSUFFIX}glib2.0-devel \
       ${LIBSUFFIX}usb1.0-devel \
