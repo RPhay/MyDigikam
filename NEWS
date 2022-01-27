@@ -732,20 +732,20 @@ BUGFIXES:
 718 ==> 259863 - Rename Edit menu to Select menu in import tool.
 719 ==> 148946 - Starting digiKam munges access permissions.
 720 ==> 449195 - Faces not detected on group photos.
-721 ==> 
-722 ==> 
-723 ==> 
-724 ==> 
-725 ==> 
-726 ==> 
-727 ==> 
-728 ==> 
-729 ==> 
-730 ==> 
-731 ==> 
-732 ==> 
-733 ==> 
-734 ==> 
+721 ==> 175894 - Error accessing files on usb camera.
+722 ==> 173138 - When trying to import images from "Digital Cameras" and "USB Imaging Interface", digiKam crashed.
+723 ==> 181428 - digiKam crashes when adding photos to a folder (ctrl+i).
+724 ==> 194684 - signal 11 (SIGSEGV) while scanning new images.
+725 ==> 205831 - digiKam crashes when the scanned files from the SD card on my phone.
+726 ==> 210305 - digiKam memory card read list.
+727 ==> 211953 - digiKam crashed during image upload from card to directory on desktop.
+728 ==> 218021 - digiKam crashed while closing. a camera was connected via USB [__libc_message, malloc_printerr, QObjectPrivate::deleteChildren].
+729 ==> 260764 - digiKam has crashed when importing photos from SD card.
+730 ==> 278776 - digiKam crashes when importing from SD card.
+731 ==> 283210 - digiKam crashed during 'cut and paste' from SD card.
+732 ==> 088253 - Download thumbnails from the camera in reverse order.
+733 ==> 196857 - Ability to sort images in the camera window.
+734 ==> 138575 - Custom file renaming has to *long* (6 digest) auto suffix like photo-000001.jpg.
 735 ==> 
 736 ==> 
 737 ==> 
