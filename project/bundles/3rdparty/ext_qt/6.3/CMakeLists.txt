@@ -24,9 +24,10 @@ ExternalProject_Add(ext_qt
     PATCH_COMMAND ${PATCH_COMMAND} -p1 -i ${CMAKE_CURRENT_SOURCE_DIR}/qt-appimage-support.patch &&
                   ${PATCH_COMMAND} -p1 -i ${CMAKE_CURRENT_SOURCE_DIR}/qt-base-cmake.patch
 
-    CONFIGURE_COMMAND cp ${CMAKE_CURRENT_SOURCE_DIR}/bootstrap.qt6.sh <SOURCE_DIR>/. &&
+    CONFIGURE_COMMAND cp ${CMAKE_CURRENT_SOURCE_DIR}/bootstrap-qt6.sh <SOURCE_DIR>/. &&
                       <SOURCE_DIR>/bootstrap-qt6.sh ${EXTPREFIX} ${DROP_QTWEBENGINE_DEPS}
 
+    BUILD_COMMAND ninja
 
 
 #                  -prefix ${EXTPREFIX_qt}
