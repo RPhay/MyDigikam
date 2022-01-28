@@ -765,13 +765,13 @@ BUGFIXES:
 751 ==> 289302 - Epson perfection 2450 scanner and digiKam.
 752 ==> 229674 - Failed to download from SDcard.
 753 ==> 231332 - digiKam crashed when trying to import pictures from my camera.
-754 ==> 
-755 ==> 
-756 ==> 
-757 ==> 
-758 ==> 
-759 ==> 
-760 ==> 
+754 ==> 280934 - Program crashed after rename of files outside of digiKam.
+755 ==> 282097 - digiKam segfaults while starting up.
+756 ==> 285665 - digiKam crashes when moving large numbers of files.
+757 ==> 313389 - Crash.
+758 ==> 266318 - Nepomuuk Service Stub (nepomukservicestub) crashes in libdigikamdatabase.so.1 when syncing tags to nepomuk.
+759 ==> 286647 - Nepomuk mess up.
+760 ==> 310079 - /usr/bin/nepomukservicestub digikamnepomukservice' crashed!
 761 ==> 
 762 ==> 
 763 ==> 
