@@ -735,7 +735,7 @@ BUGFIXES:
 721 ==> 175894 - Error accessing files on usb camera.
 722 ==> 173138 - When trying to import images from "Digital Cameras" and "USB Imaging Interface", digiKam crashed.
 723 ==> 181428 - digiKam crashes when adding photos to a folder (ctrl+i).
-724 ==> 194684 - signal 11 (SIGSEGV) while scanning new images.
+724 ==> 194684 - Signal 11 (SIGSEGV) while scanning new images.
 725 ==> 205831 - digiKam crashes when the scanned files from the SD card on my phone.
 726 ==> 210305 - digiKam memory card read list.
 727 ==> 211953 - digiKam crashed during image upload from card to directory on desktop.
@@ -746,25 +746,25 @@ BUGFIXES:
 732 ==> 088253 - Download thumbnails from the camera in reverse order.
 733 ==> 196857 - Ability to sort images in the camera window.
 734 ==> 138575 - Custom file renaming has to *long* (6 digest) auto suffix like photo-000001.jpg.
-735 ==> 
-736 ==> 
-737 ==> 
-738 ==> 
-739 ==> 
-740 ==> 
-741 ==> 
-742 ==> 
-743 ==> 
-744 ==> 
-745 ==> 
-746 ==> 
-747 ==> 
-748 ==> 
-749 ==> 
-750 ==> 
-751 ==> 
-752 ==> 
-753 ==> 
+735 ==> 306861 - digikam Baloo interface no longer works since KDE's upgrade.
+736 ==> 190795 - USB PTP Class does not work anymore.
+737 ==> 242403 - digiKam depends on unreleased sources.
+738 ==> 294309 - digiKam unexpectedly closes whenever I try to import photos from the camera.
+739 ==> 141962 - "Select New Items" broken since upgrading.
+740 ==> 269533 - digiKam crash in Ubuntu.
+741 ==> 271047 - digiKam Crashes on Imports from PTP Device (iPhone).
+742 ==> 271606 - digiKam crashed while importing photos from iphone.
+743 ==> 274344 - iPhone Photo Importing Fails.
+744 ==> 274807 - digKam Crashes when trying to import Pictures from my camera.
+745 ==> 280557 - Crash when connecting the camera via USB.
+746 ==> 282330 - digiKam crashes.
+747 ==> 288310 - digiKam crash when attempting to download from Canon EOS 1100D.
+748 ==> 288735 - digiKam crashes without exception.
+749 ==> 288763 - Importing photos with digiKam.
+750 ==> 301838 - digiKam still crashes after updating from Testing.
+751 ==> 289302 - Epson perfection 2450 scanner and digiKam.
+752 ==> 229674 - Failed to download from SDcard.
+753 ==> 231332 - digiKam crashed when trying to import pictures from my camera.
 754 ==> 
 755 ==> 
 756 ==> 
