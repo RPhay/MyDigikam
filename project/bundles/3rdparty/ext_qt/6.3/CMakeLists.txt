@@ -17,6 +17,8 @@ IF(NOT ENABLE_QTWEBENGINE)
         )
 ENDIF()
 
+# NOTE: even if OpenSSL libs paths are passed in bootstrap-qt6.sh, an hardcoded patch is necessary else linking fail.
+
 ExternalProject_Add(ext_qt
 
     URL file://${EXTERNALS_DOWNLOAD_DIR}/kde-qt6.tar

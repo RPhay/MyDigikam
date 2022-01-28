@@ -16,14 +16,13 @@ IF(NOT ENABLE_QTWEBENGINE)
         )
 ENDIF()
 
+# NOTE: even if OpenSSL libs paths are passed as arguments, an hardcoded patch is necessary else linking fail.
+
 ExternalProject_Add(ext_qt
     DOWNLOAD_DIR ${EXTERNALS_DOWNLOAD_DIR}
 
     URL https://download.qt.io/official_releases/qt/5.15/5.15.2/single/qt-everywhere-src-5.15.2.tar.xz
     URL_MD5 e1447db4f06c841d8947f0a6ce83a7b5
-
-#                  ICU_LIBS="-I${EXTPREFIX}/local/ -L${EXTPREFIX}/local/lib -licui18n -licuuc -licudata"
-
 
     PATCH_COMMAND ${PATCH_COMMAND} -p1 -i ${CMAKE_CURRENT_SOURCE_DIR}/qt-appimage-support.patch
                && ${PATCH_COMMAND} -p1 -i ${CMAKE_CURRENT_SOURCE_DIR}/qt-appimage-openssl-linked.patch
@@ -90,10 +89,6 @@ ExternalProject_Add(ext_qt
                   -skip qtwebview                   # QML extension for QWebEngine
                   -skip qtwinextras                 # For Windows devices only
                   ${DROP_QTWEBENGINE_DEPS}
-
-    # Example of code to install only one Qt module for hacking purpose (aka qtbase here)
-    #BUILD_COMMAND cd <SOURCE_DIR> && $(MAKE) module-qtbase
-    #INSTALL_COMMAND cd <SOURCE_DIR> && $(MAKE) module-qtbase-install_subtargets
 
     UPDATE_COMMAND ""
     BUILD_IN_SOURCE 1
