@@ -639,7 +639,7 @@ BUGFIXES:
 625 ==> 154941 - Improve exception safety with smart pointers.
 626 ==> 303114 - Closing Digikam results in crash.
 627 ==> 363362 - Crash when using configuration.
-628 ==> 276479 - Wish: add feature to copy/move image files from digikam to filemanager on non-kde desktop.
+628 ==> 276479 - Wish: add feature to copy/move image files from digiKam to filemanager on non-kde desktop.
 629 ==> 139358 - Crash when closing digiKam [backtrace].
 630 ==> 285124 - digiKam crashed while playing with effects.
 631 ==> 263463 - 'Scan for new images' should work on just current folder.
@@ -712,7 +712,7 @@ BUGFIXES:
 698 ==> 092977 - Wish: camera view - missing indication and selection for not already downloaded images.
 699 ==> 125776 - Support request for Olympus E-300.
 700 ==> 221020 - Download pcs from USB with renaming.
-701 ==> 095882 - Adding a camera in digikam does not add it to the kcontrol module.
+701 ==> 095882 - Adding a camera in digiKam does not add it to the kcontrol module.
 702 ==> 134961 - Kodak Z612 not recognized -- it works with gthumb.
 703 ==> 210206 - digiKam segfaults when importing from compactflash.
 704 ==> 182352 - digiKam import from camera sort pictures in reverse order.
@@ -746,7 +746,7 @@ BUGFIXES:
 732 ==> 088253 - Download thumbnails from the camera in reverse order.
 733 ==> 196857 - Ability to sort images in the camera window.
 734 ==> 138575 - Custom file renaming has to *long* (6 digest) auto suffix like photo-000001.jpg.
-735 ==> 306861 - digikam Baloo interface no longer works since KDE's upgrade.
+735 ==> 306861 - digiKam Baloo interface no longer works since KDE's upgrade.
 736 ==> 190795 - USB PTP Class does not work anymore.
 737 ==> 242403 - digiKam depends on unreleased sources.
 738 ==> 294309 - digiKam unexpectedly closes whenever I try to import photos from the camera.
@@ -779,20 +779,20 @@ BUGFIXES:
 765 ==> 217009 - digiKam crashed while browsing.
 766 ==> 273130 - Crash in image editor, when starting effects - oil painting.
 767 ==> 449308 - Web Browser cannot open url Fails with Error initializing NSS with a persistent database (sql:/home/somebody/.pki/nssdb): NSS error code: -8023 [patch].
-768 ==> 
-769 ==> 
-770 ==> 
-771 ==> 
-772 ==> 
-773 ==> 
-774 ==> 
-775 ==> 
-776 ==> 
-777 ==> 
-778 ==> 
-779 ==> 
-780 ==> 
-781 ==> 
+768 ==> 105010 - Add the number of pictures to the folderview.
+769 ==> 108417 - Sort by time the foto has been taken, not mtime.
+770 ==> 154112 - Sort order of thumbnails ascending or descending.
+771 ==> 189555 - Way to change sort order of albums in "traditional" way.
+772 ==> 193035 - Allow sorting of images in descending order.
+773 ==> 291544 - A sort-by-date for albums should be available as an alternative to the current sort-by-name.
+774 ==> 091563 - Change order of pictures in the virtual album Automatically.
+775 ==> 092351 - Wish: Save selection mode.
+776 ==> 120959 - Picture copy by selection.
+777 ==> 124411 - Make link instead of copying when adding image to the album.
+778 ==> 128667 - Total number of photos in collection.
+779 ==> 129946 - "New album" naming enhancements.
+780 ==> 131036 - Adding a checkbox to ease image selection.
+781 ==> 136902 - Show also pictures in subfolders when empty parent folder is selected.
 782 ==> 
 783 ==> 
 784 ==> 
