@@ -778,7 +778,7 @@ BUGFIXES:
 764 ==> 167563 - Image editor Target preview is not shown for color and enhance menus.
 765 ==> 217009 - digiKam crashed while browsing.
 766 ==> 273130 - Crash in image editor, when starting effects - oil painting.
-767 ==> 
+767 ==> 449308 - Web Browser cannot open url Fails with Error initializing NSS with a persistent database (sql:/home/somebody/.pki/nssdb): NSS error code: -8023 [patch].
 768 ==> 
 769 ==> 
 770 ==> 
