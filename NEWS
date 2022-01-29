@@ -795,12 +795,12 @@ BUGFIXES:
 781 ==> 136902 - Show also pictures in subfolders when empty parent folder is selected.
 782 ==> 449336 - Wish: Option to unify tags of selected images.
 783 ==> 449315 - Delete Key does not remove Database Entry.
-784 ==> 
-785 ==> 
-786 ==> 
-787 ==> 
-788 ==> 
-789 ==> 
+784 ==> 141361 - Information over all Albums.
+785 ==> 144338 - Combine date and album-view.
+786 ==> 149101 - Parent albums should display child albums.
+787 ==> 177186 - Current file count for album starts at 0, not 1.
+788 ==> 145723 - Changing the date under the "Comments/Tags" tab doesn't work.
+789 ==> 179585 - When moving files the window to suggest the new name does not show preview.
 790 ==> 
 791 ==> 
 792 ==> 
