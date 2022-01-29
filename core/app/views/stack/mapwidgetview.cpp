@@ -293,7 +293,19 @@ void MapWidgetView::slotModelChanged()
 
         case ApplicationImportUI:
         {
-            hasCoordinates = true;
+            foreach (const CamItemInfo& info, d->importModel->camItemInfos())
+            {
+                QScopedPointer<DMetadata> meta(new DMetadata(info.url().toLocalFile()));
+                double lat, lng;
+
+                if (meta->getGPSLatitudeNumber(&lat) &&
+                    meta->getGPSLongitudeNumber(&lng))
+                {
+                    hasCoordinates = true;
+                    break;
+                }
+            }
+
             break;
         }
     }
