@@ -1,20 +1,3 @@
-diff --git a/src/network/CMakeLists.txt b/src/network/CMakeLists.txt
-index 96dacc06c5..b5ebcd839a 100644
---- a/qtbase/src/network/CMakeLists.txt
-+++ b/qtbase/src/network/CMakeLists.txt
-@@ -336,9 +336,10 @@ qt_internal_extend_target(Network CONDITION QT_FEATURE_ocsp AND QT_FEATURE_opens
- 
- qt_internal_extend_target(Network CONDITION QT_FEATURE_openssl AND QT_FEATURE_openssl_linked AND QT_FEATURE_ssl
-     LIBRARIES
--        WrapOpenSSL::WrapOpenSSL
--    PRIVATE_MODULE_INTERFACE
--        WrapOpenSSL::WrapOpenSSL
-+    /usr/local/lib/libssl.a
-+    /usr/local/lib/libcrypto.a
-+    dl
-+    pthread
- )
- 
  qt_internal_extend_target(Network CONDITION QT_FEATURE_openssl AND QT_FEATURE_ssl AND NOT QT_FEATURE_openssl_linked
 diff --git a/src/plugins/tls/openssl/CMakeLists.txt b/src/plugins/tls/openssl/CMakeLists.txt
 index 78c1089823..1cc1707151 100644
