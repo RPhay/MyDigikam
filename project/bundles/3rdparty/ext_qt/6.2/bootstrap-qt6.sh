@@ -21,6 +21,7 @@ rm -f CMakeCache.txt
 EXT_PREFIX=$1
 DROP_QTWEBENGINE_DEPS=$2
 
+# NOTE: even if OpenSSL libs paths configuration is passed heres, an hardcoded patch is necessary else linking fail in openssl plugin.
 OPENSSL_LIBS='-L$EXT_PREFIX/local/include/openssl/ -l$EXT_PREFIX/local/lib/libssl.a -l$EXT_PREFIX/local/lib/libcrypto.a -lpthread -ldl'
 
 ./configure       -cmake-generator Ninja                `#  Qt6 use Ninja build system by default.` \
