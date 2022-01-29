@@ -146,6 +146,7 @@ private Q_SLOTS:
     void slotAssignedTagsToggled(bool);
 
     void slotMoreMenu();
+    void slotUnifyPartiallyTags();
     void slotReadFromFileMetadataToDatabase();
     void slotWriteToFileMetadataFromDatabase();
 

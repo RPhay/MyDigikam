@@ -904,6 +904,14 @@ void ItemDescEditTab::slotWriteToFileMetadataFromDatabase()
     emit signalProgressFinished();
 }
 
+void ItemDescEditTab::slotUnifyPartiallyTags()
+{
+    foreach (Album* const album, d->tagModel->partiallyCheckedAlbums())
+    {
+        d->tagModel->setChecked(album, true);
+    }
+}
+
 bool ItemDescEditTab::eventFilter(QObject* o, QEvent* e)
 {
     if (e->type() == QEvent::KeyPress)
@@ -1294,6 +1302,8 @@ void ItemDescEditTab::slotMoreMenu()
 
         d->moreMenu->addAction(i18n("Read metadata from each file to database"), this, SLOT(slotReadFromFileMetadataToDatabase()));
         d->moreMenu->addAction(i18n("Write metadata to each file"), this, SLOT(slotWriteToFileMetadataFromDatabase()));
+        d->moreMenu->addSeparator();
+        d->moreMenu->addAction(i18n("Unify tags of selected items"), this, SLOT(slotUnifyPartiallyTags()));
     }
 }
 
