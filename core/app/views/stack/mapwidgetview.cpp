@@ -316,19 +316,19 @@ void MapWidgetView::slotModelChanged()
         }
     }
 
-    if      (!hasCoordinates)
+    if (!hasCoordinates)
     {
         setEnabled(false);
-        d->boundariesShouldBeAdjusted = true;
         d->mapWidget->setCenter(GeoCoordinates(52.0, 6.0));
         d->mapWidget->setZoom(QLatin1String("marble:1108"));
     }
-    else if (d->mapWidget->getActiveState())
+    else
     {
         setEnabled(true);
-        d->boundariesShouldBeAdjusted = false;
         d->mapWidget->adjustBoundariesToGroupedMarkers();
     }
+
+    d->boundariesShouldBeAdjusted = false;
 }
 
 //-------------------------------------------------------------------------------------------------------------
