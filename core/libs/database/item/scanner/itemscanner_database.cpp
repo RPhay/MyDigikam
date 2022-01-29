@@ -174,8 +174,6 @@ void ItemScanner::commitCopyImageAttributes()
 
 bool ItemScanner::copyFromSource(qlonglong srcId)
 {
-    CoreDbAccess access;
-
     // some basic validity checking
 
     if (srcId == d->scanInfo.id)
@@ -183,7 +181,7 @@ bool ItemScanner::copyFromSource(qlonglong srcId)
         return false;
     }
 
-    ItemScanInfo info = access.db()->getItemScanInfo(srcId);
+    ItemScanInfo info = CoreDbAccess().db()->getItemScanInfo(srcId);
 
     if (!info.id)
     {
@@ -213,7 +211,7 @@ bool ItemScanner::commitAddImage()
     qlonglong imageId = CoreDbAccess().db()->findImageId(-1, d->scanInfo.itemName, DatabaseItem::Status::Trashed,
                                                          d->scanInfo.category, d->scanInfo.fileSize, d->scanInfo.uniqueHash);
 
-    if (imageId != -1)
+    if (imageId != -1 && (d->commit.copyImageAttributesId == -1))
     {
         qCDebug(DIGIKAM_DATABASE_LOG) << "Detected identical image info with id" << imageId
                                       << "and album id NULL of a removed image for image" << d->scanInfo.itemName;
