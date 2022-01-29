@@ -772,12 +772,12 @@ BUGFIXES:
 758 ==> 266318 - Nepomuuk Service Stub (nepomukservicestub) crashes in libdigikamdatabase.so.1 when syncing tags to nepomuk.
 759 ==> 286647 - Nepomuk mess up.
 760 ==> 310079 - /usr/bin/nepomukservicestub digikamnepomukservice' crashed!
-761 ==> 
-762 ==> 
-763 ==> 
-764 ==> 
-765 ==> 
-766 ==> 
+761 ==> 267467 - digiKam loads images with black areas on editor.
+762 ==> 148234 - Small images cause zoom slider crazyness.
+763 ==> 148805 - Image editor window larger than 2250px breaks image canvas space.
+764 ==> 167563 - Image editor Target preview is not shown for color and enhance menus.
+765 ==> 217009 - digiKam crashed while browsing.
+766 ==> 273130 - Crash in image editor, when starting effects - oil painting.
 767 ==> 
 768 ==> 
 769 ==> 
