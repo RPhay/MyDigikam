@@ -110,6 +110,11 @@ preload_shared_library libxcb-dri3.so.0
 preload_shared_library libcrypto.so.1.1
 preload_shared_library libssl.so.1.1
 
+# See bug #449308
+preload_shared_library libnss3.so
+preload_shared_library libnssutil3.so
+preload_shared_library libsmime3.so
+
 #preload_shared_library libfontconfig.so.1
 #preload_shared_library libfreetype.so.6
 
