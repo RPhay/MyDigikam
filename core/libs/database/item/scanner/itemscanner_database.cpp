@@ -39,16 +39,25 @@ void ItemScanner::commit()
     switch (d->commit.operation)
     {
         case ItemScannerCommit::NoOp:
+        {
             return;
+        }
 
         case ItemScannerCommit::AddItem:
+        {
             if (!commitAddImage())
+            {
                 return;
+            }
+
             break;
+        }
 
         case ItemScannerCommit::UpdateItem:
+        {
             commitUpdateImage();
             break;
+        }
     }
 
     if (d->commit.copyImageAttributesId != -1)
@@ -135,12 +144,15 @@ void ItemScanner::copiedFrom(int albumId, qlonglong srcId)
     prepareAddImage(albumId);
 
     // first use source, if it exists
+
     if (!copyFromSource(srcId))
     {
         // check if we can establish identity
+
         if (!scanFromIdenticalFile())
         {
             // scan newly
+
             scanFile(NewScan);
         }
     }
@@ -149,9 +161,13 @@ void ItemScanner::copiedFrom(int albumId, qlonglong srcId)
 void ItemScanner::commitCopyImageAttributes()
 {
     CoreDbAccess().db()->copyImageAttributes(d->commit.copyImageAttributesId, d->scanInfo.id);
+
     // Also copy the similarity information
+
     SimilarityDbAccess().db()->copySimilarityAttributes(d->commit.copyImageAttributesId, d->scanInfo.id);
+
     // Remove grouping for copied or identical images.
+
     CoreDbAccess().db()->removeAllImageRelationsFrom(d->scanInfo.id, DatabaseRelation::Grouped);
     CoreDbAccess().db()->removeAllImageRelationsTo(d->scanInfo.id, DatabaseRelation::Grouped);
 }
@@ -161,6 +177,7 @@ bool ItemScanner::copyFromSource(qlonglong srcId)
     CoreDbAccess access;
 
     // some basic validity checking
+
     if (srcId == d->scanInfo.id)
     {
         return false;
@@ -192,6 +209,7 @@ bool ItemScanner::commitAddImage()
 {
     // find the image id of a deleted image info if existent and mark it as valid.
     // otherwise, create a new item.
+
     qlonglong imageId = CoreDbAccess().db()->findImageId(-1, d->scanInfo.itemName, DatabaseItem::Status::Trashed,
                                                          d->scanInfo.category, d->scanInfo.fileSize, d->scanInfo.uniqueHash);
 

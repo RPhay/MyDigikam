@@ -173,9 +173,13 @@ void ItemScanner::scanVideoInformation()
     // (all format strings used in the database should be defined in advance)
 
     if (d->scanInfo.category == DatabaseItem::Video)
+    {
         d->commit.imageInformationInfos << detectVideoFormat();
+    }
     else
+    {
         d->commit.imageInformationInfos << detectAudioFormat();
+    }
 
     d->commit.imageInformationFields |= DatabaseFields::Format;
 

@@ -48,6 +48,7 @@ void ItemScanner::scanBalooInfo()
     if (!bInfo.tags.isEmpty())
     {
         // get tag ids, create if necessary
+
         QList<int> tagIds = TagsCache::instance()->getOrCreateTags(bInfo.tags);
         d->commit.tagIds += tagIds;
     }

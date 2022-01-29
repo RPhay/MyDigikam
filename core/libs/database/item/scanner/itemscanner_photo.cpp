@@ -30,6 +30,7 @@ namespace Digikam
 QString ItemScanner::iptcCorePropertyName(MetadataInfo::Field field)
 {
     // These strings are specified in DBSCHEMA.ods
+
     switch (field)
     {
             // copyright table
@@ -127,6 +128,7 @@ QString ItemScanner::detectImageFormat() const
     }
 
     // See BUG #339341: Take file name suffix instead type mime analyze.
+
     return d->fileInfo.suffix().toUpper();
 }
 
@@ -149,6 +151,7 @@ void ItemScanner::commitImageMetadata()
 void ItemScanner::scanItemPosition()
 {
     // This list must reflect the order required by CoreDB::addItemPosition
+
     MetadataFields fields;
     fields << MetadataInfo::Latitude
            << MetadataInfo::LatitudeNumber
@@ -184,6 +187,7 @@ void ItemScanner::scanItemComments()
     QVariantList metadataInfos = d->metadata->getMetadataFields(fields);
 
     // handles all possible fields, multi-language, author, date
+
     CaptionsMap captions = d->metadata->getItemComments();
 
     if (captions.isEmpty() && !hasValidField(metadataInfos))
@@ -195,12 +199,14 @@ void ItemScanner::scanItemComments()
     d->commit.captions           = captions;
 
     // Headline
+
     if (!metadataInfos.at(0).isNull())
     {
         d->commit.headline = metadataInfos.at(0).toString();
     }
 
     // Title
+
     if (!metadataInfos.at(1).isNull())
     {
         d->commit.title = metadataInfos.at(1).toMap()[QLatin1String("x-default")].toString();
@@ -213,18 +219,21 @@ void ItemScanner::commitItemComments()
     ItemComments comments(access, d->scanInfo.id);
 
     // Description
+
     if (!d->commit.captions.isEmpty())
     {
         comments.replaceComments(d->commit.captions);
     }
 
     // Headline
+
     if (!d->commit.headline.isNull())
     {
         comments.addHeadline(d->commit.headline);
     }
 
     // Title
+
     if (!d->commit.title.isNull())
     {
         comments.addTitle(d->commit.title);
@@ -247,7 +256,9 @@ void ItemScanner::scanItemCopyright()
 void ItemScanner::commitItemCopyright()
 {
     ItemCopyright copyright(d->scanInfo.id);
+
     // It is not clear if removeAll() should be called if d->scanMode == Rescan
+
     copyright.removeAll();
     copyright.setFromTemplate(d->commit.copyrightTemplate);
 }
@@ -316,6 +327,7 @@ void ItemScanner::scanTags()
     QStringList filteredKeywords;
 
     // Extra empty tags check, empty tag = root tag which is not asignable
+
     for (int index = 0 ; index < keywords.size() ; ++index)
     {
         QString keyword = keywords.at(index);
@@ -325,6 +337,7 @@ void ItemScanner::scanTags()
 
             // _Digikam_root_tag_ is present in some photos tagged with older
             // version of digiKam, must be removed
+
             if (keyword.contains(QRegExp(QLatin1String("(_Digikam_root_tag_/|/_Digikam_root_tag_|_Digikam_root_tag_)"))))
             {
                 keyword = keyword.replace(QRegExp(QLatin1String("(_Digikam_root_tag_/|/_Digikam_root_tag_|_Digikam_root_tag_)")),
@@ -338,6 +351,7 @@ void ItemScanner::scanTags()
     if (!filteredKeywords.isEmpty())
     {
         // get tag ids, create if necessary
+
         QList<int> tagIds = TagsCache::instance()->getOrCreateTags(filteredKeywords);
         d->commit.tagIds += tagIds;
     }
@@ -532,6 +546,7 @@ void ItemScanner::commitFaces()
 void ItemScanner::checkCreationDateFromMetadata(QVariant& dateFromMetadata) const
 {
     // creation date: fall back to file system property
+
     if (dateFromMetadata.isNull() || !dateFromMetadata.toDateTime().isValid())
     {
         dateFromMetadata = creationDateFromFilesystem(d->fileInfo);
@@ -541,6 +556,7 @@ void ItemScanner::checkCreationDateFromMetadata(QVariant& dateFromMetadata) cons
 bool ItemScanner::checkRatingFromMetadata(const QVariant& ratingFromMetadata) const
 {
     // should only be overwritten if set in metadata
+
     if (d->scanMode == Rescan)
     {
         if (ratingFromMetadata.isNull() || (ratingFromMetadata.toInt() == -1))
@@ -555,6 +571,7 @@ bool ItemScanner::checkRatingFromMetadata(const QVariant& ratingFromMetadata) co
 MetadataFields ItemScanner::allImageMetadataFields()
 {
     // This list must reflect the order required by CoreDB::addImageMetadata
+
     MetadataFields fields;
     fields << MetadataInfo::Make
            << MetadataInfo::Model

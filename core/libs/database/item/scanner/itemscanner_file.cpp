@@ -215,6 +215,7 @@ void ItemScanner::scanFile(ScanMode mode)
             // It seems to me that at the moment video metadata contains such fields (which may change after editing).
             // In contrast, with photos, ImageMetadata contains fields which describe the moment of taking the photo,
             // which means they don't change.
+
             if (d->hasMetadata)
             {
                 scanVideoMetadata();
@@ -277,6 +278,7 @@ bool ItemScanner::scanFromIdenticalFile()
 {
     // Get a list of other images that are identical. Source image shall not be included.
     // When using the Commit functionality, d->scanInfo.id can be null.
+
     QList<ItemScanInfo> candidates = CoreDbAccess().db()->getIdenticalFiles(d->scanInfo.uniqueHash,
                                                                             d->scanInfo.fileSize,
                                                                             d->scanInfo.id);
@@ -284,6 +286,7 @@ bool ItemScanner::scanFromIdenticalFile()
     if (!candidates.isEmpty())
     {
         // Sort by priority, as implemented by custom lessThan()
+
         std::stable_sort(candidates.begin(), candidates.end(), lessThanForIdentity);
 
         qCDebug(DIGIKAM_DATABASE_LOG) << "Recognized" << d->fileInfo.filePath()
@@ -291,6 +294,7 @@ bool ItemScanner::scanFromIdenticalFile()
 
         // Copy attributes.
         // Todo for the future is to worry about syncing identical files.
+
         d->commit.copyImageAttributesId = candidates.first().id;
 
         return true;
