@@ -794,7 +794,7 @@ BUGFIXES:
 780 ==> 131036 - Adding a checkbox to ease image selection.
 781 ==> 136902 - Show also pictures in subfolders when empty parent folder is selected.
 782 ==> 449336 - Wish: Option to unify tags of selected images.
-783 ==> 
+783 ==> 449315 - Delete Key does not remove Database Entry.
 784 ==> 
 785 ==> 
 786 ==> 
