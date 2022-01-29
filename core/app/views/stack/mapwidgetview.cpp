@@ -32,6 +32,7 @@
 #include <QAbstractItemModel>
 #include <QPersistentModelIndex>
 #include <QScopedPointer>
+#include <QTimer>
 
 // KDE includes
 
@@ -78,6 +79,7 @@ public:
          selectionModel             (nullptr),
          mapViewModelHelper         (nullptr),
          gpsItemInfoSorter          (nullptr),
+         modelTimer                 (nullptr),
          application                (MapWidgetView::ApplicationDigikam),
          boundariesShouldBeAdjusted (false)
     {
@@ -93,6 +95,8 @@ public:
 
     MapViewModelHelper*        mapViewModelHelper;
     GPSItemInfoSorter*         gpsItemInfoSorter;
+
+    QTimer*                    modelTimer;
 
     MapWidgetView::Application application;
 
@@ -116,6 +120,10 @@ MapWidgetView::MapWidgetView(QItemSelectionModel* const selectionModel,
     d->application    = application;
     d->selectionModel = selectionModel;
 
+    d->modelTimer     = new QTimer(this);
+    d->modelTimer->setSingleShot(true);
+    d->modelTimer->setInterval(50);
+
     switch (d->application)
     {
         case ApplicationDigikam:
@@ -127,7 +135,7 @@ MapWidgetView::MapWidgetView(QItemSelectionModel* const selectionModel,
                                                            this, ApplicationDigikam);
 
             connect(d->imageModel, SIGNAL(allRefreshingFinished()),
-                    this, SLOT(slotModelChanged()));
+                    d->modelTimer, SLOT(start()));
             break;
         }
 
@@ -140,10 +148,13 @@ MapWidgetView::MapWidgetView(QItemSelectionModel* const selectionModel,
                                                            this, ApplicationImportUI);
 
             connect(d->importModel, SIGNAL(allRefreshingFinished()),
-                    this, SLOT(slotModelChanged()));
+                    d->modelTimer, SLOT(start()));
             break;
         }
     }
+
+    connect(d->modelTimer, SIGNAL(timeout()),
+            this, SLOT(slotModelChanged()));
 
     QVBoxLayout* const vBoxLayout              = new QVBoxLayout(this);
     d->mapWidget                               = new MapWidget(this);
@@ -200,8 +211,7 @@ void MapWidgetView::setActive(const bool state)
 
     if (state && d->boundariesShouldBeAdjusted)
     {
-        d->boundariesShouldBeAdjusted = false;
-        d->mapWidget->adjustBoundariesToGroupedMarkers();
+        d->modelTimer->start();
     }
 }
 
@@ -263,15 +273,44 @@ CamItemInfo MapWidgetView::currentCamItemInfo() const
 
 void MapWidgetView::slotModelChanged()
 {
-   if (d->mapWidget && d->mapWidget->getActiveState())
-   {
-       d->boundariesShouldBeAdjusted = false;
-       d->mapWidget->adjustBoundariesToGroupedMarkers();
-   }
-   else
-   {
-       d->boundariesShouldBeAdjusted = true;
-   }
+    bool hasCoordinates = false;
+
+    switch (d->application)
+    {
+        case ApplicationDigikam:
+        {
+            foreach (const ItemInfo& info, d->imageModel->imageInfos())
+            {
+                if (info.hasCoordinates())
+                {
+                    hasCoordinates = true;
+                    break;
+                }
+            }
+
+            break;
+        }
+
+        case ApplicationImportUI:
+        {
+            hasCoordinates = true;
+            break;
+        }
+    }
+
+    if      (!hasCoordinates)
+    {
+        setEnabled(false);
+        d->boundariesShouldBeAdjusted = true;
+        d->mapWidget->setCenter(GeoCoordinates(52.0, 6.0));
+        d->mapWidget->setZoom(QLatin1String("marble:1108"));
+    }
+    else if (d->mapWidget->getActiveState())
+    {
+        setEnabled(true);
+        d->boundariesShouldBeAdjusted = false;
+        d->mapWidget->adjustBoundariesToGroupedMarkers();
+    }
 }
 
 //-------------------------------------------------------------------------------------------------------------
