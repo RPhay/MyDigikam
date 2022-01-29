@@ -273,6 +273,12 @@ CamItemInfo MapWidgetView::currentCamItemInfo() const
 
 void MapWidgetView::slotModelChanged()
 {
+    if (!d->mapWidget->getActiveState())
+    {
+        d->boundariesShouldBeAdjusted = true;
+        return;
+    }
+
     bool hasCoordinates = false;
 
     switch (d->application)
