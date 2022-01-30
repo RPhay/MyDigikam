@@ -110,4 +110,4 @@ cat $QT5_GITREV_LST
 echo "Archive local repository"
 
 rm -f $DOWNLOAD_DIR/kde-5.15-LTS.tar
-tar -cvf $DOWNLOAD_DIR/kde-5.15-LTS.tar -C $DOWNLOAD_DIR/kde-5.15-LTS .
+tar -cf $DOWNLOAD_DIR/kde-5.15-LTS.tar -C $DOWNLOAD_DIR/kde-5.15-LTS .
