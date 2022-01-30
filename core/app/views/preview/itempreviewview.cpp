@@ -208,8 +208,9 @@ ItemPreviewView::ItemPreviewView(QWidget* const parent, Mode mode, Album* const 
     d->peopleToggleAction->setCheckable(true);
     d->showFocusPointAction->setCheckable(true);
 
-    d->fullscreenAction    = new QAction(QIcon::fromTheme(QLatin1String("media-playback-start")), i18n("Show Fullscreen"),                this);
-    d->toolBar             = new QToolBar(this);
+    d->fullscreenAction         = new QAction(QIcon::fromTheme(QLatin1String("media-playback-start")),
+                                              i18n("Show Fullscreen"),                this);
+    d->toolBar                  = new QToolBar(this);
     d->toolBar->setStyleSheet(toolButtonStyleSheet());
 
     if (mode == IconViewPreview)
