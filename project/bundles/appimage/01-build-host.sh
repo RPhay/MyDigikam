@@ -109,6 +109,7 @@ urpmi --auto \
       patchelf \
       dpkg \
       ninja \
+      clang \
       python \
       ruby \
       ruby-devel \
@@ -146,7 +147,8 @@ urpmi --auto \
       ${LIBSUFFIX}fftw-devel \
       ${LIBSUFFIX}curl-devel \
       ${LIBSUFFIX}magick-devel \
-      ${LIBSUFFIX}wayland-devel
+      ${LIBSUFFIX}wayland-devel \
+      ${LIBSUFFIX}clang-devel
 
 if [[ "$DK_QTVERSION" = "5.14" ]] ; then
 
