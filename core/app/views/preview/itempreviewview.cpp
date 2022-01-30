@@ -40,6 +40,7 @@
 
 // KDE includes
 
+#include <kactioncollection.h>
 #include <klocalizedstring.h>
 
 // Local includes
@@ -167,18 +168,42 @@ ItemPreviewView::ItemPreviewView(QWidget* const parent, Mode mode, Album* const 
 
     // ------------------------------------------------------------
 
-    d->prevAction          = new QAction(QIcon::fromTheme(QLatin1String("go-previous")),          i18nc("go to previous image", "Back"),  this);
-    d->nextAction          = new QAction(QIcon::fromTheme(QLatin1String("go-next")),              i18nc("go to next image", "Forward"),   this);
-    d->rotLeftAction       = new QAction(QIcon::fromTheme(QLatin1String("object-rotate-left")),   i18nc("@info:tooltip", "Rotate Left"),  this);
-    d->rotRightAction      = new QAction(QIcon::fromTheme(QLatin1String("object-rotate-right")),  i18nc("@info:tooltip", "Rotate Right"), this);
+    KActionCollection* const ac = DigikamApp::instance()->actionCollection();
 
-    d->addPersonAction     = new QAction(QIcon::fromTheme(QLatin1String("list-add-user")),        i18n("Add a Face Tag"),                 this);
+    d->prevAction               = new QAction(QIcon::fromTheme(QLatin1String("go-previous")),
+                                              i18nc("go to previous image", "Back"),  this);
+    d->nextAction               = new QAction(QIcon::fromTheme(QLatin1String("go-next")),
+                                              i18nc("go to next image", "Forward"),   this);
+    d->rotLeftAction            = new QAction(QIcon::fromTheme(QLatin1String("object-rotate-left")),
+                                              i18nc("@info:tooltip", "Rotate Left"),  this);
+    d->rotRightAction           = new QAction(QIcon::fromTheme(QLatin1String("object-rotate-right")),
+                                              i18nc("@info:tooltip", "Rotate Right"), this);
 
-    d->forgetFacesAction   = new QAction(QIcon::fromTheme(QLatin1String("list-remove-user")),     i18n("Clear all faces on this image"),  this);
-    d->peopleToggleAction  = new QAction(QIcon::fromTheme(QLatin1String("im-user")),              i18n("Show Face Tags"),                 this);
+    d->addPersonAction          = ac->action(QLatin1String("add_face_tag_manually"));
 
-    d->addFocusPointAction = new QAction(QIcon::fromTheme(QLatin1String("list-add-user")),        i18n("Add a focus point"),              this);
-    d->showFocusPointAction = new QAction(QIcon::fromTheme(QLatin1String("im-user")),             i18n("Show focus points"),              this);
+    if (!d->addPersonAction)
+    {
+        d->addPersonAction      = new QAction(QIcon::fromTheme(QLatin1String("list-add-user")),
+                                              i18n("Add a Face Tag"),                 this);
+        ac->addAction(QLatin1String("add_face_tag_manually"), d->addPersonAction);
+    }
+
+    d->forgetFacesAction        = new QAction(QIcon::fromTheme(QLatin1String("list-remove-user")),
+                                              i18n("Clear all faces on this image"),  this);
+
+    d->peopleToggleAction       = ac->action(QLatin1String("toggle_show_face_tags"));
+
+    if (!d->peopleToggleAction)
+    {
+        d->peopleToggleAction   = new QAction(QIcon::fromTheme(QLatin1String("im-user")),
+                                              i18n("Show Face Tags"),                 this);
+        ac->addAction(QLatin1String("toggle_show_face_tags"), d->peopleToggleAction);
+    }
+
+    d->addFocusPointAction      = new QAction(QIcon::fromTheme(QLatin1String("list-add-user")),
+                                              i18n("Add a focus point"),              this);
+    d->showFocusPointAction     = new QAction(QIcon::fromTheme(QLatin1String("im-user")),
+                                              i18n("Show focus points"),              this);
 
     d->peopleToggleAction->setCheckable(true);
     d->showFocusPointAction->setCheckable(true);
@@ -215,8 +240,15 @@ ItemPreviewView::ItemPreviewView(QWidget* const parent, Mode mode, Album* const 
     connect(d->peopleToggleAction, SIGNAL(toggled(bool)),
             d->faceGroup, SLOT(setVisible(bool)));
 
-    connect(d->addPersonAction, SIGNAL(triggered()),
-            d->faceGroup, SLOT(addFace()));
+    connect(d->addPersonAction, &QAction::triggered,
+            this, [this]()
+        {
+            if (isVisible() && hasFocus())
+            {
+                d->faceGroup->addFace();
+            }
+        }
+    );
 
     connect(d->forgetFacesAction, SIGNAL(triggered()),
             d->faceGroup, SLOT(rejectAll()));

@@ -801,7 +801,7 @@ BUGFIXES:
 787 ==> 177186 - Current file count for album starts at 0, not 1.
 788 ==> 145723 - Changing the date under the "Comments/Tags" tab doesn't work.
 789 ==> 179585 - When moving files the window to suggest the new name does not show preview.
-790 ==> 
+790 ==> 449012 - Add keyboard shortcut for Show/Hide Face Tags in Preview Mode.
 791 ==> 
 792 ==> 
 793 ==> 
