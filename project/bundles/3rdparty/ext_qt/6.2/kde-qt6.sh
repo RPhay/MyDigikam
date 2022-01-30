@@ -92,4 +92,4 @@ cat $QT6_GITREV_LST
 echo "Archive local repository"
 
 rm -f $DOWNLOAD_DIR/kde-qt6.tar
-tar -cvf $DOWNLOAD_DIR/kde-qt6.tar -C $DOWNLOAD_DIR/kde-qt6 .
+tar -cf --checkpoint=.1000 $DOWNLOAD_DIR/kde-qt6.tar -C $DOWNLOAD_DIR/kde-qt6 .
