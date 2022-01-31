@@ -98,7 +98,7 @@ if(MINGW)
     ExternalProject_Add(ext_opencv
 
         GIT_REPOSITORY https://github.com/opencv/opencv.git
-        GIT_TAG 4.5.3
+        GIT_TAG 4.5.5
 
         CMAKE_ARGS -DCMAKE_BUILD_TYPE=${GLOBAL_BUILD_TYPE}
                    -DCMAKE_TOOLCHAIN_FILE=${MXE_TOOLCHAIN}
