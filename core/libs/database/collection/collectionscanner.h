@@ -35,6 +35,7 @@
 
 // Local includes
 
+#include "iteminfo.h"
 #include "digikam_export.h"
 #include "coredbaccess.h"
 #include "coredbalbuminfo.h"
@@ -155,6 +156,8 @@ public:
      */
     static bool databaseInitialScanDone();
 
+    ItemInfoList getNewInfoList();
+
     /**
      * Carries out a partial scan on the specified path of the collection.
      * The includes scanning for new files + albums and updating modified file data.
@@ -268,6 +271,7 @@ Q_SIGNALS:
     void startScanningForStaleAlbums();
     void startScanningAlbumRoots();
     void startCompleteScan();
+    void signalScannedNewImage(const QFileInfo& info);
     //@}
 
     //@{

@@ -23,6 +23,10 @@
  * ============================================================ */
 
 #include "newitemsfinder.h"
+#include "collectionscanner.h"
+#include "facescansettings.h"
+#include "applicationsettings.h"
+#include "facesdetector.h"
 
 // Qt includes
 
@@ -163,6 +167,22 @@ void NewItemsFinder::slotStart()
             break;
         }
     }
+}
+
+void NewItemsFinder::slotDetectFaces()
+{
+    ItemInfoList newImages = ScanController::instance()->getNewItemList();
+
+    FaceScanSettings settings;
+
+    settings.accuracy               = ApplicationSettings::instance()->getFaceDetectionAccuracy();
+    settings.useYoloV3              = ApplicationSettings::instance()->getFaceDetectionYoloV3();
+    settings.task                   = FaceScanSettings::DetectAndRecognize;
+    settings.alreadyScannedHandling = FaceScanSettings::Rescan;
+    settings.infos                  = newImages;
+
+    FacesDetector* const tool = new FacesDetector(settings);
+    tool->start();
 }
 
 void NewItemsFinder::slotScanStarted(const QString& info)

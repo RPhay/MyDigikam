@@ -180,6 +180,7 @@ public:
     QHash<QString, QDateTime>                     albumDateCache;
 
     CollectionScannerObserver*                    observer;
+    ItemInfoList                                  newItemList;
 };
 
 } // namespace Digikam

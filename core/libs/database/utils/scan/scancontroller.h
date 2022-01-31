@@ -195,6 +195,8 @@ public:
      */
     void resumeCollectionScan();
 
+    ItemInfoList getNewItemList();
+
 Q_SIGNALS:
 
     void databaseInitialized(bool success);
@@ -354,6 +356,7 @@ public:
 Q_SIGNALS:
 
     void collectionScanFinished();
+    void newImages(const ItemInfoList&);
     void partialScanDone(const QString& path);
     void completeScanDone();
     void completeScanCanceled();

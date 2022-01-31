@@ -435,6 +435,9 @@ public:
     void setShowOnlyPersonTagsInPeopleSidebar(bool val);
     bool showOnlyPersonTagsInPeopleSidebar() const;
 
+    void setDetectFacesInNewImages(bool val);
+    bool getDetectFacesInNewImages() const;
+
     /**
      * Defines the way in which string comparisons are performed.
      *

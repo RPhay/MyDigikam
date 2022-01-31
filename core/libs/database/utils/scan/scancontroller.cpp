@@ -113,6 +113,8 @@ ScanController::ScanController()
 
     d->running = true;
     start();
+
+    d-> newItemList;
 }
 
 ScanController::~ScanController()
@@ -256,6 +258,8 @@ void ScanController::run()
                 d->completeScanDeferredAlbums = scanner.deferredAlbumPaths();
                 d->finishScanAllowed          = false;
             }
+
+            d->newItemList = scanner.getNewInfoList();
         }
         else if (doFinishScan)
         {
@@ -306,6 +310,11 @@ void ScanController::run()
             emit completeScanDone();
         }
     }
+}
+
+ItemInfoList ScanController::getNewItemList()
+{
+    return d->newItemList;
 }
 
 /// (also implementing InitializationObserver)

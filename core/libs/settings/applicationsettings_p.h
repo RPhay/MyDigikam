@@ -114,6 +114,7 @@ public:
     static const QString configExpandNewCurrentItemEntry;
     static const QString configScrollItemToCenterEntry;
     static const QString configShowOnlyPersonTagsInPeopleSidebarEntry;
+    static const QString configDetectFacesInNewImagesEntry;
     static const QString configRatingFilterConditionEntry;
     static const QString configRecursiveAlbumsEntry;
     static const QString configRecursiveTagsEntry;
@@ -215,6 +216,8 @@ public:
     bool                                         scrollItemToCenter;
     /// tag filter setting
     bool                                         showOnlyPersonTagsInPeopleSidebar;
+
+    bool                                         detectFacesInNewImages;
 
     /// icon view settings
     bool                                         iconShowName;

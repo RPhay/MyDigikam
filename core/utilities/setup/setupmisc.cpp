@@ -86,6 +86,7 @@ public:
         expandNewCurrentItemCheck               (nullptr),
         scrollItemToCenterCheck                 (nullptr),
         showOnlyPersonTagsInPeopleSidebarCheck  (nullptr),
+        detectFacesInNewImagesCheck             (nullptr),
         scanAtStart                             (nullptr),
         useFastScan                             (nullptr),
         cleanAtStart                            (nullptr),
@@ -121,6 +122,7 @@ public:
     QCheckBox*                expandNewCurrentItemCheck;
     QCheckBox*                scrollItemToCenterCheck;
     QCheckBox*                showOnlyPersonTagsInPeopleSidebarCheck;
+    QCheckBox*                detectFacesInNewImagesCheck;
     QCheckBox*                scanAtStart;
     QCheckBox*                useFastScan;
     QCheckBox*                cleanAtStart;
@@ -198,6 +200,8 @@ SetupMisc::SetupMisc(QWidget* const parent)
     d->expandNewCurrentItemCheck              = new QCheckBox(i18n("Expand current tree item with a single mouse click"), behaviourPanel);
     d->scrollItemToCenterCheck                = new QCheckBox(i18n("Scroll current item to center of thumbbar"), behaviourPanel);
     d->showOnlyPersonTagsInPeopleSidebarCheck = new QCheckBox(i18n("Show only face tags for assigning names in people sidebar"), behaviourPanel);
+
+    d->detectFacesInNewImagesCheck = new QCheckBox(i18n("Detect faces in newly added images"), behaviourPanel);
 
     // ---------------------------------------------------------
 
@@ -277,8 +281,9 @@ SetupMisc::SetupMisc(QWidget* const parent)
     layout->addWidget(d->expandNewCurrentItemCheck,               7, 0, 1, 4);
     layout->addWidget(d->scrollItemToCenterCheck,                 8, 0, 1, 4);
     layout->addWidget(d->showOnlyPersonTagsInPeopleSidebarCheck,  9, 0, 1, 4);
-    layout->addWidget(minSimilarityBoundHbox,                    10, 0, 1, 4);
-    layout->addWidget(upOptionsGroup,                            11, 0, 1, 4);
+    layout->addWidget(d->detectFacesInNewImagesCheck,            10, 0, 1, 4);
+    layout->addWidget(minSimilarityBoundHbox,                    11, 0, 1, 4);
+    layout->addWidget(upOptionsGroup,                            12, 0, 1, 4);
     layout->setColumnStretch(3, 10);
     layout->setRowStretch(12, 10);
 
@@ -514,6 +519,7 @@ void SetupMisc::applySettings()
     settings->setExpandNewCurrentItem(d->expandNewCurrentItemCheck->isChecked());
     settings->setScrollItemToCenter(d->scrollItemToCenterCheck->isChecked());
     settings->setShowOnlyPersonTagsInPeopleSidebar(d->showOnlyPersonTagsInPeopleSidebarCheck->isChecked());
+    settings->setDetectFacesInNewImages(d->detectFacesInNewImagesCheck->isChecked());
     settings->setSidebarTitleStyle(d->sidebarType->currentIndex() == 0 ? DMultiTabBar::ActiveIconText : DMultiTabBar::AllIconsText);
     settings->setUpdateType(d->updateType->currentIndex());
     settings->setUpdateWithDebug(d->updateWithDebug->isChecked());
@@ -563,6 +569,7 @@ void SetupMisc::readSettings()
     d->expandNewCurrentItemCheck->setChecked(settings->getExpandNewCurrentItem());
     d->scrollItemToCenterCheck->setChecked(settings->getScrollItemToCenter());
     d->showOnlyPersonTagsInPeopleSidebarCheck->setChecked(settings->showOnlyPersonTagsInPeopleSidebar());
+    d->detectFacesInNewImagesCheck->setChecked(settings->getDetectFacesInNewImages());
     d->sidebarType->setCurrentIndex(settings->getSidebarTitleStyle() == DMultiTabBar::ActiveIconText ? 0 : 1);
     d->updateType->setCurrentIndex(settings->getUpdateType());
     d->updateWithDebug->setChecked(settings->getUpdateWithDebug());

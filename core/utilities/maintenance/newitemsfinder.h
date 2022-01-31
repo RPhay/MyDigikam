@@ -60,6 +60,7 @@ public:
 private Q_SLOTS:
 
     void slotStart() override;
+    void slotDetectFaces();
     void slotScanStarted(const QString&);
     void slotPartialScanDone(const QString&);
     void slotTotalFilesToScan(int);

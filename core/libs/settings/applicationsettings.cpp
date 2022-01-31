@@ -242,6 +242,7 @@ void ApplicationSettings::readSettings()
     d->expandNewCurrentItem              = group.readEntry(d->configExpandNewCurrentItemEntry,                        true);
     d->scrollItemToCenter                = group.readEntry(d->configScrollItemToCenterEntry,                          false);
     d->showOnlyPersonTagsInPeopleSidebar = group.readEntry(d->configShowOnlyPersonTagsInPeopleSidebarEntry,           true);
+    d->detectFacesInNewImages            = group.readEntry(d->configDetectFacesInNewImagesEntry,                      false);
     d->stringComparisonType              = (StringComparisonType) group.readEntry(d->configStringComparisonTypeEntry, (int) Natural);
 
 #ifdef Q_OS_WIN
@@ -452,6 +453,7 @@ void ApplicationSettings::saveSettings()
     group.writeEntry(d->configExpandNewCurrentItemEntry,               d->expandNewCurrentItem);
     group.writeEntry(d->configScrollItemToCenterEntry,                 d->scrollItemToCenter);
     group.writeEntry(d->configShowOnlyPersonTagsInPeopleSidebarEntry,  d->showOnlyPersonTagsInPeopleSidebar);
+    group.writeEntry(d->configDetectFacesInNewImagesEntry,             d->detectFacesInNewImages);
     group.writeEntry(d->configStringComparisonTypeEntry,               (int) d->stringComparisonType);
 
 #ifdef HAVE_APPSTYLE_SUPPORT
