@@ -396,7 +396,6 @@ qlonglong CollectionScanner::scanFile(const QString& albumRoot, const QString& a
 
 void CollectionScanner::scanFile(const ItemInfo& info, FileScanMode mode)
 {
-    qCDebug(DIGIKAM_DATABASE_LOG) << "-------------------- scanned image";
 
     if (info.isNull() || !info.isLocationAvailable())
     {
@@ -987,8 +986,6 @@ qlonglong CollectionScanner::scanNewFile(const QFileInfo& info, int albumId)
     {
         return -1;
     }
-    qCDebug(DIGIKAM_DATABASE_LOG) << "-------------------- scanNewFile";
-
 
     ItemScanner scanner(info);
     scanner.setCategory(category(info));
@@ -1034,8 +1031,6 @@ qlonglong CollectionScanner::scanNewFile(const QFileInfo& info, int albumId)
 
     d->finishScanner(scanner);
 
-    qCDebug(DIGIKAM_DATABASE_LOG) << "++++++++++++++++   new item scanned";
-
     qlonglong imageId = CoreDbAccess().db()->getImageId(albumId, info.fileName());
     ItemInfo itemInfo(imageId);
     d->newItemList << itemInfo;
@@ -1050,7 +1045,6 @@ qlonglong CollectionScanner::scanNewFileFullScan(const QFileInfo& info, int albu
     {
         return -1;
     }
-    qCDebug(DIGIKAM_DATABASE_LOG) << "-------------------- scanNewFileFullScan";
 
     ItemScanner scanner(info);
     scanner.setCategory(category(info));
@@ -1218,7 +1212,6 @@ bool CollectionScanner::databaseInitialScanDone()
 
 ItemInfoList CollectionScanner::getNewInfoList()
 {
-    qCDebug(DIGIKAM_DATABASE_LOG) << "\n\n\nItemInfoList CollectionScanner::getNewInfoList(): " << d->newItemList.length();
     return d->newItemList;
 }
 
