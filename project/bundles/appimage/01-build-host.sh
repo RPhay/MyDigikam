@@ -131,6 +131,9 @@ urpmi --auto \
       ${LIBSUFFIX}xinerama-devel \
       ${LIBSUFFIX}sane1-devel \
       ${LIBSUFFIX}xcb-util1 \
+      ${LIBSUFFIX}xcb-util-cursor-devel \
+      ${LIBSUFFIX}xcb-util-wm-devel \
+      ${LIBSUFFIX}xcb-xrm-devel \
       ${LIBSUFFIX}xi-devel \
       ${LIBSUFFIX}xtst-devel \
       ${LIBSUFFIX}xrandr-devel \
