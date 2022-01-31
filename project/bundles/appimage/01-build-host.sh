@@ -150,7 +150,9 @@ urpmi --auto \
       ${LIBSUFFIX}magick-devel \
       ${LIBSUFFIX}wayland-devel \
       ${LIBSUFFIX}clang-devel \
-      ${LIBSUFFIX}sm-devel
+      ${LIBSUFFIX}sm-devel \
+      ${LIBSUFFIX}freeglut-devel \
+      ${LIBSUFFIX}mesaegl-devel
 
 if [[ "$DK_QTVERSION" = "5.14" ]] ; then
 
