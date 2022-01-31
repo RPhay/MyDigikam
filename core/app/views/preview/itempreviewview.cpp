@@ -238,8 +238,21 @@ ItemPreviewView::ItemPreviewView(QWidget* const parent, Mode mode, Album* const 
     connect(d->rotRightAction, SIGNAL(triggered()),
             this, SLOT(slotRotateRight()));
 
-    connect(d->peopleToggleAction, SIGNAL(toggled(bool)),
-            d->faceGroup, SLOT(setVisible(bool)));
+    connect(d->peopleToggleAction, &QAction::toggled,
+            this, [this](bool checked)
+        {
+            if (checked)
+            {
+                d->faceGroup->setInfo(d->item->imageInfo());
+            }
+            else
+            {
+                d->faceGroup->setInfo(ItemInfo());
+            }
+
+            d->faceGroup->setVisible(checked);
+        }
+    );
 
     connect(d->addPersonAction, &QAction::triggered,
             this, [this]()
@@ -257,8 +270,25 @@ ItemPreviewView::ItemPreviewView(QWidget* const parent, Mode mode, Album* const 
     connect(d->addFocusPointAction, SIGNAL(triggered()),
             d->focusPointGroup, SLOT(addPoint()));
 
-    connect(d->showFocusPointAction, SIGNAL(toggled(bool)),
-            d->focusPointGroup, SLOT(setVisible(bool)));
+    connect(d->showFocusPointAction, &QAction::toggled,
+            this, [this](bool checked)
+        {
+            bool add = false;
+
+            if (checked)
+            {
+                d->focusPointGroup->setInfo(d->item->imageInfo());
+                add = d->focusPointGroup->isAllowedToAddFocusPoint();
+            }
+            else
+            {
+                d->focusPointGroup->setInfo(ItemInfo());
+            }
+
+            d->focusPointGroup->setVisible(checked);
+            d->addFocusPointAction->setEnabled(add);
+        }
+    );
 
     connect(d->fullscreenAction, SIGNAL(triggered()),
             this, SLOT(slotSlideShowCurrent()));
@@ -300,10 +330,29 @@ void ItemPreviewView::imageLoaded()
     emit signalPreviewLoaded(true);
     d->rotLeftAction->setEnabled(true);
     d->rotRightAction->setEnabled(true);
-    d->faceGroup->setInfo(d->item->imageInfo());
 
-    d->focusPointGroup->setInfo(d->item->imageInfo());
-    d->addFocusPointAction->setEnabled(d->focusPointGroup->isAllowedToAddFocusPoint());
+    if (d->peopleToggleAction->isChecked())
+    {
+        d->faceGroup->setInfo(d->item->imageInfo());
+    }
+    else
+    {
+        d->faceGroup->setInfo(ItemInfo());
+    }
+
+    bool add = false;
+
+    if (d->showFocusPointAction->isChecked())
+    {
+        d->focusPointGroup->setInfo(d->item->imageInfo());
+        add = d->focusPointGroup->isAllowedToAddFocusPoint();
+    }
+    else
+    {
+        d->focusPointGroup->setInfo(ItemInfo());
+    }
+
+    d->addFocusPointAction->setEnabled(add);
 }
 
 void ItemPreviewView::imageLoadingFailed()
@@ -311,6 +360,7 @@ void ItemPreviewView::imageLoadingFailed()
     emit signalPreviewLoaded(false);
     d->rotLeftAction->setEnabled(false);
     d->rotRightAction->setEnabled(false);
+    d->addFocusPointAction->setEnabled(false);
     d->faceGroup->setInfo(ItemInfo());
     d->focusPointGroup->setInfo(ItemInfo());
 
