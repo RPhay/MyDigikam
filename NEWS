@@ -802,14 +802,14 @@ BUGFIXES:
 788 ==> 145723 - Changing the date under the "Comments/Tags" tab doesn't work.
 789 ==> 179585 - When moving files the window to suggest the new name does not show preview.
 790 ==> 449012 - Add keyboard shortcut for Show/Hide Face Tags in Preview Mode.
-791 ==> 
-792 ==> 
-793 ==> 
-794 ==> 
-795 ==> 
-796 ==> 
-797 ==> 
-798 ==> 
-799 ==> 
+791 ==> 108737 - Relocation error: undefined symbol.
+792 ==> 108838 - Make fails during link step.
+793 ==> 155054 - Misleading error messages regarding too old MetaEngine.
+794 ==> 309997 - Installs several static libraries, possible bug?
+795 ==> 372284 - digiKam disables application style support by default.
+796 ==> 104600 - Can't "make": autoheader /usr/bin/autom4te failed with exit.
+797 ==> 094363 - Wish: Linking and lazy copying.
+798 ==> 245781 - CmakeLists.txt should permit to select export tools.
+799 ==> 090176 - KDE compatibility in digiKam Camera Operations.
 800 ==> 
 801 ==> 
