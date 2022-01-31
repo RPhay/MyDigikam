@@ -74,6 +74,7 @@ urpmi --auto \
       libxcb-devel \
       xcb-util-keysyms-devel \
       xcb-util-devel \
+      libxkbcommon-utils \
       xkeyboard-config \
       xscreensaver \
       gperf \
@@ -148,7 +149,8 @@ urpmi --auto \
       ${LIBSUFFIX}curl-devel \
       ${LIBSUFFIX}magick-devel \
       ${LIBSUFFIX}wayland-devel \
-      ${LIBSUFFIX}clang-devel
+      ${LIBSUFFIX}clang-devel \
+      ${LIBSUFFIX}sm-devel
 
 if [[ "$DK_QTVERSION" = "5.14" ]] ; then
 
