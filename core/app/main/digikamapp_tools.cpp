@@ -109,7 +109,10 @@ void DigikamApp::slotScanNewItems()
     d->maintenanceAction->setEnabled(false);
     d->scanNewItemsAction->setEnabled(false);
 
-    bool detectFaces = false;
+    NewItemsFinder* const tool = new NewItemsFinder(NewItemsFinder::ScanDeferredFiles);
+
+    connect(tool, SIGNAL(signalComplete()),
+            this, SLOT(slotMaintenanceDone()));
 
     ApplicationSettings* const settings = ApplicationSettings::instance();
 
@@ -117,14 +120,10 @@ void DigikamApp::slotScanNewItems()
     {
         if (settings->getDetectFacesInNewImages())
         {
-            detectFaces = settings->getDetectFacesInNewImages();
+            connect(tool, SIGNAL(signalComplete()),
+                this, SLOT(slotDetectFaces()));
         }
     }
-
-    NewItemsFinder* const tool = new NewItemsFinder(NewItemsFinder::ScanDeferredFiles, QStringList(), detectFaces);
-
-    connect(tool, SIGNAL(signalComplete()),
-            this, SLOT(slotMaintenanceDone()));
 
     tool->start();
 }

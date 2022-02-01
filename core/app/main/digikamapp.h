@@ -179,6 +179,7 @@ private Q_SLOTS:
     void slotScanNewItems();
     void slotMaintenanceDone();
     void slotDatabaseMigration();
+    void slotDetectFaces();
 //@}
 
 //@{

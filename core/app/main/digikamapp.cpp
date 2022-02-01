@@ -27,6 +27,7 @@
  * ============================================================ */
 
 #include "digikamapp_p.h"
+#include "facesdetector.h"
 
 namespace Digikam
 {
@@ -350,7 +351,7 @@ void DigikamApp::show()
     if (ApplicationSettings::instance()->getScanAtStart() ||
         !CollectionScanner::databaseInitialScanDone())
     {
-        bool detectFaces = false;
+        NewItemsFinder* const tool = new NewItemsFinder(NewItemsFinder::ScanDeferredFiles);
 
         ApplicationSettings* const settings = ApplicationSettings::instance();
 
@@ -358,11 +359,11 @@ void DigikamApp::show()
         {
             if (settings->getDetectFacesInNewImages())
             {
-                detectFaces = settings->getDetectFacesInNewImages();
+                connect(tool, SIGNAL(signalComplete()),
+                    this, SLOT(slotDetectFaces()));
             }
         }
 
-        NewItemsFinder* const tool = new NewItemsFinder(NewItemsFinder::ScanDeferredFiles, QStringList(), detectFaces);
         QTimer::singleShot(1000, tool, SLOT(start()));
     }
 
@@ -1116,6 +1117,22 @@ void DigikamApp::slotColorManagementOptionsChanged()
     d->viewCMViewAction->setEnabled(settings.enableCM);
     d->viewCMViewAction->setChecked(settings.useManagedPreviews);
     d->viewCMViewAction->blockSignals(false);
+}
+
+void DigikamApp::slotDetectFaces()
+{
+    ItemInfoList newImages = ScanController::instance()->getNewItemList();
+
+    FaceScanSettings settings;
+
+    settings.accuracy               = ApplicationSettings::instance()->getFaceDetectionAccuracy();
+    settings.useYoloV3              = ApplicationSettings::instance()->getFaceDetectionYoloV3();
+    settings.task                   = FaceScanSettings::DetectAndRecognize;
+    settings.alreadyScannedHandling = FaceScanSettings::Rescan;
+    settings.infos                  = newImages;
+
+    FacesDetector* const tool = new FacesDetector(settings);
+    tool->start();
 }
 
 DInfoInterface* DigikamApp::infoIface(DPluginAction* const ac)

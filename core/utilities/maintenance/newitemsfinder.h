@@ -54,14 +54,12 @@ public:
 
     explicit NewItemsFinder(const FinderMode mode = CompleteCollectionScan,
                             const QStringList& foldersToScan = QStringList(),
-                            const bool shouldDetectFaces = false,
                             ProgressItem* const parent = nullptr);
     ~NewItemsFinder() override;
 
 private Q_SLOTS:
 
     void slotStart() override;
-    void slotDetectFaces();
     void slotScanStarted(const QString&);
     void slotPartialScanDone(const QString&);
     void slotTotalFilesToScan(int);
