@@ -59,12 +59,13 @@ public:
     FinderMode  mode;
 
     bool        cancel;
+    bool        shouldDetectFaces;
 
     QStringList foldersToScan;
     QStringList foldersScanned;
 };
 
-NewItemsFinder::NewItemsFinder(const FinderMode mode, const QStringList& foldersToScan, ProgressItem* const parent)
+NewItemsFinder::NewItemsFinder(const FinderMode mode, const QStringList& foldersToScan, const bool shouldDetectFaces, ProgressItem* const parent)
     : MaintenanceTool(QLatin1String("NewItemsFinder"), parent),
       d(new Private)
 {
@@ -93,6 +94,12 @@ NewItemsFinder::NewItemsFinder(const FinderMode mode, const QStringList& folders
 
     d->foldersToScan = foldersToScan;
     d->foldersToScan.sort();
+
+    if (shouldDetectFaces)
+    {
+        connect(ScanController::instance(), SIGNAL(completeScanDone()),
+            this, SLOT(slotDetectFaces()));
+    }
 }
 
 NewItemsFinder::~NewItemsFinder()

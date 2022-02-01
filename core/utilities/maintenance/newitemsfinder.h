@@ -54,6 +54,7 @@ public:
 
     explicit NewItemsFinder(const FinderMode mode = CompleteCollectionScan,
                             const QStringList& foldersToScan = QStringList(),
+                            const bool shouldDetectFaces = false,
                             ProgressItem* const parent = nullptr);
     ~NewItemsFinder() override;
 

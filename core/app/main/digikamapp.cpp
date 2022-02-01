@@ -350,7 +350,19 @@ void DigikamApp::show()
     if (ApplicationSettings::instance()->getScanAtStart() ||
         !CollectionScanner::databaseInitialScanDone())
     {
-        NewItemsFinder* const tool = new NewItemsFinder(NewItemsFinder::ScanDeferredFiles);
+        bool detectFaces = false;
+
+        ApplicationSettings* const settings = ApplicationSettings::instance();
+
+        if (settings)
+        {
+            if (settings->getDetectFacesInNewImages())
+            {
+                detectFaces = settings->getDetectFacesInNewImages();
+            }
+        }
+
+        NewItemsFinder* const tool = new NewItemsFinder(NewItemsFinder::ScanDeferredFiles, QStringList(), detectFaces);
         QTimer::singleShot(1000, tool, SLOT(start()));
     }
 
