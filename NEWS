@@ -438,7 +438,7 @@ BUGFIXES:
 424 ==> 288977 - Sync tagged faces with Akonadi.
 425 ==> 313505 - Searching the bug-reporting item, it has disappeared.
 426 ==> 319169 - Interfaces to relevant programs such as GIMP, Photoshop, Lightroom etc.
-427 ==> 120192 - Work together with krita devs.
+427 ==> 376881 - Add support of Windows UNC-Path in advanced rename tool.
 428 ==> 119904 - Kde gamma module is is not available.
 429 ==> 319147 - Unable to launch bug tracking out of/from digiKam.
 430 ==> 091361 - Store digiKam files in ~/.digikam/.
@@ -812,7 +812,7 @@ BUGFIXES:
 798 ==> 245781 - CmakeLists.txt should permit to select export tools.
 799 ==> 090176 - KDE compatibility in digiKam Camera Operations.
 800 ==> 147986 - Download with Date & Time based renaming: hour is off by +1.
-801 ==> 376881 - Add support of Windows UNC-Path in advanced rename tool.
+801 ==> 
 802 ==> 
 803 ==> 
 804 ==> 
