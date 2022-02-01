@@ -811,5 +811,5 @@ BUGFIXES:
 797 ==> 094363 - Wish: Linking and lazy copying.
 798 ==> 245781 - CmakeLists.txt should permit to select export tools.
 799 ==> 090176 - KDE compatibility in digiKam Camera Operations.
-800 ==> 
+800 ==> 147986 - Download with Date & Time based renaming: hour is off by +1.
 801 ==> 
