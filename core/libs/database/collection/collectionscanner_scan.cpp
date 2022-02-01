@@ -1034,7 +1034,6 @@ qlonglong CollectionScanner::scanNewFile(const QFileInfo& info, int albumId)
     qlonglong imageId = CoreDbAccess().db()->getImageId(albumId, info.fileName());
     ItemInfo itemInfo(imageId);
     d->newItemList << itemInfo;
-    qCDebug(DIGIKAM_DATABASE_LOG) << "\n\n\n d->newItemList: " << d->newItemList.length();
 
     return scanner.id();
 }
