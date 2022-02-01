@@ -37,6 +37,8 @@ ExternalProject_Add(ext_qt
     # Compile with Ninja build framework.
     BUILD_COMMAND ninja
 
+    INSTALL_COMMAND ninja install
+
     UPDATE_COMMAND ""
 
     # We need to compile in source code else configuration fail with QtQuick.
