@@ -1123,6 +1123,11 @@ void DigikamApp::slotDetectFaces()
 {
     ItemInfoList newImages = ScanController::instance()->getNewItemList();
 
+    if (newImages.length() == 0)
+    {
+        return;
+    }
+
     FaceScanSettings settings;
 
     settings.accuracy               = ApplicationSettings::instance()->getFaceDetectionAccuracy();
