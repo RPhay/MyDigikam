@@ -812,4 +812,14 @@ BUGFIXES:
 798 ==> 245781 - CmakeLists.txt should permit to select export tools.
 799 ==> 090176 - KDE compatibility in digiKam Camera Operations.
 800 ==> 147986 - Download with Date & Time based renaming: hour is off by +1.
-801 ==> 
+801 ==> 376881 - Add support of Windows UNC-Path in advanced rename tool.
+802 ==> 
+803 ==> 
+804 ==> 
+805 ==> 
+806 ==> 
+807 ==> 
+808 ==> 
+809 ==> 
+810 ==> 
+811 ==> 
