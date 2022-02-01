@@ -813,7 +813,7 @@ BUGFIXES:
 799 ==> 090176 - KDE compatibility in digiKam Camera Operations.
 800 ==> 147986 - Download with Date & Time based renaming: hour is off by +1.
 801 ==> 426497 - Light table displays wrong picture.
-802 ==> 
+802 ==> 449476 - "Sort by Face" not working in Album view.
 803 ==> 
 804 ==> 
 805 ==> 
