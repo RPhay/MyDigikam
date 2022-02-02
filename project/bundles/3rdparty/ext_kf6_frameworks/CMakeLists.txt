@@ -17,43 +17,44 @@ ExternalProject_Add(ext_kf6_frameworks
 
     # Check version installed and system dependencies. Install modules configuration.
 
-    CONFIGURE_COMMAND cd <SOURCE_DIR> &&
-                      <SOURCE_DIR>/kdesrc-build --rc-file=${CMAKE_CURRENT_SOURCE_DIR}/kdesrc-buildrc --version &&
-                      <SOURCE_DIR>/kdesrc-build --rc-file=${CMAKE_CURRENT_SOURCE_DIR}/kdesrc-buildrc --metadata-only &&
-                      <SOURCE_DIR>/kdesrc-build --rc-file=${CMAKE_CURRENT_SOURCE_DIR}/kdesrc-buildrc --pretend
+    CONFIGURE_COMMAND cp ${CMAKE_CURRENT_SOURCE_DIR}/kdesrc-buildrc <SOURCE_DIR>/ &&
+                      cd <SOURCE_DIR> &&
+                      <SOURCE_DIR>/kdesrc-build --rc-file=<SOURCE_DIR>/kdesrc-buildrc --version &&
+                      <SOURCE_DIR>/kdesrc-build --rc-file=<SOURCE_DIR>/kdesrc-buildrc --metadata-only &&
+                      <SOURCE_DIR>/kdesrc-build --rc-file=<SOURCE_DIR>/kdesrc-buildrc --pretend
 
     BUILD_COMMAND cd <SOURCE_DIR> &&
-                  <SOURCE_DIR>/kdesrc-build --rc-file=${CMAKE_CURRENT_SOURCE_DIR}/kdesrc-buildrc --stop-on-failure
+                  <SOURCE_DIR>/kdesrc-build --rc-file=<SOURCE_DIR>/kdesrc-buildrc --stop-on-failure
                                extra-cmake-modules
-                               kconfig            
-                               breeze-icons       
-                               kcoreaddons        
-                               kwindowsystem      
-                               solid              
-                               threadweaver       
-                               karchive           
-                               kdbusaddons        
-                               ki18n              
-                               kcrash             
-                               kcodecs            
-                               kauth              
-                               kguiaddons         
-                               kwidgetsaddons     
-                               kitemviews         
-                               kcompletion        
-                               kconfigwidgets     
-                               kiconthemes        
-                               kservice           
-                               kglobalaccel       
-                               kxmlgui            
-                               kbookmarks         
-                               kimageformats      
-                               libksane           
-                               kjobwidgets        
-                               kio                
-                               knotifyconfig      
-                               knotifications     
-                               marble             
+                               kconfig
+                               breeze-icons
+                               kcoreaddons
+                               kwindowsystem
+                               solid
+                               threadweaver
+                               karchive
+                               kdbusaddons
+                               ki18n
+                               kcrash
+                               kcodecs
+                               kauth
+                               kguiaddons
+                               kwidgetsaddons
+                               kitemviews
+                               kcompletion
+                               kconfigwidgets
+                               kiconthemes
+                               kservice
+                               kglobalaccel
+                               kxmlgui
+                               bookmarks
+                               kimageformats
+                               libksane
+                               kjobwidgets
+                               kio
+                               knotifyconfig
+                               knotifications
+                               marble
                                kcalendarcore
 
     INSTALL_COMMAND ""
