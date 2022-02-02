@@ -153,7 +153,10 @@ else() #Linux
 
             GIT_REPOSITORY https://github.com/wang-bin/QtAV.git
 
-            PATCH_COMMAND rm -fv <SOURCE_DIR>/examples/examples.pro &&
+            PATCH_COMMAND git reset --hard &&
+                          ${PATCH_COMMAND} -p1 -i ${CMAKE_CURRENT_SOURCE_DIR}/qtav-qt6-pure.patch &&
+                          ${PATCH_COMMAND} -p1 -i ${CMAKE_CURRENT_SOURCE_DIR}/qtav-rules-qt6.patch &&
+                          rm -fv <SOURCE_DIR>/examples/examples.pro &&
                           rm -fv <SOURCE_DIR>/qml/libQmlAV.pri &&
                           rm -fv <SOURCE_DIR>/qml/libQmlAV.pro
 
@@ -178,12 +181,12 @@ else() #Linux
 
             INSTALL_COMMAND cp -rfv <SOURCE_DIR>/src/QtAV ${INSTALL_ROOT}/include/ &&
                             cp -rfv <SOURCE_DIR>/widgets/QtAVWidgets ${INSTALL_ROOT}/include/ &&
-                            cp -fv  <SOURCE_DIR>/build/lib/libQtAV.so ${INSTALL_ROOT}/lib/ &&
-                            cp -fv  <SOURCE_DIR>/build/lib/libQtAV.so.1 ${INSTALL_ROOT}/lib/ &&
-                            cp -fv  <SOURCE_DIR>/build/lib/libQtAV.so.1.13.0 ${INSTALL_ROOT}/lib/ &&
-                            cp -fv  <SOURCE_DIR>/build/lib/libQtAVWidgets.so ${INSTALL_ROOT}/lib/ &&
-                            cp -fv  <SOURCE_DIR>/build/lib/libQtAVWidgets.so.1 ${INSTALL_ROOT}/lib/ &&
-                            cp -fv  <SOURCE_DIR>/build/lib/libQtAVWidgets.so.1.13.0 ${INSTALL_ROOT}/lib/
+                            cp -fv  <SOURCE_DIR>/build/lib_linux_x86_64_llvm/libQtAV.so ${INSTALL_ROOT}/lib/ &&
+                            cp -fv  <SOURCE_DIR>/build/lib_linux_x86_64_llvm/libQtAV.so.1 ${INSTALL_ROOT}/lib/ &&
+                            cp -fv  <SOURCE_DIR>/build/lib_linux_x86_64_llvm/libQtAV.so.1.13.0 ${INSTALL_ROOT}/lib/ &&
+                            cp -fv  <SOURCE_DIR>/build/lib_linux_x86_64_llvm/libQtAVWidgets.so ${INSTALL_ROOT}/lib/ &&
+                            cp -fv  <SOURCE_DIR>/build/lib_linux_x86_64_llvm/libQtAVWidgets.so.1 ${INSTALL_ROOT}/lib/ &&
+                            cp -fv  <SOURCE_DIR>/build/lib_linux_x86_64_llvm/libQtAVWidgets.so.1.13.0 ${INSTALL_ROOT}/lib/
 
             BUILD_IN_SOURCE 1
 

@@ -1,0 +1,79 @@
+diff --git a/src/filter/X11FilterContext.cpp b/src/filter/X11FilterContext.cpp
+index 849d1fb0..8e3d84d3 100644
+--- a/src/filter/X11FilterContext.cpp
++++ b/src/filter/X11FilterContext.cpp
+@@ -182,7 +182,7 @@ void X11FilterContext::drawPlainText(const QPointF &pos, const QString &text)
+     this->plain = true;
+ 
+     QFontMetrics fm(font);
+-    text_q = QImage(fm.width(text), fm.height(), QImage::Format_ARGB32);
++    text_q = QImage(fm.horizontalAdvance(text), fm.height(), QImage::Format_ARGB32);
+     text_q.fill(0);
+     painter->begin(&text_q);
+     painter->translate(0, 0);
+diff --git a/src/output/OutputSet.h b/src/output/OutputSet.h
+index b410d616..0fc614d3 100644
+--- a/src/output/OutputSet.h
++++ b/src/output/OutputSet.h
+@@ -22,6 +22,8 @@
+ #ifndef QTAV_OUTPUTSET_H
+ #define QTAV_OUTPUTSET_H
+ 
++#include <climits>
++
+ #include <QtCore/QObject>
+ #include <QtCore/QMutex>
+ #include <QtCore/QWaitCondition>
+diff --git a/src/subtitle/SubtitleProcessorLibASS.cpp b/src/subtitle/SubtitleProcessorLibASS.cpp
+index 5eb69394..bc42ab39 100644
+--- a/src/subtitle/SubtitleProcessorLibASS.cpp
++++ b/src/subtitle/SubtitleProcessorLibASS.cpp
+@@ -115,7 +115,7 @@ static void ass_msg_cb(int level, const char *fmt, va_list va, void *data)
+     printf("\n");
+     fflush(0);
+     return;
+-    QString msg(QStringLiteral("{libass} ") + QString().vsprintf(fmt, va)); //QString.vsprintf() may crash at strlen().
++    QString msg(QStringLiteral("{libass} ") + QString().vasprintf(fmt, va)); //QString.vsprintf() may crash at strlen().
+     if (level == MSGL_FATAL)
+         qFatal("%s", msg.toUtf8().constData());
+     else if (level <= 2)
+diff --git a/src/utils/BlockingQueue.h b/src/utils/BlockingQueue.h
+index f729e8da..ea906c9d 100644
+--- a/src/utils/BlockingQueue.h
++++ b/src/utils/BlockingQueue.h
+@@ -23,6 +23,8 @@
+ #ifndef QTAV_BLOCKINGQUEUE_H
+ #define QTAV_BLOCKINGQUEUE_H
+ 
++#include <climits>
++
+ #include <QtCore/QReadWriteLock>
+ #include <QtCore/QScopedPointer>
+ #include <QtCore/QWaitCondition>
+diff --git a/widgets/X11Renderer.cpp b/widgets/X11Renderer.cpp
+index 91c952fb..0bfe01ac 100644
+--- a/widgets/X11Renderer.cpp
++++ b/widgets/X11Renderer.cpp
+@@ -47,7 +47,7 @@ class X11Renderer: public QWidget, public VideoRenderer
+     Q_OBJECT
+     DPTR_DECLARE_PRIVATE(X11Renderer)
+ public:
+-    X11Renderer(QWidget* parent = 0, Qt::WindowFlags f = 0);
++    X11Renderer(QWidget* parent = 0, Qt::WindowFlags f = Qt::Widget);
+     VideoRendererId id() const Q_DECL_OVERRIDE;
+     bool isSupported(VideoFormat::PixelFormat pixfmt) const Q_DECL_OVERRIDE;
+ 
+@@ -441,7 +441,12 @@ void X11Renderer::drawBackground()
+     // TODO: fill once each resize? mpv
+     // TODO: set color
+     //XSetBackground(d.display, d.gc, BlackPixel(d.display, DefaultScreen(d.display)));
+-    const QVector<QRect> bg(bgRegion.rects());
++    QVector<QRect> bg;
++    QRegion::const_iterator it = bgRegion.begin();
++    for (; it != bgRegion.end(); ++it) {
++        bg << *it;
++    }
++
+     foreach (const QRect& r, bg) {
+         XFillRectangle(d.display, winId(), d.gc, r.x(), r.y(), r.width(), r.height());
+     }
