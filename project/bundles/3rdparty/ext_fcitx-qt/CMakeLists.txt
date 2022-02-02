@@ -6,19 +6,53 @@
 # For details see the accompanying COPYING-CMAKE-SCRIPTS file.
 #
 
-SET(EXTPREFIX_fcitx-qt "${EXTPREFIX}" )
+set(EXTPREFIX_fcitx-qt "${EXTPREFIX}" )
 
-ExternalProject_Add(ext_fcitx-qt
-    DOWNLOAD_DIR ${EXTERNALS_DOWNLOAD_DIR}
+if(${ENABLE_QTVERSION} MATCHES "5.*")
 
-    GIT_REPOSITORY https://github.com/fcitx/fcitx-qt5.git
-    GIT_TAG 1.2.6
+    message(STATUS "Compiling fcitx-qt for Qt5")
 
-    CMAKE_ARGS -DCMAKE_INSTALL_PREFIX=${EXTPREFIX_fcitx-qt}
-               -DCMAKE_BUILD_TYPE=${GLOBAL_BUILD_TYPE}
-               -DENABLE_LIBRARY=OFF
-               ${GLOBAL_PROFILE}
+    ExternalProject_Add(ext_fcitx-qt
+        DOWNLOAD_DIR ${EXTERNALS_DOWNLOAD_DIR}
 
-    UPDATE_COMMAND ""
-    ALWAYS 0
-)
+        GIT_REPOSITORY https://github.com/fcitx/fcitx-qt5.git
+        GIT_TAG 1.2.7
+
+        CONFIGURE_COMMAND cd <SOURCE_DIR> &&
+                          $(CMAKE_COMMAND) .
+                             -DCMAKE_INSTALL_PREFIX=${EXTPREFIX_fcitx-qt}
+                             -DCMAKE_BUILD_TYPE=${GLOBAL_BUILD_TYPE}
+                             -DENABLE_LIBRARY=OFF
+                             -DENABLE_QT5=ON
+                             -DENABLE_QT6=OFF
+                             ${GLOBAL_PROFILE}
+
+        UPDATE_COMMAND ""
+        BUILD_IN_SOURCE 0
+        ALWAYS 0
+    )
+
+else()
+
+    message(STATUS "Compiling fcitx-qt for Qt6")
+
+    ExternalProject_Add(ext_fcitx-qt
+        DOWNLOAD_DIR ${EXTERNALS_DOWNLOAD_DIR}
+
+        GIT_REPOSITORY https://github.com/fcitx/fcitx-qt5.git
+        GIT_TAG 1.2.7
+
+        CONFIGURE_COMMAND cd <SOURCE_DIR> &&
+                          $(CMAKE_COMMAND) .
+                             -DCMAKE_BUILD_TYPE=${GLOBAL_BUILD_TYPE}
+                             -DENABLE_LIBRARY=OFF
+                             -DENABLE_QT5=OFF
+                             -DENABLE_QT6=ON
+                             ${GLOBAL_PROFILE}
+
+        UPDATE_COMMAND ""
+        BUILD_IN_SOURCE 0
+        ALWAYS 0
+    )
+
+endif()
