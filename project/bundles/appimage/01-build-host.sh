@@ -111,6 +111,7 @@ urpmi --auto \
       dpkg \
       ninja \
       clang \
+      cdialog \
       python \
       ruby \
       ruby-devel \
