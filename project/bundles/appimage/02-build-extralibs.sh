@@ -101,9 +101,9 @@ if [[ $DK_QTVERSION == 5.* ]] ; then
     # Calendar support
     /opt/cmake/bin/cmake --build . --config RelWithDebInfo --target ext_kcalendarcore       -- -j$CPU_CORES
 
-#else
+else
 
-#    /opt/cmake/bin/cmake --build . --config RelWithDebInfo --target ext_kf6_frameworks      -- -j$CPU_CORES
+    /opt/cmake/bin/cmake --build . --config RelWithDebInfo --target ext_kf6_frameworks      -- -j$CPU_CORES
 
 fi
 
