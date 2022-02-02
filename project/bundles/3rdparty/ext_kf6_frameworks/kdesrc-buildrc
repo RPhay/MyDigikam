@@ -45,8 +45,8 @@ global
     directory-layout flat
 
     # Build with LSP support for everything that supports it
-    compile-commands-linking true
-    compile-commands-export true
+    compile-commands-linking false
+    compile-commands-export false
 end global
 
 # Common options that should be set for some KDE modules no matter how
