@@ -90,6 +90,7 @@ urpmi --auto \
       flex                          `#  Panorama tool.` \
       wget \
       coreutils \
+      cdialog \
       dmg2img \
       tesseract \
       eigen3-devel \

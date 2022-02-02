@@ -123,6 +123,8 @@ urpmi --auto \
       jasper-devel \
       nodejs-devel \
       python3-lxml \
+      perl-YAML-PP \
+      perl-YAML-Syck \
       appstream \
       openssh-askpass \
       ${LIBSUFFIX}openssl-devel \
