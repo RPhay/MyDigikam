@@ -139,13 +139,21 @@ add_subdirectory(ext_lensfun)
 add_subdirectory(ext_qt)
 add_subdirectory(ext_qtwebkit)
 add_subdirectory(ext_qtav)
-add_subdirectory(ext_kf5_frameworks)
-add_subdirectory(ext_kf6_frameworks)
-add_subdirectory(ext_marble)
-add_subdirectory(ext_libksane)
 add_subdirectory(ext_fcitx-qt)
 add_subdirectory(ext_ffmpeg)
 add_subdirectory(ext_drmingw)
 add_subdirectory(ext_imagemagick)
 add_subdirectory(ext_gmicqt)
 add_subdirectory(ext_mosaicwall)
+
+if (${ENABLE_QTVERSION} MATCHES "5.*")
+
+    add_subdirectory(ext_kf5_frameworks)
+    add_subdirectory(ext_marble)
+    add_subdirectory(ext_libksane)
+
+else()
+
+    add_subdirectory(ext_kf6_frameworks)
+
+endif()
