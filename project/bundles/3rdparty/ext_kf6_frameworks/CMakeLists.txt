@@ -11,49 +11,50 @@ set(EXTPREFIX_frameworks "${EXTPREFIX}")
 ExternalProject_Add(ext_kf6_frameworks
     DOWNLOAD_DIR ${EXTERNALS_DOWNLOAD_DIR}
 
+    # We will use the KDE build source helper git repository.
+
     GIT_REPOSITORY https://invent.kde.org/sdk/kdesrc-build.git
 
     # Check version installed and system dependencies. Install modules configuration.
 
     CONFIGURE_COMMAND cd <SOURCE_DIR> &&
-                      ./kdesrc-build --rc-file=${CMAKE_CURRENT_SOURCE_DIR}/kdesrc-buildrc --version &&
-                      ./kdesrc-build --rc-file=${CMAKE_CURRENT_SOURCE_DIR}/kdesrc-buildrc --metadata-only &&
-                      ./kdesrc-build --rc-file=${CMAKE_CURRENT_SOURCE_DIR}/kdesrc-buildrc --pretend
+                      <SOURCE_DIR>/kdesrc-build --rc-file=${CMAKE_CURRENT_SOURCE_DIR}/kdesrc-buildrc --version &&
+                      <SOURCE_DIR>/kdesrc-build --rc-file=${CMAKE_CURRENT_SOURCE_DIR}/kdesrc-buildrc --metadata-only &&
+                      <SOURCE_DIR>/kdesrc-build --rc-file=${CMAKE_CURRENT_SOURCE_DIR}/kdesrc-buildrc --pretend
 
     BUILD_COMMAND cd <SOURCE_DIR> &&
-                  kdesrc-build --rc-file=${CMAKE_CURRENT_SOURCE_DIR}/kdesrc-buildrc --stop-on-failure
+                  <SOURCE_DIR>/kdesrc-build --rc-file=${CMAKE_CURRENT_SOURCE_DIR}/kdesrc-buildrc --stop-on-failure
                                extra-cmake-modules
-                               kconfig
-                               breeze-icons
-                               solid
-                               kcoreaddons
-                               threadweaver
-                               kwindowsystem
-                               karchive
-                               kdbusaddons
-                               ki18n
-                               kcrash
-                               kcodecs
-                               kauth
-                               kguiaddons
-                               kwidgetsaddons
-                               kitemviews
-                               kcompletion
-                               kconfigwidgets
-                               kiconthemes
-                               kservice
-                               kglobalaccel
+                               kconfig            
+                               breeze-icons       
+                               kcoreaddons        
+                               kwindowsystem      
+                               solid              
+                               threadweaver       
+                               karchive           
+                               kdbusaddons        
+                               ki18n              
+                               kcrash             
+                               kcodecs            
+                               kauth              
+                               kguiaddons         
+                               kwidgetsaddons     
+                               kitemviews         
+                               kcompletion        
+                               kconfigwidgets     
+                               kiconthemes        
+                               kservice           
+                               kglobalaccel       
+                               kxmlgui            
+                               kbookmarks         
+                               kimageformats      
+                               libksane           
+                               kjobwidgets        
+                               kio                
+                               knotifyconfig      
+                               knotifications     
+                               marble             
                                kcalendarcore
-                               kxmlgui
-                               kbookmarks
-                               kimageformats
-                               knotifyconfig
-                               knotifications
-                               kjobwidgets
-                               sonnet
-                               ktextwidgets
-                               kio
-                               kinit
 
     INSTALL_COMMAND ""
 
