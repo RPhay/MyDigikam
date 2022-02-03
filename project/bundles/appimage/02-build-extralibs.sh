@@ -104,6 +104,7 @@ if [[ $DK_QTVERSION == 5.* ]] ; then
 else
 
     /opt/cmake/bin/cmake --build . --config RelWithDebInfo --target ext_kf6_frameworks      -- -j$CPU_CORES
+    cp $DOWNLOAD_DIR/kf6_manifest.txt $ORIG_WD/data/
 
 fi
 
