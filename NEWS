@@ -814,7 +814,7 @@ BUGFIXES:
 800 ==> 147986 - Download with Date & Time based renaming: hour is off by +1.
 801 ==> 426497 - Light table displays wrong picture.
 802 ==> 449476 - "Sort by Face" not working in Album view.
-803 ==> 
+803 ==> 449510 - Memory occupancy keeps going up on launching & No responded.
 804 ==> 
 805 ==> 
 806 ==> 
