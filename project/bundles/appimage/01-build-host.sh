@@ -74,7 +74,6 @@ urpmi --auto \
       libxcb-devel \
       xcb-util-keysyms-devel \
       xcb-util-devel \
-      libxkbcommon-utils \
       xkeyboard-config \
       xscreensaver \
       gperf \
@@ -158,7 +157,6 @@ urpmi --auto \
       ${LIBSUFFIX}clang-devel \
       ${LIBSUFFIX}sm-devel \
       ${LIBSUFFIX}freeglut-devel \
-      ${LIBSUFFIX}mesaegl-devel \
       ${LIBSUFFIX}input-devel
 
 if [[ "$DK_QTVERSION" = "5.14" ]] ; then
@@ -179,6 +177,14 @@ if [[ "$DK_QTVERSION" = "5.15" || "$DK_QTVERSION" = "5.15-LTS" ]] ; then
           ${LIBSUFFIX}xcb-util-renderutil-devel \
           ${LIBSUFFIX}xcb-util-wm-devel \
           ${LIBSUFFIX}xcb-xrm-devel
+
+fi
+
+if [[ $DK_QTVERSION == 6.* ]] ; then
+
+    urpmi --auto \
+          libxkbcommon-utils \
+          ${LIBSUFFIX}mesaegl-devel
 
 fi
 
