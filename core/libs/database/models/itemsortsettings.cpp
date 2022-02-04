@@ -221,7 +221,9 @@ int ItemSortSettings::compareCategories(const ItemInfo& left, const ItemInfo& ri
         {
             if (leftFace.isNull() && rightFace.isNull())
             {
-                return 0;
+                return compareByOrder(left.faceCount(),
+                                      right.faceCount(),
+                                      currentCategorizationSortOrder);
             }
 
             bool isLeftIgnored = (leftFace.type() == FaceTagsIface::IgnoredName);

@@ -118,6 +118,7 @@ public:
     QString                                  uniqueHash;
     QSize                                    imageSize;
     QList<int>                               tagIds;
+    int                                      faceCount;
     int                                      unconfirmedFaceCount;
     QMap<QString, QString>                   faceSuggestions;
 
@@ -151,6 +152,7 @@ public:
     bool                                     groupImageCached           : 1;
     bool                                     unconfirmedFaceCountCached : 1;
     bool                                     faceSuggestionsCached      : 1;
+    bool                                     faceCountCached            : 1;
 
     bool                                     invalid                    : 1;
 
