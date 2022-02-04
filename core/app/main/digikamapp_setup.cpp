@@ -624,15 +624,6 @@ void DigikamApp::setupActions()
     connect(d->view, &ItemIconView::signalSeparationModeChanged,
             this, [this](int category)
         {
-            if (category == (int)ItemSortSettings::CategoryByFaces)
-            {
-                d->imageSeparationAction->action(4)->setEnabled(true);
-            }
-            else
-            {
-                d->imageSeparationAction->action(4)->setEnabled(false);
-            }
-
             d->imageSeparationAction->blockSignals(true);
             d->imageSeparationAction->setCurrentItem(category-1);
             d->imageSeparationAction->blockSignals(false);

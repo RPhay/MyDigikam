@@ -388,6 +388,13 @@ QVariant ItemFilterModel::data(const QModelIndex& index, int role) const
         {
             if (extraData.isNull())
             {
+                int count = d->imageModel->imageInfoRef(mapToSource(index)).faceCount();
+
+                if (count)
+                {
+                    return i18np("%1 Face", "%1 Faces", count);
+                }
+
                 return i18nc("@item: filter model", "No face");
             }
 
@@ -1121,11 +1128,11 @@ QString ItemFilterModel::categoryIdentifier(const ItemInfo& i, const FaceTagsIfa
 
         case ItemSortSettings::CategoryByFaces:
         {
-            // No face in image.
+            // No face from extra data.
 
             if (face.isNull())
             {
-                return QLatin1String("NO_FACE");
+                return fastNumberToString(info.faceCount());
             }
 
             if      (face.type() == FaceTagsIface::UnknownName)

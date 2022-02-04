@@ -225,6 +225,25 @@ QSize ItemInfo::dimensions() const
     return m_data->imageSize;
 }
 
+int ItemInfo::faceCount() const
+{
+    if (!m_data)
+    {
+        return 0;
+    }
+
+    RETURN_IF_CACHED(faceCount);
+
+    FaceTagsEditor fte;
+    int count = fte.databaseFaces(m_data->id).count();
+
+    ItemInfoWriteLocker lock;
+    m_data.data()->faceCountCached = true;
+    m_data.data()->faceCount       = count;
+
+    return m_data->faceCount;
+}
+
 int ItemInfo::unconfirmedFaceCount() const
 {
     if (!m_data)

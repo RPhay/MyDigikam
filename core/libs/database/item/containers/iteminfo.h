@@ -257,6 +257,11 @@ public:
     QString comment()                                                                   const;
 
     /**
+     * @return the number of Faces in this item.
+     */
+    int faceCount()                                                                     const;
+
+    /**
      * @return the number of Unconfirmed Faces in this item.
      */
     int unconfirmedFaceCount()                                                          const;
