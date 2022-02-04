@@ -64,6 +64,9 @@ DK_KA_VERSION="21.12.1"
 # KDE KF5 frameworks version.
 DK_KF5_VERSION="5.90"
 
+# Qt version to use in bundle and provided by MXE.
+DK_QTVERSION="5.15"
+
 # ExifTool Windows version to embed in the bundle.
 DK_EXIFTOOL_VERSION="12.39"
 

@@ -61,6 +61,7 @@ cmake $ORIG_WD/../3rdparty \
        -DEXTERNALS_DOWNLOAD_DIR=$DOWNLOAD_DIR \
        -DKA_VERSION=$DK_KA_VERSION \
        -DKF5_VERSION=$DK_KF5_VERSION \
+       -DENABLE_QTVERSION=$DK_QTVERSION \
        -DENABLE_QTWEBENGINE=$DK_QTWEBENGINE \
        -DMACOSX_DEPLOYMENT_TARGET=$OSX_MIN_TARGET \
        -Wno-dev
@@ -189,6 +190,8 @@ cmake $ORIG_WD/../3rdparty \
        -DEXTERNALS_DOWNLOAD_DIR=$DOWNLOAD_DIR \
        -DKA_VERSION=$DK_KA_VERSION \
        -DKF5_VERSION=$DK_KF5_VERSION \
+       -DENABLE_QTVERSION=$DK_QTVERSION \
+       -DENABLE_QTWEBENGINE=$DK_QTWEBENGINE \
        -Wno-dev
 
 cmake --build . --config RelWithDebInfo --target ext_gmic_qt    -- -j$CPU_CORES

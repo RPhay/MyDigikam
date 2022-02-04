@@ -71,7 +71,9 @@ ${MXE_BUILD_TARGETS}-cmake $ORIG_WD/../3rdparty \
                            -DINSTALL_ROOT=${MXE_INSTALL_PREFIX} \
                            -DEXTERNALS_DOWNLOAD_DIR=$DOWNLOAD_DIR \
                            -DKA_VERSION=$DK_KA_VERSION \
-                           -DKF5_VERSION=$DK_KF5_VERSION
+                           -DKF5_VERSION=$DK_KF5_VERSION \
+                           -DENABLE_QTVERSION=$DK_QTVERSION \
+                           -DENABLE_QTWEBENGINE=$DK_QTWEBENGINE
 
 # NOTE: The order to compile each component here is very important.
 
