@@ -4,7 +4,7 @@ Architecture and configuration to setup a continuous deployment computer.
 1/ Host computer and local network
 
 - Intel Xeon 24 cores
-- 32 Gb of RAM
+- 32 Gb of RAM (48Gb highly recommended)
 - 2 SSD 1Tb (one to host base system, one to host VMs)
 - Host system Linux Mageia 7.1
 - VirtualBox version 6.x:
@@ -21,10 +21,10 @@ Architecture and configuration to setup a continuous deployment computer.
   * Extension Pack installed (https://www.virtualbox.org/wiki/Downloads).
 
   * 3 VMs:
-           one running macOS Catalina to compile PKG installer.
+           one running MacOS Catalina to compile PKG installer.
                Name: MX.
                8 cores.
-               4Gb RAM.
+               4Gb RAM (8Gb highly recommended to compile QtWebEngine).
                128Mb video.
                Disk: 120Gb. (40 Gb free are required at least to update later XCode)
                eth0: auto IP/DNS with DHCP                                                  (VM:NAT)
@@ -34,7 +34,7 @@ Architecture and configuration to setup a continuous deployment computer.
            one running Mageia 7.1 to compile Windows installer.
                Name: M7.
                8 cores.
-               4Gb RAM.
+               4Gb RAM (8Gb highly recommended to compile QtWebkit).
                128Mb video.
                Disk: 80Gb (/ and /home).
                /tmp : 20Gb on a separated partition.
@@ -46,7 +46,7 @@ Architecture and configuration to setup a continuous deployment computer.
            one running Mageia 7.1 to compile AppImage bundle
                Name: M6.
                8 cores.
-               4Gb RAM.
+               4Gb RAM (8Gb highly recommended to compile QtWebEngine).
                128Mb video.
                Disk: 80Gb (/ and /home).
                /tmp : 20Gb on a separated partition.
@@ -57,7 +57,7 @@ Architecture and configuration to setup a continuous deployment computer.
 
 2/ Virtual Machines
 
-- macOS Catalina: system is installed using this GitHub repository: https://github.com/myspaghetti/macos-virtualbox (git revision b47fbd977e9d6103fb7113651839c22937d58af1),
+- MacOS Catalina: system is installed using this GitHub repository: https://github.com/myspaghetti/macos-virtualbox (git revision b47fbd977e9d6103fb7113651839c22937d58af1),
     and using Macports procedure.
   * @IP: 192.168.56.101
   * Apply the patch to macos-guest-virtualbox.patch and run the script to create the VM.
