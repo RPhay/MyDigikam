@@ -816,7 +816,7 @@ BUGFIXES:
 802 ==> 449476 - "Sort by Face" not working in Album view.
 803 ==> 449510 - Memory occupancy keeps going up on launching & No responded.
 804 ==> 264879 - Use KF6 source code with KDE git build source helper repository to compile AppImage bundle.
-805 ==> 
+805 ==> 449287 - Use digiKam as a photo viewer with arguments.
 806 ==> 
 807 ==> 
 808 ==> 
