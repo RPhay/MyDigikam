@@ -818,7 +818,7 @@ BUGFIXES:
 804 ==> 264879 - Use KF6 source code with KDE git build source helper repository to compile AppImage bundle.
 805 ==> 449287 - Use digiKam as a photo viewer with arguments.
 806 ==> 440953 - No cameras list showing on import->cameras->add camera.
-807 ==> 
+807 ==> 380840 - Crash while importing files.
 808 ==> 
 809 ==> 
 810 ==> 
