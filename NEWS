@@ -827,7 +827,7 @@ BUGFIXES:
 812 ==> 407506 - Wrong sorting.
 813 ==> 418670 - Search not respecting UTF-8 charset.
 814 ==> 425168 - Cannot type accented characters via dead-keys.
-815 ==> 
+815 ==> 449559 - Initial setup import.
 816 ==> 
 817 ==> 
 818 ==> 
