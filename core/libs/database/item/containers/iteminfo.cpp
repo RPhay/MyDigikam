@@ -101,7 +101,6 @@ ItemInfo::ItemInfo(qlonglong ID)
             // invalid image id
 
             ItemInfoStatic::cache()->dropInfo(m_data);
-            m_data.reset();
         }
     }
 }
@@ -109,7 +108,6 @@ ItemInfo::ItemInfo(qlonglong ID)
 ItemInfo::~ItemInfo()
 {
     ItemInfoStatic::cache()->dropInfo(m_data);
-    m_data.reset();
 }
 
 ItemInfo::ItemInfo(const ItemInfo& info)
