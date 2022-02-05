@@ -7,6 +7,7 @@ General: Update Libraw to snapshot 2022-01-16.
 General: Use Qt5.15 LTS patches collection git repository from KDE to build AppImage Linux bundle (snapshot 2022-01-23).
 General: All bundles use last KF5 framework 5.90.
 General: All bundles generate a manifest text file listing git revisions of all upstream libraries used by application.
+General: AppImage Linux bundle now support ICU to perform search with UTF-8 characters in all text fields.
 
 *****************************************************************************************************
 BUGFIXES:
@@ -820,6 +821,16 @@ BUGFIXES:
 806 ==> 440953 - No cameras list showing on import->cameras->add camera.
 807 ==> 380840 - Crash while importing files.
 808 ==> 443476 - digiKam 7.2 and 7.3 Crash on Import in Big Sur.
-809 ==> 
-810 ==> 
-811 ==> 
+809 ==> 406583 - Cannot write special characters (è, í, ó) in Tag search box.
+810 ==> 413842 - Wishlist: search not sensitive to special characters / diacritics.
+811 ==> 410980 - Sorting of albums in tree view by name inconsistent with Dolphin.
+812 ==> 407506 - Wrong sorting.
+813 ==> 418670 - Search not respecting UTF-8 charset.
+814 ==> 425168 - Cannot type accented characters via dead-keys.
+815 ==> 
+816 ==> 
+817 ==> 
+818 ==> 
+819 ==> 
+820 =+> 
+821 ==> 
