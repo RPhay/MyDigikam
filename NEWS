@@ -819,7 +819,7 @@ BUGFIXES:
 805 ==> 449287 - Use digiKam as a photo viewer with arguments.
 806 ==> 440953 - No cameras list showing on import->cameras->add camera.
 807 ==> 380840 - Crash while importing files.
-808 ==> 
+808 ==> 443476 - digiKam 7.2 and 7.3 Crash on Import in Big Sur.
 809 ==> 
 810 ==> 
 811 ==> 
