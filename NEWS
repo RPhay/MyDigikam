@@ -832,5 +832,5 @@ BUGFIXES:
 817 ==> 088883 - Calls ImageCollectionShared::category and ImageCollectionShared::date without correct features.
 818 ==> 088896 - Using ImageCollectionShared::category even when host app do not have feature AlbumsHaveCategory.
 819 ==> 348333 - Crashes if I click Cancel while resizing images.
-820 ==> 
+820 ==> 261778 - Improve key {unique} behavior for coupled files (jpg+raw).
 821 ==> 

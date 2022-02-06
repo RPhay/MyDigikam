@@ -82,11 +82,11 @@ private:
 
     /**
      * Applies modifiers to the given ParseResults.
-     * @param   parseString     the parse string to analyze
+     * @param   settings        the ParseSettings with parseString to analyze
      * @param   results         the ParseResults object the modifiers should be applied to
      * @return  a ParseResults object with invalid modifiers (modifiers that have a wrong position in the parse string)
      */
-    ParseResults applyModifiers(const QString& parseString, ParseResults& results);
+    ParseResults applyModifiers(const ParseSettings& _settings, ParseResults& results);
 
 private:
 
