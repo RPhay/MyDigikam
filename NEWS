@@ -829,8 +829,8 @@ BUGFIXES:
 814 ==> 425168 - Cannot type accented characters via dead-keys.
 815 ==> 449559 - Initial setup import.
 816 ==> 417140 - Map panel shows white rectangle when using Google Maps.
-817 ==> 
-818 ==> 
-819 ==> 
+817 ==> 088883 - Calls ImageCollectionShared::category and ImageCollectionShared::date without correct features.
+818 ==> 088896 - Using ImageCollectionShared::category even when host app do not have feature AlbumsHaveCategory.
+819 ==> 348333 - Crashes if I click Cancel while resizing images.
 820 ==> 
 821 ==> 
