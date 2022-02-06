@@ -6,7 +6,7 @@
  * Date        : 2009-09-08
  * Description : global macros, variables and flags
  *
- * Copyright (C) 2009-2021 by Gilles Caulier <caulier dot gilles at gmail dot com>
+ * Copyright (C) 2009-2022 by Gilles Caulier <caulier dot gilles at gmail dot com>
  *
  * This program is free software; you can redistribute it
  * and/or modify it under the terms of the GNU General
@@ -21,39 +21,7 @@
  *
  * ============================================================ */
 
-#include "digikam_globals.h"
-
-// Qt includes
-
-#include <QObject>
-#include <QDir>
-#include <QList>
-#include <QImageReader>
-#include <QImageWriter>
-#include <QByteArray>
-#include <QShortcut>
-#include <QApplication>
-#include <QStandardPaths>
-#include <QLibrary>
-#include <QSysInfo>
-#include <QDateTime>
-
-// KDE includes
-
-#include <klocalizedstring.h>
-
-// Local includes
-
-#include "digikam_config.h"
-#include "digikam_debug.h"
-#include "drawdecoder.h"
-#include "rawcameradlg.h"
-
-// Windows includes
-
-#ifdef HAVE_DRMINGW
-#   include <windows.h>
-#endif
+#include "digikam_globals_p.h"
 
 namespace Digikam
 {
@@ -191,133 +159,38 @@ QStringList supportedImageMimeTypes(QIODevice::OpenModeFlag mode, QString& allTy
     return formats;
 }
 
-void showRawCameraList()
+bool isReadableImageFile(const QString& filePath)
 {
-    RawCameraDlg* const dlg = new RawCameraDlg(qApp->activeWindow());
-    dlg->show();
-}
+    QFileInfo info(filePath);
 
-bool isRunningInAppImageBundle()
-{
-    QProcessEnvironment env = QProcessEnvironment::systemEnvironment();
-
-    if (env.contains(QLatin1String("APPIMAGE_ORIGINAL_LD_LIBRARY_PATH")) &&
-        env.contains(QLatin1String("APPIMAGE_ORIGINAL_QT_PLUGIN_PATH"))  &&
-        env.contains(QLatin1String("APPIMAGE_ORIGINAL_XDG_DATA_DIRS"))   &&
-        env.contains(QLatin1String("APPIMAGE_ORIGINAL_PATH")))
+    if (info.isFile() && !info.isSymLink() && !info.isDir() && !info.isRoot())
     {
-        return true;
+        QString path    = info.absoluteFilePath();
+        QMimeType mtype = QMimeDatabase().mimeTypeForFile(path);
+        QString suffix  = info.suffix().toUpper();
+
+        // Add extra check of the image extensions that are still
+        // unknown in older Qt versions or have an application mime type.
+
+        if (mtype.name().startsWith(QLatin1String("image/")) ||
+            (suffix == QLatin1String("PGF"))                 ||
+            (suffix == QLatin1String("KRA"))                 ||
+            (suffix == QLatin1String("CR3"))                 ||
+            (suffix == QLatin1String("HEIC"))                ||
+            (suffix == QLatin1String("HEIF"))                ||
+            DRawDecoder::rawFiles().contains(suffix))
+        {
+            return true;
+        }
     }
 
     return false;
 }
 
-QProcessEnvironment adjustedEnvironmentForAppImage()
+void showRawCameraList()
 {
-    QProcessEnvironment env = QProcessEnvironment::systemEnvironment();
-
-    // If we are running into AppImage bundle, switch env var to the right values.
-
-    if (isRunningInAppImageBundle())
-    {
-        qCDebug(DIGIKAM_GENERAL_LOG) << "Adjusting environment variables for AppImage bundle";
-
-        if (!env.value(QLatin1String("APPIMAGE_ORIGINAL_LD_LIBRARY_PATH")).isEmpty())
-        {
-            env.insert(QLatin1String("LD_LIBRARY_PATH"),
-                       env.value(QLatin1String("APPIMAGE_ORIGINAL_LD_LIBRARY_PATH")));
-        }
-        else
-        {
-            env.remove(QLatin1String("LD_LIBRARY_PATH"));
-        }
-
-        if (!env.value(QLatin1String("APPIMAGE_ORIGINAL_QT_PLUGIN_PATH")).isEmpty())
-        {
-            env.insert(QLatin1String("QT_PLUGIN_PATH"),
-                       env.value(QLatin1String("APPIMAGE_ORIGINAL_QT_PLUGIN_PATH")));
-        }
-        else
-        {
-            env.remove(QLatin1String("QT_PLUGIN_PATH"));
-        }
-
-        if (!env.value(QLatin1String("APPIMAGE_ORIGINAL_XDG_DATA_DIRS")).isEmpty())
-        {
-            env.insert(QLatin1String("XDG_DATA_DIRS"),
-                       env.value(QLatin1String("APPIMAGE_ORIGINAL_XDG_DATA_DIRS")));
-        }
-        else
-        {
-            env.remove(QLatin1String("XDG_DATA_DIRS"));
-        }
-
-        if (!env.value(QLatin1String("APPIMAGE_ORIGINAL_PATH")).isEmpty())
-        {
-            env.insert(QLatin1String("PATH"),
-                       env.value(QLatin1String("APPIMAGE_ORIGINAL_PATH")));
-        }
-        else
-        {
-            env.remove(QLatin1String("PATH"));
-        }
-    }
-
-    return env;
-}
-
-void tryInitDrMingw()
-{
-
-#ifdef HAVE_DRMINGW
-
-    qCDebug(DIGIKAM_GENERAL_LOG) << "Loading DrMinGw run-time...";
-
-    QRegularExpression versionRegExp(QLatin1String("(\\d+[.]*\\d*)"));
-    double version = versionRegExp.match(QSysInfo::productVersion()).capturedTexts().constFirst().toDouble();
-
-    if  (
-         ((version < 2000.0) && (version < 10.0)) ||
-         ((version > 2000.0) && (version < 2016.0))
-        )
-    {
-        qCDebug(DIGIKAM_GENERAL_LOG) << "DrMinGw: unsupported Windows version" << version;
-        return;
-    }
-
-    QString appPath = QCoreApplication::applicationDirPath();
-    QString excFile = QDir::toNativeSeparators(appPath + QLatin1String("/exchndl.dll"));
-
-    HMODULE hModExc = LoadLibraryW((LPCWSTR)excFile.utf16());
-
-    if (!hModExc)
-    {
-        qCDebug(DIGIKAM_GENERAL_LOG) << "DrMinGw: cannot init crash handler dll.";
-        return;
-    }
-
-    // No need to call ExcHndlInit since the crash handler is installed on DllMain
-
-    auto myExcHndlSetLogFileNameA = reinterpret_cast<BOOL (APIENTRY*)(const char*)>
-                                        (GetProcAddress(hModExc, "ExcHndlSetLogFileNameA"));
-
-    if (!myExcHndlSetLogFileNameA)
-    {
-        qCDebug(DIGIKAM_GENERAL_LOG) << "DrMinGw: cannot init customized crash file.";
-        return;
-    }
-
-    // Set the log file path to %LocalAppData%\digikam_crash.log
-
-    QString logPath = QStandardPaths::writableLocation(QStandardPaths::GenericConfigLocation);
-    QString logFile = QDir::toNativeSeparators(logPath + QLatin1String("/digikam_crash.log"));
-    myExcHndlSetLogFileNameA(logFile.toLocal8Bit().data());
-
-    qCDebug(DIGIKAM_GENERAL_LOG) << "DrMinGw run-time loaded.";
-    qCDebug(DIGIKAM_GENERAL_LOG) << "DrMinGw crash-file will be located at: " << logFile;
-
-#endif // HAVE_DRMINGW
-
+    RawCameraDlg* const dlg = new RawCameraDlg(qApp->activeWindow());
+    dlg->show();
 }
 
 QString toolButtonStyleSheet()
@@ -345,20 +218,6 @@ QString toolButtonStyleSheet()
                          "  qlineargradient(x1: 0, y1: 0, x2: 0, y2: 1, "
                          "  stop: 0 rgba(40, 40, 40, 50%), "
                          "  stop: 1 rgba(50, 50, 50, 50%)); }");
-}
-
-QString macOSBundlePrefix()
-{
-    return QString::fromUtf8("/Applications/digiKam.org/digikam.app/Contents/");
-}
-
-QDateTime startOfDay(const QDate &date)
-{
-#if QT_VERSION >= QT_VERSION_CHECK(5, 14, 0)
-    return date.startOfDay();
-#else
-    return QDateTime(date);
-#endif
 }
 
 } // namespace Digikam
