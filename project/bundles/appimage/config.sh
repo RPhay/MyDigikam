@@ -2,7 +2,7 @@
 
 # Configuration for script to build AppImage bundle.
 #
-# Copyright (c) 2015-2021 by Gilles Caulier  <caulier dot gilles at gmail dot com>
+# Copyright (c) 2015-2022 by Gilles Caulier  <caulier dot gilles at gmail dot com>
 #
 # Redistribution and use is allowed according to the terms of the BSD license.
 # For details see the accompanying COPYING-CMAKE-SCRIPTS file.
@@ -24,14 +24,25 @@ APP_IMG_DIR="/digikam.appdir"
 ########################################################################
 
 # URL to git repository to checkout digiKam source code
+# git protocol version which require a developer account with ssh keys.
 DK_GITURL="git@invent.kde.org:graphics/digikam.git"
+# https protocol version which give annonyous access.
+#DK_GITURL="https://invent.kde.org/graphics/digikam.git"
 
 # Location to build source code.
 DK_BUILDTEMP=$BUILDING_DIR/dktemp
 
+# KDE Application version.
+# See official release here: https://download.kde.org/stable/release-service/
+DK_KA_VERSION="21.12.1"
+
+# KDE KF5 frameworks version.
+# See official release here: https://download.kde.org/stable/frameworks/
+DK_KF5_VERSION="5.90"
+
 # digiKam tag version from git. Official tarball do not include extra shared libraries.
 # The list of tags can be listed with this url: https://invent.kde.org/graphics/digikam/-/tags
-# If you want to package current implemntation from git, use "master" as tag.
+# If you want to package current implementation from git, use "master" as tag.
 #DK_VERSION=v7.0.0
 DK_VERSION=master
 #DK_VERSION=gsoc18-exporttools-o2
@@ -42,8 +53,12 @@ DK_VERSION=master
 # Installer will include or not digiKam debug symbols
 DK_DEBUG=0
 
-# Qt version to use in bundle. Possible values: 5.14, 5.15, 6.2
-DK_QTVERSION="5.15"
+# Qt version to use in bundle. Possible values: 5.15, 5.15-LTS, 6.2
+DK_QTVERSION="5.15-LTS"
+#DK_QTVERSION="6.2"
+
+# QtWebEngine version to use in bundle when 5.15-LTS is used.
+DK_QTWEBENGINEVERSION="5.15.8"
 
 # Option to use QtWebEngine instead QtWebkit
 DK_QTWEBENGINE=1
