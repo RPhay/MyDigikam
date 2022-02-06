@@ -23,7 +23,6 @@
  *
  * ============================================================ */
 
-#include "digikamapp.h"
 #include "collectionscanner_p.h"
 
 namespace Digikam
@@ -396,7 +395,6 @@ qlonglong CollectionScanner::scanFile(const QString& albumRoot, const QString& a
 
 void CollectionScanner::scanFile(const ItemInfo& info, FileScanMode mode)
 {
-
     if (info.isNull() || !info.isLocationAvailable())
     {
         return;

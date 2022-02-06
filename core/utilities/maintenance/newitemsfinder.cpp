@@ -23,9 +23,6 @@
  * ============================================================ */
 
 #include "newitemsfinder.h"
-#include "collectionscanner.h"
-#include "facescansettings.h"
-#include "applicationsettings.h"
 
 // Qt includes
 
@@ -58,7 +55,6 @@ public:
     FinderMode  mode;
 
     bool        cancel;
-    bool        shouldDetectFaces;
 
     QStringList foldersToScan;
     QStringList foldersScanned;
