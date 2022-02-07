@@ -114,9 +114,7 @@ void DigikamApp::slotScanNewItems()
     connect(tool, SIGNAL(signalComplete()),
             this, SLOT(slotMaintenanceDone()));
 
-    ApplicationSettings* const settings = ApplicationSettings::instance();
-
-    if (settings->getDetectFacesInNewImages())
+    if (ApplicationSettings::instance()->getDetectFacesInNewImages())
     {
         connect(tool, SIGNAL(signalComplete()),
                 this, SLOT(slotDetectFaces()));
@@ -141,6 +139,27 @@ void DigikamApp::slotMaintenanceDone()
     {
         QueueMgrWindow::queueManagerWindow()->refreshView();
     }
+}
+
+void DigikamApp::slotDetectFaces()
+{
+    ItemInfoList newImages = ScanController::instance()->getNewItemList();
+
+    if (newImages.length() == 0)
+    {
+        return;
+    }
+
+    FaceScanSettings settings;
+
+    settings.accuracy               = ApplicationSettings::instance()->getFaceDetectionAccuracy();
+    settings.useYoloV3              = ApplicationSettings::instance()->getFaceDetectionYoloV3();
+    settings.task                   = FaceScanSettings::DetectAndRecognize;
+    settings.alreadyScannedHandling = FaceScanSettings::Rescan;
+    settings.infos                  = newImages;
+
+    FacesDetector* const tool       = new FacesDetector(settings);
+    tool->start();
 }
 
 void DigikamApp::slotDatabaseMigration()

@@ -1115,27 +1115,6 @@ void DigikamApp::slotColorManagementOptionsChanged()
     d->viewCMViewAction->blockSignals(false);
 }
 
-void DigikamApp::slotDetectFaces()
-{
-    ItemInfoList newImages = ScanController::instance()->getNewItemList();
-
-    if (newImages.length() == 0)
-    {
-        return;
-    }
-
-    FaceScanSettings settings;
-
-    settings.accuracy               = ApplicationSettings::instance()->getFaceDetectionAccuracy();
-    settings.useYoloV3              = ApplicationSettings::instance()->getFaceDetectionYoloV3();
-    settings.task                   = FaceScanSettings::DetectAndRecognize;
-    settings.alreadyScannedHandling = FaceScanSettings::Rescan;
-    settings.infos                  = newImages;
-
-    FacesDetector* const tool       = new FacesDetector(settings);
-    tool->start();
-}
-
 DInfoInterface* DigikamApp::infoIface(DPluginAction* const ac)
 {
     ApplicationSettings::OperationType aset = ApplicationSettings::Unspecified;
