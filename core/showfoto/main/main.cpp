@@ -8,7 +8,7 @@
  *               editor with no support of digiKam database.
  *
  * Copyright (C) 2004-2005 by Renchi Raju <renchi dot raju at gmail dot com>
- * Copyright (C) 2004-2021 by Gilles Caulier <caulier dot gilles at gmail dot com>
+ * Copyright (C) 2004-2022 by Gilles Caulier <caulier dot gilles at gmail dot com>
  *
  * This program is free software; you can redistribute it
  * and/or modify it under the terms of the GNU General
@@ -29,8 +29,6 @@
 
 #include <QDir>
 #include <QFile>
-#include <QSettings>
-#include <QTranslator>
 #include <QMessageBox>
 #include <QApplication>
 #include <QStandardPaths>
@@ -120,9 +118,9 @@ int main(int argc, char* argv[])
 
     KLocalizedString::setApplicationDomain("digikam");
 
-    KAboutData aboutData(QLatin1String("showfoto"), // component name
-                         i18n("Showfoto"),          // display name
-                         digiKamVersion());         // NOTE: showFoto version = digiKam version
+    KAboutData aboutData(QLatin1String("showfoto"),     // component name
+                         i18nc("@title", "Showfoto"),   // display name
+                         digiKamVersion());             // NOTE: showFoto version = digiKam version
 
     aboutData.setShortDescription(QString::fromUtf8("%1 - %2").arg(DAboutData::digiKamSlogan()).arg(DAboutData::digiKamFamily()));
     aboutData.setLicense(KAboutLicense::GPL);
@@ -138,70 +136,22 @@ int main(int argc, char* argv[])
     QCommandLineParser parser;
     KAboutData::setApplicationData(aboutData);
     aboutData.setupCommandLine(&parser);
-    parser.addPositionalArgument(QLatin1String("files"), i18n("File(s) or folder(s) to open"), QLatin1String("[file(s) or folder(s)]"));
+    parser.addPositionalArgument(QLatin1String("files"),
+                                 i18nc("command line option", "File(s) or folder(s) to open"),
+                                 QLatin1String("[file(s) or folder(s)]"));
     parser.process(app);
     aboutData.processCommandLine(&parser);
 
     KSharedConfig::Ptr config = KSharedConfig::openConfig();
     KConfigGroup group        = config->group(QLatin1String("ImageViewer Settings"));
     QString iconTheme         = group.readEntry(QLatin1String("Icon Theme"), QString());
+    QString colorTheme        = group.readEntry(QLatin1String("Theme"), QString::fromLatin1("Standard"));
 
-#if defined Q_OS_WIN || defined Q_OS_MACOS
+    // See bug #438701
 
-    bool loadTranslation = true;
+    installQtTranslationFiles(app);
 
-#else
-
-    bool loadTranslation = isRunningInAppImageBundle();
-
-#endif
-
-    QString transPath = QStandardPaths::locate(QStandardPaths::DataLocation,
-                                               QLatin1String("translations"),
-                                               QStandardPaths::LocateDirectory);
-
-    if (loadTranslation && !transPath.isEmpty())
-    {
-        QString klanguagePath = QStandardPaths::writableLocation(QStandardPaths::GenericConfigLocation) +
-                                QLatin1Char('/') + QLatin1String("klanguageoverridesrc");
-
-        qCDebug(DIGIKAM_GENERAL_LOG) << "Qt translations path:" << transPath;
-
-        if (!klanguagePath.isEmpty())
-        {
-            QSettings settings(klanguagePath, QSettings::IniFormat);
-            settings.beginGroup(QLatin1String("Language"));
-            QString language = settings.value(qApp->applicationName(), QString()).toString();
-            settings.endGroup();
-
-            if (!language.isEmpty())
-            {
-                QLocale::setDefault(language.split(QLatin1Char(':')).first());
-            }
-        }
-
-        QStringList qtCatalogs;
-        qtCatalogs << QLatin1String("qt");
-        qtCatalogs << QLatin1String("qtbase");
-        qtCatalogs << QLatin1String("qt_help");
-
-        foreach (const QString& catalog, qtCatalogs)
-        {
-            QTranslator* const translator = new QTranslator(&app);
-
-            if (translator->load(QLocale(), catalog, QLatin1String("_"), transPath))
-            {
-                qCDebug(DIGIKAM_GENERAL_LOG) << "Loaded locale:" << QLocale().name()
-                                             << "from catalog:"  << catalog;
-
-                app.installTranslator(translator);
-            }
-            else
-            {
-                delete translator;
-            }
-        }
-    }
+    // ---
 
     MetaEngine::initializeExiv2();
 
@@ -216,9 +166,9 @@ int main(int argc, char* argv[])
     {
         QMessageBox::critical(qApp->activeWindow(),
                               qApp->applicationName(),
-                              i18n("<p>You are running Showfoto as a 32-bit version on a 64-bit Windows.</p>"
-                                   "<p>Please install the 64-bit version of Showfoto to get "
-                                   "a better experience with Showfoto.</p>"));
+                              i18nc("#info", "<p>You are running Showfoto as a 32-bit version on a 64-bit Windows.</p>"
+                                    "<p>Please install the 64-bit version of Showfoto to get "
+                                    "a better experience with Showfoto.</p>"));
     }
 
 #endif
@@ -236,18 +186,6 @@ int main(int argc, char* argv[])
     if (!iconTheme.isEmpty())
     {
         QIcon::setThemeName(iconTheme);
-    }
-
-    // Workaround for the automatic icon theme color
-    // in KF-5.80, depending on the color scheme.
-
-    if      (QIcon::themeName() == QLatin1String("breeze-dark"))
-    {
-        qApp->setPalette(QPalette(Qt::darkGray));
-    }
-    else if (QIcon::themeName() == QLatin1String("breeze"))
-    {
-        qApp->setPalette(QPalette(Qt::white));
     }
 
 #ifdef Q_OS_WIN

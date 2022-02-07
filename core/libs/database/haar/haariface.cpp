@@ -8,7 +8,7 @@
  *
  * Copyright (C) 2016-2018 by Mario Frank <mario dot frank at uni minus potsdam dot de>
  * Copyright (C) 2003      by Ricardo Niederberger Cabral <nieder at mail dot ru>
- * Copyright (C) 2009-2021 by Gilles Caulier <caulier dot gilles at gmail dot com>
+ * Copyright (C) 2009-2022 by Gilles Caulier <caulier dot gilles at gmail dot com>
  * Copyright (C) 2009-2013 by Marcel Wiesweg <marcel dot wiesweg at gmx dot de>
  * Copyright (C) 2009-2011 by Andi Clemens <andi dot clemens at gmail dot com>
  *
@@ -240,10 +240,10 @@ QPair<double, QMap<qlonglong, double> > HaarIface::bestMatchesForImageWithThresh
                                     type);
 }
 
-QMap<qlonglong,double> HaarIface::bestMatchesForSignature(const QString& signature,
-                                                          const QList<int>& targetAlbums,
-                                                          int numberOfResults,
-                                                          SketchType type)
+QMap<qlonglong, double> HaarIface::bestMatchesForSignature(const QString& signature,
+                                                           const QList<int>& targetAlbums,
+                                                           int numberOfResults,
+                                                           SketchType type)
 {
     QByteArray bytes = QByteArray::fromBase64(signature.toLatin1());
 
@@ -374,7 +374,7 @@ QPair<double, QMap<qlonglong, double> > HaarIface::bestMatchesWithThreshold(qlon
     // similarity are returned. But users expect also to see images
     // with similarity 50,x.
 
-    double supremum = (floor(maximumPercentage*100 + 1.0))/100;
+    double supremum = (floor(maximumPercentage * 100 + 1.0)) / 100;
 
     QMap<qlonglong, double> bestMatches;
     double score, percentage, avgPercentage = 0.0;
@@ -447,7 +447,7 @@ bool HaarIface::fulfillsRestrictions(qlonglong imageId, int albumId,
                                      const QList<int>& targetAlbums,
                                      DuplicatesSearchRestrictions searchResultRestriction)
 {
-    if (imageId == originalImageId)
+    if      (imageId == originalImageId)
     {
         return true;
     }
@@ -502,6 +502,7 @@ QMap<qlonglong, double> HaarIface::searchDatabase(Haar::SignatureData* const que
         // then calculate the score.
 
         const qlonglong& imageId = it.key();
+
         if (fulfillsRestrictions(imageId, d->albumCache()->value(imageId), originalImageId,
                                  originalAlbumId, targetAlbums, searchResultRestriction))
         {
@@ -549,7 +550,8 @@ QImage HaarIface::loadQImage(const QString& filename)
 bool HaarIface::retrieveSignatureFromDB(qlonglong imageid, Haar::SignatureData& sig)
 {
     QList<QVariant> values;
-    SimilarityDbAccess().backend()->execSql(QString::fromUtf8("SELECT matrix FROM ImageHaarMatrix WHERE imageid=?"),
+    SimilarityDbAccess().backend()->execSql(QString::fromUtf8("SELECT matrix FROM ImageHaarMatrix "
+                                                              " WHERE imageid=?;"),
                                             imageid, &values);
 
     if (values.isEmpty())
@@ -810,7 +812,37 @@ HaarIface::DuplicatesResultsMap HaarIface::findDuplicates(const QSet<qlonglong>&
 
             if (!(duplicates.isEmpty()) && !((duplicates.count() == 1) && (duplicates.first() == *images2ScanIterator)))
             {
-                resultsMap.insert(*images2ScanIterator, qMakePair(bestMatches.first, duplicates));
+                // Use the oldest image date or larger pixel/file size as the reference image.
+
+                QDateTime refDateTime;
+                quint64   refPixelSize  = 0;
+                qlonglong refFileSize   = 0;
+                qlonglong reference     = *images2ScanIterator;
+
+                foreach (const qlonglong& refId, duplicates)
+                {
+                    ItemInfo info(refId);
+                    quint64 infoPixelSize = info.dimensions().width() *
+                                            info.dimensions().height();
+
+                    if (
+                        !refDateTime.isValid()                ||
+                        (info.dateTime()  <  refDateTime)     ||
+                        ((info.dateTime() == refDateTime)  &&
+                         (infoPixelSize   >  refPixelSize))   ||
+                        ((info.dateTime() == refDateTime)  &&
+                         (infoPixelSize   == refPixelSize) &&
+                         (info.fileSize() >  refFileSize))
+                       )
+                    {
+                        reference    = refId;
+                        refDateTime  = info.dateTime();
+                        refFileSize  = info.fileSize();
+                        refPixelSize = infoPixelSize;
+                    }
+                }
+
+                resultsMap.insert(reference, qMakePair(bestMatches.first, duplicates));
 
                 resultsCandidates << *images2ScanIterator;
                 resultsCandidates.unite(QSet<qlonglong>(duplicates.begin(), duplicates.end()));
@@ -851,7 +883,7 @@ double HaarIface::calculateScore(const Haar::SignatureData& querySig,
 
     // Step 2: Decrease the score if query and target have significant coefficients in common
 
-    int x                        = 0;
+    int x        = 0;
 
     for (int channel = 0 ; channel < 3 ; ++channel)
     {

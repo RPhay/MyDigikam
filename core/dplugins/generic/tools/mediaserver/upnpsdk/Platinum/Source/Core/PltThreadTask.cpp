@@ -11,14 +11,14 @@
 | as published by the Free Software Foundation; either version 2
 | of the License, or (at your option) any later version.
 |
-| OEMs, ISVs, VARs and other distributors that combine and 
+| OEMs, ISVs, VARs and other distributors that combine and
 | distribute commercially licensed software with Platinum software
 | and do not wish to distribute the source code for the commercially
 | licensed software under version 2, or (at your option) any later
 | version, of the GNU General Public License (the "GPL") must enter
 | into a commercial license agreement with Plutinosoft, LLC.
 | licensing@plutinosoft.com
-|  
+|
 | This program is distributed in the hope that it will be useful,
 | but WITHOUT ANY WARRANTY; without even the implied warranty of
 | MERCHANTABILITY or FITNESS FOR A PARTICULAR PURPOSE.  See the
@@ -26,7 +26,7 @@
 |
 | You should have received a copy of the GNU General Public License
 | along with this program; see the file LICENSE.txt. If not, write to
-| the Free Software Foundation, Inc., 
+| the Free Software Foundation, Inc.,
 | 51 Franklin Street, Fifth Floor, Boston, MA  02110-1301, USA.
 | http://www.gnu.org/licenses/gpl-2.0.html
 |
@@ -36,7 +36,7 @@
 |   includes
 +---------------------------------------------------------------------*/
 #include "PltThreadTask.h"
-#include "PltTaskManager.h" 
+#include "PltTaskManager.h"
 
 NPT_SET_LOCAL_LOGGER("platinum.core.threadtask")
 
@@ -70,13 +70,13 @@ PLT_ThreadTask::Start(PLT_TaskManager*  task_manager,/* = NULL */
     m_AutoDestroy = auto_destroy;
     m_Delay       = delay?*delay:NPT_TimeStamp(0.);
     m_TaskManager = task_manager;
-    
+
     if (m_TaskManager) {
         NPT_CHECK_SEVERE(m_TaskManager->AddTask(this));
         return NPT_SUCCESS;
     } else {
         NPT_Result result = StartThread();
-        
+
         // suicide now if task is to auto destroy when finish
         if (NPT_FAILED(result) && m_AutoDestroy) {
             delete this;
@@ -92,20 +92,20 @@ NPT_Result
 PLT_ThreadTask::StartThread()
 {
     m_Started.SetValue(0);
-    
+
     m_Thread = new NPT_Thread((NPT_Runnable&)*this, m_AutoDestroy);
     NPT_Result result = m_Thread->Start();
     if (NPT_FAILED(result)) {
-        
+
         // delete thread manually in case m_AutoDestroy was true
         if (m_AutoDestroy) {
             delete m_Thread;
             m_Thread = NULL;
         }
-        
+
         NPT_CHECK_FATAL(result);
     }
-    
+
     return m_Started.WaitUntilEquals(1, NPT_TIMEOUT_INFINITE);
 }
 
@@ -118,15 +118,15 @@ PLT_ThreadTask::Stop(bool blocking /* = true */)
     // keep variable around in case
     // we get destroyed
     bool auto_destroy = m_AutoDestroy;
-    
+
     // tell thread we want to die
     m_Abort.SetValue(1);
     DoAbort();
-    
+
     // return without waiting if non blocking or not started
     if (!blocking || !m_Thread) return NPT_SUCCESS;
 
-    // if auto-destroy, the thread may be already dead by now 
+    // if auto-destroy, the thread may be already dead by now
     // so we can't wait on m_Thread.
     // only Task Manager will know when task is finished
     return auto_destroy?NPT_FAILURE:m_Thread->Wait();
@@ -154,10 +154,10 @@ PLT_ThreadTask::Kill()
 |   PLT_ThreadTask::Run
 +---------------------------------------------------------------------*/
 void
-PLT_ThreadTask::Run() 
+PLT_ThreadTask::Run()
 {
     m_Started.SetValue(1);
-    
+
     // wait before starting task if necessary
     if ((float)m_Delay > 0.f) {
         // more than 100ms, loop so we can abort it

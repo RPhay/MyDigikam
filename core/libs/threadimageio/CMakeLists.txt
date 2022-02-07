@@ -1,5 +1,5 @@
 #
-# Copyright (c) 2010-2021 by Gilles Caulier, <caulier dot gilles at gmail dot com>
+# Copyright (c) 2010-2022 by Gilles Caulier, <caulier dot gilles at gmail dot com>
 # Copyright (c) 2015      by Veaceslav Munteanu, <veaceslav dot munteanu90 at gmail dot com>
 #
 # Redistribution and use is allowed according to the terms of the BSD license.
@@ -8,12 +8,6 @@
 APPLY_COMMON_POLICIES()
 
 set(libthreadimageio_SRCS
-    ${CMAKE_CURRENT_SOURCE_DIR}/engine/dservicemenu.cpp
-    ${CMAKE_CURRENT_SOURCE_DIR}/engine/dfileoperations.cpp
-    ${CMAKE_CURRENT_SOURCE_DIR}/engine/filereadwritelock.cpp
-    ${CMAKE_CURRENT_SOURCE_DIR}/engine/managedloadsavethread.cpp
-    ${CMAKE_CURRENT_SOURCE_DIR}/engine/sharedloadsavethread.cpp
-
     ${CMAKE_CURRENT_SOURCE_DIR}/preview/previewloadthread.cpp
     ${CMAKE_CURRENT_SOURCE_DIR}/preview/previewtask.cpp
     ${CMAKE_CURRENT_SOURCE_DIR}/preview/previewsettings.cpp
@@ -33,7 +27,20 @@ set(libthreadimageio_SRCS
     ${CMAKE_CURRENT_SOURCE_DIR}/fileio/loadingcache.cpp
     ${CMAKE_CURRENT_SOURCE_DIR}/fileio/loadingcacheinterface.cpp
     ${CMAKE_CURRENT_SOURCE_DIR}/fileio/loadsavetask.cpp
+
+    ${CMAKE_CURRENT_SOURCE_DIR}/engine/dfileoperations.cpp
+    ${CMAKE_CURRENT_SOURCE_DIR}/engine/filereadwritelock.cpp
+    ${CMAKE_CURRENT_SOURCE_DIR}/engine/managedloadsavethread.cpp
+    ${CMAKE_CURRENT_SOURCE_DIR}/engine/sharedloadsavethread.cpp
+    ${CMAKE_CURRENT_SOURCE_DIR}/engine/dservicemenu_linux.cpp
 )
+
+if(APPLE)
+    set(libthreadimageio_SRCS
+        ${libthreadimageio_SRCS}
+        ${CMAKE_CURRENT_SOURCE_DIR}/engine/dservicemenu_mac.mm
+    )
+endif()
 
 if(ENABLE_MEDIAPLAYER)
 

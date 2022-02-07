@@ -18,9 +18,9 @@
 
 //SuppressSAL.h Version 1.0
 
-/* 
- * This file defines the Standard Annotation Language(SAL) symbols as empty, for non-windows platform. 
- * This file should be included in multi-platform code which uses SAL, to avoid build breaks 
+/*
+ * This file defines the Standard Annotation Language(SAL) symbols as empty, for non-windows platform.
+ * This file should be included in multi-platform code which uses SAL, to avoid build breaks
  * on non-windows platform.
  */
 
@@ -506,12 +506,12 @@
 #define _Deref_post_opt_valid_cap_(size)
 #define _Deref_post_valid_bytecap_(size)
 #define _Deref_post_opt_valid_bytecap_(size)
-                                                
+
 #define _Deref_post_valid_cap_c_(size)
 #define _Deref_post_opt_valid_cap_c_(size)
 #define _Deref_post_valid_bytecap_c_(size)
 #define _Deref_post_opt_valid_bytecap_c_(size)
-                                                
+
 #define _Deref_post_valid_cap_x_(size)
 #define _Deref_post_opt_valid_cap_x_(size)
 #define _Deref_post_valid_bytecap_x_(size)

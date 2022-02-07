@@ -24,7 +24,7 @@ XMP_ProgressTracker::XMP_ProgressTracker ( const CallbackInfo & _cbInfo )
 	this->Clear();
 	if ( _cbInfo.clientProc == 0 ) return;
 	XMP_Assert ( _cbInfo.wrapperProc != 0 );
-	
+
 	this->cbInfo = _cbInfo;
 	if ( this->cbInfo.interval < 0.0 ) this->cbInfo.interval = 1.0;
 
@@ -56,7 +56,7 @@ void XMP_ProgressTracker::AddTotalWork ( float workIncrement )
 
 	if ( workIncrement < 0.0 ) workIncrement = 0.0;
 	this->totalWork += workIncrement;
-	
+
 }	// XMP_ProgressTracker::AddTotalWork
 
 // =================================================================================================
@@ -69,7 +69,7 @@ void XMP_ProgressTracker::AddWorkDone ( float workIncrement )
 	if ( workIncrement < 0.0 ) workIncrement = 0.0;
 	this->workDone += workIncrement;
 	this->NotifyClient();
-	
+
 }	// XMP_ProgressTracker::AddWorkDone
 
 // =================================================================================================
@@ -120,12 +120,12 @@ void XMP_ProgressTracker::NotifyClient ( bool isStartStop )
 {
 	XMP_Bool ok = !kXMP_Bool_False;
 	float fractionDone = 0.0;
-	
+
 	if ( this->cbInfo.clientProc == 0 ) return;
 	XMP_Assert ( this->cbInfo.wrapperProc != 0 );
 	XMP_Assert ( (this->totalWork >= 0.0) && (this->workDone >= 0.0) && (this->cbInfo.interval >= 0.0) );
 	// ! Note that totalWork might be unknown or understimated, and workDone greater than totalWork.
-	
+
 	if ( isStartStop ) {
 
 		float totalTime = 0.0;
@@ -157,7 +157,7 @@ void XMP_ProgressTracker::NotifyClient ( bool isStartStop )
 	}
 
 	if ( ok == kXMP_Bool_False ) XMP_Throw ( "Abort signaled by progress reporting callback", kXMPErr_ProgressAbort );
-		
+
 }	// XMP_ProgressTracker::NotifyClient
 
 // =================================================================================================

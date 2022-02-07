@@ -7,7 +7,7 @@
  * Description : Exiv2 library interface.
  *               Internal private container.
  *
- * Copyright (C) 2006-2021 by Gilles Caulier <caulier dot gilles at gmail dot com>
+ * Copyright (C) 2006-2022 by Gilles Caulier <caulier dot gilles at gmail dot com>
  * Copyright (C) 2006-2013 by Marcel Wiesweg <marcel dot wiesweg at gmx dot de>
  *
  * This program is free software; you can redistribute it
@@ -643,7 +643,7 @@ QString MetaEngine::Private::detectEncodingAndDecode(const std::string& value) c
     }
 
     // Utf8 has a pretty unique byte pattern.
-    // Thats not true for ASCII, it is not possible
+    // That's not true for ASCII, it is not possible
     // to reliably autodetect different ISO-8859 charsets.
     // So we can use either local encoding, or latin1.
 

@@ -155,7 +155,7 @@ namespace AdobeXMPCore {
 	typedef BASE_CLASS( IClientDOMSerializer, ICLIENTDOMSERIALIZER_VERSION )			IClientDOMSerializer;
 	typedef IClientDOMSerializer *														pIClientDOMSerializer;
 	typedef const IClientDOMSerializer *												pcIClientDOMSerializer;
-	
+
 	// IDOMParser
 	class IDOMParser_v1;
 	typedef IDOMParser_v1																IDOMParser_base;
@@ -211,7 +211,7 @@ namespace AdobeXMPCore {
 	typedef ICoreConfigurationManager *													pICoreConfigurationManager;
 	typedef const ICoreConfigurationManager *											pcICoreConfigurationManager;
 	typedef shared_ptr< ICoreConfigurationManager >										spICoreConfigurationManager;
-	typedef shared_ptr< const ICoreConfigurationManager >								spcICoreConfigurationManager;	
+	typedef shared_ptr< const ICoreConfigurationManager >								spcICoreConfigurationManager;
 	static const uint64 kICoreConfigurationManagerID									( 0x63436f6e664d6772 /* cConfMgr */ );
 
 }

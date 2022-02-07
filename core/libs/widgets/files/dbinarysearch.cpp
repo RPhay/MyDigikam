@@ -6,7 +6,7 @@
  * Date        : 2012-01-05
  * Description : a widget to find missing binaries.
  *
- * Copyright (C) 2009-2021 by Gilles Caulier <caulier dot gilles at gmail dot com>
+ * Copyright (C) 2009-2022 by Gilles Caulier <caulier dot gilles at gmail dot com>
  * Copyright (C) 2012-2016 by Benjamin Girault <benjamin dot girault at gmail dot com>
  *
  * This program is free software; you can redistribute it

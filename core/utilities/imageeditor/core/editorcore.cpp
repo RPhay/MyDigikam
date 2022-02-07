@@ -7,7 +7,7 @@
  * Description : DImg interface for image editor
  *
  * Copyright (C) 2004-2005 by Renchi Raju <renchi dot raju at gmail dot com>
- * Copyright (C) 2004-2021 by Gilles Caulier <caulier dot gilles at gmail dot com>
+ * Copyright (C) 2004-2022 by Gilles Caulier <caulier dot gilles at gmail dot com>
  *
  * This program is free software; you can redistribute it
  * and/or modify it under the terms of the GNU General
@@ -875,7 +875,7 @@ QPixmap EditorCore::convertToPixmap(const DImg& img) const
         QPainter painter(&pix);
         QImage pureColorMask = img.pureColorMask(d->expoSettings);
         QPixmap pixMask      = QPixmap::fromImage(pureColorMask);
-        painter.drawPixmap(0, 0, pixMask, 0, 0, pixMask.width(), pixMask.height());
+        painter.drawPixmap(pix.rect(), pixMask);
     }
 
     return pix;

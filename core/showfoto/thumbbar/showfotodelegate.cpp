@@ -7,7 +7,7 @@
  * Description : Qt model view for Showfoto item - the delegate
  *
  * Copyright (C) 2013      by Mohamed_Anwer <m_dot_anwer at gmx dot com>
- * Copyright (C) 2013-2021 by Gilles Caulier <caulier dot gilles at gmail dot com>
+ * Copyright (C) 2013-2022 by Gilles Caulier <caulier dot gilles at gmail dot com>
  *
  * This program is free software; you can redistribute it
  * and/or modify it under the terms of the GNU General
@@ -221,7 +221,7 @@ void ShowfotoDelegate::paint(QPainter* p, const QStyleOptionViewItem& option, co
 
     if (!d->dateRect.isNull())
     {
-        drawCreationDate(p, d->dateRect, info.ctime);
+        drawCreationDate(p, d->dateRect, (info.ctime.isValid() ? info.ctime : info.dtime));
     }
 
     if (!d->sizeRect.isNull())
@@ -308,7 +308,6 @@ void ShowfotoDelegate::setDefaultViewOptions(const QStyleOptionViewItem& option)
 
 void ShowfotoDelegate::invalidatePaintingCache()
 {
-
     ShowfotoItemViewDelegate::invalidatePaintingCache();
 }
 
@@ -520,6 +519,7 @@ bool ShowfotoThumbnailDelegate::acceptsActivation(const QPoint& pos, const QRect
 void ShowfotoThumbnailDelegate::updateContentWidth()
 {
     Q_D(ShowfotoThumbnailDelegate);
+
     int maxSize;
 
     if (d->flow == QListView::LeftToRight)
@@ -538,7 +538,7 @@ void ShowfotoThumbnailDelegate::updateContentWidth()
 
 int ShowfotoThumbnailDelegate::thumbnailPixmapSize(bool withHighlight, int size)
 {
-    if (withHighlight && size >= 10)
+    if (withHighlight && (size >= 10))
     {
         return (size + 2);
     }
@@ -582,6 +582,7 @@ ShowfotoNormalDelegate::ShowfotoNormalDelegate(ShowfotoThumbnailBar* const bar,
     : ShowfotoDelegate(*new ShowfotoNormalDelegatePrivate, bar)
 {
     Q_D(ShowfotoNormalDelegate);
+
     d->init(this, bar);
 }
 
@@ -590,8 +591,8 @@ ShowfotoNormalDelegate::ShowfotoNormalDelegate(ShowfotoNormalDelegatePrivate& dd
                                                QObject* const)
     : ShowfotoDelegate(dd, bar)
 {
-
     Q_D(ShowfotoNormalDelegate);
+
     d->init(this, bar);
 }
 

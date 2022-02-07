@@ -6,7 +6,7 @@
  * Date        : 2018-12-31
  * Description : configuration view for external plugin
  *
- * Copyright (C) 2018-2021 by Gilles Caulier <caulier dot gilles at gmail dot com>
+ * Copyright (C) 2018-2022 by Gilles Caulier <caulier dot gilles at gmail dot com>
  *
  * This program is free software; you can redistribute it
  * and/or modify it under the terms of the GNU General
@@ -57,7 +57,7 @@ public:
     void apply();
 
     /**
-     * Return the number of plugins actived in the list.
+     * Return the number of plugins active in the list.
      */
     int actived()                                const;
 
@@ -72,7 +72,7 @@ public:
     int itemsVisible()                           const;
 
     /**
-     * Return the number of plugins in the list with visibly properties availalble.
+     * Return the number of plugins in the list with visibly properties available.
      */
     int itemsWithVisiblyProperty()               const;
 

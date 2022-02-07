@@ -6,7 +6,7 @@
  * Date        : 2020-11-28
  * Description : ExifTool process stream parser.
  *
- * Copyright (C) 2020-2021 by Gilles Caulier <caulier dot gilles at gmail dot com>
+ * Copyright (C) 2020-2022 by Gilles Caulier <caulier dot gilles at gmail dot com>
  *
  * This program is free software; you can redistribute it
  * and/or modify it under the terms of the GNU General
@@ -56,7 +56,7 @@ bool ExifToolParser::load(const QString& path, bool async)
 /*
     TODO: better i18n support from ExifTool.
     ExifTool Translations are limited to few languages, and passing a non supported code to ExifTool
-    returns an error. So we needs a mechanism to get the complete list of cuurent i18n code supported, 
+    returns an error. So we needs a mechanism to get the complete list of cuurent i18n code supported,
     typically "exiftool -lang".
 
     // Forward GUI language code to get translated string from ExifTool (typically tags descriptions)

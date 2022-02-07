@@ -6,7 +6,7 @@
 # The MIT License (MIT)
 #
 # Copyright (c)      2015 by Martin Preisler <martin at preisler dot me>
-# Copyright (c) 2016-2021 by Gilles Caulier <caulier dot gilles at gmail dot com>
+# Copyright (c) 2016-2022 by Gilles Caulier <caulier dot gilles at gmail dot com>
 #
 # Blog post         : https://martin.preisler.me/2015/03/mingw-bundledlls-automatically-bundle-dlls/
 # Github repository : https://github.com/mpreisler/mingw-bundledlls
@@ -89,7 +89,9 @@ blacklist = [
     "d3d11.dll",
     "dxgi.dll",
     "dwrite.dll",
-    "dbghelp.dll",      # blacklisted dll from DrMinGW as it use MSVC dll to show debg dialog.
+    "ncrypt.dll",
+    "dbghelp.dll",      # blacklisted dll from DrMinGW as it use MSVC dll to show debug dialog.
+    "dbgcore.dll",      # blacklisted dll from DrMinGW.
 ]
 
 # -----------------------------------------------
@@ -200,7 +202,7 @@ def main():
 
     print("Scan dependencies for " + args.efile)
 
-    # The mingw pathes matches in MXE build directory
+    # The mingw paths matches in MXE build directory
     default_path_prefixes = [
         args.installprefix + "/qt5/bin/",
         args.installprefix + "/bin/",

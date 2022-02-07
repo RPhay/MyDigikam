@@ -3,7 +3,7 @@
 # Main AppImage internal startup script.
 # Wrap XDG_* variables properly for Qt5.
 #
-# Copyright (c) 2015-2021 by Gilles Caulier  <caulier dot gilles at gmail dot com>
+# Copyright (c) 2015-2022 by Gilles Caulier  <caulier dot gilles at gmail dot com>
 #
 # Redistribution and use is allowed according to the terms of the BSD license.
 # For details see the accompanying COPYING-CMAKE-SCRIPTS file.
@@ -14,44 +14,33 @@
 preload_shared_library ()
 {
     FILE=$1
-    echo -e "$FILE "
+    echo -e "Check library $FILE"
 
-    if [[ "$(uname -m)" = "x86_64" ]] ; then
-
-        # 64 bits system
-
-        if   [ -f "$DIR/usr/lib64/$FILE" ] ; then
-            export LD_PRELOAD=$LD_PRELOAD:$DIR/usr/lib64/$FILE
-        elif [ -f "/usr/lib64/$FILE" ] ; then
-            export LD_PRELOAD=$LD_PRELOAD:/usr/lib64/$FILE
-        elif [ -f "/usr/lib/x86_64-linux-gnu/$FILE" ] ; then
-            export LD_PRELOAD=$LD_PRELOAD:/usr/lib/x86_64-linux-gnu/$FILE
-        elif [ -f "/lib/x86_64-linux-gnu/$FILE" ] ; then
-            export LD_PRELOAD=$LD_PRELOAD:/lib/x86_64-linux-gnu/$FILE
-        fi
-
-    else
-
-        # 32 bits system
-
-        if   [ -f "$DIR/usr/lib/$FILE" ] ; then
-            export LD_PRELOAD=$LD_PRELOAD:$DIR/usr/lib/$FILE
-        elif [ -f "/usr/lib/$FILE" ] ; then
-            export LD_PRELOAD=$LD_PRELOAD:/usr/lib/$FILE
-        elif [ -f "/usr/lib/i386-linux-gnu/$FILE" ] ; then
-            export LD_PRELOAD=$LD_PRELOAD:/usr/lib/i386-linux-gnu/$FILE
-        elif [ -f "/lib/i386-linux-gnu/$FILE" ] ; then
-            export LD_PRELOAD=$LD_PRELOAD:/lib/i386-linux-gnu/$FILE
-        fi
-
+#    if   [ -f "$DIR/usr/lib64/$FILE" ] ; then
+#        export LD_PRELOAD=$LD_PRELOAD:$DIR/usr/lib64/$FILE
+#    elif
+    if   [ -f "/usr/lib64/$FILE" ] ; then
+        export LD_PRELOAD=$LD_PRELOAD:/usr/lib64/$FILE
+    elif [ -f "/usr/lib/x86_64-linux-gnu/$FILE" ] ; then
+        export LD_PRELOAD=$LD_PRELOAD:/usr/lib/x86_64-linux-gnu/$FILE
+    elif [ -f "/lib/x86_64-linux-gnu/$FILE" ] ; then
+        export LD_PRELOAD=$LD_PRELOAD:/lib/x86_64-linux-gnu/$FILE
     fi
 }
 
+###
 
 echo "-- digiKam Linux AppImage Bundle"
 echo "-- Use 'help' as CLI argument to know all available options for digiKam application."
 echo "-- Notes: to integrate this bundle to your desktop, use AppImageLauncher."
 echo "--        to enable all debug messages on the console, use 'export QT_LOGGING_RULES=\"digikam*=true\"'."
+
+if [[ "$(uname -m)" != "x86_64" ]] ; then
+
+    echo "!!! You trying to run a 64 bits binary on a 32 bits system. Aborted !!!"
+    exit -1;
+
+fi
 
 # See bugs #414016, #414028, #415882, Qt fill log files with unwanted debug trace about locale rules.
 export QT_LOGGING_RULES="default*=false;"$QT_LOGGING_RULES
@@ -64,6 +53,7 @@ export APPDIR=$DIR
 export APPIMAGE_ORIGINAL_LD_LIBRARY_PATH=$LD_LIBRARY_PATH
 export APPIMAGE_ORIGINAL_QT_PLUGIN_PATH=$QT_PLUGIN_PATH
 export APPIMAGE_ORIGINAL_XDG_DATA_DIRS=$XDG_DATA_DIRS
+export APPIMAGE_ORIGINAL_LD_PRELOAD=$LD_PRELOAD
 export APPIMAGE_ORIGINAL_PATH=$PATH
 
 export LD_LIBRARY_PATH=$DIR/usr/lib/:$LD_LIBRARY_PATH
@@ -72,13 +62,13 @@ export XDG_DATA_DIRS=$DIR/usr/share/:$XDG_DATA_DIRS
 export PATH=$DIR/usr/bin:$DIR/usr/lib:$DIR/usr/lib/libexec/kf5:$DIR/usr/share/digikam/utils:$PATH
 export KDE_FORK_SLAVES=1
 
-# Gphoto2 runtime environnement
+# Gphoto2 runtime environment
 export CAMLIBS=$DIR/usr/lib/libgphoto2
 export IOLIBS=$DIR/usr/lib/libgphoto2_port
 
-# ImageMagick run-time environnement
-export MAGICK_CODER_MODULE_PATH=$DIR/usr/lib/modules-Q16/coders
-export MAGICK_CODER_FILTER_PATH=$DIR/usr/lib/modules-Q16/filters
+# ImageMagick run-time environment
+export MAGICK_CODER_MODULE_PATH=$DIR/usr/lib/modules-Q16HDRI/coders
+export MAGICK_CODER_FILTER_PATH=$DIR/usr/lib/modules-Q16HDRI/filters
 
 # QtWebEngine crash with some video card drivers
 # https://github.com/qutebrowser/qutebrowser/issues/2368
@@ -116,16 +106,23 @@ preload_shared_library libudev.so.0
 # See bug #414737
 preload_shared_library libxcb-dri3.so.0
 
+# See bug #447150
+preload_shared_library libcrypto.so.1.1
+preload_shared_library libssl.so.1.1
+
+# See bug #449308
+preload_shared_library libnss3.so
+preload_shared_library libnssutil3.so
+preload_shared_library libsmime3.so
+
 #preload_shared_library libfontconfig.so.1
 #preload_shared_library libfreetype.so.6
-#preload_shared_library libssl.so.10
-#preload_shared_library libcrypto.so.10
 
 echo "-- Preloading shared libs: $LD_PRELOAD"
 
 # Parse CLI options.
 
-if [[ $1 == "showfoto" ]] ; then
+if   [[ $1 == "showfoto" ]] ; then
 
     # Run Showfoto as well.
     showfoto ${@:2}

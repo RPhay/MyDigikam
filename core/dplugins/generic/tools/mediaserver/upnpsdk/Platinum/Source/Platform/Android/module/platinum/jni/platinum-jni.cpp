@@ -62,7 +62,7 @@ JNIEXPORT jint JNICALL Java_com_plutinosoft_platinum_UPnP__1start(JNIEnv *, jcla
 {
     NPT_LOG_INFO("start");
     PLT_UPnP* self = (PLT_UPnP*)_self;
-    
+
     return self->Start();
 }
 
@@ -75,7 +75,7 @@ JNIEXPORT jint JNICALL Java_com_plutinosoft_platinum_UPnP__1stop(JNIEnv *, jclas
 {
     NPT_LOG_INFO("stop");
     PLT_UPnP* self = (PLT_UPnP*)_self;
-    
+
     return self->Stop();
 }
 

@@ -6,7 +6,7 @@
  * Date        : 2006-12-09
  * Description : a tread-safe libraw Qt interface
  *
- * Copyright (C) 2006-2021 by Gilles Caulier <caulier dot gilles at gmail dot com>
+ * Copyright (C) 2006-2022 by Gilles Caulier <caulier dot gilles at gmail dot com>
  * Copyright (C) 2006-2013 by Marcel Wiesweg <marcel dot wiesweg at gmx dot de>
  * Copyright (C) 2007-2008 by Guillaume Castagnino <casta at xwing dot info>
  *
@@ -312,7 +312,7 @@ bool DRawDecoder::loadFullImage(QImage& image,
 
     if (!ret)
     {
-        qCDebug(DIGIKAM_RAWENGINE_LOG) << "Failled to load full RAW picture";
+        qCDebug(DIGIKAM_RAWENGINE_LOG) << "Failed to load full RAW picture";
 
         return false;
     }
@@ -459,10 +459,10 @@ bool DRawDecoder::extractRAWData(const QString& filePath,
 
     d->setProgress(0.3);
 
-    raw->imgdata.params.output_bps  = 16;
-    raw->imgdata.params.shot_select = shotSelect;
-    raw->imgdata.params.user_flip   = -1;
-    ret                             = raw->unpack();
+    raw->imgdata.params.output_bps     = 16;
+    raw->imgdata.rawparams.shot_select = shotSelect;
+    raw->imgdata.params.user_flip      = -1;
+    ret                                = raw->unpack();
 
     if (ret != LIBRAW_SUCCESS)
     {

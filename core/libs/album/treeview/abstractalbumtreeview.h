@@ -8,7 +8,7 @@
  *
  * Copyright (C) 2009-2010 by Marcel Wiesweg <marcel dot wiesweg at gmx dot de>
  * Copyright (C) 2010-2011 by Andi Clemens <andi dot clemens at gmail dot com>
- * Copyright (C) 2009-2021 by Gilles Caulier <caulier dot gilles at gmail dot com>
+ * Copyright (C) 2009-2022 by Gilles Caulier <caulier dot gilles at gmail dot com>
  *
  * This program is free software; you can redistribute it
  * and/or modify it under the terms of the GNU General
@@ -44,10 +44,8 @@ namespace Digikam
 class ContextMenuHelper;
 class TagModificationHelper;
 
-// NOTE: This structure name can be in conflict with QAbstractItemView::State.
+// NOTE: This structure name can be in conflict with QAbstractItemView::State. FIXME later.
 struct State;
-
-class AbstractAlbumTreeView;
 
 /**
  * Base class for all tree views that display Album-based content provided by an
@@ -115,10 +113,14 @@ public:
     AbstractSpecificAlbumModel* albumModel() const;
     AlbumFilterModel* albumFilterModel()     const;
 
-    /// Enable expanding of tree items on single click on the item (default: off)
+    /**
+     * Enable expanding of tree items on single click on the item (default: off)
+     */
     void setExpandOnSingleClick(const bool doThat);
 
-    /// Expand an item when making it the new current item
+    /**
+     * Expand an item when making it the new current item
+     */
     void setExpandNewCurrentItem(const bool doThat);
 
     /**
@@ -175,6 +177,7 @@ public:
     bool expandMatches(const QModelIndex& index);
 
     //@{
+
     /**
      * Implements state loading for the album tree view in a somewhat clumsy
      * procedure because the model may not be fully loaded when this method is
@@ -190,6 +193,7 @@ public:
      */
     void doLoadState()                                                          override;
     void doSaveState()                                                          override;
+
     //@}
 
     /**
@@ -236,7 +240,9 @@ public:
     template<class A>
     QList<A*> currentAlbums();
 
-    // for internal use: public viewportEvent
+    /**
+     * For internal use only.
+     */
     bool viewportEvent(QEvent* event)                                           override;
 
     /**
@@ -284,17 +290,28 @@ public Q_SLOTS:
      */
     void slotCollapseNode();
 
+    /**
+     * @brief slotCollapseAllNodes - collapse all nodes without root node
+     */
+    void slotCollapseAllNodes();
+
 Q_SIGNALS:
 
-    /// Emitted when the currently selected album changes
+    /**
+     * Emitted when the currently selected album changes
+     */
     void currentAlbumChanged(Album* currentAlbum);
 
-    /// Emitted when the current selection changes. Use currentChanged unless in multi-selection mode.
+    /**
+     * Emitted when the current selection changes. Use currentChanged unless in multi-selection mode.
+     */
     void selectedAlbumsChanged(const QList<Album*>& selectedAlbums);
 
 protected Q_SLOTS:
 
-    // override if implemented behavior is not as intended
+    /**
+     * override if implemented behavior is not as intended
+     */
     virtual void slotRootAlbumAvailable();
 
     void slotSearchTextSettingsChanged(bool wasSearching, bool searching);
@@ -306,7 +323,9 @@ protected Q_SLOTS:
 
 protected:
 
-    // context menu handling
+    //@{
+
+    // Context menu handling
 
     /**
      * Hook method to implement that determines if a context menu shall be
@@ -356,7 +375,11 @@ protected:
     virtual void handleCustomContextMenuAction(QAction* action,
                                                const AlbumPointer<Album>& album);
 
-    // other stuff
+    //@}
+
+    //@{
+
+    /// Other helper methods.
 
     void mousePressEvent(QMouseEvent* e)                                        override;
 
@@ -373,6 +396,14 @@ protected:
 
     void setAlbumFilterModel(AlbumFilterModel* const filterModel);
     void setAlbumModel(AbstractSpecificAlbumModel* const model);
+
+#if (QT_VERSION < QT_VERSION_CHECK(5, 13, 0))
+
+    void expandRecursively(const QModelIndex& index);
+
+#endif
+
+    //@}
 
 protected:
 

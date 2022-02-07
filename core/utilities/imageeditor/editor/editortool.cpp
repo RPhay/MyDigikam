@@ -6,7 +6,7 @@
  * Date        : 2008-08-20
  * Description : editor tool template class.
  *
- * Copyright (C) 2008-2021 by Gilles Caulier <caulier dot gilles at gmail dot com>
+ * Copyright (C) 2008-2022 by Gilles Caulier <caulier dot gilles at gmail dot com>
  *
  * This program is free software; you can redistribute it
  * and/or modify it under the terms of the GNU General
@@ -83,7 +83,7 @@ public:
 
     FilterAction::Category category;
 
-    DPluginEditor*         plugin;
+    DPlugin*               plugin;
 };
 
 const QString EditorTool::Private::configGroupName(QLatin1String("ImageViewer Settings"));
@@ -110,7 +110,7 @@ EditorTool::~EditorTool()
     delete d;
 }
 
-void EditorTool::setPlugin(DPluginEditor* const plugin)
+void EditorTool::setPlugin(DPlugin* const plugin)
 {
     d->plugin = plugin;
     setToolName(d->plugin->name());
@@ -118,7 +118,7 @@ void EditorTool::setPlugin(DPluginEditor* const plugin)
     d->settings->setTool(this);
 }
 
-DPluginEditor* EditorTool::plugin() const
+DPlugin* EditorTool::plugin() const
 {
     return d->plugin;
 }

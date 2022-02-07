@@ -37,7 +37,7 @@
 static void
 PrintUsageAndExit(void)
 {
-    fprintf(stderr, 
+    fprintf(stderr,
             "usage: NetConfig\n");
     exit(1);
 }
@@ -59,7 +59,7 @@ PrintFlags(NPT_Flags flags)
     }
     if (flags & NPT_NETWORK_INTERFACE_FLAG_MULTICAST) {
         printf("MULTICAST ");
-    } 
+    }
     if (flags & NPT_NETWORK_INTERFACE_FLAG_POINT_TO_POINT) {
         printf("POINT-TO-POINT ");
     }
@@ -91,9 +91,9 @@ main(int argc, char**)
         PrintFlags((*iface)->GetFlags());
         printf("]\n");
         printf("  mac   = %s (type=%d)\n", (*iface)->GetMacAddress().ToString().GetChars(), (*iface)->GetMacAddress().GetType());
-        
+
         // print all addresses
-        NPT_List<NPT_NetworkInterfaceAddress>::Iterator nwifaddr = 
+        NPT_List<NPT_NetworkInterfaceAddress>::Iterator nwifaddr =
             (*iface)->GetAddresses().GetFirstItem();
         unsigned int addr_index = 0;
         while (nwifaddr) {
@@ -113,11 +113,11 @@ main(int argc, char**)
             ++nwifaddr;
             ++addr_index;
         }
-        
+
         ++iface;
         ++index;
     }
-    
+
     return 0;
 }
 

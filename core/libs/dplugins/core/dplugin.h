@@ -6,7 +6,7 @@
  * Date        : 2018-07-30
  * Description : abstract class to define digiKam plugin
  *
- * Copyright (C) 2018-2021 by Gilles Caulier <caulier dot gilles at gmail dot com>
+ * Copyright (C) 2018-2022 by Gilles Caulier <caulier dot gilles at gmail dot com>
  *
  * This program is free software; you can redistribute it
  * and/or modify it under the terms of the GNU General
@@ -155,7 +155,7 @@ public:
 
     /**
      * @brief Returns the unique internal identification property of the plugin.
-     *        Must be formated as "org.kde.digikam.plugin._PLUGIN_TYPE_._NAME_OF_PLUGIN_".
+     *        Must be formatted as "org.kde.digikam.plugin._PLUGIN_TYPE_._NAME_OF_PLUGIN_".
      *        Examples: "org.kde.digikam.plugin.generic.Calendar"
      *                  "org.kde.digikam.plugin.editor.AdjustCurvesTool"
      *                  "org.kde.digikam.plugin.bqm.NoiseReduction"
@@ -164,7 +164,7 @@ public:
 
     /**
      * @brief Returns the unique top level internal identification property of the plugin interface.
-     *        Must be formated as "org.kde.digikam._NAME_OF_INTERFACE_/_VERSION_".
+     *        Must be formatted as "org.kde.digikam._NAME_OF_INTERFACE_/_VERSION_".
      *        Examples: "org.kde.digikam.DPluginGeneric/1.1.0"
      *                  "org.kde.digikam.DPluginEditor/1.1.0"
      *                  "org.kde.digikam.DPluginBqm/1.1.0"

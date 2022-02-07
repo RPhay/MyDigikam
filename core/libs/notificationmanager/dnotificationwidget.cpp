@@ -6,7 +6,7 @@
  * Date        : 2011-07-03
  * Description : A widget to provide feedback or propose opportunistic interactions
  *
- * Copyright (C) 2009-2021 by Gilles Caulier <caulier dot gilles at gmail dot com>
+ * Copyright (C) 2009-2022 by Gilles Caulier <caulier dot gilles at gmail dot com>
  * Copyright (c) 2011      by Aurelien Gateau <agateau at kde dot org>
  * Copyright (c) 2014      by Dominik Haumann <dhaumann at kde dot org>
  *
@@ -43,6 +43,9 @@ DNotificationWidget::DNotificationWidget(QWidget* const parent)
       d     (new Private(this))
 {
     d->init();
+
+    connect(d->timer, SIGNAL(timeout()),
+            this, SLOT(slotTimerTimeout()));
 }
 
 DNotificationWidget::DNotificationWidget(const QString& text, QWidget* const parent)
@@ -52,6 +55,9 @@ DNotificationWidget::DNotificationWidget(const QString& text, QWidget* const par
     d->init();
     d->text = text;
     setText(d->text);
+
+    connect(d->timer, SIGNAL(timeout()),
+            this, SLOT(slotTimerTimeout()));
 }
 
 DNotificationWidget::~DNotificationWidget()
@@ -371,10 +377,10 @@ void DNotificationWidget::animatedShowTemporized(int delay)
     d->delay = delay;
     setText(d->text);
     animatedShow();
-    startTimer(1000);
+    d->timer->start();
 }
 
-void DNotificationWidget::timerEvent(QTimerEvent*)
+void DNotificationWidget::slotTimerTimeout()
 {
     d->delay -= 1000;
 

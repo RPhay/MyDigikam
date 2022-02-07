@@ -6,7 +6,7 @@
  * Date        : 2010-03-26
  * Description : A widget to configure the GPS correlation
  *
- * Copyright (C) 2010-2021 by Gilles Caulier <caulier dot gilles at gmail dot com>
+ * Copyright (C) 2010-2022 by Gilles Caulier <caulier dot gilles at gmail dot com>
  * Copyright (C) 2010-2014 by Michael G. Hansen <mike at mghansen dot de>
  * Copyright (C) 2014      by Justus Schwartz <justus at gmx dot li>
  *
@@ -511,13 +511,20 @@ void GPSCorrelatorWidget::slotAllItemsCorrelated()
     }
     else
     {
-        // note: no need for i18np here, because the case of correlationTotalCount == 1 is covered in the other two cases.
+        // NOTE: Even if the case of correlationTotalCount == 1 is covered in the other two cases, we need i18np.
+        //       See bug #376438 for details.
 
         QMessageBox::warning(this, i18n("Correlation finished"),
-                             i18n("%1 out of %2 images have been correlated. Please "
-                                  "check the offset and gap settings if you think "
-                                  "that more images should have been correlated.",
-                                  d->correlationCorrelatedCount, d->correlationTotalCount));
+                             i18np(
+                                   "One image out of %2 images have been correlated. Please "
+                                   "check the offset and gap settings if you think "
+                                   "that more images should have been correlated.",
+                                   "%1 out of %2 images have been correlated. Please "
+                                   "check the offset and gap settings if you think "
+                                   "that more images should have been correlated.",
+                                   d->correlationCorrelatedCount,
+                                   d->correlationTotalCount)
+                             );
     }
 
     if (d->correlationCorrelatedCount == 0)

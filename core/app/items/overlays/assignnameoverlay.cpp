@@ -8,7 +8,7 @@
 *
 * Copyright (C) 2010      by Aditya Bhatt <caulier dot gilles at gmail dot com>
 * Copyright (C) 2009-2010 by Marcel Wiesweg <marcel dot wiesweg at gmx dot de>
-* Copyright (C) 2009-2021 by Gilles Caulier <caulier dot gilles at gmail dot com>
+* Copyright (C) 2009-2022 by Gilles Caulier <caulier dot gilles at gmail dot com>
 * Copyright (C) 2008      by Peter Penz <peter dot penz at gmx dot at>
 *
 * This program is free software; you can redistribute it
@@ -155,6 +155,9 @@ void AssignNameOverlay::setActive(bool active)
         connect(assignNameWidget(), SIGNAL(rejected(ItemInfo,QVariant)),
                 this, SLOT(slotRejected(ItemInfo,QVariant)));
 
+        connect(assignNameWidget(), SIGNAL(ignored(ItemInfo,QVariant)),
+                this, SLOT(slotIgnored(ItemInfo,QVariant)));
+
         connect(assignNameWidget(), SIGNAL(ignoredClicked(ItemInfo,QVariant)),
                 this, SLOT(slotUnknown(ItemInfo,QVariant)));
 
@@ -167,6 +170,9 @@ void AssignNameOverlay::setActive(bool active)
         connect(assignNameWidget(), SIGNAL(rejected(ItemInfo,QVariant)),
                 this, SLOT(leavePersistentMode()));
 
+        connect(assignNameWidget(), SIGNAL(ignored(ItemInfo,QVariant)),
+                this, SLOT(leavePersistentMode()));
+
         connect(assignNameWidget(), SIGNAL(ignoredClicked(ItemInfo,QVariant)),
                 this, SLOT(leavePersistentMode()));
 
@@ -177,6 +183,9 @@ void AssignNameOverlay::setActive(bool active)
                 this, SLOT(storeFocus()));
 
         connect(assignNameWidget(), SIGNAL(ignoredClicked(ItemInfo,QVariant)),
+                this, SLOT(storeFocus()));
+
+        connect(assignNameWidget(), SIGNAL(ignored(ItemInfo,QVariant)),
                 this, SLOT(storeFocus()));
 
 /*
@@ -357,6 +366,15 @@ void AssignNameOverlay::slotRejected(const ItemInfo& info, const QVariant& faceI
     Q_UNUSED(faceIdentifier);
 
     emit removeFaces(affectedIndexes(index()));
+    hide();
+}
+
+void AssignNameOverlay::slotIgnored(const ItemInfo& info, const QVariant& faceIdentifier)
+{
+    Q_UNUSED(info);
+    Q_UNUSED(faceIdentifier);
+
+    emit ignoreFaces(affectedIndexes(index()));
     hide();
 }
 

@@ -54,7 +54,7 @@ class NPT_MessageHandler
 {
 public:
     NPT_IMPLEMENT_DYNAMIC_CAST(NPT_MessageHandler)
-    
+
     // methods
     virtual ~NPT_MessageHandler() {}
 
@@ -62,7 +62,7 @@ public:
     virtual void OnMessage(NPT_Message*) {}
 
     // this method is a central point of handling for received messages.
-    // it can be overloaded by subclasses that wish to process all 
+    // it can be overloaded by subclasses that wish to process all
     // incoming messages
     virtual NPT_Result HandleMessage(NPT_Message* message);
 };
@@ -81,20 +81,20 @@ public:
      * are automatically forwarded to the handler.
      * This class is useful in cases where a handler is passed
      * asynchronously (for example in a message queue) and one wishes
-     * to guarantee right away that no more calls to the handler will be 
+     * to guarantee right away that no more calls to the handler will be
      * made (because, for example, the handler needs to be deleted).
      *
      * The proxy object keeps a pointer to the handler, but does not own it.
      */
     NPT_MessageHandlerProxy(NPT_MessageHandler* handler);
-    
+
     // destructor
     virtual ~NPT_MessageHandlerProxy();
 
     // NPT_MessageHandler methods
     virtual void OnMessage(NPT_Message*);
     virtual NPT_Result HandleMessage(NPT_Message* message);
-    
+
     /**
      * Detach the proxy from the handler implementation.
      * After this call returns, calls will no longer be
@@ -102,7 +102,7 @@ public:
      * to delete the handler.
      */
     void DetachHandler();
-    
+
     /**
      * Increment the reference count
      */
@@ -112,7 +112,7 @@ public:
      * Decrement the reference count and delete if 0
      */
     void Release();
-    
+
 private:
     // members
     NPT_MessageHandler* m_Handler;
@@ -139,7 +139,7 @@ public:
         return DefaultDeliver(handler);
     }
     // this method should really be called 'Deliver', but this would
-    // cause a problem when subclasses overload it 
+    // cause a problem when subclasses overload it
     virtual NPT_Result DefaultDeliver(NPT_MessageHandler* handler) {
         handler->OnMessage(this);
         return NPT_SUCCESS;
@@ -167,7 +167,7 @@ public:
     // methods
     virtual           ~NPT_MessageQueue() {}
     virtual NPT_Result PumpMessage(NPT_Timeout timeout = NPT_TIMEOUT_INFINITE) = 0;
-    virtual NPT_Result QueueMessage(NPT_Message*        message, 
+    virtual NPT_Result QueueMessage(NPT_Message*        message,
                                     NPT_MessageHandler* handler) = 0;
 };
 
@@ -179,12 +179,12 @@ class NPT_MessageReceiver
 public:
     // methods
     NPT_MessageReceiver() : m_Queue(NULL), m_Handler(NULL) {}
-    NPT_MessageReceiver(NPT_MessageHandler* handler) : 
+    NPT_MessageReceiver(NPT_MessageHandler* handler) :
         m_Queue(NULL), m_Handler(handler) {}
-    NPT_MessageReceiver(NPT_MessageQueue* queue) : 
+    NPT_MessageReceiver(NPT_MessageQueue* queue) :
         m_Queue(queue), m_Handler(NULL) {}
-    NPT_MessageReceiver(NPT_MessageHandler* handler, 
-                        NPT_MessageQueue*   queue) : 
+    NPT_MessageReceiver(NPT_MessageHandler* handler,
+                        NPT_MessageQueue*   queue) :
         m_Queue(queue), m_Handler(handler) {}
     virtual ~NPT_MessageReceiver() {}
     NPT_Result SetQueue(NPT_MessageQueue* queue) {

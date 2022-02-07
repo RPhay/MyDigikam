@@ -7,7 +7,7 @@
  * Description : Item icon view interface.
  *
  * Copyright (C) 2002-2005 by Renchi Raju <renchi dot raju at gmail dot com>
- * Copyright (C) 2002-2021 by Gilles Caulier <caulier dot gilles at gmail dot com>
+ * Copyright (C) 2002-2022 by Gilles Caulier <caulier dot gilles at gmail dot com>
  * Copyright (C) 2009-2011 by Johannes Wienke <languitar at semipol dot de>
  * Copyright (C) 2010-2011 by Andi Clemens <andi dot clemens at gmail dot com>
  * Copyright (C) 2011-2013 by Michael G. Hansen <mike at mghansen dot de>
@@ -61,6 +61,7 @@ ItemIconView::ItemIconView(QWidget* const parent, DModelFactory* const modelColl
     d->dockArea    = new QMainWindow(this, Qt::Widget);
     d->dockArea->setContentsMargins(QMargins());
     d->splitter->addWidget(d->dockArea);
+    d->splitter->setStretchFactor(d->splitter->indexOf(d->dockArea), 10);
 
     DVBox* const vbox = new DVBox(d->dockArea);
     d->errorWidget    = new DNotificationWidget(vbox);
@@ -214,9 +215,14 @@ ItemIconView::ItemIconView(QWidget* const parent, DModelFactory* const modelColl
     d->selectionTimer = new QTimer(this);
     d->selectionTimer->setSingleShot(true);
     d->selectionTimer->setInterval(75);
+
     d->thumbSizeTimer = new QTimer(this);
     d->thumbSizeTimer->setSingleShot(true);
     d->thumbSizeTimer->setInterval(300);
+
+    d->msgNotifyTimer = new QTimer(this);
+    d->msgNotifyTimer->setSingleShot(true);
+    d->msgNotifyTimer->setInterval(250);
 
     d->albumHistory = new AlbumHistory();
 
@@ -309,6 +315,9 @@ void ItemIconView::setupConnections()
 
     connect(d->iconView->model(), SIGNAL(layoutChanged()),
             this, SLOT(slotImageSelected()));
+
+    connect(d->iconView->imageModel(), SIGNAL(allRefreshingFinished()),
+            d->msgNotifyTimer, SLOT(start()));
 
     connect(d->iconView, SIGNAL(selectionChanged()),
             this, SLOT(slotImageSelected()));
@@ -456,6 +465,9 @@ void ItemIconView::setupConnections()
 
     connect(d->thumbSizeTimer, SIGNAL(timeout()),
             this, SLOT(slotThumbSizeEffect()));
+
+    connect(d->msgNotifyTimer, SIGNAL(timeout()),
+            this, SLOT(slotEmptyMessageTimer()));
 
     // -- Album Settings ----------------
 

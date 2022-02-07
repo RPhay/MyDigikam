@@ -1,5 +1,5 @@
 #
-# Copyright (c) 2010-2021 by Gilles Caulier, <caulier dot gilles at gmail dot com>
+# Copyright (c) 2010-2022 by Gilles Caulier, <caulier dot gilles at gmail dot com>
 # Copyright (c) 2015      by Veaceslav Munteanu, <veaceslav dot munteanu90 at gmail dot com>
 #
 # Redistribution and use is allowed according to the terms of the BSD license.
@@ -58,6 +58,9 @@ set(libfilestools_SRCS
 
 set(libmainview_SRCS
     ${CMAKE_CURRENT_SOURCE_DIR}/mainview/dxmlguiwindow.cpp
+    ${CMAKE_CURRENT_SOURCE_DIR}/mainview/dxmlguiwindow_actions.cpp
+    ${CMAKE_CURRENT_SOURCE_DIR}/mainview/dxmlguiwindow_fullscreen.cpp
+    ${CMAKE_CURRENT_SOURCE_DIR}/mainview/dxmlguiwindow_toolbar.cpp
     ${CMAKE_CURRENT_SOURCE_DIR}/mainview/daboutdata.cpp
     ${CMAKE_CURRENT_SOURCE_DIR}/mainview/dactivelabel.cpp
     ${CMAKE_CURRENT_SOURCE_DIR}/mainview/dzoombar.cpp
@@ -66,6 +69,7 @@ set(libmainview_SRCS
     ${CMAKE_CURRENT_SOURCE_DIR}/mainview/thememanager_p.cpp
     ${CMAKE_CURRENT_SOURCE_DIR}/mainview/fullscreensettings.cpp
     ${CMAKE_SOURCE_DIR}/core/app/utils/digikam_globals.cpp
+    ${CMAKE_SOURCE_DIR}/core/app/utils/digikam_globals_bundles.cpp
 )
 
 set(libitemview_SRCS

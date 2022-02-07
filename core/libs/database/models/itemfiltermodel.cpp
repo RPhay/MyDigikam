@@ -7,7 +7,7 @@
  * Description : Qt item model for database entries
  *
  * Copyright (C) 2009-2011 by Marcel Wiesweg <marcel dot wiesweg at gmx dot de>
- * Copyright (C) 2011-2021 by Gilles Caulier <caulier dot gilles at gmail dot com>
+ * Copyright (C) 2011-2022 by Gilles Caulier <caulier dot gilles at gmail dot com>
  * Copyright (C)      2010 by Andi Clemens <andi dot clemens at gmail dot com>
  * Copyright (C)      2011 by Michael G. Hansen <mike at mghansen dot de>
  * Copyright (C)      2014 by Mohamed_Anwer <m_dot_anwer at gmx dot com>
@@ -388,6 +388,13 @@ QVariant ItemFilterModel::data(const QModelIndex& index, int role) const
         {
             if (extraData.isNull())
             {
+                int count = d->imageModel->imageInfoRef(mapToSource(index)).faceCount();
+
+                if (count)
+                {
+                    return i18np("%1 Face", "%1 Faces", count);
+                }
+
                 return i18nc("@item: filter model", "No face");
             }
 
@@ -1121,11 +1128,11 @@ QString ItemFilterModel::categoryIdentifier(const ItemInfo& i, const FaceTagsIfa
 
         case ItemSortSettings::CategoryByFaces:
         {
-            // No face in image.
+            // No face from extra data.
 
             if (face.isNull())
             {
-                return QLatin1String("NO_FACE");
+                return fastNumberToString(info.faceCount());
             }
 
             if      (face.type() == FaceTagsIface::UnknownName)

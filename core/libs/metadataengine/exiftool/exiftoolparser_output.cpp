@@ -6,7 +6,7 @@
  * Date        : 2020-11-28
  * Description : ExifTool process stream parser.
  *
- * Copyright (C) 2020-2021 by Gilles Caulier <caulier dot gilles at gmail dot com>
+ * Copyright (C) 2020-2022 by Gilles Caulier <caulier dot gilles at gmail dot com>
  *
  * This program is free software; you can redistribute it
  * and/or modify it under the terms of the GNU General
@@ -130,11 +130,21 @@ void ExifToolParser::slotCmdCompleted(int cmdAction,
                 }
 
                 QString desc         = propsMap.find(QLatin1String("desc")).value().toString();
+
+                // Optional numerical value extraction, if any
+
+                QString num;
+                QVariantMap::iterator it2 = propsMap.find(QLatin1String("num"));
+
+                if (it2 != propsMap.end())
+                {
+                    num = it2.value().toString();
+                }
 /*
                 qCDebug(DIGIKAM_METAENGINE_LOG) << "ExifTool json property:" << tagNameExifTool << data;
 */
 
-                if (data.startsWith(QLatin1String("(Binary data ")) && 
+                if (data.startsWith(QLatin1String("(Binary data ")) &&
                     data.endsWith(QLatin1String(", use -b option to extract)")))
                 {
                     data = data.section(QLatin1Char(','), 0, 0);
@@ -144,7 +154,8 @@ void ExifToolParser::slotCmdCompleted(int cmdAction,
                 d->exifToolData.insert(tagNameExifTool, QVariantList()
                                                          << data        // ExifTool Raw data as string.
                                                          << tagType     // ExifTool data type.
-                                                         << desc);      // ExifTool tag description.
+                                                         << desc        // ExifTool tag description.
+                                                         << num);       // ExifTool numeral value if any.
             }
 
             break;

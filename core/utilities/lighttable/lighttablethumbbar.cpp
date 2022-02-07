@@ -6,7 +6,7 @@
  * Date        : 2007-04-11
  * Description : light table thumbs bar
  *
- * Copyright (C) 2007-2021 by Gilles Caulier <caulier dot gilles at gmail dot com>
+ * Copyright (C) 2007-2022 by Gilles Caulier <caulier dot gilles at gmail dot com>
  *
  * This program is free software; you can redistribute it
  * and/or modify it under the terms of the GNU General
@@ -266,8 +266,8 @@ void LightTableThumbBar::showContextMenuOnInfo(QContextMenuEvent* e, const ItemI
 {
     // temporary actions ----------------------------------
 
-    QAction* const leftPanelAction  = new QAction(QIcon::fromTheme(QLatin1String("go-previous")),   i18n("Show on left panel"),  this);
-    QAction* const rightPanelAction = new QAction(QIcon::fromTheme(QLatin1String("go-next")),       i18n("Show on right panel"), this);
+    QAction* const leftPanelAction  = new QAction(QIcon::fromTheme(QLatin1String("arrow-left")),    i18n("Show on left panel"),  this);
+    QAction* const rightPanelAction = new QAction(QIcon::fromTheme(QLatin1String("arrow-right")),   i18n("Show on right panel"), this);
     QAction* const editAction       = new QAction(QIcon::fromTheme(QLatin1String("document-edit")), i18n("Edit"),                this);
     QAction* const removeAction     = new QAction(QIcon::fromTheme(QLatin1String("window-close")),  i18n("Remove item"),         this);
     QAction* const clearAllAction   = new QAction(QIcon::fromTheme(QLatin1String("edit-delete")),   i18n("Clear all"),           this);

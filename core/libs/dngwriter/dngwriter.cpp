@@ -6,7 +6,7 @@
  * Date        : 2008-09-25
  * Description : a tool to convert RAW file to DNG
  *
- * Copyright (C) 2008-2021 by Gilles Caulier <caulier dot gilles at gmail dot com>
+ * Copyright (C) 2008-2022 by Gilles Caulier <caulier dot gilles at gmail dot com>
  * Copyright (C) 2010-2011 by Jens Mueller <tschenser at gmx dot de>
  *
  * This program is free software; you can redistribute it
@@ -51,12 +51,12 @@ namespace Digikam
 DNGWriter::DNGWriter()
     : d(new Private(this))
 {
-    dng_xmp_sdk::InitializeSDK();
+    //dng_xmp_sdk::InitializeSDK();
 }
 
 DNGWriter::~DNGWriter()
 {
-    dng_xmp_sdk::TerminateSDK();
+    //dng_xmp_sdk::TerminateSDK();
 
     delete d;
 }

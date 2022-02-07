@@ -5,12 +5,12 @@
 |   $Id: NptBsdBlockerSocket.h 268 2015-05-28 19:13:46Z ehodzic $
 |   Original author: Edin Hodzic (dino@concisoft.com)
 |
-|   This software is provided to you pursuant to your agreement 
+|   This software is provided to you pursuant to your agreement
 |   with Intertrust Technologies Corporation ("Intertrust").
-|   This software may be used only in accordance with the terms 
+|   This software may be used only in accordance with the terms
 |   of the agreement.
 |
-|   Copyright (c) 2015 by Intertrust. All rights reserved. 
+|   Copyright (c) 2015 by Intertrust. All rights reserved.
 |
 ****************************************************************/
 

@@ -10,7 +10,7 @@
  * Copyright (C) 2010-2011 by Andi Clemens <andi dot clemens at gmail dot com>
  * Copyright (C) 2014      by Mohamed_Anwer <m_dot_anwer at gmx dot com>
  * Copyright (C) 2014      by Michael G. Hansen <mike at mghansen dot de>
- * Copyright (C) 2009-2021 by Gilles Caulier <caulier dot gilles at gmail dot com>
+ * Copyright (C) 2009-2022 by Gilles Caulier <caulier dot gilles at gmail dot com>
  *
  * This program is free software; you can redistribute it
  * and/or modify it under the terms of the GNU General
@@ -44,6 +44,7 @@
 // KDE includes
 
 #include <klocalizedstring.h>
+#include <kconfiggroup.h>
 
 // Local includes
 
@@ -111,7 +112,7 @@ public:
     }
 
     QSize sizeHint(const QStyleOptionViewItem& option,
-                           const QModelIndex& index) const override
+                   const QModelIndex& index) const override
     {
         QSize size = QStyledItemDelegate::sizeHint(option, index);
         size.setHeight(qMax(size.height(), m_height));

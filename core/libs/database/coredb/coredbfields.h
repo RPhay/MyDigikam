@@ -7,7 +7,7 @@
  * Description : Core database field enumerations.
  *
  * Copyright (C) 2007-2012 by Marcel Wiesweg <marcel dot wiesweg at gmx dot de>
- * Copyright (C) 2011-2021 by Gilles Caulier <caulier dot gilles at gmail dot com>
+ * Copyright (C) 2011-2022 by Gilles Caulier <caulier dot gilles at gmail dot com>
  * Copyright (C) 2013      by Michael G. Hansen <mike at mghansen dot de>
  *
  * This program is free software; you can redistribute it
@@ -92,16 +92,16 @@ enum ItemInformationField
     ColorLabel            = 1 << 9,
     PickLabel             = 1 << 10,
     ItemInformationAll   = Rating           |
-                            CreationDate     |
-                            DigitizationDate |
-                            Orientation      |
-                            Width            |
-                            Height           |
-                            Format           |
-                            ColorDepth       |
-                            ColorModel       |
-                            ColorLabel       |
-                            PickLabel,
+                           CreationDate     |
+                           DigitizationDate |
+                           Orientation      |
+                           Width            |
+                           Height           |
+                           Format           |
+                           ColorDepth       |
+                           ColorModel       |
+                           ColorLabel       |
+                           PickLabel,
     ItemInformationFirst = Rating,
     ItemInformationLast  = PickLabel
 };
@@ -168,8 +168,8 @@ enum ItemPositionsField
                           LongitudeNumber     |
                           Altitude            |
                           PositionOrientation |
-                          PositionRoll        |
                           PositionTilt        |
+                          PositionRoll        |
                           PositionAccuracy    |
                           PositionDescription,
     ItemPositionsFirst = Latitude,
@@ -187,10 +187,10 @@ enum ItemCommentsField
     CommentDate       = 1 << 3,
     Comment           = 1 << 4,
     ItemCommentsAll   = CommentType     |
-                         CommentAuthor   |
-                         CommentLanguage |
-                         CommentDate     |
-                         Comment,
+                        CommentLanguage |
+                        CommentAuthor   |
+                        CommentDate     |
+                        Comment,
     ItemCommentsFirst = CommentType,
     ItemCommentsLast  = Comment
 };

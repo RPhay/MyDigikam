@@ -7,7 +7,7 @@
  * Description : Core database copy manager for migration operations.
  *
  * Copyright (C) 2009-2010 by Holger Foerster <Hamsi2k at freenet dot de>
- * Copyright (C) 2010-2021 by Gilles Caulier <caulier dot gilles at gmail dot com>
+ * Copyright (C) 2010-2022 by Gilles Caulier <caulier dot gilles at gmail dot com>
  *
  * This program is free software; you can redistribute it
  * and/or modify it under the terms of the GNU General
@@ -99,6 +99,8 @@ void CoreDbCopyManager::copyDatabases(const DbEngineParameters& fromDBParameters
         << QLatin1String("ImageComments")
         << QLatin1String("ImageCopyright")
         << QLatin1String("Tags")
+        // Virtual table used to allow population of Tags.icon after Images migration
+        << QLatin1String("TagsExtra")
         << QLatin1String("TagsTree")
         << QLatin1String("TagProperties")
         << QLatin1String("ImageTagProperties")

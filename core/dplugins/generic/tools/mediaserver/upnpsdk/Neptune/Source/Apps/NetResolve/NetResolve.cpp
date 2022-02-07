@@ -37,7 +37,7 @@
 static void
 PrintUsageAndExit(void)
 {
-    fprintf(stderr, 
+    fprintf(stderr,
             "usage: NetResolve <hostname>\n");
     exit(1);
 }
@@ -59,7 +59,7 @@ main(int argc, char** argv)
         fprintf(stderr, "ERROR: resolver failed (%d)\n", result);
         return 1;
     }
-    
+
     printf("found %d addresses:\n", addresses.GetItemCount());
     unsigned int i=0;
     for (NPT_List<NPT_IpAddress>::Iterator address = addresses.GetFirstItem();

@@ -6,7 +6,7 @@
  * Date        : 2004-11-22
  * Description : digiKam image editor - Internal setup
  *
- * Copyright (C) 2004-2021 by Gilles Caulier <caulier dot gilles at gmail dot com>
+ * Copyright (C) 2004-2022 by Gilles Caulier <caulier dot gilles at gmail dot com>
  *
  * This program is free software; you can redistribute it
  * and/or modify it under the terms of the GNU General
@@ -160,7 +160,7 @@ void ImageWindow::setupUserArea()
     m_splitter->setFrameStyle(QFrame::NoFrame);
     m_splitter->setFrameShape(QFrame::NoFrame);
     m_splitter->setFrameShadow(QFrame::Plain);
-    m_splitter->setStretchFactor(0, 10);      // set Canvas default size to max.
+    m_splitter->setStretchFactor(m_splitter->indexOf(d->viewContainer), 10);      // set Canvas default size to max.
     m_splitter->setOpaqueResize(false);
 
     m_canvas->makeDefaultEditingCanvas();

@@ -7,7 +7,7 @@
  * Description : Managing of face tag region items on a GraphicsDImgView
  *
  * Copyright (C) 2010-2011 by Marcel Wiesweg <marcel dot wiesweg at gmx dot de>
- * Copyright (C) 2012-2021 by Gilles Caulier <caulier dot gilles at gmail dot com>
+ * Copyright (C) 2012-2022 by Gilles Caulier <caulier dot gilles at gmail dot com>
  *
  * This program is free software; you can redistribute it
  * and/or modify it under the terms of the GNU General
@@ -137,12 +137,14 @@ protected Q_SLOTS:
     void slotAlbumRenamed(Album* album);
     void slotAssigned(const TaggingAction& action, const ItemInfo& info, const QVariant& faceIdentifier);
     void slotRejected(const ItemInfo& info, const QVariant& faceIdentifier);
+    void slotIgnored(const ItemInfo& info, const QVariant& faceIdentifier);
     void slotLabelClicked(const ItemInfo& info, const QVariant& faceIdentifier);
     void slotIgnoredClicked(const ItemInfo& info, const QVariant& faceIdentifier);
     void slotAddItemStarted(const QPointF& pos);
     void slotAddItemMoving(const QRectF& rect);
     void slotAddItemFinished(const QRectF& rect);
     void cancelAddItem();
+    void focusRandomFace();
 
 private:
 

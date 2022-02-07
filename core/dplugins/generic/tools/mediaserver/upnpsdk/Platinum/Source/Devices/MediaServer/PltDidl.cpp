@@ -11,14 +11,14 @@
 | as published by the Free Software Foundation; either version 2
 | of the License, or (at your option) any later version.
 |
-| OEMs, ISVs, VARs and other distributors that combine and 
+| OEMs, ISVs, VARs and other distributors that combine and
 | distribute commercially licensed software with Platinum software
 | and do not wish to distribute the source code for the commercially
 | licensed software under version 2, or (at your option) any later
 | version, of the GNU General Public License (the "GPL") must enter
 | into a commercial license agreement with Plutinosoft, LLC.
 | licensing@plutinosoft.com
-|  
+|
 | This program is distributed in the hope that it will be useful,
 | but WITHOUT ANY WARRANTY; without even the implied warranty of
 | MERCHANTABILITY or FITNESS FOR A PARTICULAR PURPOSE.  See the
@@ -26,7 +26,7 @@
 |
 | You should have received a copy of the GNU General Public License
 | along with this program; see the file LICENSE.txt. If not, write to
-| the Free Software Foundation, Inc., 
+| the Free Software Foundation, Inc.,
 | 51 Franklin Street, Fifth Floor, Boston, MA  02110-1301, USA.
 | http://www.gnu.org/licenses/gpl-2.0.html
 |
@@ -56,14 +56,14 @@ const char* didl_namespace_dlna = "urn:schemas-dlna-org:metadata-1-0/";
 /*----------------------------------------------------------------------
 |   PLT_Didl::ConvertFilterToMask
 +---------------------------------------------------------------------*/
-NPT_UInt32 
+NPT_UInt32
 PLT_Didl::ConvertFilterToMask(const NPT_String& filter)
 {
     // easy out
     if (filter.GetLength() == 0) return PLT_FILTER_MASK_ALL;
-    
+
     // a filter string is a comma delimited set of fields identifying
-    // a given DIDL property (or set of properties).  
+    // a given DIDL property (or set of properties).
     // These fields are or start with: upnp:, @, res@, res, dc:, container@
 
     NPT_UInt32  mask = 0;
@@ -78,7 +78,7 @@ PLT_Didl::ConvertFilterToMask(const NPT_String& filter)
             // return now, there's no point in parsing the rest
             return PLT_FILTER_MASK_ALL;
         }
-        
+
         // title is required, so we return a non empty mask
         mask |= PLT_FILTER_MASK_TITLE;
 
@@ -93,7 +93,7 @@ PLT_Didl::ConvertFilterToMask(const NPT_String& filter)
         } else if (NPT_String::CompareN(s+i, PLT_FILTER_FIELD_ACTOR, len, true) == 0) {
             mask |= PLT_FILTER_MASK_ACTOR;
         } else if (NPT_String::CompareN(s+i, PLT_FILTER_FIELD_AUTHOR, len, true) == 0) {
-            mask |= PLT_FILTER_MASK_AUTHOR;       
+            mask |= PLT_FILTER_MASK_AUTHOR;
         } else if (NPT_String::CompareN(s+i, PLT_FILTER_FIELD_DATE, len, true) == 0) {
             mask |= PLT_FILTER_MASK_DATE;
         } else if (NPT_String::CompareN(s+i, PLT_FILTER_FIELD_ALBUM, len, true) == 0) {
@@ -112,7 +112,7 @@ PLT_Didl::ConvertFilterToMask(const NPT_String& filter)
         } else if (NPT_String::CompareN(s+i, PLT_FILTER_FIELD_SEARCHCLASS, len, true) == 0) {
             mask |= PLT_FILTER_MASK_SEARCHCLASS;
         } else if (NPT_String::CompareN(s+i, PLT_FILTER_FIELD_CONTAINER_SEARCHABLE, len, true) == 0) {
-            mask |= PLT_FILTER_MASK_SEARCHABLE;       
+            mask |= PLT_FILTER_MASK_SEARCHABLE;
         } else if (NPT_String::CompareN(s+i, PLT_FILTER_FIELD_CHILDCOUNT, len, true) == 0) {
             mask |= PLT_FILTER_MASK_CHILDCOUNT;
         } else if (NPT_String::CompareN(s+i, PLT_FILTER_FIELD_CONTAINER_CHILDCOUNT, len, true) == 0) {
@@ -260,7 +260,7 @@ PLT_Didl::ParseTimeStamp(const NPT_String& timestamp, NPT_UInt32& seconds)
 
     // reset output params first
     seconds = 0;
-    
+
     // remove milliseconds first if any
     if ((separator = str.ReverseFind('.')) != -1) {
         str = str.Left(separator);
@@ -268,7 +268,7 @@ PLT_Didl::ParseTimeStamp(const NPT_String& timestamp, NPT_UInt32& seconds)
 
     // look for next separator
     if ((separator = str.ReverseFind(':')) == -1) return NPT_FAILURE;
-    
+
     // extract seconds
     NPT_CHECK_WARNING(str.SubString(separator+1).ToInteger(value));
     seconds = value;
@@ -276,16 +276,16 @@ PLT_Didl::ParseTimeStamp(const NPT_String& timestamp, NPT_UInt32& seconds)
 
     // look for next separator
     if ((separator = str.ReverseFind(':')) == -1) return NPT_FAILURE;
-    
+
     // extract minutes
     NPT_CHECK_WARNING(str.SubString(separator+1).ToInteger(value));
     seconds += 60*value;
     str = str.Left(separator);
-    
+
     // extract hours
     NPT_CHECK_WARNING(str.ToInteger(value));
     seconds += 3600*value;
-    
+
     return NPT_SUCCESS;
 }
 
@@ -306,7 +306,7 @@ PLT_Didl::ToDidl(PLT_MediaObject& object, const NPT_String& filter, NPT_String& 
 /*----------------------------------------------------------------------
 |   PLT_Didl::FromDidl
 +---------------------------------------------------------------------*/
-NPT_Result  
+NPT_Result
 PLT_Didl::FromDidl(const char* xml, PLT_MediaObjectListReference& objects)
 {
     NPT_String          str;
@@ -349,7 +349,7 @@ PLT_Didl::FromDidl(const char* xml, PLT_MediaObjectListReference& objects)
         }
 
         if (NPT_FAILED(object->FromDidl(child))) {
-            NPT_LOG_WARNING_1("Invalid didl for object: %s", 
+            NPT_LOG_WARNING_1("Invalid didl for object: %s",
                 (const char*) PLT_XmlHelper::Serialize(*child, false));
             continue;
         }

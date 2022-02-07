@@ -8,7 +8,7 @@
  *
  * Copyright (C) 2007-2008 by Marcel Wiesweg  <marcel dot wiesweg at gmx dot de>
  * Copyright (C) 2010      by Holger Foerster <hamsi2k at freenet dot de>
- * Copyright (C) 2010-2021 by Gilles Caulier  <caulier dot gilles at gmail dot com>
+ * Copyright (C) 2010-2022 by Gilles Caulier  <caulier dot gilles at gmail dot com>
  * Copyright (C) 2018      by Mario Frank     <mario dot frank at uni minus potsdam dot de>
  *
  * This program is free software; you can redistribute it
@@ -63,7 +63,7 @@ static const char* configDatabaseNameSimilarity              = "Database Name Si
 static const char* configDatabaseHostName                    = "Database Hostname";
 static const char* configDatabasePort                        = "Database Port";
 static const char* configDatabaseUsername                    = "Database Username";
-static const char* configDatabasePassword                    = "Database Password";          ///< For compatbilitity. Use crypted version instead.
+static const char* configDatabasePassword                    = "Database Password";          ///< For compatbilitity. Use encrypted version instead.
 static const char* configDatabaseEncryptedPassword           = "Database Encrypted Password";
 static const char* configDatabaseConnectOptions              = "Database Connectoptions";
 /// Legacy for older versions.

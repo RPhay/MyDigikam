@@ -7,7 +7,7 @@
  * Description : Scanning a single item - history metadata helper.
  *
  * Copyright (C) 2007-2013 by Marcel Wiesweg <marcel dot wiesweg at gmx dot de>
- * Copyright (C) 2013-2021 by Gilles Caulier <caulier dot gilles at gmail dot com>
+ * Copyright (C) 2013-2022 by Gilles Caulier <caulier dot gilles at gmail dot com>
  *
  * This program is free software; you can redistribute it
  * and/or modify it under the terms of the GNU General
@@ -40,8 +40,10 @@ void ItemScanner::commitImageHistory()
     if (!d->commit.historyXml.isEmpty())
     {
         CoreDbAccess().db()->setItemHistory(d->scanInfo.id, d->commit.historyXml);
+
         // Delay history resolution by setting this tag:
         // Resolution depends on the presence of other images, possibly only when the scanning process has finished
+
         CoreDbAccess().db()->addItemTag(d->scanInfo.id, TagsCache::instance()->
                                         getOrCreateInternalTag(InternalTagName::needResolvingHistory()));
         d->hasHistoryToResolve = true;
@@ -56,6 +58,7 @@ void ItemScanner::commitImageHistory()
 void ItemScanner::scanImageHistoryIfModified()
 {
     // If a file has a modified history, it must have a new UUID
+
     QString previousUuid = CoreDbAccess().db()->getImageUuid(d->scanInfo.id);
     QString currentUuid  = d->metadata->getItemUniqueId();
 
@@ -103,9 +106,11 @@ bool ItemScanner::resolveImageHistory(qlonglong imageId, const QString& historyX
     int needTaggingTag   = TagsCache::instance()->getOrCreateInternalTag(InternalTagName::needTaggingHistoryGraph());
 
     // remove the needResolvingHistory tag from all images in graph
+
     CoreDbAccess().db()->removeTagsFromItems(graph.allImageIds(), QList<int>() << needResolvingTag);
 
     // mark a single image from the graph (sufficient for find the full relation cloud)
+
     QList<ItemInfo> roots = graph.rootImages();
 
     if (!roots.isEmpty())
@@ -131,9 +136,11 @@ void ItemScanner::tagItemHistoryGraph(qlonglong id)
     {
         return;
     }
+
     //qCDebug(DIGIKAM_DATABASE_LOG) << "tagItemHistoryGraph" << id;
 
     // Load relation cloud, history of info and of all leaves of the tree into the graph, fully resolved
+
     ItemHistoryGraph graph    = ItemHistoryGraph::fromInfo(info, ItemHistoryGraph::LoadAll, ItemHistoryGraph::NoProcessing);
     qCDebug(DIGIKAM_DATABASE_LOG) << graph;
 
@@ -144,6 +151,7 @@ void ItemScanner::tagItemHistoryGraph(qlonglong id)
     int needTaggingTag         = TagsCache::instance()->getOrCreateInternalTag(InternalTagName::needTaggingHistoryGraph());
 
     // Remove all relevant tags
+
     CoreDbAccess().db()->removeTagsFromItems(graph.allImageIds(),
                                              QList<int>() << originalVersionTag
                                                           << currentVersionTag
@@ -204,15 +212,18 @@ DImageHistory ItemScanner::resolvedImageHistory(const DImageHistory& history, bo
     foreach (const DImageHistory::Entry& e, history.entries())
     {
         // Copy entry, without referredImages
+
         DImageHistory::Entry entry;
         entry.action = e.action;
 
         // resolve referredImages
+
         foreach (const HistoryImageId& id, e.referredImages)
         {
             QList<qlonglong> imageIds = resolveHistoryImageId(id);
 
             // append each image found in collection to referredImages
+
             foreach (const qlonglong& imageId, imageIds)
             {
                 ItemInfo info(imageId);
@@ -239,6 +250,7 @@ DImageHistory ItemScanner::resolvedImageHistory(const DImageHistory& history, bo
         }
 
         // add to history
+
         h.entries() << entry;
     }
 
@@ -257,6 +269,7 @@ bool ItemScanner::sameReferredImage(const HistoryImageId& id1, const HistoryImag
      * For two images a,b with uuids x,y, where x and y not null,
      *  a (same image as) b   <=>   x == y
      */
+
     if (id1.hasUuid() && id2.hasUuid())
     {
         return (id1.m_uuid == id2.m_uuid);
@@ -289,6 +302,7 @@ bool ItemScanner::sameReferredImage(const HistoryImageId& id1, const HistoryImag
 
 // Returns true if both have the same UUID, or at least one of the two has no UUID
 // Returns false iff both have a UUID and the UUIDs differ
+
 static bool uuidDoesNotDiffer(const HistoryImageId& referenceId, qlonglong id)
 {
     if (referenceId.hasUuid())
@@ -309,11 +323,14 @@ static QList<qlonglong> mergedIdLists(const HistoryImageId& referenceId,
                                       const QList<qlonglong>& candidates)
 {
     QList<qlonglong> results;
+
     // uuidList are definite results
+
     results = uuidList;
 
     // Add a candidate if it has the same UUID, or either reference or candidate  have a UUID
     // (other way round: do not add a candidate which positively has a different UUID)
+
     foreach (const qlonglong& candidate, candidates)
     {
         if (results.contains(candidate))
@@ -333,6 +350,7 @@ static QList<qlonglong> mergedIdLists(const HistoryImageId& referenceId,
 QList<qlonglong> ItemScanner::resolveHistoryImageId(const HistoryImageId& historyId)
 {
     // first and foremost: UUID
+
     QList<qlonglong> uuidList;
 
     if (historyId.hasUuid())
@@ -350,6 +368,7 @@ QList<qlonglong> ItemScanner::resolveHistoryImageId(const HistoryImageId& histor
     }
 
     // Second: uniqueHash + fileSize. Sufficient to assume that a file is identical, but subject to frequent change.
+
     if (historyId.hasUniqueHashIdentifier() && CoreDbAccess().db()->isUniqueHashV2())
     {
         QList<ItemScanInfo> infos = CoreDbAccess().db()->getIdenticalFiles(historyId.m_uniqueHash, historyId.m_fileSize);
@@ -372,6 +391,7 @@ QList<qlonglong> ItemScanner::resolveHistoryImageId(const HistoryImageId& histor
 
     // As a third combination, we try file name and creation date. Susceptible to renaming,
     // but not to metadata changes.
+
     if (historyId.hasFileName() && historyId.hasCreationDate())
     {
         QList<qlonglong> ids = CoreDbAccess().db()->findByNameAndCreationDate(historyId.m_fileName, historyId.m_creationDate);
@@ -386,6 +406,7 @@ QList<qlonglong> ItemScanner::resolveHistoryImageId(const HistoryImageId& histor
     // and make an assumption from this group of images. Currently not implemented.
 
     // resolve old-style by full file path
+
     if (historyId.hasFileOnDisk())
     {
         QFileInfo file(historyId.filePath());
@@ -419,19 +440,28 @@ bool ItemScanner::hasHistoryToResolve() const
 QString ItemScanner::uniqueHash() const
 {
     // the QByteArray is an ASCII hex string
+
     if (d->scanInfo.category == DatabaseItem::Image)
     {
         if (CoreDbAccess().db()->isUniqueHashV2())
+        {
             return QString::fromUtf8(d->img.getUniqueHashV2());
+        }
         else
+        {
             return QString::fromUtf8(d->img.getUniqueHash());
+        }
     }
     else
     {
         if (CoreDbAccess().db()->isUniqueHashV2())
+        {
             return QString::fromUtf8(DImg::getUniqueHashV2(d->fileInfo.filePath()));
+        }
         else
+        {
             return QString::fromUtf8(DImg::getUniqueHash(d->fileInfo.filePath()));
+        }
     }
 }
 

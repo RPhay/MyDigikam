@@ -77,11 +77,11 @@ NPT_RingBuffer::~NPT_RingBuffer()
 NPT_Size
 NPT_RingBuffer::GetContiguousSpace() const
 {
-    return 
+    return
         (m_In < m_Out) ?
         (NPT_Size)(m_Out - m_In - 1) :
-        ((m_Out == m_Data.start) ? 
-         (NPT_Size)(m_Data.end - m_In - 1) : 
+        ((m_Out == m_Data.start) ?
+         (NPT_Size)(m_Data.end - m_In - 1) :
          (NPT_Size)(m_Data.end - m_In));
 }
 
@@ -91,9 +91,9 @@ NPT_RingBuffer::GetContiguousSpace() const
 NPT_Size
 NPT_RingBuffer::GetSpace() const
 {
-    return 
-        (m_In < m_Out) ? 
-        (NPT_Size)(m_Out - m_In - 1) : 
+    return
+        (m_In < m_Out) ?
+        (NPT_Size)(m_Out - m_In - 1) :
         (NPT_Size)(m_Data.end - m_In + m_Out - m_Data.start - 1);
 }
 
@@ -119,8 +119,8 @@ NPT_RingBuffer::Write(const void* buffer, NPT_Size byte_count)
         if (m_In == m_Data.end) m_In = m_Data.start;
         if (chunk != byte_count) {
             if (buffer) {
-                NPT_CopyMemory(m_In, 
-                               ((const char*)buffer)+chunk, 
+                NPT_CopyMemory(m_In,
+                               ((const char*)buffer)+chunk,
                                byte_count-chunk);
             }
             m_In += byte_count-chunk;
@@ -137,8 +137,8 @@ NPT_RingBuffer::Write(const void* buffer, NPT_Size byte_count)
 NPT_Size
 NPT_RingBuffer::GetContiguousAvailable() const
 {
-    return 
-        (m_Out <= m_In) ? 
+    return
+        (m_Out <= m_In) ?
         (NPT_Size)(m_In-m_Out) :
         (NPT_Size)(m_Data.end - m_Out);
 }
@@ -149,8 +149,8 @@ NPT_RingBuffer::GetContiguousAvailable() const
 NPT_Size
 NPT_RingBuffer::GetAvailable() const
 {
-    return 
-        (m_Out <= m_In) ? 
+    return
+        (m_Out <= m_In) ?
         (NPT_Size)(m_In-m_Out) :
         (NPT_Size)(m_Data.end - m_Out + m_In - m_Data.start);
 }

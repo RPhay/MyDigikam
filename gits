@@ -544,7 +544,7 @@ sub do_checkout($@)
 
 ######################################################################
 #
-# Standard gits output summmarization routine
+# Standard gits output summarization routine
 #
 sub stdout($;$)
 {
@@ -2641,7 +2641,7 @@ superproject.
 
 Also see --eval-args for an options to support standard shell `cmd`
 and $VARIABLE expansion where it might otherwise be quoted.  Run the
-following commmands to see the difference:
+following commands to see the difference:
 
 
 

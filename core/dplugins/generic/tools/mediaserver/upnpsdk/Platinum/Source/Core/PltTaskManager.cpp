@@ -11,14 +11,14 @@
 | as published by the Free Software Foundation; either version 2
 | of the License, or (at your option) any later version.
 |
-| OEMs, ISVs, VARs and other distributors that combine and 
+| OEMs, ISVs, VARs and other distributors that combine and
 | distribute commercially licensed software with Platinum software
 | and do not wish to distribute the source code for the commercially
 | licensed software under version 2, or (at your option) any later
 | version, of the GNU General Public License (the "GPL") must enter
 | into a commercial license agreement with Plutinosoft, LLC.
 | licensing@plutinosoft.com
-|  
+|
 | This program is distributed in the hope that it will be useful,
 | but WITHOUT ANY WARRANTY; without even the implied warranty of
 | MERCHANTABILITY or FITNESS FOR A PARTICULAR PURPOSE.  See the
@@ -26,7 +26,7 @@
 |
 | You should have received a copy of the GNU General Public License
 | along with this program; see the file LICENSE.txt. If not, write to
-| the Free Software Foundation, Inc., 
+| the Free Software Foundation, Inc.,
 | 51 Franklin Street, Fifth Floor, Boston, MA  02110-1301, USA.
 | http://www.gnu.org/licenses/gpl-2.0.html
 |
@@ -55,15 +55,15 @@ PLT_TaskManager::PLT_TaskManager(NPT_Cardinal max_items /* = 0 */) :
 |   PLT_TaskManager::~PLT_TaskManager
 +---------------------------------------------------------------------*/
 PLT_TaskManager::~PLT_TaskManager()
-{    
+{
     Abort();
 }
 
 /*----------------------------------------------------------------------
 |   PLT_TaskManager::StartTask
 +---------------------------------------------------------------------*/
-NPT_Result 
-PLT_TaskManager::StartTask(PLT_ThreadTask*   task, 
+NPT_Result
+PLT_TaskManager::StartTask(PLT_ThreadTask*   task,
                            NPT_TimeInterval* delay /* = NULL*/,
                            bool              auto_destroy /* = true */)
 {
@@ -79,7 +79,7 @@ PLT_TaskManager::Reset()
 {
     NPT_AutoLock lock(m_TasksLock);
     m_Stopping = false;
-    
+
     return NPT_SUCCESS;
 }
 
@@ -90,18 +90,18 @@ NPT_Result
 PLT_TaskManager::Abort()
 {
     NPT_Cardinal num_running_tasks;
-    
+
     do {
         {
             NPT_AutoLock lock(m_TasksLock);
-            
+
             m_Stopping = true;
-            
+
             // unblock the queue if any by deleting it
             if (m_Queue) {
                 int* val = NULL;
                 while(NPT_SUCCEEDED(m_Queue->Pop(val, 0))) delete val;
-                
+
                 delete m_Queue;
                 m_Queue = NULL;
             }
@@ -110,7 +110,7 @@ PLT_TaskManager::Abort()
         // abort all running tasks
         {
             NPT_AutoLock lock(m_TasksLock);
-        
+
             NPT_List<PLT_ThreadTask*>::Iterator task = m_Tasks.GetFirstItem();
             while (task) {
                 // stop task if it's not already stopping
@@ -119,24 +119,24 @@ PLT_TaskManager::Abort()
                 }
                 ++task;
             }
-            
+
             num_running_tasks = m_Tasks.GetItemCount();
         }
 
-        if (num_running_tasks == 0) 
-            break; 
-        
+        if (num_running_tasks == 0)
+            break;
+
         NPT_System::Sleep(NPT_TimeInterval(0.05));
     } while (1);
-    
+
     return NPT_SUCCESS;
 }
 
 /*----------------------------------------------------------------------
 |   PLT_TaskManager::AddTask
 +---------------------------------------------------------------------*/
-NPT_Result 
-PLT_TaskManager::AddTask(PLT_ThreadTask* task) 
+NPT_Result
+PLT_TaskManager::AddTask(PLT_ThreadTask* task)
 {
     NPT_Result result = NPT_SUCCESS;
     int *val = NULL;
@@ -144,7 +144,7 @@ PLT_TaskManager::AddTask(PLT_ThreadTask* task)
     // verify we're not stopping or maxed out number of running tasks
     do {
         m_TasksLock.Lock();
-        
+
         // returning an error if we're stopping
         if (m_Stopping) {
             m_TasksLock.Unlock();
@@ -152,14 +152,14 @@ PLT_TaskManager::AddTask(PLT_ThreadTask* task)
             if (task->m_AutoDestroy) delete task;
             NPT_CHECK_WARNING(NPT_ERROR_INTERRUPTED);
         }
-        
+
         if (m_MaxTasks) {
             val = val?val:new int;
-            
+
             if (!m_Queue) {
                 m_Queue = new NPT_Queue<int>(m_MaxTasks);
             }
-        
+
 
             // try to add to queue but don't block forever if queue is full
             result = m_Queue->Push(val, 20);
@@ -183,7 +183,7 @@ PLT_TaskManager::AddTask(PLT_ThreadTask* task)
     // start task now
     if (NPT_FAILED(result = task->StartThread())) {
         m_TasksLock.Unlock();
-        
+
         // Remove task from queue and delete task if autodestroy is set
         RemoveTask(task);
 
@@ -207,14 +207,14 @@ NPT_Result
 PLT_TaskManager::RemoveTask(PLT_ThreadTask* task)
 {
     NPT_Result result = NPT_SUCCESS;
-    
+
     {
         NPT_AutoLock lock(m_TasksLock);
-        
+
         if (m_Queue) {
             int* val = NULL;
             result = m_Queue->Pop(val, 100);
-            
+
             // if for some reason the queue is empty, don't block forever
             if (NPT_SUCCEEDED(result)) {
                 delete val;
@@ -222,11 +222,11 @@ PLT_TaskManager::RemoveTask(PLT_ThreadTask* task)
                 NPT_LOG_WARNING_1("Failed to pop task from queue %d", result);
             }
         }
-        
+
         NPT_LOG_FINER_3("[TaskManager 0x%p] %d/%d running tasks", (void*)this, --m_RunningTasks, m_MaxTasks);
         m_Tasks.Remove(task);
     }
-    
+
     // cleanup task only if auto-destroy flag was set
     // otherwise it's the owner's responsability to
     // clean it up

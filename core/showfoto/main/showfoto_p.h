@@ -6,7 +6,7 @@
  * Date        : 2004-11-22
  * Description : stand alone digiKam image editor GUI
  *
- * Copyright (C) 2004-2021 by Gilles Caulier <caulier dot gilles at gmail dot com>
+ * Copyright (C) 2004-2022 by Gilles Caulier <caulier dot gilles at gmail dot com>
  * Copyright (C) 2006-2012 by Marcel Wiesweg <marcel dot wiesweg at gmx dot de>
  * Copyright (C) 2013      by Mohamed_Anwer <m_dot_anwer at gmx dot com>
  *
@@ -97,12 +97,17 @@
 #include "showfotodelegate.h"
 #include "showfotothumbnailmodel.h"
 #include "showfotocategorizedview.h"
+#include "showfotofolderviewsidebar.h"
+#include "showfotofolderviewlist.h"
+#include "showfotostackviewsidebar.h"
+#include "showfotostackviewlist.h"
 #include "showfotosettings.h"
 #include "showfotoinfoiface.h"
 #include "dexpanderbox.h"
 #include "dfiledialog.h"
 #include "dpluginloader.h"
 #include "exiftoolparser.h"
+#include "sidebarwidget.h"
 
 namespace ShowFoto
 {
@@ -126,35 +131,41 @@ public:
         thumbBar                (nullptr),
         thumbBarDock            (nullptr),
         normalDelegate          (nullptr),
+        leftSideBar             (nullptr),
         rightSideBar            (nullptr),
         splash                  (nullptr),
-        settings                (nullptr)
+        settings                (nullptr),
+        folderView              (nullptr),
+        stackView               (nullptr)
     {
     }
 
-    bool                             validIccPath;
+    bool                              validIccPath;
 
-    int                              itemsNb;
+    int                               itemsNb;
 
-    QSplitter*                       vSplitter;
-    QAction*                         fileOpenAction;
-    QUrl                             currentLoadedUrl;
-    QUrl                             lastOpenedDirectory;
-    QAction*                         openFilesInFolderAction;
-    QAction*                         mediaServerAction;
-    QAction*                         first;
+    QSplitter*                        vSplitter;
+    QAction*                          fileOpenAction;
+    QUrl                              currentLoadedUrl;
+    QUrl                              lastOpenedDirectory;
+    QAction*                          openFilesInFolderAction;
+    QAction*                          mediaServerAction;
+    QAction*                          first;
 
-    ShowfotoItemInfoList             infoList;
-    ShowfotoThumbnailModel*          model;
-    ShowfotoDragDropHandler*         dDHandler;
-    ShowfotoFilterModel*             filterModel;
-    Digikam::ThumbnailLoadThread*    thumbLoadThread;
-    ShowfotoThumbnailBar*            thumbBar;
-    Digikam::ThumbBarDock*           thumbBarDock;
-    ShowfotoNormalDelegate*          normalDelegate;
-    Digikam::ItemPropertiesSideBar*  rightSideBar;
-    Digikam::DSplashScreen*          splash;
-    ShowfotoSettings*                settings;
+    ShowfotoItemInfoList              infoList;
+    ShowfotoThumbnailModel*           model;
+    ShowfotoDragDropHandler*          dDHandler;
+    ShowfotoFilterModel*              filterModel;
+    Digikam::ThumbnailLoadThread*     thumbLoadThread;
+    ShowfotoThumbnailBar*             thumbBar;
+    Digikam::ThumbBarDock*            thumbBarDock;
+    ShowfotoNormalDelegate*           normalDelegate;
+    Digikam::Sidebar*                 leftSideBar;
+    Digikam::ItemPropertiesSideBar*   rightSideBar;
+    Digikam::DSplashScreen*           splash;
+    ShowfotoSettings*                 settings;
+    ShowfotoFolderViewSideBar*        folderView;
+    ShowfotoStackViewSideBar*         stackView;
 };
 
 } // namespace ShowFoto

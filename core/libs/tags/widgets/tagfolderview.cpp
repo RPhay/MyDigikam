@@ -7,7 +7,7 @@
  * Description : tags folder view.
  *
  * Copyright (C) 2005-2006 by Joern Ahrens <joern dot ahrens at kdemail dot net>
- * Copyright (C) 2006-2021 by Gilles Caulier <caulier dot gilles at gmail dot com>
+ * Copyright (C) 2006-2022 by Gilles Caulier <caulier dot gilles at gmail dot com>
  * Copyright (C) 2009-2011 by Andi Clemens <andi dot clemens at gmail dot com>
  * Copyright (C) 2009-2011 by Johannes Wienke <languitar at semipol dot de>
  *
@@ -122,12 +122,7 @@ void TagFolderView::addCustomContextMenuActions(ContextMenuHelper& cmh, Album* a
         return;
     }
 
-    if (
-        (tag->id() != FaceTags::unconfirmedPersonTagId()) &&
-        (tag->id() != FaceTags::unknownPersonTagId())     &&
-        (tag->id() != FaceTags::existsIgnoredPerson())    &&
-        (tag->id() != FaceTags::ignoredPersonTagId())
-       )
+    if (!FaceTags::isSystemPersonTagId(tag->id()))
     {
         cmh.addActionNewTag(tagModificationHelper(), tag);
 
@@ -142,16 +137,25 @@ void TagFolderView::addCustomContextMenuActions(ContextMenuHelper& cmh, Album* a
     cmh.addAction(d->resetIconAction);
     cmh.addSeparator();
 
-    QAction* const expandSel   = new QAction(QIcon::fromTheme(QLatin1String("expand-all")),
+    QAction* const expandSel   = new QAction(QIcon::fromTheme(QLatin1String("go-down")),
                                              i18n("Expand Selected Nodes"), this);
 
     cmh.addAction(expandSel, this, SLOT(slotExpandNode()), false);
 
-    QAction* const collapseSel = new QAction(QIcon::fromTheme(QLatin1String("collapse-all")),
+    QAction* const collapseSel = new QAction(QIcon::fromTheme(QLatin1String("go-up")),
                                              i18n("Collapse Selected Recursively"), this);
 
     cmh.addAction(collapseSel, this, SLOT(slotCollapseNode()), false);
 
+    QAction* const expandAll   = new QAction(QIcon::fromTheme(QLatin1String("expand-all")),
+                                             i18n("Expand all Tags"), this);
+
+    cmh.addAction(expandAll, this, SLOT(expandAll()), false);
+
+    QAction* const collapseAll = new QAction(QIcon::fromTheme(QLatin1String("collapse-all")),
+                                             i18n("Collapse all Tags"), this);
+
+    cmh.addAction(collapseAll, this, SLOT(slotCollapseAllNodes()), false);
     cmh.addSeparator();
 
     if (d->showFindDuplicateAction)

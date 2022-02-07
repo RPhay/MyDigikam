@@ -30,7 +30,7 @@ NPT_WinRtUtils::A2WHelper(LPWSTR lpw, LPCSTR lpa, int nChars, UINT acp)
     if (ret == 0) {
         assert(0);
         return NULL;
-    }        
+    }
     return lpw;
 }
 

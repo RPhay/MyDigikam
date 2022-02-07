@@ -7,7 +7,7 @@
  * Description : a widget to manage sidebar in GUI.
  *
  * Copyright (C) 2005-2006 by Joern Ahrens <joern dot ahrens at kdemail dot net>
- * Copyright (C) 2006-2021 by Gilles Caulier <caulier dot gilles at gmail dot com>
+ * Copyright (C) 2006-2022 by Gilles Caulier <caulier dot gilles at gmail dot com>
  * Copyright (C) 2008-2011 by Marcel Wiesweg <marcel dot wiesweg at gmx dot de>
  * Copyright (C) 2001-2003 by Joseph Wenninger <jowenn at kde dot org>
  *
@@ -325,7 +325,7 @@ void DMultiTabBarTab::initStyleOption(QStyleOptionToolButton* opt) const
 
     if (!icon().isNull())
     {
-        opt->iconSize = iconPixmap().size();
+        opt->iconSize = iconSize();
         opt->icon     = icon();
     }
 
@@ -336,14 +336,21 @@ void DMultiTabBarTab::initStyleOption(QStyleOptionToolButton* opt) const
         opt->text = text();
     }
 
-    if (underMouse())
+    opt->state |= QStyle::State_AutoRaise;
+
+    if (!isChecked() && !isDown())
     {
-        opt->state |= QStyle::State_AutoRaise | QStyle::State_MouseOver | QStyle::State_Raised;
+        opt->state |= QStyle::State_Raised;
+    }
+
+    if (isDown())
+    {
+        opt->state |= QStyle::State_Sunken;
     }
 
     if (isChecked())
     {
-        opt->state |= QStyle::State_Sunken | QStyle::State_On;
+        opt->state |= QStyle::State_On;
     }
 
     opt->font            = font();
@@ -1334,7 +1341,11 @@ void SidebarSplitter::restoreState(KConfigGroup& group, const QString& key)
     {
         QByteArray state;
         state = group.readEntry(key, state);
-        QSplitter::restoreState(QByteArray::fromBase64(state));
+
+        if (!state.isEmpty())
+        {
+            QSplitter::restoreState(QByteArray::fromBase64(state));
+        }
     }
 }
 

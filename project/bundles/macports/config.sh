@@ -1,6 +1,6 @@
 #!/bin/bash
 
-# Copyright (c) 2013-2021 by Gilles Caulier  <caulier dot gilles at gmail dot com>
+# Copyright (c) 2013-2022 by Gilles Caulier  <caulier dot gilles at gmail dot com>
 #
 # Redistribution and use is allowed according to the terms of the BSD license.
 # For details see the accompanying COPYING-CMAKE-SCRIPTS file.
@@ -15,7 +15,7 @@ BUILDING_DIR="`pwd`/temp.build"
 
 ########################################################################
 
-# Target macOS achitecture: "x86_64" for Intel 64 bits, or "arm64" for Apple Silicon 64 bits.
+# Target macOS architecture: "x86_64" for Intel 64 bits, or "arm64" for Apple Silicon 64 bits.
 ARCH_TARGET="x86_64"
 
 if [[ $ARCH_TARGET = "x86_64" ]] ; then
@@ -31,11 +31,11 @@ if [[ $ARCH_TARGET = "x86_64" ]] ; then
     # sudo /usr/libexec/PlistBuddy -c "Set MinimumSDKVersion 10.13" /Applications/Xcode.app/Contents/Developer/Platforms/MacOSX.platform/Info.plist
     #
     # Possible values:
-    # 12.0  : Monterey     :          : Qt                                            5.13, 5.14, 5.15
-    # 11.0  : BigSur       :          : Qt                                      5.12, 5.13, 5.14, 5.15
-    # 10.15 : Catalina     :          : Qt                                5.11, 5.12, 5.13, 5.14
-    # 10.14 : Mojave       : tested   : Qt                     5.9, 5.10, 5.11, 5.12, 5.13, 5.14
-    # 10.13 : High Sierra  : tested   : Qt                     5.9, 5.10, 5.11, 5.12, 5.13, 5.14
+    # 12.0  : Monterey     : tested   : Qt                                            5.13, 5.14, 5.15
+    # 11.0  : BigSur       : tested   : Qt                                      5.12, 5.13, 5.14, 5.15
+    # 10.15 : Catalina     : tested   : Qt                                5.11, 5.12, 5.13, 5.14, 5.15
+    # 10.14 : Mojave       : tested   : Qt                     5.9, 5.10, 5.11, 5.12, 5.13, 5.14, 5.15
+    # 10.13 : High Sierra  : tested   : Qt                     5.9, 5.10, 5.11, 5.12, 5.13, 5.14, 5.15
     # 10.12 : Sierra       : tested   : Qt                5.8, 5.9, 5.10, 5.11, 5.12, 5.13
     # 10.11 : El Capitan   : tested   : Qt 5.5, 5.6, 5.7, 5.8, 5.9, 5.10, 5.11
     # 10.10 : Yosemite     : tested   : Qt 5.5, 5.6, 5.7, 5.8, 5.9
@@ -43,6 +43,7 @@ if [[ $ARCH_TARGET = "x86_64" ]] ; then
     # 10.8  : MountainLion : tested   : Qt 5.5, 5.6, 5.7
     # 10.7  : Lion         : untested : Qt 5.5, 5.6
     # 10.6  : SnowLeopard  : untested : ???
+    #
     # Older values cannot be set as it do not support x86_64.
     OSX_MIN_TARGET="10.13"
 
@@ -53,7 +54,7 @@ elif [[ $ARCH_TARGET = "arm64" ]] ; then
 
 else
 
-    echo "Unsuported or invalid target architecture..."
+    echo "Unsupported or invalid target architecture..."
     exit -1
 
 fi
@@ -70,19 +71,31 @@ RELOCATE_PREFIX="/Applications/digiKam.org"
 MP_URL="https://distfiles.macports.org/MacPorts/"
 MP_BUILDTEMP=~/mptemp
 
-# Uncomment this line to force a specific version of Macports to use, else lastest will be used.
+# Uncomment this line to force a specific version of Macports to use, else latest will be used.
 #MP_VERSION="2.3.3"
 
 ########################################################################
 
 # URL to git repository to checkout digiKam source code
+# git protocol version which require a developer account with ssh keys.
 DK_GITURL="git@invent.kde.org:graphics/digikam.git"
+# https protocol version which give annonyous access.
+#DK_GITURL="https://invent.kde.org/graphics/digikam.git"
 
 # digiKam tarball information
 DK_URL="http://download.kde.org/stable/digikam"
 
 # Location to build source code.
 DK_BUILDTEMP=~/dktemp
+
+# KDE Application version.
+DK_KA_VERSION="21.12.1"
+
+# KDE KF5 frameworks version.
+DK_KF5_VERSION="5.90"
+
+# Qt version to use in bundle and provided by Macports.
+DK_QTVERSION="5.15"
 
 # digiKam tag version from git. Official tarball do not include extra shared libraries.
 # The list of tags can be listed with this url: https://invent.kde.org/graphics/digikam/-/tags

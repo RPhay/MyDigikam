@@ -54,10 +54,10 @@ const unsigned int NPT_FORMAT_BUFFER_MAX_SIZE   = 65536;
 /*----------------------------------------------------------------------
 |   NPT_BytesToInt64Be
 +---------------------------------------------------------------------*/
-NPT_UInt64 
+NPT_UInt64
 NPT_BytesToInt64Be(const unsigned char* bytes)
 {
-    return 
+    return
         ( ((NPT_UInt64)bytes[0])<<56 ) |
         ( ((NPT_UInt64)bytes[1])<<48 ) |
         ( ((NPT_UInt64)bytes[2])<<40 ) |
@@ -65,32 +65,32 @@ NPT_BytesToInt64Be(const unsigned char* bytes)
         ( ((NPT_UInt64)bytes[4])<<24 ) |
         ( ((NPT_UInt64)bytes[5])<<16 ) |
         ( ((NPT_UInt64)bytes[6])<<8  ) |
-        ( ((NPT_UInt64)bytes[7])     );    
+        ( ((NPT_UInt64)bytes[7])     );
 }
 
 /*----------------------------------------------------------------------
 |   NPT_BytesToInt32Be
 +---------------------------------------------------------------------*/
-NPT_UInt32 
+NPT_UInt32
 NPT_BytesToInt32Be(const unsigned char* bytes)
 {
-    return 
+    return
         ( ((NPT_UInt32)bytes[0])<<24 ) |
         ( ((NPT_UInt32)bytes[1])<<16 ) |
         ( ((NPT_UInt32)bytes[2])<<8  ) |
-        ( ((NPT_UInt32)bytes[3])     );    
+        ( ((NPT_UInt32)bytes[3])     );
 }
 
 /*----------------------------------------------------------------------
 |   NPT_BytesToInt24Be
 +---------------------------------------------------------------------*/
-NPT_UInt32 
+NPT_UInt32
 NPT_BytesToInt24Be(const unsigned char* bytes)
 {
-    return 
+    return
         ( ((NPT_UInt32)bytes[0])<<16 ) |
         ( ((NPT_UInt32)bytes[1])<<8  ) |
-        ( ((NPT_UInt32)bytes[2])     );    
+        ( ((NPT_UInt32)bytes[2])     );
 }
 
 /*----------------------------------------------------------------------
@@ -99,18 +99,18 @@ NPT_BytesToInt24Be(const unsigned char* bytes)
 NPT_UInt16
 NPT_BytesToInt16Be(const unsigned char* bytes)
 {
-    return 
+    return
         ( ((NPT_UInt16)bytes[0])<<8  ) |
-        ( ((NPT_UInt16)bytes[1])     );    
+        ( ((NPT_UInt16)bytes[1])     );
 }
 
 /*----------------------------------------------------------------------
 |   NPT_BytesToInt64Le
 +---------------------------------------------------------------------*/
-NPT_UInt64 
+NPT_UInt64
 NPT_BytesToInt64Le(const unsigned char* bytes)
 {
-    return 
+    return
         ( ((NPT_UInt64)bytes[7])<<56 ) |
         ( ((NPT_UInt64)bytes[6])<<48 ) |
         ( ((NPT_UInt64)bytes[5])<<40 ) |
@@ -118,32 +118,32 @@ NPT_BytesToInt64Le(const unsigned char* bytes)
         ( ((NPT_UInt64)bytes[3])<<24 ) |
         ( ((NPT_UInt64)bytes[2])<<16 ) |
         ( ((NPT_UInt64)bytes[1])<<8  ) |
-        ( ((NPT_UInt64)bytes[0])     );    
+        ( ((NPT_UInt64)bytes[0])     );
 }
 
 /*----------------------------------------------------------------------
 |   NPT_BytesToInt32Le
 +---------------------------------------------------------------------*/
-NPT_UInt32 
+NPT_UInt32
 NPT_BytesToInt32Le(const unsigned char* bytes)
 {
-    return 
+    return
         ( ((NPT_UInt32)bytes[3])<<24 ) |
         ( ((NPT_UInt32)bytes[2])<<16 ) |
         ( ((NPT_UInt32)bytes[1])<<8  ) |
-        ( ((NPT_UInt32)bytes[0])     );    
+        ( ((NPT_UInt32)bytes[0])     );
 }
 
 /*----------------------------------------------------------------------
 |   NPT_BytesToInt24Le
 +---------------------------------------------------------------------*/
-NPT_UInt32 
+NPT_UInt32
 NPT_BytesToInt24Le(const unsigned char* bytes)
 {
-    return 
+    return
         ( ((NPT_UInt32)bytes[2])<<16 ) |
         ( ((NPT_UInt32)bytes[1])<<8  ) |
-        ( ((NPT_UInt32)bytes[0])     );    
+        ( ((NPT_UInt32)bytes[0])     );
 }
 
 /*----------------------------------------------------------------------
@@ -152,15 +152,15 @@ NPT_BytesToInt24Le(const unsigned char* bytes)
 NPT_UInt16
 NPT_BytesToInt16Le(const unsigned char* bytes)
 {
-    return 
+    return
         ( ((NPT_UInt16)bytes[1])<<8  ) |
-        ( ((NPT_UInt16)bytes[0])     );    
+        ( ((NPT_UInt16)bytes[0])     );
 }
 
 /*----------------------------------------------------------------------
 |    NPT_BytesFromInt64Be
 +---------------------------------------------------------------------*/
-void 
+void
 NPT_BytesFromInt64Be(unsigned char* buffer, NPT_UInt64 value)
 {
     buffer[0] = (unsigned char)(value>>56) & 0xFF;
@@ -176,7 +176,7 @@ NPT_BytesFromInt64Be(unsigned char* buffer, NPT_UInt64 value)
 /*----------------------------------------------------------------------
 |    NPT_BytesFromInt32Be
 +---------------------------------------------------------------------*/
-void 
+void
 NPT_BytesFromInt32Be(unsigned char* buffer, NPT_UInt32 value)
 {
     buffer[0] = (unsigned char)(value>>24) & 0xFF;
@@ -188,7 +188,7 @@ NPT_BytesFromInt32Be(unsigned char* buffer, NPT_UInt32 value)
 /*----------------------------------------------------------------------
 |    NPT_BytesFromInt24Be
 +---------------------------------------------------------------------*/
-void 
+void
 NPT_BytesFromInt24Be(unsigned char* buffer, NPT_UInt32 value)
 {
     buffer[0] = (unsigned char)(value>>16) & 0xFF;
@@ -199,7 +199,7 @@ NPT_BytesFromInt24Be(unsigned char* buffer, NPT_UInt32 value)
 /*----------------------------------------------------------------------
 |    NPT_BytesFromInt16Be
 +---------------------------------------------------------------------*/
-void 
+void
 NPT_BytesFromInt16Be(unsigned char* buffer, NPT_UInt16 value)
 {
     buffer[0] = (unsigned char)((value>> 8) & 0xFF);
@@ -209,7 +209,7 @@ NPT_BytesFromInt16Be(unsigned char* buffer, NPT_UInt16 value)
 /*----------------------------------------------------------------------
 |    NPT_BytesFromInt64Le
 +---------------------------------------------------------------------*/
-void 
+void
 NPT_BytesFromInt64Le(unsigned char* buffer, NPT_UInt64 value)
 {
     buffer[7] = (unsigned char)(value>>56) & 0xFF;
@@ -225,7 +225,7 @@ NPT_BytesFromInt64Le(unsigned char* buffer, NPT_UInt64 value)
 /*----------------------------------------------------------------------
 |    NPT_BytesFromInt32Le
 +---------------------------------------------------------------------*/
-void 
+void
 NPT_BytesFromInt32Le(unsigned char* buffer, NPT_UInt32 value)
 {
     buffer[3] = (unsigned char)(value>>24) & 0xFF;
@@ -237,7 +237,7 @@ NPT_BytesFromInt32Le(unsigned char* buffer, NPT_UInt32 value)
 /*----------------------------------------------------------------------
 |    NPT_BytesFromInt24Le
 +---------------------------------------------------------------------*/
-void 
+void
 NPT_BytesFromInt24Le(unsigned char* buffer, NPT_UInt32 value)
 {
     buffer[2] = (unsigned char)(value>>16) & 0xFF;
@@ -248,7 +248,7 @@ NPT_BytesFromInt24Le(unsigned char* buffer, NPT_UInt32 value)
 /*----------------------------------------------------------------------
 |    NPT_BytesFromInt16Le
 +---------------------------------------------------------------------*/
-void 
+void
 NPT_BytesFromInt16Le(unsigned char* buffer, NPT_UInt16 value)
 {
     buffer[1] = (unsigned char)((value>> 8) & 0xFF);
@@ -259,7 +259,7 @@ NPT_BytesFromInt16Le(unsigned char* buffer, NPT_UInt16 value)
 /*----------------------------------------------------------------------
 |   NPT_FormatString
 +---------------------------------------------------------------------*/
-int 
+int
 NPT_FormatString(char* /*str*/, NPT_Size /*size*/, const char* /*format*/, ...)
 {
     NPT_ASSERT(0); // not implemented yet
@@ -270,7 +270,7 @@ NPT_FormatString(char* /*str*/, NPT_Size /*size*/, const char* /*format*/, ...)
 /*----------------------------------------------------------------------
 |   NPT_NibbleToHex
 +---------------------------------------------------------------------*/
-char 
+char
 NPT_NibbleToHex(unsigned int nibble, bool uppercase /* = true */)
 {
     NPT_ASSERT(nibble < 16);
@@ -284,7 +284,7 @@ NPT_NibbleToHex(unsigned int nibble, bool uppercase /* = true */)
 /*----------------------------------------------------------------------
 |   NPT_HexToNibble
 +---------------------------------------------------------------------*/
-int 
+int
 NPT_HexToNibble(char hex)
 {
     if (hex >= 'a' && hex <= 'f') {
@@ -316,7 +316,7 @@ NPT_HexToByte(const char* buffer, NPT_Byte& b)
 {
     int nibble_0 = NPT_HexToNibble(buffer[0]);
     if (nibble_0 < 0) return NPT_ERROR_INVALID_SYNTAX;
-    
+
     int nibble_1 = NPT_HexToNibble(buffer[1]);
     if (nibble_1 < 0) return NPT_ERROR_INVALID_SYNTAX;
 
@@ -337,7 +337,7 @@ NPT_HexToBytes(const char*    hex,
     NPT_Size bytes_size = len / 2;
     NPT_Result result = bytes.SetDataSize(bytes_size);
     if (NPT_FAILED(result)) return result;
-    
+
     // decode
     for (NPT_Ordinal i=0; i<bytes_size; i++) {
         result = NPT_HexToByte(hex+(i*2), *(bytes.UseData()+i));
@@ -349,21 +349,21 @@ NPT_HexToBytes(const char*    hex,
 /*----------------------------------------------------------------------
 |   NPT_HexString
 +---------------------------------------------------------------------*/
-NPT_String 
+NPT_String
 NPT_HexString(const unsigned char* data,
               NPT_Size             data_size,
               const char*          separator,
               bool                 uppercase)
 {
     NPT_String result;
-    
-    // quick check 
+
+    // quick check
     if (data == NULL || data_size == 0) return result;
-        
+
     // set the result size
     NPT_Size separator_length = separator?NPT_StringLength(separator):0;
     result.SetLength(data_size*2+(data_size-1)*separator_length);
-    
+
     // build the string
     const unsigned char* src = data;
     char* dst = result.UseChars();
@@ -375,17 +375,17 @@ NPT_HexString(const unsigned char* data,
             dst += separator_length;
         }
     }
-    
+
     return result;
 }
 
 /*----------------------------------------------------------------------
 |    NPT_ParseFloat
 +---------------------------------------------------------------------*/
-NPT_Result 
+NPT_Result
 NPT_ParseFloat(const char* str, float& result, bool relaxed)
 {
-    // safe default value 
+    // safe default value
     result = 0.0f;
 
     // check params
@@ -407,7 +407,7 @@ NPT_ParseFloat(const char* str, float& result, bool relaxed)
     bool negative = false;
     if (*str == '-') {
         // negative number
-        negative = true; 
+        negative = true;
         str++;
     } else if (*str == '+') {
         // skip the + sign
@@ -454,7 +454,7 @@ NPT_ParseFloat(const char* str, float& result, bool relaxed)
             } else {
                 return NPT_ERROR_INVALID_PARAMETERS;
             }
-        } 
+        }
     }
 
     // check that the value was non empty
@@ -470,7 +470,7 @@ NPT_ParseFloat(const char* str, float& result, bool relaxed)
 /*----------------------------------------------------------------------
 |    NPT_ParseInteger64
 +---------------------------------------------------------------------*/
-NPT_Result 
+NPT_Result
 NPT_ParseInteger64(const char* str, NPT_Int64& result, bool relaxed, NPT_Cardinal* chars_used)
 {
     // safe default value
@@ -496,7 +496,7 @@ NPT_ParseInteger64(const char* str, NPT_Int64& result, bool relaxed, NPT_Cardina
     bool negative = false;
     if (*str == '-') {
         // negative number
-        negative = true; 
+        negative = true;
         str++;
         if (chars_used) (*chars_used)++;
     } else if (*str == '+') {
@@ -528,7 +528,7 @@ NPT_ParseInteger64(const char* str, NPT_Int64& result, bool relaxed, NPT_Cardina
             } else {
                 return NPT_ERROR_INVALID_PARAMETERS;
             }
-        } 
+        }
     }
 
     // check that the value was non empty
@@ -544,7 +544,7 @@ NPT_ParseInteger64(const char* str, NPT_Int64& result, bool relaxed, NPT_Cardina
 /*----------------------------------------------------------------------
 |    NPT_ParseInteger64
 +---------------------------------------------------------------------*/
-NPT_Result 
+NPT_Result
 NPT_ParseInteger64(const char* str, NPT_UInt64& result, bool relaxed, NPT_Cardinal* chars_used)
 {
     // safe default value
@@ -585,7 +585,7 @@ NPT_ParseInteger64(const char* str, NPT_UInt64& result, bool relaxed, NPT_Cardin
             } else {
                 return NPT_ERROR_INVALID_PARAMETERS;
             }
-        } 
+        }
     }
 
     // check that the value was non empty
@@ -601,7 +601,7 @@ NPT_ParseInteger64(const char* str, NPT_UInt64& result, bool relaxed, NPT_Cardin
 /*----------------------------------------------------------------------
 |    NPT_ParseInteger32
 +---------------------------------------------------------------------*/
-NPT_Result 
+NPT_Result
 NPT_ParseInteger32(const char* str, NPT_Int32& value, bool relaxed, NPT_Cardinal* chars_used)
 {
     NPT_Int64 value_64;
@@ -619,7 +619,7 @@ NPT_ParseInteger32(const char* str, NPT_Int32& value, bool relaxed, NPT_Cardinal
 /*----------------------------------------------------------------------
 |     NPT_ParseInteger32
 +---------------------------------------------------------------------*/
-NPT_Result 
+NPT_Result
 NPT_ParseInteger32(const char* str, NPT_UInt32& value, bool relaxed, NPT_Cardinal* chars_used)
 {
     NPT_UInt64 value_64;
@@ -635,7 +635,7 @@ NPT_ParseInteger32(const char* str, NPT_UInt32& value, bool relaxed, NPT_Cardina
 /*----------------------------------------------------------------------
 |    NPT_ParseInteger
 +---------------------------------------------------------------------*/
-NPT_Result 
+NPT_Result
 NPT_ParseInteger(const char* str, long& value, bool relaxed, NPT_Cardinal* chars_used)
 {
     NPT_Int64 value_64;
@@ -655,7 +655,7 @@ NPT_ParseInteger(const char* str, long& value, bool relaxed, NPT_Cardinal* chars
 /*----------------------------------------------------------------------
 |    NPT_ParseInteger
 +---------------------------------------------------------------------*/
-NPT_Result 
+NPT_Result
 NPT_ParseInteger(const char* str, unsigned long& value, bool relaxed, NPT_Cardinal* chars_used)
 {
     NPT_UInt64 value_64;
@@ -675,7 +675,7 @@ NPT_ParseInteger(const char* str, unsigned long& value, bool relaxed, NPT_Cardin
 /*----------------------------------------------------------------------
 |    NPT_ParseInteger
 +---------------------------------------------------------------------*/
-NPT_Result 
+NPT_Result
 NPT_ParseInteger(const char* str, int& value, bool relaxed, NPT_Cardinal* chars_used)
 {
     NPT_Int64 value_64;
@@ -693,7 +693,7 @@ NPT_ParseInteger(const char* str, int& value, bool relaxed, NPT_Cardinal* chars_
 /*----------------------------------------------------------------------
 |    NPT_ParseInteger
 +---------------------------------------------------------------------*/
-NPT_Result 
+NPT_Result
 NPT_ParseInteger(const char* str, unsigned int& value, bool relaxed, NPT_Cardinal* chars_used)
 {
     NPT_UInt64 value_64;
@@ -725,7 +725,7 @@ NPT_CopyString(char* dst, const char* src)
 void
 NPT_FormatOutput(void        (*function)(void* parameter, const char* message),
                  void*       function_parameter,
-                 const char* format, 
+                 const char* format,
                  va_list     args)
 {
     char         local_buffer[NPT_FORMAT_LOCAL_BUFFER_SIZE];
@@ -814,14 +814,14 @@ typedef enum {
 |     quoted-pair =  "\" CHAR                     ; may quote any char
 |
 +---------------------------------------------------------------------*/
-NPT_Result 
+NPT_Result
 NPT_ParseMimeParameters(const char*                      encoded,
                         NPT_Map<NPT_String, NPT_String>& parameters)
 {
     // check parameters
     if (encoded == NULL) return NPT_ERROR_INVALID_PARAMETERS;
-    
-    // reserve some space 
+
+    // reserve some space
     NPT_String param_name;
     NPT_String param_value;
     param_name.Reserve(64);
@@ -840,7 +840,7 @@ NPT_ParseMimeParameters(const char*                      encoded,
                 param_name += c; // we're not strict: accept all other chars
                 state = NPT_MIME_PARAMETER_PARSER_STATE_IN_NAME;
                 break;
-                
+
             case NPT_MIME_PARAMETER_PARSER_STATE_IN_NAME:
                 if (c <  ' ') return NPT_ERROR_INVALID_SYNTAX; // END or CTLs are invalid
                 if (c == ' ') {
@@ -851,7 +851,7 @@ NPT_ParseMimeParameters(const char*                      encoded,
                     param_name += c; // we're not strict: accept all other chars
                 }
                 break;
-                
+
             case NPT_MIME_PARAMETER_PARSER_STATE_NEED_EQUALS:
                 if (c <  ' ') return NPT_ERROR_INVALID_SYNTAX; // END or CTLs are invalid
                 if (c == ' ' || c == '\t') continue; // ignore leading whitespace
@@ -869,7 +869,7 @@ NPT_ParseMimeParameters(const char*                      encoded,
                     state = NPT_MIME_PARAMETER_PARSER_STATE_IN_VALUE;
                 }
                 break;
-                
+
             case NPT_MIME_PARAMETER_PARSER_STATE_IN_QUOTED_VALUE:
                 if (quoted_char) {
                     quoted_char = false;
@@ -893,7 +893,7 @@ NPT_ParseMimeParameters(const char*                      encoded,
                     param_value += c; // we're not strict: accept all other chars
                 }
                 break;
-                
+
             case NPT_MIME_PARAMETER_PARSER_STATE_IN_VALUE:
                 if (c == '\0' || c == ';') {
                     // add the parameter to the map
@@ -921,7 +921,7 @@ NPT_ParseMimeParameters(const char*                      encoded,
         }
         if (c == '\0') break; // end of buffer
     }
-    
+
     return NPT_SUCCESS;
 }
 

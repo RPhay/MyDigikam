@@ -6,7 +6,7 @@
  * Date        : 2005-05-25
  * Description : Raindrop threaded image filter.
  *
- * Copyright (C) 2005-2021 by Gilles Caulier <caulier dot gilles at gmail dot com>
+ * Copyright (C) 2005-2022 by Gilles Caulier <caulier dot gilles at gmail dot com>
  * Copyright (C) 2006-2010 by Marcel Wiesweg <marcel dot wiesweg at gmx dot de>
  * Copyright (C) 2010      by Martin Klapetek <martin dot klapetek at gmail dot com>
  *
@@ -192,7 +192,7 @@ void RainDropFilter::rainDropsImageMultithreaded(const Args& prm)
  * progressMax      => Max. value for progress bar (can be different if using clipping area).
  *
  * Theory           => This functions does several math's functions and the engine
- *                     is simple to undestand, but a little hard to implement. A
+ *                     is simple to understand, but a little hard to implement. A
  *                     control will indicate if there is or not a raindrop in that
  *                     area, if not, a fisheye effect with a random size (max=MaxDropSize)
  *                     will be applied, after this, a shadow will be applied too.

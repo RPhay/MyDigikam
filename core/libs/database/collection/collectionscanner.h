@@ -9,7 +9,7 @@
  * Copyright (C) 2005      by Renchi Raju <renchi dot raju at gmail dot com>
  * Copyright (C) 2005-2006 by Tom Albers <tomalbers at kde dot nl>
  * Copyright (C) 2007-2011 by Marcel Wiesweg <marcel dot wiesweg at gmx dot de>
- * Copyright (C) 2009-2021 by Gilles Caulier <caulier dot gilles at gmail dot com>
+ * Copyright (C) 2009-2022 by Gilles Caulier <caulier dot gilles at gmail dot com>
  *
  * This program is free software; you can redistribute it
  * and/or modify it under the terms of the GNU General
@@ -109,6 +109,12 @@ public:
     void setNeedFileCount(bool on);
 
     /**
+     * Call this to disable fast scan with album date check.
+     * Default is on.
+     */
+    void setPerformFastScan(bool on);
+
+    /**
      * Set an observer to be able to cancel a running scan
      */
     void setObserver(CollectionScannerObserver* const observer);
@@ -188,7 +194,7 @@ protected:
     void scanForStaleAlbums(const QList<CollectionLocation>& locations);
     void scanForStaleAlbums(const QList<int>& locationIdsToScan);
     void scanAlbumRoot(const CollectionLocation& location);
-    void scanAlbum(const CollectionLocation& location, const QString& album);
+    void scanAlbum(const CollectionLocation& location, const QString& album, bool checkDate = false);
     void scanExistingFile(const QFileInfo& fi, qlonglong id);
     void scanFileNormal(const QFileInfo& info, const ItemScanInfo& scanInfo, bool checkSidecar = true);
     void scanModifiedFile(const QFileInfo& info, const ItemScanInfo& scanInfo);
@@ -239,7 +245,7 @@ protected:
     void resetDeleteRemovedSettings();
     bool checkDeleteRemoved();
     void loadNameFilters();
-    int  countItemsInFolder(const QString& directory);
+    int  countItemsInFolder(const QString& path);
     DatabaseItem::Category category(const QFileInfo& info);
 
     //@}

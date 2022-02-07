@@ -1,6 +1,6 @@
 #!/bin/bash
 
-# Copyright (c) 2013-2021 by Gilles Caulier, <caulier dot gilles at gmail dot com>
+# Copyright (c) 2013-2022 by Gilles Caulier, <caulier dot gilles at gmail dot com>
 #
 # Run Krazy static analyzer on whole digiKam source code.
 # https://github.com/Krazy-collection/krazy
@@ -98,8 +98,8 @@ java -jar /opt/saxon/saxon9he.jar \
      ./report.krazy.xml \
      ./krazy/krazy-main.xsl \
      module=graphics \
-     submodule=digikam \
-     component=extragear
+     component= \
+     submodule=digikam
 
 cp ./krazy/style.css $REPORT_DIR/
 

@@ -7,7 +7,7 @@
  * Description : Scanning a single item - video metadata helper.
  *
  * Copyright (C) 2007-2013 by Marcel Wiesweg <marcel dot wiesweg at gmx dot de>
- * Copyright (C) 2013-2021 by Gilles Caulier <caulier dot gilles at gmail dot com>
+ * Copyright (C) 2013-2022 by Gilles Caulier <caulier dot gilles at gmail dot com>
  *
  * This program is free software; you can redistribute it
  * and/or modify it under the terms of the GNU General
@@ -173,9 +173,13 @@ void ItemScanner::scanVideoInformation()
     // (all format strings used in the database should be defined in advance)
 
     if (d->scanInfo.category == DatabaseItem::Video)
+    {
         d->commit.imageInformationInfos << detectVideoFormat();
+    }
     else
+    {
         d->commit.imageInformationInfos << detectAudioFormat();
+    }
 
     d->commit.imageInformationFields |= DatabaseFields::Format;
 

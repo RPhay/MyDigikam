@@ -7,7 +7,7 @@
  * Description : scan item controller - start operations.
  *
  * Copyright (C) 2005-2006 by Tom Albers <tomalbers at kde dot nl>
- * Copyright (C) 2006-2021 by Gilles Caulier <caulier dot gilles at gmail dot com>
+ * Copyright (C) 2006-2022 by Gilles Caulier <caulier dot gilles at gmail dot com>
  * Copyright (C) 2007-2013 by Marcel Wiesweg <marcel dot wiesweg at gmx dot de>
  *
  * This program is free software; you can redistribute it
@@ -72,20 +72,21 @@ void ScanController::completeCollectionScan(bool defer)
     // we only need to count the files in advance
     // if we show a progress percentage in progress dialog
 
-    completeCollectionScanCore(!CollectionScanner::databaseInitialScanDone(), defer);
+    completeCollectionScanCore(!CollectionScanner::databaseInitialScanDone(), defer, false);
 
     delete d->progressDialog;
     d->progressDialog = nullptr;
 }
 
-void ScanController::completeCollectionScanInBackground(bool defer)
+void ScanController::completeCollectionScanInBackground(bool defer, bool fastScan)
 {
-    completeCollectionScanCore(true, defer);
+    completeCollectionScanCore(true, defer, fastScan);
 }
 
-void ScanController::completeCollectionScanCore(bool needTotalFiles, bool defer)
+void ScanController::completeCollectionScanCore(bool needTotalFiles, bool defer, bool fastScan)
 {
-    d->needTotalFiles = needTotalFiles;
+    d->performFastScan = fastScan;
+    d->needTotalFiles  = needTotalFiles;
 
     {
         QMutexLocker lock(&d->mutex);
@@ -98,7 +99,8 @@ void ScanController::completeCollectionScanCore(bool needTotalFiles, bool defer)
 
     d->eventLoop->exec();
 
-    d->needTotalFiles = false;
+    d->needTotalFiles  = false;
+    d->performFastScan = true;
 }
 
 void ScanController::scheduleCollectionScan(const QString& path)

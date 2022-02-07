@@ -11,13 +11,13 @@
 | as published by the Free Software Foundation; either version 2
 | of the License, or (at your option) any later version.
 |
-| OEMs, ISVs, VARs and other distributors that combine and 
+| OEMs, ISVs, VARs and other distributors that combine and
 | distribute commercially licensed software with Platinum software
 | and do not wish to distribute the source code for the commercially
 | licensed software under version 2, or (at your option) any later
 | version, of the GNU General Public License (the "GPL") must enter
 | into a commercial license agreement with Plutinosoft, LLC.
-| 
+|
 | This program is distributed in the hope that it will be useful,
 | but WITHOUT ANY WARRANTY; without even the implied warranty of
 | MERCHANTABILITY or FITNESS FOR A PARTICULAR PURPOSE.  See the
@@ -25,7 +25,7 @@
 |
 | You should have received a copy of the GNU General Public License
 | along with this program; see the file LICENSE.txt. If not, write to
-| the Free Software Foundation, Inc., 
+| the Free Software Foundation, Inc.,
 | 51 Franklin Street, Fifth Floor, Boston, MA  02110-1301, USA.
 | http://www.gnu.org/licenses/gpl-2.0.html
 |
@@ -112,12 +112,12 @@ PrintHex(unsigned char* h, unsigned int size)
 {
     unsigned int i;
     for (i=0; i<size; i++) {
-        printf("%c%c", 
-               h[i]>>4 >= 10 ? 
-               'A' + (h[i]>>4)-10 : 
+        printf("%c%c",
+               h[i]>>4 >= 10 ?
+               'A' + (h[i]>>4)-10 :
                '0' + (h[i]>>4),
-               (h[i]&0xF) >= 10 ? 
-               'A' + (h[i]&0xF)-10 : 
+               (h[i]&0xF) >= 10 ?
+               'A' + (h[i]&0xF)-10 :
                '0' + (h[i]&0xF));
     }
 }*/
@@ -128,12 +128,12 @@ PrintHex(unsigned char* h, unsigned int size)
 static void
 PrintHexForHeader(FILE* out, unsigned char h)
 {
-    fprintf(out, "0x%c%c", 
-           h>>4 >= 10 ? 
-           'A' + (h>>4)-10 : 
+    fprintf(out, "0x%c%c",
+           h>>4 >= 10 ?
+           'A' + (h>>4)-10 :
            '0' + (h>>4),
-           (h&0xF) >= 10 ? 
-           'A' + (h&0xF)-10 : 
+           (h&0xF) >= 10 ?
+           'A' + (h&0xF)-10 :
            '0' + (h&0xF));
 }
 
@@ -149,14 +149,14 @@ main(int /*argc*/, char** argv)
     unsigned long   data_block_size;
     unsigned long   k;
     unsigned char   col;
-    
+
     /* parse command line */
     ParseCommandLine(argv);
 
     /* open input */
     in = fopen(Options.in_filename, "rb");
     if (in == NULL) {
-        fprintf(stderr, "ERROR: cannot open input file (%s): %s\n", 
+        fprintf(stderr, "ERROR: cannot open input file (%s): %s\n",
                 Options.in_filename, strerror(errno));
     }
 
@@ -185,7 +185,7 @@ main(int /*argc*/, char** argv)
     /* open output */
     out = fopen(Options.out_filename, "w+");
     if (out == NULL) {
-        fprintf(stderr, "ERROR: cannot open out output file (%s): %s\n", 
+        fprintf(stderr, "ERROR: cannot open out output file (%s): %s\n",
             Options.out_filename, strerror(errno));
     }
     fprintf(out,
@@ -220,7 +220,7 @@ main(int /*argc*/, char** argv)
 "| 51 Franklin Street, Fifth Floor, Boston, MA  02110-1301, USA.\n"
 "| http://www.gnu.org/licenses/gpl-2.0.html\n"
 "|\n"
-"****************************************************************/\n", 
+"****************************************************************/\n",
     Options.header_name?Options.header_name:"");
     fprintf(out, "\n"
 "/*----------------------------------------------------------------------\n"
@@ -231,11 +231,11 @@ main(int /*argc*/, char** argv)
 "/*----------------------------------------------------------------------\n"
 "|   globals\n"
 "+---------------------------------------------------------------------*/\n");
-    fprintf(out, "NPT_UInt8 %s[] =\n", 
+    fprintf(out, "NPT_UInt8 %s[] =\n",
         Options.variable_name?Options.variable_name:"kData");
     fprintf(out, "{\n  ");
     col = 0;
-    
+
     /* rewind the input file */
     fseek(in, 0, SEEK_SET);
 
@@ -252,8 +252,8 @@ main(int /*argc*/, char** argv)
     }
 
     /* print footer */
-    fprintf(out, "\n};\n\n");  
-    
+    fprintf(out, "\n};\n\n");
+
     /* close file */
     fclose(out);
 

@@ -368,6 +368,8 @@ void SearchesJob::runFindDuplicates()
     if (m_jobInfo.imageIds().isEmpty())
     {
         qCDebug(DIGIKAM_DBJOB_LOG) << "No image ids passed for duplicates search";
+
+        emit signalDuplicatesResults(HaarIface::DuplicatesResultsMap());
         return;
     }
 
@@ -376,6 +378,8 @@ void SearchesJob::runFindDuplicates()
     if (!m_iface)
     {
         qCDebug(DIGIKAM_DBJOB_LOG) << "Invalid HaarIface pointer";
+
+        emit signalDuplicatesResults(HaarIface::DuplicatesResultsMap());
         return;
     }
 

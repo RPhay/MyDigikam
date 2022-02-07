@@ -6,7 +6,7 @@
  * Date        : 2007-10-18
  * Description : XMP content settings page.
  *
- * Copyright (C) 2007-2021 by Gilles Caulier <caulier dot gilles at gmail dot com>
+ * Copyright (C) 2007-2022 by Gilles Caulier <caulier dot gilles at gmail dot com>
  *
  * This program is free software; you can redistribute it
  * and/or modify it under the terms of the GNU General
@@ -223,7 +223,7 @@ void XMPContent::setCheckedSyncEXIFCopyright(bool c)
     d->syncEXIFCopyrightCheck->setChecked(c);
 }
 
-void XMPContent::readMetadata(DMetadata& meta)
+void XMPContent::readMetadata(const DMetadata& meta)
 {
     blockSignals(true);
 
@@ -278,7 +278,7 @@ void XMPContent::readMetadata(DMetadata& meta)
     blockSignals(false);
 }
 
-void XMPContent::applyMetadata(DMetadata& meta)
+void XMPContent::applyMetadata(const DMetadata& meta)
 {
     if (d->headlineCheck->isChecked())
     {

@@ -6,7 +6,7 @@
  * Date        : 2008-05-21
  * Description : widget to display a list of items
  *
- * Copyright (C) 2006-2021 by Gilles Caulier <caulier dot gilles at gmail dot com>
+ * Copyright (C) 2006-2022 by Gilles Caulier <caulier dot gilles at gmail dot com>
  * Copyright (C) 2008-2010 by Andi Clemens <andi dot clemens at googlemail dot com>
  * Copyright (C) 2009-2010 by Luka Renko <lure at kubuntu dot org>
  *
@@ -48,6 +48,13 @@ namespace Digikam
 class DItemsList;
 class DItemsListView;
 
+/**
+ * Type of static fonction used to customize sort items in list.
+ * Sort items call this method in DItemsListViewItem::operator<.
+ * To setup this method, uses DItemList::setIsLessThanHandler().
+ */
+typedef bool (*DItemsListIsLessThanHandler)(const QTreeWidgetItem* current, const QTreeWidgetItem& other);
+
 class DIGIKAM_EXPORT DItemsListViewItem : public QTreeWidgetItem
 {
 
@@ -88,8 +95,10 @@ public:
 
     void updateInformation();
 
+    void setIsLessThanHandler(DItemsListIsLessThanHandler fncptr);
+
     /**
-     * implement this, if you have special item widgets, e.g. an edit line
+     * Implement this, if you have special item widgets, e.g. an edit line
      * they will be set automatically when adding items, changing order, etc.
      */
     virtual void updateItemWidgets() {};
@@ -101,6 +110,7 @@ protected:
 private:
 
     void setPixmap(const QPixmap& pix);
+    bool operator<(const QTreeWidgetItem& other) const override;
 
 private:
 
@@ -134,9 +144,8 @@ public:
 
 public:
 
-    explicit DItemsListView(DItemsList* const parent = nullptr);
-    explicit DItemsListView(int iconSize, DItemsList* const parent = nullptr);
-    ~DItemsListView()                                 override;
+    explicit DItemsListView(DItemsList* const parent);
+    ~DItemsListView()                                     override;
 
     void setColumnLabel(ColumnType column, const QString& label);
     void setColumnEnabled(ColumnType column, bool enable);
@@ -144,10 +153,12 @@ public:
 
     DItemsListViewItem* findItem(const QUrl& url);
     QModelIndex indexFromItem(DItemsListViewItem* item,
-                              int column = 0)   const;
-    DItemsListViewItem* getCurrentItem()        const;
+                              int column = 0)       const;
 
-    DInfoInterface* iface()                     const;
+    DItemsListViewItem* getCurrentItem()            const;
+
+    DInfoInterface* iface()                         const;
+    DItemsListIsLessThanHandler isLessThanHandler() const;
 
 Q_SIGNALS:
 
@@ -165,33 +176,18 @@ public:
 
 private:
 
-    void dragEnterEvent(QDragEnterEvent* e)           override;
-    void dragMoveEvent(QDragMoveEvent* e)             override;
-    void dropEvent(QDropEvent* e)                     override;
-    void contextMenuEvent(QContextMenuEvent* e)       override;
-
-    void setup(int iconSize);
+    void dragEnterEvent(QDragEnterEvent* e)               override;
+    void dragMoveEvent(QDragMoveEvent* e)                 override;
+    void dropEvent(QDropEvent* e)                         override;
+    void contextMenuEvent(QContextMenuEvent* e)           override;
 
     void drawRow(QPainter* p,
                  const QStyleOptionViewItem& opt,
-                 const QModelIndex& index)      const override;
+                 const QModelIndex& index)          const override;
 
 private:
 
-    int              m_iconSize;
     QTreeWidgetItem* m_itemDraged;
-};
-
-// -------------------------------------------------------------------------
-
-class DIGIKAM_EXPORT CtrlButton : public QPushButton
-{
-    Q_OBJECT
-
-public:
-
-    explicit CtrlButton(const QIcon& icon, QWidget* parent = nullptr);
-    ~CtrlButton() override;
 };
 
 // -------------------------------------------------------------------------
@@ -225,7 +221,7 @@ public:
 
 public:
 
-    explicit DItemsList(QWidget* const parent, int iconSize = -1);
+    explicit DItemsList(QWidget* const parent);
     ~DItemsList()                                                     override;
 
     void                setAllowRAW(bool allow);
@@ -243,6 +239,7 @@ public:
      */
     bool                checkSelection();
 
+    void setIconSize(int size);
     int                 iconSize()                                  const;
 
     DItemsListView*     listView()                                  const;
@@ -261,10 +258,21 @@ public:
 
     virtual QList<QUrl> imageUrls(bool onlyUnprocessed = false)     const;
     virtual void        removeItemByUrl(const QUrl& url);
+
+    void                setCurrentUrl(const QUrl& url);
     QUrl                getCurrentUrl()                             const;
 
     void setIface(DInfoInterface* const iface);
     DInfoInterface* iface()                                         const;
+
+    ///@{
+    /**
+     * Methods to handle function pointer used to customize sort items in list.
+     * See DItemsListIsLessThanHandler type for details.
+     */
+    void setIsLessThanHandler(DItemsListIsLessThanHandler fncptr);
+    DItemsListIsLessThanHandler isLessThanHandler() const;
+    ///@}
 
 Q_SIGNALS:
 
@@ -299,9 +307,6 @@ protected Q_SLOTS:
     virtual void slotThumbnail(const LoadingDescription&, const QPixmap&);
     virtual void slotImageListChanged();
 
-private:
-
-    void setIconSize(int size);
 
 private:
 

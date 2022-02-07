@@ -86,10 +86,10 @@ NPT_NetworkInterface::GetNetworkInterfaces(NPT_List<NPT_NetworkInterface*>& inte
             broadcast_address,
             NPT_IpAddress::Any,
             netmask);
-        iface->AddAddress(iface_address);  
+        iface->AddAddress(iface_address);
 
         // add the interface to the list
-        interfaces.Add(iface);  
+        interfaces.Add(iface);
     }
 
     return NPT_SUCCESS;

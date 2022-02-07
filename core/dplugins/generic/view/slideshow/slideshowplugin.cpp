@@ -6,7 +6,7 @@
  * Date        : 2018-07-30
  * Description : a plugin to render slideshow.
  *
- * Copyright (C) 2018-2021 by Gilles Caulier <caulier dot gilles at gmail dot com>
+ * Copyright (C) 2018-2022 by Gilles Caulier <caulier dot gilles at gmail dot com>
  * Copyright (C) 2019-2020 by Minh Nghia Duong <minhnghiaduong997 at gmail dot com>
  *
  * This program is free software; you can redistribute it
@@ -199,7 +199,7 @@ void SlideShowPlugin::setup(QObject* const parent)
         connect(ac, SIGNAL(triggered(bool)),
                 this, SLOT(slotShowManual()));
 
-        // See bug #425425: register all sub-actions to collection instance to be able to edit keyboard shorcuts
+        // See bug #425425: register all sub-actions to collection instance to be able to edit keyboard shortcuts
 
         KXmlGuiWindow* const gui = dynamic_cast<KXmlGuiWindow*>(parent);
 
@@ -343,6 +343,7 @@ void SlideShowPlugin::slideshow(SlideShowSettings* const settings, bool autoPlay
         else
         {
             // no current selection, do nothing.
+
             return;
         }
     }

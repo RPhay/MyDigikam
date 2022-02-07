@@ -6,7 +6,7 @@
  * Date        : 2012-04-19
  * Description : time adjust settings container.
  *
- * Copyright (C) 2012-2021 by Gilles Caulier <caulier dot gilles at gmail dot com>
+ * Copyright (C) 2012-2022 by Gilles Caulier <caulier dot gilles at gmail dot com>
  *
  * This program is free software; you can redistribute it
  * and/or modify it under the terms of the GNU General
@@ -32,7 +32,6 @@ namespace Digikam
 TimeAdjustContainer::TimeAdjustContainer()
     : customDate    (QDateTime::currentDateTime()),
       customTime    (QDateTime::currentDateTime()),
-      intervalTime  (QDateTime()),
       adjustmentTime(QDateTime()),
       updIfAvailable(true),
       updEXIFModDate(false),
@@ -69,10 +68,15 @@ bool TimeAdjustContainer::atLeastOneUpdateToProcess() const
            );
 }
 
-QDateTime TimeAdjustContainer::calculateAdjustedDate(const QDateTime& originalTime)
+QDateTime TimeAdjustContainer::calculateAdjustedDate(const QDateTime& originalTime, int index)
 {
     int sign          = 0;
     QDateTime newTime = originalTime;
+
+    int seconds       = adjustmentTime.time().second();
+    seconds          += 60*adjustmentTime.time().minute();
+    seconds          += 60*60*adjustmentTime.time().hour();
+    seconds          += 24*60*60*adjustmentDays;
 
     switch (adjustmentType)
     {
@@ -86,33 +90,15 @@ QDateTime TimeAdjustContainer::calculateAdjustedDate(const QDateTime& originalTi
 
         case INTERVAL:
         {
-            if (intervalTime.isNull())
-            {
-                intervalTime = newTime;
-            }
-            else
-            {
-                newTime = intervalTime;
-            }
+            newTime = newTime.addSecs(index * seconds);
 
-            sign = 1;
-            break;
+            return newTime;
         }
         default: // COPYVALUE
             return originalTime;
     }
 
-    int seconds  = adjustmentTime.time().second();
-    seconds     += 60*adjustmentTime.time().minute();
-    seconds     += 60*60*adjustmentTime.time().hour();
-    seconds     += 24*60*60*adjustmentDays;
-
-    newTime      = newTime.addSecs(sign * seconds);
-
-    if (adjustmentType == INTERVAL)
-    {
-        intervalTime = newTime;
-    }
+    newTime = newTime.addSecs(sign * seconds);
 
     return newTime;
 }

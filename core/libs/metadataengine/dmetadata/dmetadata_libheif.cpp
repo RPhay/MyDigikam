@@ -6,7 +6,7 @@
  * Date        : 2019-09-26
  * Description : item metadata interface - libheif helpers.
  *
- * Copyright (C) 2020-2021 by Gilles Caulier <caulier dot gilles at gmail dot com>
+ * Copyright (C) 2020-2022 by Gilles Caulier <caulier dot gilles at gmail dot com>
  *
  * This program is free software; you can redistribute it
  * and/or modify it under the terms of the GNU General
@@ -76,13 +76,13 @@ void s_readHEICMetadata(struct heif_context* const heif_context, heif_item_id im
                                                                  dataIds,
                                                                  10);
 
-    qDebug(DIGIKAM_METAENGINE_LOG) << "Found" << count << "HEIF metadata chunck";
+    qDebug(DIGIKAM_METAENGINE_LOG) << "Found" << count << "HEIF metadata chunk";
 
     if (count > 0)
     {
         for (int i = 0 ; i < count ; ++i)
         {
-            qDebug(DIGIKAM_METAENGINE_LOG) << "Parsing HEIF metadata chunck:" << heif_image_handle_get_metadata_type(image_handle, dataIds[i]);
+            qDebug(DIGIKAM_METAENGINE_LOG) << "Parsing HEIF metadata chunk:" << heif_image_handle_get_metadata_type(image_handle, dataIds[i]);
 
             if (QLatin1String(heif_image_handle_get_metadata_type(image_handle, dataIds[i])) == QLatin1String("Exif"))
             {

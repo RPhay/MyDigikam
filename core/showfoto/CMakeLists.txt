@@ -1,5 +1,5 @@
 #
-# Copyright (c) 2010-2021 by Gilles Caulier, <caulier dot gilles at gmail dot com>
+# Copyright (c) 2010-2022 by Gilles Caulier, <caulier dot gilles at gmail dot com>
 # Copyright (c) 2015      by Veaceslav Munteanu, <veaceslav dot munteanu90 at gmail dot com>
 #
 # Redistribution and use is allowed according to the terms of the BSD license.
@@ -12,10 +12,27 @@ APPLY_COMMON_POLICIES()
 include_directories(BEFORE
                     $<TARGET_PROPERTY:Qt${QT_VERSION_MAJOR}::Network,INTERFACE_INCLUDE_DIRECTORIES>
 
+                    ${CMAKE_CURRENT_SOURCE_DIR}/folderview
                     ${CMAKE_CURRENT_SOURCE_DIR}/thumbbar
                     ${CMAKE_CURRENT_SOURCE_DIR}/setup
                     ${CMAKE_CURRENT_SOURCE_DIR}/main
 )
+
+if(KF5IconThemes_FOUND)
+    include_directories($<TARGET_PROPERTY:KF5::IconThemes,INTERFACE_INCLUDE_DIRECTORIES>)
+endif()
+
+# To fill MacOS and Windows bundles metadata
+
+set(BUNDLE_APP_NAME_STRING          "showfoto")
+set(BUNDLE_APP_DESCRIPTION_STRING   "Stand alone Photo Editor based on digiKam Image Editor")
+set(BUNDLE_LEGAL_COPYRIGHT_STRING   "GNU Public License V2")
+set(BUNDLE_COMMENT_STRING           "Free and open source software to edit photo")
+set(BUNDLE_LONG_VERSION_STRING      ${DIGIKAM_VERSION_STRING})
+set(BUNDLE_SHORT_VERSION_STRING     ${DIGIKAM_VERSION_SHORT})
+set(BUNDLE_VERSION_STRING           ${DIGIKAM_VERSION_STRING})
+
+# Showfoto executable
 
 set(showfoto_SRCS
     ${CMAKE_CURRENT_SOURCE_DIR}/setup/showfotosetuptooltip.cpp
@@ -26,7 +43,7 @@ set(showfoto_SRCS
     ${CMAKE_CURRENT_SOURCE_DIR}/setup/showfotosetup.cpp
 
     ${CMAKE_CURRENT_SOURCE_DIR}/thumbbar/showfotoiteminfo.cpp
-    ${CMAKE_CURRENT_SOURCE_DIR}/thumbbar/showfotoimagemodel.cpp
+    ${CMAKE_CURRENT_SOURCE_DIR}/thumbbar/showfotoitemmodel.cpp
     ${CMAKE_CURRENT_SOURCE_DIR}/thumbbar/showfotothumbnailmodel.cpp
     ${CMAKE_CURRENT_SOURCE_DIR}/thumbbar/showfotofiltermodel.cpp
     ${CMAKE_CURRENT_SOURCE_DIR}/thumbbar/showfotodragdrophandler.cpp
@@ -39,32 +56,62 @@ set(showfoto_SRCS
     ${CMAKE_CURRENT_SOURCE_DIR}/thumbbar/showfotocategorizedview.cpp
     ${CMAKE_CURRENT_SOURCE_DIR}/thumbbar/showfotothumbnailbar.cpp
 
+    ${CMAKE_CURRENT_SOURCE_DIR}/folderview/showfotofolderviewsidebar.cpp
+    ${CMAKE_CURRENT_SOURCE_DIR}/folderview/showfotofolderviewlist.cpp
+    ${CMAKE_CURRENT_SOURCE_DIR}/folderview/showfotofolderviewmodel.cpp
+    ${CMAKE_CURRENT_SOURCE_DIR}/folderview/showfotofolderviewbar.cpp
+    ${CMAKE_CURRENT_SOURCE_DIR}/folderview/showfotofolderviewundo.cpp
+    ${CMAKE_CURRENT_SOURCE_DIR}/folderview/showfotofolderviewtooltip.cpp
+    ${CMAKE_CURRENT_SOURCE_DIR}/folderview/showfotofolderviewbookmarks.cpp
+    ${CMAKE_CURRENT_SOURCE_DIR}/folderview/showfotofolderviewbookmarkdlg.cpp
+    ${CMAKE_CURRENT_SOURCE_DIR}/folderview/showfotofolderviewbookmarklist.cpp
+    ${CMAKE_CURRENT_SOURCE_DIR}/folderview/showfotofolderviewbookmarkitem.cpp
+
+    ${CMAKE_CURRENT_SOURCE_DIR}/stackview/showfotostackviewsidebar.cpp
+    ${CMAKE_CURRENT_SOURCE_DIR}/stackview/showfotostackviewlist.cpp
+    ${CMAKE_CURRENT_SOURCE_DIR}/stackview/showfotostackviewitem.cpp
+    ${CMAKE_CURRENT_SOURCE_DIR}/stackview/showfotostackviewtooltip.cpp
+    ${CMAKE_CURRENT_SOURCE_DIR}/stackview/showfotostackviewfavorites.cpp
+    ${CMAKE_CURRENT_SOURCE_DIR}/stackview/showfotostackviewfavoriteitemdlg.cpp
+    ${CMAKE_CURRENT_SOURCE_DIR}/stackview/showfotostackviewfavoritelist.cpp
+    ${CMAKE_CURRENT_SOURCE_DIR}/stackview/showfotostackviewfavoriteitem.cpp
+
     ${CMAKE_CURRENT_SOURCE_DIR}/main/showfotosettings.cpp
     ${CMAKE_CURRENT_SOURCE_DIR}/main/showfotoinfoiface.cpp
     ${CMAKE_CURRENT_SOURCE_DIR}/main/showfoto.cpp
+    ${CMAKE_CURRENT_SOURCE_DIR}/main/showfoto_open.cpp
+    ${CMAKE_CURRENT_SOURCE_DIR}/main/showfoto_iofiles.cpp
     ${CMAKE_CURRENT_SOURCE_DIR}/main/showfoto_setup.cpp
     ${CMAKE_CURRENT_SOURCE_DIR}/main/showfoto_config.cpp
     ${CMAKE_CURRENT_SOURCE_DIR}/main/showfoto_import.cpp
+    ${CMAKE_CURRENT_SOURCE_DIR}/main/showfoto_thumbbar.cpp
     ${CMAKE_CURRENT_SOURCE_DIR}/main/main.cpp
 )
 
-file(GLOB ICONS_SRCS "${CMAKE_CURRENT_SOURCE_DIR}/../data/icons/apps/*-apps-showfoto.png")
+# Set the application icon on the application
+
+file(GLOB ICONS_SRCS "${CMAKE_SOURCE_DIR}/core/data/icons/apps/*-apps-showfoto.png")
 ecm_add_app_icon(showfoto_SRCS ICONS ${ICONS_SRCS})
 
-add_executable(showfoto ${showfoto_SRCS})
+if (WIN32)
+
+    configure_file(${CMAKE_CURRENT_SOURCE_DIR}/../cmake/templates/versioninfo.rc.cmake.in ${CMAKE_CURRENT_BINARY_DIR}/versioninfo.rc)
+    add_executable(showfoto ${showfoto_SRCS} ${CMAKE_CURRENT_BINARY_DIR}/versioninfo.rc)
+
+elseif (APPLE)
+
+    configure_file(${CMAKE_CURRENT_SOURCE_DIR}/../cmake/templates/ShowfotoInfo.plist.cmake.in ${CMAKE_CURRENT_BINARY_DIR}/Info.plist)
+    add_executable(showfoto ${showfoto_SRCS})
+    set_target_properties(showfoto PROPERTIES MACOSX_BUNDLE_INFO_PLIST ${CMAKE_CURRENT_BINARY_DIR}/Info.plist)
+
+else()
+
+    add_executable(showfoto ${showfoto_SRCS})
+
+endif()
 
 add_dependencies(showfoto digikam-gitversion)
 add_dependencies(showfoto digikam-builddate)
-
-# To fill plist XML file for OSX #####################################################
-
-set(MACOSX_APP_NAME_STRING             "showfoto")
-set(MACOSX_APP_DESCRIPTION             "Stand alone Photo Editor based on digiKam Image Editor")
-set(MACOSX_BUNDLE_LONG_VERSION_STRING  ${DIGIKAM_VERSION_STRING})
-set(MACOSX_BUNDLE_SHORT_VERSION_STRING ${DIGIKAM_VERSION_SHORT})
-set(MACOSX_BUNDLE_BUNDLE_VERSION       ${DIGIKAM_VERSION_STRING})
-configure_file(${CMAKE_CURRENT_SOURCE_DIR}/../cmake/templates/Info.plist.cmake.in ${CMAKE_CURRENT_BINARY_DIR}/Info.plist)
-set_target_properties(showfoto PROPERTIES MACOSX_BUNDLE_INFO_PLIST ${CMAKE_CURRENT_BINARY_DIR}/Info.plist)
 
 target_link_libraries(showfoto
 
@@ -105,6 +152,15 @@ if(KF5NotifyConfig_FOUND)
     target_link_libraries(showfoto
                           PUBLIC
                           KF5::NotifyConfig
+    )
+
+endif()
+
+if(KF5IconThemes_FOUND)
+
+    target_link_libraries(showfoto
+                          PUBLIC
+                          KF5::IconThemes
     )
 
 endif()

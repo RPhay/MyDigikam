@@ -161,7 +161,7 @@ void TestRGParsing::testVerifyRG()
     // - some fields are missing (no country)
     // * simply deletes {Country}
     // - invalid field names
-    // * if we have {Contry} or {bla} it deletes the etiquette
+    // * if we have {Country} or {bla} it deletes the etiquette
     // - how do we handle these cases in the UI?
     // * now that we have makeTagString separate, these are handled same in tests and UI
 }

@@ -7,7 +7,7 @@
  * Description : A JPEG IO file for DImg framework - load operations
  *
  * Copyright (C) 2005      by Renchi Raju <renchi dot raju at gmail dot com>
- * Copyright (C) 2005-2021 by Gilles Caulier <caulier dot gilles at gmail dot com>
+ * Copyright (C) 2005-2022 by Gilles Caulier <caulier dot gilles at gmail dot com>
  *
  * This program is free software; you can redistribute it
  * and/or modify it under the terms of the GNU General
@@ -70,27 +70,6 @@ bool DImgJPEGLoader::load(const QString& filePath, DImgLoaderObserver* const obs
         loadingFailed();
         return false;
     }
-
-    unsigned char header[2];
-
-    if (fread(&header, 2, 1, file) != 1)
-    {
-        fclose(file);
-        loadingFailed();
-        return false;
-    }
-
-    unsigned char jpegID[] = { 0xFF, 0xD8 };
-
-    if (memcmp(header, jpegID, 2) != 0)
-    {
-        // not a jpeg file
-        fclose(file);
-        loadingFailed();
-        return false;
-    }
-
-    rewind(file);
 
     struct jpeg_decompress_struct cinfo;
     struct dimg_jpeg_error_mgr    jerr;

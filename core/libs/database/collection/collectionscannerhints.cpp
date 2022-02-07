@@ -162,7 +162,7 @@ bool AlbumCopyMoveHint::isDstAlbum(int albumRootId, const QString& relativePath)
 
 uint AlbumCopyMoveHint::qHash() const
 {
-    return (::qHash(m_src.albumRootId) ^ ::qHash(m_src.albumId) ^ 
+    return (::qHash(m_src.albumRootId) ^ ::qHash(m_src.albumId) ^
             ::qHash(m_dst.albumRootId) ^ ::qHash(m_dst.relativePath));
 }
 

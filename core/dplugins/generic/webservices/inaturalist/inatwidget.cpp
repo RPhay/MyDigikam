@@ -8,7 +8,7 @@
  *
  * Copyright (C) 2021      by Joerg Lohse <joergmlpts at gmail dot com>
  * Copyright (C) 2005-2008 by Vardhman Jain <vardhman at gmail dot com>
- * Copyright (C) 2008-2021 by Gilles Caulier <caulier dot gilles at gmail dot com>
+ * Copyright (C) 2008-2022 by Gilles Caulier <caulier dot gilles at gmail dot com>
  * Copyright (C) 2009      by Luka Renko <lure at kubuntu dot org>
  *
  * This program is free software; you can redistribute it
@@ -117,7 +117,8 @@ INatWidget::INatWidget(QWidget* const parent,
 
     QLabel* const placeLabel                = new QLabel(i18n("Place:"), idBox);
     d->placesComboBox                       = new QComboBox(idBox);
-    d->placesComboBox->setEditable(false);
+    d->placesComboBox->setInsertPolicy(QComboBox::NoInsert);
+    d->placesComboBox->setEditable(true);
     d->moreOptionsButton                    = new QPushButton(i18n("More options"), idBox);
     d->moreOptionsButton->setCheckable(true);
     d->moreOptionsButton->setChecked(false);
@@ -209,7 +210,8 @@ void INatWidget::updateLabels(const QString& name, const QString& /*url*/)
 
     if (!name.isEmpty())
     {
-        url += QLatin1String("observations/") + name;
+        url += QLatin1String("observations?place_id=any&user_id=") + name +
+               QLatin1String("&verifiable=any");
     }
 
     getHeaderLbl()->setText(i18n("<b><h2><a href=\"%1\"><font color=\"#74ac00\""

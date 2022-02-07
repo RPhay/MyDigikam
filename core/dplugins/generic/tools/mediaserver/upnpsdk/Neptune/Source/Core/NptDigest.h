@@ -49,10 +49,10 @@ public:
         ALGORITHM_SHA256,
         ALGORITHM_MD5
     } Algorithm;
-    
+
     // factory
     static NPT_Result Create(Algorithm algorithm, NPT_Digest*& digest);
-    
+
     // methods
     virtual             ~NPT_Digest() {}
     virtual unsigned int GetSize() = 0;
@@ -67,7 +67,7 @@ class NPT_Hmac {
 public:
     static NPT_Result Create(NPT_Digest::Algorithm algorithm,
                              const NPT_UInt8*      key,
-                             NPT_Size              key_size, 
+                             NPT_Size              key_size,
                              NPT_Digest*&          digest);
 
 private:

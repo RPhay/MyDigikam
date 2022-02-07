@@ -6,7 +6,7 @@
  * Date        : 2007-11-10
  * Description : IPTC workflow status properties settings page.
  *
- * Copyright (C) 2007-2021 by Gilles Caulier <caulier dot gilles at gmail dot com>
+ * Copyright (C) 2007-2022 by Gilles Caulier <caulier dot gilles at gmail dot com>
  *
  * This program is free software; you can redistribute it
  * and/or modify it under the terms of the GNU General
@@ -456,7 +456,7 @@ void IPTCProperties::slotLineEditModified()
                        ledit);
 }
 
-void IPTCProperties::readMetadata(DMetadata& meta)
+void IPTCProperties::readMetadata(const DMetadata& meta)
 {
     blockSignals(true);
 
@@ -656,7 +656,7 @@ void IPTCProperties::readMetadata(DMetadata& meta)
     blockSignals(false);
 }
 
-void IPTCProperties::applyMetadata(DMetadata& meta)
+void IPTCProperties::applyMetadata(const DMetadata& meta)
 {
     if (d->dateReleasedCheck->isChecked())
     {

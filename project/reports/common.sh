@@ -1,6 +1,6 @@
 #!/bin/bash
 
-# Copyright (c) 2013-2021 by Gilles Caulier, <caulier dot gilles at gmail dot com>
+# Copyright (c) 2013-2022 by Gilles Caulier, <caulier dot gilles at gmail dot com>
 #
 # Redistribution and use is allowed according to the terms of the BSD license.
 # For details see the accompanying COPYING-CMAKE-SCRIPTS file.
@@ -45,7 +45,7 @@ function updateReportToWebsite()
 
     git checkout -b dev remotes/origin/dev
 
-    git rm -r $WEBSITE_DIR/static/reports/$1/$4/*
+    git rm -r $WEBSITE_DIR/static/reports/$1/$4/* || true
     mkdir -p $WEBSITE_DIR/static/reports/$1/$4
     cp -r $2/* $WEBSITE_DIR/static/reports/$1/$4/
 

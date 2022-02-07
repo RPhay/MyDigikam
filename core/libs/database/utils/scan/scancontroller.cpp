@@ -7,7 +7,7 @@
  * Description : scan item controller.
  *
  * Copyright (C) 2005-2006 by Tom Albers <tomalbers at kde dot nl>
- * Copyright (C) 2006-2021 by Gilles Caulier <caulier dot gilles at gmail dot com>
+ * Copyright (C) 2006-2022 by Gilles Caulier <caulier dot gilles at gmail dot com>
  * Copyright (C) 2007-2013 by Marcel Wiesweg <marcel dot wiesweg at gmx dot de>
  *
  * This program is free software; you can redistribute it
@@ -154,7 +154,9 @@ void ScanController::createProgressDialog()
     d->progressDialog->setWhatsThis(i18nc("@info",
                                           "This shows the progress of the scan. "
                                           "During the scan, all files on disk "
-                                          "are registered in a database."));
+                                          "are registered in a database. "
+                                          "Note: this dialog can appear automatically "
+                                          "if a previous scan of collections have not been fully completed."));
 
     d->progressDialog->setMaximum(1);
     d->progressDialog->setValue(0);
@@ -238,6 +240,7 @@ void ScanController::run()
             connectCollectionScanner(&scanner);
 
             scanner.setNeedFileCount(d->needTotalFiles);
+            scanner.setPerformFastScan(d->performFastScan);
             scanner.setDeferredFileScanning(doScanDeferred);
             scanner.setHintContainer(d->hints);
 

@@ -6,7 +6,7 @@
  * Date        : 2007-09-09
  * Description : scanner dialog
  *
- * Copyright (C) 2007-2021 by Gilles Caulier <caulier dot gilles at gmail dot com>
+ * Copyright (C) 2007-2022 by Gilles Caulier <caulier dot gilles at gmail dot com>
  *
  * This program is free software; you can redistribute it
  * and/or modify it under the terms of the GNU General
@@ -91,8 +91,17 @@ ScanDialog::ScanDialog(KSaneWidget* const saneWdg, QWidget* const parent)
 
     // ------------------------------------------------------------------------
 
-    connect(d->saneWidget, SIGNAL(imageReady(QByteArray&,int,int,int,int)),
-            this, SLOT(slotSaveImage(QByteArray&,int,int,int,int)));
+#if KSANE_VERSION < QT_VERSION_CHECK(21,8,0)
+
+    connect(d->saneWidget, &KSaneWidget::imageReady,
+            this, &ScanDialog::slotSaveImage);
+
+#else
+
+    connect(d->saneWidget, &KSaneWidget::scannedImageReady,
+            this, &ScanDialog::slotSaveImage);
+
+#endif
 
     connect(this, &QDialog::finished,
             this, &ScanDialog::slotDialogFinished);
@@ -124,8 +133,17 @@ void ScanDialog::slotDialogFinished()
     d->saneWidget->closeDevice();
 }
 
+#if KSANE_VERSION < QT_VERSION_CHECK(21,8,0)
+
 // cppcheck-suppress constParameter
 void ScanDialog::slotSaveImage(QByteArray& ksane_data, int width, int height, int bytes_per_line, int ksaneformat)
+
+#else
+
+void ScanDialog::slotSaveImage(const QImage &image_data)
+
+#endif
+
 {
     QStringList writableMimetypes;
     QList<QByteArray> supported = QImageWriter::supportedMimeTypes();
@@ -245,15 +263,25 @@ void ScanDialog::slotSaveImage(QByteArray& ksane_data, int width, int height, in
 
     SaveImgThread* const thread = new SaveImgThread(this);
 
-    connect(thread, SIGNAL(signalProgress(QUrl,int)),
-            this, SLOT(slotThreadProgress(QUrl,int)));
+    connect(thread, &SaveImgThread::signalProgress,
+            this, &ScanDialog::slotThreadProgress);
 
-    connect(thread, SIGNAL(signalComplete(QUrl,bool)),
-            this, SLOT(slotThreadDone(QUrl,bool)));
+    connect(thread, &SaveImgThread::signalComplete,
+            this, &ScanDialog::slotThreadDone);
+
+#if KSANE_VERSION < QT_VERSION_CHECK(21,8,0)
 
     thread->setImageData(ksane_data, width, height, bytes_per_line, ksaneformat);
-    thread->setTargetFile(newURL, format);
     thread->setScannerModel(d->saneWidget->make(), d->saneWidget->model());
+
+#else
+
+    thread->setImageData(image_data);
+    thread->setScannerModel(d->saneWidget->deviceVendor(), d->saneWidget->deviceModel());
+
+#endif
+
+    thread->setTargetFile(newURL, format);
     thread->start();
 }
 
@@ -276,7 +304,7 @@ void ScanDialog::slotThreadDone(const QUrl& url, bool success)
 
     if (success)
     {
-        emit signalImportedImage(url);
+        Q_EMIT signalImportedImage(url);
     }
 }
 

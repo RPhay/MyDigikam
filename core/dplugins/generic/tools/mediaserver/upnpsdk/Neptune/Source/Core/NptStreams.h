@@ -65,23 +65,23 @@ class NPT_InputStream
 
     // methods
     virtual NPT_Result Load(NPT_DataBuffer& buffer, NPT_Size max_read = 0);
-    virtual NPT_Result Read(void*     buffer, 
-                            NPT_Size  bytes_to_read, 
+    virtual NPT_Result Read(void*     buffer,
+                            NPT_Size  bytes_to_read,
                             NPT_Size* bytes_read = NULL) = 0;
-    virtual NPT_Result ReadFully(void*     buffer, 
+    virtual NPT_Result ReadFully(void*     buffer,
                                  NPT_Size  bytes_to_read);
     virtual NPT_Result Seek(NPT_Position offset) = 0;
     virtual NPT_Result Skip(NPT_Size offset);
     virtual NPT_Result Tell(NPT_Position& offset) = 0;
     virtual NPT_Result GetSize(NPT_LargeSize& size) = 0;
     virtual NPT_Result GetAvailable(NPT_LargeSize& available) = 0;
-    
+
     // data access methods
     NPT_Result ReadUI64(NPT_UInt64& value);
     NPT_Result ReadUI32(NPT_UInt32& value);
     NPT_Result ReadUI24(NPT_UInt32& value);
     NPT_Result ReadUI16(NPT_UInt16& value);
-    NPT_Result ReadUI08(NPT_UInt8&  value);    
+    NPT_Result ReadUI08(NPT_UInt8&  value);
 };
 
 typedef NPT_Reference<NPT_InputStream> NPT_InputStreamReference;
@@ -96,23 +96,23 @@ public:
     virtual ~NPT_OutputStream() {};
 
     // methods
-    virtual NPT_Result Write(const void* buffer, 
-                             NPT_Size    bytes_to_write, 
+    virtual NPT_Result Write(const void* buffer,
+                             NPT_Size    bytes_to_write,
                              NPT_Size*   bytes_written = NULL) = 0;
-    virtual NPT_Result WriteFully(const void* buffer, 
+    virtual NPT_Result WriteFully(const void* buffer,
                                   NPT_Size    bytes_to_write);
     virtual NPT_Result WriteString(const char* string_buffer);
     virtual NPT_Result WriteLine(const char* line_buffer);
     virtual NPT_Result Seek(NPT_Position offset) = 0;
     virtual NPT_Result Tell(NPT_Position& offset) = 0;
     virtual NPT_Result Flush() { return NPT_SUCCESS; }
-    
+
     // data access methods
     NPT_Result WriteUI64(NPT_UInt64 value);
     NPT_Result WriteUI32(NPT_UInt32 value);
     NPT_Result WriteUI24(NPT_UInt32 value);
     NPT_Result WriteUI16(NPT_UInt16 value);
-    NPT_Result WriteUI08(NPT_UInt8  value);    
+    NPT_Result WriteUI08(NPT_UInt8  value);
 };
 
 typedef NPT_Reference<NPT_OutputStream> NPT_OutputStreamReference;
@@ -120,7 +120,7 @@ typedef NPT_Reference<NPT_OutputStream> NPT_OutputStreamReference;
 /*----------------------------------------------------------------------
 |    NPT_StreamToStreamCopy
 +---------------------------------------------------------------------*/
-NPT_Result NPT_StreamToStreamCopy(NPT_InputStream&  from, 
+NPT_Result NPT_StreamToStreamCopy(NPT_InputStream&  from,
                                   NPT_OutputStream& to,
                                   NPT_Position      offset = 0,
                                   NPT_LargeSize     size   = 0, /* 0 means the entire stream */
@@ -131,8 +131,8 @@ NPT_Result NPT_StreamToStreamCopy(NPT_InputStream&  from,
 |
 |    Use this class as a base class if you need to inherit both from
 |    NPT_InputStream and NPT_OutputStream which share the Seek and Tell
-|    method. In this case, you override the  base-specific version of 
-|    those methods, InputSeek, InputTell, instead of the Seek and Tell 
+|    method. In this case, you override the  base-specific version of
+|    those methods, InputSeek, InputTell, instead of the Seek and Tell
 |    methods.
 +---------------------------------------------------------------------*/
 class NPT_DelegatingInputStream : public NPT_InputStream
@@ -157,8 +157,8 @@ private:
 |
 |    Use this class as a base class if you need to inherit both from
 |    NPT_InputStream and NPT_OutputStream which share the Seek and Tell
-|    method. In this case, you override the  base-specific version of 
-|    those methods, OutputSeek and OutputTell, instead of the Seek and 
+|    method. In this case, you override the  base-specific version of
+|    those methods, OutputSeek and OutputTell, instead of the Seek and
 |    Tell methods.
 +---------------------------------------------------------------------*/
 class NPT_DelegatingOutputStream : public NPT_OutputStream
@@ -181,7 +181,7 @@ private:
 /*----------------------------------------------------------------------
 |    NPT_MemoryStream
 +---------------------------------------------------------------------*/
-class NPT_MemoryStream : 
+class NPT_MemoryStream :
     public NPT_DelegatingInputStream,
     public NPT_DelegatingOutputStream
 {
@@ -195,21 +195,21 @@ public:
     const NPT_DataBuffer& GetBuffer() const { return m_Buffer; }
 
     // NPT_InputStream methods
-    NPT_Result Read(void*     buffer, 
-                    NPT_Size  bytes_to_read, 
+    NPT_Result Read(void*     buffer,
+                    NPT_Size  bytes_to_read,
                     NPT_Size* bytes_read = NULL);
-    NPT_Result GetSize(NPT_LargeSize& size)  { 
-        size = m_Buffer.GetDataSize();    
+    NPT_Result GetSize(NPT_LargeSize& size)  {
+        size = m_Buffer.GetDataSize();
         return NPT_SUCCESS;
     }
-    NPT_Result GetAvailable(NPT_LargeSize& available) { 
-        available = (NPT_LargeSize)m_Buffer.GetDataSize()-m_ReadOffset; 
+    NPT_Result GetAvailable(NPT_LargeSize& available) {
+        available = (NPT_LargeSize)m_Buffer.GetDataSize()-m_ReadOffset;
         return NPT_SUCCESS;
     }
 
     // NPT_OutputStream methods
-    NPT_Result Write(const void* buffer, 
-                     NPT_Size    bytes_to_write, 
+    NPT_Result Write(const void* buffer,
+                     NPT_Size    bytes_to_write,
                      NPT_Size*   bytes_written = NULL);
 
     // methods delegated to m_Buffer
@@ -224,15 +224,15 @@ public:
 private:
     // NPT_DelegatingInputStream methods
     NPT_Result InputSeek(NPT_Position offset);
-    NPT_Result InputTell(NPT_Position& offset) { 
-        offset = m_ReadOffset; 
+    NPT_Result InputTell(NPT_Position& offset) {
+        offset = m_ReadOffset;
         return NPT_SUCCESS;
     }
 
     // NPT_DelegatingOutputStream methods
     NPT_Result OutputSeek(NPT_Position offset);
     NPT_Result OutputTell(NPT_Position& offset) {
-        offset = m_WriteOffset; 
+        offset = m_WriteOffset;
         return NPT_SUCCESS;
     }
 
@@ -279,13 +279,13 @@ class NPT_SubInputStream : public NPT_InputStream
 {
 public:
     // constructor and destructor
-    NPT_SubInputStream(NPT_InputStreamReference& source, 
+    NPT_SubInputStream(NPT_InputStreamReference& source,
                        NPT_Position              start,
-                       NPT_LargeSize             size); 
+                       NPT_LargeSize             size);
 
     // methods
-    virtual NPT_Result Read(void*     buffer, 
-                            NPT_Size  bytes_to_read, 
+    virtual NPT_Result Read(void*     buffer,
+                            NPT_Size  bytes_to_read,
                             NPT_Size* bytes_read = NULL);
     virtual NPT_Result Seek(NPT_Position offset);
     virtual NPT_Result Tell(NPT_Position& offset);

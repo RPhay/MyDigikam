@@ -34,7 +34,7 @@ div.select {
 	background-position: center;
 	position: fixed;
 	width: 0px;
-	height: 0; /* overriden by max-height from thumb_size.css */
+	height: 0; /* overridden by max-height from thumb_size.css */
 	margin-top: auto;
 	margin-bottom: auto;
 	margin-left: 0;

@@ -33,7 +33,7 @@ class NPT_PosixSystem
 public:
     // class variables
     static NPT_PosixSystem System;
-    
+
     // methods
     NPT_PosixSystem();
    ~NPT_PosixSystem();
@@ -104,9 +104,9 @@ NPT_System::GetCurrentTimeStamp(NPT_TimeStamp& now)
         now.SetNanos(0);
         return NPT_FAILURE;
     }
-    
+
     // convert format
-    now.SetNanos((NPT_UInt64)now_tv.tv_sec  * 1000000000 + 
+    now.SetNanos((NPT_UInt64)now_tv.tv_sec  * 1000000000 +
                  (NPT_UInt64)now_tv.tv_usec * 1000);
 
     return NPT_SUCCESS;
@@ -130,9 +130,9 @@ NPT_System::Sleep(const NPT_TimeInterval& duration)
     do {
         result = nanosleep(&time_req, &time_rem);
         time_req = time_rem;
-    } while (result == -1 && 
-             errno == EINTR && 
-             (long)time_req.tv_sec >= 0 && 
+    } while (result == -1 &&
+             errno == EINTR &&
+             (long)time_req.tv_sec >= 0 &&
              (long)time_req.tv_nsec >= 0);
 
     return NPT_SUCCESS;
@@ -162,8 +162,8 @@ NPT_System::SleepUntil(const NPT_TimeStamp& when)
 
     // sleep
     do {
-        result = pthread_cond_timedwait(&NPT_PosixSystem::System.m_SleepCondition, 
-                                        &NPT_PosixSystem::System.m_SleepMutex, 
+        result = pthread_cond_timedwait(&NPT_PosixSystem::System.m_SleepCondition,
+                                        &NPT_PosixSystem::System.m_SleepMutex,
                                         &timeout);
         if (result == ETIMEDOUT) {
             return NPT_SUCCESS;
@@ -176,7 +176,7 @@ NPT_System::SleepUntil(const NPT_TimeStamp& when)
 /*----------------------------------------------------------------------
 |   NPT_System::SetRandomSeed
 +---------------------------------------------------------------------*/
-NPT_Result  
+NPT_Result
 NPT_System::SetRandomSeed(unsigned int seed)
 {
     srand(seed);
@@ -186,7 +186,7 @@ NPT_System::SetRandomSeed(unsigned int seed)
 /*----------------------------------------------------------------------
 |   NPT_System::GetRandomInteger
 +---------------------------------------------------------------------*/
-NPT_UInt32 
+NPT_UInt32
 NPT_System::GetRandomInteger()
 {
     static bool seeded = false;

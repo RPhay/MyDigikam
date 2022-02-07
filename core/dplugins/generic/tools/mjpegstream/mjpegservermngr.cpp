@@ -4,9 +4,10 @@
  * https://www.digikam.org
  *
  * Date        : 2021-07-24
- * Description : Media server manager
+ * Description : MJPEG server manager
  *
- * Copyright (C) 2021 by Gilles Caulier <caulier dot gilles at gmail dot com>
+ * Copyright (C) 2021-2022 by Gilles Caulier <caulier dot gilles at gmail dot com>
+ * Copyright (C) 2021 by Quoc Hưng Tran <quochungtran1999 at gmail dot com>
  *
  * This program is free software; you can redistribute it
  * and/or modify it under the terms of the GNU General
@@ -78,14 +79,17 @@ public:
     /// Configuration XML file to store albums map to share in case of restoring between sessions.
     QString              mapsConf;
 
-    /// Server instance pointer.
+    /// MJPEG Server instance pointer.
     MjpegServer*         server;
 
-    /// Frames generateur thread
+    /// Frames generateur thread.
     MjpegFrameThread*    thread;
 
     /// The current albums collection to share.
     MjpegServerMap       collectionMap;
+
+    /// The MJPEG stream settings.
+    MjpegStreamSettings  settings;
 
     static const QString configGroupName;
     static const QString configStartServerOnStartupEntry;
@@ -123,6 +127,13 @@ QString MjpegServerMngr::configStartServerOnStartupEntry() const
 
 void MjpegServerMngr::cleanUp()
 {
+    if (d->thread)
+    {
+        d->thread->cancel();
+        delete d->thread;
+        d->thread = nullptr;
+    }
+
     if (d->server)
     {
         d->server->stop();
@@ -133,10 +144,10 @@ void MjpegServerMngr::cleanUp()
 
 bool MjpegServerMngr::loadAtStartup()
 {
-    KSharedConfig::Ptr config    = KSharedConfig::openConfig();
-    KConfigGroup dlnaConfigGroup = config->group(configGroupName());
-    bool startServerOnStartup    = dlnaConfigGroup.readEntry(configStartServerOnStartupEntry(), false);
-    bool result                  = true;
+    KSharedConfig::Ptr config     = KSharedConfig::openConfig();
+    KConfigGroup mjpegConfigGroup = config->group(configGroupName());
+    bool startServerOnStartup     = mjpegConfigGroup.readEntry(configStartServerOnStartupEntry(), false);
+    bool result                   = true;
 
     if (startServerOnStartup)
     {
@@ -155,9 +166,9 @@ bool MjpegServerMngr::loadAtStartup()
 
 void MjpegServerMngr::saveAtShutdown()
 {
-    KSharedConfig::Ptr config    = KSharedConfig::openConfig();
-    KConfigGroup dlnaConfigGroup = config->group(configGroupName());
-    bool startServerOnStartup    = dlnaConfigGroup.readEntry(configStartServerOnStartupEntry(), false);
+    KSharedConfig::Ptr config     = KSharedConfig::openConfig();
+    KConfigGroup mjpegConfigGroup = config->group(configGroupName());
+    bool startServerOnStartup     = mjpegConfigGroup.readEntry(configStartServerOnStartupEntry(), false);
 
     if (startServerOnStartup)
     {
@@ -210,12 +221,22 @@ MjpegServerMap MjpegServerMngr::collectionMap() const
     return d->collectionMap;
 }
 
+void MjpegServerMngr::setSettings(const MjpegStreamSettings& set)
+{
+    d->settings = set;
+}
+
+MjpegStreamSettings MjpegServerMngr::settings() const
+{
+    return d->settings;
+}
+
 bool MjpegServerMngr::startMjpegServer()
 {
     if (!d->server)
     {
-        d->server = new MjpegServer();
-        d->server->setRate(1);
+        d->server = new MjpegServer(QString(), d->settings.port);
+        d->server->setRate(d->settings.rate);
         d->server->start();
     }
 
@@ -227,7 +248,8 @@ bool MjpegServerMngr::startMjpegServer()
     }
 
     d->thread = new MjpegFrameThread(this);
-    d->thread->createFrameJob(d->collectionMap);
+    d->settings.setCollectionMap(d->collectionMap);
+    d->thread->createFrameJob(d->settings);
 
     connect(d->thread, SIGNAL(signalFrameChanged(QByteArray)),
             d->server, SLOT(slotWriteFrame(QByteArray)));

@@ -7,7 +7,7 @@
  * Description : Qt model-view for items
  *
  * Copyright (C) 2009-2011 by Marcel Wiesweg <marcel dot wiesweg at gmx dot de>
- * Copyright (C) 2009-2021 by Gilles Caulier <caulier dot gilles at gmail dot com>
+ * Copyright (C) 2009-2022 by Gilles Caulier <caulier dot gilles at gmail dot com>
  *
  * This program is free software; you can redistribute it
  * and/or modify it under the terms of the GNU General
@@ -100,6 +100,13 @@ public Q_SLOTS:
      */
     void rejectFaces(const QList<QModelIndex>& indexes);
 
+    /**
+     * Set Face to Ignore ID.
+     */
+    void ignoreFaces(const QList<QModelIndex>& indexes);
+
+    QList<int> getFaceIds(const QList<QModelIndex>& indexes)             const;
+
     void dragDropSort(const ItemInfo& pick, const QList<ItemInfo>& infos);
 
 Q_SIGNALS:
@@ -143,6 +150,7 @@ private Q_SLOTS:
     void slotRotateRight(const QList<QModelIndex>&);
     void slotFullscreen(const QList<QModelIndex>&);
     void slotInitProgressIndicator();
+    void scrollTo(const QModelIndex& index, ScrollHint hint = EnsureVisible) override;
 
 private:
 

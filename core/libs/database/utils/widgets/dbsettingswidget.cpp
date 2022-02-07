@@ -7,7 +7,7 @@
  * Description : database settings widget
  *
  * Copyright (C) 2009-2010 by Holger Foerster <Hamsi2k at freenet dot de>
- * Copyright (C) 2010-2021 by Gilles Caulier <caulier dot gilles at gmail dot com>
+ * Copyright (C) 2010-2022 by Gilles Caulier <caulier dot gilles at gmail dot com>
  *
  * This program is free software; you can redistribute it
  * and/or modify it under the terms of the GNU General
@@ -172,25 +172,31 @@ void DatabaseSettingsWidget::setupMainArea()
     QLabel* const hostNameLabel                      = new QLabel(i18n("Host Name:"));
     d->hostName                                      = new QLineEdit();
     d->hostName->setPlaceholderText(i18n("Set the host computer name"));
-    d->hostName->setToolTip(i18n("This is the computer name running MySQL server.\nThis can be \"localhost\" for a local server, "
-                                 "or the network computer\n name (or IP address) in case of remote computer."));
+    d->hostName->setToolTip(i18n("This is the computer name running MySQL server.\n"
+                                 "This can be \"localhost\" for a local server, "
+                                 "or the network computer\n"
+                                 "name (or IP address) in case of remote computer."));
 
     QLabel* const connectOptsLabel                   = new QLabel(i18n("<a href=\"https://doc.qt.io/qt-5/"
                                                                        "qsqldatabase.html#setConnectOptions\">Connect options:</a>"));
     connectOptsLabel->setOpenExternalLinks(true);
     d->connectOpts                                   = new QLineEdit();
     d->connectOpts->setPlaceholderText(i18n("Set the database connection options"));
-    d->connectOpts->setToolTip(i18n("Set the MySQL server connection options.\nFor advanced users only."));
+    d->connectOpts->setToolTip(i18n("Set the MySQL server connection options.\n"
+                                    "For advanced users only."));
 
     QLabel* const userNameLabel                      = new QLabel(i18n("User:"));
     d->userName                                      = new QLineEdit();
     d->userName->setPlaceholderText(i18n("Set the database account name"));
-    d->userName->setToolTip(i18n("Set the MySQL server account name used\nby digiKam to be connected to the server.\n"
-                                 "This account must be available on the remote MySQL server when database have been created."));
+    d->userName->setToolTip(i18n("Set the MySQL server account name used\n"
+                                 "by digiKam to be connected to the server.\n"
+                                 "This account must be available on the remote\n"
+                                 "MySQL server when database have been created."));
 
     QLabel* const passwordLabel                      = new QLabel(i18n("Password:"));
     d->password                                      = new QLineEdit();
-    d->password->setToolTip(i18n("Set the MySQL server account password used\nby digiKam to be connected to the server.\n"
+    d->password->setToolTip(i18n("Set the MySQL server account password used\n"
+                                 "by digiKam to be connected to the server.\n"
                                  "You can left this field empty to use an account set without password."));
     d->password->setEchoMode(QLineEdit::Password);
 
@@ -213,28 +219,35 @@ void DatabaseSettingsWidget::setupMainArea()
     QLabel* const dbNameCoreLabel                    = new QLabel(i18n("Core Db Name:"));
     d->dbNameCore                                    = new QLineEdit();
     d->dbNameCore->setPlaceholderText(i18n("Set the core database name"));
-    d->dbNameCore->setToolTip(i18n("The core database is lead digiKam container used to store\nalbums, items, and searches metadata."));
+    d->dbNameCore->setToolTip(i18n("The core database is lead digiKam container used to store\n"
+                                   "albums, items, and searches metadata."));
     d->dbNameCore->setValidator(asciiValidator);
 
-    QLabel* const dbNameThumbsLabel                  = new QLabel(i18n("Thumbs Db Name:"));
-    d->dbNameThumbs                                  = new QLineEdit();
-    d->dbNameThumbs->setPlaceholderText(i18n("Set the thumbnails database name"));
-    d->dbNameThumbs->setToolTip(i18n("The thumbnails database is used by digiKam to host\nimage thumbs with wavelets compression images.\n"
-                                     "This one can use quickly a lots of space,\nespecially if you have huge collections."));
-    d->dbNameThumbs->setValidator(asciiValidator);
+    d->dbThumbsLabel                                 = new QLabel(i18n("Thumbs Db Name:"));
+    d->dbNameThumbs                                  = new DFileSelector();
+    d->dbNameThumbs->setFileDlgMode(QFileDialog::Directory);
+    d->dbNameThumbs->setFileDlgOptions(QFileDialog::ShowDirsOnly);
+    d->dbNameThumbs->lineEdit()->setPlaceholderText(i18n("Set the thumbnails database name or folder"));
+    d->dbNameThumbs->setToolTip(i18n("The thumbnails database is used by digiKam to host\n"
+                                     "image thumbs with wavelets compression images.\n"
+                                     "This one can use quickly a lots of space,\n"
+                                     "especially if you have huge collections.\n"
+                                     "Choose a local folder to use a SQLite database."));
 
     QLabel* const dbNameFaceLabel                    = new QLabel(i18n("Face Db Name:"));
     d->dbNameFace                                    = new QLineEdit();
     d->dbNameFace->setPlaceholderText(i18n("Set the face database name"));
-    d->dbNameFace->setToolTip(i18n("The face database is used by digiKam to host image histograms\ndedicated to faces recognition process.\n"
-                                   "This one can use quickly a lots of space, especially\nif you a lots of image with people faces detected "
-                                   "and tagged."));
+    d->dbNameFace->setToolTip(i18n("The face database is used by digiKam to host image histograms\n"
+                                   "dedicated to faces recognition process.\n"
+                                   "This one can use quickly a lots of space, especially\n"
+                                   "if you a lots of image with people faces detected and tagged."));
     d->dbNameFace->setValidator(asciiValidator);
 
     QLabel* const dbNameSimilarityLabel              = new QLabel(i18n("Similarity Db Name:"));
     d->dbNameSimilarity                              = new QLineEdit();
     d->dbNameSimilarity->setPlaceholderText(i18n("Set the similarity database name"));
-    d->dbNameSimilarity->setToolTip(i18n("The similarity database is used by digiKam to host image Haar matrix data for the similarity search."));
+    d->dbNameSimilarity->setToolTip(i18n("The similarity database is used by digiKam to host\n"
+                                         "image Haar matrix data for the similarity search."));
     d->dbNameSimilarity->setValidator(asciiValidator);
 
     QPushButton* const defaultValuesBtn              = new QPushButton(i18n("Default Settings"));
@@ -252,7 +265,7 @@ void DatabaseSettingsWidget::setupMainArea()
     expertSettinglayout->addRow(hostPortLabel,         phbox);
     expertSettinglayout->addRow(new DLineWidget(Qt::Horizontal, d->expertSettings));
     expertSettinglayout->addRow(dbNameCoreLabel,       d->dbNameCore);
-    expertSettinglayout->addRow(dbNameThumbsLabel,     d->dbNameThumbs);
+    expertSettinglayout->addRow(d->dbThumbsLabel,      d->dbNameThumbs);
     expertSettinglayout->addRow(dbNameFaceLabel,       d->dbNameFace);
     expertSettinglayout->addRow(dbNameSimilarityLabel, d->dbNameSimilarity);
     expertSettinglayout->addRow(new QWidget(),         defaultValuesBtn);
@@ -362,7 +375,7 @@ void DatabaseSettingsWidget::setupMainArea()
     connect(d->dbNameCore, SIGNAL(textChanged(QString)),
             this, SLOT(slotUpdateSqlInit()));
 
-    connect(d->dbNameThumbs, SIGNAL(textChanged(QString)),
+    connect(d->dbNameThumbs->lineEdit(), SIGNAL(textChanged(QString)),
             this, SLOT(slotUpdateSqlInit()));
 
     connect(d->dbNameFace, SIGNAL(textChanged(QString)),
@@ -417,7 +430,7 @@ QString DatabaseSettingsWidget::databaseBackend() const
 void DatabaseSettingsWidget::slotResetMysqlServerDBNames()
 {
     d->dbNameCore->setText(QLatin1String("digikam"));
-    d->dbNameThumbs->setText(QLatin1String("digikam"));
+    d->dbNameThumbs->setFileDlgPath(QLatin1String("digikam"));
     d->dbNameFace->setText(QLatin1String("digikam"));
     d->dbNameSimilarity->setText(QLatin1String("digikam"));
 }
@@ -506,18 +519,18 @@ void DatabaseSettingsWidget::slotUpdateSqlInit()
                                .arg(d->userName->text())
                                .arg(d->hostName->text());
 
-    if (d->dbNameThumbs->text() != d->dbNameCore->text())
+    if (isNotEqualToThumbName(d->dbNameCore->text()))
     {
         sql += QString::fromLatin1("CREATE DATABASE %1;<br>"
                                    "GRANT ALL PRIVILEGES ON %2.* TO \'%3\'@\'%4\';<br>")
-                                   .arg(d->dbNameThumbs->text())
-                                   .arg(d->dbNameThumbs->text())
+                                   .arg(d->dbNameThumbs->fileDlgPath())
+                                   .arg(d->dbNameThumbs->fileDlgPath())
                                    .arg(d->userName->text())
                                    .arg(d->hostName->text());
     }
 
-    if ((d->dbNameFace->text() != d->dbNameCore->text()) &&
-        (d->dbNameFace->text() != d->dbNameThumbs->text()))
+    if (isNotEqualToThumbName(d->dbNameFace->text())   &&
+        (d->dbNameFace->text() != d->dbNameCore->text()))
     {
         sql += QString::fromLatin1("CREATE DATABASE %1;<br>"
                                    "GRANT ALL PRIVILEGES ON %2.* TO \'%3\'@\'%4\';<br>")
@@ -527,8 +540,8 @@ void DatabaseSettingsWidget::slotUpdateSqlInit()
                                    .arg(d->hostName->text());
     }
 
-    if ((d->dbNameSimilarity->text() != d->dbNameCore->text()) &&
-        (d->dbNameSimilarity->text() != d->dbNameThumbs->text()) &&
+    if (isNotEqualToThumbName(d->dbNameSimilarity->text())     &&
+        (d->dbNameSimilarity->text() != d->dbNameCore->text()) &&
         (d->dbNameSimilarity->text() != d->dbNameFace->text()))
     {
         sql += QString::fromLatin1("CREATE DATABASE %1;<br>"
@@ -542,6 +555,17 @@ void DatabaseSettingsWidget::slotUpdateSqlInit()
     sql += QLatin1String("FLUSH PRIVILEGES;<br>");
 
     d->sqlInit->setText(sql);
+
+    QFileInfo thumbDB(d->dbNameThumbs->fileDlgPath());
+
+    if (thumbDB.exists() && thumbDB.isDir())
+    {
+        d->dbThumbsLabel->setText(i18n("Thumbs Db Folder:"));
+    }
+    else
+    {
+        d->dbThumbsLabel->setText(i18n("Thumbs Db Name:"));
+    }
 }
 
 void DatabaseSettingsWidget::slotCheckMysqlServerConnection()
@@ -586,7 +610,7 @@ bool DatabaseSettingsWidget::checkMysqlServerDbNamesConfig(QString& error)
         return false;
     }
 
-    if (d->dbNameThumbs->text().isEmpty())
+    if (d->dbNameThumbs->fileDlgPath().isEmpty())
     {
         error = i18n("The thumbnails database name is empty");
         return false;
@@ -689,7 +713,7 @@ void DatabaseSettingsWidget::setParametersFromSettings(const ApplicationSettings
     {
         d->dbType->setCurrentIndex(d->dbTypeMap[MysqlServer]);
         d->dbNameCore->setText(d->orgPrms.databaseNameCore);
-        d->dbNameThumbs->setText(d->orgPrms.databaseNameThumbnails);
+        d->dbNameThumbs->setFileDlgPath(d->orgPrms.databaseNameThumbnails);
         d->dbNameFace->setText(d->orgPrms.databaseNameFace);
         d->dbNameSimilarity->setText(d->orgPrms.databaseNameSimilarity);
         d->hostName->setText(d->orgPrms.hostName);
@@ -731,7 +755,7 @@ DbEngineParameters DatabaseSettingsWidget::getDbEngineParameters() const
             prm.internalServer         = false;
             prm.databaseType           = databaseBackend();
             prm.databaseNameCore       = d->dbNameCore->text();
-            prm.databaseNameThumbnails = d->dbNameThumbs->text();
+            prm.databaseNameThumbnails = d->dbNameThumbs->fileDlgPath();
             prm.databaseNameFace       = d->dbNameFace->text();
             prm.databaseNameSimilarity = d->dbNameSimilarity->text();
             prm.connectOptions         = d->connectOpts->text();
@@ -882,6 +906,14 @@ bool DatabaseSettingsWidget::checkDatabasePath()
     }
 
     return true;
+}
+
+bool DatabaseSettingsWidget::isNotEqualToThumbName(const QString& name)
+{
+    QFileInfo thumbDB(d->dbNameThumbs->fileDlgPath());
+    bool isDir = (thumbDB.exists() && thumbDB.isDir() && thumbDB.isAbsolute());
+
+    return (!isDir && (d->dbNameThumbs->fileDlgPath() !=  name));
 }
 
 } // namespace Digikam

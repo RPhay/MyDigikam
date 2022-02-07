@@ -6,7 +6,7 @@
  * Date        : 2004-11-17
  * Description : a tab to display item metadata information
  *
- * Copyright (C) 2004-2021 by Gilles Caulier <caulier dot gilles at gmail dot com>
+ * Copyright (C) 2004-2022 by Gilles Caulier <caulier dot gilles at gmail dot com>
  *
  * This program is free software; you can redistribute it
  * and/or modify it under the terms of the GNU General
@@ -172,11 +172,11 @@ void ItemPropertiesMetadataTab::readSettings(const KConfigGroup& group)
 {
     setCurrentIndex(group.readEntry("ImagePropertiesMetaData Tab",
                                     (int)Private::EXIF));
-    d->exifWidget->setMode(group.readEntry("EXIF Level",                              (int)ExifWidget::CUSTOM));
-    d->makernoteWidget->setMode(group.readEntry("MAKERNOTE Level",                    (int)MakerNoteWidget::CUSTOM));
-    d->iptcWidget->setMode(group.readEntry("IPTC Level",                              (int)IptcWidget::CUSTOM));
-    d->xmpWidget->setMode(group.readEntry("XMP Level",                                (int)XmpWidget::CUSTOM));
-    d->exifToolWidget->setMode(group.readEntry("EXIFTOOL Level",                      (int)ExifToolWidget::CUSTOM));
+    d->exifWidget->setMode(group.readEntry("EXIF Level",                              (int)ExifWidget::NONE));
+    d->makernoteWidget->setMode(group.readEntry("MAKERNOTE Level",                    (int)MakerNoteWidget::NONE));
+    d->iptcWidget->setMode(group.readEntry("IPTC Level",                              (int)IptcWidget::NONE));
+    d->xmpWidget->setMode(group.readEntry("XMP Level",                                (int)XmpWidget::NONE));
+    d->exifToolWidget->setMode(group.readEntry("EXIFTOOL Level",                      (int)ExifToolWidget::NONE));
     d->exifWidget->setCurrentItemByKey(group.readEntry("Current EXIF Item",           QString()));
     d->makernoteWidget->setCurrentItemByKey(group.readEntry("Current MAKERNOTE Item", QString()));
     d->iptcWidget->setCurrentItemByKey(group.readEntry("Current IPTC Item",           QString()));
@@ -189,11 +189,11 @@ void ItemPropertiesMetadataTab::readSettings(const KConfigGroup& group)
 void ItemPropertiesMetadataTab::loadFilters()
 {
     KConfigGroup grp2 = KSharedConfig::openConfig()->group("Image Properties SideBar");
-    d->exifWidget->setTagsFilter(grp2.readEntry("EXIF Tags Filter",                 MetadataPanel::defaultExifFilter()));
-    d->makernoteWidget->setTagsFilter(grp2.readEntry("MAKERNOTE Tags Filter",       MetadataPanel::defaultMknoteFilter()));
-    d->iptcWidget->setTagsFilter(grp2.readEntry("IPTC Tags Filter",                 MetadataPanel::defaultIptcFilter()));
-    d->xmpWidget->setTagsFilter(grp2.readEntry("XMP Tags Filter",                   MetadataPanel::defaultXmpFilter()));
-    d->exifToolWidget->setTagsFilter(grp2.readEntry("EXIFTOOL Tags Filter",         MetadataPanel::defaultExifToolFilter()));
+    d->exifWidget->setTagsFilter(grp2.readEntry("EXIF Tags Filter",           QStringList()));
+    d->makernoteWidget->setTagsFilter(grp2.readEntry("MAKERNOTE Tags Filter", QStringList()));
+    d->iptcWidget->setTagsFilter(grp2.readEntry("IPTC Tags Filter",           QStringList()));
+    d->xmpWidget->setTagsFilter(grp2.readEntry("XMP Tags Filter",             QStringList()));
+    d->exifToolWidget->setTagsFilter(grp2.readEntry("EXIFTOOL Tags Filter",   QStringList()));
 }
 
 void ItemPropertiesMetadataTab::writeSettings(KConfigGroup& group)

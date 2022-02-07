@@ -46,9 +46,9 @@ enum
 	dng_error_unsupported_dng,					//!< DNG version is unsupported.
 	dng_error_overflow							//!< Arithmetic overflow.
 	};
-	
+
 /*****************************************************************************/
 
 #endif
-	
+
 /*****************************************************************************/

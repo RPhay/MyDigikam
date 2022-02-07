@@ -6,7 +6,7 @@
  * Date        : 2018-07-30
  * Description : a plugin to acquire images with a digital scanner.
  *
- * Copyright (C) 2018-2021 by Gilles Caulier <caulier dot gilles at gmail dot com>
+ * Copyright (C) 2018-2022 by Gilles Caulier <caulier dot gilles at gmail dot com>
  *
  * This program is free software; you can redistribute it
  * and/or modify it under the terms of the GNU General
@@ -112,8 +112,8 @@ void DigitalScannerPlugin::setup(QObject* const parent)
     ac->setObjectName(QLatin1String("import_scan"));
     ac->setActionCategory(DPluginAction::GenericImport);
 
-    connect(ac, SIGNAL(triggered(bool)),
-            this, SLOT(slotDigitalScanner()));
+    connect(ac, &DPluginAction::triggered,
+            this, &DigitalScannerPlugin::slotDigitalScanner);
 
     addAction(ac);
 }
@@ -148,8 +148,8 @@ void DigitalScannerPlugin::slotDigitalScanner()
         DInfoInterface* const iface = infoIface(sender());
         ScanDialog* const dlg       = new ScanDialog(m_saneWidget);
 
-        connect(dlg, SIGNAL(signalImportedImage(QUrl)),
-                iface, SIGNAL(signalImportedImage(QUrl)));
+        connect(dlg, &ScanDialog::signalImportedImage,
+                iface, &DInfoInterface::signalImportedImage);
 
         dlg->setTargetDir(iface->defaultUploadUrl().toLocalFile());
         dlg->setPlugin(this);

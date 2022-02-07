@@ -42,12 +42,14 @@ public:
          *  Additionally specifying the size of the preview area may be appropriate
          */
         FastPreview,
+
         /**
          * Load a preview that is as large as possible without sacrificing speed
          * for performance. Especially, raw previews are taken if larger than the given size.
          * Raw decoding and color management settings will be adjusted.
          */
         FastButLargePreview,
+
         /**
          * Load a high quality additional image. For normal images, loads the full data.
          * For RAW, the additional settings below are taken into account

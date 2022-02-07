@@ -6,7 +6,7 @@
  * Date        : 2007-02-06
  * Description : setup Image Editor page
  *
- * Copyright (C) 2007-2021 by Gilles Caulier <caulier dot gilles at gmail dot com>
+ * Copyright (C) 2007-2022 by Gilles Caulier <caulier dot gilles at gmail dot com>
  *
  * This program is free software; you can redistribute it
  * and/or modify it under the terms of the GNU General
@@ -104,7 +104,7 @@ void SetupEditor::applySettings()
 
 void SetupEditor::readSettings()
 {
-    // Nothing todo. All is already processed in widget contructors
+    // Nothing todo. All is already processed in widget constructors
 }
 
 } // namespace Digikam

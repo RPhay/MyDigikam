@@ -6,7 +6,7 @@
  * Date        : 2009-02-15
  * Description : Plasma Address Book contacts interface
  *
- * Copyright (C) 2010-2021 by Gilles Caulier <caulier dot gilles at gmail dot com>
+ * Copyright (C) 2010-2022 by Gilles Caulier <caulier dot gilles at gmail dot com>
  *
  * This program is free software; you can redistribute it
  * and/or modify it under the terms of the GNU General
@@ -41,7 +41,14 @@
 #endif
 
 #include <kjob.h>
+#include <akonadi_version.h>
+
+#if AKONADI_VERSION >= QT_VERSION_CHECK(5, 18, 41)
+#include <Akonadi/Item>
+#else
 #include <AkonadiCore/Item>
+#endif
+
 #include <Akonadi/Contact/ContactSearchJob>
 #include <KContacts/Addressee>
 

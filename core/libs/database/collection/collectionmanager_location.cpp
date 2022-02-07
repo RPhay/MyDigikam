@@ -814,9 +814,9 @@ void CollectionManager::updateLocations()
         {
             foreach (const QString& path, d->networkShareMountPathsFromIdentifier(location))
             {
-                QDir dir(path);
-                available    = (dir.isReadable() &&
-                               (dir.entryList(QDir::Dirs | QDir::Files | QDir::NoDotAndDotDot).count() > 0));
+                QFileInfo fileInfo(path);
+                available    = (fileInfo.isReadable() &&
+                                QDirIterator(path, QDir::Dirs | QDir::Files | QDir::NoDotAndDotDot).hasNext());
                 absolutePath = path;
 
                 if (available)

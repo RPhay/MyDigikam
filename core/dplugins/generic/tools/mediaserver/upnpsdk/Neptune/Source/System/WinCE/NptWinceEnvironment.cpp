@@ -19,10 +19,10 @@
 /*----------------------------------------------------------------------
 |   NPT_GetEnvironment
 +---------------------------------------------------------------------*/
-NPT_Result 
+NPT_Result
 NPT_GetEnvironment(const char* name, NPT_String& value)
 {
-    HKEY       key = NULL; 
+    HKEY       key = NULL;
     DWORD      type;
     WCHAR*     name_w;
     DWORD      name_length;
@@ -37,10 +37,10 @@ NPT_GetEnvironment(const char* name, NPT_String& value)
     name_w = new WCHAR[(name_length+1)];
     MultiByteToWideChar(CP_UTF8, 0, name, -1, name_w, name_length+1);
 
-    if (RegOpenKeyEx(HKEY_CURRENT_USER, 
-                     _T("Software\\Axiomatic\\Neptune\\Environment"), 
-                     0, KEY_ALL_ACCESS, &key) == ERROR_SUCCESS) { 
-        if (RegQueryValueEx(key, name_w, 0, &type, (PBYTE)NULL, &value_length ) == ERROR_SUCCESS) { 
+    if (RegOpenKeyEx(HKEY_CURRENT_USER,
+                     _T("Software\\Axiomatic\\Neptune\\Environment"),
+                     0, KEY_ALL_ACCESS, &key) == ERROR_SUCCESS) {
+        if (RegQueryValueEx(key, name_w, 0, &type, (PBYTE)NULL, &value_length ) == ERROR_SUCCESS) {
             // convert to UTF-8
 
             WCHAR* value_w = new WCHAR[(value_length+1)];

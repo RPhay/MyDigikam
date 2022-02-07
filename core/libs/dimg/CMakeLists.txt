@@ -1,5 +1,5 @@
 #
-# Copyright (c) 2010-2021 by Gilles Caulier, <caulier dot gilles at gmail dot com>
+# Copyright (c) 2010-2022 by Gilles Caulier, <caulier dot gilles at gmail dot com>
 # Copyright (c) 2015      by Veaceslav Munteanu, <veaceslav dot munteanu90 at gmail dot com>
 #
 # Redistribution and use is allowed according to the terms of the BSD license.
@@ -140,10 +140,14 @@ set(libdimgfilters_SRCS
     ${CMAKE_CURRENT_SOURCE_DIR}/filters/imgqsort/imagequalitycontainer.cpp
     ${CMAKE_CURRENT_SOURCE_DIR}/filters/imgqsort/imagequalitysettings.cpp
     ${CMAKE_CURRENT_SOURCE_DIR}/filters/imgqsort/imagequalityparser.cpp
-    ${CMAKE_CURRENT_SOURCE_DIR}/filters/imgqsort/imagequalityparser_blur.cpp
-    ${CMAKE_CURRENT_SOURCE_DIR}/filters/imgqsort/imagequalityparser_exposure.cpp
-    ${CMAKE_CURRENT_SOURCE_DIR}/filters/imgqsort/imagequalityparser_noise.cpp
-    ${CMAKE_CURRENT_SOURCE_DIR}/filters/imgqsort/imagequalityparser_compression.cpp
+    ${CMAKE_CURRENT_SOURCE_DIR}/filters/imgqsort/imagequalitycalculator.cpp
+    ${CMAKE_CURRENT_SOURCE_DIR}/filters/imgqsort/imagequalitythread.cpp
+    ${CMAKE_CURRENT_SOURCE_DIR}/filters/imgqsort/detector/blur_detector.cpp
+    ${CMAKE_CURRENT_SOURCE_DIR}/filters/imgqsort/detector/noise_detector.cpp
+    ${CMAKE_CURRENT_SOURCE_DIR}/filters/imgqsort/detector/exposure_detector.cpp
+    ${CMAKE_CURRENT_SOURCE_DIR}/filters/imgqsort/detector/compression_detector.cpp
+    ${CMAKE_CURRENT_SOURCE_DIR}/filters/imgqsort/detector/detector.cpp
+
 )
 
 # ==================================================================================================

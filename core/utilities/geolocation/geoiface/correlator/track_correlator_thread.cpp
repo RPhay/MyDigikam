@@ -6,7 +6,7 @@
  * Date        : 2006-09-19
  * Description : Thread for correlator for tracks and images
  *
- * Copyright (C) 2006-2021 by Gilles Caulier <caulier dot gilles at gmail dot com>
+ * Copyright (C) 2006-2022 by Gilles Caulier <caulier dot gilles at gmail dot com>
  * Copyright (C) 2010      by Michael G. Hansen <mike at mghansen dot de>
  *
  * This program is free software; you can redistribute it
@@ -76,7 +76,7 @@ void TrackCorrelatorThread::run()
             return;
         }
 
-        // GPS device are sync in time by satelite using GMT time.
+        // GPS device are sync in time by satellite using GMT time.
 
         QDateTime itemDateTime = it->dateTime.addSecs(options.secondsOffset);
         itemDateTime.setTimeZone(QTimeZone(options.timeZoneOffset));

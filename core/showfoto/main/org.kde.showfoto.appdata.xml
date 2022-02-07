@@ -4,6 +4,7 @@
   <metadata_license>CC0-1.0</metadata_license>
   <project_license>GPL-2.0+</project_license>
   <name>Showfoto</name>
+  <name xml:lang="ar">شوفوتو</name>
   <name xml:lang="bg">Showfoto</name>
   <name xml:lang="bs">Showfoto</name>
   <name xml:lang="ca">Showfoto</name>
@@ -14,12 +15,14 @@
   <name xml:lang="en-GB">Showfoto</name>
   <name xml:lang="es">Showfoto</name>
   <name xml:lang="et">Showfoto</name>
+  <name xml:lang="eu">Showfoto</name>
   <name xml:lang="fi">Showfoto</name>
   <name xml:lang="fr">Showfoto</name>
   <name xml:lang="gl">Showfoto</name>
   <name xml:lang="hi">शोफोटो</name>
   <name xml:lang="hu">Showfoto</name>
   <name xml:lang="id">Showfoto</name>
+  <name xml:lang="is">Showfoto</name>
   <name xml:lang="it">Showfoto</name>
   <name xml:lang="ja">Showfoto</name>
   <name xml:lang="ko">Showfoto</name>
@@ -38,6 +41,7 @@
   <name xml:lang="zh-CN">Showfoto</name>
   <name xml:lang="zh-TW">Showfoto</name>
   <summary>Image Editor</summary>
+  <summary xml:lang="ar">محرّر صور</summary>
   <summary xml:lang="bg">Редактор на изображения</summary>
   <summary xml:lang="ca">Editor d'imatges</summary>
   <summary xml:lang="ca-valencia">Editor d'imatges</summary>
@@ -46,12 +50,14 @@
   <summary xml:lang="en-GB">Image Editor</summary>
   <summary xml:lang="es">Editor de imágenes</summary>
   <summary xml:lang="et">Pildiredaktor</summary>
+  <summary xml:lang="eu">Irudi editorea</summary>
   <summary xml:lang="fi">Kuvamuokkain</summary>
   <summary xml:lang="fr">Éditeur d'image</summary>
   <summary xml:lang="gl">Editor de imaxes</summary>
   <summary xml:lang="hi">छवि संपादक</summary>
   <summary xml:lang="hu">Képszerkesztő</summary>
   <summary xml:lang="id">Editor Citra</summary>
+  <summary xml:lang="is">Myndvinnsluforrit</summary>
   <summary xml:lang="it">Editor di immagini</summary>
   <summary xml:lang="ja">画像エディタ</summary>
   <summary xml:lang="ko">사진 편집기</summary>
@@ -73,6 +79,7 @@
       Showfoto is a fast Image Editor with powerful image editing tools. You can use it to view your photographs and improve them.
       Showfoto is the standalone image editor of the digiKam project.
     </p>
+    <p xml:lang="ar">شوفوتو هو محرر صور سريع مع أدوات تحرير صور قوية. يمكنك استخدامه لعرض الصور الخاصة بك وتحسينها. شوفوتو هو محرر الصور المستقل لمشروع ديجيكام.</p>
     <p xml:lang="bg">Showfoto е бърз редактор за изображения с мощни инструменти, може да го използвате, за да разглеждате и да подобрите снимките си. Showfoto е самостоятелен резактор на изображения към проекта digiKam.</p>
     <p xml:lang="bs">Showfoto je brz uređivač slika sa moćnim alatima za obradu slika. Možete ga koristiti da vidite svoje fotografije i poboljšati ih. Showfoto je samostalan urednik slika projekta digikam.</p>
     <p xml:lang="ca">El Showfoto és un editor d'imatges ràpid amb potents eines per a l'edició d'imatges. El pot usar per a visualitzar i millorar les vostres fotografies. El Showfoto és un editor d'imatges independent del projecte digiKam.</p>
@@ -83,12 +90,14 @@
     <p xml:lang="en-GB">Showfoto is a fast Image Editor with powerful image editing tools. You can use it to view your photographs and improve them. Showfoto is the standalone image editor of the digiKam project.</p>
     <p xml:lang="es">Showfoto es un rápido editor de imágenes con potentes herramientas de edición de imágenes. Puede usarlo para ver sus fotografías y mejorarlas. Showfoto es el editor de imágenes independiente del proyecto digiKam.</p>
     <p xml:lang="et">Showfoto on kiire pildiredaktor võimsate pildi redigeerimise tööriistadega. Sellega saab näiteks vaadata oma fotosid ja neid täiustada. Showfoto on digiKami projekti autonoomne pildiredaktor.</p>
+    <p xml:lang="eu">Showfoto irudiak editatzeko tresna ahaltsuak dituen irudi editore azkar bat da. Zure irudiak ikusi eta hobetzeko erabil dezakezu. Showfoto digiKam proiektuko irudi editore autonomoa da.</p>
     <p xml:lang="fi">Showfoto on nopea kuvamuokkain, jossa on tehokkaat kuvankäsittelytyökalut. Voit käyttää sitä kuviesi katseluun ja paranteluun. Showfoto on digiKam-projektista erilleen irrotettu kuvamuokkain.</p>
     <p xml:lang="fr">Showfoto est un éditeur d'image rapide comprenant de puissants outils d'édition d'image. Vous pouvez l'utiliser pour afficher des photographies et les améliorer. Showfoto est l'éditeur d'image autonome du projet digiKam.</p>
     <p xml:lang="gl">Showfoto é un editor de imaxes rápido con potentes ferramentas de edición. Pode usalo para ver as súas fotografías e melloralas. Showfoto é o editor de imaxes independente do proxecto digiKam.</p>
     <p xml:lang="hi">शोफोटो शक्तिशाली छवि संपादन के साधनों के साथ एक तेज़ छवि संपादक है। आप इसका उपयोग अपनी तस्वीरों को देखने और उन्हें बेहतर बनाने के लिए कर सकते हैं। शोफोटो डिजीकैम प्रोजेक्ट का स्वतंत्र छवि संपादक है।</p>
     <p xml:lang="hu">A Showfoto egy gyors képszerkesztő hatékony szerkesztőeszközökkel. A használatával megnézheti és javíthatja a fényképeit. A Showfoto a digiKam projekt önálló képszerkesztője.</p>
     <p xml:lang="id">Showfoto adalah sebuah Editor Citra yang cepat dengan peralatan pengeditan citra yang unggul. Kamu bisa menggunakannya untuk menampilkan fotografikmu dan memperbaikinya. Showfoto adalah sebuah editor citra yang mandiri dari projek digiKam.</p>
+    <p xml:lang="is">Showfoto er hraðvirkt myndvinnsluforrit með ýmsum öflugum verkfærum. Það má nota til að skoða myndir og bæta þær. Showfoto er sjálfstæður myndvinnsluritinn innan digiKam verkefnisins.</p>
     <p xml:lang="it">Showfoto è un editor di immagini veloce, con strumenti di modifica potenti. Puoi usarlo per visualizzare le tue fotografie e migliorarle. Showfoto è un editor di immagini autonomo all'interno del progetto digiKam.</p>
     <p xml:lang="ja">Showfoto は高速でパワフルな画像編集ツールです。画像を表示したり、それらを改善したりできます。Showfoto は digiKam プロジェクトから切り離された画像エディタです。</p>
     <p xml:lang="ko">Showfoto는 강력한 사진 편집 도구가 있는 빠른 사진 편집기입니다. 디지털 사진을 보고 보정할 수 있습니다. Showfoto는 digiKam 프로젝트의 단독 사진 편집기입니다.</p>
@@ -113,6 +122,7 @@
   <screenshots>
     <screenshot type="default">
       <caption>Editing photo in Showfoto</caption>
+      <caption xml:lang="ar">تحرير صورة في شوفوتو</caption>
       <caption xml:lang="bg">Редактиране на снимка в Showfoto</caption>
       <caption xml:lang="ca">Edició de fotografies al Showfoto</caption>
       <caption xml:lang="ca-valencia">Edició de fotografies al Showfoto</caption>
@@ -121,12 +131,14 @@
       <caption xml:lang="en-GB">Editing photo in Showfoto</caption>
       <caption xml:lang="es">Editando foto en Showfoto</caption>
       <caption xml:lang="et">Foto redigeerimine Showfotos</caption>
+      <caption xml:lang="eu">Showfoto-rekin argazkia editatzea</caption>
       <caption xml:lang="fi">Valokuvan muokkaus Showfotossa</caption>
       <caption xml:lang="fr">Modification de photo dans Showfoto</caption>
       <caption xml:lang="gl">Editando unha foto en Showfoto</caption>
       <caption xml:lang="hi">शोफोटो में फोटो का संपादन</caption>
       <caption xml:lang="hu">Fénykép szerkesztése Showfotoval</caption>
       <caption xml:lang="id">Pengeditan foto di Showfoto</caption>
+      <caption xml:lang="is">Breytingar mynda í Showfoto</caption>
       <caption xml:lang="it">Modifica di fotografie in Showfoto</caption>
       <caption xml:lang="ja">Showfoto で画像を編集</caption>
       <caption xml:lang="ko">Showfoto로 사진 편집하기</caption>
@@ -145,8 +157,10 @@
       <image>https://www.digikam.org/img/content/about/overview_imageeditor.png</image>
     </screenshot>
   </screenshots>
-  <content_rating type="oars-1.1"/>
   <releases>
+    <release date="2022-01-16" version="7.5.0"/>
+    <release date="2021-12-18" version="7.4.0"/>
+    <release date="2021-07-11" version="7.3.0"/>
     <release date="2021-03-22" version="7.2.0"/>
     <release date="2020-09-06" version="7.1.0"/>
     <release date="2020-07-19" version="7.0.0"/>
@@ -224,6 +238,7 @@
   </releases>
   <project_group>KDE</project_group>
   <developer_name>digiKam Project</developer_name>
+  <developer_name xml:lang="ar">مشروع دجيكام</developer_name>
   <developer_name xml:lang="bg">Проект digiKam</developer_name>
   <developer_name xml:lang="bs">digiKam Projekt</developer_name>
   <developer_name xml:lang="ca">Projecte digiKam</developer_name>
@@ -234,12 +249,14 @@
   <developer_name xml:lang="en-GB">digiKam Project</developer_name>
   <developer_name xml:lang="es">Proyecto digiKam</developer_name>
   <developer_name xml:lang="et">digiKami projekt</developer_name>
+  <developer_name xml:lang="eu">digiKam proiektua</developer_name>
   <developer_name xml:lang="fi">digiKam-projekti</developer_name>
   <developer_name xml:lang="fr">projet digiKam</developer_name>
   <developer_name xml:lang="gl">Proxecto digiKam</developer_name>
   <developer_name xml:lang="hi">डिज़ीकैम परियोजना</developer_name>
   <developer_name xml:lang="hu">digiKam projekt</developer_name>
   <developer_name xml:lang="id">Projek digiKam</developer_name>
+  <developer_name xml:lang="is">digiKam verkefnið</developer_name>
   <developer_name xml:lang="it">Progetto digiKam</developer_name>
   <developer_name xml:lang="ja">digiKam プロジェクト</developer_name>
   <developer_name xml:lang="ko">digiKam 프로젝트</developer_name>
@@ -260,4 +277,7 @@
   <provides>
     <binary>showfoto</binary>
   </provides>
+  <content_rating type="oars-1.1">
+    <content_attribute id="money-advertising">none</content_attribute>
+  </content_rating>
 </component>

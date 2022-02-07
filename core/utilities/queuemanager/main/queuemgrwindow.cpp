@@ -6,7 +6,7 @@
  * Date        : 2008-11-21
  * Description : Batch Queue Manager GUI
  *
- * Copyright (C) 2008-2021 by Gilles Caulier <caulier dot gilles at gmail dot com>
+ * Copyright (C) 2008-2022 by Gilles Caulier <caulier dot gilles at gmail dot com>
  *
  * This program is free software; you can redistribute it
  * and/or modify it under the terms of the GNU General
@@ -326,7 +326,7 @@ void QueueMgrWindow::setupActions()
     ac->addAction(QLatin1String("queuemgr_clearlist"), d->clearQueueAction);
     ac->setDefaultShortcut(d->clearQueueAction, Qt::CTRL + Qt::SHIFT + Qt::Key_K);
 
-    QAction* const close = buildStdAction(StdCloseAction, this, SLOT(close()), this);
+    QAction* const close = buildStdAction(StdCloseAction, this, SLOT(slotClose()), this);
     ac->addAction(QLatin1String("queuemgr_close"), close);
 
     // -- 'Tools' menu actions -----------------------------------------------------
@@ -915,6 +915,7 @@ void QueueMgrWindow::slotAction(const ActionData& ad)
         }
 
         case ActionData::BatchDone:
+        case ActionData::BatchSkipped:
         {
             if (cItem)
             {

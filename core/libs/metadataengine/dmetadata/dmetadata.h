@@ -6,7 +6,7 @@
  * Date        : 2006-02-23
  * Description : item metadata interface
  *
- * Copyright (C) 2006-2021 by Gilles Caulier <caulier dot gilles at gmail dot com>
+ * Copyright (C) 2006-2022 by Gilles Caulier <caulier dot gilles at gmail dot com>
  * Copyright (C) 2006-2013 by Marcel Wiesweg <marcel dot wiesweg at gmx dot de>
  * Copyright (C) 2013      by Veaceslav Munteanu <veaceslav dot munteanu90 at gmail dot com>
  *
@@ -125,7 +125,7 @@ public: // Faces helpers
      * @param write : if true all faces will be written, else update mode:
      *                search if at least a face tag exist and write if true.
      */
-    bool setItemFacesMap(QMultiMap<QString, QVariant>& facesPath, bool write)                                           const;
+    bool setItemFacesMap(const QMultiMap<QString, QVariant>& facesPath, bool write, const QSize& size = QSize())       const;
 
     /**
      * Remove Images Face Map tags from Picassa/Metadatagroup format.

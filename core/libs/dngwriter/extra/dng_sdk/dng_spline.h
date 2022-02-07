@@ -24,7 +24,7 @@ inline real64 EvaluateSplineSegment (real64 x,
 								     real64 y1,
 								     real64 s1)
 	{
-	
+
 	real64 A = x1 - x0;
 
 	real64 B = (x - x0) / A;
@@ -33,29 +33,29 @@ inline real64 EvaluateSplineSegment (real64 x,
 
 	real64 D = ((y0 * (2.0 - C + B) + (s0 * A * B)) * (C * C)) +
 			   ((y1 * (2.0 - B + C) - (s1 * A * C)) * (B * B));
-			   
+
 	return D;
-	
+
 	}
 
 /*****************************************************************************/
 
 class dng_spline_solver: public dng_1d_function
 	{
-	
+
 	protected:
-	
+
 		dng_std_vector<real64> X;
 		dng_std_vector<real64> Y;
-		
+
 		dng_std_vector<real64> S;
-		
+
 	public:
-	
+
 		dng_spline_solver ();
-		
+
 		virtual ~dng_spline_solver ();
-			
+
 		void Reset ();
 
 		void Add (real64 x, real64 y);
@@ -71,5 +71,5 @@ class dng_spline_solver: public dng_1d_function
 /*****************************************************************************/
 
 #endif
-	
+
 /*****************************************************************************/

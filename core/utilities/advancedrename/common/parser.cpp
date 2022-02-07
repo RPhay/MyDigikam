@@ -231,7 +231,7 @@ QString Parser::parse(ParseSettings& settings)
         results.append(r);
     }
 
-    settings.invalidModifiers = applyModifiers(settings.parseString, results);
+    settings.invalidModifiers = applyModifiers(settings, results);
     QString newName           = results.replaceTokens(settings.parseString);
     settings.results          = results;
 
@@ -278,14 +278,14 @@ bool Parser::tokenAtPosition(ParseSettings& settings, int pos, int& start, int& 
     return found;
 }
 
-ParseResults Parser::applyModifiers(const QString& parseString, ParseResults& results)
+ParseResults Parser::applyModifiers(const ParseSettings& _settings, ParseResults& results)
 {
     if (results.isEmpty() || d->modifiers.isEmpty())
     {
         return ParseResults();
     }
 
-    ParseSettings settings;
+    ParseSettings settings = _settings;
     settings.results = results;
 
     // appliedModifiers holds all the modified parse results
@@ -308,7 +308,8 @@ ParseResults Parser::applyModifiers(const QString& parseString, ParseResults& re
 
         while (pos > -1)
         {
-            pos = parseString.indexOf(regExp, pos, &match);
+            pos = regExp.indexIn(settings.parseString, pos);
+
             if (pos > -1)
             {
                 ParseResults::ResultsKey   k(pos, match.capturedLength());
@@ -332,7 +333,7 @@ ParseResults Parser::applyModifiers(const QString& parseString, ParseResults& re
         int off  = results.offset(key);
         int diff = 0;
 
-        for (int pos = off ; pos < parseString.count() ; )
+        for (int pos = off ; pos < settings.parseString.count() ; )
         {
             if (modifierResults.hasKeyAtPosition(pos))
             {

@@ -154,7 +154,17 @@ void DTrash::extractJsonForItem(const QString& collPath, const QString& baseName
                                       .replace(collPath, QLatin1String(""));
 
     itemInfo.deletionTimestamp      = QDateTime::fromString(
+                                      fileInfoObj.value(DELETIONTIMESTAMP_JSON_KEY).toString(), Qt::ISODate);
+
+    if (!itemInfo.deletionTimestamp.isValid())
+    {
+        // Failback to date encoded as string using locale.
+        // This is an older way to store date in JSOn, which do not support change in locale.
+        // This is wy ISO format is now used.
+
+        itemInfo.deletionTimestamp  = QDateTime::fromString(
                                       fileInfoObj.value(DELETIONTIMESTAMP_JSON_KEY).toString());
+    }
 
     QJsonValue imageIdValue         = fileInfoObj.value(IMAGEID_JSON_KEY);
 
@@ -184,6 +194,7 @@ bool DTrash::prepareCollectionTrash(const QString& collectionPath)
         if (!isCreated)
         {
             qCDebug(DIGIKAM_IOJOB_LOG) << "DTrash: could not create trash folder for collection";
+
             return false;
         }
     }
@@ -201,7 +212,7 @@ QString DTrash::createJsonRecordForFile(qlonglong imageId,
     QJsonObject jsonObjForImg;
 
     QJsonValue pathJsonVal(imagePath);
-    QJsonValue timestampJsonVal(deleteTime.toString());
+    QJsonValue timestampJsonVal(deleteTime.toString(Qt::ISODate));
     QJsonValue imageIdJsonVal(QString::number(imageId));
 
     jsonObjForImg.insert(PATH_JSON_KEY, pathJsonVal);

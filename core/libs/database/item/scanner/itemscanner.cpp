@@ -7,7 +7,7 @@
  * Description : Scanning a single item.
  *
  * Copyright (C) 2007-2013 by Marcel Wiesweg <marcel dot wiesweg at gmx dot de>
- * Copyright (C) 2013-2021 by Gilles Caulier <caulier dot gilles at gmail dot com>
+ * Copyright (C) 2013-2022 by Gilles Caulier <caulier dot gilles at gmail dot com>
  *
  * This program is free software; you can redistribute it
  * and/or modify it under the terms of the GNU General
@@ -64,6 +64,7 @@ ItemScanner::~ItemScanner()
 void ItemScanner::setCategory(DatabaseItem::Category category)
 {
     // we don't have the necessary information in this class, but in CollectionScanner
+
     d->scanInfo.category = category;
 }
 
@@ -79,12 +80,14 @@ bool ItemScanner::lessThanForIdentity(const ItemScanInfo& a, const ItemScanInfo&
         // First: sort by status
 
         // put UndefinedStatus to back
+
         if (a.status == DatabaseItem::UndefinedStatus)
         {
             return false;
         }
 
         // enum values are in the order we want it
+
         return a.status < b.status;
     }
     else
@@ -155,11 +158,14 @@ void ItemScanner::loadFromDisk()
     d->scanInfo.itemName         = d->fileInfo.fileName();
     d->scanInfo.fileSize         = d->fileInfo.size();
     d->scanInfo.modificationDate = modificationDate;
+
     // category is set by setCategory
     // NOTE: call uniqueHash after loading the image above, else it will fail
+
     d->scanInfo.uniqueHash       = uniqueHash();
 
-   // faster than loading twice from disk
+    // faster than loading twice from disk
+
     if (d->hasMetadata)
     {
         d->img.setMetadata(d->metadata->data());

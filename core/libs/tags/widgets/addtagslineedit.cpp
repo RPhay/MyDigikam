@@ -81,14 +81,14 @@ AddTagsLineEdit::AddTagsLineEdit(QWidget* const parent)
             this, SLOT(slotTextEdited(QString)));
 
     connect(d->completer, QOverload<const TaggingAction&>::of(&TagCompleter::signalActivated),
-            this, [=](const TaggingAction& action)
+            [=](const TaggingAction& action)
             {
                 completerActivated(action);
             }
     );
 
     connect(d->completer, QOverload<const TaggingAction&>::of(&TagCompleter::signalHighlighted),
-            this, [=](const TaggingAction& action)
+            [=](const TaggingAction& action)
             {
                 completerHighlighted(action);
             }
@@ -172,13 +172,13 @@ void AddTagsLineEdit::setAllowExceedBound(bool value)
  */
 void AddTagsLineEdit::slotReturnPressed()
 {
-    if      (text().isEmpty())
+    if (text().isEmpty())
     {
         //focus back to mainview
 
         emit taggingActionFinished();
     }
-    else if (!d->currentTaggingAction.isValid())
+    else
     {
         emit taggingActionActivated(currentTaggingAction());
     }
@@ -186,7 +186,7 @@ void AddTagsLineEdit::slotReturnPressed()
 
 void AddTagsLineEdit::slotEditingFinished()
 {
-    d->currentTaggingAction = TaggingAction();
+    //d->currentTaggingAction = TaggingAction();
 }
 
 void AddTagsLineEdit::slotTextEdited(const QString& text)

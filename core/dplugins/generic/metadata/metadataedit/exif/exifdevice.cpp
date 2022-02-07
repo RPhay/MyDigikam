@@ -6,7 +6,7 @@
  * Date        : 2006-10-18
  * Description : EXIF device settings page.
  *
- * Copyright (C) 2006-2021 by Gilles Caulier <caulier dot gilles at gmail dot com>
+ * Copyright (C) 2006-2022 by Gilles Caulier <caulier dot gilles at gmail dot com>
  *
  * This program is free software; you can redistribute it
  * and/or modify it under the terms of the GNU General
@@ -491,7 +491,7 @@ EXIFDevice::~EXIFDevice()
     delete d;
 }
 
-void EXIFDevice::readMetadata(DMetadata& meta)
+void EXIFDevice::readMetadata(const DMetadata& meta)
 {
     blockSignals(true);
 
@@ -737,7 +737,7 @@ void EXIFDevice::readMetadata(DMetadata& meta)
     blockSignals(false);
 }
 
-void EXIFDevice::applyMetadata(DMetadata& meta)
+void EXIFDevice::applyMetadata(const DMetadata& meta)
 {
     long int num=1, den=1;
 

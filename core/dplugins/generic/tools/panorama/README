@@ -1,8 +1,8 @@
-NOTE: this tool was originally developped during the GoSC2011.
+NOTE: this tool was originally developed during the GoSC2011.
 
 -- Dependencies --
 
- * Various tools from the hugin project (developement is based on version 2011.0, FIXME: may work with earlier versions).
+ * Various tools from the hugin project (development is based on version 2011.0, FIXME: may work with earlier versions).
  * Enblend
 
 -- Data Input --

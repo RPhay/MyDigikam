@@ -97,7 +97,7 @@ NPT_BufferedInputStream::SetBufferSize(NPT_Size size, bool force /* = false */)
             // copy existing data
             NPT_Size need_to_copy = m_Buffer.valid - m_Buffer.offset;
             if (need_to_copy) {
-                NPT_CopyMemory((void*)buffer, 
+                NPT_CopyMemory((void*)buffer,
                                m_Buffer.data+m_Buffer.offset,
                                need_to_copy);
             }
@@ -162,8 +162,8 @@ NPT_BufferedInputStream::ReleaseBuffer()
 |   NPT_BufferedInputStream::ReadLine
 +---------------------------------------------------------------------*/
 NPT_Result
-NPT_BufferedInputStream::ReadLine(char*     buffer, 
-                                  NPT_Size  size, 
+NPT_BufferedInputStream::ReadLine(char*     buffer,
+                                  NPT_Size  size,
                                   NPT_Size* chars_read,
                                   bool      break_on_cr)
 {
@@ -277,9 +277,9 @@ NPT_BufferedInputStream::ReadLine(NPT_String& line,
 /*----------------------------------------------------------------------
 |   NPT_BufferedInputStream::Read
 +---------------------------------------------------------------------*/
-NPT_Result 
-NPT_BufferedInputStream::Read(void*     buffer, 
-                              NPT_Size  bytes_to_read, 
+NPT_Result
+NPT_BufferedInputStream::Read(void*     buffer,
+                              NPT_Size  bytes_to_read,
                               NPT_Size* bytes_read)
 {
     NPT_Result result = NPT_SUCCESS;
@@ -307,7 +307,7 @@ NPT_BufferedInputStream::Read(void*     buffer,
     if (bytes_to_read > buffered) {
         // there is not enough in the buffer, take what's there
         if (buffered) {
-            NPT_CopyMemory(buffer, 
+            NPT_CopyMemory(buffer,
                            m_Buffer.data + m_Buffer.offset,
                            buffered);
             buffer = (void*)((NPT_Byte*)buffer+buffered);
@@ -316,7 +316,7 @@ NPT_BufferedInputStream::Read(void*     buffer,
             total_read += buffered;
             goto done;
         }
-        
+
         // read the rest from the source
         if (m_Buffer.size == 0) {
             // unbuffered mode, read directly into the supplied buffer
@@ -324,7 +324,7 @@ NPT_BufferedInputStream::Read(void*     buffer,
             NPT_Size local_read = 0;
             result = m_Source->Read(buffer, bytes_to_read, &local_read);
             if (NPT_SUCCEEDED(result)) {
-                total_read += local_read; 
+                total_read += local_read;
             }
             goto done;
         } else {
@@ -338,17 +338,17 @@ NPT_BufferedInputStream::Read(void*     buffer,
 
     // get what we can from the buffer
     if (bytes_to_read) {
-        NPT_CopyMemory(buffer, 
+        NPT_CopyMemory(buffer,
                        m_Buffer.data + m_Buffer.offset,
                        bytes_to_read);
         m_Buffer.offset += bytes_to_read;
         total_read += bytes_to_read;
     }
-    
+
 done:
     m_Position += total_read;
     if (bytes_read) *bytes_read = total_read;
-    if (result == NPT_ERROR_EOS) { 
+    if (result == NPT_ERROR_EOS) {
         m_Eos = true;
         if (total_read != 0) {
             // we have reached the end of the stream, but we have read
@@ -362,22 +362,22 @@ done:
 /*----------------------------------------------------------------------
 |   NPT_BufferedInputStream::Peek
 +---------------------------------------------------------------------*/
-NPT_Result 
-NPT_BufferedInputStream::Peek(void*     buffer, 
-                              NPT_Size  bytes_to_read, 
+NPT_Result
+NPT_BufferedInputStream::Peek(void*     buffer,
+                              NPT_Size  bytes_to_read,
                               NPT_Size* bytes_read)
 {
     NPT_Result result = NPT_SUCCESS;
     NPT_Size   buffered;
     NPT_Size   new_size = m_Buffer.size?m_Buffer.size:NPT_BUFFERED_BYTE_STREAM_DEFAULT_SIZE;
-    
+
     // check for a possible shortcut
     if (bytes_to_read == 0) return NPT_SUCCESS;
-    
+
     // compute how much is buffered
     buffered = m_Buffer.valid-m_Buffer.offset;
     if (bytes_to_read > buffered && buffered < new_size && !m_Eos) {
-        // we need more data than what we have          
+        // we need more data than what we have
         // switch to unbuffered mode and resize to force relocation
         // of data to the beginning of the buffer
         SetBufferSize(new_size, true);
@@ -386,17 +386,17 @@ NPT_BufferedInputStream::Peek(void*     buffer,
         // continue even if it failed
         buffered = m_Buffer.valid;
     }
-    
+
     // make sure we're returning what we can
     if (bytes_to_read > buffered) bytes_to_read = buffered;
-    
+
     // get what we can from the buffer
-    NPT_CopyMemory(buffer, 
+    NPT_CopyMemory(buffer,
                    m_Buffer.data + m_Buffer.offset,
                    bytes_to_read);
 
     if (bytes_read) *bytes_read = bytes_to_read;
-    if (result == NPT_ERROR_EOS) { 
+    if (result == NPT_ERROR_EOS) {
         m_Eos = true;
         if (bytes_to_read != 0) {
             // we have reached the end of the stream, but we have read
@@ -404,18 +404,18 @@ NPT_BufferedInputStream::Peek(void*     buffer,
             return NPT_SUCCESS;
         }
     }
-    return result;    
+    return result;
 }
 
 /*----------------------------------------------------------------------
 |   NPT_BufferedInputStream::Seek
 +---------------------------------------------------------------------*/
-NPT_Result 
+NPT_Result
 NPT_BufferedInputStream::Seek(NPT_Position offset)
 {
     NPT_Result result;
 
-    if (offset >= m_Position && 
+    if (offset >= m_Position &&
         offset - m_Position < m_Buffer.valid - m_Buffer.offset) {
         NPT_Position diff = offset - m_Position;
         m_Buffer.offset += ((NPT_Size)diff);
@@ -437,7 +437,7 @@ NPT_BufferedInputStream::Seek(NPT_Position offset)
 /*----------------------------------------------------------------------
 |   NPT_BufferedInputStream::Tell
 +---------------------------------------------------------------------*/
-NPT_Result 
+NPT_Result
 NPT_BufferedInputStream::Tell(NPT_Position& offset)
 {
     offset = m_Position;
@@ -447,7 +447,7 @@ NPT_BufferedInputStream::Tell(NPT_Position& offset)
 /*----------------------------------------------------------------------
 |   NPT_BufferedInputStream::GetSize
 +---------------------------------------------------------------------*/
-NPT_Result 
+NPT_Result
 NPT_BufferedInputStream::GetSize(NPT_LargeSize& size)
 {
     return m_Source->GetSize(size);
@@ -456,7 +456,7 @@ NPT_BufferedInputStream::GetSize(NPT_LargeSize& size)
 /*----------------------------------------------------------------------
 |   NPT_BufferedInputStream::GetAvailable
 +---------------------------------------------------------------------*/
-NPT_Result 
+NPT_Result
 NPT_BufferedInputStream::GetAvailable(NPT_LargeSize& available)
 {
     NPT_LargeSize source_available = 0;

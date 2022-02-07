@@ -2,7 +2,7 @@
 
 # Script to build extra libraries using MEX.
 #
-# Copyright (c) 2015-2021 by Gilles Caulier  <caulier dot gilles at gmail dot com>
+# Copyright (c) 2015-2022 by Gilles Caulier  <caulier dot gilles at gmail dot com>
 #
 # Redistribution and use is allowed according to the terms of the BSD license.
 # For details see the accompanying COPYING-CMAKE-SCRIPTS file.
@@ -35,7 +35,7 @@ RegisterRemoteServers
 
 #################################################################################################
 
-# Pathes rules
+# Paths rules
 ORIG_PATH="$PATH"
 ORIG_WD="`pwd`"
 
@@ -69,7 +69,11 @@ ${MXE_BUILD_TARGETS}-cmake $ORIG_WD/../3rdparty \
                            -DCMAKE_LIBRARY_PATH=${CMAKE_PREFIX_PATH}/lib \
                            -DZLIB_ROOT=${CMAKE_PREFIX_PATH} \
                            -DINSTALL_ROOT=${MXE_INSTALL_PREFIX} \
-                           -DEXTERNALS_DOWNLOAD_DIR=$DOWNLOAD_DIR
+                           -DEXTERNALS_DOWNLOAD_DIR=$DOWNLOAD_DIR \
+                           -DKA_VERSION=$DK_KA_VERSION \
+                           -DKF5_VERSION=$DK_KF5_VERSION \
+                           -DENABLE_QTVERSION=$DK_QTVERSION \
+                           -DENABLE_QTWEBENGINE=$DK_QTWEBENGINE
 
 # NOTE: The order to compile each component here is very important.
 
@@ -111,8 +115,8 @@ ${MXE_BUILD_TARGETS}-cmake --build . --config RelWithDebInfo --target ext_marble
 ${MXE_BUILD_TARGETS}-cmake --build . --config RelWithDebInfo --target ext_kcalendarcore       -- -j$CPU_CORES
 
 # Marble install shared lib at wrong place.
-mv $MXE_INSTALL_PREFIX/libastro* $MXE_INSTALL_PREFIX/bin
-mv $MXE_INSTALL_PREFIX/libmarble* $MXE_INSTALL_PREFIX/bin
+mv $MXE_INSTALL_PREFIX/libmarble* $MXE_INSTALL_PREFIX/bin || true
+mv $MXE_INSTALL_PREFIX/libastro*  $MXE_INSTALL_PREFIX/bin || true
 
 #################################################################################################
 

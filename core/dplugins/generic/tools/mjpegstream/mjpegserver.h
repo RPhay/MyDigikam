@@ -6,7 +6,7 @@
  * Date        : 2021-07-24
  * Description : a MJPEG Stream server to export items on the network.
  *
- * Copyright (C) 2021 by Gilles Caulier <caulier dot gilles at gmail dot com>
+ * Copyright (C) 2021-2022 by Gilles Caulier <caulier dot gilles at gmail dot com>
  *
  * This program is free software; you can redistribute it
  * and/or modify it under the terms of the GNU General
@@ -43,7 +43,7 @@ public:
 
     /**
      * Create an instance of MJPEG server listening on 'address'
-     * and 'port'. Default address is 'any' as server listen on all
+     * and 'port'. Default address is 'any' (an empty string), as server listen on all
      * network interfaces. You can pass a literal address as "localhost"
      * or an IPV4 based one as "192.168.1.1".
      */
@@ -56,7 +56,7 @@ public:
 
     /**
      * Handle rate of frame per seconds dispatched to the network [1 - 30].
-     * A low value reduce network bandwith use.
+     * A low value reduce network bandwidth use.
      * Default = 15 img/s.
      */
     bool setRate(int);

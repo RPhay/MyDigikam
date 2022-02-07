@@ -6,7 +6,7 @@
  * Date        : 2013-02-25
  * Description : Table view column helpers: Geographic columns
  *
- * Copyright (C) 2017-2021 by Gilles Caulier <caulier dot gilles at gmail dot com>
+ * Copyright (C) 2017-2022 by Gilles Caulier <caulier dot gilles at gmail dot com>
  * Copyright (C) 2013      by Michael G. Hansen <mike at mghansen dot de>
  *
  * This program is free software; you can redistribute it
@@ -177,8 +177,8 @@ QVariant ColumnGeoProperties::data(TableViewModel::Item* const item, const int r
                 return QString();
             }
 
-            return QString::fromUtf8("%1,%2").arg(QLocale().toString(info.latitudeNumber(),  'g', 7))
-                                             .arg(QLocale().toString(info.longitudeNumber(), 'g', 7));
+            return QString::fromUtf8("%1\n%2").arg(QLocale().toString(info.latitudeNumber(),  'g', 7))
+                                              .arg(QLocale().toString(info.longitudeNumber(), 'g', 7));
         }
 
         case SubColumnAltitude:

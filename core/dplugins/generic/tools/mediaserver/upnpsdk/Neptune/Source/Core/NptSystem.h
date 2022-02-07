@@ -52,7 +52,7 @@ public:
     static NPT_Result SleepUntil(const NPT_TimeStamp& when);
     static NPT_Result SetRandomSeed(unsigned int seed);
     static NPT_UInt32 GetRandomInteger();
-    
+
 protected:
     // constructor
     NPT_System() {}

@@ -43,7 +43,7 @@ public:
     {
         AscendingOrder  = Qt::AscendingOrder,
         DescendingOrder = Qt::DescendingOrder,
-        DefaultOrder /// sort order depends on the chosen sort role
+        DefaultOrder                            ///< sort order depends on the chosen sort role
     };
 
     enum CategorizationMode
@@ -157,7 +157,7 @@ public:
      * Takes a typical result from a compare method (0 is equal, -1 is less than, 1 is greater than)
      * and applies the given sort order to it.
      */
-    static inline int compareByOrder(int compareResult,  Qt::SortOrder sortOrder)
+    static inline int compareByOrder(int compareResult, Qt::SortOrder sortOrder)
     {
         if (sortOrder == Qt::AscendingOrder)
         {

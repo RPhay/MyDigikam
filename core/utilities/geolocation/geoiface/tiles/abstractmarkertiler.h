@@ -6,7 +6,7 @@
  * Date        : 2009-12-01
  * Description : An abstract base class for tiling of markers
  *
- * Copyright (C) 2009-2021 by Gilles Caulier <caulier dot gilles at gmail dot com>
+ * Copyright (C) 2009-2022 by Gilles Caulier <caulier dot gilles at gmail dot com>
  * Copyright (C) 2009-2011 by Michael G. Hansen <mike at mghansen dot de>
  *
  * This program is free software; you can redistribute it
@@ -88,6 +88,11 @@ public:
 
         bool childrenEmpty() const;
 
+        /**
+         * @brief returns the next non empty child index or -1.
+         */
+        int nextNonEmptyIndex(int linearIndex) const;
+
 
     private:
 
@@ -98,6 +103,7 @@ public:
     private:
 
         QVector<Tile*> children;
+        QVector<int> nonEmptyIndices;
     };
 
 public:

@@ -1,6 +1,6 @@
 #!/bin/bash
 
-# Copyright (c) 2013-2021 by Gilles Caulier  <caulier dot gilles at gmail dot com>
+# Copyright (c) 2013-2022 by Gilles Caulier  <caulier dot gilles at gmail dot com>
 #
 # Redistribution and use is allowed according to the terms of the BSD license.
 # For details see the accompanying COPYING-CMAKE-SCRIPTS file.
@@ -23,9 +23,6 @@ fi
 # Check if Xcode Command Line tools are installed
 ChecksXCodeCLI()
 {
-
-# See https://bugreports.qt.io/browse/QTBUG-85546
-export SYSTEM_VERSION_COMPAT=1
 
 xcode-select --print-path
 
@@ -194,7 +191,7 @@ echo -e "---------- Detected OSX version $MAJOR_OSX_VERSION.$MINOR_OSX_VERSION a
 
 #################################################################################################
 # Relocate list of binaries files.
-# Replace INSTALL_PREFIX by @rpath in library pathes dependencies registered in bin file.
+# Replace INSTALL_PREFIX by @rpath in library paths dependencies registered in bin file.
 # List of bin files to patch is passed as first argument.
 RelocatableBinaries()
 {

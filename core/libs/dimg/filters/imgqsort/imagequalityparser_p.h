@@ -6,7 +6,7 @@
  * Date        : 25/08/2013
  * Description : Image Quality Parser - private container
  *
- * Copyright (C) 2013-2021 by Gilles Caulier <caulier dot gilles at gmail dot com>
+ * Copyright (C) 2013-2022 by Gilles Caulier <caulier dot gilles at gmail dot com>
  * Copyright (C) 2013-2014 by Gowtham Ashok <gwty93 at gmail dot com>
  *
  * This program is free software; you can redistribute it
@@ -47,6 +47,7 @@
 #include "nrfilter.h"
 #include "nrestimate.h"
 #include "exposurecontainer.h"
+#include "imagequalitycalculator.h"
 
 // To switch on/off log trace file.
 // #define TRACE 1
@@ -72,6 +73,7 @@ public:
         acceptedThreshold(0.0),
         pendingThreshold (0.0),
         rejectedThreshold(0.0),
+        calculator       (nullptr),
         label            (nullptr),
         running          (true)
     {
@@ -80,39 +82,42 @@ public:
             fimg[c] = nullptr;
         }
 
+        calculator = new ImageQualityCalculator();
     }
 
-    float*                fimg[3];
-    const uint            clusterCount;
-    const uint            size;              ///< Size of squared original image.
+    float*                  fimg[3];
+    const uint              clusterCount;
+    const uint              size;              ///< Size of squared original image.
 
-    Mat                   src_gray;          ///< Matrix of the grayscaled source image
-    Mat                   detected_edges;    ///< Matrix containing only edges in the image
+    Mat                     src_gray;          ///< Matrix of the grayscaled source image
+    Mat                     detected_edges;    ///< Matrix containing only edges in the image
 
-    int                   edgeThresh;        ///< threshold above which we say that edges are present at a point
-    int                   ratio;             ///< lower:upper threshold for canny edge detector algorithm
-    int                   kernel_size;       ///< kernel size for the Sobel operations to be performed internally by the edge detector
+    int                     edgeThresh;        ///< threshold above which we say that edges are present at a point
+    int                     ratio;             ///< lower:upper threshold for canny edge detector algorithm
+    int                     kernel_size;       ///< kernel size for the Sobel operations to be performed internally by the edge detector
 
-    double                lowThreshold;
+    double                  lowThreshold;
 
-    DImg                  image;             ///< original image
-    DImg                  neimage;           ///< noise estimation image[for color]
-    DImg                  img8;              ///< compression detector image on 8 bits
+    DImg                    image;             ///< original image
+    DImg                    neimage;           ///< noise estimation image[for color]
+    DImg                    img8;              ///< compression detector image on 8 bits
 
-    ImageQualityContainer imq;
+    ImageQualityContainer   imq;
 
-    double                blurrejected;
-    double                blur;
+    double                  blurrejected;
+    double                  blur;
 
-    double                acceptedThreshold;
-    double                pendingThreshold;
-    double                rejectedThreshold;
+    double                  acceptedThreshold;
+    double                  pendingThreshold;
+    double                  rejectedThreshold;
 
-    QString               path;              ///< Path to host result file
+    QString                 path;              ///< Path to host result file
 
-    PickLabel*            label;
+    ImageQualityCalculator* calculator;
 
-    volatile bool         running;
+    PickLabel*              label;
+
+    volatile bool           running;
 };
 
 } // namespace Digikam

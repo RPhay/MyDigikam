@@ -7,7 +7,7 @@
  * Description : Item icon view interface - View methods.
  *
  * Copyright (C) 2002-2005 by Renchi Raju <renchi dot raju at gmail dot com>
- * Copyright (C) 2002-2021 by Gilles Caulier <caulier dot gilles at gmail dot com>
+ * Copyright (C) 2002-2022 by Gilles Caulier <caulier dot gilles at gmail dot com>
  * Copyright (C) 2009-2011 by Johannes Wienke <languitar at semipol dot de>
  * Copyright (C) 2010-2011 by Andi Clemens <andi dot clemens at gmail dot com>
  * Copyright (C) 2011-2013 by Michael G. Hansen <mike at mghansen dot de>
@@ -145,36 +145,53 @@ void ItemIconView::slotViewModeChanged()
     switch (viewMode())
     {
         case StackedView::IconViewMode:
+        {
             emit signalSwitchedToIconView();
             emit signalThumbSizeChanged(d->thumbSize);
             break;
+        }
 
         case StackedView::PreviewImageMode:
+        {
             emit signalSwitchedToPreview();
             slotZoomFactorChanged(d->stackedview->zoomFactor());
             break;
+        }
 
         case StackedView::WelcomePageMode:
+        {
             emit signalSwitchedToIconView();
             break;
+        }
 
         case StackedView::MediaPlayerMode:
+        {
             emit signalSwitchedToPreview();
             break;
+        }
 
         case StackedView::MapWidgetMode:
+        {
             emit signalSwitchedToMapView();
             // TODO: connect map view's zoom buttons to main status bar zoom buttons
             break;
+        }
 
         case StackedView::TableViewMode:
+        {
             emit signalSwitchedToTableView();
             emit signalThumbSizeChanged(d->thumbSize);
             break;
+        }
 
         case StackedView::TrashViewMode:
+        {
+            d->msgNotifyTimer->stop();
+            d->errorWidget->animatedHide();
+
             emit signalSwitchedToTrashView();
             break;
+        }
     }
 }
 
@@ -290,6 +307,11 @@ void ItemIconView::slotShowContextMenuOnInfo(QContextMenuEvent* event, const Ite
     cmHelper.addAction(QLatin1String("paste_album_selection"));
     cmHelper.addAction(QLatin1String("image_rename"));
     cmHelper.addStandardActionItemDelete(this, SLOT(slotImageDelete()), selectedImageIds.count());
+    cmHelper.addSeparator();
+
+    // --------------------------------------------------------
+
+    cmHelper.addIQSAction(this, SLOT(slotImageQualitySorter()));
     cmHelper.addSeparator();
 
     // --------------------------------------------------------

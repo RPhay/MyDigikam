@@ -6,7 +6,7 @@
  * Date        : 2017-05-24
  * Description : images transition manager.
  *
- * Copyright (C) 2017-2021 by Gilles Caulier <caulier dot gilles at gmail dot com>
+ * Copyright (C) 2017-2022 by Gilles Caulier <caulier dot gilles at gmail dot com>
  *
  * This program is free software; you can redistribute it
  * and/or modify it under the terms of the GNU General
@@ -52,36 +52,36 @@ public:
 public:
 
     explicit Private()
-      : eff_isRunning(false),
+      : eff_isRunning    (false),
         eff_curTransition(TransitionMngr::None),
-        eff_x(0),
-        eff_y(0),
-        eff_w(0),
-        eff_h(0),
-        eff_dx(0),
-        eff_dy(0),
-        eff_ix(0),
-        eff_iy(0),
-        eff_i(0),
-        eff_j(0),
-        eff_subType(0),
-        eff_x0(0),
-        eff_y0(0),
-        eff_x1(0),
-        eff_y1(0),
-        eff_wait(0),
-        eff_fx(0),
-        eff_fy(0),
-        eff_alpha(0),
-        eff_fd(0),
-        eff_intArray(nullptr),
-        eff_pdone(0),
-        eff_pixelMatrix(nullptr),
-        eff_pa(QPolygon(4)),
-        eff_px(0),
-        eff_py(0),
-        eff_psx(0),
-        eff_psy(0)
+        eff_x            (0),
+        eff_y            (0),
+        eff_w            (0),
+        eff_h            (0),
+        eff_dx           (0),
+        eff_dy           (0),
+        eff_ix           (0),
+        eff_iy           (0),
+        eff_i            (0),
+        eff_j            (0),
+        eff_subType      (0),
+        eff_x0           (0),
+        eff_y0           (0),
+        eff_x1           (0),
+        eff_y1           (0),
+        eff_wait         (0),
+        eff_fx           (0),
+        eff_fy           (0),
+        eff_alpha        (0),
+        eff_fd           (0),
+        eff_intArray     (nullptr),
+        eff_pdone        (0),
+        eff_pixelMatrix  (nullptr),
+        eff_pa           (QPolygon(4)),
+        eff_px           (0),
+        eff_py           (0),
+        eff_psx          (0),
+        eff_psy          (0)
     {
         registerTransitions();
         randomGenerator = QRandomGenerator::global();

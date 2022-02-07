@@ -47,19 +47,19 @@ public:
     typedef enum {
         AES_128
     } Algorithm;
-    
+
     typedef enum {
         ENCRYPT,
         DECRYPT
     } Direction;
-    
+
     // factory
-    static NPT_Result Create(Algorithm         algorithm, 
+    static NPT_Result Create(Algorithm         algorithm,
                              Direction         direction,
                              const NPT_UInt8*  key,
                              NPT_Size          key_size,
                              NPT_BlockCipher*& cipher);
-    
+
     // methods
     virtual           ~NPT_BlockCipher() {}
     virtual NPT_Size   GetBlockSize() = 0;
@@ -70,7 +70,7 @@ public:
      * @param iv Initial vector (same size as cipher block size), or NULL for an IV made up of all zeros.
      */
     virtual NPT_Result ProcessCbc(const NPT_UInt8* input, NPT_Size input_size, const NPT_UInt8* iv, NPT_DataBuffer& output);
-    
+
 protected:
     NPT_BlockCipher() {} // don't instantiate directly
 };

@@ -19,7 +19,7 @@
 
 void RefZeroBytes (void *dPtr,
 				   uint32 count);
-				   
+
 void RefCopyBytes (const void *sPtr,
 				   void *dPtr,
 				   uint32 count);
@@ -28,10 +28,10 @@ void RefCopyBytes (const void *sPtr,
 
 void RefSwapBytes16 (uint16 *dPtr,
 				     uint32 count);
-				   
+
 void RefSwapBytes32 (uint32 *dPtr,
 				     uint32 count);
-				   
+
 /*****************************************************************************/
 
 void RefSetArea8 (uint8 *dPtr,
@@ -403,7 +403,7 @@ void RefResampleAcross16 (const uint16 *sPtr,
 						  uint32 wCount,
 						  uint32 wStep,
 						  uint32 pixelRange);
-						
+
 void RefResampleAcross32 (const real32 *sPtr,
 						  real32 *dPtr,
 						  uint32 dCount,
@@ -518,5 +518,5 @@ void RefBaselineMapPoly32 (real32 *dPtr,
 /*****************************************************************************/
 
 #endif
-	
+
 /*****************************************************************************/

@@ -7,7 +7,7 @@
  * Description : A widget stack to embedded album content view
  *               or the current image preview.
  *
- * Copyright (C) 2006-2021 by Gilles Caulier <caulier dot gilles at gmail dot com>
+ * Copyright (C) 2006-2022 by Gilles Caulier <caulier dot gilles at gmail dot com>
  * Copyright (C) 2013      by Michael G. Hansen <mike at mghansen dot de>
  * Copyright (C) 2015      by Mohamed_Anwer <m_dot_anwer at gmx dot com>
  *
@@ -28,7 +28,6 @@
 
 // Qt includes
 
-#include <QSplitter>
 #include <QWidget>
 
 // KDE includes
@@ -77,7 +76,6 @@ public:
       : needUpdateBar   (false),
         syncingSelection(false),
         dockArea        (nullptr),
-        splitter        (nullptr),
         imageIconView   (nullptr),
         thumbBar        (nullptr),
         imagePreviewView(nullptr),
@@ -109,7 +107,6 @@ public:
     bool              syncingSelection;
 
     QMainWindow*      dockArea;
-    QSplitter*        splitter;
 
     DigikamItemView*  imageIconView;
     ItemThumbnailBar* thumbBar;

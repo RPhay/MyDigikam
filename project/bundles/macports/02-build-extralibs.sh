@@ -3,7 +3,7 @@
 # Script to build extra libraries using MacPorts env.
 # This script must be run as sudo
 #
-# Copyright (c) 2015-2021 by Gilles Caulier  <caulier dot gilles at gmail dot com>
+# Copyright (c) 2015-2022 by Gilles Caulier  <caulier dot gilles at gmail dot com>
 #
 # Redistribution and use is allowed according to the terms of the BSD license.
 # For details see the accompanying COPYING-CMAKE-SCRIPTS file.
@@ -42,7 +42,7 @@ OsxCodeName
 
 #################################################################################################
 
-# Pathes rules
+# Paths rules
 ORIG_PATH="$PATH"
 ORIG_WD="`pwd`"
 
@@ -66,6 +66,9 @@ cmake $ORIG_WD/../3rdparty \
        -DCMAKE_INSTALL_PREFIX:PATH=$INSTALL_PREFIX \
        -DINSTALL_ROOT=$INSTALL_PREFIX \
        -DEXTERNALS_DOWNLOAD_DIR=$DOWNLOAD_DIR \
+       -DKA_VERSION=$DK_KA_VERSION \
+       -DKF5_VERSION=$DK_KF5_VERSION \
+       -DENABLE_QTVERSION=$DK_QTVERSION \
        -DENABLE_QTWEBENGINE=$DK_QTWEBENGINE \
        -Wno-dev
 
@@ -105,12 +108,12 @@ cmake --build . --config RelWithDebInfo --target ext_kimageformats       -- -j$C
 # Geolocation support
 cmake --build . --config RelWithDebInfo --target ext_marble              -- -j$CPU_CORES
 
-# Calendar support
-cmake --build . --config RelWithDebInfo --target ext_kcalendarcore       -- -j$CPU_CORES
-
 # Marble install shared lib at wrong place.
 mv $INSTALL_PREFIX/Marble.app/Contents/MacOS/lib/libastro*  $INSTALL_PREFIX/lib
 mv $INSTALL_PREFIX/Marble.app/Contents/MacOS/lib/libmarble* $INSTALL_PREFIX/lib
+
+# Calendar support
+cmake --build . --config RelWithDebInfo --target ext_kcalendarcore       -- -j$CPU_CORES
 
 #################################################################################################
 

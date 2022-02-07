@@ -6,7 +6,7 @@
  * Date        : 2004-06-15
  * Description : Albums manager interface - Database helpers.
  *
- * Copyright (C) 2006-2021 by Gilles Caulier <caulier dot gilles at gmail dot com>
+ * Copyright (C) 2006-2022 by Gilles Caulier <caulier dot gilles at gmail dot com>
  * Copyright (C) 2006-2011 by Marcel Wiesweg <marcel dot wiesweg at gmx dot de>
  * Copyright (C) 2015      by Mohamed_Anwer <m_dot_anwer at gmx dot com>
  *
@@ -113,6 +113,8 @@ bool AlbumManager::setDatabase(const DbEngineParameters& params, bool priority, 
 
     QString databaseError;
 
+    ApplicationSettings* const settings = ApplicationSettings::instance();
+
     if      (params.internalServer && suggestedAlbumRoot.isEmpty())
     {
         if      (!QFileInfo::exists(params.internalServerPath()))
@@ -130,7 +132,7 @@ bool AlbumManager::setDatabase(const DbEngineParameters& params, bool priority, 
                                  "set the correct location in the next dialog.");
         }
     }
-    else if (params.isSQLite() && suggestedAlbumRoot.isEmpty())
+    else if (params.isSQLite() && suggestedAlbumRoot.isEmpty() && !settings->getDatabaseDirSetAtCmd())
     {
         if (!QFileInfo::exists(params.databaseNameCore))
         {
@@ -141,6 +143,13 @@ bool AlbumManager::setDatabase(const DbEngineParameters& params, bool priority, 
 
     if (!databaseError.isEmpty())
     {
+        QString configPath = QStandardPaths::writableLocation(QStandardPaths::GenericConfigLocation) +
+                             QLatin1String("/digikamrc");
+
+        databaseError     += i18n("\n\nIf you want to start with a new configuration and "
+                                  "with a first run wizard, delete the file %1",
+                                  QDir::toNativeSeparators(configPath));
+
         return showDatabaseSetupPage(databaseError, priority, suggestedAlbumRoot);
     }
 

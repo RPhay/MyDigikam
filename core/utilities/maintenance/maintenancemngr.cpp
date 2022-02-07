@@ -6,7 +6,7 @@
  * Date        : 2012-01-31
  * Description : maintenance manager
  *
- * Copyright (C) 2012-2021 by Gilles Caulier <caulier dot gilles at gmail dot com>
+ * Copyright (C) 2012-2022 by Gilles Caulier <caulier dot gilles at gmail dot com>
  * Copyright (C) 2012      by Andi Clemens <andi dot clemens at gmail dot com>
  *
  * This program is free software; you can redistribute it
@@ -237,6 +237,7 @@ void MaintenanceMngr::stage2()
     {
         d->databaseCleaner = new DbCleaner(d->settings.cleanThumbDb,
                                            d->settings.cleanFacesDb,
+                                           d->settings.cleanSimilarityDb,
                                            d->settings.shrinkDatabases);
         d->databaseCleaner->setNotificationEnabled(false);
         d->databaseCleaner->setUseMultiCoreCPU(d->settings.useMutiCoreCPU);
@@ -316,8 +317,9 @@ void MaintenanceMngr::stage6()
     if (d->settings.faceManagement)
     {
         // NOTE : Use multi-core CPU option is passed through FaceScanSettings
-        d->settings.faceSettings.useFullCpu = d->settings.useMutiCoreCPU;
-        d->facesDetector                    = new FacesDetector(d->settings.faceSettings);
+        d->settings.faceSettings.useFullCpu  = d->settings.useMutiCoreCPU;
+        d->settings.faceSettings.wholeAlbums = d->settings.wholeAlbums;
+        d->facesDetector                     = new FacesDetector(d->settings.faceSettings);
         d->facesDetector->setNotificationEnabled(false);
         d->facesDetector->start();
     }

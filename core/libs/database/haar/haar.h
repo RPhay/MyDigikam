@@ -11,7 +11,7 @@
  *               https://www.cs.washington.edu/homes/salesin/abstracts.html
  *
  * Copyright (C) 2003      by Ricardo Niederberger Cabral <nieder at mail dot ru>
- * Copyright (C) 2008-2021 by Gilles Caulier <caulier dot gilles at gmail dot com>
+ * Copyright (C) 2008-2022 by Gilles Caulier <caulier dot gilles at gmail dot com>
  * Copyright (C) 2008-2013 by Marcel Wiesweg <marcel dot wiesweg at gmx dot de>
  *
  * This program is free software; you can redistribute it
@@ -105,9 +105,9 @@ class ImageData
 {
 public:
 
-    Unit data1[NumberOfPixelsSquared];
-    Unit data2[NumberOfPixelsSquared];
-    Unit data3[NumberOfPixelsSquared];
+    Unit data1[NumberOfPixelsSquared] = { 0.0 };
+    Unit data2[NumberOfPixelsSquared] = { 0.0 };
+    Unit data3[NumberOfPixelsSquared] = { 0.0 };
 
     void fillPixelData(const QImage& image);
     void fillPixelData(const DImg& image);
@@ -122,12 +122,12 @@ public:
     /**
      * Y/I/Q positions with largest magnitude
      */
-    Haar::Idx sig[3][Haar::NumberOfCoefficients];
+    Haar::Idx sig[3][Haar::NumberOfCoefficients] = { { 0 } };
 
     /**
      * YIQ for position [0,0]
      */
-    double    avg[3];
+    double    avg[3] = { 0.0 };
 };
 
 // ---------------------------------------------------------------------------------
@@ -159,7 +159,7 @@ public:
         // All values or false, only 2*40 are true.
 
         memset(m_indexList, 0, sizeof(MapIndexType[2 * Haar::NumberOfPixelsSquared]));
-        int x;
+        int x = 0;
 
         for (int i = 0 ; i < Haar::NumberOfCoefficients ; ++i)
         {
@@ -189,7 +189,7 @@ private:
 public:
 
     typedef bool  MapIndexType;
-    MapIndexType* m_indexList;
+    MapIndexType* m_indexList  = nullptr;
 
 private:
 
@@ -221,7 +221,7 @@ public:
      * Each entry x = i*NUM_PIXELS + j, gets value max(i,j) saturated at 5.
      * To be treated as a constant.
      */
-    unsigned char m_bin[16384];
+    unsigned char m_bin[16384] = { 0 };
 };
 
 // ---------------------------------------------------------------------------------
@@ -245,12 +245,12 @@ public:
 
     float weight(int weight, int channel) const
     {
-        return s_haar_weights[(int)m_type][weight][channel];
+        return (s_haar_weights[(int)m_type][weight][channel]);
     }
 
     float weightForAverage(int channel)   const
     {
-        return s_haar_weights[(int)m_type][0][channel];
+        return (s_haar_weights[(int)m_type][0][channel]);
     }
 
 private:

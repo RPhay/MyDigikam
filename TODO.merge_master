@@ -1,17 +1,17 @@
-CONFLICT (content): Merge conflict in core/utilities/maintenance/maintenancesettings.cpp
-CONFLICT (content): Merge conflict in core/utilities/geolocation/geoiface/backends/backendgooglemaps.cpp
-CONFLICT (content): Merge conflict in core/utilities/advancedrename/parser/modifiers/uniquemodifier.cpp
-CONFLICT (content): Merge conflict in core/utilities/advancedrename/common/parser.cpp
-CONFLICT (content): Merge conflict in core/tests/fileio/CMakeLists.txt
-CONFLICT (content): Merge conflict in core/showfoto/thumbbar/showfotoiteminfo.cpp
-CONFLICT (content): Merge conflict in core/libs/widgets/mainview/dxmlguiwindow.cpp
-CONFLICT (content): Merge conflict in core/libs/video/CMakeLists.txt
-CONFLICT (content): Merge conflict in core/libs/dplugins/widgets/ditemslist.cpp
-CONFLICT (content): Merge conflict in core/libs/dimg/filters/imgqsort/imagequalitycontainer.cpp
-CONFLICT (content): Merge conflict in core/libs/database/tags/tagscache.cpp
-CONFLICT (content): Merge conflict in core/libs/database/tags/facetags.cpp
-CONFLICT (content): Merge conflict in core/libs/database/server/databaseserver.cpp
-CONFLICT (content): Merge conflict in core/libs/database/item/scanner/itemscanner_photo.cpp
-CONFLICT (content): Merge conflict in core/libs/database/haar/haariface.cpp
-CONFLICT (content): Merge conflict in core/libs/album/widgets/albumpropsedit.cpp
-CONFLICT (content): Merge conflict in core/dplugins/generic/tools/printcreator/wizard/advprintphotopage.cpp
+X CONFLICT (content): Merge conflict in core/utilities/advancedrename/parser/modifiers/uniquemodifier.cpp
+X CONFLICT (content): Merge conflict in core/utilities/advancedrename/common/parser.cpp
+X CONFLICT (content): Merge conflict in core/libs/dimg/filters/imgqsort/imagequalitycontainer.cpp
+X CONFLICT (content): Merge conflict in core/utilities/maintenance/maintenancesettings.cpp
+X CONFLICT (content): Merge conflict in core/libs/database/server/databaseserver.cpp
+X CONFLICT (content): Merge conflict in core/libs/database/tags/tagscache.cpp
+X CONFLICT (content): Merge conflict in core/libs/database/tags/facetags.cpp
+X CONFLICT (content): Merge conflict in core/libs/widgets/mainview/dxmlguiwindow.cpp
+X CONFLICT (content): Merge conflict in core/libs/database/item/scanner/itemscanner_photo.cpp
+X CONFLICT (content): Merge conflict in core/utilities/geolocation/geoiface/backends/backendgooglemaps.cpp
+X CONFLICT (content): Merge conflict in core/libs/dplugins/widgets/ditemslist.cpp
+X CONFLICT (content): Merge conflict in core/showfoto/thumbbar/showfotoiteminfo.cpp
+X CONFLICT (content): Merge conflict in core/libs/video/CMakeLists.txt
+X CONFLICT (content): Merge conflict in core/tests/fileio/CMakeLists.txt
+X CONFLICT (content): Merge conflict in core/libs/database/haar/haariface.cpp
+X CONFLICT (content): Merge conflict in core/libs/album/widgets/albumpropsedit.cpp
+X CONFLICT (content): Merge conflict in core/dplugins/generic/tools/printcreator/wizard/advprintphotopage.cpp

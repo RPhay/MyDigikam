@@ -6,7 +6,7 @@
  * Date        : 2017-05-25
  * Description : a tool to print images
  *
- * Copyright (C) 2017-2021 by Gilles Caulier <caulier dot gilles at gmail dot com>
+ * Copyright (C) 2017-2022 by Gilles Caulier <caulier dot gilles at gmail dot com>
  *
  * This program is free software; you can redistribute it
  * and/or modify it under the terms of the GNU General
@@ -263,8 +263,6 @@ void AdvPrintPhotoPage::initializePage()
 
     // create our photo sizes list
 
-    d->wizard->previewPhotos();
-
     int gid = d->photoUi->m_printer_choice->findText(d->settings->outputName(AdvPrintSettings::GIMP));
 
     if (d->settings->gimpPath.isEmpty())
@@ -285,6 +283,8 @@ void AdvPrintPhotoPage::initializePage()
 
     d->photoUi->ListPhotoSizes->setIconSize(QSize(32, 32));
     initPhotoSizes(d->printer->pageLayout().pageSize().size(QPageSize::Millimeter));
+
+    d->wizard->previewPhotos();
 }
 
 bool AdvPrintPhotoPage::validatePage()

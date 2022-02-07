@@ -6,7 +6,7 @@
  * Date        : 2020-12-31
  * Description : Online version checker
  *
- * Copyright (C) 2020-2021 by Gilles Caulier <caulier dot gilles at gmail dot com>
+ * Copyright (C) 2020-2022 by Gilles Caulier <caulier dot gilles at gmail dot com>
  *
  * This program is free software; you can redistribute it
  * and/or modify it under the terms of the GNU General
@@ -274,7 +274,7 @@ void OnlineVersionChecker::slotDownloadFinished(QNetworkReply* reply)
 
         // Tow possibles places exists where to find the date in file name.
 
-        // Check 1 - the fila name include a pre release suffix as -beta or -rc 
+        // Check 1 - the fila name include a pre release suffix as -beta or -rc
 
         QString dtStr      = sections[3];
         QDateTime onlineDt = QDateTime::fromString(dtStr, QLatin1String("yyyyMMddTHHmmss"));

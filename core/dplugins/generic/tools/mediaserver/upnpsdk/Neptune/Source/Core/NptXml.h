@@ -78,8 +78,8 @@ class NPT_XmlAttribute
     NPT_String m_Value;
 
     NPT_XmlAttribute(const NPT_XmlAttribute& attribute) :
-        m_Prefix(attribute.m_Prefix), 
-        m_Name(attribute.m_Name), 
+        m_Prefix(attribute.m_Prefix),
+        m_Name(attribute.m_Name),
         m_Value(attribute.m_Value) {}
     NPT_XmlAttribute& operator=(const NPT_XmlAttribute& a);
 
@@ -97,7 +97,7 @@ public:
     // destructor
     ~NPT_XmlNamespaceMap();
 
-    // methods   
+    // methods
     NPT_Result        SetNamespaceUri(const char* prefix, const char* uri);
     const NPT_String* GetNamespaceUri(const char* prefix);
     const NPT_String* GetNamespacePrefix(const char* uri);
@@ -107,7 +107,7 @@ private:
     class Entry {
     public:
         // constructor
-        Entry(const char* prefix, const char* uri) : 
+        Entry(const char* prefix, const char* uri) :
             m_Prefix(prefix), m_Uri(uri) {}
 
         // members
@@ -155,7 +155,7 @@ class NPT_XmlNode
     // methods
     virtual void SetParent(NPT_XmlNode* parent) { m_Parent = parent; }
 
-    // members  
+    // members
     Type         m_Type;
     NPT_XmlNode* m_Parent;
 
@@ -177,19 +177,19 @@ class NPT_XmlElementNode : public NPT_XmlNode
                             NPT_XmlElementNode(const char* prefix, const char* tag);
     virtual                ~NPT_XmlElementNode();
     NPT_List<NPT_XmlNode*>& GetChildren() { return m_Children; }
-    const NPT_List<NPT_XmlNode*>& 
+    const NPT_List<NPT_XmlNode*>&
                             GetChildren() const { return m_Children; }
-    NPT_XmlElementNode*     GetChild(const char* tag, 
+    NPT_XmlElementNode*     GetChild(const char* tag,
                                      const char* namespc = NPT_XML_NO_NAMESPACE,
                                      NPT_Ordinal n=0) const;
     NPT_Result              AddChild(NPT_XmlNode* child);
     NPT_Result              SetAttribute(const char* prefix,
-                                         const char* name, 
+                                         const char* name,
                                          const char* value);
-    NPT_Result              SetAttribute(const char* name, 
+    NPT_Result              SetAttribute(const char* name,
                                          const char* value);
-    NPT_Result              AddText(const char* text); 
-    NPT_List<NPT_XmlAttribute*>& 
+    NPT_Result              AddText(const char* text);
+    NPT_List<NPT_XmlAttribute*>&
                             GetAttributes() { return m_Attributes; }
     const NPT_List<NPT_XmlAttribute*>&
                             GetAttributes() const { return m_Attributes; }
@@ -204,7 +204,7 @@ class NPT_XmlElementNode : public NPT_XmlNode
     // standalone element without any prefixes with undefined namespace uris
     NPT_Result              MakeStandalone();
 
-    // namespace methods   
+    // namespace methods
     const NPT_String* GetNamespace() const;
     NPT_Result        SetNamespaceUri(const char* prefix, const char* uri);
     const NPT_String* GetNamespaceUri(const char* prefix) const;
@@ -222,7 +222,7 @@ protected:
 
     NPT_Result AddAttribute(const char* name, const char* value);
 
-    // members  
+    // members
     NPT_String                  m_Prefix;
     NPT_String                  m_Tag;
     NPT_List<NPT_XmlNode*>      m_Children;
@@ -262,13 +262,13 @@ class NPT_XmlTextNode : public NPT_XmlNode
     // methods
     const NPT_String& GetString()    const { return m_Text;      }
     TokenType         GetTokenType() const { return m_TokenType; }
-    
+
     // type casting
     NPT_XmlTextNode*       AsTextNode()       { return this; }
     const NPT_XmlTextNode* AsTextNode() const { return this; }
 
  private:
-    // members  
+    // members
     TokenType  m_TokenType;
     NPT_String m_Text;
 };
@@ -282,21 +282,21 @@ class NPT_XmlParser
     // methods
              NPT_XmlParser(bool keep_whitespace = true);
     virtual ~NPT_XmlParser();
-    virtual  NPT_Result Parse(const char*   xml, 
+    virtual  NPT_Result Parse(const char*   xml,
                               NPT_XmlNode*& tree,
                               bool          incremental=false);
-    virtual  NPT_Result Parse(const char*   xml, 
+    virtual  NPT_Result Parse(const char*   xml,
                               NPT_Size      size,
                               NPT_XmlNode*& tree,
                               bool          incremental=false);
-    virtual  NPT_Result Parse(NPT_InputStream& stream, 
+    virtual  NPT_Result Parse(NPT_InputStream& stream,
                               NPT_XmlNode*&    tree,
                               bool             incremental=false);
-    virtual  NPT_Result Parse(NPT_InputStream& stream, 
+    virtual  NPT_Result Parse(NPT_InputStream& stream,
                               NPT_Size&        size,
                               NPT_XmlNode*&    tree,
                               bool             incremental=false);
-    
+
  protected:
     // NPT_XmlHandler methods
     NPT_Result OnStartElement(const char* name);
@@ -313,7 +313,7 @@ class NPT_XmlParser
 
 private:
     void Reset();
-    
+
     // friends
     friend class NPT_XmlProcessor;
 };
@@ -367,8 +367,8 @@ public:
     explicit NPT_XmlWriter(NPT_Cardinal indentation = 0) : m_Indentation(indentation) {}
 
     // methods
-    NPT_Result Serialize(NPT_XmlNode&      node, 
-                         NPT_OutputStream& stream, 
+    NPT_Result Serialize(NPT_XmlNode&      node,
+                         NPT_OutputStream& stream,
                          bool              add_xml_decl = false);
 
 private:
@@ -383,8 +383,8 @@ class NPT_XmlCanonicalizer
 {
 public:
     // methods
-    NPT_Result Serialize(NPT_XmlNode&      node, 
-                         NPT_OutputStream& stream, 
+    NPT_Result Serialize(NPT_XmlNode&      node,
+                         NPT_OutputStream& stream,
                          bool              add_xml_decl = false);
 };
 

@@ -19,7 +19,7 @@
 static void
 PrintUsageAndExit(void)
 {
-    fprintf(stderr, 
+    fprintf(stderr,
             "NetGet [options] <url>\n"
             "\n"
             "  Options:\n"
@@ -114,14 +114,14 @@ main(int argc, char** argv)
                 fprintf(stderr, "ERROR: proxy selector error (%d:%s)\n", result, NPT_ResultText(result));
                 return 1;
             }
-        } 
+        }
         if (proxy.GetHostName().IsEmpty()) {
             printf("PROXY: none\n");
         } else {
             printf("PROXY: %s:%d\n", proxy.GetHostName().GetChars(), proxy.GetPort());
         }
     }
-    
+
 #if defined(NPT_CONFIG_ENABLE_TLS)
     // load a client cert if needed
     if (tls_options || tls_cert_filename) {
@@ -140,7 +140,7 @@ main(int argc, char** argv)
                 return 1;
             }
         }
-        
+
         connector = new NPT_HttpTlsConnector(*tls_context, tls_options);
     }
 #endif
@@ -176,7 +176,7 @@ main(int argc, char** argv)
         NPT_HttpHeaders& headers = request.GetHeaders();
         NPT_List<NPT_HttpHeader*>::Iterator header = headers.GetHeaders().GetFirstItem();
         while (header) {
-            printf("%s: %s\n", 
+            printf("%s: %s\n",
                       (const char*)(*header)->GetName(),
                       (const char*)(*header)->GetValue());
             ++header;
@@ -194,13 +194,13 @@ main(int argc, char** argv)
         NPT_HttpHeaders& headers = response->GetHeaders();
         NPT_List<NPT_HttpHeader*>::Iterator header = headers.GetHeaders().GetFirstItem();
         while (header) {
-            printf("%s: %s\n", 
+            printf("%s: %s\n",
                       (const char*)(*header)->GetName(),
                       (const char*)(*header)->GetValue());
             ++header;
         }
     }
-    
+
     // show entity
     NPT_Size body_size = 0;
     NPT_HttpEntity* entity = response->GetEntity();
@@ -211,7 +211,7 @@ main(int argc, char** argv)
                    entity->GetContentType().GetChars(),
                    entity->GetContentEncoding().GetChars());
         }
-        
+
         if (verbose) {
             NPT_InputStreamReference body_stream;
             entity->GetInputStream(body_stream);
@@ -255,7 +255,7 @@ main(int argc, char** argv)
         if (body_size && total_load_time) {
             total_throughput = (unsigned int)(((8.0 * (double)body_size)/1000.0)/((double)total_load_time/1000.0));
         }
-        
+
         printf("\n-----------------------------------------------------------\n");
         printf("TIMING:\n");
         printf("  Request Latency  = %d ms\n",   request_latency);
@@ -264,7 +264,7 @@ main(int argc, char** argv)
         printf("  Body Throughput  = %d kbps\n", body_throughput);
         printf("  Total Throughput = %d kbps\n", total_throughput);
     }
-    
+
     delete response;
     delete connector;
 #if defined(NPT_CONFIG_ENABLE_TLS)

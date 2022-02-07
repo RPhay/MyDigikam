@@ -7,7 +7,7 @@
  * Description : A tool to export items to Rajce web service
  *
  * Copyright (C) 2011      by Lukas Krejci <krejci.l at centrum dot cz>
- * Copyright (C) 2011-2021 by Gilles Caulier <caulier dot gilles at gmail dot com>
+ * Copyright (C) 2011-2022 by Gilles Caulier <caulier dot gilles at gmail dot com>
  *
  * This program is free software; you can redistribute it
  * and/or modify it under the terms of the GNU General
@@ -180,7 +180,7 @@ void RajceTalker::slotFinished(QNetworkReply* reply)
     // Only dequeue the command after the above signal has been
     // emitted so that the users can queue other commands
     // without them being started straight away in the enqueue
-    // method which would happen if the command was dequed
+    // method which would happen if the command was dequeued
     // before the signal and the signal was emitted in the same
     // thread (which is the case (always?)).
     d->commandQueue.dequeue();

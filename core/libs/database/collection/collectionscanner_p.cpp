@@ -8,7 +8,7 @@
  *
  * Copyright (C) 2005-2006 by Tom Albers <tomalbers at kde dot nl>
  * Copyright (C) 2007-2011 by Marcel Wiesweg <marcel dot wiesweg at gmx dot de>
- * Copyright (C) 2009-2021 by Gilles Caulier <caulier dot gilles at gmail dot com>
+ * Copyright (C) 2009-2022 by Gilles Caulier <caulier dot gilles at gmail dot com>
  *
  * This program is free software; you can redistribute it
  * and/or modify it under the terms of the GNU General
@@ -30,6 +30,11 @@ namespace Digikam
 
 bool s_modificationDateEquals(const QDateTime& a, const QDateTime& b)
 {
+    if (!a.isValid() || !b.isValid())
+    {
+        return false;
+    }
+
     if (a != b)
     {
         // allow a "modify window" of one second.
@@ -223,13 +228,14 @@ void CollectionScannerHintContainerImplementation::clear()
 // --------------------------------------------------------------------
 
 CollectionScanner::Private::Private()
-    : wantSignals(false),
-      needTotalFiles(false),
-      hints(nullptr),
-      updatingHashHint(false),
-      recordHistoryIds(false),
+    : wantSignals         (false),
+      needTotalFiles      (false),
+      performFastScan     (true),
+      hints               (nullptr),
+      updatingHashHint    (false),
+      recordHistoryIds    (false),
       deferredFileScanning(false),
-      observer(nullptr)
+      observer            (nullptr)
 {
 }
 

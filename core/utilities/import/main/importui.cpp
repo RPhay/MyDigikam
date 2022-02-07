@@ -7,7 +7,7 @@
 * Description : Import tool interface
 *
 * Copyright (C) 2004-2005 by Renchi Raju <renchi dot raju at gmail dot com>
-* Copyright (C) 2006-2021 by Gilles Caulier <caulier dot gilles at gmail dot com>
+* Copyright (C) 2006-2022 by Gilles Caulier <caulier dot gilles at gmail dot com>
 * Copyright (C) 2006-2011 by Marcel Wiesweg <marcel dot wiesweg at gmx dot de>
 * Copyright (C) 2012      by Andi Clemens <andi dot clemens at gmail dot com>
 * Copyright (C) 2012      by Islam Wazery <wazery at ubuntu dot com>
@@ -221,7 +221,7 @@ void ImportUI::setupUserArea()
     d->splitter->setFrameShadow(QFrame::Plain);
     d->splitter->setFrameShape(QFrame::NoFrame);
     d->splitter->setOpaqueResize(false);
-    d->splitter->setStretchFactor(0, 10);      // set iconview default size to max.
+    d->splitter->setStretchFactor(d->splitter->indexOf(vbox), 10);      // set iconview default size to max.
 
     vbox->setStretchFactor(d->view, 10);
     vbox->setStretchFactor(d->historyView, 2);
@@ -304,7 +304,7 @@ void ImportUI::setupActions()
 
     // -----------------------------------------------------------------
 
-    QAction* const closeAction = buildStdAction(StdCloseAction, this, SLOT(close()), this);
+    QAction* const closeAction = buildStdAction(StdCloseAction, this, SLOT(slotClose()), this);
     ac->addAction(QLatin1String("importui_close"), closeAction);
 
     // -- Edit menu ----------------------------------------------------

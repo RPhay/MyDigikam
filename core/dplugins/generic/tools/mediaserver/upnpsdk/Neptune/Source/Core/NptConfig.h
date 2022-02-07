@@ -183,7 +183,7 @@
 #define NPT_LocalFunctionName __FUNCTION__
 #define NPT_COMPILER_UNUSED(p) (void)p
 #else
-#define NPT_COMPILER_UNUSED(p) 
+#define NPT_COMPILER_UNUSED(p)
 #endif
 
 /* TriMedia C/C++ Compiler */
@@ -384,4 +384,4 @@ typedef long NPT_PointerLong;
 #include <dmalloc.h>
 #endif
 
-#endif // _NPT_CONFIG_H_ 
+#endif // _NPT_CONFIG_H_

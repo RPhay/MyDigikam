@@ -1,5 +1,5 @@
 #
-# Copyright (c) 2010-2021 by Gilles Caulier, <caulier dot gilles at gmail dot com>
+# Copyright (c) 2010-2022 by Gilles Caulier, <caulier dot gilles at gmail dot com>
 #
 # Redistribution and use is allowed according to the terms of the BSD license.
 # For details see the accompanying COPYING-CMAKE-SCRIPTS file.
@@ -7,9 +7,9 @@
 APPLY_COMMON_POLICIES()
 
 include_directories(
-    $<TARGET_PROPERTY:Qt${QT_VERSION_MAJOR}::Test,INTERFACE_INCLUDE_DIRECTORIES>
-    $<TARGET_PROPERTY:Qt${QT_VERSION_MAJOR}::Core,INTERFACE_INCLUDE_DIRECTORIES>
-    $<TARGET_PROPERTY:Qt${QT_VERSION_MAJOR}::Gui,INTERFACE_INCLUDE_DIRECTORIES>
+    $<TARGET_PROPERTY:Qt5::Test,INTERFACE_INCLUDE_DIRECTORIES>
+    $<TARGET_PROPERTY:Qt5::Core,INTERFACE_INCLUDE_DIRECTORIES>
+    $<TARGET_PROPERTY:Qt5::Gui,INTERFACE_INCLUDE_DIRECTORIES>
 
     $<TARGET_PROPERTY:KF5::XmlGui,INTERFACE_INCLUDE_DIRECTORIES>
 )
@@ -17,6 +17,27 @@ include_directories(
 if (Qt6_FOUND)
   include_directories($<TARGET_PROPERTY:Qt${QT_VERSION_MAJOR}::Core5Compat,INTERFACE_INCLUDE_DIRECTORIES>)
 endif ()
+
+if(APPLE)
+    set(macappforfileextension_cli_SRCS ${CMAKE_CURRENT_SOURCE_DIR}/macappforfileextension_cli.cpp)
+    add_executable(macappforfileextension_cli ${macappforfileextension_cli_SRCS})
+    ecm_mark_nongui_executable(macappforfileextension_cli)
+
+    target_link_libraries(macappforfileextension_cli
+                          digikamcore
+
+                          ${COMMON_TEST_LINK}
+    )
+
+    set(macopenfilewithapplication_cli_SRCS ${CMAKE_CURRENT_SOURCE_DIR}/macopenfilewithapplication_cli.cpp)
+    add_executable(macopenfilewithapplication_cli ${macopenfilewithapplication_cli_SRCS})
+
+    target_link_libraries(macopenfilewithapplication_cli
+                          digikamcore
+
+                          ${COMMON_TEST_LINK}
+    )
+endif()
 
 #------------------------------------------------------------------------
 

@@ -39,14 +39,14 @@ public:
     // methods
                NPT_PosixQueue(NPT_Cardinal max_items);
               ~NPT_PosixQueue();
-    NPT_Result Push(NPT_QueueItem* item, NPT_Timeout timeout); 
+    NPT_Result Push(NPT_QueueItem* item, NPT_Timeout timeout);
     NPT_Result Pop(NPT_QueueItem*& item, NPT_Timeout timeout);
     NPT_Result Peek(NPT_QueueItem*& item, NPT_Timeout timeout);
 
 private:
     void       Abort();
     NPT_Result GetTimeOut(NPT_Timeout timeout, struct timespec& timed);
-    
+
 private:
     // members
     NPT_Cardinal             m_MaxItems;
@@ -62,8 +62,8 @@ private:
 /*----------------------------------------------------------------------
 |       NPT_PosixQueue::NPT_PosixQueue
 +---------------------------------------------------------------------*/
-NPT_PosixQueue::NPT_PosixQueue(NPT_Cardinal max_items) : 
-    m_MaxItems(max_items), 
+NPT_PosixQueue::NPT_PosixQueue(NPT_Cardinal max_items) :
+    m_MaxItems(max_items),
     m_PushersWaitingCount(0),
     m_PoppersWaitingCount(0),
     m_Aborting(false)
@@ -79,7 +79,7 @@ NPT_PosixQueue::NPT_PosixQueue(NPT_Cardinal max_items) :
 NPT_PosixQueue::~NPT_PosixQueue()
 {
     Abort();
-    
+
     // destroy resources
     pthread_cond_destroy(&m_CanPushCondition);
     pthread_cond_destroy(&m_CanPopCondition);
@@ -116,7 +116,7 @@ NPT_PosixQueue::Abort()
                                &m_Mutex,
                                &timed);
     }
-    
+
     pthread_mutex_unlock(&m_Mutex);
 }
 
@@ -172,8 +172,8 @@ NPT_PosixQueue::Push(NPT_QueueItem* item, NPT_Timeout timeout)
                 pthread_cond_wait(&m_CanPushCondition, &m_Mutex);
                 --m_PushersWaitingCount;
             } else {
-                int wait_res = pthread_cond_timedwait(&m_CanPushCondition, 
-                                                      &m_Mutex, 
+                int wait_res = pthread_cond_timedwait(&m_CanPushCondition,
+                                                      &m_Mutex,
                                                       &timed);
                 --m_PushersWaitingCount;
                 if (wait_res == ETIMEDOUT) {
@@ -194,7 +194,7 @@ NPT_PosixQueue::Push(NPT_QueueItem* item, NPT_Timeout timeout)
         m_Items.Add(item);
 
         // wake up any thread that may be waiting to pop
-        if (m_PoppersWaitingCount) { 
+        if (m_PoppersWaitingCount) {
             pthread_cond_broadcast(&m_CanPopCondition);
         }
     }
@@ -230,8 +230,8 @@ NPT_PosixQueue::Pop(NPT_QueueItem*& item, NPT_Timeout timeout)
                 pthread_cond_wait(&m_CanPopCondition, &m_Mutex);
                 --m_PoppersWaitingCount;
             } else {
-                int wait_res = pthread_cond_timedwait(&m_CanPopCondition, 
-                                                      &m_Mutex, 
+                int wait_res = pthread_cond_timedwait(&m_CanPopCondition,
+                                                      &m_Mutex,
                                                       &timed);
                 --m_PoppersWaitingCount;
                 if (wait_res == ETIMEDOUT) {
@@ -239,7 +239,7 @@ NPT_PosixQueue::Pop(NPT_QueueItem*& item, NPT_Timeout timeout)
                     break;
                 }
             }
-            
+
             if (m_Aborting) {
                 result = NPT_ERROR_INTERRUPTED;
                 break;
@@ -248,7 +248,7 @@ NPT_PosixQueue::Pop(NPT_QueueItem*& item, NPT_Timeout timeout)
     } else {
         result = m_Items.PopHead(item);
     }
-    
+
     // wake up any thread that my be waiting to push
     if (m_MaxItems && (result == NPT_SUCCESS) && m_PushersWaitingCount) {
         pthread_cond_broadcast(&m_CanPushCondition);
@@ -256,7 +256,7 @@ NPT_PosixQueue::Pop(NPT_QueueItem*& item, NPT_Timeout timeout)
 
     // unlock the mutex
     pthread_mutex_unlock(&m_Mutex);
- 
+
     return result;
 }
 
@@ -286,8 +286,8 @@ NPT_PosixQueue::Peek(NPT_QueueItem*& item, NPT_Timeout timeout)
                 pthread_cond_wait(&m_CanPopCondition, &m_Mutex);
                 --m_PoppersWaitingCount;
             } else {
-                int wait_res = pthread_cond_timedwait(&m_CanPopCondition, 
-                                                      &m_Mutex, 
+                int wait_res = pthread_cond_timedwait(&m_CanPopCondition,
+                                                      &m_Mutex,
                                                       &timed);
                 --m_PoppersWaitingCount;
                 if (wait_res == ETIMEDOUT) {

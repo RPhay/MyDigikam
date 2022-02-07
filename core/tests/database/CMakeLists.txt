@@ -1,5 +1,5 @@
 #
-# Copyright (c) 2010-2021 by Gilles Caulier, <caulier dot gilles at gmail dot com>
+# Copyright (c) 2010-2022 by Gilles Caulier, <caulier dot gilles at gmail dot com>
 #
 # Redistribution and use is allowed according to the terms of the BSD license.
 # For details see the accompanying COPYING-CMAKE-SCRIPTS file.
@@ -101,9 +101,9 @@ target_link_libraries(databasetags_utest
 #              ${COMMON_TEST_LINK}
 #)
 
-add_executable(tagscachetest ${CMAKE_CURRENT_SOURCE_DIR}/tagscachetest.cpp)
+add_executable(tagscache_utest ${CMAKE_CURRENT_SOURCE_DIR}/tagscache_utest.cpp)
 
-target_link_libraries(tagscachetest
+target_link_libraries(tagscache_utest
                       digikamcore
                       digikamdatabase
                       ${COMMON_TEST_LINK}

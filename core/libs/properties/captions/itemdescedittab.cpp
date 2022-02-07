@@ -7,7 +7,7 @@
  * Description : Captions, Tags, and Rating properties editor
  *
  * Copyright (C) 2003-2005 by Renchi Raju <renchi dot raju at gmail dot com>
- * Copyright (C) 2003-2021 by Gilles Caulier <caulier dot gilles at gmail dot com>
+ * Copyright (C) 2003-2022 by Gilles Caulier <caulier dot gilles at gmail dot com>
  * Copyright (C) 2006-2011 by Marcel Wiesweg <marcel dot wiesweg at gmx dot de>
  * Copyright (C) 2009-2011 by Andi Clemens <andi dot clemens at gmail dot com>
  * Copyright (C) 2009-2011 by Johannes Wienke <languitar at semipol dot de>
@@ -547,7 +547,7 @@ void ItemDescEditTab::slotChangingItems()
 
         DisjointMetadata* const hub2 = new DisjointMetadata();
         hub2->setDataFields(d->hub.dataFields());
-        
+
         emit askToApplyChanges(d->currInfos, hub2);
 
         reset();
@@ -902,6 +902,14 @@ void ItemDescEditTab::slotWriteToFileMetadataFromDatabase()
     }
 
     emit signalProgressFinished();
+}
+
+void ItemDescEditTab::slotUnifyPartiallyTags()
+{
+    foreach (Album* const album, d->tagModel->partiallyCheckedAlbums())
+    {
+        d->tagModel->setChecked(album, true);
+    }
 }
 
 bool ItemDescEditTab::eventFilter(QObject* o, QEvent* e)
@@ -1294,6 +1302,8 @@ void ItemDescEditTab::slotMoreMenu()
 
         d->moreMenu->addAction(i18n("Read metadata from each file to database"), this, SLOT(slotReadFromFileMetadataToDatabase()));
         d->moreMenu->addAction(i18n("Write metadata to each file"), this, SLOT(slotWriteToFileMetadataFromDatabase()));
+        d->moreMenu->addSeparator();
+        d->moreMenu->addAction(i18n("Unify tags of selected items"), this, SLOT(slotUnifyPartiallyTags()));
     }
 }
 
@@ -1466,6 +1476,7 @@ void ItemDescEditTab::slotRecentTagsMenuActivated(int id)
         if (album)
         {
             d->tagModel->setChecked(album, true);
+            d->tagCheckView->checkableAlbumFilterModel()->updateFilter();
         }
     }
 }

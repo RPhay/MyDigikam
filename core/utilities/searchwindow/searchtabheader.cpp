@@ -72,7 +72,8 @@ public:
     {
         KSharedConfig::Ptr config = KSharedConfig::openConfig();
         KConfigGroup group        = config->group(QLatin1String("KeywordSearchEdit Settings"));
-        m_autoSearch              = group.readEntry(QLatin1String("Autostart Search"), true);
+        m_autoSearch              = group.readEntry(QLatin1String("Autostart Search"), false);
+        m_i18nSearch              = i18n("(Advanced Search)");
     }
 
     void showAdvancedSearch(bool hasAdvanced)
@@ -136,17 +137,27 @@ public:
             p.setColor(QPalette::Text, p.color(QPalette::Disabled, QPalette::Text));
             setPalette(p);
 
-            setText(i18n("(Advanced Search)"));
+            setText(m_i18nSearch);
         }
         else
         {
             setPalette(QPalette());
 
-            if (text() == i18n("(Advanced Search)"))
+            if (text() == m_i18nSearch)
             {
                 setText(QString());
             }
         }
+    }
+
+    QString getText() const
+    {
+        if (text() == m_i18nSearch)
+        {
+            return QString();
+        }
+
+        return text();
     }
 
 public Q_SLOTS:
@@ -162,8 +173,9 @@ public Q_SLOTS:
 
 protected:
 
-    bool m_hasAdvanced;
-    bool m_autoSearch;
+    bool    m_hasAdvanced;
+    bool    m_autoSearch;
+    QString m_i18nSearch;
 };
 
 // -------------------------------------------------------------------------
@@ -179,7 +191,8 @@ public:
         editAdvancedWidget      (nullptr),
         lowerArea               (nullptr),
         keywordEdit             (nullptr),
-        advancedEditLabel       (nullptr),
+        advancedNewSearch       (nullptr),
+        advancedEditSearch      (nullptr),
         saveNameEdit            (nullptr),
         saveButton              (nullptr),
         storedKeywordEditName   (nullptr),
@@ -201,7 +214,8 @@ public:
     QStackedLayout*     lowerArea;
 
     KeywordLineEdit*    keywordEdit;
-    QPushButton*        advancedEditLabel;
+    QPushButton*        advancedNewSearch;
+    QPushButton*        advancedEditSearch;
 
     QLineEdit*          saveNameEdit;
     QToolButton*        saveButton;
@@ -260,11 +274,13 @@ SearchTabHeader::SearchTabHeader(QWidget* const parent)
     d->keywordEdit->setClearButtonEnabled(true);
     d->keywordEdit->setPlaceholderText(i18n("Enter keywords here..."));
 
-    d->advancedEditLabel      = new QPushButton(i18n("Advanced Search..."), this);
+    d->advancedNewSearch      = new QPushButton(i18n("New Advanced Search..."), this);
+    d->advancedEditSearch     = new QPushButton(i18n("Edit Current Search..."), this);
 
-    grid1->addWidget(searchLabel,          0, 0, 1, 1);
-    grid1->addWidget(d->keywordEdit,       0, 1, 1, 1);
-    grid1->addWidget(d->advancedEditLabel, 1, 0, 1, 2);
+    grid1->addWidget(searchLabel,           0, 0, 1, 1);
+    grid1->addWidget(d->keywordEdit,        0, 1, 1, 1);
+    grid1->addWidget(d->advancedNewSearch,  1, 0, 1, 2);
+    grid1->addWidget(d->advancedEditSearch, 2, 0, 1, 2);
     grid1->setContentsMargins(spacing, spacing, spacing, spacing);
     grid1->setSpacing(spacing);
 
@@ -303,7 +319,16 @@ SearchTabHeader::SearchTabHeader(QWidget* const parent)
 
     QVBoxLayout* const vbox1 = new QVBoxLayout;
     d->storedKeywordEditName = new DAdjustableLabel(this);
-    d->storedKeywordEditName->setElideMode(Qt::ElideRight);
+
+    if (layoutDirection() == Qt::RightToLeft)
+    {
+        d->storedKeywordEditName->setElideMode(Qt::ElideRight);
+    }
+    else
+    {
+        d->storedKeywordEditName->setElideMode(Qt::ElideLeft);
+    }
+
     d->storedKeywordEdit     = new QLineEdit(this);
 
     vbox1->addWidget(d->storedKeywordEditName);
@@ -322,7 +347,16 @@ SearchTabHeader::SearchTabHeader(QWidget* const parent)
     QVBoxLayout* const vbox2   = new QVBoxLayout;
 
     d->storedAdvancedEditName  = new DAdjustableLabel(this);
-    d->storedAdvancedEditName->setElideMode(Qt::ElideRight);
+
+    if (layoutDirection() == Qt::RightToLeft)
+    {
+        d->storedAdvancedEditName->setElideMode(Qt::ElideRight);
+    }
+    else
+    {
+        d->storedAdvancedEditName->setElideMode(Qt::ElideLeft);
+    }
+
     d->storedAdvancedEditLabel = new QPushButton(i18n("Edit..."), this);
 
     vbox2->addWidget(d->storedAdvancedEditName);
@@ -352,8 +386,11 @@ SearchTabHeader::SearchTabHeader(QWidget* const parent)
     connect(d->keywordEdit, SIGNAL(editingFinished()),
             this, SLOT(keywordChanged()));
 
-    connect(d->advancedEditLabel, SIGNAL(clicked()),
-            this, SLOT(editCurrentAdvancedSearch()));
+    connect(d->advancedNewSearch, SIGNAL(clicked()),
+            this, SLOT(newAdvancedSearch()));
+
+    connect(d->advancedEditSearch, SIGNAL(clicked()),
+            this, SLOT(slotEditCurrentSearch()));
 
     connect(d->saveNameEdit, SIGNAL(returnPressed()),
             this, SLOT(saveSearch()));
@@ -469,8 +506,6 @@ void SearchTabHeader::editSearch(SAlbum* album)
 void SearchTabHeader::newKeywordSearch()
 {
     d->keywordEdit->clear();
-    QString keywords = d->keywordEdit->text();
-    setCurrentSearch(DatabaseSearch::KeywordSearch, queryFromKeywords(keywords));
     d->keywordEdit->setFocus();
 }
 
@@ -484,12 +519,14 @@ void SearchTabHeader::newAdvancedSearch()
 
 void SearchTabHeader::keywordChanged()
 {
-    QString keywords = d->keywordEdit->text();
+    QString keywords = d->keywordEdit->getText();
+
     qCDebug(DIGIKAM_GENERAL_LOG) << "keywords changed to '" << keywords << "'";
 
     if ((d->oldKeywordContent == keywords) || (keywords.trimmed().isEmpty()))
     {
         qCDebug(DIGIKAM_GENERAL_LOG) << "same keywords as before, ignoring...";
+
         return;
     }
     else
@@ -509,7 +546,7 @@ void SearchTabHeader::keywordChangedTimer()
     }
 }
 
-void SearchTabHeader::editCurrentAdvancedSearch()
+void SearchTabHeader::slotEditCurrentSearch()
 {
     SAlbum* const album        = AlbumManager::instance()->findSAlbum(SAlbum::getTemporaryTitle(DatabaseSearch::AdvancedSearch));
     SearchWindow* const window = searchWindow();

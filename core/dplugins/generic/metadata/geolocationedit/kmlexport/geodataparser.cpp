@@ -7,7 +7,7 @@
  * Description : GPS data file parser.
  *               (GPX format https://www.topografix.com/gpx.asp).
  *
- * Copyright (C) 2006-2021 by Gilles Caulier <caulier dot gilles at gmail dot com>
+ * Copyright (C) 2006-2022 by Gilles Caulier <caulier dot gilles at gmail dot com>
  *
  * This program is free software; you can redistribute it
  * and/or modify it under the terms of the GNU General
@@ -63,7 +63,7 @@ bool GeoDataParser::matchDate(const QDateTime& photoDateTime, int maxGapTime, in
                               bool interpolate, int interpolationDstTime,
                               GeoDataContainer* const gpsData)
 {
-    // GPS device are sync in time by satelite using GMT time.
+    // GPS device are sync in time by satellite using GMT time.
 
     QDateTime cameraGMTDateTime = photoDateTime.addSecs(secondsOffset*(-1));
 
@@ -91,7 +91,7 @@ bool GeoDataParser::matchDate(const QDateTime& photoDateTime, int maxGapTime, in
         qCDebug(DIGIKAM_DPLUGIN_GENERIC_LOG) << it.key() << cameraGMTDateTime << nbSecs;
         qCDebug(DIGIKAM_DPLUGIN_GENERIC_LOG) << it.key().timeSpec() << cameraGMTDateTime.timeSpec() << nbSecs;
 */
-        // We tring to find the minimal accuracy.
+        // We're trying to find the minimal accuracy.
 
         if ((nbSecs < maxGapTime) && (nbSecs < nbSecItem))
         {

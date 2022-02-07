@@ -9,14 +9,14 @@ WebEnginePage::~WebEnginePage()
 		createdWindow->close();
 		createdWindow->deleteLater();
 	}
-	
+
 	mCreatedWindows.clear();
 }
 
 bool WebEnginePage::acceptNavigationRequest(const QUrl &url, QWebEnginePage::NavigationType /*type*/, bool /*isMainFrame*/)
 {
 	QString urlString = url.toString();
-	if(mRedirectURLString.length() > 0 && 
+	if(mRedirectURLString.length() > 0 &&
 		(urlString.length() >= mRedirectURLString.length()) &&
 	 	(urlString.left(mRedirectURLString.length()) == mRedirectURLString))
 	{
@@ -45,7 +45,7 @@ QWebEnginePage *WebEnginePage::createWindow(WebWindowType type)
 			return webViewDialog->GetWebEnginePage();
 		}
 	}
-	
+
 	return NULL;
 }
 
@@ -85,7 +85,7 @@ void WebEnginePage::onWindowCloseRequested()
 					createdWindow->close();
 					createdWindow->deleteLater();
 				}
-    			
+
     			break;
 			}
     	}

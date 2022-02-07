@@ -54,12 +54,12 @@ NPT_ConsoleOutputFunction(void*, const char* message)
 /*----------------------------------------------------------------------
 |   NPT_ConsoleOutputF
 +---------------------------------------------------------------------*/
-void 
+void
 NPT_Console::OutputF(const char* format, ...)
 {
     va_list args;
     va_start(args, format);
-    
+
     NPT_FormatOutput(NPT_ConsoleOutputFunction, NULL, format, args);
 
     va_end(args);

@@ -7,7 +7,7 @@
  * Description : Color management setup tab.
  *
  * Copyright (C) 2005-2007 by F.J. Cruz <fj dot cruz at supercable dot es>
- * Copyright (C) 2005-2021 by Gilles Caulier <caulier dot gilles at gmail dot com>
+ * Copyright (C) 2005-2022 by Gilles Caulier <caulier dot gilles at gmail dot com>
  * Copyright (C) 2009-2012 by Marcel Wiesweg <marcel dot wiesweg at gmx dot de>
  *
  * This program is free software; you can redistribute it
@@ -432,7 +432,7 @@ SetupICC::SetupICC(QDialogButtonBox* const dlgBtnBox, QWidget* const parent)
     QGridLayout* const gridProof = new QGridLayout(d->proofGB);
 
     QLabel* const proofIcon      = new QLabel;
-    proofIcon->setPixmap(QIcon::fromTheme(QLatin1String("printer")).pixmap(32));
+    proofIcon->setPixmap(QIcon::fromTheme(QLatin1String("document-print")).pixmap(32));
     QLabel* const proofLabel     = new QLabel(i18n("Output device profile:"));
     d->proofProfilesKC           = new IccProfilesComboBox;
     proofLabel->setBuddy(d->proofProfilesKC);

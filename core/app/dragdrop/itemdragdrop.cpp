@@ -7,7 +7,7 @@
  * Description : Qt Model for Items - drag and drop handling
  *
  * Copyright (C) 2002-2005 by Renchi Raju <renchi dot raju at gmail dot com>
- * Copyright (C) 2002-2021 by Gilles Caulier <caulier dot gilles at gmail dot com>
+ * Copyright (C) 2002-2022 by Gilles Caulier <caulier dot gilles at gmail dot com>
  * Copyright (C) 2006-2011 by Marcel Wiesweg <marcel dot wiesweg at gmx dot de>
  * Copyright (C) 2009      by Andi Clemens <andi dot clemens at gmail dot com>
  * Copyright (C) 2013      by Michael G. Hansen <mike at mghansen dot de>
@@ -469,6 +469,11 @@ bool ItemDragDropHandler::dropEvent(QAbstractItemView* abstractview, const QDrop
         }
         else if (talbum)
         {
+            if (talbum->hasProperty(TagPropertyName::person()))
+            {
+                return false;
+            }
+
             action = tagAction(e, view, droppedOn.isValid());
 
             if (action == AssignTagAction)
@@ -623,7 +628,7 @@ bool ItemDragDropHandler::dropEvent(QAbstractItemView* abstractview, const QDrop
             return true;
         }
 
-        // Standart tags
+        // Standard tags
 
         QMenu popMenu(view);
 
@@ -665,7 +670,15 @@ bool ItemDragDropHandler::dropEvent(QAbstractItemView* abstractview, const QDrop
             }
             else if (choice == assignToThisAction)    // Dropped item only.
             {
-                emit assignTags(QList<ItemInfo>() << model()->imageInfo(droppedOn), tagIDs);
+                QModelIndex dropIndex            = droppedOn;
+                ItemThumbnailBar* const thumbBar = qobject_cast<ItemThumbnailBar*>(abstractview);
+
+                if (thumbBar)
+                {
+                    dropIndex = thumbBar->imageFilterModel()->mapToSourceItemModel(droppedOn);
+                }
+
+                emit assignTags(QList<ItemInfo>() << model()->imageInfo(dropIndex), tagIDs);
             }
         }
 

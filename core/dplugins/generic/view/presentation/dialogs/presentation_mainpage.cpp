@@ -8,7 +8,7 @@
  *
  * Copyright (C) 2008-2009 by Valerio Fuoglio <valerio dot fuoglio at gmail dot com>
  * Copyright (C)      2009 by Andi Clemens <andi dot clemens at googlemail dot com>
- * Copyright (C) 2012-2021 by Gilles Caulier <caulier dot gilles at gmail dot com>
+ * Copyright (C) 2012-2022 by Gilles Caulier <caulier dot gilles at gmail dot com>
  * Copyright (C)      2021 by Phuoc Khanh Le <phuockhanhnk94 at gmail dot com>
  *
  * This program is free software; you can redistribute it
@@ -93,7 +93,8 @@ PresentationMainPage::PresentationMainPage(QWidget* const parent,
     // --------------------------------------------------------
 
     QVBoxLayout* const listBoxContainerLayout = new QVBoxLayout;
-    d->imagesFilesListBox                     = new DItemsList(m_ImagesFilesListBoxContainer, 32);
+    d->imagesFilesListBox                     = new DItemsList(m_ImagesFilesListBoxContainer);
+    d->imagesFilesListBox->setIconSize(32);
     d->imagesFilesListBox->setObjectName(QLatin1String("Presentation ImagesList"));
     d->imagesFilesListBox->listView()->header()->hide();
     d->imagesFilesListBox->enableControlButtons(true);

@@ -67,24 +67,24 @@ struct dng_xmp_namespace
 
 class dng_xmp_sdk
 	{
-	
+
 	private:
-	
+
 		dng_xmp_private *fPrivate;
-		
+
 	public:
-	
+
 		dng_xmp_sdk ();
-		
+
 		dng_xmp_sdk (const dng_xmp_sdk &sdk);
-		
+
 		virtual ~dng_xmp_sdk ();
-		
+
 		static void InitializeSDK (dng_xmp_namespace * extraNamespaces = NULL,
 								   const char *software = NULL);
-		
+
 		static void TerminateSDK ();
-	
+
 		bool HasMeta () const;
 
         void RequireMeta ()
@@ -93,57 +93,57 @@ class dng_xmp_sdk
             }
 
 		void * GetPrivateMeta ();
-						   
+
 		void Parse (dng_host &host,
 					const char *buffer,
 				    uint32 count);
 
 		bool Exists (const char *ns,
 					 const char *path) const;
-		
+
 		void AppendArrayItem (const char *ns,
 							  const char *arrayName,
 							  const char *itemValue,
 							  bool isBag = true,
 							  bool propIsStruct = false);
-							  		
+
 		int32 CountArrayItems (const char *ns,
 		                       const char *path) const;
-							
+
 		bool HasNameSpace (const char *ns) const;
 
 		void Remove (const char *ns,
 				     const char *path);
 
 		void RemoveProperties (const char *ns);
-		
+
 		bool IsEmptyString (const char *ns,
 					        const char *path);
-								
+
 		bool IsEmptyArray (const char *ns,
 					       const char *path);
-								
+
 		void ComposeArrayItemPath (const char *ns,
 								   const char *arrayName,
 								   int32 itemNumber,
 								   dng_string &s) const;
-		
+
 		void ComposeStructFieldPath (const char *ns,
 								     const char *structName,
 								     const char *fieldNS,
 									 const char *fieldName,
 								     dng_string &s) const;
-									 
+
 		bool GetNamespacePrefix (const char *uri,
 								 dng_string &s) const;
-																																					
+
 		bool GetString (const char *ns,
 				   		const char *path,
 				   		dng_string &s) const;
-				   		  		
+
 		void ValidateStringList (const char *ns,
 								 const char *path);
-								   
+
 		bool GetStringList (const char *ns,
 							const char *path,
 							dng_string_list &list) const;
@@ -152,17 +152,17 @@ class dng_xmp_sdk
 								const char *path,
 								dng_string &s,
                                 bool silent = false) const;
-								
+
 		bool GetLocalString (const char *ns,
 							 const char *path,
 							 dng_local_string &s) const;
-								
+
 		bool GetStructField (const char *ns,
 							 const char *path,
 							 const char *fieldNS,
 							 const char *fieldName,
 							 dng_string &s) const;
-						   		   
+
 		void Set (const char *ns,
 				  const char *path,
 				  const char *text);
@@ -183,51 +183,51 @@ class dng_xmp_sdk
         void SetLocalString (const char *ns,
                              const char *path,
                              const dng_local_string &s);
-								
+
 		void SetStructField (const char *ns,
 							 const char *path,
 							 const char *fieldNS,
 							 const char *fieldName,
 							 const char *text);
-		
+
 		void DeleteStructField (const char *ns,
 								const char *structName,
 								const char *fieldNS,
 								const char *fieldName);
-														   				   		   
+
 		dng_memory_block * Serialize (dng_memory_allocator &allocator,
 									  bool asPacket,
 									  uint32 targetBytes,
 									  uint32 padBytes,
 									  bool forJPEG,
 									  bool compact) const;
-		
+
 		void PackageForJPEG (dng_memory_allocator &allocator,
 							 AutoPtr<dng_memory_block> &stdBlock,
 							 AutoPtr<dng_memory_block> &extBlock,
 							 dng_string &extDigest) const;
-							 
+
 		void MergeFromJPEG (const dng_xmp_sdk *xmp);
 
 		void ReplaceXMP (dng_xmp_sdk *xmp);
-		
+
 		bool IteratePaths (IteratePathsCallback *callback,
 						   void *callbackData = NULL,
 						   const char *startNS = 0,
 						   const char *startingPath = 0);
-						   
+
 		#if qDNGXMPDocOps
-		
+
 		void DocOpsOpenXMP (const char *srcMIME);
-		
+
 		void DocOpsPrepareForSave (const char *srcMIME,
 								   const char *dstMIME,
 								   bool newPath = true);
-								   
+
 		void DocOpsUpdateMetadata (const char *srcMIME);
-		
+
 		#endif
-						   
+
 	private:
 
 		void ClearMeta ();
@@ -235,15 +235,15 @@ class dng_xmp_sdk
 		void MakeMeta ();
 
 		void NeedMeta ();
-		
+
 		// Hidden assignment operator.
-		
+
 		dng_xmp_sdk & operator= (const dng_xmp_sdk &sdk);
 
 	};
-	
+
 /*****************************************************************************/
 
 #endif
-	
+
 /*****************************************************************************/

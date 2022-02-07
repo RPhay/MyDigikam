@@ -11,8 +11,8 @@
 |   includes
 +---------------------------------------------------------------------*/
 #if (defined(_WIN32) || defined(_WIN32_WCE) || defined(_XBOX)) && !defined(__SYMBIAN32__)
-#if !defined(__WINSOCK__) 
-#define __WINSOCK__ 
+#if !defined(__WINSOCK__)
+#define __WINSOCK__
 #endif
 #endif
 
@@ -23,7 +23,7 @@
 /* it is important to include this in this order, because winsock.h and ws2tcpip.h */
 /* have different definitions for the same preprocessor symbols, such as IP_ADD_MEMBERSHIP */
 #include <winsock2.h>
-#include <ws2tcpip.h> 
+#include <ws2tcpip.h>
 #else
 #include <winsock.h>
 #endif
@@ -31,7 +31,7 @@
 
 // force a reference to the initializer so that the linker does not optimize it out
 #include "NptWin32Network.h" // we need this for the static initializer
-static NPT_WinsockSystem& WinsockInitializer = NPT_WinsockSystem::Initializer; 
+static NPT_WinsockSystem& WinsockInitializer = NPT_WinsockSystem::Initializer;
 
 #else
 
@@ -51,7 +51,7 @@ static NPT_WinsockSystem& WinsockInitializer = NPT_WinsockSystem::Initializer;
 #include "NptResults.h"
 #include "NptSockets.h"
 
-#if defined(NPT_CONFIG_HAVE_GETADDRINFO) 
+#if defined(NPT_CONFIG_HAVE_GETADDRINFO)
 /*----------------------------------------------------------------------
 |   constants
 +---------------------------------------------------------------------*/
@@ -77,14 +77,14 @@ MapGetAddrInfoErrorCode(int /*error_code*/)
 |   NPT_NetworkNameResolver::Resolve
 +---------------------------------------------------------------------*/
 NPT_Result
-NPT_NetworkNameResolver::Resolve(const char*              name, 
+NPT_NetworkNameResolver::Resolve(const char*              name,
                                  NPT_List<NPT_IpAddress>& addresses,
                                  NPT_Timeout              /*timeout*/)
 {
     // empty the list first
     addresses.Clear();
-    
-    
+
+
     // get the addr list
 
     //struct addrinfo hints;
@@ -100,8 +100,8 @@ NPT_NetworkNameResolver::Resolve(const char*              name,
     if (result != 0) {
         return MapGetAddrInfoErrorCode(result);
     }
-    
-    for (struct addrinfo* info = infos; 
+
+    for (struct addrinfo* info = infos;
                           info && addresses.GetItemCount() < NPT_BSD_NETWORK_MAX_ADDR_LIST_LENGTH;
                           info = info->ai_next) {
         unsigned int expected_length;
@@ -116,7 +116,7 @@ NPT_NetworkNameResolver::Resolve(const char*              name,
         }
         if ((unsigned int)info->ai_addrlen < expected_length) continue;
         if (info->ai_protocol != 0 && info->ai_protocol != IPPROTO_TCP) continue;
-    
+
         if (info->ai_family == AF_INET) {
             struct sockaddr_in* inet_addr = (struct sockaddr_in*)info->ai_addr;
             NPT_IpAddress address(ntohl(inet_addr->sin_addr.s_addr));
@@ -131,7 +131,7 @@ NPT_NetworkNameResolver::Resolve(const char*              name,
 #endif
     }
     freeaddrinfo(infos);
-    
+
     return NPT_SUCCESS;
 }
 #endif

@@ -215,7 +215,7 @@ void FilesDownloader::startDownload()
     connect(d->buttons->button(QDialogButtonBox::Cancel), SIGNAL(clicked()),
             this, SLOT(reject()));
 
-    exec();
+    (void)exec();
 }
 
 void FilesDownloader::slotDownload()

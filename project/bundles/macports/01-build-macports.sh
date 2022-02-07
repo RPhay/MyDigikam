@@ -4,7 +4,7 @@
 # This script must be run as sudo
 #
 # Copyright (c) 2015      by Shanti, <listaccount at revenant dot org>
-# Copyright (c) 2015-2021 by Gilles Caulier <caulier dot gilles at gmail dot com>
+# Copyright (c) 2015-2022 by Gilles Caulier <caulier dot gilles at gmail dot com>
 #
 # Redistribution and use is allowed according to the terms of the BSD license.
 # For details see the accompanying COPYING-CMAKE-SCRIPTS file.
@@ -43,7 +43,7 @@ OsxCodeName
 
 #################################################################################################
 
-# Pathes rules
+# Paths rules
 ORIG_PATH="$PATH"
 ORIG_WD="`pwd`"
 
@@ -287,6 +287,7 @@ port install \
              libical \
              lensfun \
              bison \
+             py-lxml \
              x265 \
              ffmpeg \
              qt5-qtbase \
@@ -299,13 +300,12 @@ port install \
              qt5-qttranslations \
              qt5-qtimageformats \
              qt5-sqlite-plugin \
-             qt5-mysql-plugin \
+             qt5-mysql-plugin +mariadb10_5 \
              wget +ssl \
              ImageMagick
 
 if [[ $DK_QTWEBENGINE = 1 ]] ; then
 
-    export SYSTEM_VERSION_COMPAT=1
     port install qt5-qtwebengine
 
 else
@@ -349,6 +349,9 @@ cmake $ORIG_WD/../3rdparty \
        -DCMAKE_INSTALL_PREFIX:PATH=$INSTALL_PREFIX \
        -DINSTALL_ROOT=$INSTALL_PREFIX \
        -DEXTERNALS_DOWNLOAD_DIR=$DOWNLOAD_DIR \
+       -DKA_VERSION=$DK_KA_VERSION \
+       -DKF5_VERSION=$DK_KF5_VERSION \
+       -DENABLE_QTVERSION=$DK_QTVERSION \
        -DENABLE_QTWEBENGINE=$DK_QTWEBENGINE \
        -Wno-dev
 

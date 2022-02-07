@@ -8,7 +8,7 @@
  *
  * Copyright (C) 2010-2011 by Aditya Bhatt <adityabhatt1991 at gmail dot com>
  * Copyright (C) 2010-2011 by Marcel Wiesweg <marcel dot wiesweg at gmx dot de>
- * Copyright (C) 2012-2021 by Gilles Caulier <caulier dot gilles at gmail dot com>
+ * Copyright (C) 2012-2022 by Gilles Caulier <caulier dot gilles at gmail dot com>
  *
  * This program is free software; you can redistribute it
  * and/or modify it under the terms of the GNU General
@@ -139,9 +139,11 @@ void FaceUtils::storeThumbnails(ThumbnailLoadThread* const thread,
     foreach (const FaceTagsIface& face, databaseFaces)
     {
         QList<QRect> rects;
-        rects << face.region().toRect();
-        const int margin = faceRectDisplayMargin(face.region().toRect());
-        rects << face.region().toRect().adjusted(-margin, -margin, margin, margin);
+        QRect orgRect    = face.region().toRect();
+        const int margin = faceRectDisplayMargin(orgRect);
+
+        rects << orgRect;
+        rects << orgRect.adjusted(-margin, -margin, margin, margin);
 
         foreach (const QRect& rect, rects)
         {
@@ -322,7 +324,7 @@ void FaceUtils::addNormalTag(qlonglong imageId, int tagId)
      * Utilising a QTimer to ensure that a new TAlbum
      * is given time to be created, before assigning Icon.
      */
-    QTimer::singleShot(200, this, [=]()
+    QTimer::singleShot(200, [=]()
         {
             if (
                 !FaceTags::isTheIgnoredPerson(tagId)  &&

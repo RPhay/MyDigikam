@@ -7,7 +7,7 @@
  * Description : main program from digiKam
  *
  * Copyright (C) 2002-2006 by Renchi Raju <renchi dot raju at gmail dot com>
- * Copyright (C) 2002-2021 by Gilles Caulier <caulier dot gilles at gmail dot com>
+ * Copyright (C) 2002-2022 by Gilles Caulier <caulier dot gilles at gmail dot com>
  *
  * This program is free software; you can redistribute it
  * and/or modify it under the terms of the GNU General
@@ -32,7 +32,6 @@
 #include <QFileInfo>
 #include <QSettings>
 #include <QStringList>
-#include <QTranslator>
 #include <QMessageBox>
 #include <QSqlDatabase>
 #include <QApplication>
@@ -187,62 +186,11 @@ int main(int argc, char* argv[])
     parser.process(app);
     aboutData.processCommandLine(&parser);
 
-#if defined Q_OS_WIN || defined Q_OS_MACOS
+    // See bug #438701
 
-    bool loadTranslation = true;
+    installQtTranslationFiles(app);
 
-#else
-
-    bool loadTranslation = isRunningInAppImageBundle();
-
-#endif
-
-    QString transPath = QStandardPaths::locate(QStandardPaths::DataLocation,
-                                               QLatin1String("translations"),
-                                               QStandardPaths::LocateDirectory);
-
-    if (loadTranslation && !transPath.isEmpty())
-    {
-        QString klanguagePath = QStandardPaths::writableLocation(QStandardPaths::GenericConfigLocation) +
-                                QLatin1Char('/') + QLatin1String("klanguageoverridesrc");
-
-        qCDebug(DIGIKAM_GENERAL_LOG) << "Qt translations path:" << transPath;
-
-        if (!klanguagePath.isEmpty())
-        {
-            QSettings settings(klanguagePath, QSettings::IniFormat);
-            settings.beginGroup(QLatin1String("Language"));
-            QString language = settings.value(qApp->applicationName(), QString()).toString();
-            settings.endGroup();
-
-            if (!language.isEmpty())
-            {
-                QLocale::setDefault(language.split(QLatin1Char(':')).first());
-            }
-        }
-
-        QStringList qtCatalogs;
-        qtCatalogs << QLatin1String("qt");
-        qtCatalogs << QLatin1String("qtbase");
-        qtCatalogs << QLatin1String("qt_help");
-
-        foreach (const QString& catalog, qtCatalogs)
-        {
-            QTranslator* const translator = new QTranslator(&app);
-
-            if (translator->load(QLocale(), catalog, QLatin1String("_"), transPath))
-            {
-                qCDebug(DIGIKAM_GENERAL_LOG) << "Loaded locale:" << QLocale().name()
-                                             << "from catalog:"  << catalog;
-
-                app.installTranslator(translator);
-            }
-            else
-            {
-                delete translator;
-            }
-        }
-    }
+    // ---
 
     MetaEngine::initializeExiv2();
 
@@ -401,18 +349,6 @@ int main(int argc, char* argv[])
     if (!iconTheme.isEmpty())
     {
         QIcon::setThemeName(iconTheme);
-    }
-
-    // Workaround for the automatic icon theme color
-    // in KF-5.80, depending on the color scheme.
-
-    if      (QIcon::themeName() == QLatin1String("breeze-dark"))
-    {
-        qApp->setPalette(QPalette(Qt::darkGray));
-    }
-    else if (QIcon::themeName() == QLatin1String("breeze"))
-    {
-        qApp->setPalette(QPalette(Qt::white));
     }
 
 #ifdef Q_OS_WIN

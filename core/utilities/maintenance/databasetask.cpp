@@ -40,6 +40,7 @@
 #include "maintenancedata.h"
 #include "similaritydb.h"
 #include "similaritydbaccess.h"
+#include "faceutils.h"
 
 namespace Digikam
 {
@@ -258,17 +259,25 @@ void DatabaseTask::run()
     }
     else if (d->mode == Mode::ComputeDatabaseJunk)
     {
-        QList<qlonglong> staleImageIds;
+        QList<qlonglong> coredbItems;
         QList<int>       staleThumbIds;
         QList<Identity>  staleIdentities;
         QList<qlonglong> staleSimilarityImageIds;
-        int additionalItemsToProcess = 0;
+        int additionalItemsToProcess   = 0;
 
-        QList<qlonglong> coredbItems = CoreDbAccess().db()->getAllItems();
+        // Get the count of item entries in DB to delete.
 
-        // Get the count of image entries in DB to delete.
+        QList<qlonglong> staleImageIds = CoreDbAccess().db()->getObsoleteItemIds();
 
-        staleImageIds                = CoreDbAccess().db()->getImageIds(DatabaseItem::Status::Obsolete);
+        // Remove item ids to be deleted from the core DB.
+
+        foreach (const qlonglong& item, CoreDbAccess().db()->getAllItems())
+        {
+            if (!staleImageIds.contains(item))
+            {
+                coredbItems << item;
+            }
+        }
 
         // get the count of items to process for thumbnails cleanup it enabled.
 
@@ -337,28 +346,40 @@ void DatabaseTask::run()
                     // Add the custom identifier.
                     // get all faces for the image and generate the custom identifiers
 
-                    QUrl url;
+                    QUrl url = QUrl::fromLocalFile(info.filePath());
                     url.setScheme(QLatin1String("detail"));
-                    url.setPath(info.filePath());
+
                     QList<FaceTagsIface> faces = editor.databaseFaces(item);
 
                     foreach (const FaceTagsIface& face, faces)
                     {
-                        QRect rect = face.region().toRect();
-                        QString r  = QString::fromLatin1("%1,%2-%3x%4").arg(rect.x()).arg(rect.y()).arg(rect.width()).arg(rect.height());
-                        QUrlQuery q(url);
+                        QList<QRect> rects;
+                        QRect orgRect    = face.region().toRect();
+                        const int margin = FaceUtils::faceRectDisplayMargin(orgRect);
 
-                        // Remove the previous query if existent.
+                        rects << orgRect;
+                        rects << orgRect.adjusted(-margin, -margin, margin, margin);
 
-                        q.removeQueryItem(QLatin1String("rect"));
-                        q.addQueryItem(QLatin1String("rect"), r);
-                        url.setQuery(q);
+                        foreach (const QRect& rect, rects)
+                        {
+                            QString r = QString::fromLatin1("%1,%2-%3x%4").arg(rect.x())
+                                                                          .arg(rect.y())
+                                                                          .arg(rect.width())
+                                                                          .arg(rect.height());
+                            QUrlQuery q(url);
 
-                        //qCDebug(DIGIKAM_GENERAL_LOG) << "URL: " << url.toString();
+                            // Remove the previous query if existent.
 
-                        // Remove the id that is found by the custom identifier. Finding the id -1 does no harm
+                            q.removeQueryItem(QLatin1String("rect"));
+                            q.addQueryItem(QLatin1String("rect"), r);
+                            url.setQuery(q);
 
-                        thumbIds.remove(ThumbsDbAccess().db()->findByCustomIdentifier(url.toString()).id);
+                            //qCDebug(DIGIKAM_GENERAL_LOG) << "URL: " << url.toString();
+
+                            // Remove the id that is found by the custom identifier. Finding the id -1 does no harm
+
+                            thumbIds.remove(ThumbsDbAccess().db()->findByCustomIdentifier(url.toString()).id);
+                        }
                     }
                 }
 
@@ -467,7 +488,7 @@ void DatabaseTask::run()
                 break;
             }
 
-            CoreDbAccess().db()->deleteItem(imageId);
+            CoreDbAccess().db()->deleteObsoleteItem(imageId);
 
             emit signalFinished();
         }

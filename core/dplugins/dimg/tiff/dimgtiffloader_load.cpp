@@ -7,7 +7,7 @@
  * Description : A TIFF IO file for DImg framework - load operations
  *
  * Copyright (C) 2005      by Renchi Raju <renchi dot raju at gmail dot com>
- * Copyright (C) 2006-2021 by Gilles Caulier <caulier dot gilles at gmail dot com>
+ * Copyright (C) 2006-2022 by Gilles Caulier <caulier dot gilles at gmail dot com>
  *
  * This program is free software; you can redistribute it
  * and/or modify it under the terms of the GNU General
@@ -72,9 +72,13 @@ bool DImgTIFFLoader::load(const QString& filePath, DImgLoaderObserver* const obs
     // Open the file
 
 #ifdef Q_OS_WIN
+
     TIFF* const tif = TIFFOpenW((const wchar_t*)filePath.utf16(), "r");
+
 #else
+
     TIFF* const tif = TIFFOpen(filePath.toUtf8().constData(), "r");
+
 #endif
 
     if (!tif)
@@ -279,9 +283,9 @@ bool DImgTIFFLoader::load(const QString& filePath, DImgLoaderObserver* const obs
                 return false;
             }
 
-            long offset     = 0;
-            long bytesRead  = 0;
-            uint checkpoint = 0;
+            qint64 offset     = 0;
+            qint64 bytesRead  = 0;
+            uint   checkpoint = 0;
 
             for (tstrip_t st = 0 ; st < num_of_strips ; ++st)
             {
@@ -482,10 +486,10 @@ bool DImgTIFFLoader::load(const QString& filePath, DImgLoaderObserver* const obs
                 return false;
             }
 
-            long  offset     = 0;
-            long  bytesRead  = 0;
-            uint  checkpoint = 0;
-            float maxValue   = 0.0;
+            qint64 offset     = 0;
+            qint64 bytesRead  = 0;
+            uint   checkpoint = 0;
+            float  maxValue   = 0.0;
 
             for (tstrip_t st = 0 ; st < num_of_strips ; ++st)
             {
@@ -702,8 +706,8 @@ bool DImgTIFFLoader::load(const QString& filePath, DImgLoaderObserver* const obs
                 return false;
             }
 
-            long offset         = 0;
-            long pixelsRead     = 0;
+            qint64 offset       = 0;
+            qint64 pixelsRead   = 0;
 
             // this is inspired by TIFFReadRGBAStrip, tif_getimage.c
 

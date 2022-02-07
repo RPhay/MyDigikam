@@ -17,7 +17,7 @@ public:
     ~WebWindow();
 
     QString resultStr;
-    
+
     QWebEnginePage *GetWebEnginePage() { return mWebEnginePage; }
 
 protected:
@@ -33,16 +33,16 @@ private slots:
 
 private:
     Ui::WebWindow *ui;
-	
+
 	// Profile to not store cookies and cache data to the disk
     QWebEngineProfile *mWebEngineProfile;
-	
+
     // Webengine page using the Off-the-record profile
     QWebEnginePage *mWebEnginePage;
-	
+
     // Webview
     QWebEngineView* mWebView;
-    
+
     QString mCatchedOAuthURL;
     bool mAutoclose;
 };

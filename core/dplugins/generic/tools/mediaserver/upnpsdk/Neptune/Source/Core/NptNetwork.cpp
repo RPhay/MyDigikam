@@ -68,9 +68,9 @@ NPT_IpAddress::NPT_IpAddress(unsigned long address) :
 /*----------------------------------------------------------------------
 |   NPT_IpAddress::NPT_IpAddress
 +---------------------------------------------------------------------*/
-NPT_IpAddress::NPT_IpAddress(unsigned char a, 
-                             unsigned char b, 
-                             unsigned char c, 
+NPT_IpAddress::NPT_IpAddress(unsigned char a,
+                             unsigned char b,
+                             unsigned char c,
                              unsigned char d) :
     m_Type(IPV4),
     m_ScopeId(0)
@@ -107,7 +107,7 @@ NPT_IpAddress::NPT_IpAddress(Type type, const unsigned char* address, unsigned i
 unsigned long
 NPT_IpAddress::AsLong() const
 {
-    return 
+    return
         (((unsigned long)m_Address[0])<<24) |
         (((unsigned long)m_Address[1])<<16) |
         (((unsigned long)m_Address[2])<< 8) |
@@ -117,7 +117,7 @@ NPT_IpAddress::AsLong() const
 /*----------------------------------------------------------------------
 |   NPT_IpAddress::AsBytes
 +---------------------------------------------------------------------*/
-const unsigned char* 
+const unsigned char*
 NPT_IpAddress::AsBytes() const
 {
     return m_Address;
@@ -126,7 +126,7 @@ NPT_IpAddress::AsBytes() const
 /*----------------------------------------------------------------------
 |   NPT_IpAddress::Set
 +---------------------------------------------------------------------*/
-NPT_Result    
+NPT_Result
 NPT_IpAddress::Set(const unsigned char bytes[4])
 {
     m_Type = IPV4;
@@ -136,14 +136,14 @@ NPT_IpAddress::Set(const unsigned char bytes[4])
     m_Address[3] = bytes[3];
     NPT_SetMemory(&m_Address[4], 0, sizeof(m_Address)-4);
     m_ScopeId = 0; // always 0 for IPv4
-    
+
     return NPT_SUCCESS;
 }
 
 /*----------------------------------------------------------------------
 |   NPT_IpAddress::Set
 +---------------------------------------------------------------------*/
-NPT_Result    
+NPT_Result
 NPT_IpAddress::Set(unsigned long address)
 {
     m_Type = IPV4;
@@ -153,14 +153,14 @@ NPT_IpAddress::Set(unsigned long address)
     m_Address[3] = (unsigned char)((address      ) & 0xFF);
     NPT_SetMemory(&m_Address[4], 0, sizeof(m_Address)-4);
     m_ScopeId = 0; // always 0 for IPv4
-    
+
     return NPT_SUCCESS;
 }
 
 /*----------------------------------------------------------------------
 |   NPT_IpAddress::Set
 +---------------------------------------------------------------------*/
-NPT_Result    
+NPT_Result
 NPT_IpAddress::Set(const unsigned char* bytes, unsigned int size, NPT_UInt32 scope_id)
 {
     NPT_SetMemory(&m_Address[0], 0, sizeof(m_Address));
@@ -175,7 +175,7 @@ NPT_IpAddress::Set(const unsigned char* bytes, unsigned int size, NPT_UInt32 sco
     } else {
         return NPT_ERROR_INVALID_PARAMETERS;
     }
-    
+
     return NPT_SUCCESS;
 }
 
@@ -357,7 +357,7 @@ NPT_IpAddress::IsMulticast() const
 |   NPT_MacAddress::NPT_MacAddress
 +---------------------------------------------------------------------*/
 NPT_MacAddress::NPT_MacAddress(Type                  type,
-                               const unsigned char*  address, 
+                               const unsigned char*  address,
                                unsigned int          length)
 {
     SetAddress(type, address, length);
@@ -368,7 +368,7 @@ NPT_MacAddress::NPT_MacAddress(Type                  type,
 +---------------------------------------------------------------------*/
 void
 NPT_MacAddress::SetAddress(Type                 type,
-                           const unsigned char* address, 
+                           const unsigned char* address,
                            unsigned int         length)
 {
     m_Type = type;
@@ -388,7 +388,7 @@ NPT_String
 NPT_MacAddress::ToString() const
 {
     NPT_String result;
- 
+
     if (m_Length) {
         char s[3*NPT_NETWORK_MAX_MAC_ADDRESS_LENGTH];
         const char hex[17] = "0123456789abcdef";
@@ -406,7 +406,7 @@ NPT_MacAddress::ToString() const
 
 /*----------------------------------------------------------------------
 |   NPT_NetworkInterface::NPT_NetworkInterface
-+---------------------------------------------------------------------*/ 
++---------------------------------------------------------------------*/
 NPT_NetworkInterface::NPT_NetworkInterface(const char*           name,
                                            const NPT_MacAddress& mac,
                                            NPT_Flags             flags) :
@@ -418,7 +418,7 @@ NPT_NetworkInterface::NPT_NetworkInterface(const char*           name,
 
 /*----------------------------------------------------------------------
 |   NPT_NetworkInterface::NPT_NetworkInterface
-+---------------------------------------------------------------------*/ 
++---------------------------------------------------------------------*/
 NPT_NetworkInterface::NPT_NetworkInterface(const char* name,
                                            NPT_Flags   flags) :
     m_Name(name),
@@ -428,7 +428,7 @@ NPT_NetworkInterface::NPT_NetworkInterface(const char* name,
 
 /*----------------------------------------------------------------------
 |   NPT_NetworkInterface::AddAddress
-+---------------------------------------------------------------------*/ 
++---------------------------------------------------------------------*/
 NPT_Result
 NPT_NetworkInterface::AddAddress(const NPT_NetworkInterfaceAddress& address)
 {

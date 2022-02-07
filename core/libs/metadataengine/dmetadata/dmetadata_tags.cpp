@@ -6,7 +6,7 @@
  * Date        : 2006-02-23
  * Description : item metadata interface - tags helpers.
  *
- * Copyright (C) 2006-2021 by Gilles Caulier <caulier dot gilles at gmail dot com>
+ * Copyright (C) 2006-2022 by Gilles Caulier <caulier dot gilles at gmail dot com>
  * Copyright (C) 2006-2013 by Marcel Wiesweg <marcel dot wiesweg at gmx dot de>
  * Copyright (C) 2011      by Leif Huhn <leif at dkstat dot com>
  *
@@ -53,7 +53,7 @@ bool DMetadata::getItemTagsPath(QStringList& tagsPath,
         QString currentNamespace                   = entry.namespaceName;
         NamespaceEntry::SpecialOptions currentOpts = entry.specialOpts;
 
-        // Some namespaces have altenative paths, we must search them both
+        // Some namespaces have alternative paths, we must search them both
 
         switch (entry.subspace)
         {
@@ -63,24 +63,25 @@ bool DMetadata::getItemTagsPath(QStringList& tagsPath,
                 {
                     const std::string myStr = currentNamespace.toStdString();
                     const char* nameSpace   = myStr.data();
+                    QStringList xmpTagsPath;
 
                     switch (currentOpts)
                     {
                         case NamespaceEntry::TAG_XMPBAG:
                         {
-                            tagsPath = getXmpTagStringBag(nameSpace, false);
+                            xmpTagsPath = getXmpTagStringBag(nameSpace, false);
                             break;
                         }
 
                         case NamespaceEntry::TAG_XMPSEQ:
                         {
-                            tagsPath = getXmpTagStringSeq(nameSpace, false);
+                            xmpTagsPath = getXmpTagStringSeq(nameSpace, false);
                             break;
                         }
 
                         case NamespaceEntry::TAG_ACDSEE:
                         {
-                            getACDSeeTagsPath(tagsPath);
+                            getACDSeeTagsPath(xmpTagsPath);
                             break;
                         }
 
@@ -95,17 +96,23 @@ bool DMetadata::getItemTagsPath(QStringList& tagsPath,
                         }
                     }
 
-                    if      (!tagsPath.isEmpty())
+                    if      (!xmpTagsPath.isEmpty())
                     {
                         if (entry.separator != QLatin1String("/"))
                         {
-                            tagsPath.replaceInStrings(QLatin1String("/"), QLatin1String("\\"));
-                            tagsPath.replaceInStrings(entry.separator, QLatin1String("/"));
+                            xmpTagsPath.replaceInStrings(QLatin1String("/"), QLatin1String("\\"));
+                            xmpTagsPath.replaceInStrings(entry.separator, QLatin1String("/"));
                         }
 
-                        return true;
+                        tagsPath.append(xmpTagsPath);
+
+                        if (!settings.readingAllTags())
+                        {
+                            return true;
+                        }
                     }
-                    else if (!entry.alternativeName.isEmpty())
+
+                    if (!entry.alternativeName.isEmpty())
                     {
                         currentNamespace = entry.alternativeName;
                         currentOpts      = entry.secondNameOpts;
@@ -129,24 +136,24 @@ bool DMetadata::getItemTagsPath(QStringList& tagsPath,
                 // do not support UTF-8 and have strings size limitation. But we will
                 // let the capability to import it for interworking issues.
 
-                tagsPath = getIptcKeywords();
+                QStringList iptcTagsPath = getIptcKeywords();
 
-                if (!tagsPath.isEmpty())
+                if (!iptcTagsPath.isEmpty())
                 {
-                    // Work around to Imach tags path list hosted in IPTC with '.' as separator.
+                    // Workaround to Imach tags path list hosted in IPTC with '.' as separator.
+                    // Create a new entry with "." as a separator in the advanced metadata settings.
 
-                    QStringList ntp = tagsPath.replaceInStrings(entry.separator, QLatin1String("/"));
-
-                    // FIXME: The QStringList are always identical -> ntp == tagsPath.
-
-                    if (ntp != tagsPath)
+                    if (!entry.separator.isEmpty())
                     {
-                        tagsPath = ntp;
-
-                        //qCDebug(DIGIKAM_METAENGINE_LOG) << "Tags Path imported from Imach: " << tagsPath;
+                        iptcTagsPath.replaceInStrings(entry.separator, QLatin1String("/"));
                     }
 
-                    return true;
+                    tagsPath.append(iptcTagsPath);
+
+                    if (!settings.readingAllTags())
+                    {
+                        return true;
+                    }
                 }
 
                 break;
@@ -160,12 +167,17 @@ bool DMetadata::getItemTagsPath(QStringList& tagsPath,
 
                 if (!keyWords.isEmpty())
                 {
-                    tagsPath = keyWords.split(entry.separator);
+                    QStringList exifTagsPath = keyWords.split(entry.separator);
 
-                    if (!tagsPath.isEmpty())
+                    if (!exifTagsPath.isEmpty())
                     {
-                        return true;
-                    }
+                        tagsPath.append(exifTagsPath);
+
+                        if (!settings.readingAllTags())
+                        {
+                            return true;
+                        }
+                     }
                 }
 
                 break;
@@ -178,7 +190,9 @@ bool DMetadata::getItemTagsPath(QStringList& tagsPath,
         }
     }
 
-    return false;
+    tagsPath.removeDuplicates();
+
+    return (!tagsPath.isEmpty());
 }
 
 bool DMetadata::setItemTagsPath(const QStringList& tagsPath, const DMetadataSettingsContainer& settings) const

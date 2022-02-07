@@ -99,7 +99,7 @@ if(ENABLE_QWEBENGINE)
 elseif(ENABLE_QWEBKIT)
     set(libgeoiface_SRCS
         ${libgeoiface_SRCS}
-        ${CMAKE_CURRENT_SOURCE_DIR}/widgets/htmlwidget.cpp
+        ${CMAKE_CURRENT_SOURCE_DIR}/widgets/htmlwidget_qwebkit.cpp
        )
 endif()
 

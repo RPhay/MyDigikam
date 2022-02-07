@@ -54,7 +54,7 @@ NPT_AutomaticCleaner::~NPT_AutomaticCleaner()
     // cleaned up
     delete m_HttpConnectionManager;
     delete m_TlsContext;
-    
+
     // Finally we can destroy the rest such as the NPT_HttpClient::ConnectionCanceller
     m_Singletons.Apply(NPT_ObjectDeleter<Singleton>());
 }

@@ -6,7 +6,7 @@
  * Date        : 2004-11-22
  * Description : stand alone digiKam image editor - Configure
  *
- * Copyright (C) 2004-2021 by Gilles Caulier <caulier dot gilles at gmail dot com>
+ * Copyright (C) 2004-2022 by Gilles Caulier <caulier dot gilles at gmail dot com>
  *
  * This program is free software; you can redistribute it
  * and/or modify it under the terms of the GNU General
@@ -77,6 +77,9 @@ void Showfoto::readSettings()
     d->lastOpenedDirectory = QUrl::fromLocalFile(defaultDir);
 
     d->rightSideBar->loadState();
+    d->leftSideBar->loadState();
+    d->folderView->loadState();
+    d->stackView->loadState();
 
     Digikam::ThemeManager::instance()->setCurrentTheme(d->settings->getCurrentTheme());
 
@@ -92,6 +95,9 @@ void Showfoto::saveSettings()
     d->settings->syncConfig();
 
     d->rightSideBar->saveState();
+    d->leftSideBar->saveState();
+    d->folderView->saveState();
+    d->stackView->saveState();
 }
 
 void Showfoto::applySettings()
@@ -102,6 +108,8 @@ void Showfoto::applySettings()
 
     d->rightSideBar->setStyle(d->settings->getRightSideBarStyle() == 0 ?
                               DMultiTabBar::ActiveIconText : DMultiTabBar::AllIconsText);
+    d->leftSideBar->setStyle(d->settings->getRightSideBarStyle() == 0 ?
+                             DMultiTabBar::ActiveIconText : DMultiTabBar::AllIconsText);
 
     QString currentStyle = qApp->style()->objectName();
     QString newStyle     = d->settings->getApplicationStyle();
@@ -120,15 +128,22 @@ void Showfoto::applySettings()
 
     d->rightSideBar->slotLoadMetadataFilters();
 
-    // Determine sort ordering for the entries from the Showfoto settings:
+    applySortSettings();
+}
 
+void Showfoto::applySortSettings()
+{
     if (d->settings->getReverseSort())
     {
         d->filterModel->setSortOrder(ShowfotoItemSortSettings::DescendingOrder);
+        d->folderView->setSortOrder(ShowfotoItemSortSettings::DescendingOrder);
+        d->stackView->setSortOrder(ShowfotoItemSortSettings::DescendingOrder);
     }
     else
     {
         d->filterModel->setSortOrder(ShowfotoItemSortSettings::AscendingOrder);
+        d->folderView->setSortOrder(ShowfotoItemSortSettings::AscendingOrder);
+        d->stackView->setSortOrder(ShowfotoItemSortSettings::AscendingOrder);
     }
 
     switch (d->settings->getSortRole())
@@ -136,21 +151,78 @@ void Showfoto::applySettings()
         case ShowfotoSetupMisc::SortByName:
         {
             d->filterModel->setSortRole(ShowfotoItemSortSettings::SortByFileName);
+            d->folderView->setSortRole(ShowfotoFolderViewList::FileName);
+            d->stackView->setSortRole(ShowfotoStackViewList::FileName);
             break;
         }
 
         case ShowfotoSetupMisc::SortByFileSize:
         {
             d->filterModel->setSortRole(ShowfotoItemSortSettings::SortByFileSize);
+            d->folderView->setSortRole(ShowfotoFolderViewList::FileSize);
+            d->stackView->setSortRole(ShowfotoStackViewList::FileSize);
             break;
         }
 
         default:
         {
             d->filterModel->setSortRole(ShowfotoItemSortSettings::SortByCreationDate);
+            d->folderView->setSortRole(ShowfotoFolderViewList::FileDate);
+            d->stackView->setSortRole(ShowfotoStackViewList::FileDate);
             break;
         }
     }
+}
+
+void Showfoto::slotThemeChanged()
+{
+    QString theme = ThemeManager::instance()->currentThemeName();
+
+    if (qApp->activeWindow()                 &&
+        (d->settings->getCurrentTheme() != theme))
+    {
+        qApp->processEvents();
+
+        QColor color = qApp->palette().color(qApp->activeWindow()->backgroundRole());
+        QString iconTheme;
+        QString msgText;
+
+        if (color.lightness() > 127)
+        {
+            msgText   = i18n("You have chosen a bright color scheme. We switch "
+                             "to a dark icon theme. The icon theme is "
+                             "available after a restart of digiKam.");
+
+            iconTheme = QLatin1String("breeze");
+        }
+        else
+        {
+            msgText   = i18n("You have chosen a dark color scheme. We switch "
+                             "to a bright icon theme. The icon theme is "
+                             "available after a restart of digiKam.");
+
+            iconTheme = QLatin1String("breeze-dark");
+        }
+
+        if (d->settings->getIconTheme() != iconTheme)
+        {
+            QMessageBox::information(qApp->activeWindow(),
+                                     qApp->applicationName(), msgText);
+
+            d->settings->setIconTheme(iconTheme);
+        }
+    }
+}
+
+void Showfoto::slotSetupMetadataFilters(int tab)
+{
+    ShowfotoSetup::execMetadataFilters(this, tab+1);
+    d->rightSideBar->slotLoadMetadataFilters();
+}
+
+void Showfoto::slotSetupExifTool()
+{
+    ShowfotoSetup::execExifTool(this);
 }
 
 } // namespace ShowFoto

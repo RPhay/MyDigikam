@@ -6,7 +6,7 @@
  * Date        : 2009-12-01
  * Description : Tile index used in the tiling classes
  *
- * Copyright (C) 2010-2021 by Gilles Caulier <caulier dot gilles at gmail dot com>
+ * Copyright (C) 2010-2022 by Gilles Caulier <caulier dot gilles at gmail dot com>
  * Copyright (C) 2009-2011 by Michael G. Hansen <mike at mghansen dot de>
  *
  * This program is free software; you can redistribute it
@@ -216,7 +216,7 @@ TileIndex TileIndex::fromCoordinates(const Digikam::GeoCoordinates& coordinate, 
 
     qint64 tileLat, tileLon;
     {
-        // this is the ony place where rounding happens
+        // this is the only place where rounding happens
 
         tileLat = static_cast<qint64>(((coordinate.lat() + 90.0)  / 180.0) * MaxLevelTileSplits);
         tileLon = static_cast<qint64>(((coordinate.lon() + 180.0) / 360.0) * MaxLevelTileSplits);

@@ -6,7 +6,7 @@
  * Date        : 2021-04-18
  * Description : ExifTool metadata list view.
  *
- * Copyright (C) 2021 by Gilles Caulier <caulier dot gilles at gmail dot com>
+ * Copyright (C) 2021-2022 by Gilles Caulier <caulier dot gilles at gmail dot com>
  *
  * This program is free software; you can redistribute it
  * and/or modify it under the terms of the GNU General
@@ -73,7 +73,6 @@ ExifToolListView::ExifToolListView(QWidget* const parent)
     setSelectionMode(QAbstractItemView::SingleSelection);
     header()->setSectionResizeMode(QHeaderView::Stretch);
     setSizePolicy(QSizePolicy::Expanding, QSizePolicy::Expanding);
-    setIndentation(QApplication::style()->pixelMetric(QStyle::PM_DefaultLayoutSpacing));
 
     d->parser = new ExifToolParser(this);
 
@@ -151,7 +150,7 @@ void ExifToolListView::slotSearchTextChanged(const SearchTextSettings& settings)
     bool query     = false;
     QString search = settings.text;
 
-    // Restore all MdKey items.
+    // Restore all Group items.
 
     QTreeWidgetItemIterator it2(this);
 
@@ -274,7 +273,7 @@ void ExifToolListView::setGroupList(const QStringList& tagsFilter, const QString
     QStringList filters = tagsFilter;
     QString groupItemName;
 
-    /** Key is formated like this:
+    /** Key is formatted like this:
      *
      * EXIF.ExifIFD.Image.ExposureCompensation
      * File.File.Other.FileType

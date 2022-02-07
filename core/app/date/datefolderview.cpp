@@ -7,7 +7,7 @@
  * Description : a folder view for date albums.
  *
  * Copyright (C) 2005      by Renchi Raju <renchi dot raju at gmail dot com>
- * Copyright (C) 2006-2021 by Gilles Caulier <caulier dot gilles at gmail dot com>
+ * Copyright (C) 2006-2022 by Gilles Caulier <caulier dot gilles at gmail dot com>
  * Copyright (C) 2009-2010 by Johannes Wienke <languitar at semipol dot de>
  * Copyright (C) 2014      by Michael G. Hansen <mike at mghansen dot de>
  *
@@ -152,6 +152,10 @@ void DateFolderView::slotAllAlbumsLoaded()
         AlbumManager::instance()->setCurrentAlbums(QList<Album*>() << d->dateTreeView->currentAlbum());
         slotSelectionChanged(d->dateTreeView->currentAlbum());
     }
+
+    // Workaround for bug 447874
+
+    d->dateTreeView->setSortingEnabled(true);
 }
 
 void DateFolderView::setConfigGroup(const KConfigGroup& group)

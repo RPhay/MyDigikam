@@ -6,7 +6,7 @@
  * Date        : 2012-01-31
  * Description : maintenance manager settings
  *
- * Copyright (C) 2012-2021 by Gilles Caulier <caulier dot gilles at gmail dot com>
+ * Copyright (C) 2012-2022 by Gilles Caulier <caulier dot gilles at gmail dot com>
  *
  * This program is free software; you can redistribute it
  * and/or modify it under the terms of the GNU General
@@ -31,27 +31,28 @@ namespace Digikam
 {
 
 MaintenanceSettings::MaintenanceSettings()
-    : wholeAlbums(true),
-      wholeTags(true),
-      useMutiCoreCPU(false),
-      newItems(false),
-      thumbnails(false),
-      scanThumbs(false),
-      fingerPrints(false),
-      scanFingerPrints(false),
-      duplicates(false),
-      minSimilarity(90),
-      maxSimilarity(100),
+    : wholeAlbums          (true),
+      wholeTags            (true),
+      useMutiCoreCPU       (false),
+      newItems             (false),
+      thumbnails           (false),
+      scanThumbs           (false),
+      fingerPrints         (false),
+      scanFingerPrints     (false),
+      duplicates           (false),
+      minSimilarity        (90),
+      maxSimilarity        (100),
       duplicatesRestriction(HaarIface::DuplicatesSearchRestrictions::None),
-      faceManagement(false),
-      qualitySort(false),
-      qualityScanMode(true),   // NOTE: turn on by default to prevent clearing whole Pick Labels from Collection
-      metadataSync(false),
-      syncDirection(MetadataSynchronizer::WriteFromDatabaseToFile),
-      databaseCleanup(false),
-      cleanThumbDb(false),
-      cleanFacesDb(false),
-      shrinkDatabases(false)
+      faceManagement       (false),
+      qualitySort          (false),
+      qualityScanMode      (true),   // NOTE: turn on by default to prevent clearing whole Pick Labels from Collection
+      metadataSync         (false),
+      syncDirection        (MetadataSynchronizer::WriteFromDatabaseToFile),
+      databaseCleanup      (false),
+      cleanThumbDb         (false),
+      cleanFacesDb         (false),
+      cleanSimilarityDb    (false),
+      shrinkDatabases      (false)
 {
 }
 
@@ -62,6 +63,7 @@ MaintenanceSettings::~MaintenanceSettings()
 //! qCDebug(DIGIKAM_GENERAL_LOG) stream operator. Writes property @a s to the debug output in a nicely formatted way.
 QDebug operator<<(QDebug dbg, const MaintenanceSettings& s)
 {
+<<<<<<< HEAD
     dbg.nospace() << QT_ENDL;
     dbg.nospace() << "wholeAlbums           : " << s.wholeAlbums                         << QT_ENDL;
     dbg.nospace() << "wholeTags             : " << s.wholeTags                           << QT_ENDL;
@@ -87,6 +89,7 @@ QDebug operator<<(QDebug dbg, const MaintenanceSettings& s)
     dbg.nospace() << "databaseCleanup       : " << s.databaseCleanup                     << QT_ENDL;
     dbg.nospace() << "cleanThumbDb          : " << s.cleanThumbDb                        << QT_ENDL;
     dbg.nospace() << "cleanFacesDb          : " << s.cleanFacesDb                        << QT_ENDL;
+    dbg.nospace() << "cleanSimilarityDb     : " << s.cleanSimilarityDb                   << QT_ENDL;
     dbg.nospace() << "shrinkDatabases       : " << s.shrinkDatabases                     << QT_ENDL;
 
     return dbg.space();

@@ -8,7 +8,7 @@
  *
  * Copyright (C) 2010      by Aditya Bhatt <adityabhatt1991 at gmail dot com>
  * Copyright (C) 2010-2011 by Marcel Wiesweg <marcel dot wiesweg at gmx dot de>
- * Copyright (C) 2012-2021 by Gilles Caulier <caulier dot gilles at gmail dot com>
+ * Copyright (C) 2012-2022 by Gilles Caulier <caulier dot gilles at gmail dot com>
  *
  * This program is free software; you can redistribute it
  * and/or modify it under the terms of the GNU General
@@ -192,6 +192,9 @@ AssignNameWidget* FaceGroup::Private::createAssignNameWidget(const FaceTagsIface
 
     q->connect(assignWidget, SIGNAL(rejected(ItemInfo,QVariant)),
                q, SLOT(slotRejected(ItemInfo,QVariant)));
+
+    q->connect(assignWidget, SIGNAL(ignored(ItemInfo,QVariant)),
+               q, SLOT(slotIgnored(ItemInfo,QVariant)));
 
     q->connect(assignWidget, SIGNAL(ignoredClicked(ItemInfo,QVariant)),
                q, SLOT(slotIgnoredClicked(ItemInfo,QVariant)));

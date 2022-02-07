@@ -487,7 +487,7 @@ QWidget* MainWindow::setupControlPanel()
     m_applyButton->setText(QLatin1String("Apply"));
 
     QFormLayout* const layout = new QFormLayout(this);
-    layout->addRow(new QLabel(QLatin1String("Reconized :")), m_recognizationInfo);
+    layout->addRow(new QLabel(QLatin1String("Recognized :")), m_recognizationInfo);
     layout->addRow(new QLabel(QLatin1String("Identity :")),  m_imageLabel);
     layout->addRow(new QLabel(QLatin1String("Similarity distance :")), m_similarityLabel);
     layout->insertRow(3, m_applyButton);

@@ -7,7 +7,7 @@
  * Description : a presentation tool.
  *
  * Copyright (C) 2007-2009 by Valerio Fuoglio <valerio dot fuoglio at gmail dot com>
- * Copyright (C) 2012-2021 by Gilles Caulier <caulier dot gilles at gmail dot com>
+ * Copyright (C) 2012-2022 by Gilles Caulier <caulier dot gilles at gmail dot com>
  *
  * Parts of this code are based on
  * smoothslidesaver by Carsten Weinhold <carsten dot weinhold at gmx dot de>
@@ -620,7 +620,7 @@ void PresentationKB::readSettings()
     if (d->forceFrameRate > 120)
     {
         d->forceFrameRate = 120;
-    } 
+    }
 }
 
 void PresentationKB::endOfShow()

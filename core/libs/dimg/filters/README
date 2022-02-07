@@ -1,6 +1,6 @@
 auto          : Auto Color Correction.
 bw            : Black and White.
-bcg           : Brighness / Contrast / Gamma.
+bcg           : Brightness / Contrast / Gamma.
 cb            : Color Balance Correction.
 curves        : Histogram Curves Correction.
 decorate      : Decorative Effects.

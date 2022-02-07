@@ -70,7 +70,7 @@ bool ShowfotoDragDropHandler::dropEvent(QAbstractItemView* abstractview, const Q
 
     QList<QUrl> urls = e->mimeData()->urls();
 
-    emit signalDroppedUrls(urls, true);
+    emit signalDroppedUrls(urls, true, (!urls.isEmpty() ? urls.first() : QUrl()));
 
     return true;
 }

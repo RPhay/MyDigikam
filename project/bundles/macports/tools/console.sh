@@ -3,7 +3,7 @@
 # Script to give a console with port CLI tool branched to MAcports bundle repository
 # This script must be run as sudo
 #
-# Copyright (c) 2015-2021 by Gilles Caulier  <caulier dot gilles at gmail dot com>
+# Copyright (c) 2015-2022 by Gilles Caulier  <caulier dot gilles at gmail dot com>
 #
 # Redistribution and use is allowed according to the terms of the BSD license.
 # For details see the accompanying COPYING-CMAKE-SCRIPTS file.
@@ -20,7 +20,7 @@ set -e
 
 #################################################################################################
 
-# Pathes rules
+# Paths rules
 ORIG_PATH="$PATH"
 export PATH=$INSTALL_PREFIX/bin:/$INSTALL_PREFIX/sbin:$ORIG_PATH
 

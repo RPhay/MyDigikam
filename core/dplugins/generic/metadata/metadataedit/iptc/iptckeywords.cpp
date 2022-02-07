@@ -6,7 +6,7 @@
  * Date        : 2006-10-15
  * Description : IPTC keywords settings page.
  *
- * Copyright (C) 2006-2021 by Gilles Caulier <caulier dot gilles at gmail dot com>
+ * Copyright (C) 2006-2022 by Gilles Caulier <caulier dot gilles at gmail dot com>
  *
  * This program is free software; you can redistribute it
  * and/or modify it under the terms of the GNU General
@@ -252,7 +252,7 @@ void IPTCKeywords::slotLineEditModified()
                        ledit);
 }
 
-void IPTCKeywords::readMetadata(DMetadata& meta)
+void IPTCKeywords::readMetadata(const DMetadata& meta)
 {
     blockSignals(true);
 
@@ -275,7 +275,7 @@ void IPTCKeywords::readMetadata(DMetadata& meta)
     blockSignals(false);
 }
 
-void IPTCKeywords::applyMetadata(DMetadata& meta)
+void IPTCKeywords::applyMetadata(const DMetadata& meta)
 {
     QStringList newKeywords;
 

@@ -420,7 +420,7 @@ void FaceTagsEditor::removeFace(qlonglong imageid, const QRect& rect)
     removeNormalTags(imageid, tagsToRemove);
 }
 
-void FaceTagsEditor::removeFace(const FaceTagsIface& face)
+void FaceTagsEditor::removeFace(const FaceTagsIface& face, bool touchTags)
 {
     if (face.isNull())
     {
@@ -428,7 +428,7 @@ void FaceTagsEditor::removeFace(const FaceTagsIface& face)
     }
 
     ItemTagPair pair(face.imageId(), face.tagId());
-    removeFaceAndTag(pair, face, true);
+    removeFaceAndTag(pair, face, touchTags);
 }
 
 void FaceTagsEditor::removeFaces(const QList<FaceTagsIface>& faces)
@@ -471,7 +471,9 @@ void FaceTagsEditor::removeFaceAndTag(ItemTagPair& pair, const FaceTagsIface& fa
     {
         removeNormalTag(face.imageId(), pair.tagId());
     }
-    else if (pair.hasProperty(FaceTagsIface::attributeForType(FaceTagsIface::ConfirmedName)))
+    else if (touchTags                                           &&
+             (face.type() != FaceTagsIface::FaceForTraining)     &&
+             pair.hasProperty(FaceTagsIface::attributeForType(FaceTagsIface::ConfirmedName)))
     {
         // The tag exists several times, we write it again
         // to trigger the writing of the metadata.
@@ -518,9 +520,15 @@ FaceTagsIface FaceTagsEditor::changeTag(const FaceTagsIface& face, int newTagId,
      * Since a new Tag is going to be assigned to the Face,
      * it's important to remove the association between
      * the face and the old tagId.
+     *
+     * If the face is being ignored and it was an unconfirmed face,
+     * don't remove a possible tag. See bug 449142
      */
 
-    removeFace(face);
+    bool touchTags = !(FaceTags::isTheIgnoredPerson(newTagId)        &&
+                       (face.type() == FaceTagsIface::UnconfirmedName));
+
+    removeFace(face, touchTags);
 
     FaceTagsIface newFace = face;
     newFace.setTagId(newTagId);

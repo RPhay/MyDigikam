@@ -24,7 +24,7 @@ namespace AdobeXMPCore {
 
 		//! Indicates that a different type of node is present than one user is expecting
 		kDMECDifferentNodeTypePresent				= 2,
-		
+
 		//! Indicates that node is already a child of another parent.
 		kDMECNodeAlreadyAChild						= 3,
 
@@ -71,7 +71,7 @@ namespace AdobeXMPCore {
 	typedef enum {
 		//! Indicates no error.
 		kPECNone									= 0,
-		
+
 		//! Indicates XML parsing error.
 		kPECBadXML									= 1,
 

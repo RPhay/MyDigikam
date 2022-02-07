@@ -6,7 +6,7 @@
  * Date        : 2003-05-03
  * Description : mime types setup tab
  *
- * Copyright (C) 2004-2021 by Gilles Caulier <caulier dot gilles at gmail dot com>
+ * Copyright (C) 2004-2022 by Gilles Caulier <caulier dot gilles at gmail dot com>
  *
  * This program is free software; you can redistribute it
  * and/or modify it under the terms of the GNU General
@@ -288,7 +288,7 @@ void SetupMime::applySettings()
         CoreDbAccess().db()->setUserFilterSettings(cleanUserFilterString(d->imageFileFilterEdit->text()),
                                                    cleanUserFilterString(d->movieFileFilterEdit->text()),
                                                    cleanUserFilterString(d->audioFileFilterEdit->text()));
-        ScanController::instance()->completeCollectionScanInBackground(false);
+        ScanController::instance()->completeCollectionScanInBackground(false, false);
     }
 }
 

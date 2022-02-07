@@ -34,7 +34,7 @@
 	#if 0	// ! maybe someday - ! MAC_ENV
 		#error "MAC_ENV must be defined so that \"#if MAC_ENV\" is true"
 	#endif
-	
+
     #if defined ( WIN_ENV ) || defined ( UNIX_ENV ) || defined ( IOS_ENV )
         #error "XMP environment error - must define only one of MAC_ENV, WIN_ENV, UNIX_ENV or IOS_ENV"
     #endif
@@ -49,7 +49,7 @@
 	#if 0	// ! maybe someday - ! WIN_ENV
 		#error "WIN_ENV must be defined so that \"#if WIN_ENV\" is true"
 	#endif
-	
+
     #if defined ( MAC_ENV ) || defined ( UNIX_ENV ) || defined ( IOS_ENV )
 		#error "XMP environment error - must define only one of MAC_ENV, WIN_ENV, UNIX_ENV or IOS_ENV"
     #endif
@@ -64,7 +64,7 @@
 	#if 0	// ! maybe someday - ! UNIX_ENV
 		#error "UNIX_ENV must be defined so that \"#if UNIX_ENV\" is true"
 	#endif
-	
+
 	#if defined ( MAC_ENV ) || defined ( WIN_ENV ) || defined ( IOS_ENV )
 		#error "XMP environment error - must define only one of MAC_ENV, WIN_ENV, UNIX_ENV or IOS_ENV"
 	#endif
@@ -118,7 +118,7 @@
     #include <stdio.h>  // The assert macro needs printf.
 #endif
 
-#ifndef DISABLE_SERIALIZED_IMPORT_EXPORT 
+#ifndef DISABLE_SERIALIZED_IMPORT_EXPORT
 	#define DISABLE_SERIALIZED_IMPORT_EXPORT 0
 #endif
 
@@ -137,7 +137,7 @@
 	#define XMP_HELPER_DLL_IMPORT __attribute__((visibility("default")))
 	#define XMP_HELPER_DLL_EXPORT __attribute__((visibility("default")))
 	#define XMP_HELPER_DLL_PRIVATE __attribute__((visibility("hidden")))
-	#define APICALL 
+	#define APICALL
 #endif
 
 // =================================================================================================
@@ -157,7 +157,7 @@
 	#define XMP_HELPER_DLL_IMPORT
 	#define XMP_HELPER_DLL_EXPORT __attribute__ ((visibility ("default")))
 	#define XMP_HELPER_DLL_PRIVATE __attribute__ ((visibility ("hidden")))
-	#define APICALL 
+	#define APICALL
 #endif
 
 // =================================================================================================
@@ -173,7 +173,7 @@
 	#define XMP_HELPER_DLL_IMPORT __attribute__((visibility("default")))
 	#define XMP_HELPER_DLL_EXPORT __attribute__((visibility("default")))
 	#define XMP_HELPER_DLL_PRIVATE __attribute__((visibility("hidden")))
-	#define APICALL 
+	#define APICALL
 #endif
 
 // =================================================================================================

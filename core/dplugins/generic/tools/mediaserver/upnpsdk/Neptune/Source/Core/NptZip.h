@@ -72,18 +72,18 @@ public:
         NPT_Position  m_RelativeOffset;
         NPT_UInt32    m_DirectoryEntrySize;
     };
-    
+
     // class methods
     static NPT_Result Parse(NPT_InputStream& stream, NPT_ZipFile*& file);
     static NPT_Result GetInputStream(Entry& entry, NPT_InputStreamReference& zip_stream, NPT_InputStream*& file_stream);
-    
+
     // accessors
     NPT_Array<Entry>& GetEntries() { return m_Entries; }
-    
+
 private:
     // constructor
     NPT_ZipFile();
-    
+
     // members
     NPT_Array<Entry> m_Entries;
 };
@@ -95,20 +95,20 @@ const int NPT_ZIP_COMPRESSION_LEVEL_DEFAULT = -1;
 const int NPT_ZIP_COMPRESSION_LEVEL_MIN     = 0;
 const int NPT_ZIP_COMPRESSION_LEVEL_MAX     = 9;
 const int NPT_ZIP_COMPRESSION_LEVEL_NONE    = 0;
-class NPT_Zip 
+class NPT_Zip
 {
 public:
     // class methods
     static NPT_Result MapError(int err);
 
-    /** 
+    /**
      * Compressed data format
      */
     typedef enum {
         ZLIB,
         GZIP
     } Format;
-        
+
     /**
      * Deflate (i.e compress) a buffer
      */
@@ -116,14 +116,14 @@ public:
                               NPT_DataBuffer&       out,
                               int                   compression_level = NPT_ZIP_COMPRESSION_LEVEL_DEFAULT,
                               Format                format = ZLIB);
-                              
+
     /**
      * Inflate (i.e decompress) a buffer
      */
     static NPT_Result Inflate(const NPT_DataBuffer& in,
                               NPT_DataBuffer&       out,
                               bool                  raw = false);
-    
+
     /**
      * Deflate (i.e compress) a file
      */
@@ -131,21 +131,21 @@ public:
                               NPT_File& out,
                               int       compression_level = NPT_ZIP_COMPRESSION_LEVEL_DEFAULT,
                               Format    format = GZIP);
-    
+
 };
 
 /*----------------------------------------------------------------------
 |   NPT_ZipInflatingInputStream
 +---------------------------------------------------------------------*/
-class NPT_ZipInflatingInputStream : public NPT_InputStream 
+class NPT_ZipInflatingInputStream : public NPT_InputStream
 {
 public:
     NPT_ZipInflatingInputStream(NPT_InputStreamReference& source, bool raw = false);
    ~NPT_ZipInflatingInputStream();
-   
+
     // NPT_InputStream methods
-    virtual NPT_Result Read(void*     buffer, 
-                            NPT_Size  bytes_to_read, 
+    virtual NPT_Result Read(void*     buffer,
+                            NPT_Size  bytes_to_read,
                             NPT_Size* bytes_read = NULL);
     virtual NPT_Result Seek(NPT_Position offset);
     virtual NPT_Result Tell(NPT_Position& offset);
@@ -166,17 +166,17 @@ private:
 /*----------------------------------------------------------------------
 |   NPT_ZipDeflatingInputStream
 +---------------------------------------------------------------------*/
-class NPT_ZipDeflatingInputStream : public NPT_InputStream 
+class NPT_ZipDeflatingInputStream : public NPT_InputStream
 {
 public:
     NPT_ZipDeflatingInputStream(NPT_InputStreamReference& source,
                                 int                       compression_level = NPT_ZIP_COMPRESSION_LEVEL_DEFAULT,
                                 NPT_Zip::Format           format = NPT_Zip::ZLIB);
    ~NPT_ZipDeflatingInputStream();
-   
+
     // NPT_InputStream methods
-    virtual NPT_Result Read(void*     buffer, 
-                            NPT_Size  bytes_to_read, 
+    virtual NPT_Result Read(void*     buffer,
+                            NPT_Size  bytes_to_read,
                             NPT_Size* bytes_read = NULL);
     virtual NPT_Result Seek(NPT_Position offset);
     virtual NPT_Result Tell(NPT_Position& offset);
@@ -194,17 +194,17 @@ private:
 /*----------------------------------------------------------------------
 |   NPT_ZipDeflatingOutputStream
 +---------------------------------------------------------------------*/
-/*class NPT_ZipDeflatingOutputStream : public NPT_OutputStream 
+/*class NPT_ZipDeflatingOutputStream : public NPT_OutputStream
 {
 public:
     NPT_ZipDeflatingOutputStream(NPT_OutputStreamReference& source,
                                  int                        compression_level = NPT_ZIP_COMPRESSION_LEVEL_DEFAULT,
                                  NPT_Zip::Format            format = NPT_Zip::ZLIB);
    NPT_ZipDeflatingOutputStream();
-   
+
     // NPT_OutputStream methods
-    virtual NPT_Result Write(void*     buffer, 
-                             NPT_Size  bytes_to_write, 
+    virtual NPT_Result Write(void*     buffer,
+                             NPT_Size  bytes_to_write,
                              NPT_Size* bytes_written = NULL);
     virtual NPT_Result Seek(NPT_Position offset);
     virtual NPT_Result Tell(NPT_Position& offset);

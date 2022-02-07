@@ -11,14 +11,14 @@
 | as published by the Free Software Foundation; either version 2
 | of the License, or (at your option) any later version.
 |
-| OEMs, ISVs, VARs and other distributors that combine and 
+| OEMs, ISVs, VARs and other distributors that combine and
 | distribute commercially licensed software with Platinum software
 | and do not wish to distribute the source code for the commercially
 | licensed software under version 2, or (at your option) any later
 | version, of the GNU General Public License (the "GPL") must enter
 | into a commercial license agreement with Plutinosoft, LLC.
 | licensing@plutinosoft.com
-|  
+|
 | This program is distributed in the hope that it will be useful,
 | but WITHOUT ANY WARRANTY; without even the implied warranty of
 | MERCHANTABILITY or FITNESS FOR A PARTICULAR PURPOSE.  See the
@@ -26,7 +26,7 @@
 |
 | You should have received a copy of the GNU General Public License
 | along with this program; see the file LICENSE.txt. If not, write to
-| the Free Software Foundation, Inc., 
+| the Free Software Foundation, Inc.,
 | 51 Franklin Street, Fifth Floor, Boston, MA  02110-1301, USA.
 | http://www.gnu.org/licenses/gpl-2.0.html
 |
@@ -53,8 +53,8 @@ public:
     virtual ~PLT_InputFrameStream();
 
     // NPT_InputStream methods
-    NPT_Result Read(void*     buffer, 
-                    NPT_Size  bytes_to_read, 
+    NPT_Result Read(void*     buffer,
+                    NPT_Size  bytes_to_read,
                     NPT_Size* bytes_read = 0);
 
     NPT_Result Seek(NPT_Position offset)      { NPT_COMPILER_UNUSED(offset); return NPT_FAILURE; }
@@ -62,7 +62,7 @@ public:
     NPT_Result Tell(NPT_Position& offset)     { NPT_COMPILER_UNUSED(offset); return NPT_FAILURE; }
     NPT_Result GetSize(NPT_LargeSize& size)   { NPT_COMPILER_UNUSED(size);   return NPT_FAILURE; }
     NPT_Result GetAvailable(NPT_LargeSize& available);
-        
+
 private:
     NPT_Result FillBuffer();
 

@@ -3,10 +3,10 @@
  * This file is a part of digiKam project
  * https://www.digikam.org
  *
- * Date        : 2020-05-08
- * Description : KService menu operation methods
+ * Date        : 2014-05-08
+ * Description : Service menu operation methods
  *
- * Copyright (C) 2014-2021 by Gilles Caulier <caulier dot gilles at gmail dot com>
+ * Copyright (C) 2014-2022 by Gilles Caulier <caulier dot gilles at gmail dot com>
  *
  * This program is free software; you can redistribute it
  * and/or modify it under the terms of the GNU General
@@ -45,22 +45,71 @@ class DIGIKAM_EXPORT DServiceMenu
 {
 public:
 
+//@{
+
+    // Linux Services methods implemented in dservicemenu_linux.cpp
+
     /**
-     * Open file urls with the service.
+     * Linux only: open file urls with the service.
      */
     static bool runFiles(KService* const service, const QList<QUrl>& urls);
 
     /**
-     * Open file urls with the application command.
+     * Linux only: open file urls with the application command.
      */
     static bool runFiles(const QString& appCmd,
                          const QList<QUrl>& urls,
                          KService* const service = nullptr);
 
     /**
-     * Return list of service available on desktop to open files.
+     * Linux only: return list of service available on desktop to open files.
      */
     static KService::List servicesForOpenWith(const QList<QUrl>& urls);
+
+//@}
+
+//@{
+
+    // MacOS Application Bundles methods implemented in dservicemenu_mac.mm
+
+#ifdef Q_OS_MAC
+
+    /**
+     * Given a filename extension 'suffix', here's how to find all of the
+     * applications known to the MacOS who can open files of that type.
+     * Return a list of suitable MacOS bundle urls for 'suffix'.
+     * First one is the default MacOS bundle application.
+     */
+    static QList<QUrl> MacApplicationForFileExtension(const QString& suffix);
+
+    /**
+     * Function to open your file urls with a specific MacOS application bundle url.
+     * Return true if application can be started.
+     */
+    static bool MacOpenFilesWithApplication(const QList<QUrl>& fileUrls, const QUrl& appUrl);
+
+    /**
+     * Return a list of common MacOS Application bundles suitable for a list of files.
+     * The function check all common Applications which can handle urls to open files.
+     * Only common Applications are returned on the list.
+     * The list can be empty if no common Application is found.
+     */
+    static QList<QUrl> MacApplicationsForFiles(const QList<QUrl>& files);
+
+    /**
+     * Return the MacOS Application bundle name based on url.
+     */
+    static QString MacApplicationBundleName(const QUrl& appUrl);
+
+    /**
+     * Return the MacOS Application bundle icon based on url.
+     */
+    static QIcon MacApplicationBundleIcon(const QUrl& appUrl, int size = 32);
+
+#endif
+
+//@}
+
 };
 
 } // namespace Digikam

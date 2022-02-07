@@ -55,9 +55,9 @@ const int NPT_ERROR_DIRECTORY_NOT_EMPTY   = NPT_ERROR_BASE_FILE - 9;
 
 /**
  * File open modes.
- * Use a combination of these flags to indicate how a file should be opened 
+ * Use a combination of these flags to indicate how a file should be opened
  * Note all combinations of flags are valid or meaningful:
- * If NPT_FILE_OPEN_MODE_WRITE is not set, then NPT_FILE_OPEN_MODE_CREATE, 
+ * If NPT_FILE_OPEN_MODE_WRITE is not set, then NPT_FILE_OPEN_MODE_CREATE,
  * NPT_FILE_OPEN_MODE_TRUNCATE and NPT_FILE_OPEN_MODE_APPEND are ignored.
  * If NPT_FILE_OPEN_MODE_APPEND is set, then NPT_FILE_OPEN_MODE_CREATE is
  * automatically implied whether it is set or not.
@@ -96,10 +96,10 @@ struct NPT_FileInfo
         FILE_TYPE_SPECIAL,
         FILE_TYPE_OTHER
     } FileType;
-    
+
     // constructor
     NPT_FileInfo() : m_Type(FILE_TYPE_NONE), m_Size(0), m_AttributesMask(0), m_Attributes(0) {}
-    
+
     // members
     FileType      m_Type;
     NPT_UInt64    m_Size;
@@ -123,7 +123,7 @@ public:
     static NPT_String DirName(const char* path);
     static NPT_String FileExtension(const char* path);
     static NPT_String Create(const char* directory, const char* base);
-    
+
 private:
     NPT_FilePath() {} // this class can't have instances
 };
@@ -171,7 +171,7 @@ public:
     static NPT_Result Load(const char* path, NPT_String& data, NPT_FileInterface::OpenMode mode = NPT_FILE_OPEN_MODE_READ);
     static NPT_Result Save(const char* path, NPT_String& data);
     static NPT_Result Save(const char* path, const NPT_DataBuffer& buffer);
-    
+
     // constructors and destructor
     NPT_File(const char* path);
    ~NPT_File() { delete m_Delegate; }
@@ -184,7 +184,7 @@ public:
     NPT_Result          GetInfo(NPT_FileInfo& info);
     NPT_Result          ListDir(NPT_List<NPT_String>& entries);
     NPT_Result          Rename(const char* path);
-    
+
     // NPT_FileInterface methods
     NPT_Result Open(OpenMode mode) {
         return m_Delegate->Open(mode);
@@ -213,7 +213,7 @@ protected:
 |   NPT_FileDateComparator
 +---------------------------------------------------------------------*/
 class NPT_FileDateComparator {
-public: 
+public:
     NPT_FileDateComparator(const char* directory) : m_Directory(directory) {}
     NPT_Int32 operator()(const NPT_String& file1, const NPT_String& file2) const {
         NPT_FileInfo info1, info2;
@@ -221,9 +221,9 @@ public:
         if (NPT_FAILED(NPT_File::GetInfo(NPT_FilePath::Create(m_Directory, file2), &info2))) return -1;
         return (info1.m_ModificationTime == info2.m_ModificationTime) ? 0 : (info1.m_ModificationTime < info2.m_ModificationTime ? -1 : 1);
     }
-    
+
 private:
     NPT_String m_Directory;
 };
 
-#endif // _NPT_FILE_H_ 
+#endif // _NPT_FILE_H_

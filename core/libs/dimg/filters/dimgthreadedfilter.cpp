@@ -6,7 +6,7 @@
  * Date        : 2005-05-25
  * Description : threaded image filter class.
  *
- * Copyright (C) 2005-2021 by Gilles Caulier <caulier dot gilles at gmail dot com>
+ * Copyright (C) 2005-2022 by Gilles Caulier <caulier dot gilles at gmail dot com>
  * Copyright (C) 2007-2012 by Marcel Wiesweg <marcel dot wiesweg at gmx dot de>
  *
  * This program is free software; you can redistribute it
@@ -200,7 +200,7 @@ void DImgThreadedFilter::startFilterDirectly()
         {
             QDateTime now = QDateTime::currentDateTime();
             filterImage();
-            //qCDebug(DIGIKAM_DIMG_LOG) << m_name << ":: excecution time : " << now.msecsTo(QDateTime::currentDateTime()) << " ms";
+            //qCDebug(DIGIKAM_DIMG_LOG) << m_name << ":: execution time : " << now.msecsTo(QDateTime::currentDateTime()) << " ms";
         }
         catch (std::bad_alloc& ex)
         {

@@ -1,6 +1,6 @@
 # Script to build OpenCV for digiKam bundle.
 #
-# Copyright (c) 2015-2021 by Gilles Caulier  <caulier dot gilles at gmail dot com>
+# Copyright (c) 2015-2022 by Gilles Caulier  <caulier dot gilles at gmail dot com>
 #
 # Redistribution and use is allowed according to the terms of the BSD license.
 # For details see the accompanying COPYING-CMAKE-SCRIPTS file.
@@ -98,7 +98,7 @@ if(MINGW)
     ExternalProject_Add(ext_opencv
 
         GIT_REPOSITORY https://github.com/opencv/opencv.git
-        GIT_TAG 4.5.3
+        GIT_TAG 4.5.5
 
         CMAKE_ARGS -DCMAKE_BUILD_TYPE=${GLOBAL_BUILD_TYPE}
                    -DCMAKE_TOOLCHAIN_FILE=${MXE_TOOLCHAIN}

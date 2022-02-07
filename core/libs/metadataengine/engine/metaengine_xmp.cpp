@@ -7,7 +7,7 @@
  * Description : Exiv2 library interface.
  *               Xmp manipulation methods.
  *
- * Copyright (C) 2006-2021 by Gilles Caulier <caulier dot gilles at gmail dot com>
+ * Copyright (C) 2006-2022 by Gilles Caulier <caulier dot gilles at gmail dot com>
  * Copyright (C) 2006-2013 by Marcel Wiesweg <marcel dot wiesweg at gmx dot de>
  *
  * This program is free software; you can redistribute it
@@ -1022,6 +1022,11 @@ QVariant MetaEngine::getXmpTagVariant(const char* xmpTagName, bool rationalAsLis
                 {
                     if (rationalAsListOfInts)
                     {
+                        if (!(*it).count())
+                        {
+                            return QVariant(QVariant::List);
+                        }
+
                         QList<QVariant> list;
                         list << (*it).toRational().first;
                         list << (*it).toRational().second;
@@ -1030,6 +1035,11 @@ QVariant MetaEngine::getXmpTagVariant(const char* xmpTagName, bool rationalAsLis
                     }
                     else
                     {
+                        if (!(*it).count())
+                        {
+                            return QVariant(QVariant::Double);
+                        }
+
                         // prefer double precision
 
                         double num = (*it).toRational().first;
@@ -1216,7 +1226,7 @@ bool MetaEngine::unregisterXmpNameSpace(const QString& uri)
     return false;
 }
 
-bool MetaEngine::removeXmpTag(const char* xmpTagName) const
+bool MetaEngine::removeXmpTag(const char* xmpTagName, bool family) const
 {
 
 #ifdef _XMP_SUPPORT_
@@ -1228,7 +1238,14 @@ bool MetaEngine::removeXmpTag(const char* xmpTagName) const
 
         if (it != d->xmpMetadata().end())
         {
-            d->xmpMetadata().erase(it);
+            if (!family)
+            {
+                d->xmpMetadata().erase(it);
+            }
+            else
+            {
+                d->xmpMetadata().eraseFamily(it);
+            }
 
             return true;
         }

@@ -10,13 +10,13 @@ class WebEnginePage : public QWebEnginePage
     Q_OBJECT
 
 public:
-	
+
     WebEnginePage(QWebEngineProfile *inProfile, const QString &inRedirectURLString) : QWebEnginePage(inProfile), mRedirectURLString(inRedirectURLString) { }
-	
+
     virtual ~WebEnginePage();
 
     bool acceptNavigationRequest(const QUrl & url, QWebEnginePage::NavigationType type, bool isMainFrame);
-    
+
 protected:
 	QWebEnginePage *createWindow(WebWindowType type);
 

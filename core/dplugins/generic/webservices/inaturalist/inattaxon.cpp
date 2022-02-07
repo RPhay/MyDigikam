@@ -130,42 +130,37 @@ QString Taxon::htmlName() const
     static const QString subspecies = QLatin1String("subspecies");
     static const QString variety    = QLatin1String("variety");
     static const QString hybrid     = QLatin1String("hybrid");
+    static const QString italicOn   = QLatin1String("<i>");
+    static const QString italicOff  = QLatin1String("</i>");
+    static const QChar   blank      = QLatin1Char(' ');
 
     QString result;
 
     if ((rank() != species) && (rank() != subspecies) && (rank() != variety))
     {
-        result    = localizedTaxonomicRank(rank()) + QLatin1Char(' ');
+        result    = localizedTaxonomicRank(rank()) + blank;
         result[0] = result[0].toTitleCase();
     }
 
-    if ((rank() == subspecies) || (rank() == variety) || (rank() == hybrid))
+    QStringList split = name().split(blank);
+
+    if (split.count() == 3 &&
+        ((rank() == subspecies) || (rank() == variety) || (rank() == hybrid)))
     {
-        // The scientific name is italisized but ssp, var, x aren't.
-
-        QStringList split = name().split(QLatin1Char(' '));
-
-        if (split.count() == 3)
-        {
-            QString txt = (rank() == subspecies) ? QLatin1String(" ssp. ")
-                                                 : (rank() == variety) ? QLatin1String(" var. ")
-                                                                       : QLatin1String(" x ");
-            result += QLatin1String("<i>") + split[0] + QLatin1Char(' ') +
-                      split[1] + QLatin1String("</i>") + txt +
-                      QLatin1String("<i>") + split[2] + QLatin1String("</i>");
-        }
-        else
-        {
-            Q_ASSERT(split.count() == 4);
-            result += QLatin1String("<i>") + split[0] + QLatin1Char(' ') +
-                      split[1] + QLatin1String("</i>") + QLatin1Char(' ') +
-                      split[2] + QLatin1Char(' ') +
-                      QLatin1String("<i>") + split[3] + QLatin1String("</i>");
-        }
+        QString txt = (rank() == subspecies) ? QLatin1String(" ssp. ")
+                                             : (rank() == variety) ? QLatin1String(" var. ")
+                                                                   : QLatin1String(" x ");
+        result += italicOn + split[0] + blank + split[1] + italicOff + txt +
+                  italicOn + split[2] + italicOff;
+    }
+    else if (split.count() == 4)
+    {
+        result += italicOn + split[0] + blank + split[1] + italicOff + blank +
+                  split[2] + blank + italicOn + split[3] + italicOff;
     }
     else
     {
-        result += QLatin1String("<i>") + name() + QLatin1String("</i>");
+        result += italicOn + name() + italicOff;
     }
 
     return result;

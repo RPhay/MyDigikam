@@ -26,8 +26,8 @@ static NPT_Result
 MapError(DWORD err) {
     switch (err) {
       case ERROR_ALREADY_EXISTS:      return NPT_ERROR_FILE_ALREADY_EXISTS;
-      case ERROR_PATH_NOT_FOUND:    
-      case ERROR_FILE_NOT_FOUND:    
+      case ERROR_PATH_NOT_FOUND:
+      case ERROR_FILE_NOT_FOUND:
       case ERROR_INVALID_DRIVE:
       case ERROR_BAD_PATHNAME:
       case ERROR_BAD_NET_NAME:
@@ -52,7 +52,7 @@ MapError(DWORD err) {
       case ERROR_INVALID_BLOCK:       return NPT_ERROR_OUT_OF_MEMORY;
       case ERROR_DISK_FULL:           return NPT_ERROR_FILE_NOT_ENOUGH_SPACE;
       case ERROR_TOO_MANY_OPEN_FILES: return NPT_ERROR_OUT_OF_RESOURCES;
-      case ERROR_INVALID_HANDLE:      
+      case ERROR_INVALID_HANDLE:
       case ERROR_INVALID_ACCESS:
       case ERROR_INVALID_DATA:        return NPT_ERROR_INVALID_PARAMETERS;
       case ERROR_DIR_NOT_EMPTY:       return NPT_ERROR_DIRECTORY_NOT_EMPTY;
@@ -118,11 +118,11 @@ NPT_File::GetInfo(const char* path, NPT_FileInfo* info)
 	DWORD           attributes = 0;
 	WIN32_FILE_ATTRIBUTE_DATA attribute_data;
 
-	NPT_WINRT_USE_CHAR_CONVERSION; 
+	NPT_WINRT_USE_CHAR_CONVERSION;
 
 	if (0 == GetFileAttributesEx(
-		NPT_WINRT_A2W(path), 
-		GetFileExInfoStandard, 
+		NPT_WINRT_A2W(path),
+		GetFileExInfoStandard,
 		&attribute_data)) {
 		DWORD error_code = GetLastError();
         return NPT_FAILURE;
@@ -188,8 +188,8 @@ NPT_Result
 NPT_File::Rename(const char* from_path, const char* to_path)
 {
     NPT_WINRT_USE_CHAR_CONVERSION;
-	BOOL result = MoveFileEx(NPT_WINRT_A2W(from_path), 
-		                     NPT_WINRT_A2W(to_path), 
+	BOOL result = MoveFileEx(NPT_WINRT_A2W(from_path),
+		                     NPT_WINRT_A2W(to_path),
 							 MOVEFILE_COPY_ALLOWED | MOVEFILE_REPLACE_EXISTING | MOVEFILE_WRITE_THROUGH);
     if (result == 0) {
         return MapError(GetLastError());
@@ -206,7 +206,7 @@ NPT_File_ProcessFindData(WIN32_FIND_DATAW* find_data)
     NPT_WINRT_USE_CHAR_CONVERSION;
 
     // discard system specific files/shortcuts
-    if (NPT_StringsEqual(NPT_WINRT_W2A(find_data->cFileName), ".") || 
+    if (NPT_StringsEqual(NPT_WINRT_W2A(find_data->cFileName), ".") ||
         NPT_StringsEqual(NPT_WINRT_W2A(find_data->cFileName), "..")) {
         return false;
     }
@@ -217,10 +217,10 @@ NPT_File_ProcessFindData(WIN32_FIND_DATAW* find_data)
 /*----------------------------------------------------------------------
 |   NPT_File::ListDir
 +---------------------------------------------------------------------*/
-NPT_Result 
-NPT_File::ListDir(const char*           path, 
-                  NPT_List<NPT_String>& entries, 
-                  NPT_Ordinal           start /* = 0 */, 
+NPT_Result
+NPT_File::ListDir(const char*           path,
+                  NPT_List<NPT_String>& entries,
+                  NPT_Ordinal           start /* = 0 */,
                   NPT_Cardinal          max   /* = 0 */)
 {
     NPT_WINRT_USE_CHAR_CONVERSION;
@@ -241,9 +241,9 @@ NPT_File::ListDir(const char*           path,
 
     // list the entries
     WIN32_FIND_DATAW find_data;
-	HANDLE find_handle = FindFirstFileEx(NPT_WINRT_A2W(path_pattern.GetChars()), 
-			                             FindExInfoStandard, 
-									     &find_data, 
+	HANDLE find_handle = FindFirstFileEx(NPT_WINRT_A2W(path_pattern.GetChars()),
+			                             FindExInfoStandard,
+									     &find_data,
 									     FindExSearchNameMatch,
 									     NULL,
 									     0);

@@ -31,16 +31,16 @@ const char * PerfUtils::GetTimerInfo()
 
 	bool ok = (bool) QueryPerformanceFrequency ( &freq );
 	if ( ! ok ) throw XMP_Error ( kXMPErr_ExternalFailure, "Failure from QueryPerformanceFrequency" );
-	
+
 	if ( freq.HighPart != 0 ) {
 		return "Windows PerfUtils measures finer than nanoseconds, using the QueryPerformanceCounter() timer";
 	}
-	
+
 	double rate = 1.0 / (double)freq.LowPart;
 	_snprintf ( msgBuffer, sizeof(msgBuffer),
 			   "Windows PerfUtils measures %e second, using the QueryPerformanceCounter() timer", rate );
 	return msgBuffer;
-	
+
 }	// PerfUtils::GetTimerInfo
 
 // ------------------------------------------------------------------------------------------------
@@ -65,7 +65,7 @@ double PerfUtils::GetElapsedSeconds ( PerfUtils::MomentValue start, PerfUtils::M
 	if ( ! ok ) throw XMP_Error ( kXMPErr_ExternalFailure, "Failure from QueryPerformanceFrequency" );
 
 	const double scale = (double)freq.QuadPart;
-	
+
 	const double elapsed = (double)(finish - start) / scale;
 	return elapsed;
 
@@ -129,8 +129,8 @@ double PerfUtils::GetElapsedSeconds ( PerfUtils::MomentValue start, PerfUtils::M
 	static mach_timebase_info_data_t sTimebaseInfo;
 	static double sConversionFactor = 0.0;
 	// If this is the first time we've run, get the timebase.
-	// We can use denom == 0 to indicate that sTimebaseInfo is 
-	// uninitialized because it makes no sense to have a zero 
+	// We can use denom == 0 to indicate that sTimebaseInfo is
+	// uninitialized because it makes no sense to have a zero
 	// denominator is a fraction.
 
 	if ( sTimebaseInfo.denom == 0 ) {

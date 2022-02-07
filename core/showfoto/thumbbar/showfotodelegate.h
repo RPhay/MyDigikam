@@ -7,7 +7,7 @@
  * Description : Qt model view for Showfoto item - the delegate
  *
  * Copyright (C) 2013      by Mohamed_Anwer <m_dot_anwer at gmx dot com>
- * Copyright (C) 2013-2021 by Gilles Caulier <caulier dot gilles at gmail dot com>
+ * Copyright (C) 2013-2022 by Gilles Caulier <caulier dot gilles at gmail dot com>
  *
  * This program is free software; you can redistribute it
  * and/or modify it under the terms of the GNU General
@@ -49,13 +49,13 @@ class ShowfotoDelegate : public ShowfotoItemViewDelegate
 public:
 
     explicit ShowfotoDelegate(QObject* const parent = nullptr);
-    ~ShowfotoDelegate() override;
+    ~ShowfotoDelegate()                                                                                override;
 
     void setView(ShowfotoThumbnailBar* view);
 
-    QRect actualPixmapRect(const QModelIndex& index) const;
-    QRect groupIndicatorRect()                       const;
-    QRect coordinatesIndicatorRect()                 const;
+    QRect actualPixmapRect(const QModelIndex& index)                                             const;
+    QRect groupIndicatorRect()                                                                   const;
+    QRect coordinatesIndicatorRect()                                                             const;
 
     int calculatethumbSizeToFit(int ws);
 
@@ -86,7 +86,7 @@ public:
 protected:
 
     bool onActualPixmapRect(const QPoint& pos, const QRect& visualRect,
-                            const QModelIndex& index, QRect* actualRect) const;
+                            const QModelIndex& index, QRect* actualRect)                         const;
     void updateActualPixmapRect(const QModelIndex& index, const QRect& rect);
 
     void setModel(QAbstractItemModel* model);
@@ -105,7 +105,7 @@ protected:
      */
     virtual void updateRects() = 0;
 
-    void clearCaches()               override;
+    void clearCaches()                                                                                 override;
 
     /**
      * Reimplement to clear caches based on model indexes (hash on row number etc.)
@@ -113,10 +113,10 @@ protected:
      */
     virtual void clearModelDataCaches();
 
-    virtual QPixmap thumbnailPixmap(const QModelIndex& index) const;
+    virtual QPixmap thumbnailPixmap(const QModelIndex& index)                                    const;
 
-    void invalidatePaintingCache()   override;
-    void updateSizeRectsAndPixmaps() override;
+    void invalidatePaintingCache()                                                                     override;
+    void updateSizeRectsAndPixmaps()                                                                   override;
 
 protected Q_SLOTS:
 
@@ -137,7 +137,7 @@ class ShowfotoThumbnailDelegate : public ShowfotoDelegate
 public:
 
     explicit ShowfotoThumbnailDelegate(ShowfotoThumbnailBar* const parent);
-    ~ShowfotoThumbnailDelegate() override;
+    ~ShowfotoThumbnailDelegate()                                   override;
 
     void setFlow(QListView::Flow flow);
 
@@ -145,17 +145,19 @@ public:
      * Returns the minimum or maximum viewport size in the limiting dimension,
      * width or height, depending on current flow.
      */
-    int maximumSize() const;
-    int minimumSize() const;
+    int maximumSize()                                        const;
+    int minimumSize()                                        const;
 
     void setDefaultViewOptions(const QStyleOptionViewItem& option) override;
-    bool acceptsActivation(const QPoint& pos, const QRect& visualRect, const QModelIndex& index,
-                                   QRect* activationRect) const override;
+    bool acceptsActivation(const QPoint& pos,
+                           const QRect& visualRect,
+                           const QModelIndex& index,
+                           QRect* activationRect)            const override;
 
 protected:
 
-    void updateContentWidth() override;
-    void updateRects() override;
+    void updateContentWidth()                                      override;
+    void updateRects()                                             override;
     int thumbnailPixmapSize(bool withHighlight, int size);
 
 private:
@@ -178,7 +180,7 @@ public:
 
     explicit ShowfotoNormalDelegate(ShowfotoThumbnailBar* const bar,
                                     QObject* const parent = nullptr);
-    ~ShowfotoNormalDelegate() override;
+    ~ShowfotoNormalDelegate()   override;
 
 protected:
 
@@ -186,7 +188,7 @@ protected:
                            ShowfotoThumbnailBar* const bar,
                            QObject* const parent = nullptr);
 
-    void updateRects() override;
+    void updateRects()          override;
 
 private:
 

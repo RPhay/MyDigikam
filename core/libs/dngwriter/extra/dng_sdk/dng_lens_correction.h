@@ -53,7 +53,7 @@ class dng_warp_params
 		// active area. Each component of fCenter must lie in the range [0,1].
 
 		dng_point_real64 fCenter;
-		
+
 	public:
 
 		/// Create empty (invalid) warp parameters.
@@ -157,7 +157,7 @@ class dng_warp_params
 													 real64 r2,
 													 const dng_point_real64 &diff,
 													 const dng_point_real64 &diff2) const = 0;
-		
+
 		/// Evaluate the 2D tangential warp for the specified plane. diff
 		/// contains the vertical and horizontal Euclidean distances (in pixels)
 		/// between the destination (i.e., corrected) pixel position and the
@@ -166,7 +166,7 @@ class dng_warp_params
 
 		dng_point_real64 EvaluateTangential2 (uint32 plane,
 											  const dng_point_real64 &diff) const;
-		
+
 		/// Evaluate the 2D tangential warp for the specified plane. Parameter
 		/// r2 is the square of the destination (i.e., corrected) normalized
 		/// radius, i.e., the square of the normalized Euclidean distance
@@ -444,7 +444,7 @@ class dng_warp_params_fisheye: public dng_warp_params
 													 real64 r2,
 													 const dng_point_real64 &diff,
 													 const dng_point_real64 &diff2) const;
-		
+
 		virtual real64 MaxSrcRadiusGap (real64 maxDstGap) const;
 
 		virtual dng_point_real64 MaxSrcTanGap (dng_point_real64 minDst,
@@ -464,24 +464,24 @@ class dng_warp_params_fisheye: public dng_warp_params
 
 class dng_opcode_WarpRectilinear: public dng_opcode
 	{
-		
+
 	protected:
 
 		dng_warp_params_rectilinear fWarpParams;
 
 	public:
-	
+
 		dng_opcode_WarpRectilinear (const dng_warp_params_rectilinear &params,
 									uint32 flags);
-		
+
 		explicit dng_opcode_WarpRectilinear (dng_stream &stream);
-	
+
 		// Overridden methods.
 
 		virtual bool IsNOP () const;
-		
+
 		virtual bool IsValidForNegative (const dng_negative &negative) const;
-	
+
 		virtual void PutData (dng_stream &stream) const;
 
 		virtual void Apply (dng_host &host,
@@ -511,24 +511,24 @@ class dng_opcode_WarpRectilinear: public dng_opcode
 
 class dng_opcode_WarpFisheye: public dng_opcode
 	{
-		
+
 	protected:
 
 		dng_warp_params_fisheye fWarpParams;
 
 	public:
-	
+
 		dng_opcode_WarpFisheye (const dng_warp_params_fisheye &params,
 								uint32 flags);
-		
+
 		explicit dng_opcode_WarpFisheye (dng_stream &stream);
-	
+
 		// Overridden methods.
 
 		virtual bool IsNOP () const;
-		
+
 		virtual bool IsValidForNegative (const dng_negative &negative) const;
-	
+
 		virtual void PutData (dng_stream &stream) const;
 
 		virtual void Apply (dng_host &host,
@@ -598,7 +598,7 @@ class dng_vignette_radial_params
 
 class dng_opcode_FixVignetteRadial: public dng_inplace_opcode
 	{
-		
+
 	protected:
 
 		dng_vignette_radial_params fParams;
@@ -607,10 +607,10 @@ class dng_opcode_FixVignetteRadial: public dng_inplace_opcode
 
 		int64 fSrcOriginH;
 		int64 fSrcOriginV;
-		
+
 		int64 fSrcStepH;
 		int64 fSrcStepV;
-		
+
 		uint32 fTableInputBits;
 		uint32 fTableOutputBits;
 
@@ -619,28 +619,28 @@ class dng_opcode_FixVignetteRadial: public dng_inplace_opcode
 		AutoPtr<dng_memory_block> fMaskBuffers [kMaxMPThreads];
 
 	public:
-	
+
 		dng_opcode_FixVignetteRadial (const dng_vignette_radial_params &params,
 									  uint32 flags);
-		
+
 		explicit dng_opcode_FixVignetteRadial (dng_stream &stream);
-	
+
 		const dng_vignette_radial_params & Params () const
 			{
 			return fParams;
 			}
 
 		virtual bool IsNOP () const;
-		
+
 		virtual bool IsValidForNegative (const dng_negative &) const;
-	
+
 		virtual void PutData (dng_stream &stream) const;
 
 		virtual uint32 BufferPixelType (uint32 /* imagePixelType */)
 			{
 			return ttFloat;
 			}
-			
+
 		virtual void Prepare (dng_negative &negative,
 							  uint32 threadCount,
 							  const dng_point &tileSize,
@@ -666,5 +666,5 @@ class dng_opcode_FixVignetteRadial: public dng_inplace_opcode
 /*****************************************************************************/
 
 #endif
-	
+
 /*****************************************************************************/

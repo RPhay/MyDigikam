@@ -1,6 +1,6 @@
 # Script to build KF5 Frameworks for digiKam bundle.
 #
-# Copyright (c) 2015-2021 by Gilles Caulier  <caulier dot gilles at gmail dot com>
+# Copyright (c) 2015-2022 by Gilles Caulier  <caulier dot gilles at gmail dot com>
 #
 # Redistribution and use is allowed according to the terms of the BSD license.
 # For details see the accompanying COPYING-CMAKE-SCRIPTS file.
@@ -185,14 +185,6 @@ function(InstallKF5Component
 
 endfunction()
 
-if(MINGW)
-    set(KF5_VERSION 5.84) # we have Qt 5.14.2 available.
-elseif(APPLE)
-    set(KF5_VERSION 5.84) # we have Qt 5.14.1 available.
-else()
-    set(KF5_VERSION 5.84) # we have Qt 5.14.2 available.
-endif()
-
 if(APPLE)
     set(MacosThreadWeaverPatch threadweaver-macports.patch)
     set(MacosKauthBackend -DKAUTH_BACKEND_NAME=Apple)
@@ -200,20 +192,26 @@ else()
     set(KCalendarCorePatch kcalendarcore-libical.patch)
 endif()
 
+if(MINGW)
+    set(BreezeIconsOptions -DBINARY_ICONS_RESOURCE=OFF)
+else()
+    set(BreezeIconsOptions -DBINARY_ICONS_RESOURCE=ON)
+endif()
+
 InstallKF5Component(extra-cmake-modules ${KF5_VERSION} ""                                                                   "")
 InstallKF5Component(kconfig             ${KF5_VERSION} ""                                                                   "")
-InstallKF5Component(breeze-icons        ${KF5_VERSION} "-DBINARY_ICONS_RESOURCE=OFF"                                        "breeze-icons-drop-svg.patch")
+InstallKF5Component(breeze-icons        ${KF5_VERSION} "${BreezeIconsOptions}"                                              "breeze-dropsvg-rccprefix.patch")
 InstallKF5Component(solid               ${KF5_VERSION} ""                                                                   "")
 InstallKF5Component(kcoreaddons         ${KF5_VERSION} ""                                                                   "")
 InstallKF5Component(threadweaver        ${KF5_VERSION} ""                                                                   "${MacosThreadWeaverPatch}")
 InstallKF5Component(kwindowsystem       ${KF5_VERSION} ""                                                                   "")
-InstallKF5Component(karchive            ${KF5_VERSION} ""                                                                   "karchive-drop-zstd.patch")
+InstallKF5Component(karchive            ${KF5_VERSION} ""                                                                   "")
 InstallKF5Component(kdbusaddons         ${KF5_VERSION} ""                                                                   "")
 InstallKF5Component(ki18n               ${KF5_VERSION} ""                                                                   "")
 InstallKF5Component(kcrash              ${KF5_VERSION} ""                                                                   "")
 InstallKF5Component(kcodecs             ${KF5_VERSION} ""                                                                   "")
 InstallKF5Component(kauth               ${KF5_VERSION} "${MacosKauthBackend}"                                               "")
-InstallKF5Component(kguiaddons          ${KF5_VERSION} ""                                                                   "kguiaddons-drop-wayland.patch")
+InstallKF5Component(kguiaddons          ${KF5_VERSION} ""                                                                   "kguiaddons-mingw.patch")
 InstallKF5Component(kwidgetsaddons      ${KF5_VERSION} ""                                                                   "")
 InstallKF5Component(kitemviews          ${KF5_VERSION} ""                                                                   "")
 InstallKF5Component(kcompletion         ${KF5_VERSION} ""                                                                   "")

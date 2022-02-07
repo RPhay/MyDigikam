@@ -15,13 +15,22 @@ include_directories($<TARGET_PROPERTY:Qt5::Widgets,INTERFACE_INCLUDE_DIRECTORIES
 
                     $<TARGET_PROPERTY:KF5::I18n,INTERFACE_INCLUDE_DIRECTORIES>
                     $<TARGET_PROPERTY:KF5::ConfigCore,INTERFACE_INCLUDE_DIRECTORIES>
+                    $<TARGET_PROPERTY:KF5::XmlGui,INTERFACE_INCLUDE_DIRECTORIES>
 )
 
 set(libmjpegstream_SRCS
+    ${CMAKE_CURRENT_SOURCE_DIR}/mjpegstreamdlg.cpp
+    ${CMAKE_CURRENT_SOURCE_DIR}/mjpegstreamdlg_p.cpp
+    ${CMAKE_CURRENT_SOURCE_DIR}/mjpegstreamdlg_settings.cpp
+    ${CMAKE_CURRENT_SOURCE_DIR}/mjpegstreamdlg_server.cpp
+    ${CMAKE_CURRENT_SOURCE_DIR}/mjpegstreamdlg_views.cpp
     ${CMAKE_CURRENT_SOURCE_DIR}/mjpegframethread.cpp
+    ${CMAKE_CURRENT_SOURCE_DIR}/mjpegframetask.cpp
+    ${CMAKE_CURRENT_SOURCE_DIR}/mjpegframeosd.cpp
     ${CMAKE_CURRENT_SOURCE_DIR}/mjpegserver.cpp
     ${CMAKE_CURRENT_SOURCE_DIR}/mjpegserver_p.cpp
     ${CMAKE_CURRENT_SOURCE_DIR}/mjpegservermngr.cpp
+    ${CMAKE_CURRENT_SOURCE_DIR}/mjpegstreamsettings.cpp
 )
 
 # For Unit-tests and plugin
@@ -42,10 +51,19 @@ target_link_libraries(mjpegstreambackend
                       digikamcore
 )
 
+if(WIN32)
+
+    target_link_libraries(mjpegstreambackend
+                          PRIVATE
+                          wsock32
+                          ws2_32
+    )
+
+endif()
+
 # ---------------------------------------------------------------------------------------------------
 
 set(mjpegstreamplugin_SRCS
-    ${CMAKE_CURRENT_SOURCE_DIR}/mjpegstreamdlg.cpp
     ${CMAKE_CURRENT_SOURCE_DIR}/mjpegstreamplugin.cpp
 )
 

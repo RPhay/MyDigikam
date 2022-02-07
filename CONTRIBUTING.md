@@ -20,7 +20,7 @@ For the todo list, see bugzilla for details which is the complete story of the p
 
 CODING STYLE
 
-See the coding style detailled at this [Doxygen page](https://www.digikam.org/api/index.html#codecontrib).
+See the coding style detailed at this [Doxygen page](https://www.digikam.org/api/index.html#codecontrib).
 
 DOCUMENTATION
 

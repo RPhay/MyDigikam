@@ -60,7 +60,7 @@
 /*----------------------------------------------------------------------
 |   constants
 +---------------------------------------------------------------------*/
-static const NPT_String 
+static const NPT_String
 NPT_XmlNamespaceUri_Xml("http://www.w3.org/XML/1998/namespace");
 
 /*----------------------------------------------------------------------
@@ -72,9 +72,9 @@ public:
     // if 'namespc' is NULL, we're looking for ANY namespace
     // if 'namespc' is '\0', we're looking for NO namespace
     // if 'namespc' is non-empty, look for that SPECIFIC namespace
-    NPT_XmlAttributeFinder(const NPT_XmlElementNode& element, 
-                           const char*               name, 
-                           const char*               namespc) : 
+    NPT_XmlAttributeFinder(const NPT_XmlElementNode& element,
+                           const char*               name,
+                           const char*               namespc) :
       m_Element(element), m_Name(name), m_Namespace(namespc) {}
 
     bool operator()(const NPT_XmlAttribute* const & attribute) const {
@@ -116,7 +116,7 @@ private:
 class NPT_XmlAttributeFinderWithPrefix
 {
 public:
-    NPT_XmlAttributeFinderWithPrefix(const char* prefix, const char* name) : 
+    NPT_XmlAttributeFinderWithPrefix(const char* prefix, const char* name) :
       m_Prefix(prefix?prefix:""), m_Name(name) {}
 
     bool operator()(const NPT_XmlAttribute* const & attribute) const {
@@ -137,7 +137,7 @@ public:
     // if 'namespc' is NULL, we're looking for ANY namespace
     // if 'namespc' is '\0', we're looking for NO namespace
     // if 'namespc' is non-empty, look for that SPECIFIC namespace
-    NPT_XmlTagFinder(const char* tag, const char* namespc) : 
+    NPT_XmlTagFinder(const char* tag, const char* namespc) :
       m_Tag(tag), m_Namespace(namespc) {}
 
     bool operator()(const NPT_XmlNode* const & node) const {
@@ -186,7 +186,7 @@ public:
 class NPT_XmlNamespaceCollapser
 {
 public:
-    NPT_XmlNamespaceCollapser(NPT_XmlElementNode* element) : 
+    NPT_XmlNamespaceCollapser(NPT_XmlElementNode* element) :
       m_Root(element) {}
 
     void operator()(NPT_XmlNode*& node) const {
@@ -220,7 +220,7 @@ private:
 |   NPT_XmlNamespaceCollapser::CollapseNamespace
 +---------------------------------------------------------------------*/
 void
-NPT_XmlNamespaceCollapser::CollapseNamespace(NPT_XmlElementNode* element, 
+NPT_XmlNamespaceCollapser::CollapseNamespace(NPT_XmlElementNode* element,
                                              const NPT_String&   prefix) const
 {
     if (m_Root->m_NamespaceMap == NULL ||
@@ -305,8 +305,8 @@ NPT_XmlElementNode::SetParent(NPT_XmlNode* parent)
         parent?parent->AsElementNode():NULL;
     NPT_XmlElementNode* namespace_parent;
     if (parent_element) {
-        namespace_parent = 
-            parent_element->m_NamespaceMap ? 
+        namespace_parent =
+            parent_element->m_NamespaceMap ?
             parent_element:
             parent_element->m_NamespaceParent;
     } else {
@@ -353,7 +353,7 @@ NPT_XmlElementNode::GetChild(const char* tag, const char* namespc, NPT_Ordinal n
 |   NPT_XmlElementNode::AddAttribute
 +---------------------------------------------------------------------*/
 NPT_Result
-NPT_XmlElementNode::AddAttribute(const char* name, 
+NPT_XmlElementNode::AddAttribute(const char* name,
                                  const char* value)
 {
     if (name == NULL || value == NULL) return NPT_ERROR_INVALID_PARAMETERS;
@@ -365,7 +365,7 @@ NPT_XmlElementNode::AddAttribute(const char* name,
 +---------------------------------------------------------------------*/
 NPT_Result
 NPT_XmlElementNode::SetAttribute(const char* prefix,
-                                 const char* name, 
+                                 const char* name,
                                  const char* value)
 {
     if (name == NULL || value == NULL) return NPT_ERROR_INVALID_PARAMETERS;
@@ -374,9 +374,9 @@ NPT_XmlElementNode::SetAttribute(const char* prefix,
     NPT_List<NPT_XmlAttribute*>::Iterator attribute;
     attribute = m_Attributes.Find(NPT_XmlAttributeFinderWithPrefix(prefix, name));
     if (attribute) {
-        // an attribute with this name and prefix already exists, 
+        // an attribute with this name and prefix already exists,
         // change its value
-        (*attribute)->SetValue(value); 
+        (*attribute)->SetValue(value);
         return NPT_SUCCESS;
     }
     return m_Attributes.Add(new NPT_XmlAttribute(prefix, name, value));
@@ -408,7 +408,7 @@ NPT_XmlElementNode::GetAttribute(const char* name, const char* namespc) const
     // find the attribute
     NPT_List<NPT_XmlAttribute*>::Iterator attribute;
     attribute = m_Attributes.Find(NPT_XmlAttributeFinder(*this, name, namespc));
-    if (attribute) { 
+    if (attribute) {
         return &(*attribute)->GetValue();
     } else {
         return NULL;
@@ -514,16 +514,16 @@ NPT_XmlElementNode::GetNamespaceUri(const char* prefix) const
                 return namespc;
             }
         }
-    } 
+    }
 
     // look into our parent's namespace map
     if (m_NamespaceParent) {
         return m_NamespaceParent->GetNamespaceUri(prefix);
     } else {
         // check if this is a well-known namespace
-        if (prefix[0] == 'x' && 
-            prefix[1] == 'm' && 
-            prefix[2] == 'l' && 
+        if (prefix[0] == 'x' &&
+            prefix[1] == 'm' &&
+            prefix[2] == 'l' &&
             prefix[3] == '\0') {
             return &NPT_XmlNamespaceUri_Xml;
         }
@@ -548,8 +548,8 @@ NPT_XmlElementNode::GetNamespace() const
 const NPT_String*
 NPT_XmlElementNode::GetNamespacePrefix(const char* uri) const
 {
-    NPT_XmlNamespaceMap* namespace_map = 
-        m_NamespaceMap? 
+    NPT_XmlNamespaceMap* namespace_map =
+        m_NamespaceMap?
         m_NamespaceMap:
         (m_NamespaceParent?
          m_NamespaceParent->m_NamespaceMap:
@@ -693,7 +693,7 @@ NPT_XmlAccumulator::AppendUTF8(unsigned int c)
 inline const char*
 NPT_XmlAccumulator::GetString()
 {
-    // ensure that the buffer is NULL terminated 
+    // ensure that the buffer is NULL terminated
     Allocate(m_Valid+1);
     m_Buffer[m_Valid] = '\0';
     return (const char*)m_Buffer;
@@ -779,38 +779,38 @@ NPT_XmlNamespaceMap::GetNamespacePrefix(const char* uri)
 #if defined(NPT_XML_USE_CHAR_MAP)
 // NOTE: this table is generated by the ruby script 'XmlCharMap.rb'
 static const unsigned char NPT_XmlCharMap[256] = {
-                   0, //   0 0x00 
-                   0, //   1 0x01 
-                   0, //   2 0x02 
-                   0, //   3 0x03 
-                   0, //   4 0x04 
-                   0, //   5 0x05 
-                   0, //   6 0x06 
-                   0, //   7 0x07 
-                   0, //   8 0x08 
-            1|2|8|16, //   9 0x09 
-            1|2|8|16, //  10 0x0a 
-                   0, //  11 0x0b 
-                   0, //  12 0x0c 
-            1|2|8|16, //  13 0x0d 
-                   0, //  14 0x0e 
-                   0, //  15 0x0f 
-                   0, //  16 0x10 
-                   0, //  17 0x11 
-                   0, //  18 0x12 
-                   0, //  19 0x13 
-                   0, //  20 0x14 
-                   0, //  21 0x15 
-                   0, //  22 0x16 
-                   0, //  23 0x17 
-                   0, //  24 0x18 
-                   0, //  25 0x19 
-                   0, //  26 0x1a 
-                   0, //  27 0x1b 
-                   0, //  28 0x1c 
-                   0, //  29 0x1d 
-                   0, //  30 0x1e 
-                   0, //  31 0x1f 
+                   0, //   0 0x00
+                   0, //   1 0x01
+                   0, //   2 0x02
+                   0, //   3 0x03
+                   0, //   4 0x04
+                   0, //   5 0x05
+                   0, //   6 0x06
+                   0, //   7 0x07
+                   0, //   8 0x08
+            1|2|8|16, //   9 0x09
+            1|2|8|16, //  10 0x0a
+                   0, //  11 0x0b
+                   0, //  12 0x0c
+            1|2|8|16, //  13 0x0d
+                   0, //  14 0x0e
+                   0, //  15 0x0f
+                   0, //  16 0x10
+                   0, //  17 0x11
+                   0, //  18 0x12
+                   0, //  19 0x13
+                   0, //  20 0x14
+                   0, //  21 0x15
+                   0, //  22 0x16
+                   0, //  23 0x17
+                   0, //  24 0x18
+                   0, //  25 0x19
+                   0, //  26 0x1a
+                   0, //  27 0x1b
+                   0, //  28 0x1c
+                   0, //  29 0x1d
+                   0, //  30 0x1e
+                   0, //  31 0x1f
             1|2|8|16, //  32 0x20 ' '
               1|8|16, //  33 0x21 '!'
               1|8|16, //  34 0x22 '"'
@@ -906,135 +906,135 @@ static const unsigned char NPT_XmlCharMap[256] = {
               1|8|16, // 124 0x7c '|'
               1|8|16, // 125 0x7d '}'
               1|8|16, // 126 0x7e '~'
-              1|8|16, // 127 0x7f 
-              1|8|16, // 128 0x80 
-              1|8|16, // 129 0x81 
-              1|8|16, // 130 0x82 
-              1|8|16, // 131 0x83 
-              1|8|16, // 132 0x84 
-              1|8|16, // 133 0x85 
-              1|8|16, // 134 0x86 
-              1|8|16, // 135 0x87 
-              1|8|16, // 136 0x88 
-              1|8|16, // 137 0x89 
-              1|8|16, // 138 0x8a 
-              1|8|16, // 139 0x8b 
-              1|8|16, // 140 0x8c 
-              1|8|16, // 141 0x8d 
-              1|8|16, // 142 0x8e 
-              1|8|16, // 143 0x8f 
-              1|8|16, // 144 0x90 
-              1|8|16, // 145 0x91 
-              1|8|16, // 146 0x92 
-              1|8|16, // 147 0x93 
-              1|8|16, // 148 0x94 
-              1|8|16, // 149 0x95 
-              1|8|16, // 150 0x96 
-              1|8|16, // 151 0x97 
-              1|8|16, // 152 0x98 
-              1|8|16, // 153 0x99 
-              1|8|16, // 154 0x9a 
-              1|8|16, // 155 0x9b 
-              1|8|16, // 156 0x9c 
-              1|8|16, // 157 0x9d 
-              1|8|16, // 158 0x9e 
-              1|8|16, // 159 0x9f 
-              1|8|16, // 160 0xa0 
-              1|8|16, // 161 0xa1 
-              1|8|16, // 162 0xa2 
-              1|8|16, // 163 0xa3 
-              1|8|16, // 164 0xa4 
-              1|8|16, // 165 0xa5 
-              1|8|16, // 166 0xa6 
-              1|8|16, // 167 0xa7 
-              1|8|16, // 168 0xa8 
-              1|8|16, // 169 0xa9 
-              1|8|16, // 170 0xaa 
-              1|8|16, // 171 0xab 
-              1|8|16, // 172 0xac 
-              1|8|16, // 173 0xad 
-              1|8|16, // 174 0xae 
-              1|8|16, // 175 0xaf 
-              1|8|16, // 176 0xb0 
-              1|8|16, // 177 0xb1 
-              1|8|16, // 178 0xb2 
-              1|8|16, // 179 0xb3 
-              1|8|16, // 180 0xb4 
-              1|8|16, // 181 0xb5 
-              1|8|16, // 182 0xb6 
-              1|8|16, // 183 0xb7 
-              1|8|16, // 184 0xb8 
-              1|8|16, // 185 0xb9 
-              1|8|16, // 186 0xba 
-              1|8|16, // 187 0xbb 
-              1|8|16, // 188 0xbc 
-              1|8|16, // 189 0xbd 
-              1|8|16, // 190 0xbe 
-              1|8|16, // 191 0xbf 
-            1|4|8|16, // 192 0xc0 
-            1|4|8|16, // 193 0xc1 
-            1|4|8|16, // 194 0xc2 
-            1|4|8|16, // 195 0xc3 
-            1|4|8|16, // 196 0xc4 
-            1|4|8|16, // 197 0xc5 
-            1|4|8|16, // 198 0xc6 
-            1|4|8|16, // 199 0xc7 
-            1|4|8|16, // 200 0xc8 
-            1|4|8|16, // 201 0xc9 
-            1|4|8|16, // 202 0xca 
-            1|4|8|16, // 203 0xcb 
-            1|4|8|16, // 204 0xcc 
-            1|4|8|16, // 205 0xcd 
-            1|4|8|16, // 206 0xce 
-            1|4|8|16, // 207 0xcf 
-            1|4|8|16, // 208 0xd0 
-            1|4|8|16, // 209 0xd1 
-            1|4|8|16, // 210 0xd2 
-            1|4|8|16, // 211 0xd3 
-            1|4|8|16, // 212 0xd4 
-            1|4|8|16, // 213 0xd5 
-            1|4|8|16, // 214 0xd6 
-              1|8|16, // 215 0xd7 
-            1|4|8|16, // 216 0xd8 
-            1|4|8|16, // 217 0xd9 
-            1|4|8|16, // 218 0xda 
-            1|4|8|16, // 219 0xdb 
-            1|4|8|16, // 220 0xdc 
-            1|4|8|16, // 221 0xdd 
-            1|4|8|16, // 222 0xde 
-            1|4|8|16, // 223 0xdf 
-            1|4|8|16, // 224 0xe0 
-            1|4|8|16, // 225 0xe1 
-            1|4|8|16, // 226 0xe2 
-            1|4|8|16, // 227 0xe3 
-            1|4|8|16, // 228 0xe4 
-            1|4|8|16, // 229 0xe5 
-            1|4|8|16, // 230 0xe6 
-            1|4|8|16, // 231 0xe7 
-            1|4|8|16, // 232 0xe8 
-            1|4|8|16, // 233 0xe9 
-            1|4|8|16, // 234 0xea 
-            1|4|8|16, // 235 0xeb 
-            1|4|8|16, // 236 0xec 
-            1|4|8|16, // 237 0xed 
-            1|4|8|16, // 238 0xee 
-            1|4|8|16, // 239 0xef 
-            1|4|8|16, // 240 0xf0 
-            1|4|8|16, // 241 0xf1 
-            1|4|8|16, // 242 0xf2 
-            1|4|8|16, // 243 0xf3 
-            1|4|8|16, // 244 0xf4 
-            1|4|8|16, // 245 0xf5 
-            1|4|8|16, // 246 0xf6 
-              1|8|16, // 247 0xf7 
-            1|4|8|16, // 248 0xf8 
-            1|4|8|16, // 249 0xf9 
-            1|4|8|16, // 250 0xfa 
-            1|4|8|16, // 251 0xfb 
-            1|4|8|16, // 252 0xfc 
-            1|4|8|16, // 253 0xfd 
-            1|4|8|16, // 254 0xfe 
-            1|4|8|16  // 255 0xff 
+              1|8|16, // 127 0x7f
+              1|8|16, // 128 0x80
+              1|8|16, // 129 0x81
+              1|8|16, // 130 0x82
+              1|8|16, // 131 0x83
+              1|8|16, // 132 0x84
+              1|8|16, // 133 0x85
+              1|8|16, // 134 0x86
+              1|8|16, // 135 0x87
+              1|8|16, // 136 0x88
+              1|8|16, // 137 0x89
+              1|8|16, // 138 0x8a
+              1|8|16, // 139 0x8b
+              1|8|16, // 140 0x8c
+              1|8|16, // 141 0x8d
+              1|8|16, // 142 0x8e
+              1|8|16, // 143 0x8f
+              1|8|16, // 144 0x90
+              1|8|16, // 145 0x91
+              1|8|16, // 146 0x92
+              1|8|16, // 147 0x93
+              1|8|16, // 148 0x94
+              1|8|16, // 149 0x95
+              1|8|16, // 150 0x96
+              1|8|16, // 151 0x97
+              1|8|16, // 152 0x98
+              1|8|16, // 153 0x99
+              1|8|16, // 154 0x9a
+              1|8|16, // 155 0x9b
+              1|8|16, // 156 0x9c
+              1|8|16, // 157 0x9d
+              1|8|16, // 158 0x9e
+              1|8|16, // 159 0x9f
+              1|8|16, // 160 0xa0
+              1|8|16, // 161 0xa1
+              1|8|16, // 162 0xa2
+              1|8|16, // 163 0xa3
+              1|8|16, // 164 0xa4
+              1|8|16, // 165 0xa5
+              1|8|16, // 166 0xa6
+              1|8|16, // 167 0xa7
+              1|8|16, // 168 0xa8
+              1|8|16, // 169 0xa9
+              1|8|16, // 170 0xaa
+              1|8|16, // 171 0xab
+              1|8|16, // 172 0xac
+              1|8|16, // 173 0xad
+              1|8|16, // 174 0xae
+              1|8|16, // 175 0xaf
+              1|8|16, // 176 0xb0
+              1|8|16, // 177 0xb1
+              1|8|16, // 178 0xb2
+              1|8|16, // 179 0xb3
+              1|8|16, // 180 0xb4
+              1|8|16, // 181 0xb5
+              1|8|16, // 182 0xb6
+              1|8|16, // 183 0xb7
+              1|8|16, // 184 0xb8
+              1|8|16, // 185 0xb9
+              1|8|16, // 186 0xba
+              1|8|16, // 187 0xbb
+              1|8|16, // 188 0xbc
+              1|8|16, // 189 0xbd
+              1|8|16, // 190 0xbe
+              1|8|16, // 191 0xbf
+            1|4|8|16, // 192 0xc0
+            1|4|8|16, // 193 0xc1
+            1|4|8|16, // 194 0xc2
+            1|4|8|16, // 195 0xc3
+            1|4|8|16, // 196 0xc4
+            1|4|8|16, // 197 0xc5
+            1|4|8|16, // 198 0xc6
+            1|4|8|16, // 199 0xc7
+            1|4|8|16, // 200 0xc8
+            1|4|8|16, // 201 0xc9
+            1|4|8|16, // 202 0xca
+            1|4|8|16, // 203 0xcb
+            1|4|8|16, // 204 0xcc
+            1|4|8|16, // 205 0xcd
+            1|4|8|16, // 206 0xce
+            1|4|8|16, // 207 0xcf
+            1|4|8|16, // 208 0xd0
+            1|4|8|16, // 209 0xd1
+            1|4|8|16, // 210 0xd2
+            1|4|8|16, // 211 0xd3
+            1|4|8|16, // 212 0xd4
+            1|4|8|16, // 213 0xd5
+            1|4|8|16, // 214 0xd6
+              1|8|16, // 215 0xd7
+            1|4|8|16, // 216 0xd8
+            1|4|8|16, // 217 0xd9
+            1|4|8|16, // 218 0xda
+            1|4|8|16, // 219 0xdb
+            1|4|8|16, // 220 0xdc
+            1|4|8|16, // 221 0xdd
+            1|4|8|16, // 222 0xde
+            1|4|8|16, // 223 0xdf
+            1|4|8|16, // 224 0xe0
+            1|4|8|16, // 225 0xe1
+            1|4|8|16, // 226 0xe2
+            1|4|8|16, // 227 0xe3
+            1|4|8|16, // 228 0xe4
+            1|4|8|16, // 229 0xe5
+            1|4|8|16, // 230 0xe6
+            1|4|8|16, // 231 0xe7
+            1|4|8|16, // 232 0xe8
+            1|4|8|16, // 233 0xe9
+            1|4|8|16, // 234 0xea
+            1|4|8|16, // 235 0xeb
+            1|4|8|16, // 236 0xec
+            1|4|8|16, // 237 0xed
+            1|4|8|16, // 238 0xee
+            1|4|8|16, // 239 0xef
+            1|4|8|16, // 240 0xf0
+            1|4|8|16, // 241 0xf1
+            1|4|8|16, // 242 0xf2
+            1|4|8|16, // 243 0xf3
+            1|4|8|16, // 244 0xf4
+            1|4|8|16, // 245 0xf5
+            1|4|8|16, // 246 0xf6
+              1|8|16, // 247 0xf7
+            1|4|8|16, // 248 0xf8
+            1|4|8|16, // 249 0xf9
+            1|4|8|16, // 250 0xfa
+            1|4|8|16, // 251 0xfb
+            1|4|8|16, // 252 0xfc
+            1|4|8|16, // 253 0xfd
+            1|4|8|16, // 254 0xfe
+            1|4|8|16  // 255 0xff
 };
 #endif // defined(NPT_XML_USE_CHAR_MAP)
 
@@ -1101,7 +1101,7 @@ public:
     // methods
     NPT_Result ProcessBuffer(const char* buffer, NPT_Size size);
     void       Reset();
-    
+
 private:
     // types
     typedef enum {
@@ -1198,18 +1198,18 @@ private:
 #endif /* NPT_XML_PARSER_DEBUG */
 
     inline void SetState(State state) {
-        NPT_XML_Debug_3("\nstate transition: %s to %s [ctx=%s]\n", 
-                        StateName(m_State), 
+        NPT_XML_Debug_3("\nstate transition: %s to %s [ctx=%s]\n",
+                        StateName(m_State),
                         StateName(state),
                         ContextName(m_Context));
         m_State = state;
     }
 
     inline void SetState(State state, Context context) {
-        NPT_XML_Debug_4("\nstate transition: %s [ctx=%s] to %s [ctx=%s]\n", 
-                        StateName(m_State), 
+        NPT_XML_Debug_4("\nstate transition: %s [ctx=%s] to %s [ctx=%s]\n",
+                        StateName(m_State),
                         ContextName(m_Context),
-                        StateName(state), 
+                        StateName(state),
                         ContextName(context));
         m_State = state;
         m_Context = context;
@@ -1245,12 +1245,12 @@ NPT_XmlProcessor::Reset()
 /*----------------------------------------------------------------------
 |   NPT_XmlProcessor::ResolveEntity
 +---------------------------------------------------------------------*/
-NPT_Result 
+NPT_Result
 NPT_XmlProcessor::ResolveEntity(NPT_XmlAccumulator& source,
                                 NPT_XmlAccumulator& destination)
 {
     const char* entity = (const char*)source.GetString();
-    
+
     if (NPT_StringsEqual(entity, "lt")) {
         destination.Append('<');
     } else if (NPT_StringsEqual(entity, "gt")) {
@@ -1292,14 +1292,14 @@ NPT_XmlProcessor::ResolveEntity(NPT_XmlAccumulator& source,
         // unknown entity, leave as-is
         destination.Append(source.GetString());
     }
-    
+
     return NPT_SUCCESS;
 }
 
 /*----------------------------------------------------------------------
 |   NPT_XmlProcessor::FlushPendingText
 +---------------------------------------------------------------------*/
-NPT_Result 
+NPT_Result
 NPT_XmlProcessor::FlushPendingText()
 {
     if (m_Text.GetSize() > 0) {
@@ -1345,21 +1345,21 @@ NPT_XmlProcessor::ProcessBuffer(const char* buffer, NPT_Size size)
                 break;
             }
             return NPT_ERROR_INVALID_SYNTAX;
-            
+
           case STATE_IN_BOM_EF:
             if (c == 0xBB) {
                 SetState(STATE_IN_BOM_BB);
                 break;
             }
             return NPT_ERROR_INVALID_SYNTAX;
-            
+
           case STATE_IN_BOM_BB:
             if (c == 0xBF) {
                 SetState(STATE_IN_WHITESPACE);
                 break;
             }
             return NPT_ERROR_INVALID_SYNTAX;
-                        
+
           case STATE_IN_WHITESPACE:
             if (NPT_XML_CHAR_IS_WHITESPACE(c)) break;
             switch (m_Context) {
@@ -1370,7 +1370,7 @@ NPT_XmlProcessor::ProcessBuffer(const char* buffer, NPT_Size size)
                     return NPT_ERROR_INVALID_SYNTAX;
                 }
                 break;
-                
+
               case CONTEXT_ATTRIBUTE:
                 if (c == '/') {
                     SetState(STATE_IN_EMPTY_TAG_END, CONTEXT_NONE);
@@ -1503,7 +1503,7 @@ NPT_XmlProcessor::ProcessBuffer(const char* buffer, NPT_Size size)
             break;
 
           case STATE_IN_VALUE:
-            if ((c == '"'  && m_Context == CONTEXT_VALUE_DOUBLE_QUOTE) || 
+            if ((c == '"'  && m_Context == CONTEXT_VALUE_DOUBLE_QUOTE) ||
                 (c == '\'' && m_Context == CONTEXT_VALUE_SINGLE_QUOTE)) {
                 NPT_CHECK(m_Parser->OnElementAttribute(m_Name.GetString(),
                                                        m_Value.GetString()));
@@ -1570,7 +1570,7 @@ NPT_XmlProcessor::ProcessBuffer(const char* buffer, NPT_Size size)
                     return NPT_ERROR_INVALID_SYNTAX;
                 }
                 break;
-                
+
               default:
                 return NPT_ERROR_INVALID_SYNTAX;
             }
@@ -1690,7 +1690,7 @@ NPT_XmlProcessor::ProcessBuffer(const char* buffer, NPT_Size size)
     }
 
     return NPT_SUCCESS;
-}       
+}
 
 /*----------------------------------------------------------------------
 |   NPT_XmlParser::NPT_XmlParser
@@ -1719,16 +1719,16 @@ NPT_XmlParser::~NPT_XmlParser()
 void
 NPT_XmlParser::Reset()
 {
-    // delete anything that has been created 
-    NPT_XmlNode* walker = m_CurrentElement; 
-    while (walker && walker->GetParent()) { 
-        walker = walker->GetParent(); 
-    } 
-    delete walker; 
-    m_CurrentElement = NULL; 
-    
+    // delete anything that has been created
+    NPT_XmlNode* walker = m_CurrentElement;
+    while (walker && walker->GetParent()) {
+        walker = walker->GetParent();
+    }
+    delete walker;
+    m_CurrentElement = NULL;
+
     m_Processor->Reset();
-    
+
     m_Root = NULL;
 }
 
@@ -1736,11 +1736,11 @@ NPT_XmlParser::Reset()
 |   NPT_XmlParser::Parse
 +---------------------------------------------------------------------*/
 NPT_Result
-NPT_XmlParser::Parse(NPT_InputStream& stream, 
+NPT_XmlParser::Parse(NPT_InputStream& stream,
                      NPT_Size&        size,
                      NPT_XmlNode*&    node,
                      bool             incremental /* = false */)
-{       
+{
     NPT_Result result;
 
     // start with a known state
@@ -1749,7 +1749,7 @@ NPT_XmlParser::Parse(NPT_InputStream& stream,
     if (!incremental) {
         Reset();
     }
-    
+
     // use a buffer on the stack
     char buffer[1024];
 
@@ -1759,7 +1759,7 @@ NPT_XmlParser::Parse(NPT_InputStream& stream,
     do {
         NPT_Size bytes_read;
         NPT_Size bytes_to_read = sizeof(buffer);
-        if (max_bytes_to_read != 0 && 
+        if (max_bytes_to_read != 0 &&
             size+bytes_to_read > max_bytes_to_read) {
             bytes_to_read = max_bytes_to_read-size;
         }
@@ -1774,10 +1774,10 @@ NPT_XmlParser::Parse(NPT_InputStream& stream,
         } else {
             break;
         }
-    } while(NPT_SUCCEEDED(result) && 
+    } while(NPT_SUCCEEDED(result) &&
             (max_bytes_to_read == 0 || size < max_bytes_to_read));
 
-    // return a tree if we have one 
+    // return a tree if we have one
     node = m_Root;
     if (incremental) {
         return result;
@@ -1788,7 +1788,7 @@ NPT_XmlParser::Parse(NPT_InputStream& stream,
             node = NULL;
             return result;
         } else {
-            return m_Root?NPT_SUCCESS:NPT_ERROR_XML_NO_ROOT;     
+            return m_Root?NPT_SUCCESS:NPT_ERROR_XML_NO_ROOT;
         }
     }
 }
@@ -1797,7 +1797,7 @@ NPT_XmlParser::Parse(NPT_InputStream& stream,
 |   NPT_XmlParser::Parse
 +---------------------------------------------------------------------*/
 NPT_Result
-NPT_XmlParser::Parse(NPT_InputStream& stream, 
+NPT_XmlParser::Parse(NPT_InputStream& stream,
                      NPT_XmlNode*&    node,
                      bool             incremental /* = false */)
 {
@@ -1809,10 +1809,10 @@ NPT_XmlParser::Parse(NPT_InputStream& stream,
 |   NPT_XmlParser::Parse
 +---------------------------------------------------------------------*/
 NPT_Result
-NPT_XmlParser::Parse(const char*   xml, 
-                     NPT_XmlNode*& node, 
+NPT_XmlParser::Parse(const char*   xml,
+                     NPT_XmlNode*& node,
                      bool          incremental /* = false */)
-{       
+{
     NPT_Size size = NPT_StringLength(xml);
 
     return Parse(xml, size, node, incremental);
@@ -1822,11 +1822,11 @@ NPT_XmlParser::Parse(const char*   xml,
 |   NPT_XmlParser::Parse
 +---------------------------------------------------------------------*/
 NPT_Result
-NPT_XmlParser::Parse(const char*   xml, 
-                     NPT_Size      size, 
+NPT_XmlParser::Parse(const char*   xml,
+                     NPT_Size      size,
                      NPT_XmlNode*& node,
                      bool          incremental /* = false */)
-{ 
+{
     // start with a known state
     m_Root = NULL;
     node = NULL;
@@ -1836,8 +1836,8 @@ NPT_XmlParser::Parse(const char*   xml,
 
     // parse the buffer
     NPT_Result result = m_Processor->ProcessBuffer(xml, size);
-    
-    // return a tree if we have one 
+
+    // return a tree if we have one
     node = m_Root;
     if (incremental) {
         return result;
@@ -1848,7 +1848,7 @@ NPT_XmlParser::Parse(const char*   xml,
             node = NULL;
             return result;
         } else {
-            return m_Root?NPT_SUCCESS:NPT_ERROR_XML_NO_ROOT;     
+            return m_Root?NPT_SUCCESS:NPT_ERROR_XML_NO_ROOT;
         }
     }
 }
@@ -1856,7 +1856,7 @@ NPT_XmlParser::Parse(const char*   xml,
 /*----------------------------------------------------------------------
 |   NPT_XmlParser::OnStartElement
 +---------------------------------------------------------------------*/
-NPT_Result 
+NPT_Result
 NPT_XmlParser::OnStartElement(const char* name)
 {
     NPT_XML_Debug_1("\nNPT_XmlParser::OnStartElement: %s\n", name);
@@ -1865,7 +1865,7 @@ NPT_XmlParser::OnStartElement(const char* name)
     if (m_Root) {
         return NPT_ERROR_XML_MULTIPLE_ROOTS;
     }
-    
+
     // create new node
     NPT_XmlElementNode* node = new NPT_XmlElementNode(name);
 
@@ -1882,20 +1882,20 @@ NPT_XmlParser::OnStartElement(const char* name)
 /*----------------------------------------------------------------------
 |   NPT_XmlParser::OnElementAttribute
 +---------------------------------------------------------------------*/
-NPT_Result 
+NPT_Result
 NPT_XmlParser::OnElementAttribute(const char* name, const char* value)
 {
-    NPT_XML_Debug_2("\nNPT_XmlParser::OnElementAttribute: name=%s, value='%s'\n", 
+    NPT_XML_Debug_2("\nNPT_XmlParser::OnElementAttribute: name=%s, value='%s'\n",
                     name, value);
 
     if (m_CurrentElement == NULL) {
         return NPT_ERROR_INVALID_SYNTAX;
     }
-                              
+
     // check if this is a namespace attribute
-    if (name[0] == 'x' && 
-        name[1] == 'm' && 
-        name[2] == 'l' && 
+    if (name[0] == 'x' &&
+        name[1] == 'm' &&
+        name[2] == 'l' &&
         name[3] == 'n' &&
         name[4] == 's' &&
         (name[5] == '\0' || name[5] == ':')) {
@@ -1911,7 +1911,7 @@ NPT_XmlParser::OnElementAttribute(const char* name, const char* value)
 /*----------------------------------------------------------------------
 |   NPT_XmlParser::OnEndElement
 +---------------------------------------------------------------------*/
-NPT_Result 
+NPT_Result
 NPT_XmlParser::OnEndElement(const char* name)
 {
     NPT_XML_Debug_1("\nNPT_XmlParser::OnEndElement: %s\n", name ? name : "NULL");
@@ -1969,9 +1969,9 @@ NPT_XmlParser::OnEndElement(const char* name)
 +---------------------------------------------------------------------*/
 NPT_Result
 NPT_XmlParser::OnCharacterData(const char* data, NPT_Size size)
-{ 
+{
     NPT_XML_Debug_1("\nNPT_XmlParser::OnCharacterData: %s\n", data);
-    
+
     // check that we have a current element
     if (m_CurrentElement == NULL) {
         // we do not allow non-whitespace outside an element content
@@ -2016,7 +2016,7 @@ private:
 class NPT_XmlNodeWriter
 {
 public:
-    NPT_XmlNodeWriter(NPT_XmlSerializer& serializer) : 
+    NPT_XmlNodeWriter(NPT_XmlSerializer& serializer) :
         m_Serializer(serializer), m_AttributeWriter(serializer) {
         m_Serializer.StartDocument();
     }
@@ -2029,7 +2029,7 @@ public:
 
             // emit namespace attributes
             if (element->m_NamespaceMap) {
-                NPT_List<NPT_XmlNamespaceMap::Entry*>::Iterator item = 
+                NPT_List<NPT_XmlNamespaceMap::Entry*>::Iterator item =
                     element->m_NamespaceMap->m_Entries.GetFirstItem();
                 while (item) {
                     if ((*item)->m_Prefix.IsEmpty()) {
@@ -2070,8 +2070,8 @@ public:
     };
 
     // constructor
-    NPT_XmlNodeCanonicalWriter(NPT_XmlSerializer& serializer, 
-                               MapChainLink*      map_chain = NULL) : 
+    NPT_XmlNodeCanonicalWriter(NPT_XmlSerializer& serializer,
+                               MapChainLink*      map_chain = NULL) :
         m_MapChain(map_chain),
         m_Serializer(serializer) {
         m_Serializer.StartDocument();
@@ -2088,7 +2088,7 @@ private:
         };
 
         // methods
-        void Add(const NPT_String* namespace_uri, 
+        void Add(const NPT_String* namespace_uri,
                  const NPT_XmlAttribute* attribute);
         void Emit(NPT_XmlSerializer& serializer);
 
@@ -2140,7 +2140,7 @@ NPT_XmlNodeCanonicalWriter::SortedAttributeList::Add(
             // this namespace uri is greater than the other, skip
             continue;
         } else if ((namespace_uri == NULL && other_namespace_uri == NULL) ||
-                   (namespace_uri && other_namespace_uri && 
+                   (namespace_uri && other_namespace_uri &&
                    *namespace_uri == *other_namespace_uri)) {
             // namespace uris match, compare the names
             const NPT_XmlAttribute* other_attribute = entry->m_Attribute;
@@ -2148,7 +2148,7 @@ NPT_XmlNodeCanonicalWriter::SortedAttributeList::Add(
         }
         break;
     }
-    
+
     Entry new_entry = {namespace_uri, attribute};
     m_Entries.Insert(entry, new_entry);
 }
@@ -2259,7 +2259,7 @@ NPT_XmlNodeCanonicalWriter::operator()(NPT_XmlNode*& node) const
                 if (*rendered != compare) {
                     // the rendered default namespace had a different uri
                     map_link.m_RenderedNamespaces.Put("", compare);
-                } 
+                }
             }
         } else {
             // explicit namespace
@@ -2297,11 +2297,11 @@ NPT_XmlNodeCanonicalWriter::operator()(NPT_XmlNode*& node) const
 
         // start of element
         m_Serializer.StartElement(prefix, tag);
-                    
+
         // namespace declarations
         if (map_link.m_RenderedNamespaces.GetEntryCount()) {
             SortedNamespaceList namespaces;
-            NPT_List<NPT_Map<NPT_String, NPT_String>::Entry*>::Iterator entry = 
+            NPT_List<NPT_Map<NPT_String, NPT_String>::Entry*>::Iterator entry =
                 map_link.m_RenderedNamespaces.GetEntries().GetFirstItem();
             while (entry) {
                 const NPT_String& key   = (*entry)->GetKey();
@@ -2359,7 +2359,7 @@ NPT_XmlSerializer::~NPT_XmlSerializer()
 /*----------------------------------------------------------------------
 |   NPT_XmlSerializer::StartDocument
 +---------------------------------------------------------------------*/
-NPT_Result 
+NPT_Result
 NPT_XmlSerializer::StartDocument()
 {
     if (!m_AddXmlDecl) return NPT_SUCCESS;
@@ -2370,7 +2370,7 @@ NPT_XmlSerializer::StartDocument()
 /*----------------------------------------------------------------------
 |   NPT_XmlSerializer::EndDocument
 +---------------------------------------------------------------------*/
-NPT_Result 
+NPT_Result
 NPT_XmlSerializer::EndDocument()
 {
     return m_ElementPending?NPT_ERROR_INVALID_STATE:NPT_SUCCESS;
@@ -2379,7 +2379,7 @@ NPT_XmlSerializer::EndDocument()
 /*----------------------------------------------------------------------
 |   NPT_XmlSerializer::EscapeChar
 +---------------------------------------------------------------------*/
-void  
+void
 NPT_XmlSerializer::EscapeChar(unsigned char c, char* text)
 {
     *text++ = '&';
@@ -2398,7 +2398,7 @@ NPT_XmlSerializer::EscapeChar(unsigned char c, char* text)
 /*----------------------------------------------------------------------
 |   NPT_XmlSerializer::ProcessPending
 +---------------------------------------------------------------------*/
-NPT_Result  
+NPT_Result
 NPT_XmlSerializer::ProcessPending()
 {
     if (!m_ElementPending) return NPT_SUCCESS;
@@ -2409,7 +2409,7 @@ NPT_XmlSerializer::ProcessPending()
 /*----------------------------------------------------------------------
 |   NPT_XmlSerializer::OutputEscapedString
 +---------------------------------------------------------------------*/
-NPT_Result  
+NPT_Result
 NPT_XmlSerializer::OutputEscapedString(const char* text, bool attribute)
 {
     const char* start = text;
@@ -2434,7 +2434,7 @@ NPT_XmlSerializer::OutputEscapedString(const char* text, bool attribute)
             case '<' : insert = "&lt;";  break;
             case '>' : if (!attribute) insert = "&gt;";  break;
             case '"' : if (attribute) insert = "&quot;"; break;
-            default : 
+            default :
                 break;
         }
         if (insert) {
@@ -2477,7 +2477,7 @@ NPT_XmlSerializer::OutputIndentation(bool start)
 /*----------------------------------------------------------------------
 |   NPT_XmlSerializer::StartElement
 +---------------------------------------------------------------------*/
-NPT_Result  
+NPT_Result
 NPT_XmlSerializer::StartElement(const char* prefix, const char* name)
 {
     ProcessPending();
@@ -2496,7 +2496,7 @@ NPT_XmlSerializer::StartElement(const char* prefix, const char* name)
 /*----------------------------------------------------------------------
 |   NPT_XmlSerializer::EndElement
 +---------------------------------------------------------------------*/
-NPT_Result  
+NPT_Result
 NPT_XmlSerializer::EndElement(const char* prefix, const char* name)
 {
     m_Depth--;
@@ -2509,7 +2509,7 @@ NPT_XmlSerializer::EndElement(const char* prefix, const char* name)
         } else {
             m_Output->Write(">",1);
         }
-    } 
+    }
 
     if (m_Indentation && !m_ElementHasText) OutputIndentation(false);
     m_ElementHasText = false;
@@ -2525,7 +2525,7 @@ NPT_XmlSerializer::EndElement(const char* prefix, const char* name)
 /*----------------------------------------------------------------------
 |   NPT_XmlSerializer::Attribute
 +---------------------------------------------------------------------*/
-NPT_Result  
+NPT_Result
 NPT_XmlSerializer::Attribute(const char* prefix, const char* name, const char* value)
 {
     m_Output->Write(" ", 1);
@@ -2542,7 +2542,7 @@ NPT_XmlSerializer::Attribute(const char* prefix, const char* name, const char* v
 /*----------------------------------------------------------------------
 |   NPT_XmlSerializer::Text
 +---------------------------------------------------------------------*/
-NPT_Result  
+NPT_Result
 NPT_XmlSerializer::Text(const char* text)
 {
     ProcessPending();
@@ -2553,7 +2553,7 @@ NPT_XmlSerializer::Text(const char* text)
 /*----------------------------------------------------------------------
 |   NPT_XmlSerializer::CdataSection
 +---------------------------------------------------------------------*/
-NPT_Result  
+NPT_Result
 NPT_XmlSerializer::CdataSection(const char* data)
 {
     ProcessPending();
@@ -2566,7 +2566,7 @@ NPT_XmlSerializer::CdataSection(const char* data)
 /*----------------------------------------------------------------------
 |   NPT_XmlSerializer::Comment
 +---------------------------------------------------------------------*/
-NPT_Result  
+NPT_Result
 NPT_XmlSerializer::Comment(const char* comment)
 {
     ProcessPending();
@@ -2579,8 +2579,8 @@ NPT_XmlSerializer::Comment(const char* comment)
 |   NPT_XmlWriter::Serialize
 +---------------------------------------------------------------------*/
 NPT_Result
-NPT_XmlWriter::Serialize(NPT_XmlNode&      node, 
-                         NPT_OutputStream& output, 
+NPT_XmlWriter::Serialize(NPT_XmlNode&      node,
+                         NPT_OutputStream& output,
                          bool              add_xml_decl)
 {
     NPT_XmlSerializer serializer(&output, m_Indentation, true, add_xml_decl);
@@ -2595,8 +2595,8 @@ NPT_XmlWriter::Serialize(NPT_XmlNode&      node,
 |   NPT_XmlCanonicalizer::Serialize
 +---------------------------------------------------------------------*/
 NPT_Result
-NPT_XmlCanonicalizer::Serialize(NPT_XmlNode&      node, 
-                                NPT_OutputStream& output, 
+NPT_XmlCanonicalizer::Serialize(NPT_XmlNode&      node,
+                                NPT_OutputStream& output,
                                 bool              add_xml_decl)
 {
     // create a serializer with no indentation and no shrinking of empty elements

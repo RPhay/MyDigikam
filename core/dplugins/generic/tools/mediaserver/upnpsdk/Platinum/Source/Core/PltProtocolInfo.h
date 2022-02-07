@@ -11,14 +11,14 @@
 | as published by the Free Software Foundation; either version 2
 | of the License, or (at your option) any later version.
 |
-| OEMs, ISVs, VARs and other distributors that combine and 
+| OEMs, ISVs, VARs and other distributors that combine and
 | distribute commercially licensed software with Platinum software
 | and do not wish to distribute the source code for the commercially
 | licensed software under version 2, or (at your option) any later
 | version, of the GNU General Public License (the "GPL") must enter
 | into a commercial license agreement with Plutinosoft, LLC.
 | licensing@plutinosoft.com
-| 
+|
 | This program is distributed in the hope that it will be useful,
 | but WITHOUT ANY WARRANTY; without even the implied warranty of
 | MERCHANTABILITY or FITNESS FOR A PARTICULAR PURPOSE.  See the
@@ -26,7 +26,7 @@
 |
 | You should have received a copy of the GNU General Public License
 | along with this program; see the file LICENSE.txt. If not, write to
-| the Free Software Foundation, Inc., 
+| the Free Software Foundation, Inc.,
 | 51 Franklin Street, Fifth Floor, Boston, MA  02110-1301, USA.
 | http://www.gnu.org/licenses/gpl-2.0.html
 |
@@ -62,7 +62,7 @@ typedef struct PLT_HttpFileRequestHandler_DefaultDlnaExtMapEntry {
 |   PLT_ProtocolInfo
 +---------------------------------------------------------------------*/
 /**
- The PLT_ProtocolInfo class holds information about the protocol info of a 
+ The PLT_ProtocolInfo class holds information about the protocol info of a
  given UPnP Media Item resource.
  */
 class PLT_ProtocolInfo
@@ -78,24 +78,24 @@ public:
 
     // class methods
     static NPT_String  GetMimeTypeFromProtocolInfo(const char* protocol_info);
-    
-    static const char* GetDlnaExtension(const char* mime_type, 
+
+    static const char* GetDlnaExtension(const char* mime_type,
                                         const PLT_HttpRequestContext* context = NULL);
-    static const char* GetDlnaExtension(const char* mime_type, 
+    static const char* GetDlnaExtension(const char* mime_type,
                                         PLT_DeviceSignature signature = PLT_DEVICE_UNKNOWN);
-    
-    static PLT_ProtocolInfo GetProtocolInfo(const char* filename, 
-                                            bool with_dlna_extension = true, 
+
+    static PLT_ProtocolInfo GetProtocolInfo(const char* filename,
+                                            bool with_dlna_extension = true,
                                             const PLT_HttpRequestContext* context = NULL);
-    static PLT_ProtocolInfo GetProtocolInfo(const char* filename, 
-                                            bool with_dlna_extension = true, 
+    static PLT_ProtocolInfo GetProtocolInfo(const char* filename,
+                                            bool with_dlna_extension = true,
                                             PLT_DeviceSignature signature = PLT_DEVICE_UNKNOWN);
-    
-    static PLT_ProtocolInfo GetProtocolInfoFromMimeType(const char* mime_type, 
-                                                        bool with_dlna_extension = true, 
+
+    static PLT_ProtocolInfo GetProtocolInfoFromMimeType(const char* mime_type,
+                                                        bool with_dlna_extension = true,
                                                         const PLT_HttpRequestContext* context = NULL);
-    static PLT_ProtocolInfo GetProtocolInfoFromMimeType(const char* mime_type, 
-                                                        bool with_dlna_extension = true, 
+    static PLT_ProtocolInfo GetProtocolInfoFromMimeType(const char* mime_type,
+                                                        bool with_dlna_extension = true,
                                                         PLT_DeviceSignature signature = PLT_DEVICE_UNKNOWN);
 
     // methods
@@ -110,7 +110,7 @@ public:
     const NPT_String& GetMask()         const { return m_Mask; }
     const NPT_String& GetContentType()  const { return m_ContentType;  }
     const NPT_String& GetExtra()        const { return m_Extra; }
-    
+
     const NPT_String& GetDLNA_PN()      const { return m_DLNA_PN; }
 
     bool IsValid() { return m_Valid; }
@@ -132,8 +132,8 @@ private:
     } PLT_ProtocolInfoParserState;
 
     NPT_Result SetProtocolInfo(const char* protocol_info);
-    NPT_Result ValidateField(const char*  val, 
-                        const char*  valid_chars, 
+    NPT_Result ValidateField(const char*  val,
+                        const char*  valid_chars,
                         NPT_Cardinal num_chars = 0); // 0 means variable number of chars
     NPT_Result ParseExtra(NPT_List<FieldEntry>& entries);
     NPT_Result ValidateExtra();
@@ -143,7 +143,7 @@ private:
     NPT_String           m_Mask;
     NPT_String           m_ContentType;
     NPT_String           m_Extra;
-    
+
     NPT_String           m_DLNA_PN;    // DLNA.ORG_PN Parameter (pn-param)
     NPT_String           m_DLNA_OP;    // Operations Parameter (op-param)
     NPT_String           m_DLNA_PS;    // Server-Side PlaySpeeds Parameter (ps-param)
@@ -151,7 +151,7 @@ private:
     NPT_String           m_DLNA_FLAGS; // Flags Parameter (flags-param)
     NPT_String           m_DLNA_MAXSP; // Maximum RTSP Speed Header value (maxsp-param)
     NPT_List<FieldEntry> m_DLNA_OTHER; // Vendor-defined 4th field Parameters (other-param)
-    
+
     bool                 m_Valid;
 };
 

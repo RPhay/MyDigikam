@@ -1,81 +1,227 @@
 #!/bin/bash
 
-# Script to install dependencies under Mageia Linux to compile digiKam.
+# Script to install dependencies under Ubuntu Linux to compile digiKam.
 # This script must be run as sudo
+# Ubuntu compatible version >= 18.04
 #
-# Copyright (c) 2021 by Surya K M <suryakm_is20 dot rvitm@rvei dot edu dot in>
+# Copyright (c) 2021 by TRAN Quoc Hung <quochungtran1999 at gmail dot com         > 
+# Copyright (c) 2021 by Surya K M      <suryakm_is20 dot rvitm@rvei dot edu dot in>
 #
 # Redistribution and use is allowed according to the terms of the BSD license.
 # For details see the accompanying COPYING-CMAKE-SCRIPTS file.
 #
 
-#Installing cmake
-sudo snap install cmake
+#Check OS name and version.
 
-#Installing ECM
-#Quick Install Steps:
-#Step 1
-sudo apt-get update -y
-#Step 2
-sudo apt-get install -y ecm
+OS_NAME=$(awk '/DISTRIB_ID=/' /etc/*-release | sed 's/DISTRIB_ID=//' | sed 's/\"//' | sed 's/\"//' | tr '[:upper:]' '[:lower:]')
+OS_ARCH=$(uname -m | sed 's/x86_//;s/i[3-6]86/32/')
+OS_VERSION=$(awk '/DISTRIB_RELEASE=/' /etc/*-release | sed 's/DISTRIB_RELEASE=//' | sed 's/[.]0/./')
+
+echo $OS_NAME
+echo $OS_ARCH
+echo $OS_VERSION
 
 
-#Installing  qt5 :-
-sudo apt-get install build-essential
+if [[ "$OS_NAME" != "ubuntu" ]] ; then
+    echo "Not running Linux ubuntu..."
+    exit -1
+fi
 
-sudo apt-get install qtcreator
+echo "Check the list of dependencies in the online doc API : https://www.digikam.org/api/index.html#externaldeps"
+echo "-------------------------------------------------------------------"
 
-sudo apt-get install qt5-default
+# for downloading package information from all configured sources.'
 
-#installing the Qt documentation :-
-sudo apt-get install qt5-doc
-sudo apt-get install qt5-doc-html qtbase5-doc-html
-sudo apt-get install qtbase5-examples
+sudo apt-get update
+sudo apt-get upgrade 
 
-#installing kf5 config in ubuntu :-
-sudo apt-get install libkf5config-dev
+# benefit from a higher version of certain software , update the key
 
-#installing kf5 xmlgui in ubuntu :-
-sudo apt-get install libkf5xmlgui-dev
+sudo apt-key adv --refresh-keys --keyserver keyserver.ubuntu.com
+sudo add-apt-repository "deb http://security.ubuntu.com/ubuntu xenial-security main"
 
-#installing kf5 i18n in ubuntu :-
-sudo apt-get install libkf5i18n-dev
+# Install dependencies to Checkout Source Code
 
-#installing kf5 windowsystem in ubuntu :-
-sudo apt-get install libkf5windowsystem-dev
+sudo apt-get install -y git                          
+echo "-------------------------------------------------------------------"
 
-#installing KF5 solid in ubuntu :-
-sudo apt-get install libkf5solid-dev
+                                   
+sudo apt-get install -y perl                       
+echo "-------------------------------------------------------------------"
 
-#installing kf5coreaddons in ubuntu :-
-sudo apt-get install libkf5coreaddons-dev
+# Install required dependencies to Compile And Link Source Code
 
-#installing kf5servive in ubuntu :-
-sudo apt-get install -y libkf5service-dev
+required_packages=("cmake"                   # To Compile   Source Code
+                   "extra-cmake-modules"     # To Compile   Source Code
+                   "build-essential"         # To Compile   Source Code
 
-#installing libopencv in ubuntu :-
-sudo apt-get install -y libopencv-dev
+                   "libqt5core5a"            # Qt 5 core module
+                   "libqt5gui5"              # Qt 5 Gui module
+                   "libqt5widgets5"          # Qt 5 widget module
+                   "libqt5network5"          # Qt 5 network module
+                   "libqt5sql5"              # Qt 5 SQL module
+                   "libqt5xml5"              # Qt 5 XML module
+                   "libqt5concurrent5"       # Qt 5 Concurrent module
+                   "libqt5printsupport5"     # Qt 5 PrintSupport module
+                   "libqt5svg5"              # Qt 5 Svg module
+                   "libqt5webengine5"        # Qt 5 webengine module
 
-#installing libpthread in ubuntu :-
-sudo apt-get install libpthread-stubs0-dev
+                   "libkf5config-dev"        # Configuration settings framework for Qt
+                   "libkf5xmlgui-dev"        # User configurable main windows
+                   "libkf5i18n-dev"          # Advanced internationalization framework
+                   "libkf5windowsystem-dev"  # Development files for kwindowsystem
+                   "libkf5service-dev"       # Development files for kservice
+                   "libkf5solid-dev"         # Qt library to query and control hardware
+                   "libkf5coreaddons-dev"    # Development files - KDE Frameworks 5 addons to QtCore
 
-#installing libpng in ubuntu :-
-sudo apt-get install libpng-dev
+                   "libopencv-dev"           # Development files for opencv
+                   "libpthread-stubs0-dev"   # Development files for pthread
+                   "libtiff-dev"             # Tag image file format library
+                   "libpng-dev"              # PNG library
+                   "libjpeg-dev"             # JPEG library
+                   "libboost-all-dev"        # Boots C++ Libraries
+                   "liblcms2-dev"            # Little CMS 2 color management library
+                   "libexpat1-dev"           # XML parsing C library
+                   "libexiv2-dev"            # Metadata manipulation library
+                    )
 
-#installing libtiff in ubuntu :-
-sudo apt-get install -y libtiff-dev
 
-#installing libjpeg in ubuntu :-
-sudo apt-get install -y libjpeg-dev
+for pkg in ${required_packages[@]}; do
 
-#installing libboost in ubuntu :- 
-sudo apt-get install libboost-all-dev
+    sudo apt-get install -y ${pkg}
 
-#installing liblcms in ubuntu :-
-sudo apt-get install -y liblcms
+    current_version=$(dpkg-query --showformat='${Version}' --show ${pkg})
 
-#installing libexpat in ubuntu :-
-sudo apt-get install -y libexpat-dev
+    case "${pkg}" in
+    "cmake")
+        required_version=3.3.2
+        ;;
+    "extra-cmake-modules")
+        required_version=5.5.0
+        ;;
+    "build-essential")
+        required_version=7.2.0
+        ;;
+    "libqt5core5a")
+        required_version=5.9.0
+        ;;
+    "libkf5config-dev")
+        required_version=5.5.0
+        ;;
+    "libopencv-dev")
+        required_version=3.3.0
+        ;;
+    "libpthread-stubs0-dev")
+        required_version=2.0.0
+        ;;
+    "libtiff-dev")
+        required_version=4.0.0
+        ;;
+    "libpng-dev")
+        required_version=1.6.0
+        ;;
+    "libjpeg-dev")
+        required_version=6b
+        ;;
+    "libboost-all-dev")
+        required_version=1.55.0
+        ;;
+    "liblcms2-dev")
+        required_version=2.0.0
+        ;;
+    "libexpat1-dev")
+        required_version=2.1.0
+        ;;
+    "libexiv2-dev")
+        required_version=0.27.0
+        ;;
+    esac
+    
+    echo $current_version
 
-#installing libexiv2 in ubuntu :-
-sudo apt-get install libexiv2-dev
+    if $(dpkg --compare-versions "$current_version" "lt" "$required_version"); then 
+            echo "less than $required_version";
+            echo "please upgrade newer version or another packages";
+    else 
+            echo "greater than $required_version ............. accepted";
+    fi  
+
+    echo "-------------------------------------------------------------------"
+done
+
+
+
+# Install optional dependencies to Compile And Link Source Code
+
+optional_packages=("ruby"
+                   "subversion"
+                   "valgrind"
+                   "lzip"
+                   "gzip"
+                   "unzip"
+                   "gperf"
+                   "intltool"
+                   "unrar"
+                   "scons"
+                   "icoutils"
+                   "gcc-mingw-w64"                   
+                   "python3-mako"
+                   "python3-pygments"
+                   "python3-bs4"
+                   "python3-soupsieve"
+                   "cppcheck"
+                   "clang"
+                   "doxygen"
+                   "kate"
+                   "ktexteditor-katepart"
+                   "ccache"
+                   "hugin"
+                   "bison"                              # >= 2.5.0
+                   "flex"                               # >= 2.5.0
+                   "wget"                              
+                   "coreutils"
+                   "dmg2img"
+                   "tesseract-ocr"
+                   "libeigen3-dev"                      # >= 3.2
+                   "liblensfun-dev"                     # >= 0.2.8
+                   "libmarble-dev"                      # >= 0.22
+                   "marble-data"                        # >= 5.0
+                   "libasan4"
+                   "libgomp1" 
+                   "llvm"
+                   "libclang-dev"                      
+                   "libqtav-dev"                        # >= 1.12.0
+                   "ffmpeg"                             # >= 3.3.x    
+                   "libgphoto2-dev"                     # >= 2.5
+                   "libsane-dev"                        # >= 5.0.0
+                   "libjasper-dev"                      # >= 1.900.1
+                   "libxslt-dev"                        # >= 1.1.0
+                   "libxml2-dev"                        # >= 2.7.0
+                   "libtiff-dev"                        # >= 4.0
+                   "liblqr-dev"                         # >= 0.4.2
+                   "fftw-dev" 
+                   "curl" 
+                   "libx265-dev"                        # >= 2.2 
+                   "libmagick++-dev"                    # >= 6.7.0    
+                   "libqt5x11extras5-dev"               # >= 5.9
+                   "libqt5test5"                        # >= 5.9
+                   "libqt5xml5"                         # >= 5.9    
+                   "libqt5xmlpatterns5-dev"             # >= 5.9
+                   "libqt5opengl5-dev"                  # >= 5.9
+                   "libkf5sane-dev"                     # >= 5.5.0    
+                   "libkf5threadweaver-dev"             # >= 5.5.0
+                   "libkf5kio-dev"                      # >= 5.5.0              
+                   "libkf5notifications-dev"            # >= 5.5.0
+                   "libkf5notifyconfig-dev"             # >= 5.5.0
+                   "libkf5filemetadata-dev"             # >= 5.5.0
+                   "libkf5calendarcore-dev"             # >= 5.5.0
+                   "libkf5akonadicontact-dev"           # >= 4.89.0
+                   "libkf5doctools-dev"
+                    #TODO add new optional packages
+                    )
+
+
+# for pkg in ${optional_packages[@]}; do
+#     sudo apt-get install -y ${pkg}
+#     echo "-------------------------------------------------------------------"
+# done

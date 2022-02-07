@@ -97,36 +97,36 @@ using namespace AdobeXMPCommon_Int;
 static void
 AppendIXMPLangItem ( const spIArrayNode & arrayNode, XMP_StringPtr itemLang, XMP_StringPtr itemValue )
 {
-	
 
-	
+
+
 	spISimpleNode newItem = ISimpleNode::CreateSimpleNode( arrayNode->GetNameSpace()->c_str(), arrayNode->GetNameSpace()->size(), arrayNode->GetName()->c_str(), arrayNode->GetName()->size(), "", AdobeXMPCommon::npos );
 	spISimpleNode langQual = ISimpleNode::CreateSimpleNode( xmlNameSpace.c_str(), xmlNameSpace.size(), "lang", AdobeXMPCommon::npos, "", AdobeXMPCommon::npos );
-	
+
 	try {
-		
+
 		XMPUtils::SetNode(newItem,itemValue,(kXMP_PropHasQualifiers | kXMP_PropHasLang));
 		XMPUtils::SetNode(langQual, itemLang, kXMP_PropIsQualifier);
-		
+
 	} catch (...) {
-		
+
 		newItem->Clear();
 		langQual->Clear();
 		throw;
 	}
-	
-	
+
+
 	newItem->InsertQualifier(langQual);
 	if ( (!arrayNode->ChildCount() || !XMP_LitMatch(langQual->GetValue()->c_str(),"x-default") )) {
-		
+
 		size_t arraySize = arrayNode->ChildCount();
 		arrayNode->InsertNodeAtIndex(newItem, arraySize + 1);
-		
+
 	} else {
-		
+
 		arrayNode->InsertNodeAtIndex(newItem, 1);
 	}
-	
+
 }	// AppendLangItem
 
 
@@ -167,7 +167,7 @@ XMPMeta2::GetProperty ( XMP_StringPtr	schemaNS,
 	XMP_ExpandedXPath expPath;
 	ExpandXPath ( schemaNS, propName, &expPath );
 
-	
+
 	auto defaultMap = INameSpacePrefixMap::GetDefaultNameSpacePrefixMap();
 	spINode destNode = mDOM;
 	bool qualifierFlag = false;
@@ -179,12 +179,12 @@ XMPMeta2::GetProperty ( XMP_StringPtr	schemaNS,
 
 	}
 	for ( size_t i = pathStartIdx, endIndex = expPath.size(); i < endIndex; i++ ) {
-		
+
 		if(!destNode) return false;
 		XMP_VarString  stepStr = expPath[i].step;
 		XMP_VarString  prevStep = ( i == 0 ) ?  "" : expPath[i - 1].step;
 		spcIUTF8String nameSpace ;
-		
+
 		switch( expPath[i].options ) {
 		case kXMP_StructFieldStep:
 			{
@@ -203,7 +203,7 @@ XMPMeta2::GetProperty ( XMP_StringPtr	schemaNS,
 			break;
 		case kXMP_ArrayIndexStep:
 			{
-				
+
 				if(destNode->GetNodeType() != INode::kNTArray) {
 					return false;
 				}
@@ -227,7 +227,7 @@ XMPMeta2::GetProperty ( XMP_StringPtr	schemaNS,
 					return false;
 				}
 				spIArrayNode tempNode = destNode->ConvertToArrayNode();
-				
+
 				size_t colonPos = prevStep.find(':');
 				XMP_VarString prefix = prevStep.substr( 0, colonPos );
 				nameSpace = defaultMap->GetNameSpace( prefix.c_str(), prefix.size() );
@@ -239,7 +239,7 @@ XMPMeta2::GetProperty ( XMP_StringPtr	schemaNS,
 					}
 					destNode = tempNode->GetNodeAtIndex(childCount);
 				}
-				
+
 			}
 			break;
 		case kXMP_QualifierStep:
@@ -253,17 +253,17 @@ XMPMeta2::GetProperty ( XMP_StringPtr	schemaNS,
 				destNode = destNode->GetQualifier(nameSpace->c_str(), nameSpace->size(), stepStr.c_str() + colonPos + 1, AdobeXMPCommon::npos );
 				qualifierFlag = true;
 			}
-			
+
 			break;
-			
+
 		case kXMP_QualSelectorStep:
 			{
-				
+
 				if(destNode->GetNodeType() != INode::kNTArray) {
 					return false;
 				}
 				spIArrayNode tempNode = destNode->ConvertToArrayNode();
-				XMP_VarString  qualName, qualValue, qualNameSpace;	
+				XMP_VarString  qualName, qualValue, qualNameSpace;
 				SplitNameAndValue (stepStr, &qualName, &qualValue );
 				spINode parentNode = destNode;
 				size_t colonPos = qualName.find(':');
@@ -292,11 +292,11 @@ XMPMeta2::GetProperty ( XMP_StringPtr	schemaNS,
 				}
 			}
 			break;
-		
+
 		case kXMP_FieldSelectorStep :
 			{
-				
-				XMP_VarString  fieldName, fieldValue, fieldNameSpace;	
+
+				XMP_VarString  fieldName, fieldValue, fieldNameSpace;
 				SplitNameAndValue (stepStr, &fieldName, &fieldValue );
 				spINode parentNode = destNode;
 				size_t colonPos = fieldName.find(':');
@@ -308,13 +308,13 @@ XMPMeta2::GetProperty ( XMP_StringPtr	schemaNS,
 					spIArrayNode parentArrayNode = parentNode->ConvertToArrayNode();
 					size_t arrayChildCount = parentArrayNode->ChildCount();
 					for(size_t arrayIdx = 1; arrayIdx <= arrayChildCount; arrayIdx++) {
-						
+
 						spINode currentItem = parentArrayNode->GetNodeAtIndex(arrayIdx);
-						
+
 						if(currentItem->GetNodeType() != INode::kNTStructure) {
 							return false;
 						}
-						
+
 						spINode fieldNode = currentItem->ConvertToStructureNode()->GetNode(fieldNameSpace.c_str(), fieldNameSpace.size(), fieldName.c_str() + colonPos + 1, AdobeXMPCommon::npos );
 						if(!fieldNode || fieldNode->GetNodeType() != INode::kNTSimple) continue;
 						XMP_VarString currentFieldValue = fieldNode->ConvertToSimpleNode()->GetValue()->c_str();
@@ -334,22 +334,22 @@ XMPMeta2::GetProperty ( XMP_StringPtr	schemaNS,
 			break;
 
 		}
-		
+
 	}
 
-	
+
 	if (!destNode) {
 		return false;
 	}
 	if(options)*options = XMPUtils::GetIXMPOptions(destNode);
 	if ( destNode->GetNodeType() == INode::kNTSimple ) {
-		
+
 		spcIUTF8String value = destNode->ConvertToSimpleNode()->GetValue();
 		*propValue = value->c_str();
 		*valueSize = static_cast<XMP_StringLen>( value->size() );
-	} 
+	}
 	return  true;
-	
+
 }	// GetProperty
 
 // -------------------------------------------------------------------------------------------------
@@ -368,8 +368,8 @@ XMPMeta2::CountArrayItems ( XMP_StringPtr schemaNS,
 	spINode arrayNode ;
 	XMP_OptionBits arrayOptions = 0;
 	if(!XMPUtils::FindCnstNode(this->mDOM, expPath, arrayNode, &arrayOptions)) return false;
-	
-	
+
+
 	if ( ! (arrayOptions & kXMP_PropValueIsArray) ) XMP_Throw ( "The named property is not an array", kXMPErr_BadXPath );
 	return static_cast<XMP_Index>( XMPUtils::GetNodeChildCount(arrayNode) );
 
@@ -387,7 +387,7 @@ void XMPMeta2::ParseFromBuffer ( XMP_StringPtr buffer, XMP_StringLen bufferSize,
 		bufferSizeIn64Bits = std::string::npos;
 	}
 	mBuffer->append(buffer, bufferSizeIn64Bits);
-	
+
 
 	if (!lastClientCall) {
 		return;
@@ -431,7 +431,7 @@ XMPMeta2::Erase()
 		this->xmlParser = 0;
 	}
 	mDOM->Clear();
-}	
+}
 // DoesPropertyExist
 // -----------------
 
@@ -446,8 +446,8 @@ XMPMeta2::DoesPropertyExist ( XMP_StringPtr schemaNS,
 	spINode destNode;
 	XMP_OptionBits options;
 	return XMPUtils::FindCnstNode ( this->mDOM, expPath, destNode, &options );
-	
-	
+
+
 }	// DoesPropertyExist
 
 // SetProperty
@@ -471,9 +471,9 @@ XMPMeta2::SetProperty ( XMP_StringPtr  schemaNS,
 	spINode node ;
 	bool propertyFound = XMPUtils::FindNode ( mDOM, expPath, kXMP_CreateNodes, options, node, 0 );
 	if (!propertyFound) XMP_Throw ( "Specified property does not exist", kXMPErr_BadXPath );
-	
+
 	XMPUtils::SetNode ( node, propValue, options );
-	
+
 }	// SetProperty
 // -------------------------------------------------------------------------------------------------'
 // -------------------------------------------------------------------------------------------------
@@ -499,10 +499,10 @@ XMPMeta2::SetArrayItem ( XMP_StringPtr  schemaNS,
 	if(destNode->GetNodeType() != INode::kNTArray) {
 		XMP_Throw ( "Specified array does not exist", kXMPErr_BadXPath );
 	}
-	
+
 	spIArrayNode arrayNode = destNode->ConvertToArrayNode();
 	XMPUtils::DoSetArrayItem ( arrayNode, itemIndex, itemValue, options );
-	
+
 }	// SetArrayItem
 
 
@@ -524,7 +524,7 @@ XMPMeta2::AppendArrayItem ( XMP_StringPtr  schemaNS,
 	if ( (arrayOptions & ~kXMP_PropArrayFormMask) != 0 ) {
 		XMP_Throw ( "Only array form flags allowed for arrayOptions", kXMPErr_BadOptions );
 	}
-	
+
 
 	XMP_ExpandedXPath arrayPath;
 	ExpandXPath ( schemaNS, arrayName, &arrayPath );
@@ -540,11 +540,11 @@ XMPMeta2::AppendArrayItem ( XMP_StringPtr  schemaNS,
 			XMP_Throw ( "The named property is not an array", kXMPErr_BadXPath );
 
 		}
-		
 
-	} 
+
+	}
 	else {
-		
+
 		if ( arrayOptions == 0 ) XMP_Throw ( "Explicit arrayOptions required to create new array", kXMPErr_BadOptions );
 		XPathStepInfo  lastPathSegment( arrayPath.back());
 		XMP_VarString arrayStep = lastPathSegment.step;
@@ -553,13 +553,13 @@ XMPMeta2::AppendArrayItem ( XMP_StringPtr  schemaNS,
 		if(!XMPUtils::FindNode(this->mDOM, arrayPath, kXMP_CreateNodes, arrayOptions, destNode, &insertIndex)) {
 			XMP_Throw ( "Failure creating array node", kXMPErr_BadXPath );
 		}
-		
+
 	}
 	arrayNode = destNode->ConvertToArrayNode();
 	XMPUtils::DoSetArrayItem ( arrayNode, kXMP_ArrayLastItem, itemValue, (options | kXMP_InsertAfterItem) );
 
-	
-	
+
+
 }	// AppendArrayItem
 
 // -------------------------------------------------------------------------------------------------
@@ -579,7 +579,7 @@ XMPMeta2::SetQualifier ( XMP_StringPtr  schemaNS,
 	XMP_ExpandedXPath expPath;
 	ExpandXPath ( schemaNS, propName, &expPath );
 	spINode destNode ;
-	
+
 	if(!XMPUtils::FindCnstNode ( mDOM, expPath, destNode) )
 	XMP_Throw ( "Specified property does not exist", kXMPErr_BadXPath );
 
@@ -587,7 +587,7 @@ XMPMeta2::SetQualifier ( XMP_StringPtr  schemaNS,
 	XMPUtils::ComposeQualifierPath ( schemaNS, propName, qualNS, qualName, &qualPath );
 	SetProperty ( schemaNS, qualPath.c_str(), qualValue, options );
 
-}	
+}
 // SetQualifier
 
 // Clone
@@ -596,12 +596,12 @@ XMPMeta2::SetQualifier ( XMP_StringPtr  schemaNS,
 void
 XMPMeta2::Clone ( XMPMeta * clone, XMP_OptionBits options ) const
 {
-	
+
 	XMPMeta2 * xmpMeta2Ptr = dynamic_cast<XMPMeta2 *>(clone);
 	// Possible to do a safer/better cast?
 	if (xmpMeta2Ptr== 0 ) XMP_Throw ( "Null clone pointer", kXMPErr_BadParam );
 	if ( options != 0 ) XMP_Throw ( "No options are defined yet", kXMPErr_BadOptions );
-	
+
 	xmpMeta2Ptr->mDOM->Clear();
 	xmpMeta2Ptr->mDOM = mDOM->Clone()->ConvertToMetadata();
 
@@ -621,7 +621,7 @@ XMPMeta2::DeleteProperty	( XMP_StringPtr	schemaNS,
 
 	XMP_ExpandedXPath	expPath;
 	ExpandXPath ( schemaNS, propName, &expPath );
-	
+
 	XMP_NodePtrPos ptrPos;
 	spINode propNode ;
 	XMP_OptionBits options = 0;
@@ -631,23 +631,23 @@ XMPMeta2::DeleteProperty	( XMP_StringPtr	schemaNS,
 		return;
 	}
 	if (!propNode) return;
-	
+
 	spINode  parentNode = propNode->GetParent();
-	
+
 	// Erase the pointer from the parent's vector, then delete the node and all below it.
-	
+
 	if (  (options & kXMP_PropIsQualifier) ) {
-		
+
 		parentNode->RemoveQualifier( propNode->GetNameSpace()->c_str(), propNode->GetNameSpace()->size(),
 			propNode->GetName()->c_str(), propNode->GetName()->size() );
-		
+
 
 	}
 	else if(parentNode->GetNodeType() == INode::kNTArray)  {
 
 		spIArrayNode parentArrayNode = parentNode->ConvertToArrayNode();
 		parentArrayNode->RemoveNodeAtIndex(arrayIndex);
-		
+
 
 	}
 	else if(parentNode->GetNodeType() == INode::kNTStructure) {
@@ -657,8 +657,8 @@ XMPMeta2::DeleteProperty	( XMP_StringPtr	schemaNS,
 	}
 	// delete subtree - needed ?
 	//propNode->Clear();
-	
-	
+
+
 }	// DeleteProperty
 
 void
@@ -693,7 +693,7 @@ XMPMeta2::SetObjectName ( XMP_StringPtr name )
 // 4. Choose the first item.
 
 static XMP_CLTMatch
-ChooseIXMPLocalizedText ( 
+ChooseIXMPLocalizedText (
 					  const spIArrayNode &arrayNode,
 					  XMP_OptionBits    &options,
 					  XMP_StringPtr		genericLang,
@@ -713,7 +713,7 @@ ChooseIXMPLocalizedText (
 		XMP_Throw ( "Localized text array is not alt-text", kXMPErr_BadXPath );
 	}
 	if ( !itemLim ) {
-		
+
 		return kXMP_CLT_NoValues;
 	}
 
@@ -738,7 +738,7 @@ ChooseIXMPLocalizedText (
 			return kXMP_CLT_SpecificMatch;
 		}
 	}
-	
+
 	if ( *genericLang != 0 ) {
 
 		// Look for the first partial match with the generic language.
@@ -758,7 +758,7 @@ ChooseIXMPLocalizedText (
 		}
 
 		if ( itemNum <= itemLim ) {
-			
+
 			// Look for a second partial match with the generic language.
 			for ( ++itemNum; itemNum <= itemLim; ++itemNum ) {
 				currItem = arrayNode->GetNodeAtIndex(itemNum);
@@ -775,9 +775,9 @@ ChooseIXMPLocalizedText (
 			return kXMP_CLT_SingleGeneric;	// No second partial match was found.
 
 		}
-		
+
 	}
-	
+
 	// Look for an 'x-default' item.
 	for ( itemNum = 1; itemNum <= itemLim; ++itemNum ) {
 		currItem = arrayNode->GetNodeAtIndex(itemNum);
@@ -788,11 +788,11 @@ ChooseIXMPLocalizedText (
 			return kXMP_CLT_XDefault;
 		}
 	}
-	
+
 	// Everything failed, choose the first item.
 	itemNode = arrayNode->GetNodeAtIndex(1);
 	return kXMP_CLT_FirstItem;
-	
+
 }	// ChooseLocalizedText
 
 
@@ -821,10 +821,10 @@ XMPMeta2::GetLocalizedText ( XMP_StringPtr	 schemaNS,
 	XMP_VarString zSpecificLang ( _specificLang );
 	NormalizeLangValue ( &zGenericLang );
 	NormalizeLangValue ( &zSpecificLang );
-	
+
 	XMP_StringPtr genericLang  = zGenericLang.c_str();
 	XMP_StringPtr specificLang = zSpecificLang.c_str();
-	
+
 	XMP_ExpandedXPath arrayPath;
 	ExpandXPath ( schemaNS, arrayName, &arrayPath );
 	spINode arrayNode, itemNode;
@@ -832,16 +832,16 @@ XMPMeta2::GetLocalizedText ( XMP_StringPtr	 schemaNS,
 	if(!XMPUtils::FindCnstNode( this->mDOM, arrayPath, arrayNode, &arrayOptions)) return false;
 	XMP_CLTMatch match = ChooseIXMPLocalizedText( arrayNode->ConvertToArrayNode(), arrayOptions, genericLang, specificLang, itemNode );
 	if ( match == kXMP_CLT_NoValues ) return false;
-	
+
 	spISimpleNode qualifierNode = itemNode->GetQualifier( xmlNameSpace.c_str(), xmlNameSpace.size(), "lang", AdobeXMPCommon::npos )->ConvertToSimpleNode();
 	*actualLang = qualifierNode->GetValue()->c_str();
 	*langSize   = static_cast<XMP_StringLen>( qualifierNode->GetValue()->size() );
 	spcIUTF8String itemNodeValue = itemNode->ConvertToSimpleNode()->GetValue();
-	*itemValue  = itemNodeValue->c_str();  
+	*itemValue  = itemNodeValue->c_str();
 	*valueSize  = static_cast<XMP_StringLen>( itemNodeValue->size() );
 	*options    = XMPUtils::GetIXMPOptions(itemNode);
 	return true;
-	
+
 }	// GetLocalizedText
 
 // -------------------------------------------------------------------------------------------------
@@ -867,7 +867,7 @@ XMPMeta2::DeleteLocalizedText ( XMP_StringPtr schemaNS,
 
 	XMP_ExpandedXPath arrayPath;
 	ExpandXPath ( schemaNS, arrayName, &arrayPath );
-	
+
 	// Find the LangAlt array and the selected array item.
 	spINode destNode, itemNode;
 	spIArrayNode arrayNode;
@@ -885,16 +885,16 @@ XMPMeta2::DeleteLocalizedText ( XMP_StringPtr schemaNS,
 		if ( arrayNode->GetNodeAtIndex(itemIndex) == itemNode ) break;
 	}
 	XMP_Enforce ( itemIndex <= arraySize );
-	
+
 	// Decide if the selected item is x-default or not, find relevant matching item.
 	spISimpleNode qualNode ;
 	bool itemIsXDefault = false;
-	
+
 	if ( itemNode->HasQualifiers() ) {
 		qualNode = itemNode->GetQualifier( xmlNameSpace.c_str(), xmlNameSpace.size(), "lang", AdobeXMPCommon::npos )->ConvertToSimpleNode();
 		if (XMP_LitMatch(qualNode->GetValue()->c_str(), "x-default"))  itemIsXDefault = true;
 	}
-	
+
 	if ( itemIsXDefault && (itemIndex != 1) ) {	// Enforce the x-default is first policy.
         auto sp = arrayNode->GetNodeAtIndex( itemIndex );
 		arrayNode->GetNodeAtIndex(1).swap( sp );
@@ -914,7 +914,7 @@ XMPMeta2::DeleteLocalizedText ( XMP_StringPtr schemaNS,
 			}
 		}
 
-	} 
+	}
 	else if ( itemIndex > 1 ) {
 
 		spcIUTF8String itemOneValue = arrayNode->GetNodeAtIndex( 1 )->ConvertToSimpleNode()->GetValue();
@@ -930,11 +930,11 @@ XMPMeta2::DeleteLocalizedText ( XMP_StringPtr schemaNS,
 	}
 	if ( !assocIndex) {
 		arrayNode->RemoveNodeAtIndex(itemIndex);
-	} 
+	}
 	else if ( itemIndex < assocIndex ) {
 		arrayNode->RemoveNodeAtIndex(assocIndex);
-		arrayNode->RemoveNodeAtIndex(itemIndex);		
-	} 
+		arrayNode->RemoveNodeAtIndex(itemIndex);
+	}
 	else {
 		arrayNode->RemoveNodeAtIndex(itemIndex);
 		arrayNode->RemoveNodeAtIndex(assocIndex);
@@ -965,54 +965,54 @@ XMPMeta2::SetLocalizedText ( XMP_StringPtr  schemaNS,
 	XMP_VarString zSpecificLang ( _specificLang );
 	NormalizeLangValue ( &zGenericLang );
 	NormalizeLangValue ( &zSpecificLang );
-	
+
 	XMP_StringPtr genericLang  = zGenericLang.c_str();
 	XMP_StringPtr specificLang = zSpecificLang.c_str();
-	
+
 	XMP_ExpandedXPath arrayPath;
 	ExpandXPath ( schemaNS, arrayName, &arrayPath );
-	
+
 	// Find the array node and set the options if it was just created.
 	spINode destNode;
 	spIArrayNode arrayNode;
 	XMP_OptionBits arrayOptions;
 	if( !XMPUtils::FindCnstNode(this->mDOM, arrayPath, destNode) ) {
-		
+
 		XPathStepInfo  lastPathSegment( arrayPath.back());
 		XMP_VarString arrayStep = lastPathSegment.step;
 		XMP_Index insertIndex = 0;
 		if (!XMPUtils::FindNode(this->mDOM, arrayPath, kXMP_CreateNodes, kXMP_PropArrayIsAlternate | kXMP_PropValueIsArray, destNode, &insertIndex)) {
 			XMP_Throw ( "Failure creating array node", kXMPErr_BadXPath );
 		}
-		
+
 	}
 
 	arrayNode = destNode->ConvertToArrayNode();
 	arrayOptions = XMPUtils::GetIXMPOptions(arrayNode);
-	
-	
-	
+
+
+
 	size_t arrayChildCount = arrayNode->ChildCount();
 	if ( !arrayNode  ) XMP_Throw ( "Failed to find or create array node", kXMPErr_BadXPath );
 	if ( ! XMP_ArrayIsAltText(arrayOptions) ) {
 		if ( !arrayChildCount && XMP_ArrayIsAlternate(arrayOptions) ) {
 			arrayOptions |= kXMP_PropArrayIsAltText;
-		} 
+		}
 		else {
 			XMP_Throw ( "Localized text array is not alt-text", kXMPErr_BadXPath );
 		}
 	}
-	
+
 	// Make sure the x-default item, if any, is first.
-	
+
 	size_t itemNum, itemLim;
 	spcISimpleNode firstQualifier;
 	spINode xdItem;
 	bool haveXDefault = false;
-	
+
 	for ( itemNum = 1, itemLim = arrayNode->ChildCount(); itemNum <= itemLim; ++itemNum ) {
 		spINode currItem = arrayNode->GetNodeAtIndex(itemNum);
-		
+
 		XMP_Assert (XMP_PropHasLang(XMPUtils::GetIXMPOptions(currItem)));
 		if(!currItem->HasQualifiers()) {
 			XMP_Throw ( "Language qualifier must be first", kXMPErr_BadXPath );
@@ -1027,16 +1027,16 @@ XMPMeta2::SetLocalizedText ( XMP_StringPtr  schemaNS,
 			break;
 		}
 	}
-	
+
 	if ( haveXDefault && (itemNum != 1) ) {
 		//TODO or not to do
 		XMP_Assert ( XMP_LitMatch(firstQualifier->GetValue()->c_str(), "x-default") );
 		spcISimpleNode tempNode = arrayNode->GetNodeAtIndex( itemNum )->GetQualifier( xmlNameSpace.c_str(), xmlNameSpace.size(), "lang", AdobeXMPCommon::npos )->ConvertToSimpleNode();
-		
+
 		firstQualifier.swap(tempNode);
 	}
-	
-	spINode itemNode;	
+
+	spINode itemNode;
 	spcIUTF8String xdValue, itemNodeValue;
 	if(xdItem && xdItem->GetNodeType() == INode::kNTSimple) {
 		xdValue = xdItem->ConvertToSimpleNode()->GetValue();
@@ -1055,16 +1055,16 @@ XMPMeta2::SetLocalizedText ( XMP_StringPtr  schemaNS,
 			haveXDefault = true;
 			if ( ! specificXDefault ) AppendIXMPLangItem ( arrayNode, specificLang, itemValue );
 			break;
-			
+
 		case kXMP_CLT_SpecificMatch :
-		
+
 			if ( ! specificXDefault ) {
 				// Update the specific item, update x-default if it matches the old value.
 				if ( xdItem  && haveXDefault && (xdItem != itemNode) && (XMP_LitMatch(xdValue->c_str(), itemNodeValue->c_str())) ) {
 					XMPUtils::SetNode ( xdItem,  itemValue, XMPUtils::GetIXMPOptions( xdItem));
 				}
 				XMPUtils::SetNode(itemNode, itemValue,XMPUtils:: GetIXMPOptions(itemNode));
-				
+
 			} else {
 				// Update all items whose values match the old x-default value.
 				XMP_Assert ( xdItem && haveXDefault && (xdItem.get() == itemNode.get()) );
@@ -1073,13 +1073,13 @@ XMPMeta2::SetLocalizedText ( XMP_StringPtr  schemaNS,
 					if ( (currItem.get() == xdItem.get() ) || (strcmp(currItem->GetValue()->c_str(), xdValue->c_str()) )) continue;
 					XMPUtils::SetNode ( currItem, itemValue, XMPUtils::GetIXMPOptions(currItem) );
 				}
-				
+
 				XMPUtils::SetNode( xdItem, itemValue,XMPUtils:: GetIXMPOptions(xdItem));
 			}
 			break;
 
 		case kXMP_CLT_SingleGeneric :
-		
+
 			// Update the generic item, update x-default if it matches the old value.
 			if (  xdItem && haveXDefault && (xdItem != itemNode) && (XMP_LitMatch(xdValue->c_str(),itemNodeValue->c_str()) ) ) {
 				XMPUtils::SetNode ( xdItem, itemValue, XMPUtils::GetIXMPOptions(xdItem) );
@@ -1088,12 +1088,12 @@ XMPMeta2::SetLocalizedText ( XMP_StringPtr  schemaNS,
 			break;
 
 		case kXMP_CLT_MultipleGeneric :
-		
+
 			// Create the specific language, ignore x-default.
 			AppendIXMPLangItem ( arrayNode, specificLang, itemValue );
 			if ( specificXDefault ) haveXDefault = true;
 			break;
-			
+
 		case kXMP_CLT_XDefault :
 
 			// Create the specific language, update x-default if it was the only item.
@@ -1107,7 +1107,7 @@ XMPMeta2::SetLocalizedText ( XMP_StringPtr  schemaNS,
 			AppendIXMPLangItem ( arrayNode, specificLang, itemValue );
 			if ( specificXDefault ) haveXDefault = true;
 			break;
-			
+
 		default :
 			XMP_Throw ( "Unexpected result from ChooseLocalizedText", kXMPErr_InternalFailure );
 
@@ -1142,14 +1142,14 @@ DumpIXMPPropertyTree ( const spcINode &  currNode,
 	auto defaultMap = INameSpacePrefixMap::GetDefaultNameSpacePrefixMap();
 	XMP_VarString currNameSpace = defaultMap->GetPrefix(currNode->GetNameSpace()->c_str(), currNode->GetNameSpace()->size() )->c_str();
 	XMP_VarString nodeFullName = currNameSpace + ":" + currNode->GetName()->c_str();
-	
+
 	OutProcIndent ( (size_t)indent );
 
 	size_t  childCount = 0;
 	if ( itemIndex == 0 ) {
 		if ( options & kXMP_PropIsQualifier ) OutProcNChars ( "? ", 2 );
 		DumpClearString ( nodeFullName, outProc, refCon );
-	} 
+	}
 	else {
 		OutProcNChars ( "[", 1 );
 		OutProcDecInt ( itemIndex );
@@ -1168,7 +1168,7 @@ DumpIXMPPropertyTree ( const spcINode &  currNode,
 	}
 
 	if ( options & kXMP_PropHasLang ) {
-		
+
 		spcISimpleNode firstQualifier = currNode->QualifiersIterator()->GetNode()->ConvertToSimpleNode();
 		if ( !currNode->HasQualifiers() || !(XMP_LitMatch(firstQualifier->GetName()->c_str(), "lang") ) ) {
 			OutProcLiteral ( "  ** bad lang flag **" );
@@ -1184,17 +1184,17 @@ DumpIXMPPropertyTree ( const spcINode &  currNode,
 			childCount = currNode->ConvertToStructureNode()->ChildCount();
 		}
 		if ( childCount ) OutProcLiteral ( "  ** bad children **" );
-	
-	} 
+
+	}
 	else if ( options & kXMP_PropValueIsArray ) {
 		if ( options & kXMP_PropValueIsStruct ) OutProcLiteral ( "  ** bad comp flags **" );
-	} 
+	}
 	else if ( (options & kXMP_PropCompositeMask) != kXMP_PropValueIsStruct ) {
 		OutProcLiteral ( "  ** bad comp flags **" );
 	}
 
 	OutProcNewline();
-	
+
 	if( currNode->HasQualifiers() ) {
 		auto qualIter = currNode->QualifiersIterator();
 		for (size_t qualNum = 0 ; qualIter; qualIter = qualIter->Next(), qualNum++ ) {
@@ -1221,17 +1221,17 @@ DumpIXMPPropertyTree ( const spcINode &  currNode,
 	for (size_t childNum = 0; childIter; childIter = childIter->Next(), childNum++)  {
 	    spcINode currentChild = childIter->GetNode();
 		XMP_OptionBits currentChildOptions = XMPUtils::GetIXMPOptions( currentChild);
-		if( !currentChild) continue; 
+		if( !currentChild) continue;
   	    if ( currentChild->GetParent() != currNode ) OutProcLiteral ( "** bad parent link => " );
 		if ( currentChildOptions & kXMP_PropIsQualifier ) OutProcLiteral ( "** bad qual flag => " );
 
 		if ( options & kXMP_PropValueIsArray ) {
-			
+
 			itemIndex = childNum + 1;
 			if (XMP_LitMatch(currentChild->GetName()->c_str(), kXMP_ArrayItemName) ) OutProcLiteral ( "** bad item name => " );
-		} 
+		}
 		else {
-			
+
 			itemIndex = 0;
 			if ( XMP_LitMatch(currentChild->GetName()->c_str(), kXMP_ArrayItemName ) ) OutProcLiteral ( "** bad field name => " );
 		}
@@ -1247,14 +1247,14 @@ DumpIXMPPropertyTree ( const spcINode &  currNode,
 // DumpObject
 // ----------
 
-void 
+void
 XMPMeta2::DumpObject ( XMP_TextOutputProc outProc,
                       void *             refCon ) const
 {
 	// TODO
 	// value of mDOM ?
-	
-	
+
+
 	XMP_Assert ( outProc != 0 );	// ! Enforced by wrapper.
 	auto defaultMap = INameSpacePrefixMap::GetDefaultNameSpacePrefixMap();
 	OutProcLiteral ( "Dumping XMPMeta object \"" );
@@ -1283,7 +1283,7 @@ XMPMeta2::DumpObject ( XMP_TextOutputProc outProc,
 	map<std::string, bool> schemaUsed;
 	if ( mDOM->ChildCount() ) {
 
-		spINodeIterator childIter = mDOM->Iterator(); 
+		spINodeIterator childIter = mDOM->Iterator();
 		for ( ;childIter; childIter = childIter->Next() ) {
 
 			spINode currSchema = childIter->GetNode();
@@ -1304,12 +1304,12 @@ XMPMeta2::DumpObject ( XMP_TextOutputProc outProc,
 					OutProcLiteral ( "** bad schema options **" );
 					OutProcNewline();
 				}
-			
+
 				schemaUsed[currSchema->GetNameSpace()->c_str()] = true;
 			}
-			
+
 			DumpIXMPPropertyTree ( currSchema, 2, 0, outProc, refCon );
-			
+
 		}
 
 	}

@@ -6,7 +6,7 @@
  * Date        : 2012-05-28
  * Description : Media Server configuration dialog to share a single list of files
  *
- * Copyright (C) 2012-2021 by Gilles Caulier <caulier dot gilles at gmail dot com>
+ * Copyright (C) 2012-2022 by Gilles Caulier <caulier dot gilles at gmail dot com>
  * Copyright (C) 2017      by Ahmed Fathy <ahmed dot fathi dot abdelmageed at gmail dot com>
  *
  * This program is free software; you can redistribute it
@@ -58,7 +58,7 @@ class Q_DECL_HIDDEN DMediaServerDlg::Private
 public:
 
     explicit Private()
-      : dirty(false),
+      : dirty           (false),
         mngr            (DMediaServerMngr::instance()),
         srvButton       (nullptr),
         srvStatus       (nullptr),
@@ -96,7 +96,7 @@ public:
 DMediaServerDlg::DMediaServerDlg(QObject* const /*parent*/,
                                  DInfoInterface* const iface)
     : DPluginDialog(nullptr, DMediaServerMngr::instance()->configGroupName()),
-      d(new Private)
+      d            (new Private)
 {
     setWindowTitle(i18nc("@title:window", "Share Files with DLNA Media Server"));
 

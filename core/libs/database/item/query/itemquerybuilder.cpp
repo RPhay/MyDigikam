@@ -8,7 +8,7 @@
  *
  * Copyright (C) 2005      by Renchi Raju <renchi dot raju at gmail dot com>
  * Copyright (C) 2007-2012 by Marcel Wiesweg <marcel dot wiesweg at gmx dot de>
- * Copyright (C) 2012-2021 by Gilles Caulier <caulier dot gilles at gmail dot com>
+ * Copyright (C) 2012-2022 by Gilles Caulier <caulier dot gilles at gmail dot com>
  *
  * This program is free software; you can redistribute it
  * and/or modify it under the terms of the GNU General
@@ -225,7 +225,14 @@ bool ItemQueryBuilder::buildField(QString& sql, SearchXmlCachingReader& reader, 
     }
     else if (name == QLatin1String("albumname"))
     {
-        fieldQuery.addStringField(QLatin1String("Albums.relativePath"));
+        if (CoreDbAccess::parameters().isSQLite())
+        {
+            fieldQuery.addStringField(QLatin1String("Albums.relativePath"));
+        }
+        else
+        {
+            fieldQuery.addStringField(QLatin1String("Albums.relativePath COLLATE utf8_general_ci"));
+        }
     }
     else if (name == QLatin1String("albumcaption"))
     {
@@ -383,7 +390,14 @@ bool ItemQueryBuilder::buildField(QString& sql, SearchXmlCachingReader& reader, 
     }
     else if (name == QLatin1String("filename"))
     {
-        fieldQuery.addStringField(QLatin1String("Images.name"));
+        if (CoreDbAccess::parameters().isSQLite())
+        {
+            fieldQuery.addStringField(QLatin1String("Images.name"));
+        }
+        else
+        {
+            fieldQuery.addStringField(QLatin1String("Images.name COLLATE utf8_general_ci"));
+        }
     }
     else if (name == QLatin1String("modificationdate"))
     {
@@ -931,7 +945,7 @@ bool ItemQueryBuilder::buildField(QString& sql, SearchXmlCachingReader& reader, 
 
             // to extract a part of the date we need different SQL code for SQLite and MySQL
 
-            if (CoreDbAccess().backend()->databaseType() == BdEngineBackend::DbType::SQLite)
+            if (CoreDbAccess::parameters().isSQLite())
             {
                 if      ((values.at(0) > 0) && (values.at(1) > 0))
                 {

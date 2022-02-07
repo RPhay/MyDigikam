@@ -6,7 +6,7 @@
  * Date        : 2017-06-04
  * Description : A label to show video frame effect preview
  *
- * Copyright (C) 2017-2021 by Gilles Caulier <caulier dot gilles at gmail dot com>
+ * Copyright (C) 2017-2022 by Gilles Caulier <caulier dot gilles at gmail dot com>
  *
  * This program is free software; you can redistribute it
  * and/or modify it under the terms of the GNU General
@@ -28,6 +28,7 @@
 #include <QTimer>
 #include <QImage>
 #include <QPixmap>
+#include <QStandardPaths>
 
 // Local includes
 
@@ -42,8 +43,8 @@ class Q_DECL_HIDDEN EffectPreview::Private
 public:
 
     explicit Private()
-      : mngr(nullptr),
-        curEffect(EffectMngr::None),
+      : mngr       (nullptr),
+        curEffect  (EffectMngr::None),
         previewSize(QSize(192, 144))
     {
     }
@@ -57,7 +58,7 @@ public:
 
 EffectPreview::EffectPreview(QWidget* const parent)
     : QLabel(parent),
-      d(new Private)
+      d     (new Private)
 {
     setFixedSize(d->previewSize);
     setContentsMargins(QMargins());
@@ -89,9 +90,9 @@ void EffectPreview::setImagesList(const QList<QUrl>& images)
     }
     else
     {
-        QImage blank(d->previewSize, QImage::Format_ARGB32);
-        blank.fill(Qt::black);
-        d->mngr->setImage(blank);
+        QImage sample = QImage(QStandardPaths::locate(QStandardPaths::GenericDataLocation,
+                                                      QLatin1String("digikam/data/sample-aix.png")));
+        d->mngr->setImage(sample.scaled(QSize(1024, 768), Qt::KeepAspectRatio));
     }
 }
 

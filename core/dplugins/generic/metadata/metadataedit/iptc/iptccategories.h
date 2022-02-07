@@ -6,7 +6,7 @@
  * Date        : 2006-10-15
  * Description : IPTC categories settings page.
  *
- * Copyright (C) 2006-2021 by Gilles Caulier <caulier dot gilles at gmail dot com>
+ * Copyright (C) 2006-2022 by Gilles Caulier <caulier dot gilles at gmail dot com>
  * Copyright (C) 2013      by Victor Dodon <dodonvictor at gmail dot com>
  *
  * This program is free software; you can redistribute it
@@ -46,8 +46,8 @@ public:
     explicit IPTCCategories(QWidget* const parent);
     ~IPTCCategories() override;
 
-    void applyMetadata(DMetadata& meta);
-    void readMetadata(DMetadata& meta);
+    void applyMetadata(const DMetadata& meta);
+    void readMetadata(const DMetadata& meta);
 
 Q_SIGNALS:
 

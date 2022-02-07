@@ -53,7 +53,7 @@ NPT_SocketAddress::ToString() const
 bool
 NPT_SocketAddress::operator==(const NPT_SocketAddress& other) const
 {
-    return (other.GetIpAddress().AsLong() == m_IpAddress.AsLong() && 
+    return (other.GetIpAddress().AsLong() == m_IpAddress.AsLong() &&
             other.GetPort() == m_Port);
 }
 

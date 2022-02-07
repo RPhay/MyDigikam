@@ -6,7 +6,7 @@
  * Date        : 2009-02-06
  * Description : Thread actions manager.
  *
- * Copyright (C) 2009-2021 by Gilles Caulier <caulier dot gilles at gmail dot com>
+ * Copyright (C) 2009-2022 by Gilles Caulier <caulier dot gilles at gmail dot com>
  * Copyright (C) 2012      by Pankaj Kumar <me at panks dot me>
  *
  * This program is free software; you can redistribute it
@@ -126,7 +126,6 @@ void ActionThread::slotUpdateItemInfo(const Digikam::ActionData& ad)
         CollectionScanner scanner;
         ItemInfo source = ItemInfo::fromUrl(ad.fileUrl);
         ItemInfo info(scanner.scanFile(ad.destUrl.toLocalFile(), CollectionScanner::NormalScan));
-
 
         // Copy the digiKam attributes from original file to the new file
 

@@ -1,5 +1,5 @@
 #
-# Copyright (c) 2010-2021 by Gilles Caulier, <caulier dot gilles at gmail dot com>
+# Copyright (c) 2010-2022 by Gilles Caulier, <caulier dot gilles at gmail dot com>
 #
 # Redistribution and use is allowed according to the terms of the BSD license.
 # For details see the accompanying COPYING-CMAKE-SCRIPTS file.
@@ -12,33 +12,20 @@ if(POLICY CMP0063)
     cmake_policy(SET CMP0063 NEW)
 endif()
 
-find_package(Qt5 NO_MODULE REQUIRED Core)
-get_target_property(QT_RCC_EXECUTABLE Qt5::rcc LOCATION)
+include (ExternalProject)
 
-add_executable(qrcAlias main.cpp)
-target_link_libraries(qrcAlias PUBLIC Qt5::Core)
+ExternalProject_Add(icon-rcc
+    DOWNLOAD_DIR ${EXTERNALS_DOWNLOAD_DIR}
 
-add_custom_command(OUTPUT breeze.rcc
-    COMMAND ${QT_RCC_EXECUTABLE} -project -o icons.qrc
-    COMMAND $<TARGET_FILE_DIR:qrcAlias>/$<TARGET_FILE_NAME:qrcAlias> -i icons.qrc -o aliased.qrc
-    COMMAND ${QT_RCC_EXECUTABLE} -binary -o ${CMAKE_BINARY_DIR}/breeze.rcc -root /icons aliased.qrc
+    GIT_REPOSITORY https://invent.kde.org/frameworks/breeze-icons.git
+    GIT_TAG v${KF5_VERSION}.0
 
-    WORKING_DIRECTORY ${CMAKE_INSTALL_PREFIX}/bin/data/icons
-    DEPENDS qrcAlias
+    PATCH_COMMAND patch -p1 -i ${CMAKE_CURRENT_SOURCE_DIR}/breeze-mxe-linux.patch
+
+    CMAKE_ARGS -DBINARY_ICONS_RESOURCE=ON -DSKIP_INSTALL_ICONS=ON -DQT_MAJOR_VERSION=5
+
+    BUILD_IN_SOURCE 0
+    INSTALL_COMMAND ""
+    UPDATE_COMMAND ""
+    ALWAYS 0
 )
-
-add_custom_command(OUTPUT breeze-dark.rcc
-    COMMAND ${QT_RCC_EXECUTABLE} -project -o icons.qrc
-    COMMAND $<TARGET_FILE_DIR:qrcAlias>/$<TARGET_FILE_NAME:qrcAlias> -i icons.qrc -o aliased.qrc
-    COMMAND ${QT_RCC_EXECUTABLE} -binary -o ${CMAKE_BINARY_DIR}/breeze-dark.rcc -root /icons aliased.qrc
-
-    WORKING_DIRECTORY ${CMAKE_INSTALL_PREFIX}/bin/data/icons
-    DEPENDS qrcAlias
-)
-
-add_custom_target(icons ALL
-    DEPENDS breeze.rcc breeze-dark.rcc
-)
-
-install(FILES ${CMAKE_BINARY_DIR}/breeze.rcc      DESTINATION ${CMAKE_INSTALL_PREFIX}/bin/)
-install(FILES ${CMAKE_BINARY_DIR}/breeze-dark.rcc DESTINATION ${CMAKE_INSTALL_PREFIX}/bin/)

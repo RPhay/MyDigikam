@@ -6,7 +6,7 @@
  * Date        : 2012-04-19
  * Description : time adjust settings container.
  *
- * Copyright (C) 2012-2021 by Gilles Caulier <caulier dot gilles at gmail dot com>
+ * Copyright (C) 2012-2022 by Gilles Caulier <caulier dot gilles at gmail dot com>
  *
  * This program is free software; you can redistribute it
  * and/or modify it under the terms of the GNU General
@@ -84,14 +84,13 @@ public:
     /// Check if at least one option is selected
     bool atLeastOneUpdateToProcess()                                const;
 
-    QDateTime calculateAdjustedDate(const QDateTime& originalTime);
+    QDateTime calculateAdjustedDate(const QDateTime& originalTime, int index = 0);
     QDateTime getDateTimeFromUrl(const QUrl& url)                   const;
 
 public:
 
     QDateTime customDate;
     QDateTime customTime;
-    QDateTime intervalTime;
     QDateTime adjustmentTime;
 
     bool      updIfAvailable;

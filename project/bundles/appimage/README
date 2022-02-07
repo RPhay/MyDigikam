@@ -6,7 +6,7 @@ These scripts build a binary digiKam AppImage bundle for Linux using Mageia 64 b
 AUTHORS
 -------
 
-(c) 2015-2021 by Gilles Caulier <caulier dot gilles at gmail dot com>
+(c) 2015-2022 by Gilles Caulier <caulier dot gilles at gmail dot com>
 
 
 DESCRIPTION
@@ -40,7 +40,7 @@ Note : the bundle is rellocable.
     │   ├── geoservices
     │   ├── iconengines
     │   ├── imageformats
-    │   ├── kauth                                   KF5 authentification
+    │   ├── kauth                                   KF5 authentication
     │   ├── kf5                                     Generic KF5 plugins
     │   ├── mediaservice
     │   ├── org.kde.kglobalaccel5.platforms         KF5 global accelerators
@@ -83,7 +83,7 @@ REQUIREMENTS
   Setup the Internet repositories and install update.
 - Install the minimum requirement to checkout the code:
   urpmi git openssh-askpass
-  git clone git://anongit.kde.org/digikam.git DK
+  git clone https://invent.kde.org/graphics/digikam.git DK
   cd DK/project/appimage.mageia/
 
 - Customize the config.sh file:

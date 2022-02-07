@@ -6,7 +6,7 @@
  * Date        : 2009-07-06
  * Description : metadata template settings panel.
  *
- * Copyright (C) 2009-2021 by Gilles Caulier <caulier dot gilles at gmail dot com>
+ * Copyright (C) 2009-2022 by Gilles Caulier <caulier dot gilles at gmail dot com>
  *
  * This program is free software; you can redistribute it
  * and/or modify it under the terms of the GNU General
@@ -267,7 +267,7 @@ TemplatePanel::TemplatePanel(QWidget* const parent)
 
     // --------------------------------------------------------
 
-    QLabel* const label11        = new QLabel(i18n("Province/State:"));
+    QLabel* const label11        = new QLabel(i18n("State/Province:"));
     d->locationProvinceStateEdit = new QLineEdit;
     d->locationProvinceStateEdit->setClearButtonEnabled(true);
     d->locationProvinceStateEdit->setPlaceholderText(i18n("Enter the province or state of contents here."));

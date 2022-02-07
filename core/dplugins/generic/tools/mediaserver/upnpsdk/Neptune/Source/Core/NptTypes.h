@@ -51,7 +51,7 @@ typedef char                           NPT_Int8;
 typedef float                          NPT_Float;
 
 /*----------------------------------------------------------------------
-|   named types       
+|   named types
 +---------------------------------------------------------------------*/
 typedef int           NPT_Result;
 typedef unsigned int  NPT_Cardinal;
@@ -68,7 +68,7 @@ typedef void*         NPT_Any;
 typedef const void*   NPT_AnyConst;
 
 /*----------------------------------------------------------------------
-|   limits       
+|   limits
 +---------------------------------------------------------------------*/
 #if defined(NPT_CONFIG_HAVE_LIMITS_H)
 #include <limits.h>
@@ -115,7 +115,7 @@ typedef const void*   NPT_AnyConst;
 #endif
 
 #if !defined(NPT_INT32_MIN)
-#define NPT_INT32_MIN (-NPT_INT32_MAX - 1) 
+#define NPT_INT32_MIN (-NPT_INT32_MAX - 1)
 #endif
 
 #if !defined(NPT_UINT32_MAX)
@@ -134,7 +134,7 @@ typedef const void*   NPT_AnyConst;
 #if defined(NPT_CONFIG_HAVE_LLONG_MIN)
 #define NPT_INT64_MIN LLONG_MIN
 #else
-#define NPT_INT64_MIN (-NPT_INT64_MAX - 1LL) 
+#define NPT_INT64_MIN (-NPT_INT64_MAX - 1LL)
 #endif
 #endif
 

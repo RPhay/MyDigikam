@@ -5,7 +5,7 @@
 # This script must be run as sudo
 #
 # Copyright (c) 2015      by Shanti, <listaccount at revenant dot org>
-# Copyright (c) 2015-2021 by Gilles Caulier  <caulier dot gilles at gmail dot com>
+# Copyright (c) 2015-2022 by Gilles Caulier  <caulier dot gilles at gmail dot com>
 #
 # Redistribution and use is allowed according to the terms of the BSD license.
 # For details see the accompanying COPYING-CMAKE-SCRIPTS file.
@@ -44,37 +44,13 @@ OsxCodeName
 
 #################################################################################################
 
-# Pathes rules
+# Paths rules
 ORIG_PATH="$PATH"
 ORIG_WD="`pwd`"
 
 export PATH=$INSTALL_PREFIX/bin:/$INSTALL_PREFIX/sbin:$ORIG_PATH
 
 DKRELEASEID=`cat $ORIG_WD/data/RELEASEID.txt`
-
-#################################################################################################
-# Build icons-set ressource
-
-echo -e "\n---------- Build icons-set ressource\n"
-
-cd $ORIG_WD/icon-rcc
-
-rm -f CMakeCache.txt > /dev/null
-rm -f *.rcc > /dev/null
-
-cp -f $ORIG_WD/../../../bootstrap.macports .
-
-cmake -DCMAKE_INSTALL_PREFIX="$INSTALL_PREFIX" \
-      -DCMAKE_BUILD_TYPE=debug \
-      -DCMAKE_COLOR_MAKEFILE=ON \
-      -Wno-dev \
-      .
-
-make -j$CPU_CORES
-
-export PATH=$ORIG_PATH
-
-cd $ORIG_WD
 
 #################################################################################################
 # Configurations
@@ -107,13 +83,13 @@ lib/plugins/digikam/generic/*.so \
 lib/plugins/digikam/editor/*.so \
 lib/plugins/digikam/dimg/*.so \
 lib/plugins/digikam/rawimport/*.so \
-lib/mariadb/bin/mysql \
-lib/mariadb/bin/mysqld \
-lib/mariadb/bin/my_print_defaults \
-lib/mariadb/bin/mysqladmin \
-lib/mariadb/bin/mysqltest \
-lib/mariadb/mysql/*.dylib \
-lib/mariadb/plugin/*.so \
+lib/mariadb-10.5/bin/mysql \
+lib/mariadb-10.5/bin/mysqld \
+lib/mariadb-10.5/bin/my_print_defaults \
+lib/mariadb-10.5/bin/mysqladmin \
+lib/mariadb-10.5/bin/mysqltest \
+lib/mariadb-10.5/mysql/*.dylib \
+lib/mariadb-10.5/plugin/*.so \
 lib/ImageMagick*/modules-Q16/coders/*.so \
 lib/ImageMagick*/modules-Q16/filters/*.so \
 bin/kbuildsycoca5 \
@@ -141,13 +117,13 @@ lib/libdigikam*.dSYM \
 lib/plugins \
 lib/libgphoto2 \
 lib/libgphoto2_port \
-lib/mariadb \
+lib/mariadb-10.5 \
 lib/ImageMagick* \
-share/mariadb \
+share/mariadb-10.5 \
 share/ImageMagick* \
 etc/xdg \
 etc/ImageMagick* \
-etc/mariadb \
+etc/mariadb-10.5 \
 "
 
 #etc/sane.d \
@@ -250,7 +226,7 @@ while read lib ; do
             mkdir -p "$TEMPROOT/$dir"
         fi
 
-        echo "  $lib"
+        echo "  Copying $INSTALL_PREFIX/$lib to $TEMPROOT/$dir/"
         cp -aH "$INSTALL_PREFIX/$lib" "$TEMPROOT/$dir/"
     fi
 done
@@ -268,8 +244,8 @@ for path in $OTHER_APPS ; do
         mkdir -p "$TEMPROOT/$dir"
     fi
 
-    echo "  Copying $path"
-    cp -a "$INSTALL_PREFIX/$path" "$TEMPROOT/$dir/"
+    echo "  Copying $INSTALL_PREFIX/$path to $TEMPROOT/$dir/"
+    cp -aH "$INSTALL_PREFIX/$path" "$TEMPROOT/$dir/"
 done
 
 echo "---------- Copying directory contents..."
@@ -282,8 +258,8 @@ for path in $OTHER_DIRS ; do
         mkdir -p "$TEMPROOT/$dir"
     fi
 
-    echo "   Copying $path"
-    cp -a "$INSTALL_PREFIX/$path" "$TEMPROOT/$dir/"
+    echo "   Copying $INSTALL_PREFIX/$path to $TEMPROOT/$dir/"
+    cp -aH "$INSTALL_PREFIX/$path" "$TEMPROOT/$dir/"
 done
 
 
@@ -368,6 +344,20 @@ cp -a $TEMPROOT/lib/plugins $TEMPROOT/libexec/qt5/
 rm -rf $TEMPROOT/lib/plugins
 
 #################################################################################################
+# Merge Manifest files
+
+echo "---------- Copy Git Revisions Manifest\n"
+
+touch $TEMPROOT/digikam.app/Contents/Resources/MANIFEST.txt
+
+FILES=$(ls $ORIG_WD/data/*_manifest.txt)
+
+for FILE in $FILES ; do
+    echo $FILE
+    cat $FILE >> $TEMPROOT/digikam.app/Contents/Resources/MANIFEST.txt
+done
+
+#################################################################################################
 # Create package pre-install script
 
 echo "---------- Create package pre-install script"
@@ -425,8 +415,8 @@ chmod 755 "$PROJECTDIR/postinstall"
 #################################################################################################
 # Copy icons-set resource files.
 
-cp $ORIG_WD/icon-rcc/breeze.rcc      $TEMPROOT/digikam.app/Contents/Resources/
-cp $ORIG_WD/icon-rcc/breeze-dark.rcc $TEMPROOT/digikam.app/Contents/Resources/
+cp $INSTALL_PREFIX/share/icons/breeze/breeze-icons.rcc           $TEMPROOT/digikam.app/Contents/Resources/breeze.rcc
+cp $INSTALL_PREFIX/share/icons/breeze-dark/breeze-icons-dark.rcc $TEMPROOT/digikam.app/Contents/Resources/breeze-dark.rcc
 
 #################################################################################################
 # Cleanup symbols in binary files to free space.
@@ -435,8 +425,8 @@ echo -e "\n---------- Strip symbols in binary files\n"
 
 if [[ $DK_DEBUG = 1 ]] ; then
 
-    find $TEMPROOT -name "*.so"    | grep -Ev '(digikam|showfoto|exiv2)' | xargs strip -SXx
-    find $TEMPROOT -name "*.dylib" | grep -Ev '(digikam|showfoto|exiv2)' | xargs strip -SXx
+    find $TEMPROOT -name "*.so"    | grep -Ev '(digikam|showfoto)' | xargs strip -SXx
+    find $TEMPROOT -name "*.dylib" | grep -Ev '(digikam|showfoto)' | xargs strip -SXx
 
 else
 
@@ -557,12 +547,12 @@ for HPP in ${HEADERFILES[@]} ; do
 
 done
 
-rm -rfv $TEMPROOT/digikam.app/Contents/share/mariadb/mysql-test
-rm -rfv $TEMPROOT/digikam.app/Contents/share/mariadb/sql-bench
+rm -rfv $TEMPROOT/digikam.app/Contents/share/mariadb-10.5/mysql-test
+rm -rfv $TEMPROOT/digikam.app/Contents/share/mariadb-10.5/sql-bench
 
 echo -e "\n---------- Patch config and script files in bundle"
 
-MARIADBDIRS=(`find $TEMPROOT -type d -name "mariadb"`)
+MARIADBDIRS=(`find $TEMPROOT -type d -name "mariadb-10.5"`)
 
 for DIR in ${MARIADBDIRS[@]} ; do
 
@@ -597,8 +587,14 @@ done
 #################################################################################################
 # See bug #436624: move mariadb share files at basedir (this must be done after patch operations)
 
-rsync -a "$TEMPROOT/digikam.app/Contents/share/mariadb" "$TEMPROOT/digikam.app/Contents/lib/mariadb/share/"
-rm -fr "$TEMPROOT/digikam.app/Contents/share/mariadb"
+rsync -a "$TEMPROOT/digikam.app/Contents/share/mariadb-10.5" "$TEMPROOT/digikam.app/Contents/lib/mariadb-10.5/share/"
+rm -fr "$TEMPROOT/digikam.app/Contents/share/mariadb-10.5"
+
+# At run time, digiKam will check for mariadb folder-name without revision numbers.
+
+ln -sv "../../../../../digikam.app/Contents/lib/mariadb-10.5/share/mariadb-10.5" "$TEMPROOT/digikam.app/Contents/lib/mariadb-10.5/share/mariadb"
+ln -sv "../../../digikam.app/Contents/lib/mariadb-10.5"                          "$TEMPROOT/digikam.app/Contents/lib/mariadb"
+ln -sv "../../../digikam.app/Contents/etc/mariadb-10.5"                          "$TEMPROOT/digikam.app/Contents/etc/mariadb"
 
 #################################################################################################
 # Build PKG file
@@ -618,6 +614,8 @@ fi
 TARGET_INSTALLER=digiKam-$DKRELEASEID$DK_SUBVER-MacOS-x86-64$DEBUG_SUF.pkg
 TARGET_PKG_FILE=$BUILDDIR/bundle/$TARGET_INSTALLER
 echo -e "Target PKG file : $TARGET_PKG_FILE"
+
+chmod 666 $PROJECTDIR/digikam.pkgproj
 
 $PACKAGESBUILD -v "$PROJECTDIR/digikam.pkgproj" --package-version "$DKRELEASEID"
 

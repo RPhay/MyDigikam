@@ -6,7 +6,7 @@
  * Date        : 2018-12-31
  * Description : configuration view for external plugin
  *
- * Copyright (C) 2018-2021 by Gilles Caulier <caulier dot gilles at gmail dot com>
+ * Copyright (C) 2018-2022 by Gilles Caulier <caulier dot gilles at gmail dot com>
  *
  * This program is free software; you can redistribute it
  * and/or modify it under the terms of the GNU General
@@ -270,14 +270,14 @@ int DPluginConfView::itemsWithVisiblyProperty() const
 
 void DPluginConfView::setFilter(const QString& filter, Qt::CaseSensitivity cs)
 {
-    d->filter  = filter;
-    bool query = false;
+    d->filter = filter;
+    int found = 0;
 
     foreach (DPluginCB* const item, d->plugBoxes)
     {
         if (item->contains(filter, cs))
         {
-            query = true;
+            found++;
             item->setHidden(false);
         }
         else
@@ -286,7 +286,7 @@ void DPluginConfView::setFilter(const QString& filter, Qt::CaseSensitivity cs)
         }
     }
 
-    emit signalSearchResult(query);
+    emit signalSearchResult(found);
 }
 
 QString DPluginConfView::filter() const

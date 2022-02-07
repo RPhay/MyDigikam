@@ -11,13 +11,13 @@
 | as published by the Free Software Foundation; either version 2
 | of the License, or (at your option) any later version.
 |
-| OEMs, ISVs, VARs and other distributors that combine and 
+| OEMs, ISVs, VARs and other distributors that combine and
 | distribute commercially licensed software with Platinum software
 | and do not wish to distribute the source code for the commercially
 | licensed software under version 2, or (at your option) any later
 | version, of the GNU General Public License (the "GPL") must enter
 | into a commercial license agreement with Plutinosoft, LLC.
-| 
+|
 | This program is distributed in the hope that it will be useful,
 | but WITHOUT ANY WARRANTY; without even the implied warranty of
 | MERCHANTABILITY or FITNESS FOR A PARTICULAR PURPOSE.  See the
@@ -25,7 +25,7 @@
 |
 | You should have received a copy of the GNU General Public License
 | along with this program; see the file LICENSE.txt. If not, write to
-| the Free Software Foundation, Inc., 
+| the Free Software Foundation, Inc.,
 | 51 Franklin Street, Fifth Floor, Boston, MA  02110-1301, USA.
 | http://www.gnu.org/licenses/gpl-2.0.html
 |
@@ -155,12 +155,12 @@ public:
     {
         ((NPT_List<PLT_PersonRole>&)m_pHandle->artists).Add(artist->Handle);
     }
-    
+
     void AddActor(PersonRole^ actor)
     {
         ((NPT_List<PLT_PersonRole>&)m_pHandle->actors).Add(actor->Handle);
-    }   
-    
+    }
+
     void AddAuthors(PersonRole^ author)
     {
         ((NPT_List<PLT_PersonRole>&)m_pHandle->authors).Add(author->Handle);
@@ -298,7 +298,7 @@ internal:
     AlbumArtInfo(PLT_AlbumArtInfo& native) :
         ManagedWrapper<PLT_AlbumArtInfo>(native)
     {}
-        
+
 public:
     AlbumArtInfo(String^ uri)
     {
@@ -409,19 +409,19 @@ public:
     // properties
 
 public:
-    static ProtocolInfo^ GetProtocolInfo(String^ filename) 
-    { 
-        return GetProtocolInfo(filename, true, nullptr); 
+    static ProtocolInfo^ GetProtocolInfo(String^ filename)
+    {
+        return GetProtocolInfo(filename, true, nullptr);
     }
 
-    static ProtocolInfo^ GetProtocolInfo(String^ filename, 
-                                         bool with_dlna_extension) 
-    { 
-        return GetProtocolInfo(filename, with_dlna_extension, nullptr); 
+    static ProtocolInfo^ GetProtocolInfo(String^ filename,
+                                         bool with_dlna_extension)
+    {
+        return GetProtocolInfo(filename, with_dlna_extension, nullptr);
     }
 
-    static ProtocolInfo^ GetProtocolInfo(String^ filename, 
-                                         bool with_dlna_extension, 
+    static ProtocolInfo^ GetProtocolInfo(String^ filename,
+                                         bool with_dlna_extension,
                                          HttpRequestContext^ context);
 
     static ProtocolInfo^ GetProtocolInfoFromMimeType(String^ mime_type)
@@ -429,14 +429,14 @@ public:
         return GetProtocolInfoFromMimeType(mime_type, true, nullptr);
     }
 
-    static ProtocolInfo^ GetProtocolInfoFromMimeType(String^ mime_type, 
+    static ProtocolInfo^ GetProtocolInfoFromMimeType(String^ mime_type,
                                                      bool with_dlna_extension)
     {
         return GetProtocolInfoFromMimeType(mime_type, with_dlna_extension, nullptr);
     }
 
-    static ProtocolInfo^ GetProtocolInfoFromMimeType(String^ mime_type, 
-                                                     bool with_dlna_extension, 
+    static ProtocolInfo^ GetProtocolInfoFromMimeType(String^ mime_type,
+                                                     bool with_dlna_extension,
                                                      HttpRequestContext^ context);
 
 internal:
@@ -514,7 +514,7 @@ public ref class MediaObject
 protected:
 
     PLT_MediaObjectReference* m_pHandle;
-   
+
 public:
 
     // properties
@@ -535,7 +535,7 @@ public:
     PLATINUM_MANAGED_IMPLEMENT_OBJECT_PROPERTY(RecordedInfo^, Recorded, m_Recorded, (*m_pHandle));
 
     PLATINUM_MANAGED_IMPLEMENT_PROPERTY(bool, Restricted, m_Restricted, (*m_pHandle));
-    
+
     /* extras */
     PLATINUM_MANAGED_IMPLEMENT_OBJECT_PROPERTY(ExtraInfo^, Extra, m_ExtraInfo, (*m_pHandle));
 
@@ -573,7 +573,7 @@ public:
     {
         NPT_String didl;
         didl.Reserve(1024);
-        
+
         marshal_context c;
         NPT_String _filter(c.marshal_as<const char*>(filter));
 
@@ -693,23 +693,23 @@ public:
 
 internal:
 
-    MediaContainer(PLT_MediaContainer& media) : 
+    MediaContainer(PLT_MediaContainer& media) :
         MediaObject(media)
     {}
 
 public:
-    MediaContainer() : 
+    MediaContainer() :
         MediaObject(new PLT_MediaContainer)
     {}
 
-    MediaContainer(PLT_MediaObjectReference& media) : 
+    MediaContainer(PLT_MediaObjectReference& media) :
         MediaObject(media)
     {
         if (!media->IsContainer())
             throw gcnew ArgumentException("object");
     }
 
-    MediaContainer(MediaObject^ media) : 
+    MediaContainer(MediaObject^ media) :
         MediaObject(*media->Handle)
     {
         if (!media->Handle->IsContainer())

@@ -7,7 +7,7 @@
  * Description : a tool to export items to YandexFotki web service
  *
  * Copyright (C) 2010      by Roman Tsisyk <roman at tsisyk dot com>
- * Copyright (C) 2010-2021 by Gilles Caulier <caulier dot gilles at gmail dot com>
+ * Copyright (C) 2010-2022 by Gilles Caulier <caulier dot gilles at gmail dot com>
  *
  * This program is free software; you can redistribute it
  * and/or modify it under the terms of the GNU General
@@ -69,6 +69,7 @@ public:
 
     /// FSM data
     State                   state;
+
     /// temporary data
     YFPhoto*                lastPhoto;
     QString                 lastPhotosUrl;
@@ -99,10 +100,10 @@ public:
 /*
  * static API constants
  */
-const QString YFTalker::Private::SESSION_URL          = QLatin1String("http://auth.mobile.yandex.ru/yamrsa/key/");
+const QString YFTalker::Private::SESSION_URL          = QLatin1String("http://auth.mobile.yandex.ru/yamrsa/key/");       // krazy:exclude=insecurenet
 const QString YFTalker::Private::AUTH_REALM           = QLatin1String("fotki.yandex.ru");
-const QString YFTalker::Private::TOKEN_URL            = QLatin1String("http://auth.mobile.yandex.ru/yamrsa/token/");
-const QString YFTalker::Private::SERVICE_URL          = QLatin1String("http://api-fotki.yandex.ru/api/users/%1/");
+const QString YFTalker::Private::TOKEN_URL            = QLatin1String("http://auth.mobile.yandex.ru/yamrsa/token/");     // krazy:exclude=insecurenet
+const QString YFTalker::Private::SERVICE_URL          = QLatin1String("http://api-fotki.yandex.ru/api/users/%1/");       // krazy:exclude=insecurenet
 
 const QString YFTalker::Private::ACCESS_STRINGS[]     =
 {

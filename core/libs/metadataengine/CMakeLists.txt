@@ -1,5 +1,5 @@
 #
-# Copyright (c) 2010-2021 by Gilles Caulier, <caulier dot gilles at gmail dot com>
+# Copyright (c) 2010-2022 by Gilles Caulier, <caulier dot gilles at gmail dot com>
 # Copyright (c) 2015      by Veaceslav Munteanu, <veaceslav dot munteanu90 at gmail dot com>
 #
 # Redistribution and use is allowed according to the terms of the BSD license.
@@ -78,6 +78,16 @@ set(libdmetadata_SRCS
     ${CMAKE_CURRENT_SOURCE_DIR}/exiftool/exiftoolparser_p.cpp
     ${CMAKE_CURRENT_SOURCE_DIR}/exiftool/exiftoolprocess.cpp
     ${CMAKE_CURRENT_SOURCE_DIR}/exiftool/exiftoolprocess_p.cpp
+
+    ${CMAKE_CURRENT_SOURCE_DIR}/focuspoint/focuspoint.cpp
+    ${CMAKE_CURRENT_SOURCE_DIR}/focuspoint/focuspoints_extractor.cpp
+    ${CMAKE_CURRENT_SOURCE_DIR}/focuspoint/focuspoints_extractor_canon.cpp
+    ${CMAKE_CURRENT_SOURCE_DIR}/focuspoint/focuspoints_extractor_exif.cpp
+    ${CMAKE_CURRENT_SOURCE_DIR}/focuspoint/focuspoints_extractor_nikon.cpp
+    ${CMAKE_CURRENT_SOURCE_DIR}/focuspoint/focuspoints_extractor_panasonic.cpp
+    ${CMAKE_CURRENT_SOURCE_DIR}/focuspoint/focuspoints_extractor_sony.cpp
+    ${CMAKE_CURRENT_SOURCE_DIR}/focuspoint/focuspoints_extractor_xmp.cpp
+    ${CMAKE_CURRENT_SOURCE_DIR}/focuspoint/focuspoints_writer.cpp
 )
 
 include_directories(

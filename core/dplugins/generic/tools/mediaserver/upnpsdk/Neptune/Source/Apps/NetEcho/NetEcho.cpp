@@ -48,7 +48,7 @@ static struct {
 static void
 PrintUsageAndExit(void)
 {
-    fprintf(stderr, 
+    fprintf(stderr,
             "usage: NetEcho udp|tcp <port>\n");
     exit(1);
 }
@@ -97,12 +97,12 @@ TcpServerLoop(int port)
 {
     NPT_TcpServerSocket listener;
 
-    NPT_Result result = listener.Bind(NPT_SocketAddress(NPT_IpAddress::Any, port)); 
+    NPT_Result result = listener.Bind(NPT_SocketAddress(NPT_IpAddress::Any, port));
     if (NPT_FAILED(result)) {
         fprintf(stderr, "ERROR: Bind() failed (%d : %s)\n", result, NPT_ResultText(result));
         return;
     }
-        
+
     NPT_Socket* client;
 
     for (;;) {

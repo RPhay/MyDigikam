@@ -95,7 +95,7 @@ NPT_IpAddress::Parse(const char* name)
             // numerical character
             accumulator = accumulator*10 + (*name - '0');
             if (accumulator > 255) return NPT_ERROR_INVALID_SYNTAX;
-            fragment_empty = false; 
+            fragment_empty = false;
         } else {
             // invalid character
             return NPT_ERROR_INVALID_SYNTAX;
@@ -127,13 +127,13 @@ NPT_NetworkInterface::GetNetworkInterfaces(NPT_List<NPT_NetworkInterface*>& inte
     }
 
     // get a list of interfaces
-    INTERFACE_INFO query[32];  // get up to 32 interfaces 
+    INTERFACE_INFO query[32];  // get up to 32 interfaces
     DWORD bytes_returned;
-    int io_result = WSAIoctl(net, 
-                             SIO_GET_INTERFACE_LIST, 
-                             NULL, 0, 
-                             &query, sizeof(query), 
-                             &bytes_returned, 
+    int io_result = WSAIoctl(net,
+                             SIO_GET_INTERFACE_LIST,
+                             NULL, 0,
+                             &query, sizeof(query),
+                             &bytes_returned,
                              NULL, NULL);
     if (io_result == SOCKET_ERROR) {
         closesocket(net);
@@ -166,7 +166,7 @@ NPT_NetworkInterface::GetNetworkInterfaces(NPT_List<NPT_NetworkInterface*>& inte
             // broadcast address is incorrect
             unsigned char addr[4];
             for(int i=0; i<4; i++) {
-                addr[i] = (primary_address.AsBytes()[i] & netmask.AsBytes()[i]) | 
+                addr[i] = (primary_address.AsBytes()[i] & netmask.AsBytes()[i]) |
                     ~netmask.AsBytes()[i];
             }
             broadcast_address.Set(addr);
@@ -207,10 +207,10 @@ NPT_NetworkInterface::GetNetworkInterfaces(NPT_List<NPT_NetworkInterface*>& inte
             broadcast_address,
             NPT_IpAddress::Any,
             netmask);
-        iface->AddAddress(iface_address);  
-         
+        iface->AddAddress(iface_address);
+
         // add the interface to the list
-        interfaces.Add(iface);   
+        interfaces.Add(iface);
 
         // increment the index (used for generating the name
         iface_index++;
@@ -303,13 +303,13 @@ NPT_NetworkInterface::GetNetworkInterfaces(NPT_List<NPT_NetworkInterface*>& inte
             broadcast_address,
             NPT_IpAddress::Any,
             netmask);
-        iface_object->AddAddress(iface_address);  
-    
-        // cleanup 
+        iface_object->AddAddress(iface_address);
+
+        // cleanup
         delete[] iface_name;
-         
+
         // add the interface to the list
-        interfaces.Add(iface_object);   
+        interfaces.Add(iface_object);
     }
 
     free(iface_list);

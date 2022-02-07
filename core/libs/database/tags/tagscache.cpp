@@ -7,7 +7,7 @@
  * Description : Cache for Tag information
  *
  * Copyright (C) 2010-2011 by Marcel Wiesweg <marcel dot wiesweg at gmx dot de>
- * Copyright (C) 2011-2021 by Gilles Caulier <caulier dot gilles at gmail dot com>
+ * Copyright (C) 2011-2022 by Gilles Caulier <caulier dot gilles at gmail dot com>
  *
  * This program is free software; you can redistribute it
  * and/or modify it under the terms of the GNU General
@@ -252,10 +252,67 @@ public:
         }
     }
 
+    // remember to call under lock
+
+    QString tagPath(int id, LeadingSlashPolicy slashPolicy) const
+    {
+        QString path;
+        QList<TagShortInfo>::const_iterator it;
+
+        for (it = find(id) ; it != infos.constEnd() ; it = find(it->pid))
+        {
+            if (path.isNull())
+            {
+                path = it->name;
+            }
+            else
+            {
+                if (it->name.contains(QLatin1String("_Digikam_root_tag_")))
+                {
+                    continue;
+                }
+                else
+                {
+                    path = it->name + QLatin1Char('/') + path;
+                }
+            }
+        }
+
+        if (slashPolicy == IncludeLeadingSlash)
+        {
+            path.prepend(QLatin1Char('/'));
+        }
+
+        return path;
+    }
+
     QList<int> tagsForFragment(bool (QString::*stringFunction)(const QString&, Qt::CaseSensitivity cs) const,
                                const QString& fragment,
                                Qt::CaseSensitivity caseSensitivity,
-                               HiddenTagsPolicy hiddenTagsPolicy);
+                               HiddenTagsPolicy hiddenTagsPolicy)
+    {
+        checkNameHash();
+        QMultiMap<QString, int> idsMap;
+        QMultiHash<QString, int>::const_iterator it;
+        const bool excludeHiddenTags = (hiddenTagsPolicy == NoHiddenTags);
+
+        if (excludeHiddenTags)
+        {
+            checkProperties();
+        }
+
+        QReadLocker locker(&lock);
+
+        for (it = nameHash.constBegin() ; it != nameHash.constEnd() ; ++it)
+        {
+            if ((!excludeHiddenTags || !internalTags.contains(it.value())) && (it.key().*stringFunction)(fragment, caseSensitivity))
+            {
+                idsMap.insert(it.key(), it.value());
+            }
+        }
+
+        return idsMap.values();
+    }
 };
 
 // ------------------------------------------------------------------------------------------
@@ -449,6 +506,7 @@ QList<int> TagsCache::tagsForName(const QString& tagName, HiddenTagsPolicy hidde
     {
         d->checkProperties();
         QList<int> ids;
+        QReadLocker locker(&d->lock);
         QMultiHash<QString, int>::const_iterator it;
 
         for (it = d->nameHash.constFind(tagName) ; (it != d->nameHash.constEnd()) && (it.key() == tagName) ; ++it)
@@ -461,10 +519,10 @@ QList<int> TagsCache::tagsForName(const QString& tagName, HiddenTagsPolicy hidde
 
         return ids;
     }
-    else
-    {
-        return d->nameHash.values(tagName);
-    }
+
+    QReadLocker locker(&d->lock);
+
+    return d->nameHash.values(tagName);
 }
 
 int TagsCache::tagForName(const QString& tagName, int parentId) const
@@ -553,20 +611,18 @@ int TagsCache::tagForPath(const QString& path) const
     }
 
     d->checkNameHash();
-
     QReadLocker locker(&d->lock);
 
     // The last entry in the list is the leaf node tag name, we use this
     // to lookup all the tag ids with that name, then find the one
     // with a matching full path
 
-    QString const tagName = tagHierarchy.last();
-
-    int tagID             = 0;
+    int tagID       = 0;
+    QString tagName = tagHierarchy.last();
 
     for (int const id : d->nameHash.values(tagName))
     {
-        if (tagPath(id, NoLeadingSlash) == fullPath)
+        if (d->tagPath(id, NoLeadingSlash) == fullPath)
         {
             tagID = id;
             break;
@@ -582,9 +638,9 @@ QList<int> TagsCache::tagsForPaths(const QStringList& tagPaths) const
 
     if (!tagPaths.isEmpty())
     {
-        foreach (const QString& tagPath, tagPaths)
+        foreach (const QString& path, tagPaths)
         {
-            ids << tagForPath(tagPath);
+            ids << tagForPath(path);
         }
     }
 
@@ -699,9 +755,9 @@ QList<int> TagsCache::createTags(const QStringList& tagPaths)
 
     if (!tagPaths.isEmpty())
     {
-        foreach (const QString& tagPath, tagPaths)
+        foreach (const QString& path, tagPaths)
         {
-            ids << createTag(tagPath);
+            ids << createTag(path);
         }
     }
 
@@ -714,9 +770,9 @@ QList<int> TagsCache::getOrCreateTags(const QStringList& tagPaths)
 
     if (!tagPaths.isEmpty())
     {
-        foreach (const QString& tagPath, tagPaths)
+        foreach (const QString& path, tagPaths)
         {
-            ids << getOrCreateTag(tagPath);
+            ids << getOrCreateTag(path);
         }
     }
 
@@ -976,9 +1032,9 @@ int TagsCache::getOrCreateInternalTag(const QString& tagName)
     // ensure the parent tag exists, including the internal property
 
     getOrCreateTagWithProperty(tagPathOfDigikamInternalTags(IncludeLeadingSlash), propertyNameDigikamInternalTag());
-    QString tagPath = tagPathOfDigikamInternalTags(IncludeLeadingSlash) + QLatin1Char('/') + tagName;
+    QString path = tagPathOfDigikamInternalTags(IncludeLeadingSlash) + QLatin1Char('/') + tagName;
 
-    return getOrCreateTagWithProperty(tagPath, propertyNameDigikamInternalTag());
+    return getOrCreateTagWithProperty(path, propertyNameDigikamInternalTag());
 }
 
 void TagsCache::slotTagChanged(const TagChangeset& changeset)
@@ -1136,34 +1192,6 @@ QStringList TagsCache::shortenedTagPaths(const QList<int>& ids,
                                          HiddenTagsPolicy hiddenTagsPolicy) const
 {
     return ItemPropertiesTab::shortenedTagPaths(tagPaths(ids, slashPolicy, hiddenTagsPolicy));
-}
-
-QList<int> TagsCache::Private::tagsForFragment(bool (QString::*stringFunction)(const QString&, Qt::CaseSensitivity cs) const,
-                                                     const QString& fragment,
-                                                     Qt::CaseSensitivity caseSensitivity,
-                                                     HiddenTagsPolicy hiddenTagsPolicy)
-{
-    checkNameHash();
-    QMultiMap<QString, int> idsMap;
-    QMultiHash<QString, int>::const_iterator it;
-    const bool excludeHiddenTags = hiddenTagsPolicy == NoHiddenTags;
-
-    if (excludeHiddenTags)
-    {
-        checkProperties();
-    }
-
-    QReadLocker locker(&lock);
-
-    for (it = nameHash.constBegin() ; it != nameHash.constEnd() ; ++it)
-    {
-        if ((!excludeHiddenTags || !internalTags.contains(it.value())) && (it.key().*stringFunction)(fragment, caseSensitivity))
-        {
-            idsMap.insert(it.key(), it.value());
-        }
-    }
-
-    return idsMap.values();
 }
 
 QList<int> TagsCache::tagsStartingWith(const QString& fragment, Qt::CaseSensitivity caseSensitivity,

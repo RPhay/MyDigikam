@@ -7,7 +7,7 @@
  * Description : image data interface for image tools
  *
  * Copyright (C) 2004-2005 by Renchi Raju <renchi dot raju at gmail dot com>
- * Copyright (C) 2004-2021 by Gilles Caulier <caulier dot gilles at gmail dot com>
+ * Copyright (C) 2004-2022 by Gilles Caulier <caulier dot gilles at gmail dot com>
  *
  * This program is free software; you can redistribute it
  * and/or modify it under the terms of the GNU General
@@ -322,7 +322,7 @@ void ImageIface::convertOriginalColorDepth(int depth)
     d->core->convertDepth(depth);
 }
 
-QPixmap ImageIface::convertToPixmap(DImg& img) const
+QPixmap ImageIface::convertToPixmap(const DImg& img) const
 {
     return d->core->convertToPixmap(img);
 }

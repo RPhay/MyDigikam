@@ -1,18 +1,18 @@
 diff --git a/CMakeLists.txt b/CMakeLists.txt
-index d200d429c..570167159 100644
+index 406925e2b..7ba86dc11 100644
 --- a/CMakeLists.txt
 +++ b/CMakeLists.txt
 @@ -49,7 +49,7 @@ ecm_setup_version(PROJECT VARIABLE_PREFIX KCALENDARCORE
  ########### Find packages ###########
- find_package(Qt5 ${REQUIRED_QT_VERSION} CONFIG REQUIRED Core Gui)
+ find_package(Qt${QT_MAJOR_VERSION} ${REQUIRED_QT_VERSION} CONFIG REQUIRED Core Gui)
  
 -set(LibIcal_MIN_VERSION "3.0")
 +#set(LibIcal_MIN_VERSION "3.0")
- find_package(LibIcal ${LibIcal_MIN_VERSION})
- set_package_properties(LibIcal PROPERTIES TYPE REQUIRED)
- 
+ # TODO remove our FindLibIcal.cmake in favor of upstream LibIcalConfig.cmake once the following issues are resolved:
+ # https://github.com/libical/libical/pull/510
+ # https://bugs.launchpad.net/ubuntu/+source/libical3/+bug/1946963
 diff --git a/src/icalformat_p.cpp b/src/icalformat_p.cpp
-index 2365f6f37..1f495eb27 100644
+index 478196455..e0ef2ac07 100644
 --- a/src/icalformat_p.cpp
 +++ b/src/icalformat_p.cpp
 @@ -498,12 +498,12 @@ void ICalFormatImpl::writeIncidence(icalcomponent *parent, const Incidence::Ptr
@@ -30,7 +30,7 @@ index 2365f6f37..1f495eb27 100644
      // geo
      if (incidence->hasGeo()) {
          icalgeotype geo;
-@@ -582,13 +582,13 @@ void ICalFormatImpl::writeIncidence(icalcomponent *parent, const Incidence::Ptr
+@@ -591,13 +591,13 @@ void ICalFormatImpl::writeIncidence(icalcomponent *parent, const Incidence::Ptr
      for (auto it = alarms.cbegin(), end = alarms.cend(); it != end; ++it) {
          icalcomponent_add_component(parent, writeAlarm(*it));
      }
@@ -46,7 +46,7 @@ index 2365f6f37..1f495eb27 100644
      // duration
      if (incidence->hasDuration()) {
          icaldurationtype duration;
-@@ -1089,7 +1089,7 @@ icalcomponent *ICalFormatImpl::writeAlarm(const Alarm::Ptr &alarm)
+@@ -1097,7 +1097,7 @@ icalcomponent *ICalFormatImpl::writeAlarm(const Alarm::Ptr &alarm)
  
      return a;
  }
@@ -55,7 +55,7 @@ index 2365f6f37..1f495eb27 100644
  icalproperty *ICalFormatImpl::writeConference(const Conference &conference)
  {
      icalproperty *p = icalproperty_new_conference(conference.uri().toString().toUtf8().constData());
-@@ -1099,7 +1099,7 @@ icalproperty *ICalFormatImpl::writeConference(const Conference &conference)
+@@ -1107,7 +1107,7 @@ icalproperty *ICalFormatImpl::writeConference(const Conference &conference)
  
      return p;
  }
@@ -64,7 +64,7 @@ index 2365f6f37..1f495eb27 100644
  Todo::Ptr ICalFormatImpl::readTodo(icalcomponent *vtodo, const ICalTimeZoneCache *tzlist)
  {
      Todo::Ptr todo(new Todo);
-@@ -1806,11 +1806,11 @@ void ICalFormatImpl::readIncidence(icalcomponent *parent, const Incidence::Ptr &
+@@ -1828,11 +1828,11 @@ void ICalFormatImpl::readIncidence(icalcomponent *parent, const Incidence::Ptr &
          case ICAL_ATTACH_PROPERTY: // attachments
              incidence->addAttachment(readAttachment(p));
              break;
@@ -78,7 +78,7 @@ index 2365f6f37..1f495eb27 100644
          default:
              // TODO: do something about unknown properties?
              break;
-@@ -1842,7 +1842,7 @@ void ICalFormatImpl::readIncidence(icalcomponent *parent, const Incidence::Ptr &
+@@ -1864,7 +1864,7 @@ void ICalFormatImpl::readIncidence(icalcomponent *parent, const Incidence::Ptr &
           alarm = icalcomponent_get_next_component(parent, ICAL_VALARM_COMPONENT)) {
          readAlarm(alarm, incidence);
      }
@@ -87,7 +87,7 @@ index 2365f6f37..1f495eb27 100644
      // iterate through all conferences
      Conference::List conferences;
      for (auto *conf = icalcomponent_get_first_property(parent, ICAL_CONFERENCE_PROPERTY); conf;
-@@ -1850,7 +1850,7 @@ void ICalFormatImpl::readIncidence(icalcomponent *parent, const Incidence::Ptr &
+@@ -1872,7 +1872,7 @@ void ICalFormatImpl::readIncidence(icalcomponent *parent, const Incidence::Ptr &
          conferences.push_back(readConference(conf));
      }
      incidence->setConferences(conferences);
@@ -96,7 +96,7 @@ index 2365f6f37..1f495eb27 100644
      if (d->mCompat) {
          // Fix incorrect alarm settings by other applications (like outloook 9)
          d->mCompat->fixAlarms(incidence);
-@@ -2246,7 +2246,7 @@ icaldatetimeperiodtype ICalFormatImpl::writeICalDatePeriod(const QDate &date)
+@@ -2269,7 +2269,7 @@ icaldatetimeperiodtype ICalFormatImpl::writeICalDatePeriod(const QDate &date)
      t.period = icalperiodtype_null_period();
      return t;
  }
@@ -105,7 +105,7 @@ index 2365f6f37..1f495eb27 100644
  Conference ICalFormatImpl::readConference(icalproperty *prop)
  {
      Conference conf;
-@@ -2256,7 +2256,7 @@ Conference ICalFormatImpl::readConference(icalproperty *prop)
+@@ -2279,7 +2279,7 @@ Conference ICalFormatImpl::readConference(icalproperty *prop)
      conf.setLanguage(QString::fromUtf8(icalproperty_get_parameter_as_string(prop, "LANGUAGE")));
      return conf;
  }

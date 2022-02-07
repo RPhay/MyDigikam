@@ -6,7 +6,7 @@
  * Date        : 2017-05-25
  * Description : a tool to generate video slideshow from images.
  *
- * Copyright (C) 2017-2021 by Gilles Caulier <caulier dot gilles at gmail dot com>
+ * Copyright (C) 2017-2022 by Gilles Caulier <caulier dot gilles at gmail dot com>
  *
  * This program is free software; you can redistribute it
  * and/or modify it under the terms of the GNU General
@@ -59,18 +59,18 @@ class Q_DECL_HIDDEN VidSlideVideoPage::Private
 public:
 
     explicit Private(QWizard* const dialog)
-      : framesVal(nullptr),
-        typeVal(nullptr),
-        bitrateVal(nullptr),
-        stdVal(nullptr),
-        codecVal(nullptr),
-        transVal(nullptr),
-        effVal(nullptr),
-        duration(nullptr),
-        wizard(nullptr),
-        settings(nullptr),
+      : framesVal   (nullptr),
+        typeVal     (nullptr),
+        bitrateVal  (nullptr),
+        stdVal      (nullptr),
+        codecVal    (nullptr),
+        transVal    (nullptr),
+        effVal      (nullptr),
+        duration    (nullptr),
+        wizard      (nullptr),
+        settings    (nullptr),
         transPreview(nullptr),
-        effPreview(nullptr)
+        effPreview  (nullptr)
     {
         wizard = dynamic_cast<VidSlideWizard*>(dialog);
 
@@ -96,7 +96,7 @@ public:
 
 VidSlideVideoPage::VidSlideVideoPage(QWizard* const dialog, const QString& title)
     : DWizardPage(dialog, title),
-      d(new Private(dialog))
+      d          (new Private(dialog))
 {
     setObjectName(QLatin1String("VideoPage"));
 
@@ -143,7 +143,11 @@ VidSlideVideoPage::VidSlideVideoPage(QWizard* const dialog, const QString& title
 
     while (it != map.constEnd())
     {
-        d->typeVal->addItem(it.value(), (int)it.key());
+        if (VidSlideSettings::isVideoTVFormat(it.key()))
+        {
+            d->typeVal->addItem(it.value(), (int)it.key());
+        }
+
         ++it;
     }
 

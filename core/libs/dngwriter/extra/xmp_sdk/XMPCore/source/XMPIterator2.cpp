@@ -90,7 +90,7 @@ void XMPIterator2::AdvanceIteratorPosition()
 {
 
 	while (true) {
-	
+
 		if (info.currPos == info.endPos) {
 
 			if (info.ancestors.empty()) break;
@@ -151,7 +151,7 @@ AdobeXMPCore::spINode XMPIterator2::GetNextNode(bool & isSchema)
 	if (info.currPos->visitStage != kIter_BeforeVisit) AdvanceIteratorPosition();
 
 	bool isSchemaNode = false;
-	XMP_ExpandedXPath exPath; 
+	XMP_ExpandedXPath exPath;
 
 	while (info.currPos != info.endPos) {
 
@@ -175,7 +175,7 @@ AdobeXMPCore::spINode XMPIterator2::GetNextNode(bool & isSchema)
 
 		AdvanceIteratorPosition();
 	}
-	
+
 	if (info.currPos == info.endPos) return spINode();
 
 	XMP_Assert(info.currPos->visitStage == kIter_BeforeVisit);
@@ -183,7 +183,7 @@ AdobeXMPCore::spINode XMPIterator2::GetNextNode(bool & isSchema)
 	if (info.currPos->visitStage == kIter_BeforeVisit) {
 
 		if (!isSchemaNode && !(info.options & kXMP_IterJustChildren)) {
-			
+
 			AddNodeOffSpring(*info.currPos, xmpNode);
 		}
 		info.currPos->visitStage = kIter_VisitSelf;
@@ -267,10 +267,10 @@ void XMPIterator2::AddNodeOffSpring(IteratorNode &iterParent, const AdobeXMPCore
 // Constructor for iterations over the nodes in an XMPMeta object. This builds a tree of iteration
 // nodes that caches the existing node names of the XMPMeta object. The iteration tree is a partial
 // replica of the XMPMeta tree. The initial iteration tree normally has just the root node, all of
-// the schema nodes for a full object iteration. Lower level nodes (children and qualifiers) are 
+// the schema nodes for a full object iteration. Lower level nodes (children and qualifiers) are
 // added when the parent is visited. If the kXMP_IterJustChildren option is passed then the initial
 // iterator includes the children and the parent is marked as done. The iteration tree nodes are
-// pruned when they are no longer needed. 
+// pruned when they are no longer needed.
 
 XMPIterator2::XMPIterator2 ( const XMPMeta & xmpObjBase,
 						   XMP_StringPtr   schemaNS,
@@ -283,16 +283,16 @@ XMPIterator2::XMPIterator2 ( const XMPMeta & xmpObjBase,
 	}
 	iteratorOptions = options;
 	info.options = options;
-	
+
 	if(sUseNewCoreAPIs) {
 
 		const XMPMeta2 & tempPtr = dynamic_cast<const XMPMeta2 &>(xmpObjBase);
-		
+
 	}
 	else {
 		XMP_Throw("Unsupported iteration kind", kXMPErr_BadOptions);
 	}
-	
+
 	const XMPMeta2 & xmpObj = dynamic_cast<const XMPMeta2 &>(xmpObjBase);
 
 	spIMetadata root = xmpObj.mDOM;
@@ -328,8 +328,8 @@ XMPIterator2::XMPIterator2 ( const XMPMeta & xmpObjBase,
 			}
 
 		}
-	
-	
+
+
 	} else if ( *schemaNS != 0 ) {
 
 		info.tree.nodeChildren.push_back(IteratorNode(kXMP_SchemaNode, schemaNS, 0));
@@ -345,7 +345,7 @@ XMPIterator2::XMPIterator2 ( const XMPMeta & xmpObjBase,
 				break;
 			}
 		}
-		
+
 
 		if (schemaFound) AddSchemaProperties(iterSchema, schemaNS);
 
@@ -355,8 +355,8 @@ XMPIterator2::XMPIterator2 ( const XMPMeta & xmpObjBase,
 		else {
 			SetCurrentSchema(schemaNS);
 		}
-		
-	
+
+
 	} else {
 
 		std::map < XMP_VarString, bool > schemaProperties;
@@ -392,9 +392,9 @@ XMPIterator2::XMPIterator2 ( const XMPMeta & xmpObjBase,
 	if ((info.options & kXMP_IterJustChildren) && (info.currPos != info.endPos) && (*schemaNS != 0)) {
 		info.currPos->visitStage = kIter_VisitSelf;
 	}
-	
 
-	
+
+
 }	// XMPIterator for XMPMeta objects
 
 // -------------------------------------------------------------------------------------------------
@@ -418,9 +418,9 @@ XMPIterator2::XMPIterator2 ( XMP_StringPtr  schemaNS,
 
 XMPIterator2::~XMPIterator2() RELEASE_NO_THROW
 {
-	
+
 	// Let everything else default.
-	
+
 }	// ~XMPIterator
 
 // =================================================================================================
@@ -463,7 +463,7 @@ XMPIterator2::Next ( XMP_StringPtr * schemaNS,
 
 	*schemaNS = info.currSchema.c_str();
 	*nsSize = info.currSchema.size();
-	
+
 
 	*propOptions = info.currPos->options;
 

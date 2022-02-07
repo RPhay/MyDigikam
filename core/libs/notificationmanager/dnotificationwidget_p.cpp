@@ -6,7 +6,7 @@
  * Date        : 2011-07-03
  * Description : A widget to provide feedback or propose opportunistic interactions
  *
- * Copyright (C) 2009-2021 by Gilles Caulier <caulier dot gilles at gmail dot com>
+ * Copyright (C) 2009-2022 by Gilles Caulier <caulier dot gilles at gmail dot com>
  * Copyright (c) 2011      by Aurelien Gateau <agateau at kde dot org>
  * Copyright (c) 2014      by Dominik Haumann <dhaumann at kde dot org>
  *
@@ -53,6 +53,7 @@ DNotificationWidget::Private::Private(DNotificationWidget* const q_ptr)
       textLabel     (nullptr),
       closeButton   (nullptr),
       timeLine      (nullptr),
+      timer         (nullptr),
       messageType   (DNotificationWidget::Information),
       wordWrap      (false),
       delay         (-1)
@@ -68,6 +69,8 @@ void DNotificationWidget::Private::init()
     q->setSizePolicy(QSizePolicy::Minimum, QSizePolicy::Fixed);
 
     timeLine  = new QTimeLine(500, q);
+    timer     = new QTimer(this);
+    timer->setInterval(1000);
 
     connect(timeLine, SIGNAL(valueChanged(qreal)),
             this, SLOT(slotTimeLineChanged(qreal)));
@@ -225,6 +228,7 @@ void DNotificationWidget::Private::slotTimeLineFinished()
         // hide and notify about finished animation
 
         q->hide();
+        timer->stop();
         emit q->hideAnimationFinished();
     }
 }

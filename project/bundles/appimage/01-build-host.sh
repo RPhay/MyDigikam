@@ -3,7 +3,7 @@
 # Script to build a Linux Host installation to compile an AppImage bundle of digiKam.
 # This script must be run as sudo
 #
-# Copyright (c) 2015-2021 by Gilles Caulier  <caulier dot gilles at gmail dot com>
+# Copyright (c) 2015-2022 by Gilles Caulier  <caulier dot gilles at gmail dot com>
 #
 # Redistribution and use is allowed according to the terms of the BSD license.
 # For details see the accompanying COPYING-CMAKE-SCRIPTS file.
@@ -109,6 +109,9 @@ urpmi --auto \
       freetype-devel \
       patchelf \
       dpkg \
+      ninja \
+      clang \
+      cdialog \
       python \
       ruby \
       ruby-devel \
@@ -119,18 +122,28 @@ urpmi --auto \
       sane-backends \
       jasper-devel \
       nodejs-devel \
+      python3-lxml \
+      perl-YAML-PP \
+      perl-YAML-Syck \
+      appstream \
+      openssh-askpass \
       ${LIBSUFFIX}openssl-devel \
       ${LIBSUFFIX}nss-devel \
       ${LIBSUFFIX}xkbcommon-devel \
+      ${LIBSUFFIX}xkbfile-devel \
       ${LIBSUFFIX}xinerama-devel \
       ${LIBSUFFIX}sane1-devel \
       ${LIBSUFFIX}xcb-util1 \
+      ${LIBSUFFIX}xcb-util-cursor-devel \
+      ${LIBSUFFIX}xcb-util-wm-devel \
+      ${LIBSUFFIX}xcb-xrm-devel \
       ${LIBSUFFIX}xi-devel \
       ${LIBSUFFIX}xtst-devel \
       ${LIBSUFFIX}xrandr-devel \
       ${LIBSUFFIX}xcursor-devel \
       ${LIBSUFFIX}xcomposite-devel \
       ${LIBSUFFIX}xrender-devel \
+      ${LIBSUFFIX}xscrnsaver-devel \
       ${LIBSUFFIX}ltdl-devel \
       ${LIBSUFFIX}glib2.0-devel \
       ${LIBSUFFIX}usb1.0-devel \
@@ -141,7 +154,11 @@ urpmi --auto \
       ${LIBSUFFIX}fftw-devel \
       ${LIBSUFFIX}curl-devel \
       ${LIBSUFFIX}magick-devel \
-      ${LIBSUFFIX}wayland-devel
+      ${LIBSUFFIX}wayland-devel \
+      ${LIBSUFFIX}clang-devel \
+      ${LIBSUFFIX}sm-devel \
+      ${LIBSUFFIX}freeglut-devel \
+      ${LIBSUFFIX}input-devel
 
 if [[ "$DK_QTVERSION" = "5.14" ]] ; then
 
@@ -164,6 +181,14 @@ if [[ "$DK_QTVERSION" = "5.15" || "$DK_QTVERSION" = "5.15-LTS" ]] ; then
 
 fi
 
+if [[ $DK_QTVERSION == 6.* ]] ; then
+
+    urpmi --auto \
+          libxkbcommon-utils \
+          ${LIBSUFFIX}mesaegl-devel
+
+fi
+
 echo -e "---------- Clean-up Old Packages\n"
 
 # Remove system based devel package to prevent conflict with new one.
@@ -180,7 +205,7 @@ rm -fr /usr/local/include/openssl || true
 echo -e "---------- Prepare Linux host to Compile Extra Dependencies\n"
 
 # Workaround for: On Mageia 6, .pc files in /usr/lib/pkgconfig are not recognized
-# However, this is where .pc files get installed when bulding libraries... (FIXME)
+# However, this is where .pc files get installed when building libraries... (FIXME)
 # I found this by comparing the output of librevenge's "make install" command
 # between Ubuntu and CentOS 6
 ln -sf /usr/share/pkgconfig /usr/lib/pkgconfig
@@ -211,7 +236,11 @@ cmake $ORIG_WD/../3rdparty \
       -DCMAKE_INSTALL_PREFIX:PATH=/opt/cmake \
       -DINSTALL_ROOT=/opt/cmake \
       -DENABLE_QTVERSION=$DK_QTVERSION \
-      -DEXTERNALS_DOWNLOAD_DIR=$DOWNLOAD_DIR
+      -DEXTERNALS_DOWNLOAD_DIR=$DOWNLOAD_DIR \
+      -DKA_VERSION=$DK_KA_VERSION \
+      -DKF5_VERSION=$DK_KF5_VERSION \
+      -DENABLE_QTVERSION=$DK_QTVERSION \
+      -DENABLE_QTWEBENGINE=$DK_QTWEBENGINE
 
 # Install new cmake recent version to /opt
 
@@ -227,8 +256,11 @@ rm -rf $BUILDING_DIR/* || true
       -DCMAKE_INSTALL_PREFIX:PATH=/usr \
       -DINSTALL_ROOT=/usr \
       -DEXTERNALS_DOWNLOAD_DIR=$DOWNLOAD_DIR \
+      -DKA_VERSION=$DK_KA_VERSION \
+      -DKF5_VERSION=$DK_KF5_VERSION \
       -DENABLE_QTVERSION=$DK_QTVERSION \
-      -DENABLE_QTWEBENGINE=$DK_QTWEBENGINE
+      -DENABLE_QTWEBENGINE=$DK_QTWEBENGINE \
+      -DQTWEBENGINE_VERSION=$DK_QTWEBENGINEVERSION
 
 # Low level libraries and Qt5 dependencies
 # NOTE: The order to compile each component here is very important.
@@ -237,6 +269,18 @@ rm -rf $BUILDING_DIR/* || true
 /opt/cmake/bin/cmake --build . --config RelWithDebInfo --target ext_openssl       -- -j$CPU_CORES
 
 /opt/cmake/bin/cmake --build . --config RelWithDebInfo --target ext_qt            -- -j$CPU_CORES    # depend of tiff, png, jpeg
+
+cp $DOWNLOAD_DIR/qt_manifest.txt $ORIG_WD/data/
+
+if [[ "$DK_QTVERSION" = "5.15-LTS" && $DK_QTWEBENGINE = 1 ]] ; then
+
+    # Patch QtWebEngine cmake config files to be compatible with Qt5.15 LTS which is versionned as 5.15.3
+
+    sed -e "s/$DK_QTWEBENGINEVERSION ${_Qt5WebEngine_FIND_VERSION_EXACT}/5.15.3 ${_Qt5WebEngine_FIND_VERSION_EXACT}/g" /usr/lib/cmake/Qt5WebEngine/Qt5WebEngineConfig.cmake > ./tmp.cmake ; mv -f ./tmp.cmake /usr/lib/cmake/Qt5WebEngine/Qt5WebEngineConfig.cmake
+    sed -e "s/$DK_QTWEBENGINEVERSION ${_Qt5WebEngineCore_FIND_VERSION_EXACT}/5.15.3 ${_Qt5WebEngineCore_FIND_VERSION_EXACT}/g" /usr/lib/cmake/Qt5WebEngineCore/Qt5WebEngineCoreConfig.cmake > ./tmp.cmake ; mv -f ./tmp.cmake /usr/lib/cmake/Qt5WebEngineCore/Qt5WebEngineCoreConfig.cmake
+    sed -e "s/$DK_QTWEBENGINEVERSION ${_Qt5WebEngineWidgets_FIND_VERSION_EXACT}/5.15.3 ${_Qt5WebEngineWidgets_FIND_VERSION_EXACT}/g" /usr/lib/cmake/Qt5WebEngineWidgets/Qt5WebEngineWidgetsConfig.cmake > ./tmp.cmake ; mv -f ./tmp.cmake Qt5WebEngineWidgetsConfig.cmake
+
+fi
 
 if [[ $DK_QTWEBENGINE = 0 ]] ; then
     /opt/cmake/bin/cmake --build . --config RelWithDebInfo --target ext_qtwebkit  -- -j$CPU_CORES    # depend of Qt and libicu

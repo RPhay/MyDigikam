@@ -6,7 +6,7 @@
  * Date        : 2007-09-09
  * Description : scanner dialog
  *
- * Copyright (C) 2007-2021 by Gilles Caulier <caulier dot gilles at gmail dot com>
+ * Copyright (C) 2007-2022 by Gilles Caulier <caulier dot gilles at gmail dot com>
  *
  * This program is free software; you can redistribute it
  * and/or modify it under the terms of the GNU General
@@ -23,10 +23,13 @@
 #ifndef DIGIKAM_SCAN_DIALOG_H
 #define DIGIKAM_SCAN_DIALOG_H
 
+#include <ksane_version.h>
+
 // Qt includes
 
 #include <QCloseEvent>
 #include <QWidget>
+#include <QImage>
 
 // Local includes
 
@@ -66,7 +69,16 @@ Q_SIGNALS:
 
 private Q_SLOTS:
 
+#if KSANE_VERSION < QT_VERSION_CHECK(21,8,0)
+
     void slotSaveImage(QByteArray&, int, int, int, int);
+
+#else
+
+    void slotSaveImage(const QImage&);
+
+#endif
+
     void slotThreadProgress(const QUrl&, int);
     void slotThreadDone(const QUrl&, bool);
     void slotDialogFinished();

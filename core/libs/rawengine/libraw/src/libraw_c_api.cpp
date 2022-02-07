@@ -105,8 +105,7 @@ extern "C"
   }
 #endif
 
-#if defined(_WIN32) && !defined(__MINGW32__) && defined(_MSC_VER) &&           \
-    (_MSC_VER > 1310)
+#ifdef LIBRAW_WIN32_UNICODEPATHS
   int libraw_open_wfile(libraw_data_t *lr, const wchar_t *file)
   {
     if (!lr)
@@ -131,6 +130,21 @@ extern "C"
       return EINVAL;
     LibRaw *ip = (LibRaw *)lr->parent_class;
     return ip->open_buffer(buffer, size);
+  }
+  int libraw_open_bayer(libraw_data_t *lr, unsigned char *data,
+                        unsigned datalen, ushort _raw_width, ushort _raw_height,
+                        ushort _left_margin, ushort _top_margin,
+                        ushort _right_margin, ushort _bottom_margin,
+                        unsigned char procflags, unsigned char bayer_pattern,
+                        unsigned unused_bits, unsigned otherflags,
+                        unsigned black_level)
+  {
+    if (!lr)
+      return EINVAL;
+    LibRaw *ip = (LibRaw *)lr->parent_class;
+    return ip->open_bayer(data, datalen, _raw_width, _raw_height, _left_margin,
+                          _top_margin, _right_margin, _bottom_margin, procflags,
+                          bayer_pattern, unused_bits, otherflags, black_level);
   }
   int libraw_unpack(libraw_data_t *lr)
   {
@@ -305,6 +319,14 @@ extern "C"
       return;
     LibRaw *ip = (LibRaw *)lr->parent_class;
     ip->imgdata.params.output_color = value;
+  }
+
+  DllDef void libraw_set_adjust_maximum_thr(libraw_data_t *lr, float value)
+  {
+    if (!lr)
+      return;
+    LibRaw *ip = (LibRaw *)lr->parent_class;
+    ip->imgdata.params.adjust_maximum_thr = value;
   }
 
   DllDef void libraw_set_output_bps(libraw_data_t *lr, int value)

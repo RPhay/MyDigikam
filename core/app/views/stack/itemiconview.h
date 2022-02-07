@@ -7,7 +7,7 @@
  * Description : Item icon view interface.
  *
  * Copyright (C) 2002-2005 by Renchi Raju <renchi dot raju at gmail dot com>
- * Copyright (C) 2002-2021 by Gilles Caulier <caulier dot gilles at gmail dot com>
+ * Copyright (C) 2002-2022 by Gilles Caulier <caulier dot gilles at gmail dot com>
  * Copyright (C) 2009-2011 by Johannes Wienke <languitar at semipol dot de>
  * Copyright (C) 2010-2011 by Andi Clemens <andi dot clemens at gmail dot com>
  *
@@ -134,6 +134,19 @@ private Q_SLOTS:
     //@{
     /// Side-bars handling methods - itemiconview_sidebars.cpp
 
+    // ----------------------------------------------------------------------------------------
+
+    //@{
+    /// Tools methods (Editor, BQM, Light Table) - itemiconview_tools.cpp.
+
+public Q_SLOTS:
+
+    void slotImageQualitySorter();
+
+    //@}
+
+    // ----------------------------------------------------------------------------------------
+
 public:
 
     QList<SidebarWidget*> leftSidebarWidgets()                                     const;
@@ -196,6 +209,10 @@ public Q_SLOTS:
     void slotCreateGroupByTimelapseFromSelection();
     void slotRemoveSelectedFromGroup();
     void slotUngroupSelected();
+
+private Q_SLOTS:
+
+    void slotEmptyMessageTimer();
     //@}
 
     // ----------------------------------------------------------------------------------------

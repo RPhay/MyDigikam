@@ -350,9 +350,12 @@ void DIO::createJob(IOJobData* const data)
             {
                 QPointer<QMessageBox> msgBox = new QMessageBox(QMessageBox::Warning,
                         i18n("File conflict"),
-                        i18n("Files or folders with the same name already exist "
-                              "in the target folder.\n\n"
-                              "What action is applied in the event of a file conflict?"),
+                        i18n("Files or folders with the same name already exist in the target folder.\n\n"
+                             "What action is applied in the event of a file conflict?\n\n"
+                             "Available options are:\n"
+                             "Rename automatically: conflicting files will be renamed.\n"
+                             "Overwrite automatically: conflicting files will be overwritten.\n"
+                             "Skip automatically: conflicting files will be skipped."),
                         QMessageBox::Yes | QMessageBox::No | QMessageBox::Ok | QMessageBox::Cancel,
                         qApp->activeWindow());
 
@@ -360,7 +363,7 @@ void DIO::createJob(IOJobData* const data)
                 msgBox->button(QMessageBox::Yes)->setIcon(QIcon::fromTheme(QLatin1String("document-edit")));
                 msgBox->button(QMessageBox::No)->setText(i18n("Overwrite automatically"));
                 msgBox->button(QMessageBox::No)->setIcon(QIcon::fromTheme(QLatin1String("edit-copy")));
-                msgBox->button(QMessageBox::Ok)->setText(i18n("Continue"));
+                msgBox->button(QMessageBox::Ok)->setText(i18n("Skip automatically"));
                 msgBox->button(QMessageBox::Ok)->setIcon(QIcon::fromTheme(QLatin1String("go-next")));
 
                 if ((operation == IOJobData::CopyAlbum) || (operation == IOJobData::MoveAlbum))

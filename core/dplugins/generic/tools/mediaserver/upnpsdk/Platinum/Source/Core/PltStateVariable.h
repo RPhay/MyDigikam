@@ -11,14 +11,14 @@
 | as published by the Free Software Foundation; either version 2
 | of the License, or (at your option) any later version.
 |
-| OEMs, ISVs, VARs and other distributors that combine and 
+| OEMs, ISVs, VARs and other distributors that combine and
 | distribute commercially licensed software with Platinum software
 | and do not wish to distribute the source code for the commercially
 | licensed software under version 2, or (at your option) any later
 | version, of the GNU General Public License (the "GPL") must enter
 | into a commercial license agreement with Plutinosoft, LLC.
 | licensing@plutinosoft.com
-|  
+|
 | This program is distributed in the hope that it will be useful,
 | but WITHOUT ANY WARRANTY; without even the implied warranty of
 | MERCHANTABILITY or FITNESS FOR A PARTICULAR PURPOSE.  See the
@@ -26,7 +26,7 @@
 |
 | You should have received a copy of the GNU General Public License
 | along with this program; see the file LICENSE.txt. If not, write to
-| the Free Software Foundation, Inc., 
+| the Free Software Foundation, Inc.,
 | 51 Franklin Street, Fifth Floor, Boston, MA  02110-1301, USA.
 | http://www.gnu.org/licenses/gpl-2.0.html
 |
@@ -67,7 +67,7 @@ typedef struct {
 |   PLT_StateVariable class
 +---------------------------------------------------------------------*/
 /**
- The PLT_StateVariable class maintains the state of a UPnP Service state variable. 
+ The PLT_StateVariable class maintains the state of a UPnP Service state variable.
  It is used by a PLT_DeviceHost instance to notify subscribers of a change or by a
  subscriber (PLT_CtrlPoint) when a service state variable change notification
  has been received.
@@ -83,13 +83,13 @@ public:
      @param node XML Element where to insert the state variable XML Element
      */
     NPT_Result GetSCPDXML(NPT_XmlElementNode* node);
-    
+
     /**
      Return the PLT_Service that this state variable is associated with.
      @return PLT_Service pointer.
      */
     PLT_Service* GetService();
-    
+
     /**
      Return whether the state variable is eventable directly or indirectly. A state
      variable sends events indirectly when part of the "LastChange" state variable.
@@ -97,19 +97,19 @@ public:
      @return Whether the state variable sends events according to the input flag specified.
      */
     bool IsSendingEvents(bool indirectly = false);
-    
+
     /**
      Force the state variable to send events directly.
      */
     void DisableIndirectEventing();
-    
+
     /**
-     Certain state variables notifications must not be sent faster than a certain 
+     Certain state variables notifications must not be sent faster than a certain
      rate according to the UPnP specs. This sets the rate for a given state variable.
      @param rate time interval to respect between notifications.
      */
     NPT_Result SetRate(NPT_TimeInterval rate);
-    
+
     /**
      Set the state variable value. The value is first validated to make sure
      it is an allowed value. Once the value is validated, it is marked for eventing by
@@ -117,13 +117,13 @@ public:
      @param value new state variable value. Can be a comma separated list of values.
      */
     NPT_Result SetValue(const char* value);
-    
+
     /**
      Validate the new value of the state variable.
      @param value new state variable value. Can be a comma separated list of values.
      */
     NPT_Result ValidateValue(const char* value);
-    
+
     /**
      Certain state variables require extra xml attributes when serialized.
      @param name the attribute name
@@ -136,19 +136,19 @@ public:
      @return state variable name.
      */
     const NPT_String& GetName()     const { return m_Name;     }
-    
+
     /**
      Return the current state variable value.
      @return state variable current value.
      */
     const NPT_String& GetValue()    const { return m_Value;    }
-    
+
     /**
      Return the state variable data type.
      @return state variable data type.
      */
     const NPT_String& GetDataType() const { return m_DataType; }
-    
+
     /**
      Return the state variable allowed value range if any.
      @return state variable value range pointer or null if none.
@@ -162,7 +162,7 @@ public:
      @param name state variable name to look for
      @return PLT_StateVariable pointer.
      */
-    static PLT_StateVariable* Find(NPT_List<PLT_StateVariable*>& vars, 
+    static PLT_StateVariable* Find(NPT_List<PLT_StateVariable*>& vars,
                                    const char*                   name);
 
 protected:
@@ -171,7 +171,7 @@ protected:
      be notified.
      */
     bool IsReadyToPublish();
-    
+
     /**
      Serialize the state variable into xml.
      */
@@ -204,7 +204,7 @@ protected:
  The PLT_StateVariableNameFinder class returns the PLT_StateVariable instance
  given a state variable name.
  */
-class PLT_StateVariableNameFinder 
+class PLT_StateVariableNameFinder
 {
 public:
     // methods

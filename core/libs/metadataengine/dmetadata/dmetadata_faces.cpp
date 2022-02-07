@@ -6,7 +6,7 @@
  * Date        : 2006-02-23
  * Description : item metadata interface - faces helpers
  *
- * Copyright (C) 2006-2021 by Gilles Caulier <caulier dot gilles at gmail dot com>
+ * Copyright (C) 2006-2022 by Gilles Caulier <caulier dot gilles at gmail dot com>
  * Copyright (C) 2006-2013 by Marcel Wiesweg <marcel dot wiesweg at gmx dot de>
  * Copyright (C) 2013      by Veaceslav Munteanu <veaceslav dot munteanu90 at gmail dot com>
  * Copyright (C) 2011      by Leif Huhn <leif at dkstat dot com>
@@ -141,7 +141,7 @@ bool DMetadata::getItemFacesMap(QMultiMap<QString, QVariant>& faces) const
     return !faces.isEmpty();
 }
 
-bool DMetadata::setItemFacesMap(QMultiMap<QString, QVariant>& facesPath, bool write) const
+bool DMetadata::setItemFacesMap(const QMultiMap<QString, QVariant>& facesPath, bool write, const QSize& size) const
 {
     QString qxmpTagName    = QLatin1String("Xmp.mwg-rs.Regions/mwg-rs:RegionList");
     QString nameTagKey     = qxmpTagName + QLatin1String("[%1]/mwg-rs:Name");
@@ -152,6 +152,11 @@ bool DMetadata::setItemFacesMap(QMultiMap<QString, QVariant>& facesPath, bool wr
     QString areawTagKey    = qxmpTagName + QLatin1String("[%1]/mwg-rs:Area/stArea:w");
     QString areahTagKey    = qxmpTagName + QLatin1String("[%1]/mwg-rs:Area/stArea:h");
     QString areanormTagKey = qxmpTagName + QLatin1String("[%1]/mwg-rs:Area/stArea:unit");
+
+    QString adimTagName    = QLatin1String("Xmp.mwg-rs.Regions/mwg-rs:AppliedToDimensions");
+    QString adimhTagKey    = adimTagName + QLatin1String("/stDim:h");
+    QString adimwTagKey    = adimTagName + QLatin1String("/stDim:w");
+    QString adimpixTagKey  = adimTagName + QLatin1String("/stDim:unit");
 
     QString winQxmpTagName = QLatin1String("Xmp.MP.RegionInfo/MPRI:Regions");
     QString winRectTagKey  = winQxmpTagName + QLatin1String("[%1]/MPReg:Rectangle");
@@ -167,9 +172,40 @@ bool DMetadata::setItemFacesMap(QMultiMap<QString, QVariant>& facesPath, bool wr
         }
     }
 
+    // Remove face metadata before writing new ones to prevent problems (bug 436286).
+
+    removeItemFacesMap();
+
     if (facesPath.isEmpty())
     {
-        return removeItemFacesMap();
+        return true;
+    }
+
+    if (!size.isNull())
+    {
+        // Set tag AppliedToDimens, with xmp type struct
+
+        setXmpTagString(adimTagName.toLatin1().constData(),
+                        QString(),
+                        MetaEngine::StructureTag);
+
+        // Set stDim:w inside AppliedToDimens structure
+
+        setXmpTagString(adimwTagKey.toLatin1().constData(),
+                        QString::number(size.width()),
+                        MetaEngine::NormalTag);
+
+        // Set stDim:h inside AppliedToDimens structure
+
+        setXmpTagString(adimhTagKey.toLatin1().constData(),
+                        QString::number(size.height()),
+                        MetaEngine::NormalTag);
+
+        // Set stDim:unit inside AppliedToDimens structure as pixel
+
+        setXmpTagString(adimpixTagKey.toLatin1().constData(),
+                        QLatin1String("pixel"),
+                        MetaEngine::NormalTag);
     }
 
     setXmpTagString(qxmpTagName.toLatin1().constData(),
@@ -272,9 +308,9 @@ bool DMetadata::setItemFacesMap(QMultiMap<QString, QVariant>& facesPath, bool wr
         ok &= setXmpTagString(areahTagKey.arg(j).toLatin1().constData(),
                               QString::number(h),
                               MetaEngine::NormalTag);
-        qCDebug(DIGIKAM_METAENGINE_LOG) << "    => set heigh:" << ok;
+        qCDebug(DIGIKAM_METAENGINE_LOG) << "    => set height:" << ok;
 
-        // Set stArea:unit inside Area structure  as normalized
+        // Set stArea:unit inside Area structure as normalized
 
         ok &= setXmpTagString(areanormTagKey.arg(j).toLatin1().constData(),
                               QLatin1String("normalized"),
@@ -292,42 +328,15 @@ bool DMetadata::setItemFacesMap(QMultiMap<QString, QVariant>& facesPath, bool wr
 bool DMetadata::removeItemFacesMap() const
 {
     QString qxmpStructName    = QLatin1String("Xmp.mwg-rs.Regions");
-    QString qxmpTagName       = QLatin1String("Xmp.mwg-rs.Regions/mwg-rs:RegionList");
-
     QString winQxmpStructName = QLatin1String("Xmp.MP.RegionInfo");
-    QString winQxmpTagName    = QLatin1String("Xmp.MP.RegionInfo/MPRI:Regions");
 
     // Remove mwg-rs tags
 
-    if (!getXmpTagString(qxmpTagName.toLatin1().constData()).isEmpty())
-    {
-        setXmpTagString(qxmpTagName.toLatin1().constData(),
-                        QString(),
-                        MetaEngine::ArrayBagTag);
-    }
-
-    if (!getXmpTagString(qxmpStructName.toLatin1().constData()).isEmpty())
-    {
-        setXmpTagString(qxmpStructName.toLatin1().constData(),
-                        QString(),
-                        MetaEngine::StructureTag);
-    }
+    removeXmpTag(qxmpStructName.toLatin1().constData(), true);
 
     // Remove MP tags
 
-    if (!getXmpTagString(winQxmpTagName.toLatin1().constData()).isEmpty())
-    {
-        setXmpTagString(winQxmpTagName.toLatin1().constData(),
-                        QString(),
-                        MetaEngine::ArrayBagTag);
-    }
-
-    if (!getXmpTagString(winQxmpStructName.toLatin1().constData()).isEmpty())
-    {
-        setXmpTagString(winQxmpStructName.toLatin1().constData(),
-                        QString(),
-                        MetaEngine::StructureTag);
-    }
+    removeXmpTag(winQxmpStructName.toLatin1().constData(), true);
 
     return true;
 }

@@ -7,7 +7,7 @@
  * Description : Albums folder view.
  *
  * Copyright (C) 2005-2006 by Joern Ahrens <joern dot ahrens at kdemail dot net>
- * Copyright (C) 2006-2021 by Gilles Caulier <caulier dot gilles at gmail dot com>
+ * Copyright (C) 2006-2022 by Gilles Caulier <caulier dot gilles at gmail dot com>
  * Copyright (C) 2009-2012 by Andi Clemens <andi dot clemens at gmail dot com>
  * Copyright (C) 2009-2011 by Johannes Wienke <languitar at semipol dot de>
  *
@@ -100,7 +100,9 @@ public:
         repairHiddenAction      (nullptr),
         rebuildThumbsAction     (nullptr),
         expandSelected          (nullptr),
+        expandAllAlbums         (nullptr),
         collapseSelected        (nullptr),
+        collapseAllAlbums       (nullptr),
         contextMenuElement      (nullptr)
     {
     }
@@ -117,7 +119,9 @@ public:
     QAction*                                  repairHiddenAction;
     QAction*                                  rebuildThumbsAction;
     QAction*                                  expandSelected;
+    QAction*                                  expandAllAlbums;
     QAction*                                  collapseSelected;
+    QAction*                                  collapseAllAlbums;
 
     class AlbumSelectionTreeViewContextMenuElement;
     AlbumSelectionTreeViewContextMenuElement* contextMenuElement;
@@ -160,6 +164,8 @@ public:
 
             cmh.addAction(d->expandSelected);
             cmh.addAction(d->collapseSelected);
+            cmh.addAction(d->expandAllAlbums);
+            cmh.addAction(d->collapseAllAlbums);
             cmh.addSeparator();
 
             // --------------------------------------------------------
@@ -186,6 +192,8 @@ public:
 
         cmh.addAction(d->expandSelected);
         cmh.addAction(d->collapseSelected);
+        cmh.addAction(d->expandAllAlbums);
+        cmh.addAction(d->collapseAllAlbums);
         cmh.addSeparator();
 
         // --------------------------------------------------------
@@ -233,11 +241,17 @@ AlbumSelectionTreeView::AlbumSelectionTreeView(QWidget* const parent,
     d->albumModificationHelper = albumModificationHelper;
     d->toolTip                 = new AlbumViewToolTip(this);
 
-    d->expandSelected          = new QAction(QIcon::fromTheme(QLatin1String("expand-all")),
+    d->expandSelected          = new QAction(QIcon::fromTheme(QLatin1String("go-down")),
                                              i18n("Expand Selected Nodes"), this);
 
-    d->collapseSelected        = new QAction(QIcon::fromTheme(QLatin1String("collapse-all")),
+    d->expandAllAlbums         = new QAction(QIcon::fromTheme(QLatin1String("expand-all")),
+                                             i18n("Expand all Albums"), this);
+
+    d->collapseSelected        = new QAction(QIcon::fromTheme(QLatin1String("go-up")),
                                              i18n("Collapse Selected Recursively"), this);
+
+    d->collapseAllAlbums       = new QAction(QIcon::fromTheme(QLatin1String("collapse-all")),
+                                             i18n("Collapse all Albums"), this);
 
     d->findDuplAction          = new QAction(QIcon::fromTheme(QLatin1String("tools-wizard")),
                                              i18n("Find Duplicates..."), this);
@@ -254,8 +268,14 @@ AlbumSelectionTreeView::AlbumSelectionTreeView(QWidget* const parent,
     connect(d->expandSelected, SIGNAL(triggered()),
             this, SLOT(slotExpandNode()));
 
+    connect(d->expandAllAlbums, SIGNAL(triggered()),
+            this, SLOT(expandAll()));
+
     connect(d->collapseSelected, SIGNAL(triggered()),
             this, SLOT(slotCollapseNode()));
+
+    connect(d->collapseAllAlbums, SIGNAL(triggered()),
+            this, SLOT(slotCollapseAllNodes()));
 
     connect(d->findDuplAction, SIGNAL(triggered()),
             this, SLOT(slotFindDuplicates()));

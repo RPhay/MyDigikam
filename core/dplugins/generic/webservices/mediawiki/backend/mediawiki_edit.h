@@ -6,7 +6,7 @@
  * Date        : 2011-03-22
  * Description : a Iface C++ interface
  *
- * Copyright (C) 2011-2021 by Gilles Caulier <caulier dot gilles at gmail dot com>
+ * Copyright (C) 2011-2022 by Gilles Caulier <caulier dot gilles at gmail dot com>
  * Copyright (C) 2011      by Alexandre Mendes <alex dot mendes1988 at gmail dot com>
  * Copyright (C) 2011      by Hormiere Guillaume <hormiere dot guillaume at gmail dot com>
  * Copyright (C) 2011      by Manuel Campomanes <campomanes dot manuel at gmail dot com>
@@ -281,7 +281,7 @@ public:
     void setToken(const QString& token);
 
     /**
-     * @brief Set the timestamp of the base revision. Leave unset to ignore conflit.
+     * @brief Set the timestamp of the base revision. Leave unset to ignore conflict.
      * @param baseTimestamp the timestamp of the base revision
      */
     void setBaseTimestamp(const QDateTime& baseTimestamp);

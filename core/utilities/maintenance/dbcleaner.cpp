@@ -141,20 +141,20 @@ void DbCleaner::slotStart()
 
     // Set one item to make sure that the progress bar is shown.
 
-    setTotalItems(d->databasesToAnalyseCount + d->databasesToShrinkCount);
+    setTotalItems(d->databasesToAnalyseCount);
 /*
     qCDebug(DIGIKAM_GENERAL_LOG) << "Completed items at start: " << completedItems() << "/" << totalItems();
 */
-    connect(d->thread, SIGNAL(signalCompleted()),
-            this, SLOT(slotCleanItems()));
-
-    connect(d->thread,SIGNAL(signalAddItemsToProcess(int)),
-            this, SLOT(slotAddItemsToProcess(int)));
-
     // Set the wiring from the data signal to the data slot.
 
-    connect(d->thread,SIGNAL(signalData(QList<qlonglong>,QList<int>,QList<Identity>,QList<qlonglong>)),
+    connect(d->thread, SIGNAL(signalData(QList<qlonglong>,QList<int>,QList<Identity>,QList<qlonglong>)),
             this, SLOT(slotFetchedData(QList<qlonglong>,QList<int>,QList<Identity>,QList<qlonglong>)));
+
+    connect(d->thread, SIGNAL(signalAddItemsToProcess(int)),
+            this, SLOT(slotAddItemsToProcess(int)));
+
+    connect(d->thread, SIGNAL(signalCompleted()),
+            this, SLOT(slotCleanItems()));
 
     // Compute the database junk. This will lead to the call of the slot slotFetchedData.
 
@@ -164,7 +164,7 @@ void DbCleaner::slotStart()
 
 void DbCleaner::slotAddItemsToProcess(int count)
 {
-    setTotalItems(totalItems() + count);
+    incTotalItems(count);
 }
 
 void DbCleaner::slotFetchedData(const QList<qlonglong>& staleImageIds,
@@ -182,30 +182,42 @@ void DbCleaner::slotFetchedData(const QList<qlonglong>& staleImageIds,
     // If we have nothing to do, finish.
     // Signal done if no elements cleanup is necessary
 
-    if (d->imagesToRemove.isEmpty() && d->staleThumbnails.isEmpty() && d->staleIdentities.isEmpty())
+    if (d->imagesToRemove.isEmpty()       &&
+        d->staleThumbnails.isEmpty()      &&
+        d->staleIdentities.isEmpty()      &&
+        d->staleImageSimilarities.isEmpty())
     {
         qCDebug(DIGIKAM_GENERAL_LOG) << "Nothing to do. Databases are clean.";
 
         if (d->shrinkDatabases)
         {
-            disconnect(d->thread, SIGNAL(signalData(QList<qlonglong>,QList<int>,QList<Identity>)),
-                       this, SLOT(slotFetchedData(QList<qlonglong>,QList<int>,QList<Identity>)));
+            disconnect(d->thread, SIGNAL(signalData(QList<qlonglong>,QList<int>,QList<Identity>,QList<qlonglong>)),
+                       this, SLOT(slotFetchedData(QList<qlonglong>,QList<int>,QList<Identity>,QList<qlonglong>)));
 
             disconnect(d->thread, SIGNAL(signalCompleted()),
-                        this, SLOT(slotCleanItems()));
+                       this, SLOT(slotCleanItems()));
 
             slotShrinkDatabases();
+
+            return;
         }
         else
         {
             MaintenanceTool::slotDone();
+
             return;
         }
     }
 
-    setTotalItems(totalItems() + d->imagesToRemove.size() + d->staleThumbnails.size() + d->staleIdentities.size());
-
-    //qCDebug(DIGIKAM_GENERAL_LOG) << "Completed items after analysis: " << completedItems() << "/" << totalItems();
+    reset();
+    setTotalItems(d->imagesToRemove.size()       +
+                  d->staleThumbnails.size()      +
+                  d->staleIdentities.size()      +
+                  d->staleImageSimilarities.size()
+                 );
+/*
+    qCDebug(DIGIKAM_GENERAL_LOG) << "Completed items after analysis: " << completedItems() << "/" << totalItems();
+*/
 }
 
 void DbCleaner::slotCleanItems()
@@ -343,17 +355,20 @@ void DbCleaner::slotCleanedFaces()
     {
         slotCleanedSimilarity();
     }
-
-    slotDone();
 }
 
 void DbCleaner::slotCleanedSimilarity()
 {
     // We cleaned the similarity db. We are done.
 
+    disconnect(d->thread, SIGNAL(signalCompleted()),
+               this, SLOT(slotCleanedSimilarity()));
+
     if (d->shrinkDatabases)
     {
         slotShrinkDatabases();
+
+        return;
     }
 
     slotDone();
@@ -361,13 +376,9 @@ void DbCleaner::slotCleanedSimilarity()
 
 void DbCleaner::slotShrinkDatabases()
 {
+    reset();
+    setTotalItems(d->databasesToShrinkCount);
     setLabel(i18n("Clean up the databases : ") + i18n("shrinking databases"));
-
-    disconnect(d->thread, SIGNAL(signalCompleted()),
-               this, SLOT(slotCleanedFaces()));
-
-    connect(d->thread, SIGNAL(signalStarted()),
-            d->shrinkDlg, SLOT(exec()));
 
     connect(d->thread, SIGNAL(signalFinished(bool,bool)),
             this, SLOT(slotShrinkNextDBInfo(bool,bool)));
@@ -376,22 +387,10 @@ void DbCleaner::slotShrinkDatabases()
             this, SLOT(slotDone()));
 
     d->thread->shrinkDatabases();
-/*
-    qCDebug(DIGIKAM_GENERAL_LOG) << "Completed items before vacuum: " << completedItems() << "/" << totalItems();
-*/
-/*
-    slotShrinkNextDBInfo(true,true);
-    qCDebug(DIGIKAM_GENERAL_LOG) << "Is timer active before start():"
-                                 << d->progressTimer->isActive();
-*/
+
+    d->shrinkDlg->open();
 
     d->thread->start();
-
-/*
-    qCDebug(DIGIKAM_GENERAL_LOG) << "Is timer active after start():"
-                                 << d->progressTimer->isActive();
-    d->progressTimer->start(300);
-*/
 }
 
 void DbCleaner::slotAdvance()
@@ -447,6 +446,8 @@ void DbCleaner::slotShrinkNextDBInfo(bool done, bool passed)
             break;
         }
     }
+
+    advance(1);
 }
 
 void DbCleaner::setUseMultiCoreCPU(bool b)
@@ -464,7 +465,7 @@ void DbCleaner::slotDone()
 {
     if (d->shrinkDlg)
     {
-        d->shrinkDlg->hide();
+        d->shrinkDlg->close();
     }
 
     MaintenanceTool::slotDone();
@@ -496,6 +497,8 @@ DbShrinkDialog::DbShrinkDialog(QWidget* const parent)
     : QDialog(parent),
       d      (new Private)
 {
+    setAttribute(Qt::WA_DeleteOnClose, false);
+
     d->progressPix                  = new DWorkingPixmap(this);
     d->progressTimer                = new QTimer(parent);
     d->statusList                   = new QListWidget(this);

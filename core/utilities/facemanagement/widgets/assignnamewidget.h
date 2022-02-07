@@ -8,7 +8,7 @@
  *
  * Copyright (C) 2010      by Aditya Bhatt <adityabhatt1991 at gmail dot com>
  * Copyright (C) 2010-2011 by Marcel Wiesweg <marcel dot wiesweg at gmx dot de>
- * Copyright (C) 2012-2021 by Gilles Caulier <caulier dot gilles at gmail dot com>
+ * Copyright (C) 2012-2022 by Gilles Caulier <caulier dot gilles at gmail dot com>
  *
  * This program is free software; you can redistribute it
  * and/or modify it under the terms of the GNU General
@@ -159,6 +159,8 @@ Q_SIGNALS:
      */
     void rejected(const ItemInfo& info, const QVariant& faceIdentifier);
 
+    void ignored(const ItemInfo& info, const QVariant& faceIdentifier);
+
     /**
      * In IgnoredMode, this signal is emitted when the user clicked on the label
      */
@@ -185,6 +187,7 @@ protected Q_SLOTS:
 
     void slotConfirm();
     void slotReject();
+    void slotIgnore();
     void slotActionActivated(const TaggingAction& action);
     void slotActionSelected(const TaggingAction& action);
     void slotIgnoredClicked();

@@ -11,14 +11,14 @@
 | as published by the Free Software Foundation; either version 2
 | of the License, or (at your option) any later version.
 |
-| OEMs, ISVs, VARs and other distributors that combine and 
+| OEMs, ISVs, VARs and other distributors that combine and
 | distribute commercially licensed software with Platinum software
 | and do not wish to distribute the source code for the commercially
 | licensed software under version 2, or (at your option) any later
 | version, of the GNU General Public License (the "GPL") must enter
 | into a commercial license agreement with Plutinosoft, LLC.
 | licensing@plutinosoft.com
-|  
+|
 | This program is distributed in the hope that it will be useful,
 | but WITHOUT ANY WARRANTY; without even the implied warranty of
 | MERCHANTABILITY or FITNESS FOR A PARTICULAR PURPOSE.  See the
@@ -26,7 +26,7 @@
 |
 | You should have received a copy of the GNU General Public License
 | along with this program; see the file LICENSE.txt. If not, write to
-| the Free Software Foundation, Inc., 
+| the Free Software Foundation, Inc.,
 | 51 Franklin Street, Fifth Floor, Boston, MA  02110-1301, USA.
 | http://www.gnu.org/licenses/gpl-2.0.html
 |
@@ -52,12 +52,12 @@
 /**
  The PLT_ObjectClass struct is used to assign a type to a PLT_MediaObject.
  */
-typedef struct { 
+typedef struct {
     NPT_String type;
     NPT_String friendly_name;
 } PLT_ObjectClass;
 
-typedef struct { 
+typedef struct {
     NPT_String type;
     NPT_String friendly_name;
     bool       include_derived;
@@ -188,7 +188,7 @@ public:
 
     bool IsContainer() { return m_ObjectClass.type.StartsWith("object.container"); }
 
-    static const char* GetUPnPClass(const char* filename, 
+    static const char* GetUPnPClass(const char* filename,
                                     const PLT_HttpRequestContext* context = NULL);
 
     virtual NPT_Result Reset();
@@ -225,7 +225,7 @@ public:
     NPT_Array<PLT_MediaItemResource> m_Resources;
 
     /* original DIDL for Control Points to pass to a renderer when invoking SetAVTransportURI */
-    NPT_String m_Didl;    
+    NPT_String m_Didl;
 };
 
 /*----------------------------------------------------------------------
@@ -233,7 +233,7 @@ public:
 +---------------------------------------------------------------------*/
 /**
  The PLT_MediaItem class represents a first-level class derived directly from
- PLT_MediaObject. It most often represents a single piece of AV data. 
+ PLT_MediaObject. It most often represents a single piece of AV data.
  */
 class PLT_MediaItem : public PLT_MediaObject
 {
@@ -254,7 +254,7 @@ public:
 +---------------------------------------------------------------------*/
 /**
  The PLT_MediaContainer class represents a first-level class derived directly
- from PLT_MediaObject. A PLT_MediaContainer represents a collection of 
+ from PLT_MediaObject. A PLT_MediaContainer represents a collection of
  PLT_MediaObject instances.
  */
 class PLT_MediaContainer : public PLT_MediaObject
@@ -278,7 +278,7 @@ public:
     bool m_Searchable;
 
     /* container info related */
-    NPT_Int32  m_ChildrenCount;    
+    NPT_Int32  m_ChildrenCount;
     NPT_UInt32 m_ContainerUpdateID;
 };
 

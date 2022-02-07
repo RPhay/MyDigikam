@@ -67,10 +67,10 @@ private:
 |   NPT_ContainerFind
 +---------------------------------------------------------------------*/
 template <typename T, typename P>
-NPT_Result NPT_ContainerFind(T&                   container, 
-                             const P&             predicate, 
-                             typename T::Element& item, 
-                             NPT_Ordinal          n=0) 
+NPT_Result NPT_ContainerFind(T&                   container,
+                             const P&             predicate,
+                             typename T::Element& item,
+                             NPT_Ordinal          n=0)
 {
     typename T::Iterator found = container.Find(predicate, n);
     if (found) {
@@ -85,10 +85,10 @@ NPT_Result NPT_ContainerFind(T&                   container,
 |   NPT_ContainerFind
 +---------------------------------------------------------------------*/
 template <typename T, typename P>
-NPT_Result NPT_ContainerFind(T&                    container, 
-                             const P&              predicate, 
-                             typename T::Iterator& iter, 
-                             NPT_Ordinal           n=0) 
+NPT_Result NPT_ContainerFind(T&                    container,
+                             const P&              predicate,
+                             typename T::Iterator& iter,
+                             NPT_Ordinal           n=0)
 {
     iter = container.Find(predicate, n);
     return iter?NPT_SUCCESS:NPT_ERROR_NO_SUCH_ITEM;
@@ -101,7 +101,7 @@ class NPT_UntilResultEquals
 {
 public:
     // methods
-    NPT_UntilResultEquals(NPT_Result condition_result, 
+    NPT_UntilResultEquals(NPT_Result condition_result,
                           NPT_Result return_value = NPT_SUCCESS) :
       m_ConditionResult(condition_result),
       m_ReturnValue(return_value) {}

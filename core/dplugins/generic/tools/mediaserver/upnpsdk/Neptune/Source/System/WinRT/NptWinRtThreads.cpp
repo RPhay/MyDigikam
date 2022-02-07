@@ -197,7 +197,7 @@ public:
 /*----------------------------------------------------------------------
 |       NPT_WinRtSharedVariable::NPT_WinRtSharedVariable
 +---------------------------------------------------------------------*/
-NPT_WinRtSharedVariable::NPT_WinRtSharedVariable(int value) : 
+NPT_WinRtSharedVariable::NPT_WinRtSharedVariable(int value) :
     m_Value(value)
 {
     InitializeCriticalSectionEx(&m_Mutex, 0, 0);
@@ -241,7 +241,7 @@ NPT_Result
 NPT_WinRtSharedVariable::WaitUntilEquals(int value, NPT_Timeout timeout)
 {
     NPT_Result result = NPT_SUCCESS;
-    
+
     EnterCriticalSection(&m_Mutex);
     while (value != m_Value) {
         if (!SleepConditionVariableCS(&m_Condition, &m_Mutex, timeout==NPT_TIMEOUT_INFINITE?INFINITE:timeout)) {
@@ -254,7 +254,7 @@ NPT_WinRtSharedVariable::WaitUntilEquals(int value, NPT_Timeout timeout)
         }
     }
     LeaveCriticalSection(&m_Mutex);
-    
+
     return result;
 }
 
@@ -278,7 +278,7 @@ NPT_WinRtSharedVariable::WaitWhileEquals(int value, NPT_Timeout timeout)
         }
     }
     LeaveCriticalSection(&m_Mutex);
-    
+
     return result;
 }
 
@@ -315,7 +315,7 @@ class NPT_WinRtSharedVariable : public NPT_SharedVariableInterface
 /*----------------------------------------------------------------------
 |   NPT_WinRtSharedVariable::NPT_WinRtSharedVariable
 +---------------------------------------------------------------------*/
-NPT_WinRtSharedVariable::NPT_WinRtSharedVariable(int value) : 
+NPT_WinRtSharedVariable::NPT_WinRtSharedVariable(int value) :
     m_Value(value)
 {
 }
@@ -370,7 +370,7 @@ NPT_WinRtSharedVariable::WaitUntilEquals(int value, NPT_Timeout timeout)
     } while (1);
 
     m_Lock.Unlock();
-    
+
     return NPT_SUCCESS;
 }
 
@@ -393,7 +393,7 @@ NPT_WinRtSharedVariable::WaitWhileEquals(int value, NPT_Timeout timeout)
     } while (1);
 
     m_Lock.Unlock();
-    
+
     return NPT_SUCCESS;
 }
 
@@ -415,7 +415,7 @@ class NPT_WinRtAtomicVariable : public NPT_AtomicVariableInterface
     // methods
                 NPT_WinRtAtomicVariable(int value);
                ~NPT_WinRtAtomicVariable();
-    int  Increment(); 
+    int  Increment();
     int  Decrement();
     void SetValue(int value);
     int  GetValue();
@@ -428,7 +428,7 @@ class NPT_WinRtAtomicVariable : public NPT_AtomicVariableInterface
 /*----------------------------------------------------------------------
 |   NPT_WinRtAtomicVariable::NPT_WinRtAtomicVariable
 +---------------------------------------------------------------------*/
-NPT_WinRtAtomicVariable::NPT_WinRtAtomicVariable(int value) : 
+NPT_WinRtAtomicVariable::NPT_WinRtAtomicVariable(int value) :
     m_Value(value)
 {
 }
@@ -498,7 +498,7 @@ class NPT_WinRtThread : public NPT_ThreadInterface
                                 NPT_Runnable& target,
                                 bool          detached);
                ~NPT_WinRtThread();
-    NPT_Result  Start(); 
+    NPT_Result  Start();
     NPT_Result  Wait(NPT_Timeout timeout = NPT_TIMEOUT_INFINITE);
 	NPT_Result  SetPriority(int priority);
 
@@ -510,7 +510,7 @@ class NPT_WinRtThread : public NPT_ThreadInterface
     void Run();
 
     // NPT_Interruptible methods
-    NPT_Result Interrupt() { return NPT_ERROR_NOT_IMPLEMENTED; } 
+    NPT_Result Interrupt() { return NPT_ERROR_NOT_IMPLEMENTED; }
 
     // members
     NPT_Thread*   m_Delegator;
@@ -524,7 +524,7 @@ class NPT_WinRtThread : public NPT_ThreadInterface
 +---------------------------------------------------------------------*/
 NPT_WinRtThread::NPT_WinRtThread(NPT_Thread*   delegator,
                                  NPT_Runnable& target,
-                                 bool          detached) : 
+                                 bool          detached) :
     m_Delegator(delegator),
     m_Target(target),
     m_Detached(detached),
@@ -538,7 +538,7 @@ NPT_WinRtThread::NPT_WinRtThread(NPT_Thread*   delegator,
 NPT_WinRtThread::~NPT_WinRtThread()
 {
     if (!m_Detached) {
-        // we're not detached, and not in the Run() method, so we need to 
+        // we're not detached, and not in the Run() method, so we need to
         // wait until the thread is done
         Wait();
     }
@@ -613,7 +613,7 @@ NPT_WinRtThread::Start()
             NPT_LOG_FINE("*** exception caught during thread routine ***");
         }
         NPT_LOG_FINE("--- thread routine done +++");
-        
+
         // signal that we're done
         SetEvent(thread_handle);
 
@@ -647,7 +647,7 @@ NPT_WinRtThread::Run()
 /*----------------------------------------------------------------------
 |   NPT_WinRtThread::SetPriority
 +---------------------------------------------------------------------*/
-NPT_Result 
+NPT_Result
 NPT_WinRtThread::SetPriority(int priority)
 {
 	if (m_ThreadHandle == 0) return NPT_ERROR_INVALID_STATE;
@@ -667,7 +667,7 @@ NPT_WinRtThread::Wait(NPT_Timeout timeout /* = NPT_TIMEOUT_INFINITE */)
 
     // wait for the thread to finish
     // Logging here will cause a crash on exit because LogManager may already be destroyed
-    DWORD result = WaitForSingleObjectEx(m_ThreadHandle, 
+    DWORD result = WaitForSingleObjectEx(m_ThreadHandle,
                                          timeout==NPT_TIMEOUT_INFINITE?INFINITE:timeout,
 										 FALSE);
     if (result != WAIT_OBJECT_0) {
@@ -680,7 +680,7 @@ NPT_WinRtThread::Wait(NPT_Timeout timeout /* = NPT_TIMEOUT_INFINITE */)
 /*----------------------------------------------------------------------
 |   NPT_Thread::GetCurrentThreadId
 +---------------------------------------------------------------------*/
-NPT_Thread::ThreadId 
+NPT_Thread::ThreadId
 NPT_Thread::GetCurrentThreadId()
 {
     return ::GetCurrentThreadId();
@@ -689,7 +689,7 @@ NPT_Thread::GetCurrentThreadId()
 /*----------------------------------------------------------------------
 |   NPT_Thread::SetCurrentThreadPriority
 +---------------------------------------------------------------------*/
-NPT_Result 
+NPT_Result
 NPT_Thread::SetCurrentThreadPriority(int priority)
 {
 	return NPT_WinRtThread::SetThreadPriority(::GetCurrentThread(), priority);

@@ -9,7 +9,7 @@
  * Copyright (C)      2004 by Renchi Raju <renchi dot raju at gmail dot com>
  * Copyright (C) 2006-2009 by Valerio Fuoglio <valerio.fuoglio@gmail.com>
  * Copyright (C)      2009 by Andi Clemens <andi dot clemens at googlemail dot com>
- * Copyright (C) 2012-2021 by Gilles Caulier <caulier dot gilles at gmail dot com>
+ * Copyright (C) 2012-2022 by Gilles Caulier <caulier dot gilles at gmail dot com>
  * Copyright (C)      2021 by Phuoc Khanh Le <phuockhanhnk94 at gmail dot com>
  *
  * This program is free software; you can redistribute it
@@ -798,7 +798,7 @@ void PresentationGL::printComments(QImage& layer)
         bool breakLine = false; // End Of Line found
         uint currIndex; //  Comments QString current index
 
-        // Check miminal lines dimension
+        // Check minimal lines dimension
 
         int commentsLinesLengthLocal = d->sharedData->commentsLinesLength;
 

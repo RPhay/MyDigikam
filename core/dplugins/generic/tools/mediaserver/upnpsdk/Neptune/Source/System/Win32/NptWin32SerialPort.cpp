@@ -62,7 +62,7 @@ protected:
 +---------------------------------------------------------------------*/
 class NPT_Win32SerialPortInputStream : public NPT_InputStream,
                                        private NPT_Win32SerialPortStream
-                                
+
 {
 public:
     // constructors and destructor
@@ -70,8 +70,8 @@ public:
         NPT_Win32SerialPortStream(handle) {}
 
     // NPT_InputStream methods
-    NPT_Result Read(void*     buffer, 
-                    NPT_Size  bytes_to_read, 
+    NPT_Result Read(void*     buffer,
+                    NPT_Size  bytes_to_read,
                     NPT_Size* bytes_read);
     NPT_Result Seek(NPT_Position /* offset */) {
         return NPT_ERROR_NOT_SUPPORTED;
@@ -91,15 +91,15 @@ public:
 |   NPT_Win32SerialPortInputStream::Read
 +---------------------------------------------------------------------*/
 NPT_Result
-NPT_Win32SerialPortInputStream::Read(void*     buffer, 
-                                     NPT_Size  bytes_to_read, 
+NPT_Win32SerialPortInputStream::Read(void*     buffer,
+                                     NPT_Size  bytes_to_read,
                                      NPT_Size* bytes_read)
 {
     DWORD nb_read = 0;
-    BOOL result = ReadFile(m_HandleReference->GetHandle(), 
-                           buffer, 
-                           bytes_to_read, 
-                           &nb_read, 
+    BOOL result = ReadFile(m_HandleReference->GetHandle(),
+                           buffer,
+                           bytes_to_read,
+                           &nb_read,
                            NULL);
     if (result == TRUE) {
         if (bytes_read) *bytes_read = nb_read;
@@ -122,8 +122,8 @@ public:
         NPT_Win32SerialPortStream(handle) {}
 
     // NPT_InputStream methods
-    NPT_Result Write(const void* buffer, 
-                     NPT_Size    bytes_to_write, 
+    NPT_Result Write(const void* buffer,
+                     NPT_Size    bytes_to_write,
                      NPT_Size*   bytes_written);
     NPT_Result Seek(NPT_Position /* offset */) {
         return NPT_ERROR_NOT_SUPPORTED;
@@ -137,16 +137,16 @@ public:
 |   NPT_Win32SerialPortOutputStream::Write
 +---------------------------------------------------------------------*/
 NPT_Result
-NPT_Win32SerialPortOutputStream::Write(const void* buffer, 
-                                       NPT_Size    bytes_to_write, 
+NPT_Win32SerialPortOutputStream::Write(const void* buffer,
+                                       NPT_Size    bytes_to_write,
                                        NPT_Size*   bytes_written)
 {
     DWORD nb_written = 0;
 
-    BOOL result = WriteFile(m_HandleReference->GetHandle(), 
-                            buffer, 
-                            bytes_to_write, 
-                            &nb_written, 
+    BOOL result = WriteFile(m_HandleReference->GetHandle(),
+                            buffer,
+                            bytes_to_write,
+                            &nb_written,
                             NULL);
     if (result == TRUE) {
         if (bytes_written) *bytes_written = nb_written;
@@ -168,7 +168,7 @@ public:
    ~NPT_Win32SerialPort();
 
     // NPT_SerialPortInterface methods
-    NPT_Result Open(unsigned int              speed, 
+    NPT_Result Open(unsigned int              speed,
                     NPT_SerialPortStopBits    stop_bits = NPT_SERIAL_PORT_STOP_BITS_1,
                     NPT_SerialPortFlowControl flow_control = NPT_SERIAL_PORT_FLOW_CONTROL_NONE,
                     NPT_SerialPortParity      parity = NPT_SERIAL_PORT_PARITY_NONE);
@@ -202,7 +202,7 @@ NPT_Win32SerialPort::~NPT_Win32SerialPort()
 |   NPT_Win32SerialPort::Open
 +---------------------------------------------------------------------*/
 NPT_Result
-NPT_Win32SerialPort::Open(unsigned int              speed, 
+NPT_Win32SerialPort::Open(unsigned int              speed,
                           NPT_SerialPortStopBits    stop_bits,
                           NPT_SerialPortFlowControl flow_control,
                           NPT_SerialPortParity      parity)
@@ -212,10 +212,10 @@ NPT_Win32SerialPort::Open(unsigned int              speed,
         return NPT_ERROR_SERIAL_PORT_ALREADY_OPEN;
     }
 
-    HANDLE handle = CreateFile(m_Name,  
-                               GENERIC_READ | GENERIC_WRITE, 
-                               0, 
-                               0, 
+    HANDLE handle = CreateFile(m_Name,
+                               GENERIC_READ | GENERIC_WRITE,
+                               0,
+                               0,
                                OPEN_EXISTING,
                                0,
                                0);
@@ -295,7 +295,7 @@ NPT_Win32SerialPort::Close()
 /*----------------------------------------------------------------------
 |   NPT_Win32SerialPort::GetInputStream
 +---------------------------------------------------------------------*/
-NPT_Result 
+NPT_Result
 NPT_Win32SerialPort::GetInputStream(NPT_InputStreamReference& stream)
 {
     // default value
@@ -313,7 +313,7 @@ NPT_Win32SerialPort::GetInputStream(NPT_InputStreamReference& stream)
 /*----------------------------------------------------------------------
 |   NPT_Win32SerialPort::GetOutputStream
 +---------------------------------------------------------------------*/
-NPT_Result 
+NPT_Result
 NPT_Win32SerialPort::GetOutputStream(NPT_OutputStreamReference& stream)
 {
     // default value

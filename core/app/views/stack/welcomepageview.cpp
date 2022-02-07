@@ -7,7 +7,7 @@
  * Description : a widget to display a welcome page
  *               on root album.
  *
- * Copyright (C) 2006-2021 by Gilles Caulier <caulier dot gilles at gmail dot com>
+ * Copyright (C) 2006-2022 by Gilles Caulier <caulier dot gilles at gmail dot com>
  * Copyright (C) 2009-2011 by Andi Clemens <andi dot clemens at gmail dot com>
  * Copyright (C) 2015      by Mohamed_Anwer <m_dot_anwer at gmx dot com>
  *
@@ -169,13 +169,22 @@ QStringList WelcomePageView::featuresTabContent() const
     newFeatures << i18n("Improved support for UNC network paths under Windows.");
     newFeatures << i18n("Improved support for Unicode paths under Windows.");
     newFeatures << i18n("Apple bundle is now relocatable and compatible with macOS BigSur.");
-    newFeatures << i18n("New online version checker and downloader to automatize upgrade under Windows and macOS.");
+    newFeatures << i18n("New online version checker and downloader to automate upgrade under Windows and macOS.");
     newFeatures << i18n("Better support of astro FITS image format including metadata extraction support to populate the database.");
-    newFeatures << i18n("Use last Exiv2 0.27.4 in all bundles with Base Media File metadata read and write support (HEIF, AVIF).");
+    newFeatures << i18n("Use last Exiv2 0.27.5 in all bundles with Base Media File metadata read and write support (HEIF, AVIF).");
     newFeatures << i18n("Find duplicates items is now process in parallel using multi-cores.");
-    newFeatures << i18n("New tool to export items to iNaturatist web service.");
+    newFeatures << i18n("New tool to export items to iNaturalist web service.");
     newFeatures << i18n("New metadata viewer based on ExifTool.");
-    newFeatures << i18n("Update internal RAW engine to last Libraw 0.20.2 release including Canon CR3 and Sony A7R4 support.");
+    newFeatures << i18n("MacOS package, Windows installer, and AppImage bundle use KF5 5.89 and KAPPS 21.12.0 frameworks.");
+    newFeatures << i18n("AppImage Linux bundle now support <a href=\"https://fcitx-im.org/wiki/Fcitx_5\">Platform Input Context FCITX</a>.");
+    newFeatures << i18n("Improve RTL translations support.");
+    newFeatures << i18n("GUI internationalization and localization updates with more than 50 languages available.");
+    newFeatures << i18n("Add OpenWith contextual menu support under MacOS.");
+    newFeatures << i18n("Integration of Google Summer of Code project 2021 "
+                        "<a href=\"https://community.kde.org/GSoC/2021/StatusReports/PhuocKhanhLE\">Image Quality Sorter</a>.");
+    newFeatures << i18n("New tool to share items on the network with a Motion JPEG stream server.");
+    newFeatures << i18n("Showfoto has a new left sidebar hosting a folder-view to quickly explore images from local file system.");
+    newFeatures << i18n("Update internal RAW engine to last Libraw 0.20.2 (snapshot 20210827) including Canon CR3 and Sony A7R4 support.");
     newFeatures << i18n("New camera supported: "
                         "Canon CR3, PowerShot G5 X Mark II, G7 X Mark III, SX70 HS, EOS R, EOS RP, EOS 90D, EOS 250D, EOS M6 Mark II, EOS M50, EOS M200, EOS 1DX Mark III (lossless files only) "
                         "DJI Mavic Air, Air2, Osmo Action, "
@@ -268,14 +277,22 @@ void WelcomePageView::slotThemeChanged()
     QString slogan           = DAboutData::digiKamSlogan();
     QString locationHtml     = QStandardPaths::locate(QStandardPaths::GenericDataLocation, QLatin1String("digikam/about/main.html"));
     QString content          = QString::fromUtf8(fileToString(locationHtml));
-    content                  = content.arg(appTitle)
+
+    content                  = content.arg((layoutDirection() == Qt::RightToLeft) ? QLatin1String("rtl") : QLatin1String("ltr")) // For RTL issue. See bug #376438
+                                      .arg(appTitle)
                                       .arg(slogan)
                                       .arg(i18n("Welcome to digiKam %1", QLatin1String(digikam_version)))
                                       .arg(featuresTabContent().value(0))
                                       .arg(aboutTabContent().value(0))
                                       .arg(i18n("Background Image Credits"))
                                       .arg(featuresTabContent().value(1))
-                                      .arg(aboutTabContent().value(1));
+                                      .arg(aboutTabContent().value(1))
+                                      .arg(i18n("Author:"))
+                                      .arg(i18n("Location:"))
+                                      .arg(i18n("Date:"))
+                                      .arg(i18n("Camera:"))
+                                      .arg(i18n("Lens:"))
+    ;
 
     //qCDebug(DIGIKAM_GENERAL_LOG) << content;
 

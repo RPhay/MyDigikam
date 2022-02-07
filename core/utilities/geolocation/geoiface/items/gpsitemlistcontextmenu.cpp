@@ -6,7 +6,7 @@
  * Date        : 2009-05-07
  * Description : Context menu for GPS list view.
  *
- * Copyright (C) 2010-2021 by Gilles Caulier <caulier dot gilles at gmail dot com>
+ * Copyright (C) 2010-2022 by Gilles Caulier <caulier dot gilles at gmail dot com>
  * Copyright (C) 2009-2014 by Michael G. Hansen <mike at mghansen dot de>
  *
  * This program is free software; you can redistribute it
@@ -465,24 +465,60 @@ void GPSItemListContextMenu::pasteActionTriggered(bool swap)
         {
             /// @todo this is legacy code from before we used geo-url
 
-            const QStringList parts = textdata.split(QLatin1Char(','));
+            QLocale locale;
+            QString cordText = textdata.trimmed();
+            QStringList separators({QLatin1String(","),
+                                    QLatin1String("/"),
+                                    QLatin1String(":"),
+                                    QLatin1String(";"),
+                                    QLatin1String(" ")});
+            int firstPoint   =  cordText.indexOf(QLatin1Char('.'));
 
-            if ((parts.size() == 3) || (parts.size() == 2))
+            if ((firstPoint == -1) || (firstPoint > 4))
+            {
+                locale = QLocale(QLocale::French);
+
+                if (cordText.count(QLatin1Char(',')) > 1)
+                {
+                    separators.removeOne(QLatin1String(","));
+                }
+            }
+            else
+            {
+                locale = QLocale(QLocale::C);
+            }
+
+            QStringList parts;
+            bool foundParts = false;
+
+            while (!separators.isEmpty())
+            {
+                parts = cordText.split(separators.takeFirst(),
+                                       QString::SkipEmptyParts);
+
+                if ((parts.size() == 3) || (parts.size() == 2))
+                {
+                    foundParts = true;
+                    break;
+                }
+            }
+
+            if (foundParts)
             {
                 double ptLongitude = 0.0;
                 double ptAltitude  = 0.0;
                 bool haveAltitude  = false;
                 bool okay          = true;
-                double ptLatitude  = parts[0].toDouble(&okay);
+                double ptLatitude  = locale.toDouble(parts[0], &okay);
 
                 if (okay)
                 {
-                    ptLongitude = parts[1].toDouble(&okay);
+                    ptLongitude = locale.toDouble(parts[1], &okay);
                 }
 
                 if (okay && (parts.size() == 3))
                 {
-                    ptAltitude   = parts[2].toDouble(&okay);
+                    ptAltitude   = locale.toDouble(parts[2], &okay);
                     haveAltitude = okay;
                 }
 

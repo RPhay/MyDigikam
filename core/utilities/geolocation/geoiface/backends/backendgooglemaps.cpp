@@ -6,7 +6,7 @@
  * Date        : 2009-12-01
  * Description : Google-Maps-backend for geolocation interface
  *
- * Copyright (C) 2010-2021 by Gilles Caulier <caulier dot gilles at gmail dot com>
+ * Copyright (C) 2010-2022 by Gilles Caulier <caulier dot gilles at gmail dot com>
  * Copyright (C) 2009-2011 by Michael G. Hansen <mike at mghansen dot de>
  * Copyright (C) 2014      by Justus Schwartz <justus at gmx dot li>
  *
@@ -55,7 +55,7 @@
 #ifdef HAVE_QWEBENGINE
 #   include "htmlwidget_qwebengine.h"
 #elif defined HAVE_QWEBKIT
-#   include "htmlwidget.h"
+#   include "htmlwidget_qwebkit.h"
 #else
 #   include "dnowebwidget.h"
 #endif
@@ -72,7 +72,7 @@ public:
     {
     }
 #if defined HAVE_QWEBENGINE || defined HAVE_QWEBKIT
-    HTMLWidget* htmlWidget;
+    HTMLWidget*   htmlWidget;
 #else
     DNoWebWidget* htmlWidget;
 #endif

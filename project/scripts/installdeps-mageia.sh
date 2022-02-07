@@ -5,14 +5,14 @@
 #
 # Requirements installed are:
 #
-# - Developement packages to compile source code.
+# - Development packages to compile source code.
 # - API doc compilation.
 # - Hanbook compilation.
 # - Cross-compiling dependencies for Windows.
 # - Run-time dependencies.
 # - Debug dependencies.
 #
-# Copyright (c) 2015-2021 by Gilles Caulier  <caulier dot gilles at gmail dot com>
+# Copyright (c) 2015-2022 by Gilles Caulier  <caulier dot gilles at gmail dot com>
 #
 # Redistribution and use is allowed according to the terms of the BSD license.
 # For details see the accompanying COPYING-CMAKE-SCRIPTS file.
@@ -69,6 +69,7 @@ urpmi --auto \
       icoutils                      `#  For MXE build.` \
       mingw32-nsis                  `#  For MXE build.` \
       python3-mako                  `#  For MXE build.` \
+      python3-lxml                  `#  For MXE build.` \
       python3-pygments              `#  For Continuous integration.` \
       python3-beautifulsoup4        `#  For Continuous integration.` \
       python3-soupsieve             `#  For Continuous integration.` \
@@ -89,6 +90,7 @@ urpmi --auto \
       flex                          `#  Panorama tool.` \
       wget \
       coreutils \
+      cdialog \
       dmg2img \
       tesseract \
       eigen3-devel \

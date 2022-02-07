@@ -39,7 +39,7 @@
 #include "XMPCore/Interfaces/ICoreObjectFactory.h"
 #include "XMPCommon/Interfaces/IUTF8String_I.h"
 #include "XMPCore/Interfaces/INode_I.h"
-#endif 
+#endif
 
 
 #if XMP_DebugBuild
@@ -127,9 +127,9 @@ void XMP_Node::SetValue( XMP_StringPtr value )
 			XMP_Assert ( this->name != "xmp:TestAssertNotify" );
 		}
 	#endif
-	
+
 	std::string newValue = value;	// Need a local copy to tweak and not change node.value for errors.
-	
+
 	XMP_Uns8* chPtr = (XMP_Uns8*) newValue.c_str();	// Check for valid UTF-8, replace ASCII controls with a space.
 	while ( *chPtr != 0 ) {
 
@@ -160,7 +160,7 @@ void XMP_Node::SetValue( XMP_StringPtr value )
 	#if 0	// *** XMP_DebugBuild
 		this->_valuePtr = this->value.c_str();
 	#endif
-	
+
 }	// XMP_Node::SetValue
 
 
@@ -180,18 +180,18 @@ SetNode	( XMP_Node * node, XMP_StringPtr value, XMP_OptionBits options )
 		node->RemoveChildren();
 		node->RemoveQualifiers();
 	}
-	
+
 	node->options |= options;	// Keep options set by FindNode when creating a new node.
 
 	if ( value != 0 ) {
-	
+
 		// This is setting the value of a leaf node.
 		if ( node->options & kXMP_PropCompositeMask ) XMP_Throw ( "Composite nodes can't have values", kXMPErr_BadXPath );
 		XMP_Assert ( node->children.empty() );
 		SetNodeValue ( node, value );
-	
+
 	} else {
-	
+
 		// This is setting up an array or struct.
 		if ( ! node->value.empty() ) XMP_Throw ( "Composite nodes can't have values", kXMPErr_BadXPath );
 		if ( node->options & kXMP_PropCompositeMask ) {	// Can't change an array to a struct, or vice versa.
@@ -200,9 +200,9 @@ SetNode	( XMP_Node * node, XMP_StringPtr value, XMP_OptionBits options )
 			}
 		}
 		node->RemoveChildren();
-	
+
 	}
-	
+
 }	// SetNode
 
 
@@ -218,17 +218,17 @@ DoSetArrayItem ( XMP_Node *		arrayNode,
 {
 	XMP_OptionBits itemLoc = options & kXMP_PropArrayLocationMask;
 	XMP_Index      arraySize = static_cast<XMP_Index>( arrayNode->children.size() );
-	
+
 	options &= ~kXMP_PropArrayLocationMask;
 	options = VerifySetOptions ( options, itemValue );
-	
+
 	// Now locate or create the item node and set the value. Note the index parameter is one-based!
 	// The index can be in the range [0..size+1] or "last", normalize it and check the insert flags.
 	// The order of the normalization checks is important. If the array is empty we end up with an
 	// index and location to set item size+1.
-	
+
 	XMP_Node * itemNode = 0;
-	
+
 	if ( itemIndex == kXMP_ArrayLastItem ) itemIndex = arraySize;
 	if ( (itemIndex == 0) && (itemLoc == kXMP_InsertAfterItem) ) {
 		itemIndex = 1;
@@ -239,7 +239,7 @@ DoSetArrayItem ( XMP_Node *		arrayNode,
 		itemLoc = 0;
 	}
 	if ( (itemIndex == arraySize+1) && (itemLoc == kXMP_InsertBeforeItem) ) itemLoc = 0;
-	
+
 	if ( itemIndex == arraySize+1 ) {
 
 		if ( itemLoc != 0 ) XMP_Throw ( "Can't insert before or after implicit new item", kXMPErr_BadIndex );
@@ -260,9 +260,9 @@ DoSetArrayItem ( XMP_Node *		arrayNode,
 		}
 
 	}
-	
+
 	SetNode ( itemNode, itemValue, options );
-	
+
 }	// DoSetArrayItem
 
 
@@ -284,7 +284,7 @@ ChooseLocalizedText ( const XMP_Node *	 arrayNode,
 	const XMP_Node * currItem = 0;
 	const size_t itemLim = arrayNode->children.size();
 	size_t itemNum;
-	
+
 	// See if the array has the right form. Allow empty alt arrays, that is what parsing returns.
 	// *** Should check alt-text bit when that is reliably maintained.
 
@@ -315,7 +315,7 @@ ChooseLocalizedText ( const XMP_Node *	 arrayNode,
 			return kXMP_CLT_SpecificMatch;
 		}
 	}
-	
+
 	if ( *genericLang != 0 ) {
 
 		// Look for the first partial match with the generic language.
@@ -333,7 +333,7 @@ ChooseLocalizedText ( const XMP_Node *	 arrayNode,
 		}
 
 		if ( itemNum < itemLim ) {
-			
+
 			// Look for a second partial match with the generic language.
 			for ( ++itemNum; itemNum < itemLim; ++itemNum ) {
 				currItem = arrayNode->children[itemNum];
@@ -348,9 +348,9 @@ ChooseLocalizedText ( const XMP_Node *	 arrayNode,
 			return kXMP_CLT_SingleGeneric;	// No second partial match was found.
 
 		}
-		
+
 	}
-	
+
 	// Look for an 'x-default' item.
 	for ( itemNum = 0; itemNum < itemLim; ++itemNum ) {
 		currItem = arrayNode->children[itemNum];
@@ -359,11 +359,11 @@ ChooseLocalizedText ( const XMP_Node *	 arrayNode,
 			return kXMP_CLT_XDefault;
 		}
 	}
-	
+
 	// Everything failed, choose the first item.
 	*itemNode = arrayNode->children[0];
 	return kXMP_CLT_FirstItem;
-	
+
 }	// ChooseLocalizedText
 
 
@@ -376,7 +376,7 @@ AppendLangItem ( XMP_Node * arrayNode, XMP_StringPtr itemLang, XMP_StringPtr ite
 {
 	XMP_Node * newItem  = new XMP_Node ( arrayNode, kXMP_ArrayItemName, (kXMP_PropHasQualifiers | kXMP_PropHasLang) );
 	XMP_Node * langQual = new XMP_Node ( newItem, "xml:lang", kXMP_PropIsQualifier );
-	
+
 	try {	// ! Use SetNodeValue, not constructors above, to get the character checks.
 		SetNodeValue ( newItem, itemValue );
 		SetNodeValue ( langQual, itemLang );
@@ -385,7 +385,7 @@ AppendLangItem ( XMP_Node * arrayNode, XMP_StringPtr itemLang, XMP_StringPtr ite
 		delete langQual;
 		throw;
 	}
-	
+
 	newItem->qualifiers.push_back ( langQual );
 
 	if ( (arrayNode->children.empty()) || (langQual->value != "x-default") ) {
@@ -421,16 +421,16 @@ XMPMeta::GetProperty ( XMP_StringPtr	schemaNS,
 
 	XMP_ExpandedXPath expPath;
 	ExpandXPath ( schemaNS, propName, &expPath );
-	
+
 	XMP_Node * propNode = FindConstNode ( &tree, expPath );
 	if ( propNode == 0 ) return false;
-	
+
 	*propValue = propNode->value.c_str();
 	*valueSize = static_cast<XMP_StringLen>( propNode->value.size() );
 	*options   = propNode->options;
-	
+
 	return true;
-	
+
 }	// GetProperty
 
 
@@ -527,9 +527,9 @@ XMPMeta::SetProperty ( XMP_StringPtr  schemaNS,
 
 	XMP_Node * propNode = FindNode ( &tree, expPath, kXMP_CreateNodes, options );
 	if ( propNode == 0 ) XMP_Throw ( "Specified property does not exist", kXMPErr_BadXPath );
-	
+
 	SetNode ( propNode, propValue, options );
-	
+
 }	// SetProperty
 
 
@@ -550,9 +550,9 @@ XMPMeta::SetArrayItem ( XMP_StringPtr  schemaNS,
 	ExpandXPath ( schemaNS, arrayName, &arrayPath );
 	XMP_Node * arrayNode = FindNode ( &tree, arrayPath, kXMP_ExistingOnly );	// Just lookup, don't try to create.
 	if ( arrayNode == 0 ) XMP_Throw ( "Specified array does not exist", kXMPErr_BadXPath );
-	
+
 	DoSetArrayItem ( arrayNode, itemIndex, itemValue, options );
-	
+
 }	// SetArrayItem
 
 
@@ -573,14 +573,14 @@ XMPMeta::AppendArrayItem ( XMP_StringPtr  schemaNS,
 	if ( (arrayOptions & ~kXMP_PropArrayFormMask) != 0 ) {
 		XMP_Throw ( "Only array form flags allowed for arrayOptions", kXMPErr_BadOptions );
 	}
-	
+
 	// Locate or create the array. If it already exists, make sure the array form from the options
 	// parameter is compatible with the current state.
-	
+
 	XMP_ExpandedXPath arrayPath;
 	ExpandXPath ( schemaNS, arrayName, &arrayPath );
 	XMP_Node * arrayNode = FindNode ( &tree, arrayPath, kXMP_ExistingOnly );	// Just lookup, don't try to create.
-	
+
 	if ( arrayNode != 0 ) {
 		// The array exists, make sure the form is compatible. Zero arrayForm means take what exists.
 		if ( ! (arrayNode->options & kXMP_PropValueIsArray) ) {
@@ -598,9 +598,9 @@ XMPMeta::AppendArrayItem ( XMP_StringPtr  schemaNS,
 		arrayNode = FindNode ( &tree, arrayPath, kXMP_CreateNodes, arrayOptions );
 		if ( arrayNode == 0 ) XMP_Throw ( "Failure creating array node", kXMPErr_BadXPath );
 	}
-	
+
 	DoSetArrayItem ( arrayNode, kXMP_ArrayLastItem, itemValue, (options | kXMP_InsertAfterItem) );
-	
+
 }	// AppendArrayItem
 
 
@@ -663,14 +663,14 @@ XMPMeta::DeleteProperty	( XMP_StringPtr	schemaNS,
 
 	XMP_ExpandedXPath	expPath;
 	ExpandXPath ( schemaNS, propName, &expPath );
-	
+
 	XMP_NodePtrPos ptrPos;
 	XMP_Node * propNode = FindNode ( &tree, expPath, kXMP_ExistingOnly, kXMP_NoOptions, &ptrPos );
 	if ( propNode == 0 ) return;
 	XMP_Node * parentNode = propNode->parent;
-	
+
 	// Erase the pointer from the parent's vector, then delete the node and all below it.
-	
+
 	if ( ! (propNode->options & kXMP_PropIsQualifier) ) {
 
 		parentNode->children.erase ( ptrPos );
@@ -691,9 +691,9 @@ XMPMeta::DeleteProperty	( XMP_StringPtr	schemaNS,
 		if ( parentNode->qualifiers.empty() ) parentNode->options ^= kXMP_PropHasQualifiers;
 
 	}
-	
+
 	delete propNode;	// ! The destructor takes care of the whole subtree.
-	
+
 }	// DeleteProperty
 
 
@@ -768,7 +768,7 @@ XMPMeta::DoesPropertyExist ( XMP_StringPtr schemaNS,
 
 	XMP_Node * propNode = FindConstNode ( &tree, expPath );
 	return (propNode != 0);
-	
+
 }	// DoesPropertyExist
 
 
@@ -851,22 +851,22 @@ XMPMeta::GetLocalizedText ( XMP_StringPtr	 schemaNS,
 	XMP_VarString zSpecificLang ( _specificLang );
 	NormalizeLangValue ( &zGenericLang );
 	NormalizeLangValue ( &zSpecificLang );
-	
+
 	XMP_StringPtr genericLang  = zGenericLang.c_str();
 	XMP_StringPtr specificLang = zSpecificLang.c_str();
-	
+
 	XMP_ExpandedXPath arrayPath;
 	ExpandXPath ( schemaNS, arrayName, &arrayPath );
-	
+
 	const XMP_Node * arrayNode = FindConstNode ( &tree, arrayPath );	// *** This expand/find idiom is used in 3 Getters.
 	if ( arrayNode == 0 ) return false;			// *** Should extract it into a local utility.
-	
+
 	XMP_CLTMatch match;
 	const XMP_Node * itemNode;
-	
+
 	match = ChooseLocalizedText ( arrayNode, genericLang, specificLang, &itemNode );
 	if ( match == kXMP_CLT_NoValues ) return false;
-	
+
 	*actualLang = itemNode->qualifiers[0]->value.c_str();
 	*langSize   = static_cast<XMP_Index>( itemNode->qualifiers[0]->value.size() );
 	*itemValue  = itemNode->value.c_str();
@@ -874,7 +874,7 @@ XMPMeta::GetLocalizedText ( XMP_StringPtr	 schemaNS,
 	*options    = itemNode->options;
 
 	return true;
-	
+
 }	// GetLocalizedText
 
 
@@ -898,13 +898,13 @@ XMPMeta::SetLocalizedText ( XMP_StringPtr  schemaNS,
 	XMP_VarString zSpecificLang ( _specificLang );
 	NormalizeLangValue ( &zGenericLang );
 	NormalizeLangValue ( &zSpecificLang );
-	
+
 	XMP_StringPtr genericLang  = zGenericLang.c_str();
 	XMP_StringPtr specificLang = zSpecificLang.c_str();
-	
+
 	XMP_ExpandedXPath arrayPath;
 	ExpandXPath ( schemaNS, arrayName, &arrayPath );
-	
+
 	// Find the array node and set the options if it was just created.
 	XMP_Node * arrayNode = FindNode ( &tree, arrayPath, kXMP_CreateNodes,
 									  (kXMP_PropValueIsArray | kXMP_PropArrayIsOrdered | kXMP_PropArrayIsAlternate) );
@@ -916,13 +916,13 @@ XMPMeta::SetLocalizedText ( XMP_StringPtr  schemaNS,
 			XMP_Throw ( "Localized text array is not alt-text", kXMPErr_BadXPath );
 		}
 	}
-	
+
 	// Make sure the x-default item, if any, is first.
-	
+
 	size_t itemNum, itemLim;
 	XMP_Node * xdItem = 0;
 	bool haveXDefault = false;
-	
+
 	for ( itemNum = 0, itemLim = arrayNode->children.size(); itemNum < itemLim; ++itemNum ) {
 		XMP_Node * currItem = arrayNode->children[itemNum];
 		XMP_Assert ( XMP_PropHasLang(currItem->options) );
@@ -935,22 +935,22 @@ XMPMeta::SetLocalizedText ( XMP_StringPtr  schemaNS,
 			break;
 		}
 	}
-	
+
 	if ( haveXDefault && (itemNum != 0) ) {
 		XMP_Assert ( arrayNode->children[itemNum]->qualifiers[0]->value == "x-default" );
 		XMP_Node * temp = arrayNode->children[0];
 		arrayNode->children[0] = arrayNode->children[itemNum];
 		arrayNode->children[itemNum] = temp;
 	}
-	
+
 	// Find the appropriate item. ChooseLocalizedText will make sure the array is a language alternative.
-		
+
 	const XMP_Node * cItemNode;	// ! ChooseLocalizedText returns a pointer to a const node.
 	XMP_CLTMatch match = ChooseLocalizedText ( arrayNode, genericLang, specificLang, &cItemNode );
 	XMP_Node * itemNode = const_cast<XMP_Node*> ( cItemNode );
 
 	const bool specificXDefault = XMP_LitMatch ( specificLang, "x-default" );
-	
+
 	switch ( match ) {
 
 		case kXMP_CLT_NoValues :
@@ -960,9 +960,9 @@ XMPMeta::SetLocalizedText ( XMP_StringPtr  schemaNS,
 			haveXDefault = true;
 			if ( ! specificXDefault ) AppendLangItem ( arrayNode, specificLang, itemValue );
 			break;
-			
+
 		case kXMP_CLT_SpecificMatch :
-		
+
 			if ( ! specificXDefault ) {
 				// Update the specific item, update x-default if it matches the old value.
 				if ( xdItem != NULL && haveXDefault && (xdItem != itemNode) && (xdItem->value == itemNode->value) ) {
@@ -982,7 +982,7 @@ XMPMeta::SetLocalizedText ( XMP_StringPtr  schemaNS,
 			break;
 
 		case kXMP_CLT_SingleGeneric :
-		
+
 			// Update the generic item, update x-default if it matches the old value.
 			if (  xdItem != NULL && haveXDefault && (xdItem != itemNode) && (xdItem->value == itemNode->value) ) {
 				SetNodeValue ( xdItem, itemValue );
@@ -991,12 +991,12 @@ XMPMeta::SetLocalizedText ( XMP_StringPtr  schemaNS,
 			break;
 
 		case kXMP_CLT_MultipleGeneric :
-		
+
 			// Create the specific language, ignore x-default.
 			AppendLangItem ( arrayNode, specificLang, itemValue );
 			if ( specificXDefault ) haveXDefault = true;
 			break;
-			
+
 		case kXMP_CLT_XDefault :
 
 			// Create the specific language, update x-default if it was the only item.
@@ -1010,7 +1010,7 @@ XMPMeta::SetLocalizedText ( XMP_StringPtr  schemaNS,
 			AppendLangItem ( arrayNode, specificLang, itemValue );
 			if ( specificXDefault ) haveXDefault = true;
 			break;
-			
+
 		default :
 			XMP_Throw ( "Unexpected result from ChooseLocalizedText", kXMPErr_InternalFailure );
 
@@ -1045,7 +1045,7 @@ XMPMeta::DeleteLocalizedText ( XMP_StringPtr schemaNS,
 
 	XMP_ExpandedXPath arrayPath;
 	ExpandXPath ( schemaNS, arrayName, &arrayPath );
-	
+
 	// Find the LangAlt array and the selected array item.
 
 	XMP_Node * arrayNode = FindNode ( &tree, arrayPath, kXMP_ExistingOnly );
@@ -1063,26 +1063,26 @@ XMPMeta::DeleteLocalizedText ( XMP_StringPtr schemaNS,
 		if ( arrayNode->children[itemIndex] == itemNode ) break;
 	}
 	XMP_Enforce ( itemIndex < arraySize );
-	
+
 	// Decide if the selected item is x-default or not, find relevant matching item.
-	
+
 	bool itemIsXDefault = false;
 	if ( ! itemNode->qualifiers.empty() ) {
 		XMP_Node * qualNode = itemNode->qualifiers[0];
 		if ( (qualNode->name == "xml:lang") && (qualNode->value == "x-default") ) itemIsXDefault = true;
 	}
-	
+
 	if ( itemIsXDefault && (itemIndex != 0) ) {	// Enforce the x-default is first policy.
 		XMP_Node * temp = arrayNode->children[0];
 		arrayNode->children[0] = arrayNode->children[itemIndex];
 		arrayNode->children[itemIndex] = temp;
 		itemIndex = 0;
 	}
-	
+
 	XMP_Node * assocNode = 0;
 	size_t assocIndex;
 	size_t assocIsXDefault = false;
-	
+
 	if ( itemIsXDefault ) {
 
 		for ( assocIndex = 1; assocIndex < arraySize; ++assocIndex ) {
@@ -1105,11 +1105,11 @@ XMPMeta::DeleteLocalizedText ( XMP_StringPtr schemaNS,
 		}
 
 	}
-	
+
 	// Delete the appropriate nodes.
-	
+
 	XMP_NodePtrPos arrayBegin = arrayNode->children.begin();
-	
+
 	if ( assocNode == 0 ) {
 		arrayNode->children.erase ( arrayBegin + itemIndex );
 	} else if ( itemIndex < assocIndex ) {
@@ -1140,14 +1140,14 @@ XMPMeta::GetProperty_Bool ( XMP_StringPtr	 schemaNS,
 
 	XMP_StringPtr	valueStr;
 	XMP_StringLen	valueLen;
-	
+
 	bool found = GetProperty ( schemaNS, propName, &valueStr, &valueLen, options );
 	if ( found ) {
 		if ( ! XMP_PropIsSimple ( *options ) ) XMP_Throw ( "Property must be simple", kXMPErr_BadXPath );
 		*propValue = XMPUtils::ConvertToBool ( valueStr );
 	}
 	return found;
-	
+
 }	// GetProperty_Bool
 
 
@@ -1191,7 +1191,7 @@ XMPMeta::GetProperty_Int64 ( XMP_StringPtr	  schemaNS,
 
 	XMP_StringPtr	valueStr;
 	XMP_StringLen	valueLen;
-	
+
 	bool found = GetProperty ( schemaNS, propName, &valueStr, &valueLen, options );
 	if ( found ) {
 		if ( ! XMP_PropIsSimple ( *options ) ) XMP_Throw ( "Property must be simple", kXMPErr_BadXPath );
@@ -1201,7 +1201,7 @@ XMPMeta::GetProperty_Int64 ( XMP_StringPtr	  schemaNS,
 		*propValue = XMPUtils::ConvertToInt64 ( propValueStr.c_str() );
 	}
 	return found;
-	
+
 }	// GetProperty_Int64
 
 
@@ -1220,7 +1220,7 @@ XMPMeta::GetProperty_Float ( XMP_StringPtr	  schemaNS,
 
 	XMP_StringPtr	valueStr;
 	XMP_StringLen	valueLen;
-	
+
 	bool found = GetProperty ( schemaNS, propName, &valueStr, &valueLen, options );
 	if ( found ) {
 		if ( ! XMP_PropIsSimple ( *options ) ) XMP_Throw ( "Property must be simple", kXMPErr_BadXPath );
@@ -1230,7 +1230,7 @@ XMPMeta::GetProperty_Float ( XMP_StringPtr	  schemaNS,
 		*propValue = XMPUtils::ConvertToFloat ( propValueStr.c_str() );
 	}
 	return found;
-	
+
 }	// GetProperty_Float
 
 
@@ -1249,14 +1249,14 @@ XMPMeta::GetProperty_Date ( XMP_StringPtr	 schemaNS,
 
 	XMP_StringPtr	valueStr;
 	XMP_StringLen	valueLen;
-	
+
 	bool found = GetProperty ( schemaNS, propName, &valueStr, &valueLen, options );
 	if ( found )  {
 		if ( ! XMP_PropIsSimple ( *options ) ) XMP_Throw ( "Property must be simple", kXMPErr_BadXPath );
 		XMPUtils::ConvertToDate ( valueStr, propValue );
 	}
 	return found;
-	
+
 }	// GetProperty_Date
 
 
@@ -1275,7 +1275,7 @@ XMPMeta::SetProperty_Bool ( XMP_StringPtr  schemaNS,
 	XMP_VarString valueStr;
 	XMPUtils::ConvertFromBool ( propValue, &valueStr );
 	SetProperty ( schemaNS, propName, valueStr.c_str(), options );
-	
+
 }	// SetProperty_Bool
 
 
@@ -1294,7 +1294,7 @@ XMPMeta::SetProperty_Int ( XMP_StringPtr  schemaNS,
 	XMP_VarString valueStr;
 	XMPUtils::ConvertFromInt ( propValue, "", &valueStr );
 	SetProperty ( schemaNS, propName, valueStr.c_str(), options );
-	
+
 }	// SetProperty_Int
 
 
@@ -1313,7 +1313,7 @@ XMPMeta::SetProperty_Int64 ( XMP_StringPtr  schemaNS,
 	XMP_VarString valueStr;
 	XMPUtils::ConvertFromInt64 ( propValue, "", &valueStr );
 	SetProperty ( schemaNS, propName, valueStr.c_str(), options );
-	
+
 }	// SetProperty_Int64
 
 
@@ -1332,7 +1332,7 @@ XMPMeta::SetProperty_Float ( XMP_StringPtr	schemaNS,
 	XMP_VarString valueStr;
 	XMPUtils::ConvertFromFloat ( propValue, "", &valueStr );
 	SetProperty ( schemaNS, propName, valueStr.c_str(), options );
-	
+
 }	// SetProperty_Float
 
 
@@ -1351,7 +1351,7 @@ XMPMeta::SetProperty_Date ( XMP_StringPtr		   schemaNS,
 	XMP_VarString valueStr;
 	XMPUtils::ConvertFromDate ( propValue, &valueStr );
 	SetProperty ( schemaNS, propName, valueStr.c_str(), options );
-	
+
 }	// SetProperty_Date
 
 // =================================================================================================

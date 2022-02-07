@@ -36,7 +36,7 @@
 #include <QJsonDocument>
 #include <QJsonObject>
 #include <QJsonArray>
-#include <QDebug>
+#include <QTimer>
 
 // KDE includes
 
@@ -76,7 +76,10 @@ enum
     INAT_API_TOKEN_EXPIRATION               = 86000, ///< api tokens are valid for 24 hours
     GEOLOCATION_PRECISION                   =     8, ///< # digits after decimal point
     RADIUS_PRECISION                        =     6, ///< # digits after decimal point
-    EARTH_RADIUS_KM                         =  6371  ///< Earth radius in kilometers
+    EARTH_RADIUS_KM                         =  6371, ///< Earth radius in kilometers
+    TIMEOUT_TIMER_RESOLUTION_SECS           =    30, ///< timeout check every 30 seconds
+    RESPONSE_TIMEOUT_SECS                   =   300, ///< network timeout after this many seconds
+    MAX_RETRIES                             =     5  ///< retry network requests this many times
 };
 
 /**
@@ -84,10 +87,13 @@ enum
  */
 static const QString API_TOKEN              = QLatin1String("api_token");
 static const QString TOTAL_RESULTS          = QLatin1String("total_results");
+static const QString PAGE                   = QLatin1String("page");
 static const QString PER_PAGE               = QLatin1String("per_page");
+static const QString LOCALE                 = QLatin1String("locale");
 static const QString RESULTS                = QLatin1String("results");
 static const QString NAME                   = QLatin1String("name");
 static const QString TAXON                  = QLatin1String("taxon");
+static const QString TAXON_ID               = QLatin1String("taxon_id");
 static const QString ID                     = QLatin1String("id");
 static const QString PARENT_ID              = QLatin1String("parent_id");
 static const QString RANK                   = QLatin1String("rank");
@@ -103,6 +109,12 @@ static const QString GEOJSON                = QLatin1String("geojson");
 static const QString COORDINATES            = QLatin1String("coordinates");
 static const QString LOGIN                  = QLatin1String("login");
 static const QString ICON                   = QLatin1String("icon");
+static const QString OBSERVATION            = QLatin1String("observation");
+static const QString OBSERVATIONS           = QLatin1String("observations");
+static const QString OBSERVED_ON            = QLatin1String("observed_on");
+static const QString OBSERVED_ON_STRING     = QLatin1String("observed_on_string");
+static const QString OBSERVATION_PHOTOS     = QLatin1String("observation_photos");
+static const QString PHOTO                  = QLatin1String("photo");
 
 static QJsonObject parseJsonResponse(const QByteArray& data)
 {
@@ -200,13 +212,14 @@ static Taxon parseTaxon(const QJsonObject& taxon)
 // ------------------------------------------------------------------------------------------
 
 /**
- * A request consists in state and a function that is called with the response.
+ * A request consists in a state and a function that is called with the response.
  */
 class Q_DECL_HIDDEN Request
 {
 public:
 
     Request()
+        : m_startTime(QDateTime::currentMSecsSinceEpoch())
     {
     }
 
@@ -214,14 +227,42 @@ public:
     {
     }
 
-    virtual void reportError(INatTalker&, int, const QString& errorString) const
+    static bool networkErrorRetry(QNetworkReply::NetworkError code)
     {
-        QMessageBox::critical(QApplication::activeWindow(),
-                              i18n("Error"), errorString);
+        return (code == QNetworkReply::ConnectionRefusedError       ||
+                code == QNetworkReply::RemoteHostClosedError        ||
+                code == QNetworkReply::HostNotFoundError            ||
+                code == QNetworkReply::TimeoutError                 ||
+                code == QNetworkReply::TemporaryNetworkFailureError ||
+                code == QNetworkReply::NetworkSessionFailedError    ||
+                code == QNetworkReply::InternalServerError          ||
+                code == QNetworkReply::ServiceUnavailableError      ||
+                code == QNetworkReply::UnknownServerError);
     }
+
+    virtual void reportError(INatTalker&, QNetworkReply::NetworkError,
+                             const QString& errorString) const = 0;
 
     virtual void parseResponse(INatTalker& talker,
                                const QByteArray& data) const = 0;
+
+    // Has operation timed out?
+
+    bool isTimeout() const
+    {
+        return durationMilliSecs() > 1000 * RESPONSE_TIMEOUT_SECS;
+    }
+
+    // How long did it take?
+
+    qint64 durationMilliSecs() const
+    {
+        return QDateTime::currentMSecsSinceEpoch() - m_startTime;
+    }
+
+private:
+
+    qint64 m_startTime;
 
 private:
 
@@ -237,6 +278,7 @@ public:
     explicit Private()
         : parent          (nullptr),
           netMngr         (nullptr),
+          timer           (nullptr),
           settings        (nullptr),
           iface           (nullptr),
           store           (nullptr),
@@ -264,6 +306,7 @@ public:
 
     QWidget*                          parent;
     QNetworkAccessManager*            netMngr;
+    QTimer*                           timer;
     QSettings*                        settings;
     DInfoInterface*                   iface;
     O0SettingsStore*                  store;
@@ -301,18 +344,24 @@ INatTalker::INatTalker(QWidget* const parent, const QString& serviceName,
     m_authProgressDlg  = nullptr;
 
     d->netMngr         = new QNetworkAccessManager(this);
+    d->timer           = new QTimer(this);
 
     connect(d->netMngr, SIGNAL(finished(QNetworkReply*)),
             this, SLOT(slotFinished(QNetworkReply*)));
+
+    connect(d->timer, SIGNAL(timeout()),
+            this, SLOT(slotTimeout()));
 
     d->settings = WSToolUtils::getOauthSettings(this);
     d->store    = new O0SettingsStore(d->settings,
                                       QLatin1String(O2_ENCRYPTION_KEY), this);
     d->store->setGroupKey(d->serviceName);
+    d->timer->start(TIMEOUT_TIMER_RESOLUTION_SECS * 1000);
 }
 
 INatTalker::~INatTalker()
 {
+    d->timer->stop();
     d->clear();
     WSToolUtils::removeTemporaryDir(d->serviceName.toLatin1().constData());
 
@@ -405,7 +454,7 @@ int INatTalker::apiTokenExpiresIn() const
 }
 
 /**
- * We received an api token from a web brower login.
+ * We received an api token from a web browser login.
  */
 void INatTalker::slotApiToken(const QString& apiToken,
                               const QList<QNetworkCookie>& cookies)
@@ -421,6 +470,7 @@ void INatTalker::slotApiToken(const QString& apiToken,
     {
         qCDebug(DIGIKAM_WEBSERVICES_LOG) << "API token received; "
                                             "querying user info.";
+
         d->apiTokenExpires = (uint)(QDateTime::currentMSecsSinceEpoch() / 1000 +
                                     INAT_API_TOKEN_EXPIRATION);
         userInfo(cookies);
@@ -439,6 +489,16 @@ public:
     explicit UserRequest(const QList<QNetworkCookie>& cookies)
         : m_cookies(cookies)
     {
+    }
+
+    void reportError(INatTalker& talker, QNetworkReply::NetworkError,
+                     const QString& errorString) const override
+    {
+        qCDebug(DIGIKAM_WEBSERVICES_LOG) << "users/me error" << errorString
+                                         << "after" << durationMilliSecs() << "msecs.";
+
+        emit talker.signalLinkingFailed(QLatin1String("user-info request "
+                                                      "failed"));
     }
 
     void parseResponse(INatTalker& talker,
@@ -544,23 +604,37 @@ class Q_DECL_HIDDEN LoadUrlRequest : public Request
 {
 public:
 
-    explicit LoadUrlRequest(const QUrl& url)
-        : m_url(url)
+    LoadUrlRequest(const QUrl& url, int retries)
+        : m_url    (url),
+          m_retries(retries)
     {
     }
 
-    void reportError(INatTalker&, int,
+    void reportError(INatTalker& talker, QNetworkReply::NetworkError code,
                      const QString& errorString) const override
     {
-        // A debug message suffices when an image for a taxon cannot be loaded.
+        qCDebug(DIGIKAM_WEBSERVICES_LOG) << "Url" << m_url << "error" << errorString
+                                         << "after" << durationMilliSecs() << "msecs.";
 
-        qCDebug(DIGIKAM_WEBSERVICES_LOG) << "Url" << m_url << "error:"
-                                         << errorString;
+        if      (networkErrorRetry(code) && (m_retries < MAX_RETRIES))
+        {
+            qCDebug(DIGIKAM_WEBSERVICES_LOG) << "Attempting to load" << m_url << "again, retry"
+                                             << m_retries + 1 << "of" << MAX_RETRIES;
+
+            talker.loadUrl(m_url, m_retries + 1);
+        }
+        else if (talker.d->cachedLoadUrls.contains(m_url))
+        {
+            talker.d->cachedLoadUrls.remove(m_url);
+        }
     }
 
     void parseResponse(INatTalker& talker,
                        const QByteArray& data) const override
     {
+        qCDebug(DIGIKAM_WEBSERVICES_LOG) << "Url" << m_url << "loaded in"
+                                         << durationMilliSecs() << "msecs.";
+
         talker.d->cachedLoadUrls.insert(m_url, data);
 
         emit talker.signalLoadUrlSucceeded(m_url, data);
@@ -569,13 +643,14 @@ public:
 private:
 
     QUrl m_url;
+    int  m_retries;
 
 private:
 
     Q_DISABLE_COPY(LoadUrlRequest)
 };
 
-void INatTalker::loadUrl(const QUrl& imgUrl)
+void INatTalker::loadUrl(const QUrl& imgUrl, int retries)
 {
     qCDebug(DIGIKAM_WEBSERVICES_LOG) << "Requesting url" << imgUrl.url();
 
@@ -588,15 +663,30 @@ void INatTalker::loadUrl(const QUrl& imgUrl)
 
     if (d->cachedLoadUrls.contains(imgUrl))
     {
-        qCDebug(DIGIKAM_WEBSERVICES_LOG) << "Url" << imgUrl << "found in cache";
-        emit signalLoadUrlSucceeded(imgUrl, d->cachedLoadUrls.value(imgUrl));
+        const QByteArray& result = d->cachedLoadUrls.value(imgUrl);
+        if (!result.isEmpty())
+        {
+            qCDebug(DIGIKAM_WEBSERVICES_LOG) << "Url" << imgUrl
+                                             << "found in cache.";
+
+            emit signalLoadUrlSucceeded(imgUrl, result);
+        }
+        else
+        {
+            qCDebug(DIGIKAM_WEBSERVICES_LOG) << "Url load of" << imgUrl
+                                             << "already in progress; ignoring request.";
+        }
 
         return;
     }
 
+    // empty cache entry means load in progress
+
+    d->cachedLoadUrls.insert(imgUrl, QByteArray());
+
     QNetworkRequest netRequest(imgUrl);
     d->pendingRequests.insert(d->netMngr->get(netRequest),
-                              new LoadUrlRequest(imgUrl));
+                              new LoadUrlRequest(imgUrl, retries));
 }
 
 // ------------------------------------------------------------------------------------------
@@ -611,6 +701,14 @@ public:
     explicit AutoCompletionRequest(const QString& name)
         : m_partialName(name)
     {
+    }
+
+    void reportError(INatTalker&, QNetworkReply::NetworkError,
+                     const QString& errorString) const override
+    {
+        qCDebug(DIGIKAM_WEBSERVICES_LOG) << "Taxon auto-completion" << m_partialName
+                                         << "error" << errorString
+                                         << "after" << durationMilliSecs() << "msecs.";
     }
 
     void parseResponse(INatTalker& talker,
@@ -663,8 +761,8 @@ void INatTalker::taxonAutoCompletions(const QString& partialName)
     QUrlQuery query;
     query.addQueryItem(QLatin1String("q"),         partialName);
     query.addQueryItem(QLatin1String("is_active"), QLatin1String("true"));
-    query.addQueryItem(QLatin1String("per_page"),  QString::number(12));
-    query.addQueryItem(QLatin1String("locale"),    locale.name());
+    query.addQueryItem(PER_PAGE,                   QString::number(12));
+    query.addQueryItem(LOCALE,                     locale.name());
     url.setQuery(query.query());
 
     QNetworkRequest netRequest(url);
@@ -699,8 +797,9 @@ public:
 
         if (json.contains(RESULTS))
         {
-            static const QString BBOX_AREA = QLatin1String("bbox_area");
-            QJsonObject results            = json[RESULTS].toObject();
+            static const QString BBOX_AREA    = QLatin1String("bbox_area");
+            static const QString DISPLAY_NAME = QLatin1String("display_name");
+            QJsonObject results               = json[RESULTS].toObject();
             QList<Place> places;
 
             for (auto key : results.keys())
@@ -708,7 +807,7 @@ public:
                 for (auto placeValue : results.value(key).toArray())
                 {
                     QJsonObject place = placeValue.toObject();
-                    places.push_front(Place(place[NAME].toString(),
+                    places.push_front(Place(place[DISPLAY_NAME].toString(),
                                             place[BBOX_AREA].toDouble()));
                 }
             }
@@ -724,6 +823,13 @@ public:
             talker.d->cachedNearbyPlaces.insert(m_query, placesStrList);
             emit talker.signalNearbyPlaces(placesStrList);
         }
+    }
+
+    void reportError(INatTalker&, QNetworkReply::NetworkError,
+                     const QString& errorString) const override
+    {
+        qCDebug(DIGIKAM_WEBSERVICES_LOG) << "Nearby places error" << errorString
+                                         << "after" << durationMilliSecs() << "msecs.";
     }
 
 private:
@@ -767,14 +873,15 @@ void INatTalker::nearbyPlaces(double latitude, double longitude)
 
     QString lat = QString::number(latitude,  'f', GEOLOCATION_PRECISION);
     QString lng = QString::number(longitude, 'f', GEOLOCATION_PRECISION);
+
     qCDebug(DIGIKAM_WEBSERVICES_LOG) << "Requesting nearby places for lat"
                                      << lat << "lon" << lng;
     QUrlQuery query;
-    query.addQueryItem(QLatin1String("nelat"),    lat);
-    query.addQueryItem(QLatin1String("nelng"),    lng);
-    query.addQueryItem(QLatin1String("swlat"),    lat);
-    query.addQueryItem(QLatin1String("swlng"),    lng);
-    query.addQueryItem(QLatin1String("per_page"), QString::number(100));
+    query.addQueryItem(QLatin1String("nelat"), lat);
+    query.addQueryItem(QLatin1String("nelng"), lng);
+    query.addQueryItem(QLatin1String("swlat"), lat);
+    query.addQueryItem(QLatin1String("swlng"), lng);
+    query.addQueryItem(PER_PAGE, QString::number(100));
     url.setQuery(query.query());
 
     if (d->cachedNearbyPlaces.contains(query.query()))
@@ -792,7 +899,8 @@ void INatTalker::nearbyPlaces(double latitude, double longitude)
                          QLatin1String(O2_MIME_TYPE_JSON));
 
     d->pendingRequests.insert(d->netMngr->get(netRequest),
-                              new NearbyPlacesRequest(latitude, longitude, query.query()));
+                              new NearbyPlacesRequest(latitude, longitude,
+                                                      query.query()));
 }
 
 // ------------------------------------------------------------------------------------------
@@ -939,6 +1047,13 @@ public:
         }
     }
 
+    void reportError(INatTalker&, QNetworkReply::NetworkError,
+                     const QString& errorString) const override
+    {
+        qCDebug(DIGIKAM_WEBSERVICES_LOG) << "Closest observation error" << errorString
+                                         << "after" << durationMilliSecs() << "msecs.";
+    }
+
 private:
 
     uint    m_taxon;
@@ -960,11 +1075,11 @@ void INatTalker::closestObservation(uint taxon, double latitude,
                                      << taxon << "to" << latitude << longitude
                                      << "with radius" << radiusKm << "km.";
 
-    QUrl url(d->apiUrl + QLatin1String("observations"));
+    QUrl url(d->apiUrl + OBSERVATIONS);
 
     QUrlQuery query;
     query.addQueryItem(QLatin1String("geo"), QLatin1String("true"));
-    query.addQueryItem(QLatin1String("taxon_id"), QString::number(taxon));
+    query.addQueryItem(TAXON_ID, QString::number(taxon));
     query.addQueryItem(QLatin1String("lat"), QString::number(latitude, 'f',
                        GEOLOCATION_PRECISION));
     query.addQueryItem(QLatin1String("lng"), QString::number(longitude, 'f',
@@ -973,8 +1088,8 @@ void INatTalker::closestObservation(uint taxon, double latitude,
                        RADIUS_PRECISION));
     query.addQueryItem(QLatin1String("quality_grade"),
                        QLatin1String("research"));
-    query.addQueryItem(QLatin1String("locale"), locale.name());
-    query.addQueryItem(QLatin1String("per_page"), QString::number(100));
+    query.addQueryItem(LOCALE, locale.name());
+    query.addQueryItem(PER_PAGE, QString::number(100));
     url.setQuery(query.query());
 
     if (d->cachedNearbyObservations.contains(query.query()))
@@ -1063,6 +1178,9 @@ public:
     {
         static const QString COMMON_ANCESTOR = QLatin1String("common_ancestor");
 
+        qCDebug(DIGIKAM_WEBSERVICES_LOG) << "Computer vision for" << m_imagePath
+                                         << "took" << durationMilliSecs() << "msecs.";
+
         QJsonObject json = parseJsonResponse(data);
         QList<ComputerVisionScore> scores;
 
@@ -1082,6 +1200,13 @@ public:
         ImageScores result(m_imagePath, scores);
         talker.d->cachedImageScores.insert(m_imagePath, result);
         emit talker.signalComputerVisionResults(result);
+    }
+
+    void reportError(INatTalker&, QNetworkReply::NetworkError,
+                     const QString& errorString) const override
+    {
+        qCDebug(DIGIKAM_WEBSERVICES_LOG) << "Computer vision error" << errorString
+                                         << "after" << durationMilliSecs() << "msecs.";
     }
 
 private:
@@ -1117,6 +1242,7 @@ void INatTalker::computerVision(const QUrl& localImage)
         qCDebug(DIGIKAM_WEBSERVICES_LOG) << "Vision identification for"
                                          << localImage.toLocalFile()
                                          << "found in cache.";
+
         emit signalComputerVisionResults(d->cachedImageScores.value(path));
 
         return;
@@ -1152,14 +1278,16 @@ void INatTalker::computerVision(const QUrl& localImage)
 
     if (dateTime.isValid())
     {
-        static const QString observed_on = QLatin1String("observed_on");
-        parameters << Parameter(observed_on,
+        parameters << Parameter(OBSERVED_ON,
                                 dateTime.date().toString(Qt::ISODate));
     }
 
-    parameters << Parameter(QLatin1String("locale"), locale.name());
+    parameters << Parameter(LOCALE, locale.name());
 
-    QHttpMultiPart* const multiPart = getMultiPart(parameters, QLatin1String("image"), path);
+    QHttpMultiPart* const multiPart = getMultiPart(parameters,
+                                                   QLatin1String("image"),
+                                                   QFileInfo(path).fileName(),
+                                                   path);
 
     QUrl url(d->apiUrl + QLatin1String("computervision/score_image"));
     QNetworkRequest netRequest(url);
@@ -1190,18 +1318,213 @@ QString INatTalker::tmpFileName(const QString& path)
 
 // ------------------------------------------------------------------------------------------
 
-class Q_DECL_HIDDEN CreateObservationRequest : public Request
+class Q_DECL_HIDDEN VerifyCreateObservationRequest : public Request
 {
 public:
 
-    explicit CreateObservationRequest(const INatTalker::PhotoUploadRequest& req)
-        : m_uploadRequest(req)
+    VerifyCreateObservationRequest(const QByteArray& params,
+                                   const INatTalker::PhotoUploadRequest& req,
+                                   const QString& observed_on,
+                                   int taxon_id, int retries)
+      : m_parameters(params),
+        m_uploadRequest(req),
+        m_observed_on(observed_on),
+        m_taxon_id(taxon_id),
+        m_retries(retries)
     {
+    }
+
+    void reportError(INatTalker& talker, QNetworkReply::NetworkError code,
+                     const QString& errorString) const override
+    {
+        qCDebug(DIGIKAM_WEBSERVICES_LOG) << "VerifyCreateObservation: " << errorString
+                                         << "after" << durationMilliSecs() << "msecs.";
+
+        if (networkErrorRetry(code) && (m_retries < MAX_RETRIES))
+        {
+            qCDebug(DIGIKAM_WEBSERVICES_LOG) << "Attempting to call "
+                                                "VerifyCreateObservation again, retry"
+                                             << m_retries+1 << "of" << MAX_RETRIES;
+
+            talker.verifyCreateObservation(m_parameters, m_uploadRequest, 1,
+                                           m_retries+1);
+        }
+        else
+        {
+            QMessageBox::critical(QApplication::activeWindow(),
+                                  i18n("ERROR while creating observation"),
+                                  errorString);
+        }
     }
 
     void parseResponse(INatTalker& talker,
                        const QByteArray& data) const override
     {
+        QJsonObject json          = parseJsonResponse(data);
+        int         observationId = -1;
+
+        if (json.contains(TOTAL_RESULTS) &&
+            json.contains(PER_PAGE)      &&
+            json.contains(RESULTS)       &&
+            json.contains(PAGE))
+        {
+            int        totalResults = json[TOTAL_RESULTS].toInt();
+            int        perPage      = json[PER_PAGE].toInt();
+            QJsonArray results      = json[RESULTS].toArray();
+
+            qCDebug(DIGIKAM_WEBSERVICES_LOG) << "Observation check:" << results.count()
+                                             << "results of" << totalResults
+                                             << "received in" << durationMilliSecs() << "msecs.";
+
+            for (int i = 0 ; i < results.count() ; ++i)
+            {
+                QJsonObject result = results[i].toObject();
+
+                if (result.contains(OBSERVED_ON_STRING)                    &&
+                    result.contains(TAXON)                                 &&
+                    result[OBSERVED_ON_STRING].toString() == m_observed_on &&
+                    result[TAXON].toObject()[ID].toInt() == m_taxon_id)
+                {
+                    observationId = result[ID].toInt();
+                    break;
+                }
+            }
+
+            // Not found. If the server has more results request them.
+
+            if ((observationId < 0) && (results.count() >= perPage))
+            {
+                talker.verifyCreateObservation(m_parameters, m_uploadRequest,
+                                               json[PAGE].toInt()+1, m_retries);
+                return;
+            }
+        }
+
+        if (observationId > 0)
+        {
+            qCDebug(DIGIKAM_WEBSERVICES_LOG) << "VerifyCreateObservation: "
+                                                "observation" << observationId
+                                             << "of taxon_id" << m_taxon_id
+                                             << "of" << m_observed_on
+                                             << "found; uploading photos.";
+
+            INatTalker::PhotoUploadRequest request(m_uploadRequest);
+            request.m_observationId = observationId;
+
+            emit talker.signalObservationCreated(request);
+        }
+        else
+        {
+            qCDebug(DIGIKAM_WEBSERVICES_LOG) << "VerifyCreateObservation: "
+                                                "observation of taxon_id"
+                                             << m_taxon_id << "at" << m_observed_on
+                                             << "not found on server; uploading again.";
+
+            talker.createObservation(m_parameters, m_uploadRequest);
+        }
+    }
+
+private:
+
+    QByteArray                     m_parameters;
+    INatTalker::PhotoUploadRequest m_uploadRequest;
+    QString                        m_observed_on;
+    int                            m_taxon_id;
+    int                            m_retries;
+
+private:
+
+    Q_DISABLE_COPY(VerifyCreateObservationRequest)
+};
+
+void INatTalker::verifyCreateObservation(const QByteArray& parameters,
+                                         const PhotoUploadRequest& photoUpload,
+                                         int page, int retries)
+{
+    QJsonObject json = parseJsonResponse(parameters);
+
+    QUrl url(d->apiUrl + OBSERVATIONS);
+    QUrlQuery query;
+    query.addQueryItem(QLatin1String("user_login"), photoUpload.m_user);
+    query.addQueryItem(QLatin1String("photos"), QLatin1String("false"));
+    query.addQueryItem(PER_PAGE, QString::number(200));
+    query.addQueryItem(PAGE, QString::number(page));
+
+    int     taxon_id = 0;
+    QString observed_on;
+
+    if (json.contains(OBSERVATION))
+    {
+        QJsonObject parms = json[OBSERVATION].toObject();
+
+        if (parms.contains(OBSERVED_ON_STRING))
+        {
+            observed_on = parms[OBSERVED_ON_STRING].toString();
+            query.addQueryItem(OBSERVED_ON, observed_on.left(10));
+        }
+
+        if (parms.contains(TAXON_ID))
+        {
+            taxon_id = parms[TAXON_ID].toInt();
+            query.addQueryItem(TAXON_ID, QString::number(taxon_id));
+        }
+    }
+
+    url.setQuery(query.query());
+
+    QNetworkRequest netRequest(url);
+    netRequest.setHeader(QNetworkRequest::ContentTypeHeader,
+                         QLatin1String(O2_MIME_TYPE_JSON));
+    netRequest.setRawHeader("Authorization", d->apiToken.toLatin1());
+
+    PhotoUploadRequest upload(photoUpload);
+    upload.m_apiKey = d->apiToken;
+    d->pendingRequests.insert(d->netMngr->get(netRequest),
+                              new VerifyCreateObservationRequest(parameters,
+                                                                 upload,
+                                                                 observed_on,
+                                                                 taxon_id,
+                                                                 retries));
+}
+
+// ------------------------------------------------------------------------------------------
+
+class Q_DECL_HIDDEN CreateObservationRequest : public Request
+{
+public:
+
+    CreateObservationRequest(const QByteArray& params,
+                             const INatTalker::PhotoUploadRequest& req)
+        : m_parameters(params),
+          m_uploadRequest(req)
+    {
+    }
+
+    void reportError(INatTalker& talker, QNetworkReply::NetworkError code,
+                     const QString& errorString) const override
+    {
+        qCDebug(DIGIKAM_WEBSERVICES_LOG) << "Observation not created due to "
+                                            "network error" << errorString
+                                         << "after" << durationMilliSecs() << "msecs.";
+
+        if (networkErrorRetry(code))
+        {
+            talker.verifyCreateObservation(m_parameters, m_uploadRequest, 1, 0);
+        }
+        else
+        {
+            QMessageBox::critical(QApplication::activeWindow(),
+                                  i18n("ERROR while creating observation"),
+                                  errorString);
+        }
+    }
+
+    void parseResponse(INatTalker& talker,
+                       const QByteArray& data) const override
+    {
+        qCDebug(DIGIKAM_WEBSERVICES_LOG) << "Observation created in"
+                                         << durationMilliSecs() << "msecs.";
+
         QJsonObject json = parseJsonResponse(data);
 
         if (json.contains(ID))
@@ -1215,6 +1538,7 @@ public:
 
 private:
 
+    QByteArray                     m_parameters;
     INatTalker::PhotoUploadRequest m_uploadRequest;
 
 private:
@@ -1225,7 +1549,7 @@ private:
 void INatTalker::createObservation(const QByteArray& parameters,
                                    const PhotoUploadRequest& photoUpload)
 {
-    QUrl url(d->apiUrl + QLatin1String("observations"));
+    QUrl url(d->apiUrl + OBSERVATIONS);
 
     QNetworkRequest netRequest(url);
     netRequest.setHeader(QNetworkRequest::ContentTypeHeader,
@@ -1235,7 +1559,120 @@ void INatTalker::createObservation(const QByteArray& parameters,
     PhotoUploadRequest upload(photoUpload);
     upload.m_apiKey = d->apiToken;
     d->pendingRequests.insert(d->netMngr->post(netRequest, parameters),
-                              new CreateObservationRequest(upload));
+                              new CreateObservationRequest(parameters, upload));
+}
+
+// ------------------------------------------------------------------------------------------
+
+class Q_DECL_HIDDEN VerifyUploadPhotoRequest : public Request
+{
+public:
+
+    VerifyUploadPhotoRequest(const INatTalker::PhotoUploadRequest& req,
+                             int retries)
+        : m_request(req),
+          m_retries(retries)
+    {
+    }
+
+    void reportError(INatTalker& talker, QNetworkReply::NetworkError code,
+                     const QString& errorString) const override
+    {
+        qCDebug(DIGIKAM_WEBSERVICES_LOG) << "VerifyPhotoUploadNextPhoto: " << errorString
+                                         << "after" << durationMilliSecs() << "msecs.";
+
+        if (networkErrorRetry(code) && m_retries < MAX_RETRIES)
+        {
+            qCDebug(DIGIKAM_WEBSERVICES_LOG) << "Attempting to call "
+                                                "VerifyPhotoUploadNextPhoto again, retry"
+                                             << m_retries + 1 << "of" << MAX_RETRIES;
+
+            talker.verifyUploadNextPhoto(m_request, m_retries+1);
+        }
+        else
+        {
+            QMessageBox::critical(QApplication::activeWindow(),
+                                  i18n("ERROR while uploading photo"),
+                                  errorString);
+        }
+    }
+
+    void parseResponse(INatTalker& talker,
+                       const QByteArray& data) const override
+    {
+        QJsonObject json = parseJsonResponse(data);
+
+        int noPhotos               =  0;
+        int lastObservationPhotoId = -1;
+        int lastPhotoId            = -1;
+
+        if (json.contains(TOTAL_RESULTS)     &&
+            json.contains(RESULTS)           &&
+            (json[TOTAL_RESULTS].toInt() == 1))
+        {
+            QJsonObject result = json[RESULTS].toArray()[0].toObject();
+
+            if (result.contains(OBSERVATION_PHOTOS))
+            {
+                noPhotos = result[OBSERVATION_PHOTOS].toArray().count();
+
+                if (noPhotos >= 1)
+                {
+                    QJsonObject obsPhoto = result[OBSERVATION_PHOTOS].
+                                           toArray()[noPhotos-1].toObject();
+                    lastObservationPhotoId = obsPhoto[ID].toInt();
+                    lastPhotoId = obsPhoto[PHOTO].toObject()[ID].toInt();
+                }
+            }
+
+            qCDebug(DIGIKAM_WEBSERVICES_LOG) << "VerifyUploadNextPhoto:" << noPhotos
+                                             << "photos on server," << m_request.m_images.count()
+                                             << "photos to upload," << m_request.m_totalImages
+                                             << "total photos, checked in" << durationMilliSecs() << "msecs.";
+
+            if      ((noPhotos + m_request.m_images.count()) ==
+                     m_request.m_totalImages)
+            {
+                talker.uploadNextPhoto(m_request);
+            }
+            else if ((noPhotos + m_request.m_images.count()) ==
+                     (m_request.m_totalImages + 1))
+            {
+                INatTalker::PhotoUploadResult uploadResult(m_request,
+                                                           lastObservationPhotoId,
+                                                           lastPhotoId);
+                emit talker.signalPhotoUploaded(uploadResult);
+            }
+        }
+        else
+        {
+            qCDebug(DIGIKAM_WEBSERVICES_LOG) << "VerifyPhotoUploadNextPhoto: "
+                                                "observation" << m_request.m_observationId
+                                             << "NOT FOUND in" << durationMilliSecs() << "msecs.";
+        }
+    }
+
+private:
+
+    INatTalker::PhotoUploadRequest m_request;
+    int                            m_retries;
+
+private:
+
+    Q_DISABLE_COPY(VerifyUploadPhotoRequest)
+};
+
+void INatTalker::verifyUploadNextPhoto(const PhotoUploadRequest& request,
+                                       int retries)
+{
+    QUrl url(d->apiUrl + QLatin1String("observations/") +
+             QString::number(request.m_observationId));
+    QNetworkRequest netRequest(url);
+    netRequest.setHeader(QNetworkRequest::ContentTypeHeader,
+                         QLatin1String(O2_MIME_TYPE_JSON));
+    netRequest.setRawHeader("Authorization", request.m_apiKey.toLatin1());
+    d->pendingRequests.insert(d->netMngr->get(netRequest),
+                              new VerifyUploadPhotoRequest(request, retries));
 }
 
 // ------------------------------------------------------------------------------------------
@@ -1259,9 +1696,32 @@ public:
         }
     }
 
+    void reportError(INatTalker& talker, QNetworkReply::NetworkError code,
+                     const QString& errorString) const override
+    {
+        qCDebug(DIGIKAM_WEBSERVICES_LOG) << "Photo not uploaded due to "
+                                            "network error" << errorString
+                                         << "after" << durationMilliSecs() << "msecs.";
+
+        if (networkErrorRetry(code))
+        {
+            talker.verifyUploadNextPhoto(m_request, 0);
+        }
+        else
+        {
+            QMessageBox::critical(QApplication::activeWindow(),
+                                  i18n("ERROR while uploading photo"),
+                                  errorString);
+        }
+    }
+
     void parseResponse(INatTalker& talker,
                        const QByteArray& data) const override
     {
+        qCDebug(DIGIKAM_WEBSERVICES_LOG) << "Photo" << m_request.m_images.front().toLocalFile()
+                                         << "to observation" << m_request.m_observationId
+                                         << "uploaded in" << durationMilliSecs() << "msecs.";
+
         static const QString PHOTO_ID = QLatin1String("photo_id");
         QJsonObject json              = parseJsonResponse(data);
 
@@ -1314,12 +1774,15 @@ void INatTalker::uploadNextPhoto(const PhotoUploadRequest& request)
             }
 
             image.save(tmpImage, "JPEG", request.m_quality);
-            path = tmpImage;
         }
     }
 
-    QHttpMultiPart* multiPart  = getMultiPart(parameters, QLatin1String("file"), path);
-    QUrl url(d->apiUrl + QLatin1String("observation_photos"));
+    QHttpMultiPart* multiPart  = getMultiPart(parameters,
+                                              QLatin1String("file"),
+                                              QFileInfo(path).fileName(),
+                                              tmpImage.isEmpty() ? path
+                                                                 : tmpImage);
+    QUrl url(d->apiUrl + OBSERVATION_PHOTOS);
     QNetworkRequest netRequest(url);
     netRequest.setRawHeader("Authorization", request.m_apiKey.toLatin1());
     QNetworkReply* const reply = d->netMngr->post(netRequest, multiPart);
@@ -1333,19 +1796,50 @@ class Q_DECL_HIDDEN DeleteObservationRequest : public Request
 {
 public:
 
-    explicit DeleteObservationRequest(int id)
-        : m_observationId(id)
+    DeleteObservationRequest(const QString& apiKey, int id, int retries)
+        : m_apiKey(apiKey),
+          m_observationId(id),
+          m_retries(retries)
     {
+    }
+
+    void reportError(INatTalker& talker, QNetworkReply::NetworkError code,
+                     const QString& errorString) const override
+    {
+        qCDebug(DIGIKAM_WEBSERVICES_LOG) << "Delete observation failed with "
+                                            "error" << errorString
+                                         << "after" << durationMilliSecs() << "msecs.";
+
+        if (networkErrorRetry(code) && m_retries < MAX_RETRIES)
+        {
+            qCDebug(DIGIKAM_WEBSERVICES_LOG) << "Attempting to delete "
+                                                "observation" << m_observationId
+                                             << "again, retry" << m_retries + 1
+                                             << "of" << MAX_RETRIES;
+
+            talker.deleteObservation(m_observationId, m_apiKey, m_retries + 1);
+        }
+        else
+        {
+            QMessageBox::critical(QApplication::activeWindow(),
+                                  i18n("ERROR while deleting observation"),
+                                  errorString);
+        }
     }
 
     void parseResponse(INatTalker& talker, const QByteArray&) const override
     {
+        qCDebug(DIGIKAM_WEBSERVICES_LOG) << "Observation" << m_observationId
+                                         << "deleted in" << durationMilliSecs() << "msecs.";
+
         emit talker.signalObservationDeleted(m_observationId);
     }
 
 private:
 
-    int m_observationId;
+    QString m_apiKey;
+    int     m_observationId;
+    int     m_retries;
 
 private:
 
@@ -1355,7 +1849,7 @@ private:
 /**
  * Delete an observation; called when canceling uploads.
  */
-void INatTalker::deleteObservation(int id, const QString& apiKey)
+void INatTalker::deleteObservation(int id, const QString& apiKey, int retries)
 {
     QUrl url(d->apiUrl + QLatin1String("observations/") + QString::number(id));
     QNetworkRequest netRequest(url);
@@ -1363,7 +1857,8 @@ void INatTalker::deleteObservation(int id, const QString& apiKey)
                          QLatin1String(O2_MIME_TYPE_JSON));
     netRequest.setRawHeader("Authorization", apiKey.toLatin1());
     d->pendingRequests.insert(d->netMngr->deleteResource(netRequest),
-                              new DeleteObservationRequest(id));
+                              new DeleteObservationRequest(apiKey, id,
+                                                           retries));
 }
 
 void INatTalker::cancel()
@@ -1401,6 +1896,46 @@ void INatTalker::slotFinished(QNetworkReply* reply)
 
     delete request;
     reply->deleteLater();
+}
+
+void INatTalker::slotTimeout()
+{
+    QList<QPair<QNetworkReply*, Request*> > timeoutList;
+    QHash<QNetworkReply*, Request*>::const_iterator it;
+
+    for (it = d->pendingRequests.constBegin() ;
+         it != d->pendingRequests.constEnd() ; ++it)
+    {
+        Request* const request = it.value();
+
+        if (request->isTimeout())
+        {
+            timeoutList.append(qMakePair(it.key(), request));
+        }
+    }
+
+    for (auto pair : timeoutList)
+    {
+        QNetworkReply* const reply = pair.first;
+        d->pendingRequests.remove(reply);
+
+        QNetworkReply::NetworkError errorCode = reply->error();
+        QString errorString = reply->errorString();
+
+        reply->abort();
+        delete reply;
+
+        if (errorCode == QNetworkReply::NoError)
+        {
+            errorCode   = QNetworkReply::TimeoutError;
+            errorString = i18n("Timeout after exceeding %1 seconds",
+                               RESPONSE_TIMEOUT_SECS);
+        }
+
+        Request* const request = pair.second;
+        request->reportError(*this, errorCode, errorString);
+        delete request;
+    }
 }
 
 } // namespace DigikamGenericINatPlugin

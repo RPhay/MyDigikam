@@ -3,10 +3,11 @@
  * This file is a part of digiKam project
  * https://www.digikam.org
  *
- * Date        : 2009-02-04
- * Description : an unit-test to detect image quality level - shared code
+ * Date        : 28/08/2021
+ * Description : an unit-test to detect image quality level
  *
- * Copyright (C) 2011-2021 by Gilles Caulier <caulier dot gilles at gmail dot com>
+ * Copyright (C) 2021-2022 by Gilles Caulier <caulier dot gilles at gmail dot com>
+ * Copyright (C) 2021 by Phuoc Khanh Le <phuockhanhnk94 at gmail dot com>
  *
  * This program is free software; you can redistribute it
  * and/or modify it under the terms of the GNU General
@@ -29,15 +30,39 @@
 #include <QMultiMap>
 #include <QString>
 #include <QFileInfoList>
+#include <QObject>
+#include <QDir>
+#include <QTest>
+
+// Local includes
+
+#include "digikam_debug.h"
+#include "digikam_globals.h"
+
+namespace Digikam
+{
 
 enum DetectionType
 {
-    DetectBlur = 0,
-    DetectNoise,
-    DetectCompression,
-    DetectExposure
+    DETECTBLUR = 0,
+    DETECTNOISE,
+    DETECTCOMPRESSION,
+    DETECTEXPOSURE,
+    DETECTIONGENERAL
 };
 
-QMultiMap<int, QString> ImgQSortTest_ParseTestImages(DetectionType type, const QFileInfoList& list);
+struct CustomDetection
+{
+    bool detectBlur;
+    bool detectNoise;
+    bool detectExposure;
+    bool detectCompression;
+};
+
+QHash<QString, int> ImgQSortTest_ParseTestImagesDefautDetection(DetectionType type, const QFileInfoList& list);
+
+QHash<QString, int> ImgQSortTest_ParseTestImagesCustomDetection(const CustomDetection& customSetting, const QFileInfoList& list);
+
+} // namespace Digikam
 
 #endif // DIGIKAM_IMGQSORT_TEST_SHARED_H

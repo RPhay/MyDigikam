@@ -6,7 +6,7 @@
  * Date        : 2018-07-30
  * Description : Generic digiKam plugin definition.
  *
- * Copyright (C) 2018-2021 by Gilles Caulier <caulier dot gilles at gmail dot com>
+ * Copyright (C) 2018-2022 by Gilles Caulier <caulier dot gilles at gmail dot com>
  *
  * This program is free software; you can redistribute it
  * and/or modify it under the terms of the GNU General
@@ -50,7 +50,7 @@ public:
 
 DPluginGeneric::DPluginGeneric(QObject* const parent)
     : DPlugin(parent),
-      d(new Private)
+      d      (new Private)
 {
 }
 
@@ -95,7 +95,7 @@ int DPluginGeneric::count() const
             // NOTE: we will return the count of actions registered with the same parents,
             //       as each parent registered the same list of actions through setup().
 
-            if (!count)
+            if      (!count)
             {
                 parent = ac->parent(),
                 ++count;
@@ -134,6 +134,7 @@ QList<DPluginAction*> DPluginGeneric::actions(QObject* const parent) const
     }
 
     std::sort(list.begin(), list.end(), DPluginAction::pluginActionLessThan);
+
     return list;
 }
 
@@ -183,6 +184,7 @@ bool DPluginGeneric::reactivateToolDialog(QWidget* const dlg) const
         dlg->showNormal();       // krazy:exclude=qmethods
         dlg->activateWindow();
         dlg->raise();
+
         return true;
     }
 

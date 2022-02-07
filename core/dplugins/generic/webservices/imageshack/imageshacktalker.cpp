@@ -569,7 +569,7 @@ void ImageShackTalker::parseAddPhotoToGalleryDone(const QByteArray& data)
 
     if (rootElem.isNull() || (rootElem.tagName() != QLatin1String("gallery")))
     {
-        // TODO error cheking
+        // TODO error checking
     }
     else
     {

@@ -6,7 +6,7 @@
  * Date        : 2004-08-02
  * Description : colors theme manager - private classes
  *
- * Copyright (C) 2006-2021 by Gilles Caulier <caulier dot gilles at gmail dot com>
+ * Copyright (C) 2006-2022 by Gilles Caulier <caulier dot gilles at gmail dot com>
  * Copyright (C) 2007      by Matthew Woehlke <mw_triad at users dot sourceforge dot net>
  *
  * This program is free software; you can redistribute it
@@ -195,7 +195,7 @@ public:
          */
         NeutralBackground   = 6,
         /**
-         * Eigth color; for example, success messages, trusted content.
+         * Eighth color; for example, success messages, trusted content.
          */
         PositiveBackground  = 7
     };
@@ -258,7 +258,7 @@ public:
          */
         NeutralText  = 6,
         /**
-         * Eigth color; for example, additions, success messages, trusted
+         * Eighth color; for example, additions, success messages, trusted
          * content.
          */
         PositiveText = 7

@@ -32,7 +32,7 @@ class dng_big_table_cache
         typedef std::map <dng_fingerprint,
                           int32,
                           dng_fingerprint_less_than> RefCountsMap;
-		
+
 		RefCountsMap fRefCounts;
 
         std::vector<dng_fingerprint> fRecentlyUsed;
@@ -177,7 +177,7 @@ void dng_big_table_cache::UseTable (dng_lock_std_mutex &lock,
 
 void dng_big_table_cache::FlushRecentlyUsed ()
     {
-    
+
     dng_lock_std_mutex lock (fMutex);
 
     while (!fRecentlyUsed.empty ())
@@ -308,7 +308,7 @@ bool dng_big_table_cache::CacheExtract (dng_lock_std_mutex &lock,
             ExtractTableData (lock, fingerprint, table);
 
             UseTable (lock, fingerprint);
-            
+
             return true;
 
             }
@@ -327,7 +327,7 @@ void dng_big_table_cache::Increment (dng_big_table_cache *cache,
 
     if (cache)
         {
-        
+
         dng_lock_std_mutex lock (cache->fMutex);
 
         cache->CacheIncrement (lock, fingerprint);
@@ -403,7 +403,7 @@ class dng_look_table_cache : public dng_big_table_cache
         typedef std::map <dng_fingerprint,
                           dng_look_table::table_data,
                           dng_fingerprint_less_than> TableDataMap;
-		
+
 		TableDataMap fTableData;
 
     public:
@@ -496,7 +496,7 @@ class dng_rgb_table_cache : public dng_big_table_cache
         typedef std::map <dng_fingerprint,
                           dng_rgb_table::table_data,
                           dng_fingerprint_less_than> TableDataMap;
-		
+
 		TableDataMap fTableData;
 
     public:
@@ -598,7 +598,7 @@ dng_big_table::dng_big_table (dng_big_table_cache *cache)
     {
 
     }
-    
+
 /*****************************************************************************/
 
 dng_big_table::dng_big_table (const dng_big_table &table)
@@ -612,7 +612,7 @@ dng_big_table::dng_big_table (const dng_big_table &table)
     dng_big_table_cache::Increment (fCache, fFingerprint);
 
     }
-    
+
 /*****************************************************************************/
 
 dng_big_table & dng_big_table::operator= (const dng_big_table &table)
@@ -634,7 +634,7 @@ dng_big_table & dng_big_table::operator= (const dng_big_table &table)
     return *this;
 
     }
-    
+
 /*****************************************************************************/
 
 dng_big_table::~dng_big_table ()
@@ -755,7 +755,7 @@ bool dng_big_table::DecodeFromBinary (const uint8 *compressedData,
     RecomputeFingerprint ();
 
     return true;
-    
+
     }
 
 /*****************************************************************************/
@@ -991,7 +991,7 @@ dng_memory_block* dng_big_table::EncodeAsBinary (dng_memory_allocator &allocator
                                    block1->Buffer_uint8 (),
                                    uncompressedSize,
                                    Z_DEFAULT_COMPRESSION);
-                                  
+
         if (zResult != Z_OK)
             {
             ThrowMemoryFull ();
@@ -1002,18 +1002,18 @@ dng_memory_block* dng_big_table::EncodeAsBinary (dng_memory_allocator &allocator
         block1.Reset ();
 
         }
-        
+
     return block2.Release ();
 
     }
-        
+
 /*****************************************************************************/
 
 dng_memory_block* dng_big_table::EncodeAsString (dng_memory_allocator &allocator) const
     {
 
     // Get compressed binary data.
-    
+
     uint32 compressedSize;
 
     AutoPtr<dng_memory_block> block2 (EncodeAsBinary (allocator, compressedSize));
@@ -1030,12 +1030,12 @@ dng_memory_block* dng_big_table::EncodeAsString (dng_memory_allocator &allocator
 
         static const char *kEncodeTable =
             "0123456789"
-            "abcdefghij" 
-            "klmnopqrst" 
+            "abcdefghij"
+            "klmnopqrst"
             "uvwxyzABCD"
-            "EFGHIJKLMN" 
-            "OPQRSTUVWX" 
-            "YZ.-:+=^!/" 
+            "EFGHIJKLMN"
+            "OPQRSTUVWX"
+            "YZ.-:+=^!/"
             "*?`'|()[]{"
             "}@%$#";
 
@@ -1104,7 +1104,7 @@ dng_memory_block* dng_big_table::EncodeAsString (dng_memory_allocator &allocator
     return block3.Release ();
 
     }
-        
+
 /*****************************************************************************/
 
 bool dng_big_table::ExtractFromCache (const dng_fingerprint &fingerprint)
@@ -1120,9 +1120,9 @@ bool dng_big_table::ExtractFromCache (const dng_fingerprint &fingerprint)
         }
 
     return false;
-	
+
     }
-        
+
 /*****************************************************************************/
 
 bool dng_big_table::ReadTableFromXMP (const dng_xmp &xmp,
@@ -1131,42 +1131,42 @@ bool dng_big_table::ReadTableFromXMP (const dng_xmp &xmp,
     {
 
 	// Read in the table data.
-	
+
 	dng_string tablePath;
-	
+
 	tablePath.Set ("Table_");
-	
+
 	tablePath.Append (dng_xmp::EncodeFingerprint (fingerprint).Get ());
-	
+
 	dng_string block1;
-	
+
 	if (!xmp.GetString (ns,
 						tablePath.Get (),
 						block1))
 		{
-		
+
 		DNG_REPORT ("Missing big table data");
-		
+
 		return false;
-		
+
 		}
-	
+
 	bool ok = DecodeFromString (block1,
 								xmp.Allocator ());
-		
+
 	block1.Clear ();
-		
+
 	// Validate fingerprint match.
-	
+
 	DNG_ASSERT (Fingerprint () == fingerprint,
 				"dng_big_table fingerprint mismatch");
-	
+
 	// It worked!
 
 	return ok;
 
     }
-        
+
 /*****************************************************************************/
 
 bool dng_big_table::ReadFromXMP (const dng_xmp &xmp,
@@ -1174,16 +1174,16 @@ bool dng_big_table::ReadFromXMP (const dng_xmp &xmp,
 								 const char *path,
                                  dng_big_table_storage &storage)
 	{
-	
+
 	dng_fingerprint fingerprint;
-	
+
 	if (!xmp.GetFingerprint (ns, path, fingerprint))
 		{
-		
+
 		return false;
-		
+
 		}
-        
+
     // See if we can skip reading the table data, and just grab from cache.
 
     if (ExtractFromCache (fingerprint))
@@ -1192,35 +1192,35 @@ bool dng_big_table::ReadFromXMP (const dng_xmp &xmp,
         return true;
 
         }
-        
+
     // Next see if we can get the table from the storage object.
-    
+
     if (storage.ReadTable (*this, fingerprint, xmp.Allocator ()))
         {
-        
+
         return true;
-        
+
         }
 
 	// Read in the table data.
 
     if (ReadTableFromXMP (xmp, ns, fingerprint))
         {
-        
+
         return true;
-        
+
         }
-        
+
     // Unable to find table data anywhere.  Notify storage object.
-    
+
     storage.MissingTable (fingerprint);
-    
+
     // Also make a note that this table is missing.
-    
+
     SetMissing ();
-        
+
     return false;
-	
+
 	}
 
 /*****************************************************************************/
@@ -1230,44 +1230,44 @@ void dng_big_table::WriteToXMP (dng_xmp &xmp,
                                 const char *path,
                                 dng_big_table_storage &storage) const
     {
-        
+
     const dng_fingerprint &fingerprint = Fingerprint ();
-    
+
     if (!fingerprint.IsValid () || IsMissing ())
         {
-        
+
         xmp.Remove (ns, path);
-        
+
         return;
-        
+
         }
-    
+
     xmp.SetFingerprint (ns, path, fingerprint);
-    
+
     // See if we can just use the storage object to store the table.
-    
+
     if (storage.WriteTable (*this, fingerprint, xmp.Allocator ()))
         {
-        
+
         return;
-        
+
         }
-    
+
     dng_string tablePath;
-    
+
     tablePath.Set ("Table_");
-    
+
     tablePath.Append (dng_xmp::EncodeFingerprint (fingerprint).Get ());
-    
+
     if (xmp.Exists (ns, tablePath.Get ()))
         {
-        
+
         return;
-        
+
         }
-        
+
     AutoPtr<dng_memory_block> block;
-    
+
     block.Reset (EncodeAsString (xmp.Allocator ()));
 
     xmp.Set (ns,
@@ -1280,45 +1280,45 @@ void dng_big_table::WriteToXMP (dng_xmp &xmp,
 
 dng_big_table_storage::dng_big_table_storage ()
     {
-    
+
     }
 
 /*****************************************************************************/
 
 dng_big_table_storage::~dng_big_table_storage ()
     {
-    
+
     }
-    
+
 /*****************************************************************************/
 
 bool dng_big_table_storage::ReadTable (dng_big_table & /* table */,
                                        const dng_fingerprint & /* fingerprint */,
                                        dng_memory_allocator & /* allocator */)
     {
-    
+
     return false;
-    
+
     }
-    
+
 /*****************************************************************************/
 
 bool dng_big_table_storage::WriteTable (const dng_big_table & /* table */,
                                         const dng_fingerprint & /* fingerprint */,
                                         dng_memory_allocator & /* allocator */)
     {
-    
+
     return false;
-    
+
     }
-    
+
 /*****************************************************************************/
 
 void dng_big_table_storage::MissingTable (const dng_fingerprint & /* fingerprint */)
     {
-    
+
     }
-    
+
 /*****************************************************************************/
 
 dng_look_table::dng_look_table ()
@@ -1374,9 +1374,9 @@ void dng_look_table::Set (const dng_hue_sat_map &map,
 
     fData.fMap      = map;
     fData.fEncoding = encoding;
-	
+
 	fData.ComputeMonochrome ();
-	
+
     RecomputeFingerprint ();
 
     }
@@ -1385,7 +1385,7 @@ void dng_look_table::Set (const dng_hue_sat_map &map,
 
 bool dng_look_table::IsValid () const
     {
-    
+
     if (IsMissing ())
         {
         return false;
@@ -1415,7 +1415,7 @@ void dng_look_table::GetStream (dng_stream &stream)
         {
         ThrowBadFormat ("Not a look table");
         }
-        
+
     uint32 version = stream.Get_uint32 ();
 
     if (version != kLookTableVersion1 &&
@@ -1445,14 +1445,14 @@ void dng_look_table::GetStream (dng_stream &stream)
     uint32 count = data.fMap.DeltasCount ();
 
     dng_hue_sat_map::HSBModify * deltas = data.fMap.GetDeltas ();
-	
+
     for (uint32 index = 0; index < count; index++)
         {
 
         deltas->fHueShift = stream.Get_real32 ();
         deltas->fSatScale = stream.Get_real32 ();
         deltas->fValScale = stream.Get_real32 ();
-		
+
         deltas++;
 
         }
@@ -1460,16 +1460,16 @@ void dng_look_table::GetStream (dng_stream &stream)
 	data.fMap.AssignNewUniqueRuntimeFingerprint ();
 
     data.fEncoding = stream.Get_uint32 ();
-	
+
     if (data.fEncoding != encoding_Linear &&
         data.fEncoding != encoding_sRGB)
         {
         ThrowBadFormat ("Unknown look table encoding");
         }
-        
+
     if (version != kLookTableVersion1)
         {
-        
+
         data.fMinAmount = stream.Get_real64 ();
         data.fMaxAmount = stream.Get_real64 ();
 
@@ -1477,15 +1477,15 @@ void dng_look_table::GetStream (dng_stream &stream)
             {
             ThrowBadFormat ("Invalid min/max amount for look table");
             }
-        
+
         }
-        
+
     else
         {
-        
+
         data.fMinAmount = 1.0;
         data.fMaxAmount = 1.0;
-        
+
         }
 
 	data.ComputeMonochrome ();
@@ -1503,9 +1503,9 @@ void dng_look_table::PutStream (dng_stream &stream,
     DNG_REQUIRE (IsValid (), "Invalid Look Table");
 
     stream.Put_uint32 (btt_LookTable);
-    
+
     uint32 version = kLookTableVersion1;
-    
+
     if (fData.fMinAmount != 1.0 ||
         fData.fMaxAmount != 1.0)
         {
@@ -1545,12 +1545,12 @@ void dng_look_table::PutStream (dng_stream &stream,
 
     if (version != kLookTableVersion1)
         {
-        
+
         stream.Put_real64 (fData.fMinAmount);
         stream.Put_real64 (fData.fMaxAmount);
 
         }
-        
+
     }
 
 /*****************************************************************************/
@@ -1857,7 +1857,7 @@ void dng_rgb_table::GetStream (dng_stream &stream)
         {
         ThrowBadFormat ("Invalid min/max amount for RGB table");
         }
-		
+
 	data.ComputeMonochrome ();
 
     fData = data;
@@ -1879,7 +1879,7 @@ void dng_rgb_table::PutStream (dng_stream &stream,
     stream.Put_uint32 (fData.fDimensions);
 
     stream.Put_uint32 (fData.fDivisions);
-    
+
     uint16 nopValue [kMaxDivisions1D > kMaxDivisions3D_InMemory ? kMaxDivisions1D
                                                                 : kMaxDivisions3D_InMemory];
 

@@ -42,6 +42,16 @@ class DTrashItemModel : public QAbstractTableModel
 
 public:
 
+    enum DTrashColumn
+    {
+        DTrashThumb      = 0,
+        DTrashRelPath,
+        DTrashTimeStamp,
+        DTrashNumCol
+    };
+
+public:
+
     explicit DTrashItemModel(QObject* const parent = nullptr);
     ~DTrashItemModel() override;
 
@@ -70,7 +80,7 @@ public:
     DTrashItemInfo itemForIndex(const QModelIndex& index);
 
     /**
-     * @brief returns DTrashItemInfoList for gived indexes in model
+     * @brief returns DTrashItemInfoList for given indexes in model
      */
     DTrashItemInfoList itemsForIndexes(const QList<QModelIndex>& indexes);
 

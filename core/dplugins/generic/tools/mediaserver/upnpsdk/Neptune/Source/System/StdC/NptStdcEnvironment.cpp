@@ -19,7 +19,7 @@
 /*----------------------------------------------------------------------
 |   NPT_Environment::Get
 +---------------------------------------------------------------------*/
-NPT_Result 
+NPT_Result
 NPT_Environment::Get(const char* name, NPT_String& value)
 {
     char* env;
@@ -53,7 +53,7 @@ NPT_Environment::Get(const char* name, NPT_String& value)
 /*----------------------------------------------------------------------
 |   NPT_Environment::Set
 +---------------------------------------------------------------------*/
-NPT_Result 
+NPT_Result
 NPT_Environment::Set(const char* name, const char* value)
 {
     if (value) {

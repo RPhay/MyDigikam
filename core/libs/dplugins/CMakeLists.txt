@@ -1,5 +1,5 @@
 #
-# Copyright (c) 2010-2021 by Gilles Caulier, <caulier dot gilles at gmail dot com>
+# Copyright (c) 2010-2022 by Gilles Caulier, <caulier dot gilles at gmail dot com>
 #
 # Redistribution and use is allowed according to the terms of the BSD license.
 # For details see the accompanying COPYING-CMAKE-SCRIPTS file.
@@ -63,6 +63,8 @@ set(libdpluginsinterface_SRCS
     ${CMAKE_CURRENT_SOURCE_DIR}/widgets/dpreviewmanager.cpp
     ${CMAKE_CURRENT_SOURCE_DIR}/widgets/dpreviewimage.cpp
     ${CMAKE_CURRENT_SOURCE_DIR}/widgets/ditemslist.cpp
+    ${CMAKE_CURRENT_SOURCE_DIR}/widgets/ditemslist_item.cpp
+    ${CMAKE_CURRENT_SOURCE_DIR}/widgets/ditemslist_view.cpp
 
     ${CMAKE_CURRENT_SOURCE_DIR}/webservices/wscomboboxdelegate.cpp
     ${CMAKE_CURRENT_SOURCE_DIR}/webservices/wscomboboxintermediate.cpp

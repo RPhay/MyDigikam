@@ -1,5 +1,5 @@
 #
-# Copyright (c) 2010-2021 by Gilles Caulier, <caulier dot gilles at gmail dot com>
+# Copyright (c) 2010-2022 by Gilles Caulier, <caulier dot gilles at gmail dot com>
 # Copyright (c) 2015      by Veaceslav Munteanu, <veaceslav dot munteanu90 at gmail dot com>
 #
 # Redistribution and use is allowed according to the terms of the BSD license.
@@ -64,6 +64,12 @@ set(libdigikamgui_SRCS
     ${CMAKE_CURRENT_SOURCE_DIR}/items/utils/itemviewutilities.cpp
     ${CMAKE_CURRENT_SOURCE_DIR}/items/utils/tooltipfiller.cpp
     ${CMAKE_CURRENT_SOURCE_DIR}/items/utils/contextmenuhelper.cpp
+    ${CMAKE_CURRENT_SOURCE_DIR}/items/utils/contextmenuhelper_services.cpp
+    ${CMAKE_CURRENT_SOURCE_DIR}/items/utils/contextmenuhelper_tags.cpp
+    ${CMAKE_CURRENT_SOURCE_DIR}/items/utils/contextmenuhelper_albums.cpp
+    ${CMAKE_CURRENT_SOURCE_DIR}/items/utils/contextmenuhelper_groups.cpp
+    ${CMAKE_CURRENT_SOURCE_DIR}/items/utils/contextmenuhelper_tools.cpp
+    ${CMAKE_CURRENT_SOURCE_DIR}/items/utils/contextmenuhelper_actions.cpp
     ${CMAKE_CURRENT_SOURCE_DIR}/items/utils/groupingviewimplementation.cpp
     ${CMAKE_CURRENT_SOURCE_DIR}/items/utils/itemcategorydrawer.cpp
 
@@ -93,6 +99,7 @@ set(libdigikamgui_SRCS
     ${CMAKE_CURRENT_SOURCE_DIR}/views/stack/itemiconview_tools.cpp
     ${CMAKE_CURRENT_SOURCE_DIR}/views/stack/itemiconview_views.cpp
     ${CMAKE_CURRENT_SOURCE_DIR}/views/stack/itemiconview_zoom.cpp
+    ${CMAKE_CURRENT_SOURCE_DIR}/views/stack/itemiconview_iqs.cpp
     ${CMAKE_CURRENT_SOURCE_DIR}/views/stack/trashview.cpp
     ${CMAKE_CURRENT_SOURCE_DIR}/views/stack/stackedview.cpp
     ${CMAKE_CURRENT_SOURCE_DIR}/views/preview/itempreviewcanvas.cpp
@@ -185,6 +192,7 @@ set(DIGIKAMGUI_OBJECTS
             $<TARGET_OBJECTS:gui_facemanagement_obj>
             $<TARGET_OBJECTS:gui_queuemanager_obj>
             $<TARGET_OBJECTS:gui_advancedrename_obj>
+            $<TARGET_OBJECTS:gui_focuspointmanagement_obj>
 )
 
 if(${Marble_FOUND})

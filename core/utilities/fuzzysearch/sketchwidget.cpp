@@ -6,7 +6,7 @@
  * Date        : 2008-05-19
  * Description : a widget to draw sketch.
  *
- * Copyright (C) 2008-2021 by Gilles Caulier <caulier dot gilles at gmail dot com>
+ * Copyright (C) 2008-2022 by Gilles Caulier <caulier dot gilles at gmail dot com>
  * Copyright (C) 2008-2010 by Marcel Wiesweg <marcel dot wiesweg at gmx dot de>
  *
  * This program is free software; you can redistribute it
@@ -90,7 +90,7 @@ public:
     void startDrawEvent(const QPoint& pos)
     {
         // Remove all draw events from history map which are upper than current index.
-        // If user redo actions and make new draw events, theses one will be queued at
+        // If user redoes actions and makes new draw events, these will be queued at
         // end of history and will replace removed items.
 
         for (int i = (drawEventList.count() - 1) ; i > eventIndex ; --i)

@@ -273,7 +273,15 @@ void ChoiceSearchComboBox::installView(QAbstractItemView* v)
     // create the label
 
     m_label = new DSqueezedClickLabel;
-    m_label->setElideMode(Qt::ElideRight);
+
+    if (layoutDirection() == Qt::RightToLeft)
+    {
+        m_label->setElideMode(Qt::ElideRight);
+    }
+    else
+    {
+        m_label->setElideMode(Qt::ElideLeft);
+    }
 
     // set a line edit that carries the label
 

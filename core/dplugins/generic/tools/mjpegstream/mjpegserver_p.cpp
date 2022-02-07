@@ -6,7 +6,7 @@
  * Date        : 2021-07-24
  * Description : a MJPEG Stream server to export items on the network.
  *
- * Copyright (C) 2021 by Gilles Caulier <caulier dot gilles at gmail dot com>
+ * Copyright (C) 2021-2022 by Gilles Caulier <caulier dot gilles at gmail dot com>
  *
  * This program is free software; you can redistribute it
  * and/or modify it under the terms of the GNU General
@@ -25,7 +25,7 @@
 // Must be placed in first to not break Windows Compilation with WinSock API
 
 #ifdef Q_OS_WIN
-#   ifdef WIN32_LEAN_AND_MEAN           // krazy:exclude=cpp
+#   ifdef WIN32_LEAN_AND_MEAN        // krazy:exclude=cpp
 #       undef WIN32_LEAN_AND_MEAN
 #   endif
 #endif
@@ -44,7 +44,7 @@
 #include <QByteArray>
 #include <QString>
 #include <QBuffer>
-#include <QtConcurrent>
+#include <QtConcurrent>              // krazy:exclude=includes
 
 // Local includes
 
@@ -280,12 +280,12 @@ void MjpegServer::Private::clientWriteMultithreaded(int client, const QByteArray
 
     // Write header
 
-    writeInSocket(client, head.toLatin1());
+    (void)writeInSocket(client, head.toLatin1());
 
     // Write image data
 
-    writeInSocket(client, data);
-    writeInSocket(client, QByteArray("\r\n\r\n"));
+    (void)writeInSocket(client, data);
+    (void)writeInSocket(client, QByteArray("\r\n\r\n"));
 }
 
 } // namespace DigikamGenericMjpegStreamPlugin

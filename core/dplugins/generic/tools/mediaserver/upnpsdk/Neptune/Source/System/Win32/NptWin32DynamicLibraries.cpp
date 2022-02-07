@@ -37,7 +37,7 @@ static LPWSTR A2WHelper(LPWSTR lpw, LPCSTR lpa, int nChars, UINT acp)
     if (ret == 0) {
         assert(0);
         return NULL;
-    }        
+    }
     return lpw;
 }
 
@@ -68,7 +68,7 @@ class NPT_Win32DynamicLibrary : public NPT_DynamicLibraryInterface
 {
 public:
     // constructor and destructor
-    NPT_Win32DynamicLibrary(HMODULE library, const char* name) : 
+    NPT_Win32DynamicLibrary(HMODULE library, const char* name) :
       m_Library(library), m_Name(name) {}
 
       // NPT_DynamicLibraryInterface methods
@@ -84,7 +84,7 @@ private:
 /*----------------------------------------------------------------------
 |   NPT_DynamicLibrary::Load
 +---------------------------------------------------------------------*/
-NPT_Result 
+NPT_Result
 NPT_DynamicLibrary::Load(const char* name, NPT_Flags flags, NPT_DynamicLibrary*& library)
 {
     NPT_WIN32_USE_CHAR_CONVERSION;
@@ -113,7 +113,7 @@ NPT_DynamicLibrary::Load(const char* name, NPT_Flags flags, NPT_DynamicLibrary*&
 /*----------------------------------------------------------------------
 |   NPT_Win32DynamicLibrary::FindSymbol
 +---------------------------------------------------------------------*/
-NPT_Result 
+NPT_Result
 NPT_Win32DynamicLibrary::FindSymbol(const char* name, void*& symbol)
 {
     if (name == NULL) return NPT_ERROR_INVALID_PARAMETERS;

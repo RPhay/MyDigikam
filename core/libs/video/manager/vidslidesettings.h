@@ -6,7 +6,7 @@
  * Date        : 2017-05-25
  * Description : a tool to generate video slideshow from images.
  *
- * Copyright (C) 2017-2021 by Gilles Caulier <caulier dot gilles at gmail dot com>
+ * Copyright (C) 2017-2022 by Gilles Caulier <caulier dot gilles at gmail dot com>
  *
  * This program is free software; you can redistribute it
  * and/or modify it under the terms of the GNU General
@@ -99,20 +99,61 @@ public:
      */
     enum VidType
     {
-        QVGA = 0,   ///< 320  x 180  - 16:9
-        VCD1,       ///< 352  x 240
-        VCD2,       ///< 352  x 288
-        HVGA,       ///< 480  x 270  - 16:9
-        SVCD1,      ///< 480  x 480
-        SVCD2,      ///< 480  x 576
-        VGA,        ///< 640  x 360  - 16:9
-        DVD1,       ///< 720  x 480
-        DVD2,       ///< 720  x 576
-        WVGA,       ///< 800  x 450  - 16:9
-        XVGA,       ///< 1024 x 576  - 16:9
-        HDTV,       ///< 1280 x 720  - 16:9
-        BLUERAY,    ///< 1920 x 1080 - 19:9
-        UHD4K       ///< 3840 x 2160 - 19:9
+        QVGA = 0,   ///< 320   x 180  - 16:9    - Computer Graphics
+        VCD1,       ///< 352   x 240  - 7:5     - Digital TV
+        VCD2,       ///< 352   x 288  - 6:5     - Digital TV
+        CVD1,       ///< 352   x 480  - 11:15   - Digital TV
+        CVD2,       ///< 352   x 576  - 11:18   - Digital TV
+        HVGA,       ///< 480   x 270  - 16:9    - Computer Graphics
+        SVCD1,      ///< 480   x 480  - 1:1     - Digital TV
+        SDTV1,      ///< 528   x 480  - 11:10   - Digital TV
+        SDTV2,      ///< 544   x 480  - 17:15   - Digital TV
+        EDTV1,      ///< 544   x 576  - 17;18   - Digital TV
+        SVCD2,      ///< 480   x 576  - 5:6     - Digital TV
+        EGA,        ///< 640   x 350  - 16:9    - Computer Graphics
+        VGA,        ///< 640   x 480  - 4:3     - Computer Graphics
+        SDTV3,      ///< 704   x 480  - 22:15   - Digital TV
+        EDTV2,      ///< 704   x 576  - 11;9    - Digital TV
+        DVD1,       ///< 720   x 480  - 3:2     - Digital TV
+        DVD2,       ///< 720   x 576  - 5:4     - Digital TV
+        WVGA,       ///< 800   x 450  - 16:9    - Computer Graphics
+        SVGA,       ///< 800   x 600  - 4:3     - Computer Graphics
+        DVGA,       ///< 960   x 640  - 3:2     - Computer Graphics
+        XVGA,       ///< 1024  x 576  - 16:9    - Computer Graphics
+        HDTV,       ///< 1280  x 720  - 16:9    - Digital TV
+        WXGA1,      ///< 1280  x 768  - 5:3     - Computer Graphics
+        WXGA2,      ///< 1280  x 800  - 8:5     - Computer Graphics
+        SXGA,       ///< 1280  x 1024 - 5:4     - Computer Graphics
+        SXGAPLUS,   ///< 1400  x 1050 - 4:3     - Computer Graphics
+        WSXGA,      ///< 1440  x 900  - 8:5     - Computer Graphics
+        HDPLUS,     ///< 1600  x 900  - 16:9    - Digital TV
+        UXGA,       ///< 1600  x 1200 - 4:3     - Computer Graphics
+        WSXGAPLUS,  ///< 1680  x 1050 - 8:5     - Computer Graphics
+        BLUERAY,    ///< 1920  x 1080 - 19:9    - Digital TV
+        WUXGA,      ///< 1920  x 1200 - 8:5     - Computer Graphics
+        TXGA,       ///< 1920  x 1440 - 7:5     - Computer Graphics
+        QXGA,       ///< 2048  x 1536 - 4:3     - Computer Graphics
+        UWFHD,      ///< 2560  < 1080 - 21:9    - Computer Graphics
+        WQHD,       ///< 2560  x 1440 - 16:9    - Computer Graphics
+        WQXGA,      ///< 2560  x 1600 - 8:5     - Computer Graphics
+        QSXGA,      ///< 2560  x 2048 - 5:4     - Computer Graphics
+        QSXGAPLUS,  ///< 2800  x 2100 - 4:3     - Computer Graphics
+        WQXGAPLUS,  ///< 3200  x 1800 - 16:9    - Computer Graphics
+        WQSXGA,     ///< 3200  x 2048 - 25:16   - Computer Graphics
+        QUXGA,      ///< 3200  x 2400 - 4:3     - Computer Graphics
+        UHD4K,      ///< 3840  x 2160 - 19:9    - Digital TV
+        WQUXGA,     ///< 3840  x 2400 - 8:5     - Computer Graphics
+        HXGA,       ///< 4096  x 3072 - 4:3     - Computer Graphics
+        UHD5K,      ///< 5120  x 2880 - 16:9    - Computer Graphics
+        WHXGA,      ///< 5120  x 3200 - 8:5     - Computer Graphics
+        HSXGA,      ///< 5120  x 4096 - 5:4     - Computer Graphics
+        UHD6K,      ///< 6016  x 3384 - 16:9    - Computer Graphics
+        WHSXGA,     ///< 6400  x 4096 - 25:16   - Computer Graphics
+        HUXGA,      ///< 6400  x 4800 - 4:3     - Computer Graphics
+        UHD8K,      ///< 7680  x 4320 - 16:9    - Digital TV
+        WHUXGA,     ///< 7680  x 4800 - 8:5     - Computer Graphics
+        UW10K,      ///< 10240 x 4320 - 21:9    - Computer Graphics
+        UW16K       ///< 15360 x 8640 - 16:9    - Computer Graphics
     };
 
     /**
@@ -157,11 +198,11 @@ public:
     void  readSettings(KConfigGroup& group);
     void  writeSettings(KConfigGroup& group);
 
-    QSize   videoSize()      const;     ///< Return the current video size.
-    int     videoBitRate()   const;     ///< Return the current video bit rate.
-    qreal   videoFrameRate() const;     ///< Return the current video frame rate.
-    QString videoCodec()     const;     ///< Return the current video ffmpeg codec name.
-    QString videoFormat()    const;     ///< Return the current video format extension.
+    QSize   videoSize()             const;              ///< Return the current video size.
+    int     videoBitRate()          const;              ///< Return the current video bit rate.
+    qreal   videoFrameRate()        const;              ///< Return the current video frame rate.
+    QString videoCodec()            const;              ///< Return the current video ffmpeg codec name.
+    QString videoFormat()           const;              ///< Return the current video format extension.
 
     /**
      * Helper methods to fill combobox from GUI.
@@ -173,34 +214,37 @@ public:
     static QMap<VidFormat,  QString> videoFormatNames();
     static QMap<VidPlayer,  QString> videoPlayerNames();
 
+    static QSize videoSizeFromType(VidType type);       ///< Return the current size from a type of video.
+    static bool isVideoTVFormat(VidType type);        ///< Return true if type is a video TV format. If false is returned type is computer graphics screen format.
+
 public:
 
-    Selection                         selMode;       ///< Items selection mode
+    Selection                         selMode;          ///< Items selection mode
 
     // -- Generator settings ------
 
-    QList<QUrl>                       inputImages;   ///< Images stream.
-    QList<QUrl>                       inputAudio;    ///< Soundtracks stream.
+    QList<QUrl>                       inputImages;      ///< Images stream.
+    QList<QUrl>                       inputAudio;       ///< Soundtracks stream.
 
-    TransitionMngr::TransType         transition;    ///< Transition type between images.
+    TransitionMngr::TransType         transition;       ///< Transition type between images.
 
-    int                               imgFrames;     ///< Amount of frames by image to encode in video (ex: 125 frames = 5 s at 25 img/s).
+    int                               imgFrames;        ///< Amount of frames by image to encode in video (ex: 125 frames = 5 s at 25 img/s).
 
-    int                               abitRate;      ///< Encoded Audio stream bit rate in bit/s.
-    VidBitRate                        vbitRate;      ///< Encoded Video stream bit rate in bit/s.
-    VidStd                            vStandard;     ///< Encoded Video standard => frame rate in img/s.
-    VidType                           vType;         ///< Encoded video type.
-    VidCodec                          vCodec;        ///< Encoded video codec.
-    VidFormat                         vFormat;       ///< Encoded video container format.
-    EffectMngr::EffectType            vEffect;       ///< Encoded video effect while displaying images.
+    int                               abitRate;         ///< Encoded Audio stream bit rate in bit/s.
+    VidBitRate                        vbitRate;         ///< Encoded Video stream bit rate in bit/s.
+    VidStd                            vStandard;        ///< Encoded Video standard => frame rate in img/s.
+    VidType                           vType;            ///< Encoded video type.
+    VidCodec                          vCodec;           ///< Encoded video codec.
+    VidFormat                         vFormat;          ///< Encoded video container format.
+    EffectMngr::EffectType            vEffect;          ///< Encoded video effect while displaying images.
 
-    FileSaveConflictBox::ConflictRule conflictRule;  ///< Rule to follow if video file already exists.
-    QUrl                              outputDir;     ///< Encoded video stream directory.
+    FileSaveConflictBox::ConflictRule conflictRule;     ///< Rule to follow if video file already exists.
+    QUrl                              outputDir;        ///< Encoded video stream directory.
 
     // ---------------------
 
-    QString                           outputVideo;   ///< Target video file encoded at end.
-    VidPlayer                         outputPlayer;  ///< Open video stream in player at end.
+    QString                           outputVideo;      ///< Target video file encoded at end.
+    VidPlayer                         outputPlayer;     ///< Open video stream in player at end.
 };
 
 } // namespace Digikam

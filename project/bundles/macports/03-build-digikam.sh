@@ -3,7 +3,7 @@
 # Script to build digiKam using MacPorts
 # This script must be run as sudo
 #
-# Copyright (c) 2015-2021 by Gilles Caulier  <caulier dot gilles at gmail dot com>
+# Copyright (c) 2015-2022 by Gilles Caulier  <caulier dot gilles at gmail dot com>
 #
 # Redistribution and use is allowed according to the terms of the BSD license.
 # For details see the accompanying COPYING-CMAKE-SCRIPTS file.
@@ -42,7 +42,7 @@ OsxCodeName
 
 #################################################################################################
 
-# Pathes rules
+# Paths rules
 ORIG_PATH="$PATH"
 ORIG_WD="`pwd`"
 
@@ -59,13 +59,19 @@ cmake $ORIG_WD/../3rdparty \
        -DCMAKE_INSTALL_PREFIX:PATH=$INSTALL_PREFIX \
        -DINSTALL_ROOT=$INSTALL_PREFIX \
        -DEXTERNALS_DOWNLOAD_DIR=$DOWNLOAD_DIR \
+       -DKA_VERSION=$DK_KA_VERSION \
+       -DKF5_VERSION=$DK_KF5_VERSION \
+       -DENABLE_QTVERSION=$DK_QTVERSION \
        -DENABLE_QTWEBENGINE=$DK_QTWEBENGINE \
        -DMACOSX_DEPLOYMENT_TARGET=$OSX_MIN_TARGET \
        -Wno-dev
 
 cmake --build . --config RelWithDebInfo --target ext_exiv2   -- -j$CPU_CORES
+cp $DOWNLOAD_DIR/exiv2_manifest.txt $ORIG_WD/data/
 cmake --build . --config RelWithDebInfo --target ext_qtav    -- -j$CPU_CORES
+cp $DOWNLOAD_DIR/qtav_manifest.txt $ORIG_WD/data/
 cmake --build . --config RelWithDebInfo --target ext_lensfun -- -j$CPU_CORES
+cp $DOWNLOAD_DIR/lensfun_manifest.txt $ORIG_WD/data/
 
 #################################################################################################
 # Build digiKam in temporary directory and installation
@@ -155,6 +161,10 @@ fi
 cat $DK_BUILDTEMP/digikam-$DK_VERSION/build/core/app/utils/digikam_version.h   | grep "digikam_version\[\]" | awk '{print $6}' | tr -d '";'  > $ORIG_WD/data/RELEASEID.txt
 cat $DK_BUILDTEMP/digikam-$DK_VERSION/build/core/app/utils/digikam_builddate.h | grep "define BUILD_DATE"   | awk '{print $3}' | tr -d '"\n' > $ORIG_WD/data/BUILDDATE.txt
 
+# Copy manifests for rolling release codes included in digiKam core.
+cp  $DK_BUILDTEMP/digikam-$DK_VERSION/core/libs/rawengine/libraw/libraw_manifest.txt $ORIG_WD/data
+cp  $DK_BUILDTEMP/digikam-$DK_VERSION/core/libs/dplugins/webservices/o2/o2_manifest.txt $ORIG_WD/data
+
 echo -e "\n\n"
 echo "---------- Installing digiKam $DK_VERSION"
 echo -e "\n\n"
@@ -178,6 +188,10 @@ cmake $ORIG_WD/../3rdparty \
        -DCMAKE_INSTALL_PREFIX:PATH=$INSTALL_PREFIX \
        -DINSTALL_ROOT=$INSTALL_PREFIX \
        -DEXTERNALS_DOWNLOAD_DIR=$DOWNLOAD_DIR \
+       -DKA_VERSION=$DK_KA_VERSION \
+       -DKF5_VERSION=$DK_KF5_VERSION \
+       -DENABLE_QTVERSION=$DK_QTVERSION \
+       -DENABLE_QTWEBENGINE=$DK_QTWEBENGINE \
        -Wno-dev
 
 cmake --build . --config RelWithDebInfo --target ext_gmic_qt    -- -j$CPU_CORES

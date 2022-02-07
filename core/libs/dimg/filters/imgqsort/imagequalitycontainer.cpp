@@ -6,7 +6,7 @@
  * Date        : 2013-08-19
  * Description : Image quality Settings Container.
  *
- * Copyright (C) 2013-2021 by Gilles Caulier <caulier dot gilles at gmail dot com>
+ * Copyright (C) 2013-2022 by Gilles Caulier <caulier dot gilles at gmail dot com>
  *
  * This program is free software; you can redistribute it
  * and/or modify it under the terms of the GNU General
@@ -50,7 +50,8 @@ ImageQualityContainer::ImageQualityContainer()
       acceptedThreshold (60),
       blurWeight        (100),
       noiseWeight       (100),
-      compressionWeight (100)
+      compressionWeight (100),
+      exposureWeight    (100)
 {
 }
 
@@ -69,7 +70,8 @@ ImageQualityContainer::ImageQualityContainer(const ImageQualityContainer& other)
       acceptedThreshold (other.acceptedThreshold),
       blurWeight        (other.blurWeight),
       noiseWeight       (other.noiseWeight),
-      compressionWeight (other.compressionWeight)
+      compressionWeight (other.compressionWeight),
+      exposureWeight    (other.exposureWeight)
 {
 }
 
@@ -89,6 +91,7 @@ ImageQualityContainer& ImageQualityContainer::operator=(const ImageQualityContai
     blurWeight         = other.blurWeight;
     noiseWeight        = other.noiseWeight;
     compressionWeight  = other.compressionWeight;
+    exposureWeight     = other.exposureWeight;
     speed              = other.speed;
 
     return *this;
@@ -118,6 +121,7 @@ void ImageQualityContainer::readFromConfig()
     blurWeight                = group.readEntry("Blur Weight",        100);
     noiseWeight               = group.readEntry("Noise Weight",       100);
     compressionWeight         = group.readEntry("Compression Weight", 100);
+    exposureWeight            = group.readEntry("Exposure Weight",    100);
 }
 
 void ImageQualityContainer::writeToConfig()
@@ -140,10 +144,12 @@ void ImageQualityContainer::writeToConfig()
     group.writeEntry("Blur Weight",         blurWeight);
     group.writeEntry("Noise Weight",        noiseWeight);
     group.writeEntry("Compression Weight",  compressionWeight);
+    group.writeEntry("Exposure Weight",     exposureWeight);
 }
 
 QDebug operator<<(QDebug dbg, const ImageQualityContainer& s)
 {
+<<<<<<< HEAD
     dbg.nospace() << QT_ENDL;
     dbg.nospace() << "EnableSorter       :" << s.enableSorter       << QT_ENDL;
     dbg.nospace() << "DetectBlur         :" << s.detectBlur         << QT_ENDL;
@@ -160,6 +166,7 @@ QDebug operator<<(QDebug dbg, const ImageQualityContainer& s)
     dbg.nospace() << "Blur Weight        :" << s.blurWeight         << QT_ENDL;
     dbg.nospace() << "Noise Weight       :" << s.noiseWeight        << QT_ENDL;
     dbg.nospace() << "Compression Weight :" << s.compressionWeight  << QT_ENDL;
+    dbg.nospace() << "Exposure Weight    :" << s.exposureWeight     << QT_ENDL;
 
     return dbg.space();
 }

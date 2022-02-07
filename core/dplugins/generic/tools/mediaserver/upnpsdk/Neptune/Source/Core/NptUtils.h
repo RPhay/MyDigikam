@@ -83,31 +83,31 @@ extern NPT_UInt16 NPT_BytesToInt16Le(const unsigned char* buffer);
 /*----------------------------------------------------------------------
 |    conversion utilities
 +---------------------------------------------------------------------*/
-extern NPT_Result 
+extern NPT_Result
 NPT_ParseFloat(const char* str, float& result, bool relaxed = true);
 
-extern NPT_Result 
+extern NPT_Result
 NPT_ParseInteger(const char* str, long& result, bool relaxed = true, NPT_Cardinal* chars_used = 0);
 
-extern NPT_Result 
+extern NPT_Result
 NPT_ParseInteger(const char* str, unsigned long& result, bool relaxed = true, NPT_Cardinal* chars_used = 0);
 
-extern NPT_Result 
+extern NPT_Result
 NPT_ParseInteger(const char* str, int& result, bool relaxed = true, NPT_Cardinal* chars_used = 0);
 
-extern NPT_Result 
+extern NPT_Result
 NPT_ParseInteger(const char* str, unsigned int& result, bool relaxed = true, NPT_Cardinal* chars_used = 0);
 
-extern NPT_Result 
+extern NPT_Result
 NPT_ParseInteger32(const char* str, NPT_Int32& result, bool relaxed = true, NPT_Cardinal* chars_used = 0);
 
-extern NPT_Result 
+extern NPT_Result
 NPT_ParseInteger32(const char* str, NPT_UInt32& result, bool relaxed = true, NPT_Cardinal* chars_used = 0);
 
-extern NPT_Result 
+extern NPT_Result
 NPT_ParseInteger64(const char* str, NPT_Int64& result, bool relaxed = true, NPT_Cardinal* chars_used = 0);
 
-extern NPT_Result 
+extern NPT_Result
 NPT_ParseInteger64(const char* str, NPT_UInt64& result, bool relaxed = true, NPT_Cardinal* chars_used = 0);
 
 /*----------------------------------------------------------------------
@@ -116,13 +116,13 @@ NPT_ParseInteger64(const char* str, NPT_UInt64& result, bool relaxed = true, NPT
 void
 NPT_FormatOutput(void        (*function)(void* parameter, const char* message),
                  void*       function_parameter,
-                 const char* format, 
+                 const char* format,
                  va_list     args);
 
 void NPT_ByteToHex(NPT_Byte b, char* buffer, bool uppercase=false);
 NPT_Result NPT_HexToByte(const char* buffer, NPT_Byte& b);
 NPT_Result NPT_HexToBytes(const char* hex, NPT_DataBuffer& bytes);
-NPT_String NPT_HexString(const unsigned char* data, 
+NPT_String NPT_HexString(const unsigned char* data,
                          NPT_Size             data_size,
                          const char*          separator = NULL,
                          bool                 uppercase=false);
@@ -132,7 +132,7 @@ int NPT_HexToNibble(char hex);
 /*----------------------------------------------------------------------
 |    parsing
 +---------------------------------------------------------------------*/
-NPT_Result 
+NPT_Result
 NPT_ParseMimeParameters(const char*                      encoded,
                         NPT_Map<NPT_String, NPT_String>& parameters);
 
@@ -220,9 +220,9 @@ extern void NPT_SetMemory(void* dest, int c, NPT_Size size);
 #endif
 
 #if defined(NPT_CONFIG_HAVE_MEMCMP)
-#define NPT_MemoryEqual(s1, s2, n) (memcmp((s1), (s2), (n)) == 0) 
-#else 
-extern int NPT_MemoryEqual(const void* s1, const void* s2, unsigned long n); 
+#define NPT_MemoryEqual(s1, s2, n) (memcmp((s1), (s2), (n)) == 0)
+#else
+extern int NPT_MemoryEqual(const void* s1, const void* s2, unsigned long n);
 #endif
 
 #endif // _NPT_UTILS_H_

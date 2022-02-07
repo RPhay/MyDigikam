@@ -7,7 +7,7 @@
  * Description : Item icon view interface - Item methods.
  *
  * Copyright (C) 2002-2005 by Renchi Raju <renchi dot raju at gmail dot com>
- * Copyright (C) 2002-2021 by Gilles Caulier <caulier dot gilles at gmail dot com>
+ * Copyright (C) 2002-2022 by Gilles Caulier <caulier dot gilles at gmail dot com>
  * Copyright (C) 2009-2011 by Johannes Wienke <languitar at semipol dot de>
  * Copyright (C) 2010-2011 by Andi Clemens <andi dot clemens at gmail dot com>
  * Copyright (C) 2011-2013 by Michael G. Hansen <mike at mghansen dot de>
@@ -593,6 +593,32 @@ void ItemIconView::slotAwayFromSelection()
 void ItemIconView::slotCopySelectionTo()
 {
     d->utilities->copyItemsToExternalFolder(selectedInfoList(false, true));
+}
+
+void ItemIconView::slotEmptyMessageTimer()
+{
+    Album* const album = d->albumManager->currentAlbums().constFirst();
+
+    if (album && album->isRoot())
+    {
+        d->errorWidget->animatedHide();
+
+        return;
+    }
+
+    if (!d->iconView->imageModel()->itemCount())
+    {
+        QString message = i18n("The current query from the database returned no results. "
+                               "Change search settings or select an album with content.");
+
+        d->errorWidget->setMessageType(DNotificationWidget::Information);
+        d->errorWidget->setText(message);
+        d->errorWidget->animatedShowTemporized(5000);
+    }
+    else
+    {
+        d->errorWidget->animatedHide();
+    }
 }
 
 } // namespace Digikam

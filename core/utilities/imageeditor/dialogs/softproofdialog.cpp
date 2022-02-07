@@ -7,7 +7,7 @@
  * Description : Dialog to adjust soft proofing settings
  *
  * Copyright (C) 2009-2012 by Marcel Wiesweg <marcel dot wiesweg at gmx dot de>
- * Copyright (C) 2013-2021 by Gilles Caulier <caulier dot gilles at gmail dot com>
+ * Copyright (C) 2013-2022 by Gilles Caulier <caulier dot gilles at gmail dot com>
  *
  * This program is free software; you can redistribute it
  * and/or modify it under the terms of the GNU General
@@ -107,7 +107,7 @@ SoftProofDialog::SoftProofDialog(QWidget* const parent)
 
     QGridLayout* const profileGrid = new QGridLayout;
     QLabel* const proofIcon        = new QLabel;
-    proofIcon->setPixmap(QIcon::fromTheme(QLatin1String("printer")).pixmap(22));
+    proofIcon->setPixmap(QIcon::fromTheme(QLatin1String("document-print")).pixmap(22));
     QLabel* const proofLabel       = new QLabel(i18n("Profile of the output device to simulate:"));
     d->deviceProfileBox            = new IccProfilesComboBox;
     proofLabel->setBuddy(d->deviceProfileBox);

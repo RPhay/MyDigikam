@@ -12,10 +12,10 @@
 
 uint32 TagTypeSize (uint32 tagType)
 	{
-	
+
 	switch (tagType)
 		{
-		
+
 		case ttByte:
 		case ttAscii:
 		case ttSByte:
@@ -49,11 +49,11 @@ uint32 TagTypeSize (uint32 tagType)
 
 		default:
 			break;
-			
+
 		}
-		
+
 	return 0;
-	
+
 	}
 
 /*****************************************************************************/

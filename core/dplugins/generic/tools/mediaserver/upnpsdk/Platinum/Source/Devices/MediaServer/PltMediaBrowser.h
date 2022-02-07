@@ -11,14 +11,14 @@
 | as published by the Free Software Foundation; either version 2
 | of the License, or (at your option) any later version.
 |
-| OEMs, ISVs, VARs and other distributors that combine and 
+| OEMs, ISVs, VARs and other distributors that combine and
 | distribute commercially licensed software with Platinum software
 | and do not wish to distribute the source code for the commercially
 | licensed software under version 2, or (at your option) any later
 | version, of the GNU General Public License (the "GPL") must enter
 | into a commercial license agreement with Plutinosoft, LLC.
 | licensing@plutinosoft.com
-|  
+|
 | This program is distributed in the hope that it will be useful,
 | but WITHOUT ANY WARRANTY; without even the implied warranty of
 | MERCHANTABILITY or FITNESS FOR A PARTICULAR PURPOSE.  See the
@@ -26,7 +26,7 @@
 |
 | You should have received a copy of the GNU General Public License
 | along with this program; see the file LICENSE.txt. If not, write to
-| the Free Software Foundation, Inc., 
+| the Free Software Foundation, Inc.,
 | 51 Franklin Street, Fifth Floor, Boston, MA  02110-1301, USA.
 | http://www.gnu.org/licenses/gpl-2.0.html
 |
@@ -53,7 +53,7 @@
 |   PLT_BrowseInfo
 +---------------------------------------------------------------------*/
 /**
- The PLT_BrowseInfo struct is used to marshall Browse or Search action 
+ The PLT_BrowseInfo struct is used to marshall Browse or Search action
  response results across different threads of execution.
  */
 typedef struct {
@@ -76,24 +76,24 @@ class PLT_MediaBrowserDelegate
 {
 public:
     virtual ~PLT_MediaBrowserDelegate() {}
-    
+
     virtual bool OnMSAdded(PLT_DeviceDataReference& /* device */) { return true; }
     virtual void OnMSRemoved(PLT_DeviceDataReference& /* device */) {}
     virtual void OnMSStateVariablesChanged(
-        PLT_Service*                  /*service*/, 
+        PLT_Service*                  /*service*/,
         NPT_List<PLT_StateVariable*>* /*vars*/) {}
 
     // ContentDirectory
     virtual void OnBrowseResult(
-        NPT_Result               /*res*/, 
-        PLT_DeviceDataReference& /*device*/, 
-        PLT_BrowseInfo*          /*info*/, 
+        NPT_Result               /*res*/,
+        PLT_DeviceDataReference& /*device*/,
+        PLT_BrowseInfo*          /*info*/,
         void*                    /*userdata*/) {}
 
     virtual void OnSearchResult(
-        NPT_Result               /*res*/, 
-        PLT_DeviceDataReference& /*device*/, 
-        PLT_BrowseInfo*          /*info*/, 
+        NPT_Result               /*res*/,
+        PLT_DeviceDataReference& /*device*/,
+        PLT_BrowseInfo*          /*info*/,
         void*                    /*userdata*/) {}
 };
 
@@ -111,8 +111,8 @@ public:
     virtual ~PLT_MediaBrowser();
 
     // ContentDirectory service
-    virtual NPT_Result Browse(PLT_DeviceDataReference& device, 
-                              const char*              object_id, 
+    virtual NPT_Result Browse(PLT_DeviceDataReference& device,
+                              const char*              object_id,
                               NPT_UInt32               start_index,
                               NPT_UInt32               count = 30, // DLNA recommendations
                               bool                     browse_metadata = false,
@@ -130,7 +130,7 @@ public:
 
     // methods
     virtual const NPT_Lock<PLT_DeviceDataReferenceList>& GetMediaServers() { return m_MediaServers; }
-    virtual NPT_Result FindServer(const char* uuid, PLT_DeviceDataReference& device);    
+    virtual NPT_Result FindServer(const char* uuid, PLT_DeviceDataReference& device);
     virtual void SetDelegate(PLT_MediaBrowserDelegate* delegate) { m_Delegate = delegate; }
 
 protected:
@@ -139,18 +139,18 @@ protected:
     virtual NPT_Result OnDeviceRemoved(PLT_DeviceDataReference& device);
     virtual NPT_Result OnActionResponse(NPT_Result res, PLT_ActionReference& action, void* userdata);
     virtual NPT_Result OnEventNotify(PLT_Service* service, NPT_List<PLT_StateVariable*>* vars);
-    
+
     // ContentDirectory service responses
-    virtual NPT_Result OnBrowseResponse(NPT_Result               res, 
-                                        PLT_DeviceDataReference& device, 
-                                        PLT_ActionReference&     action, 
+    virtual NPT_Result OnBrowseResponse(NPT_Result               res,
+                                        PLT_DeviceDataReference& device,
+                                        PLT_ActionReference&     action,
                                         void*                    userdata);
 
-    virtual NPT_Result OnSearchResponse(NPT_Result               res, 
-                                        PLT_DeviceDataReference& device, 
-                                        PLT_ActionReference&     action, 
+    virtual NPT_Result OnSearchResponse(NPT_Result               res,
+                                        PLT_DeviceDataReference& device,
+                                        PLT_ActionReference&     action,
                                         void*                    userdata);
-    
+
 protected:
     PLT_CtrlPointReference                m_CtrlPoint;
     PLT_MediaBrowserDelegate*             m_Delegate;

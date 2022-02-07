@@ -212,9 +212,7 @@ void TagsManager::setupUi()
      connect(d->tagPropWidget, SIGNAL(signalTitleEditReady()),
              this, SLOT(slotTitleEditReady()));
 
-     d->splitter->setStretchFactor(0, 0);
-     d->splitter->setStretchFactor(1, 1);
-     d->splitter->setStretchFactor(2, 0);
+     d->splitter->setStretchFactor(d->splitter->indexOf(d->tagMngrView), 10);
 
      QWidget* const centralView    = new QWidget(this);
      QHBoxLayout* const mainLayout = new QHBoxLayout(centralView);
@@ -725,11 +723,15 @@ void TagsManager::setupActions()
     QAction* const invSel        = new QAction(QIcon::fromTheme(QLatin1String("tag-reset")),
                                                i18n("Invert Selection"), this);
 
-    QAction* const expandTree    = new QAction(QIcon::fromTheme(QLatin1String("format-indent-more")),
+    QAction* const expandSel     = new QAction(QIcon::fromTheme(QLatin1String("go-down")),
+                                               i18n("Expand Selected Nodes"), this);
+
+    QAction* const expandAll     = new QAction(QIcon::fromTheme(QLatin1String("expand-all")),
                                                i18n("Expand Tag Tree"), this);
 
-    QAction* const expandSel     = new QAction(QIcon::fromTheme(QLatin1String("format-indent-more")),
-                                               i18n("Expand Selected Nodes"), this);
+    QAction* const collapseAll   = new QAction(QIcon::fromTheme(QLatin1String("collapse-all")),
+                                               i18n("Collapse Tag Tree"), this);
+
     QAction* const delTagFromImg = new QAction(QIcon::fromTheme(QLatin1String("tag-delete")),
                                                i18n("Remove Tag from Images"), this);
 
@@ -753,9 +755,11 @@ void TagsManager::setupActions()
     setHelpText(invSel, i18n("Invert selection. "
                              "Only visible items will be selected"));
 
-    setHelpText(expandTree, i18n("Expand tag tree by one level"));
-
     setHelpText(expandSel, i18n("Selected items will be expanded"));
+
+    setHelpText(expandAll, i18n("Expand tag tree completely"));
+
+    setHelpText(collapseAll, i18n("Collapse tag tree completely"));
 
     setHelpText(delTagFromImg, i18n("Delete selected tag(s) from images. "
                                     "Works with multiple selection."));
@@ -772,11 +776,14 @@ void TagsManager::setupActions()
     connect(invSel, SIGNAL(triggered()),
             this, SLOT(slotInvertSel()));
 
-    connect(expandTree, SIGNAL(triggered()),
-            d->tagMngrView, SLOT(slotExpandTree()));
-
     connect(expandSel, SIGNAL(triggered()),
-            d->tagMngrView, SLOT(slotExpandSelected()));
+            d->tagMngrView, SLOT(slotExpandNode()));
+
+    connect(expandAll, SIGNAL(triggered()),
+            d->tagMngrView, SLOT(expandAll()));
+
+    connect(collapseAll, SIGNAL(triggered()),
+            d->tagMngrView, SLOT(slotCollapseAllNodes()));
 
     connect(delTagFromImg, SIGNAL(triggered()),
             this, SLOT(slotRemoveTagsFromImgs()));
@@ -789,8 +796,9 @@ void TagsManager::setupActions()
     organizeMenu->addAction(createTagAddr);
     organizeMenu->addAction(markUnused);
     organizeMenu->addAction(invSel);
-    organizeMenu->addAction(expandTree);
     organizeMenu->addAction(expandSel);
+    organizeMenu->addAction(expandAll);
+    organizeMenu->addAction(collapseAll);
     organizeMenu->addAction(delTagFromImg);
 
     /**
@@ -957,10 +965,10 @@ void TagsManager::slotMarkNotAssignedTags()
         {
             TAlbum* const t = static_cast<TAlbum*>(d->tagMngrView->albumForIndex(current));
 
-            if (t && !t->isRoot() && !t->isInternalTag()    &&
-                (t->id() != FaceTags::ignoredPersonTagId()) &&
-                (t->id() != FaceTags::unknownPersonTagId()) &&
-                (t->id() != FaceTags::unconfirmedPersonTagId()))
+            if (t                                     &&
+                !t->isRoot()                          &&
+                !t->isInternalTag()                   &&
+                !FaceTags::isSystemPersonTagId(t->id()))
             {
                 QList<qlonglong> assignedItems = CoreDbAccess().db()->getItemIDsInTag(t->id());
 

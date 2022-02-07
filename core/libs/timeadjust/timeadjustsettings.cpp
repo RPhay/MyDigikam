@@ -7,7 +7,7 @@
  * Description : time adjust settings widget.
  *
  * Copyright (C) 2012      by Smit Mehta <smit dot meh at gmail dot com>
- * Copyright (C) 2006-2021 by Gilles Caulier <caulier dot gilles at gmail dot com>
+ * Copyright (C) 2006-2022 by Gilles Caulier <caulier dot gilles at gmail dot com>
  * Copyright (c) 2018      by Maik Qualmann <metzpinguin at gmail dot com>
  *
  * This program is free software; you can redistribute it
@@ -135,6 +135,8 @@ public:
     QToolButton*           useCustomDateTodayBtn;
 
     DExpanderBox*          settingsExpander;
+
+    QUrl                   currentItemUrl;
 };
 
 TimeAdjustSettings::TimeAdjustSettings(QWidget* const parent, bool timeAdjustTool)
@@ -578,10 +580,12 @@ void TimeAdjustSettings::slotDetAdjustmentByClockPhotoUrl(const QUrl& url)
 
 void TimeAdjustSettings::slotDetAdjustmentByClockPhotoDialog()
 {
-    // Determine the currently selected item and preselect it as clock photo
+    detAdjustmentByClockPhotoUrl(d->currentItemUrl);
+}
 
-    QUrl emptyUrl;
-    detAdjustmentByClockPhotoUrl(emptyUrl);
+void TimeAdjustSettings::setCurrentItemUrl(const QUrl& url)
+{
+    d->currentItemUrl = url;
 }
 
 } // namespace Digikam

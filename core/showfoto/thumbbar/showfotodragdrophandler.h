@@ -31,7 +31,7 @@
 // Local includes
 
 #include "abstractitemdragdrophandler.h"
-#include "showfotoimagemodel.h"
+#include "showfotoitemmodel.h"
 #include "ddragobjects.h"
 
 namespace ShowFoto
@@ -45,16 +45,16 @@ public:
 
     explicit ShowfotoDragDropHandler(ShowfotoItemModel* const model);
 
-    ShowfotoItemModel*    model()   const;
+    ShowfotoItemModel* model()                                                                           const;
 
-    bool           dropEvent(QAbstractItemView* view, const QDropEvent* e, const QModelIndex& droppedOn) override;
-    Qt::DropAction accepts(const QDropEvent* e, const QModelIndex& dropIndex)                            override;
-    QStringList    mimeTypes()      const                                                                override;
-    QMimeData*     createMimeData(const QList<QModelIndex>&)                                             override;
+    bool           dropEvent(QAbstractItemView* view, const QDropEvent* e, const QModelIndex& droppedOn)       override;
+    Qt::DropAction accepts(const QDropEvent* e, const QModelIndex& dropIndex)                                  override;
+    QStringList    mimeTypes()                                                                           const override;
+    QMimeData*     createMimeData(const QList<QModelIndex>&)                                                   override;
 
 Q_SIGNALS:
 
-    void signalDroppedUrls(const QList<QUrl>& droppedUrls, bool dropped);
+    void signalDroppedUrls(const QList<QUrl>& droppedUrls, bool dropped, const QUrl& current);
 
 private:
 

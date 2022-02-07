@@ -6,7 +6,7 @@
  * Date        : 2006-06-14
  * Description : A JPEG-2000 IO file for DImg framework- load operations
  *
- * Copyright (C) 2006-2021 by Gilles Caulier <caulier dot gilles at gmail dot com>
+ * Copyright (C) 2006-2022 by Gilles Caulier <caulier dot gilles at gmail dot com>
  *
  * This program is free software; you can redistribute it
  * and/or modify it under the terms of the GNU General
@@ -85,50 +85,27 @@ bool DImgJPEG2000Loader::load(const QString& filePath, DImgLoaderObserver* const
         return false;
     }
 
-    unsigned char header[9];
-
-    if (fread(&header, 9, 1, file) != 1)
-    {
-        loadingFailed();
-        fclose(file);
-
-        return false;
-    }
-
-    rewind(file);
-
-    unsigned char jp2ID[5] = { 0x6A, 0x50, 0x20, 0x20, 0x0D, };
-    unsigned char jpcID[2] = { 0xFF, 0x4F };
-
-    if ((memcmp(&header[4], &jp2ID, 5) != 0) &&
-        (memcmp(&header,    &jpcID, 2) != 0))
-    {
-        // not a jpeg2000 file
-
-        loadingFailed();
-        fclose(file);
-
-        return false;
-    }
-
     imageSetAttribute(QLatin1String("format"), QLatin1String("JP2"));
+
+    QScopedPointer<DMetadata> metadata(new DMetadata(filePath));
+    QSize size             = metadata->getItemDimensions();
+    QString decoderOptions = QLatin1String("max_samples=100000000");
+
+    if (size.isValid())
+    {
+        imageWidth()   = size.width();
+        imageHeight()  = size.height();
+        decoderOptions = QString::fromLatin1("max_samples=%1").arg(size.width() * size.height() * 4);
+        qCDebug(DIGIKAM_DIMG_LOG_JP2K) << "JP2 image size:" << size;
+    }
 
     if (!(m_loadFlags & LoadImageData) && !(m_loadFlags & LoadICCData))
     {
         // libjasper will load the full image in memory already when calling jas_image_decode.
         // This is bad when scanning. See bugs 215458 and 195583.
-        // FIXME: Use Exiv2 to extract this info
+        // Exiv2 is used to extract this info.
 
         fclose(file);
-
-        QScopedPointer<DMetadata> metadata(new DMetadata(filePath));
-        QSize size = metadata->getItemDimensions();
-
-        if (size.isValid())
-        {
-            imageWidth()  = size.width();
-            imageHeight() = size.height();
-        }
 
         return true;
     }
@@ -136,16 +113,20 @@ bool DImgJPEG2000Loader::load(const QString& filePath, DImgLoaderObserver* const
     // -------------------------------------------------------------------
     // Initialize JPEG 2000 API.
 
-    long  i, x, y;
-    int            components[4];
-    unsigned int   maximum_component_depth, scale[4], x_step[4], y_step[4];
-    unsigned long  number_components;
+    long           i                       = 0;
+    long           x                       = 0;
+    long           y                       = 0;
+    int            components[4]           = { 0 };
+    unsigned int   maximum_component_depth = 0;
+    unsigned int   scale[4]                = { 0 };
+    unsigned int   x_step[4]               = { 0 };
+    unsigned int   y_step[4]               = { 0 };
+    unsigned long  number_components       = 0;
+    jas_image_t*  jp2_image                = nullptr;
+    jas_stream_t* jp2_stream               = nullptr;
+    jas_matrix_t* pixels[4]                = { nullptr };
 
-    jas_image_t*  jp2_image   = nullptr;
-    jas_stream_t* jp2_stream  = nullptr;
-    jas_matrix_t* pixels[4];
-
-    int init = jas_init();
+    int init   = jas_init();
 
     if (init != 0)
     {
@@ -168,7 +149,12 @@ bool DImgJPEG2000Loader::load(const QString& filePath, DImgLoaderObserver* const
     }
 
     int fmt   = jas_image_strtofmt(QByteArray("jp2").data());
-    jp2_image = jas_image_decode(jp2_stream, fmt, nullptr);
+
+    // See bug 447240 and UPSTREAM https://github.com/jasper-software/jasper/issues/315#issuecomment-1007872809
+
+    qCDebug(DIGIKAM_DIMG_LOG_JP2K) << "jas_image_decode decoder options string:" << decoderOptions;
+
+    jp2_image = jas_image_decode(jp2_stream, fmt, decoderOptions.toLatin1().data());
 
     if (jp2_image == nullptr)
     {
@@ -267,7 +253,7 @@ bool DImgJPEG2000Loader::load(const QString& filePath, DImgLoaderObserver* const
                 ++number_components;
             }
 
-            // FIXME: image->colorspace=YCbCrColorspace;
+            // FIXME: image->colorspace = YCbCrColorspace;
 
             colorModel = DImg::YCBCR;
             break;
@@ -519,7 +505,7 @@ bool DImgJPEG2000Loader::load(const QString& filePath, DImgLoaderObserver* const
                 }
             }
 
-            // use 0-10% and 90-100% for pseudo-progress
+            // Use 0-10% and 90-100% for pseudo-progress
 
             if (observer && y >= (long)checkPoint)
             {

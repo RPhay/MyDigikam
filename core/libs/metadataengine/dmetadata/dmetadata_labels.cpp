@@ -6,7 +6,7 @@
  * Date        : 2006-02-23
  * Description : item metadata interface - labels helpers.
  *
- * Copyright (C) 2006-2021 by Gilles Caulier <caulier dot gilles at gmail dot com>
+ * Copyright (C) 2006-2022 by Gilles Caulier <caulier dot gilles at gmail dot com>
  * Copyright (C) 2006-2013 by Marcel Wiesweg <marcel dot wiesweg at gmx dot de>
  * Copyright (C) 2011      by Leif Huhn <leif at dkstat dot com>
  *
@@ -458,64 +458,10 @@ bool DMetadata::setItemRating(int rating, const DMetadataSettingsContainer& sett
 
             case NamespaceEntry::EXIF:
             {
-                if (QLatin1String(nameSpace) == QLatin1String("Exif.Image.RatingPercent"))
+                if (!setExifTagLong(nameSpace, entry.convertRatio.at(rating)))
                 {
-                    // Wrapper around rating percents managed by Windows Vista.
-
-                    int ratePercents = 0;
-
-                    switch (rating)
-                    {
-                        case 0:
-                        {
-                            ratePercents = 0;
-                            break;
-                        }
-
-                        case 1:
-                        {
-                            ratePercents = 1;
-                            break;
-                        }
-
-                        case 2:
-                        {
-                            ratePercents = 25;
-                            break;
-                        }
-
-                        case 3:
-                        {
-                            ratePercents = 50;
-                            break;
-                        }
-
-                        case 4:
-                        {
-                            ratePercents = 75;
-                            break;
-                        }
-
-                        case 5:
-                        {
-                            ratePercents = 99;
-                            break;
-                        }
-                    }
-
-                    if (!setExifTagLong(nameSpace, ratePercents))
-                    {
-                        qCDebug(DIGIKAM_METAENGINE_LOG) << "Setting rating failed" << nameSpace;
-                        return false;
-                    }
-                }
-                else
-                {
-                    if (!setExifTagLong(nameSpace, rating))
-                    {
-                        qCDebug(DIGIKAM_METAENGINE_LOG) << "Setting rating failed" << nameSpace;
-                        return false;
-                    }
+                    qCDebug(DIGIKAM_METAENGINE_LOG) << "Setting rating failed" << nameSpace;
+                    return false;
                 }
 
                 break;

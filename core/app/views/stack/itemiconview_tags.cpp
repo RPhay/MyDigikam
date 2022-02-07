@@ -7,7 +7,7 @@
  * Description : Item icon view interface - Tag methods.
  *
  * Copyright (C) 2002-2005 by Renchi Raju <renchi dot raju at gmail dot com>
- * Copyright (C) 2002-2021 by Gilles Caulier <caulier dot gilles at gmail dot com>
+ * Copyright (C) 2002-2022 by Gilles Caulier <caulier dot gilles at gmail dot com>
  * Copyright (C) 2009-2011 by Johannes Wienke <languitar at semipol dot de>
  * Copyright (C) 2010-2011 by Andi Clemens <andi dot clemens at gmail dot com>
  * Copyright (C) 2011-2013 by Michael G. Hansen <mike at mghansen dot de>
@@ -52,6 +52,11 @@ void ItemIconView::toggleTag(int tagID)
         {
             tagToAssign.append(info);
         }
+    }
+
+    if (!tagToAssign.isEmpty() && !tagToRemove.isEmpty())
+    {
+        tagToRemove.clear();
     }
 
     FileActionMngr::instance()->assignTag(tagToAssign, tagID);
@@ -123,10 +128,7 @@ void ItemIconView::slotRemoveTag(int tagID)
      * Confirmed Tags.
      * QTimer to ensure TagRemoval is complete.
      */
-    if (!FaceTags::isTheIgnoredPerson(tagID)  &&
-        !FaceTags::isTheUnknownPerson(tagID)  &&
-        !FaceTags::isTheUnconfirmedPerson(tagID)
-       )
+    if (!FaceTags::isSystemPersonTagId(tagID))
     {
         QTimer::singleShot(200, this, [=]()
             {

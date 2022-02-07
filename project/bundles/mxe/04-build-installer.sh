@@ -4,7 +4,7 @@
 # and create a Windows installer file with NSIS application
 # Dependency : NSIS makensis program for Linux.
 #
-# Copyright (c) 2015-2021 by Gilles Caulier  <caulier dot gilles at gmail dot com>
+# Copyright (c) 2015-2022 by Gilles Caulier  <caulier dot gilles at gmail dot com>
 #
 # Redistribution and use is allowed according to the terms of the BSD license.
 # For details see the accompanying COPYING-CMAKE-SCRIPTS file.
@@ -62,22 +62,32 @@ ORIG_WD="`pwd`"
 DK_RELEASEID=`cat $ORIG_WD/data/RELEASEID.txt`
 
 #################################################################################################
-# Build icons-set ressource
+# Build icons-set resource
 
-echo -e "\n---------- Build icons-set ressource\n"
+echo -e "\n---------- Build icons-set resource\n"
 
 cd $ORIG_WD/icon-rcc
 
 rm -f CMakeCache.txt > /dev/null
+rm -f Makefile > /dev/null
+rm -f cmake_install.cmake > /dev/null
+rm -fr CMakeFiles > /dev/null
+rm -fr icon-rcc-prefix > /dev/null
 rm -f *.rcc > /dev/null
 
-cmake -DCMAKE_INSTALL_PREFIX="$MXE_INSTALL_PREFIX" \
-      -DCMAKE_BUILD_TYPE=RelWithDebInfo \
-      -DCMAKE_COLOR_MAKEFILE=ON \
+cmake -DCMAKE_COLOR_MAKEFILE=ON \
+      -DEXTERNALS_DOWNLOAD_DIR=$DOWNLOAD_DIR \
+      -DKA_VERSION=$DK_KA_VERSION \
+      -DKF5_VERSION=$DK_KF5_VERSION \
+      -DENABLE_QTVERSION=$DK_QTVERSION \
+      -DENABLE_QTWEBENGINE=$DK_QTWEBENGINE \
       -Wno-dev \
       .
 
 make -j$CPU_CORES
+
+mv $BUILDDIR/icon-rcc/icon-rcc-prefix/src/icon-rcc-build/icons/breeze-icons.rcc           $BUILDDIR/icon-rcc/
+mv $BUILDDIR/icon-rcc/icon-rcc-prefix/src/icon-rcc-build/icons-dark/breeze-icons-dark.rcc $BUILDDIR/icon-rcc/
 
 #################################################################################################
 # Copy files
@@ -101,57 +111,76 @@ mkdir -p $BUNDLEDIR/translations
 # Data files ---------------------------------------------------------------------------------
 
 echo -e "\n---------- Marble data"
-cp -r $MXE_INSTALL_PREFIX/data/*                                        $BUNDLEDIR/data         2>/dev/null
+cp -r $MXE_INSTALL_PREFIX/data/*                                        $BUNDLEDIR/data             2>/dev/null
 
 echo -e "\n---------- Generics data"
-cp -r $MXE_INSTALL_PREFIX/share/lensfun                                 $BUNDLEDIR/data         2>/dev/null
-cp -r $MXE_INSTALL_PREFIX/bin/data/digikam                              $BUNDLEDIR/data         2>/dev/null
-cp -r $MXE_INSTALL_PREFIX/bin/data/showfoto                             $BUNDLEDIR/data         2>/dev/null
-cp -r $MXE_INSTALL_PREFIX/bin/data/solid                                $BUNDLEDIR/data         2>/dev/null
-cp -r $MXE_INSTALL_PREFIX/bin/data/k*                                   $BUNDLEDIR/data         2>/dev/null
+cp -r $MXE_INSTALL_PREFIX/share/lensfun                                 $BUNDLEDIR/data             2>/dev/null
+cp -r $MXE_INSTALL_PREFIX/bin/data/digikam                              $BUNDLEDIR/data             2>/dev/null
+cp -r $MXE_INSTALL_PREFIX/bin/data/showfoto                             $BUNDLEDIR/data             2>/dev/null
+cp -r $MXE_INSTALL_PREFIX/bin/data/solid                                $BUNDLEDIR/data             2>/dev/null
+cp -r $MXE_INSTALL_PREFIX/bin/data/k*                                   $BUNDLEDIR/data             2>/dev/null
 
 # Copy digiKam hi-colors PNG icons-set to the bundle
 
-cp -r $MXE_INSTALL_PREFIX/bin/data/icons                                $BUNDLEDIR/data         2>/dev/null
-rm -fr $BUNDLEDIR/data/icons/breeze*                                                            2>/dev/null
-rm -fr $BUNDLEDIR/data/icons/*.qrc                                                              2>/dev/null
+cp -r $MXE_INSTALL_PREFIX/bin/data/icons                                $BUNDLEDIR/data             2>/dev/null
+rm -fr $BUNDLEDIR/data/icons/breeze*                                                                2>/dev/null
+rm -fr $BUNDLEDIR/data/icons/*.qrc                                                                  2>/dev/null
 
 echo -e "\n---------- Qt config"
-cp    $BUILDDIR/data/qt.conf                                            $BUNDLEDIR/             2>/dev/null
+cp    $BUILDDIR/data/qt.conf                                            $BUNDLEDIR/                 2>/dev/null
 
 echo -e "\n---------- icons-set"
-cp    $BUILDDIR/icon-rcc/breeze.rcc                                     $BUNDLEDIR/             2>/dev/null
-cp    $BUILDDIR/icon-rcc/breeze-dark.rcc                                $BUNDLEDIR/             2>/dev/null
+cp    $BUILDDIR/icon-rcc/breeze-icons.rcc                               $BUNDLEDIR/breeze.rcc       2>/dev/null
+cp    $BUILDDIR/icon-rcc/breeze-icons-dark.rcc                          $BUNDLEDIR/breeze-dark.rcc  2>/dev/null
 
 echo -e "\n---------- i18n"
-cp -r $MXE_INSTALL_PREFIX/qt5/translations/qt_*                         $BUNDLEDIR/translations 2>/dev/null
-cp -r $MXE_INSTALL_PREFIX/qt5/translations/qtbase*                      $BUNDLEDIR/translations 2>/dev/null
-cp -r $MXE_INSTALL_PREFIX/bin/data/locale                               $BUNDLEDIR/data         2>/dev/null
+cp -r $MXE_INSTALL_PREFIX/qt5/translations/qt*                          $BUNDLEDIR/translations     2>/dev/null
+cp -r $MXE_INSTALL_PREFIX/bin/data/locale                               $BUNDLEDIR/data             2>/dev/null
 
 echo -e "\n---------- Xdg"
-cp -r $MXE_INSTALL_PREFIX/etc/xdg                                       $BUNDLEDIR/etc          2>/dev/null
-cp -r $MXE_INSTALL_PREFIX/bin/data/xdg                                  $BUNDLEDIR/share        2>/dev/null
+cp -r $MXE_INSTALL_PREFIX/etc/xdg                                       $BUNDLEDIR/etc              2>/dev/null
+cp -r $MXE_INSTALL_PREFIX/bin/data/xdg                                  $BUNDLEDIR/share            2>/dev/null
+
+echo -e "\n---------- Copy Git Revisions Manifest"
+
+touch $BUNDLEDIR/MANIFEST.txt
+
+FILES=$(ls $ORIG_WD/data/*_manifest.txt)
+
+for FILE in $FILES ; do
+    echo $FILE
+    cat $FILE >> $BUNDLEDIR/MANIFEST.txt
+done
 
 # Plugins Shared libraries -------------------------------------------------------------------
 
 echo -e "\n---------- Qt5 plugins"
-cp -r $MXE_INSTALL_PREFIX/qt5/plugins                                   $BUNDLEDIR/             2>/dev/null
+cp -r $MXE_INSTALL_PREFIX/qt5/plugins                                   $BUNDLEDIR/                 2>/dev/null
 
 echo -e "\n---------- Marble plugins"
-cp -r $MXE_INSTALL_PREFIX/plugins/*.dll                                 $BUNDLEDIR/plugins      2>/dev/null
+cp -r $MXE_INSTALL_PREFIX/plugins/*.dll                                 $BUNDLEDIR/plugins          2>/dev/null
 
 echo -e "\n---------- digiKam and KF5 plugins"
-cp -r $MXE_INSTALL_PREFIX/lib/plugins                                   $BUNDLEDIR/             2>/dev/null
+cp -r $MXE_INSTALL_PREFIX/lib/plugins                                   $BUNDLEDIR/                 2>/dev/null
 
 echo -e "\n---------- OpenAL for QtAV"
-cp -r $MXE_INSTALL_PREFIX/bin/OpenAL32.dll                              $BUNDLEDIR/             2>/dev/null
+cp -r $MXE_INSTALL_PREFIX/bin/OpenAL32.dll                              $BUNDLEDIR/                 2>/dev/null
 
 echo -e "\n---------- DrMinGw run-time"
-cp -r $MXE_INSTALL_PREFIX/bin/exchndl.dll                               $BUNDLEDIR/             2>/dev/null
-cp -r $MXE_INSTALL_PREFIX/bin/mgwhelp.dll                               $BUNDLEDIR/             2>/dev/null
-cp -r $MXE_INSTALL_PREFIX/bin/dbghelp.dll                               $BUNDLEDIR/             2>/dev/null
-cp -r $MXE_INSTALL_PREFIX/bin/symsrv.dll                                $BUNDLEDIR/             2>/dev/null
-cp -r $MXE_INSTALL_PREFIX/bin/symsrv.yes                                $BUNDLEDIR/             2>/dev/null
+cp -r $MXE_INSTALL_PREFIX/bin/exchndl.dll                               $BUNDLEDIR/                 2>/dev/null
+cp -r $MXE_INSTALL_PREFIX/bin/mgwhelp.dll                               $BUNDLEDIR/                 2>/dev/null
+cp -r $MXE_INSTALL_PREFIX/bin/dbgcore.dll                               $BUNDLEDIR/                 2>/dev/null
+cp -r $MXE_INSTALL_PREFIX/bin/symsrv.dll                                $BUNDLEDIR/                 2>/dev/null
+cp -r $MXE_INSTALL_PREFIX/bin/symsrv.yes                                $BUNDLEDIR/                 2>/dev/null
+
+# Do not include this file from DrMinGW as it require extra devel dll from Microsoft at run-time.
+#cp -r $MXE_INSTALL_PREFIX/bin/dbghelp.dll                               $BUNDLEDIR/                2>/dev/null
+
+echo -e "\n---------- libgphoto2 drivers"
+mkdir $BUNDLEDIR/libgphoto2                                                                         2>/dev/null
+mkdir $BUNDLEDIR/libgphoto2_port                                                                    2>/dev/null
+cp $MXE_INSTALL_PREFIX/lib/libgphoto2/*/*.dll                           $BUNDLEDIR/libgphoto2       2>/dev/null
+cp $MXE_INSTALL_PREFIX/lib/libgphoto2_port/*/*.dll                      $BUNDLEDIR/libgphoto2_port  2>/dev/null
 
 echo -e "\n---------- Copy executables with recursive dependencies in bundle directory\n"
 
@@ -173,9 +202,11 @@ for app in $EXE_FILES ; do
 done
 
 DLL_FILES="\
-`find  $MXE_INSTALL_PREFIX/lib/plugins -name "*.dll" -type f | sed 's|$MXE_INSTALL_PREFIX/libs/plugins||'` \
-`find  $MXE_INSTALL_PREFIX/qt5/plugins -name "*.dll" -type f | sed 's|$MXE_INSTALL_PREFIX/qt5/plugins||'`  \
-`find  $MXE_INSTALL_PREFIX/plugins     -name "*.dll" -type f | sed 's|$MXE_INSTALL_PREFIX/plugins/||'`     \
+`find  $MXE_INSTALL_PREFIX/lib/plugins         -name "*.dll" -type f | sed 's|$MXE_INSTALL_PREFIX/libs/plugins||'`        \
+`find  $MXE_INSTALL_PREFIX/qt5/plugins         -name "*.dll" -type f | sed 's|$MXE_INSTALL_PREFIX/qt5/plugins||'`         \
+`find  $MXE_INSTALL_PREFIX/plugins             -name "*.dll" -type f | sed 's|$MXE_INSTALL_PREFIX/plugins/||'`            \
+`find  $MXE_INSTALL_PREFIX/lib/libgphoto2      -name "*.dll" -type f | sed 's|$MXE_INSTALL_PREFIX/lib/libgphoto2||'`      \
+`find  $MXE_INSTALL_PREFIX/lib/libgphoto2_port -name "*.dll" -type f | sed 's|$MXE_INSTALL_PREFIX/lib/libgphoto2_port||'` \
 $MXE_INSTALL_PREFIX/bin/OpenAL32.dll \
 $MXE_INSTALL_PREFIX/bin/exchndl.dll  \
 $MXE_INSTALL_PREFIX/bin/mgwhelp.dll  \
@@ -194,23 +225,30 @@ echo -e "\n---------- Strip symbols in binary files\n"
 
 if [[ $DK_DEBUG = 1 ]] ; then
 
-    find $BUNDLEDIR -name \*exe | grep -Ev '(digikam|showfoto|exiv2)' | xargs ${MXE_BUILDROOT}/usr/bin/${MXE_BUILD_TARGETS}-strip
-    find $BUNDLEDIR -name \*dll | grep -Ev '(digikam|showfoto|exiv2)' | xargs ${MXE_BUILDROOT}/usr/bin/${MXE_BUILD_TARGETS}-strip
+    find $BUNDLEDIR -name \*exe | grep -Ev '(digikam|showfoto)' | xargs ${MXE_BUILDROOT}/usr/bin/${MXE_BUILD_TARGETS}-strip --strip-all
+    find $BUNDLEDIR -name \*dll | grep -Ev '(digikam|showfoto)' | xargs ${MXE_BUILDROOT}/usr/bin/${MXE_BUILD_TARGETS}-strip --strip-all
+
+    find $BUNDLEDIR -name \*exe | grep -E '(digikam|showfoto)'  | xargs ${MXE_BUILDROOT}/usr/bin/${MXE_BUILD_TARGETS}-strip
+    find $BUNDLEDIR -name \*dll | grep -E '(digikam|showfoto)'  | xargs ${MXE_BUILDROOT}/usr/bin/${MXE_BUILD_TARGETS}-strip
 
 else
 
-    find $BUNDLEDIR -name \*exe | xargs ${MXE_BUILDROOT}/usr/bin/${MXE_BUILD_TARGETS}-strip
-    find $BUNDLEDIR -name \*dll | xargs ${MXE_BUILDROOT}/usr/bin/${MXE_BUILD_TARGETS}-strip
+    find $BUNDLEDIR -name \*exe | xargs ${MXE_BUILDROOT}/usr/bin/${MXE_BUILD_TARGETS}-strip --strip-all
+    find $BUNDLEDIR -name \*dll | xargs ${MXE_BUILDROOT}/usr/bin/${MXE_BUILD_TARGETS}-strip --strip-all
 
 fi
 
 #################################################################################################
 # Install ExifTool binary.
 
-wget https://exiftool.org/exiftool-$DK_EXIFTOOL_VERSION.zip -P $BUNDLEDIR
-unzip $BUNDLEDIR/exiftool-$DK_EXIFTOOL_VERSION.zip -o -d $BUNDLEDIR
+    cd $DOWNLOAD_DIR
+
+if [ ! -f $DOWNLOAD_DIR/exiftool-$DK_EXIFTOOL_VERSION.zip ] ; then
+    wget https://sourceforge.net/projects/exiftool/files/exiftool-$DK_EXIFTOOL_VERSION.zip/download -O exiftool-$DK_EXIFTOOL_VERSION.zip
+fi
+
+unzip -o $DOWNLOAD_DIR/exiftool-$DK_EXIFTOOL_VERSION.zip -d $BUNDLEDIR
 mv "$BUNDLEDIR/exiftool(-k).exe" "$BUNDLEDIR/exiftool.exe"
-rm -f $BUNDLEDIR/exiftool-$DK_EXIFTOOL_VERSION.zip
 
 #################################################################################################
 

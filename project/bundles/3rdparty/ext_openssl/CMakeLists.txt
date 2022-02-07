@@ -1,6 +1,6 @@
 # Script to build static version of OpenSSL for AppImage bundle.
 #
-# Copyright (c) 2015-2021 by Gilles Caulier  <caulier dot gilles at gmail dot com>
+# Copyright (c) 2015-2022 by Gilles Caulier  <caulier dot gilles at gmail dot com>
 #
 # Redistribution and use is allowed according to the terms of the BSD license.
 # For details see the accompanying COPYING-CMAKE-SCRIPTS file.
@@ -13,7 +13,7 @@ if (NOT MINGW AND NOT APPLE)
     ExternalProject_Add(ext_openssl
 
         GIT_REPOSITORY https://github.com/flagarde/openssl-cmake.git
-        GIT_TAG v2.1
+        GIT_TAG v2.3
 
         INSTALL_DIR ${EXTPREFIX_openssl}
 

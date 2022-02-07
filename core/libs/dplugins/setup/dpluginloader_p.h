@@ -6,7 +6,7 @@
  * Date        : 2018-07-30
  * Description : manager to load external plugins at run-time: private container
  *
- * Copyright (C) 2018-2021 by Gilles Caulier <caulier dot gilles at gmail dot com>
+ * Copyright (C) 2018-2022 by Gilles Caulier <caulier dot gilles at gmail dot com>
  *
  * This program is free software; you can redistribute it
  * and/or modify it under the terms of the GNU General
@@ -66,6 +66,6 @@ public:
     QStringList           DKBlacklist;      ///< Showfoto specific plugins to ignore in digiKam.
 };
 
-} // namepace Digikam
+} // namespace Digikam
 
 #endif // DIGIKAM_DPLUGIN_LOADER_P_H

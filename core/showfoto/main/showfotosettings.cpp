@@ -7,7 +7,7 @@
  * Description : Settings for Showfoto
  *
  * Copyright (C) 2013-2014 by Mohamed_Anwer <m_dot_anwer at gmx dot com>
- * Copyright (C) 2013-2021 by Gilles Caulier <caulier dot gilles at gmail dot com>
+ * Copyright (C) 2013-2022 by Gilles Caulier <caulier dot gilles at gmail dot com>
  *
  * This program is free software; you can redistribute it
  * and/or modify it under the terms of the GNU General
@@ -268,16 +268,7 @@ void ShowfotoSettings::init()
     d->showPhotoDate           = true;
     d->showPhotoMode           = true;
 
-#ifdef HAVE_APPSTYLE_SUPPORT
-
     d->applicationStyle        = qApp->style()->objectName();
-
-#else
-
-    d->applicationStyle        = QLatin1String("Fusion");
-
-#endif
-
     d->applicationIcon         = QString();
     d->applicationFont         = QFontDatabase::systemFont(QFontDatabase::GeneralFont);
 }
@@ -293,9 +284,19 @@ void ShowfotoSettings::readSettings()
     d->updateWithDebug         = group.readEntry(d->configUpdateWithDebug,         false);
     d->rightSideBarStyle       = group.readEntry(d->configRightSideBarStyle,       0);
 
+#ifdef Q_OS_WIN
+
+    QString defaultStyle       = QLatin1String("Fusion");
+
+#else
+
+    QString defaultStyle       = qApp->style()->objectName();
+
+#endif
+
 #ifdef HAVE_APPSTYLE_SUPPORT
 
-    setApplicationStyle(group.readEntry(d->configApplicationStyle, qApp->style()->objectName()));
+    setApplicationStyle(group.readEntry(d->configApplicationStyle, defaultStyle));
 
 #else
 

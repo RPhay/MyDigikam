@@ -25,7 +25,7 @@ NPT_SelectableMessageQueue::NPT_SelectableMessageQueue()
         m_Pipe[1] = -1;
     }
 }
- 
+
 /*----------------------------------------------------------------------
 |    NPT_SelectableMessageQueue::~NPT_SelectableMessageQueue
 +---------------------------------------------------------------------*/
@@ -34,7 +34,7 @@ NPT_SelectableMessageQueue::~NPT_SelectableMessageQueue()
     close(m_Pipe[0]);
     close(m_Pipe[1]);
 }
- 
+
 /*----------------------------------------------------------------------
 |    NPT_SelectableMessageQueue::QueueMessage
 +---------------------------------------------------------------------*/
@@ -80,5 +80,5 @@ NPT_SelectableMessageQueue::FlushEvent()
 
     return NPT_SUCCESS;
 }
- 
+
 

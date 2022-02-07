@@ -6,7 +6,7 @@
  * Date        : 2006-10-12
  * Description : IPTC content settings page.
  *
- * Copyright (C) 2006-2021 by Gilles Caulier <caulier dot gilles at gmail dot com>
+ * Copyright (C) 2006-2022 by Gilles Caulier <caulier dot gilles at gmail dot com>
  *
  * This program is free software; you can redistribute it
  * and/or modify it under the terms of the GNU General
@@ -231,7 +231,7 @@ void IPTCContent::slotLineEditModified()
                        ledit);
 }
 
-void IPTCContent::readMetadata(DMetadata& meta)
+void IPTCContent::readMetadata(const DMetadata& meta)
 {
     blockSignals(true);
 
@@ -267,7 +267,7 @@ void IPTCContent::readMetadata(DMetadata& meta)
     blockSignals(false);
 }
 
-void IPTCContent::applyMetadata(DMetadata& meta)
+void IPTCContent::applyMetadata(const DMetadata& meta)
 {
     if (d->captionCheck->isChecked())
     {

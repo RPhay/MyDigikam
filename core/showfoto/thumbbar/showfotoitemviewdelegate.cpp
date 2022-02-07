@@ -68,6 +68,7 @@ ShowfotoItemViewDelegate::ShowfotoItemViewDelegate(ShowfotoItemViewDelegatePriva
 ShowfotoItemViewDelegate::~ShowfotoItemViewDelegate()
 {
     Q_D(ShowfotoItemViewDelegate);
+
     removeAllOverlays();
     delete d;
 }
@@ -181,6 +182,7 @@ void ShowfotoItemViewDelegate::mouseMoved(QMouseEvent* e, const QRect& visualRec
 void ShowfotoItemViewDelegate::setDefaultViewOptions(const QStyleOptionViewItem& option)
 {
     Q_D(ShowfotoItemViewDelegate);
+
     d->font = option.font;
     invalidatePaintingCache();
 }
@@ -198,6 +200,7 @@ void ShowfotoItemViewDelegate::slotSetupChanged()
 void ShowfotoItemViewDelegate::invalidatePaintingCache()
 {
     Q_D(ShowfotoItemViewDelegate);
+
     QSize oldGridSize = d->gridSize;
     updateSizeRectsAndPixmaps();
 
@@ -231,7 +234,7 @@ QRect ShowfotoItemViewDelegate::drawThumbnail(QPainter* p, const QRect& thumbRec
                            r.y() + (r.height() - thumbH) / 2,
                            thumbW, thumbH);
 
-     QPixmap borderPix = thumbnailBorderPixmap(actualPixmapRect.size());
+    QPixmap borderPix = thumbnailBorderPixmap(actualPixmapRect.size());
 
     p->drawPixmap(actualPixmapRect.x() - 3,
                   actualPixmapRect.y() - 3, borderPix);
@@ -246,6 +249,7 @@ QRect ShowfotoItemViewDelegate::drawThumbnail(QPainter* p, const QRect& thumbRec
 void ShowfotoItemViewDelegate::drawName(QPainter* p,const QRect& nameRect, const QString& name) const
 {
     Q_D(const ShowfotoItemViewDelegate);
+
     p->setFont(d->fontReg);
     p->drawText(nameRect, Qt::AlignCenter, name);   //squeezedTextCached(p, nameRect.width(), name));
 }
@@ -253,6 +257,7 @@ void ShowfotoItemViewDelegate::drawName(QPainter* p,const QRect& nameRect, const
 void ShowfotoItemViewDelegate::drawCreationDate(QPainter* p, const QRect& dateRect, const QDateTime& date) const
 {
     Q_D(const ShowfotoItemViewDelegate);
+
     p->setFont(d->fontXtra);
     QString str = dateToString(date);
     str         = i18nc("date of image creation", "created: %1", str);
@@ -328,6 +333,7 @@ void ShowfotoItemViewDelegate::drawImageSize(QPainter* p, const QRect& dimsRect,
 void ShowfotoItemViewDelegate::drawFileSize(QPainter* p, const QRect& r, qlonglong bytes) const
 {
     Q_D(const ShowfotoItemViewDelegate);
+
     p->setFont(d->fontXtra);
     p->drawText(r, Qt::AlignCenter, ItemPropertiesTab::humanReadableBytesCount(bytes));
 }
@@ -366,7 +372,7 @@ void ShowfotoItemViewDelegate::prepareFonts()
     d->fontXtra = d->font;
     d->fontCom.setItalic(true);
 
-    int fnSz = d->fontReg.pointSize();
+    int fnSz    = d->fontReg.pointSize();
 
     if (fnSz > 0)
     {

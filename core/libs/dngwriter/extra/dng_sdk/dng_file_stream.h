@@ -25,13 +25,13 @@
 
 class dng_file_stream: public dng_stream
 	{
-	
+
 	private:
-	
+
 		FILE *fFile;
-	
+
 	public:
-	
+
 		/// Open a stream on a file.
 		/// \param filename Pathname in platform synax.
 		/// \param output Set to true if writing, false otherwise.
@@ -48,25 +48,25 @@ class dng_file_stream: public dng_stream
 						 uint32 bufferSize = kDefaultBufferSize);
 
 		#endif	// qWinOS
-		
+
 		virtual ~dng_file_stream ();
-	
+
 	protected:
-	
+
 		virtual uint64 DoGetLength ();
-	
+
 		virtual void DoRead (void *data,
 							 uint32 count,
 							 uint64 offset);
-		
+
 		virtual void DoWrite (const void *data,
 							  uint32 count,
 							  uint64 offset);
-		
+
 	};
-		
+
 /*****************************************************************************/
 
 #endif
-	
+
 /*****************************************************************************/

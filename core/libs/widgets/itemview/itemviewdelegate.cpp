@@ -9,7 +9,7 @@
  * Copyright (C) 2002-2005 by Renchi Raju <renchi dot raju at gmail dot com>
  * Copyright (C) 2009      by Andi Clemens <andi dot clemens at gmail dot com>
  * Copyright (C) 2006-2011 by Marcel Wiesweg <marcel dot wiesweg at gmx dot de>
- * Copyright (C) 2002-2021 by Gilles Caulier <caulier dot gilles at gmail dot com>
+ * Copyright (C) 2002-2022 by Gilles Caulier <caulier dot gilles at gmail dot com>
  *
  * This program is free software; you can redistribute it
  * and/or modify it under the terms of the GNU General
@@ -562,15 +562,23 @@ void ItemViewDelegate::drawPanelSideIcon(QPainter* p, bool left, bool right) con
     if (left)
     {
         QRect r(3, d->rect.height()/2 - iconSize/2, iconSize, iconSize);
-        QIcon icon = QIcon::fromTheme(QLatin1String("go-previous"));
-        icon.paint(p, r);
+        p->setPen(QPen(Qt::gray));
+        p->setOpacity(0.50);
+        p->fillRect(r, Qt::SolidPattern);
+        QIcon icon = QIcon::fromTheme(QLatin1String("arrow-left"));
+        p->setOpacity(1.0);
+        icon.paint(p, r, Qt::AlignCenter, QIcon::Active, QIcon::On);
     }
 
     if (right)
     {
         QRect r(d->rect.width() - 3 - iconSize, d->rect.height()/2 - iconSize/2, iconSize, iconSize);
-        QIcon icon = QIcon::fromTheme(QLatin1String("go-next"));
-        icon.paint(p, r);
+        p->setPen(QPen(Qt::gray));
+        p->setOpacity(0.50);
+        p->fillRect(r, Qt::SolidPattern);
+        QIcon icon = QIcon::fromTheme(QLatin1String("arrow-right"));
+        p->setOpacity(1.0);
+        icon.paint(p, r, Qt::AlignCenter, QIcon::Active, QIcon::On);
     }
 }
 

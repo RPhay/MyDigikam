@@ -11,14 +11,14 @@
 | as published by the Free Software Foundation; either version 2
 | of the License, or (at your option) any later version.
 |
-| OEMs, ISVs, VARs and other distributors that combine and 
+| OEMs, ISVs, VARs and other distributors that combine and
 | distribute commercially licensed software with Platinum software
 | and do not wish to distribute the source code for the commercially
 | licensed software under version 2, or (at your option) any later
 | version, of the GNU General Public License (the "GPL") must enter
 | into a commercial license agreement with Plutinosoft, LLC.
 | licensing@plutinosoft.com
-|  
+|
 | This program is distributed in the hope that it will be useful,
 | but WITHOUT ANY WARRANTY; without even the implied warranty of
 | MERCHANTABILITY or FITNESS FOR A PARTICULAR PURPOSE.  See the
@@ -26,7 +26,7 @@
 |
 | You should have received a copy of the GNU General Public License
 | along with this program; see the file LICENSE.txt. If not, write to
-| the Free Software Foundation, Inc., 
+| the Free Software Foundation, Inc.,
 | 51 Franklin Street, Fifth Floor, Boston, MA  02110-1301, USA.
 | http://www.gnu.org/licenses/gpl-2.0.html
 |
@@ -71,9 +71,9 @@ public:
 
 protected:
     // PLT_HttpClientSocketTask methods
-    NPT_Result ProcessResponse(NPT_Result                    res, 
-                               const NPT_HttpRequest&        request, 
-                               const NPT_HttpRequestContext& context, 
+    NPT_Result ProcessResponse(NPT_Result                    res,
+                               const NPT_HttpRequest&        request,
+                               const NPT_HttpRequestContext& context,
                                NPT_HttpResponse*             response);
 
 protected:
@@ -108,7 +108,7 @@ public:
 +---------------------------------------------------------------------*/
 /**
  The PLT_CtrlPointGetSCPDsTask class fetches the SCPD xml document of one or more
- services for a given device. 
+ services for a given device.
  */
 class PLT_CtrlPointGetSCPDsTask : public PLT_HttpClientSocketTask
 {
@@ -128,10 +128,10 @@ public:
 
 protected:
     // PLT_HttpClientSocketTask methods
-    NPT_Result ProcessResponse(NPT_Result                    res, 
-                               const NPT_HttpRequest&        request, 
-                               const NPT_HttpRequestContext& context, 
-                               NPT_HttpResponse*             response);   
+    NPT_Result ProcessResponse(NPT_Result                    res,
+                               const NPT_HttpRequest&        request,
+                               const NPT_HttpRequestContext& context,
+                               NPT_HttpResponse*             response);
 
 protected:
     PLT_CtrlPoint*          m_CtrlPoint;
@@ -149,17 +149,17 @@ class PLT_CtrlPointInvokeActionTask : public PLT_HttpClientSocketTask
 {
 public:
     PLT_CtrlPointInvokeActionTask(NPT_HttpRequest*     request,
-                                  PLT_CtrlPoint*       ctrl_point, 
+                                  PLT_CtrlPoint*       ctrl_point,
                                   PLT_ActionReference& action,
                                   void*                userdata);
     virtual ~PLT_CtrlPointInvokeActionTask();
 
 protected:
     // PLT_HttpClientSocketTask methods
-    NPT_Result ProcessResponse(NPT_Result                    res, 
-                               const NPT_HttpRequest&        request, 
-                               const NPT_HttpRequestContext& context, 
-                               NPT_HttpResponse*             response);   
+    NPT_Result ProcessResponse(NPT_Result                    res,
+                               const NPT_HttpRequest&        request,
+                               const NPT_HttpRequestContext& context,
+                               NPT_HttpResponse*             response);
 
 protected:
     PLT_CtrlPoint*      m_CtrlPoint;
@@ -171,13 +171,13 @@ protected:
 |   PLT_CtrlPointHouseKeepingTask class
 +---------------------------------------------------------------------*/
 /**
- The PLT_CtrlPointHouseKeepingTask class is used by a PLT_CtrlPoint to keep 
- track of expired devices and autmatically renew event subscribers. 
+ The PLT_CtrlPointHouseKeepingTask class is used by a PLT_CtrlPoint to keep
+ track of expired devices and autmatically renew event subscribers.
  */
 class PLT_CtrlPointHouseKeepingTask : public PLT_ThreadTask
 {
 public:
-    PLT_CtrlPointHouseKeepingTask(PLT_CtrlPoint*   ctrl_point, 
+    PLT_CtrlPointHouseKeepingTask(PLT_CtrlPoint*   ctrl_point,
                                   NPT_TimeInterval timer = NPT_TimeInterval(5.));
 
 protected:
@@ -202,17 +202,17 @@ class PLT_CtrlPointSubscribeEventTask : public PLT_HttpClientSocketTask
 {
 public:
     PLT_CtrlPointSubscribeEventTask(NPT_HttpRequest*         request,
-                                    PLT_CtrlPoint*           ctrl_point, 
+                                    PLT_CtrlPoint*           ctrl_point,
                                     PLT_DeviceDataReference& device,
                                     PLT_Service*             service,
                                     void*                    userdata = NULL);
     virtual ~PLT_CtrlPointSubscribeEventTask();
-    
+
 protected:
     // PLT_HttpClientSocketTask methods
-    NPT_Result ProcessResponse(NPT_Result                    res, 
-                               const NPT_HttpRequest&        request, 
-                               const NPT_HttpRequestContext& context, 
+    NPT_Result ProcessResponse(NPT_Result                    res,
+                               const NPT_HttpRequest&        request,
+                               const NPT_HttpRequestContext& context,
                                NPT_HttpResponse*             response);
 
 protected:

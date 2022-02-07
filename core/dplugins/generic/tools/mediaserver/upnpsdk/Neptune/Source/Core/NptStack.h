@@ -42,7 +42,7 @@
 /*----------------------------------------------------------------------
 |   NPT_Stack
 +---------------------------------------------------------------------*/
-template <typename T> 
+template <typename T>
 class NPT_Stack : public NPT_List<T>
 {
 public:

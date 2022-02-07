@@ -117,7 +117,7 @@ TrashView::TrashView(QWidget* const parent)
     d->tableView->setSelectionBehavior(QAbstractItemView::SelectRows);
     d->tableView->setShowGrid(false);
     d->tableView->setSortingEnabled(true);
-    d->tableView->sortByColumn(2, Qt::DescendingOrder);
+    d->tableView->sortByColumn(DTrashItemModel::DTrashTimeStamp, Qt::DescendingOrder);
 
     // Action Buttons
 

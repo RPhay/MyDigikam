@@ -7,7 +7,7 @@
  * Description : Thumbnail bar for Showfoto
  *
  * Copyright (C) 2013      by Mohamed_Anwer <m_dot_anwer at gmx dot com>
- * Copyright (C) 2013-2021 by Gilles Caulier <caulier dot gilles at gmail dot com>
+ * Copyright (C) 2013-2022 by Gilles Caulier <caulier dot gilles at gmail dot com>
  *
  * This program is free software you can redistribute it
  * and/or modify it under the terms of the GNU General
@@ -41,7 +41,7 @@ class ShowfotoThumbnailBar : public ShowfotoCategorizedView
 public:
 
     explicit ShowfotoThumbnailBar(QWidget* const parent = nullptr);
-    ~ShowfotoThumbnailBar() override;
+    ~ShowfotoThumbnailBar()                                   override;
 
     /**
      * This installs a duplicate filter model, if the ShwofotoItemModel may contain duplicates.
@@ -54,7 +54,11 @@ public:
     QModelIndex firstIndex()                            const;
     QModelIndex lastIndex()                             const;
 
-    /// Sets the policy always for the one scroll bar which is relevant, depending on orientation
+    int thumbnailIndexForUrl(const QUrl& url)           const;
+
+    /**
+     * Sets the policy always for the one scroll bar which is relevant, depending on orientation.
+     */
     void setScrollBarPolicy(Qt::ScrollBarPolicy policy);
     void setFlow(QListView::Flow newFlow);
 
@@ -68,8 +72,8 @@ public Q_SLOTS:
 
 protected:
 
-    void slotSetupChanged() override;
-    bool event(QEvent*)     override;
+    void slotSetupChanged()                                   override;
+    bool event(QEvent*)                                       override;
 
 private:
 

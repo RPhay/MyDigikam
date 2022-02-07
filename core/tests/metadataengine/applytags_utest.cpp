@@ -6,7 +6,7 @@
  * Date        : 2018-10-30
  * Description : An unit-test to read metadata and apply tag paths to item with DMetadata.
  *
- * Copyright (C) 2019-2021 by Gilles Caulier <caulier dot gilles at gmail dot com>
+ * Copyright (C) 2019-2022 by Gilles Caulier <caulier dot gilles at gmail dot com>
  *
  * This program is free software; you can redistribute it
  * and/or modify it under the terms of the GNU General
@@ -57,11 +57,11 @@ void ApplyTagsTest::testApplyTagsToMetadata()
     {
         settings.metadataWritingMode = DMetadata::WRITE_TO_FILE_ONLY;
 
-        applyTags(m_originalImageFolder + QLatin1String("20160821035715.jpg"),
+        applyTags(m_originalImageFolder + QLatin1String("2015-07-22_00001.JPG"),
                   QStringList() << QLatin1String("test"),
                   settings,
-                  false,       // NOTE: image is corrupted => no expected crash
-                  false);
+                  true,       // NOTE: image is corrupted => no expected crash
+                  true);
     }
 }
 

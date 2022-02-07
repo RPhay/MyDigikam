@@ -47,8 +47,9 @@ extern const double  meterInMiles;
  */
 typedef QPair<QString, QString> Parameter;
 extern QHttpMultiPart* getMultiPart(const QList<Parameter>& parameters,
-                                    const QString& imageName = QString(),
-                                    const QString& imagePath = QString());
+                                    const QString& imageName,
+                                    const QString& imageNameArg,
+                                    const QString& imagePath);
 
 /**
  * distance in meters between two geolocations

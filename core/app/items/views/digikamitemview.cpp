@@ -7,7 +7,7 @@
  * Description : Qt model-view for items
  *
  * Copyright (C) 2009-2011 by Marcel Wiesweg <marcel dot wiesweg at gmx dot de>
- * Copyright (C) 2009-2021 by Gilles Caulier <caulier dot gilles at gmail dot com>
+ * Copyright (C) 2009-2022 by Gilles Caulier <caulier dot gilles at gmail dot com>
  * Copyright (C) 2011      by Andi Clemens <andi dot clemens at gmail dot com>
  * Copyright (C) 2013      by Michael G. Hansen <mike at mghansen dot de>
  * Copyright (C) 2014      by Mohamed_Anwer <m_dot_anwer at gmx dot com>
@@ -396,6 +396,9 @@ void DigikamItemView::addAssignNameOverlay(ItemDelegate* delegate)
 
     connect(nameOverlay, SIGNAL(unknownFaces(QList<QModelIndex>)),
             this, SLOT(unknownFaces(QList<QModelIndex>)));
+
+    connect(nameOverlay, SIGNAL(ignoreFaces(QList<QModelIndex>)),
+            this, SLOT(ignoreFaces(QList<QModelIndex>)));
 }
 
 void DigikamItemView::confirmFaces(const QList<QModelIndex>& indexes, int tagId)
@@ -442,6 +445,8 @@ void DigikamItemView::confirmFaces(const QList<QModelIndex>& indexes, int tagId)
     {
         d->editPipeline.confirm(infos[i], faces[i], tagId);
     }
+
+    clearSelection();
 }
 
 void DigikamItemView::removeFaces(const QList<QModelIndex>& indexes)
@@ -463,6 +468,8 @@ void DigikamItemView::removeFaces(const QList<QModelIndex>& indexes)
     {
         d->editPipeline.remove(infos[i], faces[i]);
     }
+
+    clearSelection();
 }
 
 void DigikamItemView::unknownFaces(const QList<QModelIndex>& indexes)
@@ -485,6 +492,8 @@ void DigikamItemView::unknownFaces(const QList<QModelIndex>& indexes)
         d->editPipeline.editTag(infos[i], faces[i],
                                 FaceTags::unknownPersonTagId());
     }
+
+    clearSelection();
 }
 
 void DigikamItemView::rejectFaces(const QList<QModelIndex>& indexes)
@@ -517,6 +526,44 @@ void DigikamItemView::rejectFaces(const QList<QModelIndex>& indexes)
             d->editPipeline.editTag(infos[i], faces[i], FaceTags::unknownPersonTagId());
         }
     }
+
+    clearSelection();
+}
+
+void DigikamItemView::ignoreFaces(const QList<QModelIndex>& indexes)
+{
+    QList<ItemInfo> infos;
+    QList<FaceTagsIface> faces;
+    QList<QModelIndex> sourceIndexes;
+
+    foreach (const QModelIndex& index, indexes)
+    {
+        faces         << d->faceDelegate->face(index);
+        infos         << ItemModel::retrieveItemInfo(index);
+        sourceIndexes << imageSortFilterModel()->mapToSourceItemModel(index);
+    }
+
+    imageAlbumModel()->removeIndexes(sourceIndexes);
+
+    for (int i = 0 ; i < infos.size() ; ++i)
+    {
+        d->editPipeline.editTag(infos[i], faces[i],
+                                FaceTags::ignoredPersonTagId());
+    }
+
+    clearSelection();
+}
+
+QList<int> DigikamItemView::getFaceIds(const QList<QModelIndex>& indexes) const
+{
+    QList<int> ids;
+
+    foreach (const QModelIndex& index, indexes)
+    {
+        ids << d->faceDelegate->face(index).tagId();
+    }
+
+    return ids;
 }
 
 void DigikamItemView::activated(const ItemInfo& info, Qt::KeyboardModifiers modifiers)
@@ -650,7 +697,7 @@ void DigikamItemView::rename()
         if (!newNamesList.isEmpty())
         {
             QPointer<AdvancedRenameProcessDialog> dlg2 = new AdvancedRenameProcessDialog(newNamesList, this);
-            dlg2->exec();
+            (void)dlg2->exec();
 
             imageFilterModel()->invalidate();
             urls = dlg2->failedUrls();
@@ -715,6 +762,18 @@ void DigikamItemView::slotInitProgressIndicator()
         connect(&d->editPipeline, SIGNAL(finished()),
                 item, SLOT(slotCompleted()));
     }
+}
+
+void DigikamItemView::scrollTo(const QModelIndex& index, ScrollHint hint)
+{
+    // we do not want to change the view, when in the "Thumbnails" view in "People"
+    // see bugs 444692, 40232, ...
+    if ((viewMode() == QListView::IconMode) && (getFaceMode()))
+    {
+        return;
+    }
+
+    DCategorizedView::scrollTo(index, hint);
 }
 
 } // namespace Digikam

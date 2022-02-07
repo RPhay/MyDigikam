@@ -8,7 +8,7 @@
  *
  * Copyright (C) 2016-2018 by Mario Frank <mario dot frank at uni minus potsdam dot de>
  * Copyright (C) 2003      by Ricardo Niederberger Cabral <nieder at mail dot ru>
- * Copyright (C) 2009-2021 by Gilles Caulier <caulier dot gilles at gmail dot com>
+ * Copyright (C) 2009-2022 by Gilles Caulier <caulier dot gilles at gmail dot com>
  * Copyright (C) 2009-2013 by Marcel Wiesweg <marcel dot wiesweg at gmx dot de>
  * Copyright (C) 2009-2011 by Andi Clemens <andi dot clemens at gmail dot com>
  *
@@ -196,7 +196,7 @@ bool HaarIface::Private::retrieveSignatureFromCache(qlonglong imageId, Haar::Sig
 
     if (m_signatureCache->contains(imageId))
     {
-        data = m_signatureCache.get()->value(imageId);
+        data = m_signatureCache.data()->value(imageId);
 
         return true;
     }
@@ -216,17 +216,17 @@ void HaarIface::Private::setImageDataFromImage(const DImg& image)
 
 SignatureCache* HaarIface::Private::signatureCache() const
 {
-    return m_signatureCache.get();
+    return m_signatureCache.data();
 }
 
 AlbumCache* HaarIface::Private::albumCache() const
 {
-    return m_albumCache.get();
+    return m_albumCache.data();
 }
 
 Haar::ImageData* HaarIface::Private::imageData() const
 {
-    return m_data.get();
+    return m_data.data();
 }
 
 void HaarIface::Private::setAlbumRootsToSearch(const QSet<int>& albumRootIds)

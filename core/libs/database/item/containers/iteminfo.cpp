@@ -8,7 +8,7 @@
  *
  * Copyright (C) 2005      by Renchi Raju <renchi dot raju at gmail dot com>
  * Copyright (C) 2007-2013 by Marcel Wiesweg <marcel dot wiesweg at gmx dot de>
- * Copyright (C) 2009-2021 by Gilles Caulier <caulier dot gilles at gmail dot com>
+ * Copyright (C) 2009-2022 by Gilles Caulier <caulier dot gilles at gmail dot com>
  * Copyright (C) 2013      by Michael G. Hansen <mike at mghansen dot de>
  *
  * This program is free software; you can redistribute it
@@ -101,7 +101,6 @@ ItemInfo::ItemInfo(qlonglong ID)
             // invalid image id
 
             ItemInfoStatic::cache()->dropInfo(m_data);
-            m_data.reset();
         }
     }
 }
@@ -109,7 +108,6 @@ ItemInfo::ItemInfo(qlonglong ID)
 ItemInfo::~ItemInfo()
 {
     ItemInfoStatic::cache()->dropInfo(m_data);
-    m_data.reset();
 }
 
 ItemInfo::ItemInfo(const ItemInfo& info)
@@ -214,7 +212,7 @@ ItemInfo ItemInfo::fromLocationAlbumAndName(int locationId, const QString& album
         if (!shortInfo.id)
         {
             qCWarning(DIGIKAM_DATABASE_LOG) << "No itemShortInfo could be retrieved from the database for image" << name;
-            info.m_data.reset();
+
             return info;
         }
 

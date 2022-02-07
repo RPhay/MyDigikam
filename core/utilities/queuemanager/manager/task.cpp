@@ -6,7 +6,7 @@
  * Date        : 2009-02-06
  * Description : Thread actions task.
  *
- * Copyright (C) 2009-2021 by Gilles Caulier <caulier dot gilles at gmail dot com>
+ * Copyright (C) 2009-2022 by Gilles Caulier <caulier dot gilles at gmail dot com>
  * Copyright (C) 2012      by Pankaj Kumar <me at panks dot me>
  *
  * This program is free software; you can redistribute it
@@ -248,26 +248,37 @@ void Task::run()
 
     // Move processed temp file to target
 
+    QString renameMess;
     QUrl dest = workUrl;
     dest.setPath(dest.path() + QLatin1Char('/') + d->tools.m_destFileName);
-    QString renameMess;
 
     if (QFileInfo::exists(dest.toLocalFile()))
     {
-        if (d->settings.conflictRule != FileSaveConflictBox::OVERWRITE)
+        if      (d->settings.conflictRule == FileSaveConflictBox::OVERWRITE)
+        {
+            renameMess = i18n("(overwritten)");
+        }
+        else if (d->settings.conflictRule == FileSaveConflictBox::DIFFNAME)
         {
             dest       = DFileOperations::getUniqueFileUrl(dest);
             renameMess = i18n("(renamed to %1)", dest.fileName());
         }
         else
         {
-            renameMess = i18n("(overwritten)");
+            emitActionData(ActionData::BatchSkipped,
+                           i18n("Item exists and was skipped"), dest);
+
+            removeTempFiles(QList<QUrl>() << outUrl);
+
+            emit signalDone();
+
+            return;
         }
     }
 
     if (QFileInfo(outUrl.toLocalFile()).size() == 0)
     {
-        QFile::remove(outUrl.toLocalFile());
+        removeTempFiles(QList<QUrl>() << outUrl);
         dest.clear();
     }
 

@@ -6,7 +6,7 @@
  * Date        : 25/08/2013
  * Description : Image Quality Parser
  *
- * Copyright (C) 2013-2021 by Gilles Caulier <caulier dot gilles at gmail dot com>
+ * Copyright (C) 2013-2022 by Gilles Caulier <caulier dot gilles at gmail dot com>
  * Copyright (C) 2013-2014 by Gowtham Ashok <gwty93 at gmail dot com>
  *
  * This program is free software; you can redistribute it
@@ -31,15 +31,19 @@
 #include "digikam_export.h"
 #include "digikam_globals.h"
 #include "imagequalitycontainer.h"
+#include "digikam_opencv.h"
 
 namespace Digikam
 {
 
-class DIGIKAM_EXPORT ImageQualityParser
+class DIGIKAM_EXPORT ImageQualityParser : public QObject
 {
+    Q_OBJECT
+
 public:
 
-    /** Standard constructor with picklabel container to fill at end of analyze.
+    /**
+     * Standard constructor with picklabel container to fill at end of analyze.
      */
     explicit ImageQualityParser(const DImg& image,
                                 const ImageQualityContainer& settings,
@@ -51,31 +55,6 @@ public:
      */
     void startAnalyse();
     void cancelAnalyse();
-
-private:
-
-    /**
-     * Internal method dedicated to convert DImg pixels from integer values to float values.
-     * These ones will by used internally by ImageQualityParser through OpenCV API.
-     */
-    void readImage()                                    const;
-
-    /**
-     * @function cannyThreshold
-     * @brief Trackbar callback - Canny thresholds input with a ratio 1:3
-     */
-    void   cannyThreshold(int, void*)                   const;
-
-    double blurDetector()                               const;
-    short  blurDetector2()                              const;
-    double noiseDetector()                              const;
-    int    compressionDetector()                        const;
-
-    /**
-     * Detect under and over exposure amount in image. A pure white mask is computed and
-     * a count of pure color pixels is used to evaluate the over-exposition of shot.
-     */
-    void exposureAmount(double& under, double& over)    const;
 
 private:
 

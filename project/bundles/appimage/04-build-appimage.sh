@@ -3,7 +3,7 @@
 # Script to bundle data using previously-built KF5 with digiKam installation
 # and create a Linux AppImage bundle file.
 #
-# Copyright (c) 2015-2021 by Gilles Caulier  <caulier dot gilles at gmail dot com>
+# Copyright (c) 2015-2022 by Gilles Caulier  <caulier dot gilles at gmail dot com>
 #
 # Redistribution and use is allowed according to the terms of the BSD license.
 # For details see the accompanying COPYING-CMAKE-SCRIPTS file.
@@ -56,23 +56,6 @@ DK_RELEASEID=`cat $ORIG_WD/data/RELEASEID.txt`
 
 #################################################################################################
 
-echo -e "---------- Build icons-set ressource\n"
-
-cd $ORIG_WD/icon-rcc
-
-rm -f CMakeCache.txt > /dev/null
-rm -f *.rcc > /dev/null
-
-/opt/cmake/bin/cmake -DCMAKE_INSTALL_PREFIX="/usr" \
-      -DCMAKE_BUILD_TYPE=debug \
-      -DCMAKE_COLOR_MAKEFILE=ON \
-      -Wno-dev \
-      .
-
-make -j$CPU_CORES
-
-#################################################################################################
-
 echo -e "---------- Prepare directories in bundle\n"
 
 # Make sure we build from the /, parts of this script depends on that. We also need to run as root...
@@ -110,39 +93,39 @@ rm -fr ./usr/plugins/konsolepart.so
 
 echo -e "------------- Copy runtime data files\n"
 
-cp -r /usr/share/digikam                  ./usr/share
-cp -r /usr/share/showfoto                 ./usr/share
-cp $ORIG_WD/icon-rcc/breeze.rcc           ./usr/share/digikam
-cp $ORIG_WD/icon-rcc/breeze-dark.rcc      ./usr/share/digikam
+cp -r /usr/share/digikam                                  ./usr/share
+cp -r /usr/share/showfoto                                 ./usr/share
+cp    /usr/share/icons/breeze/breeze-icons.rcc            ./usr/share/digikam/breeze.rcc
+cp    /usr/share/icons/breeze-dark/breeze-icons-dark.rcc  ./usr/share/digikam/breeze-dark.rcc
 
 cd $APP_IMG_DIR/usr/share/showfoto
-ln -s ../digikam/breeze.rcc               breeze.rcc
-ln -s ../digikam/breeze-dark.rcc          breeze-dark.rcc
+ln -s ../digikam/breeze.rcc                               breeze.rcc
+ln -s ../digikam/breeze-dark.rcc                          breeze-dark.rcc
 
 cd $APP_IMG_DIR
-cp $ORIG_WD/data/qt.conf                  ./usr/bin
-cp -r /usr/share/lensfun                  ./usr/share
-cp -r /usr/share/knotifications5          ./usr/share
-cp -r /usr/share/kservices5               ./usr/share
-cp -r /usr/share/kservicetypes5           ./usr/share
-cp -r /usr/share/kxmlgui5                 ./usr/share
-cp -r /usr/share/kf5                      ./usr/share
-cp -r /usr/share/solid                    ./usr/share
+cp $ORIG_WD/data/qt.conf                                  ./usr/bin
+cp -r /usr/share/lensfun                                  ./usr/share
+cp -r /usr/share/knotifications5                          ./usr/share
+cp -r /usr/share/kservices5                               ./usr/share
+cp -r /usr/share/kservicetypes5                           ./usr/share
+cp -r /usr/share/kxmlgui5                                 ./usr/share
+cp -r /usr/share/kf5                                      ./usr/share
+cp -r /usr/share/solid                                    ./usr/share
 
 # depending of OpenCV version installed, data directory is not the same.
-cp -r /usr/share/OpenCV                   ./usr/share  || true
-cp -r /usr/share/opencv4                  ./usr/share  || true
+cp -r /usr/share/OpenCV                                   ./usr/share  || true
+cp -r /usr/share/opencv4                                  ./usr/share  || true
 
-cp -r /usr/share/dbus-1/interfaces/kf5*   ./usr/share/dbus-1/interfaces/
-cp -r /usr/share/dbus-1/services/*kde*    ./usr/share/dbus-1/services/
-cp -r /usr/${LIBSUFFIX}/libexec/kf5       ./usr/lib/libexec/
+cp -r /usr/share/dbus-1/interfaces/kf5*                   ./usr/share/dbus-1/interfaces/
+cp -r /usr/share/dbus-1/services/*kde*                    ./usr/share/dbus-1/services/
+cp -r /usr/${LIBSUFFIX}/libexec/kf5                       ./usr/lib/libexec/
 
-echo -e "------------- Copy AppImage stream data file\n"
+echo -e "------------- Copy AppImage stream data filess\n"
 
-cp -r /usr/share/metainfo/org.kde.digikam.appdata.xml   ./usr/share/metainfo/digikam.appdata.xml
-cp -r /usr/share/metainfo/org.kde.showfoto.appdata.xml  ./usr/share/metainfo/showfoto.appdata.xml
+cp -r /usr/share/metainfo/org.kde.digikam.appdata.xml     ./usr/share/metainfo
+cp -r /usr/share/metainfo/org.kde.showfoto.appdata.xml    ./usr/share/metainfo
 
-# NOTE: no ressources data are provided with QtWebKit
+# NOTE: no resources data are provided with QtWebKit
 
 if [[ $DK_QTWEBENGINE = 1 ]] ; then
 
@@ -159,14 +142,14 @@ find  /usr/${LIBSUFFIX}/libgphoto2_port -name "*.so" -type f -exec cp {} ./usr/l
 
 echo -e "------------- Copy sane backends\n"
 
-cp -r /usr/${LIBSUFFIX}/sane              ./usr/lib
-cp -r /etc/sane.d                         ./usr/etc
+cp -r /usr/${LIBSUFFIX}/sane                            ./usr/lib
+cp -r /etc/sane.d                                       ./usr/etc
 
 echo -e "------------- Copy ImageMagick codecs\n"
 
 # NOTE: even with 64 bits, magick .so files are stored in /usr/lib
 
-cp -r /usr/lib64/ImageMagick*/modules*    ./usr/lib
+cp -r /usr/lib64/ImageMagick*/modules*                  ./usr/lib
 
 echo -e "------------- Copy I18n\n"
 
@@ -177,7 +160,7 @@ if [[ -e /usr/translations ]]; then
     echo -e "------------- Copy Qt translations files\n"
 
     cp -r /usr/translations ./usr/share/digikam
-    ln -s ./usr/share/digikam/translations ./usr/share/showfoto/translations
+    ln -s ../digikam/translations ./usr/share/showfoto/translations
 
     # optimizations
 
@@ -224,6 +207,19 @@ echo -e "---------- Copy Marble data and plugins files\n"
 cp -r /usr/${LIBSUFFIX}/marble/plugins/ ./usr/bin/
 
 cp -r /usr/share/marble/data            ./usr/bin/
+
+echo -e "---------- Copy Git Revisions Manifest\n"
+
+touch ./usr/share/digikam/MANIFEST.txt
+
+FILES=$(ls $ORIG_WD/data/*_manifest.txt)
+
+for FILE in $FILES ; do
+    echo $FILE
+    cat $FILE >> ./usr/share/digikam/MANIFEST.txt
+done
+
+ln -s ../digikam/MANIFEST.txt           ./usr/share/showfoto/MANIFEST.txt || true
 
 echo -e "---------- Copy system libraries for binary compatibility\n"
 
@@ -313,7 +309,8 @@ echo -e "---------- Clean-up Bundle Directory Contents\n"
 
 # This list is taken from linuxdeplotqt
 # [https://github.com/probonopd/linuxdeployqt/blob/master/tools/linuxdeployqt/excludelist.h]
-# NOTE: libglapi is included explicity in Krita exclude list.
+# NOTE: libglapi is included explicitly in Krita exclude list.
+# NOTE: with the transition from Mageia6 to 7 to build AppImage libnss* must be included in the bundle (see bug #440689)
 EXCLUDE_FILES="\
 ld-linux.so.2 \
 ld-linux-x86-64.so.2 \
@@ -343,15 +340,6 @@ libjack.so.0 \
 libm.so.6 \
 libmvec.so.1 \
 libnsl.so.1 \
-libnss_compat.so.2 \
-libnss_db.so.2 \
-libnss_dns.so.2 \
-libnss_files.so.2 \
-libnss_hesiod.so.2 \
-libnss_nisplus.so.2 \
-libnss_nis.so.2 \
-libnss3.so \
-libnssutil3.so \
 libp11-kit.so.0 \
 libpangocairo-1.0.so.0 \
 libpthread.so.0 \
@@ -370,7 +358,7 @@ libxcb.so.1 \
 
 for FILE in $EXCLUDE_FILES ; do
     if [[ -f usr/lib/${FILE} ]] ; then
-        echo -e "   ==> ${FILE} will be removed for the bundle"
+        echo -e "   ==> ${FILE} will be removed from the bundle"
         rm -f usr/lib/${FILE}
     fi
 done
@@ -415,12 +403,12 @@ libxcb-dri3.so.0 \
 
 for FILE in $EXTRA_EXCLUDE_FILES ; do
     if [[ -f usr/lib/${FILE} ]] ; then
-        echo -e "   ==> ${FILE} will be removed for the bundle"
+        echo -e "   ==> ${FILE} will be removed from the bundle"
         rm -f usr/lib/${FILE}
     fi
 done
 
-ln -s libssl.so.1.0.0 usr/lib/libssl.so || true
+ln -s libssl.so.1.1 usr/lib/libssl.so || true
 
 # We don't bundle the developer stuff
 rm -rf usr/include         || true
@@ -436,7 +424,7 @@ rm -rf usr/share/pkgconfig || true
 echo -e "---------- Strip Symbols in Binaries Files\n"
 
 if [[ $DK_DEBUG = 1 ]] ; then
-    FILES=$(find . -type f -executable | grep -Ev '(digikam|showfoto|exiv2)')
+    FILES=$(find . -type f -executable | grep -Ev '(digikam|showfoto)')
 else
     FILES=$(find . -type f -executable)
 fi

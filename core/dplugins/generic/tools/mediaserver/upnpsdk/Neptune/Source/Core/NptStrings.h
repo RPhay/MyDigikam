@@ -61,7 +61,7 @@ public:
     static NPT_String FromInteger(NPT_Int64 value);
     static NPT_String FromIntegerU(NPT_UInt64 value);
     static NPT_String Format(const char* format, ...);
-    
+
     // constructors
     NPT_String(const NPT_String& str);
     NPT_String(const char* str);
@@ -92,14 +92,14 @@ public:
         return SubString(0, length);
     }
     NPT_String Right(NPT_Size length) const {
-        return length >= GetLength() ? 
-               *this : 
+        return length >= GetLength() ?
+               *this :
                SubString(GetLength()-length, length);
     }
     NPT_List<NPT_String> Split(const char* separator) const;
     NPT_Array<NPT_String> SplitAny(const char* separator) const;
     static NPT_String Join(NPT_List<NPT_String>& args, const char* separator);
-    
+
     // buffer management
     void       Reserve(NPT_Size length);
 
@@ -119,7 +119,7 @@ public:
     NPT_Result ToInteger64(NPT_Int64& value, bool relaxed = true) const;
     NPT_Result ToInteger64(NPT_UInt64& value, bool relaxed = true) const;
     NPT_Result ToFloat(float& value, bool relaxed = true) const;
-    
+
     // processing
     void MakeLowercase();
     void MakeUppercase();
@@ -226,28 +226,28 @@ protected:
         }
 
         // methods
-        char* GetChars() { 
+        char* GetChars() {
             // return a pointer to the first char
-            return reinterpret_cast<char*>(this+1); 
+            return reinterpret_cast<char*>(this+1);
         }
         NPT_Size GetLength() const      { return m_Length; }
         void SetLength(NPT_Size length) { m_Length = length; }
         NPT_Size GetAllocated() const   { return m_Allocated; }
         void Destroy() { ::operator delete((void*)this); }
-        
+
     private:
         // methods
-        Buffer(NPT_Size allocated, NPT_Size length = 0) : 
+        Buffer(NPT_Size allocated, NPT_Size length = 0) :
             m_Length(length),
             m_Allocated(allocated) {}
-        
+
         // members
         NPT_Cardinal m_Length;
         NPT_Cardinal m_Allocated;
         // the actual string data follows
 
     };
-    
+
     // members
     char* m_Chars;
 
@@ -259,12 +259,12 @@ private:
     static char EmptyString;
 
     // methods
-    Buffer* GetBuffer() const { 
+    Buffer* GetBuffer() const {
         return reinterpret_cast<Buffer*>(m_Chars)-1;
     }
-    void Reset() { 
+    void Reset() {
         if (m_Chars != NULL) {
-            delete GetBuffer(); 
+            delete GetBuffer();
             m_Chars = NULL;
         }
     }
@@ -275,11 +275,11 @@ private:
     static void CopyString(char* dst, const char* src) {
         while ((*dst++ = *src++)){}
     }
-    
+
     static void CopyBuffer(char* dst, const char* src, NPT_Size size) {
         while (size--) *dst++ = *src++;
     }
-    
+
     static NPT_Size StringLength(const char* str) {
         NPT_Size length = 0;
         while (*str++) length++;
@@ -290,59 +290,59 @@ private:
 /*----------------------------------------------------------------------
 |   external operators
 +---------------------------------------------------------------------*/
-inline bool operator==(const NPT_String& s1, const NPT_String& s2) { 
-    return s1.Compare(s2) == 0; 
+inline bool operator==(const NPT_String& s1, const NPT_String& s2) {
+    return s1.Compare(s2) == 0;
 }
 inline bool operator==(const NPT_String& s1, const char* s2) {
-    return s1.Compare(s2) == 0; 
+    return s1.Compare(s2) == 0;
 }
 inline bool operator==(const char* s1, const NPT_String& s2) {
-    return s2.Compare(s1) == 0; 
+    return s2.Compare(s1) == 0;
 }
 inline bool operator!=(const NPT_String& s1, const NPT_String& s2) {
-    return s1.Compare(s2) != 0; 
+    return s1.Compare(s2) != 0;
 }
 inline bool operator!=(const NPT_String& s1, const char* s2) {
-    return s1.Compare(s2) != 0; 
+    return s1.Compare(s2) != 0;
 }
 inline bool operator!=(const char* s1, const NPT_String& s2) {
-    return s2.Compare(s1) != 0; 
+    return s2.Compare(s1) != 0;
 }
 inline bool operator<(const NPT_String& s1, const NPT_String& s2) {
-    return s1.Compare(s2) < 0; 
+    return s1.Compare(s2) < 0;
 }
 inline bool operator<(const NPT_String& s1, const char* s2) {
-    return s1.Compare(s2) < 0; 
+    return s1.Compare(s2) < 0;
 }
 inline bool operator<(const char* s1, const NPT_String& s2) {
-    return s2.Compare(s1) > 0; 
+    return s2.Compare(s1) > 0;
 }
 inline bool operator>(const NPT_String& s1, const NPT_String& s2) {
-    return s1.Compare(s2) > 0; 
+    return s1.Compare(s2) > 0;
 }
 inline bool operator>(const NPT_String& s1, const char* s2) {
-    return s1.Compare(s2) > 0; 
+    return s1.Compare(s2) > 0;
 }
 inline bool operator>(const char* s1, const NPT_String& s2) {
-    return s2.Compare(s1) < 0; 
+    return s2.Compare(s1) < 0;
 }
 inline bool operator<=(const NPT_String& s1, const NPT_String& s2) {
-    return s1.Compare(s2) <= 0; 
+    return s1.Compare(s2) <= 0;
 }
 inline bool operator<=(const NPT_String& s1, const char* s2) {
-    return s1.Compare(s2) <= 0; 
+    return s1.Compare(s2) <= 0;
 }
 inline bool operator<=(const char* s1, const NPT_String& s2) {
-    return s2.Compare(s1) >= 0; 
+    return s2.Compare(s1) >= 0;
 }
 inline bool operator>=(const NPT_String& s1, const NPT_String& s2) {
-    return s1.Compare(s2) >= 0; 
+    return s1.Compare(s2) >= 0;
 }
 inline bool operator>=(const NPT_String& s1, const char* s2) {
-    return s1.Compare(s2) >= 0; 
+    return s1.Compare(s2) >= 0;
 }
 inline bool operator>=(const char* s1, const NPT_String& s2) {
-    return s2.Compare(s1) <= 0; 
+    return s2.Compare(s1) <= 0;
 }
 
 /*----------------------------------------------------------------------

@@ -6,7 +6,7 @@
  * Date        : 2007-02-06
  * Description : setup RAW decoding settings.
  *
- * Copyright (C) 2007-2021 by Gilles Caulier <caulier dot gilles at gmail dot com>
+ * Copyright (C) 2007-2022 by Gilles Caulier <caulier dot gilles at gmail dot com>
  *
  * This program is free software; you can redistribute it
  * and/or modify it under the terms of the GNU General
@@ -31,6 +31,8 @@
 
 #include "setupraw.h"
 
+using namespace Digikam;
+
 namespace ShowFoto
 {
 
@@ -44,8 +46,8 @@ public:
     {
     }
 
-    QTabWidget*        tab;
-    Digikam::SetupRaw* raw;
+    QTabWidget* tab;
+    SetupRaw*   raw;
 };
 
 ShowfotoSetupRaw::ShowfotoSetupRaw(QWidget* const parent)
@@ -53,7 +55,7 @@ ShowfotoSetupRaw::ShowfotoSetupRaw(QWidget* const parent)
       d          (new Private)
 {
     d->tab = new QTabWidget;
-    d->raw = new Digikam::SetupRaw(d->tab);
+    d->raw = new SetupRaw(d->tab);
 
     setWidget(d->tab);
     setWidgetResizable(true);

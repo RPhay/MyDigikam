@@ -6,7 +6,7 @@
  * Date        : 2019-09-18
  * Description : DarkTable raw import plugin.
  *
- * Copyright (C) 2019      by Gilles Caulier <caulier dot gilles at gmail dot com>
+ * Copyright (C) 2019-2022 by Gilles Caulier <caulier dot gilles at gmail dot com>
  *
  * Lua script inspired from Darktable Gimp plugin by Tobias Ellinghaus
  *
@@ -83,7 +83,7 @@ const QString DarkTableRawImportPlugin::Private::luaScriptData = QLatin1String(
     "\n"                                                                                                    \
     "local export_filename = dt.preferences.read(\"export_on_exit\", \"export_filename\", \"string\")\n"    \
     "\n"                                                                                                    \
-    "dt.register_event(\"exit\", function()\n"                                                              \
+    "function exit_function()\n"                                                                            \
     "  -- safegurad against someone using this with their library containing 50k images\n"                  \
     "  if #dt.database > 1 then\n"                                                                          \
     "    dt.print_error(\"too many images, only exporting the first\")\n"                                   \
@@ -102,12 +102,18 @@ const QString DarkTableRawImportPlugin::Private::luaScriptData = QLatin1String(
     "    format:write_image(image, export_filename)\n"                                                      \
     "    break -- only export one image. see above for the reason\n"                                        \
     "  end\n"                                                                                               \
-    "end)\n"                                                                                                \
+    "end\n"                                                                                                 \
+    "\n"                                                                                                    \
+    "if dt.configuration.api_version_string >= \"6.2.1\" then\n"                                            \
+    "dt.register_event(\"fileraw\", \"exit\", exit_function)\n"                                             \
+    "else\n"                                                                                                \
+    "dt.register_event(\"exit\", exit_function)\n"                                                          \
+    "end\n"                                                                                                 \
 );
 
 DarkTableRawImportPlugin::DarkTableRawImportPlugin(QObject* const parent)
     : DPluginRawImport(parent),
-      d(new Private)
+      d               (new Private)
 {
     d->luaFile.open();
     QTextStream stream(&d->luaFile);
@@ -169,7 +175,7 @@ bool DarkTableRawImportPlugin::run(const QString& filePath, const DRawDecoding& 
 
     QTemporaryFile tempFile;
     tempFile.open();
-    d->tempName = tempFile.fileName();
+    d->tempName  = tempFile.fileName();
 
     d->darktable = new QProcess(this);
     d->darktable->setProcessChannelMode(QProcess::MergedChannels);
@@ -226,23 +232,40 @@ void DarkTableRawImportPlugin::slotErrorOccurred(QProcess::ProcessError error)
     switch (error)
     {
         case QProcess::FailedToStart:
+        {
             qCDebug(DIGIKAM_GENERAL_LOG) << "DarkTable :: Process has failed to start";
             break;
+        }
+
         case QProcess::Crashed:
+        {
             qCDebug(DIGIKAM_GENERAL_LOG) << "DarkTable :: Process has crashed";
             break;
+        }
+
         case QProcess::Timedout:
+        {
             qCDebug(DIGIKAM_GENERAL_LOG) << "DarkTable :: Process time-out";
             break;
+        }
+
         case QProcess::WriteError:
+        {
             qCDebug(DIGIKAM_GENERAL_LOG) << "DarkTable :: Process write error";
             break;
+        }
+
         case QProcess::ReadError:
+        {
             qCDebug(DIGIKAM_GENERAL_LOG) << "DarkTable :: Process read error";
             break;
+        }
+
         default:
+        {
             qCDebug(DIGIKAM_GENERAL_LOG) << "DarkTable :: Process error unknown";
             break;
+        }
     }
 }
 
@@ -251,6 +274,7 @@ void DarkTableRawImportPlugin::slotProcessFinished(int code, QProcess::ExitStatu
     qCDebug(DIGIKAM_GENERAL_LOG) << "DarkTable :: return code:" << code << ":: Exit status:" << status;
 
     d->decoded = DImg(d->tempName);
+    d->decoded.setAttribute(QLatin1String("isReadOnly"), true);
 
     if (d->decoded.isNull())
     {
@@ -259,6 +283,7 @@ void DarkTableRawImportPlugin::slotProcessFinished(int code, QProcess::ExitStatu
 
         qCDebug(DIGIKAM_GENERAL_LOG) << "Decoded image is null! Load with Native tool...";
         qCDebug(DIGIKAM_GENERAL_LOG) << d->props.filePath;
+
         emit signalLoadRaw(d->props);
     }
     else
@@ -266,6 +291,7 @@ void DarkTableRawImportPlugin::slotProcessFinished(int code, QProcess::ExitStatu
         qCDebug(DIGIKAM_GENERAL_LOG) << "Decoded image is not null...";
         qCDebug(DIGIKAM_GENERAL_LOG) << d->props.filePath;
         d->props = LoadingDescription(d->tempName, LoadingDescription::ConvertForEditor);
+
         emit signalDecodedImage(d->props, d->decoded);
     }
 

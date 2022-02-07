@@ -11,14 +11,14 @@
 | as published by the Free Software Foundation; either version 2
 | of the License, or (at your option) any later version.
 |
-| OEMs, ISVs, VARs and other distributors that combine and 
+| OEMs, ISVs, VARs and other distributors that combine and
 | distribute commercially licensed software with Platinum software
 | and do not wish to distribute the source code for the commercially
 | licensed software under version 2, or (at your option) any later
 | version, of the GNU General Public License (the "GPL") must enter
 | into a commercial license agreement with Plutinosoft, LLC.
 | licensing@plutinosoft.com
-| 
+|
 | This program is distributed in the hope that it will be useful,
 | but WITHOUT ANY WARRANTY; without even the implied warranty of
 | MERCHANTABILITY or FITNESS FOR A PARTICULAR PURPOSE.  See the
@@ -26,7 +26,7 @@
 |
 | You should have received a copy of the GNU General Public License
 | along with this program; see the file LICENSE.txt. If not, write to
-| the Free Software Foundation, Inc., 
+| the Free Software Foundation, Inc.,
 | 51 Franklin Street, Fifth Floor, Boston, MA  02110-1301, USA.
 | http://www.gnu.org/licenses/gpl-2.0.html
 |
@@ -106,18 +106,18 @@ public:
 
     virtual bool OnMRAdded(PLT_DeviceDataReference& /* device */) { return true; }
     virtual void OnMRRemoved(PLT_DeviceDataReference& /* device */) {}
-    virtual void OnMRStateVariablesChanged(PLT_Service*                  /* service */, 
+    virtual void OnMRStateVariablesChanged(PLT_Service*                  /* service */,
                                            NPT_List<PLT_StateVariable*>* /* vars */) {}
 
     // AVTransport
     virtual void OnGetCurrentTransportActionsResult(
-        NPT_Result               /* res */, 
+        NPT_Result               /* res */,
         PLT_DeviceDataReference& /* device */,
-        PLT_StringList*          /* actions */, 
+        PLT_StringList*          /* actions */,
         void*                    /* userdata */) {}
 
     virtual void OnGetDeviceCapabilitiesResult(
-        NPT_Result               /* res */, 
+        NPT_Result               /* res */,
         PLT_DeviceDataReference& /* device */,
         PLT_DeviceCapabilities*  /* capabilities */,
         void*                    /* userdata */) {}
@@ -154,7 +154,7 @@ public:
     virtual void OnPauseResult(
         NPT_Result               /* res */,
         PLT_DeviceDataReference& /* device */,
-        void*                    /* userdata */) {}  
+        void*                    /* userdata */) {}
 
     virtual void OnPlayResult(
         NPT_Result               /* res */,
@@ -185,7 +185,7 @@ public:
         NPT_Result               /* res */,
         PLT_DeviceDataReference& /* device */,
         void*                    /* userdata */) {}
-        
+
     // ConnectionManager
     virtual void OnGetCurrentConnectionIDsResult(
         NPT_Result               /* res */,
@@ -205,7 +205,7 @@ public:
         PLT_StringList*          /* sources */,
         PLT_StringList*          /* sinks */,
         void*                    /* userdata */) {}
-        
+
     // RenderingControl
     virtual void OnSetMuteResult(
         NPT_Result               /* res */,
@@ -238,7 +238,7 @@ public:
 class PLT_MediaController : public PLT_CtrlPointListener
 {
 public:
-    PLT_MediaController(PLT_CtrlPointReference&      ctrl_point, 
+    PLT_MediaController(PLT_CtrlPointReference&      ctrl_point,
                         PLT_MediaControllerDelegate* delegate = NULL);
     virtual ~PLT_MediaController();
 
@@ -275,18 +275,18 @@ public:
     NPT_Result GetCurrentConnectionIDs(PLT_DeviceDataReference& device, void* userdata);
     NPT_Result GetCurrentConnectionInfo(PLT_DeviceDataReference& device, NPT_UInt32 connection_id, void* userdata);
     NPT_Result GetProtocolInfo(PLT_DeviceDataReference& device, void* userdata);
-    
+
     // RenderingControl
     NPT_Result SetMute(PLT_DeviceDataReference& device, NPT_UInt32 instance_id, const char* channel, bool mute, void* userdata);
     NPT_Result GetMute(PLT_DeviceDataReference& device, NPT_UInt32 instance_id, const char* channel, void* userdata);
     NPT_Result SetVolume(PLT_DeviceDataReference& device, NPT_UInt32 instance_id, const char* channel, int volume, void* userdata);
-    NPT_Result GetVolume(PLT_DeviceDataReference& device, NPT_UInt32 instance_id, const char* channel, void* userdata); 
+    NPT_Result GetVolume(PLT_DeviceDataReference& device, NPT_UInt32 instance_id, const char* channel, void* userdata);
 
-    // VariableStates    
+    // VariableStates
     virtual NPT_Result GetProtocolInfoSink(const NPT_String& device_uuid, NPT_List<NPT_String>& sinks);
     virtual NPT_Result GetTransportState(const NPT_String&  device_uuid, NPT_String& state);
     virtual NPT_Result GetVolumeState(const NPT_String&  device_uuid, NPT_UInt32& volume);
-    
+
     // methods
     virtual NPT_Result FindRenderer(const char* uuid, PLT_DeviceDataReference& device);
     virtual NPT_Result FindMatchingProtocolInfo(NPT_List<NPT_String>& sinks, const char* protocol_info);
@@ -305,7 +305,7 @@ private:
     NPT_Result OnGetCurrentConnectionIDsResponse(NPT_Result res, PLT_DeviceDataReference& device, PLT_ActionReference& action, void* userdata);
     NPT_Result OnGetCurrentConnectionInfoResponse(NPT_Result res, PLT_DeviceDataReference& device, PLT_ActionReference& action, void* userdata);
     NPT_Result OnGetProtocolInfoResponse(NPT_Result res, PLT_DeviceDataReference& device, PLT_ActionReference& action, void* userdata);
-    
+
     NPT_Result OnGetMuteResponse(NPT_Result res, PLT_DeviceDataReference& device, PLT_ActionReference& action, void* userdata);
     NPT_Result OnGetVolumeResponse(NPT_Result res, PLT_DeviceDataReference& device, PLT_ActionReference& action, void* userdata);
 

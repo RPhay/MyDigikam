@@ -8,7 +8,7 @@
  *
  * Copyright (C) 2010         by Gabriel Voicu <ping dot gabi at gmail dot com>
  * Copyright (C) 2010         by Michael G. Hansen <mike at mghansen dot de>
- * Copyright (C) 2014-2021 by Gilles Caulier <caulier dot gilles at gmail dot com>
+ * Copyright (C) 2014-2022 by Gilles Caulier <caulier dot gilles at gmail dot com>
  *
  * This program is free software; you can redistribute it
  * and/or modify it under the terms of the GNU General
@@ -32,6 +32,7 @@
 #include <QAbstractItemModel>
 #include <QPersistentModelIndex>
 #include <QScopedPointer>
+#include <QTimer>
 
 // KDE includes
 
@@ -70,29 +71,36 @@ class Q_DECL_HIDDEN MapWidgetView::Private
 public:
 
     explicit Private()
-       : vbox               (nullptr),
-         mapWidget          (nullptr),
-         imageFilterModel   (nullptr),
-         imageModel         (nullptr),
-         importFilterModel  (nullptr),
-         importModel        (nullptr),
-         selectionModel     (nullptr),
-         mapViewModelHelper (nullptr),
-         gpsItemInfoSorter  (nullptr),
-         application        (MapWidgetView::ApplicationDigikam)
+       : mapWidget                  (nullptr),
+         imageModel                 (nullptr),
+         imageFilterModel           (nullptr),
+         importModel                (nullptr),
+         importFilterModel          (nullptr),
+         selectionModel             (nullptr),
+         mapViewModelHelper         (nullptr),
+         gpsItemInfoSorter          (nullptr),
+         modelTimer                 (nullptr),
+         application                (MapWidgetView::ApplicationDigikam),
+         boundariesShouldBeAdjusted (false)
     {
     }
 
-    DVBox*                     vbox;
     MapWidget*                 mapWidget;
-    ItemFilterModel*           imageFilterModel;
+
     ItemAlbumModel*            imageModel;
-    ImportFilterModel*         importFilterModel;
+    ItemFilterModel*           imageFilterModel;
     ImportItemModel*           importModel;
+    ImportFilterModel*         importFilterModel;
     QItemSelectionModel*       selectionModel;
+
     MapViewModelHelper*        mapViewModelHelper;
     GPSItemInfoSorter*         gpsItemInfoSorter;
+
+    QTimer*                    modelTimer;
+
     MapWidgetView::Application application;
+
+    bool                       boundariesShouldBeAdjusted;
 };
 
 /**
@@ -112,30 +120,51 @@ MapWidgetView::MapWidgetView(QItemSelectionModel* const selectionModel,
     d->application    = application;
     d->selectionModel = selectionModel;
 
+    d->modelTimer     = new QTimer(this);
+    d->modelTimer->setSingleShot(true);
+    d->modelTimer->setInterval(50);
+
     switch (d->application)
     {
         case ApplicationDigikam:
+        {
             d->imageFilterModel   = dynamic_cast<ItemFilterModel*>(imageFilterModel);
             d->imageModel         = dynamic_cast<ItemAlbumModel*>(imageFilterModel->sourceModel());
-            d->mapViewModelHelper = new MapViewModelHelper(d->selectionModel, imageFilterModel, this, ApplicationDigikam);
+            d->mapViewModelHelper = new MapViewModelHelper(d->selectionModel,
+                                                           d->imageFilterModel,
+                                                           this, ApplicationDigikam);
+
+            connect(d->imageModel, SIGNAL(allRefreshingFinished()),
+                    d->modelTimer, SLOT(start()));
             break;
+        }
 
         case ApplicationImportUI:
+        {
             d->importFilterModel  = dynamic_cast<ImportFilterModel*>(imageFilterModel);
             d->importModel        = dynamic_cast<ImportItemModel*>(imageFilterModel->sourceModel());
-            d->mapViewModelHelper = new MapViewModelHelper(d->selectionModel, d->importFilterModel, this, ApplicationImportUI);
+            d->mapViewModelHelper = new MapViewModelHelper(d->selectionModel,
+                                                           d->importFilterModel,
+                                                           this, ApplicationImportUI);
+
+            connect(d->importModel, SIGNAL(allRefreshingFinished()),
+                    d->modelTimer, SLOT(start()));
             break;
+        }
     }
 
-    QVBoxLayout* const vBoxLayout = new QVBoxLayout(this);
-    d->mapWidget                  = new MapWidget(this);
+    connect(d->modelTimer, SIGNAL(timeout()),
+            this, SLOT(slotModelChanged()));
+
+    QVBoxLayout* const vBoxLayout              = new QVBoxLayout(this);
+    d->mapWidget                               = new MapWidget(this);
     d->mapWidget->setAvailableMouseModes(MouseModePan|MouseModeZoomIntoGroup|MouseModeSelectThumbnail);
     d->mapWidget->setVisibleMouseModes(MouseModePan|MouseModeZoomIntoGroup|MouseModeSelectThumbnail);
     ItemMarkerTiler* const geoifaceMarkerModel = new ItemMarkerTiler(d->mapViewModelHelper, this);
     d->mapWidget->setGroupedModel(geoifaceMarkerModel);
     d->mapWidget->setBackend(QLatin1String("marble"));
 
-    d->gpsItemInfoSorter         = new GPSItemInfoSorter(this);
+    d->gpsItemInfoSorter                       = new GPSItemInfoSorter(this);
     d->gpsItemInfoSorter->addToMapWidget(d->mapWidget);
     vBoxLayout->addWidget(d->mapWidget);
     vBoxLayout->addWidget(d->mapWidget->getControlWidget());
@@ -147,7 +176,6 @@ MapWidgetView::MapWidgetView(QItemSelectionModel* const selectionModel,
  */
 MapWidgetView::~MapWidgetView()
 {
-
 }
 
 void MapWidgetView::doLoadState()
@@ -174,24 +202,17 @@ void MapWidgetView::doSaveState()
 }
 
 /**
- * @brief Switch that opens the current album.
- * @param album Current album.
- */
-void MapWidgetView::openAlbum(Album* const album)
-{
-    if (album)
-    {
-        d->imageModel->openAlbum(QList<Album*>() << album);
-    }
-}
-
-/**
  * @brief Set the map active/inactive.
  * @param state If true, the map is active.
  */
 void MapWidgetView::setActive(const bool state)
 {
     d->mapWidget->setActive(state);
+
+    if (state && d->boundariesShouldBeAdjusted)
+    {
+        d->modelTimer->start();
+    }
 }
 
 /**
@@ -202,6 +223,114 @@ bool MapWidgetView::getActiveState() const
     return d->mapWidget->getActiveState();
 }
 
+/**
+ * @brief Returns the ItemInfo for the current image
+ */
+ItemInfo MapWidgetView::currentItemInfo() const
+{
+    /// @todo Have geoifacewidget honor the 'current index'
+
+    QModelIndex currentIndex = d->selectionModel->currentIndex();
+
+    if (!currentIndex.isValid())
+    {
+        /// @todo This is temporary until geoifacewidget marks a 'current index'
+
+        if (!d->selectionModel->hasSelection())
+        {
+            return ItemInfo();
+        }
+
+        currentIndex = d->selectionModel->selectedIndexes().first();
+    }
+
+    return d->imageFilterModel->imageInfo(currentIndex);
+}
+
+/**
+ * @brief Returns the CamItemInfo for the current image
+ */
+CamItemInfo MapWidgetView::currentCamItemInfo() const
+{
+    /// @todo Have geoifacewidget honor the 'current index'
+
+    QModelIndex currentIndex = d->selectionModel->currentIndex();
+
+    if (!currentIndex.isValid())
+    {
+        /// @todo This is temporary until geoifacewidget marks a 'current index'
+
+        if (!d->selectionModel->hasSelection())
+        {
+            return CamItemInfo();
+        }
+
+        currentIndex = d->selectionModel->selectedIndexes().first();
+    }
+
+    return d->importFilterModel->camItemInfo(currentIndex);
+}
+
+void MapWidgetView::slotModelChanged()
+{
+    if (!d->mapWidget->getActiveState())
+    {
+        d->boundariesShouldBeAdjusted = true;
+        return;
+    }
+
+    bool hasCoordinates = false;
+
+    switch (d->application)
+    {
+        case ApplicationDigikam:
+        {
+            foreach (const ItemInfo& info, d->imageModel->imageInfos())
+            {
+                if (info.hasCoordinates())
+                {
+                    hasCoordinates = true;
+                    break;
+                }
+            }
+
+            break;
+        }
+
+        case ApplicationImportUI:
+        {
+            foreach (const CamItemInfo& info, d->importModel->camItemInfos())
+            {
+                QScopedPointer<DMetadata> meta(new DMetadata(info.url().toLocalFile()));
+                double lat, lng;
+
+                if (meta->getGPSLatitudeNumber(&lat) &&
+                    meta->getGPSLongitudeNumber(&lng))
+                {
+                    hasCoordinates = true;
+                    break;
+                }
+            }
+
+            break;
+        }
+    }
+
+    if (!hasCoordinates)
+    {
+        setEnabled(false);
+        d->mapWidget->setCenter(GeoCoordinates(52.0, 6.0));
+        d->mapWidget->setZoom(QLatin1String("marble:1108"));
+    }
+    else
+    {
+        setEnabled(true);
+        d->mapWidget->adjustBoundariesToGroupedMarkers();
+    }
+
+    d->boundariesShouldBeAdjusted = false;
+}
+
 //-------------------------------------------------------------------------------------------------------------
 
 class Q_DECL_HIDDEN MapViewModelHelper::Private
@@ -209,11 +338,11 @@ class Q_DECL_HIDDEN MapViewModelHelper::Private
 public:
 
     explicit Private()
-        : model(nullptr),
-          importModel(nullptr),
-          selectionModel(nullptr),
+        : model              (nullptr),
+          importModel        (nullptr),
+          selectionModel     (nullptr),
           thumbnailLoadThread(nullptr),
-          application(MapWidgetView::ApplicationDigikam)
+          application        (MapWidgetView::ApplicationDigikam)
     {
     }
 
@@ -237,6 +366,7 @@ MapViewModelHelper::MapViewModelHelper(QItemSelectionModel* const selection,
     switch (d->application)
     {
         case MapWidgetView::ApplicationDigikam:
+        {
             d->model               = dynamic_cast<ItemFilterModel*>(filterModel);
             d->thumbnailLoadThread = new ThumbnailLoadThread(this);
 
@@ -246,17 +376,22 @@ MapViewModelHelper::MapViewModelHelper(QItemSelectionModel* const selection,
             // Note: Here we only monitor changes to the database, because changes to the model
             //       are also sent when thumbnails are generated, and we don't want to update
             //       the marker tiler for that!
+
             connect(CoreDbAccess::databaseWatch(), SIGNAL(imageChange(ImageChangeset)),
                     this, SLOT(slotImageChange(ImageChangeset)), Qt::QueuedConnection);
+
             break;
+        }
 
         case MapWidgetView::ApplicationImportUI:
+        {
             d->importModel = dynamic_cast<ImportFilterModel*>(filterModel);
 
             connect(ImportUI::instance()->getCameraThumbsCtrl(), SIGNAL(signalThumbInfoReady(CamItemInfo)),
                     this, SLOT(slotThumbnailLoaded(CamItemInfo)));
 
             break;
+        }
     }
 }
 
@@ -275,10 +410,14 @@ QAbstractItemModel* MapViewModelHelper::model() const
     switch (d->application)
     {
         case MapWidgetView::ApplicationDigikam:
+        {
             return d->model;
+        }
 
         case MapWidgetView::ApplicationImportUI:
+        {
             return d->importModel;
+        }
     }
 
     return nullptr;
@@ -325,8 +464,8 @@ bool MapViewModelHelper::itemCoordinates(const QModelIndex& index, GeoCoordinate
             }
 
             QScopedPointer<DMetadata> meta(new DMetadata(info.url().toLocalFile()));
-            double          lat, lng;
-            const bool      haveCoordinates = meta->getGPSLatitudeNumber(&lat) && meta->getGPSLongitudeNumber(&lng);
+            double     lat, lng;
+            const bool haveCoordinates = meta->getGPSLatitudeNumber(&lat) && meta->getGPSLongitudeNumber(&lng);
 
             if (!haveCoordinates)
             {
@@ -355,7 +494,8 @@ bool MapViewModelHelper::itemCoordinates(const QModelIndex& index, GeoCoordinate
  * @brief This function retrieves the thumbnail for an index.
  * @param index The marker's index.
  * @param size The size of the thumbnail.
- * @return If the thumbnail has been loaded in the ThumbnailLoadThread instance, it is returned. If not, a QPixmap is returned and ThumbnailLoadThread's signal named signalThumbnailLoaded is emitted when the thumbnail becomes available.
+ * @return If the thumbnail has been loaded in the ThumbnailLoadThread instance, it is returned.
+ * If not, a QPixmap is returned and ThumbnailLoadThread's signal named signalThumbnailLoaded is emitted when the thumbnail becomes available.
  */
 QPixmap MapViewModelHelper::pixmapFromRepresentativeIndex(const QPersistentModelIndex& index, const QSize& size)
 {
@@ -390,6 +530,7 @@ QPixmap MapViewModelHelper::pixmapFromRepresentativeIndex(const QPersistentModel
         case MapWidgetView::ApplicationImportUI:
         {
             QPixmap thumbnail = index.data(ImportItemModel::ThumbnailRole).value<QPixmap>();
+
             return thumbnail.scaled(size, Qt::KeepAspectRatio, Qt::SmoothTransformation);
         }
     }
@@ -412,6 +553,7 @@ QPersistentModelIndex MapViewModelHelper::bestRepresentativeIndexFromList(const 
     }
 
     // first convert from QPersistentModelIndex to QModelIndex
+
     QList<QModelIndex> indexList;
     QModelIndex        bestIndex;
 
@@ -426,7 +568,8 @@ QPersistentModelIndex MapViewModelHelper::bestRepresentativeIndexFromList(const 
         case MapWidgetView::ApplicationDigikam:
         {
             // now get the ItemInfos and convert them to GPSItemInfos
-            const QList<ItemInfo> imageInfoList =  d->model->imageInfos(indexList);
+
+            const QList<ItemInfo> imageInfoList = d->model->imageInfos(indexList);
             GPSItemInfo::List gpsItemInfoList;
 
             foreach (const ItemInfo& imageInfo, imageInfoList)
@@ -439,14 +582,16 @@ QPersistentModelIndex MapViewModelHelper::bestRepresentativeIndexFromList(const 
                 }
             }
 
-            if (gpsItemInfoList.size()!=indexList.size())
+            if (gpsItemInfoList.size() != indexList.size())
             {
                 // this is a problem, and unexpected
+
                 return indexList.first();
             }
 
             // now determine the best available index
-            bestIndex                     = indexList.first();
+
+            bestIndex                   = indexList.first();
             GPSItemInfo bestGPSItemInfo = gpsItemInfoList.first();
 
             for (int i = 1 ; i < gpsItemInfoList.count() ; ++i)
@@ -468,8 +613,9 @@ QPersistentModelIndex MapViewModelHelper::bestRepresentativeIndexFromList(const 
         case MapWidgetView::ApplicationImportUI:
         {
             // now get the CamItemInfo and convert them to GPSItemInfos
+
             const QList<CamItemInfo> imageInfoList =  d->importModel->camItemInfos(indexList);
-            GPSItemInfo::List       gpsItemInfoList;
+            GPSItemInfo::List gpsItemInfoList;
 
             foreach (const CamItemInfo& imageInfo, imageInfoList)
             {
@@ -503,10 +649,12 @@ QPersistentModelIndex MapViewModelHelper::bestRepresentativeIndexFromList(const 
             if (gpsItemInfoList.size() != indexList.size())
             {
                 // this is a problem, and unexpected
+
                 return indexList.first();
             }
 
             // now determine the best available index
+
             bestIndex                   = indexList.first();
             GPSItemInfo bestGPSItemInfo = gpsItemInfoList.first();
 
@@ -528,6 +676,7 @@ QPersistentModelIndex MapViewModelHelper::bestRepresentativeIndexFromList(const 
     }
 
     // and return the index
+
     return QPersistentModelIndex(bestIndex);
 }
 
@@ -589,6 +738,7 @@ void MapViewModelHelper::onIndicesClicked(const QList<QPersistentModelIndex>& cl
     /// @todo What do we do when an image is clicked?
 
 #if 0
+
     QList<QModelIndex> indexList;
 
     for (int i = 0 ; i < clickedIndices.count() ; ++i)
@@ -607,9 +757,13 @@ void MapViewModelHelper::onIndicesClicked(const QList<QPersistentModelIndex>& cl
     }
 
     emit signalFilteredImages(imagesIdList);
+
 #else
+
     Q_UNUSED(clickedIndices);
+
 #endif
+
 }
 
 void MapViewModelHelper::slotImageChange(const ImageChangeset& changeset)
@@ -618,6 +772,7 @@ void MapViewModelHelper::slotImageChange(const ImageChangeset& changeset)
 //    const DatabaseFields::ItemPositions imagePositionChanges = changes;
 
     /// @todo More detailed check
+
     if ((changes & DatabaseFields::LatitudeNumber)  ||
         (changes & DatabaseFields::LongitudeNumber) ||
         (changes & DatabaseFields::Altitude))
@@ -633,50 +788,6 @@ void MapViewModelHelper::slotImageChange(const ImageChangeset& changeset)
             }
         }
     }
-}
-
-/**
- * @brief Returns the ItemInfo for the current image
- */
-ItemInfo MapWidgetView::currentItemInfo() const
-{
-    /// @todo Have geoifacewidget honor the 'current index'
-    QModelIndex currentIndex = d->selectionModel->currentIndex();
-
-    if (!currentIndex.isValid())
-    {
-        /// @todo This is temporary until geoifacewidget marks a 'current index'
-        if (!d->selectionModel->hasSelection())
-        {
-            return ItemInfo();
-        }
-
-        currentIndex = d->selectionModel->selectedIndexes().first();
-    }
-
-    return d->imageFilterModel->imageInfo(currentIndex);
-}
-
-/**
- * @brief Returns the CamItemInfo for the current image
- */
-CamItemInfo MapWidgetView::currentCamItemInfo() const
-{
-    /// @todo Have geoifacewidget honor the 'current index'
-    QModelIndex currentIndex = d->selectionModel->currentIndex();
-
-    if (!currentIndex.isValid())
-    {
-        /// @todo This is temporary until geoifacewidget marks a 'current index'
-        if (!d->selectionModel->hasSelection())
-        {
-            return CamItemInfo();
-        }
-
-        currentIndex = d->selectionModel->selectedIndexes().first();
-    }
-
-    return d->importFilterModel->camItemInfo(currentIndex);
 }
 
 } // namespace Digikam

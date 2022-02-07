@@ -6,7 +6,7 @@
  * Date        : 2006-10-13
  * Description : IPTC origin settings page.
  *
- * Copyright (C) 2006-2021 by Gilles Caulier <caulier dot gilles at gmail dot com>
+ * Copyright (C) 2006-2022 by Gilles Caulier <caulier dot gilles at gmail dot com>
  *
  * This program is free software; you can redistribute it
  * and/or modify it under the terms of the GNU General
@@ -441,7 +441,7 @@ void IPTCOrigin::slotLineEditModified()
                        ledit);
 }
 
-void IPTCOrigin::readMetadata(DMetadata& meta)
+void IPTCOrigin::readMetadata(const DMetadata& meta)
 {
     blockSignals(true);
 
@@ -620,7 +620,7 @@ void IPTCOrigin::readMetadata(DMetadata& meta)
     blockSignals(false);
 }
 
-void IPTCOrigin::applyMetadata(DMetadata& meta)
+void IPTCOrigin::applyMetadata(const DMetadata& meta)
 {
     if (d->dateCreatedCheck->isChecked())
     {

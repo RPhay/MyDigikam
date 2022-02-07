@@ -7,7 +7,7 @@
  * Description : collections setup tab model/view
  *
  * Copyright (C) 2008-2012 by Marcel Wiesweg <marcel dot wiesweg at gmx dot de>
- * Copyright (C) 2005-2021 by Gilles Caulier <caulier dot gilles at gmail dot com>
+ * Copyright (C) 2005-2022 by Gilles Caulier <caulier dot gilles at gmail dot com>
  * Copyright (C)      2012 by Andi Clemens <andi dot clemens at gmail dot com>
  *
  * This program is free software; you can redistribute it
@@ -109,6 +109,7 @@ QList<QWidget*> SetupCollectionDelegate::createItemWidgets(const QModelIndex& /*
             this, [this, pushButton]() { emit categoryButtonPressed(pushButton->property("id").toInt()); });
 
     QToolButton* const updateButton = new QToolButton();
+    updateButton->setToolTip(i18nc("@info:tooltip", "Updates the path of the collection."));
     updateButton->setAutoRaise(true);
     list << updateButton;
 
@@ -116,6 +117,7 @@ QList<QWidget*> SetupCollectionDelegate::createItemWidgets(const QModelIndex& /*
             this, [this, updateButton]() { emit updatePressed(updateButton->property("id").toInt()); });
 
     QToolButton* const deleteButton = new QToolButton();
+    deleteButton->setToolTip(i18nc("@info:tooltip", "Removes the collection from digiKam."));
     deleteButton->setAutoRaise(true);
     list << deleteButton;
 

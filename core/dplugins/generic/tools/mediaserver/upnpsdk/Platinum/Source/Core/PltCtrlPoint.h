@@ -11,14 +11,14 @@
 | as published by the Free Software Foundation; either version 2
 | of the License, or (at your option) any later version.
 |
-| OEMs, ISVs, VARs and other distributors that combine and 
+| OEMs, ISVs, VARs and other distributors that combine and
 | distribute commercially licensed software with Platinum software
 | and do not wish to distribute the source code for the commercially
 | licensed software under version 2, or (at your option) any later
 | version, of the GNU General Public License (the "GPL") must enter
 | into a commercial license agreement with Plutinosoft, LLC.
 | licensing@plutinosoft.com
-|  
+|
 | This program is distributed in the hope that it will be useful,
 | but WITHOUT ANY WARRANTY; without even the implied warranty of
 | MERCHANTABILITY or FITNESS FOR A PARTICULAR PURPOSE.  See the
@@ -26,7 +26,7 @@
 |
 | You should have received a copy of the GNU General Public License
 | along with this program; see the file LICENSE.txt. If not, write to
-| the Free Software Foundation, Inc., 
+| the Free Software Foundation, Inc.,
 | 51 Franklin Street, Fifth Floor, Boston, MA  02110-1301, USA.
 | http://www.gnu.org/licenses/gpl-2.0.html
 |
@@ -83,8 +83,8 @@ typedef NPT_List<PLT_CtrlPointListener*> PLT_CtrlPointListenerList;
 +---------------------------------------------------------------------*/
 /**
  The PLT_CtrlPoint class implements the base functionality of a UPnP ControlPoint.
- It searches and inpects devices, invoke actions on services and subscribes to 
- events. 
+ It searches and inpects devices, invoke actions on services and subscribes to
+ events.
  */
 class PLT_CtrlPoint : public PLT_SsdpPacketListener,
                       public PLT_SsdpSearchResponseListener,
@@ -93,26 +93,26 @@ class PLT_CtrlPoint : public PLT_SsdpPacketListener,
 public:
     PLT_CtrlPoint(const char* search_criteria = "upnp:rootdevice"); // pass NULL to prevent repeated automatic search
     virtual ~PLT_CtrlPoint();
-    
+
     /**
      Returns the port used by the internal HTTP server for all incoming event notifications.
      @return port
      */
     virtual NPT_Result GetPort(NPT_UInt16& port);
-    
+
     // delegation
     virtual NPT_Result AddListener(PLT_CtrlPointListener* listener);
     virtual NPT_Result RemoveListener(PLT_CtrlPointListener* listener);
 
     // discovery
     virtual void IgnoreUUID(const char* uuid);
-    virtual NPT_Result Search(const NPT_HttpUrl& url = NPT_HttpUrl("239.255.255.250", 1900, "*"), 
-                              const char*        target = "upnp:rootdevice", 
+    virtual NPT_Result Search(const NPT_HttpUrl& url = NPT_HttpUrl("239.255.255.250", 1900, "*"),
+                              const char*        target = "upnp:rootdevice",
                               NPT_Cardinal       mx = 5,
                               NPT_TimeInterval   frequency = NPT_TimeInterval(50.), // pass NPT_TimeInterval(0.) for one time only
                               NPT_TimeInterval   initial_delay = NPT_TimeInterval(0.));
     virtual NPT_Result Discover(const NPT_HttpUrl& url = NPT_HttpUrl("239.255.255.250", 1900, "*"),
-                                const char*        target = "ssdp:all", 
+                                const char*        target = "ssdp:all",
                                 NPT_Cardinal       mx = 5,
                                 NPT_TimeInterval   frequency = NPT_TimeInterval(50.), // pass NPT_TimeInterval(0.) for one time only
                                 NPT_TimeInterval   initial_delay = NPT_TimeInterval(0.));
@@ -121,7 +121,7 @@ public:
                                      NPT_TimeInterval   leasetime = *PLT_Constants::GetInstance().GetDefaultDeviceLease());
 
     // actions
-    virtual NPT_Result FindActionDesc(PLT_DeviceDataReference& device, 
+    virtual NPT_Result FindActionDesc(PLT_DeviceDataReference& device,
                                   const char*              service_type,
                                   const char*              action_name,
                                   PLT_ActionDesc*&         action_desc);
@@ -133,8 +133,8 @@ public:
                                     void*                userdata = NULL);
 
     // events
-    virtual NPT_Result Subscribe(PLT_Service* service, 
-                                 bool         cancel = false, 
+    virtual NPT_Result Subscribe(PLT_Service* service,
+                                 bool         cancel = false,
                                  void*        userdata = NULL);
 
     // NPT_HttpRequestHandler methods
@@ -143,11 +143,11 @@ public:
                                      NPT_HttpResponse&             response);
 
     // PLT_SsdpSearchResponseListener methods
-    virtual NPT_Result ProcessSsdpSearchResponse(NPT_Result                    res, 
+    virtual NPT_Result ProcessSsdpSearchResponse(NPT_Result                    res,
                                                  const NPT_HttpRequestContext& context,
                                                  NPT_HttpResponse*             response);
     // PLT_SsdpPacketListener method
-    virtual NPT_Result OnSsdpPacket(const NPT_HttpRequest&        request, 
+    virtual NPT_Result OnSsdpPacket(const NPT_HttpRequest&        request,
                                     const NPT_HttpRequestContext& context);
 
 protected:
@@ -163,10 +163,10 @@ protected:
     virtual NPT_Result ProcessSsdpNotify(const NPT_HttpRequest&        request,
                                          const NPT_HttpRequestContext& context);
     virtual NPT_Result ProcessSsdpMessage(const NPT_HttpMessage&        message,
-                                          const NPT_HttpRequestContext& context,  
+                                          const NPT_HttpRequestContext& context,
                                           NPT_String&                   uuid);
     virtual NPT_Result ProcessGetDescriptionResponse(NPT_Result                    res,
-                                                     const NPT_HttpRequest&        request, 
+                                                     const NPT_HttpRequest&        request,
                                                      const NPT_HttpRequestContext& context,
                                                      NPT_HttpResponse*             response,
                                                      NPT_TimeInterval              leasetime,
@@ -183,8 +183,8 @@ protected:
                                              PLT_ActionReference&          action,
                                              void*                         userdata);
     virtual NPT_Result ProcessSubscribeResponse(NPT_Result                    res,
-                                                const NPT_HttpRequest&        request, 
-                                                const NPT_HttpRequestContext& context, 
+                                                const NPT_HttpRequest&        request,
+                                                const NPT_HttpRequestContext& context,
                                                 NPT_HttpResponse*             response,
                                                 PLT_Service*                  service,
                                                 void*                         userdata);
@@ -195,20 +195,20 @@ protected:
     // Device management
     virtual NPT_Result AddDevice(PLT_DeviceDataReference& data);
     virtual NPT_Result RemoveDevice(PLT_DeviceDataReference& data);
-    
+
 private:
     // methods
     PLT_ThreadTask* RenewSubscriber(PLT_EventSubscriberReference subscriber);
-    
+
     NPT_Result AddPendingEventNotification(PLT_EventNotification *notification);
     NPT_Result ProcessPendingEventNotifications();
     NPT_Result ProcessEventNotification(PLT_EventSubscriberReference subscriber,
                                         PLT_EventNotification*       notification,
                                         NPT_List<PLT_StateVariable*> &vars);
-    
+
     NPT_Result DoHouseKeeping();
     NPT_Result FetchDeviceSCPDs(PLT_CtrlPointGetSCPDsTask* task,
-                                PLT_DeviceDataReference&   device, 
+                                PLT_DeviceDataReference&   device,
                                 NPT_Cardinal               level);
 
     // Device management
@@ -216,14 +216,14 @@ private:
     NPT_Result NotifyDeviceReady(PLT_DeviceDataReference& data);
     NPT_Result NotifyDeviceRemoved(PLT_DeviceDataReference& data);
     NPT_Result CleanupDevice(PLT_DeviceDataReference& data);
-    
+
     NPT_Result ParseFault(PLT_ActionReference& action, NPT_XmlElementNode* fault);
-    PLT_SsdpSearchTask* CreateSearchTask(const NPT_HttpUrl&   url, 
-                                         const char*          target, 
-                                         NPT_Cardinal         mx, 
+    PLT_SsdpSearchTask* CreateSearchTask(const NPT_HttpUrl&   url,
+                                         const char*          target,
+                                         NPT_Cardinal         mx,
                                          NPT_TimeInterval     frequency,
                                          const NPT_IpAddress& address);
-    
+
 private:
     friend class NPT_Reference<PLT_CtrlPoint>;
     friend class PLT_UPnP;

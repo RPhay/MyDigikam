@@ -11,14 +11,14 @@
 | as published by the Free Software Foundation; either version 2
 | of the License, or (at your option) any later version.
 |
-| OEMs, ISVs, VARs and other distributors that combine and 
+| OEMs, ISVs, VARs and other distributors that combine and
 | distribute commercially licensed software with Platinum software
 | and do not wish to distribute the source code for the commercially
 | licensed software under version 2, or (at your option) any later
 | version, of the GNU General Public License (the "GPL") must enter
 | into a commercial license agreement with Plutinosoft, LLC.
 | licensing@plutinosoft.com
-| 
+|
 | This program is distributed in the hope that it will be useful,
 | but WITHOUT ANY WARRANTY; without even the implied warranty of
 | MERCHANTABILITY or FITNESS FOR A PARTICULAR PURPOSE.  See the
@@ -26,7 +26,7 @@
 |
 | You should have received a copy of the GNU General Public License
 | along with this program; see the file LICENSE.txt. If not, write to
-| the Free Software Foundation, Inc., 
+| the Free Software Foundation, Inc.,
 | 51 Franklin Street, Fifth Floor, Boston, MA  02110-1301, USA.
 | http://www.gnu.org/licenses/gpl-2.0.html
 |
@@ -68,7 +68,7 @@ class PLT_HttpCustomRequestHandler : public NPT_HttpRequestHandler
 {
 public:
     // constructors
-    PLT_HttpCustomRequestHandler(NPT_InputStreamReference& body, 
+    PLT_HttpCustomRequestHandler(NPT_InputStreamReference& body,
                                  const char*               mime_type,
                                  bool                      update_content_length = false) :
         m_Body(body),
@@ -76,7 +76,7 @@ public:
         m_UpdateContentLength(update_content_length) {}
 
     // NPT_HttpRequetsHandler methods
-    virtual NPT_Result SetupResponse(NPT_HttpRequest&              request, 
+    virtual NPT_Result SetupResponse(NPT_HttpRequest&              request,
                                      const NPT_HttpRequestContext& context,
                                      NPT_HttpResponse&             response) {
         NPT_COMPILER_UNUSED(request);
@@ -136,7 +136,7 @@ Test1(PLT_TaskManager* task_manager, NPT_HttpUrl url, NPT_Size& size)
 /*----------------------------------------------------------------------
 |   DumpBody
 +---------------------------------------------------------------------*/
-static NPT_Result 
+static NPT_Result
 ReadBody(PLT_Downloader& downloader, NPT_InputStreamReference& stream, NPT_Size& size)
 {
     NPT_LargeSize avail;
@@ -172,7 +172,7 @@ ReadBody(PLT_Downloader& downloader, NPT_InputStreamReference& stream, NPT_Size&
                  break;
          }
      }
- 
+
      return NPT_SUCCESS;
 }
 
@@ -224,21 +224,21 @@ Test2(PLT_TaskManager* task_manager, NPT_HttpUrl url, NPT_Size& size)
 
 
 #ifdef TEST3
-class RingBufferWriterTask : public PLT_ThreadTask 
+class RingBufferWriterTask : public PLT_ThreadTask
 {
 public:
-    RingBufferWriterTask(PLT_RingBufferStreamReference& ringbuffer_stream) 
+    RingBufferWriterTask(PLT_RingBufferStreamReference& ringbuffer_stream)
     : m_RingBufferStream(ringbuffer_stream) {}
-    
+
     // PLT_ThreadTask methods
-    virtual void DoRun() { 
+    virtual void DoRun() {
         char buffer[32768];
         m_RingBufferStream->WriteFully(buffer, 32768);
-        
+
         /* mark as done */
         m_RingBufferStream->SetEOS();
     }
-    
+
 private:
     PLT_RingBufferStreamReference m_RingBufferStream;
 };
@@ -283,23 +283,23 @@ Test3(PLT_TaskManager* task_manager, NPT_HttpUrl url, PLT_RingBufferStreamRefere
 #endif
 
 #ifdef TEST4
-class ClientStuckTask : public PLT_ThreadTask 
+class ClientStuckTask : public PLT_ThreadTask
 {
 public:
-    ClientStuckTask(NPT_HttpUrl& url, NPT_HttpClient& client) 
+    ClientStuckTask(NPT_HttpUrl& url, NPT_HttpClient& client)
     : m_Url(url), m_Client(client) {}
-    
+
     // PLT_ThreadTask methods
-    virtual void DoRun() { 
+    virtual void DoRun() {
         NPT_HttpRequest request(m_Url, NPT_HTTP_METHOD_GET);
         NPT_HttpResponse* response = NULL;
         m_Client.SendRequest(request, response);
     }
-    
+
     virtual void DoAbort()   {
         m_Client.Abort();
     }
-    
+
 private:
     NPT_HttpUrl     m_Url;
     NPT_HttpClient& m_Client;
@@ -312,16 +312,16 @@ static bool
 Test4(PLT_TaskManager* task_manager, NPT_HttpUrl url, NPT_TimeInterval wait_before_kill)
 {
     NPT_LOG_INFO("########### TEST 4 ######################");
-        
+
     NPT_HttpClient client;
-    
+
     /* start task to asynchronously fetch url */
     ClientStuckTask* task = new ClientStuckTask(url, client);
     task_manager->StartTask(task, NULL, false);
-    
+
     /* wait a bit and abort client */
     NPT_System::Sleep(wait_before_kill);
-    
+
     task->Kill();
     return true;
 }
@@ -335,15 +335,15 @@ static bool
 Test5(NPT_HttpUrl url)
 {
     NPT_LOG_INFO("########### TEST 5 ######################");
-    
+
     NPT_HttpClient client;
-    
+
     // first request
     NPT_HttpRequest request(url, NPT_HTTP_METHOD_POST, NPT_HTTP_PROTOCOL_1_1);
     NPT_HttpEntity* request_entity = new NPT_HttpEntity();
     request_entity->SetInputStream("Testing");
     request.SetEntity(request_entity);
-    
+
     NPT_HttpResponse* response = NULL;
     client.SendRequest(request, response);
     NPT_HttpEntity* entity = NULL;
@@ -351,7 +351,7 @@ Test5(NPT_HttpUrl url)
         NPT_DataBuffer buffer;
         if (NPT_FAILED(entity->Load(buffer))) return false;
     }
-    
+
     // try again
     delete response;
     response = NULL;
@@ -364,7 +364,7 @@ Test5(NPT_HttpUrl url)
         NPT_DataBuffer buffer;
         if (NPT_FAILED(entity->Load(buffer))) return false;
     }
-    
+
     return true;
 }
 #endif
@@ -418,7 +418,7 @@ int
 main(int argc, char** argv)
 {
     NPT_COMPILER_UNUSED(argc);
-    
+
     NPT_HttpRequestHandler* handler;
     NPT_Reference<NPT_DataBuffer> buffer;
     bool result;
@@ -444,7 +444,7 @@ main(int argc, char** argv)
 
         /* add file request handler */
         handler = new NPT_HttpFileRequestHandler(
-            Options.path.Left(index1>index2?index1:index2), 
+            Options.path.Left(index1>index2?index1:index2),
             "/");
         http_server.AddRequestHandler(handler, "/", true);
 
@@ -470,7 +470,7 @@ main(int argc, char** argv)
     NPT_InputStreamReference stream(ringbuffer_stream);
     NPT_HttpRequestHandler* custom_handler = new PLT_HttpCustomRequestHandler(stream, "text/xml");
     http_server.AddRequestHandler(custom_handler, "/custom");
-    
+
     /* start server */
     NPT_CHECK_SEVERE(http_server.Start());
 
@@ -479,48 +479,48 @@ main(int argc, char** argv)
 
     /* small delay to let the server start */
     NPT_System::Sleep(NPT_TimeInterval(1.f));
-    
+
     /* execute tests */
     NPT_Size size;
     NPT_COMPILER_UNUSED(size);
-    
+
 #ifdef TEST1
     result = Test1(&task_manager, NPT_HttpUrl("127.0.0.1", http_server.GetPort(), url), size);
     if (!result) return -1;
 #endif
-    
+
 #ifdef TEST2
     result = Test2(&task_manager, NPT_HttpUrl("127.0.0.1", http_server.GetPort(), url), size);
     if (!result) return -1;
 #endif
-    
+
 #ifdef TEST3
     result = Test3(&task_manager, NPT_HttpUrl("127.0.0.1", http_server.GetPort(), "/custom"), ringbuffer_stream, size);
     if (!result) return -1;
 #endif
-    
+
 #ifdef TEST4
     result = Test4(&task_manager, NPT_HttpUrl("127.0.0.1", http_server.GetPort(), "/custom"), NPT_TimeInterval(.1f));
     if (!result) return -1;
-    
+
     result = Test4(&task_manager, NPT_HttpUrl("127.0.0.1", http_server.GetPort(), "/custom"), NPT_TimeInterval(1.f));
     if (!result) return -1;
-    
+
     result = Test4(&task_manager, NPT_HttpUrl("127.0.0.1", http_server.GetPort(), "/custom"), NPT_TimeInterval(2.f));
     if (!result) return -1;
 #endif
-    
+
 #ifdef TEST5
     result = Test5(NPT_HttpUrl("127.0.0.1", http_server.GetPort(), "/test"));
     if (!result) return -1;
 #endif
-    
+
     NPT_System::Sleep(NPT_TimeInterval(1.f));
-    
+
     // abort server tasks that are waiting on ring buffer stream
     ringbuffer_stream->Abort();
-    
+
     http_server.Stop();
-    
+
     return 0;
 }

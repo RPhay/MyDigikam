@@ -1,16 +1,16 @@
 RESUME
 ------
 These scripts build a binary digiKam installer for Windows under Linux using cross-compiler
-environnement MXE and NSIS application.
+environment MXE and NSIS application.
 
-This script follow instructions from Qt bundle deployement for Windows as shared libraries
+This script follow instructions from Qt bundle deployment for Windows as shared libraries
 available at this url: http://doc.qt.io/qt-5/windows-deployment.html
 
 
 AUTHORS
 -------
 
-(c) 2015-2021 by Gilles Caulier <caulier dot gilles at gmail dot com>
+(c) 2015-2022 by Gilles Caulier <caulier dot gilles at gmail dot com>
 
 
 DESCRIPTION
@@ -46,7 +46,7 @@ Note: the bundle is relocatable.
 |   |--- knotifications5                             Really need ?
 |   |--- kservices5                                  KDE service descriptions
 |   |--- kservicetypes5                              KDE service type definitions
-|   |--- kxmlgui5                                    KDE xml gui decription files
+|   |--- kxmlgui5                                    KDE xml gui description files
 |   |   |--- digikam
 |   |   |-- showfoto
 |   |--- lensfun                                     Lensfun data files

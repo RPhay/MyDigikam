@@ -107,6 +107,7 @@ private:
     void updateProgressBarValue(unsigned);
     void updateProgressBarMaximum(unsigned);
     void switchUser(bool restoreToken = true);
+    void saveEditedPlaceName(const QString&);
 
 private:
 

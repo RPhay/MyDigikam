@@ -49,9 +49,11 @@ PreviewSettings PreviewSettings::highQualityPreview()
 
 bool PreviewSettings::operator==(const PreviewSettings& other) const
 {
-    return ((quality           == other.quality)     &&
+    return (
+            (quality           == other.quality)     &&
             (rawLoading        == other.rawLoading)  &&
-            (convertToEightBit == other.convertToEightBit));
+            (convertToEightBit == other.convertToEightBit)
+           );
 }
 
 } // namespace Digikam

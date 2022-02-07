@@ -7,7 +7,7 @@
  * Description : metadata Settings Container.
  *
  * Copyright (C) 2015      by Veaceslav Munteanu <veaceslav dot munteanu90 at gmail dot com>
- * Copyright (C) 2015-2021 by Gilles Caulier <caulier dot gilles at gmail dot com>
+ * Copyright (C) 2015-2022 by Gilles Caulier <caulier dot gilles at gmail dot com>
  *
  * This program is free software; you can redistribute it
  * and/or modify it under the terms of the GNU General
@@ -106,7 +106,8 @@ class Q_DECL_HIDDEN DMetadataSettingsContainer::Private
 public:
 
     explicit Private()
-      : unifyReadWrite(false)
+      : unifyReadWrite(false),
+        readingAllTags(false)
     {
     }
 
@@ -115,6 +116,7 @@ public:
     QMap<QString, QList<NamespaceEntry> > readMappings;
     QMap<QString, QList<NamespaceEntry> > writeMappings;
     bool                                  unifyReadWrite;
+    bool                                  readingAllTags;
 };
 
 // -------------------------------------------------------------------------------------------------
@@ -157,6 +159,16 @@ void DMetadataSettingsContainer::setUnifyReadWrite(bool b)
     d->unifyReadWrite = b;
 }
 
+bool DMetadataSettingsContainer::readingAllTags() const
+{
+    return d->readingAllTags;
+}
+
+void DMetadataSettingsContainer::setReadingAllTags(bool b)
+{
+    d->readingAllTags = b;
+}
+
 void DMetadataSettingsContainer::readFromConfig(KConfigGroup& group)
 {
     bool valid                   = true;
@@ -194,6 +206,7 @@ void DMetadataSettingsContainer::readFromConfig(KConfigGroup& group)
     }
 
     d->unifyReadWrite = group.readEntry(QLatin1String("unifyReadWrite"), true);
+    d->readingAllTags = group.readEntry(QLatin1String("readingAllTags"), false);
 }
 
 void DMetadataSettingsContainer::writeToConfig(KConfigGroup& group) const
@@ -213,12 +226,14 @@ void DMetadataSettingsContainer::writeToConfig(KConfigGroup& group) const
     }
 
     group.writeEntry(QLatin1String("unifyReadWrite"), d->unifyReadWrite);
+    group.writeEntry(QLatin1String("readingAllTags"), d->readingAllTags);
     group.sync();
 }
 
 void DMetadataSettingsContainer::defaultValues()
 {
     d->unifyReadWrite = true;
+    d->readingAllTags = false;
     d->writeMappings.clear();
     d->readMappings.clear();
 
@@ -313,7 +328,6 @@ void DMetadataSettingsContainer::defaultTagValues()
     NamespaceEntry tagNs7;
     tagNs7.namespaceName    = QLatin1String("Iptc.Application2.Keywords");
     tagNs7.tagPaths         = NamespaceEntry::TAGPATH;
-    tagNs7.separator        = QLatin1Char(',');
     tagNs7.nsType           = NamespaceEntry::TAGS;
     tagNs7.index            = 6;
     tagNs7.subspace         = NamespaceEntry::IPTC;
@@ -485,7 +499,6 @@ void DMetadataSettingsContainer::defaultCommentValues()
     commNs7.index           = 6;
     commNs7.subspace        = NamespaceEntry::IPTC;
 
-
     getReadMapping(NamespaceEntry::DM_COMMENT_CONTAINER()) << commNs1
                                                            << commNs2
                                                            << commNs3
@@ -521,9 +534,9 @@ void DMetadataSettingsContainer::defaultColorLabelValues()
     commNs3.index           = 2;
     commNs3.subspace        = NamespaceEntry::XMP;
 
-     getReadMapping(NamespaceEntry::DM_COLORLABEL_CONTAINER()) << commNs1
-                                                               << commNs2
-                                                               << commNs3;
+    getReadMapping(NamespaceEntry::DM_COLORLABEL_CONTAINER()) << commNs1
+                                                              << commNs2
+                                                              << commNs3;
 
     d->writeMappings[NamespaceEntry::DM_COLORLABEL_CONTAINER()]
         = QList<NamespaceEntry>(getReadMapping(NamespaceEntry::DM_COLORLABEL_CONTAINER()));
@@ -557,11 +570,25 @@ void DMetadataSettingsContainer::readOneGroup(KConfigGroup& group, const QString
         ns.secondNameOpts    = (NamespaceEntry::SpecialOptions)gr.readEntry("secondNameOpts").toInt();
         ns.isDefault         = gr.readEntry(QLatin1String("isDefault"), QVariant(true)).toBool();
         ns.isDisabled        = gr.readEntry(QLatin1String("isDisabled"), QVariant(false)).toBool();
-        QString conversion   = gr.readEntry("convertRatio");
+        QStringList convList = gr.readEntry("convertRatio").split(QLatin1String(","));
 
-        foreach (const QString& str, conversion.split(QLatin1String(",")))
+        if (ns.nsType == NamespaceEntry::RATING)
         {
-            ns.convertRatio.append(str.toInt());
+            if (convList.size() == 6)
+            {
+                foreach (const QString& str, convList)
+                {
+                    ns.convertRatio.append(str.toInt());
+                }
+            }
+            else
+            {
+                qCWarning(DIGIKAM_METAENGINE_LOG) << "Wrong count of rating conversion values in the config!";
+
+                // fallback to default rating conversion values
+
+                ns.convertRatio = QList<int>({0, 1, 2, 3, 4, 5});
+            }
         }
 
         container.append(ns);

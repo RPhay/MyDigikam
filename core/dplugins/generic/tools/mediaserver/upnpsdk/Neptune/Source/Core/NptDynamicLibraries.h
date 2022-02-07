@@ -61,10 +61,10 @@ class NPT_DynamicLibrary : public NPT_DynamicLibraryInterface
 public:
     // class methods
     static NPT_Result Load(const char* name, NPT_Flags flags, NPT_DynamicLibrary*& library);
-    
+
     // destructor
     ~NPT_DynamicLibrary() { delete m_Delegate; }
-    
+
     // NPT_DynamicLibraryInterface methods
     virtual NPT_Result FindSymbol(const char* name, void*& symbol) {
         return m_Delegate->FindSymbol(name, symbol);
@@ -72,11 +72,11 @@ public:
     virtual NPT_Result Unload() {
         return m_Delegate->Unload();
     }
-    
+
 private:
     // methods
     NPT_DynamicLibrary(NPT_DynamicLibraryInterface* delegate) : m_Delegate(delegate) {}
-    
+
     // members
     NPT_DynamicLibraryInterface* m_Delegate;
 };

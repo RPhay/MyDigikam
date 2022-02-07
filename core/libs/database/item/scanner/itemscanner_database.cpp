@@ -7,7 +7,7 @@
  * Description : Scanning a single item - database helper.
  *
  * Copyright (C) 2007-2013 by Marcel Wiesweg <marcel dot wiesweg at gmx dot de>
- * Copyright (C) 2013-2021 by Gilles Caulier <caulier dot gilles at gmail dot com>
+ * Copyright (C) 2013-2022 by Gilles Caulier <caulier dot gilles at gmail dot com>
  *
  * This program is free software; you can redistribute it
  * and/or modify it under the terms of the GNU General
@@ -39,16 +39,25 @@ void ItemScanner::commit()
     switch (d->commit.operation)
     {
         case ItemScannerCommit::NoOp:
+        {
             return;
+        }
 
         case ItemScannerCommit::AddItem:
+        {
             if (!commitAddImage())
+            {
                 return;
+            }
+
             break;
+        }
 
         case ItemScannerCommit::UpdateItem:
+        {
             commitUpdateImage();
             break;
+        }
     }
 
     if (d->commit.copyImageAttributesId != -1)
@@ -135,12 +144,15 @@ void ItemScanner::copiedFrom(int albumId, qlonglong srcId)
     prepareAddImage(albumId);
 
     // first use source, if it exists
+
     if (!copyFromSource(srcId))
     {
         // check if we can establish identity
+
         if (!scanFromIdenticalFile())
         {
             // scan newly
+
             scanFile(NewScan);
         }
     }
@@ -149,24 +161,27 @@ void ItemScanner::copiedFrom(int albumId, qlonglong srcId)
 void ItemScanner::commitCopyImageAttributes()
 {
     CoreDbAccess().db()->copyImageAttributes(d->commit.copyImageAttributesId, d->scanInfo.id);
+
     // Also copy the similarity information
+
     SimilarityDbAccess().db()->copySimilarityAttributes(d->commit.copyImageAttributesId, d->scanInfo.id);
+
     // Remove grouping for copied or identical images.
+
     CoreDbAccess().db()->removeAllImageRelationsFrom(d->scanInfo.id, DatabaseRelation::Grouped);
     CoreDbAccess().db()->removeAllImageRelationsTo(d->scanInfo.id, DatabaseRelation::Grouped);
 }
 
 bool ItemScanner::copyFromSource(qlonglong srcId)
 {
-    CoreDbAccess access;
-
     // some basic validity checking
+
     if (srcId == d->scanInfo.id)
     {
         return false;
     }
 
-    ItemScanInfo info = access.db()->getItemScanInfo(srcId);
+    ItemScanInfo info = CoreDbAccess().db()->getItemScanInfo(srcId);
 
     if (!info.id)
     {
@@ -192,10 +207,11 @@ bool ItemScanner::commitAddImage()
 {
     // find the image id of a deleted image info if existent and mark it as valid.
     // otherwise, create a new item.
+
     qlonglong imageId = CoreDbAccess().db()->findImageId(-1, d->scanInfo.itemName, DatabaseItem::Status::Trashed,
                                                          d->scanInfo.category, d->scanInfo.fileSize, d->scanInfo.uniqueHash);
 
-    if (imageId != -1)
+    if (imageId != -1 && (d->commit.copyImageAttributesId == -1))
     {
         qCDebug(DIGIKAM_DATABASE_LOG) << "Detected identical image info with id" << imageId
                                       << "and album id NULL of a removed image for image" << d->scanInfo.itemName;

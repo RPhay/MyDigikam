@@ -1,0 +1,62 @@
+diff --git a/CMakeLists.txt b/CMakeLists.txt
+index 10164bc0..76fd3fc2 100644
+--- a/CMakeLists.txt
++++ b/CMakeLists.txt
+@@ -1,4 +1,4 @@
+-cmake_minimum_required(VERSION 3.16)
++cmake_minimum_required(VERSION 3.14)
+ 
+ set(KF_VERSION "5.89.0") # handled by release scripts
+ project(BreezeIcons VERSION ${KF_VERSION})
+@@ -10,7 +10,7 @@ endif()
+ 
+ # ECM setup
+ include(FeatureSummary)
+-find_package(ECM 5.90.0  NO_MODULE)
++find_package(ECM 5.50.0  NO_MODULE)
+ set_package_properties(ECM PROPERTIES TYPE REQUIRED DESCRIPTION "Extra CMake Modules." URL "https://commits.kde.org/extra-cmake-modules")
+ feature_summary(WHAT REQUIRED_PACKAGES_NOT_FOUND FATAL_ON_MISSING_REQUIRED_PACKAGES)
+ 
+@@ -18,12 +18,12 @@ set(CMAKE_MODULE_PATH ${ECM_MODULE_PATH} ${CMAKE_CURRENT_SOURCE_DIR}/cmake)
+ 
+ include(KDEInstallDirs)
+ include(KDECMakeSettings)
+-include(KDEGitCommitHooks)
++#include(KDEGitCommitHooks)
+ include(KDEFrameworkCompilerSettings NO_POLICY_SCOPE)
+ include(GtkUpdateIconCache)
+ 
+ # Dependencies
+-set(REQUIRED_QT_VERSION 5.15.2)
++set(REQUIRED_QT_VERSION 5.12.2)
+ 
+ # Find Python 3
+ find_package (Python 3 COMPONENTS Interpreter)
+@@ -71,6 +71,13 @@ function(generate_binary_resource target outfile)
+     set(RESOURCES_WORKING_DIR ${CMAKE_CURRENT_BINARY_DIR}/res)
+     set(RESOURCE_FILE ${RESOURCES_WORKING_DIR}/breeze-${target}.qrc)
+     set(BINARY_RESOURCE_FILE ${CMAKE_CURRENT_BINARY_DIR}/breeze-${target}.rcc)
++    string(FIND ${target} "dark" position)
++    if("${position}" STREQUAL "-1")
++        set(RESOURCE_PREFIX "/icons/breeze")
++    else()
++        set(RESOURCE_PREFIX "/icons/breeze-dark")
++    endif()
++    message(STATUS "Processing resource with prefix: ${RESOURCE_PREFIX}")
+ 
+     # Use $<IF:$<BOOL:${MSVC}>,PATH,LD_LIBRARY_PATH> instead of ${pathVarName} once CMake 3.8 is minimum
+     if(MSVC)
+@@ -102,6 +109,7 @@ function(generate_binary_resource target outfile)
+     add_custom_command(OUTPUT ${BINARY_RESOURCE_FILE}
+         COMMAND ${QT_RCC_EXECUTABLE} --binary
+                     -o ${BINARY_RESOURCE_FILE}
++                    -root ${RESOURCE_PREFIX}
+                     ${RESOURCE_FILE}
+         DEPENDS ${RESOURCE_FILE}
+         WORKING_DIRECTORY ${CMAKE_CURRENT_SOURCE_DIR}
+@@ -138,4 +146,4 @@ add_subdirectory(icons-dark)
+ 
+ feature_summary(WHAT ALL FATAL_ON_MISSING_REQUIRED_PACKAGES INCLUDE_QUIET_PACKAGES)
+ 
+-kde_configure_git_pre_commit_hook(CHECKS CLANG_FORMAT)
++#kde_configure_git_pre_commit_hook(CHECKS CLANG_FORMAT)

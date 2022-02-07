@@ -6,7 +6,7 @@
  * Date        : 2012-01-20
  * Description : new items finder.
  *
- * Copyright (C) 2012-2021 by Gilles Caulier <caulier dot gilles at gmail dot com>
+ * Copyright (C) 2012-2022 by Gilles Caulier <caulier dot gilles at gmail dot com>
  * Copyright (C) 2012      by Andi Clemens <andi dot clemens at gmail dot com>
  *
  * This program is free software; you can redistribute it
@@ -71,7 +71,7 @@ NewItemsFinder::NewItemsFinder(const FinderMode mode, const QStringList& folders
 
     d->mode = mode;
 
-    // Common conections to ScanController
+    // Common connections to ScanController
 
     connect(ScanController::instance(), SIGNAL(collectionScanStarted(QString)),
             this, SLOT(slotScanStarted(QString)));
@@ -86,13 +86,6 @@ NewItemsFinder::NewItemsFinder(const FinderMode mode, const QStringList& folders
 
     connect(ScanController::instance(), SIGNAL(partialScanDone(QString)),
             this, SLOT(slotPartialScanDone(QString)));
-
-    // If we are scanning for newly imported files, we need to have the folders for scanning...
-
-    if ((mode == ScheduleCollectionScan) && foldersToScan.isEmpty())
-    {
-        qCWarning(DIGIKAM_GENERAL_LOG) << "NewItemsFinder called without any folders. Wrong call.";
-    }
 
     d->foldersToScan = foldersToScan;
     d->foldersToScan.sort();
@@ -142,8 +135,20 @@ void NewItemsFinder::slotStart()
 
         case ScheduleCollectionScan:
         {
-            qCDebug(DIGIKAM_GENERAL_LOG) << "scan mode: ScheduleCollectionScan :: " << d->foldersToScan;
             d->foldersScanned.clear();
+
+            // If we are scanning for newly imported files, we need to have the folders for scanning...
+
+            if (d->foldersToScan.isEmpty())
+            {
+                qCWarning(DIGIKAM_GENERAL_LOG) << "NewItemsFinder called without any folders. Wrong call.";
+
+                slotDone();
+
+                return;
+            }
+
+            qCDebug(DIGIKAM_GENERAL_LOG) << "scan mode: ScheduleCollectionScan :: " << d->foldersToScan;
 
             foreach (const QString& folder, d->foldersToScan)
             {
@@ -188,14 +193,14 @@ void NewItemsFinder::slotCancel()
 
 void NewItemsFinder::slotPartialScanDone(const QString& path)
 {
-    // Check if path scanned is included in planed list.
+    // Check if path scanned is included in planned list.
 
     if (d->foldersToScan.contains(path) && !d->foldersScanned.contains(path))
     {
         d->foldersScanned.append(path);
         d->foldersScanned.sort();
 
-        // Check if all planed scanning is done
+        // Check if all planned scanning is done
 
         if (d->foldersScanned == d->foldersToScan)
         {

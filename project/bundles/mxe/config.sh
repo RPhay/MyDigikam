@@ -1,6 +1,6 @@
 #!/bin/bash
 
-# Copyright (c) 2013-2021 by Gilles Caulier  <caulier dot gilles at gmail dot com>
+# Copyright (c) 2013-2022 by Gilles Caulier  <caulier dot gilles at gmail dot com>
 #
 # Redistribution and use is allowed according to the terms of the BSD license.
 # For details see the accompanying COPYING-CMAKE-SCRIPTS file.
@@ -19,6 +19,8 @@ BUILDING_DIR="`pwd`/temp.build"
 
 #------------
 # IMPORTANT: Target Windows architecture to build installer. Possible values: 32 or 64 bits.
+#            We do not support 32 bits anymore due to lack of memory allocation on this kind
+#            of architecture.
 MXE_ARCHBITS=64
 #------------
 
@@ -45,7 +47,10 @@ MXE_TOOLCHAIN=${MXE_INSTALL_PREFIX}/share/cmake/mxe-conf.cmake
 #-------------------------------------------------------------------------------------------
 
 # URL to git repository to checkout digiKam source code
+# git protocol version which require a developer account with ssh keys.
 DK_GITURL="git@invent.kde.org:graphics/digikam.git"
+# https protocol version which give annonyous access.
+#DK_GITURL="https://invent.kde.org/graphics/digikam.git"
 
 # digiKam tarball information.
 DK_URL="http://download.kde.org/stable/digikam"
@@ -53,12 +58,21 @@ DK_URL="http://download.kde.org/stable/digikam"
 # Location to build source code.
 DK_BUILDTEMP=~/dktemp
 
+# KDE Application version.
+DK_KA_VERSION="21.12.1"
+
+# KDE KF5 frameworks version.
+DK_KF5_VERSION="5.90"
+
+# Qt version to use in bundle and provided by MXE.
+DK_QTVERSION="5.15"
+
 # ExifTool Windows version to embed in the bundle.
-DK_EXIFTOOL_VERSION="12.29"
+DK_EXIFTOOL_VERSION="12.39"
 
 # digiKam tag version from git. Official tarball do not include extra shared libraries.
 # The list of tags can be listed with this url: https://invent.kde.org/graphics/digikam/-/tags
-# If you want to package current implemntation from git, use "master" as tag.
+# If you want to package current implementation from git, use "master" as tag.
 #DK_VERSION=v7.0.0
 DK_VERSION=master
 #DK_VERSION=development/dplugins

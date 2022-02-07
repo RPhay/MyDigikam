@@ -6,7 +6,7 @@
  * Date        : 2018-12-31
  * Description : digiKam plugin about dialog
  *
- * Copyright (C) 2018-2021 by Gilles Caulier <caulier dot gilles at gmail dot com>
+ * Copyright (C) 2018-2022 by Gilles Caulier <caulier dot gilles at gmail dot com>
  *
  * This program is free software; you can redistribute it
  * and/or modify it under the terms of the GNU General
@@ -63,7 +63,7 @@ DPluginAboutDlg::DPluginAboutDlg(DPlugin* const tool, QWidget* const parent)
                    Qt::WindowCloseButtonHint     |
                    Qt::WindowMinMaxButtonsHint);
 
-    setModal(false);
+    setModal(true);
     setWindowTitle(i18nc("@title", "About %1 Plugin", tool->name()));
 
     QDialogButtonBox* const buttons = new QDialogButtonBox(QDialogButtonBox::Ok, this);

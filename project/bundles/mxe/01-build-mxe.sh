@@ -2,7 +2,7 @@
 
 # Script to build a bundle MXE installation with all digiKam low level dependencies in a dedicated directory.
 #
-# Copyright (c) 2015-2021 by Gilles Caulier  <caulier dot gilles at gmail dot com>
+# Copyright (c) 2015-2022 by Gilles Caulier  <caulier dot gilles at gmail dot com>
 #
 # Redistribution and use is allowed according to the terms of the BSD license.
 # For details see the accompanying COPYING-CMAKE-SCRIPTS file.
@@ -35,7 +35,7 @@ RegisterRemoteServers
 
 #################################################################################################
 
-# Pathes rules
+# Paths rules
 ORIG_PATH="$PATH"
 ORIG_WD="`pwd`"
 
@@ -110,6 +110,7 @@ echo "---------- Building digiKam low level dependencies with MXE"
 echo 'override MXE_PLUGIN_DIRS += plugins/gcc9' >> settings.mk
 
 make MXE_TARGETS=$MXE_BUILD_TARGETS \
+     openssl \
      cmake \
      gettext \
      freeglut \
@@ -127,6 +128,7 @@ make MXE_TARGETS=$MXE_BUILD_TARGETS \
      zlib \
      mman-win32 \
      pthreads \
+     libgphoto2 \
      qtbase \
      qttranslations \
      qtimageformats \
@@ -176,13 +178,16 @@ ${MXE_BUILD_TARGETS}-cmake $ORIG_WD/../3rdparty \
                            -DCMAKE_LIBRARY_PATH=${CMAKE_PREFIX_PATH}/lib \
                            -DZLIB_ROOT=${CMAKE_PREFIX_PATH} \
                            -DINSTALL_ROOT=${MXE_INSTALL_PREFIX} \
-                           -DEXTERNALS_DOWNLOAD_DIR=$DOWNLOAD_DIR
+                           -DEXTERNALS_DOWNLOAD_DIR=$DOWNLOAD_DIR \
+                           -DKA_VERSION=$DK_KA_VERSION \
+                           -DKF5_VERSION=$DK_KF5_VERSION \
+                           -DENABLE_QTVERSION=$DK_QTVERSION \
+                           -DENABLE_QTWEBENGINE=$DK_QTWEBENGINE
 
 # Low level libraries
 # NOTE: The order to compile each component here is very important.
 
 ${MXE_BUILD_TARGETS}-cmake --build . --config RelWithDebInfo --target ext_opencv     -- -j$CPU_CORES
-#${MXE_BUILD_TARGETS}-cmake --build . --config RelWithDebInfo --target ext_libgphoto2 -- -j$CPU_CORES
 ${MXE_BUILD_TARGETS}-cmake --build . --config RelWithDebInfo --target ext_drmingw    -- -j$CPU_CORES
 
 #################################################################################################

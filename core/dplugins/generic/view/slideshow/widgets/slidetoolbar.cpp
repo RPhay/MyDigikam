@@ -7,7 +7,7 @@
  * Description : a tool bar for slideshow
  *
  * Copyright (C) 2004-2005 by Renchi Raju <renchi dot raju at gmail dot com>
- * Copyright (C) 2006-2021 by Gilles Caulier <caulier dot gilles at gmail dot com>
+ * Copyright (C) 2006-2022 by Gilles Caulier <caulier dot gilles at gmail dot com>
  * Copyright (C) 2019-2020 by Minh Nghia Duong <minhnghiaduong997 at gmail dot com>
  * Copyright (C)      2021 by Phuoc Khanh Le <phuockhanhnk94 at gmail dot com>
  *
@@ -101,7 +101,7 @@ SlideToolBar::SlideToolBar(SlideShowSettings* const settings, QWidget* const par
     d->deleteBtn      = new QToolButton(this);
     d->setupBtn       = new QToolButton(this);
 
-    d->configDialog   = new SetupSlideShowDialog(d->settings, this);
+    d->configDialog   = new SetupSlideShowDialog(d->settings);
 
     d->playBtn->setCheckable(true);
     d->playBtn->setChecked(!d->settings->autoPlayEnabled);
@@ -136,8 +136,8 @@ SlideToolBar::SlideToolBar(SlideShowSettings* const settings, QWidget* const par
 
     if (num > 1)
     {
-        d->screenSelectBtn      = new QToolButton(this);
-        QMenu* const screenMenu = new QMenu(d->screenSelectBtn);
+        d->screenSelectBtn        = new QToolButton(this);
+        QMenu* const screenMenu   = new QMenu(d->screenSelectBtn);
         d->screenSelectBtn->setToolTip(i18n("Switch Screen"));
         d->screenSelectBtn->setIconSize(s);
         d->screenSelectBtn->setIcon(QIcon::fromTheme(QLatin1String("video-display")));
@@ -203,6 +203,7 @@ SlideToolBar::SlideToolBar(SlideShowSettings* const settings, QWidget* const par
 
 SlideToolBar::~SlideToolBar()
 {
+    delete d->configDialog;
     delete d;
 }
 

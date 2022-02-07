@@ -399,7 +399,7 @@ void ModelTest::checkChildren ( const QModelIndex& parent, int currentDepth )
     //         << "columns:" << columns << "parent column:" << parent.column();
 
     Q_ASSERT ( model->hasIndex ( rows + 1, 0, parent ) == false );
-    
+
     for ( int r = 0; r < rows; ++r )
     {
         if ( model->canFetchMore ( parent ) )

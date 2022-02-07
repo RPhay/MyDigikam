@@ -7,7 +7,7 @@
  * Description : Scanning a single item - photo metadata helper.
  *
  * Copyright (C) 2007-2013 by Marcel Wiesweg <marcel dot wiesweg at gmx dot de>
- * Copyright (C) 2013-2021 by Gilles Caulier <caulier dot gilles at gmail dot com>
+ * Copyright (C) 2013-2022 by Gilles Caulier <caulier dot gilles at gmail dot com>
  *
  * This program is free software; you can redistribute it
  * and/or modify it under the terms of the GNU General
@@ -30,6 +30,7 @@ namespace Digikam
 QString ItemScanner::iptcCorePropertyName(MetadataInfo::Field field)
 {
     // These strings are specified in DBSCHEMA.ods
+
     switch (field)
     {
             // copyright table
@@ -127,6 +128,7 @@ QString ItemScanner::detectImageFormat() const
     }
 
     // See BUG #339341: Take file name suffix instead type mime analyze.
+
     return d->fileInfo.suffix().toUpper();
 }
 
@@ -149,6 +151,7 @@ void ItemScanner::commitImageMetadata()
 void ItemScanner::scanItemPosition()
 {
     // This list must reflect the order required by CoreDB::addItemPosition
+
     MetadataFields fields;
     fields << MetadataInfo::Latitude
            << MetadataInfo::LatitudeNumber
@@ -184,6 +187,7 @@ void ItemScanner::scanItemComments()
     QVariantList metadataInfos = d->metadata->getMetadataFields(fields);
 
     // handles all possible fields, multi-language, author, date
+
     CaptionsMap captions = d->metadata->getItemComments();
 
     if (captions.isEmpty() && !hasValidField(metadataInfos))
@@ -195,12 +199,14 @@ void ItemScanner::scanItemComments()
     d->commit.captions           = captions;
 
     // Headline
+
     if (!metadataInfos.at(0).isNull())
     {
         d->commit.headline = metadataInfos.at(0).toString();
     }
 
     // Title
+
     if (!metadataInfos.at(1).isNull())
     {
         d->commit.title = metadataInfos.at(1).toMap()[QLatin1String("x-default")].toString();
@@ -213,18 +219,21 @@ void ItemScanner::commitItemComments()
     ItemComments comments(access, d->scanInfo.id);
 
     // Description
+
     if (!d->commit.captions.isEmpty())
     {
         comments.replaceComments(d->commit.captions);
     }
 
     // Headline
+
     if (!d->commit.headline.isNull())
     {
         comments.addHeadline(d->commit.headline);
     }
 
     // Title
+
     if (!d->commit.title.isNull())
     {
         comments.addTitle(d->commit.title);
@@ -247,7 +256,9 @@ void ItemScanner::scanItemCopyright()
 void ItemScanner::commitItemCopyright()
 {
     ItemCopyright copyright(d->scanInfo.id);
+
     // It is not clear if removeAll() should be called if d->scanMode == Rescan
+
     copyright.removeAll();
     copyright.setFromTemplate(d->commit.copyrightTemplate);
 }
@@ -316,6 +327,7 @@ void ItemScanner::scanTags()
     QStringList filteredKeywords;
 
     // Extra empty tags check, empty tag = root tag which is not asignable
+
     for (int index = 0 ; index < keywords.size() ; ++index)
     {
         QString keyword = keywords.at(index);
@@ -338,6 +350,7 @@ void ItemScanner::scanTags()
     if (!filteredKeywords.isEmpty())
     {
         // get tag ids, create if necessary
+
         QList<int> tagIds = TagsCache::instance()->getOrCreateTags(filteredKeywords);
         d->commit.tagIds += tagIds;
     }
@@ -433,9 +446,17 @@ void ItemScanner::scanFaces()
 
 void ItemScanner::commitFaces()
 {
-    QSize size      = d->img.size();
-    int orientation = d->img.orientation();
-    QMap<QString, QVariant>::const_iterator it;
+    FaceTagsEditor editor;
+    QList<QRect> assignedRects;
+    QList<QRect> databaseRects;
+    QMultiMap<QString, QVariant>::const_iterator it;
+    QSize size                         = d->img.size();
+    int orientation                    = d->img.orientation();
+
+    foreach (const FaceTagsIface& face, editor.databaseFaces(d->scanInfo.id))
+    {
+        databaseRects << face.region().toRect();
+    }
 
     for (it = d->commit.metadataFacesMap.constBegin() ; it != d->commit.metadataFacesMap.constEnd() ; ++it)
     {
@@ -460,8 +481,43 @@ void ItemScanner::commitFaces()
 
         QRect rect = TagRegion::relativeToAbsolute(rectF, size);
         TagRegion::adjustToOrientation(rect, orientation, size);
+
+        if (assignedRects.contains(rect))
+        {
+            continue;
+        }
+
+        QList<QRect>::iterator it1;
+
+        for (it1 = databaseRects.begin() ; it1 != databaseRects.end() ; )
+        {
+            // Is the face rectangle located
+            // inside or outside completely?
+
+            if ((*it1).contains(rect) ||
+                rect.contains((*it1)))
+            {
+                QPoint point = (*it1).center() - rect.center();
+                int smax     = qMax(size.width(), size.height());
+
+                // Check the percentage deviation from the center.
+
+                if ((point.manhattanLength() * 100 / smax) <= 5)
+                {
+                    // Remove the duplicate face in the database.
+
+                    editor.removeFace(d->scanInfo.id, (*it1));
+                    it1 = databaseRects.erase(it1);
+
+                    continue;
+                }
+            }
+
+            ++it1;
+        }
+
         TagRegion region(rect);
-        FaceTagsEditor editor;
+        assignedRects << rect;
 
         if (name.isEmpty())
         {
@@ -489,6 +545,7 @@ void ItemScanner::commitFaces()
 void ItemScanner::checkCreationDateFromMetadata(QVariant& dateFromMetadata) const
 {
     // creation date: fall back to file system property
+
     if (dateFromMetadata.isNull() || !dateFromMetadata.toDateTime().isValid())
     {
         dateFromMetadata = creationDateFromFilesystem(d->fileInfo);
@@ -498,6 +555,7 @@ void ItemScanner::checkCreationDateFromMetadata(QVariant& dateFromMetadata) cons
 bool ItemScanner::checkRatingFromMetadata(const QVariant& ratingFromMetadata) const
 {
     // should only be overwritten if set in metadata
+
     if (d->scanMode == Rescan)
     {
         if (ratingFromMetadata.isNull() || (ratingFromMetadata.toInt() == -1))
@@ -512,6 +570,7 @@ bool ItemScanner::checkRatingFromMetadata(const QVariant& ratingFromMetadata) co
 MetadataFields ItemScanner::allImageMetadataFields()
 {
     // This list must reflect the order required by CoreDB::addImageMetadata
+
     MetadataFields fields;
     fields << MetadataInfo::Make
            << MetadataInfo::Model

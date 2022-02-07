@@ -25,6 +25,7 @@
 #include "uniquemodifier.h"
 
 // Qt includes
+
 #include <QRegularExpression>
 
 // KDE includes
@@ -55,14 +56,16 @@ UniqueModifier::UniqueModifier()
 
 QString UniqueModifier::parseOperation(ParseSettings& settings, const QRegularExpressionMatch &match)
 {
+    QFileInfo info(settings.fileUrl.toLocalFile());
     ParseResults::ResultsKey key = settings.currentResultsKey;
-    cache[key] << settings.str2Modify;
+    QString str2ModifyAndExt     = settings.str2Modify + QLatin1Char('.') + info.suffix();
 
+    cache[key] << str2ModifyAndExt;
 
-    if (cache[key].count(settings.str2Modify) > 1)
+    if (cache[key].count(str2ModifyAndExt) > 1)
     {
         QString result = settings.str2Modify;
-        int index      = cache[key].count(settings.str2Modify) - 1;
+        int index      = cache[key].count(str2ModifyAndExt) - 1;
 
         bool ok        = true;
         int slength    = match.captured(2).toInt(&ok);

@@ -428,7 +428,7 @@ void ItemHistoryGraphModel::Private::buildImagesTree()
 
     QMap<HistoryGraph::Vertex, int> distances   = graph().shortestDistancesFrom(path.first());                              // clazy:exclude=missing-typeinfo
 
-    
+
     QList<HistoryGraph::Vertex> sources;                            // clazy:exclude=missing-typeinfo
     int previousLevel                           = 0;
     HistoryTreeItem* parent                     = rootItem;

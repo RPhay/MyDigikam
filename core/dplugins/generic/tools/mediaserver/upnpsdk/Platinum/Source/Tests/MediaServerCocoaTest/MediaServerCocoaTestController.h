@@ -13,7 +13,7 @@
 @interface MediaServerCocoaTestController : NSObject <PLT_MediaServerDelegateObject> {
     IBOutlet NSWindow*  window;
     IBOutlet NSButton*  mainButton;
-    
+
     PLT_UPnPObject*     upnp;
 }
 

@@ -43,7 +43,7 @@ class ParseSettings
 {
 public:
 
-    /// default contructor
+    /// default constructor
     ParseSettings()
     {
         init();

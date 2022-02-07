@@ -1,8 +1,8 @@
 diff --git a/CMakeLists.txt b/CMakeLists.txt
-index 2ea05eb58..5c6bba77d 100644
+index 92c50c2e2..c2652de7b 100644
 --- a/CMakeLists.txt
 +++ b/CMakeLists.txt
-@@ -195,7 +195,7 @@ elseif(APPLE)
+@@ -204,7 +204,7 @@ elseif(APPLE)
        # for Mac OS X, everything is put inside an application bundle
        SET (CMAKE_INSTALL_PREFIX ${CMAKE_INSTALL_PREFIX}/)
        # path for library references
@@ -12,35 +12,29 @@ index 2ea05eb58..5c6bba77d 100644
        install(FILES src/mac/Info.plist DESTINATION ${CMAKE_INSTALL_PREFIX}/Marble.app/Contents)
        #SET (lib_dir ${CMAKE_INSTALL_PREFIX}/Marble.app/Contents/MacOS/lib)
 diff --git a/src/lib/astro/CMakeLists.txt b/src/lib/astro/CMakeLists.txt
-index 3dbe45571..2a3d96a4c 100644
+index 27c4e4f62..ead8ccda7 100644
 --- a/src/lib/astro/CMakeLists.txt
 +++ b/src/lib/astro/CMakeLists.txt
-@@ -62,7 +62,7 @@ endif()
+@@ -73,7 +73,7 @@ endif()
  
- if (WIN32 OR APPLE)
+ if (APPLE)
      # TODO: find how to install & deploy library, headers and config files as bundle for development
 -    return()
 +#    return()
  endif()
  
  
-@@ -80,30 +80,30 @@ endif()
+@@ -92,24 +92,24 @@ endif()
  
  ########### CMake Config files ###############
  
 -include(CMakePackageConfigHelpers)
 -
--set(ASTRO_CMAKECONFIGNAME Astro)
 -set(ASTRO_INSTALL_CMAKECONFIGDIR ${CMAKE_INSTALL_LIBDIR}/cmake/${ASTRO_CMAKECONFIGNAME})
 -
 -configure_package_config_file(AstroConfig.cmake.in
 -    ${CMAKE_CURRENT_BINARY_DIR}/${ASTRO_CMAKECONFIGNAME}Config.cmake
 -    INSTALL_DESTINATION ${ASTRO_INSTALL_CMAKECONFIGDIR}
--)
--
--write_basic_package_version_file(${CMAKE_CURRENT_BINARY_DIR}/${ASTRO_CMAKECONFIGNAME}ConfigVersion.cmake
--    VERSION ${ASTRO_LIB_VERSION}
--    COMPATIBILITY SameMajorVersion
 -)
 -
 -install(FILES
@@ -57,17 +51,11 @@ index 3dbe45571..2a3d96a4c 100644
 -)
 +#include(CMakePackageConfigHelpers)
 +#
-+#set(ASTRO_CMAKECONFIGNAME Astro)
 +#set(ASTRO_INSTALL_CMAKECONFIGDIR ${CMAKE_INSTALL_LIBDIR}/cmake/${ASTRO_CMAKECONFIGNAME})
 +#
 +#configure_package_config_file(AstroConfig.cmake.in
 +#    ${CMAKE_CURRENT_BINARY_DIR}/${ASTRO_CMAKECONFIGNAME}Config.cmake
 +#    INSTALL_DESTINATION ${ASTRO_INSTALL_CMAKECONFIGDIR}
-+#)
-+#
-+#write_basic_package_version_file(${CMAKE_CURRENT_BINARY_DIR}/${ASTRO_CMAKECONFIGNAME}ConfigVersion.cmake
-+#    VERSION ${ASTRO_LIB_VERSION}
-+#    COMPATIBILITY SameMajorVersion
 +#)
 +#
 +#install(FILES
@@ -83,35 +71,29 @@ index 3dbe45571..2a3d96a4c 100644
 +#    DESTINATION ${ASTRO_INSTALL_CMAKECONFIGDIR}
 +#)
 diff --git a/src/lib/marble/CMakeLists.txt b/src/lib/marble/CMakeLists.txt
-index 6403ce45b..be949606b 100644
+index 51691b61c..454b46ed5 100644
 --- a/src/lib/marble/CMakeLists.txt
 +++ b/src/lib/marble/CMakeLists.txt
-@@ -454,7 +454,7 @@ endif()
+@@ -469,7 +469,7 @@ endif()
  
- if (WIN32 OR APPLE)
+ if (APPLE)
      # TODO: find how to install & deploy library, headers and config files as bundle for development
 -    return()
 +#    return()
  endif()
  
  if (MARBLE_NO_WEBKITWIDGETS)
-@@ -628,33 +628,33 @@ install( FILES
+@@ -649,27 +649,27 @@ install( FILES
  
  ########### CMake Config files ###############
  
 -include(CMakePackageConfigHelpers)
 -
--set(MARBLE_CMAKECONFIGNAME Marble)
 -set(MARBLE_INSTALL_CMAKECONFIGDIR ${CMAKE_INSTALL_LIBDIR}/cmake/${MARBLE_CMAKECONFIGNAME})
 -
 -configure_package_config_file(MarbleConfig.cmake.in
 -    ${CMAKE_CURRENT_BINARY_DIR}/${MARBLE_CMAKECONFIGNAME}Config.cmake
 -    INSTALL_DESTINATION ${MARBLE_INSTALL_CMAKECONFIGDIR}
--)
--
--write_basic_package_version_file(${CMAKE_CURRENT_BINARY_DIR}/${MARBLE_CMAKECONFIGNAME}ConfigVersion.cmake
--    VERSION ${MARBLE_LIB_VERSION}
--    COMPATIBILITY SameMajorVersion
 -)
 -
 -install(FILES
@@ -128,17 +110,11 @@ index 6403ce45b..be949606b 100644
 -)
 +#include(CMakePackageConfigHelpers)
 +#
-+#set(MARBLE_CMAKECONFIGNAME Marble)
 +#set(MARBLE_INSTALL_CMAKECONFIGDIR ${CMAKE_INSTALL_LIBDIR}/cmake/${MARBLE_CMAKECONFIGNAME})
 +#
 +#configure_package_config_file(MarbleConfig.cmake.in
 +#    ${CMAKE_CURRENT_BINARY_DIR}/${MARBLE_CMAKECONFIGNAME}Config.cmake
 +#    INSTALL_DESTINATION ${MARBLE_INSTALL_CMAKECONFIGDIR}
-+#)
-+#
-+#write_basic_package_version_file(${CMAKE_CURRENT_BINARY_DIR}/${MARBLE_CMAKECONFIGNAME}ConfigVersion.cmake
-+#    VERSION ${MARBLE_LIB_VERSION}
-+#    COMPATIBILITY SameMajorVersion
 +#)
 +#
 +#install(FILES
@@ -154,5 +130,5 @@ index 6403ce45b..be949606b 100644
 +#    DESTINATION ${MARBLE_INSTALL_CMAKECONFIGDIR}
 +#)
  
- 
  ########### Qt Pri file ###############
+ 

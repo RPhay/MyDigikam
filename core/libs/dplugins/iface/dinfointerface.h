@@ -8,7 +8,7 @@
  *               This class do not depend of digiKam database library
  *               to permit to re-use plugins with Showfoto.
  *
- * Copyright (C) 2017-2021 by Gilles Caulier <caulier dot gilles at gmail dot com>
+ * Copyright (C) 2017-2022 by Gilles Caulier <caulier dot gilles at gmail dot com>
  * Copyright (C) 2019-2020 by Minh Nghia Duong <minhnghiaduong997 at gmail dot com>
  *
  * This program is free software; you can redistribute it
@@ -169,7 +169,7 @@ public:
 
 /**
  * DItemInfo is a class to get item information from host application (Showfoto or digiKam)
- * The interface is re-implemented in host and depend how item infromation must be retrieved
+ * The interface is re-implemented in host and depend how item information must be retrieved
  * (from a database or by file metadata).
  * The easy way to use this container is given below:
  *

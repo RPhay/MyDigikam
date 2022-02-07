@@ -6,7 +6,7 @@
  * Date        : 2005-04-02
  * Description : setup Misc tab.
  *
- * Copyright (C) 2005-2021 by Gilles Caulier <caulier dot gilles at gmail dot com>
+ * Copyright (C) 2005-2022 by Gilles Caulier <caulier dot gilles at gmail dot com>
  * Copyright (C)      2008 by Arnd Baecker <arnd dot baecker at web dot de>
  * Copyright (C)      2014 by Mohamed_Anwer <m_dot_anwer at gmx dot com>
  *
@@ -123,11 +123,11 @@ ShowfotoSetupMisc::ShowfotoSetupMisc(QWidget* const parent)
     : QScrollArea(parent),
       d          (new Private)
 {
-    d->tab = new QTabWidget(viewport());
+    d->tab            = new QTabWidget(viewport());
     setWidget(d->tab);
     setWidgetResizable(true);
 
-    const int spacing         = QApplication::style()->pixelMetric(QStyle::PM_DefaultLayoutSpacing);
+    const int spacing = QApplication::style()->pixelMetric(QStyle::PM_DefaultLayoutSpacing);
 
     // -- Application Behavior Options --------------------------------------------------------
 
@@ -136,7 +136,7 @@ ShowfotoSetupMisc::ShowfotoSetupMisc(QWidget* const parent)
 
     // -- Sort Order Options ----------------------------------
 
-    QGroupBox* const sortOptionsGroup = new QGroupBox(i18n("Images Sort Order"), behaviourPanel);
+    QGroupBox* const sortOptionsGroup = new QGroupBox(i18n("Thumbbar, Folder-View, and Stack-View Items Sort Order"), behaviourPanel);
     QVBoxLayout* const gLayout4       = new QVBoxLayout();
 
     DHBox* const sortBox = new DHBox(sortOptionsGroup);
@@ -158,7 +158,7 @@ ShowfotoSetupMisc::ShowfotoSetupMisc(QWidget* const parent)
 
     // Thumbnails Options -------------------------------------
 
-    QGroupBox* const thOptionsGroup = new QGroupBox(i18n("Thumbnails"), behaviourPanel);
+    QGroupBox* const thOptionsGroup = new QGroupBox(i18n("Thumbbar Items"), behaviourPanel);
     QVBoxLayout* const gLayout3     = new QVBoxLayout();
 
     d->showMimeOverImage = new QCheckBox(i18n("&Show image Format"),          thOptionsGroup);
@@ -254,6 +254,7 @@ ShowfotoSetupMisc::ShowfotoSetupMisc(QWidget* const parent)
 #ifndef HAVE_APPSTYLE_SUPPORT
 
     // See Bug #365262
+
     appStyleHbox->setVisible(false);
 
 #endif

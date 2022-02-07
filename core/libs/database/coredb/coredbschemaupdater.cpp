@@ -7,7 +7,7 @@
  * Description : Core database Schema updater
  *
  * Copyright (C) 2007-2012 by Marcel Wiesweg <marcel dot wiesweg at gmx dot de>
- * Copyright (C) 2009-2021 by Gilles Caulier <caulier dot gilles at gmail dot com>
+ * Copyright (C) 2009-2022 by Gilles Caulier <caulier dot gilles at gmail dot com>
  *
  * This program is free software; you can redistribute it
  * and/or modify it under the terms of the GNU General
@@ -58,7 +58,7 @@ namespace Digikam
 
 int CoreDbSchemaUpdater::schemaVersion()
 {
-    return 13;
+    return 15;
 }
 
 int CoreDbSchemaUpdater::filterSettingsVersion()
@@ -455,11 +455,25 @@ bool CoreDbSchemaUpdater::makeUpdates()
                 return false;
             }
 
-            QString errorMsg = i18n("Failed to update the database schema from version %1 to version %2. "
-                                    "Please read the error messages printed on the console and "
-                                    "report this error as a bug at bugs.kde.org. ",
-                                    d->currentVersion.toInt(),
-                                    targetVersion);
+            QString errorMsg;
+
+            if (d->parameters.internalServer)
+            {
+                errorMsg = i18n("Failed to update the database schema from version %1 to version %2.\n"
+                                "The cause could be a missing upgrade of the database to the current "
+                                "server version. Now start digiKam again to perform a required "
+                                "upgrade of the database.",
+                                d->currentVersion.toInt(),
+                                targetVersion);
+            }
+            else
+            {
+                errorMsg = i18n("Failed to update the database schema from version %1 to version %2.\n"
+                                "Please read the error messages printed on the console and "
+                                "report this error as a bug at bugs.kde.org.",
+                                d->currentVersion.toInt(),
+                                targetVersion);
+            }
 
             if (!endWrapSchemaUpdateStep(updateToVersion(targetVersion), errorMsg))
             {
@@ -771,6 +785,22 @@ bool CoreDbSchemaUpdater::updateToVersion(int targetVersion)
             // add index to the TagsTree table for MySQL.
 
             return performUpdateToVersion(QLatin1String("UpdateSchemaFromV12ToV13"), 13, 5);
+        }
+
+        case 14:
+        {
+            // digiKam for database version 13 can work with version 14,
+            // add modificationDate column to the Albums table.
+
+            return performUpdateToVersion(QLatin1String("UpdateSchemaFromV13ToV14"), 14, 5);
+        }
+
+        case 15:
+        {
+            // digiKam for database version 14 can work with version 15,
+            // now using COLLATE utf8_bin for Albums:relativePath and Images:name in MySQL.
+
+            return performUpdateToVersion(QLatin1String("UpdateSchemaFromV14ToV15"), 15, 5);
         }
 
         default:

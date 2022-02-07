@@ -11,14 +11,14 @@
 | as published by the Free Software Foundation; either version 2
 | of the License, or (at your option) any later version.
 |
-| OEMs, ISVs, VARs and other distributors that combine and 
+| OEMs, ISVs, VARs and other distributors that combine and
 | distribute commercially licensed software with Platinum software
 | and do not wish to distribute the source code for the commercially
 | licensed software under version 2, or (at your option) any later
 | version, of the GNU General Public License (the "GPL") must enter
 | into a commercial license agreement with Plutinosoft, LLC.
 | licensing@plutinosoft.com
-|  
+|
 | This program is distributed in the hope that it will be useful,
 | but WITHOUT ANY WARRANTY; without even the implied warranty of
 | MERCHANTABILITY or FITNESS FOR A PARTICULAR PURPOSE.  See the
@@ -26,7 +26,7 @@
 |
 | You should have received a copy of the GNU General Public License
 | along with this program; see the file LICENSE.txt. If not, write to
-| the Free Software Foundation, Inc., 
+| the Free Software Foundation, Inc.,
 | 51 Franklin Street, Fifth Floor, Boston, MA  02110-1301, USA.
 | http://www.gnu.org/licenses/gpl-2.0.html
 |
@@ -45,8 +45,8 @@ NPT_SET_LOCAL_LOGGER("platinum.core.statevariable")
 /*----------------------------------------------------------------------
 |   PLT_StateVariable::PLT_StateVariable
 +---------------------------------------------------------------------*/
-PLT_StateVariable::PLT_StateVariable(PLT_Service* service) : 
-    m_Service(service), 
+PLT_StateVariable::PLT_StateVariable(PLT_Service* service) :
+    m_Service(service),
     m_AllowedValueRange(NULL),
     m_IsSendingEvents(false),
     m_IsSendingEventsIndirectly(true)
@@ -56,7 +56,7 @@ PLT_StateVariable::PLT_StateVariable(PLT_Service* service) :
 /*----------------------------------------------------------------------
 |   PLT_StateVariable::~PLT_StateVariable
 +---------------------------------------------------------------------*/
-PLT_StateVariable::~PLT_StateVariable() 
+PLT_StateVariable::~PLT_StateVariable()
 {
     m_AllowedValues.Apply(NPT_ObjectDeleter<NPT_String>());
     if (m_AllowedValueRange) delete m_AllowedValueRange;
@@ -100,8 +100,8 @@ PLT_StateVariable::GetSCPDXML(NPT_XmlElementNode* node)
 /*----------------------------------------------------------------------
 |   PLT_StateVariable::GetService
 +---------------------------------------------------------------------*/
-PLT_Service* 
-PLT_StateVariable::GetService() 
+PLT_Service*
+PLT_StateVariable::GetService()
 {
     return m_Service;
 }
@@ -109,12 +109,12 @@ PLT_StateVariable::GetService()
 /*----------------------------------------------------------------------
 |   PLT_StateVariable::IsSendingEvents
 +---------------------------------------------------------------------*/
-bool 
-PLT_StateVariable::IsSendingEvents(bool indirectly /* = false */) 
+bool
+PLT_StateVariable::IsSendingEvents(bool indirectly /* = false */)
 {
     if (indirectly) {
-        return (!m_IsSendingEvents && 
-                !m_Name.StartsWith("A_ARG_TYPE_") && 
+        return (!m_IsSendingEvents &&
+                !m_Name.StartsWith("A_ARG_TYPE_") &&
                 m_IsSendingEventsIndirectly);
     }
 
@@ -160,7 +160,7 @@ PLT_StateVariable::SetValue(const char* value)
         }
 
         m_Value = value;
-        m_Service->AddChanged(this); 
+        m_Service->AddChanged(this);
     }
 
     return NPT_SUCCESS;
@@ -199,7 +199,7 @@ PLT_StateVariable::ValidateValue(const char* value)
             while (val) {
                 val->Trim(" ");
                 if (!m_AllowedValues.Find(NPT_StringFinder(*val))) {
-                    NPT_LOG_WARNING_2("Invalid value of %s for state variable %s", 
+                    NPT_LOG_WARNING_2("Invalid value of %s for state variable %s",
                         (const char*)*val,
                         (const char*)m_Name);
                     return NPT_ERROR_INVALID_PARAMETERS;
@@ -210,7 +210,7 @@ PLT_StateVariable::ValidateValue(const char* value)
     }
 
     // TODO: there are more to it than allowed values, we need to test for range, etc..
-    return NPT_SUCCESS;    
+    return NPT_SUCCESS;
 }
 
 /*----------------------------------------------------------------------
@@ -239,7 +239,7 @@ PLT_StateVariable::SetExtraAttribute(const char* name, const char* value)
 NPT_Result
 PLT_StateVariable::Serialize(NPT_XmlElementNode& node)
 {
-    NPT_List<NPT_Map<NPT_String, NPT_String>::Entry*>::Iterator entry = 
+    NPT_List<NPT_Map<NPT_String, NPT_String>::Entry*>::Iterator entry =
         m_ExtraAttributes.GetEntries().GetFirstItem();
     while (entry) {
         const NPT_String& key   = (*entry)->GetKey();

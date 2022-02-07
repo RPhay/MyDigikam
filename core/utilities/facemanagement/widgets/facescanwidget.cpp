@@ -7,7 +7,7 @@
  * Description : Widget to choose options for face scanning
  *
  * Copyright (C) 2010-2012 by Marcel Wiesweg <marcel dot wiesweg at gmx dot de>
- * Copyright (C) 2012-2021 by Gilles Caulier <caulier dot gilles at gmail dot com>
+ * Copyright (C) 2012-2022 by Gilles Caulier <caulier dot gilles at gmail dot com>
  *
  * This program is free software; you can redistribute it
  * and/or modify it under the terms of the GNU General
@@ -23,7 +23,7 @@
  * ============================================================ */
 
 // NOTE: Uncomment this line to enable detect and recognize option
-// Currently this option is hiden, since it's not handled properly and provides confusing functionality => Fix it later
+// Currently this option is hidden, since it's not handled properly and provides confusing functionality => Fix it later
 //#define ENABLE_DETECT_AND_RECOGNIZE
 
 #include "facescanwidget_p.h"
@@ -343,13 +343,11 @@ void FaceScanWidget::setupConnections()
 void FaceScanWidget::slotPrepareForDetect(bool status)
 {
     d->alreadyScannedBox->setEnabled(status);
-    d->albumSelectors->setEnabled(status);
 }
 
 void FaceScanWidget::slotPrepareForRecognize(bool /*status*/)
 {
     d->alreadyScannedBox->setEnabled(false);
-    d->albumSelectors->setEnabled(false);
 }
 
 bool FaceScanWidget::settingsConflicted() const
@@ -392,8 +390,9 @@ FaceScanSettings FaceScanWidget::settings() const
     settings.alreadyScannedHandling = (FaceScanSettings::AlreadyScannedHandling)
                                       d->alreadyScannedBox->itemData(d->alreadyScannedBox->currentIndex()).toInt();
 
-    settings.accuracy               = double(d->accuracyInput->value()) / 100;
     settings.albums                 = d->albumSelectors->selectedAlbumsAndTags();
+    settings.accuracy               = double(d->accuracyInput->value()) / 100;
+    settings.wholeAlbums            = d->albumSelectors->wholeAlbumsChecked();
 
     if (d->settingsConflicted)
     {

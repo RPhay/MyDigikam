@@ -8,7 +8,7 @@
  *
  * Copyright (C) 2013-2014 by Yiou Wang <geow812 at gmail dot com>
  * Copyright (C) 2010-2012 by Marcel Wiesweg <marcel dot wiesweg at gmx dot de>
- * Copyright (C) 2011-2021 by Gilles Caulier <caulier dot gilles at gmail dot com>
+ * Copyright (C) 2011-2022 by Gilles Caulier <caulier dot gilles at gmail dot com>
  *
  * This program is free software; you can redistribute it
  * and/or modify it under the terms of the GNU General
@@ -62,6 +62,8 @@ public:
         item(nullptr)
     {
     }
+
+    DImg             targetImage;
 
     bool             capturePtMode;
 
@@ -163,21 +165,21 @@ QRect ImageRegionWidget::getOriginalImageRegionToRender() const
 
 void ImageRegionWidget::setPreviewImage(const DImg& img)
 {
-    DImg image = img;
-    QRect r    = d_ptr->item->getImageRegion();
-    image.resize(r.width(), r.height());
+    d_ptr->targetImage = img;
+    QRect r            = d_ptr->item->getImageRegion();
+    d_ptr->targetImage.resize(r.width(), r.height());
 
     // Because tool which only work on image data, the DImg container
     // do not contain metadata from original image. About Color Managed View, we need to
     // restore the embedded ICC color profile.
     // However, some tools may set a profile on the preview image, which we accept of course.
 
-    if (image.getIccProfile().isNull())
+    if (d_ptr->targetImage.getIccProfile().isNull())
     {
-        image.setIccProfile(d_ptr->item->image().getIccProfile());
+        d_ptr->targetImage.setIccProfile(d_ptr->item->image().getIccProfile());
     }
 
-    d_ptr->item->setTargetImage(image);
+    d_ptr->item->setTargetImage(d_ptr->targetImage);
 }
 
 DImg ImageRegionWidget::getOriginalImage() const
@@ -215,13 +217,13 @@ void ImageRegionWidget::slotOriginalImageRegionChanged(bool targetDone)
 void ImageRegionWidget::exposureSettingsChanged()
 {
     d_ptr->item->clearCache();
-    viewport()->update();
+    d_ptr->item->setTargetImage(d_ptr->targetImage);
 }
 
 void ImageRegionWidget::ICCSettingsChanged()
 {
     d_ptr->item->clearCache();
-    viewport()->update();
+    d_ptr->item->setTargetImage(d_ptr->targetImage);
 }
 
 void ImageRegionWidget::mousePressEvent(QMouseEvent* e)

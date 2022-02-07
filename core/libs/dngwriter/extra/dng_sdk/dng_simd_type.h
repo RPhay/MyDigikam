@@ -90,7 +90,7 @@ extern SIMDType	gDNGMaxSIMD;
 
 // Macros are preferred for "#pragma simd" because at some point these will
 // all change to OpenMP 4.x compliant "#pragma omp simd" directives (no longer
-// Intel-specific). 
+// Intel-specific).
 //
 // Note that _Pragma(x) requires C99 or C++11 support.
 

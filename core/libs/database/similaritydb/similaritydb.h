@@ -59,7 +59,7 @@ class DIGIKAM_DATABASE_EXPORT SimilarityDb
 public:
 
     /**
-     * Set the database seting entry given by keyword to the given value.
+     * Set the database setting entry given by keyword to the given value.
      * @param keyword The keyword, i.e. setting name.
      * @param value The value.
      * @return True, if the value was set and false, else..

@@ -6,7 +6,7 @@
  * Date        : 2013-08-19
  * Description : Image quality Settings Container.
  *
- * Copyright (C) 2013-2021 by Gilles Caulier <caulier dot gilles at gmail dot com>
+ * Copyright (C) 2013-2022 by Gilles Caulier <caulier dot gilles at gmail dot com>
  *
  * This program is free software; you can redistribute it
  * and/or modify it under the terms of the GNU General
@@ -52,7 +52,7 @@ public:
 
 public:
 
-    bool enableSorter;          ///< Global quality dectection enabler/disabler.
+    bool enableSorter;          ///< Global quality detection enabler/disabler.
 
     bool detectBlur;            ///< Enable image blur detection.
     bool detectNoise;           ///< Enable image noise detection.
@@ -70,6 +70,7 @@ public:
     int  blurWeight;            ///< Item blur level.
     int  noiseWeight;           ///< Item noise level.
     int  compressionWeight;     ///< Item compression level.
+    int  exposureWeight;
 };
 
 //! qDebug() stream operator. Writes property @a s to the debug output in a nicely formatted way.

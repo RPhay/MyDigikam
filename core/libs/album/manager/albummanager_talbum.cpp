@@ -6,7 +6,7 @@
  * Date        : 2004-06-15
  * Description : Albums manager interface - Tag Album helpers.
  *
- * Copyright (C) 2006-2021 by Gilles Caulier <caulier dot gilles at gmail dot com>
+ * Copyright (C) 2006-2022 by Gilles Caulier <caulier dot gilles at gmail dot com>
  * Copyright (C) 2006-2011 by Marcel Wiesweg <marcel dot wiesweg at gmx dot de>
  * Copyright (C) 2015      by Mohamed_Anwer <m_dot_anwer at gmx dot com>
  *
@@ -381,33 +381,69 @@ bool AlbumManager::deleteTAlbum(TAlbum* album, QString& errMsg, bool askUser)
         return false;
     }
 
-    if ((album->id() == FaceTags::unknownPersonTagId())   ||
-        (album->id() == FaceTags::ignoredPersonTagId())   ||
-        (album->id() == FaceTags::unconfirmedPersonTagId()))
+    if (FaceTags::isSystemPersonTagId(album->id()))
     {
         errMsg = i18n("Cannot delete required face tag");
         return false;
     }
 
+    QList<int> toBeDeletedTagIds;
+    toBeDeletedTagIds << album->id();
+
+    Album* subAlbum = nullptr;
+    AlbumIterator it(album);
+
+    while ((subAlbum = it.current()) != nullptr)
+    {
+        toBeDeletedTagIds << subAlbum->id();
+        ++it;
+    }
+
+    QApplication::setOverrideCursor(Qt::WaitCursor);
+
     QList<qlonglong> imageIds;
 
     if (askUser)
     {
-        imageIds = CoreDbAccess().db()->getItemIDsInTag(album->id());
+        // Recursively from all tags to delete.
+
+        imageIds = CoreDbAccess().db()->getItemIDsInTag(album->id(), true);
     }
+
+    foreach (int tagId, toBeDeletedTagIds)
+    {
+        if (FaceTags::isPerson(tagId))
+        {
+            const QList<qlonglong>& imgListIds = CoreDbAccess().db()->getItemIDsInTag(tagId);
+
+            foreach (const qlonglong& imageId, imgListIds)
+            {
+                const QList<FaceTagsIface>& facesList = FaceTagsEditor().databaseFaces(imageId);
+
+                foreach (const FaceTagsIface& face, facesList)
+                {
+                    if (face.tagId() == tagId)
+                    {
+                        FaceTagsIface unknownFace(FaceTagsIface::UnknownName, imageId,
+                                                  FaceTags::unknownPersonTagId(), face.region());
+
+                        FaceTagsEditor().removeFace(face);
+                        FaceTagsEditor().addManually(unknownFace);
+                    }
+                }
+            }
+        }
+    }
+
+    QApplication::restoreOverrideCursor();
 
     {
         CoreDbAccess access;
         ChangingDB changing(d);
-        access.db()->deleteTag(album->id());
 
-        Album* subAlbum = nullptr;
-        AlbumIterator it(album);
-
-        while ((subAlbum = it.current()) != nullptr)
+        foreach (int tagId, toBeDeletedTagIds)
         {
-            access.db()->deleteTag(subAlbum->id());
-            ++it;
+            access.db()->deleteTag(tagId);
         }
     }
 
@@ -544,8 +580,8 @@ bool AlbumManager::moveTAlbum(TAlbum* album, TAlbum* newParent, QString& errMsg)
 
     emit signalAlbumMoved(album);
     emit signalAlbumsUpdated(Album::TAG);
-    d->currentlyMovingAlbum = nullptr;
 
+    d->currentlyMovingAlbum       = nullptr;
     TAlbum* const personParentTag = findTAlbum(FaceTags::personParentTag());
 
     if (personParentTag && personParentTag->isAncestorOf(album))
@@ -566,15 +602,13 @@ bool AlbumManager::mergeTAlbum(TAlbum* album, TAlbum* destAlbum, bool dialog, QS
         return false;
     }
 
-    if (album == d->rootTAlbum || destAlbum == d->rootTAlbum)
+    if ((album == d->rootTAlbum) || (destAlbum == d->rootTAlbum))
     {
         errMsg = i18n("Cannot merge root tag");
         return false;
     }
 
-    if ((album->id() == FaceTags::unknownPersonTagId())   ||
-        (album->id() == FaceTags::ignoredPersonTagId())   ||
-        (album->id() == FaceTags::unconfirmedPersonTagId()))
+    if (FaceTags::isSystemPersonTagId(album->id()))
     {
         errMsg = i18n("Cannot merge required face tag");
         return false;

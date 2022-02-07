@@ -47,7 +47,7 @@ public:
     // methods
              NPT_SelectableMessageQueue();
     virtual ~NPT_SelectableMessageQueue();
-    
+
     // NPT_MessageQueue methods
     virtual NPT_Result PumpMessage(NPT_Timeout timeout = NPT_TIMEOUT_INFINITE);
     virtual NPT_Result QueueMessage(NPT_Message*        message,
@@ -55,7 +55,7 @@ public:
 
     // methods
     int  GetEventFd() { return m_Pipe[0]; }
- 
+
 private:
     // methods
     NPT_Result FlushEvent();

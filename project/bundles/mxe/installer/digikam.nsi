@@ -9,7 +9,7 @@
  ;
  ; Copyright (C) 2010      by Julien Narboux <julien at narboux dot fr>
  ; Copyright (C) 2011-2014 by Ananta Palani  <anantapalani at gmail dot com>
- ; Copyright (C) 2010-2021 by Gilles Caulier <caulier dot gilles at gmail dot com>
+ ; Copyright (C) 2010-2022 by Gilles Caulier <caulier dot gilles at gmail dot com>
  ;
  ; Script arguments:
  ; VERSION    : the digiKam version as string.
@@ -42,7 +42,7 @@
 ;-------------------------------------------------------------------------------
 ;Verbose level (no script)
 
-    !verbose 3
+    !verbose 4
 
 ;-------------------------------------------------------------------------------
 ; Compression rules optimizations
@@ -238,6 +238,7 @@
         File "${BUNDLEPATH}\*.rcc"
         File "${BUNDLEPATH}\*.dll"
         File "${BUNDLEPATH}\*.yes"
+        File "${BUNDLEPATH}\*.txt"
 
         SetOutPath "$INSTDIR\etc"
         File /r "${BUNDLEPATH}\etc\*.*"
@@ -254,6 +255,12 @@
         SetOutPath "$INSTDIR\translations"
         File /r "${BUNDLEPATH}\translations\*.*"
 
+        SetOutPath "$INSTDIR\libgphoto2"
+        File /r "${BUNDLEPATH}\libgphoto2\*.*"
+
+        SetOutPath "$INSTDIR\libgphoto2_port"
+        File /r "${BUNDLEPATH}\libgphoto2_port\*.*"
+
         ;Store installation folder
 
         WriteRegStr HKLM "Software\${MY_PRODUCT}" "" $INSTDIR
@@ -262,7 +269,7 @@
 
         WriteUninstaller "$INSTDIR\Uninstall.exe"
 
-        ;Register uninstaller in windows registery with only the option to uninstall (no repair nor modify)
+        ;Register uninstaller in windows registry with only the option to uninstall (no repair nor modify)
 
         WriteRegStr HKLM "Software\Microsoft\Windows\CurrentVersion\Uninstall\${MY_PRODUCT}" "Comments" "${MY_PRODUCT} ${VERSION}"
         WriteRegStr HKLM "Software\Microsoft\Windows\CurrentVersion\Uninstall\${MY_PRODUCT}" "DisplayIcon" '"$INSTDIR\digikam.exe"'
@@ -321,6 +328,7 @@
         Delete "$INSTDIR\*.rcc"
         Delete "$INSTDIR\*.dll"
         Delete "$INSTDIR\*.yes"
+        Delete "$INSTDIR\*.txt"
 
         Delete "$INSTDIR\Uninstall.exe"
         Delete "$INSTDIR\releasenotes.html"
@@ -332,6 +340,8 @@
         RMDir /r "$INSTDIR\share"
         RMDir /r "$INSTDIR\plugins"
         RMDir /r "$INSTDIR\translations"
+        RMDir /r "$INSTDIR\libgphoto2"
+        RMDir /r "$INSTDIR\libgphoto2_port"
 
         ;Do not do a recursive removal of $INSTDIR because user may have accidentally installed into system critical directory!
 
