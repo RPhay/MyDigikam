@@ -1027,10 +1027,8 @@ qlonglong CollectionScanner::scanNewFile(const QFileInfo& info, int albumId)
         }
     }
 
-    ItemInfo itemInfo(scanner.id());
-    d->newItemList << itemInfo;
-
     d->finishScanner(scanner);
+    d->newIdsList << scanner.id();
 
     return scanner.id();
 }
@@ -1204,11 +1202,6 @@ bool CollectionScanner::databaseInitialScanDone()
     CoreDbAccess access;
 
     return !access.db()->getSetting(QLatin1String("Scanned")).isEmpty();
-}
-
-ItemInfoList CollectionScanner::getNewInfoList()
-{
-    return d->newItemList;
 }
 
 } // namespace Digikam

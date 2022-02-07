@@ -123,6 +123,11 @@ public:
     void setDeferredFileScanning(bool defer);
     QStringList deferredAlbumPaths() const;
 
+    /**
+     * Returns item ids from new detected items
+     */
+    QList<qlonglong> getNewIdsList() const;
+
     // -----------------------------------------------------------------------------
 
     /** @name Scan operations
@@ -155,8 +160,6 @@ public:
      * (or update requiring a rescan)
      */
     static bool databaseInitialScanDone();
-
-    ItemInfoList getNewInfoList();
 
     /**
      * Carries out a partial scan on the specified path of the collection.

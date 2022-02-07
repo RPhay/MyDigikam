@@ -178,9 +178,9 @@ public:
     QSet<QString>                                 deferredAlbumPaths;
 
     QHash<QString, QDateTime>                     albumDateCache;
+    QList<qlonglong>                              newIdsList;
 
     CollectionScannerObserver*                    observer;
-    ItemInfoList                                  newItemList;
 };
 
 } // namespace Digikam

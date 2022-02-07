@@ -113,8 +113,6 @@ ScanController::ScanController()
 
     d->running = true;
     start();
-
-    d-> newItemList;
 }
 
 ScanController::~ScanController()
@@ -259,7 +257,7 @@ void ScanController::run()
                 d->finishScanAllowed          = false;
             }
 
-            d->newItemList = scanner.getNewInfoList();
+            d->newIdsList = scanner.getNewIdsList();
         }
         else if (doFinishScan)
         {
@@ -310,11 +308,6 @@ void ScanController::run()
             emit completeScanDone();
         }
     }
-}
-
-ItemInfoList ScanController::getNewItemList()
-{
-    return d->newItemList;
 }
 
 /// (also implementing InitializationObserver)
@@ -394,6 +387,11 @@ ItemInfo ScanController::scannedInfo(const QString& filePath)
 
         return info;
     }
+}
+
+QList<qlonglong> ScanController::getNewIdsList() const
+{
+    return d->newIdsList;
 }
 
 } // namespace Digikam

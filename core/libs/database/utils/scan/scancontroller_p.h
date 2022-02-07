@@ -169,7 +169,8 @@ public:
     bool                            needTotalFiles;
     bool                            performFastScan;
     int                             totalFilesToScan;
-    ItemInfoList                    newItemList;
+
+    QList<qlonglong>                newIdsList;
 };
 
 // ------------------------------------------------------------------------------
