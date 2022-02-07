@@ -295,9 +295,6 @@ SetupMisc::SetupMisc(QWidget* const parent)
     connect(d->scanAtStart, SIGNAL(toggled(bool)),
             d->useFastScan, SLOT(setEnabled(bool)));
 
-    connect(d->scanAtStart, SIGNAL(toggled(bool)),
-            d->detectFaces, SLOT(setEnabled(bool)));
-
     // --------------------------------------------------------
 
     d->tab->insertTab(Behaviour, behaviourPanel, i18nc("@title:tab", "Behaviour"));
