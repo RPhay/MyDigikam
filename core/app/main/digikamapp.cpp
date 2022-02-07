@@ -27,7 +27,6 @@
  * ============================================================ */
 
 #include "digikamapp_p.h"
-#include "facesdetector.h"
 
 namespace Digikam
 {
@@ -351,17 +350,14 @@ void DigikamApp::show()
     if (ApplicationSettings::instance()->getScanAtStart() ||
         !CollectionScanner::databaseInitialScanDone())
     {
-        NewItemsFinder* const tool = new NewItemsFinder(NewItemsFinder::ScanDeferredFiles);
+        NewItemsFinder* const tool          = new NewItemsFinder(NewItemsFinder::ScanDeferredFiles);
 
         ApplicationSettings* const settings = ApplicationSettings::instance();
 
-        if (settings)
+        if (settings && settings->getDetectFacesInNewImages())
         {
-            if (settings->getDetectFacesInNewImages())
-            {
-                connect(tool, SIGNAL(signalComplete()),
+            connect(tool, SIGNAL(signalComplete()),
                     this, SLOT(slotDetectFaces()));
-            }
         }
 
         QTimer::singleShot(1000, tool, SLOT(start()));
@@ -1136,7 +1132,7 @@ void DigikamApp::slotDetectFaces()
     settings.alreadyScannedHandling = FaceScanSettings::Rescan;
     settings.infos                  = newImages;
 
-    FacesDetector* const tool = new FacesDetector(settings);
+    FacesDetector* const tool       = new FacesDetector(settings);
     tool->start();
 }
 

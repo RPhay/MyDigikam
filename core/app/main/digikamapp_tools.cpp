@@ -116,13 +116,10 @@ void DigikamApp::slotScanNewItems()
 
     ApplicationSettings* const settings = ApplicationSettings::instance();
 
-    if (settings)
+    if (settings && settings->getDetectFacesInNewImages())
     {
-        if (settings->getDetectFacesInNewImages())
-        {
-            connect(tool, SIGNAL(signalComplete()),
+        connect(tool, SIGNAL(signalComplete()),
                 this, SLOT(slotDetectFaces()));
-        }
     }
 
     tool->start();

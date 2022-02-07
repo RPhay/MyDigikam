@@ -1027,11 +1027,10 @@ qlonglong CollectionScanner::scanNewFile(const QFileInfo& info, int albumId)
         }
     }
 
-    d->finishScanner(scanner);
-
-    qlonglong imageId = CoreDbAccess().db()->getImageId(albumId, info.fileName());
-    ItemInfo itemInfo(imageId);
+    ItemInfo itemInfo(scanner.id());
     d->newItemList << itemInfo;
+
+    d->finishScanner(scanner);
 
     return scanner.id();
 }
