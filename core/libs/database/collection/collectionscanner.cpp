@@ -86,4 +86,9 @@ QStringList CollectionScanner::deferredAlbumPaths() const
     return d->deferredAlbumPaths.values();
 }
 
+QList<qlonglong> CollectionScanner::getNewIdsList() const
+{
+    return d->newIdsList;
+}
+
 } // namespace Digikam

@@ -124,6 +124,7 @@ const QString ApplicationSettings::Private::configDrawFramesToGroupedEntry(QLati
 const QString ApplicationSettings::Private::configExpandNewCurrentItemEntry(QLatin1String("Expand New Current Item On Click"));
 const QString ApplicationSettings::Private::configScrollItemToCenterEntry(QLatin1String("Scroll Current Item To Center"));
 const QString ApplicationSettings::Private::configShowOnlyPersonTagsInPeopleSidebarEntry(QLatin1String("Show Only Face Tags For Assigning Name"));
+const QString ApplicationSettings::Private::configDetectFacesInNewImagesEntry(QLatin1String("Detect faces in newly added images"));
 const QString ApplicationSettings::Private::configSyncBalootoDigikamEntry(QLatin1String("Sync Baloo to Digikam"));
 const QString ApplicationSettings::Private::configSyncDigikamtoBalooEntry(QLatin1String("Sync Digikam to Baloo"));
 const QString ApplicationSettings::Private::configStringComparisonTypeEntry(QLatin1String("String Comparison Type"));
@@ -167,6 +168,7 @@ ApplicationSettings::Private::Private(ApplicationSettings* const qq)
       expandNewCurrentItem                  (false),
       scrollItemToCenter                    (false),
       showOnlyPersonTagsInPeopleSidebar     (false),
+      detectFacesInNewImages                (false),
       iconShowName                          (false),
       iconShowSize                          (false),
       iconShowDate                          (false),
@@ -305,6 +307,7 @@ void ApplicationSettings::Private::init()
     expandNewCurrentItem                 = true;
     scrollItemToCenter                   = false;
     showOnlyPersonTagsInPeopleSidebar    = false;
+    detectFacesInNewImages               = false;
 
     iconShowName                         = true;
     iconShowSize                         = false;

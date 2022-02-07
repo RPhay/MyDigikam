@@ -833,4 +833,14 @@ BUGFIXES:
 818 ==> 088896 - Using ImageCollectionShared::category even when host app do not have feature AlbumsHaveCategory.
 819 ==> 348333 - Crashes if I click Cancel while resizing images.
 820 ==> 261778 - Improve key {unique} behavior for coupled files (jpg+raw).
-821 ==> 
+821 ==> 449733 - OpenCV undefined symbol.
+822 ==> 449756 - Tag deletion ignore lazy synchronization and are applied immediately.
+823 ==> 
+824 ==> 
+825 ==> 
+826 ==> 
+827 ==> 
+828 ==> 
+829 ==> 
+830 ==> 
+831 ==> 

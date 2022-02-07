@@ -256,6 +256,8 @@ void ScanController::run()
                 d->completeScanDeferredAlbums = scanner.deferredAlbumPaths();
                 d->finishScanAllowed          = false;
             }
+
+            d->newIdsList = scanner.getNewIdsList();
         }
         else if (doFinishScan)
         {
@@ -385,6 +387,11 @@ ItemInfo ScanController::scannedInfo(const QString& filePath)
 
         return info;
     }
+}
+
+QList<qlonglong> ScanController::getNewIdsList() const
+{
+    return d->newIdsList;
 }
 
 } // namespace Digikam

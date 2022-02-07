@@ -238,21 +238,8 @@ ItemPreviewView::ItemPreviewView(QWidget* const parent, Mode mode, Album* const 
     connect(d->rotRightAction, SIGNAL(triggered()),
             this, SLOT(slotRotateRight()));
 
-    connect(d->peopleToggleAction, &QAction::toggled,
-            this, [this](bool checked)
-        {
-            if (checked)
-            {
-                d->faceGroup->setInfo(d->item->imageInfo());
-            }
-            else
-            {
-                d->faceGroup->setInfo(ItemInfo());
-            }
-
-            d->faceGroup->setVisible(checked);
-        }
-    );
+    connect(d->peopleToggleAction, SIGNAL(toggled(bool)),
+            d->faceGroup, SLOT(setVisible(bool)));
 
     connect(d->addPersonAction, &QAction::triggered,
             this, [this]()
@@ -331,14 +318,7 @@ void ItemPreviewView::imageLoaded()
     d->rotLeftAction->setEnabled(true);
     d->rotRightAction->setEnabled(true);
 
-    if (d->peopleToggleAction->isChecked())
-    {
-        d->faceGroup->setInfo(d->item->imageInfo());
-    }
-    else
-    {
-        d->faceGroup->setInfo(ItemInfo());
-    }
+    d->faceGroup->setInfo(d->item->imageInfo());
 
     bool add = false;
 
@@ -361,6 +341,7 @@ void ItemPreviewView::imageLoadingFailed()
     d->rotLeftAction->setEnabled(false);
     d->rotRightAction->setEnabled(false);
     d->addFocusPointAction->setEnabled(false);
+
     d->faceGroup->setInfo(ItemInfo());
     d->focusPointGroup->setInfo(ItemInfo());
 

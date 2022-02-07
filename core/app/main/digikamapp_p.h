@@ -129,6 +129,7 @@
 #include "dfiledialog.h"
 #include "dpluginloader.h"
 #include "exiftoolparser.h"
+#include "facesdetector.h"
 
 #ifdef HAVE_MARBLE
 #   include "geolocationedit.h"
