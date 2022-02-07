@@ -341,20 +341,20 @@ void DigikamApp::show()
 
     // Init album icon view zoom factor.
 
-    slotThumbSizeChanged(ApplicationSettings::instance()->getDefaultIconSize());
-    slotZoomSliderChanged(ApplicationSettings::instance()->getDefaultIconSize());
+    ApplicationSettings* const settings = ApplicationSettings::instance();
+
+    slotThumbSizeChanged(settings->getDefaultIconSize());
+    slotZoomSliderChanged(settings->getDefaultIconSize());
     d->autoShowZoomToolTip = true;
 
     // Enable finished the collection scan as deferred process
 
-    if (ApplicationSettings::instance()->getScanAtStart() ||
+    if (settings->getScanAtStart()                  ||
         !CollectionScanner::databaseInitialScanDone())
     {
-        NewItemsFinder* const tool          = new NewItemsFinder(NewItemsFinder::ScanDeferredFiles);
+        NewItemsFinder* const tool = new NewItemsFinder(NewItemsFinder::ScanDeferredFiles);
 
-        ApplicationSettings* const settings = ApplicationSettings::instance();
-
-        if (settings && settings->getDetectFacesInNewImages())
+        if (settings->getDetectFacesInNewImages())
         {
             connect(tool, SIGNAL(signalComplete()),
                     this, SLOT(slotDetectFaces()));
@@ -363,7 +363,7 @@ void DigikamApp::show()
         QTimer::singleShot(1000, tool, SLOT(start()));
     }
 
-    if (ApplicationSettings::instance()->getCleanAtStart())
+    if (settings->getCleanAtStart())
     {
         DbCleaner* const tool = new DbCleaner(false, false);
         QTimer::singleShot(1000, tool, SLOT(start()));
