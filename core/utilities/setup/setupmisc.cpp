@@ -52,6 +52,7 @@
 // Local includes
 
 #include "digikam_config.h"
+#include "dexpanderbox.h"
 #include "dlayoutbox.h"
 #include "dfontselect.h"
 #include "thememanager.h"
@@ -86,9 +87,9 @@ public:
         expandNewCurrentItemCheck               (nullptr),
         scrollItemToCenterCheck                 (nullptr),
         showOnlyPersonTagsInPeopleSidebarCheck  (nullptr),
-        detectFacesInNewImagesCheck             (nullptr),
         scanAtStart                             (nullptr),
         useFastScan                             (nullptr),
+        detectFaces                             (nullptr),
         cleanAtStart                            (nullptr),
         updateType                              (nullptr),
         sidebarType                             (nullptr),
@@ -122,9 +123,9 @@ public:
     QCheckBox*                expandNewCurrentItemCheck;
     QCheckBox*                scrollItemToCenterCheck;
     QCheckBox*                showOnlyPersonTagsInPeopleSidebarCheck;
-    QCheckBox*                detectFacesInNewImagesCheck;
     QCheckBox*                scanAtStart;
     QCheckBox*                useFastScan;
+    QCheckBox*                detectFaces;
     QCheckBox*                cleanAtStart;
 
     QComboBox*                updateType;
@@ -190,6 +191,8 @@ SetupMisc::SetupMisc(QWidget* const parent)
 
     d->useFastScan->setEnabled(false);
 
+    d->detectFaces                    = new QCheckBox(i18n("Detect faces in newly added images"), behaviourPanel);
+
     d->cleanAtStart                   = new QCheckBox(i18n("Remove obsolete core database objects (makes startup slower)"), behaviourPanel);
     d->cleanAtStart->setToolTip(i18n("Set this option to force digiKam to clean up the core database from obsolete item entries.\n"
                                      "Entries are only deleted if the connected image/video/audio file was already removed, i.e.\n"
@@ -201,7 +204,6 @@ SetupMisc::SetupMisc(QWidget* const parent)
     d->scrollItemToCenterCheck                = new QCheckBox(i18n("Scroll current item to center of thumbbar"), behaviourPanel);
     d->showOnlyPersonTagsInPeopleSidebarCheck = new QCheckBox(i18n("Show only face tags for assigning names in people sidebar"), behaviourPanel);
 
-    d->detectFacesInNewImagesCheck = new QCheckBox(i18n("Detect faces in newly added images"), behaviourPanel);
 
     // ---------------------------------------------------------
 
@@ -271,26 +273,30 @@ SetupMisc::SetupMisc(QWidget* const parent)
 
     layout->setContentsMargins(spacing, spacing, spacing, spacing);
     layout->setSpacing(spacing);
-    layout->addWidget(stringComparisonHbox,                       0, 0, 1, 4);
-    layout->addWidget(d->scanAtStart,                             1, 0, 1, 4);
-    layout->addWidget(d->useFastScan,                             2, 3, 1, 1);
+    layout->addWidget(d->scanAtStart,                             0, 0, 1, 4);
+    layout->addWidget(d->useFastScan,                             1, 3, 1, 1);
+    layout->addWidget(d->detectFaces,                             2, 0, 1, 4);
     layout->addWidget(d->cleanAtStart,                            3, 0, 1, 4);
-    layout->addWidget(d->showTrashDeleteDialogCheck,              4, 0, 1, 4);
-    layout->addWidget(d->showPermanentDeleteDialogCheck,          5, 0, 1, 4);
-    layout->addWidget(d->sidebarApplyDirectlyCheck,               6, 0, 1, 4);
-    layout->addWidget(d->expandNewCurrentItemCheck,               7, 0, 1, 4);
-    layout->addWidget(d->scrollItemToCenterCheck,                 8, 0, 1, 4);
-    layout->addWidget(d->showOnlyPersonTagsInPeopleSidebarCheck,  9, 0, 1, 4);
-    layout->addWidget(d->detectFacesInNewImagesCheck,            10, 0, 1, 4);
-    layout->addWidget(minSimilarityBoundHbox,                    11, 0, 1, 4);
-    layout->addWidget(upOptionsGroup,                            12, 0, 1, 4);
+    layout->addWidget(new DLineWidget(Qt::Horizontal),            4, 0, 1, 4);
+    layout->addWidget(d->showTrashDeleteDialogCheck,              5, 0, 1, 4);
+    layout->addWidget(d->showPermanentDeleteDialogCheck,          6, 0, 1, 4);
+    layout->addWidget(d->sidebarApplyDirectlyCheck,               7, 0, 1, 4);
+    layout->addWidget(d->showOnlyPersonTagsInPeopleSidebarCheck,  8, 0, 1, 4);
+    layout->addWidget(d->expandNewCurrentItemCheck,               9, 0, 1, 4);
+    layout->addWidget(d->scrollItemToCenterCheck,                10, 0, 1, 4);
+    layout->addWidget(stringComparisonHbox,                      11, 0, 1, 4);
+    layout->addWidget(minSimilarityBoundHbox,                    12, 0, 1, 4);
+    layout->addWidget(upOptionsGroup,                            13, 0, 1, 4);
     layout->setColumnStretch(3, 10);
-    layout->setRowStretch(12, 10);
+    layout->setRowStretch(14, 10);
 
     // --------------------------------------------------------
 
     connect(d->scanAtStart, SIGNAL(toggled(bool)),
             d->useFastScan, SLOT(setEnabled(bool)));
+
+    connect(d->scanAtStart, SIGNAL(toggled(bool)),
+            d->detectFaces, SLOT(setEnabled(bool)));
 
     // --------------------------------------------------------
 
@@ -513,13 +519,13 @@ void SetupMisc::applySettings()
     settings->setMinimumSimilarityBound(d->minimumSimilarityBound->value());
     settings->setApplySidebarChangesDirectly(d->sidebarApplyDirectlyCheck->isChecked());
     settings->setScanAtStart(d->scanAtStart->isChecked());
+    settings->setDetectFacesInNewImages(d->detectFaces->isChecked());
     settings->setCleanAtStart(d->cleanAtStart->isChecked());
     settings->setUseNativeFileDialog(d->useNativeFileDialogCheck->isChecked());
     settings->setDrawFramesToGrouped(d->drawFramesToGroupedCheck->isChecked());
     settings->setExpandNewCurrentItem(d->expandNewCurrentItemCheck->isChecked());
     settings->setScrollItemToCenter(d->scrollItemToCenterCheck->isChecked());
     settings->setShowOnlyPersonTagsInPeopleSidebar(d->showOnlyPersonTagsInPeopleSidebarCheck->isChecked());
-    settings->setDetectFacesInNewImages(d->detectFacesInNewImagesCheck->isChecked());
     settings->setSidebarTitleStyle(d->sidebarType->currentIndex() == 0 ? DMultiTabBar::ActiveIconText : DMultiTabBar::AllIconsText);
     settings->setUpdateType(d->updateType->currentIndex());
     settings->setUpdateWithDebug(d->updateWithDebug->isChecked());
@@ -563,13 +569,13 @@ void SetupMisc::readSettings()
     d->sidebarApplyDirectlyCheck->setChecked(settings->getApplySidebarChangesDirectly());
     d->sidebarApplyDirectlyCheck->setChecked(settings->getApplySidebarChangesDirectly());
     d->scanAtStart->setChecked(settings->getScanAtStart());
+    d->detectFaces->setChecked(settings->getDetectFacesInNewImages());
     d->cleanAtStart->setChecked(settings->getCleanAtStart());
     d->useNativeFileDialogCheck->setChecked(settings->getUseNativeFileDialog());
     d->drawFramesToGroupedCheck->setChecked(settings->getDrawFramesToGrouped());
     d->expandNewCurrentItemCheck->setChecked(settings->getExpandNewCurrentItem());
     d->scrollItemToCenterCheck->setChecked(settings->getScrollItemToCenter());
     d->showOnlyPersonTagsInPeopleSidebarCheck->setChecked(settings->showOnlyPersonTagsInPeopleSidebar());
-    d->detectFacesInNewImagesCheck->setChecked(settings->getDetectFacesInNewImages());
     d->sidebarType->setCurrentIndex(settings->getSidebarTitleStyle() == DMultiTabBar::ActiveIconText ? 0 : 1);
     d->updateType->setCurrentIndex(settings->getUpdateType());
     d->updateWithDebug->setChecked(settings->getUpdateWithDebug());
