@@ -30,14 +30,11 @@
 #include <cmath>
 #include <cstdlib>
 
-// KDE includes
-
-#include <klocalizedstring.h>
-
 // Local includes
 
 #include "dimg.h"
 #include "lensdistortionpixelaccess.h"
+#include "digikam_globals_p.h"      // For KF6::Ki18n deprecated
 
 namespace Digikam
 {

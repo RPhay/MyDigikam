@@ -34,16 +34,12 @@
 
 #include <QDateTime>
 
-// KDE includes
-
-#include <klocalizedstring.h>
-
 // Local includes
 
 #include "dimg.h"
 #include "blurfilter.h"
 #include "mixerfilter.h"
-#include "digikam_globals.h"
+#include "digikam_globals_p.h"      // For KF6::Ki18n deprecated
 
 namespace Digikam
 {

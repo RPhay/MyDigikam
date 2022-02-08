@@ -35,16 +35,13 @@
 
 #include <QtConcurrent>    // krazy:exclude=includes
 
-// KDE includes
-
-#include <klocalizedstring.h>
-
 // Local includes
 
 #include "dimg.h"
 #include "digikam_debug.h"
 #include "dcolor.h"
 #include "blurfilter.h"
+#include "digikam_globals_p.h"      // For KF6::Ki18n deprecated
 
 namespace Digikam
 {

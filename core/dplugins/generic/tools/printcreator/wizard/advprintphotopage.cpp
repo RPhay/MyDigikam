@@ -44,7 +44,6 @@
 
 // KDE includes
 
-#include <klocalizedstring.h>
 #include <kdesktopfile.h>
 
 // Local includes
@@ -53,6 +52,7 @@
 #include "advprintwizard.h"
 #include "advprintcustomdlg.h"
 #include "templateicon.h"
+#include "digikam_globals_p.h"      // For KF6::Ki18n deprecated
 
 namespace DigikamGenericPrintCreatorPlugin
 {

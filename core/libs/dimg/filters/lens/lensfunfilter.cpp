@@ -28,15 +28,12 @@
 #include <QtConcurrent>    // krazy:exclude=includes
 #include <QScopedPointer>
 
-// KDE includes
-
-#include <klocalizedstring.h>
-
 // Local includes
 
 #include "digikam_debug.h"
 #include "lensfuniface.h"
 #include "dmetadata.h"
+#include "digikam_globals_p.h"      // For KF6::Ki18n deprecated
 
 // Disable deprecated API from Lensfun.
 #if defined(Q_CC_GNU)

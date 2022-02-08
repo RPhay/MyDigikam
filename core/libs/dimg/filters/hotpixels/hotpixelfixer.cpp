@@ -36,13 +36,10 @@
 #include <QRegularExpression>
 #include <QStringList>
 
-// KDE includes
-
-#include <klocalizedstring.h>
-
 // Local includes
 
 #include "dimg.h"
+#include "digikam_globals_p.h"      // For KF6::Ki18n deprecated
 
 #ifdef HAVE_FLOAT_H
 #   if HAVE_FLOAT_H

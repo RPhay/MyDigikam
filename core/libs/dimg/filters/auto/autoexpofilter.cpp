@@ -23,14 +23,11 @@
 
 #include "autoexpofilter.h"
 
-// KDE includes
-
-#include <klocalizedstring.h>
-
 // Local includes
 
 #include "dimg.h"
 #include "digikam_debug.h"
+#include "digikam_globals_p.h"      // For KF6::Ki18n deprecated
 
 namespace Digikam
 {

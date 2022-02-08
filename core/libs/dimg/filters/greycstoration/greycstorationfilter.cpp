@@ -35,14 +35,11 @@
 #include <QMutexLocker>
 #include <QWaitCondition>
 
-// KDE includes
-
-#include <klocalizedstring.h>
-
 // Local includes
 
 #include "digikam_debug.h"
 #include "dynamicthread.h"
+#include "digikam_globals_p.h"      // For KF6::Ki18n deprecated
 
 #define cimg_plugin "cimg/greycstoration.h"
 
