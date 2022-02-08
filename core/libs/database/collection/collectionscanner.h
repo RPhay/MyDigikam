@@ -35,6 +35,7 @@
 
 // Local includes
 
+#include "iteminfo.h"
 #include "digikam_export.h"
 #include "coredbaccess.h"
 #include "coredbalbuminfo.h"
@@ -121,6 +122,11 @@ public:
 
     void setDeferredFileScanning(bool defer);
     QStringList deferredAlbumPaths() const;
+
+    /**
+     * Returns item ids from new detected items
+     */
+    QList<qlonglong> getNewIdsList() const;
 
     // -----------------------------------------------------------------------------
 
@@ -268,6 +274,7 @@ Q_SIGNALS:
     void startScanningForStaleAlbums();
     void startScanningAlbumRoots();
     void startCompleteScan();
+    void signalScannedNewImage(const QFileInfo& info);
     //@}
 
     //@{

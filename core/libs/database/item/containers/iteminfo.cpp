@@ -212,7 +212,7 @@ ItemInfo ItemInfo::fromLocationAlbumAndName(int locationId, const QString& album
         if (!shortInfo.id)
         {
             qCWarning(DIGIKAM_DATABASE_LOG) << "No itemShortInfo could be retrieved from the database for image" << name;
-            info.m_data.reset();
+
             return info;
         }
 

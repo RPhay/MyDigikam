@@ -62,6 +62,7 @@
 #include "albummanager.h"
 #include "album.h"
 #include "coredbschemaupdater.h"
+#include "iteminfo.h"
 
 namespace Digikam
 {
@@ -168,6 +169,8 @@ public:
     bool                            needTotalFiles;
     bool                            performFastScan;
     int                             totalFilesToScan;
+
+    QList<qlonglong>                newIdsList;
 };
 
 // ------------------------------------------------------------------------------

@@ -1028,6 +1028,7 @@ qlonglong CollectionScanner::scanNewFile(const QFileInfo& info, int albumId)
     }
 
     d->finishScanner(scanner);
+    d->newIdsList << scanner.id();
 
     return scanner.id();
 }

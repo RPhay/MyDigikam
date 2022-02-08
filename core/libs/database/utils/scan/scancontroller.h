@@ -48,7 +48,7 @@ class CollectionScanner;
 class PAlbum;
 
 class DIGIKAM_GUI_EXPORT ScanController : public QThread,
-                                      public InitializationObserver
+                                          public InitializationObserver
 {
     Q_OBJECT
 
@@ -105,6 +105,11 @@ public:
      * Returns the up-to-date ItemInfo.
      */
     ItemInfo scannedInfo(const QString& filePath);
+
+    /**
+     * Returns item ids from new detected items
+     */
+    QList<qlonglong> getNewIdsList() const;
 
 protected:
 
@@ -354,6 +359,7 @@ public:
 Q_SIGNALS:
 
     void collectionScanFinished();
+    void newImages(const ItemInfoList&);
     void partialScanDone(const QString& path);
     void completeScanDone();
     void completeScanCanceled();

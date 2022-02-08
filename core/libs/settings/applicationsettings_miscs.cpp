@@ -171,6 +171,16 @@ bool ApplicationSettings::showOnlyPersonTagsInPeopleSidebar() const
     return d->showOnlyPersonTagsInPeopleSidebar;
 }
 
+void ApplicationSettings::setDetectFacesInNewImages(bool val)
+{
+    d->detectFacesInNewImages = val;
+}
+
+bool ApplicationSettings::getDetectFacesInNewImages() const
+{
+    return d->detectFacesInNewImages;
+}
+
 void ApplicationSettings::setStringComparisonType(ApplicationSettings::StringComparisonType val)
 {
     d->stringComparisonType = val;

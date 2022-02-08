@@ -251,17 +251,17 @@ FacesDetector::FacesDetector(const FaceScanSettings& settings, ProgressItem* con
     else if (settings.albums.isEmpty() && settings.infos.isEmpty())
     {
         d->albumTodoList = AlbumManager::instance()->allPAlbums();
-        d->source = FacesDetector::Albums;
+        d->source        = FacesDetector::Albums;
     }
     else if (!settings.albums.isEmpty())
     {
         d->albumTodoList = settings.albums;
-        d->source = FacesDetector::Albums;
+        d->source        = FacesDetector::Albums;
     }
     else
     {
         d->infoTodoList = settings.infos;
-        d->source = FacesDetector::Infos;
+        d->source       = FacesDetector::Infos;
     }
 }
 
