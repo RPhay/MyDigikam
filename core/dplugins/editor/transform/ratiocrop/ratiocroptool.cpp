@@ -789,29 +789,13 @@ void RatioCropTool::slotResetSettings()
     d->ratioCropWidget->setSelectionOrientation(d->orientCB->currentIndex());
     slotAutoOrientChanged(d->autoOrientation->isChecked());
     applyRatioChanges(d->ratioCB->currentIndex());
-    slotHeightChanged(1);
-    slotWidthChanged(1);
-
-    setInputRange(d->ratioCropWidget->getRegionSelection());
-
-    d->xInput->setValue(d->xInput->defaultValue());
-    d->yInput->setValue(d->yInput->defaultValue());
-
-    setInputRange(d->ratioCropWidget->getRegionSelection());
-
-    d->widthInput->setValue(d->widthInput->defaultValue());
-    d->heightInput->setValue(d->heightInput->defaultValue());
-
-    setInputRange(d->ratioCropWidget->getRegionSelection());
 
     // For the last setting to be applied, activate drawing in
     // the selectionWidget, so that we can see the results.
 
     d->ratioCropWidget->setIsDrawingSelection(true);
 
-    slotGuideTypeChanged(d->guideLinesCB->currentIndex());
-
-    updateCropInfo();
+    QTimer::singleShot(0, this, SLOT(slotResetSelection()));
 }
 
 void RatioCropTool::slotMaxAspectRatio()
