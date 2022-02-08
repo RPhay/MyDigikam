@@ -276,10 +276,15 @@ void BlurFXFilter::zoomBlur(DImg* const orgImage, DImg* const destImage, int X, 
             prm.start = vals[j];
             prm.stop  = vals[j+1];
             prm.h     = h;
-            tasks.append(QtConcurrent::run(this,
-                                           &BlurFXFilter::zoomBlurMultithreaded,
+            tasks.append(QtConcurrent::run(
+#if (QT_VERSION > QT_VERSION_CHECK(5, 99, 0))
+                                           &BlurFXFilter::zoomBlurMultithreaded, this,
+#else
+                                           this, &BlurFXFilter::zoomBlurMultithreaded,
+#endif
                                            prm
-                                          ));
+                                          )
+            );
         }
 
         foreach (QFuture<void> t, tasks)
@@ -433,10 +438,15 @@ void BlurFXFilter::radialBlur(DImg* const orgImage, DImg* const destImage, int X
             prm.start = vals[j];
             prm.stop  = vals[j+1];
             prm.h     = h;
-            tasks.append(QtConcurrent::run(this,
-                                           &BlurFXFilter::radialBlurMultithreaded,
+            tasks.append(QtConcurrent::run(
+#if (QT_VERSION > QT_VERSION_CHECK(5, 99, 0))
+                                           &BlurFXFilter::radialBlurMultithreaded, this,
+#else
+                                           this, &BlurFXFilter::radialBlurMultithreaded,
+#endif
                                            prm
-                                          ));
+                                          )
+            );
         }
 
         foreach (QFuture<void> t, tasks)
@@ -629,8 +639,12 @@ void BlurFXFilter::motionBlur(DImg* const orgImage, DImg* const destImage, int D
             prm.start = vals[j];
             prm.stop  = vals[j+1];
             prm.h     = h;
-            tasks.append(QtConcurrent::run(this,
-                                           &BlurFXFilter::motionBlurMultithreaded,
+            tasks.append(QtConcurrent::run(
+#if (QT_VERSION > QT_VERSION_CHECK(5, 99, 0))
+                                           &BlurFXFilter::motionBlurMultithreaded, this,
+#else
+                                           this, &BlurFXFilter::motionBlurMultithreaded,
+#endif
                                            prm
                                           ));
         }
@@ -769,10 +783,15 @@ void BlurFXFilter::softenerBlur(DImg* const orgImage, DImg* const destImage)
             prm.start = vals[j];
             prm.stop  = vals[j+1];
             prm.h     = h;
-            tasks.append(QtConcurrent::run(this,
-                                           &BlurFXFilter::softenerBlurMultithreaded,
+            tasks.append(QtConcurrent::run(
+#if (QT_VERSION > QT_VERSION_CHECK(5, 99, 0))
+                                           &BlurFXFilter::softenerBlurMultithreaded, this,
+#else
+                                           this, &BlurFXFilter::softenerBlurMultithreaded,
+#endif
                                            prm
-                                          ));
+                                          )
+            );
         }
 
         foreach (QFuture<void> t, tasks)
@@ -900,10 +919,15 @@ void BlurFXFilter::shakeBlur(DImg* const orgImage, DImg* const destImage, int Di
             prm.start = vals[j];
             prm.stop  = vals[j+1];
             prm.h     = h;
-            tasks.append(QtConcurrent::run(this,
-                                           &BlurFXFilter::shakeBlurStage1Multithreaded,
+            tasks.append(QtConcurrent::run(
+#if (QT_VERSION > QT_VERSION_CHECK(5, 99, 0))
+                                           &BlurFXFilter::shakeBlurStage1Multithreaded, this,
+#else
+                                           this, &BlurFXFilter::shakeBlurStage1Multithreaded,
+#endif
                                            prm
-                                          ));
+                                          )
+            );
         }
 
         foreach (QFuture<void> t, tasks)
@@ -927,10 +951,15 @@ void BlurFXFilter::shakeBlur(DImg* const orgImage, DImg* const destImage, int Di
             prm.start = vals[j];
             prm.stop  = vals[j+1];
             prm.h     = h;
-            tasks.append(QtConcurrent::run(this,
-                                           &BlurFXFilter::shakeBlurStage2Multithreaded,
+            tasks.append(QtConcurrent::run(
+#if (QT_VERSION > QT_VERSION_CHECK(5, 99, 0))
+                                           &BlurFXFilter::shakeBlurStage2Multithreaded, this,
+#else
+                                           this, &BlurFXFilter::shakeBlurStage2Multithreaded,
+#endif
                                            prm
-                                          ));
+                                          )
+            );
         }
 
         foreach (QFuture<void> t, tasks)
@@ -1112,10 +1141,15 @@ void BlurFXFilter::focusBlur(DImg* const orgImage, DImg* const destImage,
             prm.start = vals[j];
             prm.stop  = vals[j+1];
             prm.h     = h;
-            tasks.append(QtConcurrent::run(this,
-                                           &BlurFXFilter::focusBlurMultithreaded,
+            tasks.append(QtConcurrent::run(
+#if (QT_VERSION > QT_VERSION_CHECK(5, 99, 0))
+                                           &BlurFXFilter::focusBlurMultithreaded, this,
+#else
+                                           this, &BlurFXFilter::focusBlurMultithreaded,
+#endif
                                            prm
-                                          ));
+                                          )
+            );
         }
 
         foreach (QFuture<void> t, tasks)
@@ -1330,10 +1364,15 @@ void BlurFXFilter::smartBlur(DImg* const orgImage, DImg* const destImage, int Ra
             prm.start = valsw[j];
             prm.stop  = valsw[j+1];
             prm.h     = h;
-            tasks.append(QtConcurrent::run(this,
-                                           &BlurFXFilter::smartBlurStage1Multithreaded,
+            tasks.append(QtConcurrent::run(
+#if (QT_VERSION > QT_VERSION_CHECK(5, 99, 0))
+                                           &BlurFXFilter::smartBlurStage1Multithreaded, this,
+#else
+                                           this, &BlurFXFilter::smartBlurStage1Multithreaded,
+#endif
                                            prm
-                                          ));
+                                          )
+            );
         }
 
         foreach (QFuture<void> t, tasks)
@@ -1359,10 +1398,15 @@ void BlurFXFilter::smartBlur(DImg* const orgImage, DImg* const destImage, int Ra
             prm.start = valsh[j];
             prm.stop  = valsh[j+1];
             prm.w     = w;
-            tasks.append(QtConcurrent::run(this,
-                                           &BlurFXFilter::smartBlurStage2Multithreaded,
+            tasks.append(QtConcurrent::run(
+#if (QT_VERSION > QT_VERSION_CHECK(5, 99, 0))
+                                           &BlurFXFilter::smartBlurStage2Multithreaded, this,
+#else
+                                           this, &BlurFXFilter::smartBlurStage2Multithreaded,
+#endif
                                            prm
-                                          ));
+                                          )
+            );
         }
 
         foreach (QFuture<void> t, tasks)
@@ -1538,8 +1582,12 @@ void BlurFXFilter::mosaic(DImg* const orgImage, DImg* const destImage, int SizeW
             prm.start = vals[j];
             prm.stop  = vals[j+1];
             prm.h     = h;
-            tasks.append(QtConcurrent::run(this,
-                                           &BlurFXFilter::mosaicMultithreaded,
+            tasks.append(QtConcurrent::run(
+#if (QT_VERSION > QT_VERSION_CHECK(5, 99, 0))
+                                           &BlurFXFilter::mosaicMultithreaded, this,
+#else
+                                           this, &BlurFXFilter::mosaicMultithreaded,
+#endif
                                            prm
                                           ));
         }
@@ -1879,10 +1927,15 @@ void BlurFXFilter::MakeConvolution(DImg* const orgImage, DImg* const destImage, 
             prm.start = valsw[j];
             prm.stop  = valsw[j+1];
             prm.h     = h;
-            tasks.append(QtConcurrent::run(this,
-                                           &BlurFXFilter::MakeConvolutionStage1Multithreaded,
+            tasks.append(QtConcurrent::run(
+#if (QT_VERSION > QT_VERSION_CHECK(5, 99, 0))
+                                           &BlurFXFilter::MakeConvolutionStage1Multithreaded, this,
+#else
+                                           this, &BlurFXFilter::MakeConvolutionStage1Multithreaded,
+#endif
                                            prm
-                                          ));
+                                          )
+            );
         }
 
         foreach (QFuture<void> t, tasks)
@@ -1908,10 +1961,15 @@ void BlurFXFilter::MakeConvolution(DImg* const orgImage, DImg* const destImage, 
             prm.start = valsh[j];
             prm.stop  = valsh[j+1];
             prm.w     = w;
-            tasks.append(QtConcurrent::run(this,
-                                           &BlurFXFilter::MakeConvolutionStage2Multithreaded,
+            tasks.append(QtConcurrent::run(
+#if (QT_VERSION > QT_VERSION_CHECK(5, 99, 0))
+                                           &BlurFXFilter::MakeConvolutionStage2Multithreaded, this,
+#else
+                                           this, &BlurFXFilter::MakeConvolutionStage2Multithreaded,
+#endif
                                            prm
-                                          ));
+                                          )
+            );
         }
 
         foreach (QFuture<void> t, tasks)

@@ -263,11 +263,16 @@ void BlurFilter::filterImage()
 
     for (int j = 0 ; runningFlag() && (j < vals.count()-1) ; ++j)
     {
-        tasks.append(QtConcurrent::run(this,
-                                       &BlurFilter::blurMultithreaded,
+        tasks.append(QtConcurrent::run(
+#if (QT_VERSION > QT_VERSION_CHECK(5, 99, 0))
+                                       &BlurFilter::blurMultithreaded, this,
+#else
+                                       this, &BlurFilter::blurMultithreaded,
+#endif
                                        vals[j],
                                        vals[j+1]
-                                      ));
+                                      )
+        );
     }
 
     foreach (QFuture<void> t, tasks)
