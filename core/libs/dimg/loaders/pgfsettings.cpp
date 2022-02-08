@@ -72,7 +72,8 @@ PGFSettings::PGFSettings(QWidget* const parent)
 {
     setAttribute(Qt::WA_DeleteOnClose);
 
-    const int spacing = QApplication::style()->pixelMetric(QStyle::PM_DefaultLayoutSpacing);
+    const int spacing = qMin(QApplication::style()->pixelMetric(QStyle::PM_LayoutHorizontalSpacing),
+                             QApplication::style()->pixelMetric(QStyle::PM_LayoutVerticalSpacing));
 
     d->PGFGrid        = new QGridLayout(this);
     d->PGFLossLess    = new QCheckBox(i18n("Lossless PGF files"), this);

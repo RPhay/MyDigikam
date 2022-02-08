@@ -72,7 +72,8 @@ HEIFSettings::HEIFSettings(QWidget* const parent)
 {
     setAttribute(Qt::WA_DeleteOnClose);
 
-    const int spacing = QApplication::style()->pixelMetric(QStyle::PM_DefaultLayoutSpacing);
+    const int spacing = qMin(QApplication::style()->pixelMetric(QStyle::PM_LayoutHorizontalSpacing),
+                             QApplication::style()->pixelMetric(QStyle::PM_LayoutVerticalSpacing));
 
     d->HEIFGrid     = new QGridLayout(this);
     d->HEIFLossLess = new QCheckBox(i18n("Lossless HEIF files"), this);

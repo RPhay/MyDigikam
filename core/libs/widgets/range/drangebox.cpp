@@ -66,7 +66,8 @@ DIntRangeBox::DIntRangeBox(QWidget* const parent)
     d->maxValueBox->setValue(100);
     d->maxValueBox->setSingleStep(1);
 /*
-    const int spacing = QApplication::style()->pixelMetric(QStyle::PM_DefaultLayoutSpacing);
+    const int spacing = qMin(QApplication::style()->pixelMetric(QStyle::PM_LayoutHorizontalSpacing),
+                             QApplication::style()->pixelMetric(QStyle::PM_LayoutVerticalSpacing));
 */
     QHBoxLayout* const mainLayout = new QHBoxLayout(this);
     mainLayout->addWidget(d->minValueBox);

@@ -170,7 +170,8 @@ WSSettingsWidget::WSSettingsWidget(QWidget* const parent,
 
     //----------------------------------------------------------
 
-    const int spacing = QApplication::style()->pixelMetric(QStyle::PM_DefaultLayoutSpacing);
+    const int spacing = qMin(QApplication::style()->pixelMetric(QStyle::PM_LayoutHorizontalSpacing),
+                             QApplication::style()->pixelMetric(QStyle::PM_LayoutVerticalSpacing));
 
     d->imgList->setObjectName(QLatin1String("WebService ImagesList"));
     d->imgList->setControlButtonsPlacement(DItemsList::ControlButtonsBelow);

@@ -87,7 +87,8 @@ AlbumCustomizer::AlbumCustomizer(QWidget* const parent)
     : QWidget(parent),
       d      (new Private)
 {
-    const int spacing = QApplication::style()->pixelMetric(QStyle::PM_DefaultLayoutSpacing);
+    const int spacing = qMin(QApplication::style()->pixelMetric(QStyle::PM_LayoutHorizontalSpacing),
+                             QApplication::style()->pixelMetric(QStyle::PM_LayoutVerticalSpacing));
 
     d->tooltipDialog = new TooltipDialog(this);
     d->tooltipDialog->setTooltip(i18nc("@info",

@@ -95,7 +95,8 @@ WSNewAlbumDialog::WSNewAlbumDialog(QWidget* const parent, const QString& toolNam
     setWindowTitle(QString(d->toolName + QLatin1String(" New Album")));
     setModal(false);
 
-    const int spacing = QApplication::style()->pixelMetric(QStyle::PM_DefaultLayoutSpacing);
+    const int spacing = qMin(QApplication::style()->pixelMetric(QStyle::PM_LayoutHorizontalSpacing),
+                             QApplication::style()->pixelMetric(QStyle::PM_LayoutVerticalSpacing));
 
     d->buttonBox->addButton(QDialogButtonBox::Ok);
     d->buttonBox->addButton(QDialogButtonBox::Cancel);

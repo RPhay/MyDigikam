@@ -406,7 +406,8 @@ void NamespaceEditDlg::setupTagGui(NamespaceEntry& entry)
     d->fiveStars  = new QSpinBox(this);
     d->fiveStars->setValue(5);
 
-    const int spacing = QApplication::style()->pixelMetric(QStyle::PM_DefaultLayoutSpacing);
+    const int spacing = qMin(QApplication::style()->pixelMetric(QStyle::PM_LayoutHorizontalSpacing),
+                             QApplication::style()->pixelMetric(QStyle::PM_LayoutVerticalSpacing));
     const int cmargin = QApplication::style()->pixelMetric(QStyle::PM_DefaultChildMargin);
 
     ratingMappingsLayout->addWidget(ratingLabel,            0, 0, 1, 2);

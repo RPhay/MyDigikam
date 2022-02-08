@@ -146,7 +146,8 @@ BWSepiaSettings::BWSepiaSettings(QWidget* const parent, DImg* const img)
         d->thumbImage      = DImg(backGround).smoothScale(128, 128, Qt::KeepAspectRatio);
     }
 
-    const int spacing = QApplication::style()->pixelMetric(QStyle::PM_DefaultLayoutSpacing);
+    const int spacing = qMin(QApplication::style()->pixelMetric(QStyle::PM_LayoutHorizontalSpacing),
+                             QApplication::style()->pixelMetric(QStyle::PM_LayoutVerticalSpacing));
 
     QGridLayout* const grid = new QGridLayout(parent);
 

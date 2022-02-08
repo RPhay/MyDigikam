@@ -516,7 +516,8 @@ void DRawDecoderWidget::setup(int advSettings)
         d->whitePointSpinBox->hide();
     }
 
-    const int spacing = QApplication::style()->pixelMetric(QStyle::PM_DefaultLayoutSpacing);
+    const int spacing = qMin(QApplication::style()->pixelMetric(QStyle::PM_LayoutHorizontalSpacing),
+                             QApplication::style()->pixelMetric(QStyle::PM_LayoutVerticalSpacing));
 
     whiteBalanceLayout->addWidget(d->whiteBalanceLabel,              0,  0, 1, 1);
     whiteBalanceLayout->addWidget(d->whiteBalanceComboBox,           0,  1, 1, 2);

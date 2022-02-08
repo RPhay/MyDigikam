@@ -93,7 +93,8 @@ void Crop::registerSettingsWidget()
 {
     m_settingsWidget  = new QWidget;
 
-    const int spacing = QApplication::style()->pixelMetric(QStyle::PM_DefaultLayoutSpacing);
+    const int spacing = qMin(QApplication::style()->pixelMetric(QStyle::PM_LayoutHorizontalSpacing),
+                             QApplication::style()->pixelMetric(QStyle::PM_LayoutVerticalSpacing));
 
     // -------------------------------------------------------------
 

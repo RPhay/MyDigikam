@@ -72,7 +72,8 @@ JP2KSettings::JP2KSettings(QWidget* const parent)
 {
     setAttribute(Qt::WA_DeleteOnClose);
 
-    const int spacing = QApplication::style()->pixelMetric(QStyle::PM_DefaultLayoutSpacing);
+    const int spacing = qMin(QApplication::style()->pixelMetric(QStyle::PM_LayoutHorizontalSpacing),
+                             QApplication::style()->pixelMetric(QStyle::PM_LayoutVerticalSpacing));
 
     d->JPEG2000Grid     = new QGridLayout(this);
     d->JPEG2000LossLess = new QCheckBox(i18n("Lossless JPEG 2000 files"), this);

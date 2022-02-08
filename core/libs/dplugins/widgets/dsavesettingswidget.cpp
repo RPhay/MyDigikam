@@ -65,7 +65,8 @@ DSaveSettingsWidget::DSaveSettingsWidget(QWidget* const parent)
 {
     setAttribute(Qt::WA_DeleteOnClose);
 
-    const int spacing = QApplication::style()->pixelMetric(QStyle::PM_DefaultLayoutSpacing);
+    const int spacing = qMin(QApplication::style()->pixelMetric(QStyle::PM_LayoutHorizontalSpacing),
+                             QApplication::style()->pixelMetric(QStyle::PM_LayoutVerticalSpacing));
 
     d->grid           = new QGridLayout(this);
     d->formatLabel    = new QLabel(i18n("Output file format:"), this);

@@ -124,7 +124,8 @@ MetadataWidget::MetadataWidget(QWidget* const parent, const QString& name)
 {
     setObjectName(name);
 
-    const int spacing = QApplication::style()->pixelMetric(QStyle::PM_DefaultLayoutSpacing);
+    const int spacing = qMin(QApplication::style()->pixelMetric(QStyle::PM_LayoutHorizontalSpacing),
+                             QApplication::style()->pixelMetric(QStyle::PM_LayoutVerticalSpacing));
     d->mainLayout     = new QGridLayout(this);
 
     // -----------------------------------------------------------------

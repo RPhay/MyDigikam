@@ -118,7 +118,8 @@ ColorFXSettings::ColorFXSettings(QWidget* const parent, bool useGenericImg)
 
     // -------------------------------------------------------------
 
-    const int spacing = QApplication::style()->pixelMetric(QStyle::PM_DefaultLayoutSpacing);
+    const int spacing = qMin(QApplication::style()->pixelMetric(QStyle::PM_LayoutHorizontalSpacing),
+                             QApplication::style()->pixelMetric(QStyle::PM_LayoutVerticalSpacing));
 
     QGridLayout* const grid       = new QGridLayout(parent);
 
