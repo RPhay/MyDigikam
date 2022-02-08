@@ -44,8 +44,8 @@ DK_KF5_VERSION="5.90"
 # The list of tags can be listed with this url: https://invent.kde.org/graphics/digikam/-/tags
 # If you want to package current implementation from git, use "master" as tag.
 #DK_VERSION=v7.0.0
-DK_VERSION=master
-#DK_VERSION=gsoc21-qt6-port
+#DK_VERSION=master
+DK_VERSION=gsoc21-qt6-port
 
 # Installer sub version to differentiates newer updates of the installer itself, even if the underlying application hasn’t changed.
 #DK_SUBVER="-01"
@@ -54,8 +54,8 @@ DK_VERSION=master
 DK_DEBUG=0
 
 # Qt version to use in bundle. Possible values: 5.15, 5.15-LTS, 6.2
-DK_QTVERSION="5.15-LTS"
-#DK_QTVERSION="6.2"
+#DK_QTVERSION="5.15-LTS"
+DK_QTVERSION="6.2"
 
 # QtWebEngine version to use in bundle when 5.15-LTS is used.
 DK_QTWEBENGINEVERSION="5.15.8"
@@ -67,6 +67,6 @@ DK_QTWEBENGINE=1
 DK_SIGN=0
 
 # Upload automatically bundle to files.kde.org (pre-release only).
-DK_UPLOAD=1
+DK_UPLOAD=0
 DK_UPLOADURL="digikam@deino.kde.org"
 DK_UPLOADDIR="/srv/archives/files/digikam/"
