@@ -28,6 +28,7 @@
 
 #include <QFlags>
 #include <QDebug>
+#include <QStringList>
 
 // Local includes
 
