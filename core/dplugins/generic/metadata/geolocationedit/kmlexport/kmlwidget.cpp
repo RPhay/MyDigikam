@@ -58,7 +58,8 @@ KmlWidget::KmlWidget(GeolocationEdit* const dlg,
 {
     KMLExportConfigLayout = new QGridLayout(this);
 
-    const int spacing     = QApplication::style()->pixelMetric(QStyle::PM_DefaultLayoutSpacing);
+    const int spacing     = qMin(QApplication::style()->pixelMetric(QStyle::PM_LayoutHorizontalSpacing),
+                             QApplication::style()->pixelMetric(QStyle::PM_LayoutVerticalSpacing));
 
     // --------------------------------------------------------------
     // Target preferences

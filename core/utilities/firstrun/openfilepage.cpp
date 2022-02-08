@@ -66,7 +66,8 @@ OpenFilePage::OpenFilePage(QWizard* const dlg)
     : DWizardPage(dlg, i18n("<b>Configure Open File Behavior</b>")),
       d(new Private)
 {
-    const int spacing       = QApplication::style()->pixelMetric(QStyle::PM_DefaultLayoutSpacing);
+    const int spacing       = qMin(QApplication::style()->pixelMetric(QStyle::PM_LayoutHorizontalSpacing),
+                             QApplication::style()->pixelMetric(QStyle::PM_LayoutVerticalSpacing));
 
     DVBox* const vbox       = new DVBox(this);
     QLabel* const label1    = new QLabel(vbox);

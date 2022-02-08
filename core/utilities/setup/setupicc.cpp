@@ -171,7 +171,8 @@ SetupICC::SetupICC(QDialogButtonBox* const dlgBtnBox, QWidget* const parent)
     : QScrollArea(parent),
       d          (new Private)
 {
-    const int spacing              = QApplication::style()->pixelMetric(QStyle::PM_DefaultLayoutSpacing);
+    const int spacing              = qMin(QApplication::style()->pixelMetric(QStyle::PM_LayoutHorizontalSpacing),
+                             QApplication::style()->pixelMetric(QStyle::PM_LayoutVerticalSpacing));
     d->dlgBtnBox                   = dlgBtnBox;
     d->tab                         = new QTabWidget(viewport());
     setWidget(d->tab);

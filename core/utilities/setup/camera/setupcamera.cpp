@@ -289,7 +289,8 @@ SetupCamera::SetupCamera(QWidget* const parent)
     setWidget(d->tab);
     setWidgetResizable(true);
 
-    const int spacing    = QApplication::style()->pixelMetric(QStyle::PM_DefaultLayoutSpacing);
+    const int spacing    = qMin(QApplication::style()->pixelMetric(QStyle::PM_LayoutHorizontalSpacing),
+                             QApplication::style()->pixelMetric(QStyle::PM_LayoutVerticalSpacing));
 
     QWidget* const panel = new QWidget(d->tab);
 

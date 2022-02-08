@@ -59,7 +59,8 @@ ExifToolErrorView::ExifToolErrorView(QWidget* const parent)
       d      (new Private)
 {
     setSizePolicy(QSizePolicy::Expanding, QSizePolicy::Expanding);
-    const int spacing        = QApplication::style()->pixelMetric(QStyle::PM_DefaultLayoutSpacing);
+    const int spacing        = qMin(QApplication::style()->pixelMetric(QStyle::PM_LayoutHorizontalSpacing),
+                             QApplication::style()->pixelMetric(QStyle::PM_LayoutVerticalSpacing));
 
     QGridLayout* const grid  = new QGridLayout(this);
 

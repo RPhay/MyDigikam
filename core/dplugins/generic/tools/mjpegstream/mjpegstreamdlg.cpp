@@ -33,7 +33,8 @@ MjpegStreamDlg::MjpegStreamDlg(QObject* const /*parent*/,
 {
     setWindowTitle(i18nc("@title:window", "Share Files with MJPEG Stream Server"));
     setModal(false);
-    d->spacing               = QApplication::style()->pixelMetric(QStyle::PM_DefaultLayoutSpacing);
+    d->spacing               = qMin(QApplication::style()->pixelMetric(QStyle::PM_LayoutHorizontalSpacing),
+                             QApplication::style()->pixelMetric(QStyle::PM_LayoutVerticalSpacing));
     d->tabView               = new QTabWidget(this);
 
     // NOTE: We overwrite the default albums chooser object name for load save check items state between sessions.

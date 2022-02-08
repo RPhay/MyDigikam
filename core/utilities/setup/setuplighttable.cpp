@@ -83,7 +83,8 @@ SetupLightTable::SetupLightTable(QWidget* const parent)
     : QScrollArea(parent),
       d(new Private)
 {
-    const int spacing         = QApplication::style()->pixelMetric(QStyle::PM_DefaultLayoutSpacing);
+    const int spacing         = qMin(QApplication::style()->pixelMetric(QStyle::PM_LayoutHorizontalSpacing),
+                             QApplication::style()->pixelMetric(QStyle::PM_LayoutVerticalSpacing));
 
     QWidget* const panel      = new QWidget(viewport());
     setWidget(panel);

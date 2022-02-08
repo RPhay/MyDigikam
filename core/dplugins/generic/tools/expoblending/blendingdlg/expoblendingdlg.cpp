@@ -135,7 +135,8 @@ ExpoBlendingDlg::ExpoBlendingDlg(ExpoBlendingManager* const mngr, QWidget* const
     setModal(false);
     setWindowTitle(i18nc("@title", "Exposure Blending"));
 
-    const int spacing                = QApplication::style()->pixelMetric(QStyle::PM_DefaultLayoutSpacing);
+    const int spacing                = qMin(QApplication::style()->pixelMetric(QStyle::PM_LayoutHorizontalSpacing),
+                             QApplication::style()->pixelMetric(QStyle::PM_LayoutVerticalSpacing));
 
     d->buttonBox                     = new QDialogButtonBox(QDialogButtonBox::Close, this);
     d->buttonBox->button(QDialogButtonBox::Close)->setDefault(true);

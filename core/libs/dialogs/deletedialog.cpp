@@ -273,7 +273,8 @@ DeleteWidget::DeleteWidget(QWidget* const parent)
     resize(540, 370);
     setMinimumSize(QSize(420, 320));
 
-    const int spacing  = QApplication::style()->pixelMetric(QStyle::PM_DefaultLayoutSpacing);
+    const int spacing  = qMin(QApplication::style()->pixelMetric(QStyle::PM_LayoutHorizontalSpacing),
+                             QApplication::style()->pixelMetric(QStyle::PM_LayoutVerticalSpacing));
 
     d->checkBoxStack   = new QStackedWidget(this);
     QLabel* const logo = new QLabel(this);

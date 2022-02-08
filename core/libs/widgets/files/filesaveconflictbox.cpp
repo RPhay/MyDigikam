@@ -68,7 +68,8 @@ FileSaveConflictBox::FileSaveConflictBox(QWidget* const parent, bool addSkip)
 {
     setAttribute(Qt::WA_DeleteOnClose);
 
-    const int spacing          = QApplication::style()->pixelMetric(QStyle::PM_DefaultLayoutSpacing);
+    const int spacing          = qMin(QApplication::style()->pixelMetric(QStyle::PM_LayoutHorizontalSpacing),
+                             QApplication::style()->pixelMetric(QStyle::PM_LayoutVerticalSpacing));
     QGridLayout* const grid    = new QGridLayout(this);
     d->conflictLabel           = new QLabel(i18n("If Target File Exists:"), this);
     QWidget* const conflictBox = new QWidget(this);

@@ -60,7 +60,8 @@ SlideError::SlideError(QWidget* const parent)
     setMouseTracking(true);
     setAutoFillBackground(true);
 
-    const int spacing       = QApplication::style()->pixelMetric(QStyle::PM_DefaultLayoutSpacing);
+    const int spacing       = qMin(QApplication::style()->pixelMetric(QStyle::PM_LayoutHorizontalSpacing),
+                             QApplication::style()->pixelMetric(QStyle::PM_LayoutVerticalSpacing));
 
     QPalette palette;
     palette.setColor(backgroundRole(), Qt::black);

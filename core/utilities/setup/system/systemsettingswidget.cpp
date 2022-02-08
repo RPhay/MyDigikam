@@ -64,7 +64,8 @@ SystemSettingsWidget::SystemSettingsWidget(QWidget* const parent)
     : QWidget(parent),
       d      (new Private)
 {
-    const int spacing         = QApplication::style()->pixelMetric(QStyle::PM_DefaultLayoutSpacing);
+    const int spacing         = qMin(QApplication::style()->pixelMetric(QStyle::PM_LayoutHorizontalSpacing),
+                             QApplication::style()->pixelMetric(QStyle::PM_LayoutVerticalSpacing));
     QVBoxLayout* const layout = new QVBoxLayout(this);
 
     d->useHighDpiScalingCheck = new QCheckBox(i18n("Use high DPI scaling from the screen factor"), this);

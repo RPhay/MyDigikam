@@ -122,7 +122,8 @@ SetupSlideShowDialog::SetupSlideShowDialog(SlideShowSettings* const settings, QW
     m_buttons->button(QDialogButtonBox::Ok)->setDefault(true);
 
     QWidget* const panel      = new QWidget(this);
-    const int spacing         = QApplication::style()->pixelMetric(QStyle::PM_DefaultLayoutSpacing);
+    const int spacing         = qMin(QApplication::style()->pixelMetric(QStyle::PM_LayoutHorizontalSpacing),
+                             QApplication::style()->pixelMetric(QStyle::PM_LayoutVerticalSpacing));
 
     DHBox* const hbox1        = new DHBox(panel);
     new QLabel(i18n("Delay between images:"), hbox1);

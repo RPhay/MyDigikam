@@ -130,7 +130,8 @@ TimelineSideBarWidget::TimelineSideBarWidget(QWidget* const parent,
     d->timer                    = new QTimer(this);
     setAttribute(Qt::WA_DeleteOnClose);
 
-    const int spacing       = QApplication::style()->pixelMetric(QStyle::PM_DefaultLayoutSpacing);
+    const int spacing       = qMin(QApplication::style()->pixelMetric(QStyle::PM_LayoutHorizontalSpacing),
+                             QApplication::style()->pixelMetric(QStyle::PM_LayoutVerticalSpacing));
 
     QVBoxLayout* const vlay = new QVBoxLayout(this);
     QFrame* const panel     = new QFrame(this);

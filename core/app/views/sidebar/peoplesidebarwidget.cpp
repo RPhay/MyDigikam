@@ -87,7 +87,8 @@ PeopleSideBarWidget::PeopleSideBarWidget(QWidget* const parent,
     setProperty("Shortcut", Qt::CTRL + Qt::SHIFT + Qt::Key_F9);
     d->searchModificationHelper   = searchModificationHelper;
 
-    const int spacing             = QApplication::style()->pixelMetric(QStyle::PM_DefaultLayoutSpacing);
+    const int spacing             = qMin(QApplication::style()->pixelMetric(QStyle::PM_LayoutHorizontalSpacing),
+                             QApplication::style()->pixelMetric(QStyle::PM_LayoutVerticalSpacing));
 
     QWidget* const     mainView   = new QWidget(this);
     QScrollArea* const scrollArea = new QScrollArea(this);

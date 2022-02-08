@@ -164,7 +164,8 @@ MediaWikiWidget::MediaWikiWidget(DInfoInterface* const iface, QWidget* const par
     setObjectName(QLatin1String("MediaWikiWidget"));
 
     d->iface                      = iface;
-    const int spacing             = QApplication::style()->pixelMetric(QStyle::PM_DefaultLayoutSpacing);
+    const int spacing             = qMin(QApplication::style()->pixelMetric(QStyle::PM_LayoutHorizontalSpacing),
+                             QApplication::style()->pixelMetric(QStyle::PM_LayoutVerticalSpacing));
     QVBoxLayout* const mainLayout = new QVBoxLayout(this);
 
     // -------------------------------------------------------------------

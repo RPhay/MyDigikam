@@ -94,7 +94,8 @@ SmugNewAlbumDlg::SmugNewAlbumDlg(QWidget* const parent)
 
     // ------------------------------------------------------------------------
 
-    const int spacing         = QApplication::style()->pixelMetric(QStyle::PM_DefaultLayoutSpacing);
+    const int spacing         = qMin(QApplication::style()->pixelMetric(QStyle::PM_LayoutHorizontalSpacing),
+                             QApplication::style()->pixelMetric(QStyle::PM_LayoutVerticalSpacing));
 
     QGroupBox* const albumBox = new QGroupBox(i18n("Album"), this);
     albumBox->setWhatsThis(i18n("These are basic settings for the new SmugMug album."));

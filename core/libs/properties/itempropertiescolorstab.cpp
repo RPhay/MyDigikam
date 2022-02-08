@@ -212,7 +212,8 @@ ItemPropertiesColorsTab::ItemPropertiesColorsTab(QWidget* const parent)
     DTextLabelName* const label12 = new DTextLabelName(i18nc("@label: color properties", "Source: "), gbox);
     d->labelImageRegion           = new DTextLabelValue(QString(), gbox);
 
-    const int spacing             = QApplication::style()->pixelMetric(QStyle::PM_DefaultLayoutSpacing);
+    const int spacing             = qMin(QApplication::style()->pixelMetric(QStyle::PM_LayoutHorizontalSpacing),
+                             QApplication::style()->pixelMetric(QStyle::PM_LayoutVerticalSpacing));
 
     grid->addWidget(label5,                  0, 0, 1, 1);
     grid->addWidget(d->labelPixelsValue,     0, 1, 1, 1);

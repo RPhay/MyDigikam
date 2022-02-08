@@ -86,7 +86,8 @@ BatchTool* LensAutoFix::clone(QObject* const parent) const
 
 void LensAutoFix::registerSettingsWidget()
 {
-    const int spacing  = QApplication::style()->pixelMetric(QStyle::PM_DefaultLayoutSpacing);
+    const int spacing  = qMin(QApplication::style()->pixelMetric(QStyle::PM_LayoutHorizontalSpacing),
+                             QApplication::style()->pixelMetric(QStyle::PM_LayoutVerticalSpacing));
 
     m_settingsWidget   = new QWidget;
     QLabel* const note = new QLabel(i18n("<b>Use Metadata</b> option will parse images' information at "

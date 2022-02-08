@@ -295,7 +295,8 @@ MetadataSelectorView::MetadataSelectorView(QWidget* const parent, Backend be)
       d      (new Private)
 {
     d->backend              = be;
-    const int spacing       = QApplication::style()->pixelMetric(QStyle::PM_DefaultLayoutSpacing);
+    const int spacing       = qMin(QApplication::style()->pixelMetric(QStyle::PM_LayoutHorizontalSpacing),
+                             QApplication::style()->pixelMetric(QStyle::PM_LayoutVerticalSpacing));
 
     QGridLayout* const grid = new QGridLayout(this);
     d->selector             = new MetadataSelector(this);

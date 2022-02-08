@@ -77,7 +77,8 @@ SearchSideBarWidget::SearchSideBarWidget(QWidget* const parent,
     setObjectName(QLatin1String("Search Sidebar"));
     setProperty("Shortcut", Qt::CTRL + Qt::SHIFT + Qt::Key_F6);
 
-    const int spacing         = QApplication::style()->pixelMetric(QStyle::PM_DefaultLayoutSpacing);
+    const int spacing         = qMin(QApplication::style()->pixelMetric(QStyle::PM_LayoutHorizontalSpacing),
+                             QApplication::style()->pixelMetric(QStyle::PM_LayoutVerticalSpacing));
 
     QVBoxLayout* const layout = new QVBoxLayout(this);
 

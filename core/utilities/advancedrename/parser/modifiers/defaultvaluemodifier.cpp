@@ -44,7 +44,8 @@ DefaultValueDialog::DefaultValueDialog(Rule* parent)
     : RuleDialog(parent),
       valueInput(nullptr)
 {
-    const int spacing       = QApplication::style()->pixelMetric(QStyle::PM_DefaultLayoutSpacing);
+    const int spacing       = qMin(QApplication::style()->pixelMetric(QStyle::PM_LayoutHorizontalSpacing),
+                             QApplication::style()->pixelMetric(QStyle::PM_LayoutVerticalSpacing));
 
     QString defaultValueStr = i18n("Default Value");
 

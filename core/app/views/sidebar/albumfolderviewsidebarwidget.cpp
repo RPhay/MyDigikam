@@ -76,7 +76,8 @@ AlbumFolderViewSideBarWidget::AlbumFolderViewSideBarWidget(QWidget* const parent
     setProperty("Shortcut", Qt::CTRL + Qt::SHIFT + Qt::Key_F1);
     d->albumModificationHelper = albumModificationHelper;
 
-    const int spacing          = QApplication::style()->pixelMetric(QStyle::PM_DefaultLayoutSpacing);
+    const int spacing          = qMin(QApplication::style()->pixelMetric(QStyle::PM_LayoutHorizontalSpacing),
+                             QApplication::style()->pixelMetric(QStyle::PM_LayoutVerticalSpacing));
 
     QVBoxLayout* const layout  = new QVBoxLayout(this);
     d->albumFolderView         = new AlbumSelectionTreeView(this, model, d->albumModificationHelper);

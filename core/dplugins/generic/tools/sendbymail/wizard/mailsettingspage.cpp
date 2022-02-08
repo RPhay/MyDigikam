@@ -97,7 +97,8 @@ MailSettingsPage::MailSettingsPage(QWizard* const dialog, const QString& title)
       d(new Private(dialog))
 {
     QWidget* const main = new QWidget(this);
-    const int spacing   = QApplication::style()->pixelMetric(QStyle::PM_DefaultLayoutSpacing);
+    const int spacing   = qMin(QApplication::style()->pixelMetric(QStyle::PM_LayoutHorizontalSpacing),
+                             QApplication::style()->pixelMetric(QStyle::PM_LayoutVerticalSpacing));
 
     // --------------------
 

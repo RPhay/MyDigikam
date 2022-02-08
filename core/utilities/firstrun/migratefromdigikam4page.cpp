@@ -75,7 +75,8 @@ MigrateFromDigikam4Page::MigrateFromDigikam4Page(QWizard* const dlg)
     : DWizardPage(dlg, i18n("Migration from digiKam 4")),
       d          (new Private)
 {
-    const int spacing        = QApplication::style()->pixelMetric(QStyle::PM_DefaultLayoutSpacing);
+    const int spacing        = qMin(QApplication::style()->pixelMetric(QStyle::PM_LayoutHorizontalSpacing),
+                             QApplication::style()->pixelMetric(QStyle::PM_LayoutVerticalSpacing));
     DVBox* const vbox        = new DVBox(this);
     QLabel* const title      = new QLabel(vbox);
     title->setWordWrap(true);
