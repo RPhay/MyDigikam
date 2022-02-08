@@ -87,6 +87,7 @@ find_package(Qt${QT_VERSION_MAJOR} REQUIRED
 
 if (Qt6_FOUND)
     find_package(Qt${QT_VERSION_MAJOR} REQUIRED NO_MODULE COMPONENTS Core5Compat)
+    set(ICON_INSTALL_DIR ${CMAKE_INSTALL_DATAROOTDIR}/icons)
 endif ()
 
 if (DISABLE_QWEB)

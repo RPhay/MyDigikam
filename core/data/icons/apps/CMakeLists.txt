@@ -7,5 +7,5 @@
 file(GLOB _icons_files *.png *.svgz)
 
 ecm_install_icons(ICONS       ${_icons_files}
-                  DESTINATION ${CMAKE_INSTALL_DATAROOTDIR}/icons
+                  DESTINATION ${ICON_INSTALL_DIR}
 )
