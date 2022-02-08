@@ -72,7 +72,7 @@ set(CMAKE_MODULE_PATH ${CMAKE_SOURCE_DIR}/core/cmake/modules ${ECM_MODULE_PATH})
 # KF5 Framework macros
 include(KDEInstallDirs)
 include(KDECMakeSettings)
-include(KDECompilerSettings)
+include(KDECompilerSettings NO_POLICY_SCOPE)
 
 # ECM macros
 include(ECMOptionalAddSubdirectory)
