@@ -15,7 +15,8 @@ message(STATUS "Check dependencies for ${PROJECT_NAME} version ${DIGIKAM_VERSION
 message(STATUS "")
 
 set(KF5_MIN_VERSION       "5.5.0")
-set(QT_MIN_VERSION        "6.2.3")
+set(QT5_MIN_VERSION       "5.9.0")
+set(QT6_MIN_VERSION       "6.2.3")
 set(EXIV2_MIN_VERSION     "0.27.0")
 set(OPENCV_MIN_VERSION    "3.3.0")
 set(LENSFUN_MIN_VERSION   "0.2.6.0")      # For Lens auto-correction plugin
@@ -59,19 +60,27 @@ endif()
 
 ############## Find Packages ###################
 
-find_package(QT NAMES Qt6 Qt5 REQUIRED
-        NO_MODULE COMPONENTS
-        Core
-        Concurrent
-        Widgets
-        Gui
-        Sql
-        Xml
-        PrintSupport
-        Network
-        )
+# Extra checkq to detect Qt core with minimal version before to continue.
 
-message(STATUS "Qt Major Version found: ${QT_VERSION_MAJOR}")
+find_package(Qt6 ${QT6_MIN_VERSION} COMPONENTS Core)
+
+if (NOT Qt6_FOUND)
+
+    find_package(Qt5 ${QT5_MIN_VERSION} REQUIRED COMPONENTS Core)
+
+    set(QT_MIN_VERSION   ${QT5_MIN_VERSION})
+    set(QT_VERSION_MAJOR 5)
+
+else ()
+
+    set(QT_MIN_VERSION   ${QT6_MIN_VERSION})
+    set(QT_VERSION_MAJOR 6)
+
+endif ()
+
+message(STATUS "Suitable Qt${QT_VERSION_MAJOR} >= ${QT_MIN_VERSION} detected...")
+
+# Now detect the whole Qt6 or Qt5 framework.
 
 find_package(Qt${QT_VERSION_MAJOR} REQUIRED
              NO_MODULE COMPONENTS
@@ -622,7 +631,7 @@ PRINT_LIBRARY_STATUS("liblcms"       "https://github.com/mm2/Little-CMS"        
 PRINT_LIBRARY_STATUS("libopencv"     "https://opencv.org"                                "(version >= ${OPENCV_MIN_VERSION})" OpenCV_FOUND)
 PRINT_LIBRARY_STATUS("libpng"        "https://libpng.sourceforge.io/"                    "(version >= 1.2.7)"                 PNG_FOUND)
 PRINT_LIBRARY_STATUS("libpthread"    "https://www.gnu.org/software/hurd/libpthread.html" "(version >= 2.0.0)"                 CMAKE_USE_PTHREADS_INIT OR CMAKE_USE_WIN32_THREADS_INIT)
-PRINT_LIBRARY_STATUS("libqt"         "https://www.qt.io"                                 "(version >= ${QT_VERSION_MAJOR})"     Qt${QT_VERSION_MAJOR}_FOUND)
+PRINT_LIBRARY_STATUS("libqt"         "https://www.qt.io"                                 "(version >= ${QT_MIN_VERSION})"     Qt${QT_VERSION_MAJOR}_FOUND)
 PRINT_LIBRARY_STATUS("libtiff"       "https://gitlab.com/libtiff/libtiff/"               "(version >= 3.8.2)"                 TIFF_FOUND)
 
 # ==============================================================================
