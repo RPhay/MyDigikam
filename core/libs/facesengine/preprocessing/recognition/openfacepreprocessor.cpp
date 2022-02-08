@@ -109,6 +109,11 @@ bool OpenfacePreprocessor::loadModels()
 
 cv::Mat OpenfacePreprocessor::process(const cv::Mat& image)
 {
+    if (!sp.num_parts())
+    {
+        return image;
+    }
+
     int type = image.type();
     qCDebug(DIGIKAM_FACEDB_LOG) << "type: " << type;
 
