@@ -16,34 +16,45 @@
 # For details see the accompanying COPYING-CMAKE-SCRIPTS file.
 #
 
-find_package(Qt5
-             QUIET REQUIRED NO_MODULE COMPONENTS
-             Core
-)
+find_package(Qt6 COMPONENTS Core)
 
-Message(STATUS "QtAV search path: ${_qt5_install_prefix}")
+if (NOT Qt6_FOUND)
+
+    find_package(Qt5 REQUIRED COMPONENTS Core)
+
+    set(QT_INSTALL_PREFIX ${_qt5_install_prefix})
+    set(QT_INCLUDE_DIRS   ${Qt5Core_INCLUDE_DIRS})
+
+else ()
+
+    set(QT_INSTALL_PREFIX ${_qt6_install_prefix})
+    set(QT_INCLUDE_DIRS   ${Qt6Core_INCLUDE_DIRS})
+
+endif ()
+
+Message(STATUS "QtAV search path: ${QT_INSTALL_PREFIX}")
 
 if (NOT APPLE)
 
     find_path(QTAV_CORE_INCLUDE_DIR
               NAMES QtAV.h
-              HINTS ${Qt5Core_INCLUDE_DIRS}
-                    ${_qt5_install_prefix}                                                        # For MXE
-                    ${_qt5_install_prefix}/../qt5/include                                         # For Mageia
-                    ${_qt5_install_prefix}/../../include/qt5                                      # For Suse
-                    ${_qt5_install_prefix}/../../../include/${CMAKE_LIBRARY_ARCHITECTURE}/qt5     # For Debian
-                    ${_qt5_install_prefix}/../../include/qt                                       # For Arch
+              HINTS ${QT_INCLUDE_DIRS}
+                    ${QT_INSTALL_PREFIX}                                                        # For MXE
+                    ${QT_INSTALL_PREFIX}/../qt5/include                                         # For Mageia
+                    ${QT_INSTALL_PREFIX}/../../include/qt5                                      # For Suse
+                    ${QT_INSTALL_PREFIX}/../../../include/${CMAKE_LIBRARY_ARCHITECTURE}/qt5     # For Debian
+                    ${QT_INSTALL_PREFIX}/../../include/qt                                       # For Arch
               PATH_SUFFIXES QtAV
     )
 
     find_path(QTAV_WIDGETS_INCLUDE_DIR
               NAMES QtAVWidgets.h
-              HINTS ${Qt5Core_INCLUDE_DIRS}
-                    ${_qt5_install_prefix}                                                        # For MXE
-                    ${_qt5_install_prefix}/../qt5/include                                         # For Mageia
-                    ${_qt5_install_prefix}/../../include/qt5                                      # For Suse
-                    ${_qt5_install_prefix}/../../../include/${CMAKE_LIBRARY_ARCHITECTURE}/qt5     # For Debian
-                    ${_qt5_install_prefix}/../../include/qt                                       # For Arch
+              HINTS ${QT_INCLUDE_DIRS}
+                    ${QT_INSTALL_PREFIX}                                                        # For MXE
+                    ${QT_INSTALL_PREFIX}/../qt5/include                                         # For Mageia
+                    ${QT_INSTALL_PREFIX}/../../include/qt5                                      # For Suse
+                    ${QT_INSTALL_PREFIX}/../../../include/${CMAKE_LIBRARY_ARCHITECTURE}/qt5     # For Debian
+                    ${QT_INSTALL_PREFIX}/../../include/qt                                       # For Arch
               PATH_SUFFIXES QtAVWidgets
     )
 
@@ -52,7 +63,7 @@ if (NOT APPLE)
                        QtAV1
                        libQtAV
                        libQtAV1
-                 HINTS ${_qt5_install_prefix}/../
+                 HINTS ${QT_INSTALL_PREFIX}/../
     )
 
     find_library(QTAV_WIDGETS_LIBRARY
@@ -60,7 +71,7 @@ if (NOT APPLE)
                        QtAVWidgets1
                        libQtAVWidgets
                        libQtAVWidgets1
-                 HINTS ${_qt5_install_prefix}/../
+                 HINTS ${QT_INSTALL_PREFIX}/../
     )
 
     set(QTAV_INCLUDE_DIRS "${QTAV_CORE_INCLUDE_DIR} ${QTAV_WIDGETS_INCLUDE_DIR}")
@@ -70,27 +81,27 @@ else()
 
     find_path(QTAV_CORE_INCLUDE_DIR
               NAMES QtAV/QtAV.h
-              HINTS ${_qt5_install_prefix}
-                    ${_qt5_install_prefix}/../../include
+              HINTS ${QT_INSTALL_PREFIX}
+                    ${QT_INSTALL_PREFIX}/../../include
               PATH_SUFFIXES QtAV
     )
 
     find_path(QTAV_WIDGETS_INCLUDE_DIR
               NAMES QtAVWidgets/QtAVWidgets.h
-              HINTS ${_qt5_install_prefix}
-                    ${_qt5_install_prefix}/../../include
+              HINTS ${QT_INSTALL_PREFIX}
+                    ${QT_INSTALL_PREFIX}/../../include
               PATH_SUFFIXES QtAVWidgets
     )
 
     if (QTAV_CORE_INCLUDE_DIR AND QTAV_WIDGETS_INCLUDE_DIR)
 
         set(QTAV_INCLUDE_DIRS "${QTAV_CORE_INCLUDE_DIR};${QTAV_WIDGETS_INCLUDE_DIR}")
-        set(QTAV_LIBRARIES    "${_qt5_install_prefix}/../QtAV.framework/QtAV;${_qt5_install_prefix}/../QtAVWidgets.framework/QtAVWidgets")
+        set(QTAV_LIBRARIES    "${QT_INSTALL_PREFIX}/../QtAV.framework/QtAV;${QT_INSTALL_PREFIX}/../QtAVWidgets.framework/QtAVWidgets")
 
     else()
 
-        set(QTAV_INCLUDE_DIRS "${_qt5_install_prefix}/../../include/QtAV;${_qt5_install_prefix}/../../include/QtAVWidgets")
-        set(QTAV_LIBRARIES    "${_qt5_install_prefix}/../QtAV.framework/QtAV;${_qt5_install_prefix}/../QtAVWidgets.framework/QtAVWidgets")
+        set(QTAV_INCLUDE_DIRS "${QT_INSTALL_PREFIX}/../../include/QtAV;${QT_INSTALL_PREFIX}/../../include/QtAVWidgets")
+        set(QTAV_LIBRARIES    "${QT_INSTALL_PREFIX}/../QtAV.framework/QtAV;${QT_INSTALL_PREFIX}/../QtAVWidgets.framework/QtAVWidgets")
 
     endif()
 
