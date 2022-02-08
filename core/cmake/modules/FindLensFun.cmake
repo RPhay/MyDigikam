@@ -7,10 +7,10 @@
 #  LENSFUN_DEFINITIONS  - Compiler switches required for using lensfun
 #  LENSFUN_VERSION      - library version
 #
-#  Copyright (c) 2008      by Adrian Schroeter <adrian at suse dot de>
-#  Copyright (c) 2012      by Pino Toscano <pino at kde dot org>
-#  Copyright (c) 2012      by Ananta Palani <anantapalani at gmail dot com>
-#  Copyright (c) 2012-2021 by Caulier Gilles <caulier dot gilles at gmail dot com>
+# Copyright (c) 2008      by Adrian Schroeter <adrian at suse dot de>
+# Copyright (c) 2012      by Pino Toscano <pino at kde dot org>
+# Copyright (c) 2012      by Ananta Palani <anantapalani at gmail dot com>
+# Copyright (c) 2012-2022 by Caulier Gilles <caulier dot gilles at gmail dot com>
 #
 # Redistribution and use is allowed according to the terms of the BSD license.
 # For details see the accompanying COPYING-CMAKE-SCRIPTS file..
@@ -32,14 +32,16 @@ ELSE()
         IF (PKG_CONFIG_FOUND)
 
             IF (LensFun_FIND_VERSION)
+
                 SET(version_string ">=${LensFun_FIND_VERSION}")
+
             ENDIF()
 
            PKG_CHECK_MODULES(PC_LENSFUN lensfun${version_string})
 
         ENDIF ()
 
-    ENDIF (NOT WIN32)
+    ENDIF ()
 
     FIND_PATH(LENSFUN_INCLUDE_DIRS lensfun.h
         HINTS ${PC_LENSFUN_INCLUDE_DIRS}
@@ -59,10 +61,12 @@ ELSE()
         STRING(REGEX MATCH "#define[ \t]+LF_VERSION_MAJOR[ \t]+[0-9]*[\r\n]*.*#define[ \t]+LF_VERSION_MINOR[ \t]+[0-9]*[\r\n]*.*#define[ \t]+LF_VERSION_MICRO[ \t]+[0-9]*[\r\n]*.*#define[ \t]+LF_VERSION_BUGFIX[ \t]+[0-9]*" LENSFUN_VERSION_MATCH ${LENSFUN_VERSION_CONTENT})
 
         IF (LENSFUN_VERSION_MATCH)
-            STRING(REGEX REPLACE "#define[ \t]+LF_VERSION_MAJOR[ \t]+([0-9]*)[\r\n]*.*#define[ \t]+LF_VERSION_MINOR[ \t]+([0-9]*)[\r\n]*.*#define[ \t]+LF_VERSION_MICRO[ \t]+([0-9]*)[\r\n]*.*#define[ \t]+LF_VERSION_BUGFIX[ \t]+([0-9]*)" "\\1.\\2.\\3.\\4" LENSFUN_VERSION ${LENSFUN_VERSION_MATCH})
-        ENDIF (LENSFUN_VERSION_MATCH)
 
-    ENDIF (LENSFUN_INCLUDE_DIRS)
+            STRING(REGEX REPLACE "#define[ \t]+LF_VERSION_MAJOR[ \t]+([0-9]*)[\r\n]*.*#define[ \t]+LF_VERSION_MINOR[ \t]+([0-9]*)[\r\n]*.*#define[ \t]+LF_VERSION_MICRO[ \t]+([0-9]*)[\r\n]*.*#define[ \t]+LF_VERSION_BUGFIX[ \t]+([0-9]*)" "\\1.\\2.\\3.\\4" LENSFUN_VERSION ${LENSFUN_VERSION_MATCH})
+
+        ENDIF ()
+
+    ENDIF ()
 
     INCLUDE(FindPackageHandleStandardArgs)
     FIND_PACKAGE_HANDLE_STANDARD_ARGS(LensFun
@@ -71,6 +75,7 @@ ELSE()
     )
 
     # show the variables only in the advanced view
+
     MARK_AS_ADVANCED(LENSFUN_INCLUDE_DIRS LENSFUN_LIBRARIES LENSFUN_DEFINITIONS LENSFUN_VERSION)
 
 ENDIF()
