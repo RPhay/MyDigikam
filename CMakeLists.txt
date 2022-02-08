@@ -75,11 +75,11 @@ include(KDECMakeSettings)
 include(KDECompilerSettings NO_POLICY_SCOPE)
 
 # ECM macros
+include(ECMSetupVersion)
 include(ECMOptionalAddSubdirectory)
 include(ECMMarkNonGuiExecutable)
 include(ECMGenerateHeaders)
 include(ECMGeneratePriFile)
-include(ECMSetupVersion)
 include(ECMInstallIcons)
 include(ECMAddAppIcon)
 include(ECMPoQmTools)
