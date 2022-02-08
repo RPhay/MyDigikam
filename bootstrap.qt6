@@ -1,0 +1,56 @@
+#! /bin/bash
+
+# Script to build digiKam under Linux host with Qt6
+# This script must be run as sudo
+#
+# Copyright (c) 2015-2022 by Gilles Caulier  <caulier dot gilles at gmail dot com>
+#
+# Redistribution and use is allowed according to the terms of the BSD license.
+# For details see the accompanying COPYING-CMAKE-SCRIPTS file.
+#
+
+# Halt and catch errors
+set -eE
+trap 'PREVIOUS_COMMAND=$THIS_COMMAND; THIS_COMMAND=$BASH_COMMAND' DEBUG
+trap 'echo "FAILED COMMAND: $PREVIOUS_COMMAND"' ERR
+
+if [ "root" != "$USER" ]; then
+    echo "This script must be run as root..."
+    exit
+fi
+
+#export CC=/usr/bin/clang
+#export CXX=/usr/bin/clang++
+
+mkdir -p build
+cd build
+
+/opt/cmake/bin/cmake -G "Unix Makefiles" .. \
+      -DCMAKE_BUILD_TYPE=RelWithDebInfo \
+      -DCMAKE_INSTALL_PREFIX=/usr \
+      -DBUILD_TESTING=OFF \
+      -DBUILD_WITH_QT6=ON \
+      -DDIGIKAMSC_CHECKOUT_PO=OFF \
+      -DDIGIKAMSC_CHECKOUT_DOC=OFF \
+      -DDIGIKAMSC_COMPILE_PO=OFF \
+      -DDIGIKAMSC_COMPILE_DOC=OFF \
+      -DDIGIKAMSC_COMPILE_DIGIKAM=ON \
+      -DENABLE_KFILEMETADATASUPPORT=OFF \
+      -DENABLE_AKONADICONTACTSUPPORT=OFF \
+      -DENABLE_MYSQLSUPPORT=ON \
+      -DENABLE_INTERNALMYSQL=ON \
+      -DENABLE_MEDIAPLAYER=ON \
+      -DENABLE_DBUS=OFF \
+      -DENABLE_APPSTYLES=ON \
+      -DENABLE_QWEBENGINE=$DK_QTWEBENGINE \
+      -DENABLE_FACESENGINE_DNN=ON \
+      -DENABLE_KIO=OFF \
+      -Wno-dev
+
+if [ $? -ne 0 ]; then
+    echo "---------- Cannot configure digiKam $DK_VERSION."
+    echo "---------- Aborting..."
+    exit;
+fi
+
+make
