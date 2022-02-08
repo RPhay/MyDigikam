@@ -118,6 +118,9 @@ fi
 echo -e "\n\n"
 echo "---------- Configure digiKam $DK_VERSION"
 
+export CC=/usr/bin/clang
+export CXX=/usr/bin/clang++
+
 /opt/cmake/bin/cmake -G "Unix Makefiles" .. \
       -DCMAKE_BUILD_TYPE=RelWithDebInfo \
       -DCMAKE_INSTALL_PREFIX=/usr \
