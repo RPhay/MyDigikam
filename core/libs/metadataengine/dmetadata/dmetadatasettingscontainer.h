@@ -29,7 +29,6 @@
 
 #include <QFlags>
 #include <QString>
-#include <QStringList>
 #include <QMap>
 #include <QDebug>
 

@@ -35,8 +35,6 @@
 #include "digikam_export.h"
 #include "metaengine.h"
 
-class QStringList;
-
 class KConfigGroup;
 
 namespace Digikam
