@@ -29,13 +29,12 @@
 #include <QObject>
 #include <QThread>
 #include <QRunnable>
+#include <QMutex>
+#include <QMutexLocker>
 
 // Local includes
 
 #include "digikam_export.h"
-
-class QMutex;
-class QMutexLocker;
 
 namespace Digikam
 {
@@ -148,9 +147,9 @@ protected:
      * with a locked QMutexLocker on mutex().
      * Note the start() will unlock and relock for scheduling once, after state change.
      */
-    void start(QMutexLocker& locker);
-    void stop(QMutexLocker& locker);
-    void wait(QMutexLocker& locker);
+    void start(QMutexLocker<QMutex>& locker);
+    void stop(QMutexLocker<QMutex>& locker);
+    void wait(QMutexLocker<QMutex>& locker);
 
 private:
 

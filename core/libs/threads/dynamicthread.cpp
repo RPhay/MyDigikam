@@ -297,7 +297,7 @@ void DynamicThread::wait()
     wait(locker);
 }
 
-void DynamicThread::start(QMutexLocker& locker)
+void DynamicThread::start(QMutexLocker<QMutex>& locker)
 {
     if (d->inDestruction)
     {
@@ -332,7 +332,7 @@ void DynamicThread::start(QMutexLocker& locker)
     }
 }
 
-void DynamicThread::stop(QMutexLocker& locker)
+void DynamicThread::stop(QMutexLocker<QMutex>& locker)
 {
     Q_UNUSED(locker);
 
@@ -354,7 +354,7 @@ void DynamicThread::stop(QMutexLocker& locker)
     }
 }
 
-void DynamicThread::wait(QMutexLocker& locker)
+void DynamicThread::wait(QMutexLocker<QMutex>& locker)
 {
     while (d->state != Inactive)
     {
