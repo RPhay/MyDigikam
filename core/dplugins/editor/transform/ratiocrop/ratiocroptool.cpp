@@ -688,6 +688,7 @@ void RatioCropTool::readSettings()
 
     // For the last setting to be applied, activate drawing in
     // the selectionWidget, so that we can see the results.
+
     d->ratioCropWidget->setIsDrawingSelection(true);
 
     slotGuideTypeChanged(d->guideLinesCB->currentIndex());
@@ -747,15 +748,54 @@ void RatioCropTool::writeSettings()
     group.sync();
 }
 
-void RatioCropTool::slotResetSettings()
+void RatioCropTool::slotResetSelection()
 {
     d->ratioCropWidget->resetSelection();
+}
 
-    setInputRange(d->ratioCropWidget->getRegionSelection());
+void RatioCropTool::slotResetSettings()
+{
+    d->guideLinesCB->setCurrentIndex(RatioCropWidget::GuideNone);
+    d->goldenSectionBox->setChecked(true);
+    d->goldenSpiralSectionBox->setChecked(false);
+    d->goldenSpiralBox->setChecked(false);
+    d->goldenTriangleBox->setChecked(false);
+    d->flipHorBox->setChecked(false);
+    d->flipVerBox->setChecked(false);
+    d->autoOrientation->setChecked(false);
+    d->preciseCrop->setChecked(false);
+    d->guideColorBt->setColor(QColor(250, 250, 255));
+    d->guideSize->setValue(d->guideSize->defaultValue());
+
+    d->ratioCropWidget->slotGuideLines(d->guideLinesCB->currentIndex());
+    d->ratioCropWidget->slotChangeGuideColor(d->guideColorBt->color());
+    d->ratioCropWidget->setPreciseCrop(d->preciseCrop->isChecked());
+    d->ratioCB->setCurrentIndex(d->ratioCB->defaultIndex());
+
+    if (d->originalIsLandscape)
+    {
+        d->orientCB->setDefaultIndex(RatioCropWidget::Landscape);
+        d->orientCB->setCurrentIndex(RatioCropWidget::Landscape);
+    }
+    else
+    {
+        d->orientCB->setDefaultIndex(RatioCropWidget::Portrait);
+        d->orientCB->setCurrentIndex(RatioCropWidget::Portrait);
+    }
+
+    d->customRatioNInput->setValue(d->customRatioNInput->defaultValue());
+    d->customRatioDInput->setValue(d->customRatioDInput->defaultValue());
+
+    d->ratioCropWidget->setSelectionOrientation(d->orientCB->currentIndex());
+    slotAutoOrientChanged(d->autoOrientation->isChecked());
+    applyRatioChanges(d->ratioCB->currentIndex());
+
+    // For the last setting to be applied, activate drawing in
+    // the selectionWidget, so that we can see the results.
+
     d->ratioCropWidget->setIsDrawingSelection(true);
 
-    slotGuideTypeChanged(d->guideLinesCB->currentIndex());
-    updateCropInfo();
+    QTimer::singleShot(0, this, SLOT(slotResetSelection()));
 }
 
 void RatioCropTool::slotMaxAspectRatio()
@@ -906,7 +946,7 @@ void RatioCropTool::slotOrientChanged(int o)
     d->ratioCropWidget->setSelectionOrientation(o);
 
     // Reset selection area.
-    slotResetSettings();
+    slotResetSelection();
 }
 
 void RatioCropTool::slotAutoOrientChanged(bool a)
@@ -920,7 +960,7 @@ void RatioCropTool::slotRatioChanged(int a)
     applyRatioChanges(a);
 
     // Reset selection area.
-    slotResetSettings();
+    slotResetSelection();
 }
 
 void RatioCropTool::applyRatioChanges(int a)
@@ -1047,7 +1087,7 @@ void RatioCropTool::slotCustomRatioChanged()
     d->ratioCropWidget->setSelectionAspectRatioValue(d->customRatioNInput->value(), d->customRatioDInput->value());
 
     // Reset selection area.
-    slotResetSettings();
+    slotResetSelection();
 }
 
 void RatioCropTool::updateCropInfo()

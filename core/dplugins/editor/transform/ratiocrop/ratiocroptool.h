@@ -65,6 +65,7 @@ private:
 private Q_SLOTS:
 
     void slotMaxAspectRatio();
+    void slotResetSelection();
     void slotResetSettings()                    override;
 
     void slotCenterWidth();
