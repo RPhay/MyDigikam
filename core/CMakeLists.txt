@@ -15,7 +15,7 @@ message(STATUS "Check dependencies for ${PROJECT_NAME} version ${DIGIKAM_VERSION
 message(STATUS "")
 
 set(KF5_MIN_VERSION       "5.5.0")
-#set(QT_MIN_VERSION        "5.9.0")
+set(QT_MIN_VERSION        "6.2.3")
 set(EXIV2_MIN_VERSION     "0.27.0")
 set(OPENCV_MIN_VERSION    "3.3.0")
 set(LENSFUN_MIN_VERSION   "0.2.6.0")      # For Lens auto-correction plugin
@@ -34,7 +34,7 @@ option(ENABLE_MEDIAPLAYER                "Build digiKam with Media Player suppor
 option(ENABLE_DBUS                       "Build digiKam with DBUS support (default=ON)"                                       ON)
 option(ENABLE_APPSTYLES                  "Build digiKam with support for changing the widget application style (default=OFF)" OFF)
 option(ENABLE_QWEBENGINE                 "Build digiKam with QWebEngine (default=ON)"                                         ON)
-option(ENABLE_QWEBKIT                    "Build digiKam with Qt Webkit (default=OFF)                                          OFF")
+option(ENABLE_QWEBKIT                    "Build digiKam with Qt Webkit (default=OFF)"                                         OFF)
 
 if(ENABLE_QWEBENGINE OR ENABLE_QWEBKIT)
   option(DISABLE_QWEB "Disable Web content" OFF)
@@ -225,11 +225,7 @@ endif()
 # -- check Media player --------------------------------------------------------
 
 find_package(FFmpeg COMPONENTS AVCODEC AVDEVICE AVFILTER AVFORMAT AVUTIL SWSCALE)
-
-# TODO: Remove this condition when QtAV supports Qt6 as well
-if(${QT_VERSION_MAJOR} EQUAL 5)
-    find_package(QtAV)
-endif()
+find_package(QtAV)
 
 if(ENABLE_MEDIAPLAYER)
 
