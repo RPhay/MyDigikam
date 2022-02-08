@@ -28,6 +28,11 @@
 
 #include <klocalizedstring.h>
 
+#if (QT_VERSION > QT_VERSION_CHECK(5, 99, 0))
+#   include <klazylocalizedstring.h>
+#   define I18N_NOOP(x) kli18n(x).untranslatedText()
+#endif
+
 // Local includes
 
 #include "dimg.h"
