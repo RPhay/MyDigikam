@@ -116,8 +116,8 @@
 namespace Digikam
 {
 
-extern QMutex s_metaEngineMutex;            ///< Mutex to fix no re-entrancy from Exiv2.
-extern bool   s_metaEngineSupportBmff;      ///< Flag for Exiv2 Base Media File Format support.
+extern QRecursiveMutex s_metaEngineMutex;            ///< Mutex to fix no re-entrancy from Exiv2.
+extern bool            s_metaEngineSupportBmff;      ///< Flag for Exiv2 Base Media File Format support.
 
 // --------------------------------------------------------------------------
 
