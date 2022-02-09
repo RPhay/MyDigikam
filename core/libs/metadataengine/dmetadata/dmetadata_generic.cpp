@@ -758,7 +758,7 @@ QString DMetadata::valueToString(const QVariant& value, MetadataInfo::Field fiel
         case MetadataInfo::CreationDate:
         case MetadataInfo::DigitizationDate:
         {
-            return value.toDateTime().toString(Qt::LocaleDate);
+            return QLocale().toString(value.toDateTime(), QLocale::ShortFormat);
         }
 
         case MetadataInfo::Orientation:
