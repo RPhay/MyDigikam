@@ -42,7 +42,7 @@ void FaceDb::updateIdentity(const Identity& p)
                    p.id());
 
     const QMultiMap<QString, QString> map = p.attributesMap();
-    QMap<QString, QString>::const_iterator it;
+    QMultiMap<QString, QString>::const_iterator it;
 
     for (it = map.constBegin() ; it != map.constEnd() ; ++it)
     {
