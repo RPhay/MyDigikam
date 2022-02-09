@@ -742,7 +742,13 @@ void LensFunCameraSelector::populateLensCombo()
     while (lenses && *lenses)
     {
         LensFunIface::LensPtr lens = *lenses;
+
+#if (QT_VERSION > QT_VERSION_CHECK(5, 99, 0))
+        QVariant b                 = QVariant::fromValue(lens);
+#else
         QVariant b                 = qVariantFromValue(lens);
+#endif
+
         lensMap.insert(QLatin1String(lens->Model), b);
         ++lenses;
     }
