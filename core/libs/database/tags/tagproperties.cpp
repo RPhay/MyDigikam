@@ -167,7 +167,7 @@ QStringList TagProperties::propertyKeys() const
     return d->properties.keys();
 }
 
-QMap<QString, QString> TagProperties::properties() const
+QMultiMap<QString, QString> TagProperties::properties() const
 {
     return d->properties;
 }

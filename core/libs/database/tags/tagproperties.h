@@ -30,7 +30,7 @@
 #include <QStringList>
 #include <QList>
 #include <QExplicitlySharedDataPointer>
-#include <QMap>
+#include <QMultiMap>
 
 // Local includes
 
@@ -91,7 +91,7 @@ public:
     QStringList propertyKeys()                                  const;
 
     /// Returns a map of all key->value pairs
-    QMap<QString, QString> properties()                         const;
+    QMultiMap<QString, QString> properties()                    const;
 
     /// Set the given property. Replaces all previous occurrences of this property.
     void setProperty(const QString& key, const QString& value);
