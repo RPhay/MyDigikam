@@ -28,7 +28,6 @@
 
 #include <QImage>
 #include <QVariant>
-#include <QMatrix>
 #include <QScopedPointer>
 
 // Local includes
