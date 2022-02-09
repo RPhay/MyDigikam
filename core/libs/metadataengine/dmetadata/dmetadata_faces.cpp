@@ -216,10 +216,10 @@ bool DMetadata::setItemFacesMap(const QMultiMap<QString, QVariant>& facesPath, b
                     QString(),
                     MetaEngine::ArrayBagTag);
 
-    QMap<QString, QVariant>::const_iterator it = facesPath.constBegin();
-    int i                                      = 1;
-    int j                                      = 1;
-    bool ok                                    = true;
+    QMultiMap<QString, QVariant>::const_iterator it = facesPath.constBegin();
+    int i                                           = 1;
+    int j                                           = 1;
+    bool ok                                         = true;
 
     while (it != facesPath.constEnd())
     {
