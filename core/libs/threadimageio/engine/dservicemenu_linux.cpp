@@ -33,7 +33,7 @@
 
 // KDE includes
 
-#include <kmimetypetrader.h>
+#include <kapplicationtrader.h>
 
 // Local includes
 
@@ -245,9 +245,7 @@ KService::List DServiceMenu::servicesForOpenWith(const QList<QUrl>& urls)
             constraints << constraintTemplate.arg(mimeType);
         }
 
-        offers = KMimeTypeTrader::self()->query(firstMimeType,
-                                                QLatin1String("Application"),
-                                                constraints.join(QLatin1String(" and ")));
+        offers = KApplicationTrader::queryByMimeType(firstMimeType);
 
         // remove duplicate service entries
 
