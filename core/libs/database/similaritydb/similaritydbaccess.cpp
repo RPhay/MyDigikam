@@ -29,6 +29,7 @@
 // Qt includes
 
 #include <QMutex>
+#include <QMutexLocker>
 #include <QSqlDatabase>
 
 // KDE includes
@@ -76,7 +77,12 @@ SimilarityDbAccessStaticPriv* SimilarityDbAccess::d = nullptr;
 
 // -----------------------------------------------------------------------------
 
-class Q_DECL_HIDDEN SimilarityDbAccessMutexLocker : public QMutexLocker
+class Q_DECL_HIDDEN SimilarityDbAccessMutexLocker
+#if (QT_VERSION > QT_VERSION_CHECK(5, 99, 0))
+    : public QMutexLocker<QRecursiveMutex>
+#else
+    : public QMutexLocker
+#endif
 {
 public:
 
