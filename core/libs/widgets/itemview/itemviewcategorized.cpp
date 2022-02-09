@@ -815,7 +815,7 @@ void ItemViewCategorized::contextMenuEvent(QContextMenuEvent* event)
     }
 }
 
-void ItemViewCategorized::leaveEvent(QEvent*)
+void ItemViewCategorized::leaveEvent(QEvent* event)
 {
     hideIndexNotification();
 
@@ -823,6 +823,8 @@ void ItemViewCategorized::leaveEvent(QEvent*)
     {
         d->mouseButtonPressed = Qt::NoButton;
     }
+
+    DCategorizedView::leaveEvent(event);
 }
 
 void ItemViewCategorized::mousePressEvent(QMouseEvent* event)

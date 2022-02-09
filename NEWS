@@ -838,8 +838,8 @@ BUGFIXES:
 823 ==> 449798 - Aspect Ratio Crop inconsistency?
 824 ==> 449815 - "Download required files" continually tries non-working mirrors, causing "Socket operation timed out".
 825 ==> 443471 - Windows 10/11 : digiKam 7.2 or 7.3 does not start (AVAST suspected).
-826 ==> 
-827 ==> 
+826 ==> 435413 - Unwanted selection-area.
+827 ==> 449847 - Sticky selection.
 828 ==> 
 829 ==> 
 830 ==> 
