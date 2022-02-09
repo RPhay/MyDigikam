@@ -755,7 +755,8 @@ DExpanderBox::DExpanderBox(QWidget* const parent)
     setWidgetResizable(true);
     QWidget* const main = new QWidget(viewport());
     d->vbox             = new QVBoxLayout(main);
-    d->vbox->setSpacing(QApplication::style()->pixelMetric(QStyle::PM_DefaultLayoutSpacing));
+    d->vbox->setSpacing(qMin(QApplication::style()->pixelMetric(QStyle::PM_LayoutHorizontalSpacing),
+                             QApplication::style()->pixelMetric(QStyle::PM_LayoutVerticalSpacing)));
     d->vbox->setContentsMargins(QMargins());
     setWidget(main);
 

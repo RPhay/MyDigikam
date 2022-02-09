@@ -108,7 +108,8 @@ FTExportWidget::FTExportWidget(DInfoInterface* const iface, QWidget* const paren
     layout->addWidget(hbox);
     layout->addWidget(d->targetSearchButton);
     layout->addWidget(d->imageList);
-    layout->setSpacing(QApplication::style()->pixelMetric(QStyle::PM_DefaultLayoutSpacing));
+    layout->setSpacing(qMin(QApplication::style()->pixelMetric(QStyle::PM_LayoutHorizontalSpacing),
+                             QApplication::style()->pixelMetric(QStyle::PM_LayoutVerticalSpacing)));
     layout->setContentsMargins(QMargins());
 
     // ------------------------------------------------------------------------

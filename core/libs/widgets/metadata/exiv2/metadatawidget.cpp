@@ -522,7 +522,8 @@ void MetadataWidget::setFileName(const QString& fileName)
 void MetadataWidget::setUserAreaWidget(QWidget* const w)
 {
     QVBoxLayout* const vLayout = new QVBoxLayout();
-    vLayout->setSpacing(QApplication::style()->pixelMetric(QStyle::PM_DefaultLayoutSpacing));
+    vLayout->setSpacing(qMin(QApplication::style()->pixelMetric(QStyle::PM_LayoutHorizontalSpacing),
+                             QApplication::style()->pixelMetric(QStyle::PM_LayoutVerticalSpacing)));
     vLayout->addWidget(w);
     vLayout->addStretch();
     d->mainLayout->addLayout(vLayout, 3, 0, 1, 5);

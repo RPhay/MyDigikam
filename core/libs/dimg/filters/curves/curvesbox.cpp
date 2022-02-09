@@ -249,7 +249,8 @@ void CurvesBox::setup()
     mainLayout->addLayout(l3,       1, 0, 1, 1);
     mainLayout->setRowStretch(2, 10);
     mainLayout->setContentsMargins(QMargins());
-    mainLayout->setSpacing(QApplication::style()->pixelMetric(QStyle::PM_DefaultLayoutSpacing));
+    mainLayout->setSpacing(qMin(QApplication::style()->pixelMetric(QStyle::PM_LayoutHorizontalSpacing),
+                             QApplication::style()->pixelMetric(QStyle::PM_LayoutVerticalSpacing)));
     setLayout(mainLayout);
 
     // default: disable all control widgets

@@ -292,7 +292,8 @@ AltLangStrEdit::AltLangStrEdit(QWidget* const parent)
     grid->addWidget(d->valueEdit,      1, 0, 1,-1);
     grid->setColumnStretch(1, 10);
     grid->setContentsMargins(QMargins());
-    grid->setSpacing(QApplication::style()->pixelMetric(QStyle::PM_DefaultLayoutSpacing));
+    grid->setSpacing(qMin(QApplication::style()->pixelMetric(QStyle::PM_LayoutHorizontalSpacing),
+                             QApplication::style()->pixelMetric(QStyle::PM_LayoutVerticalSpacing)));
 
     loadLangAltListEntries();
 

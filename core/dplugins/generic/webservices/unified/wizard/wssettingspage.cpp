@@ -180,13 +180,15 @@ WSSettingsPage::WSSettingsPage(QWizard* const dialog, const QString& title)
     grid2->addWidget(d->removeMetadata,        3, 0, 1, 2);
     grid2->setRowStretch(4, 10);
     grid2->setColumnStretch(2, 10);
-    grid2->setSpacing(QApplication::style()->pixelMetric(QStyle::PM_DefaultLayoutSpacing));
+    grid2->setSpacing(qMin(QApplication::style()->pixelMetric(QStyle::PM_LayoutHorizontalSpacing),
+                             QApplication::style()->pixelMetric(QStyle::PM_LayoutVerticalSpacing)));
     grid2->setAlignment(Qt::AlignTop);
 
     // --------------------
 
     QGridLayout* const grid = new QGridLayout(main);
-    grid->setSpacing(QApplication::style()->pixelMetric(QStyle::PM_DefaultLayoutSpacing));
+    grid->setSpacing(qMin(QApplication::style()->pixelMetric(QStyle::PM_LayoutHorizontalSpacing),
+                             QApplication::style()->pixelMetric(QStyle::PM_LayoutVerticalSpacing)));
     grid->addWidget(d->changeImagesProp,    0, 0, 1, 4);
     grid->addWidget(groupBox,               1, 0, 1, 4);
     grid->setRowStretch(2, 10);

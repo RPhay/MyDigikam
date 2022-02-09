@@ -293,7 +293,8 @@ IPTCProperties::IPTCProperties(QWidget* const parent)
     grid->setColumnStretch(4, 10);
     grid->setRowStretch(14, 10);
     grid->setContentsMargins(QMargins());
-    grid->setSpacing(QApplication::style()->pixelMetric(QStyle::PM_DefaultLayoutSpacing));
+    grid->setSpacing(qMin(QApplication::style()->pixelMetric(QStyle::PM_LayoutHorizontalSpacing),
+                             QApplication::style()->pixelMetric(QStyle::PM_LayoutVerticalSpacing)));
 
     // --------------------------------------------------------
 

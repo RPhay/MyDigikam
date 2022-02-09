@@ -157,7 +157,8 @@ VidSlideOutputPage::VidSlideOutputPage(QWizard* const dialog, const QString& tit
     // --------------------
 
     QGridLayout* const grid = new QGridLayout(main);
-    grid->setSpacing(QApplication::style()->pixelMetric(QStyle::PM_DefaultLayoutSpacing));
+    grid->setSpacing(qMin(QApplication::style()->pixelMetric(QStyle::PM_LayoutHorizontalSpacing),
+                             QApplication::style()->pixelMetric(QStyle::PM_LayoutVerticalSpacing)));
     grid->addWidget(formatLabel,     0, 0, 1, 1);
     grid->addWidget(d->formatVal,    0, 1, 1, 1);
     grid->addWidget(fileLabel,       1, 0, 1, 1);

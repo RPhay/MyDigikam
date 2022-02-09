@@ -60,7 +60,8 @@ ImageDialogPreview::ImageDialogPreview(QWidget* const parent)
     d->infoLabel->setAlignment(Qt::AlignCenter);
 
     vlay->setContentsMargins(QMargins());
-    vlay->setSpacing(QApplication::style()->pixelMetric(QStyle::PM_DefaultLayoutSpacing));
+    vlay->setSpacing(qMin(QApplication::style()->pixelMetric(QStyle::PM_LayoutHorizontalSpacing),
+                             QApplication::style()->pixelMetric(QStyle::PM_LayoutVerticalSpacing)));
     vlay->addWidget(d->imageLabel);
     vlay->addWidget(d->infoLabel);
     vlay->addStretch();

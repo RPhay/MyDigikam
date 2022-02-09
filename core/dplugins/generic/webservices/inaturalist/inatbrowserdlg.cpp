@@ -202,7 +202,8 @@ INatBrowserDlg::INatBrowserDlg(const QString& username,
     // ----------------------
 
     QGridLayout* const grid = new QGridLayout(this);
-    grid->setSpacing(QApplication::style()->pixelMetric(QStyle::PM_DefaultLayoutSpacing));
+    grid->setSpacing(qMin(QApplication::style()->pixelMetric(QStyle::PM_LayoutHorizontalSpacing),
+                             QApplication::style()->pixelMetric(QStyle::PM_LayoutVerticalSpacing)));
     grid->addWidget(d->toolbar, 0, 0, 1, 1);
     grid->addWidget(d->browser, 1, 0, 1, 3);
     grid->setColumnStretch(1, 10);

@@ -109,7 +109,8 @@ HTMLOutputPage::HTMLOutputPage(QWizard* const dialog, const QString& title)
     // --------------------
 
     QGridLayout* const grid = new QGridLayout(main);
-    grid->setSpacing(QApplication::style()->pixelMetric(QStyle::PM_DefaultLayoutSpacing));
+    grid->setSpacing(qMin(QApplication::style()->pixelMetric(QStyle::PM_LayoutHorizontalSpacing),
+                             QApplication::style()->pixelMetric(QStyle::PM_LayoutVerticalSpacing)));
     grid->addWidget(d->titleLabel,          0, 0, 1, 1);
     grid->addWidget(d->imageSelectionTitle, 0, 1, 1, 1);
     grid->addWidget(textLabel1,             1, 0, 1, 1);

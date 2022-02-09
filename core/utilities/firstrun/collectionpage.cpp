@@ -109,7 +109,8 @@ CollectionPage::CollectionPage(QWizard* const dlg)
     vlayout->addWidget(textLabel1);
     vlayout->addWidget(d->rootAlbumPathRequester);
     vlayout->setContentsMargins(QMargins());
-    vlayout->setSpacing(QApplication::style()->pixelMetric(QStyle::PM_DefaultLayoutSpacing));
+    vlayout->setSpacing(qMin(QApplication::style()->pixelMetric(QStyle::PM_LayoutHorizontalSpacing),
+                             QApplication::style()->pixelMetric(QStyle::PM_LayoutVerticalSpacing)));
 
     setPageWidget(widget);
     setLeftBottomPix(QIcon::fromTheme(QLatin1String("folder-pictures")));

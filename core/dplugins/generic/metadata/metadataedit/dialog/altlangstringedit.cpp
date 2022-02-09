@@ -68,7 +68,8 @@ AltLangStringsEdit::AltLangStringsEdit(QWidget* const parent, const QString& tit
     grid->setAlignment( Qt::AlignTop );
     grid->addWidget(d->valueCheck, 0, 0, 1, 1);
     grid->addWidget(d->editor,     1, 0, 1, 1);
-    grid->setSpacing(QApplication::style()->pixelMetric(QStyle::PM_DefaultLayoutSpacing));
+    grid->setSpacing(qMin(QApplication::style()->pixelMetric(QStyle::PM_LayoutHorizontalSpacing),
+                             QApplication::style()->pixelMetric(QStyle::PM_LayoutVerticalSpacing)));
     grid->setContentsMargins(QMargins());
 
     // --------------------------------------------------------

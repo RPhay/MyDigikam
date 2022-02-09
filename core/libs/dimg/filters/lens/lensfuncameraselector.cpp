@@ -226,7 +226,8 @@ LensFunCameraSelector::LensFunCameraSelector(QWidget* const parent)
     grid->addWidget(d->aperture,   8, 1, 1, 2);
     grid->addWidget(d->distLabel,  9, 0, 1, 1);
     grid->addWidget(d->distance,   9, 1, 1, 2);
-    grid->setSpacing(QApplication::style()->pixelMetric(QStyle::PM_DefaultLayoutSpacing));
+    grid->setSpacing(qMin(QApplication::style()->pixelMetric(QStyle::PM_LayoutHorizontalSpacing),
+                             QApplication::style()->pixelMetric(QStyle::PM_LayoutVerticalSpacing)));
     grid->setContentsMargins(QMargins());
 
     connect(d->metadataUsage, SIGNAL(toggled(bool)),

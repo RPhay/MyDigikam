@@ -159,7 +159,8 @@ GPSSearchView::GPSSearchView(QWidget* const parent,
 
     DHBox* const hbox = new DHBox(this);
     hbox->setContentsMargins(QMargins());
-    hbox->setSpacing(QApplication::style()->pixelMetric(QStyle::PM_DefaultLayoutSpacing));
+    hbox->setSpacing(qMin(QApplication::style()->pixelMetric(QStyle::PM_LayoutHorizontalSpacing),
+                             QApplication::style()->pixelMetric(QStyle::PM_LayoutVerticalSpacing)));
 
     d->nameEdit       = new QLineEdit(hbox);
     d->nameEdit->setClearButtonEnabled(true);
@@ -255,13 +256,15 @@ GPSSearchView::GPSSearchView(QWidget* const parent,
     vlayTop->addWidget(hbox);
     vlayTop->setStretchFactor(mapPanel, 10);
     vlayTop->setContentsMargins(QMargins());
-    vlayTop->setSpacing(QApplication::style()->pixelMetric(QStyle::PM_DefaultLayoutSpacing));
+    vlayTop->setSpacing(qMin(QApplication::style()->pixelMetric(QStyle::PM_LayoutHorizontalSpacing),
+                             QApplication::style()->pixelMetric(QStyle::PM_LayoutVerticalSpacing)));
     QFrame* const frameBottom     = new QFrame(d->splitter);
     QVBoxLayout* const vlayBottom = new QVBoxLayout(frameBottom);
     vlayBottom->addWidget(d->searchTreeView);
     vlayBottom->addWidget(d->searchGPSBar);
     vlayBottom->setContentsMargins(QMargins());
-    vlayBottom->setSpacing(QApplication::style()->pixelMetric(QStyle::PM_DefaultLayoutSpacing));
+    vlayBottom->setSpacing(qMin(QApplication::style()->pixelMetric(QStyle::PM_LayoutHorizontalSpacing),
+                             QApplication::style()->pixelMetric(QStyle::PM_LayoutVerticalSpacing)));
 
     d->splitter->addWidget(frameTop);
     d->splitter->addWidget(frameBottom);

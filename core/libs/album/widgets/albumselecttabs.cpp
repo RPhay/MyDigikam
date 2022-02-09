@@ -130,7 +130,8 @@ AlbumSelectTabs::AlbumSelectTabs(const QString& name, QWidget* const parent)
     d->albumSearchBar->setFilterModel(d->albumTreeView->albumFilterModel());
 
     albumBox->setContentsMargins(QMargins());
-    albumBox->setSpacing(QApplication::style()->pixelMetric(QStyle::PM_DefaultLayoutSpacing));
+    albumBox->setSpacing(qMin(QApplication::style()->pixelMetric(QStyle::PM_LayoutHorizontalSpacing),
+                             QApplication::style()->pixelMetric(QStyle::PM_LayoutVerticalSpacing)));
     albumBox->setStretchFactor(d->albumTreeView, 100);
     albumBox->setStretchFactor(d->albumSearchBar, 1);
 
@@ -152,7 +153,8 @@ AlbumSelectTabs::AlbumSelectTabs(const QString& name, QWidget* const parent)
     d->tagSearchBar->setFilterModel(d->tagTreeView->albumFilterModel());
 
     tagBox->setContentsMargins(QMargins());
-    tagBox->setSpacing(QApplication::style()->pixelMetric(QStyle::PM_DefaultLayoutSpacing));
+    tagBox->setSpacing(qMin(QApplication::style()->pixelMetric(QStyle::PM_LayoutHorizontalSpacing),
+                             QApplication::style()->pixelMetric(QStyle::PM_LayoutVerticalSpacing)));
     tagBox->setStretchFactor(d->tagTreeView, 100);
     tagBox->setStretchFactor(d->tagSearchBar, 1);
 
@@ -175,7 +177,8 @@ AlbumSelectTabs::AlbumSelectTabs(const QString& name, QWidget* const parent)
     d->searchSearchBar->setFilterModel(d->searchTreeView->albumFilterModel());
 
     searchBox->setContentsMargins(QMargins());
-    searchBox->setSpacing(QApplication::style()->pixelMetric(QStyle::PM_DefaultLayoutSpacing));
+    searchBox->setSpacing(qMin(QApplication::style()->pixelMetric(QStyle::PM_LayoutHorizontalSpacing),
+                             QApplication::style()->pixelMetric(QStyle::PM_LayoutVerticalSpacing)));
     searchBox->setStretchFactor(d->searchTreeView, 100);
     searchBox->setStretchFactor(d->searchSearchBar, 1);
 
@@ -188,7 +191,8 @@ AlbumSelectTabs::AlbumSelectTabs(const QString& name, QWidget* const parent)
     d->labelsSearchHandler = new AlbumLabelsSearchHandler(d->labelsTree);
 
     labelsBox->setContentsMargins(QMargins());
-    labelsBox->setSpacing(QApplication::style()->pixelMetric(QStyle::PM_DefaultLayoutSpacing));
+    labelsBox->setSpacing(qMin(QApplication::style()->pixelMetric(QStyle::PM_LayoutHorizontalSpacing),
+                             QApplication::style()->pixelMetric(QStyle::PM_LayoutVerticalSpacing)));
     labelsBox->setStretchFactor(d->labelsTree, 100);
 
     // -------------------------------------------------------------------------------

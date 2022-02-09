@@ -52,7 +52,8 @@ MetadataListView::MetadataListView(QWidget* const parent)
     setSizePolicy(QSizePolicy::Expanding, QSizePolicy::Expanding);
     setAllColumnsShowFocus(true);
     setColumnCount(2);
-    setIndentation(QApplication::style()->pixelMetric(QStyle::PM_DefaultLayoutSpacing));
+    setIndentation(qMin(QApplication::style()->pixelMetric(QStyle::PM_LayoutHorizontalSpacing),
+                             QApplication::style()->pixelMetric(QStyle::PM_LayoutVerticalSpacing)));
     header()->setSectionResizeMode(QHeaderView::Stretch);
     header()->hide();
 

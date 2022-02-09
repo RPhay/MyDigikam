@@ -271,7 +271,8 @@ SubjectWidget::SubjectWidget(QWidget* const parent, bool sizeLimited)
     optionsBoxLayout->addWidget(m_detailEdit,   6, 1, 1, 4);
     optionsBoxLayout->setColumnStretch(4, 10);
     optionsBoxLayout->setContentsMargins(QMargins());
-    optionsBoxLayout->setSpacing(QApplication::style()->pixelMetric(QStyle::PM_DefaultLayoutSpacing));
+    optionsBoxLayout->setSpacing(qMin(QApplication::style()->pixelMetric(QStyle::PM_LayoutHorizontalSpacing),
+                             QApplication::style()->pixelMetric(QStyle::PM_LayoutVerticalSpacing)));
     d->optionsBox->setLayout(optionsBoxLayout);
 
     // --------------------------------------------------------
@@ -288,7 +289,8 @@ SubjectWidget::SubjectWidget(QWidget* const parent, bool sizeLimited)
     mainLayout->setRowStretch(6, 10);
     mainLayout->setColumnStretch(2, 1);
     mainLayout->setContentsMargins(QMargins());
-    mainLayout->setSpacing(QApplication::style()->pixelMetric(QStyle::PM_DefaultLayoutSpacing));
+    mainLayout->setSpacing(qMin(QApplication::style()->pixelMetric(QStyle::PM_LayoutHorizontalSpacing),
+                             QApplication::style()->pixelMetric(QStyle::PM_LayoutVerticalSpacing)));
     setLayout(mainLayout);
 
     // --------------------------------------------------------

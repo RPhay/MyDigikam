@@ -93,7 +93,8 @@ DFontSelect::DFontSelect(const QString& text, QWidget* const parent)
     d->chooseFontButton = new QPushButton(i18n("Choose..."), this);
     d->desc             = new DAdjustableLabel(this);
 
-    setSpacing(QApplication::style()->pixelMetric(QStyle::PM_DefaultLayoutSpacing));
+    setSpacing(qMin(QApplication::style()->pixelMetric(QStyle::PM_LayoutHorizontalSpacing),
+                             QApplication::style()->pixelMetric(QStyle::PM_LayoutVerticalSpacing)));
     setContentsMargins(QMargins());
     setStretchFactor(d->space, 10);
 

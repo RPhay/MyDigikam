@@ -81,7 +81,8 @@ TemplateSelector::TemplateSelector(QWidget* const parent)
                                         "<p>All other values are template titles managed by digiKam. "
                                         "Selecting one will assign information as well.</p>"));
 
-    setSpacing(QApplication::style()->pixelMetric(QStyle::PM_DefaultLayoutSpacing));
+    setSpacing(qMin(QApplication::style()->pixelMetric(QStyle::PM_LayoutHorizontalSpacing),
+                             QApplication::style()->pixelMetric(QStyle::PM_LayoutVerticalSpacing)));
     setContentsMargins(QMargins());
     setStretchFactor(d->templateCombo, 10);
 

@@ -228,7 +228,8 @@ VidSlideVideoPage::VidSlideVideoPage(QWizard* const dialog, const QString& title
 
     d->effPreview              = new EffectPreview(effGrp);
     QGridLayout* const effGrid = new QGridLayout(effGrp);
-    effGrid->setSpacing(QApplication::style()->pixelMetric(QStyle::PM_DefaultLayoutSpacing));
+    effGrid->setSpacing(qMin(QApplication::style()->pixelMetric(QStyle::PM_LayoutHorizontalSpacing),
+                             QApplication::style()->pixelMetric(QStyle::PM_LayoutVerticalSpacing)));
     effGrid->addWidget(effLabel,      0, 0, 1, 1);
     effGrid->addWidget(d->effVal,     0, 1, 1, 1);
     effGrid->addWidget(effNote,       1, 0, 1, 2);
@@ -264,7 +265,8 @@ VidSlideVideoPage::VidSlideVideoPage(QWizard* const dialog, const QString& title
 
     d->transPreview              = new TransitionPreview(transGrp);
     QGridLayout* const transGrid = new QGridLayout(transGrp);
-    transGrid->setSpacing(QApplication::style()->pixelMetric(QStyle::PM_DefaultLayoutSpacing));
+    transGrid->setSpacing(qMin(QApplication::style()->pixelMetric(QStyle::PM_LayoutHorizontalSpacing),
+                             QApplication::style()->pixelMetric(QStyle::PM_LayoutVerticalSpacing)));
     transGrid->addWidget(transLabel,      0, 0, 1, 1);
     transGrid->addWidget(d->transVal,     0, 1, 1, 1);
     transGrid->addWidget(transNote,       1, 0, 1, 2);
@@ -279,7 +281,8 @@ VidSlideVideoPage::VidSlideVideoPage(QWizard* const dialog, const QString& title
     // --------------------
 
     QGridLayout* const grid = new QGridLayout(main);
-    grid->setSpacing(QApplication::style()->pixelMetric(QStyle::PM_DefaultLayoutSpacing));
+    grid->setSpacing(qMin(QApplication::style()->pixelMetric(QStyle::PM_LayoutHorizontalSpacing),
+                             QApplication::style()->pixelMetric(QStyle::PM_LayoutVerticalSpacing)));
     grid->addWidget(framesLabel,     0, 0, 1, 1);
     grid->addWidget(d->framesVal,    0, 1, 1, 1);
     grid->addWidget(stdLabel,        1, 0, 1, 1);

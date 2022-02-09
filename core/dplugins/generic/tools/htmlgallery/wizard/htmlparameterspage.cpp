@@ -95,7 +95,8 @@ HTMLParametersPage::HTMLParametersPage(QWizard* const dialog, const QString& tit
     mScrollArea->setWidget(d->content);
 
     vbox->setContentsMargins(QMargins());
-    vbox->setSpacing(QApplication::style()->pixelMetric(QStyle::PM_DefaultLayoutSpacing));
+    vbox->setSpacing(qMin(QApplication::style()->pixelMetric(QStyle::PM_LayoutHorizontalSpacing),
+                             QApplication::style()->pixelMetric(QStyle::PM_LayoutVerticalSpacing)));
 
     setPageWidget(vbox);
     setLeftBottomPix(QIcon::fromTheme(QLatin1String("text-css")));
@@ -130,7 +131,8 @@ void HTMLParametersPage::initializePage()
 
     QGridLayout* const layout = new QGridLayout(d->content);
     layout->setContentsMargins(QMargins());
-    layout->setSpacing(QApplication::style()->pixelMetric(QStyle::PM_DefaultLayoutSpacing));
+    layout->setSpacing(qMin(QApplication::style()->pixelMetric(QStyle::PM_LayoutHorizontalSpacing),
+                             QApplication::style()->pixelMetric(QStyle::PM_LayoutVerticalSpacing)));
 
     // Create widgets
 
