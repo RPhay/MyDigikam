@@ -81,7 +81,9 @@ IccProfilesSettings::IccProfilesSettings(QWidget* const parent)
     QPushButton* const newProfInfo = new QPushButton(i18n("Info..."), this);
 
     layout()->setAlignment(newProfInfo, Qt::AlignLeft);
-    setSpacing(QApplication::style()->pixelMetric(QStyle::PM_DefaultLayoutSpacing));
+    const int spacing = qMin(QApplication::style()->pixelMetric(QStyle::PM_LayoutHorizontalSpacing),
+                             QApplication::style()->pixelMetric(QStyle::PM_LayoutVerticalSpacing));
+    setSpacing(spacing);
     setContentsMargins(QMargins());
 
     // -------------------------------------------------------------
