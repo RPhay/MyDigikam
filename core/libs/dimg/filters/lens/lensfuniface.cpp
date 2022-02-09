@@ -379,7 +379,8 @@ LensFunIface::MetadataMatch LensFunIface::findFromMetadata(DMetadata* const meta
 
                 // Remove all duplicate lenses in the list by using QSet.
 
-                lensMatches = lensMatches.toSet().toList();
+                QSet<const lfLens*> set(lensMatches.begin(), lensMatches.end());
+                lensMatches = set.toList();
             }
             else
             {
