@@ -67,7 +67,7 @@ namespace Digikam
 /**
  * This mutex is used to protect all Exiv2 API calls when MetaEngine is used with multi-threads.
  */
-QRecursiveMutex s_metaEngineMutex(QMutex::Recursive);
+QRecursiveMutex s_metaEngineMutex;
 
 /**
  * Boolean value about Bmff based file support (CR3, HEIF, HEIC, and AVIF).
