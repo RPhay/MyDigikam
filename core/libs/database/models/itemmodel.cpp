@@ -137,11 +137,11 @@ public:
 
 public:
 
-    QHash<qlonglong, int> oldIds;
-    QList<QVariant>       oldExtraValues;
-    QList<ItemInfo>       newInfos;
-    QList<QVariant>       newExtraValues;
-    QList<IntPairList>    modelRemovals;
+    QMultiHash<qlonglong, int> oldIds;
+    QList<QVariant>            oldExtraValues;
+    QList<ItemInfo>            newInfos;
+    QList<QVariant>            newExtraValues;
+    QList<IntPairList>         modelRemovals;
 };
 
 // -------------------------------------------------------------------------------------
