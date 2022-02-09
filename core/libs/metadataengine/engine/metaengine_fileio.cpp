@@ -381,11 +381,11 @@ bool MetaEngine::save(const QString& imageFilePath, bool setVersion) const
 
         if (!dinfo.isWritable())
         {
-            writtenToSidecar = d->saveToXMPSidecar(imageFilePath);
+            writtenToSidecar = d->saveToXMPSidecar(QFileInfo(imageFilePath));
         }
         else
         {
-            writtenToSidecar = d->saveToXMPSidecar(regularFilePath);
+            writtenToSidecar = d->saveToXMPSidecar(QFileInfo(regularFilePath));
         }
 
         if (writtenToSidecar)
