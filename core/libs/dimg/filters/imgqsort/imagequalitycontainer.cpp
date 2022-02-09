@@ -149,8 +149,7 @@ void ImageQualityContainer::writeToConfig()
 
 QDebug operator<<(QDebug dbg, const ImageQualityContainer& s)
 {
-<<<<<<< HEAD
-    dbg.nospace() << QT_ENDL;
+    dbg.nospace()                                                   << QT_ENDL;
     dbg.nospace() << "EnableSorter       :" << s.enableSorter       << QT_ENDL;
     dbg.nospace() << "DetectBlur         :" << s.detectBlur         << QT_ENDL;
     dbg.nospace() << "DetectNoise        :" << s.detectNoise        << QT_ENDL;
