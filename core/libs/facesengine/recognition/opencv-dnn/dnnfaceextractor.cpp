@@ -29,6 +29,7 @@
 #include <QUrl>
 #include <QMutex>
 #include <QString>
+#include <QFileInfo>
 #include <QDataStream>
 #include <QElapsedTimer>
 #include <QStandardPaths>
@@ -134,7 +135,7 @@ bool DNNFaceExtractor::loadModels()
     QString name    = QLatin1String("openface_nn4.small2.v1.t7");
     QString nnmodel = appUrl.toLocalFile() + name;
 
-    if (!nnmodel.isEmpty())
+    if (QFileInfo::exists(nnmodel))
     {
         try
         {
