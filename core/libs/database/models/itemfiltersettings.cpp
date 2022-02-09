@@ -659,8 +659,8 @@ bool ItemFilterSettings::matches(const ItemInfo& info, bool* const foundText) co
     {
         bool textMatch = false;
 
-        QRegExp textRegExp(m_textFilterSettings.text);
-        textRegExp.setPatternSyntax(QRegExp::WildcardUnix);
+        QRegularExpression textRegExp(m_textFilterSettings.text);
+        textRegExp.setPatternSyntax(QRegularExpression::WildcardUnix);
         textRegExp.setCaseSensitivity(m_textFilterSettings.caseSensitive);
 
         // Image name
