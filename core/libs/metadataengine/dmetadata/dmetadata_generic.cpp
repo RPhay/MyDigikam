@@ -199,10 +199,18 @@ QVariant DMetadata::getMetadataField(MetadataInfo::Field field) const
 
         case MetadataInfo::Faces:
         {
+            QVariant var;
+
+#if (QT_VERSION > QT_VERSION_CHECK(5, 99, 0))
+            // TODO: With Qt6.2.3, QMultiMap do not inherit of QMap as with Qt5 and QVariant do not handle QMultiMap.
+            // We needs to find a way to support QVariant conversion from QMultiMap without to lost face entries,
+            // or wait than Qt6 support QVariant(QMultiMap).
+            qCWarning(DIGIKAM_METAENGINE_LOG) << "Faces multimap to variant conversion is not yet supported with Qt6!";
+#else
             QMultiMap<QString,QVariant> faceMap;
             getItemFacesMap(faceMap);
-            QVariant var(faceMap);
-
+            var = QVariant(faceMap);
+#endif
             return var;
         }
 
