@@ -58,23 +58,28 @@ class Q_DECL_HIDDEN FilesDownloader::Private
 public:
 
     explicit Private()
-      : downloadUrl(QLatin1String("https://files.kde.org/digikam/")),
-        redirects  (0),
-        buttons    (nullptr),
-        progress   (nullptr),
-        nameLabel  (nullptr),
-        reply      (nullptr),
-        netMngr    (nullptr)
+      : downloadUrls( { QLatin1String("https://files.kde.org/digikam/"),
+                        QLatin1String("https://mirror.faigner.de/kde/files/digikam/"),
+                        QLatin1String("https://kde-applicationdata.mirrors.omnilance.com/digikam/"),
+                        QLatin1String("https://mirrors.ocf.berkeley.edu/kde-applicationdata/digikam/") } ),
+        mirrorIndex (0),
+        redirects   (0),
+        buttons     (nullptr),
+        progress    (nullptr),
+        nameLabel   (nullptr),
+        reply       (nullptr),
+        netMngr     (nullptr)
     {
     }
 
-    const QString          downloadUrl;
+    const QStringList      downloadUrls;
 
     QString                error;
 
     QList<DownloadInfo>    files;
     DownloadInfo           currentInfo;
 
+    int                    mirrorIndex;
     int                    redirects;
 
     QDialogButtonBox*      buttons;
@@ -262,6 +267,13 @@ void FilesDownloader::slotDownload()
         if (result == QMessageBox::Yes)
         {
             d->error.clear();
+            d->mirrorIndex++;
+
+            if (d->mirrorIndex >= d->downloadUrls.size())
+            {
+                d->mirrorIndex = 0;
+            }
+
             download();
 
             return;
@@ -282,9 +294,8 @@ void FilesDownloader::download()
                 this, SLOT(slotDownloaded(QNetworkReply*)));
     }
 
-    QUrl request(d->downloadUrl      +
-                 d->currentInfo.path +
-                 d->currentInfo.name);
+    QUrl request(d->downloadUrls.at(d->mirrorIndex) +
+                 d->currentInfo.path + d->currentInfo.name);
 
     d->redirects = 0;
     createRequest(request);
