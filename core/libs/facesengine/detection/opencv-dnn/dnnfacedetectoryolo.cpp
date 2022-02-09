@@ -35,6 +35,7 @@
 #include <QList>
 #include <QRect>
 #include <QString>
+#include <QFileInfo>
 #include <QElapsedTimer>
 #include <QStandardPaths>
 
@@ -68,7 +69,7 @@ bool DNNFaceDetectorYOLO::loadModels()
     QString nnmodel = appUrl.toLocalFile() + model;
     QString nndata  = appUrl.toLocalFile() + data;
 
-    if (!nnmodel.isEmpty() && !nndata.isEmpty())
+    if (QFileInfo::exists(nnmodel) && QFileInfo::exists(nndata))
     {
         try
         {
