@@ -688,7 +688,13 @@ void LensFunCameraSelector::populateDeviceCombos()
         if ((*it)->Model && QLatin1String((*it)->Maker) == d->make->itemHighlighted())
         {
             LensFunIface::DevicePtr dev = *it;
+
+#if (QT_VERSION > QT_VERSION_CHECK(5, 99, 0))
+            QVariant b                  = QVariant::fromValue(dev);
+#else
             QVariant b                  = qVariantFromValue(dev);
+#endif
+
             d->model->addSqueezedItem(QLatin1String(dev->Model), b);
         }
 
