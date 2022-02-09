@@ -29,7 +29,6 @@
 #include <QDir>
 #include <QFile>
 #include <QFileInfo>
-#include <QMatrix>
 #include <QStringList>
 #include <QDirIterator>
 #include <QTextDocument>

@@ -31,7 +31,6 @@
 #include <QDragEnterEvent>
 #include <QFileInfo>
 #include <QImageReader>
-#include <QMatrix>
 #include <QMouseEvent>
 #include <QPaintEvent>
 #include <QPainter>

@@ -28,7 +28,6 @@
 
 // Qt includes
 
-#include <QMatrix>
 #include <QFileInfo>
 
 // Local includes

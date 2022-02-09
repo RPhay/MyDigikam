@@ -28,7 +28,6 @@
 
 #include <QMap>
 #include <QImage>
-#include <QMatrix>
 #include <QPainter>
 #include <QThread>
 #include <QMutex>

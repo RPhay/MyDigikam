@@ -33,7 +33,6 @@
 #include <QApplication>
 #include <QImage>
 #include <QVariant>
-#include <QMatrix>
 
 // Local includes
 

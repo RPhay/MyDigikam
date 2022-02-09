@@ -42,7 +42,6 @@
 #include <QImage>
 #include <QKeyEvent>
 #include <QList>
-#include <QMatrix>
 #include <QMouseEvent>
 #include <QPainter>
 #include <QPainterPath>
