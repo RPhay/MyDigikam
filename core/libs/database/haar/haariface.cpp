@@ -300,7 +300,7 @@ QMultiMap<double, qlonglong> HaarIface::bestMatches(Haar::SignatureData* const q
         {
             // find the last entry, the one with the highest (=worst) score
 
-            QMap<double, qlonglong>::iterator last = bestMatches.end();
+            QMultiMap<double, qlonglong>::iterator last = bestMatches.end();
             --last;
             worstScore = last.key();
 
