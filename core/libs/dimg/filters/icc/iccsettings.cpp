@@ -60,8 +60,10 @@
 #   include <climits>
 #   include <X11/Xlib.h>
 #   include <X11/Xatom.h>
-#   include <QtPlatformHeaders/qxcbscreenfunctions.h>
 #   include <qpa/qplatformnativeinterface.h>
+#   include <qpa/qplatformscreen_p.h>
+#   include <qpa/qplatformscreen.h>
+#   include <qscreen.h>
 #endif // HAVE_X11
 
 #if defined(Q_CC_CLANG)
@@ -214,16 +216,20 @@ bool IccSettings::Private::isX11()
     return QGuiApplication::platformName() == QLatin1String("xcb");
 }
 
-QScreen *IccSettings::Private::findScreenForVirtualDesktop(int virtualDesktopNumber)
+QScreen* IccSettings::Private::findScreenForVirtualDesktop(int virtualDesktopNumber)
 {
     const auto screens = QGuiApplication::screens();
-    for (QScreen *screen : screens)
+
+    for (QScreen* screen : screens)
     {
-        if (QXcbScreenFunctions::virtualDesktopNumber(screen) == virtualDesktopNumber)
+        auto* qxcbScreen = dynamic_cast<QNativeInterface::Private::QXcbScreen*>(screen->handle());
+
+        if (qxcbScreen && qxcbScreen->virtualDesktopNumber() == virtualDesktopNumber)
         {
             return screen;
         }
     }
+
     return nullptr;
 }
 
