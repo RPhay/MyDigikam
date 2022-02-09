@@ -29,6 +29,7 @@
 #include <QWidget>
 #include <QApplication>
 #include <QStyle>
+#include <QVariant>
 
 // KDE includes
 
