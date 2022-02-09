@@ -459,10 +459,15 @@ void NRFilter::waveletDenoise(float* fimg[3], unsigned int width, unsigned int h
         {
             prm.start = vals[j];
             prm.stop  = vals[j+1];
-            tasks.append(QtConcurrent::run(this,
-                                           &NRFilter::thresholdingMultithreaded,
+            tasks.append(QtConcurrent::run(
+#if (QT_VERSION > QT_VERSION_CHECK(5, 99, 0))
+                                           &NRFilter::thresholdingMultithreaded, this,
+#else
+                                           this, &NRFilter::thresholdingMultithreaded,
+#endif
                                            prm
-                                          ));
+                                          )
+            );
         }
 
         foreach (QFuture<void> t, tasks)
