@@ -206,11 +206,16 @@ void UnsharpMaskFilter::filterImage()
 
         for (int j = 0 ; runningFlag() && (j < vals.count()-1) ; ++j)
         {
-            tasks.append(QtConcurrent::run(this,
-                                           &UnsharpMaskFilter::unsharpMaskMultithreaded,
+            tasks.append(QtConcurrent::run(
+#if (QT_VERSION > QT_VERSION_CHECK(5, 99, 0))
+                                           &UnsharpMaskFilter::unsharpMaskMultithreaded, this,
+#else
+                                           this, &UnsharpMaskFilter::unsharpMaskMultithreaded,
+#endif
                                            vals[j],
                                            vals[j+1],
-                                           y));
+                                           y)
+            );
         }
 
         foreach (QFuture<void> t, tasks)

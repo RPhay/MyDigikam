@@ -154,7 +154,14 @@ void MjpegServer::Private::close()
 
 void MjpegServer::Private::start()
 {
-    srvTask = QtConcurrent::run(this, &MjpegServer::Private::writerThread);
+    srvTask = QtConcurrent::run(
+#if (QT_VERSION > QT_VERSION_CHECK(5, 99, 0))
+                                &MjpegServer::Private::writerThread, this,
+#else
+                                this, &MjpegServer::Private::writerThread,
+#endif
+    );
+
     qCDebug(DIGIKAM_GENERAL_LOG) << "MJPEG server started...";
 }
 
