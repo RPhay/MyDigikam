@@ -287,7 +287,7 @@ QStringList ItemTagPair::propertyKeys() const
     return d->properties.keys();
 }
 
-QMap<QString, QString> ItemTagPair::properties() const
+QMultiMap<QString, QString> ItemTagPair::properties() const
 {
     d->checkProperties();
 
