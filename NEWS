@@ -837,8 +837,8 @@ BUGFIXES:
 822 ==> 449756 - Tag deletion ignore lazy synchronization and are applied immediately.
 823 ==> 449798 - Aspect Ratio Crop inconsistency?
 824 ==> 449815 - "Download required files" continually tries non-working mirrors, causing "Socket operation timed out".
-825 ==> 
-826 ==> 
+825 ==> 435413 - Unwanted selection-area.
+826 ==> 449847 - Sticky selection.
 827 ==> 
 828 ==> 
 829 ==> 

@@ -1452,6 +1452,8 @@ void DCategorizedView::leaveEvent(QEvent* event)
 {
     d->hovered = QModelIndex();
     d->hoveredCategory.clear();
+    d->forcedSelectionPosition = 0;
+    d->mouseButtonPressed      = false;
 
     QListView::leaveEvent(event);
 }
