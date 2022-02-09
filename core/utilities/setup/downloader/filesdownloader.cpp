@@ -72,7 +72,7 @@ public:
     {
     }
 
-    QStringList            downloadUrls;
+    const QStringList      downloadUrls;
 
     QString                error;
 
