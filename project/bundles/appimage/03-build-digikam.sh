@@ -51,7 +51,7 @@ ORIG_WD="`pwd`"
 # Install out-dated dependencies
 
 cd $BUILDING_DIR
-if [ ] ; then
+
 /opt/cmake/bin/cmake $ORIG_WD/../3rdparty \
       -DCMAKE_INSTALL_PREFIX:PATH=/usr \
       -DINSTALL_ROOT=/usr \
@@ -67,7 +67,7 @@ cp $DOWNLOAD_DIR/qtav_manifest.txt $ORIG_WD/data/
 cp $DOWNLOAD_DIR/exiv2_manifest.txt $ORIG_WD/data/
 /opt/cmake/bin/cmake --build . --config RelWithDebInfo --target ext_lensfun       -- -j$CPU_CORES
 cp $DOWNLOAD_DIR/lensfun_manifest.txt $ORIG_WD/data/
-fi
+
 #################################################################################################
 # Build digiKam in temporary directory and installation
 
