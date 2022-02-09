@@ -257,7 +257,6 @@ bool SharpenFilter::convolveImage(const unsigned int order, const double* const 
 #else
                                            this, &SharpenFilter::convolveImageMultithreaded,
 #endif
-            tasks.append(QtConcurrent::run(this,
                                            prm
                                           )
             );
