@@ -147,9 +147,15 @@ protected:
      * with a locked QMutexLocker on mutex().
      * Note the start() will unlock and relock for scheduling once, after state change.
      */
+#if (QT_VERSION > QT_VERSION_CHECK(5, 99, 0))
     void start(QMutexLocker<QMutex>& locker);
     void stop(QMutexLocker<QMutex>& locker);
     void wait(QMutexLocker<QMutex>& locker);
+#else
+    void start(QMutexLocker& locker);
+    void stop(QMutexLocker& locker);
+    void wait(QMutexLocker& locker);
+#endif
 
 private:
 

@@ -76,7 +76,12 @@ ThumbsDbAccessStaticPriv* ThumbsDbAccess::d = nullptr;
 
 // -----------------------------------------------------------------------------
 
-class Q_DECL_HIDDEN ThumbsDbAccessMutexLocker : public QMutexLocker
+class Q_DECL_HIDDEN ThumbsDbAccessMutexLocker
+#if (QT_VERSION > QT_VERSION_CHECK(5, 99, 0))
+    : public QMutexLocker<QMutex>
+#else
+    : public QMutexLocker
+#endif
 {
 public:
 
