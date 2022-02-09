@@ -15,7 +15,7 @@ message(STATUS "Check dependencies for ${PROJECT_NAME} version ${DIGIKAM_VERSION
 message(STATUS "")
 
 set(KF5_MIN_VERSION       "5.5.0")
-set(QT5_MIN_VERSION       "5.9.0")
+set(QT5_MIN_VERSION       "5.14.0")
 set(QT6_MIN_VERSION       "6.2.3")
 set(EXIV2_MIN_VERSION     "0.27.0")
 set(OPENCV_MIN_VERSION    "3.3.0")
