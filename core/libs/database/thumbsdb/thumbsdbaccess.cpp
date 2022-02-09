@@ -27,6 +27,7 @@
 // Qt includes
 
 #include <QMutex>
+#include <QMutexLocker>
 #include <QFileInfo>
 #include <QSqlDatabase>
 
