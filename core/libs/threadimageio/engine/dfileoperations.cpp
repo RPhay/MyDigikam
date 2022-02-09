@@ -319,7 +319,7 @@ void DFileOperations::openInFileManager(const QList<QUrl>& urls)
         return;
     }
 
-#elif HAVE_DBUS
+#elif defined HAVE_DBUS
 
     QDBusInterface iface(QLatin1String("org.freedesktop.FileManager1"),
                          QLatin1String("/org/freedesktop/FileManager1"),
