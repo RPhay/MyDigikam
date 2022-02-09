@@ -1159,7 +1159,7 @@ void ItemModelIncrementalUpdater::appendInfos(const QList<ItemInfo>& infos, cons
     {
         foreach (const ItemInfo& info, infos)
         {
-            QHash<qlonglong, int>::iterator it = oldIds.find(info.id());
+            QMultiHash<qlonglong, int>::iterator it = oldIds.find(info.id());
 
             if (it != oldIds.end())
             {
@@ -1177,7 +1177,7 @@ void ItemModelIncrementalUpdater::appendInfos(const QList<ItemInfo>& infos, cons
         {
             const ItemInfo& info = infos.at(i);
             bool found           = false;
-            QHash<qlonglong, int>::iterator it;
+            QMultiHash<qlonglong, int>::iterator it;
 
             for (it = oldIds.find(info.id()) ; it != oldIds.end() && it.key() == info.id() ; ++it)
             {
@@ -1232,7 +1232,7 @@ QList<QPair<int, int> > ItemModelIncrementalUpdater::oldIndexes()
 
             // update idHash - which points to indexes of d->infos, and these change now!
 
-            QHash<qlonglong, int>::iterator it;
+            QMultiHash<qlonglong, int>::iterator it;
 
             for (it = oldIds.begin() ; it != oldIds.end() ; )
             {
