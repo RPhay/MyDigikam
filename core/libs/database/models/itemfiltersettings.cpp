@@ -660,13 +660,16 @@ bool ItemFilterSettings::matches(const ItemInfo& info, bool* const foundText) co
         bool textMatch = false;
 
         QRegularExpression textRegExp(m_textFilterSettings.text);
-        textRegExp.setPatternSyntax(QRegularExpression::WildcardUnix);
-        textRegExp.setCaseSensitivity(m_textFilterSettings.caseSensitive);
+        
+        if (m_textFilterSettings.caseSensitive == Qt::CaseInsensitive)
+        {
+            textRegExp.setPatternOptions(QRegularExpression::CaseInsensitiveOption);
+        }
 
         // Image name
 
         if ((m_textFilterSettings.textFields & SearchTextFilterSettings::ImageName) &&
-            (textRegExp.exactMatch(info.name())                                     ||
+            (textRegExp.match(info.name()).hasMatch())                              ||
             info.name().contains(m_textFilterSettings.text, m_textFilterSettings.caseSensitive)))
         {
             textMatch = true;
@@ -675,7 +678,7 @@ bool ItemFilterSettings::matches(const ItemInfo& info, bool* const foundText) co
         // Image title
 
         if ((m_textFilterSettings.textFields & SearchTextFilterSettings::ImageTitle) &&
-            (textRegExp.exactMatch(info.title())                                     ||
+            (textRegExp.match(info.title()).hasMatch())                              ||
             info.title().contains(m_textFilterSettings.text, m_textFilterSettings.caseSensitive)))
         {
             textMatch = true;
@@ -684,7 +687,7 @@ bool ItemFilterSettings::matches(const ItemInfo& info, bool* const foundText) co
         // Image comment
 
         if ((m_textFilterSettings.textFields & SearchTextFilterSettings::ImageComment) &&
-            (textRegExp.exactMatch(info.comment())                                     ||
+            (textRegExp.match(info.comment()).hasMatch())                              ||
             info.comment().contains(m_textFilterSettings.text, m_textFilterSettings.caseSensitive)))
         {
             textMatch = true;
@@ -695,7 +698,7 @@ bool ItemFilterSettings::matches(const ItemInfo& info, bool* const foundText) co
         foreach (int id, info.tagIds())
         {
             if ((m_textFilterSettings.textFields & SearchTextFilterSettings::TagName) &&
-                (textRegExp.exactMatch(m_tagNameHash.value(id))                       ||
+                (textRegExp.match(m_tagNameHash.value(id)).hasMatch())                ||
                 m_tagNameHash.value(id).contains(m_textFilterSettings.text, m_textFilterSettings.caseSensitive)))
             {
                 textMatch = true;
@@ -705,7 +708,7 @@ bool ItemFilterSettings::matches(const ItemInfo& info, bool* const foundText) co
         // Album names
 
         if ((m_textFilterSettings.textFields & SearchTextFilterSettings::AlbumName) &&
-            (textRegExp.exactMatch(m_albumNameHash.value(info.albumId()))           ||
+            (textRegExp.match(m_albumNameHash.value(info.albumId())).hasMatch())                ||
             m_albumNameHash.value(info.albumId()).contains(m_textFilterSettings.text, m_textFilterSettings.caseSensitive)))
         {
             textMatch = true;
