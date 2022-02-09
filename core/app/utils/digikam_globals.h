@@ -28,6 +28,7 @@
 // Qt includes
 
 #include <QStringList>
+#include <QDateTime>
 #include <QIODevice>
 #include <QProcessEnvironment>
 
@@ -40,6 +41,7 @@ class QObject;
 class QShortcut;
 class QKeySequence;
 class QApplication;
+class QDate;
 
 /**
  * Macros for image filters.
@@ -59,9 +61,9 @@ class QApplication;
  * Macro for Qt::endl which was introduced in Qt 5.14.0
  */
 #if (QT_VERSION >= QT_VERSION_CHECK(5, 14, 0))
-     #define QT_ENDL Qt::endl
+#   define QT_ENDL Qt::endl
 #else
-     #define QT_ENDL endl
+#   define QT_ENDL endl
 #endif
 
 /**
@@ -69,11 +71,11 @@ class QApplication;
  * to be used with QString::split()
  */
 #if (QT_VERSION >= QT_VERSION_CHECK(5, 14, 0))
-    #define QT_KEEP_EMPTY_PARTS Qt::KeepEmptyParts
-    #define QT_SKIP_EMPTY_PARTS Qt::SkipEmptyParts
+#   define QT_KEEP_EMPTY_PARTS Qt::KeepEmptyParts
+#   define QT_SKIP_EMPTY_PARTS Qt::SkipEmptyParts
 #else
-    #define QT_KEEP_EMPTY_PARTS QString::KeepEmptyParts
-    #define QT_SKIP_EMPTY_PARTS QString::SkipEmptyParts
+#   define QT_KEEP_EMPTY_PARTS QString::KeepEmptyParts
+#   define QT_SKIP_EMPTY_PARTS QString::SkipEmptyParts
 #endif
 
 namespace Digikam
@@ -248,6 +250,11 @@ DIGIKAM_EXPORT void loadEcmQtTranslationFiles(QApplication& app);
  * For bundles only, main function to manage all Qt translation files at run-time in application instance.
  */
 DIGIKAM_EXPORT void installQtTranslationFiles(QApplication& app);
+
+/**
+ * This method returns QDateTime from with date set to parameter date and time set to start of the day.
+ */
+DIGIKAM_EXPORT QDateTime startOfDay(const QDate&);
 
 } // namespace Digikam
 

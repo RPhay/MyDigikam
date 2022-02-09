@@ -26,7 +26,6 @@
  * ============================================================ */
 
 #include "itemlister_p.h"
-#include "digikam_globals.h"
 
 namespace Digikam
 {
