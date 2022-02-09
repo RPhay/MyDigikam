@@ -1455,6 +1455,11 @@ void DCategorizedView::leaveEvent(QEvent* event)
     d->forcedSelectionPosition = 0;
     d->mouseButtonPressed      = false;
 
+    if (state() == DraggingState)
+    {
+        setState(NoState);
+    }
+
     QListView::leaveEvent(event);
 }
 
