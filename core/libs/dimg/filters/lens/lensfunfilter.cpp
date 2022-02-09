@@ -268,9 +268,9 @@ void LensFunFilter::filterImage()
         {
             tasks.append(QtConcurrent::run(
 #if (QT_VERSION > QT_VERSION_CHECK(5, 99, 0))
-                                           &LensFunFilter::filterCCAMultithreaded,, this,
+                                           &LensFunFilter::filterCCAMultithreaded, this,
 #else
-                                           this, &LensFunFilter::filterCCAMultithreaded,,
+                                           this, &LensFunFilter::filterCCAMultithreaded,
 #endif
                                            vals[j],
                                            vals[j+1])
@@ -297,9 +297,9 @@ void LensFunFilter::filterImage()
         {
             tasks.append(QtConcurrent::run(
 #if (QT_VERSION > QT_VERSION_CHECK(5, 99, 0))
-                                           &LensFunFilter::filterVIGMultithreaded,, this,
+                                           &LensFunFilter::filterVIGMultithreaded, this,
 #else
-                                           this, &LensFunFilter::filterVIGMultithreaded,,
+                                           this, &LensFunFilter::filterVIGMultithreaded,
 #endif
                                            vals[j],
                                            vals[j+1])
@@ -336,9 +336,9 @@ void LensFunFilter::filterImage()
         {
             tasks.append(QtConcurrent::run(
 #if (QT_VERSION > QT_VERSION_CHECK(5, 99, 0))
-                                           &LensFunFilter::filterDSTMultithreaded,, this,
+                                           &LensFunFilter::filterDSTMultithreaded, this,
 #else
-                                           this, &LensFunFilter::filterDSTMultithreaded,,
+                                           this, &LensFunFilter::filterDSTMultithreaded,
 #endif
                                            vals[j],
                                            vals[j+1])
