@@ -36,7 +36,7 @@ bool FacialRecognitionWrapper::Private::identityContains(const Identity& identit
                                                          const QString&  value)
 {
     const QMultiMap<QString, QString> map          = identity.attributesMap();
-    QMap<QString, QString>::const_iterator it = map.constFind(attribute);
+    QMultiMap<QString, QString>::const_iterator it = map.constFind(attribute);
 
     for ( ; (it != map.constEnd()) && (it.key() == attribute) ; ++it)
     {
@@ -69,7 +69,7 @@ Identity FacialRecognitionWrapper::Private::findByAttribute(const QString& attri
 Identity FacialRecognitionWrapper::Private::findByAttributes(const QString& attribute,
                                                              const QMultiMap<QString, QString>& valueMap) const
 {
-    QMap<QString, QString>::const_iterator it = valueMap.find(attribute);
+    QMultiMap<QString, QString>::const_iterator it = valueMap.find(attribute);
 
     for ( ; (it != valueMap.end()) && (it.key() == attribute) ; ++it)
     {
@@ -169,7 +169,7 @@ Identity FacialRecognitionWrapper::findIdentity(const QMultiMap<QString, QString
         return match;
     }
 
-    QMap<QString, QString>::const_iterator it;
+    QMultiMap<QString, QString>::const_iterator it;
 
     for (it = attributes.begin() ; it != attributes.end() ; ++it)
     {
