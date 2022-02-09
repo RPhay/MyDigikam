@@ -494,10 +494,16 @@ void LocalContrastFilter::inplaceBlur(float* const data, int sizex, int sizey, f
         {
             prm.start = valsy[j];
             prm.stop  = valsy[j+1];
-            tasks.append(QtConcurrent::run(this,
-                                           &LocalContrastFilter::inplaceBlurYMultithreaded,
+
+            tasks.append(QtConcurrent::run(
+#if (QT_VERSION > QT_VERSION_CHECK(5, 99, 0))
+                                           &LocalContrastFilter::inplaceBlurYMultithreaded, this,
+#else
+                                           this, &LocalContrastFilter::inplaceBlurYMultithreaded,
+#endif
                                            prm
-                                          ));
+                                          )
+            );
         }
 
         foreach (QFuture<void> t, tasks)
@@ -511,10 +517,16 @@ void LocalContrastFilter::inplaceBlur(float* const data, int sizex, int sizey, f
         {
             prm.start = valsx[j];
             prm.stop  = valsx[j+1];
-            tasks.append(QtConcurrent::run(this,
-                                           &LocalContrastFilter::inplaceBlurXMultithreaded,
+
+            tasks.append(QtConcurrent::run(
+#if (QT_VERSION > QT_VERSION_CHECK(5, 99, 0))
+                                           &LocalContrastFilter::inplaceBlurXMultithreaded, this,
+#else
+                                           this, &LocalContrastFilter::inplaceBlurXMultithreaded,
+#endif
                                            prm
-                                          ));
+                                          )
+            );
         }
 
         foreach (QFuture<void> t, tasks)
