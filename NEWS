@@ -837,7 +837,7 @@ BUGFIXES:
 822 ==> 449756 - Tag deletion ignore lazy synchronization and are applied immediately.
 823 ==> 449798 - Aspect Ratio Crop inconsistency?
 824 ==> 449815 - "Download required files" continually tries non-working mirrors, causing "Socket operation timed out".
-825 ==> 
+825 ==> 443471 - Windows 10/11 : digiKam 7.2 or 7.3 does not start (AVAST suspected).
 826 ==> 
 827 ==> 
 828 ==> 
