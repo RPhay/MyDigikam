@@ -186,7 +186,7 @@ bool ExifToolParser::applyChanges(const QString& path, const QString& exvTempFil
     QByteArrayList cmdArgs;
 
     cmdArgs << QByteArray("-TagsFromFile");
-    cmdArgs << d->filePathEncoding(exvTempFile);
+    cmdArgs << d->filePathEncoding(QFileInfo(exvTempFile));
     cmdArgs << QByteArray("-all:all");
     cmdArgs << d->filePathEncoding(fileInfo);
     d->currentPath = fileInfo.filePath();
@@ -414,10 +414,10 @@ bool ExifToolParser::copyTags(const QString& src, const QString& dst,
 
     cmdArgs << QByteArray("-wm") << wrtCmds;
     cmdArgs << QByteArray("-TagsFromFile");
-    cmdArgs << d->filePathEncoding(src);
+    cmdArgs << d->filePathEncoding(QFileInfo(src));
     cmdArgs << copyCmds;
     cmdArgs << QByteArray("-overwrite_original");
-    cmdArgs << d->filePathEncoding(dst);
+    cmdArgs << d->filePathEncoding(QFileInfo(dst));
     d->currentPath = sfi.filePath();
 
     return (d->startProcess(cmdArgs, ExifToolProcess::COPY_TAGS));
@@ -489,9 +489,9 @@ bool ExifToolParser::translateTags(const QString& path, unsigned char transOps)
 
     QByteArrayList cmdArgs;
 
-    cmdArgs << QByteArray("-@") << d->filePathEncoding(d->argsFile.fileName());
+    cmdArgs << QByteArray("-@") << d->filePathEncoding(QFileInfo(d->argsFile.fileName()));
     cmdArgs << QByteArray("-overwrite_original");
-    cmdArgs << d->filePathEncoding(path);
+    cmdArgs << d->filePathEncoding(QFileInfo(path));
     d->currentPath = fi.filePath();
 
     return (d->startProcess(cmdArgs, ExifToolProcess::TRANS_TAGS));
