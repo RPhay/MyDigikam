@@ -1670,7 +1670,11 @@ DbEngineSqlQuery BdEngineBackend::copyQuery(const DbEngineSqlQuery& old)
 
     // only for positional binding
 
+#if (QT_VERSION > QT_VERSION_CHECK(5, 99, 0))
+    QList<QVariant> boundValues = old.boundValues();
+#else
     QList<QVariant> boundValues = old.boundValues().values();
+#endif
 
     foreach (const QVariant& value, boundValues)
     {
