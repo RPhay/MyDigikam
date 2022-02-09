@@ -363,7 +363,13 @@ void BdEngineBackendPrivate::debugOutputFailedQuery(const QSqlQuery& query) cons
                                   << query.executedQuery()
                                   << "\nError messages:" << query.lastError().driverText() << query.lastError().databaseText()
                                   << query.lastError().nativeErrorCode() << query.lastError().type()
-                                  << "\nBound values: " << query.boundValues().values();
+                                  << "\nBound values: " <<
+#if (QT_VERSION > QT_VERSION_CHECK(5, 99, 0))
+                                    query.boundValues()
+#else
+                                    query.boundValues().values()
+#endif
+                                  ;
 }
 
 void BdEngineBackendPrivate::debugOutputFailedTransaction(const QSqlError& error) const
