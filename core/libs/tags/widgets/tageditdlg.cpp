@@ -236,9 +236,12 @@ TagEditDlg::TagEditDlg(QWidget* const parent, TAlbum* const album, bool create)
 
     // --------------------------------------------------------
 
-    const int spacing = qMin(QApplication::style()->pixelMetric(QStyle::PM_LayoutHorizontalSpacing),
-                             QApplication::style()->pixelMetric(QStyle::PM_LayoutVerticalSpacing));
-    const int cmargin = QApplication::style()->pixelMetric(QStyle::PM_DefaultChildMargin);
+    const int spacing = qMin(style()->pixelMetric(QStyle::PM_LayoutHorizontalSpacing),
+                             style()->pixelMetric(QStyle::PM_LayoutVerticalSpacing));
+    const int cmargin = qMin(style()->pixelMetric(QStyle::PM_LayoutLeftMargin),
+                             qMin(style()->pixelMetric(QStyle::PM_LayoutTopMargin),
+                                  qMin(style()->pixelMetric(QStyle::PM_LayoutRightMargin),
+                                       style()->pixelMetric(QStyle::PM_LayoutBottomMargin))));
 
     grid->addWidget(logo,               0, 0, 1, 1);
     grid->addWidget(d->topLabel,        0, 1, 1, 4);
@@ -534,9 +537,12 @@ TagsListCreationErrorDialog::TagsListCreationErrorDialog(QWidget* const parent, 
     setModal(true);
     setWindowTitle(i18n("Tag creation Error"));
 
-    const int spacing               = qMin(QApplication::style()->pixelMetric(QStyle::PM_LayoutHorizontalSpacing),
-                             QApplication::style()->pixelMetric(QStyle::PM_LayoutVerticalSpacing));
-    const int cmargin               = QApplication::style()->pixelMetric(QStyle::PM_DefaultChildMargin);
+    const int spacing = qMin(style()->pixelMetric(QStyle::PM_LayoutHorizontalSpacing),
+                             style()->pixelMetric(QStyle::PM_LayoutVerticalSpacing));
+    const int cmargin = qMin(style()->pixelMetric(QStyle::PM_LayoutLeftMargin),
+                             qMin(style()->pixelMetric(QStyle::PM_LayoutTopMargin),
+                                  qMin(style()->pixelMetric(QStyle::PM_LayoutRightMargin),
+                                       style()->pixelMetric(QStyle::PM_LayoutBottomMargin))));
 
     QDialogButtonBox* const buttons = new QDialogButtonBox(QDialogButtonBox::Ok, this);
     buttons->button(QDialogButtonBox::Ok)->setDefault(true);
