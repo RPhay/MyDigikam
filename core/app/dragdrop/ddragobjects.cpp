@@ -27,6 +27,7 @@
 
 #include <QByteArray>
 #include <QDataStream>
+#include <QIODevice>
 
 namespace Digikam
 {
