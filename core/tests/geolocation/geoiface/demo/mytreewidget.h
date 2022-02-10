@@ -44,17 +44,21 @@ class MyTreeWidget : public QTreeWidget
 public:
 
     explicit MyTreeWidget(QWidget* const parent = nullptr);
-    ~MyTreeWidget()                                                override;
+    ~MyTreeWidget()                                                  override;
 
 protected:
 
-    void startDrag(Qt::DropActions supportedActions)               override;
+    void startDrag(Qt::DropActions supportedActions)                 override;
+
+#if (QT_VERSION > QT_VERSION_CHECK(5, 99, 0))
+    QMimeData*  mimeData(const QList<QTreeWidgetItem*>& items) const override;
+#else
+    // cppcheck-suppress passedByValue
+    QMimeData*  mimeData(const QList<QTreeWidgetItem*> items)  const override;      // clazy:exclude=function-args-by-ref
+#endif
 
     // cppcheck-suppress passedByValue
-    QMimeData* mimeData(const QList<QTreeWidgetItem*> items) const override;
-
-    // cppcheck-suppress passedByValue
-    virtual QMimeData* mimeData(const QModelIndexList items) const;
+    virtual QMimeData* mimeData(const QModelIndexList items)   const;
 
 private:
 

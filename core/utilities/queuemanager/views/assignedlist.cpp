@@ -334,8 +334,12 @@ QStringList AssignedListView::mimeTypes() const
     return types;
 }
 
+#if (QT_VERSION > QT_VERSION_CHECK(5, 99, 0))
+QMimeData* AssignedListView::mimeData(const QList<QTreeWidgetItem*>& items) const
+#else
 // cppcheck-suppress passedByValue
 QMimeData* AssignedListView::mimeData(const QList<QTreeWidgetItem*> items) const    // clazy:exclude=function-args-by-ref
+#endif
 {
     QMimeData* const mimeData = new QMimeData();
     QByteArray encodedData;

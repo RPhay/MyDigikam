@@ -115,15 +115,19 @@ private:
     void assignTools(const QMultiMap<int, QString>& map, AssignedListViewItem* const preceding);
     void refreshIndex();
 
-    Qt::DropActions supportedDropActions()                        const override;
-    QStringList     mimeTypes()                                   const override;
+    Qt::DropActions supportedDropActions()                         const override;
+    QStringList     mimeTypes()                                    const override;
 
+#if (QT_VERSION > QT_VERSION_CHECK(5, 99, 0))
+    QMimeData*      mimeData(const QList<QTreeWidgetItem*>& items) const override;
+#else
     // cppcheck-suppress passedByValue
-    QMimeData*      mimeData(const QList<QTreeWidgetItem*> items) const override;
-
-    void dragEnterEvent(QDragEnterEvent*)                               override;
-    void dragMoveEvent(QDragMoveEvent*)                                 override;
-    void dropEvent(QDropEvent*)                                         override;
+    QMimeData*      mimeData(const QList<QTreeWidgetItem*> items)  const override;      // clazy:exclude=function-args-by-ref
+#endif
+    
+    void dragEnterEvent(QDragEnterEvent*)                                override;
+    void dragMoveEvent(QDragMoveEvent*)                                  override;
+    void dropEvent(QDropEvent*)                                          override;
 };
 
 } // namespace Digikam

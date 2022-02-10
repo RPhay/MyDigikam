@@ -226,8 +226,12 @@ void WorkflowList::mouseDoubleClickEvent(QMouseEvent*)
     }
 }
 
+#if (QT_VERSION > QT_VERSION_CHECK(5, 99, 0))
+QMimeData* WorkflowList::mimeData(const QList<QTreeWidgetItem*>& items) const
+#else
 // cppcheck-suppress passedByValue
-QMimeData* WorkflowList::mimeData(const QList<QTreeWidgetItem*> items) const        // clazy:exclude=function-args-by-ref
+QMimeData* WorkflowList::mimeData(const QList<QTreeWidgetItem*> items) const    // clazy:exclude=function-args-by-ref
+#endif
 {
     QMimeData* const mimeData = new QMimeData();
     QByteArray encodedData;
