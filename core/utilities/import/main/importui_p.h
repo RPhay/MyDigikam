@@ -26,6 +26,8 @@
 #ifndef DIGIKAM_IMPORTUI_PRIVATE_H
 #define DIGIKAM_IMPORTUI_PRIVATE_H
 
+#include "importui.h"
+
 // Qt includes
 
 #include <QCheckBox>

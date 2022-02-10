@@ -25,7 +25,6 @@
 *
 * ============================================================ */
 
-#include "importui.h"
 #include "importui_p.h"
 
 // Qt includes
@@ -60,6 +59,7 @@
 #include <QMessageBox>
 #include <QStatusBar>
 #include <QApplication>
+#include <QActionGroup>
 
 // KDE includes
 
