@@ -179,10 +179,10 @@ protected:
     void mousePressEvent(QMouseEvent*)      override;
     void mouseReleaseEvent(QMouseEvent*)    override;
     void mouseMoveEvent(QMouseEvent*)       override;
-    void enterEvent(QEvent*)                override;
     void leaveEvent(QEvent*)                override;
     bool eventFilter(QObject*, QEvent*)     override;
     void resizeEvent(QResizeEvent*)         override;
+    void enterEvent(QEvent*);
 
     void updateSelVisibility();
     void updateHighlight();
