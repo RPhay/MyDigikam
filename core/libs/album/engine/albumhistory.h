@@ -35,6 +35,7 @@
 // Local includes
 
 #include "labelstreeview.h"
+#include "iteminfo.h"
 
 namespace Digikam
 {
@@ -42,8 +43,6 @@ namespace Digikam
 class Album;
 class HistoryItem;
 class HistoryPosition;
-class ItemInfo;
-class ItemInfoList;
 
 /**
  * Manages the history of the last visited albums.
