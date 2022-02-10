@@ -29,6 +29,7 @@
 
 #include <QObject>
 #include <QString>
+#include <QList>
 
 // Local includes
 

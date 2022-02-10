@@ -28,10 +28,12 @@
 // Qt includes
 
 #include <QTreeView>
+#include <QList>
 
 // Local includes
 
 #include "tagtreeview.h"
+#include "album.h"
 
 namespace Digikam
 {

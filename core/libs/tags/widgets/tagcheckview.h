@@ -27,10 +27,15 @@
 #ifndef DIGIKAM_TAG_CHECK_VIEW_H
 #define DIGIKAM_TAG_CHECK_VIEW_H
 
+// Qt includes
+
+#include <QList>
+
 // Local includes
 
 #include "itemfiltersettings.h"
 #include "tagfolderview.h"
+#include "album.h"
 
 namespace Digikam
 {

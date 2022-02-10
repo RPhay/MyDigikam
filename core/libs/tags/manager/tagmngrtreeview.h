@@ -26,8 +26,13 @@
 #ifndef DIGIKAM_TAG_MNGR_TREE_VIEW_H
 #define DIGIKAM_TAG_MNGR_TREE_VIEW_H
 
+// Qt includes
+
+#include <QList>
+
 // Local includes
 
+#include "album.h"
 #include "tagfolderview.h"
 
 namespace Digikam
