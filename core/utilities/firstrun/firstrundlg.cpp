@@ -31,7 +31,6 @@
 
 #include "dxmlguiwindow.h"
 #include "welcomepage.h"
-#include "migratefromdigikam4page.h"
 #include "collectionpage.h"
 #include "databasepage.h"
 #include "rawpage.h"
@@ -40,6 +39,10 @@
 #include "openfilepage.h"
 #include "tooltipspage.h"
 #include "startscanpage.h"
+
+#if (QT_VERSION < QT_VERSION_CHECK(6, 0, 0))
+#   include "migratefromdigikam4page.h"
+#endif
 
 namespace Digikam
 {
@@ -50,7 +53,10 @@ public:
 
     explicit Private()
       : welcomePage(nullptr),
+      
+#if (QT_VERSION < QT_VERSION_CHECK(6, 0, 0))
         migrateFromDigikam4Page(nullptr),
+#endif
         collectionPage(nullptr),
         databasePage(nullptr),
         rawPage(nullptr),
@@ -63,7 +69,11 @@ public:
     }
 
     WelcomePage*             welcomePage;
+
+#if (QT_VERSION < QT_VERSION_CHECK(6, 0, 0))
     MigrateFromDigikam4Page* migrateFromDigikam4Page;
+#endif
+
     CollectionPage*          collectionPage;
     DatabasePage*            databasePage;
     RawPage*                 rawPage;
@@ -87,10 +97,14 @@ FirstRunDlg::FirstRunDlg(QWidget* const parent)
 
     d->welcomePage    = new WelcomePage(this);    // First assistant page
 
+#if (QT_VERSION < QT_VERSION_CHECK(6, 0, 0))
+
     if (MigrateFromDigikam4Page::checkForMigration())
     {
         d->migrateFromDigikam4Page = new MigrateFromDigikam4Page(this);
     }
+
+#endif
 
     d->collectionPage = new CollectionPage(this);
     d->databasePage   = new DatabasePage(this);
@@ -160,6 +174,9 @@ bool FirstRunDlg::validateCurrentPage()
 
 void FirstRunDlg::slotFinishPressed()
 {
+
+#if (QT_VERSION < QT_VERSION_CHECK(6, 0, 0))
+
     if (d->migrateFromDigikam4Page && d->migrateFromDigikam4Page->isMigrationChecked())
     {
        // The user choose to do a migration from digikam4
@@ -167,6 +184,9 @@ void FirstRunDlg::slotFinishPressed()
        d->migrateFromDigikam4Page->doMigration();
     }
     else
+
+#endif
+    
     {
        // Save settings to rc files.
 
