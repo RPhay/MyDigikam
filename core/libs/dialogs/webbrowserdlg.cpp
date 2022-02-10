@@ -260,12 +260,32 @@ void WebBrowserDlg::slotLoadingFinished(bool b)
 
 void WebBrowserDlg::slotSearchTextChanged(const SearchTextSettings& settings)
 {
+
 #ifdef HAVE_QWEBENGINE
+
+#   if (QT_VERSION > QT_VERSION_CHECK(5, 99, 0))
 
     d->browser->findText(settings.text,
                          (settings.caseSensitive == Qt::CaseSensitive) ? QWebEnginePage::FindCaseSensitively
                                                                        : QWebEnginePage::FindFlags(),
-                         [this](bool found) { d->searchbar->slotSearchResult(found); });
+                         [this](const QWebEngineFindTextResult& result)
+                            {
+                                d->searchbar->slotSearchResult(result.activeMatch());
+                            }
+                        );
+
+#   else
+
+    d->browser->findText(settings.text,
+                         (settings.caseSensitive == Qt::CaseSensitive) ? QWebEnginePage::FindCaseSensitively
+                                                                       : QWebEnginePage::FindFlags(),
+                         [this](bool found)
+                            {
+                                d->searchbar->slotSearchResult(found);
+                            }
+                        );
+
+#   endif
 
 #else
 
@@ -276,6 +296,7 @@ void WebBrowserDlg::slotSearchTextChanged(const SearchTextSettings& settings)
     d->searchbar->slotSearchResult(found);
 
 #endif
+
 }
 
 void WebBrowserDlg::slotGoHome()
