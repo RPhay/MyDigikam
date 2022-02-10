@@ -454,7 +454,8 @@ bool AlbumSelectionTreeView::viewportEvent(QEvent* event)
         return true;
     }
 
-    QStyleOptionViewItem option = viewOptions();
+    QStyleOptionViewItem option;
+    option.initFrom(this);
     option.rect                 = itemRect;
 
     // visualRect can be larger than viewport, intersect with viewport rect
