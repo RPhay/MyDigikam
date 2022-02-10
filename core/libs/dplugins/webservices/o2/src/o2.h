@@ -12,8 +12,11 @@
 #include "o0abstractstore.h"
 
 /// Simple OAuth2 authenticator.
-class O0_EXPORT O2: public O0BaseAuth {
+class O0_EXPORT O2: public O0BaseAuth
+{
     Q_OBJECT
+public:
+    Q_ENUMS(GrantFlow)
 
 public:
     /// Authorization flow types.
@@ -21,8 +24,8 @@ public:
         GrantFlowAuthorizationCode, ///< @see http://tools.ietf.org/html/draft-ietf-oauth-v2-15#section-4.1
         GrantFlowImplicit, ///< @see http://tools.ietf.org/html/draft-ietf-oauth-v2-15#section-4.2
         GrantFlowResourceOwnerPasswordCredentials,
+        GrantFlowDevice ///< @see https://tools.ietf.org/html/rfc8628#section-1
     };
-    Q_ENUM(GrantFlow)
 
     /// Authorization flow.
     Q_PROPERTY(GrantFlow grantFlow READ grantFlow WRITE setGrantFlow NOTIFY grantFlowChanged)
@@ -83,6 +86,11 @@ public:
     QString refreshTokenUrl();
     void setRefreshTokenUrl(const QString &value);
 
+    /// Grant type (if non-standard)
+    Q_PROPERTY(QString grantType READ grantType WRITE setGrantType)
+    QString grantType();
+    void setGrantType(const QString &value);
+
 public:
     /// Constructor.
     /// @param  parent  Parent object.
@@ -141,6 +149,9 @@ protected Q_SLOTS:
     /// Handle failure of a refresh request.
     virtual void onRefreshError(QNetworkReply::NetworkError error);
 
+    /// Handle completion of a Device Authorization Request
+    virtual void onDeviceAuthReplyFinished();
+
 protected:
     /// Build HTTP request body.
     QByteArray buildRequestBody(const QMap<QString, QString> &parameters);
@@ -153,6 +164,9 @@ protected:
 
     /// Set token expiration time.
     void setExpires(int v);
+
+    /// Start polling authorization server
+    void startPollServer(const QVariantMap &params);
 
 protected:
     QString username_;
@@ -168,6 +182,7 @@ protected:
     QNetworkAccessManager *manager_;
     O2ReplyList timedReplies_;
     GrantFlow grantFlow_;
+    QString grantType_;
 };
 
 #endif // O2_H

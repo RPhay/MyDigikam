@@ -129,7 +129,7 @@ void Tweeter::tweetReplyDone() {
         qDebug() << "ERROR:" << reply->errorString();
         qDebug() << "Content:" << reply->readAll();
     } else {
-        qDebug() << "Tweet posted successfully!";
+        qDebug() << "Tweet posted sucessfully!";
     }
     emit statusPosted();
 }

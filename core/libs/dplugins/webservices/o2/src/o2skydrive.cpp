@@ -32,7 +32,7 @@ void O2Skydrive::link() {
 
     redirectUri_ = QString("https://login.live.com/oauth20_desktop.srf");
 
-    // Assemble initial authentication URL
+    // Assemble intial authentication URL
     QList<QPair<QString, QString> > parameters;
     parameters.append(qMakePair(QString(O2_OAUTH2_RESPONSE_TYPE), (grantFlow_ == GrantFlowAuthorizationCode) ? QString(O2_OAUTH2_GRANT_TYPE_CODE) : QString(O2_OAUTH2_GRANT_TYPE_TOKEN)));
     parameters.append(qMakePair(QString(O2_OAUTH2_CLIENT_ID), clientId_));
@@ -85,7 +85,11 @@ void O2Skydrive::redirected(const QUrl &url) {
         QNetworkReply *tokenReply = manager_->post(tokenRequest, data);
         timedReplies_.add(tokenReply);
         connect(tokenReply, SIGNAL(finished()), this, SLOT(onTokenReplyFinished()), Qt::QueuedConnection);
+#if QT_VERSION < 0x051500
         connect(tokenReply, SIGNAL(error(QNetworkReply::NetworkError)), this, SLOT(onTokenReplyError(QNetworkReply::NetworkError)), Qt::QueuedConnection);
+#else
+        connect(tokenReply, SIGNAL(errorOccurred(QNetworkReply::NetworkError)), this, SLOT(onTokenReplyError(QNetworkReply::NetworkError)), Qt::QueuedConnection);
+#endif
     } else {
         // Get access token
         QString urlToken = "";

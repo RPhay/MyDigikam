@@ -21,8 +21,8 @@ class O0_EXPORT O2Requestor: public QObject {
 public:
     explicit O2Requestor(QNetworkAccessManager *manager, O2 *authenticator, QObject *parent = 0);
     ~O2Requestor();
-
-
+    
+    
     /// Some services require the access token to be sent as a Authentication HTTP header
     /// and refuse requests with the access token in the query.
     /// This function allows to use or ignore the access token in the query.
@@ -31,7 +31,7 @@ public:
     /// See:
     /// https://tools.ietf.org/html/draft-ietf-oauth-v2-bearer-16#section-4.3
     /// https://tools.ietf.org/html/rfc6750#section-2.3
-
+    
     void setAddAccessTokenInQuery(bool value);
 
     /// Some services require the access token to be sent as a Authentication HTTP header.
@@ -55,6 +55,10 @@ public Q_SLOTS:
     int put(const QNetworkRequest &req, const QByteArray &data, int timeout = 60*1000);
     int put(const QNetworkRequest &req, QHttpMultiPart* data, int timeout = 60*1000);
 
+    /// Make a DELETE request.
+    /// @return Request ID or -1 if there are too many requests in the queue.
+    int deleteResource(const QNetworkRequest &req, int timeout = 60*1000);
+
     /// Make a HEAD request.
     /// @return Request ID or -1 if there are too many requests in the queue.
     int head(const QNetworkRequest &req, int timeout = 60*1000);
@@ -68,8 +72,14 @@ Q_SIGNALS:
     /// Emitted when a request has been completed or failed.
     void finished(int id, QNetworkReply::NetworkError error, QByteArray data);
 
-    /// Emitted when a request has been completed or faled. Also reply headers will be provided.
+    /// Emitted when a request has been completed or failed.
+    void finished(int id, QNetworkReply::NetworkError error, QString errorText, QByteArray data);
+
+    /// Emitted when a request has been completed or failed. Also reply headers will be provided.
     void finished(int id, QNetworkReply::NetworkError error, QByteArray data, QList<QNetworkReply::RawHeaderPair> headers);
+
+    /// Emitted when a request has been completed or failed. Also reply headers will be provided.
+    void finished(int id, QNetworkReply::NetworkError error, QString errorText, QByteArray data, QList<QNetworkReply::RawHeaderPair> headers);
 
     /// Emitted when an upload has progressed.
     void uploadProgress(int id, qint64 bytesSent, qint64 bytesTotal);

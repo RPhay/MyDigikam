@@ -13,11 +13,12 @@
 #include "o0requestparameter.h"
 
 class O2ReplyServer;
+class O2PollServer;
 
 /// Base class of OAuth authenticators
-class O0_EXPORT O0BaseAuth : public QObject {
+class O0_EXPORT O0BaseAuth : public QObject
+{
     Q_OBJECT
-
 public:
     explicit O0BaseAuth(QObject *parent = 0, O0AbstractStore *store = 0);
 
@@ -88,6 +89,9 @@ Q_SIGNALS:
     /// Emitted when client can close the browser window.
     void closeBrowser();
 
+    /// Emitted when client needs to show a verification uri and user code
+    void showVerificationUriAndCode(const QUrl &uri, const QString &code);
+
     /// Emitted when authentication/deauthentication succeeded.
     void linkingSucceeded();
 
@@ -122,6 +126,11 @@ protected:
 
     O2ReplyServer * replyServer() const;
 
+    /// Set local poll server
+    void setPollServer(O2PollServer *server);
+
+    O2PollServer * pollServer() const;
+
 protected:
     QString clientId_;
     QString clientSecret_;
@@ -139,6 +148,7 @@ protected:
 
 private:
     O2ReplyServer *replyServer_;
+    O2PollServer *pollServer_;
 };
 
 #endif // O0BASEAUTH
