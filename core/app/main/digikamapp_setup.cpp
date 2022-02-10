@@ -197,7 +197,7 @@ void DigikamApp::setupActions()
     d->newAction->setWhatsThis(i18nc("@info: setup", "Creates a new empty Album in the collection."));
     connect(d->newAction, SIGNAL(triggered()), d->view, SLOT(slotNewAlbum()));
     ac->addAction(QLatin1String("album_new"), d->newAction);
-    ac->setDefaultShortcuts(d->newAction, QList<QKeySequence>() << Qt::CTRL | Qt::Key_N);
+    ac->setDefaultShortcut(d->newAction, Qt::CTRL | Qt::Key_N);
 
     // -----------------------------------------------------------------
 
@@ -843,17 +843,17 @@ void DigikamApp::setupAccelerators()
     QAction* const previousImageAction = new QAction(i18nc("@action: setup", "Previous Image"), this);
     previousImageAction->setIcon(QIcon::fromTheme(QLatin1String("go-previous")));
     ac->addAction(QLatin1String("previous_image"), previousImageAction);
-    ac->setDefaultShortcuts(previousImageAction, QList<QKeySequence>() << Qt::Key_Backspace << Qt::SHIFT | Qt::Key_Space);
+    ac->setDefaultShortcuts(previousImageAction, QList<QKeySequence>() << Qt::Key_Backspace << (Qt::SHIFT | Qt::Key_Space));
     connect(previousImageAction, SIGNAL(triggered()), this, SIGNAL(signalPrevItem()));
 
     QAction* const firstImageAction = new QAction(i18nc("@action: setup", "First Image"), this);
     ac->addAction(QLatin1String("first_image"), firstImageAction);
-    ac->setDefaultShortcuts(firstImageAction, QList<QKeySequence>() << Qt::CTRL | Qt::Key_Home);
+    ac->setDefaultShortcut(firstImageAction, Qt::CTRL | Qt::Key_Home);
     connect(firstImageAction, SIGNAL(triggered()), this, SIGNAL(signalFirstItem()));
 
     QAction* const lastImageAction = new QAction(i18nc("@action: setup", "Last Image"), this);
     ac->addAction(QLatin1String("last_image"), lastImageAction);
-    ac->setDefaultShortcuts(lastImageAction, QList<QKeySequence>() << Qt::CTRL | Qt::Key_End);
+    ac->setDefaultShortcut(lastImageAction, Qt::CTRL | Qt::Key_End);
     connect(lastImageAction, SIGNAL(triggered()), this, SIGNAL(signalLastItem()));
 
     d->cutItemsAction = new QAction(i18nc("@action: setup", "Cu&t"), this);
