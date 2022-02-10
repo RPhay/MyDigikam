@@ -90,12 +90,12 @@ protected:
 
     bool acceptsMouseClick(QMouseEvent* e)  override;
     void mousePressEvent(QMouseEvent* e)    override;
-    void enterEvent(QEvent* e)              override;
     void leaveEvent(QEvent* e)              override;
     void showEvent(QShowEvent* e)           override;
     void dropEvent(QDropEvent* e)           override;
     void dragMoveEvent(QDragMoveEvent* e)   override;
     void dragEnterEvent(QDragEnterEvent* e) override;
+    void enterEvent(QEnterEvent* e)         override;
 
 private Q_SLOTS:
 

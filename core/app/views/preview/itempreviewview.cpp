@@ -385,7 +385,7 @@ bool ItemPreviewView::acceptsMouseClick(QMouseEvent* e)
     return d->faceGroup->acceptsMouseClick(mapToScene(e->pos()));
 }
 
-void ItemPreviewView::enterEvent(QEvent* e)
+void ItemPreviewView::enterEvent(QEnterEvent* e)
 {
     d->faceGroup->enterEvent(e);
 }
