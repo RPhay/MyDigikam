@@ -8,6 +8,7 @@ General: Use Qt5.15 LTS patches collection git repository from KDE to build AppI
 General: All bundles use last KF5 framework 5.90.
 General: All bundles generate a manifest text file listing git revisions of all upstream libraries used by application.
 General: AppImage Linux bundle now support ICU to perform search with UTF-8 characters in all text fields.
+General: Update internal Libraw to snapshot 2022-02-10.
 
 *****************************************************************************************************
 BUGFIXES:
