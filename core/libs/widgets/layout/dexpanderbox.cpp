@@ -390,7 +390,7 @@ void DArrowClickLabel::paintEvent(QPaintEvent*)
     QPainter p(this);
 
     QStyleOptionFrame opt;
-    opt.init(this);
+    opt.initFrom(this);
     opt.lineWidth    = 2;
     opt.midLineWidth = 0;
 
