@@ -255,10 +255,9 @@ bool DWItemDelegateEventListener::eventFilter(QObject* watched, QEvent* event)
 
 #if (QT_VERSION > QT_VERSION_CHECK(5, 99, 0))
                 QTabletEvent evt(event->type(),
-                                 QPointF(viewport->mapFromGlobal(tabletEvent->globalPos())),
                                  tabletEvent->pointingDevice(),
+                                 QPointF(viewport->mapFromGlobal(tabletEvent->globalPos())),
                                  tabletEvent->globalPosF(),
-                                 tabletEvent->deviceType(),
                                  tabletEvent->pressure(),
                                  tabletEvent->xTilt(),
                                  tabletEvent->yTilt(),
@@ -266,7 +265,6 @@ bool DWItemDelegateEventListener::eventFilter(QObject* watched, QEvent* event)
                                  tabletEvent->rotation(),
                                  tabletEvent->z(),
                                  tabletEvent->modifiers(),
-                                 tabletEvent->uniqueId(),
                                  tabletEvent->button(),
                                  tabletEvent->buttons()
                 );
