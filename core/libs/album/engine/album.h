@@ -594,5 +594,6 @@ private:
 } // namespace Digikam
 
 Q_DECLARE_METATYPE(Digikam::Album*)
+Q_DECLARE_METATYPE(QList<Digikam::TAlbum*>)
 
 #endif // DIGIKAM_ALBUM_H
