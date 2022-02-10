@@ -45,13 +45,13 @@ void LightTableWindow::setupActions()
     d->firstAction->setEnabled(false);
     connect(d->firstAction, SIGNAL(triggered()), this, SLOT(slotFirst()));
     ac->addAction(QLatin1String("lighttable_first"), d->firstAction);
-    ac->setDefaultShortcuts(d->firstAction, QList<QKeySequence>() << Qt::CTRL | Qt::Key_Home);
+    ac->setDefaultShortcuts(d->firstAction, QList<QKeySequence>() << (Qt::CTRL | Qt::Key_Home));
 
     d->lastAction = new QAction(QIcon::fromTheme(QLatin1String("go-last")), i18nc("@action: go to last item on list", "&Last"), this);
     d->lastAction->setEnabled(false);
     connect(d->lastAction, SIGNAL(triggered()), this, SLOT(slotLast()));
     ac->addAction(QLatin1String("lighttable_last"), d->lastAction);
-    ac->setDefaultShortcuts(d->lastAction, QList<QKeySequence>() << Qt::CTRL | Qt::Key_End);
+    ac->setDefaultShortcuts(d->lastAction, QList<QKeySequence>() << (Qt::CTRL | Qt::Key_End));
 
     d->setItemLeftAction = new QAction(QIcon::fromTheme(QLatin1String("arrow-left")), i18n("On left"), this);
     d->setItemLeftAction->setEnabled(false);
