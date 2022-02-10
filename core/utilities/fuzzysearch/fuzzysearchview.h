@@ -32,10 +32,12 @@
 #include <QDragMoveEvent>
 #include <QScrollArea>
 #include <QDropEvent>
+#include <QList>
 
 // Local includes
 
 #include "statesavingobject.h"
+#include "album.h"
 
 class QMimeData;
 class QPixmap;
@@ -43,13 +45,9 @@ class QPixmap;
 namespace Digikam
 {
 
-class Album;
 class FuzzySearchFolderView;
 class ItemInfo;
 class LoadingDescription;
-class SAlbum;
-class PAlbum;
-class TAlbum;
 class SearchModel;
 class SearchModificationHelper;
 class SearchTextBar;

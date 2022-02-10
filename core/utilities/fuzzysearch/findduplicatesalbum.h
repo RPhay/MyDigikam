@@ -28,18 +28,18 @@
 
 // Qt includes
 
+#include <QList>
 #include <QWidget>
 #include <QPixmap>
 #include <QTreeWidget>
 
 // Local includes
 
+#include "album.h"
 #include "thumbnailloadthread.h"
 
 namespace Digikam
 {
-
-class SAlbum;
 
 class FindDuplicatesAlbum : public QTreeWidget
 {

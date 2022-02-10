@@ -30,15 +30,16 @@
 // Qt includes
 
 #include <QWidget>
+#include <QList>
+
+// Local includes
+
+#include "album.h"
 
 class QTreeWidgetItem;
 
 namespace Digikam
 {
-class Album;
-class SAlbum;
-class PAlbum;
-class TAlbum;
 
 class FindDuplicatesView : public QWidget
 {

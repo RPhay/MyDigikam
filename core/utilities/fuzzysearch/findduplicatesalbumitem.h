@@ -32,13 +32,12 @@
 
 // Local includes
 
+#include "album.h"
 #include "iteminfo.h"
 #include "thumbnailloadthread.h"
 
 namespace Digikam
 {
-
-class SAlbum;
 
 class FindDuplicatesAlbumItem : public QTreeWidgetItem
 {
