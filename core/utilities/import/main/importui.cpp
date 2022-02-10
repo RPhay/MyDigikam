@@ -60,6 +60,7 @@
 #include <QStatusBar>
 #include <QApplication>
 #include <QActionGroup>
+#include <QLocale>
 
 // KDE includes
 
@@ -2223,7 +2224,7 @@ bool ImportUI::createDateBasedSubAlbum(QUrl& downloadUrl, const CamItemInfo& inf
             break;
 
         case AlbumCustomizer::LocalDateFormat:
-            dirName = dateTime.date().toString(Qt::LocalDate);
+            dirName = QLocale().toString(dateTime, QLocale::ShortFormat);
             break;
 
         case AlbumCustomizer::IsoDateFormat:
