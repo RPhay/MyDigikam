@@ -33,7 +33,7 @@ set(libwso2_SRCS
     o2/src/o2.cpp
     o2/src/o2reply.cpp
     o2/src/o2replyserver.cpp
-    o2/src/o0jsonresponse.h
+    o2/src/o0jsonresponse.cpp
     o2/src/o2requestor.cpp
     o2/src/o2simplecrypt.cpp
     o2/src/o0settingsstore.cpp
@@ -50,6 +50,7 @@ set(libwso2_SRCS
     #o2/src/o1dropbox.h
     #o2/src/o1flickr.h
     #o2/src/o2gft.cpp
+    o2/src/o2pollserver.cpp
     o2/src/o2facebook.cpp
     #o2/src/o2skydrive.cpp
     #o2/src/o2hubic.cpp
