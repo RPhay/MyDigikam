@@ -540,26 +540,29 @@ public:
         }
 
         auto firstDigit = std::find_if(filename.begin(), filename.end(),
-                                            [](const QChar& c)
-                                            {
-                                                return c.isDigit();
-                                            });
+                                       [](const QChar& c)
+                                           {
+                                               return c.isDigit();
+                                           }
+                                      );
 
         prefix = QStringView{filename}.left(std::distance(filename.begin(), firstDigit));
+
         if (firstDigit == filename.end())
         {
             return;
         }
 
         auto lastDigit = std::find_if(firstDigit, filename.end(),
-                                            [](const QChar& c)
-                                            {
+                                      [](const QChar& c)
+                                          {
                                                 return !c.isDigit();
-                                            });
+                                          }
+                                     );
 
-        value  = filename.midRef(prefix.size(),
-                                 std::distance(firstDigit,
-                                               lastDigit)).toULongLong(&containsValue);
+        value  = filename.mid(prefix.size(),
+                              std::distance(firstDigit,
+                                            lastDigit)).toULongLong(&containsValue);
 
         suffix = QStringView{filename}.mid(std::distance(lastDigit, filename.end()));
     }
