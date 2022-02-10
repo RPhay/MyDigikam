@@ -187,9 +187,12 @@ LibsInfoDlg::LibsInfoDlg(QWidget* const parent)
 #ifdef HAVE_QWEBENGINE
     new QTreeWidgetItem(m_libraries, QStringList() <<
                         i18nc(CONTEXT, "Qt WebEngine version") <<           QLatin1String(QTWEBENGINEWIDGETS_VERSION_STR));
-#else
+#elif defined HAVE_QWEBKIT
     new QTreeWidgetItem(m_libraries, QStringList() <<
                         i18nc(CONTEXT, "Qt WebKit version") <<              QLatin1String(QTWEBKITWIDGETS_VERSION_STR));
+#else
+    new QTreeWidgetItem(m_libraries, QStringList() <<
+                        i18nc(CONTEXT, "Qt Web support") <<                 SUPPORTED_NO);
 #endif
 
     new QTreeWidgetItem(m_libraries, QStringList() <<
