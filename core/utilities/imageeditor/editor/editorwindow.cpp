@@ -227,21 +227,21 @@ void EditorWindow::setupStandardActions()
                                 i18nc("@action; go to first item", "&First"), this);
     connect(m_firstAction, SIGNAL(triggered()), this, SLOT(slotFirst()));
     ac->addAction(QLatin1String("editorwindow_first"), m_firstAction);
-    ac->setDefaultShortcuts(m_firstAction, QList<QKeySequence>() << Qt::CTRL | Qt::Key_Home);
+    ac->setDefaultShortcuts(m_firstAction, Qt::CTRL | Qt::Key_Home);
     m_firstAction->setEnabled(false);
 
     m_lastAction = new QAction(QIcon::fromTheme(QLatin1String("go-last")),
                                i18nc("@action; go to last item", "&Last"), this);
     connect(m_lastAction, SIGNAL(triggered()), this, SLOT(slotLast()));
     ac->addAction(QLatin1String("editorwindow_last"), m_lastAction);
-    ac->setDefaultShortcuts(m_lastAction, QList<QKeySequence>() << Qt::CTRL | Qt::Key_End);
+    ac->setDefaultShortcuts(m_lastAction, Qt::CTRL | Qt::Key_End);
     m_lastAction->setEnabled(false);
 
     m_openVersionAction = new QAction(QIcon::fromTheme(QLatin1String("view-preview")),
                                       i18nc("@action", "Open Original"), this);
     connect(m_openVersionAction, SIGNAL(triggered()), this, SLOT(slotOpenOriginal()));
     ac->addAction(QLatin1String("editorwindow_openversion"), m_openVersionAction);
-    ac->setDefaultShortcuts(m_openVersionAction, QList<QKeySequence>() << Qt::CTRL | Qt::Key_End);
+    ac->setDefaultShortcuts(m_openVersionAction, Qt::CTRL | Qt::Key_End);
 
     m_saveAction = buildStdAction(StdSaveAction, this, SLOT(saveOrSaveAs()), this);
     ac->addAction(QLatin1String("editorwindow_save"), m_saveAction);
@@ -345,7 +345,7 @@ void EditorWindow::setupStandardActions()
                                            i18nc("@action", "Undo"), this);
     m_undoAction->setEnabled(false);
     ac->addAction(QLatin1String("editorwindow_undo"), m_undoAction);
-    ac->setDefaultShortcuts(m_undoAction, QList<QKeySequence>() << Qt::CTRL | Qt::Key_Z);
+    ac->setDefaultShortcuts(m_undoAction, Qt::CTRL | Qt::Key_Z);
 
     connect(m_undoAction->menu(), SIGNAL(aboutToShow()),
             this, SLOT(slotAboutToShowUndoMenu()));
@@ -363,7 +363,7 @@ void EditorWindow::setupStandardActions()
                                            i18nc("@action", "Redo"), this);
     m_redoAction->setEnabled(false);
     ac->addAction(QLatin1String("editorwindow_redo"), m_redoAction);
-    ac->setDefaultShortcuts(m_redoAction, QList<QKeySequence>() << Qt::CTRL | Qt::SHIFT | Qt::Key_Z);
+    ac->setDefaultShortcuts(m_redoAction, Qt::CTRL | Qt::SHIFT | Qt::Key_Z);
 
     connect(m_redoAction->menu(), SIGNAL(aboutToShow()),
             this, SLOT(slotAboutToShowRedoMenu()));
