@@ -43,6 +43,7 @@
 #include <QTimer>
 #include <QStandardPaths>
 #include <QTextStream>
+#include <QActionGroup>
 
 // KDE includes
 

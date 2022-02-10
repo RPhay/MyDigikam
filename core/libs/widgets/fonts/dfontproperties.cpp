@@ -248,7 +248,8 @@ DFontProperties::DFontProperties(QWidget* const parent,
 
     QVBoxLayout* const topLayout = new QVBoxLayout(this);
     topLayout->setContentsMargins(0, 0, 0, 0);
-    const int spacingHint        = style()->pixelMetric(QStyle::PM_DefaultLayoutSpacing);
+    const int spacingHint = qMin(style()->pixelMetric(QStyle::PM_LayoutHorizontalSpacing),
+                                 style()->pixelMetric(QStyle::PM_LayoutVerticalSpacing));
     int checkBoxGap              = spacingHint / 2;
 
     // The splitter contains font attribute widgets in the top part,

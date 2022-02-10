@@ -39,7 +39,6 @@
 #include "digikam_export.h"
 
 class QFont;
-class QStringList;
 
 namespace Digikam
 {
