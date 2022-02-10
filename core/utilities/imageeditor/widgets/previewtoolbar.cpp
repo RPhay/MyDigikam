@@ -30,6 +30,7 @@
 #include <QToolButton>
 #include <QAbstractButton>
 #include <QStandardPaths>
+#include <QActionGroup>
 #include <QMenu>
 
 // KDE includes
