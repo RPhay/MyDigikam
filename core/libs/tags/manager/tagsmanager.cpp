@@ -673,10 +673,11 @@ void TagsManager::setupActions()
     d->mainToolbar->setMovable(false);
     d->mainToolbar->setFloatable(false);
     d->mainToolbar->setContextMenuPolicy(Qt::PreventContextMenu);
-    d->mainToolbar->layout()->setContentsMargins(QApplication::style()->pixelMetric(QStyle::PM_DefaultChildMargin),
-                                                 QApplication::style()->pixelMetric(QStyle::PM_DefaultChildMargin),
-                                                 QApplication::style()->pixelMetric(QStyle::PM_DefaultChildMargin),
-                                                 QApplication::style()->pixelMetric(QStyle::PM_DefaultChildMargin));
+    const int cmargin = qMin(style()->pixelMetric(QStyle::PM_LayoutLeftMargin),
+                             qMin(style()->pixelMetric(QStyle::PM_LayoutTopMargin),
+                                  qMin(style()->pixelMetric(QStyle::PM_LayoutRightMargin),
+                                       style()->pixelMetric(QStyle::PM_LayoutBottomMargin))));
+    d->mainToolbar->layout()->setContentsMargins(cmargin, cmargin, cmargin, cmargin);
 
     QWidgetAction* const pixMapAction = new QWidgetAction(this);
     pixMapAction->setDefaultWidget(d->tagPixmap);

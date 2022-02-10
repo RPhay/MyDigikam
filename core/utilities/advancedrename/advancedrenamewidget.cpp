@@ -249,8 +249,12 @@ void AdvancedRenameWidget::registerParserControls()
             // register options
 
             QPushButton* btn            = nullptr;
-            DynamicLayout* const layout = new DynamicLayout(QApplication::style()->pixelMetric(QStyle::PM_DefaultChildMargin),
-                                                            QApplication::style()->pixelMetric(QStyle::PM_DefaultChildMargin));
+            const int cmargin = qMin(style()->pixelMetric(QStyle::PM_LayoutLeftMargin),
+                                     qMin(style()->pixelMetric(QStyle::PM_LayoutTopMargin),
+                                          qMin(style()->pixelMetric(QStyle::PM_LayoutRightMargin),
+                                               style()->pixelMetric(QStyle::PM_LayoutBottomMargin))));
+            
+            DynamicLayout* const layout = new DynamicLayout(cmargin, cmargin);
 
             foreach (Rule* const p, d->parser->options())
             {

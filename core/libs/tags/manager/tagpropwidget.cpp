@@ -92,10 +92,12 @@ TagPropWidget::TagPropWidget(QWidget* const parent)
     : QWidget(parent),
       d      (new Private())
 {
-    const int spacing       = qMin(QApplication::style()->pixelMetric(QStyle::PM_LayoutHorizontalSpacing),
-                             QApplication::style()->pixelMetric(QStyle::PM_LayoutVerticalSpacing));
-    const int cmargin       = QApplication::style()->pixelMetric(QStyle::PM_DefaultChildMargin);
-
+    const int spacing = qMin(style()->pixelMetric(QStyle::PM_LayoutHorizontalSpacing),
+                                   style()->pixelMetric(QStyle::PM_LayoutVerticalSpacing));
+    const int cmargin = qMin(style()->pixelMetric(QStyle::PM_LayoutLeftMargin),
+                             qMin(style()->pixelMetric(QStyle::PM_LayoutTopMargin),
+                                  qMin(style()->pixelMetric(QStyle::PM_LayoutRightMargin),
+                                       style()->pixelMetric(QStyle::PM_LayoutBottomMargin))));
     QGridLayout* const grid = new QGridLayout(this);
     QLabel* const logo      = new QLabel(this);
 
