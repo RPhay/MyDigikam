@@ -344,7 +344,10 @@ void DNotificationPopup::setView(QWidget* child)
 
     if (d->popupStyle == Balloon)
     {
-        const int margin = 2 * style()->pixelMetric(QStyle::PM_DefaultChildMargin);
+        const int margin = 2 * qMin(style()->pixelMetric(QStyle::PM_LayoutLeftMargin),
+                                    qMin(style()->pixelMetric(QStyle::PM_LayoutTopMargin),
+                                         qMin(style()->pixelMetric(QStyle::PM_LayoutRightMargin),
+                                              style()->pixelMetric(QStyle::PM_LayoutBottomMargin))));
         d->topLayout->setContentsMargins(margin, margin, margin, margin);
     }
 
