@@ -308,7 +308,7 @@ ParseResults Parser::applyModifiers(const ParseSettings& _settings, ParseResults
 
         while (pos > -1)
         {
-            pos = regExp.indexIn(settings.parseString, pos);
+            pos = parseString.indexOf(regExp, pos, &match);
 
             if (pos > -1)
             {
