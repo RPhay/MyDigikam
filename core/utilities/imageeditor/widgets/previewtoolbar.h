@@ -27,12 +27,11 @@
 // Qt includes
 
 #include <QWidget>
+#include <QAction>
 
 // Local includes
 
 #include "digikam_export.h"
-
-class QAction;
 
 class KConfigGroup;
 
