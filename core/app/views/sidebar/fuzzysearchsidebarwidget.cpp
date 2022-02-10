@@ -69,10 +69,10 @@ FuzzySearchSideBarWidget::FuzzySearchSideBarWidget(QWidget* const parent,
       d            (new Private)
 {
     setObjectName(QLatin1String("Fuzzy Search Sidebar"));
-    setProperty("Shortcut", Qt::CTRL | Qt::SHIFT | Qt::Key_F7);
+    setProperty("Shortcut", QKeySequence(Qt::CTRL | Qt::SHIFT | Qt::Key_F7));
 
     const int spacing         = qMin(QApplication::style()->pixelMetric(QStyle::PM_LayoutHorizontalSpacing),
-                             QApplication::style()->pixelMetric(QStyle::PM_LayoutVerticalSpacing));
+                                     QApplication::style()->pixelMetric(QStyle::PM_LayoutVerticalSpacing));
 
     d->fuzzySearchView        = new FuzzySearchView(searchModel, searchModificationHelper, this);
     d->fuzzySearchView->setConfigGroup(getConfigGroup());

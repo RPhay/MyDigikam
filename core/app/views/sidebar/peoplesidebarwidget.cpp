@@ -84,11 +84,11 @@ PeopleSideBarWidget::PeopleSideBarWidget(QWidget* const parent,
       d            (new Private)
 {
     setObjectName(QLatin1String("People Sidebar"));
-    setProperty("Shortcut", Qt::CTRL | Qt::SHIFT | Qt::Key_F9);
+    setProperty("Shortcut", QKeySequence(Qt::CTRL | Qt::SHIFT | Qt::Key_F9));
     d->searchModificationHelper   = searchModificationHelper;
 
     const int spacing             = qMin(QApplication::style()->pixelMetric(QStyle::PM_LayoutHorizontalSpacing),
-                             QApplication::style()->pixelMetric(QStyle::PM_LayoutVerticalSpacing));
+                                         QApplication::style()->pixelMetric(QStyle::PM_LayoutVerticalSpacing));
 
     QWidget* const     mainView   = new QWidget(this);
     QScrollArea* const scrollArea = new QScrollArea(this);
