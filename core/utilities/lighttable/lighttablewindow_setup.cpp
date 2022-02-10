@@ -164,7 +164,7 @@ void LightTableWindow::setupActions()
     d->rightZoomPlusAction  = buildStdAction(StdZoomInAction, d->previewView, SLOT(slotIncreaseRightZoom()), this);
     d->rightZoomPlusAction->setEnabled(false);
     ac->addAction(QLatin1String("lighttable_zoomplus_right"), d->rightZoomPlusAction);
-    ac->setDefaultShortcut(d->rightZoomPlusAction, Qt::SHIFT | d->rightZoomPlusAction->shortcut()[0]);
+    ac->setDefaultShortcut(d->rightZoomPlusAction, Qt::SHIFT | QKeySequence(d->rightZoomPlusAction->shortcut()[0]));
 
     d->rightZoomMinusAction  = buildStdAction(StdZoomOutAction, d->previewView, SLOT(slotDecreaseRightZoom()), this);
     d->rightZoomMinusAction->setEnabled(false);
