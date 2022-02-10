@@ -74,7 +74,7 @@ HTMLImageSettingsPage::HTMLImageSettingsPage(QWizard* const dialog, const QStrin
     label->setObjectName(QLatin1String("label"));
     QFont font;
     font.setBold(true);
-    font.setWeight(75);
+    font.setPointSize(75);
     label->setFont(font);
     label->setText(i18n("Full Image Properties:"));
 

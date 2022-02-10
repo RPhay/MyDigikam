@@ -146,7 +146,7 @@ void DNGConverterTask::run()
 
             QFileInfo fi(d->url.toLocalFile());
             destPath     = fi.absolutePath() + QLatin1String("/.digikam-dngconverter-tmp-") +
-                           QString::number(QDateTime::currentDateTimeUtc().toTime_t()) + QString(d->url.fileName());
+                           QString::number(QDateTime::currentDateTimeUtc().toSecsSinceEpoch()) + QString(d->url.fileName());
 
             d->dngProcessor.reset();
             d->dngProcessor.setInputFile(d->url.toLocalFile());

@@ -38,7 +38,7 @@ CalWidget::CalWidget(QWidget* const parent)
     : QWidget  (parent),
       m_current(1)
 {
-    setAttribute(Qt::WA_NoBackground);
+    setAttribute(Qt::WA_OpaquePaintEvent);
     setSizePolicy(QSizePolicy::Fixed, QSizePolicy::Fixed);
 }
 

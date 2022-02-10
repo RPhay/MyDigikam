@@ -89,7 +89,13 @@ public:
         }
 
         QTextStream stream(&file);
-        stream.setCodec("UTF-8");
+
+#if (QT_VERSION > QT_VERSION_CHECK(5, 99, 0))
+        stream.setEncoding(QStringConverter::Utf8);
+#else
+        stream.setCodec(QTextCodec::codecForName("UTF-8"));
+#endif
+
         QString prefix = QLatin1String("[") + QLatin1String(PARAMETER_GROUP_PREFIX);
 
         while (!stream.atEnd())
