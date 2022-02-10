@@ -286,7 +286,7 @@ ParseResults Parser::applyModifiers(const ParseSettings& _settings, ParseResults
     }
 
     ParseSettings settings = _settings;
-    settings.results = results;
+    settings.results       = results;
 
     // appliedModifiers holds all the modified parse results
 
@@ -308,7 +308,7 @@ ParseResults Parser::applyModifiers(const ParseSettings& _settings, ParseResults
 
         while (pos > -1)
         {
-            pos = parseString.indexOf(regExp, pos, &match);
+            pos = settings.parseString.indexOf(regExp, pos, &match);
 
             if (pos > -1)
             {
