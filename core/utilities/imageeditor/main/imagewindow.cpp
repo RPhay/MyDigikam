@@ -713,7 +713,7 @@ void ImageWindow::prepareImageToSave()
 
         if (!faceTags.isEmpty())
         {
-            QMap<QString, QVariant>::const_iterator it;
+            QMultiMap<QString, QVariant>::const_iterator it;
 
             QSize size      = d->currentItemInfo.dimensions();
             int orientation = d->currentItemInfo.orientation();

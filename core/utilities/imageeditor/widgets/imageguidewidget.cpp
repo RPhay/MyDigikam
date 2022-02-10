@@ -724,6 +724,8 @@ void ImageGuideWidget::enterEvent(QEnterEvent* event)
 void ImageGuideWidget::enterEvent(QEvent* event)
 #endif
 {
+    Q_UNUSED(event);
+
     if (!d->focus && (d->renderingPreviewMode == PreviewToolBar::PreviewToggleOnMouseOver))
     {
         d->onMouseMovePreviewToggled = false;
