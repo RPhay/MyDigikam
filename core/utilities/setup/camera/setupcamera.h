@@ -28,6 +28,7 @@
 // Qt includes
 
 #include <QScrollArea>
+#include <QString>
 
 // Local includes
 

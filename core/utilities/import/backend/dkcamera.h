@@ -27,15 +27,14 @@
 
 // Qt includes
 
+#include <QImage>
 #include <QString>
+#include <QStringList>
 #include <QByteArray>
 
 // Local includes
 
 #include "camiteminfo.h"
-
-class QStringList;
-class QImage;
 
 namespace Digikam
 {
