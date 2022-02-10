@@ -24,8 +24,10 @@
 #ifndef DIGIKAM_SETUP_UTILS_H
 #define DIGIKAM_SETUP_UTILS_H
 
-class QString;
-class QStringList;
+// Qt includes
+
+#include <QStringList>
+#include <QString>
 
 namespace Digikam
 {

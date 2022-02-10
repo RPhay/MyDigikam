@@ -23,10 +23,6 @@
 
 #include "setuputils.h"
 
-// Qt includes
-
-#include <QStringList>
-
 // Local includes
 
 #include "digikam_globals.h"
