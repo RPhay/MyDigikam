@@ -25,10 +25,15 @@
 #ifndef DIGIKAM_ITEM_ALBUM_MODEL_H
 #define DIGIKAM_ITEM_ALBUM_MODEL_H
 
+// Qt includes
+
+#include <QList>
+
 // Local includes
 
 #include "itemthumbnailmodel.h"
 #include "album.h"
+#include "itemlisterrecord.h"
 
 namespace Digikam
 {
