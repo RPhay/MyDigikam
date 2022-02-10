@@ -27,6 +27,7 @@
 // Qt includes
 
 #include <QAction>
+#include <QActionGroup>
 #include <QEvent>
 #include <QFileInfo>
 #include <QGridLayout>
