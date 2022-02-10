@@ -718,7 +718,11 @@ void ImageGuideWidget::mouseMoveEvent(QMouseEvent* e)
     }
 }
 
-void ImageGuideWidget::enterEvent(QEvent*)
+#if (QT_VERSION > QT_VERSION_CHECK(5, 99, 0))
+void ImageGuideWidget::enterEvent(QEnterEvent* event)
+#else
+void ImageGuideWidget::enterEvent(QEvent* event)
+#endif
 {
     if (!d->focus && (d->renderingPreviewMode == PreviewToolBar::PreviewToggleOnMouseOver))
     {
