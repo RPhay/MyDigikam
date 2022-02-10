@@ -252,7 +252,8 @@ OnlineVersionDlg::OnlineVersionDlg(QWidget* const parent,
     grid->addWidget(d->stats,    0, 3, 1, 1);
     grid->addWidget(d->notesBox, 1, 0, 1, 4);
     grid->addWidget(d->bar,      2, 0, 1, 4);
-    grid->setSpacing(style()->pixelMetric(QStyle::PM_DefaultLayoutSpacing));
+    grid->setSpacing(qMin(style()->pixelMetric(QStyle::PM_LayoutHorizontalSpacing),
+                          style()->pixelMetric(QStyle::PM_LayoutVerticalSpacing)));
     grid->setContentsMargins(QMargins());
     grid->setColumnStretch(2, 10);
     grid->setRowStretch(1, 10);

@@ -100,7 +100,8 @@ DProgressDlg::DProgressDlg(QWidget* const parent, const QString& caption)
     grid->addWidget(d->actionLabel, 1, 2, 1, 1);
     grid->addWidget(d->progress,    2, 1, 1, 2);
     grid->addWidget(d->title,       3, 1, 1, 2);
-    grid->setSpacing(style()->pixelMetric(QStyle::PM_DefaultLayoutSpacing));
+    grid->setSpacing(qMin(style()->pixelMetric(QStyle::PM_LayoutHorizontalSpacing),
+                          style()->pixelMetric(QStyle::PM_LayoutVerticalSpacing)));
     grid->setContentsMargins(QMargins());
     grid->setColumnStretch(2, 10);
 
