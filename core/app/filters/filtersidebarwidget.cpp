@@ -29,6 +29,7 @@
 
 // Qt includes
 
+#include <QActionGroup>
 #include <QLayout>
 #include <QCheckBox>
 #include <QGridLayout>
