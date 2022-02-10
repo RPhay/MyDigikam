@@ -584,7 +584,13 @@ bool ShowfotoStackViewFavorites::saveSettings()
     }
 
     QTextStream stream(&file);
+
+#if (QT_VERSION > QT_VERSION_CHECK(5, 99, 0))
+    stream.setEncoding(QStringConverter::Utf8);
+#else
     stream.setCodec(QTextCodec::codecForName("UTF-8"));
+#endif
+
     stream.setAutoDetectUnicode(true);
     stream << doc.toString();
     file.close();

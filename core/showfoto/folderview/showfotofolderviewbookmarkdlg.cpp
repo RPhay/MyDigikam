@@ -158,7 +158,7 @@ ShowfotoFolderViewBookmarkDlg::ShowfotoFolderViewBookmarkDlg(ShowfotoFolderViewB
     pathLabel->setText(i18nc("@label: bookmark properties", "&Path:"));
 
     d->pathEdit             = new DFileSelector(page);
-    d->pathEdit->setFileDlgMode(QFileDialog::DirectoryOnly);
+    d->pathEdit->setFileDlgMode(QFileDialog::Directory);
     d->pathEdit->setFileDlgOptions(QFileDialog::ShowDirsOnly);
     d->pathEdit->lineEdit()->setPlaceholderText(i18nc("@info", "Enter bookmark path here..."));
     pathLabel->setBuddy(d->pathEdit);

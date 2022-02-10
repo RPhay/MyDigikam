@@ -26,6 +26,7 @@
 // Qt includes
 
 #include <QApplication>
+#include <QActionGroup>
 #include <QStyle>
 #include <QIcon>
 #include <QFileInfo>
