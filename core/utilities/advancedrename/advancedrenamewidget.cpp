@@ -413,8 +413,13 @@ void AdvancedRenameWidget::setupWidgets()
         mainLayout->setColumnStretch(2, 10);
     }
 
-    mainLayout->setSpacing(QApplication::style()->pixelMetric(QStyle::PM_DefaultChildMargin));
-    mainLayout->setContentsMargins(QMargins());
+    const int cmargin = qMin(style()->pixelMetric(QStyle::PM_LayoutLeftMargin),
+                             qMin(style()->pixelMetric(QStyle::PM_LayoutTopMargin),
+                                  qMin(style()->pixelMetric(QStyle::PM_LayoutRightMargin),
+                                       style()->pixelMetric(QStyle::PM_LayoutBottomMargin))));
+
+    mainLayout->setSpacing(cmargin);
+    mainLayout->setContentsMargins(QMargins(cmargin, cmargin, cmargin, cmargin));
     setLayout(mainLayout);
 
     // --------------------------------------------------------
