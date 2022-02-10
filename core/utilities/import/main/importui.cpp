@@ -859,7 +859,7 @@ void ImportUI::setupAccelerators()
     QAction* const previousImageAction = new QAction(i18nc("@action", "Previous Image"), this);
     previousImageAction->setIcon(QIcon::fromTheme(QLatin1String("go-previous")));
     ac->addAction(QLatin1String("previous_image"), previousImageAction);
-    ac->setDefaultShortcuts(previousImageAction, QList<QKeySequence>() << Qt::Key_Backspace << Qt::SHIFT | Qt::Key_Space);
+    ac->setDefaultShortcuts(previousImageAction, QList<QKeySequence>() << Qt::Key_Backspace << (Qt::SHIFT | Qt::Key_Space));
     connect(previousImageAction, SIGNAL(triggered()), d->view, SLOT(slotPrevItem()));
 
     QAction* const firstImageAction = new QAction(i18nc("@action Go to first image", "First Image"), this);
