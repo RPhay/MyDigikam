@@ -252,12 +252,42 @@ bool DWItemDelegateEventListener::eventFilter(QObject* watched, QEvent* event)
             case QEvent::TabletLeaveProximity:
             {
                 QTabletEvent* const tabletEvent = static_cast<QTabletEvent*>(event);
-                QTabletEvent evt(event->type(), QPointF(viewport->mapFromGlobal(tabletEvent->globalPos())),
-                                    tabletEvent->globalPosF(), tabletEvent->deviceType(),
-                                    tabletEvent->pointerType(), tabletEvent->pressure(), tabletEvent->xTilt(),
-                                    tabletEvent->yTilt(), tabletEvent->tangentialPressure(), tabletEvent->rotation(),
-                                    tabletEvent->z(), tabletEvent->modifiers(), tabletEvent->uniqueId(),
-                                    tabletEvent->button(), tabletEvent->buttons());
+
+#if (QT_VERSION > QT_VERSION_CHECK(5, 99, 0))
+                QTabletEvent evt(event->type(),
+                                 QPointF(viewport->mapFromGlobal(tabletEvent->globalPos())),
+                                 tabletEvent->pointingDevice(),
+                                 tabletEvent->globalPosF(),
+                                 tabletEvent->deviceType(),
+                                 tabletEvent->pressure(),
+                                 tabletEvent->xTilt(),
+                                 tabletEvent->yTilt(),
+                                 tabletEvent->tangentialPressure(),
+                                 tabletEvent->rotation(),
+                                 tabletEvent->z(),
+                                 tabletEvent->modifiers(),
+                                 tabletEvent->uniqueId(),
+                                 tabletEvent->button(),
+                                 tabletEvent->buttons()
+                );
+#else
+                QTabletEvent evt(event->type(),
+                                 QPointF(viewport->mapFromGlobal(tabletEvent->globalPos())),
+                                 tabletEvent->globalPosF(),
+                                 tabletEvent->deviceType(),
+                                 tabletEvent->pointerType(),
+                                 tabletEvent->pressure(),
+                                 tabletEvent->xTilt(),
+                                 tabletEvent->yTilt(),
+                                 tabletEvent->tangentialPressure(),
+                                 tabletEvent->rotation(),
+                                 tabletEvent->z(),
+                                 tabletEvent->modifiers(),
+                                 tabletEvent->uniqueId(),
+                                 tabletEvent->button(),
+                                 tabletEvent->buttons()
+                );
+#endif
                 QApplication::sendEvent(viewport, &evt);
                 break;
             }
