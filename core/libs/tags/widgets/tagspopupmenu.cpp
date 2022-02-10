@@ -41,6 +41,7 @@
 #include <QStyleOptionMenuItem>
 #include <QStyleOptionViewItem>
 #include <QApplication>
+#include <QActionGroup>
 
 // KDE includes
 
@@ -196,7 +197,7 @@ void TagToggleMenuWidget::paintEvent(QPaintEvent*)
 
     if (!m_action->isCheckBoxHidden())
     {
-        style()->drawPrimitive(QStyle::PE_IndicatorViewItemCheck, &viewOpt, &p, this);
+        style()->drawPrimitive(QStyle::PE_IndicatorItemViewItemCheck, &viewOpt, &p, this);
     }
 
     // move by size of check indicator
@@ -354,7 +355,7 @@ QRect TagToggleMenuWidget::checkIndicatorSize(QStyleOption* option) const
 /*
     opt.rect = bounding;
 */
-    return style()->subElementRect(QStyle::SE_ViewItemCheckIndicator, &opt, this);
+    return style()->subElementRect(QStyle::SE_ItemViewItemCheckIndicator, &opt, this);
 }
 
 // ------------------------------------------------------------------------
