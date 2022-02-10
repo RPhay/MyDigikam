@@ -38,6 +38,7 @@
 // Local includes
 
 #include "digikam_export.h"
+#include "coredbconstants.h"
 #include "coredbalbuminfo.h"
 
 namespace Digikam
