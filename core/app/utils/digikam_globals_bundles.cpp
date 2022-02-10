@@ -243,7 +243,7 @@ void unloadQtTranslationFiles(QApplication& app)
 
 void loadStdQtTranslationFiles(QApplication& app)
 {
-    QString transPath = QStandardPaths::locate(QStandardPaths::DataLocation,
+    QString transPath = QStandardPaths::locate(QStandardPaths::AppLocalDataLocation,
                                                QLatin1String("translations"),
                                                QStandardPaths::LocateDirectory);
 

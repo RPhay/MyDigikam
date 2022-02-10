@@ -70,8 +70,11 @@ void ActionCategorizedView::adjustGridSize()
     // To keep a suitable width, we want to word wrap.
 
     setWordWrap(true);
-    int maxSize = viewOptions().decorationSize.width() * 4;
-    QFontMetrics fm(viewOptions().font);
+    QStyleOptionViewItem option;
+    option.initFrom(this);
+
+    int maxSize = option.decorationSize.width() * 4;
+    QFontMetrics fm(option.font);
     QSize grid;
 
     for (int i = 0 ; i < model()->rowCount() ; ++i)

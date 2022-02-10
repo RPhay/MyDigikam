@@ -540,7 +540,7 @@ void PanIconWidget::hideEvent(QHideEvent* e)
 void PanIconWidget::mousePressEvent(QMouseEvent* e)
 {
     if (
-        ((e->button() == Qt::LeftButton) || (e->button() == Qt::MidButton)) &&
+        ((e->button() == Qt::LeftButton) || (e->button() == Qt::MiddleButton)) &&
          d->localRegionSelection.contains(e->x(), e->y())
        )
     {
@@ -555,7 +555,7 @@ void PanIconWidget::mousePressEvent(QMouseEvent* e)
 void PanIconWidget::mouseMoveEvent(QMouseEvent* e)
 {
     if (d->moveSelection &&
-        ((e->buttons() == Qt::LeftButton) || (e->buttons() == Qt::MidButton)))
+        ((e->buttons() == Qt::LeftButton) || (e->buttons() == Qt::MiddleButton)))
     {
         int newxpos = e->x();
         int newypos = e->y();

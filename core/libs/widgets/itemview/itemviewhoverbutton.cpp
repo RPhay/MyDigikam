@@ -104,7 +104,11 @@ void ItemViewHoverButton::setVisible(bool visible)
     }
 }
 
+#if (QT_VERSION > QT_VERSION_CHECK(5, 99, 0))
+void ItemViewHoverButton::enterEvent(QEnterEvent* event)
+#else
 void ItemViewHoverButton::enterEvent(QEvent* event)
+#endif
 {
     QAbstractButton::enterEvent(event);
 

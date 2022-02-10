@@ -64,9 +64,14 @@ protected:
      */
     void setup();
 
-    void enterEvent(QEvent* event) override;
-    void leaveEvent(QEvent* event) override;
-    void paintEvent(QPaintEvent* event) override;
+#if (QT_VERSION > QT_VERSION_CHECK(5, 99, 0))
+    void enterEvent(QEnterEvent* event);
+#else
+    void enterEvent(QEvent* event);
+#endif
+
+    void leaveEvent(QEvent* event);
+    void paintEvent(QPaintEvent* event);
 
     /**
      * Return your icon here. Will be queried again on toggle.

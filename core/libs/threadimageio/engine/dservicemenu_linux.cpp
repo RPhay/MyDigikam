@@ -33,7 +33,11 @@
 
 // KDE includes
 
-#include <kapplicationtrader.h>
+#if (QT_VERSION > QT_VERSION_CHECK(5, 99, 0))
+#   include <kapplicationtrader.h>
+#else
+#   include <kmimetypetrader.h>
+#endif
 
 // Local includes
 
@@ -245,7 +249,13 @@ KService::List DServiceMenu::servicesForOpenWith(const QList<QUrl>& urls)
             constraints << constraintTemplate.arg(mimeType);
         }
 
+#if (QT_VERSION > QT_VERSION_CHECK(5, 99, 0))
         offers = KApplicationTrader::queryByMimeType(firstMimeType);
+#else
+        offers = KMimeTypeTrader::self()->query(firstMimeType,
+                                                QLatin1String("Application"),
+                                                constraints.join(QLatin1String(" and ")));
+#endif
 
         // remove duplicate service entries
 

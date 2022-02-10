@@ -432,7 +432,7 @@ void DItemToolTip::resizeEvent(QResizeEvent* e)
 {
     QStyleHintReturnMask frameMask;
     QStyleOption option;
-    option.init(this);
+    option.initFrom(this);
 
     if (style()->styleHint(QStyle::SH_ToolTip_Mask, &option, this, &frameMask))
     {
@@ -448,7 +448,7 @@ void DItemToolTip::paintEvent(QPaintEvent* e)
     {
         QStylePainter p(this);
         QStyleOptionFrame opt;
-        opt.init(this);
+        opt.initFrom(this);
         p.drawPrimitive(QStyle::PE_PanelTipLabel, opt);
     }
 

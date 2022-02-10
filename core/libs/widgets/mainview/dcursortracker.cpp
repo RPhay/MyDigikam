@@ -218,7 +218,7 @@ void DCursorTracker::paintEvent(QPaintEvent* e)
 {
     QStylePainter p(this);
     QStyleOptionFrame opt;
-    opt.init(this);
+    opt.initFrom(this);
     p.drawPrimitive(QStyle::PE_PanelTipLabel, opt);
     p.end();
 

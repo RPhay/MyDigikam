@@ -145,24 +145,26 @@ QRect DCategorizedView::Private::visualRectInViewport(const QModelIndex& index) 
     QRect      retRect;
     QString    curCategory     = elementsInfo[index.row()].category;
     const bool leftToRightFlow = (listView->flow() == QListView::LeftToRight);
+    QStyleOptionViewItem option;
+    option.initFrom(listView);
 
     if (leftToRightFlow)
     {
         if (listView->layoutDirection() == Qt::LeftToRight)
         {
             retRect = QRect(listView->spacing(), listView->spacing() * 2 +
-                            categoryDrawer->categoryHeight(index, listView->viewOptions()), 0, 0);
+                            categoryDrawer->categoryHeight(index, option), 0, 0);
         }
         else
         {
             retRect = QRect(listView->viewport()->width() - listView->spacing(), listView->spacing() * 2 +
-                            categoryDrawer->categoryHeight(index, listView->viewOptions()), 0, 0);
+                            categoryDrawer->categoryHeight(index, option), 0, 0);
         }
     }
     else
     {
         retRect = QRect(listView->spacing(), listView->spacing() * 2 +
-                        categoryDrawer->categoryHeight(index, listView->viewOptions()), 0, 0);
+                        categoryDrawer->categoryHeight(index, option), 0, 0);
     }
 
     int viewportWidth = listView->viewport()->width() - listView->spacing();
@@ -253,7 +255,7 @@ QRect DCategorizedView::Private::visualRectInViewport(const QModelIndex& index) 
 
         retRect.setTop(retRect.top() +
                        (rowsInt * itemHeight) +
-                       categoryDrawer->categoryHeight(index, listView->viewOptions()) +
+                       categoryDrawer->categoryHeight(index, option) +
                        listView->spacing() * 2);
 
         if (listView->gridSize().isEmpty())
@@ -342,6 +344,9 @@ QRect DCategorizedView::Private::visualCategoryRectInViewport(const QString& cat
         elementsPerRow = 1;
     }
 
+    QStyleOptionViewItem option;
+    option.initFrom(listView);
+
     foreach (const QString& itCategory, categories)
     {
         if (itCategory == category)
@@ -360,7 +365,7 @@ QRect DCategorizedView::Private::visualCategoryRectInViewport(const QString& cat
 
         retRect.setTop(retRect.top() +
                        (rowsInt * itemHeight) +
-                       categoryDrawer->categoryHeight(index, listView->viewOptions()) +
+                       categoryDrawer->categoryHeight(index, option) +
                        listView->spacing() * 2);
 
         if (listView->gridSize().isEmpty())
@@ -370,7 +375,7 @@ QRect DCategorizedView::Private::visualCategoryRectInViewport(const QString& cat
         }
     }
 
-    retRect.setHeight(categoryDrawer->categoryHeight(index, listView->viewOptions()));
+    retRect.setHeight(categoryDrawer->categoryHeight(index, option));
 
     return retRect;
 }
@@ -501,7 +506,6 @@ void DCategorizedView::Private::drawNewCategory(const QModelIndex& index, int so
     categoryDrawer->drawCategory(index, sortRole, optionCopy, painter);
 }
 
-
 void DCategorizedView::Private::updateScrollbars()
 {
     listView->horizontalScrollBar()->setRange(0, 0);
@@ -523,7 +527,8 @@ void DCategorizedView::Private::updateScrollbars()
 
 void DCategorizedView::Private::drawDraggedItems(QPainter* painter)
 {
-    QStyleOptionViewItem option = listView->viewOptions();
+    QStyleOptionViewItem option;
+    option.initFrom(listView);
     option.state               &= ~QStyle::State_MouseOver;
 
     foreach (const QModelIndex& index, listView->selectionModel()->selectedIndexes())
@@ -809,7 +814,8 @@ void DCategorizedView::paintEvent(QPaintEvent* event)
     }
 
     bool alternatingRows          = alternatingRowColors();
-    QStyleOptionViewItem option = viewOptions();
+    QStyleOptionViewItem option;
+    option.initFrom(this);
     option.widget                 = this;
 
     if (wordWrap())
@@ -1918,7 +1924,8 @@ void DCategorizedView::rowsInsertedArtifficial(const QModelIndex& parent, int st
     }
     else
     {
-        QStyleOptionViewItem option = viewOptions();
+        QStyleOptionViewItem option;
+        option.initFrom(this);
 
         for (int k = 0 ; k < rowCount ; ++k)
         {
