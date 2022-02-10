@@ -37,8 +37,6 @@
 namespace Digikam
 {
 
-class Album;
-
 class MetadataSynchronizer : public MaintenanceTool
 {
     Q_OBJECT
@@ -55,7 +53,7 @@ public:
 
     /** Constructor which sync all pictures metadata from an Albums list. If list is empty, whole Albums collection is processed.
      */
-    explicit MetadataSynchronizer(const AlbumList& list=AlbumList(), SyncDirection direction = WriteFromDatabaseToFile, ProgressItem* const parent = nullptr);
+    explicit MetadataSynchronizer(const AlbumList& list = AlbumList(), SyncDirection direction = WriteFromDatabaseToFile, ProgressItem* const parent = nullptr);
 
     /** Constructor which sync all pictures metadata from an Images list
      */

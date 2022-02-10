@@ -27,11 +27,13 @@
 
 // Qt includes
 
+#include <QList>
 #include <QObject>
 
 // Local includes
 
 #include "maintenancetool.h"
+#include "iteminfo.h"
 
 namespace Digikam
 {
@@ -39,8 +41,6 @@ namespace Digikam
 class DImg;
 class FacePipelinePackage;
 class FaceScanSettings;
-class ItemInfo;
-class ItemInfoList;
 
 class FacesDetector : public MaintenanceTool
 {

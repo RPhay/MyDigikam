@@ -29,17 +29,14 @@
 #include <QDialog>
 #include <QString>
 #include <QWidget>
+#include <QList>
 
 // Local includes
 
+#include "identity.h"
 #include "dlayoutbox.h"
 #include "dworkingpixmap.h"
 #include "maintenancetool.h"
-
-namespace Digikam
-{
-    class Identity;
-}
 
 namespace Digikam
 {

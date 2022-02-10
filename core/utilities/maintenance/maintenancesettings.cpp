@@ -63,7 +63,6 @@ MaintenanceSettings::~MaintenanceSettings()
 //! qCDebug(DIGIKAM_GENERAL_LOG) stream operator. Writes property @a s to the debug output in a nicely formatted way.
 QDebug operator<<(QDebug dbg, const MaintenanceSettings& s)
 {
-<<<<<<< HEAD
     dbg.nospace() << QT_ENDL;
     dbg.nospace() << "wholeAlbums           : " << s.wholeAlbums                         << QT_ENDL;
     dbg.nospace() << "wholeTags             : " << s.wholeTags                           << QT_ENDL;

@@ -27,16 +27,16 @@
 // Qt includes
 
 #include <QObject>
+#include <QList>
 #include <QByteArray>
 
 // Local includes
 
+#include "album.h"
 #include "iteminfo.h"
 
 namespace Digikam
 {
-
-class Album;
 
 class ItemInfoJob : public QObject
 {

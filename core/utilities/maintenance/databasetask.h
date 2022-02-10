@@ -24,14 +24,14 @@
 #ifndef DIGIKAM_DATABASE_TASK_H
 #define DIGIKAM_DATABASE_TASK_H
 
+// Qt includes
+
+#include <QList>
+
 // Local includes
 
 #include "actionthreadbase.h"
-
-namespace Digikam
-{
-    class Identity;
-}
+#include "identity.h"
 
 namespace Digikam
 {

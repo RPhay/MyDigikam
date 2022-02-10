@@ -24,14 +24,18 @@
 #ifndef DIGIKAM_MAINTENANCE_DATA_H
 #define DIGIKAM_MAINTENANCE_DATA_H
 
+// Qt includes
+
+#include <QList>
+
 // Local includes
 
 #include "iteminfo.h"
+#include "identity.h"
 
 namespace Digikam
 {
 
-class Identity;
 class ImageQualitySettings;
 
 class MaintenanceData

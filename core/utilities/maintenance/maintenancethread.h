@@ -25,6 +25,10 @@
 #ifndef DIGIKAM_MAINTENANCE_THREAD_H
 #define DIGIKAM_MAINTENANCE_THREAD_H
 
+// Qt includes
+
+#include <QList>
+
 // Local includes
 
 #include "actionthreadbase.h"
@@ -56,7 +60,7 @@ public:
     void generateFingerprints(const QList<qlonglong>& itemIds, bool rebuildAll);
     void sortByImageQuality(const QStringList& paths, const ImageQualityContainer& quality);
 
-    void computeDatabaseJunk(bool thumbsDb=false, bool facesDb=false, bool similarityDb=false);
+    void computeDatabaseJunk(bool thumbsDb = false, bool facesDb = false, bool similarityDb = false);
     void cleanCoreDb(const QList<qlonglong>& imageIds);
     void cleanThumbsDb(const QList<int>& thumbnailIds);
     void cleanFacesDb(const QList<Identity>& staleIdentities);
