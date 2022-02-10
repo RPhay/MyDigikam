@@ -514,7 +514,7 @@ void AssignedListView::assignTools(const QMultiMap<int, QString>& map, AssignedL
 {
     // We pop all items in reverse order to have same order than selection from Batch Tools list.
 
-    QMapIterator<int, QString> it(map);
+    QMultiMapIterator<int, QString> it(map);
     it.toBack();
 
     while (it.hasPrevious())
