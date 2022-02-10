@@ -38,9 +38,9 @@ option(ENABLE_QWEBENGINE                 "Build digiKam with QWebEngine (default
 option(ENABLE_QWEBKIT                    "Build digiKam with Qt Webkit (default=OFF)"                                         OFF)
 
 if(ENABLE_QWEBENGINE OR ENABLE_QWEBKIT)
-  option(DISABLE_QWEB "Disable Web content" OFF)
+    option(DISABLE_QWEB "Disable Web content" OFF)
 else()
-  option(DISABLE_QWEB "Disable web content" ON)
+    option(DISABLE_QWEB "Disable web content" ON)
 endif()
 
 # Mysql support options (experimental):

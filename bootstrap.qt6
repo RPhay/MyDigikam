@@ -35,20 +35,18 @@ cd build
       -DDIGIKAMSC_COMPILE_PO=OFF \
       -DDIGIKAMSC_COMPILE_DOC=OFF \
       -DDIGIKAMSC_COMPILE_DIGIKAM=ON \
-      -DENABLE_KFILEMETADATASUPPORT=OFF \
+      -DENABLE_KFILEMETADATASUPPORT=ON \
       -DENABLE_AKONADICONTACTSUPPORT=OFF \
       -DENABLE_MYSQLSUPPORT=ON \
       -DENABLE_INTERNALMYSQL=ON \
       -DENABLE_MEDIAPLAYER=ON \
-      -DENABLE_DBUS=OFF \
+      -DENABLE_DBUS=ON \
       -DENABLE_APPSTYLES=ON \
-      -DENABLE_QWEBENGINE=$DK_QTWEBENGINE \
-      -DENABLE_FACESENGINE_DNN=ON \
-      -DENABLE_KIO=OFF \
+      -DENABLE_QWEBENGINE=ON \
       -Wno-dev
 
 if [ $? -ne 0 ]; then
-    echo "---------- Cannot configure digiKam $DK_VERSION."
+    echo "---------- Cannot configure digiKam."
     echo "---------- Aborting..."
     exit;
 fi
