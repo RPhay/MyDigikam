@@ -29,6 +29,7 @@
 #include <QSize>
 #include <QBrush>
 #include <QMimeData>
+#include <QIODevice>
 
 // KDE includes
 
