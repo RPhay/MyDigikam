@@ -35,6 +35,7 @@
 #include <QScopedPointer>
 #include <QString>
 #include <QAction>
+#include <QActionGroup>
 #include <QMenu>
 #include <QApplication>
 #include <QStringList>
