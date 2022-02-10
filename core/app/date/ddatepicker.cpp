@@ -65,7 +65,9 @@ DDatePicker::DDatePicker(const QDate& dt, QWidget* const parent)
 
 void DDatePicker::initWidget(const QDate& dt)
 {
-    const int spacingHint       = style()->pixelMetric(QStyle::PM_DefaultLayoutSpacing);
+    const int spacingHint = qMin(style()->pixelMetric(QStyle::PM_LayoutHorizontalSpacing),
+                                 style()->pixelMetric(QStyle::PM_LayoutVerticalSpacing));
+
     QBoxLayout* const topLayout = new QVBoxLayout(this);
     topLayout->setSpacing(0);
     topLayout->setContentsMargins(0, 0, 0, 0);
@@ -558,8 +560,7 @@ void DDatePicker::setFontSize(int s)
     int h          = textSize.height();
     opt.rect.setHeight(h);                  // PM_MenuButtonIndicator depends on the height
 
-    QSize metricBound = style()->sizeFromContents(QStyle::CT_ToolButton, &opt, QSize(w, h), d->selectMonth)
-                                                  .expandedTo(QApplication::globalStrut());
+    QSize metricBound = style()->sizeFromContents(QStyle::CT_ToolButton, &opt, QSize(w, h), d->selectMonth);
 
     d->selectMonth->setMinimumSize(metricBound);
 }
@@ -580,7 +581,10 @@ void DDatePicker::setCloseButton(bool enable)
     {
         d->closeButton        = new QToolButton(this);
         d->closeButton->setAutoRaise(true);
-        const int spacingHint = style()->pixelMetric(QStyle::PM_DefaultLayoutSpacing);
+
+        const int spacingHint = qMin(style()->pixelMetric(QStyle::PM_LayoutHorizontalSpacing),
+                                     style()->pixelMetric(QStyle::PM_LayoutVerticalSpacing));
+
         d->navigationLayout->addSpacing(spacingHint);
         d->navigationLayout->addWidget(d->closeButton);
         d->closeButton->setToolTip(i18nc("@action:button", "Close"));
