@@ -496,7 +496,7 @@ void AbstractAlbumTreeView::mousePressEvent(QMouseEvent* e)
             }
         }
     }
-    else if (m_checkOnMiddleClick && (e->button() == Qt::MidButton))
+    else if (m_checkOnMiddleClick && (e->button() == Qt::MiddleButton))
     {
         Album* const a = m_albumFilterModel->albumForIndex(indexAt(e->pos()));
 

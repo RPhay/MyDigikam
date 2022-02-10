@@ -139,7 +139,7 @@ void RatingFilterWidget::mousePressEvent(QMouseEvent* e)
 
     d->dirty = false;
 
-    if ( e->button() == Qt::LeftButton || e->button() == Qt::MidButton )
+    if ( e->button() == Qt::LeftButton || e->button() == Qt::MiddleButton )
     {
         d->dirty = true;
         int pos  = e->x() / regPixmapWidth() +1;
