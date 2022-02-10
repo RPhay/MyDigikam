@@ -72,7 +72,12 @@ public:
 
 protected:
 
-    void enterEvent(QEvent*);
+#if (QT_VERSION > QT_VERSION_CHECK(5, 99, 0))
+    void enterEvent(QEnterEvent*)                     override;
+#else
+    void enterEvent(QEvent*)                          override;
+#endif
+
     void leaveEvent(QEvent*)                          override;
     void paintEvent(QPaintEvent*)                     override;
     void updateToolTip();

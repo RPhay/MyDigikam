@@ -385,7 +385,11 @@ bool ItemPreviewView::acceptsMouseClick(QMouseEvent* e)
     return d->faceGroup->acceptsMouseClick(mapToScene(e->pos()));
 }
 
+#if (QT_VERSION > QT_VERSION_CHECK(5, 99, 0))
 void ItemPreviewView::enterEvent(QEnterEvent* e)
+#else
+void ItemPreviewView::enterEvent(QEvent* e)
+#endif
 {
     d->faceGroup->enterEvent(e);
 }

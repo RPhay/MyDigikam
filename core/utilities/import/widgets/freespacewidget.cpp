@@ -378,7 +378,11 @@ void FreeSpaceWidget::updateToolTip()
     }
 }
 
+#if (QT_VERSION > QT_VERSION_CHECK(5, 99, 0))
+void FreeSpaceWidget::enterEvent(QEnterEvent* e)
+#else
 void FreeSpaceWidget::enterEvent(QEvent* e)
+#endif
 {
     Q_UNUSED(e)
     d->toolTip->show();
