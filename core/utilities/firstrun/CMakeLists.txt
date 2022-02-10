@@ -9,7 +9,6 @@ APPLY_COMMON_POLICIES()
 
 set(libfirstrun_SRCS
     ${CMAKE_CURRENT_SOURCE_DIR}/firstrundlg.cpp
-    ${CMAKE_CURRENT_SOURCE_DIR}/migratefromdigikam4page.cpp
     ${CMAKE_CURRENT_SOURCE_DIR}/welcomepage.cpp
     ${CMAKE_CURRENT_SOURCE_DIR}/collectionpage.cpp
     ${CMAKE_CURRENT_SOURCE_DIR}/databasepage.cpp
@@ -32,7 +31,16 @@ include_directories($<TARGET_PROPERTY:Qt${QT_VERSION_MAJOR}::Gui,INTERFACE_INCLU
 )
 
 if (Qt6_FOUND)
+
   include_directories($<TARGET_PROPERTY:Qt${QT_VERSION_MAJOR}::Core5Compat,INTERFACE_INCLUDE_DIRECTORIES>)
+
+else()
+
+    set(libfirstrun_SRCS
+        ${libfirstrun_SRCS}
+        ${CMAKE_CURRENT_SOURCE_DIR}/migratefromdigikam4page.cpp
+    )
+
 endif ()
 
 # Used by digikamgui
