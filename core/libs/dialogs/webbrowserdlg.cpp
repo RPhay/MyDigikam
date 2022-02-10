@@ -39,6 +39,7 @@
 #   include <QWebEnginePage>
 #   include <QWebEngineProfile>
 #   include <QWebEngineCookieStore>
+#   include <QWebEngineFindTextResult>
 #else
 #   include <qwebview.h>
 #endif
