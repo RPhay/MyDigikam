@@ -144,7 +144,10 @@ make MXE_TARGETS=$MXE_BUILD_TARGETS \
 
 echo -e "\n"
 
-#     gdb \
+cp -f ../../scripts/create_manifest.sh $MXE_BUILDROOT
+cd $MXE_BUILDROOT
+$MXE_BUILDROOT/create_manifest.sh $MXE_BUILDROOT mxe
+cp $MXE_BUILDROOT/MXE_manifest.txt $ORIG_WD/data/
 
 #################################################################################################
 
