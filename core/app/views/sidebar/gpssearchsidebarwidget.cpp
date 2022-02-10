@@ -74,7 +74,7 @@ GPSSearchSideBarWidget::GPSSearchSideBarWidget(QWidget* const parent,
       d            (new Private)
 {
     setObjectName(QLatin1String("GPS Search Sidebar"));
-    setProperty("Shortcut", Qt::CTRL + Qt::SHIFT + Qt::Key_F8);
+    setProperty("Shortcut", Qt::CTRL | Qt::SHIFT | Qt::Key_F8);
 
     d->gpsSearchView = new GPSSearchView(this, searchModel, searchModificationHelper, imageFilterModel, itemSelectionModel);
     d->gpsSearchView->setConfigGroup(getConfigGroup());

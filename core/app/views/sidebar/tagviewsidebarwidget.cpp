@@ -102,7 +102,7 @@ TagViewSideBarWidget::TagViewSideBarWidget(QWidget* const parent, TagModel* cons
       d            (new Private)
 {
     setObjectName(QLatin1String("TagView Sidebar"));
-    setProperty("Shortcut", Qt::CTRL + Qt::SHIFT + Qt::Key_F2);
+    setProperty("Shortcut", Qt::CTRL | Qt::SHIFT | Qt::Key_F2);
 
     const int spacing         = qMin(QApplication::style()->pixelMetric(QStyle::PM_LayoutHorizontalSpacing),
                              QApplication::style()->pixelMetric(QStyle::PM_LayoutVerticalSpacing));

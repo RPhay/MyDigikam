@@ -99,7 +99,7 @@ void GeolocationEditPlugin::setup(QObject* const parent)
     ac->setText(i18nc("@action", "Edit Geolocation..."));
     ac->setObjectName(QLatin1String("geolocation_edit"));
     ac->setActionCategory(DPluginAction::GenericMetadata);
-    ac->setShortcut(Qt::CTRL + Qt::SHIFT + Qt::Key_G);
+    ac->setShortcut(Qt::CTRL | Qt::SHIFT | Qt::Key_G);
 
     connect(ac, SIGNAL(triggered(bool)),
             this, SLOT(slotEditGeolocation()));

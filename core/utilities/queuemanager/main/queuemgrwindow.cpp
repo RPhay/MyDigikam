@@ -280,20 +280,20 @@ void QueueMgrWindow::setupActions()
     d->runAction->setEnabled(false);
     connect(d->runAction, SIGNAL(triggered()), this, SLOT(slotRun()));
     ac->addAction(QLatin1String("queuemgr_run"), d->runAction);
-    ac->setDefaultShortcut(d->runAction, Qt::CTRL + Qt::Key_P);
+    ac->setDefaultShortcut(d->runAction, Qt::CTRL | Qt::Key_P);
 
     d->runAllAction = new QAction(QIcon::fromTheme(QLatin1String("media-playback-start")),
                                i18n("Run all"), this);
     d->runAllAction->setEnabled(false);
     connect(d->runAllAction, SIGNAL(triggered()), this, SLOT(slotRunAll()));
     ac->addAction(QLatin1String("queuemgr_run_all"), d->runAllAction);
-    ac->setDefaultShortcut(d->runAllAction, Qt::CTRL + Qt::ALT + Qt::Key_P);
+    ac->setDefaultShortcut(d->runAllAction, Qt::CTRL | Qt::ALT | Qt::Key_P);
 
     d->stopAction = new QAction(QIcon::fromTheme(QLatin1String("media-playback-stop")), i18n("Stop"), this);
     d->stopAction->setEnabled(false);
     connect(d->stopAction, SIGNAL(triggered()), this, SLOT(slotStop()));
     ac->addAction(QLatin1String("queuemgr_stop"), d->stopAction);
-    ac->setDefaultShortcut(d->stopAction, Qt::CTRL + Qt::Key_S);
+    ac->setDefaultShortcut(d->stopAction, Qt::CTRL | Qt::Key_S);
 
     d->newQueueAction = new QAction(QIcon::fromTheme(QLatin1String("list-add")), i18n("New Queue"), this);
     connect(d->newQueueAction, SIGNAL(triggered()), d->queuePool, SLOT(slotAddQueue()));
@@ -313,7 +313,7 @@ void QueueMgrWindow::setupActions()
     d->removeItemsSelAction->setEnabled(false);
     connect(d->removeItemsSelAction, SIGNAL(triggered()), d->queuePool, SLOT(slotRemoveSelectedItems()));
     ac->addAction(QLatin1String("queuemgr_removeitemssel"), d->removeItemsSelAction);
-    ac->setDefaultShortcut(d->removeItemsSelAction, Qt::CTRL + Qt::Key_K);
+    ac->setDefaultShortcut(d->removeItemsSelAction, Qt::CTRL | Qt::Key_K);
 
     d->removeItemsDoneAction = new QAction(i18n("Remove processed items"), this);
     d->removeItemsDoneAction->setEnabled(false);
@@ -324,7 +324,7 @@ void QueueMgrWindow::setupActions()
     d->clearQueueAction->setEnabled(false);
     connect(d->clearQueueAction, SIGNAL(triggered()), d->queuePool, SLOT(slotClearList()));
     ac->addAction(QLatin1String("queuemgr_clearlist"), d->clearQueueAction);
-    ac->setDefaultShortcut(d->clearQueueAction, Qt::CTRL + Qt::SHIFT + Qt::Key_K);
+    ac->setDefaultShortcut(d->clearQueueAction, Qt::CTRL | Qt::SHIFT | Qt::Key_K);
 
     QAction* const close = buildStdAction(StdCloseAction, this, SLOT(slotClose()), this);
     ac->addAction(QLatin1String("queuemgr_close"), close);

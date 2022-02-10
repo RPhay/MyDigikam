@@ -46,7 +46,7 @@ void ImageWindow::setupActions()
     connect(d->fileDeletePermanentlyAction, SIGNAL(triggered()),
             this, SLOT(slotDeleteCurrentItemPermanently()));
     ac->addAction(QLatin1String("image_delete_permanently"), d->fileDeletePermanentlyAction);
-    ac->setDefaultShortcut(d->fileDeletePermanentlyAction, Qt::SHIFT + Qt::Key_Delete);
+    ac->setDefaultShortcut(d->fileDeletePermanentlyAction, Qt::SHIFT | Qt::Key_Delete);
 
     // These two actions are hidden, no menu entry, no toolbar entry, no shortcut.
     // Power users may add them.
@@ -74,17 +74,17 @@ void ImageWindow::setupActions()
 
     QAction* const editTitles = new QAction(i18n("Edit Titles"), this);
     ac->addAction(QLatin1String("edit_titles"), editTitles);
-    ac->setDefaultShortcut(editTitles, Qt::ALT + Qt::SHIFT + Qt::Key_T);
+    ac->setDefaultShortcut(editTitles, Qt::ALT | Qt::SHIFT | Qt::Key_T);
     connect(editTitles, SIGNAL(triggered()), this, SLOT(slotRightSideBarActivateTitles()));
 
     QAction* const editComments = new QAction(i18n("Edit Comments"), this);
     ac->addAction(QLatin1String("edit_comments"), editComments);
-    ac->setDefaultShortcut(editComments, Qt::ALT + Qt::SHIFT + Qt::Key_C);
+    ac->setDefaultShortcut(editComments, Qt::ALT | Qt::SHIFT | Qt::Key_C);
     connect(editComments, SIGNAL(triggered()), this, SLOT(slotRightSideBarActivateComments()));
 
     QAction* const assignedTags = new QAction(i18n("Show Assigned Tags"), this);
     ac->addAction(QLatin1String("assigned_tags"), assignedTags);
-    ac->setDefaultShortcut(assignedTags, Qt::ALT + Qt::SHIFT + Qt::Key_A);
+    ac->setDefaultShortcut(assignedTags, Qt::ALT | Qt::SHIFT | Qt::Key_A);
     connect(assignedTags, SIGNAL(triggered()), this, SLOT(slotRightSideBarActivateAssignedTags()));
 }
 

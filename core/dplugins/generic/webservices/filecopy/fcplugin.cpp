@@ -102,7 +102,7 @@ void FCPlugin::setup(QObject* const parent)
     ac->setText(i18nc("@action", "Export to local storage..."));
     ac->setObjectName(QLatin1String("export_filecopy"));
     ac->setActionCategory(DPluginAction::GenericExport);
-    ac->setShortcut(Qt::CTRL + Qt::ALT + Qt::SHIFT + Qt::Key_L);
+    ac->setShortcut(Qt::CTRL | Qt::ALT | Qt::SHIFT | Qt::Key_L);
 
     connect(ac, SIGNAL(triggered(bool)),
             this, SLOT(slotFileCopyExport()));

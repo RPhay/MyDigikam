@@ -101,7 +101,7 @@ void TimeAdjustPlugin::setup(QObject* const parent)
     ac->setText(i18nc("@action", "Adjust Time && Date..."));
     ac->setObjectName(QLatin1String("timeadjust_edit"));
     ac->setActionCategory(DPluginAction::GenericMetadata);
-    ac->setShortcut(Qt::CTRL + Qt::SHIFT + Qt::Key_D);
+    ac->setShortcut(Qt::CTRL | Qt::SHIFT | Qt::Key_D);
 
     connect(ac, SIGNAL(triggered(bool)),
             this, SLOT(slotTimeAdjust()));

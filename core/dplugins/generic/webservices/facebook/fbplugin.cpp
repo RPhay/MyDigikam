@@ -103,7 +103,7 @@ void FbPlugin::setup(QObject* const parent)
     ac->setText(i18nc("@action", "Export to &Facebook..."));
     ac->setObjectName(QLatin1String("export_facebook"));
     ac->setActionCategory(DPluginAction::GenericExport);
-    ac->setShortcut(Qt::CTRL + Qt::ALT + Qt::SHIFT + Qt::Key_F);
+    ac->setShortcut(Qt::CTRL | Qt::ALT | Qt::SHIFT | Qt::Key_F);
 
     connect(ac, SIGNAL(triggered(bool)),
             this, SLOT(slotFaceBook()));

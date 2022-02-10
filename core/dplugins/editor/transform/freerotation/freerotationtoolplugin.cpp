@@ -127,9 +127,9 @@ void FreeRotationToolPlugin::setup(QObject* const parent)
         collection->addAction(point2Action->objectName(),     point2Action);
         collection->addAction(autoAdjustAction->objectName(), autoAdjustAction);
 
-        collection->setDefaultShortcut(point1Action,     Qt::CTRL + Qt::SHIFT + Qt::Key_1);
-        collection->setDefaultShortcut(point2Action,     Qt::CTRL + Qt::SHIFT + Qt::Key_2);
-        collection->setDefaultShortcut(autoAdjustAction, Qt::CTRL + Qt::SHIFT + Qt::Key_R);
+        collection->setDefaultShortcut(point1Action,     Qt::CTRL | Qt::SHIFT | Qt::Key_1);
+        collection->setDefaultShortcut(point2Action,     Qt::CTRL | Qt::SHIFT | Qt::Key_2);
+        collection->setDefaultShortcut(autoAdjustAction, Qt::CTRL | Qt::SHIFT | Qt::Key_R);
     }
 }
 

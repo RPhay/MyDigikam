@@ -90,7 +90,7 @@ void AutoCorrectionToolPlugin::setup(QObject* const parent)
 
     // NOTE: Photoshop 7 use CTRL+SHIFT+B
 
-    ac->setShortcut(Qt::CTRL + Qt::SHIFT + Qt::Key_B);
+    ac->setShortcut(Qt::CTRL | Qt::SHIFT | Qt::Key_B);
     ac->setActionCategory(DPluginAction::EditorColors);
 
     connect(ac, SIGNAL(triggered(bool)),

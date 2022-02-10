@@ -124,7 +124,7 @@ TimelineSideBarWidget::TimelineSideBarWidget(QWidget* const parent,
       d            (new Private)
 {
     setObjectName(QLatin1String("TimeLine Sidebar"));
-    setProperty("Shortcut", Qt::CTRL + Qt::SHIFT + Qt::Key_F5);
+    setProperty("Shortcut", Qt::CTRL | Qt::SHIFT | Qt::Key_F5);
 
     d->searchModificationHelper = searchModificationHelper;
     d->timer                    = new QTimer(this);

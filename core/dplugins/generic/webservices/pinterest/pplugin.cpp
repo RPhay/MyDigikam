@@ -94,7 +94,7 @@ void PPlugin::setup(QObject* const parent)
     ac->setText(i18nc("@action", "Export to &Pinterest..."));
     ac->setObjectName(QLatin1String("export_pinterest"));
     ac->setActionCategory(DPluginAction::GenericExport);
-    ac->setShortcut(Qt::CTRL + Qt::ALT + Qt::SHIFT + Qt::Key_I);
+    ac->setShortcut(Qt::CTRL | Qt::ALT | Qt::SHIFT | Qt::Key_I);
 
     connect(ac, SIGNAL(triggered(bool)),
             this, SLOT(slotPinterest()));

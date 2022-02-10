@@ -92,7 +92,7 @@ void MetadataEditPlugin::setup(QObject* const parent)
     ac->setText(i18nc("@action", "Edit Metadata..."));
     ac->setObjectName(QLatin1String("metadata_edit"));
     ac->setActionCategory(DPluginAction::GenericMetadata);
-    ac->setShortcut(Qt::CTRL + Qt::SHIFT + Qt::Key_M);
+    ac->setShortcut(Qt::CTRL | Qt::SHIFT | Qt::Key_M);
 
     connect(ac, SIGNAL(triggered(bool)),
             this, SLOT(slotEditMetadata()));

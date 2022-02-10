@@ -67,7 +67,7 @@ DateFolderViewSideBarWidget::DateFolderViewSideBarWidget(QWidget* const parent,
       d            (new Private)
 {
     setObjectName(QLatin1String("DateFolderView Sidebar"));
-    setProperty("Shortcut", Qt::CTRL + Qt::SHIFT + Qt::Key_F4);
+    setProperty("Shortcut", Qt::CTRL | Qt::SHIFT | Qt::Key_F4);
 
     const int spacing         = qMin(QApplication::style()->pixelMetric(QStyle::PM_LayoutHorizontalSpacing),
                              QApplication::style()->pixelMetric(QStyle::PM_LayoutVerticalSpacing));

@@ -89,7 +89,7 @@ void ContextMenuHelper::addActionEditTag(TagModificationHelper* const helper, TA
 
     // This is only for the user to give a hint for the shortcut key
 
-    editTagAction->setShortcut(Qt::ALT + Qt::Key_Return);
+    editTagAction->setShortcut(Qt::ALT | Qt::Key_Return);
     addAction(editTagAction);
     helper->bindTag(editTagAction, tag);
 

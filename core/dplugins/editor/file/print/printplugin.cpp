@@ -91,7 +91,7 @@ void PrintToolPlugin::setup(QObject* const parent)
     ac->setIcon(icon());
     ac->setText(i18nc("@action", "Print Image..."));
     ac->setObjectName(QLatin1String("editorwindow_print"));
-    ac->setShortcut(Qt::CTRL + Qt::Key_P);
+    ac->setShortcut(Qt::CTRL | Qt::Key_P);
     ac->setActionCategory(DPluginAction::EditorFile);
 
     connect(ac, SIGNAL(triggered(bool)),

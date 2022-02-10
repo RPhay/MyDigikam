@@ -94,7 +94,7 @@ void ImageShackPlugin::setup(QObject* const parent)
     ac->setText(i18nc("@action", "Export to &Imageshack..."));
     ac->setObjectName(QLatin1String("export_imageshack"));
     ac->setActionCategory(DPluginAction::GenericExport);
-    ac->setShortcut(Qt::CTRL + Qt::ALT + Qt::SHIFT + Qt::Key_M);
+    ac->setShortcut(Qt::CTRL | Qt::ALT | Qt::SHIFT | Qt::Key_M);
 
     connect(ac, SIGNAL(triggered(bool)),
             this, SLOT(slotImageShack()));

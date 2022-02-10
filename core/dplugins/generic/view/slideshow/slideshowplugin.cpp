@@ -213,8 +213,8 @@ void SlideShowPlugin::setup(QObject* const parent)
             collection->addAction(slideShowRecursiveAction->objectName(), slideShowRecursiveAction);
 
             collection->setDefaultShortcut(slideShowAllAction,       Qt::Key_F9);
-            collection->setDefaultShortcut(slideShowSelectionAction, Qt::ALT + Qt::Key_F9);
-            collection->setDefaultShortcut(slideShowRecursiveAction, Qt::SHIFT + Qt::Key_F9);
+            collection->setDefaultShortcut(slideShowSelectionAction, Qt::ALT | Qt::Key_F9);
+            collection->setDefaultShortcut(slideShowRecursiveAction, Qt::SHIFT | Qt::Key_F9);
         }
     }
     else

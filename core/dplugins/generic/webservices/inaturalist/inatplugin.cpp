@@ -96,7 +96,7 @@ void INatPlugin::setup(QObject* const parent)
     ac->setText(i18nc("@action", "Export to &iNaturalist..."));
     ac->setObjectName(QLatin1String("export_inaturalist"));
     ac->setActionCategory(DPluginAction::GenericExport);
-    ac->setShortcut(Qt::CTRL + Qt::ALT + Qt::SHIFT + Qt::Key_N);
+    ac->setShortcut(Qt::CTRL | Qt::ALT | Qt::SHIFT | Qt::Key_N);
 
     connect(ac, SIGNAL(triggered(bool)),
             this, SLOT(slotINat()));

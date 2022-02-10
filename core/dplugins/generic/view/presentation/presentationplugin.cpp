@@ -106,7 +106,7 @@ void PresentationPlugin::setup(QObject* const parent)
     ac->setText(i18nc("@action", "Presentation..."));
     ac->setObjectName(QLatin1String("presentation"));
     ac->setActionCategory(DPluginAction::GenericView);
-    ac->setShortcut(Qt::ALT + Qt::SHIFT + Qt::Key_F9);
+    ac->setShortcut(Qt::ALT | Qt::SHIFT | Qt::Key_F9);
 
     connect(ac, SIGNAL(triggered(bool)),
             this, SLOT(slotPresentation()));
