@@ -164,12 +164,12 @@ void LightTableWindow::setupActions()
     d->rightZoomPlusAction  = buildStdAction(StdZoomInAction, d->previewView, SLOT(slotIncreaseRightZoom()), this);
     d->rightZoomPlusAction->setEnabled(false);
     ac->addAction(QLatin1String("lighttable_zoomplus_right"), d->rightZoomPlusAction);
-    ac->setDefaultShortcut(d->rightZoomPlusAction, Qt::SHIFT + d->rightZoomPlusAction->shortcut()[0]);
+    ac->setDefaultShortcut(d->rightZoomPlusAction, Qt::SHIFT | d->rightZoomPlusAction->shortcut()[0]);
 
     d->rightZoomMinusAction  = buildStdAction(StdZoomOutAction, d->previewView, SLOT(slotDecreaseRightZoom()), this);
     d->rightZoomMinusAction->setEnabled(false);
     ac->addAction(QLatin1String("lighttable_zoomminus_right"), d->rightZoomMinusAction);
-    ac->setDefaultShortcut(d->rightZoomMinusAction, Qt::SHIFT + d->rightZoomMinusAction->shortcut()[0]);
+    ac->setDefaultShortcut(d->rightZoomMinusAction, Qt::SHIFT | d->rightZoomMinusAction->shortcut()[0]);
 
     d->rightZoomTo100percents = new QAction(QIcon::fromTheme(QLatin1String("zoom-original")), i18n("Zoom to 100%"), this);
     connect(d->rightZoomTo100percents, SIGNAL(triggered()), d->previewView, SLOT(slotRightZoomTo100()));
