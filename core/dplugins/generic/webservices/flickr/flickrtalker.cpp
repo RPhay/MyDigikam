@@ -50,15 +50,16 @@
 #include "wstoolutils.h"
 #include "flickrmpform.h"
 #include "flickrwindow.h"
-#if defined HAVE_QWEBENGINE || defined HAVE_QWEBKIT
-    #include "webbrowserdlg.h"
-#else
-    #include "dnowebdlg.h"
-#endif
 #include "digikam_debug.h"
 #include "digikam_config.h"
 #include "digikam_version.h"
 #include "previewloadthread.h"
+
+#if defined HAVE_QWEBENGINE || defined HAVE_QWEBKIT
+#   include "webbrowserdlg.h"
+#else
+#   include "dnowebdlg.h"
+#endif
 
 // OAuth2 library includes
 
@@ -246,7 +247,7 @@ void FlickrTalker::slotCatchUrl(const QUrl& url)
 
     if (query.hasQueryItem(QLatin1String("oauth_token")))
     {
-        QMultiMap<QString, QString> queryParams;
+        QMap<QString, QString> queryParams;
         queryParams.insert(QLatin1String("oauth_token"),
                                          query.queryItemValue(QLatin1String("oauth_token")));
         queryParams.insert(QLatin1String("oauth_verifier"),
