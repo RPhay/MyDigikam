@@ -80,7 +80,7 @@ private:
 
     void    run() override;
 
-    void    preProcessingMultithreaded(const QUrl& url, volatile bool& error);
+    bool    preProcessingMultithreaded(const QUrl& url);
     bool    startPreProcessing(const QList<QUrl>& inUrls, bool  align, const QString& alignPath, QString& errors);
     bool    computePreview(const QUrl& inUrl, QUrl& outUrl);
     bool    convertRaw(const QUrl& inUrl, QUrl& outUrl);

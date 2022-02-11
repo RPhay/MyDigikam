@@ -506,12 +506,9 @@ void ExpoBlendingThread::run()
     }
 }
 
-void ExpoBlendingThread::preProcessingMultithreaded(const QUrl& url, volatile bool& error)
+bool ExpoBlendingThread::preProcessingMultithreaded(const QUrl& url)
 {
-    if (error)
-    {
-        return;
-    }
+    bool error = false;
 
     // check if we have to RAW file -> use preview image then
 
@@ -522,13 +519,13 @@ void ExpoBlendingThread::preProcessingMultithreaded(const QUrl& url, volatile bo
         if (!convertRaw(url, preprocessedUrl))
         {
             error = true;
-            return;
+            return error;
         }
 
         if (!computePreview(preprocessedUrl, previewUrl))
         {
             error = true;
-            return;
+            return error;
         }
 
         d->lock.lock();
@@ -548,7 +545,7 @@ void ExpoBlendingThread::preProcessingMultithreaded(const QUrl& url, volatile bo
         if (!computePreview(url, previewUrl))
         {
             error = true;
-            return;
+            return error;
         }
 
         d->lock.lock();
@@ -559,6 +556,8 @@ void ExpoBlendingThread::preProcessingMultithreaded(const QUrl& url, volatile bo
         d->preProcessedUrlsMap.insert(url, ExpoBlendingItemPreprocessedUrls(url, previewUrl));
         d->lock.unlock();
     }
+
+    return error;
 }
 
 bool ExpoBlendingThread::startPreProcessing(const QList<QUrl>& inUrls,
@@ -578,9 +577,9 @@ bool ExpoBlendingThread::startPreProcessing(const QList<QUrl>& inUrls,
     d->mixedUrls.clear();
     d->preProcessedUrlsMap.clear();
 
-    volatile bool error = false;
+    bool error = false;
 
-    QList <QFuture<void> > tasks;
+    QList <QFuture<bool> > tasks;
 
     for (int i = 0 ; i < inUrls.size() ; ++i)
     {
@@ -592,15 +591,20 @@ bool ExpoBlendingThread::startPreProcessing(const QList<QUrl>& inUrls,
 #else
                                        this, &ExpoBlendingThread::preProcessingMultithreaded,
 #endif
-                                       url,
-                                       error
+                                       url
                                       )
         );
     }
 
-    for (QFuture<void>& t: tasks)
+    for (QFuture<bool>& t: tasks)
     {
         t.waitForFinished();
+#if (QT_VERSION > QT_VERSION_CHECK(5, 99, 0))
+        error |= t.takeResult();
+#else
+        error |= t.result();
+#endif
+
     }
 
     if (error)
