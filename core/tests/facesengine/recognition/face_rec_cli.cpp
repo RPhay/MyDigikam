@@ -284,9 +284,9 @@ int main(int argc, char* argv[])
 
     for (unsigned i = 1 ; i <= nbOfIdentities ; ++i)
     {
-        QMap<QString, QString> attributes;
-        attributes[QLatin1String("name")] = QString::number(i);
-        idMap[i]                          = recognizer.addIdentityDebug(attributes);
+        QMultiMap<QString, QString> attributes;
+        attributes.insert(QLatin1String("name"), QString::number(i));
+        idMap[i] = recognizer.addIdentityDebug(attributes);
     }
 
     // Init FaceDetector used for detecting faces and bounding box

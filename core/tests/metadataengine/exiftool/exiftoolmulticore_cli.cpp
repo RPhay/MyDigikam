@@ -146,19 +146,26 @@ int main(int argc, char** argv)
 
     qCDebug(DIGIKAM_TESTS_LOG) << "ExifTool parsing images:" << imageFiles;
 
-    QList <QFuture<void> > tasks;
+    QList <QFuture<bool> > tasks;
 
     foreach (const QString& imageFile, imageFiles)
     {
-        tasks.append(QtConcurrent::run(&s_exifToolParseThreaded,
+        tasks.append(QtConcurrent::run(
+                                       &s_exifToolParseThreaded,
                                        imageDir.path() + QLatin1Char('/') + imageFile
-                                      ));
+                                      )
+        );
     }
 
-    foreach (QFuture<void> t, tasks)
+    bool result = false;
+
+    foreach (QFuture<bool> t, tasks)
     {
         t.waitForFinished();
+        result |= t.result();
     }
+
+    qCDebug(DIGIKAM_TESTS_LOG) << "ExifTool parsing completed:" << result;
 
     return 0;
 }
