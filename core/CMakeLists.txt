@@ -95,12 +95,23 @@ find_package(Qt${QT_VERSION_MAJOR} REQUIRED
 )
 
 if (Qt6_FOUND)
+
     find_package(Qt${QT_VERSION_MAJOR} REQUIRED NO_MODULE COMPONENTS Core5Compat)
-    set(ICON_INSTALL_DIR      ${CMAKE_INSTALL_DATAROOTDIR}/icons)
-    set(XDG_APPS_INSTALL_DIR  ${CMAKE_INSTALL_DATAROOTDIR}/applications)
-    set(KNOTIFYRC_INSTALL_DIR ${CMAKE_INSTALL_DATAROOTDIR}/knotifications5)
-    set(BIN_INSTALL_DIR       ${CMAKE_INSTALL_EXECROOTDIR}/bin)
-endif ()
+
+    set(DATA_INSTALL_DIR      ${KDE_INSTALL_FULL_DATADIR})
+    set(ICON_INSTALL_DIR      ${KDE_INSTALL_FULL_ICONDIR})
+    set(XDG_APPS_INSTALL_DIR  ${KDE_INSTALL_FULL_APPDIR})
+    set(KNOTIFYRC_INSTALL_DIR ${KDE_INSTALL_FULL_KNOTIFYRCDIR})
+    set(BIN_INSTALL_DIR       ${KDE_INSTALL_FULL_BINDIR})
+    set(PLUGIN_INSTALL_DIR    ${KDE_INSTALL_FULL_PLUGINDIR})
+    message(STATUS "DATA_INSTALL_DIR     : ${DATA_INSTALL_DIR}")
+    message(STATUS "ICON_INSTALL_DIR     : ${ICON_INSTALL_DIR}")
+    message(STATUS "XDG_APPS_INSTALL_DIR : ${XDG_APPS_INSTALL_DIR}")
+    message(STATUS "KNOTIFYRC_INSTALL_DIR: ${KNOTIFYRC_INSTALL_DIR}")
+    message(STATUS "BIN_INSTALL_DIR      : ${BIN_INSTALL_DIR}")
+    message(STATUS "PLUGIN_INSTALL_DIR   : ${PLUGIN_INSTALL_DIR}")
+
+endif()
 
 if (DISABLE_QWEB)
 
@@ -376,7 +387,7 @@ if(MINGW)
     # NOTE: inspired from https://phabricator.kde.org/T3917
     if(ENABLE_MINGW_HARDENING_LINKER)
 
-        set(CMAKE_EXE_LINKER_FLAGS "${CMAKE_EXE_LINKER_FLAGS} -Wl,--dynamicbase -Wl,--nxcompat -Wl,--disable-auto-image-base")
+        set(CMAKE_EXE_LINKER_FLAGS    "${CMAKE_EXE_LINKER_FLAGS}    -Wl,--dynamicbase -Wl,--nxcompat -Wl,--disable-auto-image-base")
         set(CMAKE_SHARED_LINKER_FLAGS "${CMAKE_SHARED_LINKER_FLAGS} -Wl,--dynamicbase -Wl,--nxcompat -Wl,--disable-auto-image-base")
         set(CMAKE_MODULE_LINKER_FLAGS "${CMAKE_MODULE_LINKER_FLAGS} -Wl,--dynamicbase -Wl,--nxcompat -Wl,--disable-auto-image-base")
 
@@ -385,7 +396,7 @@ if(MINGW)
             # Enable high-entropy ASLR for 64-bit
             # The image base has to be >4GB for HEASLR to be enabled.
             # The values used here are kind of arbitrary.
-            set(CMAKE_EXE_LINKER_FLAGS "${CMAKE_EXE_LINKER_FLAGS} -Wl,--high-entropy-va -Wl,--image-base,0x140000000")
+            set(CMAKE_EXE_LINKER_FLAGS    "${CMAKE_EXE_LINKER_FLAGS}    -Wl,--high-entropy-va -Wl,--image-base,0x140000000")
             set(CMAKE_SHARED_LINKER_FLAGS "${CMAKE_SHARED_LINKER_FLAGS} -Wl,--high-entropy-va -Wl,--image-base,0x180000000")
             set(CMAKE_MODULE_LINKER_FLAGS "${CMAKE_MODULE_LINKER_FLAGS} -Wl,--high-entropy-va -Wl,--image-base,0x180000000")
 

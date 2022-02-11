@@ -66,7 +66,6 @@ ExternalProject_Add(ext_kf6_frameworks
                   <SOURCE_DIR>/kdesrc-build --rc-file=<SOURCE_DIR>/kdesrc-buildrc --delete-my-settings --stop-on-failure knotifyconfig                             &&
 # NOT YET PORTED  <SOURCE_DIR>/kdesrc-build --rc-file=<SOURCE_DIR>/kdesrc-buildrc --delete-my-settings --stop-on-failure marble                                    &&
                   <SOURCE_DIR>/kdesrc-build --rc-file=<SOURCE_DIR>/kdesrc-buildrc --delete-my-settings --stop-on-failure kcalendarcore
-                  <SOURCE_DIR>/kdesrc-build --rc-file=<SOURCE_DIR>/kdesrc-buildrc --delete-my-settings --stop-on-failure kfilemetadata
 
     INSTALL_COMMAND ""
 
