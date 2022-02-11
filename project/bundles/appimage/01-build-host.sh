@@ -158,6 +158,7 @@ urpmi --auto \
       ${LIBSUFFIX}clang-devel \
       ${LIBSUFFIX}sm-devel \
       ${LIBSUFFIX}freeglut-devel \
+      ${LIBSUFFIX}attr-devel \
       ${LIBSUFFIX}input-devel
 
 if [[ "$DK_QTVERSION" = "5.14" ]] ; then

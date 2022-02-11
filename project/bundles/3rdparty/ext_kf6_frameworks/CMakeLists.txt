@@ -8,6 +8,9 @@
 
 set(EXTPREFIX_frameworks "${EXTPREFIX}")
 
+configure_file(${CMAKE_CURRENT_SOURCE_DIR}/kdesrc-buildrc.cmake.in
+               ${CMAKE_CURRENT_BINARY_DIR}/kdesrc-buildrc)
+
 ExternalProject_Add(ext_kf6_frameworks
 
     DOWNLOAD_DIR ${EXTERNALS_DOWNLOAD_DIR}
@@ -18,7 +21,7 @@ ExternalProject_Add(ext_kf6_frameworks
 
     # Check version installed and system dependencies. Install modules configuration.
 
-    CONFIGURE_COMMAND cp ${CMAKE_CURRENT_SOURCE_DIR}/kdesrc-buildrc <SOURCE_DIR>/                                          &&
+    CONFIGURE_COMMAND cp ${CMAKE_CURRENT_BINARY_DIR}/kdesrc-buildrc <SOURCE_DIR>/                                          &&
                       cd <SOURCE_DIR>                                                                                      &&
                       <SOURCE_DIR>/kdesrc-build --rc-file=<SOURCE_DIR>/kdesrc-buildrc --delete-my-settings --version       &&
                       <SOURCE_DIR>/kdesrc-build --rc-file=<SOURCE_DIR>/kdesrc-buildrc --delete-my-settings --metadata-only &&
@@ -63,6 +66,7 @@ ExternalProject_Add(ext_kf6_frameworks
                   <SOURCE_DIR>/kdesrc-build --rc-file=<SOURCE_DIR>/kdesrc-buildrc --delete-my-settings --stop-on-failure knotifyconfig                             &&
 # NOT YET PORTED  <SOURCE_DIR>/kdesrc-build --rc-file=<SOURCE_DIR>/kdesrc-buildrc --delete-my-settings --stop-on-failure marble                                    &&
                   <SOURCE_DIR>/kdesrc-build --rc-file=<SOURCE_DIR>/kdesrc-buildrc --delete-my-settings --stop-on-failure kcalendarcore
+                  <SOURCE_DIR>/kdesrc-build --rc-file=<SOURCE_DIR>/kdesrc-buildrc --delete-my-settings --stop-on-failure kfilemetadata
 
     INSTALL_COMMAND ""
 
