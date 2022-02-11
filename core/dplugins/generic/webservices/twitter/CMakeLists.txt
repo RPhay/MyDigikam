@@ -17,8 +17,17 @@ include_directories($<TARGET_PROPERTY:Qt${QT_VERSION_MAJOR}::Widgets,INTERFACE_I
 )
 
 if (Qt6_FOUND)
-  include_directories($<TARGET_PROPERTY:Qt${QT_VERSION_MAJOR}::Core5Compat,INTERFACE_INCLUDE_DIRECTORIES>)
+    include_directories($<TARGET_PROPERTY:Qt${QT_VERSION_MAJOR}::Core5Compat,INTERFACE_INCLUDE_DIRECTORIES>)
 endif ()
+
+# The o2 library does not adhere to the flags we use
+remove_definitions(
+    -DQT_NO_CAST_FROM_ASCII
+    -DQT_NO_CAST_TO_ASCII
+    -DQT_NO_URL_CAST_FROM_STRING
+    -DQT_NO_CAST_FROM_BYTEARRAY
+    -DQT_DISABLE_DEPRECATED_BEFORE=0x050E00
+)
 
 set(twitterplugin_SRCS
     ${CMAKE_CURRENT_SOURCE_DIR}/twittermpform.cpp
