@@ -35,8 +35,11 @@
 #include <QDomDocument>
 #include <QDomElement>
 #include <QTextStream>
-#include <QTextCodec>
 #include <QStandardPaths>
+
+#if QT_VERSION < QT_VERSION_CHECK(6,0,0)
+#   include <QTextCodec>
+#endif
 
 // KDE includes
 
@@ -240,7 +243,7 @@ int DMediaServerMngr::albumsShared() const
         return 0;
     }
 
-    return d->collectionMap.uniqueKeys().count();
+    return d->collectionMap.count();
 }
 
 int DMediaServerMngr::itemsShared() const

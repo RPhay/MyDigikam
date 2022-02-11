@@ -117,6 +117,13 @@ find_package(Qt${QT_VERSION_MAJOR}
              #XmlPatterns                # For Rajce plugin
 )
 
+if (Qt6_FOUND)
+    find_package(Qt${QT_VERSION_MAJOR}
+                 OPTIONAL_COMPONENTS
+                 OpenGLWidgets
+    )
+endif ()
+
 if(ENABLE_DBUS)
     if(NOT Qt${QT_VERSION_MAJOR}DBus_FOUND)
         set(ENABLE_DBUS OFF)
@@ -335,12 +342,22 @@ endif()
 
 find_package(OpenGL)                               # For Presentation tool.
 
-message(STATUS "OpenGL found;                                 ${OPENGL_FOUND}")
-message(STATUS "OpenGL GLU extension found;                   ${OPENGL_GLU_FOUND}")
-message(STATUS "OpenGL Qt${QT_VERSION_MAJOR} found;           ${Qt${QT_VERSION_MAJOR}OpenGL_FOUND}")
+message(STATUS "OpenGL found:                                 ${OPENGL_FOUND}")
+message(STATUS "OpenGL GLU extension found:                   ${OPENGL_GLU_FOUND}")
+message(STATUS "Qt OpenGL found:                              ${Qt${QT_VERSION_MAJOR}OpenGL_FOUND}")
+
+if(Qt6_FOUND)
+    message(STATUS "Qt6 OpenGLWidgets found:                      ${Qt${QT_VERSION_MAJOR}OpenGLWidgets_FOUND}")
+endif()
 
 # decide if Presentation tool can be built with OpenGL
 if(OPENGL_FOUND AND OPENGL_GLU_FOUND AND Qt${QT_VERSION_MAJOR}OpenGL_FOUND)
+    set(HAVE_OPENGL TRUE)
+elseif()
+    set(HAVE_OPENGL FALSE)
+endif()
+
+if(Qt6_FOUND AND Qt${QT_VERSION_MAJOR}OpenGLWidgets_FOUND)
     set(HAVE_OPENGL TRUE)
 elseif()
     set(HAVE_OPENGL FALSE)

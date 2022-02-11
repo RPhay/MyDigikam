@@ -294,7 +294,11 @@ void PanoPreviewPage::cleanupPage()
     cleanupPage(lock);
 }
 
+#if (QT_VERSION > QT_VERSION_CHECK(5, 99, 0))
+void PanoPreviewPage::cleanupPage(QMutexLocker<QMutex>& /*lock*/)
+#else
 void PanoPreviewPage::cleanupPage(QMutexLocker& /*lock*/)
+#endif
 {
     d->canceled = true;
 

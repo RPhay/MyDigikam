@@ -23,8 +23,12 @@ include_directories($<TARGET_PROPERTY:Qt${QT_VERSION_MAJOR}::Widgets,INTERFACE_I
                     $<TARGET_PROPERTY:KF5::I18n,INTERFACE_INCLUDE_DIRECTORIES>
 )
 
+set(QT_OPENGL_LIBRARIES Qt${QT_VERSION_MAJOR}::OpenGL)
+
 if (Qt6_FOUND)
     include_directories($<TARGET_PROPERTY:Qt${QT_VERSION_MAJOR}::Core5Compat,INTERFACE_INCLUDE_DIRECTORIES>)
+    include_directories($<TARGET_PROPERTY:Qt${QT_VERSION_MAJOR}::OpenGLWidgets,INTERFACE_INCLUDE_DIRECTORIES>)
+    set(QT_OPENGL_LIBRARIES ${QT_OPENGL_LIBRARIES} Qt${QT_VERSION_MAJOR}::OpenGLWidgets)
 endif ()
 
 set(glviewerplugin_SRCS
@@ -36,6 +40,6 @@ set(glviewerplugin_SRCS
 
 DIGIKAM_ADD_GENERIC_PLUGIN(NAME    GLViewer
                            SOURCES ${glviewerplugin_SRCS}
-                           DEPENDS Qt${QT_VERSION_MAJOR}::OpenGL
+                           DEPENDS ${QT_OPENGL_LIBRARIES}
                                    ${OPENGL_LIBRARIES}
 )
