@@ -272,7 +272,7 @@ MediaWikiWidget::MediaWikiWidget(DInfoInterface* const iface, QWidget* const par
     d->userGBox->setLayout(loginBoxLayout);
 
     d->wikiSelect                 = new QComboBox(d->userGBox);
-    d->wikiSelect->setSizeAdjustPolicy(QComboBox::AdjustToMinimumContentsLength);
+    d->wikiSelect->setSizeAdjustPolicy(QComboBox::AdjustToMinimumContentsLengthWithIcon);
     QPushButton* const newWikiBtn = new QPushButton(QIcon::fromTheme(QLatin1String("list-add")),
                                                     i18nc("@option: button", "New"), d->userGBox);
     newWikiBtn->setToolTip(i18nc("@info", "Add a wiki to this list"));
@@ -395,7 +395,7 @@ MediaWikiWidget::MediaWikiWidget(DInfoInterface* const iface, QWidget* const par
 
     QLabel* const licenseLbl = new QLabel(i18nc("@label", "License:"), textGBox);
     d->licenseComboBox       = new QComboBox(textGBox);
-    d->licenseComboBox->setSizeAdjustPolicy(QComboBox::AdjustToMinimumContentsLength);
+    d->licenseComboBox->setSizeAdjustPolicy(QComboBox::AdjustToMinimumContentsLengthWithIcon);
 
     d->licenseComboBox->addItem(i18nc("@item", "Own work, Creative Commons Attribution-Share Alike 4.0"),
                                        QLatin1String("{{self|cc-by-sa-4.0}}"));

@@ -1081,7 +1081,7 @@ void INatWindow::slotImageListChanged()
             if (!observationTime.isValid())
             {
                 observationTime = dateTime;
-                dt              = dateTime.toString(Qt::SystemLocaleShortDate) + lf +
+                dt              = QLocale().toString(dateTime, QLocale::ShortFormat) + lf +
                                   i18n("observation time");
                 QBrush brush(Qt::black);
                 item->setForeground(ItemDate, brush);

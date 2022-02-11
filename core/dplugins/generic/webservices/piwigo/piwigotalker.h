@@ -40,6 +40,7 @@
 
 // Local includes
 
+#include "piwigoitem.h"
 #include "dinfointerface.h"
 
 using namespace Digikam;
@@ -48,8 +49,6 @@ template <class T> class QList;
 
 namespace DigikamGenericPiwigoPlugin
 {
-
-class PiwigoAlbum;
 
 class PiwigoTalker : public QObject
 {

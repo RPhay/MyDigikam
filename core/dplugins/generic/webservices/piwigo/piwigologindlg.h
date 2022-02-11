@@ -32,10 +32,12 @@
 #include <QString>
 #include <QDialog>
 
+// Local includes
+
+#include "piwigosession.h"
+
 namespace DigikamGenericPiwigoPlugin
 {
-
-class PiwigoSession;
 
 class PiwigoLoginDlg : public QDialog
 {

@@ -33,6 +33,7 @@
 
 // Local includes
 
+#include "piwigoitem.h"
 #include "wstooldialog.h"
 #include "dinfointerface.h"
 
@@ -40,8 +41,6 @@ using namespace Digikam;
 
 namespace DigikamGenericPiwigoPlugin
 {
-
-class PiwigoAlbum;
 
 class PiwigoWindow : public WSToolDialog
 {
