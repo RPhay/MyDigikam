@@ -363,8 +363,8 @@ void SmugWindow::readSettings()
     d->anonymousImport      = grp.readEntry("AnonymousImport", true);
     d->email                = grp.readEntry("Email");
     d->password             = grp.readEntry("Password");
-    d->currentAlbumID       = grp.readEntry("Current Album", -1);
-    d->currentAlbumKey      = grp.readEntry("Current Key", -1);
+    d->currentAlbumID       = grp.readEntry("Current Album",   -1);
+    d->currentAlbumKey      = grp.readEntry("Current Key");
 
     if (grp.readEntry("Resize", false))
     {
