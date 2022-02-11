@@ -47,7 +47,11 @@ IMGQSORT_BUILD_STANDALONE(detectgeneral_cli.cpp)
 
 # --------------------------------------------------------------
 
-QT5_WRAP_CPP(MOC_files ${CMAKE_CURRENT_SOURCE_DIR}/imgqsorttest.h)
+if (Qt6_FOUND)
+    QT6_WRAP_CPP(MOC_files ${CMAKE_CURRENT_SOURCE_DIR}/imgqsorttest.h)
+else()
+    QT5_WRAP_CPP(MOC_files ${CMAKE_CURRENT_SOURCE_DIR}/imgqsorttest.h)
+endif()
 
 add_library(libimgqsorttest STATIC imgqsorttest_shared.cpp ${MOC_files})
 target_link_libraries(libimgqsorttest ${COMMON_TEST_LINK})
@@ -59,7 +63,7 @@ macro(IMGQSORT_BUILD_UNITTEST)
     list(GET _temp 0 _target)
 
     set(${_target}_SRCS ${CMAKE_CURRENT_SOURCE_DIR}/${_filename})
-    
+
     ecm_add_tests(${${_target}_SRCS}
 
                   NAME_PREFIX

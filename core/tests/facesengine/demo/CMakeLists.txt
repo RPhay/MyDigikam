@@ -18,7 +18,7 @@ set(facesenginedemo_gui_SRCS ${CMAKE_CURRENT_SOURCE_DIR}/demofaceengine.cpp
                              ${CMAKE_CURRENT_SOURCE_DIR}/demofancyrect.cpp
 )
 
-qt5_wrap_ui(facesenginedemo_gui_SRCS ${CMAKE_CURRENT_SOURCE_DIR}/demomainwindow.ui)
+ki18n_wrap_ui(facesenginedemo_gui_SRCS ${CMAKE_CURRENT_SOURCE_DIR}/demomainwindow.ui)
 add_executable(facesenginedemo_gui ${facesenginedemo_gui_SRCS})
 
 target_link_libraries(facesenginedemo_gui

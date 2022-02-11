@@ -44,7 +44,12 @@ target_link_libraries(exportchanges_cli
 
 # ----------------------------------------------------------------------------------
 
-QT5_WRAP_CPP(MOC_files ${CMAKE_CURRENT_SOURCE_DIR}/abstractunittest.h)
+if (Qt6_FOUND)
+    QT6_WRAP_CPP(MOC_files ${CMAKE_CURRENT_SOURCE_DIR}/abstractunittest.h)
+else()
+    QT5_WRAP_CPP(MOC_files ${CMAKE_CURRENT_SOURCE_DIR}/abstractunittest.h)
+endif()
+
 add_library(libmetadataenginetest STATIC ${MOC_files})
 target_link_libraries(libmetadataenginetest ${COMMON_TEST_LINK})
 
