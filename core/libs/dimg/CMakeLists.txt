@@ -97,8 +97,8 @@ set(libdimgfilters_SRCS
     ${CMAKE_CURRENT_SOURCE_DIR}/filters/icc/iccprofilesettings.cpp
     ${CMAKE_CURRENT_SOURCE_DIR}/filters/icc/icctransform.cpp
     ${CMAKE_CURRENT_SOURCE_DIR}/filters/icc/icctransformfilter.cpp
-    ${CMAKE_CURRENT_SOURCE_DIR}/filters/icc/iccsettingscontainer.cpp
     ${CMAKE_CURRENT_SOURCE_DIR}/filters/icc/iccsettings.cpp
+    ${CMAKE_CURRENT_SOURCE_DIR}/filters/icc/iccsettingscontainer.cpp
     ${CMAKE_CURRENT_SOURCE_DIR}/filters/icc/digikam-lcms.cpp
     ${CMAKE_CURRENT_SOURCE_DIR}/filters/lc/localcontrastfilter.cpp
     ${CMAKE_CURRENT_SOURCE_DIR}/filters/lc/localcontrastsettings.cpp
@@ -147,8 +147,23 @@ set(libdimgfilters_SRCS
     ${CMAKE_CURRENT_SOURCE_DIR}/filters/imgqsort/detector/exposure_detector.cpp
     ${CMAKE_CURRENT_SOURCE_DIR}/filters/imgqsort/detector/compression_detector.cpp
     ${CMAKE_CURRENT_SOURCE_DIR}/filters/imgqsort/detector/detector.cpp
-
 )
+
+if (Qt6_FOUND)
+
+    set(libdimgfilters_SRCS
+        ${libdimgfilters_SRCS}
+        ${CMAKE_CURRENT_SOURCE_DIR}/filters/icc/iccsettings_qt6.cpp
+    )
+
+else()
+
+    set(libdimgfilters_SRCS
+        ${libdimgfilters_SRCS}
+        ${CMAKE_CURRENT_SOURCE_DIR}/filters/icc/iccsettings_qt5.cpp
+    )
+
+endif()
 
 # ==================================================================================================
 # get the gcc version
@@ -168,7 +183,6 @@ if(CMAKE_COMPILER_IS_GNUCXX)
     endif()
 
 endif()
-
 
 if(Lqr-1_FOUND)
 
@@ -245,6 +259,12 @@ include_directories(
     $<TARGET_PROPERTY:KF5::I18n,INTERFACE_INCLUDE_DIRECTORIES>
     $<TARGET_PROPERTY:KF5::WidgetsAddons,INTERFACE_INCLUDE_DIRECTORIES>
 )
+
+if(X11_FOUND AND NOT Qt6_FOUND)
+
+    include_directories($<TARGET_PROPERTY:Qt5::X11Extras,INTERFACE_INCLUDE_DIRECTORIES>)
+
+endif()
 
 if (Qt6_FOUND)
     include_directories($<TARGET_PROPERTY:Qt${QT_VERSION_MAJOR}::Core5Compat,INTERFACE_INCLUDE_DIRECTORIES>)
