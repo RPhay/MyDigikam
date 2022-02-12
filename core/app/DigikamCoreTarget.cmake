@@ -160,7 +160,7 @@ target_link_libraries(digikamcore
                       opencv_flann
 )
 
-if (Qt6_FOUND)
+if(Qt6_FOUND)
     target_link_libraries(digikamcore
                           PRIVATE
                           Qt6::Core5Compat
@@ -240,10 +240,23 @@ endif()
 
 if(X11_FOUND)
 
-    target_link_libraries(digikamcore
-                          PRIVATE
-                          ${X11_LIBRARIES}
-    )
+    if(Qt6_FOUND)
+
+        target_link_libraries(digikamcore
+                              PRIVATE
+                              ${X11_LIBRARIES}
+        )
+
+    else()
+
+
+        target_link_libraries(digikamcore
+                              PRIVATE
+                              Qt5::X11Extras
+                              ${X11_LIBRARIES}
+        )
+
+    endif()
 
 endif()
 
