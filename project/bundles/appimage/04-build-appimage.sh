@@ -113,12 +113,12 @@ cp -r /usr/share/kf5                                      ./usr/share
 cp -r /usr/share/solid                                    ./usr/share
 
 # depending of OpenCV version installed, data directory is not the same.
-cp -r /usr/share/OpenCV                                   ./usr/share  || true
-cp -r /usr/share/opencv4                                  ./usr/share  || true
+cp -r /usr/share/opencv4                                  ./usr/share
 
+# TODO check when kf6 prefix will be used here.
 cp -r /usr/share/dbus-1/interfaces/kf5*                   ./usr/share/dbus-1/interfaces/
 cp -r /usr/share/dbus-1/services/*kde*                    ./usr/share/dbus-1/services/
-cp -r /usr/${LIBSUFFIX}/libexec/kf5                       ./usr/lib/libexec/
+cp -r /usr/${LIBSUFFIX}/libexec/kf6                       ./usr/lib/libexec/
 
 echo -e "------------- Copy AppImage stream data filess\n"
 
@@ -182,6 +182,7 @@ echo -e "------------- Copy KF5 translations files\n"
 FILES=$(cat $ORIG_WD/logs/build-extralibs.full.log | grep /usr/share/locale | grep -e .qm -e .mo | cut -d' ' -f3)
 
 for FILE in $FILES ; do
+    echo $FILE
     cp --parents $FILE ./
 done
 
@@ -190,6 +191,7 @@ echo -e "------------- Copy digiKam translations files\n"
 FILES=$(cat $ORIG_WD/logs/build-digikam.full.log | grep /usr/share/locale | grep -e .qm -e .mo | cut -d' ' -f3)
 
 for FILE in $FILES ; do
+    echo $FILE
     cp --parents $FILE ./
 done
 
@@ -198,15 +200,27 @@ echo -e "---------- Copy digiKam icons files\n"
 FILES=$(cat $ORIG_WD/logs/build-digikam.full.log | grep /usr/share/icons/ | cut -d' ' -f3)
 
 for FILE in $FILES ; do
-    echo $FILE
-    cp --parents $FILE ./
+
+    if [[ -f ${FILE} ]] ; then
+        echo $FILE
+        cp --parents $FILE ./
+    fi
+
 done
 
 echo -e "---------- Copy Marble data and plugins files\n"
 
-cp -r /usr/${LIBSUFFIX}/marble/plugins/ ./usr/bin/
+if [[ -f /usr/${LIBSUFFIX}/marble/plugins/ ]] ; then
 
-cp -r /usr/share/marble/data            ./usr/bin/
+    cp -r /usr/${LIBSUFFIX}/marble/plugins/ ./usr/bin/
+
+fi
+
+if [[ -f /usr/share/marble/data ]] ; then
+
+    cp -r /usr/share/marble/data            ./usr/bin/
+
+fi
 
 echo -e "---------- Copy Git Revisions Manifest\n"
 
@@ -450,7 +464,7 @@ cd usr/ ; find . -type f -exec sed -i -e 's|/usr|././|g' {} \; ; cd ..
 # We do not bundle this, so let's not search that inside the AppImage.
 # Fixes "Qt: Failed to create XKB context!" and lets us enter text
 sed -i -e 's|././/share/X11/|/usr/share/X11/|g' ./usr/plugins/platforminputcontexts/libcomposeplatforminputcontextplugin.so
-sed -i -e 's|././/share/X11/|/usr/share/X11/|g' ./usr/lib/libQt5XcbQpa.so.5
+sed -i -e 's|././/share/X11/|/usr/share/X11/|g' ./usr/lib/libQt6XcbQpa.so.6
 
 #################################################################################################
 
