@@ -156,11 +156,23 @@ void DAboutData::authorsRegistration(KAboutData& aboutData)
 
     // -- Students ---------------------------------------------------------------
 
+    aboutData.addCredit ( ki18n("Anjani Kumar").toString(),
+                          ki18n("Port to Qt6,").toString(),
+                          QLatin1String("anjanik012 at gmail dot com "),
+                          QLatin1String("https://www.linkedin.com/in/anjanik012/")
+                        );
+
     aboutData.addCredit ( ki18n("Phuoc Khanh LE").toString(),
                           ki18n("Rewrite Image Quality Sorter algorithms and Photo Focus Information Extraction, "
                                 "Slideshow and Presentation tools improvement").toString(),
                           QLatin1String("phuockhanhnk94 at gmail dot com "),
                           QLatin1String("https://www.linkedin.com/in/phuoc-khanh-le-476448169/")
+                        );
+
+    aboutData.addCredit ( ki18n("Quốc Hưng Trần").toString(),
+                          ki18n("MJPEGStream plugin").toString(),
+                          QLatin1String("quochungtran1999 at gmail dot com "),
+                          QLatin1String("https://www.linkedin.com/in/qu%E1%BB%91c-h%C6%B0ng-tr%E1%BA%A7n-92a504163/")
                         );
 
     aboutData.addCredit ( ki18n("Minh Nghĩa Duong").toString(),
