@@ -9,4 +9,5 @@ General: Port code to Qt6 and KF6 framework.
 BUGFIXES:
 
 001 ==> 416704 - Port digiKam to Qt6 and KF6 API.
-002 ==> 
+002 ==> 450153 - All groups deleted by "Extended clean up and shrink all databases".
+003 ==> 

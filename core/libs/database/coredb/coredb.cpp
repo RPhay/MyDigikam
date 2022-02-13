@@ -4682,7 +4682,10 @@ void CoreDB::vacuum()
                                      "WHERE imageid NOT IN (SELECT id FROM Images);"));
 
     d->db->execSql(QString::fromUtf8("DELETE FROM ImageRelations "
-                                     "WHERE subject OR object NOT IN (SELECT id FROM Images);"));
+                                     "WHERE subject NOT IN (SELECT id FROM Images);"));
+
+    d->db->execSql(QString::fromUtf8("DELETE FROM ImageRelations "
+                                     "WHERE object NOT IN (SELECT id FROM Images);"));
 
     fields |= DatabaseFields::ImagesAll;
     fields |= DatabaseFields::ImageRelations;
