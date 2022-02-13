@@ -88,8 +88,9 @@ public:
 
 private:
 
-    // X11 helper functions.
+    // X11 helper functions for Qt6 support.
     // Imported from https://code.qt.io/cgit/qt/qtx11extras.git/tree/src/x11extras/qx11info_x11.cpp?h=5.15.2#n102
+
     bool     isX11();
     quint32  getAppRootWindow(int);
     QScreen* findScreenForVirtualDesktop(int);

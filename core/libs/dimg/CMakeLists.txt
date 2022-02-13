@@ -98,6 +98,7 @@ set(libdimgfilters_SRCS
     ${CMAKE_CURRENT_SOURCE_DIR}/filters/icc/icctransform.cpp
     ${CMAKE_CURRENT_SOURCE_DIR}/filters/icc/icctransformfilter.cpp
     ${CMAKE_CURRENT_SOURCE_DIR}/filters/icc/iccsettings.cpp
+    ${CMAKE_CURRENT_SOURCE_DIR}/filters/icc/iccsettings_p.cpp
     ${CMAKE_CURRENT_SOURCE_DIR}/filters/icc/iccsettingscontainer.cpp
     ${CMAKE_CURRENT_SOURCE_DIR}/filters/icc/digikam-lcms.cpp
     ${CMAKE_CURRENT_SOURCE_DIR}/filters/lc/localcontrastfilter.cpp
@@ -153,14 +154,14 @@ if (Qt6_FOUND)
 
     set(libdimgfilters_SRCS
         ${libdimgfilters_SRCS}
-        ${CMAKE_CURRENT_SOURCE_DIR}/filters/icc/iccsettings_qt6.cpp
+        ${CMAKE_CURRENT_SOURCE_DIR}/filters/icc/iccsettings_p_qt6.cpp
     )
 
 else()
 
     set(libdimgfilters_SRCS
         ${libdimgfilters_SRCS}
-        ${CMAKE_CURRENT_SOURCE_DIR}/filters/icc/iccsettings_qt5.cpp
+        ${CMAKE_CURRENT_SOURCE_DIR}/filters/icc/iccsettings_p_qt5.cpp
     )
 
 endif()
