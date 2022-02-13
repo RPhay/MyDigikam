@@ -12,6 +12,8 @@ If you are reading this on Github, be aware that this is just a mirror. Our real
 
 Developers, if you want to contribute, see the online [API documentation here](https://www.digikam.org/api)
 
+NOTE: master branch support Qt5 and Qt6 frameworks and is dedicated to 8.x and later release.
+
 # About
 
 digiKam is an advanced open-source digital photo management application that runs on Linux, Windows, and MacOS.
