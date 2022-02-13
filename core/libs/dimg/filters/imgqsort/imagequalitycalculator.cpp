@@ -78,7 +78,7 @@ void ImageQualityCalculator::normalizeWeight() const
 {
     float sum = 0;
 
-    for (const auto result : d->detectionResults)
+    for (const auto& result : d->detectionResults)
     {
         sum += result.weight;
     }
@@ -102,7 +102,7 @@ float ImageQualityCalculator::calculateQuality() const
 
     float damage = 0.0;
 
-    for (const auto result : d->detectionResults)
+    for (const auto& result : d->detectionResults)
     {
         damage += result.score * result.weight;
     }
