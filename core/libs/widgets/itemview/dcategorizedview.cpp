@@ -877,13 +877,22 @@ void DCategorizedView::paintEvent(QPaintEvent* event)
             option.palette.setCurrentColorGroup(cg);
         }
 
-        if (focus && (currentIndex() == index))
+        if      (focus && (currentIndex() == index))
         {
             option.state |= QStyle::State_HasFocus;
 
             if (this->state() == EditingState)
             {
                 option.state |= QStyle::State_Editing;
+            }
+        }
+        else if (focus)
+        {
+            option.state &= ~QStyle::State_HasFocus;
+
+            if (this->state() != EditingState)
+            {
+                option.state &= ~QStyle::State_Editing;
             }
         }
 
