@@ -48,7 +48,7 @@
 #    pragma clang diagnostic ignored "-Wundef"
 #    pragma clang diagnostic ignored "-Wdeprecated-register"
 #endif
-
+#define CMS_NO_REGISTER_KEYWORD 1
 #include <lcms2.h>
 
 #if defined(Q_CC_CLANG)
