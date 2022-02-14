@@ -20,5 +20,5 @@ install(FILES pine-pattern.png
               granit-pattern.png
               rock-pattern.png
               wall-pattern.png
-        DESTINATION ${DATA_INSTALL_DIR}/digikam/data
+        DESTINATION ${KDE_INSTALL_FULL_DATADIR}/digikam/data
 )

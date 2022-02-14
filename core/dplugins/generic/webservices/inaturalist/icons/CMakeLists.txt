@@ -7,5 +7,5 @@
 file(GLOB _icons_files *.png *.svgz)
 
 ecm_install_icons(ICONS       ${_icons_files}
-                  DESTINATION ${ICON_INSTALL_DIR}
+                  DESTINATION ${KDE_INSTALL_FULL_ICONDIR}
 )

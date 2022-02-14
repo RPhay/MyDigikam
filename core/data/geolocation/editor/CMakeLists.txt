@@ -7,4 +7,4 @@
 install(FILES bookmarks-marker.png
               searchmarker-normal.png
               searchmarker-selected.png
-        DESTINATION ${DATA_INSTALL_DIR}/digikam/geolocationedit/)
+        DESTINATION ${KDE_INSTALL_FULL_DATADIR}/digikam/geolocationedit/)

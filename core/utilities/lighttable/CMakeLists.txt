@@ -49,4 +49,4 @@ target_compile_definitions(gui_lighttable_obj
                            digikamgui_EXPORTS
 )
 
-install(FILES ${CMAKE_CURRENT_SOURCE_DIR}/lighttablewindowui5.rc DESTINATION ${KXMLGUI_INSTALL_DIR}/digikam)
+install(FILES ${CMAKE_CURRENT_SOURCE_DIR}/lighttablewindowui5.rc DESTINATION ${KDE_INSTALL_FULL_KXMLGUIDIR}/digikam)

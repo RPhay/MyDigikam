@@ -62,9 +62,9 @@ include(DigikamTarget.cmake)
 # -----------------------------------------------------------------------------------
 # Others Files to install
 
-install(PROGRAMS ${CMAKE_CURRENT_SOURCE_DIR}/main/org.kde.digikam.desktop     DESTINATION ${XDG_APPS_INSTALL_DIR})
+install(PROGRAMS ${CMAKE_CURRENT_SOURCE_DIR}/main/org.kde.digikam.desktop     DESTINATION ${KDE_INSTALL_FULL_APPDIR})
 install(FILES    ${CMAKE_CURRENT_SOURCE_DIR}/main/org.kde.digikam.appdata.xml DESTINATION ${KDE_INSTALL_METAINFODIR})
-install(FILES    ${CMAKE_CURRENT_SOURCE_DIR}/main/digikamui5.rc               DESTINATION ${KXMLGUI_INSTALL_DIR}/digikam)
-install(FILES    ${CMAKE_CURRENT_SOURCE_DIR}/main/digikam.notifyrc            DESTINATION ${KNOTIFYRC_INSTALL_DIR})
+install(FILES    ${CMAKE_CURRENT_SOURCE_DIR}/main/digikamui5.rc               DESTINATION ${KDE_INSTALL_FULL_KXMLGUIDIR}/digikam)
+install(FILES    ${CMAKE_CURRENT_SOURCE_DIR}/main/digikam.notifyrc            DESTINATION ${KDE_INSTALL_FULL_KNOTIFYRCDIR})
 
 include(DigikamExportAPI.cmake)

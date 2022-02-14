@@ -126,7 +126,7 @@
 /* Defines to 1 if the Dr. Mingw crash handler should be used */
 #cmakedefine HAVE_DRMINGW 1
 
-#define LIBEXEC_INSTALL_DIR "${CMAKE_INSTALL_PREFIX}/${LIBEXEC_INSTALL_DIR}"
+#define LIBEXEC_INSTALL_DIR "${KDE_INSTALL_FULL_LIBEXECDIR}"
 
 /*
   Disable indeep warnings from Visual Studio C++ 2008 (9.0)

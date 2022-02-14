@@ -5,17 +5,17 @@
 # For details see the accompanying COPYING-CMAKE-SCRIPTS file.
 
 install(FILES main.html
-        DESTINATION ${DATA_INSTALL_DIR}/digikam/about
+        DESTINATION ${KDE_INSTALL_FULL_DATADIR}/digikam/about
 )
 
 install(DIRECTORY css/
-        DESTINATION ${DATA_INSTALL_DIR}/digikam/about/css
+        DESTINATION ${KDE_INSTALL_FULL_DATADIR}/digikam/about/css
 )
 
 install(DIRECTORY images/
-        DESTINATION ${DATA_INSTALL_DIR}/digikam/about/images
+        DESTINATION ${KDE_INSTALL_FULL_DATADIR}/digikam/about/images
 )
 
 install(DIRECTORY js/
-        DESTINATION ${DATA_INSTALL_DIR}/digikam/about/js
+        DESTINATION ${KDE_INSTALL_FULL_DATADIR}/digikam/about/js
 )

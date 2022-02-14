@@ -63,4 +63,4 @@ DIGIKAM_ADD_GENERIC_PLUGIN(NAME    HtmlGallery
                                    Qt${QT_VERSION_MAJOR}::Concurrent
 )
 
-install(DIRECTORY themes DESTINATION ${DATA_INSTALL_DIR}/digikam/)
+install(DIRECTORY themes DESTINATION ${KDE_INSTALL_FULL_DATADIR}/digikam/)

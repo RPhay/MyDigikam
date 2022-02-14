@@ -5,5 +5,5 @@
 # For details see the accompanying COPYING-CMAKE-SCRIPTS file.
 
 install(FILES       ${CMAKE_CURRENT_SOURCE_DIR}/topicset.iptc-subjectcode.xml
-        DESTINATION ${DATA_INSTALL_DIR}/digikam/metadata
+        DESTINATION ${KDE_INSTALL_FULL_DATADIR}/digikam/metadata
 )

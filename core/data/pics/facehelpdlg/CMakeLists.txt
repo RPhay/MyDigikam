@@ -9,5 +9,5 @@ install(FILES detectFacesImg.png
               ignoreImg.png
               workOnAllCoresImg.png
               tagFacesImg.gif
-        DESTINATION ${DATA_INSTALL_DIR}/digikam/data
+        DESTINATION ${KDE_INSTALL_FULL_DATADIR}/digikam/data
 )

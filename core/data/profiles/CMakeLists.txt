@@ -7,4 +7,4 @@
 file(GLOB icmfiles *.icm *.icc)
 
 install(FILES  ${icmfiles}
-        DESTINATION ${DATA_INSTALL_DIR}/digikam/profiles)
+        DESTINATION ${KDE_INSTALL_FULL_DATADIR}/digikam/profiles)

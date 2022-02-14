@@ -56,4 +56,4 @@ DIGIKAM_ADD_GENERIC_PLUGIN(NAME    PrintCreator
                            DEPENDS Qt${QT_VERSION_MAJOR}::PrintSupport
 )
 
-install(DIRECTORY templates DESTINATION ${DATA_INSTALL_DIR}/digikam/)
+install(DIRECTORY templates DESTINATION ${KDE_INSTALL_FULL_DATADIR}/digikam/)

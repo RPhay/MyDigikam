@@ -83,12 +83,12 @@ macro(DIGIKAM_ADD_GENERIC_PLUGIN)
             )
     endif ()
     install(TARGETS Generic_${_parse_results_NAME}_Plugin
-            DESTINATION ${PLUGIN_INSTALL_DIR}/digikam/generic
+            DESTINATION ${KDE_INSTALL_FULL_PLUGINDIR}/digikam/generic
     )
 
     if(APPLE)
         install(FILES "$<TARGET_FILE:Generic_${_parse_results_NAME}_Plugin>.dSYM"
-                DESTINATION ${PLUGIN_INSTALL_DIR}/digikam/generic
+                DESTINATION ${KDE_INSTALL_FULL_PLUGINDIR}/digikam/generic
                 CONFIGURATIONS Debug RelWithDebInfo
         )
     endif()
@@ -167,12 +167,12 @@ macro(DIGIKAM_ADD_EDITOR_PLUGIN)
             )
     endif ()
     install(TARGETS Editor_${_parse_results_NAME}_Plugin
-            DESTINATION ${PLUGIN_INSTALL_DIR}/digikam/editor
+            DESTINATION ${KDE_INSTALL_FULL_PLUGINDIR}/digikam/editor
     )
 
     if(APPLE)
         install(FILES "$<TARGET_FILE:Editor_${_parse_results_NAME}_Plugin>.dSYM"
-                DESTINATION ${PLUGIN_INSTALL_DIR}/digikam/editor
+                DESTINATION ${KDE_INSTALL_FULL_PLUGINDIR}/digikam/editor
                 CONFIGURATIONS Debug RelWithDebInfo
         )
     endif()
@@ -255,12 +255,12 @@ macro(DIGIKAM_ADD_BQM_PLUGIN)
     endif ()
 
     install(TARGETS Bqm_${_parse_results_NAME}_Plugin
-            DESTINATION ${PLUGIN_INSTALL_DIR}/digikam/bqm
+            DESTINATION ${KDE_INSTALL_FULL_PLUGINDIR}/digikam/bqm
     )
 
     if(APPLE)
         install(FILES "$<TARGET_FILE:Bqm_${_parse_results_NAME}_Plugin>.dSYM"
-                DESTINATION ${PLUGIN_INSTALL_DIR}/digikam/bqm
+                DESTINATION ${KDE_INSTALL_FULL_PLUGINDIR}/digikam/bqm
                 CONFIGURATIONS Debug RelWithDebInfo
         )
     endif()
@@ -339,12 +339,12 @@ macro(DIGIKAM_ADD_RAWIMPORT_PLUGIN)
     endif ()
 
     install(TARGETS RawImport_${_parse_results_NAME}_Plugin
-            DESTINATION ${PLUGIN_INSTALL_DIR}/digikam/rawimport
+            DESTINATION ${KDE_INSTALL_FULL_PLUGINDIR}/digikam/rawimport
     )
 
     if(APPLE)
         install(FILES "$<TARGET_FILE:RawImport_${_parse_results_NAME}_Plugin>.dSYM"
-                DESTINATION ${PLUGIN_INSTALL_DIR}/digikam/rawimport
+                DESTINATION ${KDE_INSTALL_FULL_PLUGINDIR}/digikam/rawimport
                 CONFIGURATIONS Debug RelWithDebInfo
         )
     endif()
@@ -420,12 +420,12 @@ macro(DIGIKAM_ADD_DIMG_PLUGIN)
             )
     endif ()
     install(TARGETS DImg_${_parse_results_NAME}_Plugin
-            DESTINATION ${PLUGIN_INSTALL_DIR}/digikam/dimg
+            DESTINATION ${KDE_INSTALL_FULL_PLUGINDIR}/digikam/dimg
     )
 
     if(APPLE)
         install(FILES "$<TARGET_FILE:DImg_${_parse_results_NAME}_Plugin>.dSYM"
-                DESTINATION ${PLUGIN_INSTALL_DIR}/digikam/dimg
+                DESTINATION ${KDE_INSTALL_FULL_PLUGINDIR}/digikam/dimg
                 CONFIGURATIONS Debug RelWithDebInfo
         )
     endif()

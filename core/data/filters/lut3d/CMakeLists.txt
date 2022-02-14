@@ -16,5 +16,5 @@ install(FILES bleach.png
               washout_color.png
               washout.png
               x_process.png
-         DESTINATION ${DATA_INSTALL_DIR}/digikam/data/lut3d
+         DESTINATION ${KDE_INSTALL_FULL_DATADIR}/digikam/data/lut3d
        )

@@ -7,5 +7,5 @@
 file(GLOB _files *.png)
 
 install(FILES       ${_files}
-        DESTINATION ${DATA_INSTALL_DIR}/showfoto/data
+        DESTINATION ${KDE_INSTALL_FULL_DATADIR}/showfoto/data
 )

@@ -7,5 +7,5 @@
 file(GLOB files "${CMAKE_CURRENT_SOURCE_DIR}/*.colors")
 
 install(FILES ${files}
-        DESTINATION ${DATA_INSTALL_DIR}/digikam/colorschemes
+        DESTINATION ${KDE_INSTALL_FULL_DATADIR}/digikam/colorschemes
 )

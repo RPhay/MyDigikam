@@ -5,12 +5,12 @@
 # For details see the accompanying COPYING-CMAKE-SCRIPTS file.
 #
 
-SET(DPluginGenericInstallPath "${PLUGIN_INSTALL_DIR}/digikam/generic")
+SET(DPluginGenericInstallPath "${KDE_INSTALL_FULL_PLUGINDIR}/digikam/generic")
 
-SET(DPluginEditorInstallPath "${PLUGIN_INSTALL_DIR}/digikam/editor")
+SET(DPluginEditorInstallPath "${KDE_INSTALL_FULL_PLUGINDIR}/digikam/editor")
 
-SET(DPluginBqmInstallPath "${PLUGIN_INSTALL_DIR}/digikam/bqm")
+SET(DPluginBqmInstallPath "${KDE_INSTALL_FULL_PLUGINDIR}/digikam/bqm")
 
-SET(DPluginRawImportInstallPath "${PLUGIN_INSTALL_DIR}/digikam/rawimport")
+SET(DPluginRawImportInstallPath "${KDE_INSTALL_FULL_PLUGINDIR}/digikam/rawimport")
 
-SET(DPluginDimgInstallPath "${PLUGIN_INSTALL_DIR}/digikam/dimg")
+SET(DPluginDimgInstallPath "${KDE_INSTALL_FULL_PLUGINDIR}/digikam/dimg")

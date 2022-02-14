@@ -9,5 +9,5 @@ configure_file(dbconfig.xml.cmake.in ${CMAKE_CURRENT_BINARY_DIR}/dbconfig.xml)
 
 install(FILES ${CMAKE_CURRENT_BINARY_DIR}/dbconfig.xml
               ${CMAKE_CURRENT_SOURCE_DIR}/mysql-global.conf
-        DESTINATION ${DATA_INSTALL_DIR}/digikam/database
+        DESTINATION ${KDE_INSTALL_FULL_DATADIR}/digikam/database
 )

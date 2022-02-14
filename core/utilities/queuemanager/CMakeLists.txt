@@ -58,4 +58,4 @@ target_compile_definitions(gui_queuemanager_obj
                            digikamgui_EXPORTS
 )
 
-install(FILES ${CMAKE_CURRENT_SOURCE_DIR}/main/queuemgrwindowui5.rc DESTINATION ${KXMLGUI_INSTALL_DIR}/digikam)
+install(FILES ${CMAKE_CURRENT_SOURCE_DIR}/main/queuemgrwindowui5.rc DESTINATION ${KDE_INSTALL_FULL_KXMLGUIDIR}/digikam)

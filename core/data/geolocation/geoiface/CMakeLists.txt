@@ -37,5 +37,5 @@ install(FILES backend-googlemaps.html
               marker-ff7f00-selected.png
               marker-ffff00-selected.png
               marker-icon-16x16.png
-        DESTINATION ${DATA_INSTALL_DIR}/digikam/geoiface/
+        DESTINATION ${KDE_INSTALL_FULL_DATADIR}/digikam/geoiface/
 )

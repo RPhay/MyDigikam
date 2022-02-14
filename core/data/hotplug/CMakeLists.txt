@@ -15,9 +15,9 @@ configure_file(digikam-opencamera.desktop.cmake.in ${CMAKE_CURRENT_BINARY_DIR}/d
 #install(FILES ${CMAKE_CURRENT_BINARY_DIR}/digikam-download.desktop
 #              ${CMAKE_CURRENT_BINARY_DIR}/digikam-gphoto2-camera.desktop
 #              ${CMAKE_CURRENT_BINARY_DIR}/digikam-mount-and-download.desktop
-#        DESTINATION ${SERVICES_INSTALL_DIR}/ServiceMenus)
+#        DESTINATION ${KDE_INSTALL_FULL_KSERVICESDIR}/ServiceMenus)
 
-install(FILES ${CMAKE_CURRENT_BINARY_DIR}/digikam-opencamera.desktop DESTINATION ${DATA_INSTALL_DIR}/solid/actions)
+install(FILES ${CMAKE_CURRENT_BINARY_DIR}/digikam-opencamera.desktop DESTINATION ${KDE_INSTALL_FULL_DATADIR}/solid/actions)
 
 if(NOT WIN32)
     install(PROGRAMS digikam-camera DESTINATION ${digikamhelperdir})
