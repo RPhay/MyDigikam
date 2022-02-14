@@ -250,12 +250,12 @@ public Q_SLOTS:
 
 protected:
 
-    void    computeMargins (int* hMargin, int* vMargin)  const;
-    QSize   computeSizeHint(bool withText)               const;
-    bool    shouldDrawText()                             const;
-    bool    isVertical()                                 const;
-    QPixmap iconPixmap()                                 const;
-    void    initStyleOption(QStyleOptionToolButton* opt) const;
+    void    computeMargins (int* hMargin, int* vMargin)        const;
+    QSize   computeSizeHint(bool withText)                     const;
+    bool    shouldDrawText()                                   const;
+    bool    isVertical()                                       const;
+    QPixmap iconPixmap()                                       const;
+    void    initButtonStyleOption(QStyleOptionToolButton* opt) const;
 
     friend class DMultiTabBarFrame;
 

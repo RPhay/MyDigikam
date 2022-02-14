@@ -16,8 +16,12 @@ set(liblayouttools_SRCS
     ${CMAKE_CURRENT_SOURCE_DIR}/layout/dexpanderbox.cpp
     ${CMAKE_CURRENT_SOURCE_DIR}/layout/statesavingobject.cpp
     ${CMAKE_CURRENT_SOURCE_DIR}/layout/dlayoutbox.cpp
-    ${CMAKE_CURRENT_SOURCE_DIR}/layout/sidebar.cpp
     ${CMAKE_CURRENT_SOURCE_DIR}/layout/thumbbardock.cpp
+    ${CMAKE_CURRENT_SOURCE_DIR}/layout/sidebar_splitter.cpp
+    ${CMAKE_CURRENT_SOURCE_DIR}/layout/sidebar_dmultitabbar.cpp
+    ${CMAKE_CURRENT_SOURCE_DIR}/layout/sidebar_dmultitabbartab.cpp
+    ${CMAKE_CURRENT_SOURCE_DIR}/layout/sidebar_dmultitabframe.cpp
+    ${CMAKE_CURRENT_SOURCE_DIR}/layout/sidebar_dmultitabbarbutton.cpp
 )
 
 set(librangetools_SRCS
