@@ -58,9 +58,49 @@
 namespace Digikam
 {
 
+class Q_DECL_HIDDEN DMultiTabBarFrame::Private
+{
+public:
+
+    explicit Private();
+
+    QBoxLayout*             mainLayout;
+    QList<DMultiTabBarTab*> tabs;
+    Qt::Edge                position;
+    DMultiTabBar::TextStyle style;
+};
+
+// -------------------------------------------------------------------------------------
+
+class Q_DECL_HIDDEN DMultiTabBarTab::Private
+{
+public:
+
+    explicit Private();
+
+    Qt::Edge                position;
+    DMultiTabBar::TextStyle style;
+};
+
+// -------------------------------------------------------------------------------------
+
+class Q_DECL_HIDDEN DMultiTabBar::Private
+{
+public:
+
+    explicit Private();
+
+    DMultiTabBarFrame*         internal;
+    QBoxLayout*                layout;
+    QFrame*                    btnTabSep;
+    QList<DMultiTabBarButton*> buttons;
+    Qt::Edge                   position;
+};
+
+// -------------------------------------------------------------------------------------
+
 class Q_DECL_HIDDEN SidebarState
 {
-
 public:
 
     SidebarState();

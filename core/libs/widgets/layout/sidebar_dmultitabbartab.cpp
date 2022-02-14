@@ -29,20 +29,6 @@
 namespace Digikam
 {
 
-class Q_DECL_HIDDEN DMultiTabBarTab::Private
-{
-public:
-
-    explicit Private()
-      : position(Qt::LeftEdge),
-        style   (DMultiTabBar::AllIconsText)
-    {
-    }
-
-    Qt::Edge                position;
-    DMultiTabBar::TextStyle style;
-};
-
 DMultiTabBarTab::DMultiTabBarTab(const QPixmap& pic, const QString& text,
                                        int id, QWidget* const parent,
                                        Qt::Edge pos,

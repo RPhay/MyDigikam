@@ -29,6 +29,33 @@
 namespace Digikam
 {
 
+DMultiTabBarFrame::Private::Private()
+    : mainLayout(nullptr),
+      position  (Qt::LeftEdge),
+      style     (DMultiTabBar::AllIconsText)
+{
+}
+
+// -------------------------------------------------------------------------------------
+
+DMultiTabBarTab::Private::Private()
+    : position(Qt::LeftEdge),
+      style   (DMultiTabBar::AllIconsText)
+{
+}
+
+// -------------------------------------------------------------------------------------
+
+DMultiTabBar::Private::Private()
+    : internal (nullptr),
+      layout   (nullptr),
+      btnTabSep(nullptr),
+      position (Qt::LeftEdge)
+{
+}
+
+// -------------------------------------------------------------------------------------
+    
 SidebarState::SidebarState()
     : activeWidget(nullptr),
       size        (0)

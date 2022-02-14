@@ -29,23 +29,6 @@
 namespace Digikam
 {
 
-class Q_DECL_HIDDEN DMultiTabBarFrame::Private
-{
-public:
-
-    explicit Private()
-      : mainLayout(nullptr),
-        position  (Qt::LeftEdge),
-        style     (DMultiTabBar::AllIconsText)
-    {
-    }
-
-    QBoxLayout*             mainLayout;
-    QList<DMultiTabBarTab*> tabs;
-    Qt::Edge                position;
-    DMultiTabBar::TextStyle style;
-};
-
 DMultiTabBarFrame::DMultiTabBarFrame(QWidget* const parent, Qt::Edge pos)
     : QFrame(parent),
       d     (new Private)
