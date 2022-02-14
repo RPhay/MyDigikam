@@ -141,7 +141,11 @@ QVariant TagRegion::toVariant() const
 
 TagRegion TagRegion::fromVariant(const QVariant& var)
 {
+#if (QT_VERSION > QT_VERSION_CHECK(5, 99, 0))
+    switch (var.typeId())
+#else
     switch (var.type())
+#endif
     {
         case QVariant::Rect:
         {
@@ -344,7 +348,11 @@ QDebug operator<<(QDebug dbg, const TagRegion& r)
 {
     QVariant var = r.toVariant();
 
+#if (QT_VERSION > QT_VERSION_CHECK(5, 99, 0))
+    switch (var.typeId())
+#else
     switch (var.type())
+#endif
     {
         case QVariant::Rect:
         {

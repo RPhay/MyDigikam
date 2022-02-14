@@ -1250,7 +1250,11 @@ DbEngineSqlQuery BdEngineBackend::execQuery(const QString& sql, const QMap<QStri
                 bool isValue                  = actionType.isValue();
                 QVariant value                = actionType.getActionValue();
 
+#if (QT_VERSION > QT_VERSION_CHECK(5, 99, 0))
+                if      (value.typeId() == QVariant::Map)
+#else
                 if      (value.type() == QVariant::Map)
+#endif
                 {
                     QMap<QString, QVariant> placeHolderMap = value.toMap();
                     QMap<QString, QVariant>::const_iterator iterator;
@@ -1271,7 +1275,11 @@ DbEngineSqlQuery BdEngineBackend::execQuery(const QString& sql, const QMap<QStri
                         }
                     }
                 }
+#if (QT_VERSION > QT_VERSION_CHECK(5, 99, 0))
+                else if ( value.typeId() == QVariant::List )
+#else
                 else if ( value.type() == QVariant::List )
+#endif
                 {
                     QList<QVariant> placeHolderList = value.toList();
                     QList<QVariant>::const_iterator iterator;
@@ -1298,7 +1306,11 @@ DbEngineSqlQuery BdEngineBackend::execQuery(const QString& sql, const QMap<QStri
                         }
                     }
                 }
+#if (QT_VERSION > QT_VERSION_CHECK(5, 99, 0))
+                else if (value.typeId() == QVariant::StringList )
+#else
                 else if (value.type() == QVariant::StringList )
+#endif
                 {
                     QStringList placeHolderList = value.toStringList();
                     QStringList::const_iterator iterator;
