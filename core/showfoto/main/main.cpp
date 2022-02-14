@@ -85,6 +85,10 @@ int main(int argc, char* argv[])
     QCoreApplication::setAttribute(Qt::AA_UseHighDpiPixmaps,
                                    system.useHighDpiPixmaps);
 
+#if (QT_VERSION < QT_VERSION_CHECK(6, 0, 0))
+
+    // This setting has no effect in Qt6 (always enabled)
+
     if (system.useHighDpiScaling)
     {
         QCoreApplication::setAttribute(Qt::AA_EnableHighDpiScaling);
@@ -93,6 +97,8 @@ int main(int argc, char* argv[])
     {
         QCoreApplication::setAttribute(Qt::AA_DisableHighDpiScaling);
     }
+
+#endif
 
 #ifdef HAVE_QWEBENGINE
 
