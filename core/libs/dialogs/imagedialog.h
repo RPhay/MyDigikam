@@ -113,9 +113,15 @@ class DIGIKAM_EXPORT ImageDialogIconProvider : public QFileIconProvider
 public:
 
     explicit ImageDialogIconProvider();
-    ~ImageDialogIconProvider()              override;
+    ~ImageDialogIconProvider()                                 override;
 
-    QIcon icon(const QFileInfo& info) const override;
+#if (QT_VERSION > QT_VERSION_CHECK(5, 99, 0))
+    QIcon icon(QAbstractFileIconProvider::IconType type) const override;
+#else
+    QIcon icon(QFileIconProvider::IconType type)         const override;
+#endif
+
+    QIcon icon(const QFileInfo& info)                    const override;
 
 private:
 

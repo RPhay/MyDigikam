@@ -119,4 +119,13 @@ QIcon ImageDialogIconProvider::icon(const QFileInfo& info) const
     return QFileIconProvider::icon(info);
 }
 
+#if (QT_VERSION > QT_VERSION_CHECK(5, 99, 0))
+QIcon ImageDialogIconProvider::icon(QAbstractFileIconProvider::IconType type) const
+#else
+QIcon ImageDialogIconProvider::icon(IconType type) const
+#endif
+{
+    return QFileIconProvider::icon(type);
+}
+
 } // namespace Digikam
