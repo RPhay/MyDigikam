@@ -393,7 +393,15 @@ void loadEcmQtTranslationFiles(QApplication& app)
                                  catalog                        %
                                  QLatin1String(".qm");
 
+#if (QT_VERSION > QT_VERSION_CHECK(5, 99, 0))
+
+            const QString root = QLibraryInfo::path(QLibraryInfo::PrefixPath);
+
+#else
+
             const QString root = QLibraryInfo::location(QLibraryInfo::PrefixPath);
+
+#endif
 
             // For AppImage transalotion files uses AppDataLocation.
 

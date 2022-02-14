@@ -44,9 +44,19 @@ int main(int argc, char* argv[])
 {
     QApplication app(argc, argv);
 
+#if (QT_VERSION > QT_VERSION_CHECK(5, 99, 0))
+
+    qCDebug(DIGIKAM_TESTS_LOG) << QLibraryInfo::path(QLibraryInfo::LibrariesPath);
+    qCDebug(DIGIKAM_TESTS_LOG) << QLibraryInfo::path(QLibraryInfo::LibraryExecutablesPath);
+    qCDebug(DIGIKAM_TESTS_LOG) << QLibraryInfo::path(QLibraryInfo::PluginsPath);
+
+#else
+
     qCDebug(DIGIKAM_TESTS_LOG) << QLibraryInfo::location(QLibraryInfo::LibrariesPath);
     qCDebug(DIGIKAM_TESTS_LOG) << QLibraryInfo::location(QLibraryInfo::LibraryExecutablesPath);
     qCDebug(DIGIKAM_TESTS_LOG) << QLibraryInfo::location(QLibraryInfo::PluginsPath);
+
+#endif
 
     QCommandLineParser parser;
     parser.addHelpOption();
