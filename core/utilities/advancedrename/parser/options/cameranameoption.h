@@ -43,11 +43,11 @@ class CameraNameOption : public Option
 public:
 
     explicit CameraNameOption();
-    ~CameraNameOption()                             override = default;
+    ~CameraNameOption()                         override = default;
 
 protected:
 
-    QString parseOperation(ParseSettings& settings, const QRegularExpressionMatch &match) override;
+    QString parseOperation(ParseSettings& settings, const QRegularExpressionMatch& match) override;
 
 private:
 

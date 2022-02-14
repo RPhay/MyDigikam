@@ -53,7 +53,7 @@ CameraNameOption::CameraNameOption()
     setRegExp(reg);
 }
 
-QString CameraNameOption::parseOperation(ParseSettings& settings, const QRegularExpressionMatch &match)
+QString CameraNameOption::parseOperation(ParseSettings& settings, const QRegularExpressionMatch& /*match*/)
 {
     QString result;
 
@@ -79,7 +79,7 @@ QString CameraNameOption::parseOperation(ParseSettings& settings, const QRegular
 
             foreach (const QString& key, dataMap.keys())
             {
-                if (key.toLower().contains(QLatin1String("exif.image.model")))
+                if      (key.toLower().contains(QLatin1String("exif.image.model")))
                 {
                     model = dataMap[key];
                 }
