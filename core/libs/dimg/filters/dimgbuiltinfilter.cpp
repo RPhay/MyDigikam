@@ -125,16 +125,44 @@ bool DImgBuiltinFilter::isValid() const
     switch (m_type)
     {
         case NoOperation:
+        {
             return false;
+        }
 
         case Crop:
-            return m_arg.type() == QVariant::Rect;
+        {
+
+#if (QT_VERSION > QT_VERSION_CHECK(5, 99, 0))
+
+            return (m_arg.typeId() == QVariant::Rect);
+
+#else
+
+            return (m_arg.type() == QVariant::Rect);
+
+#endif
+
+        }
 
         case Resize:
-            return m_arg.type() == QVariant::Size;
+        {
+
+#if (QT_VERSION > QT_VERSION_CHECK(5, 99, 0))
+
+            return (m_arg.typeId() == QVariant::Size);
+
+#else
+
+            return (m_arg.type() == QVariant::Size);
+
+#endif
+
+        }
 
         default:
+        {
             return true;
+        }
     }
 }
 
@@ -143,31 +171,45 @@ void DImgBuiltinFilter::apply(DImg& image) const
     switch (m_type)
     {
         case NoOperation:
+        {
             break;
+        }
 
         case Rotate90:
+        {
             image.rotate(DImg::ROT90);
             break;
+        }
 
         case Rotate180:
+        {
             image.rotate(DImg::ROT180);
             break;
+        }
 
         case Rotate270:
+        {
             image.rotate(DImg::ROT270);
             break;
+        }
 
         case FlipHorizontally:
+        {
             image.flip(DImg::HORIZONTAL);
             break;
+        }
 
         case FlipVertically:
+        {
             image.flip(DImg::VERTICAL);
             break;
+        }
 
         case Crop:
+        {
             image.crop(m_arg.toRect());
             break;
+        }
 
         case Resize:
         {
@@ -177,12 +219,16 @@ void DImgBuiltinFilter::apply(DImg& image) const
         }
 
         case ConvertTo8Bit:
+        {
             image.convertToEightBit();
             break;
+        }
 
         case ConvertTo16Bit:
+        {
             image.convertToSixteenBit();
             break;
+        }
     }
 }
 
@@ -194,7 +240,9 @@ FilterAction DImgBuiltinFilter::filterAction() const
     {
         case NoOperation:
         default:
+        {
             return action;
+        }
 
         case Rotate90:
         case Rotate180:
@@ -267,17 +315,25 @@ DImgBuiltinFilter DImgBuiltinFilter::reverseFilter() const
     switch (m_type)
     {
         case Rotate90:
+        {
             return DImgBuiltinFilter(Rotate270);
+        }
 
         case Rotate180:
+        {
             return DImgBuiltinFilter(Rotate180);
+        }
 
         case Rotate270:
+        {
             return DImgBuiltinFilter(Rotate90);
+        }
 
         case FlipHorizontally:
         case FlipVertically:
+        {
             return DImgBuiltinFilter(m_type);
+        }
 
         case Crop:
         case Resize:
@@ -285,7 +341,9 @@ DImgBuiltinFilter DImgBuiltinFilter::reverseFilter() const
         case ConvertTo16Bit:
         case NoOperation:
         default:
+        {
             return DImgBuiltinFilter();
+        }
     }
 }
 
@@ -329,34 +387,54 @@ QString DImgBuiltinFilter::displayableName() const
     switch (m_type)
     {
         case NoOperation:
+        {
             break;
+        }
 
         case Rotate90:
+        {
             return QString::fromUtf8(I18N_NOOP("Rotate Right"));
+        }
 
         case Rotate180:
+        {
             return QString::fromUtf8(I18N_NOOP("Rotate 180 degrees"));
+        }
 
         case Rotate270:
+        {
             return QString::fromUtf8(I18N_NOOP("Rotate Left"));
+        }
 
         case FlipHorizontally:
+        {
             return QString::fromUtf8(I18N_NOOP("Flip Horizontally"));
+        }
 
         case FlipVertically:
+        {
             return QString::fromUtf8(I18N_NOOP("Flip Vertically"));
+        }
 
         case Crop:
+        {
             return QString::fromUtf8(I18N_NOOP("Crop"));
+        }
 
         case Resize:
+        {
             return QString::fromUtf8(I18N_NOOP("Resize"));
+        }
 
         case ConvertTo8Bit:
+        {
             return QString::fromUtf8(I18N_NOOP("Convert to 8 Bit"));
+        }
 
         case ConvertTo16Bit:
+        {
             return QString::fromUtf8(I18N_NOOP("Convert to 16 Bit"));
+        }
     }
 
     return QString();
@@ -367,34 +445,54 @@ QString DImgBuiltinFilter::filterIcon() const
     switch (m_type)
     {
         case NoOperation:
+        {
             break;
+        }
 
         case Rotate90:
+        {
             return QLatin1String("object-rotate-left");
+        }
 
         case Rotate180:
+        {
             return QLatin1String("transform-rotate");
+        }
 
         case Rotate270:
+        {
             return QLatin1String("object-rotate-right");
+        }
 
         case FlipHorizontally:
+        {
             return QLatin1String("object-flip-horizontal");
+        }
 
         case FlipVertically:
+        {
             return QLatin1String("object-flip-vertical");
+        }
 
         case Crop:
+        {
             return QLatin1String("transform-crop");
+        }
 
         case Resize:
+        {
             return QLatin1String("transform-scale");
+        }
 
         case ConvertTo8Bit:
+        {
             return QLatin1String("depth16to8");
+        }
 
         case ConvertTo16Bit:
+        {
             return QLatin1String("depth8to16");
+        }
     }
 
     return QString();
