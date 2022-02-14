@@ -20,7 +20,7 @@ set(liblayouttools_SRCS
     ${CMAKE_CURRENT_SOURCE_DIR}/layout/sidebar_splitter.cpp
     ${CMAKE_CURRENT_SOURCE_DIR}/layout/sidebar_dmultitabbar.cpp
     ${CMAKE_CURRENT_SOURCE_DIR}/layout/sidebar_dmultitabbartab.cpp
-    ${CMAKE_CURRENT_SOURCE_DIR}/layout/sidebar_dmultitabframe.cpp
+    ${CMAKE_CURRENT_SOURCE_DIR}/layout/sidebar_dmultitabbarframe.cpp
     ${CMAKE_CURRENT_SOURCE_DIR}/layout/sidebar_dmultitabbarbutton.cpp
 )
 
