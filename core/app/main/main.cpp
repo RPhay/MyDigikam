@@ -100,12 +100,13 @@ int main(int argc, char* argv[])
     SystemSettings system(QLatin1String("digikam"));
     system.readSettings();
 
+#if (QT_VERSION < QT_VERSION_CHECK(6, 0, 0))
+
+    // These settings has no effect with Qt6 (always enabled)
+
     QCoreApplication::setAttribute(Qt::AA_UseHighDpiPixmaps,
                                    system.useHighDpiPixmaps);
 
-#if (QT_VERSION < QT_VERSION_CHECK(6, 0, 0))
-
-    // This setting has no effect in Qt6 (always enabled)
 
     if (system.useHighDpiScaling)
     {

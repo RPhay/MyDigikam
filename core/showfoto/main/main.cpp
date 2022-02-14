@@ -82,12 +82,12 @@ int main(int argc, char* argv[])
     SystemSettings system(QLatin1String("showfoto"));
     system.readSettings();
 
-    QCoreApplication::setAttribute(Qt::AA_UseHighDpiPixmaps,
-                                   system.useHighDpiPixmaps);
-
 #if (QT_VERSION < QT_VERSION_CHECK(6, 0, 0))
 
-    // This setting has no effect in Qt6 (always enabled)
+    // These settings has no effect with Qt6 (always enabled)
+
+    QCoreApplication::setAttribute(Qt::AA_UseHighDpiPixmaps,
+                                   system.useHighDpiPixmaps);
 
     if (system.useHighDpiScaling)
     {
