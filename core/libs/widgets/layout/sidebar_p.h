@@ -55,4 +55,51 @@
 
 #include "digikam_debug.h"
 
+class Q_DECL_HIDDEN SidebarState
+{
+
+public:
+
+    SidebarState();
+    SidebarState(QWidget* const w, int size);
+
+    QWidget* activeWidget;
+    int      size;
+};
+
+// -------------------------------------------------------------------------------------
+
+class Q_DECL_HIDDEN Sidebar::Private
+{
+
+public:
+
+    explicit Private();
+
+    bool                          minimizedDefault;
+    bool                          minimized;
+
+    /**
+     * Backup of shrinked status before backup(), restored by restore()
+     * NOTE: when sidebar is hidden, only icon bar is affected. If sidebar view is
+     * visible, this one must be shrink and restored accordingly.
+     */
+    bool                          isMinimized;
+
+    int                           tabs;
+    int                           activeTab;
+    int                           dragSwitchId;
+    int                           restoreSize;
+
+    QStackedWidget*               stack;
+    SidebarSplitter*              splitter;
+    QTimer*                       dragSwitchTimer;
+
+    QHash<QWidget*, SidebarState> appendedTabsStateCache;
+
+    const QString                 optionActiveTabEntry;
+    const QString                 optionMinimizedEntry;
+    const QString                 optionRestoreSizeEntry;
+};
+
 #endif // DIGIKAM_SIDE_BAR_P_H
