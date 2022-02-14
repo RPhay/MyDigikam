@@ -55,6 +55,9 @@
 
 #include "digikam_debug.h"
 
+namespace Digikam
+{
+
 class Q_DECL_HIDDEN SidebarState
 {
 
@@ -101,5 +104,16 @@ public:
     const QString                 optionMinimizedEntry;
     const QString                 optionRestoreSizeEntry;
 };
+
+// -------------------------------------------------------------------------------------
+
+class Q_DECL_HIDDEN SidebarSplitter::Private
+{
+public:
+
+    QList<Sidebar*> sidebars;
+};
+
+} // namespace Digikam
 
 #endif // DIGIKAM_SIDE_BAR_P_H

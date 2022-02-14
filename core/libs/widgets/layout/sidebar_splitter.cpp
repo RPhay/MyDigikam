@@ -31,13 +31,6 @@ namespace Digikam
 
 const QString SidebarSplitter::DEFAULT_CONFIG_KEY = QLatin1String("SplitterState");
 
-class Q_DECL_HIDDEN SidebarSplitter::Private
-{
-public:
-
-    QList<Sidebar*> sidebars;
-};
-
 SidebarSplitter::SidebarSplitter(QWidget* const parent)
     : QSplitter(parent),
       d        (new Private)
