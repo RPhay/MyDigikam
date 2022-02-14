@@ -67,6 +67,7 @@ mkdir -p $APP_IMG_DIR/usr/bin
 mkdir -p $APP_IMG_DIR/usr/etc
 mkdir -p $APP_IMG_DIR/usr/share
 mkdir -p $APP_IMG_DIR/usr/share/icons
+mkdir -p $APP_IMG_DIR/usr/share/X11
 mkdir -p $APP_IMG_DIR/usr/share/metainfo
 mkdir -p $APP_IMG_DIR/usr/share/dbus-1/interfaces
 mkdir -p $APP_IMG_DIR/usr/share/dbus-1/services
@@ -87,6 +88,7 @@ cd $APP_IMG_DIR
 
 # FIXME: How to find out which subset of plugins is really needed? I used strace when running the binary
 cp -r /usr/plugins ./usr/
+cp -r /usr/${LIBSUFFIX}/plugins ./usr/
 rm -fr ./usr/plugins/ktexteditor
 rm -fr ./usr/plugins/kf5/parts
 rm -fr ./usr/plugins/konsolepart.so
@@ -111,6 +113,7 @@ cp -r /usr/share/kservicetypes5                           ./usr/share
 cp -r /usr/share/kxmlgui5                                 ./usr/share
 cp -r /usr/share/kf5                                      ./usr/share
 cp -r /usr/share/solid                                    ./usr/share
+cp -r /usr/share/X11/xkb                                  ./usr/share/X11
 
 # depending of OpenCV version installed, data directory is not the same.
 cp -r /usr/share/opencv4                                  ./usr/share
