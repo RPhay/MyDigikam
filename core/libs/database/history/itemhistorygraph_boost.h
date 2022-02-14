@@ -50,6 +50,8 @@
 
 // Prohibit boost using deprecated header files
 #define BOOST_NO_HASH
+#define BOOST_BIND_GLOBAL_PLACEHOLDERS
+#define BOOST_ALLOW_DEPRECATED_HEADERS
 
 // C++ includes
 
