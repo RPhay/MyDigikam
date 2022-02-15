@@ -43,7 +43,7 @@ namespace Digikam
 
 ReplaceDialog::ReplaceDialog(Rule* const parent)
     : RuleDialog(parent),
-      ui(new Ui::ReplaceModifierDialogWidget())
+      ui        (new Ui::ReplaceModifierDialogWidget())
 {
     QWidget* const mainWidget = new QWidget(this);
     ui->setupUi(mainWidget);
@@ -111,7 +111,7 @@ void ReplaceModifier::slotTokenTriggered(const QString& token)
     emit signalTokenTriggered(result);
 }
 
-QString ReplaceModifier::parseOperation(ParseSettings& settings, const QRegularExpressionMatch &match)
+QString ReplaceModifier::parseOperation(ParseSettings& settings, const QRegularExpressionMatch& match)
 {
     QString original               = match.captured(2);
     QString replacement            = match.captured(3);

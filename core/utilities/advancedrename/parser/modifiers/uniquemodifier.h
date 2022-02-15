@@ -44,8 +44,8 @@ class UniqueModifier : public Modifier
 public:
 
     explicit UniqueModifier();
-    QString  parseOperation(ParseSettings& settings, const QRegularExpressionMatch &match) override;
-    void     reset()                                 override;
+    QString  parseOperation(ParseSettings& settings, const QRegularExpressionMatch& match) override;
+    void     reset()                                                                       override;
 
 private:
 

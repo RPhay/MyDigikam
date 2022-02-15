@@ -41,14 +41,14 @@ class DefaultValueDialog : public RuleDialog
 public:
 
     explicit DefaultValueDialog(Rule* parent);
-    ~DefaultValueDialog()                           override;
+    ~DefaultValueDialog()                                                                 override;
 
     QLineEdit* valueInput;
 
 private:
 
     // Disable
-    explicit DefaultValueDialog(QWidget*) = delete;
+    explicit DefaultValueDialog(QWidget*)                        = delete;
     DefaultValueDialog(const DefaultValueDialog&);
     DefaultValueDialog& operator=(const DefaultValueDialog&);
 };
@@ -62,11 +62,11 @@ class DefaultValueModifier : public Modifier
 public:
 
     explicit DefaultValueModifier();
-    QString parseOperation(ParseSettings& settings, const QRegularExpressionMatch &match) override;
+    QString parseOperation(ParseSettings& settings, const QRegularExpressionMatch& match) override;
 
 private Q_SLOTS:
 
-    void slotTokenTriggered(const QString& token)   override;
+    void slotTokenTriggered(const QString& token)                                         override;
 
 private:
 

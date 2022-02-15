@@ -46,7 +46,7 @@ class ReplaceDialog : public RuleDialog
 public:
 
     explicit ReplaceDialog(Rule* const parent);
-    ~ReplaceDialog() override;
+    ~ReplaceDialog()                                                                      override;
 
     Ui::ReplaceModifierDialogWidget* const ui;
 
@@ -67,11 +67,11 @@ class ReplaceModifier : public Modifier
 public:
 
     explicit ReplaceModifier();
-    QString parseOperation(ParseSettings& settings, const QRegularExpressionMatch &match) override;
+    QString parseOperation(ParseSettings& settings, const QRegularExpressionMatch& match) override;
 
 private Q_SLOTS:
 
-    void slotTokenTriggered(const QString& token) override;
+    void slotTokenTriggered(const QString& token)                                         override;
 
 private:
 

@@ -69,13 +69,13 @@ class Q_DECL_HIDDEN AlbumThumbnailLoader::Private
 public:
 
     explicit Private()
-      : iconSize(ApplicationSettings::instance()->getTreeViewIconSize()),
-        faceSize(ApplicationSettings::instance()->getTreeViewFaceSize()),
-        minBlendSize(20),
-        iconTagThumbThread(nullptr),
-        iconFaceThumbThread(nullptr),
+      : iconSize            (ApplicationSettings::instance()->getTreeViewIconSize()),
+        faceSize            (ApplicationSettings::instance()->getTreeViewFaceSize()),
+        minBlendSize        (20),
+        iconTagThumbThread  (nullptr),
+        iconFaceThumbThread (nullptr),
         iconAlbumThumbThread(nullptr),
-        fallBackIcon(QIcon::fromTheme(QLatin1String("dialog-cancel")))
+        fallBackIcon        (QIcon::fromTheme(QLatin1String("dialog-cancel")))
     {
     }
 
@@ -531,7 +531,11 @@ void AlbumThumbnailLoader::slotGotThumbnailFromIcon(const LoadingDescription& lo
 
     QRect faceRect = QRect();
 
+#if (QT_VERSION > QT_VERSION_CHECK(5, 99, 0))
+    if (loadingDescription.previewParameters.extraParameter.typeId() == QVariant::Rect)
+#else
     if (loadingDescription.previewParameters.extraParameter.type() == QVariant::Rect)
+#endif
     {
         faceRect = loadingDescription.previewParameters.extraParameter.toRect();
     }

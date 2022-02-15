@@ -54,7 +54,7 @@ UniqueModifier::UniqueModifier()
     setRegExp(reg);
 }
 
-QString UniqueModifier::parseOperation(ParseSettings& settings, const QRegularExpressionMatch &match)
+QString UniqueModifier::parseOperation(ParseSettings& settings, const QRegularExpressionMatch& match)
 {
     QFileInfo info(settings.fileUrl.toLocalFile());
     ParseResults::ResultsKey key = settings.currentResultsKey;

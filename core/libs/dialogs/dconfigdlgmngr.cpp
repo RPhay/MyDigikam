@@ -219,7 +219,11 @@ void DConfigDlgMngr::setupWidget(QWidget* widget, KConfigSkeletonItem* item)
     {
         const KConfigSkeletonItem* const sitem = d->conf->findItem(widget->objectName().mid(5));
 
+#if (QT_VERSION > QT_VERSION_CHECK(5, 99, 0))
+        if (sitem->property().typeId() == QVariant::Int)
+#else
         if (sitem->property().type() == QVariant::Int)
+#endif
         {
             QObjectList children                  = gb->children();
             children.removeAll(gb->layout());

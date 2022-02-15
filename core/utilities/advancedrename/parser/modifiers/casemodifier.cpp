@@ -53,7 +53,7 @@ CaseModifier::CaseModifier()
     setRegExp(reg);
 }
 
-QString CaseModifier::parseOperation(ParseSettings& settings, const QRegularExpressionMatch &match)
+QString CaseModifier::parseOperation(ParseSettings& settings, const QRegularExpressionMatch& match)
 {
     const QString& token            = match.captured(1);
 

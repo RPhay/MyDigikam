@@ -117,7 +117,7 @@ void AlbumFilterModel::setSearchTextSettings(const SearchTextSettings& settings)
             validRows                  += rowCount(collectionIndex);
         }
 
-        bool hasResult = validRows > 0;
+        bool hasResult = (validRows > 0);
         qCDebug(DIGIKAM_GENERAL_LOG) << "new search text settings:" << settings.text
                                      << ": hasResult =" << hasResult
                                      << ", validRows =" << validRows;
@@ -132,12 +132,12 @@ void AlbumFilterModel::setSearchTextSettings(const SearchTextSettings& settings)
 
 bool AlbumFilterModel::settingsFilter(const SearchTextSettings& settings) const
 {
-    return !settings.text.isEmpty();
+    return (!settings.text.isEmpty());
 }
 
 bool AlbumFilterModel::isFiltering() const
 {
-    return settingsFilter(m_settings);
+    return (settingsFilter(m_settings));
 }
 
 void AlbumFilterModel::updateFilter()
@@ -281,13 +281,19 @@ QVariant AlbumFilterModel::dataForCurrentSortRole(Album* album) const
             switch (sortRole)
             {
                 case ApplicationSettings::ByFolder:
+                {
                     return a->title();
+                }
 
                 case ApplicationSettings::ByDate:
+                {
                     return a->date();
+                }
 
                 default:
+                {
                     return a->category();
+                }
             }
         }
         else if (album->type() == Album::TAG)
@@ -472,9 +478,8 @@ bool AlbumFilterModel::lessThan(const QModelIndex& left, const QModelIndex& righ
                                                    : leftAlbum->isTrashAlbum();
     }
 
-    QVariant valLeft  = dataForCurrentSortRole(leftAlbum);
-    QVariant valRight = dataForCurrentSortRole(rightAlbum);
-
+    QVariant valLeft                        = dataForCurrentSortRole(leftAlbum);
+    QVariant valRight                       = dataForCurrentSortRole(rightAlbum);
     ApplicationSettings::AlbumSortRole role = ApplicationSettings::instance()->getAlbumSortRole();
 
     if (((role == ApplicationSettings::ByDate) || (role == ApplicationSettings::ByCategory)) &&
@@ -483,14 +488,22 @@ bool AlbumFilterModel::lessThan(const QModelIndex& left, const QModelIndex& righ
         return QSortFilterProxyModel::lessThan(left, right);
     }
 
+#if (QT_VERSION > QT_VERSION_CHECK(5, 99, 0))
+    if ((valLeft.typeId() == QVariant::String) && (valRight.typeId() == QVariant::String))
+#else
     if ((valLeft.type() == QVariant::String) && (valRight.type() == QVariant::String))
+#endif
     {
         ItemSortCollator* const sorter = ItemSortCollator::instance();
         bool natural                   = ApplicationSettings::instance()->isStringTypeNatural();
 
         return (sorter->albumCompare(valLeft.toString(), valRight.toString(), sortCaseSensitivity(), natural) < 0);
     }
+#if (QT_VERSION > QT_VERSION_CHECK(5, 99, 0))
+    else if ((valLeft.typeId() == QVariant::Date) && (valRight.typeId() == QVariant::Date))
+#else
     else if ((valLeft.type() == QVariant::Date) && (valRight.type() == QVariant::Date))
+#endif
     {
         return (compareByOrder(valLeft.toDate(), valRight.toDate(), Qt::AscendingOrder) < 0);
     }
@@ -516,10 +529,10 @@ void AlbumFilterModel::slotAlbumsHaveBeenUpdated(int type)
 
 // -----------------------------------------------------------------------------
 
-CheckableAlbumFilterModel::CheckableAlbumFilterModel(QObject* const parent) :
-    AlbumFilterModel(parent),
-    m_filterChecked(false),
-    m_filterPartiallyChecked(false)
+CheckableAlbumFilterModel::CheckableAlbumFilterModel(QObject* const parent)
+    : AlbumFilterModel        (parent),
+      m_filterChecked         (false),
+      m_filterPartiallyChecked(false)
 {
 }
 
@@ -599,7 +612,7 @@ void SearchFilterModel::setSourceSearchModel(SearchModel* const source)
 
 SearchModel* SearchFilterModel::sourceSearchModel() const
 {
-    return dynamic_cast<SearchModel*> (sourceModel());
+    return (dynamic_cast<SearchModel*> (sourceModel()));
 }
 
 void SearchFilterModel::setFilterSearchType(DatabaseSearch::Type type)

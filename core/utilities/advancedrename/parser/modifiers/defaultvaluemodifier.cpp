@@ -110,7 +110,7 @@ void DefaultValueModifier::slotTokenTriggered(const QString& token)
     emit signalTokenTriggered(result);
 }
 
-QString DefaultValueModifier::parseOperation(ParseSettings& settings, const QRegularExpressionMatch &match)
+QString DefaultValueModifier::parseOperation(ParseSettings& settings, const QRegularExpressionMatch& match)
 {
     if (!settings.str2Modify.isEmpty())
     {

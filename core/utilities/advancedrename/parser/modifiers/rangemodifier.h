@@ -44,7 +44,7 @@ class RangeDialog : public RuleDialog
 public:
 
     explicit RangeDialog(Rule* const parent);
-    ~RangeDialog() override;
+    ~RangeDialog()                                                                        override;
 
     Ui::RangeModifierDialogWidget* const ui;
 
@@ -69,11 +69,11 @@ class RangeModifier : public Modifier
 public:
 
     explicit RangeModifier();
-    QString parseOperation(ParseSettings& settings, const QRegularExpressionMatch &match) override;
+    QString parseOperation(ParseSettings& settings, const QRegularExpressionMatch& match) override;
 
 private Q_SLOTS:
 
-    void slotTokenTriggered(const QString& token) override;
+    void slotTokenTriggered(const QString& token)                                         override;
 
 private:
 

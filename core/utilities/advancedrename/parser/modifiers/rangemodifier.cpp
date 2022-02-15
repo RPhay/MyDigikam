@@ -43,7 +43,7 @@ namespace Digikam
 
 RangeDialog::RangeDialog(Rule* const parent)
     : RuleDialog(parent),
-      ui(new Ui::RangeModifierDialogWidget())
+      ui        (new Ui::RangeModifierDialogWidget())
 {
     QWidget* const mainWidget = new QWidget(this);
     ui->setupUi(mainWidget);
@@ -110,7 +110,7 @@ void RangeModifier::slotTokenTriggered(const QString& token)
     emit signalTokenTriggered(result);
 }
 
-QString RangeModifier::parseOperation(ParseSettings& settings, const QRegularExpressionMatch &match)
+QString RangeModifier::parseOperation(ParseSettings& settings, const QRegularExpressionMatch& match)
 {
     bool ok                       = false;
 
