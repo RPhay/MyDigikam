@@ -1500,7 +1500,13 @@ void DCategorizedView::startDrag(Qt::DropActions supportedActions)
 
 void DCategorizedView::dragMoveEvent(QDragMoveEvent* event)
 {
+
+#if (QT_VERSION > QT_VERSION_CHECK(5, 99, 0))
+    d->mousePosition    = event->position().toPoint();
+#else
     d->mousePosition    = event->pos();
+#endif
+
     d->dragLeftViewport = false;
 
 #if defined(DOLPHIN_DRAGANDDROP)
@@ -1518,7 +1524,11 @@ void DCategorizedView::dragMoveEvent(QDragMoveEvent* event)
         return;
     }
 
+#if (QT_VERSION > QT_VERSION_CHECK(5, 99, 0))
+    d->hovered = indexAt(event->position().toPoint());
+#else
     d->hovered = indexAt(event->pos());
+#endif
 
 #if !defined(DOLPHIN_DRAGANDDROP)
 

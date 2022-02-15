@@ -169,7 +169,11 @@ void ShowfotoFolderViewBookmarkList::dragMoveEvent(QDragMoveEvent* e)
 
         if (inf.isDir())
         {
+#if (QT_VERSION > QT_VERSION_CHECK(5, 99, 0))
+            QTreeWidgetItem* const item                  = itemAt(e->position().toPoint());
+#else
             QTreeWidgetItem* const item                  = itemAt(e->pos());
+#endif
             ShowfotoFolderViewBookmarkItem* const fvitem = dynamic_cast<ShowfotoFolderViewBookmarkItem*>(item);
 
             if (
@@ -197,7 +201,11 @@ void ShowfotoFolderViewBookmarkList::dropEvent(QDropEvent* e)
 
         if (inf.isDir())
         {
+#if (QT_VERSION > QT_VERSION_CHECK(5, 99, 0))
+            QTreeWidgetItem* const item                  = itemAt(e->position().toPoint());
+#else
             QTreeWidgetItem* const item                  = itemAt(e->pos());
+#endif
             ShowfotoFolderViewBookmarkItem* const fvitem = dynamic_cast<ShowfotoFolderViewBookmarkItem*>(item);
 
             if (

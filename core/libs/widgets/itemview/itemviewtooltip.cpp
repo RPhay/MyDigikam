@@ -162,8 +162,10 @@ bool ItemViewToolTip::eventFilter(QObject* o, QEvent* e)
 #endif // Q_OS_MACOS
 
         case QEvent::Leave:
+        {
             hide(); // could add a 300ms timer here, like Qt
             break;
+        }
 
         case QEvent::WindowActivate:
         case QEvent::WindowDeactivate:
@@ -172,23 +174,32 @@ bool ItemViewToolTip::eventFilter(QObject* o, QEvent* e)
         case QEvent::FocusIn:
         case QEvent::FocusOut:
         case QEvent::Wheel:
+        {
             hide();
             break;
+        }
 
         case QEvent::MouseMove:
         {
             // needs mouse tracking, obviously
             if ((o == d->view->viewport()) &&
                 !d->rect.isNull()          &&
+#if (QT_VERSION > QT_VERSION_CHECK(5, 99, 0))
+                !d->rect.contains(static_cast<QMouseEvent*>(e)->globalPosition().toPoint()))
+#else
                 !d->rect.contains(static_cast<QMouseEvent*>(e)->globalPos()))
+#endif
             {
                 hide();
             }
+
             break;
         }
 
         default:
+        {
             break;
+        }
     }
 
     return false;
@@ -201,7 +212,12 @@ void ItemViewToolTip::mouseMoveEvent(QMouseEvent* e)
         return;
     }
 
+#if (QT_VERSION > QT_VERSION_CHECK(5, 99, 0))
+    QPoint pos = e->globalPosition().toPoint();
+#else
     QPoint pos = e->globalPos();
+#endif
+
     pos        = d->view->viewport()->mapFromGlobal(pos);
 
     if (!d->rect.contains(pos))

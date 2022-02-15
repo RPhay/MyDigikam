@@ -87,7 +87,13 @@ QModelIndexList TagMngrListView::mySelectedIndexes()
 
 void TagMngrListView::dropEvent(QDropEvent* e)
 {
+
+#if (QT_VERSION > QT_VERSION_CHECK(5, 99, 0))
+    QModelIndex index                = indexVisuallyAt(e->position().toPoint());
+#else
     QModelIndex index                = indexVisuallyAt(e->pos());
+#endif
+
     TagMngrListModel* const tagmodel = dynamic_cast<TagMngrListModel*>(model());
 
     if (!tagmodel)

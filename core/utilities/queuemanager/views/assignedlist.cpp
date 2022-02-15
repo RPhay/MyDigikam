@@ -398,7 +398,11 @@ void AssignedListView::dropEvent(QDropEvent* e)
             QMultiMap<int, QString> map;
             ds >> map;
 
+#if (QT_VERSION > QT_VERSION_CHECK(5, 99, 0))
+            AssignedListViewItem* const preceding = dynamic_cast<AssignedListViewItem*>(itemAt(e->position().toPoint()));
+#else
             AssignedListViewItem* const preceding = dynamic_cast<AssignedListViewItem*>(itemAt(e->pos()));
+#endif
             assignTools(map, preceding);
         }
 
@@ -426,7 +430,11 @@ void AssignedListView::dropEvent(QDropEvent* e)
                 ds >> version;
                 ds >> settings;
 
+#if (QT_VERSION > QT_VERSION_CHECK(5, 99, 0))
+                AssignedListViewItem* const preceding = dynamic_cast<AssignedListViewItem*>(itemAt(e->position().toPoint()));
+#else
                 AssignedListViewItem* const preceding = dynamic_cast<AssignedListViewItem*>(itemAt(e->pos()));
+#endif
 
                 BatchToolSet set;
                 set.name                              = name;

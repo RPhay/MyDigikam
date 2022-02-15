@@ -275,7 +275,11 @@ bool ItemDragDropHandler::dropEvent(QAbstractItemView* abstractview, const QDrop
 
     if (view)
     {
+#if (QT_VERSION > QT_VERSION_CHECK(5, 99, 0))
+        album = view->albumAt(e->position().toPoint());
+#else
         album = view->albumAt(e->pos());
+#endif
     }
     else
     {
@@ -283,7 +287,11 @@ bool ItemDragDropHandler::dropEvent(QAbstractItemView* abstractview, const QDrop
 
         if (tableViewTreeView)
         {
+#if (QT_VERSION > QT_VERSION_CHECK(5, 99, 0))
+            album = tableViewTreeView->albumAt(e->position().toPoint());
+#else
             album = tableViewTreeView->albumAt(e->pos());
+#endif
         }
     }
 
@@ -611,7 +619,11 @@ bool ItemDragDropHandler::dropEvent(QAbstractItemView* abstractview, const QDrop
             popFaceTagMenu.addAction(QIcon::fromTheme(QLatin1String("dialog-cancel")), i18n("&Cancel"));
             popFaceTagMenu.setMouseTracking(true);
 
+#if (QT_VERSION > QT_VERSION_CHECK(5, 99, 0))
+            QAction* const res = popFaceTagMenu.exec(dview->mapToGlobal(e->position().toPoint()));
+#else
             QAction* const res = popFaceTagMenu.exec(dview->mapToGlobal(e->pos()));
+#endif
 
             if (res)
             {
@@ -656,7 +668,12 @@ bool ItemDragDropHandler::dropEvent(QAbstractItemView* abstractview, const QDrop
         popMenu.addAction(QIcon::fromTheme(QLatin1String("dialog-cancel")), i18n("&Cancel"));
 
         popMenu.setMouseTracking(true);
+
+#if (QT_VERSION > QT_VERSION_CHECK(5, 99, 0))
+        QAction* const choice = popMenu.exec(view->mapToGlobal(e->position().toPoint()));
+#else
         QAction* const choice = popMenu.exec(view->mapToGlobal(e->pos()));
+#endif
 
         if (choice)
         {
@@ -707,7 +724,12 @@ bool ItemDragDropHandler::dropEvent(QAbstractItemView* abstractview, const QDrop
         popMenu.addSeparator();
         popMenu.addAction(QIcon::fromTheme(QLatin1String("dialog-cancel")), i18n("C&ancel"));
         popMenu.setMouseTracking(true);
+
+#if (QT_VERSION > QT_VERSION_CHECK(5, 99, 0))
+        QAction* const choice        = popMenu.exec(iconView->mapToGlobal(e->position().toPoint()));
+#else
         QAction* const choice        = popMenu.exec(iconView->mapToGlobal(e->pos()));
+#endif
 
         if (choice)
         {

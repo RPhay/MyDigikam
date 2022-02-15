@@ -172,7 +172,12 @@ bool ImportDragDropHandler::dropEvent(QAbstractItemView* abstractview,
         popMenu.addSeparator();
         popMenu.addAction(QIcon::fromTheme(QLatin1String("dialog-cancel")), i18n("C&ancel"));
         popMenu.setMouseTracking(true);
+
+#if (QT_VERSION > QT_VERSION_CHECK(5, 99, 0))
+        QAction* const choice   = popMenu.exec(view->mapToGlobal(e->position().toPoint()));
+#else
         QAction* const choice   = popMenu.exec(view->mapToGlobal(e->pos()));
+#endif
 
         if (choice)
         {
