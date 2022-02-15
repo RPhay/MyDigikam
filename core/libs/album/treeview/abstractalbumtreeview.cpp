@@ -574,7 +574,11 @@ void AbstractAlbumTreeView::dragMoveEvent(QDragMoveEvent* e)
 
     if (handler)
     {
+#if (QT_VERSION > QT_VERSION_CHECK(5, 99, 0))
+        const QModelIndex index     = indexVisuallyAt(e->position().toPoint());
+#else
         const QModelIndex index     = indexVisuallyAt(e->pos());
+#endif
         const Qt::DropAction action = handler->accepts(e, m_albumFilterModel->mapToSourceAlbumModel(index));
 
         if (action == Qt::IgnoreAction)
@@ -601,7 +605,11 @@ void AbstractAlbumTreeView::dropEvent(QDropEvent* e)
 
     if (handler)
     {
+#if (QT_VERSION > QT_VERSION_CHECK(5, 99, 0))
+        const QModelIndex index = indexVisuallyAt(e->position().toPoint());
+#else
         const QModelIndex index = indexVisuallyAt(e->pos());
+#endif
 
         if (handler->dropEvent(this, e, m_albumFilterModel->mapToSourceAlbumModel(index)))
         {
