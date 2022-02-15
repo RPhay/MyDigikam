@@ -76,7 +76,7 @@ bool s_checkSolidCamera(const Solid::Device& cameraDevice)
 
     QVariant driverHandle = camera->driverHandle(QLatin1String("gphoto"));
 
-    if (!driverHandle.canConvert(QVariant::List))
+    if (!driverHandle.canConvert(QMetaType::QVariantList))
     {
         qCWarning(DIGIKAM_GENERAL_LOG) << "Solid returns unsupported driver handle for gphoto2";
         return false;
@@ -86,8 +86,8 @@ bool s_checkSolidCamera(const Solid::Device& cameraDevice)
 
     if ((driverHandleList.size() < 3)                               ||
         (driverHandleList.at(0).toString() != QLatin1String("usb")) ||
-        !driverHandleList.at(1).canConvert(QVariant::Int)           ||
-        !driverHandleList.at(2).canConvert(QVariant::Int))
+        !driverHandleList.at(1).canConvert(QMetaType::Int)          ||
+        !driverHandleList.at(2).canConvert(QMetaType::Int))
     {
         qCWarning(DIGIKAM_GENERAL_LOG) << "Solid returns unsupported driver handle for gphoto2";
         return false;

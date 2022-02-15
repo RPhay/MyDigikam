@@ -48,6 +48,7 @@
 #include <QMessageBox>
 #include <QStatusBar>
 #include <QDir>
+#include <QMetaType>
 
 // KDE includes
 

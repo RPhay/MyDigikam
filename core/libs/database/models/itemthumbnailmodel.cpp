@@ -227,7 +227,12 @@ QVariant ItemThumbnailModel::data(const QModelIndex& index, int role) const
 
         if (info.isNull())
         {
+#if (QT_VERSION > QT_VERSION_CHECK(5, 99, 0))
+            QVariant var = QPixmap();
+            return var;
+#else
             return QVariant(QVariant::Pixmap);
+#endif
         }
 
         double ratio  = qApp->devicePixelRatio();
@@ -248,7 +253,12 @@ QVariant ItemThumbnailModel::data(const QModelIndex& index, int role) const
             }
         }
 
+#if (QT_VERSION > QT_VERSION_CHECK(5, 99, 0))
+        QVariant var = QPixmap();
+        return var;
+#else
         return QVariant(QVariant::Pixmap);
+#endif
     }
 
     return ItemModel::data(index, role);
