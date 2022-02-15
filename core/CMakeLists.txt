@@ -369,20 +369,9 @@ elseif()
     set(HAVE_OPENGL FALSE)
 endif()
 
-# -- Install Paths ------------------------------------------------------------
+# -- Print Install Paths from ECM ---------------------------------------------
 
-message(STATUS "INSTALL DATA DIR      : ${KDE_INSTALL_FULL_DATADIR}")
-message(STATUS "INSTALL ICON DIR      : ${KDE_INSTALL_FULL_ICONDIR}")
-message(STATUS "INSTALL APP DIR       : ${KDE_INSTALL_FULL_APPDIR}")
-message(STATUS "INSTALL KNOTIFY5RC DIR: ${KDE_INSTALL_FULL_KNOTIFY5RCDIR}")
-message(STATUS "INSTALL KNOTIFYRC DIR : ${KDE_INSTALL_FULL_KNOTIFYRCDIR}")
-message(STATUS "INSTALL BIN DIR       : ${KDE_INSTALL_FULL_BINDIR}")
-message(STATUS "INSTALL MAN DIR       : ${KDE_INSTALL_FULL_MANDIR}")
-message(STATUS "INSTALL PLUGIN DIR    : ${KDE_INSTALL_FULL_PLUGINDIR}")
-message(STATUS "INSTALL KXMLGUI5 DIR  : ${KDE_INSTALL_FULL_KXMLGUI5DIR}")
-message(STATUS "INSTALL KXMLGUI DIR   : ${KDE_INSTALL_FULL_KXMLGUIDIR}")
-message(STATUS "INSTALL SERVICES DIR  : ${KDE_INSTALL_FULL_KSERVICESDIR}")
-message(STATUS "INSTALL LIBEXEC DIR   : ${KDE_INSTALL_FULL_LIBEXECDIR}")
+CHECK_INSTALL_PATHS()
 
 # -- Windows rules ------------------------------------------------------------
 
@@ -449,8 +438,6 @@ if(BUILD_WITH_CCACHE)
     find_program(CCACHE_FOUND ccache)
     message(STATUS "ccache program found: ${CCACHE_FOUND}...")
 endif()
-
-# -- libgphoto2 rules ----------------------------------------------------------
 
 # -- libgphoto2 rules ----------------------------------------------------------
 

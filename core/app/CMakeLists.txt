@@ -63,14 +63,8 @@ include(DigikamTarget.cmake)
 # Others Files to install
 
 install(PROGRAMS ${CMAKE_CURRENT_SOURCE_DIR}/main/org.kde.digikam.desktop     DESTINATION ${KDE_INSTALL_FULL_APPDIR})
-install(FILES    ${CMAKE_CURRENT_SOURCE_DIR}/main/org.kde.digikam.appdata.xml DESTINATION ${KDE_INSTALL_METAINFODIR})
-
-if (Qt6_FOUND)
-    install(FILES    ${CMAKE_CURRENT_SOURCE_DIR}/main/digikamui5.rc               DESTINATION ${KDE_INSTALL_FULL_KXMLGUIDIR}/digikam)
-    install(FILES    ${CMAKE_CURRENT_SOURCE_DIR}/main/digikam.notifyrc            DESTINATION ${KDE_INSTALL_FULL_KNOTIFYRCDIR})
-else()
-    install(FILES    ${CMAKE_CURRENT_SOURCE_DIR}/main/digikamui5.rc               DESTINATION ${KDE_INSTALL_FULL_KXMLGUI5DIR}/digikam)
-    install(FILES    ${CMAKE_CURRENT_SOURCE_DIR}/main/digikam.notifyrc            DESTINATION ${KDE_INSTALL_FULL_KNOTIFY5RCDIR})
-endif()
+install(FILES    ${CMAKE_CURRENT_SOURCE_DIR}/main/org.kde.digikam.appdata.xml DESTINATION ${KDE_INSTALL_FULL_METAINFODIR})
+install(FILES    ${CMAKE_CURRENT_SOURCE_DIR}/main/digikamui5.rc               DESTINATION ${KDE_INSTALL_FULL_KXMLGUIDIR}/digikam)
+install(FILES    ${CMAKE_CURRENT_SOURCE_DIR}/main/digikam.notifyrc            DESTINATION ${KDE_INSTALL_FULL_KNOTIFYRCDIR})
 
 include(DigikamExportAPI.cmake)
