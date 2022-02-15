@@ -146,7 +146,11 @@ QRect DCategorizedView::Private::visualRectInViewport(const QModelIndex& index) 
     QString    curCategory     = elementsInfo[index.row()].category;
     const bool leftToRightFlow = (listView->flow() == QListView::LeftToRight);
     QStyleOptionViewItem option;
-    option.initFrom(listView);
+#if (QT_VERSION > QT_VERSION_CHECK(5, 99, 0))
+    listView->initViewItemOption(&option);
+#else
+    option = listView->viewOptions();
+#endif
 
     if (leftToRightFlow)
     {
@@ -345,7 +349,11 @@ QRect DCategorizedView::Private::visualCategoryRectInViewport(const QString& cat
     }
 
     QStyleOptionViewItem option;
-    option.initFrom(listView);
+#if (QT_VERSION > QT_VERSION_CHECK(5, 99, 0))
+    listView->initViewItemOption(&option);
+#else
+    option = listView->viewOptions();
+#endif
 
     foreach (const QString& itCategory, categories)
     {
@@ -528,7 +536,11 @@ void DCategorizedView::Private::updateScrollbars()
 void DCategorizedView::Private::drawDraggedItems(QPainter* painter)
 {
     QStyleOptionViewItem option;
-    option.initFrom(listView);
+#if (QT_VERSION > QT_VERSION_CHECK(5, 99, 0))
+    listView->initViewItemOption(&option);
+#else
+    option = listView->viewOptions();
+#endif
     option.state               &= ~QStyle::State_MouseOver;
 
     foreach (const QModelIndex& index, listView->selectionModel()->selectedIndexes())
@@ -815,7 +827,11 @@ void DCategorizedView::paintEvent(QPaintEvent* event)
 
     bool alternatingRows          = alternatingRowColors();
     QStyleOptionViewItem option;
-    option.initFrom(this);
+#if (QT_VERSION > QT_VERSION_CHECK(5, 99, 0))
+    initViewItemOption(&option);
+#else
+    option = viewOptions();
+#endif
     option.widget                 = this;
 
     if (wordWrap())
@@ -877,22 +893,13 @@ void DCategorizedView::paintEvent(QPaintEvent* event)
             option.palette.setCurrentColorGroup(cg);
         }
 
-        if      (focus && (currentIndex() == index))
+        if (focus && (currentIndex() == index))
         {
             option.state |= QStyle::State_HasFocus;
 
             if (this->state() == EditingState)
             {
                 option.state |= QStyle::State_Editing;
-            }
-        }
-        else if (focus)
-        {
-            option.state &= ~QStyle::State_HasFocus;
-
-            if (this->state() != EditingState)
-            {
-                option.state &= ~QStyle::State_Editing;
             }
         }
 
@@ -1944,7 +1951,11 @@ void DCategorizedView::rowsInsertedArtifficial(const QModelIndex& parent, int st
     else
     {
         QStyleOptionViewItem option;
-        option.initFrom(this);
+#if (QT_VERSION > QT_VERSION_CHECK(5, 99, 0))
+        initViewItemOption(&option);
+#else
+        option = viewOptions();
+#endif
 
         for (int k = 0 ; k < rowCount ; ++k)
         {

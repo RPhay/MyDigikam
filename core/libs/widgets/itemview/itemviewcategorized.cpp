@@ -358,7 +358,11 @@ void ItemViewCategorized::slotGridSizeChanged(const QSize& gridSize)
 void ItemViewCategorized::updateDelegateSizes()
 {
     QStyleOptionViewItem option;
-    option.initFrom(this);
+#if (QT_VERSION > QT_VERSION_CHECK(5, 99, 0))
+    initViewItemOption(&option);
+#else
+    option = viewOptions();
+#endif
 /*
     int frameAroundContents = 0;
 
@@ -1033,7 +1037,11 @@ bool ItemViewCategorized::viewportEvent(QEvent* event)
             }
 
             QStyleOptionViewItem option;
-            option.initFrom(this);
+#if (QT_VERSION > QT_VERSION_CHECK(5, 99, 0))
+            initViewItemOption(&option);
+#else
+            option = viewOptions();
+#endif
             option.rect                 =  visualRect(index);
             option.state               |= ((index == currentIndex()) ? QStyle::State_HasFocus : QStyle::State_None);
             showToolTip(index, option, he);
@@ -1066,7 +1074,11 @@ void ItemViewCategorized::showIndexNotification(const QModelIndex& index, const 
     d->notificationToolTip->setTipContents(message);
 
     QStyleOptionViewItem option;
-    option.initFrom(this);
+#if (QT_VERSION > QT_VERSION_CHECK(5, 99, 0))
+    initViewItemOption(&option);
+#else
+    option = viewOptions();
+#endif
     option.rect                 = visualRect(index);
     option.state               |= ((index == currentIndex()) ? QStyle::State_HasFocus : QStyle::State_None);
     d->notificationToolTip->show(option, index);
@@ -1092,7 +1104,11 @@ QModelIndex ItemViewCategorized::mapIndexForDragDrop(const QModelIndex& index) c
 QPixmap ItemViewCategorized::pixmapForDrag(const QList<QModelIndex>& indexes) const
 {
     QStyleOptionViewItem option;
-    option.initFrom(this);
+#if (QT_VERSION > QT_VERSION_CHECK(5, 99, 0))
+    initViewItemOption(&option);
+#else
+    option = viewOptions();
+#endif
     option.rect                 = viewport()->rect();
 
     return d->delegate->pixmapForDrag(option, indexes);
