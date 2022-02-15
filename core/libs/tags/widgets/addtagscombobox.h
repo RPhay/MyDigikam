@@ -58,9 +58,9 @@ public:
      * You must call this after construction.
      * If filtered/filterModel is 0, a default one is constructed
      */
-    void setModel(TagModel* const model,
-                  TagPropertiesFilterModel* const filteredModel = nullptr,
-                  CheckableAlbumFilterModel* const filterModel = nullptr);
+    void setAlbumModels(TagModel* const model,
+                        TagPropertiesFilterModel* const filteredModel = nullptr,
+                        CheckableAlbumFilterModel* const filterModel = nullptr);
 
     /**
      * Returns the currently set tagging action.

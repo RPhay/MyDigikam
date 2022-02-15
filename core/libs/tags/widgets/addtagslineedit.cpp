@@ -111,9 +111,9 @@ void AddTagsLineEdit::setFilterModel(AlbumFilterModel* const model)
     d->completer->setTagFilterModel(d->tagFilterModel);
 }
 
-void AddTagsLineEdit::setModel(TagModel* const model,
-                               TagPropertiesFilterModel* const filteredModel,
-                               AlbumFilterModel* const filterModel)
+void AddTagsLineEdit::setAlbumModels(TagModel* const model,
+                                     TagPropertiesFilterModel* const filteredModel,
+                                     AlbumFilterModel* const filterModel)
 {
     if      (filterModel)
     {

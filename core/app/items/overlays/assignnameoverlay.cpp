@@ -133,7 +133,7 @@ QWidget* AssignNameOverlay::createWidget()
     d->assignNameWidget->setVisualStyle(AssignNameWidget::TranslucentThemedFrameless);
     d->assignNameWidget->setTagEntryWidgetMode(AssignNameWidget::AddTagsLineEditMode);
     d->assignNameWidget->setLayoutMode(AssignNameWidget::Compact);
-    d->assignNameWidget->setModel(&d->tagModel, &d->filteredModel, &d->filterModel);
+    d->assignNameWidget->setAlbumModels(&d->tagModel, &d->filteredModel, &d->filterModel);
     d->assignNameWidget->lineEdit()->installEventFilter(this);
 
     vbox->setStretchFactor(space, 4);

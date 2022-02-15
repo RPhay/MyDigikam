@@ -64,9 +64,9 @@ public:
     /**
      * Convenience: Will call setSupportingTagModel() and setFilterModel()
      */
-    void setModel(TagModel* const model,
-                  TagPropertiesFilterModel* const filteredModel,
-                  AlbumFilterModel* const filterModel);
+    void setAlbumModels(TagModel* const model,
+                        TagPropertiesFilterModel* const filteredModel,
+                        AlbumFilterModel* const filterModel);
 
     /**
      * Reads a tag treeview and takes the currently selected tag into account

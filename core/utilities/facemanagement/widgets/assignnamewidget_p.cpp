@@ -121,7 +121,7 @@ void AssignNameWidget::Private::setupAddTagsWidget(T* const widget)
 {
     if (modelsGiven)
     {
-        widget->setModel(tagModel, tagFilteredModel, tagFilterModel);
+        widget->setAlbumModels(tagModel, tagFilteredModel, tagFilterModel);
     }
 
     if (parentTag)

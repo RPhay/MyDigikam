@@ -95,17 +95,17 @@ AlbumSelectComboBox::~AlbumSelectComboBox()
 void AlbumSelectComboBox::setDefaultAlbumModel()
 {
     d->noSelectionText = i18n("No Album Selected");
-    setModel(new AlbumModel(AlbumModel::IgnoreRootAlbum, this));
+    setAlbumModels(new AlbumModel(AlbumModel::IgnoreRootAlbum, this));
     view()->expandToDepth(0);
 }
 
 void AlbumSelectComboBox::setDefaultTagModel()
 {
     d->noSelectionText = i18n("No Tag Selected");
-    setModel(new TagModel(AlbumModel::IgnoreRootAlbum, this));
+    setAlbumModels(new TagModel(AlbumModel::IgnoreRootAlbum, this));
 }
 
-void AlbumSelectComboBox::setModel(AbstractCheckableAlbumModel* model, AlbumFilterModel* filterModel)
+void AlbumSelectComboBox::setAlbumModels(AbstractCheckableAlbumModel* model, AlbumFilterModel* filterModel)
 {
     d->model = model;
 
@@ -387,10 +387,10 @@ AlbumTreeView* AlbumTreeViewSelectComboBox::view() const
 
 void AlbumTreeViewSelectComboBox::setDefaultModel()
 {
-    setModel(nullptr, nullptr);
+    setAlbumModels(nullptr, nullptr);
 }
 
-void AlbumTreeViewSelectComboBox::setModel(AlbumModel* model, CheckableAlbumFilterModel* filterModel)
+void AlbumTreeViewSelectComboBox::setAlbumModels(AlbumModel* model, CheckableAlbumFilterModel* filterModel)
 {
     if (!m_treeView)
     {
@@ -411,7 +411,7 @@ void AlbumTreeViewSelectComboBox::setModel(AlbumModel* model, CheckableAlbumFilt
     view()->setAlbumModel(model);
     view()->setAlbumFilterModel(filterModel);
 
-    AlbumSelectComboBox::setModel(view()->albumModel(), view()->albumFilterModel());
+    AlbumSelectComboBox::setAlbumModels(view()->albumModel(), view()->albumFilterModel());
 
     view()->expandToDepth(0);
 }
@@ -430,12 +430,12 @@ TagTreeView* TagTreeViewSelectComboBox::view() const
 
 void TagTreeViewSelectComboBox::setDefaultModel()
 {
-    setModel(nullptr, nullptr);
+    setAlbumModels(nullptr, nullptr);
 }
 
-void TagTreeViewSelectComboBox::setModel(TagModel* model,
-                                         TagPropertiesFilterModel* filteredModel,
-                                         CheckableAlbumFilterModel* filterModel)
+void TagTreeViewSelectComboBox::setAlbumModels(TagModel* model,
+                                               TagPropertiesFilterModel* filteredModel,
+                                               CheckableAlbumFilterModel* filterModel)
 {
     if (!m_treeView)
     {
@@ -461,7 +461,7 @@ void TagTreeViewSelectComboBox::setModel(TagModel* model,
     view()->setAlbumModel(model);
     view()->setAlbumFilterModel(filteredModel, filterModel);
 
-    AlbumSelectComboBox::setModel(view()->albumModel(), view()->albumFilterModel());
+    AlbumSelectComboBox::setAlbumModels(view()->albumModel(), view()->albumFilterModel());
 }
 
 } // namespace Digikam

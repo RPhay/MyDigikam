@@ -43,12 +43,12 @@ AssignNameWidget::~AssignNameWidget()
 
 void AssignNameWidget::setDefaultModel()
 {
-    setModel(nullptr, nullptr, nullptr);
+    setAlbumModels(nullptr, nullptr, nullptr);
 }
 
-void AssignNameWidget::setModel(TagModel* const model,
-                                TagPropertiesFilterModel* const filteredModel,
-                                CheckableAlbumFilterModel* const filterModel)
+void AssignNameWidget::setAlbumModels(TagModel* const model,
+                                      TagPropertiesFilterModel* const filteredModel,
+                                      CheckableAlbumFilterModel* const filterModel)
 {
     // Restrict the tag properties filter model to people if configured.
 
@@ -64,11 +64,11 @@ void AssignNameWidget::setModel(TagModel* const model,
 
     if      (d->comboBox)
     {
-        d->comboBox->setModel(model, filteredModel, filterModel);
+        d->comboBox->setAlbumModels(model, filteredModel, filterModel);
     }
     else if (d->lineEdit)
     {
-        d->lineEdit->setModel(model, filteredModel, filterModel);
+        d->lineEdit->setAlbumModels(model, filteredModel, filterModel);
     }
 
     if (model || filteredModel || filterModel)

@@ -101,9 +101,9 @@ public:
     /**
      * Set the tag model to use for completion.
      */
-    void setModel(TagModel* const model,
-                  TagPropertiesFilterModel* const filteredModel,
-                  CheckableAlbumFilterModel* const filterModel);
+    void setAlbumModels(TagModel* const model,
+                        TagPropertiesFilterModel* const filteredModel,
+                        CheckableAlbumFilterModel* const filterModel);
     void setDefaultModel();
 
     void setMode(Mode mode);

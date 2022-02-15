@@ -104,15 +104,15 @@ AddTagsComboBox::~AddTagsComboBox()
     delete d;
 }
 
-void AddTagsComboBox::setModel(TagModel* const model,
-                               TagPropertiesFilterModel* const filteredModel,
-                               CheckableAlbumFilterModel* const filterModel)
+void AddTagsComboBox::setAlbumModels(TagModel* const model,
+                                     TagPropertiesFilterModel* const filteredModel,
+                                     CheckableAlbumFilterModel* const filterModel)
 {
-    TagTreeViewSelectComboBox::setModel(model, filteredModel, filterModel);
+    TagTreeViewSelectComboBox::setAlbumModels(model, filteredModel, filterModel);
 
     // the line edit will pick one
 
-    d->lineEdit->setModel(model, filteredModel, filterModel);
+    d->lineEdit->setAlbumModels(model, filteredModel, filterModel);
 }
 
 AddTagsLineEdit* AddTagsComboBox::lineEdit() const

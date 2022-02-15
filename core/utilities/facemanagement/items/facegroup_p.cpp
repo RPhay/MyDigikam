@@ -184,7 +184,7 @@ AssignNameWidget* FaceGroup::Private::createAssignNameWidget(const FaceTagsIface
     assignWidget->setLayoutMode(AssignNameWidget::TwoLines);
     assignWidget->setUserData(info, identifier);
     checkModels();
-    assignWidget->setModel(tagModel, filteredModel, filterModel);
+    assignWidget->setAlbumModels(tagModel, filteredModel, filterModel);
     assignWidget->setParentTag(AlbumManager::instance()->findTAlbum(FaceTags::personParentTag()));
 
     q->connect(assignWidget, SIGNAL(assigned(TaggingAction,ItemInfo,QVariant)),

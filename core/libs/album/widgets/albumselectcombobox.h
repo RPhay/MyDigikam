@@ -56,8 +56,8 @@ public:
      */
     void setDefaultAlbumModel();
     void setDefaultTagModel();
-    void setModel(AbstractCheckableAlbumModel* model,
-                  AlbumFilterModel* filterModel = nullptr);
+    void setAlbumModels(AbstractCheckableAlbumModel* model,
+                        AlbumFilterModel* filterModel = nullptr);
 
     /**
      * Enable checkboxes next to the items. Default: true
@@ -172,8 +172,8 @@ public:
     explicit AlbumTreeViewSelectComboBox(QWidget* const parent = nullptr);
 
     void setDefaultModel();
-    void setModel(AlbumModel* model,
-                  CheckableAlbumFilterModel* filterModel = nullptr);
+    void setAlbumModels(AlbumModel* model,
+                        CheckableAlbumFilterModel* filterModel = nullptr);
     AlbumTreeView* view() const;
 };
 
@@ -188,9 +188,9 @@ public:
     explicit TagTreeViewSelectComboBox(QWidget* const parent = nullptr);
 
     void setDefaultModel();
-    void setModel(TagModel* model,
-                  TagPropertiesFilterModel* filteredModel = nullptr,
-                  CheckableAlbumFilterModel* filterModel = nullptr);
+    void setAlbumModels(TagModel* model,
+                        TagPropertiesFilterModel* filteredModel = nullptr,
+                        CheckableAlbumFilterModel* filterModel = nullptr);
     TagTreeView* view() const;
 };
 
