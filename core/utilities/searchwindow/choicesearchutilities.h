@@ -215,7 +215,7 @@ public:
      * Sets the model and initializes the widget.
      * Can only be called once for a widget.
      */
-    void setModel(ChoiceSearchModel* model);
+    void setSearchModel(ChoiceSearchModel* model);
 
     /**
      * Updates the text on the line edit area.

@@ -347,7 +347,13 @@ protected:
 protected:
 
     ChoiceSearchComboBox* m_comboBox;
+
+#if (QT_VERSION > QT_VERSION_CHECK(5, 99, 0))
+    QMetaType::Type       m_type;
+#else
     QVariant::Type        m_type;
+#endif
+
     QString               m_anyText;
     ChoiceSearchModel*    m_model;
 

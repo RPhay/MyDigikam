@@ -41,8 +41,8 @@ ChoiceSearchModel::Entry::Entry()
 }
 
 ChoiceSearchModel::Entry::Entry(const QVariant& key, const QString& userDisplay)
-    : m_key(key),
-      m_display(userDisplay),
+    : m_key       (key),
+      m_display   (userDisplay),
       m_checkState(false)
 {
 }
@@ -229,11 +229,11 @@ bool ChoiceSearchModel::setData(const QModelIndex& index, const QVariant& value,
 
 ChoiceSearchComboBox::ChoiceSearchComboBox(QWidget* const parent)
     : ListViewComboBox(parent),
-      m_label(nullptr)
+      m_label         (nullptr)
 {
 }
 
-void ChoiceSearchComboBox::setModel(ChoiceSearchModel* model)
+void ChoiceSearchComboBox::setSearchModel(ChoiceSearchModel* model)
 {
     ModelIndexBasedComboBox::setModel(model);
     installView();
