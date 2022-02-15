@@ -258,16 +258,23 @@ bool ItemThumbnailModel::setData(const QModelIndex& index, const QVariant& value
 {
     if (role == ThumbnailRole)
     {
+
+#if (QT_VERSION > QT_VERSION_CHECK(5, 99, 0))
+        switch (value.typeId())
+#else
         switch (value.type())
+#endif
         {
             case QVariant::Invalid:
+            {
                 d->thumbSize  = d->lastGlobalThumbSize;
                 d->detailRect = QRect();
 
                 break;
+            }
 
             case QVariant::Int:
-
+            {
                 if (value.isNull())
                 {
                     d->thumbSize = d->lastGlobalThumbSize;
@@ -278,9 +285,10 @@ bool ItemThumbnailModel::setData(const QModelIndex& index, const QVariant& value
                 }
 
                 break;
+            }
 
             case QVariant::Rect:
-
+            {
                 if (value.isNull())
                 {
                     d->detailRect = QRect();
@@ -291,9 +299,12 @@ bool ItemThumbnailModel::setData(const QModelIndex& index, const QVariant& value
                 }
 
                 break;
+            }
 
             default:
+            {
                 break;
+            }
         }
     }
 

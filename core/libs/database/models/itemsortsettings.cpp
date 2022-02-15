@@ -126,7 +126,9 @@ Qt::SortOrder ItemSortSettings::defaultSortOrderForCategorizationMode(Categoriza
         case CategoryByMonth:
         case CategoryByFormat:
         default:
+        {
             return Qt::AscendingOrder;
+        }
     }
 }
 
@@ -141,17 +143,23 @@ Qt::SortOrder ItemSortSettings::defaultSortOrderForSortRole(SortRole role)
         case SortByManualOrderAndName:
         case SortByManualOrderAndDate:
         case SortByFaces:
+        {
             return Qt::AscendingOrder;
+        }
 
         case SortByRating:
         case SortByFileSize:
         case SortByImageSize:
         case SortBySimilarity:
         case SortByAspectRatio:
+        {
             return Qt::DescendingOrder;
+        }
 
         default:
+        {
             return Qt::AscendingOrder;
+        }
     }
 }
 
@@ -179,7 +187,9 @@ int ItemSortSettings::compareCategories(const ItemInfo& left, const ItemInfo& ri
     {
         case NoCategories:
         case OneCategory:
+        {
             return 0;
+        }
 
         case CategoryByAlbum:
         {
@@ -288,7 +298,9 @@ int ItemSortSettings::compareCategories(const ItemInfo& left, const ItemInfo& ri
         }
 
         default:
+        {
             return 0;
+        }
     }
 }
 
@@ -369,23 +381,32 @@ int ItemSortSettings::compare(const ItemInfo& left, const ItemInfo& right, SortR
         }
 
         case SortByFilePath:
+        {
             return naturalCompare(left.filePath(), right.filePath(),
                                   currentSortOrder, sortCaseSensitivity, strTypeNatural);
+        }
 
         case SortByFileSize:
+        {
             return compareByOrder(left.fileSize(), right.fileSize(), currentSortOrder);
+        }
 
         case SortByCreationDate:
+        {
             return compareByOrder(left.dateTime(), right.dateTime(), currentSortOrder);
+        }
 
         case SortByModificationDate:
+        {
             return compareByOrder(left.modDateTime(), right.modDateTime(), currentSortOrder);
+        }
 
         case SortByRating:
-
+        {
             // I have the feeling that inverting the sort order for rating is the natural order
 
             return - compareByOrder(left.rating(), right.rating(), currentSortOrder);
+        }
 
         case SortByImageSize:
         {
@@ -444,42 +465,68 @@ int ItemSortSettings::compare(const ItemInfo& left, const ItemInfo& right, SortR
         }
 
         default:
+        {
             return 1;
+        }
     }
 }
 
 bool ItemSortSettings::lessThan(const QVariant& left, const QVariant& right) const
 {
+#if (QT_VERSION > QT_VERSION_CHECK(5, 99, 0))
+    if (left.typeId() != right.typeId())
+#else
     if (left.type() != right.type())
+#endif
     {
         return false;
     }
 
+#if (QT_VERSION > QT_VERSION_CHECK(5, 99, 0))
+    switch (left.typeId())
+#else
     switch (left.type())
+#endif
     {
         case QVariant::Int:
+        {
             return compareByOrder(left.toInt(), right.toInt(), currentSortOrder);
+        }
 
         case QVariant::UInt:
+        {
             return compareByOrder(left.toUInt(), right.toUInt(), currentSortOrder);
+        }
 
         case QVariant::LongLong:
+        {
             return compareByOrder(left.toLongLong(), right.toLongLong(), currentSortOrder);
+        }
 
         case QVariant::ULongLong:
+        {
             return compareByOrder(left.toULongLong(), right.toULongLong(), currentSortOrder);
+        }
 
         case QVariant::Double:
+        {
             return compareByOrder(left.toDouble(), right.toDouble(), currentSortOrder);
+        }
 
         case QVariant::Date:
+        {
             return compareByOrder(left.toDate(), right.toDate(), currentSortOrder);
+        }
 
         case QVariant::DateTime:
+        {
             return compareByOrder(left.toDateTime(), right.toDateTime(), currentSortOrder);
+        }
 
         case QVariant::Time:
+        {
             return compareByOrder(left.toTime(), right.toTime(), currentSortOrder);
+        }
 
         case QVariant::Rect:
         case QVariant::RectF:
@@ -526,79 +573,108 @@ DatabaseFields::Set ItemSortSettings::watchFlags() const
     switch (sortRole)
     {
         case SortByFileName:
+        {
             set |= DatabaseFields::Name;
             break;
+        }
 
         case SortByFilePath:
+        {
             set |= DatabaseFields::Name;
             break;
+        }
 
         case SortByFileSize:
+        {
             set |= DatabaseFields::FileSize;
             break;
+        }
 
         case SortByModificationDate:
+        {
             set |= DatabaseFields::ModificationDate;
             break;
+        }
 
         case SortByCreationDate:
+        {
             set |= DatabaseFields::CreationDate;
             break;
+        }
 
         case SortByRating:
+        {
             set |= DatabaseFields::Rating;
             break;
+        }
 
         case SortByImageSize:
+        {
             set |= DatabaseFields::Width | DatabaseFields::Height;
             break;
+        }
 
         case SortByAspectRatio:
+        {
             set |= DatabaseFields::Width | DatabaseFields::Height;
             break;
+        }
 
         case SortBySimilarity:
-
+        {
             // TODO: Not sure what to do here....
 
             set |= DatabaseFields::Name;
             break;
+        }
 
         case SortByFaces:
-
+        {
             // Nothing needed for this.
 
             break;
+        }
 
         case SortByManualOrderAndName:
         case SortByManualOrderAndDate:
+        {
             set |= DatabaseFields::ManualOrder;
             break;
+        }
     }
 
     switch (categorizationMode)
     {
         case OneCategory:
         case NoCategories:
+        {
             break;
+        }
 
         case CategoryByAlbum:
+        {
             set |= DatabaseFields::Album;
             break;
+        }
 
         case CategoryByFormat:
+        {
             set |= DatabaseFields::Format;
             break;
+        }
 
         case CategoryByMonth:
+        {
             set |= DatabaseFields::CreationDate;
             break;
+        }
 
         case CategoryByFaces:
-
+        {
             // nothing needed here.
 
             break;
+        }
     }
 
     return set;
