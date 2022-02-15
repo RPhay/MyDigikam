@@ -71,8 +71,11 @@ void ActionCategorizedView::adjustGridSize()
 
     setWordWrap(true);
     QStyleOptionViewItem option;
-    option.initFrom(this);
-
+#if (QT_VERSION > QT_VERSION_CHECK(5, 99, 0))
+    initViewItemOption(&option);
+#else
+    option = viewOptions();
+#endif
     int maxSize = option.decorationSize.width() * 4;
     QFontMetrics fm(option.font);
     QSize grid;
