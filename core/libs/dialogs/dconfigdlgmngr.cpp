@@ -558,7 +558,11 @@ QByteArray DConfigDlgMngr::getCustomProperty(const QWidget* widget) const
 
     if (prop.isValid())
     {
+#if (QT_VERSION > QT_VERSION_CHECK(5, 99, 0))
+        if (!prop.canConvert(QMetaType(QMetaType::QByteArray)))
+#else
         if (!prop.canConvert(QVariant::ByteArray))
+#endif
         {
            qCWarning(DIGIKAM_GENERAL_LOG) << "Property on"
                                           << widget->metaObject()->className()
@@ -597,7 +601,11 @@ QByteArray DConfigDlgMngr::getCustomPropertyChangedSignal(const QWidget *widget)
 
     if (prop.isValid())
     {
+#if (QT_VERSION > QT_VERSION_CHECK(5, 99, 0))
+        if (!prop.canConvert(QMetaType(QMetaType::QByteArray)))
+#else
         if (!prop.canConvert(QVariant::ByteArray))
+#endif
         {
            qCWarning(DIGIKAM_GENERAL_LOG) << "PropertyNotify on"
                                           << widget->metaObject()->className()
