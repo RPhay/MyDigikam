@@ -526,7 +526,11 @@ void AbstractAlbumTreeView::startDrag(Qt::DropActions supportedActions)
         }
 
         QStyleOptionViewItem option;
-        option.initFrom(this);
+#if (QT_VERSION > QT_VERSION_CHECK(5, 99, 0))
+        initViewItemOption(&option);
+#else
+        option = viewOptions();
+#endif
         option.rect                 = viewport()->rect();
         const QPixmap pixmap        = /*m_delegate->*/pixmapForDrag(option, indexes);
         QDrag* const drag           = new QDrag(this);
