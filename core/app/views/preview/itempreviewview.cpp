@@ -77,26 +77,26 @@ class Q_DECL_HIDDEN ItemPreviewView::Private
 public:
 
     explicit Private()
-      : fullSize(false),
-        scale(1.0),
-        isValid(false),
-        rotationLock(false),
-        mode(ItemPreviewView::IconViewPreview),
-        item(nullptr),
-        prevAction(nullptr),
-        nextAction(nullptr),
-        rotLeftAction(nullptr),
-        rotRightAction(nullptr),
-        toolBar(nullptr),
-        faceGroup(nullptr),
-        peopleToggleAction(nullptr),
-        addPersonAction(nullptr),
-        forgetFacesAction(nullptr),
-        focusPointGroup(nullptr),
-        addFocusPointAction(nullptr),
+      : fullSize            (false),
+        scale               (1.0),
+        isValid             (false),
+        rotationLock        (false),
+        mode                (ItemPreviewView::IconViewPreview),
+        item                (nullptr),
+        prevAction          (nullptr),
+        nextAction          (nullptr),
+        rotLeftAction       (nullptr),
+        rotRightAction      (nullptr),
+        toolBar             (nullptr),
+        faceGroup           (nullptr),
+        peopleToggleAction  (nullptr),
+        addPersonAction     (nullptr),
+        forgetFacesAction   (nullptr),
+        focusPointGroup     (nullptr),
+        addFocusPointAction (nullptr),
         showFocusPointAction(nullptr),
-        fullscreenAction(nullptr),
-        currAlbum(nullptr)
+        fullscreenAction    (nullptr),
+        currAlbum           (nullptr)
     {
     }
 
@@ -132,7 +132,7 @@ public:
 
 ItemPreviewView::ItemPreviewView(QWidget* const parent, Mode mode, Album* const currAlbum)
     : GraphicsDImgView(parent),
-      d(new Private())
+      d               (new Private())
 {
     d->mode      = mode;
     d->item      = new ItemPreviewCanvas();
@@ -679,7 +679,12 @@ void ItemPreviewView::dropEvent(QDropEvent* e)
         popMenu.addSeparator();
         popMenu.addAction(QIcon::fromTheme(QLatin1String("dialog-cancel")), i18n("&Cancel"));
         popMenu.setMouseTracking(true);
+
+#if (QT_VERSION > QT_VERSION_CHECK(5, 99, 0))
+        QAction* const choice             = popMenu.exec(this->mapToGlobal(e->position().toPoint()));
+#else
         QAction* const choice             = popMenu.exec(this->mapToGlobal(e->pos()));
+#endif
 
         if (choice == assignToThisAction)
         {
