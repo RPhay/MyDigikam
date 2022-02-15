@@ -1219,9 +1219,9 @@ void DPreviewImage::mouseMoveEvent(QMouseEvent* e)
 }
 
 #if (QT_VERSION > QT_VERSION_CHECK(5, 99, 0))
-void DPreviewImage::enterEvent(QEnterEvent* event)
+void DPreviewImage::enterEvent(QEnterEvent* /*event*/)
 #else
-void DPreviewImage::enterEvent(QEvent* event)
+void DPreviewImage::enterEvent(QEvent* /*event*/)
 #endif
 {
     d->toolBar->show();
