@@ -111,7 +111,7 @@ QVariant DateFormat::format(const QString& identifier)
 
 DateOptionDialog::DateOptionDialog(Rule* parent)
     : RuleDialog(parent),
-      ui(new Ui::DateOptionDialogWidget)
+      ui        (new Ui::DateOptionDialogWidget)
 {
     QWidget* const mainWidget = new QWidget(this);
     ui->setupUi(mainWidget);
@@ -193,15 +193,21 @@ QString DateOptionDialog::formattedDateTime(const QDateTime& date)
     switch (ui->dateFormatPicker->currentIndex())
     {
         case DateFormat::Custom:
+        {
             return date.toString(ui->customFormatInput->text());
             break;
+        }
 
         case DateFormat::UnixTimeStamp:
+        {
             return QString::fromUtf8("%1").arg(date.toMSecsSinceEpoch());
             break;
+        }
 
         default:
+        {
             break;
+        }
     }
 
     DateFormat df;
@@ -210,7 +216,11 @@ QString DateOptionDialog::formattedDateTime(const QDateTime& date)
     v = df.format(static_cast<DateFormat::Type>(ui->dateFormatPicker->currentIndex()));
     QString result;
 
+#if (QT_VERSION > QT_VERSION_CHECK(5, 99, 0))
+    if (v.typeId() == QVariant::String)
+#else
     if (v.type() == QVariant::String)
+#endif
     {
         result = date.toString(v.toString());
     }
@@ -336,17 +346,26 @@ QString DateOption::parseOperation(ParseSettings& settings, const QRegularExpres
         switch (df.type(token))
         {
             case DateFormat::UnixTimeStamp:
+            {
                 result = QString::fromUtf8("%1").arg(dateTime.toMSecsSinceEpoch());
                 break;
+            }
 
             default:
+            {
                 result = dateTime.toString(token);
                 break;
+            }
         }
     }
     else
     {
+
+#if (QT_VERSION > QT_VERSION_CHECK(5, 99, 0))
+        if (v.typeId() == QVariant::String)
+#else
         if (v.type() == QVariant::String)
+#endif
         {
             result = dateTime.toString(v.toString());
         }
@@ -390,16 +409,25 @@ void DateOption::slotTokenTriggered(const QString& token)
                 switch (index)
                 {
                     case DateFormat::UnixTimeStamp:
+                    {
                         dateString = QString::fromUtf8("%1").arg(date.toMSecsSinceEpoch());
                         break;
+                    }
 
                     default:
+                    {
                         break;
+                    }
                 }
             }
             else
             {
+
+#if (QT_VERSION > QT_VERSION_CHECK(5, 99, 0))
+                if (v.typeId() == QVariant::String)
+#else
                 if (v.type() == QVariant::String)
+#endif
                 {
                     dateString = date.toString(v.toString());
                 }
@@ -419,18 +447,24 @@ void DateOption::slotTokenTriggered(const QString& token)
             switch (index)
             {
                 case DateFormat::Standard:
+                {
                     dateString = tokenStr.arg(QLatin1String(""));
                     dateString.remove(QLatin1Char(':'));
                     break;
+                }
 
                 case DateFormat::Custom:
+                {
                     dateString = tokenStr.arg(QString::fromUtf8("\"%1\"").arg(dlg->ui->customFormatInput->text()));
                     break;
+                }
 
                 default:
+                {
                     QString identifier = df.identifier((DateFormat::Type) index);
                     dateString         = tokenStr.arg(identifier);
                     break;
+                }
             }
         }
     }

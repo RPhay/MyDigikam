@@ -88,7 +88,11 @@ QSize RatingComboBoxDelegate::sizeHint(const QStyleOptionViewItem& option, const
 {
     QVariant value = index.data(Qt::DisplayRole);
 
+#if (QT_VERSION > QT_VERSION_CHECK(5, 99, 0))
+    if (value.typeId() == QVariant::Int)
+#else
     if (value.type() == QVariant::Int)
+#endif
     {
         return QSize(RatingMax * (m_starPolygonSize.width() + 1), m_starPolygonSize.height());
     }
@@ -104,7 +108,11 @@ void RatingComboBoxDelegate::paint(QPainter* painter, const QStyleOptionViewItem
     QVariant value  = index.data(Qt::DisplayRole);
     bool selectable = index.flags() & Qt::ItemIsSelectable;
 
+#if (QT_VERSION > QT_VERSION_CHECK(5, 99, 0))
+    if (value.typeId() == QVariant::Int)
+#else
     if (value.type() == QVariant::Int)
+#endif
     {
         painter->save();
         drawBackground(painter, option, index);
@@ -197,10 +205,14 @@ QVariant RatingComboBoxModel::ratingValueToDisplay(RatingComboBox::RatingValue v
     switch (value)
     {
         case RatingComboBox::Null:
+        {
             return i18n("(No Value Selected)");
+        }
 
         case RatingComboBox::NoRating:
+        {
             return i18n("No Rating assigned");
+        }
 
         case RatingComboBox::Rating0:
         case RatingComboBox::Rating1:
@@ -208,7 +220,9 @@ QVariant RatingComboBoxModel::ratingValueToDisplay(RatingComboBox::RatingValue v
         case RatingComboBox::Rating3:
         case RatingComboBox::Rating4:
         case RatingComboBox::Rating5:
+        {
             return (int)value;
+        }
     }
 
     return QVariant();

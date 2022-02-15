@@ -350,7 +350,6 @@ void FuzzySearchView::slotTabChanged(int tab)
 
 void FuzzySearchView::slotAlbumSelected(Album* album)
 {
-
     qCDebug(DIGIKAM_GENERAL_LOG) << "Selected new album" << album;
 
     SAlbum* const salbum = dynamic_cast<SAlbum*>(album);
@@ -370,11 +369,14 @@ void FuzzySearchView::slotAlbumSelected(Album* album)
     SearchXmlReader reader(salbum->query());
     reader.readToFirstField();
     QStringView type               = reader.attributes().value(QLatin1String("type"));
+/*
+    TODO: apply this settings if necessary.
+
     QStringView numResultsString   = reader.attributes().value(QLatin1String("numberofresults"));
     QStringView thresholdString    = reader.attributes().value(QLatin1String("threshold"));
     QStringView maxThresholdString = reader.attributes().value(QLatin1String("maxthreshold"));
     QStringView sketchTypeString   = reader.attributes().value(QLatin1String("sketchtype"));
-
+*/
     if      (type == QLatin1String("imageid"))
     {
         setCurrentImage(reader.valueToLongLong());

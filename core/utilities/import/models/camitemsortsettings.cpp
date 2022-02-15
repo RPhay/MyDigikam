@@ -35,15 +35,15 @@ namespace Digikam
 {
 
 CamItemSortSettings::CamItemSortSettings()
-    : categorizationMode(NoCategories),
-      categorizationSortOrder(DefaultOrder),
+    : categorizationMode            (NoCategories),
+      categorizationSortOrder       (DefaultOrder),
       currentCategorizationSortOrder(Qt::AscendingOrder),
-      categorizationCaseSensitivity(Qt::CaseSensitive),
-      sortOrder(DefaultOrder),
-      sortRole(SortByFileName),
-      strTypeNatural(true),
-      currentSortOrder(Qt::AscendingOrder),
-      sortCaseSensitivity(Qt::CaseSensitive)
+      categorizationCaseSensitivity (Qt::CaseSensitive),
+      sortOrder                     (DefaultOrder),
+      sortRole                      (SortByFileName),
+      strTypeNatural                (true),
+      currentSortOrder              (Qt::AscendingOrder),
+      sortCaseSensitivity           (Qt::CaseSensitive)
 {
 }
 
@@ -299,12 +299,21 @@ int CamItemSortSettings::compare(const CamItemInfo& left, const CamItemInfo& rig
 
 bool CamItemSortSettings::lessThan(const QVariant& left, const QVariant& right) const
 {
+
+#if (QT_VERSION > QT_VERSION_CHECK(5, 99, 0))
+    if (left.typeId() != right.typeId())
+#else
     if (left.type() != right.type())
+#endif
     {
         return false;
     }
 
+#if (QT_VERSION > QT_VERSION_CHECK(5, 99, 0))
+    switch (left.typeId())
+#else
     switch (left.type())
+#endif
     {
         case QVariant::Int:
         {
@@ -355,12 +364,12 @@ bool CamItemSortSettings::lessThan(const QVariant& left, const QVariant& right) 
 
             if ((result = compareByOrder(rectLeft.top(), rectRight.top(), currentSortOrder)) != 0)
             {
-                return result < 0;
+                return (result < 0);
             }
 
             if ((result = compareByOrder(rectLeft.left(), rectRight.left(), currentSortOrder)) != 0)
             {
-                return result < 0;
+                return (result < 0);
             }
 
             QSizeF sizeLeft  = rectLeft.size();
@@ -368,7 +377,7 @@ bool CamItemSortSettings::lessThan(const QVariant& left, const QVariant& right) 
 
             if ((result = compareByOrder(sizeLeft.width()*sizeLeft.height(), sizeRight.width()*sizeRight.height(), currentSortOrder)) != 0)
             {
-                return result < 0;
+                return (result < 0);
             }
 
 #if __GNUC__ >= 7   // krazy:exclude=cpp

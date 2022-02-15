@@ -41,10 +41,10 @@ class Q_DECL_HIDDEN ImportThumbnailModel::Private
 public:
 
     explicit Private()
-      : thumbsCtrl(nullptr),
-        thumbSize(0),
+      : thumbsCtrl         (nullptr),
+        thumbSize          (0),
         lastGlobalThumbSize(0),
-        emitDataChanged(true)
+        emitDataChanged    (true)
     {
     }
 
@@ -57,7 +57,7 @@ public:
 
 ImportThumbnailModel::ImportThumbnailModel(QObject* const parent)
     : ImportItemModel(parent),
-      d(new Private)
+      d              (new Private)
 {
     setKeepsFileUrlCache(true);
 }
@@ -122,14 +122,21 @@ bool ImportThumbnailModel::setData(const QModelIndex& index, const QVariant& val
 {
     if (role == ThumbnailRole)
     {
+
+#if (QT_VERSION > QT_VERSION_CHECK(5, 99, 0))
+        switch (value.typeId())
+#else
         switch (value.type())
+#endif
         {
             case QVariant::Invalid:
+            {
                 d->thumbSize  = d->lastGlobalThumbSize;
                 break;
+            }
 
             case QVariant::Int:
-
+            {
                 if (value.isNull())
                 {
                     d->thumbSize = d->lastGlobalThumbSize;
@@ -139,10 +146,14 @@ bool ImportThumbnailModel::setData(const QModelIndex& index, const QVariant& val
                     d->lastGlobalThumbSize = d->thumbSize;
                     d->thumbSize           = ThumbnailSize(value.toInt());
                 }
+
                 break;
+            }
 
             default:
+            {
                 break;
+            }
         }
     }
 

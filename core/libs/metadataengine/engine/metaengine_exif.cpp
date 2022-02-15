@@ -521,7 +521,11 @@ bool MetaEngine::setExifTagData(const char* exifTagName, const QByteArray& data)
 bool MetaEngine::setExifTagVariant(const char* exifTagName, const QVariant& val,
                                    bool rationalWantSmallDenominator) const
 {
+#if (QT_VERSION > QT_VERSION_CHECK(5, 99, 0))
+    switch (val.typeId())
+#else
     switch (val.type())
+#endif
     {
         case QVariant::Int:
         case QVariant::UInt:
@@ -621,7 +625,11 @@ QString MetaEngine::createExifUserStringFromValue(const char* exifTagName, const
         Exiv2::ExifKey key(exifTagName);
         Exiv2::Exifdatum datum(key);
 
+#if (QT_VERSION > QT_VERSION_CHECK(5, 99, 0))
+        switch (val.typeId())
+#else
         switch (val.type())
+#endif
         {
             case QVariant::Int:
             case QVariant::Bool:
