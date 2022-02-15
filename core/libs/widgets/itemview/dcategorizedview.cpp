@@ -902,15 +902,6 @@ void DCategorizedView::paintEvent(QPaintEvent* event)
                 option.state |= QStyle::State_Editing;
             }
         }
-        else if (focus)
-        {
-            option.state &= ~QStyle::State_HasFocus;
-
-            if (this->state() != EditingState)
-            {
-                option.state &= ~QStyle::State_Editing;
-            }
-        }
 
         if (index == d->hovered)
         {
