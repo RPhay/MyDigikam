@@ -72,7 +72,7 @@ public:
     QRect          cropRegion;
     bool           drawRec;
 
-    QTransform        matrix;
+    QTransform     matrix;
 };
 
 AdvPrintCropFrame::AdvPrintCropFrame(QWidget* const parent)
@@ -239,6 +239,7 @@ void AdvPrintCropFrame::paintEvent(QPaintEvent*)
         p.drawLine(midX - 10, midY,      midX + 10, midY);
         p.drawLine(midX,      midY - 10, midX,      midY + 10);
     }
+
     p.end();
 
     QPainter newp(this);
@@ -271,11 +272,16 @@ void AdvPrintCropFrame::mouseMoveEvent(QMouseEvent* e)
         int newW = d->cropRegion.width();
         int newH = d->cropRegion.height();
 
+#if (QT_VERSION > QT_VERSION_CHECK(5, 99, 0))
+        int newX = e->position().toPoint().x() - (newW / 2);
+        int newY = e->position().toPoint().y() - (newH / 2);
+#else
         int newX = e->x() - (newW / 2);
+        int newY = e->y() - (newH / 2);
+#endif
         newX     = qMax(d->imageX, newX);
         newX     = qMin(d->imageX + d->image.width() - newW, newX);
 
-        int newY = e->y() - (newH / 2);
         newY     = qMax(d->imageY, newY);
         newY     = qMin(d->imageY + d->image.height() - newH, newY);
 
@@ -293,20 +299,28 @@ void AdvPrintCropFrame::keyReleaseEvent(QKeyEvent* e)
     switch (e->key())
     {
         case Qt::Key_Up:
+        {
             newY--;
             break;
+        }
 
         case Qt::Key_Down:
+        {
             newY++;
             break;
+        }
 
         case Qt::Key_Left:
+        {
             newX--;
             break;
+        }
 
         case Qt::Key_Right:
+        {
             newX++;
             break;
+        }
     }
 
     // Keep inside the image
