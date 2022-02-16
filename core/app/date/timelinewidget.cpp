@@ -56,8 +56,8 @@ class Q_DECL_HIDDEN TimeLineWidget::Private
 
 public :
 
-    typedef QPair<int, int>                           YearRefPair; // Year + a reference association (Month or week or day)
-    typedef QPair<int, TimeLineWidget::SelectionMode> StatPair;    // Statistic value + selection status.
+    typedef QPair<int, int>                           YearRefPair; ///< Year + a reference association (Month or week or day)
+    typedef QPair<int, TimeLineWidget::SelectionMode> StatPair;    ///< Statistic value + selection status.
 
 public:
 
@@ -1851,7 +1851,11 @@ void TimeLineWidget::mousePressEvent(QMouseEvent* e)
 {
     if (e->button() == Qt::LeftButton)
     {
+#if (QT_VERSION > QT_VERSION_CHECK(5, 99, 0))
+        QPoint pt(e->position().toPoint().x(), e->position().toPoint().y());
+#else
         QPoint pt(e->x(), e->y());
+#endif
 
         bool ctrlPressed    = e->modifiers() & Qt::ControlModifier;
         bool shiftPressed   = e->modifiers() & Qt::ShiftModifier;
@@ -1929,7 +1933,11 @@ void TimeLineWidget::mouseMoveEvent(QMouseEvent* e)
 
     if (d->validMouseEvent == true)
     {
+#if (QT_VERSION > QT_VERSION_CHECK(5, 99, 0))
+        QPoint pt(e->position().toPoint().x(), e->position().toPoint().y());
+#else
         QPoint pt(e->x(), e->y());
+#endif
 
         if (selEndDateTime.isNull())
         {
