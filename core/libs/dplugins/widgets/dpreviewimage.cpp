@@ -824,9 +824,15 @@ void DPreviewImage::mousePressEvent(QMouseEvent* e)
 {
     if (e->button() & Qt::LeftButton)
     {
+#if (QT_VERSION > QT_VERSION_CHECK(5, 99, 0))
+        d->lastdx          = e->position().toPoint().x();
+        d->lastdy          = e->position().toPoint().y();
+        QPointF scenePoint = mapToScene(e->position().toPoint());
+#else
         d->lastdx          = e->x();
         d->lastdy          = e->y();
         QPointF scenePoint = mapToScene(e->pos());
+#endif
         d->lastMousePoint  = scenePoint;
 
         if (e->modifiers() != Qt::ControlModifier && d->enableSelection)
@@ -885,7 +891,11 @@ void DPreviewImage::mouseReleaseEvent(QMouseEvent* e)
             }
         }
 
+#if (QT_VERSION > QT_VERSION_CHECK(5, 99, 0))
+        if (!d->selection->isVisible() || !d->selection->contains(e->position().toPoint()))
+#else
         if (!d->selection->isVisible() || !d->selection->contains(e->pos()))
+#endif
         {
             setCursor(Qt::CrossCursor);
         }
@@ -899,18 +909,32 @@ void DPreviewImage::mouseReleaseEvent(QMouseEvent* e)
 
 void DPreviewImage::mouseMoveEvent(QMouseEvent* e)
 {
+#if (QT_VERSION > QT_VERSION_CHECK(5, 99, 0))
+    QPointF scenePoint = mapToScene(e->position().toPoint());
+#else
     QPointF scenePoint = mapToScene(e->pos());
+#endif
 
     if (e->buttons() & Qt::LeftButton)
     {
         if (d->mouseDragAction == Private::LOOKAROUND)
         {
+#if (QT_VERSION > QT_VERSION_CHECK(5, 99, 0))
+            int dx    = e->position().toPoint().x() - d->lastdx;
+            int dy    = e->position().toPoint().y() - d->lastdy;
+#else
             int dx    = e->x() - d->lastdx;
             int dy    = e->y() - d->lastdy;
+#endif
             verticalScrollBar()->setValue(verticalScrollBar()->value() - dy);
             horizontalScrollBar()->setValue(horizontalScrollBar()->value() - dx);
+#if (QT_VERSION > QT_VERSION_CHECK(5, 99, 0))
+            d->lastdx = e->position().toPoint().x();
+            d->lastdy = e->position().toPoint().y();
+#else
             d->lastdx = e->x();
             d->lastdy = e->y();
+#endif
         }
         else if (d->mouseDragAction == Private::DRAWSELECTION  ||
                  d->mouseDragAction == Private::EXPANDORSHRINK ||
