@@ -145,7 +145,11 @@ void HealingCloneToolWidget::mousePressEvent(QMouseEvent* e)
     else if ((d->currentState == HealingCloneState::LASSO_DRAW_BOUNDARY) &&
              (e->buttons() & Qt::LeftButton))
     {
+#if (QT_VERSION > QT_VERSION_CHECK(5, 99, 0))
+        QPoint dst = QPoint(e->position().toPoint().x(), e->position().toPoint().y());
+#else
         QPoint dst = QPoint(e->x(), e->y());
+#endif
 
         emit signalLasso(mapToImageCoordinates(dst));
     }
@@ -197,7 +201,11 @@ void HealingCloneToolWidget::mouseMoveEvent(QMouseEvent* e)
     else if ((d->currentState == HealingCloneState::LASSO_DRAW_BOUNDARY) &&
              (e->buttons() & Qt::LeftButton))
     {
+#if (QT_VERSION > QT_VERSION_CHECK(5, 99, 0))
+        QPoint dst = QPoint(e->position().toPoint().x(), e->position().toPoint().y());
+#else
         QPoint dst = QPoint(e->x(), e->y());
+#endif
 
         emit signalLasso(mapToImageCoordinates(dst));
     }
