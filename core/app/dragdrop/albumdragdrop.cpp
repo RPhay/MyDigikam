@@ -150,7 +150,11 @@ bool AlbumDragDropHandler::dropEvent(QAbstractItemView* view,
 
             bool set = false;
 
+#if (QT_VERSION > QT_VERSION_CHECK(5, 99, 0))
+            if (e->modifiers() == Qt::ControlModifier)
+#else
             if (e->keyboardModifiers() == Qt::ControlModifier)
+#endif
             {
                 set = true;
             }
@@ -184,14 +188,22 @@ bool AlbumDragDropHandler::dropEvent(QAbstractItemView* view,
         bool ddCopy       = false;
         bool setThumbnail = false;
 
+#if (QT_VERSION > QT_VERSION_CHECK(5, 99, 0))
+        if      (e->modifiers() == Qt::ShiftModifier)
+#else
         if      (e->keyboardModifiers() == Qt::ShiftModifier)
+#endif
         {
             // If shift key is pressed while dragging, move the drag object without
             // displaying popup menu -> move
 
             ddMove = true;
         }
+#if (QT_VERSION > QT_VERSION_CHECK(5, 99, 0))
+        else if (e->modifiers() == Qt::ControlModifier)
+#else
         else if (e->keyboardModifiers() == Qt::ControlModifier)
+#endif
         {
             // If ctrl key is pressed while dragging, copy the drag object without
             // displaying popup menu -> copy
@@ -292,14 +304,22 @@ bool AlbumDragDropHandler::dropEvent(QAbstractItemView* view,
         bool ddMove         = false;
         bool ddCopy         = false;
 
+#if (QT_VERSION > QT_VERSION_CHECK(5, 99, 0))
+        if      (e->modifiers() == Qt::ShiftModifier)
+#else
         if      (e->keyboardModifiers() == Qt::ShiftModifier)
+#endif
         {
             // If shift key is pressed while dropping, move the drag object without
             // displaying popup menu -> move
 
             ddMove = true;
         }
+#if (QT_VERSION > QT_VERSION_CHECK(5, 99, 0))
+        else if (e->modifiers() == Qt::ControlModifier)
+#else
         else if (e->keyboardModifiers() == Qt::ControlModifier)
+#endif
         {
             // If ctrl key is pressed while dropping, copy the drag object without
             // displaying popup menu -> copy
