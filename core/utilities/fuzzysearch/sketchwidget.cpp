@@ -78,12 +78,12 @@ class Q_DECL_HIDDEN SketchWidget::Private
 public:
 
     explicit Private()
-      : isClear(true),
-        drawing(false),
-        penWidth(10),
-        eventIndex(-1),
-        penColor(Qt::black),
-        pixmap(QPixmap(256, 256))
+      : isClear     (true),
+        drawing     (false),
+        penWidth    (10),
+        eventIndex  (-1),
+        penColor    (Qt::black),
+        pixmap      (QPixmap(256, 256))
     {
     }
 
@@ -530,7 +530,11 @@ void SketchWidget::mousePressEvent(QMouseEvent* e)
 
 void SketchWidget::mouseMoveEvent(QMouseEvent* e)
 {
+#if (QT_VERSION > QT_VERSION_CHECK(5, 99, 0))
+    if (rect().contains(e->position().toPoint().x(), e->position().toPoint().y()))
+#else
     if (rect().contains(e->x(), e->y()))
+#endif
     {
         setFocus();
 
