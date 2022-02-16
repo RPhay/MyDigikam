@@ -23,6 +23,10 @@ if [ "$1" == "" ]; then
     MAKEFILES_TYPE='Unix Makefiles'
     BUILDDIR=$PWD"/build"
     MESSAGE="Now run make in $BUILDDIR."
+elif [ "$1" == "--ninja" ]; then
+    MAKEFILES_TYPE='Ninja'
+    BUILDDIR=$PWD"/build"
+    MESSAGE="Now run ninja in $BUILDDIR."
 elif [ "$1" == "--eclipse" ]; then
     MAKEFILES_TYPE='Eclipse CDT4 - Unix Makefiles'
     ADDITIONAL_CMAKE_FLAGS="-DCMAKE_ECLIPSE_GENERATE_SOURCE_PROJECT=ON $ADDITIONAL_CMAKE_FLAGS"
@@ -33,9 +37,10 @@ copying source into the workspace:
 $SOURCEDIR
 $BUILDDIR"
 else
-    echo "Syntax: $0 [--eclipse]"
+    echo "Syntax: $0 [--eclipse] [--ninja]"
     echo "Run without arguments to create a Unix Makefile project in a build subdir."
     echo "Run with '--eclipse' to create an Eclipse IDE project and build source in a parallel directory."
+    echo "Run with '--ninja' to create Ninja Makefile project in a build subdir."
     exit 1
 fi
 
