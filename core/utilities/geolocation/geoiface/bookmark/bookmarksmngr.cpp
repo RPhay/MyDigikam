@@ -958,7 +958,7 @@ void BookmarksManager::importBookmarks()
     }
 
     importRootNode->setType(BookmarkNode::Folder);
-    importRootNode->title = i18n("Imported %1", QDate::currentDate().toString(Qt::SystemLocaleShortDate));
+    importRootNode->title = i18n("Imported %1", QLocale().toString(QDate::currentDate(), QLocale::ShortFormat));
     addBookmark(bookmarks(), importRootNode);
 }
 
