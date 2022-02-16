@@ -71,8 +71,6 @@
 #include <klocalizedstring.h>
 #include <kactioncategory.h>
 #include <kactioncollection.h>
-#include <kservicetype.h>
-#include <kservicetypetrader.h>
 #include <ktoolbarpopupaction.h>
 #include <kwindowsystem.h>
 #include <kxmlguifactory.h>
@@ -82,6 +80,20 @@
 
 #ifdef HAVE_KIO
 #   include <kopenwithdialog.h>
+#endif
+
+// Pragma directives to reduce warnings from KDE header files.
+#if !defined(Q_OS_DARWIN) && defined(Q_CC_GNU)
+#   pragma GCC diagnostic push
+#   pragma GCC diagnostic ignored "-Wdeprecated-declarations"
+#endif
+
+#include <kservicetype.h>
+#include <kservicetypetrader.h>
+
+// Restore warnings
+#if !defined(Q_OS_DARWIN) && defined(Q_CC_GNU)
+#   pragma GCC diagnostic pop
 #endif
 
 // Local includes
