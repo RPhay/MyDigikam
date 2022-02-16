@@ -552,7 +552,11 @@ void DCategorizedView::Private::drawDraggedItems(QPainter* painter)
 
         if (option.rect.intersects(listView->viewport()->rect()))
         {
+#if (QT_VERSION > QT_VERSION_CHECK(5, 99, 0))
+            listView->itemDelegateForIndex(index)->paint(painter, option, index);
+#else
             listView->itemDelegate(index)->paint(painter, option, index);
+#endif
         }
     }
 }
@@ -912,7 +916,11 @@ void DCategorizedView::paintEvent(QPaintEvent* event)
             option.state &= ~QStyle::State_MouseOver;
         }
 
+#if (QT_VERSION > QT_VERSION_CHECK(5, 99, 0))
+        itemDelegateForIndex(index)->paint(&painter, option, index);
+#else
         itemDelegate(index)->paint(&painter, option, index);
+#endif
     }
 
     // Redraw categories
@@ -1960,7 +1968,11 @@ void DCategorizedView::rowsInsertedArtifficial(const QModelIndex& parent, int st
         for (int k = 0 ; k < rowCount ; ++k)
         {
             QModelIndex indexSize = (sortColumn == 0) ? modelIndexList[k] : d->proxyModel->index(k, 0);
+#if (QT_VERSION > QT_VERSION_CHECK(5, 99, 0))
+            QSize hint            = itemDelegateForIndex(indexSize)->sizeHint(option, indexSize);
+#else
             QSize hint            = itemDelegate(indexSize)->sizeHint(option, indexSize);
+#endif
             d->biggestItemSize    = QSize(qMax(hint.width(),  d->biggestItemSize.width()),
                                           qMax(hint.height(), d->biggestItemSize.height()));
         }
