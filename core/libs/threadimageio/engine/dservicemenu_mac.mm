@@ -125,6 +125,8 @@ QList<QUrl> DServiceMenu::MacApplicationForFileExtension(const QString& suffix)
                 CFRelease(appsForBundleID);
             }
         }
+
+        CFRelease(bundleIDs);
     }
     else
     {
@@ -137,7 +139,6 @@ QList<QUrl> DServiceMenu::MacApplicationForFileExtension(const QString& suffix)
     // Release the resources.
 
     CFRelease(uniformTypeIdentifier);
-    CFRelease(bundleIDs);
 
     return appUrls;
 }
