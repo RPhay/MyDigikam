@@ -45,7 +45,11 @@ QVariant DMetadata::fromXmpList(const char* const xmpTagName) const
 
     if (var.isNull())
     {
+#if (QT_VERSION > QT_VERSION_CHECK(5, 99, 0))
+        return QVariant(QMetaType(QMetaType::QStringList));
+#else
         return QVariant(QVariant::StringList);
+#endif
     }
 
     return var;
@@ -57,7 +61,11 @@ QVariant DMetadata::fromXmpLangAlt(const char* const xmpTagName) const
 
     if (var.isNull())
     {
+#if (QT_VERSION > QT_VERSION_CHECK(5, 99, 0))
+        return QVariant(QMetaType(QMetaType::QVariantMap));
+#else
         return QVariant(QVariant::Map);
+#endif
     }
 
     return var;

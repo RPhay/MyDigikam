@@ -43,6 +43,7 @@ bool MetaEngine::canWriteComment(const QString& filePath)
 
     try
     {
+
 #if defined Q_OS_WIN && defined EXV_UNICODE_PATH
 
         Exiv2::Image::AutoPtr image = Exiv2::ImageFactory::open((const wchar_t*)filePath.utf16());

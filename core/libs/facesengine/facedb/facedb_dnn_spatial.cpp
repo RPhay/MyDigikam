@@ -292,7 +292,7 @@ double FaceDb::getClosestNeighborsTreeDb(const DataNode& subTree,
         {
             // Eliminate the farthest neighbor
 
-            QMap<double, QVector<int> >::iterator farthestNodes = (neighborList.end() - 1);
+            QMap<double, QVector<int> >::iterator farthestNodes = std::prev(neighborList.end(), 1);
 
             if (farthestNodes.value().size() == 1)
             {

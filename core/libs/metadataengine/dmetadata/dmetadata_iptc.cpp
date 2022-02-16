@@ -239,13 +239,17 @@ QVariant DMetadata::fromIptcEmulateList(const char* const iptcTagName) const
 QVariant DMetadata::fromIptcEmulateLangAlt(const char* const iptcTagName) const
 {
     QString str = getIptcTagString(iptcTagName);
+    QMap<QString, QVariant> map;
 
     if (str.isNull())
     {
+#if (QT_VERSION > QT_VERSION_CHECK(5, 99, 0))
+        return QVariant(QMetaType(QMetaType::QVariantMap));
+#else
         return QVariant(QVariant::Map);
+#endif
     }
 
-    QMap<QString, QVariant> map;
     map[QLatin1String("x-default")] = str;
 
     return map;

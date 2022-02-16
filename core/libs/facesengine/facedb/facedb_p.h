@@ -28,6 +28,10 @@
 
 #include "facedb.h"
 
+// C++ includes
+
+#include <iterator>
+
 // Local includes
 
 #include "digikam_debug.h"

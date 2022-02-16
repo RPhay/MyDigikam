@@ -26,6 +26,7 @@
 
 #include <cfloat>
 #include <cstdio>
+#include <iterator>
 
 // Qt include
 
@@ -203,7 +204,7 @@ double KDNode::getClosestNeighbors(QMap<double, QVector<int> >& neighborList,
         {
             // Eliminate the farthest neighbor
 
-            QMap<double, QVector<int> >::iterator farthestNodes = (neighborList.end() - 1);
+            QMap<double, QVector<int> >::iterator farthestNodes = std::prev(neighborList.end(), 1);
 
             if (farthestNodes.value().size() == 1)
             {

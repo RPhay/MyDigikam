@@ -599,7 +599,11 @@ MetaEngine::AltLangMap DMetadata::toAltLangMap(const QVariant& var)
         return map;
     }
 
+#if (QT_VERSION > QT_VERSION_CHECK(5, 99, 0))
+    switch (var.typeId())
+#else
     switch (var.type())
+#endif
     {
         case QVariant::String:
         {

@@ -24,6 +24,10 @@
 
 #include "dbenginebackend_p.h"
 
+// C++ includes
+
+#include <iterator>
+
 // Qt includes
 
 #include <QApplication>
@@ -1269,7 +1273,7 @@ DbEngineSqlQuery BdEngineBackend::execQuery(const QString& sql, const QMap<QStri
 
                         // Add a semicolon to the statement, if we are not on the last entry
 
-                        if ((iterator + 1) != placeHolderMap.constEnd())
+                        if (std::next(iterator, 1) != placeHolderMap.constEnd())
                         {
                             replaceStr.append(QLatin1String(", "));
                         }

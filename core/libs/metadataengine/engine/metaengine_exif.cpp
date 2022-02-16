@@ -825,7 +825,11 @@ QVariant MetaEngine::getExifTagVariant(const char* exifTagName, bool rationalAsL
                     }
                     else
                     {
+#if (QT_VERSION > QT_VERSION_CHECK(5, 99, 0))
+                        return QVariant(QMetaType(QMetaType::Int));
+#else
                         return QVariant(QVariant::Int);
+#endif
                     }
                 }
 
@@ -836,20 +840,32 @@ QVariant MetaEngine::getExifTagVariant(const char* exifTagName, bool rationalAsL
                     {
                         if ((int)it->count() <= component)
                         {
-                            return QVariant(QVariant::List);
+#if (QT_VERSION > QT_VERSION_CHECK(5, 99, 0))
+                            return QVariant(QMetaType(QMetaType::QVariantList));
+#else
+                            return QVariant(list);
+#endif
                         }
 
                         QList<QVariant> list;
                         list << (*it).toRational(component).first;
                         list << (*it).toRational(component).second;
 
+#if (QT_VERSION > QT_VERSION_CHECK(5, 99, 0))
+                        return QVariant(QMetaType(QMetaType::QVariantList));
+#else
                         return QVariant(list);
+#endif
                     }
                     else
                     {
                         if ((int)it->count() <= component)
                         {
+#if (QT_VERSION > QT_VERSION_CHECK(5, 99, 0))
+                            return QVariant(QMetaType(QMetaType::Double));
+#else
                             return QVariant(QVariant::Double);
+#endif
                         }
 
                         // prefer double precision
@@ -859,7 +875,11 @@ QVariant MetaEngine::getExifTagVariant(const char* exifTagName, bool rationalAsL
 
                         if (den == 0.0)
                         {
+#if (QT_VERSION > QT_VERSION_CHECK(5, 99, 0))
+                            return QVariant(QMetaType(QMetaType::Double));
+#else
                             return QVariant(QVariant::Double);
+#endif
                         }
 
                         return QVariant(num / den);
