@@ -219,8 +219,14 @@ bool DWItemDelegateEventListener::eventFilter(QObject* watched, QEvent* event)
             case QEvent::MouseButtonDblClick:
             {
                 QMouseEvent* const mouseEvent = static_cast<QMouseEvent*>(event);
+
+#if (QT_VERSION > QT_VERSION_CHECK(5, 99, 0))
+                QMouseEvent evt(event->type(), viewport->mapFromGlobal(mouseEvent->globalPosition().toPoint()),
+                                mouseEvent->button(), mouseEvent->buttons(), mouseEvent->modifiers());
+#else
                 QMouseEvent evt(event->type(), viewport->mapFromGlobal(mouseEvent->globalPos()),
                                 mouseEvent->button(), mouseEvent->buttons(), mouseEvent->modifiers());
+#endif
                 QApplication::sendEvent(viewport, &evt);
                 break;
             }
@@ -256,8 +262,8 @@ bool DWItemDelegateEventListener::eventFilter(QObject* watched, QEvent* event)
 #if (QT_VERSION > QT_VERSION_CHECK(5, 99, 0))
                 QTabletEvent evt(event->type(),
                                  tabletEvent->pointingDevice(),
-                                 QPointF(viewport->mapFromGlobal(tabletEvent->globalPos())),
-                                 tabletEvent->globalPosF(),
+                                 QPointF(viewport->mapFromGlobal(tabletEvent->globalPosition().toPoint())),
+                                 tabletEvent->globalPosition(),
                                  tabletEvent->pressure(),
                                  tabletEvent->xTilt(),
                                  tabletEvent->yTilt(),
