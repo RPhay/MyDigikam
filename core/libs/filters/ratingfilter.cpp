@@ -49,24 +49,24 @@ class Q_DECL_HIDDEN RatingFilterWidget::Private
 public:
 
     explicit Private()
+      : dirty         (false),
+        ratingTracker (nullptr),
+        filterCond    (ItemFilterSettings::GreaterEqualCondition),
+        excludeUnrated(0)
     {
-        dirty          = false;
-        ratingTracker  = nullptr;
-        filterCond     = ItemFilterSettings::GreaterEqualCondition;
-        excludeUnrated = 0;
     }
 
-    bool                                 dirty;
+    bool                                dirty;
 
-    DCursorTracker*                      ratingTracker;
+    DCursorTracker*                     ratingTracker;
 
     ItemFilterSettings::RatingCondition filterCond;
-    bool                                 excludeUnrated;
+    bool                                excludeUnrated;
 };
 
 RatingFilterWidget::RatingFilterWidget(QWidget* const parent)
     : RatingWidget(parent),
-      d(new Private)
+      d           (new Private)
 {
     d->ratingTracker = new DCursorTracker(QLatin1String(""), this);
     updateRatingTooltip();
@@ -120,7 +120,11 @@ void RatingFilterWidget::mouseMoveEvent(QMouseEvent* e)
 
     if ( d->dirty )
     {
+#if (QT_VERSION > QT_VERSION_CHECK(5, 99, 0))
+        int pos = e->position().toPoint().x() / regPixmapWidth() +1;
+#else
         int pos = e->x() / regPixmapWidth() +1;
+#endif
 
         if (rating() != pos)
         {
@@ -139,10 +143,14 @@ void RatingFilterWidget::mousePressEvent(QMouseEvent* e)
 
     d->dirty = false;
 
-    if ( e->button() == Qt::LeftButton || e->button() == Qt::MiddleButton )
+    if ((e->button() == Qt::LeftButton) || (e->button() == Qt::MiddleButton))
     {
         d->dirty = true;
+#if (QT_VERSION > QT_VERSION_CHECK(5, 99, 0))
+        int pos  = e->position().toPoint().x() / regPixmapWidth() +1;
+#else
         int pos  = e->x() / regPixmapWidth() +1;
+#endif
 
         if (rating() == pos)
         {
@@ -173,18 +181,23 @@ void RatingFilterWidget::updateRatingTooltip()
             d->ratingTracker->setText(i18n("Rating greater than or equal to %1.", rating()));
             break;
         }
+
         case ItemFilterSettings::EqualCondition:
         {
             d->ratingTracker->setText(i18n("Rating equal to %1.", rating()));
             break;
         }
+
         case ItemFilterSettings::LessEqualCondition:
         {
             d->ratingTracker->setText( i18n("Rating less than or equal to %1.", rating()));
             break;
         }
+
         default:
+        {
             break;
+        }
     }
 }
 
@@ -195,14 +208,14 @@ class Q_DECL_HIDDEN RatingFilter::Private
 public:
 
     explicit Private()
+      : optionsBtn    (nullptr),
+        geCondAction  (nullptr),
+        eqCondAction  (nullptr),
+        leCondAction  (nullptr),
+        excludeUnrated(nullptr),
+        optionsMenu   (nullptr),
+        ratingWidget  (nullptr)
     {
-        ratingWidget   = nullptr;
-        optionsBtn     = nullptr;
-        optionsMenu    = nullptr;
-        geCondAction   = nullptr;
-        eqCondAction   = nullptr;
-        leCondAction   = nullptr;
-        excludeUnrated = nullptr;
     }
 
     QToolButton*        optionsBtn;
@@ -219,7 +232,7 @@ public:
 
 RatingFilter::RatingFilter(QWidget* const parent)
     : DHBox(parent),
-      d(new Private)
+      d    (new Private)
 {
     d->ratingWidget = new RatingFilterWidget(this);
 
@@ -289,14 +302,22 @@ void RatingFilter::slotOptionsMenu()
     switch (ratingFilterCondition())
     {
         case ItemFilterSettings::GreaterEqualCondition:
+        {
             d->geCondAction->setChecked(true);
             break;
+        }
+
         case ItemFilterSettings::EqualCondition:
+        {
             d->eqCondAction->setChecked(true);
             break;
+        }
+
         case ItemFilterSettings::LessEqualCondition:
+        {
             d->leCondAction->setChecked(true);
             break;
+        }
     }
 }
 
@@ -304,7 +325,7 @@ void RatingFilter::slotOptionsTriggered(QAction* action)
 {
     if (action)
     {
-        if (action == d->geCondAction)
+        if      (action == d->geCondAction)
         {
             setRatingFilterCondition(ItemFilterSettings::GreaterEqualCondition);
         }
