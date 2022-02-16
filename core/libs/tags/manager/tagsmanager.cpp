@@ -24,6 +24,10 @@
 
 #include "tagsmanager.h"
 
+// C++ includes
+
+#include <iterator>
+
 // Qt includes
 
 #include <QQueue>
@@ -388,7 +392,7 @@ void TagsManager::slotDeleteAction()
          * QMultimap doesn't provide reverse iterator, -1 is required
          * because end() points after the last element
          */
-        for (it = sortedTags.end()-1 ; it != sortedTags.begin()-1 ; --it)
+        for (it = std::prev(sortedTags.end(), 1) ; it != std::prev(sortedTags.begin(), 1) ; --it)
         {
             QString errMsg;
 
