@@ -14,21 +14,17 @@ set -eE
 trap 'PREVIOUS_COMMAND=$THIS_COMMAND; THIS_COMMAND=$BASH_COMMAND' DEBUG
 trap 'echo "FAILED COMMAND: $PREVIOUS_COMMAND"' ERR
 
-if [ "root" != "$USER" ]; then
-    echo "This script must be run as root..."
-    exit
-fi
-
 #export CC=/usr/bin/clang
 #export CXX=/usr/bin/clang++
 
 mkdir -p build
 cd build
 
-/opt/cmake/bin/cmake -G "Unix Makefiles" .. \
+/opt/cmake/bin/cmake -G "Ninja" .. \
       -DCMAKE_BUILD_TYPE=RelWithDebInfo \
       -DCMAKE_INSTALL_PREFIX=/usr \
       -DBUILD_TESTING=ON \
+      -DBUILD_WITH_CCACHE=ON \
       -DBUILD_WITH_QT6=ON \
       -DDIGIKAMSC_CHECKOUT_PO=OFF \
       -DDIGIKAMSC_CHECKOUT_DOC=OFF \
@@ -51,4 +47,4 @@ if [ $? -ne 0 ]; then
     exit;
 fi
 
-make -j4
+ninja -j4
