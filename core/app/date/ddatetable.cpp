@@ -452,68 +452,87 @@ void DDateTable::keyPressEvent(QKeyEvent *e)
     switch (e->key())
     {
         case Qt::Key_Up:
+        {
             // setDate does validity checking for us
 
             setDate(d->date.addDays(- d->numDayColumns));
             break;
+        }
 
         case Qt::Key_Down:
+        {
             // setDate does validity checking for us
 
             setDate(d->date.addDays(d->numDayColumns));
             break;
+        }
 
         case Qt::Key_Left:
+        {
             // setDate does validity checking for us
 
             setDate(d->date.addDays(-1));
             break;
+        }
 
         case Qt::Key_Right:
+        {
             // setDate does validity checking for us
 
             setDate(d->date.addDays(1));
             break;
+        }
 
         case Qt::Key_Minus:
+        {
             // setDate does validity checking for us
 
             setDate(d->date.addDays(-1));
             break;
+        }
 
         case Qt::Key_Plus:
+        {
             // setDate does validity checking for us
 
             setDate(d->date.addDays(1));
             break;
+        }
 
         case Qt::Key_N:
+        {
             // setDate does validity checking for us
 
             setDate(QDate::currentDate());
             break;
+        }
 
         case Qt::Key_Return:
         case Qt::Key_Enter:
+        {
             emit tableClicked();
             break;
+        }
 
         case Qt::Key_Control:
         case Qt::Key_Alt:
         case Qt::Key_Meta:
         case Qt::Key_Shift:
+        {
             // Don't beep for modifiers
 
             break;
+        }
 
         default:
-
+        {
             if (!e->modifiers())
             {
                 // hm
 
                 QApplication::beep();
             }
+        }
     }
 }
 
@@ -558,16 +577,28 @@ bool DDateTable::event(QEvent *ev)
         case QEvent::HoverMove:
         {
             QHoverEvent* const e = static_cast<QHoverEvent*>(ev);
+#if (QT_VERSION > QT_VERSION_CHECK(5, 99, 0))
+            const int row        = e->position().toPoint().y() * d->numWeekRows / height();
+#else
             const int row        = e->pos().y() * d->numWeekRows / height();
+#endif
             int col;
 
             if (layoutDirection() == Qt::RightToLeft)
             {
+#if (QT_VERSION > QT_VERSION_CHECK(5, 99, 0))
+                col = d->numDayColumns - (e->position().toPoint().x() * d->numDayColumns / width()) - 1;
+#else
                 col = d->numDayColumns - (e->pos().x() * d->numDayColumns / width()) - 1;
+#endif
             }
             else
             {
+#if (QT_VERSION > QT_VERSION_CHECK(5, 99, 0))
+                col = e->position().toPoint().x() * d->numDayColumns / width();
+#else
                 col = e->pos().x() * d->numDayColumns / width();
+#endif
             }
 
             const int pos = row < 1 ? -1 : (d->numDayColumns * (row - 1)) + col;
@@ -580,6 +611,7 @@ bool DDateTable::event(QEvent *ev)
 
             break;
         }
+
         case QEvent::HoverLeave:
         {
             if (d->hoveredPos != -1)
@@ -590,6 +622,7 @@ bool DDateTable::event(QEvent *ev)
 
             break;
         }
+
         default:
         {
             break;
@@ -664,7 +697,11 @@ void DDateTable::mousePressEvent(QMouseEvent *e)
         QMenu* const menu = new QMenu();
         menu->addSection(locale().toString(d->date));
         emit aboutToShowContextMenu(menu, clickedDate);
+#if (QT_VERSION > QT_VERSION_CHECK(5, 99, 0))
+        menu->popup(e->globalPosition().toPoint());
+#else
         menu->popup(e->globalPos());
+#endif
     }
 }
 
