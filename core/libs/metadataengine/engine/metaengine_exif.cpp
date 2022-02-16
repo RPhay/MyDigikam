@@ -843,7 +843,7 @@ QVariant MetaEngine::getExifTagVariant(const char* exifTagName, bool rationalAsL
 #if (QT_VERSION > QT_VERSION_CHECK(5, 99, 0))
                             return QVariant(QMetaType(QMetaType::QVariantList));
 #else
-                            return QVariant(list);
+                            return QVariant(QVariant::List);
 #endif
                         }
 
