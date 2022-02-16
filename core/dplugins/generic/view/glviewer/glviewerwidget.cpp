@@ -801,9 +801,15 @@ void GLViewerWidget::mouseMoveEvent(QMouseEvent* e)
         // if mouse pointer reached upper or lower boder, special treatment in order
         // to keep zooming enabled in that special case
 
+#if (QT_VERSION > QT_VERSION_CHECK(5, 99, 0))
+        if (d->previous_pos.y() == e->position().toPoint().y())
+        {
+            if (e->position().toPoint().y() == 0)
+#else
         if (d->previous_pos.y() == e->y())
         {
             if (e->y() == 0)
+#endif
             {
                 // mouse pointer is at upper edge, therefore assume zoom in
 
@@ -820,7 +826,11 @@ void GLViewerWidget::mouseMoveEvent(QMouseEvent* e)
         {
             // mouse pointer is in the middle of the screen, normal operation
 
+#if (QT_VERSION > QT_VERSION_CHECK(5, 99, 0))
+            mdelta = d->previous_pos.y() - e->position().toPoint().y();
+#else
             mdelta = d->previous_pos.y() - e->y();
+#endif
         }
 
         setCursor(d->zoomCursor);
