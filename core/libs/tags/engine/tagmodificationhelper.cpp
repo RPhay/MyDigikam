@@ -426,7 +426,7 @@ void TagModificationHelper::slotMultipleTagDel(const QList<TAlbum*>& tags)
          * because end() points after the last element
          */
 
-        for (it = std.prev(sortedTags.end(), 1) ; it != std::prev(sortedTags.begin(), 1) ; --it)
+        for (it = std::prev(sortedTags.end(), 1) ; it != std::prev(sortedTags.begin(), 1) ; --it)
         {
             emit aboutToDeleteTag(it.value());
             QString errMsg;
