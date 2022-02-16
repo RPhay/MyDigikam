@@ -1360,7 +1360,11 @@ void RatioCropWidget::mousePressEvent(QMouseEvent* e)
 {
     if (e->button() == Qt::LeftButton)
     {
+#if (QT_VERSION > QT_VERSION_CHECK(5, 99, 0))
+        QPoint pm        = QPoint(e->position().toPoint().x(), e->position().toPoint().y());
+#else
         QPoint pm        = QPoint(e->x(), e->y());
+#endif
         QPoint pmVirtual = convertPoint(pm);
         d->moving        = false;
 
@@ -1403,7 +1407,6 @@ void RatioCropWidget::mousePressEvent(QMouseEvent* e)
             setCursorResizing();
 
             placeSelection(pmVirtual, symmetric, center);
-
         }
         else
         {
@@ -1471,7 +1474,11 @@ void RatioCropWidget::mouseMoveEvent(QMouseEvent* e)
         if (d->moving)
         {
             setCursor(Qt::SizeAllCursor);
+#if (QT_VERSION > QT_VERSION_CHECK(5, 99, 0))
+            QPoint newPos = convertPoint(e->position().toPoint().x(), e->position().toPoint().y());
+#else
             QPoint newPos = convertPoint(e->x(), e->y());
+#endif
 
             d->regionSelection.translate(newPos.x() - d->lastPos.x(),
                                          newPos.y() - d->lastPos.y());
@@ -1485,7 +1492,11 @@ void RatioCropWidget::mouseMoveEvent(QMouseEvent* e)
         }
         else
         {
+#if (QT_VERSION > QT_VERSION_CHECK(5, 99, 0))
+            QPoint pmVirtual = convertPoint(e->position().toPoint().x(), e->position().toPoint().y());
+#else
             QPoint pmVirtual = convertPoint(e->x(), e->y());
+#endif
 
             if (d->currentResizing == Private::ResizingNone)
             {
@@ -1502,25 +1513,25 @@ void RatioCropWidget::mouseMoveEvent(QMouseEvent* e)
             QPoint opp = symmetric ? center : opposite();
             QPoint dir = pmVirtual - opp;
 
-            if      (dir.x() > 0 && dir.y() > 0 && d->currentResizing != Private::ResizingBottomRight)
+            if      ((dir.x() > 0) && (dir.y() > 0) && (d->currentResizing != Private::ResizingBottomRight))
             {
                 d->currentResizing = Private::ResizingBottomRight;
                 d->regionSelection.setTopLeft(opp);
                 setCursor(Qt::SizeFDiagCursor);
             }
-            else if (dir.x() > 0 && dir.y() < 0 && d->currentResizing != Private::ResizingTopRight)
+            else if ((dir.x() > 0) && (dir.y() < 0) && (d->currentResizing != Private::ResizingTopRight))
             {
                 d->currentResizing = Private::ResizingTopRight;
                 d->regionSelection.setBottomLeft(opp);
                 setCursor(Qt::SizeBDiagCursor);
             }
-            else if (dir.x() < 0 && dir.y() > 0 && d->currentResizing != Private::ResizingBottomLeft)
+            else if ((dir.x() < 0) && (dir.y() > 0) && (d->currentResizing != Private::ResizingBottomLeft))
             {
                 d->currentResizing = Private::ResizingBottomLeft;
                 d->regionSelection.setTopRight(opp);
                 setCursor(Qt::SizeBDiagCursor);
             }
-            else if (dir.x() < 0 && dir.y() < 0 && d->currentResizing != Private::ResizingTopLeft)
+            else if ((dir.x() < 0) && (dir.y() < 0) && (d->currentResizing != Private::ResizingTopLeft))
             {
                 d->currentResizing = Private::ResizingTopLeft;
                 d->regionSelection.setBottomRight(opp);
@@ -1528,7 +1539,7 @@ void RatioCropWidget::mouseMoveEvent(QMouseEvent* e)
             }
             else
             {
-                if      (dir.x() == 0 && dir.y() == 0)
+                if      ((dir.x() == 0) && (dir.y() == 0))
                 {
                     setCursor(Qt::SizeAllCursor);
                 }
@@ -1547,6 +1558,22 @@ void RatioCropWidget::mouseMoveEvent(QMouseEvent* e)
     }
     else
     {
+#if (QT_VERSION > QT_VERSION_CHECK(5, 99, 0))
+        if      (d->localTopLeftCorner.contains(e->position().toPoint().x(), e->position().toPoint().y()) ||
+                 d->localBottomRightCorner.contains(e->position().toPoint().x(), e->position().toPoint().y()))
+        {
+            setCursor(Qt::SizeFDiagCursor);
+        }
+        else if (d->localTopRightCorner.contains(e->position().toPoint().x(), e->position().toPoint().y()) ||
+                 d->localBottomLeftCorner.contains(e->position().toPoint().x(), e->position().toPoint().y()))
+        {
+            setCursor(Qt::SizeBDiagCursor);
+        }
+        else if (d->localRegionSelection.contains(e->position().toPoint().x(), e->position().toPoint().y()))
+        {
+            setCursor(Qt::SizeAllCursor);
+        }
+#else
         if      (d->localTopLeftCorner.contains(e->x(), e->y()) ||
                  d->localBottomRightCorner.contains(e->x(), e->y()))
         {
@@ -1561,6 +1588,7 @@ void RatioCropWidget::mouseMoveEvent(QMouseEvent* e)
         {
             setCursor(Qt::SizeAllCursor);
         }
+#endif
         else
         {
             setCursor(Qt::ArrowCursor);
