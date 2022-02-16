@@ -727,10 +727,17 @@ void InsertTextWidget::resizeEvent(QResizeEvent* e)
 void InsertTextWidget::mousePressEvent(QMouseEvent* e)
 {
     if (e->button() == Qt::LeftButton &&
-        d->textRect.contains( e->x(), e->y()))
+#if (QT_VERSION > QT_VERSION_CHECK(5, 99, 0))
+        d->textRect.contains(e->position().toPoint().x(), e->position().toPoint().y()))
+    {
+        d->xpos = e->position().toPoint().x();
+        d->ypos = e->position().toPoint().y();
+#else
+        d->textRect.contains(e->x(), e->y()))
     {
         d->xpos = e->x();
         d->ypos = e->y();
+#endif
         setCursor(Qt::SizeAllCursor);
         d->currentMoving = true;
     }
@@ -744,12 +751,21 @@ void InsertTextWidget::mouseReleaseEvent(QMouseEvent*)
 
 void InsertTextWidget::mouseMoveEvent(QMouseEvent* e)
 {
-    if (rect().contains( e->x(), e->y()))
+#if (QT_VERSION > QT_VERSION_CHECK(5, 99, 0))
+    if (rect().contains(e->position().toPoint().x(), e->position().toPoint().y()))
+#else
+    if (rect().contains(e->x(), e->y()))
+#endif
     {
         if      (e->buttons() == Qt::LeftButton && d->currentMoving)
         {
+#if (QT_VERSION > QT_VERSION_CHECK(5, 99, 0))
+            uint newxpos = e->position().toPoint().x();
+            uint newypos = e->position().toPoint().y();
+#else
             uint newxpos = e->x();
             uint newypos = e->y();
+#endif
 
             d->textRect.translate(newxpos - d->xpos, newypos - d->ypos);
 
@@ -770,7 +786,11 @@ void InsertTextWidget::mouseMoveEvent(QMouseEvent* e)
             d->ypos = newypos;
             setCursor(Qt::PointingHandCursor);
         }
-        else if (d->textRect.contains( e->x(), e->y()))
+#if (QT_VERSION > QT_VERSION_CHECK(5, 99, 0))
+        else if (d->textRect.contains(e->position().toPoint().x(), e->position().toPoint().y()))
+#else
+        else if (d->textRect.contains(e->x(), e->y()))
+#endif
         {
             setCursor(Qt::SizeAllCursor);
         }
