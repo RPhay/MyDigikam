@@ -57,24 +57,24 @@ class Q_DECL_HIDDEN ImageGuideWidget::Private
 public:
 
     explicit Private()
-      : sixteenBit(false),
-        focus(false),
-        spotVisible(false),
-        onMouseMovePreviewToggled(true),
-        drawLineBetweenPoints(false),
-        drawingMask(false),
-        enableDrawMask(false),
-        eraseMask(false),
-        timerID(0),
-        guideMode(0),
-        guideSize(0),
-        flicker(0),
-        renderingPreviewMode(PreviewToolBar::NoPreviewMode),
-        penWidth(10),
-        pixmap(nullptr),
-        maskPixmap(nullptr),
-        previewPixmap(nullptr),
-        iface(nullptr)
+      : sixteenBit                  (false),
+        focus                       (false),
+        spotVisible                 (false),
+        onMouseMovePreviewToggled   (true),
+        drawLineBetweenPoints       (false),
+        drawingMask                 (false),
+        enableDrawMask              (false),
+        eraseMask                   (false),
+        timerID                     (0),
+        guideMode                   (0),
+        guideSize                   (0),
+        flicker                     (0),
+        renderingPreviewMode        (PreviewToolBar::NoPreviewMode),
+        penWidth                    (10),
+        pixmap                      (nullptr),
+        maskPixmap                  (nullptr),
+        previewPixmap               (nullptr),
+        iface                       (nullptr)
     {
     }
 
@@ -124,7 +124,7 @@ ImageGuideWidget::ImageGuideWidget(QWidget* const parent,
                                    int guideSize,
                                    bool blink, ImageIface::PreviewType type)
     : QWidget(parent),
-      d(new Private)
+      d      (new Private)
 {
     int w            = 480;
     int h            = 320;
@@ -585,15 +585,28 @@ void ImageGuideWidget::mousePressEvent(QMouseEvent* e)
 {
     if (e->button() == Qt::LeftButton)
     {
+#if (QT_VERSION > QT_VERSION_CHECK(5, 99, 0))
+        if      (!d->focus && d->rect.contains(e->position().toPoint().x(), e->position().toPoint().y()) && d->spotVisible)
+#else
         if      (!d->focus && d->rect.contains(e->x(), e->y()) && d->spotVisible)
+#endif
         {
             d->focus = true;
+#if (QT_VERSION > QT_VERSION_CHECK(5, 99, 0))
+            d->spot.setX(e->position().toPoint().x() - d->rect.x());
+            d->spot.setY(e->position().toPoint().y() - d->rect.y());
+#else
             d->spot.setX(e->x() - d->rect.x());
             d->spot.setY(e->y() - d->rect.y());
+#endif
         }
         else if (d->enableDrawMask)
         {
+#if (QT_VERSION > QT_VERSION_CHECK(5, 99, 0))
+            d->lastPoint   = QPoint(e->position().toPoint().x() - d->rect.x(), e->position().toPoint().y() - d->rect.y());
+#else
             d->lastPoint   = QPoint(e->x() - d->rect.x(), e->y() - d->rect.y());
+#endif
             d->drawingMask = true;
         }
 
@@ -603,14 +616,23 @@ void ImageGuideWidget::mousePressEvent(QMouseEvent* e)
 
 void ImageGuideWidget::mouseReleaseEvent(QMouseEvent* e)
 {
+#if (QT_VERSION > QT_VERSION_CHECK(5, 99, 0))
+    if (d->rect.contains(e->position().toPoint().x(), e->position().toPoint().y()))
+#else
     if (d->rect.contains(e->x(), e->y()))
+#endif
     {
         if (d->focus && d->spotVisible)
         {
             d->focus = false;
             updatePreview();
+#if (QT_VERSION > QT_VERSION_CHECK(5, 99, 0))
+            d->spot.setX(e->position().toPoint().x() - d->rect.x());
+            d->spot.setY(e->position().toPoint().y() - d->rect.y());
+#else
             d->spot.setX(e->x() - d->rect.x());
             d->spot.setY(e->y() - d->rect.y());
+#endif
 
             DColor color;
 /*
@@ -692,13 +714,22 @@ void ImageGuideWidget::mouseReleaseEvent(QMouseEvent* e)
 
 void ImageGuideWidget::mouseMoveEvent(QMouseEvent* e)
 {
+#if (QT_VERSION > QT_VERSION_CHECK(5, 99, 0))
+    if (d->rect.contains(e->position().toPoint().x(), e->position().toPoint().y()))
+#else
     if (d->rect.contains(e->x(), e->y()))
+#endif
     {
         if      (d->focus && d->spotVisible)
         {
             setCursor(Qt::CrossCursor);
+#if (QT_VERSION > QT_VERSION_CHECK(5, 99, 0))
+            d->spot.setX(e->position().toPoint().x() - d->rect.x());
+            d->spot.setY(e->position().toPoint().y() - d->rect.y());
+#else
             d->spot.setX(e->x() - d->rect.x());
             d->spot.setY(e->y() - d->rect.y());
+#endif
         }
         else if (d->enableDrawMask)
         {
@@ -706,7 +737,11 @@ void ImageGuideWidget::mouseMoveEvent(QMouseEvent* e)
 
             if ((e->buttons() & Qt::LeftButton) && d->drawingMask)
             {
+#if (QT_VERSION > QT_VERSION_CHECK(5, 99, 0))
+                QPoint currentPos = QPoint(e->position().toPoint().x() - d->rect.x(), e->position().toPoint().y() - d->rect.y());
+#else
                 QPoint currentPos = QPoint(e->x() - d->rect.x(), e->y() - d->rect.y());
+#endif
                 drawLineTo(currentPos);
                 updatePreview();
             }
