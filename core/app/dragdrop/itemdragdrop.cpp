@@ -98,11 +98,19 @@ static DropAction copyOrMove(const QDropEvent* const e,
                              bool allowMove = true,
                              bool askForGrouping = false)
 {
+#if (QT_VERSION > QT_VERSION_CHECK(5, 99, 0))
+    if      (e->modifiers() & Qt::ControlModifier)
+#else
     if      (e->keyboardModifiers() & Qt::ControlModifier)
+#endif
     {
         return CopyAction;
     }
+#if (QT_VERSION > QT_VERSION_CHECK(5, 99, 0))
+    else if (e->modifiers() & Qt::ShiftModifier)
+#else
     else if (e->keyboardModifiers() & Qt::ShiftModifier)
+#endif
     {
         return MoveAction;
     }
@@ -414,7 +422,11 @@ bool ItemDragDropHandler::dropEvent(QAbstractItemView* abstractview, const QDrop
 
             if (onlyInternal        &&
                 droppedOn.isValid() &&
+#if (QT_VERSION > QT_VERSION_CHECK(5, 99, 0))
+                (e->modifiers() == Qt::NoModifier))
+#else
                 (e->keyboardModifiers() == Qt::NoModifier))
+#endif
             {
                 action = s_groupAction(e, view);
             }
@@ -758,11 +770,19 @@ Qt::DropAction ItemDragDropHandler::accepts(const QDropEvent* e, const QModelInd
 
     if (DItemDrag::canDecode(e->mimeData()) || e->mimeData()->hasUrls())
     {
+#if (QT_VERSION > QT_VERSION_CHECK(5, 99, 0))
+        if (e->modifiers() & Qt::ControlModifier)
+#else
         if (e->keyboardModifiers() & Qt::ControlModifier)
+#endif
         {
             return Qt::CopyAction;
         }
+#if (QT_VERSION > QT_VERSION_CHECK(5, 99, 0))
+        else if (e->modifiers() & Qt::ShiftModifier)
+#else
         else if (e->keyboardModifiers() & Qt::ShiftModifier)
+#endif
         {
             return Qt::MoveAction;
         }
