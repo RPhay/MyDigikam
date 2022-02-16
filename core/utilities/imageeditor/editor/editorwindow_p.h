@@ -68,6 +68,12 @@
 
 // KDE includes
 
+// Pragma directives to reduce warnings from KDE header files.
+#if !defined(Q_OS_DARWIN) && defined(Q_CC_GNU)
+#   pragma GCC diagnostic push
+#   pragma GCC diagnostic ignored "-Wdeprecated-declarations"
+#endif
+
 #include <klocalizedstring.h>
 #include <kactioncategory.h>
 #include <kactioncollection.h>
@@ -80,12 +86,6 @@
 
 #ifdef HAVE_KIO
 #   include <kopenwithdialog.h>
-#endif
-
-// Pragma directives to reduce warnings from KDE header files.
-#if !defined(Q_OS_DARWIN) && defined(Q_CC_GNU)
-#   pragma GCC diagnostic push
-#   pragma GCC diagnostic ignored "-Wdeprecated-declarations"
 #endif
 
 #include <kservicetype.h>

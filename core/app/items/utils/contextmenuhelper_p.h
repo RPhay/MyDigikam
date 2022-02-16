@@ -43,11 +43,22 @@
 
 // KDE includes
 
+// Pragma directives to reduce warnings from KDE header files.
+#if !defined(Q_OS_DARWIN) && defined(Q_CC_GNU)
+#   pragma GCC diagnostic push
+#   pragma GCC diagnostic ignored "-Wdeprecated-declarations"
+#endif
+
 #include <kactioncollection.h>
 #include <klocalizedstring.h>
 
 #ifdef HAVE_KIO
 #   include <kopenwithdialog.h>
+#endif
+
+// Restore warnings
+#if !defined(Q_OS_DARWIN) && defined(Q_CC_GNU)
+#   pragma GCC diagnostic pop
 #endif
 
 // Local includes
