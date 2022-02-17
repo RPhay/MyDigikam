@@ -493,8 +493,7 @@ void GPSItemListContextMenu::pasteActionTriggered(bool swap)
 
             while (!separators.isEmpty())
             {
-                parts = cordText.split(separators.takeFirst(),
-                                       QString::SkipEmptyParts);
+                parts = cordText.split(separators.takeFirst(), QT_SKIP_EMPTY_PARTS);
 
                 if ((parts.size() == 3) || (parts.size() == 2))
                 {
