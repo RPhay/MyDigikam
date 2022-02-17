@@ -199,11 +199,20 @@ void DXmlGuiWindow::slotHelpContents()
 
 void DXmlGuiWindow::openHandbook()
 {
-    QUrl url = QUrl(QString::fromUtf8("https://docs.kde.org/?application=%1&branch=trunk5")
-               .arg(QApplication::applicationName()));
+    QUrl url(QString::fromUtf8("https://docs.kde.org/?application=%1&branch=trunk5")
+             .arg(QApplication::applicationName()));
+
+#ifdef HAVE_QWEBENGINE
 
     WebBrowserDlg* const browser = new WebBrowserDlg(url, qApp->activeWindow());
     browser->show();
+
+#else
+
+    QDesktopServices::openUrl(url);
+
+#endif
+
 }
 
 void DXmlGuiWindow::restoreWindowSize(QWindow* const win, const KConfigGroup& group)
@@ -229,23 +238,53 @@ void DXmlGuiWindow::slotSolidHardwareList()
 
 void DXmlGuiWindow::slotDonateMoney()
 {
-    WebBrowserDlg* const browser = new WebBrowserDlg(QUrl(QLatin1String("https://www.digikam.org/donate/")),
-                                                     qApp->activeWindow());
+    QUrl url(QLatin1String("https://www.digikam.org/donate/"));
+
+#ifdef HAVE_QWEBENGINE
+
+    WebBrowserDlg* const browser = new WebBrowserDlg(url, qApp->activeWindow());
     browser->show();
+
+#else
+
+    QDesktopServices::openUrl(url);
+
+#endif
+
 }
 
 void DXmlGuiWindow::slotRecipesBook()
 {
-    WebBrowserDlg* const browser = new WebBrowserDlg(QUrl(QLatin1String("https://www.digikam.org/recipes_book/")),
-                                                     qApp->activeWindow());
+    QUrl url(QLatin1String("https://www.digikam.org/recipes_book/"));
+
+#ifdef HAVE_QWEBENGINE
+
+    WebBrowserDlg* const browser = new WebBrowserDlg(url, qApp->activeWindow());
     browser->show();
+
+#else
+
+    QDesktopServices::openUrl(url);
+
+#endif
+
 }
 
 void DXmlGuiWindow::slotContribute()
 {
-    WebBrowserDlg* const browser = new WebBrowserDlg(QUrl(QLatin1String("https://www.digikam.org/contribute/")),
-                                                     qApp->activeWindow());
+    QUrl url(QLatin1String("https://www.digikam.org/contribute/"));
+
+#ifdef HAVE_QWEBENGINE
+
+    WebBrowserDlg* const browser = new WebBrowserDlg(url, qApp->activeWindow());
     browser->show();
+
+#else
+
+    QDesktopServices::openUrl(url);
+
+#endif
+
 }
 
 void DXmlGuiWindow::setupIconTheme()

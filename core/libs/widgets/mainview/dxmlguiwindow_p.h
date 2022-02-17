@@ -50,6 +50,7 @@
 #include <QFileInfo>
 #include <QResource>
 #include <QStandardPaths>
+#include <QDesktopServices>
 
 // KDE includes
 
@@ -76,8 +77,11 @@
 #include "digikam_globals.h"
 #include "daboutdata.h"
 #include "dpluginloader.h"
-#include "webbrowserdlg.h"
 #include "solidhardwaredlg.h"
+
+#ifdef HAVE_QWEBENGINE
+#   include "webbrowserdlg.h"
+#endif
 
 namespace Digikam
 {
