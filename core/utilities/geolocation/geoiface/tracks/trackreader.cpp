@@ -317,15 +317,13 @@ TrackReader::TrackReadResult TrackReader::loadTrackFile(const QUrl& url)
         return parsedData;
     }
 
-    // TODO: load the file
+    // TODO: port to new API: https://doc.qt.io/qt-6/xml-changes-qt6.html
 
     TrackReader trackReader(&parsedData);
     QXmlSimpleReader reader;
     reader.setContentHandler(&trackReader);
     reader.setErrorHandler(&trackReader);
     QXmlInputSource xmlInputSource(&file);
-
-    // TODO: error handling
 
     parsedData.isValid = reader.parse(xmlInputSource);
 
@@ -353,7 +351,7 @@ TrackReader::TrackReadResult TrackReader::loadTrackFile(const QUrl& url)
         return parsedData;
     }
 
-    // the correlation algorithm relies on sorted data, therefore sort now
+    // The correlation algorithm relies on sorted data, therefore sort now
 
     std::sort(parsedData.track.points.begin(), parsedData.track.points.end(), TrackManager::TrackPoint::EarlierThan);
 
