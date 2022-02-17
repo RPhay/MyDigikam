@@ -14,16 +14,16 @@ message(STATUS "----------------------------------------------------------------
 message(STATUS "Check dependencies for ${PROJECT_NAME} version ${DIGIKAM_VERSION_STRING}")
 message(STATUS "")
 
-set(KF5_MIN_VERSION       "5.5.0")
+set(KF5_MIN_VERSION       "5.55.0")
 set(QT5_MIN_VERSION       "5.14.0")
 set(QT6_MIN_VERSION       "6.2.3")
 set(EXIV2_MIN_VERSION     "0.27.0")
 set(OPENCV_MIN_VERSION    "3.3.0")
 set(LENSFUN_MIN_VERSION   "0.2.6.0")      # For Lens auto-correction plugin
 set(QTAV_MIN_VERSION      "1.12.0")       # For video support.
-set(KSANE_MIN_VERSION     "5.5.0")        # For digital scanner support.
-set(CALENDAR_MIN_VERSION  "5.5.0")        # Calendar Core dependency for plugin.
-set(AKONADI_MIN_VERSION   "4.89.0")       # Akonadi Contact dependency.
+set(KSANE_MIN_VERSION     "5.55.0")       # For digital scanner support.
+set(CALENDAR_MIN_VERSION  "5.55.0")       # Calendar Core dependency for plugin.
+set(AKONADI_MIN_VERSION   "5.16.0")       # Akonadi Contact dependency.
 
 cmake_minimum_required(VERSION ${CMAKE_MIN_VERSION})
 
