@@ -563,19 +563,8 @@ void SketchWidget::mouseMoveEvent(QMouseEvent* e)
 
 void SketchWidget::wheelEvent(QWheelEvent* e)
 {
-    int x, y;
-
-#if (QT_VERSION >= QT_VERSION_CHECK(5, 14, 0))
-
-    x = e->position().toPoint().x();
-    y = e->position().toPoint().y();
-
-#else
-
-    x = e->x();
-    y = e->y();
-
-#endif
+    int x = e->position().toPoint().x();
+    int y = e->position().toPoint().y();
 
     if (rect().contains(x, y))
     {

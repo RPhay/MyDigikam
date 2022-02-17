@@ -77,11 +77,7 @@ ComboBoxDelegate::ComboBoxDelegate(DItemsList* const parent, const QMap<int, QSt
     {
         i.next();
 
-#if (QT_VERSION >= QT_VERSION_CHECK(5, 11, 0))
         tmpWidth = listFont.horizontalAdvance(i.value());
-#else
-        tmpWidth = listFont.width(i.value());
-#endif
 
         if (tmpWidth > d->size.width())
         {

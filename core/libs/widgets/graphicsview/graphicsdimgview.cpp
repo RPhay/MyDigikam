@@ -397,16 +397,9 @@ void GraphicsDImgView::wheelEvent(QWheelEvent* e)
     else if (e->modifiers() & Qt::ControlModifier)
     {
         // When zooming with the mouse-wheel, the image center is kept fixed.
-        QPoint point;
 
-#if (QT_VERSION >= QT_VERSION_CHECK(5, 14, 0))
+        QPoint point = e->position().toPoint();
 
-        point = e->position().toPoint();
-
-#else
-        point = e->pos();
-
-#endif
         if      (e->angleDelta().y() < 0)
         {
             d->layout->decreaseZoom(point);

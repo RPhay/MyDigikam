@@ -70,17 +70,9 @@ static int minimumListWidth(const QListWidget* list)
 
         // ...and add a space on both sides for not too tight look.
 
-#if (QT_VERSION >= QT_VERSION_CHECK(5, 11, 0))
-
         itemWidth    += list->fontMetrics().horizontalAdvance(QLatin1Char(' ')) * 2;
 
-#else
-
-        itemWidth    += list->fontMetrics().width(QLatin1Char(' ')) * 2;
-
-#endif
-
-        w = qMax(w, itemWidth);
+        w             = qMax(w, itemWidth);
     }
 
     if (w == 0)

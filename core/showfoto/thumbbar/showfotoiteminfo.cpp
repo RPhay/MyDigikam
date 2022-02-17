@@ -129,16 +129,7 @@ ShowfotoItemInfo ShowfotoItemInfo::itemInfoFromFile(const QFileInfo& inf)
     iteminfo.size      = inf.size();
     iteminfo.folder    = inf.path();
     iteminfo.url       = QUrl::fromLocalFile(inf.filePath());
-
-#if (QT_VERSION >= QT_VERSION_CHECK(5, 10, 0))
-
     iteminfo.dtime     = inf.birthTime();
-
-#else
-
-    iteminfo.dtime     = inf.created();
-
-#endif
 
     meta->load(inf.filePath());
     iteminfo.ctime     = meta->getItemDateTime();

@@ -49,16 +49,7 @@ FlickrWidget::FlickrWidget(QWidget* const parent,
 
     QHeaderView* const hdr = d->imglst->listView()->header();
     QFontMetrics hdrFont   = QFontMetrics(hdr->font());
-
-#if (QT_VERSION >= QT_VERSION_CHECK(5, 11, 0))
-
     int permColWidth       = hdrFont.horizontalAdvance(i18nc("photo permissions", "Public"));
-
-#else
-
-    int permColWidth       = hdrFont.width(i18nc("photo permissions", "Public"));
-
-#endif
 
     d->imglst->setAllowRAW(true);
     d->imglst->setIface(iface);
@@ -74,30 +65,12 @@ FlickrWidget::FlickrWidget(QWidget* const parent,
 
     int tmpWidth;
 
-#if (QT_VERSION >= QT_VERSION_CHECK(5, 11, 0))
-
     if ((tmpWidth = hdrFont.horizontalAdvance(i18nc("photo permissions", "Family"))) > permColWidth)
-
-#else
-
-    if ((tmpWidth = hdrFont.width(i18nc("photo permissions", "Family"))) > permColWidth)
-
-#endif
-
     {
         permColWidth = tmpWidth;
     }
 
-#if (QT_VERSION >= QT_VERSION_CHECK(5, 11, 0))
-
     if ((tmpWidth = hdrFont.horizontalAdvance(i18nc("photo permissions", "Friends"))) > permColWidth)
-
-#else
-
-    if ((tmpWidth = hdrFont.width(i18nc("photo permissions", "Friends"))) > permColWidth)
-
-#endif
-
     {
         permColWidth = tmpWidth;
     }

@@ -868,32 +868,6 @@ void AbstractAlbumTreeView::expandEverything(const QModelIndex& index)
     }
 }
 
-#if (QT_VERSION < QT_VERSION_CHECK(5, 13, 0))
-
-void AbstractAlbumTreeView::expandRecursively(const QModelIndex& index)
-{
-    if (index.isValid())
-    {
-        int childCount = index.model()->rowCount(index);
-
-        for (int i = 0 ; i < childCount ; ++i)
-        {
-            const QModelIndex& child = index.child(i, 0);
-
-            // Recursively call the function for each child node.
-
-            expandRecursively(child);
-        }
-
-        if (!isExpanded(index))
-        {
-            expand(index);
-        }
-    }
-}
-
-#endif
-
 void AbstractAlbumTreeView::slotExpandNode()
 {
     QItemSelectionModel* const model = selectionModel();

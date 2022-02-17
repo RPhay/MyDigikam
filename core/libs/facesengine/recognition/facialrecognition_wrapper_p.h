@@ -35,12 +35,7 @@
 #include <QUuid>
 #include <QDir>
 #include <QStandardPaths>
-
-#if QT_VERSION >= QT_VERSION_CHECK(5, 14, 0)
-    #include <QRecursiveMutex>
-#else
-    #include <QMutex>
-#endif
+#include <QRecursiveMutex>
 
 // Local includes
 
@@ -97,11 +92,7 @@ public:
 
     bool                        dbAvailable;
     int                         ref;
-#if QT_VERSION >= QT_VERSION_CHECK(5, 14, 0)
     mutable QRecursiveMutex     mutex;
-#else
-    mutable QMutex              mutex;
-#endif
     QVariantMap                 parameters;
     QHash<int, Identity>        identityCache;
     OpenCVDNNFaceRecognizer*    recognizer;

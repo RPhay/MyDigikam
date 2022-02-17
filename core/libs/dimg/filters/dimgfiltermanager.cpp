@@ -28,12 +28,7 @@
 
 #include <QMap>
 #include <QHash>
-
-#if QT_VERSION >= QT_VERSION_CHECK(5, 14, 0)
-    #include <QRecursiveMutex>
-#else
-    #include <QMutex>
-#endif
+#include <QRecursiveMutex>
 
 // KDE includes
 
@@ -111,12 +106,6 @@ class Q_DECL_HIDDEN DImgFilterManager::Private
 public:
 
     explicit Private()
-        :
-#if QT_VERSION >= QT_VERSION_CHECK(5, 14, 0)
-         mutex()
-#else
-         mutex(QMutex::Recursive)
-#endif
     {
     }
 
@@ -137,11 +126,7 @@ public:
     QHash<QString, QString>     filterIcons;
     QHash<QString, QString>     i18nFilterNames;
 
-#if QT_VERSION >= QT_VERSION_CHECK(5, 14, 0)
-    QRecursiveMutex    mutex;
-#else
-    QMutex             mutex;
-#endif
+    QRecursiveMutex             mutex;
 };
 
 void DImgFilterManager::Private::setupCoreGenerators()

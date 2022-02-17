@@ -44,13 +44,7 @@ T* getObjectOrCreate(T* &ptr)
 
 FacialRecognitionWrapper::Private::Private()
     : ref       (1),
-
-#if QT_VERSION >= QT_VERSION_CHECK(5, 14, 0)
-      mutex(),
-#else
-      mutex(QMutex::Recursive),
-#endif
-
+      mutex     (),
       recognizer(nullptr)
 {
     DbEngineParameters params = CoreDbAccess::parameters().faceParameters();

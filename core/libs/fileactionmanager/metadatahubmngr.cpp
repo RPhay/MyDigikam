@@ -50,7 +50,6 @@ class Q_DECL_HIDDEN MetadataHubMngr::Private
 public:
 
     explicit Private()
-        : mutex()
     {
     }
 

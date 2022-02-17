@@ -82,16 +82,7 @@ QDateTime ItemScanner::creationDateFromFilesystem(const QFileInfo& info)
 {
     // creation date is not what it seems on Unix
 
-#if (QT_VERSION >= QT_VERSION_CHECK(5, 10, 0))
-
     QDateTime ctime = info.birthTime();
-
-#else
-
-    QDateTime ctime = info.created();
-
-#endif
-
     QDateTime mtime = info.lastModified();
 
     if (ctime.isValid())

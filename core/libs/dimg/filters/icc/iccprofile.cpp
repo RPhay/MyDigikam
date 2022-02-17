@@ -105,7 +105,6 @@ class Q_DECL_HIDDEN IccProfileStatic
 public:
 
     IccProfileStatic()
-        : lcmsMutex()
     {
     }
 

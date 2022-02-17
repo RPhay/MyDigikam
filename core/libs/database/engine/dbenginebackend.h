@@ -33,12 +33,7 @@
 #include <QStringList>
 #include <QSqlQuery>
 #include <QSqlError>
-
-#if QT_VERSION >= QT_VERSION_CHECK(5, 14, 0)
-    #include <QRecursiveMutex>
-#else
-    #include <QMutex>
-#endif
+#include <QRecursiveMutex>
 
 // Local includes
 
@@ -61,12 +56,8 @@ public:
 
 public:
 
-#if QT_VERSION >= QT_VERSION_CHECK(5, 14, 0)
     QRecursiveMutex mutex;
-#else
-    QMutex mutex;
-#endif
-    int    lockCount;
+    int             lockCount;
 };
 
 // -----------------------------------------------------------------

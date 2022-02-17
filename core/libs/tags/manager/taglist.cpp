@@ -225,18 +225,8 @@ void TagList::slotSelectionChanged()
     }
 
     TagsManagerFilterModel* const filterModel = d->treeView->getFilterModel();
-
-#if (QT_VERSION < QT_VERSION_CHECK(5, 14, 0))
-
-    filterModel->setQuickListTags(QList<int>::fromSet(mySet));
-
-#else
-
     QList<int> lstFromSet(mySet.begin(), mySet.end());
     filterModel->setQuickListTags(lstFromSet);
-
-#endif
-
 }
 
 void TagList::slotTagDeleted(Album* album)

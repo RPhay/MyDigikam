@@ -102,12 +102,7 @@ bool loadWithImageMagick(const QString& path, QImage& qimg)
         qCDebug(DIGIKAM_TESTS_LOG) << "IM blob size    :" << pixelBlob->length();
 
         qimg = QImage((uchar*)pixelBlob->data(), image.columns(), image.rows(), QImage::Format_ARGB32);
-
-#if (QT_VERSION >= QT_VERSION_CHECK(5, 10, 0))
         qCDebug(DIGIKAM_TESTS_LOG) << "QImage data size:" << qimg.sizeInBytes();
-#else
-        qCDebug(DIGIKAM_TESTS_LOG) << "QImage data size:" << qimg.byteCount();
-#endif
 
         if (qimg.isNull())
         {

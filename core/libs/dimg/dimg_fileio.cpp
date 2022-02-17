@@ -331,16 +331,7 @@ QDateTime DImg::creationDateFromFilesystem(const QFileInfo& fileInfo) const
 {
     // creation date is not what it seems on Unix
 
-#if (QT_VERSION >= QT_VERSION_CHECK(5, 10, 0))
-
     QDateTime ctime = fileInfo.birthTime();
-
-#else
-
-    QDateTime ctime = fileInfo.created();
-
-#endif
-
     QDateTime mtime = fileInfo.lastModified();
 
     if (ctime.isValid())

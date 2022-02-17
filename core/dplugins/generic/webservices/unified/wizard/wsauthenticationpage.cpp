@@ -133,11 +133,6 @@ WSAuthenticationPageView::WSAuthenticationPageView(QWidget* const parent,
 
 #ifdef HAVE_QWEBENGINE
 
-//#if QTWEBENGINEWIDGETS_VERSION >= QT_VERSION_CHECK(5, 7, 0)
-//    settings()->setAttribute(QWebEngineSettings::WebGLEnabled, false);
-//    settings()->setAttribute(QWebEngineSettings::Accelerated2dCanvasEnabled, false);
-//#endif
-
     WSAuthenticationPage* const wpage = new WSAuthenticationPage(this, new QWebEngineProfile, callbackUrl);
 
 #else

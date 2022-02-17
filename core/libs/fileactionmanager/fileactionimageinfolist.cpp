@@ -59,28 +59,12 @@ void TwoProgressItemsContainer::scheduleOnProgressItem(QAtomicPointer<ProgressIt
         }
     }
 
-#if (QT_VERSION < QT_VERSION_CHECK(5, 14, 0))
-
-    ptr.load()->incTotalItems(total);
-
-#else
-
     ptr.loadRelaxed()->incTotalItems(total);
-
-#endif
 }
 
 void TwoProgressItemsContainer::advance(QAtomicPointer<ProgressItem>& ptr, int n)
 {
-#if (QT_VERSION < QT_VERSION_CHECK(5, 14, 0))
-
-    if (ptr.load()->advance(n))
-
-#else
-
     if (ptr.loadRelaxed()->advance(n))
-
-#endif
     {
         ProgressItem* const item = ptr;
 

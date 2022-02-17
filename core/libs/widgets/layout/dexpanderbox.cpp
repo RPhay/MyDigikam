@@ -128,16 +128,7 @@ QSize DAdjustableLabel::sizeHint() const
 
     QFontMetrics fm(fontMetrics());
     int maxW     = screen->geometry().width() * 3 / 4;
-
-#if (QT_VERSION >= QT_VERSION_CHECK(5, 11, 0))
-
     int currentW = fm.horizontalAdvance(d->ajdText);
-
-#else
-
-    int currentW = fm.width(d->ajdText);
-
-#endif
 
     return (QSize(currentW > maxW ? maxW : currentW, QLabel::sizeHint().height()));
 }
@@ -181,16 +172,7 @@ void DAdjustableLabel::adjustTextToLabel()
 
     foreach (const QString& line, d->ajdText.split(QLatin1Char('\n')))
     {
-
-#if (QT_VERSION >= QT_VERSION_CHECK(5, 11, 0))
-
         int lineW = fm.horizontalAdvance(line);
-
-#else
-
-        int lineW = fm.width(line);
-
-#endif
 
         if (lineW > lblW)
         {

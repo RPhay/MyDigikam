@@ -32,14 +32,9 @@
 #include <QCryptographicHash>
 #include <QXmlResultItems>
 #include <QXmlQuery>
+#include <QRecursiveMutex>
 #include <QFileInfo>
 #include <QUrl>
-
-#if QT_VERSION >= QT_VERSION_CHECK(5, 14, 0)
-    #include <QRecursiveMutex>
-#else
-    #include <QMutex>
-#endif
 
 // Local includes
 
@@ -63,23 +58,15 @@ class Q_DECL_HIDDEN RajceTalker::Private
 public:
 
     explicit Private()
-      :
-#if QT_VERSION >= QT_VERSION_CHECK(5, 14, 0)
-        queueAccess(),
-#else
-        queueAccess(QMutex::Recursive),
-#endif
-        netMngr    (nullptr),
+      : netMngr    (nullptr),
         reply      (nullptr)
     {
     }
 
     QQueue<QSharedPointer<RajceCommand> > commandQueue;
-#if QT_VERSION >= QT_VERSION_CHECK(5, 14, 0)
+
     QRecursiveMutex                       queueAccess;
-#else
-    QMutex                                queueAccess;
-#endif
+
     QString                               tmpDir;
 
     QNetworkAccessManager*                netMngr;

@@ -315,16 +315,7 @@ QString DateOption::parseOperation(ParseSettings& settings, const QRegularExpres
             // still no date info, use Qt file information
 
             QFileInfo fileInfo(settings.fileUrl.toLocalFile());
-
-#if (QT_VERSION >= QT_VERSION_CHECK(5, 10, 0))
-
             dateTime = fileInfo.birthTime();
-
-#else
-
-            dateTime = fileInfo.created();
-
-#endif
         }
     }
 
