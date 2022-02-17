@@ -61,22 +61,24 @@ public:
         typedef QList<TrackReadResult> List;
     };
 
+public:
+
     explicit TrackReader(TrackReadResult* const dataTarget);
     ~TrackReader()                                          override;
 
     bool characters(const QString& ch)                      override;
 
     bool endElement(const QString& namespaceURI,
-                            const QString& localName,
-                            const QString& qName)           override;
+                    const QString& localName,
+                    const QString& qName)                   override;
 
     bool startElement(const QString& namespaceURI,
-                              const QString& localName,
-                              const QString& qName,
-                              const QXmlAttributes& atts)   override;
+                      const QString& localName,
+                      const QString& qName,
+                      const QXmlAttributes& atts)           override;
 
     static TrackReadResult loadTrackFile(const QUrl& url);
-    static QDateTime ParseTime(QString timeString);
+    static QDateTime ParseTime(const QString& tstring);
 
 private:
 

@@ -68,8 +68,10 @@ TrackReader::~TrackReader()
 {
 }
 
-QDateTime TrackReader::ParseTime(QString timeString)
+QDateTime TrackReader::ParseTime(const QString& tstring)
 {
+    QString timeString = tstring;
+
     if (timeString.isEmpty())
     {
         return QDateTime();
