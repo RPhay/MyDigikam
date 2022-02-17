@@ -425,24 +425,32 @@ void LensFunCameraSelector::slotUseMetadata(bool b)
             switch (ret)
             {
                 case LensFunIface::MetadataUnavailable:
+                {
                     d->metadataResult->setText(i18n("(no metadata available)"));
                     d->metadataResult->setStyleSheet(d->redStyle);
                     break;
+                }
 
                 case LensFunIface::MetadataNoMatch:
+                {
                     d->metadataResult->setText(i18n("(no match found)"));
                     d->metadataResult->setStyleSheet(d->redStyle);
                     break;
+                }
 
                 case LensFunIface::MetadataPartialMatch:
+                {
                     d->metadataResult->setText(i18n("(partial match found)"));
                     d->metadataResult->setStyleSheet(d->orangeStyle);
                     break;
+                }
 
                 default:
+                {
                     d->metadataResult->setText(i18n("(exact match found)"));
                     d->metadataResult->setStyleSheet(d->greenStyle);
                     break;
+                }
             }
         }
     }
@@ -685,15 +693,11 @@ void LensFunCameraSelector::populateDeviceCombos()
 
         // Fill models for current selected maker
 
-        if ((*it)->Model && QLatin1String((*it)->Maker) == d->make->itemHighlighted())
+        if ((*it)->Model &&
+            (QLatin1String((*it)->Maker) == d->make->itemHighlighted()))
         {
             LensFunIface::DevicePtr dev = *it;
-
-#if (QT_VERSION > QT_VERSION_CHECK(5, 99, 0))
             QVariant b                  = QVariant::fromValue(dev);
-#else
-            QVariant b                  = qVariantFromValue(dev);
-#endif
 
             d->model->addSqueezedItem(QLatin1String(dev->Model), b);
         }
@@ -742,12 +746,7 @@ void LensFunCameraSelector::populateLensCombo()
     while (lenses && *lenses)
     {
         LensFunIface::LensPtr lens = *lenses;
-
-#if (QT_VERSION > QT_VERSION_CHECK(5, 99, 0))
         QVariant b                 = QVariant::fromValue(lens);
-#else
-        QVariant b                 = qVariantFromValue(lens);
-#endif
 
         lensMap.insert(QLatin1String(lens->Model), b);
         ++lenses;
@@ -783,16 +782,16 @@ void LensFunCameraSelector::slotModelChanged()
 void LensFunCameraSelector::slotModelSelected()
 {
     QVariant v = d->model->itemData(d->model->currentIndex());
-    d->iface->setUsedCamera(d->metadataUsage->isChecked() && d->passiveMetadataUsage ? nullptr :
-                            v.value<LensFunIface::DevicePtr>());
+    d->iface->setUsedCamera((d->metadataUsage->isChecked() && d->passiveMetadataUsage) ? nullptr
+                                                                                       : v.value<LensFunIface::DevicePtr>());
     emit signalLensSettingsChanged();
 }
 
 void LensFunCameraSelector::slotLensSelected()
 {
     QVariant v = d->lens->itemData(d->lens->currentIndex());
-    d->iface->setUsedLens(d->metadataUsage->isChecked() && d->passiveMetadataUsage ? nullptr :
-                          v.value<LensFunIface::LensPtr>());
+    d->iface->setUsedLens((d->metadataUsage->isChecked() && d->passiveMetadataUsage) ? nullptr
+                                                                                     : v.value<LensFunIface::LensPtr>());
 
     LensFunContainer settings = d->iface->settings();
 
