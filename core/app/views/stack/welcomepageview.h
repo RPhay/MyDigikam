@@ -78,7 +78,9 @@ class WelcomePageView : public QWebEngineView
 #elif defined HAVE_QWEBKIT
 
 class WelcomePageView : public QWebView
+
 #endif
+
 {
     Q_OBJECT
 

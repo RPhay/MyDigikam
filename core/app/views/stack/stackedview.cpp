@@ -49,14 +49,17 @@
 #include "itemthumbnailbar.h"
 #include "loadingcacheinterface.h"
 #include "previewlayout.h"
-#include "welcomepageview.h"
 #include "thumbbardock.h"
 #include "tableview.h"
 #include "trashview.h"
 #include "dimg.h"
-#ifdef HAVE_NOQWEB
-    #include "dnowebwidget.h"
+
+#if defined HAVE_QWEBENGINE || defined HAVE_QWEBKIT
+#   include "welcomepageview.h"
+#else
+#   include "dnowebwidget.h"
 #endif
+
 #ifdef HAVE_MEDIAPLAYER
 #   include "mediaplayerview.h"
 #endif //HAVE_MEDIAPLAYER
@@ -80,7 +83,8 @@ public:
         thumbBar        (nullptr),
         imagePreviewView(nullptr),
         thumbBarDock    (nullptr),
-#ifndef HAVE_NOQWEB
+
+#if defined HAVE_QWEBENGINE || defined HAVE_QWEBKIT
         welcomePageView (nullptr),
 #else
         noWebWidget     (nullptr),
@@ -112,7 +116,8 @@ public:
     ItemThumbnailBar* thumbBar;
     ItemPreviewView*  imagePreviewView;
     ThumbBarDock*     thumbBarDock;
-#ifndef HAVE_NOQWEB
+
+#if defined HAVE_QWEBENGINE || defined HAVE_QWEBKIT
     WelcomePageView*  welcomePageView;
 #else
     DNoWebWidget*     noWebWidget;
@@ -150,7 +155,7 @@ StackedView::StackedView(QWidget* const parent)
     d->thumbBarDock->setWidget(d->thumbBar);
     d->thumbBarDock->setObjectName(QLatin1String("mainwindow_thumbbar"));
 
-#ifndef HAVE_NOQWEB
+#if defined HAVE_QWEBENGINE || defined HAVE_QWEBKIT
     d->welcomePageView  = new WelcomePageView(this);
 #else
     d->noWebWidget      = new DNoWebWidget(this);
@@ -181,11 +186,13 @@ StackedView::StackedView(QWidget* const parent)
 
     d->stackMap[addWidget(d->imageIconView)]    = IconViewMode;
     d->stackMap[addWidget(d->imagePreviewView)] = PreviewImageMode;
-#ifndef HAVE_NOQWEB
+
+#if defined HAVE_QWEBENGINE || defined HAVE_QWEBKIT
     d->stackMap[addWidget(d->welcomePageView)]  = WelcomePageMode;
 #else
     d->stackMap[addWidget(d->noWebWidget)]      = WelcomePageMode;
 #endif
+
     d->stackMap[addWidget(d->tableView)]        = TableViewMode;
     d->stackMap[addWidget(d->trashView)]        = TrashViewMode;
 
