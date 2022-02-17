@@ -1,5 +1,5 @@
 /** \mainpage digiKam API reference page.
-    \author (c) 2001-2021 digiKam team.
+    \author (c) 2001-2022 digiKam team.
     \brief digiKam is an advanced open-source digital photo management application that runs on Linux, Windows, and MacOS.
     \image html logo-digikam.png
 
@@ -310,10 +310,10 @@ The full list of mandatory (X) and optional (opt) external dependencies required
 | KF5::Notifications   |  opt     | >= 5.5.0    | https://invent.kde.org/frameworks/knotifications      | For Linux desktop notifications integrations           |                                                                                       |
 | KF5::ThreadWeaver    |  opt     | >= 5.5.0    | https://invent.kde.org/frameworks/threadweaver        | For panorama tool                                      |                                                                                       |
 | KF5::IconThemes      |  opt     | >= 5.5.0    | https://invent.kde.org/frameworks/kiconthemes         | Optional: only for Linux Desktop (KIconDialog)         |                                                                                       |
-| KF5::FileMetaData    |  opt     | >= 5.5.0    | https://invent.kde.org/frameworks/kfilemetadata       | KDE files indexer (ENABLE_KFILEMETADATASUPPORT=on)     | Disabled by default.                                                                  |
+| KF5::FileMetaData    |  opt     | >= 5.5.0    | https://invent.kde.org/frameworks/kfilemetadata       | Plasma desktop files indexer support                   | (ENABLE_KFILEMETADATASUPPORT=ON) Disabled by default.                                                                  |
 | KF5::CalendarCore    |  opt     | >= 5.5.0    | https://invent.kde.org/frameworks/kcalendarcore       | For calendar tool to setup ical special events         |                                                                                       |
 | KF5::KIO             |  opt     | >= 5.5.0    | https://invent.kde.org/frameworks/kio                 | Optional: only for Linux Desktop                       |                                                                                       |
-| KF5::AkonadiContact  |  opt     | >= 5.5.0    | https://invent.kde.org/pim/akonadi-contacts           | KDE addess-book (ENABLE_AKONADICONTACTSUPPORT=on)      | Disabled by default.                                                                  |
+| KF5::AkonadiContact  |  opt     | >= 5.5.0    | https://invent.kde.org/pim/akonadi-contacts           | Plasma desktop addess-book support                     | (ENABLE_AKONADICONTACTSUPPORT=ON) Disabled by default.                                |
 | libopencv            |   X      | >= 3.3      | https://opencv.org/                                   | OpenCV 4 supported with digiKam 6.1.0                  | DNN module required for face management                                               |
 | libpthread           |   X      | >= 2.0.0    | http://www.gnu.org/software/hurd/libpthread.html      | For DNG converter                                      |                                                                                       |
 | libtiff              |   X      | >= 4.0      | http://www.remotesensing.org/libtiff                  | For DImg image loader                                  |                                                                                       |
