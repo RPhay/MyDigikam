@@ -328,7 +328,7 @@ int VideoThumbnailer::Private::getBestThumbnailIndex(vector<VideoFrame>& videoFr
                                  << bestFrame
                                  << "(RMSE: "
                                  << minRMSE
-                                 << ")" << endl;
+                                 << ")" << QT_ENDL;
 */
     return bestFrame;
 }

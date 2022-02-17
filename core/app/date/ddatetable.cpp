@@ -754,7 +754,7 @@ QSize DDateTable::sizeHint() const
     }
     else
     {
-        //qCDebug(DIGIKAM_GENERAL_LOG) << "DDateTable::sizeHint: obscure failure - " << endl;
+        //qCDebug(DIGIKAM_GENERAL_LOG) << "DDateTable::sizeHint: obscure failure - " << QT_ENDL;
 
         return QSize(-1, -1);
     }
