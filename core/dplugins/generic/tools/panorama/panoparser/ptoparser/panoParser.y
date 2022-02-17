@@ -536,8 +536,8 @@ varreference: PT_TOKEN_KEYWORD_MULTICHAR PT_TOKEN_REFERENCE int
             case 'e':
                 if (*(keyword + 2) == '\0') {
                     image->photometricCoefRef[*(keyword + 1) - 'a'] = imageRef;
-                    break;
                 }
+                break;
             default:
                 panoScriptParserError("Invalid variable name [%s]\n", keyword);
                 return -1;
@@ -955,8 +955,8 @@ varparameter: PT_TOKEN_KEYWORD PT_TOKEN_STRING
             case 'e':
                 if (*(keyword + 2) == '\0') {
                     image->photometricCoef[*(keyword + 1) - 'a'] = $2;
-                    break;
                 }
+                break;
             default:
                 panoScriptParserError("Invalid variable name [%s]\n", keyword);
                 return -1;

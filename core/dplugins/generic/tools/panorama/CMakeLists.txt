@@ -29,10 +29,6 @@ while(CMAKE_C_FLAGS MATCHES "-std=iso9899:1990")
     string(REPLACE "-std=iso9899:1990" "" CMAKE_C_FLAGS "${CMAKE_C_FLAGS}")
 endwhile()
 
-while(CMAKE_C_FLAGS MATCHES "-Wimplicit-fallthrough=")
-    string(REPLACE "-Wimplicit-fallthrough=" "" CMAKE_C_FLAGS "${CMAKE_C_FLAGS}")
-endwhile()
-
 FLEX_TARGET(PTOScanner panoparser/ptoparser/panoScanner.l ${CMAKE_CURRENT_BINARY_DIR}/panoScanner.c)
 BISON_TARGET(PTOParser panoparser/ptoparser/panoParser.y  ${CMAKE_CURRENT_BINARY_DIR}/panoParser.c)
 ADD_FLEX_BISON_DEPENDENCY(PTOScanner PTOParser)
