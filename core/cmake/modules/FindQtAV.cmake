@@ -16,7 +16,7 @@
 # For details see the accompanying COPYING-CMAKE-SCRIPTS file.
 #
 
-find_package(Qt6 COMPONENTS Core)
+find_package(Qt6 QUIET COMPONENTS Core)
 
 if (NOT Qt6_FOUND)
 

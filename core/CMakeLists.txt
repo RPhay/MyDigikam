@@ -62,7 +62,7 @@ endif()
 
 # Extra checkq to detect Qt core with minimal version before to continue.
 
-find_package(Qt6 ${QT6_MIN_VERSION} COMPONENTS Core)
+find_package(Qt6 ${QT6_MIN_VERSION} QUIET COMPONENTS Core)
 
 if (NOT Qt6_FOUND)
 
