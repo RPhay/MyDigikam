@@ -37,7 +37,7 @@
 
 #ifdef HAVE_QWEBENGINE
 #   include <QtWebEngineWidgetsVersion>
-#else
+#elif defined HAVE_QWEBKIT
 #   include <QtWebKitWidgetsVersion>
 #endif
 
