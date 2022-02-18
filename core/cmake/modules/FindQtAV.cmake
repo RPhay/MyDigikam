@@ -16,11 +16,11 @@
 # For details see the accompanying COPYING-CMAKE-SCRIPTS file.
 #
 
-find_package(Qt6 QUIET COMPONENTS Core)
+find_package(Qt6 ${QT6_MIN_VERSION} QUIET COMPONENTS Core)
 
 if (NOT Qt6_FOUND)
 
-    find_package(Qt5 REQUIRED COMPONENTS Core)
+    find_package(Qt5 ${QT5_MIN_VERSION} REQUIRED COMPONENTS Core)
 
     set(QT_INSTALL_PREFIX ${_qt5_install_prefix})
     set(QT_INCLUDE_DIRS   ${Qt5Core_INCLUDE_DIRS})
