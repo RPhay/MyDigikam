@@ -2173,7 +2173,7 @@ void SearchFieldChoice::setupValueWidgets(QGridLayout* layout, int row, int colu
     connect(m_model, SIGNAL(checkStateChanged(QVariant,bool)),
             this, SLOT(checkStateChanged()));
 
-    m_comboBox->setModel(m_model);
+    m_comboBox->setSearchModel(m_model);
 
     // set object name for style sheet
 
