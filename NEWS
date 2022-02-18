@@ -11,4 +11,5 @@ BUGFIXES:
 001 ==> 416704 - Port digiKam to Qt6 and KF6 API.
 002 ==> 450153 - All groups deleted by "Extended clean up and shrink all databases".
 003 ==> 450518 - Crash when opening Advanced Search.
-004 ==> 
+004 ==> 450467 - digiKam git source build fails.
+005 ==> 
