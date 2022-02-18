@@ -101,6 +101,11 @@ elseif(ENABLE_QWEBKIT)
         ${libgeoiface_SRCS}
         ${CMAKE_CURRENT_SOURCE_DIR}/widgets/htmlwidget_qwebkit.cpp
        )
+else()
+    set(libgeoiface_SRCS
+        ${libgeoiface_SRCS}
+        ${CMAKE_CURRENT_SOURCE_DIR}/../../nowebwidget/dnowebwidget.cpp
+       )
 endif()
 
 # Marble translations need explicit loading

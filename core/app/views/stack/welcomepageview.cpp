@@ -55,8 +55,6 @@
 namespace Digikam
 {
 
-#ifndef HAVE_NOQWEB
-
 #ifdef HAVE_QWEBENGINE
 
 WelcomePageViewPage::WelcomePageViewPage(QObject* const parent)
@@ -295,5 +293,4 @@ void WelcomePageView::slotThemeChanged()
     setHtml(content, QUrl::fromLocalFile(locationHtml));
 }
 
-#endif
 } // namespace Digikam

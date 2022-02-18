@@ -35,7 +35,7 @@
 
 namespace Digikam
 {
-DNoWebWidget::DNoWebWidget(QWidget *parent)
+DNoWebWidget::DNoWebWidget(QWidget* parent)
     : QLabel(parent)
 {
     setText(i18n("Warning: No WebEngine/Webkit was found. Web content cannot be loaded"));
@@ -43,28 +43,38 @@ DNoWebWidget::DNoWebWidget(QWidget *parent)
 
 void DNoWebWidget::setUrl(const QUrl &url)
 {
+    Q_UNUSED(url);
 }
 
-void DNoWebWidget::setSharedGeoIfaceObject(GeoIfaceSharedData *const sharedData)
+void DNoWebWidget::setSharedGeoIfaceObject(GeoIfaceSharedData* const sharedData)
 {
+    Q_UNUSED(sharedData);
 }
 
 void DNoWebWidget::load(const QUrl &url)
 {
+    Q_UNUSED(url);
 }
 
-QVariant DNoWebWidget::runScript(const QString &scriptCode, bool async)
+QVariant DNoWebWidget::runScript(const QString& scriptCode, bool async)
 {
+    Q_UNUSED(scriptCode);
+    Q_UNUSED(async);
+
     return {};
 }
 
-bool DNoWebWidget::runScript2Coordinates(const QString &scriptCode, GeoCoordinates *const coordinates)
+bool DNoWebWidget::runScript2Coordinates(const QString &scriptCode, GeoCoordinates* const coordinates)
 {
+    Q_UNUSED(scriptCode);
+    Q_UNUSED(coordinates);
+
     return false;
 }
 
-void DNoWebWidget::setSelectionRectangle(const GeoCoordinates::Pair &searchCoordinates)
+void DNoWebWidget::setSelectionRectangle(const GeoCoordinates::Pair& searchCoordinates)
 {
+    Q_UNUSED(searchCoordinates);
 }
 
 void DNoWebWidget::removeSelectionRectangle()
@@ -73,11 +83,17 @@ void DNoWebWidget::removeSelectionRectangle()
 
 void DNoWebWidget::mouseModeChanged(const GeoMouseModes mouseMode)
 {
+    Q_UNUSED(mouseMode);
 }
 
 void DNoWebWidget::centerOn(const qreal west, const qreal north, const qreal east, const qreal south,
                             const bool useSaneZoomLevel)
 {
+    Q_UNUSED(west);
+    Q_UNUSED(north);
+    Q_UNUSED(east);
+    Q_UNUSED(south);
+    Q_UNUSED(useSaneZoomLevel);
 }
 
 }
