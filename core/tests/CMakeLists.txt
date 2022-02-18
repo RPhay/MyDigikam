@@ -16,7 +16,7 @@ if(ENABLE_QWEBENGINE)
 
     set(_extra_deps ${_extra_deps} Qt${QT_VERSION_MAJOR}::WebEngineWidgets)
 
-elseif(ENABLE_QWEBKIT)
+else()
 
     set(_extra_deps ${_extra_deps} Qt${QT_VERSION_MAJOR}::WebKitWidgets)
 

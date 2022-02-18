@@ -40,6 +40,7 @@
 #include "digikam_config.h"
 #include "digikam_debug.h"
 #include "applicationsettings.h"
+#include "welcomepageview.h"
 #include "digikamitemview.h"
 #include "itemiconview.h"
 #include "dbinfoiface.h"
@@ -53,12 +54,6 @@
 #include "tableview.h"
 #include "trashview.h"
 #include "dimg.h"
-
-#if defined HAVE_QWEBENGINE || defined HAVE_QWEBKIT
-#   include "welcomepageview.h"
-#else
-#   include "dnowebwidget.h"
-#endif
 
 #ifdef HAVE_MEDIAPLAYER
 #   include "mediaplayerview.h"
@@ -83,12 +78,7 @@ public:
         thumbBar        (nullptr),
         imagePreviewView(nullptr),
         thumbBarDock    (nullptr),
-
-#if defined HAVE_QWEBENGINE || defined HAVE_QWEBKIT
         welcomePageView (nullptr),
-#else
-        noWebWidget     (nullptr),
-#endif
 
 #ifdef HAVE_MEDIAPLAYER
 
@@ -116,12 +106,7 @@ public:
     ItemThumbnailBar* thumbBar;
     ItemPreviewView*  imagePreviewView;
     ThumbBarDock*     thumbBarDock;
-
-#if defined HAVE_QWEBENGINE || defined HAVE_QWEBKIT
     WelcomePageView*  welcomePageView;
-#else
-    DNoWebWidget*     noWebWidget;
-#endif
 
     QMap<int, int>    stackMap;
 
@@ -155,11 +140,8 @@ StackedView::StackedView(QWidget* const parent)
     d->thumbBarDock->setWidget(d->thumbBar);
     d->thumbBarDock->setObjectName(QLatin1String("mainwindow_thumbbar"));
 
-#if defined HAVE_QWEBENGINE || defined HAVE_QWEBKIT
     d->welcomePageView  = new WelcomePageView(this);
-#else
-    d->noWebWidget      = new DNoWebWidget(this);
-#endif
+
     d->tableView        = new TableView(d->imageIconView->getSelectionModel(),
                                         d->imageIconView->imageFilterModel(),
                                         this);
@@ -186,13 +168,7 @@ StackedView::StackedView(QWidget* const parent)
 
     d->stackMap[addWidget(d->imageIconView)]    = IconViewMode;
     d->stackMap[addWidget(d->imagePreviewView)] = PreviewImageMode;
-
-#if defined HAVE_QWEBENGINE || defined HAVE_QWEBKIT
     d->stackMap[addWidget(d->welcomePageView)]  = WelcomePageMode;
-#else
-    d->stackMap[addWidget(d->noWebWidget)]      = WelcomePageMode;
-#endif
-
     d->stackMap[addWidget(d->tableView)]        = TableViewMode;
     d->stackMap[addWidget(d->trashView)]        = TrashViewMode;
 

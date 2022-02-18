@@ -23,7 +23,7 @@ endif ()
 
 if(ENABLE_QWEBENGINE)
     include_directories($<TARGET_PROPERTY:Qt${QT_VERSION_MAJOR}::WebEngineWidgets,INTERFACE_INCLUDE_DIRECTORIES>)
-elseif(ENABLE_QWEBKIT)
+else()
     include_directories($<TARGET_PROPERTY:Qt${QT_VERSION_MAJOR}::WebKitWidgets,INTERFACE_INCLUDE_DIRECTORIES>)
 endif()
 

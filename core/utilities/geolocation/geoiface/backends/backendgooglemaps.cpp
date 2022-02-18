@@ -54,10 +54,8 @@
 
 #ifdef HAVE_QWEBENGINE
 #   include "htmlwidget_qwebengine.h"
-#elif defined HAVE_QWEBKIT
-#   include "htmlwidget_qwebkit.h"
 #else
-#   include "dnowebwidget.h"
+#   include "htmlwidget_qwebkit.h"
 #endif
 
 namespace Digikam
@@ -71,11 +69,8 @@ public:
       : htmlWidget(nullptr)
     {
     }
-#if defined HAVE_QWEBENGINE || defined HAVE_QWEBKIT
-    HTMLWidget*   htmlWidget;
-#else
-    DNoWebWidget* htmlWidget;
-#endif
+
+    HTMLWidget* htmlWidget;
 };
 
 } // namespace Digikam
@@ -113,11 +108,7 @@ public:
     {
     }
 
-#if defined HAVE_QWEBENGINE || defined HAVE_QWEBKIT
     QPointer<HTMLWidget>                      htmlWidget;
-#else
-    QPointer<DNoWebWidget>                    htmlWidget;
-#endif
     QPointer<QWidget>                         htmlWidgetWrapper;
     bool                                      isReady;
     QActionGroup*                             mapTypeActionGroup;
@@ -251,11 +242,7 @@ QWidget* BackendGoogleMaps::mapWidget()
 
             d->htmlWidgetWrapper = new QWidget();
             d->htmlWidgetWrapper->setSizePolicy(QSizePolicy::Expanding, QSizePolicy::Expanding);
-#if defined HAVE_QWEBENGINE || defined HAVE_QWEBKIT
             d->htmlWidget        = new HTMLWidget(d->htmlWidgetWrapper);
-#else
-            d->htmlWidget        = new DNoWebWidget(d->htmlWidgetWrapper);
-#endif
             d->htmlWidgetWrapper->resize(400, 400);
         }
 

@@ -29,12 +29,8 @@
 
 // Local includes
 
-#if defined HAVE_QWEBENGINE || defined HAVE_QWEBKIT
-    #include "webbrowserdlg.h"
-#else
-    #include "dnowebdlg.h"
-#endif
 #include "digikam_debug.h"
+#include "webbrowserdlg.h"
 
 using namespace Digikam;
 
@@ -49,11 +45,7 @@ int main(int argc, char* argv[])
         return -1;
     }
 
-#if defined HAVE_QWEBENGINE || defined HAVE_QWEBKIT
     WebBrowserDlg browser(QUrl(QString::fromUtf8(argv[1])), nullptr);
-#else
-    DNoWebDialog browser(QUrl(QString::fromUtf8(argv[1])), nullptr);
-#endif
     browser.show();
 
     return a.exec();

@@ -35,13 +35,6 @@ option(ENABLE_MEDIAPLAYER                "Build digiKam with Media Player suppor
 option(ENABLE_DBUS                       "Build digiKam with DBUS support (default=ON)"                                       ON)
 option(ENABLE_APPSTYLES                  "Build digiKam with support for changing the widget application style (default=OFF)" OFF)
 option(ENABLE_QWEBENGINE                 "Build digiKam with QWebEngine (default=ON)"                                         ON)
-option(ENABLE_QWEBKIT                    "Build digiKam with Qt Webkit (default=OFF)"                                         OFF)
-
-if(ENABLE_QWEBENGINE OR ENABLE_QWEBKIT)
-    option(DISABLE_QWEB "Disable Web content" OFF)
-else()
-    option(DISABLE_QWEB "Disable web content" ON)
-endif()
 
 # Mysql support options (experimental):
 option(ENABLE_MYSQLSUPPORT               "Build digiKam with MySQL dabatase support (default=ON)"                             ON)
@@ -100,11 +93,9 @@ if (Qt6_FOUND)
 
 endif()
 
-if (DISABLE_QWEB)
-
-elseif (ENABLE_QWEBENGINE)
+if (ENABLE_QWEBENGINE)
     find_package(Qt${QT_VERSION_MAJOR} REQUIRED NO_MODULE COMPONENTS WebEngineWidgets)
-elseif (ENABLE_QWEBKIT)
+else()
     find_package(Qt${QT_VERSION_MAJOR} REQUIRED NO_MODULE COMPONENTS WebKitWidgets)
 endif ()
 
@@ -136,13 +127,12 @@ if(BUILD_TESTING)
                  Test
     )
 
-    if (NOT DISABLE_QWEB)
-        find_package(Qt${QT_VERSION_MAJOR}
-                     QUIET
-                     OPTIONAL_COMPONENTS
-                     Qml WebView  # Optional, for 'sialis' O2 library test tool.
-        )
-    endif()
+    find_package(Qt${QT_VERSION_MAJOR}
+                 QUIET
+                 OPTIONAL_COMPONENTS
+                 Qml WebView  # Optional, for 'sialis' O2 library test tool.
+    )
+
 endif()
 
 find_package(KF5 ${KF5_MIN_VERSION} REQUIRED
@@ -618,8 +608,6 @@ MACRO_BOOL_TO_01(ENABLE_MEDIAPLAYER           HAVE_MEDIAPLAYER)
 MACRO_BOOL_TO_01(ENABLE_DBUS                  HAVE_DBUS)
 MACRO_BOOL_TO_01(ENABLE_APPSTYLES             HAVE_APPSTYLE_SUPPORT)
 MACRO_BOOL_TO_01(ENABLE_QWEBENGINE            HAVE_QWEBENGINE)
-MACRO_BOOL_TO_01(ENABLE_QWEBKIT               HAVE_QWEBKIT)
-MACRO_BOOL_TO_01(DISABLE_QWEB                 HAVE_NOQWEB)
 MACRO_BOOL_TO_01(ENABLE_DRMINGW               HAVE_DRMINGW)
 MACRO_BOOL_TO_01(ImageMagick_Magick++_FOUND   HAVE_IMAGE_MAGICK)
 MACRO_BOOL_TO_01(X265_FOUND                   HAVE_X265)

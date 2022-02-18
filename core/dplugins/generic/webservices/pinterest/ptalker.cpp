@@ -51,15 +51,11 @@
 
 #include "digikam_debug.h"
 #include "digikam_version.h"
+#include "previewloadthread.h"
+#include "webbrowserdlg.h"
 #include "wstoolutils.h"
 #include "pwindow.h"
 #include "pitem.h"
-#if defined HAVE_QWEBENGINE || defined HAVE_QWEBKIT
-    #include "webbrowserdlg.h"
-#else
-    #include "dnowebdlg.h"
-#endif
-#include "previewloadthread.h"
 
 namespace DigikamGenericPinterestPlugin
 {
@@ -122,11 +118,7 @@ public:
 
     QMap<QString, QString> urlParametersMap;
 
-#if defined HAVE_QWEBENGINE || defined HAVE_QWEBKIT
-    WebBrowserDlg*                  browser;
-#else
-    DNoWebDialog*                   browser;
-#endif
+    WebBrowserDlg*         browser;
 };
 
 PTalker::PTalker(QWidget* const parent)
@@ -171,11 +163,8 @@ void PTalker::link()
     url.setQuery(query);
 
     delete d->browser;
-#if defined HAVE_QWEBENGINE || defined HAVE_QWEBKIT
+
     d->browser = new WebBrowserDlg(url, d->parent, true);
-#else
-    d->browser = new DNoWebDialog(url, d->parent, true);
-#endif
     d->browser->setModal(true);
 
     connect(d->browser, SIGNAL(urlChanged(QUrl)),

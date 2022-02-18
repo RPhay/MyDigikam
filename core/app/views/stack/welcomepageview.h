@@ -41,7 +41,7 @@
 #   include <QWebEngineView>
 #   include <QWebEnginePage>
 #   include <QWebEngineSettings>
-#elif defined HAVE_QWEBKIT
+#else
 #   include <qwebview.h>
 #endif
 
@@ -75,7 +75,7 @@ Q_SIGNALS:
 
 class WelcomePageView : public QWebEngineView
 
-#elif defined HAVE_QWEBKIT
+#else
 
 class WelcomePageView : public QWebView
 

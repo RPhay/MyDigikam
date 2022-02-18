@@ -174,7 +174,7 @@ if(ENABLE_QWEBENGINE)
                           Qt${QT_VERSION_MAJOR}::WebEngineWidgets
     )
 
-elseif(ENABLE_QWEBKIT)
+else()
 
     target_link_libraries(digikamcore
                           PRIVATE

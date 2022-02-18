@@ -40,19 +40,15 @@
 
 // Local includes
 
-#include "htmlwizard.h"
-#include "abstractthemeparameter.h"
-#include "galleryinfo.h"
-#include "gallerygenerator.h"
-#include "dlayoutbox.h"
 #include "digikam_debug.h"
+#include "abstractthemeparameter.h"
+#include "gallerygenerator.h"
+#include "webbrowserdlg.h"
 #include "dprogresswdg.h"
 #include "dhistoryview.h"
-#if defined HAVE_QWEBENGINE || defined HAVE_QWEBKIT
-    #include "webbrowserdlg.h"
-#else
-    #include "dnowebdlg.h"
-#endif
+#include "galleryinfo.h"
+#include "htmlwizard.h"
+#include "dlayoutbox.h"
 
 namespace DigikamGenericHtmlGalleryPlugin
 {
@@ -187,17 +183,10 @@ void HTMLFinalPage::slotProcess()
 
         case GalleryConfig::INTERNAL:
         {
-#if defined HAVE_QWEBENGINE || defined HAVE_QWEBKIT
             WebBrowserDlg* const browser = new WebBrowserDlg(url, this);
             browser->show();
             d->progressView->addEntry(i18n("Opening gallery with internal browser..."),
                                       DHistoryView::ProgressEntry);
-#else
-            DNoWebDialog* const dialog = new DNoWebDialog(url, this);
-            dialog->show();
-            d->progressView->addEntry(i18n("No WebEngine/WebKit found..."),
-                                      DHistoryView::ProgressEntry);
-#endif
             break;
         }
 

@@ -100,6 +100,7 @@ set(libdigikamgui_SRCS
     ${CMAKE_CURRENT_SOURCE_DIR}/views/stack/itemiconview_views.cpp
     ${CMAKE_CURRENT_SOURCE_DIR}/views/stack/itemiconview_zoom.cpp
     ${CMAKE_CURRENT_SOURCE_DIR}/views/stack/itemiconview_iqs.cpp
+    ${CMAKE_CURRENT_SOURCE_DIR}/views/stack/welcomepageview.cpp
     ${CMAKE_CURRENT_SOURCE_DIR}/views/stack/trashview.cpp
     ${CMAKE_CURRENT_SOURCE_DIR}/views/stack/stackedview.cpp
     ${CMAKE_CURRENT_SOURCE_DIR}/views/preview/itempreviewcanvas.cpp
@@ -127,13 +128,6 @@ if(${Marble_FOUND})
         ${CMAKE_CURRENT_SOURCE_DIR}/views/stack/mapwidgetview.cpp
         ${CMAKE_CURRENT_SOURCE_DIR}/views/sidebar/gpssearchsidebarwidget.cpp
        )
-endif()
-
-if(ENABLE_QWEBENGINE OR ENABLE_QWEBKIT)
-    set(libdigikamgui_SRCS
-            ${libdigikamgui_SRCS}
-            ${CMAKE_CURRENT_SOURCE_DIR}/views/stack/welcomepageview.cpp
-            )
 endif()
 
 # FIXME
@@ -202,13 +196,6 @@ if(${Marble_FOUND})
         $<TARGET_OBJECTS:gui_gpssearch_obj>
     )
 
-endif()
-
-if(DISABLE_QWEB)
-    set(DIGIKAMGUI_OBJECTS
-            ${DIGIKAMGUI_OBJECTS}
-            $<TARGET_OBJECTS:gui_nowebwidget_obj>
-            )
 endif()
 
 ### digiKam GUI shared library target ###########################################################################################
@@ -286,7 +273,7 @@ if(ENABLE_QWEBENGINE)
                           Qt${QT_VERSION_MAJOR}::WebEngineWidgets
     )
 
-elseif(ENABLE_QWEBKIT)
+else()
 
     target_link_libraries(digikamgui
                           PRIVATE

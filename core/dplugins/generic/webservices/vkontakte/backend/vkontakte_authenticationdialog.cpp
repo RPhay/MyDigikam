@@ -32,10 +32,8 @@
 #   include <QWebEnginePage>
 #   include <QWebEngineProfile>
 #   include <QWebEngineCookieStore>
-#elif defined HAVE_QWEBKIT
-#   include <qwebview.h>
 #else
-#   include "dnowebwidget.h"
+#   include <qwebview.h>
 #endif
 
 #include <QMessageBox>
@@ -72,12 +70,9 @@ public:
 
     QWebEngineView*                  webView;
 
-#elif defined HAVE_QWEBKIT
+#else
 
     QWebView*                        webView;
-
-#else
-    Digikam::DNoWebWidget*           webView;
 
 #endif
 
@@ -105,14 +100,11 @@ AuthenticationDialog::AuthenticationDialog(QWidget* const parent)
     d->webView = new QWebEngineView(this);
     d->webView->page()->profile()->cookieStore()->deleteAllCookies();
 
-#elif defined HAVE_QWEBKIT
+#else
 
     d->webView = new QWebView(this);
     d->webView->settings()->setAttribute(QWebSettings::LocalStorageEnabled, true);
     d->webView->page()->networkAccessManager()->setCookieJar(new QNetworkCookieJar());
-
-#else
-    d->webView = new Digikam::DNoWebWidget(this);
 
 #endif
 

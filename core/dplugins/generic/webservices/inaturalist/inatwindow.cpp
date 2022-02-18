@@ -64,7 +64,6 @@
 #include "inatwidget_p.h"
 #include "inatbrowserdlg.h"
 #include "inatutils.h"
-#include "dnowebdlg.h"
 
 namespace DigikamGenericINatPlugin
 {
@@ -397,7 +396,6 @@ void INatWindow::switchUser(bool restoreToken)
         return;
     }
 
-#ifndef HAVE_NOQWEB
     // Pass cookies to browser; if "remember me" is checked on iNaturalist
     // website, the browser will re-login for 14 days without user interaction.
 
@@ -407,11 +405,6 @@ void INatWindow::switchUser(bool restoreToken)
             d->talker, SLOT(slotApiToken(QString,QList<QNetworkCookie>)));
 
     dlg->exec();
-
-#else
-    QPointer<DNoWebDialog> dlg = new DNoWebDialog(this);
-    dlg->exec();
-#endif
 }
 
 void INatWindow::slotApiTokenExpires()

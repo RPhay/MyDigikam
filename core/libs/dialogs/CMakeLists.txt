@@ -29,7 +29,7 @@ endif ()
 
 if(ENABLE_QWEBENGINE)
     include_directories($<TARGET_PROPERTY:Qt${QT_VERSION_MAJOR}::WebEngineWidgets,INTERFACE_INCLUDE_DIRECTORIES>)
-elseif(ENABLE_QWEBKIT)
+else()
     include_directories($<TARGET_PROPERTY:Qt${QT_VERSION_MAJOR}::WebKitWidgets,INTERFACE_INCLUDE_DIRECTORIES>)
 endif()
 
@@ -54,14 +54,8 @@ set(libdialogs_SRCS
     ${CMAKE_CURRENT_SOURCE_DIR}/dconfigdlgwidgets.cpp
     ${CMAKE_CURRENT_SOURCE_DIR}/dmessagebox.cpp
     ${CMAKE_CURRENT_SOURCE_DIR}/dsplashscreen.cpp
+    ${CMAKE_CURRENT_SOURCE_DIR}/webbrowserdlg.cpp
 )
-
-if(ENABLE_QWEBENGINE OR ENABLE_QWEBKIT)
-    set(libdialogs_SRCS
-            ${libdialogs_SRCS}
-            ${CMAKE_CURRENT_SOURCE_DIR}/webbrowserdlg.cpp
-            )
-endif()
 
 # Used by digikamcore
 add_library(core_digikamdialogs_obj OBJECT ${libdialogs_SRCS})
