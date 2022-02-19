@@ -1,0 +1,3 @@
++ metaengine              : use of QTextCodec for string conversion. Use KCodec (prefered) instead or libicu. Can be tested with Qt5 API.
++ geolocation/trackreader : use deprecated classes. Port to new API (https://doc.qt.io/qt-6/xml-changes-qt6.html). Can be tested with Qt5 API.
++ remove Qt6::Core5Compat dependency.

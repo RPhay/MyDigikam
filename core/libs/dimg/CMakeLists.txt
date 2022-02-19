@@ -267,10 +267,6 @@ if(X11_FOUND AND NOT Qt6_FOUND)
 
 endif()
 
-if (Qt6_FOUND)
-    include_directories($<TARGET_PROPERTY:Qt${QT_VERSION_MAJOR}::Core5Compat,INTERFACE_INCLUDE_DIRECTORIES>)
-endif ()
-
 if(X11_FOUND)
 
     include_directories(${Qt${QT_VERSION_MAJOR}Gui_PRIVATE_INCLUDE_DIRS})
