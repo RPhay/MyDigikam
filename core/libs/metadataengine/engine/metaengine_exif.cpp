@@ -31,7 +31,12 @@
 
 // Qt includes
 
-#include <QTextCodec>
+#if (QT_VERSION > QT_VERSION_CHECK(5, 99, 0))
+#   include <QStringEncoder>
+#else
+#   include <QTextCodec>
+#endif
+
 #include <QBuffer>
 
 // KDE includes
@@ -299,10 +304,16 @@ bool MetaEngine::setExifComment(const QString& comment, bool writeDescription) c
 
             // Write as Unicode only when necessary.
 
-            // TODO: Depends on Qt Core5Compat module. Port to Qt6 Core when API available
+#if (QT_VERSION > QT_VERSION_CHECK(5, 99, 0))
+            auto latin1Codec         = QStringEncoder(QStringEncoder::Latin1);
+            QByteArray encodedString = latin1Codec(comment);
+
+            if (!encodedString.isEmpty() && !latin1Codec.hasError())
+#else
             QTextCodec* const latin1Codec = QTextCodec::codecForName("iso8859-1");
 
             if (latin1Codec && latin1Codec->canEncode(comment))
+#endif
             {
                 // We know it's in the ISO-8859-1 8bit range.
                 // Check if it's in the ASCII 7bit range
