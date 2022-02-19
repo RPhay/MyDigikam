@@ -66,13 +66,6 @@ target_link_libraries(digikam
                       digikamgui
 )
 
-if (Qt6_FOUND)
-    target_link_libraries(digikam
-        PRIVATE
-        Qt6::Core5Compat
-        )
-endif ()
-
 if(ENABLE_DBUS)
 
     target_link_libraries(digikam
