@@ -75,15 +75,10 @@ Q_LOGGING_CATEGORY(DIGIKAM_MEDIASRV_LOG_WARN,   "digikam.mediaserver.warn",   Qt
 Q_LOGGING_CATEGORY(DIGIKAM_MEDIASRV_LOG_SEVERE, "digikam.mediaserver.severe", QtWarningMsg)
 Q_LOGGING_CATEGORY(DIGIKAM_MEDIASRV_LOG_FATAL,  "digikam.mediaserver.fatal",  QtCriticalMsg)
 
-void digikamSetDebugFilterRules()
+void digikamSetDebugFilterRules(bool on)
 {
-
-#if defined Q_OS_WIN || defined Q_OS_MACOS
-
-    // Under Windows and MacOS, always turn on all debug traces.
-
-    QLoggingCategory::setFilterRules(QLatin1String("digikam.*=true"));
-
-#endif
-
+    if (on)
+    {
+        QLoggingCategory::setFilterRules(QLatin1String("digikam.*=true"));
+    }
 }

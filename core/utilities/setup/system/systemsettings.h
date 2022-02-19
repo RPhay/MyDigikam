@@ -54,6 +54,8 @@ public:
 
     bool useHighDpiPixmaps;
 
+    bool enableLogging;
+
     bool disableOpenCL;
 
 private:

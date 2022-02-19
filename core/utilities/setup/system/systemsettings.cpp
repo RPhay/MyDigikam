@@ -38,6 +38,7 @@ namespace Digikam
 SystemSettings::SystemSettings(const QString& name)
     : useHighDpiScaling(false),
       useHighDpiPixmaps(false),
+      enableLogging    (false),
       disableOpenCL    (true),
       m_appName        (name)
 {
@@ -57,6 +58,7 @@ void SystemSettings::readSettings()
     settings.beginGroup(QLatin1String("System"));
     useHighDpiScaling = settings.value(QLatin1String("useHighDpiScaling"), false).toBool();
     useHighDpiPixmaps = settings.value(QLatin1String("useHighDpiPixmaps"), false).toBool();
+    enableLogging     = settings.value(QLatin1String("enableLogging"),     false).toBool();
     disableOpenCL     = settings.value(QLatin1String("disableOpenCL"),     true).toBool();
     settings.endGroup();
 }
@@ -71,6 +73,7 @@ void SystemSettings::saveSettings()
     settings.beginGroup(QLatin1String("System"));
     settings.setValue(QLatin1String("useHighDpiScaling"), useHighDpiScaling);
     settings.setValue(QLatin1String("useHighDpiPixmaps"), useHighDpiPixmaps);
+    settings.setValue(QLatin1String("enableLogging"),     enableLogging);
     settings.setValue(QLatin1String("disableOpenCL"),     disableOpenCL);
     settings.endGroup();
 }
