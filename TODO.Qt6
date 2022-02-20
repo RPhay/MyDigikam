@@ -12,10 +12,11 @@
       https://api.kde.org/frameworks-api/frameworks-apidocs/frameworks/kcodecs/html/classKCodecs_1_1Codec.html
       ==> KF5::KCodecs is not a replacement for QTextCodec, rather it builds on it to provide extra stuff.
           KDE is also affected by the removal https://phabricator.kde.org/T14154
-    Iconv and native Windows conversion as with Exiv2.
+    Iconv and native Windows conversion from Exiv2.
       https://github.com/Exiv2/exiv2/blob/main/src/convert.cpp#L1528
       https://github.com/Exiv2/exiv2/blob/main/src/convert.cpp#L1511
-    Can be tested with Qt5 API.
+      Public API: bool Exiv2::convertStringCharset(std::string& str, const char* from, const char* to);
+      Can be tested with Qt5 API.
 + geolocation/trackreader:
     Use deprecated classes.
     Port to new API: https://doc.qt.io/qt-6/xml-changes-qt6.html.
