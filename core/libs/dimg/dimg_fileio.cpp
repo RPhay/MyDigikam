@@ -267,6 +267,7 @@ bool DImg::save(const QString& filePath, const QString& format, DImgLoaderObserv
 
     QString frm = format.toUpper();
     setAttribute(QLatin1String("savedFilePath"), filePath);
+    setAttribute(QLatin1String("savedFormat"),   frm);
 
     FileWriteLocker lock(filePath);
 
