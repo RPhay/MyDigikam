@@ -1,3 +1,22 @@
-+ metaengine              : use of QTextCodec for string conversion. Use KCodec (prefered) instead or libicu. Can be tested with Qt5 API.
-+ geolocation/trackreader : use deprecated classes. Port to new API (https://doc.qt.io/qt-6/xml-changes-qt6.html). Can be tested with Qt5 API.
-+ remove Qt6::Core5Compat dependency.
++ metaengine_p.cpp::convertCommentValue() : use of QTextCodec for JIS7 (ISO-2022-JP) string conversion to UTF8.
+  References:
+    https://www.sljfaq.org/afaq/encodings.html#encodings-ISO-2022-JP
+    https://staff.washington.edu/annie/japanese.character.encoding.html
+  Possible fix:
+    Use QstringConversion class when JIS7 encoding will be supported.
+      https://doc.qt.io/qt-6/qstringencoder.html
+      See use in metaengine_exif::setExifComment()
+    Use KCodec:
+      https://invent.kde.org/frameworks/kcodecs
+      https://api.kde.org/frameworks-api/frameworks-apidocs/frameworks/kcodecs/html/classKCodecs_1_1Codec.html
+    Iconv and native Windows conversion as with Exiv2.
+      https://github.com/Exiv2/exiv2/blob/main/src/convert.cpp#L1528
+      https://github.com/Exiv2/exiv2/blob/main/src/convert.cpp#L1511
+    Can be tested with Qt5 API.
++ geolocation/trackreader:
+    Use deprecated classes.
+    Port to new API: https://doc.qt.io/qt-6/xml-changes-qt6.html.
+    Can be tested with Qt5 API.
++ Remove Qt6::Core5Compat dependency.
+    lidigikamcore.
+    libdigikamgui.
