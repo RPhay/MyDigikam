@@ -40,7 +40,10 @@ extern "C"
 
 // Qt includes
 
-#include <QTextCodec>
+#if (QT_VERSION < QT_VERSION_CHECK(6, 0, 0))
+#   include <QTextCodec>
+#endif
+
 #include <qplatformdefs.h>
 
 // Local includes
@@ -588,7 +591,20 @@ QString MetaEngine::Private::convertCommentValue(const Exiv2::Exifdatum& exifDat
         }
         else if (charset == "\"Jis\"")
         {
-            // TODO: Depends on Qt Core5Compat module. Port to Qt6 Core when QStringConverter supports this codec.
+
+#if (QT_VERSION > QT_VERSION_CHECK(5, 99, 0))
+
+            if (Exiv2::convertStringCharset(comment, charset.c_str(), "UTF-8"))
+            {
+                return QString::fromUtf8(comment);
+            }
+            else
+            {
+                return QLatin1String("");
+            }
+
+#else
+
             QTextCodec* const codec = QTextCodec::codecForName("JIS7");
 
             if (codec)
@@ -602,6 +618,9 @@ QString MetaEngine::Private::convertCommentValue(const Exiv2::Exifdatum& exifDat
             }
 
             return QLatin1String("");
+
+#endif
+
         }
         else if (charset == "\"Ascii\"")
         {
