@@ -324,5 +324,16 @@
                 }
             ]
         }
+        {
+            "name": "flowview",
+            "buildsystem": "cmake-ninja",
+            "builddir": true,
+            "sources": [
+                {
+                    "type": "git",
+                    "url": "https://github.com/cathaysia/digikamflowplugin.git"
+                }
+            ]
+        }
     ]
 }

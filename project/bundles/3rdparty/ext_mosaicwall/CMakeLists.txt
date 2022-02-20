@@ -1,4 +1,4 @@
-# Script to build MosaicWall for digiKam bundle.
+# Script to build MosaicWall plugin for digiKam bundle.
 #
 # Copyright (c) 2015-2022 by Gilles Caulier  <caulier dot gilles at gmail dot com>
 #

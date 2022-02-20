@@ -198,6 +198,7 @@ cd $BUILDING_DIR
 
 /opt/cmake/bin/cmake --build . --config RelWithDebInfo --target ext_gmic_qt    -- -j$CPU_CORES
 /opt/cmake/bin/cmake --build . --config RelWithDebInfo --target ext_mosaicwall -- -j$CPU_CORES
+/opt/cmake/bin/cmake --build . --config RelWithDebInfo --target ext_flowview   -- -j$CPU_CORES
 
 #################################################################################################
 fi

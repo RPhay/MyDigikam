@@ -143,14 +143,19 @@ add_subdirectory(ext_fcitx-qt)
 add_subdirectory(ext_ffmpeg)
 add_subdirectory(ext_drmingw)
 add_subdirectory(ext_imagemagick)
-add_subdirectory(ext_gmicqt)
-add_subdirectory(ext_mosaicwall)
 
 if (${ENABLE_QTVERSION} MATCHES "5.*")
 
     add_subdirectory(ext_kf5_frameworks)
+
+    # Not yet ported to Qt6.
     add_subdirectory(ext_marble)
     add_subdirectory(ext_libksane)
+
+    # Not yet ported to Qt6.
+    add_subdirectory(ext_gmicqt)
+    add_subdirectory(ext_mosaicwall)
+    add_subdirectory(ext_flowview)
 
 else()
 
