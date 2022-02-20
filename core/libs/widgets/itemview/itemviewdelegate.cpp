@@ -297,7 +297,8 @@ QRect ItemViewDelegate::drawThumbnail(QPainter* p, const QRect& thumbRect, const
         p->drawPixmap(actualPixmapRect.x() - xPadding,
                       actualPixmapRect.y() - yPadding, borderPix);
 
-        QPixmap groupThumbnail = thumbnail.scaled(thumbW - 10, thumbH - 10,
+        QPixmap groupThumbnail = thumbnail.scaled(thumbnail.width()  - 10,
+                                                  thumbnail.height() - 10,
                                                   Qt::KeepAspectRatio,
                                                   Qt::SmoothTransformation);
 
