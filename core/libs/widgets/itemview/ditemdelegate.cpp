@@ -118,6 +118,8 @@ QPixmap DItemDelegate::makeDragPixmap(const QStyleOptionViewItem& option,
                                       const QList<QModelIndex>& indexes,
                                       const QPixmap& suggestedPixmap)
 {
+    double ratio = qApp->devicePixelRatio();
+    int iconSize = qRound(64.0 * ratio);
     QPixmap icon = suggestedPixmap;
 
     if (icon.isNull())
@@ -125,20 +127,23 @@ QPixmap DItemDelegate::makeDragPixmap(const QStyleOptionViewItem& option,
         icon = QPixmap(QIcon::fromTheme(QLatin1String("image-jpeg")).pixmap(32));
     }
 
-    if (qMax(icon.width(), icon.height()) > 64)
+    if (qMax(icon.width(), icon.height()) > iconSize)
     {
-        icon = icon.scaled(64, 64, Qt::KeepAspectRatio,
-                                   Qt::SmoothTransformation);
+        icon = icon.scaled(iconSize, iconSize, Qt::KeepAspectRatio,
+                                               Qt::SmoothTransformation);
     }
 
     int w                 = icon.width();
     int h                 = icon.height();
     const int borderWidth = 6;
 
-    QRect   rect(0, 0, w + borderWidth*2, h + borderWidth*2);
-    QRect   pixmapRect(borderWidth, borderWidth, w, h);
+    QSizeF drawSize       = QSizeF(w, h) / ratio;
+    QRect  rect(0, 0, w + qRound((double)borderWidth * 2.0 * ratio),
+                      h + qRound((double)borderWidth * 2.0 * ratio));
+    QRect  pixmapRect(QPoint(borderWidth, borderWidth), drawSize.toSize());
 
     QPixmap pix(rect.size());
+    pix.setDevicePixelRatio(ratio);
     QPainter p(&pix);
 
 /*
@@ -152,7 +157,7 @@ QPixmap DItemDelegate::makeDragPixmap(const QStyleOptionViewItem& option,
     opt.rect = rect;
     qApp->style()->drawPrimitive(QStyle::PE_PanelTipLabel, &opt, &p);
 
-    p.drawPixmap(pixmapRect.topLeft(), icon);
+    p.drawPixmap(pixmapRect, icon);
 
     QFont f(option.font);
     f.setBold(true);
