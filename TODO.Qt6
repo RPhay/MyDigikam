@@ -3,9 +3,10 @@
     https://www.sljfaq.org/afaq/encodings.html#encodings-ISO-2022-JP
     https://staff.washington.edu/annie/japanese.character.encoding.html
   Possible fix:
-    Use QstringConversion class when JIS7 encoding will be supported.
+    Use QStringConverter class when JIS7 encoding will be supported.
       https://doc.qt.io/qt-6/qstringencoder.html
-      See use in metaengine_exif::setExifComment()
+      See use in metaengine_exif::setExifComment().
+      See Qt plan to extend this class: https://bugreports.qt.io/browse/QTBUG-86437
     Use KCodec:
       https://invent.kde.org/frameworks/kcodecs
       https://api.kde.org/frameworks-api/frameworks-apidocs/frameworks/kcodecs/html/classKCodecs_1_1Codec.html
