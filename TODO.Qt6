@@ -17,10 +17,11 @@
       https://github.com/Exiv2/exiv2/blob/main/src/convert.cpp#L1511
       Public API: bool Exiv2::convertStringCharset(std::string& str, const char* from, const char* to);
       Can be tested with Qt5 API.
-+ geolocation/trackreader:
++ core/utilities/geolocation/geoiface/tracks/trackreader.cpp/.h:
     Use deprecated classes.
     Port to new API: https://doc.qt.io/qt-6/xml-changes-qt6.html.
     Can be tested with Qt5 API.
+    Unit-test: core/tests/geolocation/geoiface/tracks_utest.cpp
 + Remove Qt6::Core5Compat dependency.
     lidigikamcore ==> DONE.
     libdigikamgui.
