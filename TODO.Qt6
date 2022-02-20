@@ -9,6 +9,8 @@
     Use KCodec:
       https://invent.kde.org/frameworks/kcodecs
       https://api.kde.org/frameworks-api/frameworks-apidocs/frameworks/kcodecs/html/classKCodecs_1_1Codec.html
+      ==> KF5::KCodecs is not a replacement for QTextCodec, rather it builds on it to provide extra stuff.
+          KDE is also affected by the removal https://phabricator.kde.org/T14154
     Iconv and native Windows conversion as with Exiv2.
       https://github.com/Exiv2/exiv2/blob/main/src/convert.cpp#L1528
       https://github.com/Exiv2/exiv2/blob/main/src/convert.cpp#L1511
