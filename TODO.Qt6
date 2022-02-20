@@ -18,7 +18,7 @@
       Public API: bool Exiv2::convertStringCharset(std::string& str, const char* from, const char* to);
       Can be tested with Qt5 API.
 + core/utilities/geolocation/geoiface/tracks/trackreader.cpp/.h:
-    Use deprecated classes.
+    Use of deprecated Qt classes (QXmlSimpleReader, QXmlInputSource).
     Port to new API: https://doc.qt.io/qt-6/xml-changes-qt6.html.
     Can be tested with Qt5 API.
     Unit-test: core/tests/geolocation/geoiface/tracks_utest.cpp
