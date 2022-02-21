@@ -42,6 +42,9 @@ set(libalbummodels_SRCS
     ${CMAKE_CURRENT_SOURCE_DIR}/itemalbummodel.cpp
     ${CMAKE_CURRENT_SOURCE_DIR}/itemalbumfiltermodel.cpp
     ${CMAKE_CURRENT_SOURCE_DIR}/abstractalbummodel.cpp
+    ${CMAKE_CURRENT_SOURCE_DIR}/abstractalbummodel_counting.cpp
+    ${CMAKE_CURRENT_SOURCE_DIR}/abstractalbummodel_checkable.cpp
+    ${CMAKE_CURRENT_SOURCE_DIR}/abstractalbummodel_specific.cpp
     ${CMAKE_CURRENT_SOURCE_DIR}/albummodel.cpp
     ${CMAKE_CURRENT_SOURCE_DIR}/albumfiltermodel.cpp
     ${CMAKE_CURRENT_SOURCE_DIR}/albummodeldragdrophandler.cpp
