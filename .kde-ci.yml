@@ -1,0 +1,25 @@
+Dependencies:
+- 'on': ['@all']
+  'require':
+    'frameworks/extra-cmake-modules': '@stable'
+    'frameworks/kxmlgui': '@stable'
+    'frameworks/kcoreaddons': '@stable'
+    'frameworks/kconfig': '@stable'
+    'frameworks/kservice': '@stable'
+    'frameworks/kwindowsystem': '@stable'
+    'frameworks/solid': '@stable'
+    'frameworks/ki18n': '@stable'
+    'frameworks/kio': '@stable'
+    'frameworks/kiconthemes': '@stable'
+    'frameworks/kfilemetadata': '@stable'
+    'frameworks/threadweaver': '@stable'
+    'frameworks/knotifyconfig': '@stable'
+    'frameworks/knotifications': '@stable'
+    'frameworks/kcontacts': '@stable'
+    'frameworks/kcalendarcore': '@stable'
+    'pim/akonadi-contacts': '@stable'
+    'graphics/libksane': '@stable'
+
+Options:
+    run-cppcheck: False
+
