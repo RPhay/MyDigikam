@@ -265,7 +265,7 @@ Q_GLOBAL_STATIC(ThreadManagerCreator, creator)
 
 ThreadManager* ThreadManager::instance()
 {
-    return &creator->object;
+    return (&creator->object);
 }
 
 ThreadManager::ThreadManager()

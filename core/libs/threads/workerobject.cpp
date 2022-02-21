@@ -105,7 +105,9 @@ bool WorkerObject::connectAndSchedule(const QObject* sender,
             this, SLOT(schedule()),
             Qt::DirectConnection);
 
-    return (QObject::connect(sender, signal, method, type));
+    return (QObject::connect(sender, signal,
+                             method,
+                             type));
 }
 
 bool WorkerObject::connectAndSchedule(const QObject* sender,
@@ -118,7 +120,9 @@ bool WorkerObject::connectAndSchedule(const QObject* sender,
             receiver, SLOT(schedule()),
             Qt::DirectConnection);
 
-    return (QObject::connect(sender, signal, receiver, method, type));
+    return (QObject::connect(sender, signal,
+                             receiver, method,
+                             type));
 }
 
 bool WorkerObject::disconnectAndSchedule(const QObject* sender,
@@ -129,12 +133,13 @@ bool WorkerObject::disconnectAndSchedule(const QObject* sender,
     disconnect(sender, signal,
                receiver, SLOT(schedule()));
 
-    return (QObject::disconnect(sender, signal, receiver, method));
+    return (QObject::disconnect(sender, signal,
+                                receiver, method));
 }
 
 WorkerObject::State WorkerObject::state() const
 {
-    return d->state;
+    return (d->state);
 }
 
 void WorkerObject::setPriority(QThread::Priority priority)
@@ -159,7 +164,7 @@ void WorkerObject::setPriority(QThread::Priority priority)
 
 QThread::Priority WorkerObject::priority() const
 {
-    return d->priority;
+    return (d->priority);
 }
 
 bool WorkerObject::event(QEvent* e)
@@ -172,7 +177,7 @@ bool WorkerObject::event(QEvent* e)
         return true;
     }
 
-    return QObject::event(e);
+    return (QObject::event(e));
 }
 
 void WorkerObject::aboutToQuitLoop()

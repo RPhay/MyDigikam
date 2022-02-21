@@ -57,12 +57,9 @@ public:
 
     enum DeactivatingMode
     {
-        /// Already sent signals are cleared
-        FlushSignals,
-        /// The thread is stopped, but already sent signals remain in the queue
-        KeepSignals,
-        /// The thread is stopped when all signals emitted until now have been processed
-        PhaseOut
+        FlushSignals,               ///< Already sent signals are cleared
+        KeepSignals,                ///< The thread is stopped, but already sent signals remain in the queue
+        PhaseOut                    ///< The thread is stopped when all signals emitted until now have been processed
     };
 
 public:

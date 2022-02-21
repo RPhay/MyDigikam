@@ -202,7 +202,7 @@ void DynamicThread::Private::run()
 
     transitionToInactive();
 
-    // as soon as we are inactive, we may get deleted!
+    // As soon as we are inactive, we may get deleted!
 }
 
 // -----------------------------------------------------------------------------------------------
@@ -231,7 +231,7 @@ void DynamicThread::shutDown()
 
 DynamicThread::State DynamicThread::state() const
 {
-    return d->state;
+    return (d->state);
 }
 
 bool DynamicThread::isRunning() const
@@ -241,7 +241,7 @@ bool DynamicThread::isRunning() const
 
 QMutex* DynamicThread::threadMutex() const
 {
-    return &d->mutex;
+    return (&d->mutex);
 }
 
 bool DynamicThread::isFinished() const
@@ -276,7 +276,7 @@ void DynamicThread::setPriority(QThread::Priority priority)
 
 QThread::Priority DynamicThread::priority() const
 {
-    return d->priority;
+    return (d->priority);
 }
 
 void DynamicThread::start()
@@ -313,7 +313,7 @@ void DynamicThread::start(QMutexLocker& locker)
         case Inactive:
         case Deactivating:
         {
-            d->state   = Scheduled;
+            d->state = Scheduled;
             break;
         }
 
@@ -326,7 +326,7 @@ void DynamicThread::start(QMutexLocker& locker)
 
     if (!d->threadRequested)
     {
-        // avoid issuing multiple thread requests after very fast start/stop/start calls
+        // Avoid issuing multiple thread requests after very fast start/stop/start calls
 
         d->threadRequested = true;
 
@@ -376,7 +376,7 @@ void DynamicThread::wait(QMutexLocker& locker)
 
 bool DynamicThread::runningFlag() const volatile
 {
-    return d->running;
+    return (d->running);
 }
 
 } // namespace Digikam

@@ -84,17 +84,25 @@ protected:
 
     // Internal implementation
 
-    /// Replaces slot call distribution of the target QObject
+    /**
+     * Replaces slot call distribution of the target QObject
+     */
     int replacementQtMetacall(QMetaObject::Call _c, int _id, void** _a);
     const QMetaObject* replacementMetaObject()                  const;
 
-    /// Return the target QObject (double inheritance)
+    /**
+     * Return the target QObject (double inheritance)
+     */
     virtual QObject* asQObject()                                                        = 0;
 
-    /// The qt_metacall of WorkerObject, one level above the target QObject
+    /**
+     * The qt_metacall of WorkerObject, one level above the target QObject
+     */
     virtual int WorkerObjectQtMetacall(QMetaObject::Call _c, int _id, void** _a)        = 0;
 
-    /// The moc-generated metaObject of the target object
+    /**
+     * The moc-generated metaObject of the target object
+     */
     virtual const QMetaObject* mocMetaObject()                  const                   = 0;
 
     int replacementStaticQtMetacall(QMetaObject::Call _c, int _id, void** _a);

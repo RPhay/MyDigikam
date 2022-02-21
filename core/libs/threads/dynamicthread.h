@@ -105,7 +105,9 @@ public Q_SLOTS:
 
 Q_SIGNALS:
 
-    /// Emitted if emitSignals is enabled
+    /**
+     * Emitted if emitSignals is enabled
+     */
     void starting();
     void finished();
 

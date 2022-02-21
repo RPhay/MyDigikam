@@ -92,15 +92,15 @@ ActionThreadBase::ActionThreadBase(QObject* const parent)
 
 ActionThreadBase::~ActionThreadBase()
 {
-    // cancel the thread
+    // Cancel the thread
 
     cancel();
 
-    // wait for the thread to finish
+    // Wait for the thread to finish
 
     wait();
 
-    // wait for the jobs to finish
+    // Wait for the jobs to finish
 
     d->pool->waitForDone();
 
@@ -181,12 +181,12 @@ void ActionThreadBase::cancel()
 
 bool ActionThreadBase::isEmpty() const
 {
-    return d->pending.isEmpty();
+    return (d->pending.isEmpty());
 }
 
 int ActionThreadBase::pendingCount() const
 {
-    return d->pending.count();
+    return (d->pending.count());
 }
 
 void ActionThreadBase::appendJobs(const ActionJobCollection& jobs)
