@@ -79,7 +79,7 @@ typedef unsigned long long UINT64;
 #ifdef USE_LCMS
 #include <lcms.h> /* Support color profiles */
 #else
-#if defined (__MINGW32__)  || defined (Q_OS_WIN)  // krazy:exclude=cpp
+#if defined (__MINGW32__)  || defined (_WIN32)
 #  define CMS_IS_WINDOWS_ 1
 #  define CMS_DLL
 #else

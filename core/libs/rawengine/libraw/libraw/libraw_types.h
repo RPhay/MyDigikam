@@ -84,7 +84,7 @@ extern "C"
 #if defined(USE_LCMS)
 #include <lcms.h>
 #elif defined(USE_LCMS2)
-#if defined (__MINGW32__)  || defined (Q_OS_WIN)  // krazy:exclude=cpp
+#if defined (__MINGW32__)  || defined (_WIN32)
 #  define CMS_IS_WINDOWS_ 1
 #  define CMS_DLL
 #else
