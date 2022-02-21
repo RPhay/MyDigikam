@@ -42,6 +42,10 @@ endif()
 
 add_definitions(-DUSE_LCMS2)
 
+if(CMAKE_SYSTEM_NAME STREQUAL FreeBSD)
+    add_definitions (-DCMS_NO_REGISTER_KEYWORD)
+endif()
+
 # Flag to compile with DNG SDK for special DNG files decoding. See README.DNGSDK.txt
 
 add_definitions(-DUSE_DNGSDK)
