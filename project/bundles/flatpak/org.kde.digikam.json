@@ -323,7 +323,7 @@
                     "url": "https://github.com/scheckmedia/ImageMosaicWall.git"
                 }
             ]
-        }
+        },
         {
             "name": "flowview",
             "buildsystem": "cmake-ninja",
