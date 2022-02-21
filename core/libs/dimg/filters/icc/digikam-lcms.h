@@ -33,12 +33,11 @@
 
 #include "digikam_export.h"
 
-#if defined (__MINGW32__)   // krazy:exclude=cpp
+#if defined (__MINGW32__)  || defined (Q_OS_WIN)  // krazy:exclude=cpp
 #  define CMS_IS_WINDOWS_ 1
+#  define CMS_DLL
 #else
-#   ifndef CMS_DLL
-#       define CMS_DLL
-#   endif
+#  undef CMS_DLL
 #endif
 
 // Turn off the specific compiler warnings with LCMS header.
