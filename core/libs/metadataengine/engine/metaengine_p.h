@@ -37,6 +37,7 @@
 #include <iostream>
 #include <iomanip>
 #include <string>
+#include <memory>
 
 // Qt includes
 
