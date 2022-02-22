@@ -28,9 +28,29 @@
 
 #include "dcategorizedview.h"
 
+// C++ includes
+
+#include <cmath>
+
 // Qt includes
 
 #include <QVector>
+#include <QPainter>
+#include <QScrollBar>
+#include <QPaintEvent>
+
+// Local includes
+
+#include "dcategorizedsortfilterproxymodel.h"
+#include "dcategorydrawer.h"
+
+/**
+ * NOTE: By defining DOLPHIN_DRAGANDDROP the custom drag and drop implementation of
+ * DCategorizedView is bypassed to have a consistent drag and drop look for all
+ * views. Hopefully transparent pixmaps for drag objects will be supported in
+ * Qt 4.4, so that this workaround can be skipped.
+ */
+#define DOLPHIN_DRAGANDDROP
 
 class DCategoryDrawer;
 

@@ -80,6 +80,7 @@ set(libmainview_SRCS
 
 set(libitemview_SRCS
     ${CMAKE_CURRENT_SOURCE_DIR}/itemview/dcategorizedview.cpp
+    ${CMAKE_CURRENT_SOURCE_DIR}/itemview/dcategorizedview_p.cpp
     ${CMAKE_CURRENT_SOURCE_DIR}/itemview/dcategorizedsortfilterproxymodel.cpp
     ${CMAKE_CURRENT_SOURCE_DIR}/itemview/ditemdelegate.cpp
     ${CMAKE_CURRENT_SOURCE_DIR}/itemview/ditemtooltip.cpp
