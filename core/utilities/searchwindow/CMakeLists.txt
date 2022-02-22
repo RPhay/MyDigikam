@@ -13,6 +13,21 @@ set(libsearchwindow_SRCS
     ${CMAKE_CURRENT_SOURCE_DIR}/searchgroup.cpp
     ${CMAKE_CURRENT_SOURCE_DIR}/searchfieldgroup.cpp
     ${CMAKE_CURRENT_SOURCE_DIR}/searchfields.cpp
+    ${CMAKE_CURRENT_SOURCE_DIR}/searchfields_album.cpp
+    ${CMAKE_CURRENT_SOURCE_DIR}/searchfields_colordepth.cpp
+    ${CMAKE_CURRENT_SOURCE_DIR}/searchfields_keyword.cpp
+    ${CMAKE_CURRENT_SOURCE_DIR}/searchfields_pageorientation.cpp
+    ${CMAKE_CURRENT_SOURCE_DIR}/searchfields_rangeint.cpp
+    ${CMAKE_CURRENT_SOURCE_DIR}/searchfields_checkbox.cpp
+    ${CMAKE_CURRENT_SOURCE_DIR}/searchfields_combobox.cpp
+    ${CMAKE_CURRENT_SOURCE_DIR}/searchfields_labels.cpp
+    ${CMAKE_CURRENT_SOURCE_DIR}/searchfields_rangedate.cpp
+    ${CMAKE_CURRENT_SOURCE_DIR}/searchfields_rating.cpp
+    ${CMAKE_CURRENT_SOURCE_DIR}/searchfields_choice.cpp
+    ${CMAKE_CURRENT_SOURCE_DIR}/searchfields_createfield.cpp
+    ${CMAKE_CURRENT_SOURCE_DIR}/searchfields_monthday.cpp
+    ${CMAKE_CURRENT_SOURCE_DIR}/searchfields_rangedouble.cpp
+    ${CMAKE_CURRENT_SOURCE_DIR}/searchfields_text.cpp
     ${CMAKE_CURRENT_SOURCE_DIR}/searchutilities.cpp
     ${CMAKE_CURRENT_SOURCE_DIR}/ratingsearchutilities.cpp
     ${CMAKE_CURRENT_SOURCE_DIR}/choicesearchutilities.cpp
