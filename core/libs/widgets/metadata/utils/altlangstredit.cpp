@@ -429,9 +429,7 @@ void AltLangStrEdit::loadLangAltListEntries()
         }
     }
 
-    // Set to first index (x-default)
-
-    d->languageCB->setCurrentIndex(0);
+    d->languageCB->setCurrentIndex(d->languageCB->findText(d->currentLanguage));
 
     d->languageCB->blockSignals(false);
 }
