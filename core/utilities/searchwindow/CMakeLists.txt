@@ -11,6 +11,8 @@ set(libsearchwindow_SRCS
     ${CMAKE_CURRENT_SOURCE_DIR}/searchwindow.cpp
     ${CMAKE_CURRENT_SOURCE_DIR}/searchview.cpp
     ${CMAKE_CURRENT_SOURCE_DIR}/searchgroup.cpp
+    ${CMAKE_CURRENT_SOURCE_DIR}/searchgroup_p.cpp
+    ${CMAKE_CURRENT_SOURCE_DIR}/searchgroup_label.cpp
     ${CMAKE_CURRENT_SOURCE_DIR}/searchfieldgroup.cpp
     ${CMAKE_CURRENT_SOURCE_DIR}/searchfields.cpp
     ${CMAKE_CURRENT_SOURCE_DIR}/searchfields_album.cpp
