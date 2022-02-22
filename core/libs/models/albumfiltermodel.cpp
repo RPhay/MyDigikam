@@ -23,21 +23,7 @@
  *
  * ============================================================ */
 
-#include "albumfiltermodel.h"
-
-// Qt includes
-
-#include <QSortFilterProxyModel>
-#include <QHeaderView>
-
-// Local includes
-
-#include "digikam_debug.h"
-#include "albummanager.h"
-#include "albummodel.h"
-#include "applicationsettings.h"
-#include "itemsortcollator.h"
-#include "facetags.h"
+#include "albumfiltermodel_p.h"
 
 namespace Digikam
 {
@@ -88,14 +74,16 @@ void AlbumFilterModel::setSearchTextSettings(const SearchTextSettings& settings)
         return;
     }
 
-    // don't use isFiltering here because it may be reimplemented
+    // Don't use isFiltering here because it may be reimplemented
 
     bool wasSearching = settingsFilter(m_settings);
     bool willSearch   = settingsFilter(settings);
+
     emit searchTextSettingsAboutToChange(wasSearching, willSearch);
 
     m_settings = settings;
     invalidateFilter();
+
     emit signalFilterChanged();
 
     emit searchTextSettingsChanged(wasSearching, willSearch);
@@ -121,11 +109,13 @@ void AlbumFilterModel::setSearchTextSettings(const SearchTextSettings& settings)
         qCDebug(DIGIKAM_GENERAL_LOG) << "new search text settings:" << settings.text
                                      << ": hasResult =" << hasResult
                                      << ", validRows =" << validRows;
+
         emit hasSearchResult(hasResult);
     }
     else
     {
         QModelIndex head = rootAlbumIndex(); // either root, or invalid, thus toplevel
+
         emit hasSearchResult(rowCount(head));
     }
 }
@@ -521,359 +511,10 @@ void AlbumFilterModel::slotAlbumRenamed(Album* album)
 
 void AlbumFilterModel::slotAlbumsHaveBeenUpdated(int type)
 {
-    if (sourceAlbumModel() && sourceAlbumModel()->albumType() == type)
+    if (sourceAlbumModel() && (sourceAlbumModel()->albumType() == type))
     {
         invalidate();
     }
-}
-
-// -----------------------------------------------------------------------------
-
-CheckableAlbumFilterModel::CheckableAlbumFilterModel(QObject* const parent)
-    : AlbumFilterModel        (parent),
-      m_filterChecked         (false),
-      m_filterPartiallyChecked(false)
-{
-}
-
-void CheckableAlbumFilterModel::setSourceAlbumModel(AbstractCheckableAlbumModel* const source)
-{
-    AlbumFilterModel::setSourceAlbumModel(source);
-}
-
-void CheckableAlbumFilterModel::setSourceFilterModel(CheckableAlbumFilterModel* const source)
-{
-    AlbumFilterModel::setSourceFilterModel(source);
-}
-
-AbstractCheckableAlbumModel* CheckableAlbumFilterModel::sourceAlbumModel() const
-{
-    return static_cast<AbstractCheckableAlbumModel*>(AlbumFilterModel::sourceAlbumModel());
-}
-
-void CheckableAlbumFilterModel::setFilterChecked(bool filter)
-{
-    m_filterChecked = filter;
-    invalidateFilter();
-    emit signalFilterChanged();
-}
-
-void CheckableAlbumFilterModel::setFilterPartiallyChecked(bool filter)
-{
-    m_filterPartiallyChecked = filter;
-    invalidateFilter();
-    emit signalFilterChanged();
-}
-
-bool CheckableAlbumFilterModel::isFiltering() const
-{
-    return (AlbumFilterModel::isFiltering() || m_filterChecked || m_filterPartiallyChecked);
-}
-
-bool CheckableAlbumFilterModel::matches(Album* album) const
-{
-    bool accepted = AlbumFilterModel::matches(album);
-
-    if (!m_filterChecked && !m_filterPartiallyChecked)
-    {
-        return accepted;
-    }
-
-    Qt::CheckState state = sourceAlbumModel()->checkState(album);
-
-    bool stateAccepted = false;
-
-    if (m_filterPartiallyChecked)
-    {
-        stateAccepted |= state == Qt::PartiallyChecked;
-    }
-
-    if (m_filterChecked)
-    {
-        stateAccepted |= state == Qt::Checked;
-    }
-
-    return (accepted && stateAccepted);
-}
-
-// -----------------------------------------------------------------------------
-
-SearchFilterModel::SearchFilterModel(QObject* const parent)
-    : CheckableAlbumFilterModel(parent),
-      m_searchType             (-1),
-      m_listTemporary          (false)
-{
-}
-
-void SearchFilterModel::setSourceSearchModel(SearchModel* const source)
-{
-    setSourceAlbumModel(source);
-}
-
-SearchModel* SearchFilterModel::sourceSearchModel() const
-{
-    return (dynamic_cast<SearchModel*> (sourceModel()));
-}
-
-void SearchFilterModel::setFilterSearchType(DatabaseSearch::Type type)
-{
-    setTypeFilter(type);
-}
-
-void SearchFilterModel::listNormalSearches()
-{
-    setTypeFilter(-1);
-}
-
-void SearchFilterModel::listAllSearches()
-{
-    setTypeFilter(-2);
-}
-
-void SearchFilterModel::listTimelineSearches()
-{
-    setTypeFilter(DatabaseSearch::TimeLineSearch);
-}
-
-void SearchFilterModel::listHaarSearches()
-{
-    setTypeFilter(DatabaseSearch::HaarSearch);
-}
-
-void SearchFilterModel::listMapSearches()
-{
-    setTypeFilter(DatabaseSearch::MapSearch);
-}
-
-void SearchFilterModel::listDuplicatesSearches()
-{
-    setTypeFilter(DatabaseSearch::DuplicatesSearch);
-}
-
-void SearchFilterModel::setTypeFilter(int type)
-{
-    m_searchType = type;
-    invalidateFilter();
-    emit signalFilterChanged();
-}
-
-void SearchFilterModel::setListTemporarySearches(bool list)
-{
-    m_listTemporary = list;
-    invalidateFilter();
-    emit signalFilterChanged();
-}
-
-bool SearchFilterModel::isFiltering() const
-{
-    return ((m_searchType != -2) || !m_listTemporary);
-}
-
-bool SearchFilterModel::matches(Album* album) const
-{
-    if (!CheckableAlbumFilterModel::matches(album))
-    {
-        return false;
-    }
-
-    SAlbum* const salbum = static_cast<SAlbum*>(album);
-
-    if      (m_searchType == -1)
-    {
-        if (!salbum->isNormalSearch())
-        {
-            return false;
-        }
-    }
-    else if (m_searchType == -2)
-    {
-    }
-    else
-    {
-        if (salbum->searchType() != (DatabaseSearch::Type)m_searchType)
-        {
-            return false;
-        }
-    }
-
-    if (!m_listTemporary && salbum->isTemporarySearch())
-    {
-        return false;
-    }
-
-    return true;
-}
-
-void SearchFilterModel::setSourceAlbumModel(AbstractAlbumModel* const source)
-{
-    AlbumFilterModel::setSourceAlbumModel(source);
-}
-
-// -----------------------------------------------------------------------------
-
-TagPropertiesFilterModel::TagPropertiesFilterModel(QObject* const parent)
-    : CheckableAlbumFilterModel(parent)
-{
-    connect(AlbumManager::instance(), SIGNAL(signalTagPropertiesChanged(TAlbum*)),
-            this, SLOT(tagPropertiesChanged(TAlbum*)));
-}
-
-void TagPropertiesFilterModel::setSourceAlbumModel(TagModel* const source)
-{
-    CheckableAlbumFilterModel::setSourceAlbumModel(source);
-}
-
-TagModel* TagPropertiesFilterModel::sourceTagModel() const
-{
-    return dynamic_cast<TagModel*>(sourceModel());
-}
-
-void TagPropertiesFilterModel::listOnlyTagsWithProperty(const QString& property)
-{
-    if (m_propertiesWhiteList.contains(property))
-    {
-        return;
-    }
-
-    m_propertiesWhiteList << property;
-    invalidateFilter();
-    emit signalFilterChanged();
-}
-
-void TagPropertiesFilterModel::removeListOnlyProperty(const QString& property)
-{
-    if (!m_propertiesWhiteList.contains(property))
-    {
-        return;
-    }
-
-    m_propertiesWhiteList.remove(property);
-    invalidateFilter();
-    emit signalFilterChanged();
-}
-
-void TagPropertiesFilterModel::doNotListTagsWithProperty(const QString& property)
-{
-    if (m_propertiesBlackList.contains(property))
-    {
-        return;
-    }
-
-    m_propertiesBlackList << property;
-    invalidateFilter();
-    emit signalFilterChanged();
-}
-
-void TagPropertiesFilterModel::removeDoNotListProperty(const QString& property)
-{
-    if (!m_propertiesBlackList.contains(property))
-    {
-        return;
-    }
-
-    m_propertiesBlackList.remove(property);
-    invalidateFilter();
-    emit signalFilterChanged();
-}
-
-bool TagPropertiesFilterModel::isFiltering() const
-{
-    return (!m_propertiesWhiteList.isEmpty() || !m_propertiesBlackList.isEmpty());
-}
-
-void TagPropertiesFilterModel::tagPropertiesChanged(TAlbum*)
-{
-    // I do not expect batch changes. Otherwise we'll need a timer.
-
-    if (isFiltering())
-    {
-        invalidateFilter();
-
-        // Sort new when tag properties change.
-
-        invalidate();
-    }
-}
-
-bool TagPropertiesFilterModel::matches(Album* album) const
-{
-    if (!CheckableAlbumFilterModel::matches(album))
-    {
-        return false;
-    }
-
-    TAlbum* const talbum = static_cast<TAlbum*>(album);
-
-    foreach (const QString& prop, m_propertiesBlackList)
-    {
-        if (talbum->hasProperty(prop))
-        {   // cppcheck-suppress useStlAlgorithm
-            return false;
-        }
-    }
-
-    foreach (const QString& prop, m_propertiesWhiteList)
-    {
-        if (!talbum->hasProperty(prop))
-        {   // cppcheck-suppress useStlAlgorithm
-            return false;
-        }
-    }
-
-    return true;
-}
-
-// -----------------------------------------------------------------------
-
-TagsManagerFilterModel::TagsManagerFilterModel(QObject* const parent)
-    : TagPropertiesFilterModel(parent)
-{
-}
-
-void TagsManagerFilterModel::setQuickListTags(const QList<int>& tags)
-{
-    m_keywords.clear();
-
-    foreach (int tag, tags)
-    {
-        m_keywords << tag;
-    }
-
-    invalidateFilter();
-    emit signalFilterChanged();
-}
-
-bool TagsManagerFilterModel::matches(Album* album) const
-{
-    if (!TagPropertiesFilterModel::matches(album))
-    {
-        return false;
-    }
-
-    if (m_keywords.isEmpty())
-    {
-        return true;
-    }
-
-    bool dirty = false;
-
-    for (QSet<int>::const_iterator it = m_keywords.begin() ;
-         it != m_keywords.end() ; ++it)
-    {
-        TAlbum* const talbum = AlbumManager::instance()->findTAlbum(*it);
-
-        if (!talbum)
-        {
-            continue;
-        }
-
-        if (talbum->title().compare(album->title()) == 0)
-        {
-            dirty = true;
-        }
-    }
-
-    return dirty;
 }
 
 } // namespace Digikam

@@ -47,6 +47,10 @@ set(libalbummodels_SRCS
     ${CMAKE_CURRENT_SOURCE_DIR}/abstractalbummodel_specific.cpp
     ${CMAKE_CURRENT_SOURCE_DIR}/albummodel.cpp
     ${CMAKE_CURRENT_SOURCE_DIR}/albumfiltermodel.cpp
+    ${CMAKE_CURRENT_SOURCE_DIR}/albumfiltermodel_search.cpp
+    ${CMAKE_CURRENT_SOURCE_DIR}/albumfiltermodel_tagproperties.cpp
+    ${CMAKE_CURRENT_SOURCE_DIR}/albumfiltermodel_checkable.cpp
+    ${CMAKE_CURRENT_SOURCE_DIR}/albumfiltermodel_tagsmanager.cpp
     ${CMAKE_CURRENT_SOURCE_DIR}/albummodeldragdrophandler.cpp
 )
 
