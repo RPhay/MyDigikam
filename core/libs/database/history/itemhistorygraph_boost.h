@@ -119,11 +119,8 @@ public:
  */
 enum MeaningOfDirection
 {
-    /// Edges are directed from a parent to its child
-    ParentToChild,
-
-    /// Edges are direct from a child to its parent
-    ChildToParent
+    ParentToChild,          ///< Edges are directed from a parent to its child
+    ChildToParent           ///< Edges are direct from a child to its parent
 };
 
 /**
@@ -190,7 +187,7 @@ public:
 
         // cppcheck-suppress noExplicitConstructor
         Vertex(const vertex_t& v)    // krazy:exclude=explicit
-          : v(v)
+            : v(v)
         {
         }
 
@@ -231,14 +228,14 @@ public:
     public:
 
         Edge()
-          : null(true)
+            : null(true)
         {
         }
 
         // cppcheck-suppress noExplicitConstructor
         Edge(const edge_t& e)    // krazy:exclude=explicit
-          : e(e),
-            null(false)
+            : e   (e),
+              null(false)
         {
         }
 
@@ -264,6 +261,7 @@ public:
         {
             return e;
         }
+
         edge_t& toEdge()
         {
             return e;
@@ -306,7 +304,7 @@ public:
     }
 
     Graph(const Graph& g)
-        : graph(g.graph),
+        : graph    (g.graph),
           direction(g.direction)
     {
     }
@@ -725,6 +723,7 @@ public:
         Graph reduction;
 
         // NOTE: named parameters is not implemented
+
         try
         {
             boost::transitive_reduction(graph, reduction.graph,
@@ -897,7 +896,7 @@ public:
             path.shortestPath(boost::make_reverse_graph(graph), v);
         }
 
-        // change 2147483647 to -1
+        // Change 2147483647 to -1
 
         typename QMap<Vertex, int>::iterator it;
 
@@ -1038,7 +1037,8 @@ public:
             return verticesLst;
         }
 
-        /// sort in any so far unreachable nodes
+        // Sort in any so far unreachable nodes
+
         vertex_range_t range = boost::vertices(graph);
 
         for (vertex_iter it = range.first ; it != range.second ; ++it)
@@ -1050,7 +1050,7 @@ public:
                 QList<Vertex> childBfs = childSearch.vertices;
                 QList<Vertex> toInsert;
 
-                // any item reachable from *it should come after it
+                // Any item reachable from *it should come after it
 
                 int minIndex = verticesLst.size();
 
@@ -1175,7 +1175,7 @@ protected:
     template <typename range_t>
     static bool isEmptyRange(const range_t& range)
     {
-        return range.first == range.second;
+        return (range.first == range.second);
     }
 
     /**
@@ -1391,8 +1391,10 @@ protected:
                     boost::lengauer_tarjan_dominator_tree(graph, v, VertexVertexMapAdaptor(predecessors));
                 }
                 else
+                {
                     boost::lengauer_tarjan_dominator_tree(boost::make_reverse_graph(graph), v,
                                                           VertexVertexMapAdaptor(predecessors));
+                }
             }
             catch (boost::bad_graph& e)
             {
@@ -1434,7 +1436,7 @@ protected:
         template <class GraphType, typename LessThan>
         void depthFirstSearchSorted(const GraphType& graph, const Vertex& v, bool invertGraph, LessThan lessThan)
         {
-            // remember that the visitor is passed by value
+            // Remember that the visitor is passed by value
 
             DepthFirstSearchVisitor vis(this);
             std::vector<boost::default_color_type> color_vec(boost::num_vertices(graph), boost::white_color);
@@ -1543,7 +1545,7 @@ protected:
         public:
 
             lessThanMapEdgeToTarget(const GraphType& g, VertexLessThan vertexLessThan)
-              : g(g),
+              : g             (g),
                 vertexLessThan(vertexLessThan)
             {
             }
