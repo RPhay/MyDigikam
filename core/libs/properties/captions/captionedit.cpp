@@ -114,14 +114,7 @@ QString CaptionEdit::currentLanguageCode() const
 
 void CaptionEdit::setCurrentLanguageCode(const QString& lang)
 {
-    if (d->altLangStrEdit->currentLanguageCode().isEmpty())
-    {
-        d->altLangStrEdit->setCurrentLanguageCode(QLatin1String("x-default"));
-    }
-    else
-    {
-        d->altLangStrEdit->setCurrentLanguageCode(lang);
-    }
+    d->altLangStrEdit->setCurrentLanguageCode(lang);
 }
 
 void CaptionEdit::slotAddValue(const QString& lang, const QString& text)

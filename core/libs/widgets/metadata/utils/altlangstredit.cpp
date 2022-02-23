@@ -321,11 +321,11 @@ QString AltLangStrEdit::currentLanguageCode() const
 
 void AltLangStrEdit::setCurrentLanguageCode(const QString& lang)
 {
-    if (d->currentLanguage.isEmpty())
+    if      (d->currentLanguage.isEmpty())
     {
         d->currentLanguage = QLatin1String("x-default");
     }
-    else
+    else if (!lang.isEmpty())
     {
         d->currentLanguage = lang;
     }
