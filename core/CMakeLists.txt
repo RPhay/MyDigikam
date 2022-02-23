@@ -217,7 +217,7 @@ if(NOT X265_FOUND)
     set(X265_LIBRARIES "")
 endif()
 
-find_package(exiv2 ${EXIV2_MIN_VERSION} REQUIRED)
+find_package(exiv2 REQUIRED)
 
 set_package_properties("exiv2"     PROPERTIES
                        DESCRIPTION "Required to build digiKam"
@@ -226,6 +226,9 @@ set_package_properties("exiv2"     PROPERTIES
                        PURPOSE     "Library to manage image metadata"
 )
 
+if("${exiv2_VERSION}" VERSION_LESS ${EXIV2_MIN_VERSION})
+    message(FATAL_ERROR "Exiv2 version is too old (${exiv2_VERSION})! Minimal version required:${EXIV2_MIN_VERSION}.")
+endif()
 
 # -- check Media player --------------------------------------------------------
 
