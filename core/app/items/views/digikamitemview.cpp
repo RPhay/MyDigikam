@@ -585,6 +585,10 @@ void DigikamItemView::activated(const ItemInfo& info, Qt::KeyboardModifiers modi
         {
             openFile(info);
         }
+        else if (leftClickAction == ApplicationSettings::ShowOnTable)
+        {
+            d->utilities->insertToLightTable(allItemInfos(), info, false);
+        }
         else
         {
             d->utilities->openInfosWithDefaultApplication(QList<ItemInfo>() << info);

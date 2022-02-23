@@ -210,9 +210,10 @@ SetupAlbumView::SetupAlbumView(QWidget* const parent)
 
     QLabel* leftClickLabel     = new QLabel(i18n("Thumbnail click action:"), iwpanel);
     d->leftClickActionComboBox = new QComboBox(iwpanel);
-    d->leftClickActionComboBox->addItem(i18n("Show preview"),                  ApplicationSettings::ShowPreview);
-    d->leftClickActionComboBox->addItem(i18n("Start image editor"),            ApplicationSettings::StartEditor);
-    d->leftClickActionComboBox->addItem(i18n("Open With Default Application"), ApplicationSettings::OpenDefault);
+    d->leftClickActionComboBox->addItem(i18n("Show Preview"),                  ApplicationSettings::ShowPreview);
+    d->leftClickActionComboBox->addItem(i18n("Start Image Editor"),            ApplicationSettings::StartEditor);
+    d->leftClickActionComboBox->addItem(i18n("Show on Light Table"),           ApplicationSettings::ShowOnTable);
+    d->leftClickActionComboBox->addItem(i18n("Open with Default Application"), ApplicationSettings::OpenDefault);
     d->leftClickActionComboBox->setToolTip(i18n("Choose what should happen when you click on a thumbnail."));
 
     d->iconViewFontSelect      = new DFontSelect(i18n("Icon View font:"), iwpanel);

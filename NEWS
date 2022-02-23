@@ -12,4 +12,9 @@ BUGFIXES:
 002 ==> 450153 - All groups deleted by "Extended clean up and shrink all databases".
 003 ==> 450518 - Crash when opening Advanced Search.
 004 ==> 450467 - digiKam git source build fails.
-005 ==> 
+005 ==> 450642 - Provide an option to open the light table after click on thumbnail.
+006 ==> 
+007 ==> 
+008 ==> 
+009 ==> 
+010 ==> 

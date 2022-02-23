@@ -70,7 +70,8 @@ public:
     {
         ShowPreview = 0,
         StartEditor,
-        OpenDefault
+        ShowOnTable,
+        OpenDefault,
     };
 
     /**

@@ -195,6 +195,10 @@ void TableView::slotItemActivated(const QModelIndex& tableViewIndex)
         {
             d->imageViewUtilities->openInfos(info, allItemInfos(), currentAlbum());
         }
+        else if (leftClickAction == ApplicationSettings::ShowOnTable)
+        {
+            d->imageViewUtilities->insertToLightTable(allItemInfos(), info, false);
+        }
         else
         {
             d->imageViewUtilities->openInfosWithDefaultApplication(QList<ItemInfo>() << info);
