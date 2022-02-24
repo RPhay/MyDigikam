@@ -111,6 +111,14 @@ set(CMAKE_AUTOMOC ON)
 
 if(MSVC)
     set(CMAKE_WINDOWS_EXPORT_ALL_SYMBOLS ON)
+
+    # These settings comes with ecm 5.88 , so when we bump KF/ecm to 5.88+ we can remove these
+    add_compile_options(/utf-8)
+    if (CMAKE_CXX_STANDARD GREATER_EQUAL 11)
+        # Ensure __cplusplus is correct, otherwise it defaults to 199711L which isn't true
+        # https://docs.microsoft.com/en-us/cpp/build/reference/zc-cplusplus?view=msvc-160
+        set(CMAKE_CXX_FLAGS "${CMAKE_CXX_FLAGS} /Zc:__cplusplus")
+    endif()
 endif()
 
 set_property(GLOBAL PROPERTY USE_FOLDERS ON)
