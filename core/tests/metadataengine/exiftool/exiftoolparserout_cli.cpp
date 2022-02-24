@@ -56,12 +56,12 @@ int main(int argc, char** argv)
         return false;
     }
 
-    QByteArray stdout = input.readAll();
+    QByteArray stdOut            = input.readAll();
 
     ExifToolParser* const parser = new ExifToolParser(qApp);
 
     parser->setOutputStream(ExifToolProcess::LOAD_METADATA,     // Command action ID
-                            stdout,                             // Output channel
+                            stdOut,                             // Output channel
                             QByteArray());                      // Error channel
 
     return 0;
