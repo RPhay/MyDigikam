@@ -32,6 +32,7 @@
 // Local includes
 
 #include "digikam_export.h"
+#include "digikam_config.h"
 
 #if defined (__MINGW32__)  || defined (Q_OS_WIN)  // krazy:exclude=cpp
 #  define CMS_IS_WINDOWS_ 1

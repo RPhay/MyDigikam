@@ -24,6 +24,8 @@
 #ifndef DIGIKAM_DRAW_DECODER_PRIVATE_H
 #define DIGIKAM_DRAW_DECODER_PRIVATE_H
 
+#include "digikam_config.h"
+
 // Qt includes
 
 #include <QByteArray>
