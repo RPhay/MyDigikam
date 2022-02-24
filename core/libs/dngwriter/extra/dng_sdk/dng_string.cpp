@@ -20,8 +20,11 @@
 #endif
 
 #if qWinOS
-#include <windows.h>
-#include <stringapiset.h>
+#   include <windows.h>
+#   ifndef SORT_DIGITSASNUMBERS
+//  NOTE: SORT_DIGITSASNUMBERS is available since win7
+#       define SORT_DIGITSASNUMBERS 8
+#   endif
 #endif
 
 #if qiPhone || qAndroid
