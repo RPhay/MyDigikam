@@ -3,7 +3,8 @@ digiKam 8.0.0 - Release date: 2022-xx-xx
 *****************************************************************************************************
 NEW FEATURES:
 
-General: Port code to Qt6 and KF6 framework.
+General  : Port code to Qt6 and KF6 framework.
+Usability: Add hamburger menu to tool-bar if main menu is hidden.
 
 *****************************************************************************************************
 BUGFIXES:
@@ -13,7 +14,7 @@ BUGFIXES:
 003 ==> 450518 - Crash when opening Advanced Search.
 004 ==> 450467 - digiKam git source build fails.
 005 ==> 450642 - Provide an option to open the light table after click on thumbnail.
-006 ==> 
+006 ==> 450643 - Expose menus optionally in the toolbar : burger main menu feature.
 007 ==> 
 008 ==> 
 009 ==> 

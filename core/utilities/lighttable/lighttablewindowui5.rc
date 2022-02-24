@@ -1,5 +1,5 @@
 <!DOCTYPE kpartgui SYSTEM "kpartgui.dtd">
-<gui version="702" name="lighttablewindow" translationDomain="digikam" >
+<gui version="800" name="lighttablewindow" translationDomain="digikam" >
 
 <MenuBar>
 
@@ -122,6 +122,7 @@
      <Merge />
      <WeakSeparator/>
      <Action name="logo_action" />
+     <Action name="hamburger_menu"/>
  </ToolBar>
 
 <ActionProperties/>

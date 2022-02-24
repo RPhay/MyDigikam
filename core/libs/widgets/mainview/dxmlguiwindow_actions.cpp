@@ -195,6 +195,25 @@ void DXmlGuiWindow::createSettingsActions()
 
 #endif
 
+#if KCONFIGWIDGETS_VERSION > QT_VERSION_CHECK(5, 80, 0)
+
+    d->hamburgerMenu = KStandardAction::hamburgerMenu(nullptr, nullptr, actionCollection());
+    d->hamburgerMenu->setShowMenuBarAction(d->showMenuBarAction);
+    d->hamburgerMenu->setMenuBar(menuBar());
+
+    connect(d->hamburgerMenu, &KHamburgerMenu::aboutToShowMenu,
+            this, [this]()
+            {
+                // Immediately disconnect. We only need to run this once, but on demand.
+                // NOTE: The nullptr at the end disconnects all connections between
+                // this and d->hamburgerMenu's aboutToShowMenu signal.
+                disconnect(d->hamburgerMenu, &KHamburgerMenu::aboutToShowMenu,
+                           this, nullptr);
+            }
+    );
+
+#endif
+
 }
 
 QAction* DXmlGuiWindow::showMenuBarAction() const

@@ -66,9 +66,14 @@
 #include <kshortcutsdialog.h>
 #include <kedittoolbar.h>
 #include <kxmlguifactory.h>
+#include <kconfigwidgets_version.h>
 
 #ifdef HAVE_KNOTIFYCONFIG
 #   include <knotifyconfigwidget.h>
+#endif
+
+#if KCONFIGWIDGETS_VERSION > QT_VERSION_CHECK(5, 80, 0)
+#   include <khamburgermenu.h>
 #endif
 
 // Local includes
@@ -108,6 +113,10 @@ public:
         showMenuBarAction       (nullptr),
         showStatusBarAction     (nullptr),
         about                   (nullptr),
+
+#if KCONFIGWIDGETS_VERSION > QT_VERSION_CHECK(5, 80, 0)
+        hamburgerMenu           (nullptr),
+#endif
         anim                    (nullptr)
     {
     }
@@ -185,6 +194,11 @@ public:
     QAction*                 showMenuBarAction;
     QAction*                 showStatusBarAction;
     DAboutData*              about;
+
+#if KCONFIGWIDGETS_VERSION > QT_VERSION_CHECK(5, 80, 0)
+    KHamburgerMenu*          hamburgerMenu;
+#endif
+
     DLogoAction*             anim;
 
     QString                  configGroupName;
