@@ -93,25 +93,37 @@ if (Qt6_FOUND)
 
 endif()
 
-if (ENABLE_QWEBENGINE)
+if(ENABLE_QWEBENGINE)
+
     find_package(Qt${QT_VERSION_MAJOR} REQUIRED NO_MODULE COMPONENTS WebEngineWidgets)
+
 else()
+
     find_package(Qt${QT_VERSION_MAJOR} REQUIRED NO_MODULE COMPONENTS WebKitWidgets)
-endif ()
+
+endif()
 
 find_package(Qt${QT_VERSION_MAJOR}
              OPTIONAL_COMPONENTS
              DBus
              OpenGL
-             #XmlPatterns                # For Rajce plugin
 )
 
-if (Qt6_FOUND)
+if(Qt6_FOUND)
+
     find_package(Qt${QT_VERSION_MAJOR}
                  OPTIONAL_COMPONENTS
                  OpenGLWidgets
     )
-endif ()
+
+else()
+
+    find_package(Qt${QT_VERSION_MAJOR}
+                 OPTIONAL_COMPONENTS
+                 XmlPatterns                # For Rajce plugin
+    )
+
+endif()
 
 if(ENABLE_DBUS)
     if(NOT Qt${QT_VERSION_MAJOR}DBus_FOUND)
@@ -674,7 +686,10 @@ PRINT_OPTIONAL_LIBRARY_STATUS("libxml2"           "https://gitlab.gnome.org/GNOM
 PRINT_OPTIONAL_LIBRARY_STATUS("libxslt"           "https://gitlab.gnome.org/GNOME/libxslt"                          "(version >= 1.1.0)"                    "digiKam will be compiled without HTMLGallery support."                       LibXslt_FOUND)
 PRINT_OPTIONAL_LIBRARY_STATUS("libx265"           "https://x265.org"                                                "(version >= 2.2)"                      "digiKam will be compiled without HEIF encoding support."                     X265_FOUND)
 PRINT_OPTIONAL_LIBRARY_STATUS("OpenGL"            "https://www.mesa3d.org"                                          "(version >= 11.0.0)"                   "digiKam will be compiled without OpenGL support."                            HAVE_OPENGL)
-#PRINT_OPTIONAL_LIBRARY_STATUS("libqtxmlpatterns"  "https://www.qt.io"                                               "(version >= ${QT_MIN_VERSION})"        "digiKam will be compiled without Rajce tool support."                        HAVE_QTXMLPATTERNS)
+
+if(NOT Qt6_FOUND)
+    PRINT_OPTIONAL_LIBRARY_STATUS("libqtxmlpatterns"  "https://www.qt.io"                                               "(version >= ${QT_MIN_VERSION})"        "digiKam will be compiled without Rajce tool support."                        HAVE_QTXMLPATTERNS)
+endif()
 
 # ==============================================================================
 
