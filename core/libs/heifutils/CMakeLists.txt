@@ -61,7 +61,11 @@ configure_file("${CMAKE_CURRENT_SOURCE_DIR}/libheif/heif_version.h.in"
                "${CMAKE_CURRENT_BINARY_DIR}/libheif/heif_version.h"
 )
 
-add_definitions(-DLIBHEIF_EXPORTS -DHAVE_VISIBILITY)
+if(MSVC)
+    add_definitions(-DLIBHEIF_STATIC_BUILD)
+else()
+    add_definitions(-DLIBHEIF_EXPORTS -DHAVE_VISIBILITY)
+endif()
 
 set(libheif_SRCS
     ${CMAKE_CURRENT_SOURCE_DIR}/libheif/bitstream.cc
