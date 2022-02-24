@@ -9,8 +9,7 @@ APPLY_COMMON_POLICIES()
 
 kde_enable_exceptions()
 
-# Boost uses operator names (and, not, ...)
-string(REPLACE "-fno-operator-names" "" CMAKE_CXX_FLAGS "${CMAKE_CXX_FLAGS}")
+include_directories(${LCMS2_INCLUDE_DIR})
 
 set(libdimg_SRCS
     ${CMAKE_CURRENT_SOURCE_DIR}/dimg.cpp
