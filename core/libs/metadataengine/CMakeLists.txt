@@ -102,10 +102,6 @@ include_directories(
     $<TARGET_PROPERTY:exiv2lib,INTERFACE_INCLUDE_DIRECTORIES>
 )
 
-if (Qt6_FOUND)
-    include_directories($<TARGET_PROPERTY:Qt${QT_VERSION_MAJOR}::Core5Compat,INTERFACE_INCLUDE_DIRECTORIES>)
-endif ()
-
 # Used by digikamcore
 add_library(core_dmetadata_obj OBJECT ${libdmetadata_SRCS})
 
