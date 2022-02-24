@@ -550,6 +550,8 @@ message(STATUS "Looking for LibJpeg")
 
 if(JPEG_FOUND)
 
+    include_directories(${JPEG_INCLUDE_DIRS})
+
     # JPEG lib version is done on top level through MacroJPEG.cmake
 
     if (${JPEG_LIB_VERSION} LESS 80)
@@ -570,7 +572,6 @@ if(JPEG8_FOUND)
 
     add_definitions(-DUSE_JPEG)
     add_definitions(-DUSE_JPEG8)
-    include_directories(${JPEG_INCLUDE_DIRS})
     message(STATUS "RawEngine will be compiled with DNG lossy codec")
 
 else()
