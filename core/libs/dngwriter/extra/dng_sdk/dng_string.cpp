@@ -21,6 +21,7 @@
 
 #if qWinOS
 #include <windows.h>
+#include <stringapiset.h>
 #endif
 
 #if qiPhone || qAndroid
