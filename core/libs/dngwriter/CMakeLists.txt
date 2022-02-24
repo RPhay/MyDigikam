@@ -186,6 +186,13 @@ target_compile_definitions(core_libdng_obj
                            digikamcore_EXPORTS
 )
 
+set_target_properties(core_libdng_obj
+                      PROPERTIES
+                      CXX_STANDARD 11
+                      CXX_STANDARD_REQUIRED YES
+                      CXX_EXTENSIONS NO
+)
+
 # Disable warnings: we will never touch this code.
 # Adjust flag for static lib and 64 bits computers using -fPIC for GCC compiler (bug: #269903)
 
