@@ -570,7 +570,7 @@ if(JPEG8_FOUND)
 
     add_definitions(-DUSE_JPEG)
     add_definitions(-DUSE_JPEG8)
-    include_directories(${JPEG_INCLUDE_DIR})
+    include_directories(${JPEG_INCLUDE_DIRS})
     message(STATUS "RawEngine will be compiled with DNG lossy codec")
 
 else()
