@@ -111,3 +111,14 @@ target_compile_definitions(core_dmetadata_obj
                            PRIVATE
                            digikamcore_EXPORTS
 )
+
+if(NOT Qt6_FOUND)
+
+    set_target_properties(core_dmetadata_obj
+                          PROPERTIES
+                          CXX_STANDARD 11
+                          CXX_STANDARD_REQUIRED YES
+                          CXX_EXTENSIONS NO
+    )
+
+endif()
