@@ -17,7 +17,7 @@ message(STATUS "")
 set(KF5_MIN_VERSION       "5.55.0")
 set(QT5_MIN_VERSION       "5.14.0")
 set(QT6_MIN_VERSION       "6.2.3")
-set(EXIV2_MIN_VERSION     "0.27.3")
+set(EXIV2_MIN_VERSION     "0.27.1")
 set(OPENCV_MIN_VERSION    "3.3.0")
 set(LENSFUN_MIN_VERSION   "0.2.6.0")      # For Lens auto-correction plugin
 set(QTAV_MIN_VERSION      "1.12.0")       # For video support.
