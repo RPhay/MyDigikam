@@ -24,11 +24,6 @@ DISABLE_CLANG_COMPILER_WARNINGS("4.99.99" "-Wno-extra-semi")
 # It also does not export symbols, so export all by default
 unset(CMAKE_CXX_VISIBILITY_PRESET)
 
-
-if(WIN32)
-    add_definitions(-DO2_DLL_EXPORT)
-endif()
-
 set(libwso2_SRCS
     o2/src/o2.cpp
     o2/src/o2reply.cpp

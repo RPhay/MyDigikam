@@ -1,5 +1,9 @@
 #pragma once
 
+#include "digikam_export.h"
+
+#define O0_EXPORT DIGIKAM_EXPORT
+/*
 #ifndef O0_EXPORT
 // For exporting symbols from Windows' DLLs
 #if defined (_WIN32) && defined(O2_SHARED_LIB)
@@ -15,3 +19,4 @@
 #endif
 
 #endif // O0_EXPORT
+*/
