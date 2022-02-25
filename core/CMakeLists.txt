@@ -357,7 +357,7 @@ endif()
 if(POLICY CMP0072)
     # Prefers Legacy OpenGL by default when available introduced in CMake version 3.11
     # Details: https://cmake.org/cmake/help/git-stage/policy/CMP0072.html
-    cmake_policy(SET CMP0072 OLD)
+    cmake_policy(SET CMP0072 NEW)
 endif()
 
 find_package(OpenGL)                               # For Presentation tool.
