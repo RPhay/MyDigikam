@@ -23,8 +23,8 @@
  *
  * ============================================================ */
 
-#ifndef DIGIKAM_HTML_WIDGET_H
-#define DIGIKAM_HTML_WIDGET_H
+#ifndef DIGIKAM_HTML_WIDGET_QWEBKIT_H
+#define DIGIKAM_HTML_WIDGET_QWEBKIT_H
 
 // Qt includes
 
@@ -87,4 +87,4 @@ private:
 
 } // namespace Digikam
 
-#endif // DIGIKAM_HTML_WIDGET_H
+#endif // DIGIKAM_HTML_WIDGET_QWEBKIT_H

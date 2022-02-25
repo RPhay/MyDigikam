@@ -96,14 +96,14 @@ class Q_DECL_HIDDEN HTMLWidget::Private
 public:
 
     explicit Private()
-      : parent(nullptr),
-        child(nullptr),
-        hpage(nullptr),
-        isReady(false),
-        selectionStatus(false),
-        firstSelectionPoint(),
-        intermediateSelectionPoint(),
-        firstSelectionScreenPoint(),
+      : parent                          (nullptr),
+        child                           (nullptr),
+        hpage                           (nullptr),
+        isReady                         (false),
+        selectionStatus                 (false),
+        firstSelectionPoint             (),
+        intermediateSelectionPoint      (),
+        firstSelectionScreenPoint       (),
         intermediateSelectionScreenPoint()
     {
     }
@@ -124,8 +124,8 @@ public:
 
 HTMLWidget::HTMLWidget(QWidget* const parent)
     : QWebEngineView(parent),
-      d(new Private()),
-      s(nullptr)
+      d             (new Private()),
+      s             (nullptr)
 {
     d->parent = parent;
     setAcceptDrops(false);

@@ -50,7 +50,7 @@ public:
 
 PlaceholderWidget::PlaceholderWidget(QWidget* const parent)
     : QFrame(parent),
-      d(new Private)
+      d     (new Private)
 {
     QVBoxLayout* const vboxlayout = new QVBoxLayout();
     setLayout(vboxlayout);
