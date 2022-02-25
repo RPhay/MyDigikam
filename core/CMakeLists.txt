@@ -355,7 +355,8 @@ endif()
 # -- OpenGL rules -------------------------------------------------------------
 
 if(POLICY CMP0072)
-    # Prefers Legacy OpenGL by default when available introduced in CMake version 3.11
+    # Prefers GLVND (GL Vendor-Neutral Dispatch) instead legacy OpenGL by default when available.
+    # Option was introduced in CMake version 3.11
     # Details: https://cmake.org/cmake/help/git-stage/policy/CMP0072.html
     cmake_policy(SET CMP0072 NEW)
 endif()
