@@ -40,7 +40,7 @@ extern "C" {
 //  1.3          1             1            1             1             1           N/A
 //  1.4          1             1            1             1             1            1
 
-
+/*
 #if defined(_MSC_VER) && !defined(LIBHEIF_STATIC_BUILD)
   #ifdef LIBHEIF_EXPORTS
   #define LIBHEIF_API __declspec(dllexport)
@@ -56,6 +56,11 @@ extern "C" {
 #else
   #define LIBHEIF_API
 #endif
+*/
+
+#include "digikam_export.h"
+
+#define LIBHEIF_API DIGIKAM_EXPORT
 
 #define heif_fourcc(a,b,c,d) ((a<<24) | (b<<16) | (c<<8) | d)
 

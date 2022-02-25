@@ -55,20 +55,20 @@ class Q_DECL_HIDDEN FunnelReal::Private
 public:
 
     explicit Private()
-        : isLoaded(false),
-          numParams(4),          // similarity transforms - x translation, y translation, rotation, uniform scaling
-          windowSize(4),
-          maxProcessAtOnce(600), // set based on memory limitations,
-          outerDimW(150),
-          outerDimH(150),
-          innerDimW(100),
-          innerDimH(100),
-          siftHistDim(4),
-          siftBucketsDim(8),
-          siftDescDim((4*windowSize*windowSize*siftBucketsDim) / (siftHistDim*siftHistDim)),
-          numRandPxls(0),
+        : isLoaded          (false),
+          numParams         (4),          // similarity transforms - x translation, y translation, rotation, uniform scaling
+          windowSize        (4),
+          maxProcessAtOnce  (600),        // set based on memory limitations,
+          outerDimW         (150),
+          outerDimH         (150),
+          innerDimW         (100),
+          innerDimH         (100),
+          siftHistDim       (4),
+          siftBucketsDim    (8),
+          siftDescDim       ((4*windowSize*windowSize*siftBucketsDim) / (siftHistDim*siftHistDim)),
+          numRandPxls       (0),
           numFeatureClusters(0),
-          edgeDescDim(0)
+          edgeDescDim       (0)
     {
 /*
         if (outerDimW - innerDimW < 2*windowSize)

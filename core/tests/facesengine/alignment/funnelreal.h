@@ -32,12 +32,11 @@
 // Local includes
 
 #include "digikam_opencv.h"
-#include "digikam_export.h"
 
 namespace Digikam
 {
 
-class  DIGIKAM_EXPORT FunnelReal
+class FunnelReal
 {
 
 public:
