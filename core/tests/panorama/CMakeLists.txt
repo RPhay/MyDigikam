@@ -7,24 +7,12 @@
 
 APPLY_COMMON_POLICIES()
 
-macro(PANORAMA_BUILD_TEST)
+add_executable(panotestparser_cli ${CMAKE_CURRENT_SOURCE_DIR}/panotestparser_cli.cpp)
 
-    set(_filename ${ARGV0})
-    string(REPLACE "." ";" _temp ${_filename})
-    list(GET _temp 0 _target)
+target_link_libraries(panotestparser_cli
 
-    set(${_target}_SRCS ${CMAKE_CURRENT_SOURCE_DIR}/${_filename})
+                      digikamcore
+                      panoparser
 
-    add_executable(${_target} ${${_target}_SRCS})
-
-    target_link_libraries(${_target}
-
-                          digikamcore
-                          panoparser
-
-                          ${COMMON_TEST_LINK}
-    )
-
-endmacro()
-
-PANORAMA_BUILD_TEST(panotestparser_cli)
+                      ${COMMON_TEST_LINK}
+)
