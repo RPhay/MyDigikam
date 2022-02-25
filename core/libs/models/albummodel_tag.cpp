@@ -31,7 +31,7 @@ TagModel::TagModel(RootAlbumBehavior rootBehavior, QObject* const parent)
                                   AlbumManager::instance()->findTAlbum(0),
                                   rootBehavior, parent)
 {
-    m_columnHeader = i18n("Tags");
+    m_columnHeader = i18nc("@title", "Tags");
     setupThumbnailLoading();
 
     connect(AlbumManager::instance(), SIGNAL(signalTAlbumsDirty(QMap<int,int>)),

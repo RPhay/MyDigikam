@@ -141,7 +141,7 @@ LibsInfoDlg::LibsInfoDlg(QWidget* const parent)
 
     // NOTE: by default set a list of common components information used by Showfoto and digiKam.
 
-    m_features = new QTreeWidgetItem(listView(), QStringList() << i18n("Features"));
+    m_features = new QTreeWidgetItem(listView(), QStringList() << i18nc("@title", "Features"));
     listView()->addTopLevelItem(m_features);
 
     new QTreeWidgetItem(m_features, QStringList() <<
@@ -163,7 +163,7 @@ LibsInfoDlg::LibsInfoDlg(QWidget* const parent)
 
     // ---
 
-    m_libraries = new QTreeWidgetItem(listView(), QStringList() << i18n("Libraries"));
+    m_libraries = new QTreeWidgetItem(listView(), QStringList() << i18nc("@title", "Libraries"));
     listView()->addTopLevelItem(m_libraries);
 
 

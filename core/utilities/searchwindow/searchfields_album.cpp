@@ -47,7 +47,7 @@ void SearchFieldAlbum::setupValueWidgets(QGridLayout* layout, int row, int colum
 
         m_albumComboBox->setSizePolicy(QSizePolicy::Expanding, QSizePolicy::Minimum);
         m_albumComboBox->setDefaultModel();
-        m_albumComboBox->setNoSelectionText(i18n("Any Album"));
+        m_albumComboBox->setNoSelectionText(i18nc("@item", "Any Album"));
         m_albumComboBox->addCheckUncheckContextMenuActions();
 
         m_model = m_albumComboBox->model();
@@ -65,7 +65,7 @@ void SearchFieldAlbum::setupValueWidgets(QGridLayout* layout, int row, int colum
 
         m_tagComboBox->setSizePolicy(QSizePolicy::Expanding, QSizePolicy::Minimum);
         m_tagComboBox->setDefaultModel();
-        m_tagComboBox->setNoSelectionText(i18n("Any Tag"));
+        m_tagComboBox->setNoSelectionText(i18nc("@item", "Any Tag"));
         m_tagComboBox->addCheckUncheckContextMenuActions();
 
         m_model       = m_tagComboBox->model();

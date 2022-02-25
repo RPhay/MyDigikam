@@ -392,7 +392,7 @@ QVariant ItemFilterModel::data(const QModelIndex& index, int role) const
 
                 if (count)
                 {
-                    return i18np("%1 Face", "%1 Faces", count);
+                    return i18ncp("@item: filter model", "%1 Face", "%1 Faces", count);
                 }
 
                 return i18nc("@item: filter model", "No face");

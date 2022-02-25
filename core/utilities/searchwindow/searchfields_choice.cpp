@@ -108,7 +108,8 @@ void SearchFieldChoice::updateComboText()
     }
     else
     {
-        m_comboBox->setLabelText(i18n("Any of: %1", checkedChoices.join(QLatin1String(", "))));
+        m_comboBox->setLabelText(i18nc("@label: search field choice combo-box description",
+                                       "Any of: %1", checkedChoices.join(QLatin1String(", "))));
         setValidValueState(true);
     }
 }
