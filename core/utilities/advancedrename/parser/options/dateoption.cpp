@@ -185,7 +185,7 @@ DateOptionDialog::DateSource DateOptionDialog::dateSource()
     bool ok    = true;
     int choice = v.toInt(&ok);
 
-    return static_cast<DateSource>(choice);
+    return (static_cast<DateSource>(choice));
 }
 
 QString DateOptionDialog::formattedDateTime(const QDateTime& date)
@@ -194,14 +194,12 @@ QString DateOptionDialog::formattedDateTime(const QDateTime& date)
     {
         case DateFormat::Custom:
         {
-            return date.toString(ui->customFormatInput->text());
-            break;
+            return (date.toString(ui->customFormatInput->text()));
         }
 
         case DateFormat::UnixTimeStamp:
         {
-            return QString::fromUtf8("%1").arg(date.toMSecsSinceEpoch());
-            break;
+            return (QString::fromUtf8("%1").arg(date.toMSecsSinceEpoch()));
         }
 
         default:
