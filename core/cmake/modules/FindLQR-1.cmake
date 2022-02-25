@@ -11,55 +11,55 @@
 # For details see the accompanying COPYING-CMAKE-SCRIPTS file.
 #
 
-IF(LQR-1_LIBRARIES AND LQR-1_INCLUDE_DIRS)
+if(LQR-1_LIBRARIES AND LQR-1_INCLUDE_DIRS)
 
     # In cache already
 
-    SET(LQR-1_FOUND TRUE)
+    set(LQR-1_FOUND TRUE)
 
-ELSE()
+else()
 
-    IF(NOT WIN32)
+    if(NOT WIN32)
 
-        INCLUDE(FindPkgConfig)
+        include(FindPkgConfig)
         pkg_check_modules(LQR-1 lqr-1)
 
-    ENDIF()
+    endif()
 
-    IF(LQR-1_LIBRARIES AND LQR-1_INCLUDE_DIRS)
+    if(LQR-1_LIBRARIES AND LQR-1_INCLUDE_DIRS)
 
-        FIND_PACKAGE(GLIB2)
+        find_package(GLIB2)
 
-        IF(GLIB2_FOUND)
+        if(GLIB2_FOUND)
 
-            INCLUDE(CheckCXXSourceCompiles)
-            SET(CMAKE_REQUIRED_INCLUDES "${LQR-1_INCLUDE_DIR}" "${GLIB2_INCLUDE_DIR}")
+            include(CheckCXXSourceCompiles)
+            set(CMAKE_REQUIRED_INCLUDES "${LQR-1_INCLUDE_DIR}" "${GLIB2_INCLUDE_DIR}")
 
             CHECK_CXX_SOURCE_COMPILES("
-    #include <lqr.h>
+#include <lqr.h>
 
-    int main()
-    {
-    LqrImageType t = LQR_RGB_IMAGE;
-    return 0;
-    }
-    " HAVE_LQR_0_4)
+int main()
+{
+LqrImageType t = LQR_RGB_IMAGE;
+return 0;
+}
+" HAVE_LQR_0_4)
 
-            IF(HAVE_LQR_0_4)
+            if(HAVE_LQR_0_4)
 
-                INCLUDE_DIRECTORIES(${GLIB2_INCLUDE_DIR})
-                SET(LQR-1_FOUND TRUE)
+                include_directories(${GLIB2_INCLUDE_DIR})
+                set(LQR-1_FOUND TRUE)
 
-            ENDIF()
+            endif()
 
-        ENDIF()
+        endif()
 
-    ENDIF()
+    endif()
 
     FIND_PACKAGE_HANDLE_STANDARD_ARGS(LQR-1 DEFAULT_MSG LQR-1_INCLUDE_DIRS LQR-1_LIBRARIES)
 
     # Show the LQR-1_INCLUDE_DIRS and LQR-1_LIBRARIES variables only in the advanced view
 
-    MARK_AS_ADVANCED(LQR-1_INCLUDE_DIRS LQR-1_LIBRARIES)
+    mark_as_advanced(LQR-1_INCLUDE_DIRS LQR-1_LIBRARIES)
 
-ENDIF()
+endif()
