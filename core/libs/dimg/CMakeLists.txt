@@ -184,7 +184,7 @@ if(CMAKE_COMPILER_IS_GNUCXX)
 
 endif()
 
-if(Lqr-1_FOUND)
+if(LQR-1_FOUND)
 
     set(libdimgfilters_SRCS
         ${libdimgfilters_SRCS}

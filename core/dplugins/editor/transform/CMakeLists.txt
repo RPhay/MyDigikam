@@ -11,6 +11,6 @@ add_subdirectory(perspective)
 add_subdirectory(ratiocrop)
 add_subdirectory(shear)
 
-if(Lqr-1_FOUND)
+if(LQR-1_FOUND)
     add_subdirectory(contentawareresize)
 endif()
