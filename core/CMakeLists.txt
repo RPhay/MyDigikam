@@ -57,19 +57,19 @@ endif()
 
 find_package(Qt6 ${QT6_MIN_VERSION} QUIET COMPONENTS Core)
 
-if (NOT Qt6_FOUND)
+if(NOT Qt6_FOUND)
 
     find_package(Qt5 ${QT5_MIN_VERSION} REQUIRED COMPONENTS Core)
 
     set(QT_MIN_VERSION   ${QT5_MIN_VERSION})
     set(QT_VERSION_MAJOR 5)
 
-else ()
+else()
 
     set(QT_MIN_VERSION   ${QT6_MIN_VERSION})
     set(QT_VERSION_MAJOR 6)
 
-endif ()
+endif()
 
 message(STATUS "Suitable Qt${QT_VERSION_MAJOR} >= ${QT_MIN_VERSION} detected...")
 
@@ -87,7 +87,7 @@ find_package(Qt${QT_VERSION_MAJOR} REQUIRED
              Network
 )
 
-if (Qt6_FOUND)
+if(Qt6_FOUND)
 
     find_package(Qt${QT_VERSION_MAJOR} REQUIRED NO_MODULE COMPONENTS Core5Compat)
 
@@ -126,14 +126,19 @@ else()
 endif()
 
 if(ENABLE_DBUS)
+
     if(NOT Qt${QT_VERSION_MAJOR}DBus_FOUND)
+
         set(ENABLE_DBUS OFF)
+
     endif()
+
 endif()
 
-# Dependencies For unit tests and CLI test tools
+# Qt Dependencies For unit tests and CLI test tools
 
 if(BUILD_TESTING)
+
     find_package(Qt${QT_VERSION_MAJOR} REQUIRED
                  NO_MODULE COMPONENTS
                  Test
@@ -146,6 +151,8 @@ if(BUILD_TESTING)
     )
 
 endif()
+
+# KF frameworks dependencies
 
 find_package(KF5 ${KF5_MIN_VERSION} REQUIRED
              COMPONENTS
@@ -226,7 +233,9 @@ find_package(Threads)  # For DNGWriter and LibRaw which needs native threads sup
 find_package(X265)     # For HEIF encoding support.
 
 if(NOT X265_FOUND)
+
     set(X265_LIBRARIES "")
+
 endif()
 
 find_package(exiv2 REQUIRED)
@@ -239,7 +248,9 @@ set_package_properties("exiv2"     PROPERTIES
 )
 
 if("${exiv2_VERSION}" VERSION_LESS ${EXIV2_MIN_VERSION})
+
     message(FATAL_ERROR "Exiv2 version is too old (${exiv2_VERSION})! Minimal version required:${EXIV2_MIN_VERSION}.")
+
 endif()
 
 # -- check Media player --------------------------------------------------------
@@ -287,10 +298,14 @@ endif()
 DETECT_OPENCV(${OPENCV_MIN_VERSION} core objdetect imgproc imgcodecs dnn flann)
 
 if(${OpenCV_FOUND})
+
     if(${OpenCV_VERSION} VERSION_LESS ${OPENCV_MIN_VERSION})
+
         message(STATUS "OpenCV < ${OPENCV_MIN_VERSION} have been found. Please use a more recent version.")
         set(OpenCV_FOUND FALSE)
+
     endif()
+
 endif()
 
 configure_file(${CMAKE_CURRENT_SOURCE_DIR}/app/utils/digikam_opencv.h.cmake.in
@@ -304,10 +319,7 @@ find_package(BISON)                                # For Panorama tool.
 find_package(LibXslt)                              # For HTMLGallery tool.
 find_package(LibXml2)                              # For HTMLGallery tool.
 
-# TODO: Remove this condition when Marble supports Qt6 as well
-if(${QT_VERSION_MAJOR} EQUAL 5)
-    find_package(Marble)                           # For geolocation support.
-endif()
+find_package(Marble)                               # For geolocation support.
 
 find_package(PkgConfig)
 find_package(Jasper)                               # For JPEG 2000 support.
@@ -622,7 +634,7 @@ MACRO_BOOL_TO_01(ENABLE_QWEBENGINE            HAVE_QWEBENGINE)
 MACRO_BOOL_TO_01(ENABLE_DRMINGW               HAVE_DRMINGW)
 MACRO_BOOL_TO_01(ImageMagick_Magick++_FOUND   HAVE_IMAGE_MAGICK)
 MACRO_BOOL_TO_01(X265_FOUND                   HAVE_X265)
-#MACRO_BOOL_TO_01(Qt5XmlPatterns_FOUND         HAVE_QTXMLPATTERNS)
+MACRO_BOOL_TO_01(Qt5XmlPatterns_FOUND         HAVE_QTXMLPATTERNS)
 MACRO_BOOL_TO_01(CCACHE_FOUND                 HAVE_CCACHE)
 
 # Set config files accordingly with optional dependencies
