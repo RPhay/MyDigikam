@@ -263,7 +263,7 @@ if(Jasper_FOUND)
 endif()
 
 # LibLqr-1 library rules for content-aware filter
-if(Lqr-1_FOUND)
+if(LQR-1_FOUND)
 
     target_link_libraries(digikamcore
                           PRIVATE
