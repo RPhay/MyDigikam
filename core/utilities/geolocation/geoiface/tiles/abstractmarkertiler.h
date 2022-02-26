@@ -74,7 +74,6 @@ public:
     public:
 
         explicit Tile();
-
         virtual ~Tile();
 
         Tile* getChild(const int linearIndex);
@@ -93,6 +92,11 @@ public:
          */
         int nextNonEmptyIndex(int linearIndex) const;
 
+    private:
+
+        // Disable
+        Tile(const Tile&)            = delete;
+        Tile& operator=(const Tile&) = delete;
 
     private:
 
@@ -103,7 +107,7 @@ public:
     private:
 
         QVector<Tile*> children;
-        QVector<int> nonEmptyIndices;
+        QVector<int>   nonEmptyIndices;
     };
 
 public:
