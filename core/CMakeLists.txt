@@ -772,9 +772,6 @@ if(DIGIKAM_CAN_BE_COMPILED)
     # Remove cast-align GCC flag which generate a lots of compilation warnings
     REMOVE_GCC_COMPILER_WARNINGS("-Wcast-align")
 
-    # Remove zero-as-null-pointer-constant GCC and CLang flag which generate a lots of compilation warnings
-    REMOVE_COMPILER_WARNINGS("-Wzero-as-null-pointer-constant")
-
     # Remove deprecated-copy GCC warnings which generate a lots of compilation warnings
     DISABLE_GCC_COMPILER_WARNINGS("8.99.99" "-Wno-deprecated-copy")
 
