@@ -4,7 +4,7 @@
 # Redistribution and use is allowed according to the terms of the BSD license.
 # For details see the accompanying COPYING-CMAKE-SCRIPTS file.
 
-# NOTE: see the common definitions set on top level by DNGSdkRules.cmake
+# NOTE: see the common definitions set on top level by RulesDNGSdk.cmake
 
 # DNG SDK and XMP SDK use C++ exceptions
 

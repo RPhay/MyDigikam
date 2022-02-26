@@ -67,7 +67,11 @@ message(STATUS "")
 ### ECM setup #########################################################################################################
 
 find_package(ECM ${ECM_MIN_VERSION} CONFIG REQUIRED)
-set(CMAKE_MODULE_PATH ${CMAKE_SOURCE_DIR}/core/cmake/modules ${ECM_MODULE_PATH})
+set(CMAKE_MODULE_PATH ${CMAKE_SOURCE_DIR}/core/cmake/modules
+                      ${CMAKE_SOURCE_DIR}/core/cmake/macros
+                      ${CMAKE_SOURCE_DIR}/core/cmake/rules
+                      ${ECM_MODULE_PATH}
+)
 
 # KF5 Framework macros
 include(KDEInstallDirs)

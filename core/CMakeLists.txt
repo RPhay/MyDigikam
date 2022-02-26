@@ -253,45 +253,9 @@ if("${exiv2_VERSION}" VERSION_LESS ${EXIV2_MIN_VERSION})
 
 endif()
 
-# -- check Media player --------------------------------------------------------
+# -- Media player checks and adjustments----------------------------------------
 
-find_package(FFmpeg COMPONENTS AVCODEC AVDEVICE AVFILTER AVFORMAT AVUTIL SWSCALE)
-find_package(QtAV)
-
-if(ENABLE_MEDIAPLAYER)
-
-    if(${AVCODEC_FOUND} AND ${AVDEVICE_FOUND} AND ${AVFILTER_FOUND} AND ${AVFORMAT_FOUND} AND ${AVUTIL_FOUND} AND ${SWSCALE_FOUND})
-
-        include_directories(${FFMPEG_INCLUDE_DIRS})
-
-    else()
-
-        set(ENABLE_MEDIAPLAYER OFF)
-        set(FFMPEG_FOUND OFF)
-        message(STATUS "ENABLE_MEDIAPLAYER option is enabled but FFMpeg cannot be found. Media player support is disabled.")
-
-    endif()
-
-    if(NOT ${QtAV_FOUND} OR "${QTAV_VERSION_STRING}" VERSION_LESS ${QTAV_MIN_VERSION})
-
-        set(ENABLE_MEDIAPLAYER OFF)
-        set(QtAV_FOUND OFF)
-        message(STATUS "ENABLE_MEDIAPLAYER option is enabled but QtAV cannot be found. Media player support is disabled.")
-
-    else()
-
-        include_directories(${QTAV_INCLUDE_DIRS})
-
-    endif()
-
-    if (${QtAV_FOUND} AND ${FFMPEG_FOUND})
-
-        message(STATUS "Media player support is enabled.")
-
-    endif()
-
-endif()
-
+include(RulesMediaPlayer)
 
 # -- check OpenCV --------------------------------------------------------------
 
@@ -335,7 +299,7 @@ endif()
 
 # -- X11 rules ----------------------------------------------------------------
 
-# For Monitor Profiles management with LCMS
+# To Monitor Profiles management with LCMS
 find_package(X11)
 
 if(X11_FOUND)
@@ -352,82 +316,19 @@ else()
 
 endif()
 
-# -- OpenGL rules -------------------------------------------------------------
+# -- OpenGL checks and adjustments --------------------------------------------
 
-if(POLICY CMP0072)
-    # Prefers GLVND (GL Vendor-Neutral Dispatch) instead legacy OpenGL by default when available.
-    # Option was introduced in CMake version 3.11
-    # Details: https://cmake.org/cmake/help/git-stage/policy/CMP0072.html
-    cmake_policy(SET CMP0072 NEW)
-endif()
-
-find_package(OpenGL)                               # For Presentation tool.
-
-message(STATUS "OpenGL found:                                 ${OPENGL_FOUND}")
-message(STATUS "OpenGL GLU extension found:                   ${OPENGL_GLU_FOUND}")
-message(STATUS "Qt OpenGL found:                              ${Qt${QT_VERSION_MAJOR}OpenGL_FOUND}")
-
-if(Qt6_FOUND)
-    message(STATUS "Qt6 OpenGLWidgets found:                      ${Qt${QT_VERSION_MAJOR}OpenGLWidgets_FOUND}")
-endif()
-
-# decide if Presentation tool can be built with OpenGL
-if(OPENGL_FOUND AND OPENGL_GLU_FOUND AND Qt${QT_VERSION_MAJOR}OpenGL_FOUND)
-    set(HAVE_OPENGL TRUE)
-elseif()
-    set(HAVE_OPENGL FALSE)
-endif()
-
-if(Qt6_FOUND AND Qt${QT_VERSION_MAJOR}OpenGLWidgets_FOUND)
-    set(HAVE_OPENGL TRUE)
-elseif()
-    set(HAVE_OPENGL FALSE)
-endif()
+include(RulesLibOpenGL)
 
 # -- Print Install Paths from ECM ---------------------------------------------
 
 CHECK_INSTALL_PATHS()
 
-# -- Windows rules ------------------------------------------------------------
+# -- Windows compilation and linking adjustements -----------------------------
 
-# For LibRaw
-if(WIN32)
-    find_library(WSOCK32_LIBRARY wsock32)
-    find_library(WS2_32_LIBRARY ws2_32)
-endif()
+include(RulesWindows)
 
-if(MINGW)
-
-    # NOTE: inspired from https://phabricator.kde.org/T3917
-    if(ENABLE_MINGW_HARDENING_LINKER)
-
-        set(CMAKE_EXE_LINKER_FLAGS    "${CMAKE_EXE_LINKER_FLAGS}    -Wl,--dynamicbase -Wl,--nxcompat -Wl,--disable-auto-image-base")
-        set(CMAKE_SHARED_LINKER_FLAGS "${CMAKE_SHARED_LINKER_FLAGS} -Wl,--dynamicbase -Wl,--nxcompat -Wl,--disable-auto-image-base")
-        set(CMAKE_MODULE_LINKER_FLAGS "${CMAKE_MODULE_LINKER_FLAGS} -Wl,--dynamicbase -Wl,--nxcompat -Wl,--disable-auto-image-base")
-
-        if ("${CMAKE_SIZEOF_VOID_P}" EQUAL "8")
-
-            # Enable high-entropy ASLR for 64-bit
-            # The image base has to be >4GB for HEASLR to be enabled.
-            # The values used here are kind of arbitrary.
-            set(CMAKE_EXE_LINKER_FLAGS    "${CMAKE_EXE_LINKER_FLAGS}    -Wl,--high-entropy-va -Wl,--image-base,0x140000000")
-            set(CMAKE_SHARED_LINKER_FLAGS "${CMAKE_SHARED_LINKER_FLAGS} -Wl,--high-entropy-va -Wl,--image-base,0x180000000")
-            set(CMAKE_MODULE_LINKER_FLAGS "${CMAKE_MODULE_LINKER_FLAGS} -Wl,--high-entropy-va -Wl,--image-base,0x180000000")
-
-        endif()
-
-        message(STATUS "MinGW linker Security Flags enabled")
-
-    else()
-
-        message(WARNING "MinGW Linker Security Flags not enabled!")
-
-    endif ()
-
-
-endif()
-
-# -- To link under Solaris (see bug #274484) -----------------------------------
+# -- To link under Solaris (see bug #274484) ----------------------------------
 
 if(NOT WIN32)
     find_library(MATH_LIBRARY m)
@@ -452,47 +353,13 @@ if(BUILD_WITH_CCACHE)
     message(STATUS "ccache program found: ${CCACHE_FOUND}...")
 endif()
 
-# -- libgphoto2 rules ----------------------------------------------------------
+# -- Check libgphoto2 library for camera devices support -----------------------
 
-find_package(Gphoto2)
-
-if(Gphoto2_FOUND)
-
-    if("${GPHOTO2_VERSION_STRING}" VERSION_GREATER "2.4.0")
-        set(VERSION_GPHOTO2 true)
-    else()
-        set(VERSION_GPHOTO2 false)
-    endif()
-
-    if("${GPHOTO2_VERSION_STRING}" VERSION_GREATER "2.5.0")
-        set(VERSION_GPHOTO25 true)
-        message(STATUS "libgphoto2 API version >= 2.5")
-    else()
-        set(VERSION_GPHOTO25 false)
-        message(STATUS "libgphoto2 API version < 2.5")
-    endif()
-
-    if(VERSION_GPHOTO25)
-        set(HAVE_GPHOTO25 1)
-    else()
-        set(HAVE_GPHOTO25 0)
-    endif()
-
-endif()
+include(RulesLibgphoto2)
 
 # -- Check LensFun library for Lens auto-correction tool -----------------------
 
-find_package(LensFun)
-
-if(LENSFUN_VERSION)
-    message(STATUS "liblensfun: Found version ${LENSFUN_VERSION} (required: ${LENSFUN_MIN_VERSION})")
-    if(${LENSFUN_VERSION} VERSION_LESS ${LENSFUN_MIN_VERSION})
-        set(LensFun_FOUND FALSE)
-    endif()
-else()
-    message(STATUS "liblensfun: Version information not found, your version is probably too old.")
-    set(LensFun_FOUND FALSE)
-endif()
+include(RulesLiblensfun)
 
 # -- Check dependencies for Panorama tool --------------------------------------
 
@@ -512,96 +379,7 @@ endif()
 
 # -- Check dependencies for libraw ---------------------------------------------
 
-message(STATUS "")
-message(STATUS "--------------------------------------------------")
-message(STATUS "digiKam RawEngine dependencies checks:")
-message(STATUS "")
-
-include(MacroOpenMP)
-DETECT_OPENMP()
-
-if(OPENMP_FOUND)
-
-    message(STATUS "RawEngine will be compiled with OpenMP support")
-
-else()
-
-    # to force libraw to use OpenMP with Macports and MXE.
-    if (APPLE OR MINGW)
-
-        add_definitions(-DLIBRAW_FORCE_OPENMP)
-        set(OPENMP_FOUND ON)
-        message(STATUS "RawEngine will be compiled with OpenMP support")
-
-    else()
-
-        message(STATUS "RawEngine will not be compiled with OpenMP support")
-
-    endif()
-
-endif()
-
-# Flag to use libjasper with LibRaw RedCine codec
-
-if(Jasper_FOUND)
-
-    add_definitions(-DUSE_JASPER)
-    include_directories(${JASPER_INCLUDE_DIR})
-    message(STATUS "RawEngine will be compiled with RedCine codec")
-
-else()
-
-    message(STATUS "RawEngine will not be compiled with RedCine codec")
-
-endif()
-
-# JPEG library check
-
-message(STATUS "Looking for LibJpeg")
-
-if(JPEG_FOUND)
-
-    include_directories(${JPEG_INCLUDE_DIRS})
-
-    # JPEG lib version is done on top level through MacroJPEG.cmake
-
-    if (${JPEG_LIB_VERSION} LESS 80)
-
-        set(JPEG8_FOUND FALSE)
-
-    else()
-
-        set(JPEG8_FOUND TRUE)
-
-    endif()
-
-endif()
-
-# Flag to use libjpeg with LibRaw DNG lossy codec
-
-if(JPEG8_FOUND)
-
-    add_definitions(-DUSE_JPEG)
-    add_definitions(-DUSE_JPEG8)
-    message(STATUS "RawEngine will be compiled with DNG lossy codec")
-
-else()
-
-    message(STATUS "RawEngine will not be compiled with DNG lossy codec")
-
-endif()
-
-message(STATUS "Looking for PThreads")
-set(PTHREADS_FOUND (CMAKE_USE_PTHREADS_INIT OR CMAKE_USE_WIN32_THREADS_INIT))
-
-# Registration of Libraw configuration to a dedicated header
-
-MACRO_BOOL_TO_01(JPEG8_FOUND  LIBRAW_USE_DNGLOSSYCODEC)
-MACRO_BOOL_TO_01(OPENMP_FOUND LIBRAW_USE_OPENMP)
-MACRO_BOOL_TO_01(Jasper_FOUND LIBRAW_USE_REDCINECODEC)
-
-configure_file(${CMAKE_CURRENT_SOURCE_DIR}/libs/rawengine/libraw/libraw_config.h.cmake
-               ${CMAKE_CURRENT_BINARY_DIR}/libs/rawengine/libraw/libraw_config.h)
+include(RulesLibraw)
 
 # -- Debug Symbols rules under MacOS -------------------------------------------
 

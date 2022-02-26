@@ -4,7 +4,7 @@
 # Redistribution and use is allowed according to the terms of the BSD license.
 # For details see the accompanying COPYING-CMAKE-SCRIPTS file.
 
-include(${CMAKE_SOURCE_DIR}/core/cmake/modules/DNGSdkRules.cmake)
+include(${CMAKE_SOURCE_DIR}/core/cmake/rules/RulesDNGSdk.cmake)
 
 # =======================================================
 # dng validate command line tool from DNG SDK

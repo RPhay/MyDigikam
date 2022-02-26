@@ -6,7 +6,7 @@
 
 APPLY_COMMON_POLICIES()
 
-# NOTE: see the common definitions set on top level by DNGSdkRules.cmake
+# NOTE: see the common definitions set on top level by RulesDNGSdk.cmake
 
 # LibRaw use C++ exceptions
 

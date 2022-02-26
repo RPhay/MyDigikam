@@ -1,0 +1,49 @@
+#
+# Copyright (c) 2010-2022 by Gilles Caulier, <caulier dot gilles at gmail dot com>
+#
+# Redistribution and use is allowed according to the terms of the BSD license.
+# For details see the accompanying COPYING-CMAKE-SCRIPTS file.
+
+if(POLICY CMP0072)
+
+    # Prefers GLVND (GL Vendor-Neutral Dispatch) instead legacy OpenGL by default when available.
+    # Option was introduced in CMake version 3.11
+    # Details: https://cmake.org/cmake/help/git-stage/policy/CMP0072.html
+
+    cmake_policy(SET CMP0072 NEW)
+
+endif()
+
+find_package(OpenGL)                               # For Presentation tool.
+
+message(STATUS "OpenGL found:                                 ${OPENGL_FOUND}")
+message(STATUS "OpenGL GLU extension found:                   ${OPENGL_GLU_FOUND}")
+message(STATUS "Qt OpenGL found:                              ${Qt${QT_VERSION_MAJOR}OpenGL_FOUND}")
+
+if(Qt6_FOUND)
+
+    message(STATUS "Qt6 OpenGLWidgets found:                      ${Qt${QT_VERSION_MAJOR}OpenGLWidgets_FOUND}")
+
+endif()
+
+# decide if Presentation tool can be built with OpenGL
+
+if(OPENGL_FOUND AND OPENGL_GLU_FOUND AND Qt${QT_VERSION_MAJOR}OpenGL_FOUND)
+
+    set(HAVE_OPENGL TRUE)
+
+elseif()
+
+    set(HAVE_OPENGL FALSE)
+
+endif()
+
+if(Qt6_FOUND AND Qt${QT_VERSION_MAJOR}OpenGLWidgets_FOUND)
+
+    set(HAVE_OPENGL TRUE)
+
+elseif()
+
+    set(HAVE_OPENGL FALSE)
+
+endif()

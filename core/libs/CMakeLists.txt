@@ -6,7 +6,7 @@
 
 # NOTE: include this common rules on top level for DNGWriter and RawEngine.
 
-include(DNGSdkRules)
+include(RulesDNGSdk)
 
 add_subdirectory(dimg)
 add_subdirectory(dragdrop)
