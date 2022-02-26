@@ -39,7 +39,9 @@
 #   pragma GCC diagnostic ignored "-Wdeprecated-declarations"
 #endif
 
-#if (QT_VERSION > QT_VERSION_CHECK(5, 99, 0))
+#include <kservice_version.h>
+
+#if KSERVICE_VERSION > QT_VERSION_CHECK(5, 81, 0)
 #   include <kapplicationtrader.h>
 #else
 #   include <kmimetypetrader.h>
@@ -214,7 +216,7 @@ void ImportContextMenuHelper::addServicesMenu(const QList<QUrl>& selectedItems)
             constraints << constraintTemplate.arg(mimeType);
         }
 
-#if (QT_VERSION > QT_VERSION_CHECK(5, 99, 0))
+#if KSERVICE_VERSION > QT_VERSION_CHECK(5, 81, 0)
         offers = KApplicationTrader::queryByMimeType(firstMimeType);
 #else
         offers = KMimeTypeTrader::self()->query(firstMimeType,
