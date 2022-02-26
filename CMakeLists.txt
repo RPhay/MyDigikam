@@ -102,7 +102,6 @@ include(MacroCompiler)
 include(MacroOpenCV)
 include(MacroJPEG)
 include(MacroBoolTo01)
-include(MacroInstallPaths)
 
 #######################################################################################################################
 

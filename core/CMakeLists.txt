@@ -291,7 +291,7 @@ include(RulesLibOpenGL)
 
 # -- Print Install Paths from ECM ---------------------------------------------
 
-CHECK_INSTALL_PATHS()
+include(RulesInstallPaths)
 
 # -- Windows compilation and linking adjustements -----------------------------
 
