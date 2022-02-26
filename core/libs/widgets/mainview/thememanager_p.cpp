@@ -24,21 +24,6 @@
 
 #include "thememanager_p.h"
 
-// C++ includes
-
-#include <cmath>
-
-// Qt includes
-
-#include <QWidget>
-#include <QPainter>
-
-// KDE includes
-
-#include <klocalizedstring.h>
-#include <ksharedconfig.h>
-#include <kconfiggroup.h>
-
 namespace Digikam
 {
 

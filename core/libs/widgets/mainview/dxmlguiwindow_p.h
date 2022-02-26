@@ -54,6 +54,16 @@
 
 // KDE includes
 
+#if !defined(Q_OS_DARWIN) && defined(Q_CC_GNU)
+#   pragma GCC diagnostic push
+#   pragma GCC diagnostic ignored "-Wdeprecated-declarations"
+#endif
+
+#if defined(Q_CC_CLANG)
+#   pragma clang diagnostic push
+#   pragma clang diagnostic ignored "-Wdeprecated-declarations"
+#endif
+
 #include <kconfiggroup.h>
 #include <ktogglefullscreenaction.h>
 #include <ktoolbar.h>
@@ -74,6 +84,15 @@
 
 #if KCONFIGWIDGETS_VERSION > QT_VERSION_CHECK(5, 80, 0)
 #   include <khamburgermenu.h>
+#endif
+
+// Restore warnings
+#if !defined(Q_OS_DARWIN) && defined(Q_CC_GNU)
+#   pragma GCC diagnostic pop
+#endif
+
+#if defined(Q_CC_CLANG)
+#   pragma clang diagnostic pop
 #endif
 
 // Local includes

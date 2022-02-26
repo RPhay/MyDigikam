@@ -23,31 +23,6 @@
 
 #include "thememanager_p.h"
 
-// Qt includes
-
-#include <QStringList>
-#include <QFileInfo>
-#include <QPalette>
-#include <QColor>
-#include <QPainter>
-#include <QPixmap>
-#include <QApplication>
-#include <QAction>
-#include <QStandardPaths>
-#include <QDirIterator>
-#include <QMenu>
-#include <QStyle>
-
-// KDE includes
-
-#include <kactioncollection.h>
-#include <kconfiggroup.h>
-
-// Local includes
-
-#include "digikam_debug.h"
-#include "dxmlguiwindow.h"
-
 namespace Digikam
 {
 

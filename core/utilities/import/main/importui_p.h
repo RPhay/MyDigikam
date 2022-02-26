@@ -31,18 +31,115 @@
 // Qt includes
 
 #include <QCheckBox>
+#include <QCloseEvent>
+#include <QDir>
+#include <QFile>
+#include <QFileInfo>
+#include <QFrame>
+#include <QGridLayout>
+#include <QGroupBox>
+#include <QHBoxLayout>
+#include <QKeyEvent>
+#include <QLabel>
+#include <QLineEdit>
+#include <QPixmap>
+#include <QPointer>
+#include <QPushButton>
+#include <QRadioButton>
+#include <QScrollArea>
+#include <QSplitter>
+#include <QTimer>
+#include <QToolButton>
+#include <QVBoxLayout>
+#include <QWidget>
+#include <QKeySequence>
+#include <QInputDialog>
+#include <QMenuBar>
+#include <QMenu>
+#include <QIcon>
+#include <QMessageBox>
+#include <QStatusBar>
+#include <QApplication>
+#include <QActionGroup>
+#include <QLocale>
+#include <QCheckBox>
 #include <QDateTime>
 #include <QString>
 #include <QUrl>
 
 // KDE includes
 
+#if !defined(Q_OS_DARWIN) && defined(Q_CC_GNU)
+#   pragma GCC diagnostic push
+#   pragma GCC diagnostic ignored "-Wdeprecated-declarations"
+#endif
+
+#if defined(Q_CC_CLANG)
+#   pragma clang diagnostic push
+#   pragma clang diagnostic ignored "-Wdeprecated-declarations"
+#endif
+
+#include <klocalizedstring.h>
+#include <kactioncollection.h>
+#include <kconfiggroup.h>
+#include <ksharedconfig.h>
 #include <kselectaction.h>
+
+// Restore warnings
+#if !defined(Q_OS_DARWIN) && defined(Q_CC_GNU)
+#   pragma GCC diagnostic pop
+#endif
+
+#if defined(Q_CC_CLANG)
+#   pragma clang diagnostic pop
+#endif
 
 // Local includes
 
-#include "dexpanderbox.h"
 #include "digikam_config.h"
+#include "digikam_debug.h"
+#include "digikam_globals.h"
+#include "drawdecoder.h"
+#include "dlayoutbox.h"
+#include "dexpanderbox.h"
+#include "dfileselector.h"
+#include "cameramessagebox.h"
+#include "advancedrenamemanager.h"
+#include "album.h"
+#include "albummanager.h"
+#include "applicationsettings.h"
+#include "albumselectdialog.h"
+#include "cameracontroller.h"
+#include "camerafolderdialog.h"
+#include "camerainfodialog.h"
+#include "cameralist.h"
+#include "cameranamehelper.h"
+#include "cameratype.h"
+#include "capturedlg.h"
+#include "collectionlocation.h"
+#include "collectionmanager.h"
+#include "componentsinfodlg.h"
+#include "dlogoaction.h"
+#include "coredbdownloadhistory.h"
+#include "dzoombar.h"
+#include "fileactionmngr.h"
+#include "freespacewidget.h"
+#include "iccsettings.h"
+#include "importitempropertiessidebar.h"
+#include "importsettings.h"
+#include "importview.h"
+#include "imagedialog.h"
+#include "dnotificationwrapper.h"
+#include "parsesettings.h"
+#include "renamecustomizer.h"
+#include "scancontroller.h"
+#include "setup.h"
+#include "sidebar.h"
+#include "statusprogressbar.h"
+#include "thememanager.h"
+#include "thumbnailsize.h"
+#include "importthumbnailmodel.h"
+#include "itempropertiestab.h"
 #include "camerathumbsctrl.h"
 #include "cameracontroller.h"
 #include "importfiltercombobox.h"

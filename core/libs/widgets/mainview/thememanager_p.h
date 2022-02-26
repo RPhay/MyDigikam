@@ -27,8 +27,25 @@
 
 #include "thememanager.h"
 
+// C++ includes
+
+#include <cmath>
+
 // Qt includes
 
+#include <QWidget>
+#include <QPainter>
+#include <QStringList>
+#include <QFileInfo>
+#include <QPalette>
+#include <QColor>
+#include <QPixmap>
+#include <QApplication>
+#include <QAction>
+#include <QStandardPaths>
+#include <QDirIterator>
+#include <QMenu>
+#include <QStyle>
 #include <QExplicitlySharedDataPointer>
 #include <QPalette>
 #include <QColor>
@@ -38,7 +55,35 @@
 
 // KDE includes
 
+#if !defined(Q_OS_DARWIN) && defined(Q_CC_GNU)
+#   pragma GCC diagnostic push
+#   pragma GCC diagnostic ignored "-Wdeprecated-declarations"
+#endif
+
+#if defined(Q_CC_CLANG)
+#   pragma clang diagnostic push
+#   pragma clang diagnostic ignored "-Wdeprecated-declarations"
+#endif
+
 #include <ksharedconfig.h>
+#include <kactioncollection.h>
+#include <kconfiggroup.h>
+#include <klocalizedstring.h>
+#include <ksharedconfig.h>
+
+// Restore warnings
+#if !defined(Q_OS_DARWIN) && defined(Q_CC_GNU)
+#   pragma GCC diagnostic pop
+#endif
+
+#if defined(Q_CC_CLANG)
+#   pragma clang diagnostic pop
+#endif
+
+// Local includes
+
+#include "digikam_debug.h"
+#include "dxmlguiwindow.h"
 
 namespace Digikam
 {
