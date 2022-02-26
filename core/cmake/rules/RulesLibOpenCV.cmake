@@ -19,3 +19,5 @@ endif()
 
 configure_file(${CMAKE_CURRENT_SOURCE_DIR}/app/utils/digikam_opencv.h.cmake.in
                ${CMAKE_CURRENT_BINARY_DIR}/app/utils/digikam_opencv.h)
+
+include_directories(${OpenCV_INCLUDE_DIRS})

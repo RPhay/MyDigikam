@@ -251,22 +251,11 @@ if(NOT X265_FOUND)
 
 endif()
 
-find_package(exiv2 REQUIRED)
+# -- Exiv2 checks and adjustements ---------------------------------------------
 
-set_package_properties("exiv2"     PROPERTIES
-                       DESCRIPTION "Required to build digiKam"
-                       URL         "https://www.exiv2.org"
-                       TYPE        RECOMMENDED
-                       PURPOSE     "Library to manage image metadata"
-)
+include(RulesLibExiv2)
 
-if("${exiv2_VERSION}" VERSION_LESS ${EXIV2_MIN_VERSION})
-
-    message(FATAL_ERROR "Exiv2 version is too old (${exiv2_VERSION})! Minimal version required:${EXIV2_MIN_VERSION}.")
-
-endif()
-
-# -- Media player checks and adjustments----------------------------------------
+# -- Media player dependencies checks and adjustments---------------------------
 
 include(RulesMediaPlayer)
 
@@ -288,15 +277,9 @@ find_package(PkgConfig)
 find_package(Jasper)                               # For JPEG 2000 support.
 find_package(Eigen3)                               # For Refocus tool.
 
-# -- ImageMagick rules --------------------------------------------------------
+# -- ImageMagick checks and adjustements --------------------------------------
 
-find_package(ImageMagick COMPONENTS Magick++ MagickCore MagickWand)
-
-if(ImageMagick_Magick++_FOUND)
-
-    add_definitions(${ImageMagick_Magick++_DEFINITIONS})
-
-endif()
+include(RulesLibMagick)
 
 # -- X11 checks and adjustements ----------------------------------------------
 
@@ -317,11 +300,15 @@ include(RulesWindows)
 # -- To link under Solaris (see bug #274484) ----------------------------------
 
 if(NOT WIN32)
+
     find_library(MATH_LIBRARY m)
+
 endif()
 
 if(CMAKE_SYSTEM_NAME STREQUAL FreeBSD)
+
     find_library(KVM_LIBRARY kvm)
+
 endif()
 
 # ==============================================================================
@@ -330,7 +317,9 @@ endif()
 find_package(Doxygen)
 
 if(NOT CMAKE_SYSTEM_NAME STREQUAL FreeBSD)
+
     find_package(LQR-1)
+
 endif()
 
 if(BUILD_WITH_CCACHE)
@@ -352,17 +341,25 @@ include(RulesLiblensfun)
 # -- Check dependencies for Panorama tool --------------------------------------
 
 if(FLEX_FOUND AND BISON_FOUND AND KF5ThreadWeaver_FOUND)
+
     set(HAVE_PANORAMA 1)
+
 else()
+
     set(HAVE_PANORAMA 0)
+
 endif()
 
 # -- Check dependencies for HTMLGallery tool -----------------------------------
 
 if(LibXml2_FOUND AND LibXslt_FOUND)
+
     set(HAVE_HTMLGALLERY 1)
+
 else()
+
     set(HAVE_HTMLGALLERY 0)
+
 endif()
 
 # -- Check dependencies for libraw ---------------------------------------------
@@ -373,7 +370,7 @@ include(RulesLibraw)
 
 MACOS_DEBUG_POLICIES()
 
-# -- compilation options definitions -------------------------------------------
+# -- Compilation options definitions -------------------------------------------
 
 message(STATUS "--------------------------------------------------")
 message(STATUS "")
@@ -581,10 +578,15 @@ if(DIGIKAM_CAN_BE_COMPILED)
     # We will add later the directory we need
 
     foreach(var ${DK_LOCAL_INCLUDES_RAW})
+
         string(REGEX MATCH "libjpeg/" item ${var})
+
         if(item STREQUAL "")
+
             list(APPEND DK_LOCAL_INCLUDES ${var})
+
         endif()
+
     endforeach()
 
     set(DK_LOCAL_INCLUDES ${DK_LOCAL_INCLUDES}
@@ -596,14 +598,8 @@ if(DIGIKAM_CAN_BE_COMPILED)
     # digikam_dbconfig.h digikam_opencv.h
     include_directories(${CMAKE_CURRENT_BINARY_DIR}/app/utils)
 
-    include_directories(${OpenCV_INCLUDE_DIRS})
-
     # for libheif version header
     include_directories(${CMAKE_CURRENT_BINARY_DIR}/libs/heifutils)
-
-    if(ImageMagick_FOUND)
-        include_directories(${ImageMagick_INCLUDE_DIRS})
-    endif()
 
     # ==========================================================================
     # Common targets parts
@@ -624,18 +620,4 @@ endif()
 # ==============================================================================
 # API documentation generation
 
-if(Doxygen_FOUND)
-
-    message(STATUS "Doxygen is found.......................... ${Doxygen_FOUND}")
-    message(STATUS "Graphviz Dot is found..................... ${DOXYGEN_DOT_FOUND}")
-
-    if(Doxygen_FOUND AND DOXYGEN_DOT_FOUND)
-
-        message(STATUS "To build API documentation use 'make doc'")
-
-        add_custom_target(doc ${DOXYGEN_EXECUTABLE}
-                          WORKING_DIRECTORY ${CMAKE_SOURCE_DIR})
-
-    endif()
-
-endif()
+include(RulesDoxygen)
