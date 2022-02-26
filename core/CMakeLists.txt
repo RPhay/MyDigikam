@@ -6,6 +6,8 @@
 # Redistribution and use is allowed according to the terms of the BSD license.
 # For details see the accompanying COPYING-CMAKE-SCRIPTS file.
 
+# NOTE: Look rules extension scripts located at core/cmake/rules/
+
 APPLY_COMMON_POLICIES()
 
 # ==============================================================================
@@ -192,27 +194,38 @@ find_package(KF5 ${CALENDAR_MIN_VERSION} QUIET
 )
 
 if ("${KF5CalendarCore_VERSION}" VERSION_GREATER 5.6.40)
+
     set(HAVE_KCALENDAR_QDATETIME TRUE)
+
 endif()
 
 if(ENABLE_AKONADICONTACTSUPPORT AND (NOT KF5AkonadiContact_FOUND OR NOT KF5Contacts_FOUND))
+
     set(ENABLE_AKONADICONTACTSUPPORT OFF)
+
 endif()
 
 if(ENABLE_KFILEMETADATASUPPORT AND NOT KF5FileMetaData_FOUND)
+
     set(ENABLE_KFILEMETADATASUPPORT OFF)
+
 endif()
 
 # Check if KIO have been compiled with KIOWidgets. digiKam only needs this one.
+
 if(KF5KIO_FOUND)
+
     get_target_property(KIOWidgets_INCLUDE_DIRS KF5::KIOWidgets
                         INTERFACE_INCLUDE_DIRECTORIES)
     message(STATUS "KF5::KIOWidgets include dirs: ${KIOWidgets_INCLUDE_DIRS}")
 
     if(NOT KIOWidgets_INCLUDE_DIRS)
+
         message(STATUS "KF5::KIOWidgets not available in shared KIO library. KIO support disabled.")
         set(KF5KIO_FOUND FALSE)
+
     endif()
+
 endif()
 
 # ==============================================================================
@@ -257,23 +270,9 @@ endif()
 
 include(RulesMediaPlayer)
 
-# -- check OpenCV --------------------------------------------------------------
+# -- OpenCV checks and adjustements --------------------------------------------
 
-DETECT_OPENCV(${OPENCV_MIN_VERSION} core objdetect imgproc imgcodecs dnn flann)
-
-if(${OpenCV_FOUND})
-
-    if(${OpenCV_VERSION} VERSION_LESS ${OPENCV_MIN_VERSION})
-
-        message(STATUS "OpenCV < ${OPENCV_MIN_VERSION} have been found. Please use a more recent version.")
-        set(OpenCV_FOUND FALSE)
-
-    endif()
-
-endif()
-
-configure_file(${CMAKE_CURRENT_SOURCE_DIR}/app/utils/digikam_opencv.h.cmake.in
-               ${CMAKE_CURRENT_BINARY_DIR}/app/utils/digikam_opencv.h)
+include(RulesLibOpenCV)
 
 # -- optionals -----------------------------------------------------------------
 
@@ -294,27 +293,14 @@ find_package(Eigen3)                               # For Refocus tool.
 find_package(ImageMagick COMPONENTS Magick++ MagickCore MagickWand)
 
 if(ImageMagick_Magick++_FOUND)
+
     add_definitions(${ImageMagick_Magick++_DEFINITIONS})
-endif()
-
-# -- X11 rules ----------------------------------------------------------------
-
-# To Monitor Profiles management with LCMS
-find_package(X11)
-
-if(X11_FOUND)
-
-    if(NOT Qt6_FOUND)
-        find_package(Qt5 ${QT_MIN_VERSION} NO_MODULE COMPONENTS X11Extras)
-    endif()
-
-    set(HAVE_X11 TRUE)
-
-else()
-
-    set(HAVE_X11 FALSE)
 
 endif()
+
+# -- X11 checks and adjustements ----------------------------------------------
+
+include(RulesX11)
 
 # -- OpenGL checks and adjustments --------------------------------------------
 
@@ -348,9 +334,11 @@ if(NOT CMAKE_SYSTEM_NAME STREQUAL FreeBSD)
 endif()
 
 if(BUILD_WITH_CCACHE)
+
     message(STATUS "Looking for ccache...")
     find_program(CCACHE_FOUND ccache)
     message(STATUS "ccache program found: ${CCACHE_FOUND}...")
+
 endif()
 
 # -- Check libgphoto2 library for camera devices support -----------------------
