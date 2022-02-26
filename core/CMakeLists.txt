@@ -762,10 +762,6 @@ if(DIGIKAM_CAN_BE_COMPILED)
 
     # TODO: revise dropped compiler flags accordingly with patched source code which fix compilation
 
-    # Remove pedantic GCC flag which generate a lots of warnings on the console
-    # with qCDebug()
-    REMOVE_GCC_COMPILER_WARNINGS("-pedantic")
-
     # Remove suggest-override GCC flag which generate a lots of compilation warnings
     REMOVE_GCC_COMPILER_WARNINGS("-Wsuggest-override")
 
