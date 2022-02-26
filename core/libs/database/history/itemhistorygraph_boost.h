@@ -32,26 +32,20 @@
 #   pragma warning(disable : 4267)
 #endif
 
-// Pragma directives to reduce warnings from Boost header files.
 #if !defined(Q_OS_DARWIN) && defined(Q_CC_GNU)
 #   pragma GCC diagnostic push
+#   pragma GCC diagnostic ignored "-Wdeprecated-declarations"
 #   pragma GCC diagnostic ignored "-Wunused-local-typedefs"
 #endif
 
 #if defined(Q_CC_CLANG)
 #   pragma clang diagnostic push
+#   pragma clang diagnostic ignored "-Wdeprecated-declarations"
 #   pragma clang diagnostic ignored "-Wundef"
 #   pragma clang diagnostic ignored "-Wunused-parameter"
 #   pragma clang diagnostic ignored "-Wcast-align"
 #   pragma clang diagnostic ignored "-Wunused-local-typedef"
 #endif
-
-// Boost includes
-
-// Prohibit boost using deprecated header files
-#define BOOST_NO_HASH
-#define BOOST_BIND_GLOBAL_PLACEHOLDERS
-#define BOOST_ALLOW_DEPRECATED_HEADERS
 
 // C++ includes
 
@@ -60,7 +54,12 @@
 #include <vector>
 #include <stdbool.h>
 
-// Boost library includes
+// Boost includes
+
+// Prohibit boost using deprecated header files
+#define BOOST_NO_HASH
+#define BOOST_BIND_GLOBAL_PLACEHOLDERS
+#define BOOST_ALLOW_DEPRECATED_HEADERS
 
 #include <boost/graph/transitive_closure.hpp>
 #include <boost/graph/adjacency_list.hpp>
@@ -87,8 +86,8 @@ enum edge_properties_t   { edge_properties   };
 
 namespace boost
 {
-BOOST_INSTALL_PROPERTY(vertex, properties);
-BOOST_INSTALL_PROPERTY(edge,   properties);
+    BOOST_INSTALL_PROPERTY(vertex, properties);
+    BOOST_INSTALL_PROPERTY(edge,   properties);
 }
 
 namespace Digikam
