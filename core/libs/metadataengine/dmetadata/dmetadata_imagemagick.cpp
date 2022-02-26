@@ -322,6 +322,10 @@ bool DMetadata::loadUsingImageMagick(const QString& filePath)
         ret = false;
     }
 
+#else  // HAVE_IMAGE_MAGICK
+
+    Q_UNUSED(filePath);
+
 #endif // HAVE_IMAGE_MAGICK
 
     return ret;
