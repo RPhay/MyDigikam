@@ -74,7 +74,9 @@ public:
     public:
 
         explicit Tile();
-        virtual ~Tile();
+        ~Tile();
+
+    public:
 
         Tile* getChild(const int linearIndex);
 
