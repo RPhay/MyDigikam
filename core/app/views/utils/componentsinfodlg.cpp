@@ -69,8 +69,9 @@ extern "C"
 namespace Digikam
 {
 
-class ComponentsInfoDlg : public LibsInfoDlg
+class Q_DECL_HIDDEN ComponentsInfoDlg : public LibsInfoDlg
 {
+    Q_OBJECT
 
 public:
 
@@ -225,3 +226,5 @@ void showDigikamDatabaseStat()
 }
 
 } // namespace Digikam
+
+#include "componentsinfodlg.moc"
