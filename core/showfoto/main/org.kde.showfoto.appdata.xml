@@ -96,7 +96,7 @@
     <p xml:lang="gl">Showfoto é un editor de imaxes rápido con potentes ferramentas de edición. Pode usalo para ver as súas fotografías e melloralas. Showfoto é o editor de imaxes independente do proxecto digiKam.</p>
     <p xml:lang="hi">शोफोटो शक्तिशाली छवि संपादन के साधनों के साथ एक तेज़ छवि संपादक है। आप इसका उपयोग अपनी तस्वीरों को देखने और उन्हें बेहतर बनाने के लिए कर सकते हैं। शोफोटो डिजीकैम प्रोजेक्ट का स्वतंत्र छवि संपादक है।</p>
     <p xml:lang="hu">A Showfoto egy gyors képszerkesztő hatékony szerkesztőeszközökkel. A használatával megnézheti és javíthatja a fényképeit. A Showfoto a digiKam projekt önálló képszerkesztője.</p>
-    <p xml:lang="id">Showfoto adalah sebuah Editor Citra yang cepat dengan peralatan pengeditan citra yang unggul. Kamu bisa menggunakannya untuk menampilkan fotografikmu dan memperbaikinya. Showfoto adalah sebuah editor citra yang mandiri dari projek digiKam.</p>
+    <p xml:lang="id">Showfoto adalah sebuah Editor Citra yang cepat dengan peralatan pengeditan citra yang unggul. Anda dapat menggunakannya untuk menampilkan fotografik Anda dan memperbaikinya. Showfoto adalah sebuah editor citra yang mandiri dari projek digiKam.</p>
     <p xml:lang="is">Showfoto er hraðvirkt myndvinnsluforrit með ýmsum öflugum verkfærum. Það má nota til að skoða myndir og bæta þær. Showfoto er sjálfstæður myndvinnsluritinn innan digiKam verkefnisins.</p>
     <p xml:lang="it">Showfoto è un editor di immagini veloce, con strumenti di modifica potenti. Puoi usarlo per visualizzare le tue fotografie e migliorarle. Showfoto è un editor di immagini autonomo all'interno del progetto digiKam.</p>
     <p xml:lang="ja">Showfoto は高速でパワフルな画像編集ツールです。画像を表示したり、それらを改善したりできます。Showfoto は digiKam プロジェクトから切り離された画像エディタです。</p>
@@ -255,7 +255,7 @@
   <developer_name xml:lang="gl">Proxecto digiKam</developer_name>
   <developer_name xml:lang="hi">डिज़ीकैम परियोजना</developer_name>
   <developer_name xml:lang="hu">digiKam projekt</developer_name>
-  <developer_name xml:lang="id">Projek digiKam</developer_name>
+  <developer_name xml:lang="id">Proyek digiKam</developer_name>
   <developer_name xml:lang="is">digiKam verkefnið</developer_name>
   <developer_name xml:lang="it">Progetto digiKam</developer_name>
   <developer_name xml:lang="ja">digiKam プロジェクト</developer_name>
