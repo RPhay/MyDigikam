@@ -91,17 +91,29 @@ find_package(Qt${QT_VERSION_MAJOR} REQUIRED
 
 if(Qt6_FOUND)
 
-    find_package(Qt${QT_VERSION_MAJOR} REQUIRED NO_MODULE COMPONENTS Core5Compat)
+    find_package(Qt${QT_VERSION_MAJOR} REQUIRED
+                                       NO_MODULE
+                                       COMPONENTS
+                                       Core5Compat
+    )
 
 endif()
 
 if(ENABLE_QWEBENGINE)
 
-    find_package(Qt${QT_VERSION_MAJOR} REQUIRED NO_MODULE COMPONENTS WebEngineWidgets)
+    find_package(Qt${QT_VERSION_MAJOR} REQUIRED
+                                       NO_MODULE
+                                       COMPONENTS
+                                       WebEngineWidgets
+    )
 
 else()
 
-    find_package(Qt${QT_VERSION_MAJOR} REQUIRED NO_MODULE COMPONENTS WebKitWidgets)
+    find_package(Qt${QT_VERSION_MAJOR} REQUIRED
+                                       NO_MODULE
+                                       COMPONENTS
+                                       WebKitWidgets
+    )
 
 endif()
 
@@ -142,8 +154,9 @@ endif()
 if(BUILD_TESTING)
 
     find_package(Qt${QT_VERSION_MAJOR} REQUIRED
-                 NO_MODULE COMPONENTS
-                 Test
+                                       NO_MODULE
+                                       COMPONENTS
+                                       Test
     )
 
     find_package(Qt${QT_VERSION_MAJOR}
@@ -157,40 +170,40 @@ endif()
 # KF frameworks dependencies
 
 find_package(KF5 ${KF5_MIN_VERSION} REQUIRED
-             COMPONENTS
-             XmlGui
-             CoreAddons
-             Config
-             Service
-             WindowSystem
-             Solid
-             I18n
+                                    COMPONENTS
+                                    XmlGui
+                                    CoreAddons
+                                    Config
+                                    Service
+                                    WindowSystem
+                                    Solid
+                                    I18n
 )
 
 find_package(KF5 ${KF5_MIN_VERSION} QUIET
-             OPTIONAL_COMPONENTS
-             KIO                    # For Desktop integration (Widgets only).
-             IconThemes             # For Desktop integration.
-             FileMetaData           # For KDE file indexer support.
-             ThreadWeaver           # For Panorama tool.
-             NotifyConfig           # KDE desktop application notify configuration.
-             Notifications          # KDE desktop notifications integration.
+                                    OPTIONAL_COMPONENTS
+                                    KIO                         # For Desktop integration (Widgets only).
+                                    IconThemes                  # For Desktop integration.
+                                    FileMetaData                # For Plasma destop file indexer support.
+                                    ThreadWeaver                # For Panorama tool.
+                                    NotifyConfig                # Plasma desktop application notify configuration.
+                                    Notifications               # Plasma desktop notifications integration.
 )
 
 find_package(KF5 ${AKONADI_MIN_VERSION} QUIET
-             OPTIONAL_COMPONENTS
-             AkonadiContact         # For KDE Mail Contacts support.
-             Contacts               # API for contacts/address book data.
+                                        OPTIONAL_COMPONENTS
+                                        AkonadiContact          # For KDE Mail Contacts support.
+                                        Contacts                # API for contacts/address book data.
 )
 
 find_package(KF5 ${KSANE_MIN_VERSION} QUIET
-             OPTIONAL_COMPONENTS
-             Sane                   # For digital scanner support.
+                                      OPTIONAL_COMPONENTS
+                                      Sane                      # For digital scanner support.
 )
 
 find_package(KF5 ${CALENDAR_MIN_VERSION} QUIET
-             OPTIONAL_COMPONENTS
-             CalendarCore           # For Calendar tool.
+                                         OPTIONAL_COMPONENTS
+                                         CalendarCore           # For Calendar tool.
 )
 
 if ("${KF5CalendarCore_VERSION}" VERSION_GREATER 5.6.40)
@@ -482,11 +495,15 @@ if(Boost_FOUND                          AND
    (Qt${QT_VERSION_MAJOR}Test_FOUND OR NOT BUILD_TESTING) AND
    (CMAKE_USE_PTHREADS_INIT OR CMAKE_USE_WIN32_THREADS_INIT)
   )
+
     message(STATUS " digiKam can be compiled.................. YES")
     set(DIGIKAM_CAN_BE_COMPILED true)
+
 else()
-    message(FATAL_ERROR " digiKam will be compiled.................. NO  (See the README file for more details about dependencies)")
+
+    message(FATAL_ERROR " digiKam will be compiled.................. NO  (Check dependencies at https://www.digikam.org/api/index.html#depscomplink)")
     set(DIGIKAM_CAN_BE_COMPILED false)
+
 endif()
 
 message(STATUS "----------------------------------------------------------------------------------")
@@ -504,20 +521,26 @@ if(DIGIKAM_CAN_BE_COMPILED)
     # To prevent warnings from M$ compiler
 
     if(WIN32 AND MSVC)
+
         add_definitions(-D_CRT_SECURE_NO_WARNINGS)
         add_definitions(-D_ATL_SECURE_NO_WARNINGS)
         add_definitions(-D_AFX_SECURE_NO_WARNINGS)
+
     endif()
 
     # ==========================================================================
     # To use ccache with compiler
 
     if(HAVE_CCACHE)
+
         message(STATUS "Using ccache to speed-up compilations..... YES")
         set_property(GLOBAL PROPERTY RULE_LAUNCH_COMPILE ccache)
         set_property(GLOBAL PROPERTY RULE_LAUNCH_LINK    ccache)
+
     else()
+
         message(STATUS "Using ccache to speed-up compilations..... NO")
+
     endif()
 
     # ==========================================================================
