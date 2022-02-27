@@ -18,7 +18,8 @@ if(OPENMP_FOUND)
 
 else()
 
-    # to force libraw to use OpenMP with Macports and MXE.
+    # To force libraw to use OpenMP with Macports and MXE.
+
     if (APPLE OR MINGW)
 
         add_definitions(-DLIBRAW_FORCE_OPENMP)

@@ -11,7 +11,12 @@ find_package(X11)
 if(X11_FOUND)
 
     if(NOT Qt6_FOUND)
-        find_package(Qt5 ${QT_MIN_VERSION} NO_MODULE COMPONENTS X11Extras)
+
+        find_package(Qt5 ${QT_MIN_VERSION} NO_MODULE
+                                           COMPONENTS
+                                           X11Extras
+        )
+
     endif()
 
     set(HAVE_X11 TRUE)

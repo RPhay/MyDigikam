@@ -4,7 +4,14 @@
 # Redistribution and use is allowed according to the terms of the BSD license.
 # For details see the accompanying COPYING-CMAKE-SCRIPTS file.
 
-find_package(FFmpeg COMPONENTS AVCODEC AVDEVICE AVFILTER AVFORMAT AVUTIL SWSCALE)
+find_package(FFmpeg COMPONENTS AVCODEC
+                               AVDEVICE
+                               AVFILTER
+                               AVFORMAT
+                               AVUTIL
+                               SWSCALE
+)
+
 find_package(QtAV)
 
 if(ENABLE_MEDIAPLAYER)
