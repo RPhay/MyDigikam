@@ -62,7 +62,6 @@
 #include <QApplication>
 #include <QActionGroup>
 #include <QLocale>
-#include <QCheckBox>
 #include <QDateTime>
 #include <QString>
 #include <QUrl>
@@ -141,20 +140,12 @@
 #include "importthumbnailmodel.h"
 #include "itempropertiestab.h"
 #include "camerathumbsctrl.h"
-#include "cameracontroller.h"
 #include "importfiltercombobox.h"
-#include "dzoombar.h"
-#include "freespacewidget.h"
-#include "importitempropertiessidebar.h"
-#include "renamecustomizer.h"
 #include "albumcustomizer.h"
 #include "advancedsettings.h"
 #include "dngconvertsettings.h"
 #include "scriptingsettings.h"
-#include "sidebar.h"
 #include "filterstatusbar.h"
-#include "statusprogressbar.h"
-#include "importview.h"
 #include "dnotificationwidget.h"
 
 namespace Digikam

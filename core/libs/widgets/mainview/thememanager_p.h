@@ -47,8 +47,6 @@
 #include <QMenu>
 #include <QStyle>
 #include <QExplicitlySharedDataPointer>
-#include <QPalette>
-#include <QColor>
 #include <QBrush>
 #include <QBitmap>
 #include <QActionGroup>
@@ -69,7 +67,6 @@
 #include <kactioncollection.h>
 #include <kconfiggroup.h>
 #include <klocalizedstring.h>
-#include <ksharedconfig.h>
 
 // Restore warnings
 #if !defined(Q_OS_DARWIN) && defined(Q_CC_GNU)
