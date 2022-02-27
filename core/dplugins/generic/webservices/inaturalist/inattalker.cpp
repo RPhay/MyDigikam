@@ -6,7 +6,7 @@
  * Date        : 2021-03-20
  * Description : a tool to export images to iNaturalist web service
  *
- * Copyright (C) 2021      by Joerg Lohse <joergmlpts at gmail dot com>
+ * Copyright (C) 2021-2022 by Joerg Lohse <joergmlpts at gmail dot com>
  *
  * This program is free software; you can redistribute it
  * and/or modify it under the terms of the GNU General
@@ -250,14 +250,14 @@ public:
 
     bool isTimeout() const
     {
-        return durationMilliSecs() > 1000 * RESPONSE_TIMEOUT_SECS;
+        return (durationMilliSecs() > 1000 * RESPONSE_TIMEOUT_SECS);
     }
 
     // How long did it take?
 
     qint64 durationMilliSecs() const
     {
-        return QDateTime::currentMSecsSinceEpoch() - m_startTime;
+        return (QDateTime::currentMSecsSinceEpoch() - m_startTime);
     }
 
 private:
@@ -408,7 +408,7 @@ bool INatTalker::restoreApiToken(const QString& username,
         }
     }
 
-    bool valid = emitSignal && apiTokenExpiresIn() > 0;
+    bool valid = (emitSignal && (apiTokenExpiresIn() > 0));
 
     if (valid)
     {
@@ -664,6 +664,7 @@ void INatTalker::loadUrl(const QUrl& imgUrl, int retries)
     if (d->cachedLoadUrls.contains(imgUrl))
     {
         const QByteArray& result = d->cachedLoadUrls.value(imgUrl);
+
         if (!result.isEmpty())
         {
             qCDebug(DIGIKAM_WEBSERVICES_LOG) << "Url" << imgUrl
@@ -788,6 +789,8 @@ public:
           m_longitude(longitude),
           m_query    (query)
     {
+        Q_UNUSED(m_latitude);
+        Q_UNUSED(m_longitude);
     }
 
     void parseResponse(INatTalker& talker,
@@ -821,6 +824,7 @@ public:
             }
 
             talker.d->cachedNearbyPlaces.insert(m_query, placesStrList);
+
             emit talker.signalNearbyPlaces(placesStrList);
         }
     }
@@ -1383,7 +1387,7 @@ public:
                 if (result.contains(OBSERVED_ON_STRING)                    &&
                     result.contains(TAXON)                                 &&
                     result[OBSERVED_ON_STRING].toString() == m_observed_on &&
-                    result[TAXON].toObject()[ID].toInt() == m_taxon_id)
+                    result[TAXON].toObject()[ID].toInt()  == m_taxon_id)
                 {
                     observationId = result[ID].toInt();
                     break;
@@ -1777,11 +1781,11 @@ void INatTalker::uploadNextPhoto(const PhotoUploadRequest& request)
         }
     }
 
-    QHttpMultiPart* multiPart  = getMultiPart(parameters,
-                                              QLatin1String("file"),
-                                              QFileInfo(path).fileName(),
-                                              tmpImage.isEmpty() ? path
-                                                                 : tmpImage);
+    QHttpMultiPart* const multiPart  = getMultiPart(parameters,
+                                                    QLatin1String("file"),
+                                                    QFileInfo(path).fileName(),
+                                                    tmpImage.isEmpty() ? path
+                                                                       : tmpImage);
     QUrl url(d->apiUrl + OBSERVATION_PHOTOS);
     QNetworkRequest netRequest(url);
     netRequest.setRawHeader("Authorization", request.m_apiKey.toLatin1());
@@ -1797,9 +1801,9 @@ class Q_DECL_HIDDEN DeleteObservationRequest : public Request
 public:
 
     DeleteObservationRequest(const QString& apiKey, int id, int retries)
-        : m_apiKey(apiKey),
+        : m_apiKey       (apiKey),
           m_observationId(id),
-          m_retries(retries)
+          m_retries      (retries)
     {
     }
 
@@ -1916,11 +1920,11 @@ void INatTalker::slotTimeout()
 
     for (auto pair : timeoutList)
     {
-        QNetworkReply* const reply = pair.first;
+        QNetworkReply* const reply            = pair.first;
         d->pendingRequests.remove(reply);
 
         QNetworkReply::NetworkError errorCode = reply->error();
-        QString errorString = reply->errorString();
+        QString errorString                   = reply->errorString();
 
         reply->abort();
         delete reply;

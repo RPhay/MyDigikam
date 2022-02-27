@@ -6,7 +6,7 @@
  * Date        : 2021-03-20
  * Description : a tool to export images to iNaturalist web service
  *
- * Copyright (C) 2021      by Joerg Lohse <joergmlpts at gmail dot com>
+ * Copyright (C) 2021-2022 by Joerg Lohse <joergmlpts at gmail dot com>
  *
  * This program is free software; you can redistribute it
  * and/or modify it under the terms of the GNU General

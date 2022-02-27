@@ -6,7 +6,7 @@
  * Date        : 2021-03-20
  * Description : a tool to export images to iNaturalist web service
  *
- * Copyright (C) 2021      by Joerg Lohse <joergmlpts at gmail dot com>
+ * Copyright (C) 2021-2022 by Joerg Lohse <joergmlpts at gmail dot com>
  *
  * This program is free software; you can redistribute it
  * and/or modify it under the terms of the GNU General
@@ -86,7 +86,7 @@ QList<DPluginAuthor> INatPlugin::authors() const
     return QList<DPluginAuthor>()
            << DPluginAuthor(QString::fromUtf8("Joerg Lohse"),
                             QString::fromUtf8("joergmlpts at gmail dot com"),
-                            QString::fromUtf8("(C) 2021"));
+                            QString::fromUtf8("(C) 2021-2022"));
 }
 
 void INatPlugin::setup(QObject* const parent)
