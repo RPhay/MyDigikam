@@ -258,9 +258,9 @@ if [[ $DK_DEBUG = 1 ]] ; then
 
 fi
 
-if [[ $DK_VERSION = "master" ]] ; then
+if [[ $DK_VERSION != v* ]] ; then
 
-    # with master branch, use build time-stamp as sub-version string.
+    # with non-official release version, use build time-stamp as sub-version string.
     DK_SUBVER="-`cat $ORIG_WD/data/BUILDDATE.txt`"
 
 fi
