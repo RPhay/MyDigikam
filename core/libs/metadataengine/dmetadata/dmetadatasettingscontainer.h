@@ -83,7 +83,7 @@ public:
         TITLE      = 1,
         RATING     = 2,
         COMMENT    = 3,
-     // PICKLABEL  = 4,
+        PICKLABEL  = 4,
         COLORLABEL = 5
     };
 
@@ -127,6 +127,7 @@ public:
     static QString DM_TITLE_CONTAINER();
     static QString DM_RATING_CONTAINER();
     static QString DM_COMMENT_CONTAINER();
+    static QString DM_PICKLABEL_CONTAINER();
     static QString DM_COLORLABEL_CONTAINER();
 
 public:

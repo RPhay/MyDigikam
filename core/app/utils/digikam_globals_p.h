@@ -47,15 +47,20 @@
 
 // KDE includes
 
+#include <ki18n_version.h>
 #include <klocalizedstring.h>
 
 // Helper macros to migrate KF6::Ki18n deprecated.
-// To use only in implementations, not headers.
+// To use only in implementations, not headers to not export KDE dependencies.
 
-#if (QT_VERSION > QT_VERSION_CHECK(5, 99, 0))
+#if KI18N_VERSION >= QT_VERSION_CHECK(5, 89, 0)
 #   include <klazylocalizedstring.h>
+#   undef  I18N_NOOP
+#   undef  I18N_NOOP2
+#   undef  I18NC_NOOP
 #   define I18N_NOOP(x)    kli18n(x).untranslatedText()
 #   define I18N_NOOP2(c,x) kli18nc(c,x).untranslatedText()
+#   define I18NC_NOOP(c,x) kli18nc(c,x).untranslatedText()
 #endif
 
 // Local includes

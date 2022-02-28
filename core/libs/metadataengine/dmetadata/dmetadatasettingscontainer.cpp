@@ -38,29 +38,97 @@
 namespace Digikam
 {
 
+static const struct NameSpaceDefinition
+{
+    NamespaceEntry::NamespaceType type;
+
+#if KI18N_VERSION >= QT_VERSION_CHECK(5, 89, 0)
+    const KLazyLocalizedString    title;
+#else
+    const char*                   context;
+    const char*                   title;
+#endif
+}
+namespaceTitleDefinitions[] =
+{
+    {
+        NamespaceEntry::TAGS,
+        I18NC_NOOP("@title: xmp namespace for tags container",        "Tags")
+    },
+    {
+        NamespaceEntry::TITLE,
+        I18NC_NOOP("@title: xmp namespace for title container",       "Title")
+    },
+    {
+        NamespaceEntry::RATING,
+        I18NC_NOOP("@title: xmp namespace for rating container",      "Rating")
+    },
+    {
+        NamespaceEntry::COMMENT,
+        I18NC_NOOP("@title: xmp namespace for comment container",     "Caption")
+    },
+    {
+        NamespaceEntry::PICKLABEL,
+        I18NC_NOOP("@title: xmp namespace for pick-label container",  "Pick label")
+    },
+    {
+        NamespaceEntry::COLORLABEL,
+        I18NC_NOOP("@title: xmp namespace for color-label container", "Color label")
+    },
+};
+
 QString NamespaceEntry::DM_TAG_CONTAINER()
 {
-    return QString::fromUtf8(I18N_NOOP("Tags"));
+#if KI18N_VERSION >= QT_VERSION_CHECK(5, 89, 0)
+    return namespaceTitleDefinitions[NamespaceEntry::TAGS].title.toString();
+#else
+    return i18nc(namespaceTitleDefinitions[NamespaceEntry::TAGS].context, namespaceTitleDefinitions[NamespaceEntry::TAGS].title);
+#endif
 }
 
 QString NamespaceEntry::DM_TITLE_CONTAINER()
 {
-    return QString::fromUtf8(I18N_NOOP("Title"));
+#if KI18N_VERSION >= QT_VERSION_CHECK(5, 89, 0)
+    return namespaceTitleDefinitions[NamespaceEntry::TITLE].title.toString();
+#else
+    return i18nc(namespaceTitleDefinitions[NamespaceEntry::TITLE].context, namespaceTitleDefinitions[NamespaceEntry::TITLE].title);
+#endif
 }
 
 QString NamespaceEntry::DM_RATING_CONTAINER()
 {
-    return QString::fromUtf8(I18N_NOOP("Rating"));
+#if KI18N_VERSION >= QT_VERSION_CHECK(5, 89, 0)
+    return namespaceTitleDefinitions[NamespaceEntry::RATING].title.toString();
+#else
+    return i18nc(namespaceTitleDefinitions[NamespaceEntry::RATING].context, namespaceTitleDefinitions[NamespaceEntry::RATING].title);
+#endif
 }
 
 QString NamespaceEntry::DM_COMMENT_CONTAINER()
 {
-    return QString::fromUtf8(I18N_NOOP("Caption"));
+#if KI18N_VERSION >= QT_VERSION_CHECK(5, 89, 0)
+    return namespaceTitleDefinitions[NamespaceEntry::COMMENT].title.toString();
+#else
+    return i18nc(namespaceTitleDefinitions[NamespaceEntry::COMMENT].context, namespaceTitleDefinitions[NamespaceEntry::COMMENT].title);
+#endif
+}
+
+QString NamespaceEntry::DM_PICKLABEL_CONTAINER()
+{
+#if KI18N_VERSION >= QT_VERSION_CHECK(5, 89, 0)
+    return namespaceTitleDefinitions[NamespaceEntry::PICKLABEL].title.toString();
+#else
+    return i18nc(namespaceTitleDefinitions[NamespaceEntry::PICKLABEL].context, namespaceTitleDefinitions[NamespaceEntry::PICKLABEL].title);
+#endif
 }
 
 QString NamespaceEntry::DM_COLORLABEL_CONTAINER()
 {
-    return QString::fromUtf8(I18N_NOOP("Color label"));
+#if KI18N_VERSION >= QT_VERSION_CHECK(5, 89, 0)
+    return namespaceTitleDefinitions[NamespaceEntry::COLORLABEL].title.toString();
+#else
+    return i18nc(namespaceTitleDefinitions[NamespaceEntry::COLORLABEL].context, namespaceTitleDefinitions[NamespaceEntry::COLORLABEL].title);
+#endif
 }
 
 // ------------------------------------------------------------
