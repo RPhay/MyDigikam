@@ -325,15 +325,10 @@ if(CMAKE_SYSTEM_NAME STREQUAL FreeBSD)
 endif()
 
 # ==============================================================================
-# More Optional Dependencies
+# More Optional Dependencies and Rules
 
 find_package(Doxygen)
-
-#if(NOT CMAKE_SYSTEM_NAME STREQUAL FreeBSD)
-
-    find_package(LQR-1)
-
-#endif()
+find_package(LQR-1)
 
 if(BUILD_WITH_CCACHE)
 

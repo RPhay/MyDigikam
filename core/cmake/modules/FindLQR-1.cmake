@@ -39,7 +39,7 @@ else()
         if(GLIB2_FOUND)
 
             include(CheckCXXSourceCompiles)
-            set(CMAKE_REQUIRED_INCLUDES "${LQR-1_INCLUDE_DIRS}" "${GLIB2_INCLUDE_DIR}")
+            set(CMAKE_REQUIRED_INCLUDES "${LQR-1_INCLUDE_DIRS}" "${GLIB2_INCLUDE_DIRS}")
 
             CHECK_CXX_SOURCE_COMPILES("
 #include <lqr.h>
@@ -53,7 +53,7 @@ return 0;
 
             if(HAVE_LQR_0_4)
 
-                include_directories(${GLIB2_INCLUDE_DIR})
+                include_directories(${GLIB2_INCLUDE_DIRS})
                 set(LQR-1_FOUND TRUE)
 
             endif()
