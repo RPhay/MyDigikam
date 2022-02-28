@@ -103,7 +103,25 @@ LensFunFilter::~LensFunFilter()
 
 QString LensFunFilter::DisplayableName()
 {
-    return QString::fromUtf8(I18N_NOOP2("@title", "Lens Auto-Correction Tool"));
+    static const struct FilterName
+    {
+#if KI18N_VERSION >= QT_VERSION_CHECK(5, 89, 0)
+        const KLazyLocalizedString    title;
+#else
+        const char*                   context;
+        const char*                   title;
+#endif
+    }
+    FILTER_NAME =
+    {
+        I18NC_NOOP("@title", "Lens Auto-Correction Tool")
+    };
+
+#if KI18N_VERSION >= QT_VERSION_CHECK(5, 89, 0)
+    return FILTER_NAME.title.toString();
+#else
+    return i18nc(FILTER_NAME.context, FILTER_NAME.title);
+#endif
 }
 
 void LensFunFilter::filterCCAMultithreaded(uint start, uint stop)
