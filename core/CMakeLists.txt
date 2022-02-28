@@ -329,11 +329,11 @@ endif()
 
 find_package(Doxygen)
 
-if(NOT CMAKE_SYSTEM_NAME STREQUAL FreeBSD)
+#if(NOT CMAKE_SYSTEM_NAME STREQUAL FreeBSD)
 
     find_package(LQR-1)
 
-endif()
+#endif()
 
 if(BUILD_WITH_CCACHE)
 

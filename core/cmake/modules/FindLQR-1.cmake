@@ -5,7 +5,8 @@
 #  LQR-1_INCLUDE_DIRS - The lqr-1 library include directory
 #  LQR-1_LIBRARIES    - Link these to use the lqr-1 library
 #
-#  Copyright (c) 2009 by Pino Toscano <pino@kde.org>
+# Copyright (c) 2009      by Pino Toscano <pino at kde dot org>
+# Copyright (c) 2012-2022 by Caulier Gilles <caulier dot gilles at gmail dot com>
 #
 # Redistribution and use is allowed according to the terms of the BSD license.
 # For details see the accompanying COPYING-CMAKE-SCRIPTS file.
@@ -21,7 +22,12 @@ else()
 
     if(NOT WIN32)
 
-        include(FindPkgConfig)
+        if(NOT PKG_CONFIG_FOUND)
+
+            include(FindPkgConfig)
+
+        endif()
+
         pkg_check_modules(LQR-1 lqr-1)
 
     endif()
@@ -33,7 +39,7 @@ else()
         if(GLIB2_FOUND)
 
             include(CheckCXXSourceCompiles)
-            set(CMAKE_REQUIRED_INCLUDES "${LQR-1_INCLUDE_DIR}" "${GLIB2_INCLUDE_DIR}")
+            set(CMAKE_REQUIRED_INCLUDES "${LQR-1_INCLUDE_DIRS}" "${GLIB2_INCLUDE_DIR}")
 
             CHECK_CXX_SOURCE_COMPILES("
 #include <lqr.h>
@@ -61,5 +67,9 @@ return 0;
     # Show the LQR-1_INCLUDE_DIRS and LQR-1_LIBRARIES variables only in the advanced view
 
     mark_as_advanced(LQR-1_INCLUDE_DIRS LQR-1_LIBRARIES)
+
+    message(STATUS "LQR-1_FOUND        = ${LQR-1_FOUND}")
+    message(STATUS "LQR-1_INCLUDE_DIRS = ${LQR-1_INCLUDE_DIRS}")
+    message(STATUS "LQR-1_LIBRARIES    = ${LQR-1_LIBRARIES}")
 
 endif()

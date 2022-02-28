@@ -71,6 +71,10 @@ no-qstring-insensitive-allocation,\
 no-qstring-ref,\
 no-function-args-by-value,\
 qt6-qhash-signature,\
+qt6-deprecated-api-fixes,\
+qt6-fwd-fixes,\
+qt6-header-fixes,\
+qt6-qlatin1stringchar-to-u,\
 missing-qobject-macro\
 "
 
