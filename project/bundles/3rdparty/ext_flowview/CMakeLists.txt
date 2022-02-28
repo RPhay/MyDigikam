@@ -15,7 +15,8 @@ if (MINGW)
         DOWNLOAD_DIR ${EXTERNALS_DOWNLOAD_DIR}
         GIT_REPOSITORY https://github.com/cathaysia/digikamflowplugin.git
 
-        CONFIGURE_COMMAND cp ${CMAKE_CURRENT_SOURCE_DIR}/../../../../bootstrap.mxe <SOURCE_DIR>/. &&
+        CONFIGURE_COMMAND git submodule update --init &&
+                          cp ${CMAKE_CURRENT_SOURCE_DIR}/../../../../bootstrap.mxe <SOURCE_DIR>/. &&
                           <SOURCE_DIR>/bootstrap.mxe ${MXE_BUILDROOT} RelWithDebInfo
 
         BUILD_COMMAND cd <SOURCE_DIR>/build.mxe && $(MAKE)
@@ -34,7 +35,7 @@ else() # MacOS and Linux
         DOWNLOAD_DIR ${EXTERNALS_DOWNLOAD_DIR}
         GIT_REPOSITORY https://github.com/cathaysia/digikamflowplugin.git
 
-        INSTALL_DIR ${PREFIX_ext_flowview}
+        PATCH_COMMAND git submodule update --init
 
         CMAKE_ARGS -DCMAKE_INSTALL_PREFIX=${PREFIX_ext_flowview} -DCMAKE_BUILD_TYPE=RelWithDebInfo
 
