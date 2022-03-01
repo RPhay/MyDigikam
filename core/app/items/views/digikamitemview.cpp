@@ -777,7 +777,7 @@ void DigikamItemView::scrollTo(const QModelIndex& index, ScrollHint hint)
         return;
     }
 
-    DCategorizedView::scrollTo(index, hint);
+    ItemCategorizedView::scrollTo(index, hint);
 }
 
 } // namespace Digikam
