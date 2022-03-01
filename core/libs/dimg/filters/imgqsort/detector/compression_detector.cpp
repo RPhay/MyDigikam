@@ -72,7 +72,7 @@ CompressionDetector::~CompressionDetector()
     delete d;
 }
 
-auto accessRow = [](cv::Mat mat)
+auto accessRow = [](const cv::Mat& mat)
 {
     return [mat](int index)
     {
@@ -80,7 +80,7 @@ auto accessRow = [](cv::Mat mat)
     };
 };
 
-auto accessCol = [](cv::Mat mat)
+auto accessCol = [](const cv::Mat& mat)
 {
     return [mat](int index)
     {
