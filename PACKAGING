@@ -46,15 +46,7 @@ Notice to make release tarballs from GIT
 
     NOTE: project/scripts/signbundles.sh can batch sign all files in current directory.
 
-8/  Optional: upload tarball and signature to the "pre-release files repository".
-
-    URL: ssh://digikam@milonia.kde.org/srv/archives/files/digikam/
-
-    Note: you will need a valid developer account with ssh keys.
-    Post a message on digikam-users@kde.org mailing list to have a feedback
-    from packagers.
-
-9/  Upload tarball and signature to temporary FTP server at url
+8/  Upload tarball and signature to temporary FTP server at url
 
     ftp://upload.kde.org/incoming for the final publication.
 
@@ -73,10 +65,10 @@ Notice to make release tarballs from GIT
 
     Note: for beta release, destination is "unstable/digikam/"
 
-10/ Create bundles files with signatures for Linux, MacOS, and Windows. See README.BUNDLES for details.
+ 9/ Create bundles files with signatures for Linux, MacOS, and Windows. See README.BUNDLES for details.
     Use same workflow than source tarball.
 
-11/ Create a release announcement page on digikam.org web site.
+10/ Create a release announcement page on digikam.org web site.
 
     Web-site is hosted in a dedicated release repository: https://invent.kde.org/websites/digikam-org/
     Website repository use a staging branch named "dev" to review changes before to post contents officially.
@@ -85,7 +77,7 @@ Notice to make release tarballs from GIT
 
     Don't forget to patch default download links with new stable releases files in data/release.yml.
 
-12/ Perform an official release announcement to these mailing-lists:
+11/ Perform an official release announcement to these mailing-lists:
 
     digikam-users@kde.org
     digikam-devel@kde.org
