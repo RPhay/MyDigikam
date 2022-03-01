@@ -102,36 +102,36 @@ ImageQualitySettings::ImageQualitySettings(QWidget* const parent)
 {
     QVBoxLayout* const layout = new QVBoxLayout(this);
 
-    d->enableSorter         = new QCheckBox(i18n("Enable Image Quality Sorting (Experimental)"), this);
+    d->enableSorter           = new QCheckBox(i18n("Enable Image Quality Sorting (Experimental)"), this);
     d->enableSorter->setWhatsThis(i18n("Enable this option to assign automatically Pick Labels based on image quality."));
 
-    d->optionsView          = new DVBox(this);
+    d->optionsView            = new DVBox(this);
 
     layout->addWidget(d->enableSorter);
     layout->addWidget(d->optionsView);
 
     // ------------------------------------------------------------------------------
 
-    d->detectBlur           = new QCheckBox(i18n("Detect Blur"), d->optionsView);
+    d->detectBlur             = new QCheckBox(i18n("Detect Blur"), d->optionsView);
     d->detectBlur->setWhatsThis(i18n("Detect the amount of blur in the images passed to it"));
 
-    d->detectNoise          = new QCheckBox(i18n("Detect Noise"), d->optionsView);
+    d->detectNoise            = new QCheckBox(i18n("Detect Noise"), d->optionsView);
     d->detectNoise->setWhatsThis(i18n("Detect the amount of noise in the images passed to it"));
 
-    d->detectCompression    = new QCheckBox(i18n("Detect Compression"), d->optionsView);
+    d->detectCompression      = new QCheckBox(i18n("Detect Compression"), d->optionsView);
     d->detectCompression->setWhatsThis(i18n("Detect the amount of compression in the images passed to it"));
 
-    d->detectExposure       = new QCheckBox(i18n("Detect Under and Over Exposure"), d->optionsView);
+    d->detectExposure         = new QCheckBox(i18n("Detect Under and Over Exposure"), d->optionsView);
     d->detectExposure->setWhatsThis(i18n("Detect if the images are under-exposed or over-exposed"));
 
     // ------------------------------------------------------------------------------
 
-    DHBox* const hlay1      = new DHBox(d->optionsView);
+    DHBox* const hlay1        = new DHBox(d->optionsView);
 
-    d->setRejected          = new QCheckBox(i18n("Assign 'Rejected' Label to Low Quality Pictures"), hlay1);
+    d->setRejected            = new QCheckBox(i18n("Assign 'Rejected' Label to Low Quality Pictures"), hlay1);
     d->setRejected->setWhatsThis(i18n("Low quality images detected by blur, noise, and compression analysis will be assigned to Rejected label."));
 
-    QWidget* const hspace1  = new QWidget(hlay1);
+    QWidget* const hspace1    = new QWidget(hlay1);
     hlay1->setStretchFactor(hspace1, 10);
 
     QLabel* const workIcon1 = new QLabel(hlay1);
@@ -139,80 +139,80 @@ ImageQualitySettings::ImageQualitySettings(QWidget* const parent)
 
     // ------------------------------------------------------------------------------
 
-    DHBox* const hlay2      = new DHBox(d->optionsView);
+    DHBox* const hlay2        = new DHBox(d->optionsView);
 
-    d->setPending           = new QCheckBox(i18n("Assign 'Pending' Label to Medium Quality Pictures"), hlay2);
+    d->setPending             = new QCheckBox(i18n("Assign 'Pending' Label to Medium Quality Pictures"), hlay2);
     d->setPending->setWhatsThis(i18n("Medium quality images detected by blur, noise, and compression analysis will be assigned to Pending label."));
 
-    QWidget* const hspace2  = new QWidget(hlay2);
+    QWidget* const hspace2    = new QWidget(hlay2);
     hlay2->setStretchFactor(hspace2, 10);
 
-    QLabel* const workIcon2 = new QLabel(hlay2);
+    QLabel* const workIcon2   = new QLabel(hlay2);
     workIcon2->setPixmap(QIcon::fromTheme(QLatin1String("flag-yellow")).pixmap(style()->pixelMetric(QStyle::PM_SmallIconSize)));
 
     // ------------------------------------------------------------------------------
 
-    DHBox* const hlay3      = new DHBox(d->optionsView);
+    DHBox* const hlay3        = new DHBox(d->optionsView);
 
-    d->setAccepted          = new QCheckBox(i18n("Assign 'Accepted' Label to High Quality Pictures"), hlay3);
+    d->setAccepted            = new QCheckBox(i18n("Assign 'Accepted' Label to High Quality Pictures"), hlay3);
     d->setAccepted->setWhatsThis(i18n("High quality images detected by blur, noise, and compression analysis will be assigned to Accepted label."));
 
-    QWidget* const hspace3  = new QWidget(hlay3);
+    QWidget* const hspace3    = new QWidget(hlay3);
     hlay3->setStretchFactor(hspace3, 10);
 
-    QLabel* const workIcon3 = new QLabel(hlay3);
+    QLabel* const workIcon3   = new QLabel(hlay3);
     workIcon3->setPixmap(QIcon::fromTheme(QLatin1String("flag-green")).pixmap(style()->pixelMetric(QStyle::PM_SmallIconSize)));
 
     // ------------------------------------------------------------------------------
 
-    QWidget* const settings = new QWidget(d->optionsView);
-    QGridLayout* const glay = new QGridLayout(settings);
+    QWidget* const settings   = new QWidget(d->optionsView);
+    QGridLayout* const glay   = new QGridLayout(settings);
 
-    QLabel* const lbl1      = new QLabel(i18n("Speed:"), settings);
+    QLabel* const lbl1        = new QLabel(i18n("Speed:"), settings);
     lbl1->setAlignment(Qt::AlignLeft | Qt::AlignTop);
-    d->setSpeed             = new DIntNumInput(settings);
+    d->setSpeed               = new DIntNumInput(settings);
     d->setSpeed->setDefaultValue(5);
     d->setSpeed->setRange(1, 3, 1);
     d->setSpeed->setWhatsThis(i18n("Tradeoff between speed and accuracy of sorting algorithm"));
 
-    QLabel* const lbl2      = new QLabel(i18n("Rejected threshold:"), settings);
+    QLabel* const lbl2        = new QLabel(i18n("Rejected threshold:"), settings);
     lbl2->setAlignment(Qt::AlignLeft | Qt::AlignTop);
-    d->setRejectedThreshold = new DIntNumInput(settings);
+    d->setRejectedThreshold   = new DIntNumInput(settings);
     d->setRejectedThreshold->setDefaultValue(5);
     d->setRejectedThreshold->setRange(1, 100, 1);
     d->setRejectedThreshold->setWhatsThis(i18n("Threshold below which all pictures are assigned Rejected Label"));
 
-    QLabel* const lbl3      = new QLabel(i18n("Pending threshold:"), settings);
+    QLabel* const lbl3        = new QLabel(i18n("Pending threshold:"), settings);
     lbl3->setAlignment(Qt::AlignLeft | Qt::AlignTop);
-    d->setPendingThreshold  = new DIntNumInput(settings);
+    d->setPendingThreshold    = new DIntNumInput(settings);
     d->setPendingThreshold->setDefaultValue(5);
     d->setPendingThreshold->setRange(1, 100, 1);
     d->setPendingThreshold->setWhatsThis(i18n("Threshold below which all pictures are assigned Pending Label"));
 
-    QLabel* const lbl4      = new QLabel(i18n("Accepted threshold:"), settings);
+    QLabel* const lbl4        = new QLabel(i18n("Accepted threshold:"), settings);
     lbl4->setAlignment(Qt::AlignLeft | Qt::AlignTop);
-    d->setAcceptedThreshold = new DIntNumInput(settings);
+    d->setAcceptedThreshold   = new DIntNumInput(settings);
     d->setAcceptedThreshold->setDefaultValue(5);
     d->setAcceptedThreshold->setRange(1, 100, 1);
     d->setAcceptedThreshold->setWhatsThis(i18n("Threshold above which all pictures are assigned Accepted Label"));
 
-    QLabel* const lbl5      = new QLabel(i18n("Blur Weight:"), settings);
+    QLabel* const lbl5        = new QLabel(i18n("Blur Weight:"), settings);
     lbl5->setAlignment(Qt::AlignLeft | Qt::AlignTop);
-    d->setBlurWeight        = new DIntNumInput(settings);
+    d->setBlurWeight          = new DIntNumInput(settings);
     d->setBlurWeight->setDefaultValue(5);
     d->setBlurWeight->setRange(1, 100, 1);
     d->setBlurWeight->setWhatsThis(i18n("Weight to assign to Blur Algorithm"));
 
-    QLabel* const lbl6      = new QLabel(i18n("Noise Weight:"), settings);
+    QLabel* const lbl6        = new QLabel(i18n("Noise Weight:"), settings);
     lbl6->setAlignment(Qt::AlignLeft | Qt::AlignTop);
-    d->setNoiseWeight       = new DIntNumInput(settings);
+    d->setNoiseWeight         = new DIntNumInput(settings);
     d->setNoiseWeight->setDefaultValue(5);
     d->setNoiseWeight->setRange(1, 100, 1);
     d->setNoiseWeight->setWhatsThis(i18n("Weight to assign to Noise Algorithm"));
 
-    QLabel* const lbl7      = new QLabel(i18n("Compression Weight:"), settings);
+    QLabel* const lbl7        = new QLabel(i18n("Compression Weight:"), settings);
     lbl7->setAlignment(Qt::AlignLeft | Qt::AlignTop);
-    d->setCompressionWeight = new DIntNumInput(settings);
+    d->setCompressionWeight   = new DIntNumInput(settings);
     d->setCompressionWeight->setDefaultValue(5);
     d->setCompressionWeight->setRange(1, 100, 1);
     d->setCompressionWeight->setWhatsThis(i18n("Weight to assign to Compression Algorithm"));

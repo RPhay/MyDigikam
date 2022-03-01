@@ -85,6 +85,11 @@ public:
         calculator = new ImageQualityCalculator();
     }
 
+    ~Private()
+    {
+        delete calculator;
+    }
+
     float*                  fimg[3];
     const uint              clusterCount;
     const uint              size;              ///< Size of squared original image.

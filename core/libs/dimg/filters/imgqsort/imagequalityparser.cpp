@@ -53,14 +53,13 @@ ImageQualityParser::ImageQualityParser(const DImg& image,
                                        PickLabel* const label)
     : d(new Private)
 {
-    d->imq     = settings;
-    d->image   = image;
-    d->label   = label;
+    d->imq   = settings;
+    d->image = image;
+    d->label = label;
 }
 
 ImageQualityParser::~ImageQualityParser()
 {
-    delete d->calculator;
     delete d;
 }
 

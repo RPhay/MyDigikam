@@ -24,8 +24,6 @@
 
 #include "imagequalitycalculator.h"
 
-// Local includes
-
 // Qt includes
 
 #include <QList>
@@ -107,7 +105,7 @@ float ImageQualityCalculator::calculateQuality() const
         damage += result.score * result.weight;
     }
 
-    return (1 - damage)*100;
+    return ((1 - damage) * 100);
 }
 
 int ImageQualityCalculator::numberDetectors() const
