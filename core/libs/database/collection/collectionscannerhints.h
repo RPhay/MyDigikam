@@ -6,7 +6,8 @@
  * Date        : 2008-09-09
  * Description : Hint data containers for the collection scanner
  *
- * Copyright (C) 2008 by Marcel Wiesweg <marcel dot wiesweg at gmx dot de>
+ * Copyright (C) 2008      by Marcel Wiesweg <marcel dot wiesweg at gmx dot de>
+ * Copyright (C) 2009-2022 by Gilles Caulier <caulier dot gilles at gmail dot com>
  *
  * This program is free software; you can redistribute it
  * and/or modify it under the terms of the GNU General
@@ -40,6 +41,7 @@
 // Local includes
 
 #include "digikam_export.h"
+#include "digikam_globals.h"
 
 namespace Digikam
 {
@@ -86,7 +88,7 @@ public:
     Album(int albumRootId, int albumId);
 
     bool isNull()                       const;
-    uint qHash()                        const;
+    QT_HASH_TYPE qHash()                const;
     bool operator==(const Album& other) const;
 
 public:
@@ -105,7 +107,7 @@ public:
     DstPath(int albumRootId, const QString& relativePath);
 
     bool isNull()                         const;
-    uint qHash()                          const;
+    QT_HASH_TYPE qHash()                  const;
     bool operator==(const DstPath& other) const;
 
 public:
@@ -124,7 +126,7 @@ public:
     explicit Item(qlonglong id);
 
     bool isNull()                      const;
-    uint qHash()                       const;
+    QT_HASH_TYPE qHash()               const;
     bool operator==(const Item& other) const;
 
 public:
@@ -132,17 +134,17 @@ public:
     qlonglong id;
 };
 
-inline uint qHash(const Album& src)
+inline QT_HASH_TYPE qHash(const Album& src)
 {
     return src.qHash();
 }
 
-inline uint qHash(const DstPath& dst)
+inline QT_HASH_TYPE qHash(const DstPath& dst)
 {
     return dst.qHash();
 }
 
-inline uint qHash(const Item& item)
+inline QT_HASH_TYPE qHash(const Item& item)
 {
     return item.qHash();
 }
@@ -182,7 +184,7 @@ public:
         return m_dst;
     }
 
-    uint qHash()                                                  const;
+    QT_HASH_TYPE qHash()                                          const;
 
     bool operator==(const CollectionScannerHints::Album& src)     const
     {
@@ -386,7 +388,7 @@ protected:
     qlonglong         m_fileSize;
 };
 
-inline uint qHash(const Digikam::AlbumCopyMoveHint& hint)
+inline QT_HASH_TYPE qHash(const Digikam::AlbumCopyMoveHint& hint)
 {
     return hint.qHash();
 }

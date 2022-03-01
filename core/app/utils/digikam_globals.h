@@ -69,6 +69,15 @@ class QDate;
 #define QT_KEEP_EMPTY_PARTS Qt::KeepEmptyParts
 #define QT_SKIP_EMPTY_PARTS Qt::SkipEmptyParts
 
+/**
+ * Macro to use right return type with qHash(), changed with new Qt6 API.
+ */
+#if QT_VERSION < QT_VERSION_CHECK(6,0,0)
+#   define QT_HASH_TYPE uint
+#else
+#   define QT_HASH_TYPE size_t
+#endif
+
 namespace Digikam
 {
 

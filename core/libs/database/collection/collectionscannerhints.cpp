@@ -6,7 +6,8 @@
  * Date        : 2008-09-09
  * Description : Hint data containers for the collection scanner
  *
- * Copyright (C) 2008 by Marcel Wiesweg <marcel dot wiesweg at gmx dot de>
+ * Copyright (C) 2008      by Marcel Wiesweg <marcel dot wiesweg at gmx dot de>
+ * Copyright (C) 2009-2022 by Gilles Caulier <caulier dot gilles at gmail dot com>
  *
  * This program is free software; you can redistribute it
  * and/or modify it under the terms of the GNU General
@@ -55,7 +56,7 @@ bool CollectionScannerHints::Album::operator==(const Album& other) const
             (albumId     == other.albumId));
 }
 
-uint CollectionScannerHints::Album::qHash() const
+QT_HASH_TYPE CollectionScannerHints::Album::qHash() const
 {
     return (::qHash(albumRootId) ^ ::qHash(albumId));
 }
@@ -83,7 +84,7 @@ bool CollectionScannerHints::DstPath::operator==(const DstPath& other) const
             (relativePath == other.relativePath));
 }
 
-uint CollectionScannerHints::DstPath::qHash() const
+QT_HASH_TYPE CollectionScannerHints::DstPath::qHash() const
 {
     return (::qHash(albumRootId) ^ ::qHash(relativePath));
 }
@@ -108,7 +109,7 @@ bool CollectionScannerHints::Item::operator==(const Item& other) const
     return (id == other.id);
 }
 
-uint CollectionScannerHints::Item::qHash() const
+QT_HASH_TYPE CollectionScannerHints::Item::qHash() const
 {
     return ::qHash(id);
 }
@@ -160,7 +161,7 @@ bool AlbumCopyMoveHint::isDstAlbum(int albumRootId, const QString& relativePath)
             (m_dst.relativePath == relativePath));
 }
 
-uint AlbumCopyMoveHint::qHash() const
+QT_HASH_TYPE AlbumCopyMoveHint::qHash() const
 {
     return (::qHash(m_src.albumRootId) ^ ::qHash(m_src.albumId) ^
             ::qHash(m_dst.albumRootId) ^ ::qHash(m_dst.relativePath));
