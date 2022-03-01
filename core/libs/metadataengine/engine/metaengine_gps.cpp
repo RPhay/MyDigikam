@@ -482,12 +482,11 @@ bool MetaEngine::setGPSInfo(const double* const altitude, const double latitude,
 #ifdef _XMP_SUPPORT_
 
         /**
-         * @todo The XMP spec does not mention Xmp.exif.GPSLatitudeRef,
+         * NOTE: The XMP spec does not mention Xmp.exif.GPSLatitudeRef,
          * because the reference is included in Xmp.exif.GPSLatitude.
-         * Is there a historic reason for writing it anyway?
+         * See bug #450982.
          */
 
-        setXmpTagString("Xmp.exif.GPSLatitudeRef", (latitude < 0) ? QLatin1String("S") : QLatin1String("N"));
         setXmpTagString("Xmp.exif.GPSLatitude",    convertToGPSCoordinateString(true, latitude));
 
 #endif // _XMP_SUPPORT_
@@ -523,12 +522,11 @@ bool MetaEngine::setGPSInfo(const double* const altitude, const double latitude,
 #ifdef _XMP_SUPPORT_
 
         /**
-         * @todo The XMP spec does not mention Xmp.exif.GPSLongitudeRef,
+         * NOTE: The XMP spec does not mention Xmp.exif.GPSLongitudeRef,
          * because the reference is included in Xmp.exif.GPSLongitude.
-         * Is there a historic reason for writing it anyway?
+         * See bug #450982.
          */
 
-        setXmpTagString("Xmp.exif.GPSLongitudeRef", (longitude < 0) ? QLatin1String("W") : QLatin1String("E"));
         setXmpTagString("Xmp.exif.GPSLongitude",    convertToGPSCoordinateString(false, longitude));
 
 #endif // _XMP_SUPPORT_
@@ -597,13 +595,14 @@ bool MetaEngine::removeGPSInfo()
 #ifdef _XMP_SUPPORT_
 
         /**
-         * @todo The XMP spec does not mention Xmp.exif.GPSLongitudeRef,
-         * and Xmp.exif.GPSLatitudeRef. But because we write them in setGPSInfo(),
-         * we should also remove them here.
+         * NOTE: The XMP spec does not mention Xmp.exif.GPSLongitudeRef,
+         * and Xmp.exif.GPSLatitudeRef. But because we write historicaly until 7.6.0 release
+         * them in setGPSInfo(), we should also remove them here.
+         * See bug #450982.
          */
-
         removeXmpTag("Xmp.exif.GPSLatitudeRef");
         removeXmpTag("Xmp.exif.GPSLongitudeRef");
+
         removeXmpTag("Xmp.exif.GPSVersionID");
         removeXmpTag("Xmp.exif.GPSLatitude");
         removeXmpTag("Xmp.exif.GPSLongitude");
