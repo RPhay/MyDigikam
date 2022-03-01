@@ -106,8 +106,7 @@ curl https://scan.coverity.com/builds?project=digiKam \
      --form email=$digikam-devel@kde.org \
      --form file=@myproject.tgz \
      --form version=git \
-     --form description="$desc" \
-     | tee -a "${LOG_FILE}" ; test ${PIPESTATUS[0]} -eq 0
+     --form description="$desc"
 
 echo "Done. Coverity Scan tarball 'myproject.tgz' is uploaded."
 echo "That took approximately $SECONDS seconds to upload."
