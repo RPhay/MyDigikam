@@ -74,6 +74,11 @@ qt6-qhash-signature,\
 qt6-deprecated-api-fixes,\
 qt6-fwd-fixes,\
 qt6-header-fixes,\
+unexpected-flag-enumerator-value,\
+signal-with-return-value,\
+raw-environment-function,\
+qt-keywords,\
+isempty-vs-count,\
 missing-qobject-macro\
 "
 
