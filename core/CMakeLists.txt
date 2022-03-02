@@ -31,224 +31,28 @@ cmake_minimum_required(VERSION ${CMAKE_MIN_VERSION})
 
 # ==============================================================================
 
-option(ENABLE_KFILEMETADATASUPPORT       "Build digiKam with Plasma desktop files indexer support (default=OFF)"              OFF)
-option(ENABLE_AKONADICONTACTSUPPORT      "Build digiKam with Plasma desktop Mail Contacts support (default=OFF)"              OFF)
-option(ENABLE_MEDIAPLAYER                "Build digiKam with Media Player support (default=OFF)"                              OFF)
-option(ENABLE_DBUS                       "Build digiKam with DBUS support (default=ON)"                                       ON)
-option(ENABLE_APPSTYLES                  "Build digiKam with support for changing the widget application style (default=OFF)" OFF)
-option(ENABLE_QWEBENGINE                 "Build digiKam with QWebEngine (default=ON)"                                         ON)
-
-# Mysql support options (experimental):
-option(ENABLE_MYSQLSUPPORT               "Build digiKam with MySQL dabatase support (default=ON)"                             ON)
-option(ENABLE_INTERNALMYSQL              "Build digiKam with internal MySQL server executable (default=ON)"                   ON)
-
-# Developer options:
-option(ENABLE_DIGIKAM_MODELTEST          "Enable ModelTest on some models for debugging (default=OFF)"                        OFF)
-option(ENABLE_SANITIZERS                 "Enable ASAN and UBSAN sanitizers when available (default=OFF)"                      OFF)
-option(BUILD_WITH_CCACHE                 "Use ccache to speed up compilations"                                                OFF)
-
-# Packaging options:
-if(MINGW)
-    option(ENABLE_DRMINGW                "Enable the Dr. MinGW crash handler support for windows (default ON)"                ON)
-    option(ENABLE_MINGW_HARDENING_LINKER "Enable DEP (NX), ASLR, and high-entropy ASLR linker flags for MinGW (default ON)"   ON)
-endif()
+include(RulesOptionDefinitions)
 
 ############## Find Packages ###################
 
 # Extra check to detect Qt core with minimal version before to continue.
 
-find_package(Qt6 ${QT6_MIN_VERSION} QUIET COMPONENTS Core)
-
-if(NOT Qt6_FOUND)
-
-    find_package(Qt5 ${QT5_MIN_VERSION} REQUIRED COMPONENTS Core)
-
-    set(QT_MIN_VERSION   ${QT5_MIN_VERSION})
-    set(QT_VERSION_MAJOR 5)
-
-else()
-
-    set(QT_MIN_VERSION   ${QT6_MIN_VERSION})
-    set(QT_VERSION_MAJOR 6)
-
-endif()
-
-message(STATUS "Suitable Qt${QT_VERSION_MAJOR} >= ${QT_MIN_VERSION} detected...")
+include(RulesFindQtCore)
 
 # Now detect the whole Qt6 or Qt5 framework.
 
-find_package(Qt${QT_VERSION_MAJOR} REQUIRED
-             NO_MODULE COMPONENTS
-             Core
-             Concurrent
-             Widgets
-             Gui
-             Sql
-             Xml
-             PrintSupport
-             Network
-)
+include(RulesLibQt)
 
-if(Qt6_FOUND)
+# KDE frameworks dependencies
 
-    find_package(Qt${QT_VERSION_MAJOR} REQUIRED
-                                       NO_MODULE
-                                       COMPONENTS
-                                       Core5Compat
-    )
-
-endif()
-
-if(ENABLE_QWEBENGINE)
-
-    find_package(Qt${QT_VERSION_MAJOR} REQUIRED
-                                       NO_MODULE
-                                       COMPONENTS
-                                       WebEngineWidgets
-    )
-
-else()
-
-    find_package(Qt${QT_VERSION_MAJOR} REQUIRED
-                                       NO_MODULE
-                                       COMPONENTS
-                                       WebKitWidgets
-    )
-
-endif()
-
-find_package(Qt${QT_VERSION_MAJOR}
-             OPTIONAL_COMPONENTS
-             DBus
-             OpenGL
-)
-
-if(Qt6_FOUND)
-
-    find_package(Qt${QT_VERSION_MAJOR}
-                 OPTIONAL_COMPONENTS
-                 OpenGLWidgets
-    )
-
-else()
-
-    find_package(Qt${QT_VERSION_MAJOR}
-                 OPTIONAL_COMPONENTS
-                 XmlPatterns                # For Rajce plugin
-    )
-
-endif()
-
-if(ENABLE_DBUS)
-
-    if(NOT Qt${QT_VERSION_MAJOR}DBus_FOUND)
-
-        set(ENABLE_DBUS OFF)
-
-    endif()
-
-endif()
-
-# Qt Dependencies For unit tests and CLI test tools
-
-if(BUILD_TESTING)
-
-    find_package(Qt${QT_VERSION_MAJOR} REQUIRED
-                                       NO_MODULE
-                                       COMPONENTS
-                                       Test
-    )
-
-    find_package(Qt${QT_VERSION_MAJOR}
-                 QUIET
-                 OPTIONAL_COMPONENTS
-                 Qml WebView  # Optional, for 'sialis' O2 library test tool.
-    )
-
-endif()
-
-# KF frameworks dependencies
-
-find_package(KF5 ${KF5_MIN_VERSION} REQUIRED
-                                    COMPONENTS
-                                    XmlGui
-                                    CoreAddons
-                                    Config
-                                    Service
-                                    WindowSystem
-                                    Solid
-                                    I18n
-)
-
-find_package(KF5 ${KF5_MIN_VERSION} QUIET
-                                    OPTIONAL_COMPONENTS
-                                    KIO                         # For Desktop integration (Widgets only).
-                                    IconThemes                  # For Desktop integration.
-                                    FileMetaData                # For Plasma destop file indexer support.
-                                    ThreadWeaver                # For Panorama tool.
-                                    NotifyConfig                # Plasma desktop application notify configuration.
-                                    Notifications               # Plasma desktop notifications integration.
-)
-
-find_package(KF5 ${AKONADI_MIN_VERSION} QUIET
-                                        OPTIONAL_COMPONENTS
-                                        AkonadiContact          # For KDE Mail Contacts support.
-                                        Contacts                # API for contacts/address book data.
-)
-
-find_package(KF5 ${KSANE_MIN_VERSION} QUIET
-                                      OPTIONAL_COMPONENTS
-                                      Sane                      # For digital scanner support.
-)
-
-find_package(KF5 ${CALENDAR_MIN_VERSION} QUIET
-                                         OPTIONAL_COMPONENTS
-                                         CalendarCore           # For Calendar tool.
-)
-
-if ("${KF5CalendarCore_VERSION}" VERSION_GREATER 5.6.40)
-
-    set(HAVE_KCALENDAR_QDATETIME TRUE)
-
-endif()
-
-if(ENABLE_AKONADICONTACTSUPPORT AND (NOT KF5AkonadiContact_FOUND OR NOT KF5Contacts_FOUND))
-
-    set(ENABLE_AKONADICONTACTSUPPORT OFF)
-
-endif()
-
-if(ENABLE_KFILEMETADATASUPPORT AND NOT KF5FileMetaData_FOUND)
-
-    set(ENABLE_KFILEMETADATASUPPORT OFF)
-
-endif()
-
-# Check if KIO have been compiled with KIOWidgets. digiKam only needs this one.
-
-if(KF5KIO_FOUND)
-
-    get_target_property(KIOWidgets_INCLUDE_DIRS KF5::KIOWidgets
-                        INTERFACE_INCLUDE_DIRECTORIES)
-    message(STATUS "KF5::KIOWidgets include dirs: ${KIOWidgets_INCLUDE_DIRS}")
-
-    if(NOT KIOWidgets_INCLUDE_DIRS)
-
-        message(STATUS "KF5::KIOWidgets not available in shared KIO library. KIO support disabled.")
-        set(KF5KIO_FOUND FALSE)
-
-    endif()
-
-endif()
+include(RulesKDEFramework)
 
 # ==============================================================================
 # Dependencies Rules
 
 # mandatory
 
-DETECT_JPEG()
-set(DIGIKAM_LIBJPEG_DIR libjpeg/${JPEG_LIB_VERSION})
-message(STATUS "Using libjpeg sub-directory: ${DIGIKAM_LIBJPEG_DIR}")
+include(RulesLibJpeg)
 
 find_package(TIFF)
 find_package(PNG)
