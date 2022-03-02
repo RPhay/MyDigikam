@@ -27,10 +27,6 @@
 
 #include "haariface_p.h"
 
-// C++ includes
-
-#include <functional>
-
 namespace Digikam
 {
 
@@ -822,8 +818,8 @@ HaarIface::DuplicatesResultsMap HaarIface::findDuplicates(const QSet<qlonglong>&
                 foreach (const qlonglong& refId, duplicates)
                 {
                     ItemInfo info(refId);
-                    quint64 infoPixelSize = info.dimensions().width() *
-                                            info.dimensions().height();
+                    quint64 infoPixelSize = (quint64)info.dimensions().width() *
+                                            (quint64)info.dimensions().height();
 
                     if (
                         !refDateTime.isValid()                ||

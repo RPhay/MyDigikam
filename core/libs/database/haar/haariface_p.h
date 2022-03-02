@@ -35,6 +35,7 @@
 #include <fstream>
 #include <cmath>
 #include <cstring>
+#include <functional>
 
 // Qt includes
 
