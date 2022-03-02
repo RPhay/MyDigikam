@@ -41,7 +41,7 @@ include(RulesFindQtCore)
 
 # Now detect the whole Qt6 or Qt5 framework.
 
-include(RulesLibQt)
+include(RulesQtFramework)
 
 # KDE frameworks dependencies
 
