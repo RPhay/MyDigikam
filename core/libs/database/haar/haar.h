@@ -96,7 +96,9 @@ enum { NumberOfCoefficients = 40 };
 
 typedef double Unit;
 
-/// Keep this definition constant at qint32 (guaranteed binary size!)
+/**
+ * Keep this definition constant at qint32 (guaranteed binary size!)
+ */
 typedef qint32 Idx;
 
 // ---------------------------------------------------------------------------------
@@ -211,7 +213,10 @@ public:
 
     unsigned char binAbs(int index) const
     {
-        return ((index > 0) ? m_bin[index] : m_bin[-index]);
+        return (
+                (index > 0) ? m_bin[index]
+                            : m_bin[-index]
+               );
     }
 
 public:

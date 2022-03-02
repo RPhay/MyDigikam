@@ -588,7 +588,7 @@ void HaarIface::getBestAndWorstPossibleScore(Haar::SignatureData* const sig,
 
     for (int channel = 0 ; channel < 3 ; ++channel)
     {
-        Haar::Idx* coefs = sig->sig[channel];
+        Haar::Idx* const coefs = sig->sig[channel];
 
         for (int coef = 0 ; coef < Haar::NumberOfCoefficients ; ++coef)
         {

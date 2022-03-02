@@ -380,9 +380,9 @@ void Calculator::getmLargests(Unit* const cdata, Idx* const sig)
  */
 int Calculator::calcHaar(ImageData* const data, SignatureData* const sigData)
 {
-    sigData->avg[0]=data->data1[0];
-    sigData->avg[1]=data->data2[0];
-    sigData->avg[2]=data->data3[0];
+    sigData->avg[0] = data->data1[0];
+    sigData->avg[1] = data->data2[0];
+    sigData->avg[2] = data->data3[0];
 
     // Color channel 1:
 

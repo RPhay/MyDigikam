@@ -110,16 +110,16 @@ public:
 public:
 
     void rebuildSignatureCache(const QSet<qlonglong>& imageIds = {});
-    bool hasSignatureCache() const;
+    bool hasSignatureCache()              const;
 
     bool retrieveSignatureFromCache(qlonglong imageId, Haar::SignatureData& data);
 
     void setImageDataFromImage(const QImage& image);
     void setImageDataFromImage(const DImg& image);
 
-    SignatureCache*  signatureCache()    const;
-    AlbumCache*      albumCache()        const;
-    Haar::ImageData* imageData()         const;
+    SignatureCache*  signatureCache()     const;
+    AlbumCache*      albumCache()         const;
+    Haar::ImageData* imageData()          const;
 
     void setAlbumRootsToSearch(const QSet<int>& albumRootIds);
     const QSet<int>& albumRootsToSearch() const;
