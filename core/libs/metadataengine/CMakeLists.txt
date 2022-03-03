@@ -47,7 +47,6 @@ set(libdmetadata_SRCS
 
     ${CMAKE_CURRENT_SOURCE_DIR}/dmetadata/dmetadata.cpp
     ${CMAKE_CURRENT_SOURCE_DIR}/dmetadata/dmetadata_video.cpp
-    ${CMAKE_CURRENT_SOURCE_DIR}/dmetadata/dmetadata_libheif.cpp
     ${CMAKE_CURRENT_SOURCE_DIR}/dmetadata/dmetadata_libraw.cpp
     ${CMAKE_CURRENT_SOURCE_DIR}/dmetadata/dmetadata_imagemagick.cpp
     ${CMAKE_CURRENT_SOURCE_DIR}/dmetadata/dmetadata_fileio.cpp
@@ -89,6 +88,15 @@ set(libdmetadata_SRCS
     ${CMAKE_CURRENT_SOURCE_DIR}/focuspoint/focuspoints_extractor_xmp.cpp
     ${CMAKE_CURRENT_SOURCE_DIR}/focuspoint/focuspoints_writer.cpp
 )
+
+if (HEIF_FOUND)
+
+    set(libdmetadata_SRCS
+        ${libdmetadata_SRCS}
+        ${CMAKE_CURRENT_SOURCE_DIR}/dmetadata/dmetadata_libheif.cpp
+    )
+
+endif()
 
 include_directories(
     $<TARGET_PROPERTY:Qt${QT_VERSION_MAJOR}::Widgets,INTERFACE_INCLUDE_DIRECTORIES>

@@ -33,6 +33,8 @@
 
 // Local includes
 
+#include "digikam_config.h"
+#include "digikam_export.h"
 #include "metaengine.h"
 #include "metaengine_data.h"
 #include "metaenginesettingscontainer.h"
@@ -40,7 +42,6 @@
 #include "captionvalues.h"
 #include "photoinfocontainer.h"
 #include "videoinfocontainer.h"
-#include "digikam_export.h"
 #include "dmetadatasettings.h"
 
 namespace Digikam
@@ -391,12 +392,16 @@ private:
     bool hasValidField(const QVariantList& list)                                                                        const;
     QVariant toStringListVariant(const QStringList& list)                                                               const;
 
+#ifdef HAVE_HEIF
+
 private:
 
     /**
      * Libheif helper methods.
      */
     bool loadUsingLibheif(const QString& filePath);
+
+#endif
 
 private:
 

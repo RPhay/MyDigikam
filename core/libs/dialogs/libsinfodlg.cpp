@@ -103,11 +103,14 @@ extern "C"
 
 #ifdef HAVE_JASPER
 #   include <jasper/jas_version.h>
-#endif // HAVE_JASPER
+#endif
 
 #include <png.h>
 #include <tiffvers.h>
-#include <libheif/heif_version.h>
+
+#ifdef HAVE_HEIF
+#   include <libheif/heif_version.h>
+#endif
 
 // Avoid Warnings under Win32
 #undef HAVE_STDLIB_H
@@ -244,8 +247,13 @@ LibsInfoDlg::LibsInfoDlg(QWidget* const parent)
                         i18nc(CONTEXT, "ImageMagick codecs support") <<     SUPPORTED_NO);
 #endif // HAVE_IMAGE_MAGICK
 
+#ifdef HAVE_HEIF
     new QTreeWidgetItem(m_libraries, QStringList() <<
                         i18nc(CONTEXT, "LibHEIF") <<                        QLatin1String(LIBHEIF_VERSION));
+#else
+    new QTreeWidgetItem(m_features, QStringList() <<
+                        i18nc(CONTEXT, "LibHEIF support") <<                SUPPORTED_NO);
+#endif
 
 #ifdef HAVE_X265
     new QTreeWidgetItem(m_features, QStringList() <<

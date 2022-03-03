@@ -141,7 +141,6 @@ target_link_libraries(digikamcore
                       ${LCMS2_LIBRARIES} # filters
 
                       ${TIFF_LIBRARIES}
-                      Libheif::Libheif
                       PNG::PNG
                       ${JPEG_LIBRARIES}
                       exiv2lib
@@ -267,6 +266,16 @@ if(LQR-1_FOUND)
     target_link_libraries(digikamcore
                           PRIVATE
                           ${LQR-1_LIBRARIES}
+    )
+
+endif()
+
+# For HEIF file format support
+if(HEIF_FOUND)
+
+    target_link_libraries(digikamcore
+                          PRIVATE
+                          Libheif::Libheif
     )
 
 endif()
