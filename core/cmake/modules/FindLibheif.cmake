@@ -1,7 +1,7 @@
-# - Try to find HEIF library
+# - Try to find HEIF library (https://github.com/strukturag/libheif)
 # Once done this will define
 #
-# Heif_FOUND            True if HEIF library was found.
+# HEIF_FOUND            True if HEIF library was found.
 # HEIF_INCLUDES_DIR     Where to find HEIF library headers
 # HEIF_LIBRARIES        List of libraries to link against when using HEIF library
 # HEIF_DEFINITIONS      Compiler switches required for using HEIF library
@@ -15,16 +15,22 @@
 
 if(HEIF_LIBRARIES AND HEIF_INCLUDE_DIRS AND HEIF_VERSION AND HEIF_DEFINITIONS)
 
-    # in cache already
+    # In cache already
+
     Set(HEIF_FOUND TRUE)
 
 else()
 
-    # use pkg-config to get the directories and then use these values
+    # Use pkg-config to get the directories and then use these values
     # in the FIND_PATH() and FIND_LIBRARY() calls
+
     if(NOT WIN32)
 
-        find_package(PkgConfig)
+        if(NOT PKG_CONFIG_FOUND)
+
+            find_package(PkgConfig)
+
+        endif()
 
         if(PKG_CONFIG_FOUND)
 
@@ -69,10 +75,10 @@ else()
             add_library(Libheif::Libheif UNKNOWN IMPORTED)
 
             set_target_properties(Libheif::Libheif PROPERTIES
-                INTERFACE_INCLUDE_DIRECTORIES "${HEIF_INCLUDE_DIRS}")
+                                  INTERFACE_INCLUDE_DIRECTORIES "${HEIF_INCLUDE_DIRS}")
 
             set_property(TARGET Libheif::Libheif APPEND PROPERTY
-                IMPORTED_LOCATION "${HEIF_LIBRARIES}")
+                         IMPORTED_LOCATION "${HEIF_LIBRARIES}")
 
         endif()
 
