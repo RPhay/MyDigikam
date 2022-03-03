@@ -100,6 +100,8 @@ urpmi --auto \
       opencv-devel \
       libasan-devel \
       libgomp-devel \
+      lib64heif-devel \
+      lib64de265-devel \
       lib64llvm-devel \
       lib64clang-devel \
       lib64expat-devel \
