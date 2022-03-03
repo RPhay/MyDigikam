@@ -33,11 +33,14 @@
 #include <QFileInfo>
 #include <qplatformdefs.h>
 
+// Libheif includes
+
+#include <libheif/heif.h>
+
 // Local includes
 
 #include "digikam_config.h"
 #include "digikam_debug.h"
-#include "heif.h"
 
 namespace Digikam
 {

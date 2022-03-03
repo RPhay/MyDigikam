@@ -1,49 +1,21 @@
 diff --git a/CMakeLists.txt b/CMakeLists.txt
-index af2001d7..e6cd2749 100644
+index b339f899..28c0524c 100644
 --- a/CMakeLists.txt
 +++ b/CMakeLists.txt
-@@ -43,14 +43,14 @@ elseif("${CMAKE_CXX_COMPILER_ID}" MATCHES "Clang")
-   set(CMAKE_CXX_FLAGS "-std=c++11 ${CMAKE_CXX_FLAGS}")
- endif()
+@@ -20,7 +20,7 @@ include (${CMAKE_ROOT}/Modules/CheckIncludeFile.cmake)
+ include(GNUInstallDirs)
+ include(CheckFunctionExists)
  
--option(DISABLE_SSE "Disable SSE optimizations")
--if(NOT ${DISABLE_SSE} EQUAL OFF)
--  if(MSVC)
--    set(SUPPORTS_SSE4_1 1)
--  else()
--    CHECK_C_COMPILER_FLAG(-msse4.1 SUPPORTS_SSE4_1)
--  endif()
--endif()
-+#option(DISABLE_SSE "Disable SSE optimizations")
-+#if(NOT ${DISABLE_SSE} EQUAL OFF)
-+#  if(MSVC)
-+#    set(SUPPORTS_SSE4_1 1)
-+#  else()
-+#    CHECK_C_COMPILER_FLAG(-msse4.1 SUPPORTS_SSE4_1)
-+#  endif()
-+#endif()
+-find_package(SDL)
++#find_package(SDL)
+ find_package(Threads REQUIRED)
  
- include_directories ("${PROJECT_SOURCE_DIR}")
- include_directories ("${PROJECT_BINARY_DIR}")
-@@ -64,7 +64,7 @@ endif()
- if(UNIX)
-   set(LIBDE265_LIBRARY_NAME de265)
- else()
--  set(LIBDE265_LIBRARY_NAME libde265)
-+  set(LIBDE265_LIBRARY_NAME de265)
+ CHECK_INCLUDE_FILE(malloc.h HAVE_MALLOC_H)
+@@ -64,5 +64,5 @@ if(MSVC)
  endif()
  
  add_subdirectory (libde265)
-diff --git a/libde265/CMakeLists.txt b/libde265/CMakeLists.txt
-index 137e1970..6bfc5045 100644
---- a/libde265/CMakeLists.txt
-+++ b/libde265/CMakeLists.txt
-@@ -55,7 +55,7 @@ set (libde265_sources
-   contextmodel.cc
- )
- 
--if(MSVC)
-+if(WIN32)
-   set (libde265_sources
-     ${libde265_sources}
-     ../extra/win32cond.c
+-add_subdirectory (dec265)
+-add_subdirectory (enc265)
++#add_subdirectory (dec265)
++#add_subdirectory (enc265)

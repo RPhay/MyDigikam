@@ -32,11 +32,14 @@
 #ifndef DIGIKAM_DIMG_HEIF_LOADER_H
 #define DIGIKAM_DIMG_HEIF_LOADER_H
 
+// Libheif includes
+
+#include <libheif/heif.h>
+
 // Local includes
 
 #include "dimg.h"
 #include "dimgloader.h"
-#include "heif.h"
 
 using namespace Digikam;
 

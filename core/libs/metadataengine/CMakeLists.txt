@@ -105,8 +105,6 @@ include_directories(
 # Used by digikamcore
 add_library(core_dmetadata_obj OBJECT ${libdmetadata_SRCS})
 
-add_dependencies(core_dmetadata_obj core_libheif_obj)
-
 target_compile_definitions(core_dmetadata_obj
                            PRIVATE
                            digikamcore_EXPORTS

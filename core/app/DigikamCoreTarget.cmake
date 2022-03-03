@@ -143,6 +143,7 @@ target_link_libraries(digikamcore
                       ${LCMS2_LIBRARIES} # filters
 
                       ${TIFF_LIBRARIES}
+                      Libheif::Libheif
                       PNG::PNG
                       ${JPEG_LIBRARIES}
                       exiv2lib

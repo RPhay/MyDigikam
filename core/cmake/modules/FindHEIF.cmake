@@ -7,7 +7,7 @@
 # HEIF_DEFINITIONS      Compiler switches required for using HEIF library
 # HEIF_VERSION          Version of HEIF library (e.g., 3.6.2)
 #
-#  Copyright (c) 2019-2021 Caulier Gilles <caulier dot gilles at gmail dot com>
+#  Copyright (c) 2019-2022 Caulier Gilles <caulier dot gilles at gmail dot com>
 #
 #  Redistribution and use is allowed according to the terms of the New BSD license.
 #  For details see the accompanying COPYING-CMAKE-SCRIPTS file.
@@ -28,7 +28,7 @@ else()
 
         if(PKG_CONFIG_FOUND)
 
-           PKG_CHECK_MODULES(PC_HEIF libheif)
+           PKG_CHECK_MODULES(PC_HEIF libheif QUIET)
 
         endif()
 
@@ -62,13 +62,14 @@ else()
     if(Libheif_FOUND)
 
         set(HEIF_FOUND ${Libheif_FOUND})
+        set(HEIF_INCLUDE_DIRS ${HEIF_INCLUDES_DIR})
 
         if(NOT TARGET Libheif::Libheif)
 
             add_library(Libheif::Libheif UNKNOWN IMPORTED)
 
             set_target_properties(Libheif::Libheif PROPERTIES
-                INTERFACE_INCLUDE_DIRECTORIES "${HEIF_INCLUDES_DIR}")
+                INTERFACE_INCLUDE_DIRECTORIES "${HEIF_INCLUDE_DIRS}")
 
             set_property(TARGET Libheif::Libheif APPEND PROPERTY
                 IMPORTED_LOCATION "${HEIF_LIBRARIES}")
@@ -77,10 +78,10 @@ else()
 
     endif()
 
-    mark_as_advanced(HEIF_INCLUDES_DIR HEIF_LIBRARIES HEIF_VERSION HEIF_DEFINITIONS)
+    mark_as_advanced(HEIF_INCLUDE_DIRS HEIF_LIBRARIES HEIF_VERSION HEIF_DEFINITIONS)
 
     message(STATUS "HEIF_FOUND        = ${HEIF_FOUND}")
-    message(STATUS "HEIF_INCLUDES_DIR = ${HEIF_INCLUDES_DIR}")
+    message(STATUS "HEIF_INCLUDE_DIRS = ${HEIF_INCLUDE_DIRS}")
     message(STATUS "HEIF_LIBRARIES    = ${HEIF_LIBRARIES}")
     message(STATUS "HEIF_DEFINITIONS  = ${HEIF_DEFINITIONS}")
     message(STATUS "HEIF_VERSION      = ${HEIF_VERSION}")

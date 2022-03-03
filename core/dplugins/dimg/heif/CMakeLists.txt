@@ -27,4 +27,5 @@ DIGIKAM_ADD_DIMG_PLUGIN(NAME    HEIF
                         SOURCES ${dimgheifplugin_SRCS}
                         DEPENDS ${X265_LIBRARIES}
                                 ${CMAKE_THREAD_LIBS_INIT}
+                                Libheif::Libheif
 )

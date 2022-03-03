@@ -107,6 +107,7 @@ extern "C"
 
 #include <png.h>
 #include <tiffvers.h>
+#include <libheif/heif_version.h>
 
 // Avoid Warnings under Win32
 #undef HAVE_STDLIB_H
@@ -242,6 +243,9 @@ LibsInfoDlg::LibsInfoDlg(QWidget* const parent)
     new QTreeWidgetItem(m_features, QStringList() <<
                         i18nc(CONTEXT, "ImageMagick codecs support") <<     SUPPORTED_NO);
 #endif // HAVE_IMAGE_MAGICK
+
+    new QTreeWidgetItem(m_libraries, QStringList() <<
+                        i18nc(CONTEXT, "LibHEIF") <<                        QLatin1String(LIBHEIF_VERSION));
 
 #ifdef HAVE_X265
     new QTreeWidgetItem(m_features, QStringList() <<

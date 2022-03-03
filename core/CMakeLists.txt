@@ -60,6 +60,7 @@ find_package(Boost)
 find_package(LCMS2)
 find_package(EXPAT)    # For DNGWriter: XMP SDK need Expat library to compile.
 find_package(Threads)  # For DNGWriter and LibRaw which needs native threads support.
+find_package(HEIF)     # For HEIF support.
 find_package(X265)     # For HEIF encoding support.
 
 if(NOT X265_FOUND)
@@ -245,6 +246,7 @@ PRINT_LIBRARY_STATUS("libpng"        "https://libpng.sourceforge.io/"           
 PRINT_LIBRARY_STATUS("libpthread"    "https://www.gnu.org/software/hurd/libpthread.html" "(version >= 2.0.0)"                 CMAKE_USE_PTHREADS_INIT OR CMAKE_USE_WIN32_THREADS_INIT)
 PRINT_LIBRARY_STATUS("libqt"         "https://code.qt.io/cgit/qt/"                       "(version >= ${QT_MIN_VERSION})"     Qt${QT_VERSION_MAJOR}_FOUND)
 PRINT_LIBRARY_STATUS("libtiff"       "https://gitlab.com/libtiff/libtiff/"               "(version >= 3.8.2)"                 TIFF_FOUND)
+PRINT_LIBRARY_STATUS("libheif"       "https://github.com/strukturag/libheif"             "(version >= 1.6.0)"                 HEIF_FOUND)
 
 # ==============================================================================
 
@@ -290,6 +292,7 @@ if(Boost_FOUND                          AND
    PNG_FOUND                            AND
    Qt${QT_VERSION_MAJOR}_FOUND          AND
    TIFF_FOUND                           AND
+   HEIF_FOUND                           AND
    Threads_FOUND                        AND
    (Qt${QT_VERSION_MAJOR}Test_FOUND OR NOT BUILD_TESTING) AND
    (CMAKE_USE_PTHREADS_INIT OR CMAKE_USE_WIN32_THREADS_INIT)
@@ -419,9 +422,6 @@ if(DIGIKAM_CAN_BE_COMPILED)
     # for config headers digikam_version.h digikam_gitversion.h digikam_config.h
     # digikam_dbconfig.h digikam_opencv.h
     include_directories(${CMAKE_CURRENT_BINARY_DIR}/app/utils)
-
-    # for libheif version header
-    include_directories(${CMAKE_CURRENT_BINARY_DIR}/libs/heifutils)
 
     # ==========================================================================
     # Common targets parts

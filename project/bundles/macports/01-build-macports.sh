@@ -288,6 +288,7 @@ port install \
              lensfun \
              bison \
              py-lxml \
+             libheif \
              x265 \
              ffmpeg \
              qt5-qtbase \
