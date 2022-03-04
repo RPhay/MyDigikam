@@ -112,6 +112,23 @@ extern "C"
 #   include <libheif/heif_version.h>
 #endif
 
+// libx265 includes
+
+#if defined(__clang__)
+#   pragma clang diagnostic push
+#   pragma clang diagnostic ignored "-Wundef"
+#   pragma clang diagnostic ignored "-Wgnu-anonymous-struct"
+#   pragma clang diagnostic ignored "-Wnested-anon-types"
+#endif
+
+#ifdef HAVE_X265
+#   include <x265.h>
+#endif
+
+#if defined(__clang__)
+#   pragma clang diagnostic pop
+#endif
+
 // Avoid Warnings under Win32
 #undef HAVE_STDLIB_H
 #undef HAVE_STDDEF_H
@@ -256,8 +273,8 @@ LibsInfoDlg::LibsInfoDlg(QWidget* const parent)
 #endif
 
 #ifdef HAVE_X265
-    new QTreeWidgetItem(m_features, QStringList() <<
-                        i18nc(CONTEXT, "HEIF encoding support") <<          SUPPORTED_YES);
+    new QTreeWidgetItem(m_libraries, QStringList() <<
+                        i18nc(CONTEXT, "Libx265") <<                        QLatin1String(x265_version_str));
 #else
     new QTreeWidgetItem(m_features, QStringList() <<
                         i18nc(CONTEXT, "HEIF encoding support") <<          SUPPORTED_NO);
