@@ -23,13 +23,15 @@
 #ifndef DIGIKAM_SCAN_DIALOG_H
 #define DIGIKAM_SCAN_DIALOG_H
 
-#include <ksane_version.h>
-
 // Qt includes
 
 #include <QCloseEvent>
 #include <QWidget>
 #include <QImage>
+
+// KDE include
+
+#include <ksane_version.h>
 
 // Local includes
 
@@ -53,8 +55,7 @@ class ScanDialog : public DPluginDialog
 
 public:
 
-    explicit ScanDialog(KSaneWidget* const saneWdg,
-                        QWidget* const parent = nullptr);
+    explicit ScanDialog(KSaneWidget* const saneWdg, QWidget* const parent = nullptr);
     ~ScanDialog()                   override;
 
     void setTargetDir(const QString& targetDir);

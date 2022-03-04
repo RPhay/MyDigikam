@@ -23,19 +23,18 @@
 #ifndef DIGIKAM_SAVE_IMG_THREAD_H
 #define DIGIKAM_SAVE_IMG_THREAD_H
 
-#include <ksane_version.h>
-
 // Qt includes
 
 #include <QObject>
 #include <QThread>
 #include <QString>
 #include <QUrl>
-#if KSANE_VERSION < QT_VERSION_CHECK(21,8,0)
 #include <QByteArray>
-#else
 #include <QImage>
-#endif
+
+// KDE includes
+
+#include <ksane_version.h>
 
 namespace DigikamGenericDScannerPlugin
 {

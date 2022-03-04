@@ -28,7 +28,7 @@
 #include <QDateTime>
 #include <QScopedPointer>
 
-// LibKSane includes
+// KDE includes
 
 #include <ksanewidget.h>
 
@@ -252,7 +252,7 @@ void SaveImgThread::run()
         {
             for (int w = 0 ; w < d->imageData.width() ; ++w)
             {
-                if      (d->imageData.format() == QImage::Format_RGB32)     // Color 8 bits
+                if      (d->imageData.format() == QImage::Format_RGB32)         // Color 8 bits
                 {
                     const QRgb* rgbData = reinterpret_cast<QRgb*>(d->imageData.scanLine(h));
                     dst[0] = qBlue(rgbData[w]);     // Blue
@@ -262,17 +262,17 @@ void SaveImgThread::run()
 
                     dst   += 4;
                 }
-                else if (d->imageData.format() == QImage::Format_Grayscale8)  // Gray
+                else if (d->imageData.format() == QImage::Format_Grayscale8)    // Gray
                 {
                     const uchar* grayScale = d->imageData.scanLine(h);
-                    dst[0] = grayScale[w];    // Blue
-                    dst[1] = grayScale[w];    // Green
-                    dst[2] = grayScale[w];    // Red
-                    dst[3] = 0x00;            // Alpha
+                    dst[0] = grayScale[w];          // Blue
+                    dst[1] = grayScale[w];          // Green
+                    dst[2] = grayScale[w];          // Red
+                    dst[3] = 0x00;                  // Alpha
 
                     dst   += 4;
                 }
-                else if (d->imageData.format() == QImage::Format_Mono)  // Lineart
+                else if (d->imageData.format() == QImage::Format_Mono)          // Lineart
                 {
                     const uchar* mono = d->imageData.scanLine(h);
                     const int index   = w / 8;
@@ -280,17 +280,17 @@ void SaveImgThread::run()
 
                     if (mono[index] & (1 << mod))
                     {
-                        dst[0] = 0x00;    // Blue
-                        dst[1] = 0x00;    // Green
-                        dst[2] = 0x00;    // Red
-                        dst[3] = 0x00;    // Alpha
+                        dst[0] = 0x00;              // Blue
+                        dst[1] = 0x00;              // Green
+                        dst[2] = 0x00;              // Red
+                        dst[3] = 0x00;              // Alpha
                     }
                     else
                     {
-                        dst[0] = 0xFF;    // Blue
-                        dst[1] = 0xFF;    // Green
-                        dst[2] = 0xFF;    // Red
-                        dst[3] = 0x00;    // Alpha
+                        dst[0] = 0xFF;              // Blue
+                        dst[1] = 0xFF;              // Green
+                        dst[2] = 0xFF;              // Red
+                        dst[3] = 0x00;              // Alpha
                     }
 
                     dst       += 4;
@@ -313,7 +313,7 @@ void SaveImgThread::run()
         {
             for (int w = 0 ; w < d->imageData.width() ; ++w)
             {
-                if      (d->imageData.format() == QImage::Format_RGBX64)    // Color 16 bits
+                if      (d->imageData.format() == QImage::Format_RGBX64)        // Color 16 bits
                 {
                     const QRgba64* rgbData = reinterpret_cast<QRgba64*>(d->imageData.scanLine(h));
                     dst[0] = rgbData[w].blue();     // Blue
@@ -323,13 +323,13 @@ void SaveImgThread::run()
 
                     dst    += 4;
                 }
-                else if (d->imageData.format() == QImage::Format_Grayscale16) // Gray16
+                else if (d->imageData.format() == QImage::Format_Grayscale16)   // Gray16
                 {
                     const unsigned short* grayScale = reinterpret_cast<unsigned short*>(d->imageData.scanLine(h));
-                    dst[0] = grayScale[w];    // Blue
-                    dst[1] = grayScale[w];    // Green
-                    dst[2] = grayScale[w];    // Red
-                    dst[3] = 0x0000;          // Alpha
+                    dst[0] = grayScale[w];          // Blue
+                    dst[1] = grayScale[w];          // Green
+                    dst[2] = grayScale[w];          // Red
+                    dst[3] = 0x0000;                // Alpha
 
                     dst   += 4;
                 }
@@ -373,6 +373,7 @@ void SaveImgThread::run()
     meta->applyChanges(true);
 
     Q_EMIT signalProgress(d->newUrl, 100);
+
     Q_EMIT signalComplete(d->newUrl, success);
 }
 

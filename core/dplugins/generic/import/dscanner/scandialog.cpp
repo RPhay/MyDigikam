@@ -38,9 +38,6 @@
 // KDE includes
 
 #include <klocalizedstring.h>
-
-// LibKSane includes
-
 #include <ksanewidget.h>
 
 // Local includes
@@ -140,7 +137,7 @@ void ScanDialog::slotSaveImage(QByteArray& ksane_data, int width, int height, in
 
 #else
 
-void ScanDialog::slotSaveImage(const QImage &image_data)
+void ScanDialog::slotSaveImage(const QImage& image_data)
 
 #endif
 
@@ -217,7 +214,9 @@ void ScanDialog::slotSaveImage(const QImage &image_data)
         {
             QMessageBox::critical(nullptr, i18n("Unsupported Format"),
                                   i18n("The target image file format \"%1\" is unsupported.", format));
+
             qCWarning(DIGIKAM_DPLUGIN_GENERIC_LOG) << "target image file format " << format << " is unsupported!";
+
             delete imageFileSaveDialog;
 
             return;
@@ -230,7 +229,9 @@ void ScanDialog::slotSaveImage(const QImage &image_data)
                               i18n("Failed to save file\n\"%1\" to\n\"%2\".",
                               newURL.fileName(),
                               QDir::toNativeSeparators(newURL.toLocalFile().section(QLatin1Char('/'), -2, -2))));
+
         qCWarning(DIGIKAM_DPLUGIN_GENERIC_LOG) << "target URL is not valid !";
+
         delete imageFileSaveDialog;
 
         return;
