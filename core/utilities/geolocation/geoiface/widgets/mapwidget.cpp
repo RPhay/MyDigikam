@@ -1088,7 +1088,7 @@ void MapWidget::getColorInfos(const GeoGroupState groupState,
         // convert to "1E5" notation for numbers >=20k:
 
         qreal exponent           = floor(log((qreal)nMarkers)/log((qreal)10));
-        qreal nMarkersFirstDigit = round(qreal(nMarkers)/pow(10,exponent));
+        qreal nMarkersFirstDigit = round(qreal(nMarkers)/pow(10, exponent));
 
         if (nMarkersFirstDigit >= 10)
         {
@@ -1201,7 +1201,7 @@ void MapWidget::getColorInfos(const GeoGroupState groupState,
 QString MapWidget::convertZoomToBackendZoom(const QString& someZoom,
                                             const QString& targetBackend) const
 {
-    const QStringList zoomParts = someZoom.split(QLatin1Char( ':' ));
+    const QStringList zoomParts = someZoom.split(QLatin1Char(':'));
     GEOIFACE_ASSERT(zoomParts.count() == 2);
     const QString sourceBackend = zoomParts.first();
 
