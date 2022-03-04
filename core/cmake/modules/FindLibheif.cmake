@@ -2,10 +2,10 @@
 # Once done this will define
 #
 # HEIF_FOUND            True if HEIF library was found.
-# HEIF_INCLUDES_DIR     Where to find HEIF library headers
+# HEIF_INCLUDE_DIRS     Where to find HEIF library headers
 # HEIF_LIBRARIES        List of libraries to link against when using HEIF library
 # HEIF_DEFINITIONS      Compiler switches required for using HEIF library
-# HEIF_VERSION          Version of HEIF library (e.g., 3.6.2)
+# HEIF_VERSION          Version of HEIF library (e.g., 1.12.0)
 #
 #  Copyright (c) 2019-2022 Caulier Gilles <caulier dot gilles at gmail dot com>
 #
@@ -67,7 +67,7 @@ else()
 
     if(Libheif_FOUND)
 
-        set(HEIF_FOUND ${Libheif_FOUND})
+        set(HEIF_FOUND        ${Libheif_FOUND})
         set(HEIF_INCLUDE_DIRS ${HEIF_INCLUDES_DIR})
 
         if(NOT TARGET Libheif::Libheif)
