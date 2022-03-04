@@ -30,7 +30,7 @@
 #include <QString>
 #include <QTreeWidget>
 #include <QHeaderView>
-#include <QThreadPool>
+#include <QThread>
 #include <QStandardPaths>
 #include <QFile>
 #include <QTextStream>
@@ -325,7 +325,7 @@ LibsInfoDlg::LibsInfoDlg(QWidget* const parent)
 
     // TODO: add sqlite versions here? Could be useful for debugging sqlite problems..
 
-    int nbcore = QThreadPool::globalInstance()->maxThreadCount();
+    int nbcore = QThread::idealThreadCount();
     new QTreeWidgetItem(m_features, QStringList() <<
                         i18ncp(CONTEXT, "CPU core", "CPU cores", nbcore) << QString::fromLatin1("%1").arg(nbcore));
 
