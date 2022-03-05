@@ -66,7 +66,6 @@ CaptionEdit::CaptionEdit(QWidget* const parent)
 
     d->altLangStrEdit = new AltLangStrEdit(this);
     d->altLangStrEdit->setTitle(i18n("Captions: "));
-    d->altLangStrEdit->setPlaceholderText(i18n("Enter caption text here."));
 
     d->authorEdit = new QLineEdit(this);
     d->authorEdit->setClearButtonEnabled(true);
@@ -105,6 +104,11 @@ void CaptionEdit::reset()
     d->authorEdit->blockSignals(false);
 
     d->captionsValues.clear();
+}
+
+void CaptionEdit::setPlaceholderText(const QString& msg)
+{
+    d->altLangStrEdit->setPlaceholderText(msg);
 }
 
 QString CaptionEdit::currentLanguageCode() const
