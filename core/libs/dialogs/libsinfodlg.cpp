@@ -61,11 +61,11 @@
 
 #ifdef HAVE_LENSFUN
 #   include "lensfuniface.h"
-#endif // HAVE_LENSFUN
+#endif
 
 #ifdef HAVE_MARBLE
 #   include "mapwidget.h"
-#endif // HAVE_MARBLE
+#endif
 
 #ifdef HAVE_IMAGE_MAGICK
 
@@ -203,7 +203,7 @@ LibsInfoDlg::LibsInfoDlg(QWidget* const parent)
 #else
     new QTreeWidgetItem(m_features, QStringList() <<
                         i18nc(CONTEXT, "Eigen support") <<                  SUPPORTED_NO);
-#endif // HAVE_EIGEN3
+#endif
 
 #ifdef HAVE_QWEBENGINE
     new QTreeWidgetItem(m_libraries, QStringList() <<
@@ -238,7 +238,7 @@ LibsInfoDlg::LibsInfoDlg(QWidget* const parent)
 #else
     new QTreeWidgetItem(m_features, QStringList() <<
                         i18nc(CONTEXT, "LensFun support") <<                SUPPORTED_NO);
-#endif // HAVE_LENSFUN
+#endif
 
 #ifdef HAVE_LIBLQR_1
     new QTreeWidgetItem(m_features, QStringList() <<
@@ -246,7 +246,7 @@ LibsInfoDlg::LibsInfoDlg(QWidget* const parent)
 #else
     new QTreeWidgetItem(m_features, QStringList() <<
                         i18nc(CONTEXT, "LibLqr support") <<                 SUPPORTED_NO);
-#endif // HAVE_LIBLQR_1
+#endif
 
 #ifdef HAVE_VKONTAKTE
     new QTreeWidgetItem(m_features, QStringList() <<
@@ -254,7 +254,7 @@ LibsInfoDlg::LibsInfoDlg(QWidget* const parent)
 #else
     new QTreeWidgetItem(m_features, QStringList() <<
                         i18nc(CONTEXT, "VKontakte support") <<              SUPPORTED_NO);
-#endif // HAVE_VKONTAKTE
+#endif
 
 #ifdef HAVE_IMAGE_MAGICK
     new QTreeWidgetItem(m_libraries, QStringList() <<
@@ -262,23 +262,27 @@ LibsInfoDlg::LibsInfoDlg(QWidget* const parent)
 #else
     new QTreeWidgetItem(m_features, QStringList() <<
                         i18nc(CONTEXT, "ImageMagick codecs support") <<     SUPPORTED_NO);
-#endif // HAVE_IMAGE_MAGICK
+#endif
 
 #ifdef HAVE_HEIF
     new QTreeWidgetItem(m_libraries, QStringList() <<
                         i18nc(CONTEXT, "LibHEIF") <<                        QLatin1String(LIBHEIF_VERSION));
+    new QTreeWidgetItem(m_features, QStringList() <<
+                        i18nc(CONTEXT, "HEIF reading support") <<           SUPPORTED_YES);
 #else
     new QTreeWidgetItem(m_features, QStringList() <<
-                        i18nc(CONTEXT, "LibHEIF support") <<                SUPPORTED_NO);
+                        i18nc(CONTEXT, "HEIF reading support") <<           SUPPORTED_NO);
 #endif
 
 #ifdef HAVE_X265
     new QTreeWidgetItem(m_libraries, QStringList() <<
                         i18nc(CONTEXT, "Libx265") <<                        QLatin1String(x265_version_str));
+    new QTreeWidgetItem(m_features, QStringList() <<
+                        i18nc(CONTEXT, "HEIF writing support") <<           SUPPORTED_YES);
 #else
     new QTreeWidgetItem(m_features, QStringList() <<
-                        i18nc(CONTEXT, "HEIF encoding support") <<          SUPPORTED_NO);
-#endif // HAVE_X265
+                        i18nc(CONTEXT, "HEIF Writing support") <<           SUPPORTED_NO);
+#endif
 
     QString tiffver = QLatin1String(TIFFLIB_VERSION_STR);
     tiffver         = tiffver.left(tiffver.indexOf(QLatin1Char('\n')));
@@ -313,7 +317,7 @@ LibsInfoDlg::LibsInfoDlg(QWidget* const parent)
 #else
     new QTreeWidgetItem(m_features, QStringList() <<
                         i18nc(CONTEXT, "LibJasper support") <<              SUPPORTED_NO);
-#endif // HAVE_JASPER
+#endif
 
 #ifdef HAVE_MARBLE
     new QTreeWidgetItem(m_libraries, QStringList() <<
@@ -321,7 +325,7 @@ LibsInfoDlg::LibsInfoDlg(QWidget* const parent)
 #else
     new QTreeWidgetItem(m_features, QStringList() <<
                         i18nc(CONTEXT, "Marble support") <<                 SUPPORTED_NO);
-#endif // HAVE_MARBLE
+#endif
 
     // TODO: add sqlite versions here? Could be useful for debugging sqlite problems..
 
