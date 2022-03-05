@@ -263,6 +263,12 @@ if [[ $DK_VERSION != v* ]] ; then
     # with non-official release version, use build time-stamp as sub-version string.
     DK_SUBVER="-`cat $ORIG_WD/data/BUILDDATE.txt`"
 
+else
+
+    # with official release version, disable upload to KDE server, as this break check for new version function.
+    echo -e "Official release version detected, upload is disabled.\n"
+    DK_UPLOAD = 0
+
 fi
 
 #################################################################################################
