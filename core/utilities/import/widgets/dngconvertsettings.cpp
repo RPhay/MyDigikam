@@ -67,10 +67,10 @@ DNGConvertSettings::DNGConvertSettings(QWidget* const parent)
       d      (new Private)
 {
     const int spacing           = qMin(QApplication::style()->pixelMetric(QStyle::PM_LayoutHorizontalSpacing),
-                             QApplication::style()->pixelMetric(QStyle::PM_LayoutVerticalSpacing));
+                                       QApplication::style()->pixelMetric(QStyle::PM_LayoutVerticalSpacing));
 
     QVBoxLayout* const mainVlay = new QVBoxLayout(this);
-    QHBoxLayout* const convHlay = new QHBoxLayout(this);
+    QHBoxLayout* const convHlay = new QHBoxLayout;
 
     d->convertDng               = new QCheckBox(i18nc("@option:check", "Convert RAW images to"), this);
     d->dngSettings              = new DNGSettings(this);
@@ -81,6 +81,7 @@ DNGConvertSettings::DNGConvertSettings(QWidget* const parent)
     d->dngLink->setWordWrap(false);
     d->dngLink->setText(QString::fromUtf8("<p><a href='https://en.wikipedia.org/wiki/Digital_Negative_(file_format)'>%1</a></p>")
                         .arg(i18nc("@label", "DNG container")));
+
     convHlay->addWidget(d->convertDng);
     convHlay->addWidget(d->dngLink);
     convHlay->addStretch(10);
