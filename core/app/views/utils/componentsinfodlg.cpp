@@ -193,6 +193,7 @@ public:
 
         // Database Backend information
         // TODO: add sqlite versions here? Could be useful for debugging sqlite problems..
+        // Use this sqlite request; https://www.sqlite.org/lang_corefunc.html#sqlite_version
 
         QString dbBe = ApplicationSettings::instance()->getDbEngineParameters().databaseType;
         new QTreeWidgetItem(m_features, QStringList() <<
