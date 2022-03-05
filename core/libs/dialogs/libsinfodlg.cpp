@@ -327,8 +327,6 @@ LibsInfoDlg::LibsInfoDlg(QWidget* const parent)
                         i18nc(CONTEXT, "Marble support") <<                 SUPPORTED_NO);
 #endif
 
-    // TODO: add sqlite versions here? Could be useful for debugging sqlite problems..
-
     int nbcore = QThread::idealThreadCount();
     new QTreeWidgetItem(m_features, QStringList() <<
                         i18ncp(CONTEXT, "CPU core", "CPU cores", nbcore) << QString::fromLatin1("%1").arg(nbcore));
