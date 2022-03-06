@@ -47,10 +47,10 @@
 
 extern "C"
 {
-#include <gphoto2-version.h>
+#   include <gphoto2-version.h>
 }
 
-#endif // HAVE_GPHOTO2
+#endif
 
 // QtAV includes
 
@@ -64,7 +64,7 @@ extern "C"
 #   include <libavcodec/version.h>
 }
 
-#endif // HAVE_MEDIAPLAYER
+#endif
 
 namespace Digikam
 {
@@ -90,7 +90,7 @@ public:
         new QTreeWidgetItem(m_features, QStringList() <<
                             i18nc("@item: component info", "LibGphoto2 support") <<     i18nc("@item: component info", "No"));
 
-#endif /* HAVE_GPHOTO2 */
+#endif
 
 #ifdef HAVE_KFILEMETADATA
 
@@ -102,7 +102,7 @@ public:
         new QTreeWidgetItem(m_features, QStringList() <<
                             i18nc("@item: component info", "Baloo support") <<          i18nc("@item: component info", "No"));
 
-#endif /* HAVE_KFILEMETADATA */
+#endif
 
 #ifdef HAVE_AKONADICONTACT
 
@@ -114,7 +114,7 @@ public:
         new QTreeWidgetItem(m_features, QStringList() <<
                             i18nc("@item: component info", "AddressBook support") <<    i18nc("@item: component info", "No"));
 
-#endif /* HAVE_AKONADICONTACT */
+#endif
 
 #ifdef HAVE_MEDIAPLAYER
 
@@ -138,7 +138,7 @@ public:
         new QTreeWidgetItem(m_features, QStringList() <<
                             i18nc("@item: component info", "Media player support") <<   i18nc("@item: component info", "No"));
 
-#endif /* HAVE_MEDIAPLAYER */
+#endif
 
 #ifdef HAVE_DBUS
 
@@ -150,7 +150,7 @@ public:
         new QTreeWidgetItem(m_features, QStringList() <<
                             i18nc("@item: component info", "DBus support") <<           i18nc("@item: component info", "No"));
 
-#endif /* HAVE_DBUS */
+#endif
 
 #ifdef HAVE_PANORAMA
 
@@ -162,7 +162,7 @@ public:
         new QTreeWidgetItem(m_features, QStringList() <<
                             i18nc("@item: component info", "Panorama support") <<       i18nc("@item: component info", "No"));
 
-#endif /* HAVE_PANORAMA */
+#endif
 
 #ifdef HAVE_HTMLGALLERY
 
@@ -174,7 +174,7 @@ public:
         new QTreeWidgetItem(m_features, QStringList() <<
                             i18nc("@item: component info", "HTML Gallery support") <<   i18nc("@item: component info", "No"));
 
-#endif /* HAVE_HTMLGALLERY */
+#endif
 
 #ifdef HAVE_KCALENDAR
 
@@ -186,12 +186,14 @@ public:
         new QTreeWidgetItem(m_features, QStringList() <<
                             i18nc("@item: component info", "Calendar support") <<       i18nc("@item: component info", "No"));
 
-#endif /* HAVE_KCALENDAR */
+#endif
 
         new QTreeWidgetItem(m_libraries, QStringList() <<
                             i18nc("@item: component info", "LibOpenCV") <<              QLatin1String(CV_VERSION));
 
         // Database Backend information
+        // TODO: add sqlite versions here? Could be useful for debugging sqlite problems..
+        // Use this sqlite request; https://www.sqlite.org/lang_corefunc.html#sqlite_version
 
         QString dbBe = ApplicationSettings::instance()->getDbEngineParameters().databaseType;
         new QTreeWidgetItem(m_features, QStringList() <<

@@ -66,7 +66,14 @@ bool DMetadata::load(const QString& filePath, Backend* backend)
         {
             if (!(hasLoaded = loadUsingRawEngine(filePath)))
             {
-                if (!(hasLoaded = loadUsingLibheif(filePath)))
+
+                if (!(hasLoaded =
+#ifdef HAVE_HEIF
+                loadUsingLibheif(filePath)
+#else
+                false
+#endif
+                   ))
                 {
                     hasLoaded   = loadUsingImageMagick(filePath);
                     usedBackend = ImageMagickBackend;

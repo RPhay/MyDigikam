@@ -112,6 +112,9 @@ private:
     void resetMetadataChangeInfo();
     void initProgressIndicator();
 
+    void resetTitleEditPlaceholderText();
+    void resetCaptionEditPlaceholderText();
+
 Q_SIGNALS:
 
     void askToApplyChanges(const QList<ItemInfo>& infos, DisjointMetadata* hub);

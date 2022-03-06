@@ -74,9 +74,15 @@ qt6-qhash-signature,\
 qt6-deprecated-api-fixes,\
 qt6-fwd-fixes,\
 qt6-header-fixes,\
-qt6-qlatin1stringchar-to-u,\
+unexpected-flag-enumerator-value,\
+signal-with-return-value,\
+raw-environment-function,\
+qt-keywords,\
+isempty-vs-count,\
 missing-qobject-macro\
 "
+
+#qt6-qlatin1stringchar-to-u         What is that exactly ???
 
 echo "IGNORE DIRECTORIES:     $CLAZY_IGNORE_DIRS"
 echo "CHECKERS CONFIGURATION: $CLAZY_CHECKS"

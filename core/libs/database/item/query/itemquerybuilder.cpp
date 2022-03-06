@@ -988,6 +988,32 @@ bool ItemQueryBuilder::buildField(QString& sql, SearchXmlCachingReader& reader, 
             }
         }
     }
+    else if (name == QLatin1String("creationtime"))
+    {
+        if (relation == SearchXml::Interval)
+        {
+            QList<QDateTime> values = reader.valueToDateTimeList();
+
+            if (values.size() != 2)
+            {
+                qCWarning(DIGIKAM_DATABASE_LOG) << "Relation Interval requires a list of two values";
+                return false;
+            }
+
+            // to extract a part of the date we need different SQL code for SQLite and MySQL
+
+            if (CoreDbAccess::parameters().isSQLite())
+            {
+                sql += QString::fromUtf8(" (STRFTIME('%H:%M:%S', ImageInformation.creationDate) BETWEEN ? AND ?) ");
+                *boundValues << values.at(0).time() << values.at(1).time();
+            }
+            else
+            {
+                sql += QString::fromUtf8(" (TIME(ImageInformation.creationDate) BETWEEN ? AND ?) ");
+                *boundValues << values.at(0).time() << values.at(1).time();
+            }
+        }
+    }
     else if (name == QLatin1String("imagetagproperty"))
     {
         if (relation == SearchXml::Equal || relation == SearchXml::InTree)

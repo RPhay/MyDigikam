@@ -31,236 +31,46 @@ cmake_minimum_required(VERSION ${CMAKE_MIN_VERSION})
 
 # ==============================================================================
 
-option(ENABLE_KFILEMETADATASUPPORT       "Build digiKam with Plasma desktop files indexer support (default=OFF)"              OFF)
-option(ENABLE_AKONADICONTACTSUPPORT      "Build digiKam with Plasma desktop Mail Contacts support (default=OFF)"              OFF)
-option(ENABLE_MEDIAPLAYER                "Build digiKam with Media Player support (default=OFF)"                              OFF)
-option(ENABLE_DBUS                       "Build digiKam with DBUS support (default=ON)"                                       ON)
-option(ENABLE_APPSTYLES                  "Build digiKam with support for changing the widget application style (default=OFF)" OFF)
-option(ENABLE_QWEBENGINE                 "Build digiKam with QWebEngine (default=ON)"                                         ON)
-
-# Mysql support options (experimental):
-option(ENABLE_MYSQLSUPPORT               "Build digiKam with MySQL dabatase support (default=ON)"                             ON)
-option(ENABLE_INTERNALMYSQL              "Build digiKam with internal MySQL server executable (default=ON)"                   ON)
-
-# Developer options:
-option(ENABLE_DIGIKAM_MODELTEST          "Enable ModelTest on some models for debugging (default=OFF)"                        OFF)
-option(ENABLE_SANITIZERS                 "Enable ASAN and UBSAN sanitizers when available (default=OFF)"                      OFF)
-option(BUILD_WITH_CCACHE                 "Use ccache to speed up compilations"                                                OFF)
-
-# Packaging options:
-if(MINGW)
-    option(ENABLE_DRMINGW                "Enable the Dr. MinGW crash handler support for windows (default ON)"                ON)
-    option(ENABLE_MINGW_HARDENING_LINKER "Enable DEP (NX), ASLR, and high-entropy ASLR linker flags for MinGW (default ON)"   ON)
-endif()
+include(RulesOptionDefinitions)
 
 ############## Find Packages ###################
 
 # Extra check to detect Qt core with minimal version before to continue.
 
-find_package(Qt6 ${QT6_MIN_VERSION} QUIET COMPONENTS Core)
-
-if(NOT Qt6_FOUND)
-
-    find_package(Qt5 ${QT5_MIN_VERSION} REQUIRED COMPONENTS Core)
-
-    set(QT_MIN_VERSION   ${QT5_MIN_VERSION})
-    set(QT_VERSION_MAJOR 5)
-
-else()
-
-    set(QT_MIN_VERSION   ${QT6_MIN_VERSION})
-    set(QT_VERSION_MAJOR 6)
-
-endif()
-
-message(STATUS "Suitable Qt${QT_VERSION_MAJOR} >= ${QT_MIN_VERSION} detected...")
+include(RulesFindQtCore)
 
 # Now detect the whole Qt6 or Qt5 framework.
 
-find_package(Qt${QT_VERSION_MAJOR} REQUIRED
-             NO_MODULE COMPONENTS
-             Core
-             Concurrent
-             Widgets
-             Gui
-             Sql
-             Xml
-             PrintSupport
-             Network
-)
+include(RulesQtFramework)
 
-if(Qt6_FOUND)
+# KDE frameworks dependencies
 
-    find_package(Qt${QT_VERSION_MAJOR} REQUIRED
-                                       NO_MODULE
-                                       COMPONENTS
-                                       Core5Compat
-    )
-
-endif()
-
-if(ENABLE_QWEBENGINE)
-
-    find_package(Qt${QT_VERSION_MAJOR} REQUIRED
-                                       NO_MODULE
-                                       COMPONENTS
-                                       WebEngineWidgets
-    )
-
-else()
-
-    find_package(Qt${QT_VERSION_MAJOR} REQUIRED
-                                       NO_MODULE
-                                       COMPONENTS
-                                       WebKitWidgets
-    )
-
-endif()
-
-find_package(Qt${QT_VERSION_MAJOR}
-             OPTIONAL_COMPONENTS
-             DBus
-             OpenGL
-)
-
-if(Qt6_FOUND)
-
-    find_package(Qt${QT_VERSION_MAJOR}
-                 OPTIONAL_COMPONENTS
-                 OpenGLWidgets
-    )
-
-else()
-
-    find_package(Qt${QT_VERSION_MAJOR}
-                 OPTIONAL_COMPONENTS
-                 XmlPatterns                # For Rajce plugin
-    )
-
-endif()
-
-if(ENABLE_DBUS)
-
-    if(NOT Qt${QT_VERSION_MAJOR}DBus_FOUND)
-
-        set(ENABLE_DBUS OFF)
-
-    endif()
-
-endif()
-
-# Qt Dependencies For unit tests and CLI test tools
-
-if(BUILD_TESTING)
-
-    find_package(Qt${QT_VERSION_MAJOR} REQUIRED
-                                       NO_MODULE
-                                       COMPONENTS
-                                       Test
-    )
-
-    find_package(Qt${QT_VERSION_MAJOR}
-                 QUIET
-                 OPTIONAL_COMPONENTS
-                 Qml WebView  # Optional, for 'sialis' O2 library test tool.
-    )
-
-endif()
-
-# KF frameworks dependencies
-
-find_package(KF5 ${KF5_MIN_VERSION} REQUIRED
-                                    COMPONENTS
-                                    XmlGui
-                                    CoreAddons
-                                    Config
-                                    Service
-                                    WindowSystem
-                                    Solid
-                                    I18n
-)
-
-find_package(KF5 ${KF5_MIN_VERSION} QUIET
-                                    OPTIONAL_COMPONENTS
-                                    KIO                         # For Desktop integration (Widgets only).
-                                    IconThemes                  # For Desktop integration.
-                                    FileMetaData                # For Plasma destop file indexer support.
-                                    ThreadWeaver                # For Panorama tool.
-                                    NotifyConfig                # Plasma desktop application notify configuration.
-                                    Notifications               # Plasma desktop notifications integration.
-)
-
-find_package(KF5 ${AKONADI_MIN_VERSION} QUIET
-                                        OPTIONAL_COMPONENTS
-                                        AkonadiContact          # For KDE Mail Contacts support.
-                                        Contacts                # API for contacts/address book data.
-)
-
-find_package(KF5 ${KSANE_MIN_VERSION} QUIET
-                                      OPTIONAL_COMPONENTS
-                                      Sane                      # For digital scanner support.
-)
-
-find_package(KF5 ${CALENDAR_MIN_VERSION} QUIET
-                                         OPTIONAL_COMPONENTS
-                                         CalendarCore           # For Calendar tool.
-)
-
-if ("${KF5CalendarCore_VERSION}" VERSION_GREATER 5.6.40)
-
-    set(HAVE_KCALENDAR_QDATETIME TRUE)
-
-endif()
-
-if(ENABLE_AKONADICONTACTSUPPORT AND (NOT KF5AkonadiContact_FOUND OR NOT KF5Contacts_FOUND))
-
-    set(ENABLE_AKONADICONTACTSUPPORT OFF)
-
-endif()
-
-if(ENABLE_KFILEMETADATASUPPORT AND NOT KF5FileMetaData_FOUND)
-
-    set(ENABLE_KFILEMETADATASUPPORT OFF)
-
-endif()
-
-# Check if KIO have been compiled with KIOWidgets. digiKam only needs this one.
-
-if(KF5KIO_FOUND)
-
-    get_target_property(KIOWidgets_INCLUDE_DIRS KF5::KIOWidgets
-                        INTERFACE_INCLUDE_DIRECTORIES)
-    message(STATUS "KF5::KIOWidgets include dirs: ${KIOWidgets_INCLUDE_DIRS}")
-
-    if(NOT KIOWidgets_INCLUDE_DIRS)
-
-        message(STATUS "KF5::KIOWidgets not available in shared KIO library. KIO support disabled.")
-        set(KF5KIO_FOUND FALSE)
-
-    endif()
-
-endif()
+include(RulesKDEFramework)
 
 # ==============================================================================
 # Dependencies Rules
 
 # mandatory
 
-DETECT_JPEG()
-set(DIGIKAM_LIBJPEG_DIR libjpeg/${JPEG_LIB_VERSION})
-message(STATUS "Using libjpeg sub-directory: ${DIGIKAM_LIBJPEG_DIR}")
+include(RulesLibJpeg)
 
 find_package(TIFF)
 find_package(PNG)
 find_package(Boost)
 find_package(LCMS2)
-find_package(EXPAT)    # For DNGWriter: XMP SDK need Expat library to compile.
-find_package(Threads)  # For DNGWriter and LibRaw which needs native threads support.
-find_package(X265)     # For HEIF encoding support.
+find_package(EXPAT)         # For DNGWriter: XMP SDK need Expat library to compile.
+find_package(Threads)       # For DNGWriter and LibRaw which needs native threads support.
+find_package(Libheif)       # For HEIF support.
 
-if(NOT X265_FOUND)
+if(HEIF_FOUND)
 
-    set(X265_LIBRARIES "")
+    find_package(X265)      # For HEIF encoding support.
+
+    if(NOT X265_FOUND)
+
+        set(X265_LIBRARIES "")
+
+    endif()
 
 endif()
 
@@ -405,6 +215,7 @@ MACRO_BOOL_TO_01(ENABLE_APPSTYLES             HAVE_APPSTYLE_SUPPORT)
 MACRO_BOOL_TO_01(ENABLE_QWEBENGINE            HAVE_QWEBENGINE)
 MACRO_BOOL_TO_01(ENABLE_DRMINGW               HAVE_DRMINGW)
 MACRO_BOOL_TO_01(ImageMagick_Magick++_FOUND   HAVE_IMAGE_MAGICK)
+MACRO_BOOL_TO_01(HEIF_FOUND                   HAVE_HEIF)
 MACRO_BOOL_TO_01(X265_FOUND                   HAVE_X265)
 MACRO_BOOL_TO_01(Qt5XmlPatterns_FOUND         HAVE_QTXMLPATTERNS)
 MACRO_BOOL_TO_01(CCACHE_FOUND                 HAVE_CCACHE)
@@ -439,7 +250,7 @@ PRINT_LIBRARY_STATUS("liblcms"       "https://github.com/mm2/Little-CMS"        
 PRINT_LIBRARY_STATUS("libopencv"     "https://github.com/opencv/opencv"                  "(version >= ${OPENCV_MIN_VERSION})" OpenCV_FOUND)
 PRINT_LIBRARY_STATUS("libpng"        "https://libpng.sourceforge.io/"                    "(version >= 1.2.7)"                 PNG_FOUND)
 PRINT_LIBRARY_STATUS("libpthread"    "https://www.gnu.org/software/hurd/libpthread.html" "(version >= 2.0.0)"                 CMAKE_USE_PTHREADS_INIT OR CMAKE_USE_WIN32_THREADS_INIT)
-PRINT_LIBRARY_STATUS("libqt"         "https://code.qt.io/cgit/qt/"                       "(version >= ${QT_MIN_VERSION})"     Qt${QT_VERSION_MAJOR}_FOUND)
+PRINT_LIBRARY_STATUS("libqt"         "https://code.qt.io/cgit/qt/qtbase.git/"            "(version >= ${QT_MIN_VERSION})"     Qt${QT_VERSION_MAJOR}_FOUND)
 PRINT_LIBRARY_STATUS("libtiff"       "https://gitlab.com/libtiff/libtiff/"               "(version >= 3.8.2)"                 TIFF_FOUND)
 
 # ==============================================================================
@@ -449,7 +260,7 @@ PRINT_OPTIONAL_LIBRARY_STATUS("doxygen"           "https://github.com/doxygen/do
 PRINT_OPTIONAL_LIBRARY_STATUS("ccache"            "https://ccache.dev"                                              "(version >= 3.0.0)"                    "digiKam will be compiled without CCACHE build support."                      HAVE_CCACHE)
 PRINT_OPTIONAL_LIBRARY_STATUS("flex"              "https://github.com/westes/flex"                                  "(version >= 2.5.0)"                    "digiKam will be compiled without Panorama support."                          FLEX_FOUND)
 PRINT_OPTIONAL_LIBRARY_STATUS("libakonadicontact" "https://invent.kde.org/pim/akonadi-contacts"                     "(version >= ${AKONADI_MIN_VERSION})"   "digiKam will be compiled without KDE desktop address book support."          KF5AkonadiContact_FOUND)
-PRINT_OPTIONAL_LIBRARY_STATUS("libmagick++"       "https://www.imagemagick.org"                                     "(version >= 6.7.0)"                    "digiKam will be compiled without ImageMagick codecs."                        HAVE_IMAGE_MAGICK)
+PRINT_OPTIONAL_LIBRARY_STATUS("libmagick++"       "https://github.com/ImageMagick/ImageMagick.git"                  "(version >= 6.7.0)"                    "digiKam will be compiled without ImageMagick codecs."                        HAVE_IMAGE_MAGICK)
 PRINT_OPTIONAL_LIBRARY_STATUS("libeigen3"         "https://github.com/eigenteam/eigen-git-mirror"                   "(version >= 3.0.0)"                    "digiKam will be compiled without Refocus tool support."                      Eigen3_FOUND)
 PRINT_OPTIONAL_LIBRARY_STATUS("libgphoto2"        "https://github.com/gphoto/libgphoto2"                            "(version >= 2.4.0)"                    "digiKam will be compiled without GPhoto2 camera drivers support."            Gphoto2_FOUND)
 PRINT_OPTIONAL_LIBRARY_STATUS("libjasper"         "https://github.com/mdadams/jasper"                               "(version >= 1.7.0)"                    "digiKam will be compiled without JPEG2000 support."                          Jasper_FOUND)
@@ -460,18 +271,23 @@ PRINT_OPTIONAL_LIBRARY_STATUS("libkio"            "https://invent.kde.org/framew
 PRINT_OPTIONAL_LIBRARY_STATUS("libknotifications" "https://invent.kde.org/frameworks/knotifyconfig"                 "(version >= ${KF5_MIN_VERSION})"       "digiKam will be compiled without KDE desktop notifications support."         KF5Notifications_FOUND)
 PRINT_OPTIONAL_LIBRARY_STATUS("libknotifyconfig"  "https://invent.kde.org/frameworks/knotifications"                "(version >= ${KF5_MIN_VERSION})"       "digiKam will be compiled without KDE desktop notify configuration support."  KF5NotifyConfig_FOUND)
 PRINT_OPTIONAL_LIBRARY_STATUS("libksane"          "https://invent.kde.org/graphics/libksane"                        "(version >= ${KSANE_MIN_VERSION})"     "digiKam will be compiled without flat scanners support."                     KF5Sane_FOUND)
-PRINT_OPTIONAL_LIBRARY_STATUS("liblensfun"        "https://lensfun.sourceforge.net"                                 "(version >= 0.2.6)"                    "digiKam will be compiled without Lens Auto Correction tool support."         LensFun_FOUND)
-PRINT_OPTIONAL_LIBRARY_STATUS("liblqr-1"          "https://liblqr.wikidot.com"                                      "(version >= 0.4.1)"                    "digiKam will be compiled without Contents Aware Resizer tool support."       LQR-1_FOUND)
+PRINT_OPTIONAL_LIBRARY_STATUS("liblensfun"        "https://github.com/lensfun/lensfun"                              "(version >= 0.2.6)"                    "digiKam will be compiled without Lens Auto Correction tool support."         LensFun_FOUND)
+PRINT_OPTIONAL_LIBRARY_STATUS("liblqr-1"          "https://github.com/carlobaldassi/liblqr"                         "(version >= 0.4.1)"                    "digiKam will be compiled without Contents Aware Resizer tool support."       LQR-1_FOUND)
 PRINT_OPTIONAL_LIBRARY_STATUS("libmarble"         "https://invent.kde.org/education/marble"                         "(version >= 0.22.0)"                   "digiKam will be compiled without geolocation maps support."                  Marble_FOUND)
 PRINT_OPTIONAL_LIBRARY_STATUS("libqtav"           "https://github.com/wang-bin/QtAV"                                "(version >= ${QTAV_MIN_VERSION})"      "digiKam will be compiled without Media Player support."                      QtAV_FOUND)
 PRINT_OPTIONAL_LIBRARY_STATUS("libthreadweaver"   "https://invent.kde.org/frameworks/threadweaver"                  "(version >= ${KF5_MIN_VERSION})"       "digiKam will be compiled without Panorama support."                          KF5ThreadWeaver_FOUND)
 PRINT_OPTIONAL_LIBRARY_STATUS("libxml2"           "https://gitlab.gnome.org/GNOME/libxml2/"                         "(version >= 2.7.0)"                    "digiKam will be compiled without HTMLGallery support."                       LibXml2_FOUND)
 PRINT_OPTIONAL_LIBRARY_STATUS("libxslt"           "https://gitlab.gnome.org/GNOME/libxslt"                          "(version >= 1.1.0)"                    "digiKam will be compiled without HTMLGallery support."                       LibXslt_FOUND)
-PRINT_OPTIONAL_LIBRARY_STATUS("libx265"           "https://x265.org"                                                "(version >= 2.2)"                      "digiKam will be compiled without HEIF encoding support."                     X265_FOUND)
-PRINT_OPTIONAL_LIBRARY_STATUS("OpenGL"            "https://www.mesa3d.org"                                          "(version >= 11.0.0)"                   "digiKam will be compiled without OpenGL support."                            HAVE_OPENGL)
+PRINT_OPTIONAL_LIBRARY_STATUS("libheif"           "https://github.com/strukturag/libheif"                           "(version >= 1.6.0)"                    "digiKam will be compiled without HEIF support."                              HEIF_FOUND)
+PRINT_OPTIONAL_LIBRARY_STATUS("libx265"           "https://github.com/videolan/x265.git"                            "(version >= 2.2)"                      "digiKam will be compiled without HEIF encoding support."                     X265_FOUND)
+PRINT_OPTIONAL_LIBRARY_STATUS("OpenGL"            "https://gitlab.freedesktop.org/mesa/mesa/"                       "(version >= 11.0.0)"                   "digiKam will be compiled without OpenGL support."                            HAVE_OPENGL)
 
 if(NOT Qt6_FOUND)
-    PRINT_OPTIONAL_LIBRARY_STATUS("libqtxmlpatterns"  "https://www.qt.io"                                               "(version >= ${QT_MIN_VERSION})"        "digiKam will be compiled without Rajce tool support."                        HAVE_QTXMLPATTERNS)
+
+    # NOTE: This module have been removed with Qt6.
+
+PRINT_OPTIONAL_LIBRARY_STATUS("libqtxmlpatterns"  "https://code.qt.io/cgit/qt/qtxmlpatterns.git/"                   "(version >= ${QT_MIN_VERSION})"        "digiKam will be compiled without Rajce tool support."                        HAVE_QTXMLPATTERNS)
+
 endif()
 
 # ==============================================================================
@@ -615,9 +431,6 @@ if(DIGIKAM_CAN_BE_COMPILED)
     # for config headers digikam_version.h digikam_gitversion.h digikam_config.h
     # digikam_dbconfig.h digikam_opencv.h
     include_directories(${CMAKE_CURRENT_BINARY_DIR}/app/utils)
-
-    # for libheif version header
-    include_directories(${CMAKE_CURRENT_BINARY_DIR}/libs/heifutils)
 
     # ==========================================================================
     # Common targets parts

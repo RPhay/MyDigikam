@@ -178,39 +178,55 @@ bool DImgTIFFLoader::load(const QString& filePath, DImgLoaderObserver* const obs
     {
         case PHOTOMETRIC_MINISWHITE:
         case PHOTOMETRIC_MINISBLACK:
+        {
             colorModel = DImg::GRAYSCALE;
             break;
+        }
 
         case PHOTOMETRIC_RGB:
+        {
             colorModel = DImg::RGB;
             break;
+        }
 
         case PHOTOMETRIC_PALETTE:
+        {
             colorModel = DImg::INDEXED;
             break;
+        }
 
         case PHOTOMETRIC_MASK:
+        {
             colorModel = DImg::MONOCHROME;
             break;
+        }
 
         case PHOTOMETRIC_SEPARATED:
+        {
             colorModel = DImg::CMYK;
             break;
+        }
 
         case PHOTOMETRIC_YCBCR:
+        {
             colorModel = DImg::YCBCR;
             break;
+        }
 
         case PHOTOMETRIC_CIELAB:
         case PHOTOMETRIC_ICCLAB:
         case PHOTOMETRIC_ITULAB:
+        {
             colorModel = DImg::CIELAB;
             break;
+        }
 
         case PHOTOMETRIC_LOGL:
         case PHOTOMETRIC_LOGLUV:
+        {
             colorModel = DImg::COLORMODELRAW;
             break;
+        }
     }
 
     if (samples_per_pixel == 4)
@@ -387,17 +403,23 @@ bool DImgTIFFLoader::load(const QString& filePath, DImgLoaderObserver* const obs
                                 switch (val)
                                 {
                                     case 0:
+                                    {
                                         p[2] = *stripPtr++;
                                         p[3] = 0xFFFF;
                                         break;
+                                    }
 
                                     case 1:
+                                    {
                                         p[1] = *stripPtr++;
                                         break;
+                                    }
 
                                     case 2:
+                                    {
                                         p[0] = *stripPtr++;
                                         break;
+                                    }
                                 }
 
                                 dataPtr += 4;
@@ -446,20 +468,28 @@ bool DImgTIFFLoader::load(const QString& filePath, DImgLoaderObserver* const obs
                                 switch (val)
                                 {
                                     case 0:
+                                    {
                                         p[2] = *stripPtr++;
                                         break;
+                                    }
 
                                     case 1:
+                                    {
                                         p[1] = *stripPtr++;
                                         break;
+                                    }
 
                                     case 2:
+                                    {
                                         p[0] = *stripPtr++;
                                         break;
+                                    }
 
                                     case 3:
+                                    {
                                         p[3] = *stripPtr++;
                                         break;
+                                    }
                                 }
 
                                 dataPtr += 4;
@@ -607,17 +637,23 @@ bool DImgTIFFLoader::load(const QString& filePath, DImgLoaderObserver* const obs
                                 switch (val)
                                 {
                                     case 0:
+                                    {
                                         p[2] = (ushort)qBound(0.0, pow((double)*stripPtr++ / factor, scale) * 65535.0, 65535.0);
                                         p[3] = 0xFFFF;
                                         break;
+                                    }
 
                                     case 1:
+                                    {
                                         p[1] = (ushort)qBound(0.0, pow((double)*stripPtr++ / factor, scale) * 65535.0, 65535.0);
                                         break;
+                                    }
 
                                     case 2:
+                                    {
                                         p[0] = (ushort)qBound(0.0, pow((double)*stripPtr++ / factor, scale) * 65535.0, 65535.0);
                                         break;
+                                    }
                                 }
 
                                 dataPtr += 4;
@@ -666,20 +702,28 @@ bool DImgTIFFLoader::load(const QString& filePath, DImgLoaderObserver* const obs
                                 switch (val)
                                 {
                                     case 0:
+                                    {
                                         p[2] = (ushort)qBound(0.0, pow((double)*stripPtr++ / factor, scale) * 65535.0, 65535.0);
                                         break;
+                                    }
 
                                     case 1:
+                                    {
                                         p[1] = (ushort)qBound(0.0, pow((double)*stripPtr++ / factor, scale) * 65535.0, 65535.0);
                                         break;
+                                    }
 
                                     case 2:
+                                    {
                                         p[0] = (ushort)qBound(0.0, pow((double)*stripPtr++ / factor, scale) * 65535.0, 65535.0);
                                         break;
+                                    }
 
                                     case 3:
+                                    {
                                         p[3] = (ushort)qBound(0.0, (double)*stripPtr++ * 65535.0, 65535.0);
                                         break;
+                                    }
                                 }
 
                                 dataPtr += 4;
@@ -775,7 +819,7 @@ bool DImgTIFFLoader::load(const QString& filePath, DImgLoaderObserver* const obs
                     return false;
                 }
 
-                pixelsRead      = rows_to_read * img.width;
+                pixelsRead      = (qint64)rows_to_read * (qint64)img.width;
 
                 uchar* stripPtr = (uchar*)(strip.data());
                 uchar* dataPtr  = (uchar*)(data.data() + offset);

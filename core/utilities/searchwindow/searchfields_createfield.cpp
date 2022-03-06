@@ -178,6 +178,15 @@ SearchField* SearchField::createField(const QString& name, SearchFieldGroup* con
 
         return field;
     }
+    else if (name == QLatin1String("creationtime"))
+    {
+        SearchFieldRangeTime* const field = new SearchFieldRangeTime(parent);
+        field->setFieldName(name);
+        field->setText(i18n("Time"), i18n("Return items with created time between"));
+        field->setBetweenText(i18nc("'Return items with created time between...and...", "and"));
+
+        return field;
+    }
     else if (name == QLatin1String("orientation"))
     {
         // choice

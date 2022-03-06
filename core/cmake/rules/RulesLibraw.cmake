@@ -48,28 +48,6 @@ else()
 
 endif()
 
-# JPEG library check
-
-message(STATUS "Looking for LibJpeg")
-
-if(JPEG_FOUND)
-
-    include_directories(${JPEG_INCLUDE_DIRS})
-
-    # JPEG lib version is done on top level through MacroJPEG.cmake
-
-    if (${JPEG_LIB_VERSION} LESS 80)
-
-        set(JPEG8_FOUND FALSE)
-
-    else()
-
-        set(JPEG8_FOUND TRUE)
-
-    endif()
-
-endif()
-
 # Flag to use libjpeg with LibRaw DNG lossy codec
 
 if(JPEG8_FOUND)

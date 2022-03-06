@@ -97,6 +97,7 @@ void SearchGroup::setup(Type type)
     group->setLabel(label);
 
     group->addField(SearchField::createField(QLatin1String("creationdate"),     group));
+    group->addField(SearchField::createField(QLatin1String("creationtime"),     group));
     group->addField(SearchField::createField(QLatin1String("rating"),           group));
     group->addField(SearchField::createField(QLatin1String("labels"),           group));
     group->addField(SearchField::createField(QLatin1String("dimension"),        group));

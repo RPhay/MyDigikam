@@ -4,7 +4,7 @@
  * https://www.digikam.org
  *
  * Date        : 2008-07-11
- * Description : shared libraries list dialog
+ * Description : shared libraries list dialog common to digiKam and Showfoto
  *
  * Copyright (C) 2008-2022 by Gilles Caulier <caulier dot gilles at gmail dot com>
  *
@@ -30,7 +30,7 @@
 #include <QString>
 #include <QTreeWidget>
 #include <QHeaderView>
-#include <QThreadPool>
+#include <QThread>
 #include <QStandardPaths>
 #include <QFile>
 #include <QTextStream>
@@ -61,11 +61,11 @@
 
 #ifdef HAVE_LENSFUN
 #   include "lensfuniface.h"
-#endif // HAVE_LENSFUN
+#endif
 
 #ifdef HAVE_MARBLE
 #   include "mapwidget.h"
-#endif // HAVE_MARBLE
+#endif
 
 #ifdef HAVE_IMAGE_MAGICK
 
@@ -103,10 +103,31 @@ extern "C"
 
 #ifdef HAVE_JASPER
 #   include <jasper/jas_version.h>
-#endif // HAVE_JASPER
+#endif
 
 #include <png.h>
 #include <tiffvers.h>
+
+#ifdef HAVE_HEIF
+#   include <libheif/heif_version.h>
+#endif
+
+// libx265 includes
+
+#if defined(__clang__)
+#   pragma clang diagnostic push
+#   pragma clang diagnostic ignored "-Wundef"
+#   pragma clang diagnostic ignored "-Wgnu-anonymous-struct"
+#   pragma clang diagnostic ignored "-Wnested-anon-types"
+#endif
+
+#ifdef HAVE_X265
+#   include <x265.h>
+#endif
+
+#if defined(__clang__)
+#   pragma clang diagnostic pop
+#endif
 
 // Avoid Warnings under Win32
 #undef HAVE_STDLIB_H
@@ -182,7 +203,7 @@ LibsInfoDlg::LibsInfoDlg(QWidget* const parent)
 #else
     new QTreeWidgetItem(m_features, QStringList() <<
                         i18nc(CONTEXT, "Eigen support") <<                  SUPPORTED_NO);
-#endif // HAVE_EIGEN3
+#endif
 
 #ifdef HAVE_QWEBENGINE
     new QTreeWidgetItem(m_libraries, QStringList() <<
@@ -217,7 +238,7 @@ LibsInfoDlg::LibsInfoDlg(QWidget* const parent)
 #else
     new QTreeWidgetItem(m_features, QStringList() <<
                         i18nc(CONTEXT, "LensFun support") <<                SUPPORTED_NO);
-#endif // HAVE_LENSFUN
+#endif
 
 #ifdef HAVE_LIBLQR_1
     new QTreeWidgetItem(m_features, QStringList() <<
@@ -225,7 +246,7 @@ LibsInfoDlg::LibsInfoDlg(QWidget* const parent)
 #else
     new QTreeWidgetItem(m_features, QStringList() <<
                         i18nc(CONTEXT, "LibLqr support") <<                 SUPPORTED_NO);
-#endif // HAVE_LIBLQR_1
+#endif
 
 #ifdef HAVE_VKONTAKTE
     new QTreeWidgetItem(m_features, QStringList() <<
@@ -233,7 +254,7 @@ LibsInfoDlg::LibsInfoDlg(QWidget* const parent)
 #else
     new QTreeWidgetItem(m_features, QStringList() <<
                         i18nc(CONTEXT, "VKontakte support") <<              SUPPORTED_NO);
-#endif // HAVE_VKONTAKTE
+#endif
 
 #ifdef HAVE_IMAGE_MAGICK
     new QTreeWidgetItem(m_libraries, QStringList() <<
@@ -241,15 +262,27 @@ LibsInfoDlg::LibsInfoDlg(QWidget* const parent)
 #else
     new QTreeWidgetItem(m_features, QStringList() <<
                         i18nc(CONTEXT, "ImageMagick codecs support") <<     SUPPORTED_NO);
-#endif // HAVE_IMAGE_MAGICK
+#endif
 
-#ifdef HAVE_X265
+#ifdef HAVE_HEIF
+    new QTreeWidgetItem(m_libraries, QStringList() <<
+                        i18nc(CONTEXT, "LibHEIF") <<                        QLatin1String(LIBHEIF_VERSION));
     new QTreeWidgetItem(m_features, QStringList() <<
-                        i18nc(CONTEXT, "HEIF encoding support") <<          SUPPORTED_YES);
+                        i18nc(CONTEXT, "HEIF reading support") <<           SUPPORTED_YES);
 #else
     new QTreeWidgetItem(m_features, QStringList() <<
-                        i18nc(CONTEXT, "HEIF encoding support") <<          SUPPORTED_NO);
-#endif // HAVE_X265
+                        i18nc(CONTEXT, "HEIF reading support") <<           SUPPORTED_NO);
+#endif
+
+#ifdef HAVE_X265
+    new QTreeWidgetItem(m_libraries, QStringList() <<
+                        i18nc(CONTEXT, "Libx265") <<                        QLatin1String(x265_version_str));
+    new QTreeWidgetItem(m_features, QStringList() <<
+                        i18nc(CONTEXT, "HEIF writing support") <<           SUPPORTED_YES);
+#else
+    new QTreeWidgetItem(m_features, QStringList() <<
+                        i18nc(CONTEXT, "HEIF Writing support") <<           SUPPORTED_NO);
+#endif
 
     QString tiffver = QLatin1String(TIFFLIB_VERSION_STR);
     tiffver         = tiffver.left(tiffver.indexOf(QLatin1Char('\n')));
@@ -284,7 +317,7 @@ LibsInfoDlg::LibsInfoDlg(QWidget* const parent)
 #else
     new QTreeWidgetItem(m_features, QStringList() <<
                         i18nc(CONTEXT, "LibJasper support") <<              SUPPORTED_NO);
-#endif // HAVE_JASPER
+#endif
 
 #ifdef HAVE_MARBLE
     new QTreeWidgetItem(m_libraries, QStringList() <<
@@ -292,11 +325,9 @@ LibsInfoDlg::LibsInfoDlg(QWidget* const parent)
 #else
     new QTreeWidgetItem(m_features, QStringList() <<
                         i18nc(CONTEXT, "Marble support") <<                 SUPPORTED_NO);
-#endif // HAVE_MARBLE
+#endif
 
-    // TODO: add sqlite versions here? Could be useful for debugging sqlite problems..
-
-    int nbcore = QThreadPool::globalInstance()->maxThreadCount();
+    int nbcore = QThread::idealThreadCount();
     new QTreeWidgetItem(m_features, QStringList() <<
                         i18ncp(CONTEXT, "CPU core", "CPU cores", nbcore) << QString::fromLatin1("%1").arg(nbcore));
 

@@ -203,9 +203,10 @@ ItemDescEditTab::ItemDescEditTab(QWidget* const parent)
 
     d->titleEdit          = new AltLangStrEdit(captionTagsArea);
     d->titleEdit->setTitle(i18nc("@title: comment title string", "Title:"));
-    d->titleEdit->setPlaceholderText(i18n("Enter title here."));
+    resetTitleEditPlaceholderText();
 
     d->captionsEdit       = new CaptionEdit(captionTagsArea);
+    resetCaptionEditPlaceholderText();
 
     DHBox* const dateBox  = new DHBox(captionTagsArea);
     new QLabel(i18n("Date:"), dateBox);
@@ -797,9 +798,11 @@ void ItemDescEditTab::setInfos(const ItemInfoList& infos)
         d->hub.reset();
         d->captionsEdit->blockSignals(true);
         d->captionsEdit->reset();
+        resetCaptionEditPlaceholderText();
         d->captionsEdit->blockSignals(false);
         d->titleEdit->blockSignals(true);
         d->titleEdit->reset();
+        resetTitleEditPlaceholderText();
         d->titleEdit->blockSignals(false);
         d->currInfos.clear();
         resetMetadataChangeInfo();
@@ -1271,10 +1274,30 @@ void ItemDescEditTab::setMetadataWidgetStatus(int status, QWidget* const widget)
         QPalette palette = widget->palette();
         palette.setColor(QPalette::Text, palette.color(QPalette::Disabled, QPalette::Text));
         widget->setPalette(palette);
+
+        QString msg = i18n("Selected items have different text here.");
+
+        if      (qobject_cast<AltLangStrEdit*>(widget))
+        {
+            d->titleEdit->setPlaceholderText(msg);
+        }
+        else if (qobject_cast<CaptionEdit*>(widget))
+        {
+            d->captionsEdit->setPlaceholderText(msg);
+        }
     }
     else
     {
         widget->setPalette(QPalette());
+
+        if      (qobject_cast<AltLangStrEdit*>(widget))
+        {
+            resetTitleEditPlaceholderText();
+        }
+        else if (qobject_cast<CaptionEdit*>(widget))
+        {
+            resetCaptionEditPlaceholderText();
+        }
     }
 }
 
@@ -1580,6 +1603,16 @@ void ItemDescEditTab::initProgressIndicator()
         connect(this, SIGNAL(signalProgressFinished()),
                 item, SLOT(slotCompleted()));
     }
+}
+
+void ItemDescEditTab::resetTitleEditPlaceholderText()
+{
+    d->titleEdit->setPlaceholderText(i18n("Enter title here."));
+}
+
+void ItemDescEditTab::resetCaptionEditPlaceholderText()
+{
+    d->captionsEdit->setPlaceholderText(i18n("Enter caption text here."));
 }
 
 AddTagsLineEdit* ItemDescEditTab::getNewTagEdit() const

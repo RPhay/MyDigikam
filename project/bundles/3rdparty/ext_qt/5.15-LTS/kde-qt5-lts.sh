@@ -1,6 +1,7 @@
 #!/bin/bash
 
 # Script to build a Qt 5.15 LST from KDE compilation patches repository.
+# https://community.kde.org/Qt5PatchCollection
 #
 # Arguments : $1 : download directory.
 #             $2 : QtWebEngine version.

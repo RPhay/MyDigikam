@@ -317,6 +317,43 @@ private:
 
 //-----------------------------------------------------------------------------
 
+class SearchFieldRangeTime : public SearchField
+{
+    Q_OBJECT
+
+public:
+
+    SearchFieldRangeTime(QObject* const parent);
+
+    void setBetweenText(const QString& between);
+    void setBoundary(const QTime& min, const QTime& max);
+
+    void setupValueWidgets(QGridLayout* layout, int row, int column) override;
+    void read(SearchXmlCachingReader& reader) override;
+    void write(SearchXmlWriter& writer) override;
+    void reset() override;
+    void setValueWidgetsVisible(bool visible) override;
+    QList<QRect> valueWidgetRects() const override;
+
+protected Q_SLOTS:
+
+    void valueChanged();
+
+protected:
+
+    QTimeEdit* m_firstTimeEdit;
+    QTimeEdit* m_secondTimeEdit;
+    QLabel*    m_betweenLabel;
+
+private:
+
+    // Disable
+    SearchFieldRangeTime(const SearchFieldRangeTime&)            = delete;
+    SearchFieldRangeTime& operator=(const SearchFieldRangeTime&) = delete;
+};
+
+//-----------------------------------------------------------------------------
+
 class SearchFieldChoice : public SearchField
 {
     Q_OBJECT

@@ -15,7 +15,7 @@ BUGFIXES:
 004 ==> 450467 - digiKam git source build fails.
 005 ==> 450642 - Provide an option to open the light table after click on thumbnail.
 006 ==> 450643 - Expose menus optionally in the toolbar : burger main menu feature.
-007 ==> 
+007 ==> 451017 - Search by time of day.
 008 ==> 
 009 ==> 
 010 ==> 

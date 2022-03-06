@@ -51,6 +51,8 @@ public:
     void setValues(const CaptionsMap& values);
     CaptionsMap& values()           const;
 
+    void setPlaceholderText(const QString& msg);
+
     void setCurrentLanguageCode(const QString& lang);
     QString currentLanguageCode()   const;
 

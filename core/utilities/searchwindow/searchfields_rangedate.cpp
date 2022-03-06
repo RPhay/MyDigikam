@@ -311,4 +311,138 @@ void SearchFieldRangeDate::valueChanged()
     setValidValueState(m_firstDateEdit->date().isValid() || m_secondDateEdit->date().isValid());
 }
 
+//-----------------------------------------------------------------------------
+
+SearchFieldRangeTime::SearchFieldRangeTime(QObject* const parent)
+    : SearchField     (parent),
+      m_firstTimeEdit (nullptr),
+      m_secondTimeEdit(nullptr)
+{
+    m_betweenLabel = new QLabel;
+}
+
+void SearchFieldRangeTime::setupValueWidgets(QGridLayout* layout, int row, int column)
+{
+    m_firstTimeEdit  = new QTimeEdit;
+    m_secondTimeEdit = new QTimeEdit;
+
+    layout->addWidget(m_firstTimeEdit,  row, column);
+    layout->addWidget(m_betweenLabel,   row, column + 1, Qt::AlignHCenter);
+    layout->addWidget(m_secondTimeEdit, row, column + 2);
+
+    connect(m_firstTimeEdit, SIGNAL(timeChanged(QTime)),
+            this, SLOT(valueChanged()));
+
+    connect(m_secondTimeEdit, SIGNAL(timeChanged(QTime)),
+            this, SLOT(valueChanged()));
+}
+
+void SearchFieldRangeTime::setBetweenText(const QString& between)
+{
+    m_betweenLabel->setText(between);
+}
+
+void SearchFieldRangeTime::read(SearchXmlCachingReader& reader)
+{
+    SearchXml::Relation relation = reader.fieldRelation();
+
+    if      (relation == SearchXml::Interval)
+    {
+        QList<QDateTime> dates = reader.valueToDateTimeList();
+
+        if (dates.size() != 2)
+        {
+            return;
+        }
+
+        m_firstTimeEdit->setTime(dates.first().time());
+        m_secondTimeEdit->setTime(dates.last().time());
+    }
+
+    valueChanged();
+}
+
+void SearchFieldRangeTime::write(SearchXmlWriter& writer)
+{
+    if (m_firstTimeEdit->time().isValid() && m_secondTimeEdit->time().isValid())
+    {
+        int time = m_firstTimeEdit->time().hour()   +
+                   m_firstTimeEdit->time().minute() +
+                   m_secondTimeEdit->time().hour()  +
+                   m_secondTimeEdit->time().minute();
+
+        if (time > 0)
+        {
+            QDateTime firstDate = QDateTime::currentDateTime();
+            firstDate.setTime(m_firstTimeEdit->time());
+
+            QDateTime secondDate = QDateTime::currentDateTime();
+            secondDate.setTime(m_secondTimeEdit->time());
+
+            writer.writeField(m_name, SearchXml::Interval);
+            writer.writeValue(QList<QDateTime>() << firstDate << secondDate);
+            writer.finishField();
+        }
+    }
+}
+
+void SearchFieldRangeTime::reset()
+{
+    m_firstTimeEdit->setTime(QTime(0, 0, 0, 0));
+    m_secondTimeEdit->setTime(QTime(0, 0, 0, 0));
+
+    valueChanged();
+}
+
+void SearchFieldRangeTime::setBoundary(const QTime& min, const QTime& max)
+{
+    // something here?
+
+    Q_UNUSED(min);
+    Q_UNUSED(max);
+}
+
+void SearchFieldRangeTime::setValueWidgetsVisible(bool visible)
+{
+    m_firstTimeEdit->setVisible(visible);
+    m_secondTimeEdit->setVisible(visible);
+    m_betweenLabel->setVisible(visible);
+}
+
+QList<QRect> SearchFieldRangeTime::valueWidgetRects() const
+{
+    QList<QRect> rects;
+    rects << m_firstTimeEdit->geometry();
+    rects << m_secondTimeEdit->geometry();
+
+    return rects;
+}
+
+void SearchFieldRangeTime::valueChanged()
+{
+    int time       = 0;
+    bool validTime = (m_firstTimeEdit->time().isValid() &&
+                      m_secondTimeEdit->time().isValid());
+
+    if (validTime)
+    {
+        QTime secondTime = m_secondTimeEdit->time();
+
+        if (m_firstTimeEdit->time() >= secondTime)
+        {
+            secondTime = m_firstTimeEdit->time();
+        }
+
+        m_secondTimeEdit->setTime(QTime(secondTime.hour(),
+                                        secondTime.minute(), 59));
+
+        time = m_firstTimeEdit->time().hour()   +
+               m_firstTimeEdit->time().minute() +
+               m_secondTimeEdit->time().hour()  +
+               m_secondTimeEdit->time().minute();
+    }
+
+    setValidValueState(validTime && (time > 0));
+}
+
 } // namespace Digikam

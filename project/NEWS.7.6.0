@@ -3,7 +3,6 @@ digiKam 7.6.0 - Release date: 2022-03-06
 *****************************************************************************************************
 NEW FEATURES:
 
-General: Update Libraw to snapshot 2022-01-16.
 General: Use Qt5.15 LTS patches collection git repository from KDE to build AppImage Linux bundle (snapshot 2022-01-23).
 General: All bundles use last KF5 framework 5.90.
 General: All bundles generate a manifest text file listing git revisions of all upstream libraries used by application.
