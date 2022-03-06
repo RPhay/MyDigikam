@@ -407,6 +407,17 @@ void UndoManager::clearPreviousOriginData()
             return;
         }
     }
+
+    for (int i = d->redoActions.size() - 1 ; i >= 0 ; --i)
+    {
+        UndoAction* const action = d->redoActions[i];
+
+        if (action->hasFileOriginData())
+        {
+            action->setFileOriginData(QVariant(), DImageHistory());
+            return;
+        }
+    }
 }
 
 bool UndoManager::putImageDataAndHistory(DImg* const img, int stepsBack) const
