@@ -205,7 +205,7 @@ void ImgurImagesList::slotContextMenuRequested()
 
 void ImgurImagesList::slotCopyImurgURL()
 {
-    QClipboard* const clipboard = QApplication::clipboard();
+    QClipboard* const clipboard               = QApplication::clipboard();
 
     QList<QTreeWidgetItem*> selectedItemsList = listView()->selectedItems();
     QList<int> itemsIndex;
