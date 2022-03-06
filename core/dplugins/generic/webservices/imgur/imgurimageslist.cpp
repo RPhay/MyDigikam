@@ -181,9 +181,12 @@ void ImgurImagesList::slotDoubleClick(QTreeWidgetItem* element, int i)
 }
 
 void ImgurImagesList::slotContextMenuRequested()
-{    
-    if (listView()->topLevelItemCount() && 
-       (listView()->currentIndex().column() == ImgurImagesList::URL || listView()->currentIndex().column() == ImgurImagesList::DeleteURL))
+{
+    if (
+        listView()->topLevelItemCount()                                    &&
+        ((listView()->currentIndex().column() == ImgurImagesList::URL)     ||
+         (listView()->currentIndex().column() == ImgurImagesList::DeleteURL))
+       )
     {
         listView()->blockSignals(true);
 
@@ -197,12 +200,12 @@ void ImgurImagesList::slotContextMenuRequested()
         menu.exec(QCursor::pos());
 
         listView()->blockSignals(false);
-    }       
+    }
 }
 
 void ImgurImagesList::slotCopyImurgURL()
 {
-    QClipboard* clipboard = QApplication::clipboard();
+    QClipboard* const clipboard = QApplication::clipboard();
 
     QList<QTreeWidgetItem*> selectedItemsList = listView()->selectedItems();
     QList<int> itemsIndex;
@@ -216,15 +219,17 @@ void ImgurImagesList::slotCopyImurgURL()
 
         if (item)
         {
-            if (listView()->currentIndex().column() == ImgurImagesList::URL  && !item->ImgurUrl().isEmpty())
+            if ((listView()->currentIndex().column() == ImgurImagesList::URL) &&
+                !item->ImgurUrl().isEmpty())
             {
                 copyURLtext.append(QString::fromLatin1("%1").arg(item->ImgurUrl()));
             }
 
-            if ( listView()->currentIndex().column() == ImgurImagesList::DeleteURL && !item->ImgurDeleteUrl().isEmpty())
+            if ((listView()->currentIndex().column() == ImgurImagesList::DeleteURL) &&
+                !item->ImgurDeleteUrl().isEmpty())
             {
                copyURLtext.append(QString::fromLatin1("%1").arg(item->ImgurDeleteUrl()));
-            }       
+            }
         }
     }
 
