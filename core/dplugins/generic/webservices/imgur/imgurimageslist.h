@@ -67,6 +67,8 @@ public Q_SLOTS:
     void slotAddImages(const QList<QUrl>& list) override;
     void slotSuccess(const ImgurTalkerResult& result);
     void slotDoubleClick(QTreeWidgetItem* element, int i);
+    void slotContextMenuRequested();
+    void slotCopyImurgURL();
 };
 
 // -------------------------------------------------------------------------

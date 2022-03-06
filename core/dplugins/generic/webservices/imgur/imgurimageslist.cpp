@@ -32,6 +32,9 @@
 #include <QLabel>
 #include <QPointer>
 #include <QDesktopServices>
+#include <QApplication>
+#include <QClipboard>
+#include <QMenu>
 
 // KDE includes
 
@@ -71,6 +74,9 @@ ImgurImagesList::ImgurImagesList(QWidget* const parent)
 
     connect(list, &DItemsListView::itemDoubleClicked,
             this, &ImgurImagesList::slotDoubleClick);
+
+    connect(list, &DItemsListView::signalContextMenuRequested,
+            this, &ImgurImagesList::slotContextMenuRequested);
 }
 
 QList<const ImgurImageListViewItem*> ImgurImagesList::getPendingItems()
@@ -172,6 +178,57 @@ void ImgurImagesList::slotDoubleClick(QTreeWidgetItem* element, int i)
 
         QDesktopServices::openUrl(url);
     }
+}
+
+void ImgurImagesList::slotContextMenuRequested()
+{    
+    if (listView()->topLevelItemCount() && 
+       (listView()->currentIndex().column() == ImgurImagesList::URL || listView()->currentIndex().column() == ImgurImagesList::DeleteURL))
+    {
+        listView()->blockSignals(true);
+
+        QMenu menu(listView());
+
+        QAction* const action = menu.addAction(i18n("Copy"));
+
+        connect(action, SIGNAL(triggered()),
+                this , SLOT(slotCopyImurgURL()));
+
+        menu.exec(QCursor::pos());
+
+        listView()->blockSignals(false);
+    }       
+}
+
+void ImgurImagesList::slotCopyImurgURL()
+{
+    QClipboard* clipboard = QApplication::clipboard();
+
+    QList<QTreeWidgetItem*> selectedItemsList = listView()->selectedItems();
+    QList<int> itemsIndex;
+
+    QString copyURLtext;
+
+    for (QList<QTreeWidgetItem*>::const_iterator it = selectedItemsList.constBegin() ;
+         it != selectedItemsList.constEnd() ; ++it)
+    {
+        ImgurImageListViewItem* const item = dynamic_cast<ImgurImageListViewItem*>(*it);
+
+        if (item)
+        {
+            if (listView()->currentIndex().column() == ImgurImagesList::URL  && !item->ImgurUrl().isEmpty())
+            {
+                copyURLtext.append(QString::fromLatin1("%1").arg(item->ImgurUrl()));
+            }
+
+            if ( listView()->currentIndex().column() == ImgurImagesList::DeleteURL && !item->ImgurDeleteUrl().isEmpty())
+            {
+               copyURLtext.append(QString::fromLatin1("%1").arg(item->ImgurDeleteUrl()));
+            }       
+        }
+    }
+
+    clipboard->setText(copyURLtext);
 }
 
 // ------------------------------------------------------------------------------------------------
