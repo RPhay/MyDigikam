@@ -27,12 +27,6 @@ if(MINGW)
 
         INSTALL_COMMAND cd <SOURCE_DIR>/build.mxe/libde265 && cp -fv de265-version.h ../../libde265/ &&
                         cd <SOURCE_DIR>/build.mxe && $(MAKE) install/fast
-#                        mkdir -p ${PREFIX_ext_heif}/include/libde265/ &&
-#                        cp -fv <SOURCE_DIR>/build.mxe/libde265/de265-version.h ${PREFIX_ext_heif}/include/libde265/ &&
-#                        cp -fv <SOURCE_DIR>/libde265/de265.h ${PREFIX_ext_heif}/include/libde265/ &&
-#                        cp -fv <SOURCE_DIR>/build.mxe/libde265/libde265.dll ${PREFIX_ext_heif}/bin/ &&
-#                        cp -fv <SOURCE_DIR>/build.mxe/libde265/libde265.dll.a ${PREFIX_ext_heif}/lib/ &&
-#                        cp -fv ${CMAKE_BINARY_DIR}/libde265.pc ${PREFIX_ext_heif}/lib/pkgconfig/
 
         UPDATE_COMMAND ""
         ALWAYS 0
@@ -55,15 +49,6 @@ if(MINGW)
         BUILD_IN_SOURCE 1
 
         INSTALL_COMMAND cd <SOURCE_DIR>/build.mxe && $(MAKE) install/fast
-#
-#        INSTALL_COMMAND mkdir -p ${PREFIX_ext_heif}/include/libheif/ &&
-#                        cp -fv <SOURCE_DIR>/libheif/heif_version.h ${PREFIX_ext_heif}/include/libheif/ &&
-#                        cp -fv <SOURCE_DIR>/libheif/heif.h ${PREFIX_ext_heif}/include/libheif/ &&
-#                        cp -fv <SOURCE_DIR>/libheif/heif_cxx.h ${PREFIX_ext_heif}/include/libheif/ &&
-#                        cp -fv <SOURCE_DIR>/libheif/heif_plugin.h ${PREFIX_ext_heif}/include/libheif/ &&
-#                        cp -fv <SOURCE_DIR>/build.mxe/libheif/libheif.dll ${PREFIX_ext_heif}/bin/ &&
-#                        cp -fv <SOURCE_DIR>/build.mxe/libheif/libheif.dll.a ${PREFIX_ext_heif}/lib/ &&
-#                        cp -fv ${CMAKE_BINARY_DIR}/libheif.pc ${PREFIX_ext_heif}/lib/pkgconfig/
 
         UPDATE_COMMAND ""
         ALWAYS 0
