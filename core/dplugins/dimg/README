@@ -12,7 +12,7 @@ JPEG2K  Done  Done   Done  Done      N.A     yes      yes     libjasper
 HEIF    Done  Done   Done  Done      N.A     yes      yes     libheif / libde265 (internal) + libx265 (external)
 
 Others file formats are supported:
-- in 8 or 16 bits/color/pixel only using Qt plugin loaders (QImage and KImageFormat plugins - "KIMG") and mostly in read only.
+- in 8 or 16 bits/color/pixel only using Qt plugin loaders (QImage and KImageFormat plugins from KDE framework - "KIMG").
   https://doc.qt.io/qt-5/qimage.html#reading-and-writing-image-files
   https://invent.kde.org/frameworks/kimageformats
 
@@ -23,7 +23,7 @@ Note: if ImageMagick is present, this one is used in favor than Qt plugin loader
 
 Incomplete list of supported formats are listed below:
 
-Format   Read       Write      Description                              Codec
+Format   Read       Write      Description                              Codec       Notes
                     (IM only)
 
 KRA      yes        no         Krita Raster image                       KIMG
@@ -52,6 +52,7 @@ PPM      yes        yes        Portable pixmap format                   KIMG | I
 XBM      yes        yes        X Windows system bitmap                  KIMG | IM
 XPM      yes        yes        X Windows system pixmap                  KIMG | IM
 JXL      yes        yes        JPEG Extended Long-term                  KIMG | IM
+JXR      yes        yes        JPEG Extended Range                      KIMG   IM   libjxr dependency - since KF 5.89
 PCD      yes        yes        PhotoCD                                         IM
 SGI      yes        yes        Irix RGB image                                  IM
 ICO      yes        no         Windows icon format                             IM
@@ -63,6 +64,5 @@ FLIF     yes        yes        Free Lossless Image Format                      I
 JBIG     yes        yes        Joint Bi-level Image                            IM
 BPG      yes        yes        Better Portable Graphics                        IM
 DJVU     yes        no         Deja-Vu                                         IM
-JXR      yes        yes        JPEG Extended Range                             IM
 -----------------------------------------------------------------------------------
 
