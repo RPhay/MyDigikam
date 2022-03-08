@@ -190,10 +190,10 @@ void FilesDownloader::startDownload()
     QLabel* const infoLabel   = new QLabel(i18nc("%1: folder path, %2: disk size with unit",
                                                  "<p>For the face engine and red eye removal tool, digiKam "
                                                  "needs some large binary files. Some of these files were "
-                                                 "not found and are now being downloaded. You can cancel this "
-                                                 "process, the next time digiKam is started this dialog will "
-                                                 "appear again. Face detection will not work without these "
-                                                 "files.</p>"
+                                                 "not found. Click 'Download' to begin downloading the "
+                                                 "needed files. You can cancel this process, the next time "
+                                                 "digiKam is started this dialog will appear again. Face "
+                                                 "detection will not work without these files.</p>"
                                                  "<p>The files will be downloaded to %1. Make sure there are "
                                                  "around %2 available. <b>After the successful download you "
                                                  "have to restart digiKam.</b></p>", path, total), mainWidget);
