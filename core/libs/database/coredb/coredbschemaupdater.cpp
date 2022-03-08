@@ -507,6 +507,8 @@ void CoreDbSchemaUpdater::defaultFilterSettings(QStringList& defaultItemFilter, 
                       << QLatin1String("gif") << QLatin1String("xpm")  << QLatin1String("ppm")
                       << QLatin1String("pnm") << QLatin1String("pgf")  << QLatin1String("bmp")
                       << QLatin1String("pcx") << QLatin1String("heic") << QLatin1String("heif")
+                      << QLatin1String("jxl")
+                      << QLatin1String("avif")
                       << QLatin1String("webp");
 
     // Raster graphics editor containers: https://en.wikipedia.org/wiki/Raster_graphics_editor
