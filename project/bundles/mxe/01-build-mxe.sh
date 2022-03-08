@@ -192,6 +192,7 @@ ${MXE_BUILD_TARGETS}-cmake $ORIG_WD/../3rdparty \
 
 ${MXE_BUILD_TARGETS}-cmake --build . --config RelWithDebInfo --target ext_opencv     -- -j$CPU_CORES
 ${MXE_BUILD_TARGETS}-cmake --build . --config RelWithDebInfo --target ext_heif       -- -j$CPU_CORES
+${MXE_BUILD_TARGETS}-cmake --build . --config RelWithDebInfo --target ext_libjxl     -- -j$CPU_CORES
 ${MXE_BUILD_TARGETS}-cmake --build . --config RelWithDebInfo --target ext_drmingw    -- -j$CPU_CORES
 
 #################################################################################################

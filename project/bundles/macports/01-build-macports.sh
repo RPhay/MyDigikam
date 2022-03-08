@@ -361,6 +361,7 @@ if [[ $DK_QTWEBENGINE = 0 ]] ; then
 fi
 
 cmake --build . --config RelWithDebInfo --target ext_opencv      -- -j$CPU_CORES
+cmake --build . --config RelWithDebInfo --target ext_libjxl      -- -j$CPU_CORES
 
 #################################################################################################
 
