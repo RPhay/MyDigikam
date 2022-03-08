@@ -599,7 +599,7 @@ void ItemIconView::slotEmptyMessageTimer()
 {
     Album* const album = d->albumManager->currentAlbums().constFirst();
 
-    if (album && album->isRoot())
+    if (!album || album->isRoot() || (album->type() != Album::SEARCH))
     {
         d->errorWidget->animatedHide();
 
