@@ -115,6 +115,10 @@ cp -r /usr/share/kf5                                      ./usr/share
 cp -r /usr/share/solid                                    ./usr/share
 cp -r /usr/share/X11/xkb                                  ./usr/share/X11
 
+# NOTE : we use a customized libicu with data files hosted in libraries as resources.
+#cp -r /usr/share/icu                                      ./usr/share
+
+
 # depending of OpenCV version installed, data directory is not the same.
 cp -r /usr/share/opencv4                                  ./usr/share
 
