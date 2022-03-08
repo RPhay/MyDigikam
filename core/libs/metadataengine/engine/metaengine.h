@@ -609,6 +609,12 @@ public:
     QString getExifComment(bool readDescription = true) const;
 
     /**
+     * Return a Exif tag comment like a string. Return a null string if user comments cannot
+     * be found.
+     */
+    QString getExifTagComment(const char* exifTagName) const;
+
+    /**
      * Set the Exif user comments from item. Look Exif specification for more details about this tag.
      * Return true if Exif user comments have been changed in metadata.
      */

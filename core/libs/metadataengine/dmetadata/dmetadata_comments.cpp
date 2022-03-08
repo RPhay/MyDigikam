@@ -163,7 +163,15 @@ CaptionsMap DMetadata::getItemComments(const DMetadataSettingsContainer& setting
             {
                 if (exivSupported)
                 {
-                    commentString = getExifComment();
+                    commentString = getExifTagComment(nameSpace);
+
+                    if (commentString.isEmpty() && !entry.alternativeName.isEmpty())
+                    {
+                        const std::string altStr   = entry.alternativeName.toStdString();
+                        const char* alternateSpace = altStr.data();
+
+                        commentString              = getExifTagComment(alternateSpace);
+                    }
                 }
 
                 break;

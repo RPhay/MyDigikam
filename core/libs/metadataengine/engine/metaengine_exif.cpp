@@ -200,6 +200,25 @@ bool MetaEngine::setExif(const QByteArray& data) const
 
 QString MetaEngine::getExifComment(bool readDescription) const
 {
+    QString comment = getExifTagComment("Exif.Photo.UserComment");
+
+    if (!comment.isEmpty())
+    {
+        return comment;
+    }
+
+    if (readDescription)
+    {
+        comment = getExifTagComment("Exif.Image.ImageDescription");
+
+        return comment;
+    }
+
+    return QString();
+}
+
+QString MetaEngine::getExifTagComment(const char* exifTagName) const
+{
     QMutexLocker lock(&s_metaEngineMutex);
 
     try
@@ -212,45 +231,40 @@ QString MetaEngine::getExifComment(bool readDescription) const
 
         if (!d->exifMetadata().empty())
         {
+            std::string exifkey(exifTagName);
             Exiv2::ExifData exifData(d->exifMetadata());
-            Exiv2::ExifKey key("Exif.Photo.UserComment");
+            Exiv2::ExifKey key(exifkey);
             Exiv2::ExifData::const_iterator it = exifData.findKey(key);
 
             if (it != exifData.end())
             {
-                QString exifComment    = d->convertCommentValue(*it);
+                QString exifComment;
+
+                if (QLatin1String(exifTagName) == QLatin1String("Exif.Image.XPComment"))
+                {
+                    exifComment = QString::fromStdString(it->print(&exifData));
+                }
+                else
+                {
+                    exifComment = d->convertCommentValue(*it);
+                }
+
                 QString trimmedComment = exifComment.trimmed();
+
+                // Some cameras fill in nonsense default values
+
+                if (QLatin1String(exifTagName) == QLatin1String("Exif.Image.ImageDescription"))
+                {
+                    blackList << QLatin1String("SONY DSC"); // + whitespace
+                    blackList << QLatin1String("OLYMPUS DIGITAL CAMERA");
+                    blackList << QLatin1String("MINOLTA DIGITAL CAMERA");
+                }
 
                 // some cameras fill the UserComment with whitespace
 
                 if (!exifComment.isEmpty() && !trimmedComment.isEmpty() && !blackList.contains(trimmedComment))
                 {
                     return exifComment;
-                }
-            }
-
-            if (readDescription)
-            {
-                Exiv2::ExifKey key2("Exif.Image.ImageDescription");
-                Exiv2::ExifData::const_iterator it2 = exifData.findKey(key2);
-
-                if (it2 != exifData.end())
-                {
-                    QString exifComment    = d->convertCommentValue(*it2);
-                    QString trimmedComment = exifComment.trimmed();
-
-                    // Some cameras fill in nonsense default values
-
-                    blackList << QLatin1String("SONY DSC"); // + whitespace
-                    blackList << QLatin1String("OLYMPUS DIGITAL CAMERA");
-                    blackList << QLatin1String("MINOLTA DIGITAL CAMERA");
-
-                    // some cameras fill the UserComment with whitespace
-
-                    if (!exifComment.isEmpty() && !trimmedComment.isEmpty() && !blackList.contains(trimmedComment))
-                    {
-                        return exifComment;
-                    }
                 }
             }
         }
