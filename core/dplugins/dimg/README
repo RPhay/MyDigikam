@@ -12,6 +12,7 @@ JPEG2K  Done  Done   Done  Done      N.A     yes      yes     libjasper
 HEIF    Done  Done   Done  Done      N.A     yes      yes     libheif / libde265 (internal) + libx265 (external)
 
 Others file formats are supported:
+
 - in 8 or 16 bits/color/pixel only using Qt plugin loaders (QImage and KImageFormat plugins from KDE framework - "KIMG").
   https://doc.qt.io/qt-5/qimage.html#reading-and-writing-image-files
   https://invent.kde.org/frameworks/kimageformats
@@ -19,50 +20,48 @@ Others file formats are supported:
 - in 8 or 16 bits/color/pixel using ImageMagick codecs (optional - "IM").
   https://www.imagemagick.org/script/formats.php
 
-Note: if ImageMagick is present, this one is used in favor than Qt plugin loaders.
+Complete list of supported formats are listed below:
 
-Incomplete list of supported formats are listed below:
-
-Format   Read       Write      Description                              Codec       Notes
-                    (IM only)
-
-KRA      yes        no         Krita Raster image                       KIMG
-ORA      yes        no         OpenRaster image                         KIMG
-PIC      yes        no         Softimage Raster image                   KIMG
-ANI      yes        no         Windows Animated Cursor                  KIMG
-PIC      yes        yes        PCPaint image format                     KIMG
-AVIF     yes        yes        AV1 Image File Format                    KIMG | IM
-DDS      yes        yes        Microsoft Direct Draw Surface            KIMG | IM
-EPS      yes        yes        Adobe Encapsulated PostScript            KIMG | IM
-EXR      yes        yes        ILM High dynamic range image             KIMG | IM
-HDR      yes        yes        Radiance RGBE image format               KIMG | IM
-PCX      yes        yes        ZSoft IBM PC Paintbrush                  KIMG | IM
-PNM      yes        yes        Portable anymap                          KIMG | IM
-PSD      yes        yes        Photoshop Raster image                   KIMG | IM
-RAS/SUN  yes        yes        Sun Raster image                         KIMG | IM
-RGB      yes        yes        Raw Red Green Blue image                 KIMG | IM
-RLE      yes        no         Utah Run length encoded image            KIMG | IM
-TGA      yes        yes        Truevision Targa image                   KIMG | IM
-XCF      yes        no         Gimp Raster image                        KIMG | IM
-GIF      yes        yes        CompuServe Graphics Interchange Format   KIMG | IM
-BMP      yes        yes        Windows bitmap format                    KIMG | IM
-PBM      yes        yes        Portable bitmap format                   KIMG | IM
-PGM      yes        yes        Portable graymap format                  KIMG | IM
-PPM      yes        yes        Portable pixmap format                   KIMG | IM
-XBM      yes        yes        X Windows system bitmap                  KIMG | IM
-XPM      yes        yes        X Windows system pixmap                  KIMG | IM
-JXL      yes        yes        JPEG Extended Long-term                  KIMG | IM
-JXR      yes        yes        JPEG Extended Range                      KIMG   IM   libjxr dependency - since KF 5.89
-PCD      yes        yes        PhotoCD                                         IM
-SGI      yes        yes        Irix RGB image                                  IM
-ICO      yes        no         Windows icon format                             IM
-MNG      yes        yes        Multiple-image Network Graphics                 IM
-SVG      yes        yes        Scalable Vector Graphics                        IM
-WEBP     yes        yes        Weppy image format                              IM
-FIT/FITS yes        yes        Flexible Image Transport System                 IM
-FLIF     yes        yes        Free Lossless Image Format                      IM
-JBIG     yes        yes        Joint Bi-level Image                            IM
-BPG      yes        yes        Better Portable Graphics                        IM
-DJVU     yes        no         Deja-Vu                                         IM
+Format   Read       Write  Write      Description                              Codec           Notes
+                    KIMG   IM
+                           
+KRA      yes        no     no         Krita Raster image                       KIMG
+ORA      yes        no     no         OpenRaster image                         KIMG
+PIC      yes        no     no         Softimage Raster image                   KIMG
+ANI      yes        no     no         Windows Animated Cursor                  KIMG
+PIC      yes        yes    yes        PCPaint image format                     KIMG
+AVIF     yes        yes    yes        AV1 Image File Format                    KIMG | IM
+DDS      yes        yes    yes        Microsoft Direct Draw Surface            KIMG | IM
+EPS      yes        yes    yes        Adobe Encapsulated PostScript            KIMG | IM
+EXR      yes        no     yes        ILM High dynamic range image             KIMG | IM
+HDR      yes        yes    yes        Radiance RGBE image format               KIMG | IM
+PCX      yes        yes    yes        ZSoft IBM PC Paintbrush                  KIMG | IM
+PNM      yes        yes    yes        Portable anymap                          KIMG | IM
+PSD      yes        no     yes        Photoshop Raster image                   KIMG | IM
+RAS/SUN  yes        no     yes        Sun Raster image                         KIMG | IM
+RGB      yes        yes    yes        Raw Red Green Blue image                 KIMG | IM
+RLE      yes        no     no         Utah Run length encoded image            KIMG | IM
+TGA      yes        yes    yes        Truevision Targa image                   KIMG | IM
+XCF      yes        no     no         Gimp Raster image                        KIMG | IM
+GIF      yes        yes    yes        CompuServe Graphics Interchange Format   KIMG | IM
+BMP      yes        yes    yes        Windows bitmap format                    KIMG | IM
+PBM      yes        yes    yes        Portable bitmap format                   KIMG | IM
+PGM      yes        yes    yes        Portable graymap format                  KIMG | IM
+PPM      yes        yes    yes        Portable pixmap format                   KIMG | IM
+XBM      yes        yes    yes        X Windows system bitmap                  KIMG | IM
+XPM      yes        yes    yes        X Windows system pixmap                  KIMG | IM
+JXL      yes        yes    yes        JPEG Extended Long-term                  KIMG | [IM]     Libjxr dependency - since KF 5.89 - IM with RT dependency
+JXR      yes        no     yes        JPEG Extended Range                             IM       Older HD photo from Microsoft
+PCD      yes        no     yes        PhotoCD                                         IM
+SGI      yes        no     yes        Irix RGB image                                  IM
+ICO      yes        no     no         Windows icon format                             IM
+MNG      yes        no     yes        Multiple-image Network Graphics                 IM
+SVG      yes        no     yes        Scalable Vector Graphics                        IM
+WEBP     yes        no     yes        Weppy image format                              IM
+FIT/FITS yes        no     yes        Flexible Image Transport System                 IM
+FLIF     yes        no     yes        Free Lossless Image Format                      IM
+JBIG     yes        no     yes        Joint Bi-level Image                            IM
+BPG      yes        no     yes        Better Portable Graphics                        IM
+DJVU     yes        no     no         Deja-Vu                                         IM
 -----------------------------------------------------------------------------------
 
