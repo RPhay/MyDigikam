@@ -12,6 +12,16 @@ set(JpegXL_Conf -DBUILD_SHARED_LIBS=ON
                 -DBUILD_TESTING=OFF
 )
 
+if(MINGW)
+
+    # See bug comment https://bugs.kde.org/show_bug.cgi?id=436533#c26
+
+    set(JpegXL_Conf ${JpegXL_Conf}
+        -DCMAKE_CXX_FLAGS="-DHWY_COMPILE_ONLY_SCALAR"
+    )
+
+endif()
+
 JoinListAsString("${JpegXL_Conf}" " " BASH_OPTIONS)
 
 if(MINGW)
