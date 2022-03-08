@@ -513,8 +513,8 @@ void DatabaseSettingsWidget::slotUpdateSqlInit()
                                .arg(d->userName->text())
                                .arg(d->hostName->text());
 
-    sql += QString::fromLatin1("CREATE DATABASE %1;<br>"
-                               "GRANT ALL PRIVILEGES ON %2.* TO \'%3\'@\'%4\';<br>")
+    sql += QString::fromLatin1("CREATE DATABASE `%1`;<br>"
+                               "GRANT ALL PRIVILEGES ON `%2`.* TO \'%3\'@\'%4\';<br>")
                                .arg(d->dbNameCore->text())
                                .arg(d->dbNameCore->text())
                                .arg(d->userName->text())
@@ -522,8 +522,8 @@ void DatabaseSettingsWidget::slotUpdateSqlInit()
 
     if (isNotEqualToThumbName(d->dbNameCore->text()))
     {
-        sql += QString::fromLatin1("CREATE DATABASE %1;<br>"
-                                   "GRANT ALL PRIVILEGES ON %2.* TO \'%3\'@\'%4\';<br>")
+        sql += QString::fromLatin1("CREATE DATABASE `%1`;<br>"
+                                   "GRANT ALL PRIVILEGES ON `%2`.* TO \'%3\'@\'%4\';<br>")
                                    .arg(d->dbNameThumbs->fileDlgPath())
                                    .arg(d->dbNameThumbs->fileDlgPath())
                                    .arg(d->userName->text())
@@ -533,8 +533,8 @@ void DatabaseSettingsWidget::slotUpdateSqlInit()
     if (isNotEqualToThumbName(d->dbNameFace->text())   &&
         (d->dbNameFace->text() != d->dbNameCore->text()))
     {
-        sql += QString::fromLatin1("CREATE DATABASE %1;<br>"
-                                   "GRANT ALL PRIVILEGES ON %2.* TO \'%3\'@\'%4\';<br>")
+        sql += QString::fromLatin1("CREATE DATABASE `%1`;<br>"
+                                   "GRANT ALL PRIVILEGES ON `%2`.* TO \'%3\'@\'%4\';<br>")
                                    .arg(d->dbNameFace->text())
                                    .arg(d->dbNameFace->text())
                                    .arg(d->userName->text())
@@ -545,8 +545,8 @@ void DatabaseSettingsWidget::slotUpdateSqlInit()
         (d->dbNameSimilarity->text() != d->dbNameCore->text()) &&
         (d->dbNameSimilarity->text() != d->dbNameFace->text()))
     {
-        sql += QString::fromLatin1("CREATE DATABASE %1;<br>"
-                                   "GRANT ALL PRIVILEGES ON %2.* TO \'%3\'@\'%4\';<br>")
+        sql += QString::fromLatin1("CREATE DATABASE `%1`;<br>"
+                                   "GRANT ALL PRIVILEGES ON `%2`.* TO \'%3\'@\'%4\';<br>")
                                    .arg(d->dbNameSimilarity->text())
                                    .arg(d->dbNameSimilarity->text())
                                    .arg(d->userName->text())
