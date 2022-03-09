@@ -116,6 +116,13 @@ QString ItemScanner::detectImageFormat() const
         case DImg::NONE:
         case DImg::QIMAGE:
         {
+            QString ext = d->fileInfo.suffix().toUpper();
+
+            if (ext == QLatin1String("AVIF"))
+            {
+                return ext;
+            }
+
             QByteArray format = QImageReader::imageFormat(d->fileInfo.filePath());
 
             if (!format.isEmpty())
