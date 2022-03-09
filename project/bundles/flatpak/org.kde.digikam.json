@@ -345,7 +345,8 @@
             "sources": [
                 {
                     "type": "git",
-                    "url": "https://github.com/cathaysia/digikamflowplugin.git"
+                    "url": "https://github.com/cathaysia/digikamflowplugin.git",
+                    "disable-submodules": false
                 }
             ]
         }
