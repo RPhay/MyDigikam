@@ -84,7 +84,9 @@ ImageDialog::ImageDialog(QWidget* const parent, const QUrl& url, bool singleSele
         item->setMouseTracking(true);
     }
 
-    if (d->dlg->exec() == QDialog::Accepted)
+    d->dlg->exec();
+
+    if (d->dlg && d->dlg->hasAcceptedUrls())
     {
         d->urls = d->dlg->selectedUrls();
     }

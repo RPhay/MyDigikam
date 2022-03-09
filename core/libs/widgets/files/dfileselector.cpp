@@ -142,15 +142,14 @@ void DFileSelector::slotBtnClicked()
 
     emit signalOpenFileDialog();
 
-    if (fileDlg->exec() == QDialog::Accepted)
-    {
-         if (!fileDlg->selectedFiles().isEmpty())
-         {
-            QStringList sel = fileDlg->selectedFiles();
-            setFileDlgPath(sel.first());
+    fileDlg->exec();
 
-            emit signalUrlSelected(QUrl::fromLocalFile(sel.first()));
-         }
+    if (fileDlg && fileDlg->hasAcceptedUrls())
+    {
+        QStringList sel = fileDlg->selectedFiles();
+        setFileDlgPath(sel.first());
+
+        emit signalUrlSelected(QUrl::fromLocalFile(sel.first()));
     }
 
     delete fileDlg;
