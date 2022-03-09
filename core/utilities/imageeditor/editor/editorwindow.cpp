@@ -1833,9 +1833,7 @@ bool EditorWindow::showFileSaveDialog(const QUrl& initialUrl, QUrl& newURL)
 
     qApp->processEvents();
 
-    if (!imageFileSaveDialog                               ||
-        imageFileSaveDialog->selectedUrls().isEmpty()      ||
-        (imageFileSaveDialog->result() == QDialog::Rejected))
+    if (!imageFileSaveDialog || !imageFileSaveDialog->hasAcceptedUrls())
     {
         qCDebug(DIGIKAM_GENERAL_LOG) << "File Save Dialog rejected";
         delete imageFileSaveDialog;
