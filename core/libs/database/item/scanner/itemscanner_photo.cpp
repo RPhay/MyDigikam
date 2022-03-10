@@ -118,7 +118,10 @@ QString ItemScanner::detectImageFormat() const
         {
             QString ext = d->fileInfo.suffix().toUpper();
 
-            if (ext == QLatin1String("AVIF"))
+            if (
+                (ext == QLatin1String("AVIF")) ||       // See bug #109060
+                (ext == QLatin1String("JPX"))
+               )
             {
                 return ext;
             }

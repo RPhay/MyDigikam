@@ -68,7 +68,8 @@ ThumbnailImage ThumbnailCreator::createThumbnail(const ThumbnailInfo& info, cons
 
         if (
             (info.mimeType == QLatin1String("image")) ||
-            (ext           == QLatin1String("AVIF"))        // See bug #109060
+            (ext           == QLatin1String("AVIF"))  ||      // See bug #109060
+            (ext           == QLatin1String("JPX"))
            )
         {
             if (qimage.isNull())
