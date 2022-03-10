@@ -184,6 +184,7 @@ void FileActionMngrFileWorker::transform(const FileActionItemInfoList& infos, in
         QString format                                  = info.format();
         MetaEngine::ImageOrientation currentOrientation = (MetaEngine::ImageOrientation)info.orientation();
         bool isRaw                                      = info.format().startsWith(QLatin1String("RAW"));
+        bool isDng                                      = (info.format() == QLatin1String("RAW-DNG"));
         bool rotateAsJpeg                               = false;
         bool rotateLossy                                = false;
 
@@ -311,12 +312,12 @@ void FileActionMngrFileWorker::transform(const FileActionItemInfoList& infos, in
             hub.write(info.filePath(), MetadataHub::WRITE_TAGS, true);
         }
 
-        if (rotateByMetadata)
+        if (rotateByMetadata || isDng)
         {
             // Setting the rotation flag on Raws with embedded JPEG is a mess
             // Can apply to the RAW data, or to the embedded JPEG, or to both.
 
-            if (!isRaw)
+            if (!isRaw || isDng)
             {
                 QScopedPointer<DMetadata> metadata(new DMetadata(path));
                 metadata->setItemOrientation(finalOrientation);
