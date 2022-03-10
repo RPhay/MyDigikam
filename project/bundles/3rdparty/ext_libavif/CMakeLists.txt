@@ -13,6 +13,7 @@ set(AVIF_Conf -DBUILD_SHARED_LIBS=ON
               -DAVIF_CODEC_AOM=ON
               -DAVIF_CODEC_AOM_DECODE=ON
               -DAVIF_CODEC_AOM_ENCODE=ON
+              -DAVIF_LOCAL_AOM=ON               # See comment below...
               -DAVIF_LOCAL_ZLIBPNG=OFF
               -DAVIF_LOCAL_JPEG=OFF
               -DAVIF_LOCAL_LIBYUV=OFF
@@ -33,35 +34,17 @@ set(AVIF_Conf -DBUILD_SHARED_LIBS=ON
 
 JoinListAsString("${AVIF_Conf}" " " BASH_OPTIONS_AVIF)
 
+# NOTE: Special rules for mixed libaom versions hosted in bundles, for exemple with ffmpeg: build libaom as static library.
+# See this comment from Bugzilla for details: https://bugs.kde.org/show_bug.cgi?id=109060#c30
+
 set(AOM_Conf -DENABLE_EXAMPLES=OFF
              -DENABLE_TESTS=OFF
              -DENABLE_TOOLS=OFF
              -DENABLE_DOCS=OFF
              -DENABLE_TESTDATA=OFF
+             -DBUILD_SHARED_LIBS=OFF
+             -DCONFIG_PIC=1
 )
-
-if(MINGW)
-
-    set(AVIF_Conf ${AVIF_Conf}
-                  -DAVIF_LOCAL_AOM=OFF
-    )
-
-    set(AOM_Conf ${AOM_Conf}
-                 -DBUILD_SHARED_LIBS=ON
-    )
-
-else()
-
-    set(AVIF_Conf ${AVIF_Conf}
-                  -DAVIF_LOCAL_AOM=ON
-    )
-
-    set(AOM_Conf ${AOM_Conf}
-                 -DBUILD_SHARED_LIBS=OFF
-                 -DCONFIG_PIC=1
-    )
-
-endif()
 
 JoinListAsString("${AOM_Conf}" " " BASH_OPTIONS_AOM)
 
@@ -80,8 +63,7 @@ if(MINGW)
 
         BUILD_IN_SOURCE 1
 
-        INSTALL_COMMAND cd <SOURCE_DIR>/build.mxe && $(MAKE) install/fast
-
+        INSTALL_COMMAND ""
         UPDATE_COMMAND ""
         ALWAYS 0
     )
@@ -93,6 +75,19 @@ if(MINGW)
 
         GIT_REPOSITORY https://github.com/AOMediaCodec/libavif.git
         GIT_TAG v0.9.3
+
+        PATCH_COMMAND cd <SOURCE_DIR>/ext && mkdir -p aom/build.libavif && mkdir -p aom/aom                                                     &&
+                      ln -s <SOURCE_DIR>/../../../libaom-prefix/src/libaom/build.mxe/libaom.a           <SOURCE_DIR>/ext/aom/build.libavif/     &&
+                      ln -s <SOURCE_DIR>/../../../libaom-prefix/src/libaom/aom/aom_decoder.h            <SOURCE_DIR>/ext/aom/aom/               &&
+                      ln -s <SOURCE_DIR>/../../../libaom-prefix/src/libaom/aom/aom_encoder.h            <SOURCE_DIR>/ext/aom/aom/               &&
+                      ln -s <SOURCE_DIR>/../../../libaom-prefix/src/libaom/aom/aom_image.h              <SOURCE_DIR>/ext/aom/aom/               &&
+                      ln -s <SOURCE_DIR>/../../../libaom-prefix/src/libaom/aom/aom_integer.h            <SOURCE_DIR>/ext/aom/aom/               &&
+                      ln -s <SOURCE_DIR>/../../../libaom-prefix/src/libaom/aom/aom_codec.h              <SOURCE_DIR>/ext/aom/aom/               &&
+                      ln -s <SOURCE_DIR>/../../../libaom-prefix/src/libaom/aom/aom_frame_buffer.h       <SOURCE_DIR>/ext/aom/aom/               &&
+                      ln -s <SOURCE_DIR>/../../../libaom-prefix/src/libaom/aom/aom_external_partition.h <SOURCE_DIR>/ext/aom/aom/               &&
+                      ln -s <SOURCE_DIR>/../../../libaom-prefix/src/libaom/aom/aomcx.h                  <SOURCE_DIR>/ext/aom/aom/               &&
+                      ln -s <SOURCE_DIR>/../../../libaom-prefix/src/libaom/aom/aomdx.h                  <SOURCE_DIR>/ext/aom/aom/               &&
+                      ln -s <SOURCE_DIR>/../../../libaom-prefix/src/libaom/aom/aom.h                    <SOURCE_DIR>/ext/aom/aom/
 
         CONFIGURE_COMMAND cp -f ${CMAKE_CURRENT_SOURCE_DIR}/../../../../bootstrap.mxe <SOURCE_DIR>/. &&
                           <SOURCE_DIR>/bootstrap.mxe ${MXE_BUILDROOT} RelWithDebInfo ${BASH_OPTIONS_AVIF}
@@ -133,8 +128,6 @@ elseif(APPLE)
 
 else() # Linux
 
-    # Special rules for mixed libaom versions hosted in AppImage bundle: build libaom as static library.
-    # See this comment from Bugzilla for details: https://bugs.kde.org/show_bug.cgi?id=109060#c30
 
     ExternalProject_Add(libaom
 
