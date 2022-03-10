@@ -53,37 +53,54 @@ public:
     /**
      * Destructor
      */
-    ~DPluginDImg() override;
+    ~DPluginDImg()                                                                     override;
 
 public:
 
-    /** This kind of plugin only provide one tool.
+    /**
+     * This kind of plugin only provide one tool.
      */
-    int count() const override { return 1; };
+    int count()                                                                  const override
+    {
+        return 1;
+    };
 
-    /** This kind of plugin do not use a category.
+    /**
+     * This kind of plugin do not use a category.
      */
-    QStringList categories() const override { return QStringList(); };
+    QStringList categories()                                                     const override
+    {
+        return QStringList();
+    };
 
-    /** This kind of plugin do not have GUI visibility attribute.
+    /**
+     * This kind of plugin do not have GUI visibility attribute.
      */
-    void setVisible(bool) override {};
+    void setVisible(bool)                                                              override
+    {
+    };
 
     /**
      * Return the plugin interface identifier.
      */
-    QString ifaceIid() const override { return QLatin1String(DIGIKAM_DPLUGIN_DIMG_IID); };
+    QString ifaceIid()                                                           const override
+    {
+        return QLatin1String(DIGIKAM_DPLUGIN_DIMG_IID);
+    };
 
     /**
      * This kind of plugin do not need to be configurable
      */
-    bool hasVisibilityProperty() const override { return false; };
+    bool hasVisibilityProperty()                                                 const override
+    {
+        return false;
+    };
 
     /**
      * With this kind of plugin, we will display the type-mimes list on about dialog.
      */
-    QMap<QString, QString> extraAboutData() const override;
-    QString extraAboutDataTitle()           const override;
+    QMap<QString, QString> extraAboutData()                                      const override;
+    QString extraAboutDataTitle()                                                const override;
 
 public:
 
@@ -91,14 +108,14 @@ public:
      * Return a single capitalized word to identify the format supported by the loader.
      * Ex: jpeg => "JPG" ; tiff => "TIF", etc.
      */
-    virtual QString loaderName() const = 0;
+    virtual QString loaderName()                                                 const = 0;
 
     /**
      * Return the list of white-listed type-mimes supported by the loader,
      * as a string of file-name suffix separated by spaces.
      * Ex: "jpeg jpg thm"
      */
-    virtual QString typeMimes() const = 0;
+    virtual QString typeMimes()                                                  const = 0;
 
     /**
      * Return true if the loader can read a preview image.
@@ -114,18 +131,19 @@ public:
      * If the loader is to be used before the default loader,
      * the value must be less than 10.
      */
-    virtual int canRead(const QFileInfo& fileInfo, bool magic) const = 0;
+    virtual int canRead(const QFileInfo& fileInfo, bool magic)                   const = 0;
 
     /**
      * Return > 0 if target file format is supported by the loader and contents can be written.
      * The return value (1 - 100) is a priority.
      */
-    virtual int canWrite(const QString& format) const = 0;
+    virtual int canWrite(const QString& format)                                  const = 0;
 
     /**
      * Return the image loader instance for the DImg instance.
      */
-    virtual DImgLoader* loader(DImg* const image, const DRawDecoding& rawSettings = DRawDecoding()) const = 0;
+    virtual DImgLoader* loader(DImg* const image,
+                               const DRawDecoding& rawSettings = DRawDecoding()) const = 0;
 };
 
 } // namespace Digikam

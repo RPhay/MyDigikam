@@ -57,16 +57,25 @@ QMap<QString, QString> DPluginDImg::extraAboutData() const
     {
         if (!ext.isEmpty())
         {
-            map.insert(ext, mimeDb.mimeTypeForFile(QString::fromLatin1("foo.%1").arg(ext)).comment());
+            QMimeType mime = mimeDb.mimeTypeForFile(QString::fromLatin1("foo.%1").arg(ext));
+
+            if (mime.name() == QLatin1String("application/octet-stream"))
+            {
+                map.insert(ext, i18n("%1 image", ext));
+            }
+            else
+            {
+                map.insert(ext, mime.comment());
+            }
         }
     }
 
     return map;
-};
+}
 
 QString DPluginDImg::extraAboutDataTitle() const
 {
     return i18n("Type-Mimes");
-};
+}
 
 } // namespace Digikam
