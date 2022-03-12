@@ -120,11 +120,28 @@ void DImgHEIFPlugin::setup(QObject* const /*parent*/)
     // Nothing to do
 }
 
-QMap<QString, QString> DImgHEIFPlugin::extraAboutData() const
+QMap<QString, QStringList> DImgHEIFPlugin::extraAboutData() const
 {
-    QMap<QString, QString> map;
-    map.insert(QLatin1String("HEIC"), i18n("High efficiency image coding"));
-    map.insert(QLatin1String("HEIF"), i18n("High efficiency image file format"));
+    QMap<QString, QStringList> map;
+    map.insert(QLatin1String("HEIC"),
+               QStringList() << i18n("High efficiency image coding")
+                             << i18n("yes")
+#ifdef HAVE_X265
+                             << i18n("yes")
+#else
+                             << i18n("no")
+#endif
+    );
+
+    map.insert(QLatin1String("HEIF"),
+               QStringList() << i18n("High efficiency image coding")
+                             << i18n("yes")
+#ifdef HAVE_X265
+                             << i18n("yes")
+#else
+                             << i18n("no")
+#endif
+    );
 
     return map;
 }

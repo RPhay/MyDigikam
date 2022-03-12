@@ -99,14 +99,14 @@ void DImgJPEG2000Plugin::setup(QObject* const /*parent*/)
     // Nothing to do
 }
 
-QMap<QString, QString> DImgJPEG2000Plugin::extraAboutData() const
+QMap<QString, QStringList> DImgJPEG2000Plugin::extraAboutData() const
 {
-    QMap<QString, QString> map;
-    map.insert(QLatin1String("JP2"), i18n("JPEG-2000 image"));
-    map.insert(QLatin1String("JPX"), i18n("JPEG-2000 image"));
-    map.insert(QLatin1String("JPC"), i18n("JPEG-2000 stream"));
-    map.insert(QLatin1String("J2K"), i18n("JPEG-2000 stream"));
-    map.insert(QLatin1String("PGX"), i18n("JPEG-2000 verification model"));
+    QMap<QString, QStringList> map;
+    map.insert(QLatin1String("JP2"), QStringList() << i18n("JPEG-2000 image")              << i18n("yes") << i18n("yes"));
+    map.insert(QLatin1String("JPX"), QStringList() << i18n("JPEG-2000 image")              << i18n("yes") << i18n("yes"));
+    map.insert(QLatin1String("JPC"), QStringList() << i18n("JPEG-2000 stream")             << i18n("yes") << i18n("yes"));
+    map.insert(QLatin1String("J2K"), QStringList() << i18n("JPEG-2000 stream")             << i18n("yes") << i18n("yes"));
+    map.insert(QLatin1String("PGX"), QStringList() << i18n("JPEG-2000 verification model") << i18n("yes") << i18n("yes"));
 
     return map;
 }

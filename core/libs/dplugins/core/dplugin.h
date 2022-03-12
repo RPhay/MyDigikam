@@ -195,7 +195,7 @@ public:
     /**
      * @brief Returns a list of extra data to show in plugin about dialog.
      */
-    virtual QMap<QString, QString> extraAboutData() const { return QMap<QString, QString>(); };
+    virtual QMap<QString, QStringList> extraAboutData() const { return QMap<QString, QStringList>(); };
 
     /**
      * @brief Returns the title of data returned by extraAboiutData().

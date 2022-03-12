@@ -123,10 +123,10 @@ void DImgImageMagickPlugin::setup(QObject* const /*parent*/)
     // Nothing to do
 }
 
-QMap<QString, QString> DImgImageMagickPlugin::extraAboutData() const
+QMap<QString, QStringList> DImgImageMagickPlugin::extraAboutData() const
 {
     QString mimes = typeMimes();
-    QMap<QString, QString> map;
+    QMap<QString, QStringList> map;
 
     try
     {
@@ -137,7 +137,7 @@ QMap<QString, QString> DImgImageMagickPlugin::extraAboutData() const
         if (!inflst)
         {
             qCWarning(DIGIKAM_DIMG_LOG_MAGICK) << "ImageMagick coders list is null!";
-            return QMap<QString, QString>();
+            return QMap<QString, QStringList>();
         }
 
         for (uint i = 0 ; i < n ; ++i)
@@ -160,7 +160,11 @@ QMap<QString, QString> DImgImageMagickPlugin::extraAboutData() const
 
                 if (mimes.contains(mod))
                 {
-                    map.insert(mod, QLatin1String(inf->description));
+                    map.insert(mod,
+                               QStringList() << QLatin1String(inf->description)
+                                             << (inf->decoder ? i18n("yes") : i18n("no"))
+                                             << (inf->encoder ? i18n("yes") : i18n("no"))
+                    );
                 }
             }
         }
@@ -170,7 +174,7 @@ QMap<QString, QString> DImgImageMagickPlugin::extraAboutData() const
     catch (Exception& error)
     {
         qCWarning(DIGIKAM_DIMG_LOG) << "ImageMagickInfo exception:" << error.what();
-        return QMap<QString, QString>();
+        return QMap<QString, QStringList>();
     }
 
     return map;

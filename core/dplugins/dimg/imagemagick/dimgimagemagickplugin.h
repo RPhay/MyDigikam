@@ -60,7 +60,7 @@ public:
 
     void setup(QObject* const)                                                                    override;
     void cleanUp()                                                                                override;
-    QMap<QString, QString> extraAboutData()                                                 const override;
+    QMap<QString, QStringList> extraAboutData()                                             const override;
 
     QString     loaderName()                                                                const override;
     QString     typeMimes()                                                                 const override;

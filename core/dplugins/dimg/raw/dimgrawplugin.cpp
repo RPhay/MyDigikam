@@ -102,9 +102,17 @@ void DImgRAWPlugin::setup(QObject* const /*parent*/)
     // Nothing to do
 }
 
-QMap<QString, QString> DImgRAWPlugin::extraAboutData() const
+QMap<QString, QStringList> DImgRAWPlugin::extraAboutData() const
 {
-    return s_rawFileExtensionsdWithDesc();
+    QMap<QString, QString> rawMap = s_rawFileExtensionsdWithDesc();
+    QMap<QString, QStringList> ret;
+
+    for (QMap<QString, QString>::const_iterator it = rawMap.constBegin() ; it != rawMap.constEnd() ; ++it)
+    {
+        ret.insert(it.key(), QStringList() << it.value() << i18n("yes") << i18n("no"));
+    }
+
+    return ret;
 }
 
 QString DImgRAWPlugin::loaderName() const

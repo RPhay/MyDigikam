@@ -112,6 +112,16 @@ QString DImgJPEGPlugin::typeMimes() const
     return QLatin1String("JPG JPEG JPE");
 }
 
+QMap<QString, QStringList> DImgJPEGPlugin::extraAboutData() const
+{
+    QMap<QString, QStringList> map;
+    map.insert(QLatin1String("JPG"),  QStringList() << i18n("JPEG image") << i18n("yes") << i18n("yes"));
+    map.insert(QLatin1String("JPEG"), QStringList() << i18n("JPEG image") << i18n("yes") << i18n("yes"));
+    map.insert(QLatin1String("JPE"),  QStringList() << i18n("JPEG image") << i18n("yes") << i18n("yes"));
+
+    return map;
+}
+
 int DImgJPEGPlugin::canRead(const QFileInfo& fileInfo, bool magic) const
 {
     QString filePath = fileInfo.filePath();

@@ -48,9 +48,9 @@ DPluginDImg::~DPluginDImg()
 {
 }
 
-QMap<QString, QString> DPluginDImg::extraAboutData() const
+QMap<QString, QStringList> DPluginDImg::extraAboutData() const
 {
-    QMap<QString, QString> map;
+    QMap<QString, QStringList> map;
     QMimeDatabase mimeDb;
 
     foreach (const QString& ext, typeMimes().split(QLatin1Char(' ')))
@@ -61,11 +61,19 @@ QMap<QString, QString> DPluginDImg::extraAboutData() const
 
             if (mime.name() == QLatin1String("application/octet-stream"))
             {
-                map.insert(ext, i18n("%1 image", ext));
+                map.insert(ext,
+                           QStringList() << i18n("%1 image", ext)
+                                         << ((canRead(QString::fromLatin1("foo.%1").arg(ext), false) != 0) ? i18n("yes") : i18n("no"))
+                                         << ((canWrite(ext) != 0) ? i18n("yes") : i18n("no"))
+                );
             }
             else
             {
-                map.insert(ext, mime.comment());
+                map.insert(ext,
+                           QStringList() << mime.comment()
+                                         << ((canRead(QString::fromLatin1("foo.%1").arg(ext), false) != 0) ? i18n("yes") : i18n("no"))
+                                         << ((canWrite(ext) != 0) ? i18n("yes") : i18n("no"))
+                );
             }
         }
     }
