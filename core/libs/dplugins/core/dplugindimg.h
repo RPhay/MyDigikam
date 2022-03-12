@@ -100,6 +100,7 @@ public:
      * With this kind of plugin, we will display the type-mimes list on about dialog.
      */
     QMap<QString, QStringList> extraAboutData()                                  const override;
+    QStringList extraAboutDataRowTitles()                                        const override;
     QString extraAboutDataTitle()                                                const override;
 
 public:

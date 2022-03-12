@@ -81,6 +81,14 @@ QMap<QString, QStringList> DPluginDImg::extraAboutData() const
     return map;
 }
 
+QStringList DPluginDImg::extraAboutDataRowTitles() const
+{
+    return QStringList() << i18nc("@title: DPlugin properties", "Extension")
+                         << i18nc("@title: DPlugin properties", "Description")
+                         << i18nc("@title: DPlugin properties", "Read")
+                         << i18nc("@title: DPlugin properties", "Write");
+}
+
 QString DPluginDImg::extraAboutDataTitle() const
 {
     return i18n("Type-Mimes");
