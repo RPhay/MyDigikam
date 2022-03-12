@@ -148,6 +148,7 @@ urpmi --auto \
       ${LIBSUFFIX}glib2.0-devel \
       ${LIBSUFFIX}usb1.0-devel \
       ${LIBSUFFIX}jpeg-devel \
+      ${LIBSUFFIX}jasper-devel \
       ${LIBSUFFIX}png-devel \
       ${LIBSUFFIX}tiff-devel \
       ${LIBSUFFIX}lqr-devel \
@@ -293,7 +294,6 @@ rm -fr /usr/local/lib/libssl.a    || true
 rm -fr /usr/local/lib/libcrypto.a || true
 rm -fr /usr/local/include/openssl || true
 
-/opt/cmake/bin/cmake --build . --config RelWithDebInfo --target ext_jasper        -- -j$CPU_CORES
 /opt/cmake/bin/cmake --build . --config RelWithDebInfo --target ext_heif          -- -j$CPU_CORES
 /opt/cmake/bin/cmake --build . --config RelWithDebInfo --target ext_libjxl        -- -j$CPU_CORES
 /opt/cmake/bin/cmake --build . --config RelWithDebInfo --target ext_libavif       -- -j$CPU_CORES
