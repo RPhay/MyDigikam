@@ -62,7 +62,7 @@ QMap<QString, QStringList> DPluginDImg::extraAboutData() const
             if (mime.name() == QLatin1String("application/octet-stream"))
             {
                 map.insert(ext,
-                           QStringList() << i18n("%1 image", ext)
+                           QStringList() << i18nc("@info: type of image", "%1 image", ext)
                                          << ((canRead(QString::fromLatin1("foo.%1").arg(ext), false) != 0) ? i18n("yes") : i18n("no"))
                                          << ((canWrite(ext) != 0) ? i18n("yes") : i18n("no"))
                 );
