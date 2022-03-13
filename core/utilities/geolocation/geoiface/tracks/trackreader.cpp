@@ -294,7 +294,7 @@ void TrackReader::rebuildElementPath()
     d->currentElementPath = d->currentElements.join(QLatin1Char('/'));
 }
 
-void TrackReader::ParseTrack(QXmlStreamReader &xml)
+void TrackReader::parseTrack(QXmlStreamReader &xml)
 {
     /* check that really getting a track. */
     
@@ -454,7 +454,7 @@ TrackReader::TrackReadResult TrackReader::loadTrackFile(const QUrl& url)
             }
             else 
             {
-                trackReader.ParseTrack(XmlReader);
+                trackReader.parseTrack(XmlReader);
             }
         }
     }
