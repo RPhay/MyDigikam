@@ -174,7 +174,7 @@ void FTExportWidget::slotShowTargetDialogClicked(bool checked)
     targetDialog->setOptions(QFileDialog::ShowDirsOnly);
     targetDialog->exec();
 
-    if (targetDialog && targetDialog->hasAcceptedUrls())
+    if (targetDialog->hasAcceptedUrls())
     {
         d->targetUrl = targetDialog->selectedUrls().first();
         updateTargetLabel();
