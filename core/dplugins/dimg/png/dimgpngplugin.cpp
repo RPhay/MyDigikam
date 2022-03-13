@@ -111,7 +111,10 @@ QString DImgPNGPlugin::typeMimes() const
 QMap<QString, QStringList> DImgPNGPlugin::extraAboutData() const
 {
     QMap<QString, QStringList> map;
-    map.insert(QLatin1String("PNG"), QStringList() << i18n("Portable Network Graphic") << i18n("yes") << i18n("yes"));
+    map.insert(QLatin1String("PNG"), QStringList() << i18n("Portable Network Graphic")
+                                                   << i18nc("@info: can read file format",  "yes")
+                                                   << i18nc("@info: can write file format", "yes")
+    );
 
     return map;
 }

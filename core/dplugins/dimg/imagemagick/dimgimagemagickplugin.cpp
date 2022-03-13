@@ -111,10 +111,10 @@ QList<DPluginAuthor> DImgImageMagickPlugin::authors() const
     return QList<DPluginAuthor>()
             << DPluginAuthor(QString::fromUtf8("Maik Qualmann"),
                              QString::fromUtf8("metzpinguin at gmail dot com"),
-                             QString::fromUtf8("(C) 2019"))
+                             QString::fromUtf8("(C) 2019-2022"))
             << DPluginAuthor(QString::fromUtf8("Gilles Caulier"),
                              QString::fromUtf8("caulier dot gilles at gmail dot com"),
-                             QString::fromUtf8("(C) 2006-2021"))
+                             QString::fromUtf8("(C) 2006-2022"))
             ;
 }
 
@@ -162,8 +162,13 @@ QMap<QString, QStringList> DImgImageMagickPlugin::extraAboutData() const
                 {
                     map.insert(mod,
                                QStringList() << QLatin1String(inf->description)
-                                             << (inf->decoder ? i18n("yes") : i18n("no"))
-                                             << (inf->encoder ? i18n("yes") : i18n("no"))
+                                             << (inf->decoder ?
+                                                 i18nc("@info: can read file format",     "yes") :
+                                                 i18nc("@info: cannot read file format",  "no"))
+                                             << (inf->encoder ?
+                                                 i18nc("@info: can write file format",    "yes") :
+                                                 i18nc("@info: cannot write file format", "no"))
+
                     );
                 }
             }

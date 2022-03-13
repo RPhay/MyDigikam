@@ -63,8 +63,12 @@ QMap<QString, QStringList> DPluginDImg::extraAboutData() const
             {
                 map.insert(ext,
                            QStringList() << i18nc("@info: type of image", "%1 image", ext)
-                                         << ((canRead(QString::fromLatin1("foo.%1").arg(ext), false) != 0) ? i18n("yes") : i18n("no"))
-                                         << ((canWrite(ext) != 0) ? i18n("yes") : i18n("no"))
+                                         << ((canRead(QString::fromLatin1("foo.%1").arg(ext), false) != 0) ?
+                                             i18nc("@info: can read file format",     "yes") :
+                                             i18nc("@info: cannot read file format",  "no"))
+                                         << ((canWrite(ext) != 0) ?
+                                             i18nc("@info: can write file format",    "yes") :
+                                             i18nc("@info: cannot write file format", "no"))
                 );
             }
             else

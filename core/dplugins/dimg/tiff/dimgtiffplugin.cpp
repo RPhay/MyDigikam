@@ -116,8 +116,14 @@ QString DImgTIFFPlugin::typeMimes() const
 QMap<QString, QStringList> DImgTIFFPlugin::extraAboutData() const
 {
     QMap<QString, QStringList> map;
-    map.insert(QLatin1String("TIF"),  QStringList() << i18n("Tagged Image Format") << i18n("yes") << i18n("yes"));
-    map.insert(QLatin1String("TIFF"), QStringList() << i18n("Tagged Image Format") << i18n("yes") << i18n("yes"));
+    map.insert(QLatin1String("TIF"),  QStringList() << i18n("Tagged Image Format")
+                                                    << i18nc("@info: can read file format",  "yes")
+                                                    << i18nc("@info: can write file format", "yes")
+    );
+    map.insert(QLatin1String("TIFF"), QStringList() << i18n("Tagged Image Format")
+                                                    << i18nc("@info: can read file format",  "yes")
+                                                    << i18nc("@info: can write file format", "yes")
+    );
 
     return map;
 }

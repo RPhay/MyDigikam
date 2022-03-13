@@ -90,7 +90,7 @@ QList<DPluginAuthor> DImgPGFPlugin::authors() const
     return QList<DPluginAuthor>()
             << DPluginAuthor(QString::fromUtf8("Gilles Caulier"),
                              QString::fromUtf8("caulier dot gilles at gmail dot com"),
-                             QString::fromUtf8("(C) 2009-2021"))
+                             QString::fromUtf8("(C) 2009-2022"))
             ;
 }
 
@@ -104,8 +104,8 @@ QMap<QString, QStringList> DImgPGFPlugin::extraAboutData() const
     QMap<QString, QStringList> map;
     map.insert(QLatin1String("PGF"),
                QStringList() << i18n("Progressive Graphics File")
-                             << i18n("yes")
-                             << i18n("yes")
+                             << i18nc("@info: can read file format",  "yes")
+                             << i18nc("@info: can write file format", "yes")
     );
 
     return map;

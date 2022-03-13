@@ -93,7 +93,7 @@ QList<DPluginAuthor> DImgRAWPlugin::authors() const
                              QString::fromUtf8("(C) 2005-2012"))
             << DPluginAuthor(QString::fromUtf8("Gilles Caulier"),
                              QString::fromUtf8("caulier dot gilles at gmail dot com"),
-                             QString::fromUtf8("(C) 2009-2021"))
+                             QString::fromUtf8("(C) 2009-2022"))
             ;
 }
 
@@ -109,7 +109,10 @@ QMap<QString, QStringList> DImgRAWPlugin::extraAboutData() const
 
     for (QMap<QString, QString>::const_iterator it = rawMap.constBegin() ; it != rawMap.constEnd() ; ++it)
     {
-        ret.insert(it.key(), QStringList() << it.value() << i18n("yes") << i18n("no"));
+        ret.insert(it.key(), QStringList() << it.value()
+                                           << i18nc("@info: can read file format",  "yes")
+                                           << i18nc("@info: can write file format", "no")
+        );
     }
 
     return ret;
