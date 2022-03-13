@@ -28,6 +28,7 @@
 // Qt includes
 
 #include <QXmlDefaultHandler>
+#include <QXmlStreamReader>
 
 // local includes
 
@@ -79,6 +80,7 @@ public:
 
     static TrackReadResult loadTrackFile(const QUrl& url);
     static QDateTime ParseTime(const QString& tstring);
+    void ParseTrack(QXmlStreamReader &xml);
 
 private:
 

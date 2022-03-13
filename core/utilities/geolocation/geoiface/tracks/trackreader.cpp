@@ -28,6 +28,8 @@
 
 #include <QDomDocument>
 #include <QFile>
+#include <QXmlStreamReader>
+#include <QXmlStreamAttributes>
 
 // KDE includes
 
@@ -58,8 +60,7 @@ public:
 };
 
 TrackReader::TrackReader(TrackReadResult* const dataTarget)
-    : QXmlDefaultHandler(),
-      d                 (new Private)
+    : d(new Private)
 {
     d->fileData = dataTarget;
 }
@@ -293,11 +294,132 @@ void TrackReader::rebuildElementPath()
     d->currentElementPath = d->currentElements.join(QLatin1Char('/'));
 }
 
+void TrackReader::ParseTrack(QXmlStreamReader &xml)
+{
+    /* check that really getting a track. */
+    
+    if(xml.tokenType() != QXmlStreamReader::StartElement && xml.name() == QLatin1String("trkpt")) 
+    {
+        return;
+    }
+
+    d->currentDataPoint = TrackManager::TrackPoint();
+
+    /* get first the attributes for track points */
+    
+    QXmlStreamAttributes attributes = xml.attributes();
+
+    /* check that track has lat or lon attribute. */
+
+    if(attributes.hasAttribute(QStringLiteral("lat")) && 
+       attributes.hasAttribute(QStringLiteral("lon")))
+    {
+        d->currentDataPoint.coordinates.setLatLon(attributes.value(QLatin1String("lat")).toDouble(),  
+                                                  attributes.value(QLatin1String("lon")).toDouble());                    
+    }
+
+    /* Next element... */
+
+    xml.readNext();
+
+    QString eText ;
+    while (!(xml.tokenType() == QXmlStreamReader::EndElement && xml.name() == QLatin1String("trkpt")) && !xml.hasError())
+    {   
+        if(xml.tokenType() == QXmlStreamReader::StartElement)
+        {
+            eText.clear();
+            eText =  xml.readElementText();            
+         
+            if (xml.name() == QLatin1String("time"))
+            {
+                d->currentDataPoint.dateTime = ParseTime(eText.trimmed());
+            }
+            else if (xml.name() == QLatin1String("sat"))
+            {
+                bool okay       = false;
+                int nSatellites = eText.toInt(&okay);
+
+                if (okay && (nSatellites >= 0))
+                {
+                    d->currentDataPoint.nSatellites = nSatellites;
+                }
+            }
+            else if (xml.name() == QLatin1String("hdop"))
+            {
+                bool okay  = false;
+                qreal hDop = eText.toDouble(&okay);
+
+                if (okay)
+                {
+                    d->currentDataPoint.hDop = hDop;
+                }
+            }
+            else if (xml.name() == QLatin1String("pdop"))
+            {
+                bool okay  = false;
+                qreal pDop = eText.toDouble(&okay);
+
+                if (okay)
+                {
+                    d->currentDataPoint.pDop = pDop;
+                }
+            }
+            else if (xml.name() == QLatin1String("fix"))
+            {
+                int fixType = -1;
+
+                if      (eText == QLatin1String("2d"))
+                {
+                    fixType = 2;
+                }
+                else if (eText == QLatin1String("3d"))
+                {
+                    fixType = 3;
+                }
+
+                if (fixType>=0)
+                {
+                    d->currentDataPoint.fixType = fixType;
+                }
+            }
+            else if (xml.name() == QLatin1String("ele"))
+            {
+                bool haveAltitude = false;
+                const qreal alt   = eText.toDouble(&haveAltitude);
+
+                if (haveAltitude)
+                {
+                    d->currentDataPoint.coordinates.setAlt(alt);
+                }
+            }
+            else if (xml.name() == QLatin1String("speed"))
+            {
+                bool haveSpeed    = false;
+                const qreal speed = eText.toDouble(&haveSpeed);
+
+                if (haveSpeed)
+                {
+                    d->currentDataPoint.speed = speed;
+                }
+            }
+        }
+       
+        /* ...and next... */
+        xml.readNext();
+    }
+
+    if (d->currentDataPoint.dateTime.isValid() && d->currentDataPoint.coordinates.hasCoordinates())
+    {
+        d->fileData->track.points << d->currentDataPoint;
+    }
+}
+
 TrackReader::TrackReadResult TrackReader::loadTrackFile(const QUrl& url)
 {
     // TODO: store some kind of error message
 
     TrackReadResult parsedData;
+    TrackReader trackReader(&parsedData);
     parsedData.track.url = url;
     parsedData.isValid   = false;
 
@@ -316,41 +438,55 @@ TrackReader::TrackReadResult TrackReader::loadTrackFile(const QUrl& url)
 
         return parsedData;
     }
-
     // TODO: port to new API: https://doc.qt.io/qt-6/xml-changes-qt6.html
 
-    TrackReader trackReader(&parsedData);
-    QXmlSimpleReader reader;
-    reader.setContentHandler(&trackReader);
-    reader.setErrorHandler(&trackReader);
-    QXmlInputSource xmlInputSource(&file);
+    QXmlStreamReader XmlReader(&file);
 
-    parsedData.isValid = reader.parse(xmlInputSource);
-
-    if (!parsedData.isValid)
+    while (!XmlReader.atEnd() && !XmlReader.hasError() ) 
     {
-        parsedData.loadError = i18n("Parsing error: %1", trackReader.errorString());
+        QXmlStreamReader::TokenType token = XmlReader.readNext();
+
+        if (token == QXmlStreamReader::StartElement)
+        {   
+            if (XmlReader.name().toString() != QLatin1String("trkpt"))
+            {
+                continue;
+            }
+            else 
+            {
+                trackReader.ParseTrack(XmlReader);
+            }
+        }
+    }
+
+    // error not well formed XML file 
+
+    parsedData.isValid = !XmlReader.hasError() ;
+
+    if (!parsedData.isValid) 
+    {
+        if (XmlReader.error() == QXmlStreamReader::NotWellFormedError)
+        {
+            parsedData.loadError = i18n("Probably not a GPX file.");
+        }
 
         return parsedData;
     }
+
+    // error no track points 
 
     parsedData.isValid = !parsedData.track.points.isEmpty();
 
     if (!parsedData.isValid)
     {
-        if (!trackReader.d->verifyFoundGPXElement)
-        {
-            parsedData.loadError = i18n("No GPX element found - probably not a GPX file.");
-        }
-        else
-        {
+        {   
             parsedData.loadError = i18n("File is a GPX file, but no track points "
                                         "with valid timestamps were found.");
         }
 
         return parsedData;
     }
-
+   
     // The correlation algorithm relies on sorted data, therefore sort now
 
     std::sort(parsedData.track.points.begin(), parsedData.track.points.end(), TrackManager::TrackPoint::EarlierThan);
