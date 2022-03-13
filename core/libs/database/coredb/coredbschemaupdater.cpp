@@ -63,7 +63,7 @@ int CoreDbSchemaUpdater::schemaVersion()
 
 int CoreDbSchemaUpdater::filterSettingsVersion()
 {
-    return 15;
+    return 16;
 }
 
 int CoreDbSchemaUpdater::uniqueHashVersion()
@@ -497,19 +497,32 @@ void CoreDbSchemaUpdater::defaultFilterSettings(QStringList& defaultItemFilter, 
 
     // https://en.wikipedia.org/wiki/Image_file_formats
 
-    defaultItemFilter << QLatin1String("jpg") << QLatin1String("jpeg") << QLatin1String("jpe")   // JPEG
+    defaultItemFilter << QLatin1String("jpg")  << QLatin1String("jpeg") << QLatin1String("jpe")   // JPEG
                       << QLatin1String("mpo")
-                      << QLatin1String("jp2") << QLatin1String("j2k")  << QLatin1String("jpx")   // JPEG-2000
-                      << QLatin1String("jpc") << QLatin1String("pgx")
-                      << QLatin1String("tif") << QLatin1String("tiff")                           // TIFF
-                      << QLatin1String("png")                                                    // PNG
-                      << QLatin1String("fit") << QLatin1String("fts")  << QLatin1String("fits")  // Flexible Image Transport System (https://fr.wikipedia.org/wiki/Flexible_Image_Transport_System)
-                      << QLatin1String("gif") << QLatin1String("xpm")  << QLatin1String("ppm")
-                      << QLatin1String("pnm") << QLatin1String("pgf")  << QLatin1String("bmp")
-                      << QLatin1String("pcx") << QLatin1String("heic") << QLatin1String("heif")
-                      << QLatin1String("jxl")
-                      << QLatin1String("avif")
-                      << QLatin1String("webp");
+                      << QLatin1String("jp2")  << QLatin1String("j2k")  << QLatin1String("jpx")   // JPEG-2000
+                      << QLatin1String("jpc")  << QLatin1String("pgx")
+                      << QLatin1String("tif")  << QLatin1String("tiff")                           // Tagged Image Format
+                      << QLatin1String("png")                                                     // Portable Network Graphic
+                      << QLatin1String("eps")                                                     // Encapsulated Postscript
+                      << QLatin1String("fit")  << QLatin1String("fts")  << QLatin1String("fits")  // Flexible Image Transport System (https://fr.wikipedia.org/wiki/Flexible_Image_Transport_System)
+                      << QLatin1String("gif")                                                     // Graphics Interchange Format
+                      << QLatin1String("xbm")  << QLatin1String("xpm")                            // X Bitmap and Pixmap
+                      << QLatin1String("ppm")  << QLatin1String("pbm")  << QLatin1String("pgm")   // Portable Pixmap
+                      << QLatin1String("pnm")
+                      << QLatin1String("pic")                                                     // PICtor Image Format
+                      << QLatin1String("cur ") << QLatin1String("ico")  << QLatin1String("icns")  // Windows/Apple Cursor and Icon
+                      << QLatin1String("pgf")                                                     // Portable Graphics Format
+                      << QLatin1String("bmp")                                                     // Windows Bitmap
+                      << QLatin1String("pcx")                                                     // Picture Exchange
+                      << QLatin1String("tga")                                                     // Truevision Graphics Adapter
+                      << QLatin1String("sgi")  << QLatin1String("rgb")  << QLatin1String("rgba")  // Silicon Graphics Image
+                      << QLatin1String("bw")
+                      << QLatin1String("heic") << QLatin1String("heif")                           // High Efficiency Image File Format
+                      << QLatin1String("jxl")                                                     // JPEG-XL
+                      << QLatin1String("avif")                                                    // AV1 Image File Format
+                      << QLatin1String("wbmp")                                                    // Wireless Application Protocol Bitmap Format
+                      << QLatin1String("webp")                                                    // Web Photo
+    ;
 
     // Raster graphics editor containers: https://en.wikipedia.org/wiki/Raster_graphics_editor
 
