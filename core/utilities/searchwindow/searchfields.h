@@ -323,7 +323,7 @@ class SearchFieldRangeTime : public SearchField
 
 public:
 
-    SearchFieldRangeTime(QObject* const parent);
+    explicit SearchFieldRangeTime(QObject* const parent);
 
     void setBetweenText(const QString& between);
     void setBoundary(const QTime& min, const QTime& max);
