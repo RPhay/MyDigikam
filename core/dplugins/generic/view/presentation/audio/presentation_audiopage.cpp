@@ -380,7 +380,7 @@ void PresentationAudioPage::slotSoundFilesButtonAdd()
     dlg->setFileMode(QFileDialog::ExistingFiles);
     dlg->exec();
 
-    if (dlg && dlg->hasAcceptedUrls())
+    if (dlg->hasAcceptedUrls())
     {
         addItems(dlg->selectedUrls());
         updateFileList();
@@ -500,7 +500,7 @@ void PresentationAudioPage::slotSoundFilesButtonLoad()
     dlg->setFileMode(QFileDialog::ExistingFile);
     dlg->exec();
 
-    if (!dlg || !dlg->hasAcceptedUrls())
+    if (!dlg->hasAcceptedUrls())
     {
         delete dlg;
 
@@ -559,7 +559,7 @@ void PresentationAudioPage::slotSoundFilesButtonSave()
     dlg->setFileMode(QFileDialog::AnyFile);
     dlg->exec();
 
-    if (!dlg || !dlg->hasAcceptedUrls())
+    if (!dlg->hasAcceptedUrls())
     {
         delete dlg;
 
