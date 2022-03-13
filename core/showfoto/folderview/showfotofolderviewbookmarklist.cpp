@@ -281,7 +281,7 @@ ShowfotoFolderViewBookmarkItem* ShowfotoFolderViewBookmarkList::bookmarkExists(c
     {
         item = dynamic_cast<ShowfotoFolderViewBookmarkItem*>(d->parent->topBookmarksItem()->child(i));
 
-        if (path == item->path())
+        if (item && (path == item->path()))
         {
             found = true;
             break;
