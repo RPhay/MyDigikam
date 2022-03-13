@@ -111,10 +111,10 @@ QList<DPluginAuthor> DImgImageMagickPlugin::authors() const
     return QList<DPluginAuthor>()
             << DPluginAuthor(QString::fromUtf8("Maik Qualmann"),
                              QString::fromUtf8("metzpinguin at gmail dot com"),
-                             QString::fromUtf8("(C) 2019"))
+                             QString::fromUtf8("(C) 2019-2022"))
             << DPluginAuthor(QString::fromUtf8("Gilles Caulier"),
                              QString::fromUtf8("caulier dot gilles at gmail dot com"),
-                             QString::fromUtf8("(C) 2006-2021"))
+                             QString::fromUtf8("(C) 2006-2022"))
             ;
 }
 
@@ -123,10 +123,10 @@ void DImgImageMagickPlugin::setup(QObject* const /*parent*/)
     // Nothing to do
 }
 
-QMap<QString, QString> DImgImageMagickPlugin::extraAboutData() const
+QMap<QString, QStringList> DImgImageMagickPlugin::extraAboutData() const
 {
     QString mimes = typeMimes();
-    QMap<QString, QString> map;
+    QMap<QString, QStringList> map;
 
     try
     {
@@ -137,7 +137,7 @@ QMap<QString, QString> DImgImageMagickPlugin::extraAboutData() const
         if (!inflst)
         {
             qCWarning(DIGIKAM_DIMG_LOG_MAGICK) << "ImageMagick coders list is null!";
-            return QMap<QString, QString>();
+            return QMap<QString, QStringList>();
         }
 
         for (uint i = 0 ; i < n ; ++i)
@@ -160,7 +160,16 @@ QMap<QString, QString> DImgImageMagickPlugin::extraAboutData() const
 
                 if (mimes.contains(mod))
                 {
-                    map.insert(mod, QLatin1String(inf->description));
+                    map.insert(mod,
+                               QStringList() << QLatin1String(inf->description)
+                                             << (inf->decoder ?
+                                                 i18nc("@info: can read file format",     "yes") :
+                                                 i18nc("@info: cannot read file format",  "no"))
+                                             << (inf->encoder ?
+                                                 i18nc("@info: can write file format",    "yes") :
+                                                 i18nc("@info: cannot write file format", "no"))
+
+                    );
                 }
             }
         }
@@ -170,7 +179,7 @@ QMap<QString, QString> DImgImageMagickPlugin::extraAboutData() const
     catch (Exception& error)
     {
         qCWarning(DIGIKAM_DIMG_LOG) << "ImageMagickInfo exception:" << error.what();
-        return QMap<QString, QString>();
+        return QMap<QString, QStringList>();
     }
 
     return map;

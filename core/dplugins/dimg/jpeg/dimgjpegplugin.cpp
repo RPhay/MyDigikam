@@ -93,7 +93,7 @@ QList<DPluginAuthor> DImgJPEGPlugin::authors() const
                              QString::fromUtf8("(C) 2005"))
             << DPluginAuthor(QString::fromUtf8("Gilles Caulier"),
                              QString::fromUtf8("caulier dot gilles at gmail dot com"),
-                             QString::fromUtf8("(C) 2006-2021"))
+                             QString::fromUtf8("(C) 2006-2022"))
             ;
 }
 
@@ -110,6 +110,28 @@ QString DImgJPEGPlugin::loaderName() const
 QString DImgJPEGPlugin::typeMimes() const
 {
     return QLatin1String("JPG JPEG JPE");
+}
+
+QMap<QString, QStringList> DImgJPEGPlugin::extraAboutData() const
+{
+    QMap<QString, QStringList> map;
+    map.insert(QLatin1String("JPG"),  QStringList() << i18n("JPEG image")
+                                                    << i18nc("@info: can read file format",  "yes")
+                                                    << i18nc("@info: can write file format", "yes")
+
+    );
+    map.insert(QLatin1String("JPEG"), QStringList() << i18n("JPEG image")
+                                                    << i18nc("@info: can read file format",  "yes")
+                                                    << i18nc("@info: can write file format", "yes")
+
+    );
+    map.insert(QLatin1String("JPE"),  QStringList() << i18n("JPEG image")
+                                                    << i18nc("@info: can read file format",  "yes")
+                                                    << i18nc("@info: can write file format", "yes")
+
+    );
+
+    return map;
 }
 
 int DImgJPEGPlugin::canRead(const QFileInfo& fileInfo, bool magic) const

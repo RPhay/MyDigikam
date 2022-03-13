@@ -63,7 +63,14 @@ ThumbnailImage ThumbnailCreator::createThumbnail(const ThumbnailInfo& info, cons
     }
     else
     {
-        if (info.mimeType == QLatin1String("image"))
+        qCDebug(DIGIKAM_GENERAL_LOG) << "Trying to get thumbnail from" << path << "(" << info.mimeType << ")";
+        QString ext = fileInfo.suffix().toUpper();
+
+        if (
+            (info.mimeType == QLatin1String("image")) ||
+            (ext           == QLatin1String("AVIF"))  ||      // See bug #109060
+            (ext           == QLatin1String("JPX"))
+           )
         {
             if (qimage.isNull())
             {
@@ -78,8 +85,6 @@ ThumbnailImage ThumbnailCreator::createThumbnail(const ThumbnailInfo& info, cons
             }
 
             // To speed-up thumb extraction, we now try to load the images by the file extension.
-
-            QString ext = fileInfo.suffix().toUpper();
 
             if (qimage.isNull() && !ext.isEmpty())
             {

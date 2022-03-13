@@ -172,16 +172,14 @@ void FTExportWidget::slotShowTargetDialogClicked(bool checked)
     targetDialog->setAcceptMode(QFileDialog::AcceptSave);
     targetDialog->setFileMode(QFileDialog::Directory);
     targetDialog->setOptions(QFileDialog::ShowDirsOnly);
+    targetDialog->exec();
 
-    if (targetDialog->exec() == QDialog::Accepted)
+    if (targetDialog->hasAcceptedUrls())
     {
-        if (!targetDialog->selectedUrls().isEmpty())
-        {
-            d->targetUrl = targetDialog->selectedUrls().first();
-            updateTargetLabel();
+        d->targetUrl = targetDialog->selectedUrls().first();
+        updateTargetLabel();
 
-            emit signalTargetUrlChanged(d->targetUrl);
-        }
+        emit signalTargetUrlChanged(d->targetUrl);
     }
 
     delete targetDialog;

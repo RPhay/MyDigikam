@@ -111,7 +111,7 @@ QList<DPluginAuthor> DImgHEIFPlugin::authors() const
     return QList<DPluginAuthor>()
             << DPluginAuthor(QString::fromUtf8("Gilles Caulier"),
                              QString::fromUtf8("caulier dot gilles at gmail dot com"),
-                             QString::fromUtf8("(C) 2019-2021"))
+                             QString::fromUtf8("(C) 2019-2022"))
             ;
 }
 
@@ -120,11 +120,28 @@ void DImgHEIFPlugin::setup(QObject* const /*parent*/)
     // Nothing to do
 }
 
-QMap<QString, QString> DImgHEIFPlugin::extraAboutData() const
+QMap<QString, QStringList> DImgHEIFPlugin::extraAboutData() const
 {
-    QMap<QString, QString> map;
-    map.insert(QLatin1String("HEIC"), i18n("High efficiency image coding"));
-    map.insert(QLatin1String("HEIF"), i18n("High efficiency image file format"));
+    QMap<QString, QStringList> map;
+    map.insert(QLatin1String("HEIC"),
+               QStringList() << i18n("High efficiency image coding")
+                             << i18nc("@info: can read file format", "yes")
+#ifdef HAVE_X265
+                             << i18nc("@info: can write file format", "yes")
+#else
+                             << i18nc("@info: cannot write file format", "no")
+#endif
+    );
+
+    map.insert(QLatin1String("HEIF"),
+               QStringList() << i18n("High efficiency image coding")
+                             << i18nc("@info: can read file format", "yes")
+#ifdef HAVE_X265
+                             << i18nc("@info: can write file format", "yes")
+#else
+                             << i18nc("@info: cannot write file format", "no")
+#endif
+    );
 
     return map;
 }

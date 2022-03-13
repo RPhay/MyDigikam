@@ -48,25 +48,54 @@ DPluginDImg::~DPluginDImg()
 {
 }
 
-QMap<QString, QString> DPluginDImg::extraAboutData() const
+QMap<QString, QStringList> DPluginDImg::extraAboutData() const
 {
-    QMap<QString, QString> map;
+    QMap<QString, QStringList> map;
     QMimeDatabase mimeDb;
 
     foreach (const QString& ext, typeMimes().split(QLatin1Char(' ')))
     {
         if (!ext.isEmpty())
         {
-            map.insert(ext, mimeDb.mimeTypeForFile(QString::fromLatin1("foo.%1").arg(ext)).comment());
+            QMimeType mime = mimeDb.mimeTypeForFile(QString::fromLatin1("foo.%1").arg(ext));
+
+            if (mime.name() == QLatin1String("application/octet-stream"))
+            {
+                map.insert(ext,
+                           QStringList() << i18nc("@info: type of image", "%1 image", ext)
+                                         << ((canRead(QString::fromLatin1("foo.%1").arg(ext), false) != 0) ?
+                                             i18nc("@info: can read file format",     "yes") :
+                                             i18nc("@info: cannot read file format",  "no"))
+                                         << ((canWrite(ext) != 0) ?
+                                             i18nc("@info: can write file format",    "yes") :
+                                             i18nc("@info: cannot write file format", "no"))
+                );
+            }
+            else
+            {
+                map.insert(ext,
+                           QStringList() << mime.comment()
+                                         << ((canRead(QString::fromLatin1("foo.%1").arg(ext), false) != 0) ? i18n("yes") : i18n("no"))
+                                         << ((canWrite(ext) != 0) ? i18n("yes") : i18n("no"))
+                );
+            }
         }
     }
 
     return map;
-};
+}
+
+QStringList DPluginDImg::extraAboutDataRowTitles() const
+{
+    return QStringList() << i18nc("@title: DPlugin properties", "Extension")
+                         << i18nc("@title: DPlugin properties", "Description")
+                         << i18nc("@title: DPlugin properties", "Read")
+                         << i18nc("@title: DPlugin properties", "Write");
+}
 
 QString DPluginDImg::extraAboutDataTitle() const
 {
     return i18n("Type-Mimes");
-};
+}
 
 } // namespace Digikam

@@ -562,11 +562,18 @@ void DMetadataSettingsContainer::defaultCommentValues()
     commNs6.subspace        = NamespaceEntry::EXIF;
 
     NamespaceEntry commNs7;
-    commNs7.namespaceName   = QLatin1String("Iptc.Application2.Caption");
+    commNs7.namespaceName   = QLatin1String("Exif.Image.XPComment");
     commNs7.nsType          = NamespaceEntry::COMMENT;
     commNs7.specialOpts     = NamespaceEntry::NO_OPTS;
     commNs7.index           = 6;
-    commNs7.subspace        = NamespaceEntry::IPTC;
+    commNs7.subspace        = NamespaceEntry::EXIF;
+
+    NamespaceEntry commNs8;
+    commNs8.namespaceName   = QLatin1String("Iptc.Application2.Caption");
+    commNs8.nsType          = NamespaceEntry::COMMENT;
+    commNs8.specialOpts     = NamespaceEntry::NO_OPTS;
+    commNs8.index           = 7;
+    commNs8.subspace        = NamespaceEntry::IPTC;
 
     getReadMapping(NamespaceEntry::DM_COMMENT_CONTAINER()) << commNs1
                                                            << commNs2
@@ -574,7 +581,8 @@ void DMetadataSettingsContainer::defaultCommentValues()
                                                            << commNs4
                                                            << commNs5
                                                            << commNs6
-                                                           << commNs7;
+                                                           << commNs7
+                                                           << commNs8;
 
     d->writeMappings[NamespaceEntry::DM_COMMENT_CONTAINER()]
         = QList<NamespaceEntry>(getReadMapping(NamespaceEntry::DM_COMMENT_CONTAINER()));

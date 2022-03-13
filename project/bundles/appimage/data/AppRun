@@ -101,6 +101,9 @@ if [ -f /etc/pki/openssl10.cnf ]; then
     export OPENSSL_CONF=/etc/pki/openssl10.cnf
 fi
 
+# See Bug #109060
+export LD_PRELOAD=$LD_PRELOAD:$DIR/usr/lib/libavif.so.13
+
 preload_shared_library libudev.so.0
 
 # See bug #414737

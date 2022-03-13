@@ -125,7 +125,9 @@ void DigikamApp::slotImportAddFolders()
         t->setSelectionMode(QAbstractItemView::MultiSelection);
     }
 
-    if (dlg->exec() != QDialog::Accepted)
+    dlg->exec();
+
+    if (!dlg->hasAcceptedUrls())
     {
         delete dlg;
         return;

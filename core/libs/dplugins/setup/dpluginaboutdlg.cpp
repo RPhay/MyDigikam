@@ -155,7 +155,7 @@ DPluginAboutDlg::DPluginAboutDlg(DPlugin* const tool, QWidget* const parent)
 
     // --------------------------------------------------------
 
-    QMap<QString, QString> list = tool->extraAboutData();
+    QMap<QString, QStringList> list = tool->extraAboutData();
 
     if (!list.isEmpty())
     {
@@ -165,11 +165,11 @@ DPluginAboutDlg::DPluginAboutDlg(DPlugin* const tool, QWidget* const parent)
         extra->setSelectionMode(QAbstractItemView::SingleSelection);
         extra->setSizePolicy(QSizePolicy::Expanding, QSizePolicy::Expanding);
         extra->setAllColumnsShowFocus(true);
-        extra->setColumnCount(2);
-        extra->setHeaderLabels(QStringList() << i18nc("@title: DPlugin properties", "Extension")
-                                             << i18nc("@title: DPlugin properties", "Description"));
+        QStringList titles = tool->extraAboutDataRowTitles();
+        extra->setColumnCount(titles.count());
+        extra->setHeaderLabels(titles);
 
-        for (QMap<QString, QString>::const_iterator it = list.constBegin() ; it != list.constEnd() ; ++it)
+        for (QMap<QString, QStringList>::const_iterator it = list.constBegin() ; it != list.constEnd() ; ++it)
         {
             new QTreeWidgetItem(extra, QStringList() << it.key() << it.value());
         }

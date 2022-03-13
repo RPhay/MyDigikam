@@ -59,7 +59,7 @@ public:
     QList<DPluginAuthor> authors()                                                          const override;
 
     void setup(QObject* const)                                                                    override;
-    QMap<QString, QString> extraAboutData()                                                 const override;
+    QMap<QString, QStringList> extraAboutData()                                             const override;
 
     bool previewSupported()                                                                 const override;
 

@@ -290,6 +290,7 @@ port install \
              py-lxml \
              libheif \
              x265 \
+             aom \
              ffmpeg \
              qt5-qtbase \
              qt5-qtdeclarative \
@@ -361,6 +362,8 @@ if [[ $DK_QTWEBENGINE = 0 ]] ; then
 fi
 
 cmake --build . --config RelWithDebInfo --target ext_opencv      -- -j$CPU_CORES
+cmake --build . --config RelWithDebInfo --target ext_libjxl      -- -j$CPU_CORES
+cmake --build . --config RelWithDebInfo --target ext_libavif     -- -j$CPU_CORES
 
 #################################################################################################
 

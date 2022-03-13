@@ -7,7 +7,7 @@
  * Description : wrapper for the QFileDialog
  *
  * Copyright (C) 2014-2022 by Gilles Caulier <caulier dot gilles at gmail dot com>
- * Copyright (C) 2017      by Maik Qualmann <metzpinguin at gmail dot com>
+ * Copyright (C) 2017-2022 by Maik Qualmann <metzpinguin at gmail dot com>
  *
  * This program is free software; you can redistribute it
  * and/or modify it under the terms of the GNU General
@@ -56,6 +56,19 @@ DFileDialog::DFileDialog(QWidget* const parent, const QString& caption,
 
 DFileDialog::~DFileDialog()
 {
+}
+
+bool DFileDialog::hasAcceptedUrls() const
+{
+    return (!selectedUrls().isEmpty()
+
+#ifndef Q_OS_MACOS
+
+            && (result() == QDialog::Accepted)
+
+#endif
+
+           );
 }
 
 QString DFileDialog::getExistingDirectory(QWidget* const parent, const QString& caption,
@@ -161,9 +174,13 @@ QFileDialog::Option DFileDialog::getNativeFileDialogOption()
     }
 
 #ifdef Q_OS_MACOS
+
     bool useNativeFileDialog  = group.readEntry(QLatin1String("Use Native File Dialog"), true);
+
 #else
+
     bool useNativeFileDialog  = group.readEntry(QLatin1String("Use Native File Dialog"), false);
+
 #endif
 
     if (useNativeFileDialog)

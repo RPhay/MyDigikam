@@ -94,7 +94,7 @@ QList<DPluginAuthor> DImgTIFFPlugin::authors() const
                              QString::fromUtf8("(C) 2005"))
             << DPluginAuthor(QString::fromUtf8("Gilles Caulier"),
                              QString::fromUtf8("caulier dot gilles at gmail dot com"),
-                             QString::fromUtf8("(C) 2006-2021"))
+                             QString::fromUtf8("(C) 2006-2022"))
             ;
 }
 
@@ -111,6 +111,21 @@ QString DImgTIFFPlugin::loaderName() const
 QString DImgTIFFPlugin::typeMimes() const
 {
     return QLatin1String("TIF TIFF");
+}
+
+QMap<QString, QStringList> DImgTIFFPlugin::extraAboutData() const
+{
+    QMap<QString, QStringList> map;
+    map.insert(QLatin1String("TIF"),  QStringList() << i18n("Tagged Image Format")
+                                                    << i18nc("@info: can read file format",  "yes")
+                                                    << i18nc("@info: can write file format", "yes")
+    );
+    map.insert(QLatin1String("TIFF"), QStringList() << i18n("Tagged Image Format")
+                                                    << i18nc("@info: can read file format",  "yes")
+                                                    << i18nc("@info: can write file format", "yes")
+    );
+
+    return map;
 }
 
 int DImgTIFFPlugin::canRead(const QFileInfo& fileInfo, bool magic) const

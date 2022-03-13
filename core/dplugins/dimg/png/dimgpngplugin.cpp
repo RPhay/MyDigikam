@@ -108,6 +108,17 @@ QString DImgPNGPlugin::typeMimes() const
     return QLatin1String("PNG");
 }
 
+QMap<QString, QStringList> DImgPNGPlugin::extraAboutData() const
+{
+    QMap<QString, QStringList> map;
+    map.insert(QLatin1String("PNG"), QStringList() << i18n("Portable Network Graphic")
+                                                   << i18nc("@info: can read file format",  "yes")
+                                                   << i18nc("@info: can write file format", "yes")
+    );
+
+    return map;
+}
+
 int DImgPNGPlugin::canRead(const QFileInfo& fileInfo, bool magic) const
 {
     QString filePath = fileInfo.filePath();

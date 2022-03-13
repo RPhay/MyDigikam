@@ -193,12 +193,17 @@ public:
     virtual QString details() const = 0;
 
     /**
-     * @brief Returns a list of extra data to show in plugin about dialog.
+     * @brief Returns a map of extra data to show in plugin about dialog.
      */
-    virtual QMap<QString, QString> extraAboutData() const { return QMap<QString, QString>(); };
+    virtual QMap<QString, QStringList> extraAboutData() const { return QMap<QString, QStringList>(); };
 
     /**
-     * @brief Returns the title of data returned by extraAboiutData().
+     * @brief Returns a list of extra data row titles to show in tab of plugin about dialog.
+     */
+    virtual QStringList extraAboutDataRowTitles() const { return QStringList(); };
+
+    /**
+     * @brief Returns the tab title of data returned by extraAboutData().
      */
     virtual QString extraAboutDataTitle() const { return QString(); };
 

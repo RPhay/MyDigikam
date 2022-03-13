@@ -22,7 +22,7 @@ ExternalProject_Add(ext_jasper
                -DCMAKE_SYSTEM_PREFIX_PATH=${PREFIX_ext_jasper}
                -DJAS_ENABLE_SHARED=ON
                -DJAS_ENABLE_LIBJPEG=ON
-               -DJAS_ENABLE_OPENGL=OFF
+               -DJAS_ENABLE_OPENGL=ON
                -DJAS_LOCAL=OFF
                -DJAS_ENABLE_DOC=OFF
                -DJAS_ENABLE_PROGRAMS=OFF

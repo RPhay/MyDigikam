@@ -174,7 +174,7 @@ void ScanDialog::slotSaveImage(const QImage& image_data)
 
     imageFileSaveDialog->exec();
 
-    if (imageFileSaveDialog->selectedUrls().isEmpty())
+    if (!imageFileSaveDialog->hasAcceptedUrls())
     {
         delete imageFileSaveDialog;
 

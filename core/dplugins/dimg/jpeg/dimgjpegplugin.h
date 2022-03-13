@@ -60,6 +60,7 @@ public:
     QList<DPluginAuthor> authors()                                                          const override;
 
     void setup(QObject* const)                                                                    override;
+    QMap<QString, QStringList> extraAboutData()                                             const override;
 
     QString     loaderName()                                                                const override;
     QString     typeMimes()                                                                 const override;
