@@ -144,7 +144,7 @@ void DFileSelector::slotBtnClicked()
 
     fileDlg->exec();
 
-    if (fileDlg && fileDlg->hasAcceptedUrls())
+    if (fileDlg->hasAcceptedUrls())
     {
         QStringList sel = fileDlg->selectedFiles();
         setFileDlgPath(sel.first());
