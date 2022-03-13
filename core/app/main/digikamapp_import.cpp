@@ -127,7 +127,7 @@ void DigikamApp::slotImportAddFolders()
 
     dlg->exec();
 
-    if (!dlg || !dlg->hasAcceptedUrls())
+    if (!dlg->hasAcceptedUrls())
     {
         delete dlg;
         return;
