@@ -51,7 +51,7 @@ done
 cppcheck -j$CPU_CORES \
          -DQ_OS_LINUX \
          --verbose \
-         --std=c++14 \
+         --std=c++17 \
          --library=qt.cfg \
          --library=opencv2.cfg \
          --library=boost.cfg \
@@ -63,8 +63,6 @@ cppcheck -j$CPU_CORES \
          --report-progress \
          --suppress=*:*cimg*.h \
          --suppress=*:*libraw*.h \
-         --suppress=*:*libde265*.h \
-         --suppress=*:*libheif*.h \
          --suppress=*:*libpgf*.h \
          --suppress=*:*upnpsdk*.h \
          --suppress=*:*yfauth*.h \
@@ -79,9 +77,6 @@ cppcheck -j$CPU_CORES \
          --suppress=unusedVariable \
          --suppress=unusedStructMember \
          --suppress=unknownMacro \
-         --suppress=qrandCalled \
-         --suppress=qsrandCalled \
-         --suppress=qSortCalled \
          --suppress=class_X_Y \
          --suppress=ConfigurationNotChecked \
          --suppress=unmatchedSuppression:* \
