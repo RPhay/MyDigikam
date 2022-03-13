@@ -442,7 +442,7 @@ QUrl MetadataWidget::saveMetadataToFile(const QString& caption, const QString& f
 
     // Check for cancel.
 
-    if (!fileSaveDialog || !fileSaveDialog->hasAcceptedUrls())
+    if (!fileSaveDialog->hasAcceptedUrls())
     {
         delete fileSaveDialog;
 
