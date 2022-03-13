@@ -414,7 +414,7 @@ void ExifToolWidget::slotSaveMetadataToFile()
 
     // Check for cancel.
 
-    if (!fileSaveDialog || !fileSaveDialog->hasAcceptedUrls())
+    if (!fileSaveDialog->hasAcceptedUrls())
     {
         delete fileSaveDialog;
         return;
