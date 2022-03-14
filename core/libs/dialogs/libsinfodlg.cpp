@@ -337,7 +337,7 @@ LibsInfoDlg::LibsInfoDlg(QWidget* const parent)
 
     if (res > 0)
     {
-        qint64 available = memory.bytes(KMemoryInfo::TotalRam);
+        quint64 available = memory.bytes(KMemoryInfo::TotalRam);
         new QTreeWidgetItem(m_features, QStringList() <<
                             i18nc(CONTEXT, "Memory available") << ItemPropertiesTab::humanReadableBytesCount(available));
     }
