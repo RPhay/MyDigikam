@@ -59,6 +59,9 @@ class Q_DECL_HIDDEN GPSMarkerTiler::MyTile : public Tile
 {
 public:
 
+    MyTile()          = default;
+    virtual ~MyTile() = default;
+
     QList<qlonglong> imagesId;
 };
 
