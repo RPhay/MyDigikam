@@ -16,16 +16,6 @@ find_package(Qt${QT_VERSION_MAJOR} REQUIRED
              Network
 )
 
-if(Qt6_FOUND)
-
-    find_package(Qt${QT_VERSION_MAJOR} REQUIRED
-                                       NO_MODULE
-                                       COMPONENTS
-                                       Core5Compat
-    )
-
-endif()
-
 if(ENABLE_QWEBENGINE)
 
     find_package(Qt${QT_VERSION_MAJOR} REQUIRED
