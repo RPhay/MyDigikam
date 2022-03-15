@@ -327,17 +327,16 @@ LibsInfoDlg::LibsInfoDlg(QWidget* const parent)
                         i18nc(CONTEXT, "Marble support") <<                 SUPPORTED_NO);
 #endif
 
-    int nbcore = QThread::idealThreadCount();
+    int nbcore         = QThread::idealThreadCount();
     new QTreeWidgetItem(m_features, QStringList() <<
                         i18ncp(CONTEXT, "CPU core", "CPU cores", nbcore) << QString::fromLatin1("%1").arg(nbcore));
 
     KMemoryInfo memory = KMemoryInfo::currentInfo();
+    int res            = memory.isValid();
+    qint64 available   = memory.bytes(KMemoryInfo::TotalRam);
 
-    int res = memory.isValid();
-
-    if (res > 0)
+    if ((res > 0) && (available > 0))
     {
-        quint64 available = memory.bytes(KMemoryInfo::TotalRam);
         new QTreeWidgetItem(m_features, QStringList() <<
                             i18nc(CONTEXT, "Memory available") << ItemPropertiesTab::humanReadableBytesCount(available));
     }
