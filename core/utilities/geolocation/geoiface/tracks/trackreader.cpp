@@ -299,7 +299,7 @@ void TrackReader::parseTrack(QXmlStreamReader& xml)
     /* check that really getting a track. */
 
     if ((xml.tokenType() != QXmlStreamReader::StartElement) &&
-        (xml.name() == QLatin1String("trkpt")))
+        (xml.name()      == QLatin1String("trkpt")))
     {
         return;
     }
@@ -312,8 +312,8 @@ void TrackReader::parseTrack(QXmlStreamReader& xml)
 
     /* check that track has lat or lon attribute. */
 
-    if (attributes.hasAttribute(QStringLiteral("lat")) &&
-        attributes.hasAttribute(QStringLiteral("lon")))
+    if (attributes.hasAttribute(QLatin1String("lat")) &&
+        attributes.hasAttribute(QLatin1String("lon")))
     {
         d->currentDataPoint.coordinates.setLatLon(attributes.value(QLatin1String("lat")).toDouble(),
                                                   attributes.value(QLatin1String("lon")).toDouble());
@@ -325,7 +325,8 @@ void TrackReader::parseTrack(QXmlStreamReader& xml)
 
     QString eText;
 
-    while (!((xml.tokenType() == QXmlStreamReader::EndElement) && (xml.name() == QLatin1String("trkpt"))) && !xml.hasError())
+    while (!((xml.tokenType() == QXmlStreamReader::EndElement) &&
+             (xml.name()      == QLatin1String("trkpt")))      && !xml.hasError())
     {
         if (xml.tokenType() == QXmlStreamReader::StartElement)
         {
