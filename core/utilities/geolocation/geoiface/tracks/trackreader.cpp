@@ -294,11 +294,12 @@ void TrackReader::rebuildElementPath()
     d->currentElementPath = d->currentElements.join(QLatin1Char('/'));
 }
 
-void TrackReader::parseTrack(QXmlStreamReader &xml)
+void TrackReader::parseTrack(QXmlStreamReader& xml)
 {
     /* check that really getting a track. */
-    
-    if(xml.tokenType() != QXmlStreamReader::StartElement && xml.name() == QLatin1String("trkpt")) 
+
+    if ((xml.tokenType() != QXmlStreamReader::StartElement) &&
+        (xml.name() == QLatin1String("trkpt")))
     {
         return;
     }
@@ -306,31 +307,32 @@ void TrackReader::parseTrack(QXmlStreamReader &xml)
     d->currentDataPoint = TrackManager::TrackPoint();
 
     /* get first the attributes for track points */
-    
+
     QXmlStreamAttributes attributes = xml.attributes();
 
     /* check that track has lat or lon attribute. */
 
-    if(attributes.hasAttribute(QStringLiteral("lat")) && 
-       attributes.hasAttribute(QStringLiteral("lon")))
+    if (attributes.hasAttribute(QStringLiteral("lat")) &&
+        attributes.hasAttribute(QStringLiteral("lon")))
     {
-        d->currentDataPoint.coordinates.setLatLon(attributes.value(QLatin1String("lat")).toDouble(),  
-                                                  attributes.value(QLatin1String("lon")).toDouble());                    
+        d->currentDataPoint.coordinates.setLatLon(attributes.value(QLatin1String("lat")).toDouble(),
+                                                  attributes.value(QLatin1String("lon")).toDouble());
     }
 
     /* Next element... */
 
     xml.readNext();
 
-    QString eText ;
-    while (!(xml.tokenType() == QXmlStreamReader::EndElement && xml.name() == QLatin1String("trkpt")) && !xml.hasError())
-    {   
-        if(xml.tokenType() == QXmlStreamReader::StartElement)
+    QString eText;
+
+    while (!((xml.tokenType() == QXmlStreamReader::EndElement) && (xml.name() == QLatin1String("trkpt"))) && !xml.hasError())
+    {
+        if (xml.tokenType() == QXmlStreamReader::StartElement)
         {
             eText.clear();
-            eText =  xml.readElementText();            
-         
-            if (xml.name() == QLatin1String("time"))
+            eText = xml.readElementText();
+
+            if      (xml.name() == QLatin1String("time"))
             {
                 d->currentDataPoint.dateTime = ParseTime(eText.trimmed());
             }
@@ -403,8 +405,9 @@ void TrackReader::parseTrack(QXmlStreamReader &xml)
                 }
             }
         }
-       
+
         /* ...and next... */
+
         xml.readNext();
     }
 
@@ -438,6 +441,7 @@ TrackReader::TrackReadResult TrackReader::loadTrackFile(const QUrl& url)
 
         return parsedData;
     }
+
     // TODO: port to new API: https://doc.qt.io/qt-6/xml-changes-qt6.html
 
     QXmlStreamReader XmlReader(&file);
@@ -447,12 +451,12 @@ TrackReader::TrackReadResult TrackReader::loadTrackFile(const QUrl& url)
         QXmlStreamReader::TokenType token = XmlReader.readNext();
 
         if (token == QXmlStreamReader::StartElement)
-        {   
+        {
             if (XmlReader.name().toString() != QLatin1String("trkpt"))
             {
                 continue;
             }
-            else 
+            else
             {
                 trackReader.parseTrack(XmlReader);
             }
@@ -479,14 +483,12 @@ TrackReader::TrackReadResult TrackReader::loadTrackFile(const QUrl& url)
 
     if (!parsedData.isValid)
     {
-        {   
-            parsedData.loadError = i18n("File is a GPX file, but no track points "
-                                        "with valid timestamps were found.");
-        }
+        parsedData.loadError = i18n("File is a GPX file, but no track points "
+                                    "with valid timestamps were found.");
 
         return parsedData;
     }
-   
+
     // The correlation algorithm relies on sorted data, therefore sort now
 
     std::sort(parsedData.track.points.begin(), parsedData.track.points.end(), TrackManager::TrackPoint::EarlierThan);

@@ -94,7 +94,7 @@ bool MetaEngine::initializeExiv2()
     }
 
     registerXmpNameSpace(QLatin1String("http://ns.apple.com/faceinfo/1.0/"), QLatin1String("apple-fi"));    // krazy:exclude=insecurenet
-    registerXmpNameSpace(QLatin1String("http://ns.excire.com/foto/1.0/")   , QLatin1String("excire"));      // krazy:exclude=insecurenet
+    registerXmpNameSpace(QLatin1String("http://ns.excire.com/foto/1.0/"),    QLatin1String("excire"));      // krazy:exclude=insecurenet
 
     /**
      * It cleans up memory used by Adobe XMP SDK automatically at application exit.
