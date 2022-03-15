@@ -86,6 +86,7 @@ public:
         title                   (nullptr),
         scanThumbs              (nullptr),
         scanFingerPrints        (nullptr),
+        restoreSettings         (nullptr),
         useMutiCoreCPU          (nullptr),
         cleanThumbsDb           (nullptr),
         cleanFacesDb            (nullptr),
@@ -112,6 +113,7 @@ public:
     }
 
     static const QString configGroupName;
+    static const QString configRestoreSettings;
     static const QString configUseMutiCoreCPU;
     static const QString configNewItems;
     static const QString configThumbnails;
@@ -139,6 +141,7 @@ public:
     QLabel*              title;
     QCheckBox*           scanThumbs;
     QCheckBox*           scanFingerPrints;
+    QCheckBox*           restoreSettings;
     QCheckBox*           useMutiCoreCPU;
     QCheckBox*           cleanThumbsDb;
     QCheckBox*           cleanFacesDb;
@@ -164,6 +167,7 @@ public:
 };
 
 const QString MaintenanceDlg::Private::configGroupName(QLatin1String("MaintenanceDlg Settings"));
+const QString MaintenanceDlg::Private::configRestoreSettings(QLatin1String("RestoreSettings"));
 const QString MaintenanceDlg::Private::configUseMutiCoreCPU(QLatin1String("UseMutiCoreCPU"));
 const QString MaintenanceDlg::Private::configNewItems(QLatin1String("NewItems"));
 const QString MaintenanceDlg::Private::configThumbnails(QLatin1String("Thumbnails"));
@@ -217,6 +221,7 @@ MaintenanceDlg::MaintenanceDlg(QWidget* const parent)
 
     DVBox* const options       = new DVBox;
     d->albumSelectors          = new AlbumSelectors(i18nc("@label", "Process items from:"), d->configGroupName, options);
+    d->restoreSettings         = new QCheckBox(i18nc("@option:check", "Restore the last active tools and settings"), options);
     d->useMutiCoreCPU          = new QCheckBox(i18nc("@option:check", "Work on all processor cores (when it's possible)"), options);
     d->expanderBox->insertItem(Private::Options, options, QIcon::fromTheme(QLatin1String("configure")), i18n("Common Options"), QLatin1String("Options"), true);
 
@@ -401,6 +406,9 @@ MaintenanceDlg::MaintenanceDlg(QWidget* const parent)
     connect(d->expanderBox, SIGNAL(signalItemToggled(int,bool)),
             this, SLOT(slotItemToggled(int,bool)));
 
+    connect(d->restoreSettings, SIGNAL(toggled(bool)),
+            this, SLOT(slotRestoreSettings(bool)));
+
     connect(d->metadataSetup, SIGNAL(clicked()),
             this, SLOT(slotMetadataSetup()));
 
@@ -476,37 +484,44 @@ void MaintenanceDlg::readSettings()
     d->expanderBox->readSettings(group);
     d->albumSelectors->loadState();
 
-    MaintenanceSettings prm;
+    d->restoreSettings->blockSignals(true);
+    d->restoreSettings->setChecked(group.readEntry(d->configRestoreSettings, false));
+    d->restoreSettings->blockSignals(false);
 
-    d->useMutiCoreCPU->setChecked(group.readEntry(d->configUseMutiCoreCPU,                                  prm.useMutiCoreCPU));
-    d->expanderBox->setChecked(Private::NewItems,           group.readEntry(d->configNewItems,              prm.newItems));
+    if (d->restoreSettings->isChecked())
+    {
+        MaintenanceSettings prm;
 
-    d->expanderBox->setChecked(Private::DbCleanup,          group.readEntry(d->configCleanupDatabase,       prm.databaseCleanup));
-    d->cleanThumbsDb->setChecked(group.readEntry(d->configCleanupThumbDatabase,                             prm.cleanThumbDb));
-    d->cleanFacesDb->setChecked(group.readEntry(d->configCleanupFacesDatabase,                              prm.cleanFacesDb));
-    d->cleanSimilarityDb->setChecked(group.readEntry(d->configCleanupSimilarityDatabase,                    prm.cleanSimilarityDb));
-    d->shrinkDatabases->setChecked(group.readEntry(d->configShrinkDatabases,                                prm.shrinkDatabases));
+        d->useMutiCoreCPU->setChecked(group.readEntry(d->configUseMutiCoreCPU,                                  prm.useMutiCoreCPU));
+        d->expanderBox->setChecked(Private::NewItems,           group.readEntry(d->configNewItems,              prm.newItems));
 
-    d->expanderBox->setChecked(Private::Thumbnails,         group.readEntry(d->configThumbnails,            prm.thumbnails));
-    d->scanThumbs->setChecked(group.readEntry(d->configScanThumbs,                                          prm.scanThumbs));
+        d->expanderBox->setChecked(Private::DbCleanup,          group.readEntry(d->configCleanupDatabase,       prm.databaseCleanup));
+        d->cleanThumbsDb->setChecked(group.readEntry(d->configCleanupThumbDatabase,                             prm.cleanThumbDb));
+        d->cleanFacesDb->setChecked(group.readEntry(d->configCleanupFacesDatabase,                              prm.cleanFacesDb));
+        d->cleanSimilarityDb->setChecked(group.readEntry(d->configCleanupSimilarityDatabase,                    prm.cleanSimilarityDb));
+        d->shrinkDatabases->setChecked(group.readEntry(d->configShrinkDatabases,                                prm.shrinkDatabases));
 
-    d->expanderBox->setChecked(Private::FingerPrints,       group.readEntry(d->configFingerPrints,          prm.fingerPrints));
-    d->scanFingerPrints->setChecked(group.readEntry(d->configScanFingerPrints,                              prm.scanFingerPrints));
+        d->expanderBox->setChecked(Private::Thumbnails,         group.readEntry(d->configThumbnails,            prm.thumbnails));
+        d->scanThumbs->setChecked(group.readEntry(d->configScanThumbs,                                          prm.scanThumbs));
 
-    d->expanderBox->setChecked(Private::Duplicates,         group.readEntry(d->configDuplicates,            prm.duplicates));
-    d->similarityRange->setInterval(group.readEntry(d->configMinSimilarity,                                 prm.minSimilarity),
-                                    group.readEntry(d->configMaxSimilarity,                                 prm.maxSimilarity));
-    int restrictions = d->searchResultRestriction->findData(group.readEntry(d->configDuplicatesRestriction, (int)prm.duplicatesRestriction));
-    d->searchResultRestriction->setCurrentIndex(restrictions);
+        d->expanderBox->setChecked(Private::FingerPrints,       group.readEntry(d->configFingerPrints,          prm.fingerPrints));
+        d->scanFingerPrints->setChecked(group.readEntry(d->configScanFingerPrints,                              prm.scanFingerPrints));
 
-    d->expanderBox->setChecked(Private::FaceManagement,     group.readEntry(d->configFaceManagement,        prm.faceManagement));
-    d->faceScannedHandling->setCurrentIndex(group.readEntry(d->configFaceScannedHandling,                   (int)prm.faceSettings.alreadyScannedHandling));
+        d->expanderBox->setChecked(Private::Duplicates,         group.readEntry(d->configDuplicates,            prm.duplicates));
+        d->similarityRange->setInterval(group.readEntry(d->configMinSimilarity,                                 prm.minSimilarity),
+                                        group.readEntry(d->configMaxSimilarity,                                 prm.maxSimilarity));
+        int restrictions = d->searchResultRestriction->findData(group.readEntry(d->configDuplicatesRestriction, (int)prm.duplicatesRestriction));
+        d->searchResultRestriction->setCurrentIndex(restrictions);
 
-    d->expanderBox->setChecked(Private::ImageQualitySorter, group.readEntry(d->configImageQualitySorter,    prm.qualitySort));
-    d->qualityScanMode->setCurrentIndex(group.readEntry(d->configQualityScanMode,                           prm.qualityScanMode));
+        d->expanderBox->setChecked(Private::FaceManagement,     group.readEntry(d->configFaceManagement,        prm.faceManagement));
+        d->faceScannedHandling->setCurrentIndex(group.readEntry(d->configFaceScannedHandling,                   (int)prm.faceSettings.alreadyScannedHandling));
 
-    d->expanderBox->setChecked(Private::MetadataSync,       group.readEntry(d->configMetadataSync,          prm.metadataSync));
-    d->syncDirection->setCurrentIndex(group.readEntry(d->configSyncDirection,                               prm.syncDirection));
+        d->expanderBox->setChecked(Private::ImageQualitySorter, group.readEntry(d->configImageQualitySorter,    prm.qualitySort));
+        d->qualityScanMode->setCurrentIndex(group.readEntry(d->configQualityScanMode,                           prm.qualityScanMode));
+
+        d->expanderBox->setChecked(Private::MetadataSync,       group.readEntry(d->configMetadataSync,          prm.metadataSync));
+        d->syncDirection->setCurrentIndex(group.readEntry(d->configSyncDirection,                               prm.syncDirection));
+    }
 
     for (int i = Private::NewItems ; i < Private::Stretch ; ++i)
     {
@@ -526,29 +541,34 @@ void MaintenanceDlg::writeSettings()
     d->expanderBox->writeSettings(group);
     d->albumSelectors->saveState();
 
-    MaintenanceSettings prm   = settings();
+    group.writeEntry(d->configRestoreSettings, d->restoreSettings->isChecked());
 
-    group.writeEntry(d->configUseMutiCoreCPU,             prm.useMutiCoreCPU);
-    group.writeEntry(d->configNewItems,                   prm.newItems);
-    group.writeEntry(d->configCleanupDatabase,            prm.databaseCleanup);
-    group.writeEntry(d->configCleanupThumbDatabase,       prm.cleanThumbDb);
-    group.writeEntry(d->configCleanupFacesDatabase,       prm.cleanFacesDb);
-    group.writeEntry(d->configCleanupSimilarityDatabase,  prm.cleanSimilarityDb);
-    group.writeEntry(d->configShrinkDatabases,            prm.shrinkDatabases);
-    group.writeEntry(d->configThumbnails,                 prm.thumbnails);
-    group.writeEntry(d->configScanThumbs,                 prm.scanThumbs);
-    group.writeEntry(d->configFingerPrints,               prm.fingerPrints);
-    group.writeEntry(d->configScanFingerPrints,           prm.scanFingerPrints);
-    group.writeEntry(d->configDuplicates,                 prm.duplicates);
-    group.writeEntry(d->configMinSimilarity,              prm.minSimilarity);
-    group.writeEntry(d->configMaxSimilarity,              prm.maxSimilarity);
-    group.writeEntry(d->configDuplicatesRestriction,      (int)prm.duplicatesRestriction);
-    group.writeEntry(d->configFaceManagement,             prm.faceManagement);
-    group.writeEntry(d->configFaceScannedHandling,        (int)prm.faceSettings.alreadyScannedHandling);
-    group.writeEntry(d->configImageQualitySorter,         prm.qualitySort);
-    group.writeEntry(d->configQualityScanMode,            prm.qualityScanMode);
-    group.writeEntry(d->configMetadataSync,               prm.metadataSync);
-    group.writeEntry(d->configSyncDirection,              prm.syncDirection);
+    if (d->restoreSettings->isChecked())
+    {
+        MaintenanceSettings prm   = settings();
+
+        group.writeEntry(d->configUseMutiCoreCPU,             prm.useMutiCoreCPU);
+        group.writeEntry(d->configNewItems,                   prm.newItems);
+        group.writeEntry(d->configCleanupDatabase,            prm.databaseCleanup);
+        group.writeEntry(d->configCleanupThumbDatabase,       prm.cleanThumbDb);
+        group.writeEntry(d->configCleanupFacesDatabase,       prm.cleanFacesDb);
+        group.writeEntry(d->configCleanupSimilarityDatabase,  prm.cleanSimilarityDb);
+        group.writeEntry(d->configShrinkDatabases,            prm.shrinkDatabases);
+        group.writeEntry(d->configThumbnails,                 prm.thumbnails);
+        group.writeEntry(d->configScanThumbs,                 prm.scanThumbs);
+        group.writeEntry(d->configFingerPrints,               prm.fingerPrints);
+        group.writeEntry(d->configScanFingerPrints,           prm.scanFingerPrints);
+        group.writeEntry(d->configDuplicates,                 prm.duplicates);
+        group.writeEntry(d->configMinSimilarity,              prm.minSimilarity);
+        group.writeEntry(d->configMaxSimilarity,              prm.maxSimilarity);
+        group.writeEntry(d->configDuplicatesRestriction,      (int)prm.duplicatesRestriction);
+        group.writeEntry(d->configFaceManagement,             prm.faceManagement);
+        group.writeEntry(d->configFaceScannedHandling,        (int)prm.faceSettings.alreadyScannedHandling);
+        group.writeEntry(d->configImageQualitySorter,         prm.qualitySort);
+        group.writeEntry(d->configQualityScanMode,            prm.qualityScanMode);
+        group.writeEntry(d->configMetadataSync,               prm.metadataSync);
+        group.writeEntry(d->configSyncDirection,              prm.syncDirection);
+    }
 
     DXmlGuiWindow::saveWindowSize(windowHandle(), group);
 }
@@ -587,6 +607,52 @@ void MaintenanceDlg::slotItemToggled(int index, bool b)
 
         default :  // NewItems
             break;
+    }
+}
+
+void MaintenanceDlg::slotRestoreSettings(bool checked)
+{
+    KSharedConfig::Ptr config = KSharedConfig::openConfig();
+    KConfigGroup group        = config->group(d->configGroupName);
+
+    group.writeEntry(d->configRestoreSettings, d->restoreSettings->isChecked());
+
+    if (checked)
+    {
+        readSettings();
+    }
+    else
+    {
+        MaintenanceSettings prm;
+
+        d->useMutiCoreCPU->setChecked(prm.useMutiCoreCPU);
+        d->expanderBox->setChecked(Private::NewItems,           prm.newItems);
+
+        d->expanderBox->setChecked(Private::DbCleanup,          prm.databaseCleanup);
+        d->cleanThumbsDb->setChecked(prm.cleanThumbDb);
+        d->cleanFacesDb->setChecked(prm.cleanFacesDb);
+        d->cleanSimilarityDb->setChecked(prm.cleanSimilarityDb);
+        d->shrinkDatabases->setChecked(prm.shrinkDatabases);
+
+        d->expanderBox->setChecked(Private::Thumbnails,         prm.thumbnails);
+        d->scanThumbs->setChecked(prm.scanThumbs);
+
+        d->expanderBox->setChecked(Private::FingerPrints,       prm.fingerPrints);
+        d->scanFingerPrints->setChecked(prm.scanFingerPrints);
+
+        d->expanderBox->setChecked(Private::Duplicates,         prm.duplicates);
+        d->similarityRange->setInterval(prm.minSimilarity,      prm.maxSimilarity);
+        int restrictions = d->searchResultRestriction->findData((int)prm.duplicatesRestriction);
+        d->searchResultRestriction->setCurrentIndex(restrictions);
+
+        d->expanderBox->setChecked(Private::FaceManagement,     prm.faceManagement);
+        d->faceScannedHandling->setCurrentIndex((int)prm.faceSettings.alreadyScannedHandling);
+
+        d->expanderBox->setChecked(Private::ImageQualitySorter, prm.qualitySort);
+        d->qualityScanMode->setCurrentIndex(prm.qualityScanMode);
+
+        d->expanderBox->setChecked(Private::MetadataSync,       prm.metadataSync);
+        d->syncDirection->setCurrentIndex(prm.syncDirection);
     }
 }
 
