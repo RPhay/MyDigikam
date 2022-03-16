@@ -102,7 +102,6 @@ urpmi --auto \
       lz4-devel \
       inotify-tools-devel \
       cups-devel \
-      imagemagick \
       openal-soft-devel \
       libical-devel \
       libcap-devel \
@@ -152,7 +151,6 @@ urpmi --auto \
       ${LIBSUFFIX}lqr-devel \
       ${LIBSUFFIX}fftw-devel \
       ${LIBSUFFIX}curl-devel \
-      ${LIBSUFFIX}magick-devel \
       ${LIBSUFFIX}wayland-devel \
       ${LIBSUFFIX}clang-devel \
       ${LIBSUFFIX}sm-devel \
@@ -310,6 +308,7 @@ rm -fr /usr/local/include/openssl || true
 /opt/cmake/bin/cmake --build . --config RelWithDebInfo --target ext_libjxl        -- -j$CPU_CORES
 /opt/cmake/bin/cmake --build . --config RelWithDebInfo --target ext_libavif       -- -j$CPU_CORES
 /opt/cmake/bin/cmake --build . --config RelWithDebInfo --target ext_ffmpeg        -- -j$CPU_CORES
+/opt/cmake/bin/cmake --build . --config RelWithDebInfo --target ext_imagemagick   -- -j$CPU_CORES
 /opt/cmake/bin/cmake --build . --config RelWithDebInfo --target ext_opencv        -- -j$CPU_CORES
 
 #################################################################################################
