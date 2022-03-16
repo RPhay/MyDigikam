@@ -107,7 +107,6 @@ urpmi --auto \
       libical-devel \
       libcap-devel \
       fontconfig-devel \
-      freetype-devel \
       patchelf \
       dpkg \
       ninja \
@@ -117,7 +116,6 @@ urpmi --auto \
       ruby \
       ruby-devel \
       sqlite3-devel \
-      ffmpeg-devel \
       boost-devel \
       gphoto2-devel \
       sane-backends \
@@ -160,7 +158,21 @@ urpmi --auto \
       ${LIBSUFFIX}sm-devel \
       ${LIBSUFFIX}freeglut-devel \
       ${LIBSUFFIX}attr-devel \
-      ${LIBSUFFIX}input-devel
+      ${LIBSUFFIX}input-devel \
+      ${LIBSUFFIX}fdk-aac-devel \
+      ${LIBSUFFIX}x264-devel \
+      ${LIBSUFFIX}x265-devel \
+      ${LIBSUFFIX}xvidcore-devel \
+      ${LIBSUFFIX}vpx-devel \
+      ${LIBSUFFIX}theora-devel \
+      ${LIBSUFFIX}vorbis-devel \
+      ${LIBSUFFIX}opencore-amr-devel \
+      ${LIBSUFFIX}rtmp-devel \
+      ${LIBSUFFIX}opus-devel \
+      ${LIBSUFFIX}speex-devel \
+      ${LIBSUFFIX}mp3lame-devel \
+      ${LIBSUFFIX}freetype2-devel \
+      ${LIBSUFFIX}ass-devel
 
 if [[ "$DK_QTVERSION" = "5.14" ]] ; then
 
@@ -297,6 +309,7 @@ rm -fr /usr/local/include/openssl || true
 /opt/cmake/bin/cmake --build . --config RelWithDebInfo --target ext_heif          -- -j$CPU_CORES
 /opt/cmake/bin/cmake --build . --config RelWithDebInfo --target ext_libjxl        -- -j$CPU_CORES
 /opt/cmake/bin/cmake --build . --config RelWithDebInfo --target ext_libavif       -- -j$CPU_CORES
+/opt/cmake/bin/cmake --build . --config RelWithDebInfo --target ext_ffmpeg        -- -j$CPU_CORES
 /opt/cmake/bin/cmake --build . --config RelWithDebInfo --target ext_opencv        -- -j$CPU_CORES
 
 #################################################################################################

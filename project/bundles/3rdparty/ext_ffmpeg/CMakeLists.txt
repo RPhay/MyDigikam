@@ -6,12 +6,18 @@
 # For details see the accompanying COPYING-CMAKE-SCRIPTS file.
 #
 
+# NOTE: see build rules and tips at:
+#       https://github.com/pyke369/sffmpeg/blob/master/CMakeLists.txt
+#       https://www.linuxfromscratch.org/blfs/view/svn/multimedia/ffmpeg.html
+#       https://trac.ffmpeg.org/wiki/CompilationGuide/Ubuntu
+#
+
 SET(PREFIX_ext_ffmpeg "${EXTPREFIX}")
 
 ExternalProject_Add(ext_ffmpeg
     DOWNLOAD_DIR ${EXTERNALS_DOWNLOAD_DIR}
-    URL https://ffmpeg.org/releases/ffmpeg-3.3.6.tar.xz
-    URL_MD5 e7701ebfce77e44f7b4cc57dd001e7eb
+    URL https://ffmpeg.org/releases/ffmpeg-4.4.1.tar.xz
+    URL_MD5 41a1ca8693acc56088e8eaf3899b91ea
 
     CONFIGURE_COMMAND <SOURCE_DIR>/configure --prefix=${PREFIX_ext_ffmpeg}
                                              --datadir=${CMAKE_BINARY_DIR}/etc
@@ -21,8 +27,7 @@ ExternalProject_Add(ext_ffmpeg
                                              --enable-nonfree
                                              --disable-doc
                                              --disable-debug
-                                             --disable-ffplay
-                                             --disable-ffserver
+                                             --disable-programs
                                              --disable-outdevs
                                              --enable-runtime-cpudetect
                                              --extra-libs=-lstdc++
@@ -35,13 +40,14 @@ ExternalProject_Add(ext_ffmpeg
                                              --enable-libvorbis
                                              --enable-libx264
                                              --enable-libx265
+                                             --enable-libaom
                                              --enable-libxvid
                                              --enable-libvpx
                                              --enable-libopus
                                              --enable-librtmp
                                              --enable-libfreetype
                                              --enable-libass
-                                             --enable-openssl
+                                             --enable-opengl
 
     UPDATE_COMMAND ""
     ALWAYS 0

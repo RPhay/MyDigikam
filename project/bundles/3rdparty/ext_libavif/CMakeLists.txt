@@ -32,9 +32,23 @@ set(AVIF_Conf -DBUILD_SHARED_LIBS=ON
               -DAVIF_BUILD_TESTS=OFF
 )
 
+if(MINGW)
+
+    set(AVIF_Conf ${AVIF_Conf}
+                  -DAVIF_LOCAL_AOM=ON
+    )
+
+else()
+
+    set(AVIF_Conf ${AVIF_Conf}
+                  -DAVIF_LOCAL_AOM=OFF
+    )
+
+endif()
+
 JoinListAsString("${AVIF_Conf}" " " BASH_OPTIONS_AVIF)
 
-# NOTE: Special rules for mixed libaom versions hosted in bundles, for exemple with ffmpeg: build libaom as static library.
+# NOTE: Special MinGW rules to prevent mixed libaom versions hosted in bundles, for exemple with ffmpeg: build libaom as static library.
 # See this comment from Bugzilla for details: https://bugs.kde.org/show_bug.cgi?id=109060#c30
 
 set(AOM_Conf -DENABLE_EXAMPLES=OFF
@@ -42,9 +56,22 @@ set(AOM_Conf -DENABLE_EXAMPLES=OFF
              -DENABLE_TOOLS=OFF
              -DENABLE_DOCS=OFF
              -DENABLE_TESTDATA=OFF
-             -DBUILD_SHARED_LIBS=OFF
              -DCONFIG_PIC=1
 )
+
+if(MINGW)
+
+    set(AOM_Conf ${AOM_Conf}
+                 -DBUILD_SHARED_LIBS=OFF
+    )
+
+else()
+
+    set(AOM_Conf ${AOM_Conf}
+                 -DBUILD_SHARED_LIBS=ON
+    )
+
+endif()
 
 JoinListAsString("${AOM_Conf}" " " BASH_OPTIONS_AOM)
 
@@ -142,7 +169,6 @@ else() # Linux
 
         BUILD_IN_SOURCE 0
 
-        INSTALL_COMMAND ""
         UPDATE_COMMAND ""
         ALWAYS 0
     )
@@ -154,19 +180,6 @@ else() # Linux
 
         GIT_REPOSITORY https://github.com/AOMediaCodec/libavif.git
         GIT_TAG v0.9.3
-
-        PATCH_COMMAND cd <SOURCE_DIR>/ext && mkdir -p aom/build.libavif && mkdir -p aom/aom                                                     &&
-                      ln -s <SOURCE_DIR>/../../../libaom-prefix/src/libaom-build/libaom.a               <SOURCE_DIR>/ext/aom/build.libavif/     &&
-                      ln -s <SOURCE_DIR>/../../../libaom-prefix/src/libaom/aom/aom_decoder.h            <SOURCE_DIR>/ext/aom/aom/               &&
-                      ln -s <SOURCE_DIR>/../../../libaom-prefix/src/libaom/aom/aom_encoder.h            <SOURCE_DIR>/ext/aom/aom/               &&
-                      ln -s <SOURCE_DIR>/../../../libaom-prefix/src/libaom/aom/aom_image.h              <SOURCE_DIR>/ext/aom/aom/               &&
-                      ln -s <SOURCE_DIR>/../../../libaom-prefix/src/libaom/aom/aom_integer.h            <SOURCE_DIR>/ext/aom/aom/               &&
-                      ln -s <SOURCE_DIR>/../../../libaom-prefix/src/libaom/aom/aom_codec.h              <SOURCE_DIR>/ext/aom/aom/               &&
-                      ln -s <SOURCE_DIR>/../../../libaom-prefix/src/libaom/aom/aom_frame_buffer.h       <SOURCE_DIR>/ext/aom/aom/               &&
-                      ln -s <SOURCE_DIR>/../../../libaom-prefix/src/libaom/aom/aom_external_partition.h <SOURCE_DIR>/ext/aom/aom/               &&
-                      ln -s <SOURCE_DIR>/../../../libaom-prefix/src/libaom/aom/aomcx.h                  <SOURCE_DIR>/ext/aom/aom/               &&
-                      ln -s <SOURCE_DIR>/../../../libaom-prefix/src/libaom/aom/aomdx.h                  <SOURCE_DIR>/ext/aom/aom/               &&
-                      ln -s <SOURCE_DIR>/../../../libaom-prefix/src/libaom/aom/aom.h                    <SOURCE_DIR>/ext/aom/aom/
 
         CONFIGURE_COMMAND $(CMAKE_COMMAND) . -DCMAKE_INSTALL_PREFIX=${PREFIX_ext_libavif}
                                              -DCMAKE_BUILD_TYPE=${GLOBAL_BUILD_TYPE}
