@@ -18,3 +18,13 @@ if("${exiv2_VERSION}" VERSION_LESS ${EXIV2_MIN_VERSION})
     message(FATAL_ERROR "Exiv2 version is too old (${exiv2_VERSION})! Minimal version required:${EXIV2_MIN_VERSION}.")
 
 endif()
+
+if("${exiv2_VERSION}" VERSION_LESS "0.27.99")
+
+    set(EXIV2_CXX_STANDARD 11)
+
+else()
+
+    set(EXIV2_CXX_STANDARD 17)
+
+endif()

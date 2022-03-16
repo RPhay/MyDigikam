@@ -122,7 +122,7 @@ if(NOT Qt6_FOUND)
 
     set_target_properties(core_dmetadata_obj
                           PROPERTIES
-                          CXX_STANDARD 11
+                          CXX_STANDARD ${EXIV2_CXX_STANDARD}
                           CXX_STANDARD_REQUIRED YES
                           CXX_EXTENSIONS NO
     )
