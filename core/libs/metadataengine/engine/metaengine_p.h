@@ -96,6 +96,7 @@
 #if EXIV2_TEST_VERSION(0,27,99)
 #   define AutoPtr UniquePtr
 #   define AnyError Error
+#   define kerErrorMessage ErrorCode::kerErrorMessage
 #endif
 
 #if EXIV2_TEST_VERSION(0,27,4)
