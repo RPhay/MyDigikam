@@ -153,12 +153,6 @@ echo -e "------------- Copy sane backends\n"
 cp -r /usr/${LIBSUFFIX}/sane                            ./usr/lib
 cp -r /etc/sane.d                                       ./usr/etc
 
-echo -e "------------- Copy ImageMagick codecs\n"
-
-# NOTE: even with 64 bits, magick .so files are stored in /usr/lib
-
-cp -r /usr/lib64/ImageMagick*/modules*                  ./usr/lib
-
 echo -e "------------- Copy I18n\n"
 
 # Qt translations files
