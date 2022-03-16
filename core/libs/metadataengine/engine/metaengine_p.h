@@ -95,6 +95,7 @@
 
 #if EXIV2_TEST_VERSION(0,27,99)
 #   define AutoPtr UniquePtr
+#   define AnyError Error
 #endif
 
 #if EXIV2_TEST_VERSION(0,27,4)
