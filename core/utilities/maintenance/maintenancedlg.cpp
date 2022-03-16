@@ -86,7 +86,7 @@ public:
         title                   (nullptr),
         scanThumbs              (nullptr),
         scanFingerPrints        (nullptr),
-        restoreSettings         (nullptr),
+        useLastSettings         (nullptr),
         useMutiCoreCPU          (nullptr),
         cleanThumbsDb           (nullptr),
         cleanFacesDb            (nullptr),
@@ -113,7 +113,7 @@ public:
     }
 
     static const QString configGroupName;
-    static const QString configRestoreSettings;
+    static const QString configUseLastSettings;
     static const QString configUseMutiCoreCPU;
     static const QString configNewItems;
     static const QString configThumbnails;
@@ -141,7 +141,7 @@ public:
     QLabel*              title;
     QCheckBox*           scanThumbs;
     QCheckBox*           scanFingerPrints;
-    QCheckBox*           restoreSettings;
+    QCheckBox*           useLastSettings;
     QCheckBox*           useMutiCoreCPU;
     QCheckBox*           cleanThumbsDb;
     QCheckBox*           cleanFacesDb;
@@ -167,7 +167,7 @@ public:
 };
 
 const QString MaintenanceDlg::Private::configGroupName(QLatin1String("MaintenanceDlg Settings"));
-const QString MaintenanceDlg::Private::configRestoreSettings(QLatin1String("RestoreSettings"));
+const QString MaintenanceDlg::Private::configUseLastSettings(QLatin1String("UseLastSettings"));
 const QString MaintenanceDlg::Private::configUseMutiCoreCPU(QLatin1String("UseMutiCoreCPU"));
 const QString MaintenanceDlg::Private::configNewItems(QLatin1String("NewItems"));
 const QString MaintenanceDlg::Private::configThumbnails(QLatin1String("Thumbnails"));
@@ -221,7 +221,7 @@ MaintenanceDlg::MaintenanceDlg(QWidget* const parent)
 
     DVBox* const options       = new DVBox;
     d->albumSelectors          = new AlbumSelectors(i18nc("@label", "Process items from:"), d->configGroupName, options);
-    d->restoreSettings         = new QCheckBox(i18nc("@option:check", "Restore the last active tools and settings"), options);
+    d->useLastSettings         = new QCheckBox(i18nc("@option:check", "Use the last saved active tools and settings"), options);
     d->useMutiCoreCPU          = new QCheckBox(i18nc("@option:check", "Work on all processor cores (when it's possible)"), options);
     d->expanderBox->insertItem(Private::Options, options, QIcon::fromTheme(QLatin1String("configure")), i18n("Common Options"), QLatin1String("Options"), true);
 
@@ -406,8 +406,8 @@ MaintenanceDlg::MaintenanceDlg(QWidget* const parent)
     connect(d->expanderBox, SIGNAL(signalItemToggled(int,bool)),
             this, SLOT(slotItemToggled(int,bool)));
 
-    connect(d->restoreSettings, SIGNAL(toggled(bool)),
-            this, SLOT(slotRestoreSettings(bool)));
+    connect(d->useLastSettings, SIGNAL(toggled(bool)),
+            this, SLOT(slotUseLastSettings(bool)));
 
     connect(d->metadataSetup, SIGNAL(clicked()),
             this, SLOT(slotMetadataSetup()));
@@ -484,11 +484,11 @@ void MaintenanceDlg::readSettings()
     d->expanderBox->readSettings(group);
     d->albumSelectors->loadState();
 
-    d->restoreSettings->blockSignals(true);
-    d->restoreSettings->setChecked(group.readEntry(d->configRestoreSettings, false));
-    d->restoreSettings->blockSignals(false);
+    d->useLastSettings->blockSignals(true);
+    d->useLastSettings->setChecked(group.readEntry(d->configUseLastSettings, false));
+    d->useLastSettings->blockSignals(false);
 
-    if (d->restoreSettings->isChecked())
+    if (d->useLastSettings->isChecked())
     {
         MaintenanceSettings prm;
 
@@ -541,9 +541,9 @@ void MaintenanceDlg::writeSettings()
     d->expanderBox->writeSettings(group);
     d->albumSelectors->saveState();
 
-    group.writeEntry(d->configRestoreSettings, d->restoreSettings->isChecked());
+    group.writeEntry(d->configUseLastSettings, d->useLastSettings->isChecked());
 
-    if (d->restoreSettings->isChecked())
+    if (d->useLastSettings->isChecked())
     {
         MaintenanceSettings prm   = settings();
 
@@ -610,12 +610,12 @@ void MaintenanceDlg::slotItemToggled(int index, bool b)
     }
 }
 
-void MaintenanceDlg::slotRestoreSettings(bool checked)
+void MaintenanceDlg::slotUseLastSettings(bool checked)
 {
     KSharedConfig::Ptr config = KSharedConfig::openConfig();
     KConfigGroup group        = config->group(d->configGroupName);
 
-    group.writeEntry(d->configRestoreSettings, d->restoreSettings->isChecked());
+    group.writeEntry(d->configUseLastSettings, d->useLastSettings->isChecked());
 
     if (checked)
     {
@@ -642,11 +642,11 @@ void MaintenanceDlg::slotRestoreSettings(bool checked)
 
         d->expanderBox->setChecked(Private::Duplicates,         prm.duplicates);
         d->similarityRange->setInterval(prm.minSimilarity,      prm.maxSimilarity);
-        int restrictions = d->searchResultRestriction->findData((int)prm.duplicatesRestriction);
+        int restrictions = d->searchResultRestriction->findData(prm.duplicatesRestriction);
         d->searchResultRestriction->setCurrentIndex(restrictions);
 
         d->expanderBox->setChecked(Private::FaceManagement,     prm.faceManagement);
-        d->faceScannedHandling->setCurrentIndex((int)prm.faceSettings.alreadyScannedHandling);
+        d->faceScannedHandling->setCurrentIndex(prm.faceSettings.alreadyScannedHandling);
 
         d->expanderBox->setChecked(Private::ImageQualitySorter, prm.qualitySort);
         d->qualityScanMode->setCurrentIndex(prm.qualityScanMode);

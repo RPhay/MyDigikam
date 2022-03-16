@@ -50,7 +50,7 @@ public:
 private Q_SLOTS:
 
     void slotItemToggled(int index, bool b);
-    void slotRestoreSettings(bool checked);
+    void slotUseLastSettings(bool checked);
     void slotMetadataSetup();
     void slotQualitySetup();
     void slotOk();
