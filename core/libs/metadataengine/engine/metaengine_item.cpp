@@ -127,7 +127,11 @@ QSize MetaEngine::getItemDimensions() const
 
         if ((it != exifData.end()) && it->count())
         {
+#if EXIV2_TEST_VERSION(0,27,99)
+            width = it->toInt64();
+#else
             width = it->toLong();
+#endif
         }
 
         Exiv2::ExifKey key2("Exif.Photo.PixelYDimension");
@@ -135,7 +139,11 @@ QSize MetaEngine::getItemDimensions() const
 
         if ((it2 != exifData.end()) && it2->count())
         {
+#if EXIV2_TEST_VERSION(0,27,99)
+            height = it2->toInt64();
+#else
             height = it2->toLong();
+#endif
         }
 
         if ((width != -1) && (height != -1))
@@ -153,7 +161,11 @@ QSize MetaEngine::getItemDimensions() const
 
         if ((it3 != exifData.end()) && it3->count())
         {
+#if EXIV2_TEST_VERSION(0,27,99)
+            width = it3->toInt64();
+#else
             width = it3->toLong();
+#endif
         }
 
         Exiv2::ExifKey key4("Exif.Image.ImageLength");
@@ -161,7 +173,11 @@ QSize MetaEngine::getItemDimensions() const
 
         if ((it4 != exifData.end()) && it4->count())
         {
+#if EXIV2_TEST_VERSION(0,27,99)
+            height = it4->toInt64();
+#else
             height = it4->toLong();
+#endif
         }
 
         if ((width != -1) && (height != -1))
@@ -320,7 +336,11 @@ MetaEngine::ImageOrientation MetaEngine::getItemOrientation() const
 
         if ((it != exifData.end()) && it->count())
         {
+#if EXIV2_TEST_VERSION(0,27,99)
+            orientation = it->toInt64();
+#else
             orientation = it->toLong();
+#endif
 
             //qCDebug(DIGIKAM_METAENGINE_LOG) << "Orientation => Exif.MinoltaCs7D.Rotation =>" << (int)orientation;
 
@@ -347,7 +367,11 @@ MetaEngine::ImageOrientation MetaEngine::getItemOrientation() const
 
         if ((it != exifData.end()) && it->count())
         {
+#if EXIV2_TEST_VERSION(0,27,99)
+            orientation = it->toInt64();
+#else
             orientation = it->toLong();
+#endif
 
             //qCDebug(DIGIKAM_METAENGINE_LOG) << "Orientation => Exif.MinoltaCs5D.Rotation =>" << (int)orientation;
 
@@ -376,7 +400,11 @@ MetaEngine::ImageOrientation MetaEngine::getItemOrientation() const
 
         if ((it != exifData.end()) && it->count())
         {
+#if EXIV2_TEST_VERSION(0,27,99)
+            orientation = it->toInt64();
+#else
             orientation = it->toLong();
+#endif
 
             //qCDebug(DIGIKAM_METAENGINE_LOG) << "Orientation => Exif.Image.Orientation =>" << (int)orientation;
 

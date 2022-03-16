@@ -773,8 +773,11 @@ bool MetaEngine::getExifTagLong(const char* exifTagName, long& val, int componen
 
         if ((it != exifData.end()) && (it->count() > 0))
         {
+#if EXIV2_TEST_VERSION(0,27,99)
+            val = it->toInt64(component);
+#else
             val = it->toLong(component);
-
+#endif
             return true;
         }
     }
@@ -846,7 +849,11 @@ QVariant MetaEngine::getExifTagVariant(const char* exifTagName, bool rationalAsL
                 {
                     if ((int)it->count() > component)
                     {
+#if EXIV2_TEST_VERSION(0,27,99)
+                        return QVariant((int)it->toInt64(component));
+#else
                         return QVariant((int)it->toLong(component));
+#endif
                     }
                     else
                     {
@@ -969,7 +976,14 @@ QString MetaEngine::getExifTagString(const char* exifTagName, bool escapeCR) con
             QString tagValue;
             QString key = QLatin1String(it->key().c_str());
 
-            if ((key == QLatin1String("Exif.CanonCs.LensType")) && (it->toLong() == 65535))
+            if (
+                (key == QLatin1String("Exif.CanonCs.LensType")) &&
+#if EXIV2_TEST_VERSION(0,27,99)
+                (it->toInt64() == 65535)
+#else
+                (it->toLong()  == 65535)
+#endif
+               )
             {
                 // FIXME: workaround for a possible crash in Exiv2 pretty-print function for the Exif.CanonCs.LensType.
 
@@ -1058,7 +1072,11 @@ QImage MetaEngine::getExifThumbnail(bool fixOrientation) const
 
                 if (it != exifData.end() && it->count())
                 {
+#if EXIV2_TEST_VERSION(0,27,99)
+                    long orientation = it->toInt64();
+#else
                     long orientation = it->toLong();
+#endif
 
                     //qCDebug(DIGIKAM_METAENGINE_LOG) << "Exif Thumbnail Orientation: " << (int)orientation;
 
@@ -1140,7 +1158,15 @@ bool MetaEngine::setTiffThumbnail(const QImage& thumbImage) const
 
         Exiv2::ExifData::const_iterator pos = d->exifMetadata().findKey(Exiv2::ExifKey("Exif.Image.NewSubfileType"));
 
-        if ((pos == d->exifMetadata().end()) || (pos->count() != 1) || (pos->toLong() != 0))
+        if (
+            (pos            == d->exifMetadata().end()) ||
+            (pos->count()   != 1)                       ||
+#if EXIV2_TEST_VERSION(0,27,99)
+            (pos->toInt64() != 0)
+#else
+            (pos->toLong()  != 0)
+#endif
+           )
         {
 
 #if EXIV2_TEST_VERSION(0,27,0)
@@ -1309,7 +1335,14 @@ MetaEngine::MetaDataMap MetaEngine::getExifTagsDataList(const QStringList& exifK
             {
                 tagValue = QString::number(md->value().size());
             }
-            else if (key == QLatin1String("Exif.CanonCs.LensType") && md->toLong() == 65535)
+            else if (
+                     (key           == QLatin1String("Exif.CanonCs.LensType")) && 
+#if EXIV2_TEST_VERSION(0,27,99)
+                     (md->toInt64() == 65535)
+#else
+                     (md->toLong()  == 65535)
+#endif
+                    )
             {
                 // FIXME: workaround for a possible crash in Exiv2 pretty-print function for the Exif.CanonCs.LensType.
 
