@@ -121,7 +121,11 @@ QByteArray MetaEngine::getIptc(bool addIrbHeader) const
                 c2 = Exiv2::IptcParser::encode(d->iptcMetadata());
             }
 
+#if EXIV2_TEST_VERSION(0,27,99)
+            QByteArray data((const char*)c2.data(), c2.size());
+#else
             QByteArray data((const char*)c2.pData_, c2.size_);
+#endif
 
             return data;
         }

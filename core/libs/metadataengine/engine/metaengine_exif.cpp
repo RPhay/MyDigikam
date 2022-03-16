@@ -1054,7 +1054,11 @@ QImage MetaEngine::getExifThumbnail(bool fixOrientation) const
     {
         Exiv2::ExifThumbC thumb(d->exifMetadata());
         Exiv2::DataBuf const c1 = thumb.copy();
+#if EXIV2_TEST_VERSION(0,27,99)
+        thumbnail.loadFromData(c1.c_data(), c1.size());
+#else
         thumbnail.loadFromData(c1.pData_, c1.size_);
+#endif
 
         if (!thumbnail.isNull())
         {
@@ -1210,9 +1214,17 @@ bool MetaEngine::setTiffThumbnail(const QImage& thumbImage) const
             Exiv2::DataBuf buf((Exiv2::byte*)data.data(), data.size());
             Exiv2::ULongValue val;
             val.read("0");
+#if EXIV2_TEST_VERSION(0,27,99)
+            val.setDataArea(buf.data(), buf.size());
+#else
             val.setDataArea(buf.pData_, buf.size_);
+#endif
             d->exifMetadata()["Exif.SubImage1.JPEGInterchangeFormat"]       = val;
+#if EXIV2_TEST_VERSION(0,27,99)
+            d->exifMetadata()["Exif.SubImage1.JPEGInterchangeFormatLength"] = uint32_t(buf.size());
+#else
             d->exifMetadata()["Exif.SubImage1.JPEGInterchangeFormatLength"] = uint32_t(buf.size_);
+#endif
             d->exifMetadata()["Exif.SubImage1.Compression"]                 = uint16_t(6);          // JPEG (old-style)
             d->exifMetadata()["Exif.SubImage1.NewSubfileType"]              = uint32_t(1);          // Thumbnail image
 
