@@ -545,7 +545,7 @@ bool MetaEngine::Private::saveOperations(const QFileInfo& finfo, Exiv2::Image::A
 void MetaEngine::Private::printExiv2ExceptionError(const QString& msg, Exiv2::AnyError& e)
 {
     qCCritical(DIGIKAM_METAENGINE_LOG) << msg.toLatin1().constData()
-                                       << " (Error #" << e.code() << ": " << QString::fromStdString(e.what());
+                                       << " (Error #" << (int)e.code() << ": " << QString::fromStdString(e.what());
 }
 
 void MetaEngine::Private::printExiv2MessageHandler(int lvl, const char* msg)
