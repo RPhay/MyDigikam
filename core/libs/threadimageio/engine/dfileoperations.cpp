@@ -170,8 +170,9 @@ QUrl DFileOperations::getUniqueFileUrl(const QUrl& orgUrl,
     QUrl destUrl(orgUrl);
     QFileInfo fi(destUrl.toLocalFile());
     QRegularExpression version(QRegularExpression::anchoredPattern(QLatin1String("(.+)_v(\\d+)")));
-    QString completeBaseName = fi.completeBaseName();
+    QString completeBaseName      = fi.completeBaseName();
     QRegularExpressionMatch match = version.match(completeBaseName);
+
     if (match.hasMatch())
     {
         completeBaseName = match.captured(1);
@@ -215,7 +216,7 @@ QUrl DFileOperations::getUniqueFolderUrl(const QUrl& orgUrl)
     QUrl destUrl(orgUrl);
     QFileInfo fi(destUrl.toLocalFile());
     QRegularExpression version(QRegularExpression::anchoredPattern(QLatin1String("(.+)-(\\d+)")));
-    QString completeFileName = fi.fileName();
+    QString completeFileName      = fi.fileName();
     QRegularExpressionMatch match = version.match(completeFileName);
 
     if (match.hasMatch())
@@ -257,22 +258,22 @@ void DFileOperations::openInFileManager(const QList<QUrl>& urls)
         return;
     }
 
-    bool equal = true;
-    QUrl first = urls.first();
-    first      = first.adjusted(QUrl::RemoveFilename);
+    bool similar = true;
+    QUrl first   = urls.first();
+    first        = first.adjusted(QUrl::RemoveFilename);
 
     foreach (const QUrl& url, urls)
     {
         if (first != url.adjusted(QUrl::RemoveFilename))
-        {   // cppcheck-suppress useStlAlgorithm
-            equal = false;
+        {
+            similar = false;
             break;
         }
     }
 
     QList<QUrl> fileUrls;
 
-    if (equal)
+    if (similar)
     {
         fileUrls = urls;
     }
