@@ -35,6 +35,8 @@ target_compile_definitions(core_videotoolscommon_obj
 if(ENABLE_MEDIAPLAYER)
 
     set(libvideotools_SRCS
+        ${CMAKE_CURRENT_SOURCE_DIR}/helper/ffmpegconfighelper.cpp
+
         ${CMAKE_CURRENT_SOURCE_DIR}/manager/vidslidethread.cpp
         ${CMAKE_CURRENT_SOURCE_DIR}/manager/vidslidetask.cpp
 

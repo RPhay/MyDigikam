@@ -257,6 +257,8 @@ target_link_libraries(digikamgui
                       opencv_dnn
                       opencv_ml
                       opencv_flann
+
+                      ${FFMPEG_LIBRARIES}
 )
 
 if(ENABLE_QWEBENGINE)

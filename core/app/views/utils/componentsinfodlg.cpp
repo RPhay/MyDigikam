@@ -55,7 +55,8 @@ extern "C"
 // QtAV includes
 
 #ifdef HAVE_MEDIAPLAYER
-#    include <QtAV/version.h>
+#   include <QtAV/version.h>
+#   include "ffmpegconfighelper.h"
 
 extern "C"
 {
@@ -206,6 +207,78 @@ public:
             new QTreeWidgetItem(m_features, QStringList() <<
                                 i18nc("@item: component info", "Database internal server") << internal);
         }
+
+#ifdef HAVE_MEDIAPLAYER
+
+        QTreeWidgetItem* const ffmpegEntry = new QTreeWidgetItem(listView(), QStringList() << i18nc("@item: component info", "FFmpeg Configuration"));
+        listView()->addTopLevelItem(ffmpegEntry);
+
+        // --- FFMPEG Video codecs ---
+
+        FFMpegProperties propsVid     = FFMpegConfigHelper::getVideoCodecsProperties();
+        QTreeWidgetItem* const vidDec = new QTreeWidgetItem(ffmpegEntry, QStringList() << i18nc("@item: component info", "Video Decoders"));
+
+        for (FFMpegProperties::const_iterator it = propsVid.constBegin() ; it != propsVid.constEnd() ; ++it)
+        {
+            QStringList vals = it.value();
+
+            if (vals[1] == QLatin1String("R"))
+            {
+                new QTreeWidgetItem(vidDec, QStringList() << it.key() << vals[0]);
+            }
+        }
+
+        QTreeWidgetItem* const vidEnc = new QTreeWidgetItem(ffmpegEntry, QStringList() << i18nc("@item: component info", "Video Encoders"));
+
+        for (FFMpegProperties::const_iterator it = propsVid.constBegin() ; it != propsVid.constEnd() ; ++it)
+        {
+            QStringList vals = it.value();
+
+            if (vals[2] == QLatin1String("W"))
+            {
+                new QTreeWidgetItem(vidEnc, QStringList() << it.key() << vals[0]);
+            }
+        }
+
+        // --- FFMPEG Audio codecs ---
+
+        FFMpegProperties propsAud     = FFMpegConfigHelper::getVideoCodecsProperties();
+        QTreeWidgetItem* const audDec = new QTreeWidgetItem(ffmpegEntry, QStringList() << i18nc("@item: component info", "Audio Decoders"));
+
+        for (FFMpegProperties::const_iterator it = propsAud.constBegin() ; it != propsAud.constEnd() ; ++it)
+        {
+            QStringList vals = it.value();
+
+            if (vals[1] == QLatin1String("R"))
+            {
+                new QTreeWidgetItem(audDec, QStringList() << it.key() << vals[0]);
+            }
+        }
+
+        QTreeWidgetItem* const audEnc = new QTreeWidgetItem(ffmpegEntry, QStringList() << i18nc("@item: component info", "Audio Encoders"));
+
+        for (FFMpegProperties::const_iterator it = propsAud.constBegin() ; it != propsAud.constEnd() ; ++it)
+        {
+            QStringList vals = it.value();
+
+            if (vals[2] == QLatin1String("W"))
+            {
+                new QTreeWidgetItem(audEnc, QStringList() << it.key() << vals[0]);
+            }
+        }
+
+        // --- FFMPEG supported extensions ---
+
+        FFMpegProperties propsExt       = FFMpegConfigHelper::getExtensionsProperties();
+        QTreeWidgetItem* const extEntry = new QTreeWidgetItem(ffmpegEntry, QStringList() << i18nc("@item: component info", "Supported Extensions"));
+
+        for (FFMpegProperties::const_iterator it = propsExt.constBegin() ; it != propsExt.constEnd() ; ++it)
+        {
+            new QTreeWidgetItem(extEntry, QStringList() << it.key() << it.value()[0]);
+        }
+
+#endif
+
     }
 
     ~ComponentsInfoDlg()
