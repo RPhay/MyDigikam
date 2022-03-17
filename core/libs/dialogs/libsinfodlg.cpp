@@ -365,6 +365,9 @@ LibsInfoDlg::LibsInfoDlg(QWidget* const parent)
 
         qCDebug(DIGIKAM_WIDGETS_LOG) << "Git revisions manifest file found:" << gitRevs;
 
+        QTreeWidgetItem* const manifestHead = new QTreeWidgetItem(listView(), QStringList() << i18nc("@item: component info", "Manifests"));
+        listView()->addTopLevelItem(manifestHead);
+
         QTextStream in(&file);
         QTreeWidgetItem* manifestEntry = nullptr;
 
@@ -379,8 +382,7 @@ LibsInfoDlg::LibsInfoDlg(QWidget* const parent)
 
             if      (line.startsWith(QLatin1Char('+')))
             {
-                manifestEntry = new QTreeWidgetItem(listView(), QStringList() << line.remove(QLatin1Char('+')));
-                listView()->addTopLevelItem(manifestEntry);
+                manifestEntry = new QTreeWidgetItem(manifestHead, QStringList() << line.remove(QLatin1Char('+')));
             }
             else if (manifestEntry)
             {
