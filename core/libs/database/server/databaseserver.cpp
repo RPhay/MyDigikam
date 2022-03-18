@@ -27,9 +27,11 @@
 
 // Qt includes
 
+#include <QRegularExpression>
 #include <QStandardPaths>
 #include <QApplication>
 #include <QMessageBox>
+#include <QTcpServer>
 #include <QDateTime>
 #include <QFileInfo>
 #include <QFile>
@@ -39,7 +41,6 @@
 #include <QtGlobal>
 #include <QPointer>
 #include <QDir>
-#include <QRegularExpression>
 
 // KDE includes
 
@@ -60,7 +61,8 @@ class Q_DECL_HIDDEN DatabaseServer::Private
 public:
 
     explicit Private()
-        : databaseProcess(nullptr)
+        : databaseProcess(nullptr),
+          serverPort(3307)
     {
     }
 
@@ -76,6 +78,8 @@ public:
     QString                fileDataDir;
     QString                actualConfig;
     QString                globalConfig;
+
+    int                    serverPort;
 };
 
 DatabaseServer::DatabaseServer(const DbEngineParameters& params, DatabaseServerStarter* const parent)
@@ -190,7 +194,7 @@ void DatabaseServer::stopDatabaseProcess()
 
 #ifdef Q_OS_WIN
 
-    mysqlShutDownArgs << QLatin1String("--port=3307");
+    mysqlShutDownArgs << QString::fromLatin1("--port=%1").arg(d->serverPort);
 
 #else
 
@@ -554,8 +558,23 @@ DatabaseServerError DatabaseServer::startMysqlServer()
 
 #ifdef Q_OS_WIN
 
+    QTcpServer* const server = new QTcpServer();
+
+    if (!server->listen(QHostAddress::LocalHost, d->serverPort))
+    {
+        qCWarning(DIGIKAM_DATABASESERVER_LOG) << "Port 3307 not free for the MySQL server";
+
+        server->listen(QHostAddress::LocalHost, 0);
+        d->serverPort = server->serverPort();
+
+        qCWarning(DIGIKAM_DATABASESERVER_LOG) << "Now use the free port:"  << d->serverPort;
+    }
+
+    server->close();
+    delete server;
+
     mysqldCmdArgs << QLatin1String("--skip-networking=0")
-                  << QLatin1String("--port=3307");
+                  << QString::fromLatin1("--port=%1").arg(d->serverPort);
 
 #else
 
@@ -599,7 +618,7 @@ DatabaseServerError DatabaseServer::initMysqlDatabase() const
 #ifdef Q_OS_WIN
 
         db.setHostName(QLatin1String("localhost"));
-        db.setPort(3307);
+        db.setPort(d->serverPort);
 
 #else
 
@@ -733,7 +752,7 @@ DatabaseServerError DatabaseServer::upgradeMysqlDatabase()
 
 #ifdef Q_OS_WIN
 
-    upgradeCmdArgs << QLatin1String("--port=3307");
+    upgradeCmdArgs << QString::fromLatin1("--port=%1").arg(d->serverPort);
 
 #else
 
