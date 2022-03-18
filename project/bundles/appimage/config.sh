@@ -58,7 +58,7 @@ DK_DEBUG=0
 DK_QTVERSION="6.2"
 
 # QtWebEngine version to use in bundle when 5.15-LTS is used.
-DK_QTWEBENGINEVERSION="5.15.8"
+DK_QTWEBENGINEVERSION="5.15.9"
 
 # Option to use QtWebEngine instead QtWebkit
 DK_QTWEBENGINE=1
