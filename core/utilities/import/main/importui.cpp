@@ -903,10 +903,7 @@ void ImportUI::moveEvent(QMoveEvent* e)
 
 void ImportUI::slotClose()
 {
-/* FIXME
-    if (dialogClosed())
-        reject();
-*/
+    close();
 }
 
 bool ImportUI::dialogClosed()
