@@ -89,10 +89,10 @@ DK_URL="http://download.kde.org/stable/digikam"
 DK_BUILDTEMP=~/dktemp
 
 # KDE Application version.
-DK_KA_VERSION="21.12.1"
+DK_KA_VERSION="21.12.3"
 
 # KDE KF5 frameworks version.
-DK_KF5_VERSION="5.90"
+DK_KF5_VERSION="5.92"
 
 # Qt version to use in bundle and provided by Macports.
 DK_QTVERSION="5.15"
