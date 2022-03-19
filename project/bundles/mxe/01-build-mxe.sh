@@ -129,6 +129,7 @@ make MXE_TARGETS=$MXE_BUILD_TARGETS \
      mman-win32 \
      pthreads \
      libgphoto2 \
+     icu4c \
      qtbase \
      qttranslations \
      qtimageformats \
