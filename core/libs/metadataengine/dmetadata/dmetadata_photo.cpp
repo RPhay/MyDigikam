@@ -225,7 +225,7 @@ PhotoInfoContainer DMetadata::getPhotographInformation() const
 
         if (photoInfo.flash.isEmpty())
         {
-            photoInfo.flash = getXmpTagString("Xmp.exif.Flash");
+            photoInfo.flash = getXmpTagString("Xmp.exif.Flash/exif:Mode");
         }
 
         if (photoInfo.flash.isEmpty())
