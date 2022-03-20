@@ -71,6 +71,9 @@ SetupMetadata::SetupMetadata(QWidget* const parent)
 
     d->readSettings();
 
+    connect(d->sidecarFileNameBox, SIGNAL(toggled(bool)),
+            this, SLOT(slotSidecarFileNameToggled(bool)));
+
     connect(d->exifRotateBox, SIGNAL(toggled(bool)),
             this, SLOT(slotExifAutoRotateToggled(bool)));
 
@@ -189,6 +192,24 @@ void SetupMetadata::applySettings()
 bool SetupMetadata::exifAutoRotateHasChanged() const
 {
     return (d->exifAutoRotateOriginal != d->exifRotateBox->isChecked());
+}
+
+void SetupMetadata::slotSidecarFileNameToggled(bool b)
+{
+    // Show info if sidcar file name for commercial programs was switched on, and only once.
+
+    if (b && !d->sidecarFileNameShowedInfo)
+    {
+        d->sidecarFileNameShowedInfo = true;
+        QMessageBox::information(this, qApp->applicationName(),
+                                 i18nc("@info",
+                                       "You should only activate this option if you are exchanging "
+                                       "image metadata with programs that use the sidecar format "
+                                       "BASENAME.xmp. If you have images with the same base name "
+                                       "(e.g. Image.CR2 and Image.JPG) then the sidecar can no "
+                                       "longer be uniquely assigned and will be used for both "
+                                       "images, which can lead to metadata problems."));
+    }
 }
 
 void SetupMetadata::slotExifAutoRotateToggled(bool b)

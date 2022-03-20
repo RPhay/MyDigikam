@@ -82,6 +82,7 @@ public:
     bool                 exifAutoRotateOriginal;
     bool                 exifAutoRotateShowedInfo;
     bool                 clearMetadataShowedInfo;
+    bool                 sidecarFileNameShowedInfo;
 
     QGroupBox*           fieldsGroup;
     QGroupBox*           readWriteGroup;
