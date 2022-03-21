@@ -45,7 +45,12 @@ elseif(APPLE)
         CONFIGURE_COMMAND cp -f ${CMAKE_CURRENT_SOURCE_DIR}/../../../../bootstrap.macports <SOURCE_DIR>/. &&
                           <SOURCE_DIR>/bootstrap.macports ${PREFIX_libde265} RelWithDebInfo x86_64
 
+        BUILD_COMMAND cd <SOURCE_DIR>/build && $(MAKE)
+
         BUILD_IN_SOURCE 1
+
+        INSTALL_COMMAND cd <SOURCE_DIR>/build/libde265 && cp -fv de265-version.h ../../libde265/ &&
+                        cd <SOURCE_DIR>/build && $(MAKE) install/fast
 
         UPDATE_COMMAND ""
         ALWAYS 0

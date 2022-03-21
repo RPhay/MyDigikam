@@ -61,7 +61,11 @@ elseif(APPLE)
                           cp -f ${CMAKE_CURRENT_SOURCE_DIR}/../../../../bootstrap.macports <SOURCE_DIR>/. &&
                           <SOURCE_DIR>/bootstrap.macports ${PREFIX_ext_heif} RelWithDebInfo x86_64 ${Heif_conf}
 
+        BUILD_COMMAND cd <SOURCE_DIR>/build && $(MAKE)
+
         BUILD_IN_SOURCE 1
+
+        INSTALL_COMMAND cd <SOURCE_DIR>/build && $(MAKE) install/fast
 
         UPDATE_COMMAND ""
         ALWAYS 0
