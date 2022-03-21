@@ -8,41 +8,32 @@
 
 set(PREFIX_ext_heif "${EXTPREFIX}")
 
+set(Heif_Conf -DBUILD_SHARED_LIBS=ON
+              -DWITH_LIBDE265=ON
+              -DWITH_X265=ON
+              -DWITH_AOM=OFF
+              -DWITH_RAV1E=OFF
+              -DWITH_DAV1D=OFF
+              -DWITH_EXAMPLES=OFF
+)
+
+JoinListAsString("${Heif_Conf}" " " BASH_OPTIONS)
+
 if(MINGW)
 
-    ExternalProject_Add(de265
-
-        DOWNLOAD_DIR ${EXTERNALS_DOWNLOAD_DIR}
-        GIT_REPOSITORY https://github.com/strukturag/libde265.git
-        GIT_TAG v1.0.8
-
-        PATCH_COMMAND ${PATCH_COMMAND} -p1 -i ${CMAKE_CURRENT_SOURCE_DIR}/de265-lib-mxe.patch
-
-        CONFIGURE_COMMAND cp -f ${CMAKE_CURRENT_SOURCE_DIR}/../../../../bootstrap.mxe <SOURCE_DIR>/. &&
-                          <SOURCE_DIR>/bootstrap.mxe ${MXE_BUILDROOT} RelWithDebInfo
-
-        BUILD_COMMAND cd <SOURCE_DIR>/build.mxe && $(MAKE)
-
-        BUILD_IN_SOURCE 1
-
-        INSTALL_COMMAND cd <SOURCE_DIR>/build.mxe/libde265 && cp -fv de265-version.h ../../libde265/ &&
-                        cd <SOURCE_DIR>/build.mxe && $(MAKE) install/fast
-
-        UPDATE_COMMAND ""
-        ALWAYS 0
-    )
-
     ExternalProject_Add(ext_heif
-        DEPENDS de265
 
         DOWNLOAD_DIR ${EXTERNALS_DOWNLOAD_DIR}
         GIT_REPOSITORY https://github.com/strukturag/libheif.git
-        GIT_TAG v1.12.0
+#        GIT_TAG v1.12.0
 
-        PATCH_COMMAND ${PATCH_COMMAND} -p1 -i ${CMAKE_CURRENT_SOURCE_DIR}/heif-lib-mxe.patch
+        PATCH_COMMAND ${PATCH_COMMAND} -p1 -i ${CMAKE_CURRENT_SOURCE_DIR}/heif-lib-only.patch
 
-        CONFIGURE_COMMAND cp -f ${CMAKE_CURRENT_SOURCE_DIR}/../../../../bootstrap.mxe <SOURCE_DIR>/. &&
-                          <SOURCE_DIR>/bootstrap.mxe ${MXE_BUILDROOT} RelWithDebInfo
+        CONFIGURE_COMMAND cp -f ${CMAKE_CURRENT_SOURCE_DIR}/../../../scripts/create_manifest.sh <SOURCE_DIR>/. &&
+                          cd <SOURCE_DIR> &&
+                          <SOURCE_DIR>/create_manifest.sh ${EXTERNALS_DOWNLOAD_DIR} heif &&
+                          cp -f ${CMAKE_CURRENT_SOURCE_DIR}/../../../../bootstrap.mxe <SOURCE_DIR>/. &&
+                          <SOURCE_DIR>/bootstrap.mxe ${MXE_BUILDROOT} RelWithDebInfo ${BASH_OPTIONS}
 
         BUILD_COMMAND cd <SOURCE_DIR>/build.mxe && $(MAKE)
 
@@ -54,19 +45,21 @@ if(MINGW)
         ALWAYS 0
     )
 
-else() # Linux
+elseif(APPLE)
 
-    ExternalProject_Add(de265
+    ExternalProject_Add(ext_heif
 
         DOWNLOAD_DIR ${EXTERNALS_DOWNLOAD_DIR}
-        GIT_REPOSITORY https://github.com/strukturag/libde265.git
-        GIT_TAG v1.0.8
+        GIT_REPOSITORY https://github.com/strukturag/libheif.git
+#        GIT_TAG v1.12.0
 
-        PATCH_COMMAND ${PATCH_COMMAND} -p1 -i ${CMAKE_CURRENT_SOURCE_DIR}/de265-lib-linux.patch
+        PATCH_COMMAND ${PATCH_COMMAND} -p1 -i ${CMAKE_CURRENT_SOURCE_DIR}/heif-lib-only.patch
 
-        CMAKE_ARGS -DCMAKE_INSTALL_PREFIX=${PREFIX_ext_heif}
-                   -DCMAKE_BUILD_TYPE=${GLOBAL_BUILD_TYPE}
-                   ${GLOBAL_PROFILE}
+        CONFIGURE_COMMAND cp -f ${CMAKE_CURRENT_SOURCE_DIR}/../../../scripts/create_manifest.sh <SOURCE_DIR>/. &&
+                          cd <SOURCE_DIR> &&
+                          <SOURCE_DIR>/create_manifest.sh ${EXTERNALS_DOWNLOAD_DIR} heif &&
+                          cp -f ${CMAKE_CURRENT_SOURCE_DIR}/../../../../bootstrap.macports <SOURCE_DIR>/. &&
+                          <SOURCE_DIR>/bootstrap.macports ${PREFIX_ext_heif} RelWithDebInfo x86_64 ${Heif_conf}
 
         BUILD_IN_SOURCE 1
 
@@ -74,18 +67,23 @@ else() # Linux
         ALWAYS 0
     )
 
+else() # Linux
+
     ExternalProject_Add(ext_heif
-        DEPENDS de265
 
         DOWNLOAD_DIR ${EXTERNALS_DOWNLOAD_DIR}
         GIT_REPOSITORY https://github.com/strukturag/libheif.git
-        GIT_TAG v1.12.0
+#        GIT_TAG v1.12.0
 
-        PATCH_COMMAND ${PATCH_COMMAND} -p1 -i ${CMAKE_CURRENT_SOURCE_DIR}/heif-lib-linux.patch
+        PATCH_COMMAND git reset --hard && ${PATCH_COMMAND} -p1 -i ${CMAKE_CURRENT_SOURCE_DIR}/heif-lib-only.patch
 
-        CMAKE_ARGS -DCMAKE_INSTALL_PREFIX=${PREFIX_ext_heif}
-                   -DCMAKE_BUILD_TYPE=${GLOBAL_BUILD_TYPE}
-                   ${GLOBAL_PROFILE}
+        CONFIGURE_COMMAND cp -f ${CMAKE_CURRENT_SOURCE_DIR}/../../../scripts/create_manifest.sh <SOURCE_DIR>/. &&
+                          cd <SOURCE_DIR> &&
+                          <SOURCE_DIR>/create_manifest.sh ${EXTERNALS_DOWNLOAD_DIR} heif &&
+                          $(CMAKE_COMMAND) . -DCMAKE_INSTALL_PREFIX=${PREFIX_ext_heif}
+                          -DCMAKE_BUILD_TYPE=${GLOBAL_BUILD_TYPE}
+                          ${GLOBAL_PROFILE}
+                          ${Heif_Conf}
 
         BUILD_IN_SOURCE 1
 

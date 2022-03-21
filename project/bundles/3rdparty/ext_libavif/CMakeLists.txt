@@ -6,7 +6,7 @@
 # For details see the accompanying COPYING-CMAKE-SCRIPTS file.
 #
 
-set(PREFIX_ext_libavif "${EXTPREFIX}")
+set(PREFIX_libavif "${EXTPREFIX}")
 
 set(AVIF_Conf -DBUILD_SHARED_LIBS=ON
               -DAVIF_ENABLE_WERROR=OFF
@@ -48,55 +48,9 @@ endif()
 
 JoinListAsString("${AVIF_Conf}" " " BASH_OPTIONS_AVIF)
 
-# NOTE: Special MinGW rules to prevent mixed libaom versions hosted in bundles, for exemple with ffmpeg: build libaom as static library.
-# See this comment from Bugzilla for details: https://bugs.kde.org/show_bug.cgi?id=109060#c30
-
-set(AOM_Conf -DENABLE_EXAMPLES=OFF
-             -DENABLE_TESTS=OFF
-             -DENABLE_TOOLS=OFF
-             -DENABLE_DOCS=OFF
-             -DENABLE_TESTDATA=OFF
-             -DCONFIG_PIC=1
-)
-
 if(MINGW)
-
-    set(AOM_Conf ${AOM_Conf}
-                 -DBUILD_SHARED_LIBS=OFF
-    )
-
-else()
-
-    set(AOM_Conf ${AOM_Conf}
-                 -DBUILD_SHARED_LIBS=ON
-    )
-
-endif()
-
-JoinListAsString("${AOM_Conf}" " " BASH_OPTIONS_AOM)
-
-if(MINGW)
-
-    ExternalProject_Add(libaom
-
-        DOWNLOAD_DIR ${EXTERNALS_DOWNLOAD_DIR}
-        GIT_REPOSITORY https://aomedia.googlesource.com/aom
-        GIT_TAG v3.3.0
-
-        CONFIGURE_COMMAND cp -f ${CMAKE_CURRENT_SOURCE_DIR}/../../../../bootstrap.mxe <SOURCE_DIR>/. &&
-                          <SOURCE_DIR>/bootstrap.mxe ${MXE_BUILDROOT} RelWithDebInfo ${BASH_OPTIONS_AOM}
-
-        BUILD_COMMAND cd <SOURCE_DIR>/build.mxe && $(MAKE)
-
-        BUILD_IN_SOURCE 1
-
-        INSTALL_COMMAND ""
-        UPDATE_COMMAND ""
-        ALWAYS 0
-    )
 
     ExternalProject_Add(ext_libavif
-        DEPENDS libaom
 
         DOWNLOAD_DIR ${EXTERNALS_DOWNLOAD_DIR}
 
@@ -131,8 +85,6 @@ if(MINGW)
 
 elseif(APPLE)
 
-    # NOTE: libaom is installed with Macports
-
     ExternalProject_Add(ext_libavif
 
         DOWNLOAD_DIR ${EXTERNALS_DOWNLOAD_DIR}
@@ -141,7 +93,7 @@ elseif(APPLE)
         GIT_TAG v0.9.3
 
         CONFIGURE_COMMAND cp -f ${CMAKE_CURRENT_SOURCE_DIR}/../../../../bootstrap.macports <SOURCE_DIR>/. &&
-                          <SOURCE_DIR>/bootstrap.macports ${PREFIX_ext_libavif} RelWithDebInfo x86_64 ${BASH_OPTIONS_AVIF}
+                          <SOURCE_DIR>/bootstrap.macports ${PREFIX_libavif} RelWithDebInfo x86_64 ${BASH_OPTIONS_AVIF}
 
         BUILD_COMMAND cd <SOURCE_DIR>/build && $(MAKE)
 
@@ -155,33 +107,14 @@ elseif(APPLE)
 
 else() # Linux
 
-
-    ExternalProject_Add(libaom
-
-        DOWNLOAD_DIR ${EXTERNALS_DOWNLOAD_DIR}
-        GIT_REPOSITORY https://aomedia.googlesource.com/aom
-        GIT_TAG v3.3.0
-
-        CMAKE_ARGS -DCMAKE_INSTALL_PREFIX=${PREFIX_ext_libavif}
-                   -DCMAKE_BUILD_TYPE=${GLOBAL_BUILD_TYPE}
-                   ${GLOBAL_PROFILE}
-                   ${AOM_Conf}
-
-        BUILD_IN_SOURCE 0
-
-        UPDATE_COMMAND ""
-        ALWAYS 0
-    )
-
     ExternalProject_Add(ext_libavif
-        DEPENDS libaom
 
         DOWNLOAD_DIR ${EXTERNALS_DOWNLOAD_DIR}
 
         GIT_REPOSITORY https://github.com/AOMediaCodec/libavif.git
         GIT_TAG v0.9.3
 
-        CONFIGURE_COMMAND $(CMAKE_COMMAND) . -DCMAKE_INSTALL_PREFIX=${PREFIX_ext_libavif}
+        CONFIGURE_COMMAND $(CMAKE_COMMAND) . -DCMAKE_INSTALL_PREFIX=${PREFIX_libavif}
                                              -DCMAKE_BUILD_TYPE=${GLOBAL_BUILD_TYPE}
                                              ${AVIF_Conf}
                                              ${GLOBAL_PROFILE}
