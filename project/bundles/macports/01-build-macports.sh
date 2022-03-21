@@ -303,8 +303,7 @@ port install \
              qt5-qtimageformats \
              qt5-sqlite-plugin \
              qt5-mysql-plugin +mariadb10_5 \
-             wget +ssl \
-             ImageMagick
+             wget +ssl
 
 if [[ $DK_QTWEBENGINE = 1 ]] ; then
 
@@ -362,6 +361,7 @@ if [[ $DK_QTWEBENGINE = 0 ]] ; then
 fi
 
 cmake --build . --config RelWithDebInfo --target ext_opencv      -- -j$CPU_CORES
+cmake --build . --config RelWithDebInfo --target ext_imagemagick -- -j$CPU_CORES
 cmake --build . --config RelWithDebInfo --target ext_libde265    -- -j$CPU_CORES
 cmake --build . --config RelWithDebInfo --target ext_libjxl      -- -j$CPU_CORES
 cmake --build . --config RelWithDebInfo --target ext_libavif     -- -j$CPU_CORES
