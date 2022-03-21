@@ -82,8 +82,8 @@ ${MXE_BUILD_TARGETS}-cmake $ORIG_WD/../3rdparty \
                            -DENABLE_QTVERSION=$DK_QTVERSION \
                            -DENABLE_QTWEBENGINE=$DK_QTWEBENGINE
 
-
-
+${MXE_BUILD_TARGETS}-cmake --build . --config RelWithDebInfo --target ext_heif       -- -j$CPU_CORES
+cp $DOWNLOAD_DIR/heif_manifest.txt $ORIG_WD/data/
 ${MXE_BUILD_TARGETS}-cmake --build . --config RelWithDebInfo --target ext_exiv2      -- -j$CPU_CORES
 cp $DOWNLOAD_DIR/exiv2_manifest.txt $ORIG_WD/data/
 ${MXE_BUILD_TARGETS}-cmake --build . --config RelWithDebInfo --target ext_qtav       -- -j$CPU_CORES
