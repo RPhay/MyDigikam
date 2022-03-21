@@ -319,7 +319,7 @@ bool DMetadata::getACDSeeTagsPath(QStringList& tagsPath) const
 
     QString xmlACDSee = getXmpTagString("Xmp.acdsee.categories", false);
 
-    if (!xmlACDSee.isEmpty())
+    if (xmlACDSee.contains(QLatin1String("<Categories>")))
     {
         xmlACDSee.remove(QLatin1String("</Categories>"));
         xmlACDSee.remove(QLatin1String("<Categories>"));
