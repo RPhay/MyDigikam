@@ -462,7 +462,17 @@ bool DFileOperations::renameFile(const QString& srcFile,
 
 #endif
 
-    bool ret = QFile::rename(srcFile, dstFile);
+    bool ret = (!QFileInfo::exists(dstFile));
+
+    if (ret)
+    {
+        ret = QFile::rename(srcFile, dstFile);
+
+        if (!ret && QFileInfo::exists(dstFile))
+        {
+            QFile::remove(dstFile);
+        }
+    }
 
     if (ret && (stat == 0))
     {
