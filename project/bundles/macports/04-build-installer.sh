@@ -90,8 +90,6 @@ lib/mariadb-10.5/bin/mysqladmin \
 lib/mariadb-10.5/bin/mysqltest \
 lib/mariadb-10.5/mysql/*.dylib \
 lib/mariadb-10.5/plugin/*.so \
-lib/ImageMagick*/modules-Q16/coders/*.so \
-lib/ImageMagick*/modules-Q16/filters/*.so \
 bin/kbuildsycoca5 \
 bin/solid-hardware5 \
 libexec/qt5/plugins/imageformats/*.dylib \
