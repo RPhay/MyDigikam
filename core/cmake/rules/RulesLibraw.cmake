@@ -62,6 +62,8 @@ else()
 
 endif()
 
+#define CMS_NO_REGISTER_KEYWORD 1
+
 message(STATUS "Looking for PThreads")
 set(PTHREADS_FOUND (CMAKE_USE_PTHREADS_INIT OR CMAKE_USE_WIN32_THREADS_INIT))
 

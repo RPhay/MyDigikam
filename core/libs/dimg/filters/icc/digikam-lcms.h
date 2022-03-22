@@ -35,32 +35,30 @@
 #include "digikam_config.h"
 
 #if defined (__MINGW32__)  || defined (Q_OS_WIN)  // krazy:exclude=cpp
-#  define CMS_IS_WINDOWS_ 1
-#  define CMS_DLL
+#   define CMS_IS_WINDOWS_ 1
+#   define CMS_DLL
 #else
-#  undef CMS_DLL
+#   undef CMS_DLL
 #endif
 
 // Turn off the specific compiler warnings with LCMS header.
 
 #if defined(Q_CC_CLANG)
-#    pragma clang diagnostic push
-#    pragma clang diagnostic ignored "-Wundef"
-#    pragma clang diagnostic ignored "-Wdeprecated-register"
+#   pragma clang diagnostic push
+#   pragma clang diagnostic ignored "-Wundef"
+#   pragma clang diagnostic ignored "-Wdeprecated-register"
 #endif
-
-#define CMS_NO_REGISTER_KEYWORD 1
 
 #include <lcms2.h>
 
 #if defined(Q_CC_CLANG)
-#    pragma clang diagnostic pop
+#   pragma clang diagnostic pop
 #endif
 
 #define LCMS_DESC_MAX                    512
 
 #if !defined FAR
-#  define FAR
+#   define FAR
 #endif
 
 #define LCMS_ERROR_SHOW                  1
