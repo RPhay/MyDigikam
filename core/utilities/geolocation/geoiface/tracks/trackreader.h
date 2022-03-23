@@ -70,6 +70,9 @@ public:
 
     static TrackReadResult loadTrackFile(const QUrl& url);
     static QDateTime ParseTime(const QString& tstring);
+
+private:
+
     void parseTrack(QXmlStreamReader& xml);
 
 private:
