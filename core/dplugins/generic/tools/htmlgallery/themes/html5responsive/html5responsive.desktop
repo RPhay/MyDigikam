@@ -105,7 +105,7 @@ Name=Author
 Name[ar]=المؤلف
 Name[bg]=Автор
 Name[ca]=Autor
-Name[ca@valencia]=Autor
+Name[ca@valencia]=Autoria
 Name[cs]=Autor
 Name[da]=Ophavsmand
 Name[de]=Autor
@@ -312,7 +312,7 @@ Caption-1=List all
 [X-HTMLGallery Parameter usePhotoSwipe]
 Name=Use PhotoSwipe
 Name[ca]=Usa el PhotoSwipe
-Name[ca@valencia]=Usa el PhotoSwipe
+Name[ca@valencia]=Utilitza el PhotoSwipe
 Name[de]=PhotoSwipe verwenden
 Name[en_GB]=Use PhotoSwipe
 Name[es]=Usar PhotoSwipe
