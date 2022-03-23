@@ -18,4 +18,5 @@ BUGFIXES:
 007 ==> 451017 - Search by time of day.
 008 ==> 349268 - Be able to copy and paste the uploaded url to ImgUr web service.
 009 ==> 451525 - Maintenance tool dialog should not keep potentially destructive operations checked by default.
-010 ==> 
+010 ==> 251424 - Include gpx overlays found in albums.
+011 ==> 
