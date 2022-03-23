@@ -51,7 +51,8 @@ public:
 };
 
 TrackReader::TrackReader(TrackReadResult* const dataTarget)
-    : d(new Private)
+    : QObject(nullptr),
+      d      (new Private)
 {
     d->fileData = dataTarget;
 }

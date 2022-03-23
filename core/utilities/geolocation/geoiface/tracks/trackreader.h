@@ -27,7 +27,6 @@
 
 // Qt includes
 
-#include <QXmlDefaultHandler>
 #include <QXmlStreamReader>
 
 // local includes
@@ -40,8 +39,10 @@ class TestTracks;
 namespace Digikam
 {
 
-class DIGIKAM_EXPORT TrackReader : public QXmlDefaultHandler
+class DIGIKAM_EXPORT TrackReader : public QObject
 {
+    Q_OBJECT
+
 public:
 
     class TrackReadResult
