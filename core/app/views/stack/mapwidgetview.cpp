@@ -332,13 +332,11 @@ void MapWidgetView::slotModelChanged()
                 }
             }
 
-            if (gpxList.isEmpty())
+            if (!gpxList.isEmpty())
             {
-                break;
+                d->trackManager->loadTrackFiles(gpxList);
+                d->trackManager->setVisibility(true);
             }
-
-            d->trackManager->loadTrackFiles(gpxList);
-            d->trackManager->setVisibility(true);
 
             break;
         }
