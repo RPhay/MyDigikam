@@ -186,20 +186,13 @@ void TrackReader::parseTrack(QXmlStreamReader& xml)
             }
             else if (xml.name() == QLatin1String("fix"))
             {
-                int fixType = -1;
-
                 if      (eText == QLatin1String("2d"))
                 {
-                    fixType = 2;
+                    currentDataPoint.fixType = 2;
                 }
                 else if (eText == QLatin1String("3d"))
                 {
-                    fixType = 3;
-                }
-
-                if (fixType>=0)
-                {
-                    currentDataPoint.fixType = fixType;
+                    currentDataPoint.fixType = 3;
                 }
             }
             else if (xml.name() == QLatin1String("ele"))
