@@ -26,7 +26,6 @@
 
 // Qt includes
 
-#include <QDomDocument>
 #include <QFile>
 #include <QXmlStreamReader>
 #include <QXmlStreamAttributes>
