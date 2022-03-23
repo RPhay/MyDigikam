@@ -148,7 +148,7 @@ void TrackReader::parseTrack(QXmlStreamReader& xml)
     {
         if (xml.tokenType() == QXmlStreamReader::StartElement)
         {
-            QString eText = xml.readElementText();
+            QString eText = xml.readElementText(QXmlStreamReader::IncludeChildElements);
 
             if      (xml.name() == QLatin1String("time"))
             {
