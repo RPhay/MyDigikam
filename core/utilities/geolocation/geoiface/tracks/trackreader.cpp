@@ -38,25 +38,16 @@
 namespace Digikam
 {
 
-static QString GPX10(QLatin1String("http://www.topografix.com/GPX/1/0"));       // krazy:exclude=insecurenet
-static QString GPX11(QLatin1String("http://www.topografix.com/GPX/1/1"));       // krazy:exclude=insecurenet
-
 class Q_DECL_HIDDEN TrackReader::Private
 {
 public:
 
     explicit Private()
-        : fileData             (nullptr),
-          verifyFoundGPXElement(false)
+        : fileData (nullptr)
     {
     }
 
-    TrackReadResult*         fileData;
-    QString                  currentElementPath;
-    QStringList              currentElements;
-    QString                  currentText;
-    TrackManager::TrackPoint currentDataPoint;
-    bool                     verifyFoundGPXElement;
+    TrackReadResult* fileData;
 };
 
 TrackReader::TrackReader(TrackReadResult* const dataTarget)
@@ -123,177 +114,6 @@ QDateTime TrackReader::ParseTime(const QString& tstring)
     return theTime;
 }
 
-/**
- * @brief The parser found characters
- */
-bool TrackReader::characters(const QString& ch)
-{
-    d->currentText += ch;
-
-    return true;
-}
-
-QString TrackReader::myQName(const QString& namespaceURI, const QString& localName)
-{
-    if ((namespaceURI == GPX10) ||
-        (namespaceURI == GPX11))
-    {
-        return QLatin1String("gpx:") + localName;
-    }
-
-    return namespaceURI+localName;
-}
-
-bool TrackReader::endElement(const QString& namespaceURI, const QString& localName, const QString& qName)
-{
-    Q_UNUSED(qName)
-
-    // we always work with the old path
-
-    const QString ePath = d->currentElementPath;
-    const QString eText = d->currentText.trimmed();
-    const QString eName = myQName(namespaceURI, localName);
-    d->currentElements.removeLast();
-    d->currentText.clear();
-    rebuildElementPath();
-
-    if      (ePath == QLatin1String("gpx:gpx/gpx:trk/gpx:trkseg/gpx:trkpt"))
-    {
-        if (d->currentDataPoint.dateTime.isValid() && d->currentDataPoint.coordinates.hasCoordinates())
-        {
-            d->fileData->track.points << d->currentDataPoint;
-        }
-
-        d->currentDataPoint = TrackManager::TrackPoint();
-    }
-    else if (ePath == QLatin1String("gpx:gpx/gpx:trk/gpx:trkseg/gpx:trkpt/gpx:time"))
-    {
-        d->currentDataPoint.dateTime = ParseTime(eText.trimmed());
-    }
-    else if (ePath == QLatin1String("gpx:gpx/gpx:trk/gpx:trkseg/gpx:trkpt/gpx:sat"))
-    {
-        bool okay       = false;
-        int nSatellites = eText.toInt(&okay);
-
-        if (okay && (nSatellites >= 0))
-        {
-            d->currentDataPoint.nSatellites = nSatellites;
-        }
-    }
-    else if (ePath == QLatin1String("gpx:gpx/gpx:trk/gpx:trkseg/gpx:trkpt/gpx:hdop"))
-    {
-        bool okay  = false;
-        qreal hDop = eText.toDouble(&okay);
-
-        if (okay)
-        {
-            d->currentDataPoint.hDop = hDop;
-        }
-    }
-    else if (ePath == QLatin1String("gpx:gpx/gpx:trk/gpx:trkseg/gpx:trkpt/gpx:pdop"))
-    {
-        bool okay  = false;
-        qreal pDop = eText.toDouble(&okay);
-
-        if (okay)
-        {
-            d->currentDataPoint.pDop = pDop;
-        }
-    }
-    else if (ePath == QLatin1String("gpx:gpx/gpx:trk/gpx:trkseg/gpx:trkpt/gpx:fix"))
-    {
-        int fixType = -1;
-
-        if      (eText == QLatin1String("2d"))
-        {
-            fixType = 2;
-        }
-        else if (eText == QLatin1String("3d"))
-        {
-            fixType = 3;
-        }
-
-        if (fixType>=0)
-        {
-            d->currentDataPoint.fixType = fixType;
-        }
-    }
-    else if (ePath == QLatin1String("gpx:gpx/gpx:trk/gpx:trkseg/gpx:trkpt/gpx:ele"))
-    {
-        bool haveAltitude = false;
-        const qreal alt   = eText.toDouble(&haveAltitude);
-
-        if (haveAltitude)
-        {
-            d->currentDataPoint.coordinates.setAlt(alt);
-        }
-    }
-    else if (ePath == QLatin1String("gpx:gpx/gpx:trk/gpx:trkseg/gpx:trkpt/gpx:speed"))
-    {
-        bool haveSpeed    = false;
-        const qreal speed = eText.toDouble(&haveSpeed);
-
-        if (haveSpeed)
-        {
-            d->currentDataPoint.speed = speed;
-        }
-    }
-
-    return true;
-}
-
-bool TrackReader::startElement(const QString& namespaceURI,
-                               const QString& localName,
-                               const QString& qName,
-                               const QXmlAttributes& atts)
-{
-    Q_UNUSED(qName)
-
-    const QString eName  = myQName(namespaceURI, localName);
-    d->currentElements << eName;
-    rebuildElementPath();
-    const QString& ePath = d->currentElementPath;
-
-    if (ePath == QLatin1String("gpx:gpx/gpx:trk/gpx:trkseg/gpx:trkpt"))
-    {
-        qreal lat    = 0.0;
-        qreal lon    = 0.0;
-        bool haveLat = false;
-        bool haveLon = false;
-
-        for (int i = 0 ; i < atts.count() ; ++i)
-        {
-            const QString attName  = myQName(atts.uri(i), atts.localName(i));
-            const QString attValue = atts.value(i);
-
-            if      (attName == QLatin1String("lat"))
-            {
-                lat = attValue.toDouble(&haveLat);
-            }
-            else if (attName == QLatin1String("lon"))
-            {
-                lon = attValue.toDouble(&haveLon);
-            }
-        }
-
-        if (haveLat&&haveLon)
-        {
-            d->currentDataPoint.coordinates.setLatLon(lat, lon);
-        }
-    }
-    else if (ePath == QLatin1String("gpx:gpx"))
-    {
-        d->verifyFoundGPXElement = true;
-    }
-
-    return true;
-}
-
-void TrackReader::rebuildElementPath()
-{
-    d->currentElementPath = d->currentElements.join(QLatin1Char('/'));
-}
-
 void TrackReader::parseTrack(QXmlStreamReader& xml)
 {
     /* check that really getting a track. */
@@ -304,7 +124,7 @@ void TrackReader::parseTrack(QXmlStreamReader& xml)
         return;
     }
 
-    d->currentDataPoint = TrackManager::TrackPoint();
+    TrackManager::TrackPoint currentDataPoint;
 
     /* get first the attributes for track points */
 
@@ -315,27 +135,24 @@ void TrackReader::parseTrack(QXmlStreamReader& xml)
     if (attributes.hasAttribute(QLatin1String("lat")) &&
         attributes.hasAttribute(QLatin1String("lon")))
     {
-        d->currentDataPoint.coordinates.setLatLon(attributes.value(QLatin1String("lat")).toDouble(),
-                                                  attributes.value(QLatin1String("lon")).toDouble());
+        currentDataPoint.coordinates.setLatLon(attributes.value(QLatin1String("lat")).toDouble(),
+                                               attributes.value(QLatin1String("lon")).toDouble());
     }
 
     /* Next element... */
 
     xml.readNext();
 
-    QString eText;
-
     while (!((xml.tokenType() == QXmlStreamReader::EndElement) &&
              (xml.name()      == QLatin1String("trkpt")))      && !xml.hasError())
     {
         if (xml.tokenType() == QXmlStreamReader::StartElement)
         {
-            eText.clear();
-            eText = xml.readElementText();
+            QString eText = xml.readElementText();
 
             if      (xml.name() == QLatin1String("time"))
             {
-                d->currentDataPoint.dateTime = ParseTime(eText.trimmed());
+                currentDataPoint.dateTime = ParseTime(eText.trimmed());
             }
             else if (xml.name() == QLatin1String("sat"))
             {
@@ -344,7 +161,7 @@ void TrackReader::parseTrack(QXmlStreamReader& xml)
 
                 if (okay && (nSatellites >= 0))
                 {
-                    d->currentDataPoint.nSatellites = nSatellites;
+                    currentDataPoint.nSatellites = nSatellites;
                 }
             }
             else if (xml.name() == QLatin1String("hdop"))
@@ -354,7 +171,7 @@ void TrackReader::parseTrack(QXmlStreamReader& xml)
 
                 if (okay)
                 {
-                    d->currentDataPoint.hDop = hDop;
+                    currentDataPoint.hDop = hDop;
                 }
             }
             else if (xml.name() == QLatin1String("pdop"))
@@ -364,7 +181,7 @@ void TrackReader::parseTrack(QXmlStreamReader& xml)
 
                 if (okay)
                 {
-                    d->currentDataPoint.pDop = pDop;
+                    currentDataPoint.pDop = pDop;
                 }
             }
             else if (xml.name() == QLatin1String("fix"))
@@ -382,7 +199,7 @@ void TrackReader::parseTrack(QXmlStreamReader& xml)
 
                 if (fixType>=0)
                 {
-                    d->currentDataPoint.fixType = fixType;
+                    currentDataPoint.fixType = fixType;
                 }
             }
             else if (xml.name() == QLatin1String("ele"))
@@ -392,7 +209,7 @@ void TrackReader::parseTrack(QXmlStreamReader& xml)
 
                 if (haveAltitude)
                 {
-                    d->currentDataPoint.coordinates.setAlt(alt);
+                    currentDataPoint.coordinates.setAlt(alt);
                 }
             }
             else if (xml.name() == QLatin1String("speed"))
@@ -402,7 +219,7 @@ void TrackReader::parseTrack(QXmlStreamReader& xml)
 
                 if (haveSpeed)
                 {
-                    d->currentDataPoint.speed = speed;
+                    currentDataPoint.speed = speed;
                 }
             }
         }
@@ -412,9 +229,9 @@ void TrackReader::parseTrack(QXmlStreamReader& xml)
         xml.readNext();
     }
 
-    if (d->currentDataPoint.dateTime.isValid() && d->currentDataPoint.coordinates.hasCoordinates())
+    if (currentDataPoint.dateTime.isValid() && currentDataPoint.coordinates.hasCoordinates())
     {
-        d->fileData->track.points << d->currentDataPoint;
+        d->fileData->track.points << currentDataPoint;
     }
 }
 
@@ -442,8 +259,6 @@ TrackReader::TrackReadResult TrackReader::loadTrackFile(const QUrl& url)
 
         return parsedData;
     }
-
-    // TODO: port to new API: https://doc.qt.io/qt-6/xml-changes-qt6.html
 
     QXmlStreamReader XmlReader(&file);
 
@@ -492,7 +307,9 @@ TrackReader::TrackReadResult TrackReader::loadTrackFile(const QUrl& url)
 
     // The correlation algorithm relies on sorted data, therefore sort now
 
-    std::sort(parsedData.track.points.begin(), parsedData.track.points.end(), TrackManager::TrackPoint::EarlierThan);
+    std::sort(parsedData.track.points.begin(),
+              parsedData.track.points.end(),
+              TrackManager::TrackPoint::EarlierThan);
 
     return parsedData;
 }
