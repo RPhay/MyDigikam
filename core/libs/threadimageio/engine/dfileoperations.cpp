@@ -462,7 +462,17 @@ bool DFileOperations::renameFile(const QString& srcFile,
 
 #endif
 
-    bool ret = QFile::rename(srcFile, dstFile);
+    bool ret = (!QFileInfo::exists(dstFile));
+
+    if (ret)
+    {
+        ret = QFile::rename(srcFile, dstFile);
+
+        if (!ret && QFileInfo::exists(dstFile))
+        {
+            QFile::remove(dstFile);
+        }
+    }
 
     if (ret && (stat == 0))
     {
@@ -496,16 +506,8 @@ bool DFileOperations::renameFile(const QString& srcFile,
 bool DFileOperations::copyFile(const QString& srcFile,
                                const QString& dstFile)
 {
-    QString tmpFile;
-
-    int path = dstFile.lastIndexOf(QLatin1Char('/'));
-    int dot  = dstFile.lastIndexOf(QLatin1Char('.'));
-    dot      = (path > dot) ? -1 : dot;
-    int ext  = dstFile.length() - dot;
-    tmpFile  = dstFile.left(dot);
-    tmpFile += QLatin1String(".digikamtempfile");
-    tmpFile += (dot < 0) ? QLatin1String(".tmp")
-                         : dstFile.right(ext);
+    QString tmpFile(dstFile);
+    tmpFile += QLatin1String(".digikamtempfile.tmp");
 
     bool ret = QFile::copy(srcFile, tmpFile);
 

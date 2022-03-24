@@ -118,9 +118,10 @@ preload_shared_library libnss3.so
 preload_shared_library libnssutil3.so
 preload_shared_library libsmime3.so
 
-# See bug #451196
+# See bug #451196 and #451780
 preload_shared_library libpango-1.0.so.0
 preload_shared_library libpangocairo-1.0.so.0
+preload_shared_library libgmodule-2.0.so.0
 
 #preload_shared_library libfontconfig.so.1
 #preload_shared_library libfreetype.so.6

@@ -381,6 +381,9 @@ if(DIGIKAM_CAN_BE_COMPILED)
     # it to be safe. See B.K.O #273765 for details.
     add_definitions(-DLIBPGF_DISABLE_OPENMP)
 
+    # For C++17 and later compatibility LCMS2 must not use register keyword.
+    add_definitions(-DCMS_NO_REGISTER_KEYWORD=1)
+
     # Enable C++ Exceptions support, require by Greycstoration algorithm
     # (CImg.h) and PGF codec
     kde_enable_exceptions()

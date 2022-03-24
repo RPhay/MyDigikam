@@ -104,6 +104,7 @@ void TrackManager::clear()
     /// @TODO send a signal
 
     d->trackList.clear();
+    d->nextTrackColor = 0;
 }
 
 const TrackManager::Track& TrackManager::getTrack(const int index) const
