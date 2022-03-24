@@ -145,6 +145,7 @@ make MXE_TARGETS=$MXE_BUILD_TARGETS \
 
 echo -e "\n"
 
+cd $ORIG_WD
 cp -f ../../scripts/create_manifest.sh $MXE_BUILDROOT
 cd $MXE_BUILDROOT
 $MXE_BUILDROOT/create_manifest.sh $MXE_BUILDROOT mxe
