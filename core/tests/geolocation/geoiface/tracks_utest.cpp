@@ -162,15 +162,25 @@ void TestTracks::testFileLoading()
  */
 void TestTracks::testSaxLoader()
 {
-    QUrl testDataDir = QUrl::fromLocalFile(GetTestDataDirectory() + QLatin1Char('/') + QLatin1String("gpxfile-1.gpx"));
-    TrackReader::TrackReadResult fileData = TrackReader::loadTrackFile(testDataDir);
-    QVERIFY(fileData.isValid);
-    QVERIFY(fileData.loadError.isEmpty());
-
-    // verify that the points are sorted by date:
-    for (int i = 1; i<fileData.track.points.count(); ++i)
     {
-        QVERIFY(TrackManager::TrackPoint::EarlierThan(fileData.track.points.at(i-1), fileData.track.points.at(i)));
+        QUrl testDataDir = QUrl::fromLocalFile(GetTestDataDirectory() + QLatin1Char('/') + QLatin1String("gpxfile-1.gpx"));
+        TrackReader::TrackReadResult fileData = TrackReader::loadTrackFile(testDataDir);
+        QVERIFY(fileData.isValid);
+        QVERIFY(fileData.loadError.isEmpty());
+
+        // verify that the points are sorted by date:
+        for (int i = 1; i<fileData.track.points.count(); ++i)
+        {
+            QVERIFY(TrackManager::TrackPoint::EarlierThan(fileData.track.points.at(i-1), fileData.track.points.at(i)));
+        }
+    }
+
+    {
+        QUrl testDataDir = QUrl::fromLocalFile(GetTestDataDirectory() + QLatin1Char('/') + QLatin1String("gpx-child-elements.gpx"));
+        TrackReader::TrackReadResult fileData = TrackReader::loadTrackFile(testDataDir);
+        QVERIFY(fileData.isValid);
+        QVERIFY(fileData.loadError.isEmpty());
+        QVERIFY(fileData.track.points.size() == 6);
     }
 }
 
