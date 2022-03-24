@@ -139,15 +139,16 @@ class DateOption : public Option
 public:
 
     explicit DateOption();
-    ~DateOption()                                   override = default;
+    ~DateOption()                                                override = default;
 
 protected:
 
-    QString parseOperation(ParseSettings& settings, const QRegularExpressionMatch &match) override;
+    QString parseOperation(ParseSettings& settings,
+                           const QRegularExpressionMatch& match) override;
 
 private Q_SLOTS:
 
-    void slotTokenTriggered(const QString& token)   override;
+    void slotTokenTriggered(const QString& token)                override;
 
 private:
 

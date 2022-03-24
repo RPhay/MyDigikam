@@ -74,15 +74,16 @@ class DatabaseOption : public Option
 public:
 
     explicit DatabaseOption();
-    ~DatabaseOption()                               override;
+    ~DatabaseOption()                                            override;
 
 protected:
 
-    QString parseOperation(ParseSettings& settings, const QRegularExpressionMatch &match) override;
+    QString parseOperation(ParseSettings& settings,
+                           const QRegularExpressionMatch& match) override;
 
 private Q_SLOTS:
 
-    void slotTokenTriggered(const QString& token)   override;
+    void slotTokenTriggered(const QString& token)                override;
 
 private:
 

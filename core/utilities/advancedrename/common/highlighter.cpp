@@ -53,6 +53,7 @@ void Highlighter::highlightBlock(const QString& text)
         QRegularExpression      expression(rule.pattern);
         QRegularExpressionMatch match;
         int index = text.indexOf(expression, 0, &match);
+
         while (index >= 0)
         {
             int length = match.capturedLength();
@@ -118,6 +119,7 @@ void Highlighter::highlightBlock(const QString& text)
         QRegularExpression      expression(quotationRule.pattern);
         QRegularExpressionMatch match;
         int index = text.indexOf(expression, 0, &match);
+
         while (index >= 0)
         {
             QString fullmatched = match.captured(0);

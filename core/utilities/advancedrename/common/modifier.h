@@ -39,11 +39,12 @@ public:
 
     Modifier(const QString& name, const QString& description);
     Modifier(const QString& name, const QString& description, const QString& icon);
-    ~Modifier()                                     override;
+    ~Modifier()                                                  override;
 
 protected:
 
-    QString parseOperation(ParseSettings& settings, const QRegularExpressionMatch &match) override = 0;
+    QString parseOperation(ParseSettings& settings,
+                           const QRegularExpressionMatch& match) override = 0;
 
 private:
 

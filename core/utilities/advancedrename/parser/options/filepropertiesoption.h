@@ -43,11 +43,12 @@ class FilePropertiesOption : public Option
 public:
 
     explicit FilePropertiesOption();
-    ~FilePropertiesOption()                         override = default;
+    ~FilePropertiesOption()                                      override = default;
 
 protected:
 
-    QString parseOperation(ParseSettings& settings, const QRegularExpressionMatch &match) override;
+    QString parseOperation(ParseSettings& settings,
+                           const QRegularExpressionMatch& match) override;
 
 private:
 

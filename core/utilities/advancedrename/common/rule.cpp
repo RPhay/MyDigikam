@@ -267,9 +267,9 @@ QString Rule::escapeToken(const QString& token)
 ParseResults Rule::parse(ParseSettings& settings)
 {
     ParseResults parsedResults;
-    const QRegularExpression& reg         = regExp();
-    const QString& parseString            = settings.parseString;
-    QRegularExpressionMatch                 match;
+    const QRegularExpression& reg = regExp();
+    const QString& parseString    = settings.parseString;
+    QRegularExpressionMatch         match;
 
     int pos = 0;
 

@@ -65,15 +65,16 @@ class SequenceNumberOption : public Option
 public:
 
     explicit SequenceNumberOption();
-    ~SequenceNumberOption()                             override;
+    ~SequenceNumberOption()                                      override;
 
 protected:
 
-    QString parseOperation(ParseSettings& settings, const QRegularExpressionMatch &match)     override;
+    QString parseOperation(ParseSettings& settings,
+                           const QRegularExpressionMatch& match) override;
 
 private Q_SLOTS:
 
-    void slotTokenTriggered(const QString& token)       override;
+    void slotTokenTriggered(const QString& token)                override;
 
 private:
 

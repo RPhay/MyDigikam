@@ -55,7 +55,7 @@ CaseModifier::CaseModifier()
 
 QString CaseModifier::parseOperation(ParseSettings& settings, const QRegularExpressionMatch& match)
 {
-    const QString& token            = match.captured(1);
+    const QString& token = match.captured(1);
 
     if      (token == QLatin1String("firstupper"))
     {
