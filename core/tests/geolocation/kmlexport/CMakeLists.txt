@@ -18,5 +18,3 @@ ecm_add_tests(${CMAKE_CURRENT_SOURCE_DIR}/geoparsing_utest.cpp
 
               ${COMMON_TEST_LINK}
 )
-
-add_test(geoparsing_utest ${EXECUTABLE_OUTPUT_PATH}/geoparsing_utest)
