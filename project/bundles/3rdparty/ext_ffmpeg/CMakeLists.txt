@@ -20,17 +20,16 @@ ExternalProject_Add(ext_ffmpeg
     URL_MD5 41a1ca8693acc56088e8eaf3899b91ea
 
     CONFIGURE_COMMAND <SOURCE_DIR>/configure --prefix=${PREFIX_ext_ffmpeg}
-                                             --datadir=${CMAKE_BINARY_DIR}/etc
-                                             --enable-shared
-                                             --enable-gpl
-                                             --enable-version3
-                                             --enable-nonfree
+                                             --extra-libs=-lstdc++
                                              --disable-doc
                                              --disable-debug
                                              --disable-programs
                                              --disable-outdevs
+                                             --enable-shared
+                                             --enable-gpl
+                                             --enable-version3
+                                             --enable-nonfree
                                              --enable-runtime-cpudetect
-                                             --extra-libs=-lstdc++
                                              --enable-libopencore-amrnb
                                              --enable-libopencore-amrwb
                                              --enable-libfdk-aac
