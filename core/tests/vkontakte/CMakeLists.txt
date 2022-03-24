@@ -26,7 +26,7 @@ function(add_vk_test name)
 
 endfunction()
 
-add_vk_test(userinfo_utest)
-add_vk_test(albums_utest)
-add_vk_test(photos_utest)
-add_vk_test(frequentrequests_utest)
+#add_vk_test(userinfo_utest)
+#add_vk_test(albums_utest)
+#add_vk_test(photos_utest)
+#add_vk_test(frequentrequests_utest)

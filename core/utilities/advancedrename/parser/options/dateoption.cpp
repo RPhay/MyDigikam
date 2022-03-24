@@ -273,7 +273,7 @@ DateOption::DateOption()
     setRegExp(reg);
 }
 
-QString DateOption::parseOperation(ParseSettings& settings, const QRegularExpressionMatch &match)
+QString DateOption::parseOperation(ParseSettings& settings, const QRegularExpressionMatch& match)
 {
 
     QString token = match.captured(2);

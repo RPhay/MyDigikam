@@ -128,6 +128,7 @@ void TagsReadWriteTest::testReadFromDisabledNamespaces()
     QScopedPointer<DMetadata> dmeta(new DMetadata);
 
     DMetadataSettingsContainer dmsettings;
+    QStringList toWrite;
     QStringList actual;
 
     NamespaceEntry tagNs2;
@@ -158,7 +159,9 @@ void TagsReadWriteTest::testReadFromDisabledNamespaces()
 
     dmeta->setXmpTagStringBag("Xmp.MicrosoftPhoto.LastKeywordXMP", tagSet1);
 
-    dmeta->setXmpTagStringBag("Xmp.lr.hierarchicalSubject", tagSet2);
+    toWrite = tagSet2;
+    toWrite.replaceInStrings(QLatin1String("/"), QLatin1String("|"));
+    dmeta->setXmpTagStringBag("Xmp.lr.hierarchicalSubject", toWrite);
 
     dmeta->getItemTagsPath(actual, dmsettings);
 

@@ -44,11 +44,12 @@ class DirectoryNameOption : public Option
 public:
 
     explicit DirectoryNameOption();
-    ~DirectoryNameOption()                          override = default;
+    ~DirectoryNameOption()                                       override = default;
 
 protected:
 
-    QString parseOperation(ParseSettings& settings, const QRegularExpressionMatch &match) override;
+    QString parseOperation(ParseSettings& settings,
+                           const QRegularExpressionMatch& match) override;
 
 private:
 

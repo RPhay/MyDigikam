@@ -308,7 +308,7 @@ ParseResults Parser::applyModifiers(const ParseSettings& _settings, ParseResults
 
         while (pos > -1)
         {
-            pos = settings.parseString.indexOf(regExp, pos, &match);
+            pos = _settings.parseString.indexOf(regExp, pos, &match);
 
             if (pos > -1)
             {
@@ -333,7 +333,7 @@ ParseResults Parser::applyModifiers(const ParseSettings& _settings, ParseResults
         int off  = results.offset(key);
         int diff = 0;
 
-        for (int pos = off ; pos < settings.parseString.count() ; )
+        for (int pos = off ; pos < _settings.parseString.count() ; )
         {
             if (modifierResults.hasKeyAtPosition(pos))
             {

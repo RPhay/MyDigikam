@@ -224,6 +224,10 @@ void DImgAbstractHistoryTest::initBaseTestCase()
 
     MetaEngine::initializeExiv2();
 
+    QDir dir(qApp->applicationDirPath());
+    qputenv("DK_PLUGIN_PATH", dir.canonicalPath().toUtf8());
+    DPluginLoader::instance()->init();
+
     ICCSettingsContainer c = IccSettings::instance()->settings();
     c.enableCM             = false;
     IccSettings::instance()->setSettings(c);
@@ -243,6 +247,8 @@ void DImgAbstractHistoryTest::initBaseTestCase()
 void DImgAbstractHistoryTest::cleanupBaseTestCase()
 {
     delete m_im;
+
+    DPluginLoader::instance()->cleanUp();
 
     QFile file(m_tempFile);
     file.remove();

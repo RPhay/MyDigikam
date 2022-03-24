@@ -33,6 +33,7 @@
 #include <QPersistentModelIndex>
 #include <QScopedPointer>
 #include <QTimer>
+#include <QDir>
 
 // KDE includes
 
@@ -41,6 +42,7 @@
 // Local includes
 
 #include "mapwidget.h"
+#include "trackmanager.h"
 #include "itemmarkertiler.h"
 #include "digikam_debug.h"
 #include "camerathumbsctrl.h"
@@ -79,6 +81,7 @@ public:
          selectionModel             (nullptr),
          mapViewModelHelper         (nullptr),
          gpsItemInfoSorter          (nullptr),
+         trackManager               (nullptr),
          modelTimer                 (nullptr),
          application                (MapWidgetView::ApplicationDigikam),
          boundariesShouldBeAdjusted (false)
@@ -95,6 +98,7 @@ public:
 
     MapViewModelHelper*        mapViewModelHelper;
     GPSItemInfoSorter*         gpsItemInfoSorter;
+    TrackManager*              trackManager;
 
     QTimer*                    modelTimer;
 
@@ -166,6 +170,10 @@ MapWidgetView::MapWidgetView(QItemSelectionModel* const selectionModel,
 
     d->gpsItemInfoSorter                       = new GPSItemInfoSorter(this);
     d->gpsItemInfoSorter->addToMapWidget(d->mapWidget);
+
+    d->trackManager                            = new TrackManager(this);
+    d->mapWidget->setTrackManager(d->trackManager);
+
     vBoxLayout->addWidget(d->mapWidget);
     vBoxLayout->addWidget(d->mapWidget->getControlWidget());
     vBoxLayout->setContentsMargins(QMargins());
@@ -279,19 +287,55 @@ void MapWidgetView::slotModelChanged()
         return;
     }
 
+    d->trackManager->setVisibility(false);
+    d->trackManager->clear();
+
     bool hasCoordinates = false;
 
     switch (d->application)
     {
         case ApplicationDigikam:
         {
+            QList<QUrl> fileUrls;
+
             foreach (const ItemInfo& info, d->imageModel->imageInfos())
             {
                 if (info.hasCoordinates())
                 {
-                    hasCoordinates = true;
-                    break;
+                    QUrl url = info.fileUrl().adjusted(QUrl::RemoveFilename |
+                                                       QUrl::StripTrailingSlash);
+
+                    if (!fileUrls.contains(url))
+                    {
+                        fileUrls << url;
+                    }
                 }
+            }
+
+            hasCoordinates = (!fileUrls.isEmpty());
+
+            if (!hasCoordinates)
+            {
+                break;
+            }
+
+            QList<QUrl> gpxList;
+
+            foreach (const QUrl& url, fileUrls)
+            {
+                QDir dir(url.toLocalFile());
+                const QFileInfoList infoList = dir.entryInfoList(QStringList() << QLatin1String("*.gpx"), QDir::Files);
+
+                foreach (const QFileInfo& finfo, infoList)
+                {
+                    gpxList << QUrl::fromLocalFile(finfo.filePath());
+                }
+            }
+
+            if (!gpxList.isEmpty())
+            {
+                d->trackManager->loadTrackFiles(gpxList);
+                d->trackManager->setVisibility(true);
             }
 
             break;

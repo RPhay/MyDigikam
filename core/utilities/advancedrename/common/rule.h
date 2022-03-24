@@ -142,7 +142,8 @@ protected:
      * @param match result of the regular expression match done in Option::parse()
      * @return
      */
-    virtual QString parseOperation(ParseSettings& settings, const QRegularExpressionMatch &match) = 0;
+    virtual QString parseOperation(ParseSettings& settings,
+                                   const QRegularExpressionMatch& match) = 0;
 
     /**
      * add a token to the parser, every parser should at least assign one token object

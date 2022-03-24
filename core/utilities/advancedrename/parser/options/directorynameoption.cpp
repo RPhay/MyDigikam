@@ -55,7 +55,7 @@ DirectoryNameOption::DirectoryNameOption()
     setRegExp(reg);
 }
 
-QString DirectoryNameOption::parseOperation(ParseSettings& settings, const QRegularExpressionMatch &match)
+QString DirectoryNameOption::parseOperation(ParseSettings& settings, const QRegularExpressionMatch& match)
 {
     QString result;
     QFileInfo fi(settings.fileUrl.toLocalFile());
@@ -65,9 +65,9 @@ QString DirectoryNameOption::parseOperation(ParseSettings& settings, const QRegu
         return result;
     }
 
-    QStringList folders            = fi.absolutePath().split(QLatin1Char('/'), QT_SKIP_EMPTY_PARTS);
-    int folderCount                = folders.count();
-    int matchedLength              = match.captured(1).length();
+    QStringList folders = fi.absolutePath().split(QLatin1Char('/'), QT_SKIP_EMPTY_PARTS);
+    int folderCount     = folders.count();
+    int matchedLength   = match.captured(1).length();
 
     if (matchedLength == 0)
     {

@@ -27,7 +27,6 @@
 
 // Qt includes
 
-#include <QXmlDefaultHandler>
 #include <QXmlStreamReader>
 
 // local includes
@@ -40,8 +39,10 @@ class TestTracks;
 namespace Digikam
 {
 
-class DIGIKAM_EXPORT TrackReader : public QXmlDefaultHandler
+class DIGIKAM_EXPORT TrackReader : public QObject
 {
+    Q_OBJECT
+
 public:
 
     class TrackReadResult
@@ -67,26 +68,12 @@ public:
     explicit TrackReader(TrackReadResult* const dataTarget);
     ~TrackReader()                                          override;
 
-    bool characters(const QString& ch)                      override;
-
-    bool endElement(const QString& namespaceURI,
-                    const QString& localName,
-                    const QString& qName)                   override;
-
-    bool startElement(const QString& namespaceURI,
-                      const QString& localName,
-                      const QString& qName,
-                      const QXmlAttributes& atts)           override;
-
     static TrackReadResult loadTrackFile(const QUrl& url);
     static QDateTime ParseTime(const QString& tstring);
-    void parseTrack(QXmlStreamReader& xml);
 
 private:
 
-    void rebuildElementPath();
-
-    static QString myQName(const QString& namespaceURI, const QString& localName);
+    void parseTrack(QXmlStreamReader& xml);
 
 private:
 

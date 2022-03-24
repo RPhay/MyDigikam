@@ -71,15 +71,16 @@ class MetadataOption : public Option
 public:
 
     explicit MetadataOption();
-    ~MetadataOption()                               override = default;
+    ~MetadataOption()                                            override = default;
 
 protected:
 
-    QString parseOperation(ParseSettings& settings, const QRegularExpressionMatch &match) override;
+    QString parseOperation(ParseSettings& settings,
+                           const QRegularExpressionMatch& match) override;
 
 private Q_SLOTS:
 
-    void slotTokenTriggered(const QString& token)   override;
+    void slotTokenTriggered(const QString& token)                override;
 
 private:
 
