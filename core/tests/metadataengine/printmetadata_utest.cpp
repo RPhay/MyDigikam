@@ -53,8 +53,13 @@ void PrintMetadataTest::printMetadataMap(const DMetadata::MetaDataMap& map)
         QString value = it.value();
 
         // None of these strings can be null, event if strings are translated.
+
         QVERIFY(!key.isNull());
-        QVERIFY(!value.isNull());
+
+        if (key != QLatin1String("Exif.Photo.UserComment"))
+        {
+            QVERIFY(!value.isNull());
+        }
 
         QString tagName = key.simplified();
         tagName.append(QString().fill(QLatin1Char(' '), 48 - tagName.length()));
