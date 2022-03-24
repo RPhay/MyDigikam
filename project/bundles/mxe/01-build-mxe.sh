@@ -101,7 +101,7 @@ fi
 # Use a more recent gcc version with MXE
 echo -e "\n"
 echo "---------- Building cross-compiler for MXE"
-make MXE_TARGETS=$MXE_BUILD_TARGETS cc MXE_PLUGIN_DIRS="plugins/gcc9" 
+make MXE_TARGETS=$MXE_BUILD_TARGETS cc MXE_PLUGIN_DIRS="plugins/gcc10" 
 
 echo -e "\n"
 echo "---------- Building digiKam low level dependencies with MXE"

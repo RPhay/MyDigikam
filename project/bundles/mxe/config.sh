@@ -40,7 +40,7 @@ fi
 echo "Target Windows architecture: $MXE_ARCHBITS bits."
 
 MXE_GIT_URL="https://github.com/mxe/mxe.git"
-MXE_GIT_REVISION=master
+MXE_GIT_REVISION=f08ef6811411c59b19316337e4a9dfd462be7c82
 MXE_INSTALL_PREFIX=${MXE_BUILDROOT}/usr/${MXE_BUILD_TARGETS}/
 MXE_TOOLCHAIN=${MXE_INSTALL_PREFIX}/share/cmake/mxe-conf.cmake
 
