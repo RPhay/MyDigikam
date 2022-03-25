@@ -54,6 +54,7 @@ rm -rf $BUILDING_DIR/* || true
 ${MXE_BUILD_TARGETS}-cmake $ORIG_WD/../3rdparty \
                            -DMXE_TOOLCHAIN=${MXE_TOOLCHAIN} \
                            -DMXE_BUILDROOT=${MXE_BUILDROOT} \
+                           -DMXE_BUILD_TARGETS=${MXE_BUILD_TARGETS} \
                            -DMXE_ARCHBITS=${MXE_ARCHBITS} \
                            -DMXE_INSTALL_PREFIX=${MXE_INSTALL_PREFIX} \
                            -DCMAKE_BUILD_TYPE=RelWithDebInfo \
