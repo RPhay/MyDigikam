@@ -272,7 +272,10 @@ bool BlurDetector::isMotionBlur(const cv::Mat& frag) const
             cv::Scalar mean, stddev;
             cv::meanStdDev(list_theta, mean, stddev);
 
-            qCDebug(DIGIKAM_DIMG_LOG) << "Standard Deviation for group of lines " << stddev[0];
+            if (stddev[0] < d->max_stddev)
+            {
+                qCDebug(DIGIKAM_DIMG_LOG) << "Standard Deviation for group of lines " << stddev[0];
+            }
 
             return (stddev[0] < d->max_stddev);
         }
