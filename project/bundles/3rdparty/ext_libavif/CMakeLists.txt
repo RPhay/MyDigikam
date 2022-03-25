@@ -13,7 +13,7 @@ set(AVIF_Conf -DBUILD_SHARED_LIBS=ON
               -DAVIF_CODEC_AOM=ON
               -DAVIF_CODEC_AOM_DECODE=ON
               -DAVIF_CODEC_AOM_ENCODE=ON
-              -DAVIF_LOCAL_AOM=ON               # See comment below...
+              -DAVIF_LOCAL_AOM=OFF
               -DAVIF_LOCAL_ZLIBPNG=OFF
               -DAVIF_LOCAL_JPEG=OFF
               -DAVIF_LOCAL_LIBYUV=OFF
@@ -32,20 +32,6 @@ set(AVIF_Conf -DBUILD_SHARED_LIBS=ON
               -DAVIF_BUILD_TESTS=OFF
 )
 
-if(MINGW)
-
-    set(AVIF_Conf ${AVIF_Conf}
-                  -DAVIF_LOCAL_AOM=ON
-    )
-
-else()
-
-    set(AVIF_Conf ${AVIF_Conf}
-                  -DAVIF_LOCAL_AOM=OFF
-    )
-
-endif()
-
 JoinListAsString("${AVIF_Conf}" " " BASH_OPTIONS_AVIF)
 
 if(MINGW)
@@ -56,19 +42,6 @@ if(MINGW)
 
         GIT_REPOSITORY https://github.com/AOMediaCodec/libavif.git
         GIT_TAG v0.9.3
-
-        PATCH_COMMAND cd <SOURCE_DIR>/ext && mkdir -p aom/build.libavif && mkdir -p aom/aom                                                     &&
-                      ln -s <SOURCE_DIR>/../../../libaom-prefix/src/libaom/build.mxe/libaom.a           <SOURCE_DIR>/ext/aom/build.libavif/     &&
-                      ln -s <SOURCE_DIR>/../../../libaom-prefix/src/libaom/aom/aom_decoder.h            <SOURCE_DIR>/ext/aom/aom/               &&
-                      ln -s <SOURCE_DIR>/../../../libaom-prefix/src/libaom/aom/aom_encoder.h            <SOURCE_DIR>/ext/aom/aom/               &&
-                      ln -s <SOURCE_DIR>/../../../libaom-prefix/src/libaom/aom/aom_image.h              <SOURCE_DIR>/ext/aom/aom/               &&
-                      ln -s <SOURCE_DIR>/../../../libaom-prefix/src/libaom/aom/aom_integer.h            <SOURCE_DIR>/ext/aom/aom/               &&
-                      ln -s <SOURCE_DIR>/../../../libaom-prefix/src/libaom/aom/aom_codec.h              <SOURCE_DIR>/ext/aom/aom/               &&
-                      ln -s <SOURCE_DIR>/../../../libaom-prefix/src/libaom/aom/aom_frame_buffer.h       <SOURCE_DIR>/ext/aom/aom/               &&
-                      ln -s <SOURCE_DIR>/../../../libaom-prefix/src/libaom/aom/aom_external_partition.h <SOURCE_DIR>/ext/aom/aom/               &&
-                      ln -s <SOURCE_DIR>/../../../libaom-prefix/src/libaom/aom/aomcx.h                  <SOURCE_DIR>/ext/aom/aom/               &&
-                      ln -s <SOURCE_DIR>/../../../libaom-prefix/src/libaom/aom/aomdx.h                  <SOURCE_DIR>/ext/aom/aom/               &&
-                      ln -s <SOURCE_DIR>/../../../libaom-prefix/src/libaom/aom/aom.h                    <SOURCE_DIR>/ext/aom/aom/
 
         CONFIGURE_COMMAND cp -f ${CMAKE_CURRENT_SOURCE_DIR}/../../../../bootstrap.mxe <SOURCE_DIR>/. &&
                           <SOURCE_DIR>/bootstrap.mxe ${MXE_BUILDROOT} RelWithDebInfo ${BASH_OPTIONS_AVIF}

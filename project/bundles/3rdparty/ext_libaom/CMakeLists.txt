@@ -54,7 +54,8 @@ if(MINGW)
 
         BUILD_IN_SOURCE 1
 
-        INSTALL_COMMAND ""
+        INSTALL_COMMAND cd <SOURCE_DIR>/build.mxe && $(MAKE) install/fast
+
         UPDATE_COMMAND ""
         ALWAYS 0
     )
