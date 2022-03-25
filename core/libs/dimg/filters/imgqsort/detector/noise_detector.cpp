@@ -100,111 +100,200 @@ NoiseDetector::~NoiseDetector()
 
 float NoiseDetector::detect(const cv::Mat& image) const
 {
-    cv::Mat image_float = image;
+    try
+    {
+        cv::Mat image_float = image;
 
-    image_float.convertTo(image_float, CV_32F);
+        image_float.convertTo(image_float, CV_32F);
 
-    // Decompose to channels
+        // Decompose to channels
 
-    Mat3D channels      = decompose_by_filter(image_float, filtersHaar);
+        Mat3D channels      = decompose_by_filter(image_float, filtersHaar);
 
-    // Calculate variance and kurtosis
+        // Calculate variance and kurtosis
 
-    cv::Mat variance, kurtosis;
+        cv::Mat variance, kurtosis;
 
-    calculate_variance_kurtosis(channels, variance, kurtosis);
+        calculate_variance_kurtosis(channels, variance, kurtosis);
 
-    // Calculate variance of noise
+        // Calculate variance of noise
 
-    float V             = noise_variance(variance, kurtosis);
+        float V             = noise_variance(variance, kurtosis);
 
-    return normalize(V);
+        return normalize(V);
+    }
+    catch (cv::Exception& e)
+    {
+        qCCritical(DIGIKAM_FACESENGINE_LOG) << "cv::Exception:" << e.what();
+    }
+    catch (...)
+    {
+        qCCritical(DIGIKAM_FACESENGINE_LOG) << "Default exception from OpenCV";
+    }
+
+    return 1.0F;
 }
 
 NoiseDetector::Mat3D NoiseDetector::decompose_by_filter(const cv::Mat& image, const Mat3D& filters) const
 {
-    Mat3D filtersUsed = filters.mid(1); // do not use first filter
-    Mat3D channels;
-
-    channels.reserve(filtersUsed.size());
-
-    for (const auto& filter : filtersUsed)
+    try
     {
-        cv::Mat tmp = cv::Mat(image.size().width, image.size().height, CV_32FC1);
+        Mat3D filtersUsed = filters.mid(1); // do not use first filter
+        Mat3D channels;
 
-        cv::filter2D(image, tmp, -1, filter, cv::Point(-1, -1), 0.0, cv::BORDER_REPLICATE);
+        channels.reserve(filtersUsed.size());
 
-        channels.push_back(tmp);
+        for (const auto& filter : filtersUsed)
+        {
+            cv::Mat tmp = cv::Mat(image.size().width, image.size().height, CV_32FC1);
+
+            cv::filter2D(image, tmp, -1, filter, cv::Point(-1, -1), 0.0, cv::BORDER_REPLICATE);
+
+            channels.push_back(tmp);
+        }
+
+        return channels;
+    }
+    catch (cv::Exception& e)
+    {
+        qCCritical(DIGIKAM_FACESENGINE_LOG) << "cv::Exception:" << e.what();
+    }
+    catch (...)
+    {
+        qCCritical(DIGIKAM_FACESENGINE_LOG) << "Default exception from OpenCV";
     }
 
-    return channels;
+    return Mat3D();
 }
 
 void NoiseDetector::calculate_variance_kurtosis(const Mat3D& channels, cv::Mat& variance, cv::Mat& kurtosis) const
 {
-    // Get raw moments
+    try
+    {
+        // Get raw moments
 
-    cv::Mat mu1 = raw_moment(channels, 1);
-    cv::Mat mu2 = raw_moment(channels, 2);
-    cv::Mat mu3 = raw_moment(channels, 3);
-    cv::Mat mu4 = raw_moment(channels, 4);
+        cv::Mat mu1 = raw_moment(channels, 1);
+        cv::Mat mu2 = raw_moment(channels, 2);
+        cv::Mat mu3 = raw_moment(channels, 3);
+        cv::Mat mu4 = raw_moment(channels, 4);
 
-    // Calculate variance and kurtosis projection
+        // Calculate variance and kurtosis projection
 
-    variance    = mu2 - pow_mat(mu1, 2);
-    kurtosis    = (mu4 - 4.0 * mu1.mul(mu3) + 6.0 * pow_mat(mu1,2).mul(mu2) - 3.0 * pow_mat(mu1,4)) / pow_mat(variance, 2) - 3.0;
+        variance    = mu2 - pow_mat(mu1, 2);
+        kurtosis    = (mu4 - 4.0 * mu1.mul(mu3) + 6.0 * pow_mat(mu1,2).mul(mu2) - 3.0 * pow_mat(mu1,4)) / pow_mat(variance, 2) - 3.0;
 
-    cv::threshold(kurtosis, kurtosis, 0, 0, cv::THRESH_TOZERO);
+        cv::threshold(kurtosis, kurtosis, 0, 0, cv::THRESH_TOZERO);
+    }
+    catch (cv::Exception& e)
+    {
+        qCCritical(DIGIKAM_FACESENGINE_LOG) << "cv::Exception:" << e.what();
+    }
+    catch (...)
+    {
+        qCCritical(DIGIKAM_FACESENGINE_LOG) << "Default exception from OpenCV";
+    }
 }
 
 float NoiseDetector::noise_variance(const cv::Mat& variance, const cv::Mat& kurtosis) const
 {
-    cv::Mat sqrt_kurtosis;
+    try
+    {
+        cv::Mat sqrt_kurtosis;
 
-    cv::sqrt(kurtosis, sqrt_kurtosis);
+        cv::sqrt(kurtosis, sqrt_kurtosis);
 
-    float a     = mean_mat(sqrt_kurtosis);
+        float a     = mean_mat(sqrt_kurtosis);
 
-    float b     = mean_mat(pow_mat(variance, -1));
+        float b     = mean_mat(pow_mat(variance, -1));
 
-    float c     = mean_mat(pow_mat(variance, -2));
+        float c     = mean_mat(pow_mat(variance, -2));
 
-    float d     = mean_mat(sqrt_kurtosis.mul(pow_mat(variance, -1)));
+        float d     = mean_mat(sqrt_kurtosis.mul(pow_mat(variance, -1)));
 
-    float sqrtK = (a*c - b*d) / (c-b * b);
+        float sqrtK = (a*c - b*d) / (c-b * b);
 
-    return ((1.0F - a / sqrtK) / b);
+        return ((1.0F - a / sqrtK) / b);
+    }
+    catch (cv::Exception& e)
+    {
+        qCCritical(DIGIKAM_FACESENGINE_LOG) << "cv::Exception:" << e.what();
+    }
+    catch (...)
+    {
+        qCCritical(DIGIKAM_FACESENGINE_LOG) << "Default exception from OpenCV";
+    }
+
+    return 1.0F;
 }
 
 cv::Mat NoiseDetector::raw_moment(const NoiseDetector::Mat3D& mat, int order) const
 {
-    float taille_image = mat[0].size().width * mat[0].size().height;
-
-    std::vector<float> vec;
-    vec.reserve(mat.size());
-
-    for (const auto& mat2d : mat)
+    try
     {
-        vec.push_back(cv::sum(pow_mat(mat2d,order))[0] / taille_image);
+        float taille_image = mat[0].size().width * mat[0].size().height;
+
+        std::vector<float> vec;
+        vec.reserve(mat.size());
+
+        for (const auto& mat2d : mat)
+        {
+            vec.push_back(cv::sum(pow_mat(mat2d, order))[0] / taille_image);
+        }
+
+        return cv::Mat(vec, true);
+    }
+    catch (cv::Exception& e)
+    {
+        qCCritical(DIGIKAM_FACESENGINE_LOG) << "cv::Exception:" << e.what();
+    }
+    catch (...)
+    {
+        qCCritical(DIGIKAM_FACESENGINE_LOG) << "Default exception from OpenCV";
     }
 
-    return cv::Mat(vec, true);
+    return cv::Mat();
 }
 
 cv::Mat NoiseDetector::pow_mat(const cv::Mat& mat, float order) const
 {
-    cv::Mat res = cv::Mat(mat.size().width, mat.size().height, CV_32FC1);
-    cv::pow(mat, order, res);
+    try
+    {
+        cv::Mat res = cv::Mat(mat.size().width, mat.size().height, CV_32FC1);
+        cv::pow(mat, order, res);
 
-    return res;
+        return res;
+    }
+    catch (cv::Exception& e)
+    {
+        qCCritical(DIGIKAM_FACESENGINE_LOG) << "cv::Exception:" << e.what();
+    }
+    catch (...)
+    {
+        qCCritical(DIGIKAM_FACESENGINE_LOG) << "Default exception from OpenCV";
+    }
+
+    return cv::Mat();
 }
 
 float NoiseDetector::mean_mat(const cv::Mat& mat) const
 {
-    cv::Scalar mean,std;
-    cv::meanStdDev(mat,mean,std);
+    try
+    {
+        cv::Scalar mean, std;
+        cv::meanStdDev(mat,mean,std);
 
-    return mean[0];
+        return mean[0];
+    }
+    catch (cv::Exception& e)
+    {
+        qCCritical(DIGIKAM_FACESENGINE_LOG) << "cv::Exception:" << e.what();
+    }
+    catch (...)
+    {
+        qCCritical(DIGIKAM_FACESENGINE_LOG) << "Default exception from OpenCV";
+    }
+
+    return 1.0F;
 }
 
 /**

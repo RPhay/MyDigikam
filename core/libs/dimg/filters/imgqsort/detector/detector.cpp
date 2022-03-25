@@ -50,20 +50,33 @@ cv::Mat DetectorDistortion::prepareForDetection(const DImg& inputImage)
         return cv::Mat();
     }
 
-    cv::Mat cvImage;
-
-    int type               = inputImage.sixteenBit() ? CV_16UC4 : CV_8UC4;
-
-    cv::Mat cvImageWrapper = cv::Mat(inputImage.height(), inputImage.width(), type, inputImage.bits());
-
-    cv::cvtColor(cvImageWrapper, cvImage, cv::COLOR_RGBA2BGR);
-
-    if (type == CV_16UC4)
+    try
     {
-        cvImage.convertTo(cvImage, CV_8UC3, 1 / 256.0);
+        cv::Mat cvImage;
+
+        int type               = inputImage.sixteenBit() ? CV_16UC4 : CV_8UC4;
+
+        cv::Mat cvImageWrapper = cv::Mat(inputImage.height(), inputImage.width(), type, inputImage.bits());
+
+        cv::cvtColor(cvImageWrapper, cvImage, cv::COLOR_RGBA2BGR);
+
+        if (type == CV_16UC4)
+        {
+            cvImage.convertTo(cvImage, CV_8UC3, 1 / 256.0);
+        }
+
+        return cvImage;
+    }
+    catch (cv::Exception& e)
+    {
+        qCCritical(DIGIKAM_FACESENGINE_LOG) << "cv::Exception:" << e.what();
+    }
+    catch (...)
+    {
+        qCCritical(DIGIKAM_FACESENGINE_LOG) << "Default exception from OpenCV";
     }
 
-    return cvImage;
+    return cv::Mat();
 }
 
 // void DetectorDistortion::run()
