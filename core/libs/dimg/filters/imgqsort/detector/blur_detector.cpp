@@ -125,115 +125,165 @@ float BlurDetector::detect(const cv::Mat& image) const
 
 cv::Mat BlurDetector::edgeDetection(const cv::Mat& image) const
 {
-    // Convert the image to grayscale
+    try
+    {
+        // Convert the image to grayscale
 
-    cv::Mat image_gray;
-    cvtColor(image, image_gray, cv::COLOR_BGR2GRAY);
+        cv::Mat image_gray;
+        cvtColor(image, image_gray, cv::COLOR_BGR2GRAY);
 
-    // Use laplacian to detect edge map
+        // Use laplacian to detect edge map
 
-    cv::Mat dst;
-    cv::Laplacian( image_gray, dst, CV_32F);
+        cv::Mat dst;
+        cv::Laplacian( image_gray, dst, CV_32F);
 
-    return dst;
+        return dst;
+    }
+    catch (cv::Exception& e)
+    {
+        qCCritical(DIGIKAM_FACESENGINE_LOG) << "cv::Exception:" << e.what();
+    }
+    catch (...)
+    {
+        qCCritical(DIGIKAM_FACESENGINE_LOG) << "Default exception from OpenCV";
+    }
+
+    return cv::Mat();
 }
 
 cv::Mat BlurDetector::detectDefocusMap(const cv::Mat& edgesMap) const
 {
-    cv::Mat abs_map = cv::abs(edgesMap);
+    try
+    {
+        cv::Mat abs_map = cv::abs(edgesMap);
 
-    abs_map.setTo(d->min_abs, (abs_map < d->min_abs));
+        abs_map.setTo(d->min_abs, (abs_map < d->min_abs));
 
-    // Log filter
+        // Log filter
 
-    cv::log(abs_map,abs_map);
+        cv::log(abs_map,abs_map);
 
-    abs_map        /= log(d->ordre_log_filter);
+        abs_map        /= log(d->ordre_log_filter);
 
-    // Smooth image to get blur map
+        // Smooth image to get blur map
 
-    cv::blur(abs_map, abs_map, cv::Size(d->sigma_smooth_image, d->sigma_smooth_image));
-    cv::medianBlur(abs_map, abs_map, d->sigma_smooth_image);
+        cv::blur(abs_map, abs_map, cv::Size(d->sigma_smooth_image, d->sigma_smooth_image));
+        cv::medianBlur(abs_map, abs_map, d->sigma_smooth_image);
 
-    // Mask blurred pixel as 1 and sharp pixel 0
+        // Mask blurred pixel as 1 and sharp pixel 0
 
-    cv::Mat res     = abs_map * 255;
+        cv::Mat res     = abs_map * 255;
 
-    cv::threshold(res, res, d->filter_defocus, 1, cv::THRESH_BINARY_INV);
+        cv::threshold(res, res, d->filter_defocus, 1, cv::THRESH_BINARY_INV);
 
-    return res;
+        return res;
+    }
+    catch (cv::Exception& e)
+    {
+        qCCritical(DIGIKAM_FACESENGINE_LOG) << "cv::Exception:" << e.what();
+    }
+    catch (...)
+    {
+        qCCritical(DIGIKAM_FACESENGINE_LOG) << "Default exception from OpenCV";
+    }
+
+    return cv::Mat();
 }
 
 cv::Mat BlurDetector::detectMotionBlurMap(const cv::Mat& edgesMap) const
 {
-    // Divide image
-
-    qCDebug(DIGIKAM_DIMG_LOG) << "Divide image to small parts";
-
-    int nb_parts_row = static_cast<int>(edgesMap.size().height / d->part_size_motion_blur);
-    int nb_parts_col = static_cast<int>(edgesMap.size().width  / d->part_size_motion_blur);
-    cv::Mat res      = cv::Mat::zeros(edgesMap.size(), CV_8U);
-
-    for (int i = 0 ; i < nb_parts_row ; ++i)
+    try
     {
-        for (int j = 0 ; j < nb_parts_col ; ++j)
+        // Divide image
+
+        qCDebug(DIGIKAM_DIMG_LOG) << "Divide image to small parts";
+
+        int nb_parts_row = static_cast<int>(edgesMap.size().height / d->part_size_motion_blur);
+        int nb_parts_col = static_cast<int>(edgesMap.size().width  / d->part_size_motion_blur);
+        cv::Mat res      = cv::Mat::zeros(edgesMap.size(), CV_8U);
+
+        for (int i = 0 ; i < nb_parts_row ; ++i)
         {
-            cv::Rect rect
+            for (int j = 0 ; j < nb_parts_col ; ++j)
             {
-                j*d->part_size_motion_blur,
-                i*d->part_size_motion_blur,
-                d->part_size_motion_blur,
-                d->part_size_motion_blur
-            };
+                cv::Rect rect
+                {
+                    j*d->part_size_motion_blur,
+                    i*d->part_size_motion_blur,
+                    d->part_size_motion_blur,
+                    d->part_size_motion_blur
+                };
 
-            cv::Mat subImg = edgesMap(rect);
+                cv::Mat subImg = edgesMap(rect);
 
-            if (isMotionBlur(subImg))
-            {
-                qCDebug(DIGIKAM_DIMG_LOG) << "Motion blurred part detected";
-                res(rect).setTo(1);
+                if (isMotionBlur(subImg))
+                {
+                    qCDebug(DIGIKAM_DIMG_LOG) << "Motion blurred part detected";
+                    res(rect).setTo(1);
+                }
             }
         }
+
+        return res;
+    }
+    catch (cv::Exception& e)
+    {
+        qCCritical(DIGIKAM_FACESENGINE_LOG) << "cv::Exception:" << e.what();
+    }
+    catch (...)
+    {
+        qCCritical(DIGIKAM_FACESENGINE_LOG) << "Default exception from OpenCV";
     }
 
-    return res;
+    return cv::Mat();
 }
 
 bool BlurDetector::isMotionBlur(const cv::Mat& frag) const
 {
-    // Convert to 8u
-
-    cv::Mat tmp;
-
-    cv::threshold(frag, tmp, d->edges_filter, 255, cv::THRESH_BINARY);
-    tmp.convertTo(tmp, CV_8U);
-
-    std::vector<cv::Vec4i> lines;
-    HoughLinesP(tmp, lines, 1, d->theta_resolution, d->threshold_hough, d->min_line_length, 10);
-
-    // Detect if region is motion blurred by number of paralle lines
-
-    if (static_cast<int>(lines.size()) > d->min_nb_lines)
+    try
     {
-        std::vector<float> list_theta;
+        // Convert to 8u
 
-        for (const auto& line : lines)
+        cv::Mat tmp;
+
+        cv::threshold(frag, tmp, d->edges_filter, 255, cv::THRESH_BINARY);
+        tmp.convertTo(tmp, CV_8U);
+
+        std::vector<cv::Vec4i> lines;
+        HoughLinesP(tmp, lines, 1, d->theta_resolution, d->threshold_hough, d->min_line_length, 10);
+
+        // Detect if region is motion blurred by number of paralle lines
+
+        if (static_cast<int>(lines.size()) > d->min_nb_lines)
         {
-            float theta = (line[2] == line[0])    ? 0.0F          : qAtan((line[3] - line[1]) / (line[2] - line[0]));
-            theta       = (theta < 0.0F)          ? theta + CV_PI : theta;
-            theta       = (theta < CV_PI / 20.0F) ? CV_PI - theta : theta;
+            std::vector<float> list_theta;
 
-            list_theta.push_back(theta);
+            for (const auto& line : lines)
+            {
+                float theta = (line[2] == line[0])    ? 0.0F          : qAtan((line[3] - line[1]) / (line[2] - line[0]));
+                theta       = (theta < 0.0F)          ? theta + CV_PI : theta;
+                theta       = (theta < CV_PI / 20.0F) ? CV_PI - theta : theta;
+
+                list_theta.push_back(theta);
+            }
+
+            // Calculate Standard Deviation
+
+            cv::Scalar mean, stddev;
+            cv::meanStdDev(list_theta, mean, stddev);
+
+            qCDebug(DIGIKAM_DIMG_LOG) << "Standard Deviation for group of lines " << stddev[0];
+
+            return (stddev[0] < d->max_stddev);
         }
-
-        // Calculate Standard Deviation
-
-        cv::Scalar mean, stddev;
-        cv::meanStdDev(list_theta, mean, stddev);
-
-        qCDebug(DIGIKAM_DIMG_LOG) << "Standard Deviation for group of lines " << stddev[0];
-
-        return (stddev[0] < d->max_stddev);
+    }
+    catch (cv::Exception& e)
+    {
+        qCCritical(DIGIKAM_FACESENGINE_LOG) << "cv::Exception:" << e.what();
+    }
+    catch (...)
+    {
+        qCCritical(DIGIKAM_FACESENGINE_LOG) << "Default exception from OpenCV";
     }
 
     return false;
@@ -250,79 +300,105 @@ bool BlurDetector::haveFocusRegion(const DImg& image) const
 
 cv::Mat BlurDetector::getWeightMap(const cv::Mat& image) const
 {
-    cv::Mat res = cv::Mat::zeros(image.size(), CV_8UC1);
-
-    if (d->have_focus_region)
+    try
     {
-        for (const auto& point : d->af_points)
+        cv::Mat res = cv::Mat::zeros(image.size(), CV_8UC1);
+
+        if (d->have_focus_region)
         {
-            QPointF pos           = point.getCenterPosition();
-            QSizeF size           = point.getSize();
-
-            int x_position_corner = std::max(static_cast<int>((pos.x() - size.width()  * 0.5 *d->ratio_expand_af_point) * image.size().width),  0);
-            int y_position_corner = std::max(static_cast<int>((pos.y() - size.height() * 0.5 *d->ratio_expand_af_point) * image.size().height), 0);
-
-            int width             = std::min(image.size().width - x_position_corner,
-                                             static_cast<int>(size.width() * image.size().width * d->ratio_expand_af_point) );
-            int height            = std::min(image.size().height - y_position_corner,
-                                             static_cast<int>(size.height() * image.size().height * d->ratio_expand_af_point) );
-
-            cv::Rect rect
+            for (const auto& point : d->af_points)
             {
-                x_position_corner,
-                y_position_corner,
-                width,
-                height
-            };
+                QPointF pos           = point.getCenterPosition();
+                QSizeF size           = point.getSize();
 
-            res(rect).setTo(1);
+                int x_position_corner = std::max(static_cast<int>((pos.x() - size.width()  * 0.5 *d->ratio_expand_af_point) * image.size().width),  0);
+                int y_position_corner = std::max(static_cast<int>((pos.y() - size.height() * 0.5 *d->ratio_expand_af_point) * image.size().height), 0);
+
+                int width             = std::min(image.size().width - x_position_corner,
+                                                 static_cast<int>(size.width() * image.size().width * d->ratio_expand_af_point) );
+                int height            = std::min(image.size().height - y_position_corner,
+                                                 static_cast<int>(size.height() * image.size().height * d->ratio_expand_af_point) );
+
+                cv::Rect rect
+                {
+                    x_position_corner,
+                    y_position_corner,
+                    width,
+                    height
+                };
+
+                res(rect).setTo(1);
+            }
         }
+        else
+        {
+            res = detectBackgroundRegion(image);
+
+            cv::threshold(res, res, 0.5, 1, cv::THRESH_BINARY_INV);
+        }
+
+        return res;
     }
-    else
+    catch (cv::Exception& e)
     {
-        res = detectBackgroundRegion(image);
-
-        cv::threshold(res, res, 0.5, 1, cv::THRESH_BINARY_INV);
+        qCCritical(DIGIKAM_FACESENGINE_LOG) << "cv::Exception:" << e.what();
+    }
+    catch (...)
+    {
+        qCCritical(DIGIKAM_FACESENGINE_LOG) << "Default exception from OpenCV";
     }
 
-    return res;
+    return cv::Mat();
 }
 
 cv::Mat BlurDetector::detectBackgroundRegion(const cv::Mat& image)    const
 {
-    qCDebug(DIGIKAM_DIMG_LOG) << "Divide image to small parts";
-
-    int nb_parts_row = static_cast<int>(image.size().height / d->part_size_mono_color);
-    int nb_parts_col = static_cast<int>(image.size().width  / d->part_size_mono_color);
-
-    cv::Mat res = cv::Mat::zeros(image.size(), CV_8U);
-
-    for (int i = 0 ; i < nb_parts_row ; ++i)
+    try
     {
-        for (int j = 0 ; j < nb_parts_col ; ++j)
+        qCDebug(DIGIKAM_DIMG_LOG) << "Divide image to small parts";
+
+        int nb_parts_row = static_cast<int>(image.size().height / d->part_size_mono_color);
+        int nb_parts_col = static_cast<int>(image.size().width  / d->part_size_mono_color);
+
+        cv::Mat res = cv::Mat::zeros(image.size(), CV_8U);
+
+        for (int i = 0 ; i < nb_parts_row ; ++i)
         {
-            cv::Rect rect
+            for (int j = 0 ; j < nb_parts_col ; ++j)
             {
-                j * d->part_size_mono_color,
-                i * d->part_size_mono_color,
-                d->part_size_mono_color,
-                d->part_size_mono_color
-            };
+                cv::Rect rect
+                {
+                    j * d->part_size_mono_color,
+                    i * d->part_size_mono_color,
+                    d->part_size_mono_color,
+                    d->part_size_mono_color
+                };
 
-            cv::Mat subImg = image(rect);
+                cv::Mat subImg = image(rect);
 
-            cv::Scalar mean, stddev;
+                cv::Scalar mean, stddev;
 
-            cv::meanStdDev(subImg, mean, stddev);
+                cv::meanStdDev(subImg, mean, stddev);
 
-            if (stddev[0] < d->mono_color_threshold)
-            {
-                res(rect).setTo(1);
+                if (stddev[0] < d->mono_color_threshold)
+                {
+                    res(rect).setTo(1);
+                }
             }
         }
+
+        return res;
+    }
+    catch (cv::Exception& e)
+    {
+        qCCritical(DIGIKAM_FACESENGINE_LOG) << "cv::Exception:" << e.what();
+    }
+    catch (...)
+    {
+        qCCritical(DIGIKAM_FACESENGINE_LOG) << "Default exception from OpenCV";
     }
 
-    return res;
+    return cv::Mat();
 }
 
 } // namespace Digikam
