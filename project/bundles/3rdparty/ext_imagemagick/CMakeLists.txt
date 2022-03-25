@@ -21,11 +21,12 @@ set(Magick_Conf --prefix=${PREFIX_ext_imagemagick}
                 --without-jxl                          # Disable JPEG-XL codec.
                 --without-threads                      # Disable internal threads.
                 --without-perl                         # Disable Perl scripts.
-                --without-x                            # Disable X11 support.
                 --without-lcms                         # Disable Colors Management.
                 --disable-docs                         # Disable documentations.
-                --disable-static                       # Compile shared libraries.
                 --disable-hdri                         # Disable HDRI support.
+                --disable-static                       # Disable static libraries.
+                --enable-shared                        # Compile shared libraries.
+                --with-x=no                            # Disable X11 support.
                 --with-magick-plus-plus                # Enable C++ API.
                 --with-flif                            # Enable JLIF codec.
                 --with-jbig                            # Enable Big JPEG codec.
@@ -37,15 +38,9 @@ set(Magick_Conf --prefix=${PREFIX_ext_imagemagick}
 
 if(MINGW)
 
-    set(FTYPE_CONF ${MXE_BUILDROOT}/usr/bin/${MXE_BUILD_TARGETS}-freetype-config)
-    message(STATUS "FreeType Config binary: ${FTYPE_CONF}")
-
     set(Magick_Conf ${Magick_Conf}
                     --host=${MXE_BUILD_TARGETS}
                     --build=x86_64-pc-linux-gnu
-                    --with-x=no
-                    --disable-largefile
-                    --with-freetype=${FTYPE_CONF}
     )
 
 endif()
