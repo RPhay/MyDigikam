@@ -101,13 +101,13 @@ fi
 # Use a more recent gcc version with MXE
 echo -e "\n"
 echo "---------- Building cross-compiler for MXE"
-make MXE_TARGETS=$MXE_BUILD_TARGETS cc MXE_PLUGIN_DIRS="plugins/gcc10" 
+make MXE_TARGETS=$MXE_BUILD_TARGETS cc MXE_PLUGIN_DIRS="plugins/gcc$MXE_GCC_VERSION"
 
 echo -e "\n"
-echo "---------- Building digiKam low level dependencies with MXE"
+echo "---------- Building digiKam low level dependencies with GCC version $MXE_GCC_VERSION"
 
 # Switch to a more recent gcc version
-echo 'override MXE_PLUGIN_DIRS += plugins/gcc9' >> settings.mk
+echo "override MXE_PLUGIN_DIRS += plugins/gcc$MXE_GCC_VERSION" >> settings.mk
 
 make MXE_TARGETS=$MXE_BUILD_TARGETS \
      openssl \

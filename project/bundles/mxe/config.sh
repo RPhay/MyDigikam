@@ -43,6 +43,7 @@ MXE_GIT_URL="https://github.com/mxe/mxe.git"
 MXE_GIT_REVISION=f08ef6811411c59b19316337e4a9dfd462be7c82
 MXE_INSTALL_PREFIX=${MXE_BUILDROOT}/usr/${MXE_BUILD_TARGETS}/
 MXE_TOOLCHAIN=${MXE_INSTALL_PREFIX}/share/cmake/mxe-conf.cmake
+MXE_GCC_VERSION=10
 
 #-------------------------------------------------------------------------------------------
 
@@ -59,10 +60,10 @@ DK_URL="http://download.kde.org/stable/digikam"
 DK_BUILDTEMP=~/dktemp
 
 # KDE Application version.
-DK_KA_VERSION="21.12.1"
+DK_KA_VERSION="21.12.3"
 
 # KDE KF5 frameworks version.
-DK_KF5_VERSION="5.90"
+DK_KF5_VERSION="5.92"
 
 # Qt version to use in bundle and provided by MXE.
 DK_QTVERSION="5.15"
@@ -73,9 +74,9 @@ DK_EXIFTOOL_VERSION="12.40"
 # digiKam tag version from git. Official tarball do not include extra shared libraries.
 # The list of tags can be listed with this url: https://invent.kde.org/graphics/digikam/-/tags
 # If you want to package current implementation from git, use "master" as tag.
-#DK_VERSION=v7.0.0
+#DK_VERSION=v7.6.0
 DK_VERSION=master
-#DK_VERSION=development/dplugins
+#DK_VERSION=qt5-maintenance
 
 # Installer sub version to differentiates newer updates of the installer itself, even if the underlying application hasn’t changed.
 #DK_SUBVER="-01"
