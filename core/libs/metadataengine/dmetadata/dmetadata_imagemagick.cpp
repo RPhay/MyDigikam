@@ -65,7 +65,8 @@ bool DMetadata::loadUsingImageMagick(const QString& filePath)
         rawFilesExt.toUpper().contains(ext) ||    // Ignore RAW files
         (ext == QLatin1String("HEIF"))      ||    // Ignore HEIF files
         (ext == QLatin1String("HEIC"))      ||    // Ignore HEIC files
-        (ext == QLatin1String("XCF"))             // Ignore XCF files
+        (ext == QLatin1String("XCF"))       ||    // Ignore XCF files
+        (ext == QLatin1String("SVG"))             // Ignore SVG files
        )
     {
         return false;
