@@ -63,6 +63,7 @@ rm -rf $BUILDING_DIR/* || true
 ${MXE_BUILD_TARGETS}-cmake $ORIG_WD/../3rdparty \
                            -DMXE_TOOLCHAIN=${MXE_TOOLCHAIN} \
                            -DMXE_BUILDROOT=${MXE_BUILDROOT} \
+                           -DMXE_BUILD_TARGETS=${MXE_BUILD_TARGETS} \
                            -DMXE_ARCHBITS=${MXE_ARCHBITS} \
                            -DMXE_INSTALL_PREFIX=${MXE_INSTALL_PREFIX} \
                            -DCMAKE_BUILD_TYPE=RelWithDebInfo \
@@ -196,6 +197,9 @@ rm -rf $BUILDING_DIR/* || true
 ${MXE_BUILD_TARGETS}-cmake $ORIG_WD/../3rdparty \
                            -DMXE_TOOLCHAIN=${MXE_TOOLCHAIN} \
                            -DMXE_BUILDROOT=${MXE_BUILDROOT} \
+                           -DMXE_BUILD_TARGETS=${MXE_BUILD_TARGETS} \
+                           -DMXE_ARCHBITS=${MXE_ARCHBITS} \
+                           -DMXE_INSTALL_PREFIX=${MXE_INSTALL_PREFIX} \
                            -DCMAKE_BUILD_TYPE=RelWithDebInfo \
                            -DCMAKE_COLOR_MAKEFILE=ON \
                            -DCMAKE_INSTALL_PREFIX=${MXE_INSTALL_PREFIX} \
@@ -213,9 +217,9 @@ ${MXE_BUILD_TARGETS}-cmake $ORIG_WD/../3rdparty \
                            -DENABLE_QTVERSION=$DK_QTVERSION \
                            -DENABLE_QTWEBENGINE=$DK_QTWEBENGINE
 
-${MXE_BUILD_TARGETS}-cmake --build . --config RelWithDebInfo --target ext_gmic_qt    -- -j$CPU_CORES
 ${MXE_BUILD_TARGETS}-cmake --build . --config RelWithDebInfo --target ext_mosaicwall -- -j$CPU_CORES
 ${MXE_BUILD_TARGETS}-cmake --build . --config RelWithDebInfo --target ext_flowview   -- -j$CPU_CORES
+${MXE_BUILD_TARGETS}-cmake --build . --config RelWithDebInfo --target ext_gmic_qt    -- -j$CPU_CORES
 
 #################################################################################################
 

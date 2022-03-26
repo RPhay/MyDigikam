@@ -89,11 +89,10 @@ AdvancedRenameLineEdit::~AdvancedRenameLineEdit()
 
 void AdvancedRenameLineEdit::setupWidgets()
 {
-    setStyleSheet(QLatin1String("background:transparent"));
-    setLineWrapMode(QPlainTextEdit::NoWrap);
-    setWordWrapMode(QTextOption::NoWrap);
     setHorizontalScrollBarPolicy(Qt::ScrollBarAlwaysOff);
     setVerticalScrollBarPolicy(Qt::ScrollBarAlwaysOff);
+    setLineWrapMode(QPlainTextEdit::NoWrap);
+    setWordWrapMode(QTextOption::NoWrap);
     setFocusPolicy(Qt::StrongFocus);
     setFrameStyle(QFrame::NoFrame);
     setPalette(qApp->palette());

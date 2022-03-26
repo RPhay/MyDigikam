@@ -39,11 +39,12 @@ public:
 
     Option(const QString& name, const QString& description);
     Option(const QString& name, const QString& description, const QString& icon);
-    ~Option()                                       override;
+    ~Option()                                                    override;
 
 protected:
 
-    QString parseOperation(ParseSettings& settings, const QRegularExpressionMatch &match) override = 0;
+    QString parseOperation(ParseSettings& settings,
+                           const QRegularExpressionMatch& match) override = 0;
 
 private:
 

@@ -155,7 +155,7 @@ void DImgFilterActionTest::initTestCase()
     // initialize Exiv2 before doing any multitasking
 
     MetaEngine::initializeExiv2();
-    QDir dir(QFINDTESTDATA("../../dplugins/dimg"));
+    QDir dir(qApp->applicationDirPath());
     qputenv("DK_PLUGIN_PATH", dir.canonicalPath().toUtf8());
     DPluginLoader::instance()->init();
 }

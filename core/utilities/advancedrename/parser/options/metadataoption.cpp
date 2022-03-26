@@ -146,10 +146,10 @@ void MetadataOption::slotTokenTriggered(const QString& token)
     delete dlg;
 }
 
-QString MetadataOption::parseOperation(ParseSettings& settings, const QRegularExpressionMatch &match)
+QString MetadataOption::parseOperation(ParseSettings& settings, const QRegularExpressionMatch& match)
 {
-    QString keyword               = match.captured(2);
-    QString result                = parseMetadata(keyword, settings);
+    QString keyword = match.captured(2);
+    QString result  = parseMetadata(keyword, settings);
     return result;
 }
 

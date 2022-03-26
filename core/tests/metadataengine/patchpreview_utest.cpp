@@ -108,7 +108,7 @@ void PatchPreviewTest::initTestCase()
 {
     AbstractUnitTest::initTestCase();
 
-    QDir dir(QFINDTESTDATA("../../dplugins/dimg"));
+    QDir dir(qApp->applicationDirPath());
     qputenv("DK_PLUGIN_PATH", dir.canonicalPath().toUtf8());
     DPluginLoader::instance()->init();
 }

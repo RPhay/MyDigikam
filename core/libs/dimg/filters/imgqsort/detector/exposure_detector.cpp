@@ -107,9 +107,22 @@ float ExposureDetector::percent_underexposed(const cv::Mat& image) const
 
 int ExposureDetector::count_by_condition(const cv::Mat& image, int minVal, int maxVal) const
 {
-    cv::Mat mat = (image >= minVal) & (image < maxVal);
+    try
+    {
+        cv::Mat mat = (image >= minVal) & (image < maxVal);
 
-    return cv::countNonZero(mat);
+        return cv::countNonZero(mat);
+    }
+    catch (cv::Exception& e)
+    {
+        qCCritical(DIGIKAM_FACESENGINE_LOG) << "cv::Exception:" << e.what();
+    }
+    catch (...)
+    {
+        qCCritical(DIGIKAM_FACESENGINE_LOG) << "Default exception from OpenCV";
+    }
+
+    return 0;
 }
 
 } // namespace Digikam
