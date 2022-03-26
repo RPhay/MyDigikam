@@ -31,6 +31,10 @@ set(Magick_Conf --prefix=${PREFIX_ext_imagemagick}
                 --with-flif                            # Enable JLIF codec.
                 --with-jbig                            # Enable Big JPEG codec.
                 --with-webp                            # Enable WebP codec.
+                --with-djvu                            # Enable DJVu codec.
+                --with-rsvg                            # Enable SVG codec.
+                --with-xml                             # Enable XML support.
+                --with-fpx                             # Enable FlashPix Codec.
                 --with-openexr                         # Enable OpenEXR codec.
                 --with-quantum-depth=16                # Use 1§Bits quantum for color components.
                 --without-utilities                    # Disable CLI tools.
