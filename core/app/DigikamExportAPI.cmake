@@ -18,6 +18,7 @@ install(FILES
               # As part of DigikamCore
 
               ${CMAKE_BINARY_DIR}/core/app/utils/digikam_config.h
+              ${CMAKE_BINARY_DIR}/core/app/utils/digikam_version.h
               ${CMAKE_BINARY_DIR}/core/app/utils/digikam_core_export.h
               ${CMAKE_BINARY_DIR}/core/app/utils/digikam_database_export.h
               ${CMAKE_BINARY_DIR}/core/app/utils/digikam_gui_export.h
