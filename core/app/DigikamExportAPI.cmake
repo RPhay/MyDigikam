@@ -24,6 +24,7 @@ install(FILES
 
               ${CMAKE_SOURCE_DIR}/core/app/utils/digikam_export.h
               ${CMAKE_SOURCE_DIR}/core/app/utils/digikam_globals.h
+              ${CMAKE_SOURCE_DIR}/core/app/utils/digikam_debug.h
 
               ${CMAKE_SOURCE_DIR}/core/libs/dplugins/core/dplugin.h
               ${CMAKE_SOURCE_DIR}/core/libs/dplugins/core/dpluginaction.h
