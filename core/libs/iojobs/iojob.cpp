@@ -117,7 +117,9 @@ void CopyOrMoveJob::run()
                     }
                     else if (!DTrash::deleteImage(destenation, m_data->jobTime()))
                     {
-                        emit signalError(i18n("Could not move image %1 to collection trash",
+                        emit signalError(i18n("Could not move image %1 to collection trash.\n"
+                                              "Check the file permission on the trash folder "
+                                              "\".dtrash\" in the image collection.",
                                               srcName));
 
                         continue;
@@ -281,7 +283,9 @@ void DeleteJob::run()
             {
                 if (!DTrash::deleteDirRecursivley(deleteUrl.toLocalFile(), m_data->jobTime()))
                 {
-                    emit signalError(i18n("Could not move folder %1 to collection trash",
+                    emit signalError(i18n("Could not move folder %1 to collection trash.\n"
+                                          "Check the file permission on the trash folder "
+                                          "\".dtrash\" in the image collection.",
                                           QDir::toNativeSeparators(fileInfo.path())));
 
                     continue;
@@ -291,7 +295,9 @@ void DeleteJob::run()
             {
                 if (!DTrash::deleteImage(deleteUrl.toLocalFile(), m_data->jobTime()))
                 {
-                    emit signalError(i18n("Could not move image %1 to collection trash",
+                    emit signalError(i18n("Could not move image %1 to collection trash.\n"
+                                          "Check the file permission on the trash folder "
+                                          "\".dtrash\" in the image collection.",
                                           QDir::toNativeSeparators(fileInfo.filePath())));
 
                     continue;
