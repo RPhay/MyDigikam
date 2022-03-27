@@ -49,9 +49,35 @@ if(MINGW)
 
     set(Magick_Patch ${PATCH_COMMAND} -p1 -i ${CMAKE_CURRENT_SOURCE_DIR}/magick-plusplus-mxe.patch)
 
+    set(Magick_Depends ext_jbig)
+
 endif()
 
+ExternalProject_Add(ext_jbig
+
+    DOWNLOAD_DIR ${EXTERNALS_DOWNLOAD_DIR}
+
+    GIT_REPOSITORY https://github.com/zdenop/jbigkit.git
+
+    PATCH_COMMAND ${PATCH_COMMAND} -p1 -i ${CMAKE_CURRENT_SOURCE_DIR}/jbig-libonly-mxe.patch
+
+    CONFIGURE_COMMAND cp -f ${CMAKE_CURRENT_SOURCE_DIR}/../../../../bootstrap.mxe <SOURCE_DIR>/. &&
+                      <SOURCE_DIR>/bootstrap.mxe ${MXE_BUILDROOT} RelWithDebInfo
+
+    BUILD_COMMAND cd <SOURCE_DIR>/build.mxe && $(MAKE) -j
+
+    INSTALL_COMMAND cd <SOURCE_DIR>/build.mxe && $(MAKE) install/fast
+
+    BUILD_IN_SOURCE 1
+
+    UPDATE_COMMAND ""
+    ALWAYS 0
+)
+
 ExternalProject_Add(ext_imagemagick
+
+    DEPENDS ${Magick_Depends}
+
     DOWNLOAD_DIR ${EXTERNALS_DOWNLOAD_DIR}
 
     GIT_REPOSITORY https://github.com/ImageMagick/ImageMagick.git
