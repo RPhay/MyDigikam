@@ -172,5 +172,5 @@ if(ENABLE_MEDIAPLAYER)
 endif()
 
 if(KF5KIO_FOUND)
-    add_subdirectory(vkontakte)
+#    add_subdirectory(vkontakte)
 endif()
