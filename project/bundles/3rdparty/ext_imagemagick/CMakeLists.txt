@@ -47,6 +47,8 @@ if(MINGW)
                     --build=x86_64-pc-linux-gnu
     )
 
+    set(Magick_Patch ${PATCH_COMMAND} -p1 -i ${CMAKE_CURRENT_SOURCE_DIR}/magick-plusplus-mxe.patch)
+
 endif()
 
 ExternalProject_Add(ext_imagemagick
@@ -54,6 +56,8 @@ ExternalProject_Add(ext_imagemagick
 
     GIT_REPOSITORY https://github.com/ImageMagick/ImageMagick.git
     GIT_TAG 7.1.0-28
+
+    PATCH_COMMAND ${Magick_Patch}
 
     CONFIGURE_COMMAND <SOURCE_DIR>/configure ${Magick_Conf}
 

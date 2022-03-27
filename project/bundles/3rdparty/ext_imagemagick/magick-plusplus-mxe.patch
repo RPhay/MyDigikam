@@ -1,0 +1,13 @@
+diff --git a/configure b/configure
+index c9c087694..113572411 100755
+--- a/configure
++++ b/configure
+@@ -26334,7 +26334,7 @@ $as_echo_n "checking whether C++ compiler is sufficient for Magick++... " >&6; }
+         test $ax_cv_cxx_have_std_namespace = 'yes'; then
+         have_magick_plus_plus='yes'
+     else
+-        have_magick_plus_plus='no (failed tests)'
++        have_magick_plus_plus='yes'
+     fi
+     { $as_echo "$as_me:${as_lineno-$LINENO}: result: $have_magick_plus_plus" >&5
+ $as_echo "$have_magick_plus_plus" >&6; }
