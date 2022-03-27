@@ -53,7 +53,7 @@ ExternalProject_Add(ext_imagemagick
     DOWNLOAD_DIR ${EXTERNALS_DOWNLOAD_DIR}
 
     GIT_REPOSITORY https://github.com/ImageMagick/ImageMagick.git
-    GIT_TAG 7.1.0-27
+    GIT_TAG 7.1.0-28
 
     CONFIGURE_COMMAND <SOURCE_DIR>/configure ${Magick_Conf}
 
