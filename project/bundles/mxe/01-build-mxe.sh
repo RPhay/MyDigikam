@@ -119,7 +119,6 @@ make MXE_TARGETS=$MXE_BUILD_TARGETS \
      libxslt \
      libjpeg-turbo \
      libpng \
-     libsvg \
      djvulibre \
      tiff \
      boost \
