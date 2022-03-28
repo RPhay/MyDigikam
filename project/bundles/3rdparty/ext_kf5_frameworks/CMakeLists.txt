@@ -18,15 +18,15 @@ function(InstallKF5Component
 
         # Extract MD5 sums of each KF5 components directly from server.
         execute_process(COMMAND
-                        wget -q -O - -o /dev/null http://download.kde.org/stable/frameworks/${version}/${name}-${version}.0.tar.xz.mirrorlist
+                            wget -q -O - -o /dev/null https://download.kde.org/stable/frameworks/${version}/${name}-${version}.0.tar.xz.md5
                         COMMAND
-                        grep "MD5 Hash"
+                            grep "tar.xz"
                         COMMAND
-                        grep -o -P "(?<=<tt>).*(?=</tt>)"
+                            cut -d " " -f1
                         RESULT_VARIABLE
-                        wgetresult
+                            wgetresult
                         OUTPUT_VARIABLE
-                        md5sm
+                            md5sm
                         OUTPUT_STRIP_TRAILING_WHITESPACE
         )
 
@@ -73,7 +73,7 @@ function(InstallKF5Component
         ExternalProject_Add_step(ext_${name} before_download
 
             # Note : under MXE, curl is not compiled with https support. We cannot use the tarball as under Linux/MacOS.
-            COMMAND wget -N http://download.kde.org/stable/frameworks/${version}/${name}-${version}.0.tar.xz -O ${EXTERNALS_DOWNLOAD_DIR}/${name}-${version}.0.tar.xz
+            COMMAND wget -N https://download.kde.org/stable/frameworks/${version}/${name}-${version}.0.tar.xz -O ${EXTERNALS_DOWNLOAD_DIR}/${name}-${version}.0.tar.xz
             DEPENDERS download
         )
 
@@ -81,19 +81,11 @@ function(InstallKF5Component
 
         # Extract MD5 sums of each KF5 components directly from server.
         execute_process(COMMAND
-                            wget -q -O - -o /dev/null http://download.kde.org/stable/frameworks/${version}/${name}-${version}.0.tar.xz.mirrorlist
+                            wget -q -O - -o /dev/null https://download.kde.org/stable/frameworks/${version}/${name}-${version}.0.tar.xz.md5
                         COMMAND
-                            grep "MD5 Hash"
+                            grep "tar.xz"
                         COMMAND
-                            grep -o "<tt>.*</tt>"
-                        COMMAND
-                            cut -c 5-
-                        COMMAND
-                            rev
-                        COMMAND
-                            cut -c 6-
-                        COMMAND
-                            rev
+                            cut -d " " -f1
                         RESULT_VARIABLE
                             wgetresult
                         OUTPUT_VARIABLE
@@ -114,7 +106,7 @@ function(InstallKF5Component
 
         ExternalProject_Add(ext_${name}
                             DOWNLOAD_DIR ${EXTERNALS_DOWNLOAD_DIR}
-                            URL http://download.kde.org/stable/frameworks/${version}/${name}-${version}.0.tar.xz
+                            URL https://download.kde.org/stable/frameworks/${version}/${name}-${version}.0.tar.xz
                             URL_MD5 ${md5sm}
 
                             PATCH_COMMAND ${patch}
@@ -139,15 +131,15 @@ function(InstallKF5Component
 
         # Extract MD5 sums of each KF5 components directly from server.
         execute_process(COMMAND
-                        wget -q -O - -o /dev/null http://download.kde.org/stable/frameworks/${version}/${name}-${version}.0.tar.xz.mirrorlist
+                            wget -q -O - -o /dev/null https://download.kde.org/stable/frameworks/${version}/${name}-${version}.0.tar.xz.md5
                         COMMAND
-                        grep "MD5 Hash"
+                            grep "tar.xz"
                         COMMAND
-                        grep -o -P "(?<=<tt>).*(?=</tt>)"
+                            cut -d " " -f1
                         RESULT_VARIABLE
-                        wgetresult
+                            wgetresult
                         OUTPUT_VARIABLE
-                        md5sm
+                            md5sm
                         OUTPUT_STRIP_TRAILING_WHITESPACE
         )
 
@@ -164,7 +156,7 @@ function(InstallKF5Component
 
         ExternalProject_Add(ext_${name}
                             DOWNLOAD_DIR ${EXTERNALS_DOWNLOAD_DIR}
-                            URL http://download.kde.org/stable/frameworks/${version}/${name}-${version}.0.tar.xz
+                            URL https://download.kde.org/stable/frameworks/${version}/${name}-${version}.0.tar.xz
                             URL_MD5 ${md5sm}
 
                             PATCH_COMMAND ${patch}

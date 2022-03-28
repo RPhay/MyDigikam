@@ -14,7 +14,7 @@ if(MINGW)
 
     ExternalProject_Add(ext_libksane
                         DOWNLOAD_DIR ${EXTERNALS_DOWNLOAD_DIR}
-                        URL http://download.kde.org/stable/release-service/${KA_VERSION}/src/libksane-${KA_VERSION}.tar.xz
+                        URL https://download.kde.org/stable/release-service/${KA_VERSION}/src/libksane-${KA_VERSION}.tar.xz
                         URL_MD5 ${KF5_APPLICATION_MD5SUM}
 
                         INSTALL_DIR ${EXTPREFIX_libksane}
@@ -45,7 +45,7 @@ elseif(APPLE)
 
     ExternalProject_Add(ext_libksane
                         DOWNLOAD_DIR ${EXTERNALS_DOWNLOAD_DIR}
-                        URL http://download.kde.org/stable/release-service/${KA_VERSION}/src/libksane-${KA_VERSION}.tar.xz
+                        URL https://download.kde.org/stable/release-service/${KA_VERSION}/src/libksane-${KA_VERSION}.tar.xz
                         URL_MD5 ${KF5_APPLICATION_MD5SUM}
 
                         PATCH_COMMAND ${PATCH_COMMAND} -p1 -i ${CMAKE_CURRENT_SOURCE_DIR}/libksane-common-rules.patch
@@ -67,7 +67,7 @@ else() # Linux
 
     ExternalProject_Add(ext_libksane
                         DOWNLOAD_DIR ${EXTERNALS_DOWNLOAD_DIR}
-                        URL http://download.kde.org/stable/release-service/${KA_VERSION}/src/libksane-${KA_VERSION}.tar.xz
+                        URL https://download.kde.org/stable/release-service/${KA_VERSION}/src/libksane-${KA_VERSION}.tar.xz
                         URL_MD5 ${KF5_APPLICATION_MD5SUM}
                         INSTALL_DIR ${EXTPREFIX_libksane}
                         CMAKE_ARGS -DCMAKE_INSTALL_PREFIX=${EXTPREFIX_libksane}

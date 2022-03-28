@@ -53,15 +53,15 @@ function(GetKF5ApplicationMd5Sums
 
         # Extract MD5 sums of KF5 application directly from server.
         execute_process(COMMAND
-                        wget -q -O - -o /dev/null http://download.kde.org/stable/release-service/${version}/src/${name}-${version}.tar.xz.mirrorlist
+                            wget -q -O - -o /dev/null https://download.kde.org/stable/frameworks/${version}/${name}-${version}.0.tar.xz.md5
                         COMMAND
-                        grep "MD5 Hash"
+                            grep "tar.xz"
                         COMMAND
-                        grep -o -P "(?<=<tt>).*(?=</tt>)"
+                            cut -d " " -f1
                         RESULT_VARIABLE
-                        wgetresult
+                            wgetresult
                         OUTPUT_VARIABLE
-                        md5sm
+                            md5sm
                         OUTPUT_STRIP_TRAILING_WHITESPACE
         )
 
@@ -69,19 +69,11 @@ function(GetKF5ApplicationMd5Sums
 
         # Extract MD5 sums of KF5 application directly from server.
         execute_process(COMMAND
-                            wget -q -O - -o /dev/null http://download.kde.org/stable/release-service/${version}/src/${name}-${version}.tar.xz.mirrorlist
+                            wget -q -O - -o /dev/null https://download.kde.org/stable/frameworks/${version}/${name}-${version}.0.tar.xz.md5
                         COMMAND
-                            grep "MD5 Hash"
+                            grep "tar.xz"
                         COMMAND
-                            grep -o "<tt>.*</tt>"
-                        COMMAND
-                            cut -c 5-
-                        COMMAND
-                            rev
-                        COMMAND
-                            cut -c 6-
-                        COMMAND
-                            rev
+                            cut -d " " -f1
                         RESULT_VARIABLE
                             wgetresult
                         OUTPUT_VARIABLE
@@ -93,15 +85,15 @@ function(GetKF5ApplicationMd5Sums
 
         # Extract MD5 sums of KF5 application directly from server.
         execute_process(COMMAND
-                        wget -q -O - -o /dev/null http://download.kde.org/stable/release-service/${version}/src/${name}-${version}.tar.xz.mirrorlist
+                            wget -q -O - -o /dev/null https://download.kde.org/stable/frameworks/${version}/${name}-${version}.0.tar.xz.md5
                         COMMAND
-                        grep "MD5 Hash"
+                            grep "tar.xz"
                         COMMAND
-                        grep -o -P "(?<=<tt>).*(?=</tt>)"
+                            cut -d " " -f1
                         RESULT_VARIABLE
-                        wgetresult
+                            wgetresult
                         OUTPUT_VARIABLE
-                        md5sm
+                            md5sm
                         OUTPUT_STRIP_TRAILING_WHITESPACE
         )
 
@@ -125,11 +117,12 @@ add_subdirectory(ext_png)
 add_subdirectory(ext_tiff)
 add_subdirectory(ext_heif)
 add_subdirectory(ext_libgphoto2)
+add_subdirectory(ext_libde265)
+add_subdirectory(ext_libaom)
 add_subdirectory(ext_libavif)
 add_subdirectory(ext_libicu)
 add_subdirectory(ext_liblqr)
 add_subdirectory(ext_libjxl)
-add_subdirectory(ext_libde265)
 add_subdirectory(ext_sane)
 add_subdirectory(ext_exiv2)
 add_subdirectory(ext_boost)
