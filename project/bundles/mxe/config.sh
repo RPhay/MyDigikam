@@ -40,9 +40,15 @@ fi
 echo "Target Windows architecture: $MXE_ARCHBITS bits."
 
 MXE_GIT_URL="https://github.com/mxe/mxe.git"
+
 MXE_GIT_REVISION=f08ef6811411c59b19316337e4a9dfd462be7c82
+#MXE_GIT_REVISION=master
+
 MXE_INSTALL_PREFIX=${MXE_BUILDROOT}/usr/${MXE_BUILD_TARGETS}/
+
 MXE_TOOLCHAIN=${MXE_INSTALL_PREFIX}/share/cmake/mxe-conf.cmake
+
+#MXE_GCC_VERSION=default
 MXE_GCC_VERSION=9
 
 #-------------------------------------------------------------------------------------------
@@ -75,8 +81,8 @@ DK_EXIFTOOL_VERSION="12.40"
 # The list of tags can be listed with this url: https://invent.kde.org/graphics/digikam/-/tags
 # If you want to package current implementation from git, use "master" as tag.
 #DK_VERSION=v7.6.0
-DK_VERSION=master
-#DK_VERSION=qt5-maintenance
+#DK_VERSION=master
+DK_VERSION=qt5-maintenance
 
 # Installer sub version to differentiates newer updates of the installer itself, even if the underlying application hasn’t changed.
 #DK_SUBVER="-01"
