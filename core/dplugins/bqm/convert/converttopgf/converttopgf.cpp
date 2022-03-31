@@ -89,8 +89,10 @@ void ConvertToPGF::slotAssignSettings2Widget()
 
     if (PGFBox)
     {
-        PGFBox->setCompressionValue(settings()[QLatin1String("quality")].toInt());
-        PGFBox->setLossLessCompression(settings()[QLatin1String("lossless")].toBool());
+        DImgLoaderPrms set;
+        set.insert(QLatin1String("quality"),  settings()[QLatin1String("quality")].toInt());
+        set.insert(QLatin1String("lossless"), settings()[QLatin1String("lossless")].toBool());
+        PGFBox->setSettings(set);
     }
 
     m_changeSettings = true;
@@ -105,8 +107,8 @@ void ConvertToPGF::slotSettingsChanged()
         if (PGFBox)
         {
             BatchToolSettings settings;
-            settings.insert(QLatin1String("quality"),  PGFBox->getCompressionValue());
-            settings.insert(QLatin1String("lossless"), PGFBox->getLossLessCompression());
+            settings.insert(QLatin1String("quality"),  PGFBox->settings()[QLatin1String("quality")].toInt());
+            settings.insert(QLatin1String("lossless"), PGFBox->settings()[QLatin1String("lossless")].toBool());
             BatchTool::slotSettingsChanged(settings);
         }
     }

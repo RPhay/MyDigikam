@@ -461,8 +461,10 @@ void QueueSettingsView::slotResetSettings()
     
 #endif // HAVE_JASPER
 
-    d->pgfSettings->setCompressionValue(settings.ioFileSettings.PGFCompression);
-    d->pgfSettings->setLossLessCompression(settings.ioFileSettings.PGFLossLess);
+    set.clear();
+    set.insert(QLatin1String("quality"),  settings.ioFileSettings.PGFCompression);
+    set.insert(QLatin1String("lossless"), settings.ioFileSettings.PGFLossLess);
+    d->pgfSettings->setSettings(set);
 
 #ifdef HAVE_X265
 
@@ -513,8 +515,10 @@ void QueueSettingsView::slotQueueSelected(int, const QueueSettings& settings, co
     
 #endif // HAVE_JASPER
 
-    d->pgfSettings->setCompressionValue(settings.ioFileSettings.PGFCompression);
-    d->pgfSettings->setLossLessCompression(settings.ioFileSettings.PGFLossLess);
+    set.clear();
+    set.insert(QLatin1String("quality"),  settings.ioFileSettings.PGFCompression);
+    set.insert(QLatin1String("lossless"), settings.ioFileSettings.PGFLossLess);
+    d->pgfSettings->setSettings(set);
 
 #ifdef HAVE_X265
 
@@ -560,8 +564,8 @@ void QueueSettingsView::slotSettingsChanged()
     
 #endif // HAVE_JASPER
 
-    settings.ioFileSettings.PGFCompression      = d->pgfSettings->getCompressionValue();
-    settings.ioFileSettings.PGFLossLess         = d->pgfSettings->getLossLessCompression();
+    settings.ioFileSettings.PGFCompression      = d->pgfSettings->settings()[QLatin1String("quality")].toInt();
+    settings.ioFileSettings.PGFLossLess         = d->pgfSettings->settings()[QLatin1String("lossless")].toBool();
 
 #ifdef HAVE_X265
 

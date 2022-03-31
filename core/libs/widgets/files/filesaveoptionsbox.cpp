@@ -284,8 +284,8 @@ void FileSaveOptionsBox::applySettings()
 
 #endif // HAVE_JASPER
 
-    group.writeEntry(QLatin1String("PGFCompression"),      d->PGFOptions->getCompressionValue());
-    group.writeEntry(QLatin1String("PGFLossLess"),         d->PGFOptions->getLossLessCompression());
+    group.writeEntry(QLatin1String("PGFCompression"),      d->PGFOptions->settings()[QLatin1String("quality")].toInt());
+    group.writeEntry(QLatin1String("PGFLossLess"),         d->PGFOptions->settings()[QLatin1String("lossless")].toBool());
 
 #ifdef HAVE_X265
 
@@ -317,8 +317,10 @@ void FileSaveOptionsBox::readSettings()
 
 #endif // HAVE_JASPER
 
-    d->PGFOptions->setCompressionValue( group.readEntry(QLatin1String("PGFCompression"),           3));
-    d->PGFOptions->setLossLessCompression( group.readEntry(QLatin1String("PGFLossLess"),           true));
+    set.clear();
+    set.insert(QLatin1String("quality"),  group.readEntry(QLatin1String("PGFCompression"),         3));
+    set.insert(QLatin1String("lossless"), group.readEntry(QLatin1String("PGFLossLess"),            true));
+    d->PGFOptions->setSettings(set);  
 
 #ifdef HAVE_X265
 

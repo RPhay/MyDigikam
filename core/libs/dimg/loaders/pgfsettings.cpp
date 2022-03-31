@@ -67,11 +67,9 @@ public:
 };
 
 PGFSettings::PGFSettings(QWidget* const parent)
-    : QWidget(parent),
-      d      (new Private)
+    : DImgLoaderSettings(parent),
+      d                 (new Private)
 {
-    setAttribute(Qt::WA_DeleteOnClose);
-
     const int spacing = qMin(QApplication::style()->pixelMetric(QStyle::PM_LayoutHorizontalSpacing),
                              QApplication::style()->pixelMetric(QStyle::PM_LayoutVerticalSpacing));
 
@@ -120,25 +118,30 @@ PGFSettings::~PGFSettings()
     delete d;
 }
 
-void PGFSettings::setCompressionValue(int val)
+void PGFSettings::setSettings(const DImgLoaderPrms& set)
 {
-    d->PGFcompression->setValue(val);
-}
+    for (DImgLoaderPrms::const_iterator it = set.constBegin() ; it != set.constEnd() ; ++it)
+    {
+        if      (it.key() == QLatin1String("quality"))
+        {
+            d->PGFcompression->setValue(it.value().toInt());
+        }
+        else if (it.key() == QLatin1String("lossless"))
+        {
+            d->PGFLossLess->setChecked(it.value().toBool());
+        }
+    }
 
-int PGFSettings::getCompressionValue() const
-{
-    return d->PGFcompression->value();
-}
-
-void PGFSettings::setLossLessCompression(bool b)
-{
-    d->PGFLossLess->setChecked(b);
     slotTogglePGFLossLess(d->PGFLossLess->isChecked());
 }
 
-bool PGFSettings::getLossLessCompression() const
+DImgLoaderPrms PGFSettings::settings() const
 {
-    return d->PGFLossLess->isChecked();
+    DImgLoaderPrms set;
+    set.insert(QLatin1String("quality"),  d->PGFcompression->value());
+    set.insert(QLatin1String("lossless"), d->PGFLossLess->isChecked());
+
+    return set;
 }
 
 void PGFSettings::slotTogglePGFLossLess(bool b)

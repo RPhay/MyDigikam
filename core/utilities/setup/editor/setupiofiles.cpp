@@ -224,8 +224,8 @@ void SetupIOFiles::applySettings()
 
 #endif // HAVE_JASPER
 
-    group.writeEntry(d->configPGFCompressionEntry,      d->PGFOptions->getCompressionValue());
-    group.writeEntry(d->configPGFLossLessEntry,         d->PGFOptions->getLossLessCompression());
+    group.writeEntry(d->configPGFCompressionEntry,      d->PGFOptions->settings()[QLatin1String("quality")].toInt());
+    group.writeEntry(d->configPGFLossLessEntry,         d->PGFOptions->settings()[QLatin1String("lossless")].toBool());
 
 #ifdef HAVE_X265
 
@@ -258,8 +258,10 @@ void SetupIOFiles::readSettings()
 
 #endif // HAVE_JASPER
 
-    d->PGFOptions->setCompressionValue(group.readEntry(d->configPGFCompressionEntry,           3));
-    d->PGFOptions->setLossLessCompression(group.readEntry(d->configPGFLossLessEntry,           true));
+    set.clear();
+    set.insert(QLatin1String("quality"),  group.readEntry(d->configPGFCompressionEntry,        3));
+    set.insert(QLatin1String("lossless"), group.readEntry(d->configPGFLossLessEntry,           true));
+    d->PGFOptions->setSettings(set);
 
 #ifdef HAVE_X265
 
