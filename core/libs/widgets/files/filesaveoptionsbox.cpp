@@ -272,9 +272,15 @@ void FileSaveOptionsBox::applySettings()
 {
     KSharedConfig::Ptr config = KSharedConfig::openConfig();
     KConfigGroup group        = config->group("ImageViewer Settings");
-    group.writeEntry(QLatin1String("JPEGCompression"),     d->JPEGOptions->getCompressionValue());
-    group.writeEntry(QLatin1String("JPEGSubSampling"),     d->JPEGOptions->getSubSamplingValue());
+    group.writeEntry(QLatin1String("JPEGCompression"),     d->JPEGOptions->settings()[QLatin1String("quality")].toInt());
+    group.writeEntry(QLatin1String("JPEGSubSampling"),     d->JPEGOptions->settings()[QLatin1String("subsampling")].toInt());
+
+    // ---
+
     group.writeEntry(QLatin1String("PNGCompression"),      d->PNGOptions->settings()[QLatin1String("quality")].toInt());
+
+    // ---
+
     group.writeEntry(QLatin1String("TIFFCompression"),     d->TIFFOptions->settings()[QLatin1String("compress")].toBool());
 
 #ifdef HAVE_JASPER
@@ -303,8 +309,11 @@ void FileSaveOptionsBox::readSettings()
     
     KSharedConfig::Ptr config = KSharedConfig::openConfig();
     KConfigGroup group        = config->group("ImageViewer Settings");
-    d->JPEGOptions->setCompressionValue( group.readEntry(QLatin1String("JPEGCompression"),         75));
-    d->JPEGOptions->setSubSamplingValue( group.readEntry(QLatin1String("JPEGSubSampling"),         1));  ///< Medium subsampling
+
+    set.clear();
+    set.insert(QLatin1String("quality"),     group.readEntry(QLatin1String("JPEGCompression"),     75));
+    set.insert(QLatin1String("subsampling"), group.readEntry(QLatin1String("JPEGSubSampling"),     1));  ///< Medium subsampling
+    d->JPEGOptions->setSettings(set);
 
     // ---
     

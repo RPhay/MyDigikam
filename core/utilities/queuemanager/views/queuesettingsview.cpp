@@ -447,8 +447,11 @@ void QueueSettingsView::slotResetSettings()
     d->rawSettings->resetToDefault();
 
     QueueSettings settings;
-    d->jpgSettings->setCompressionValue(settings.ioFileSettings.JPEGCompression);
-    d->jpgSettings->setSubSamplingValue(settings.ioFileSettings.JPEGSubSampling);
+
+    set.clear();
+    set.insert(QLatin1String("quality"),     settings.ioFileSettings.JPEGCompression);
+    set.insert(QLatin1String("subsampling"), settings.ioFileSettings.JPEGSubSampling);
+    d->jpgSettings->setSettings(set);
 
     // ---
     
@@ -511,8 +514,12 @@ void QueueSettingsView::slotQueueSelected(int, const QueueSettings& settings, co
 
     d->rawSettings->setSettings(settings.rawDecodingSettings);
 
-    d->jpgSettings->setCompressionValue(settings.ioFileSettings.JPEGCompression);
-    d->jpgSettings->setSubSamplingValue(settings.ioFileSettings.JPEGSubSampling);
+    // ---
+
+    set.clear();
+    set.insert(QLatin1String("quality"),     settings.ioFileSettings.JPEGCompression);
+    set.insert(QLatin1String("subsampling"), settings.ioFileSettings.JPEGSubSampling);
+    d->jpgSettings->setSettings(set);
 
     // ---
 
@@ -572,9 +579,17 @@ void QueueSettingsView::slotSettingsChanged()
 
     settings.rawDecodingSettings = d->rawSettings->settings();
 
-    settings.ioFileSettings.JPEGCompression     = d->jpgSettings->getCompressionValue();
-    settings.ioFileSettings.JPEGSubSampling     = d->jpgSettings->getSubSamplingValue();
+    // ---
+
+    settings.ioFileSettings.JPEGCompression     = d->jpgSettings->settings()[QLatin1String("quality")].toInt();
+    settings.ioFileSettings.JPEGSubSampling     = d->jpgSettings->settings()[QLatin1String("subsampling")].toInt();
+
+    // ---
+
     settings.ioFileSettings.PNGCompression      = d->pngSettings->settings()[QLatin1String("quality")].toInt();
+
+    // ---
+
     settings.ioFileSettings.TIFFCompression     = d->tifSettings->settings()[QLatin1String("compress")].toBool();
 
 #ifdef HAVE_JASPER

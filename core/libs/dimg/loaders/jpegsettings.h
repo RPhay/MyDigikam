@@ -24,18 +24,15 @@
 #ifndef DIGIKAM_JPEG_SETTINGS_H
 #define DIGIKAM_JPEG_SETTINGS_H
 
-// Qt includes
-
-#include <QWidget>
-
 // Local includes
 
+#include "dimgloadersettings.h"
 #include "digikam_export.h"
 
 namespace Digikam
 {
 
-class DIGIKAM_EXPORT JPEGSettings : public QWidget
+class DIGIKAM_EXPORT JPEGSettings : public DImgLoaderSettings
 {
     Q_OBJECT
 
@@ -44,17 +41,15 @@ public:
     explicit JPEGSettings(QWidget* const parent = nullptr);
     ~JPEGSettings() override;
 
-    void setCompressionValue(int val);
-    int  getCompressionValue() const;
-
-    void setSubSamplingValue(int val);
-    int  getSubSamplingValue() const;
+    /**
+     * This widget manage 2 parameters for the image encoding:
+     * "quality"  as integer [1 - 100].
+     * "subsampling" as integer [0 - 3].
+     */
+    void setSettings(const DImgLoaderPrms& set);
+    DImgLoaderPrms settings() const;
 
     static int convertCompressionForLibJpeg(int value);
-
-Q_SIGNALS:
-
-    void signalSettingsChanged();
 
 private:
 

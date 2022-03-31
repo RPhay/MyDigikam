@@ -72,11 +72,9 @@ public:
 };
 
 JPEGSettings::JPEGSettings(QWidget* const parent)
-    : QWidget(parent),
-      d      (new Private)
+    : DImgLoaderSettings(parent),
+      d                 (new Private)
 {
-    setAttribute(Qt::WA_DeleteOnClose);
-
     const int spacing = qMin(QApplication::style()->pixelMetric(QStyle::PM_LayoutHorizontalSpacing),
                              QApplication::style()->pixelMetric(QStyle::PM_LayoutVerticalSpacing));
 
@@ -149,24 +147,28 @@ JPEGSettings::~JPEGSettings()
     delete d;
 }
 
-void JPEGSettings::setCompressionValue(int val)
+void JPEGSettings::setSettings(const DImgLoaderPrms& set)
 {
-    d->JPEGcompression->setValue(val);
+    for (DImgLoaderPrms::const_iterator it = set.constBegin() ; it != set.constEnd() ; ++it)
+    {
+        if      (it.key() == QLatin1String("quality"))
+        {
+            d->JPEGcompression->setValue(it.value().toInt());
+        }
+        else if (it.key() == QLatin1String("subsampling"))
+        {
+            d->subSamplingCB->setCurrentIndex(it.value().toInt());
+        }
+    }
 }
 
-int JPEGSettings::getCompressionValue() const
+DImgLoaderPrms JPEGSettings::settings() const
 {
-    return d->JPEGcompression->value();
-}
+    DImgLoaderPrms set;
+    set.insert(QLatin1String("quality"),     d->JPEGcompression->value());
+    set.insert(QLatin1String("subsampling"), d->subSamplingCB->currentIndex());
 
-void JPEGSettings::setSubSamplingValue(int val)
-{
-    d->subSamplingCB->setCurrentIndex(val);
-}
-
-int JPEGSettings::getSubSamplingValue() const
-{
-    return d->subSamplingCB->currentIndex();
+    return set;
 }
 
 int JPEGSettings::convertCompressionForLibJpeg(int value)
