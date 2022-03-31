@@ -87,7 +87,9 @@ void ConvertToTIFF::slotAssignSettings2Widget()
 
     if (TIFBox)
     {
-        TIFBox->setCompression(settings()[QLatin1String("compress")].toBool());
+        DImgLoaderPrms set;
+        set.insert(QLatin1String("compress"),  settings()[QLatin1String("compress")].toBool());
+        TIFBox->setSettings(set);
     }
 
     m_changeSettings = true;
@@ -102,7 +104,7 @@ void ConvertToTIFF::slotSettingsChanged()
         if (TIFBox)
         {
             BatchToolSettings settings;
-            settings.insert(QLatin1String("compress"), TIFBox->getCompression());
+            settings.insert(QLatin1String("compress"), TIFBox->settings()[QLatin1String("compress")].toBool());
             BatchTool::slotSettingsChanged(settings);
         }
     }

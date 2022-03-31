@@ -104,7 +104,7 @@ void PNGSettings::setSettings(const DImgLoaderPrms& set)
 {
     for (DImgLoaderPrms::const_iterator it = set.constBegin() ; it != set.constEnd() ; ++it)
     {
-        if      (it.key() == QLatin1String("quality"))
+        if (it.key() == QLatin1String("quality"))
         {
             d->PNGcompression->setValue(it.value().toInt());
         }

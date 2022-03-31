@@ -57,11 +57,9 @@ public:
 };
 
 TIFFSettings::TIFFSettings(QWidget* const parent)
-    : QWidget(parent),
-      d      (new Private)
+    : DImgLoaderSettings(parent),
+      d                 (new Private)
 {
-    setAttribute(Qt::WA_DeleteOnClose);
-
     const int spacing = qMin(QApplication::style()->pixelMetric(QStyle::PM_LayoutHorizontalSpacing),
                              QApplication::style()->pixelMetric(QStyle::PM_LayoutVerticalSpacing));
 
@@ -89,14 +87,23 @@ TIFFSettings::~TIFFSettings()
     delete d;
 }
 
-void TIFFSettings::setCompression(bool b)
+void TIFFSettings::setSettings(const DImgLoaderPrms& set)
 {
-    d->TIFFcompression->setChecked(b);
+    for (DImgLoaderPrms::const_iterator it = set.constBegin() ; it != set.constEnd() ; ++it)
+    {
+        if (it.key() == QLatin1String("compress"))
+        {
+            d->TIFFcompression->setChecked(it.value().toBool());
+        }
+    }
 }
 
-bool TIFFSettings::getCompression() const
+DImgLoaderPrms TIFFSettings::settings() const
 {
-    return d->TIFFcompression->isChecked();
+    DImgLoaderPrms set;
+    set.insert(QLatin1String("compress"),  d->TIFFcompression->isChecked());
+
+    return set;
 }
 
 } // namespace Digikam

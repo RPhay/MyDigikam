@@ -24,18 +24,15 @@
 #ifndef DIGIKAM_TIFF_SETTINGS_H
 #define DIGIKAM_TIFF_SETTINGS_H
 
-// Qt includes
-
-#include <QWidget>
-
 // Local includes
 
+#include "dimgloadersettings.h"
 #include "digikam_export.h"
 
 namespace Digikam
 {
 
-class DIGIKAM_EXPORT TIFFSettings : public QWidget
+class DIGIKAM_EXPORT TIFFSettings : public DImgLoaderSettings
 {
     Q_OBJECT
 
@@ -44,12 +41,12 @@ public:
     explicit TIFFSettings(QWidget* const parent = nullptr);
     ~TIFFSettings() override;
 
-    void setCompression(bool b);
-    bool getCompression() const;
-
-Q_SIGNALS:
-
-    void signalSettingsChanged();
+    /**
+     * This widget manage 2 parameters for the image encoding:
+     * "compress" as boolean.
+     */
+    void setSettings(const DImgLoaderPrms& set);
+    DImgLoaderPrms settings() const;
 
 private:
 

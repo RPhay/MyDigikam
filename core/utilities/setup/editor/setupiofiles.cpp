@@ -215,7 +215,7 @@ void SetupIOFiles::applySettings()
     group.writeEntry(d->configJPEGCompressionEntry,     d->JPEGOptions->getCompressionValue());
     group.writeEntry(d->configJPEGSubSamplingEntry,     d->JPEGOptions->getSubSamplingValue());
     group.writeEntry(d->configPNGCompressionEntry,      d->PNGOptions->settings()[QLatin1String("quality")].toInt());
-    group.writeEntry(d->configTIFFCompressionEntry,     d->TIFFOptions->getCompression());
+    group.writeEntry(d->configTIFFCompressionEntry,     d->TIFFOptions->settings()[QLatin1String("compress")].toBool());
 
 #ifdef HAVE_JASPER
 
@@ -255,7 +255,9 @@ void SetupIOFiles::readSettings()
 
     // ---
     
-    d->TIFFOptions->setCompression(group.readEntry(d->configTIFFCompressionEntry,              false));
+    set.clear();
+    set.insert(QLatin1String("compress"),  group.readEntry(d->configTIFFCompressionEntry,      false));
+    d->TIFFOptions->setSettings(set);
 
 #ifdef HAVE_JASPER
 
