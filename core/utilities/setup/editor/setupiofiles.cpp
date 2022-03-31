@@ -229,8 +229,8 @@ void SetupIOFiles::applySettings()
 
 #ifdef HAVE_X265
 
-    group.writeEntry(d->configHEIFCompressionEntry,     d->HEIFOptions->getCompressionValue());
-    group.writeEntry(d->configHEIFLossLessEntry,        d->HEIFOptions->getLossLessCompression());
+    group.writeEntry(d->configHEIFCompressionEntry,     d->HEIFOptions->settings()[QLatin1String("quality")].toInt());
+    group.writeEntry(d->configHEIFLossLessEntry,        d->HEIFOptions->settings()[QLatin1String("lossless")].toBool());
 
 #endif // HAVE_X265
 
@@ -240,6 +240,8 @@ void SetupIOFiles::applySettings()
 
 void SetupIOFiles::readSettings()
 {
+    DImgLoaderPrms set;
+
     KSharedConfig::Ptr config = KSharedConfig::openConfig();
     KConfigGroup group        = config->group(d->configGroupName);
     d->JPEGOptions->setCompressionValue(group.readEntry(d->configJPEGCompressionEntry,         75));
@@ -259,8 +261,10 @@ void SetupIOFiles::readSettings()
 
 #ifdef HAVE_X265
 
-    d->HEIFOptions->setCompressionValue(group.readEntry(d->configHEIFCompressionEntry,         75));
-    d->HEIFOptions->setLossLessCompression(group.readEntry(d->configHEIFLossLessEntry,         true));
+    set.clear();
+    set.insert(QLatin1String("quality"), group.readEntry(d->configHEIFCompressionEntry,        75));
+    set.insert(QLatin1String("lossless"),    group.readEntry(d->configHEIFLossLessEntry,       true));
+    d->HEIFOptions->setSettings(set);
 
 #endif // HAVE_X265
 

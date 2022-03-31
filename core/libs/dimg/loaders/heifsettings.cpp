@@ -67,11 +67,9 @@ public:
 };
 
 HEIFSettings::HEIFSettings(QWidget* const parent)
-    : QWidget(parent),
-      d      (new Private)
+    : DImgLoaderSettings(parent),
+      d                 (new Private)
 {
-    setAttribute(Qt::WA_DeleteOnClose);
-
     const int spacing = qMin(QApplication::style()->pixelMetric(QStyle::PM_LayoutHorizontalSpacing),
                              QApplication::style()->pixelMetric(QStyle::PM_LayoutVerticalSpacing));
 
@@ -79,8 +77,8 @@ HEIFSettings::HEIFSettings(QWidget* const parent)
     d->HEIFLossLess = new QCheckBox(i18n("Lossless HEIF files"), this);
 
     d->HEIFLossLess->setWhatsThis(i18n("<p>Toggle lossless compression for HEIF images.</p>"
-                                      "<p>If this option is enabled, a lossless method will be used "
-                                      "to compress HEIF pictures.</p>"));
+                                       "<p>If this option is enabled, a lossless method will be used "
+                                       "to compress HEIF pictures.</p>"));
 
     d->HEIFcompression = new DIntNumInput(this);
     d->HEIFcompression->setDefaultValue(75);
@@ -120,25 +118,35 @@ HEIFSettings::~HEIFSettings()
     delete d;
 }
 
-void HEIFSettings::setCompressionValue(int val)
+void HEIFSettings::setSettings(const DImgLoaderPrms& set)
 {
-    d->HEIFcompression->setValue(val);
-}
+    for (DImgLoaderPrms::const_iterator it = set.constBegin() ; it != set.constEnd() ; ++it)
+    {
+        if      (it.key() == QLatin1String("quality"))
+        {
+            d->HEIFcompression->setValue(it.value().toInt());
+        }
+        else if (it.key() == QLatin1String("lossless"))
+        {
+            d->HEIFLossLess->setChecked(it.value().toBool());
+        }
+    }
 
-int HEIFSettings::getCompressionValue() const
-{
-    return d->HEIFcompression->value();
-}
-
-void HEIFSettings::setLossLessCompression(bool b)
-{
-    d->HEIFLossLess->setChecked(b);
     slotToggleHEIFLossLess(d->HEIFLossLess->isChecked());
 }
 
-bool HEIFSettings::getLossLessCompression() const
+DImgLoaderPrms HEIFSettings::settings() const
 {
-    return d->HEIFLossLess->isChecked();
+    DImgLoaderPrms set;
+    set.insert(QLatin1String("quality"),  d->HEIFcompression->value());
+    set.insert(QLatin1String("lossless"), d->HEIFLossLess->isChecked());
+
+    return set;
+}
+
+QStringList HEIFSettings::parameters() const
+{
+    return (QStringList() << QLatin1String("quality") << QLatin1String("lossless"));
 }
 
 void HEIFSettings::slotToggleHEIFLossLess(bool b)

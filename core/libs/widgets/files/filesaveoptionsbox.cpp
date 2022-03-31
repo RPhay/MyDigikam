@@ -202,7 +202,7 @@ void FileSaveOptionsBox::setImageFileFormat(const QString& ext)
 DImg::FORMAT FileSaveOptionsBox::discoverFormat(const QString& filename, DImg::FORMAT fallback)
 {
     qCDebug(DIGIKAM_WIDGETS_LOG) << "Trying to discover format based on filename '" << filename
-                         << "', fallback = " << fallback;
+                                 << "', fallback = " << fallback;
 
     QStringList splitParts = filename.split(QLatin1Char('.'));
     QString ext;
@@ -210,7 +210,7 @@ DImg::FORMAT FileSaveOptionsBox::discoverFormat(const QString& filename, DImg::F
     if (splitParts.size() < 2)
     {
         qCDebug(DIGIKAM_WIDGETS_LOG) << "filename '" << filename
-                             << "' does not contain an extension separated by a point.";
+                                     << "' does not contain an extension separated by a point.";
         ext = filename;
     }
     else
@@ -289,8 +289,9 @@ void FileSaveOptionsBox::applySettings()
 
 #ifdef HAVE_X265
 
-    group.writeEntry(QLatin1String("HEIFCompression"),     d->HEIFOptions->getCompressionValue());
-    group.writeEntry(QLatin1String("HEIFLossLess"),        d->HEIFOptions->getLossLessCompression());
+    group.writeEntry(QLatin1String("HEIFCompression"),     d->HEIFOptions->settings()[QLatin1String("quality")].toInt());
+    group.writeEntry(QLatin1String("HEIFLossLess"),        d->HEIFOptions->settings()[QLatin1String("lossless")].toBool());
+
 
 #endif // HAVE_X265
 
@@ -299,6 +300,8 @@ void FileSaveOptionsBox::applySettings()
 
 void FileSaveOptionsBox::readSettings()
 {
+    DImgLoaderPrms set;
+    
     KSharedConfig::Ptr config = KSharedConfig::openConfig();
     KConfigGroup group        = config->group("ImageViewer Settings");
     d->JPEGOptions->setCompressionValue( group.readEntry(QLatin1String("JPEGCompression"),         75));
@@ -318,8 +321,10 @@ void FileSaveOptionsBox::readSettings()
 
 #ifdef HAVE_X265
 
-    d->HEIFOptions->setCompressionValue( group.readEntry(QLatin1String("HEIFCompression"),         75));
-    d->HEIFOptions->setLossLessCompression( group.readEntry(QLatin1String("HEIFLossLess"),         true));
+    set.clear();
+    set.insert(QLatin1String("quality"),  group.readEntry(QLatin1String("HEIFCompression"),       75));
+    set.insert(QLatin1String("lossless"), group.readEntry(QLatin1String("HEIFLossLess"),          true));
+    d->HEIFOptions->setSettings(set);
 
 #endif // HAVE_X265
 

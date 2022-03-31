@@ -431,6 +431,8 @@ void QueueSettingsView::slotUseOrgAlbum()
 
 void QueueSettingsView::slotResetSettings()
 {
+    DImgLoaderPrms set;
+
     blockSignals(true);
     d->useOrgAlbum->setChecked(true);
     d->asNewVersion->setChecked(true);
@@ -462,8 +464,10 @@ void QueueSettingsView::slotResetSettings()
 
 #ifdef HAVE_X265
 
-    d->heifSettings->setCompressionValue(settings.ioFileSettings.HEIFCompression);
-    d->heifSettings->setLossLessCompression(settings.ioFileSettings.HEIFLossLess);
+    set.clear();
+    set.insert(QLatin1String("quality"),  settings.ioFileSettings.HEIFCompression);
+    set.insert(QLatin1String("lossless"), settings.ioFileSettings.HEIFLossLess);
+    d->heifSettings->setSettings(set);
 
 #endif // HAVE_X265
 
@@ -473,6 +477,8 @@ void QueueSettingsView::slotResetSettings()
 
 void QueueSettingsView::slotQueueSelected(int, const QueueSettings& settings, const AssignedBatchTools&)
 {
+    DImgLoaderPrms set;
+
     d->useOrgAlbum->setChecked(settings.useOrgAlbum);
     d->asNewVersion->setChecked(settings.saveAsNewVersion);
     d->useMutiCoreCPU->setChecked(settings.useMultiCoreCPU);
@@ -508,8 +514,10 @@ void QueueSettingsView::slotQueueSelected(int, const QueueSettings& settings, co
 
 #ifdef HAVE_X265
 
-    d->heifSettings->setCompressionValue(settings.ioFileSettings.HEIFCompression);
-    d->heifSettings->setLossLessCompression(settings.ioFileSettings.HEIFLossLess);
+    set.clear();
+    set.insert(QLatin1String("quality"),  settings.ioFileSettings.HEIFCompression);
+    set.insert(QLatin1String("lossless"), settings.ioFileSettings.HEIFLossLess);
+    d->heifSettings->setSettings(set);
 
 #endif // HAVE_X265
 
@@ -553,8 +561,8 @@ void QueueSettingsView::slotSettingsChanged()
 
 #ifdef HAVE_X265
 
-    settings.ioFileSettings.HEIFCompression     = d->heifSettings->getCompressionValue();
-    settings.ioFileSettings.HEIFLossLess        = d->heifSettings->getLossLessCompression();
+    settings.ioFileSettings.HEIFCompression     = d->heifSettings->settings()[QLatin1String("quality")].toInt();
+    settings.ioFileSettings.HEIFLossLess        = d->heifSettings->settings()[QLatin1String("lossless")].toBool();
 
 #endif // HAVE_X265
 

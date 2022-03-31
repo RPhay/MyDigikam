@@ -89,8 +89,10 @@ void ConvertToHEIF::slotAssignSettings2Widget()
 
     if (HEIFBox)
     {
-        HEIFBox->setCompressionValue(settings()[QLatin1String("quality")].toInt());
-        HEIFBox->setLossLessCompression(settings()[QLatin1String("lossless")].toBool());
+        DImgLoaderPrms set;
+        set.insert(QLatin1String("compression"), settings()[QLatin1String("quality")].toInt());
+        set.insert(QLatin1String("lossless"),    settings()[QLatin1String("lossless")].toBool());
+        HEIFBox->setSettings(set);
     }
 
     m_changeSettings = true;
@@ -105,8 +107,8 @@ void ConvertToHEIF::slotSettingsChanged()
         if (HEIFBox)
         {
             BatchToolSettings settings;
-            settings.insert(QLatin1String("quality"),  HEIFBox->getCompressionValue());
-            settings.insert(QLatin1String("lossless"), HEIFBox->getLossLessCompression());
+            settings.insert(QLatin1String("quality"),  HEIFBox->settings()[QLatin1String("quality")].toInt());
+            settings.insert(QLatin1String("lossless"), HEIFBox->settings()[QLatin1String("lossless")].toBool());
             BatchTool::slotSettingsChanged(settings);
         }
     }

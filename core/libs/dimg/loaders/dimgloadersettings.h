@@ -29,6 +29,7 @@
 #include <QWidget>
 #include <QMap>
 #include <QVariant>
+#include <QStringList>
 
 // Local includes
 
@@ -37,6 +38,9 @@
 namespace Digikam
 {
 
+/**
+ * Map container of widget parameter name/value.
+ */
 typedef QMap<QString, QVariant> DImgLoaderPrms;
 
 class DIGIKAM_EXPORT DImgLoaderSettings : public QWidget
@@ -48,8 +52,20 @@ public:
     explicit DImgLoaderSettings(QWidget* const parent = nullptr);
     ~DImgLoaderSettings() override;
 
+    /**
+     * Set the parameters values in the widget from DImgLoaderPrms map container.
+     */
     virtual void setSettings(const DImgLoaderPrms& set) = 0;
+
+    /**
+     * Return the DImgLoaderPrms map container of parameters/values from the Widget.
+     */
     virtual DImgLoaderPrms settings() const             = 0;
+
+    /**
+     * Return the list of supported paramter names.
+     */
+    virtual QStringList parameters()  const             = 0;
 
 Q_SIGNALS:
 
