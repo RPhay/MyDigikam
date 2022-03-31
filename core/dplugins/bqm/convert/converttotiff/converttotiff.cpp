@@ -75,7 +75,7 @@ BatchToolSettings ConvertToTIFF::defaultSettings()
     KConfigGroup group        = config->group(QLatin1String("ImageViewer Settings"));
     bool compression          = group.readEntry(QLatin1String("TIFFCompression"), false);
     BatchToolSettings settings;
-    settings.insert(QLatin1String("Quality"), compression);
+    settings.insert(QLatin1String("compress"), compression);
     return settings;
 }
 
