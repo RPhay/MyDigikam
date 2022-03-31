@@ -449,7 +449,15 @@ void QueueSettingsView::slotResetSettings()
     QueueSettings settings;
     d->jpgSettings->setCompressionValue(settings.ioFileSettings.JPEGCompression);
     d->jpgSettings->setSubSamplingValue(settings.ioFileSettings.JPEGSubSampling);
-    d->pngSettings->setCompressionValue(settings.ioFileSettings.PNGCompression);
+
+    // ---
+    
+    set.clear();
+    set.insert(QLatin1String("quality"),  settings.ioFileSettings.PNGCompression);
+    d->pngSettings->setSettings(set);
+
+    // ---
+
     d->tifSettings->setCompression(settings.ioFileSettings.TIFFCompression);
 
 #ifdef HAVE_JASPER
@@ -503,7 +511,15 @@ void QueueSettingsView::slotQueueSelected(int, const QueueSettings& settings, co
 
     d->jpgSettings->setCompressionValue(settings.ioFileSettings.JPEGCompression);
     d->jpgSettings->setSubSamplingValue(settings.ioFileSettings.JPEGSubSampling);
-    d->pngSettings->setCompressionValue(settings.ioFileSettings.PNGCompression);
+
+    // ---
+
+    set.clear();
+    set.insert(QLatin1String("quality"),  settings.ioFileSettings.PNGCompression);
+    d->pngSettings->setSettings(set);
+
+    // ---
+
     d->tifSettings->setCompression(settings.ioFileSettings.TIFFCompression);
 
 #ifdef HAVE_JASPER
@@ -554,7 +570,7 @@ void QueueSettingsView::slotSettingsChanged()
 
     settings.ioFileSettings.JPEGCompression     = d->jpgSettings->getCompressionValue();
     settings.ioFileSettings.JPEGSubSampling     = d->jpgSettings->getSubSamplingValue();
-    settings.ioFileSettings.PNGCompression      = d->pngSettings->getCompressionValue();
+    settings.ioFileSettings.PNGCompression      = d->pngSettings->settings()[QLatin1String("quality")].toInt();
     settings.ioFileSettings.TIFFCompression     = d->tifSettings->getCompression();
 
 #ifdef HAVE_JASPER

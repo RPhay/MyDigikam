@@ -214,7 +214,7 @@ void SetupIOFiles::applySettings()
     KConfigGroup group        = config->group(d->configGroupName);
     group.writeEntry(d->configJPEGCompressionEntry,     d->JPEGOptions->getCompressionValue());
     group.writeEntry(d->configJPEGSubSamplingEntry,     d->JPEGOptions->getSubSamplingValue());
-    group.writeEntry(d->configPNGCompressionEntry,      d->PNGOptions->getCompressionValue());
+    group.writeEntry(d->configPNGCompressionEntry,      d->PNGOptions->settings()[QLatin1String("quality")].toInt());
     group.writeEntry(d->configTIFFCompressionEntry,     d->TIFFOptions->getCompression());
 
 #ifdef HAVE_JASPER
@@ -246,7 +246,15 @@ void SetupIOFiles::readSettings()
     KConfigGroup group        = config->group(d->configGroupName);
     d->JPEGOptions->setCompressionValue(group.readEntry(d->configJPEGCompressionEntry,         75));
     d->JPEGOptions->setSubSamplingValue(group.readEntry(d->configJPEGSubSamplingEntry,         1));  // Medium sub-sampling
-    d->PNGOptions->setCompressionValue(group.readEntry(d->configPNGCompressionEntry,           9));
+
+    // ---
+
+    set.clear();
+    set.insert(QLatin1String("quality"),  group.readEntry(d->configPNGCompressionEntry,        9));
+    d->PNGOptions->setSettings(set);
+
+    // ---
+    
     d->TIFFOptions->setCompression(group.readEntry(d->configTIFFCompressionEntry,              false));
 
 #ifdef HAVE_JASPER

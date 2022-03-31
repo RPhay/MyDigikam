@@ -24,18 +24,15 @@
 #ifndef DIGIKAM_PNG_SETTINGS_H
 #define DIGIKAM_PNG_SETTINGS_H
 
-// Qt includes
-
-#include <QWidget>
-
 // Local includes
 
+#include "dimgloadersettings.h"
 #include "digikam_export.h"
 
 namespace Digikam
 {
 
-class DIGIKAM_EXPORT PNGSettings : public QWidget
+class DIGIKAM_EXPORT PNGSettings : public DImgLoaderSettings
 {
     Q_OBJECT
 
@@ -44,14 +41,14 @@ public:
     explicit PNGSettings(QWidget* const parent = nullptr);
     ~PNGSettings() override;
 
-    void setCompressionValue(int val);
-    int  getCompressionValue() const;
+    /**
+     * This widget manage 2 parameters for the image encoding:
+     * "quality"  as integer [1 - 9].
+     */
+    void setSettings(const DImgLoaderPrms& set);
+    DImgLoaderPrms settings() const;
 
     static int convertCompressionForLibPng(int value);
-
-Q_SIGNALS:
-
-    void signalSettingsChanged();
 
 private:
 

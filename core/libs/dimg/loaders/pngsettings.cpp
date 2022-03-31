@@ -63,11 +63,9 @@ public:
 };
 
 PNGSettings::PNGSettings(QWidget* parent)
-    : QWidget(parent),
-      d      (new Private)
+    : DImgLoaderSettings(parent),
+      d                 (new Private)
 {
-    setAttribute(Qt::WA_DeleteOnClose);
-
     const int spacing = qMin(QApplication::style()->pixelMetric(QStyle::PM_LayoutHorizontalSpacing),
                              QApplication::style()->pixelMetric(QStyle::PM_LayoutVerticalSpacing));
 
@@ -102,14 +100,23 @@ PNGSettings::~PNGSettings()
     delete d;
 }
 
-void PNGSettings::setCompressionValue(int val)
+void PNGSettings::setSettings(const DImgLoaderPrms& set)
 {
-    d->PNGcompression->setValue(val);
+    for (DImgLoaderPrms::const_iterator it = set.constBegin() ; it != set.constEnd() ; ++it)
+    {
+        if      (it.key() == QLatin1String("quality"))
+        {
+            d->PNGcompression->setValue(it.value().toInt());
+        }
+    }
 }
 
-int PNGSettings::getCompressionValue() const
+DImgLoaderPrms PNGSettings::settings() const
 {
-    return d->PNGcompression->value();
+    DImgLoaderPrms set;
+    set.insert(QLatin1String("quality"),  d->PNGcompression->value());
+
+    return set;
 }
 
 int PNGSettings::convertCompressionForLibPng(int value)

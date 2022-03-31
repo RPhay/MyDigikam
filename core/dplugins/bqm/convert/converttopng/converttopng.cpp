@@ -101,7 +101,9 @@ void ConvertToPNG::slotAssignSettings2Widget()
 
     if (PNGBox)
     {
-        PNGBox->setCompressionValue(settings()[QLatin1String("Quality")].toInt());
+        DImgLoaderPrms set;
+        set.insert(QLatin1String("quality"),  settings()[QLatin1String("quality")].toInt());
+        PNGBox->setSettings(set);
     }
 
     m_changeSettings = true;
@@ -116,7 +118,7 @@ void ConvertToPNG::slotSettingsChanged()
         if (PNGBox)
         {
             BatchToolSettings settings;
-            settings.insert(QLatin1String("Quality"), PNGBox->getCompressionValue());
+            settings.insert(QLatin1String("quality"),  PNGBox->settings()[QLatin1String("quality")].toInt());
             BatchTool::slotSettingsChanged(settings);
         }
     }
@@ -134,7 +136,7 @@ bool ConvertToPNG::toolOperations()
         return false;
     }
 
-    int PNGCompression = PNGSettings::convertCompressionForLibPng(settings()[QLatin1String("Quality")].toInt());
+    int PNGCompression = PNGSettings::convertCompressionForLibPng(settings()[QLatin1String("quality")].toInt());
     image().setAttribute(QLatin1String("quality"), PNGCompression);
 
     return (savefromDImg());

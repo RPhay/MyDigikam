@@ -43,7 +43,7 @@ public:
 
     /**
      * This widget manage 2 parameters for the image encoding:
-     * "quality"  as integer [1 - 100].
+     * "quality"  as integer [1 - 9].
      * "lossless" as boolean.
      */
     void setSettings(const DImgLoaderPrms& set);
