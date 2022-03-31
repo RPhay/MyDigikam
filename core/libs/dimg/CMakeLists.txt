@@ -223,6 +223,7 @@ endif()
 
 set(libdimgloaders_SRCS
     ${CMAKE_CURRENT_SOURCE_DIR}/loaders/dimgloader.cpp
+    ${CMAKE_CURRENT_SOURCE_DIR}/loaders/dimgloadersettings.cpp
     ${CMAKE_CURRENT_SOURCE_DIR}/loaders/jpegsettings.cpp
     ${CMAKE_CURRENT_SOURCE_DIR}/loaders/pngsettings.cpp
     ${CMAKE_CURRENT_SOURCE_DIR}/loaders/tiffsettings.cpp
