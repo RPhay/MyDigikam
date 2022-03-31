@@ -279,8 +279,8 @@ void FileSaveOptionsBox::applySettings()
 
 #ifdef HAVE_JASPER
 
-    group.writeEntry(QLatin1String("JPEG2000Compression"), d->JPEG2000Options->getCompressionValue());
-    group.writeEntry(QLatin1String("JPEG2000LossLess"),    d->JPEG2000Options->getLossLessCompression());
+    group.writeEntry(QLatin1String("JPEG2000Compression"), d->JPEG2000Options->settings()[QLatin1String("quality")].toInt());
+    group.writeEntry(QLatin1String("JPEG2000LossLess"),    d->JPEG2000Options->settings()[QLatin1String("lossless")].toBool());
 
 #endif // HAVE_JASPER
 
@@ -291,7 +291,6 @@ void FileSaveOptionsBox::applySettings()
 
     group.writeEntry(QLatin1String("HEIFCompression"),     d->HEIFOptions->settings()[QLatin1String("quality")].toInt());
     group.writeEntry(QLatin1String("HEIFLossLess"),        d->HEIFOptions->settings()[QLatin1String("lossless")].toBool());
-
 
 #endif // HAVE_X265
 
@@ -311,8 +310,10 @@ void FileSaveOptionsBox::readSettings()
 
 #ifdef HAVE_JASPER
 
-    d->JPEG2000Options->setCompressionValue( group.readEntry(QLatin1String("JPEG2000Compression"), 75));
-    d->JPEG2000Options->setLossLessCompression( group.readEntry(QLatin1String("JPEG2000LossLess"), true));
+    set.clear();
+    set.insert(QLatin1String("quality"),  group.readEntry(QLatin1String("JPEG2000Compression"),    75));
+    set.insert(QLatin1String("lossless"), group.readEntry(QLatin1String("JPEG2000LossLess"),       true));
+    d->JPEG2000Options->setSettings(set);
 
 #endif // HAVE_JASPER
 
@@ -322,8 +323,8 @@ void FileSaveOptionsBox::readSettings()
 #ifdef HAVE_X265
 
     set.clear();
-    set.insert(QLatin1String("quality"),  group.readEntry(QLatin1String("HEIFCompression"),       75));
-    set.insert(QLatin1String("lossless"), group.readEntry(QLatin1String("HEIFLossLess"),          true));
+    set.insert(QLatin1String("quality"),  group.readEntry(QLatin1String("HEIFCompression"),        75));
+    set.insert(QLatin1String("lossless"), group.readEntry(QLatin1String("HEIFLossLess"),           true));
     d->HEIFOptions->setSettings(set);
 
 #endif // HAVE_X265

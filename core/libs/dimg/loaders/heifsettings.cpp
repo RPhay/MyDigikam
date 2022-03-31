@@ -144,11 +144,6 @@ DImgLoaderPrms HEIFSettings::settings() const
     return set;
 }
 
-QStringList HEIFSettings::parameters() const
-{
-    return (QStringList() << QLatin1String("quality") << QLatin1String("lossless"));
-}
-
 void HEIFSettings::slotToggleHEIFLossLess(bool b)
 {
     d->HEIFcompression->setEnabled(!b);

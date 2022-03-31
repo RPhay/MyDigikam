@@ -48,7 +48,6 @@ public:
      */
     void setSettings(const DImgLoaderPrms& set);
     DImgLoaderPrms settings() const;
-    QStringList parameters()  const;
 
 private Q_SLOTS:
 

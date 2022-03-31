@@ -65,7 +65,7 @@ public:
     /**
      * Return the list of supported paramter names.
      */
-    virtual QStringList parameters()  const             = 0;
+     QStringList parameters()         const;
 
 Q_SIGNALS:
 

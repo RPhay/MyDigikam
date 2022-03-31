@@ -219,8 +219,8 @@ void SetupIOFiles::applySettings()
 
 #ifdef HAVE_JASPER
 
-    group.writeEntry(d->configJPEG2000CompressionEntry, d->JPEG2000Options->getCompressionValue());
-    group.writeEntry(d->configJPEG2000LossLessEntry,    d->JPEG2000Options->getLossLessCompression());
+    group.writeEntry(d->configJPEG2000CompressionEntry, d->JPEG2000Options->settings()[QLatin1String("quality")].toInt());
+    group.writeEntry(d->configJPEG2000LossLessEntry,    d->JPEG2000Options->settings()[QLatin1String("lossless")].toBool());
 
 #endif // HAVE_JASPER
 
@@ -251,8 +251,10 @@ void SetupIOFiles::readSettings()
 
 #ifdef HAVE_JASPER
 
-    d->JPEG2000Options->setCompressionValue(group.readEntry(d->configJPEG2000CompressionEntry, 75));
-    d->JPEG2000Options->setLossLessCompression(group.readEntry(d->configJPEG2000LossLessEntry, true));
+    set.clear();
+    set.insert(QLatin1String("quality"),  group.readEntry(d->configJPEG2000CompressionEntry,   75));
+    set.insert(QLatin1String("lossless"), group.readEntry(d->configJPEG2000LossLessEntry,      true));
+    d->JPEG2000Options->setSettings(set);
 
 #endif // HAVE_JASPER
 
@@ -262,8 +264,8 @@ void SetupIOFiles::readSettings()
 #ifdef HAVE_X265
 
     set.clear();
-    set.insert(QLatin1String("quality"), group.readEntry(d->configHEIFCompressionEntry,        75));
-    set.insert(QLatin1String("lossless"),    group.readEntry(d->configHEIFLossLessEntry,       true));
+    set.insert(QLatin1String("quality"),  group.readEntry(d->configHEIFCompressionEntry,       75));
+    set.insert(QLatin1String("lossless"), group.readEntry(d->configHEIFLossLessEntry,          true));
     d->HEIFOptions->setSettings(set);
 
 #endif // HAVE_X265

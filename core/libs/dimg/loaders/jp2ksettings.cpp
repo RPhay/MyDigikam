@@ -67,11 +67,9 @@ public:
 };
 
 JP2KSettings::JP2KSettings(QWidget* const parent)
-    : QWidget(parent),
-      d      (new Private)
+    : DImgLoaderSettings(parent),
+      d                 (new Private)
 {
-    setAttribute(Qt::WA_DeleteOnClose);
-
     const int spacing = qMin(QApplication::style()->pixelMetric(QStyle::PM_LayoutHorizontalSpacing),
                              QApplication::style()->pixelMetric(QStyle::PM_LayoutVerticalSpacing));
 
@@ -120,25 +118,30 @@ JP2KSettings::~JP2KSettings()
     delete d;
 }
 
-void JP2KSettings::setCompressionValue(int val)
+void JP2KSettings::setSettings(const DImgLoaderPrms& set)
 {
-    d->JPEG2000compression->setValue(val);
-}
+    for (DImgLoaderPrms::const_iterator it = set.constBegin() ; it != set.constEnd() ; ++it)
+    {
+        if      (it.key() == QLatin1String("quality"))
+        {
+            d->JPEG2000compression->setValue(it.value().toInt());
+        }
+        else if (it.key() == QLatin1String("lossless"))
+        {
+            d->JPEG2000LossLess->setChecked(it.value().toBool());
+        }
+    }
 
-int JP2KSettings::getCompressionValue() const
-{
-    return d->JPEG2000compression->value();
-}
-
-void JP2KSettings::setLossLessCompression(bool b)
-{
-    d->JPEG2000LossLess->setChecked(b);
     slotToggleJPEG2000LossLess(d->JPEG2000LossLess->isChecked());
 }
 
-bool JP2KSettings::getLossLessCompression() const
+DImgLoaderPrms JP2KSettings::settings() const
 {
-    return d->JPEG2000LossLess->isChecked();
+    DImgLoaderPrms set;
+    set.insert(QLatin1String("quality"),  d->JPEG2000compression->value());
+    set.insert(QLatin1String("lossless"), d->JPEG2000LossLess->isChecked());
+
+    return set;
 }
 
 void JP2KSettings::slotToggleJPEG2000LossLess(bool b)

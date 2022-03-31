@@ -24,18 +24,15 @@
 #ifndef DIGIKAM_JP2K_SETTINGS_H
 #define DIGIKAM_JP2K_SETTINGS_H
 
-// Qt includes
-
-#include <QWidget>
-
 // Local includes
 
+#include "dimgloadersettings.h"
 #include "digikam_export.h"
 
 namespace Digikam
 {
 
-class DIGIKAM_EXPORT JP2KSettings : public QWidget
+class DIGIKAM_EXPORT JP2KSettings : public DImgLoaderSettings
 {
     Q_OBJECT
 
@@ -44,15 +41,13 @@ public:
     explicit JP2KSettings(QWidget* const parent = nullptr);
     ~JP2KSettings() override;
 
-    void setCompressionValue(int val);
-    int  getCompressionValue()    const;
-
-    void setLossLessCompression(bool b);
-    bool getLossLessCompression() const;
-
-Q_SIGNALS:
-
-    void signalSettingsChanged();
+    /**
+     * This widget manage 2 parameters for the image encoding:
+     * "quality"  as integer [1 - 100].
+     * "lossless" as boolean.
+     */
+    void setSettings(const DImgLoaderPrms& set);
+    DImgLoaderPrms settings() const;
 
 private Q_SLOTS:
 

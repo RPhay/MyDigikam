@@ -89,8 +89,10 @@ void ConvertToJP2::slotAssignSettings2Widget()
 
     if (JP2Box)
     {
-        JP2Box->setCompressionValue(settings()[QLatin1String("quality")].toInt());
-        JP2Box->setLossLessCompression(settings()[QLatin1String("lossless")].toBool());
+        DImgLoaderPrms set;
+        set.insert(QLatin1String("quality"),  settings()[QLatin1String("quality")].toInt());
+        set.insert(QLatin1String("lossless"), settings()[QLatin1String("lossless")].toBool());
+        JP2Box->setSettings(set);
     }
 
     m_changeSettings = true;
@@ -105,8 +107,8 @@ void ConvertToJP2::slotSettingsChanged()
 
         if (JP2Box)
         {
-            settings.insert(QLatin1String("quality"),  JP2Box->getCompressionValue());
-            settings.insert(QLatin1String("lossless"), JP2Box->getLossLessCompression());
+            settings.insert(QLatin1String("quality"),  JP2Box->settings()[QLatin1String("quality")].toInt());
+            settings.insert(QLatin1String("lossless"), JP2Box->settings()[QLatin1String("lossless")].toBool());
             BatchTool::slotSettingsChanged(settings);
         }
     }

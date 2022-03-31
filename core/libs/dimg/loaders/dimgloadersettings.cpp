@@ -36,4 +36,9 @@ DImgLoaderSettings::~DImgLoaderSettings()
 {
 }
 
+QStringList DImgLoaderSettings::parameters() const
+{
+    return (settings().keys());
+}
+
 } // namespace Digikam

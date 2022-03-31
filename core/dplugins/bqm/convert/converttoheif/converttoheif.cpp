@@ -90,8 +90,8 @@ void ConvertToHEIF::slotAssignSettings2Widget()
     if (HEIFBox)
     {
         DImgLoaderPrms set;
-        set.insert(QLatin1String("compression"), settings()[QLatin1String("quality")].toInt());
-        set.insert(QLatin1String("lossless"),    settings()[QLatin1String("lossless")].toBool());
+        set.insert(QLatin1String("quality"),  settings()[QLatin1String("quality")].toInt());
+        set.insert(QLatin1String("lossless"), settings()[QLatin1String("lossless")].toBool());
         HEIFBox->setSettings(set);
     }
 

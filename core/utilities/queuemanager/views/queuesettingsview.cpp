@@ -454,9 +454,11 @@ void QueueSettingsView::slotResetSettings()
 
 #ifdef HAVE_JASPER
 
-    d->j2kSettings->setCompressionValue(settings.ioFileSettings.JPEG2000Compression);
-    d->j2kSettings->setLossLessCompression(settings.ioFileSettings.JPEG2000LossLess);
-
+    set.clear();
+    set.insert(QLatin1String("quality"),  settings.ioFileSettings.JPEG2000Compression);
+    set.insert(QLatin1String("lossless"), settings.ioFileSettings.JPEG2000LossLess);
+    d->j2kSettings->setSettings(set);
+    
 #endif // HAVE_JASPER
 
     d->pgfSettings->setCompressionValue(settings.ioFileSettings.PGFCompression);
@@ -504,9 +506,11 @@ void QueueSettingsView::slotQueueSelected(int, const QueueSettings& settings, co
 
 #ifdef HAVE_JASPER
 
-    d->j2kSettings->setCompressionValue(settings.ioFileSettings.JPEG2000Compression);
-    d->j2kSettings->setLossLessCompression(settings.ioFileSettings.JPEG2000LossLess);
-
+    set.clear();
+    set.insert(QLatin1String("quality"),  settings.ioFileSettings.JPEG2000Compression);
+    set.insert(QLatin1String("lossless"), settings.ioFileSettings.JPEG2000LossLess);
+    d->j2kSettings->setSettings(set);
+    
 #endif // HAVE_JASPER
 
     d->pgfSettings->setCompressionValue(settings.ioFileSettings.PGFCompression);
@@ -551,9 +555,9 @@ void QueueSettingsView::slotSettingsChanged()
 
 #ifdef HAVE_JASPER
 
-    settings.ioFileSettings.JPEG2000Compression = d->j2kSettings->getCompressionValue();
-    settings.ioFileSettings.JPEG2000LossLess    = d->j2kSettings->getLossLessCompression();
-
+    settings.ioFileSettings.JPEG2000Compression = d->j2kSettings->settings()[QLatin1String("quality")].toInt();
+    settings.ioFileSettings.JPEG2000LossLess    = d->j2kSettings->settings()[QLatin1String("lossless")].toBool();
+    
 #endif // HAVE_JASPER
 
     settings.ioFileSettings.PGFCompression      = d->pgfSettings->getCompressionValue();
