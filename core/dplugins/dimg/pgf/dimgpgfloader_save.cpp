@@ -125,6 +125,8 @@ bool DImgPGFLoader::save(const QString& filePath, DImgLoaderObserver* const obse
 
     try
     {
+        // NOTE: if quality = 0 -> lossless compression.
+
         QVariant qualityAttr = imageGetAttribute(QLatin1String("quality"));
         int quality          = qualityAttr.isValid() ? qualityAttr.toInt() : 3;
 
@@ -142,6 +144,7 @@ bool DImgPGFLoader::save(const QString& filePath, DImgLoaderObserver* const obse
             if (imageSixteenBit())
             {
                 // NOTE : there is no PGF color mode in 16 bits with alpha.
+
                 header.channels = 3;
                 header.bpp      = 48;
                 header.mode     = ImageModeRGB48;
@@ -184,6 +187,7 @@ bool DImgPGFLoader::save(const QString& filePath, DImgLoaderObserver* const obse
         pgf.SetHeader(header);
 
         // NOTE: see bug #273765 : Loading PGF thumbs with OpenMP support through a separated thread do not work properly with libppgf 6.11.24
+
         pgf.ConfigureEncoder(false);
 
         pgf.ImportBitmap(4 * imageWidth() * (imageSixteenBit() ? 2 : 1),
@@ -226,6 +230,7 @@ bool DImgPGFLoader::save(const QString& filePath, DImgLoaderObserver* const obse
 
 #endif
         // TODO: Store ICC profile in an appropriate place in the image
+
         storeColorProfileInMetadata();
 
         if (observer)
