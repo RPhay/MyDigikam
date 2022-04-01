@@ -4,7 +4,7 @@
  * https://www.digikam.org
  *
  * Date        : 2007-08-02
- * Description : save JPEG image options.
+ * Description : JPEG image export settings widget.
  *
  * Copyright (C) 2007-2022 by Gilles Caulier <caulier dot gilles at gmail dot com>
  *
@@ -21,8 +21,8 @@
  *
  * ============================================================ */
 
-#ifndef DIGIKAM_JPEG_SETTINGS_H
-#define DIGIKAM_JPEG_SETTINGS_H
+#ifndef DIGIKAM_DIMG_JPEG_EXPORT_SETTINGS_H
+#define DIGIKAM_DIMG_JPEG_EXPORT_SETTINGS_H
 
 // Local includes
 
@@ -31,14 +31,14 @@
 namespace Digikam
 {
 
-class JPEGSettings : public DImgLoaderSettings
+class DImgJPEGExportSettings : public DImgLoaderSettings
 {
     Q_OBJECT
 
 public:
 
-    explicit JPEGSettings(QWidget* const parent = nullptr);
-    ~JPEGSettings() override;
+    explicit DImgJPEGExportSettings(QWidget* const parent = nullptr);
+    ~DImgJPEGExportSettings() override;
 
     /**
      * This widget manage 2 parameters for the image encoding:
@@ -56,4 +56,4 @@ private:
 
 } // namespace Digikam
 
-#endif // DIGIKAM_JPEG_SETTINGS_H
+#endif // DIGIKAM_DIMG_JPEG_EXPORT_SETTINGS_H
