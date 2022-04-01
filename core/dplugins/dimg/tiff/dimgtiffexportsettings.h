@@ -4,7 +4,7 @@
  * https://www.digikam.org
  *
  * Date        : 2007-08-02
- * Description : save TIFF image options.
+ * Description : TIFF image export settings widget.
  *
  * Copyright (C) 2007-2022 by Gilles Caulier <caulier dot gilles at gmail dot com>
  *
@@ -21,8 +21,8 @@
  *
  * ============================================================ */
 
-#ifndef DIGIKAM_TIFF_SETTINGS_H
-#define DIGIKAM_TIFF_SETTINGS_H
+#ifndef DIGIKAM_DIMG_TIFF_EXPORT_SETTINGS_H
+#define DIGIKAM_DIMG_TIFF_EXPORT_SETTINGS_H
 
 // Local includes
 
@@ -31,14 +31,14 @@
 namespace Digikam
 {
 
-class TIFFSettings : public DImgLoaderSettings
+class DImgTIFFExportSettings : public DImgLoaderSettings
 {
     Q_OBJECT
 
 public:
 
-    explicit TIFFSettings(QWidget* const parent = nullptr);
-    ~TIFFSettings() override;
+    explicit DImgTIFFExportSettings(QWidget* const parent = nullptr);
+    ~DImgTIFFExportSettings() override;
 
     /**
      * This widget manage 2 parameters for the image encoding:
@@ -55,4 +55,4 @@ private:
 
 } // namespace Digikam
 
-#endif // DIGIKAM_TIFF_SETTINGS_H
+#endif // DIGIKAM_DIMG_TIFF_EXPORT_SETTINGS_H

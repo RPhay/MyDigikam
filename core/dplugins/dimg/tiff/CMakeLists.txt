@@ -25,7 +25,7 @@ set(dimgtiffplugin_SRCS
     ${CMAKE_CURRENT_SOURCE_DIR}/dimgtiffloader.cpp
     ${CMAKE_CURRENT_SOURCE_DIR}/dimgtiffloader_load.cpp
     ${CMAKE_CURRENT_SOURCE_DIR}/dimgtiffloader_save.cpp
-    ${CMAKE_CURRENT_SOURCE_DIR}/tiffsettings.cpp
+    ${CMAKE_CURRENT_SOURCE_DIR}/dimgtiffexportsettings.cpp
 )
 
 DIGIKAM_ADD_DIMG_PLUGIN(NAME    TIFF

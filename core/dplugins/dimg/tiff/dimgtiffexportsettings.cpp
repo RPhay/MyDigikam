@@ -4,7 +4,7 @@
  * https://www.digikam.org
  *
  * Date        : 2007-08-02
- * Description : save TIFF image options.
+ * Description : TIFF image export settings widget.
  *
  * Copyright (C) 2007-2022 by Gilles Caulier <caulier dot gilles at gmail dot com>
  *
@@ -21,7 +21,7 @@
  *
  * ============================================================ */
 
-#include "tiffsettings.h"
+#include "dimgtiffexportsettings.h"
 
 // Qt includes
 
@@ -40,7 +40,7 @@
 namespace Digikam
 {
 
-class Q_DECL_HIDDEN TIFFSettings::Private
+class Q_DECL_HIDDEN DImgTIFFExportSettings::Private
 {
 
 public:
@@ -56,7 +56,7 @@ public:
     QCheckBox*   TIFFcompression;
 };
 
-TIFFSettings::TIFFSettings(QWidget* const parent)
+DImgTIFFExportSettings::DImgTIFFExportSettings(QWidget* const parent)
     : DImgLoaderSettings(parent),
       d                 (new Private)
 {
@@ -82,12 +82,12 @@ TIFFSettings::TIFFSettings(QWidget* const parent)
             this, SIGNAL(signalSettingsChanged()));
 }
 
-TIFFSettings::~TIFFSettings()
+DImgTIFFExportSettings::~DImgTIFFExportSettings()
 {
     delete d;
 }
 
-void TIFFSettings::setSettings(const DImgLoaderPrms& set)
+void DImgTIFFExportSettings::setSettings(const DImgLoaderPrms& set)
 {
     for (DImgLoaderPrms::const_iterator it = set.constBegin() ; it != set.constEnd() ; ++it)
     {
@@ -98,7 +98,7 @@ void TIFFSettings::setSettings(const DImgLoaderPrms& set)
     }
 }
 
-DImgLoaderPrms TIFFSettings::settings() const
+DImgLoaderPrms DImgTIFFExportSettings::settings() const
 {
     DImgLoaderPrms set;
     set.insert(QLatin1String("compress"),  d->TIFFcompression->isChecked());
