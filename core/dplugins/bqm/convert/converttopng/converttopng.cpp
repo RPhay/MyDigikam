@@ -39,7 +39,8 @@
 // Local includes
 
 #include "dimg.h"
-#include "pngsettings.h"
+#include "dimgloader.h"
+#include "dpluginloader.h"
 
 namespace DigikamBqmConvertToPngPlugin
 {
@@ -61,13 +62,13 @@ BatchTool* ConvertToPNG::clone(QObject* const parent) const
 
 void ConvertToPNG::registerSettingsWidget()
 {
-    QWidget* const box        = new QWidget();
-    QVBoxLayout* const vlay   = new QVBoxLayout(box);
-    PNGSettings* const PNGBox = new PNGSettings();
-    QLabel* const note        = new QLabel(i18n("<b>If conversion to PNG fails, this may be due to the "
-                                                "color profile check. Simply insert the tool for "
-                                                "color profile conversion before this tool and "
-                                                "select the desired color profile.</b>"));
+    QWidget* const box               = new QWidget();
+    QVBoxLayout* const vlay          = new QVBoxLayout(box);
+    DImgLoaderSettings* const PNGBox = DPluginLoader::instance()->exportWidget(QLatin1String("PNG"));
+    QLabel* const note               = new QLabel(i18n("<b>If conversion to PNG fails, this may be due to the "
+                                                       "color profile check. Simply insert the tool for "
+                                                       "color profile conversion before this tool and "
+                                                       "select the desired color profile.</b>"));
     note->setWordWrap(true);
     note->setFrameStyle(QFrame::StyledPanel | QFrame::Raised);
 
@@ -89,7 +90,8 @@ BatchToolSettings ConvertToPNG::defaultSettings()
     KConfigGroup group        = config->group(QLatin1String("ImageViewer Settings"));
     int compression           = group.readEntry(QLatin1String("PNGCompression"), 9);
     BatchToolSettings settings;
-    settings.insert(QLatin1String("Quality"), compression);
+    settings.insert(QLatin1String("quality"), compression);
+
     return settings;
 }
 
@@ -97,7 +99,7 @@ void ConvertToPNG::slotAssignSettings2Widget()
 {
     m_changeSettings = false;
 
-    PNGSettings* const PNGBox = dynamic_cast<PNGSettings*>(m_settingsWidget);
+    DImgLoaderSettings* const PNGBox = dynamic_cast<DImgLoaderSettings*>(m_settingsWidget);
 
     if (PNGBox)
     {
@@ -113,7 +115,7 @@ void ConvertToPNG::slotSettingsChanged()
 {
     if (m_changeSettings)
     {
-        PNGSettings* const PNGBox = dynamic_cast<PNGSettings*>(m_settingsWidget);
+        DImgLoaderSettings* const PNGBox = dynamic_cast<DImgLoaderSettings*>(m_settingsWidget);
 
         if (PNGBox)
         {
@@ -136,7 +138,7 @@ bool ConvertToPNG::toolOperations()
         return false;
     }
 
-    int PNGCompression = PNGSettings::convertCompressionForLibPng(settings()[QLatin1String("quality")].toInt());
+    int PNGCompression = DImgLoader::convertCompressionForLibPng(settings()[QLatin1String("quality")].toInt());
     image().setAttribute(QLatin1String("quality"), PNGCompression);
 
     return (savefromDImg());

@@ -21,6 +21,7 @@ set(dimgjpegplugin_SRCS
     ${CMAKE_CURRENT_SOURCE_DIR}/dimgjpegloader.cpp
     ${CMAKE_CURRENT_SOURCE_DIR}/dimgjpegloader_load.cpp
     ${CMAKE_CURRENT_SOURCE_DIR}/dimgjpegloader_save.cpp
+    ${CMAKE_CURRENT_SOURCE_DIR}/jpegsettings.cpp
 )
 
 DIGIKAM_ADD_DIMG_PLUGIN(NAME    JPEG

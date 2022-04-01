@@ -3,10 +3,10 @@
  * This file is a part of digiKam project
  * https://www.digikam.org
  *
- * Date        : 2009-06-06
- * Description : save PGF image options.
+ * Date        : 2007-08-02
+ * Description : save TIFF image options.
  *
- * Copyright (C) 2009-2022 by Gilles Caulier <caulier dot gilles at gmail dot com>
+ * Copyright (C) 2007-2022 by Gilles Caulier <caulier dot gilles at gmail dot com>
  *
  * This program is free software; you can redistribute it
  * and/or modify it under the terms of the GNU General
@@ -21,37 +21,31 @@
  *
  * ============================================================ */
 
-#ifndef DIGIKAM_PGF_SETTINGS_H
-#define DIGIKAM_PGF_SETTINGS_H
+#ifndef DIGIKAM_TIFF_SETTINGS_H
+#define DIGIKAM_TIFF_SETTINGS_H
 
 // Local includes
 
 #include "dimgloadersettings.h"
-#include "digikam_export.h"
 
 namespace Digikam
 {
 
-class DIGIKAM_EXPORT PGFSettings : public DImgLoaderSettings
+class TIFFSettings : public DImgLoaderSettings
 {
     Q_OBJECT
 
 public:
 
-    explicit PGFSettings(QWidget* const parent = nullptr);
-    ~PGFSettings() override;
+    explicit TIFFSettings(QWidget* const parent = nullptr);
+    ~TIFFSettings() override;
 
     /**
      * This widget manage 2 parameters for the image encoding:
-     * "quality"  as integer [1 - 9].
-     * "lossless" as boolean.
+     * "compress" as boolean.
      */
     void setSettings(const DImgLoaderPrms& set);
     DImgLoaderPrms settings() const;
-
-private Q_SLOTS:
-
-    void slotTogglePGFLossLess(bool);
 
 private:
 
@@ -61,4 +55,4 @@ private:
 
 } // namespace Digikam
 
-#endif // DIGIKAM_PGF_SETTINGS_H
+#endif // DIGIKAM_TIFF_SETTINGS_H

@@ -41,14 +41,13 @@
 // Local includes
 
 #include "drawdecoder.h"
+#include "dimgloader.h"
 #include "digikam_debug.h"
 #include "dimgbuiltinfilter.h"
 #include "dimgloaderobserver.h"
 #include "dimgthreadedfilter.h"
 #include "filereadwritelock.h"
 #include "batchtoolutils.h"
-#include "jpegsettings.h"
-#include "pngsettings.h"
 #include "dmetadata.h"
 #include "dpluginbqm.h"
 
@@ -493,12 +492,12 @@ bool BatchTool::savefromDImg() const
 
         if      (detectedFormat == DImg::JPEG)
         {
-            d->image.setAttribute(QLatin1String("quality"),     JPEGSettings::convertCompressionForLibJpeg(ioFileSettings().JPEGCompression));
+            d->image.setAttribute(QLatin1String("quality"),     DImgLoader::convertCompressionForLibJpeg(ioFileSettings().JPEGCompression));
             d->image.setAttribute(QLatin1String("subsampling"), ioFileSettings().JPEGSubSampling);
         }
         else if (detectedFormat == DImg::PNG)
         {
-            d->image.setAttribute(QLatin1String("quality"),     PNGSettings::convertCompressionForLibPng(ioFileSettings().PNGCompression));
+            d->image.setAttribute(QLatin1String("quality"),     DImgLoader::convertCompressionForLibPng(ioFileSettings().PNGCompression));
         }
         else if (detectedFormat == DImg::TIFF)
         {

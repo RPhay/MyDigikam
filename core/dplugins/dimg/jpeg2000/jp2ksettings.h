@@ -4,7 +4,7 @@
  * https://www.digikam.org
  *
  * Date        : 2007-08-02
- * Description : save PNG image options.
+ * Description : save JPEG 2000 image options.
  *
  * Copyright (C) 2007-2022 by Gilles Caulier <caulier dot gilles at gmail dot com>
  *
@@ -21,34 +21,36 @@
  *
  * ============================================================ */
 
-#ifndef DIGIKAM_PNG_SETTINGS_H
-#define DIGIKAM_PNG_SETTINGS_H
+#ifndef DIGIKAM_JP2K_SETTINGS_H
+#define DIGIKAM_JP2K_SETTINGS_H
 
 // Local includes
 
 #include "dimgloadersettings.h"
-#include "digikam_export.h"
 
 namespace Digikam
 {
 
-class DIGIKAM_EXPORT PNGSettings : public DImgLoaderSettings
+class JP2KSettings : public DImgLoaderSettings
 {
     Q_OBJECT
 
 public:
 
-    explicit PNGSettings(QWidget* const parent = nullptr);
-    ~PNGSettings() override;
+    explicit JP2KSettings(QWidget* const parent = nullptr);
+    ~JP2KSettings() override;
 
     /**
      * This widget manage 2 parameters for the image encoding:
-     * "quality"  as integer [1 - 9].
+     * "quality"  as integer [1 - 100].
+     * "lossless" as boolean.
      */
     void setSettings(const DImgLoaderPrms& set);
     DImgLoaderPrms settings() const;
 
-    static int convertCompressionForLibPng(int value);
+private Q_SLOTS:
+
+    void slotToggleJPEG2000LossLess(bool);
 
 private:
 
@@ -58,4 +60,4 @@ private:
 
 } // namespace Digikam
 
-#endif // DIGIKAM_PNG_SETTINGS_H
+#endif // DIGIKAM_JP2K_SETTINGS_H

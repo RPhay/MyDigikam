@@ -224,32 +224,7 @@ endif()
 set(libdimgloaders_SRCS
     ${CMAKE_CURRENT_SOURCE_DIR}/loaders/dimgloader.cpp
     ${CMAKE_CURRENT_SOURCE_DIR}/loaders/dimgloadersettings.cpp
-    ${CMAKE_CURRENT_SOURCE_DIR}/loaders/jpegsettings.cpp
-    ${CMAKE_CURRENT_SOURCE_DIR}/loaders/pngsettings.cpp
-    ${CMAKE_CURRENT_SOURCE_DIR}/loaders/tiffsettings.cpp
-    ${CMAKE_CURRENT_SOURCE_DIR}/loaders/pgfsettings.cpp
 )
-
-# JPEG2000 support
-
-if(Jasper_FOUND)
-
-    set(libdimgloaders_SRCS
-        ${libdimgloaders_SRCS}
-        ${CMAKE_CURRENT_SOURCE_DIR}/loaders/jp2ksettings.cpp
-    )
-
-endif()
-
-# HEIF support
-if(X265_FOUND)
-
-    set(libdimgloaders_SRCS
-        ${libdimgloaders_SRCS}
-        ${CMAKE_CURRENT_SOURCE_DIR}/loaders/heifsettings.cpp
-    )
-
-endif()
 
 include_directories(
     $<TARGET_PROPERTY:Qt${QT_VERSION_MAJOR}::Concurrent,INTERFACE_INCLUDE_DIRECTORIES>

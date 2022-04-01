@@ -38,18 +38,7 @@
 // Local includes
 
 #include "digikam_config.h"
-#include "jpegsettings.h"
-#include "pgfsettings.h"
-#include "pngsettings.h"
-#include "tiffsettings.h"
-
-#ifdef HAVE_JASPER
-#   include "jp2ksettings.h"
-#endif // HAVE_JASPER
-
-#ifdef HAVE_X265
-#   include "heifsettings.h"
-#endif // HAVE_X265
+#include "dpluginloader.h"
 
 namespace Digikam
 {
@@ -106,21 +95,21 @@ public:
     static const QString configHEIFLossLessEntry;
     static const QString configShowImageSettingsDialog;
 
-    JPEGSettings*        JPEGOptions;
-    PNGSettings*         PNGOptions;
-    TIFFSettings*        TIFFOptions;
+    DImgLoaderSettings*  JPEGOptions;
+    DImgLoaderSettings*  PNGOptions;
+    DImgLoaderSettings*  TIFFOptions;
 
 #ifdef HAVE_JASPER
 
-    JP2KSettings*        JPEG2000Options;
+    DImgLoaderSettings*  JPEG2000Options;
 
 #endif // HAVE_JASPER
 
-    PGFSettings*         PGFOptions;
+    DImgLoaderSettings*  PGFOptions;
 
 #ifdef HAVE_X265
 
-    HEIFSettings*        HEIFOptions;
+    DImgLoaderSettings*  HEIFOptions;
 
 #endif // HAVE_X265
 
@@ -146,23 +135,31 @@ SetupIOFiles::SetupIOFiles(QWidget* const parent)
     : QScrollArea(parent),
       d          (new Private)
 {
-    QWidget* const panel    = new QWidget;
-    QVBoxLayout* const vbox = new QVBoxLayout;
-    d->JPEGOptions          = new JPEGSettings;
-    d->PNGOptions           = new PNGSettings;
-    d->TIFFOptions          = new TIFFSettings;
+    QWidget* const panel         = new QWidget;
+    QVBoxLayout* const vbox      = new QVBoxLayout;
+    DPluginLoader* const ploader = DPluginLoader::instance();
+    
+    d->JPEGOptions               = ploader->exportWidget(QLatin1String("JPEG"));
+    d->JPEGOptions->setParent(this);
+    d->PNGOptions                = ploader->exportWidget(QLatin1String("PNG"));
+    d->PNGOptions->setParent(this);
+    d->TIFFOptions               = ploader->exportWidget(QLatin1String("TIFF"));
+    d->TIFFOptions->setParent(this);
 
 #ifdef HAVE_JASPER
 
-    d->JPEG2000Options      = new JP2KSettings;
+    d->JPEG2000Options            = ploader->exportWidget(QLatin1String("JP2"));
+    d->JPEG2000Options->setParent(this);
 
 #endif // HAVE_JASPER
 
-    d->PGFOptions           = new PGFSettings;
+    d->PGFOptions                 = ploader->exportWidget(QLatin1String("PGF"));
+    d->PGFOptions->setParent(this);
 
 #ifdef HAVE_X265
 
-    d->HEIFOptions          = new HEIFSettings;
+    d->HEIFOptions                = ploader->exportWidget(QLatin1String("HEIF"));
+    d->HEIFOptions->setParent(this);
 
 #endif // HAVE_X265
 

@@ -44,18 +44,7 @@
 
 #include "digikam_debug.h"
 #include "digikam_config.h"
-#include "jpegsettings.h"
-#include "pngsettings.h"
-#include "tiffsettings.h"
-#include "pgfsettings.h"
-
-#ifdef HAVE_JASPER
-#   include "jp2ksettings.h"
-#endif // HAVE_JASPER
-
-#ifdef HAVE_X265
-#   include "heifsettings.h"
-#endif // HAVE_X265
+#include "dpluginloader.h"
 
 namespace Digikam
 {
@@ -89,29 +78,29 @@ public:
     {
     }
 
-    QWidget*      noneOptions;
+    QWidget*            noneOptions;
 
-    QGridLayout*  noneGrid;
+    QGridLayout*        noneGrid;
 
-    QLabel*       labelNone;
+    QLabel*             labelNone;
 
-    JPEGSettings* JPEGOptions;
-    PNGSettings*  PNGOptions;
-    TIFFSettings* TIFFOptions;
+    DImgLoaderSettings* JPEGOptions;
+    DImgLoaderSettings* PNGOptions;
+    DImgLoaderSettings* TIFFOptions;
 
 #ifdef HAVE_JASPER
 
-    JP2KSettings* JPEG2000Options;
+    DImgLoaderSettings* JPEG2000Options;
 
 #endif // HAVE_JASPER
 
 #ifdef HAVE_X265
 
-    HEIFSettings* HEIFOptions;
+    DImgLoaderSettings* HEIFOptions;
 
 #endif // HAVE_X265
 
-    PGFSettings*  PGFOptions;
+    DImgLoaderSettings* PGFOptions;
 };
 
 FileSaveOptionsBox::FileSaveOptionsBox(QWidget* const parent)
@@ -122,43 +111,50 @@ FileSaveOptionsBox::FileSaveOptionsBox(QWidget* const parent)
 
     //-- NONE Settings ------------------------------------------------------
 
-    d->noneOptions = new QWidget(this);
-    d->noneGrid    = new QGridLayout(d->noneOptions);
+    d->noneOptions               = new QWidget(this);
+    d->noneGrid                  = new QGridLayout(d->noneOptions);
     d->noneGrid->setSpacing(qMin(QApplication::style()->pixelMetric(QStyle::PM_LayoutHorizontalSpacing),
                              QApplication::style()->pixelMetric(QStyle::PM_LayoutVerticalSpacing)));
     d->noneOptions->setLayout(d->noneGrid);
-    d->labelNone   = new QLabel(i18n("No options available"), d->noneOptions);
+    d->labelNone                 = new QLabel(i18n("No options available"), d->noneOptions);
     d->noneGrid->addWidget(d->labelNone, 0, 0, 0, 1);
+    DPluginLoader* const ploader = DPluginLoader::instance();
 
     //-- JPEG Settings ------------------------------------------------------
 
-    d->JPEGOptions     = new JPEGSettings(this);
+    d->JPEGOptions     = ploader->exportWidget(QLatin1String("JPEG"));
+    d->JPEGOptions->setParent(this);
 
     //-- PNG Settings -------------------------------------------------------
 
-    d->PNGOptions      = new PNGSettings(this);
+    d->PNGOptions      = ploader->exportWidget(QLatin1String("PNG"));
+    d->PNGOptions->setParent(this);
 
     //-- TIFF Settings ------------------------------------------------------
 
-    d->TIFFOptions     = new TIFFSettings(this);
+    d->TIFFOptions     = ploader->exportWidget(QLatin1String("TIFF"));
+    d->TIFFOptions->setParent(this);
 
     //-- JPEG 2000 Settings -------------------------------------------------
 
 #ifdef HAVE_JASPER
 
-    d->JPEG2000Options = new JP2KSettings(this);
+    d->JPEG2000Options = ploader->exportWidget(QLatin1String("JP2"));
+    d->JPEG2000Options->setParent(this);
 
 #endif // HAVE_JASPER
 
     //-- PGF Settings -------------------------------------------------
 
-    d->PGFOptions      = new PGFSettings(this);
+    d->PGFOptions      = ploader->exportWidget(QLatin1String("PGF"));
+    d->PGFOptions->setParent(this);
 
     //-- HEIF Settings -------------------------------------------------
 
 #ifdef HAVE_X265
 
-    d->HEIFOptions     = new HEIFSettings(this);
+    d->HEIFOptions     = ploader->exportWidget(QLatin1String("HEIF"));
+    d->HEIFOptions->setParent(this);
 
 #endif // HAVE_X265
 

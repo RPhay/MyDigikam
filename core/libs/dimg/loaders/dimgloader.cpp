@@ -304,4 +304,18 @@ unsigned short* DImgLoader::new_short_failureTolerant(quint64 w, quint64 h, uint
     return new_failureTolerant<unsigned short>(w, h, typesPerPixel);
 }
 
+int DImgLoader::convertCompressionForLibPng(int value)
+{
+    // PNG compression slider settings : 1 - 9 ==> libpng settings : 100 - 1.
+
+    return ((int)(((1.0 - 100.0) / 8.0) * (float)value + 100.0 - ((1.0 - 100.0) / 8.0)));
+}
+
+int DImgLoader::convertCompressionForLibJpeg(int value)
+{
+    // JPEG quality slider settings : 1 - 100 ==> libjpeg settings : 25 - 100.
+
+    return ((int)((75.0 / 100.0) * (float)value + 26.0 - (75.0 / 100.0)));
+}
+
 } // namespace Digikam

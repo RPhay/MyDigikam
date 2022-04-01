@@ -37,7 +37,8 @@
 // Local includes
 
 #include "dimg.h"
-#include "jpegsettings.h"
+#include "dimgloader.h"
+#include "dpluginloader.h"
 
 namespace DigikamBqmConvertToJpegPlugin
 {
@@ -59,7 +60,7 @@ BatchTool* ConvertToJPEG::clone(QObject* const parent) const
 
 void ConvertToJPEG::registerSettingsWidget()
 {
-    JPEGSettings* const JPGBox = new JPEGSettings;
+    DImgLoaderSettings* const JPGBox = DPluginLoader::instance()->exportWidget(QLatin1String("JPEG"));
 
     connect(JPGBox, SIGNAL(signalSettingsChanged()),
             this, SLOT(slotSettingsChanged()));
@@ -76,8 +77,9 @@ BatchToolSettings ConvertToJPEG::defaultSettings()
     int compression           = group.readEntry(QLatin1String("JPEGCompression"), 75);
     int subSampling           = group.readEntry(QLatin1String("JPEGSubSampling"), 1);  // Medium subsampling
     BatchToolSettings settings;
-    settings.insert(QLatin1String("Quality"),     compression);
-    settings.insert(QLatin1String("SubSampling"), subSampling);
+    settings.insert(QLatin1String("quality"),     compression);
+    settings.insert(QLatin1String("subsampling"), subSampling);
+
     return settings;
 }
 
@@ -85,7 +87,7 @@ void ConvertToJPEG::slotAssignSettings2Widget()
 {
     m_changeSettings = false;
 
-    JPEGSettings* const JPGBox = dynamic_cast<JPEGSettings*>(m_settingsWidget);
+    DImgLoaderSettings* const JPGBox = dynamic_cast<DImgLoaderSettings*>(m_settingsWidget);
 
     if (JPGBox)
     {
@@ -102,7 +104,7 @@ void ConvertToJPEG::slotSettingsChanged()
 {
     if (m_changeSettings)
     {
-        JPEGSettings* const JPGBox = dynamic_cast<JPEGSettings*>(m_settingsWidget);
+        DImgLoaderSettings* const JPGBox = dynamic_cast<DImgLoaderSettings*>(m_settingsWidget);
 
         if (JPGBox)
         {
@@ -126,7 +128,7 @@ bool ConvertToJPEG::toolOperations()
         return false;
     }
 
-    int JPEGCompression = JPEGSettings::convertCompressionForLibJpeg(settings()[QLatin1String("quality")].toInt());
+    int JPEGCompression = DImgLoader::convertCompressionForLibJpeg(settings()[QLatin1String("quality")].toInt());
     image().setAttribute(QLatin1String("quality"),     JPEGCompression);
     image().setAttribute(QLatin1String("subsampling"), settings()[QLatin1String("subsampling")].toInt());
 

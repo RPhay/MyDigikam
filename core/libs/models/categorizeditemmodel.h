@@ -26,6 +26,7 @@
 
 // Qt includes
 
+#include <QFlags>
 #include <QStandardItemModel>
 
 // Local includes

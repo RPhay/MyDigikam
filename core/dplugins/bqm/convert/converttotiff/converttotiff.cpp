@@ -37,7 +37,7 @@
 // Local includes
 
 #include "dimg.h"
-#include "tiffsettings.h"
+#include "dpluginloader.h"
 
 namespace DigikamBqmConvertToTiffPlugin
 {
@@ -59,7 +59,7 @@ BatchTool* ConvertToTIFF::clone(QObject* const parent) const
 
 void ConvertToTIFF::registerSettingsWidget()
 {
-    TIFFSettings* const TIFBox = new TIFFSettings();
+    DImgLoaderSettings* const TIFBox = DPluginLoader::instance()->exportWidget(QLatin1String("TIFF"));
 
     connect(TIFBox, SIGNAL(signalSettingsChanged()),
             this, SLOT(slotSettingsChanged()));
@@ -76,6 +76,7 @@ BatchToolSettings ConvertToTIFF::defaultSettings()
     bool compression          = group.readEntry(QLatin1String("TIFFCompression"), false);
     BatchToolSettings settings;
     settings.insert(QLatin1String("compress"), compression);
+
     return settings;
 }
 
@@ -83,7 +84,7 @@ void ConvertToTIFF::slotAssignSettings2Widget()
 {
     m_changeSettings = false;
 
-    TIFFSettings* const TIFBox = dynamic_cast<TIFFSettings*>(m_settingsWidget);
+    DImgLoaderSettings* const TIFBox = dynamic_cast<DImgLoaderSettings*>(m_settingsWidget);
 
     if (TIFBox)
     {
@@ -99,7 +100,7 @@ void ConvertToTIFF::slotSettingsChanged()
 {
     if (m_changeSettings)
     {
-        TIFFSettings* const TIFBox = dynamic_cast<TIFFSettings*>(m_settingsWidget);
+        DImgLoaderSettings* const TIFBox = dynamic_cast<DImgLoaderSettings*>(m_settingsWidget);
 
         if (TIFBox)
         {

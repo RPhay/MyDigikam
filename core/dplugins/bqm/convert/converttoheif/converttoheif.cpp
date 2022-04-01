@@ -37,7 +37,7 @@
 // Local includes
 
 #include "dimg.h"
-#include "heifsettings.h"
+#include "dpluginloader.h"
 
 namespace DigikamBqmConvertToHeifPlugin
 {
@@ -59,7 +59,7 @@ BatchTool* ConvertToHEIF::clone(QObject* const parent) const
 
 void ConvertToHEIF::registerSettingsWidget()
 {
-    HEIFSettings* const HEIFBox = new HEIFSettings();
+    DImgLoaderSettings* const HEIFBox = DPluginLoader::instance()->exportWidget(QLatin1String("HEIF"));
 
     connect(HEIFBox, SIGNAL(signalSettingsChanged()),
             this, SLOT(slotSettingsChanged()));
@@ -78,6 +78,7 @@ BatchToolSettings ConvertToHEIF::defaultSettings()
     BatchToolSettings settings;
     settings.insert(QLatin1String("quality"),  compression);
     settings.insert(QLatin1String("lossless"), lossLessCompression);
+
     return settings;
 }
 
@@ -85,7 +86,7 @@ void ConvertToHEIF::slotAssignSettings2Widget()
 {
     m_changeSettings = false;
 
-    HEIFSettings* const HEIFBox = dynamic_cast<HEIFSettings*>(m_settingsWidget);
+    DImgLoaderSettings* const HEIFBox = dynamic_cast<DImgLoaderSettings*>(m_settingsWidget);
 
     if (HEIFBox)
     {
@@ -102,7 +103,7 @@ void ConvertToHEIF::slotSettingsChanged()
 {
     if (m_changeSettings)
     {
-        HEIFSettings* const HEIFBox = dynamic_cast<HEIFSettings*>(m_settingsWidget);
+        DImgLoaderSettings* const HEIFBox = dynamic_cast<DImgLoaderSettings*>(m_settingsWidget);
 
         if (HEIFBox)
         {

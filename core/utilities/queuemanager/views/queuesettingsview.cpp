@@ -51,20 +51,9 @@
 #include "albumselectwidget.h"
 #include "batchtool.h"
 #include "queuesettings.h"
-#include "jpegsettings.h"
-#include "tiffsettings.h"
-#include "pngsettings.h"
-#include "pgfsettings.h"
+#include "dpluginloader.h"
 #include "drawdecoderwidget.h"
 #include "filesaveconflictbox.h"
-
-#ifdef HAVE_JASPER
-#   include "jp2ksettings.h"
-#endif // HAVE_JASPER
-
-#ifdef HAVE_X265
-#   include "heifsettings.h"
-#endif // HAVE_X265
 
 namespace Digikam
 {
@@ -142,23 +131,23 @@ public:
 
     DRawDecoderWidget*     rawSettings;
 
-    JPEGSettings*          jpgSettings;
-    PNGSettings*           pngSettings;
-    TIFFSettings*          tifSettings;
+    DImgLoaderSettings*    jpgSettings;
+    DImgLoaderSettings*    pngSettings;
+    DImgLoaderSettings*    tifSettings;
 
 #ifdef HAVE_JASPER
 
-    JP2KSettings*          j2kSettings;
+    DImgLoaderSettings*    j2kSettings;
 
 #endif // HAVE_JASPER
 
 #ifdef HAVE_X265
 
-    HEIFSettings*          heifSettings;
+    DImgLoaderSettings*    heifSettings;
 
 #endif // HAVE_X265
 
-    PGFSettings*           pgfSettings;
+    DImgLoaderSettings*    pgfSettings;
 };
 
 QueueSettingsView::QueueSettingsView(QWidget* const parent)
@@ -274,29 +263,33 @@ QueueSettingsView::QueueSettingsView(QWidget* const parent)
 
     // --------------------------------------------------------
 
-    QScrollArea* const sv4   = new QScrollArea(this);
-    QWidget* const spanel    = new QWidget(sv4->viewport());
-    QVBoxLayout* const slay  = new QVBoxLayout(spanel);
+    QScrollArea* const sv4       = new QScrollArea(this);
+    QWidget* const spanel        = new QWidget(sv4->viewport());
+    QVBoxLayout* const slay      = new QVBoxLayout(spanel);
     sv4->setWidget(spanel);
     sv4->setWidgetResizable(true);
-
+    DPluginLoader* const ploader = DPluginLoader::instance();
+    
     QGroupBox* const  box1   = new QGroupBox;
     QVBoxLayout* const lbox1 = new QVBoxLayout;
-    d->jpgSettings           = new JPEGSettings();
+    d->jpgSettings           = ploader->exportWidget(QLatin1String("JPEG"));
+    d->jpgSettings->setParent(this);
     lbox1->addWidget(d->jpgSettings);
     box1->setLayout(lbox1);
     slay->addWidget(box1);
 
     QGroupBox* const  box2   = new QGroupBox;
     QVBoxLayout* const lbox2 = new QVBoxLayout;
-    d->pngSettings           = new PNGSettings();
+    d->pngSettings           = ploader->exportWidget(QLatin1String("PNG"));
+    d->pngSettings->setParent(this);;
     lbox2->addWidget(d->pngSettings);
     box2->setLayout(lbox2);
     slay->addWidget(box2);
 
     QGroupBox* const  box3   = new QGroupBox;
     QVBoxLayout* const lbox3 = new QVBoxLayout;
-    d->tifSettings           = new TIFFSettings();
+    d->tifSettings           = ploader->exportWidget(QLatin1String("TIFF"));
+    d->tifSettings->setParent(this);
     lbox3->addWidget(d->tifSettings);
     box3->setLayout(lbox3);
     slay->addWidget(box3);
@@ -305,7 +298,8 @@ QueueSettingsView::QueueSettingsView(QWidget* const parent)
 
     QGroupBox* const  box4   = new QGroupBox;
     QVBoxLayout* const lbox4 = new QVBoxLayout;
-    d->j2kSettings           = new JP2KSettings();
+    d->j2kSettings           = ploader->exportWidget(QLatin1String("JP2"));
+    d->j2kSettings->setParent(this);
     lbox4->addWidget(d->j2kSettings);
     box4->setLayout(lbox4);
     slay->addWidget(box4);
@@ -314,7 +308,8 @@ QueueSettingsView::QueueSettingsView(QWidget* const parent)
 
     QGroupBox* const  box5   = new QGroupBox;
     QVBoxLayout* const lbox5 = new QVBoxLayout;
-    d->pgfSettings           = new PGFSettings();
+    d->pgfSettings           = ploader->exportWidget(QLatin1String("PGF"));
+    d->pgfSettings->setParent(this);
     lbox5->addWidget(d->pgfSettings);
     box5->setLayout(lbox5);
     slay->addWidget(box5);
@@ -323,7 +318,8 @@ QueueSettingsView::QueueSettingsView(QWidget* const parent)
 
     QGroupBox* const  box6   = new QGroupBox;
     QVBoxLayout* const lbox6 = new QVBoxLayout;
-    d->heifSettings          = new HEIFSettings();
+    d->heifSettings          = ploader->exportWidget(QLatin1String("HEIF"));
+    d->heifSettings->setParent(this);
     lbox6->addWidget(d->heifSettings);
     box6->setLayout(lbox6);
     slay->addWidget(box6);

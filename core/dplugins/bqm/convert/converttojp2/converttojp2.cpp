@@ -37,7 +37,7 @@
 // Local includes
 
 #include "dimg.h"
-#include "jp2ksettings.h"
+#include "dpluginloader.h"
 
 namespace DigikamBqmConvertToJp2Plugin
 {
@@ -59,7 +59,7 @@ BatchTool* ConvertToJP2::clone(QObject* const parent) const
 
 void ConvertToJP2::registerSettingsWidget()
 {
-    JP2KSettings* const JP2Box = new JP2KSettings();
+    DImgLoaderSettings* const JP2Box = DPluginLoader::instance()->exportWidget(QLatin1String("JP2"));
 
     connect(JP2Box, SIGNAL(signalSettingsChanged()),
             this, SLOT(slotSettingsChanged()));
@@ -84,8 +84,8 @@ BatchToolSettings ConvertToJP2::defaultSettings()
 
 void ConvertToJP2::slotAssignSettings2Widget()
 {
-    m_changeSettings           = false;
-    JP2KSettings* const JP2Box = dynamic_cast<JP2KSettings*>(m_settingsWidget);
+    m_changeSettings                 = false;
+    DImgLoaderSettings* const JP2Box = dynamic_cast<DImgLoaderSettings*>(m_settingsWidget);
 
     if (JP2Box)
     {
@@ -103,7 +103,7 @@ void ConvertToJP2::slotSettingsChanged()
     if (m_changeSettings)
     {
         BatchToolSettings settings;
-        JP2KSettings* const JP2Box = dynamic_cast<JP2KSettings*>(m_settingsWidget);
+        DImgLoaderSettings* const JP2Box = dynamic_cast<DImgLoaderSettings*>(m_settingsWidget);
 
         if (JP2Box)
         {

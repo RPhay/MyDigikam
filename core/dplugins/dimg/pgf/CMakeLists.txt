@@ -21,6 +21,7 @@ set(dimgpgfplugin_SRCS
     ${CMAKE_CURRENT_SOURCE_DIR}/dimgpgfloader.cpp
     ${CMAKE_CURRENT_SOURCE_DIR}/dimgpgfloader_load.cpp
     ${CMAKE_CURRENT_SOURCE_DIR}/dimgpgfloader_save.cpp
+    ${CMAKE_CURRENT_SOURCE_DIR}/pgfsettings.cpp
 )
 
 DIGIKAM_ADD_DIMG_PLUGIN(NAME    PGF

@@ -95,6 +95,9 @@ public:
     static unsigned short* new_short_failureTolerant(size_t unsecureSize);
     static unsigned short* new_short_failureTolerant(quint64 w, quint64 h, uint typesPerPixel);
 
+    static int convertCompressionForLibPng(int value);
+    static int convertCompressionForLibJpeg(int value);
+
     /**
      * Value returned : -1 : unsupported platform
      *                   0 : parse failure from supported platform

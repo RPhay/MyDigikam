@@ -37,7 +37,7 @@
 // Local includes
 
 #include "dimg.h"
-#include "pgfsettings.h"
+#include "dpluginloader.h"
 
 namespace DigikamBqmConvertToPgfPlugin
 {
@@ -59,7 +59,7 @@ BatchTool* ConvertToPGF::clone(QObject* const parent) const
 
 void ConvertToPGF::registerSettingsWidget()
 {
-    PGFSettings* const PGFBox = new PGFSettings();
+    DImgLoaderSettings* const PGFBox = DPluginLoader::instance()->exportWidget(QLatin1String("PGF"));
 
     connect(PGFBox, SIGNAL(signalSettingsChanged()),
             this, SLOT(slotSettingsChanged()));
@@ -78,6 +78,7 @@ BatchToolSettings ConvertToPGF::defaultSettings()
     BatchToolSettings settings;
     settings.insert(QLatin1String("quality"),  compression);
     settings.insert(QLatin1String("lossless"), lossLessCompression);
+
     return settings;
 }
 
@@ -85,7 +86,7 @@ void ConvertToPGF::slotAssignSettings2Widget()
 {
     m_changeSettings = false;
 
-    PGFSettings* const PGFBox = dynamic_cast<PGFSettings*>(m_settingsWidget);
+    DImgLoaderSettings* const PGFBox = dynamic_cast<DImgLoaderSettings*>(m_settingsWidget);
 
     if (PGFBox)
     {
@@ -102,7 +103,7 @@ void ConvertToPGF::slotSettingsChanged()
 {
     if (m_changeSettings)
     {
-        PGFSettings* const PGFBox = dynamic_cast<PGFSettings*>(m_settingsWidget);
+        DImgLoaderSettings* const PGFBox = dynamic_cast<DImgLoaderSettings*>(m_settingsWidget);
 
         if (PGFBox)
         {

@@ -3,10 +3,10 @@
  * This file is a part of digiKam project
  * https://www.digikam.org
  *
- * Date        : 2019-10-02
- * Description : save HEIF image options.
+ * Date        : 2007-08-02
+ * Description : save PNG image options.
  *
- * Copyright (C) 2020-2022 by Gilles Caulier <caulier dot gilles at gmail dot com>
+ * Copyright (C) 2007-2022 by Gilles Caulier <caulier dot gilles at gmail dot com>
  *
  * This program is free software; you can redistribute it
  * and/or modify it under the terms of the GNU General
@@ -21,37 +21,31 @@
  *
  * ============================================================ */
 
-#ifndef DIGIKAM_HEIF_SETTINGS_H
-#define DIGIKAM_HEIF_SETTINGS_H
+#ifndef DIGIKAM_PNG_SETTINGS_H
+#define DIGIKAM_PNG_SETTINGS_H
 
 // Local includes
 
 #include "dimgloadersettings.h"
-#include "digikam_export.h"
 
 namespace Digikam
 {
 
-class DIGIKAM_EXPORT HEIFSettings : public DImgLoaderSettings
+class PNGSettings : public DImgLoaderSettings
 {
     Q_OBJECT
 
 public:
 
-    explicit HEIFSettings(QWidget* const parent = nullptr);
-    ~HEIFSettings() override;
+    explicit PNGSettings(QWidget* const parent = nullptr);
+    ~PNGSettings() override;
 
     /**
      * This widget manage 2 parameters for the image encoding:
-     * "quality"  as integer [1 - 100].
-     * "lossless" as boolean.
+     * "quality"  as integer [1 - 9].
      */
     void setSettings(const DImgLoaderPrms& set);
     DImgLoaderPrms settings() const;
-
-private Q_SLOTS:
-
-    void slotToggleHEIFLossLess(bool);
 
 private:
 
@@ -61,4 +55,4 @@ private:
 
 } // namespace Digikam
 
-#endif // DIGIKAM_HEIF_SETTINGS_H
+#endif // DIGIKAM_PNG_SETTINGS_H

@@ -114,7 +114,6 @@
 #include "dmessagebox.h"
 #include "actioncategorizedview.h"
 #include "canvas.h"
-#include "categorizeditemmodel.h"
 #include "colorcorrectiondlg.h"
 #include "editorcore.h"
 #include "dlogoaction.h"
@@ -140,8 +139,6 @@
 #include "metaenginesettings.h"
 #include "libsinfodlg.h"
 #include "loadingcacheinterface.h"
-#include "jpegsettings.h"
-#include "pngsettings.h"
 #include "savingcontext.h"
 #include "sidebar.h"
 #include "softproofdialog.h"
@@ -156,6 +153,8 @@
 #include "imageiface.h"
 #include "versionmanager.h"
 #include "dnotificationpopup.h"
+#include "dimgloader.h"
+#include "categorizeditemmodel.h"
 
 namespace Digikam
 {

@@ -803,13 +803,13 @@ void EditorWindow::applyIOSettings()
 
     KConfigGroup group = KSharedConfig::openConfig()->group(configGroupName());
 
-    m_IOFileSettings->JPEGCompression     = JPEGSettings::convertCompressionForLibJpeg(group.readEntry(d->configJpegCompressionEntry, 75));
+    m_IOFileSettings->JPEGCompression     = DImgLoader::convertCompressionForLibJpeg(group.readEntry(d->configJpegCompressionEntry, 75));
 
     // Medium subsampling
 
     m_IOFileSettings->JPEGSubSampling     = group.readEntry(d->configJpegSubSamplingEntry, 1);
 
-    m_IOFileSettings->PNGCompression      = PNGSettings::convertCompressionForLibPng(group.readEntry(d->configPngCompressionEntry,    9));
+    m_IOFileSettings->PNGCompression      = DImgLoader::convertCompressionForLibPng(group.readEntry(d->configPngCompressionEntry,    9));
 
     // TIFF compression setting.
 
@@ -2522,8 +2522,8 @@ void EditorWindow::setupSelectToolsAction()
     // Create action model
 
     ActionItemModel* const actionModel = new ActionItemModel(this);
-    actionModel->setMode(ActionItemModel::ToplevelMenuCategory |
-                         ActionItemModel::SortCategoriesByInsertionOrder);
+    actionModel->setMode((ActionItemModel::MenuCategoryMode)(ActionItemModel::ToplevelMenuCategory |
+                                                             ActionItemModel::SortCategoriesByInsertionOrder));
 
     // Builtin actions
 
