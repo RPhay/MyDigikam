@@ -4,7 +4,7 @@
  * https://www.digikam.org
  *
  * Date        : 2007-08-02
- * Description : save PNG image options.
+ * Description : PNG image export settings widget.
  *
  * Copyright (C) 2007-2022 by Gilles Caulier <caulier dot gilles at gmail dot com>
  *
@@ -21,8 +21,8 @@
  *
  * ============================================================ */
 
-#ifndef DIGIKAM_PNG_SETTINGS_H
-#define DIGIKAM_PNG_SETTINGS_H
+#ifndef DIGIKAM_DIMG_PNG_EXPORT_SETTINGS_H
+#define DIGIKAM_DIMG_PNG_EXPORT_SETTINGS_H
 
 // Local includes
 
@@ -31,14 +31,14 @@
 namespace Digikam
 {
 
-class PNGSettings : public DImgLoaderSettings
+class DImgPNGExportSettings : public DImgLoaderSettings
 {
     Q_OBJECT
 
 public:
 
-    explicit PNGSettings(QWidget* const parent = nullptr);
-    ~PNGSettings() override;
+    explicit DImgPNGExportSettings(QWidget* const parent = nullptr);
+    ~DImgPNGExportSettings() override;
 
     /**
      * This widget manage 2 parameters for the image encoding:
@@ -55,4 +55,4 @@ private:
 
 } // namespace Digikam
 
-#endif // DIGIKAM_PNG_SETTINGS_H
+#endif // DIGIKAM_DIMG_PNG_EXPORT_SETTINGS_H

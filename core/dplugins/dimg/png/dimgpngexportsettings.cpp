@@ -4,7 +4,7 @@
  * https://www.digikam.org
  *
  * Date        : 2007-08-02
- * Description : save PNG image options.
+ * Description : PNG image export settings widget.
  *
  * Copyright (C) 2007-2022 by Gilles Caulier <caulier dot gilles at gmail dot com>
  *
@@ -21,7 +21,7 @@
  *
  * ============================================================ */
 
-#include "pngsettings.h"
+#include "dimgpngexportsettings.h"
 
 // Qt includes
 
@@ -43,7 +43,7 @@
 namespace Digikam
 {
 
-class Q_DECL_HIDDEN PNGSettings::Private
+class Q_DECL_HIDDEN DImgPNGExportSettings::Private
 {
 
 public:
@@ -62,7 +62,7 @@ public:
     DIntNumInput* PNGcompression;
 };
 
-PNGSettings::PNGSettings(QWidget* parent)
+DImgPNGExportSettings::DImgPNGExportSettings(QWidget* parent)
     : DImgLoaderSettings(parent),
       d                 (new Private)
 {
@@ -95,12 +95,12 @@ PNGSettings::PNGSettings(QWidget* parent)
             this, SIGNAL(signalSettingsChanged()));
 }
 
-PNGSettings::~PNGSettings()
+DImgPNGExportSettings::~DImgPNGExportSettings()
 {
     delete d;
 }
 
-void PNGSettings::setSettings(const DImgLoaderPrms& set)
+void DImgPNGExportSettings::setSettings(const DImgLoaderPrms& set)
 {
     for (DImgLoaderPrms::const_iterator it = set.constBegin() ; it != set.constEnd() ; ++it)
     {
@@ -111,7 +111,7 @@ void PNGSettings::setSettings(const DImgLoaderPrms& set)
     }
 }
 
-DImgLoaderPrms PNGSettings::settings() const
+DImgLoaderPrms DImgPNGExportSettings::settings() const
 {
     DImgLoaderPrms set;
     set.insert(QLatin1String("quality"),  d->PNGcompression->value());

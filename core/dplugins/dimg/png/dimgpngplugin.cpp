@@ -40,7 +40,7 @@
 #include "digikam_config.h"
 #include "digikam_globals.h"
 #include "dimgpngloader.h"
-#include "pngsettings.h"
+#include "dimgpngexportsettings.h"
 
 namespace DigikamPNGDImgPlugin
 {
@@ -187,7 +187,7 @@ DImgLoaderSettings* DImgPNGPlugin::exportWidget(const QString& format) const
 {
     if (canWrite(format))
     {
-        return (new PNGSettings());
+        return (new DImgPNGExportSettings());
     }
 
     return nullptr;

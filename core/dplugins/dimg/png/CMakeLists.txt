@@ -21,7 +21,7 @@ set(dimgpngplugin_SRCS
     ${CMAKE_CURRENT_SOURCE_DIR}/dimgpngloader.cpp
     ${CMAKE_CURRENT_SOURCE_DIR}/dimgpngloader_load.cpp
     ${CMAKE_CURRENT_SOURCE_DIR}/dimgpngloader_save.cpp
-    ${CMAKE_CURRENT_SOURCE_DIR}/pngsettings.cpp
+    ${CMAKE_CURRENT_SOURCE_DIR}/dimgpngexportsettings.cpp
 )
 
 DIGIKAM_ADD_DIMG_PLUGIN(NAME    PNG
