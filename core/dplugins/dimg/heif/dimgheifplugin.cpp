@@ -40,7 +40,7 @@
 #include "digikam_config.h"
 #include "digikam_globals.h"
 #include "dimgheifloader.h"
-#include "heifsettings.h"
+#include "dimgheifexportsettings.h"
 
 namespace DigikamHEIFDImgPlugin
 {
@@ -244,7 +244,7 @@ DImgLoaderSettings* DImgHEIFPlugin::exportWidget(const QString& format) const
 {
     if (canWrite(format))
     {
-        return (new HEIFSettings());
+        return (new DImgHEIFExportSettings());
     }
 
     return nullptr;

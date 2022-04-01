@@ -4,7 +4,7 @@
  * https://www.digikam.org
  *
  * Date        : 2019-10-02
- * Description : save HEIF image options.
+ * Description : HEIF image export settings widget.
  *
  * Copyright (C) 2020-2022 by Gilles Caulier <caulier dot gilles at gmail dot com>
  *
@@ -21,7 +21,7 @@
  *
  * ============================================================ */
 
-#include "heifsettings.h"
+#include "dimgheifexportsettings.h"
 
 // Qt includes
 
@@ -44,7 +44,7 @@
 namespace Digikam
 {
 
-class Q_DECL_HIDDEN HEIFSettings::Private
+class Q_DECL_HIDDEN DImgHEIFExportSettings::Private
 {
 
 public:
@@ -66,7 +66,7 @@ public:
     DIntNumInput* HEIFcompression;
 };
 
-HEIFSettings::HEIFSettings(QWidget* const parent)
+DImgHEIFExportSettings::DImgHEIFExportSettings(QWidget* const parent)
     : DImgLoaderSettings(parent),
       d                 (new Private)
 {
@@ -113,12 +113,12 @@ HEIFSettings::HEIFSettings(QWidget* const parent)
             this, SIGNAL(signalSettingsChanged()));
 }
 
-HEIFSettings::~HEIFSettings()
+DImgHEIFExportSettings::~DImgHEIFExportSettings()
 {
     delete d;
 }
 
-void HEIFSettings::setSettings(const DImgLoaderPrms& set)
+void DImgHEIFExportSettings::setSettings(const DImgLoaderPrms& set)
 {
     for (DImgLoaderPrms::const_iterator it = set.constBegin() ; it != set.constEnd() ; ++it)
     {
@@ -135,7 +135,7 @@ void HEIFSettings::setSettings(const DImgLoaderPrms& set)
     slotToggleHEIFLossLess(d->HEIFLossLess->isChecked());
 }
 
-DImgLoaderPrms HEIFSettings::settings() const
+DImgLoaderPrms DImgHEIFExportSettings::settings() const
 {
     DImgLoaderPrms set;
     set.insert(QLatin1String("quality"),  d->HEIFcompression->value());
@@ -144,7 +144,7 @@ DImgLoaderPrms HEIFSettings::settings() const
     return set;
 }
 
-void HEIFSettings::slotToggleHEIFLossLess(bool b)
+void DImgHEIFExportSettings::slotToggleHEIFLossLess(bool b)
 {
     d->HEIFcompression->setEnabled(!b);
     d->labelHEIFcompression->setEnabled(!b);

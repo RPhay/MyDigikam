@@ -4,7 +4,7 @@
  * https://www.digikam.org
  *
  * Date        : 2019-10-02
- * Description : save HEIF image options.
+ * Description : HEIF image export settings widget.
  *
  * Copyright (C) 2020-2022 by Gilles Caulier <caulier dot gilles at gmail dot com>
  *
@@ -21,8 +21,8 @@
  *
  * ============================================================ */
 
-#ifndef DIGIKAM_HEIF_SETTINGS_H
-#define DIGIKAM_HEIF_SETTINGS_H
+#ifndef DIGIKAM_DIMG_HEIF_EXPORT_SETTINGS_H
+#define DIGIKAM_DIMG_HEIF_EXPORT_SETTINGS_H
 
 // Local includes
 
@@ -31,14 +31,14 @@
 namespace Digikam
 {
 
-class HEIFSettings : public DImgLoaderSettings
+class DImgHEIFExportSettings : public DImgLoaderSettings
 {
     Q_OBJECT
 
 public:
 
-    explicit HEIFSettings(QWidget* const parent = nullptr);
-    ~HEIFSettings() override;
+    explicit DImgHEIFExportSettings(QWidget* const parent = nullptr);
+    ~DImgHEIFExportSettings() override;
 
     /**
      * This widget manage 2 parameters for the image encoding:
@@ -60,4 +60,4 @@ private:
 
 } // namespace Digikam
 
-#endif // DIGIKAM_HEIF_SETTINGS_H
+#endif // DIGIKAM_DIMG_HEIF_EXPORT_SETTINGS_H
