@@ -40,6 +40,7 @@
 #include "digikam_config.h"
 #include "digikam_globals.h"
 #include "dimgjpegloader.h"
+#include "jpegsettings.h"
 
 namespace DigikamJPEGDImgPlugin
 {
@@ -195,6 +196,16 @@ int DImgJPEGPlugin::canWrite(const QString& format) const
 DImgLoader* DImgJPEGPlugin::loader(DImg* const image, const DRawDecoding&) const
 {
     return new DImgJPEGLoader(image);
+}
+
+DImgLoaderSettings* DImgJPEGPlugin::exportWidget(const QString& format) const
+{
+    if (canWrite(format))
+    {
+        return (new JPEGSettings());
+    }
+
+    return nullptr;
 }
 
 } // namespace DigikamJPEGDImgPlugin

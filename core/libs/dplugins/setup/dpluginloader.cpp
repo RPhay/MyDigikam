@@ -33,6 +33,7 @@
 #include "digikam_debug.h"
 #include "dplugingeneric.h"
 #include "dplugineditor.h"
+#include "dplugindimg.h"
 #include "dpluginrawimport.h"
 
 namespace Digikam
@@ -331,6 +332,26 @@ void DPluginLoader::registerRawImportPlugins(QObject* const parent)
                                          << "registered to" << parent;
         }
     }
+}
+
+DImgLoaderSettings* DPluginLoader::exportWidget(const QString& format) const
+{
+    foreach (DPlugin* const plugin, d->allPlugins)
+    {
+        DPluginDImg* const dimg = dynamic_cast<DPluginDImg*>(plugin);
+
+        if (dimg)
+        {
+            DImgLoaderSettings* const widget = dimg->exportWidget(format);
+
+            if (widget)
+            {
+                return widget;
+            }
+        }
+    }
+
+    return nullptr;
 }
 
 } // namespace Digikam

@@ -65,6 +65,8 @@ public:
     int         canRead(const QFileInfo& fileInfo, bool magic)                              const override;
     int         canWrite(const QString& format)                                             const override;
     DImgLoader* loader(DImg* const image, const DRawDecoding& rawSettings = DRawDecoding()) const override;
+
+    DImgLoaderSettings* exportWidget(const QString& format)                                 const override;
 };
 
 } // namespace DigikamQImageDImgPlugin

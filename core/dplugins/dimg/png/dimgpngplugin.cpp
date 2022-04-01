@@ -40,6 +40,7 @@
 #include "digikam_config.h"
 #include "digikam_globals.h"
 #include "dimgpngloader.h"
+#include "pngsettings.h"
 
 namespace DigikamPNGDImgPlugin
 {
@@ -180,6 +181,16 @@ int DImgPNGPlugin::canWrite(const QString& format) const
 DImgLoader* DImgPNGPlugin::loader(DImg* const image, const DRawDecoding&) const
 {
     return new DImgPNGLoader(image);
+}
+
+DImgLoaderSettings* DImgPNGPlugin::exportWidget(const QString& format) const
+{
+    if (canWrite(format))
+    {
+        return (new PNGSettings());
+    }
+
+    return nullptr;
 }
 
 } // namespace DigikamPNGDImgPlugin

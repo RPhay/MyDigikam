@@ -163,4 +163,11 @@ DImgLoader* DImgQImagePlugin::loader(DImg* const image, const DRawDecoding&) con
     return new DImgQImageLoader(image);
 }
 
+DImgLoaderSettings* DImgQImagePlugin::exportWidget(const QString& format) const
+{
+    Q_UNUSED(format);
+
+    return nullptr;
+}
+
 } // namespace DigikamQImageDImgPlugin

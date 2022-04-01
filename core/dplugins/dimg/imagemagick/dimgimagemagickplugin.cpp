@@ -380,4 +380,11 @@ QStringList DImgImageMagickPlugin::encoderFormats() const
     return formats;
 }
 
+DImgLoaderSettings* DImgImageMagickPlugin::exportWidget(const QString& format) const
+{
+    Q_UNUSED(format);
+
+    return nullptr;
+}
+
 } // namespace DigikamImageMagickDImgPlugin

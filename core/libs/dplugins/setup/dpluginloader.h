@@ -35,6 +35,7 @@
 #include "dinfointerface.h"
 #include "dplugin.h"
 #include "dpluginaction.h"
+#include "dimgloadersettings.h"
 
 namespace Digikam
 {
@@ -47,7 +48,6 @@ namespace Digikam
  * The DPluginLoader creates new objects and transfer ownership.
  * In order to create the objects, the DPluginLoader internally has a list of the tools
  * which are owned by the DPluginLoader and destroyed by it.
- *
  */
 class DIGIKAM_EXPORT DPluginLoader : public QObject
 {
@@ -140,6 +140,12 @@ class DIGIKAM_EXPORT DPluginLoader : public QObject
      * to not ignore "HtmlGalleryPlugin.so" on Linux and "HtmlGalleryPlugin.dll" on Windows, pass "HtmlGalleryPlugin"
      */
     void appendPluginToWhiteList(const QString& filename);
+
+    /**
+     * Return a new widget instance from a DPluginDImg to show settings while exporting image to specified format.
+     * Return nullptr if format is not supported or if no settings widget is available for this format.
+     */
+    DImgLoaderSettings* exportWidget(const QString& format) const;
 
 private:
 

@@ -40,6 +40,7 @@
 #include "digikam_config.h"
 #include "digikam_globals.h"
 #include "dimgjpeg2000loader.h"
+#include "jp2ksettings.h"
 
 namespace DigikamJPEG2000DImgPlugin
 {
@@ -199,6 +200,16 @@ int DImgJPEG2000Plugin::canWrite(const QString& format) const
 DImgLoader* DImgJPEG2000Plugin::loader(DImg* const image, const DRawDecoding&) const
 {
     return new DImgJPEG2000Loader(image);
+}
+
+DImgLoaderSettings* DImgJPEG2000Plugin::exportWidget(const QString& format) const
+{
+    if (canWrite(format))
+    {
+        return (new JP2KSettings());
+    }
+
+    return nullptr;
 }
 
 } // namespace DigikamJPEG2000DImgPlugin

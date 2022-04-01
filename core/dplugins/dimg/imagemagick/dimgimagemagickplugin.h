@@ -26,7 +26,6 @@
 // Qt includes
 
 #include <QByteArray>
-#include <QWidget>
 
 // Local includes
 
@@ -68,6 +67,8 @@ public:
     int         canWrite(const QString& format)                                             const override;
     DImgLoader* loader(DImg* const image, const DRawDecoding& rawSettings = DRawDecoding()) const override;
 
+    DImgLoaderSettings* exportWidget(const QString& format)                                 const override;
+
 private:
 
     QStringList decoderFormats() const;
@@ -77,7 +78,6 @@ private:
 
     QStringList m_readFormats;
     QStringList m_writeFormats;
-
 };
 
 } // namespace DigikamImageMagickDImgPlugin

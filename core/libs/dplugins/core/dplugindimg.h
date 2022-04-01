@@ -27,11 +27,13 @@
 // Qt includes
 
 #include <QFileInfo>
+#include <QWidget>
 
 // Local includes
 
 #include "dplugin.h"
 #include "dimgloader.h"
+#include "dimgloadersettings.h"
 #include "dpluginloader.h"
 #include "digikam_export.h"
 #include "drawdecoding.h"
@@ -145,6 +147,12 @@ public:
      */
     virtual DImgLoader* loader(DImg* const image,
                                const DRawDecoding& rawSettings = DRawDecoding()) const = 0;
+
+    /**
+     * Return a new widget instance to show settings while exporting image to specified format.
+     * Return nullptr if format is not supported or if no settings widget is available for this format.
+     */
+    virtual DImgLoaderSettings* exportWidget(const QString& format)              const = 0;
 };
 
 } // namespace Digikam

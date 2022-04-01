@@ -152,4 +152,13 @@ DImgLoader* DImgRAWPlugin::loader(DImg* const image, const DRawDecoding& rawSett
     return new DImgRAWLoader(image, rawSettings);
 }
 
+DImgLoaderSettings* DImgRAWPlugin::exportWidget(const QString& format) const
+{
+    Q_UNUSED(format);
+
+    // NOTE: RAW are read only.
+
+    return nullptr;
+}
+
 } // namespace DigikamRAWDImgPlugin

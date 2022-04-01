@@ -40,6 +40,7 @@
 #include "digikam_config.h"
 #include "digikam_globals.h"
 #include "dimgtiffloader.h"
+#include "tiffsettings.h"
 
 namespace DigikamTIFFDImgPlugin
 {
@@ -191,6 +192,16 @@ int DImgTIFFPlugin::canWrite(const QString& format) const
 DImgLoader* DImgTIFFPlugin::loader(DImg* const image, const DRawDecoding&) const
 {
     return new DImgTIFFLoader(image);
+}
+
+DImgLoaderSettings* DImgTIFFPlugin::exportWidget(const QString& format) const
+{
+    if (canWrite(format))
+    {
+        return (new TIFFSettings());
+    }
+
+    return nullptr;
 }
 
 } // namespace DigikamTIFFDImgPlugin

@@ -69,6 +69,9 @@ public:
 
 Q_SIGNALS:
 
+    /**
+     * Signal to emit when a settings is changed from the widget.
+     */
     void signalSettingsChanged();
 };
 
