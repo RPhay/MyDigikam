@@ -4,7 +4,7 @@
  * https://www.digikam.org
  *
  * Date        : 2009-06-06
- * Description : save PGF image options.
+ * Description : PGF image export settings widget.
  *
  * Copyright (C) 2009-2022 by Gilles Caulier <caulier dot gilles at gmail dot com>
  *
@@ -21,8 +21,8 @@
  *
  * ============================================================ */
 
-#ifndef DIGIKAM_PGF_SETTINGS_H
-#define DIGIKAM_PGF_SETTINGS_H
+#ifndef DIGIKAM_DIMG_PGF_EXPORT_SETTINGS_H
+#define DIGIKAM_DIMG_PGF_EXPORT_SETTINGS_H
 
 // Local includes
 
@@ -31,14 +31,14 @@
 namespace Digikam
 {
 
-class PGFSettings : public DImgLoaderSettings
+class DImgPGFExportSettings : public DImgLoaderSettings
 {
     Q_OBJECT
 
 public:
 
-    explicit PGFSettings(QWidget* const parent = nullptr);
-    ~PGFSettings() override;
+    explicit DImgPGFExportSettings(QWidget* const parent = nullptr);
+    ~DImgPGFExportSettings() override;
 
     /**
      * This widget manage 2 parameters for the image encoding:
@@ -60,4 +60,4 @@ private:
 
 } // namespace Digikam
 
-#endif // DIGIKAM_PGF_SETTINGS_H
+#endif // DIGIKAM_DIMG_PGF_EXPORT_SETTINGS_H

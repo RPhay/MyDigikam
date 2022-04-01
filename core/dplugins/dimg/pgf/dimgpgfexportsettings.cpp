@@ -4,7 +4,7 @@
  * https://www.digikam.org
  *
  * Date        : 2009-06-06
- * Description : save PGF image options.
+ * Description : PGF image export settings widget.
  *
  * Copyright (C) 2009-2022 by Gilles Caulier <caulier dot gilles at gmail dot com>
  *
@@ -21,7 +21,7 @@
  *
  * ============================================================ */
 
-#include "pgfsettings.h"
+#include "dimgpgfexportsettings.h"
 
 // Qt includes
 
@@ -44,7 +44,7 @@
 namespace Digikam
 {
 
-class Q_DECL_HIDDEN PGFSettings::Private
+class Q_DECL_HIDDEN DImgPGFExportSettings::Private
 {
 
 public:
@@ -66,7 +66,7 @@ public:
     DIntNumInput* PGFcompression;
 };
 
-PGFSettings::PGFSettings(QWidget* const parent)
+DImgPGFExportSettings::DImgPGFExportSettings(QWidget* const parent)
     : DImgLoaderSettings(parent),
       d                 (new Private)
 {
@@ -113,12 +113,12 @@ PGFSettings::PGFSettings(QWidget* const parent)
             this, SIGNAL(signalSettingsChanged()));
 }
 
-PGFSettings::~PGFSettings()
+DImgPGFExportSettings::~DImgPGFExportSettings()
 {
     delete d;
 }
 
-void PGFSettings::setSettings(const DImgLoaderPrms& set)
+void DImgPGFExportSettings::setSettings(const DImgLoaderPrms& set)
 {
     for (DImgLoaderPrms::const_iterator it = set.constBegin() ; it != set.constEnd() ; ++it)
     {
@@ -135,7 +135,7 @@ void PGFSettings::setSettings(const DImgLoaderPrms& set)
     slotTogglePGFLossLess(d->PGFLossLess->isChecked());
 }
 
-DImgLoaderPrms PGFSettings::settings() const
+DImgLoaderPrms DImgPGFExportSettings::settings() const
 {
     DImgLoaderPrms set;
     set.insert(QLatin1String("quality"),  d->PGFcompression->value());
@@ -144,7 +144,7 @@ DImgLoaderPrms PGFSettings::settings() const
     return set;
 }
 
-void PGFSettings::slotTogglePGFLossLess(bool b)
+void DImgPGFExportSettings::slotTogglePGFLossLess(bool b)
 {
     d->PGFcompression->setEnabled(!b);
     d->labelPGFcompression->setEnabled(!b);
