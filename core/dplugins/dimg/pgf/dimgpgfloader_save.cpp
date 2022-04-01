@@ -125,10 +125,18 @@ bool DImgPGFLoader::save(const QString& filePath, DImgLoaderObserver* const obse
 
     try
     {
+        QVariant losslessAttr = imageGetAttribute(QLatin1String("lossless"));
+        bool lossless         = losslessAttr.isValid() ? losslessAttr.toBool() : false;
+
         // NOTE: if quality = 0 -> lossless compression.
 
-        QVariant qualityAttr = imageGetAttribute(QLatin1String("quality"));
-        int quality          = qualityAttr.isValid() ? qualityAttr.toInt() : 3;
+        int quality           = 0;
+
+        if (!lossless)
+        {
+            QVariant qualityAttr = imageGetAttribute(QLatin1String("quality"));
+            quality              = qualityAttr.isValid() ? qualityAttr.toInt() : 3;
+        }
 
         qCDebug(DIGIKAM_DIMG_LOG_PGF) << "PGF quality: " << quality;
 
