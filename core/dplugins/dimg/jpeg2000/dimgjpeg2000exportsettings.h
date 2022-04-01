@@ -4,7 +4,7 @@
  * https://www.digikam.org
  *
  * Date        : 2007-08-02
- * Description : save JPEG 2000 image options.
+ * Description : JPEG-2000 image export settings widget.
  *
  * Copyright (C) 2007-2022 by Gilles Caulier <caulier dot gilles at gmail dot com>
  *
@@ -21,8 +21,8 @@
  *
  * ============================================================ */
 
-#ifndef DIGIKAM_JP2K_SETTINGS_H
-#define DIGIKAM_JP2K_SETTINGS_H
+#ifndef DIGIKAM_DIMG_JPEG2000_EXPORT_SETTINGS_H
+#define DIGIKAM_DIMG_JPEG2000_EXPORT_SETTINGS_H
 
 // Local includes
 
@@ -31,14 +31,14 @@
 namespace Digikam
 {
 
-class JP2KSettings : public DImgLoaderSettings
+class DImgJPEG2000ExportSettings : public DImgLoaderSettings
 {
     Q_OBJECT
 
 public:
 
-    explicit JP2KSettings(QWidget* const parent = nullptr);
-    ~JP2KSettings() override;
+    explicit DImgJPEG2000ExportSettings(QWidget* const parent = nullptr);
+    ~DImgJPEG2000ExportSettings() override;
 
     /**
      * This widget manage 2 parameters for the image encoding:
@@ -60,4 +60,4 @@ private:
 
 } // namespace Digikam
 
-#endif // DIGIKAM_JP2K_SETTINGS_H
+#endif // DIGIKAM_DIMG_JPEG2000_EXPORT_SETTINGS_H

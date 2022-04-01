@@ -4,7 +4,7 @@
  * https://www.digikam.org
  *
  * Date        : 2007-08-02
- * Description : save JPEG 2000 image options.
+ * Description : JPEG-2000 image export settings widget.
  *
  * Copyright (C) 2007-2022 by Gilles Caulier <caulier dot gilles at gmail dot com>
  *
@@ -21,7 +21,7 @@
  *
  * ============================================================ */
 
-#include "jp2ksettings.h"
+#include "dimgjpeg2000exportsettings.h"
 
 // Qt includes
 
@@ -44,7 +44,7 @@
 namespace Digikam
 {
 
-class Q_DECL_HIDDEN JP2KSettings::Private
+class Q_DECL_HIDDEN DImgJPEG2000ExportSettings::Private
 {
 
 public:
@@ -66,7 +66,7 @@ public:
     DIntNumInput* JPEG2000compression;
 };
 
-JP2KSettings::JP2KSettings(QWidget* const parent)
+DImgJPEG2000ExportSettings::DImgJPEG2000ExportSettings(QWidget* const parent)
     : DImgLoaderSettings(parent),
       d                 (new Private)
 {
@@ -113,12 +113,12 @@ JP2KSettings::JP2KSettings(QWidget* const parent)
             this, SIGNAL(signalSettingsChanged()));
 }
 
-JP2KSettings::~JP2KSettings()
+DImgJPEG2000ExportSettings::~DImgJPEG2000ExportSettings()
 {
     delete d;
 }
 
-void JP2KSettings::setSettings(const DImgLoaderPrms& set)
+void DImgJPEG2000ExportSettings::setSettings(const DImgLoaderPrms& set)
 {
     for (DImgLoaderPrms::const_iterator it = set.constBegin() ; it != set.constEnd() ; ++it)
     {
@@ -135,7 +135,7 @@ void JP2KSettings::setSettings(const DImgLoaderPrms& set)
     slotToggleJPEG2000LossLess(d->JPEG2000LossLess->isChecked());
 }
 
-DImgLoaderPrms JP2KSettings::settings() const
+DImgLoaderPrms DImgJPEG2000ExportSettings::settings() const
 {
     DImgLoaderPrms set;
     set.insert(QLatin1String("quality"),  d->JPEG2000compression->value());
@@ -144,7 +144,7 @@ DImgLoaderPrms JP2KSettings::settings() const
     return set;
 }
 
-void JP2KSettings::slotToggleJPEG2000LossLess(bool b)
+void DImgJPEG2000ExportSettings::slotToggleJPEG2000LossLess(bool b)
 {
     d->JPEG2000compression->setEnabled(!b);
     d->labelJPEG2000compression->setEnabled(!b);
