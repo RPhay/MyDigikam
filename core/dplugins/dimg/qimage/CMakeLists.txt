@@ -19,6 +19,8 @@ include_directories($<TARGET_PROPERTY:Qt${QT_VERSION_MAJOR}::Gui,INTERFACE_INCLU
 set(dimgqimageplugin_SRCS
     ${CMAKE_CURRENT_SOURCE_DIR}/dimgqimageplugin.cpp
     ${CMAKE_CURRENT_SOURCE_DIR}/dimgqimageloader.cpp
+    ${CMAKE_CURRENT_SOURCE_DIR}/dimgqimageloader_load.cpp
+    ${CMAKE_CURRENT_SOURCE_DIR}/dimgqimageloader_save.cpp
 )
 
 DIGIKAM_ADD_DIMG_PLUGIN(NAME    QImage

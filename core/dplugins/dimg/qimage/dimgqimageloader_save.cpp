@@ -1,0 +1,89 @@
+/* ============================================================
+ *
+ * This file is a part of digiKam project
+ * https://www.digikam.org
+ *
+ * Date        : 2005-06-14
+ * Description : A QImage loader for DImg framework - save method.
+ *
+ * Copyright (C) 2005      by Renchi Raju <renchi dot raju at gmail dot com>
+ * Copyright (C) 2006-2021 by Caulier Gilles <caulier dot gilles at gmail dot com>
+ *
+ * This program is free software; you can redistribute it
+ * and/or modify it under the terms of the GNU General
+ * Public License as published by the Free Software Foundation;
+ * either version 2, or (at your option)
+ * any later version.
+ *
+ * This program is distributed in the hope that it will be useful,
+ * but WITHOUT ANY WARRANTY; without even the implied warranty of
+ * MERCHANTABILITY or FITNESS FOR A PARTICULAR PURPOSE.  See the
+ * GNU General Public License for more details.
+ *
+ * ============================================================ */
+
+#include "dimgqimageloader.h"
+
+// Qt includes
+
+#include <QImage>
+#include <QByteArray>
+#include <QColorSpace>
+#include <QImageReader>
+
+// Local includes
+
+#include "digikam_debug.h"
+#include "dimgloaderobserver.h"
+
+namespace DigikamQImageDImgPlugin
+{
+
+bool DImgQImageLoader::save(const QString& filePath, DImgLoaderObserver* const observer)
+{
+    QVariant qualityAttr = imageGetAttribute(QLatin1String("quality"));
+    int quality          = qualityAttr.isValid() ? qualityAttr.toInt() : 90;
+
+    if (quality < 0)
+    {
+        quality = 90;
+    }
+
+    if (quality > 100)
+    {
+        quality = 100;
+    }
+
+    QVariant formatAttr      = imageGetAttribute(QLatin1String("format"));
+    QByteArray format        = formatAttr.toByteArray();
+    QImage image             = m_image->copyQImage();
+    QByteArray iccRawProfile = m_image->getIccProfile().data();
+
+    if (!iccRawProfile.isEmpty())
+    {
+        image.setColorSpace(QColorSpace::fromIccProfile(iccRawProfile));
+    }
+
+    if (observer)
+    {
+        observer->progressInfo(0.1F);
+    }
+
+    // Saving is opaque to us. No support for stopping from observer,
+    // progress info are only pseudo values
+
+    bool success = image.save(filePath, format.toUpper().constData(), quality);
+
+    if (observer && success)
+    {
+        observer->progressInfo(1.0F);
+    }
+
+    imageSetAttribute(QLatin1String("format"), format.toUpper());
+
+    saveMetadata(filePath);
+
+    return success;
+}
+
+} // namespace DigikamQImageDImgPlugin
