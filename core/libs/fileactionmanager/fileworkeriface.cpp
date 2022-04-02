@@ -214,10 +214,22 @@ void FileActionMngrFileWorker::transform(const FileActionItemInfoList& infos, in
                     case DImg::JP2K:
                     case DImg::PGF:
                     case DImg::HEIF:
+                    {
                         rotateLossy = true;
+                        break;
+                    }
 
                     default:
+                    {
+                        // QImage and ImageMagick codecs support
+
+                        if (format == QLatin1String("JXL"))
+                        {
+                            rotateLossy = true;
+                        }
+
                         break;
+                    }
                 }
             }
         }

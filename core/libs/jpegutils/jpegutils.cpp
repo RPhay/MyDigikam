@@ -826,6 +826,11 @@ bool jpegConvert(const QString& src, const QString& dest, const QString& documen
             image.setAttribute(QLatin1String("quality"), 100);    // LossLess
         }
 
+        if (format.toUpper() == QLatin1String("JXL"))
+        {
+            image.setAttribute(QLatin1String("quality"), 100);    // LossLess
+        }
+
         if (format.toUpper() == QLatin1String("PGF"))
         {
             image.setAttribute(QLatin1String("quality"), 0);      // LossLess
