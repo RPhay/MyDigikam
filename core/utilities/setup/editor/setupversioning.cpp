@@ -47,6 +47,7 @@
 
 #include "applicationsettings.h"
 #include "versionmanager.h"
+#include "dpluginloader.h"
 
 namespace Digikam
 {
@@ -152,59 +153,107 @@ SetupVersioning::SetupVersioning(QWidget* const parent)
     // keep in sync with VersionManager::workspaceFileFormats()
 
     d->formatBox           = new QComboBox;
-    d->formatBox->addItem(i18nc("@label:listbox", "JPEG"),      QLatin1String("JPG"));
-    d->formatBox->addItem(i18nc("@label:listbox", "TIFF"),      QLatin1String("TIFF"));
-    d->formatBox->addItem(i18nc("@label:listbox", "PNG"),       QLatin1String("PNG"));
-    d->formatBox->addItem(i18nc("@label:listbox", "PGF"),       QLatin1String("PGF"));
-    d->formatBox->addItem(i18nc("@label:listbox", "JPEG 2000"), QLatin1String("JP2"));
+    d->formatBox->addItem(i18nc("@label:listbox", "JPEG"),        QLatin1String("JPG"));
+    d->formatBox->addItem(i18nc("@label:listbox", "TIFF"),        QLatin1String("TIFF"));
+    d->formatBox->addItem(i18nc("@label:listbox", "PNG"),         QLatin1String("PNG"));
+    d->formatBox->addItem(i18nc("@label:listbox", "PGF"),         QLatin1String("PGF"));
+
+#ifdef HAVE_JASPER
+
+    d->formatBox->addItem(i18nc("@label:listbox", "JPEG-2000"),   QLatin1String("JP2"));
+
+#endif
+
+#ifdef HAVE_X265
+
+    d->formatBox->addItem(i18nc("@label:listbox", "HEIF"),        QLatin1String("HEIF"));
+
+#endif
+
+    bool hasJXLSupport = DPluginLoader::instance()->canExport(QLatin1String("JXL"));
+
+    if (hasJXLSupport)
+    {
+        d->formatBox->addItem(i18nc("@label:listbox", "JPEG-XL"), QLatin1String("JXL"));
+    }
+
     d->formatBox->insertSeparator(1);
     d->formatBox->insertSeparator(4);
 
-    d->formatBox->setWhatsThis(xi18nc("@info:whatsthis",
-                                      "<title>Default File Format for Saving</title>"
-                                      "<para>Select the file format in which edited images are saved automatically. "
-                                      "Format-specific options, like compression settings, "
-                                      "can be configured on the <interface>Format Options</interface> tab.</para>"
-                                      "<para><list>"
+    QString formatHelp = xi18nc("@info:whatsthis",
+                                "<title>Default File Format for Saving</title>"
+                                "<para>Select the file format in which edited images are saved automatically. "
+                                "Format-specific options, like compression settings, "
+                                "can be configured on the <interface>Format Options</interface> tab.</para>"
+                                "<para><list>"
 
-                                      // Lossy: JPEG
+                                // Lossy: JPEG
 
-                                      "<item>"
-                                      "<emphasis strong='true'>JPEG</emphasis>: "
-                                      "JPEG is the most commonly used file format, but it employs lossy compression, "
-                                      "which means that with each saving operation some image information will be irreversibly lost. "
-                                      "JPEG offers a good compression rate, resulting in smaller files. "
-                                      "</item>"
+                                "<item>"
+                                "<emphasis strong='true'>JPEG</emphasis>: "
+                                "JPEG is the most commonly used file format, but it employs lossy compression, "
+                                "which means that with each saving operation some image information will be irreversibly lost. "
+                                "JPEG offers a good compression rate, resulting in smaller files. "
+                                "</item>"
 
-                                      // Traditional lossless: PNG, TIFF
+                                // Traditional lossless: PNG, TIFF
 
-                                      "<item>"
-                                      "<emphasis strong='true'>PNG</emphasis>: "
-                                      "A widely used format employing lossless compression. "
-                                      "The files, though, will be larger because PNG does not achieve very good compression rates."
-                                      "</item>"
-                                      "<item>"
-                                      "<emphasis strong='true'>TIFF</emphasis>: "
-                                      "A commonly used format, usually uncompressed or with modest lossless compression. "
-                                      "Resulting files will be large, but without quality loss due to compression. "
-                                      "</item>"
+                                "<item>"
+                                "<emphasis strong='true'>PNG</emphasis>: "
+                                "A widely used format employing lossless compression. "
+                                "The files, though, will be larger because PNG does not achieve very good compression rates."
+                                "</item>"
+                                "<item>"
+                                "<emphasis strong='true'>TIFF</emphasis>: "
+                                "A commonly used format, usually uncompressed or with modest lossless compression. "
+                                "Resulting files will be large, but without quality loss due to compression. "
+                                "</item>"
 
-                                      // Modern lossless: PGF, JPEG 2000
+                                // Modern lossless: PGF, JPEG-2000, JPEG-XL
 
-                                      "<item>"
-                                      "<emphasis strong='true'>PGF</emphasis>: "
-                                      "This is a technically superior file format offering good compression rates "
-                                      "with either lossy or lossless compression. "
-                                      "But it is not yet widely used and supported, so your friends may not directly be able to open these files, "
-                                      "and you may not be able to directly publish them on the web. "
-                                      "</item>"
-                                      "<item>"
-                                      "<emphasis strong='true'>JPEG 2000</emphasis>: "
-                                      "JPEG 2000 is similar to PGF. Loading or saving is slower, the compression rate is better, "
-                                      "and the format more widely supported, though still not comparable "
-                                      "to the tradition formats JPEG, PNG or TIFF. "
-                                      "</item>"
-                                      "</list></para>"));
+                                "<item>"
+                                "<emphasis strong='true'>PGF</emphasis>: "
+                                "This is a technically superior file format offering good compression rates "
+                                "with either lossy or lossless compression. "
+                                "But it is not yet widely used and supported, so your friends may not directly be able to open these files, "
+                                "and you may not be able to directly publish them on the web. "
+                                "</item>");
+
+#ifdef HAVE_JASPER
+
+    formatHelp.append(xi18nc("@info:whatsthis",
+                             "<item>"
+                             "<emphasis strong='true'>JPEG-2000</emphasis>: "
+                             "JPEG-2000 is similar to PGF. Loading or saving is slower, the compression rate is better, "
+                             "and the format more widely supported, though still not comparable "
+                             "to the tradition formats JPEG, PNG or TIFF. "
+                             "</item>"));
+
+#endif
+
+#ifdef HAVE_X265
+
+    formatHelp.append(xi18nc("@info:whatsthis",
+                             "<item>"
+                             "<emphasis strong='true'>HEIF</emphasis>: "
+                             "High Efficiency Image File Format (HEIF) is a container format for storing individual images. "
+                             "A HEIF image using HEVC codec (H.265) requires less storage space than the equivalent quality JPEG. "
+                             "</item>"));
+
+#endif
+
+    if (hasJXLSupport)
+    {
+        formatHelp.append(xi18nc("@info:whatsthis",
+                                 "<item>"
+                                 "<emphasis strong='true'>JPEG-XL</emphasis>: "
+                                 "JPEG-XL is a royalty-free raster-graphics file format that supports lossless compression. "
+                                 "It is designed to outperform existing raster formats and thus to become their universal replacement. "
+                                 "</item>"));
+    }
+
+    formatHelp.append(QLatin1String("</list></para>"));
+    d->formatBox->setWhatsThis(formatHelp);
 
     d->infoFormat = new QPushButton;
     d->infoFormat->setIcon(QIcon::fromTheme(QLatin1String("dialog-information")));
