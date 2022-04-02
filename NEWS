@@ -4,6 +4,9 @@ digiKam 8.0.0 - Release date: 2022-xx-xx
 NEW FEATURES:
 
 General  : Port code to Qt6 and KF6 framework.
+General  : Add JPEG-XL export settings everywhere.
+           Add convert to lossless JPEG-XL while importing from camera.
+           Add JPEG-XL converter in Batch Queue Manager.
 Usability: Add hamburger menu to tool-bar if main menu is hidden.
 
 *****************************************************************************************************
