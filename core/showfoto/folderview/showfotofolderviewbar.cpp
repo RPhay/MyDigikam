@@ -297,7 +297,8 @@ ShowfotoFolderViewBar::ShowfotoFolderViewBar(ShowfotoFolderViewSideBar* const si
     d->typeMimesCombo->insertItem(TYPE_MIME_PNG,   i18nc("@item: filter type mime", "PNG images"),          QLatin1String("*.PNG"));
     d->typeMimesCombo->insertItem(TYPE_MIME_PNG,   i18nc("@item: filter type mime", "PGF images"),          QLatin1String("*.PGF"));
     d->typeMimesCombo->insertItem(TYPE_MIME_HEIF,  i18nc("@item: filter type mime", "HEIF images"),         QLatin1String("*.HEIF *.HEIC"));
-    d->typeMimesCombo->insertItem(TYPE_MIME_HEIF,  i18nc("@item: filter type mime", "DNG images"),          QLatin1String("*.DNG"));
+    d->typeMimesCombo->insertItem(TYPE_MIME_JXL,   i18nc("@item: filter type mime", "JPEG-XL images"),      QLatin1String("*.JXL"));
+    d->typeMimesCombo->insertItem(TYPE_MIME_DNG,   i18nc("@item: filter type mime", "DNG images"),          QLatin1String("*.DNG"));
     d->typeMimesCombo->insertItem(TYPE_MIME_RAW,   i18nc("@item: filter type mime", "RAW images"),          DRawDecoder::rawFiles());
 
     QString filter;

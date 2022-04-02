@@ -520,6 +520,16 @@ bool ItemFilterSettings::matches(const ItemInfo& info, bool* const foundText) co
             break;
         }
 
+        case MimeFilter::JPEGXLFiles:
+        {
+            if (info.format() != QLatin1String("JXL"))
+            {
+                match = false;
+            }
+
+            break;
+        }
+
         case MimeFilter::PNGFiles:
         {
             if (info.format() != QLatin1String("PNG"))

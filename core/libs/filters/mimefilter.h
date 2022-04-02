@@ -44,6 +44,7 @@ public:
         NoRAWFiles,
         JPGFiles,
         JPEG2000Files,
+        JPEGXLFiles,
         PNGFiles,
         TIFFiles,
         PGFFiles,
