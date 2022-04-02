@@ -74,7 +74,8 @@ public:
 
 #endif // HAVE_X265
 
-        PGFOptions      (nullptr)
+        PGFOptions      (nullptr),
+        JXLOptions      (nullptr)
     {
     }
 
@@ -101,6 +102,7 @@ public:
 #endif // HAVE_X265
 
     DImgLoaderSettings* PGFOptions;
+    DImgLoaderSettings* JXLOptions;
 };
 
 FileSaveOptionsBox::FileSaveOptionsBox(QWidget* const parent)
@@ -114,7 +116,7 @@ FileSaveOptionsBox::FileSaveOptionsBox(QWidget* const parent)
     d->noneOptions               = new QWidget(this);
     d->noneGrid                  = new QGridLayout(d->noneOptions);
     d->noneGrid->setSpacing(qMin(QApplication::style()->pixelMetric(QStyle::PM_LayoutHorizontalSpacing),
-                             QApplication::style()->pixelMetric(QStyle::PM_LayoutVerticalSpacing)));
+                                 QApplication::style()->pixelMetric(QStyle::PM_LayoutVerticalSpacing)));
     d->noneOptions->setLayout(d->noneGrid);
     d->labelNone                 = new QLabel(i18n("No options available"), d->noneOptions);
     d->noneGrid->addWidget(d->labelNone, 0, 0, 0, 1);
@@ -149,6 +151,17 @@ FileSaveOptionsBox::FileSaveOptionsBox(QWidget* const parent)
     d->PGFOptions      = ploader->exportWidget(QLatin1String("PGF"));
     d->PGFOptions->setParent(this);
 
+    //-- JXL Settings -------------------------------------------------
+
+    // NOTE: JXL support depend of JXL QImage loader plugin availability.
+
+    d->JXLOptions      = ploader->exportWidget(QLatin1String("JXL"));
+
+    if (d->JXLOptions)
+    {
+        d->JXLOptions->setParent(this);
+    }
+
     //-- HEIF Settings -------------------------------------------------
 
 #ifdef HAVE_X265
@@ -160,24 +173,29 @@ FileSaveOptionsBox::FileSaveOptionsBox(QWidget* const parent)
 
     //-----------------------------------------------------------------------
 
-    insertWidget(DImg::NONE, d->noneOptions);
-    insertWidget(DImg::JPEG, d->JPEGOptions);
-    insertWidget(DImg::PNG,  d->PNGOptions);
-    insertWidget(DImg::TIFF, d->TIFFOptions);
+    insertWidget(NONE,        d->noneOptions);
+    insertWidget(JPEG,        d->JPEGOptions);
+    insertWidget(PNG,         d->PNGOptions);
+    insertWidget(TIFF,        d->TIFFOptions);
 
 #ifdef HAVE_JASPER
 
-    insertWidget(DImg::JP2K, d->JPEG2000Options);
+    insertWidget(JP2K,        d->JPEG2000Options);
 
 #endif // HAVE_JASPER
 
-    insertWidget(DImg::PGF,  d->PGFOptions);
+    insertWidget(PGF,         d->PGFOptions);
 
 #ifdef HAVE_X265
 
-    insertWidget(DImg::HEIF, d->HEIFOptions);
+    insertWidget(HEIF,        d->HEIFOptions);
 
 #endif // HAVE_X265
+
+    if (d->JXLOptions)
+    {
+        insertWidget(JXL, d->JXLOptions);
+    }
 
     //-----------------------------------------------------------------------
 
@@ -192,10 +210,10 @@ FileSaveOptionsBox::~FileSaveOptionsBox()
 void FileSaveOptionsBox::setImageFileFormat(const QString& ext)
 {
     qCDebug(DIGIKAM_WIDGETS_LOG) << "Format selected: " << ext;
-    setCurrentIndex(discoverFormat(ext, DImg::NONE));
+    setCurrentIndex(discoverFormat(ext, NONE));
 }
 
-DImg::FORMAT FileSaveOptionsBox::discoverFormat(const QString& filename, DImg::FORMAT fallback)
+FileSaveOptionsBox::FORMAT FileSaveOptionsBox::discoverFormat(const QString& filename, FileSaveOptionsBox::FORMAT fallback)
 {
     qCDebug(DIGIKAM_WIDGETS_LOG) << "Trying to discover format based on filename '" << filename
                                  << "', fallback = " << fallback;
@@ -216,19 +234,19 @@ DImg::FORMAT FileSaveOptionsBox::discoverFormat(const QString& filename, DImg::F
 
     ext = ext.toUpper();
 
-    DImg::FORMAT format = fallback;
+    FORMAT format = fallback;
 
     if      (ext.contains(QLatin1String("JPEG")) || ext.contains(QLatin1String("JPG")) || ext.contains(QLatin1String("JPE")))
     {
-        format = DImg::JPEG;
+        format = JPEG;
     }
     else if (ext.contains(QLatin1String("PNG")))
     {
-        format = DImg::PNG;
+        format = PNG;
     }
     else if (ext.contains(QLatin1String("TIFF")) || ext.contains(QLatin1String("TIF")))
     {
-        format = DImg::TIFF;
+        format = TIFF;
     }
 
 #ifdef HAVE_JASPER
@@ -236,7 +254,7 @@ DImg::FORMAT FileSaveOptionsBox::discoverFormat(const QString& filename, DImg::F
     else if (ext.contains(QLatin1String("JP2")) || ext.contains(QLatin1String("JPX")) || ext.contains(QLatin1String("JPC")) ||
              ext.contains(QLatin1String("PGX")) || ext.contains(QLatin1String("J2K")))
     {
-        format = DImg::JP2K;
+        format = JP2K;
     }
 
 #endif // HAVE_JASPER
@@ -245,14 +263,18 @@ DImg::FORMAT FileSaveOptionsBox::discoverFormat(const QString& filename, DImg::F
 
     else if (ext.contains(QLatin1String("HEIC")) || ext.contains(QLatin1String("HEIF")))
     {
-        format = DImg::HEIF;
+        format = HEIF;
     }
 
 #endif // HAVE_X265
 
     else if (ext.contains(QLatin1String("PGF")))
     {
-        format = DImg::PGF;
+        format = PGF;
+    }
+    else if (ext.contains(QLatin1String("JXL")))
+    {
+        format = JXL;
     }
     else
     {
@@ -296,13 +318,19 @@ void FileSaveOptionsBox::applySettings()
 
 #endif // HAVE_X265
 
+    if (d->JXLOptions)
+    {
+        group.writeEntry(QLatin1String("JXLCompression"),  d->JXLOptions->settings()[QLatin1String("quality")].toInt());
+        group.writeEntry(QLatin1String("JXLLossLess"),     d->JXLOptions->settings()[QLatin1String("lossless")].toBool());
+    }
+
     config->sync();
 }
 
 void FileSaveOptionsBox::readSettings()
 {
     DImgLoaderPrms set;
-    
+
     KSharedConfig::Ptr config = KSharedConfig::openConfig();
     KConfigGroup group        = config->group("ImageViewer Settings");
 
@@ -312,13 +340,13 @@ void FileSaveOptionsBox::readSettings()
     d->JPEGOptions->setSettings(set);
 
     // ---
-    
+
     set.clear();
     set.insert(QLatin1String("quality"),  group.readEntry(QLatin1String("PNGCompression"),         9));
     d->PNGOptions->setSettings(set);
 
     // ---
-    
+
     set.clear();
     set.insert(QLatin1String("compress"), group.readEntry(QLatin1String("TIFFCompression"),        false));
     d->TIFFOptions->setSettings(set);
@@ -335,7 +363,7 @@ void FileSaveOptionsBox::readSettings()
     set.clear();
     set.insert(QLatin1String("quality"),  group.readEntry(QLatin1String("PGFCompression"),         3));
     set.insert(QLatin1String("lossless"), group.readEntry(QLatin1String("PGFLossLess"),            true));
-    d->PGFOptions->setSettings(set);  
+    d->PGFOptions->setSettings(set);
 
 #ifdef HAVE_X265
 
@@ -346,6 +374,13 @@ void FileSaveOptionsBox::readSettings()
 
 #endif // HAVE_X265
 
+    if (d->JXLOptions)
+    {
+        set.clear();
+        set.insert(QLatin1String("quality"),  group.readEntry(QLatin1String("JXLCompression"),     75));
+        set.insert(QLatin1String("lossless"), group.readEntry(QLatin1String("JXLLossLess"),        true));
+        d->JXLOptions->setSettings(set);
+    }
 }
 
 } // namespace Digikam

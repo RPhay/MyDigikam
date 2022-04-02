@@ -32,7 +32,6 @@
 
 // Local includes
 
-#include "dimg.h"
 #include "digikam_export.h"
 
 namespace Digikam
@@ -41,6 +40,24 @@ namespace Digikam
 class DIGIKAM_EXPORT FileSaveOptionsBox : public QStackedWidget
 {
     Q_OBJECT
+
+public:
+
+    enum FORMAT
+    {
+        /**
+         * NOTE: Order is important here:
+         * See filesaveoptionbox.cpp which use these values to fill a stack of widgets.
+         */
+        NONE = 0,
+        JPEG,
+        PNG,
+        TIFF,
+        JP2K,
+        PGF,
+        HEIF,
+        JXL
+    };
 
 public:
 
@@ -68,7 +85,7 @@ public:
      * @return file format guessed from the file name or the given fallback
      *         format if no format could be guessed based on the file name
      */
-    DImg::FORMAT discoverFormat(const QString& filename, DImg::FORMAT fallback = DImg::NONE);
+    FORMAT discoverFormat(const QString& filename, FORMAT fallback = NONE);
 
     void setImageFileFormat(const QString&);
 

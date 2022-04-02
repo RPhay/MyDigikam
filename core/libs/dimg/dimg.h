@@ -64,10 +64,6 @@ public:
 
     enum FORMAT
     {
-        /**
-         * NOTE: Order is important here:
-         * See filesaveoptionbox.cpp which use these values to fill a stack of widgets.
-         */
         NONE = 0,
         JPEG,
         PNG,

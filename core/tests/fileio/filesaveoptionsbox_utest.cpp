@@ -29,7 +29,6 @@
 // Local includes
 
 #include "filesaveoptionsbox.h"
-#include "dimg.h"
 
 using namespace Digikam;
 
@@ -45,26 +44,26 @@ void FileSaveOptionsBoxTest::testDiscoverFormat_data()
     QTest::addColumn<QString>("filename");
     QTest::addColumn<int>("format");
 
-    QTest::newRow("jpg") << "test.jpg" << (int) DImg::JPEG;
-    QTest::newRow("jpeg") << "test.jpeg" << (int) DImg::JPEG;
-    QTest::newRow("JPG") << "test.JPG" << (int) DImg::JPEG;
-    QTest::newRow("jpg") << "jpg" << (int) DImg::JPEG;
-    QTest::newRow("jpeg") << "jpeg" << (int) DImg::JPEG;
+    QTest::newRow("jpg") << "test.jpg" << (int) FileSaveOptionsBox::JPEG;
+    QTest::newRow("jpeg") << "test.jpeg" << (int) FileSaveOptionsBox::JPEG;
+    QTest::newRow("JPG") << "test.JPG" << (int) FileSaveOptionsBox::JPEG;
+    QTest::newRow("jpg") << "jpg" << (int) FileSaveOptionsBox::JPEG;
+    QTest::newRow("jpeg") << "jpeg" << (int) FileSaveOptionsBox::JPEG;
 
-    QTest::newRow("bla.tiff.jpeg") << "bla.tiff.jpeg" << (int) DImg::JPEG;
-    QTest::newRow("bla.jpg.tiff") << "bla.jpg.tiff" << (int) DImg::TIFF;
+    QTest::newRow("bla.tiff.jpeg") << "bla.tiff.jpeg" << (int) FileSaveOptionsBox::JPEG;
+    QTest::newRow("bla.jpg.tiff") << "bla.jpg.tiff" << (int) FileSaveOptionsBox::TIFF;
 
 #ifdef HAVE_JASPER
-    QTest::newRow("bla.png.jpeg.pgx") << "bla.png.jpeg.pgx" << (int) DImg::JP2K;
+    QTest::newRow("bla.png.jpeg.pgx") << "bla.png.jpeg.pgx" << (int) FileSaveOptionsBox::JP2K;
 #endif // HAVE_JASPER
 
 #ifdef HAVE_X265
-    QTest::newRow("bla.png.jpeg.heic") << "bla.png.jpeg.heic" << (int) DImg::HEIF;
+    QTest::newRow("bla.png.jpeg.heic") << "bla.png.jpeg.heic" << (int) FileSaveOptionsBox::HEIF;
 #endif // HAVE_X265
 
-    QTest::newRow("pgf") << "PGF" << (int) DImg::PGF;
+    QTest::newRow("pgf") << "PGF" << (int) FileSaveOptionsBox::PGF;
 
-    QTest::newRow("unknwon") << "i.dont.know" << (int) DImg::NONE; // krazy:exclude=spelling
+    QTest::newRow("unknwon") << "i.dont.know" << (int) FileSaveOptionsBox::NONE; // krazy:exclude=spelling
 }
 
 void FileSaveOptionsBoxTest::testDiscoverFormat()
@@ -79,6 +78,6 @@ void FileSaveOptionsBoxTest::testDiscoverFormat()
 void FileSaveOptionsBoxTest::testDiscoverFormatDefault()
 {
     FileSaveOptionsBox box;
-    QCOMPARE(box.discoverFormat(QLatin1String("unknown")), DImg::NONE);
-    QCOMPARE(box.discoverFormat(QLatin1String("unknown"), DImg::PGF), DImg::PGF);
+    QCOMPARE(box.discoverFormat(QLatin1String("unknown")), FileSaveOptionsBox::NONE);
+    QCOMPARE(box.discoverFormat(QLatin1String("unknown"), FileSaveOptionsBox::PGF), FileSaveOptionsBox::PGF);
 }

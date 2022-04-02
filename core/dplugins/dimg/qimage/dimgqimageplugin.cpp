@@ -37,6 +37,7 @@
 #include "digikam_debug.h"
 #include "digikam_globals.h"
 #include "dimgqimageloader.h"
+#include "dimgjxlexportsettings.h"
 
 namespace DigikamQImageDImgPlugin
 {
@@ -165,7 +166,10 @@ DImgLoader* DImgQImagePlugin::loader(DImg* const image, const DRawDecoding&) con
 
 DImgLoaderSettings* DImgQImagePlugin::exportWidget(const QString& format) const
 {
-    Q_UNUSED(format);
+    if (format.toUpper() == QLatin1String("JXL"))
+    {
+        return (new DImgJXLExportSettings());
+    }
 
     return nullptr;
 }
