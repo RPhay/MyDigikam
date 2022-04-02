@@ -42,6 +42,7 @@
 
 #include "digikam_debug.h"
 #include "digikam_config.h"
+#include "dpluginloader.h"
 #include "templateselector.h"
 #include "ddatetimeedit.h"
 #include "template.h"
@@ -108,9 +109,14 @@ AdvancedSettings::AdvancedSettings(QWidget* const parent)
 
 #ifdef HAVE_X265
 
-    d->losslessFormat->insertItem(4, QLatin1String("HEIC"));
+    d->losslessFormat->insertItem(4, QLatin1String("HEIF"));
 
 #endif // HAVE_X265
+
+    if (DPluginLoader::instance()->canExport(QLatin1String("JXL")))
+    {
+        d->losslessFormat->insertItem(5, QLatin1String("JXL"));
+    }
 
     onFlyVlay->addWidget(d->templateSelector);
     onFlyVlay->addWidget(d->documentNameCheck);

@@ -142,6 +142,16 @@ class DIGIKAM_EXPORT DPluginLoader : public QObject
     void appendPluginToWhiteList(const QString& filename);
 
     /**
+     * Return true if format is supported by a DPluginDImg to import image.
+     */
+    bool canImport(const QString& format) const;
+
+    /**
+     * Return true if format is supported by a DPluginDImg to export image.
+     */
+    bool canExport(const QString& format) const;
+
+    /**
      * Return a new widget instance from a DPluginDImg to show settings while exporting image to specified format.
      * Return nullptr if format is not supported or if no settings widget is available for this format.
      */

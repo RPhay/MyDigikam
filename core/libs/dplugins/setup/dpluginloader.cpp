@@ -354,4 +354,34 @@ DImgLoaderSettings* DPluginLoader::exportWidget(const QString& format) const
     return nullptr;
 }
 
+bool DPluginLoader::canImport(const QString& format) const
+{
+    foreach (DPlugin* const plugin, d->allPlugins)
+    {
+        DPluginDImg* const dimg = dynamic_cast<DPluginDImg*>(plugin);
+
+        if (dimg && dimg->canRead(QFileInfo(QString::fromLatin1("foo.%1").arg(format)), true))
+        {
+            return true;
+        }
+    }
+
+    return false;
+}
+
+bool DPluginLoader::canExport(const QString& format) const
+{
+    foreach (DPlugin* const plugin, d->allPlugins)
+    {
+        DPluginDImg* const dimg = dynamic_cast<DPluginDImg*>(plugin);
+
+        if (dimg && dimg->canWrite(format))
+        {
+            return true;
+        }
+    }
+
+    return false;
+}
+
 } // namespace Digikam
