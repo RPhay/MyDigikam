@@ -1,0 +1,96 @@
+/* ============================================================
+ *
+ * This file is a part of digiKam project
+ * https://www.digikam.org
+ *
+ * Date        : 2018-07-30
+ * Description : a BQM plugin to convert to JXL.
+ *
+ * Copyright (C) 2018-2022 by Gilles Caulier <caulier dot gilles at gmail dot com>
+ *
+ * This program is free software; you can redistribute it
+ * and/or modify it under the terms of the GNU General
+ * Public License as published by the Free Software Foundation;
+ * either version 2, or (at your option) any later version.
+ *
+ * This program is distributed in the hope that it will be useful,
+ * but WITHOUT ANY WARRANTY; without even the implied warranty of
+ * MERCHANTABILITY or FITNESS FOR A PARTICULAR PURPOSE.  See the
+ * GNU General Public License for more details.
+ *
+ * ============================================================ */
+
+#include "converttojxlplugin.h"
+
+// Qt includes
+
+#include <QPointer>
+#include <QString>
+#include <QApplication>
+
+// KDE includes
+
+#include <klocalizedstring.h>
+
+// Local includes
+
+#include "digikam_debug.h"
+#include "converttojxl.h"
+
+namespace DigikamBqmConvertToJxlPlugin
+{
+
+ConvertToJxlPlugin::ConvertToJxlPlugin(QObject* const parent)
+    : DPluginBqm(parent)
+{
+}
+
+ConvertToJxlPlugin::~ConvertToJxlPlugin()
+{
+}
+
+QString ConvertToJxlPlugin::name() const
+{
+    return i18n("Convert To JXL");
+}
+
+QString ConvertToJxlPlugin::iid() const
+{
+    return QLatin1String(DPLUGIN_IID);
+}
+
+QIcon ConvertToJxlPlugin::icon() const
+{
+    return QIcon::fromTheme(QLatin1String("image-x-generic"));
+}
+
+QString ConvertToJxlPlugin::description() const
+{
+    return i18n("A tool to convert images to JXL format");
+}
+
+QString ConvertToJxlPlugin::details() const
+{
+    return i18n("<p>This Batch Queue Manager tool can convert images data to JPEG-XL format.</p>"
+                "<p>JPEG-XL is a royalty-free raster-graphics file format that supports both lossy and lossless compression. It is designed to outperform existing raster formats and thus to become their universal replacement.</p>"
+                "<p>See details about this format from <a href='https://en.wikipedia.org/wiki/JPEG_XL'>this page</a>.</p>");
+}
+
+QList<DPluginAuthor> ConvertToJxlPlugin::authors() const
+{
+    return QList<DPluginAuthor>()
+            << DPluginAuthor(QString::fromUtf8("Gilles Caulier"),
+                             QString::fromUtf8("caulier dot gilles at gmail dot com"),
+                             QString::fromUtf8("(C) 2009-2022"))
+            ;
+}
+
+void ConvertToJxlPlugin::setup(QObject* const parent)
+{
+    ConvertToJXL* const tool = new ConvertToJXL(parent);
+    tool->setPlugin(this);
+
+    addTool(tool);
+}
+
+} // namespace DigikamBqmConvertToJxlPlugin

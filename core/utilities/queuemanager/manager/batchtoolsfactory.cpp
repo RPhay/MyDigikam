@@ -72,6 +72,7 @@ BatchToolsFactory::BatchToolsFactory()
 {
     d->iface                 = new DBInfoIface(this);
     DPluginLoader* const dpl = DPluginLoader::instance();
+    bool hasJXLSupport       = dpl->canExport(QLatin1String("JXL"));
 
     foreach (DPlugin* const p, dpl->allPlugins())
     {
@@ -79,6 +80,16 @@ BatchToolsFactory::BatchToolsFactory()
 
         if (bqm)
         {
+            // NOTE: Do not load JXL convert BQM plugin if DImg do not have JXL support.
+
+            if (
+                (bqm->iid() == QLatin1String("org.kde.digikam.plugin.bqm.ConvertToJxl")) &&
+                !hasJXLSupport
+               )
+            {
+                continue;
+            }
+
             bqm->setup(this);
 
             qCDebug(DIGIKAM_GENERAL_LOG) << "BQM plugin named" << bqm->name()

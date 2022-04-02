@@ -105,7 +105,8 @@ public:
 
 #endif // HAVE_X265
 
-        pgfSettings             (nullptr)
+        pgfSettings             (nullptr),
+        jxlSettings             (nullptr)
     {
     }
 
@@ -148,6 +149,7 @@ public:
 #endif // HAVE_X265
 
     DImgLoaderSettings*    pgfSettings;
+    DImgLoaderSettings*    jxlSettings;
 };
 
 QueueSettingsView::QueueSettingsView(QWidget* const parent)
@@ -269,7 +271,7 @@ QueueSettingsView::QueueSettingsView(QWidget* const parent)
     sv4->setWidget(spanel);
     sv4->setWidgetResizable(true);
     DPluginLoader* const ploader = DPluginLoader::instance();
-    
+
     QGroupBox* const  box1   = new QGroupBox;
     QVBoxLayout* const lbox1 = new QVBoxLayout;
     d->jpgSettings           = ploader->exportWidget(QLatin1String("JPEG"));
@@ -325,6 +327,18 @@ QueueSettingsView::QueueSettingsView(QWidget* const parent)
     slay->addWidget(box6);
 
 #endif // HAVE_X265
+
+    d->jxlSettings           = ploader->exportWidget(QLatin1String("JXL"));
+
+    if (d->jxlSettings)
+    {
+        QGroupBox* const  box7   = new QGroupBox;
+        QVBoxLayout* const lbox7 = new QVBoxLayout;
+        d->jxlSettings->setParent(this);
+        lbox7->addWidget(d->jxlSettings);
+        box7->setLayout(lbox7);
+        slay->addWidget(box7);
+    }
 
     slay->setContentsMargins(spacing, spacing, spacing, spacing);
     slay->setSpacing(spacing);
@@ -387,11 +401,12 @@ QueueSettingsView::QueueSettingsView(QWidget* const parent)
     connect(d->pgfSettings, SIGNAL(signalSettingsChanged()),
             this, SLOT(slotSettingsChanged()));
 
+    connect(d->jxlSettings, SIGNAL(signalSettingsChanged()),
+            this, SLOT(slotSettingsChanged()));
+
     // --------------------------------------------------------
 
     QTimer::singleShot(0, this, SLOT(slotResetSettings()));
-
-    // --------------------------------------------------------
 }
 
 QueueSettingsView::~QueueSettingsView()
@@ -450,7 +465,7 @@ void QueueSettingsView::slotResetSettings()
     d->jpgSettings->setSettings(set);
 
     // ---
-    
+
     set.clear();
     set.insert(QLatin1String("quality"),  settings.ioFileSettings.PNGCompression);
     d->pngSettings->setSettings(set);
@@ -467,7 +482,7 @@ void QueueSettingsView::slotResetSettings()
     set.insert(QLatin1String("quality"),  settings.ioFileSettings.JPEG2000Compression);
     set.insert(QLatin1String("lossless"), settings.ioFileSettings.JPEG2000LossLess);
     d->j2kSettings->setSettings(set);
-    
+
 #endif // HAVE_JASPER
 
     set.clear();
@@ -483,6 +498,14 @@ void QueueSettingsView::slotResetSettings()
     d->heifSettings->setSettings(set);
 
 #endif // HAVE_X265
+
+    if (d->jxlSettings)
+    {
+        set.clear();
+        set.insert(QLatin1String("quality"),  settings.ioFileSettings.JXLCompression);
+        set.insert(QLatin1String("lossless"), settings.ioFileSettings.JXLLossLess);
+        d->jxlSettings->setSettings(set);
+    }
 
     blockSignals(false);
     slotSettingsChanged();
@@ -535,7 +558,7 @@ void QueueSettingsView::slotQueueSelected(int, const QueueSettings& settings, co
     set.insert(QLatin1String("quality"),  settings.ioFileSettings.JPEG2000Compression);
     set.insert(QLatin1String("lossless"), settings.ioFileSettings.JPEG2000LossLess);
     d->j2kSettings->setSettings(set);
-    
+
 #endif // HAVE_JASPER
 
     set.clear();
@@ -552,6 +575,13 @@ void QueueSettingsView::slotQueueSelected(int, const QueueSettings& settings, co
 
 #endif // HAVE_X265
 
+    if (d->jxlSettings)
+    {
+        set.clear();
+        set.insert(QLatin1String("quality"),  settings.ioFileSettings.JXLCompression);
+        set.insert(QLatin1String("lossless"), settings.ioFileSettings.JXLLossLess);
+        d->jxlSettings->setSettings(set);
+    }
 }
 
 void QueueSettingsView::slotSettingsChanged()
@@ -592,7 +622,7 @@ void QueueSettingsView::slotSettingsChanged()
 
     settings.ioFileSettings.JPEG2000Compression = d->j2kSettings->settings()[QLatin1String("quality")].toInt();
     settings.ioFileSettings.JPEG2000LossLess    = d->j2kSettings->settings()[QLatin1String("lossless")].toBool();
-    
+
 #endif // HAVE_JASPER
 
     settings.ioFileSettings.PGFCompression      = d->pgfSettings->settings()[QLatin1String("quality")].toInt();
@@ -604,6 +634,12 @@ void QueueSettingsView::slotSettingsChanged()
     settings.ioFileSettings.HEIFLossLess        = d->heifSettings->settings()[QLatin1String("lossless")].toBool();
 
 #endif // HAVE_X265
+
+    if (d->jxlSettings)
+    {
+        settings.ioFileSettings.JXLCompression  = d->jxlSettings->settings()[QLatin1String("quality")].toInt();
+        settings.ioFileSettings.JXLLossLess     = d->jxlSettings->settings()[QLatin1String("lossless")].toBool();
+    }
 
     emit signalSettingsChanged(settings);
 }

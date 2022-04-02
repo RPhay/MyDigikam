@@ -69,6 +69,9 @@ QueueSettings::QueueSettings()
     ioFileSettings.HEIFLossLess        = group.readEntry(QLatin1String("HEIFLossLess"),        true);
 
 #endif // HAVE_X265
+
+    ioFileSettings.JXLCompression      = group.readEntry(QLatin1String("JXLCompression"),      75);
+    ioFileSettings.JXLLossLess         = group.readEntry(QLatin1String("JXLLossLess"),         true);
 }
 
 QueueSettings::~QueueSettings()
