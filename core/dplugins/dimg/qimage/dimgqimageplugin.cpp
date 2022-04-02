@@ -38,6 +38,7 @@
 #include "digikam_globals.h"
 #include "dimgqimageloader.h"
 #include "dimgjxlexportsettings.h"
+#include "dimgavifexportsettings.h"
 
 namespace DigikamQImageDImgPlugin
 {
@@ -87,6 +88,9 @@ QList<DPluginAuthor> DImgQImagePlugin::authors() const
             << DPluginAuthor(QString::fromUtf8("Renchi Raju"),
                              QString::fromUtf8("renchi dot raju at gmail dot com"),
                              QString::fromUtf8("(C) 2005"))
+            << DPluginAuthor(QString::fromUtf8("Maik Qualmann"),
+                             QString::fromUtf8("metzpinguin at gmail dot com"),
+                             QString::fromUtf8("(C) 2019-2022"))
             << DPluginAuthor(QString::fromUtf8("Gilles Caulier"),
                              QString::fromUtf8("caulier dot gilles at gmail dot com"),
                              QString::fromUtf8("(C) 2006-2022"))
@@ -166,9 +170,13 @@ DImgLoader* DImgQImagePlugin::loader(DImg* const image, const DRawDecoding&) con
 
 DImgLoaderSettings* DImgQImagePlugin::exportWidget(const QString& format) const
 {
-    if (format.toUpper() == QLatin1String("JXL"))
+    if      (format.toUpper() == QLatin1String("JXL"))
     {
         return (new DImgJXLExportSettings());
+    }
+    else if (format.toUpper() == QLatin1String("AVIF"))
+    {
+        return (new DImgAVIFExportSettings());
     }
 
     return nullptr;

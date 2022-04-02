@@ -3,10 +3,10 @@
  * This file is a part of digiKam project
  * https://www.digikam.org
  *
- * Date        : 2007-08-02
+ * Date        : 2022-04-01
  * Description : JPEG-XL image export settings widget.
  *
- * Copyright (C) 2007-2022 by Gilles Caulier <caulier dot gilles at gmail dot com>
+ * Copyright (C) 2022 by Gilles Caulier <caulier dot gilles at gmail dot com>
  *
  * This program is free software; you can redistribute it
  * and/or modify it under the terms of the GNU General
@@ -85,7 +85,7 @@ DImgJXLExportSettings::DImgJXLExportSettings(QWidget* const parent)
     d->JXLcompression->setRange(1, 99, 1);
     d->labelJXLcompression = new QLabel(i18n("JPEG XL quality:"), this);
 
-    d->JXLcompression->setWhatsThis(i18n("<p>The quality value for JPEG 2000 images:</p>"
+    d->JXLcompression->setWhatsThis(i18n("<p>The quality value for JPEG XL images:</p>"
                                          "<p><b>1</b>: low quality (high compression and small "
                                          "file size)<br/>"
                                          "<b>50</b>: medium quality<br/>"
@@ -138,7 +138,7 @@ void DImgJXLExportSettings::setSettings(const DImgLoaderPrms& set)
 DImgLoaderPrms DImgJXLExportSettings::settings() const
 {
     DImgLoaderPrms set;
-    
+
     // NOTE: if quality = 100 --> lossless compression.
 
     set.insert(QLatin1String("quality"),  d->JXLLossLess->isChecked() ? 100 : d->JXLcompression->value());

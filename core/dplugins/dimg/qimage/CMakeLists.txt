@@ -22,6 +22,7 @@ set(dimgqimageplugin_SRCS
     ${CMAKE_CURRENT_SOURCE_DIR}/dimgqimageloader_load.cpp
     ${CMAKE_CURRENT_SOURCE_DIR}/dimgqimageloader_save.cpp
     ${CMAKE_CURRENT_SOURCE_DIR}/dimgjxlexportsettings.cpp
+    ${CMAKE_CURRENT_SOURCE_DIR}/dimgavifexportsettings.cpp
 )
 
 DIGIKAM_ADD_DIMG_PLUGIN(NAME    QImage

@@ -3,8 +3,8 @@
  * This file is a part of digiKam project
  * https://www.digikam.org
  *
- * Date        : 2022-04-01
- * Description : JPEG-XL image export settings widget.
+ * Date        : 2022-04-02
+ * Description : AVIF image export settings widget.
  *
  * Copyright (C) 2022 by Gilles Caulier <caulier dot gilles at gmail dot com>
  *
@@ -21,8 +21,8 @@
  *
  * ============================================================ */
 
-#ifndef DIGIKAM_DIMG_JXL_EXPORT_SETTINGS_H
-#define DIGIKAM_DIMG_JXL_EXPORT_SETTINGS_H
+#ifndef DIGIKAM_DIMG_AVIF_EXPORT_SETTINGS_H
+#define DIGIKAM_DIMG_AVIF_EXPORT_SETTINGS_H
 
 // Local includes
 
@@ -31,18 +31,18 @@
 namespace Digikam
 {
 
-class DImgJXLExportSettings : public DImgLoaderSettings
+class DImgAVIFExportSettings : public DImgLoaderSettings
 {
     Q_OBJECT
 
 public:
 
-    explicit DImgJXLExportSettings(QWidget* const parent = nullptr);
-    ~DImgJXLExportSettings() override;
+    explicit DImgAVIFExportSettings(QWidget* const parent = nullptr);
+    ~DImgAVIFExportSettings() override;
 
     /**
      * This widget manage 2 parameters for the image encoding:
-     * "quality"  as integer [1 - 99].
+     * "quality"  as integer [1 - 100].
      * "lossless" as boolean.
      */
     void setSettings(const DImgLoaderPrms& set);
@@ -50,7 +50,7 @@ public:
 
 private Q_SLOTS:
 
-    void slotToggleJXLLossLess(bool);
+    void slotToggleAVIFLossLess(bool);
 
 private:
 
@@ -60,4 +60,4 @@ private:
 
 } // namespace Digikam
 
-#endif // DIGIKAM_DIMG_JXL_EXPORT_SETTINGS_H
+#endif // DIGIKAM_DIMG_AVIF_EXPORT_SETTINGS_H
