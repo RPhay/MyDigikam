@@ -119,20 +119,22 @@ FocusPointsExtractor::ListAFPoints FocusPointsExtractor::getAFPoints_nikon() con
                                                                                                 << afPointWidth
                                                                                                 << afPointHeight;
 
-    return
-    (
-        ListAFPoints
-        {
-            NikonInternal::create_af_point(
-                                           imageWidth.toFloat(),
-                                           imageHeight.toFloat(),
-                                           afPointWidth.toFloat(),
-                                           afPointHeight.toFloat(),
-                                           af_x_position.toFloat(),
-                                           af_y_position.toFloat()
-                                          )
-        }
-    );
+    ListAFPoints points;
+    FocusPoint afpoint = NikonInternal::create_af_point(
+                                                        imageWidth.toFloat(),
+                                                        imageHeight.toFloat(),
+                                                        afPointWidth.toFloat(),
+                                                        afPointHeight.toFloat(),
+                                                        af_x_position.toFloat(),
+                                                        af_y_position.toFloat()
+                                                       );
+
+    if (afpoint.getSize().isValid())
+    {
+        points << afpoint;
+    }
+
+    return points;
 }
 
 } // namspace Digikam

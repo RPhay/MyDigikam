@@ -92,18 +92,20 @@ FocusPointsExtractor::ListAFPoints FocusPointsExtractor::getAFPoints_panasonic()
 
     // Add point
 
-    return
-    (
-        ListAFPoints
-        {
-            PanasonicInternal::create_af_point(
-                                               af_x_position,
-                                               af_y_position,
-                                               afPointWidth,
-                                               afPointHeight
-                                              )
-        }
-    );
+    ListAFPoints points;
+    FocusPoint afpoint  = PanasonicInternal::create_af_point(
+                                                             af_x_position,
+                                                             af_y_position,
+                                                             afPointWidth,
+                                                             afPointHeight
+                                                            );
+
+    if (afpoint.getSize().isValid())
+    {
+        points << afpoint;
+    }
+
+    return points;
 }
 
 } // namespace Digikam
