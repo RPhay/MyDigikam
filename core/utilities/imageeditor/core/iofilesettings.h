@@ -89,6 +89,12 @@ public:
     /// HEIF lossless compression.
     bool         HEIFLossLess;
 
+    /// JXL quality value.
+    int          JXLCompression;
+
+    /// JXL lossless compression.
+    bool         JXLLossLess;
+
     /// Use Raw Import tool to load a RAW picture.
     bool         useRAWImport;
 

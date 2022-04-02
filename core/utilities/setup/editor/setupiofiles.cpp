@@ -66,6 +66,7 @@ public:
 
 #endif // HAVE_X265
 
+        JXLOptions              (nullptr),
         showImageSettingsDialog (nullptr)
     {
     }
@@ -94,6 +95,8 @@ public:
     static const QString configHEIFCompressionEntry;
     static const QString configHEIFLossLessEntry;
     static const QString configShowImageSettingsDialog;
+    static const QString configJXLCompressionEntry;
+    static const QString configJXLLossLessEntry;
 
     DImgLoaderSettings*  JPEGOptions;
     DImgLoaderSettings*  PNGOptions;
@@ -113,6 +116,7 @@ public:
 
 #endif // HAVE_X265
 
+    DImgLoaderSettings*  JXLOptions;
     QCheckBox*           showImageSettingsDialog;
 };
 
@@ -128,6 +132,8 @@ const QString SetupIOFiles::Private::configPGFLossLessEntry(QLatin1String("PGFLo
 const QString SetupIOFiles::Private::configHEIFCompressionEntry(QLatin1String("HEIFCompression"));
 const QString SetupIOFiles::Private::configHEIFLossLessEntry(QLatin1String("HEIFLossLess"));
 const QString SetupIOFiles::Private::configShowImageSettingsDialog(QLatin1String("ShowImageSettingsDialog"));
+const QString SetupIOFiles::Private::configJXLCompressionEntry(QLatin1String("JXLCompression"));
+const QString SetupIOFiles::Private::configJXLLossLessEntry(QLatin1String("JXLLossLess"));
 
 // --------------------------------------------------------
 
@@ -148,24 +154,31 @@ SetupIOFiles::SetupIOFiles(QWidget* const parent)
 
 #ifdef HAVE_JASPER
 
-    d->JPEG2000Options            = ploader->exportWidget(QLatin1String("JP2"));
+    d->JPEG2000Options           = ploader->exportWidget(QLatin1String("JP2"));
     d->JPEG2000Options->setParent(this);
 
 #endif // HAVE_JASPER
 
-    d->PGFOptions                 = ploader->exportWidget(QLatin1String("PGF"));
+    d->PGFOptions                = ploader->exportWidget(QLatin1String("PGF"));
     d->PGFOptions->setParent(this);
 
 #ifdef HAVE_X265
 
-    d->HEIFOptions                = ploader->exportWidget(QLatin1String("HEIF"));
+    d->HEIFOptions               = ploader->exportWidget(QLatin1String("HEIF"));
     d->HEIFOptions->setParent(this);
 
 #endif // HAVE_X265
 
+    d->JXLOptions                = ploader->exportWidget(QLatin1String("JXL"));
+
+    if (d->JXLOptions)
+    {
+        d->JXLOptions->setParent(this);
+    }
+
     // Show Settings Dialog Option
 
-    d->showImageSettingsDialog = new QCheckBox(panel);
+    d->showImageSettingsDialog   = new QCheckBox(panel);
     d->showImageSettingsDialog->setText(i18n("Show Settings Dialog when Saving Image Files"));
     d->showImageSettingsDialog->setWhatsThis(i18n("<ul><li>Checked: A dialog where settings can be changed when saving image files</li>"
                                                   "<li>Unchecked: Default settings are used when saving image files</li></ul>"));
@@ -187,6 +200,11 @@ SetupIOFiles::SetupIOFiles(QWidget* const parent)
     vbox->addWidget(d->createGroupBox(d->HEIFOptions));
 
 #endif // HAVE_265
+
+    if (d->JXLOptions)
+    {
+        vbox->addWidget(d->createGroupBox(d->JXLOptions));
+    }
 
     vbox->addWidget(d->createGroupBox(d->showImageSettingsDialog));
     vbox->addStretch();
@@ -236,6 +254,13 @@ void SetupIOFiles::applySettings()
     group.writeEntry(d->configHEIFLossLessEntry,        d->HEIFOptions->settings()[QLatin1String("lossless")].toBool());
 
 #endif // HAVE_X265
+
+    
+    if (d->JXLOptions)
+    {
+        group.writeEntry(d->configJXLCompressionEntry,  d->JXLOptions->settings()[QLatin1String("quality")].toInt());
+        group.writeEntry(d->configJXLLossLessEntry,     d->JXLOptions->settings()[QLatin1String("lossless")].toBool());
+    }
 
     group.writeEntry(d->configShowImageSettingsDialog,  d->showImageSettingsDialog->isChecked());
     config->sync();
@@ -287,6 +312,14 @@ void SetupIOFiles::readSettings()
     d->HEIFOptions->setSettings(set);
 
 #endif // HAVE_X265
+
+    if (d->JXLOptions)
+    {
+        set.clear();
+        set.insert(QLatin1String("quality"),  group.readEntry(d->configJXLCompressionEntry,    75));
+        set.insert(QLatin1String("lossless"), group.readEntry(d->configJXLLossLessEntry,       true));
+        d->JXLOptions->setSettings(set);
+    }
 
     d->showImageSettingsDialog->setChecked(group.readEntry(d->configShowImageSettingsDialog,   true));
 }

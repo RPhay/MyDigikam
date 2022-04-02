@@ -839,6 +839,14 @@ void EditorWindow::applyIOSettings()
 
     m_IOFileSettings->HEIFLossLess        = group.readEntry(d->configHeifLossLessEntry,        true);
 
+    // JXL quality slider settings : 1 - 99
+
+    m_IOFileSettings->JXLCompression      = group.readEntry(d->configJxlCompressionEntry,      75);
+
+    // JXL LossLess setting.
+
+    m_IOFileSettings->JXLLossLess         = group.readEntry(d->configJxlLossLessEntry,         true);
+
     // -- RAW images decoding settings ------------------------------------------------------
 
     m_IOFileSettings->useRAWImport        = group.readEntry(d->configUseRawImportToolEntry, false);

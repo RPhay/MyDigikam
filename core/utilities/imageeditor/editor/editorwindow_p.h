@@ -222,6 +222,8 @@ public:
     static const QString         configPgfLossLessEntry;
     static const QString         configHeifCompressionEntry;
     static const QString         configHeifLossLessEntry;
+    static const QString         configJxlCompressionEntry;
+    static const QString         configJxlLossLessEntry;
     static const QString         configSplitterStateEntry;
     static const QString         configUnderExposureColorEntry;
     static const QString         configUnderExposureIndicatorEntry;
@@ -296,6 +298,8 @@ const QString EditorWindow::Private::configPgfCompressionEntry(QLatin1String("PG
 const QString EditorWindow::Private::configPgfLossLessEntry(QLatin1String("PGFLossLess"));
 const QString EditorWindow::Private::configHeifCompressionEntry(QLatin1String("HEIFCompression"));
 const QString EditorWindow::Private::configHeifLossLessEntry(QLatin1String("HEIFLossLess"));
+const QString EditorWindow::Private::configJxlCompressionEntry(QLatin1String("JXLCompression"));
+const QString EditorWindow::Private::configJxlLossLessEntry(QLatin1String("JXLLossLess"));
 const QString EditorWindow::Private::configSplitterStateEntry(QLatin1String("SplitterState"));
 const QString EditorWindow::Private::configUnderExposureColorEntry(QLatin1String("UnderExposureColor"));
 const QString EditorWindow::Private::configUnderExposureIndicatorEntry(QLatin1String("UnderExposureIndicator"));
