@@ -222,6 +222,12 @@ FocusPointsExtractor::ListAFPoints FocusPointsExtractor::getAFPoints_canon() con
                                                                  yDirection,
                                                                  i
                                                                 );
+
+        if (!point.getSize().isValid())
+        {
+            continue;
+        }
+
         points.append(point);
     }
 

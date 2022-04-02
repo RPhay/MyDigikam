@@ -167,21 +167,23 @@ FocusPointsExtractor::ListAFPoints FocusPointsExtractor::getAFPoints_exif() cons
 
     qCDebug(DIGIKAM_METAENGINE_LOG) << "FocusPointsExtractor: Exif Subject Area:" << af_info;
 
-    return
-    (
-        ListAFPoints
-        {
-            ExifInternal::create_af_point(
-                                          fs.width(),
-                                          fs.height(),
-                                          af_x_position,
-                                          af_y_position,
-                                          afPointWidth,
-                                          afPointHeight,
-                                          orientation()
-                                         )
-        }
-    );
+    ListAFPoints points;
+    FocusPoint afpoint = ExifInternal::create_af_point(
+                                                       fs.width(),
+                                                       fs.height(),
+                                                       af_x_position,
+                                                       af_y_position,
+                                                       afPointWidth,
+                                                       afPointHeight,
+                                                       orientation()
+                                                      );
+
+    if (afpoint.getSize().isValid())
+    {
+        points << afpoint;
+    }
+
+    return points;
 }
 
 } // namespace Digikam

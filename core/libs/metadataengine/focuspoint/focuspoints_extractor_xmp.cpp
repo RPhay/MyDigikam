@@ -89,18 +89,20 @@ FocusPointsExtractor::ListAFPoints FocusPointsExtractor::getAFPoints_xmp() const
                                                                                    << afPointWidth
                                                                                    << afPointHeight;
 
-    return
-    (
-        ListAFPoints
-        {
-            XmpInternal::create_af_point(
-                                         afPointWidth.toFloat(),
-                                         afPointHeight.toFloat(),
-                                         af_x_position.toFloat(),
-                                         af_y_position.toFloat()
-                                        )
-        }
-    );
+    ListAFPoints points;
+    FocusPoint afpoint = XmpInternal::create_af_point(
+                                                      afPointWidth.toFloat(),
+                                                      afPointHeight.toFloat(),
+                                                      af_x_position.toFloat(),
+                                                      af_y_position.toFloat()
+                                                     );
+
+    if (afpoint.getSize().isValid())
+    {
+        points << afpoint;
+    }
+
+    return points;
 }
 
 } // namespace Digikam
