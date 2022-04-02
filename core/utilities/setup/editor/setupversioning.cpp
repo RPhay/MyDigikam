@@ -45,6 +45,7 @@
 
 // Local includes
 
+#include "digikam_config.h"
 #include "applicationsettings.h"
 #include "versionmanager.h"
 #include "dpluginloader.h"
