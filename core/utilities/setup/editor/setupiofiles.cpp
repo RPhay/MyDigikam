@@ -67,6 +67,7 @@ public:
 #endif // HAVE_X265
 
         JXLOptions              (nullptr),
+        AVIFOptions             (nullptr),
         showImageSettingsDialog (nullptr)
     {
     }
@@ -97,6 +98,8 @@ public:
     static const QString configShowImageSettingsDialog;
     static const QString configJXLCompressionEntry;
     static const QString configJXLLossLessEntry;
+    static const QString configAVIFCompressionEntry;
+    static const QString configAVIFLossLessEntry;
 
     DImgLoaderSettings*  JPEGOptions;
     DImgLoaderSettings*  PNGOptions;
@@ -117,6 +120,7 @@ public:
 #endif // HAVE_X265
 
     DImgLoaderSettings*  JXLOptions;
+    DImgLoaderSettings*  AVIFOptions;
     QCheckBox*           showImageSettingsDialog;
 };
 
@@ -134,6 +138,8 @@ const QString SetupIOFiles::Private::configHEIFLossLessEntry(QLatin1String("HEIF
 const QString SetupIOFiles::Private::configShowImageSettingsDialog(QLatin1String("ShowImageSettingsDialog"));
 const QString SetupIOFiles::Private::configJXLCompressionEntry(QLatin1String("JXLCompression"));
 const QString SetupIOFiles::Private::configJXLLossLessEntry(QLatin1String("JXLLossLess"));
+const QString SetupIOFiles::Private::configAVIFCompressionEntry(QLatin1String("AVIFCompression"));
+const QString SetupIOFiles::Private::configAVIFLossLessEntry(QLatin1String("AVIFLossLess"));
 
 // --------------------------------------------------------
 
@@ -144,7 +150,7 @@ SetupIOFiles::SetupIOFiles(QWidget* const parent)
     QWidget* const panel         = new QWidget;
     QVBoxLayout* const vbox      = new QVBoxLayout;
     DPluginLoader* const ploader = DPluginLoader::instance();
-    
+
     d->JPEGOptions               = ploader->exportWidget(QLatin1String("JPEG"));
     d->JPEGOptions->setParent(this);
     d->PNGOptions                = ploader->exportWidget(QLatin1String("PNG"));
@@ -176,6 +182,13 @@ SetupIOFiles::SetupIOFiles(QWidget* const parent)
         d->JXLOptions->setParent(this);
     }
 
+    d->AVIFOptions               = ploader->exportWidget(QLatin1String("AVIF"));
+
+    if (d->AVIFOptions)
+    {
+        d->AVIFOptions->setParent(this);
+    }
+
     // Show Settings Dialog Option
 
     d->showImageSettingsDialog   = new QCheckBox(panel);
@@ -204,6 +217,11 @@ SetupIOFiles::SetupIOFiles(QWidget* const parent)
     if (d->JXLOptions)
     {
         vbox->addWidget(d->createGroupBox(d->JXLOptions));
+    }
+
+    if (d->AVIFOptions)
+    {
+        vbox->addWidget(d->createGroupBox(d->AVIFOptions));
     }
 
     vbox->addWidget(d->createGroupBox(d->showImageSettingsDialog));
@@ -255,11 +273,16 @@ void SetupIOFiles::applySettings()
 
 #endif // HAVE_X265
 
-    
     if (d->JXLOptions)
     {
         group.writeEntry(d->configJXLCompressionEntry,  d->JXLOptions->settings()[QLatin1String("quality")].toInt());
         group.writeEntry(d->configJXLLossLessEntry,     d->JXLOptions->settings()[QLatin1String("lossless")].toBool());
+    }
+
+    if (d->AVIFOptions)
+    {
+        group.writeEntry(d->configAVIFCompressionEntry,  d->AVIFOptions->settings()[QLatin1String("quality")].toInt());
+        group.writeEntry(d->configAVIFLossLessEntry,     d->AVIFOptions->settings()[QLatin1String("lossless")].toBool());
     }
 
     group.writeEntry(d->configShowImageSettingsDialog,  d->showImageSettingsDialog->isChecked());
@@ -272,7 +295,7 @@ void SetupIOFiles::readSettings()
 
     KSharedConfig::Ptr config = KSharedConfig::openConfig();
     KConfigGroup group        = config->group(d->configGroupName);
-   
+
     set.clear();
     set.insert(QLatin1String("quality"),     group.readEntry(d->configJPEGCompressionEntry,    75));
     set.insert(QLatin1String("subsampling"), group.readEntry(d->configJPEGSubSamplingEntry,    1));  // Medium sub-sampling
@@ -285,7 +308,7 @@ void SetupIOFiles::readSettings()
     d->PNGOptions->setSettings(set);
 
     // ---
-    
+
     set.clear();
     set.insert(QLatin1String("compress"),  group.readEntry(d->configTIFFCompressionEntry,      false));
     d->TIFFOptions->setSettings(set);
@@ -319,6 +342,14 @@ void SetupIOFiles::readSettings()
         set.insert(QLatin1String("quality"),  group.readEntry(d->configJXLCompressionEntry,    75));
         set.insert(QLatin1String("lossless"), group.readEntry(d->configJXLLossLessEntry,       true));
         d->JXLOptions->setSettings(set);
+    }
+
+    if (d->AVIFOptions)
+    {
+        set.clear();
+        set.insert(QLatin1String("quality"),  group.readEntry(d->configAVIFCompressionEntry,   75));
+        set.insert(QLatin1String("lossless"), group.readEntry(d->configAVIFLossLessEntry,      true));
+        d->AVIFOptions->setSettings(set);
     }
 
     d->showImageSettingsDialog->setChecked(group.readEntry(d->configShowImageSettingsDialog,   true));

@@ -293,6 +293,11 @@ void EditorWindow::setupStandardActions()
         d->plugNewVersionInFormatAction(this, m_saveNewVersionInFormatAction, i18nc("@action:inmenu", "JXL"),   QLatin1String("JXL"));
     }
 
+    if (DPluginLoader::instance()->canExport(QLatin1String("AVIF")))
+    {
+        d->plugNewVersionInFormatAction(this, m_saveNewVersionInFormatAction, i18nc("@action:inmenu", "AVIF"),   QLatin1String("AVIF"));
+    }
+
     m_saveNewVersionAction->menu()->addAction(m_saveNewVersionAsAction);
     m_saveNewVersionAction->menu()->addAction(m_saveNewVersionInFormatAction->menuAction());
 
@@ -851,6 +856,14 @@ void EditorWindow::applyIOSettings()
     // JXL LossLess setting.
 
     m_IOFileSettings->JXLLossLess         = group.readEntry(d->configJxlLossLessEntry,         true);
+
+    // AVIF quality slider settings : 1 - 99
+
+    m_IOFileSettings->AVIFCompression     = group.readEntry(d->configAvifCompressionEntry,     75);
+
+    // AVIF LossLess setting.
+
+    m_IOFileSettings->AVIFLossLess        = group.readEntry(d->configAvifLossLessEntry,        true);
 
     // -- RAW images decoding settings ------------------------------------------------------
 

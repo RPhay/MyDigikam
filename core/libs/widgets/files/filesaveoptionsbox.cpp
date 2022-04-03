@@ -75,7 +75,8 @@ public:
 #endif // HAVE_X265
 
         PGFOptions      (nullptr),
-        JXLOptions      (nullptr)
+        JXLOptions      (nullptr),
+        AVIFOptions     (nullptr)
     {
     }
 
@@ -103,6 +104,7 @@ public:
 
     DImgLoaderSettings* PGFOptions;
     DImgLoaderSettings* JXLOptions;
+    DImgLoaderSettings* AVIFOptions;
 };
 
 FileSaveOptionsBox::FileSaveOptionsBox(QWidget* const parent)
@@ -162,6 +164,17 @@ FileSaveOptionsBox::FileSaveOptionsBox(QWidget* const parent)
         d->JXLOptions->setParent(this);
     }
 
+    //-- AVIF Settings -------------------------------------------------
+
+    // NOTE: AVIF support depend of JXL QImage loader plugin availability.
+
+    d->AVIFOptions     = ploader->exportWidget(QLatin1String("AVIF"));
+
+    if (d->AVIFOptions)
+    {
+        d->AVIFOptions->setParent(this);
+    }
+
     //-- HEIF Settings -------------------------------------------------
 
 #ifdef HAVE_X265
@@ -194,7 +207,12 @@ FileSaveOptionsBox::FileSaveOptionsBox(QWidget* const parent)
 
     if (d->JXLOptions)
     {
-        insertWidget(JXL, d->JXLOptions);
+        insertWidget(JXL,     d->JXLOptions);
+    }
+
+    if (d->AVIFOptions)
+    {
+        insertWidget(AVIF,    d->AVIFOptions);
     }
 
     //-----------------------------------------------------------------------
@@ -213,7 +231,8 @@ void FileSaveOptionsBox::setImageFileFormat(const QString& ext)
     setCurrentIndex(discoverFormat(ext, NONE));
 }
 
-FileSaveOptionsBox::FORMAT FileSaveOptionsBox::discoverFormat(const QString& filename, FileSaveOptionsBox::FORMAT fallback)
+FileSaveOptionsBox::FORMAT FileSaveOptionsBox::discoverFormat(const QString& filename,
+                                                              FileSaveOptionsBox::FORMAT fallback)
 {
     qCDebug(DIGIKAM_WIDGETS_LOG) << "Trying to discover format based on filename '" << filename
                                  << "', fallback = " << fallback;
@@ -276,6 +295,10 @@ FileSaveOptionsBox::FORMAT FileSaveOptionsBox::discoverFormat(const QString& fil
     {
         format = JXL;
     }
+    else if (ext.contains(QLatin1String("AVIF")))
+    {
+        format = AVIF;
+    }
     else
     {
         qCWarning(DIGIKAM_WIDGETS_LOG) << "Using fallback format " << fallback;
@@ -322,6 +345,12 @@ void FileSaveOptionsBox::applySettings()
     {
         group.writeEntry(QLatin1String("JXLCompression"),  d->JXLOptions->settings()[QLatin1String("quality")].toInt());
         group.writeEntry(QLatin1String("JXLLossLess"),     d->JXLOptions->settings()[QLatin1String("lossless")].toBool());
+    }
+
+    if (d->AVIFOptions)
+    {
+        group.writeEntry(QLatin1String("AVIFCompression"),  d->AVIFOptions->settings()[QLatin1String("quality")].toInt());
+        group.writeEntry(QLatin1String("AVIFLossLess"),     d->AVIFOptions->settings()[QLatin1String("lossless")].toBool());
     }
 
     config->sync();
@@ -380,6 +409,14 @@ void FileSaveOptionsBox::readSettings()
         set.insert(QLatin1String("quality"),  group.readEntry(QLatin1String("JXLCompression"),     75));
         set.insert(QLatin1String("lossless"), group.readEntry(QLatin1String("JXLLossLess"),        true));
         d->JXLOptions->setSettings(set);
+    }
+
+    if (d->AVIFOptions)
+    {
+        set.clear();
+        set.insert(QLatin1String("quality"),  group.readEntry(QLatin1String("AVIFCompression"),     75));
+        set.insert(QLatin1String("lossless"), group.readEntry(QLatin1String("AVIFLossLess"),        true));
+        d->AVIFOptions->setSettings(set);
     }
 }
 

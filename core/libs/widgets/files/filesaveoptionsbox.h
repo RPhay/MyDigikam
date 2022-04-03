@@ -56,7 +56,8 @@ public:
         JP2K,
         PGF,
         HEIF,
-        JXL
+        JXL,
+        AVIF
     };
 
 public:

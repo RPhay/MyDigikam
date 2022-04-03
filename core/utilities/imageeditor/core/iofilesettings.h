@@ -48,6 +48,10 @@ public:
         PGFLossLess        (true),
         HEIFCompression    (75),
         HEIFLossLess       (true),
+        JXLCompression     (75),
+        JXLLossLess        (true),
+        AVIFCompression    (75),
+        AVIFLossLess       (true),
         useRAWImport       (true),
         rawImportToolIid   (QLatin1String("org.kde.digikam.plugin.rawimport.Native"))
     {
@@ -94,6 +98,12 @@ public:
 
     /// JXL lossless compression.
     bool         JXLLossLess;
+
+    /// AVIF quality value.
+    int          AVIFCompression;
+
+    /// AVIF lossless compression.
+    bool         AVIFLossLess;
 
     /// Use Raw Import tool to load a RAW picture.
     bool         useRAWImport;
