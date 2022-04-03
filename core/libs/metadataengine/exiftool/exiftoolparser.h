@@ -131,7 +131,7 @@ public:
     bool load(const QString& path, bool async = false);
 
     /**
-     * Load Exif, Iptc, and Xmp chunk as Exiv2 EXV bytearray from a file.
+     * Load Exif, Iptc, and Xmp chunk as Exiv2 EXV byte-array from a file.
      * Use currentData() to get the container.
      */
     bool loadChunk(const QString& path);
@@ -149,7 +149,7 @@ public:
      * Apply tag changes to a target file with ExifTool with a EXV container.
      * Tags can already exists in target file or new ones can be created.
      * @param path is the target files to change.
-     * @param exvTempFile is the list of changes embedded in EXV constainer.
+     * @param exvTempFile is the list of changes embedded in EXV container.
      */
     bool applyChanges(const QString& path, const QString& exvTempFile);
 
