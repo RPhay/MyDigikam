@@ -63,7 +63,7 @@ public:
     virtual DImgLoaderPrms settings() const             = 0;
 
     /**
-     * Return the list of supported paramter names.
+     * Return the list of supported parameter names.
      */
      QStringList parameters()         const;
 
