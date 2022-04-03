@@ -118,6 +118,11 @@ AdvancedSettings::AdvancedSettings(QWidget* const parent)
         d->losslessFormat->insertItem(5, QLatin1String("JXL"));
     }
 
+    if (DPluginLoader::instance()->canExport(QLatin1String("AVIF")))
+    {
+        d->losslessFormat->insertItem(6, QLatin1String("AVIF"));
+    }
+
     onFlyVlay->addWidget(d->templateSelector);
     onFlyVlay->addWidget(d->documentNameCheck);
     onFlyVlay->addWidget(d->fixDateTimeCheck);

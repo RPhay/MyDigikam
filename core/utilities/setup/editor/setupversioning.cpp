@@ -171,11 +171,18 @@ SetupVersioning::SetupVersioning(QWidget* const parent)
 
 #endif
 
-    bool hasJXLSupport = DPluginLoader::instance()->canExport(QLatin1String("JXL"));
+    bool hasJXLSupport  = DPluginLoader::instance()->canExport(QLatin1String("JXL"));
 
     if (hasJXLSupport)
     {
         d->formatBox->addItem(i18nc("@label:listbox", "JPEG-XL"), QLatin1String("JXL"));
+    }
+
+    bool hasAVIFSupport = DPluginLoader::instance()->canExport(QLatin1String("AVIF"));
+
+    if (hasAVIFSupport)
+    {
+        d->formatBox->addItem(i18nc("@label:listbox", "AVIF"), QLatin1String("AVIF"));
     }
 
     d->formatBox->insertSeparator(1);
@@ -210,7 +217,7 @@ SetupVersioning::SetupVersioning(QWidget* const parent)
                                 "Resulting files will be large, but without quality loss due to compression. "
                                 "</item>"
 
-                                // Modern lossless: PGF, JPEG-2000, JPEG-XL
+                                // Modern lossless: PGF and optional JPEG-2000, JPEG-XL, AVIF
 
                                 "<item>"
                                 "<emphasis strong='true'>PGF</emphasis>: "
@@ -250,6 +257,17 @@ SetupVersioning::SetupVersioning(QWidget* const parent)
                                  "<emphasis strong='true'>JPEG-XL</emphasis>: "
                                  "JPEG-XL is a royalty-free raster-graphics file format that supports lossless compression. "
                                  "It is designed to outperform existing raster formats and thus to become their universal replacement. "
+                                 "</item>"));
+    }
+
+    if (hasAVIFSupport)
+    {
+        formatHelp.append(xi18nc("@info:whatsthis",
+                                 "<item>"
+                                 "<emphasis strong='true'>AVIF</emphasis>: "
+                                 "AV1 Image File Format (AVIF) is an image file format specification for storing images in the "
+                                 "ISOBMFF container (as HEIF) compressed with AOMedia Video 1 (AV1) codec, an open and royalty-free "
+                                 "encoding format. "
                                  "</item>"));
     }
 
