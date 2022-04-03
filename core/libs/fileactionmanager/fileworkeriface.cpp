@@ -223,7 +223,11 @@ void FileActionMngrFileWorker::transform(const FileActionItemInfoList& infos, in
                     {
                         // QImage and ImageMagick codecs support
 
-                        if (format == QLatin1String("JXL"))
+                        if      (format == QLatin1String("JXL"))
+                        {
+                            rotateLossy = true;
+                        }
+                        else if (format == QLatin1String("AVIF"))
                         {
                             rotateLossy = true;
                         }
