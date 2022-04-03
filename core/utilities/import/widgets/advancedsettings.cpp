@@ -97,30 +97,30 @@ AdvancedSettings::AdvancedSettings(QWidget* const parent)
     DHBox* const hbox2           = new DHBox(this);
     d->formatLabel               = new QLabel(i18nc("@label", "New image format:"), hbox2);
     d->losslessFormat            = new QComboBox(hbox2);
-    d->losslessFormat->insertItem(0, QLatin1String("PNG"));
-    d->losslessFormat->insertItem(1, QLatin1String("TIF"));
-    d->losslessFormat->insertItem(2, QLatin1String("PGF"));
+    d->losslessFormat->addItem(i18nc("@label:listbox", "PNG"),         QLatin1String("PNG"));
+    d->losslessFormat->addItem(i18nc("@label:listbox", "TIFF"),        QLatin1String("TIF"));
+    d->losslessFormat->addItem(i18nc("@label:listbox", "PGF"),         QLatin1String("PGF"));
 
 #ifdef HAVE_JASPER
 
-    d->losslessFormat->insertItem(3, QLatin1String("JP2"));
+    d->losslessFormat->addItem(i18nc("@label:listbox", "JPEG-2000"),   QLatin1String("JP2"));
 
 #endif // HAVE_JASPER
 
 #ifdef HAVE_X265
 
-    d->losslessFormat->insertItem(4, QLatin1String("HEIF"));
+    d->losslessFormat->addItem(i18nc("@label:listbox", "HEIF"),        QLatin1String("HEIF"));
 
 #endif // HAVE_X265
 
     if (DPluginLoader::instance()->canExport(QLatin1String("JXL")))
     {
-        d->losslessFormat->insertItem(5, QLatin1String("JXL"));
+        d->losslessFormat->addItem(i18nc("@label:listbox", "JPEG-XL"), QLatin1String("JXL"));
     }
 
     if (DPluginLoader::instance()->canExport(QLatin1String("AVIF")))
     {
-        d->losslessFormat->insertItem(6, QLatin1String("AVIF"));
+        d->losslessFormat->addItem(i18nc("@label:listbox", "AVIF"),    QLatin1String("AVIF"));
     }
 
     onFlyVlay->addWidget(d->templateSelector);
@@ -208,7 +208,7 @@ DownloadSettings AdvancedSettings::settings() const
     settings.convertJpeg    = d->convertJpegCheck->isChecked();
     settings.newDateTime    = d->dateTimeEdit->dateTime();
     settings.documentName   = d->documentNameCheck->isChecked();
-    settings.losslessFormat = d->losslessFormat->currentText();
+    settings.losslessFormat = d->losslessFormat->itemData(d->losslessFormat->currentIndex()).toString();
     settings.templateTitle  = d->templateSelector->getTemplate().templateTitle();
 
     return settings;
