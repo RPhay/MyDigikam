@@ -192,47 +192,50 @@ SetupVersioning::SetupVersioning(QWidget* const parent)
                                 "<title>Default File Format for Saving</title>"
                                 "<para>Select the file format in which edited images are saved automatically. "
                                 "Format-specific options, like compression settings, "
-                                "can be configured on the <interface>Format Options</interface> tab.</para>"
-                                "<para><list>"
+                                "can be configured on the <interface>Format Options</interface> tab.</para>");
 
-                                // Lossy: JPEG
+    formatHelp.append(QLatin1String("<list><para>"));
 
-                                "<item>"
-                                "<emphasis strong='true'>JPEG</emphasis>: "
-                                "JPEG is the most commonly used file format, but it employs lossy compression, "
-                                "which means that with each saving operation some image information will be irreversibly lost. "
-                                "JPEG offers a good compression rate, resulting in smaller files. "
-                                "</item>"
+    formatHelp.append(xi18nc("@info:whatsthis",
 
-                                // Traditional lossless: PNG, TIFF
+                             // Lossy: JPEG
 
-                                "<item>"
-                                "<emphasis strong='true'>PNG</emphasis>: "
-                                "A widely used format employing lossless compression. "
-                                "The files, though, will be larger because PNG does not achieve very good compression rates."
-                                "</item>"
-                                "<item>"
-                                "<emphasis strong='true'>TIFF</emphasis>: "
-                                "A commonly used format, usually uncompressed or with modest lossless compression. "
-                                "Resulting files will be large, but without quality loss due to compression. "
-                                "</item>"
+                             "<item>"
+                             "<emphasis strong='true'>JPEG</emphasis>: "
+                             "It's the most commonly used file format, but it employs lossy compression, "
+                             "which means that with each saving operation some image information will be irreversibly lost. "
+                             "JPEG offers a good compression rate, resulting in smaller files. "
+                             "</item>"
 
-                                // Modern lossless: PGF and optional JPEG-2000, JPEG-XL, AVIF
+                             // Traditional lossless: PNG, TIFF
 
-                                "<item>"
-                                "<emphasis strong='true'>PGF</emphasis>: "
-                                "This is a technically superior file format offering good compression rates "
-                                "with either lossy or lossless compression. "
-                                "But it is not yet widely used and supported, so your friends may not directly be able to open these files, "
-                                "and you may not be able to directly publish them on the web. "
-                                "</item>");
+                             "<item>"
+                             "<emphasis strong='true'>PNG</emphasis>: "
+                             "A widely used format employing lossless compression. "
+                             "The files, though, will be larger because PNG does not achieve very good compression rates."
+                             "</item>"
+                             "<item>"
+                             "<emphasis strong='true'>TIFF</emphasis>: "
+                             "A commonly used format, usually uncompressed or with modest lossless compression. "
+                             "Resulting files will be large, but without quality loss due to compression. "
+                             "</item>"
+
+                             // Modern lossless: PGF and optional JPEG-2000, JPEG-XL, AVIF
+
+                             "<item>"
+                             "<emphasis strong='true'>PGF</emphasis>: "
+                             "This is a technically superior file format offering good compression rates "
+                             "with either lossy or lossless compression. "
+                             "But it is not yet widely used and supported, so your friends may not directly be able to open these files, "
+                             "and you may not be able to directly publish them on the web. "
+                             "</item>"));
 
 #ifdef HAVE_JASPER
 
     formatHelp.append(xi18nc("@info:whatsthis",
                              "<item>"
                              "<emphasis strong='true'>JPEG-2000</emphasis>: "
-                             "JPEG-2000 is similar to PGF. Loading or saving is slower, the compression rate is better, "
+                             "It's similar to PGF. Loading or saving is slower, the compression rate is better, "
                              "and the format more widely supported, though still not comparable "
                              "to the tradition formats JPEG, PNG or TIFF. "
                              "</item>"));
@@ -244,7 +247,7 @@ SetupVersioning::SetupVersioning(QWidget* const parent)
     formatHelp.append(xi18nc("@info:whatsthis",
                              "<item>"
                              "<emphasis strong='true'>HEIF</emphasis>: "
-                             "High Efficiency Image File Format (HEIF) is a container format for storing individual images. "
+                             "High Efficiency Image File Format is a container format for storing individual images. "
                              "A HEIF image using HEVC codec (H.265) requires less storage space than the equivalent quality JPEG. "
                              "</item>"));
 
@@ -255,7 +258,7 @@ SetupVersioning::SetupVersioning(QWidget* const parent)
         formatHelp.append(xi18nc("@info:whatsthis",
                                  "<item>"
                                  "<emphasis strong='true'>JPEG-XL</emphasis>: "
-                                 "JPEG-XL is a royalty-free raster-graphics file format that supports lossless compression. "
+                                 "It's a royalty-free raster-graphics file format that supports lossless compression. "
                                  "It is designed to outperform existing raster formats and thus to become their universal replacement. "
                                  "</item>"));
     }
@@ -265,7 +268,7 @@ SetupVersioning::SetupVersioning(QWidget* const parent)
         formatHelp.append(xi18nc("@info:whatsthis",
                                  "<item>"
                                  "<emphasis strong='true'>AVIF</emphasis>: "
-                                 "AV1 Image File Format (AVIF) is an image file format specification for storing images in the "
+                                 "AV1 Image File Format is a specification for storing images in the "
                                  "ISOBMFF container (as HEIF) compressed with AOMedia Video 1 (AV1) codec, an open and royalty-free "
                                  "encoding format. "
                                  "</item>"));
