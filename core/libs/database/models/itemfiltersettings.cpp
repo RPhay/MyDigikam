@@ -550,6 +550,16 @@ bool ItemFilterSettings::matches(const ItemInfo& info, bool* const foundText) co
             break;
         }
 
+        case MimeFilter::AVIFFiles:
+        {
+            if (info.format() != QLatin1String("AVIF"))
+            {
+                match = false;
+            }
+
+            break;
+        }
+
         case MimeFilter::PGFFiles:
         {
             if (info.format() != QLatin1String("PGF"))
