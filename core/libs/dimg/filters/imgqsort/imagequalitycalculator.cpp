@@ -27,7 +27,7 @@
 // Qt includes
 
 #include <QList>
-#include <QMutex>
+#include <QRecursiveMutex>
 
 namespace Digikam
 {
@@ -45,7 +45,7 @@ public:
     float                  threshold_punish;
     float                  weight_punish;
 
-    QMutex                 mutex;
+    QRecursiveMutex        mutex;
 
     QList<ResultDetection> detectionResults;
 };
