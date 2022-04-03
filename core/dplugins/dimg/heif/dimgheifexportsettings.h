@@ -38,15 +38,15 @@ class DImgHEIFExportSettings : public DImgLoaderSettings
 public:
 
     explicit DImgHEIFExportSettings(QWidget* const parent = nullptr);
-    ~DImgHEIFExportSettings() override;
+    ~DImgHEIFExportSettings()                   override;
 
     /**
      * This widget manage 2 parameters for the image encoding:
      * "quality"  as integer [1 - 100].
      * "lossless" as boolean.
      */
-    void setSettings(const DImgLoaderPrms& set);
-    DImgLoaderPrms settings() const;
+    void setSettings(const DImgLoaderPrms& set) override;
+    DImgLoaderPrms settings() const             override;
 
 private Q_SLOTS:
 

@@ -38,14 +38,14 @@ class DImgPNGExportSettings : public DImgLoaderSettings
 public:
 
     explicit DImgPNGExportSettings(QWidget* const parent = nullptr);
-    ~DImgPNGExportSettings() override;
+    ~DImgPNGExportSettings()                    override;
 
     /**
      * This widget manage 2 parameters for the image encoding:
      * "quality"  as integer [1 - 9].
      */
-    void setSettings(const DImgLoaderPrms& set);
-    DImgLoaderPrms settings() const;
+    void setSettings(const DImgLoaderPrms& set) override;
+    DImgLoaderPrms settings() const             override;
 
 private:
 

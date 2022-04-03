@@ -38,14 +38,14 @@ class DImgTIFFExportSettings : public DImgLoaderSettings
 public:
 
     explicit DImgTIFFExportSettings(QWidget* const parent = nullptr);
-    ~DImgTIFFExportSettings() override;
+    ~DImgTIFFExportSettings()                   override;
 
     /**
      * This widget manage 2 parameters for the image encoding:
      * "compress" as boolean.
      */
-    void setSettings(const DImgLoaderPrms& set);
-    DImgLoaderPrms settings() const;
+    void setSettings(const DImgLoaderPrms& set) override;
+    DImgLoaderPrms settings() const             override;
 
 private:
 

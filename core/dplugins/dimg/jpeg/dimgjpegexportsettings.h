@@ -38,15 +38,15 @@ class DImgJPEGExportSettings : public DImgLoaderSettings
 public:
 
     explicit DImgJPEGExportSettings(QWidget* const parent = nullptr);
-    ~DImgJPEGExportSettings() override;
+    ~DImgJPEGExportSettings()                   override;
 
     /**
      * This widget manage 2 parameters for the image encoding:
      * "quality"  as integer [1 - 100].
      * "subsampling" as integer [0 - 3].
      */
-    void setSettings(const DImgLoaderPrms& set);
-    DImgLoaderPrms settings() const;
+    void setSettings(const DImgLoaderPrms& set) override;
+    DImgLoaderPrms settings() const             override;
 
 private:
 

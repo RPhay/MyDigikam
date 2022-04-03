@@ -38,15 +38,15 @@ class DImgPGFExportSettings : public DImgLoaderSettings
 public:
 
     explicit DImgPGFExportSettings(QWidget* const parent = nullptr);
-    ~DImgPGFExportSettings() override;
+    ~DImgPGFExportSettings()                    override;
 
     /**
      * This widget manage 2 parameters for the image encoding:
      * "quality"  as integer [1 - 9].
      * "lossless" as boolean.
      */
-    void setSettings(const DImgLoaderPrms& set);
-    DImgLoaderPrms settings() const;
+    void setSettings(const DImgLoaderPrms& set) override;
+    DImgLoaderPrms settings() const             override;
 
 private Q_SLOTS:
 
