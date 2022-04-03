@@ -194,7 +194,7 @@ SetupVersioning::SetupVersioning(QWidget* const parent)
                                 "Format-specific options, like compression settings, "
                                 "can be configured on the <interface>Format Options</interface> tab.</para>");
 
-    formatHelp.append(QLatin1String("<list><para>"));
+    formatHelp.append(QLatin1String("<para><list>"));
 
     formatHelp.append(xi18nc("@info:whatsthis",
 
