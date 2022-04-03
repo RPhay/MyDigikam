@@ -106,7 +106,8 @@ public:
 #endif // HAVE_X265
 
         pgfSettings             (nullptr),
-        jxlSettings             (nullptr)
+        jxlSettings             (nullptr),
+        avifSettings            (nullptr)
     {
     }
 
@@ -150,6 +151,7 @@ public:
 
     DImgLoaderSettings*    pgfSettings;
     DImgLoaderSettings*    jxlSettings;
+    DImgLoaderSettings*    avifSettings;
 };
 
 QueueSettingsView::QueueSettingsView(QWidget* const parent)
@@ -340,6 +342,18 @@ QueueSettingsView::QueueSettingsView(QWidget* const parent)
         slay->addWidget(box7);
     }
 
+    d->avifSettings          = ploader->exportWidget(QLatin1String("AVIF"));
+
+    if (d->avifSettings)
+    {
+        QGroupBox* const  box8   = new QGroupBox;
+        QVBoxLayout* const lbox8 = new QVBoxLayout;
+        d->avifSettings->setParent(this);
+        lbox8->addWidget(d->avifSettings);
+        box8->setLayout(lbox8);
+        slay->addWidget(box8);
+    }
+
     slay->setContentsMargins(spacing, spacing, spacing, spacing);
     slay->setSpacing(spacing);
     slay->addStretch();
@@ -402,6 +416,9 @@ QueueSettingsView::QueueSettingsView(QWidget* const parent)
             this, SLOT(slotSettingsChanged()));
 
     connect(d->jxlSettings, SIGNAL(signalSettingsChanged()),
+            this, SLOT(slotSettingsChanged()));
+
+    connect(d->avifSettings, SIGNAL(signalSettingsChanged()),
             this, SLOT(slotSettingsChanged()));
 
     // --------------------------------------------------------
@@ -507,6 +524,14 @@ void QueueSettingsView::slotResetSettings()
         d->jxlSettings->setSettings(set);
     }
 
+    if (d->avifSettings)
+    {
+        set.clear();
+        set.insert(QLatin1String("quality"),  settings.ioFileSettings.AVIFCompression);
+        set.insert(QLatin1String("lossless"), settings.ioFileSettings.AVIFLossLess);
+        d->avifSettings->setSettings(set);
+    }
+
     blockSignals(false);
     slotSettingsChanged();
 }
@@ -582,6 +607,14 @@ void QueueSettingsView::slotQueueSelected(int, const QueueSettings& settings, co
         set.insert(QLatin1String("lossless"), settings.ioFileSettings.JXLLossLess);
         d->jxlSettings->setSettings(set);
     }
+
+    if (d->avifSettings)
+    {
+        set.clear();
+        set.insert(QLatin1String("quality"),  settings.ioFileSettings.AVIFCompression);
+        set.insert(QLatin1String("lossless"), settings.ioFileSettings.AVIFLossLess);
+        d->avifSettings->setSettings(set);
+    }
 }
 
 void QueueSettingsView::slotSettingsChanged()
@@ -639,6 +672,12 @@ void QueueSettingsView::slotSettingsChanged()
     {
         settings.ioFileSettings.JXLCompression  = d->jxlSettings->settings()[QLatin1String("quality")].toInt();
         settings.ioFileSettings.JXLLossLess     = d->jxlSettings->settings()[QLatin1String("lossless")].toBool();
+    }
+
+    if (d->avifSettings)
+    {
+        settings.ioFileSettings.AVIFCompression = d->avifSettings->settings()[QLatin1String("quality")].toInt();
+        settings.ioFileSettings.AVIFLossLess    = d->avifSettings->settings()[QLatin1String("lossless")].toBool();
     }
 
     emit signalSettingsChanged(settings);

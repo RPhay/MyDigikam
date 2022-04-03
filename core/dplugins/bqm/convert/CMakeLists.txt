@@ -7,6 +7,7 @@
 add_subdirectory(converttodng)
 add_subdirectory(converttopng)
 add_subdirectory(converttojxl)
+add_subdirectory(converttoavif)
 add_subdirectory(converttopgf)
 add_subdirectory(converttojpeg)
 add_subdirectory(converttotiff)

@@ -4,7 +4,7 @@
  * https://www.digikam.org
  *
  * Date        : 2022-04-03
- * Description : a BQM plugin to convert to JXL.
+ * Description : a BQM plugin to convert to AVIF.
  *
  * Copyright (C) 2022 by Gilles Caulier <caulier dot gilles at gmail dot com>
  *
@@ -20,7 +20,7 @@
  *
  * ============================================================ */
 
-#include "converttojxlplugin.h"
+#include "converttoavifplugin.h"
 
 // Qt includes
 
@@ -35,48 +35,49 @@
 // Local includes
 
 #include "digikam_debug.h"
-#include "converttojxl.h"
+#include "converttoavif.h"
 
-namespace DigikamBqmConvertToJxlPlugin
+namespace DigikamBqmConvertToAvifPlugin
 {
 
-ConvertToJxlPlugin::ConvertToJxlPlugin(QObject* const parent)
+ConvertToAvifPlugin::ConvertToAvifPlugin(QObject* const parent)
     : DPluginBqm(parent)
 {
 }
 
-ConvertToJxlPlugin::~ConvertToJxlPlugin()
+ConvertToAvifPlugin::~ConvertToAvifPlugin()
 {
 }
 
-QString ConvertToJxlPlugin::name() const
+QString ConvertToAvifPlugin::name() const
 {
-    return i18n("Convert To JXL");
+    return i18n("Convert To AVIF");
 }
 
-QString ConvertToJxlPlugin::iid() const
+QString ConvertToAvifPlugin::iid() const
 {
     return QLatin1String(DPLUGIN_IID);
 }
 
-QIcon ConvertToJxlPlugin::icon() const
+QIcon ConvertToAvifPlugin::icon() const
 {
     return QIcon::fromTheme(QLatin1String("image-x-generic"));
 }
 
-QString ConvertToJxlPlugin::description() const
+QString ConvertToAvifPlugin::description() const
 {
-    return i18n("A tool to convert images to JXL format");
+    return i18n("A tool to convert images to AVIF format");
 }
 
-QString ConvertToJxlPlugin::details() const
+QString ConvertToAvifPlugin::details() const
 {
-    return i18n("<p>This Batch Queue Manager tool can convert images data to JPEG-XL format.</p>"
-                "<p>JPEG-XL is a royalty-free raster-graphics file format that supports both lossy and lossless compression. It is designed to outperform existing raster formats and thus to become their universal replacement.</p>"
-                "<p>See details about this format from <a href='https://en.wikipedia.org/wiki/JPEG_XL'>this page</a>.</p>");
+    return i18n("<p>This Batch Queue Manager tool can convert images data to AVIF format.</p>"
+                "<p>AV1 Image File Format is an image file format specification for storing images or image sequences compressed with AV1 "
+                "in the ISOBMFF container format.</p>"
+                "<p>See details about this format from <a href='https://en.wikipedia.org/wiki/AVIF'>this page</a>.</p>");
 }
 
-QList<DPluginAuthor> ConvertToJxlPlugin::authors() const
+QList<DPluginAuthor> ConvertToAvifPlugin::authors() const
 {
     return QList<DPluginAuthor>()
             << DPluginAuthor(QString::fromUtf8("Gilles Caulier"),
@@ -85,12 +86,12 @@ QList<DPluginAuthor> ConvertToJxlPlugin::authors() const
             ;
 }
 
-void ConvertToJxlPlugin::setup(QObject* const parent)
+void ConvertToAvifPlugin::setup(QObject* const parent)
 {
-    ConvertToJXL* const tool = new ConvertToJXL(parent);
+    ConvertToAVIF* const tool = new ConvertToAVIF(parent);
     tool->setPlugin(this);
 
     addTool(tool);
 }
 
-} // namespace DigikamBqmConvertToJxlPlugin
+} // namespace DigikamBqmConvertToAvifPlugin

@@ -73,6 +73,7 @@ BatchToolsFactory::BatchToolsFactory()
     d->iface                 = new DBInfoIface(this);
     DPluginLoader* const dpl = DPluginLoader::instance();
     bool hasJXLSupport       = dpl->canExport(QLatin1String("JXL"));
+    bool hasAVIFSupport      = dpl->canExport(QLatin1String("AVIF"));
 
     foreach (DPlugin* const p, dpl->allPlugins())
     {
@@ -85,6 +86,14 @@ BatchToolsFactory::BatchToolsFactory()
             if (
                 (bqm->iid() == QLatin1String("org.kde.digikam.plugin.bqm.ConvertToJxl")) &&
                 !hasJXLSupport
+               )
+            {
+                continue;
+            }
+
+            if (
+                (bqm->iid() == QLatin1String("org.kde.digikam.plugin.bqm.ConvertToAvif")) &&
+                !hasAVIFSupport
                )
             {
                 continue;

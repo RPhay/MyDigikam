@@ -3,8 +3,8 @@
  * This file is a part of digiKam project
  * https://www.digikam.org
  *
- * Date        : 2022-04-02
- * Description : JXL image Converter batch tool.
+ * Date        : 2022-04-03
+ * Description : AVIF image Converter batch tool.
  *
  * Copyright (C) 2022 by Gilles Caulier <caulier dot gilles at gmail dot com>
  *
@@ -21,8 +21,8 @@
  *
  * ============================================================ */
 
-#ifndef DIGIKAM_BQM_CONVERT_TO_JXL_H
-#define DIGIKAM_BQM_CONVERT_TO_JXL_H
+#ifndef DIGIKAM_BQM_CONVERT_TO_AVIF_H
+#define DIGIKAM_BQM_CONVERT_TO_AVIF_H
 
 // Local includes
 
@@ -30,17 +30,17 @@
 
 using namespace Digikam;
 
-namespace DigikamBqmConvertToJxlPlugin
+namespace DigikamBqmConvertToAvifPlugin
 {
 
-class ConvertToJXL : public BatchTool
+class ConvertToAVIF : public BatchTool
 {
     Q_OBJECT
 
 public:
 
-    explicit ConvertToJXL(QObject* const parent = nullptr);
-    ~ConvertToJXL()                                         override;
+    explicit ConvertToAVIF(QObject* const parent = nullptr);
+    ~ConvertToAVIF()                                        override;
 
     QString outputSuffix()                            const override;
     BatchToolSettings defaultSettings()                     override;
@@ -63,6 +63,6 @@ private:
     bool m_changeSettings;
 };
 
-} // namespace DigikamBqmConvertToJxlPlugin
+} // namespace DigikamBqmConvertToAvifPlugin
 
-#endif // DIGIKAM_BQM_CONVERT_TO_JXL_H
+#endif // DIGIKAM_BQM_CONVERT_TO_AVIF_H

@@ -3,8 +3,8 @@
  * This file is a part of digiKam project
  * https://www.digikam.org
  *
- * Date        : 2022-04-02
- * Description : a BQM plugin to convert to JXL.
+ * Date        : 2022-04-03
+ * Description : a BQM plugin to convert to AVIF.
  *
  * Copyright (C) 2022 by Gilles Caulier <caulier dot gilles at gmail dot com>
  *
@@ -20,21 +20,21 @@
  *
  * ============================================================ */
 
-#ifndef DIGIKAM_CONVERT_TO_JXL_PLUGIN_H
-#define DIGIKAM_CONVERT_TO_JXL_PLUGIN_H
+#ifndef DIGIKAM_CONVERT_TO_AVIF_PLUGIN_H
+#define DIGIKAM_CONVERT_TO_AVIF_PLUGIN_H
 
 // Local includes
 
 #include "dpluginbqm.h"
 
-#define DPLUGIN_IID "org.kde.digikam.plugin.bqm.ConvertToJxl"
+#define DPLUGIN_IID "org.kde.digikam.plugin.bqm.ConvertToAvif"
 
 using namespace Digikam;
 
-namespace DigikamBqmConvertToJxlPlugin
+namespace DigikamBqmConvertToAvifPlugin
 {
 
-class ConvertToJxlPlugin : public DPluginBqm
+class ConvertToAvifPlugin : public DPluginBqm
 {
     Q_OBJECT
     Q_PLUGIN_METADATA(IID DPLUGIN_IID)
@@ -42,8 +42,8 @@ class ConvertToJxlPlugin : public DPluginBqm
 
 public:
 
-    explicit ConvertToJxlPlugin(QObject* const parent = nullptr);
-    ~ConvertToJxlPlugin()                override;
+    explicit ConvertToAvifPlugin(QObject* const parent = nullptr);
+    ~ConvertToAvifPlugin()                override;
 
     QString name()                 const override;
     QString iid()                  const override;
@@ -55,6 +55,6 @@ public:
     void setup(QObject* const)           override;
 };
 
-} // namespace DigikamBqmConvertToJxlPlugin
+} // namespace DigikamBqmConvertToAvifPlugin
 
-#endif // DIGIKAM_CONVERT_TO_JXL_PLUGIN_H
+#endif // DIGIKAM_CONVERT_TO_AVIF_PLUGIN_H

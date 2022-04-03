@@ -3,8 +3,8 @@
  * This file is a part of digiKam project
  * https://www.digikam.org
  *
- * Date        : 2022-04-02
- * Description : JXL image Converter batch tool.
+ * Date        : 2022-04-03
+ * Description : AVIF image Converter batch tool.
  *
  * Copyright (C) 2022 by Gilles Caulier <caulier dot gilles at gmail dot com>
  *
@@ -21,7 +21,7 @@
  *
  * ============================================================ */
 
-#include "converttojxl.h"
+#include "converttoavif.h"
 
 // Qt includes
 
@@ -39,45 +39,45 @@
 #include "dimg.h"
 #include "dpluginloader.h"
 
-namespace DigikamBqmConvertToJxlPlugin
+namespace DigikamBqmConvertToAvifPlugin
 {
 
-ConvertToJXL::ConvertToJXL(QObject* const parent)
-    : BatchTool(QLatin1String("ConvertToJXL"), ConvertTool, parent),
+ConvertToAVIF::ConvertToAVIF(QObject* const parent)
+    : BatchTool(QLatin1String("ConvertToAVIF"), ConvertTool, parent),
       m_changeSettings(true)
 {
 }
 
-ConvertToJXL::~ConvertToJXL()
+ConvertToAVIF::~ConvertToAVIF()
 {
 }
 
-BatchTool* ConvertToJXL::clone(QObject* const parent) const
+BatchTool* ConvertToAVIF::clone(QObject* const parent) const
 {
-    return new ConvertToJXL(parent);
+    return new ConvertToAVIF(parent);
 }
 
-void ConvertToJXL::registerSettingsWidget()
+void ConvertToAVIF::registerSettingsWidget()
 {
-    DImgLoaderSettings* const JXLBox = DPluginLoader::instance()->exportWidget(QLatin1String("JXL"));
+    DImgLoaderSettings* const AVIFBox = DPluginLoader::instance()->exportWidget(QLatin1String("AVIF"));
 
-    if (JXLBox)
+    if (AVIFBox)
     {
-        connect(JXLBox, SIGNAL(signalSettingsChanged()),
+        connect(AVIFBox, SIGNAL(signalSettingsChanged()),
                 this, SLOT(slotSettingsChanged()));
     }
 
-    m_settingsWidget = JXLBox;
+    m_settingsWidget = AVIFBox;
 
     BatchTool::registerSettingsWidget();
 }
 
-BatchToolSettings ConvertToJXL::defaultSettings()
+BatchToolSettings ConvertToAVIF::defaultSettings()
 {
     KSharedConfig::Ptr config = KSharedConfig::openConfig();
     KConfigGroup group        = config->group(QLatin1String("ImageViewer Settings"));
-    int compression           = group.readEntry(QLatin1String("JXLCompression"), 75);
-    bool lossLessCompression  = group.readEntry(QLatin1String("JXLLossLess"),    true);
+    int compression           = group.readEntry(QLatin1String("AVIFCompression"), 75);
+    bool lossLessCompression  = group.readEntry(QLatin1String("AVIFLossLess"),    true);
     BatchToolSettings settings;
     settings.insert(QLatin1String("quality"),  compression);
     settings.insert(QLatin1String("lossless"), lossLessCompression);
@@ -85,44 +85,44 @@ BatchToolSettings ConvertToJXL::defaultSettings()
     return settings;
 }
 
-void ConvertToJXL::slotAssignSettings2Widget()
+void ConvertToAVIF::slotAssignSettings2Widget()
 {
-    m_changeSettings                 = false;
-    DImgLoaderSettings* const JXLBox = dynamic_cast<DImgLoaderSettings*>(m_settingsWidget);
+    m_changeSettings                  = false;
+    DImgLoaderSettings* const AVIFBox = dynamic_cast<DImgLoaderSettings*>(m_settingsWidget);
 
-    if (JXLBox)
+    if (AVIFBox)
     {
         DImgLoaderPrms set;
         set.insert(QLatin1String("quality"),  settings()[QLatin1String("quality")].toInt());
         set.insert(QLatin1String("lossless"), settings()[QLatin1String("lossless")].toBool());
-        JXLBox->setSettings(set);
+        AVIFBox->setSettings(set);
     }
 
     m_changeSettings                 = true;
 }
 
-void ConvertToJXL::slotSettingsChanged()
+void ConvertToAVIF::slotSettingsChanged()
 {
     if (m_changeSettings)
     {
-        DImgLoaderSettings* const JXLBox = dynamic_cast<DImgLoaderSettings*>(m_settingsWidget);
+        DImgLoaderSettings* const AVIFBox = dynamic_cast<DImgLoaderSettings*>(m_settingsWidget);
 
-        if (JXLBox)
+        if (AVIFBox)
         {
             BatchToolSettings settings;
-            settings.insert(QLatin1String("quality"),  JXLBox->settings()[QLatin1String("quality")].toInt());
-            settings.insert(QLatin1String("lossless"), JXLBox->settings()[QLatin1String("lossless")].toBool());
+            settings.insert(QLatin1String("quality"),  AVIFBox->settings()[QLatin1String("quality")].toInt());
+            settings.insert(QLatin1String("lossless"), AVIFBox->settings()[QLatin1String("lossless")].toBool());
             BatchTool::slotSettingsChanged(settings);
         }
     }
 }
 
-QString ConvertToJXL::outputSuffix() const
+QString ConvertToAVIF::outputSuffix() const
 {
-    return QLatin1String("jxl");
+    return QLatin1String("avif");
 }
 
-bool ConvertToJXL::toolOperations()
+bool ConvertToAVIF::toolOperations()
 {
     if (!loadToDImg())
     {
@@ -135,4 +135,4 @@ bool ConvertToJXL::toolOperations()
     return (savefromDImg());
 }
 
-} // namespace DigikamBqmConvertToJxlPlugin
+} // namespace DigikamBqmConvertToAvifPlugin
