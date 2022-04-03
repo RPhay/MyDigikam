@@ -284,9 +284,14 @@ void EditorWindow::setupStandardActions()
 
 #ifdef HAVE_X265
 
-    d->plugNewVersionInFormatAction(this, m_saveNewVersionInFormatAction, i18nc("@action:inmenu", "HEIC"),      QLatin1String("HEIC"));
+    d->plugNewVersionInFormatAction(this, m_saveNewVersionInFormatAction, i18nc("@action:inmenu", "HEIF"),      QLatin1String("HEIF"));
 
 #endif // HAVE_X265
+
+    if (DPluginLoader::instance()->canExport(QLatin1String("JXL")))
+    {
+        d->plugNewVersionInFormatAction(this, m_saveNewVersionInFormatAction, i18nc("@action:inmenu", "JXL"),   QLatin1String("JXL"));
+    }
 
     m_saveNewVersionAction->menu()->addAction(m_saveNewVersionAsAction);
     m_saveNewVersionAction->menu()->addAction(m_saveNewVersionInFormatAction->menuAction());
