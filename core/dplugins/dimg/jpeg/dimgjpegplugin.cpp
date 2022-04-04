@@ -56,7 +56,7 @@ DImgJPEGPlugin::~DImgJPEGPlugin()
 
 QString DImgJPEGPlugin::name() const
 {
-    return i18n("JPEG loader");
+    return i18nc("@title", "JPEG loader");
 }
 
 QString DImgJPEGPlugin::iid() const
@@ -71,18 +71,18 @@ QIcon DImgJPEGPlugin::icon() const
 
 QString DImgJPEGPlugin::description() const
 {
-    return i18n("An image loader based on Libjpeg codec");
+    return i18nc("@info", "An image loader based on Libjpeg codec");
 }
 
 QString DImgJPEGPlugin::details() const
 {
-    return i18n("<p>This plugin allows users to load and save image using Libjpeg codec.</p>"
-                "<p>Joint Photographic Experts Group (JPEG) is a commonly used method of lossy "
-                "compression for digital images, particularly for those images produced by "
-                "digital photography. The degree of compression can be adjusted, allowing "
-                "a selectable tradeoff between storage size and image quality.</p>"
-                "<p>See <a href='https://en.wikipedia.org/wiki/JPEG'>"
-                "Joint Photographic Experts Group documentation</a> for details.</p>"
+    return xi18nc("@info", "<p>This plugin allows users to load and save image using Libjpeg codec.</p>"
+                  "<p>Joint Photographic Experts Group (JPEG) is a commonly used method of lossy "
+                  "compression for digital images, particularly for those images produced by "
+                  "digital photography. The degree of compression can be adjusted, allowing "
+                  "a selectable tradeoff between storage size and image quality.</p>"
+                  "<p>See <a href='https://en.wikipedia.org/wiki/JPEG'>"
+                  "Joint Photographic Experts Group documentation</a> for details.</p>"
     );
 }
 
@@ -116,17 +116,17 @@ QString DImgJPEGPlugin::typeMimes() const
 QMap<QString, QStringList> DImgJPEGPlugin::extraAboutData() const
 {
     QMap<QString, QStringList> map;
-    map.insert(QLatin1String("JPG"),  QStringList() << i18n("JPEG image")
+    map.insert(QLatin1String("JPG"),  QStringList() << i18nc("@title", "JPEG image")
                                                     << i18nc("@info: can read file format",  "yes")
                                                     << i18nc("@info: can write file format", "yes")
 
     );
-    map.insert(QLatin1String("JPEG"), QStringList() << i18n("JPEG image")
+    map.insert(QLatin1String("JPEG"), QStringList() << i18nc("@title", "JPEG image")
                                                     << i18nc("@info: can read file format",  "yes")
                                                     << i18nc("@info: can write file format", "yes")
 
     );
-    map.insert(QLatin1String("JPE"),  QStringList() << i18n("JPEG image")
+    map.insert(QLatin1String("JPE"),  QStringList() << i18nc("@title", "JPEG image")
                                                     << i18nc("@info: can read file format",  "yes")
                                                     << i18nc("@info: can write file format", "yes")
 
