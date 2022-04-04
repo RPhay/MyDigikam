@@ -530,6 +530,16 @@ bool ItemFilterSettings::matches(const ItemInfo& info, bool* const foundText) co
             break;
         }
 
+        case MimeFilter::WEBPFiles:
+        {
+            if (info.format() != QLatin1String("WEBP"))
+            {
+                match = false;
+            }
+
+            break;
+        }
+
         case MimeFilter::PNGFiles:
         {
             if (info.format() != QLatin1String("PNG"))

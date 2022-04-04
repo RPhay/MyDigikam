@@ -178,6 +178,13 @@ SetupVersioning::SetupVersioning(QWidget* const parent)
         d->formatBox->addItem(i18nc("@label:listbox", "JPEG-XL"), QLatin1String("JXL"));
     }
 
+    bool hasWEBPSupport = DPluginLoader::instance()->canExport(QLatin1String("WEBP"));
+
+    if (hasWEBPSupport)
+    {
+        d->formatBox->addItem(i18nc("@label:listbox", "WEBP"), QLatin1String("WEBP"));
+    }
+
     bool hasAVIFSupport = DPluginLoader::instance()->canExport(QLatin1String("AVIF"));
 
     if (hasAVIFSupport)
@@ -260,6 +267,17 @@ SetupVersioning::SetupVersioning(QWidget* const parent)
                                  "<emphasis strong='true'>JPEG-XL</emphasis>: "
                                  "It's a royalty-free raster-graphics file format that supports lossless compression. "
                                  "It is designed to outperform existing raster formats and thus to become their universal replacement. "
+                                 "</item>"));
+    }
+
+    if (hasWEBPSupport)
+    {
+        formatHelp.append(xi18nc("@info:whatsthis",
+                                 "<item>"
+                                 "<emphasis strong='true'>WEBP</emphasis>: "
+                                 "It's an image file format that Google has developed as a replacement for JPEG, PNG, and GIF file "
+                                 "formats. Files are smaller for the same quality, or of higher quality for the same size. "
+                                 "It supports both lossy and lossless compression"
                                  "</item>"));
     }
 

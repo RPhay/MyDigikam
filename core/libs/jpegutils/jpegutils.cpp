@@ -831,6 +831,11 @@ bool jpegConvert(const QString& src, const QString& dest, const QString& documen
             image.setAttribute(QLatin1String("quality"), 100);    // LossLess
         }
 
+        if (format.toUpper() == QLatin1String("WEBP"))
+        {
+            image.setAttribute(QLatin1String("quality"), 100);    // LossLess
+        }
+
         if (format.toUpper() == QLatin1String("AVIF"))
         {
             image.setAttribute(QLatin1String("quality"), 100);    // LossLess

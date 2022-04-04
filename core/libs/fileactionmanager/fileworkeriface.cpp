@@ -231,6 +231,10 @@ void FileActionMngrFileWorker::transform(const FileActionItemInfoList& infos, in
                         {
                             rotateLossy = true;
                         }
+                        else if (format == QLatin1String("WEBP"))
+                        {
+                            rotateLossy = true;
+                        }
 
                         break;
                     }

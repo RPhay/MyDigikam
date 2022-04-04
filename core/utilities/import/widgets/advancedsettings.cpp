@@ -118,6 +118,11 @@ AdvancedSettings::AdvancedSettings(QWidget* const parent)
         d->losslessFormat->addItem(i18nc("@label:listbox", "JPEG-XL"), QLatin1String("JXL"));
     }
 
+    if (DPluginLoader::instance()->canExport(QLatin1String("WEBP")))
+    {
+        d->losslessFormat->addItem(i18nc("@label:listbox", "WEBP"),    QLatin1String("WEBP"));
+    }
+
     if (DPluginLoader::instance()->canExport(QLatin1String("AVIF")))
     {
         d->losslessFormat->addItem(i18nc("@label:listbox", "AVIF"),    QLatin1String("AVIF"));

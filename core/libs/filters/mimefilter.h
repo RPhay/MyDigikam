@@ -45,6 +45,7 @@ public:
         JPGFiles,
         JPEG2000Files,
         JPEGXLFiles,
+        WEBPFiles,
         PNGFiles,
         TIFFiles,
         PGFFiles,
