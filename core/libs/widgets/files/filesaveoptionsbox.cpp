@@ -76,6 +76,7 @@ public:
 
         PGFOptions      (nullptr),
         JXLOptions      (nullptr),
+        WEBPOptions     (nullptr),
         AVIFOptions     (nullptr)
     {
     }
@@ -104,6 +105,7 @@ public:
 
     DImgLoaderSettings* PGFOptions;
     DImgLoaderSettings* JXLOptions;
+    DImgLoaderSettings* WEBPOptions;
     DImgLoaderSettings* AVIFOptions;
 };
 
@@ -164,6 +166,17 @@ FileSaveOptionsBox::FileSaveOptionsBox(QWidget* const parent)
         d->JXLOptions->setParent(this);
     }
 
+    //-- WEBP Settings -------------------------------------------------
+
+    // NOTE: WEBP support depend of WEBP QImage loader plugin availability.
+
+    d->WEBPOptions     = ploader->exportWidget(QLatin1String("WEBP"));
+
+    if (d->WEBPOptions)
+    {
+        d->WEBPOptions->setParent(this);
+    }
+
     //-- AVIF Settings -------------------------------------------------
 
     // NOTE: AVIF support depend of JXL QImage loader plugin availability.
@@ -208,6 +221,11 @@ FileSaveOptionsBox::FileSaveOptionsBox(QWidget* const parent)
     if (d->JXLOptions)
     {
         insertWidget(JXL,     d->JXLOptions);
+    }
+
+    if (d->WEBPOptions)
+    {
+        insertWidget(WEBP,    d->WEBPOptions);
     }
 
     if (d->AVIFOptions)
@@ -295,6 +313,10 @@ FileSaveOptionsBox::FORMAT FileSaveOptionsBox::discoverFormat(const QString& fil
     {
         format = JXL;
     }
+    else if (ext.contains(QLatin1String("WEBP")))
+    {
+        format = WEBP;
+    }
     else if (ext.contains(QLatin1String("AVIF")))
     {
         format = AVIF;
@@ -345,6 +367,12 @@ void FileSaveOptionsBox::applySettings()
     {
         group.writeEntry(QLatin1String("JXLCompression"),  d->JXLOptions->settings()[QLatin1String("quality")].toInt());
         group.writeEntry(QLatin1String("JXLLossLess"),     d->JXLOptions->settings()[QLatin1String("lossless")].toBool());
+    }
+
+    if (d->WEBPOptions)
+    {
+        group.writeEntry(QLatin1String("WEBPCompression"), d->WEBPOptions->settings()[QLatin1String("quality")].toInt());
+        group.writeEntry(QLatin1String("WEBPLossLess"),    d->WEBPOptions->settings()[QLatin1String("lossless")].toBool());
     }
 
     if (d->AVIFOptions)
@@ -409,6 +437,14 @@ void FileSaveOptionsBox::readSettings()
         set.insert(QLatin1String("quality"),  group.readEntry(QLatin1String("JXLCompression"),     75));
         set.insert(QLatin1String("lossless"), group.readEntry(QLatin1String("JXLLossLess"),        true));
         d->JXLOptions->setSettings(set);
+    }
+
+    if (d->WEBPOptions)
+    {
+        set.clear();
+        set.insert(QLatin1String("quality"),  group.readEntry(QLatin1String("WEBPCompression"),     75));
+        set.insert(QLatin1String("lossless"), group.readEntry(QLatin1String("WEBPLossLess"),        true));
+        d->WEBPOptions->setSettings(set);
     }
 
     if (d->AVIFOptions)

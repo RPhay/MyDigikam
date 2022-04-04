@@ -271,26 +271,31 @@ void EditorWindow::setupStandardActions()
     m_saveNewVersionInFormatAction = new QMenu(i18nc("@action Save As New Version...Save in format...",
                                                      "Save in Format"), this);
     m_saveNewVersionInFormatAction->setIcon(QIcon::fromTheme(QLatin1String("view-preview")));
-    d->plugNewVersionInFormatAction(this, m_saveNewVersionInFormatAction, i18nc("@action:inmenu", "JPEG"),      QLatin1String("JPG"));
-    d->plugNewVersionInFormatAction(this, m_saveNewVersionInFormatAction, i18nc("@action:inmenu", "TIFF"),      QLatin1String("TIFF"));
-    d->plugNewVersionInFormatAction(this, m_saveNewVersionInFormatAction, i18nc("@action:inmenu", "PNG"),       QLatin1String("PNG"));
-    d->plugNewVersionInFormatAction(this, m_saveNewVersionInFormatAction, i18nc("@action:inmenu", "PGF"),       QLatin1String("PGF"));
+    d->plugNewVersionInFormatAction(this, m_saveNewVersionInFormatAction, i18nc("@action:inmenu", "JPEG"),       QLatin1String("JPG"));
+    d->plugNewVersionInFormatAction(this, m_saveNewVersionInFormatAction, i18nc("@action:inmenu", "TIFF"),       QLatin1String("TIFF"));
+    d->plugNewVersionInFormatAction(this, m_saveNewVersionInFormatAction, i18nc("@action:inmenu", "PNG"),        QLatin1String("PNG"));
+    d->plugNewVersionInFormatAction(this, m_saveNewVersionInFormatAction, i18nc("@action:inmenu", "PGF"),        QLatin1String("PGF"));
 
 #ifdef HAVE_JASPER
 
-    d->plugNewVersionInFormatAction(this, m_saveNewVersionInFormatAction, i18nc("@action:inmenu", "JPEG 2000"), QLatin1String("JP2"));
+    d->plugNewVersionInFormatAction(this, m_saveNewVersionInFormatAction, i18nc("@action:inmenu", "JPEG 2000"),  QLatin1String("JP2"));
 
 #endif // HAVE_JASPER
 
 #ifdef HAVE_X265
 
-    d->plugNewVersionInFormatAction(this, m_saveNewVersionInFormatAction, i18nc("@action:inmenu", "HEIF"),      QLatin1String("HEIF"));
+    d->plugNewVersionInFormatAction(this, m_saveNewVersionInFormatAction, i18nc("@action:inmenu", "HEIF"),       QLatin1String("HEIF"));
 
 #endif // HAVE_X265
 
     if (DPluginLoader::instance()->canExport(QLatin1String("JXL")))
     {
-        d->plugNewVersionInFormatAction(this, m_saveNewVersionInFormatAction, i18nc("@action:inmenu", "JXL"),   QLatin1String("JXL"));
+        d->plugNewVersionInFormatAction(this, m_saveNewVersionInFormatAction, i18nc("@action:inmenu", "JXL"),    QLatin1String("JXL"));
+    }
+
+    if (DPluginLoader::instance()->canExport(QLatin1String("WEBP")))
+    {
+        d->plugNewVersionInFormatAction(this, m_saveNewVersionInFormatAction, i18nc("@action:inmenu", "WEBP"),   QLatin1String("WEBP"));
     }
 
     if (DPluginLoader::instance()->canExport(QLatin1String("AVIF")))
@@ -856,6 +861,14 @@ void EditorWindow::applyIOSettings()
     // JXL LossLess setting.
 
     m_IOFileSettings->JXLLossLess         = group.readEntry(d->configJxlLossLessEntry,         true);
+
+    // WEBP quality slider settings : 1 - 99
+
+    m_IOFileSettings->WEBPCompression     = group.readEntry(d->configWebpCompressionEntry,     75);
+
+    // WEBP LossLess setting.
+
+    m_IOFileSettings->WEBPLossLess         = group.readEntry(d->configWebpLossLessEntry,       true);
 
     // AVIF quality slider settings : 1 - 99
 

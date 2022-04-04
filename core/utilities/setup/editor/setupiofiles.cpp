@@ -67,6 +67,7 @@ public:
 #endif // HAVE_X265
 
         JXLOptions              (nullptr),
+        WEBPOptions             (nullptr),
         AVIFOptions             (nullptr),
         showImageSettingsDialog (nullptr)
     {
@@ -98,6 +99,8 @@ public:
     static const QString configShowImageSettingsDialog;
     static const QString configJXLCompressionEntry;
     static const QString configJXLLossLessEntry;
+    static const QString configWEBPCompressionEntry;
+    static const QString configWEBPLossLessEntry;
     static const QString configAVIFCompressionEntry;
     static const QString configAVIFLossLessEntry;
 
@@ -120,6 +123,7 @@ public:
 #endif // HAVE_X265
 
     DImgLoaderSettings*  JXLOptions;
+    DImgLoaderSettings*  WEBPOptions;
     DImgLoaderSettings*  AVIFOptions;
     QCheckBox*           showImageSettingsDialog;
 };
@@ -138,6 +142,8 @@ const QString SetupIOFiles::Private::configHEIFLossLessEntry(QLatin1String("HEIF
 const QString SetupIOFiles::Private::configShowImageSettingsDialog(QLatin1String("ShowImageSettingsDialog"));
 const QString SetupIOFiles::Private::configJXLCompressionEntry(QLatin1String("JXLCompression"));
 const QString SetupIOFiles::Private::configJXLLossLessEntry(QLatin1String("JXLLossLess"));
+const QString SetupIOFiles::Private::configWEBPCompressionEntry(QLatin1String("WEBPCompression"));
+const QString SetupIOFiles::Private::configWEBPLossLessEntry(QLatin1String("WEBPLossLess"));
 const QString SetupIOFiles::Private::configAVIFCompressionEntry(QLatin1String("AVIFCompression"));
 const QString SetupIOFiles::Private::configAVIFLossLessEntry(QLatin1String("AVIFLossLess"));
 
@@ -182,6 +188,13 @@ SetupIOFiles::SetupIOFiles(QWidget* const parent)
         d->JXLOptions->setParent(this);
     }
 
+    d->WEBPOptions               = ploader->exportWidget(QLatin1String("WEBP"));
+
+    if (d->WEBPOptions)
+    {
+        d->WEBPOptions->setParent(this);
+    }
+
     d->AVIFOptions               = ploader->exportWidget(QLatin1String("AVIF"));
 
     if (d->AVIFOptions)
@@ -217,6 +230,11 @@ SetupIOFiles::SetupIOFiles(QWidget* const parent)
     if (d->JXLOptions)
     {
         vbox->addWidget(d->createGroupBox(d->JXLOptions));
+    }
+
+    if (d->WEBPOptions)
+    {
+        vbox->addWidget(d->createGroupBox(d->WEBPOptions));
     }
 
     if (d->AVIFOptions)
@@ -277,6 +295,12 @@ void SetupIOFiles::applySettings()
     {
         group.writeEntry(d->configJXLCompressionEntry,  d->JXLOptions->settings()[QLatin1String("quality")].toInt());
         group.writeEntry(d->configJXLLossLessEntry,     d->JXLOptions->settings()[QLatin1String("lossless")].toBool());
+    }
+
+    if (d->WEBPOptions)
+    {
+        group.writeEntry(d->configWEBPCompressionEntry, d->WEBPOptions->settings()[QLatin1String("quality")].toInt());
+        group.writeEntry(d->configWEBPLossLessEntry,    d->WEBPOptions->settings()[QLatin1String("lossless")].toBool());
     }
 
     if (d->AVIFOptions)
@@ -342,6 +366,14 @@ void SetupIOFiles::readSettings()
         set.insert(QLatin1String("quality"),  group.readEntry(d->configJXLCompressionEntry,    75));
         set.insert(QLatin1String("lossless"), group.readEntry(d->configJXLLossLessEntry,       true));
         d->JXLOptions->setSettings(set);
+    }
+
+    if (d->WEBPOptions)
+    {
+        set.clear();
+        set.insert(QLatin1String("quality"),  group.readEntry(d->configWEBPCompressionEntry,   75));
+        set.insert(QLatin1String("lossless"), group.readEntry(d->configWEBPLossLessEntry,      true));
+        d->WEBPOptions->setSettings(set);
     }
 
     if (d->AVIFOptions)

@@ -57,6 +57,7 @@ public:
         PGF,
         HEIF,
         JXL,
+        WEBP,
         AVIF
     };
 

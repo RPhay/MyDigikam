@@ -224,6 +224,8 @@ public:
     static const QString         configHeifLossLessEntry;
     static const QString         configJxlCompressionEntry;
     static const QString         configJxlLossLessEntry;
+    static const QString         configWebpCompressionEntry;
+    static const QString         configWebpLossLessEntry;
     static const QString         configAvifCompressionEntry;
     static const QString         configAvifLossLessEntry;
     static const QString         configSplitterStateEntry;
@@ -302,6 +304,8 @@ const QString EditorWindow::Private::configHeifCompressionEntry(QLatin1String("H
 const QString EditorWindow::Private::configHeifLossLessEntry(QLatin1String("HEIFLossLess"));
 const QString EditorWindow::Private::configJxlCompressionEntry(QLatin1String("JXLCompression"));
 const QString EditorWindow::Private::configJxlLossLessEntry(QLatin1String("JXLLossLess"));
+const QString EditorWindow::Private::configWebpCompressionEntry(QLatin1String("WEBPCompression"));
+const QString EditorWindow::Private::configWebpLossLessEntry(QLatin1String("WEBPLossLess"));
 const QString EditorWindow::Private::configAvifCompressionEntry(QLatin1String("AVIFCompression"));
 const QString EditorWindow::Private::configAvifLossLessEntry(QLatin1String("AVIFLossLess"));
 const QString EditorWindow::Private::configSplitterStateEntry(QLatin1String("SplitterState"));

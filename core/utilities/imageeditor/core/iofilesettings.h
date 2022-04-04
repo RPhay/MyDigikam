@@ -50,6 +50,8 @@ public:
         HEIFLossLess       (true),
         JXLCompression     (75),
         JXLLossLess        (true),
+        WEBPCompression    (75),
+        WEBPLossLess       (true),
         AVIFCompression    (75),
         AVIFLossLess       (true),
         useRAWImport       (true),
@@ -98,6 +100,12 @@ public:
 
     /// JXL lossless compression.
     bool         JXLLossLess;
+
+    /// WEBP quality value.
+    int          WEBPCompression;
+
+    /// WEBP lossless compression.
+    bool         WEBPLossLess;
 
     /// AVIF quality value.
     int          AVIFCompression;
