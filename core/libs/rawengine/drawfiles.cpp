@@ -156,13 +156,20 @@ QMap<QString, QString> s_rawFileExtensionsdWithDesc()
      */
     map.insert(QLatin1String("iiq"),  i18n("Phase One Digital Camera Raw Image Format"));
 
+    /**
+     * NOTE: VERSION 8
+     */
+    map.insert(QLatin1String("ari"),  i18n("Arriflex Camera Raw Image Format"));
+    map.insert(QLatin1String("cap"),  i18n("Phase One Digital Camera Raw Image Format"));
+    map.insert(QLatin1String("fff"),  i18n("Hasselblad Digital Camera Raw Image Format"));
+    map.insert(QLatin1String("cin"),  i18n("Phantom Software Raw Image File"));
+
 /*
     TODO: check if these format are supported
 
     map.insert(QLatin1String("drf"),  i18n("Kodak Digital Camera Raw Image Format"));
     map.insert(QLatin1String("dsc"),  i18n("Kodak Digital Camera Raw Image Format"));
     map.insert(QLatin1String("ptx"),  i18n("Pentax Digital Camera Raw Image Format"));
-    map.insert(QLatin1String("cap"),  i18n("Phase One Digital Camera Raw Image Format"));
     map.insert(QLatin1String("rwz"),  i18n("Rawzor Digital Camera Raw Image Format"));
 */
 
@@ -174,7 +181,7 @@ int s_rawFileExtensionsVersion()
     /**
      * NOTE: increment this number whenever you change the above strings
      */
-    return 7;
+    return 8;
 }
 
 } // namespace Digikam
