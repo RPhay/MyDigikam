@@ -56,7 +56,7 @@ DImgHEIFPlugin::~DImgHEIFPlugin()
 
 QString DImgHEIFPlugin::name() const
 {
-    return i18n("HEIF loader");
+    return i18nc("@title", "HEIF loader");
 }
 
 QString DImgHEIFPlugin::iid() const
@@ -71,12 +71,12 @@ QIcon DImgHEIFPlugin::icon() const
 
 QString DImgHEIFPlugin::description() const
 {
-    return i18n("An image loader based on Libheif codec");
+    return i18nc("@info", "An image loader based on Libheif codec");
 }
 
 QString DImgHEIFPlugin::details() const
 {
-    QString x265Notice = i18n("This library is not present on your system.");
+    QString x265Notice = i18nc("@info", "This library is not present on your system.");
 
 #ifdef HAVE_X265
 
@@ -84,27 +84,28 @@ QString DImgHEIFPlugin::details() const
 
     if (depth != -1)
     {
-        x265Notice = i18n("This library is available on your system with a maximum color depth "
-                          "support of %1 bits.", depth);
+        x265Notice = i18nc("@info", "This library is available on your system with a maximum color depth "
+                           "support of %1 bits.", depth);
     }
     else
     {
-        x265Notice = i18n("This library is available on your system but is not able to encode "
-                          "image with a suitable color depth.");
+        x265Notice = i18nc("@info", "This library is available on your system but is not able to encode "
+                           "image with a suitable color depth.");
     }
 
 #endif
 
-    return i18n("<p>This plugin allows users to load and save image using Libheif codec.</p>"
-                "<p>High Efficiency Image File Format (HEIF), also known as High Efficiency Image Coding (HEIC), "
-                "is a file format for individual images and image sequences. It was developed by the "
-                "Moving Picture Experts Group (MPEG) and it claims that twice as much information can be "
-                "stored in a HEIF image as in a JPEG image of the same size, resulting in a better quality image. "
-                "HEIF also supports animation, and is capable of storing more information than an animated GIF "
-                "at a small fraction of the size.</p>"
-                "<p>Encoding HEIC is relevant of optional libde265 codec. %1</p>"
-                "<p>See <a href='https://en.wikipedia.org/wiki/High_Efficiency_Image_File_Format'>"
-                "High Efficiency Image File Format</a> for details.</p>", x265Notice);
+    return xi18nc("@info",
+                  "<p>This plugin allows users to load and save image using Libheif codec.</p>"
+                  "<p>High Efficiency Image File Format (HEIF), also known as High Efficiency Image Coding (HEIC), "
+                  "is a file format for individual images and image sequences. It was developed by the "
+                  "Moving Picture Experts Group (MPEG) and it claims that twice as much information can be "
+                  "stored in a HEIF image as in a JPEG image of the same size, resulting in a better quality image. "
+                  "HEIF also supports animation, and is capable of storing more information than an animated GIF "
+                  "at a small fraction of the size.</p>"
+                  "<p>Encoding HEIC is relevant of optional libde265 codec. %1</p>"
+                  "<p>See <a href='https://en.wikipedia.org/wiki/High_Efficiency_Image_File_Format'>"
+                  "High Efficiency Image File Format</a> for details.</p>", x265Notice);
 }
 
 QList<DPluginAuthor> DImgHEIFPlugin::authors() const
@@ -125,7 +126,7 @@ QMap<QString, QStringList> DImgHEIFPlugin::extraAboutData() const
 {
     QMap<QString, QStringList> map;
     map.insert(QLatin1String("HEIC"),
-               QStringList() << i18n("High efficiency image coding")
+               QStringList() << i18nc("@title", "High efficiency image coding")
                              << i18nc("@info: can read file format", "yes")
 #ifdef HAVE_X265
                              << i18nc("@info: can write file format", "yes")
@@ -135,7 +136,7 @@ QMap<QString, QStringList> DImgHEIFPlugin::extraAboutData() const
     );
 
     map.insert(QLatin1String("HEIF"),
-               QStringList() << i18n("High efficiency image coding")
+               QStringList() << i18nc("@title", "High efficiency image coding")
                              << i18nc("@info: can read file format", "yes")
 #ifdef HAVE_X265
                              << i18nc("@info: can write file format", "yes")
