@@ -52,7 +52,7 @@ DImgRAWPlugin::~DImgRAWPlugin()
 
 QString DImgRAWPlugin::name() const
 {
-    return i18n("RAW loader");
+    return i18nc("@title", "RAW loader");
 }
 
 QString DImgRAWPlugin::iid() const
@@ -67,21 +67,21 @@ QIcon DImgRAWPlugin::icon() const
 
 QString DImgRAWPlugin::description() const
 {
-    return i18n("An image loader based on Libraw codec");
+    return i18nc("@info", "An image loader based on Libraw codec");
 }
 
 QString DImgRAWPlugin::details() const
 {
-    return i18n("<p>This plugin allows users to load and save image using Libraw codec.</p>"
-                "<p>A camera raw image file contains minimally processed data from the image sensor "
-                "of either a digital camera, a motion picture film scanner, or other image scanner. "
-                "Raw files are not yet processed and therefore are not ready to be printed or edited "
-                "with a bitmap graphics editor. RAW are processed by a raw converter in a wide-gamut "
-                "internal color space where precise adjustments can be made before conversion to a TIFF "
-                "or JPEG for storage, printing, or further manipulation. This often encodes the image in "
-                "a device-dependent color space.</p>"
-                "<p>See <a href='https://en.wikipedia.org/wiki/Raw_image_format'>"
-                "Raw Image File documentation</a> for details.</p>"
+    return xi18nc("@info", "<p>This plugin allows users to load and save image using Libraw codec.</p>"
+                  "<p>A camera raw image file contains minimally processed data from the image sensor "
+                  "of either a digital camera, a motion picture film scanner, or other image scanner. "
+                  "Raw files are not yet processed and therefore are not ready to be printed or edited "
+                  "with a bitmap graphics editor. RAW are processed by a raw converter in a wide-gamut "
+                  "internal color space where precise adjustments can be made before conversion to a TIFF "
+                  "or JPEG for storage, printing, or further manipulation. This often encodes the image in "
+                  "a device-dependent color space.</p>"
+                  "<p>See <a href='https://en.wikipedia.org/wiki/Raw_image_format'>"
+                  "Raw Image File documentation</a> for details.</p>"
     );
 }
 
