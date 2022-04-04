@@ -56,7 +56,7 @@ DImgJPEG2000Plugin::~DImgJPEG2000Plugin()
 
 QString DImgJPEG2000Plugin::name() const
 {
-    return i18n("JPEG-2000 loader");
+    return i18nc("@title", "JPEG-2000 loader");
 }
 
 QString DImgJPEG2000Plugin::iid() const
@@ -71,18 +71,18 @@ QIcon DImgJPEG2000Plugin::icon() const
 
 QString DImgJPEG2000Plugin::description() const
 {
-    return i18n("An image loader based on Libjasper codec");
+    return i18nc("@info", "An image loader based on Libjasper codec");
 }
 
 QString DImgJPEG2000Plugin::details() const
 {
-    return i18n("<p>This plugin allows users to load and save image using Libjasper codec</p>"
-                "<p>The JPEG (Joint Photographic Experts Group) 2000 standard, finalized in 2001, "
-                "defines a image-coding scheme using state-of-the-art compression techniques based "
-                "on wavelet technology. Its architecture is useful for many diverse applications, "
-                "including image archiving, security systems, digital photography, and medical imaging.</p>"
-                "<p>See <a href='https://en.wikipedia.org/wiki/JPEG_2000'>"
-                "Joint Photographic Experts Group documentation</a> for details.</p>"
+    return xi18nc("@info", "<p>This plugin allows users to load and save image using Libjasper codec</p>"
+                  "<p>The JPEG (Joint Photographic Experts Group) 2000 standard, finalized in 2001, "
+                  "defines a image-coding scheme using state-of-the-art compression techniques based "
+                  "on wavelet technology. Its architecture is useful for many diverse applications, "
+                  "including image archiving, security systems, digital photography, and medical imaging.</p>"
+                  "<p>See <a href='https://en.wikipedia.org/wiki/JPEG_2000'>"
+                  "Joint Photographic Experts Group documentation</a> for details.</p>"
     );
 }
 
@@ -103,23 +103,23 @@ void DImgJPEG2000Plugin::setup(QObject* const /*parent*/)
 QMap<QString, QStringList> DImgJPEG2000Plugin::extraAboutData() const
 {
     QMap<QString, QStringList> map;
-    map.insert(QLatin1String("JP2"), QStringList() << i18n("JPEG-2000 image")
+    map.insert(QLatin1String("JP2"), QStringList() << i18nc("@title", "JPEG-2000 image")
                                                    << i18nc("@info: can read file format",  "yes")
                                                    << i18nc("@info: can write file format", "yes")
     );
-    map.insert(QLatin1String("JPX"), QStringList() << i18n("JPEG-2000 image")
+    map.insert(QLatin1String("JPX"), QStringList() << i18nc("@title", "JPEG-2000 image")
                                                    << i18nc("@info: can read file format",  "yes")
                                                    << i18nc("@info: can write file format", "yes")
     );
-    map.insert(QLatin1String("JPC"), QStringList() << i18n("JPEG-2000 stream")
+    map.insert(QLatin1String("JPC"), QStringList() << i18nc("@title", "JPEG-2000 stream")
                                                    << i18nc("@info: can read file format",  "yes")
                                                    << i18nc("@info: can write file format", "yes")
     );
-    map.insert(QLatin1String("J2K"), QStringList() << i18n("JPEG-2000 stream")
+    map.insert(QLatin1String("J2K"), QStringList() << i18nc("@title", "JPEG-2000 stream")
                                                    << i18nc("@info: can read file format",  "yes")
                                                    << i18nc("@info: can write file format", "yes")
     );
-    map.insert(QLatin1String("PGX"), QStringList() << i18n("JPEG-2000 verification model")
+    map.insert(QLatin1String("PGX"), QStringList() << i18nc("@title", "JPEG-2000 verification model")
                                                    << i18nc("@info: can read file format",  "yes")
                                                    << i18nc("@info: can write file format", "yes")
     );
