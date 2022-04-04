@@ -56,7 +56,7 @@ DImgTIFFPlugin::~DImgTIFFPlugin()
 
 QString DImgTIFFPlugin::name() const
 {
-    return i18n("TIFF loader");
+    return i18nc("@title", "TIFF loader");
 }
 
 QString DImgTIFFPlugin::iid() const
@@ -71,19 +71,19 @@ QIcon DImgTIFFPlugin::icon() const
 
 QString DImgTIFFPlugin::description() const
 {
-    return i18n("An image loader based on Libtiff codec");
+    return i18nc("@info", "An image loader based on Libtiff codec");
 }
 
 QString DImgTIFFPlugin::details() const
 {
-    return i18n("<p>This plugin allows users to load and save image using Libtiff codec.</p>"
-                "<p>Tagged Image File Format, abbreviated TIFF or TIF, is a computer file format "
-                "for storing raster graphics images, popular among graphic artists, the publishing "
-                "industry, and photographers. TIFF is widely supported by scanning, faxing, "
-                "word processing, optical character recognition, image manipulation, "
-                "desktop publishing, and page-layout applications.</p>"
-                "<p>See <a href='https://en.wikipedia.org/wiki/TIFF'>"
-                "Tagged Image File Format documentation</a> for details.</p>"
+    return xi18nc("@info", "<p>This plugin allows users to load and save image using Libtiff codec.</p>"
+                  "<p>Tagged Image File Format, abbreviated TIFF or TIF, is a computer file format "
+                  "for storing raster graphics images, popular among graphic artists, the publishing "
+                  "industry, and photographers. TIFF is widely supported by scanning, faxing, "
+                  "word processing, optical character recognition, image manipulation, "
+                  "desktop publishing, and page-layout applications.</p>"
+                  "<p>See <a href='https://en.wikipedia.org/wiki/TIFF'>"
+                  "Tagged Image File Format documentation</a> for details.</p>"
     );
 }
 
@@ -117,11 +117,11 @@ QString DImgTIFFPlugin::typeMimes() const
 QMap<QString, QStringList> DImgTIFFPlugin::extraAboutData() const
 {
     QMap<QString, QStringList> map;
-    map.insert(QLatin1String("TIF"),  QStringList() << i18n("Tagged Image Format")
+    map.insert(QLatin1String("TIF"),  QStringList() << i18nc("@title", "Tagged Image Format")
                                                     << i18nc("@info: can read file format",  "yes")
                                                     << i18nc("@info: can write file format", "yes")
     );
-    map.insert(QLatin1String("TIFF"), QStringList() << i18n("Tagged Image Format")
+    map.insert(QLatin1String("TIFF"), QStringList() << i18nc("@title", "Tagged Image Format")
                                                     << i18nc("@info: can read file format",  "yes")
                                                     << i18nc("@info: can write file format", "yes")
     );
