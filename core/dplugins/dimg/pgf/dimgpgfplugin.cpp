@@ -56,7 +56,7 @@ DImgPGFPlugin::~DImgPGFPlugin()
 
 QString DImgPGFPlugin::name() const
 {
-    return i18n("PGF loader");
+    return i18nc("@title", "PGF loader");
 }
 
 QString DImgPGFPlugin::iid() const
@@ -71,18 +71,18 @@ QIcon DImgPGFPlugin::icon() const
 
 QString DImgPGFPlugin::description() const
 {
-    return i18n("An image loader based on Libpgf codec");
+    return i18nc("@info", "An image loader based on Libpgf codec");
 }
 
 QString DImgPGFPlugin::details() const
 {
-    return i18n("<p>This plugin allows users to load and save image using Libpgf codec.</p>"
-                "<p>The Progressive Graphics File (PGF) is an efficient image file format, "
-                "that is based on a fast, discrete wavelet transform with progressive coding "
-                "features. PGF can be used for lossless and lossy compression. It's most suitable "
-                "for natural images. PGF can be used as a very efficient and fast replacement of JPEG-2000.</p>"
-                "<p>See <a href='https://en.wikipedia.org/wiki/Progressive_Graphics_File'>"
-                "Progressive Graphics File documentation</a> for details.</p>"
+    return xi18nc("@info", "<p>This plugin allows users to load and save image using Libpgf codec.</p>"
+                  "<p>The Progressive Graphics File (PGF) is an efficient image file format, "
+                  "that is based on a fast, discrete wavelet transform with progressive coding "
+                  "features. PGF can be used for lossless and lossy compression. It's most suitable "
+                  "for natural images. PGF can be used as a very efficient and fast replacement of JPEG-2000.</p>"
+                  "<p>See <a href='https://en.wikipedia.org/wiki/Progressive_Graphics_File'>"
+                  "Progressive Graphics File documentation</a> for details.</p>"
     );
 }
 
@@ -104,7 +104,7 @@ QMap<QString, QStringList> DImgPGFPlugin::extraAboutData() const
 {
     QMap<QString, QStringList> map;
     map.insert(QLatin1String("PGF"),
-               QStringList() << i18n("Progressive Graphics File")
+               QStringList() << i18nc("@title", "Progressive Graphics File")
                              << i18nc("@info: can read file format",  "yes")
                              << i18nc("@info: can write file format", "yes")
     );
