@@ -79,7 +79,7 @@ void DImgImageMagickPlugin::cleanUp()
 
 QString DImgImageMagickPlugin::name() const
 {
-    return i18n("ImageMagick loader");
+    return i18nc("@title", "ImageMagick loader");
 }
 
 QString DImgImageMagickPlugin::iid() const
@@ -94,15 +94,15 @@ QIcon DImgImageMagickPlugin::icon() const
 
 QString DImgImageMagickPlugin::description() const
 {
-    return i18n("An image loader based on ImageMagick coders");
+    return i18nc("@info", "An image loader based on ImageMagick coders");
 }
 
 QString DImgImageMagickPlugin::details() const
 {
-    return i18n("<p>This plugin allows users to load and save image using ImageMagick coders.</p>"
-                "<p>ImageMagick is a free and open-source software suite for converting raster image and vector image files. "
-                "It can read and write over 200 image file formats.</p>"
-                "<p>See <a href='https://en.wikipedia.org/wiki/ImageMagick'>ImageMagick documentation</a> for details.</p>"
+    return xi18nc("@info", "<p>This plugin allows users to load and save image using ImageMagick coders.</p>"
+                  "<p>ImageMagick is a free and open-source software suite for converting raster image and vector image files. "
+                  "It can read and write over 200 image file formats.</p>"
+                  "<p>See <a href='https://en.wikipedia.org/wiki/ImageMagick'>ImageMagick documentation</a> for details.</p>"
     );
 }
 
