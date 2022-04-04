@@ -56,7 +56,7 @@ DImgPNGPlugin::~DImgPNGPlugin()
 
 QString DImgPNGPlugin::name() const
 {
-    return i18n("PNG loader");
+    return i18nc("@title", "PNG loader");
 }
 
 QString DImgPNGPlugin::iid() const
@@ -71,17 +71,17 @@ QIcon DImgPNGPlugin::icon() const
 
 QString DImgPNGPlugin::description() const
 {
-    return i18n("An image loader based on Libpng codec");
+    return i18nc("@info", "An image loader based on Libpng codec");
 }
 
 QString DImgPNGPlugin::details() const
 {
-    return i18n("<p>This plugin allows users to load and save image using Libpng codec.</p>"
-                "<p>Portable Network Graphics (PNG) is a raster-graphics file-format that supports "
-                "lossless data compression. PNG was developed as an improved, non-patented replacement "
-                "for Graphics Interchange Format.</p>"
-                "<p>See <a href='https://en.wikipedia.org/wiki/Portable_Network_Graphics'>"
-                "Portable Network Graphics documentation</a> for details.</p>"
+    return xi18nc("@info", "<p>This plugin allows users to load and save image using Libpng codec.</p>"
+                  "<p>Portable Network Graphics (PNG) is a raster-graphics file-format that supports "
+                  "lossless data compression. PNG was developed as an improved, non-patented replacement "
+                  "for Graphics Interchange Format.</p>"
+                  "<p>See <a href='https://en.wikipedia.org/wiki/Portable_Network_Graphics'>"
+                  "Portable Network Graphics documentation</a> for details.</p>"
     );
 }
 
@@ -112,7 +112,7 @@ QString DImgPNGPlugin::typeMimes() const
 QMap<QString, QStringList> DImgPNGPlugin::extraAboutData() const
 {
     QMap<QString, QStringList> map;
-    map.insert(QLatin1String("PNG"), QStringList() << i18n("Portable Network Graphic")
+    map.insert(QLatin1String("PNG"), QStringList() << i18nc("@title", "Portable Network Graphic")
                                                    << i18nc("@info: can read file format",  "yes")
                                                    << i18nc("@info: can write file format", "yes")
     );
