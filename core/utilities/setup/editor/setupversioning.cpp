@@ -196,7 +196,7 @@ SetupVersioning::SetupVersioning(QWidget* const parent)
     d->formatBox->insertSeparator(4);
 
     QString formatHelp = xi18nc("@info:whatsthis",
-                                "<title>Default File Format for Saving</title>"
+                                "<title>Default File Format for Saving Versionned Images</title>"
                                 "<para>Select the file format in which edited images are saved automatically. "
                                 "Format-specific options, like compression settings, "
                                 "can be configured on the <interface>Format Options</interface> tab.</para>");
