@@ -4,13 +4,14 @@
 # Redistribution and use is allowed according to the terms of the BSD license.
 # For details see the accompanying COPYING-CMAKE-SCRIPTS file.
 
-add_subdirectory(converttodng)
-add_subdirectory(converttopng)
-add_subdirectory(converttojxl)
 add_subdirectory(converttoavif)
-add_subdirectory(converttopgf)
+add_subdirectory(converttodng)
 add_subdirectory(converttojpeg)
+add_subdirectory(converttojxl)
+add_subdirectory(converttopng)
+add_subdirectory(converttopgf)
 add_subdirectory(converttotiff)
+add_subdirectory(converttowebp)
 
 if(Jasper_FOUND)
     add_subdirectory(converttojp2)

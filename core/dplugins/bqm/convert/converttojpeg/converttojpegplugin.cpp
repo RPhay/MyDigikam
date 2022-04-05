@@ -51,7 +51,7 @@ ConvertToJpegPlugin::~ConvertToJpegPlugin()
 
 QString ConvertToJpegPlugin::name() const
 {
-    return i18n("Convert To JPEG");
+    return i18nc("@title", "Convert To JPEG");
 }
 
 QString ConvertToJpegPlugin::iid() const
@@ -66,14 +66,14 @@ QIcon ConvertToJpegPlugin::icon() const
 
 QString ConvertToJpegPlugin::description() const
 {
-    return i18n("A tool to convert images to JPEG format");
+    return i18nc("@info", "A tool to convert images to JPEG format");
 }
 
 QString ConvertToJpegPlugin::details() const
 {
-    return i18n("<p>This Batch Queue Manager tool can convert images data to JPEG format.</p>"
-                "<p>The Joint Photographic Experts Group format is a commonly used method of lossy compression for digital images, particularly for those images produced by digital photography.</p>"
-                "<p>See details about this format from <a href='https://en.wikipedia.org/wiki/JPEG'>this page</a>.</p>");
+    return xi18nc("@info", "<p>This Batch Queue Manager tool can convert images data to JPEG format.</p>"
+                  "<p>The Joint Photographic Experts Group format is a commonly used method of lossy compression for digital images, particularly for those images produced by digital photography.</p>"
+                  "<p>See details about this format from <a href='https://en.wikipedia.org/wiki/JPEG'>this page</a>.</p>");
 }
 
 QList<DPluginAuthor> ConvertToJpegPlugin::authors() const
@@ -81,7 +81,7 @@ QList<DPluginAuthor> ConvertToJpegPlugin::authors() const
     return QList<DPluginAuthor>()
             << DPluginAuthor(QString::fromUtf8("Gilles Caulier"),
                              QString::fromUtf8("caulier dot gilles at gmail dot com"),
-                             QString::fromUtf8("(C) 2008-2021"))
+                             QString::fromUtf8("(C) 2008-2022"))
             ;
 }
 

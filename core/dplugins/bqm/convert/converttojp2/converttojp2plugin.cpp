@@ -51,7 +51,7 @@ ConvertToJp2Plugin::~ConvertToJp2Plugin()
 
 QString ConvertToJp2Plugin::name() const
 {
-    return i18n("Convert To JP2");
+    return i18nc("@title", "Convert To JP2");
 }
 
 QString ConvertToJp2Plugin::iid() const
@@ -66,14 +66,14 @@ QIcon ConvertToJp2Plugin::icon() const
 
 QString ConvertToJp2Plugin::description() const
 {
-    return i18n("A tool to convert images to JPEG-2000 format");
+    return i18nc("@info", "A tool to convert images to JPEG-2000 format");
 }
 
 QString ConvertToJp2Plugin::details() const
 {
-    return i18n("<p>This Batch Queue Manager tool can convert images data to JPEG-2000 format.</p>"
-                "<p>This is an image compression standard and coding system. It was created by the Joint Photographic Experts Group committee in 2000 with the intention of superseding their original discrete cosine transform-based JPEG standard (created in 1992) with a newly designed, wavelet-based method.</p>"
-                "<p>See details about this format from <a href='https://en.wikipedia.org/wiki/JPEG_2000'>this page</a>.</p>");
+    return xi18nc("@info", "<p>This Batch Queue Manager tool can convert images data to JPEG-2000 format.</p>"
+                  "<p>This is an image compression standard and coding system. It was created by the Joint Photographic Experts Group committee in 2000 with the intention of superseding their original discrete cosine transform-based JPEG standard (created in 1992) with a newly designed, wavelet-based method.</p>"
+                  "<p>See details about this format from <a href='https://en.wikipedia.org/wiki/JPEG_2000'>this page</a>.</p>");
 }
 
 QList<DPluginAuthor> ConvertToJp2Plugin::authors() const
@@ -81,7 +81,7 @@ QList<DPluginAuthor> ConvertToJp2Plugin::authors() const
     return QList<DPluginAuthor>()
             << DPluginAuthor(QString::fromUtf8("Gilles Caulier"),
                              QString::fromUtf8("caulier dot gilles at gmail dot com"),
-                             QString::fromUtf8("(C) 2008-2021"))
+                             QString::fromUtf8("(C) 2008-2022"))
             ;
 }
 

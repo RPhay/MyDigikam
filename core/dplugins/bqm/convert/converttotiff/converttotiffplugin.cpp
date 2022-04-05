@@ -51,7 +51,7 @@ ConvertToTiffPlugin::~ConvertToTiffPlugin()
 
 QString ConvertToTiffPlugin::name() const
 {
-    return i18n("Convert To TIFF");
+    return i18nc("@title", "Convert To TIFF");
 }
 
 QString ConvertToTiffPlugin::iid() const
@@ -66,14 +66,14 @@ QIcon ConvertToTiffPlugin::icon() const
 
 QString ConvertToTiffPlugin::description() const
 {
-    return i18n("A tool to convert images to TIFF format");
+    return i18nc("@info", "A tool to convert images to TIFF format");
 }
 
 QString ConvertToTiffPlugin::details() const
 {
-    return i18n("<p>This Batch Queue Manager tool can convert images data to TIFF format.</p>"
-                "<p>The Tagged Image File Format is a computer file format for storing raster graphics images, popular among graphic artists, the publishing industry, and photographers.</p>"
-                "<p>See details about this format from <a href='https://en.wikipedia.org/wiki/TIFF'>this page</a>.</p>");
+    return xi18nc("@info", "<p>This Batch Queue Manager tool can convert images data to TIFF format.</p>"
+                  "<p>The Tagged Image File Format is a computer file format for storing raster graphics images, popular among graphic artists, the publishing industry, and photographers.</p>"
+                  "<p>See details about this format from <a href='https://en.wikipedia.org/wiki/TIFF'>this page</a>.</p>");
 }
 
 QList<DPluginAuthor> ConvertToTiffPlugin::authors() const
@@ -81,7 +81,7 @@ QList<DPluginAuthor> ConvertToTiffPlugin::authors() const
     return QList<DPluginAuthor>()
             << DPluginAuthor(QString::fromUtf8("Gilles Caulier"),
                              QString::fromUtf8("caulier dot gilles at gmail dot com"),
-                             QString::fromUtf8("(C) 2008-2021"))
+                             QString::fromUtf8("(C) 2008-2022"))
             ;
 }
 

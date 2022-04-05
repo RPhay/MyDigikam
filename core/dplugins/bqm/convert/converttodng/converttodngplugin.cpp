@@ -71,10 +71,9 @@ QString ConvertToDngPlugin::description() const
 
 QString ConvertToDngPlugin::details() const
 {
-    return i18nc("@info", "This Generic tool can convert RAW images data to DNG format.\n\n"
-                 "The Digital Negative is a lossless RAW image format created by Adobe.\n\n"
-                 "See details on this wikipedia entry about this format: %1",
-                 QLatin1String("<a href='https://en.wikipedia.org/wiki/Digital_Negative'>https://en.wikipedia.org/wiki/Digital_Negative</a>.</p>"));
+    return xi18nc("@info", "<p>This Generic tool can convert RAW images data to DNG format.</p>"
+                  "<p>The Digital Negative is a lossless RAW image format created by Adobe.</p>"
+                  "<p>See details about this format from <a href='https://en.wikipedia.org/wiki/Digital_Negative'>this page</a>.</p>");
 }
 
 QList<DPluginAuthor> ConvertToDngPlugin::authors() const
@@ -82,7 +81,7 @@ QList<DPluginAuthor> ConvertToDngPlugin::authors() const
     return QList<DPluginAuthor>()
             << DPluginAuthor(QString::fromUtf8("Gilles Caulier"),
                              QString::fromUtf8("caulier dot gilles at gmail dot com"),
-                             QString::fromUtf8("(C) 2008-2021"))
+                             QString::fromUtf8("(C) 2008-2022"))
             << DPluginAuthor(QString::fromUtf8("Jens Mueller"),
                              QString::fromUtf8("tschenser at gmx dot de"),
                              QString::fromUtf8("(C) 2010-2011"))
@@ -91,7 +90,7 @@ QList<DPluginAuthor> ConvertToDngPlugin::authors() const
                              QString::fromUtf8("(C) 2012"))
             << DPluginAuthor(QString::fromUtf8("Maik Qualmann"),
                              QString::fromUtf8("metzpinguin at gmail dot com"),
-                             QString::fromUtf8("(C) 2020-2021"))
+                             QString::fromUtf8("(C) 2020-2022"))
             ;
 }
 

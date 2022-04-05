@@ -51,7 +51,7 @@ ConvertToPngPlugin::~ConvertToPngPlugin()
 
 QString ConvertToPngPlugin::name() const
 {
-    return i18n("Convert To PNG");
+    return i18nc("@title", "Convert To PNG");
 }
 
 QString ConvertToPngPlugin::iid() const
@@ -66,14 +66,14 @@ QIcon ConvertToPngPlugin::icon() const
 
 QString ConvertToPngPlugin::description() const
 {
-    return i18n("A tool to convert images to PNG format");
+    return i18nc("@info", "A tool to convert images to PNG format");
 }
 
 QString ConvertToPngPlugin::details() const
 {
-    return i18n("<p>This Batch Queue Manager tool can convert images data to PNG format.</p>"
-                "<p>The Portable Network Graphics is a raster-graphics file-format that supports lossless data compression.</p>"
-                "<p>See details about this format from <a href='https://en.wikipedia.org/wiki/Portable_Network_Graphics'>this page</a>.</p>");
+    return xi18nc("@info", "<p>This Batch Queue Manager tool can convert images data to PNG format.</p>"
+                  "<p>The Portable Network Graphics is a raster-graphics file-format that supports lossless data compression.</p>"
+                  "<p>See details about this format from <a href='https://en.wikipedia.org/wiki/Portable_Network_Graphics'>this page</a>.</p>");
 }
 
 QList<DPluginAuthor> ConvertToPngPlugin::authors() const
@@ -81,7 +81,7 @@ QList<DPluginAuthor> ConvertToPngPlugin::authors() const
     return QList<DPluginAuthor>()
             << DPluginAuthor(QString::fromUtf8("Gilles Caulier"),
                              QString::fromUtf8("caulier dot gilles at gmail dot com"),
-                             QString::fromUtf8("(C) 2008-2021"))
+                             QString::fromUtf8("(C) 2008-2022"))
             ;
 }
 

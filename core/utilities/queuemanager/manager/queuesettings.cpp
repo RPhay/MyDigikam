@@ -73,6 +73,9 @@ QueueSettings::QueueSettings()
     ioFileSettings.JXLCompression      = group.readEntry(QLatin1String("JXLCompression"),      75);
     ioFileSettings.JXLLossLess         = group.readEntry(QLatin1String("JXLLossLess"),         true);
 
+    ioFileSettings.WEBPCompression     = group.readEntry(QLatin1String("WEBPCompression"),     75);
+    ioFileSettings.WEBPLossLess        = group.readEntry(QLatin1String("WEBPLossLess"),        true);
+
     ioFileSettings.AVIFCompression     = group.readEntry(QLatin1String("AVIFCompression"),     75);
     ioFileSettings.AVIFLossLess        = group.readEntry(QLatin1String("AVIFLossLess"),        true);
 }

@@ -51,7 +51,7 @@ ConvertToHeifPlugin::~ConvertToHeifPlugin()
 
 QString ConvertToHeifPlugin::name() const
 {
-    return i18n("Convert To HEIF");
+    return i18nc("@title", "Convert To HEIF");
 }
 
 QString ConvertToHeifPlugin::iid() const
@@ -66,20 +66,20 @@ QIcon ConvertToHeifPlugin::icon() const
 
 QString ConvertToHeifPlugin::description() const
 {
-    return i18n("A tool to convert images to HEIF format");
+    return i18nc("@info", "A tool to convert images to HEIF format");
 }
 
 QString ConvertToHeifPlugin::details() const
 {
-    return i18n("<p>This Batch Queue Manager tool can convert images data to HEIF format.</p>"
-                "<p>High Efficiency Image File Format (HEIF), also known as High Efficiency Image Coding (HEIC), "
-                "is a file format for individual images and image sequences. It was developed by the "
-                "Moving Picture Experts Group (MPEG) and it claims that twice as much information can be "
-                "stored in a HEIF image as in a JPEG image of the same size, resulting in a better quality image. "
-                "HEIF also supports animation, and is capable of storing more information than an animated GIF "
-                "at a small fraction of the size.</p>"
-                "<p>See <a href='https://en.wikipedia.org/wiki/High_Efficiency_Image_File_Format'>"
-                "High Efficiency Image File Format</a> for details.</p>");
+    return xi18nc("@info", "<p>This Batch Queue Manager tool can convert images data to HEIF format.</p>"
+                  "<p>High Efficiency Image File Format (HEIF), also known as High Efficiency Image Coding (HEIC), "
+                  "is a file format for individual images and image sequences. It was developed by the "
+                  "Moving Picture Experts Group (MPEG) and it claims that twice as much information can be "
+                  "stored in a HEIF image as in a JPEG image of the same size, resulting in a better quality image. "
+                  "HEIF also supports animation, and is capable of storing more information than an animated GIF "
+                  "at a small fraction of the size.</p>"
+                  "<p>See <a href='https://en.wikipedia.org/wiki/High_Efficiency_Image_File_Format'>"
+                  "High Efficiency Image File Format</a> for details.</p>");
 }
 
 QList<DPluginAuthor> ConvertToHeifPlugin::authors() const
@@ -87,7 +87,7 @@ QList<DPluginAuthor> ConvertToHeifPlugin::authors() const
     return QList<DPluginAuthor>()
             << DPluginAuthor(QString::fromUtf8("Gilles Caulier"),
                              QString::fromUtf8("caulier dot gilles at gmail dot com"),
-                             QString::fromUtf8("(C) 2019"))
+                             QString::fromUtf8("(C) 2019-2022"))
             ;
 }
 

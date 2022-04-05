@@ -4,7 +4,7 @@
  * https://www.digikam.org
  *
  * Date        : 2022-04-03
- * Description : a BQM plugin to convert to JXL.
+ * Description : a BQM plugin to convert to WEBP.
  *
  * Copyright (C) 2022 by Gilles Caulier <caulier dot gilles at gmail dot com>
  *
@@ -20,7 +20,7 @@
  *
  * ============================================================ */
 
-#include "converttojxlplugin.h"
+#include "converttowebpplugin.h"
 
 // Qt includes
 
@@ -35,48 +35,48 @@
 // Local includes
 
 #include "digikam_debug.h"
-#include "converttojxl.h"
+#include "converttowebp.h"
 
-namespace DigikamBqmConvertToJxlPlugin
+namespace DigikamBqmConvertToWebpPlugin
 {
 
-ConvertToJxlPlugin::ConvertToJxlPlugin(QObject* const parent)
+ConvertToWebpPlugin::ConvertToWebpPlugin(QObject* const parent)
     : DPluginBqm(parent)
 {
 }
 
-ConvertToJxlPlugin::~ConvertToJxlPlugin()
+ConvertToWebpPlugin::~ConvertToWebpPlugin()
 {
 }
 
-QString ConvertToJxlPlugin::name() const
+QString ConvertToWebpPlugin::name() const
 {
-    return i18nc("@title", "Convert To JXL");
+    return i18nc("@title", "Convert To WEBP");
 }
 
-QString ConvertToJxlPlugin::iid() const
+QString ConvertToWebpPlugin::iid() const
 {
     return QLatin1String(DPLUGIN_IID);
 }
 
-QIcon ConvertToJxlPlugin::icon() const
+QIcon ConvertToWebpPlugin::icon() const
 {
     return QIcon::fromTheme(QLatin1String("image-x-generic"));
 }
 
-QString ConvertToJxlPlugin::description() const
+QString ConvertToWebpPlugin::description() const
 {
-    return i18nc("@info", "A tool to convert images to JXL format");
+    return i18nc("@info", "A tool to convert images to WEBP format");
 }
 
-QString ConvertToJxlPlugin::details() const
+QString ConvertToWebpPlugin::details() const
 {
-    return xi18nc("@info", "<p>This Batch Queue Manager tool can convert images data to JPEG-XL format.</p>"
-                  "<p>JPEG-XL is a royalty-free raster-graphics file format that supports both lossy and lossless compression. It is designed to outperform existing raster formats and thus to become their universal replacement.</p>"
-                  "<p>See details about this format from <a href='https://en.wikipedia.org/wiki/JPEG_XL'>this page</a>.</p>");
+    return xi18nc("@info", "<p>This Batch Queue Manager tool can convert images data to WEBP format.</p>"
+                  "<p>WEBP is an image file format that Google has developed as a replacement for JPEG, PNG, and GIF file formats. WEBP yields files that are smaller for the same quality, or of higher quality for the same size. It supports both lossy and lossless compression, as well as animation and alpha transparency.</p>"
+                  "<p>See details about this format from <a href='https://en.wikipedia.org/wiki/WebP'>this page</a>.</p>");
 }
 
-QList<DPluginAuthor> ConvertToJxlPlugin::authors() const
+QList<DPluginAuthor> ConvertToWebpPlugin::authors() const
 {
     return QList<DPluginAuthor>()
             << DPluginAuthor(QString::fromUtf8("Gilles Caulier"),
@@ -85,12 +85,12 @@ QList<DPluginAuthor> ConvertToJxlPlugin::authors() const
             ;
 }
 
-void ConvertToJxlPlugin::setup(QObject* const parent)
+void ConvertToWebpPlugin::setup(QObject* const parent)
 {
-    ConvertToJXL* const tool = new ConvertToJXL(parent);
+    ConvertToWEBP* const tool = new ConvertToWEBP(parent);
     tool->setPlugin(this);
 
     addTool(tool);
 }
 
-} // namespace DigikamBqmConvertToJxlPlugin
+} // namespace DigikamBqmConvertToWebpPlugin

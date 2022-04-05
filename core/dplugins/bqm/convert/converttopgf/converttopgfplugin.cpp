@@ -51,7 +51,7 @@ ConvertToPgfPlugin::~ConvertToPgfPlugin()
 
 QString ConvertToPgfPlugin::name() const
 {
-    return i18n("Convert To PGF");
+    return i18nc("@title", "Convert To PGF");
 }
 
 QString ConvertToPgfPlugin::iid() const
@@ -66,14 +66,14 @@ QIcon ConvertToPgfPlugin::icon() const
 
 QString ConvertToPgfPlugin::description() const
 {
-    return i18n("A tool to convert images to PGF format");
+    return i18nc("@info", "A tool to convert images to PGF format");
 }
 
 QString ConvertToPgfPlugin::details() const
 {
-    return i18n("<p>This Batch Queue Manager tool can convert images data to PGF format.</p>"
-                "<p>The Progressive Graphics File is a wavelet-based bitmapped image format that employs lossless and lossy data compression.</p>"
-                "<p>See details about this format from <a href='https://en.wikipedia.org/wiki/Progressive_Graphics_File'>this page</a>.</p>");
+    return xi18nc("@info", "<p>This Batch Queue Manager tool can convert images data to PGF format.</p>"
+                  "<p>The Progressive Graphics File is a wavelet-based bitmapped image format that employs lossless and lossy data compression.</p>"
+                  "<p>See details about this format from <a href='https://en.wikipedia.org/wiki/Progressive_Graphics_File'>this page</a>.</p>");
 }
 
 QList<DPluginAuthor> ConvertToPgfPlugin::authors() const
@@ -81,7 +81,7 @@ QList<DPluginAuthor> ConvertToPgfPlugin::authors() const
     return QList<DPluginAuthor>()
             << DPluginAuthor(QString::fromUtf8("Gilles Caulier"),
                              QString::fromUtf8("caulier dot gilles at gmail dot com"),
-                             QString::fromUtf8("(C) 2009-2021"))
+                             QString::fromUtf8("(C) 2009-2022"))
             ;
 }
 

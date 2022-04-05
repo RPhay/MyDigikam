@@ -107,6 +107,7 @@ public:
 
         pgfSettings             (nullptr),
         jxlSettings             (nullptr),
+        webpSettings            (nullptr),
         avifSettings            (nullptr)
     {
     }
@@ -151,6 +152,7 @@ public:
 
     DImgLoaderSettings*    pgfSettings;
     DImgLoaderSettings*    jxlSettings;
+    DImgLoaderSettings*    webpSettings;
     DImgLoaderSettings*    avifSettings;
 };
 
@@ -342,16 +344,28 @@ QueueSettingsView::QueueSettingsView(QWidget* const parent)
         slay->addWidget(box7);
     }
 
+    d->webpSettings          = ploader->exportWidget(QLatin1String("WEBP"));
+
+    if (d->webpSettings)
+    {
+        QGroupBox* const  box8   = new QGroupBox;
+        QVBoxLayout* const lbox8 = new QVBoxLayout;
+        d->webpSettings->setParent(this);
+        lbox8->addWidget(d->webpSettings);
+        box8->setLayout(lbox8);
+        slay->addWidget(box8);
+    }
+
     d->avifSettings          = ploader->exportWidget(QLatin1String("AVIF"));
 
     if (d->avifSettings)
     {
-        QGroupBox* const  box8   = new QGroupBox;
-        QVBoxLayout* const lbox8 = new QVBoxLayout;
+        QGroupBox* const  box9   = new QGroupBox;
+        QVBoxLayout* const lbox9 = new QVBoxLayout;
         d->avifSettings->setParent(this);
-        lbox8->addWidget(d->avifSettings);
-        box8->setLayout(lbox8);
-        slay->addWidget(box8);
+        lbox9->addWidget(d->avifSettings);
+        box9->setLayout(lbox9);
+        slay->addWidget(box9);
     }
 
     slay->setContentsMargins(spacing, spacing, spacing, spacing);
@@ -416,6 +430,9 @@ QueueSettingsView::QueueSettingsView(QWidget* const parent)
             this, SLOT(slotSettingsChanged()));
 
     connect(d->jxlSettings, SIGNAL(signalSettingsChanged()),
+            this, SLOT(slotSettingsChanged()));
+
+    connect(d->webpSettings, SIGNAL(signalSettingsChanged()),
             this, SLOT(slotSettingsChanged()));
 
     connect(d->avifSettings, SIGNAL(signalSettingsChanged()),
@@ -524,6 +541,14 @@ void QueueSettingsView::slotResetSettings()
         d->jxlSettings->setSettings(set);
     }
 
+    if (d->webpSettings)
+    {
+        set.clear();
+        set.insert(QLatin1String("quality"),  settings.ioFileSettings.WEBPCompression);
+        set.insert(QLatin1String("lossless"), settings.ioFileSettings.WEBPLossLess);
+        d->webpSettings->setSettings(set);
+    }
+
     if (d->avifSettings)
     {
         set.clear();
@@ -608,6 +633,14 @@ void QueueSettingsView::slotQueueSelected(int, const QueueSettings& settings, co
         d->jxlSettings->setSettings(set);
     }
 
+    if (d->webpSettings)
+    {
+        set.clear();
+        set.insert(QLatin1String("quality"),  settings.ioFileSettings.WEBPCompression);
+        set.insert(QLatin1String("lossless"), settings.ioFileSettings.WEBPLossLess);
+        d->webpSettings->setSettings(set);
+    }
+
     if (d->avifSettings)
     {
         set.clear();
@@ -672,6 +705,12 @@ void QueueSettingsView::slotSettingsChanged()
     {
         settings.ioFileSettings.JXLCompression  = d->jxlSettings->settings()[QLatin1String("quality")].toInt();
         settings.ioFileSettings.JXLLossLess     = d->jxlSettings->settings()[QLatin1String("lossless")].toBool();
+    }
+
+    if (d->webpSettings)
+    {
+        settings.ioFileSettings.WEBPCompression  = d->webpSettings->settings()[QLatin1String("quality")].toInt();
+        settings.ioFileSettings.WEBPLossLess     = d->webpSettings->settings()[QLatin1String("lossless")].toBool();
     }
 
     if (d->avifSettings)

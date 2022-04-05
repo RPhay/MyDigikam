@@ -51,7 +51,7 @@ ConvertToAvifPlugin::~ConvertToAvifPlugin()
 
 QString ConvertToAvifPlugin::name() const
 {
-    return i18n("Convert To AVIF");
+    return i18nc("@title", "Convert To AVIF");
 }
 
 QString ConvertToAvifPlugin::iid() const
@@ -66,15 +66,15 @@ QIcon ConvertToAvifPlugin::icon() const
 
 QString ConvertToAvifPlugin::description() const
 {
-    return i18n("A tool to convert images to AVIF format");
+    return i18nc("@info", "A tool to convert images to AVIF format");
 }
 
 QString ConvertToAvifPlugin::details() const
 {
-    return i18n("<p>This Batch Queue Manager tool can convert images data to AVIF format.</p>"
-                "<p>AV1 Image File Format is an image file format specification for storing images or image sequences compressed with AV1 "
-                "in the ISOBMFF container format.</p>"
-                "<p>See details about this format from <a href='https://en.wikipedia.org/wiki/AVIF'>this page</a>.</p>");
+    return xi18nc("@info", "<p>This Batch Queue Manager tool can convert images data to AVIF format.</p>"
+                  "<p>AV1 Image File Format is an image file format specification for storing images or image sequences compressed with AV1 "
+                  "in the ISOBMFF container format.</p>"
+                  "<p>See details about this format from <a href='https://en.wikipedia.org/wiki/AVIF'>this page</a>.</p>");
 }
 
 QList<DPluginAuthor> ConvertToAvifPlugin::authors() const
