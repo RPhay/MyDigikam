@@ -4,9 +4,9 @@ digiKam 8.0.0 - Release date: 2022-xx-xx
 NEW FEATURES:
 
 General  : Port code to Qt6 and KF6 framework.
-General  : Add JPEG-XL and AVIF export settings everywhere.
-           Add convert to lossless JPEG-XL and AVIF while importing from camera.
-           Add JPEG-XL and AVIF converters in Batch Queue Manager.
+General  : Add JPEG-XL, WEBP, and AVIF export settings everywhere.
+           Add convert to lossless JPEG-XL, WEBP, and AVIF while importing from camera.
+           Add JPEG-XL; WEBP, and AVIF converters in Batch Queue Manager.
 Usability: Add hamburger menu to tool-bar if main menu is hidden.
 
 *****************************************************************************************************
