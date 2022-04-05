@@ -43,6 +43,11 @@ public:
 
     void applySettings();
 
+    static void losslessFormatToolTip(QString& formatHelp,
+                                      bool hasJXLSupport,
+                                      bool hasWEBPSupport,
+                                      bool hasAVIFSupport);
+
 private:
 
     void readSettings();

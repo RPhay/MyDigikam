@@ -45,6 +45,7 @@
 #include "dpluginloader.h"
 #include "templateselector.h"
 #include "ddatetimeedit.h"
+#include "setupversioning.h"
 #include "template.h"
 
 namespace Digikam
@@ -113,17 +114,23 @@ AdvancedSettings::AdvancedSettings(QWidget* const parent)
 
 #endif // HAVE_X265
 
-    if (DPluginLoader::instance()->canExport(QLatin1String("JXL")))
+    bool hasJXLSupport = DPluginLoader::instance()->canExport(QLatin1String("JXL"));
+
+    if (hasJXLSupport)
     {
         d->losslessFormat->addItem(i18nc("@label:listbox", "JPEG-XL"), QLatin1String("JXL"));
     }
 
-    if (DPluginLoader::instance()->canExport(QLatin1String("WEBP")))
+    bool hasWEBPSupport = DPluginLoader::instance()->canExport(QLatin1String("WEBP"));
+
+    if (hasWEBPSupport)
     {
         d->losslessFormat->addItem(i18nc("@label:listbox", "WEBP"),    QLatin1String("WEBP"));
     }
 
-    if (DPluginLoader::instance()->canExport(QLatin1String("AVIF")))
+    bool hasAVIFSupport = DPluginLoader::instance()->canExport(QLatin1String("AVIF"));
+
+    if (hasAVIFSupport)
     {
         d->losslessFormat->addItem(i18nc("@label:listbox", "AVIF"),    QLatin1String("AVIF"));
     }
@@ -140,22 +147,28 @@ AdvancedSettings::AdvancedSettings(QWidget* const parent)
     onFlyVlay->setSpacing(spacing);
 
     setWhatsThis(i18nc("@info", "Set here all options to fix/transform JPEG files automatically "
-                                "as they are downloaded."));
+                       "as they are downloaded."));
     d->autoRotateCheck->setWhatsThis(i18nc("@info", "Enable this option if you want images automatically "
-                                          "rotated or flipped using Exif information provided by the camera."));
+                                           "rotated or flipped using Exif information provided by the camera."));
     d->templateSelector->setWhatsThis(i18nc("@info", "Select here which metadata template you want to apply "
-                                           "to images."));
+                                            "to images."));
     d->documentNameCheck->setWhatsThis(i18nc("@info", "Enable this option to write the document name to the Exif metadata. "
-                                            "The document name is the original file name of the imported file."));
+                                             "The document name is the original file name of the imported file."));
     d->fixDateTimeCheck->setWhatsThis(i18nc("@info", "Enable this option to set date and time metadata "
-                                           "tags to the right values if your camera does not set "
-                                           "these tags correctly when pictures are taken. The values will "
-                                           "be saved in the DateTimeDigitized and DateTimeCreated EXIF, XMP, and IPTC tags."));
+                                            "tags to the right values if your camera does not set "
+                                            "these tags correctly when pictures are taken. The values will "
+                                            "be saved in the DateTimeDigitized and DateTimeCreated EXIF, XMP, and IPTC tags."));
     d->convertJpegCheck->setWhatsThis(i18nc("@info", "Enable this option to automatically convert "
-                                           "all JPEG files to a lossless image format. Note: Image conversion can take a "
-                                           "while on a slow computer."));
-    d->losslessFormat->setWhatsThis(i18nc("@info", "Select your preferred lossless image file format to "
-                                         "convert to. Note: All metadata will be preserved during the conversion."));
+                                            "all JPEG files to a lossless image format. Note: Image conversion can take a "
+                                            "while on a slow computer."));
+
+    QString formatHelp = xi18nc("@info:whatsthis",
+                                "<title>Preferred Lossless Image File Format</title>"
+                                "<para>Select the file format in which JPEG image will be converted to a "
+                                "lossless container with metadata support.</para>");
+
+    SetupVersioning::losslessFormatToolTip(formatHelp, hasJXLSupport, hasWEBPSupport, hasAVIFSupport);
+    d->losslessFormat->setWhatsThis(formatHelp);
 
     // ---------------------------------------------------------------------------------------
 
