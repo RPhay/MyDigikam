@@ -71,12 +71,12 @@ QString UserScriptPlugin::description() const
 
 QString UserScriptPlugin::details() const
 {
-    return xi18nc("@info", "<p>This Batch Queue Manager tool can run user shell script as workflow stage.</p>"
-                  "<p>Script variables:</p>"
-                  "<p>Uses <b>$INPUT</b> and <b>$OUTPUT</b> for input / output filenames (with special characters escaped). "
-                  "These would be substituted before shell execution.</p>"
-                  "<p>Uses <b>$TITLE</b>, <b>$COMMENTS</b>, <b>$COLORLABEL</b>, <b>$PICKLABEL</b>, <b>$RATING</b> "
-                  "and <b>$TAGSPATH</b> to handle digiKam properties.</p>");
+    return xi18nc("@info", "<para>This Batch Queue Manager tool can run user shell script as workflow stage.</para>"
+                  "<para>Script variables:</para>"
+                  "<para>Uses <b>$INPUT</b> and <b>$OUTPUT</b> for input / output filenames (with special characters escaped). "
+                  "These would be substituted before shell execution.</para>"
+                  "<para>Uses <b>$TITLE</b>, <b>$COMMENTS</b>, <b>$COLORLABEL</b>, <b>$PICKLABEL</b>, <b>$RATING</b> "
+                  "and <b>$TAGSPATH</b> to handle digiKam properties.</para>");
 }
 
 QList<DPluginAuthor> UserScriptPlugin::authors() const

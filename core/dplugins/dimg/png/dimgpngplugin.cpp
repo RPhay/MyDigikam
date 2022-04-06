@@ -76,12 +76,12 @@ QString DImgPNGPlugin::description() const
 
 QString DImgPNGPlugin::details() const
 {
-    return xi18nc("@info", "<p>This plugin allows users to load and save image using Libpng codec.</p>"
-                  "<p>Portable Network Graphics (PNG) is a raster-graphics file-format that supports "
+    return xi18nc("@info", "<para>This plugin allows users to load and save image using Libpng codec.</para>"
+                  "<para>Portable Network Graphics (PNG) is a raster-graphics file-format that supports "
                   "lossless data compression. PNG was developed as an improved, non-patented replacement "
-                  "for Graphics Interchange Format.</p>"
-                  "<p>See <a href='https://en.wikipedia.org/wiki/Portable_Network_Graphics'>"
-                  "Portable Network Graphics documentation</a> for details.</p>"
+                  "for Graphics Interchange Format.</para>"
+                  "<para>See <a href='https://en.wikipedia.org/wiki/Portable_Network_Graphics'>"
+                  "Portable Network Graphics documentation</a> for details.</para>"
     );
 }
 

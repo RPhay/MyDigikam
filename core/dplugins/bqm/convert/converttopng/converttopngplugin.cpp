@@ -71,9 +71,9 @@ QString ConvertToPngPlugin::description() const
 
 QString ConvertToPngPlugin::details() const
 {
-    return xi18nc("@info", "<p>This Batch Queue Manager tool can convert images data to PNG format.</p>"
-                  "<p>The Portable Network Graphics is a raster-graphics file-format that supports lossless data compression.</p>"
-                  "<p>See details about this format from <a href='https://en.wikipedia.org/wiki/Portable_Network_Graphics'>this page</a>.</p>");
+    return xi18nc("@info", "<para>This Batch Queue Manager tool can convert images data to PNG format.</para>"
+                  "<para>The Portable Network Graphics is a raster-graphics file-format that supports lossless data compression.</para>"
+                  "<para>See details about this format from <a href='https://en.wikipedia.org/wiki/Portable_Network_Graphics'>this page</a>.</para>");
 }
 
 QList<DPluginAuthor> ConvertToPngPlugin::authors() const

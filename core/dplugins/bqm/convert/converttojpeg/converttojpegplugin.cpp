@@ -71,9 +71,9 @@ QString ConvertToJpegPlugin::description() const
 
 QString ConvertToJpegPlugin::details() const
 {
-    return xi18nc("@info", "<p>This Batch Queue Manager tool can convert images data to JPEG format.</p>"
-                  "<p>The Joint Photographic Experts Group format is a commonly used method of lossy compression for digital images, particularly for those images produced by digital photography.</p>"
-                  "<p>See details about this format from <a href='https://en.wikipedia.org/wiki/JPEG'>this page</a>.</p>");
+    return xi18nc("@info", "<para>This Batch Queue Manager tool can convert images data to JPEG format.</para>"
+                  "<para>The Joint Photographic Experts Group format is a commonly used method of lossy compression for digital images, particularly for those images produced by digital photography.</para>"
+                  "<para>See details about this format from <a href='https://en.wikipedia.org/wiki/JPEG'>this page</a>.</para>");
 }
 
 QList<DPluginAuthor> ConvertToJpegPlugin::authors() const

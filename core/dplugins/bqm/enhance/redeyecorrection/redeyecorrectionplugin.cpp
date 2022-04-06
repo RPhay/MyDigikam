@@ -71,7 +71,7 @@ QString RedEyeCorrectionPlugin::description() const
 
 QString RedEyeCorrectionPlugin::details() const
 {
-    return xi18nc("@info", "<p>This Batch Queue Manager tool can reduce red eye effect on images.</p>");
+    return xi18nc("@info", "<para>This Batch Queue Manager tool can reduce red eye effect on images.</para>");
 }
 
 QList<DPluginAuthor> RedEyeCorrectionPlugin::authors() const

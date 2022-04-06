@@ -71,7 +71,7 @@ QString IccConvertPlugin::description() const
 
 QString IccConvertPlugin::details() const
 {
-    return xi18nc("@info", "<p>This Batch Queue Manager tool can convert images to a different color space.</p>");
+    return xi18nc("@info", "<para>This Batch Queue Manager tool can convert images to a different color space.</para>");
 }
 
 QList<DPluginAuthor> IccConvertPlugin::authors() const

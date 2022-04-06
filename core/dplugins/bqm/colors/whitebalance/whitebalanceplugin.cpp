@@ -71,7 +71,7 @@ QString WhiteBalancePlugin::description() const
 
 QString WhiteBalancePlugin::details() const
 {
-    return xi18nc("@info", "<p>This Batch Queue Manager tool can adjust the white balance from images.</p>");
+    return xi18nc("@info", "<para>This Batch Queue Manager tool can adjust the white balance from images.</para>");
 }
 
 QList<DPluginAuthor> WhiteBalancePlugin::authors() const

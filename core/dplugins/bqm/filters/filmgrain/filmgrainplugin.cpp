@@ -71,7 +71,7 @@ QString FilmGrainPlugin::description() const
 
 QString FilmGrainPlugin::details() const
 {
-    return xi18nc("@info", "<p>This Batch Queue Manager tool can add film grain over images.</p>");
+    return xi18nc("@info", "<para>This Batch Queue Manager tool can add film grain over images.</para>");
 }
 
 QList<DPluginAuthor> FilmGrainPlugin::authors() const

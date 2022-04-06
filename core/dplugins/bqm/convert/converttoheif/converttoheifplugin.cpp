@@ -71,15 +71,15 @@ QString ConvertToHeifPlugin::description() const
 
 QString ConvertToHeifPlugin::details() const
 {
-    return xi18nc("@info", "<p>This Batch Queue Manager tool can convert images data to HEIF format.</p>"
-                  "<p>High Efficiency Image File Format (HEIF), also known as High Efficiency Image Coding (HEIC), "
+    return xi18nc("@info", "<para>This Batch Queue Manager tool can convert images data to HEIF format.</para>"
+                  "<para>High Efficiency Image File Format (HEIF), also known as High Efficiency Image Coding (HEIC), "
                   "is a file format for individual images and image sequences. It was developed by the "
                   "Moving Picture Experts Group (MPEG) and it claims that twice as much information can be "
                   "stored in a HEIF image as in a JPEG image of the same size, resulting in a better quality image. "
                   "HEIF also supports animation, and is capable of storing more information than an animated GIF "
-                  "at a small fraction of the size.</p>"
-                  "<p>See <a href='https://en.wikipedia.org/wiki/High_Efficiency_Image_File_Format'>"
-                  "High Efficiency Image File Format</a> for details.</p>");
+                  "at a small fraction of the size.</para>"
+                  "<para>See <a href='https://en.wikipedia.org/wiki/High_Efficiency_Image_File_Format'>"
+                  "High Efficiency Image File Format</a> for details.</para>");
 }
 
 QList<DPluginAuthor> ConvertToHeifPlugin::authors() const

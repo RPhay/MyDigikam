@@ -71,7 +71,7 @@ QString ColorFXPlugin::description() const
 
 QString ColorFXPlugin::details() const
 {
-    return xi18nc("@info", "<p>This Batch Queue Manager tool can apply color effects over images.</p>");
+    return xi18nc("@info", "<para>This Batch Queue Manager tool can apply color effects over images.</para>");
 }
 
 QList<DPluginAuthor> ColorFXPlugin::authors() const

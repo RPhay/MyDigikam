@@ -71,7 +71,7 @@ QString WaterMarkPlugin::description() const
 
 QString WaterMarkPlugin::details() const
 {
-    return xi18nc("@info", "<p>This Batch Queue Manager tool can add a text watermark over images.</p>");
+    return xi18nc("@info", "<para>This Batch Queue Manager tool can add a text watermark over images.</para>");
 }
 
 QList<DPluginAuthor> WaterMarkPlugin::authors() const

@@ -71,7 +71,7 @@ QString ColorBalancePlugin::description() const
 
 QString ColorBalancePlugin::details() const
 {
-    return xi18nc("@info", "<p>This Batch Queue Manager tool can adjust color balance from images.</p>");
+    return xi18nc("@info", "<para>This Batch Queue Manager tool can adjust color balance from images.</para>");
 }
 
 QList<DPluginAuthor> ColorBalancePlugin::authors() const

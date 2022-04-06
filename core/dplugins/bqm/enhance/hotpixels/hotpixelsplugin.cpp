@@ -71,7 +71,7 @@ QString HotPixelsPlugin::description() const
 
 QString HotPixelsPlugin::details() const
 {
-    return xi18nc("@info", "<p>This Batch Queue Manager tool can fix hot pixels in images.</p>");
+    return xi18nc("@info", "<para>This Batch Queue Manager tool can fix hot pixels in images.</para>");
 }
 
 QList<DPluginAuthor> HotPixelsPlugin::authors() const

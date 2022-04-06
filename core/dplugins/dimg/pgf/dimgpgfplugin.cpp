@@ -76,13 +76,13 @@ QString DImgPGFPlugin::description() const
 
 QString DImgPGFPlugin::details() const
 {
-    return xi18nc("@info", "<p>This plugin allows users to load and save image using Libpgf codec.</p>"
-                  "<p>The Progressive Graphics File (PGF) is an efficient image file format, "
+    return xi18nc("@info", "<para>This plugin allows users to load and save image using Libpgf codec.</para>"
+                  "<para>The Progressive Graphics File (PGF) is an efficient image file format, "
                   "that is based on a fast, discrete wavelet transform with progressive coding "
                   "features. PGF can be used for lossless and lossy compression. It's most suitable "
-                  "for natural images. PGF can be used as a very efficient and fast replacement of JPEG-2000.</p>"
-                  "<p>See <a href='https://en.wikipedia.org/wiki/Progressive_Graphics_File'>"
-                  "Progressive Graphics File documentation</a> for details.</p>"
+                  "for natural images. PGF can be used as a very efficient and fast replacement of JPEG-2000.</para>"
+                  "<para>See <a href='https://en.wikipedia.org/wiki/Progressive_Graphics_File'>"
+                  "Progressive Graphics File documentation</a> for details.</para>"
     );
 }
 

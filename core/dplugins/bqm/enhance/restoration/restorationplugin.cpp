@@ -71,7 +71,7 @@ QString RestorationPlugin::description() const
 
 QString RestorationPlugin::details() const
 {
-    return xi18nc("@info", "<p>This Batch Queue Manager tool can restore images using Greystoration algorithm.</p>");
+    return xi18nc("@info", "<para>This Batch Queue Manager tool can restore images using Greystoration algorithm.</para>");
 }
 
 QList<DPluginAuthor> RestorationPlugin::authors() const

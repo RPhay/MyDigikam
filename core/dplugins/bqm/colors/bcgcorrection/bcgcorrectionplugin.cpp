@@ -71,7 +71,7 @@ QString BCGCorrectionPlugin::description() const
 
 QString BCGCorrectionPlugin::details() const
 {
-    return xi18nc("@info", "<p>This Batch Queue Manager tool can adjust Brightness / Contrast / Gamma from images.</p>");
+    return xi18nc("@info", "<para>This Batch Queue Manager tool can adjust Brightness / Contrast / Gamma from images.</para>");
 }
 
 QList<DPluginAuthor> BCGCorrectionPlugin::authors() const

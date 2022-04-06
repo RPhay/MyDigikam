@@ -75,11 +75,11 @@ QString DImgQImagePlugin::description() const
 
 QString DImgQImagePlugin::details() const
 {
-    return xi18nc("@info", "<p>This plugin allows users to load and save image using QImage plugins from Qt Framework.</p>"
-                  "<p>See <a href='https://doc.qt.io/qt-5/qimage.html#reading-and-writing-image-files'>Qt Framework documentation</a> "
-                  "for main native list of format supported.</p>"
-                  "<p>See <a href='https://invent.kde.org/frameworks/kimageformats/-/blob/master/README.md'>"
-                  "KDE Framework documentation</a> for extended list of formats supported.</p>"
+    return xi18nc("@info", "<para>This plugin allows users to load and save image using QImage plugins from Qt Framework.</para>"
+                  "<para>See <a href='https://doc.qt.io/qt-5/qimage.html#reading-and-writing-image-files'>Qt Framework documentation</a> "
+                  "for main native list of format supported.</para>"
+                  "<para>See <a href='https://invent.kde.org/frameworks/kimageformats/-/blob/master/README.md'>"
+                  "KDE Framework documentation</a> for extended list of formats supported.</para>"
     );
 }
 

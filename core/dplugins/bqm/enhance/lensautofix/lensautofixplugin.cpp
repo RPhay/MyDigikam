@@ -71,7 +71,7 @@ QString LensAutoFixPlugin::description() const
 
 QString LensAutoFixPlugin::details() const
 {
-    return xi18nc("@info", "<p>This Batch Queue Manager tool can fix automatically lens artifacts over images.</p>");
+    return xi18nc("@info", "<para>This Batch Queue Manager tool can fix automatically lens artifacts over images.</para>");
 }
 
 QList<DPluginAuthor> LensAutoFixPlugin::authors() const

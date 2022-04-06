@@ -71,7 +71,7 @@ QString RemoveMetadataPlugin::description() const
 
 QString RemoveMetadataPlugin::details() const
 {
-    return xi18nc("@info", "<p>This Batch Queue Manager tool can remove metadata as Exif, Iptc, or Xmp from images.</p>");
+    return xi18nc("@info", "<para>This Batch Queue Manager tool can remove metadata as Exif, Iptc, or Xmp from images.</para>");
 }
 
 QList<DPluginAuthor> RemoveMetadataPlugin::authors() const

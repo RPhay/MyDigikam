@@ -71,7 +71,7 @@ QString CurvesAdjustPlugin::description() const
 
 QString CurvesAdjustPlugin::details() const
 {
-    return xi18nc("@info", "<p>This Batch Queue Manager tool can adjust the color curves from images.</p>");
+    return xi18nc("@info", "<para>This Batch Queue Manager tool can adjust the color curves from images.</para>");
 }
 
 QList<DPluginAuthor> CurvesAdjustPlugin::authors() const

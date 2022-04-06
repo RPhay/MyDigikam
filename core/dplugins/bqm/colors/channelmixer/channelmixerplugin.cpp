@@ -71,7 +71,7 @@ QString ChannelMixerPlugin::description() const
 
 QString ChannelMixerPlugin::details() const
 {
-    return xi18nc("@info", "<p>This Batch Queue Manager tool can mix color channels from images.</p>");
+    return xi18nc("@info", "<para>This Batch Queue Manager tool can mix color channels from images.</para>");
 }
 
 QList<DPluginAuthor> ChannelMixerPlugin::authors() const

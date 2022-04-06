@@ -71,7 +71,7 @@ QString AssignTemplatePlugin::description() const
 
 QString AssignTemplatePlugin::details() const
 {
-    return xi18nc("@info", "<p>This Batch Queue Manager tool can apply metadata template over images.</p>");
+    return xi18nc("@info", "<para>This Batch Queue Manager tool can apply metadata template over images.</para>");
 }
 
 QList<DPluginAuthor> AssignTemplatePlugin::authors() const

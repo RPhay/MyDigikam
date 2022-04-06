@@ -71,9 +71,9 @@ QString ConvertToWebpPlugin::description() const
 
 QString ConvertToWebpPlugin::details() const
 {
-    return xi18nc("@info", "<p>This Batch Queue Manager tool can convert images data to WEBP format.</p>"
-                  "<p>WEBP is an image file format that Google has developed as a replacement for JPEG, PNG, and GIF file formats. WEBP yields files that are smaller for the same quality, or of higher quality for the same size. It supports both lossy and lossless compression, as well as animation and alpha transparency.</p>"
-                  "<p>See details about this format from <a href='https://en.wikipedia.org/wiki/WebP'>this page</a>.</p>");
+    return xi18nc("@info", "<para>This Batch Queue Manager tool can convert images data to WEBP format.</para>"
+                  "<para>WEBP is an image file format that Google has developed as a replacement for JPEG, PNG, and GIF file formats. WEBP yields files that are smaller for the same quality, or of higher quality for the same size. It supports both lossy and lossless compression, as well as animation and alpha transparency.</para>"
+                  "<para>See details about this format from <a href='https://en.wikipedia.org/wiki/WebP'>this page</a>.</para>");
 }
 
 QList<DPluginAuthor> ConvertToWebpPlugin::authors() const

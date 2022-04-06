@@ -71,7 +71,7 @@ QString RotatePlugin::description() const
 
 QString RotatePlugin::details() const
 {
-    return xi18nc("@info", "<p>This Batch Queue Manager tool can rotate images.</p>");
+    return xi18nc("@info", "<para>This Batch Queue Manager tool can rotate images.</para>");
 }
 
 QList<DPluginAuthor> RotatePlugin::authors() const

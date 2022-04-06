@@ -72,16 +72,16 @@ QString DImgRAWPlugin::description() const
 
 QString DImgRAWPlugin::details() const
 {
-    return xi18nc("@info", "<p>This plugin allows users to load and save image using Libraw codec.</p>"
-                  "<p>A camera raw image file contains minimally processed data from the image sensor "
+    return xi18nc("@info", "<para>This plugin allows users to load and save image using Libraw codec.</para>"
+                  "<para>A camera raw image file contains minimally processed data from the image sensor "
                   "of either a digital camera, a motion picture film scanner, or other image scanner. "
                   "Raw files are not yet processed and therefore are not ready to be printed or edited "
                   "with a bitmap graphics editor. RAW are processed by a raw converter in a wide-gamut "
                   "internal color space where precise adjustments can be made before conversion to a TIFF "
                   "or JPEG for storage, printing, or further manipulation. This often encodes the image in "
-                  "a device-dependent color space.</p>"
-                  "<p>See <a href='https://en.wikipedia.org/wiki/Raw_image_format'>"
-                  "Raw Image File documentation</a> for details.</p>"
+                  "a device-dependent color space.</para>"
+                  "<para>See <a href='https://en.wikipedia.org/wiki/Raw_image_format'>"
+                  "Raw Image File documentation</a> for details.</para>"
     );
 }
 
