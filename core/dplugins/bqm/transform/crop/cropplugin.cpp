@@ -51,7 +51,7 @@ CropPlugin::~CropPlugin()
 
 QString CropPlugin::name() const
 {
-    return i18n("Crop");
+    return i18nc("@title", "Crop");
 }
 
 QString CropPlugin::iid() const
@@ -66,12 +66,12 @@ QIcon CropPlugin::icon() const
 
 QString CropPlugin::description() const
 {
-    return i18n("A tool to crop images to a region");
+    return i18nc("@info", "A tool to crop images to a region");
 }
 
 QString CropPlugin::details() const
 {
-    return i18n("<p>This Batch Queue Manager tool can crop images to a region.</p>");
+    return xi18nc("@info", "<p>This Batch Queue Manager tool can crop images to a region.</p>");
 }
 
 QList<DPluginAuthor> CropPlugin::authors() const
@@ -79,7 +79,7 @@ QList<DPluginAuthor> CropPlugin::authors() const
     return QList<DPluginAuthor>()
             << DPluginAuthor(QString::fromUtf8("Gilles Caulier"),
                              QString::fromUtf8("caulier dot gilles at gmail dot com"),
-                             QString::fromUtf8("(C) 2012-2021"))
+                             QString::fromUtf8("(C) 2012-2022"))
             ;
 }
 

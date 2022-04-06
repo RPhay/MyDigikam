@@ -51,7 +51,7 @@ RotatePlugin::~RotatePlugin()
 
 QString RotatePlugin::name() const
 {
-    return i18n("Rotate");
+    return i18nc("@title", "Rotate");
 }
 
 QString RotatePlugin::iid() const
@@ -66,12 +66,12 @@ QIcon RotatePlugin::icon() const
 
 QString RotatePlugin::description() const
 {
-    return i18n("A tool to rotate images");
+    return i18nc("@info", "A tool to rotate images");
 }
 
 QString RotatePlugin::details() const
 {
-    return i18n("<p>This Batch Queue Manager tool can rotate images.</p>");
+    return xi18nc("@info", "<p>This Batch Queue Manager tool can rotate images.</p>");
 }
 
 QList<DPluginAuthor> RotatePlugin::authors() const
@@ -79,7 +79,7 @@ QList<DPluginAuthor> RotatePlugin::authors() const
     return QList<DPluginAuthor>()
             << DPluginAuthor(QString::fromUtf8("Gilles Caulier"),
                              QString::fromUtf8("caulier dot gilles at gmail dot com"),
-                             QString::fromUtf8("(C) 2009-2021"))
+                             QString::fromUtf8("(C) 2009-2022"))
             ;
 }
 

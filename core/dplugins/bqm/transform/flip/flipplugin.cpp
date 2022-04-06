@@ -51,7 +51,7 @@ FlipPlugin::~FlipPlugin()
 
 QString FlipPlugin::name() const
 {
-    return i18n("Flip");
+    return i18nc("@title", "Flip");
 }
 
 QString FlipPlugin::iid() const
@@ -66,12 +66,12 @@ QIcon FlipPlugin::icon() const
 
 QString FlipPlugin::description() const
 {
-    return i18n("A tool to flip images horizontally or vertically");
+    return i18nc("@info", "A tool to flip images horizontally or vertically");
 }
 
 QString FlipPlugin::details() const
 {
-    return i18n("<p>This Batch Queue Manager tool can run user shell script as workflow stage.</p>");
+    return xi18nc("@info", "<p>This Batch Queue Manager tool can run user shell script as workflow stage.</p>");
 }
 
 QList<DPluginAuthor> FlipPlugin::authors() const
@@ -79,7 +79,7 @@ QList<DPluginAuthor> FlipPlugin::authors() const
     return QList<DPluginAuthor>()
             << DPluginAuthor(QString::fromUtf8("Gilles Caulier"),
                              QString::fromUtf8("caulier dot gilles at gmail dot com"),
-                             QString::fromUtf8("(C) 2009-2021"))
+                             QString::fromUtf8("(C) 2009-2022"))
             ;
 }
 
