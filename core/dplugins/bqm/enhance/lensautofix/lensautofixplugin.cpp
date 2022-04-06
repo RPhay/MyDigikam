@@ -51,7 +51,7 @@ LensAutoFixPlugin::~LensAutoFixPlugin()
 
 QString LensAutoFixPlugin::name() const
 {
-    return i18n("Lens Auto-Correction");
+    return i18nc("@title", "Lens Auto-Correction");
 }
 
 QString LensAutoFixPlugin::iid() const
@@ -66,12 +66,12 @@ QIcon LensAutoFixPlugin::icon() const
 
 QString LensAutoFixPlugin::description() const
 {
-    return i18n("A tool to fix automatically lens artifacts");
+    return i18nc("@info", "A tool to fix automatically lens artifacts");
 }
 
 QString LensAutoFixPlugin::details() const
 {
-    return i18n("<p>This Batch Queue Manager tool can fix automatically lens artifacts over images.</p>");
+    return xi18nc("@info", "<p>This Batch Queue Manager tool can fix automatically lens artifacts over images.</p>");
 }
 
 QList<DPluginAuthor> LensAutoFixPlugin::authors() const
@@ -79,7 +79,7 @@ QList<DPluginAuthor> LensAutoFixPlugin::authors() const
     return QList<DPluginAuthor>()
             << DPluginAuthor(QString::fromUtf8("Gilles Caulier"),
                              QString::fromUtf8("caulier dot gilles at gmail dot com"),
-                             QString::fromUtf8("(C) 2009-2021"))
+                             QString::fromUtf8("(C) 2009-2022"))
             ;
 }
 

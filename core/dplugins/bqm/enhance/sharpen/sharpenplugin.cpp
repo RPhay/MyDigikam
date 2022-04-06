@@ -51,7 +51,7 @@ SharpenPlugin::~SharpenPlugin()
 
 QString SharpenPlugin::name() const
 {
-    return i18n("Sharpen Image");
+    return i18nc("@title", "Sharpen Image");
 }
 
 QString SharpenPlugin::iid() const
@@ -66,12 +66,12 @@ QIcon SharpenPlugin::icon() const
 
 QString SharpenPlugin::description() const
 {
-    return i18n("A tool to sharp images");
+    return i18nc("@info", "A tool to sharp images");
 }
 
 QString SharpenPlugin::details() const
 {
-    return i18n("<p>This Batch Queue Manager tool can sharp images.</p>");
+    return xi18nc("@info", "<p>This Batch Queue Manager tool can sharp images.</p>");
 }
 
 QList<DPluginAuthor> SharpenPlugin::authors() const
@@ -82,7 +82,7 @@ QList<DPluginAuthor> SharpenPlugin::authors() const
                              QString::fromUtf8("(C) 2009"))
             << DPluginAuthor(QString::fromUtf8("Gilles Caulier"),
                              QString::fromUtf8("caulier dot gilles at gmail dot com"),
-                             QString::fromUtf8("(C) 2009-2021"))
+                             QString::fromUtf8("(C) 2009-2022"))
             ;
 }
 

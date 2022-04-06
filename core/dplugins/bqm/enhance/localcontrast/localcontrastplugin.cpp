@@ -51,7 +51,7 @@ LocalContrastPlugin::~LocalContrastPlugin()
 
 QString LocalContrastPlugin::name() const
 {
-    return i18n("Local Contrast");
+    return i18nc("@title", "Local Contrast");
 }
 
 QString LocalContrastPlugin::iid() const
@@ -66,12 +66,12 @@ QIcon LocalContrastPlugin::icon() const
 
 QString LocalContrastPlugin::description() const
 {
-    return i18n("A tool to emulate tone mapping");
+    return i18nc("@info", "A tool to emulate tone mapping");
 }
 
 QString LocalContrastPlugin::details() const
 {
-    return i18n("<p>This Batch Queue Manager tool can emulate tone mapping over images.</p>");
+    return xi18nc("@info", "<p>This Batch Queue Manager tool can emulate tone mapping over images.</p>");
 }
 
 QList<DPluginAuthor> LocalContrastPlugin::authors() const
@@ -79,7 +79,7 @@ QList<DPluginAuthor> LocalContrastPlugin::authors() const
     return QList<DPluginAuthor>()
             << DPluginAuthor(QString::fromUtf8("Gilles Caulier"),
                              QString::fromUtf8("caulier dot gilles at gmail dot com"),
-                             QString::fromUtf8("(C) 2009-2021"))
+                             QString::fromUtf8("(C) 2009-2022"))
             ;
 }
 

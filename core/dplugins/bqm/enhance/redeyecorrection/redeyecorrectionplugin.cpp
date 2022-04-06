@@ -51,7 +51,7 @@ RedEyeCorrectionPlugin::~RedEyeCorrectionPlugin()
 
 QString RedEyeCorrectionPlugin::name() const
 {
-    return i18n("Red Eye Correction");
+    return i18nc("@title", "Red Eye Correction");
 }
 
 QString RedEyeCorrectionPlugin::iid() const
@@ -66,12 +66,12 @@ QIcon RedEyeCorrectionPlugin::icon() const
 
 QString RedEyeCorrectionPlugin::description() const
 {
-    return i18n("A tool to automatically detect and correct red eye effect");
+    return i18nc("@info", "A tool to automatically detect and correct red eye effect");
 }
 
 QString RedEyeCorrectionPlugin::details() const
 {
-    return i18n("<p>This Batch Queue Manager tool can reduce red eye effect on images.</p>");
+    return xi18nc("@info", "<p>This Batch Queue Manager tool can reduce red eye effect on images.</p>");
 }
 
 QList<DPluginAuthor> RedEyeCorrectionPlugin::authors() const

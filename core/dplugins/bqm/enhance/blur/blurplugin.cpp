@@ -51,7 +51,7 @@ BlurPlugin::~BlurPlugin()
 
 QString BlurPlugin::name() const
 {
-    return i18n("Blur Image");
+    return i18nc("@title", "Blur Image");
 }
 
 QString BlurPlugin::iid() const
@@ -66,12 +66,12 @@ QIcon BlurPlugin::icon() const
 
 QString BlurPlugin::description() const
 {
-    return i18n("A tool to blur images");
+    return i18nc("@info", "A tool to blur images");
 }
 
 QString BlurPlugin::details() const
 {
-    return i18n("<p>This Batch Queue Manager tool can blur images.</p>");
+    return xi18nc("@info", "<p>This Batch Queue Manager tool can blur images.</p>");
 }
 
 QList<DPluginAuthor> BlurPlugin::authors() const
@@ -79,7 +79,7 @@ QList<DPluginAuthor> BlurPlugin::authors() const
     return QList<DPluginAuthor>()
             << DPluginAuthor(QLatin1String("Gilles Caulier"),
                              QLatin1String("caulier dot gilles at gmail dot com"),
-                             QLatin1String("(C) 2009-2021"))
+                             QLatin1String("(C) 2009-2022"))
             ;
 }
 

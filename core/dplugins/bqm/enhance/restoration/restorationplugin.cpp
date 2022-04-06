@@ -51,7 +51,7 @@ RestorationPlugin::~RestorationPlugin()
 
 QString RestorationPlugin::name() const
 {
-    return i18n("Restoration");
+    return i18nc("@title", "Restoration");
 }
 
 QString RestorationPlugin::iid() const
@@ -66,12 +66,12 @@ QIcon RestorationPlugin::icon() const
 
 QString RestorationPlugin::description() const
 {
-    return i18n("A tool to restore images using Greystoration algorithm");
+    return i18nc("@info", "A tool to restore images using Greystoration algorithm");
 }
 
 QString RestorationPlugin::details() const
 {
-    return i18n("<p>This Batch Queue Manager tool can restore images using Greystoration algorithm.</p>");
+    return xi18nc("@info", "<p>This Batch Queue Manager tool can restore images using Greystoration algorithm.</p>");
 }
 
 QList<DPluginAuthor> RestorationPlugin::authors() const
@@ -79,7 +79,7 @@ QList<DPluginAuthor> RestorationPlugin::authors() const
     return QList<DPluginAuthor>()
             << DPluginAuthor(QString::fromUtf8("Gilles Caulier"),
                              QString::fromUtf8("caulier dot gilles at gmail dot com"),
-                             QString::fromUtf8("(C) 2009-2021"))
+                             QString::fromUtf8("(C) 2009-2022"))
             ;
 }
 

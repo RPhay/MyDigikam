@@ -51,7 +51,7 @@ AntiVignettingPlugin::~AntiVignettingPlugin()
 
 QString AntiVignettingPlugin::name() const
 {
-    return i18n("Anti-Vignetting");
+    return i18nc("@title", "Anti-Vignetting");
 }
 
 QString AntiVignettingPlugin::iid() const
@@ -66,12 +66,12 @@ QIcon AntiVignettingPlugin::icon() const
 
 QString AntiVignettingPlugin::description() const
 {
-    return i18n("A tool to adjust vignetting to photograph");
+    return i18nc("@info", "A tool to adjust vignetting to photograph");
 }
 
 QString AntiVignettingPlugin::details() const
 {
-    return i18n("<p>This Batch Queue Manager tool remove or add vignettings to images.</p>");
+    return xi18nc("@info", "<p>This Batch Queue Manager tool remove or add vignettings to images.</p>");
 }
 
 QList<DPluginAuthor> AntiVignettingPlugin::authors() const
@@ -79,7 +79,7 @@ QList<DPluginAuthor> AntiVignettingPlugin::authors() const
     return QList<DPluginAuthor>()
             << DPluginAuthor(QString::fromUtf8("Gilles Caulier"),
                              QString::fromUtf8("caulier dot gilles at gmail dot com"),
-                             QString::fromUtf8("(C) 2009-2021"))
+                             QString::fromUtf8("(C) 2009-2022"))
             ;
 }
 

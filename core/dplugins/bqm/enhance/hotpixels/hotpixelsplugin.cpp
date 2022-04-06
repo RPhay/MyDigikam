@@ -51,7 +51,7 @@ HotPixelsPlugin::~HotPixelsPlugin()
 
 QString HotPixelsPlugin::name() const
 {
-    return i18n("Hot Pixels");
+    return i18nc("@title", "Hot Pixels");
 }
 
 QString HotPixelsPlugin::iid() const
@@ -66,12 +66,12 @@ QIcon HotPixelsPlugin::icon() const
 
 QString HotPixelsPlugin::description() const
 {
-    return i18n("A tool to fix hot pixels");
+    return i18nc("@info", "A tool to fix hot pixels");
 }
 
 QString HotPixelsPlugin::details() const
 {
-    return i18n("<p>This Batch Queue Manager tool can fix hot pixels in images.</p>");
+    return xi18nc("@info", "<p>This Batch Queue Manager tool can fix hot pixels in images.</p>");
 }
 
 QList<DPluginAuthor> HotPixelsPlugin::authors() const
@@ -82,7 +82,7 @@ QList<DPluginAuthor> HotPixelsPlugin::authors() const
                              QString::fromUtf8("(C) 2005-2006"))
             << DPluginAuthor(QString::fromUtf8("Gilles Caulier"),
                              QString::fromUtf8("caulier dot gilles at gmail dot com"),
-                             QString::fromUtf8("(C) 2005-2021"))
+                             QString::fromUtf8("(C) 2005-2022"))
             ;
 }
 

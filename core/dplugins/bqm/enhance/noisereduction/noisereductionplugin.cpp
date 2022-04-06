@@ -51,7 +51,7 @@ NoiseReductionPlugin::~NoiseReductionPlugin()
 
 QString NoiseReductionPlugin::name() const
 {
-    return i18n("Noise Reduction");
+    return i18nc("@title", "Noise Reduction");
 }
 
 QString NoiseReductionPlugin::iid() const
@@ -66,12 +66,12 @@ QIcon NoiseReductionPlugin::icon() const
 
 QString NoiseReductionPlugin::description() const
 {
-    return i18n("A tool to remove photograph noise using wavelets");
+    return i18nc("@info", "A tool to remove photograph noise using wavelets");
 }
 
 QString NoiseReductionPlugin::details() const
 {
-    return i18n("<p>This Batch Queue Manager tool can reduce noise in images.</p>");
+    return xi18nc("@info", "<p>This Batch Queue Manager tool can reduce noise in images.</p>");
 }
 
 QList<DPluginAuthor> NoiseReductionPlugin::authors() const
@@ -79,7 +79,7 @@ QList<DPluginAuthor> NoiseReductionPlugin::authors() const
     return QList<DPluginAuthor>()
             << DPluginAuthor(QString::fromUtf8("Gilles Caulier"),
                              QString::fromUtf8("caulier dot gilles at gmail dot com"),
-                             QString::fromUtf8("(C) 2009-2021"))
+                             QString::fromUtf8("(C) 2009-2022"))
             ;
 }
 

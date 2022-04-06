@@ -51,7 +51,7 @@ BorderPlugin::~BorderPlugin()
 
 QString BorderPlugin::name() const
 {
-    return i18n("Add Border");
+    return i18nc("@title", "Add Border");
 }
 
 QString BorderPlugin::iid() const
@@ -66,12 +66,12 @@ QIcon BorderPlugin::icon() const
 
 QString BorderPlugin::description() const
 {
-    return i18n("A tool to add a border around images");
+    return i18nc("@info", "A tool to add a border around images");
 }
 
 QString BorderPlugin::details() const
 {
-    return i18n("<p>This Batch Queue Manager tool can add decorative border around images.</p>");
+    return xi18nc("@info", "<p>This Batch Queue Manager tool can add decorative border around images.</p>");
 }
 
 QList<DPluginAuthor> BorderPlugin::authors() const
@@ -79,7 +79,7 @@ QList<DPluginAuthor> BorderPlugin::authors() const
     return QList<DPluginAuthor>()
             << DPluginAuthor(QString::fromUtf8("Gilles Caulier"),
                              QString::fromUtf8("caulier dot gilles at gmail dot com"),
-                             QString::fromUtf8("(C) 2010-2021"))
+                             QString::fromUtf8("(C) 2010-2022"))
             ;
 }
 

@@ -51,7 +51,7 @@ TexturePlugin::~TexturePlugin()
 
 QString TexturePlugin::name() const
 {
-    return i18n("Add Texture");
+    return i18nc("@title", "Add Texture");
 }
 
 QString TexturePlugin::iid() const
@@ -66,12 +66,12 @@ QIcon TexturePlugin::icon() const
 
 QString TexturePlugin::description() const
 {
-    return i18n("A tool to apply a texture over images");
+    return i18nc("@info", "A tool to apply a texture over images");
 }
 
 QString TexturePlugin::details() const
 {
-    return i18n("<p>This Batch Queue Manager tool can apply a texture over images.</p>");
+    return xi18nc("@info", "<p>This Batch Queue Manager tool can apply a texture over images.</p>");
 }
 
 QList<DPluginAuthor> TexturePlugin::authors() const
@@ -82,7 +82,7 @@ QList<DPluginAuthor> TexturePlugin::authors() const
                              QString::fromUtf8("(C) 2006-2010"))
             << DPluginAuthor(QString::fromUtf8("Gilles Caulier"),
                              QString::fromUtf8("caulier dot gilles at gmail dot com"),
-                             QString::fromUtf8("(C) 2005-2021"))
+                             QString::fromUtf8("(C) 2005-2022"))
             ;
 }
 

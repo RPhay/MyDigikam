@@ -51,7 +51,7 @@ WaterMarkPlugin::~WaterMarkPlugin()
 
 QString WaterMarkPlugin::name() const
 {
-    return i18n("Add Watermark");
+    return i18nc("@title", "Add Watermark");
 }
 
 QString WaterMarkPlugin::iid() const
@@ -66,12 +66,12 @@ QIcon WaterMarkPlugin::icon() const
 
 QString WaterMarkPlugin::description() const
 {
-    return i18n("A tool to overlay an image or text as a visible watermark");
+    return i18nc("@info", "A tool to overlay an image or text as a visible watermark");
 }
 
 QString WaterMarkPlugin::details() const
 {
-    return i18n("<p>This Batch Queue Manager tool can add a text watermark over images.</p>");
+    return xi18nc("@info", "<p>This Batch Queue Manager tool can add a text watermark over images.</p>");
 }
 
 QList<DPluginAuthor> WaterMarkPlugin::authors() const
@@ -79,7 +79,7 @@ QList<DPluginAuthor> WaterMarkPlugin::authors() const
     return QList<DPluginAuthor>()
             << DPluginAuthor(QString::fromUtf8("Gilles Caulier"),
                              QString::fromUtf8("caulier dot gilles at gmail dot com"),
-                             QString::fromUtf8("(C) 2009-2021"))
+                             QString::fromUtf8("(C) 2009-2022"))
             << DPluginAuthor(QString::fromUtf8("Mikkel Baekhoej Christensen"),
                              QString::fromUtf8("mbc at baekhoej dot dk"),
                              QString::fromUtf8("(C) 2010"))
