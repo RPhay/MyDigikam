@@ -62,6 +62,7 @@ MetaEngineSettingsContainer::MetaEngineSettingsContainer()
       useFastScan           (false),
       metadataWritingMode   (MetaEngine::WRITE_TO_FILE_ONLY),
       rotationBehavior      (RotatingFlags | RotateByLosslessRotation),
+      albumDateFrom         (OldestItemDate),
       sidecarExtensions     (QStringList())
 {
 }
@@ -123,6 +124,9 @@ void MetaEngineSettingsContainer::readFromConfig(KConfigGroup& group)
     {
         rotationBehavior |= RotateByLossyRotation;
     }
+
+    albumDateFrom         = (AlbumDateSource)
+                            group.readEntry("Album Date Source",           (int)OldestItemDate);
 }
 
 void MetaEngineSettingsContainer::writeToConfig(KConfigGroup& group) const
@@ -154,6 +158,7 @@ void MetaEngineSettingsContainer::writeToConfig(KConfigGroup& group) const
     group.writeEntry("Rotate By Metadata Flag",     bool(rotationBehavior & RotateByMetadataFlag));
     group.writeEntry("Rotate Contents Lossless",    bool(rotationBehavior & RotateByLosslessRotation));
     group.writeEntry("Rotate Contents Lossy",       bool(rotationBehavior & RotateByLossyRotation));
+    group.writeEntry("Album Date Source",           (int)albumDateFrom);
     group.writeEntry("Use Lazy Synchronization",    useLazySync);
     group.writeEntry("Use Fast Scan At Startup",    useFastScan);
 

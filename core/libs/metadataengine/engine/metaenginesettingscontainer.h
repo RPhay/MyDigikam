@@ -71,6 +71,15 @@ public:
     };
     Q_DECLARE_FLAGS(RotationBehaviorFlags, RotationBehaviorFlag)
 
+    enum AlbumDateSource
+    {
+        NewestItemDate = 0,
+        OldestItemDate,
+        AverageDate,
+        FolderDate,
+        IgnoreDate
+    };
+
 public:
 
     explicit MetaEngineSettingsContainer();
@@ -112,6 +121,8 @@ public:
     MetaEngine::MetadataWritingMode metadataWritingMode;
 
     RotationBehaviorFlags           rotationBehavior;
+
+    AlbumDateSource                 albumDateFrom;
 
     QStringList                     sidecarExtensions;
 

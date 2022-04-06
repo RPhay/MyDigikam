@@ -74,6 +74,7 @@ public:
         updateTypeLabel                         (nullptr),
         updateWithDebug                         (nullptr),
         sidebarTypeLabel                        (nullptr),
+        albumDateSourceLabel                    (nullptr),
         stringComparisonTypeLabel               (nullptr),
         applicationStyleLabel                   (nullptr),
         applicationIconLabel                    (nullptr),
@@ -93,6 +94,7 @@ public:
         cleanAtStart                            (nullptr),
         updateType                              (nullptr),
         sidebarType                             (nullptr),
+        albumDateSource                         (nullptr),
         stringComparisonType                    (nullptr),
         applicationStyle                        (nullptr),
         applicationIcon                         (nullptr),
@@ -109,6 +111,7 @@ public:
     QCheckBox*                updateWithDebug;
 
     QLabel*                   sidebarTypeLabel;
+    QLabel*                   albumDateSourceLabel;
     QLabel*                   stringComparisonTypeLabel;
     QLabel*                   applicationStyleLabel;
     QLabel*                   applicationIconLabel;
@@ -130,6 +133,7 @@ public:
 
     QComboBox*                updateType;
     QComboBox*                sidebarType;
+    QComboBox*                albumDateSource;
     QComboBox*                stringComparisonType;
     QComboBox*                applicationStyle;
     QComboBox*                applicationIcon;
@@ -157,6 +161,17 @@ SetupMisc::SetupMisc(QWidget* const parent)
 
     QWidget* const behaviourPanel = new QWidget(d->tab);
     QGridLayout* const layout     = new QGridLayout(behaviourPanel);
+
+    DHBox* const albumDateSourceHbox  = new DHBox(behaviourPanel);
+    d->albumDateSourceLabel           = new QLabel(i18n("Get album date source:"), albumDateSourceHbox);
+    d->albumDateSource                = new QComboBox(albumDateSourceHbox);
+    d->albumDateSource->addItem(i18nc("method to get the album date", "From The Newest Item Date"), MetaEngineSettingsContainer::NewestItemDate);
+    d->albumDateSource->addItem(i18nc("method to get the album date", "From The Oldest Item Date"), MetaEngineSettingsContainer::OldestItemDate);
+    d->albumDateSource->addItem(i18nc("method to get the album date", "From The Average Date"),     MetaEngineSettingsContainer::AverageDate);
+    d->albumDateSource->addItem(i18nc("method to get the album date", "From The Folder Date"),      MetaEngineSettingsContainer::FolderDate);
+    d->albumDateSource->addItem(i18nc("method to get the album date", "No Change Of Date"),         MetaEngineSettingsContainer::IgnoreDate);
+    d->albumDateSource->setToolTip(i18n("The album date is adjusted depending on the option set "
+                                        "when new items are found during scanning."));
 
     DHBox* const stringComparisonHbox = new DHBox(behaviourPanel);
     d->stringComparisonTypeLabel      = new QLabel(i18n("String comparison type:"), stringComparisonHbox);
@@ -285,11 +300,12 @@ SetupMisc::SetupMisc(QWidget* const parent)
     layout->addWidget(d->showOnlyPersonTagsInPeopleSidebarCheck,  8, 0, 1, 4);
     layout->addWidget(d->expandNewCurrentItemCheck,               9, 0, 1, 4);
     layout->addWidget(d->scrollItemToCenterCheck,                10, 0, 1, 4);
-    layout->addWidget(stringComparisonHbox,                      11, 0, 1, 4);
-    layout->addWidget(minSimilarityBoundHbox,                    12, 0, 1, 4);
-    layout->addWidget(upOptionsGroup,                            13, 0, 1, 4);
+    layout->addWidget(albumDateSourceHbox,                       11, 0, 1, 4);
+    layout->addWidget(stringComparisonHbox,                      12, 0, 1, 4);
+    layout->addWidget(minSimilarityBoundHbox,                    13, 0, 1, 4);
+    layout->addWidget(upOptionsGroup,                            14, 0, 1, 4);
     layout->setColumnStretch(3, 10);
-    layout->setRowStretch(14, 10);
+    layout->setRowStretch(15, 10);
 
     // --------------------------------------------------------
 
@@ -508,8 +524,8 @@ void SetupMisc::applySettings()
 {
     d->systemSettingsWidget->saveSettings();
 
-    ApplicationSettings* const settings   = ApplicationSettings::instance();
-    MetaEngineSettingsContainer mSettings = MetaEngineSettings::instance()->settings();
+    ApplicationSettings* const settings      = ApplicationSettings::instance();
+    MetaEngineSettingsContainer metaSettings = MetaEngineSettings::instance()->settings();
 
     settings->setShowSplashScreen(d->showSplashCheck->isChecked());
     settings->setShowTrashDeleteDialog(d->showTrashDeleteDialogCheck->isChecked());
@@ -530,8 +546,10 @@ void SetupMisc::applySettings()
     settings->setStringComparisonType((ApplicationSettings::StringComparisonType)
                                       d->stringComparisonType->itemData(d->stringComparisonType->currentIndex()).toInt());
 
-    mSettings.useFastScan = d->scanAtStart->isChecked() ? d->useFastScan->isChecked() : false;
-    MetaEngineSettings::instance()->setSettings(mSettings);
+    metaSettings.useFastScan = d->scanAtStart->isChecked() ? d->useFastScan->isChecked() : false;
+    metaSettings.albumDateFrom = (MetaEngineSettingsContainer::AlbumDateSource)
+                                 d->albumDateSource->itemData(d->albumDateSource->currentIndex()).toInt();
+    MetaEngineSettings::instance()->setSettings(metaSettings);
 
     for (int i = 0 ; i != ApplicationSettings::Unspecified ; ++i)
     {
@@ -579,8 +597,9 @@ void SetupMisc::readSettings()
     d->updateWithDebug->setChecked(settings->getUpdateWithDebug());
     d->stringComparisonType->setCurrentIndex(settings->getStringComparisonType());
 
-    MetaEngineSettingsContainer mSettings = MetaEngineSettings::instance()->settings();
-    d->useFastScan->setChecked(mSettings.useFastScan);
+    MetaEngineSettingsContainer metaSettings = MetaEngineSettings::instance()->settings();
+    d->albumDateSource->setCurrentIndex((int)metaSettings.albumDateFrom);
+    d->useFastScan->setChecked(metaSettings.useFastScan);
 
     for (int i = 0 ; i != ApplicationSettings::Unspecified ; ++i)
     {

@@ -739,7 +739,8 @@ void CollectionScanner::scanAlbum(const CollectionLocation& location, const QStr
 
     int counter          = 0;
     bool updateAlbumDate = false;
-    QDate albumDate      = albumDateTime.date();
+    QDate albumDateOld   = albumDateTime.date();
+    QDate albumDateNew   = albumDateTime.date();
     const QString xmpExt(QLatin1String(".xmp"));
 
     foreach (const QString& entry, list)
@@ -799,12 +800,27 @@ void CollectionScanner::scanAlbum(const CollectionLocation& location, const QStr
 
                 if (itemDate.isValid())
                 {
-                    // Change album date only if the item date is older.
-
-                    if (itemDate < albumDate)
+                    if     ((settings.albumDateFrom == MetaEngineSettingsContainer::NewestItemDate) ||
+                            (settings.albumDateFrom == MetaEngineSettingsContainer::AverageDate))
                     {
-                        albumDate       = itemDate;
-                        updateAlbumDate = true;
+                        // Change album date only if the item date is newer.
+
+                        if (itemDate > albumDateNew)
+                        {
+                            albumDateNew    = itemDate;
+                            updateAlbumDate = true;
+                        }
+                    }
+                    else if ((settings.albumDateFrom == MetaEngineSettingsContainer::OldestItemDate) ||
+                             (settings.albumDateFrom == MetaEngineSettingsContainer::AverageDate))
+                    {
+                        // Change album date only if the item date is older.
+
+                        if (itemDate < albumDateOld)
+                        {
+                            albumDateOld    = itemDate;
+                            updateAlbumDate = true;
+                        }
                     }
                 }
 
@@ -858,7 +874,25 @@ void CollectionScanner::scanAlbum(const CollectionLocation& location, const QStr
     {
         // Write the new album date from the image information
 
-        CoreDbAccess().db()->setAlbumDate(albumID, albumDate);
+        if      (settings.albumDateFrom == MetaEngineSettingsContainer::OldestItemDate)
+        {
+            CoreDbAccess().db()->setAlbumDate(albumID, albumDateOld);
+        }
+        else if (settings.albumDateFrom == MetaEngineSettingsContainer::NewestItemDate)
+        {
+            CoreDbAccess().db()->setAlbumDate(albumID, albumDateNew);
+        }
+        else if (settings.albumDateFrom == MetaEngineSettingsContainer::AverageDate)
+        {
+            qint64 julianDayCount = albumDateOld.toJulianDay();
+            julianDayCount       += albumDateNew.toJulianDay();
+
+            CoreDbAccess().db()->setAlbumDate(albumID, QDate::fromJulianDay(julianDayCount / 2));
+        }
+        else if (settings.albumDateFrom == MetaEngineSettingsContainer::FolderDate)
+        {
+            CoreDbAccess().db()->setAlbumDate(albumID, albumDateTime.date());
+        }
     }
 
     if (d->wantSignals && counter)
