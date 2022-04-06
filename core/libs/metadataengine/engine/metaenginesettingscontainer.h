@@ -76,7 +76,8 @@ public:
         NewestItemDate = 0,
         OldestItemDate,
         AverageDate,
-        FolderDate
+        FolderDate,
+        IgnoreDate
     };
 
 public:

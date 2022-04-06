@@ -169,6 +169,9 @@ SetupMisc::SetupMisc(QWidget* const parent)
     d->albumDateSource->addItem(i18nc("method to get the album date", "From The Oldest Item Date"), MetaEngineSettingsContainer::OldestItemDate);
     d->albumDateSource->addItem(i18nc("method to get the album date", "From The Average Date"),     MetaEngineSettingsContainer::AverageDate);
     d->albumDateSource->addItem(i18nc("method to get the album date", "From The Folder Date"),      MetaEngineSettingsContainer::FolderDate);
+    d->albumDateSource->addItem(i18nc("method to get the album date", "No Change Of Date"),         MetaEngineSettingsContainer::IgnoreDate);
+    d->albumDateSource->setToolTip(i18n("The album date is adjusted depending on the option set "
+                                        "when new items are found during scanning."));
 
     DHBox* const stringComparisonHbox = new DHBox(behaviourPanel);
     d->stringComparisonTypeLabel      = new QLabel(i18n("String comparison type:"), stringComparisonHbox);

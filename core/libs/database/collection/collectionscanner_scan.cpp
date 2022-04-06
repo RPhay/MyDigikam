@@ -801,7 +801,7 @@ void CollectionScanner::scanAlbum(const CollectionLocation& location, const QStr
                 if (itemDate.isValid())
                 {
                     if     ((settings.albumDateFrom == MetaEngineSettingsContainer::NewestItemDate) ||
-                             (settings.albumDateFrom == MetaEngineSettingsContainer::AverageDate))
+                            (settings.albumDateFrom == MetaEngineSettingsContainer::AverageDate))
                     {
                         // Change album date only if the item date is newer.
 
@@ -889,7 +889,7 @@ void CollectionScanner::scanAlbum(const CollectionLocation& location, const QStr
 
             CoreDbAccess().db()->setAlbumDate(albumID, QDate::fromJulianDay(julianDayCount / 2));
         }
-        else
+        else if (settings.albumDateFrom == MetaEngineSettingsContainer::FolderDate)
         {
             CoreDbAccess().db()->setAlbumDate(albumID, albumDateTime.date());
         }
