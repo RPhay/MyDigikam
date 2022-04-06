@@ -51,7 +51,7 @@ ColorFXPlugin::~ColorFXPlugin()
 
 QString ColorFXPlugin::name() const
 {
-    return i18n("Color Effects");
+    return i18nc("@title", "Color Effects");
 }
 
 QString ColorFXPlugin::iid() const
@@ -66,12 +66,12 @@ QIcon ColorFXPlugin::icon() const
 
 QString ColorFXPlugin::description() const
 {
-    return i18n("A tool to apply color effects");
+    return i18nc("@info", "A tool to apply color effects");
 }
 
 QString ColorFXPlugin::details() const
 {
-    return i18n("<p>This Batch Queue Manager tool can apply color effects over images.</p>");
+    return xi18nc("@info", "<p>This Batch Queue Manager tool can apply color effects over images.</p>");
 }
 
 QList<DPluginAuthor> ColorFXPlugin::authors() const

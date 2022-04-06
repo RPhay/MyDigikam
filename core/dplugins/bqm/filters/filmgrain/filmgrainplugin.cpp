@@ -51,7 +51,7 @@ FilmGrainPlugin::~FilmGrainPlugin()
 
 QString FilmGrainPlugin::name() const
 {
-    return i18n("Film Grain");
+    return i18nc("@title", "Film Grain");
 }
 
 QString FilmGrainPlugin::iid() const
@@ -66,12 +66,12 @@ QIcon FilmGrainPlugin::icon() const
 
 QString FilmGrainPlugin::description() const
 {
-    return i18n("A tool to add film grain");
+    return i18nc("@info", "A tool to add film grain");
 }
 
 QString FilmGrainPlugin::details() const
 {
-    return i18n("<p>This Batch Queue Manager tool can add film grain over images.</p>");
+    return xi18nc("@info", "<p>This Batch Queue Manager tool can add film grain over images.</p>");
 }
 
 QList<DPluginAuthor> FilmGrainPlugin::authors() const
@@ -79,7 +79,7 @@ QList<DPluginAuthor> FilmGrainPlugin::authors() const
     return QList<DPluginAuthor>()
             << DPluginAuthor(QString::fromUtf8("Gilles Caulier"),
                              QString::fromUtf8("caulier dot gilles at gmail dot com"),
-                             QString::fromUtf8("(C) 2010-2021"))
+                             QString::fromUtf8("(C) 2010-2022"))
             ;
 }
 

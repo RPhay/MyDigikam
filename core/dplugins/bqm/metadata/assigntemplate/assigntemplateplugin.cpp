@@ -51,7 +51,7 @@ AssignTemplatePlugin::~AssignTemplatePlugin()
 
 QString AssignTemplatePlugin::name() const
 {
-    return i18n("Apply Metadata Template");
+    return i18nc("@title", "Apply Metadata Template");
 }
 
 QString AssignTemplatePlugin::iid() const
@@ -66,12 +66,12 @@ QIcon AssignTemplatePlugin::icon() const
 
 QString AssignTemplatePlugin::description() const
 {
-    return i18n("A tool to apply metadata template to images");
+    return i18nc("@info", "A tool to apply metadata template to images");
 }
 
 QString AssignTemplatePlugin::details() const
 {
-    return i18n("<p>This Batch Queue Manager tool can apply metadata template over images.</p>");
+    return xi18nc("@info", "<p>This Batch Queue Manager tool can apply metadata template over images.</p>");
 }
 
 QList<DPluginAuthor> AssignTemplatePlugin::authors() const
@@ -79,7 +79,7 @@ QList<DPluginAuthor> AssignTemplatePlugin::authors() const
     return QList<DPluginAuthor>()
             << DPluginAuthor(QString::fromUtf8("Gilles Caulier"),
                              QString::fromUtf8("caulier dot gilles at gmail dot com"),
-                             QString::fromUtf8("(C) 2009-2021"))
+                             QString::fromUtf8("(C) 2009-2022"))
             ;
 }
 

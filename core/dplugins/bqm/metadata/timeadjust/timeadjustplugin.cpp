@@ -51,7 +51,7 @@ TimeAdjustPlugin::~TimeAdjustPlugin()
 
 QString TimeAdjustPlugin::name() const
 {
-    return i18n("Time Adjust");
+    return i18nc("@title", "Time Adjust");
 }
 
 QString TimeAdjustPlugin::iid() const
@@ -66,12 +66,12 @@ QIcon TimeAdjustPlugin::icon() const
 
 QString TimeAdjustPlugin::description() const
 {
-    return i18n("A tool to adjust date and time-stamp from images");
+    return i18nc("@info", "A tool to adjust date and time-stamp from images");
 }
 
 QString TimeAdjustPlugin::details() const
 {
-    return i18n("<p>This Batch Queue Manager tool can adjust time in images.</p>");
+    return xi18nc("@info", "<p>This Batch Queue Manager tool can adjust time in images.</p>");
 }
 
 QList<DPluginAuthor> TimeAdjustPlugin::authors() const
@@ -79,7 +79,7 @@ QList<DPluginAuthor> TimeAdjustPlugin::authors() const
     return QList<DPluginAuthor>()
             << DPluginAuthor(QString::fromUtf8("Gilles Caulier"),
                              QString::fromUtf8("caulier dot gilles at gmail dot com"),
-                             QString::fromUtf8("(C) 2009-2021"))
+                             QString::fromUtf8("(C) 2009-2022"))
             ;
 }
 

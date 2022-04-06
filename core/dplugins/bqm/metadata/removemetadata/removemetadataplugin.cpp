@@ -51,7 +51,7 @@ RemoveMetadataPlugin::~RemoveMetadataPlugin()
 
 QString RemoveMetadataPlugin::name() const
 {
-    return i18n("Remove Metadata");
+    return i18nc("@title", "Remove Metadata");
 }
 
 QString RemoveMetadataPlugin::iid() const
@@ -66,12 +66,12 @@ QIcon RemoveMetadataPlugin::icon() const
 
 QString RemoveMetadataPlugin::description() const
 {
-    return i18n("A tool to remove Exif, Iptc, or Xmp metadata from images");
+    return i18nc("@info", "A tool to remove Exif, Iptc, or Xmp metadata from images");
 }
 
 QString RemoveMetadataPlugin::details() const
 {
-    return i18n("<p>This Batch Queue Manager tool can remove metadata as Exif, Iptc, or Xmp from images.</p>");
+    return xi18nc("@info", "<p>This Batch Queue Manager tool can remove metadata as Exif, Iptc, or Xmp from images.</p>");
 }
 
 QList<DPluginAuthor> RemoveMetadataPlugin::authors() const
@@ -79,7 +79,7 @@ QList<DPluginAuthor> RemoveMetadataPlugin::authors() const
     return QList<DPluginAuthor>()
             << DPluginAuthor(QString::fromUtf8("Gilles Caulier"),
                              QString::fromUtf8("caulier dot gilles at gmail dot com"),
-                             QString::fromUtf8("(C) 2010-2021"))
+                             QString::fromUtf8("(C) 2010-2022"))
             ;
 }
 
