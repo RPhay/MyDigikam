@@ -55,35 +55,49 @@ public:
         switch (type)
         {
             case DHistoryView::StartingEntry:
+            {
                 setIcon(0, QIcon::fromTheme(QLatin1String("system-run")));
                 break;
+            }
 
             case DHistoryView::SuccessEntry:
+            {
                 setIcon(0, QIcon::fromTheme(QLatin1String("dialog-ok-apply")));
                 break;
+            }
 
             case DHistoryView::WarningEntry:
+            {
                 setIcon(0, QIcon::fromTheme(QLatin1String("dialog-warning")));
                 setForeground(2, QBrush(QColor(Qt::darkYellow)));
                 break;
+            }
 
             case DHistoryView::ErrorEntry:
+            {
                 setIcon(0, QIcon::fromTheme(QLatin1String("dialog-error")));
                 setForeground(2, QBrush(QColor(Qt::red)));
                 break;
+            }
 
             case DHistoryView::ProgressEntry:
+            {
                 setIcon(0, QIcon::fromTheme(QLatin1String("dialog-information")));
                 break;
+            }
 
             case DHistoryView::CancelEntry:
+            {
                 setIcon(0, QIcon::fromTheme(QLatin1String("dialog-cancel")));
                 setForeground(2, QBrush(QColor(Qt::darkBlue)));
                 break;
+            }
 
             default:
+            {
                 setIcon(0, QIcon::fromTheme(QLatin1String("dialog-information")));
                 break;
+            }
         }
 
         setText(1, QTime::currentTime().toString(Qt::ISODate));
@@ -176,7 +190,11 @@ void DHistoryView::addEntry(const QString& msg, EntryType type, const QVariant& 
     // Dispatch events to Qt loop in case of bombarding of messages. See bug #338629
 
     qApp->processEvents();
-    setCurrentItem(item);
+
+    if (item)
+    {
+        setCurrentItem(item);
+    }
 }
 
 void DHistoryView::slotItemDoubleClicked(QTreeWidgetItem* item)
