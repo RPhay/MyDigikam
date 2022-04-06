@@ -113,6 +113,11 @@ QString MetaEngine::backendName(Backend t)
             return QLatin1String("FFMpeg");
         }
 
+        case ExifToolBackend:
+        {
+            return QLatin1String("ExifTool");
+        }
+
         case NoBackend:
         {
             return QLatin1String("No Backend");

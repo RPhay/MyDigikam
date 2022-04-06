@@ -59,33 +59,47 @@ bool DMetadata::load(const QString& filePath, Backend* backend)
         (QFileInfo(filePath).suffix().toUpper() != QLatin1String("INSV"))
        )
     {
-        // Process images only with Exiv2 backend first, or libraw in second for RAW files, or with libheif, or at end with ImageMagick.
-        // Never process video files with Exiv2, the backend is very unstable.
+        // Process images only with Exiv2 backend first, or Exiftool in 2nd, or libraw for RAW files,
+        // or with libheif, or at end with ImageMagick.
+        // Never process video files with Exiv2, the backend is very unstable and this feature will be removed.
 
         if (!(hasLoaded = MetaEngine::load(filePath)))
         {
-            if (!(hasLoaded = loadUsingRawEngine(filePath)))
+            if (!(hasLoaded = loadUsingExifTool(filePath)))
             {
-
-                if (!(hasLoaded =
-#ifdef HAVE_HEIF
-                loadUsingLibheif(filePath)
-#else
-                false
-#endif
-                   ))
+                if (!(hasLoaded = loadUsingRawEngine(filePath)))
                 {
-                    hasLoaded   = loadUsingImageMagick(filePath);
-                    usedBackend = ImageMagickBackend;
+
+                    if (!(hasLoaded =
+#ifdef HAVE_HEIF
+                        loadUsingLibheif(filePath)
+#else
+                        false
+#endif
+                        ))
+                    {
+                        if (!(hasLoaded = loadUsingImageMagick(filePath)))
+                        {
+                            usedBackend = NoBackend;
+                        }
+                        else
+                        {
+                            usedBackend = ImageMagickBackend;
+                        }
+                    }
+                    else
+                    {
+                        usedBackend = LibHeifBackend;
+                    }
                 }
                 else
                 {
-                    usedBackend = LibHeifBackend;
+                    usedBackend = LibRawBackend;
                 }
             }
             else
             {
-                usedBackend = LibRawBackend;
+                usedBackend = ExifToolBackend;
             }
         }
         else
@@ -97,17 +111,28 @@ bool DMetadata::load(const QString& filePath, Backend* backend)
     {
         // No image files (aka video or audio), process with ffmpeg backend.
 
-        hasLoaded  = loadUsingFFmpeg(filePath);
-
-        if (hasLoaded)
+        if (!(hasLoaded = loadUsingExifTool(filePath)))
         {
-            usedBackend = FFMpegBackend;
+            if (!(hasLoaded = loadUsingFFmpeg(filePath)))
+            {
+                usedBackend = NoBackend;
+            }
+            else
+            {
+                usedBackend = FFMpegBackend;
+            }
+        }
+        else
+        {
+            usedBackend = ExifToolBackend;
         }
 
         hasLoaded |= loadFromSidecarAndMerge(filePath);
     }
 
-    qCDebug(DIGIKAM_METAENGINE_LOG) << "Loading metadata with" << backendName(usedBackend) << "backend from" << filePath;
+    qCDebug(DIGIKAM_METAENGINE_LOG) << "Loading metadata with"
+                                    << backendName(usedBackend)
+                                    << "backend from" << filePath;
 
     if (backend)
     {

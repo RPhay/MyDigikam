@@ -110,8 +110,10 @@ bool ExifToolParser::loadChunk(const QString& path)
     QByteArrayList cmdArgs;
     cmdArgs << QByteArray("-TagsFromFile");
     cmdArgs << d->filePathEncoding(fileInfo);
-    cmdArgs << QByteArray("-all:all");
-    cmdArgs << QByteArray("'-xmp:all<all'");
+    cmdArgs << QByteArray("'-all:all<all:all'");
+    cmdArgs << QByteArray("'-xmp:all<all:all'");
+    cmdArgs << QByteArray("'-iptc:all<all:all'");
+    cmdArgs << QByteArray("'-exif:all<all:all'");
     cmdArgs << QByteArray("-o");
     cmdArgs << QByteArray("-.exv");
     d->currentPath = fileInfo.filePath();

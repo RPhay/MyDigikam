@@ -122,12 +122,13 @@ public:
      */
     enum Backend
     {
-        Exiv2Backend       = 0,   ///< Default backend used by MetaEngine
-        LibRawBackend,            ///< DMetadata only
-        LibHeifBackend,           ///< DMetadata only
-        ImageMagickBackend,       ///< DMetadata only
-        FFMpegBackend,            ///< DMetadata only
-        NoBackend                 ///< No backend used (aka file cannot be read)
+        Exiv2Backend       = 0,   ///< Default backend used by MetaEngine.
+        LibRawBackend,            ///< DMetadata only.
+        LibHeifBackend,           ///< DMetadata only.
+        ImageMagickBackend,       ///< DMetadata only.
+        FFMpegBackend,            ///< DMetadata only.
+        ExifToolBackend,          ///< DMetadata only.
+        NoBackend                 ///< No backend used (aka file cannot be read).
     };
 
     /**

@@ -47,6 +47,7 @@ set(libdmetadata_SRCS
 
     ${CMAKE_CURRENT_SOURCE_DIR}/dmetadata/dmetadata.cpp
     ${CMAKE_CURRENT_SOURCE_DIR}/dmetadata/dmetadata_video.cpp
+    ${CMAKE_CURRENT_SOURCE_DIR}/dmetadata/dmetadata_exiftool.cpp
     ${CMAKE_CURRENT_SOURCE_DIR}/dmetadata/dmetadata_libraw.cpp
     ${CMAKE_CURRENT_SOURCE_DIR}/dmetadata/dmetadata_imagemagick.cpp
     ${CMAKE_CURRENT_SOURCE_DIR}/dmetadata/dmetadata_fileio.cpp

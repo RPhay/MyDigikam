@@ -409,6 +409,13 @@ private:
      * ImageMagick helper methods.
      */
     bool loadUsingImageMagick(const QString& filePath);
+
+private:
+
+    /**
+     * ExifTool helper methods.
+     */
+    bool loadUsingExifTool(const QString& filePath);
 };
 
 } // namespace Digikam
