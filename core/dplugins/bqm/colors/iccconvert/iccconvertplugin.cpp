@@ -51,7 +51,7 @@ IccConvertPlugin::~IccConvertPlugin()
 
 QString IccConvertPlugin::name() const
 {
-    return i18n("Color Profile Conversion");
+    return i18nc("@title", "Color Profile Conversion");
 }
 
 QString IccConvertPlugin::iid() const
@@ -66,12 +66,12 @@ QIcon IccConvertPlugin::icon() const
 
 QString IccConvertPlugin::description() const
 {
-    return i18n("A tool to convert images to a color space");
+    return i18nc("@info", "A tool to convert images to a color space");
 }
 
 QString IccConvertPlugin::details() const
 {
-    return i18n("<p>This Batch Queue Manager tool can convert images to a different color space.</p>");
+    return xi18nc("@info", "<p>This Batch Queue Manager tool can convert images to a different color space.</p>");
 }
 
 QList<DPluginAuthor> IccConvertPlugin::authors() const
@@ -79,7 +79,7 @@ QList<DPluginAuthor> IccConvertPlugin::authors() const
     return QList<DPluginAuthor>()
             << DPluginAuthor(QString::fromUtf8("Gilles Caulier"),
                              QString::fromUtf8("caulier dot gilles at gmail dot com"),
-                             QString::fromUtf8("(C) 2010-2021"))
+                             QString::fromUtf8("(C) 2010-2022"))
             ;
 }
 

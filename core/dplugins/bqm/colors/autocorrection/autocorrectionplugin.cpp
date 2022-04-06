@@ -51,7 +51,7 @@ AutoCorrectionPlugin::~AutoCorrectionPlugin()
 
 QString AutoCorrectionPlugin::name() const
 {
-    return i18n("Color Auto-Correction");
+    return i18nc("@title", "Color Auto-Correction");
 }
 
 QString AutoCorrectionPlugin::iid() const
@@ -66,12 +66,12 @@ QIcon AutoCorrectionPlugin::icon() const
 
 QString AutoCorrectionPlugin::description() const
 {
-    return i18n("A tool to fix colors automatically");
+    return i18nc("@info", "A tool to fix colors automatically");
 }
 
 QString AutoCorrectionPlugin::details() const
 {
-    return i18n("<p>This Batch Queue Manager tool can adjust colors automatically from images.</p>");
+    return xi18nc("@info", "<p>This Batch Queue Manager tool can adjust colors automatically from images.</p>");
 }
 
 QList<DPluginAuthor> AutoCorrectionPlugin::authors() const
@@ -79,7 +79,7 @@ QList<DPluginAuthor> AutoCorrectionPlugin::authors() const
     return QList<DPluginAuthor>()
             << DPluginAuthor(QString::fromUtf8("Gilles Caulier"),
                              QString::fromUtf8("caulier dot gilles at gmail dot com"),
-                             QString::fromUtf8("(C) 2008-2021"))
+                             QString::fromUtf8("(C) 2008-2022"))
             ;
 }
 

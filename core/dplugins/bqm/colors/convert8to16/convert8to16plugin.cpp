@@ -51,7 +51,7 @@ Convert8To16Plugin::~Convert8To16Plugin()
 
 QString Convert8To16Plugin::name() const
 {
-    return i18n("Convert to 16 bits");
+    return i18nc("@title", "Convert to 16 bits");
 }
 
 QString Convert8To16Plugin::iid() const
@@ -66,12 +66,12 @@ QIcon Convert8To16Plugin::icon() const
 
 QString Convert8To16Plugin::description() const
 {
-    return i18n("A tool to convert color depth to 16 bits");
+    return i18nc("@info", "A tool to convert color depth to 16 bits");
 }
 
 QString Convert8To16Plugin::details() const
 {
-    return i18n("<p>This Batch Queue Manager tool can convert images color depth to 16 bits.</p>");
+    return xi18nc("@info", "<p>This Batch Queue Manager tool can convert images color depth to 16 bits.</p>");
 }
 
 QList<DPluginAuthor> Convert8To16Plugin::authors() const
@@ -79,7 +79,7 @@ QList<DPluginAuthor> Convert8To16Plugin::authors() const
     return QList<DPluginAuthor>()
             << DPluginAuthor(QString::fromUtf8("Gilles Caulier"),
                              QString::fromUtf8("caulier dot gilles at gmail dot com"),
-                             QString::fromUtf8("(C) 2010-2021"))
+                             QString::fromUtf8("(C) 2010-2022"))
             ;
 }
 

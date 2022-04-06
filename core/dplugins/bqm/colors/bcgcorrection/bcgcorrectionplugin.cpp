@@ -51,7 +51,7 @@ BCGCorrectionPlugin::~BCGCorrectionPlugin()
 
 QString BCGCorrectionPlugin::name() const
 {
-    return i18n("BCG Correction");
+    return i18nc("@title", "BCG Correction");
 }
 
 QString BCGCorrectionPlugin::iid() const
@@ -66,12 +66,12 @@ QIcon BCGCorrectionPlugin::icon() const
 
 QString BCGCorrectionPlugin::description() const
 {
-    return i18n("A tool to fix Brightness / Contrast / Gamma");
+    return i18nc("@info", "A tool to fix Brightness / Contrast / Gamma");
 }
 
 QString BCGCorrectionPlugin::details() const
 {
-    return i18n("<p>This Batch Queue Manager tool can adjust Brightness / Contrast / Gamma from images.</p>");
+    return xi18nc("@info", "<p>This Batch Queue Manager tool can adjust Brightness / Contrast / Gamma from images.</p>");
 }
 
 QList<DPluginAuthor> BCGCorrectionPlugin::authors() const
@@ -79,7 +79,7 @@ QList<DPluginAuthor> BCGCorrectionPlugin::authors() const
     return QList<DPluginAuthor>()
             << DPluginAuthor(QString::fromUtf8("Gilles Caulier"),
                              QString::fromUtf8("caulier dot gilles at gmail dot com"),
-                             QString::fromUtf8("(C) 2010-2021"))
+                             QString::fromUtf8("(C) 2010-2022"))
             ;
 }
 

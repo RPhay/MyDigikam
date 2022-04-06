@@ -51,7 +51,7 @@ WhiteBalancePlugin::~WhiteBalancePlugin()
 
 QString WhiteBalancePlugin::name() const
 {
-    return i18n("White Balance");
+    return i18nc("@title", "White Balance");
 }
 
 QString WhiteBalancePlugin::iid() const
@@ -66,12 +66,12 @@ QIcon WhiteBalancePlugin::icon() const
 
 QString WhiteBalancePlugin::description() const
 {
-    return i18n("A tool to adjust white balance");
+    return i18nc("@info", "A tool to adjust white balance");
 }
 
 QString WhiteBalancePlugin::details() const
 {
-    return i18n("<p>This Batch Queue Manager tool can adjust the white balance from images.</p>");
+    return xi18nc("@info", "<p>This Batch Queue Manager tool can adjust the white balance from images.</p>");
 }
 
 QList<DPluginAuthor> WhiteBalancePlugin::authors() const
@@ -79,7 +79,7 @@ QList<DPluginAuthor> WhiteBalancePlugin::authors() const
     return QList<DPluginAuthor>()
             << DPluginAuthor(QString::fromUtf8("Gilles Caulier"),
                              QString::fromUtf8("caulier dot gilles at gmail dot com"),
-                             QString::fromUtf8("(C) 2010-2021"))
+                             QString::fromUtf8("(C) 2010-2022"))
             ;
 }
 

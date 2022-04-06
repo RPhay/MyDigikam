@@ -51,7 +51,7 @@ BWConvertPlugin::~BWConvertPlugin()
 
 QString BWConvertPlugin::name() const
 {
-    return i18n("Black and White Convert");
+    return i18nc("@title", "Black and White Convert");
 }
 
 QString BWConvertPlugin::iid() const
@@ -66,12 +66,12 @@ QIcon BWConvertPlugin::icon() const
 
 QString BWConvertPlugin::description() const
 {
-    return i18n("A tool to convert to black and white");
+    return i18nc("@info", "A tool to convert to black and white");
 }
 
 QString BWConvertPlugin::details() const
 {
-    return i18n("<p>This Batch Queue Manager tool can convert images to black and white.</p>");
+    return xi18nc("@info", "<p>This Batch Queue Manager tool can convert images to black and white.</p>");
 }
 
 QList<DPluginAuthor> BWConvertPlugin::authors() const
@@ -79,7 +79,7 @@ QList<DPluginAuthor> BWConvertPlugin::authors() const
     return QList<DPluginAuthor>()
             << DPluginAuthor(QString::fromUtf8("Gilles Caulier"),
                              QString::fromUtf8("caulier dot gilles at gmail dot com"),
-                             QString::fromUtf8("(C) 2010-2021"))
+                             QString::fromUtf8("(C) 2010-2022"))
             ;
 }
 

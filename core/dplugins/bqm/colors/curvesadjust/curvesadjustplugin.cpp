@@ -51,7 +51,7 @@ CurvesAdjustPlugin::~CurvesAdjustPlugin()
 
 QString CurvesAdjustPlugin::name() const
 {
-    return i18n("Curves Adjust");
+    return i18nc("@title", "Curves Adjust");
 }
 
 QString CurvesAdjustPlugin::iid() const
@@ -66,12 +66,12 @@ QIcon CurvesAdjustPlugin::icon() const
 
 QString CurvesAdjustPlugin::description() const
 {
-    return i18n("A tool to adjust color curves");
+    return i18nc("@info", "A tool to adjust color curves");
 }
 
 QString CurvesAdjustPlugin::details() const
 {
-    return i18n("<p>This Batch Queue Manager tool can adjust the color curves from images.</p>");
+    return xi18nc("@info", "<p>This Batch Queue Manager tool can adjust the color curves from images.</p>");
 }
 
 QList<DPluginAuthor> CurvesAdjustPlugin::authors() const
@@ -79,7 +79,7 @@ QList<DPluginAuthor> CurvesAdjustPlugin::authors() const
     return QList<DPluginAuthor>()
             << DPluginAuthor(QString::fromUtf8("Gilles Caulier"),
                              QString::fromUtf8("caulier dot gilles at gmail dot com"),
-                             QString::fromUtf8("(C) 2010-2021"))
+                             QString::fromUtf8("(C) 2010-2022"))
             ;
 }
 

@@ -51,7 +51,7 @@ InvertPlugin::~InvertPlugin()
 
 QString InvertPlugin::name() const
 {
-    return i18n("Invert Colors");
+    return i18nc("@title", "Invert Colors");
 }
 
 QString InvertPlugin::iid() const
@@ -66,12 +66,12 @@ QIcon InvertPlugin::icon() const
 
 QString InvertPlugin::description() const
 {
-    return i18n("A tool to invert image colors");
+    return i18nc("@info", "A tool to invert image colors");
 }
 
 QString InvertPlugin::details() const
 {
-    return i18n("<p>This Batch Queue Manager tool can invert colors from images.</p>");
+    return xi18nc("@info", "<p>This Batch Queue Manager tool can invert colors from images.</p>");
 }
 
 QList<DPluginAuthor> InvertPlugin::authors() const
@@ -79,7 +79,7 @@ QList<DPluginAuthor> InvertPlugin::authors() const
     return QList<DPluginAuthor>()
             << DPluginAuthor(QString::fromUtf8("Gilles Caulier"),
                              QString::fromUtf8("caulier dot gilles at gmail dot com"),
-                             QString::fromUtf8("(C) 2010-2021"))
+                             QString::fromUtf8("(C) 2010-2022"))
             ;
 }
 

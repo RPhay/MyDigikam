@@ -51,7 +51,7 @@ ChannelMixerPlugin::~ChannelMixerPlugin()
 
 QString ChannelMixerPlugin::name() const
 {
-    return i18n("Channel Mixer");
+    return i18nc("@title", "Channel Mixer");
 }
 
 QString ChannelMixerPlugin::iid() const
@@ -66,12 +66,12 @@ QIcon ChannelMixerPlugin::icon() const
 
 QString ChannelMixerPlugin::description() const
 {
-    return i18n("A tool to mix color channel");
+    return i18nc("@info", "A tool to mix color channel");
 }
 
 QString ChannelMixerPlugin::details() const
 {
-    return i18n("<p>This Batch Queue Manager tool can mix color channels from images.</p>");
+    return xi18nc("@info", "<p>This Batch Queue Manager tool can mix color channels from images.</p>");
 }
 
 QList<DPluginAuthor> ChannelMixerPlugin::authors() const
@@ -79,7 +79,7 @@ QList<DPluginAuthor> ChannelMixerPlugin::authors() const
     return QList<DPluginAuthor>()
             << DPluginAuthor(QString::fromUtf8("Gilles Caulier"),
                              QString::fromUtf8("caulier dot gilles at gmail dot com"),
-                             QString::fromUtf8("(C) 2010-2021"))
+                             QString::fromUtf8("(C) 2010-2022"))
             ;
 }
 
