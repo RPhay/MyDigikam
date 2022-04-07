@@ -137,7 +137,7 @@ public:
     bool loadChunk(const QString& path);
 
     /**
-     * Apply tag changes to a target file with ExifTool with a list of tag properties.
+     * Apply tag changes to a target file using ExifTool with a list of tag properties.
      * Tags can already exists in target file or new ones can be created.
      * To remove a tag, pass an empty string as value.
      * @param path is the target files to change.
@@ -146,7 +146,7 @@ public:
     bool applyChanges(const QString& path, const ExifToolData& newTags);
 
     /**
-     * Apply tag changes to a target file with ExifTool with a EXV container.
+     * Apply tag changes to a target file using ExifTool with a EXV container.
      * Tags can already exists in target file or new ones can be created.
      * @param path is the target files to change.
      * @param exvTempFile is the list of changes embedded in EXV container.

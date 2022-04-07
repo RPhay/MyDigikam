@@ -91,4 +91,47 @@ bool DMetadata::loadUsingExifTool(const QString& filePath)
     return true;
 }
 
+bool DMetadata::saveUsingExifTool(const QString& filePath) const
+{
+    ExifToolParser* const parser = new ExifToolParser(nullptr);
+
+    if (parser->exifToolAvailable())
+    {
+        QString     exvPath = QFileInfo(getFilePath()).baseName() + QLatin1String("_changes.exv");
+        QStringList removedTags;
+        exportChanges(exvPath, removedTags);
+        QString targetPath;
+
+        // NOTE: if filePath is empty, we will apply changex on original file, else save changes on different file.
+
+        if (!filePath.isEmpty())
+        {
+            targetPath = filePath;
+        }
+        else
+        {
+            targetPath = getFilePath();
+        }
+
+        if (!parser->applyChanges(targetPath, exvPath))
+        {
+            qCWarning(DIGIKAM_METAENGINE_LOG) << "Cannot apply changes with ExifTool on" << targetPath;
+            delete parser;
+
+            return false;
+        }
+    }
+    else
+    {
+        qCWarning(DIGIKAM_METAENGINE_LOG) << "ExifTool is not available to save metadata...";
+        delete parser;
+
+        return false;
+    }
+
+    delete parser;
+
+    return true;
+}
+
 } // namespace Digikam

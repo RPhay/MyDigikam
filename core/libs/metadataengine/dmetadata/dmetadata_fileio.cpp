@@ -109,7 +109,7 @@ bool DMetadata::load(const QString& filePath, Backend* backend)
     }
     else
     {
-        // No image files (aka video or audio), process with ffmpeg backend.
+        // No image files (aka video or audio), process with ExifTool or ffmpeg backends.
 
         if (!(hasLoaded = loadUsingExifTool(filePath)))
         {
@@ -146,14 +146,60 @@ bool DMetadata::save(const QString& filePath, bool setVersion) const
 {
     FileWriteLocker lock(filePath);
 
-    return MetaEngine::save(filePath, setVersion);
+    Backend usedBackend = NoBackend;
+    bool hasSaved       = false;
+
+    if (!(hasSaved = MetaEngine::save(filePath, setVersion)))
+    {
+        if (!(hasSaved = saveUsingExifTool(filePath)))
+        {
+            usedBackend = NoBackend;
+        }
+        else
+        {
+            usedBackend = ExifToolBackend;
+        }
+    }
+    else
+    {
+        usedBackend = Exiv2Backend;
+    }
+
+    qCDebug(DIGIKAM_METAENGINE_LOG) << "Saving metadata with"
+                                    << backendName(usedBackend)
+                                    << "backend to" << filePath;
+
+    return hasSaved;
 }
 
 bool DMetadata::applyChanges(bool setVersion) const
 {
     FileWriteLocker lock(getFilePath());
 
-    return MetaEngine::applyChanges(setVersion);
+    Backend usedBackend = NoBackend;
+    bool hasSaved       = false;
+
+    if (!(hasSaved = MetaEngine::applyChanges(setVersion)))
+    {
+        if (!(hasSaved = saveUsingExifTool(QString())))
+        {
+            usedBackend = NoBackend;
+        }
+        else
+        {
+            usedBackend = ExifToolBackend;
+        }
+    }
+    else
+    {
+        usedBackend = Exiv2Backend;
+    }
+
+    qCDebug(DIGIKAM_METAENGINE_LOG) << "Apply metadata changes with"
+                                    << backendName(usedBackend)
+                                    << "backend to" << getFilePath();
+
+    return hasSaved;
 }
 
 } // namespace Digikam
