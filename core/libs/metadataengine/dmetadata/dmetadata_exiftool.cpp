@@ -29,11 +29,13 @@
 
 #include <QString>
 #include <QScopedPointer>
+#include <QFileInfo>
 
 // Local includes
 
 #include "digikam_config.h"
 #include "digikam_debug.h"
+#include "drawfiles.h"
 #include "exiftoolparser.h"
 
 namespace Digikam
@@ -93,6 +95,17 @@ bool DMetadata::loadUsingExifTool(const QString& filePath)
 
 bool DMetadata::saveUsingExifTool(const QString& filePath) const
 {
+    QFileInfo finfo(filePath);
+    QString ext = finfo.suffix().toLower();
+
+    if (!writeRawFiles() && s_rawFileExtensions().contains(ext))
+    {
+        qCDebug(DIGIKAM_METAENGINE_LOG) << finfo.fileName()
+                                        << "is a RAW file, "
+                                        << "writing to such a file is disabled by current settings.";
+        return false;
+    }
+
     ExifToolParser* const parser = new ExifToolParser(nullptr);
 
     if (parser->exifToolAvailable())

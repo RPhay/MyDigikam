@@ -254,34 +254,18 @@ void SetupMetadata::slotWriteRawFilesToggled(bool b)
         QPointer<QMessageBox> msgBox1 = new QMessageBox(QMessageBox::Warning,
                  qApp->applicationName(),
                  i18nc("@info",
-                       "Do you really want to enable metadata writing to RAW files? "
-                       "digiKam delegates this task to the Exiv2 library.\n"
-                       "With different RAW formats, problems are known which can "
-                       "lead to the destruction of RAW files.\n"
-                       "If you decide to do so, make a backup of your RAW files. "
-                       "We strongly recommend not to enable this option."),
+                       "Do you really want to enable metadata writing to RAW files?\n"
+                       "Note: digiKam delegates this task to the ExifTool backend."),
                  QMessageBox::Yes | QMessageBox::No, this);
 
-        msgBox1->button(QMessageBox::Yes)->setText(i18nc("@action", "Yes I understand"));
         msgBox1->setDefaultButton(QMessageBox::No);
 
         int result1 = msgBox1->exec();
         delete msgBox1;
 
-        if (result1 == QMessageBox::Yes)
+        if (result1 == QMessageBox::No)
         {
-            QPointer<QMessageBox> msgBox2 = new QMessageBox(QMessageBox::Warning,
-                     qApp->applicationName(),
-                     i18nc("@info", "You would rather disable writing metadata to RAW files?"),
-                     QMessageBox::Yes | QMessageBox::No, this);
-
-            int result2 = msgBox2->exec();
-            delete msgBox2;
-
-            if (result2 == QMessageBox::No)
-            {
-                return;
-            }
+            return;
         }
 
         d->writeRawFilesBox->setChecked(false);

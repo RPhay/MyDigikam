@@ -51,6 +51,7 @@ extern "C"
 #include "digikam_debug.h"
 #include "digikam_config.h"
 #include "metaengine_data_p.h"
+#include "drawfiles.h"
 
 // Pragma directives to reduce warnings from Exiv2.
 
@@ -221,69 +222,22 @@ bool MetaEngine::Private::saveToFile(const QFileInfo& finfo) const
         return false;
     }
 
-    QStringList rawTiffBasedSupported, rawTiffBasedNotSupported;
-
-    // Raw files supported by Exiv2 0.27
-
-    rawTiffBasedSupported << QLatin1String("cr2")
-                          << QLatin1String("crw")
-                          << QLatin1String("nef")
-                          << QLatin1String("pef")
-                          << QLatin1String("orf")
-                          << QLatin1String("srw");
-
-    // Raw files not supported by Exiv2 0.27
-
-    rawTiffBasedNotSupported << QLatin1String("3fr")
-                             << QLatin1String("arw")
-                             << QLatin1String("dcr")
-                             << QLatin1String("erf")
-                             << QLatin1String("k25")
-                             << QLatin1String("kdc")
-                             << QLatin1String("mos")
-                             << QLatin1String("mrw")
-                             << QLatin1String("raf")
-                             << QLatin1String("raw")
-                             << QLatin1String("rw2")
-                             << QLatin1String("sr2")
-                             << QLatin1String("srf")
-                             << QLatin1String("rw2");
-
-    if (!writeDngFiles)
-    {
-         rawTiffBasedNotSupported << (QLatin1String("dng"));
-    }
-
     QString ext = finfo.suffix().toLower();
 
-    if (rawTiffBasedNotSupported.contains(ext) || (!writeRawFiles && rawTiffBasedSupported.contains(ext)))
+    if (s_rawFileExtensions().remove(QLatin1String("dng")).contains(ext))
+    {
+        // NOTE: never touch RAW files with Exiv2 as it's not safe. Delegate to ExifTool backens.
+
+        return false;
+    }
+
+    if (!writeDngFiles && (ext == QLatin1String("dng")))
     {
         qCDebug(DIGIKAM_METAENGINE_LOG) << finfo.fileName()
-                                        << "is a TIFF based RAW file, "
+                                        << "is a DNG file, "
                                         << "writing to such a file is disabled by current settings.";
         return false;
     }
-
-/*
-    if (rawTiffBasedNotSupported.contains(ext))
-    {
-        qCDebug(DIGIKAM_METAENGINE_LOG) << finfo.fileName()
-                                        << "is TIFF based RAW file not yet supported. Metadata not saved.";
-        return false;
-    }
-
-    if (rawTiffBasedSupported.contains(ext) && !writeRawFiles)
-    {
-        qCDebug(DIGIKAM_METAENGINE_LOG) << finfo.fileName()
-                                        << "is TIFF based RAW file supported but writing mode is disabled. "
-                                        << "Metadata not saved.";
-        return false;
-    }
-
-    qCDebug(DIGIKAM_METAENGINE_LOG) << "File Extension: " << ext << " is supported for writing mode";
-
-    bool ret = false;
-*/
 
     QMutexLocker lock(&s_metaEngineMutex);
 

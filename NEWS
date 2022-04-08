@@ -8,6 +8,7 @@ General  : Add JPEG-XL, WEBP, and AVIF export settings everywhere.
            Add convert to lossless JPEG-XL, WEBP, and AVIF while importing from camera.
            Add JPEG-XL; WEBP, and AVIF converters in Batch Queue Manager.
 Usability: Add hamburger menu to tool-bar if main menu is hidden.
+Metadata:  Write to RAW and Video files is now delegate to ExifTool Backend.
 
 *****************************************************************************************************
 BUGFIXES:
