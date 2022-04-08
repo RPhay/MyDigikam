@@ -39,4 +39,8 @@ BUGFIXES:
 024 ==> 237504 - Impossible change exif, ipct and xmp value in Raw or Orf files from Panasonic or Olympus cameras with Exiv2 (.orf and . raw) - Use ExifTool instead.
 025 ==> 406540 - Add Metatags to Canon Raw do not work with Exiv2 - Use ExifTool instead.
 026 ==> 426938 - MP4 scans inconsistently chooses wrong "creation date" with ffmpeg - Use ExifTool instead.
-027 ==> 
+027 ==> 436876 - Cannot write exif data to mp4 video files with Exiv2 - Use ExifTool instead.
+028 ==> 
+029 ==> 
+030 ==> 
+031 ==> 
