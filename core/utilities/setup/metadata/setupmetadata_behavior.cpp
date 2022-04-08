@@ -179,7 +179,7 @@ void SetupMetadata::appendBehaviorTab()
     QGridLayout* const infoBoxGrid  = new QGridLayout;
     infoBox->setFrameStyle(QFrame::StyledPanel | QFrame::Raised);
 
-    DActiveLabel* const exiv2LogoLabel = new DActiveLabel(QUrl(QLatin1String("https://www.exiv2.org")),
+    DActiveLabel* const exiv2LogoLabel = new DActiveLabel(QUrl(QLatin1String("https://github.com/Exiv2/exiv2")),
                                                           QStandardPaths::locate(QStandardPaths::GenericDataLocation, QLatin1String("digikam/data/logo-exiv2.png")),
                                                           infoBox);
     exiv2LogoLabel->setWhatsThis(i18nc("@info:whatsthis", "Visit Exiv2 project website"));
