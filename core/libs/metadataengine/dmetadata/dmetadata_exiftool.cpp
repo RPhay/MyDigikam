@@ -95,7 +95,20 @@ bool DMetadata::loadUsingExifTool(const QString& filePath)
 
 bool DMetadata::saveUsingExifTool(const QString& filePath) const
 {
-    QFileInfo finfo(filePath);
+    QString targetPath;
+
+    // NOTE: if filePath is empty, we will apply changes on original file, else save changes on different file.
+
+    if (!filePath.isEmpty())
+    {
+        targetPath = filePath;
+    }
+    else
+    {
+        targetPath = getFilePath();
+    }
+
+    QFileInfo finfo(targetPath);
     QString ext = finfo.suffix().toLower();
 
     if (!writeDngFiles() && (ext == QLatin1String("dng")))
@@ -121,18 +134,6 @@ bool DMetadata::saveUsingExifTool(const QString& filePath) const
         QString     exvPath = QFileInfo(getFilePath()).baseName() + QLatin1String("_changes.exv");
         QStringList removedTags;
         exportChanges(exvPath, removedTags);
-        QString targetPath;
-
-        // NOTE: if filePath is empty, we will apply changex on original file, else save changes on different file.
-
-        if (!filePath.isEmpty())
-        {
-            targetPath = filePath;
-        }
-        else
-        {
-            targetPath = getFilePath();
-        }
 
         if (!parser->applyChanges(targetPath, exvPath))
         {
