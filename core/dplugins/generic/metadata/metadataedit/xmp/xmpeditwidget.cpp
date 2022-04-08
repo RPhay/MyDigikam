@@ -30,6 +30,7 @@
 #include <QMenu>
 #include <QApplication>
 #include <QUrl>
+#include <QFileInfo>
 
 // KDE includes
 
@@ -244,9 +245,10 @@ void XMPEditWidget::slotItemChanged()
     d->statusPage->readMetadata(*meta);
     d->propertiesPage->readMetadata(*meta);
 
-    d->isReadOnly = (MetaEngineSettings::instance()->settings()
-                        .metadataWritingMode == DMetadata::WRITE_TO_FILE_ONLY &&
-                     !DMetadata::canWriteXmp((*d->dlg->currentItem()).toLocalFile()));
+    d->isReadOnly = (
+                     (MetaEngineSettings::instance()->settings().metadataWritingMode == DMetadata::WRITE_TO_FILE_ONLY) &&
+                     !QFileInfo(*d->dlg->currentItem().toLocalFile()).isWritable()
+                    );
 
     emit signalSetReadOnly(d->isReadOnly);
 

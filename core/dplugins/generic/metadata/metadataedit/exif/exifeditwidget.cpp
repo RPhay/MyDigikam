@@ -30,6 +30,7 @@
 #include <QApplication>
 #include <QMenu>
 #include <QUrl>
+#include <QFileInfo>
 
 // KDE includes
 
@@ -201,8 +202,13 @@ void EXIFEditWidget::slotItemChanged()
     d->lightPage->readMetadata(*meta);
     d->adjustPage->readMetadata(*meta);
 
-    d->isReadOnly = !DMetadata::canWriteExif((*d->dlg->currentItem()).toLocalFile());
+    d->isReadOnly = (
+                     (MetaEngineSettings::instance()->settings().metadataWritingMode == DMetadata::WRITE_TO_FILE_ONLY) &&
+                     !QFileInfo(*d->dlg->currentItem().toLocalFile()).isWritable()
+                    );
+
     emit signalSetReadOnly(d->isReadOnly);
+
     d->page_caption->setEnabled(!d->isReadOnly);
     d->page_datetime->setEnabled(!d->isReadOnly);
     d->page_lens->setEnabled(!d->isReadOnly);

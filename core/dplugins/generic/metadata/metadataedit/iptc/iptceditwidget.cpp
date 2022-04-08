@@ -30,6 +30,7 @@
 #include <QKeyEvent>
 #include <QUrl>
 #include <QApplication>
+#include <QFileInfo>
 
 // KDE includes
 
@@ -248,7 +249,11 @@ void IPTCEditWidget::slotItemChanged()
     d->propertiesPage->readMetadata(*meta);
     d->envelopePage->readMetadata(*meta);
 
-    d->isReadOnly = !DMetadata::canWriteIptc((*d->dlg->currentItem()).toLocalFile());
+    d->isReadOnly = (
+                     (MetaEngineSettings::instance()->settings().metadataWritingMode == DMetadata::WRITE_TO_FILE_ONLY) &&
+                     !QFileInfo(*d->dlg->currentItem().toLocalFile()).isWritable()
+                    );
+
     emit signalSetReadOnly(d->isReadOnly);
 
     d->page_content->setEnabled(!d->isReadOnly);
