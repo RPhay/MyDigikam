@@ -120,12 +120,6 @@ void SetupMetadata::appendBehaviorTab()
 
     QLabel* const readWriteLabel       = new QLabel(i18nc("@label", "Reading and Writing Metadata"));
 
-    d->useLazySync        = new QCheckBox;
-    d->useLazySync->setText(i18nc("@option:check", "Use lazy synchronization"));
-    d->useLazySync->setWhatsThis(i18nc("@info:whatsthis",
-                                       "Instead of synchronizing metadata, just schedule it for synchronization."
-                                       "Synchronization can be done later by triggering the apply pending, or at digikam exit"));
-
     d->writeDngFilesBox   = new QCheckBox;
     d->writeDngFilesBox->setText(i18nc("@option:check", "Write metadata to DNG files"));
     d->writeDngFilesBox->setWhatsThis(i18nc("@info:whatsthis", "Turn on this option to write metadata into DNG files."));
@@ -136,6 +130,12 @@ void SetupMetadata::appendBehaviorTab()
     d->writeRawFilesBox->setWhatsThis(i18nc("@info:whatsthis", "Turn on this option to write metadata into RAW files. "
                                             "This feature is delegate to ExifTool backend and is disabled by default."));
     d->writeRawFilesBox->setEnabled(MetaEngine::supportMetadataWriting(QLatin1String("image/x-raw")));
+
+    d->useLazySync        = new QCheckBox;
+    d->useLazySync->setText(i18nc("@option:check", "Use lazy synchronization"));
+    d->useLazySync->setWhatsThis(i18nc("@info:whatsthis",
+                                       "Instead of synchronizing metadata, just schedule it for synchronization."
+                                       "Synchronization can be done later by triggering the apply pending, or at digikam exit"));
 
     d->updateFileTimeStampBox = new QCheckBox;
     d->updateFileTimeStampBox->setText(i18nc("@option:check", "&Update file modification timestamp when files are modified"));
@@ -164,9 +164,9 @@ void SetupMetadata::appendBehaviorTab()
 
     readWriteLayout->addWidget(readWriteIconLabel,          0, 0, 2, 3);
     readWriteLayout->addWidget(readWriteLabel,              0, 1, 2, 3);
-    readWriteLayout->addWidget(d->useLazySync,              2, 0, 1, 3);
-    readWriteLayout->addWidget(d->writeDngFilesBox,         3, 0, 1, 3);
-    readWriteLayout->addWidget(d->writeRawFilesBox,         4, 0, 1, 3);
+    readWriteLayout->addWidget(d->writeDngFilesBox,         2, 0, 1, 3);
+    readWriteLayout->addWidget(d->writeRawFilesBox,         3, 0, 1, 3);
+    readWriteLayout->addWidget(d->useLazySync,              4, 0, 1, 3);
     readWriteLayout->addWidget(d->updateFileTimeStampBox,   5, 0, 1, 3);
     readWriteLayout->addWidget(d->rescanImageIfModifiedBox, 6, 0, 1, 3);
     readWriteLayout->addWidget(d->clearMetadataIfRescanBox, 7, 0, 1, 3);
