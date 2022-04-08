@@ -224,18 +224,10 @@ bool MetaEngine::Private::saveToFile(const QFileInfo& finfo) const
 
     QString ext = finfo.suffix().toLower();
 
-    if (s_rawFileExtensions().remove(QLatin1String("dng")).contains(ext))
+    if (s_rawFileExtensions().contains(ext))
     {
         // NOTE: never touch RAW files with Exiv2 as it's not safe. Delegate to ExifTool backens.
 
-        return false;
-    }
-
-    if (!writeDngFiles && (ext == QLatin1String("dng")))
-    {
-        qCDebug(DIGIKAM_METAENGINE_LOG) << finfo.fileName()
-                                        << "is a DNG file, "
-                                        << "writing to such a file is disabled by current settings.";
         return false;
     }
 

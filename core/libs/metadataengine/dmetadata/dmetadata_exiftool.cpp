@@ -98,7 +98,15 @@ bool DMetadata::saveUsingExifTool(const QString& filePath) const
     QFileInfo finfo(filePath);
     QString ext = finfo.suffix().toLower();
 
-    if (!writeRawFiles() && s_rawFileExtensions().contains(ext))
+    if (!writeDngFiles() && (ext == QLatin1String("dng")))
+    {
+        qCDebug(DIGIKAM_METAENGINE_LOG) << finfo.fileName()
+                                        << "is a DNG file, "
+                                        << "writing to such a file is disabled by current settings.";
+        return false;
+    }
+
+    if (!writeRawFiles() && s_rawFileExtensions().remove(QLatin1String("dng")).contains(ext))
     {
         qCDebug(DIGIKAM_METAENGINE_LOG) << finfo.fileName()
                                         << "is a RAW file, "
