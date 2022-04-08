@@ -24,4 +24,19 @@ BUGFIXES:
 009 ==> 451525 - Maintenance tool dialog should not keep potentially destructive operations checked by default.
 010 ==> 251424 - Include gpx overlays found in albums.
 011 ==> 451802 - GPX files fails to load.
-012 ==> 
+012 ==> 219856 - Exiv2 destroys RAW/DNG files when editing IPTC - Use ExifTool instead.
+013 ==> 219856 - Exiv2 destroys RAW/DNG files when editing IPTC - Use ExifTool instead.
+014 ==> 366348 - Saving metadata to video files using ExifTool.
+015 ==> 377622 - IPTC metadata are not embedded in ORF files with Exiv2 - Use ExifTool instead.
+016 ==> 338075 - Tagging RAW images for Canon EOS-1Ds with Exiv2 corrupts them - Use ExifTool instead.
+017 ==> 419801 - XMP-digiKam:TagsList not read from video files with ExiV2 - Use ExifTool instead.
+018 ==> 134486 - Keywords are not written by Exiv2 to raw files even though they do embed iptc/exif - Use ExifTool instead.
+019 ==> 264210 - RAW (NEF) file unreadable after editing IPTC with Exiv2 - Use ExifTool instead.
+020 ==> 309341 - Exiv2 doesn't write XMP-tiff Orientation tag for raw files - Use ExifTool instead.
+021 ==> 384092 - Writing gps metadata with Exiv2 to sony alpha6300 raw files deletes data (white balance data probably) - Use ExifTool instead.
+022 ==> 416516 - Add ExifTool based wrapper to read and write metadata with video files.
+023 ==> 326408 - Writing metadata corrupt or is not supported for RAW files using Exiv2 - Use ExifTool instead.
+024 ==> 237504 - Impossible change exif, ipct and xmp value in Raw or Orf files from Panasonic or Olympus cameras with Exiv2 (.orf and . raw) - Use ExifTool instead.
+025 ==> 406540 - Add Metatags to Canon Raw do not work with Exiv2 - Use ExifTool instead.
+026 ==> 
+027 ==> 
