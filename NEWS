@@ -40,7 +40,17 @@ BUGFIXES:
 025 ==> 406540 - Add Metatags to Canon Raw do not work with Exiv2 - Use ExifTool instead.
 026 ==> 426938 - MP4 scans inconsistently chooses wrong "creation date" with ffmpeg - Use ExifTool instead.
 027 ==> 436876 - Cannot write exif data to mp4 video files with Exiv2 - Use ExifTool instead.
-028 ==> 
-029 ==> 
-030 ==> 
-031 ==> 
+028 ==> 193228 - Experimental Exiv2 option "write metadata to RAW files" corrupts Nikon NEFs - Use ExifTool instead.
+029 ==> 235171 - digiKam crashes when saving ratings to a raw (nef) file - Use ExifTool instead.
+030 ==> 236127 - digiKam crashes sometimes, when changing the rating of a rawfile - Use ExifTool instead.
+031 ==> 291627 - NEF data loss after geotaging with Exiv2 - Use ExifTool instead.
+032 ==> 305823 - digiKam writes to Samsung RAW files with ExifTool.
+033 ==> 317745 - Store metadata incl. geolocation data into CR2 files with ExifTool.
+034 ==> 234181 - digiKam crashes when editing metadata of CR2 files with Exiv2 - Use ExifTool instead.
+035 ==> 366406 - Does not write metadata to ORF with Exiv2 - Use ExifTool instead.
+036 ==> 168064 - Save tag on raw files with ExifTool.
+037 ==> 134487 - Keywords are not written to raw files with Exiv2 even though they do embed iptc/exif - Use ExifTool instead.
+038 ==> 
+039 ==> 
+040 ==> 
+041 ==> 
