@@ -58,4 +58,5 @@ BUGFIXES:
 041 ==> 431113 - Apply templates to video files, not only to JPEGs, with ExifTool.
 042 ==> 441758 - Editing metadata on HEIC image and HEVC video files doesn't work (greyed out).
 043 ==> 440547 - The writing of metadata in HEIC files is not possible - Use ExifTool instead.
-044 ==> 
+044 ==> 434246 - XMP metadata fails to write to file with Exiv2 - Use ExifTool instead.
+045 ==> 
