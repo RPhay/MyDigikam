@@ -139,7 +139,7 @@ make MXE_TARGETS=$MXE_BUILD_TARGETS \
      pthreads \
      libgphoto2 \
      icu4c \
-     qtbase \
+     qtbase qtbase_CONFIGURE_OPTS=-icu \
      qttranslations \
      qtimageformats \
      qttools \
