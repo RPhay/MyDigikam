@@ -136,8 +136,8 @@ void SetupMetadata::appendBehaviorTab()
                                             "This feature is delegate to ExifTool backend and is disabled by default."));
 
     d->writeWithExifToolLabel          = new QLabel;
-    d->writeWithExifToolLabel->setText(i18nc("@label", "Note: these options depends of ExifTool availability. "
-                                             "Check in the ExifTool tab for details."));
+    d->writeWithExifToolLabel->setOpenExternalLinks(true);
+
     // ---
 
     d->useLazySync                     = new QCheckBox;
@@ -242,14 +242,16 @@ void SetupMetadata::slotExifToolSettingsChanged(bool available)
         d->writeWithExifToolBox->setEnabled(true);
         d->writeDngFilesBox->setEnabled(true);
         d->writeRawFilesBox->setEnabled(true);
-        d->writeWithExifToolLabel->setVisible(false);
+        d->writeWithExifToolLabel->setText(xi18nc("@label", "Note: see <a href='https://exiftool.org/#limitations'>write limitations</a> "
+                                                  "of ExifTool backend."));
     }
     else
     {
         d->writeWithExifToolBox->setEnabled(false);
         d->writeDngFilesBox->setEnabled(false);
         d->writeRawFilesBox->setEnabled(false);
-        d->writeWithExifToolLabel->setVisible(true);
+        d->writeWithExifToolLabel->setText(i18nc("@label", "Note: these options depends of <a href='https://exiftool.org/'>ExifTool backend</a> availability. "
+                                                 "Check in the ExifTool tab for details."));
     }
 }
 

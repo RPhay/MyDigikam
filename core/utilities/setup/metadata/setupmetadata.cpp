@@ -69,11 +69,6 @@ SetupMetadata::SetupMetadata(QWidget* const parent)
 
     // --------------------------------------------------------
 
-    d->readSettings();
-    slotWriteWithExifToolToggled(d->writeWithExifToolBox->isChecked());
-
-    // --------------------------------------------------------
-
     connect(d->sidecarFileNameBox, SIGNAL(toggled(bool)),
             this, SLOT(slotSidecarFileNameToggled(bool)));
 
@@ -88,6 +83,16 @@ SetupMetadata::SetupMetadata(QWidget* const parent)
 
     connect(d->exifToolView, SIGNAL(signalExifToolSettingsChanged(bool)),
             this, SLOT(slotExifToolSettingsChanged(bool)));
+
+    // --------------------------------------------------------
+
+
+    d->readSettings();
+    slotWriteWithExifToolToggled(d->writeWithExifToolBox->isChecked());
+
+    // --------------------------------------------------------
+
+    // Connect this slot later read settings.
 
     connect(d->writeRawFilesBox, SIGNAL(toggled(bool)),
             this, SLOT(slotWriteRawFilesToggled(bool)));
@@ -275,9 +280,9 @@ void SetupMetadata::slotWriteRawFilesToggled(bool b)
                  qApp->applicationName(),
                  i18nc("@info",
                        "Do you really want to enable metadata writing to RAW files? "
-                       "digiKam delegates this task to the Exiv2 library.\n"
+                       "digiKam delegates this task to the ExifTool backend.\n"
                        "With different RAW formats, problems are known which can "
-                       "lead to the destruction of RAW files.\n"
+                       "lead to the corrupt of RAW files.\n"
                        "If you decide to do so, make a backup of your RAW files. "
                        "We strongly recommend not to enable this option."),
                  QMessageBox::Yes | QMessageBox::No, this);
