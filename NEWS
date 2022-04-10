@@ -56,4 +56,6 @@ BUGFIXES:
 039 ==> 448729 - Metadata is not written back to file when size of XMP JPEG segment is larger than 65535 bytes - Use ExifTool instead Exiv2.
 040 ==> 451466 - XMP with Google depth-map gets corrupted when metadata is modified in digiKam (likely exiv2 issue) - Use ExifTool instead.
 041 ==> 431113 - Apply templates to video files, not only to JPEGs, with ExifTool.
-042 ==> 
+042 ==> 441758 - Editing metadata on HEIC image and HEVC video files doesn't work (greyed out).
+043 ==> 440547 - The writing of metadata in HEIC files is not possible - Use ExifTool instead.
+044 ==> 
