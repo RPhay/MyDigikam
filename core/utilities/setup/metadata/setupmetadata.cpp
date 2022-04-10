@@ -69,6 +69,11 @@ SetupMetadata::SetupMetadata(QWidget* const parent)
 
     // --------------------------------------------------------
 
+    d->readSettings();
+    slotWriteWithExifToolToggled(d->writeWithExifToolBox->isChecked());
+
+    // --------------------------------------------------------
+
     connect(d->sidecarFileNameBox, SIGNAL(toggled(bool)),
             this, SLOT(slotSidecarFileNameToggled(bool)));
 
@@ -84,10 +89,10 @@ SetupMetadata::SetupMetadata(QWidget* const parent)
     connect(d->exifToolView, SIGNAL(signalExifToolSettingsChanged(bool)),
             this, SLOT(slotExifToolSettingsChanged(bool)));
 
-    // --------------------------------------------------------
+    connect(d->writeRawFilesBox, SIGNAL(toggled(bool)),
+            this, SLOT(slotWriteRawFilesToggled(bool)));
 
-    d->readSettings();
-    slotWriteWithExifToolToggled(d->writeWithExifToolBox->isChecked());
+    // --------------------------------------------------------
 
     QTimer::singleShot(0, d->exifToolView, SLOT(slotStartFoundExifTool()));
 }
@@ -256,6 +261,51 @@ void SetupMetadata::slotWriteWithExifToolToggled(bool b)
 {
     d->writeDngFilesBox->setEnabled(b);
     d->writeRawFilesBox->setEnabled(b);
+}
+
+void SetupMetadata::slotWriteRawFilesToggled(bool b)
+{
+    // Show info if write metadata to raw files was switched on
+
+    if (b)
+    {
+        QApplication::beep();
+
+        QPointer<QMessageBox> msgBox1 = new QMessageBox(QMessageBox::Warning,
+                 qApp->applicationName(),
+                 i18nc("@info",
+                       "Do you really want to enable metadata writing to RAW files? "
+                       "digiKam delegates this task to the Exiv2 library.\n"
+                       "With different RAW formats, problems are known which can "
+                       "lead to the destruction of RAW files.\n"
+                       "If you decide to do so, make a backup of your RAW files. "
+                       "We strongly recommend not to enable this option."),
+                 QMessageBox::Yes | QMessageBox::No, this);
+
+        msgBox1->button(QMessageBox::Yes)->setText(i18nc("@action", "Yes I understand"));
+        msgBox1->setDefaultButton(QMessageBox::No);
+
+        int result1 = msgBox1->exec();
+        delete msgBox1;
+
+        if (result1 == QMessageBox::Yes)
+        {
+            QPointer<QMessageBox> msgBox2 = new QMessageBox(QMessageBox::Warning,
+                     qApp->applicationName(),
+                     i18nc("@info", "You would rather disable writing metadata to RAW files?"),
+                     QMessageBox::Yes | QMessageBox::No, this);
+
+            int result2 = msgBox2->exec();
+            delete msgBox2;
+
+            if (result2 == QMessageBox::No)
+            {
+                return;
+            }
+        }
+
+        d->writeRawFilesBox->setChecked(false);
+    }
 }
 
 } // namespace Digikam

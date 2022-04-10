@@ -322,15 +322,26 @@ cv::Mat BlurDetector::getWeightMap(const cv::Mat& image) const
                 int height            = std::min(image.size().height - y_position_corner,
                                                  static_cast<int>(size.height() * image.size().height * d->ratio_expand_af_point) );
 
-                cv::Rect rect
+                if ((width > 0) && (height > 0))
                 {
-                    x_position_corner,
-                    y_position_corner,
-                    width,
-                    height
-                };
+                    cv::Rect rect
+                    {
+                        x_position_corner,
+                        y_position_corner,
+                        width,
+                        height
+                    };
 
-                res(rect).setTo(1);
+                    res(rect).setTo(1);
+                }
+                else
+                {
+                    res = detectBackgroundRegion(image);
+
+                    cv::threshold(res, res, 0.5, 1, cv::THRESH_BINARY_INV);
+
+                    break;
+                }
             }
         }
         else
