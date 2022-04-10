@@ -55,4 +55,5 @@ BUGFIXES:
 038 ==> 325458 - Editing Exif information corrupts MPO 3D image with Exiv2 - Use ExifTool instead.
 039 ==> 448729 - Metadata is not written back to file when size of XMP JPEG segment is larger than 65535 bytes - Use ExifTool instead Exiv2.
 040 ==> 451466 - XMP with Google depth-map gets corrupted when metadata is modified in digiKam (likely exiv2 issue) - Use ExifTool instead.
-041 ==> 
+041 ==> 431113 - Apply templates to video files, not only to JPEGs, with ExifTool.
+042 ==> 
