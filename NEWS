@@ -62,4 +62,6 @@ BUGFIXES:
 045 ==> 225272 - digiKam destroy some Exif data with Exiv2 - Use ExifTool instead.
 046 ==> 174108 - digiKam and exiv2 crash with AVI file - Use ExifTool instead.
 047 ==> 342030 - digiKam crashes when checking an AVI video file using exiv2 - Use ExifTool instead.
-048 ==> 
+048 ==> 171989 - Can't set gps photo location on .nef images with Exiv2 - Use ExifTool instead.
+049 ==> 173828 - Geolocation do not except Canon EOS 1D Mark III CR2-files with Exiv2 - Use ExifTool instead.
+050 ==> 
