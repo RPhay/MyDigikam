@@ -146,60 +146,14 @@ bool DMetadata::save(const QString& filePath, bool setVersion) const
 {
     FileWriteLocker lock(filePath);
 
-    Backend usedBackend = NoBackend;
-    bool hasSaved       = false;
-
-    if (!(hasSaved = MetaEngine::save(filePath, setVersion)))
-    {
-        if (!(hasSaved = saveUsingExifTool(filePath)))
-        {
-            usedBackend = NoBackend;
-        }
-        else
-        {
-            usedBackend = ExifToolBackend;
-        }
-    }
-    else
-    {
-        usedBackend = Exiv2Backend;
-    }
-
-    qCDebug(DIGIKAM_METAENGINE_LOG) << "Saving metadata with"
-                                    << backendName(usedBackend)
-                                    << "backend to" << filePath;
-
-    return hasSaved;
+    return MetaEngine::save(filePath, setVersion);
 }
 
 bool DMetadata::applyChanges(bool setVersion) const
 {
     FileWriteLocker lock(getFilePath());
 
-    Backend usedBackend = NoBackend;
-    bool hasSaved       = false;
-
-    if (!(hasSaved = MetaEngine::applyChanges(setVersion)))
-    {
-        if (!(hasSaved = saveUsingExifTool(QString())))
-        {
-            usedBackend = NoBackend;
-        }
-        else
-        {
-            usedBackend = ExifToolBackend;
-        }
-    }
-    else
-    {
-        usedBackend = Exiv2Backend;
-    }
-
-    qCDebug(DIGIKAM_METAENGINE_LOG) << "Apply metadata changes with"
-                                    << backendName(usedBackend)
-                                    << "backend to" << getFilePath();
-
-    return hasSaved;
+    return MetaEngine::applyChanges(setVersion);
 }
 
 } // namespace Digikam

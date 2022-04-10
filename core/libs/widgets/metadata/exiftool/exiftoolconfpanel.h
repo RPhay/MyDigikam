@@ -49,6 +49,14 @@ public:
     QString exifToolDirectory() const;
     void setExifToolDirectory(const QString& dir);
 
+Q_SIGNALS:
+
+    void signalExifToolSettingsChanged(bool available);
+
+public Q_SLOTS:
+
+    void slotStartFoundExifTool();
+
 private Q_SLOTS:
 
     void slotSearchTextChanged(const SearchTextSettings&);

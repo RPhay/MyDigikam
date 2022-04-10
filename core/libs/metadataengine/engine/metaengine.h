@@ -249,14 +249,23 @@ public:
     QString getMimeType() const;
 
     /**
-     * Enable or disable writing metadata operations to RAW tiff based files.
-     * It requires Exiv2 0.18. By default RAW files are untouched.
+     * Enable or disable writing metadata operations with ExifTool.
+     */
+    void setWriteWithExifTool(const bool on);
+
+    /**
+     * Return true if writing metadata operations with ExifTool is enabled.
+     */
+    bool writeWithExifTool() const;
+
+    /**
+     * Enable or disable writing metadata operations to RAW files.
+     * By default RAW files are untouched.
      */
     void setWriteRawFiles(const bool on);
 
     /**
-     * Return true if writing metadata operations on RAW tiff based files is enabled.
-     * It's require at least Exiv2 0.18.
+     * Return true if writing metadata operations on RAW files is enabled.
      */
     bool writeRawFiles() const;
 

@@ -39,6 +39,7 @@
 #include <QGridLayout>
 #include <QGroupBox>
 #include <QIcon>
+#include <QTimer>
 #include <QLabel>
 #include <QLineEdit>
 #include <QMessageBox>
@@ -65,6 +66,7 @@
 #include "metaenginesettings.h"
 #include "setuputils.h"
 #include "exiftoolconfpanel.h"
+#include "dexpanderbox.h"
 
 namespace Digikam
 {
@@ -100,8 +102,10 @@ public:
     QCheckBox*           savePosition;
 
     QCheckBox*           useLazySync;
+    QCheckBox*           writeWithExifToolBox;
     QCheckBox*           writeDngFilesBox;
     QCheckBox*           writeRawFilesBox;
+    QLabel*              writeWithExifToolLabel;
     QCheckBox*           writeXMPSidecarBox;
     QCheckBox*           readXMPSidecarBox;
     QCheckBox*           sidecarFileNameBox;

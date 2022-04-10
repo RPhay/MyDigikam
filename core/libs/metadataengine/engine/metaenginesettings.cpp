@@ -45,7 +45,7 @@ class Q_DECL_HIDDEN MetaEngineSettings::Private
 {
 public:
 
-    explicit Private()
+    explicit Private ()
         : mutex      (),
           configGroup(QLatin1String("Metadata Settings"))
     {

@@ -129,14 +129,18 @@ class Q_DECL_HIDDEN MetaEngine::Private
 {
 public:
 
-    explicit Private();
+    explicit Private(MetaEngine* const q);
     ~Private();
 
     void copyPrivateData(const Private* const other);
 
     bool saveToXMPSidecar(const QFileInfo& finfo)                                 const;
     bool saveToFile(const QFileInfo& finfo)                                       const;
-    bool saveOperations(const QFileInfo& finfo, Exiv2::Image::AutoPtr image)      const;
+    bool saveUsingExiv2(const QFileInfo& finfo, Exiv2::Image::AutoPtr image)      const;
+    bool saveUsingExifTool(const QFileInfo& finfo)                                const;
+
+    bool exportChanges(const QString& exvTmpFile,
+                       QStringList& removedTags)                                  const;
 
     /**
      * Wrapper method to convert a Comments content to a QString.
@@ -197,6 +201,7 @@ public:
 
 public:
 
+    bool                                                  writeWithExifTool;
     bool                                                  writeRawFiles;
     bool                                                  writeDngFiles;
     bool                                                  updateFileTimeStamp;
@@ -213,6 +218,8 @@ public:
     QString                                               filePath;
     QSize                                                 pixelSize;
     QString                                               mimeType;
+
+    MetaEngine*                                           parent;
 
     QExplicitlySharedDataPointer<MetaEngineData::Private> data;
 };

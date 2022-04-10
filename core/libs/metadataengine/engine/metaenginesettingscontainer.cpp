@@ -51,6 +51,7 @@ MetaEngineSettingsContainer::MetaEngineSettingsContainer()
       saveTags              (false),
       saveFaceTags          (false),
       savePosition          (false),
+      writeWithExifTool     (false),
       writeRawFiles         (false),
       writeDngFiles         (false),
       updateFileTimeStamp   (true),
@@ -73,31 +74,33 @@ MetaEngineSettingsContainer::~MetaEngineSettingsContainer()
 
 void MetaEngineSettingsContainer::readFromConfig(KConfigGroup& group)
 {
-    exifRotate            = group.readEntry("EXIF Rotate",                 true);
-    exifSetOrientation    = group.readEntry("EXIF Set Orientation",        true);
+    exifRotate            = group.readEntry("EXIF Rotate",                              true);
+    exifSetOrientation    = group.readEntry("EXIF Set Orientation",                     true);
 
-    saveTags              = group.readEntry("Save Tags",                   false);
-    saveTemplate          = group.readEntry("Save Template",               false);
-    saveFaceTags          = group.readEntry("Save FaceTags",               false);
-    savePosition          = group.readEntry("Save Position",               false);
+    saveTags              = group.readEntry("Save Tags",                                false);
+    saveTemplate          = group.readEntry("Save Template",                            false);
+    saveFaceTags          = group.readEntry("Save FaceTags",                            false);
+    savePosition          = group.readEntry("Save Position",                            false);
 
-    saveComments          = group.readEntry("Save EXIF Comments",          false);
-    saveDateTime          = group.readEntry("Save Date Time",              false);
-    savePickLabel         = group.readEntry("Save Pick Label",             false);
-    saveColorLabel        = group.readEntry("Save Color Label",            false);
-    saveRating            = group.readEntry("Save Rating",                 false);
+    saveComments          = group.readEntry("Save EXIF Comments",                       false);
+    saveDateTime          = group.readEntry("Save Date Time",                           false);
+    savePickLabel         = group.readEntry("Save Pick Label",                          false);
+    saveColorLabel        = group.readEntry("Save Color Label",                         false);
+    saveRating            = group.readEntry("Save Rating",                              false);
 
-    writeRawFiles         = group.readEntry("Write Metadata To RAW Files", false);
-    writeDngFiles         = group.readEntry("Write Metadata To DNG Files", false);
-    useXMPSidecar4Reading = group.readEntry("Use XMP Sidecar For Reading", false);
-    useCompatibleFileName = group.readEntry("Use Compatible File Name",    false);
+    writeWithExifTool     = group.readEntry("Write Metadata To Files With ExifTool",    false);
+    writeRawFiles         = group.readEntry("Write Metadata To RAW Files",              false);
+    writeDngFiles         = group.readEntry("Write Metadata To DNG Files",              false);
+
+    useXMPSidecar4Reading = group.readEntry("Use XMP Sidecar For Reading",              false);
+    useCompatibleFileName = group.readEntry("Use Compatible File Name",                 false);
     metadataWritingMode   = (MetaEngine::MetadataWritingMode)
-                            group.readEntry("Metadata Writing Mode",       (int)MetaEngine::WRITE_TO_FILE_ONLY);
-    updateFileTimeStamp   = group.readEntry("Update File Timestamp",       true);
-    rescanImageIfModified = group.readEntry("Rescan File If Modified",     false);
-    clearMetadataIfRescan = group.readEntry("Clear Metadata If Rescan",    false);
-    useLazySync           = group.readEntry("Use Lazy Synchronization",    false);
-    useFastScan           = group.readEntry("Use Fast Scan At Startup",    false);
+                            group.readEntry("Metadata Writing Mode",                    (int)MetaEngine::WRITE_TO_FILE_ONLY);
+    updateFileTimeStamp   = group.readEntry("Update File Timestamp",                    true);
+    rescanImageIfModified = group.readEntry("Rescan File If Modified",                  false);
+    clearMetadataIfRescan = group.readEntry("Clear Metadata If Rescan",                 false);
+    useLazySync           = group.readEntry("Use Lazy Synchronization",                 false);
+    useFastScan           = group.readEntry("Use Fast Scan At Startup",                 false);
 
     rotationBehavior      = NoRotation;
 
@@ -131,40 +134,42 @@ void MetaEngineSettingsContainer::readFromConfig(KConfigGroup& group)
 
 void MetaEngineSettingsContainer::writeToConfig(KConfigGroup& group) const
 {
-    group.writeEntry("EXIF Rotate",                 exifRotate);
-    group.writeEntry("EXIF Set Orientation",        exifSetOrientation);
+    group.writeEntry("EXIF Rotate",                             exifRotate);
+    group.writeEntry("EXIF Set Orientation",                    exifSetOrientation);
 
-    group.writeEntry("Save Tags",                   saveTags);
-    group.writeEntry("Save Template",               saveTemplate);
-    group.writeEntry("Save FaceTags",               saveFaceTags);
-    group.writeEntry("Save Position",               savePosition);
+    group.writeEntry("Save Tags",                               saveTags);
+    group.writeEntry("Save Template",                           saveTemplate);
+    group.writeEntry("Save FaceTags",                           saveFaceTags);
+    group.writeEntry("Save Position",                           savePosition);
 
-    group.writeEntry("Save EXIF Comments",          saveComments);
-    group.writeEntry("Save Date Time",              saveDateTime);
-    group.writeEntry("Save Pick Label",             savePickLabel);
-    group.writeEntry("Save Color Label",            saveColorLabel);
-    group.writeEntry("Save Rating",                 saveRating);
+    group.writeEntry("Save EXIF Comments",                      saveComments);
+    group.writeEntry("Save Date Time",                          saveDateTime);
+    group.writeEntry("Save Pick Label",                         savePickLabel);
+    group.writeEntry("Save Color Label",                        saveColorLabel);
+    group.writeEntry("Save Rating",                             saveRating);
 
-    group.writeEntry("Write Metadata To RAW Files", writeRawFiles);
-    group.writeEntry("Write Metadata To DNG Files", writeDngFiles);
-    group.writeEntry("Use XMP Sidecar For Reading", useXMPSidecar4Reading);
-    group.writeEntry("Use Compatible File Name",    useCompatibleFileName);
-    group.writeEntry("Metadata Writing Mode",       (int)metadataWritingMode);
-    group.writeEntry("Update File Timestamp",       updateFileTimeStamp);
-    group.writeEntry("Rescan File If Modified",     rescanImageIfModified);
-    group.writeEntry("Clear Metadata If Rescan",    clearMetadataIfRescan);
+    group.writeEntry("Write Metadata To Files With ExifTool",   writeWithExifTool);
+    group.writeEntry("Write Metadata To RAW Files",             writeRawFiles);
+    group.writeEntry("Write Metadata To DNG Files",             writeDngFiles);
 
-    group.writeEntry("Rotate By Internal Flag",     bool(rotationBehavior & RotateByInternalFlag));
-    group.writeEntry("Rotate By Metadata Flag",     bool(rotationBehavior & RotateByMetadataFlag));
-    group.writeEntry("Rotate Contents Lossless",    bool(rotationBehavior & RotateByLosslessRotation));
-    group.writeEntry("Rotate Contents Lossy",       bool(rotationBehavior & RotateByLossyRotation));
-    group.writeEntry("Album Date Source",           (int)albumDateFrom);
-    group.writeEntry("Use Lazy Synchronization",    useLazySync);
-    group.writeEntry("Use Fast Scan At Startup",    useFastScan);
+    group.writeEntry("Use XMP Sidecar For Reading",             useXMPSidecar4Reading);
+    group.writeEntry("Use Compatible File Name",                useCompatibleFileName);
+    group.writeEntry("Metadata Writing Mode",                   (int)metadataWritingMode);
+    group.writeEntry("Update File Timestamp",                   updateFileTimeStamp);
+    group.writeEntry("Rescan File If Modified",                 rescanImageIfModified);
+    group.writeEntry("Clear Metadata If Rescan",                clearMetadataIfRescan);
 
-    group.writeEntry("Custom Sidecar Extensions",   sidecarExtensions);
+    group.writeEntry("Rotate By Internal Flag",                 bool(rotationBehavior & RotateByInternalFlag));
+    group.writeEntry("Rotate By Metadata Flag",                 bool(rotationBehavior & RotateByMetadataFlag));
+    group.writeEntry("Rotate Contents Lossless",                bool(rotationBehavior & RotateByLosslessRotation));
+    group.writeEntry("Rotate Contents Lossy",                   bool(rotationBehavior & RotateByLossyRotation));
+    group.writeEntry("Album Date Source",                       (int)albumDateFrom);
+    group.writeEntry("Use Lazy Synchronization",                useLazySync);
+    group.writeEntry("Use Fast Scan At Startup",                useFastScan);
 
-    group.writeEntry("ExifTool Path",               exifToolPath);
+    group.writeEntry("Custom Sidecar Extensions",               sidecarExtensions);
+
+    group.writeEntry("ExifTool Path",                           exifToolPath);
 }
 
 QStringList MetaEngineSettingsContainer::defaultExifToolSearchPaths() const
@@ -225,6 +230,8 @@ QDebug operator<<(QDebug dbg, const MetaEngineSettingsContainer& inf)
                   << inf.saveFaceTags << "), ";
     dbg.nospace() << "savePosition("
                   << inf.savePosition << "), ";
+    dbg.nospace() << "writeWithExifTool("
+                  << inf.writeWithExifTool << "), ";
     dbg.nospace() << "writeRawFiles("
                   << inf.writeRawFiles << "), ";
     dbg.nospace() << "writeDngFiles("
@@ -250,6 +257,5 @@ QDebug operator<<(QDebug dbg, const MetaEngineSettingsContainer& inf)
 
     return dbg.space();
 }
-
 
 } // namespace Digikam

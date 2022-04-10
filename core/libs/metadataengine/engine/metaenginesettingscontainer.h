@@ -108,6 +108,7 @@ public:
     bool                            saveFaceTags;
     bool                            savePosition;
 
+    bool                            writeWithExifTool;
     bool                            writeRawFiles;
     bool                            writeDngFiles;
     bool                            updateFileTimeStamp;

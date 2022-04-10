@@ -69,8 +69,6 @@ SetupMetadata::SetupMetadata(QWidget* const parent)
 
     // --------------------------------------------------------
 
-    d->readSettings();
-
     connect(d->sidecarFileNameBox, SIGNAL(toggled(bool)),
             this, SLOT(slotSidecarFileNameToggled(bool)));
 
@@ -80,8 +78,18 @@ SetupMetadata::SetupMetadata(QWidget* const parent)
     connect(d->clearMetadataIfRescanBox, SIGNAL(toggled(bool)),
             this, SLOT(slotClearMetadataToggled(bool)));
 
-    connect(d->writeRawFilesBox, SIGNAL(toggled(bool)),
-            this, SLOT(slotWriteRawFilesToggled(bool)));
+    connect(d->writeWithExifToolBox, SIGNAL(toggled(bool)),
+            this, SLOT(slotWriteWithExifToolToggled(bool)));
+
+    connect(d->exifToolView, SIGNAL(signalExifToolSettingsChanged(bool)),
+            this, SLOT(slotExifToolSettingsChanged(bool)));
+
+    // --------------------------------------------------------
+
+    d->readSettings();
+    slotWriteWithExifToolToggled(d->writeWithExifToolBox->isChecked());
+
+    QTimer::singleShot(0, d->exifToolView, SLOT(slotStartFoundExifTool()));
 }
 
 SetupMetadata::~SetupMetadata()
@@ -141,6 +149,7 @@ void SetupMetadata::applySettings()
     set.savePosition          = d->savePosition->isChecked();
 
     set.useLazySync           = d->useLazySync->isChecked();
+    set.writeWithExifTool     = d->writeWithExifToolBox->isChecked();
     set.writeDngFiles         = d->writeDngFilesBox->isChecked();
     set.writeRawFiles         = d->writeRawFilesBox->isChecked();
     set.useXMPSidecar4Reading = d->readXMPSidecarBox->isChecked();
@@ -243,33 +252,10 @@ void SetupMetadata::slotClearMetadataToggled(bool b)
     }
 }
 
-void SetupMetadata::slotWriteRawFilesToggled(bool b)
+void SetupMetadata::slotWriteWithExifToolToggled(bool b)
 {
-    // Show info if write metadata to raw files was switched on
-
-    if (b)
-    {
-        QApplication::beep();
-
-        QPointer<QMessageBox> msgBox1 = new QMessageBox(QMessageBox::Warning,
-                 qApp->applicationName(),
-                 i18nc("@info",
-                       "Do you really want to enable metadata writing to RAW files?\n"
-                       "Note: digiKam delegates this task to the ExifTool backend."),
-                 QMessageBox::Yes | QMessageBox::No, this);
-
-        msgBox1->setDefaultButton(QMessageBox::No);
-
-        int result1 = msgBox1->exec();
-        delete msgBox1;
-
-        if (result1 == QMessageBox::No)
-        {
-            return;
-        }
-
-        d->writeRawFilesBox->setChecked(false);
-    }
+    d->writeDngFilesBox->setEnabled(b);
+    d->writeRawFilesBox->setEnabled(b);
 }
 
 } // namespace Digikam

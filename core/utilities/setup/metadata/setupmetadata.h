@@ -74,7 +74,8 @@ private Q_SLOTS:
     void slotSidecarFileNameToggled(bool);
     void slotExifAutoRotateToggled(bool);
     void slotClearMetadataToggled(bool);
-    void slotWriteRawFilesToggled(bool);
+    void slotWriteWithExifToolToggled(bool);
+    void slotExifToolSettingsChanged(bool available);
 
 private:
 

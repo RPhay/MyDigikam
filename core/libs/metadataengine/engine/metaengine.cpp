@@ -45,24 +45,24 @@ namespace Digikam
 {
 
 MetaEngine::MetaEngine()
-    : d(new Private)
+    : d(new Private(this))
 {
 }
 
 MetaEngine::MetaEngine(const MetaEngine& metadata)
-    : d(new Private)
+    : d(new Private(this))
 {
     d->copyPrivateData(metadata.d);
 }
 
 MetaEngine::MetaEngine(const MetaEngineData& data)
-    : d(new Private)
+    : d(new Private(this))
 {
     setData(data);
 }
 
 MetaEngine::MetaEngine(const QString& filePath)
-    : d(new Private)
+    : d(new Private(this))
 {
     // NOTE: use dynamic binding as this virtual method can be re-implemented in derived classes.
 
@@ -274,6 +274,16 @@ QSize MetaEngine::getPixelSize() const
 QString MetaEngine::getMimeType() const
 {
     return d->mimeType;
+}
+
+void MetaEngine::setWriteWithExifTool(const bool on)
+{
+    d->writeWithExifTool = on;
+}
+
+bool MetaEngine::writeWithExifTool() const
+{
+    return d->writeWithExifTool;
 }
 
 void MetaEngine::setWriteRawFiles(const bool on)

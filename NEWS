@@ -3,12 +3,14 @@ digiKam 8.0.0 - Release date: 2022-xx-xx
 *****************************************************************************************************
 NEW FEATURES:
 
-General  : Port code to Qt6 and KF6 framework.
-General  : Add JPEG-XL, WEBP, and AVIF export settings everywhere.
-           Add convert to lossless JPEG-XL, WEBP, and AVIF while importing from camera.
-           Add JPEG-XL; WEBP, and AVIF converters in Batch Queue Manager.
-Usability: Add hamburger menu to tool-bar if main menu is hidden.
-Metadata:  Write to RAW and Video files is now delegate to ExifTool Backend.
+General   : Port code to Qt6 and KF6 framework.
+General   : Add JPEG-XL, WEBP, and AVIF export settings everywhere.
+            Add convert to lossless JPEG-XL, WEBP, and AVIF while importing from camera.
+            Add JPEG-XL; WEBP, and AVIF converters in Batch Queue Manager.
+Versioning: Support JPEG-XL, HEIF, WEBP, and AVIF as lossless image format to store versionned images in editor.
+Usability : Add hamburger menu to tool-bar if main menu is hidden.
+Metadata  : Add new option to write metadata to files with ExifTool backend.
+Metadata  : Optional write metadata operations to DNG and RAW files are now always delegated to ExifTool Backend.
 
 *****************************************************************************************************
 BUGFIXES:
@@ -50,7 +52,7 @@ BUGFIXES:
 035 ==> 366406 - Does not write metadata to ORF with Exiv2 - Use ExifTool instead.
 036 ==> 168064 - Save tag on raw files with ExifTool.
 037 ==> 134487 - Keywords are not written to raw files with Exiv2 even though they do embed iptc/exif - Use ExifTool instead.
-038 ==> 
-039 ==> 
+038 ==> 325458 - Editing Exif information corrupts MPO 3D image with Exiv2 - Use ExifTool instead.
+039 ==> 448729 - Metadata is not written back to file when size of XMP JPEG segment is larger than 65535 bytes - Use ExifTool instead Exiv2.
 040 ==> 
 041 ==> 

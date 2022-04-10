@@ -45,6 +45,8 @@ extern "C"
 #endif
 
 #include <qplatformdefs.h>
+#include <QUuid>
+#include <QFile>
 
 // Local includes
 
@@ -52,6 +54,8 @@ extern "C"
 #include "digikam_config.h"
 #include "metaengine_data_p.h"
 #include "drawfiles.h"
+#include "exiftoolparser.h"
+#include "filereadwritelock.h"
 
 // Pragma directives to reduce warnings from Exiv2.
 
@@ -79,14 +83,16 @@ QRecursiveMutex s_metaEngineMutex;
  */
 bool s_metaEngineSupportBmff = false;
 
-MetaEngine::Private::Private()
-    : writeRawFiles         (false),
+MetaEngine::Private::Private(MetaEngine* const q)
+    : writeWithExifTool     (false),
+      writeRawFiles         (false),
       writeDngFiles         (false),
       updateFileTimeStamp   (false),
       useXMPSidecar4Reading (false),
       useCompatibleFileName (false),
       metadataWritingMode   (WRITE_TO_FILE_ONLY),
       loadedFromSidecar     (false),
+      parent                (q),
       data                  (new MetaEngineData::Private)
 {
     QMutexLocker lock(&s_metaEngineMutex);
@@ -190,11 +196,11 @@ bool MetaEngine::Private::saveToXMPSidecar(const QFileInfo& finfo) const
 
 #if EXIV2_TEST_VERSION(0,27,99)
 
-        return saveOperations(finfo, std::move(image));
+        return saveUsingExiv2(finfo, std::move(image));
 
 #else
 
-        return saveOperations(finfo, image);
+        return saveUsingExiv2(finfo, image);
 
 #endif
 
@@ -222,63 +228,70 @@ bool MetaEngine::Private::saveToFile(const QFileInfo& finfo) const
         return false;
     }
 
-    QString ext = finfo.suffix().toLower();
-
-    if (s_rawFileExtensions().contains(ext))
-    {
-        // NOTE: never touch RAW files with Exiv2 as it's not safe. Delegate to ExifTool backens.
-
-        return false;
-    }
-
     QMutexLocker lock(&s_metaEngineMutex);
 
-    try
+    if (writeWithExifTool)
     {
-        Exiv2::Image::AutoPtr image;
+        return saveUsingExifTool(finfo);
+    }
+    else
+    {
+        try
+        {
+            Exiv2::Image::AutoPtr image;
 
 #if defined Q_OS_WIN && defined EXV_UNICODE_PATH
 
-        image = Exiv2::ImageFactory::open((const wchar_t*)finfo.filePath().utf16());
+            image = Exiv2::ImageFactory::open((const wchar_t*)finfo.filePath().utf16());
 
 #elif defined Q_OS_WIN
 
-        image = Exiv2::ImageFactory::open(QFile::encodeName(finfo.filePath()).constData());
+            image = Exiv2::ImageFactory::open(QFile::encodeName(finfo.filePath()).constData());
 
 #else
 
-        image = Exiv2::ImageFactory::open(finfo.filePath().toUtf8().constData());
+            image = Exiv2::ImageFactory::open(finfo.filePath().toUtf8().constData());
 
 #endif
 
 #if EXIV2_TEST_VERSION(0,27,99)
 
-        return saveOperations(finfo, std::move(image));
+            return saveUsingExiv2(finfo, std::move(image));
 
 #else
 
-        return saveOperations(finfo, image);
+            return saveUsingExiv2(finfo, image);
 
 #endif
 
-    }
-    catch (Exiv2::AnyError& e)
-    {
-        printExiv2ExceptionError(QLatin1String("Cannot save metadata to image with Exiv2 backend:"), e);
+        }
+        catch (Exiv2::AnyError& e)
+        {
+            printExiv2ExceptionError(QLatin1String("Cannot save metadata to image with Exiv2 backend:"), e);
 
-        return false;
-    }
-    catch (...)
-    {
-        qCCritical(DIGIKAM_METAENGINE_LOG) << "Default exception from Exiv2";
+            return false;
+        }
+        catch (...)
+        {
+            qCCritical(DIGIKAM_METAENGINE_LOG) << "Default exception from Exiv2";
 
-        return false;
+            return false;
+        }
     }
 }
 
-bool MetaEngine::Private::saveOperations(const QFileInfo& finfo, Exiv2::Image::AutoPtr image) const
+bool MetaEngine::Private::saveUsingExiv2(const QFileInfo& finfo, Exiv2::Image::AutoPtr image) const
 {
     QMutexLocker lock(&s_metaEngineMutex);
+
+    QString ext = finfo.suffix().toLower();
+
+    if (s_rawFileExtensions().contains(ext))
+    {
+        // NOTE: never touch RAW files with Exiv2 as it's not safe. Use ExifTool backend instead.
+
+        return false;
+    }
 
     try
     {
@@ -486,6 +499,134 @@ bool MetaEngine::Private::saveOperations(const QFileInfo& finfo, Exiv2::Image::A
     }
 
     return false;
+}
+
+bool MetaEngine::Private::saveUsingExifTool(const QFileInfo& finfo) const
+{
+    QString dir = finfo.path();
+    QString ext = finfo.suffix().toLower();
+
+    if (!writeDngFiles && (ext == QLatin1String("dng")))
+    {
+        qCDebug(DIGIKAM_METAENGINE_LOG) << finfo.fileName()
+                                        << "is a DNG file, "
+                                        << "writing to such a file is disabled by current settings.";
+        return false;
+    }
+
+    if (!writeRawFiles && s_rawFileExtensions().remove(QLatin1String("dng")).contains(ext))
+    {
+        qCDebug(DIGIKAM_METAENGINE_LOG) << finfo.fileName()
+                                        << "is a RAW file, "
+                                        << "writing to such a file is disabled by current settings.";
+        return false;
+    }
+
+    ExifToolParser* const parser = new ExifToolParser(nullptr);
+
+    if (parser->exifToolAvailable())
+    {
+        QString random                = QUuid::createUuid().toString().mid(1, 8);
+        SafeTemporaryFile* const temp = new SafeTemporaryFile(dir + QLatin1String("/metaengine-XXXXXX-") +
+                                                              random + QLatin1String(".digikamtempfile.exv"));
+        temp->setAutoRemove(false);
+        temp->open();
+        QString exvPath = temp->safeFilePath();
+
+        // Crash fix: a QTemporaryFile is not properly closed until its destructor is called.
+
+        delete temp;
+
+        // ---
+
+        QStringList removedTags;
+        parent->exportChanges(exvPath, removedTags);
+
+        if (!updateFileTimeStamp)
+        {
+            // Don't touch access and modification timestamp of file.
+
+#ifdef Q_OS_WIN64
+
+            struct __utimbuf64 ut;
+            struct __stat64    st;
+            int ret = _wstat64((const wchar_t*)finfo.filePath().utf16(), &st);
+
+#elif defined Q_OS_WIN
+
+            struct _utimbuf    ut;
+            struct _stat       st;
+            int ret = _wstat((const wchar_t*)finfo.filePath().utf16(), &st);
+
+#else
+
+            struct utimbuf     ut;
+            QT_STATBUF         st;
+            int ret = QT_STAT(finfo.filePath().toUtf8().constData(), &st);
+
+#endif
+
+            if (ret == 0)
+            {
+                ut.modtime = st.st_mtime;
+                ut.actime  = st.st_atime;
+            }
+
+            if (!parser->applyChanges(finfo.filePath(), exvPath))
+            {
+                qCWarning(DIGIKAM_METAENGINE_LOG) << "Cannot apply changes with ExifTool on" << finfo.filePath();
+                delete parser;
+                QFile::remove(exvPath);
+
+                return false;
+            }
+
+            if (ret == 0)
+            {
+
+#ifdef Q_OS_WIN64
+
+                _wutime64((const wchar_t*)finfo.filePath().utf16(), &ut);
+
+#elif defined Q_OS_WIN
+
+                _wutime((const wchar_t*)finfo.filePath().utf16(), &ut);
+
+#else
+
+                ::utime(finfo.filePath().toUtf8().constData(), &ut);
+
+#endif
+
+            }
+
+            qCDebug(DIGIKAM_METAENGINE_LOG) << "File time stamp restored";
+        }
+        else
+        {
+            if (!parser->applyChanges(finfo.filePath(), exvPath))
+            {
+                qCWarning(DIGIKAM_METAENGINE_LOG) << "Cannot apply changes with ExifTool on" << finfo.filePath();
+                delete parser;
+                QFile::remove(exvPath);
+
+                return false;
+            }
+        }
+
+        QFile::remove(exvPath);
+    }
+    else
+    {
+        qCWarning(DIGIKAM_METAENGINE_LOG) << "ExifTool is not available to save metadata...";
+        delete parser;
+
+        return false;
+    }
+
+    delete parser;
+
+    return true;
 }
 
 void MetaEngine::Private::printExiv2ExceptionError(const QString& msg, Exiv2::AnyError& e)

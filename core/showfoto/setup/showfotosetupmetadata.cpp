@@ -37,6 +37,7 @@
 #include <QStyle>
 #include <QStandardPaths>
 #include <QFontDatabase>
+#include <QTimer>
 
 // KDE includes
 
@@ -175,6 +176,8 @@ ShowfotoSetupMetadata::ShowfotoSetupMetadata(QWidget* const parent)
     // --------------------------------------------------------
 
     readSettings();
+    
+    QTimer::singleShot(0, d->exifToolView, SLOT(slotStartFoundExifTool()));
 }
 
 ShowfotoSetupMetadata::~ShowfotoSetupMetadata()

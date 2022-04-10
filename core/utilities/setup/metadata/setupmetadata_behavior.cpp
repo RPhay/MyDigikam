@@ -120,24 +120,33 @@ void SetupMetadata::appendBehaviorTab()
 
     QLabel* const readWriteLabel       = new QLabel(i18nc("@label", "Reading and Writing Metadata"));
 
-    d->writeDngFilesBox   = new QCheckBox;
+    d->writeWithExifToolBox            = new QCheckBox;
+    d->writeWithExifToolBox->setText(i18nc("@option:check", "Delegate to ExifTool backend all operations to write metadata to files"));
+    d->writeWithExifToolBox->setWhatsThis(i18nc("@info:whatsthis", "Turn on this option to write metadata to files "
+                                                "with ExifTool backend instead Exiv2. This will slowdown a little bit the "
+                                                "synchronization of files metadata with database."));
+
+    d->writeDngFilesBox                = new QCheckBox;
     d->writeDngFilesBox->setText(i18nc("@option:check", "Write metadata to DNG files"));
     d->writeDngFilesBox->setWhatsThis(i18nc("@info:whatsthis", "Turn on this option to write metadata into DNG files."));
-    d->writeDngFilesBox->setEnabled(MetaEngine::supportMetadataWriting(QLatin1String("image/x-raw")));
 
-    d->writeRawFilesBox   = new QCheckBox;
+    d->writeRawFilesBox                = new QCheckBox;
     d->writeRawFilesBox->setText(i18nc("@option:check", "If possible write metadata to RAW files"));
     d->writeRawFilesBox->setWhatsThis(i18nc("@info:whatsthis", "Turn on this option to write metadata into RAW files. "
                                             "This feature is delegate to ExifTool backend and is disabled by default."));
-    d->writeRawFilesBox->setEnabled(MetaEngine::supportMetadataWriting(QLatin1String("image/x-raw")));
 
-    d->useLazySync        = new QCheckBox;
+    d->writeWithExifToolLabel          = new QLabel;
+    d->writeWithExifToolLabel->setText(i18nc("@label", "Note: these options depends of ExifTool availability. "
+                                             "Check in the ExifTool tab for details."));
+    // ---
+
+    d->useLazySync                     = new QCheckBox;
     d->useLazySync->setText(i18nc("@option:check", "Use lazy synchronization"));
     d->useLazySync->setWhatsThis(i18nc("@info:whatsthis",
                                        "Instead of synchronizing metadata, just schedule it for synchronization."
                                        "Synchronization can be done later by triggering the apply pending, or at digikam exit"));
 
-    d->updateFileTimeStampBox = new QCheckBox;
+    d->updateFileTimeStampBox          = new QCheckBox;
     d->updateFileTimeStampBox->setText(i18nc("@option:check", "&Update file modification timestamp when files are modified"));
     d->updateFileTimeStampBox->setWhatsThis(i18nc("@info:whatsthis",
                                                   "Turn off this option to not update file timestamps when files are changed as "
@@ -145,7 +154,7 @@ void SetupMetadata::appendBehaviorTab()
                                                   "introduce some dysfunctions with applications which use file timestamps "
                                                   "properties to detect file modifications automatically."));
 
-    d->rescanImageIfModifiedBox = new QCheckBox;
+    d->rescanImageIfModifiedBox        = new QCheckBox;
     d->rescanImageIfModifiedBox->setText(i18nc("@option:check", "&Rescan file when files are modified"));
     d->rescanImageIfModifiedBox->setWhatsThis(i18nc("@info:whatsthis",
                                                     "Turning this option on, will force digiKam to rescan files that has been "
@@ -153,7 +162,7 @@ void SetupMetadata::appendBehaviorTab()
                                                     "the last modified timestamp has changed, a rescan of that "
                                                     "file will be performed when digiKam starts."));
 
-    d->clearMetadataIfRescanBox    = new QCheckBox;
+    d->clearMetadataIfRescanBox        = new QCheckBox;
     d->clearMetadataIfRescanBox->setText(i18nc("@option:check", "&Clean up the metadata from the database when rescan files"));
     d->clearMetadataIfRescanBox->setWhatsThis(i18nc("@info:whatsthis",
                                                     "Turning this option on, will force digiKam to delete the file metadata "
@@ -162,15 +171,19 @@ void SetupMetadata::appendBehaviorTab()
                                                     "to the file or sidecar, you will be able to lose inserted "
                                                     "metadata such as tags, keywords, or geographic coordinates."));
 
-    readWriteLayout->addWidget(readWriteIconLabel,          0, 0, 2, 3);
-    readWriteLayout->addWidget(readWriteLabel,              0, 1, 2, 3);
-    readWriteLayout->addWidget(d->writeDngFilesBox,         2, 0, 1, 3);
-    readWriteLayout->addWidget(d->writeRawFilesBox,         3, 0, 1, 3);
-    readWriteLayout->addWidget(d->useLazySync,              4, 0, 1, 3);
-    readWriteLayout->addWidget(d->updateFileTimeStampBox,   5, 0, 1, 3);
-    readWriteLayout->addWidget(d->rescanImageIfModifiedBox, 6, 0, 1, 3);
-    readWriteLayout->addWidget(d->clearMetadataIfRescanBox, 7, 0, 1, 3);
-    readWriteLayout->setColumnStretch(3, 10);
+    readWriteLayout->addWidget(readWriteIconLabel,                    0,  0, 2, 3);
+    readWriteLayout->addWidget(readWriteLabel,                        0,  1, 2, 3);
+    readWriteLayout->addWidget(d->writeWithExifToolBox,               2,  0, 1, 3);
+    readWriteLayout->addWidget(d->writeDngFilesBox,                   3,  1, 1, 3);
+    readWriteLayout->addWidget(d->writeRawFilesBox,                   4,  1, 1, 3);
+    readWriteLayout->addWidget(d->writeWithExifToolLabel,             5,  0, 1, 4);
+    readWriteLayout->addWidget(new DLineWidget(Qt::Horizontal, this), 6,  0, 1, 4);
+    readWriteLayout->addWidget(d->useLazySync,                        7,  0, 1, 3);
+    readWriteLayout->addWidget(d->updateFileTimeStampBox,             8,  0, 1, 3);
+    readWriteLayout->addWidget(d->rescanImageIfModifiedBox,           9,  0, 1, 3);
+    readWriteLayout->addWidget(d->clearMetadataIfRescanBox,           10, 0, 1, 3);
+    readWriteLayout->setColumnStretch(0, 5);
+    readWriteLayout->setColumnStretch(1, 100);
     d->readWriteGroup->setLayout(readWriteLayout);
 
     // --------------------------------------------------------
@@ -220,6 +233,24 @@ void SetupMetadata::appendBehaviorTab()
     panel->setLayout(mainLayout);
 
     d->tab->insertTab(Behavior, panel, i18nc("@title:tab", "Behavior"));
+}
+
+void SetupMetadata::slotExifToolSettingsChanged(bool available)
+{
+    if (available)
+    {
+        d->writeWithExifToolBox->setEnabled(true);
+        d->writeDngFilesBox->setEnabled(true);
+        d->writeRawFilesBox->setEnabled(true);
+        d->writeWithExifToolLabel->setVisible(false);
+    }
+    else
+    {
+        d->writeWithExifToolBox->setEnabled(false);
+        d->writeDngFilesBox->setEnabled(false);
+        d->writeRawFilesBox->setEnabled(false);
+        d->writeWithExifToolLabel->setVisible(true);
+    }
 }
 
 } // namespace Digikam

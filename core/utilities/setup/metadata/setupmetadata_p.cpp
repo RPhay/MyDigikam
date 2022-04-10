@@ -48,8 +48,10 @@ SetupMetadata::Private::Private()
     saveFaceTags             (nullptr),
     savePosition             (nullptr),
     useLazySync              (nullptr),
+    writeWithExifToolBox     (nullptr),
     writeDngFilesBox         (nullptr),
     writeRawFilesBox         (nullptr),
+    writeWithExifToolLabel   (nullptr),
     writeXMPSidecarBox       (nullptr),
     readXMPSidecarBox        (nullptr),
     sidecarFileNameBox       (nullptr),
@@ -111,9 +113,11 @@ void SetupMetadata::Private::readSettings()
     saveFaceTags->setChecked(set.saveFaceTags);
     savePosition->setChecked(set.savePosition);
 
-    useLazySync->setChecked(set.useLazySync);
+    writeWithExifToolBox->setChecked(set.writeWithExifTool);
     writeDngFilesBox->setChecked(set.writeDngFiles);
     writeRawFilesBox->setChecked(set.writeRawFiles);
+
+    useLazySync->setChecked(set.useLazySync);
     readXMPSidecarBox->setChecked(set.useXMPSidecar4Reading);
     sidecarFileNameBox->setChecked(set.useCompatibleFileName);
     updateFileTimeStampBox->setChecked(set.updateFileTimeStamp);
