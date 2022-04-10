@@ -59,4 +59,6 @@ BUGFIXES:
 042 ==> 441758 - Editing metadata on HEIC image and HEVC video files doesn't work (greyed out).
 043 ==> 440547 - The writing of metadata in HEIC files is not possible - Use ExifTool instead.
 044 ==> 434246 - XMP metadata fails to write to file with Exiv2 - Use ExifTool instead.
-045 ==> 
+045 ==> 174108 - digiKam and exiv2 crash with AVI file - Use ExifTool instead.
+046 ==> 342030 - digiKam crashes when checking an AVI video file using exiv2 - Use ExifTool instead.
+047 ==> 
