@@ -27,9 +27,20 @@ if(GITEXEC)
 
     endif()
 
+    execute_process(COMMAND ${GITEXEC} "--git-dir=@CMAKE_CURRENT_SOURCE_DIR@/../.git" rev-parse --abbrev-ref HEAD OUTPUT_VARIABLE MYGITBRANCH)
+
+    if(MYGITBRANCH)
+
+        # Remove the newline that git returns
+
+        string(STRIP ${MYGITBRANCH} MYGITBRANCH)
+
+    endif()
+
 else()
 
     set(MYGITVERSION unknown)
+    set(MYGITBRANCH  unknown)
 
 endif()
 
