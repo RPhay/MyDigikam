@@ -80,17 +80,19 @@ const QString additionalInformation()
         !gitBra.startsWith(QLatin1String("unknow"))
        )
     {
-        ret = i18n("IRC: %1 - #digikam\n"
+        ret = i18n(
+                   "IRC: %1 - #digikam\n"
                    "Feedback: %2\n\n"
                    "Build date: %3 (target: %4)\n"
-                   "Revision: %5",
+                   "Revision: %5\n"
                    "Branch: %6",
                    QString::fromLatin1("<a href='https://libera.chat/'>irc.libera.chat</a>"),
                    QString::fromLatin1("<a href='https://mail.kde.org/mailman/listinfo/digikam-users'>digikam-user@kde.org</a>"),
                    QLocale().toString(digiKamBuildDate(), QLocale::ShortFormat),
                    QLatin1String(digikam_build_type),
                    QString::fromLatin1("<a href='https://invent.kde.org/graphics/digikam/commit/%1'>%2</a>").arg(gitVer).arg(gitVer),
-                   gitBra);
+                   gitBra
+                  );
     }
 
     return ret;
