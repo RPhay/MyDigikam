@@ -8,6 +8,10 @@ APPLY_COMMON_POLICIES()
 
 if(ENABLE_MEDIAPLAYER)
 
+    set(CMAKE_MODULE_PATH ${CMAKE_MODULE_PATH}
+                          ${CMAKE_SOURCE_DIR}/cmake/modules
+    )
+
     # The QtAV library does not adhere to the flags we use
     remove_definitions(
         -DQT_NO_CAST_FROM_ASCII
@@ -114,8 +118,6 @@ if(ENABLE_MEDIAPLAYER)
 
     endif()
 
-    # Used by digikamcore
-    add_library(core_qtav_obj OBJECT ${libqtav_SRCS})
 
     target_compile_definitions(core_qtav_obj
                                PRIVATE
@@ -143,6 +145,36 @@ if(ENABLE_MEDIAPLAYER)
 
     endif()
 
+    # ---
+
+    find_package(Portaudio)
+
+    if(PORTAUDIO_FOUND)
+
+        set(libqtav_SRCS ${libqtav_SRCS}
+            ${CMAKE_CURRENT_SOURCE_DIR}/src/output/audio/AudioOutputPortAudio.cpp
+        )
+
+        target_compile_definitions(core_qtav_obj PRIVATE -DQTAV_HAVE_PORTAUDIO=1)
+
+    endif()
+
+    # ---
+
+    find_package(Pulseaudio)
+
+    if(PULSEAUDIO_FOUND)
+
+        set(libqtav_SRCS ${libqtav_SRCS}
+            ${CMAKE_CURRENT_SOURCE_DIR}/src/output/audio/AudioOutputPulse.cpp
+        )
+
+        target_compile_definitions(core_qtav_obj PRIVATE -DQTAV_HAVE_PULSEAUDIO=1)
+
+    endif()
+
+    # ---
+
     if(APPLE)
 
         target_compile_definitions(core_qtav_obj PRIVATE -DQTAV_HAVE_VIDEOTOOLBOX=1)
@@ -154,6 +186,8 @@ if(ENABLE_MEDIAPLAYER)
         )
 
     endif()
+
+    # ---
 
     if(${AVCODEC_FOUND})
         target_compile_definitions(core_qtav_obj PRIVATE -DQTAV_HAVE_AVCODEC)
@@ -199,10 +233,43 @@ if(ENABLE_MEDIAPLAYER)
 
     endif()
 
+    # ---
+
+    if(HAVE_OPENGL)
+
+        set(libqtav_SRCS ${libqtav_SRCS}
+            ${CMAKE_CURRENT_SOURCE_DIR}/src/opengl/ConvolutionShader.cpp
+            ${CMAKE_CURRENT_SOURCE_DIR}/src/opengl/gl_api.cpp
+            ${CMAKE_CURRENT_SOURCE_DIR}/src/opengl/OpenGLVideo.cpp
+            ${CMAKE_CURRENT_SOURCE_DIR}/src/opengl/SubImagesRenderer.cpp
+            ${CMAKE_CURRENT_SOURCE_DIR}/src/opengl/Geometry.cpp
+            ${CMAKE_CURRENT_SOURCE_DIR}/src/opengl/OpenGLHelper.cpp
+            ${CMAKE_CURRENT_SOURCE_DIR}/src/opengl/ShaderManager.cpp
+            ${CMAKE_CURRENT_SOURCE_DIR}/src/opengl/VideoShader.cpp
+            ${CMAKE_CURRENT_SOURCE_DIR}/src/opengl/GeometryRenderer.cpp
+            ${CMAKE_CURRENT_SOURCE_DIR}/src/opengl/OpenGLTypes.cpp
+            ${CMAKE_CURRENT_SOURCE_DIR}/src/opengl/SubImagesGeometry.cpp
+            ${CMAKE_CURRENT_SOURCE_DIR}/src/opengl/VideoShaderObject.cpp
+            ${CMAKE_CURRENT_SOURCE_DIR}/src/filter/GLSLFilter.cpp
+            ${CMAKE_CURRENT_SOURCE_DIR}/src/output/video/OpenGLRendererBase.cpp
+            ${CMAKE_CURRENT_SOURCE_DIR}/src/capi/egl_api.cpp
+        )
+
+        target_compile_definitions(core_qtav_obj PRIVATE -DQTAV_HAVE_EGL_CAPI=1)
+
+    endif()
+
+    # ---
+
     target_compile_definitions(core_qtav_obj
                                PRIVATE
                                digikamcore_EXPORTS
     )
+
+    # Used by digikamcore
+    add_library(core_qtav_obj OBJECT ${libqtav_SRCS})
+
+    # ---
 
     if(HAVE_OPENGL)
 
