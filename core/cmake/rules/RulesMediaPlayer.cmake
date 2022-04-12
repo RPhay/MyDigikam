@@ -10,11 +10,21 @@ find_package(FFmpeg COMPONENTS AVCODEC
                                AVFORMAT
                                AVUTIL
                                SWSCALE
+                               AVRESAMPLE
+                               SWRESAMPLE
 )
 
 if(ENABLE_MEDIAPLAYER)
 
-    if(${AVCODEC_FOUND} AND ${AVDEVICE_FOUND} AND ${AVFILTER_FOUND} AND ${AVFORMAT_FOUND} AND ${AVUTIL_FOUND} AND ${SWSCALE_FOUND})
+    if(${AVCODEC_FOUND}    AND
+       ${AVDEVICE_FOUND}   AND
+       ${AVFILTER_FOUND}   AND
+       ${AVFORMAT_FOUND}   AND
+       ${AVUTIL_FOUND}     AND
+       ${SWSCALE_FOUND}    AND
+       ${AVRESAMPLE_FOUND} AND
+       ${SWRESAMPLE_FOUND}
+      )
 
         include_directories(${FFMPEG_INCLUDE_DIRS})
 

@@ -123,6 +123,38 @@ if(ENABLE_MEDIAPLAYER)
                                -DQTAV_HAVE_GL=1
     )
 
+    if(${AVCODEC_FOUND})
+        target_compile_definitions(core_qtav_obj PRIVATE -DQTAV_HAVE_AVCODEC)
+    endif()
+
+    if(${AVDEVICE_FOUND})
+        target_compile_definitions(core_qtav_obj PRIVATE -DQTAV_HAVE_AVDEVICE)
+    endif()
+
+    if(${AVFILTER_FOUND})
+        target_compile_definitions(core_qtav_obj PRIVATE -DQTAV_HAVE_AVFILTER)
+    endif()
+
+    if(${AVFORMAT_FOUND})
+        target_compile_definitions(core_qtav_obj PRIVATE -DQTAV_HAVE_AVFORMAT)
+    endif()
+
+    if(${AVUTIL_FOUND})
+        target_compile_definitions(core_qtav_obj PRIVATE -DQTAV_HAVE_AVUTIL)
+    endif()
+
+    if(${SWSCALE_FOUND})
+        target_compile_definitions(core_qtav_obj PRIVATE -DQTAV_HAVE_SWSCALE)
+    endif()
+
+    if(${AVRESAMPLE_FOUND})
+        target_compile_definitions(core_qtav_obj PRIVATE -DDQTAV_HAVE_AVRESAMPLE)
+    endif()
+
+    if(${SWRESAMPLE_FOUND})
+        target_compile_definitions(core_qtav_obj PRIVATE -DQTAV_HAVE_SWRESAMPLE)
+    endif()
+
     target_compile_definitions(core_qtav_obj
                                PRIVATE
                                digikamcore_EXPORTS

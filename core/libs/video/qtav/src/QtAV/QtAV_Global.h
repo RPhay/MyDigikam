@@ -29,6 +29,10 @@
 #include <QtCore/qglobal.h>
 #include <QtAV/dptr.h>
 
+#include "digikam_export.h"
+
+#define Q_AV_EXPORT DIGIKAM_EXPORT
+/*
 #ifdef BUILD_QTAV_STATIC
 #define Q_AV_EXPORT
 #else
@@ -40,6 +44,7 @@
 #  define Q_AV_EXPORT Q_DECL_IMPORT //only for vc?
 #endif
 #endif //BUILD_QTAV_STATIC
+*/
 #define Q_AV_PRIVATE_EXPORT Q_AV_EXPORT
 
 /* runtime version. used to compare with compile time version */
