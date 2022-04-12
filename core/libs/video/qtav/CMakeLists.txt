@@ -143,6 +143,18 @@ if(ENABLE_MEDIAPLAYER)
 
     endif()
 
+    if(APPLE)
+
+        target_compile_definitions(core_qtav_obj PRIVATE -DQTAV_HAVE_VIDEOTOOLBOX=1)
+
+        set(libqtav_SRCS ${libqtav_SRCS}
+            ${CMAKE_CURRENT_SOURCE_DIR}/src/codec/video/VideoDecoderVideoToolbox.cpp
+            ${CMAKE_CURRENT_SOURCE_DIR}/src/codec/video/SurfaceInteropCV.cpp
+            ${CMAKE_CURRENT_SOURCE_DIR}/src/codec/video/SurfaceInteropIOSurface.cpp
+        )
+
+    endif()
+
     if(${AVCODEC_FOUND})
         target_compile_definitions(core_qtav_obj PRIVATE -DQTAV_HAVE_AVCODEC)
     endif()
@@ -168,11 +180,23 @@ if(ENABLE_MEDIAPLAYER)
     endif()
 
     if(${AVRESAMPLE_FOUND})
+
         target_compile_definitions(core_qtav_obj PRIVATE -DDQTAV_HAVE_AVRESAMPLE)
+
+        set(libqtav_SRCS ${libqtav_SRCS}
+            ${CMAKE_CURRENT_SOURCE_DIR}/src/AudioResamplerLibav.cpp
+        )
+
     endif()
 
     if(${SWRESAMPLE_FOUND})
+
         target_compile_definitions(core_qtav_obj PRIVATE -DQTAV_HAVE_SWRESAMPLE)
+
+        set(libqtav_SRCS ${libqtav_SRCS}
+            ${CMAKE_CURRENT_SOURCE_DIR}/src/AudioResamplerFF.cpp
+        )
+
     endif()
 
     target_compile_definitions(core_qtav_obj
