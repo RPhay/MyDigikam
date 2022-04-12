@@ -22,6 +22,11 @@
 #define QTAVWIDGETS_GLOBAL_H
 
 #include <QtAV/VideoRenderer.h>
+
+#include "digikam_export.h"
+
+#define Q_AVWIDGETS_EXPORT DIGIKAM_EXPORT
+/*
 #ifdef BUILD_QTAVWIDGETS_STATIC
 #define Q_AVWIDGETS_EXPORT
 #else
@@ -33,6 +38,7 @@
 #  define Q_AVWIDGETS_EXPORT Q_DECL_IMPORT //only for vc?
 #endif
 #endif //BUILD_QTAVWIDGETS_STATIC
+*/
 #define Q_AVWIDGETS_PRIVATE_EXPORT Q_AVWIDGETS_EXPORT
 #if defined(BUILD_QTAVWIDGETS_LIB)
 #define QTAVWIDGETS_DEPRECATED

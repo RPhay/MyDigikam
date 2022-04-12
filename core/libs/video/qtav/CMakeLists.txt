@@ -119,9 +119,29 @@ if(ENABLE_MEDIAPLAYER)
 
     target_compile_definitions(core_qtav_obj
                                PRIVATE
+                               -DBUILD_QTAV_LIB
                                -DBUILD_QTAVWIDGETS_LIB
                                -DQTAV_HAVE_GL=1
+                               -D__STDC_CONSTANT_MACROS
+                               -DQTAV_HAVE_CAPI=1
     )
+
+    find_package(OpenAL)
+
+    if(OPENAL_FOUND)
+
+        if(APPLE)
+            target_compile_definitions(core_qtav_obj PRIVATE -DHEADER_OPENAL_PREFIX)
+        endif()
+
+        set(libqtav_SRCS ${libqtav_SRCS}
+            ${CMAKE_CURRENT_SOURCE_DIR}/src/capi/openal_api.cpp
+            ${CMAKE_CURRENT_SOURCE_DIR}/src/output/audio/AudioOutputOpenAL.cpp
+        )
+
+        target_compile_definitions(core_qtav_obj PRIVATE -DQTAV_HAVE_OPENAL=1)
+
+    endif()
 
     if(${AVCODEC_FOUND})
         target_compile_definitions(core_qtav_obj PRIVATE -DQTAV_HAVE_AVCODEC)
