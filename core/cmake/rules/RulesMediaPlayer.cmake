@@ -12,8 +12,6 @@ find_package(FFmpeg COMPONENTS AVCODEC
                                SWSCALE
 )
 
-find_package(QtAV)
-
 if(ENABLE_MEDIAPLAYER)
 
     if(${AVCODEC_FOUND} AND ${AVDEVICE_FOUND} AND ${AVFILTER_FOUND} AND ${AVFORMAT_FOUND} AND ${AVUTIL_FOUND} AND ${SWSCALE_FOUND})
@@ -28,19 +26,7 @@ if(ENABLE_MEDIAPLAYER)
 
     endif()
 
-    if(NOT ${QtAV_FOUND} OR "${QTAV_VERSION_STRING}" VERSION_LESS ${QTAV_MIN_VERSION})
-
-        set(ENABLE_MEDIAPLAYER OFF)
-        set(QtAV_FOUND OFF)
-        message(STATUS "ENABLE_MEDIAPLAYER option is enabled but QtAV cannot be found. Media player support is disabled.")
-
-    else()
-
-        include_directories(${QTAV_INCLUDE_DIRS})
-
-    endif()
-
-    if (${QtAV_FOUND} AND ${FFMPEG_FOUND})
+    if (${FFMPEG_FOUND})
 
         message(STATUS "Media player support is enabled.")
 

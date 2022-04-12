@@ -56,6 +56,7 @@ if(ENABLE_MEDIAPLAYER)
     set(DIGIKAMCORE_OBJECTS
         ${DIGIKAMCORE_OBJECTS}
         $<TARGET_OBJECTS:core_videotools_obj>
+        $<TARGET_OBJECTS:core_qtav_obj>
     )
 
 endif()
@@ -359,15 +360,6 @@ if(CMAKE_SYSTEM_NAME STREQUAL FreeBSD)
     target_link_libraries(digikamcore
                           PRIVATE
                           ${KVM_LIBRARY}
-    )
-
-endif()
-
-if(ENABLE_MEDIAPLAYER)
-
-    target_link_libraries(digikamcore
-                          PRIVATE
-                          ${QTAV_LIBRARIES}
     )
 
 endif()
