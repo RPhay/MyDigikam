@@ -8,6 +8,15 @@ APPLY_COMMON_POLICIES()
 
 if(ENABLE_MEDIAPLAYER)
 
+    # The QtAV library does not adhere to the flags we use
+    remove_definitions(
+        -DQT_NO_CAST_FROM_ASCII
+        -DQT_NO_CAST_TO_ASCII
+        -DQT_NO_URL_CAST_FROM_STRING
+        -DQT_NO_CAST_FROM_BYTEARRAY
+        -DQT_DISABLE_DEPRECATED_BEFORE=0x050E00
+    )
+
     include_directories($<TARGET_PROPERTY:Qt${QT_VERSION_MAJOR}::Widgets,INTERFACE_INCLUDE_DIRECTORIES>
                         $<TARGET_PROPERTY:Qt${QT_VERSION_MAJOR}::Core,INTERFACE_INCLUDE_DIRECTORIES>
     )
