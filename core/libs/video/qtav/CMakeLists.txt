@@ -12,6 +12,7 @@ set(CMAKE_MODULE_PATH ${CMAKE_MODULE_PATH}
 
 # The QtAV library does not adhere to the flags we use
 remove_definitions(
+    -DQT_USE_QSTRINGBUILDER
     -DQT_NO_CAST_FROM_ASCII
     -DQT_NO_CAST_TO_ASCII
     -DQT_NO_URL_CAST_FROM_STRING
@@ -196,6 +197,7 @@ endif()
 
 # ---
 
+
 if(APPLE)
 
     set(libqtav_SRCS ${libqtav_SRCS}
@@ -356,6 +358,17 @@ if(SWRESAMPLE_FOUND)
 endif()
 
 # ---
+
+if(X11_FOUND)
+
+    target_compile_definitions(core_qtav_obj PRIVATE -DQTAV_HAVE_X11=1)
+
+    target_link_libraries(core_qtav_obj
+                          PRIVATE
+                          ${X11_LIBRARIES}
+    )
+
+endif()
 
 if(HAVE_OPENGL)
 
