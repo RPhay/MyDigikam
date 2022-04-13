@@ -132,6 +132,17 @@ if(HAVE_OPENGL)
 
 endif()
 
+find_package(ASS)
+
+if(ASS_FOUND)
+
+    set(libqtav_SRCS ${libqtav_SRCS}
+        ${CMAKE_CURRENT_SOURCE_DIR}/src/capi/ass_api.cpp
+        ${CMAKE_CURRENT_SOURCE_DIR}/src/subtitle/SubtitleProcessorLibASS.cpp
+    )
+
+endif()
+
 # ---
 
 find_package(OpenAL)
@@ -245,6 +256,17 @@ target_compile_definitions(core_qtav_obj
 )
 
 # -------------------------------------------------------------------------
+
+if(ASS_FOUND)
+
+    target_compile_definitions(core_qtav_obj PRIVATE -DCAPI_LINK_ASS -DQTAV_HAVE_LIBASS=1)
+
+    target_link_libraries(core_qtav_obj
+                          PRIVATE
+                          ${ASS_LIBRARIES}
+    )
+
+endif()
 
 if(OPENAL_FOUND)
 
