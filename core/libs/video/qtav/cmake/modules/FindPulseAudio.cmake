@@ -5,7 +5,7 @@
 #  PULSEAUDIO_INCLUDE_DIRS - the pulseaudio include directory
 #  PULSEAUDIO_LIBRARIES    - The libraries needed to use pulseaudio
 #
-# Copyright (C) 2014  Belledonne Communications, Grenoble France
+# Copyright (C) 2014 Belledonne Communications, Grenoble France
 #
 # Redistribution and use is allowed according to the terms of the New BSD license.
 # For details see the accompanying COPYING-CMAKE-SCRIPTS file.
@@ -23,6 +23,7 @@ find_path(PULSEAUDIO_INCLUDE_DIRS
     HINTS _PULSEAUDIO_ROOT_PATHS
     PATH_SUFFIXES include
 )
+
 if(PULSEAUDIO_INCLUDE_DIRS)
     set(HAVE_PULSE_PULSEAUDIO_H 1)
 endif()
@@ -42,6 +43,7 @@ if(PULSEAUDIO_LIBRARIES)
 endif()
 
 include(FindPackageHandleStandardArgs)
+
 find_package_handle_standard_args(PulseAudio
     DEFAULT_MSG
     PULSEAUDIO_INCLUDE_DIRS PULSEAUDIO_LIBRARIES HAVE_PULSE_PULSEAUDIO_H HAVE_PA_MAINLOOP_NEW
