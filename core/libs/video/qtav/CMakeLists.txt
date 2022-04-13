@@ -268,6 +268,10 @@ if(ASS_FOUND)
                           ${ASS_LIBRARIES}
     )
 
+else()
+
+    target_compile_definitions(core_qtav_obj PRIVATE -DQTAV_HAVE_LIBASS=0)
+
 endif()
 
 if(OPENAL_FOUND)
@@ -283,6 +287,10 @@ if(OPENAL_FOUND)
                           ${OPENAL_LIBRARY}
     )
 
+else()
+
+    target_compile_definitions(core_qtav_obj PRIVATE -DQTAV_HAVE_OPENAL=0)
+
 endif()
 
 # ---
@@ -295,6 +303,10 @@ if(PORTAUDIO_FOUND)
                           PRIVATE
                           ${PORTAUDIO_LIBRARIES}
     )
+
+else()
+
+    target_compile_definitions(core_qtav_obj PRIVATE -DQTAV_HAVE_PORTAUDIO=0)
 
 endif()
 
@@ -309,6 +321,10 @@ if(PULSEAUDIO_FOUND)
                           ${PULSEAUDIO_LIBRARIES}
     )
 
+else()
+
+    target_compile_definitions(core_qtav_obj PRIVATE -DQTAV_HAVE_PULSEAUDIO=0)
+
 endif()
 
 # ---
@@ -316,9 +332,11 @@ endif()
 if(APPLE)
 
     target_compile_definitions(core_qtav_obj PRIVATE -DQTAV_HAVE_VIDEOTOOLBOX=1)
+    target_compile_definitions(core_qtav_obj PRIVATE -DDQTAV_HAVE_CUDA=0)
 
 else()
 
+    target_compile_definitions(core_qtav_obj PRIVATE -DQTAV_HAVE_VIDEOTOOLBOX=0)
     target_compile_definitions(core_qtav_obj PRIVATE -DDQTAV_HAVE_CUDA=1)
 
 endif()
@@ -326,35 +344,83 @@ endif()
 # ---
 
 if(AVCODEC_FOUND)
-    target_compile_definitions(core_qtav_obj PRIVATE -DQTAV_HAVE_AVCODEC)
+
+    target_compile_definitions(core_qtav_obj PRIVATE -DQTAV_HAVE_AVCODEC=1)
+
+else()
+
+    target_compile_definitions(core_qtav_obj PRIVATE -DQTAV_HAVE_AVCODEC=0)
+
 endif()
 
 if(AVDEVICE_FOUND)
-    target_compile_definitions(core_qtav_obj PRIVATE -DQTAV_HAVE_AVDEVICE)
+
+    target_compile_definitions(core_qtav_obj PRIVATE -DQTAV_HAVE_AVDEVICE=1)
+
+else()
+
+    target_compile_definitions(core_qtav_obj PRIVATE -DQTAV_HAVE_AVDEVICE=0)
+
 endif()
 
 if(AVFILTER_FOUND)
-    target_compile_definitions(core_qtav_obj PRIVATE -DQTAV_HAVE_AVFILTER)
+
+    target_compile_definitions(core_qtav_obj PRIVATE -DQTAV_HAVE_AVFILTER=1)
+
+else()
+
+    target_compile_definitions(core_qtav_obj PRIVATE -DQTAV_HAVE_AVFILTER=0)
+
 endif()
 
 if(AVFORMAT_FOUND)
-    target_compile_definitions(core_qtav_obj PRIVATE -DQTAV_HAVE_AVFORMAT)
+
+    target_compile_definitions(core_qtav_obj PRIVATE -DQTAV_HAVE_AVFORMAT=1)
+
+else()
+
+    target_compile_definitions(core_qtav_obj PRIVATE -DQTAV_HAVE_AVFORMAT=0)
+
 endif()
 
 if(AVUTIL_FOUND)
-    target_compile_definitions(core_qtav_obj PRIVATE -DQTAV_HAVE_AVUTIL)
+
+    target_compile_definitions(core_qtav_obj PRIVATE -DQTAV_HAVE_AVUTIL=1)
+
+else()
+
+    target_compile_definitions(core_qtav_obj PRIVATE -DQTAV_HAVE_AVUTIL=0)
+
 endif()
 
 if(SWSCALE_FOUND)
-    target_compile_definitions(core_qtav_obj PRIVATE -DQTAV_HAVE_SWSCALE)
+
+    target_compile_definitions(core_qtav_obj PRIVATE -DQTAV_HAVE_SWSCALE=1)
+
+else()
+
+    target_compile_definitions(core_qtav_obj PRIVATE -DQTAV_HAVE_SWSCALE=0)
+
 endif()
 
 if(AVRESAMPLE_FOUND)
-    target_compile_definitions(core_qtav_obj PRIVATE -DQTAV_HAVE_AVRESAMPLE)
+
+    target_compile_definitions(core_qtav_obj PRIVATE -DQTAV_HAVE_AVRESAMPLE=1)
+
+else()
+
+    target_compile_definitions(core_qtav_obj PRIVATE -DQTAV_HAVE_AVRESAMPLE=0)
+
 endif()
 
 if(SWRESAMPLE_FOUND)
-    target_compile_definitions(core_qtav_obj PRIVATE -DQTAV_HAVE_SWRESAMPLE)
+
+    target_compile_definitions(core_qtav_obj PRIVATE -DQTAV_HAVE_SWRESAMPLE=1)
+
+else()
+
+    target_compile_definitions(core_qtav_obj PRIVATE -DQTAV_HAVE_SWRESAMPLE=0)
+
 endif()
 
 # ---
@@ -368,6 +434,10 @@ if(X11_FOUND)
                           ${X11_LIBRARIES}
     )
 
+else()
+
+    target_compile_definitions(core_qtav_obj PRIVATE -DQTAV_HAVE_X11=0)
+
 endif()
 
 if(HAVE_OPENGL)
@@ -379,6 +449,10 @@ if(HAVE_OPENGL)
                           ${QT_OPENGL_LIBRARIES}
     )
 
+else()
+
+    target_compile_definitions(core_qtav_obj PRIVATE -DQTAV_HAVE_EGL_CAPI=0)
+
 endif()
 
 if(VAAPI_FOUND)
@@ -389,5 +463,9 @@ if(VAAPI_FOUND)
                           PRIVATE
                           ${VAAPI_LIBRARIES}
     )
+
+else()
+
+    target_compile_definitions(core_qtav_obj PRIVATE -DQTAV_HAVE_VAAPI=0)
 
 endif()
