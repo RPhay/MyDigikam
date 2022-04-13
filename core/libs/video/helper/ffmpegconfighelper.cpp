@@ -64,7 +64,7 @@ FFMpegProperties FFMpegConfigHelper::getVideoCodecsProperties()
         QStringList vals;
 
         vals << QString::fromUtf8(vcodec->long_name);
-        
+
         if (av_codec_is_decoder(vcodec))
         {
             vals << QLatin1String("R");
