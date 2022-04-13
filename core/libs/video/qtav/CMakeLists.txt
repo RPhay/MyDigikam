@@ -169,12 +169,36 @@ if(PULSEAUDIO_FOUND)
 
 endif()
 
+# ---
+
+find_package(VAAPI)
+
+if(VAAPI_FOUND)
+
+    set(libqtav_SRCS ${libqtav_SRCS}
+        ${CMAKE_CURRENT_SOURCE_DIR}/src/vaapi/vaapi_helper.cpp
+        ${CMAKE_CURRENT_SOURCE_DIR}/src/vaapi/SurfaceInteropVAAPI.cpp
+        ${CMAKE_CURRENT_SOURCE_DIR}/src/codec/video/VideoDecoderVAAPI.cpp
+    )
+
+endif()
+
+# ---
+
 if(APPLE)
 
     set(libqtav_SRCS ${libqtav_SRCS}
         ${CMAKE_CURRENT_SOURCE_DIR}/src/codec/video/VideoDecoderVideoToolbox.cpp
         ${CMAKE_CURRENT_SOURCE_DIR}/src/codec/video/SurfaceInteropCV.cpp
         ${CMAKE_CURRENT_SOURCE_DIR}/src/codec/video/SurfaceInteropIOSurface.cpp
+    )
+
+else()
+
+    set(libqtav_SRCS ${libqtav_SRCS}
+        ${CMAKE_CURRENT_SOURCE_DIR}/src/cuda/cuda_api.cpp
+        ${CMAKE_CURRENT_SOURCE_DIR}/src/codec/video/SurfaceInteropCUDA.cpp
+        ${CMAKE_CURRENT_SOURCE_DIR}/src/codec/video/VideoDecoderCUDA.cpp
     )
 
 endif()
@@ -212,6 +236,12 @@ target_compile_definitions(core_qtav_obj
                            -DQTAV_HAVE_GL=1
                            -D__STDC_CONSTANT_MACROS
                            -DQTAV_HAVE_CAPI=1
+                           -DQTAV_HAVE_OPENSL=0         # OpenSLES is for Android only
+                           -DQTAV_HAVE_D3D11VA=0        # DirectX 3D for MSVC only
+                           -DQTAV_HAVE_DSOUND=0         # DirectX Sound for MSVC only
+                           -DQTAV_HAVE_DXVA=0           # DirectX VA for MSVC only
+                           -DQTAV_HAVE_XAUDIO2=0        # DirectX Audio for MSVC only
+
 )
 
 # -------------------------------------------------------------------------
@@ -263,6 +293,10 @@ if(APPLE)
 
     target_compile_definitions(core_qtav_obj PRIVATE -DQTAV_HAVE_VIDEOTOOLBOX=1)
 
+else()
+
+    target_compile_definitions(core_qtav_obj PRIVATE -DDQTAV_HAVE_CUDA=1)
+
 endif()
 
 # ---
@@ -310,5 +344,15 @@ if(HAVE_OPENGL)
                           ${QT_OPENGL_LIBRARIES}
     )
 
+endif()
+
+if(VAAPI_FOUND)
+
+    target_compile_definitions(core_qtav_obj PRIVATE -DQTAV_HAVE_VAAPI=1)
+
+    target_link_libraries(core_qtav_obj
+                          PRIVATE
+                          ${VAAPI_LIBRARIES}
+    )
 
 endif()
