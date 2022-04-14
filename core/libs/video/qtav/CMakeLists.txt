@@ -6,6 +6,8 @@
 
 APPLY_COMMON_POLICIES()
 
+REMOVE_COMPILER_WARNINGS("-Wdeprecated-declarations")
+
 # The QtAV library does not adhere to the flags we use
 remove_definitions(
     -DQT_USE_QSTRINGBUILDER
