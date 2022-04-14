@@ -123,11 +123,10 @@ if(HAVE_OPENGL)
 
     include_directories($<TARGET_PROPERTY:Qt${QT_VERSION_MAJOR}::OpenGL,INTERFACE_INCLUDE_DIRECTORIES>)
 
-    set(QT_OPENGL_LIBRARIES Qt${QT_VERSION_MAJOR}::OpenGL)
-
     if(Qt6_FOUND)
+
         include_directories($<TARGET_PROPERTY:Qt${QT_VERSION_MAJOR}::OpenGLWidgets,INTERFACE_INCLUDE_DIRECTORIES>)
-        set(QT_OPENGL_LIBRARIES ${QT_OPENGL_LIBRARIES} Qt${QT_VERSION_MAJOR}::OpenGLWidgets)
+
     endif()
 
     set(libqtav_SRCS ${libqtav_SRCS}
