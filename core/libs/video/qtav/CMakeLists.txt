@@ -96,7 +96,9 @@ set(libqtav_SRCS
     ${CMAKE_CURRENT_SOURCE_DIR}/widgets/WidgetRenderer.cpp
 )
 
-qt5_add_resources(libqtav_SRCS ${CMAKE_CURRENT_SOURCE_DIR}/src/shaders/shaders.qrc)
+qt5_add_resources(libqtav_SRCS ${CMAKE_CURRENT_SOURCE_DIR}/src/shaders/shaders.qrc
+                               ${CMAKE_CURRENT_SOURCE_DIR}/src/QtAV.qrc
+)
 
 file(GLOB QTAV_HEADERS                 ${CMAKE_CURRENT_SOURCE_DIR}/src/QtAV/*.h)
 file(GLOB QTAV_PRIVATE_HEADERS         ${CMAKE_CURRENT_SOURCE_DIR}/src/QtAV/private/*.h)
