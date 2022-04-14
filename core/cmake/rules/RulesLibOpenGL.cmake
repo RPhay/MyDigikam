@@ -47,3 +47,6 @@ elseif()
     set(HAVE_OPENGL FALSE)
 
 endif()
+
+# For MediaPlayer compilation
+MACRO_BOOL_TO_01(OpenGL_EGL_FOUND HAVE_LIBOPENGL_EGL)

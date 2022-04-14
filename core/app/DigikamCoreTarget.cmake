@@ -56,6 +56,7 @@ if(ENABLE_MEDIAPLAYER)
     set(DIGIKAMCORE_OBJECTS
         ${DIGIKAMCORE_OBJECTS}
         $<TARGET_OBJECTS:core_videotools_obj>
+        $<TARGET_OBJECTS:core_qtav_obj>
     )
 
 endif()
@@ -145,8 +146,6 @@ target_link_libraries(digikamcore
                       ${JPEG_LIBRARIES}
                       exiv2lib
 
-                      ${FFMPEG_LIBRARIES}
-
                       ${OPENMP_LDFLAGS}
 
                       opencv_core
@@ -179,6 +178,15 @@ if(ENABLE_DBUS)
     target_link_libraries(digikamcore
                           PRIVATE
                           Qt${QT_VERSION_MAJOR}::DBus
+    )
+
+endif()
+
+if(ENABLE_MEDIAPLAYER)
+
+    target_link_libraries(digikamcore
+                          PRIVATE
+                          ${MEDIAPLAYER_LIBRARIES}
     )
 
 endif()
@@ -359,15 +367,6 @@ if(CMAKE_SYSTEM_NAME STREQUAL FreeBSD)
     target_link_libraries(digikamcore
                           PRIVATE
                           ${KVM_LIBRARY}
-    )
-
-endif()
-
-if(ENABLE_MEDIAPLAYER)
-
-    target_link_libraries(digikamcore
-                          PRIVATE
-                          ${QTAV_LIBRARIES}
     )
 
 endif()

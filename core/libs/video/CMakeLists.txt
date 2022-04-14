@@ -53,4 +53,6 @@ if(ENABLE_MEDIAPLAYER)
                                digikamcore_EXPORTS
     )
 
+    add_subdirectory(qtav)
+
 endif()

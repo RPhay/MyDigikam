@@ -15,6 +15,8 @@
 #   - AVUTIL
 #   - POSTPROCESS
 #   - SWSCALE
+#   - AVRESAMPLE
+#   - SWRESAMPLE
 #
 # NOTE: default components are AVFORMAT, AVUTIL, AVCODEC.
 #
@@ -107,13 +109,15 @@ ENDMACRO()
 if(NOT FFMPEG_LIBRARIES)
 
     # Check for all possible component.
-    FIND_COMPONENT(AVCODEC  libavcodec  avcodec  libavcodec/avcodec.h)
-    FIND_COMPONENT(AVFILTER libavfilter avfilter libavfilter/avfilter.h)
-    FIND_COMPONENT(AVFORMAT libavformat avformat libavformat/avformat.h)
-    FIND_COMPONENT(AVDEVICE libavdevice avdevice libavdevice/avdevice.h)
-    FIND_COMPONENT(AVUTIL   libavutil   avutil   libavutil/avutil.h)
-    FIND_COMPONENT(SWSCALE  libswscale  swscale  libswscale/swscale.h)
-    FIND_COMPONENT(POSTPROC libpostproc postproc libpostproc/postprocess.h)
+    FIND_COMPONENT(AVCODEC    libavcodec    avcodec    libavcodec/avcodec.h)
+    FIND_COMPONENT(AVFILTER   libavfilter   avfilter   libavfilter/avfilter.h)
+    FIND_COMPONENT(AVFORMAT   libavformat   avformat   libavformat/avformat.h)
+    FIND_COMPONENT(AVDEVICE   libavdevice   avdevice   libavdevice/avdevice.h)
+    FIND_COMPONENT(AVUTIL     libavutil     avutil     libavutil/avutil.h)
+    FIND_COMPONENT(SWSCALE    libswscale    swscale    libswscale/swscale.h)
+    FIND_COMPONENT(POSTPROC   libpostproc   postproc   libpostproc/postprocess.h)
+    FIND_COMPONENT(AVRESAMPLE libavresample avresample libavresample/avresample.h)
+    FIND_COMPONENT(SWRESAMPLE libswresample swresample libswresample/swresample.h)
 
     # Check if the required components were found and add their stuff to the FFMPEG_* vars.
     FOREACH(_component ${FFmpeg_FIND_COMPONENTS})
@@ -147,7 +151,7 @@ if(NOT FFMPEG_LIBRARIES)
 ENDIF()
 
 # Now set the noncached _FOUND vars for the components.
-FOREACH(_component AVCODEC AVDEVICE AVFILTER AVFORMAT AVUTIL POSTPROCESS SWSCALE)
+FOREACH(_component AVCODEC AVDEVICE AVFILTER AVFORMAT AVUTIL POSTPROCESS SWSCALE AVRESAMPLE SWRESAMPLE)
     SET_COMPONENT_FOUND(${_component})
 ENDFOREACH()
 

@@ -22,7 +22,6 @@ set(QT6_MIN_VERSION       "6.2.3")
 set(EXIV2_MIN_VERSION     "0.27.1")
 set(OPENCV_MIN_VERSION    "3.3.0")
 set(LENSFUN_MIN_VERSION   "0.2.6.0")      # For Lens auto-correction plugin
-set(QTAV_MIN_VERSION      "1.12.0")       # For video support.
 set(KSANE_MIN_VERSION     "5.55.0")       # For digital scanner support.
 set(CALENDAR_MIN_VERSION  "5.55.0")       # Calendar Core dependency for plugin.
 set(AKONADI_MIN_VERSION   "5.16.0")       # Akonadi Contact dependency.
@@ -78,10 +77,6 @@ endif()
 
 include(RulesLibExiv2)
 
-# -- Media player dependencies checks and adjustments---------------------------
-
-include(RulesMediaPlayer)
-
 # -- OpenCV checks and adjustements --------------------------------------------
 
 include(RulesLibOpenCV)
@@ -111,6 +106,10 @@ include(RulesX11)
 # -- OpenGL checks and adjustments --------------------------------------------
 
 include(RulesLibOpenGL)
+
+# -- Media player dependencies checks and adjustments---------------------------
+
+include(RulesMediaPlayer)
 
 # -- Print Install Paths from ECM ---------------------------------------------
 
@@ -274,7 +273,6 @@ PRINT_OPTIONAL_LIBRARY_STATUS("libksane"          "https://invent.kde.org/graphi
 PRINT_OPTIONAL_LIBRARY_STATUS("liblensfun"        "https://github.com/lensfun/lensfun"                              "(version >= 0.2.6)"                    "digiKam will be compiled without Lens Auto Correction tool support."         LensFun_FOUND)
 PRINT_OPTIONAL_LIBRARY_STATUS("liblqr-1"          "https://github.com/carlobaldassi/liblqr"                         "(version >= 0.4.1)"                    "digiKam will be compiled without Contents Aware Resizer tool support."       LQR-1_FOUND)
 PRINT_OPTIONAL_LIBRARY_STATUS("libmarble"         "https://invent.kde.org/education/marble"                         "(version >= 0.22.0)"                   "digiKam will be compiled without geolocation maps support."                  Marble_FOUND)
-PRINT_OPTIONAL_LIBRARY_STATUS("libqtav"           "https://github.com/wang-bin/QtAV"                                "(version >= ${QTAV_MIN_VERSION})"      "digiKam will be compiled without Media Player support."                      QtAV_FOUND)
 PRINT_OPTIONAL_LIBRARY_STATUS("libthreadweaver"   "https://invent.kde.org/frameworks/threadweaver"                  "(version >= ${KF5_MIN_VERSION})"       "digiKam will be compiled without Panorama support."                          KF5ThreadWeaver_FOUND)
 PRINT_OPTIONAL_LIBRARY_STATUS("libxml2"           "https://gitlab.gnome.org/GNOME/libxml2/"                         "(version >= 2.7.0)"                    "digiKam will be compiled without HTMLGallery support."                       LibXml2_FOUND)
 PRINT_OPTIONAL_LIBRARY_STATUS("libxslt"           "https://gitlab.gnome.org/GNOME/libxslt"                          "(version >= 1.1.0)"                    "digiKam will be compiled without HTMLGallery support."                       LibXslt_FOUND)

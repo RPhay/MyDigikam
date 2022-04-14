@@ -26,3 +26,6 @@ else()
     set(HAVE_X11 FALSE)
 
 endif()
+
+# For MediaPlayer linking
+MACRO_BOOL_TO_01(HAVE_X11 HAVE_LIBX11)
