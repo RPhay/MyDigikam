@@ -102,12 +102,11 @@ qt5_add_resources(libqtav_SRCS ${CMAKE_CURRENT_SOURCE_DIR}/src/shaders/shaders.q
 
 file(GLOB QTAV_HEADERS                 ${CMAKE_CURRENT_SOURCE_DIR}/src/QtAV/*.h)
 file(GLOB QTAV_PRIVATE_HEADERS         ${CMAKE_CURRENT_SOURCE_DIR}/src/QtAV/private/*.h)
-file(GLOB QTAV_WIDGETS_PRIVATE_HEADERS ${CMAKE_CURRENT_SOURCE_DIR}/widgets/QtAVWidgets/*.h)
+
 set(QTAV_WIDGETS_HEADERS
     ${CMAKE_CURRENT_SOURCE_DIR}/widgets/QtAVWidgets/global.h
     ${CMAKE_CURRENT_SOURCE_DIR}/widgets/QtAVWidgets/GraphicsItemRenderer.h
     ${CMAKE_CURRENT_SOURCE_DIR}/widgets/QtAVWidgets/OpenGLWidgetRenderer.h
-    ${CMAKE_CURRENT_SOURCE_DIR}/widgets/QtAVWidgets/QtAVWidgets
     ${CMAKE_CURRENT_SOURCE_DIR}/widgets/QtAVWidgets/QtAVWidgets.h
     ${CMAKE_CURRENT_SOURCE_DIR}/widgets/QtAVWidgets/version.h
     ${CMAKE_CURRENT_SOURCE_DIR}/widgets/QtAVWidgets/VideoPreviewWidget.h
@@ -118,7 +117,6 @@ set(libqtav_SRCS ${libqtav_SRCS}
                  ${QTAV_HEADERS}
                  ${QTAV_PRIVATE_HEADERS}
                  ${QTAV_WIDGETS_HEADERS}
-                 ${QTAV_WIDGETS_PRIVATE_HEADERS}
 )
 
 if(HAVE_OPENGL)
@@ -150,6 +148,7 @@ if(HAVE_OPENGL)
         ${CMAKE_CURRENT_SOURCE_DIR}/src/capi/egl_api.cpp
 
         ${CMAKE_CURRENT_SOURCE_DIR}/widgets/GLWidgetRenderer2.cpp
+        ${CMAKE_CURRENT_SOURCE_DIR}/widgets/QtAVWidgets/GLWidgetRenderer2.h
     )
 
 endif()
