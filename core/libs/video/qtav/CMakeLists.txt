@@ -308,8 +308,8 @@ add_definitions(-DQTAV_HAVE_AVUTIL=${HAVE_LIBAVUTIL})
 add_definitions(-DQTAV_HAVE_SWSCALE=${HAVE_LIBSWSCALE})
 add_definitions(-DQTAV_HAVE_AVRESAMPLE=${HAVE_LIBAVRESAMPLE})
 add_definitions(-DQTAV_HAVE_SWRESAMPLE=${HAVE_LIBSWRESAMPLE})
-add_definitions(-DQTAV_HAVE_X11=${HAVE_X11})
-add_definitions(-DQTAV_HAVE_EGL_CAPI=${HAVE_OPENGL})
+add_definitions(-DQTAV_HAVE_X11=${HAVE_LIBX11})
+add_definitions(-DQTAV_HAVE_EGL_CAPI=${HAVE_LIBOPENGL})
 add_definitions(-DQTAV_HAVE_VAAPI=${HAVE_LIBVAAPI})
 
 # -------------------------------------------------------------------------

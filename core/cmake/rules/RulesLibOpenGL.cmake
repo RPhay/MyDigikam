@@ -47,3 +47,6 @@ elseif()
     set(HAVE_OPENGL FALSE)
 
 endif()
+
+# For MediaPlayer compilation
+MACRO_BOOL_TO_01(HAVE_OPENGL HAVE_LIBOPENGL)
