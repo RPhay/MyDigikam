@@ -77,10 +77,6 @@ endif()
 
 include(RulesLibExiv2)
 
-# -- Media player dependencies checks and adjustments---------------------------
-
-include(RulesMediaPlayer)
-
 # -- OpenCV checks and adjustements --------------------------------------------
 
 include(RulesLibOpenCV)
@@ -110,6 +106,10 @@ include(RulesX11)
 # -- OpenGL checks and adjustments --------------------------------------------
 
 include(RulesLibOpenGL)
+
+# -- Media player dependencies checks and adjustments---------------------------
+
+include(RulesMediaPlayer)
 
 # -- Print Install Paths from ECM ---------------------------------------------
 

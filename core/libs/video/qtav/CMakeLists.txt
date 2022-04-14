@@ -6,10 +6,6 @@
 
 APPLY_COMMON_POLICIES()
 
-set(CMAKE_MODULE_PATH ${CMAKE_MODULE_PATH}
-                      ${CMAKE_CURRENT_SOURCE_DIR}/cmake/modules
-)
-
 # The QtAV library does not adhere to the flags we use
 remove_definitions(
     -DQT_USE_QSTRINGBUILDER
@@ -100,6 +96,29 @@ set(libqtav_SRCS
     ${CMAKE_CURRENT_SOURCE_DIR}/widgets/WidgetRenderer.cpp
 )
 
+qt5_add_resources(libqtav_SRCS ${CMAKE_CURRENT_SOURCE_DIR}/src/shaders/shaders.qrc)
+
+file(GLOB QTAV_HEADERS                 ${CMAKE_CURRENT_SOURCE_DIR}/src/QtAV/*.h)
+file(GLOB QTAV_PRIVATE_HEADERS         ${CMAKE_CURRENT_SOURCE_DIR}/src/QtAV/private/*.h)
+file(GLOB QTAV_WIDGETS_PRIVATE_HEADERS ${CMAKE_CURRENT_SOURCE_DIR}/widgets/QtAVWidgets/*.h)
+set(QTAV_WIDGETS_HEADERS
+    ${CMAKE_CURRENT_SOURCE_DIR}/widgets/QtAVWidgets/global.h
+    ${CMAKE_CURRENT_SOURCE_DIR}/widgets/QtAVWidgets/GraphicsItemRenderer.h
+    ${CMAKE_CURRENT_SOURCE_DIR}/widgets/QtAVWidgets/OpenGLWidgetRenderer.h
+    ${CMAKE_CURRENT_SOURCE_DIR}/widgets/QtAVWidgets/QtAVWidgets
+    ${CMAKE_CURRENT_SOURCE_DIR}/widgets/QtAVWidgets/QtAVWidgets.h
+    ${CMAKE_CURRENT_SOURCE_DIR}/widgets/QtAVWidgets/version.h
+    ${CMAKE_CURRENT_SOURCE_DIR}/widgets/QtAVWidgets/VideoPreviewWidget.h
+    ${CMAKE_CURRENT_SOURCE_DIR}/widgets/QtAVWidgets/WidgetRenderer.h
+)
+
+set(libqtav_SRCS ${libqtav_SRCS}
+                 ${QTAV_HEADERS}
+                 ${QTAV_PRIVATE_HEADERS}
+                 ${QTAV_WIDGETS_HEADERS}
+                 ${QTAV_WIDGETS_PRIVATE_HEADERS}
+)
+
 if(HAVE_OPENGL)
 
     include_directories($<TARGET_PROPERTY:Qt${QT_VERSION_MAJOR}::OpenGL,INTERFACE_INCLUDE_DIRECTORIES>)
@@ -126,6 +145,7 @@ if(HAVE_OPENGL)
         ${CMAKE_CURRENT_SOURCE_DIR}/src/opengl/VideoShaderObject.cpp
         ${CMAKE_CURRENT_SOURCE_DIR}/src/filter/GLSLFilter.cpp
         ${CMAKE_CURRENT_SOURCE_DIR}/src/output/video/OpenGLRendererBase.cpp
+        ${CMAKE_CURRENT_SOURCE_DIR}/src/output/video/OpenGLWindowRenderer.cpp
         ${CMAKE_CURRENT_SOURCE_DIR}/src/capi/egl_api.cpp
 
         ${CMAKE_CURRENT_SOURCE_DIR}/widgets/GLWidgetRenderer2.cpp
@@ -133,9 +153,9 @@ if(HAVE_OPENGL)
 
 endif()
 
-find_package(ASS)
-
 if(ASS_FOUND)
+
+    include_directories(${ASS_INCLUDE_DIRS})
 
     set(libqtav_SRCS ${libqtav_SRCS}
         ${CMAKE_CURRENT_SOURCE_DIR}/src/capi/ass_api.cpp
@@ -146,9 +166,9 @@ endif()
 
 # ---
 
-find_package(OpenAL)
-
 if(OPENAL_FOUND)
+
+    include_directories(${OPENAL_INCLUDE_DIR})
 
     set(libqtav_SRCS ${libqtav_SRCS}
         ${CMAKE_CURRENT_SOURCE_DIR}/src/capi/openal_api.cpp
@@ -159,9 +179,9 @@ endif()
 
 # ---
 
-find_package(Portaudio)
-
 if(PORTAUDIO_FOUND)
+
+    include_directories(${PORTAUDIO_INCLUDE_DIRS})
 
     set(libqtav_SRCS ${libqtav_SRCS}
         ${CMAKE_CURRENT_SOURCE_DIR}/src/output/audio/AudioOutputPortAudio.cpp
@@ -171,9 +191,10 @@ endif()
 
 # ---
 
-find_package(PulseAudio)
 
 if(PULSEAUDIO_FOUND)
+
+    include_directories(${PULSEAUDIO_INCLUDE_DIRS})
 
     set(libqtav_SRCS ${libqtav_SRCS}
         ${CMAKE_CURRENT_SOURCE_DIR}/src/output/audio/AudioOutputPulse.cpp
@@ -183,9 +204,9 @@ endif()
 
 # ---
 
-find_package(VAAPI)
-
 if(VAAPI_FOUND)
+
+    include_directories(${VAAPI_INCLUDE_DIRS})
 
     set(libqtav_SRCS ${libqtav_SRCS}
         ${CMAKE_CURRENT_SOURCE_DIR}/src/vaapi/vaapi_helper.cpp
@@ -196,7 +217,6 @@ if(VAAPI_FOUND)
 endif()
 
 # ---
-
 
 if(APPLE)
 
@@ -232,6 +252,66 @@ if(SWRESAMPLE_FOUND)
 
 endif()
 
+# ---
+
+add_definitions(-DBUILD_QTAV_LIB
+                -DBUILD_QTAVWIDGETS_LIB
+                -DQTAV_HAVE_GL=1
+                -D__STDC_CONSTANT_MACROS
+                -DQTAV_HAVE_CAPI=1
+                -DQTAV_HAVE_OPENSL=0         # OpenSLES is for Android only
+                -DQTAV_HAVE_D3D11VA=0        # DirectX 3D for MSVC only
+                -DQTAV_HAVE_DSOUND=0         # DirectX Sound for MSVC only
+                -DQTAV_HAVE_DXVA=0           # DirectX VA for MSVC only
+                -DQTAV_HAVE_XAUDIO2=0        # DirectX Audio for MSVC only
+)
+
+if(ASS_FOUND)
+
+    add_definitions(-DCAPI_LINK_ASS)
+
+endif()
+
+add_definitions(-DQTAV_HAVE_LIBASS=${HAVE_LIBASS})
+
+if(OPENAL_FOUND)
+
+    if(APPLE)
+
+        add_definitions(-DHEADER_OPENAL_PREFIX)
+
+    endif()
+
+endif()
+
+add_definitions(-DQTAV_HAVE_OPENAL=${HAVE_LIBOPENAL})
+add_definitions(-DQTAV_HAVE_PORTAUDIO=${HAVE_LIBPORTAUDIO})
+add_definitions(-DQTAV_HAVE_PULSEAUDIO=${HAVE_LIBPULSEAUDIO})
+
+if(APPLE)
+
+    add_definitions(-DQTAV_HAVE_VIDEOTOOLBOX=1)
+    add_definitions(-DQTAV_HAVE_CUDA=0)
+
+else()
+
+    add_definitions(-DQTAV_HAVE_VIDEOTOOLBOX=0)
+    add_definitions(-DQTAV_HAVE_CUDA=1)
+
+endif()
+
+add_definitions(-DQTAV_HAVE_AVCODEC=${HAVE_LIBAVCODEC})
+add_definitions(-DQTAV_HAVE_AVDEVICE=${HAVE_LIBAVDEVICE})
+add_definitions(-DQTAV_HAVE_AVFILTER=${HAVE_LIBAVFILTER})
+add_definitions(-DQTAV_HAVE_AVFORMAT=${HAVE_LIBAVFORMAT})
+add_definitions(-DQTAV_HAVE_AVUTIL=${HAVE_LIBAVUTIL})
+add_definitions(-DQTAV_HAVE_SWSCALE=${HAVE_LIBSWSCALE})
+add_definitions(-DQTAV_HAVE_AVRESAMPLE=${HAVE_LIBAVRESAMPLE})
+add_definitions(-DQTAV_HAVE_SWRESAMPLE=${HAVE_LIBSWRESAMPLE})
+add_definitions(-DQTAV_HAVE_X11=${HAVE_X11})
+add_definitions(-DQTAV_HAVE_EGL_CAPI=${HAVE_OPENGL})
+add_definitions(-DQTAV_HAVE_VAAPI=${HAVE_LIBVAAPI})
+
 # -------------------------------------------------------------------------
 
 # Used by digikamcore
@@ -241,231 +321,3 @@ target_compile_definitions(core_qtav_obj
                            PRIVATE
                            digikamcore_EXPORTS
 )
-
-target_compile_definitions(core_qtav_obj
-                           PRIVATE
-                           -DBUILD_QTAV_LIB
-                           -DBUILD_QTAVWIDGETS_LIB
-                           -DQTAV_HAVE_GL=1
-                           -D__STDC_CONSTANT_MACROS
-                           -DQTAV_HAVE_CAPI=1
-                           -DQTAV_HAVE_OPENSL=0         # OpenSLES is for Android only
-                           -DQTAV_HAVE_D3D11VA=0        # DirectX 3D for MSVC only
-                           -DQTAV_HAVE_DSOUND=0         # DirectX Sound for MSVC only
-                           -DQTAV_HAVE_DXVA=0           # DirectX VA for MSVC only
-                           -DQTAV_HAVE_XAUDIO2=0        # DirectX Audio for MSVC only
-
-)
-
-# -------------------------------------------------------------------------
-
-if(ASS_FOUND)
-
-    target_compile_definitions(core_qtav_obj PRIVATE -DCAPI_LINK_ASS -DQTAV_HAVE_LIBASS=1)
-
-    target_link_libraries(core_qtav_obj
-                          PRIVATE
-                          ${ASS_LIBRARIES}
-    )
-
-else()
-
-    target_compile_definitions(core_qtav_obj PRIVATE -DQTAV_HAVE_LIBASS=0)
-
-endif()
-
-if(OPENAL_FOUND)
-
-    if(APPLE)
-        target_compile_definitions(core_qtav_obj PRIVATE -DHEADER_OPENAL_PREFIX)
-    endif()
-
-    target_compile_definitions(core_qtav_obj PRIVATE -DQTAV_HAVE_OPENAL=1)
-
-    target_link_libraries(core_qtav_obj
-                          PRIVATE
-                          ${OPENAL_LIBRARY}
-    )
-
-else()
-
-    target_compile_definitions(core_qtav_obj PRIVATE -DQTAV_HAVE_OPENAL=0)
-
-endif()
-
-# ---
-
-if(PORTAUDIO_FOUND)
-
-    target_compile_definitions(core_qtav_obj PRIVATE -DQTAV_HAVE_PORTAUDIO=1)
-
-    target_link_libraries(core_qtav_obj
-                          PRIVATE
-                          ${PORTAUDIO_LIBRARIES}
-    )
-
-else()
-
-    target_compile_definitions(core_qtav_obj PRIVATE -DQTAV_HAVE_PORTAUDIO=0)
-
-endif()
-
-# ---
-
-if(PULSEAUDIO_FOUND)
-
-    target_compile_definitions(core_qtav_obj PRIVATE -DQTAV_HAVE_PULSEAUDIO=1)
-
-    target_link_libraries(core_qtav_obj
-                          PRIVATE
-                          ${PULSEAUDIO_LIBRARIES}
-    )
-
-else()
-
-    target_compile_definitions(core_qtav_obj PRIVATE -DQTAV_HAVE_PULSEAUDIO=0)
-
-endif()
-
-# ---
-
-if(APPLE)
-
-    target_compile_definitions(core_qtav_obj PRIVATE -DQTAV_HAVE_VIDEOTOOLBOX=1)
-    target_compile_definitions(core_qtav_obj PRIVATE -DDQTAV_HAVE_CUDA=0)
-
-else()
-
-    target_compile_definitions(core_qtav_obj PRIVATE -DQTAV_HAVE_VIDEOTOOLBOX=0)
-    target_compile_definitions(core_qtav_obj PRIVATE -DDQTAV_HAVE_CUDA=1)
-
-endif()
-
-# ---
-
-if(AVCODEC_FOUND)
-
-    target_compile_definitions(core_qtav_obj PRIVATE -DQTAV_HAVE_AVCODEC=1)
-
-else()
-
-    target_compile_definitions(core_qtav_obj PRIVATE -DQTAV_HAVE_AVCODEC=0)
-
-endif()
-
-if(AVDEVICE_FOUND)
-
-    target_compile_definitions(core_qtav_obj PRIVATE -DQTAV_HAVE_AVDEVICE=1)
-
-else()
-
-    target_compile_definitions(core_qtav_obj PRIVATE -DQTAV_HAVE_AVDEVICE=0)
-
-endif()
-
-if(AVFILTER_FOUND)
-
-    target_compile_definitions(core_qtav_obj PRIVATE -DQTAV_HAVE_AVFILTER=1)
-
-else()
-
-    target_compile_definitions(core_qtav_obj PRIVATE -DQTAV_HAVE_AVFILTER=0)
-
-endif()
-
-if(AVFORMAT_FOUND)
-
-    target_compile_definitions(core_qtav_obj PRIVATE -DQTAV_HAVE_AVFORMAT=1)
-
-else()
-
-    target_compile_definitions(core_qtav_obj PRIVATE -DQTAV_HAVE_AVFORMAT=0)
-
-endif()
-
-if(AVUTIL_FOUND)
-
-    target_compile_definitions(core_qtav_obj PRIVATE -DQTAV_HAVE_AVUTIL=1)
-
-else()
-
-    target_compile_definitions(core_qtav_obj PRIVATE -DQTAV_HAVE_AVUTIL=0)
-
-endif()
-
-if(SWSCALE_FOUND)
-
-    target_compile_definitions(core_qtav_obj PRIVATE -DQTAV_HAVE_SWSCALE=1)
-
-else()
-
-    target_compile_definitions(core_qtav_obj PRIVATE -DQTAV_HAVE_SWSCALE=0)
-
-endif()
-
-if(AVRESAMPLE_FOUND)
-
-    target_compile_definitions(core_qtav_obj PRIVATE -DQTAV_HAVE_AVRESAMPLE=1)
-
-else()
-
-    target_compile_definitions(core_qtav_obj PRIVATE -DQTAV_HAVE_AVRESAMPLE=0)
-
-endif()
-
-if(SWRESAMPLE_FOUND)
-
-    target_compile_definitions(core_qtav_obj PRIVATE -DQTAV_HAVE_SWRESAMPLE=1)
-
-else()
-
-    target_compile_definitions(core_qtav_obj PRIVATE -DQTAV_HAVE_SWRESAMPLE=0)
-
-endif()
-
-# ---
-
-if(X11_FOUND)
-
-    target_compile_definitions(core_qtav_obj PRIVATE -DQTAV_HAVE_X11=1)
-
-    target_link_libraries(core_qtav_obj
-                          PRIVATE
-                          ${X11_LIBRARIES}
-    )
-
-else()
-
-    target_compile_definitions(core_qtav_obj PRIVATE -DQTAV_HAVE_X11=0)
-
-endif()
-
-if(HAVE_OPENGL)
-
-    target_compile_definitions(core_qtav_obj PRIVATE -DQTAV_HAVE_EGL_CAPI=1)
-
-    target_link_libraries(core_qtav_obj
-                          PRIVATE
-                          ${QT_OPENGL_LIBRARIES}
-    )
-
-else()
-
-    target_compile_definitions(core_qtav_obj PRIVATE -DQTAV_HAVE_EGL_CAPI=0)
-
-endif()
-
-if(VAAPI_FOUND)
-
-    target_compile_definitions(core_qtav_obj PRIVATE -DQTAV_HAVE_VAAPI=1)
-
-    target_link_libraries(core_qtav_obj
-                          PRIVATE
-                          ${VAAPI_LIBRARIES}
-    )
-
-else()
-
-    target_compile_definitions(core_qtav_obj PRIVATE -DQTAV_HAVE_VAAPI=0)
-
-endif()

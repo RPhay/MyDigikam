@@ -146,8 +146,6 @@ target_link_libraries(digikamcore
                       ${JPEG_LIBRARIES}
                       exiv2lib
 
-                      ${FFMPEG_LIBRARIES}
-
                       ${OPENMP_LDFLAGS}
 
                       opencv_core
@@ -180,6 +178,15 @@ if(ENABLE_DBUS)
     target_link_libraries(digikamcore
                           PRIVATE
                           Qt${QT_VERSION_MAJOR}::DBus
+    )
+
+endif()
+
+if(ENABLE_MEDIAPLAYER)
+
+    target_link_libraries(digikamcore
+                          PRIVATE
+                          ${MEDIAPLAYER_LIBRARIES}
     )
 
 endif()
