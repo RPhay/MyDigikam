@@ -262,7 +262,7 @@ void AVPlayer::Private::initCommonStatistics(int s, Statistics::Common *st, AVCo
         return;
     }
     AVStream *stream = fmt_ctx->streams[s];
-    qDebug("stream: %d, duration=%lld (%lld ms), time_base=%f", s, stream->duration, qint64(qreal(stream->duration)*av_q2d(stream->time_base)*1000.0), av_q2d(stream->time_base));
+    qDebug("stream: %d, duration=%ld (%lld ms), time_base=%f", s, stream->duration, qint64(qreal(stream->duration)*av_q2d(stream->time_base)*1000.0), av_q2d(stream->time_base));
     // AVCodecContext.codec_name is deprecated. use avcodec_get_name. check null avctx->codec?
     st->codec = QLatin1String(avcodec_get_name(avctx->codec_id));
     st->codec_long = QLatin1String(get_codec_long_name(avctx->codec_id));

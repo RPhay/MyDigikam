@@ -6,7 +6,29 @@
 
 APPLY_COMMON_POLICIES()
 
+# TODO: re-enable warnings step by step to fix code
+
 REMOVE_COMPILER_WARNINGS("-Wdeprecated-declarations")
+REMOVE_COMPILER_WARNINGS("-Wnon-virtual-dtor")
+REMOVE_COMPILER_WARNINGS("-Wundef")
+REMOVE_COMPILER_WARNINGS("-Wexpansion-to-defined")
+REMOVE_COMPILER_WARNINGS("-Wreorder")
+REMOVE_COMPILER_WARNINGS("-Wformat-extra-args")
+REMOVE_COMPILER_WARNINGS("-Wunused-parameter")
+REMOVE_COMPILER_WARNINGS("-Woverloaded-virtual")
+REMOVE_COMPILER_WARNINGS("-Wmisleading-indentation")
+REMOVE_COMPILER_WARNINGS("-Wsign-compare")
+
+DISABLE_GCC_COMPILER_WARNINGS("5.99.99" "-Wno-deprecated-declarations")
+DISABLE_GCC_COMPILER_WARNINGS("5.99.99" "-Wno-non-virtual-dtor")
+DISABLE_GCC_COMPILER_WARNINGS("5.99.99" "-Wno-undef")
+DISABLE_GCC_COMPILER_WARNINGS("5.99.99" "-Wno-expansion-to-defined")
+DISABLE_GCC_COMPILER_WARNINGS("5.99.99" "-Wno-reorder")
+DISABLE_GCC_COMPILER_WARNINGS("5.99.99" "-Wno-format-extra-args")
+DISABLE_GCC_COMPILER_WARNINGS("5.99.99" "-Wno-unused-parameter")
+DISABLE_GCC_COMPILER_WARNINGS("5.99.99" "-Wno-overloaded-virtual")
+DISABLE_GCC_COMPILER_WARNINGS("5.99.99" "-Wno-misleading-indentation")
+DISABLE_GCC_COMPILER_WARNINGS("5.99.99" "-Wno-sign-compare")
 
 # The QtAV library does not adhere to the flags we use
 remove_definitions(
@@ -256,16 +278,14 @@ endif()
 
 # ---
 
-add_definitions(-DBUILD_QTAV_LIB
-                -DBUILD_QTAVWIDGETS_LIB
-                -DQTAV_HAVE_GL=1
+add_definitions(-DQTAV_HAVE_GL=1             # For QtAVWidgets
                 -D__STDC_CONSTANT_MACROS
                 -DQTAV_HAVE_CAPI=1
-                -DQTAV_HAVE_OPENSL=0         # OpenSLES is for Android only
-                -DQTAV_HAVE_D3D11VA=0        # DirectX 3D for MSVC only
-                -DQTAV_HAVE_DSOUND=0         # DirectX Sound for MSVC only
-                -DQTAV_HAVE_DXVA=0           # DirectX VA for MSVC only
-                -DQTAV_HAVE_XAUDIO2=0        # DirectX Audio for MSVC only
+#                -DQTAV_HAVE_OPENSL=0         # OpenSLES is for Android only
+#                -DQTAV_HAVE_D3D11VA=0        # DirectX 3D for MSVC only
+#                -DQTAV_HAVE_DSOUND=0         # DirectX Sound for MSVC only
+#                -DQTAV_HAVE_DXVA=0           # DirectX VA for MSVC only
+#                -DQTAV_HAVE_XAUDIO2=0        # DirectX Audio for MSVC only
 )
 
 if(ASS_FOUND)
@@ -293,11 +313,11 @@ add_definitions(-DQTAV_HAVE_PULSEAUDIO=${HAVE_LIBPULSEAUDIO})
 if(APPLE)
 
     add_definitions(-DQTAV_HAVE_VIDEOTOOLBOX=1)
-    add_definitions(-DQTAV_HAVE_CUDA=0)
+#    add_definitions(-DQTAV_HAVE_CUDA=0)
 
 else()
 
-    add_definitions(-DQTAV_HAVE_VIDEOTOOLBOX=0)
+#    add_definitions(-DQTAV_HAVE_VIDEOTOOLBOX=0)
     add_definitions(-DQTAV_HAVE_CUDA=1)
 
 endif()
@@ -311,7 +331,7 @@ add_definitions(-DQTAV_HAVE_SWSCALE=${HAVE_LIBSWSCALE})
 add_definitions(-DQTAV_HAVE_AVRESAMPLE=${HAVE_LIBAVRESAMPLE})
 add_definitions(-DQTAV_HAVE_SWRESAMPLE=${HAVE_LIBSWRESAMPLE})
 add_definitions(-DQTAV_HAVE_X11=${HAVE_LIBX11})
-add_definitions(-DQTAV_HAVE_EGL_CAPI=${HAVE_LIBOPENGL})
+add_definitions(-DQTAV_HAVE_EGL_CAPI=${HAVE_LIBOPENGL_EGL})
 add_definitions(-DQTAV_HAVE_VAAPI=${HAVE_LIBVAAPI})
 
 # -------------------------------------------------------------------------
@@ -322,4 +342,11 @@ add_library(core_qtav_obj OBJECT ${libqtav_SRCS})
 target_compile_definitions(core_qtav_obj
                            PRIVATE
                            digikamcore_EXPORTS
+)
+
+set_target_properties(core_dmetadata_obj
+                      PROPERTIES
+                      CXX_STANDARD 11
+                      CXX_STANDARD_REQUIRED YES
+                      CXX_EXTENSIONS NO
 )

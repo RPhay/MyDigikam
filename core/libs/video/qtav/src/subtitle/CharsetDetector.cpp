@@ -61,6 +61,7 @@ public:
         uchardet_reset(m_det);
         return cs.trimmed();
 #else
+        Q_UNUSED(data);
         return QByteArray();
 #endif
     }

@@ -22,16 +22,6 @@
 #ifndef QTAV_COMPAT_H
 #define QTAV_COMPAT_H
 
-#if !defined(Q_OS_DARWIN) && defined(Q_CC_GNU)
-#   pragma GCC diagnostic push
-#   pragma GCC diagnostic ignored "-Wdeprecated-declarations"
-#endif
-
-#if defined(Q_CC_CLANG)
-#   pragma clang diagnostic push
-#   pragma clang diagnostic ignored "-Wdeprecated-declarations"
-#endif
-
 /*!
   NOTE: include this at last
  */
@@ -484,13 +474,4 @@ const char *get_codec_long_name(AVCodecID id);
 
 #if LIBAVCODEC_VERSION_INT < AV_VERSION_INT(56,56,100)
 #define AV_INPUT_BUFFER_PADDING_SIZE FF_INPUT_BUFFER_PADDING_SIZE
-#endif
-
-// Restore warnings
-#if !defined(Q_OS_DARWIN) && defined(Q_CC_GNU)
-#   pragma GCC diagnostic pop
-#endif
-
-#if defined(Q_CC_CLANG)
-#   pragma clang diagnostic pop
 #endif

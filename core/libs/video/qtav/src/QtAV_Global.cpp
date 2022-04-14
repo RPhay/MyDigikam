@@ -44,7 +44,7 @@ QString QtAV_Version_String()
     return QString::fromLatin1(QTAV_VERSION_STR);
 }
 
-#define QTAV_VERSION_STR_LONG   QTAV_VERSION_STR "(" __DATE__ ", " __TIME__ ")"
+#define QTAV_VERSION_STR_LONG   QTAV_VERSION_STR
 
 QString QtAV_Version_String_Long()
 {
