@@ -266,9 +266,9 @@ VideoDecoderVAAPI::VideoDecoderVAAPI()
     setDisplayPriority(QStringList() << QStringLiteral("X11") <<  QStringLiteral("DRM") << QStringLiteral("GLX"));
     // dynamic properties about static property details. used by UI
     // format: detail_property
-    setProperty("detail_surfaces", tr("Decoding surfaces") + QStringLiteral(" ") + tr("0: auto"));
+    setProperty("detail_surfaces", tr("Decoding surfaces 0: auto"));
     setProperty("detail_derive", tr("Maybe faster"));
-    setProperty("detail_display", QString("%1\n%2\n%3")
+    setProperty("detail_display", QStringLiteral("%1\n%2\n%3")
                 .arg("X11: libva-x11.so is required")
                 .arg("GLX: libva-glx.so is required")
                 .arg("DRM: Support 0-copy only with EGL. May work without X11. libva-drm.so is required")

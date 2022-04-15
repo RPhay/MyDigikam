@@ -18,7 +18,6 @@ DISABLE_GCC_COMPILER_WARNINGS("5.99.99" "-Wno-expansion-to-defined")
 
 # The QtAV library does not adhere to the flags we use
 remove_definitions(
-    -DQT_USE_QSTRINGBUILDER
     -DQT_NO_CAST_FROM_ASCII
 )
 
