@@ -143,8 +143,8 @@ bool AlbumManager::setDatabase(const DbEngineParameters& params, bool priority, 
 
     if (!databaseError.isEmpty())
     {
-        QString configPath = QStandardPaths::writableLocation(QStandardPaths::GenericConfigLocation) +
-                             QLatin1String("/digikamrc");
+        QString configPath = QStandardPaths::locate(QStandardPaths::GenericConfigLocation,
+                                                    QLatin1String("digikamrc"));
 
         databaseError     += i18n("\n\nIf you want to start with a new configuration and "
                                   "with a first run wizard, delete the file %1",
