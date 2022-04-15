@@ -161,7 +161,7 @@ void PWindow::readSettings()
 {
     KSharedConfigPtr config = KSharedConfig::openConfig();
     KConfigGroup grp        = config->group("Pinterest Settings");
-    d->currentAlbumName     = grp.readEntry("Current Album",QString());
+    d->currentAlbumName     = grp.readEntry("Current Album", QString());
 
     if (grp.readEntry("Resize", false))
     {
@@ -231,9 +231,9 @@ void PWindow::slotListBoardsDone(const QList<QPair<QString,QString> >& list)
     {
         d->widget->getAlbumsCoB()->addItem(
             QIcon::fromTheme(QLatin1String("system-users")),
-        list.value(i).second, list.value(i).second);
+        list.value(i).second, list.value(i).first);
 
-        if (d->currentAlbumName == list.value(i).first)
+        if (d->currentAlbumName == list.value(i).second)
         {
             d->widget->getAlbumsCoB()->setCurrentIndex(i);
         }
@@ -284,7 +284,7 @@ void PWindow::slotStartTransfer()
         return;
     }
 
-    d->currentAlbumName = d->widget->getAlbumsCoB()->itemData(d->widget->getAlbumsCoB()->currentIndex()).toString();
+    d->currentAlbumName = d->widget->getAlbumsCoB()->currentText();
     qCDebug(DIGIKAM_WEBSERVICES_LOG) << "StartTransfer:" << d->currentAlbumName
                                      << "INDEX: " << d->widget->getAlbumsCoB()->currentIndex();
     d->imagesTotal      = d->transferQueue.count();
@@ -313,10 +313,10 @@ void PWindow::uploadNextPhoto()
     }
 
     QString imgPath = d->transferQueue.first().toLocalFile();
-    QString temp    = d->currentAlbumName;
+    QString boardID = d->widget->getAlbumsCoB()->itemData(d->widget->getAlbumsCoB()->currentIndex()).toString();
 
     bool result = d->talker->addPin(imgPath,
-                                    temp,
+                                    boardID,
                                     d->widget->getResizeCheckBox()->isChecked(),
                                     d->widget->getDimensionSpB()->value(),
                                     d->widget->getImgQualitySpB()->value());
@@ -371,7 +371,6 @@ void PWindow::slotNewBoardRequest()
     {
         PFolder newFolder;
         d->albumDlg->getFolderTitle(newFolder);
-        d->currentAlbumName = d->widget->getAlbumsCoB()->itemData(d->widget->getAlbumsCoB()->currentIndex()).toString();
         d->currentAlbumName = newFolder.title;
         d->talker->createBoard(d->currentAlbumName);
     }

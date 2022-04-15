@@ -36,7 +36,6 @@
 #include <QWidget>
 #include <QMessageBox>
 #include <QApplication>
-#include <QDesktopServices>
 #include <QUrlQuery>
 #include <QHttpMultiPart>
 #include <QNetworkAccessManager>
@@ -83,13 +82,13 @@ public:
         state   (P_USERNAME),
         browser (nullptr)
     {
-        clientId     = QLatin1String("4983380570301022071");
-        clientSecret = QLatin1String("2a698db679125930d922a2dfb897e16b668a67c6f614593636e83fc3d8d9b47d");
+        clientId     = QLatin1String("1477112");
+        clientSecret = QLatin1String("69dc00477dd1c59430b15675d92ff30136126dcb");
 
-        authUrl      = QLatin1String("https://api.pinterest.com/oauth/");
-        tokenUrl     = QLatin1String("https://api.pinterest.com/v1/oauth/token");
+        authUrl      = QLatin1String("https://www.pinterest.com/oauth/");
+        tokenUrl     = QLatin1String("https://api.pinterest.com/v5/oauth/token");
         redirectUrl  = QLatin1String("https://login.live.com/oauth20_desktop.srf");
-        scope        = QLatin1String("read_public,write_public");
+        scope        = QLatin1String("boards:read,boards:write,pins:read,pins:write,user_accounts:read");
         serviceName  = QLatin1String("Pinterest");
         serviceKey   = QLatin1String("access_token");
     }
@@ -204,21 +203,22 @@ void PTalker::slotCatchUrl(const QUrl& url)
 
 void PTalker::getToken(const QString& code)
 {
-    qCDebug(DIGIKAM_WEBSERVICES_LOG) << "Code: " << code;
-    QUrl url(d->tokenUrl);
-    QUrlQuery query(url);
-    query.addQueryItem(QLatin1String("grant_type"),    QLatin1String("authorization_code"));
-    query.addQueryItem(QLatin1String("client_id"),     d->clientId);
-    query.addQueryItem(QLatin1String("client_secret"), d->clientSecret);
-    query.addQueryItem(QLatin1String("code"),          code);
-    url.setQuery(query);
-    qCDebug(DIGIKAM_WEBSERVICES_LOG) << "Token Request URL:    " << url.toString();
+    qCDebug(DIGIKAM_WEBSERVICES_LOG) << "Code:" << code;
 
-    QNetworkRequest netRequest(url);
+    QUrlQuery query;
+    query.addQueryItem(QLatin1String("grant_type"),   QLatin1String("authorization_code"));
+    query.addQueryItem(QLatin1String("redirect_uri"), d->redirectUrl);
+    query.addQueryItem(QLatin1String("code"),         code);
+
+    QByteArray basic = d->clientId.toLatin1() + ":" + d->clientSecret.toLatin1();
+    basic            = basic.toBase64();
+
+    QNetworkRequest netRequest(QUrl(d->tokenUrl));
+    netRequest.setRawHeader("Authorization", QString::fromLatin1("Basic %1").arg(QLatin1String(basic)).toLatin1());
     netRequest.setHeader(QNetworkRequest::ContentTypeHeader, QLatin1String("application/x-www-form-urlencoded"));
     netRequest.setRawHeader("Accept", "application/json");
 
-    d->reply = d->netMngr->post(netRequest, QByteArray());
+    d->reply = d->netMngr->post(netRequest, query.toString().toLatin1());
 
     d->state = Private::P_ACCESSTOKEN;
 }
@@ -286,10 +286,10 @@ void PTalker::cancel()
 
 void PTalker::createBoard(QString& boardName)
 {
-    QUrl url(QLatin1String("https://api.pinterest.com/v1/boards/"));
+    QUrl url(QLatin1String("https://api.pinterest.com/v5/boards"));
     QNetworkRequest netRequest(url);
-    netRequest.setHeader(QNetworkRequest::ContentTypeHeader, QLatin1String("application/json"));
     netRequest.setRawHeader("Authorization", QString::fromLatin1("Bearer %1").arg(d->accessToken).toUtf8());
+    netRequest.setHeader(QNetworkRequest::ContentTypeHeader, QLatin1String("application/json"));
 
     QByteArray postData = QString::fromUtf8("{\"name\": \"%1\"}").arg(boardName).toUtf8();
 /*
@@ -303,7 +303,7 @@ void PTalker::createBoard(QString& boardName)
 
 void PTalker::getUserName()
 {
-    QUrl url(QLatin1String("https://api.pinterest.com/v1/me/?fields=username"));
+    QUrl url(QLatin1String("https://api.pinterest.com/v5/user_account"));
 
     QNetworkRequest netRequest(url);
     netRequest.setRawHeader("Authorization", QString::fromLatin1("Bearer %1").arg(d->accessToken).toUtf8());
@@ -318,13 +318,11 @@ void PTalker::getUserName()
  */
 void PTalker::listBoards(const QString& /*path*/)
 {
-    QUrl url(QLatin1String("https://api.pinterest.com/v1/me/boards/"));;
+    QUrl url(QLatin1String("https://api.pinterest.com/v5/boards"));
 
     QNetworkRequest netRequest(url);
     netRequest.setRawHeader("Authorization", QString::fromLatin1("Bearer %1").arg(d->accessToken).toUtf8());
-/*
-    netRequest.setHeader(QNetworkRequest::ContentTypeHeader, QLatin1String("application/json"));
-*/
+
     d->reply = d->netMngr->get(netRequest);
 
     d->state = Private::P_LISTBOARDS;
@@ -332,7 +330,7 @@ void PTalker::listBoards(const QString& /*path*/)
 }
 
 bool PTalker::addPin(const QString& imgPath,
-                     const QString& uploadBoard,
+                     const QString& boardID,
                      bool rescale,
                      int maxDim,
                      int imageQuality)
@@ -373,66 +371,33 @@ bool PTalker::addPin(const QString& imgPath,
         meta->save(path, true);
     }
 
-    QString boardParam              = d->userName + QLatin1Char('/') + uploadBoard;
+    QFile file(imgPath);
 
-    QUrl url(QString::fromLatin1("https://api.pinterest.com/v1/pins/?access_token=%1").arg(d->accessToken));
-
-    QHttpMultiPart* const multiPart = new QHttpMultiPart(QHttpMultiPart::FormDataType);
-
-    // Board Section
-
-    QHttpPart board;
-    QString boardHeader = QLatin1String("form-data; name=\"board\"") ;
-    board.setHeader(QNetworkRequest::ContentDispositionHeader, boardHeader);
-
-    QByteArray postData = boardParam.toUtf8();
-    board.setBody(postData);
-    multiPart->append(board);
-
-    // Note section
-
-    QHttpPart note;
-    QString noteHeader = QLatin1String("form-data; name=\"note\"") ;
-    note.setHeader(QNetworkRequest::ContentDispositionHeader, noteHeader);
-
-    postData           = QByteArray();
-
-    note.setBody(postData);
-    multiPart->append(note);
-
-    // image section
-
-    QFile* const file  = new QFile(imgPath);
-
-    if (!file)
+    if (!file.open(QIODevice::ReadOnly))
     {
         return false;
     }
 
-    if (!file->open(QIODevice::ReadOnly))
-    {
-        return false;
-    }
+    QByteArray fileData = file.readAll();
+    file.close();
 
-    QHttpPart imagePart;
-    QString imagePartHeader = QLatin1String("form-data; name=\"image\"; filename=\"") +
-                              QFileInfo(imgPath).fileName() + QLatin1Char('"');
+    QUrl url(QLatin1String("https://api.pinterest.com/v5/pins"));
 
-    imagePart.setHeader(QNetworkRequest::ContentDispositionHeader, imagePartHeader);
-    imagePart.setHeader(QNetworkRequest::ContentTypeHeader, QLatin1String("image/jpeg"));
-
-    imagePart.setBodyDevice(file);
-    multiPart->append(imagePart);
-
-    QString content = QLatin1String("multipart/form-data;boundary=") + QString::fromUtf8(multiPart->boundary());
     QNetworkRequest netRequest(url);
-    netRequest.setHeader(QNetworkRequest::ContentTypeHeader, content);
+    netRequest.setRawHeader("Authorization", QString::fromLatin1("Bearer %1").arg(d->accessToken).toUtf8());
+    netRequest.setHeader(QNetworkRequest::ContentTypeHeader, QLatin1String("application/json"));
 
-    d->reply = d->netMngr->post(netRequest, multiPart);
+    QByteArray postData;
+    postData += "{\"board_id\": \"";
+    postData += boardID.toLatin1();
+    postData += "\",\"media_source\": {";
+    postData += "\"source_type\": \"image_base64\",";
+    postData += "\"content_type\": \"image/jpeg\",";
+    postData += "\"data\": \"";
+    postData += fileData.toBase64();
+    postData += "\"}}";
 
-    // delete the multiPart and file with the reply
-
-    multiPart->setParent(d->reply);
+    d->reply = d->netMngr->post(netRequest, postData);
     d->state = Private::P_ADDPIN;
 
     return true;
@@ -455,7 +420,7 @@ void PTalker::slotFinished(QNetworkReply* reply)
             QMessageBox::critical(QApplication::activeWindow(),
                                   i18n("Error"), reply->errorString());
 /*
-            qCDebug(DIGIKAM_WEBSERVICES_LOG) << "Error content: " << QString(reply->readAll());
+            qCDebug(DIGIKAM_WEBSERVICES_LOG) << "Error content: " << reply->readAll();
 */
             reply->deleteLater();
             return;
@@ -464,7 +429,7 @@ void PTalker::slotFinished(QNetworkReply* reply)
 
     QByteArray buffer = reply->readAll();
 /*
-    qCDebug(DIGIKAM_WEBSERVICES_LOG) << "BUFFER" << QString(buffer);
+    qCDebug(DIGIKAM_WEBSERVICES_LOG) << "BUFFER" << buffer;
 */
     switch (d->state)
     {
@@ -522,7 +487,7 @@ void PTalker::parseResponseAccessToken(const QByteArray& data)
 void PTalker::parseResponseAddPin(const QByteArray& data)
 {
     QJsonDocument doc      = QJsonDocument::fromJson(data);
-    QJsonObject jsonObject = doc.object()[QLatin1String("data")].toObject();
+    QJsonObject jsonObject = doc.object();
     bool success           = jsonObject.contains(QLatin1String("id"));
     emit signalBusy(false);
 
@@ -539,7 +504,7 @@ void PTalker::parseResponseAddPin(const QByteArray& data)
 void PTalker::parseResponseUserName(const QByteArray& data)
 {
     QJsonDocument doc      = QJsonDocument::fromJson(data);
-    QJsonObject jsonObject = doc.object()[QLatin1String("data")].toObject();
+    QJsonObject jsonObject = doc.object();
     d->userName            = jsonObject[QLatin1String("username")].toString();
 
     emit signalBusy(false);
@@ -562,7 +527,7 @@ void PTalker::parseResponseListBoards(const QByteArray& data)
 /*
     qCDebug(DIGIKAM_WEBSERVICES_LOG) << "Json Listing Boards : " << doc;
 */
-    QJsonArray jsonArray   = jsonObject[QLatin1String("data")].toArray();
+    QJsonArray jsonArray   = jsonObject[QLatin1String("items")].toArray();
 
     QList<QPair<QString, QString> > list;
 
