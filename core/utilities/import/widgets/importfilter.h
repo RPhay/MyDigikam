@@ -22,8 +22,8 @@
  *
  * ============================================================ */
 
-#ifndef DIGIKAM_FILTER_H
-#define DIGIKAM_FILTER_H
+#ifndef DIGIKAM_IMPORT_FILTER_H
+#define DIGIKAM_IMPORT_FILTER_H
 
 // Qt includes
 
@@ -71,4 +71,4 @@ typedef QList<Filter*> FilterList;
 
 Q_DECLARE_METATYPE(Digikam::Filter*)
 
-#endif // DIGIKAM_FILTER_H
+#endif // DIGIKAM_IMPORT_FILTER_H

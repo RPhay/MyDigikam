@@ -30,7 +30,7 @@
 
 // Local includes
 
-#include "filter.h"
+#include "importfilter.h"
 
 namespace Digikam
 {

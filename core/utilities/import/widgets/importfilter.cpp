@@ -22,7 +22,7 @@
  *
  * ============================================================ */
 
-#include "filter.h"
+#include "importfilter.h"
 
 // Qt includes
 

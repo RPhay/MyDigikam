@@ -26,7 +26,7 @@
 // Local includes
 
 #include "camiteminfo.h"
-#include "filter.h"
+#include "importfilter.h"
 #include "importimagemodel.h"
 
 namespace Digikam
