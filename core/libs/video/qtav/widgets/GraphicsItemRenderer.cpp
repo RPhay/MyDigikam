@@ -131,7 +131,7 @@ bool GraphicsItemRenderer::receiveFrame(const VideoFrame& frame)
     {
         preparePixmap(frame);
     }
-	// moved to event
+    // moved to event
     // scene()->update(sceneBoundingRect()); //TODO: thread?
     QCoreApplication::postEvent(this, new QEvent(QEvent::User));
     //update(); //does not cause an immediate paint. my not redraw.
@@ -170,8 +170,8 @@ OpenGLVideo* GraphicsItemRenderer::opengl() const
 
 void GraphicsItemRenderer::paint(QPainter *painter, const QStyleOptionGraphicsItem *option, QWidget *widget)
 {
-	Q_UNUSED(option);
-	Q_UNUSED(widget);
+    Q_UNUSED(option);
+    Q_UNUSED(widget);
     DPTR_D(GraphicsItemRenderer);
     d.painter = painter;
     QPainterFilterContext *ctx = static_cast<QPainterFilterContext*>(d.filter_context);
@@ -181,15 +181,15 @@ void GraphicsItemRenderer::paint(QPainter *painter, const QStyleOptionGraphicsIt
         qWarning("FilterContext not available!");
     }
     // save painter state, switch to native opengl painting
-	painter->save();
+    painter->save();
     painter->beginNativePainting();
-	
+    
     handlePaintEvent();
-	
-	// end native painting, restore state
+    
+    // end native painting, restore state
     painter->endNativePainting();
     painter->restore();
-	
+    
     d.painter = 0; //painter may be not available outside this function
     if (ctx)
         ctx->painter = 0;
@@ -307,9 +307,9 @@ bool GraphicsItemRenderer::onSetSaturation(qreal s)
 bool GraphicsItemRenderer::event(QEvent *event)
 {
     if (e->type() == QEvent::User) {
-		scene()->update(sceneBoundingRect());
+        scene()->update(sceneBoundingRect());
     }
-	else {
+    else {
         setFocus(); //WHY: Force focus
         QEvent::Type type = event->type();
         qDebug("GraphicsItemRenderer event type = %d", type);

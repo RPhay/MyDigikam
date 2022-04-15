@@ -1,5 +1,5 @@
 /******************************************************************************
-	QtAV:  Multimedia framework based on Qt and FFmpeg
+    QtAV:  Multimedia framework based on Qt and FFmpeg
     Copyright (C) 2012-2022 Wang Bin <wbsecg1@gmail.com>
 
 *   This file is part of QtAV

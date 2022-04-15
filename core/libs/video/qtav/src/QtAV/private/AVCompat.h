@@ -1,6 +1,6 @@
 /******************************************************************************
     QtAV:  Multimedia framework based on Qt and FFmpeg
-	solve the version problem and diffirent api in FFmpeg and libav
+    solve the version problem and diffirent api in FFmpeg and libav
     Copyright (C) 2012-2018 Wang Bin <wbsecg1@gmail.com>
 
 *   This file is part of QtAV
@@ -168,8 +168,8 @@ int avformat_alloc_output_context2(AVFormatContext **avctx, AVOutputFormat *ofor
  */
 static av_always_inline char *av_make_error_string(char *errbuf, size_t errbuf_size, int errnum)
 {
-	av_strerror(errnum, errbuf, errbuf_size);
-	return errbuf;
+    av_strerror(errnum, errbuf, errbuf_size);
+    return errbuf;
 }
 #endif /*av_err2str*/
 

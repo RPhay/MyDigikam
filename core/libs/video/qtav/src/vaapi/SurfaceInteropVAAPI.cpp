@@ -38,9 +38,9 @@
 #include <va/va_drmcommon.h>
 #else
 /** \brief Kernel DRM buffer memory type.  */
-#define VA_SURFACE_ATTRIB_MEM_TYPE_KERNEL_DRM		0x10000000
+#define VA_SURFACE_ATTRIB_MEM_TYPE_KERNEL_DRM       0x10000000
 /** \brief DRM PRIME memory type. */
-#define VA_SURFACE_ATTRIB_MEM_TYPE_DRM_PRIME		0x20000000
+#define VA_SURFACE_ATTRIB_MEM_TYPE_DRM_PRIME        0x20000000
 #endif
 #endif //QTAV_HAVE(EGL_CAPI)
 #if !defined(QT_OPENGL_ES_2)

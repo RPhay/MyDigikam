@@ -35,10 +35,10 @@
 
 namespace QtAV {
 #ifndef VA_FOURCC_RGBX
-#define VA_FOURCC_RGBX		0x58424752
+#define VA_FOURCC_RGBX      0x58424752
 #endif
 #ifndef VA_FOURCC_BGRX
-    #define VA_FOURCC_BGRX		0x58524742
+    #define VA_FOURCC_BGRX      0x58524742
 #endif
 #ifndef VA_SURFACE_ATTRIB_SETTABLE
 // travis-ci use old vaapi
@@ -136,7 +136,7 @@ class VAAPI_X11 : protected dll_helper {
 public:
     typedef unsigned long Drawable;
     typedef VADisplay vaGetDisplay_t(Display *);
-    typedef VAStatus vaPutSurface_t(VADisplay, VASurfaceID,	Drawable,
+    typedef VAStatus vaPutSurface_t(VADisplay, VASurfaceID, Drawable,
                                    short, short, unsigned short,  unsigned short,
                                    short, short, unsigned short, unsigned short,
                                    VARectangle *, unsigned int,  unsigned int);
@@ -148,7 +148,7 @@ public:
         assert(fp_vaGetDisplay);
         return fp_vaGetDisplay(dpy);
     }
-    VAStatus vaPutSurface (VADisplay dpy, VASurfaceID surface,	Drawable draw, /* X Drawable */
+    VAStatus vaPutSurface (VADisplay dpy, VASurfaceID surface,  Drawable draw, /* X Drawable */
         short srcx, short srcy, unsigned short srcw,  unsigned short srch,
         short destx, short desty, unsigned short destw, unsigned short desth,
         VARectangle *cliprects, /* client supplied destination clip list */

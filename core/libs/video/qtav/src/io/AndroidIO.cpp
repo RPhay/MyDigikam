@@ -109,14 +109,14 @@ void AndroidIO::onUrlChanged()
     jmi::JObject<Application> app_ctx(jmi::android::application());
 
     struct ContentResolver final: jmi::ClassTag { static std::string name() { return "android/content/ContentResolver";}};
-	struct GetContentResolver final: jmi::MethodTag { static const char* name() {return "getContentResolver";}};
+    struct GetContentResolver final: jmi::MethodTag { static const char* name() {return "getContentResolver";}};
     jmi::JObject<ContentResolver> cr = app_ctx.call<jmi::JObject<ContentResolver>, GetContentResolver>();
     if (!cr.error().empty()) {
         qWarning("getContentResolver error: %s", cr.error().data());
         return;
     }
     struct Uri final: jmi::ClassTag { static std::string name() { return "android/net/Uri";}};
-	struct Parse final: jmi::MethodTag { static const char* name() {return "parse";}};
+    struct Parse final: jmi::MethodTag { static const char* name() {return "parse";}};
     jmi::JObject<Uri> uri = jmi::JObject<Uri>::callStatic<jmi::JObject<Uri>, Parse>(url().toUtf8().constData()); // move?
     // openInputStream?
     struct ParcelFileDescriptor final: jmi::ClassTag { static std::string name() { return "android/os/ParcelFileDescriptor";}};
@@ -124,23 +124,23 @@ void AndroidIO::onUrlChanged()
     // ParcelFileDescriptor supported schemes: content, file
 #if 1
     struct AssetFileDescriptor final: jmi::ClassTag { static std::string name() { return "android/content/res/AssetFileDescriptor";}};
-	struct OpenAssetFileDescriptor final: jmi::MethodTag { static const char* name() {return "openAssetFileDescriptor";}};
+    struct OpenAssetFileDescriptor final: jmi::MethodTag { static const char* name() {return "openAssetFileDescriptor";}};
     jmi::JObject<AssetFileDescriptor> afd = cr.call<jmi::JObject<AssetFileDescriptor>, OpenAssetFileDescriptor>(std::move(uri), "r"); // TODO: rw
     if (!afd.error().empty()) {
         qWarning("openAssetFileDescriptor error: %s", afd.error().data());
         return;
     }
-	struct GetParcelFileDescriptor final: jmi::MethodTag { static const char* name() {return "getParcelFileDescriptor";}};
+    struct GetParcelFileDescriptor final: jmi::MethodTag { static const char* name() {return "getParcelFileDescriptor";}};
     jmi::JObject<ParcelFileDescriptor> pfd = afd.call<jmi::JObject<ParcelFileDescriptor>, GetParcelFileDescriptor>();
 #else
-	struct OpenFileDescriptor final: jmi::MethodTag { static const char* name() {return "openFileDescriptor";}};
+    struct OpenFileDescriptor final: jmi::MethodTag { static const char* name() {return "openFileDescriptor";}};
     jmi::JObject<ParcelFileDescriptor> pfd = cr.call<jmi::JObject<ParcelFileDescriptor>, OpenFileDescriptor>(std::move(uri), "r");
 #endif
     if (!pfd.error().empty()) {
         qWarning("get ParcelFileDescriptor error: %s", pfd.error().data());
         return;
     }
-	struct DetachFd final: jmi::MethodTag { static const char* name() {return "detachFd";}};
+    struct DetachFd final: jmi::MethodTag { static const char* name() {return "detachFd";}};
     int fd = pfd.call<int,DetachFd>();
     qt_file.open(fd, QIODevice::ReadOnly);
 }

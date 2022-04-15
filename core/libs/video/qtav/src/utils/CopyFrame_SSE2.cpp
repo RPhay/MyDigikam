@@ -52,9 +52,9 @@
 void CopyFrame_SSE2(void *pSrc, void *pDest, void *pCacheBlock, UINT width, UINT height, UINT pitch)
 {
     //assert(((intptr_t)pCacheBlock & 0x0f) == 0 && (dst_pitch & 0x0f) == 0);
-    __m128i		x0, x1, x2, x3;
-    __m128i		*pCache;
-    UINT		x, y, yLoad, yStore;
+    __m128i     x0, x1, x2, x3;
+    __m128i     *pCache;
+    UINT        x, y, yLoad, yStore;
 
     UINT rowsPerBlock = CACHED_BUFFER_SIZE / pitch;
     const UINT width64 = (width + 63) & ~0x03f;
@@ -119,13 +119,13 @@ void CopyFrame_SSE2(void *pSrc, void *pDest, void *pCacheBlock, UINT width, UINT
 
                 if (dst_unaligned) {
                     // movdqu
-                    _mm_storeu_si128(pStore,	x0);
+                    _mm_storeu_si128(pStore,    x0);
                     _mm_storeu_si128(pStore + 1, x1);
                     _mm_storeu_si128(pStore + 2, x2);
                     _mm_storeu_si128(pStore + 3, x3);
                 } else {
                     // movntdq
-                    _mm_stream_si128(pStore,	x0);
+                    _mm_stream_si128(pStore,    x0);
                     _mm_stream_si128(pStore + 1, x1);
                     _mm_stream_si128(pStore + 2, x2);
                     _mm_stream_si128(pStore + 3, x3);
