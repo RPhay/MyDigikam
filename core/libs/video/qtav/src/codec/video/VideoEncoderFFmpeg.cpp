@@ -156,7 +156,7 @@ bool VideoEncoderFFmpegPrivate::open()
     bool use_hwctx = false;
     if (hwfmt != AVPixelFormat(-1)) {
 #ifdef HAVE_AVHWCTX
-        const AVHWDeviceType dt = fromHWAName(codec_name.section(QChar('_'), -1).toUtf8().constData());
+        const AVHWDeviceType dt = fromHWAName(codec_name.section(QLatin1Char('_'), -1).toUtf8().constData());
         if (dt != AVHWDeviceType(-1)) {
             use_hwctx = true;
             avctx->pix_fmt = hwfmt;

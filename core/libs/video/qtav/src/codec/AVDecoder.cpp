@@ -33,7 +33,7 @@ static AVCodec* get_codec(const QString &name, const QString& hwa, AVCodecID cid
     if (name.isEmpty()) {
         if (hwa.isEmpty())
             return avcodec_find_decoder(cid);
-        fullname = QString("%1_%2").arg(avcodec_get_name(cid)).arg(hwa);
+        fullname = QStringLiteral("%1_%2").arg(QString::fromLatin1(avcodec_get_name(cid))).arg(hwa);
     }
     AVCodec *codec = avcodec_find_decoder_by_name(fullname.toUtf8().constData());
     if (codec)
@@ -82,7 +82,7 @@ bool AVDecoder::open()
         if (d.codec_name.isEmpty()) {
             es = es.arg(QLatin1String(avcodec_get_name(d.codec_ctx->codec_id)));
             if (!hwa.isEmpty())
-                es.append('_').append(hwa);
+                es.append(QLatin1Char('_')).append(hwa);
         } else {
             es = es.arg(d.codec_name);
         }

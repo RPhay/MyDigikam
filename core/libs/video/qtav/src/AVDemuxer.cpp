@@ -770,13 +770,13 @@ bool AVDemuxer::load()
     if (d->file.startsWith(avd_scheme)) {
         QStringList parts = d->file.split(QStringLiteral(":"));
         int s0 = avd_scheme.size();
-        const int s1 = d->file.indexOf(QChar(':'), s0);
+        const int s1 = d->file.indexOf(QLatin1Char(':'), s0);
         if (s1 < 0) {
             qDebug("invalid avdevice specification");
             setMediaStatus(InvalidMedia);
             return false;
         }
-        if (d->file.at(s0) == QChar('/') && d->file.at(s0+1) == QChar('/')) {
+        if (d->file.at(s0) == QLatin1Char('/') && d->file.at(s0+1) == QLatin1Char('/')) {
             // avdevice://avfoundation:device_name
             s0 += 2;
         } // else avdevice:video4linux2:file_name

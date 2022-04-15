@@ -102,7 +102,7 @@ bool FrameReader::Private::tryLoad()
                 continue;
             decoder.reset(vd);
             decoder->setCodecContext(demuxer.videoCodecContext());
-            decoder->setProperty("copyMode", "OptimizedCopy");
+            decoder->setProperty("copyMode", QLatin1String("OptimizedCopy"));
             if (!decoder->open()) {
                 decoder.reset(0);
                 continue;

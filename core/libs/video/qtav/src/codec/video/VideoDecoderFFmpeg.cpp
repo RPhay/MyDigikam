@@ -113,17 +113,17 @@ public:
 
     static VideoDecoder* createMMAL() {
         VideoDecoderFFmpeg *vd = new VideoDecoderFFmpeg();
-        vd->setProperty("hwaccel", "mmal");
+        vd->setProperty("hwaccel", QLatin1String("mmal"));
         return vd;
     }
     static VideoDecoder* createQSV() {
         VideoDecoderFFmpeg *vd = new VideoDecoderFFmpeg();
-        vd->setProperty("hwaccel", "qsv");
+        vd->setProperty("hwaccel", QLatin1String("qsv"));
         return vd;
     }
     static VideoDecoder* createCrystalHD() {
         VideoDecoderFFmpeg *vd = new VideoDecoderFFmpeg();
-        vd->setProperty("hwaccel", "crystalhd");
+        vd->setProperty("hwaccel", QLatin1String("crystalhd"));
         return vd;
     }
 
@@ -264,7 +264,7 @@ VideoDecoderFFmpeg::VideoDecoderFFmpeg():
     setProperty("detail_skip_idct", tr("Force skipping of idct to speed up decoding for frame types (-1=None, "
                                        "0=Default, 1=B-frames, 2=P-frames, 3=B+P frames, 4=all frames)"));
     setProperty("detail_skip_frame", tr("Force skipping frames for speed up decoding."));
-    setProperty("detail_threads", QString("%1\n%2\n%3")
+    setProperty("detail_threads", QStringLiteral("%1\n%2\n%3")
                 .arg(tr("Number of decoding threads. Set before open. Maybe no effect for some decoders"))
                 .arg(tr("0: auto"))
                 .arg(tr("1: single thread decoding")));

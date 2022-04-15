@@ -274,7 +274,7 @@ QStringList AudioOutput::backendsAvailable()
         return all;
     AudioOutputBackendId* i = NULL;
     while ((i = AudioOutputBackend::next(i)) != NULL) {
-        all.append(AudioOutputBackend::name(*i));
+        all.append(QLatin1String(AudioOutputBackend::name(*i)));
     }
     all = AudioOutputBackend::defaultPriority() << all;
     all.removeDuplicates();

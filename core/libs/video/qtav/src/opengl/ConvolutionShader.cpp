@@ -43,8 +43,8 @@ public:
             s += QStringLiteral("c += texture(tex, pos + u_texelSize[p]*vec2(%1.0,%2.0))*u_Kernel[%3];")
                     .arg(x).arg(y).arg(i);
         }
-        s += "c.a = texture(tex, pos).a;"
-             "return c;}\n";
+        s += QStringLiteral("c.a = texture(tex, pos).a;"
+             "return c;}\n");
         sample_func = s.toUtf8();
     }
 

@@ -237,7 +237,7 @@ VideoDecoderFFmpegHW::VideoDecoderFFmpegHW(VideoDecoderFFmpegHWPrivate &d):
                 .arg(tr("Not implemented for all codecs"))
                 .arg(tr("OptimizedCopy: copy from USWC memory optimized by SSE4.1"))
                 .arg(tr("GenericCopy: slowest. Generic cpu copy")));
-    setProperty("detail_threads", QString("%1\n%2\n%3\n%4")
+    setProperty("detail_threads", QStringLiteral("%1\n%2\n%3\n%4")
                 .arg(tr("Number of decoding threads. Set before open. Maybe no effect for some decoders"))
                 .arg(tr("Multithread decoding may crash"))
                 .arg(tr("0: auto"))

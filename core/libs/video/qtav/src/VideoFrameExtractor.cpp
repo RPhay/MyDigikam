@@ -211,7 +211,7 @@ public:
     // return the key frame position
     bool extractInPrecision(qint64 value, int range, QString & err, bool & aborted) {
         abort_seek = false;
-        err = "";
+        err = QString();
         aborted = false;
         frame = VideoFrame();
         if (value < demuxer.startTime())
@@ -224,7 +224,7 @@ public:
         bool warn_out_of_range = true;
         while (!demuxer.atEnd()) {
             if (abort_seek) {
-                err = "abort seek before read";
+                err = QLatin1String("abort seek before read");
                 qDebug("VideoFrameExtractor abort seek before read");
                 aborted = true;
                 return false;
@@ -270,7 +270,7 @@ public:
         while (k < 2 && !frame.isValid()) {
             if (abort_seek) {
                 qDebug("VideoFrameExtractor abort seek before decoding key frames");
-                err = "abort seek before decoding key frames";
+                err = QLatin1String("abort seek before decoding key frames");
                 aborted = true;
                 return false;
             }
@@ -295,7 +295,7 @@ public:
         while (!demuxer.atEnd()) {
             if (abort_seek) {
                 qDebug("VideoFrameExtractor abort seek after key frame before read");
-                err = "abort seek after key frame before read";
+                err = QLatin1String("abort seek after key frame before read");
                 aborted = true;
                 return false;
             }
@@ -327,7 +327,7 @@ public:
             if (!decoder->decode(pkt)) {
                 qWarning("!!!!!!!!!decode failed!!!!");
                 frame = VideoFrame();
-                err = "decode failed";
+                err = QLatin1String("decode failed");
                 return false;
             }
             // store the last decoded frame because next frame may be out of range
@@ -526,7 +526,7 @@ void VideoFrameExtractor::extractInternal(qint64 pos)
     DPTR_D(VideoFrameExtractor);
     int precision_old = precision();
     if (!d.checkAndOpen()) {
-        Q_EMIT error("Cannot open file");
+        Q_EMIT error(QLatin1String("Cannot open file"));
         //qWarning("can not open decoder....");
         return;
     }
