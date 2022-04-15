@@ -49,7 +49,7 @@ class Q_AVWIDGETS_EXPORT WidgetRenderer : public QWidget, public QPainterRendere
     Q_PROPERTY(QSize videoFrameSize READ videoFrameSize NOTIFY videoFrameSizeChanged)
     Q_ENUMS(Quality)
 public:
-    explicit WidgetRenderer(QWidget *parent = 0, Qt::WindowFlags f = Qt::Widget);
+    explicit WidgetRenderer(QWidget *parent = 0, Qt::WindowFlags f =  Qt::WindowFlags(Qt::Widget));
     virtual VideoRendererId id() const Q_DECL_OVERRIDE;
     virtual QWidget* widget() Q_DECL_OVERRIDE { return this; }
 Q_SIGNALS:
