@@ -1457,7 +1457,7 @@ void AVPlayer::seekChapter(int incr)
     av_time_base_q.den = AV_TIME_BASE;
 
     /* find the current chapter */
-    for (i = 0; i < chapters(); ++i) {
+    for (i = 0; i < (int)chapters(); ++i) {
         AVChapter *ch = ic->chapters[i];
         if (av_compare_ts(pos, av_time_base_q, ch->start, ch->time_base) < 0) {
             --i;
@@ -1469,7 +1469,7 @@ void AVPlayer::seekChapter(int incr)
     //i = FFMAX(i, 0);
     if (i <= 0)
         i = 0;
-    if (i >= chapters())
+    if (i >= (int)chapters())
         return;
 
     //av_log(NULL, AV_LOG_VERBOSE, "Seeking to chapter %d.\n", i);
