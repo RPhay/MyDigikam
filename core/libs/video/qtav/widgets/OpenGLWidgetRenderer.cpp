@@ -81,7 +81,7 @@ void OpenGLWidgetRenderer::resizeEvent(QResizeEvent *e)
     QOpenGLWidget::resizeEvent(e); //will call resizeGL(). TODO:will call paintEvent()?
 }
 
-void OpenGLWidgetRenderer::showEvent(QShowEvent *e)
+void OpenGLWidgetRenderer::showEvent(QShowEvent* /*e*/)
 {
     onShowEvent(); // TODO: onShowEvent(w, h)?
     resizeGL(width(), height());

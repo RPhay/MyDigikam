@@ -229,6 +229,7 @@ void AudioOutputPulse::writeCallback(pa_stream *s, size_t length, void *userdata
 
 void AudioOutputPulse::successCallback(pa_stream *s, int success, void *userdata)
 {
+    Q_UNUSED(s);
     Q_UNUSED(success); //?
     AudioOutputPulse *p = reinterpret_cast<AudioOutputPulse*>(userdata);
     pa_threaded_mainloop_signal(p->loop, 0);

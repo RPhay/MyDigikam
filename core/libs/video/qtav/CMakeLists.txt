@@ -12,14 +12,12 @@ REMOVE_COMPILER_WARNINGS("-Wdeprecated-declarations")
 REMOVE_COMPILER_WARNINGS("-Wnon-virtual-dtor")
 REMOVE_COMPILER_WARNINGS("-Wundef")
 REMOVE_COMPILER_WARNINGS("-Wexpansion-to-defined")
-REMOVE_COMPILER_WARNINGS("-Wunused-parameter")
 REMOVE_COMPILER_WARNINGS("-Woverloaded-virtual")
 
 DISABLE_GCC_COMPILER_WARNINGS("5.99.99" "-Wno-deprecated-declarations")
 DISABLE_GCC_COMPILER_WARNINGS("5.99.99" "-Wno-non-virtual-dtor")
 DISABLE_GCC_COMPILER_WARNINGS("5.99.99" "-Wno-undef")
 DISABLE_GCC_COMPILER_WARNINGS("5.99.99" "-Wno-expansion-to-defined")
-DISABLE_GCC_COMPILER_WARNINGS("5.99.99" "-Wno-unused-parameter")
 DISABLE_GCC_COMPILER_WARNINGS("5.99.99" "-Wno-overloaded-virtual")
 
 # The QtAV library does not adhere to the flags we use
