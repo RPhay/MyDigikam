@@ -1,26 +1,27 @@
-/******************************************************************************
-    QtAV:  Media play library based on Qt and FFmpeg
-    Copyright (C) 2012-2017 Wang Bin <wbsecg1@gmail.com>
+/* ============================================================
+ *
+ * This file is a part of digiKam project
+ * https://www.digikam.org
+ *
+ * Date        : 2012-10-31
+ * Description : QtAV: Multimedia framework based on Qt and FFmpeg
+ *
+ * Copyright (C) 2012-2022 Wang Bin <wbsecg1 at gmail dot com>
+ *
+ * This program is free software; you can redistribute it
+ * and/or modify it under the terms of the GNU General
+ * Public License as published by the Free Software Foundation;
+ * either version 2, or (at your option) any later version.
+ *
+ * This program is distributed in the hope that it will be useful,
+ * but WITHOUT ANY WARRANTY; without even the implied warranty of
+ * MERCHANTABILITY or FITNESS FOR A PARTICULAR PURPOSE.  See the
+ * GNU General Public License for more details.
+ *
+ * ============================================================ */
 
-*   This file is part of QtAV
-
-    This library is free software; you can redistribute it and/or
-    modify it under the terms of the GNU Lesser General Public
-    License as published by the Free Software Foundation; either
-    version 2.1 of the License, or (at your option) any later version.
-
-    This library is distributed in the hope that it will be useful,
-    but WITHOUT ANY WARRANTY; without even the implied warranty of
-    MERCHANTABILITY or FITNESS FOR A PARTICULAR PURPOSE.  See the GNU
-    Lesser General Public License for more details.
-
-    You should have received a copy of the GNU Lesser General Public
-    License along with this library; if not, write to the Free Software
-    Foundation, Inc., 51 Franklin Street, Fifth Floor, Boston, MA  02110-1301  USA
-******************************************************************************/
-
-#ifndef QAV_VIDEORENDERER_P_H
-#define QAV_VIDEORENDERER_P_H
+#ifndef QTAV_VIDEORENDERER_P_H
+#define QTAV_VIDEORENDERER_P_H
 
 #include <QtAV/private/AVOutput_p.h>
 #include <QtAV/VideoRenderer.h>
@@ -37,13 +38,17 @@ QT_BEGIN_NAMESPACE
 class QObject;
 class QWidget;
 QT_END_NAMESPACE
-namespace QtAV {
+
+namespace QtAV
+{
 class Filter;
+
 class Q_AV_PRIVATE_EXPORT VideoRendererPrivate : public AVOutputPrivate
 {
 public:
-    VideoRendererPrivate():
-        AVOutputPrivate()
+
+    VideoRendererPrivate()
+      : AVOutputPrivate()
       , update_background(true)
       , renderer_width(480)
       , renderer_height(320)
@@ -66,6 +71,7 @@ public:
         //conv.setInFormat(PIX_FMT_YUV420P);
         //conv.setOutFormat(PIX_FMT_BGR32); //TODO: why not RGB32?
     }
+
     virtual ~VideoRendererPrivate(){
     }
 
@@ -100,6 +106,7 @@ public:
         //qDebug("%f %dx%d <<<<<<<<", out_aspect_ratio, out_rect.width(), out_rect.height());
         return out_rect0 != out_rect;
     }
+
     virtual void setupQuality() {}
     int rotation() const {
         if (!statistics)
@@ -130,10 +137,13 @@ public:
 
     qreal brightness, contrast, hue, saturation;
     QColor bg_color;
+
 private:
+
     int orientation;
     friend class VideoRenderer;
 };
 
 } //namespace QtAV
-#endif // QAV_VIDEORENDERER_P_H
+
+#endif // QTAV_VIDEORENDERER_P_H

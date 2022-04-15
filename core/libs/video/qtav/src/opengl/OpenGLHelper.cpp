@@ -112,7 +112,7 @@ QByteArray compatibleShaderHeader(QOpenGLShader::ShaderType type)
     h.append("#version ").append(QByteArray::number(GLSLVersion()));
     if (isOpenGLES() && QOpenGLContext::currentContext()->format().majorVersion() > 2)
         h += " es";
-    h += "\n";
+    h += '\n';
     h += commonShaderHeader(type);
     if (GLSLVersion() >= 130) { // gl(es) 3
         if (type == QOpenGLShader::Vertex) {

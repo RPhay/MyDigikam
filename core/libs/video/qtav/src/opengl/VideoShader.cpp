@@ -174,7 +174,7 @@ const char* VideoShader::fragmentShader() const
     QByteArray header("*/");
     if (userShaderHeader(QOpenGLShader::Fragment))
         header += QByteArray(userShaderHeader(QOpenGLShader::Fragment));
-    header += "\n";
+    header += '\n';
     header += "uniform vec2 u_texelSize[" + QByteArray::number(nb_planes) + "];\n";
     header += "uniform vec2 u_textureSize[" + QByteArray::number(nb_planes) + "];\n";
     header += "/*";
