@@ -500,7 +500,7 @@ bool VideoDecoderVAAPIPrivate::open()
       //  copy_uswc = false;
 
     //disable_derive = !copy_uswc;
-    description = QObject::tr("VA API version %1.%2; Vendor: %3;").arg(version_major).arg(version_minor).arg(vendor);
+    description = i18n("VA API version %1.%2; Vendor: %3;").arg(version_major).arg(version_minor).arg(vendor);
     DPTR_P(VideoDecoderVAAPI);
     int idx = p.staticMetaObject.indexOfEnumerator("DisplayType");
     const QMetaEnum me = p.staticMetaObject.enumerator(idx);

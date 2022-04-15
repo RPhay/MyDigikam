@@ -163,8 +163,8 @@ VideoDecoderVideoToolbox::VideoDecoderVideoToolbox()
                   i18n("CVOpenGLES: iOS, no copy, fast") + QStringLiteral("\n") +
                   i18n("IOSurface: macOS, no copy, fast") + QStringLiteral("\n") +
                   i18n("Auto: choose the fastest"));
-    Q_UNUSED(QObject::tr("interop"));
-    Q_UNUSED(QObject::tr("format"));
+    Q_UNUSED(i18n("interop"));
+    Q_UNUSED(i18n("format"));
 }
 
 VideoDecoderId VideoDecoderVideoToolbox::id() const

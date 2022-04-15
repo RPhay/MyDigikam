@@ -33,6 +33,10 @@ using QRegExp = QRegularExpression;
 #include "utils/internal.h"
 #include "utils/Logger.h"
 
+// KDE includes
+
+#include <klocalizedstring.h>
+
 unsigned QtAV_Version()
 {
     return QTAV_VERSION;

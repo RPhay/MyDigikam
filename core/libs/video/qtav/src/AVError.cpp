@@ -24,6 +24,10 @@
 #include <QtCore/qdebug.h>
 #endif
 
+// KDE includes
+
+#include <klocalizedstring.h>
+
 namespace QtAV {
 
 namespace
@@ -133,69 +137,69 @@ QString AVError::string() const
     if (errStr.isEmpty()) {
         switch (mError) {
         case NoError:
-            errStr = QObject::tr("No error");
+            errStr = i18n("No error");
             break;
         case OpenError:
-            errStr = QObject::tr("Open error");
+            errStr = i18n("Open error");
             break;
         case OpenTimedout:
-            errStr = QObject::tr("Open timed out");
+            errStr = i18n("Open timed out");
             break;
         case ParseStreamTimedOut:
-            errStr = QObject::tr("Parse stream timed out");
+            errStr = i18n("Parse stream timed out");
             break;
         case ParseStreamError:
-            errStr = QObject::tr("Parse stream error");
+            errStr = i18n("Parse stream error");
             break;
         case StreamNotFound:
-            errStr = QObject::tr("Stream not found");
+            errStr = i18n("Stream not found");
             break;
         case ReadTimedout:
-            errStr = QObject::tr("Read packet timed out");
+            errStr = i18n("Read packet timed out");
             break;
         case ReadError:
-            errStr = QObject::tr("Read error");
+            errStr = i18n("Read error");
             break;
         case SeekError:
-            errStr = QObject::tr("Seek error");
+            errStr = i18n("Seek error");
             break;
         case ResourceError:
-            errStr = QObject::tr("Resource error");
+            errStr = i18n("Resource error");
             break;
 
         case OpenCodecError:
-            errStr = QObject::tr("Open codec error");
+            errStr = i18n("Open codec error");
             break;
         case CloseCodecError:
-            errStr = QObject::tr("Close codec error");
+            errStr = i18n("Close codec error");
             break;
         case VideoCodecNotFound:
-            errStr = QObject::tr("Video codec not found");
+            errStr = i18n("Video codec not found");
             break;
         case AudioCodecNotFound:
-            errStr = QObject::tr("Audio codec not found");
+            errStr = i18n("Audio codec not found");
             break;
         case SubtitleCodecNotFound:
-            errStr = QObject::tr("Subtitle codec not found");
+            errStr = i18n("Subtitle codec not found");
             break;
         case CodecError:
-            errStr = QObject::tr("Codec error");
+            errStr = i18n("Codec error");
             break;
 
         case FormatError:
-            errStr = QObject::tr("Format error");
+            errStr = i18n("Format error");
             break;
 
         case NetworkError:
-            errStr = QObject::tr("Network error");
+            errStr = i18n("Network error");
             break;
 
         case AccessDenied:
-            errStr = QObject::tr("Access denied");
+            errStr = i18n("Access denied");
             break;
 
         default:
-            errStr = QObject::tr("Unknow error");
+            errStr = i18n("Unknow error");
             break;
         }
     }

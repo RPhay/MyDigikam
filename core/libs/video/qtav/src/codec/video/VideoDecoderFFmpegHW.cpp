@@ -26,6 +26,11 @@
 #ifndef Q_UNLIKELY
 #define Q_UNLIKELY(x) (!!(x))
 #endif
+
+// KDE includes
+
+#include <klocalizedstring.h>
+
 namespace QtAV {
 
 static AVPixelFormat ffmpeg_get_va_format(struct AVCodecContext *c, const AVPixelFormat * ff)
@@ -242,10 +247,10 @@ VideoDecoderFFmpegHW::VideoDecoderFFmpegHW(VideoDecoderFFmpegHWPrivate &d):
                 .arg(tr("Multithread decoding may crash"))
                 .arg(tr("0: auto"))
                 .arg(tr("1: single thread decoding")));
-    Q_UNUSED(QObject::tr("ZeroCopy"));
-    Q_UNUSED(QObject::tr("OptimizedCopy"));
-    Q_UNUSED(QObject::tr("GenericCopy"));
-    Q_UNUSED(QObject::tr("copyMode"));
+    Q_UNUSED(i18n("ZeroCopy"));
+    Q_UNUSED(i18n("OptimizedCopy"));
+    Q_UNUSED(i18n("GenericCopy"));
+    Q_UNUSED(i18n("copyMode"));
 }
 
 void VideoDecoderFFmpegHW::setThreads(int value)

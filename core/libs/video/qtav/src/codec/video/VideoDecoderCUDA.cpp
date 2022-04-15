@@ -344,10 +344,10 @@ VideoDecoderCUDA::VideoDecoderCUDA():
                 .arg(tr("DirectCopy: copy back to host memory but video frames and map to GL texture"))
                 .arg(tr("GenericCopy: copy back to host memory and each video frame"))
                 );
-    Q_UNUSED(QObject::tr("ZeroCopy"));
-    Q_UNUSED(QObject::tr("DirectCopy"));
-    Q_UNUSED(QObject::tr("GenericCopy"));
-    Q_UNUSED(QObject::tr("copyMode"));
+    Q_UNUSED(i18n("ZeroCopy"));
+    Q_UNUSED(i18n("DirectCopy"));
+    Q_UNUSED(i18n("GenericCopy"));
+    Q_UNUSED(i18n("copyMode"));
 }
 
 VideoDecoderCUDA::~VideoDecoderCUDA()
@@ -631,7 +631,7 @@ bool VideoDecoderCUDAPrivate::createCUVIDParser()
 {
     cudaVideoCodec cudaCodec = mapCodecFromFFmpeg(codec_ctx->codec_id);
     if (cudaCodec == cudaVideoCodec_NumCodecs) {
-        QString es(QObject::tr("Codec %1 is not supported by CUDA").arg(QLatin1String(avcodec_get_name(codec_ctx->codec_id))));
+        QString es(i18n("Codec %1 is not supported by CUDA").arg(QLatin1String(avcodec_get_name(codec_ctx->codec_id))));
         //emit error(AVError::CodecError, es);
         qWarning() << es;
         available = false;

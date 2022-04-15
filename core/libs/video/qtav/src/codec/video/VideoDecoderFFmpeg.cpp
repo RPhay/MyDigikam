@@ -407,15 +407,15 @@ QString VideoDecoderFFmpeg::hwaccel() const
 //namespace {
 
 void QtAV_i18n() {
-    QObject::tr("codecName");
-    QObject::tr("skip_loop_filter");
-    QObject::tr("skip_idct");
-    QObject::tr("strict");
-    QObject::tr("skip_frame");
-    QObject::tr("threads");
-    QObject::tr("thread_type");
-    QObject::tr("vismv");
-    QObject::tr("bug");
+    i18n("codecName");
+    i18n("skip_loop_filter");
+    i18n("skip_idct");
+    i18n("strict");
+    i18n("skip_frame");
+    i18n("threads");
+    i18n("thread_type");
+    i18n("vismv");
+    i18n("bug");
 }
 //}
 } //namespace QtAV

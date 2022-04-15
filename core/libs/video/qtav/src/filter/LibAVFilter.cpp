@@ -29,6 +29,10 @@
 #include "utils/internal.h"
 #include "utils/Logger.h"
 
+// KDE includes
+
+#include <klocalizedstring.h>
+
 /*
  * libav10.x, ffmpeg2.x: av_buffersink_read deprecated
  * libav9.x: only av_buffersink_read can be used
@@ -211,7 +215,7 @@ QString LibAVFilter::filterDescription(const QString &filterName)
     if (f->description)
         s.append(QString::fromUtf8(f->description));
 #if AV_MODULE_CHECK(LIBAVFILTER, 3, 7, 0, 8, 100)
-    return s.append(QLatin1String("\n")).append(QObject::tr("Options:"))
+    return s.append(QLatin1String("\n")).append(i18n("Options:"))
             .append(Internal::optionsToString((void*)&f->priv_class));
 #endif
 #endif //QTAV_HAVE(AVFILTER)

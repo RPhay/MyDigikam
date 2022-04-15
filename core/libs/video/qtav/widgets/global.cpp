@@ -43,6 +43,10 @@
 #include "QtAV/private/factory.h"
 #include "QtAV/private/mkid.h"
 
+// KDE includes
+
+#include <klocalizedstring.h>
+
 namespace QtAV {
 
 VideoRendererId VideoRendererId_Widget = mkid::id32base36_6<'W', 'i', 'd', 'g', 'e', 't'>::value;
@@ -139,15 +143,15 @@ void about() {
     QTabWidget *tab = new QTabWidget;
     tab->addTab(viewQtAV, QStringLiteral("QtAV"));
     tab->addTab(viewFFmpeg, QStringLiteral("FFmpeg"));
-    QPushButton *qbtn = new QPushButton(QObject::tr("About Qt"));
-    QPushButton *btn = new QPushButton(QObject::tr("Ok"));
+    QPushButton *qbtn = new QPushButton(i18n("About Qt"));
+    QPushButton *btn = new QPushButton(i18n("Ok"));
     QHBoxLayout *btnLayout = new QHBoxLayout;
     btnLayout->addWidget(btn);
     btnLayout->addStretch();
     btnLayout->addWidget(qbtn);
     btn->setFocus();
     QDialog dialog;
-    dialog.setWindowTitle(QObject::tr("About") + QStringLiteral("  QtAV"));
+    dialog.setWindowTitle(i18n("About") + QStringLiteral("  QtAV"));
     QVBoxLayout *layout = new QVBoxLayout;
     dialog.setLayout(layout);
     layout->addWidget(tab);
@@ -159,11 +163,11 @@ void about() {
 
 void aboutFFmpeg()
 {
-    QMessageBox::about(0, QObject::tr("About FFmpeg"), aboutFFmpeg_HTML());
+    QMessageBox::about(0, i18n("About FFmpeg"), aboutFFmpeg_HTML());
 }
 
 void aboutQtAV()
 {
-    QMessageBox::about(0, QObject::tr("About QtAV"), aboutQtAV_HTML());
+    QMessageBox::about(0, i18n("About QtAV"), aboutQtAV_HTML());
 }
 }//namespace QtAV
