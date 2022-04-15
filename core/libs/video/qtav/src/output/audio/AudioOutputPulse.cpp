@@ -26,6 +26,11 @@
 #include "QtAV/private/mkid.h"
 #include "QtAV/private/factory.h"
 #include "utils/Logger.h"
+
+// KDE includes
+
+#include <klocalizedstring.h>
+
 #ifndef Q_LIKELY
 #define Q_LIKELY(x) (!!(x))
 #endif
@@ -266,7 +271,7 @@ bool AudioOutputPulse::init(const AudioFormat &format)
         qWarning("PulseAudio failed to allocate a context");
         return false;
     }
-    qDebug() << tr("PulseAudio %1, protocol: %2, server protocol: %3").arg(QString::fromLatin1(pa_get_library_version())).arg(pa_context_get_protocol_version(ctx)).arg(pa_context_get_server_protocol_version(ctx));
+    qDebug() << i18n("PulseAudio %1, protocol: %2, server protocol: %3").arg(QString::fromLatin1(pa_get_library_version())).arg(pa_context_get_protocol_version(ctx)).arg(pa_context_get_server_protocol_version(ctx));
     // TODO: host property
     pa_context_connect(ctx, NULL, PA_CONTEXT_NOFLAGS, NULL);
     pa_context_set_state_callback(ctx, AudioOutputPulse::contextStateCallback, this);

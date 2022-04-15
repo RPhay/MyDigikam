@@ -24,6 +24,10 @@
 #include "QtAV/version.h"
 #include "utils/Logger.h"
 
+// KDE includes
+
+#include <klocalizedstring.h>
+
 /*!
  * options (properties) are from libavcodec/options_table.h
  * enum name here must convert to lower case to fit the names in avcodec. done in AVDecoder.setOptions()
@@ -259,11 +263,11 @@ VideoDecoderFFmpeg::VideoDecoderFFmpeg():
 {
     // dynamic properties about static property details. used by UI
     // format: detail_property
-    setProperty("detail_skip_loop_filter", tr("Skipping the loop filter (aka deblocking) usually has determinal effect on quality. However it provides a big speedup for hi definition streams"));
+    setProperty("detail_skip_loop_filter", i18n("Skipping the loop filter (aka deblocking) usually has determinal effect on quality. However it provides a big speedup for hi definition streams"));
     // like skip_frame
-    setProperty("detail_skip_idct", tr("Force skipping of idct to speed up decoding for frame types (-1=None, "
+    setProperty("detail_skip_idct", i18n("Force skipping of idct to speed up decoding for frame types (-1=None, "
                                        "0=Default, 1=B-frames, 2=P-frames, 3=B+P frames, 4=all frames)"));
-    setProperty("detail_skip_frame", tr("Force skipping frames for speed up decoding."));
+    setProperty("detail_skip_frame", i18n("Force skipping frames for speed up decoding."));
     setProperty("detail_threads", QStringLiteral("%1\n%2\n%3")
                 .arg(tr("Number of decoding threads. Set before open. Maybe no effect for some decoders"))
                 .arg(tr("0: auto"))
@@ -401,7 +405,8 @@ QString VideoDecoderFFmpeg::hwaccel() const
 }
 
 //namespace {
-void i18n() {
+
+void QtAV_i18n() {
     QObject::tr("codecName");
     QObject::tr("skip_loop_filter");
     QObject::tr("skip_idct");

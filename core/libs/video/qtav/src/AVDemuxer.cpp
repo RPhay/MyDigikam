@@ -33,6 +33,10 @@ typedef QTime QElapsedTimer;
 #include "utils/internal.h"
 #include "utils/Logger.h"
 
+// KDE includes
+
+#include <klocalizedstring.h>
+
 namespace QtAV {
 static const char kFileScheme[] = "file:";
 
@@ -819,7 +823,7 @@ bool AVDemuxer::load()
     if (ret < 0) {
         // d->format_ctx is 0
         AVError::ErrorCode ec = AVError::OpenError;
-        QString msg = tr("failed to open media");
+        QString msg = i18n("failed to open media");
         handleError(ret, &ec, msg);
         qWarning() << "Can't open media: " << msg;
         if (mediaStatus() == LoadingMedia) //workaround for timeout but not interrupted

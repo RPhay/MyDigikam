@@ -35,6 +35,10 @@ extern "C" {
 #include "vaapi/SurfaceInteropVAAPI.h"
 #include "utils/Logger.h"
 
+// KDE includes
+
+#include <klocalizedstring.h>
+
 #define VERSION_CHK(major, minor, patch) \
     (((major&0xff)<<16) | ((minor&0xff)<<8) | (patch&0xff))
 
@@ -266,8 +270,8 @@ VideoDecoderVAAPI::VideoDecoderVAAPI()
     setDisplayPriority(QStringList() << QStringLiteral("X11") <<  QStringLiteral("DRM") << QStringLiteral("GLX"));
     // dynamic properties about static property details. used by UI
     // format: detail_property
-    setProperty("detail_surfaces", tr("Decoding surfaces 0: auto"));
-    setProperty("detail_derive", tr("Maybe faster"));
+    setProperty("detail_surfaces", i18n("Decoding surfaces 0: auto"));
+    setProperty("detail_derive", i18n("Maybe faster"));
     setProperty("detail_display", QStringLiteral("%1\n%2\n%3")
                 .arg(QLatin1String("X11: libva-x11.so is required"))
                 .arg(QLatin1String("GLX: libva-glx.so is required"))

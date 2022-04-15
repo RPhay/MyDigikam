@@ -36,6 +36,10 @@ extern "C" {
 #endif //__cplusplus
 #include "utils/Logger.h"
 
+// KDE includes
+
+#include <klocalizedstring.h>
+
 #ifdef MAC_OS_X_VERSION_MIN_REQUIRED
 #if MAC_OS_X_VERSION_MIN_REQUIRED >= 1070 //MAC_OS_X_VERSION_10_7
 #define OSX_TARGET_MIN_LION
@@ -152,13 +156,13 @@ VideoDecoderVideoToolbox::VideoDecoderVideoToolbox()
     setProperty("threads", 1); // to avoid crash at av_videotoolbox_alloc_context/av_videotoolbox_default_free. I have no idea how the are called
 #endif
     // dynamic properties about static property details. used by UI
-    setProperty("detail_format", tr("Output pixel format from decoder. Performance NV12 > UYVY > BGRA > YUV420P > YUYV.\nOSX < 10.7 only supports UYVY, BGRA and YUV420p"));
+    setProperty("detail_format", i18n("Output pixel format from decoder. Performance NV12 > UYVY > BGRA > YUV420P > YUYV.\nOSX < 10.7 only supports UYVY, BGRA and YUV420p"));
     setProperty("detail_interop"
-                , tr("Interop with OpenGL") + QStringLiteral("\n") +
-                  tr("CVPixelBuffer: macOS+iOS") + QStringLiteral("\n") +
-                  tr("CVOpenGLES: iOS, no copy, fast") + QStringLiteral("\n") +
-                  tr("IOSurface: macOS, no copy, fast") + QStringLiteral("\n") +
-                  tr("Auto: choose the fastest"));
+                , i18n("Interop with OpenGL") + QStringLiteral("\n") +
+                  i18n("CVPixelBuffer: macOS+iOS") + QStringLiteral("\n") +
+                  i18n("CVOpenGLES: iOS, no copy, fast") + QStringLiteral("\n") +
+                  i18n("IOSurface: macOS, no copy, fast") + QStringLiteral("\n") +
+                  i18n("Auto: choose the fastest"));
     Q_UNUSED(QObject::tr("interop"));
     Q_UNUSED(QObject::tr("format"));
 }

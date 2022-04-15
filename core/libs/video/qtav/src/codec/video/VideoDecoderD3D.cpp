@@ -30,6 +30,10 @@
 #endif
 #endif
 
+// KDE includes
+
+#include <klocalizedstring.h>
+
 namespace QtAV {
 
 static bool check_ffmpeg_hevc_dxva2()
@@ -314,7 +318,7 @@ VideoDecoderD3D::VideoDecoderD3D(VideoDecoderD3DPrivate &d)
 {
     // dynamic properties about static property details. used by UI
     // format: detail_property
-    setProperty("detail_surfaces", tr("Decoding surfaces") + QStringLiteral(" ") + tr("0: auto"));
+    setProperty("detail_surfaces", i18n("Decoding surfaces") + QStringLiteral(" ") + i18n("0: auto"));
     setProperty("threads", 1); //FIXME: mt crash on close
 }
 

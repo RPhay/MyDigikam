@@ -29,6 +29,11 @@
 #endif //QTAV_HAVE(DLLAPI_CUDA)
 #include "QtAV/private/AVCompat.h"
 #include "utils/BlockingQueue.h"
+
+// KDE includes
+
+#include <klocalizedstring.h>
+
 /*
  * TODO: VC1, HEVC bsf
  */
@@ -331,8 +336,8 @@ VideoDecoderCUDA::VideoDecoderCUDA():
 {
     // dynamic properties about static property details. used by UI
     // format: detail_property
-    setProperty("detail_surfaces", tr("Decoding surfaces"));
-    setProperty("detail_flags", tr("Decoder flags"));
+    setProperty("detail_surfaces", i18n("Decoding surfaces"));
+    setProperty("detail_flags", i18n("Decoder flags"));
     setProperty("detail_copyMode", QStringLiteral("%1\n%2\n%3\n%4")
                 .arg(tr("Performace: ZeroCopy > DirectCopy > GenericCopy"))
                 .arg(tr("ZeroCopy: no copy back from GPU to System memory. Directly render the decoded data on GPU"))

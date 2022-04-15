@@ -37,6 +37,10 @@ extern "C" {
 #include <VideoDecodeAcceleration/VDADecoder.h>
 #include "utils/Logger.h"
 
+// KDE includes
+
+#include <klocalizedstring.h>
+
 // av_vda_default_init2: 2015-05-13 - cc48409 / e7c5e17 - lavc 56.39.100 / 56.23.0
 // I(wang bin) found the nv12 is the best format on mac. Then mpv developers confirmed it and pigoz added it to ffmpeg
 #if AV_MODULE_CHECK(LIBAVCODEC, 56, 23, 0, 39, 100)
@@ -156,7 +160,7 @@ VideoDecoderVDA::VideoDecoderVDA()
     : VideoDecoderFFmpegHW(*new VideoDecoderVDAPrivate())
 {
     // dynamic properties about static property details. used by UI
-    setProperty("detail_format", tr("Output pixel format from decoder. Performance NV12 > UYVY > YUV420P > YUYV.\nOSX < 10.7 only supports UYVY and YUV420p"));
+    setProperty("detail_format", i18n("Output pixel format from decoder. Performance NV12 > UYVY > YUV420P > YUYV.\nOSX < 10.7 only supports UYVY and YUV420p"));
 }
 
 VideoDecoderId VideoDecoderVDA::id() const
