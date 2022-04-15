@@ -85,7 +85,7 @@ static void VideoDecoder_RegisterAll()
 QVector<VideoDecoderId> VideoDecoder::registered()
 {
     VideoDecoder_RegisterAll();
-#if QT_VERSION >= QT_VERSION_CHECK(6, 0, 0)
+#if QT_VERSION >= QT_VERSION_CHECK(5, 14, 0)
     const auto ids = VideoDecoderFactory::Instance().registeredIds();
     return {ids.begin(), ids.end()};
 #else
