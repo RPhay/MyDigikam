@@ -38,7 +38,7 @@ public:
     AudioOutputPulse(QObject *parent = 0);
 
     QString name() const Q_DECL_FINAL { return QString::fromLatin1(kName);}
-    bool isSupported(AudioFormat::SampleFormat sampleFormat) const Q_DECL_FINAL;
+    bool isSampleFormatSupported(AudioFormat::SampleFormat sampleFormat) const;
     bool open() Q_DECL_FINAL;
     bool close() Q_DECL_FINAL;
 
@@ -360,7 +360,7 @@ AudioOutputPulse::AudioOutputPulse(QObject *parent)
     //setDeviceFeatures(DeviceFeatures()|SetVolume|SetMute);
 }
 
-bool AudioOutputPulse::isSupported(AudioFormat::SampleFormat spformat) const
+bool AudioOutputPulse::isSampleFormatSupported(AudioFormat::SampleFormat spformat) const
 {
     for (int i = 0; format_map[i].spformat != AudioFormat::SampleFormat_Unknown; ++i) {
         if (format_map[i].spformat == spformat)
