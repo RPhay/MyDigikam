@@ -274,7 +274,7 @@ void setOptionsToDict(const QVariant& opt, AVDictionary** dict)
             switch (vt) {
             case QVariant::Bool: {
                 // QVariant.toByteArray(): "true" or "false", can not recognized by avcodec
-                av_dict_set(dict, key.constData(), QByteArray::number(i.value().toInt()), 0);
+                av_dict_set(dict, key.constData(), QByteArray::number(i.value().toInt()).constData(), 0);
             }
                 break;
             default:
@@ -299,7 +299,7 @@ void setOptionsToDict(const QVariant& opt, AVDictionary** dict)
         switch (vt) {
         case QVariant::Bool: {
             // QVariant.toByteArray(): "true" or "false", can not recognized by avcodec
-            av_dict_set(dict, key.constData(), QByteArray::number(i.value().toInt()), 0);
+            av_dict_set(dict, key.constData(), QByteArray::number(i.value().toInt()).constData(), 0);
         }
             break;
         default:
