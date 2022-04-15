@@ -82,7 +82,7 @@ public:
     void setDropFrameOnSeek(bool value);
 
     void resetState();
-public slots:
+public Q_SLOTS:
     virtual void stop();
     /*change pause state. the pause/continue action will do in the next loop*/
     void pause(bool p); //processEvents when waiting?

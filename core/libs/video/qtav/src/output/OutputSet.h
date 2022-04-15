@@ -66,7 +66,7 @@ public:
      */
     void resumeThread();
 
-public slots:
+public Q_SLOTS:
     //connect to renderer->aboutToClose(). test whether delete on close
     void removeOutput(AVOutput *output);
 

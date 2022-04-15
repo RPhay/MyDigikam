@@ -79,7 +79,7 @@ Q_SIGNALS:
     void stepFinished();
     void internalSubtitlePacketRead(int index, const QtAV::Packet& packet);
 
-private slots:
+private Q_SLOTS:
 
     void finishedStepBackward();
     void seekOnPauseFinished();
