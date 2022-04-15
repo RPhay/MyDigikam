@@ -356,7 +356,7 @@ void AVDemuxThread::processNextSeekTask()
 {
     if (seek_tasks.isEmpty())
         return;
- 
+
     current_seek_task = seek_tasks.take();
     if (!current_seek_task)
         return;
@@ -550,7 +550,7 @@ void AVDemuxThread::frameDeliveredOnStepForward()
         clock_type = -1;
         thread->clock()->updateExternalClock((thread->previousHistoryPts() - thread->clock()->initialValue())*1000.0);
     }
-    
+
     // Fudge the bit at the end + 33ms so that step forward and step backwards present different values
     last_seek_pos = (thread->previousHistoryPts() - thread->clock()->initialValue())*1000.0 + 33;
 

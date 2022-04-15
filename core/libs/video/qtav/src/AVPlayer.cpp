@@ -1293,7 +1293,7 @@ void AVPlayer::playInternal()
         else
             setPosition((qint64)(d->start_position_norm));
     }
-    
+
     d->was_stepping = false;
 
     Q_EMIT stateChanged(PlayingState);

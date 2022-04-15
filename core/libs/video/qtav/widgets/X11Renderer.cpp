@@ -354,7 +354,7 @@ X11Renderer::X11Renderer(QWidget *parent, Qt::WindowFlags f):
 }
 
 bool X11Renderer::isSupported(VideoFormat::PixelFormat pixfmt) const
-{    
+{
     Q_UNUSED(pixfmt);
     // if always return true, then convert to x11 format and scale in receiveFrame() only once. no need to convert format first then scale
     return true;//pixfmt == d_func().pixfmt && d_func().pixfmt != VideoFormat::Format_Invalid;

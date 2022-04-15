@@ -183,13 +183,13 @@ void GraphicsItemRenderer::paint(QPainter *painter, const QStyleOptionGraphicsIt
     // save painter state, switch to native opengl painting
     painter->save();
     painter->beginNativePainting();
-    
+
     handlePaintEvent();
-    
+
     // end native painting, restore state
     painter->endNativePainting();
     painter->restore();
-    
+
     d.painter = 0; //painter may be not available outside this function
     if (ctx)
         ctx->painter = 0;
