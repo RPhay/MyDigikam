@@ -25,11 +25,14 @@
 #include <cassert>
 #include <vector>
 
-namespace QtAV {
+namespace QtAV
+{
+
 template<typename T, typename C>
 class ring_api {
 public:
   ring_api() : m_0(0), m_1(0), m_s(0) {}
+  virtual ~ring_api() {};
   void push_back(const T &t);
   void pop_front();
   T &front() { return m_data[m_0]; }
@@ -60,6 +63,7 @@ public:
   }
   size_t capacity() const {return m_data.size();}
 };
+
 template<typename T, int N>
 class static_ring : public ring_api<T, T[N]> {
   using ring_api<T, T[N]>::m_data; // why need this?
@@ -94,5 +98,7 @@ void ring_api<T,C>::pop_front() {
     m_0 = index(++m_0);
     --m_s;
 }
-} //namespace QtAV
+
+} // namespace QtAV
+
 #endif // QTAV_RING_H

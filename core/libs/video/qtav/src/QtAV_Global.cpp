@@ -193,7 +193,7 @@ QString aboutQtAV_PlainText()
 QString aboutQtAV_HTML()
 {
     static QString about = QString::fromLatin1("<img src='qrc:/QtAV.svg'><h3>QtAV " QTAV_VERSION_STR_LONG "</h3>\n"
-            "<p>%1</p><p>%2 </p>"
+            "<p>%1</p><p>%2</p>"
            ).arg(QObject::tr("Multimedia framework base on Qt and FFmpeg.\n"))
             .arg(QObject::tr("Distributed under the terms of LGPLv2.1 or later.\n"));
 
