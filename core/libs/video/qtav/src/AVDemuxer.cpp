@@ -856,9 +856,12 @@ bool AVDemuxer::load()
     Q_EMIT loaded();
     const bool was_seekable = d->seekable;
     d->seekable = d->checkSeekable();
+
     if (was_seekable != d->seekable)
         Q_EMIT seekableChanged();
-    qDebug("avfmtctx.flags: %d, iformat.flags", d->format_ctx->flags, d->format_ctx->iformat->flags);
+
+    qDebug() << "avfmtctx.flags:" << d->format_ctx->flags << "iformat.flags" << d->format_ctx->iformat->flags;
+
     if (getInterruptStatus() < 0) {
         QString msg;
         qDebug("AVERROR_EXIT: %d", AVERROR_EXIT);
