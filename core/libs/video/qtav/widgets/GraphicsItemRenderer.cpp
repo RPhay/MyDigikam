@@ -316,7 +316,8 @@ bool GraphicsItemRenderer::event(QEvent *event)
         if (type == QEvent::KeyPress) {
             qDebug("KeyPress Event. key=%d", static_cast<QKeyEvent*>(event)->key());
         }
-	}	
+    }
+
     return true;
 }
 #else
@@ -324,7 +325,9 @@ bool GraphicsItemRenderer::event(QEvent *event)
 {
     if (event->type() != QEvent::User)
         return GraphicsWidget::event(event);
-	scene()->update(sceneBoundingRect());
+
+    scene()->update(sceneBoundingRect());
+
     return true;
 }
 /*simply passes event to QGraphicsWidget::event(). you should not have to
