@@ -269,9 +269,9 @@ VideoDecoderVAAPI::VideoDecoderVAAPI()
     setProperty("detail_surfaces", tr("Decoding surfaces 0: auto"));
     setProperty("detail_derive", tr("Maybe faster"));
     setProperty("detail_display", QStringLiteral("%1\n%2\n%3")
-                .arg("X11: libva-x11.so is required")
-                .arg("GLX: libva-glx.so is required")
-                .arg("DRM: Support 0-copy only with EGL. May work without X11. libva-drm.so is required")
+                .arg(QLatin1String("X11: libva-x11.so is required"))
+                .arg(QLatin1String("GLX: libva-glx.so is required"))
+                .arg(QLatin1String("DRM: Support 0-copy only with EGL. May work without X11. libva-drm.so is required"))
                 );
 }
 

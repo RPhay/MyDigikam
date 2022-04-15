@@ -567,7 +567,7 @@ VideoShader* VideoMaterial::createShader() const
 
 QString VideoMaterial::typeName(qint32 value)
 {
-    return QString("gl material 16to8bit: %1, planar: %2, has alpha: %3, 2d texture: %4, 2nd plane rg: %5, xyz: %6")
+    return QStringLiteral("gl material 16to8bit: %1, planar: %2, has alpha: %3, 2d texture: %4, 2nd plane rg: %5, xyz: %6")
             .arg(!!(value&1))
             .arg(!!(value&(1<<1)))
             .arg(!!(value&(1<<2)))

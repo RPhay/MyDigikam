@@ -76,7 +76,7 @@ static QByteArray UniformTypeToName(Uniform::Type ut)
         if (un->type == ut)
             return un->name;
     }
-    return "unknown";
+    return QByteArray("unknown");
 }
 
 Uniform::Uniform(Type tp, int count)
@@ -270,8 +270,8 @@ Q_AV_EXPORT QDebug operator<<(QDebug dbg, Uniform::Type ut);
 QVector<Uniform> ParseUniforms(const QByteArray &text, GLuint programId = 0)
 {
     QVector<Uniform> uniforms;
-    const QString code = OpenGLHelper::removeComments(QString(text));
-    const QStringList lines = code.split(';');
+    const QString code = OpenGLHelper::removeComments(QString::fromLatin1(text));
+    const QStringList lines = code.split(QLatin1Char(';'));
     // TODO: highp lowp etc.
     const QString exp(QStringLiteral("\\s*uniform\\s+([\\w\\d]+)\\s+([\\w\\d]+)\\s*"));
     const QString exp_array = exp + QStringLiteral("\\[(\\d+)\\]\\s*");

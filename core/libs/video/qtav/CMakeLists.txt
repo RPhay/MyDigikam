@@ -16,11 +16,6 @@ DISABLE_GCC_COMPILER_WARNINGS("5.99.99" "-Wno-deprecated-declarations")
 DISABLE_GCC_COMPILER_WARNINGS("5.99.99" "-Wno-undef")
 DISABLE_GCC_COMPILER_WARNINGS("5.99.99" "-Wno-expansion-to-defined")
 
-# The QtAV library does not adhere to the flags we use
-remove_definitions(
-    -DQT_NO_CAST_FROM_ASCII
-)
-
 macro(MACRO_ADD_DEFINITION_IF_ON VAR_NAME VAR_ON)
 
     if("${VAR_ON}" EQUAL "1")
