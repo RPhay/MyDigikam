@@ -29,14 +29,19 @@
 #include "AVDemuxThread.h"
 #include "utils/Logger.h"
 
-namespace QtAV {
+namespace QtAV
+{
 
 static const qint64 kInvalidPosition = std::numeric_limits<qint64>::max();
+
 class AVPlayer::Private
 {
 public:
+
     Private();
     ~Private();
+
+public:
 
     bool checkSourceChange();
     void updateNotifyInterval();
@@ -100,64 +105,75 @@ public:
         }
     }
 
-    bool auto_load;
-    bool async_load;
+public:
+
+    bool                    auto_load;
+    bool                    async_load;
+
     // can be QString, QIODevice*
-    QVariant current_source, pendding_source;
-    bool loaded; // for current source
-    bool relative_time_mode;
-    qint64 media_start_pts; // read from media stream
-    qint64 media_end;
-    bool reset_state;
-    qint64 start_position, stop_position;
-    qint64 start_position_norm, stop_position_norm; // real position
-    qint64 last_known_good_pts;
-    bool was_stepping;
-    int repeat_max, repeat_current;
-    int timer_id; //notify position change and check AB repeat range. active when playing
+    QVariant                current_source, pendding_source;
 
-    int audio_track, video_track, subtitle_track;
-    QVariantList subtitle_tracks;
-    QVariantList video_tracks;
-    QString external_audio;
-    AVDemuxer audio_demuxer;
-    QVariantList external_audio_tracks;
-    QVariantList audio_tracks;
-    BufferMode buffer_mode;
-    qint64 buffer_value;
-    //the following things are required and must be set not null
-    AVDemuxer demuxer;
-    AVDemuxThread *read_thread;
-    AVClock *clock;
-    VideoRenderer *vo; //list? // TODO: remove
-    AudioOutput *ao; // TODO: remove
-    AudioDecoder *adec;
-    VideoDecoder *vdec;
-    AudioThread *athread;
-    VideoThread *vthread;
+    bool                    loaded;                                     ///< for current source
+    bool                    relative_time_mode;
+    qint64                  media_start_pts;                            ///< read from media stream
+    qint64                  media_end;
+    bool                    reset_state;
+    qint64                  start_position, stop_position;
+    qint64                  start_position_norm, stop_position_norm;    ///< real position
+    qint64                  last_known_good_pts;
+    bool                    was_stepping;
+    int                     repeat_max, repeat_current;
+    int                     timer_id;                                   ///< notify position change and check AB repeat range. active when playing
 
-    VideoCapture *vcapture;
-    Statistics statistics;
-    qreal speed;
-    OutputSet *vos, *aos;
+    int                     audio_track, video_track, subtitle_track;
+    QVariantList            subtitle_tracks;
+    QVariantList            video_tracks;
+    QString                 external_audio;
+    AVDemuxer               audio_demuxer;
+    QVariantList            external_audio_tracks;
+    QVariantList            audio_tracks;
+    BufferMode              buffer_mode;
+    qint64                  buffer_value;
+
+    // the following things are required and must be set not null
+
+    AVDemuxer               demuxer;
+    AVDemuxThread*          read_thread;
+    AVClock*                clock;
+    VideoRenderer*          vo;             // list? TODO: remove
+    AudioOutput*            ao;             // TODO: remove
+    AudioDecoder*           adec;
+    VideoDecoder*           vdec;
+    AudioThread*            athread;
+    VideoThread*            vthread;
+
+    VideoCapture*           vcapture;
+    Statistics              statistics;
+    qreal                   speed;
+    OutputSet*              vos, *aos;
     QVector<VideoDecoderId> vc_ids;
-    int brightness, contrast, saturation;
+    int                     brightness, contrast, saturation;
 
-    QVariantHash ac_opt, vc_opt;
+    QVariantHash            ac_opt, vc_opt;
 
-    bool seeking;
-    SeekType seek_type;
-    qint64 interrupt_timeout;
+    bool                    seeking;
+    SeekType                seek_type;
+    qint64                  interrupt_timeout;
 
-    qreal force_fps;
-    // timerEvent interval in ms. can divide 1000. depends on media duration, fps etc.
-    // <0: auto compute internally, |notify_interval| is the real interval
-    int notify_interval;
-    MediaStatus status; // status changes can be from demuxer or demux thread
-    AVPlayer::State state;
-    MediaEndAction end_action;
-    QMutex load_mutex;
+    qreal                   force_fps;
+
+    /**
+     * timerEvent interval in ms. can divide 1000. depends on media duration, fps etc.
+     * <0: auto compute internally, |notify_interval| is the real interval
+     */
+    int                     notify_interval;
+
+    MediaStatus             status;                                     ///< status changes can be from demuxer or demux thread
+    AVPlayer::State         state;
+    MediaEndAction          end_action;
+    QMutex                  load_mutex;
 };
 
-} //namespace QtAV
+} // namespace QtAV
+
 #endif // QTAV_AVPLAYER_PRIVATE_H
