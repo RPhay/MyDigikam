@@ -21,7 +21,7 @@
 #include "VideoDecoderFFmpegBase.h"
 #include "QtAV/private/AVCompat.h"
 #include "QtAV/private/factory.h"
-#include "QtAV/version.h"
+#include "QtAV/QtAV_version.h"
 #include "utils/Logger.h"
 
 // KDE includes

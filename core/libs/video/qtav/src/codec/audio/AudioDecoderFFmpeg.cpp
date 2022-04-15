@@ -26,7 +26,7 @@
 #include "QtAV/private/AVCompat.h"
 #include "QtAV/private/mkid.h"
 #include "QtAV/private/factory.h"
-#include "QtAV/version.h"
+#include "QtAV/QtAV_version.h"
 #include "utils/Logger.h"
 
 namespace QtAV {

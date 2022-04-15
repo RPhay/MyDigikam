@@ -55,7 +55,6 @@ extern "C"
 // QtAV includes
 
 #ifdef HAVE_MEDIAPLAYER
-#   include <QtAV/version.h>
 #   include "ffmpegconfighelper.h"
 
 extern "C"
@@ -121,9 +120,6 @@ public:
 
         new QTreeWidgetItem(m_features, QStringList() <<
                             i18nc("@item: component info", "Media player support") <<   i18nc("@item: component info", "Yes"));
-
-        new QTreeWidgetItem(m_libraries, QStringList() <<
-                            i18nc("@item: component info", "LibQtAV") <<                QString::fromLatin1("%1.%2.%3").arg(QTAV_MAJOR).arg(QTAV_MINOR).arg(QTAV_PATCH));
 
         new QTreeWidgetItem(m_libraries, QStringList() <<
                             i18nc("@item: component info", "LibAVFormat") <<            QString::fromLatin1("%1.%2.%3").arg(LIBAVFORMAT_VERSION_MAJOR).arg(LIBAVFORMAT_VERSION_MINOR).arg(LIBAVFORMAT_VERSION_MICRO));

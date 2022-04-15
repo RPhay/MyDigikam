@@ -28,7 +28,7 @@ using QRegExp = QRegularExpression;
 #else
 #include <QtCore/QRegExp>
 #endif
-#include "QtAV/version.h"
+#include "QtAV/QtAV_version.h"
 #include "QtAV/private/AVCompat.h"
 #include "utils/internal.h"
 #include "utils/Logger.h"

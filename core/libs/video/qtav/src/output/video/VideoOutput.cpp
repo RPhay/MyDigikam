@@ -21,7 +21,7 @@
 
 #include "QtAV/VideoOutput.h"
 #include "QtAV/private/VideoRenderer_p.h"
-#include "QtAV/version.h"
+#include "QtAV/QtAV_version.h"
 #include <QtCore/QLibrary>
 #include <QtGui/QResizeEvent>
 #include "utils/Logger.h"

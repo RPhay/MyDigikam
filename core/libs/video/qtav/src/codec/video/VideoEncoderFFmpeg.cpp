@@ -24,7 +24,7 @@
 #include "QtAV/private/AVCompat.h"
 #include "QtAV/private/mkid.h"
 #include "QtAV/private/factory.h"
-#include "QtAV/version.h"
+#include "QtAV/QtAV_version.h"
 #include "utils/Logger.h"
 
 #if AV_MODULE_CHECK(LIBAVUTIL, 55, 13, 0, 27, 100)

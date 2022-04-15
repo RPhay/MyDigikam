@@ -21,7 +21,7 @@
 
 #include <QtAV/AVDecoder.h>
 #include <QtAV/private/AVDecoder_p.h>
-#include <QtAV/version.h>
+#include <QtAV/QtAV_version.h>
 #include "utils/internal.h"
 #include "utils/Logger.h"
 

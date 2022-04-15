@@ -118,7 +118,7 @@ set(QTAV_WIDGETS_HEADERS
     ${CMAKE_CURRENT_SOURCE_DIR}/widgets/QtAVWidgets/GraphicsItemRenderer.h
     ${CMAKE_CURRENT_SOURCE_DIR}/widgets/QtAVWidgets/OpenGLWidgetRenderer.h
     ${CMAKE_CURRENT_SOURCE_DIR}/widgets/QtAVWidgets/QtAVWidgets.h
-    ${CMAKE_CURRENT_SOURCE_DIR}/widgets/QtAVWidgets/version.h
+    ${CMAKE_CURRENT_SOURCE_DIR}/widgets/QtAVWidgets/QtAVWidgets_version.h
     ${CMAKE_CURRENT_SOURCE_DIR}/widgets/QtAVWidgets/VideoPreviewWidget.h
     ${CMAKE_CURRENT_SOURCE_DIR}/widgets/QtAVWidgets/WidgetRenderer.h
 )

@@ -23,7 +23,7 @@
 #define QTAV_H
 
 #include <QtAV/QtAV_Global.h>
-#include <QtAV/version.h>
+#include <QtAV/QtAV_version.h>
 
 #include <QtAV/AVError.h>
 #include <QtAV/AVClock.h>

@@ -22,7 +22,7 @@
 
 #include <QtAV/AVEncoder.h>
 #include <QtAV/private/AVEncoder_p.h>
-#include <QtAV/version.h>
+#include <QtAV/QtAV_version.h>
 #include "utils/internal.h"
 #include "utils/Logger.h"
 
