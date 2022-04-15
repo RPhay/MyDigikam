@@ -44,7 +44,7 @@ public:
      * \brief setSource
      * Set the video file. If video changes, current loaded video will be unloaded.
      */
-    void setSource(const QString url);
+    void setSource(const QString& url);
     QString source() const;
     /*!
      * \brief setAsync

@@ -104,7 +104,7 @@ public:
      * \param height frame height(visual height) without alignment, <= cuda decoded surface(picture) height
      * \param surface_height cuda decoded surface(picture) height
      */
-    void setSurface(int picIndex, CUVIDPROCPARAMS param, int width, int height, int surface_height);
+    void setSurface(int picIndex, const CUVIDPROCPARAMS& param, int width, int height, int surface_height);
     /// GLTextureSurface only supports rgb32
     void* map(SurfaceType type, const VideoFormat& fmt, void* handle, int plane) Q_DECL_OVERRIDE;
     void unmap(void *handle) Q_DECL_OVERRIDE;

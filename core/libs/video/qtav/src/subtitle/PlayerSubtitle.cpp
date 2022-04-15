@@ -36,7 +36,7 @@ namespace QtAV {
  * \param fullPath path of video or without extension
  * \return absolute path without extension and file://
  */
-static QString getSubtitleBasePath(const QString fullPath)
+static QString getSubtitleBasePath(const QString& fullPath)
 {
     QString path(QDir::fromNativeSeparators(fullPath));
     //path.remove(p->source().scheme() + "://");

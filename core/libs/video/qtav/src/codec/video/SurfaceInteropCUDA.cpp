@@ -181,7 +181,7 @@ bool HostInteropResource::ensureResource(int pitch, int height)
 }
 #endif //QT_NO_OPENGL
 
-void SurfaceInteropCUDA::setSurface(int picIndex, CUVIDPROCPARAMS param, int width, int height, int surface_height)
+void SurfaceInteropCUDA::setSurface(int picIndex, const CUVIDPROCPARAMS& param, int width, int height, int surface_height)
 {
     m_index = picIndex;
     m_param = param;

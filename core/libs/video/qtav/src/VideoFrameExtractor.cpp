@@ -408,7 +408,7 @@ VideoFrameExtractor::VideoFrameExtractor(QObject *parent) :
     d.thread.start();
 }
 
-void VideoFrameExtractor::setSource(const QString url)
+void VideoFrameExtractor::setSource(const QString& url)
 {
     DPTR_D(VideoFrameExtractor);
     if (url == d.source)
