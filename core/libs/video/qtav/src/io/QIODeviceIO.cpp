@@ -24,13 +24,11 @@
 #include "QtAV/private/mkid.h"
 #include "QtAV/private/factory.h"
 #include <QtCore/QFile>
-#ifndef TEST_QTAV_QIODeviceIO
 #include "utils/Logger.h"
-#else
 #include <QtDebug>
-#endif
 
 namespace QtAV {
+
 class QIODeviceIOPrivate;
 class QIODeviceIO : public MediaIO
 {
@@ -240,17 +238,5 @@ void QFileIO::onUrlChanged()
 }
 
 } //namespace QtAV
+
 #include "QIODeviceIO.moc"
-#ifdef TEST_QTAV_QIODeviceIO
-int main(int, char**)
-{
-    QtAV::QFileIO fi;
-    qDebug() << "protocols: " << fi.protocols();
-    fi.setUrl("qrc:/QtAV.svg");
-    QByteArray data(1024, 0);
-    fi.read(data.data(), data.size());
-    qDebug("QFileIO url: %s, seekable: %d, size: %lld", fi.url().toUtf8().constData(), fi.isSeekable(), fi.size());
-    qDebug() << data;
-    return 0;
-}
-#endif
