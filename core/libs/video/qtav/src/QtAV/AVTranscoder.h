@@ -119,6 +119,7 @@ public:
     void setStartTime(qint64 ms);
 
 Q_SIGNALS:
+
     void videoFrameEncoded(qreal timestamp);
     void audioFrameEncoded(qreal timestamp);
     void started();
@@ -128,6 +129,7 @@ Q_SIGNALS:
     void asyncChanged();
 
 public Q_SLOTS:
+
     void start();
     /*!
      * \brief stop
@@ -143,6 +145,7 @@ public Q_SLOTS:
     void pause(bool value);
 
 private Q_SLOTS:
+
     void onSourceStarted();
     void prepareMuxer();
     void writeAudio(const QtAV::Packet& packet);
@@ -150,7 +153,9 @@ private Q_SLOTS:
     void tryFinish();
 
 private:
+
     void stopInternal();
+
     class Private;
     QScopedPointer<Private> d;
 };

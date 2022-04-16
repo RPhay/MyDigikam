@@ -20,15 +20,18 @@
  *
  * ============================================================ */
 
-#ifndef QTAV_OPENGLRENDERERBASE_H
-#define QTAV_OPENGLRENDERERBASE_H
+#ifndef QTAV_OPENGL_RENDERER_BASE_H
+#define QTAV_OPENGL_RENDERER_BASE_H
 
-#include <QtAV/VideoRenderer.h>
+#include "VideoRenderer.h"
+
+// Qt includes
+
 #if QT_VERSION >= QT_VERSION_CHECK(5, 0, 0)
-#include <QOpenGLFunctions>
+#   include <QOpenGLFunctions>
 #elif QT_VERSION >= QT_VERSION_CHECK(4, 8, 0)
-#include <QtOpenGL/QGLFunctions>
-#define QOpenGLFunctions QGLFunctions
+#   include <QtOpenGL/QGLFunctions>
+#   define QOpenGLFunctions QGLFunctions
 #endif
 
 namespace QtAV
@@ -40,17 +43,23 @@ namespace QtAV
  * TODO: for Qt5, no QtOpenGL, use QWindow instead.
  */
 class OpenGLRendererBasePrivate;
+
 class Q_AV_EXPORT OpenGLRendererBase : public VideoRenderer
 #if QT_VERSION >= QT_VERSION_CHECK(4, 8, 0)
         , public QOpenGLFunctions
 #endif
 {
     DPTR_DECLARE_PRIVATE(OpenGLRendererBase)
+
 public:
+
     virtual ~OpenGLRendererBase();
+
     bool isSupported(VideoFormat::PixelFormat pixfmt) const Q_DECL_OVERRIDE;
     OpenGLVideo* opengl() const Q_DECL_OVERRIDE;
+
 protected:
+
     virtual bool receiveFrame(const VideoFrame& frame) Q_DECL_OVERRIDE;
     //called in paintEvent before drawFrame() when required
     virtual void drawBackground() Q_DECL_OVERRIDE;
@@ -61,7 +70,9 @@ protected:
     void onResizeGL(int w, int h);
     void onResizeEvent(int w, int h);
     void onShowEvent();
+
 private:
+
     void onSetOutAspectRatioMode(OutAspectRatioMode mode) Q_DECL_OVERRIDE;
     void onSetOutAspectRatio(qreal ratio) Q_DECL_OVERRIDE;
     bool onSetOrientation(int value) Q_DECL_OVERRIDE;
@@ -69,10 +80,12 @@ private:
     bool onSetContrast(qreal c) Q_DECL_OVERRIDE;
     bool onSetHue(qreal h) Q_DECL_OVERRIDE;
     bool onSetSaturation(qreal s) Q_DECL_OVERRIDE;
+
 protected:
+
     OpenGLRendererBase(OpenGLRendererBasePrivate &d);
 };
 
 } // namespace QtAV
 
-#endif // QTAV_OPENGLRENDERERBASE_H
+#endif // QTAV_OPENGL_RENDERER_BASE_H

@@ -20,8 +20,8 @@
  *
  * ============================================================ */
 
-#ifndef QTAV_FRAMEREADER_H
-#define QTAV_FRAMEREADER_H
+#ifndef QTAV_FRAME_READER_H
+#define QTAV_FRAME_READER_H
 
 #include <QtCore/QObject>
 #include <QtAV/VideoFrame.h>
@@ -48,11 +48,14 @@ namespace QtAV
 class Q_AV_EXPORT FrameReader : public QObject
 {
     Q_OBJECT
+
 public:
+
     // TODO: load and get info
     // TODO: asnyc option
     explicit FrameReader(QObject *parent = 0);
     ~FrameReader();
+
     void setMedia(const QString& url);
     QString mediaUrl() const;
     void setVideoDecoders(const QStringList& names);
@@ -67,6 +70,7 @@ public:
     bool seek(qint64 pos);
 
 Q_SIGNALS:
+
     void frameRead(const QtAV::VideoFrame& frame);
     void readEnd();
     void seekFinished(qint64 pos);
@@ -76,12 +80,16 @@ Q_SIGNALS:
     void seekRequested(qint64);
 
 private Q_SLOTS:
+
     void readMoreInternal();
     bool seekInternal(qint64 value);
 
 private:
+
     class Private;
     QScopedPointer<Private> d;
 };
+
 } // namespace QtAV
-#endif // QTAV_FRAMEREADER_H
+
+#endif // QTAV_FRAME_READER_H

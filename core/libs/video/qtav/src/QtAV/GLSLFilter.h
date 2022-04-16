@@ -20,31 +20,39 @@
  *
  * ============================================================ */
 
-#ifndef QTAV_GLSLFILTER_H
-#define QTAV_GLSLFILTER_H
+#ifndef QTAV_GLS_LFILTER_H
+#define QTAV_GLS_LFILTER_H
 
-#include <QtAV/QtAV_Global.h>
-#include <QtAV/Filter.h>
+// Local includes
+
+#include "QtAV_Global.h"
+#include "Filter.h"
 
 #if QT_VERSION < QT_VERSION_CHECK(5, 0, 0)
-#undef QOpenGLFramebufferObject
-#define QOpenGLFramebufferObject QGLFramebufferObject
+#   undef QOpenGLFramebufferObject
+#   define QOpenGLFramebufferObject QGLFramebufferObject
 #endif
+
 QT_BEGIN_NAMESPACE
 class QOpenGLFramebufferObject;
 QT_END_NAMESPACE
 
 namespace QtAV
 {
+
 class OpenGLVideo;
 class GLSLFilterPrivate;
+
 class Q_AV_EXPORT GLSLFilter : public VideoFilter
 {
     Q_OBJECT
     DPTR_DECLARE_PRIVATE(GLSLFilter)
     Q_PROPERTY(QSize outputSize READ outputSize WRITE setOutputSize NOTIFY outputSizeChanged)
+
 public:
+
     GLSLFilter(QObject* parent = 0);
+
     bool isSupported(VideoFilterContext::Type ct) const  Q_DECL_OVERRIDE {
         return ct == VideoFilterContext::OpenGL;
     }
@@ -63,9 +71,13 @@ public:
     QSize outputSize() const;
     void setOutputSize(const QSize& value);
     void setOutputSize(int width, int height);
+
 Q_SIGNALS:
+
     void outputSizeChanged(const QSize& size);
+
 protected:
+
     GLSLFilter(GLSLFilterPrivate& d, QObject *parent = 0);
     /*!
      * \brief process
@@ -76,5 +88,7 @@ protected:
      */
     void process(Statistics* statistics, VideoFrame* frame = 0) Q_DECL_OVERRIDE;
 };
+
 } // namespace QtAV
-#endif // QTAV_GLSLFILTER_H
+
+#endif // QTAV_GLS_LFILTER_H

@@ -42,8 +42,9 @@ public:
     {
         NoError,
 
-        //open/read/seek network stream error. value must be less then ResourceError because of correct_error_by_ffmpeg
-        NetworkError, // all above and before NoError are NetworkError
+        // open/read/seek network stream error. value must be less then ResourceError because of correct_error_by_ffmpeg
+
+        NetworkError,   // all above and before NoError are NetworkError
 
         OpenTimedout,
         OpenError,
@@ -55,19 +56,20 @@ public:
         ReadTimedout,
         ReadError,
         SeekError,
-        ResourceError, // all above and before NetworkError are ResourceError
+        ResourceError,  // all above and before NetworkError are ResourceError
 
         OpenCodecError,
         CloseCodecError,
         AudioCodecNotFound,
         VideoCodecNotFound,
         SubtitleCodecNotFound,
-        CodecError, // all above and before NoError are CodecError
+        CodecError,     // all above and before NoError are CodecError
 
-        FormatError, // all above and before CodecError are FormatError
+        FormatError,    // all above and before CodecError are FormatError
 
         // decrypt error. Not implemented
-        AccessDenied, // all above and before NetworkError are AccessDenied
+
+        AccessDenied,   // all above and before NetworkError are AccessDenied
 
         UnknowError
     };
@@ -87,6 +89,7 @@ public:
 
     AVError &operator=(const AVError &other);
     bool operator==(const AVError &other) const;
+
     inline bool operator!=(const AVError &other) const
     {
         return !(*this == other);
@@ -115,6 +118,7 @@ Q_DECLARE_METATYPE(QtAV::AVError)
 QT_BEGIN_NAMESPACE
 class QDebug;
 QT_END_NAMESPACE
+
 Q_AV_EXPORT QDebug operator<<(QDebug debug, const QtAV::AVError &error);
 
 #endif

@@ -20,17 +20,28 @@
  *
  * ============================================================ */
 
-#ifndef QTAV_OPENGLTYPES_H
-#define QTAV_OPENGLTYPES_H
-#include <QtCore/QVector>
-#include <QtAV/QtAV_Global.h>
+#ifndef QTAV_OPENGL_TYPES_H
+#define QTAV_OPENGL_TYPES_H
+
+// Qt includes
+
+#include <QVector>
+
+// Local includes
+
+#include "QtAV_Global.h"
 
 namespace QtAV
 {
+
 // TODO: namespace gl/gfx?
-class Q_AV_EXPORT Uniform {
+
+class Q_AV_EXPORT Uniform
+{
 public:
+
     enum { V = 16, Vec = 1<<V, M = 20, Mat = 1<<M };
+
     enum Type {
         Unknown = 0,
         Bool = 1<<0,
@@ -58,6 +69,7 @@ public:
         DMat3 = Double|Mat|(3<<(M+1)),
         DMat4 = Double|Mat|(4<<(M+1)),
     };
+
     bool isBool() const {return type()&Bool;}
     bool isInt() const {return type()&Int;}
     bool isUInt() const {return type()&UInt;}
@@ -69,12 +81,14 @@ public:
     bool dirty;
     int location; //TODO: auto resolve location?
     QByteArray name;
+
     /*!
      * \brief setType
      * \param count array size, or 1 if not array
      */
     Uniform& setType(Type tp, int count = 1);
     Uniform(Type tp = Float, int count = 1);
+
     /*!
      * \brief set
      * Set uniform value in host memory. This will mark dirty if value is changed
@@ -88,12 +102,14 @@ public:
     void set(const float* v, int count = 0);
     void set(const unsigned* v, int count = 0);
     void set(const int* v, int count = 0);
+
     /*!
      * \brief set
      * \param v the type T is limited to OpenGL basic types float, int, unsigned(ES3.0) and QVector<T>
      * TODO: Qt types
      */
     void set(const QVariant& v);
+
     /*!
      * \brief setGL
      * Call glUniformXXX to update uniform values that set by set(const T&, int) and mark dirty false. Currently only use OpenGL ES2 supported functions, i.e. uint, double types are not supported.
@@ -101,7 +117,9 @@ public:
      * TODO: Sampler
      */
     bool setGL();
-    bool operator == (const Uniform &other) const {
+
+    bool operator == (const Uniform &other) const
+    {
         if (type() != other.type())
             return false;
         if (name != other.name)
@@ -110,40 +128,51 @@ public:
             return false;
         return true;
     }
+
     Type type() const {return t;}
+
     /*!
      * \brief tupleSize
      * 2, 3, 4 for vec2, vec3 and vec4; 2^2, 3^2 and 4^2 for mat2, mat3 and mat4
      */
     int tupleSize() const {return tuple_size;}
+
     /*!
      * \brief arraySize
      * If uniform is an array, it's array size; otherwise 1
      */
     int arraySize() const {return array_size;}
+
     /*!
      * Return an array of given type. the type T must match type(), for example T is float for Float, VecN, MatN and array of them
      */
-    template<typename T> QVector<T> value() const {
+    template<typename T> QVector<T> value() const
+    {
         Q_ASSERT(sizeof(T)*tupleSize()*arraySize() <= data.size()*sizeof(int) && "Bad type or array size");
         QVector<T> v(tupleSize()*arraySize());
         memcpy((char*)v.data(), (const char*)data.constData(), v.size()*sizeof(T));
         return v;
     }
-    template<typename T> const T* address() const {
+
+    template<typename T> const T* address() const
+    {
         Q_ASSERT(sizeof(T)*tupleSize()*arraySize() <= data.size()*sizeof(int) && "Bad type or array size");
         return reinterpret_cast<const T*>(data.constData());
     }
+
 private:
+
     int tuple_size;
     int array_size;
     Type t;
     QVector<int> data; //uniform array
 };
+
 #ifndef QT_NO_DEBUG_STREAM
 Q_AV_EXPORT QDebug operator<<(QDebug debug, const Uniform &u);
 Q_AV_EXPORT QDebug operator<<(QDebug debug, Uniform::Type ut);
 #endif
+
 } // namespace QtAV
 
 #if QT_VERSION < QT_VERSION_CHECK(5, 0, 0)
@@ -154,4 +183,5 @@ Q_DECLARE_METATYPE(QVector<int>)
 Q_DECLARE_METATYPE(QVector<unsigned>)
 QT_END_NAMESPACE
 #endif
-#endif
+
+#endif // QTAV_OPENGL_TYPES_H

@@ -23,55 +23,61 @@
 #ifndef QTAV_H
 #define QTAV_H
 
-#include <QtAV/QtAV_Global.h>
-#include <QtAV/QtAV_Version.h>
+// Local includes
 
-#include <QtAV/AVError.h>
-#include <QtAV/AVClock.h>
-#include <QtAV/AVDecoder.h>
-#include <QtAV/AVDemuxer.h>
-#include <QtAV/AVMuxer.h>
-#include <QtAV/AVOutput.h>
-#include <QtAV/AVPlayer.h>
-#include <QtAV/Packet.h>
-#include <QtAV/Statistics.h>
+#include "QtAV_Global.h"
+#include "QtAV_Version.h"
 
-#include <QtAV/AudioEncoder.h>
-#include <QtAV/AudioDecoder.h>
-#include <QtAV/AudioFormat.h>
-#include <QtAV/AudioOutput.h>
-#include <QtAV/AudioResampler.h>
+#include "AVError.h"
+#include "AVClock.h"
+#include "AVDecoder.h"
+#include "AVDemuxer.h"
+#include "AVMuxer.h"
+#include "AVOutput.h"
+#include "AVPlayer.h"
+#include "Packet.h"
+#include "Statistics.h"
 
-#include <QtAV/Filter.h>
-#include <QtAV/FilterContext.h>
-#include <QtAV/GLSLFilter.h>
-#include <QtAV/LibAVFilter.h>
+#include "AudioEncoder.h"
+#include "AudioDecoder.h"
+#include "AudioFormat.h"
+#include "AudioOutput.h"
+#include "AudioResampler."h
+
+#include "Filter.h"
+#include "FilterContext.h"
+#include "GLSLFilter.h"
+#include "LibAVFilter.h"
 
 #if (QT_VERSION == QT_VERSION_CHECK(5,0,0) && !defined(QT_NO_OPENGL)) || (QT_VERSION >= QT_VERSION_CHECK(6,0,0) && defined(QT_OPENGL_LIB))
-#include <QtAV/Geometry.h>
-#include <QtAV/GeometryRenderer.h>
-#include <QtAV/VideoShader.h>
-#include <QtAV/OpenGLVideo.h>
-#include <QtAV/ConvolutionShader.h>
-#include <QtAV/VideoShaderObject.h>
+#   include "Geometry.h"
+#   include "GeometryRenderer.h"
+#   include "VideoShader.h"
+#   include "OpenGLVideo.h"
+#   include "ConvolutionShader.h"
+#   include "VideoShaderObject.h"
 #endif
 
-#include <QtAV/VideoCapture.h>
-#include <QtAV/VideoEncoder.h>
-#include <QtAV/VideoDecoder.h>
-#include <QtAV/VideoFormat.h>
-#include <QtAV/VideoFrame.h>
-#include <QtAV/VideoFrameExtractor.h>
-#include <QtAV/VideoRenderer.h>
-#include <QtAV/VideoOutput.h>
+#include "VideoCapture.h"
+#include "VideoEncoder.h"
+#include "VideoDecoder.h"
+#include "VideoFormat.h"
+#include "VideoFrame.h"
+#include "VideoFrameExtractor.h"
+#include "VideoRenderer.h"
+#include "VideoOutput.h"
+
 //The following renderer headers can be removed
-#include <QtAV/QPainterRenderer.h>
-#if (QT_VERSION >= QT_VERSION_CHECK(5,4,0) && QT_VERSION < QT_VERSION_CHECK(6,0,0)) || (QT_VERSION >= QT_VERSION_CHECK(6,0,0) && defined(QT_OPENGL_LIB))
-#include <QtAV/OpenGLWindowRenderer.h>
-#endif
-#include <QtAV/Subtitle.h>
-#include <QtAV/SubtitleFilter.h>
 
-#include <QtAV/MediaIO.h>
+#include "QPainterRenderer.h"
+
+#if (QT_VERSION >= QT_VERSION_CHECK(5,4,0) && QT_VERSION < QT_VERSION_CHECK(6,0,0)) || (QT_VERSION >= QT_VERSION_CHECK(6,0,0) && defined(QT_OPENGL_LIB))
+#   include "OpenGLWindowRenderer.h"
+#endif
+
+#include "Subtitle.h"
+#include "SubtitleFilter.h"
+
+#include "MediaIO.h"
 
 #endif // QTAV_H

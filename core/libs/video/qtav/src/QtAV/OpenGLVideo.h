@@ -20,21 +20,22 @@
  *
  * ============================================================ */
 
-#ifndef QTAV_OPENGLVIDEO_H
-#define QTAV_OPENGLVIDEO_H
+#ifndef QTAV_OPENGL_VIDEO_H
+#define QTAV_OPENGL_VIDEO_H
 
 #ifndef QT_NO_OPENGL
-#include <QtAV/QtAV_Global.h>
-#include <QtAV/VideoFormat.h>
-#include <QtCore/QHash>
-#include <QtGui/QMatrix4x4>
-#include <QtCore/QObject>
-#if QT_VERSION >= QT_VERSION_CHECK(5, 0, 0)
-#include <QOpenGLContext>
-#else
-#include <QtOpenGL/QGLContext>
-#define QOpenGLContext QGLContext
-#endif
+#   include <QHash>
+#   include <QMatrix4x4>
+#   include <QObject>
+#   include "QtAV_Global.h"
+#   include "VideoFormat.h"
+#   if QT_VERSION >= QT_VERSION_CHECK(5, 0, 0)
+#       include <QOpenGLContext>
+#   else
+#       include <QGLContext>
+#       define QOpenGLContext QGLContext
+#   endif
+
 QT_BEGIN_NAMESPACE
 class QColor;
 QT_END_NAMESPACE
@@ -45,6 +46,7 @@ namespace QtAV
 class VideoFrame;
 class VideoShader;
 class OpenGLVideoPrivate;
+
 /*!
  * \brief The OpenGLVideo class
  * high level api for renderering a video frame. use VideoShader, VideoMaterial and ShaderManager internally.
@@ -55,13 +57,18 @@ class Q_AV_EXPORT OpenGLVideo : public QObject
 {
     Q_OBJECT
     DPTR_DECLARE_PRIVATE(OpenGLVideo)
+
 public:
-    enum MeshType {
+
+    enum MeshType
+    {
         RectMesh,
         SphereMesh
     };
+
     static bool isSupported(VideoFormat::PixelFormat pixfmt);
     OpenGLVideo();
+
     /*!
      * \brief setOpenGLContext
      * a context must be set before renderering.
@@ -76,6 +83,7 @@ public:
     QOpenGLContext* openGLContext();
     void setCurrentFrame(const VideoFrame& frame);
     void fill(const QColor& color);
+
     /*!
      * \brief render
      * all are in Qt's coordinate
@@ -85,11 +93,13 @@ public:
      * \param transform: additinal transformation.
      */
     void render(const QRectF& target = QRectF(), const QRectF& roi = QRectF(), const QMatrix4x4& transform = QMatrix4x4());
+
     /*!
      * \brief setProjectionMatrixToRect
      * the rect will be viewport
      */
     void setProjectionMatrixToRect(const QRectF& v);
+
     void setViewport(const QRectF& r);
 
     void setBrightness(qreal value);
@@ -102,26 +112,34 @@ public:
 
     void setMeshType(MeshType value);
     MeshType meshType() const;
+
 Q_SIGNALS:
+
     void beforeRendering();
+
     /*!
      * \brief afterRendering
      * Emitted when video frame is rendered.
      * With DirectConnection, it can be used to draw GL on top of video, or to do screen scraping of the current frame buffer.
      */
     void afterRendering();
+
 protected:
+
     DPTR_DECLARE(OpenGLVideo)
 
 private Q_SLOTS:
-    /* used by Qt5 whose QOpenGLContext is QObject and we can call this when context is about to destroy.
+
+    /**
+     * used by Qt5 whose QOpenGLContext is QObject and we can call this when context is about to destroy.
      * shader manager and material will be reset
      */
     void resetGL();
     void updateViewport();
 };
 
-
 } // namespace QtAV
-#endif //QT_NO_OPENGL
+
+#endif // QT_NO_OPENGL
+
 #endif // QTAV_OPENGLVIDEO_H

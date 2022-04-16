@@ -23,32 +23,44 @@
 #ifndef QTAV_GEOMETRY_H
 #define QTAV_GEOMETRY_H
 
-#include <QtCore/QRectF>
-#include <QtCore/QVector>
-#include <QtAV/QtAV_Global.h>
+// Qt includes
+
+#include <QRectF>
+#include <QVector>
+
+// Local includes
+
+#include "QtAV_Global.h"
 
 // TODO: generate vertex/fragment shader code from Geometry.attributes()
+
 namespace QtAV
 {
 
-enum DataType { //equals to GL_BYTE etc.
-    TypeS8 = 0x1400, //S8
-    TypeU8 = 0x1401, //U8
-    TypeS16 = 0x1402, //S16
-    TypeU16 = 0x1403, //U16
-    TypeS32 = 0x1404, //S32
-    TypeU32 = 0x1405, //U32
-    TypeF32 = 0x1406 //F32
+enum DataType
+{
+    // equals to GL_BYTE etc.
+    TypeS8  = 0x1400, // S8
+    TypeU8  = 0x1401, // U8
+    TypeS16 = 0x1402, // S16
+    TypeU16 = 0x1403, // U16
+    TypeS32 = 0x1404, // S32
+    TypeU32 = 0x1405, // U32
+    TypeF32 = 0x1406  // F32
 };
 
-class Q_AV_EXPORT Attribute {
+class Q_AV_EXPORT Attribute
+{
     bool m_normalize;
     DataType m_type;
     int m_tupleSize, m_offset;
     QByteArray m_name;
+
 public:
+
     Attribute(DataType type = TypeF32, int tupleSize = 0, int offset = 0, bool normalize = false);
     Attribute(const QByteArray& name, DataType type = TypeF32, int tupleSize = 0, int offset = 0, bool normalize = false);
+
     QByteArray name() const {return m_name;}
     DataType type() const {return m_type;}
     int tupleSize() const {return m_tupleSize;}
@@ -61,6 +73,7 @@ public:
                 && normalize() == other.normalize();
     }
 };
+
 #ifndef QT_NO_DEBUG_STREAM
 Q_AV_EXPORT QDebug operator<<(QDebug debug, const Attribute &a);
 #endif
@@ -73,16 +86,21 @@ Q_AV_EXPORT QDebug operator<<(QDebug debug, const Attribute &a);
  * }
  * \endcode
  */
-class Q_AV_EXPORT Geometry {
+class Q_AV_EXPORT Geometry
+{
 public:
+
     /// Strip or Triangles is preferred by ANGLE. The values are equal to opengl
-    enum Primitive {
-        Triangles = 0x0004,
+    enum Primitive
+    {
+        Triangles     = 0x0004,
         TriangleStrip = 0x0005, //default
-        TriangleFan = 0x0006, // Not recommended
+        TriangleFan   = 0x0006, // Not recommended
     };
+
     Geometry(int vertexCount = 0, int indexCount = 0, DataType indexType = TypeU16);
     virtual ~Geometry() {}
+
     Primitive primitive() const {return m_primitive;}
     void setPrimitive(Primitive value) {  m_primitive = value;}
     int vertexCount() const {return m_vcount;}
@@ -117,7 +135,9 @@ public:
      * \return true if equal
      */
     bool compare(const Geometry *other) const;
+
 protected:
+
     Primitive m_primitive;
     DataType m_itype;
     int m_vcount;
@@ -126,9 +146,12 @@ protected:
     QByteArray m_idata;
 };
 
-class Q_AV_EXPORT TexturedGeometry : public Geometry {
+class Q_AV_EXPORT TexturedGeometry : public Geometry
+{
 public:
+
     TexturedGeometry();
+
     /*!
      * \brief setTextureCount
      * sometimes we needs more than 1 texture coordinates, for example we have to set rectangle texture
@@ -143,30 +166,43 @@ public:
     int stride() const Q_DECL_OVERRIDE { return 2*sizeof(float)*(textureCount()+1); }
     const QVector<Attribute>& attributes() const Q_DECL_OVERRIDE;
     virtual void create();
+
 private:
+
     void setPoint(int index, const QPointF& p, const QPointF& tp, int texIndex = 0);
     void setGeometryPoint(int index, const QPointF& p);
     void setTexturePoint(int index, const QPointF& tp, int texIndex = 0);
+
 protected:
+
     int nb_tex;
     QRectF geo_rect;
     QVector<QRectF> texRect;
     QVector<Attribute> a;
 };
 
-class Q_AV_EXPORT Sphere : public TexturedGeometry {
+class Q_AV_EXPORT Sphere : public TexturedGeometry
+{
 public:
+
     Sphere();
+
     void setResolution(int w, int h); // >= 2x2
     void setRadius(float value);
     float radius() const;
     void create() Q_DECL_OVERRIDE;
     int stride() const Q_DECL_OVERRIDE { return 3*sizeof(float)+2*sizeof(float)*textureCount(); }
+
 protected:
+
     using Geometry::setPrimitive;
+
 private:
+
     int ru, rv;
     float r;
 };
+
 } // namespace QtAV
-#endif //QTAV_GEOMETRY_H
+
+#endif // QTAV_GEOMETRY_H

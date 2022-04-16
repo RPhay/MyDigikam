@@ -23,19 +23,23 @@
 #ifndef QTAV_FRAME_H
 #define QTAV_FRAME_H
 
-#include <QtAV/QtAV_Global.h>
-#include <QtCore/QVariant>
-#include <QtCore/QSharedData>
+#include <QVariant>
+#include <QSharedData>
+
+#include "QtAV_Global.h"
 
 // TODO: fromAVFrame() asAVFrame()?
 namespace QtAV
 {
 
 class FramePrivate;
+
 class Q_AV_EXPORT Frame
 {
     Q_DECLARE_PRIVATE(Frame)
+
 public:
+
     Frame(const Frame& other);
     virtual ~Frame() = 0;
     Frame& operator =(const Frame &other);
@@ -105,6 +109,7 @@ public:
     inline void swap(Frame &other) { qSwap(d_ptr, other.d_ptr); }
 
 protected:
+
     Frame(FramePrivate *d);
     QExplicitlySharedDataPointer<FramePrivate> d_ptr;
 };

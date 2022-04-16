@@ -20,23 +20,35 @@
  *
  * ============================================================ */
 
-#ifndef QAV_QPAINTERRENDERER_H
-#define QAV_QPAINTERRENDERER_H
+#ifndef QAV_QPAINTER_RENDERER_H
+#define QAV_QPAINTER_RENDERER_H
 
-#include <QtAV/VideoRenderer.h>
-#include <QtGui/QImage>
-//TODO: not abstract.
+// Qt includes
+
+#include <QImage>
+
+// Local includes
+
+#include "VideoRenderer.h"
+
+// TODO: not abstract.
+
 namespace QtAV
 {
 
 class QPainterRendererPrivate;
+
 class Q_AV_EXPORT QPainterRenderer : public VideoRenderer
 {
     DPTR_DECLARE_PRIVATE(QPainterRenderer)
+
 public:
+
     QPainterRenderer();
     bool isSupported(VideoFormat::PixelFormat pixfmt) const Q_DECL_OVERRIDE;
+
 protected:
+
     bool preparePixmap(const VideoFrame& frame);
     void drawBackground() Q_DECL_OVERRIDE;
     //draw the current frame using the current paint engine. called by paintEvent()
@@ -46,4 +58,5 @@ protected:
 };
 
 } // namespace QtAV
-#endif // QAV_QPAINTERRENDERER_H
+
+#endif // QTAV_QPAINTER_RENDERER_H

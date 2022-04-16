@@ -20,18 +20,20 @@
  *
  * ============================================================ */
 
-#ifndef QTAV_OPENGLWINDOWRENDERER_H
-#define QTAV_OPENGLWINDOWRENDERER_H
+#ifndef QTAV_OPENGL_WINDOW_RENDERER_H
+#define QTAV_OPENGL_WINDOW_RENDERER_H
 
 #ifndef QT_NO_OPENGL
-#include <QOpenGLWindow>
-#include <QtAV/OpenGLRendererBase.h>
+#   include <QOpenGLWindow>
+#   include "OpenGLRendererBase.h"
 
 namespace QtAV
 {
 
 class OpenGLWindowRendererPrivate;
-class Q_AV_EXPORT OpenGLWindowRenderer : public QOpenGLWindow, public OpenGLRendererBase
+
+class Q_AV_EXPORT OpenGLWindowRenderer : public QOpenGLWindow,
+                                         public OpenGLRendererBase
 {
     Q_OBJECT
     DPTR_DECLARE_PRIVATE(OpenGLWindowRenderer)
@@ -43,7 +45,8 @@ class Q_AV_EXPORT OpenGLWindowRenderer : public QOpenGLWindow, public OpenGLRend
     Q_PROPERTY(QRectF regionOfInterest READ regionOfInterest WRITE setRegionOfInterest NOTIFY regionOfInterestChanged)
     Q_PROPERTY(qreal sourceAspectRatio READ sourceAspectRatio NOTIFY sourceAspectRatioChanged)
     Q_PROPERTY(qreal outAspectRatio READ outAspectRatio WRITE setOutAspectRatio NOTIFY outAspectRatioChanged)
-    //fillMode
+
+    // fillMode
     // TODO: how to use enums in base class as property or Q_ENUM
     Q_PROPERTY(OutAspectRatioMode outAspectRatioMode READ outAspectRatioMode WRITE setOutAspectRatioMode NOTIFY outAspectRatioModeChanged)
     Q_ENUMS(OutAspectRatioMode)
@@ -51,11 +54,16 @@ class Q_AV_EXPORT OpenGLWindowRenderer : public QOpenGLWindow, public OpenGLRend
     Q_PROPERTY(QRect videoRect READ videoRect NOTIFY videoRectChanged)
     Q_PROPERTY(QSize videoFrameSize READ videoFrameSize NOTIFY videoFrameSizeChanged)
     Q_ENUMS(Quality)
+
 public:
+
     explicit OpenGLWindowRenderer(UpdateBehavior updateBehavior = NoPartialUpdate, QWindow *parent = 0);
     virtual VideoRendererId id() const Q_DECL_OVERRIDE;
+
     QWindow* qwindow() Q_DECL_OVERRIDE Q_DECL_FINAL { return this; }
+
 Q_SIGNALS:
+
     void sourceAspectRatioChanged(qreal value) Q_DECL_OVERRIDE Q_DECL_FINAL;
     void regionOfInterestChanged() Q_DECL_OVERRIDE;
     void outAspectRatioChanged() Q_DECL_OVERRIDE;
@@ -68,15 +76,20 @@ Q_SIGNALS:
     void orientationChanged() Q_DECL_OVERRIDE;
     void videoRectChanged() Q_DECL_OVERRIDE;
     void videoFrameSizeChanged() Q_DECL_OVERRIDE;
+
 protected:
+
     virtual void initializeGL() Q_DECL_OVERRIDE;
     virtual void paintGL() Q_DECL_OVERRIDE;
     virtual void resizeGL(int w, int h) Q_DECL_OVERRIDE;
     virtual void resizeEvent(QResizeEvent *) Q_DECL_OVERRIDE;
     virtual void showEvent(QShowEvent *) Q_DECL_OVERRIDE;
 };
+
 typedef OpenGLWindowRenderer VideoRendererOpenGLWindow;
 
 } // namespace QtAV
+
 #endif //QT_NO_OPENGL
-#endif // QTAV_OPENGLWINDOWRENDERER_H
+
+#endif // QTAV_OPENGL_WINDOW_RENDERER_H
