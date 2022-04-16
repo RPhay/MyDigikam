@@ -24,7 +24,11 @@ if (NOT ${KDE_INSTALL_FULL_KSERVICES5DIR} STREQUAL "")
 
 endif()
 
-message(STATUS "--- Install Paths:")
+message(STATUS "")
+message(STATUS "--------------------------------------------------")
+message(STATUS "digiKam Install Paths:")
+message(STATUS "")
+
 message(STATUS "INSTALL DATA DIR      : ${KDE_INSTALL_FULL_DATADIR}")
 message(STATUS "INSTALL ICON DIR      : ${KDE_INSTALL_FULL_ICONDIR}")
 message(STATUS "INSTALL APP DIR       : ${KDE_INSTALL_FULL_APPDIR}")
