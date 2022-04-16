@@ -25,12 +25,13 @@
 
 #include <QtCore/QString>
 
-namespace QtAV {
+namespace QtAV
+{
 namespace PlainText {
 
 QString fromAss(const char* ass);
 
 } //namespace PlainText
 
-} //namespace QtAV
+} // namespace QtAV
 #endif // QTAV_PLAINTEXT_H

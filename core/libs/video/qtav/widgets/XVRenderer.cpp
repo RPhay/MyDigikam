@@ -37,7 +37,8 @@
 #include "QtAV/private/factory.h"
 //http://huangbster.i.sohu.com/blog/view/256490057.htm
 
-namespace QtAV {
+namespace QtAV
+{
 
 inline int scaleEQValue(int val, int min, int max)
 {
@@ -570,6 +571,6 @@ bool XVRenderer::onSetSaturation(qreal s)
     return d.XvSetPortAttributeIfExists("XV_SATURATION", s*100);
 }
 
-} //namespace QtAV
+} // namespace QtAV
 
 #include "XVRenderer.moc"

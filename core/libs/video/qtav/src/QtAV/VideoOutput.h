@@ -26,7 +26,8 @@
 #include <QtCore/QObject>
 #include <QtAV/VideoRenderer.h>
 
-namespace QtAV {
+namespace QtAV
+{
 
 class VideoOutputPrivate;
 /*!
@@ -117,6 +118,6 @@ private:
     virtual bool onHanlePendingTasks() Q_DECL_OVERRIDE;
 };
 
-} //namespace QtAV
+} // namespace QtAV
 
 #endif // QTAV_VIDEOOUTPUT_H

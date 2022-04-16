@@ -26,7 +26,8 @@
 #include <QtCore/QMetaProperty>
 #include <QtCore/QSignalMapper>
 
-namespace QtAV {
+namespace QtAV
+{
 
 class VideoShaderObjectPrivate : public VideoShaderPrivate
 {
@@ -201,4 +202,4 @@ const char* DynamicShaderObject::userPostProcess() const
     return d_func().pp.toUtf8().constData();
 }
 
-} //namespace QtAV
+} // namespace QtAV

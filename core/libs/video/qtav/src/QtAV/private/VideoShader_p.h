@@ -44,7 +44,8 @@ typedef QGLBuffer QOpenGLBuffer;
 #define QOpenGLContext QGLContext
 #endif
 
-namespace QtAV {
+namespace QtAV
+{
 // can not move to OpenGLHelper.h because that's not public/private header
 enum ShaderType {
     VertexShader,
@@ -176,6 +177,6 @@ public:
     QVector<QVector2D> v_texture_size;
 };
 
-} //namespace QtAV
+} // namespace QtAV
 
 #endif // QTAV_VideoShader_P_H

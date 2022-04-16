@@ -31,7 +31,8 @@ __CRT_UUID_DECL(ID3D11VideoContext,0x61F21C45,0x3C0E,0x4a74,0x9C,0xEA,0x67,0x10,
 __CRT_UUID_DECL(ID3D11VideoDevice,0x10EC4D5B,0x975A,0x4689,0xB9,0xE4,0xD0,0xAA,0xC3,0x0F,0xE3,0x33)
 #endif //__CRT_UUID_DECL
 
-namespace QtAV {
+namespace QtAV
+{
 namespace dx {
 
 D3D11VP::D3D11VP(ComPtr<ID3D11Device> dev)
@@ -143,4 +144,4 @@ bool D3D11VP::ensureResource(UINT width, UINT height, DXGI_FORMAT format)
     return true;
 }
 } //namespace dx
-} //namespace QtAV
+} // namespace QtAV

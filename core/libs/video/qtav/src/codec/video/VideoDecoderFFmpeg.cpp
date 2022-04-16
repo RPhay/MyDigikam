@@ -23,7 +23,7 @@
 #include "VideoDecoderFFmpegBase.h"
 #include "QtAV/private/AVCompat.h"
 #include "QtAV/private/factory.h"
-#include "QtAV/QtAV_version.h"
+#include "QtAV/QtAV_Version.h"
 #include "utils/Logger.h"
 
 // KDE includes
@@ -36,7 +36,8 @@
  * Don't use lower case here because the value name may be "default" in avcodec which is a keyword of C++
  */
 
-namespace QtAV {
+namespace QtAV
+{
 
 class VideoDecoderFFmpegPrivate;
 class VideoDecoderFFmpeg : public VideoDecoderFFmpegBase
@@ -420,6 +421,6 @@ void QtAV_i18n() {
     i18n("bug");
 }
 //}
-} //namespace QtAV
+} // namespace QtAV
 
 #include "VideoDecoderFFmpeg.moc"

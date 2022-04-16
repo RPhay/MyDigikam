@@ -38,7 +38,8 @@ QT_BEGIN_NAMESPACE
 class QOpenGLShaderProgram;
 QT_END_NAMESPACE
 
-namespace QtAV {
+namespace QtAV
+{
 /*!
  * \brief The GeometryRenderer class
  * TODO: support multiple geometry with same primitive (glPrimitiveRestartIndex, glDrawArraysInstanced, glDrawArraysInstanced, glMultiDrawArrays...)
@@ -87,5 +88,5 @@ private:
     QVector<Attribute> attrib;
 };
 
-} //namespace QtAV
+} // namespace QtAV
 #endif //QTAV_GEOMETRYRENDERER_H

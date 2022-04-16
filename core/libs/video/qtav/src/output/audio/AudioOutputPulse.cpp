@@ -35,7 +35,8 @@
 #ifndef Q_LIKELY
 #define Q_LIKELY(x) (!!(x))
 #endif
-namespace QtAV {
+namespace QtAV
+{
 
 static const char kName[] = "Pulse";
 class AudioOutputPulse Q_DECL_FINAL: public AudioOutputBackend
@@ -477,4 +478,4 @@ bool AudioOutputPulse::setMute(bool value)
     pa_operation_unref(o);
     return true;
 }
-} //namespace QtAV
+} // namespace QtAV

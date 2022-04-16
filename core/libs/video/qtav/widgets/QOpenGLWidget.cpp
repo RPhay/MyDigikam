@@ -20,7 +20,7 @@
  *
  * ============================================================ */
 
-#include "QtAVWidgets/QOpenGLWidget.h"
+#include "QOpenGLWidget.h"
 #include <QResizeEvent>
 #include <QWindow>
 // for dynamicgl. qglfunctions before qt5.3 does not have portable gl functions
@@ -30,7 +30,8 @@
 #define DYGL(glFunc) glFunc
 #endif
 
-namespace QtAV {
+namespace QtAV
+{
 
 // TODO: is QOpenGLWidgetPaintDevice required?
 class QOpenGLWidgetPaintDevice : public QOpenGLPaintDevice
@@ -215,4 +216,4 @@ void QOpenGLWidget::invokeUserPaint()
     paintGL();
     DYGL(glFlush());
 }
-} //namespace QtAV
+} // namespace QtAV

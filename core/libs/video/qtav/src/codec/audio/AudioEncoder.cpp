@@ -25,7 +25,8 @@
 #include "QtAV/private/factory.h"
 #include "utils/Logger.h"
 
-namespace QtAV {
+namespace QtAV
+{
 FACTORY_DEFINE(AudioEncoder)
 
 void AudioEncoder_RegisterAll()
@@ -90,4 +91,4 @@ int AudioEncoder::frameSize() const
 {
     return d_func().frame_size;
 }
-} //namespace QtAV
+} // namespace QtAV

@@ -27,7 +27,8 @@
 #include <QtAV/VideoFormat.h>
 #include <QtCore/QSize>
 /// TODO: fromAVFrame(const AVFrame* f);
-namespace QtAV {
+namespace QtAV
+{
 
 /// metadata: pallete for pal8
 class VideoFramePrivate;
@@ -149,7 +150,7 @@ private:
     mutable ImageConverter *m_cvt;
     int m_eq[3];
 };
-} //namespace QtAV
+} // namespace QtAV
 
 Q_DECLARE_METATYPE(QtAV::VideoFrame)
 #endif // QTAV_VIDEOFRAME_H

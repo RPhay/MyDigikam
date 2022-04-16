@@ -29,7 +29,8 @@
 // TODO: kernel QGenericMatrix<M,N>
 //http://www.graficaobscura.com/matrix/index.html
 
-namespace QtAV {
+namespace QtAV
+{
 /*!
  * \brief The ColorTransform class
  *  A convenience class to get color transformation matrix.
@@ -103,5 +104,5 @@ private:
     class Private;
     QSharedDataPointer<ColorTransform::Private> d;
 };
-} //namespace QtAV
+} // namespace QtAV
 #endif // QTAV_COLORTRANSFORM_H

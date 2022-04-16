@@ -28,7 +28,8 @@
 #include <d3d9.h>
 #endif
 
-namespace QtAV {
+namespace QtAV
+{
 
 #ifndef DX_LOG_COMPONENT
 #define DX_LOG_COMPONENT "DirectX"
@@ -62,5 +63,5 @@ IDirect3DDevice9* CreateDevice9(HINSTANCE dll, IDirect3D9 **d3d9, D3DADAPTER_IDE
 #endif //Q_OS_WINRT
 } //namespace DXHelper
 
-} //namespace QtAV
+} // namespace QtAV
 #endif //QTAV_DIRECTXHELPER_H

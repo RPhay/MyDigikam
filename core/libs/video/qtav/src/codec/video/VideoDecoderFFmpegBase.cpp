@@ -24,7 +24,8 @@
 #include "QtAV/Packet.h"
 #include "utils/Logger.h"
 
-namespace QtAV {
+namespace QtAV
+{
 
 extern ColorSpace colorSpaceFromFFmpeg(AVColorSpace cs);
 extern ColorRange colorRangeFromFFmpeg(AVColorRange cr);
@@ -168,4 +169,4 @@ VideoFrame VideoDecoderFFmpegBase::frame()
     }
     return frame;
 }
-} //namespace QtAV
+} // namespace QtAV

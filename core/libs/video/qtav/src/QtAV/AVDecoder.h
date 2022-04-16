@@ -27,7 +27,8 @@
 #include <QtCore/QVariant>
 #include <QtCore/QObject>
 
-namespace QtAV {
+namespace QtAV
+{
 
 class Packet;
 class AVDecoderPrivate;
@@ -88,5 +89,5 @@ private:
     AVDecoder(); // base class, not direct create. only final class has is enough
 };
 
-} //namespace QtAV
+} // namespace QtAV
 #endif // QAV_DECODER_H

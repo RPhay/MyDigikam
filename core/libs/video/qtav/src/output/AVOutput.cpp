@@ -28,7 +28,8 @@
 #include "output/OutputSet.h"
 #include "utils/Logger.h"
 
-namespace QtAV {
+namespace QtAV
+{
 
 AVOutputPrivate::~AVOutputPrivate() {
     cond.wakeAll(); //WHY: failed to wake up
@@ -187,4 +188,4 @@ bool AVOutput::onHanlePendingTasks()
     return true;
 }
 
-} //namespace QtAV
+} // namespace QtAV

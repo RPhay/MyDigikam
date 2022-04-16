@@ -27,7 +27,8 @@
 #include <QtAV/Subtitle.h>
 //final class
 
-namespace QtAV {
+namespace QtAV
+{
 
 class AVPlayer;
 class SubtitleFilterPrivate;
@@ -117,5 +118,5 @@ protected:
     void process(Statistics* statistics, VideoFrame* frame) Q_DECL_OVERRIDE;
 };
 
-} //namespace QtAV
+} // namespace QtAV
 #endif // QTAV_SUBTITLEFILTER_H

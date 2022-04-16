@@ -25,7 +25,8 @@
 
 #include "AVThread.h"
 
-namespace QtAV {
+namespace QtAV
+{
 
 class AudioDecoder;
 class AudioFrame;
@@ -42,5 +43,5 @@ protected:
     virtual void run();
 };
 
-} //namespace QtAV
+} // namespace QtAV
 #endif // QAV_AUDIOTHREAD_H

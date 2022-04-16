@@ -67,7 +67,8 @@
 QT_BEGIN_NAMESPACE
 class QMatrix4x4;
 QT_END_NAMESPACE
-namespace QtAV {
+namespace QtAV
+{
 namespace OpenGLHelper {
 QString removeComments(const QString& code);
 QByteArray compatibleShaderHeader(QOpenGLShader::ShaderType type);
@@ -107,13 +108,14 @@ bool isPBOSupported();
 bool videoFormatToGL(const VideoFormat& fmt, GLint* internal_format, GLenum* data_format, GLenum* data_type, QMatrix4x4* mat = NULL);
 int bytesOfGLFormat(GLenum format, GLenum dataType = GL_UNSIGNED_BYTE);
 } //namespace OpenGLHelper
-} //namespace QtAV
+} // namespace QtAV
 #else
-namespace QtAV {
+namespace QtAV
+{
 namespace OpenGLHelper {
 #define DYGL(f) f
 inline bool isOpenGLES() {return false;}
 } //namespace OpenGLHelper
-} //namespace QtAV
+} // namespace QtAV
 #endif //QT_NO_OPENGL
 #endif // QTAV_OPENGLHELPER_H

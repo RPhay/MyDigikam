@@ -26,7 +26,8 @@
 #include <QtAV/private/AVCompat.h>
 #include <QtCore/QVector>
 
-namespace QtAV {
+namespace QtAV
+{
 
 class ImageConverter;
 class ImageConverterPrivate : public DPtrPrivate<ImageConverter>
@@ -64,5 +65,5 @@ public:
     QVector<int> pitchs;
 };
 
-} //namespace QtAV
+} // namespace QtAV
 #endif // QTAV_IMAGECONVERTER_P_H

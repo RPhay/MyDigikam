@@ -25,7 +25,8 @@
 
 #include <QtAV/QtAV_Global.h>
 
-namespace QtAV {
+namespace QtAV
+{
 
 class Filter;
 class VideoFilterContext;
@@ -56,6 +57,6 @@ class Q_AV_PRIVATE_EXPORT AudioFilterPrivate : public FilterPrivate
 {
 };
 
-} //namespace QtAV
+} // namespace QtAV
 
 #endif // QTAV_FILTER_P_H

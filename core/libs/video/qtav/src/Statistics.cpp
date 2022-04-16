@@ -23,7 +23,8 @@
 #include "QtAV/Statistics.h"
 #include "utils/ring.h"
 
-namespace QtAV {
+namespace QtAV
+{
 
 Statistics::Common::Common():
     available(false)
@@ -133,4 +134,4 @@ void Statistics::reset()
     metadata.clear();
 }
 
-} //namespace QtAV
+} // namespace QtAV

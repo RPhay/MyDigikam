@@ -26,7 +26,8 @@
 #include "utils/Logger.h"
 #include "directx/DXVAHDVP.h"
 
-namespace QtAV {
+namespace QtAV
+{
 namespace dx {
 
 DXVAHDVP::DXVAHDVP(ComPtr<IDirect3DDevice9> dev)
@@ -168,4 +169,4 @@ bool DXVAHDVP::ensureResource(UINT width, UINT height, D3DFORMAT format)
     return true;
 }
 } //namespace dx
-} //namespace QtAV
+} // namespace QtAV

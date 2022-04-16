@@ -26,7 +26,8 @@
 #include <QtAV/Frame.h>
 #include <QtAV/AudioFormat.h>
 
-namespace QtAV {
+namespace QtAV
+{
 class AudioResampler;
 class AudioFramePrivate;
 class Q_AV_EXPORT AudioFrame : public Frame
@@ -75,6 +76,6 @@ public:
     */
     qint64 duration() const;
 };
-} //namespace QtAV
+} // namespace QtAV
 Q_DECLARE_METATYPE(QtAV::AudioFrame)
 #endif // QTAV_AUDIOFRAME_H

@@ -39,7 +39,8 @@ QT_BEGIN_NAMESPACE
 class QColor;
 QT_END_NAMESPACE
 
-namespace QtAV {
+namespace QtAV
+{
 
 class VideoFrame;
 class VideoShader;
@@ -121,6 +122,6 @@ private Q_SLOTS:
 };
 
 
-} //namespace QtAV
+} // namespace QtAV
 #endif //QT_NO_OPENGL
 #endif // QTAV_OPENGLVIDEO_H

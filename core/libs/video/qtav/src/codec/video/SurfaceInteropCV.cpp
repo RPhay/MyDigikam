@@ -24,7 +24,8 @@
 #include "QtAV/VideoFrame.h"
 #include "opengl/OpenGLHelper.h"
 
-namespace QtAV {
+namespace QtAV
+{
 typedef struct {
     int cv_pixfmt;
     VideoFormat::PixelFormat pixfmt;

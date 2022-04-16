@@ -29,7 +29,8 @@
 #include <QtCore/QVariant>
 #include <QtCore/QObject>
 
-namespace QtAV {
+namespace QtAV
+{
 class AVEncoderPrivate;
 class Q_AV_EXPORT AVEncoder : public QObject
 {
@@ -99,5 +100,5 @@ private:
     Q_DISABLE_COPY(AVEncoder)
     AVEncoder(); // base class, not direct create. only final class has is enough
 };
-} //namespace QtAV
+} // namespace QtAV
 #endif // QAV_ENCODER_H

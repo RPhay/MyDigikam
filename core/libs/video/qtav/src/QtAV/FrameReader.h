@@ -26,7 +26,8 @@
 #include <QtCore/QObject>
 #include <QtAV/VideoFrame.h>
 
-namespace QtAV {
+namespace QtAV
+{
 /*!
  * \brief The FrameReader class
  * while (reader->readMore()) {
@@ -82,5 +83,5 @@ private:
     class Private;
     QScopedPointer<Private> d;
 };
-} //namespace QtAV
+} // namespace QtAV
 #endif // QTAV_FRAMEREADER_H

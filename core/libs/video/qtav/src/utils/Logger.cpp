@@ -32,7 +32,8 @@
 #ifndef QTAV_NO_LOG_LEVEL
 
 void ffmpeg_version_print();
-namespace QtAV {
+namespace QtAV
+{
 namespace Internal {
 static QString gQtAVLogTag = QString();
 

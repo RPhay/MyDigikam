@@ -48,7 +48,8 @@ using QRegExp = QRegularExpression;
 
 #define BUG_GLES3_ANDROID 1 //FIXME: N7 android6 gles3 displays red images, only rgb32 is correct
 
-namespace QtAV {
+namespace QtAV
+{
 namespace OpenGLHelper {
 
 // glGetTexParameteriv is supported by es2 does not support GL_TEXTURE_INTERNAL_FORMAT.
@@ -772,4 +773,4 @@ int bytesOfGLFormat(GLenum format, GLenum dataType) // TODO: rename bytesOfTexel
 }
 
 } //namespace OpenGLHelper
-} //namespace QtAV
+} // namespace QtAV

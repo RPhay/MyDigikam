@@ -27,7 +27,8 @@
 #include "QtAV/private/AVDecoder_p.h"
 #include "QtAV/private/AVCompat.h"
 
-namespace QtAV {
+namespace QtAV
+{
 
 class VideoDecoderFFmpegBasePrivate;
 class VideoDecoderFFmpegBase : public VideoDecoder
@@ -70,6 +71,6 @@ public:
     int width, height; //The current decoded frame size
 };
 
-} //namespace QtAV
+} // namespace QtAV
 
 #endif // QTAV_VIDEODECODERFFMPEGBASE_H

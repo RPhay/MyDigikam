@@ -20,7 +20,7 @@
  *
  * ============================================================ */
 
-#include "QtAVWidgets/GLWidgetRenderer.h"
+#include "GLWidgetRenderer.h"
 #include "QtAV/private/VideoRenderer_p.h"
 #include "utils/OpenGLHelper.h"
 #include <QtCore/QCoreApplication>
@@ -53,7 +53,8 @@
 
 
 //TODO: QGLfunctions?
-namespace QtAV {
+namespace QtAV
+{
 
 const GLfloat kVertices[] = {
     -1, 1,
@@ -1114,4 +1115,4 @@ bool GLWidgetRenderer::onSetSaturation(qreal s)
     return true;
 }
 
-} //namespace QtAV
+} // namespace QtAV

@@ -27,7 +27,8 @@
 #include <QtAV/VideoFrame.h>
 #include <QtCore/QStringList>
 
-namespace QtAV {
+namespace QtAV
+{
 typedef int VideoDecoderId;
 /*!
     Useful properties.
@@ -107,5 +108,5 @@ extern Q_AV_EXPORT VideoDecoderId VideoDecoderId_MediaCodec;
 extern Q_AV_EXPORT VideoDecoderId VideoDecoderId_MMAL;
 extern Q_AV_EXPORT VideoDecoderId VideoDecoderId_QSV;
 extern Q_AV_EXPORT VideoDecoderId VideoDecoderId_CrystalHD;
-} //namespace QtAV
+} // namespace QtAV
 #endif // QTAV_VIDEODECODER_H

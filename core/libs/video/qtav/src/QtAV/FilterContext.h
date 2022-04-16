@@ -37,7 +37,8 @@ class QPainter;
 class QPaintDevice;
 class QTextDocument;
 QT_END_NAMESPACE
-namespace QtAV {
+namespace QtAV
+{
 
 class VideoFrame;
 class Q_AV_EXPORT VideoFilterContext
@@ -171,6 +172,6 @@ protected:
     QImage test_img; //for computing bounding rect
 };
 #endif //QTAV_HAVE(X11)
-} //namespace QtAV
+} // namespace QtAV
 
 #endif // QTAV_FILTERCONTEXT_H

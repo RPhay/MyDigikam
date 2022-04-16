@@ -24,7 +24,8 @@
 #include "opengl/SubImagesGeometry.h"
 #include "QtAV/GeometryRenderer.h"
 
-namespace QtAV {
+namespace QtAV
+{
 
 #define GLSL(x) #x "\n"
 
@@ -137,4 +138,4 @@ void SubImagesRenderer::uploadTexture(SubImagesGeometry *g)
     DYGL(glBindTexture(GL_TEXTURE_2D, 0));
 }
 
-} //namespace QtAV
+} // namespace QtAV

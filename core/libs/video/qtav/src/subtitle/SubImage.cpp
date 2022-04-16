@@ -23,7 +23,8 @@
 #include "QtAV/SubImage.h"
 #include <QtGui/QImage>
 
-namespace QtAV {
+namespace QtAV
+{
 
 SubImage::SubImage(int x, int y, int w, int h, int stride)
     : x(x)
@@ -139,4 +140,4 @@ void RenderASS(QImage *image, const SubImage& img, int dstX, int dstY)
         dst += image->width();
     }
 }
-} //namespace QtAV
+} // namespace QtAV

@@ -24,7 +24,8 @@
 #include <QtDebug>
 #include <QtCore/qmath.h>
 
-namespace QtAV {
+namespace QtAV
+{
 
 Attribute::Attribute(DataType type, int tupleSize, int offset, bool normalize)
     : m_normalize(normalize)
@@ -405,4 +406,4 @@ void Sphere::create()
         }
     }
 }
-} //namespace QtAV
+} // namespace QtAV

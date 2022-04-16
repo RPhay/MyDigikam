@@ -35,7 +35,8 @@
 #include <QtCore/QFileInfo>
 #include "utils/Logger.h"
 
-namespace QtAV {
+namespace QtAV
+{
 
 class VideoThreadPrivate : public AVThreadPrivate
 {
@@ -628,4 +629,4 @@ void VideoThread::run()
     qDebug("Video thread stops running...");
 }
 
-} //namespace QtAV
+} // namespace QtAV

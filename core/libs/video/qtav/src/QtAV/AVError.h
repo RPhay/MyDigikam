@@ -26,7 +26,8 @@
 #include <QtAV/QtAV_Global.h>
 #include <QtCore/QString>
 
-namespace QtAV {
+namespace QtAV
+{
 class Q_AV_EXPORT AVError
 {
 public:
@@ -93,7 +94,7 @@ private:
     QString mDetail;
 };
 
-} //namespace QtAV
+} // namespace QtAV
 
 Q_DECLARE_METATYPE(QtAV::AVError)
 

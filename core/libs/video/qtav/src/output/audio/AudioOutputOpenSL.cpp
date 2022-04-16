@@ -35,7 +35,8 @@
 #include "utils/Logger.h"
 
 // TODO: native sample rate, so AUDIO_OUTPUT_FLAG_FAST is enabled
-namespace QtAV {
+namespace QtAV
+{
 
 // OpenSL 1.1, or __ANDROID_API__ >= 21
 #ifndef SL_DATAFORMAT_PCM_EX
@@ -457,4 +458,4 @@ bool AudioOutputOpenSL::setMute(bool value)
     return true;
 }
 
-} //namespace QtAV
+} // namespace QtAV

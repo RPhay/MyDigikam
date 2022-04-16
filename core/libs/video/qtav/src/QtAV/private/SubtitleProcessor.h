@@ -28,7 +28,8 @@
 #include <QtAV/QtAV_Global.h>
 #include <QtAV/Subtitle.h>
 
-namespace QtAV {
+namespace QtAV
+{
 
 typedef QString SubtitleProcessorId;
 class Q_AV_PRIVATE_EXPORT SubtitleProcessor
@@ -110,5 +111,5 @@ private:
     int m_width, m_height;
 };
 
-} //namespace QtAV
+} // namespace QtAV
 #endif // QTAV_SUBTITLEPROCESSOR_H

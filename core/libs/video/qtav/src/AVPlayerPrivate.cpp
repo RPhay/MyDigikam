@@ -37,7 +37,8 @@ extern "C" {
 #endif
 #include "utils/Logger.h"
 
-namespace QtAV {
+namespace QtAV
+{
 
 namespace Internal {
 
@@ -668,4 +669,4 @@ void AVPlayer::Private::updateBufferValue()
         updateBufferValue(vthread->packetQueue());
 }
 
-} //namespace QtAV
+} // namespace QtAV

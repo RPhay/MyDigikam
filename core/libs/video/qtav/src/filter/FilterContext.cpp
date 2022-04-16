@@ -28,7 +28,8 @@
 #include "QtAV/VideoFrame.h"
 #include "utils/Logger.h"
 
-namespace QtAV {
+namespace QtAV
+{
 
 VideoFilterContext *VideoFilterContext::create(Type t)
 {
@@ -283,4 +284,4 @@ void QPainterFilterContext::initializeOnFrame(VideoFrame *vframe)
     own_paint_device = true; //TODO: what about renderer is not a widget?
     painter->begin((QImage*)paint_device);
 }
-} //namespace QtAV
+} // namespace QtAV

@@ -35,7 +35,8 @@ typedef QTime QElapsedTimer;
 
 #define AO_USE_TIMER 1
 
-namespace QtAV {
+namespace QtAV
+{
 
 // chunk
 static const int kBufferSamples = 512;
@@ -802,4 +803,4 @@ void AudioOutput::onCallback()
 {
     d_func().onCallback();
 }
-} //namespace QtAV
+} // namespace QtAV

@@ -45,7 +45,8 @@ using QRegExp = QRegularExpression;
 #include "subtitle/CharsetDetector.h"
 #include "utils/Logger.h"
 
-namespace QtAV {
+namespace QtAV
+{
 
 const int kMaxSubtitleSize = 10 * 1024 * 1024; // TODO: remove because we find the matched extenstions
 
@@ -1037,4 +1038,4 @@ void SubtitleAPIProxy::setFontFileForced(bool value)
     m_s->setFontFileForced(value);
 }
 
-} //namespace QtAV
+} // namespace QtAV

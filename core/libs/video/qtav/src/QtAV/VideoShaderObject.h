@@ -26,7 +26,8 @@
 #include <QtCore/QObject>
 #include <QtCore/QVector>
 
-namespace QtAV {
+namespace QtAV
+{
 // check and auto update properties in shader
 class VideoShaderObjectPrivate;
 /*!
@@ -81,5 +82,5 @@ private:
     const char* userSample() const Q_DECL_OVERRIDE;
     const char* userPostProcess() const Q_DECL_OVERRIDE;
 };
-} //namespace QtAV
+} // namespace QtAV
 #endif //QTAV_VIDEOSHADEROBJECT_H

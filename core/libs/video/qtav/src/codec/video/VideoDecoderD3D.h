@@ -28,7 +28,8 @@
 #include "VideoDecoderFFmpegHW.h"
 #include "VideoDecoderFFmpegHW_p.h"
 
-namespace QtAV {
+namespace QtAV
+{
 
 struct d3d_format_t {
     const char *name;
@@ -139,5 +140,5 @@ template<typename T> int SelectConfig(AVCodecID codec_id, const T* cfgs, int nb_
 #define MAKEFOURCC(ch0, ch1, ch2, ch3) \
   ((DWORD)(BYTE)(ch0)|((DWORD)(BYTE)(ch1)<<8)|((DWORD)(BYTE)(ch2)<<16)|((DWORD)(BYTE)(ch3)<<24))
 #endif //MAKEFOURCC
-} //namespace QtAV
+} // namespace QtAV
 #endif //QTAV_VIDEODECODERD3D_H

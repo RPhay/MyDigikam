@@ -30,7 +30,8 @@
 #endif
 #include "utils/Logger.h"
 
-namespace QtAV {
+namespace QtAV
+{
 
 class ImageConverterIPPPrivate;
 class ImageConverterIPP : public ImageConverter //Q_AV_EXPORT is not needed
@@ -103,4 +104,4 @@ bool ImageConverterIPP::prepareData()
     return ImageConverter::prepareData();
 }
 
-} //namespace QtAV
+} // namespace QtAV

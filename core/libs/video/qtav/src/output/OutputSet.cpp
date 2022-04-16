@@ -24,7 +24,8 @@
 #include "QtAV/AVPlayer.h"
 #include "QtAV/VideoRenderer.h"
 
-namespace QtAV {
+namespace QtAV
+{
 
 OutputSet::OutputSet(AVPlayer *player):
     QObject(player)
@@ -134,4 +135,4 @@ void OutputSet::resumeThread()
     mCond.wakeAll();
 }
 
-} //namespace QtAV
+} // namespace QtAV

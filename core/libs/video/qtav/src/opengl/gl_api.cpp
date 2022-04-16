@@ -23,7 +23,8 @@
 #include "gl_api.h"
 #include "OpenGLHelper.h"
 
-namespace QtAV {
+namespace QtAV
+{
 typedef void *(*GetProcAddress_t)(const char *);
 static GetProcAddress_t sGetProcAddress;
 
@@ -178,4 +179,4 @@ api& gl() {
     }
     return g;
 }
-} //namespace QtAV
+} // namespace QtAV

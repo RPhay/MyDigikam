@@ -23,12 +23,15 @@
 #ifndef QTAV_GLWIDGETRENDERER2_H
 #define QTAV_GLWIDGETRENDERER2_H
 
-#include <QtAVWidgets/global.h>
-#if !defined(QT_NO_OPENGL) && QT_VERSION < QT_VERSION_CHECK(6,0,0)
-#include <QtOpenGL/QGLWidget>
-#include <QtAV/OpenGLRendererBase.h>
+#include "QtAVWidgets_Global.h"
 
-namespace QtAV {
+#if !defined(QT_NO_OPENGL) && QT_VERSION < QT_VERSION_CHECK(6,0,0)
+
+#   include <QtOpenGL/QGLWidget>
+#   include "QtAV/OpenGLRendererBase.h"
+
+namespace QtAV
+{
 
 class GLWidgetRenderer2Private;
 /*!
@@ -36,7 +39,9 @@ class GLWidgetRenderer2Private;
  * Renderering video frames using GLSL. A more generic high level class OpenGLVideo is used internally.
  * TODO: for Qt5, no QtOpenGL, use QWindow instead.
  */
-class Q_AVWIDGETS_EXPORT GLWidgetRenderer2 : public QGLWidget, public OpenGLRendererBase
+class Q_AVWIDGETS_EXPORT GLWidgetRenderer2
+    : public QGLWidget,
+      public OpenGLRendererBase
 {
     Q_OBJECT
     DPTR_DECLARE_PRIVATE(GLWidgetRenderer2)
@@ -56,11 +61,15 @@ class Q_AVWIDGETS_EXPORT GLWidgetRenderer2 : public QGLWidget, public OpenGLRend
     Q_PROPERTY(QRect videoRect READ videoRect NOTIFY videoRectChanged)
     Q_PROPERTY(QSize videoFrameSize READ videoFrameSize NOTIFY videoFrameSizeChanged)
     Q_ENUMS(Quality)
+
 public:
+
     GLWidgetRenderer2(QWidget* parent = 0, const QGLWidget* shareWidget = 0, Qt::WindowFlags f = Qt::WindowFlags(Qt::Widget));
     virtual VideoRendererId id() const Q_DECL_OVERRIDE;
     virtual QWidget* widget() Q_DECL_OVERRIDE { return this; }
+
 Q_SIGNALS:
+
     void sourceAspectRatioChanged(qreal value) Q_DECL_OVERRIDE Q_DECL_FINAL;
     void regionOfInterestChanged() Q_DECL_OVERRIDE;
     void outAspectRatioChanged() Q_DECL_OVERRIDE;
@@ -73,15 +82,20 @@ Q_SIGNALS:
     void videoRectChanged() Q_DECL_OVERRIDE;
     void videoFrameSizeChanged() Q_DECL_OVERRIDE;
     void backgroundColorChanged() Q_DECL_OVERRIDE;
+
 protected:
+
     virtual void initializeGL() Q_DECL_OVERRIDE;
     virtual void paintGL() Q_DECL_OVERRIDE;
     virtual void resizeGL(int w, int h) Q_DECL_OVERRIDE;
     virtual void resizeEvent(QResizeEvent *) Q_DECL_OVERRIDE;  // not virtual in QGLWidget (Qt<5.5)
     virtual void showEvent(QShowEvent *) Q_DECL_OVERRIDE;
 };
+
 typedef GLWidgetRenderer2 VideoRendererGLWidget2;
 
-} //namespace QtAV
-#endif //QT_NO_OPENGL
+} // namespace QtAV
+
+#endif // QT_NO_OPENGL
+
 #endif // QTAV_GLWIDGETRENDERER2_H

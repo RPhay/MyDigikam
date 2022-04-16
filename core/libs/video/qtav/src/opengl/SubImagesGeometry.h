@@ -26,7 +26,8 @@
 #include "QtAV/Geometry.h"
 #include "QtAV/SubImage.h"
 
-namespace QtAV {
+namespace QtAV
+{
 class SubImagesGeometry : public Geometry {
 public:
     SubImagesGeometry();
@@ -54,5 +55,5 @@ private:
     SubImageSet m_images; // for texture upload parameters
     QVector<QRect> m_rects_upload;
 };
-} //namespace QtAV
+} // namespace QtAV
 #endif //QTAV_SUBIMAGESGEOMETRY_H

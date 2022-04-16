@@ -28,7 +28,8 @@
 #include "utils/BlockingQueue.h"
 #include "utils/ring.h"
 
-namespace QtAV {
+namespace QtAV
+{
 
 /*
  * take empty: start buffering, block at next take if still empty
@@ -107,5 +108,5 @@ private:
     ring<BufferInfo> m_history;
 };
 
-} //namespace QtAV
+} // namespace QtAV
 #endif // QTAV_PACKETBUFFER_H

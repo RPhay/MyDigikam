@@ -25,7 +25,8 @@
 
 #include "VideoDecoderFFmpegBase.h"
 
-namespace QtAV {
+namespace QtAV
+{
 
 class VideoDecoderFFmpegHWPrivate;
 class VideoDecoderFFmpegHW : public VideoDecoderFFmpegBase
@@ -57,6 +58,6 @@ private:
     VideoDecoderFFmpegHW();
 };
 
-} //namespace QtAV
+} // namespace QtAV
 
 #endif // QTAV_VIDEODECODERFFMPEGHW_H

@@ -27,7 +27,8 @@
 #include "QtAV/private/AVCompat.h"
 #include <QtCore/QByteArray>
 
-namespace QtAV {
+namespace QtAV
+{
 
 class AudioResampler;
 class Q_AV_PRIVATE_EXPORT AudioResamplerPrivate : public DPtrPrivate<AudioResampler>
@@ -48,6 +49,6 @@ public:
     QByteArray data_out;
 };
 
-} //namespace QtAV
+} // namespace QtAV
 
 #endif // QTAV_AUDIORESAMPLER_P_H

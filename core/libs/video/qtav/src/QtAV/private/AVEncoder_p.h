@@ -29,7 +29,8 @@
 #include "QtAV/VideoFormat.h"
 #include "QtAV/private/AVCompat.h"
 
-namespace QtAV {
+namespace QtAV
+{
 
 class Q_AV_PRIVATE_EXPORT AVEncoderPrivate : public DPtrPrivate<AVEncoder>
 {
@@ -104,5 +105,5 @@ public:
     VideoFormat::PixelFormat format_used;
     VideoFormat format;
 };
-} //namespace QtAV
+} // namespace QtAV
 #endif // QTAV_AVENCODER_P_H

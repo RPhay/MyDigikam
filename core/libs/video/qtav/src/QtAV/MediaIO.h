@@ -28,7 +28,8 @@
 #include <QtCore/QStringList>
 #include <QtCore/QObject>
 
-namespace QtAV {
+namespace QtAV
+{
 /*!
  * \brief MediaIO
  * Built-in io (use MediaIO::create(name), example: MediaIO *qio = MediaIO::create("QIODevice"))
@@ -173,7 +174,7 @@ protected:
     MediaIO(QObject* parent = 0);
 };
 Q_DECL_DEPRECATED typedef MediaIO AVInput; // for source compatibility
-} //namespace QtAV
+} // namespace QtAV
 
 #if QT_VERSION < QT_VERSION_CHECK(5, 0, 0)
 #include <QtCore/QMetaType>

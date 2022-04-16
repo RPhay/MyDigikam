@@ -19,12 +19,13 @@
     Foundation, Inc., 51 Franklin Street, Fifth Floor, Boston, MA  02110-1301  USA
 ******************************************************************************/
 
-#include "QtAVWidgets/VideoPreviewWidget.h"
+#include "VideoPreviewWidget.h"
 #include "QtAV/VideoFrameExtractor.h"
 #include "QtAV/VideoOutput.h"
 #include <QtGui/QResizeEvent>
 
-namespace QtAV {
+namespace QtAV
+{
 
 VideoPreviewWidget::VideoPreviewWidget(QWidget *parent)
     : QWidget(parent)
@@ -129,4 +130,4 @@ void VideoPreviewWidget::displayNoFrame()
     m_out->receive(VideoFrame());
 }
 
-} //namespace QtAV
+} // namespace QtAV

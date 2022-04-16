@@ -32,7 +32,8 @@
 
 #define RESUME_ONCE_ON_SEEK 0
 
-namespace QtAV {
+namespace QtAV
+{
 
 class AutoSem {
     QSemaphore *s;
@@ -825,4 +826,4 @@ bool AVDemuxThread::tryPause(unsigned long timeout)
     cond.wait(&buffer_mutex, timeout);
     return true;
 }
-} //namespace QtAV
+} // namespace QtAV

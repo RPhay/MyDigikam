@@ -37,7 +37,8 @@
 #define QTAV_HAVE_D3D11_GL 1
 #endif
 
-namespace QtAV {
+namespace QtAV
+{
 
 int fourccFromDXGI(DXGI_FORMAT fmt); //FIXME: defined in d3d11 decoder
 VideoFormat::PixelFormat pixelFormatFromFourcc(int format);
@@ -157,4 +158,4 @@ void* SurfaceInterop::mapToHost(const VideoFormat &format, void *handle, int pla
     return f;
 }
 } //namespace d3d11
-} //namespace QtAV
+} // namespace QtAV

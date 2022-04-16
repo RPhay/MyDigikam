@@ -26,7 +26,8 @@
 #include <QtCore/QDateTime>
 #include "utils/Logger.h"
 
-namespace QtAV {
+namespace QtAV
+{
 enum {
     kRunning,
     kPaused,
@@ -255,4 +256,4 @@ void AVClock::stopCorrectionTimer()
     avg_err = 0;
     correction_schedule_timer.stop();
 }
-} //namespace QtAV
+} // namespace QtAV

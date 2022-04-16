@@ -25,7 +25,8 @@
 #include <unistd.h> //close()
 #include "utils/Logger.h"
 
-namespace QtAV {
+namespace QtAV
+{
 namespace OpenGLHelper {
 bool isEGL();
 }
@@ -382,4 +383,4 @@ intptr_t display_t::nativeHandle() const
     return m_native->handle();
 }
 } //namespace vaapi
-} //namespace QtAV
+} // namespace QtAV

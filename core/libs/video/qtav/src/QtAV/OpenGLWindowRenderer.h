@@ -27,7 +27,8 @@
 #include <QOpenGLWindow>
 #include <QtAV/OpenGLRendererBase.h>
 
-namespace QtAV {
+namespace QtAV
+{
 
 class OpenGLWindowRendererPrivate;
 class Q_AV_EXPORT OpenGLWindowRenderer : public QOpenGLWindow, public OpenGLRendererBase
@@ -76,6 +77,6 @@ protected:
 };
 typedef OpenGLWindowRenderer VideoRendererOpenGLWindow;
 
-} //namespace QtAV
+} // namespace QtAV
 #endif //QT_NO_OPENGL
 #endif // QTAV_OPENGLWINDOWRENDERER_H

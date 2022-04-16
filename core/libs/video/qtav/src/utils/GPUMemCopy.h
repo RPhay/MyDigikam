@@ -25,7 +25,8 @@
 
 #include <stddef.h>
 
-namespace QtAV {
+namespace QtAV
+{
 
 class GPUMemCopy
 {
@@ -50,6 +51,6 @@ private:
 
 void* gpu_memcpy(void* dst, const void* src, size_t size);
 
-} //namespace QtAV
+} // namespace QtAV
 
 #endif // GPUMemCopy_H

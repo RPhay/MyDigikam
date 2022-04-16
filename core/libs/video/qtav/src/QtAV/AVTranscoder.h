@@ -27,7 +27,8 @@
 #include <QtAV/AudioEncoder.h>
 #include <QtAV/VideoEncoder.h>
 
-namespace QtAV {
+namespace QtAV
+{
 
 class AVPlayer;
 class Q_AV_EXPORT AVTranscoder : public QObject
@@ -148,6 +149,6 @@ private:
     class Private;
     QScopedPointer<Private> d;
 };
-} //namespace QtAV
+} // namespace QtAV
 #endif // QTAV_AVTRANSCODE_H
 

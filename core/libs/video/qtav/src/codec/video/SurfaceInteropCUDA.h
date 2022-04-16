@@ -41,7 +41,8 @@
 #define QTAV_HAVE_CUDA_GL 1
 #endif
 #endif //QT_NO_OPENGL
-namespace QtAV {
+namespace QtAV
+{
 namespace cuda {
 
 class InteropResource : protected cuda_api
@@ -188,6 +189,6 @@ private:
 };
 #endif //QTAV_HAVE(CUDA_GL)
 } //namespace cuda
-} //namespace QtAV
+} // namespace QtAV
 
 #endif // QTAV_SURFACEINTEROPCUDA_H

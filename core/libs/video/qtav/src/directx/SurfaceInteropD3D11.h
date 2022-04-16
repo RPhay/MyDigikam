@@ -29,7 +29,8 @@
 #include <wrl/client.h>
 
 using namespace Microsoft::WRL;
-namespace QtAV {
+namespace QtAV
+{
 
 namespace d3d11 {
 enum InteropType {
@@ -96,5 +97,5 @@ private:
     int frame_width, frame_height;
 };
 } //namespace d3d11
-} //namespace QtAV
+} // namespace QtAV
 #endif //QTAV_SURFACEINTEROPD3D11_H

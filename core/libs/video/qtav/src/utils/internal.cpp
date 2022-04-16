@@ -32,7 +32,8 @@
 #include "QtAV/private/AVCompat.h"
 #include "utils/Logger.h"
 
-namespace QtAV {
+namespace QtAV
+{
 static const char kFileScheme[] = "file:";
 #define CHAR_COUNT(s) (sizeof(s) - 1) // tail '\0'
 
@@ -345,4 +346,4 @@ void setOptionsForQObject(const QVariant& opt, QObject *obj)
     }
 }
 } //namespace Internal
-} //namespace QtAV
+} // namespace QtAV

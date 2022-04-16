@@ -30,7 +30,8 @@
 /*
  * to avoid read error, subtitle size > 10*1024*1024 will be ignored.
  */
-namespace QtAV {
+namespace QtAV
+{
 class Q_AV_EXPORT SubtitleFrame
 {
 public:
@@ -268,5 +269,5 @@ private:
     Subtitle *m_s;
 };
 
-} //namespace QtAV
+} // namespace QtAV
 #endif // QTAV_SUBTITLE_H

@@ -58,7 +58,8 @@
 #define Q_FUNC_INFO __FUNCTION__
 #endif
 
-namespace QtAV {
+namespace QtAV
+{
 namespace Internal {
 
 // internal use when building QtAV library

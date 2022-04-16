@@ -28,7 +28,8 @@
 #include "utils/BlockingQueue.h"
 #include "utils/Logger.h"
 
-namespace QtAV {
+namespace QtAV
+{
 typedef QtAV::BlockingQueue<VideoFrame> VideoFrameQueue;
 const int kQueueMin = 2;
 static QVariantHash dec_opt_framedrop;
@@ -387,4 +388,4 @@ bool FrameReader::seekInternal(qint64 value)
     Q_EMIT seekFinished(t);
     return true;
 }
-} //namespace QtAV
+} // namespace QtAV

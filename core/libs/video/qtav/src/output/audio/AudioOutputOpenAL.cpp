@@ -43,7 +43,8 @@
 
 #define UNQUEUE_QUICK 0
 
-namespace QtAV {
+namespace QtAV
+{
 
 static const char kName[] = "OpenAL";
 class AudioOutputOpenAL Q_DECL_FINAL: public AudioOutputBackend
@@ -433,4 +434,4 @@ int AudioOutputOpenAL::getQueued()
     return queued;
 }
 
-} //namespace QtAV
+} // namespace QtAV

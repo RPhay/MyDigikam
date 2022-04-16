@@ -22,22 +22,27 @@
 #ifndef QTAV_VIDEOPREVIEWWIDGET_H
 #define QTAV_VIDEOPREVIEWWIDGET_H
 
-#include <QtAVWidgets/global.h>
+#include "QtAVWidgets_Global.h"
+
 #if QT_VERSION >= QT_VERSION_CHECK(5, 0, 0)
-#include <QtWidgets/QWidget>
+#   include <QtWidgets/QWidget>
 #else
-#include <QtGui/QWidget>
+#   include <QtGui/QWidget>
 #endif
 
-namespace QtAV {
+namespace QtAV
+{
 
 class VideoFrame;
 class VideoOutput;
 class VideoFrameExtractor;
+
 class Q_AVWIDGETS_EXPORT VideoPreviewWidget : public QWidget
 {
     Q_OBJECT
+
 public:
+
     explicit VideoPreviewWidget(QWidget *parent = 0);
     void setTimestamp(qint64 msec);
     qint64 timestamp() const;
@@ -53,10 +58,14 @@ public:
     /// (caller must ensure to call displayFrame()/displayFrame(frame) for this if false).
     /// set to false only if you want to do your own frame caching magic with preview frames.
     void setAutoDisplayFrame(bool b=true);
+
 public Q_SLOTS: // these were previously private but made public to allow calling code to cache some preview frames and directly display frames to this class
+
     void displayFrame(const QtAV::VideoFrame& frame); //parameter VideoFrame
     void displayNoFrame();
+
 Q_SIGNALS:
+
     void timestampChanged();
     void fileChanged();
     /// emitted on real decode error -- in that case displayNoFrame() will be automatically called
@@ -69,15 +78,19 @@ Q_SIGNALS:
     /// parameter frame will always have: frame.isValid() == true, and will be
     /// already-scaled and in the right format to fit in the preview widget
     void gotFrame(const QtAV::VideoFrame & frame);
+
 protected:
+
     virtual void resizeEvent(QResizeEvent *);
 
 private:
+
     bool m_keep_ar, m_auto_display;
     QString m_file;
     VideoFrameExtractor *m_extractor;
     VideoOutput *m_out;
 };
 
-} //namespace QtAV
+} // namespace QtAV
+
 #endif // QTAV_VIDEOPREVIEWWIDGET_H

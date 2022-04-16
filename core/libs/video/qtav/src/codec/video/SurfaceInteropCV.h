@@ -27,7 +27,8 @@
 #include <CoreVideo/CoreVideo.h>
 #include <QtAV/SurfaceInterop.h>
 
-namespace QtAV {
+namespace QtAV
+{
 namespace cv {
 
 VideoFormat::PixelFormat format_from_cv(int cv);

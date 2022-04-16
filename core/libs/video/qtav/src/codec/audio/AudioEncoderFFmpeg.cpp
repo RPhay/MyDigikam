@@ -25,7 +25,7 @@
 #include "QtAV/private/AVCompat.h"
 #include "QtAV/private/mkid.h"
 #include "QtAV/private/factory.h"
-#include "QtAV/QtAV_version.h"
+#include "QtAV/QtAV_Version.h"
 #include "utils/Logger.h"
 
 /*!
@@ -34,7 +34,8 @@
  * Don't use lower case here because the value name may be "default" in avcodec which is a keyword of C++
  */
 
-namespace QtAV {
+namespace QtAV
+{
 
 class AudioEncoderFFmpegPrivate;
 class AudioEncoderFFmpeg Q_DECL_FINAL: public AudioEncoder
@@ -224,4 +225,4 @@ bool AudioEncoderFFmpeg::encode(const AudioFrame &frame)
     return true;
 }
 
-} //namespace QtAV
+} // namespace QtAV

@@ -23,8 +23,9 @@
 #ifndef QTAVWIDGETS_GLOBAL_H
 #define QTAVWIDGETS_GLOBAL_H
 
-#include <QtAV/VideoRenderer.h>
+// Local includes
 
+#include "QtAV/VideoRenderer.h"
 #include "digikam_export.h"
 
 #define Q_AVWIDGETS_EXPORT DIGIKAM_EXPORT
@@ -42,13 +43,19 @@
 #endif //BUILD_QTAVWIDGETS_STATIC
 */
 #define Q_AVWIDGETS_PRIVATE_EXPORT Q_AVWIDGETS_EXPORT
+
 #if defined(BUILD_QTAVWIDGETS_LIB)
-#define QTAVWIDGETS_DEPRECATED
+#   define QTAVWIDGETS_DEPRECATED
 #else
-#define QTAVWIDGETS_DEPRECATED Q_DECL_DEPRECATED
+#   define QTAVWIDGETS_DEPRECATED Q_DECL_DEPRECATED
 #endif
-namespace QtAV {
-namespace Widgets {
+
+namespace QtAV
+{
+
+namespace Widgets
+{
+
 /*!
  * \brief registerRenderers
  * register built-in renderers.
@@ -57,6 +64,7 @@ namespace Widgets {
  * Then you have to call registerRenderers() to ensure QtAVWidgets module is linked.
  */
 Q_AVWIDGETS_EXPORT void registerRenderers();
+
 } // namespace Widgets
 
 extern Q_AVWIDGETS_EXPORT VideoRendererId VideoRendererId_Widget;
@@ -68,9 +76,12 @@ extern Q_AVWIDGETS_EXPORT VideoRendererId VideoRendererId_XV;
 extern Q_AVWIDGETS_EXPORT VideoRendererId VideoRendererId_X11;
 extern Q_AVWIDGETS_EXPORT VideoRendererId VideoRendererId_GLWidget2;
 extern Q_AVWIDGETS_EXPORT VideoRendererId VideoRendererId_OpenGLWidget;
-//popup a dialog
+
+// popup a dialog
 Q_AVWIDGETS_EXPORT void about();
 Q_AVWIDGETS_EXPORT void aboutFFmpeg();
 Q_AVWIDGETS_EXPORT void aboutQtAV();
+
 } // namespace QtAV
+
 #endif //QTAVWIDGETS_GLOBAL_H

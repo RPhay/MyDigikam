@@ -26,7 +26,8 @@
 #include "QtAV/private/mkid.h"
 #include "utils/Logger.h"
 
-namespace QtAV {
+namespace QtAV
+{
 FACTORY_DEFINE(VideoDecoder)
 
 VideoDecoderId VideoDecoderId_FFmpeg = mkid::id32base36_6<'F', 'F', 'm', 'p', 'e', 'g'>::value;
@@ -123,4 +124,4 @@ QString VideoDecoder::name() const
 {
     return QLatin1String(VideoDecoder::name(id()));
 }
-} //namespace QtAV
+} // namespace QtAV

@@ -28,7 +28,8 @@
 #include <QtCore/QSharedData>
 
 // TODO: fromAVFrame() asAVFrame()?
-namespace QtAV {
+namespace QtAV
+{
 
 class FramePrivate;
 class Q_AV_EXPORT Frame
@@ -108,6 +109,6 @@ protected:
     QExplicitlySharedDataPointer<FramePrivate> d_ptr;
 };
 
-} //namespace QtAV
+} // namespace QtAV
 
 #endif // QTAV_FRAME_H

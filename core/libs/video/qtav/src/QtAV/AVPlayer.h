@@ -36,7 +36,8 @@ QT_BEGIN_NAMESPACE
 class QIODevice;
 QT_END_NAMESPACE
 
-namespace QtAV {
+namespace QtAV
+{
 
 class MediaIO;
 class AudioOutput;
@@ -635,6 +636,6 @@ private:
     class Private;
     QScopedPointer<Private> d;
 };
-} //namespace QtAV
+} // namespace QtAV
 Q_DECLARE_METATYPE(QtAV::AVPlayer::State)
 #endif // QTAV_AVPLAYER_H

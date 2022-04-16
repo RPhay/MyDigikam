@@ -21,22 +21,29 @@
  * ============================================================ */
 
 #include "QtAV/QtAV_Global.h"
+
+// Qt includes
+
 #include <QtCore/QLibraryInfo>
 #include <QtCore/QObject>
+
 #if QT_VERSION >= QT_VERSION_CHECK(6, 0, 0)
-#include <QtCore/QRegularExpression>
+#   include <QtCore/QRegularExpression>
 using QRegExp = QRegularExpression;
 #else
-#include <QtCore/QRegExp>
+#   include <QtCore/QRegExp>
 #endif
-#include "QtAV/QtAV_version.h"
-#include "QtAV/private/AVCompat.h"
-#include "utils/internal.h"
-#include "utils/Logger.h"
 
 // KDE includes
 
 #include <klocalizedstring.h>
+
+// Local includes
+
+#include "QtAV/QtAV_Version.h"
+#include "QtAV/private/AVCompat.h"
+#include "utils/internal.h"
+#include "utils/Logger.h"
 
 unsigned QtAV_Version()
 {
@@ -56,7 +63,8 @@ QString QtAV_Version_String_Long()
     return QString::fromLatin1(QTAV_VERSION_STR_LONG);
 }
 
-namespace QtAV {
+namespace QtAV
+{
 
 namespace Internal {
 // disable logging for release. you can manually enable it.

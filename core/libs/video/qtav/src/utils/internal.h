@@ -28,7 +28,8 @@
 #include <QtCore/QObject>
 #include "QtAV/private/AVCompat.h"
 
-namespace QtAV {
+namespace QtAV
+{
 namespace Internal {
 namespace Path {
 QString toLocal(const QString& fullPath);
@@ -59,5 +60,5 @@ void setOptionsToDict(const QVariant& opt, AVDictionary** dict);
 void setOptionsForQObject(const QVariant& opt, QObject* obj);
 
 } //namespace Internal
-} //namespace QtAV
+} // namespace QtAV
 #endif //QTAV_INTERNAL_H

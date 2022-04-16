@@ -34,7 +34,8 @@
 #define DX_LOG_COMPONENT "DSound"
 #include "utils/DirectXHelper.h"
 
-namespace QtAV {
+namespace QtAV
+{
 
 static const char kName[] = "DirectSound";
 class AudioOutputDSound Q_DECL_FINAL: public AudioOutputBackend

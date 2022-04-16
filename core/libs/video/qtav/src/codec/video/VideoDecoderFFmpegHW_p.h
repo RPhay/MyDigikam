@@ -31,7 +31,8 @@
    callbacks if possible. maybe we can also do a runtime check and enable old callbacks
  */
 
-namespace QtAV {
+namespace QtAV
+{
 
 class VideoDecoderFFmpegHWPrivate : public VideoDecoderFFmpegBasePrivate
 {
@@ -100,6 +101,6 @@ private:
     int hw_w, hw_h, hw_profile;
 };
 
-} //namespace QtAV
+} // namespace QtAV
 
 #endif // QTAV_VideoDecoderFFmpegHW_P_H

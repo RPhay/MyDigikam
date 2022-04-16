@@ -45,7 +45,8 @@ extern "C" {
 
 //ffmpeg_vaapi patch: http://lists.libav.org/pipermail/libav-devel/2013-November/053515.html
 
-namespace QtAV {
+namespace QtAV
+{
 using namespace vaapi;
 namespace OpenGLHelper {
 bool isEGL();

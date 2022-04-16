@@ -32,7 +32,8 @@
 
 #include <klocalizedstring.h>
 
-namespace QtAV {
+namespace QtAV
+{
 
 static AVPixelFormat ffmpeg_get_va_format(struct AVCodecContext *c, const AVPixelFormat * ff)
 {
@@ -340,4 +341,4 @@ VideoFrame VideoDecoderFFmpegHW::copyToFrame(const VideoFormat& fmt, int surface
     return frame;
 }
 
-} //namespace QtAV
+} // namespace QtAV

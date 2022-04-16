@@ -41,7 +41,8 @@ class QWindow;
 class QGraphicsItem;
 QT_END_NAMESPACE
 
-namespace QtAV {
+namespace QtAV
+{
 
 typedef int VideoRendererId;
 extern Q_AV_EXPORT VideoRendererId VideoRendererId_OpenGLWindow;
@@ -271,5 +272,5 @@ private:
     void setInSize(int width, int height);
 };
 
-} //namespace QtAV
+} // namespace QtAV
 #endif // QAV_VIDEORENDERER_H

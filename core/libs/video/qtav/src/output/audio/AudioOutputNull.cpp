@@ -24,7 +24,8 @@
 #include "QtAV/private/mkid.h"
 #include "QtAV/private/factory.h"
 
-namespace QtAV {
+namespace QtAV
+{
 //TODO: block internally
 static const char kName[] = "null";
 class AudioOutputNull : public AudioOutputBackend
@@ -49,4 +50,4 @@ AudioOutputNull::AudioOutputNull(QObject *parent)
     : AudioOutputBackend(AudioOutput::DeviceFeatures(), parent)
 {}
 
-} //namespace QtAV
+} // namespace QtAV

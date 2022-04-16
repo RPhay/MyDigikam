@@ -27,7 +27,8 @@
 #include <QtAV/QtAV_Global.h>
 #include <QtAV/FilterContext.h>
 
-namespace QtAV {
+namespace QtAV
+{
 class AudioFormat;
 class AVOutput;
 class AVPlayer;
@@ -116,5 +117,5 @@ protected:
     virtual void process(Statistics* statistics, AudioFrame* frame = 0) = 0;
 };
 
-} //namespace QtAV
+} // namespace QtAV
 #endif // QTAV_FILTER_H

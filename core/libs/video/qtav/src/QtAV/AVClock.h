@@ -40,7 +40,8 @@ typedef QTime QElapsedTimer;
  * detected, then the clock will set to External clock automatically.
  * I name it ExternalClock because the clock can be corrected outside, though it is a clock inside AVClock
  */
-namespace QtAV {
+namespace QtAV
+{
 
 static const double kThousandth = 0.001;
 
@@ -216,5 +217,5 @@ qreal AVClock::speed() const
     return mSpeed;
 }
 
-} //namespace QtAV
+} // namespace QtAV
 #endif // QTAV_AVCLOCK_H

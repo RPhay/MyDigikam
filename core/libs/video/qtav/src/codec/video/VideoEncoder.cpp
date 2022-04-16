@@ -25,7 +25,8 @@
 #include "QtAV/private/factory.h"
 #include "utils/Logger.h"
 
-namespace QtAV {
+namespace QtAV
+{
 FACTORY_DEFINE(VideoEncoder)
 
 void VideoEncoder_RegisterAll()
@@ -129,4 +130,4 @@ VideoFormat::PixelFormat VideoEncoder::pixelFormat() const
     return d_func().format_used;
 }
 
-} //namespace QtAV
+} // namespace QtAV

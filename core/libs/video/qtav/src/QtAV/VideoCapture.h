@@ -28,7 +28,8 @@
 #include <QtAV/QtAV_Global.h>
 #include <QtAV/VideoFrame.h>
 
-namespace QtAV {
+namespace QtAV
+{
 
 //on capture per thread or all in one thread?
 class Q_AV_EXPORT VideoCapture : public QObject
@@ -137,5 +138,5 @@ private:
     VideoFrame frame;
 };
 
-} //namespace QtAV
+} // namespace QtAV
 #endif // QTAV_VIDEOCAPTURE_H

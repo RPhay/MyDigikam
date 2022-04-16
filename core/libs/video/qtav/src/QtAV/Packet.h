@@ -28,7 +28,8 @@
 
 struct AVPacket;
 
-namespace QtAV {
+namespace QtAV
+{
 
 class PacketPrivate;
 class Q_AV_EXPORT Packet
@@ -82,6 +83,6 @@ bool Packet::isValid() const
 #ifndef QT_NO_DEBUG_STREAM
 Q_AV_EXPORT QDebug operator<<(QDebug debug, const Packet &pkt);
 #endif
-} //namespace QtAV
+} // namespace QtAV
 Q_DECLARE_METATYPE(QtAV::Packet)
 #endif // QAV_PACKET_H

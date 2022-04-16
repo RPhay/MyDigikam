@@ -25,7 +25,8 @@
 #include <QtCore/QFile>
 #include "utils/Logger.h"
 
-namespace QtAV {
+namespace QtAV
+{
 
 FACTORY_DEFINE(SubtitleProcessor)
 
@@ -106,4 +107,4 @@ void SubtitleProcessor::onFrameSizeChanged(int width, int height)
     Q_UNUSED(height);
 }
 
-} //namespace QtAV
+} // namespace QtAV

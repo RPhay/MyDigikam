@@ -31,7 +31,8 @@
 #include <QtCore/QSharedPointer>
 #include "QtAV/SurfaceInterop.h"
 
-namespace QtAV {
+namespace QtAV
+{
 namespace vaapi {
 
 bool checkEGL_DMA();
@@ -122,6 +123,6 @@ private:
 };
 #endif //QTAV_HAVE(EGL_CAPI)
 } //namespace vaapi
-} //namespace QtAV
+} // namespace QtAV
 #endif //QT_NO_OPENGL
 #endif // QTAV_SURFACEINTEROPVAAPI_H

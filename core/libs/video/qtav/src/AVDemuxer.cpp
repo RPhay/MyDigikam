@@ -39,7 +39,8 @@ typedef QTime QElapsedTimer;
 
 #include <klocalizedstring.h>
 
-namespace QtAV {
+namespace QtAV
+{
 static const char kFileScheme[] = "file:";
 
 class AVDemuxer::InterruptHandler : public AVIOInterruptCB
@@ -1336,4 +1337,4 @@ bool AVDemuxer::Private::prepareStreams()
     setStream(AVDemuxer::SubtitleStream, -1);
     return true;
 }
-} //namespace QtAV
+} // namespace QtAV

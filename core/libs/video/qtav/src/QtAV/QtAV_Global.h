@@ -51,7 +51,8 @@
 Q_AV_EXPORT unsigned QtAV_Version();
 Q_AV_EXPORT QString QtAV_Version_String();
 Q_AV_EXPORT QString QtAV_Version_String_Long();
-namespace QtAV {
+namespace QtAV
+{
 enum LogLevel {
     LogOff,
     LogDebug, // log all
@@ -161,7 +162,7 @@ enum SurfaceType {
     SourceSurface,
     UserSurface = 0xffff
 };
-} //namespace QtAV
+} // namespace QtAV
 
 Q_DECLARE_METATYPE(QtAV::MediaStatus)
 Q_DECLARE_METATYPE(QtAV::MediaEndAction)

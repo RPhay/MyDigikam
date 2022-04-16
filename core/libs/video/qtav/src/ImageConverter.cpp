@@ -26,7 +26,8 @@
 #include "ImageConverter.h"
 #include "utils/Logger.h"
 
-namespace QtAV {
+namespace QtAV
+{
 
 FACTORY_DEFINE(ImageConverter)
 
@@ -237,4 +238,4 @@ bool ImageConverter::prepareData()
     return true;
 }
 
-} //namespace QtAV
+} // namespace QtAV

@@ -22,11 +22,12 @@
 
 #include <QtAV/AVDecoder.h>
 #include <QtAV/private/AVDecoder_p.h>
-#include <QtAV/QtAV_version.h>
+#include <QtAV/QtAV_Version.h>
 #include "utils/internal.h"
 #include "utils/Logger.h"
 
-namespace QtAV {
+namespace QtAV
+{
 
 static AVCodec* get_codec(const QString &name, const QString& hwa, AVCodecID cid)
 {
@@ -276,4 +277,4 @@ void AVDecoderPrivate::applyOptionsForContext()
     // TODO: wrong if opt is empty
     Internal::setOptionsToFFmpegObj(options.value(QStringLiteral("avcodec")), codec_ctx);
 }
-} //namespace QtAV
+} // namespace QtAV

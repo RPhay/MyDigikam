@@ -30,7 +30,8 @@
 #undef SampleFormat
 #endif
 
-namespace QtAV {
+namespace QtAV
+{
 
 typedef struct {
     AVSampleFormat avfmt;
@@ -498,4 +499,4 @@ namespace {
     } _registerMetaTypes;
 }
 
-} //namespace QtAV
+} // namespace QtAV

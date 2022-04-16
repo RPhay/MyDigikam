@@ -23,15 +23,20 @@
 #ifndef QTAV_GLWIDGETRENDERER_H
 #define QTAV_GLWIDGETRENDERER_H
 
-#include <QtAVWidgets/global.h>
-#include <QtAV/VideoRenderer.h>
+#include "QtAVWidgets_Global.h"
+#include "QtAV/VideoRenderer.h"
+
 #include <QtOpenGL/QGLWidget>
+
 // TODO: QGLFunctions is in Qt4.8+. meego is 4.7
 #define QTAV_HAVE_QGLFUNCTIONS QT_VERSION >= QT_VERSION_CHECK(4, 8, 0)
+
 #if QTAV_HAVE(QGLFUNCTIONS)
-#include <QtOpenGL/QGLFunctions>
+#   include <QtOpenGL/QGLFunctions>
 #endif
-namespace QtAV {
+
+namespace QtAV
+{
 
 class GLWidgetRendererPrivate;
 class Q_AVWIDGETS_EXPORT GLWidgetRenderer : public QGLWidget, public VideoRenderer
@@ -76,6 +81,6 @@ private:
 };
 typedef GLWidgetRenderer VideoRendererGLWidget;
 
-} //namespace QtAV
+} // namespace QtAV
 
 #endif // QTAV_GLWidgetRenderer_H

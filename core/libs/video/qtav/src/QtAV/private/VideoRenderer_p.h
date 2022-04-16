@@ -144,6 +144,6 @@ private:
     friend class VideoRenderer;
 };
 
-} //namespace QtAV
+} // namespace QtAV
 
 #endif // QTAV_VIDEORENDERER_P_H

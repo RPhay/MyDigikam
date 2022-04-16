@@ -27,7 +27,8 @@
 #include "QtAV/AVOutput.h"
 #include "utils/Logger.h"
 
-namespace QtAV {
+namespace QtAV
+{
 
 class FilterManagerPrivate : public DPtrPrivate<FilterManager>
 {
@@ -201,4 +202,4 @@ bool FilterManager::uninstallFilter(Filter *filter, AVOutput *output)
         return output->uninstallFilter(filter);
     return false;
 }
-} //namespace QtAV
+} // namespace QtAV

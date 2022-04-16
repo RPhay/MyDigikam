@@ -27,7 +27,8 @@
 #include "QtAV/private/factory.h"
 #include "utils/Logger.h"
 
-namespace QtAV {
+namespace QtAV
+{
 
 #if QTAV_HAVE(SWR_AVR_MAP)
 #define AudioResamplerFF AudioResamplerLibav
@@ -275,5 +276,5 @@ bool AudioResamplerFF::prepare()
     return true;
 }
 
-} //namespace QtAV
+} // namespace QtAV
 #endif //defined(BUILD_AVR) || defined(BUILD_SWR)

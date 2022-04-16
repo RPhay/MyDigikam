@@ -28,7 +28,8 @@
 #include "utils/Logger.h"
 #include <QtDebug>
 
-namespace QtAV {
+namespace QtAV
+{
 
 class QIODeviceIOPrivate;
 class QIODeviceIO : public MediaIO
@@ -238,6 +239,6 @@ void QFileIO::onUrlChanged()
         qWarning() << "Failed to open [" << d.file.fileName() << "]: " << d.file.errorString();
 }
 
-} //namespace QtAV
+} // namespace QtAV
 
 #include "QIODeviceIO.moc"

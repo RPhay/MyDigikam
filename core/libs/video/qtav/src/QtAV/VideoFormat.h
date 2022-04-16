@@ -31,7 +31,8 @@
 QT_BEGIN_NAMESPACE
 class QDebug;
 QT_END_NAMESPACE
-namespace QtAV {
+namespace QtAV
+{
 class VideoFormatPrivate;
 /*!
  * \brief The VideoFormat class
@@ -282,7 +283,7 @@ Q_AV_EXPORT QDebug operator<<(QDebug debug, const VideoFormat &fmt);
 Q_AV_EXPORT QDebug operator<<(QDebug debug, VideoFormat::PixelFormat pixFmt);
 #endif
 
-} //namespace QtAV
+} // namespace QtAV
 
 Q_DECLARE_METATYPE(QtAV::VideoFormat)
 Q_DECLARE_METATYPE(QtAV::VideoFormat::PixelFormat)

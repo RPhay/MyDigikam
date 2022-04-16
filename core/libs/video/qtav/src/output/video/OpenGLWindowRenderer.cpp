@@ -26,7 +26,8 @@
 #include <QResizeEvent>
 #include "utils/Logger.h"
 
-namespace QtAV {
+namespace QtAV
+{
 FACTORY_REGISTER(VideoRenderer, OpenGLWindow, "OpenGLWindow")
 
 class OpenGLWindowRendererPrivate : public OpenGLRendererBasePrivate
@@ -74,4 +75,4 @@ void OpenGLWindowRenderer::showEvent(QShowEvent *)
     onShowEvent();
     resizeGL(width(), height());
 }
-} //namespace QtAV
+} // namespace QtAV

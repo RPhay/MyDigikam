@@ -26,7 +26,8 @@
 #include <QtCore/QSharedPointer>
 #include <QtAV/VideoFormat.h>
 
-namespace QtAV {
+namespace QtAV
+{
 
 class Q_AV_EXPORT VideoSurfaceInterop
 {
@@ -72,7 +73,7 @@ public:
 };
 
 typedef QSharedPointer<VideoSurfaceInterop> VideoSurfaceInteropPtr;
-} //namespace QtAV
+} // namespace QtAV
 
 Q_DECLARE_METATYPE(QtAV::VideoSurfaceInteropPtr)
 

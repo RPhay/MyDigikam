@@ -41,7 +41,8 @@ typedef QTime QElapsedTimer;
 QT_BEGIN_NAMESPACE
 class QRunnable;
 QT_END_NAMESPACE
-namespace QtAV {
+namespace QtAV
+{
 
 const double kSyncThreshold = 0.2; // 200 ms
 class AVDecoder;
@@ -103,5 +104,5 @@ public:
     QElapsedTimer wait_timer;
 };
 
-} //namespace QtAV
+} // namespace QtAV
 #endif // QTAV_AVTHREAD_P_H

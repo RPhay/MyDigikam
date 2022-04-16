@@ -28,7 +28,8 @@
 #include <QtCore/QVariant>
 #include <QtCore/QSharedData>
 
-namespace QtAV {
+namespace QtAV
+{
 
 class Frame;
 class FramePrivate : public QSharedData
@@ -49,6 +50,6 @@ public:
     int data_align;
 };
 
-} //namespace QtAV
+} // namespace QtAV
 
 #endif // QTAV_Frame_P_H

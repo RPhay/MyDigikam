@@ -30,7 +30,8 @@
  * TODO: add api id(), name(), detail()
  */
 
-namespace QtAV {
+namespace QtAV
+{
 
 class AVDecoder;
 class AVOutputPrivate;
@@ -91,5 +92,5 @@ private:
     friend class VideoOutput;
 };
 
-} //namespace QtAV
+} // namespace QtAV
 #endif //QAV_AVOUTPUT_H

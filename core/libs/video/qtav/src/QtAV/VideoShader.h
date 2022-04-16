@@ -40,7 +40,8 @@
 QT_BEGIN_NAMESPACE
 class QOpenGLShaderProgram;
 QT_END_NAMESPACE
-namespace QtAV {
+namespace QtAV
+{
 class VideoMaterial;
 class VideoShaderPrivate;
 /*!
@@ -273,5 +274,5 @@ protected:
     VideoMaterial(VideoMaterialPrivate &d);
     DPTR_DECLARE(VideoMaterial)
 };
-} //namespace QtAV
+} // namespace QtAV
 #endif // QTAV_VIDEOSHADER_H

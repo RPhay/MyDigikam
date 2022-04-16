@@ -41,7 +41,8 @@ extern "C" {
 #include "MediaCodecTextureStandalone.h"
 #endif
 
-namespace QtAV {
+namespace QtAV
+{
 class VideoDecoderMediaCodecPrivate;
 class VideoDecoderMediaCodec Q_DECL_FINAL : public VideoDecoderFFmpegHW
 {
@@ -190,5 +191,5 @@ VideoFrame VideoDecoderMediaCodec::frame()
 #endif
     return frame;
 }
-} //namespace QtAV
+} // namespace QtAV
 #endif //QTAV_HAVE(MEDIACODEC)

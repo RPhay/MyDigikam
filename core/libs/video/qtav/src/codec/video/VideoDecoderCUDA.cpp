@@ -54,7 +54,8 @@
 
 //decode error if not floating context
 
-namespace QtAV {
+namespace QtAV
+{
 
 static const unsigned int kMaxDecodeSurfaces = 20;
 class VideoDecoderCUDAPrivate;
@@ -800,6 +801,6 @@ void VideoDecoderCUDAPrivate::setBSF(AVCodecID codec)
     }
 }
 
-} //namespace QtAV
+} // namespace QtAV
 
 #include "VideoDecoderCUDA.moc"

@@ -25,7 +25,7 @@
 #include "QtAV/private/AVCompat.h"
 #include "QtAV/private/mkid.h"
 #include "QtAV/private/factory.h"
-#include "QtAV/QtAV_version.h"
+#include "QtAV/QtAV_Version.h"
 #include "utils/Logger.h"
 
 #if AV_MODULE_CHECK(LIBAVUTIL, 55, 13, 0, 27, 100)
@@ -41,7 +41,8 @@ extern "C" {
  * Don't use lower case here because the value name may be "default" in avcodec which is a keyword of C++
  */
 
-namespace QtAV {
+namespace QtAV
+{
 
 #ifdef HAVE_AVHWCTX
 struct {
@@ -392,5 +393,5 @@ bool VideoEncoderFFmpeg::encode(const VideoFrame &frame)
     return true;
 }
 
-} //namespace QtAV
+} // namespace QtAV
 #include "VideoEncoderFFmpeg.moc"

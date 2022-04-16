@@ -22,11 +22,12 @@
 
 #include <QtAV/AVEncoder.h>
 #include <QtAV/private/AVEncoder_p.h>
-#include <QtAV/QtAV_version.h>
+#include <QtAV/QtAV_Version.h>
 #include "utils/internal.h"
 #include "utils/Logger.h"
 
-namespace QtAV {
+namespace QtAV
+{
 
 AVEncoder::AVEncoder(AVEncoderPrivate &d)
     :DPTR_INIT(&d)
@@ -213,4 +214,4 @@ void AVEncoderPrivate::applyOptionsForContext()
     Internal::setOptionsToFFmpegObj(options.value(QStringLiteral("avcodec")), avctx);
 }
 
-} //namespace QtAV
+} // namespace QtAV

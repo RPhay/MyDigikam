@@ -23,7 +23,8 @@
 #include "PacketBuffer.h"
 #include <QtCore/QDateTime>
 
-namespace QtAV {
+namespace QtAV
+{
 static const int kAvgSize = 16;
 PacketBuffer::PacketBuffer()
     : m_mode(BufferTime)
@@ -187,4 +188,4 @@ qreal PacketBuffer::calc_speed(bool use_bytes) const
     }
     return (qreal)delta/dt;
 }
-} //namespace QtAV
+} // namespace QtAV

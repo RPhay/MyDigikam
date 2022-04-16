@@ -25,7 +25,8 @@
 
 #include <QtAV/QtAV_Global.h>
 
-namespace QtAV {
+namespace QtAV
+{
 
 typedef int AudioResamplerId;
 class AudioFormat;
@@ -108,5 +109,5 @@ protected:
 
 extern Q_AV_EXPORT AudioResamplerId AudioResamplerId_FF;
 extern Q_AV_EXPORT AudioResamplerId AudioResamplerId_Libav;
-} //namespace QtAV
+} // namespace QtAV
 #endif // QTAV_AUDIORESAMPLER_H

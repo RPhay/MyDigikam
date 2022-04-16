@@ -50,7 +50,8 @@
 #endif //!defined(QT_OPENGL_ES_2)
 #endif //VA_X11_INTEROP
 
-namespace QtAV {
+namespace QtAV
+{
 VideoFormat::PixelFormat pixelFormatFromVA(uint32_t fourcc);
 namespace vaapi {
 
@@ -597,6 +598,6 @@ bool EGLInteropResource::ensure()
     return true;
 }
 #endif //QTAV_HAVE(EGL_CAPI)
-} //namespace QtAV
+} // namespace QtAV
 } //namespace vaapi
 #endif //QT_NO_OPENGL

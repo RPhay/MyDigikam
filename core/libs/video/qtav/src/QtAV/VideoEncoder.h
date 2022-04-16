@@ -27,7 +27,8 @@
 #include <QtAV/VideoFrame.h>
 #include <QtCore/QStringList>
 
-namespace QtAV {
+namespace QtAV
+{
 typedef int VideoEncoderId;
 class VideoEncoderPrivate;
 class Q_AV_EXPORT VideoEncoder : public AVEncoder
@@ -113,5 +114,5 @@ private:
     VideoEncoder();
 };
 
-} //namespace QtAV
+} // namespace QtAV
 #endif // QTAV_VIDEOENCODER_H

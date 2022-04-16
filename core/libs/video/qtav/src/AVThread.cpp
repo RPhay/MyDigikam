@@ -30,7 +30,8 @@
 #include "output/OutputSet.h"
 #include "utils/Logger.h"
 
-namespace QtAV {
+namespace QtAV
+{
 
 QVariantHash AVThreadPrivate::dec_opt_framedrop;
 QVariantHash AVThreadPrivate::dec_opt_normal;
@@ -401,4 +402,4 @@ void AVThread::waitAndCheck(ulong value, qreal pts)
     //qDebug("err: %lld", d.wait_err);
 }
 
-} //namespace QtAV
+} // namespace QtAV

@@ -35,7 +35,8 @@
 
 #include <klocalizedstring.h>
 
-namespace QtAV {
+namespace QtAV
+{
 
 static bool check_ffmpeg_hevc_dxva2()
 {
@@ -518,4 +519,4 @@ const d3d_format_t* VideoDecoderD3DPrivate::getFormat(const AVCodecContext *avct
     }
     return NULL;
 }
-} //namespace QtAV
+} // namespace QtAV

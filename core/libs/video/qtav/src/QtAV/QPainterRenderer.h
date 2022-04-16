@@ -26,7 +26,8 @@
 #include <QtAV/VideoRenderer.h>
 #include <QtGui/QImage>
 //TODO: not abstract.
-namespace QtAV {
+namespace QtAV
+{
 
 class QPainterRendererPrivate;
 class Q_AV_EXPORT QPainterRenderer : public VideoRenderer
@@ -44,5 +45,5 @@ protected:
     QPainterRenderer(QPainterRendererPrivate& d);
 };
 
-} //namespace QtAV
+} // namespace QtAV
 #endif // QAV_QPAINTERRENDERER_H

@@ -25,7 +25,8 @@
 
 #include <QtAV/Filter.h>
 
-namespace QtAV {
+namespace QtAV
+{
 
 class Q_AV_EXPORT LibAVFilter
 {
@@ -99,6 +100,6 @@ protected:
     QString sourceArguments() const Q_DECL_OVERRIDE;
 };
 
-} //namespace QtAV
+} // namespace QtAV
 
 #endif // QTAV_LIBAVFILTER_H

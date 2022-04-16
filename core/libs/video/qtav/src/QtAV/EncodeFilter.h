@@ -28,7 +28,8 @@
 #include <QtAV/AudioFrame.h>
 #include <QtAV/VideoFrame.h>
 
-namespace QtAV {
+namespace QtAV
+{
 
 class AudioEncoder;
 class AudioEncodeFilterPrivate;
@@ -150,6 +151,6 @@ protected Q_SLOTS:
 protected:
     virtual void process(Statistics* statistics, VideoFrame* frame = 0) Q_DECL_OVERRIDE;
 };
-} //namespace QtAV
+} // namespace QtAV
 #endif // QTAV_ENCODEFILTER_H
 

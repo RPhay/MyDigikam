@@ -52,8 +52,8 @@
 #   pragma clang diagnostic ignored "-Wdeprecated-declarations"
 #endif
 
-#include <QtAVWidgets/WidgetRenderer.h>   // krazy:exclude=includes
-#include <QtAV/version.h>                 // krazy:exclude=includes
+#include "WidgetRenderer.h"
+#include "QtAV_Version.h"
 
 // Restore warnings
 #if !defined(Q_OS_DARWIN) && defined(Q_CC_GNU)
