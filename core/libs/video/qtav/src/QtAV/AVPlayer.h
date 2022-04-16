@@ -20,17 +20,25 @@
  *
  * ============================================================ */
 
-#ifndef QTAV_AVPLAYER_H
-#define QTAV_AVPLAYER_H
+#ifndef QTAV_AV_PLAYER_H
+#define QTAV_AV_PLAYER_H
+
+// C++ includes
 
 #include <limits>
-#include <QtCore/QHash>
-#include <QtCore/QScopedPointer>
-#include <QtAV/AudioOutput.h>
-#include <QtAV/AVClock.h>
-#include <QtAV/Statistics.h>
-#include <QtAV/VideoDecoder.h>
-#include <QtAV/AVError.h>
+
+// Qt includes
+
+#include <QHash>
+#include <QScopedPointer>
+
+// Local includes
+
+#include "AudioOutput.h"
+#include "AVClock.h"
+#include "Statistics.h"
+#include "VideoDecoder.h"
+#include "AVError.h"
 
 QT_BEGIN_NAMESPACE
 class QIODevice;
@@ -46,6 +54,7 @@ class Filter;
 class AudioFilter;
 class VideoFilter;
 class VideoCapture;
+
 /*!
  * \brief The AVPlayer class
  * Preload:
@@ -636,6 +645,9 @@ private:
     class Private;
     QScopedPointer<Private> d;
 };
+
 } // namespace QtAV
+
 Q_DECLARE_METATYPE(QtAV::AVPlayer::State)
-#endif // QTAV_AVPLAYER_H
+
+#endif // QTAV_AV_PLAYER_H

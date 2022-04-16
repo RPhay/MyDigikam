@@ -20,29 +20,41 @@
  *
  * ============================================================ */
 
-#ifndef QAV_DEMUXER_H
-#define QAV_DEMUXER_H
+#ifndef QTAV_AV_DEMUXER_H
+#define QTAV_AV_DEMUXER_H
 
-#include <QtAV/AVError.h>
-#include <QtAV/Packet.h>
-#include <QtCore/QVariant>
-#include <QtCore/QObject>
-#include <QtCore/QScopedPointer>
+// Qt includes
+
+#include <QVariant>
+#include <QObject>
+#include <QScopedPointer>
+
+// Local includes
+
+#include "AVError.h"
+#include "Packet.h"
 
 struct AVFormatContext;
 struct AVCodecContext;
+
 QT_BEGIN_NAMESPACE
 class QIODevice;
 QT_END_NAMESPACE
+
 // TODO: force codec name. clean code
+
 namespace QtAV
 {
+
 class AVError;
 class MediaIO;
+
 class Q_AV_EXPORT AVDemuxer : public QObject
 {
     Q_OBJECT
+
 public:
+
     enum StreamType { //TODO: move to common MediaType
         AudioStream,
         VideoStream,
@@ -211,4 +223,5 @@ private:
 };
 
 } // namespace QtAV
-#endif // QAV_DEMUXER_H
+
+#endif // QTAV_AV_DEMUXER_H

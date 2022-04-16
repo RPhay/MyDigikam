@@ -20,16 +20,21 @@
  *
  * ============================================================ */
 
-#ifndef QAV_AVMUXER_H
-#define QAV_AVMUXER_H
+#ifndef QTAV_AV_MUXER_H
+#define QTAV_AV_MUXER_H
 
-#include <QtAV/AVError.h>
-#include <QtAV/Packet.h>
-#include <QtCore/QObject>
-#include <QtCore/QIODevice>
-#include <QtCore/QScopedPointer>
-#include <QtCore/QStringList>
-#include <QtCore/QVariant>
+// Qt includes
+
+#include <QObject>
+#include <QIODevice>
+#include <QScopedPointer>
+#include <QStringList>
+#include <QVariant>
+
+// Local includes
+
+#include <AVError.h>
+#include <Packet.h>
 
 namespace QtAV
 {
@@ -37,6 +42,7 @@ namespace QtAV
 class MediaIO;
 class VideoEncoder;
 class AudioEncoder;
+
 class Q_AV_EXPORT AVMuxer : public QObject
 {
     Q_OBJECT
@@ -91,5 +97,7 @@ private:
     class Private;
     QScopedPointer<Private> d;
 };
+
 } // namespace QtAV
-#endif //QAV_AVMUXER_H
+
+#endif // QTAV_AV_MUXER_H

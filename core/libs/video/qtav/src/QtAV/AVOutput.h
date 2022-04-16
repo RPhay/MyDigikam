@@ -20,11 +20,16 @@
  *
  * ============================================================ */
 
-#ifndef QAV_AVOUTPUT_H
-#define QAV_AVOUTPUT_H
+#ifndef QTAV_AV_OUTPUT_H
+#define QTAV_AV_OUTPUT_H
 
-#include <QtCore/QByteArray>
-#include <QtAV/QtAV_Global.h>
+// Qt includes
+
+#include <QByteArray>
+
+// Local includes
+
+#include "QtAV_Global.h"
 
 /*!
  * TODO: add api id(), name(), detail()
@@ -38,6 +43,7 @@ class AVOutputPrivate;
 class Filter;
 class Statistics;
 class OutputSet;
+
 class Q_AV_EXPORT AVOutput
 {
     DPTR_DECLARE_PRIVATE(AVOutput)
@@ -93,4 +99,5 @@ private:
 };
 
 } // namespace QtAV
-#endif //QAV_AVOUTPUT_H
+
+#endif // QTAV_AV_OUTPUT_H

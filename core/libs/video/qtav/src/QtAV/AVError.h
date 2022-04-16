@@ -20,11 +20,16 @@
  *
  * ============================================================ */
 
-#ifndef QTAV_AVERROR_H
-#define QTAV_AVERROR_H
+#ifndef QTAV_AV_ERROR_H
+#define QTAV_AV_ERROR_H
 
-#include <QtAV/QtAV_Global.h>
-#include <QtCore/QString>
+// Qt includes
+
+#include <QString>
+
+// Local includes
+
+#include "QtAV_Global.h"
 
 namespace QtAV
 {
@@ -99,10 +104,12 @@ private:
 Q_DECLARE_METATYPE(QtAV::AVError)
 
 #ifndef QT_NO_DEBUG_STREAM
+
 QT_BEGIN_NAMESPACE
 class QDebug;
 QT_END_NAMESPACE
 Q_AV_EXPORT QDebug operator<<(QDebug debug, const QtAV::AVError &error);
+
 #endif
 
-#endif // QTAV_AVERROR_H
+#endif // QTAV_AV_ERROR_H

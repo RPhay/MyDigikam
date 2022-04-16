@@ -20,21 +20,27 @@
  *
  * ============================================================ */
 
-#ifndef QTAV_AVCLOCK_H
-#define QTAV_AVCLOCK_H
+#ifndef QTAV_AV_CLOCK_H
+#define QTAV_AV_CLOCK_H
 
-#include <QtAV/QtAV_Global.h>
-#include <QtCore/QAtomicInt>
-#include <QtCore/QBasicTimer>
-#include <QtCore/QObject>
+// Qt includes
+
+#include <QAtomicInt>
+#include <QBasicTimer>
+#include <QObject>
+
 #if QT_VERSION >= QT_VERSION_CHECK(4, 7, 0)
-#include <QtCore/QElapsedTimer>
+#   include <QElapsedTimer>
 #else
-#include <QtCore/QTime>
+#   include <QTime>
 typedef QTime QElapsedTimer;
 #endif
 
-/*
+// Local includes
+
+#include "QtAV_Global.h"
+
+/**
  * AVClock is created by AVPlayer. The only way to access AVClock is through AVPlayer::masterClock()
  * The default clock type is Audio's clock, i.e. vedio synchronizes to audio. If audio stream is not
  * detected, then the clock will set to External clock automatically.
@@ -218,4 +224,5 @@ qreal AVClock::speed() const
 }
 
 } // namespace QtAV
-#endif // QTAV_AVCLOCK_H
+
+#endif // QTAV_AV_CLOCK_H

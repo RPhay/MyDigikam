@@ -20,18 +20,25 @@
  *
  * ============================================================ */
 
-#ifndef QAV_ENCODER_H
-#define QAV_ENCODER_H
+#ifndef QTAV_AV_ENCODER_H
+#define QTAV_AV_ENCODER_H
 
-#include <QtAV/QtAV_Global.h>
-#include <QtAV/AVError.h>
-#include <QtAV/Packet.h>
+// Qt includes
+
 #include <QtCore/QVariant>
 #include <QtCore/QObject>
 
+// Local includes
+
+#include "QtAV_Global.h"
+#include "AVError.h"
+#include "Packet.h"
+
 namespace QtAV
 {
+
 class AVEncoderPrivate;
+
 class Q_AV_EXPORT AVEncoder : public QObject
 {
     Q_OBJECT
@@ -40,7 +47,9 @@ class Q_AV_EXPORT AVEncoder : public QObject
     Q_PROPERTY(QString codecName READ codecName WRITE setCodecName NOTIFY codecNameChanged)
     Q_PROPERTY(TimestampMode timestampMode READ timestampMode WRITE setTimestampMode NOTIFY timestampModeChanged)
     Q_ENUMS(TimestampMode)
+
 public:
+
     enum TimestampMode {
         TimestampMonotonic,
         TimestampCopy,
@@ -100,5 +109,7 @@ private:
     Q_DISABLE_COPY(AVEncoder)
     AVEncoder(); // base class, not direct create. only final class has is enough
 };
+
 } // namespace QtAV
-#endif // QAV_ENCODER_H
+
+#endif // QTAV_AV_ENCODER_H

@@ -20,12 +20,17 @@
  *
  * ============================================================ */
 
-#ifndef QAV_DECODER_H
-#define QAV_DECODER_H
+#ifndef QTAV_AV_DECODER_H
+#define QTAV_AV_DECODER_H
 
-#include <QtAV/AVError.h>
-#include <QtCore/QVariant>
-#include <QtCore/QObject>
+// Qt includes
+
+#include <QVariant>
+#include <QObject>
+
+// Local includes
+
+#include "AVError.h"
 
 namespace QtAV
 {
@@ -90,4 +95,5 @@ private:
 };
 
 } // namespace QtAV
-#endif // QAV_DECODER_H
+
+#endif // QTAV_QAV_DECODER_H
