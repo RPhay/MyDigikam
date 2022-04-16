@@ -202,7 +202,7 @@ QString AVError::string() const
             break;
 
         default:
-            errStr = i18n("Unknow error");
+            errStr = i18n("Unknown error");
             break;
         }
     }
