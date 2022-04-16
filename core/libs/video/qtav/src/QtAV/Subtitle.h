@@ -22,32 +22,45 @@
 
 #ifndef QTAV_SUBTITLE_H
 #define QTAV_SUBTITLE_H
-#include <QtAV/SubImage.h>
-#include <QtCore/QObject>
-#include <QtCore/QStringList>
-#include <QtCore/QUrl>
-#include <QtGui/QImage>
+
+// Qt includes
+
+#include <QObject>
+#include <QStringList>
+#include <QUrl>
+#include <QImage>
+
+// Local includes
+
+#include "SubImage.h"
+
 /*
  * to avoid read error, subtitle size > 10*1024*1024 will be ignored.
  */
+
 namespace QtAV
 {
+
 class Q_AV_EXPORT SubtitleFrame
 {
 public:
+
     SubtitleFrame() :
-        begin(0)
-      , end(0)
-    {}
+        begin(0),
+        end(0)
+    {
+    }
+
     // valied: begin < end
     bool isValid() const { return begin < end;}
     operator bool() const { return isValid();}
     bool operator !() const { return !isValid();}
     inline bool operator <(const SubtitleFrame& f) const { return end < f.end;}
     inline bool operator <(qreal t) const { return end < t;}
+
     qreal begin;
     qreal end;
-    QString text; //plain text. always valid
+    QString text; // plain text. always valid
 };
 
 class Q_AV_EXPORT Subtitle : public QObject
@@ -72,9 +85,12 @@ class Q_AV_EXPORT Subtitle : public QObject
     Q_PROPERTY(QString fontFile READ fontFile WRITE setFontFile NOTIFY fontFileChanged)
     Q_PROPERTY(QString fontsDir READ fontsDir WRITE setFontsDir NOTIFY fontsDirChanged)
     Q_PROPERTY(bool fontFileForced READ isFontFileForced WRITE setFontFileForced NOTIFY fontFileForcedChanged)
+
 public:
+
     explicit Subtitle(QObject *parent = 0);
     virtual ~Subtitle();
+
     /*!
      * \brief setCodec
      * set subtitle encoding that supported by QTextCodec. You have to call load() to manually reload the subtitle with given codec
@@ -83,13 +99,16 @@ public:
      * set value of "AutoDetect" to detect the charset of subtitle
      */
     void setCodec(const QByteArray& value);
+
     QByteArray codec() const;
+
     /*!
      * \brief isValid
      * indicate whether the subtitle can be found and processed
      * \return
      */
     bool isLoaded() const;
+
     /*!
      * \brief setEngines
      * Set subtitle processor engine names, in priority order. When loading a subtitle, use the engines
@@ -97,7 +116,9 @@ public:
      * \param value
      */
     void setEngines(const QStringList& value);
+
     QStringList engines() const;
+
     /*!
      * \brief engine
      * \return The engine in use for current subtitle
@@ -127,6 +148,7 @@ public:
      * \return
      */
     QStringList supportedSuffixes() const;
+
     /*!
      * \brief setSuffixes
      * default is using SubtitleProcessor. Empty equals default value. But suffixes() will return empty.
@@ -135,6 +157,7 @@ public:
     QStringList suffixes() const;
 
     qreal timestamp() const;
+
     /*!
      * \brief delay
      * unit: second
@@ -143,15 +166,19 @@ public:
      */
     qreal delay() const;
     void setDelay(qreal value);
+
     /*!
      * \brief canRender
      * wether current processor supports rendering. Check before getImage()
      * \return
      */
     bool canRender() const;
+
     // call setTimestamp before getText/Image
-    //plain text. separated by '\n' if more more than 1 text rects found
+    // plain text. separated by '\n' if more more than 1 text rects found
+
     QString getText() const;
+
     /*!
       * \brief getImage
       * Get a subtitle image with given (video) frame size. The result image size usually smaller than
@@ -264,10 +291,13 @@ public:
     void setAutoLoad(bool value);
     bool autoLoad() const;
     */
+
 private:
+
     QObject *m_obj;
     Subtitle *m_s;
 };
 
 } // namespace QtAV
+
 #endif // QTAV_SUBTITLE_H

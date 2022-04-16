@@ -67,7 +67,7 @@
 #include "VideoRenderer.h"
 #include "VideoOutput.h"
 
-//The following renderer headers can be removed
+// The following renderer headers can be removed
 
 #include "QPainterRenderer.h"
 

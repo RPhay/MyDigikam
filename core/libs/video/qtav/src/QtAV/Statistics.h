@@ -23,10 +23,15 @@
 #ifndef QTAV_STATISTICS_H
 #define QTAV_STATISTICS_H
 
-#include <QtAV/QtAV_Global.h>
-#include <QtCore/QHash>
-#include <QtCore/QTime>
-#include <QtCore/QSharedData>
+// Qt includes
+
+#include <QHash>
+#include <QTime>
+#include <QSharedData>
+
+// Local includes
+
+#include "QtAV_Global.h"
 
 /*!
  * values from functions are dynamically calculated
@@ -37,8 +42,10 @@ namespace QtAV
 class Q_AV_EXPORT Statistics
 {
 public:
+
     Statistics();
     ~Statistics();
+
     void reset();
 
     QString url;
@@ -46,10 +53,13 @@ public:
     QString format;
     QTime start_time, duration;
     QHash<QString, QString> metadata;
-    class Common {
+
+    class Common
+    {
     public:
+
         Common();
-        //TODO: dynamic bit rate compute
+        // TODO: dynamic bit rate compute
         bool available;
         QString codec, codec_long;
         QString decoder;
@@ -64,16 +74,20 @@ public:
             video_only video;
         } only;*/
         QHash<QString, QString> metadata;
-    } audio, video; //init them
+    } audio, video; // init them
 
-    //from AVCodecContext
-    class Q_AV_EXPORT AudioOnly {
+    // from AVCodecContext
+    class Q_AV_EXPORT AudioOnly
+    {
     public:
+
         AudioOnly();
+
         int sample_rate; ///< samples per second
         int channels;    ///< number of audio channels
         QString channel_layout;
         QString sample_fmt;  ///< sample format
+
         /**
          * Number of samples per channel in an audio frame.
          * - decoding: may be set by some decoders to indicate constant frame size
@@ -85,35 +99,46 @@ public:
          */
         int block_align;
     } audio_only;
-    //from AVCodecContext
-    class Q_AV_EXPORT VideoOnly {
+
+    // from AVCodecContext
+
+    class Q_AV_EXPORT VideoOnly
+    {
     public:
-        //union member with ctor, dtor, copy ctor only works in c++11
+
+        // union member with ctor, dtor, copy ctor only works in c++11
         VideoOnly();
         VideoOnly(const VideoOnly&);
         VideoOnly& operator =(const VideoOnly&);
         ~VideoOnly();
+
         // compute from pts history
         qreal currentDisplayFPS() const;
         qreal pts() const; // last pts
 
         int width, height;
+
         /**
          * Bitstream width / height, may be different from width/height if lowres enabled.
          * - decoding: Set by user before init if known. Codec should override / dynamically change if needed.
          */
         int coded_width, coded_height;
+
         /**
          * the number of pictures in a group of pictures, or 0 for intra_only
          */
         int gop_size;
         QString pix_fmt;
         int rotate;
+
         /// return current absolute time (seconds since epcho
         qint64 frameDisplayed(qreal pts); // used to compute currentDisplayFPS()
+
     private:
+
         class Private;
         QExplicitlySharedDataPointer<Private> d;
+
     } video_only;
 };
 
