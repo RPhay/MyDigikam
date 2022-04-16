@@ -55,12 +55,12 @@ class Q_DECL_HIDDEN PWindow::Private
 public:
 
     explicit Private()
+      : imagesCount(0),
+        imagesTotal(0),
+        widget     (nullptr),
+        albumDlg   (nullptr),
+        talker     (nullptr)
     {
-        imagesCount = 0;
-        imagesTotal = 0;
-        widget      = nullptr;
-        albumDlg    = nullptr;
-        talker      = nullptr;
     }
 
     unsigned int  imagesCount;
@@ -115,6 +115,9 @@ PWindow::PWindow(DInfoInterface* const iface,
 
     connect(d->talker,SIGNAL(signalLinkingFailed()),
             this,SLOT(slotSignalLinkingFailed()));
+
+    connect(d->talker,SIGNAL(signalNetworkError()),
+            this,SLOT(slotTransferCancel()));
 
     connect(d->talker,SIGNAL(signalLinkingSucceeded()),
             this,SLOT(slotSignalLinkingSucceeded()));
@@ -261,8 +264,8 @@ void PWindow::slotStartTransfer()
             i18n("Authentication failed. Click \"Continue\" to authenticate."),
             QMessageBox::Yes | QMessageBox::No);
 
-        (warn->button(QMessageBox::Yes))->setText(i18n("Continue"));
-        (warn->button(QMessageBox::No))->setText(i18n("Cancel"));
+        warn->button(QMessageBox::Yes)->setText(i18n("Continue"));
+        warn->button(QMessageBox::No)->setText(i18n("Cancel"));
 
         if (warn->exec() == QMessageBox::Yes)
         {
@@ -286,7 +289,7 @@ void PWindow::slotStartTransfer()
 
     d->currentAlbumName = d->widget->getAlbumsCoB()->currentText();
     qCDebug(DIGIKAM_WEBSERVICES_LOG) << "StartTransfer:" << d->currentAlbumName
-                                     << "INDEX: " << d->widget->getAlbumsCoB()->currentIndex();
+                                     << "INDEX:" << d->widget->getAlbumsCoB()->currentIndex();
     d->imagesTotal      = d->transferQueue.count();
     d->imagesCount      = 0;
 
@@ -338,6 +341,7 @@ void PWindow::slotAddPinFailed(const QString& msg)
     {
         d->transferQueue.clear();
         d->widget->progressBar()->hide();
+        d->widget->progressBar()->progressCompleted();
     }
     else
     {
@@ -352,6 +356,7 @@ void PWindow::slotAddPinFailed(const QString& msg)
 void PWindow::slotAddPinSucceeded()
 {
     // Remove photo uploaded from the list
+
     d->widget->imagesList()->removeItemByUrl(d->transferQueue.first());
     d->transferQueue.pop_front();
     d->imagesCount++;
@@ -416,9 +421,10 @@ void PWindow::slotCreateBoardSucceeded()
 
 void PWindow::slotTransferCancel()
 {
+    d->talker->cancel();
     d->transferQueue.clear();
     d->widget->progressBar()->hide();
-    d->talker->cancel();
+    d->widget->progressBar()->progressCompleted();
 }
 
 void PWindow::slotUserChangeRequest()
@@ -439,6 +445,7 @@ void PWindow::buttonStateChange(bool state)
 void PWindow::slotFinished()
 {
     writeSettings();
+    slotTransferCancel();
     d->widget->imagesList()->listView()->clear();
 }
 
