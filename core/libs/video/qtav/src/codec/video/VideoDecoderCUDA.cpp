@@ -20,20 +20,28 @@
  *
  * ============================================================ */
 
-#include "QtAV/VideoDecoder.h"
-#include "QtAV/Packet.h"
-#include "QtAV/private/AVDecoder_p.h"
-#include "QtAV/private/factory.h"
-#include <QtCore/QQueue>
-#if QTAV_HAVE(DLLAPI_CUDA)
-#include "dllapi.h"
-#endif //QTAV_HAVE(DLLAPI_CUDA)
-#include "QtAV/private/AVCompat.h"
-#include "utils/BlockingQueue.h"
+#include "VideoDecoder.h"
+
+// Qt includes
+
+#include <QQueue>
 
 // KDE includes
 
 #include <klocalizedstring.h>
+
+// Local includes
+
+#include "Packet.h"
+#include "private/AVDecoder_p.h"
+#include "private/factory.h"
+
+#if QTAV_HAVE(DLLAPI_CUDA)
+#   include "dllapi.h"
+#endif
+
+#include "private/AVCompat.h"
+#include "utils/BlockingQueue.h"
 
 /*
  * TODO: VC1, HEVC bsf
@@ -52,13 +60,15 @@
 #include "utils/Logger.h"
 #include "SurfaceInteropCUDA.h"
 
-//decode error if not floating context
+// decode error if not floating context
 
 namespace QtAV
 {
 
 static const unsigned int kMaxDecodeSurfaces = 20;
+
 class VideoDecoderCUDAPrivate;
+
 class VideoDecoderCUDA : public VideoDecoder
 {
     Q_OBJECT
@@ -341,10 +351,10 @@ VideoDecoderCUDA::VideoDecoderCUDA():
     setProperty("detail_surfaces", i18n("Decoding surfaces"));
     setProperty("detail_flags", i18n("Decoder flags"));
     setProperty("detail_copyMode", QStringLiteral("%1\n%2\n%3\n%4")
-                .arg(tr("Performace: ZeroCopy > DirectCopy > GenericCopy"))
-                .arg(tr("ZeroCopy: no copy back from GPU to System memory. Directly render the decoded data on GPU"))
-                .arg(tr("DirectCopy: copy back to host memory but video frames and map to GL texture"))
-                .arg(tr("GenericCopy: copy back to host memory and each video frame"))
+                .arg(i18n("Performace: ZeroCopy > DirectCopy > GenericCopy"))
+                .arg(i18n("ZeroCopy: no copy back from GPU to System memory. Directly render the decoded data on GPU"))
+                .arg(i18n("DirectCopy: copy back to host memory but video frames and map to GL texture"))
+                .arg(i18n("GenericCopy: copy back to host memory and each video frame"))
                 );
     Q_UNUSED(i18n("ZeroCopy"));
     Q_UNUSED(i18n("DirectCopy"));

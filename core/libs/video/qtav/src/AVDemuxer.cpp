@@ -20,27 +20,35 @@
  *
  * ============================================================ */
 
-#include "QtAV/AVDemuxer.h"
-#include "QtAV/MediaIO.h"
-#include "QtAV/private/AVCompat.h"
-#include <QtCore/QMutex>
-#include <QtCore/QStringList>
-#include <QtCore/QIODevice>
+#include "AVDemuxer.h"
+
+// Qt includes
+
+#include <QMutex>
+#include <QStringList>
+#include <QIODevice>
+
 #if QT_VERSION >= QT_VERSION_CHECK(4, 7, 0)
-#include <QtCore/QElapsedTimer>
+#   include <QElapsedTimer>
 #else
-#include <QtCore/QTime>
+#   include <QTime>
 typedef QTime QElapsedTimer;
 #endif
-#include "utils/internal.h"
-#include "utils/Logger.h"
 
 // KDE includes
 
 #include <klocalizedstring.h>
 
+// Local includes
+
+#include "MediaIO.h"
+#include "AVCompat.h"
+#include "utils/internal.h"
+#include "utils/Logger.h"
+
 namespace QtAV
 {
+
 static const char kFileScheme[] = "file:";
 
 class AVDemuxer::InterruptHandler : public AVIOInterruptCB
@@ -466,7 +474,7 @@ bool AVDemuxer::readFrame()
             if (!d->eof) {
                 if (getInterruptStatus()) {
                     AVError::ErrorCode ec(AVError::ReadError);
-                    QString msg(tr("error reading stream data"));
+                    QString msg(i18n("error reading stream data"));
                     handleError(ret, &ec, msg);
                 }
                 if (mediaStatus() != StalledMedia) {
@@ -488,7 +496,7 @@ bool AVDemuxer::readFrame()
             return false;
         }
         AVError::ErrorCode ec(AVError::ReadError);
-        QString msg(tr("error reading stream data"));
+        QString msg(i18n("error reading stream data"));
         handleError(ret, &ec, msg);
         qWarning("[AVDemuxer] error: %s", av_err2str(ret));
         av_packet_unref(&packet); //important!
@@ -622,7 +630,7 @@ bool AVDemuxer::seek(qint64 pos)
 #endif
     if (ret < 0) {
         AVError::ErrorCode ec(AVError::SeekError);
-        QString msg(tr("seek error"));
+        QString msg(i18n("seek error"));
         handleError(ret, &ec, msg);
         return false;
     }
@@ -844,7 +852,7 @@ bool AVDemuxer::load()
     if (ret < 0) {
         setMediaStatus(InvalidMedia);
         AVError::ErrorCode ec(AVError::ParseStreamError);
-        QString msg(tr("failed to find stream info"));
+        QString msg(i18n("failed to find stream info"));
         handleError(ret, &ec, msg);
         qWarning() << "Can't find stream info: " << msg;
         // context is ready. unloaded() will be emitted in unload()
@@ -1237,13 +1245,13 @@ void AVDemuxer::handleError(int averr, AVError::ErrorCode *errorCode, QString &m
         if (getInterruptStatus() < 0) {
             setMediaStatus(StalledMedia);
             Q_EMIT userInterrupted();
-            err_msg += QStringLiteral(" [%1]").arg(tr("interrupted by user"));
+            err_msg += QStringLiteral(" [%1]").arg(i18n("interrupted by user"));
         } else {
             // FIXME: if not interupt on timeout and ffmpeg exits, still LoadingMedia
             if (isInterruptOnTimeout())
                 setMediaStatus(StalledMedia);
             // averr is eof for open timeout
-            err_msg += QStringLiteral(" [%1]").arg(tr("timeout"));
+            err_msg += QStringLiteral(" [%1]").arg(i18n("timeout"));
         }
     } else {
         if (mediaStatus() == LoadingMedia)

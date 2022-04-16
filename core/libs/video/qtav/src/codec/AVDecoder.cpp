@@ -20,9 +20,15 @@
  *
  * ============================================================ */
 
-#include <QtAV/AVDecoder.h>
-#include <QtAV/private/AVDecoder_p.h>
-#include <QtAV/QtAV_Version.h>
+// KDE includes
+
+#include <klocalizedstring.h>
+
+// Local includes
+
+#include "AVDecoder.h"
+#include "QtAV_Version.h"
+#include "private/AVDecoder_p.h"
 #include "utils/internal.h"
 #include "utils/Logger.h"
 
@@ -80,7 +86,7 @@ bool AVDecoder::open()
     const QString hwa = property("hwaccel").toString();
     AVCodec* codec = get_codec(codecName(), hwa, d.codec_ctx->codec_id);
     if (!codec) { // TODO: can be null for none-ffmpeg based decoders
-        QString es(tr("No codec could be found for '%1'"));
+        QString es(i18n("No codec could be found for '%1'"));
         if (d.codec_name.isEmpty()) {
             es = es.arg(QLatin1String(avcodec_get_name(d.codec_ctx->codec_id)));
             if (!hwa.isEmpty())
