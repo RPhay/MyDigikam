@@ -25,7 +25,7 @@
 
 // Local includes
 
-#include "QtAV/VideoRenderer.h"
+#include "VideoRenderer.h"
 #include "digikam_export.h"
 
 #define Q_AVWIDGETS_EXPORT DIGIKAM_EXPORT
@@ -84,4 +84,4 @@ Q_AVWIDGETS_EXPORT void aboutQtAV();
 
 } // namespace QtAV
 
-#endif //QTAVWIDGETS_GLOBAL_H
+#endif // QTAVWIDGETS_GLOBAL_H

@@ -21,27 +21,33 @@
  * ============================================================ */
 
 #include "GraphicsItemRenderer.h"
-#include "QtAV/private/QPainterRenderer_p.h"
-#include "QtAV/FilterContext.h"
+#include "private/QPainterRenderer_p.h"
+#include "FilterContext.h"
+
 #if !defined QT_NO_OPENGL && (QT_VERSION >= QT_VERSION_CHECK(5, 0, 0) || defined(QT_OPENGL_LIB))
-#define QTAV_HAVE_OPENGL 1
+#   define QTAV_HAVE_OPENGL 1
 #else
-#define QTAV_HAVE_OPENGL 0
+#   define QTAV_HAVE_OPENGL 0
 #endif
+
 #if QTAV_HAVE(OPENGL)
-#include "QtAV/OpenGLVideo.h"
+#   include "OpenGLVideo.h"
 #else
 typedef float GLfloat;
 #endif
+
+// Qt includes
+
 #include <QMatrix4x4>
 #include <QGraphicsScene>
-#include <QtGui/QPainter>
+#include <QPainter>
 #include <QEvent>
 #include <QKeyEvent>
 #include <QGraphicsSceneEvent>
-#include <QtCore/QCoreApplication>
+#include <QCoreApplication>
+
 #if QT_VERSION >= QT_VERSION_CHECK(5, 0, 0)
-#include <QtGui/QSurface>
+#   include <QSurface>
 #endif
 
 namespace QtAV

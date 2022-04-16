@@ -20,13 +20,22 @@
  *
  * ============================================================ */
 
-#include "QtAV/VideoRenderer.h"
-#include "QtAV/private/VideoRenderer_p.h"
+#include "VideoRenderer.h"
+#include "private/VideoRenderer_p.h"
+
+// Qt includes
+
 #include <QWidget>
+#include <QResizeEvent>
+
+// Windows includes
+
 #include <windows.h> //GetDC()
 #include <gdiplus.h>
-#include <QResizeEvent>
-#include "QtAV/private/factory.h"
+
+// Local includes
+
+#include "private/factory.h"
 
 #define USE_GRAPHICS 0
 
@@ -34,10 +43,12 @@
 //#pragma comment(lib, "gdiplus.lib")
 
 using namespace Gdiplus;
+
 namespace QtAV
 {
 
 class GDIRendererPrivate;
+
 class GDIRenderer : public QWidget, public VideoRenderer
 {
     Q_OBJECT

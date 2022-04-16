@@ -24,12 +24,12 @@
 #define QTAV_WIDGETRENDERER_H
 
 #include "QtAVWidgets_Global.h"
-#include "QtAV/QPainterRenderer.h"
+#include "QPainterRenderer.h"
 
 #if QT_VERSION >= QT_VERSION_CHECK(5, 0, 0)
-#   include <QtWidgets/QWidget>
+#   include <QWidget>
 #else
-#   include <QtGui/QWidget>
+#   include <QWidget>
 #endif
 
 namespace QtAV

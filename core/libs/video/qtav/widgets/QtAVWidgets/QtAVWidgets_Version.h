@@ -23,7 +23,7 @@
 #ifndef QTAVWIDGETS_VERSION_H
 #define QTAVWIDGETS_VERSION_H
 
-#include "QtAV/QtAV_Version.h"
+#include "QtAV_Version.h"
 
 #define QTAVWIDGETS_MAJOR QTAV_MAJOR    //((QTAV_VERSION&0xff0000)>>16)
 #define QTAVWIDGETS_MINOR QTAV_MAJOR    //((QTAV_VERSION&0xff00)>>8)

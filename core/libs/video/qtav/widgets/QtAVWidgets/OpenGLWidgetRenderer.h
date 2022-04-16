@@ -31,7 +31,7 @@
 #   include "QOpenGLWidget.h"
 #endif
 
-#include <QtAV/OpenGLRendererBase.h>
+#include "OpenGLRendererBase.h"
 
 namespace QtAV
 {

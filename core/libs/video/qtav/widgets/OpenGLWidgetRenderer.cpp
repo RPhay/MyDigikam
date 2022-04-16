@@ -21,10 +21,13 @@
  * ============================================================ */
 
 #include "OpenGLWidgetRenderer.h"
-#include "QtAV/private/OpenGLRendererBase_p.h"
-#include <QtGui/QGuiApplication>
-#include <QtGui/QResizeEvent>
-#include <QtGui/QScreen>
+#include "private/OpenGLRendererBase_p.h"
+
+// Qt includes
+
+#include <QGuiApplication>
+#include <QResizeEvent>
+#include <QScreen>
 
 namespace QtAV
 {

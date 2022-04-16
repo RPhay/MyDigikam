@@ -21,8 +21,9 @@
  * ============================================================ */
 
 #include "GLWidgetRenderer.h"
-#include "QtAV/private/VideoRenderer_p.h"
-#include "utils/OpenGLHelper.h"
+
+// Qt includes
+
 #include <QtCore/QCoreApplication>
 #include <QtCore/QFile>
 #include <QtCore/qmath.h>
@@ -30,36 +31,41 @@
 #include <QResizeEvent>
 #include <QtOpenGL/QGLShaderProgram>
 #include <QtOpenGL/QGLShader>
+
+// Local includes
+
+#include "private/VideoRenderer_p.h"
+#include "utils/OpenGLHelper.h"
+
 #define NO_QGL_SHADER (QT_VERSION >= QT_VERSION_CHECK(5, 0, 0))
 //TODO: vsync http://stackoverflow.com/questions/589064/how-to-enable-vertical-sync-in-opengl
 //TODO: check gl errors
 //glEGLImageTargetTexture2DOES:http://software.intel.com/en-us/articles/using-opengl-es-to-accelerate-apps-with-legacy-2d-guis
 
-
 //#ifdef GL_EXT_unpack_subimage
 #ifndef GL_UNPACK_ROW_LENGTH
-#ifdef GL_UNPACK_ROW_LENGTH_EXT
-#define GL_UNPACK_ROW_LENGTH GL_UNPACK_ROW_LENGTH_EXT
-#endif //GL_UNPACK_ROW_LENGTH_EXT
-#endif //GL_UNPACK_ROW_LENGTH
+#   ifdef GL_UNPACK_ROW_LENGTH_EXT
+#       define GL_UNPACK_ROW_LENGTH GL_UNPACK_ROW_LENGTH_EXT
+#   endif
+#endif
 
-#include "QtAV/ColorTransform.h"
-#include "QtAV/FilterContext.h"
+#include "ColorTransform.h"
+#include "FilterContext.h"
 
 #define UPLOAD_ROI 0
 #define ROI_TEXCOORDS 1
 
 #define AVALIGN(x, a) (((x)+(a)-1)&~((a)-1))
 
+// TODO: QGLfunctions?
 
-//TODO: QGLfunctions?
 namespace QtAV
 {
 
 const GLfloat kVertices[] = {
-    -1, 1,
-    1, 1,
-    1, -1,
+    -1,  1,
+     1,  1,
+     1, -1,
     -1, -1,
 };
 

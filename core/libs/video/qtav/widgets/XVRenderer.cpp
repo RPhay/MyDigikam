@@ -20,22 +20,34 @@
  *
  * ============================================================ */
 
-/*
+/**
  * X11 headers define 'Bool' type which is used in qmetatype.h. we must include X11 files at last, i.e. XVRenderer_p.h. otherwise compile error
-*/
-#include "QtAV/VideoRenderer.h"
-#include "QtAV/private/VideoRenderer_p.h"
-#include "QtAV/FilterContext.h"
+ */
+
+#include "VideoRenderer.h"
+#include "private/VideoRenderer_p.h"
+#include "FilterContext.h"
+
+// Qt includes
+
 #include <QWidget>
 #include <QResizeEvent>
-#include <QtCore/qmath.h>
+#include <qmath.h>
+
 //#error qtextstream.h must be included before any header file that defines Status. Xlib.h defines Status
-#include <QtCore/QTextStream> //build error
+#include <QTextStream> //build error
+
+// X11 includes
+
 #include <sys/shm.h>
 #include <X11/Xlib.h>
 #include <X11/extensions/Xvlib.h>
-#include "QtAV/private/factory.h"
-//http://huangbster.i.sohu.com/blog/view/256490057.htm
+
+// Local includes
+
+#include "private/factory.h"
+
+// http://huangbster.i.sohu.com/blog/view/256490057.htm
 
 namespace QtAV
 {
@@ -47,6 +59,7 @@ inline int scaleEQValue(int val, int min, int max)
 }
 
 class XVRendererPrivate;
+
 class XVRenderer: public QWidget, public VideoRenderer
 {
     Q_OBJECT

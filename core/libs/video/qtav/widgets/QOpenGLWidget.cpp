@@ -21,13 +21,17 @@
  * ============================================================ */
 
 #include "QOpenGLWidget.h"
+
+// Qt includes
+
 #include <QResizeEvent>
 #include <QWindow>
+
 // for dynamicgl. qglfunctions before qt5.3 does not have portable gl functions
 #ifdef QT_OPENGL_DYNAMIC
-#define DYGL(glFunc) QOpenGLContext::currentContext()->functions()->glFunc
+#   define DYGL(glFunc) QOpenGLContext::currentContext()->functions()->glFunc
 #else
-#define DYGL(glFunc) glFunc
+#   define DYGL(glFunc) glFunc
 #endif
 
 namespace QtAV

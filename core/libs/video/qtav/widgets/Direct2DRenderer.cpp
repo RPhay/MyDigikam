@@ -20,17 +20,28 @@
  *
  * ============================================================ */
 
-#include "QtAV/VideoRenderer.h"
+#include "VideoRenderer.h"
+
+// Qt includes
+
 #include <QWidget>
 #include <QResizeEvent>
-#include <QtCore/QLibrary>
-#include "QtAV/private/VideoRenderer_p.h"
-#include "QtAV/private/factory.h"
+#include <QLibrary>
+
+// Local includes
+
+#include "private/VideoRenderer_p.h"
+#include "private/factory.h"
+
+// Windows includes
+
 //#define CINTERFACE //http://rxlib.ru/faqs/faqc_en/15596.html
 #include <sal.h>
+
 #ifndef _Out_writes_bytes_opt_
-#define _Out_writes_bytes_opt_(s)
+#   define _Out_writes_bytes_opt_(s)
 #endif
+
 #include <initguid.h> //IID_ID2D1Factory
 #include <d2d1.h>
 

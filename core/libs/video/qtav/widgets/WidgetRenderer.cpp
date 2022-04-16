@@ -23,12 +23,16 @@
 #include "WidgetRenderer.h"
 #include "QPainterRenderer_p.h"
 
-#include <QtGui/QFont>
-#include <QtGui/QPainter>
+// Qt includes
+
+#include <QFont>
+#include <QPainter>
 #include <QApplication>
 #include <QResizeEvent>
 
-#include "QtAV/Filter.h"
+// Local includes
+
+#include "Filter.h"
 
 namespace QtAV
 {

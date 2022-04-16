@@ -25,9 +25,9 @@
 #include "QtAVWidgets_Global.h"
 
 #if QT_VERSION >= QT_VERSION_CHECK(5, 0, 0)
-#   include <QtWidgets/QWidget>
+#   include <QWidget>
 #else
-#   include <QtGui/QWidget>
+#   include <QWidget>
 #endif
 
 namespace QtAV

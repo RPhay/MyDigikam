@@ -25,14 +25,16 @@
 
 #include "QtAVWidgets_Global.h"
 
+// Qt includes
+
 #if QT_VERSION < QT_VERSION_CHECK(5, 0, 0)
 #   error "Qt5 is required!"
 #endif
 
 #include <QOpenGLFunctions>
 #include <QOpenGLPaintDevice>
-#include <QtGui/QSurfaceFormat>
-#include <QtWidgets/QWidget>
+#include <QSurfaceFormat>
+#include <QWidget>
 
 namespace QtAV
 {

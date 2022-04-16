@@ -42,20 +42,20 @@
 
 #if QTAV_HAVE(GL)
 #   include "GLWidgetRenderer2.h"
-#endif //QTAV_HAVE(GL)
+#endif
 
 #if QTAV_HAVE(GL1)
 #   include "GLWidgetRenderer.h"
-#endif //QTAV_HAVE(GL1)
+#endif
 
 #if QT_VERSION >= QT_VERSION_CHECK(5, 0, 0)
 #   ifndef QT_NO_OPENGL
 #       include "OpenGLWidgetRenderer.h"
-#   endif //QT_NO_OPENGL
+#   endif
 #endif
 
-#include "QtAV/private/factory.h"
-#include "QtAV/private/mkid.h"
+#include "private/factory.h"
+#include "private/mkid.h"
 
 namespace QtAV
 {

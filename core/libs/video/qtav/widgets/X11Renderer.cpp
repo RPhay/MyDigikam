@@ -20,31 +20,44 @@
  *
  * ============================================================ */
 
-//TODO: ROI (xsubimage?), rotation. slow scale because of alignment? no xsync for shm
-/*
+// TODO: ROI (xsubimage?), rotation. slow scale because of alignment? no xsync for shm
+
+/**
  * X11 headers define 'Bool' type which is used in qmetatype.h. we must include X11 files at last, i.e. X11Renderer_p.h. otherwise compile error
-*/
-#include "QtAV/VideoRenderer.h"
-#include "QtAV/private/VideoRenderer_p.h"
-#include "QtAV/FilterContext.h"
+ */
+#include "VideoRenderer.h"
+#include "private/VideoRenderer_p.h"
+#include "FilterContext.h"
+
+// Qt includes
+
 #include <QWidget>
 #include <QResizeEvent>
-#include <QtCore/qmath.h>
+#include <qmath.h>
 #include <QtDebug>
+
 //#error qtextstream.h must be included before any header file that defines Status. Xlib.h defines Status
-#include <QtCore/QTextStream> //build error
+#include <QTextStream> //build error
+
+// X11 includes
+
 #include <sys/shm.h>
 #include <X11/Xlib.h>
 #include <X11/Xutil.h>
 #include <X11/extensions/XShm.h>
 #include <unistd.h> //usleep
-//#include "QtAV/private/factory.h"
+
+//#include "private/factory.h"
 //scale: http://www.opensource.apple.com/source/X11apps/X11apps-14/xmag/xmag-X11R7.0-1.0.1/Scale.c
 #define FFALIGN(x, a) (((x)+(a)-1)&~((a)-1))
+
 static const int kPoolSize = 2;
+
 namespace QtAV
 {
+
 class X11RendererPrivate;
+
 class X11Renderer: public QWidget, public VideoRenderer
 {
     Q_OBJECT
