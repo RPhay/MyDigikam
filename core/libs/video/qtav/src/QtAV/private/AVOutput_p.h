@@ -28,7 +28,8 @@
 #include <QtCore/QWaitCondition>
 #include <QtAV/QtAV_Global.h>
 
-namespace QtAV {
+namespace QtAV
+{
 
 class AVOutput;
 class AVDecoder;
@@ -61,5 +62,5 @@ public:
     QList<OutputSet*> output_sets;
 };
 
-} //namespace QtAV
+} // namespace QtAV
 #endif // QTAV_AVOUTPUT_P_H

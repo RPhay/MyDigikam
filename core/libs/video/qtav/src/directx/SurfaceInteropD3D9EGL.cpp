@@ -34,7 +34,8 @@
 #include "capi/egl_api.h"
 #include <EGL/eglext.h> //include after egl_capi.h to match types
 
-namespace QtAV {
+namespace QtAV
+{
 namespace d3d9 { //d3d9
 class EGL {
 public:
@@ -202,4 +203,4 @@ bool EGLInteropResource::map(IDirect3DSurface9* surface, GLuint tex, int w, int 
     return true;
 }
 } //namespace d3d9
-} //namespace QtAV
+} // namespace QtAV

@@ -23,12 +23,12 @@
 #ifndef QTAV_OPENGLWIDGETRENDERER_H
 #define QTAV_OPENGLWIDGETRENDERER_H
 
-#include <QtAVWidgets/global.h>
+#include "QtAVWidgets_Global.h"
 
 #if QT_VERSION >= QT_VERSION_CHECK(5, 4, 0)
 #   include <QOpenGLWidget>
 #else
-#   include <QtAVWidgets/QOpenGLWidget.h>
+#   include "QOpenGLWidget.h"
 #endif
 
 #include <QtAV/OpenGLRendererBase.h>
@@ -92,6 +92,6 @@ protected:
 
 typedef OpenGLWidgetRenderer VideoRendererOpenGLWidget;
 
-} //namespace QtAV
+} // namespace QtAV
 
 #endif // QTAV_OPENGLWIDGETRENDERER_H

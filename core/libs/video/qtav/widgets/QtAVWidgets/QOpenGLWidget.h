@@ -23,16 +23,19 @@
 #ifndef QTAV_QOPENGLWIDGET_H
 #define QTAV_QOPENGLWIDGET_H
 
-#include <QtAVWidgets/global.h>
+#include "QtAVWidgets_Global.h"
+
 #if QT_VERSION < QT_VERSION_CHECK(5, 0, 0)
-#error "Qt5 is required!"
+#   error "Qt5 is required!"
 #endif
+
 #include <QOpenGLFunctions>
 #include <QOpenGLPaintDevice>
 #include <QtGui/QSurfaceFormat>
 #include <QtWidgets/QWidget>
 
-namespace QtAV {
+namespace QtAV
+{
 
 /*!
  * \brief The QOpenGLWidget class
@@ -69,6 +72,6 @@ private:
     QOpenGLPaintDevice *m_paintDevice;
     QSurfaceFormat m_requestedFormat;
 };
-} //namespace QtAV
+} // namespace QtAV
 
 #endif //QTAV_QOPENGLWIDGET_H

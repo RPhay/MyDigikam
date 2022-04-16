@@ -20,15 +20,19 @@
  *
  * ============================================================ */
 
-#include "QtAVWidgets/WidgetRenderer.h"
-#include "QtAV/private/QPainterRenderer_p.h"
+#include "WidgetRenderer.h"
+#include "QPainterRenderer_p.h"
+
 #include <QtGui/QFont>
 #include <QtGui/QPainter>
 #include <QApplication>
 #include <QResizeEvent>
+
 #include "QtAV/Filter.h"
 
-namespace QtAV {
+namespace QtAV
+{
+
 class WidgetRendererPrivate : public QPainterRendererPrivate
 {
 public:
@@ -114,4 +118,4 @@ bool WidgetRenderer::onSetOrientation(int value)
     return true;
 }
 
-} //namespace QtAV
+} // namespace QtAV

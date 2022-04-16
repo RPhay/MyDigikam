@@ -44,7 +44,8 @@
 // NO COPY in push/pull
 #define QTAV_HAVE_av_buffersink_get_frame (LIBAV_MODULE_CHECK(LIBAVFILTER, 4, 2, 0) || FFMPEG_MODULE_CHECK(LIBAVFILTER, 3, 79, 100)) //3.79.101: ff2.0.4
 
-namespace QtAV {
+namespace QtAV
+{
 
 #if QTAV_HAVE(AVFILTER)
 // local types can not be used as template parameters
@@ -543,7 +544,7 @@ bool LibAVFilter::Private::pushAudioFrame(Frame *frame, bool changed, const QStr
     return false;
 }
 
-} //namespace QtAV
+} // namespace QtAV
 
 #if QTAV_HAVE(AVFILTER)
 Q_DECLARE_METATYPE(QtAV::AVFrameHolderRef)

@@ -41,7 +41,8 @@ void CopyFrame_SSE4(void *pSrc, void *pDest, void *pCacheBlock, UINT width, UINT
 void *memcpy_sse2(void* dst, const void* src, size_t size);
 void *memcpy_sse4(void* dst, const void* src, size_t size);
 
-namespace QtAV {
+namespace QtAV
+{
 
 bool detect_sse4() {
     static bool is_sse4 = !!(av_get_cpu_flags() & AV_CPU_FLAG_SSE4);
@@ -140,4 +141,4 @@ void* gpu_memcpy(void *dst, const void *src, size_t size)
 #endif
     return memcpy(dst, src, size);
 }
-} //namespace QtAV
+} // namespace QtAV

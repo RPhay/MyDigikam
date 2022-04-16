@@ -39,7 +39,8 @@
 #include <stdarg.h>
 //#include <string>  //include after ass_api.h, stdio.h is included there in a different namespace
 
-namespace QtAV {
+namespace QtAV
+{
 void RenderASS(QImage *image, const SubImage &img, int dstX, int dstY);
 
 class SubtitleProcessorLibASS Q_DECL_FINAL: public SubtitleProcessor, protected ass::api
@@ -666,4 +667,4 @@ void SubtitleProcessorLibASS::processTrack(ASS_Track *track)
         m_frames.append(frame);
     }
 }
-} //namespace QtAV
+} // namespace QtAV

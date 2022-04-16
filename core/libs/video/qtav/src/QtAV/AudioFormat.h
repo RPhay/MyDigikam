@@ -30,7 +30,8 @@
 QT_BEGIN_NAMESPACE
 class QDebug;
 QT_END_NAMESPACE
-namespace QtAV {
+namespace QtAV
+{
 
 class AudioFormatPrivate;
 class Q_AV_EXPORT AudioFormat
@@ -165,7 +166,7 @@ Q_AV_EXPORT QDebug operator<<(QDebug debug, AudioFormat::SampleFormat sampleForm
 Q_AV_EXPORT QDebug operator<<(QDebug debug, AudioFormat::ChannelLayout channelLayout);
 #endif
 
-} //namespace QtAV
+} // namespace QtAV
 
 Q_DECLARE_METATYPE(QtAV::AudioFormat)
 Q_DECLARE_METATYPE(QtAV::AudioFormat::SampleFormat)

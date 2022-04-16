@@ -34,7 +34,8 @@
 //#pragma comment(lib, "gdiplus.lib")
 
 using namespace Gdiplus;
-namespace QtAV {
+namespace QtAV
+{
 
 class GDIRendererPrivate;
 class GDIRenderer : public QWidget, public VideoRenderer
@@ -300,6 +301,6 @@ void GDIRenderer::showEvent(QShowEvent *)
     d_func().prepare();
 }
 
-} //namespace QtAV
+} // namespace QtAV
 
 #include "GDIRenderer.moc"

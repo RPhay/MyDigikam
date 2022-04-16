@@ -30,7 +30,8 @@
 #include "QtAV/private/mkid.h"
 #include "utils/Logger.h"
 
-namespace QtAV {
+namespace QtAV
+{
 FACTORY_DEFINE(VideoRenderer)
 VideoRendererId VideoRendererId_OpenGLWindow = mkid::id32base36_6<'Q', 'O', 'G', 'L', 'W', 'w'>::value;
 
@@ -681,4 +682,4 @@ void VideoRenderer::updateUi()
             QCoreApplication::instance()->postEvent(obj, new QEvent(QEvent::UpdateRequest));
     }
 }
-} //namespace QtAV
+} // namespace QtAV

@@ -31,7 +31,8 @@
 /*!
  * values from functions are dynamically calculated
  */
-namespace QtAV {
+namespace QtAV
+{
 
 class Q_AV_EXPORT Statistics
 {
@@ -116,6 +117,6 @@ public:
     } video_only;
 };
 
-} //namespace QtAV
+} // namespace QtAV
 
 #endif // QTAV_STATISTICS_H

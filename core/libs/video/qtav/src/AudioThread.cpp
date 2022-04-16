@@ -35,7 +35,8 @@
 #include <QtCore/QDateTime>
 #include "utils/Logger.h"
 
-namespace QtAV {
+namespace QtAV
+{
 
 class AudioThreadPrivate : public AVThreadPrivate
 {
@@ -377,4 +378,4 @@ void AudioThread::run()
     qDebug("Audio thread stops running...");
 }
 
-} //namespace QtAV
+} // namespace QtAV

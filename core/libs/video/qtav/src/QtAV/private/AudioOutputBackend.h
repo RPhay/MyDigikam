@@ -27,7 +27,8 @@
 #include <QtAV/AudioFormat.h>
 #include <QtAV/AudioOutput.h>
 
-namespace QtAV {
+namespace QtAV
+{
 
 typedef int AudioOutputBackendId;
 class Q_AV_PRIVATE_EXPORT AudioOutputBackend : public QObject
@@ -131,5 +132,5 @@ private:
     AudioOutput::DeviceFeatures m_features;
     Q_DISABLE_COPY(AudioOutputBackend)
 };
-} //namespace QtAV
+} // namespace QtAV
 #endif //QAV_AUDIOOUTPUTBACKEND_H

@@ -28,7 +28,8 @@
 #include "utils/BlockingQueue.h"
 #include "utils/Logger.h"
 
-namespace QtAV {
+namespace QtAV
+{
 
 class AVTranscoder::Private
 {
@@ -382,4 +383,4 @@ void AVTranscoder::tryFinish()
     if (d->filters.isEmpty())
         stopInternal();
 }
-} //namespace QtAV
+} // namespace QtAV

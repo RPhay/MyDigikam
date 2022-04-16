@@ -23,7 +23,8 @@
 #include "SubImagesGeometry.h"
 #include "utils/Logger.h"
 
-namespace QtAV {
+namespace QtAV
+{
 #define U8COLOR 0
 static const int kMaxTexWidth = 4096; //FIXME: glGetIntegerv(GL_MAX_TEXTURE_SIZE, &max);
 // if texture1d, we can directly copy ASS_Image.bitmap without line by line copy, i.e. tiled, and upload only once
@@ -204,4 +205,4 @@ int SubImagesGeometry::stride() const
     return sizeof(VertexData);
 }
 
-} //namespace QtAV
+} // namespace QtAV

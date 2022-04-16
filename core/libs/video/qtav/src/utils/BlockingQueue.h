@@ -31,7 +31,8 @@
 QT_BEGIN_NAMESPACE
 template<typename T> class QQueue;
 QT_END_NAMESPACE
-namespace QtAV {
+namespace QtAV
+{
 
 template <typename T, template <typename> class Container = QQueue>
 class BlockingQueue
@@ -343,5 +344,5 @@ bool BlockingQueue<T, Container>::checkEnough() const
 {
     return queue.size() >= thres && !checkEmpty();
 }
-} //namespace QtAV
+} // namespace QtAV
 #endif // QTAV_BLOCKINGQUEUE_H

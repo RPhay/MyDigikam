@@ -32,7 +32,8 @@
 #include "QtAV/SurfaceInterop.h"
 #include "QtAV/OpenGLVideo.h"
 
-namespace QtAV {
+namespace QtAV
+{
 class GLSLFilterPrivate : public VideoFilterPrivate
 {
 public:
@@ -142,4 +143,4 @@ void GLSLFilter::process(Statistics *statistics, VideoFrame *frame)
     f.setMetaData(QStringLiteral("surface_interop"), QVariant::fromValue(VideoSurfaceInteropPtr((interop))));
     *frame = f;
 }
-} //namespace QtAV
+} // namespace QtAV

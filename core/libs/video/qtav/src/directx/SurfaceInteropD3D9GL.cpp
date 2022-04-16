@@ -26,7 +26,8 @@
 #include "opengl/OpenGLHelper.h"
 
 //dynamic gl or desktop gl
-namespace QtAV {
+namespace QtAV
+{
 namespace d3d9 {
 class GLInteropResource Q_DECL_FINAL: public InteropResource
 {

@@ -27,10 +27,11 @@
 #include "QtAV/private/AVCompat.h"
 #include "QtAV/private/mkid.h"
 #include "QtAV/private/factory.h"
-#include "QtAV/QtAV_version.h"
+#include "QtAV/QtAV_Version.h"
 #include "utils/Logger.h"
 
-namespace QtAV {
+namespace QtAV
+{
 
 class AudioDecoderFFmpegPrivate;
 class AudioDecoderFFmpeg : public AudioDecoder
@@ -151,5 +152,5 @@ AudioFrame AudioDecoderFFmpeg::frame()
     return f;
 }
 
-} //namespace QtAV
+} // namespace QtAV
 #include "AudioDecoderFFmpeg.moc"

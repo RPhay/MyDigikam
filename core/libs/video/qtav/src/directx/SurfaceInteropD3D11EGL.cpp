@@ -36,7 +36,8 @@
 #include "capi/egl_api.h"
 #include <EGL/eglext.h> //include after egl_capi.h to match types
 
-namespace QtAV {
+namespace QtAV
+{
 namespace d3d11 {
 
 class EGL {
@@ -178,4 +179,4 @@ bool EGLInteropResource::map(ComPtr<ID3D11Texture2D> surface, int index, GLuint 
     return true;
 }
 } //namespace d3d11
-} //namespace QtAV
+} // namespace QtAV

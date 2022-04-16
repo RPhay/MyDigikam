@@ -31,7 +31,8 @@
 using namespace Microsoft::WRL;
 // https://msdn.microsoft.com/en-us/library/windows/desktop/ee663581(v=vs.85).aspx
 
-namespace QtAV {
+namespace QtAV
+{
 namespace dx {
 
 class DXVAHDVP
@@ -60,5 +61,5 @@ private:
     D3DFORMAT m_fmt;
 };
 } //namespace dx
-} //namespace QtAV
+} // namespace QtAV
 #endif //QTAV_D3D9VPP_H

@@ -20,19 +20,26 @@
  *
  * ============================================================ */
 
-#include "VideoDecoderFFmpegHW.h"
 #include "VideoDecoderFFmpegHW_p.h"
+
+// C++ includes
+
 #include <algorithm>
-#include "utils/Logger.h"
-#ifndef Q_UNLIKELY
-#define Q_UNLIKELY(x) (!!(x))
-#endif
 
 // KDE includes
 
 #include <klocalizedstring.h>
 
-namespace QtAV {
+// Local includes
+
+#include "utils/Logger.h"
+
+#ifndef Q_UNLIKELY
+#   define Q_UNLIKELY(x) (!!(x))
+#endif
+
+namespace QtAV
+{
 
 static AVPixelFormat ffmpeg_get_va_format(struct AVCodecContext *c, const AVPixelFormat * ff)
 {
@@ -238,16 +245,16 @@ VideoDecoderFFmpegHW::VideoDecoderFFmpegHW(VideoDecoderFFmpegHWPrivate &d):
     VideoDecoderFFmpegBase(d)
 {
     setProperty("detail_copyMode", QStringLiteral("%1. %2\n%3. %4\n%5\n%6")
-                .arg(tr("ZeroCopy: fastest. Direct rendering without data copy between CPU and GPU"))
-                .arg(tr("Not implemented for all codecs"))
-                .arg(tr("Not implemented for all codecs"))
-                .arg(tr("OptimizedCopy: copy from USWC memory optimized by SSE4.1"))
-                .arg(tr("GenericCopy: slowest. Generic cpu copy")));
+                .arg(i18n("ZeroCopy: fastest. Direct rendering without data copy between CPU and GPU"))
+                .arg(i18n("Not implemented for all codecs"))
+                .arg(i18n("Not implemented for all codecs"))
+                .arg(i18n("OptimizedCopy: copy from USWC memory optimized by SSE4.1"))
+                .arg(i18n("GenericCopy: slowest. Generic cpu copy")));
     setProperty("detail_threads", QStringLiteral("%1\n%2\n%3\n%4")
-                .arg(tr("Number of decoding threads. Set before open. Maybe no effect for some decoders"))
-                .arg(tr("Multithread decoding may crash"))
-                .arg(tr("0: auto"))
-                .arg(tr("1: single thread decoding")));
+                .arg(i18n("Number of decoding threads. Set before open. Maybe no effect for some decoders"))
+                .arg(i18n("Multithread decoding may crash"))
+                .arg(i18n("0: auto"))
+                .arg(i18n("1: single thread decoding")));
     Q_UNUSED(i18n("ZeroCopy"));
     Q_UNUSED(i18n("OptimizedCopy"));
     Q_UNUSED(i18n("GenericCopy"));
@@ -340,4 +347,4 @@ VideoFrame VideoDecoderFFmpegHW::copyToFrame(const VideoFormat& fmt, int surface
     return frame;
 }
 
-} //namespace QtAV
+} // namespace QtAV

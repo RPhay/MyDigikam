@@ -23,7 +23,8 @@
 #include "ColorTransform.h"
 #include <QtCore/qmath.h>
 
-namespace QtAV {
+namespace QtAV
+{
 
 // http://www.brucelindbloom.com/index.html?Eqn_RGB_XYZ_Matrix.html
 static const QMatrix4x4 kXYZ2sRGB(3.2404542f,  -1.5371385f, -0.4985314f, 0.0f,
@@ -416,4 +417,4 @@ void ColorTransform::setChannelDepthScale(qreal value, bool scaleAlpha)
     d->a_bpc_scale = scaleAlpha;
     d->recompute = true;
 }
-} //namespace QtAV
+} // namespace QtAV

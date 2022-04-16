@@ -24,7 +24,8 @@
 #include "QtAV/private/AVCompat.h"
 #include "utils/Logger.h"
 
-namespace QtAV {
+namespace QtAV
+{
 namespace {
 static const struct RegisterMetaTypes {
     inline RegisterMetaTypes() {
@@ -237,4 +238,4 @@ QDebug operator<<(QDebug dbg, const Packet &pkt)
     return dbg.space();
 }
 #endif //QT_NO_DEBUG_STREAM
-} //namespace QtAV
+} // namespace QtAV

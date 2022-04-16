@@ -35,7 +35,8 @@
 #include "opengl/OpenGLHelper.h"
 #include "utils/Logger.h"
 
-namespace QtAV {
+namespace QtAV
+{
 
 // FIXME: why crash if inherits both QObject and DPtrPrivate?
 class OpenGLVideoPrivate : public DPtrPrivate<OpenGLVideo>
@@ -405,4 +406,4 @@ void OpenGLVideo::updateViewport()
 #endif
     setProjectionMatrixToRect(QRectF(QPointF(), surfaceSize));
 }
-} //namespace QtAV
+} // namespace QtAV

@@ -20,7 +20,7 @@
  *
  * ============================================================ */
 
-#include "QtAVWidgets/GraphicsItemRenderer.h"
+#include "GraphicsItemRenderer.h"
 #include "QtAV/private/QPainterRenderer_p.h"
 #include "QtAV/FilterContext.h"
 #if !defined QT_NO_OPENGL && (QT_VERSION >= QT_VERSION_CHECK(5, 0, 0) || defined(QT_OPENGL_LIB))
@@ -44,7 +44,8 @@ typedef float GLfloat;
 #include <QtGui/QSurface>
 #endif
 
-namespace QtAV {
+namespace QtAV
+{
 
 class GraphicsItemRendererPrivate : public QPainterRendererPrivate
 {
@@ -346,4 +347,4 @@ bool GraphicsItemRenderer::sceneEvent(QEvent *event)
 }
 */
 #endif //!CONFIG_GRAPHICSWIDGET
-} //namespace QtAV
+} // namespace QtAV

@@ -24,7 +24,8 @@
 #include <QtAV/private/QPainterRenderer_p.h>
 #include <QtAV/FilterContext.h>
 
-namespace QtAV {
+namespace QtAV
+{
 
 QPainterRenderer::QPainterRenderer()
     :VideoRenderer(*new QPainterRendererPrivate())
@@ -127,4 +128,4 @@ void QPainterRenderer::drawFrame()
     d.painter->restore();
 }
 
-} //namespace QtAV
+} // namespace QtAV

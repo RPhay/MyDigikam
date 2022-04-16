@@ -22,7 +22,7 @@
 
 #include "QtAV/VideoOutput.h"
 #include "QtAV/private/VideoRenderer_p.h"
-#include "QtAV/QtAV_version.h"
+#include "QtAV/QtAV_Version.h"
 #include <QtCore/QLibrary>
 #include <QtGui/QResizeEvent>
 #include "utils/Logger.h"
@@ -30,7 +30,8 @@
  * onSetXXX(...): impl->onSetXXX(...); set value as impl; return ;
  */
 
-namespace QtAV {
+namespace QtAV
+{
 
 class VideoOutputPrivate : public VideoRendererPrivate
 {
@@ -417,4 +418,4 @@ bool VideoOutput::onHanlePendingTasks()
     return true;
 }
 
-} //namespace QtAV
+} // namespace QtAV

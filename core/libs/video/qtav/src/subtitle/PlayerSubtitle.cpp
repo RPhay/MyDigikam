@@ -28,7 +28,8 @@
 #include "utils/internal.h"
 #include "utils/Logger.h"
 
-namespace QtAV {
+namespace QtAV
+{
 
 // /xx/oo/a.01.mov => /xx/oo/a.01. native dir separator => /
 /*!
@@ -282,4 +283,4 @@ void PlayerSubtitle::disconnectSignals()
     disconnect(m_sub, SIGNAL(enginesChanged()), this, SLOT(tryReload()));
 }
 
-} //namespace QtAV
+} // namespace QtAV

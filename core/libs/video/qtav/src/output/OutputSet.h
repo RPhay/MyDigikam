@@ -29,7 +29,8 @@
 #include "QtAV/QtAV_Global.h"
 #include "QtAV/AVOutput.h"
 
-namespace QtAV {
+namespace QtAV
+{
 
 class AVPlayer;
 class VideoFrame;
@@ -80,6 +81,6 @@ private:
     QWaitCondition mCond; //pause
 };
 
-} //namespace QtAV
+} // namespace QtAV
 
 #endif // QTAV_OUTPUTSET_H

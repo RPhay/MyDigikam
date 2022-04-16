@@ -24,7 +24,8 @@
 #define QTAV_CONVOLUTIONSHADER_H
 #include <QtAV/VideoShader.h>
 
-namespace QtAV {
+namespace QtAV
+{
 class ConvolutionShaderPrivate;
 /*!
  * \brief The ConvolutionShader class
@@ -58,5 +59,5 @@ private:
 protected:
     ConvolutionShader(ConvolutionShaderPrivate &d);
 };
-} //namespace QtAV
+} // namespace QtAV
 #endif // QTAV_CONVOLUTIONSHADER_H

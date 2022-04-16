@@ -26,7 +26,8 @@
 #include "AVThread.h"
 #include <QtCore/QSize>
 
-namespace QtAV {
+namespace QtAV
+{
 
 class VideoCapture;
 class VideoFrame;
@@ -60,5 +61,5 @@ protected:
 };
 
 
-} //namespace QtAV
+} // namespace QtAV
 #endif // QTAV_VIDEOTHREAD_H

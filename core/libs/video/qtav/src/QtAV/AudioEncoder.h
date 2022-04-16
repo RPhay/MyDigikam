@@ -27,7 +27,8 @@
 #include <QtAV/AudioFrame.h>
 #include <QtCore/QStringList>
 
-namespace QtAV {
+namespace QtAV
+{
 typedef int AudioEncoderId;
 class AudioEncoderPrivate;
 class Q_AV_EXPORT AudioEncoder : public AVEncoder
@@ -89,5 +90,5 @@ private:
     AudioEncoder();
 };
 
-} //namespace QtAV
+} // namespace QtAV
 #endif // QTAV_AUDIOENCODER_H

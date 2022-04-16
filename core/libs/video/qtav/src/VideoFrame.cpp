@@ -31,7 +31,8 @@
 #include "utils/Logger.h"
 
 // TODO: VideoFrame.copyPropertyies(VideoFrame) to avoid missing property copy
-namespace QtAV {
+namespace QtAV
+{
 namespace{
 static const struct RegisterMetaTypes
 {
@@ -548,4 +549,4 @@ VideoFrame VideoFrameConverter::convert(const VideoFrame &frame, int fffmt) cons
     return f;
 }
 
-} //namespace QtAV
+} // namespace QtAV

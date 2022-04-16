@@ -27,7 +27,8 @@
 #include "QtAV/private/factory.h"
 #include "utils/Logger.h"
 
-namespace QtAV {
+namespace QtAV
+{
 ImageConverterId ImageConverterId_FF = mkid::id32base36_6<'F', 'F', 'm', 'p', 'e', 'g'>::value;
 FACTORY_REGISTER(ImageConverter, FF, "FFmpeg")
 
@@ -131,4 +132,4 @@ bool ImageConverterFFPrivate::setupColorspaceDetails(bool force)
     return supported;
 }
 
-} //namespace QtAV
+} // namespace QtAV

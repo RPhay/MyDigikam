@@ -32,7 +32,8 @@
 #include "xaudio2_compat.h"
 
 // ref: DirectXTK, SDL, wine
-namespace QtAV {
+namespace QtAV
+{
 
 static const char kName[] = "XAudio2";
 class AudioOutputXAudio2 Q_DECL_FINAL: public AudioOutputBackend, public IXAudio2VoiceCallback

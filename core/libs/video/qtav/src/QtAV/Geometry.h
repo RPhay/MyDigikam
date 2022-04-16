@@ -28,7 +28,8 @@
 #include <QtAV/QtAV_Global.h>
 
 // TODO: generate vertex/fragment shader code from Geometry.attributes()
-namespace QtAV {
+namespace QtAV
+{
 
 enum DataType { //equals to GL_BYTE etc.
     TypeS8 = 0x1400, //S8
@@ -167,5 +168,5 @@ private:
     int ru, rv;
     float r;
 };
-} //namespace QtAV
+} // namespace QtAV
 #endif //QTAV_GEOMETRY_H

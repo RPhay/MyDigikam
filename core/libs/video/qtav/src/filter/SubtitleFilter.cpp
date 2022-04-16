@@ -28,7 +28,8 @@
 #include <QtCore/QScopedPointer>
 #include "utils/Logger.h"
 
-namespace QtAV {
+namespace QtAV
+{
 
 class SubtitleFilterPrivate : public VideoFilterPrivate
 {
@@ -197,4 +198,4 @@ void SubtitleFilter::process(Statistics *statistics, VideoFrame *frame)
     context()->drawPlainText(context()->rect, Qt::AlignHCenter | Qt::AlignBottom, d.player_sub->subtitle()->getText());
 }
 
-} //namespace QtAV
+} // namespace QtAV

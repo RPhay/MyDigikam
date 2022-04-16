@@ -26,7 +26,8 @@
 #include <QtAV/QtAV_Global.h>
 #include <QtCore/QVector>
 
-namespace QtAV {
+namespace QtAV
+{
 /*!
  * \brief The SubImage struct
  * (x, y, w, h) is relative to parent SubImageSet (0, 0, SubImageSet.w, SubImageSet.h)
@@ -67,5 +68,5 @@ private:
     int w, h;
     int id;
 };
-} //namespace QtAV
+} // namespace QtAV
 #endif //QTAV_SUBIMAGE_H

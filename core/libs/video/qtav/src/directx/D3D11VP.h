@@ -29,7 +29,8 @@
 #include <QtAV/QtAV_Global.h>
 using namespace Microsoft::WRL;
 
-namespace QtAV {
+namespace QtAV
+{
 namespace dx {
 
 class D3D11VP
@@ -58,5 +59,5 @@ private:
     QRect m_srcRect;
 };
 } //namespace dx
-} //namespace QtAV
+} // namespace QtAV
 #endif //QTAV_D3D11VP_H

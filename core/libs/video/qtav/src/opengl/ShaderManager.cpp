@@ -23,7 +23,8 @@
 #include "ShaderManager.h"
 #include "QtAV/VideoShader.h"
 
-namespace QtAV {
+namespace QtAV
+{
 class ShaderManager::Private
 {
 public:
@@ -60,4 +61,4 @@ VideoShader* ShaderManager::prepareMaterial(VideoMaterial *material, qint32 mate
     d->shader_cache[type] = shader;
     return shader;
 }
-} //namespace QtAV
+} // namespace QtAV

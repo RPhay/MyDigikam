@@ -30,7 +30,8 @@
 #include "QtAV/VideoEncoder.h"
 #include "utils/Logger.h"
 
-namespace QtAV {
+namespace QtAV
+{
 
 class AudioEncodeFilterPrivate Q_DECL_FINAL : public AudioFilterPrivate
 {
@@ -361,4 +362,4 @@ void VideoEncodeFilter::encode(const VideoFrame& frame)
         return;
     Q_EMIT frameEncoded(d.enc->encoded());
 }
-} //namespace QtAV
+} // namespace QtAV

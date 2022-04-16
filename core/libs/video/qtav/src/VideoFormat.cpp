@@ -43,7 +43,8 @@ extern "C" {
 #else
 #define DESC_VAL(X) (X##_minus1 + 1)
 #endif
-namespace QtAV {
+namespace QtAV
+{
 class VideoFormatPrivate : public QSharedData
 {
 public:
@@ -801,4 +802,4 @@ namespace {
     } _registerMetaTypes;
 }
 
-} //namespace QtAV
+} // namespace QtAV

@@ -26,8 +26,12 @@
 #include "QtAV/private/AVCompat.h"
 #include "utils/Logger.h"
 
-namespace QtAV {
-namespace{
+namespace QtAV
+{
+    
+namespace
+{
+
 static const struct RegisterMetaTypes
 {
     inline RegisterMetaTypes() {
@@ -279,4 +283,5 @@ AudioFrame AudioFrame::to(const AudioFormat &fmt) const
     f.d_ptr->metadata = d->metadata; // need metadata?
     return f;
 }
-} //namespace QtAV
+
+} // namespace QtAV

@@ -51,7 +51,8 @@ extern "C" {
 #endif
 
 //kCVPixelBufferOpenGLESCompatibilityKey //ios6
-namespace QtAV {
+namespace QtAV
+{
 class VideoDecoderVideoToolboxPrivate;
 // qt4 moc can not correctly process Q_DECL_FINAL here
 class VideoDecoderVideoToolbox : public VideoDecoderFFmpegHW
@@ -359,5 +360,5 @@ void VideoDecoderVideoToolboxPrivate::close()
     releaseUSWC();
 }
 
-} //namespace QtAV
+} // namespace QtAV
 #include "VideoDecoderVideoToolbox.moc"

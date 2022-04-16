@@ -20,15 +20,15 @@
  *
  * ============================================================ */
 
-#ifndef QTAVWIDGETS_H
-#define QTAVWIDGETS_H
+#ifndef QTAV_WIDGETS_H
+#define QTAV_WIDGETS_H
 
-#include <QtAVWidgets/QtAVWidgets_version.h>
-#include <QtAVWidgets/global.h>
-#include <QtAVWidgets/GraphicsItemRenderer.h>
-#include <QtAVWidgets/WidgetRenderer.h>
-//#include <QtAVWidgets/GLWidgetRenderer.h>
-#include <QtAVWidgets/GLWidgetRenderer2.h>
-#include <QtAVWidgets/VideoPreviewWidget.h>
+#include "QtAVWidgets_version.h"
+#include "QtAVWidgets_Global.h"
+#include "GraphicsItemRenderer.h"
+#include "WidgetRenderer.h"
+//#include "GLWidgetRenderer.h"
+#include "GLWidgetRenderer2.h"
+#include "VideoPreviewWidget.h"
 
-#endif // QTAVWIDGETS_H
+#endif // QTAV_WIDGETS_H

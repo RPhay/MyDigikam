@@ -29,7 +29,8 @@
 #include "PacketBuffer.h"
 //TODO: pause functions. AVOutput may be null, use AVThread's pause state
 
-namespace QtAV {
+namespace QtAV
+{
 
 class AVDecoder;
 class AVThreadPrivate;

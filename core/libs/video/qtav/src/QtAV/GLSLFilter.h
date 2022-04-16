@@ -34,7 +34,8 @@ QT_BEGIN_NAMESPACE
 class QOpenGLFramebufferObject;
 QT_END_NAMESPACE
 
-namespace QtAV {
+namespace QtAV
+{
 class OpenGLVideo;
 class GLSLFilterPrivate;
 class Q_AV_EXPORT GLSLFilter : public VideoFilter
@@ -75,5 +76,5 @@ protected:
      */
     void process(Statistics* statistics, VideoFrame* frame = 0) Q_DECL_OVERRIDE;
 };
-} //namespace QtAV
+} // namespace QtAV
 #endif // QTAV_GLSLFILTER_H

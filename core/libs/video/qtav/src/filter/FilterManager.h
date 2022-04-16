@@ -27,7 +27,8 @@
 #include "QtAV/Filter.h" // signal qobj parameter
 #include "QtAV/QtAV_Global.h"
 
-namespace QtAV {
+namespace QtAV
+{
 
 class AVOutput;
 class AVPlayer;
@@ -66,6 +67,6 @@ private:
     DPTR_DECLARE(FilterManager)
 };
 
-} //namespace QtAV
+} // namespace QtAV
 
 #endif // QTAV_FILTERMANAGER_H

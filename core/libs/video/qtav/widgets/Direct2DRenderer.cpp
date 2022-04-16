@@ -39,7 +39,8 @@
 //vlc is helpful
 //layer(opacity): http://www.cnblogs.com/graphics/archive/2013/04/15/2781969.html
 
-namespace QtAV {
+namespace QtAV
+{
 
 template<class Interface>
 inline void SafeRelease(Interface **ppInterfaceToRelease)
@@ -417,6 +418,6 @@ void Direct2DRenderer::showEvent(QShowEvent *)
     d.recreateDeviceResource();
 }
 
-} //namespace QtAV
+} // namespace QtAV
 
 #include "Direct2DRenderer.moc"

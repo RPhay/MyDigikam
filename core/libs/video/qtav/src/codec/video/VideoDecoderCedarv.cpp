@@ -43,7 +43,8 @@ void tiled_deinterleave_to_planar(void *src, void *dst1, void *dst2,
                                   unsigned int width, unsigned int height);
 }
 #endif //NO_NEON_OPT
-namespace QtAV {
+namespace QtAV
+{
 
 class VideoDecoderCedarvPrivate;
 class VideoDecoderCedarv : public VideoDecoder

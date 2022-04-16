@@ -25,7 +25,8 @@
 #include <d3d9.h>
 #include "QtAV/SurfaceInterop.h"
 
-namespace QtAV {
+namespace QtAV
+{
 namespace d3d9 {
 
 enum InteropType {
@@ -87,5 +88,5 @@ private:
     int frame_width, frame_height;
 };
 } //namespace d3d9
-} //namespace QtAV
+} // namespace QtAV
 #endif // QTAV_SURFACEINTEROPD3D9_H

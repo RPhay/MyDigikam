@@ -37,7 +37,8 @@
  * if delete filter first, filter must notify FilterManager (uninstall in dtor here) to uninstall to avoid target to access it (in ~target())
  * if delete target first, target remove the filter but not delete it (parent not null now).
  */
-namespace QtAV {
+namespace QtAV
+{
 
 Filter::Filter(FilterPrivate &d, QObject *parent)
     : QObject(parent)
@@ -183,4 +184,4 @@ void VideoFilter::apply(Statistics *statistics, VideoFrame *frame)
     process(statistics, frame);
 }
 
-} //namespace QtAV
+} // namespace QtAV

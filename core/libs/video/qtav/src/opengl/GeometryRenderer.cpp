@@ -27,7 +27,8 @@
 #else
 #define QGLF(f) QGLFunctions(NULL).f
 #endif
-namespace QtAV {
+namespace QtAV
+{
 
 GeometryRenderer::GeometryRenderer()
     : g(NULL)
@@ -275,4 +276,4 @@ void GeometryRenderer::render()
     }
     unbindBuffers();
 }
-} //namespace QtAV
+} // namespace QtAV

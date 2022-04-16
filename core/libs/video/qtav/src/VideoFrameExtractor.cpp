@@ -36,7 +36,8 @@
 #include "utils/BlockingQueue.h"
 #include "utils/Logger.h"
 
-namespace QtAV {
+namespace QtAV
+{
 
 class ExtractThread : public QThread {
 public:
@@ -547,4 +548,4 @@ void VideoFrameExtractor::extractInternal(qint64 pos)
     Q_EMIT frameExtracted(d.frame);
 }
 
-} //namespace QtAV
+} // namespace QtAV

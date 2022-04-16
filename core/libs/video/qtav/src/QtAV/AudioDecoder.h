@@ -29,7 +29,8 @@
 
 #define USE_AUDIO_FRAME 1
 //TODO: decoder.in/outAudioFormat()?
-namespace QtAV {
+namespace QtAV
+{
 typedef int AudioDecoderId;
 // built-in decoders
 extern Q_AV_EXPORT AudioDecoderId AudioDecoderId_FFmpeg;
@@ -77,5 +78,5 @@ private:
     AudioDecoder();
 };
 
-} //namespace QtAV
+} // namespace QtAV
 #endif // QAV_AUDIODECODER_H

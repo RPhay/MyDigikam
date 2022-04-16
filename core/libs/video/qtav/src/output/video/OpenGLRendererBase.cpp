@@ -28,7 +28,8 @@
 #include "opengl/OpenGLHelper.h"
 #include "utils/Logger.h"
 
-namespace QtAV {
+namespace QtAV
+{
 
 OpenGLRendererBasePrivate::OpenGLRendererBasePrivate(QPaintDevice* pd)
     : painter(new QPainter())
@@ -203,4 +204,4 @@ bool OpenGLRendererBase::onSetSaturation(qreal s)
     return true;
 }
 
-} //namespace QtAV
+} // namespace QtAV

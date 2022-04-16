@@ -27,7 +27,8 @@
 #include "QtAV/private/mkid.h"
 #include "utils/Logger.h"
 
-namespace QtAV {
+namespace QtAV
+{
 FACTORY_DEFINE(AudioResampler)
 
 AudioResamplerId AudioResamplerId_FF = mkid::id32base36_6<'F', 'F', 'm', 'p', 'e', 'g'>::value;
@@ -197,4 +198,4 @@ void AudioResampler::setOutChannels(int channels)
     setOutAudioFormat(af);
 }
 
-} //namespace QtAV
+} // namespace QtAV

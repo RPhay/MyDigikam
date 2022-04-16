@@ -35,7 +35,8 @@
 //http://stackoverflow.com/questions/19834842/android-gallery-on-kitkat-returns-different-uri-for-intent-action-get-content/20559418#20559418
 //http://stackoverflow.com/questions/22029815/how-to-use-the-qt-jni-class-qandroidjniobject
 
-namespace QtAV {
+namespace QtAV
+{
 static const MediaIOId MediaIOId_Android = mkid::id32base36_6<'A','D','r','o','i', 'd'>::value;
 static const char kName[] = "Android";
 class AndroidIOPrivate;
@@ -145,4 +146,4 @@ void AndroidIO::onUrlChanged()
     int fd = pfd.call<int,DetachFd>();
     qt_file.open(fd, QIODevice::ReadOnly);
 }
-} //namespace QtAV
+} // namespace QtAV

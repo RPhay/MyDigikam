@@ -30,7 +30,8 @@
 #endif
 #include "utils/Logger.h"
 
-namespace QtAV {
+namespace QtAV
+{
 
 Q_GLOBAL_STATIC(QThreadPool, videoCaptureThreadPool)
 static bool app_is_dieing = false;
@@ -283,5 +284,5 @@ void VideoCapture::setVideoFrame(const VideoFrame &frame)
     this->frame = frame.clone(); // TODO: no clone, use detach()
 }
 
-} //namespace QtAV
+} // namespace QtAV
 

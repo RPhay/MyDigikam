@@ -35,7 +35,8 @@ QT_BEGIN_NAMESPACE
 class QIODevice;
 QT_END_NAMESPACE
 // TODO: force codec name. clean code
-namespace QtAV {
+namespace QtAV
+{
 class AVError;
 class MediaIO;
 class Q_AV_EXPORT AVDemuxer : public QObject
@@ -209,5 +210,5 @@ private:
     friend class InterruptHandler;
 };
 
-} //namespace QtAV
+} // namespace QtAV
 #endif // QAV_DEMUXER_H

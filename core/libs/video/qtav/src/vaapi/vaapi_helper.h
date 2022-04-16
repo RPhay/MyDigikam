@@ -34,7 +34,8 @@
 #endif
 #include "utils/SharedPtr.h"
 
-namespace QtAV {
+namespace QtAV
+{
 #ifndef VA_FOURCC_RGBX
 #define VA_FOURCC_RGBX      0x58424752
 #endif
@@ -323,5 +324,5 @@ private:
 typedef QSharedPointer<surface_glx_t> surface_glx_ptr; //store in a vector
 #endif //QT_NO_OPENGL
 } //namespace vaapi
-} //namespace QtAV
+} // namespace QtAV
 #endif // QTAV_VAAPI_HELPER_H

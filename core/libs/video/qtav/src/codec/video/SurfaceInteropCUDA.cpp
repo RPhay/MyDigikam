@@ -28,7 +28,8 @@
 #define WORKAROUND_UNMAP_CONTEXT_SWITCH 1
 #define USE_STREAM 1
 
-namespace QtAV {
+namespace QtAV
+{
 namespace cuda {
 
 InteropResource::InteropResource()
@@ -222,7 +223,7 @@ void SurfaceInteropCUDA::unmap(void *handle)
 #endif
 }
 } //namespace cuda
-} //namespace QtAV
+} // namespace QtAV
 
 #if QTAV_HAVE(CUDA_EGL)
 #ifdef QT_OPENGL_ES_2_ANGLE_STATIC
@@ -235,7 +236,8 @@ void SurfaceInteropCUDA::unmap(void *handle)
 #define DX_LOG_COMPONENT "CUDA.D3D"
 #include "utils/DirectXHelper.h"
 
-namespace QtAV {
+namespace QtAV
+{
 namespace cuda {
 class EGL {
 public:
@@ -575,10 +577,11 @@ bool EGLInteropResource::map(IDirect3DSurface9* surface, GLuint tex, int w, int 
 }
 
 } //namespace cuda
-} //namespace QtAV
+} // namespace QtAV
 #endif //QTAV_HAVE(CUDA_EGL)
 #if QTAV_HAVE(CUDA_GL)
-namespace QtAV {
+namespace QtAV
+{
 namespace cuda {
 //TODO: cuGLMapBufferObject: get cudeviceptr from pbo, then memcpy2d
 bool GLInteropResource::map(int picIndex, const CUVIDPROCPARAMS &param, GLuint tex, int w, int h, int H, int plane)
@@ -695,5 +698,5 @@ bool GLInteropResource::ensureResource(int w, int h, int H, GLuint tex, int plan
     return true;
 }
 } //namespace cuda
-} //namespace QtAV
+} // namespace QtAV
 #endif //QTAV_HAVE(CUDA_GL)

@@ -39,7 +39,8 @@
  * ao->close();
  * See QtAV/tests/ao/main.cpp for detail
  */
-namespace QtAV {
+namespace QtAV
+{
 
 class AudioFormat;
 class AudioOutputPrivate;
@@ -227,5 +228,5 @@ private:
     Q_DISABLE_COPY(AudioOutput)
 };
 
-} //namespace QtAV
+} // namespace QtAV
 #endif // QAV_AUDIOOUTPUT_H

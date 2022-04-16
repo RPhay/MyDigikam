@@ -28,7 +28,8 @@
 
 // TODO: does intel supports d3d11-gl interop?
 //dynamic gl or desktop gl
-namespace QtAV {
+namespace QtAV
+{
 namespace d3d11 {
 class GLInteropResource Q_DECL_FINAL: public InteropResource
 {

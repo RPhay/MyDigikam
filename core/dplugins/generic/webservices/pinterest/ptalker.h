@@ -56,7 +56,9 @@ public:
     void getUserName();
     bool authenticated();
     void cancel();
-    bool addPin(const QString& imgPath, const QString& uploadFolder, bool rescale, int maxDim, int imageQuality);
+    bool addPin(const QString& imgPath,
+                const QString& boradID,
+                bool rescale, int maxDim, int imageQuality);
     void listBoards(const QString& path = QString());
     void createBoard(QString& boardName);
     void setAccessToken(const QString& token);

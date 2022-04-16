@@ -27,7 +27,8 @@
 #include <QtAV/VideoFrame.h>
 
 //TODO: extract all streams
-namespace QtAV {
+namespace QtAV
+{
 class VideoFrameExtractorPrivate;
 class Q_AV_EXPORT VideoFrameExtractor : public QObject
 {
@@ -98,5 +99,5 @@ protected:
     DPTR_DECLARE(VideoFrameExtractor)
 };
 
-} //namespace QtAV
+} // namespace QtAV
 #endif // QTAV_VIDEOFRAMEEXTRACTOR_H

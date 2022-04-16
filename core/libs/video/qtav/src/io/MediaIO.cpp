@@ -26,7 +26,8 @@
 #include <QtCore/QStringList>
 #include "utils/Logger.h"
 
-namespace QtAV {
+namespace QtAV
+{
 
 FACTORY_DEFINE(MediaIO)
 
@@ -213,4 +214,4 @@ void MediaIO::release()
     av_freep(&d.ctx->buffer);
     av_freep(&d.ctx);
 }
-} //namespace QtAV
+} // namespace QtAV

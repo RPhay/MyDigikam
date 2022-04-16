@@ -30,7 +30,8 @@
 
 #include <klocalizedstring.h>
 
-namespace QtAV {
+namespace QtAV
+{
 
 namespace
 {
@@ -201,7 +202,7 @@ QString AVError::string() const
             break;
 
         default:
-            errStr = i18n("Unknow error");
+            errStr = i18n("Unknown error");
             break;
         }
     }
@@ -223,7 +224,7 @@ QString AVError::ffmpegErrorString() const
     return QString::fromUtf8(av_err2str(mFFmpegError));
 }
 
-} //namespace QtAV
+} // namespace QtAV
 
 
 #ifndef QT_NO_DEBUG_STREAM

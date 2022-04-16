@@ -20,13 +20,14 @@
  *
  * ============================================================ */
 
-#include "QtAVWidgets/OpenGLWidgetRenderer.h"
+#include "OpenGLWidgetRenderer.h"
 #include "QtAV/private/OpenGLRendererBase_p.h"
 #include <QtGui/QGuiApplication>
 #include <QtGui/QResizeEvent>
 #include <QtGui/QScreen>
 
-namespace QtAV {
+namespace QtAV
+{
 
 class OpenGLWidgetRendererPrivate : public OpenGLRendererBasePrivate
 {
@@ -87,4 +88,4 @@ void OpenGLWidgetRenderer::showEvent(QShowEvent* /*e*/)
     onShowEvent(); // TODO: onShowEvent(w, h)?
     resizeGL(width(), height());
 }
-} //namespace QtAV
+} // namespace QtAV

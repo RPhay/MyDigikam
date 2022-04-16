@@ -31,7 +31,8 @@
 #include <QtCore/QStringList>
 #include <QtCore/QVariant>
 
-namespace QtAV {
+namespace QtAV
+{
 
 class MediaIO;
 class VideoEncoder;
@@ -90,5 +91,5 @@ private:
     class Private;
     QScopedPointer<Private> d;
 };
-} //namespace QtAV
+} // namespace QtAV
 #endif //QAV_AVMUXER_H

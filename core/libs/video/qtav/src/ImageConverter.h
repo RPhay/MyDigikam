@@ -27,7 +27,8 @@
 #include <QtAV/VideoFormat.h>
 #include <QtCore/QVector>
 
-namespace QtAV {
+namespace QtAV
+{
 
 typedef int ImageConverterId;
 class ImageConverterPrivate;
@@ -117,5 +118,5 @@ typedef ImageConverterFF ImageConverterSWS;
 extern ImageConverterId ImageConverterId_FF;
 extern ImageConverterId ImageConverterId_IPP;
 
-} //namespace QtAV
+} // namespace QtAV
 #endif // QTAV_IMAGECONVERTER_H

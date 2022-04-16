@@ -26,7 +26,8 @@
 #include "QtAV/private/VideoRenderer_p.h"
 #include "QtAV/OpenGLVideo.h"
 
-namespace QtAV {
+namespace QtAV
+{
 
 class Q_AV_PRIVATE_EXPORT OpenGLRendererBasePrivate : public VideoRendererPrivate
 {
@@ -41,6 +42,6 @@ public:
     bool frame_changed;
 };
 
-} //namespace QtAV
+} // namespace QtAV
 
 #endif // QTAV_OpenGLRendererBase_P_H

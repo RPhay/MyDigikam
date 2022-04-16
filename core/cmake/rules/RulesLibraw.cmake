@@ -14,7 +14,7 @@ DETECT_OPENMP()
 
 if(OPENMP_FOUND)
 
-    message(STATUS "RawEngine will be compiled with OpenMP support")
+    message(STATUS "RawEngine will be compiled with OpenMP support : yes")
 
 else()
 
@@ -24,11 +24,12 @@ else()
 
         add_definitions(-DLIBRAW_FORCE_OPENMP)
         set(OPENMP_FOUND ON)
-        message(STATUS "RawEngine will be compiled with OpenMP support")
+
+        message(STATUS "RawEngine will be compiled with OpenMP support : yes")
 
     else()
 
-        message(STATUS "RawEngine will not be compiled with OpenMP support")
+        message(STATUS "RawEngine will be compiled with OpenMP support : no")
 
     endif()
 
@@ -40,11 +41,11 @@ if(Jasper_FOUND)
 
     add_definitions(-DUSE_JASPER)
     include_directories(${JASPER_INCLUDE_DIR})
-    message(STATUS "RawEngine will be compiled with RedCine codec")
+    message(STATUS "RawEngine will be compiled with RedCine codec  : yes")
 
 else()
 
-    message(STATUS "RawEngine will not be compiled with RedCine codec")
+    message(STATUS "RawEngine will be compiled with RedCine codec  : no")
 
 endif()
 
@@ -54,18 +55,25 @@ if(JPEG8_FOUND)
 
     add_definitions(-DUSE_JPEG)
     add_definitions(-DUSE_JPEG8)
-    message(STATUS "RawEngine will be compiled with DNG lossy codec")
+    message(STATUS "RawEngine will be compiled with DNG lossy codec: yes")
 
 else()
 
-    message(STATUS "RawEngine will not be compiled with DNG lossy codec")
+    message(STATUS "RawEngine will be compiled with DNG lossy codec: no")
 
 endif()
 
-#define CMS_NO_REGISTER_KEYWORD 1
-
-message(STATUS "Looking for PThreads")
 set(PTHREADS_FOUND (CMAKE_USE_PTHREADS_INIT OR CMAKE_USE_WIN32_THREADS_INIT))
+
+if(PTHREADS_FOUND)
+
+    message(STATUS "RawEngine will be compiled with pthread        : yes")
+
+else()
+
+    message(STATUS "RawEngine will be compiled with pthread        : no")
+
+endif()
 
 # Registration of Libraw configuration to a dedicated header
 

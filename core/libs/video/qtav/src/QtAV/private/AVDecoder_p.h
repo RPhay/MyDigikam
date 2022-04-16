@@ -29,7 +29,8 @@
 #include "QtAV/QtAV_Global.h"
 #include "QtAV/private/AVCompat.h"
 
-namespace QtAV {
+namespace QtAV
+{
 
 // always define the class to avoid macro check when using it
 class AVFrameBuffers {
@@ -141,7 +142,7 @@ public:
     {}
     virtual ~VideoDecoderPrivate() {}
 };
-} //namespace QtAV
+} // namespace QtAV
 
 Q_DECLARE_METATYPE(QtAV::AVFrameBuffersRef)
 

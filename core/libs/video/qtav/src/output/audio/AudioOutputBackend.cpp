@@ -24,7 +24,8 @@
 #include "QtAV/private/factory.h"
 #include "utils/Logger.h"
 
-namespace QtAV {
+namespace QtAV
+{
 
 QStringList AudioOutputBackend::defaultPriority()
 {
@@ -114,4 +115,4 @@ void AudioOutput_RegisterAll()
 #endif
 }
 
-} //namespace QtAV
+} // namespace QtAV

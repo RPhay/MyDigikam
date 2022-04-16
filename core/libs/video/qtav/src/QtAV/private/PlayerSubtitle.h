@@ -29,7 +29,8 @@
 #include <QtAV/QtAV_Global.h>
 #include <QtAV/Packet.h>
 
-namespace QtAV {
+namespace QtAV
+{
 
 class AVPlayer;
 class Subtitle;

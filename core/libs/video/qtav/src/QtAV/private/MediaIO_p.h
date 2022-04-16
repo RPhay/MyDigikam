@@ -28,7 +28,8 @@
 #include <QtCore/QString>
 #include "QtAV/MediaIO.h"
 
-namespace QtAV {
+namespace QtAV
+{
 
 class MediaIO;
 class Q_AV_PRIVATE_EXPORT MediaIOPrivate : public DPtrPrivate<MediaIO>
@@ -45,5 +46,5 @@ public:
     QString url;
 };
 
-} //namespace QtAV
+} // namespace QtAV
 #endif // QTAV_MediaIO_P_H

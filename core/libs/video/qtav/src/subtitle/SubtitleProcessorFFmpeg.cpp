@@ -29,7 +29,8 @@
 #include "utils/Logger.h"
 #include <QIODevice>
 
-namespace QtAV {
+namespace QtAV
+{
 
 class SubtitleProcessorFFmpeg Q_DECL_FINAL: public SubtitleProcessor
 {
@@ -415,4 +416,4 @@ bool SubtitleProcessorFFmpeg::processSubtitle()
     return true;
 }
 
-} //namespace QtAV
+} // namespace QtAV

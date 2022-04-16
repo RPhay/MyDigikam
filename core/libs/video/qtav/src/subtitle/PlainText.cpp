@@ -25,7 +25,8 @@
 #include <stdio.h>
 #include <string.h>
 
-namespace QtAV {
+namespace QtAV
+{
 namespace PlainText {
 
 /*

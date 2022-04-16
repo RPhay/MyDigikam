@@ -26,7 +26,8 @@
 #include <portaudio.h>
 #include "utils/Logger.h"
 
-namespace QtAV {
+namespace QtAV
+{
 
 static const char kName[] = "PortAudio";
 class AudioOutputPortAudio Q_DECL_FINAL: public AudioOutputBackend
@@ -163,4 +164,4 @@ bool AudioOutputPortAudio::close()
         Pa_Terminate(); //Do NOT call this if init failed. See document
     return true;
 }
-} //namespace QtAV
+} // namespace QtAV

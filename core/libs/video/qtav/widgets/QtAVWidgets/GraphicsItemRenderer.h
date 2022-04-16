@@ -23,26 +23,32 @@
 #ifndef QAV_GRAPHICSITEMRENDERER_H
 #define QAV_GRAPHICSITEMRENDERER_H
 
-#include <QtAVWidgets/global.h>
-#include <QtAV/QPainterRenderer.h>
+#include "QtAVWidgets_Global.h"
+#include "QtAV/QPainterRenderer.h"
+
 #if QT_VERSION >= QT_VERSION_CHECK(5, 0, 0)
-#include <QtWidgets/QGraphicsWidget>
+#   include <QtWidgets/QGraphicsWidget>
 #else
-#include <QtGui/QGraphicsWidget>
+#   include <QtGui/QGraphicsWidget>
 #endif
 
 //QGraphicsWidget will lose focus forever if TextItem inserted text. Why?
 #define CONFIG_GRAPHICSWIDGET 0
+
 #if CONFIG_GRAPHICSWIDGET
-#define GraphicsWidget QGraphicsWidget
+#   define GraphicsWidget QGraphicsWidget
 #else
-#define GraphicsWidget QGraphicsObject
+#   define GraphicsWidget QGraphicsObject
 #endif
 
-namespace QtAV {
+namespace QtAV
+{
 
 class GraphicsItemRendererPrivate;
-class Q_AVWIDGETS_EXPORT GraphicsItemRenderer : public GraphicsWidget, public QPainterRenderer
+
+class Q_AVWIDGETS_EXPORT GraphicsItemRenderer
+    : public GraphicsWidget,
+      public QPainterRenderer
 {
     Q_OBJECT
     DPTR_DECLARE_PRIVATE(GraphicsItemRenderer)
@@ -63,7 +69,9 @@ class Q_AVWIDGETS_EXPORT GraphicsItemRenderer : public GraphicsWidget, public QP
     Q_PROPERTY(QRect videoRect READ videoRect NOTIFY videoRectChanged)
     Q_PROPERTY(QSize videoFrameSize READ videoFrameSize NOTIFY videoFrameSizeChanged)
     Q_ENUMS(Quality)
+
 public:
+
     GraphicsItemRenderer(QGraphicsItem * parent = 0);
     VideoRendererId id() const Q_DECL_OVERRIDE;
     bool isSupported(VideoFormat::PixelFormat pixfmt) const Q_DECL_OVERRIDE;
@@ -81,7 +89,9 @@ public:
     void setOpenGL(bool o);
 
     OpenGLVideo* opengl() const Q_DECL_OVERRIDE;
+
 Q_SIGNALS:
+
     void sourceAspectRatioChanged(qreal value) Q_DECL_OVERRIDE Q_DECL_FINAL;
     void regionOfInterestChanged() Q_DECL_OVERRIDE;
     void outAspectRatioChanged() Q_DECL_OVERRIDE;
@@ -95,21 +105,25 @@ Q_SIGNALS:
     void videoRectChanged() Q_DECL_OVERRIDE;
     void videoFrameSizeChanged() Q_DECL_OVERRIDE;
     void openGLChanged();
+
 protected:
+
     GraphicsItemRenderer(GraphicsItemRendererPrivate& d, QGraphicsItem *parent);
 
     bool receiveFrame(const VideoFrame& frame) Q_DECL_OVERRIDE;
     void drawBackground() Q_DECL_OVERRIDE;
     //draw the current frame using the current paint engine. called by paintEvent()
     void drawFrame() Q_DECL_OVERRIDE;
+
 #if CONFIG_GRAPHICSWIDGET
     bool event(QEvent *event) Q_DECL_OVERRIDE;
 #else
     bool event(QEvent *event) Q_DECL_OVERRIDE;
     //bool sceneEvent(QEvent *event) Q_DECL_OVERRIDE;
-#endif //CONFIG_GRAPHICSWIDGET
+#endif // CONFIG_GRAPHICSWIDGET
 
 private:
+
     void onSetOutAspectRatioMode(OutAspectRatioMode mode) Q_DECL_OVERRIDE;
     void onSetOutAspectRatio(qreal ratio) Q_DECL_OVERRIDE;
     bool onSetOrientation(int value) Q_DECL_OVERRIDE;
@@ -118,7 +132,9 @@ private:
     bool onSetHue(qreal h) Q_DECL_OVERRIDE;
     bool onSetSaturation(qreal s) Q_DECL_OVERRIDE;
 };
+
 typedef GraphicsItemRenderer VideoRendererGraphicsItem;
-}
+
+} // namespace QtAV
 
 #endif // QAV_GRAPHICSITEMRENDERER_H

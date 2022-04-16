@@ -24,7 +24,8 @@
 #include "QtAV/private/Frame_p.h"
 #include "utils/Logger.h"
 
-namespace QtAV {
+namespace QtAV
+{
 
 Frame::Frame(const Frame &other)
     :d_ptr(other.d_ptr)
@@ -211,4 +212,4 @@ void Frame::setTimestamp(qreal ts)
     d_func()->timestamp = ts;
 }
 
-} //namespace QtAV
+} // namespace QtAV

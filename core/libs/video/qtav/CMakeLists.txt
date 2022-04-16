@@ -99,26 +99,24 @@ set(libqtav_SRCS
     ${CMAKE_CURRENT_SOURCE_DIR}/src/VideoThread.cpp
     ${CMAKE_CURRENT_SOURCE_DIR}/src/VideoFrameExtractor.cpp
 
-    ${CMAKE_CURRENT_SOURCE_DIR}/widgets/global.cpp
+    ${CMAKE_CURRENT_SOURCE_DIR}/widgets/QtAVWidgets_Global.cpp
     ${CMAKE_CURRENT_SOURCE_DIR}/widgets/GraphicsItemRenderer.cpp
     ${CMAKE_CURRENT_SOURCE_DIR}/widgets/OpenGLWidgetRenderer.cpp
     ${CMAKE_CURRENT_SOURCE_DIR}/widgets/VideoPreviewWidget.cpp
     ${CMAKE_CURRENT_SOURCE_DIR}/widgets/WidgetRenderer.cpp
 )
 
-qt5_add_resources(libqtav_SRCS ${CMAKE_CURRENT_SOURCE_DIR}/src/shaders/shaders.qrc
-                               ${CMAKE_CURRENT_SOURCE_DIR}/src/QtAV.qrc
-)
+qt5_add_resources(libqtav_SRCS ${CMAKE_CURRENT_SOURCE_DIR}/src/shaders/shaders.qrc)
 
 file(GLOB QTAV_HEADERS         ${CMAKE_CURRENT_SOURCE_DIR}/src/QtAV/*.h)
 file(GLOB QTAV_PRIVATE_HEADERS ${CMAKE_CURRENT_SOURCE_DIR}/src/QtAV/private/*.h)
 
 set(QTAV_WIDGETS_HEADERS
-    ${CMAKE_CURRENT_SOURCE_DIR}/widgets/QtAVWidgets/global.h
+    ${CMAKE_CURRENT_SOURCE_DIR}/widgets/QtAVWidgets/QtAVWidgets_Global.h
+    ${CMAKE_CURRENT_SOURCE_DIR}/widgets/QtAVWidgets/QtAVWidgets_Version.h
     ${CMAKE_CURRENT_SOURCE_DIR}/widgets/QtAVWidgets/GraphicsItemRenderer.h
     ${CMAKE_CURRENT_SOURCE_DIR}/widgets/QtAVWidgets/OpenGLWidgetRenderer.h
     ${CMAKE_CURRENT_SOURCE_DIR}/widgets/QtAVWidgets/QtAVWidgets.h
-    ${CMAKE_CURRENT_SOURCE_DIR}/widgets/QtAVWidgets/QtAVWidgets_version.h
     ${CMAKE_CURRENT_SOURCE_DIR}/widgets/QtAVWidgets/VideoPreviewWidget.h
     ${CMAKE_CURRENT_SOURCE_DIR}/widgets/QtAVWidgets/WidgetRenderer.h
 )

@@ -27,7 +27,8 @@
 #include <QtGui/QPainter>
 #include <QtAV/private/VideoRenderer_p.h>
 
-namespace QtAV {
+namespace QtAV
+{
 
 class Q_AV_PRIVATE_EXPORT QPainterRendererPrivate : public VideoRendererPrivate
 {
@@ -64,5 +65,5 @@ public:
     QPainter *painter;
 };
 
-} //namespace QtAV
+} // namespace QtAV
 #endif // QTAV_QPAINTERRENDERER_P_H

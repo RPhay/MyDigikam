@@ -25,7 +25,8 @@
 
 #include <QtCore/QObject>
 
-namespace QtAV {
+namespace QtAV
+{
 class VideoShader;
 class VideoMaterial;
 /*!
@@ -46,5 +47,5 @@ private:
     class Private;
     Private* d;
 };
-} //namespace QtAV
+} // namespace QtAV
 #endif // QTAV_SHADERMANAGER_H

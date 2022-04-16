@@ -32,7 +32,8 @@
 #include "QtAV/private/factory.h"
 #include "utils/Logger.h"
 
-namespace QtAV {
+namespace QtAV
+{
 static const char kName[] = "AudioToolbox";
 class AudioOutputAudioToolbox Q_DECL_FINAL: public AudioOutputBackend
 {
@@ -238,4 +239,4 @@ bool AudioOutputAudioToolbox::setVolume(qreal value)
     AT_ENSURE(AudioQueueSetParameter(m_queue, kAudioQueueParam_Volume, value), false);
     return true;
 }
-} //namespace QtAV
+} // namespace QtAV

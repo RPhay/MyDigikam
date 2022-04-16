@@ -31,7 +31,8 @@
 #define QOpenGLFunctions QGLFunctions
 #endif
 
-namespace QtAV {
+namespace QtAV
+{
 
 /*!
  * \brief The OpenGLRendererBase class
@@ -72,6 +73,6 @@ protected:
     OpenGLRendererBase(OpenGLRendererBasePrivate &d);
 };
 
-} //namespace QtAV
+} // namespace QtAV
 
 #endif // QTAV_OPENGLRENDERERBASE_H

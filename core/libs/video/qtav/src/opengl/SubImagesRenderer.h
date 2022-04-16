@@ -39,7 +39,8 @@
 #define QOpenGLShader QGLShader
 #endif
 
-namespace QtAV {
+namespace QtAV
+{
 class SubImagesGeometry;
 class GeometryRenderer;
 class SubImagesRenderer
@@ -71,5 +72,5 @@ private:
     GLuint m_tex;
     QOpenGLShaderProgram m_program;
 };
-} //namespace QtAV
+} // namespace QtAV
 #endif //QTAV_SUBIMAGESRENDERER_H

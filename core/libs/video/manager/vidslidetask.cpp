@@ -40,13 +40,13 @@
 
 // QtAv includes
 
-#include <QtAV/VideoFrame.h>     // krazy:exclude=includes
-#include <QtAV/AudioFrame.h>     // krazy:exclude=includes
-#include <QtAV/VideoEncoder.h>   // krazy:exclude=includes
-#include <QtAV/AudioEncoder.h>   // krazy:exclude=includes
-#include <QtAV/AudioDecoder.h>   // krazy:exclude=includes
-#include <QtAV/AVMuxer.h>        // krazy:exclude=includes
-#include <QtAV/AVDemuxer.h>      // krazy:exclude=includes
+#include "VideoFrame.h"
+#include "AudioFrame.h"
+#include "VideoEncoder.h"
+#include "AudioEncoder.h"
+#include "AudioDecoder.h"
+#include "AVMuxer.h"
+#include "AVDemuxer.h"
 
 // Local includes
 

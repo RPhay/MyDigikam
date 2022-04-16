@@ -23,7 +23,8 @@
 #include "QtAV/ConvolutionShader.h"
 #include "QtAV/private/VideoShader_p.h"
 
-namespace QtAV {
+namespace QtAV
+{
 class ConvolutionShaderPrivate : public VideoShaderPrivate
 {
 public:
@@ -118,4 +119,4 @@ void ConvolutionShader::setKernelUniformValue()
     program()->setUniformValueArray("u_Kernel", kernel(), kernelSize(), 1);
 }
 
-} //namespace QtAV
+} // namespace QtAV

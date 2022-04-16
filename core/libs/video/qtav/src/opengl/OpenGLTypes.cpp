@@ -30,7 +30,8 @@
 #include <QtCore/QStringList>
 #include <QtCore/QVariant>
 #include "utils/Logger.h"
-namespace QtAV {
+namespace QtAV
+{
 struct uniform_type_name {
     QByteArray name;
     Uniform::Type type;
@@ -312,4 +313,4 @@ QVector<Uniform> ParseUniforms(const QByteArray &text, GLuint programId = 0)
     qDebug() << uniforms;
     return uniforms;
 }
-} //namespace QtAV
+} // namespace QtAV

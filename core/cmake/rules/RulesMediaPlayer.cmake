@@ -4,6 +4,11 @@
 # Redistribution and use is allowed according to the terms of the BSD license.
 # For details see the accompanying COPYING-CMAKE-SCRIPTS file.
 
+message(STATUS "")
+message(STATUS "--------------------------------------------------")
+message(STATUS "digiKam MediaPlayer dependencies checks:")
+message(STATUS "")
+
 find_package(FFmpeg COMPONENTS AVCODEC
                                AVDEVICE
                                AVFILTER
@@ -42,12 +47,13 @@ if(ENABLE_MEDIAPLAYER)
       )
 
         include_directories(${FFMPEG_INCLUDE_DIRS})
+        message(STATUS "MediaPlayer support is enabled                      : yes")
 
     else()
 
         set(ENABLE_MEDIAPLAYER OFF)
         set(FFMPEG_FOUND OFF)
-        message(STATUS "ENABLE_MEDIAPLAYER option is enabled but FFMpeg cannot be found. Media player support is disabled.")
+        message(STATUS "MediaPlayer support is enabled                      : no")
 
     endif()
 
@@ -72,30 +78,55 @@ if(ENABLE_MEDIAPLAYER)
         if(ASS_FOUND)
 
             set(MEDIAPLAYER_LIBRARIES ${MEDIAPLAYER_LIBRARIES} ${ASS_LIBRARIES})
+            message(STATUS "MediaPlayer will be compiled with LibASS support    : yes")
+
+        else()
+
+            message(STATUS "MediaPlayer will be compiled with LibASS support    : no")
 
         endif()
 
         if(OPENAL_FOUND)
 
             set(MEDIAPLAYER_LIBRARIES ${MEDIAPLAYER_LIBRARIES} ${OPENAL_LIBRARY})
+            message(STATUS "MediaPlayer will be compiled with OpenAL support    : yes")
+
+        else()
+
+            message(STATUS "MediaPlayer will be compiled with OpenAL support    : no")
 
         endif()
 
         if(PORTAUDIO_FOUND)
 
             set(MEDIAPLAYER_LIBRARIES ${MEDIAPLAYER_LIBRARIES} ${PORTAUDIO_LIBRARIES})
+            message(STATUS "MediaPlayer will be compiled with PortAudio support : yes")
+
+        else()
+
+            message(STATUS "MediaPlayer will be compiled with PortAudio support : no")
 
         endif()
 
         if(PULSEAUDIO_FOUND)
 
             set(MEDIAPLAYER_LIBRARIES ${MEDIAPLAYER_LIBRARIES} ${PULSEAUDIO_LIBRARIES})
+            message(STATUS "MediaPlayer will be compiled with PulseAudio support: yes")
+
+        else()
+
+            message(STATUS "MediaPlayer will be compiled with PukseAudio support: no")
 
         endif()
 
         if(VAAPI_FOUND)
 
             set(MEDIAPLAYER_LIBRARIES ${MEDIAPLAYER_LIBRARIES} ${VAAPI_LIBRARIES})
+            message(STATUS "MediaPlayer will be compiled with VaAPI support     : yes")
+
+        else()
+
+            message(STATUS "MediaPlayer will be compiled with VaAPI support     : no")
 
         endif()
 
@@ -108,11 +139,15 @@ if(ENABLE_MEDIAPLAYER)
                 set(MEDIAPLAYER_LIBRARIES ${MEDIAPLAYER_LIBRARIES} Qt${QT_VERSION_MAJOR}::OpenGLWidgets)
 
             endif()
+            message(STATUS "MediaPlayer will be compiled with OpenGL support    : yes")
+
+        else()
+
+            message(STATUS "MediaPlayer will be compiled with OpenGL support    : no")
 
         endif()
 
-        message(STATUS "Media player support is enabled.")
-        message(STATUS "Media player libraries: ${MEDIAPLAYER_LIBRARIES}")
+        message(STATUS "MediaPlayer libraries: ${MEDIAPLAYER_LIBRARIES}")
 
     endif()
 

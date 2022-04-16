@@ -51,7 +51,8 @@ extern "C" {
 }
 
 #define EOF_ISSUE_SOLVED 0
-namespace QtAV {
+namespace QtAV
+{
 namespace {
 static const struct RegisterMetaTypes {
     inline RegisterMetaTypes() {
@@ -1759,4 +1760,4 @@ void AVPlayer::setSaturation(int val)
     }
 }
 
-} //namespace QtAV
+} // namespace QtAV

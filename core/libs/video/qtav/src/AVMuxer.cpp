@@ -28,7 +28,8 @@
 #include "utils/internal.h"
 #include "utils/Logger.h"
 
-namespace QtAV {
+namespace QtAV
+{
 static const char kFileScheme[] = "file:";
 #define CHAR_COUNT(s) (sizeof(s) - 1) // tail '\0'
 
@@ -567,4 +568,4 @@ void AVMuxer::Private::applyOptionsForContext()
         opt = options.value(QStringLiteral("avformat"));
     Internal::setOptionsToFFmpegObj(opt, format_ctx);
 }
-} //namespace QtAV
+} // namespace QtAV

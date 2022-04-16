@@ -33,7 +33,8 @@
 #include <X11/Xlib.h>
 #include <X11/Xutil.h>
 
-namespace QtAV {
+namespace QtAV
+{
 
 X11FilterContext::X11FilterContext() : VideoFilterContext()
   , doc(0)
@@ -263,4 +264,4 @@ void X11FilterContext::drawRichText(const QRectF &rect, const QString &text, boo
     renderTextImageX11(&text_q, r.topLeft()); //TODO: use boundingRect?
 }
 
-} //namespace QtAV
+} // namespace QtAV

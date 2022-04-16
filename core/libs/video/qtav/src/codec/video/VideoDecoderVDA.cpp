@@ -58,7 +58,8 @@ extern "C" {
 #endif
 
 // hwaccel 1.2: av_vda_xxx
-namespace QtAV {
+namespace QtAV
+{
 namespace cv {
 VideoFormat::PixelFormat format_from_cv(int cv);
 }
@@ -460,5 +461,5 @@ void VideoDecoderVDAPrivate::close()
     releaseUSWC();
 }
 
-} //namespace QtAV
+} // namespace QtAV
 #include "VideoDecoderVDA.moc"

@@ -1,36 +1,42 @@
-/******************************************************************************
-    QtAV:  Media play library based on Qt and FFmpeg
-    Copyright (C) 2012-2015 Wang Bin <wbsecg1@gmail.com>
-
-*   This file is part of QtAV
-
-    This library is free software; you can redistribute it and/or
-    modify it under the terms of the GNU Lesser General Public
-    License as published by the Free Software Foundation; either
-    version 2.1 of the License, or (at your option) any later version.
-
-    This library is distributed in the hope that it will be useful,
-    but WITHOUT ANY WARRANTY; without even the implied warranty of
-    MERCHANTABILITY or FITNESS FOR A PARTICULAR PURPOSE.  See the GNU
-    Lesser General Public License for more details.
-
-    You should have received a copy of the GNU Lesser General Public
-    License along with this library; if not, write to the Free Software
-    Foundation, Inc., 51 Franklin Street, Fifth Floor, Boston, MA  02110-1301  USA
-******************************************************************************/
+/* ============================================================
+ *
+ * This file is a part of digiKam project
+ * https://www.digikam.org
+ *
+ * Date        : 2012-10-31
+ * Description : QtAV: Multimedia framework based on Qt and FFmpeg
+ *
+ * Copyright (C) 2012-2022 Wang Bin <wbsecg1 at gmail dot com>
+ *
+ * This program is free software; you can redistribute it
+ * and/or modify it under the terms of the GNU General
+ * Public License as published by the Free Software Foundation;
+ * either version 2, or (at your option) any later version.
+ *
+ * This program is distributed in the hope that it will be useful,
+ * but WITHOUT ANY WARRANTY; without even the implied warranty of
+ * MERCHANTABILITY or FITNESS FOR A PARTICULAR PURPOSE.  See the
+ * GNU General Public License for more details.
+ *
+ * ============================================================ */
 
 #ifndef QTAV_GLWIDGETRENDERER_H
 #define QTAV_GLWIDGETRENDERER_H
 
-#include <QtAVWidgets/global.h>
-#include <QtAV/VideoRenderer.h>
+#include "QtAVWidgets_Global.h"
+#include "QtAV/VideoRenderer.h"
+
 #include <QtOpenGL/QGLWidget>
+
 // TODO: QGLFunctions is in Qt4.8+. meego is 4.7
 #define QTAV_HAVE_QGLFUNCTIONS QT_VERSION >= QT_VERSION_CHECK(4, 8, 0)
+
 #if QTAV_HAVE(QGLFUNCTIONS)
-#include <QtOpenGL/QGLFunctions>
+#   include <QtOpenGL/QGLFunctions>
 #endif
-namespace QtAV {
+
+namespace QtAV
+{
 
 class GLWidgetRendererPrivate;
 class Q_AVWIDGETS_EXPORT GLWidgetRenderer : public QGLWidget, public VideoRenderer
@@ -75,6 +81,6 @@ private:
 };
 typedef GLWidgetRenderer VideoRendererGLWidget;
 
-} //namespace QtAV
+} // namespace QtAV
 
 #endif // QTAV_GLWidgetRenderer_H

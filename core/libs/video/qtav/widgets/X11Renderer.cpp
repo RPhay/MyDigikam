@@ -42,7 +42,8 @@
 //scale: http://www.opensource.apple.com/source/X11apps/X11apps-14/xmag/xmag-X11R7.0-1.0.1/Scale.c
 #define FFALIGN(x, a) (((x)+(a)-1)&~((a)-1))
 static const int kPoolSize = 2;
-namespace QtAV {
+namespace QtAV
+{
 class X11RendererPrivate;
 class X11Renderer: public QWidget, public VideoRenderer
 {
@@ -526,6 +527,6 @@ void X11Renderer::showEvent(QShowEvent *event)
      */
     d.prepareDeviceResource();
 }
-} //namespace QtAV
+} // namespace QtAV
 
 #include "X11Renderer.moc"

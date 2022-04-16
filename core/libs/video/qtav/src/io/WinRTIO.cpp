@@ -52,7 +52,8 @@ using namespace ABI::Windows::Foundation::Collections;
         } \
     } while (0)
 
-namespace QtAV {
+namespace QtAV
+{
 static const MediaIOId MediaIOId_WinRT = mkid::id32base36_5<'W','i','n','R','T'>::value;
 static const char kName[] = "WinRT";
 class WinRTIOPrivate;
@@ -237,4 +238,4 @@ void WinRTIO::open(ComPtr<IStorageFile> &file)
     // Convert asynchronous IRandomAccessStream to synchronous IStream. This API requires shcore.h and shcore.lib
     COM_ENSURE(CreateStreamOverRandomAccessStream(reinterpret_cast<IUnknown*>(stream.Get()), IID_PPV_ARGS(&d_func().stream)));
 }
-} //namespace QtAV
+} // namespace QtAV

@@ -33,7 +33,8 @@
 #define YUVA_DONE 0
 //#define QTAV_DEBUG_GLSL
 
-namespace QtAV {
+namespace QtAV
+{
 extern QVector<Uniform> ParseUniforms(const QByteArray& text, GLuint programId = 0);
 
 VideoShader::VideoShader(VideoShaderPrivate &d):
@@ -174,7 +175,7 @@ const char* VideoShader::fragmentShader() const
     QByteArray header("*/");
     if (userShaderHeader(QOpenGLShader::Fragment))
         header += QByteArray(userShaderHeader(QOpenGLShader::Fragment));
-    header += "\n";
+    header += '\n';
     header += "uniform vec2 u_texelSize[" + QByteArray::number(nb_planes) + "];\n";
     header += "uniform vec2 u_textureSize[" + QByteArray::number(nb_planes) + "];\n";
     header += "/*";
@@ -1142,4 +1143,4 @@ void VideoMaterialPrivate::setupQuality()
     DYGL(glTexParameteri(target, GL_TEXTURE_MAG_FILTER, GL_LINEAR));
     DYGL(glTexParameteri(target, GL_TEXTURE_MIN_FILTER, GL_LINEAR));
 }
-} //namespace QtAV
+} // namespace QtAV

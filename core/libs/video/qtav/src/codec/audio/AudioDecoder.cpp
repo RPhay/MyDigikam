@@ -27,7 +27,8 @@
 #include "QtAV/private/factory.h"
 #include "utils/Logger.h"
 
-namespace QtAV {
+namespace QtAV
+{
 FACTORY_DEFINE(AudioDecoder)
 // TODO: why vc can not declare extern func in a class member? resolved as &func@@YAXXZ
 extern bool RegisterAudioDecoderFFmpeg_Man();
@@ -98,4 +99,4 @@ AudioResampler* AudioDecoder::resampler()
     return d_func().resampler;
 }
 
-} //namespace QtAV
+} // namespace QtAV
