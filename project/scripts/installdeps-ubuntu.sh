@@ -190,7 +190,6 @@ optional_packages=("ruby"
                    "libgomp1" 
                    "llvm"
                    "libclang-dev"                      
-                   "libqtav-dev"                        # >= 1.12.0
                    "ffmpeg"                             # >= 3.3.x    
                    "libgphoto2-dev"                     # >= 2.5
                    "libsane-dev"                        # >= 5.0.0
