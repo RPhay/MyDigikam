@@ -161,8 +161,6 @@ void PTalker::link()
     query.addQueryItem(QLatin1String("response_type"), QLatin1String("code"));
     url.setQuery(query);
 
-    delete d->browser;
-
     d->browser = new WebBrowserDlg(url, d->parent, true);
     d->browser->setModal(true);
 
@@ -190,7 +188,7 @@ void PTalker::slotCatchUrl(const QUrl& url)
 {
     d->urlParametersMap = ParseUrlParameters(url.toString());
     QString code        = d->urlParametersMap.value(QLatin1String("code"));
-    qCDebug(DIGIKAM_WEBSERVICES_LOG) << "Received URL from webview in link function: " << url ;
+    qCDebug(DIGIKAM_WEBSERVICES_LOG) << "Received URL from webview in link function:" << url ;
 
     if (!code.isEmpty())
     {
@@ -422,6 +420,8 @@ void PTalker::slotFinished(QNetworkReply* reply)
 /*
             qCDebug(DIGIKAM_WEBSERVICES_LOG) << "Error content: " << reply->readAll();
 */
+            emit signalNetworkError();
+
             reply->deleteLater();
             return;
         }
@@ -434,29 +434,39 @@ void PTalker::slotFinished(QNetworkReply* reply)
     switch (d->state)
     {
         case Private::P_LISTBOARDS:
+        {
             qCDebug(DIGIKAM_WEBSERVICES_LOG) << "In P_LISTBOARDS";
             parseResponseListBoards(buffer);
             break;
+        }
 
         case Private::P_CREATEBOARD:
+        {
             qCDebug(DIGIKAM_WEBSERVICES_LOG) << "In P_CREATEBOARD";
             parseResponseCreateBoard(buffer);
             break;
+        }
 
         case Private::P_ADDPIN:
+        {
             qCDebug(DIGIKAM_WEBSERVICES_LOG) << "In P_ADDPIN";
             parseResponseAddPin(buffer);
             break;
+        }
 
         case Private::P_USERNAME:
+        {
             qCDebug(DIGIKAM_WEBSERVICES_LOG) << "In P_USERNAME";
             parseResponseUserName(buffer);
             break;
+        }
 
         case Private::P_ACCESSTOKEN:
+        {
             qCDebug(DIGIKAM_WEBSERVICES_LOG) << "In P_ACCESSTOKEN";
             parseResponseAccessToken(buffer);
             break;
+        }
 
         default:
             break;
@@ -473,7 +483,7 @@ void PTalker::parseResponseAccessToken(const QByteArray& data)
 
     if (!d->accessToken.isEmpty())
     {
-        qDebug(DIGIKAM_WEBSERVICES_LOG) << "Access token Received: " << d->accessToken;
+        qDebug(DIGIKAM_WEBSERVICES_LOG) << "Access token Received:" << d->accessToken;
         emit pinterestLinkingSucceeded();
     }
     else
@@ -525,7 +535,7 @@ void PTalker::parseResponseListBoards(const QByteArray& data)
 
     QJsonObject jsonObject = doc.object();
 /*
-    qCDebug(DIGIKAM_WEBSERVICES_LOG) << "Json Listing Boards : " << doc;
+    qCDebug(DIGIKAM_WEBSERVICES_LOG) << "Json Listing Boards:" << doc;
 */
     QJsonArray jsonArray   = jsonObject[QLatin1String("items")].toArray();
 
@@ -550,7 +560,7 @@ void PTalker::parseResponseCreateBoard(const QByteArray& data)
 {
     QJsonDocument doc1     = QJsonDocument::fromJson(data);
     QJsonObject jsonObject = doc1.object();
-    bool fail              = jsonObject.contains(QLatin1String("error"));
+    bool fail              = jsonObject.contains(QLatin1String("code"));
 
     emit signalBusy(false);
 
@@ -558,7 +568,7 @@ void PTalker::parseResponseCreateBoard(const QByteArray& data)
     {
         QJsonParseError err;
         QJsonDocument doc2 = QJsonDocument::fromJson(data, &err);
-        emit signalCreateBoardFailed(jsonObject[QLatin1String("error_summary")].toString());
+        emit signalCreateBoardFailed(jsonObject[QLatin1String("message")].toString());
     }
     else
     {

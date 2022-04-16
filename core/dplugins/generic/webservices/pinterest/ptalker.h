@@ -72,6 +72,7 @@ Q_SIGNALS:
     void signalBusy(bool val);
     void signalLinkingSucceeded();
     void signalLinkingFailed();
+    void signalNetworkError();
     void signalSetUserName(const QString& msg);
     void signalListBoardsFailed(const QString& msg);
     void signalListBoardsDone(const QList<QPair<QString, QString> >& list);
