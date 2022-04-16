@@ -33,8 +33,8 @@
 
 // Local includes
 
-#include <AVError.h>
-#include <Packet.h>
+#include "AVError.h"
+#include "Packet.h"
 
 namespace QtAV
 {
@@ -46,7 +46,9 @@ class AudioEncoder;
 class Q_AV_EXPORT AVMuxer : public QObject
 {
     Q_OBJECT
+
 public:
+
     static const QStringList& supportedFormats();
     static const QStringList& supportedExtensions();
     /// Supported ffmpeg/libav input protocols(not complete). A static string list
@@ -87,13 +89,17 @@ public:
     QVariantHash options() const;
 
 public Q_SLOTS:
+
     // TODO: multiple streams. Packet.type,stream
+
     bool writeAudio(const QtAV::Packet& packet);
     bool writeVideo(const QtAV::Packet& packet);
 
     //void writeHeader();
     //void writeTrailer();
+
 private:
+
     class Private;
     QScopedPointer<Private> d;
 };

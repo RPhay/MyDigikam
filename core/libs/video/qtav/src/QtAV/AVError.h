@@ -33,10 +33,13 @@
 
 namespace QtAV
 {
+
 class Q_AV_EXPORT AVError
 {
 public:
-    enum ErrorCode {
+
+    enum ErrorCode
+    {
         NoError,
 
         //open/read/seek network stream error. value must be less then ResourceError because of correct_error_by_ffmpeg
@@ -71,6 +74,7 @@ public:
 
     AVError();
     AVError(ErrorCode code, int ffmpegError = 0);
+
     /*!
      * \brief AVError
      * string() will be detail. If ffmpeg error not 0, also contains ffmpegErrorString()
@@ -84,7 +88,9 @@ public:
     AVError &operator=(const AVError &other);
     bool operator==(const AVError &other) const;
     inline bool operator!=(const AVError &other) const
-    { return !(*this == other); }
+    {
+        return !(*this == other);
+    }
 
     void setError(ErrorCode ec);
     ErrorCode error() const;
@@ -94,6 +100,7 @@ public:
     QString ffmpegErrorString() const;
 
 private:
+
     ErrorCode mError;
     int mFFmpegError;
     QString mDetail;

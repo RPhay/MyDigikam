@@ -54,8 +54,11 @@ static const double kThousandth = 0.001;
 class Q_AV_EXPORT AVClock : public QObject
 {
     Q_OBJECT
+
 public:
-    typedef enum {
+
+    typedef enum
+    {
         AudioClock,
         ExternalClock,
         VideoClock     //sync to video timestamp
@@ -66,19 +69,23 @@ public:
     void setClockType(ClockType ct);
     ClockType clockType() const;
     bool isActive() const;
+
     /*!
      * \brief setInitialValue
      * Usually for ExternalClock. For example, media start time is not 0, clock have to set initial value as media start time
      */
     void setInitialValue(double v);
     double initialValue() const;
+
     /*
      * auto clock: use audio clock if audio stream found, otherwise use external clock
      */
     void setClockAuto(bool a);
     bool isClockAuto() const;
+
     /*in seconds*/
     inline double pts() const;
+
     /*!
      * \brief value
      * the real timestamp in seconds: pts + delay
@@ -86,8 +93,10 @@ public:
      */
     inline double value() const;
     inline void updateValue(double pts); //update the pts
+
     /*used when seeking and correcting from external*/
     void updateExternalClock(qint64 msecs);
+
     /*external clock outside still running, so it's more accurate for syncing multiple clocks serially*/
     void updateExternalClock(const AVClock& clock);
 
@@ -119,12 +128,15 @@ public:
     bool syncEndOnce(int id);
 
 Q_SIGNALS:
+
     void paused(bool);
     void paused(); //equals to paused(true)
     void resumed();//equals to paused(false)
     void started();
     void resetted();
+
 public Q_SLOTS:
+
     //these slots are not frequently used. so not inline
     /*start the external clock*/
     void start();
@@ -134,12 +146,17 @@ public Q_SLOTS:
     void reset();
 
 protected:
+
     virtual void timerEvent(QTimerEvent *event);
+
 private Q_SLOTS:
+
     /// make sure QBasic timer start/stop in a right thread
     void restartCorrectionTimer();
     void stopCorrectionTimer();
+
 private:
+
     bool auto_clock;
     int m_state;
     ClockType clock_type;
@@ -149,6 +166,7 @@ private:
     mutable QElapsedTimer timer;
     qreal mSpeed;
     double value0;
+
     /*!
      * \brief correction_schedule_timer
      * accumulative error is too large using QElapsedTimer.restart() frequently.

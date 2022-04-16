@@ -37,15 +37,19 @@ namespace QtAV
 
 class Packet;
 class AVDecoderPrivate;
+
 class Q_AV_EXPORT AVDecoder : public QObject
 {
     Q_OBJECT
     DPTR_DECLARE_PRIVATE(AVDecoder)
     //Q_PROPERTY(QString description READ description NOTIFY descriptionChanged)
+
 public:
+
     virtual ~AVDecoder();
     virtual QString name() const;
     virtual QString description() const;
+
     /*!
      * default is open FFmpeg codec context
      * codec config must be done before open
@@ -80,16 +84,21 @@ public:
     QVariantHash options() const;
 
 Q_SIGNALS:
+
     void error(const QtAV::AVError& e); //explictly use QtAV::AVError in connection for Qt4 syntax
     void descriptionChanged();
+
 protected:
+
     AVDecoder(AVDecoderPrivate& d);
     DPTR_DECLARE(AVDecoder)
     // force a codec. only used by avcodec sw decoders. TODO: move to public? profile set?
     void setCodecName(const QString& name);
     QString codecName() const;
     virtual void codecNameChanged() {}//signals can not be decared virtual (winrt)
+
 private:
+
     Q_DISABLE_COPY(AVDecoder)
     AVDecoder(); // base class, not direct create. only final class has is enough
 };

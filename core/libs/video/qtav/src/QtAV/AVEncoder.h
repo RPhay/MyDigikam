@@ -50,14 +50,16 @@ class Q_AV_EXPORT AVEncoder : public QObject
 
 public:
 
-    enum TimestampMode {
+    enum TimestampMode
+    {
         TimestampMonotonic,
-        TimestampCopy,
+        TimestampCopy
     };
 
     virtual ~AVEncoder();
     virtual QString name() const = 0;
     virtual QString description() const;
+
     /*!
      * \brief setCodecName
      * An encoder can support more than 1 codec.
@@ -75,6 +77,7 @@ public:
      */
     virtual void copyAVCodecContext(void* ctx);
     void* codecContext() const; // TODO: always have a avctx like decoder?
+
     /*!
      * \brief setBitRate
      * Higher bit rate result in better quality.
@@ -85,6 +88,7 @@ public:
 
     TimestampMode timestampMode() const;
     void setTimestampMode(TimestampMode value);
+
     /*!
      * \brief setOptions
      * 1. If has key "avcodec", it's value (suboption, a hash or map) will be used to set AVCodecContext use av_opt_set and av_dict_set. A value of hash type is ignored.
@@ -98,14 +102,19 @@ public:
     QVariantHash options() const;
 
 Q_SIGNALS:
+
     void error(const QtAV::AVError& e); //explictly use QtAV::AVError in connection for Qt4 syntax
     void codecNameChanged();
     void bitRateChanged();
     void timestampModeChanged(TimestampMode mode);
+
 protected:
+
     AVEncoder(AVEncoderPrivate& d);
     DPTR_DECLARE(AVEncoder)
+
 private:
+
     Q_DISABLE_COPY(AVEncoder)
     AVEncoder(); // base class, not direct create. only final class has is enough
 };

@@ -47,7 +47,9 @@ class OutputSet;
 class Q_AV_EXPORT AVOutput
 {
     DPTR_DECLARE_PRIVATE(AVOutput)
+
 public:
+
     AVOutput();
     virtual ~AVOutput();
     bool isAvailable() const;
@@ -69,7 +71,9 @@ public:
      */
     bool installFilter(Filter *filter, int index = 0x7fffffff);
     bool uninstallFilter(Filter *filter);
+
 protected:
+
     AVOutput(AVOutputPrivate& d);
     /*
      * If the pause state is true setted by pause(true), then block the thread and wait for pause state changed, i.e. pause(false)
@@ -87,6 +91,7 @@ protected:
     DPTR_DECLARE(AVOutput)
 
 private:
+
     // for proxy VideoOutput
     virtual void setStatistics(Statistics* statistics); //called by friend AVPlayer
     virtual bool onInstallFilter(Filter *filter, int index);

@@ -95,12 +95,15 @@ class Q_AV_EXPORT AVPlayer : public QObject
     Q_PROPERTY(QtAV::MediaEndAction mediaEndAction READ mediaEndAction WRITE setMediaEndAction NOTIFY mediaEndActionChanged)
     Q_PROPERTY(unsigned int chapters READ chapters NOTIFY chaptersChanged)
     Q_ENUMS(State)
+
 public:
+
     /*!
      * \brief The State enum
      * The playback state. It's different from MediaStatus. MediaStatus indicates media stream state
      */
-    enum State {
+    enum State
+    {
         StoppedState,
         PlayingState, /// Start to play if it was stopped, or resume if it was paused
         PausedState
@@ -425,6 +428,7 @@ public:
     void setMediaEndAction(MediaEndAction value);
 
 public Q_SLOTS:
+
     /*!
      * \brief load
      * Load the current media set by setFile(); Can be used to reload a media and call play() later. If already loaded, does nothing and return true.
@@ -552,6 +556,7 @@ public Q_SLOTS:
     void setSaturation(int val);
 
 Q_SIGNALS:
+
     void bufferProgressChanged(qreal);
     void relativeTimeModeChanged();
     void autoLoadChanged();
@@ -617,7 +622,9 @@ Q_SIGNALS:
      */
     void internalSubtitleHeaderRead(const QByteArray& codec, const QByteArray& data);
     void internalSubtitlePacketRead(int track, const QtAV::Packet& packet);
+
 private Q_SLOTS:
+
     void loadInternal(); // simply load
     void playInternal(); // simply play
     void stopFromDemuxerThread();
@@ -632,16 +639,21 @@ private Q_SLOTS:
     void onStepFinished();
     void tryClearVideoRenderers();
     void seekChapter(int incr);
+
 protected:
+
     // TODO: set position check timer interval
     virtual void timerEvent(QTimerEvent *);
+
 private:
+
     /*!
      * \brief unload
      * If the media is loading or loaded but not playing, unload it. Internall use only.
      */
     void unload(); //TODO: private. call in stop() if not load() by user? or always unload() in stop()?
     qint64 normalizedPosition(qint64 pos);
+
     class Private;
     QScopedPointer<Private> d;
 };

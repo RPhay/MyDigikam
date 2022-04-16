@@ -55,11 +55,14 @@ class Q_AV_EXPORT AVDemuxer : public QObject
 
 public:
 
-    enum StreamType { //TODO: move to common MediaType
+    enum StreamType
+    {
+        // TODO: move to common MediaType
         AudioStream,
         VideoStream,
         SubtitleStream,
     };
+
     static const QStringList& supportedFormats();
     static const QStringList& supportedExtensions();
     /// Supported ffmpeg/libav input protocols(not complete). A static string list
@@ -73,6 +76,7 @@ public:
     QIODevice* ioDevice() const;
     /// not null for QIODevice, custom protocols
     MediaIO* mediaIO() const;
+
     /*!
      * \brief setMedia
      * \return whether the media source is changed
@@ -80,6 +84,7 @@ public:
     bool setMedia(const QString& fileName);
     bool setMedia(QIODevice* dev);
     bool setMedia(MediaIO* in);
+
     /*!
      * \brief setFormat
      * Force the input format. Useful if input stream is a raw video stream(fmt="rawvideo).
@@ -93,6 +98,7 @@ public:
     bool load();
     bool unload();
     bool isLoaded() const;
+
     /*!
      * \brief readFrame
      * Read a packet from 1 of the streams. use packet() to get the result packet. packet() returns last valid packet.
@@ -101,11 +107,13 @@ public:
      * \return true if no error. false if error occurs, eof reaches, interrupted by user or time out(getInterruptTimeout())
      */
     bool readFrame(); // TODO: rename int readPacket(), return stream number
+
     /*!
      * \brief packet
      * return the packet read by demuxer. packet is invalid if readFrame() returns false.
      */
     Packet packet() const;
+
     /*!
      * \brief stream
      * Current readFrame() readed stream index.
@@ -201,7 +209,9 @@ public:
      */
     void setOptions(const QVariantHash &dict);
     QVariantHash options() const;
+
 Q_SIGNALS:
+
     void unloaded();
     void userInterrupted(); //NO direct connection because it's emit before interrupted happens
     void loaded();
@@ -211,7 +221,9 @@ Q_SIGNALS:
     void error(const QtAV::AVError& e); //explictly use QtAV::AVError in connection for Qt4 syntax
     void mediaStatusChanged(QtAV::MediaStatus status);
     void seekableChanged();
+
 private:
+
     void setMediaStatus(MediaStatus status);
     // error code (errorCode) and message (msg) may be modified internally
     void handleError(int averr, AVError::ErrorCode* errorCode, QString& msg);
@@ -219,6 +231,7 @@ private:
     class Private;
     QScopedPointer<Private> d;
     class InterruptHandler;
+
     friend class InterruptHandler;
 };
 
