@@ -23,17 +23,22 @@
 #ifndef QTAV_AUDIOFRAME_H
 #define QTAV_AUDIOFRAME_H
 
-#include <QtAV/Frame.h>
-#include <QtAV/AudioFormat.h>
+// Local includes
+
+#include "Frame.h"
+#include "AudioFormat.h"
 
 namespace QtAV
 {
 class AudioResampler;
 class AudioFramePrivate;
+
 class Q_AV_EXPORT AudioFrame : public Frame
 {
     Q_DECLARE_PRIVATE(AudioFrame)
+
 public:
+
     //data must be complete
     /*!
      * \brief AudioFrame
@@ -76,6 +81,9 @@ public:
     */
     qint64 duration() const;
 };
+
 } // namespace QtAV
+
 Q_DECLARE_METATYPE(QtAV::AudioFrame)
+
 #endif // QTAV_AUDIOFRAME_H

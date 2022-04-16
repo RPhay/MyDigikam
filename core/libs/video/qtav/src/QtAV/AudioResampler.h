@@ -23,18 +23,24 @@
 #ifndef QTAV_AUDIORESAMPLER_H
 #define QTAV_AUDIORESAMPLER_H
 
-#include <QtAV/QtAV_Global.h>
+// Local includes
+
+#include "QtAV_Global.h"
 
 namespace QtAV
 {
 
 typedef int AudioResamplerId;
+
 class AudioFormat;
 class AudioResamplerPrivate;
+
 class Q_AV_EXPORT AudioResampler //export is required for users who want add their own subclass outside QtAV
 {
     DPTR_DECLARE_PRIVATE(AudioResampler)
+
 public:
+
     virtual ~AudioResampler();
     // if QtAV is static linked (ios for example), components may be not automatically registered. Add registerAll() to workaround
     static void registerAll();
@@ -94,6 +100,7 @@ public:
     void setOutChannels(int channels);
     //Are getter functions required?
 private:
+
     AudioResampler();
     template<class C>
     static AudioResampler* create() {
@@ -103,11 +110,14 @@ private:
     static bool Register(AudioResamplerId id, AudioResamplerCreator, const char *name);
 
 protected:
+
     AudioResampler(AudioResamplerPrivate& d);
     DPTR_DECLARE(AudioResampler)
 };
 
 extern Q_AV_EXPORT AudioResamplerId AudioResamplerId_FF;
 extern Q_AV_EXPORT AudioResamplerId AudioResamplerId_Libav;
+
 } // namespace QtAV
+
 #endif // QTAV_AUDIORESAMPLER_H

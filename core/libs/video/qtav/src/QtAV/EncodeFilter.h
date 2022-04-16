@@ -20,24 +20,29 @@
  *
  * ============================================================ */
 
-#ifndef QTAV_ENCODEFILTER_H
-#define QTAV_ENCODEFILTER_H
+#ifndef QTAV_ENCODE_FILTER_H
+#define QTAV_ENCODE_FILTER_H
 
-#include <QtAV/Filter.h>
-#include <QtAV/Packet.h>
-#include <QtAV/AudioFrame.h>
-#include <QtAV/VideoFrame.h>
+// Local includes
+
+#include "Filter.h"
+#include "Packet.h"
+#include "AudioFrame.h"
+#include "VideoFrame.h"
 
 namespace QtAV
 {
 
 class AudioEncoder;
 class AudioEncodeFilterPrivate;
+
 class Q_AV_EXPORT AudioEncodeFilter : public AudioFilter
 {
     Q_OBJECT
     DPTR_DECLARE_PRIVATE(AudioEncodeFilter)
+
 public:
+
     AudioEncodeFilter(QObject *parent = 0);
     /*!
      * \brief setAsync
@@ -67,13 +72,17 @@ public:
      */
     qint64 startTime() const;
     void setStartTime(qint64 value);
+
 public Q_SLOTS:
+
     /*!
      * \brief finish
      * Tell the encoder no more frames to encode. Signal finished() will be emitted when all frames are encoded
      */
     void finish();
+
 Q_SIGNALS:
+
     void finished();
     /*!
      * \brief readyToEncode
@@ -85,20 +94,28 @@ Q_SIGNALS:
     void startTimeChanged(qint64 value);
     // internal use only
     void requestToEncode(const QtAV::AudioFrame& frame);
+
 protected Q_SLOTS:
+
     void encode(const QtAV::AudioFrame& frame = AudioFrame());
+
 protected:
+
     virtual void process(Statistics* statistics, AudioFrame* frame = 0) Q_DECL_OVERRIDE;
 };
 
 class VideoEncoder;
 class VideoEncodeFilterPrivate;
+
 class Q_AV_EXPORT VideoEncodeFilter : public VideoFilter
 {
     Q_OBJECT
     DPTR_DECLARE_PRIVATE(VideoEncodeFilter)
+
 public:
+
     VideoEncodeFilter(QObject* parent = 0);
+
     /*!
      * \brief setAsync
      * Enable async encoding. Default is disabled.
@@ -128,13 +145,17 @@ public:
      */
     qint64 startTime() const;
     void setStartTime(qint64 value);
+
 public Q_SLOTS:
+
     /*!
      * \brief finish
      * Tell the encoder no more frames to encode. Signal finished() will be emitted when all frames are encoded
      */
     void finish();
+
 Q_SIGNALS:
+
     void finished();
     /*!
      * \brief readyToEncode
@@ -146,11 +167,16 @@ Q_SIGNALS:
     void startTimeChanged(qint64 value);
     // internal use only
     void requestToEncode(const QtAV::VideoFrame& frame);
+
 protected Q_SLOTS:
+
     void encode(const QtAV::VideoFrame& frame = VideoFrame());
+
 protected:
+
     virtual void process(Statistics* statistics, VideoFrame* frame = 0) Q_DECL_OVERRIDE;
 };
-} // namespace QtAV
-#endif // QTAV_ENCODEFILTER_H
 
+} // namespace QtAV
+
+#endif // QTAV_ENCODE_FILTER_H

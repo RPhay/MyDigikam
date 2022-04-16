@@ -23,27 +23,44 @@
 #ifndef QTAV_AUDIOFORMAT_H
 #define QTAV_AUDIOFORMAT_H
 
-#include <QtCore/QSharedDataPointer>
-#include <QtCore/QString>
-#include <QtAV/QtAV_Global.h>
+// Qt includes
+
+#include <QSharedDataPointer>
+#include <QString>
+
+// Local includes
+
+#include "QtAV_Global.h"
 
 QT_BEGIN_NAMESPACE
 class QDebug;
 QT_END_NAMESPACE
+
 namespace QtAV
 {
 
 class AudioFormatPrivate;
+
 class Q_AV_EXPORT AudioFormat
 {
-    enum { kSize = 12, kFloat = 1<<(kSize+1), kUnsigned = 1<<(kSize+2), kPlanar = 1<<(kSize+3), kByteOrder = 1<<(kSize+4) };
+    enum
+    {
+        kSize      = 12,
+        kFloat     = 1<<(kSize+1),
+        kUnsigned  = 1<<(kSize+2),
+        kPlanar    = 1<<(kSize+3),
+        kByteOrder = 1<<(kSize+4)
+    };
+
 public:
+
     /*!
      * \brief The SampleFormat enum
      * s8, u16, u24, s24, u32 are not listed in ffmpeg sample format and have not planar format.
      * pcm_s24le will be decoded as s32-24bit in ffmpeg, it's encoded as 32 bits, but raw sample has 24 bits
      */
-    enum SampleFormat {
+    enum SampleFormat
+    {
         SampleFormat_Unknown = 0,
         SampleFormat_Input = SampleFormat_Unknown,
         SampleFormat_Unsigned8 = 1 | kUnsigned,
@@ -62,7 +79,9 @@ public:
         SampleFormat_FloatPlanar = SampleFormat_Float | kPlanar,
         SampleFormat_DoublePlanar = SampleFormat_Double | kPlanar
     };
-    enum ChannelLayout {
+
+    enum ChannelLayout
+    {
         ChannelLayout_Left,
         ChannelLayout_Right,
         ChannelLayout_Center,
@@ -75,6 +94,7 @@ public:
 
     //typedef qint64 ChannelLayout; //currently use latest FFmpeg's
     // TODO: constexpr
+
     friend int RawSampleSize(SampleFormat fmt) { return fmt & ((1<<(kSize+1)) - 1); }
     friend bool IsFloat(SampleFormat fmt) { return !!(fmt & kFloat);}
     friend bool IsPlanar(SampleFormat format) { return !!(format & kPlanar);}
@@ -156,7 +176,9 @@ public:
     int sampleSize() const; // the same as bytesPerSample()
     int bitRate() const; //bits per second
     int bytesPerSecond() const;
+
 private:
+
     QSharedDataPointer<AudioFormatPrivate> d;
 };
 

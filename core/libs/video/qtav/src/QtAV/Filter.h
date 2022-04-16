@@ -23,24 +23,33 @@
 #ifndef QTAV_FILTER_H
 #define QTAV_FILTER_H
 
-#include <QtCore/QObject>
-#include <QtAV/QtAV_Global.h>
-#include <QtAV/FilterContext.h>
+// Qt includes
+
+#include <QObject>
+
+// Local includes
+
+#include "QtAV_Global.h"
+#include "FilterContext.h"
 
 namespace QtAV
 {
+
 class AudioFormat;
 class AVOutput;
 class AVPlayer;
 class FilterPrivate;
 class Statistics;
 class Frame;
+
 class Q_AV_EXPORT Filter : public QObject
 {
     Q_OBJECT
     DPTR_DECLARE_PRIVATE(Filter)
     Q_PROPERTY(bool enabled READ isEnabled WRITE setEnabled NOTIFY enabledChanged)
+
 public:
+
     virtual ~Filter();
     bool isEnabled() const;
     /*!
@@ -62,11 +71,17 @@ public:
     virtual bool installTo(AVPlayer *player) = 0;
     // called in destructor automatically
     bool uninstall();
+
 public Q_SLOTS:
+
     void setEnabled(bool enabled = true);
+
 Q_SIGNALS:
+
     void enabledChanged(bool);
+
 protected:
+
     /*
      * If the filter is in AVThread, it's safe to operate on ref.
      */
@@ -76,11 +91,14 @@ protected:
 };
 
 class VideoFilterPrivate;
+
 class Q_AV_EXPORT VideoFilter : public Filter
 {
     Q_OBJECT
     DPTR_DECLARE_PRIVATE(VideoFilter)
+
 public:
+
     VideoFilter(QObject* parent = 0);
 
     VideoFilterContext* context();
@@ -97,25 +115,33 @@ public:
     void apply(Statistics* statistics, VideoFrame *frame = 0);
 
     bool prepareContext(VideoFilterContext*& ctx, Statistics* statistics = 0, VideoFrame* frame = 0); //internal use
+
 protected:
+
     VideoFilter(VideoFilterPrivate& d, QObject *parent = 0);
     virtual void process(Statistics* statistics, VideoFrame* frame = 0) = 0;
 };
 
 class AudioFrame;
 class AudioFilterPrivate;
+
 class Q_AV_EXPORT AudioFilter : public Filter
 {
     Q_OBJECT
     DPTR_DECLARE_PRIVATE(AudioFilter)
+
 public:
+
     AudioFilter(QObject* parent = 0);
     bool installTo(AVPlayer *player);
     void apply(Statistics* statistics, AudioFrame *frame = 0);
+
 protected:
+
     AudioFilter(AudioFilterPrivate& d, QObject *parent = 0);
     virtual void process(Statistics* statistics, AudioFrame* frame = 0) = 0;
 };
 
 } // namespace QtAV
+
 #endif // QTAV_FILTER_H

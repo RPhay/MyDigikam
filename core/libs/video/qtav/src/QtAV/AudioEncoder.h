@@ -23,23 +23,34 @@
 #ifndef QTAV_AUDIOENCODER_H
 #define QTAV_AUDIOENCODER_H
 
-#include <QtAV/AVEncoder.h>
-#include <QtAV/AudioFrame.h>
-#include <QtCore/QStringList>
+// Qt includes
+
+#include <QStringList>
+
+// Local includes
+
+#include "AVEncoder.h"
+#include "AudioFrame.h"
 
 namespace QtAV
 {
+
 typedef int AudioEncoderId;
+
 class AudioEncoderPrivate;
+
 class Q_AV_EXPORT AudioEncoder : public AVEncoder
 {
     Q_OBJECT
     Q_PROPERTY(QtAV::AudioFormat audioFormat READ audioFormat WRITE setAudioFormat NOTIFY audioFormatChanged)
     Q_DISABLE_COPY(AudioEncoder)
     DPTR_DECLARE_PRIVATE(AudioEncoder)
+
 public:
+
     static QStringList supportedCodecs();
     static AudioEncoder* create(AudioEncoderId id);
+
     /*!
      * \brief create
      * create an encoder from registered names
@@ -68,9 +79,13 @@ public:
     void setAudioFormat(const AudioFormat& format);
 
     int frameSize() const;
+
 Q_SIGNALS:
+
     void audioFormatChanged();
+
 public:
+
     template<class C> static bool Register(AudioEncoderId id, const char* name) { return Register(id, create<C>, name);}
     /*!
      * \brief next
@@ -80,15 +95,22 @@ public:
     static AudioEncoderId* next(AudioEncoderId* id = 0);
     static const char* name(AudioEncoderId id);
     static AudioEncoderId id(const char* name);
+
 private:
+
     template<class C> static AudioEncoder* create() { return new C();}
     typedef AudioEncoder* (*AudioEncoderCreator)();
     static bool Register(AudioEncoderId id, AudioEncoderCreator, const char *name);
+
 protected:
+
     AudioEncoder(AudioEncoderPrivate& d);
+
 private:
+
     AudioEncoder();
 };
 
 } // namespace QtAV
+
 #endif // QTAV_AUDIOENCODER_H

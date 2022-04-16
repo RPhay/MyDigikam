@@ -20,21 +20,26 @@
  *
  * ============================================================ */
 
-#ifndef QTAV_AVTRANSCODE_H
-#define QTAV_AVTRANSCODE_H
+#ifndef QTAV_AV_TRANSCODE_H
+#define QTAV_AV_TRANSCODE_H
 
-#include <QtAV/MediaIO.h>
-#include <QtAV/AudioEncoder.h>
-#include <QtAV/VideoEncoder.h>
+// Local includes
+
+#include "MediaIO.h"
+#include "AudioEncoder.h"
+#include "VideoEncoder.h"
 
 namespace QtAV
 {
 
 class AVPlayer;
+
 class Q_AV_EXPORT AVTranscoder : public QObject
 {
     Q_OBJECT
+
 public:
+
     AVTranscoder(QObject* parent = 0);
     ~AVTranscoder();
 
@@ -149,6 +154,7 @@ private:
     class Private;
     QScopedPointer<Private> d;
 };
-} // namespace QtAV
-#endif // QTAV_AVTRANSCODE_H
 
+} // namespace QtAV
+
+#endif // QTAV_AV_TRANSCODE_H

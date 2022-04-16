@@ -22,11 +22,16 @@
 
 #ifndef QTAV_CONVOLUTIONSHADER_H
 #define QTAV_CONVOLUTIONSHADER_H
-#include <QtAV/VideoShader.h>
+
+// Local includes
+
+#include "VideoShader.h"
 
 namespace QtAV
 {
+
 class ConvolutionShaderPrivate;
+
 /*!
  * \brief The ConvolutionShader class
  * Uniform u_Kernel is used
@@ -34,7 +39,9 @@ class ConvolutionShaderPrivate;
 class Q_AV_EXPORT ConvolutionShader : public VideoShader
 {
     DPTR_DECLARE_PRIVATE(ConvolutionShader)
+
 public:
+
     ConvolutionShader();
     /*!
      * \brief kernelRadius
@@ -46,18 +53,26 @@ public:
     /// TODO: update shader program if radius is changed. mark dirty program
     void setKernelRadius(int value);
     int kernelSize() const;
+
 protected:
+
     virtual const float* kernel() const = 0;
     const QByteArray& kernelUniformHeader() const; //can be used in your userFragmentShaderHeader();
     const QByteArray& kernelSample() const; //can be  in your userSample();
     void setKernelUniformValue(); // can be used in your setUserUniformValues()
+
 private:
+
     /// default implementions
     const char* userShaderHeader(QOpenGLShader::ShaderType t) const Q_DECL_OVERRIDE;
     const char* userSample() const Q_DECL_OVERRIDE;
     bool setUserUniformValues() Q_DECL_OVERRIDE;
+
 protected:
+
     ConvolutionShader(ConvolutionShaderPrivate &d);
 };
+
 } // namespace QtAV
+
 #endif // QTAV_CONVOLUTIONSHADER_H

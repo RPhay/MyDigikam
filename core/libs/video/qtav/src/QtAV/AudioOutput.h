@@ -20,13 +20,18 @@
  *
  * ============================================================ */
 
-#ifndef QAV_AUDIOOUTPUT_H
-#define QAV_AUDIOOUTPUT_H
+#ifndef QTAV_AUDIOOUTPUT_H
+#define QTAV_AUDIOOUTPUT_H
 
-#include <QtCore/QObject>
-#include <QtCore/QStringList>
-#include <QtAV/AVOutput.h>
-#include <QtAV/AudioFrame.h>
+// Qt includes
+
+#include <QObject>
+#include <QStringList>
+
+// Local includes
+
+#include "AVOutput.h"
+#include "AudioFrame.h"
 
 /*!
  * AudioOutput ao;
@@ -44,7 +49,9 @@ namespace QtAV
 
 class AudioFormat;
 class AudioOutputPrivate;
-class Q_AV_EXPORT AudioOutput : public QObject, public AVOutput
+
+class Q_AV_EXPORT AudioOutput : public QObject,
+                                public AVOutput
 {
     Q_OBJECT
     DPTR_DECLARE_PRIVATE(AudioOutput)
@@ -54,7 +61,9 @@ class Q_AV_EXPORT AudioOutput : public QObject, public AVOutput
     Q_PROPERTY(bool mute READ isMute WRITE setMute NOTIFY muteChanged)
     Q_PROPERTY(DeviceFeatures deviceFeatures READ deviceFeatures WRITE setDeviceFeatures NOTIFY deviceFeaturesChanged)
     Q_PROPERTY(QStringList backends READ backends WRITE setBackends NOTIFY backendsChanged)
+
 public:
+
     /*!
      * \brief DeviceFeature Feature enum
      * Features supported by the audio playback api (we call device or backend here)
@@ -206,12 +215,16 @@ public:
     DeviceFeatures supportedDeviceFeatures() const;
     qreal timestamp() const;
     // timestamp of current playing data
+
 Q_SIGNALS:
+
     void volumeChanged(qreal);
     void muteChanged(bool);
     void deviceFeaturesChanged();
     void backendsChanged();
+
 protected:
+
     // Store and fill data to audio buffers
     bool receiveData(const QByteArray &data, qreal pts = 0.0);
     /*!
@@ -219,14 +232,19 @@ protected:
      * wait until you can feed more data
      */
     bool waitForNextBuffer();
+
 private Q_SLOTS:
+
     void reportVolume(qreal value);
     void reportMute(bool value);
+
 private:
+
     void onCallback();
     friend class AudioOutputBackend;
     Q_DISABLE_COPY(AudioOutput)
 };
 
 } // namespace QtAV
-#endif // QAV_AUDIOOUTPUT_H
+
+#endif // QTAV_AUDIOOUTPUT_H

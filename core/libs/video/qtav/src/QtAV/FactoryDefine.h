@@ -1,26 +1,31 @@
-/******************************************************************************
-    Some macros to create a factory and register functions
-    Copyright (C) 2012-2015 Wang Bin <wbsecg1@gmail.com>
+/* ============================================================
+ *
+ * This file is a part of digiKam project
+ * https://www.digikam.org
+ *
+ * Date        : 2012-10-31
+ * Description : QtAV: Multimedia framework based on Qt and FFmpeg
+ *
+ * Copyright (C) 2012-2022 Wang Bin <wbsecg1 at gmail dot com>
+ *
+ * This program is free software; you can redistribute it
+ * and/or modify it under the terms of the GNU General
+ * Public License as published by the Free Software Foundation;
+ * either version 2, or (at your option) any later version.
+ *
+ * This program is distributed in the hope that it will be useful,
+ * but WITHOUT ANY WARRANTY; without even the implied warranty of
+ * MERCHANTABILITY or FITNESS FOR A PARTICULAR PURPOSE.  See the
+ * GNU General Public License for more details.
+ *
+ * ============================================================ */
 
-    This library is free software; you can redistribute it and/or
-    modify it under the terms of the GNU Lesser General Public
-    License as published by the Free Software Foundation; either
-    version 2.1 of the License, or (at your option) any later version.
+#ifndef QTAV_FACTORY_DEFINE_H
+#define QTAV_FACTORY_DEFINE_H
 
-    This library is distributed in the hope that it will be useful,
-    but WITHOUT ANY WARRANTY; without even the implied warranty of
-    MERCHANTABILITY or FITNESS FOR A PARTICULAR PURPOSE.  See the GNU
-    Lesser General Public License for more details.
+// C++ includes
 
-    You should have received a copy of the GNU Lesser General Public
-    License along with this library; if not, write to the Free Software
-    Foundation, Inc., 51 Franklin Street, Fifth Floor, Boston, MA  02110-1301  USA
-******************************************************************************/
-
-#ifndef FACTORYDEFINE_H
-#define FACTORYDEFINE_H
-
-#include <stdio.h>
+#include <cstdio>
 #include <string>
 #include <vector>
 
@@ -155,4 +160,4 @@
     size_t T##Factory::count() { return T##FactoryBridge::Instance().count(); } \
     T* T##Factory::getRandom() { fflush(0);return T##FactoryBridge::Instance().getRandom(); }
 
-#endif // FACTORYDEFINE_H
+#endif // QTAV_FACTORY_DEFINE_H
