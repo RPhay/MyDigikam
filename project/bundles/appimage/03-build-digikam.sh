@@ -63,8 +63,6 @@ cd $BUILDING_DIR
 
 /opt/cmake/bin/cmake --build . --config RelWithDebInfo --target ext_heif          -- -j$CPU_CORES
 cp $DOWNLOAD_DIR/heif_manifest.txt $ORIG_WD/data/
-/opt/cmake/bin/cmake --build . --config RelWithDebInfo --target ext_qtav          -- -j$CPU_CORES    # depend of qt and ffmpeg
-cp $DOWNLOAD_DIR/qtav_manifest.txt $ORIG_WD/data/
 /opt/cmake/bin/cmake --build . --config RelWithDebInfo --target ext_exiv2         -- -j$CPU_CORES
 cp $DOWNLOAD_DIR/exiv2_manifest.txt $ORIG_WD/data/
 /opt/cmake/bin/cmake --build . --config RelWithDebInfo --target ext_lensfun       -- -j$CPU_CORES
