@@ -20,14 +20,15 @@
  *
  * ============================================================ */
 
-#include "QtAV/VideoDecoder.h"
-#include "QtAV/private/AVDecoder_p.h"
-#include "QtAV/private/factory.h"
-#include "QtAV/private/mkid.h"
+#include "VideoDecoder.h"
+#include "private/AVDecoder_p.h"
+#include "private/factory.h"
+#include "private/mkid.h"
 #include "utils/Logger.h"
 
 namespace QtAV
 {
+
 FACTORY_DEFINE(VideoDecoder)
 
 VideoDecoderId VideoDecoderId_FFmpeg = mkid::id32base36_6<'F', 'F', 'm', 'p', 'e', 'g'>::value;
@@ -124,4 +125,5 @@ QString VideoDecoder::name() const
 {
     return QLatin1String(VideoDecoder::name(id()));
 }
+
 } // namespace QtAV

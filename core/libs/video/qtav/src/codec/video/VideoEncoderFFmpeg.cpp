@@ -20,18 +20,19 @@
  *
  * ============================================================ */
 
-#include "QtAV/VideoEncoder.h"
-#include "QtAV/private/AVEncoder_p.h"
-#include "QtAV/private/AVCompat.h"
-#include "QtAV/private/mkid.h"
-#include "QtAV/private/factory.h"
-#include "QtAV/QtAV_Version.h"
+#include "VideoEncoder.h"
+#include "private/AVEncoder_p.h"
+#include "private/AVCompat.h"
+#include "private/mkid.h"
+#include "private/factory.h"
+#include "QtAV_Version.h"
 #include "utils/Logger.h"
 
 #if AV_MODULE_CHECK(LIBAVUTIL, 55, 13, 0, 27, 100)
-#define HAVE_AVHWCTX
-extern "C" {
-#include <libavutil/hwcontext.h>
+#   define HAVE_AVHWCTX
+extern "C"
+{
+#   include <libavutil/hwcontext.h>
 }
 #endif
 
@@ -394,4 +395,5 @@ bool VideoEncoderFFmpeg::encode(const VideoFrame &frame)
 }
 
 } // namespace QtAV
+
 #include "VideoEncoderFFmpeg.moc"

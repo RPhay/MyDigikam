@@ -20,9 +20,9 @@
  *
  * ============================================================ */
 
-#include <QtAV/AVEncoder.h>
-#include <QtAV/private/AVEncoder_p.h>
-#include <QtAV/QtAV_Version.h>
+#include "AVEncoder.h"
+#include "private/AVEncoder_p.h"
+#include "QtAV_Version.h"
 #include "utils/internal.h"
 #include "utils/Logger.h"
 
@@ -30,7 +30,7 @@ namespace QtAV
 {
 
 AVEncoder::AVEncoder(AVEncoderPrivate &d)
-    :DPTR_INIT(&d)
+    : DPTR_INIT(&d)
 {
 }
 

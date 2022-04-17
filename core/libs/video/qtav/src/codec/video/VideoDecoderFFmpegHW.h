@@ -20,8 +20,8 @@
  *
  * ============================================================ */
 
-#ifndef QTAV_VIDEODECODERFFMPEGHW_H
-#define QTAV_VIDEODECODERFFMPEGHW_H
+#ifndef QTAV_VIDEO_DECODER_FFMPEG_HW_H
+#define QTAV_VIDEO_DECODER_FFMPEG_HW_H
 
 #include "VideoDecoderFFmpegBase.h"
 
@@ -29,6 +29,7 @@ namespace QtAV
 {
 
 class VideoDecoderFFmpegHWPrivate;
+
 class VideoDecoderFFmpegHW : public VideoDecoderFFmpegBase
 {
     Q_OBJECT
@@ -60,4 +61,4 @@ private:
 
 } // namespace QtAV
 
-#endif // QTAV_VIDEODECODERFFMPEGHW_H
+#endif // QTAV_VIDEO_DECODER_FFMPEG_HW_H

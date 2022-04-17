@@ -20,18 +20,23 @@
  *
  * ============================================================ */
 
-#include "QtAV/VideoDecoder.h"
-#include "QtAV/private/AVDecoder_p.h"
-#include "QtAV/Packet.h"
-#include "QtAV/private/AVCompat.h"
-#include "QtAV/private/factory.h"
+#include "VideoDecoder.h"
+#include "private/AVDecoder_p.h"
+#include "Packet.h"
+#include "private/AVCompat.h"
+#include "private/factory.h"
+
 #include <libavcodec/avcodec.h>
-extern "C" {
+
+extern "C"
+{
 #include <libcedarv/libcedarv.h>
 }
+
 #include "utils/Logger.h"
 
 // TODO: neon+nv12+opengl crash
+
 #ifndef NO_NEON_OPT //Don't HAVE_NEON
 extern "C" {
 // from libvdpau-sunxi
@@ -477,4 +482,5 @@ VideoFrame VideoDecoderCedarv::frame()
 }
 
 } // namespace QtAV
+
 #include "VideoDecoderCedarv.moc"

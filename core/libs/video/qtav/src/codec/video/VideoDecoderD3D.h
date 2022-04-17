@@ -20,11 +20,12 @@
  *
  * ============================================================ */
 
-#ifndef QTAV_VIDEODECODERD3D_H
-#define QTAV_VIDEODECODERD3D_H
+#ifndef QTAV_VIDEO_DECODER_D3D_H
+#define QTAV_VIDEO_DECODER_D3D_H
 
 #include <unknwn.h>
 #include <inttypes.h>
+
 #include "VideoDecoderFFmpegHW.h"
 #include "VideoDecoderFFmpegHW_p.h"
 
@@ -140,5 +141,7 @@ template<typename T> int SelectConfig(AVCodecID codec_id, const T* cfgs, int nb_
 #define MAKEFOURCC(ch0, ch1, ch2, ch3) \
   ((DWORD)(BYTE)(ch0)|((DWORD)(BYTE)(ch1)<<8)|((DWORD)(BYTE)(ch2)<<16)|((DWORD)(BYTE)(ch3)<<24))
 #endif //MAKEFOURCC
+
 } // namespace QtAV
-#endif //QTAV_VIDEODECODERD3D_H
+
+#endif // QTAV_VIDEO_DECODER_D3D_H

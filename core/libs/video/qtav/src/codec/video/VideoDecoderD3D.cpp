@@ -21,6 +21,7 @@
  * ============================================================ */
 
 #include "VideoDecoderD3D.h"
+
 #include <initguid.h> /* must be last included to not redefine existing GUIDs */
 
 #if (FF_PROFILE_HEVC_MAIN == -1) //libav does not define it
@@ -519,4 +520,5 @@ const d3d_format_t* VideoDecoderD3DPrivate::getFormat(const AVCodecContext *avct
     }
     return NULL;
 }
+
 } // namespace QtAV

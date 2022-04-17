@@ -20,13 +20,14 @@
  *
  * ============================================================ */
 
-#include "QtAV/AudioEncoder.h"
-#include "QtAV/private/AVEncoder_p.h"
-#include "QtAV/private/factory.h"
+#include "AudioEncoder.h"
+#include "private/AVEncoder_p.h"
+#include "private/factory.h"
 #include "utils/Logger.h"
 
 namespace QtAV
 {
+
 FACTORY_DEFINE(AudioEncoder)
 
 void AudioEncoder_RegisterAll()
@@ -91,4 +92,5 @@ int AudioEncoder::frameSize() const
 {
     return d_func().frame_size;
 }
+
 } // namespace QtAV

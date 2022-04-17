@@ -21,7 +21,7 @@
  * ============================================================ */
 
 #include "VideoDecoderFFmpegBase.h"
-#include "QtAV/Packet.h"
+#include "Packet.h"
 #include "utils/Logger.h"
 
 namespace QtAV
@@ -169,4 +169,5 @@ VideoFrame VideoDecoderFFmpegBase::frame()
     }
     return frame;
 }
+
 } // namespace QtAV

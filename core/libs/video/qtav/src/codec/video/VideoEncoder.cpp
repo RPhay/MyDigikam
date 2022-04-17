@@ -20,13 +20,14 @@
  *
  * ============================================================ */
 
-#include "QtAV/VideoEncoder.h"
-#include "QtAV/private/AVEncoder_p.h"
-#include "QtAV/private/factory.h"
+#include "VideoEncoder.h"
+#include "private/AVEncoder_p.h"
+#include "private/factory.h"
 #include "utils/Logger.h"
 
 namespace QtAV
 {
+
 FACTORY_DEFINE(VideoEncoder)
 
 void VideoEncoder_RegisterAll()

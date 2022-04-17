@@ -22,24 +22,28 @@
 
 #include "VideoDecoderFFmpegHW.h"
 #include "VideoDecoderFFmpegHW_p.h"
+
 #if FFMPEG_MODULE_CHECK(LIBAVCODEC, 57, 28, 100)
-#define QTAV_HAVE_MEDIACODEC 1
+#   define QTAV_HAVE_MEDIACODEC 1
 #endif
+
 #if QTAV_HAVE(MEDIACODEC)
-#include "QtAV/private/factory.h"
-#include "QtAV/private/mkid.h"
-#include <QtAndroidExtras>
-extern "C" {
-#include <libavcodec/jni.h>
-#include <libavcodec/mediacodec.h>
+
+#   include "private/factory.h"
+#   include "private/mkid.h"
+#   include <QtAndroidExtras>
+extern "C"
+{
+#   include <libavcodec/jni.h>
+#   include <libavcodec/mediacodec.h>
 }
 
 // QtAV's fastest mediacodec decoding/rendering code is private because all other projects I know require java code or is opengl incompatible(chrome, firefox, xbmc, vlc etc.). Maybe my code is the best implementation.
-#ifdef MEDIACODEC_TEXTURE
-#include "QtAV/SurfaceInterop.h"
-#include "opengl/OpenGLHelper.h"
-#include "MediaCodecTextureStandalone.h"
-#endif
+#   ifdef MEDIACODEC_TEXTURE
+#       include "SurfaceInterop.h"
+#       include "opengl/OpenGLHelper.h"
+#       include "MediaCodecTextureStandalone.h"
+#   endif
 
 namespace QtAV
 {
@@ -191,5 +195,7 @@ VideoFrame VideoDecoderMediaCodec::frame()
 #endif
     return frame;
 }
+
 } // namespace QtAV
+
 #endif //QTAV_HAVE(MEDIACODEC)

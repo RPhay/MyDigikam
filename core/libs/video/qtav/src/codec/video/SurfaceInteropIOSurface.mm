@@ -24,7 +24,7 @@
 #include "SurfaceInteropCV.h"
 #ifdef Q_OS_IOS
 #import <OpenGLES/EAGL.h>
-#include <CoreVideo/CVOpenGLESTextureCache.h>
+#include "CoreVideo/CVOpenGLESTextureCache.h"
 # ifdef __IPHONE_11_0 // always defined in new sdk
 #  import <OpenGLES/EAGLIOSurface.h>
 # endif //__IPHONE_11_0
@@ -38,7 +38,7 @@
 #include <IOSurface/IOSurface.h>
 #endif //Q_OS_IOS
 
-#include "QtAV/VideoFrame.h"
+#include "VideoFrame.h"
 #include "opengl/OpenGLHelper.h"
 
 namespace QtAV {
