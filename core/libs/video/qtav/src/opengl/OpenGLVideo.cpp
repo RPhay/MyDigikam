@@ -22,11 +22,11 @@
 
 #include "OpenGLVideo.h"
 #include <QThreadStorage>
-#include <QtGui/QColor>
+#include <QColor>
 #if QT_VERSION >= QT_VERSION_CHECK(5, 0, 0)
-#include <QtGui/QGuiApplication>
-#include <QtGui/QScreen>
-#include <QtGui/QSurface>
+#include <QGuiApplication>
+#include <QScreen>
+#include <QSurface>
 #endif //5.0
 #include "SurfaceInterop.h"
 #include "VideoShader.h"

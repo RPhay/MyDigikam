@@ -21,7 +21,7 @@
  * ============================================================ */
 
 #include "SubImage.h"
-#include <QtGui/QImage>
+#include <QImage>
 
 namespace QtAV
 {

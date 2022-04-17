@@ -24,7 +24,7 @@
 #include "private/VideoRenderer_p.h"
 #include "QtAV_Version.h"
 #include <QLibrary>
-#include <QtGui/QResizeEvent>
+#include <QResizeEvent>
 #include "utils/Logger.h"
 /*!
  * onSetXXX(...): impl->onSetXXX(...); set value as impl; return ;

@@ -25,7 +25,7 @@
 #include "SurfaceInterop.h"
 #include "ImageConverter.h"
 #include <QSharedPointer>
-#include <QtGui/QImage>
+#include <QImage>
 #include "private/AVCompat.h"
 #include "utils/GPUMemCopy.h"
 #include "utils/Logger.h"

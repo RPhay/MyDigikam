@@ -22,10 +22,10 @@
 
 #include "FilterContext.h"
 #include <QBuffer>
-#include <QtGui/QFontMetrics>
-#include <QtGui/QImage>
-#include <QtGui/QPainter>
-#include <QtGui/QTextDocument>
+#include <QFontMetrics>
+#include <QImage>
+#include <QPainter>
+#include <QTextDocument>
 #include <QMatrix4x4>
 #include "VideoFrame.h"
 #include "utils/Logger.h"

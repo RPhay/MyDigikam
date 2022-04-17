@@ -23,7 +23,7 @@
 #include "OpenGLHelper.h"
 #include <string.h> //strstr
 #include <QCoreApplication>
-#include <QtGui/QMatrix4x4>
+#include <QMatrix4x4>
 #if QT_VERSION >= QT_VERSION_CHECK(6, 0, 0)
 #include <QRegularExpression>
 using QRegExp = QRegularExpression;
@@ -32,10 +32,10 @@ using QRegExp = QRegularExpression;
 #endif
 #if QT_VERSION < QT_VERSION_CHECK(5, 0, 0)
 #if QT_VERSION >= QT_VERSION_CHECK(4, 8, 0)
-#include <QtOpenGL/QGLFunctions>
+#include <QGLFunctions>
 #endif
 #else
-#include <QtGui/QGuiApplication>
+#include <QGuiApplication>
 #endif
 #ifdef QT_OPENGL_DYNAMIC
 #include <QOpenGLFunctions_1_0>

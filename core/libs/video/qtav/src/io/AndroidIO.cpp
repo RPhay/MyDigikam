@@ -25,7 +25,7 @@
 #include "private/mkid.h"
 #include "private/factory.h"
 #include <QFile>
-#include <QtGui/QGuiApplication>
+#include <QGuiApplication>
 #include <QtAndroidExtras>
 #include "utils/Logger.h"
 #include "jmi/jmi.h"

@@ -29,8 +29,8 @@
 #include <qmath.h>
 #include <QVector>
 #include <QResizeEvent>
-#include <QtOpenGL/QGLShaderProgram>
-#include <QtOpenGL/QGLShader>
+#include <QGLShaderProgram>
+#include <QGLShader>
 
 // Local includes
 

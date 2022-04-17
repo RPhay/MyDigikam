@@ -24,7 +24,7 @@
 #define QTAV_VIDEO_CAPTURE_H
 
 #include <QObject>
-#include <QtGui/QImage>
+#include <QImage>
 #include <QtAV/QtAV_Global.h>
 #include <QtAV/VideoFrame.h>
 
