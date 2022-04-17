@@ -8,12 +8,16 @@ APPLY_COMMON_POLICIES()
 
 # TODO: re-enable warnings step by step to fix code
 
+# For FFMPEG 4 to 5 deprecrated declarations => Fix code to support FFMPEG 5 API.
 REMOVE_COMPILER_WARNINGS("-Wdeprecated-declarations")
-REMOVE_COMPILER_WARNINGS("-Wundef")
-REMOVE_COMPILER_WARNINGS("-Wexpansion-to-defined")
-
 DISABLE_GCC_COMPILER_WARNINGS("5.99.99" "-Wno-deprecated-declarations")
+
+# For undefined pre-processor values.
+REMOVE_COMPILER_WARNINGS("-Wundef")
 DISABLE_GCC_COMPILER_WARNINGS("5.99.99" "-Wno-undef")
+
+# For not portable pre-processor defined operator uses.
+REMOVE_COMPILER_WARNINGS("-Wexpansion-to-defined")
 DISABLE_GCC_COMPILER_WARNINGS("5.99.99" "-Wno-expansion-to-defined")
 
 include_directories($<TARGET_PROPERTY:Qt${QT_VERSION_MAJOR}::Widgets,INTERFACE_INCLUDE_DIRECTORIES>
