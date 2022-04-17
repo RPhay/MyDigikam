@@ -70,7 +70,7 @@ void UPnPLogger(const NPT_LogRecord* record)
 
         case NPT_LOG_LEVEL_SEVERE:
         {
-            qCDebug(DIGIKAM_MEDIASRV_LOG_SEVERE) << msg;
+            qCDebug(DIGIKAM_MEDIASRV_LOG_CRITICAL) << msg;
             break;
         }
 
