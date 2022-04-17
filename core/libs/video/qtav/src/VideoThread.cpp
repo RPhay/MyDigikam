@@ -22,17 +22,17 @@
 
 #include "VideoThread.h"
 #include "AVThread_p.h"
-#include "QtAV/Packet.h"
-#include "QtAV/AVClock.h"
-#include "QtAV/VideoCapture.h"
-#include "QtAV/VideoDecoder.h"
-#include "QtAV/VideoRenderer.h"
-#include "QtAV/Statistics.h"
-#include "QtAV/Filter.h"
-#include "QtAV/FilterContext.h"
+#include "Packet.h"
+#include "AVClock.h"
+#include "VideoCapture.h"
+#include "VideoDecoder.h"
+#include "VideoRenderer.h"
+#include "Statistics.h"
+#include "Filter.h"
+#include "FilterContext.h"
 #include "output/OutputSet.h"
-#include "QtAV/private/AVCompat.h"
-#include <QtCore/QFileInfo>
+#include "private/AVCompat.h"
+#include <QFileInfo>
 #include "utils/Logger.h"
 
 namespace QtAV

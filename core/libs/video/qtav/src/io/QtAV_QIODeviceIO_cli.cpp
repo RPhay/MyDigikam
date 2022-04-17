@@ -20,12 +20,12 @@
  *
  * ============================================================ */
 
-#include "QtAV/MediaIO.h"
-#include "QtAV/private/MediaIO_p.h"
-#include "QtAV/private/mkid.h"
-#include "QtAV/private/factory.h"
+#include "MediaIO.h"
+#include "private/MediaIO_p.h"
+#include "private/mkid.h"
+#include "private/factory.h"
 
-#include <QtCore/QFile>
+#include <QFile>
 #include <QtDebug>
 #include <QApplication>
 

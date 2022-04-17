@@ -21,9 +21,9 @@
  * ============================================================ */
 
 #include <QtAV/AVClock.h>
-#include <QtCore/QTimer>
-#include <QtCore/QTimerEvent>
-#include <QtCore/QDateTime>
+#include <QTimer>
+#include <QTimerEvent>
+#include <QDateTime>
 #include "utils/Logger.h"
 
 namespace QtAV

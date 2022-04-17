@@ -20,7 +20,7 @@
  *
  * ============================================================ */
 
-#include "QtAV/SubImage.h"
+#include "SubImage.h"
 #include <QtGui/QImage>
 
 namespace QtAV

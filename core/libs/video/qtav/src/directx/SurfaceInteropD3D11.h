@@ -23,7 +23,7 @@
 #ifndef QTAV_SURFACEINTEROPD3D11_H
 #define QTAV_SURFACEINTEROPD3D11_H
 
-#include "QtAV/SurfaceInterop.h"
+#include "SurfaceInterop.h"
 #include "directx/dxcompat.h"
 #include <d3d11.h>
 #include <wrl/client.h>

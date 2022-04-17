@@ -20,15 +20,15 @@
  *
  * ============================================================ */
 
-#include "QtAV/private/SubtitleProcessor.h"
-#include <QtCore/QCoreApplication>
-#include <QtCore/QEventLoop>
-#include <QtCore/QDir>
-#include <QtCore/QFile>
-#include <QtCore/QMutex>
-#include <QtCore/QThread>
-#include "QtAV/Packet.h"
-#include "QtAV/private/factory.h"
+#include "private/SubtitleProcessor.h"
+#include <QCoreApplication>
+#include <QEventLoop>
+#include <QDir>
+#include <QFile>
+#include <QMutex>
+#include <QThread>
+#include "Packet.h"
+#include "private/factory.h"
 #include "PlainText.h"
 #include "utils/internal.h"
 #include "utils/Logger.h"

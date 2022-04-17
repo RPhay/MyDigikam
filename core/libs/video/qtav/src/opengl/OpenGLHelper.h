@@ -24,7 +24,7 @@
 #define QTAV_OPENGLHELPER_H
 
 #ifndef QT_NO_OPENGL
-#include "QtAV/VideoFormat.h"
+#include "VideoFormat.h"
 #include "opengl/gl_api.h"
 // for dynamicgl. qglfunctions before qt5.3 does not have portable gl functions
 #ifdef QT_OPENGL_DYNAMIC

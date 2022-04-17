@@ -23,8 +23,8 @@
 #ifndef QTAV_AVPLAYER_PRIVATE_H
 #define QTAV_AVPLAYER_PRIVATE_H
 
-#include "QtAV/AVDemuxer.h"
-#include "QtAV/AVPlayer.h"
+#include "AVDemuxer.h"
+#include "AVPlayer.h"
 #include "AudioThread.h"
 #include "VideoThread.h"
 #include "AVDemuxThread.h"

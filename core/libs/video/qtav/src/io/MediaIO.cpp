@@ -20,10 +20,10 @@
  *
  * ============================================================ */
 
-#include "QtAV/MediaIO.h"
-#include "QtAV/private/MediaIO_p.h"
-#include "QtAV/private/factory.h"
-#include <QtCore/QStringList>
+#include "MediaIO.h"
+#include "private/MediaIO_p.h"
+#include "private/factory.h"
+#include <QStringList>
 #include "utils/Logger.h"
 
 namespace QtAV

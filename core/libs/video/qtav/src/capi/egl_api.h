@@ -1,60 +1,82 @@
-/******************************************************************************
-    mkapi dynamic load code generation for capi template
-    Copyright (C) 2015-2016 Wang Bin <wbsecg1@gmail.com>
-    https://github.com/wang-bin/mkapi
-    https://github.com/wang-bin/capi
+/* ============================================================
+ *
+ * This file is a part of digiKam project
+ * https://www.digikam.org
+ *
+ * Date        : 2012-10-31
+ * Description : QtAV: Multimedia framework based on Qt and FFmpeg
+ *
+ * Copyright (C) 2012-2022 Wang Bin <wbsecg1 at gmail dot com>
+ *
+ * This program is free software; you can redistribute it
+ * and/or modify it under the terms of the GNU General
+ * Public License as published by the Free Software Foundation;
+ * either version 2, or (at your option) any later version.
+ *
+ * This program is distributed in the hope that it will be useful,
+ * but WITHOUT ANY WARRANTY; without even the implied warranty of
+ * MERCHANTABILITY or FITNESS FOR A PARTICULAR PURPOSE.  See the
+ * GNU General Public License for more details.
+ *
+ * ============================================================ */
 
-    This library is free software; you can redistribute it and/or
-    modify it under the terms of the GNU Lesser General Public
-    License as published by the Free Software Foundation; either
-    version 2.1 of the License, or (at your option) any later version.
-
-    This library is distributed in the hope that it will be useful,
-    but WITHOUT ANY WARRANTY; without even the implied warranty of
-    MERCHANTABILITY or FITNESS FOR A PARTICULAR PURPOSE.  See the GNU
-    Lesser General Public License for more details.
-
-    You should have received a copy of the GNU Lesser General Public
-    License along with this library; if not, write to the Free Software
-    Foundation, Inc., 51 Franklin Street, Fifth Floor, Boston, MA  02110-1301  USA
-******************************************************************************/
-
-#ifndef EGL_API_H
-#define EGL_API_H
+#ifndef QTAV_EGL_API_H
+#define QTAV_EGL_API_H
 
 // winrt: must define CAPI_LINK_EGL
 
 // no need to include the C header if only functions declared there
 #ifndef CAPI_LINK_EGL
-namespace egl {
-namespace capi {
-#define EGLAPI // avoid warning and link error
+
+namespace egl
+{
+
+namespace capi
+{
+
+#   define EGLAPI // avoid warning and link error
 #else
+
 extern "C" {
+
 #endif
+
 // the following line will be replaced by the content of config/EGL/include if exists
-#include "EGL/egl.h"
+
+#include <EGL/egl.h>
+
 #ifndef CAPI_LINK_EGL
-}
-#endif
+
 }
 
-namespace egl {
+#endif
+
+}
+
+namespace egl
+{
+
 #ifndef CAPI_LINK_EGL
-using namespace capi; // original header is in namespace capi, types are changed
-#endif // CAPI_LINK_EGL
-namespace capi { bool loaded();} // For link or NS style. Or load test for class style. api.loaded for class style.
+using namespace capi;               // original header is in namespace capi, types are changed
+#endif
+
+namespace capi { bool loaded(); }   // For link or NS style. Or load test for class style. api.loaded for class style.
+
 class api_dll;
+
 class api
 {
     api_dll *dll;
+
 public:
+
     api();
     virtual ~api();
     virtual bool loaded() const; // user may inherits multiple api classes: final::loaded() { return base1::loaded() && base2::loaded();}
+
 #if !defined(CAPI_LINK_EGL) && !defined(EGL_CAPI_NS)
-// mkapi code generation BEGIN
-#ifdef EGL_VERSION_1_0
+#   ifdef EGL_VERSION_1_0
+
     EGLBoolean eglChooseConfig(EGLDisplay dpy, const EGLint * attrib_list, EGLConfig * configs, EGLint config_size, EGLint * num_config);
     EGLBoolean eglCopyBuffers(EGLDisplay dpy, EGLSurface surface, EGLNativePixmapType target);
     EGLContext eglCreateContext(EGLDisplay dpy, EGLConfig config, EGLContext share_context, const EGLint * attrib_list);
@@ -79,24 +101,36 @@ public:
     EGLBoolean eglTerminate(EGLDisplay dpy);
     EGLBoolean eglWaitGL();
     EGLBoolean eglWaitNative(EGLint engine);
-#endif //EGL_VERSION_1_0
+
+#endif
+
 #ifdef EGL_VERSION_1_1
+
     EGLBoolean eglBindTexImage(EGLDisplay dpy, EGLSurface surface, EGLint buffer);
     EGLBoolean eglReleaseTexImage(EGLDisplay dpy, EGLSurface surface, EGLint buffer);
     EGLBoolean eglSurfaceAttrib(EGLDisplay dpy, EGLSurface surface, EGLint attribute, EGLint value);
     EGLBoolean eglSwapInterval(EGLDisplay dpy, EGLint interval);
-#endif //EGL_VERSION_1_1
+
+#endif
+
 #ifdef EGL_VERSION_1_2
+
     EGLBoolean eglBindAPI(EGLenum api);
     EGLenum eglQueryAPI();
     EGLSurface eglCreatePbufferFromClientBuffer(EGLDisplay dpy, EGLenum buftype, EGLClientBuffer buffer, EGLConfig config, const EGLint * attrib_list);
     EGLBoolean eglReleaseThread();
     EGLBoolean eglWaitClient();
-#endif //EGL_VERSION_1_2
+
+#endif
+
 #ifdef EGL_VERSION_1_4
+
     EGLContext eglGetCurrentContext();
-#endif //EGL_VERSION_1_4
+
+#endif
+
 #ifdef EGL_VERSION_1_5
+
     EGLSync eglCreateSync(EGLDisplay dpy, EGLenum type, const EGLAttrib * attrib_list);
     EGLBoolean eglDestroySync(EGLDisplay dpy, EGLSync sync);
     EGLint eglClientWaitSync(EGLDisplay dpy, EGLSync sync, EGLint flags, EGLTime timeout);
@@ -107,18 +141,26 @@ public:
     EGLSurface eglCreatePlatformWindowSurface(EGLDisplay dpy, EGLConfig config, void * native_window, const EGLAttrib * attrib_list);
     EGLSurface eglCreatePlatformPixmapSurface(EGLDisplay dpy, EGLConfig config, void * native_pixmap, const EGLAttrib * attrib_list);
     EGLBoolean eglWaitSync(EGLDisplay dpy, EGLSync sync, EGLint flags);
-#endif //EGL_VERSION_1_5
-// mkapi code generation END
-#endif // !defined(CAPI_LINK_EGL) && !defined(EGL_CAPI_NS)
+
+#endif
+
+#endif
+
 };
-} //namespace egl
+
+} // namespace egl
 
 #ifndef EGL_CAPI_BUILD // avoid ambiguous in egl_api.cpp
-#if defined(EGL_CAPI_NS) && !defined(CAPI_LINK_EGL)
+#   if defined(EGL_CAPI_NS) && !defined(CAPI_LINK_EGL)
+
 using namespace egl::capi;
-#else
+
+#   else
+
 using namespace egl;
+
+#   endif
+
 #endif
-#endif //EGL_CAPI_BUILD
-#endif // EGL_API_H
-//this file is generated by "mkapi.sh -I /Users/wangbin/dev/qtbase/src/3rdparty/angle/include -name egl -template capi /Users/wangbin/dev/qtbase/src/3rdparty/angle/include/EGL/egl.h"
+
+#endif // QTAV_EGL_API_H

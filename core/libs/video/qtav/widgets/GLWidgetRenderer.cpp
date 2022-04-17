@@ -24,10 +24,10 @@
 
 // Qt includes
 
-#include <QtCore/QCoreApplication>
-#include <QtCore/QFile>
-#include <QtCore/qmath.h>
-#include <QtCore/QVector>
+#include <QCoreApplication>
+#include <QFile>
+#include <qmath.h>
+#include <QVector>
 #include <QResizeEvent>
 #include <QtOpenGL/QGLShaderProgram>
 #include <QtOpenGL/QGLShader>

@@ -20,14 +20,14 @@
  *
  * ============================================================ */
 
-#include "QtAV/EncodeFilter.h"
+#include "EncodeFilter.h"
 #include <limits>
-#include <QtCore/QAtomicInt>
-#include <QtCore/QCoreApplication>
-#include <QtCore/QThread>
-#include "QtAV/private/Filter_p.h"
-#include "QtAV/AudioEncoder.h"
-#include "QtAV/VideoEncoder.h"
+#include <QAtomicInt>
+#include <QCoreApplication>
+#include <QThread>
+#include "private/Filter_p.h"
+#include "AudioEncoder.h"
+#include "VideoEncoder.h"
 #include "utils/Logger.h"
 
 namespace QtAV

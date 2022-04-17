@@ -20,10 +20,10 @@
  *
  * ============================================================ */
 
-#include "QtAV/AVOutput.h"
-#include "QtAV/private/AVOutput_p.h"
-#include "QtAV/Filter.h"
-#include "QtAV/FilterContext.h"
+#include "AVOutput.h"
+#include "private/AVOutput_p.h"
+#include "Filter.h"
+#include "FilterContext.h"
 #include "filter/FilterManager.h"
 #include "output/OutputSet.h"
 #include "utils/Logger.h"

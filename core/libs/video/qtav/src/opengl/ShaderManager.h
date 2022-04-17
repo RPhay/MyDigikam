@@ -23,7 +23,7 @@
 #ifndef QTAV_SHADERMANAGER_H
 #define QTAV_SHADERMANAGER_H
 
-#include <QtCore/QObject>
+#include <QObject>
 
 namespace QtAV
 {

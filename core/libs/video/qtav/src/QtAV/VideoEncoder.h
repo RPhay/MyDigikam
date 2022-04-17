@@ -25,7 +25,7 @@
 
 #include <QtAV/AVEncoder.h>
 #include <QtAV/VideoFrame.h>
-#include <QtCore/QStringList>
+#include <QStringList>
 
 namespace QtAV
 {

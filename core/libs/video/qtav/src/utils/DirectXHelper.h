@@ -23,7 +23,7 @@
 #ifndef QTAV_DIRECTXHELPER_H
 #define QTAV_DIRECTXHELPER_H
 
-#include <QtCore/qglobal.h>
+#include <qglobal.h>
 #ifndef Q_OS_WINRT
 #include <d3d9.h>
 #endif

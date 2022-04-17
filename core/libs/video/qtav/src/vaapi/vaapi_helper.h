@@ -25,8 +25,8 @@
 
 #include <assert.h>
 #include <va/va.h>
-#include <QtCore/QLibrary>
-#include <QtCore/QSharedPointer>
+#include <QLibrary>
+#include <QSharedPointer>
 #if QT_VERSION >= QT_VERSION_CHECK(5, 0, 0)
 #include <qopengl.h>
 #elif defined(QT_OPENGL_LIB)

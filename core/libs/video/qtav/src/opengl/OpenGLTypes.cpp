@@ -20,15 +20,15 @@
  *
  * ============================================================ */
 
-#include "QtAV/OpenGLTypes.h"
+#include "OpenGLTypes.h"
 #include "opengl/OpenGLHelper.h"
 #if QT_VERSION >= QT_VERSION_CHECK(6, 0, 0)
-#include <QtCore/QRegularExpression>
+#include <QRegularExpression>
 #else
-#include <QtCore/QRegExp>
+#include <QRegExp>
 #endif
-#include <QtCore/QStringList>
-#include <QtCore/QVariant>
+#include <QStringList>
+#include <QVariant>
 #include "utils/Logger.h"
 namespace QtAV
 {

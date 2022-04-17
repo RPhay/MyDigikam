@@ -20,8 +20,8 @@
  *
  * ============================================================ */
 
-#include "QtAV/Packet.h"
-#include "QtAV/private/AVCompat.h"
+#include "Packet.h"
+#include "private/AVCompat.h"
 #include "utils/Logger.h"
 
 namespace QtAV

@@ -20,10 +20,10 @@
  *
  * ============================================================ */
 
-#include "QtAV/AVError.h"
-#include "QtAV/private/AVCompat.h"
+#include "AVError.h"
+#include "private/AVCompat.h"
 #ifndef QT_NO_DEBUG_STREAM
-#include <QtCore/qdebug.h>
+#include <qdebug.h>
 #endif
 
 // KDE includes

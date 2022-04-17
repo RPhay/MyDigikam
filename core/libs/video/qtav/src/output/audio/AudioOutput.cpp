@@ -20,14 +20,14 @@
  *
  * ============================================================ */
 
-#include "QtAV/AudioOutput.h"
-#include "QtAV/private/AVOutput_p.h"
-#include "QtAV/private/AudioOutputBackend.h"
-#include "QtAV/private/AVCompat.h"
+#include "AudioOutput.h"
+#include "private/AVOutput_p.h"
+#include "private/AudioOutputBackend.h"
+#include "private/AVCompat.h"
 #if QT_VERSION >= QT_VERSION_CHECK(4, 7, 0)
-#include <QtCore/QElapsedTimer>
+#include <QElapsedTimer>
 #else
-#include <QtCore/QTime>
+#include <QTime>
 typedef QTime QElapsedTimer;
 #endif
 #include "utils/ring.h"

@@ -23,9 +23,9 @@
 #ifndef QTAV_AVTHREAD_H
 #define QTAV_AVTHREAD_H
 
-#include <QtCore/QRunnable>
-#include <QtCore/QScopedPointer>
-#include <QtCore/QThread>
+#include <QRunnable>
+#include <QScopedPointer>
+#include <QThread>
 #include "PacketBuffer.h"
 //TODO: pause functions. AVOutput may be null, use AVThread's pause state
 

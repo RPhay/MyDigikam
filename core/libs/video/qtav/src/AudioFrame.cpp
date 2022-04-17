@@ -20,10 +20,10 @@
  *
  * ============================================================ */
 
-#include "QtAV/AudioFrame.h"
-#include "QtAV/private/Frame_p.h"
-#include "QtAV/AudioResampler.h"
-#include "QtAV/private/AVCompat.h"
+#include "AudioFrame.h"
+#include "private/Frame_p.h"
+#include "AudioResampler.h"
+#include "private/AVCompat.h"
 #include "utils/Logger.h"
 
 namespace QtAV

@@ -24,12 +24,12 @@
 #if QT_VERSION < QT_VERSION_CHECK(5, 0, 0)
 #include <QtGui/QDesktopServices>
 #else
-#include <QtCore/QStandardPaths>
+#include <QStandardPaths>
 #endif
 #ifdef Q_OS_MAC
 #include <CoreFoundation/CoreFoundation.h>
 #endif
-#include "QtAV/private/AVCompat.h"
+#include "private/AVCompat.h"
 #include "utils/Logger.h"
 
 namespace QtAV

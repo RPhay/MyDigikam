@@ -20,14 +20,14 @@
  *
  * ============================================================ */
 
-#include "QtAV/VideoShader.h"
-#include "QtAV/private/VideoShader_p.h"
+#include "VideoShader.h"
+#include "private/VideoShader_p.h"
 #include "ColorTransform.h"
 #include "opengl/OpenGLHelper.h"
 #include <cmath>
-#include <QtCore/QCoreApplication>
-#include <QtCore/QFile>
-#include <QtCore/QStringList>
+#include <QCoreApplication>
+#include <QFile>
+#include <QStringList>
 #include "utils/Logger.h"
 
 #define YUVA_DONE 0

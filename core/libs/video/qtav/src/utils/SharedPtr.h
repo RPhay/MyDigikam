@@ -24,7 +24,7 @@
 #define SHARED_PTR
 
 #include <algorithm>
-#include <QtCore/QAtomicInt>
+#include <QAtomicInt>
 /*
  * a simple thread safe shared ptr. QSharedPointer does not provide a way to get how many the ref count is.
  */

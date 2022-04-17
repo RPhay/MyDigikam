@@ -21,8 +21,8 @@
  * ============================================================ */
 
 #include "output/OutputSet.h"
-#include "QtAV/AVPlayer.h"
-#include "QtAV/VideoRenderer.h"
+#include "AVPlayer.h"
+#include "VideoRenderer.h"
 
 namespace QtAV
 {

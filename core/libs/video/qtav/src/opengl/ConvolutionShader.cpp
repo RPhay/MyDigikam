@@ -20,8 +20,8 @@
  *
  * ============================================================ */
 
-#include "QtAV/ConvolutionShader.h"
-#include "QtAV/private/VideoShader_p.h"
+#include "ConvolutionShader.h"
+#include "private/VideoShader_p.h"
 
 namespace QtAV
 {

@@ -32,12 +32,13 @@
     use the header and source from code gerenrated from: https://github.com/wang-bin/mkapi
  */
 
-#include <cstddef> //ptrdiff_t
+#include <cstddef>  // ptrdiff_t
 #include <cstdio>
 #include <cassert>
 #include <string.h>
 
 #define CAPI_IS(X) (defined CAPI_IS_##X && CAPI_IS_##X)
+
 /*!
  * you can define CAPI_IS_LAZY_RESOLVE 0 before including capi.h. then all symbols will be resolved in constructor.
  * default resolving a symbol at it's first call
@@ -65,7 +66,7 @@ namespace version
 
 enum
 {
-    NoVersion  = -1, /// library name without major version, for example libz.so
+    NoVersion  = -1, ///< library name without major version, for example libz.so
     EndVersion = -2
 };
 
@@ -97,14 +98,14 @@ class dso
 
 public:
 
-    dso(): handle(0) {}
-    virtual ~dso() { unload();}
+    dso(): handle(0)                          {                               }
+    virtual ~dso()                            { unload();                     }
     inline void setFileName(const char* name);
     inline void setFileNameAndVersion(const char* name, int ver);
     inline bool load();
     inline bool unload();
-    bool isLoaded() const { return !!handle;}
-    virtual void* resolve(const char* symbol) { return resolve(symbol, true);}
+    bool isLoaded() const                     { return !!handle;              }
+    virtual void* resolve(const char* symbol) { return resolve(symbol, true); }
 
 protected:
 
@@ -116,12 +117,15 @@ protected:
 /// DLL_CLASS is a library loader and symbols resolver class. Must implement api like capi::dso (the same function name and return type, but string parameter type can be different):
 /// unload() must support ref count. i.e. do unload if no one is using the real library
 /// Currently you can use ::capi::dso and QLibrary for DLL_CLASS. You can also use your own library resolver
+
 #define CAPI_BEGIN_DLL(names, DLL_CLASS) \
     class api_dll : public ::capi::internal::dll_helper<DLL_CLASS> { \
     public: api_dll() : ::capi::internal::dll_helper<DLL_CLASS>(names) CAPI_DLL_BODY_DEFINE
+
 #define CAPI_BEGIN_DLL_VER(names, versions, DLL_CLASS) \
     class api_dll : public ::capi::internal::dll_helper<DLL_CLASS> { \
     public: api_dll() : ::capi::internal::dll_helper<DLL_CLASS>(names, versions) CAPI_DLL_BODY_DEFINE
+
 #if CAPI_IS(LAZY_RESOLVE)
 #   define CAPI_END_DLL() } api_t; api_t api; };
 #else
@@ -164,7 +168,9 @@ protected:
 //EXPAND(CAPI_DEFINE##N(R, name, #name, __VA_ARGS__))
 
 /////////////////////////////////////////////////////////////////////////////////////////////////////////////////
+
 /************The followings are used internally**********/
+
 #if CAPI_IS(LAZY_RESOLVE)
 #   define CAPI_DLL_BODY_DEFINE { memset(&api, 0, sizeof(api));} typedef struct {
 #else
@@ -226,6 +232,7 @@ protected:
 
 // nested class can not call non-static members outside the class, so hack the address here
 // need -Wno-invalid-offsetof
+
 #define CAPI_DEFINE_M_RESOLVER_T_V(R, M, name, sym, ARG_T, ARG_T_V, ARG_V) \
     public: \
         typedef R (M *name##_t) ARG_T; \
@@ -293,7 +300,7 @@ protected:
 
 // fully expand. used by VC. VC will not expand __VA_ARGS__ but treats it as 1 parameter
 
-#define EXPAND(expr) expr //TODO: rename CAPI_EXPAND
+#define EXPAND(expr) expr   // TODO: rename CAPI_EXPAND
 #if defined(WIN64) || defined(_WIN64) || defined(__WIN64__) \
     || defined(WIN32) || defined(_WIN32) || defined(__WIN32__) || defined(__NT__) \
     || defined(WINCE) || defined(_WIN32_WCE)
@@ -310,6 +317,7 @@ protected:
 #if defined(__APPLE__)
 #   define CAPI_TARGET_OS_MAC 1
 #endif
+
 #ifndef CAPI_TARGET_OS_WIN
 #   include <dlfcn.h>
 #endif
@@ -352,8 +360,11 @@ static const int kDefaultVersions[] = {::capi::NoVersion, ::capi::EndVersion};
 template <class DLL> class dll_helper
 {
     // no CAPI_EXPORT required
+
     DLL m_lib;
-    typename dso_trait<DLL>::str_t strType(const char* s) {
+
+    typename dso_trait<DLL>::str_t strType(const char* s)
+    {
         return dso_trait<DLL>::qstr_t::fromLatin1(s);
     }
 
@@ -366,12 +377,13 @@ public:
         if (is_1st)
         {
             is_1st = false;
-            fprintf(stderr, "capi::version: %s\n", ::capi::version::name); fflush(0);
+            fprintf(stderr, "capi::version: %s\n", ::capi::version::name);
+            fflush(0);
         }
 
-        for (int i = 0; names[i]; ++i)
+        for (int i = 0 ; names[i] ; ++i)
         {
-            for (int j = 0; versions[j] != ::capi::EndVersion; ++j)
+            for (int j = 0 ; versions[j] != ::capi::EndVersion ; ++j)
             {
                 if (versions[j] == ::capi::NoVersion)
                     m_lib.setFileName(strType(names[i]));
@@ -443,13 +455,21 @@ void dso::setFileNameAndVersion(const char* name, int ver)
 
     if (ver >= 0)
     {
+
 #if defined(CAPI_TARGET_OS_WIN) // ignore version on win. xxx-V.dll?
+
         CAPI_SNPRINTF(full_name, sizeof(full_name), "%s%s%s", internal::kPre, name, internal::kExt);
+
 #elif defined(CAPI_TARGET_OS_MAC)
+
         CAPI_SNPRINTF(full_name, sizeof(full_name), "%s%s.%d%s", internal::kPre, name, ver, internal::kExt);
+
 #else
+
         CAPI_SNPRINTF(full_name, sizeof(full_name), "%s%s%s.%d", internal::kPre, name, internal::kExt, ver);
+
 #endif
+
     }
     else
     {
@@ -460,17 +480,25 @@ void dso::setFileNameAndVersion(const char* name, int ver)
 bool dso::load()
 {
     CAPI_DBG_LOAD("dso.load: %s", full_name);
+
 #ifdef CAPI_TARGET_OS_WIN
 #   ifdef CAPI_TARGET_OS_WINRT
+
     wchar_t wname[sizeof(full_name)];
     CAPI_SNWPRINTF(wname, sizeof(wname), L"%s", full_name);
     handle = (void*)::LoadPackagedLibrary(wname, 0);
+
 #   else
+
     handle = (void*)::LoadLibraryExA(full_name, NULL, 0); //DONT_RESOLVE_DLL_REFERENCES
+
 #   endif
 #else
+
     handle = ::dlopen(full_name, RTLD_LAZY|RTLD_LOCAL); // try no prefix name if error?
+
 #endif
+
     return !!handle;
 }
 
@@ -478,14 +506,20 @@ bool dso::unload()
 {
     if (!isLoaded())
         return true;
+
 #ifdef CAPI_TARGET_OS_WIN
+
     if (!::FreeLibrary(static_cast<HMODULE>(handle))) //return 0 if error. ref counted
         return false;
+
 #else
-    if (::dlclose(handle) != 0) //ref counted
+
+    if (::dlclose(handle) != 0) // ref counted
         return false;
+
 #endif
-    handle = NULL; //TODO: check ref?
+
+    handle = NULL;  // TODO: check ref?
 
     return true;
 }
@@ -493,11 +527,12 @@ bool dso::unload()
 void* dso::resolve(const char* sym, bool try_)
 {
     const char* s = sym;
-    char _s[512]; // old a.out systems add an underscore in front of symbols
+    char _s[512];   // old a.out systems add an underscore in front of symbols
 
     if (!try_)
     {
-        //previous has no '_', now has '_'
+        // previous has no '_', now has '_'
+
         CAPI_SNPRINTF(_s, sizeof(_s), "_%s", sym);
         s = _s;
     }
@@ -505,15 +540,21 @@ void* dso::resolve(const char* sym, bool try_)
     CAPI_DBG_RESOLVE("dso.resolve(\"%s\", %d)", s, try_);
 
 #ifdef CAPI_TARGET_OS_WIN
+
     void *ptr = (void*)::GetProcAddress((HMODULE)handle, s);
+
 #else
+
     void *ptr = ::dlsym(handle, s);
+
 #endif
+
     if (!ptr && try_)
         return resolve(sym, false);
 
     return ptr;
 }
+
 } // namespace capi
 
 #if defined(_MSC_VER)

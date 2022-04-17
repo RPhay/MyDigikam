@@ -24,7 +24,7 @@
 #define DX_LOG_COMPONENT "D3D11GL Interop"
 #include "utils/DirectXHelper.h"
 #include "opengl/OpenGLHelper.h"
-#include <QtCore/QVector>
+#include <QVector>
 
 // TODO: does intel supports d3d11-gl interop?
 //dynamic gl or desktop gl

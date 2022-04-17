@@ -20,11 +20,11 @@
  *
  * ============================================================ */
 
-#include "QtAV/VideoShaderObject.h"
-#include "QtAV/private/VideoShader_p.h"
-#include <QtCore/QEvent>
-#include <QtCore/QMetaProperty>
-#include <QtCore/QSignalMapper>
+#include "VideoShaderObject.h"
+#include "private/VideoShader_p.h"
+#include <QEvent>
+#include <QMetaProperty>
+#include <QSignalMapper>
 
 namespace QtAV
 {

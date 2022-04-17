@@ -21,7 +21,7 @@
  * ============================================================ */
 
 #include "ShaderManager.h"
-#include "QtAV/VideoShader.h"
+#include "VideoShader.h"
 
 namespace QtAV
 {

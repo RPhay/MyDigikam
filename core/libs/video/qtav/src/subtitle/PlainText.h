@@ -23,7 +23,7 @@
 #ifndef QTAV_PLAINTEXT_H
 #define QTAV_PLAINTEXT_H
 
-#include <QtCore/QString>
+#include <QString>
 
 namespace QtAV
 {

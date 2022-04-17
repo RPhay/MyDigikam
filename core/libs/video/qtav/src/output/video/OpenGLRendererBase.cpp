@@ -20,10 +20,10 @@
  *
  * ============================================================ */
 
-#include "QtAV/OpenGLRendererBase.h"
-#include "QtAV/private/OpenGLRendererBase_p.h"
-#include "QtAV/OpenGLVideo.h"
-#include "QtAV/FilterContext.h"
+#include "OpenGLRendererBase.h"
+#include "private/OpenGLRendererBase_p.h"
+#include "OpenGLVideo.h"
+#include "FilterContext.h"
 #include <QResizeEvent>
 #include "opengl/OpenGLHelper.h"
 #include "utils/Logger.h"

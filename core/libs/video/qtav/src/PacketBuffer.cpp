@@ -21,7 +21,7 @@
  * ============================================================ */
 
 #include "PacketBuffer.h"
-#include <QtCore/QDateTime>
+#include <QDateTime>
 
 namespace QtAV
 {

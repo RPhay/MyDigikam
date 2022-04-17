@@ -23,13 +23,13 @@
 #include "AVPlayerPrivate.h"
 #include "filter/FilterManager.h"
 #include "output/OutputSet.h"
-#include "QtAV/AudioDecoder.h"
-#include "QtAV/AudioFormat.h"
-#include "QtAV/AudioResampler.h"
-#include "QtAV/MediaIO.h"
-#include "QtAV/VideoCapture.h"
-#include "QtAV/private/AVCompat.h"
-#include <QtCore/QIODevice>
+#include "AudioDecoder.h"
+#include "AudioFormat.h"
+#include "AudioResampler.h"
+#include "MediaIO.h"
+#include "VideoCapture.h"
+#include "private/AVCompat.h"
+#include <QIODevice>
 #if AV_MODULE_CHECK(LIBAVFORMAT, 55, 18, 0, 39, 100)
 extern "C" {
 #include <libavutil/display.h>

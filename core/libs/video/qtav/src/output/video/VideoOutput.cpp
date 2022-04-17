@@ -20,10 +20,10 @@
  *
  * ============================================================ */
 
-#include "QtAV/VideoOutput.h"
-#include "QtAV/private/VideoRenderer_p.h"
-#include "QtAV/QtAV_Version.h"
-#include <QtCore/QLibrary>
+#include "VideoOutput.h"
+#include "private/VideoRenderer_p.h"
+#include "QtAV_Version.h"
+#include <QLibrary>
 #include <QtGui/QResizeEvent>
 #include "utils/Logger.h"
 /*!

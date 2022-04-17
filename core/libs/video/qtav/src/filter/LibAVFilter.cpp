@@ -20,13 +20,13 @@
  *
  * ============================================================ */
 
-#include "QtAV/LibAVFilter.h"
-#include <QtCore/QSharedPointer>
-#include "QtAV/private/Filter_p.h"
-#include "QtAV/Statistics.h"
-#include "QtAV/AudioFrame.h"
-#include "QtAV/VideoFrame.h"
-#include "QtAV/private/AVCompat.h"
+#include "LibAVFilter.h"
+#include <QSharedPointer>
+#include "private/Filter_p.h"
+#include "Statistics.h"
+#include "AudioFrame.h"
+#include "VideoFrame.h"
+#include "private/AVCompat.h"
 #include "utils/internal.h"
 #include "utils/Logger.h"
 

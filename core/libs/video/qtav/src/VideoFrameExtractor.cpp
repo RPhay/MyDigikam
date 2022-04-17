@@ -20,19 +20,19 @@
  *
  * ============================================================ */
 
-#include "QtAV/VideoFrameExtractor.h"
-#include <QtCore/QCoreApplication>
-#include <QtCore/QQueue>
-#include <QtCore/QRunnable>
-#include <QtCore/QScopedPointer>
-#include <QtCore/QStringList>
-#include <QtCore/QThread>
-#include <QtCore/QMutex>
-#include <QtCore/QMutexLocker>
-#include "QtAV/VideoCapture.h"
-#include "QtAV/VideoDecoder.h"
-#include "QtAV/AVDemuxer.h"
-#include "QtAV/Packet.h"
+#include "VideoFrameExtractor.h"
+#include <QCoreApplication>
+#include <QQueue>
+#include <QRunnable>
+#include <QScopedPointer>
+#include <QStringList>
+#include <QThread>
+#include <QMutex>
+#include <QMutexLocker>
+#include "VideoCapture.h"
+#include "VideoDecoder.h"
+#include "AVDemuxer.h"
+#include "Packet.h"
 #include "utils/BlockingQueue.h"
 #include "utils/Logger.h"
 

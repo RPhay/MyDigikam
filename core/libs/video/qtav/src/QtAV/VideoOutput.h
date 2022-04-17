@@ -23,7 +23,7 @@
 #ifndef QTAV_VIDEO_OUTPUT_H
 #define QTAV_VIDEO_OUTPUT_H
 
-#include <QtCore/QObject>
+#include <QObject>
 #include <QtAV/VideoRenderer.h>
 
 namespace QtAV

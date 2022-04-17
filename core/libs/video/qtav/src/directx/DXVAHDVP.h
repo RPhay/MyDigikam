@@ -22,7 +22,7 @@
 
 #ifndef QTAV_D3D9VPP_H
 #define QTAV_D3D9VPP_H
-#include <QtCore/QRect>
+#include <QRect>
 #include "directx/dxcompat.h"
 #include <d3d9.h>
 #include <dxvahd.h>

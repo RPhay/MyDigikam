@@ -20,27 +20,27 @@
  *
  * ============================================================ */
 
-#include "QtAV/Subtitle.h"
-#include "QtAV/private/SubtitleProcessor.h"
+#include "Subtitle.h"
+#include "private/SubtitleProcessor.h"
 #include <algorithm>
-#include <QtCore/QBuffer>
-#include <QtCore/QDir>
-#include <QtCore/QFile>
-#include <QtCore/QFileInfo>
-#include <QtCore/QIODevice>
-#include <QtCore/QList>
-#include <QtCore/QRunnable>
-#include <QtCore/QThreadPool>
+#include <QBuffer>
+#include <QDir>
+#include <QFile>
+#include <QFileInfo>
+#include <QIODevice>
+#include <QList>
+#include <QRunnable>
+#include <QThreadPool>
 #if QT_VERSION < QT_VERSION_CHECK(6, 0, 0)
-#include <QtCore/QTextCodec>
+#include <QTextCodec>
 #endif
-#include <QtCore/QTextStream>
-#include <QtCore/QMutexLocker>
+#include <QTextStream>
+#include <QMutexLocker>
 #if QT_VERSION >= QT_VERSION_CHECK(6, 0, 0)
-#include <QtCore/QRegularExpression>
+#include <QRegularExpression>
 using QRegExp = QRegularExpression;
 #else
-#include <QtCore/QRegExp>
+#include <QRegExp>
 #endif
 #include "subtitle/CharsetDetector.h"
 #include "utils/Logger.h"

@@ -23,9 +23,9 @@
 #ifndef QTAV_FILTERMANAGER_H
 #define QTAV_FILTERMANAGER_H
 
-#include <QtCore/QList>
-#include "QtAV/Filter.h" // signal qobj parameter
-#include "QtAV/QtAV_Global.h"
+#include <QList>
+#include "Filter.h" // signal qobj parameter
+#include "QtAV_Global.h"
 
 namespace QtAV
 {

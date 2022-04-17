@@ -18,15 +18,15 @@
     License along with this library; if not, write to the Free Software
     Foundation, Inc., 51 Franklin Street, Fifth Floor, Boston, MA  02110-1301  USA
 ******************************************************************************/
-#include "QtAV/VideoCapture.h"
-#include <QtCore/QCoreApplication>
-#include <QtCore/QDir>
-#include <QtCore/QRunnable>
-#include <QtCore/QThreadPool>
+#include "VideoCapture.h"
+#include <QCoreApplication>
+#include <QDir>
+#include <QRunnable>
+#include <QThreadPool>
 #if QT_VERSION < QT_VERSION_CHECK(5, 0, 0)
 #include <QtGui/QDesktopServices>
 #else
-#include <QtCore/QStandardPaths>
+#include <QStandardPaths>
 #endif
 #include "utils/Logger.h"
 

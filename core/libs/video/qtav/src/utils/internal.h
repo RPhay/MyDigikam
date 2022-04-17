@@ -23,10 +23,10 @@
 #ifndef QTAV_INTERNAL_H
 #define QTAV_INTERNAL_H
 
-#include <QtCore/QString>
-#include <QtCore/QVariant>
-#include <QtCore/QObject>
-#include "QtAV/private/AVCompat.h"
+#include <QString>
+#include <QVariant>
+#include <QObject>
+#include "private/AVCompat.h"
 
 namespace QtAV
 {

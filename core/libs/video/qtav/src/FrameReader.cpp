@@ -20,11 +20,11 @@
  *
  * ============================================================ */
 
-#include "QtAV/FrameReader.h"
-#include <QtCore/QQueue>
-#include <QtCore/QThread>
-#include "QtAV/AVDemuxer.h"
-#include "QtAV/VideoDecoder.h"
+#include "FrameReader.h"
+#include <QQueue>
+#include <QThread>
+#include "AVDemuxer.h"
+#include "VideoDecoder.h"
 #include "utils/BlockingQueue.h"
 #include "utils/Logger.h"
 

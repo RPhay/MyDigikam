@@ -22,13 +22,13 @@
 
 #include "OpenGLHelper.h"
 #include <string.h> //strstr
-#include <QtCore/QCoreApplication>
+#include <QCoreApplication>
 #include <QtGui/QMatrix4x4>
 #if QT_VERSION >= QT_VERSION_CHECK(6, 0, 0)
-#include <QtCore/QRegularExpression>
+#include <QRegularExpression>
 using QRegExp = QRegularExpression;
 #else
-#include <QtCore/QRegExp>
+#include <QRegExp>
 #endif
 #if QT_VERSION < QT_VERSION_CHECK(5, 0, 0)
 #if QT_VERSION >= QT_VERSION_CHECK(4, 8, 0)

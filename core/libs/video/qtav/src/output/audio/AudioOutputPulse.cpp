@@ -20,12 +20,12 @@
  *
  * ============================================================ */
 
-#include "QtAV/private/AudioOutputBackend.h"
-#include <QtCore/QCoreApplication>
-#include <QtCore/QMetaObject>
+#include "private/AudioOutputBackend.h"
+#include <QCoreApplication>
+#include <QMetaObject>
 #include <pulse/pulseaudio.h>
-#include "QtAV/private/mkid.h"
-#include "QtAV/private/factory.h"
+#include "private/mkid.h"
+#include "private/factory.h"
 #include "utils/Logger.h"
 
 // KDE includes

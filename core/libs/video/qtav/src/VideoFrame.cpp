@@ -20,13 +20,13 @@
  *
  * ============================================================ */
 
-#include "QtAV/VideoFrame.h"
-#include "QtAV/private/Frame_p.h"
-#include "QtAV/SurfaceInterop.h"
+#include "VideoFrame.h"
+#include "private/Frame_p.h"
+#include "SurfaceInterop.h"
 #include "ImageConverter.h"
-#include <QtCore/QSharedPointer>
+#include <QSharedPointer>
 #include <QtGui/QImage>
-#include "QtAV/private/AVCompat.h"
+#include "private/AVCompat.h"
 #include "utils/GPUMemCopy.h"
 #include "utils/Logger.h"
 

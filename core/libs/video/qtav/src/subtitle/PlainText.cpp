@@ -21,7 +21,7 @@
  * ============================================================ */
 
 #include "PlainText.h"
-#include "QtAV/QtAV_Global.h"
+#include "QtAV_Global.h"
 #include <stdio.h>
 #include <string.h>
 

@@ -20,8 +20,8 @@
  *
  * ============================================================ */
 
-#include "QtAV/private/AudioOutputBackend.h"
-#include "QtAV/private/factory.h"
+#include "private/AudioOutputBackend.h"
+#include "private/factory.h"
 #include "utils/Logger.h"
 
 namespace QtAV

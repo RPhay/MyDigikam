@@ -20,12 +20,12 @@
  *
  * ============================================================ */
 
-#include "QtAV/private/AudioOutputBackend.h"
-#include "QtAV/private/mkid.h"
-#include "QtAV/private/factory.h"
-#include <QtCore/QLibrary>
-#include <QtCore/QSemaphore>
-#include "QtAV/private/AVCompat.h"
+#include "private/AudioOutputBackend.h"
+#include "private/mkid.h"
+#include "private/factory.h"
+#include <QLibrary>
+#include <QSemaphore>
+#include "private/AVCompat.h"
 #include "utils/Logger.h"
 #define DX_LOG_COMPONENT "XAudio2"
 #include "utils/DirectXHelper.h"

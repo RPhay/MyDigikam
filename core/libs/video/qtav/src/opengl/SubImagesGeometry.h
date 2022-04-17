@@ -23,8 +23,8 @@
 #ifndef QTAV_SUBIMAGESGEOMETRY_H
 #define QTAV_SUBIMAGESGEOMETRY_H
 
-#include "QtAV/Geometry.h"
-#include "QtAV/SubImage.h"
+#include "Geometry.h"
+#include "SubImage.h"
 
 namespace QtAV
 {

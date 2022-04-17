@@ -20,11 +20,11 @@
  *
  * ============================================================ */
 
-#include "QtAV/private/SubtitleProcessor.h"
-#include "QtAV/private/factory.h"
-#include "QtAV/AVDemuxer.h"
-#include "QtAV/Packet.h"
-#include "QtAV/private/AVCompat.h"
+#include "private/SubtitleProcessor.h"
+#include "private/factory.h"
+#include "AVDemuxer.h"
+#include "Packet.h"
+#include "private/AVCompat.h"
 #include "PlainText.h"
 #include "utils/Logger.h"
 #include <QIODevice>

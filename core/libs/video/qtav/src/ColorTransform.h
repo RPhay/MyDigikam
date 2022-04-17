@@ -23,7 +23,7 @@
 #ifndef QTAV_COLORTRANSFORM_H
 #define QTAV_COLORTRANSFORM_H
 
-#include <QtCore/QSharedDataPointer>
+#include <QSharedDataPointer>
 #include <QtGui/QMatrix4x4>
 #include <QtAV/QtAV_Global.h>
 // TODO: kernel QGenericMatrix<M,N>

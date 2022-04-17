@@ -20,17 +20,17 @@
  *
  * ============================================================ */
 
-#include "QtAV/GLSLFilter.h"
-#include "QtAV/private/Filter_p.h"
-#include "QtAV/VideoFrame.h"
+#include "GLSLFilter.h"
+#include "private/Filter_p.h"
+#include "VideoFrame.h"
 #include "opengl/OpenGLHelper.h"
 #if QT_VERSION >= QT_VERSION_CHECK(5, 0, 0)
 #include <QOpenGLFramebufferObject>
 #else
 #include <QtOpenGL/QGLFramebufferObject>
 #endif
-#include "QtAV/SurfaceInterop.h"
-#include "QtAV/OpenGLVideo.h"
+#include "SurfaceInterop.h"
+#include "OpenGLVideo.h"
 
 namespace QtAV
 {

@@ -20,12 +20,12 @@
  *
  * ============================================================ */
 
-#include "QtAV/private/AudioOutputBackend.h"
-#include "QtAV/private/mkid.h"
-#include "QtAV/private/factory.h"
-#include <QtCore/QMutex>
-#include <QtCore/QWaitCondition>
-#include <QtCore/QVector>
+#include "private/AudioOutputBackend.h"
+#include "private/mkid.h"
+#include "private/factory.h"
+#include <QMutex>
+#include <QWaitCondition>
+#include <QVector>
 
 #if QTAV_HAVE(CAPI)
 #define OPENAL_CAPI_NS // CAPI_LINK_OPENAL will override it

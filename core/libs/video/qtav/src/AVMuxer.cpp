@@ -20,11 +20,11 @@
  *
  * ============================================================ */
 
-#include "QtAV/AVMuxer.h"
-#include "QtAV/private/AVCompat.h"
-#include "QtAV/MediaIO.h"
-#include "QtAV/VideoEncoder.h"
-#include "QtAV/AudioEncoder.h"
+#include "AVMuxer.h"
+#include "private/AVCompat.h"
+#include "MediaIO.h"
+#include "VideoEncoder.h"
+#include "AudioEncoder.h"
 #include "utils/internal.h"
 #include "utils/Logger.h"
 
