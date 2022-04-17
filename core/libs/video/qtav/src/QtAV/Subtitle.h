@@ -51,7 +51,7 @@ public:
     {
     }
 
-    // valied: begin < end
+    // valide: begin < end
     bool isValid() const { return begin < end;}
     operator bool() const { return isValid();}
     bool operator !() const { return !isValid();}
@@ -67,6 +67,7 @@ class Q_AV_EXPORT Subtitle : public QObject
 {
     Q_OBJECT
     Q_PROPERTY(QByteArray codec READ codec WRITE setCodec NOTIFY codecChanged)
+
     // QList<SubtitleProcessorId>
     Q_PROPERTY(QStringList engines READ engines WRITE setEngines NOTIFY enginesChanged)
     Q_PROPERTY(QString engine READ engine NOTIFY engineChanged)
@@ -81,6 +82,7 @@ class Q_AV_EXPORT Subtitle : public QObject
     Q_PROPERTY(QString text READ getText)
     Q_PROPERTY(bool loaded READ isLoaded)
     Q_PROPERTY(bool canRender READ canRender NOTIFY canRenderChanged)
+
     // font properties for libass engine
     Q_PROPERTY(QString fontFile READ fontFile WRITE setFontFile NOTIFY fontFileChanged)
     Q_PROPERTY(QString fontsDir READ fontsDir WRITE setFontsDir NOTIFY fontsDirChanged)
@@ -128,6 +130,7 @@ public:
     bool fuzzyMatch() const;
     void setRawData(const QByteArray& data);
     QByteArray rawData() const;
+
     /*!
      * \brief setFileName
      * the given name will be in the 1st place to try to open(if using fuzzy match). then files in suffixes() order
@@ -136,12 +139,14 @@ public:
      */
     void setFileName(const QString& name);
     QString fileName() const;
+
     /*!
      * \brief setDirs
      * Set subtitle search directories. Video's dir will always be added.
      */
     void setDirs(const QStringList& value);
     QStringList dirs() const;
+
     /*!
      * \brief supportedFormats
      * the suffix names supported by all engines. for example ["ass", "ssa"]
@@ -189,18 +194,23 @@ public:
       */
     QImage getImage(int width, int height, QRect* boundingRect = 0);
     SubImageSet getSubImages(int width, int height, QRect* boundingRect = 0);
+
     // used for embedded subtitles.
+
     /*!
      * \brief processHeader
      * Always called if switch to a new internal subtitle stream. But header data can be empty
      * Used by libass to set style etc.
      */
     bool processHeader(const QByteArray &codec, const QByteArray& data);
+
     // ffmpeg decodes subtitle lines and call processLine. if AVPacket contains plain text, no decoding is ok
+
     bool processLine(const QByteArray& data, qreal pts = -1, qreal duration = 0);
 
     QString fontFile() const;
     void setFontFile(const QString& value);
+
     /*!
      * \brief fontsDir
      * Not tested for dwrite provider. FontConfig can work.
@@ -209,7 +219,9 @@ public:
     void setFontsDir(const QString& value);
     bool isFontFileForced() const;
     void setFontFileForced(bool value);
+
 public Q_SLOTS:
+
     /*!
      * \brief start
      * start to process the whole subtitle content in a thread
@@ -217,14 +229,18 @@ public Q_SLOTS:
     void load();
     void loadAsync();
     void setTimestamp(qreal t);
+
 Q_SIGNALS:
+
     // TODO: also add to AVPlayer?
+
     /// empty path if load from raw data
     void loaded(const QString& path = QString());
     void canRenderChanged();
     void codecChanged();
     void enginesChanged();
     void fuzzyMatchChanged();
+
     /*!
      * \brief contentChanged
      * emitted when text content changed.
@@ -240,18 +256,26 @@ Q_SIGNALS:
     void fontFileChanged();
     void fontsDirChanged();
     void fontFileForcedChanged();
+
 private:
+
     void checkCapability();
+
     class Private;
     Private *priv;
 };
 
 // internal use
-class Q_AV_EXPORT SubtitleAPIProxy {
+
+class Q_AV_EXPORT SubtitleAPIProxy
+{
 public:
+
     SubtitleAPIProxy(QObject* obj);
     void setSubtitle(Subtitle *sub);
+
     // API from Subtitle
+
     /*!
      * \brief setCodec
      * set subtitle encoding that supported by QTextCodec. subtitle will be reloaded
@@ -265,9 +289,11 @@ public:
     QString engine() const;
     void setFuzzyMatch(bool value);
     bool fuzzyMatch() const;
-    //always use exact file path by setFile(). file name is used internally
+
+    // always use exact file path by setFile(). file name is used internally
     //void setFileName(const QString& name);
     //QString fileName() const;
+
     void setDirs(const QStringList& value);
     QStringList dirs() const;
     QStringList supportedSuffixes() const;
@@ -285,6 +311,7 @@ public:
     void setFontFileForced(bool value);
 
     // API from PlayerSubtitle
+
     /*
     void setFile(const QString& file);
     QString file() const;

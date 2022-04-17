@@ -53,6 +53,13 @@ if(ENABLE_MEDIAPLAYER)
                                digikamcore_EXPORTS
     )
 
+    target_compile_definitions(core_videotools_obj
+                               PRIVATE
+                               ${MEDIAPLAYER_DEFINITIONS}
+    )
+
+    # ---
+
     add_subdirectory(qtav)
 
 endif()

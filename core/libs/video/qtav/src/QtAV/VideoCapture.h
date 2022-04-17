@@ -20,8 +20,8 @@
  *
  * ============================================================ */
 
-#ifndef QTAV_VIDEOCAPTURE_H
-#define QTAV_VIDEOCAPTURE_H
+#ifndef QTAV_VIDEO_CAPTURE_H
+#define QTAV_VIDEO_CAPTURE_H
 
 #include <QtCore/QObject>
 #include <QtGui/QImage>
@@ -31,7 +31,8 @@
 namespace QtAV
 {
 
-//on capture per thread or all in one thread?
+// One capture per thread or all in one thread?
+
 class Q_AV_EXPORT VideoCapture : public QObject
 {
     Q_OBJECT
@@ -42,11 +43,16 @@ class Q_AV_EXPORT VideoCapture : public QObject
     Q_PROPERTY(int quality READ quality WRITE setQuality NOTIFY qualityChanged)
     Q_PROPERTY(QString captureName READ captureName WRITE setCaptureName NOTIFY captureNameChanged)
     Q_PROPERTY(QString captureDir READ captureDir WRITE setCaptureDir NOTIFY captureDirChanged)
+
 public:
+
     explicit VideoCapture(QObject *parent = 0);
+
     // TODO: if async is true, the cloned hw frame shares the same interop object with original frame, so interop obj may do 2 map() at the same time. It's not safe
+
     void setAsync(bool value = true);
     bool isAsync() const;
+
     /*!
      * \brief setAutoSave
      *  If auto save is true, then the captured video frame will be saved as a file when frame is available.
@@ -54,6 +60,7 @@ public:
      */
     void setAutoSave(bool value = true);
     bool autoSave() const;
+
     /*!
      * \brief setOriginalFormat
      *  Save the original frame, can be YUV, NV12 etc. No format converting. default is false
@@ -62,6 +69,7 @@ public:
      */
     void setOriginalFormat(bool value = true);
     bool isOriginalFormat() const;
+
     /*!
      * \brief setFormat
      *  Set saved format. can be "PNG", "jpg" etc. Not be used if save raw frame data.
@@ -69,6 +77,7 @@ public:
      */
     void setSaveFormat(const QString& format);
     QString saveFormat() const;
+
     /*!
      * \brief setQuality
      *  Set saved image quality. Not be used if save original frame data.
@@ -76,6 +85,7 @@ public:
      */
     void setQuality(int value);
     int quality() const;
+
     /*!
      * \brief name
      * suffix is auto add
@@ -86,16 +96,22 @@ public:
     QString captureName() const;
     void setCaptureDir(const QString& value);
     QString captureDir() const;
+
 public Q_SLOTS:
+
     void capture();
+
 Q_SIGNALS:
+
     void requested();
+
     /*use it to popup a dialog for selecting dir, name etc. TODO: block avthread if not async*/
     /*!
      * \brief frameAvailable
      * Emitted when requested frame is available.
      */
     void frameAvailable(const QtAV::VideoFrame& frame);
+
     /*!
      * \brief imageCaptured
      * Emitted when captured video frame is converted to a QImage.
@@ -103,6 +119,7 @@ Q_SIGNALS:
      */
     void imageCaptured(const QImage& image); //TODO: emit only if not original format is set?
     void failed();
+
     /*!
      * \brief saved
      * Only for autoSave is true. Emitted when captured frame is saved.
@@ -117,20 +134,29 @@ Q_SIGNALS:
     void qualityChanged();
     void captureNameChanged();
     void captureDirChanged();
+
 private Q_SLOTS:
+
     void handleAppQuit();
+
 private:
+
     void setVideoFrame(const VideoFrame& frame);
+
     // It's called by VideoThread after immediatly setVideoFrame(). Will emit ready()
+
     void start();
 
     friend class CaptureTask;
     friend class VideoThread;
+
     bool async;
     bool auto_save;
     bool original_fmt;
-    //TODO: use blocking queue? If not, the parameters will change when thre previous is not finished
-    //or use a capture event that wrapper all these parameters
+
+    // TODO: use blocking queue? If not, the parameters will change when thre previous is not finished
+    // or use a capture event that wrapper all these parameters
+
     int qual;
     QImage::Format qfmt;
     QString fmt;
@@ -139,4 +165,5 @@ private:
 };
 
 } // namespace QtAV
-#endif // QTAV_VIDEOCAPTURE_H
+
+#endif // QTAV_VIDEO_CAPTURE_H

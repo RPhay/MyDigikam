@@ -52,7 +52,7 @@ public:
 
 VidPlayerDlg::VidPlayerDlg(const QString& file, QWidget* const parent)
     : QDialog(parent),
-      d(new Private)
+      d      (new Private)
 {
     setModal(false);
     setWindowTitle(file);
@@ -64,7 +64,7 @@ VidPlayerDlg::VidPlayerDlg(const QString& file, QWidget* const parent)
 
     QGridLayout* const grid = new QGridLayout(this);
     grid->setSpacing(qMin(QApplication::style()->pixelMetric(QStyle::PM_LayoutHorizontalSpacing),
-                             QApplication::style()->pixelMetric(QStyle::PM_LayoutVerticalSpacing)));
+                          QApplication::style()->pixelMetric(QStyle::PM_LayoutVerticalSpacing)));
     grid->addWidget(d->player, 0, 0, 1, 1);
     grid->setColumnStretch(0, 10);
     setLayout(grid);

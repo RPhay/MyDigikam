@@ -20,16 +20,23 @@
  *
  * ============================================================ */
 
-#ifndef QTAV_VIDEOSHADEROBJECT_H
-#define QTAV_VIDEOSHADEROBJECT_H
-#include <QtAV/VideoShader.h>
-#include <QtCore/QObject>
-#include <QtCore/QVector>
+#ifndef QTAV_VIDEO_SHADER_OBJECT_H
+#define QTAV_VIDEO_SHADER_OBJECT_H
+
+#include <QObject>
+#include <QVector>
+
+// Local includes
+
+#include "VideoShader.h"
 
 namespace QtAV
 {
+
 // check and auto update properties in shader
+
 class VideoShaderObjectPrivate;
+
 /*!
  * \brief The VideoShaderObject class
  * User defined uniform names are bound to class meta properties (property signals are required)
@@ -40,18 +47,27 @@ class Q_AV_EXPORT VideoShaderObject : public QObject, public VideoShader
 {
     DPTR_DECLARE_PRIVATE(VideoShaderObject)
     Q_OBJECT
+
 public:
+
     VideoShaderObject(QObject* parent = 0);
+
 protected:
+
     VideoShaderObject(VideoShaderObjectPrivate &d, QObject* parent = 0);
     bool event(QEvent *event) Q_DECL_OVERRIDE;
+
 private Q_SLOTS:
+
     void propertyChanged(int id);
+
 private:
+
     void programReady() Q_DECL_OVERRIDE Q_DECL_FINAL;
 };
 
 class DynamicShaderObjectPrivate;
+
 /*!
  * \brief The DynamicShaderObject class
  * Able to set custom shader code
@@ -63,7 +79,9 @@ class Q_AV_EXPORT DynamicShaderObject : public VideoShaderObject
     Q_PROPERTY(QString header READ header WRITE setHeader NOTIFY headerChanged)
     Q_PROPERTY(QString sample READ sample WRITE setSample NOTIFY sampleChanged)
     Q_PROPERTY(QString postProcess READ postProcess WRITE setPostProcess NOTIFY postProcessChanged)
+
 public:
+
     DynamicShaderObject(QObject* parent = 0);
     QString header() const;
     void setHeader(const QString& text);
@@ -71,16 +89,24 @@ public:
     void setSample(const QString& text);
     QString postProcess() const;
     void setPostProcess(const QString& text);
+
 Q_SIGNALS:
+
     void headerChanged();
     void sampleChanged();
     void postProcessChanged();
+
 protected:
+
     DynamicShaderObject(DynamicShaderObjectPrivate &d, QObject* parent = 0);
+
 private:
+
     const char* userShaderHeader(QOpenGLShader::ShaderType st) const Q_DECL_OVERRIDE;
     const char* userSample() const Q_DECL_OVERRIDE;
     const char* userPostProcess() const Q_DECL_OVERRIDE;
 };
+
 } // namespace QtAV
-#endif //QTAV_VIDEOSHADEROBJECT_H
+
+#endif //QTAV_VIDEO_SHADER_OBJECT_H

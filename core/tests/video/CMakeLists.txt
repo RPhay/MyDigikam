@@ -37,6 +37,11 @@ target_link_libraries(qtavcodecs_cli
                       ${COMMON_TEST_LINK}
 )
 
+target_compile_definitions(qtavcodecs_cli
+                           PRIVATE
+                           ${MEDIAPLAYER_DEFINITIONS}
+)
+
 # -------------------------------------------------
 
 add_executable(player_gui ${CMAKE_CURRENT_SOURCE_DIR}/player_gui.cpp)

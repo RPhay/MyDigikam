@@ -52,7 +52,7 @@ extern "C"
 
 #endif
 
-// QtAV includes
+// Mediaplayer includes
 
 #ifdef HAVE_MEDIAPLAYER
 #   include "ffmpegconfighelper.h"

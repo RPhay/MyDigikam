@@ -58,14 +58,14 @@ namespace version
     };
 
     static const char name[] = { Major + '0', '.', Minor + '0', '.', Patch + '0', 0 };
-    
-} //namespace version
+
+} // namespace version
 
 // set lib name with version
 
 enum
 {
-    NoVersion = -1, /// library name without major version, for example libz.so
+    NoVersion  = -1, /// library name without major version, for example libz.so
     EndVersion = -2
 };
 
@@ -111,7 +111,6 @@ protected:
     inline void* resolve(const char* sym, bool try_);
 };
 
-    
 } // namespace capi
 
 /// DLL_CLASS is a library loader and symbols resolver class. Must implement api like capi::dso (the same function name and return type, but string parameter type can be different):
@@ -198,7 +197,7 @@ protected:
  */
 #ifndef CAPI_LINKAGE
 #   define CAPI_LINKAGE
-#endif //CAPI_LINKAGE
+#endif
 
 #define CAPI_NS_DEFINE_T_V(R, name, ARG_T, ARG_T_V, ARG_V) \
     namespace capi { \
@@ -260,13 +259,13 @@ protected:
 #   define DEBUG_LOAD
 #   define DEBUG_RESOLVE
 #   define DEBUG_CALL
-#endif //DEBUG
+#endif
 
 #if defined(DEBUG) || defined(DEBUG_LOAD) || defined(DEBUG_RESOLVE) || defined(DEBUG_CALL)
 #   define CAPI_LOG(STDWHERE, fmt, ...) do {fprintf(STDWHERE, "[%s] %s@%d: " fmt "\n", __FILE__, CAPI_FUNC_INFO, __LINE__, ##__VA_ARGS__); fflush(0);} while(0);
 #else
 #   define CAPI_LOG(...)
-#endif //DEBUG
+#endif
 
 #ifdef DEBUG_LOAD
 #   define CAPI_DBG_LOAD(...) EXPAND(CAPI_LOG(stdout, ##__VA_ARGS__))
@@ -274,7 +273,7 @@ protected:
 #else
 #   define CAPI_DBG_LOAD(...)
 #   define CAPI_WARN_LOAD(...)
-#endif //DEBUG_LOAD
+#endif
 
 #ifdef DEBUG_RESOLVE
 #   define CAPI_DBG_RESOLVE(...) EXPAND(CAPI_LOG(stdout, ##__VA_ARGS__))
@@ -282,7 +281,7 @@ protected:
 #else
 #   define CAPI_DBG_RESOLVE(...)
 #   define CAPI_WARN_RESOLVE(...)
-#endif //DEBUG_RESOLVE
+#endif
 
 #ifdef DEBUG_CALL
 #   define CAPI_DBG_CALL(...) EXPAND(CAPI_LOG(stdout, ##__VA_ARGS__))
@@ -290,9 +289,10 @@ protected:
 #else
 #   define CAPI_DBG_CALL(...)
 #   define CAPI_WARN_CALL(...)
-#endif //DEBUG_CALL
+#endif
 
-//fully expand. used by VC. VC will not expand __VA_ARGS__ but treats it as 1 parameter
+// fully expand. used by VC. VC will not expand __VA_ARGS__ but treats it as 1 parameter
+
 #define EXPAND(expr) expr //TODO: rename CAPI_EXPAND
 #if defined(WIN64) || defined(_WIN64) || defined(__WIN64__) \
     || defined(WIN32) || defined(_WIN32) || defined(__WIN32__) || defined(__NT__) \
@@ -304,7 +304,7 @@ protected:
 #       if !WINAPI_FAMILY_PARTITION(WINAPI_PARTITION_DESKTOP)
 #           define CAPI_TARGET_OS_WINRT 1
 #       endif
-#   endif //WINAPI_FAMILY
+#   endif
 #endif
 
 #if defined(__APPLE__)
@@ -322,6 +322,7 @@ namespace internal
 
 // the following code is for the case DLL=QLibrary + QT_NO_CAST_FROM_ASCII
 // you can add a new qstr_wrap like class and a specialization of dso_trait to support a new string type before/after include "capi.h"
+
 struct qstr_wrap
 {
     static const char* fromLatin1(const char* s) {return s;}
@@ -355,19 +356,19 @@ template <class DLL> class dll_helper
     typename dso_trait<DLL>::str_t strType(const char* s) {
         return dso_trait<DLL>::qstr_t::fromLatin1(s);
     }
-    
+
 public:
-    
+
     dll_helper(const char* names[], const int versions[] = kDefaultVersions)
     {
         static bool is_1st = true;
-        
+
         if (is_1st)
         {
             is_1st = false;
             fprintf(stderr, "capi::version: %s\n", ::capi::version::name); fflush(0);
         }
-        
+
         for (int i = 0; names[i]; ++i)
         {
             for (int j = 0; versions[j] != ::capi::EndVersion; ++j)
@@ -376,7 +377,7 @@ public:
                     m_lib.setFileName(strType(names[i]));
                 else
                     m_lib.setFileNameAndVersion(strType(names[i]), versions[j]);
-                
+
                 if (m_lib.load())
                 {
                     CAPI_DBG_LOAD("capi loaded {library name: %s, version: %d}", names[i], versions[j]);
@@ -387,17 +388,17 @@ public:
             }
         }
     }
-    
+
     virtual ~dll_helper()
     {
         m_lib.unload();
     }
-    
+
     bool isLoaded() const
     {
         return m_lib.isLoaded();
     }
-    
+
     void* resolve(const char *symbol)
     {
         return (void*)m_lib.resolve(symbol);
@@ -416,7 +417,7 @@ public:
 #   endif
 #endif
 
-} //namespace internal
+} // namespace internal
 
 #ifdef CAPI_TARGET_OS_WIN
 #   define CAPI_SNPRINTF _snprintf
@@ -485,6 +486,7 @@ bool dso::unload()
         return false;
 #endif
     handle = NULL; //TODO: check ref?
+
     return true;
 }
 
@@ -499,7 +501,7 @@ void* dso::resolve(const char* sym, bool try_)
         CAPI_SNPRINTF(_s, sizeof(_s), "_%s", sym);
         s = _s;
     }
-    
+
     CAPI_DBG_RESOLVE("dso.resolve(\"%s\", %d)", s, try_);
 
 #ifdef CAPI_TARGET_OS_WIN
@@ -512,11 +514,12 @@ void* dso::resolve(const char* sym, bool try_)
 
     return ptr;
 }
-} //namespace capi
+} // namespace capi
 
 #if defined(_MSC_VER)
 #   pragma warning(disable:4098) //vc return void
-#endif //_MSC_VER
+#endif
+
 #ifdef __GNUC__
     // gcc: ((T*)0)->member
     // no #pragma GCC diagnostic push/pop around because code is defined as a macro
@@ -535,10 +538,12 @@ void* dso::resolve(const char* sym, bool try_)
     CAPI_NS_DEFINE_T_V(R, name, ARG_T, ARG_T_V, ARG_V)
 
 /* declare and define the symbol resolvers*/
+
 #define EMPTY_LINKAGE
 #define CAPI_DEFINE_RESOLVER_X(R, name, sym, ARG_T, ARG_T_V, ARG_V) CAPI_DEFINE_M_RESOLVER_T_V(R, EMPTY_LINKAGE, name, sym, ARG_T, ARG_T_V, ARG_V)
 
 // api with linkage modifier
+
 #define CAPI_DEFINE_M_RESOLVER_X(R, M, name, sym, ARG_T, ARG_T_V, ARG_V) CAPI_DEFINE_M_RESOLVER_T_V(R, M, name, sym, ARG_T, ARG_T_V, ARG_V)
 
 #define CAPI_DEFINE2_X(R, name, sym, ARG_T, ARG_T_V, ARG_V) \

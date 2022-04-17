@@ -20,27 +20,36 @@
  *
  * ============================================================ */
 
-#ifndef QTAV_VIDEOFORMAT_H
-#define QTAV_VIDEOFORMAT_H
+#ifndef QTAV_VIDEO_FORMAT_H
+#define QTAV_VIDEO_FORMAT_H
 
-#include <QtCore/QSharedDataPointer>
-#include <QtCore/QString>
-#include <QtGui/QImage>
-#include <QtAV/QtAV_Global.h>
+// Qt includes
+
+#include <QSharedDataPointer>
+#include <QString>
+#include <QImage>
+
+// Local includes
+
+#include "QtAV_Global.h"
 
 QT_BEGIN_NAMESPACE
 class QDebug;
 QT_END_NAMESPACE
+
 namespace QtAV
 {
+
 class VideoFormatPrivate;
+
 /*!
  * \brief The VideoFormat class
  * Describes the layout of video data. Some properties like display aspect ratio, color space and color range, which describes how to display the video frame, should be in VideoFrame class.
-+ */
+ */
 class Q_AV_EXPORT VideoFormat
 {
 public:
+
     /*!
      * \brief The PixelFormat enum
      * 32 bit rgba format enum name indicates it's channel layout. For example,
@@ -50,14 +59,15 @@ public:
      * TODO: 0RGB, XRGB, not native endia use R8 or R16. ffmpeg does not have native endian format
      * currently 0rgb xrgb use rgba formats and check hasAlpha() is required
      */
-    enum PixelFormat {
+    enum PixelFormat
+    {
         Format_Invalid = -1,
         Format_ARGB32, // AARRGGBB or 00RRGGBB, check hasAlpha is required
-        Format_BGRA32, //BBGGRRAA
+        Format_BGRA32, // BBGGRRAA
         Format_ABGR32, // QImage.RGBA8888 le
         Format_RGBA32, // QImage. no
-        Format_RGB32, // 0xAARRGGBB native endian. same as QImage::Format_ARGB32. be: ARGB32, le: BGRA32
-        Format_BGR32, // 0xAABBGGRR native endian
+        Format_RGB32,  // 0xAARRGGBB native endian. same as QImage::Format_ARGB32. be: ARGB32, le: BGRA32
+        Format_BGR32,  // 0xAABBGGRR native endian
         Format_RGB24,
         Format_BGR24,
         Format_RGB565,
@@ -65,7 +75,8 @@ public:
         Format_RGB555,
         Format_BGR555,
 
-        //http://www.fourcc.org/yuv.php
+        // http://www.fourcc.org/yuv.php
+
         Format_AYUV444,
         Format_YUV444P,
         Format_YUV422P,
@@ -73,23 +84,23 @@ public:
         Format_YUV411P,
         Format_YUV410P,
         Format_YV12,
-        Format_UYVY, //422
-        Format_VYUY, //not in ffmpeg. OMX_COLOR_FormatCrYCbY
-        Format_YUYV, //422, aka yuy2
-        Format_YVYU, //422
+        Format_UYVY, // 422
+        Format_VYUY, // not in ffmpeg. OMX_COLOR_FormatCrYCbY
+        Format_YUYV, // 422, aka yuy2
+        Format_YVYU, // 422
         Format_NV12,
         Format_NV21,
         Format_IMC1,
         Format_IMC2,
-        Format_IMC3, //same as IMC1, swap U V
-        Format_IMC4, //same as IMC2, swap U V
-        Format_Y8, //GREY. single 8 bit Y plane
-        Format_Y16, //single 16 bit Y plane. LE
+        Format_IMC3, // same as IMC1, swap U V
+        Format_IMC4, // same as IMC2, swap U V
+        Format_Y8,   // GREY. single 8 bit Y plane
+        Format_Y16,  // single 16 bit Y plane. LE
 
-        Format_Jpeg, //yuvj
+        Format_Jpeg, // yuvj
 
-        //Format_CameraRaw,
-        //Format_AdobeDng,
+        // Format_CameraRaw,
+        // Format_AdobeDng,
 
         Format_YUV420P9LE,
         Format_YUV422P9LE,
@@ -122,20 +133,20 @@ public:
         Format_YUV422P16BE,
         Format_YUV444P16BE,
 
-        Format_RGB48, // native endian
+        Format_RGB48,   // native endian
         Format_RGB48LE,
         Format_RGB48BE,
         Format_BGR48,
         Format_BGR48LE,
         Format_BGR48BE,
-        Format_RGBA64, //native endian
+        Format_RGBA64,  // native endian
         Format_RGBA64LE,
         Format_RGBA64BE,
-        Format_BGRA64, //native endian
+        Format_BGRA64,  // native endian
         Format_BGRA64LE,
         Format_BGRA64BE,
 
-        Format_VYU, // for rgb422_apple texture, the layout is like rgb24: (v, y, u, )
+        Format_VYU,     // for rgb422_apple texture, the layout is like rgb24: (v, y, u, )
         Format_XYZ12,
         Format_XYZ12LE,
         Format_XYZ12BE,
@@ -143,12 +154,13 @@ public:
     };
 
     static PixelFormat pixelFormatFromImageFormat(QImage::Format format);
+
     /*!
      * \brief imageFormatFromPixelFormat
      * If returns a negative value, the QImage format is the positive one but R/G components are swapped because no direct support by QImage. QImage can swap R/G very fast.
      */
     static QImage::Format imageFormatFromPixelFormat(PixelFormat format);
-    static PixelFormat pixelFormatFromFFmpeg(int ff); //AVPixelFormat
+    static PixelFormat pixelFormatFromFFmpeg(int ff); // AVPixelFormat
     static int pixelFormatToFFmpeg(PixelFormat fmt);
     static QVector<int> pixelFormatsFFmpeg();
 
@@ -163,10 +175,12 @@ public:
     VideoFormat& operator=(VideoFormat::PixelFormat pixfmt);
     VideoFormat& operator=(QImage::Format qpixfmt);
     VideoFormat& operator=(int ffpixfmt);
+
     bool operator==(const VideoFormat &other) const;
     bool operator==(VideoFormat::PixelFormat pixfmt) const;
     bool operator==(QImage::Format qpixfmt) const;
     bool operator==(int ffpixfmt) const;
+
     bool operator!=(const VideoFormat &other) const;
     bool operator!=(VideoFormat::PixelFormat pixfmt) const;
     bool operator!=(QImage::Format qpixfmt) const;
@@ -178,6 +192,7 @@ public:
     int pixelFormatFFmpeg() const;
     QImage::Format imageFormat() const;
     QString name() const;
+
     /*!
      * \brief setPixelFormat set pixel format to format. other information like bpp will be updated
      * \param format
@@ -190,17 +205,20 @@ public:
      * \return number of channels(components) the the format. e.g. RGBA has 4 channels, NV12 is 3
      */
     int channels() const;
+
     /*!
      * \brief channels
      * \param plane
      * \return number of channels in a plane
      */
     int channels(int plane) const;
+
     /*!
      * \brief planeCount
      * \return -1 if not a valid format
      */
     int planeCount() const;
+
     /*!
      * https://wiki.videolan.org/YUV
      * bytesPerPixel()
@@ -209,12 +227,15 @@ public:
      * uyvy422 bytesPerPixel(0) = 8+8+8 = 24, while bytesPerPixel() = (2*8+8+8)/2 = 16
      */
     int bitsPerPixel() const;
+
     /// nv12: 16 for uv plane
     int bitsPerPixel(int plane) const;
+
     /// bgr24 is 24 not 32
     int bitsPerPixelPadded() const;
     int bytesPerPixel() const;
     int bytesPerPixel(int plane) const;
+
     /*!
      * \brief bitsPerComponent
      * \return number of bits per component (0 if uneven)
@@ -223,6 +244,7 @@ public:
 
     // return line size with given width
     int bytesPerLine(int width, int plane) const;
+
     /*!
      * \brief chromaWidth
      * \param lumaWidth
@@ -230,6 +252,7 @@ public:
      */
     int chromaWidth(int lumaWidth) const;
     int chromaHeight(int lumaHeight) const;
+
     /*!
      * \brief width
      * plane width for given lumaWidth in current format
@@ -237,25 +260,31 @@ public:
      */
     int width(int lumaWidth, int plane) const;
     int height(int lumaHeight, int plane) const;
+
     /*!
      * \brief normalizedWidth
      * \return 1.0 for plane <= 0. otherwise chroma width
      */
     qreal normalizedWidth(int plane) const;
     qreal normalizedHeight(int plane) const;
-    //TODO: add planeWidth()/planeHeight()
+
+    // TODO: add planeWidth()/planeHeight()
     // test AV_PIX_FMT_FLAG_XXX
+
     bool isBigEndian() const;
     bool hasPalette() const;
     bool isPseudoPaletted() const;
+
     /**
      * All values of a component are bit-wise packed end to end.
      */
     bool isBitStream() const;
+
     /**
      * Pixel format is an HW accelerated format.
      */
     bool isHWAccelerated() const;
+
     /*!
      * \brief isPlanar
      * \return true if is planar or semi planar
@@ -275,6 +304,7 @@ public:
     static bool hasAlpha(PixelFormat pixfmt);
 
 private:
+
     QSharedDataPointer<VideoFormatPrivate> d;
 };
 
@@ -288,4 +318,4 @@ Q_AV_EXPORT QDebug operator<<(QDebug debug, VideoFormat::PixelFormat pixFmt);
 Q_DECLARE_METATYPE(QtAV::VideoFormat)
 Q_DECLARE_METATYPE(QtAV::VideoFormat::PixelFormat)
 
-#endif // QTAV_VIDEOFORMAT_H
+#endif // QTAV_VIDEO_FORMAT_H

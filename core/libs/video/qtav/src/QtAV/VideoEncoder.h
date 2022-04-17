@@ -20,8 +20,8 @@
  *
  * ============================================================ */
 
-#ifndef QTAV_VIDEOENCODER_H
-#define QTAV_VIDEOENCODER_H
+#ifndef QTAV_VIDEO_ENCODER_H
+#define QTAV_VIDEO_ENCODER_H
 
 #include <QtAV/AVEncoder.h>
 #include <QtAV/VideoFrame.h>
@@ -29,8 +29,10 @@
 
 namespace QtAV
 {
+
 typedef int VideoEncoderId;
 class VideoEncoderPrivate;
+
 class Q_AV_EXPORT VideoEncoder : public AVEncoder
 {
     Q_OBJECT
@@ -40,9 +42,12 @@ class Q_AV_EXPORT VideoEncoder : public AVEncoder
     Q_PROPERTY(QtAV::VideoFormat::PixelFormat pixelFormat READ pixelFormat WRITE setPixelFormat NOTIFY pixelFormatChanged)
     Q_DISABLE_COPY(VideoEncoder)
     DPTR_DECLARE_PRIVATE(VideoEncoder)
+
 public:
+
     static QStringList supportedCodecs();
     static VideoEncoder* create(VideoEncoderId id);
+
     /*!
      * \brief create
      * create an encoder from registered names
@@ -52,6 +57,7 @@ public:
     static VideoEncoder* create(const char* name = "FFmpeg");
     virtual VideoEncoderId id() const = 0;
     QString name() const Q_DECL_OVERRIDE; //name from factory
+
     /*!
      * \brief encode
      * encode a video frame to a Packet
@@ -59,7 +65,9 @@ public:
      * \return
      */
     virtual bool encode(const VideoFrame& frame = VideoFrame()) = 0;
+
     /// output parameters
+
     /*!
      * \brief setWidth
      * set the encoded video width. The same as input frame size if value <= 0
@@ -68,7 +76,9 @@ public:
     int width() const;
     void setHeight(int value);
     int height() const;
+
     /// TODO: check avctx->supported_framerates. use frame_rate_used
+
     /*!
      * \brief setFrameRate
      * If frame rate is not set, frameRate() returns -1, but internally the default frame rate 25 will be used
@@ -77,25 +87,32 @@ public:
     void setFrameRate(qreal value);
     qreal frameRate() const;
     static qreal defaultFrameRate() { return 25;}
+
     /*!
      * \brief setPixelFormat
      * If not set or set to an unsupported format, a supported format will be used and pixelFormat() will be that format after open()
      */
     void setPixelFormat(const VideoFormat::PixelFormat format);
+
     /*!
      * \brief pixelFormat
      * \return user requested format. may be different with actually used format
      */
     VideoFormat::PixelFormat pixelFormat() const;
+
     // TODO: supportedPixelFormats() const;
+
 Q_SIGNALS:
+
     void widthChanged();
     void heightChanged();
     void frameRateChanged();
     void pixelFormatChanged();
 
 public:
+
     template<class C> static bool Register(VideoEncoderId id, const char* name) { return Register(id, create<C>, name);}
+
     /*!
      * \brief next
      * \param id NULL to get the first id address
@@ -104,15 +121,22 @@ public:
     static VideoEncoderId* next(VideoEncoderId* id = 0);
     static const char* name(VideoEncoderId id);
     static VideoEncoderId id(const char* name);
+
 private:
+
     template<class C> static VideoEncoder* create() { return new C();}
     typedef VideoEncoder* (*VideoEncoderCreator)();
     static bool Register(VideoEncoderId id, VideoEncoderCreator, const char *name);
+
 protected:
+
     VideoEncoder(VideoEncoderPrivate& d);
+
 private:
+
     VideoEncoder();
 };
 
 } // namespace QtAV
-#endif // QTAV_VIDEOENCODER_H
+
+#endif // QTAV_VIDEO_ENCODER_H

@@ -20,11 +20,14 @@
  *
  * ============================================================ */
 
-#ifndef QTAV_SURFACEINTEROP_H
-#define QTAV_SURFACEINTEROP_H
+#ifndef QTAV_SURFACE_INTEROP_H
+#define QTAV_SURFACE_INTEROP_H
 
-#include <QtCore/QSharedPointer>
-#include <QtAV/VideoFormat.h>
+#include <QSharedPointer>
+
+// Local includes
+
+#include "VideoFormat.h"
 
 namespace QtAV
 {
@@ -32,7 +35,9 @@ namespace QtAV
 class Q_AV_EXPORT VideoSurfaceInterop
 {
 public:
+
     virtual ~VideoSurfaceInterop() {}
+
     /*!
      * \brief map
      * currently is used to map a frame from hardware decoder to opengl texture, host memory.
@@ -52,9 +57,13 @@ public:
         Q_UNUSED(plane);
         return 0;
     }
+
     // TODO: SurfaceType. unmap is currenty used by opengl rendering
+
     virtual void unmap(void* handle) { Q_UNUSED(handle);}
+
     //virtual void unmap(void* handle, SurfaceType type) { Q_UNUSED(handle);} //for SourceSurfaceType
+
     /*!
      * \brief createHandle
      * It is used by opengl renderer to create a texture when rendering frame from VDA/VideoToolbox decoder
@@ -73,8 +82,9 @@ public:
 };
 
 typedef QSharedPointer<VideoSurfaceInterop> VideoSurfaceInteropPtr;
+
 } // namespace QtAV
 
 Q_DECLARE_METATYPE(QtAV::VideoSurfaceInteropPtr)
 
-#endif // QTAV_SURFACEINTEROP_H
+#endif // QTAV_SURFACE_INTEROP_H

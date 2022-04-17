@@ -20,24 +20,29 @@
  *
  * ============================================================ */
 
-#ifndef QTAV_SUBTITLEFILTER_H
-#define QTAV_SUBTITLEFILTER_H
+#ifndef QTAV_SUBTITLE_FILTER_H
+#define QTAV_SUBTITLE_FILTER_H
 
-#include <QtAV/Filter.h>
-#include <QtAV/Subtitle.h>
-//final class
+// Local includes
+
+#include "Filter.h"
+#include "Subtitle.h"
+
+// final class
 
 namespace QtAV
 {
 
 class AVPlayer;
 class SubtitleFilterPrivate;
+
 /*!
  * \brief The SubtitleFilter class
  * draw text and image subtitles
  * Subtitle load priority: user specified file (setFile(...)) > auto load external (autoLoad() must be true) > embedded subtitle
  */
-class Q_AV_EXPORT SubtitleFilter : public VideoFilter, public SubtitleAPIProxy
+class Q_AV_EXPORT SubtitleFilter : public VideoFilter,
+                                   public SubtitleAPIProxy
 {
     Q_OBJECT
     DPTR_DECLARE_PRIVATE(SubtitleFilter)
@@ -57,27 +62,36 @@ class Q_AV_EXPORT SubtitleFilter : public VideoFilter, public SubtitleAPIProxy
     Q_PROPERTY(QRectF rect READ rect WRITE setRect NOTIFY rectChanged)
     Q_PROPERTY(QFont font READ font WRITE setFont NOTIFY fontChanged)
     Q_PROPERTY(QColor color READ color WRITE setColor NOTIFY colorChanged)
+
     // font properties for libass engine
+
     Q_PROPERTY(QString fontFile READ fontFile WRITE setFontFile NOTIFY fontFileChanged)
     Q_PROPERTY(QString fontsDir READ fontsDir WRITE setFontsDir NOTIFY fontsDirChanged)
     Q_PROPERTY(bool fontFileForced READ isFontFileForced WRITE setFontFileForced NOTIFY fontFileForcedChanged)
+
 public:
+
     explicit SubtitleFilter(QObject *parent = 0);
+
     void setPlayer(AVPlayer* player);
-    bool isSupported(VideoFilterContext::Type ct) const Q_DECL_OVERRIDE {
+    bool isSupported(VideoFilterContext::Type ct) const Q_DECL_OVERRIDE
+    {
         return ct == VideoFilterContext::QtPainter || ct == VideoFilterContext::X11;
     }
+
     /*!
      * \brief setFile
      * Load user selected subtitle. The subtitle will not change unless you manually setFile(QString()).
      */
     void setFile(const QString& file);
     QString file() const;
+
     /*!
      * \brief autoLoad
      * Auto find and load a suitable external subtitle if file() is not empty.
      */
     bool autoLoad() const;
+
     // <1 means normalized. not valid means the whole target rect. default is (0, 0, 1, 0.9) and align bottom
     void setRect(const QRectF& r);
     QRectF rect() const;
@@ -87,15 +101,20 @@ public:
     QColor color() const;
 
     QString subtitleText(qreal t) const;
+
 public Q_SLOTS:
+
     // TODO: enable changed & autoload=> load
+
     void setAutoLoad(bool value);
+
 Q_SIGNALS:
+
     void rectChanged();
     void fontChanged();
     void colorChanged();
     void autoLoadChanged(bool value);
-Q_SIGNALS:
+
     void fileChanged();
     void canRenderChanged();
     void loaded(const QString& path);
@@ -115,8 +134,10 @@ Q_SIGNALS:
     void fontFileForcedChanged();
 
 protected:
+
     void process(Statistics* statistics, VideoFrame* frame) Q_DECL_OVERRIDE;
 };
 
 } // namespace QtAV
-#endif // QTAV_SUBTITLEFILTER_H
+
+#endif // QTAV_SUBTITLE_FILTER_H

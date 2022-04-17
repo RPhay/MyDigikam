@@ -20,16 +20,23 @@
  *
  * ============================================================ */
 
-#ifndef QTAV_VIDEODECODER_H
-#define QTAV_VIDEODECODER_H
+#ifndef QTAV_VIDEO_DECODER_H
+#define QTAV_VIDEO_DECODER_H
 
-#include <QtAV/AVDecoder.h>
-#include <QtAV/VideoFrame.h>
-#include <QtCore/QStringList>
+// Qt includes
+
+#include <QStringList>
+
+// Local includes
+
+#include "AVDecoder.h"
+#include "VideoFrame.h"
 
 namespace QtAV
 {
+
 typedef int VideoDecoderId;
+
 /*!
     Useful properties.
     A key is a string, a value can be int, bool or string. Both int and string are valid for enumerate
@@ -56,13 +63,17 @@ typedef int VideoDecoderId;
  */
 
 class VideoDecoderPrivate;
+
 class Q_AV_EXPORT VideoDecoder : public AVDecoder
 {
     Q_DISABLE_COPY(VideoDecoder)
     DPTR_DECLARE_PRIVATE(VideoDecoder)
+
 public:
+
     static QStringList supportedCodecs();
     static VideoDecoder* create(VideoDecoderId id);
+
     /*!
      * \brief create
      * create a decoder from registered name. FFmpeg decoder will be created for empty name
@@ -73,10 +84,13 @@ public:
     virtual VideoDecoderId id() const = 0;
     QString name() const; //name from factory
     virtual VideoFrame frame() = 0;
+
 public:
+
     typedef int Id;
     static QVector<VideoDecoderId> registered();
     template<class C> static bool Register(VideoDecoderId id, const char* name) { return Register(id, create<C>, name);}
+
     /*!
      * \brief next
      * \param id NULL to get the first id address
@@ -85,14 +99,22 @@ public:
     static VideoDecoderId* next(VideoDecoderId* id = 0);
     static const char* name(VideoDecoderId id);
     static VideoDecoderId id(const char* name);
+
 private:
+
     template<class C> static VideoDecoder* create() { return new C();}
     typedef VideoDecoder* (*VideoDecoderCreator)();
+
 protected:
+
     static bool Register(VideoDecoderId id, VideoDecoderCreator, const char *name);
+
 protected:
+
     VideoDecoder(VideoDecoderPrivate& d);
+
 private:
+
     VideoDecoder();
 };
 
@@ -108,5 +130,7 @@ extern Q_AV_EXPORT VideoDecoderId VideoDecoderId_MediaCodec;
 extern Q_AV_EXPORT VideoDecoderId VideoDecoderId_MMAL;
 extern Q_AV_EXPORT VideoDecoderId VideoDecoderId_QSV;
 extern Q_AV_EXPORT VideoDecoderId VideoDecoderId_CrystalHD;
+
 } // namespace QtAV
-#endif // QTAV_VIDEODECODER_H
+
+#endif // QTAV_VIDEO_DECODER_H

@@ -25,21 +25,12 @@
 
 // QtAv includes
 
-#if defined(Q_CC_CLANG)
-#   pragma clang diagnostic push
-#   pragma clang diagnostic ignored "-Wundef"
-#endif
-
-#include <QtAV/VideoDecoder.h> // krazy:exclude=includes
-#include <QtAV/VideoEncoder.h> // krazy:exclude=includes
-#include <QtAV/AudioDecoder.h> // krazy:exclude=includes
-#include <QtAV/AudioEncoder.h> // krazy:exclude=includes
-#include <QtAV/AVMuxer.h>      // krazy:exclude=includes
-#include <QtAV/LibAVFilter.h>  // krazy:exclude=includes
-
-#if defined(Q_CC_CLANG)
-#   pragma clang diagnostic pop
-#endif
+#include "VideoDecoder.h"
+#include "VideoEncoder.h"
+#include "AudioDecoder.h"
+#include "AudioEncoder.h"
+#include "AVMuxer.h"
+#include "LibAVFilter.h"
 
 // Local includes
 

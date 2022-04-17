@@ -16,16 +16,6 @@ DISABLE_GCC_COMPILER_WARNINGS("5.99.99" "-Wno-deprecated-declarations")
 DISABLE_GCC_COMPILER_WARNINGS("5.99.99" "-Wno-undef")
 DISABLE_GCC_COMPILER_WARNINGS("5.99.99" "-Wno-expansion-to-defined")
 
-macro(MACRO_ADD_DEFINITION_IF_ON VAR_NAME VAR_ON)
-
-    if("${VAR_ON}" EQUAL "1")
-
-        add_definitions(-D${VAR_NAME}=1)
-
-    endif()
-
-endmacro()
-
 include_directories($<TARGET_PROPERTY:Qt${QT_VERSION_MAJOR}::Widgets,INTERFACE_INCLUDE_DIRECTORIES>
                     $<TARGET_PROPERTY:Qt${QT_VERSION_MAJOR}::Core,INTERFACE_INCLUDE_DIRECTORIES>
 )
@@ -260,65 +250,6 @@ if(SWRESAMPLE_FOUND)
 
 endif()
 
-# ---
-
-add_definitions(-DQTAV_HAVE_GL=1             # For QtAVWidgets
-                -D__STDC_CONSTANT_MACROS
-                -DQTAV_HAVE_CAPI=1
-#                -DQTAV_HAVE_OPENSL=0         # OpenSLES is for Android only
-#                -DQTAV_HAVE_D3D11VA=0        # DirectX 3D for MSVC only
-#                -DQTAV_HAVE_DSOUND=0         # DirectX Sound for MSVC only
-#                -DQTAV_HAVE_DXVA=0           # DirectX VA for MSVC only
-#                -DQTAV_HAVE_XAUDIO2=0        # DirectX Audio for MSVC only
-)
-
-if(ASS_FOUND)
-
-    add_definitions(-DCAPI_LINK_ASS)
-
-endif()
-
-MACRO_ADD_DEFINITION_IF_ON(QTAV_HAVE_LIBASS ${HAVE_LIBASS})
-
-if(OPENAL_FOUND)
-
-    if(APPLE)
-
-        add_definitions(-DHEADER_OPENAL_PREFIX)
-
-    endif()
-
-endif()
-
-MACRO_ADD_DEFINITION_IF_ON(QTAV_HAVE_OPENAL     ${HAVE_LIBOPENAL})
-MACRO_ADD_DEFINITION_IF_ON(QTAV_HAVE_PORTAUDIO  ${HAVE_LIBPORTAUDIO})
-MACRO_ADD_DEFINITION_IF_ON(QTAV_HAVE_PULSEAUDIO ${HAVE_LIBPULSEAUDIO})
-
-if(APPLE)
-
-    add_definitions(-DQTAV_HAVE_VIDEOTOOLBOX=1)
-#    add_definitions(-DQTAV_HAVE_CUDA=0)
-
-else()
-
-#    add_definitions(-DQTAV_HAVE_VIDEOTOOLBOX=0)
-    add_definitions(-DQTAV_HAVE_CUDA=1)
-
-endif()
-
-MACRO_ADD_DEFINITION_IF_ON(QTAV_HAVE_AVCODEC    ${HAVE_LIBAVCODEC})
-MACRO_ADD_DEFINITION_IF_ON(QTAV_HAVE_AVDEVICE   ${HAVE_LIBAVDEVICE})
-MACRO_ADD_DEFINITION_IF_ON(QTAV_HAVE_AVFILTER   ${HAVE_LIBAVFILTER})
-MACRO_ADD_DEFINITION_IF_ON(QTAV_HAVE_AVUTIL     ${HAVE_LIBAVUTIL})
-MACRO_ADD_DEFINITION_IF_ON(QTAV_HAVE_SWSCALE    ${HAVE_LIBSWSCALE})
-MACRO_ADD_DEFINITION_IF_ON(QTAV_HAVE_AVRESAMPLE ${HAVE_LIBAVRESAMPLE})
-MACRO_ADD_DEFINITION_IF_ON(QTAV_HAVE_SWRESAMPLE ${HAVE_LIBSWRESAMPLE})
-MACRO_ADD_DEFINITION_IF_ON(QTAV_HAVE_EGL_CAPI   ${HAVE_LIBOPENGL_EGL})
-MACRO_ADD_DEFINITION_IF_ON(QTAV_HAVE_VAAPI      ${HAVE_LIBVAAPI})
-
-# This one is never used in QtAV
-#MACRO_ADD_DEFINITION_IF_ON(QTAV_HAVE_X11 ${HAVE_LIBX11})
-
 # -------------------------------------------------------------------------
 
 # Used by digikamcore
@@ -329,9 +260,8 @@ target_compile_definitions(core_qtav_obj
                            digikamcore_EXPORTS
 )
 
-set_target_properties(core_dmetadata_obj
-                      PROPERTIES
-                      CXX_STANDARD 11
-                      CXX_STANDARD_REQUIRED YES
-                      CXX_EXTENSIONS NO
+target_compile_definitions(core_qtav_obj
+                           PRIVATE
+                           ${MEDIAPLAYER_DEFINITIONS}
 )
+

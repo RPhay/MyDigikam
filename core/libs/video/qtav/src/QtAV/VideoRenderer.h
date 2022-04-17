@@ -20,21 +20,27 @@
  *
  * ============================================================ */
 
-#ifndef QAV_VIDEORENDERER_H
-#define QAV_VIDEORENDERER_H
+#ifndef QTAV_VIDEO_RENDERER_H
+#define QTAV_VIDEO_RENDERER_H
 
-#include <QtCore/QByteArray>
-#include <QtCore/QSize>
-#include <QtCore/QRectF>
-#include <QtGui/QColor>
-#include <QtAV/AVOutput.h>
-#include <QtAV/VideoFrame.h>
+// Qt includes
+
+#include <QByteArray>
+#include <QSize>
+#include <QRectF>
+#include <QColor>
+
+// Local includes
+
+#include "AVOutput.h"
+#include "VideoFrame.h"
 
 /*!
  * A bridge for VideoOutput(QObject based) and video renderer backend classes
  * Every public setter call it's virtual onSetXXX(...) which has default behavior.
  * While VideoOutput.onSetXXX(...) simply calls backend's setXXX(...) and return whether the result is desired.
  */
+
 QT_BEGIN_NAMESPACE
 class QWidget;
 class QWindow;
@@ -45,25 +51,35 @@ namespace QtAV
 {
 
 typedef int VideoRendererId;
+
 extern Q_AV_EXPORT VideoRendererId VideoRendererId_OpenGLWindow;
+
 class Filter;
 class OpenGLVideo;
 class VideoFormat;
 class VideoRendererPrivate;
+
 class Q_AV_EXPORT VideoRenderer : public AVOutput
 {
     DPTR_DECLARE_PRIVATE(VideoRenderer)
+
 public:
-    //TODO: original video size mode
+
+    // TODO: original video size mode
     // fillmode: keepsize
-    enum OutAspectRatioMode {
-        RendererAspectRatio //Use renderer's aspect ratio, i.e. stretch to fit the renderer rect
-      , VideoAspectRatio    //Use video's aspect ratio and align center in renderer.
-      , CustomAspectRation  //Use the ratio set by setOutAspectRatio(qreal). Mode will be set to this if that function is called
+
+    enum OutAspectRatioMode
+    {
+        RendererAspectRatio // Use renderer's aspect ratio, i.e. stretch to fit the renderer rect
+      , VideoAspectRatio    // Use video's aspect ratio and align center in renderer.
+      , CustomAspectRation  // Use the ratio set by setOutAspectRatio(qreal). Mode will be set to this if that function is called
       //, AspectRatio4_3, AspectRatio16_9
     };
-    enum Quality { //TODO: deprecated. simpily use int 0~100
-        QualityDefault, //good
+
+    enum Quality
+    {
+         // TODO: deprecated. simpily use int 0~100
+        QualityDefault, // good
         QualityBest,
         QualityFastest
     };
@@ -72,6 +88,7 @@ public:
     static bool Register(VideoRendererId id, const char* name) { return Register(id, create<C>, name);}
     static VideoRenderer* create(VideoRendererId id);
     static VideoRenderer* create(const char* name);
+
     /*!
      * \brief next
      * \param id NULL to get the first id address
@@ -86,6 +103,7 @@ public:
     virtual VideoRendererId id() const = 0;
 
     bool receive(const VideoFrame& frame);
+
     /*!
      * \brief setPreferredPixelFormat
      * \param pixfmt
@@ -93,11 +111,13 @@ public:
      *  return false if \a pixfmt is not supported and not changed.
      */
     bool setPreferredPixelFormat(VideoFormat::PixelFormat pixfmt);
+
     /*!
      * \brief preferredPixelFormat
      * \return preferred pixel format. e.g. WidgetRenderer is rgb formats.
      */
     virtual VideoFormat::PixelFormat preferredPixelFormat() const; //virtual?
+
     /*!
      * \brief forcePreferredPixelFormat
      *  force to use preferredPixelFormat() even if incoming format is supported
@@ -116,7 +136,9 @@ public:
 
     void setOutAspectRatioMode(OutAspectRatioMode mode);
     OutAspectRatioMode outAspectRatioMode() const;
-    //If setOutAspectRatio(qreal) is used, then OutAspectRatioMode is CustomAspectRation
+
+    // If setOutAspectRatio(qreal) is used, then OutAspectRatioMode is CustomAspectRation
+
     void setOutAspectRatio(qreal ratio);
     qreal outAspectRatio() const;//
 
@@ -128,7 +150,9 @@ public:
     QSize rendererSize() const;
     int rendererWidth() const;
     int rendererHeight() const;
-    //geometry size of current video frame. can not use frameSize because qwidget use it
+
+    // geometry size of current video frame. can not use frameSize because qwidget use it
+
     QSize videoFrameSize() const;
 
     /*!
@@ -139,8 +163,9 @@ public:
     int orientation() const;
     void setOrientation(int value);
 
-    //The video frame rect in renderer you shoud paint to. e.g. in RendererAspectRatio mode, the rect equals to renderer's
+    // The video frame rect in renderer you shoud paint to. e.g. in RendererAspectRatio mode, the rect equals to renderer's
     QRect videoRect() const;
+
     /*
      * region of interest, ROI
      * invalid rect means the whole source rect
@@ -152,37 +177,50 @@ public:
      * TODO: nagtive width or height means invert direction. is nagtive necessary?
      */
     QRectF regionOfInterest() const;
+
     // TODO: reset aspect ratio to roi.width/roi/heghit
+
     void setRegionOfInterest(qreal x, qreal y, qreal width, qreal height);
     void setRegionOfInterest(const QRectF& roi);
+
     // compute the real ROI
+
     QRect realROI() const;
+
     // |w| <= 1, |x| < 1
+
     QRectF normalizedROI() const;
 
     // TODO: map normalized
+
     /*!
      * \brief mapToFrame
      *  map point in VideoRenderer coordinate to VideoFrame, with current ROI
      */
     QPointF mapToFrame(const QPointF& p) const;
+
     /*!
      * \brief mapFromFrame
      *  map point in VideoFrame coordinate to VideoRenderer, with current ROI
      */
     QPointF mapFromFrame(const QPointF& p) const;
+
     // to avoid conflicting width QWidget::window()
+
     virtual QWindow* qwindow() { return 0;}
+
     /*!
      * \brief widget
      * \return default is 0. A QWidget subclass can return \a this
      */
     virtual QWidget* widget() { return 0; }
+
     /*!
      * \brief graphicsItem
      * \return default is 0. A QGraphicsItem subclass can return \a this
      */
     virtual QGraphicsItem* graphicsItem() { return 0; }
+
     /*!
      * \brief brightness, contrast, hue, saturation
      *  values range between -1.0 and 1.0, the default is 0.
@@ -206,19 +244,26 @@ public:
      * Currently you can only use it to set custom shader OpenGLVideo.setUserShader()
      */
     virtual OpenGLVideo* opengl() const { return NULL;}
+
 protected:
+
     VideoRenderer(VideoRendererPrivate &d);
+
     //TODO: batch drawBackground(color, region)=>loop drawBackground(color,rect)
+
     virtual bool receiveFrame(const VideoFrame& frame) = 0;
     QRegion backgroundRegion() const;
     virtual void drawBackground();
-    //draw the current frame using the current paint engine. called by paintEvent()
+
+    // draw the current frame using the current paint engine. called by paintEvent()
     // TODO: parameter VideoFrame
-    virtual void drawFrame() = 0; //You MUST reimplement this to display a frame. Other draw functions are not essential
-    virtual void handlePaintEvent(); //has default. User don't have to implement it
-    virtual void updateUi(); // by default post an UpdateRequest event for window and UpdateLater event for widget to ensure ui update
+
+    virtual void drawFrame() = 0;    // You MUST reimplement this to display a frame. Other draw functions are not essential
+    virtual void handlePaintEvent(); // has default. User don't have to implement it
+    virtual void updateUi();         // by default post an UpdateRequest event for window and UpdateLater event for widget to ensure ui update
 
 private: // property change. used as signals in subclasses. implemented by moc
+
     virtual void sourceAspectRatioChanged(qreal) {}
     virtual void outAspectRatioChanged() {}
     virtual void outAspectRatioModeChanged() {}
@@ -233,7 +278,9 @@ private: // property change. used as signals in subclasses. implemented by moc
     virtual void hueChanged(qreal) {}
     virtual void saturationChanged(qreal) {}
     virtual void backgroundColorChanged() {}
+
 private: // mainly used by VideoOutput class
+
     /*!
      * return false if value not changed. default is true
      */
@@ -247,6 +294,7 @@ private: // mainly used by VideoOutput class
     virtual bool onSetRegionOfInterest(const QRectF& roi);
     virtual QPointF onMapToFrame(const QPointF& p) const;
     virtual QPointF onMapFromFrame(const QPointF& p) const;
+
     /*!
      * \brief onSetXX
      *  It's called when user call setXXX() with a new value. You should implement how to actually change the value, e.g. change brightness with shader.
@@ -259,18 +307,26 @@ private: // mainly used by VideoOutput class
     virtual bool onSetHue(qreal hue);
     virtual bool onSetSaturation(qreal saturation);
     virtual void onSetBackgroundColor(const QColor& color);
+
 private:
+
     template<class C>
-    static VideoRenderer* create() {
+    static VideoRenderer* create()
+    {
         return new C();
     }
+
     typedef VideoRenderer* (*VideoRendererCreator)();
     static bool Register(VideoRendererId id, VideoRendererCreator, const char *name);
+
     friend class VideoOutput;
-    //the size of decoded frame. get called in receiveFrame(). internal use only
+
+    // the size of decoded frame. get called in receiveFrame(). internal use only
+
     void setInSize(const QSize& s);
     void setInSize(int width, int height);
 };
 
 } // namespace QtAV
-#endif // QAV_VIDEORENDERER_H
+
+#endif // QAV_VIDEO_RENDERER_H

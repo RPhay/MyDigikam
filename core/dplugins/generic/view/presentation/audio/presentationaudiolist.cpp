@@ -42,8 +42,8 @@
 
 // QtAV includes
 
-#include <QtAV/AVPlayer.h>   // krazy:exclude=includes
-#include <QtAV/Statistics.h> // krazy:exclude=includes
+#include "AVPlayer.h"
+#include "Statistics.h"
 
 // KDE includes
 
