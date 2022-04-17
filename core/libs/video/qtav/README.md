@@ -11,6 +11,7 @@ Code Review with plenty of fixes and improvements:
 - Fix of all GCC 11 warnings.
 - Fixes Qt Signal/Slots.
 - Port code to pure Qt5/Qt6.
+- Use qCDebug()/qCWarning categories with digiKam debug spaces.
 * Fixes header guards.
 * Fixes includes rules from Qt and local.
 * Apply fixes for cppcheck static analyzer.
@@ -18,7 +19,6 @@ Code Review with plenty of fixes and improvements:
 * Apply fixes for Clang-Scan static analyzer.
 * Apply fixes for Clazy static analyzer.
 * Apply fixes for Coverity-Scan static analyzer.
-* Use qCDebug() with digiKam debug spaces.
 
 TODO:
 
