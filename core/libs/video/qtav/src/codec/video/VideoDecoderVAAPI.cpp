@@ -39,7 +39,7 @@ extern "C"
 #include "private/AVCompat.h"
 #include "private/factory.h"
 #include "vaapi/SurfaceInteropVAAPI.h"
-#include "utils/Logger.h"
+#include "digikam_debug.h"
 
 // KDE includes
 
@@ -386,7 +386,7 @@ VideoFrame VideoDecoderVAAPI::frame()
         if (test_format) {
             vaDeriveImage(d.display->get(), p->get(), &img);
             fmt = pixelFormatFromVA(img.format.fourcc);
-            //qDebug() << fmt;//pixelFormatFromVA(img.format.fourcc);
+            //qCDebug(DIGIKAM_QTAV_LOG) << fmt;//pixelFormatFromVA(img.format.fourcc);
         }
         VideoFrame f(d.width, d.height, fmt);
         // img.pitches[i] is 16 aligned

@@ -42,7 +42,7 @@ extern "C"
 }
 #endif //__cplusplus
 
-#include "utils/Logger.h"
+#include "digikam_debug.h"
 
 // KDE includes
 
@@ -302,7 +302,7 @@ void* VideoDecoderVideoToolboxPrivate::setup(AVCodecContext *avctx)
     }
     const CMVideoDimensions dim = CMVideoFormatDescriptionGetDimensions(vtctx->cm_fmt_desc);
     initUSWC(codedWidth(avctx)); // TODO: use stride
-    qDebug() << "VideoToolbox decoder created. format: " << cv::format_from_cv(out_fmt);
+    qCDebug(DIGIKAM_QTAV_LOG) << "VideoToolbox decoder created. format: " << cv::format_from_cv(out_fmt);
     qDebug("AVVideotoolboxContext ready: %dx%d", dim.width, dim.height);
     return vtctx; //the same as avctx->hwaccel_context;
 }

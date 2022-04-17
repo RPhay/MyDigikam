@@ -26,7 +26,7 @@
 #include "private/mkid.h"
 #include "private/factory.h"
 #include "QtAV_Version.h"
-#include "utils/Logger.h"
+#include "digikam_debug.h"
 
 #if AV_MODULE_CHECK(LIBAVUTIL, 55, 13, 0, 27, 100)
 #   define HAVE_AVHWCTX
@@ -131,7 +131,7 @@ bool VideoEncoderFFmpegPrivate::open()
         }
     }
     if (!codec) {
-        qWarning() << "Can not find encoder for codec " << codec_name;
+        qCWarning(DIGIKAM_QTAV_LOG_WARN) << "Can not find encoder for codec " << codec_name;
         return false;
     }
     if (avctx) {

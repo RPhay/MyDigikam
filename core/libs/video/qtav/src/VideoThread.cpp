@@ -33,7 +33,7 @@
 #include "output/OutputSet.h"
 #include "private/AVCompat.h"
 #include <QFileInfo>
-#include "utils/Logger.h"
+#include "digikam_debug.h"
 
 namespace QtAV
 {
@@ -317,7 +317,7 @@ void VideoThread::run()
             wait_key_frame = false;
             qDebug("video thread gets an eof packet.");
         } else {
-            //qDebug() << pkt.position << " pts:" <<pkt.pts;
+            //qCDebug(DIGIKAM_QTAV_LOG) << pkt.position << " pts:" <<pkt.pts;
             //Compare to the clock
             if (!pkt.isValid()) {
                 // may be we should check other information. invalid packet can come from

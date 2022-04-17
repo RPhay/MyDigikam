@@ -30,7 +30,7 @@
 #include <CoreFoundation/CoreFoundation.h>
 #endif
 #include "private/AVCompat.h"
-#include "utils/Logger.h"
+#include "digikam_debug.h"
 
 namespace QtAV
 {
@@ -213,9 +213,9 @@ void setOptionsToFFmpegObj(const QVariant& opt, void* obj)
         return;
     AVClass *c = obj ? *(AVClass**)obj : 0;
     if (c)
-        qDebug() << QStringLiteral("%1.%2 options:").arg(QLatin1String(c->class_name)).arg(QLatin1String(c->item_name(obj)));
+        qCDebug(DIGIKAM_QTAV_LOG) << QStringLiteral("%1.%2 options:").arg(QLatin1String(c->class_name)).arg(QLatin1String(c->item_name(obj)));
     else
-        qDebug() << "options:";
+        qCDebug(DIGIKAM_QTAV_LOG) << "options:";
     if (opt.type() == QVariant::Map) {
         QVariantMap options(opt.toMap());
         if (options.isEmpty())
@@ -317,7 +317,7 @@ void setOptionsForQObject(const QVariant& opt, QObject *obj)
 {
     if (!opt.isValid())
         return;
-    qDebug() << QStringLiteral("set %1(%2) meta properties:").arg(QLatin1String(obj->metaObject()->className())).arg(obj->objectName());
+    qCDebug(DIGIKAM_QTAV_LOG) << QStringLiteral("set %1(%2) meta properties:").arg(QLatin1String(obj->metaObject()->className())).arg(obj->objectName());
     if (opt.type() == QVariant::Hash) {
         QVariantHash options(opt.toHash());
         if (options.isEmpty())

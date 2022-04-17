@@ -31,7 +31,7 @@
 typedef QTime QElapsedTimer;
 #endif
 #include "utils/ring.h"
-#include "utils/Logger.h"
+#include "digikam_debug.h"
 
 #define AO_USE_TIMER 1
 
@@ -258,7 +258,7 @@ AudioOutput::AudioOutput(QObject* parent)
     : QObject(parent)
     , AVOutput(*new AudioOutputPrivate())
 {
-    qDebug() << "Registered audio backends: " << AudioOutput::backendsAvailable(); // call this to register
+    qCDebug(DIGIKAM_QTAV_LOG) << "Registered audio backends: " << AudioOutput::backendsAvailable(); // call this to register
     setBackends(AudioOutputBackend::defaultPriority()); //ensure a backend is available
 }
 

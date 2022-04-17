@@ -33,7 +33,7 @@
 #include "ShaderManager.h"
 #include "GeometryRenderer.h"
 #include "opengl/OpenGLHelper.h"
-#include "utils/Logger.h"
+#include "digikam_debug.h"
 
 namespace QtAV
 {
@@ -160,7 +160,7 @@ void OpenGLVideoPrivate::updateGeometry(VideoShader* shader, const QRectF &t, co
         geometry = new TexturedGeometry();
     //qDebug("updating geometry...");
     // setTextureCount may change the vertex data. Call it before setRect()
-    qDebug() << "target rect: " << target_rect ;
+    qCDebug(DIGIKAM_QTAV_LOG) << "target rect: " << target_rect ;
     geometry->setTextureCount(shader->textureTarget() == GL_TEXTURE_RECTANGLE ? tc : 1);
     geometry->setGeometryRect(target_rect);
     geometry->setTextureRect(material->mapToTexture(0, roi));
@@ -249,7 +249,7 @@ void OpenGLVideo::setOpenGLContext(QOpenGLContext *ctx)
         qDebug("Has 16bit texture: %d", v);
         v = OpenGLHelper::hasRG();
         qDebug("Has RG texture: %d", v);
-        qDebug() << ctx->format();
+        qCDebug(DIGIKAM_QTAV_LOG) << ctx->format();
     }
 }
 
@@ -350,7 +350,7 @@ void OpenGLVideo::render(const QRectF &target, const QRectF& roi, const QMatrix4
     Q_EMIT beforeRendering();
     const qint64 mt = d.material->type();
     if (d.material_type != mt) {
-        qDebug() << "material changed: " << VideoMaterial::typeName(d.material_type) << " => " << VideoMaterial::typeName(mt);
+        qCDebug(DIGIKAM_QTAV_LOG) << "material changed: " << VideoMaterial::typeName(d.material_type) << " => " << VideoMaterial::typeName(mt);
         d.material_type = mt;
     }
     if (!d.material->bind()) // bind first because texture parameters(target) mapped from native buffer is unknown before it

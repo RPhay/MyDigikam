@@ -24,7 +24,7 @@
 #include <QTimer>
 #include <QTimerEvent>
 #include <QDateTime>
-#include "utils/Logger.h"
+#include "digikam_debug.h"
 
 namespace QtAV
 {
@@ -84,7 +84,7 @@ bool AVClock::isActive() const
 void AVClock::setInitialValue(double v)
 {
     value0 = v;
-    qDebug("Clock initial value: %f", v);
+    qCDebug(DIGIKAM_QTAV_LOG) << QString::asprintf("Clock initial value: %f", v);
 }
 
 double AVClock::initialValue() const

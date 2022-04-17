@@ -32,7 +32,7 @@
 #endif
 #include "private/mkid.h"
 #include "private/factory.h"
-#include "utils/Logger.h"
+#include "digikam_debug.h"
 
 // TODO: native sample rate, so AUDIO_OUTPUT_FLAG_FAST is enabled
 namespace QtAV

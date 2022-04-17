@@ -39,7 +39,7 @@
 #include <AL/alc.h>
 #endif
 #endif //QTAV_HAVE(CAPI)
-#include "utils/Logger.h"
+#include "digikam_debug.h"
 
 #define UNQUEUE_QUICK 0
 
@@ -239,7 +239,7 @@ AudioOutputOpenAL::AudioOutputOpenAL(QObject *parent)
         _devices.push_back(p);
         p += _devices.last().size() + 1;
     }
-    qDebug() << _devices;
+    qCDebug(DIGIKAM_QTAV_LOG) << _devices;
     available = openDevice(); //ensure isSupported(AudioFormat) works correctly
 }
 

@@ -26,7 +26,7 @@
 #include "Packet.h"
 #include "private/AVCompat.h"
 #include "PlainText.h"
-#include "utils/Logger.h"
+#include "digikam_debug.h"
 #include <QIODevice>
 
 namespace QtAV
@@ -191,7 +191,7 @@ bool SubtitleProcessorFFmpeg::process(QIODevice *dev)
 {
     if (!dev->isOpen()) {
         if (!dev->open(QIODevice::ReadOnly)) {
-            qWarning() << "open qiodevice error: " << dev->errorString();
+            qCWarning(DIGIKAM_QTAV_LOG_WARN) << "open qiodevice error: " << dev->errorString();
             return false;
         }
     }
@@ -289,7 +289,7 @@ bool SubtitleProcessorFFmpeg::processHeader(const QByteArray &codec, const QByte
 
 SubtitleFrame SubtitleProcessorFFmpeg::processLine(const QByteArray &data, qreal pts, qreal duration)
 {
-    //qDebug() << "line: " << data;
+    //qCDebug(DIGIKAM_QTAV_LOG) << "line: " << data;
     if (!codec_ctx) {
         return SubtitleFrame();
     }
@@ -339,7 +339,7 @@ SubtitleFrame SubtitleProcessorFFmpeg::processLine(const QByteArray &data, qreal
     // start_display_time and duration are in ms
     frame.begin = pts + qreal(sub.start_display_time)/1000.0;
     frame.end = pts + qreal(sub.end_display_time)/1000.0;
-    //qDebug() << QTime(0, 0, 0).addMSecs(frame.begin*1000.0) << "-" << QTime(0, 0, 0).addMSecs(frame.end*1000.0) << " fmt: " << sub.format << " pts: " << m_reader.packet().pts //sub.pts
+    //qCDebug(DIGIKAM_QTAV_LOG) << QTime(0, 0, 0).addMSecs(frame.begin*1000.0) << "-" << QTime(0, 0, 0).addMSecs(frame.end*1000.0) << " fmt: " << sub.format << " pts: " << m_reader.packet().pts //sub.pts
       //       << " rects: " << sub.num_rects << " end: " << sub.end_display_time;
     for (unsigned i = 0; i < sub.num_rects; i++) {
         switch (sub.rects[i]->type) {

@@ -34,7 +34,7 @@
 #include "AVDemuxer.h"
 #include "Packet.h"
 #include "utils/BlockingQueue.h"
-#include "utils/Logger.h"
+#include "digikam_debug.h"
 
 namespace QtAV
 {
@@ -258,7 +258,7 @@ public:
         const bool enlarge_range = pts0 >= 0LL && key_pts - pts0 > 0LL;
         if (enlarge_range) {
             range = qMax<qint64>(key_pts - value, range);
-            qDebug() << "enlarge range ==>>>> " << range;
+            qCDebug(DIGIKAM_QTAV_LOG) << "enlarge range ==>>>> " << range;
         }
         if (!pkt.isValid()) {
             qWarning("VideoFrameExtractor failed to get a packet at %lld", value);
@@ -288,7 +288,7 @@ public:
         const int diff0 = qint64(frame.timestamp()*1000.0) - value;
         if (qAbs(diff0) <= range) { //TODO: flag forward: result pts must >= value
             if (frame.isValid()) {
-                qDebug() << "VideoFrameExtractor: key frame found @" << frame.timestamp() <<" diff=" << diff0 << ". format: " <<  frame.format();
+                qCDebug(DIGIKAM_QTAV_LOG) << "VideoFrameExtractor: key frame found @" << frame.timestamp() <<" diff=" << diff0 << ". format: " <<  frame.format();
                 return true;
             }
         }

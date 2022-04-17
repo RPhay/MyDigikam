@@ -27,7 +27,7 @@
 #include <QFile>
 #include <QGuiApplication>
 #include <QtAndroidExtras>
-#include "utils/Logger.h"
+#include "digikam_debug.h"
 #include "jmi/jmi.h"
 
 // TODO: how to get filename and find subtitles?

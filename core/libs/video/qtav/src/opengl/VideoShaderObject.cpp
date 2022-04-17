@@ -25,6 +25,7 @@
 #include <QEvent>
 #include <QMetaProperty>
 #include <QSignalMapper>
+#include "digikam_debug.h"
 
 namespace QtAV
 {
@@ -111,7 +112,7 @@ void VideoShaderObject::programReady()
 #endif
             connect(mapper, SIGNAL(mapped(int)), this, SLOT(propertyChanged(int)));
             d.sigMap[st].append(mapper);
-            qDebug() << "set uniform property: " << u.name << property(u.name.constData());
+            qCDebug(DIGIKAM_QTAV_LOG) << "set uniform property: " << u.name << property(u.name.constData());
             propertyChanged(i|(st<<16)); // set the initial value
         }
     }

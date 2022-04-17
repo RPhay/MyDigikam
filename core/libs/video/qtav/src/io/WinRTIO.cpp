@@ -32,7 +32,7 @@
 #include <QCoreApplication> //required by qfunctions_winrt.h
 #include <qfunctions_winrt.h>
 
-#include "utils/Logger.h"
+#include "digikam_debug.h"
 using namespace Microsoft::WRL;
 using namespace Microsoft::WRL::Wrappers;
 using namespace ABI::Windows::Storage;
@@ -47,7 +47,7 @@ using namespace ABI::Windows::Foundation::Collections;
     do { \
         HRESULT hr = f; \
         if (FAILED(hr)) { \
-            qWarning() << QString::fromLatin1(COM_LOG_COMPONENT " error@%1. " #f ": (0x%2) %3").arg(__LINE__).arg(hr, 0, 16).arg(qt_error_string(hr)); \
+            qCWarning(DIGIKAM_QTAV_LOG_WARN) << QString::fromLatin1(COM_LOG_COMPONENT " error@%1. " #f ": (0x%2) %3").arg(__LINE__).arg(hr, 0, 16).arg(qt_error_string(hr)); \
             __VA_ARGS__ \
         } \
     } while (0)
@@ -181,7 +181,7 @@ qint64 WinRTIO::size() const
 void WinRTIO::onUrlChanged()
 {
     d_func().pos = 0;
-    qDebug() << "onUrlChanged: " << url();
+    qCDebug(DIGIKAM_QTAV_LOG) << "onUrlChanged: " << url();
     // winrt:@ptr_address:path
     // winrt:path
     if (url().startsWith(name().append(QStringLiteral(":@")), Qt::CaseInsensitive)) {
@@ -206,7 +206,7 @@ void WinRTIO::openFromStorage(IStorageItem *item)
     quint32 pathLen;
     const wchar_t *pathStr = path.GetRawBuffer(&pathLen);
     const QString filePath = QString::fromWCharArray(pathStr, pathLen);
-    qDebug() << "winrt.io from storage file: " << filePath;
+    qCDebug(DIGIKAM_QTAV_LOG) << "winrt.io from storage file: " << filePath;
     ComPtr<IStorageFile> file;
     COM_ENSURE(d.item.As(&file));
     open(file);

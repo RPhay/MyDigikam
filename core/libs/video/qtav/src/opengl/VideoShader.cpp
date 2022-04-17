@@ -28,7 +28,7 @@
 #include <QCoreApplication>
 #include <QFile>
 #include <QStringList>
-#include "utils/Logger.h"
+#include "digikam_debug.h"
 
 #define YUVA_DONE 0
 //#define QTAV_DEBUG_GLSL
@@ -118,7 +118,7 @@ const char* VideoShader::vertexShader() const
 #ifdef QTAV_DEBUG_GLSL
     QString s(vert);
     s = OpenGLHelper::removeComments(s);
-    qDebug() << s.toUtf8().constData();
+    qCDebug(DIGIKAM_QTAV_LOG) << s.toUtf8().constData();
 #endif //QTAV_DEBUG_GLSL
     return vert.constData();
 }
@@ -198,7 +198,7 @@ const char* VideoShader::fragmentShader() const
 #ifdef QTAV_DEBUG_GLSL
     QString s(frag);
     s = OpenGLHelper::removeComments(s);
-    qDebug() << s.toUtf8().constData();
+    qCDebug(DIGIKAM_QTAV_LOG) << s.toUtf8().constData();
 #endif //QTAV_DEBUG_GLSL
     return frag.constData();
 }
@@ -461,7 +461,7 @@ bool VideoShader::build(QOpenGLShaderProgram *shaderProgram)
 
     if (!shaderProgram->link()) {
         qWarning("QSGMaterialShader: Shader compilation failed:");
-        qWarning() << shaderProgram->log();
+        qCWarning(DIGIKAM_QTAV_LOG_WARN) << shaderProgram->log();
         return false;
     }
     return true;
@@ -543,7 +543,7 @@ void VideoMaterial::setCurrentFrame(const VideoFrame &frame)
     d.colorTransform.setOutputColorRange(kRgbDispRange);
     d.frame = frame;
     if (fmt != d.video_format) {
-        qDebug() << fmt;
+        qCDebug(DIGIKAM_QTAV_LOG) << fmt;
         qDebug("pixel format changed: %s => %s %d", qPrintable(d.video_format.name()), qPrintable(fmt.name()), fmt.pixelFormat());
         d.video_format = fmt;
         d.init_textures_required = true;
@@ -984,12 +984,12 @@ bool VideoMaterialPrivate::updateTextureParameters(const VideoFormat& fmt)
     data_format.resize(nb_planes);
     data_type.resize(nb_planes);
     if (!OpenGLHelper::videoFormatToGL(fmt, (GLint*)internal_format.constData(), (GLenum*)data_format.constData(), (GLenum*)data_type.constData(), &channel_map)) {
-        qWarning() << "No OpenGL support for " << fmt;
+        qCWarning(DIGIKAM_QTAV_LOG_WARN) << "No OpenGL support for " << fmt;
         return false;
     }
-    qDebug() << "texture internal format: " << internal_format;
-    qDebug() << "texture data format: " << data_format;
-    qDebug() << "texture data type: " << data_type;
+    qCDebug(DIGIKAM_QTAV_LOG) << "texture internal format: " << internal_format;
+    qCDebug(DIGIKAM_QTAV_LOG) << "texture data format: " << data_format;
+    qCDebug(DIGIKAM_QTAV_LOG) << "texture data type: " << data_type;
     qDebug("///////////bpp %d, bpc: %d", fmt.bytesPerPixel(), fmt.bitsPerComponent());
     for (int i = 0; i < nb_planes; ++i) {
         const int bpp_gl = OpenGLHelper::bytesOfGLFormat(data_format[i], data_type[i]);

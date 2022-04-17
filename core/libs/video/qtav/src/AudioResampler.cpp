@@ -25,7 +25,7 @@
 #include "private/AudioResampler_p.h"
 #include "private/factory.h"
 #include "private/mkid.h"
-#include "utils/Logger.h"
+#include "digikam_debug.h"
 
 namespace QtAV
 {

@@ -31,6 +31,7 @@
 #endif
 #include "SurfaceInterop.h"
 #include "OpenGLVideo.h"
+#include "digikam_debug.h"
 
 namespace QtAV
 {
@@ -87,7 +88,7 @@ void GLSLFilter::process(Statistics *statistics, VideoFrame *frame)
 {
     Q_UNUSED(statistics);
     if (!QOpenGLContext::currentContext()) {
-        qWarning() << "No current gl context for glsl filter: " << this;
+        qCWarning(DIGIKAM_QTAV_LOG_WARN) << "No current gl context for glsl filter: " << this;
         return;
     }
     DPTR_D(GLSLFilter);

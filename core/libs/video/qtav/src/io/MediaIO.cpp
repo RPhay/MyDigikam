@@ -24,7 +24,7 @@
 #include "private/MediaIO_p.h"
 #include "private/factory.h"
 #include <QStringList>
-#include "utils/Logger.h"
+#include "digikam_debug.h"
 
 namespace QtAV
 {

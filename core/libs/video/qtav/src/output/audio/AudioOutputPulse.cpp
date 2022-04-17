@@ -26,7 +26,7 @@
 #include <pulse/pulseaudio.h>
 #include "private/mkid.h"
 #include "private/factory.h"
-#include "utils/Logger.h"
+#include "digikam_debug.h"
 
 // KDE includes
 
@@ -273,7 +273,7 @@ bool AudioOutputPulse::init(const AudioFormat &format)
         qWarning("PulseAudio failed to allocate a context");
         return false;
     }
-    qDebug() << i18n("PulseAudio %1, protocol: %2, server protocol: %3").arg(QString::fromLatin1(pa_get_library_version())).arg(pa_context_get_protocol_version(ctx)).arg(pa_context_get_server_protocol_version(ctx));
+    qCDebug(DIGIKAM_QTAV_LOG) << i18n("PulseAudio %1, protocol: %2, server protocol: %3").arg(QString::fromLatin1(pa_get_library_version())).arg(pa_context_get_protocol_version(ctx)).arg(pa_context_get_server_protocol_version(ctx));
     // TODO: host property
     pa_context_connect(ctx, NULL, PA_CONTEXT_NOFLAGS, NULL);
     pa_context_set_state_callback(ctx, AudioOutputPulse::contextStateCallback, this);

@@ -45,7 +45,7 @@
 #include "AVDemuxThread.h"
 #include "private/AVCompat.h"
 #include "utils/internal.h"
-#include "utils/Logger.h"
+#include "digikam_debug.h"
 extern "C" {
 #include <libavutil/mathematics.h>
 }
@@ -666,7 +666,7 @@ void AVPlayer::loadInternal()
         if (d->vdec)
             d->vdec->setCodecContext(0);
     }
-    qDebug() << "Loading " << d->current_source << " ...";
+    qCDebug(DIGIKAM_QTAV_LOG) << "Loading " << d->current_source << " ...";
     if (d->current_source.type() == QVariant::String) {
         d->demuxer.setMedia(d->current_source.toString());
     } else {
@@ -1475,7 +1475,7 @@ void AVPlayer::seekChapter(int incr)
         return;
 
     //av_log(NULL, AV_LOG_VERBOSE, "Seeking to chapter %d.\n", i);
-    qDebug() << QString::fromLatin1("Seeking to chapter : ") << QString::number(i);
+    qCDebug(DIGIKAM_QTAV_LOG) << QString::fromLatin1("Seeking to chapter : ") << QString::number(i);
     setPosition(av_rescale_q(ic->chapters[i]->start, ic->chapters[i]->time_base,
                              av_time_base_q) / 1000);
 }

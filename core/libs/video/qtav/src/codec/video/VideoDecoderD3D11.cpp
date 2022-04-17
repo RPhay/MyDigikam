@@ -42,7 +42,7 @@ extern "C"
 using namespace Microsoft::WRL; //ComPtr
 
 #include "directx/SurfaceInteropD3D11.h"
-#include "utils/Logger.h"
+#include "digikam_debug.h"
 
 // define __mingw_uuidof
 #ifdef __CRT_UUID_DECL
@@ -267,7 +267,7 @@ bool VideoDecoderD3D11Private::createDevice()
             .arg(desc.DeviceId)
             .arg(desc.Revision)
             ;
-    qDebug() << sD3D11Description;
+    qCDebug(DIGIKAM_QTAV_LOG) << sD3D11Description;
     description = sD3D11Description;
     return true;
 }

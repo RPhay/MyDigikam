@@ -22,7 +22,7 @@
 
 #include "VideoDecoderFFmpegBase.h"
 #include "Packet.h"
-#include "utils/Logger.h"
+#include "digikam_debug.h"
 
 namespace QtAV
 {

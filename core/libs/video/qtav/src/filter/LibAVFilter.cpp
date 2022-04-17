@@ -28,7 +28,7 @@
 #include "VideoFrame.h"
 #include "private/AVCompat.h"
 #include "utils/internal.h"
-#include "utils/Logger.h"
+#include "digikam_debug.h"
 
 // KDE includes
 
@@ -177,7 +177,7 @@ public:
         //not available in libav9
         const char* g = avfilter_graph_dump(filter_graph, NULL);
         if (g)
-            qDebug().nospace() << "filter graph:\n" << g; // use << to not print special chars in qt5.5
+            qCDebug(DIGIKAM_QTAV_LOG).nospace() << "filter graph:\n" << g; // use << to not print special chars in qt5.5
         av_freep(&g);
 #endif //DBG_GRAPH
         return true;

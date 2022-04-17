@@ -24,7 +24,7 @@
 #include "private/Frame_p.h"
 #include "AudioResampler.h"
 #include "private/AVCompat.h"
-#include "utils/Logger.h"
+#include "digikam_debug.h"
 
 namespace QtAV
 {
@@ -190,7 +190,7 @@ void AudioFrame::prepend(AudioFrame &other)
     Q_D(AudioFrame);
 
     if (d->format != other.format()) {
-        qWarning() << "To prepend a frame it must have the same audio format";
+        qCWarning(DIGIKAM_QTAV_LOG_WARN) << "To prepend a frame it must have the same audio format";
         return;
     }
 
@@ -212,7 +212,7 @@ void AudioFrame::setSamplesPerChannel(int samples)
 {
     Q_D(AudioFrame);
     if (!d->format.isValid()) {
-        qWarning() << "can not set spc for an invalid format: " << d->format;
+        qCWarning(DIGIKAM_QTAV_LOG_WARN) << "can not set spc for an invalid format: " << d->format;
         return;
     }
     d->samples_per_ch = samples;
@@ -274,7 +274,7 @@ AudioFrame AudioFrame::to(const AudioFormat &fmt) const
     //conv->prepare(); // already called in setIn/OutFormat
     conv->setInSampesPerChannel(samplesPerChannel()); //TODO
     if (!conv->convert((const quint8**)d->planes.constData())) {
-        qWarning() << "AudioFrame::to error: " << format() << "=>" << fmt;
+        qCWarning(DIGIKAM_QTAV_LOG_WARN) << "AudioFrame::to error: " << format() << "=>" << fmt;
         return AudioFrame();
     }
     AudioFrame f(fmt, conv->outData());

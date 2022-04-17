@@ -30,7 +30,7 @@
 #include <AudioToolbox/AudioToolbox.h>
 #include "private/mkid.h"
 #include "private/factory.h"
-#include "utils/Logger.h"
+#include "digikam_debug.h"
 
 namespace QtAV
 {

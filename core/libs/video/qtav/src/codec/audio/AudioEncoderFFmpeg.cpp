@@ -26,7 +26,7 @@
 #include "private/mkid.h"
 #include "private/factory.h"
 #include "QtAV_Version.h"
-#include "utils/Logger.h"
+#include "digikam_debug.h"
 
 /*!
  * options (properties) are from libavcodec/options_table.h
@@ -83,7 +83,7 @@ bool AudioEncoderFFmpegPrivate::open()
         }
     }
     if (!codec) {
-        qWarning() << "Can not find encoder for codec " << codec_name;
+        qCWarning(DIGIKAM_QTAV_LOG_WARN) << "Can not find encoder for codec " << codec_name;
         return false;
     }
     if (avctx) {
@@ -134,7 +134,7 @@ bool AudioEncoderFFmpegPrivate::open()
     avctx->time_base.den = format_used.sampleRate();
 
     avctx->bit_rate = bit_rate;
-    qDebug() << format_used;
+    qCDebug(DIGIKAM_QTAV_LOG) << format_used;
 
     /** Allow the use of the experimental AAC encoder */
     avctx->strict_std_compliance = FF_COMPLIANCE_EXPERIMENTAL;

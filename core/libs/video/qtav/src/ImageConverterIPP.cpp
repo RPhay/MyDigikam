@@ -28,7 +28,7 @@
 #if QTAV_HAVE(IPP)
 #include <ipp.h>
 #endif
-#include "utils/Logger.h"
+#include "digikam_debug.h"
 
 namespace QtAV
 {

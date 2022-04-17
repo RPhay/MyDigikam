@@ -25,7 +25,7 @@
 #include "private/mkid.h"
 #include "private/factory.h"
 #include <QFile>
-#include "utils/Logger.h"
+#include "digikam_debug.h"
 #include <QtDebug>
 
 namespace QtAV
@@ -219,7 +219,7 @@ void QFileIO::onUrlChanged()
             return;
         }
         const QString path_maybe = path.mid(p);
-        qDebug() << path_maybe;
+        qCDebug(DIGIKAM_QTAV_LOG) << path_maybe;
         --p;
         while (p > 0) {
             c = path.at(p);
@@ -236,7 +236,7 @@ void QFileIO::onUrlChanged()
     if (path.isEmpty())
         return;
     if (!d.file.open(QIODevice::ReadOnly))
-        qWarning() << "Failed to open [" << d.file.fileName() << "]: " << d.file.errorString();
+        qCWarning(DIGIKAM_QTAV_LOG_WARN) << "Failed to open [" << d.file.fileName() << "]: " << d.file.errorString();
 }
 
 } // namespace QtAV

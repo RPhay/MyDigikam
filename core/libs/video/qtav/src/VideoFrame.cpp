@@ -28,7 +28,7 @@
 #include <QImage>
 #include "private/AVCompat.h"
 #include "utils/GPUMemCopy.h"
-#include "utils/Logger.h"
+#include "digikam_debug.h"
 
 // TODO: VideoFrame.copyPropertyies(VideoFrame) to avoid missing property copy
 namespace QtAV
@@ -395,7 +395,7 @@ VideoFrame VideoFrame::to(const VideoFormat &fmt, const QSize& dstSize, const QR
     conv.setOutSize(w, h);
     conv.setInRange(colorRange());
     if (!conv.convert(d->planes.constData(), d->line_sizes.constData())) {
-        qWarning() << "VideoFrame::to error: " << format() << "=>" << fmt;
+        qCWarning(DIGIKAM_QTAV_LOG_WARN) << "VideoFrame::to error: " << format() << "=>" << fmt;
         return VideoFrame();
     }
     VideoFrame f(w, h, fmt, conv.outData(), ImageConverter::DataAlignment);

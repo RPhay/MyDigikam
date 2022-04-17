@@ -33,7 +33,7 @@ extern "C"
 #include <libcedarv/libcedarv.h>
 }
 
-#include "utils/Logger.h"
+#include "digikam_debug.h"
 
 // TODO: neon+nv12+opengl crash
 

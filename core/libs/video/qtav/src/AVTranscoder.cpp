@@ -26,7 +26,7 @@
 #include "EncodeFilter.h"
 #include "Statistics.h"
 #include "utils/BlockingQueue.h"
-#include "utils/Logger.h"
+#include "digikam_debug.h"
 
 namespace QtAV
 {

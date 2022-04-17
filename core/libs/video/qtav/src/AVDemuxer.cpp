@@ -44,7 +44,7 @@ typedef QTime QElapsedTimer;
 #include "MediaIO.h"
 #include "AVCompat.h"
 #include "utils/internal.h"
-#include "utils/Logger.h"
+#include "digikam_debug.h"
 
 namespace QtAV
 {
@@ -811,7 +811,7 @@ bool AVDemuxer::load()
     // d->format_forced can be set from AVFormatContext.format_whitelist
     if (!d->format_forced.isEmpty()) {
         d->input_format = av_find_input_format(d->format_forced.toUtf8().constData());
-        qDebug() << "force format: " << d->format_forced;
+        qCDebug(DIGIKAM_QTAV_LOG) << "force format: " << d->format_forced;
     }
     int ret = 0;
     // used dict entries will be removed in avformat_open_input
@@ -836,7 +836,7 @@ bool AVDemuxer::load()
         AVError::ErrorCode ec = AVError::OpenError;
         QString msg = i18n("failed to open media");
         handleError(ret, &ec, msg);
-        qWarning() << "Can't open media: " << msg;
+        qCWarning(DIGIKAM_QTAV_LOG_WARN) << "Can't open media: " << msg;
         if (mediaStatus() == LoadingMedia) //workaround for timeout but not interrupted
             setMediaStatus(InvalidMedia);
         Q_EMIT unloaded(); //context not ready. so will not emit in unload()
@@ -854,7 +854,7 @@ bool AVDemuxer::load()
         AVError::ErrorCode ec(AVError::ParseStreamError);
         QString msg(i18n("failed to find stream info"));
         handleError(ret, &ec, msg);
-        qWarning() << "Can't find stream info: " << msg;
+        qCWarning(DIGIKAM_QTAV_LOG_WARN) << "Can't find stream info: " << msg;
         // context is ready. unloaded() will be emitted in unload()
         if (mediaStatus() == LoadingMedia) //workaround for timeout but not interrupted
             setMediaStatus(InvalidMedia);
@@ -875,13 +875,13 @@ bool AVDemuxer::load()
     if (was_seekable != d->seekable)
         Q_EMIT seekableChanged();
 
-    qDebug() << "avfmtctx.flags:" << d->format_ctx->flags << "iformat.flags" << d->format_ctx->iformat->flags;
+    qCDebug(DIGIKAM_QTAV_LOG) << "avfmtctx.flags:" << d->format_ctx->flags << "iformat.flags" << d->format_ctx->iformat->flags;
 
     if (getInterruptStatus() < 0) {
         QString msg;
         qDebug("AVERROR_EXIT: %d", AVERROR_EXIT);
         handleError(AVERROR_EXIT, 0, msg);
-        qWarning() << "User interupted: " << msg;
+        qCWarning(DIGIKAM_QTAV_LOG_WARN) << "User interupted: " << msg;
         return false;
     }
     return true;

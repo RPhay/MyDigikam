@@ -28,7 +28,7 @@
 #include "private/Filter_p.h"
 #include "AudioEncoder.h"
 #include "VideoEncoder.h"
-#include "utils/Logger.h"
+#include "digikam_debug.h"
 
 namespace QtAV
 {

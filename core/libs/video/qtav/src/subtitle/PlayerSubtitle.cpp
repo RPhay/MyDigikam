@@ -26,7 +26,7 @@
 #include "AVPlayer.h"
 #include "Subtitle.h"
 #include "utils/internal.h"
-#include "utils/Logger.h"
+#include "digikam_debug.h"
 
 namespace QtAV
 {

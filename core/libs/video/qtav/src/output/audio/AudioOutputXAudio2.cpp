@@ -26,7 +26,7 @@
 #include <QLibrary>
 #include <QSemaphore>
 #include "private/AVCompat.h"
-#include "utils/Logger.h"
+#include "digikam_debug.h"
 #define DX_LOG_COMPONENT "XAudio2"
 #include "utils/DirectXHelper.h"
 #include "xaudio2_compat.h"
@@ -69,7 +69,7 @@ public:
     STDMETHOD_(void, OnLoopEnd)(THIS_ void* bufferContext) Q_DECL_OVERRIDE { Q_UNUSED(bufferContext);}
     STDMETHOD_(void, OnVoiceError)(THIS_ void* bufferContext, HRESULT error) Q_DECL_OVERRIDE {
         Q_UNUSED(bufferContext);
-        qWarning() << __FUNCTION__ << ": (" << error << ") " << qt_error_string(error);
+        qCWarning(DIGIKAM_QTAV_LOG_WARN) << __FUNCTION__ << ": (" << error << ") " << qt_error_string(error);
     }
 
 private:
@@ -120,9 +120,9 @@ AudioOutputXAudio2::AudioOutputXAudio2(QObject *parent)
     int ver = 9;
     for (; ver >= 7; ver--) {
         dll.setFileName(QStringLiteral("XAudio2_%1").arg(ver));
-        qDebug() << dll.fileName();
+        qCDebug(DIGIKAM_QTAV_LOG) << dll.fileName();
         if (!dll.load()) {
-            qWarning() << dll.errorString();
+            qCWarning(DIGIKAM_QTAV_LOG_WARN) << dll.errorString();
             continue;
         }
 #if (_WIN32_WINNT < _WIN32_WINNT_WIN8)
@@ -165,7 +165,7 @@ AudioOutputXAudio2::AudioOutputXAudio2(QObject *parent)
 
 AudioOutputXAudio2::~AudioOutputXAudio2()
 {
-    qDebug();
+    qCDebug(DIGIKAM_QTAV_LOG);
     if (xaudio2_winsdk)
         SafeRelease(&winsdk.xaudio);
     else

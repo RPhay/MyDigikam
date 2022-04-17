@@ -43,7 +43,7 @@ using QRegExp = QRegularExpression;
 #include "QtAV_Version.h"
 #include "private/AVCompat.h"
 #include "utils/internal.h"
-#include "utils/Logger.h"
+#include "digikam_debug.h"
 
 unsigned QtAV_Version()
 {
@@ -171,7 +171,7 @@ static const depend_component* get_depend_component(const depend_component* info
 
 void print_library_info()
 {
-    qDebug() << aboutQtAV_PlainText().toUtf8().constData();
+    qCDebug(DIGIKAM_QTAV_LOG) << aboutQtAV_PlainText().toUtf8().constData();
     const depend_component* info = Internal::get_depend_component(0);
 
     while (info)
@@ -318,9 +318,9 @@ static void qtav_ffmpeg_log_callback(void* ctx, int level,const char* fmt, va_li
     qmsg = qmsg.trimmed();
 
     if      (level > AV_LOG_WARNING)
-        qDebug() << qPrintable(qmsg);
+        qCDebug(DIGIKAM_QTAV_LOG) << qPrintable(qmsg);
     else if (level > AV_LOG_PANIC)
-        qWarning() << qPrintable(qmsg);
+        qCWarning(DIGIKAM_QTAV_LOG_WARN) << qPrintable(qmsg);
 }
 
 QString avformatOptions()

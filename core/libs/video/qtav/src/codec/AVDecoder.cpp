@@ -30,7 +30,7 @@
 #include "QtAV_Version.h"
 #include "private/AVDecoder_p.h"
 #include "utils/internal.h"
-#include "utils/Logger.h"
+#include "digikam_debug.h"
 
 namespace QtAV
 {
@@ -94,7 +94,7 @@ bool AVDecoder::open()
         } else {
             es = es.arg(d.codec_name);
         }
-        qWarning() << es;
+        qCWarning(DIGIKAM_QTAV_LOG_WARN) << es;
         AVError::ErrorCode ec(AVError::CodecError);
         switch (d.codec_ctx->codec_type) {
         case AVMEDIA_TYPE_VIDEO:

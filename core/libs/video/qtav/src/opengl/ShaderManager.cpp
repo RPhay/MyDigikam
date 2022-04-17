@@ -22,6 +22,7 @@
 
 #include "ShaderManager.h"
 #include "VideoShader.h"
+#include "digikam_debug.h"
 
 namespace QtAV
 {
@@ -55,7 +56,7 @@ VideoShader* ShaderManager::prepareMaterial(VideoMaterial *material, qint32 mate
     VideoShader *shader = d->shader_cache.value(type, 0);
     if (shader)
         return shader;
-    qDebug() << QStringLiteral("[ShaderManager] cache a new shader material type(%1): %2").arg(type).arg(VideoMaterial::typeName(type));
+    qCDebug(DIGIKAM_QTAV_LOG) << QStringLiteral("[ShaderManager] cache a new shader material type(%1): %2").arg(type).arg(VideoMaterial::typeName(type));
     shader = material->createShader();
     shader->initialize();
     d->shader_cache[type] = shader;

@@ -33,7 +33,7 @@
 #include "private/AVCompat.h"
 #include <QCoreApplication>
 #include <QDateTime>
-#include "utils/Logger.h"
+#include "digikam_debug.h"
 
 namespace QtAV
 {
@@ -241,8 +241,8 @@ void AudioThread::run()
                     || dec->resampler()->outAudioFormat() != ao->audioFormat()) {
                 //resample later to ensure thread safe. TODO: test
                 if (d.resample) {
-                    qDebug() << "ao.format " << ao->audioFormat();
-                    qDebug() << "swr.format " << dec->resampler()->outAudioFormat();
+                    qCDebug(DIGIKAM_QTAV_LOG) << "ao.format " << ao->audioFormat();
+                    qCDebug(DIGIKAM_QTAV_LOG) << "swr.format " << dec->resampler()->outAudioFormat();
                     qDebug("decoder set speed: %.2f", ao->speed());
                     dec->resampler()->setOutAudioFormat(ao->audioFormat());
                     dec->resampler()->setSpeed(ao->speed());

@@ -27,7 +27,7 @@
 #include "AVDecoder.h"
 #include "VideoThread.h"
 #include <QTime>
-#include "utils/Logger.h"
+#include "digikam_debug.h"
 #include <QTimer>
 
 #define RESUME_ONCE_ON_SEEK 0
@@ -438,7 +438,7 @@ void AVDemuxThread::stop()
         t->packetQueue()->clear();
         t->packetQueue()->blockFull(false); //??
         while (t->isRunning()) {
-            qDebug() << "stopping thread " << t;
+            qCDebug(DIGIKAM_QTAV_LOG) << "stopping thread " << t;
             t->stop();
             t->wait(500);
         }

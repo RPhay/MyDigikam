@@ -21,7 +21,7 @@
  * ============================================================ */
 
 #include "SubImagesGeometry.h"
-#include "utils/Logger.h"
+#include "digikam_debug.h"
 
 namespace QtAV
 {
@@ -192,7 +192,7 @@ bool SubImagesGeometry::generateVertexData(const QRect &rect, bool useIndecies, 
     const float sy = float(rect.height())/float(m_images.height());
     vd = (VertexData*)vertexData();
     foreach (const SubImage& i, m_images.images) {
-        //qDebug() << rect;
+        //qCDebug(DIGIKAM_QTAV_LOG) << rect;
         //qDebug("i: %d,%d", i.x, i.y);
         vd = SetVertexPositionAndNormalize(vd, dx0 + float(i.x)*sx, dy0 + float(i.y)*sy, i.w*sx, i.h*sy, m_w, m_h, useIndecies);
         m_normalized = true;

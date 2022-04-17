@@ -35,7 +35,7 @@ extern "C" {
 #include <libavutil/display.h>
 }
 #endif
-#include "utils/Logger.h"
+#include "digikam_debug.h"
 
 namespace QtAV
 {
@@ -384,7 +384,7 @@ bool AVPlayer::Private::setupAudioThread(AVPlayer *player)
     adec->setOptions(ac_opt);
     if (!adec->open()) {
         AVError e(AVError::AudioCodecNotFound);
-        qWarning() << e.string();
+        qCWarning(DIGIKAM_QTAV_LOG_WARN) << e.string();
         emit player->error(e);
         return false;
     }
@@ -403,7 +403,7 @@ bool AVPlayer::Private::setupAudioThread(AVPlayer *player)
         //qDebug("ao audio format is changed. reopen ao");
         ao->setAudioFormat(af); /// set before close to workaround OpenAL context lost
         ao->close();
-        qDebug() << "AudioOutput format: " << ao->audioFormat() << "; requested: " << ao->requestedFormat();
+        qCDebug(DIGIKAM_QTAV_LOG) << "AudioOutput format: " << ao->audioFormat() << "; requested: " << ao->requestedFormat();
         if (!ao->open()) {
             return false;
         }
@@ -601,7 +601,7 @@ bool AVPlayer::Private::setupVideoThread(AVPlayer *player)
     if (!vdec) {
         // DO NOT emit error signals in VideoDecoder::open(). 1 signal is enough
         AVError e(AVError::VideoCodecNotFound);
-        qWarning() << e.string();
+        qCWarning(DIGIKAM_QTAV_LOG_WARN) << e.string();
         emit player->error(e);
         return false;
     }

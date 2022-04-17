@@ -26,7 +26,7 @@
 #ifndef QT_NO_OPENGL
 #include "opengl/OpenGLHelper.h"
 #include "VideoFrame.h"
-#include "utils/Logger.h"
+#include "digikam_debug.h"
 #if VA_X11_INTEROP
 #ifdef QT_X11EXTRAS_LIB
 #include <QtX11Extras/QX11Info>

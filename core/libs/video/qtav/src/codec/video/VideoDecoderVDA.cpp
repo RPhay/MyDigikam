@@ -42,7 +42,7 @@ extern "C"
 #endif //__cplusplus
 
 #include <VideoDecodeAcceleration/VDADecoder.h>
-#include "utils/Logger.h"
+#include "digikam_debug.h"
 
 // KDE includes
 
@@ -418,7 +418,7 @@ void* VideoDecoderVDAPrivate::setup(AVCodecContext *avctx)
         return NULL;
     }
     initUSWC(codedWidth(avctx));
-    qDebug() << "VDA decoder created. format: " << cv::format_from_cv(out_fmt);
+    qCDebug(DIGIKAM_QTAV_LOG) << "VDA decoder created. format: " << cv::format_from_cv(out_fmt);
 #ifdef AV_VDA_NEW
     return hw_ctx;
 #else

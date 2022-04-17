@@ -30,7 +30,7 @@
 #define DIRECTSOUND_VERSION 0x0600
 #include <dsound.h>
 #include "private/AVCompat.h"
-#include "utils/Logger.h"
+#include "digikam_debug.h"
 #define DX_LOG_COMPONENT "DSound"
 #include "utils/DirectXHelper.h"
 

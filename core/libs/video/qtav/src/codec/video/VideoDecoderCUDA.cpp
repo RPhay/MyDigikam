@@ -57,7 +57,7 @@
 
 #include "cuda/helper_cuda.h"
 #include "cuda/cuda_api.h"
-#include "utils/Logger.h"
+#include "digikam_debug.h"
 #include "SurfaceInteropCUDA.h"
 
 // decode error if not floating context
@@ -645,7 +645,7 @@ bool VideoDecoderCUDAPrivate::createCUVIDParser()
     if (cudaCodec == cudaVideoCodec_NumCodecs) {
         QString es(i18n("Codec %1 is not supported by CUDA").arg(QLatin1String(avcodec_get_name(codec_ctx->codec_id))));
         //emit error(AVError::CodecError, es);
-        qWarning() << es;
+        qCWarning(DIGIKAM_QTAV_LOG_WARN) << es;
         available = false;
         return false;
     }

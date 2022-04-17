@@ -23,7 +23,7 @@
 #include "D3D11VP.h"
 #define DX_LOG_COMPONENT "D3D11VP"
 #include "utils/DirectXHelper.h"
-#include "utils/Logger.h"
+#include "digikam_debug.h"
 
 // define __mingw_uuidof
 #ifdef __CRT_UUID_DECL

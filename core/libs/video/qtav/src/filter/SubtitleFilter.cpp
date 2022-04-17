@@ -26,7 +26,7 @@
 #include "Subtitle.h"
 #include "VideoFrame.h"
 #include <QScopedPointer>
-#include "utils/Logger.h"
+#include "digikam_debug.h"
 
 namespace QtAV
 {

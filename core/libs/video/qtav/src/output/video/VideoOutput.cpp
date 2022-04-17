@@ -25,7 +25,7 @@
 #include "QtAV_Version.h"
 #include <QLibrary>
 #include <QResizeEvent>
-#include "utils/Logger.h"
+#include "digikam_debug.h"
 /*!
  * onSetXXX(...): impl->onSetXXX(...); set value as impl; return ;
  */
@@ -50,7 +50,7 @@ public:
 #else
             avwidgets.setFileNameAndVersion(QStringLiteral("QtAVWidgets"), QTAV_VERSION_MAJOR(QtAV_Version()));
 #endif
-            qDebug() << "Loading QtAVWidgets module: " << avwidgets.fileName();
+            qCDebug(DIGIKAM_QTAV_LOG) << "Loading QtAVWidgets module: " << avwidgets.fileName();
             if (!avwidgets.load()) {
                 qWarning("Failed to load QtAVWidgets module");
             }

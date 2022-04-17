@@ -26,7 +26,7 @@
 #include "AVOutput.h"
 #include "AVPlayer.h"
 #include "filter/FilterManager.h"
-#include "utils/Logger.h"
+#include "digikam_debug.h"
 
 /*
  * 1. parent == target (QObject):

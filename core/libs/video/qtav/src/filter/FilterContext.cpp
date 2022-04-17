@@ -26,7 +26,7 @@
 #include <QPainter>
 #include <QTextDocument>
 #include "VideoFrame.h"
-#include "utils/Logger.h"
+#include "digikam_debug.h"
 
 namespace QtAV
 {

@@ -25,7 +25,7 @@
 #include "private/AudioResampler_p.h"
 #include "private/AVCompat.h"
 #include "private/factory.h"
-#include "utils/Logger.h"
+#include "digikam_debug.h"
 
 namespace QtAV
 {

@@ -259,7 +259,7 @@ public:
                             0, 0, bpc_scale, 0,
                             0, 0, 0, a_bpc_scale ? bpc_scale : 1); // scale alpha channel too
         }
-        //qDebug() << "color mat: " << M;
+        //qCDebug(DIGIKAM_QTAV_LOG) << "color mat: " << M;
     }
 
     mutable bool recompute;

@@ -26,7 +26,7 @@
 #include "FilterContext.h"
 #include <QResizeEvent>
 #include "opengl/OpenGLHelper.h"
-#include "utils/Logger.h"
+#include "digikam_debug.h"
 
 namespace QtAV
 {

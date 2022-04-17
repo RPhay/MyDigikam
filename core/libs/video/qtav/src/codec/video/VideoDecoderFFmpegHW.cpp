@@ -32,7 +32,7 @@
 
 // Local includes
 
-#include "utils/Logger.h"
+#include "digikam_debug.h"
 
 #ifndef Q_UNLIKELY
 #   define Q_UNLIKELY(x) (!!(x))

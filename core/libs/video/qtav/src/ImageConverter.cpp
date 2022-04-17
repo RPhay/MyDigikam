@@ -24,7 +24,7 @@
 #include "private/AVCompat.h"
 #include "private/factory.h"
 #include "ImageConverter.h"
-#include "utils/Logger.h"
+#include "digikam_debug.h"
 
 namespace QtAV
 {

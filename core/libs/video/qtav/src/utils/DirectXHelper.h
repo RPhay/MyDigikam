@@ -41,7 +41,7 @@ namespace QtAV
     do { \
         HRESULT hr = f; \
         if (FAILED(hr)) { \
-            qWarning() << QString::fromLatin1(DX_LOG_COMPONENT " error@%1. " #f ": (0x%2) %3").arg(__LINE__).arg(hr, 0, 16).arg(qt_error_string(hr)); \
+            qCWarning(DIGIKAM_QTAV_LOG_WARN) << QString::fromLatin1(DX_LOG_COMPONENT " error@%1. " #f ": (0x%2) %3").arg(__LINE__).arg(hr, 0, 16).arg(qt_error_string(hr)); \
             __VA_ARGS__ \
         } \
     } while (0)

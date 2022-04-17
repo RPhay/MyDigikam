@@ -23,7 +23,7 @@
 #include "private/SubtitleProcessor.h"
 #include "private/factory.h"
 #include <QFile>
-#include "utils/Logger.h"
+#include "digikam_debug.h"
 
 namespace QtAV
 {
@@ -55,7 +55,7 @@ bool SubtitleProcessor::process(const QString &path)
 {
     QFile f(path);
     if (!f.open(QIODevice::ReadOnly)) {
-        qWarning() << "open subtitle file error: " << f.errorString();
+        qCWarning(DIGIKAM_QTAV_LOG_WARN) << "open subtitle file error: " << f.errorString();
         return false;
     }
     bool ok = process(&f);

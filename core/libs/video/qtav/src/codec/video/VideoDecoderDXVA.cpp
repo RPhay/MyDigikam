@@ -30,7 +30,7 @@
 #include "private/AVCompat.h"
 #include "private/factory.h"
 //#include "private/mkid.h"
-#include "utils/Logger.h"
+#include "digikam_debug.h"
 #include "directx/SurfaceInteropD3D9.h"
 
 #include <QSysInfo>
@@ -358,7 +358,7 @@ bool VideoDecoderDXVAPrivate::checkDevice()
         qWarning("DXVA2_E_NEW_VIDEO_DEVICE. Video decoder reset is not implemeted");
             return false;
     } else if (FAILED(hr)) {
-        qWarning() << "IDirect3DDeviceManager9.TestDevice (" << hr << "): " << qt_error_string(hr);
+        qCWarning(DIGIKAM_QTAV_LOG_WARN) << "IDirect3DDeviceManager9.TestDevice (" << hr << "): " << qt_error_string(hr);
         return false;
     }
     return true;

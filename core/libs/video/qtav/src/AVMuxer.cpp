@@ -26,7 +26,7 @@
 #include "VideoEncoder.h"
 #include "AudioEncoder.h"
 #include "utils/internal.h"
-#include "utils/Logger.h"
+#include "digikam_debug.h"
 
 namespace QtAV
 {
@@ -405,7 +405,7 @@ bool AVMuxer::open()
     // d->format_forced can be set from AVFormatContext.format_whitelist
     if (!d->format_forced.isEmpty()) {
         d->format = av_guess_format(d->format_forced.toUtf8().constData(), NULL, NULL);
-        qDebug() << "force format: " << d->format_forced;
+        qCDebug(DIGIKAM_QTAV_LOG) << "force format: " << d->format_forced;
     }
 
     //d->interrupt_hanlder->begin(InterruptHandler::Open);

@@ -31,7 +31,7 @@
 #include "private/factory.h"
 #include "PlainText.h"
 #include "utils/internal.h"
-#include "utils/Logger.h"
+#include "digikam_debug.h"
 
 //#define ASS_CAPI_NS // do not unload() manually!
 //#define CAPI_LINK_ASS
@@ -121,9 +121,9 @@ static void ass_msg_cb(int level, const char *fmt, va_list va, void *data)
     if (level == MSGL_FATAL)
         qFatal("%s", msg.toUtf8().constData());
     else if (level <= 2)
-        qWarning() << msg;
+        qCWarning(DIGIKAM_QTAV_LOG_WARN) << msg;
     else if (level <= MSGL_INFO)
-        qDebug() << msg;
+        qCDebug(DIGIKAM_QTAV_LOG) << msg;
 }
 
 SubtitleProcessorLibASS::SubtitleProcessorLibASS()
@@ -196,7 +196,7 @@ bool SubtitleProcessorLibASS::process(QIODevice *dev)
     }
     if (!dev->isOpen()) {
         if (!dev->open(QIODevice::ReadOnly)) {
-            qWarning() << "open qiodevice error: " << dev->errorString();
+            qCWarning(DIGIKAM_QTAV_LOG_WARN) << "open qiodevice error: " << dev->errorString();
             return false;
         }
     }
@@ -489,7 +489,7 @@ void SubtitleProcessorLibASS::updateFontCache()
     if (conf.isEmpty() && !conf.isNull()) {
         static const QString kFontCfg(QStringLiteral("fonts.conf"));
         foreach (const QString& fdir, kFontsDirs) {
-            qDebug() << "looking up " << kFontCfg << " in: " << fdir;
+            qCDebug(DIGIKAM_QTAV_LOG) << "looking up " << kFontCfg << " in: " << fdir;
             QFile cfg(QStringLiteral("%1/%2").arg(fdir).arg(kFontCfg));
             if (!cfg.exists())
                 continue;
@@ -500,7 +500,7 @@ void SubtitleProcessorLibASS::updateFontCache()
                     || fdir.startsWith(QLatin1String("qrc:"), Qt::CaseInsensitive)
                     ) {
                 conf = QStringLiteral("%1/%2").arg(Internal::Path::appFontsDir()).arg(kFontCfg);
-                qDebug() << "Fonts dir (for config) is not supported by libass. Copy fonts to app fonts dir: " << fdir;
+                qCDebug(DIGIKAM_QTAV_LOG) << "Fonts dir (for config) is not supported by libass. Copy fonts to app fonts dir: " << fdir;
                 if (!QDir(Internal::Path::appFontsDir()).exists()) {
                     if (!QDir().mkpath(Internal::Path::appFontsDir())) {
                         qWarning("Failed to create fonts dir: %s", Internal::Path::appFontsDir().toUtf8().constData());
@@ -508,11 +508,11 @@ void SubtitleProcessorLibASS::updateFontCache()
                 }
                 QFile cfgout(conf);
                 if (cfgout.exists() && cfgout.size() != cfg.size()) { // TODO:
-                    qDebug() << "new " << kFontCfg << " with the same name. remove old: " << cfgout.fileName();
+                    qCDebug(DIGIKAM_QTAV_LOG) << "new " << kFontCfg << " with the same name. remove old: " << cfgout.fileName();
                     cfgout.remove();
                 }
                 if (!cfgout.exists() && !cfg.copy(conf)) {
-                    qWarning() << "Copy font config file [" << cfg.fileName() <<  "] error: " << cfg.errorString();
+                    qCWarning(DIGIKAM_QTAV_LOG_WARN) << "Copy font config file [" << cfg.fileName() <<  "] error: " << cfg.errorString();
                     continue;
                 }
             }
@@ -520,7 +520,7 @@ void SubtitleProcessorLibASS::updateFontCache()
         }
         if (!QFile(conf).exists())
             conf.clear();
-        qDebug() << "FontConfig: " << conf;
+        qCDebug(DIGIKAM_QTAV_LOG) << "FontConfig: " << conf;
     }
     /*
      * Fonts dir look up:
@@ -539,7 +539,7 @@ void SubtitleProcessorLibASS::updateFontCache()
         static const QStringList ft_filters = QStringList() << QStringLiteral("*.ttf") << QStringLiteral("*.otf") << QStringLiteral("*.ttc");
         QStringList fonts;
         foreach (const QString& fdir, kFontsDirs) {
-            qDebug() << "looking up fonts in: " << fdir;
+            qCDebug(DIGIKAM_QTAV_LOG) << "looking up fonts in: " << fdir;
             QDir d(fdir);
             if (!d.exists()) //avoid winrt crash (system fonts dir)
                 continue;
@@ -560,7 +560,7 @@ void SubtitleProcessorLibASS::updateFontCache()
         if (fonts.isEmpty()) {
             sFontsDir.clear();
         } else {
-            qDebug() << "fonts dir: " << sFontsDir << "  font files: " << fonts;
+            qCDebug(DIGIKAM_QTAV_LOG) << "fonts dir: " << sFontsDir << "  font files: " << fonts;
             if (sFontsDir.isEmpty()
                     || sFontsDir.startsWith(QLatin1String("assets:"), Qt::CaseInsensitive)
                     || sFontsDir.startsWith(QLatin1String(":"), Qt::CaseInsensitive)
@@ -568,7 +568,7 @@ void SubtitleProcessorLibASS::updateFontCache()
                     ) {
                 const QString fontsdir_in(sFontsDir);
                 sFontsDir = Internal::Path::appFontsDir();
-                qDebug() << "Fonts dir is not supported by libass. Copy fonts to app fonts dir if not exist: " << sFontsDir;
+                qCDebug(DIGIKAM_QTAV_LOG) << "Fonts dir is not supported by libass. Copy fonts to app fonts dir if not exist: " << sFontsDir;
                 if (!QDir(Internal::Path::appFontsDir()).exists()) {
                     if (!QDir().mkpath(Internal::Path::appFontsDir())) {
                         qWarning("Failed to create fonts dir: %s", Internal::Path::appFontsDir().toUtf8().constData());
@@ -579,16 +579,16 @@ void SubtitleProcessorLibASS::updateFontCache()
                     const QString kOut(QStringLiteral("%1/%2").arg(sFontsDir).arg(f));
                     QFile ffout(kOut);
                     if (ffout.exists() && ffout.size() != ff.size()) { // TODO:
-                        qDebug() << "new font with the same name. remove old: " << ffout.fileName();
+                        qCDebug(DIGIKAM_QTAV_LOG) << "new font with the same name. remove old: " << ffout.fileName();
                         ffout.remove();
                     }
                     if (!ffout.exists() && !ff.copy(kOut))
-                        qWarning() << "Copy font file [" << ff.fileName() <<  "] error: " << ff.errorString();
+                        qCWarning(DIGIKAM_QTAV_LOG_WARN) << "Copy font file [" << ff.fileName() <<  "] error: " << ff.errorString();
                 }
             }
             if (fonts.contains(kDefaultFontName)) {
                 sFont = QStringLiteral("%1/%2").arg(sFontsDir).arg(kDefaultFontName);
-                qDebug() << "default font file: " << sFont << "; fonts dir: " << sFontsDir;
+                qCDebug(DIGIKAM_QTAV_LOG) << "default font file: " << sFont << "; fonts dir: " << sFontsDir;
             }
         }
     }
@@ -602,7 +602,7 @@ void SubtitleProcessorLibASS::updateFontCache()
     // prefer user settings
     const QString kFont = font_file.isEmpty() ? sFont : Internal::Path::toLocal(font_file);
     const QString kFontsDir = fonts_dir.isEmpty() ? sFontsDir : Internal::Path::toLocal(fonts_dir);
-    qDebug() << "font file: " << kFont << "; fonts dir: " << kFontsDir;
+    qCDebug(DIGIKAM_QTAV_LOG) << "font file: " << kFont << "; fonts dir: " << kFontsDir;
     // setup libass
 #ifdef Q_OS_WINRT
     if (!kFontsDir.isEmpty())

@@ -44,7 +44,7 @@ using QRegExp = QRegularExpression;
 #define EGL_CAPI_NS
 #include "capi/egl_api.h"
 #endif //QTAV_HAVE(EGL_CAPI)
-#include "utils/Logger.h"
+#include "digikam_debug.h"
 
 #define BUG_GLES3_ANDROID 1 //FIXME: N7 android6 gles3 displays red images, only rgb32 is correct
 
@@ -234,7 +234,7 @@ bool hasExtensionEGL(const char *exts[])
     static bool print_exts = true;
     if (print_exts) {
         print_exts = false;
-        qDebug() << "EGL extensions: " << supported;
+        qCDebug(DIGIKAM_QTAV_LOG) << "EGL extensions: " << supported;
     }
     for (int i = 0; exts[i]; ++i) {
         if (supported.contains(QByteArray(exts[i])))
@@ -561,7 +561,7 @@ static QMatrix4x4 channelMap(const VideoFormat& fmt)
     for (int i = 0; i < 4; ++i) {
         m(i, channels[i]) = 1;
     }
-    qDebug() << m;
+    qCDebug(DIGIKAM_QTAV_LOG) << m;
     return m;
 }
 

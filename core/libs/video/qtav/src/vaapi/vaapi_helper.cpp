@@ -23,7 +23,7 @@
 #include "vaapi_helper.h"
 #include <fcntl.h> //open()
 #include <unistd.h> //close()
-#include "utils/Logger.h"
+#include "digikam_debug.h"
 
 namespace QtAV
 {
