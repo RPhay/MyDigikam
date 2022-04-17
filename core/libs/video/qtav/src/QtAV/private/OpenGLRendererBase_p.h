@@ -20,11 +20,13 @@
  *
  * ============================================================ */
 
-#ifndef QTAV_OPENGLRENDERERBASE_P_H
-#define QTAV_OPENGLRENDERERBASE_P_H
+#ifndef QTAV_OPENGL_RENDERER_BASE_P_H
+#define QTAV_OPENGL_RENDERER_BASE_P_H
 
-#include "QtAV/private/VideoRenderer_p.h"
-#include "QtAV/OpenGLVideo.h"
+// Local includes
+
+#include "private/VideoRenderer_p.h"
+#include "OpenGLVideo.h"
 
 namespace QtAV
 {
@@ -32,16 +34,18 @@ namespace QtAV
 class Q_AV_PRIVATE_EXPORT OpenGLRendererBasePrivate : public VideoRendererPrivate
 {
 public:
-    OpenGLRendererBasePrivate(QPaintDevice *pd);
+
+    OpenGLRendererBasePrivate(QPaintDevice* pd);
     virtual ~OpenGLRendererBasePrivate();
+
     void setupAspectRatio();
 
-    QPainter *painter;
+    QPainter*   painter;
     OpenGLVideo glv;
-    QMatrix4x4 matrix;
-    bool frame_changed;
+    QMatrix4x4  matrix;
+    bool        frame_changed;
 };
 
 } // namespace QtAV
 
-#endif // QTAV_OpenGLRendererBase_P_H
+#endif // QTAV_OPENGL_RENDER_BASE_P_H

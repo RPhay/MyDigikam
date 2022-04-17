@@ -23,33 +23,45 @@
 #ifndef QTAV_FRAME_P_H
 #define QTAV_FRAME_P_H
 
-#include <QtAV/QtAV_Global.h>
-#include <QtCore/QVector>
-#include <QtCore/QVariant>
-#include <QtCore/QSharedData>
+// Qt includes
+
+#include <QVector>
+#include <QVariant>
+#include <QSharedData>
+
+// Local includes
+
+#include "QtAV_Global.h"
 
 namespace QtAV
 {
 
 class Frame;
+
 class FramePrivate : public QSharedData
 {
     Q_DISABLE_COPY(FramePrivate)
+
 public:
+
     FramePrivate()
         : timestamp(0)
         , data_align(1)
-    {}
-    virtual ~FramePrivate() {}
+    {
+    }
 
-    QVector<uchar*> planes; //slice
-    QVector<int> line_sizes; //stride
-    QVariantMap metadata;
-    QByteArray data;
-    qreal timestamp;
-    int data_align;
+    virtual ~FramePrivate()
+    {
+    }
+
+    QVector<uchar*> planes;     // slice
+    QVector<int>    line_sizes; // stride
+    QVariantMap     metadata;
+    QByteArray      data;
+    qreal           timestamp;
+    int             data_align;
 };
 
 } // namespace QtAV
 
-#endif // QTAV_Frame_P_H
+#endif // QTAV_FRAME_P_H

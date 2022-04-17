@@ -20,22 +20,29 @@
  *
  * ============================================================ */
 
-#ifndef QTAV_AUDIORESAMPLER_P_H
-#define QTAV_AUDIORESAMPLER_P_H
+#ifndef QTAV_AUDIO_RESAMPLER_P_H
+#define QTAV_AUDIO_RESAMPLER_P_H
 
-#include "QtAV/AudioFormat.h"
-#include "QtAV/private/AVCompat.h"
-#include <QtCore/QByteArray>
+// Qt includes
+
+#include <QByteArray>
+
+// Local includes
+
+#include "AudioFormat.h"
+#include "private/AVCompat.h"
 
 namespace QtAV
 {
 
 class AudioResampler;
+
 class Q_AV_PRIVATE_EXPORT AudioResamplerPrivate : public DPtrPrivate<AudioResampler>
 {
 public:
-    AudioResamplerPrivate():
-        in_samples_per_channel(0)
+
+    AudioResamplerPrivate()
+      : in_samples_per_channel(0)
       , out_samples_per_channel(0)
       , speed(1.0)
     {
@@ -43,12 +50,12 @@ public:
         out_format.setSampleFormat(AudioFormat::SampleFormat_Float);
     }
 
-    int in_samples_per_channel, out_samples_per_channel;
-    qreal speed;
+    int         in_samples_per_channel, out_samples_per_channel;
+    qreal       speed;
     AudioFormat in_format, out_format;
-    QByteArray data_out;
+    QByteArray  data_out;
 };
 
 } // namespace QtAV
 
-#endif // QTAV_AUDIORESAMPLER_P_H
+#endif // QTAV_AUDIO_RESAMPLER_P_H

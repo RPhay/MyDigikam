@@ -20,8 +20,8 @@
  *
  * ============================================================ */
 
-#ifndef QTAV_MediaIO_P_H
-#define QTAV_MediaIO_P_H
+#ifndef QTAV_MEDIAIO_P_H
+#define QTAV_MEDIAIO_P_H
 
 #include "QtAV/QtAV_Global.h"
 #include "QtAV/private/AVCompat.h"
@@ -32,19 +32,24 @@ namespace QtAV
 {
 
 class MediaIO;
+
 class Q_AV_PRIVATE_EXPORT MediaIOPrivate : public DPtrPrivate<MediaIO>
 {
 public:
+
     MediaIOPrivate()
         : ctx(NULL)
         , buffer_size(-1)
         , mode(MediaIO::Read)
-    {}
-    AVIOContext *ctx;
-    int buffer_size;
+    {
+    }
+
+    AVIOContext*        ctx;
+    int                 buffer_size;
     MediaIO::AccessMode mode;
-    QString url;
+    QString             url;
 };
 
 } // namespace QtAV
-#endif // QTAV_MediaIO_P_H
+
+#endif // QTAV_MEDIAIO_P_H

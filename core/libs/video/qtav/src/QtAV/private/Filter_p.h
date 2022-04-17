@@ -23,7 +23,9 @@
 #ifndef QTAV_FILTER_P_H
 #define QTAV_FILTER_P_H
 
-#include <QtAV/QtAV_Global.h>
+// Local includes
+
+#include "QtAV_Global.h"
 
 namespace QtAV
 {
@@ -31,13 +33,17 @@ namespace QtAV
 class Filter;
 class VideoFilterContext;
 class Statistics;
+
 class Q_AV_PRIVATE_EXPORT FilterPrivate : public DPtrPrivate<Filter>
 {
 public:
-    FilterPrivate():
-        enabled(true)
+
+    FilterPrivate()
+      : enabled(true)
       , owned_by_target(false)
-    {}
+    {
+    }
+
     virtual ~FilterPrivate() {}
 
     bool enabled;
@@ -47,10 +53,13 @@ public:
 class Q_AV_PRIVATE_EXPORT VideoFilterPrivate : public FilterPrivate
 {
 public:
-    VideoFilterPrivate() :
-        context(0)
-    {}
-    VideoFilterContext *context; //used only when is necessary
+
+    VideoFilterPrivate()
+      : context(0)
+    {
+    }
+
+    VideoFilterContext *context; // used only when is necessary
 };
 
 class Q_AV_PRIVATE_EXPORT AudioFilterPrivate : public FilterPrivate

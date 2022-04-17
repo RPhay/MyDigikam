@@ -20,20 +20,26 @@
  *
  * ============================================================ */
 
-#ifndef QTAV_PLAYERSUBTITLE_H
-#define QTAV_PLAYERSUBTITLE_H
+#ifndef QTAV_PLAYER_SUBTITLE_H
+#define QTAV_PLAYER_SUBTITLE_H
 
-#include <QtCore/QObject>
-#include <QtCore/QVariant>
-#include <QtCore/QVector>
-#include <QtAV/QtAV_Global.h>
-#include <QtAV/Packet.h>
+// Qt includes
+
+#include <QObject>
+#include <QVariant>
+#include <QVector>
+
+// Local includes
+
+#include "QtAV_Global.h"
+#include "Packet.h"
 
 namespace QtAV
 {
 
 class AVPlayer;
 class Subtitle;
+
 /*!
  * \brief The PlayerSubtitle class
  * Bind Subtitle to AVPlayer. Used by SubtitleFilter and QuickSubtitle.
@@ -42,28 +48,38 @@ class Subtitle;
 class Q_AV_PRIVATE_EXPORT PlayerSubtitle : public QObject
 {
     Q_OBJECT
+
 public:
+
     PlayerSubtitle(QObject *parent = 0);
     void setPlayer(AVPlayer* player);
     Subtitle* subtitle();
+
     /*!
      * \brief setFile
      * Load user selected subtitle. The subtitle will not change unless you manually setFile(QString()).
      */
     void setFile(const QString& file);
     QString file() const;
+
     /*!
      * \brief autoLoad
      * Auto find and load a suitable external subtitle if file() is not empty.
      */
     void setAutoLoad(bool value);
     bool autoLoad() const;
+
 Q_SIGNALS:
+
     void autoLoadChanged(bool value);
     void fileChanged();
+
 public Q_SLOTS:
+
     void onEnabledChanged(bool value);
+
 private Q_SLOTS:
+
     void onPlayerSourceChanged();
     void onPlayerPositionChanged();
     void onPlayerStart();
@@ -71,20 +87,24 @@ private Q_SLOTS:
     void tryReloadInternalSub();
     void updateInternalSubtitleTracks(const QVariantList& tracks);
     void processInternalSubtitlePacket(int track, const QtAV::Packet& packet);
-    void processInternalSubtitleHeader(const QByteArray &codec, const QByteArray& data); //TODO: remove
+    void processInternalSubtitleHeader(const QByteArray &codec, const QByteArray& data); // TODO: remove
+
 private:
+
     void connectSignals();
     void disconnectSignals();
-    void tryReload(int flag); //1: internal, 2: external, 3: internal+external
+    void tryReload(int flag);   ///< 1: internal, 2: external, 3: internal+external
+
 private:
-    bool m_auto;
-    bool m_enabled; // TODO: m_enable_external
-    AVPlayer *m_player;
-    Subtitle *m_sub;
-    QString m_file;
-    QVariantList m_tracks;
+
+    bool            m_auto;
+    bool            m_enabled;  // TODO: m_enable_external
+    AVPlayer*       m_player;
+    Subtitle*       m_sub;
+    QString         m_file;
+    QVariantList    m_tracks;
     QVector<Packet> m_current_pkt;
 };
 
 }
-#endif // QTAV_PLAYERSUBTITLE_H
+#endif // QTAV_PLAYER_SUBTITLE_H
