@@ -20,8 +20,8 @@
  *
  * ============================================================ */
 
-#ifndef QTAV_VIDEODECODERFFMPEGHW_P_H
-#define QTAV_VIDEODECODERFFMPEGHW_P_H
+#ifndef QTAV_VIDEO_DECODER_FFMPEG_HW_P_H
+#define QTAV_VIDEO_DECODER_FFMPEG_HW_P_H
 
 // Local includes
 
@@ -115,4 +115,4 @@ private:
 
 } // namespace QtAV
 
-#endif // QTAV_VIDEODECODERFFMPEGHW_P_H
+#endif // QTAV_VIDEO_DECODER_FFMPEG_HW_P_H

@@ -20,12 +20,12 @@
  *
  * ============================================================ */
 
-#ifndef QTAV_VIDEODECODERFFMPEGBASE_H
-#define QTAV_VIDEODECODERFFMPEGBASE_H
+#ifndef QTAV_VIDEO_DECODER_FFMPEG_BASE_H
+#define QTAV_VIDEO_DECODER_FFMPEG_BASE_H
 
-#include "QtAV/VideoDecoder.h"
-#include "QtAV/private/AVDecoder_p.h"
-#include "QtAV/private/AVCompat.h"
+#include "VideoDecoder.h"
+#include "private/AVDecoder_p.h"
+#include "private/AVCompat.h"
 
 namespace QtAV
 {
@@ -73,4 +73,4 @@ public:
 
 } // namespace QtAV
 
-#endif // QTAV_VIDEODECODERFFMPEGBASE_H
+#endif // QTAV_VIDEO_DECODER_FFMPEG_BASE_H

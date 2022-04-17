@@ -20,16 +20,23 @@
  *
  * ============================================================ */
 
-#ifndef QTAV_SURFACEINTEROPCV_H
-#define QTAV_SURFACEINTEROPCV_H
+#ifndef QTAV_SURFACE_INTEROP_CV_H
+#define QTAV_SURFACE_INTEROP_CV_H
 
-#include <QtCore/qglobal.h>
-#include <CoreVideo/CoreVideo.h>
-#include <QtAV/SurfaceInterop.h>
+// Qt includes
+
+#include <qglobal.h>
+
+// Local includes
+
+#include "CoreVideo/CoreVideo.h"
+#include "SurfaceInterop.h"
 
 namespace QtAV
 {
-namespace cv {
+
+namespace cv
+{
 
 VideoFormat::PixelFormat format_from_cv(int cv);
 
@@ -108,6 +115,9 @@ private:
     InteropResourcePtr m_resource;
     CVPixelBufferRef m_surface;
 };
+
 } // namespace cv
+
 } // namespace QtAV
-#endif //QTAV_SURFACEINTEROPCV_H
+
+#endif // QTAV_SURFACE_INTEROP_CV_H

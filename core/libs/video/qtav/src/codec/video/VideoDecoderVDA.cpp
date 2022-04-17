@@ -23,18 +23,24 @@
 #include "VideoDecoderFFmpegHW.h"
 #include "VideoDecoderFFmpegHW_p.h"
 #include "utils/GPUMemCopy.h"
-#include "QtAV/SurfaceInterop.h"
-#include "QtAV/private/AVCompat.h"
-#include "QtAV/private/factory.h"
+#include "SurfaceInterop.h"
+#include "private/AVCompat.h"
+#include "private/factory.h"
 #include "opengl/OpenGLHelper.h"
+
 #include <assert.h>
+
 #ifdef __cplusplus
-extern "C" {
+extern "C"
+{
 #endif //__cplusplus
+
 #include <libavcodec/vda.h>
+
 #ifdef __cplusplus
 }
 #endif //__cplusplus
+
 #include <VideoDecodeAcceleration/VDADecoder.h>
 #include "utils/Logger.h"
 
@@ -44,27 +50,37 @@ extern "C" {
 
 // av_vda_default_init2: 2015-05-13 - cc48409 / e7c5e17 - lavc 56.39.100 / 56.23.0
 // I(wang bin) found the nv12 is the best format on mac. Then mpv developers confirmed it and pigoz added it to ffmpeg
+
 #if AV_MODULE_CHECK(LIBAVCODEC, 56, 23, 0, 39, 100)
-#define AV_VDA_NEW
+#   define AV_VDA_NEW
 #endif
 
 #ifdef MAC_OS_X_VERSION_MIN_REQUIRED
-#if MAC_OS_X_VERSION_MIN_REQUIRED >= 1070 //MAC_OS_X_VERSION_10_7
-#define OSX_TARGET_MIN_LION
-#endif // 1070
+#   if MAC_OS_X_VERSION_MIN_REQUIRED >= 1070 //MAC_OS_X_VERSION_10_7
+#       define OSX_TARGET_MIN_LION
+#   endif // 1070
 #endif //MAC_OS_X_VERSION_MIN_REQUIRED
+
 #ifndef kCFCoreFoundationVersionNumber10_7
-#define kCFCoreFoundationVersionNumber10_7      635.00
+#   define kCFCoreFoundationVersionNumber10_7      635.00
 #endif
 
 // hwaccel 1.2: av_vda_xxx
+
 namespace QtAV
 {
-namespace cv {
+
+namespace cv
+{
+
 VideoFormat::PixelFormat format_from_cv(int cv);
+
 }
+
 class VideoDecoderVDAPrivate;
+
 // qt4 moc can not correctly process Q_DECL_FINAL here
+
 class VideoDecoderVDA : public VideoDecoderFFmpegHW
 {
     Q_OBJECT
@@ -462,4 +478,5 @@ void VideoDecoderVDAPrivate::close()
 }
 
 } // namespace QtAV
+
 #include "VideoDecoderVDA.moc"

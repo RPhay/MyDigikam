@@ -23,18 +23,25 @@
 #include "VideoDecoderFFmpegHW.h"
 #include "VideoDecoderFFmpegHW_p.h"
 #include "utils/GPUMemCopy.h"
-#include "QtAV/private/AVCompat.h"
-#include "QtAV/private/factory.h"
+#include "private/AVCompat.h"
+#include "private/factory.h"
 #include "SurfaceInteropCV.h"
+
 //#include <OpenGLES/EAGL.h>
+
 #include <assert.h>
+
 #ifdef __cplusplus
-extern "C" {
+extern "C"
+{
 #endif //__cplusplus
+
 #include <libavcodec/videotoolbox.h>
+
 #ifdef __cplusplus
 }
 #endif //__cplusplus
+
 #include "utils/Logger.h"
 
 // KDE includes
@@ -42,19 +49,24 @@ extern "C" {
 #include <klocalizedstring.h>
 
 #ifdef MAC_OS_X_VERSION_MIN_REQUIRED
-#if MAC_OS_X_VERSION_MIN_REQUIRED >= 1070 //MAC_OS_X_VERSION_10_7
-#define OSX_TARGET_MIN_LION
-#endif // 1070
+#   if MAC_OS_X_VERSION_MIN_REQUIRED >= 1070 //MAC_OS_X_VERSION_10_7
+#       define OSX_TARGET_MIN_LION
+#   endif // 1070
 #endif //MAC_OS_X_VERSION_MIN_REQUIRED
+
 #ifndef kCFCoreFoundationVersionNumber10_7
-#define kCFCoreFoundationVersionNumber10_7      635.00
+#   define kCFCoreFoundationVersionNumber10_7      635.00
 #endif
 
 //kCVPixelBufferOpenGLESCompatibilityKey //ios6
+
 namespace QtAV
 {
+
 class VideoDecoderVideoToolboxPrivate;
+
 // qt4 moc can not correctly process Q_DECL_FINAL here
+
 class VideoDecoderVideoToolbox : public VideoDecoderFFmpegHW
 {
     Q_OBJECT
@@ -361,4 +373,5 @@ void VideoDecoderVideoToolboxPrivate::close()
 }
 
 } // namespace QtAV
+
 #include "VideoDecoderVideoToolbox.moc"

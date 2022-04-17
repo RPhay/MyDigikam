@@ -20,12 +20,12 @@
  *
  * ============================================================ */
 
-#include "QtAV/AudioEncoder.h"
-#include "QtAV/private/AVEncoder_p.h"
-#include "QtAV/private/AVCompat.h"
-#include "QtAV/private/mkid.h"
-#include "QtAV/private/factory.h"
-#include "QtAV/QtAV_Version.h"
+#include "AudioEncoder.h"
+#include "private/AVEncoder_p.h"
+#include "private/AVCompat.h"
+#include "private/mkid.h"
+#include "private/factory.h"
+#include "QtAV_Version.h"
 #include "utils/Logger.h"
 
 /*!
@@ -38,6 +38,7 @@ namespace QtAV
 {
 
 class AudioEncoderFFmpegPrivate;
+
 class AudioEncoderFFmpeg Q_DECL_FINAL: public AudioEncoder
 {
     DPTR_DECLARE_PRIVATE(AudioEncoderFFmpeg)

@@ -283,4 +283,5 @@ void AVDecoderPrivate::applyOptionsForContext()
     // TODO: wrong if opt is empty
     Internal::setOptionsToFFmpegObj(options.value(QStringLiteral("avcodec")), codec_ctx);
 }
+
 } // namespace QtAV

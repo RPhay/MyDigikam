@@ -20,14 +20,14 @@
  *
  * ============================================================ */
 
-#include "QtAV/AudioDecoder.h"
-#include "QtAV/AudioResampler.h"
-#include "QtAV/Packet.h"
-#include "QtAV/private/AVDecoder_p.h"
-#include "QtAV/private/AVCompat.h"
-#include "QtAV/private/mkid.h"
-#include "QtAV/private/factory.h"
-#include "QtAV/QtAV_Version.h"
+#include "AudioDecoder.h"
+#include "AudioResampler.h"
+#include "Packet.h"
+#include "private/AVDecoder_p.h"
+#include "private/AVCompat.h"
+#include "private/mkid.h"
+#include "private/factory.h"
+#include "QtAV_Version.h"
 #include "utils/Logger.h"
 
 namespace QtAV
@@ -153,4 +153,5 @@ AudioFrame AudioDecoderFFmpeg::frame()
 }
 
 } // namespace QtAV
+
 #include "AudioDecoderFFmpeg.moc"

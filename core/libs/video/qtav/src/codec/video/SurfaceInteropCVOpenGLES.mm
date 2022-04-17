@@ -21,10 +21,12 @@
  * ============================================================ */
 
 #include "SurfaceInteropCV.h"
-#include <CoreVideo/CVOpenGLESTextureCache.h>
-#include <CoreVideo/CVOpenGLESTexture.h>
+#include "CoreVideo/CVOpenGLESTextureCache.h"
+#include "CoreVideo/CVOpenGLESTexture.h"
+
 #import <OpenGLES/EAGL.h>
-#include "QtAV/VideoFrame.h"
+
+#include "VideoFrame.h"
 #include "opengl/OpenGLHelper.h"
 
 namespace QtAV {

@@ -21,16 +21,19 @@
  * ============================================================ */
 
 #include "SurfaceInteropCV.h"
-#include "QtAV/VideoFrame.h"
+#include "VideoFrame.h"
 #include "opengl/OpenGLHelper.h"
 
 namespace QtAV
 {
+
 typedef struct {
     int cv_pixfmt;
     VideoFormat::PixelFormat pixfmt;
 } cv_format;
+
 //https://developer.apple.com/library/Mac/releasenotes/General/MacOSXLionAPIDiffs/CoreVideo.html
+
 /* use fourcc '420v', 'yuvs' for NV12 and yuyv to avoid build time version check
  * qt4 targets 10.6, so those enum values is not valid in build time, while runtime is supported.
  */
@@ -250,5 +253,7 @@ bool InteropResourceCVPixelBuffer::map(CVPixelBufferRef buf, GLuint *tex, int w,
     CVPixelBufferUnlockBaseAddress(buf, kCVPixelBufferLock_ReadOnly);
     return true;
 }
+
 } // namespace cv
+
 } // namespace QtAV

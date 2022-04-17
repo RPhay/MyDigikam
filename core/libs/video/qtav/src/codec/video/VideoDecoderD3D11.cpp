@@ -21,18 +21,26 @@
  * ============================================================ */
 
 #include <initguid.h> //IID_ID3D11VideoContext
+
 #include "VideoDecoderD3D.h"
-#include "QtAV/private/factory.h"
-#include "QtAV/private/mkid.h"
+#include "private/factory.h"
+#include "private/mkid.h"
+
 #define DX_LOG_COMPONENT "D3D11VA"
+
 #include "utils/DirectXHelper.h"
 #include "directx/dxcompat.h"
+
 #include <d3d11.h> //include before <libavcodec/d3d11va.h> because d3d11va.h also includes d3d11.h but as a c header (for msvc)
 #include <wrl/client.h>
-extern "C" {
+
+extern "C"
+{
 #include <libavcodec/d3d11va.h>
 }
+
 using namespace Microsoft::WRL; //ComPtr
+
 #include "directx/SurfaceInteropD3D11.h"
 #include "utils/Logger.h"
 
@@ -392,4 +400,5 @@ void* VideoDecoderD3D11Private::setupAVVAContext()
     hw.surface = (ID3D11VideoDecoderOutputView**)hw_surfaces.constData();
     return &hw;
 }
+
 } // namespace QtAV

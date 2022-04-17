@@ -23,23 +23,30 @@
 /// egl support is added by: Andy Bell <andy.bell@displaynote.com>
 
 #ifdef _MSC_VER
-#pragma comment(lib, "ole32.lib") //CoTaskMemFree. why link failed?
+#   pragma comment(lib, "ole32.lib") //CoTaskMemFree. why link failed?
 #endif
+
 #include "VideoDecoderD3D.h"
-#include "QtAV/private/AVCompat.h"
-#include "QtAV/private/factory.h"
-//#include "QtAV/private/mkid.h"
+#include "private/AVCompat.h"
+#include "private/factory.h"
+//#include "private/mkid.h"
 #include "utils/Logger.h"
 #include "directx/SurfaceInteropD3D9.h"
-#include <QtCore/QSysInfo>
+
+#include <QSysInfo>
+
 #define DX_LOG_COMPONENT "DXVA2"
+
 #include "utils/DirectXHelper.h"
 
 // d3d9ex: http://dxr.mozilla.org/mozilla-central/source/dom/media/wmf/DXVA2Manager.cpp
 
 // to use c api, add define COBJMACROS and CINTERFACE
+
 #define DXVA2API_USE_BITFIELDS
-extern "C" {
+
+extern "C"
+{
 #include <libavcodec/dxva2.h> //will include d3d9.h, dxva2api.h
 }
 
@@ -47,24 +54,28 @@ extern "C" {
 #include <dxva2api.h>
 
 #include <initguid.h> /* must be last included to not redefine existing GUIDs */
+
 /* dxva2api.h GUIDs: http://msdn.microsoft.com/en-us/library/windows/desktop/ms697067(v=vs100).aspx
  * assume that they are declared in dxva2api.h */
+
 //#define MS_GUID(name, l, w1, w2, b1, b2, b3, b4, b5, b6, b7, b8) ///TODO: ???
 
 #define MS_GUID(name, l, w1, w2, b1, b2, b3, b4, b5, b6, b7, b8) \
     static const GUID name = { l, w1, w2, {b1, b2, b3, b4, b5, b6, b7, b8}}
+
 #ifdef __MINGW32__
-# include <_mingw.h>
-# if !defined(__MINGW64_VERSION_MAJOR)
-#  undef MS_GUID
-#  define MS_GUID DEFINE_GUID /* dxva2api.h fails to declare those, redefine as static */
-# else
-#  include <dxva.h>
-# endif
-#endif /* __MINGW32__ */
+#   include <_mingw.h>
+#   if !defined(__MINGW64_VERSION_MAJOR)
+#       undef MS_GUID
+#       define MS_GUID DEFINE_GUID /* dxva2api.h fails to declare those, redefine as static */
+#   else
+#       include <dxva.h>
+#   endif
+#endif
 
 namespace QtAV
 {
+
 MS_GUID(IID_IDirectXVideoDecoderService, 0xfc51a551, 0xd5e7, 0x11d9, 0xaf,0x55,0x00,0x05,0x4e,0x43,0xff,0x02);
 MS_GUID(IID_IDirectXVideoAccelerationService, 0xfc51a550, 0xd5e7, 0x11d9, 0xaf,0x55,0x00,0x05,0x4e,0x43,0xff,0x02);
 
@@ -451,4 +462,5 @@ bool VideoDecoderDXVAPrivate::setupSurfaceInterop()
         interop_res = d3d9::InteropResourcePtr(d3d9::InteropResource::create(d3ddev));
     return true;
 }
+
 } // namespace QtAV

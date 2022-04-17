@@ -22,17 +22,22 @@
 
 #include "VideoDecoderFFmpegHW.h"
 #include "VideoDecoderFFmpegHW_p.h"
+
 #include <algorithm>
 #include <list>
-#include <QtCore/QList>
-#include <QtCore/QMetaEnum>
-#include <QtCore/QStringList>
-#include <QtCore/QThread>
-extern "C" {
+
+#include <QList>
+#include <QMetaEnum>
+#include <QStringList>
+#include <QThread>
+
+extern "C"
+{
 #include <libavcodec/vaapi.h>
 }
-#include "QtAV/private/AVCompat.h"
-#include "QtAV/private/factory.h"
+
+#include "private/AVCompat.h"
+#include "private/factory.h"
 #include "vaapi/SurfaceInteropVAAPI.h"
 #include "utils/Logger.h"
 
@@ -47,14 +52,24 @@ extern "C" {
 
 namespace QtAV
 {
+
 using namespace vaapi;
-namespace OpenGLHelper {
+
+namespace OpenGLHelper
+{
+
 bool isEGL();
+
 #ifdef QT_NO_OPENGL
+
 bool isEGL() { return false;}
+
 #endif
+
 }
+
 class VideoDecoderVAAPIPrivate;
+
 class VideoDecoderVAAPI : public VideoDecoderFFmpegHW
 {
     Q_OBJECT
@@ -773,8 +788,11 @@ void VideoDecoderVAAPIPrivate::releaseBuffer(void *opaque, uint8_t *data)
 }
 
 } // namespace QtAV
+
 // used by .moc QMetaType::Bool
+
 #ifdef Bool
-#undef Bool
+#   undef Bool
 #endif
+
 #include "VideoDecoderVAAPI.moc"

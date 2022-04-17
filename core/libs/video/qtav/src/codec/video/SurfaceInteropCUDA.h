@@ -20,13 +20,19 @@
  *
  * ============================================================ */
 
-#ifndef QTAV_SURFACEINTEROPCUDA_H
-#define QTAV_SURFACEINTEROPCUDA_H
+#ifndef QTAV_SURFACE_INTEROP_CUDA_H
+#define QTAV_SURFACE_INTEROP_CUDA_H
+
+// Qt includes
+
+#include <QWeakPointer>
+
+// Local includes
 
 #include "cuda_api.h"
-#include <QtCore/QWeakPointer>
-#include "QtAV/SurfaceInterop.h"
+#include "SurfaceInterop.h"
 #include "opengl/OpenGLHelper.h"
+
 #ifndef QT_NO_OPENGL
 #ifdef Q_OS_WIN
 // no need to check qt4 because no ANGLE there
@@ -187,8 +193,11 @@ private:
      */
     bool ensureResource(int w, int h, int H, GLuint tex, int plane);
 };
+
 #endif //QTAV_HAVE(CUDA_GL)
-} //namespace cuda
+
+} // namespace cuda
+
 } // namespace QtAV
 
-#endif // QTAV_SURFACEINTEROPCUDA_H
+#endif // QTAV_SURFACE_INTEROP_CUDA_H

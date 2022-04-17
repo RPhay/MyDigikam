@@ -21,7 +21,7 @@
  * ============================================================ */
 
 #include "SurfaceInteropCUDA.h"
-#include "QtAV/VideoFrame.h"
+#include "VideoFrame.h"
 #include "utils/Logger.h"
 #include "helper_cuda.h"
 
@@ -30,7 +30,9 @@
 
 namespace QtAV
 {
-namespace cuda {
+
+namespace cuda
+{
 
 InteropResource::InteropResource()
     : cuda_api()
@@ -697,6 +699,9 @@ bool GLInteropResource::ensureResource(int w, int h, int H, GLuint tex, int plan
     r.H = H;
     return true;
 }
-} //namespace cuda
+
+} // namespace cuda
+
 } // namespace QtAV
+
 #endif //QTAV_HAVE(CUDA_GL)
