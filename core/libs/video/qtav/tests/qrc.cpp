@@ -35,7 +35,8 @@ int main(int argc, char *argv[])
     QApplication a(argc, argv);
     QtAV::VideoOutput renderer;
     renderer.widget()->show();
-    renderer.widget()->setWindowTitle(QString::fromLatin1("Play video from qrc--QtAV %1 wbsecg1@gmail.com").arg(QtAV_Version_String_Long()));
+    renderer.widget()->setWindowTitle(QString::fromLatin1("Play video from qrc--QtAV %1")
+                                      .arg(QtAV_Version_String_Long()));
     QtAV::AVPlayer player;
     player.setRenderer(&renderer);
 

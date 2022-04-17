@@ -41,55 +41,74 @@ int main(int argc, char *argv[])
     QCoreApplication a(argc, argv);
     QString file = QString::fromLatin1("test.avi");
     int idx = a.arguments().indexOf(QLatin1String("-i"));
+
     if (idx > 0)
         file = a.arguments().at(idx + 1);
+
     QString decName = QString::fromLatin1("FFmpeg");
     idx = a.arguments().indexOf(QLatin1String("-d:v"));
+
     if (idx > 0)
         decName = a.arguments().at(idx + 1);
+
     QString outFile = QString::fromLatin1("/tmp/out.mp4");
     idx = a.arguments().indexOf(QLatin1String("-o"));
+
     if (idx > 0)
         outFile = a.arguments().at(idx + 1);
+
     QDir().mkpath(outFile.left(outFile.lastIndexOf(QLatin1Char('/'))+1));
 
     QString cv = QString::fromLatin1("libx264");
     idx = a.arguments().indexOf(QLatin1String("-c:v"));
+
     if (idx > 0)
         cv = a.arguments().at(idx + 1);
 
     QString fmt;
     idx = a.arguments().indexOf(QLatin1String("-f"));
+
     if (idx > 0)
         fmt = a.arguments().at(idx + 1);
-
 
     QString opt;
     QVariantHash decopt;
     idx = decName.indexOf(QLatin1String(":"));
-    if (idx > 0) {
+
+    if (idx > 0)
+    {
         opt = decName.right(decName.size() - idx -1);
         decName = decName.left(idx);
         QStringList opts(opt.split(QString::fromLatin1(";")));
         QVariantHash subopt;
-        foreach (QString o, opts) {
+
+        foreach (QString o, opts)
+        {
             idx = o.indexOf(QLatin1String(":"));
             subopt[o.left(idx)] = o.right(o.size() - idx - 1);
         }
+
         decopt[decName] = subopt;
     }
+
     qDebug() << decopt;
 
     VideoDecoder *dec = VideoDecoder::create(decName.toLatin1().constData());
-    if (!dec) {
+
+    if (!dec)
+    {
         qWarning("Can not find decoder: %s", decName.toUtf8().constData());
         return 1;
     }
+
     if (!decopt.isEmpty())
         dec->setOptions(decopt);
+
     AVDemuxer demux;
     demux.setMedia(file);
-    if (!demux.load()) {
+
+    if (!demux.load())
+    {
         qWarning("Failed to load file: %s", file.toUtf8().constData());
         return 1;
     }
@@ -102,12 +121,18 @@ int main(int argc, char *argv[])
     int vstream = demux.videoStream();
     VideoEncoder *venc = VideoEncoder::create("FFmpeg");
     venc->setCodecName(cv);
+
     //venc->setCodecName("png");
+
     venc->setBitRate(1024*1024);
+
     //venc->setPixelFormat(VideoFormat::Format_RGBA32);
+
     AVMuxer mux;
+
     //mux.setMedia("/Users/wangbin/Movies/m3u8/bbb%05d.ts");
     //mux.setMedia("/Users/wangbin/Movies/img2/bbb%05d.png");
+
     mux.setMedia(outFile);
     QVariantHash muxopt, avfopt;
     avfopt[QString::fromLatin1("segment_time")] = 4;
@@ -116,60 +141,89 @@ int main(int argc, char *argv[])
     avfopt[QString::fromLatin1("segment_format")] = QString::fromLatin1("mpegts");
     muxopt[QString::fromLatin1("avformat")] = avfopt;
     qreal fps = 0;
-    while (!demux.atEnd()) {
+
+    while (!demux.atEnd())
+    {
         if (!demux.readFrame())
             continue;
+
         if (demux.stream() != vstream)
             continue;
+
         const Packet pkt = demux.packet();
-        if (dec->decode(pkt)) {
+
+        if (dec->decode(pkt))
+        {
             VideoFrame frame = dec->frame(); // why is faster to call frame() for hwdec? no frame() is very slow for VDA
+
             if (!frame)
                 continue;
-            if (!venc->isOpen()) {
+
+            if (!venc->isOpen())
+            {
                 venc->setWidth(frame.width());
                 venc->setHeight(frame.height());
-                if (!venc->open()) {
+
+                if (!venc->open())
+                {
                     qWarning("failed to open encoder");
                     return 1;
                 }
             }
-            if (!mux.isOpen()) {
+
+            if (!mux.isOpen())
+            {
                 mux.copyProperties(venc);
                 mux.setOptions(muxopt);
+
                 if (!fmt.isEmpty())
                     mux.setFormat(fmt);
+
                 //mux.setFormat("segment");
-               // mux.setFormat("image2");
-                if (!mux.open()) {
+                //mux.setFormat("image2");
+
+                if (!mux.open())
+                {
                     qWarning("failed to open muxer");
                     return 1;
                 }
+
                 //mux.setOptions(muxopt);
             }
+
             if (frame.pixelFormat() != venc->pixelFormat())
                 frame = frame.to(venc->pixelFormat());
-            if (venc->encode(frame)) {
+
+            if (venc->encode(frame))
+            {
                 Packet pkt(venc->encoded());
                 mux.writeVideo(pkt);
                 count++;
-                if (count%20 == 0) {
+
+                if (count%20 == 0)
+                {
                     fps = qreal(count*1000)/qreal(timer.elapsed());
                 }
+
                 printf("decode count: %d, fps: %.2f frame size: %dx%d %d\r", count, fps, frame.width(), frame.height(), frame.data().size());fflush(0);
             }
         }
     }
+
     // get delayed frames
-    while (venc->encode()) {
+
+    while (venc->encode())
+    {
         qDebug("encode delayed frames...\r");
         Packet pkt(venc->encoded());
         mux.writeVideo(pkt);
     }
+
     qint64 elapsed = timer.elapsed();
     int msec = elapsed/1000LL+1;
     qDebug("decoded frames: %d, time: %d, average speed: %d", count, msec, count/msec);
     venc->close();
     mux.close();
+
     return 0;
 }

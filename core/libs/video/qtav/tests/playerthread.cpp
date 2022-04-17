@@ -32,18 +32,25 @@
 #include "QtAVWidgets.h"
 
 using namespace QtAV;
+
 class Thread : public QThread
 {
 public:
-    Thread(AVPlayer *player):
-        QThread(0)
+
+    Thread(AVPlayer *player)
+      : QThread(0)
       , mpPlayer(player)
-    {}
+    {
+    }
+
 protected:
-    virtual void run() {
+
+    virtual void run()
+    {
         //mpPlayer->play();
         exec();
     }
+
     AVPlayer *mpPlayer;
 };
 

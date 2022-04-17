@@ -34,11 +34,15 @@
 #include "QtAVWidgets.h"
 
 using namespace QtAV;
+
 class VideoFrameObserver : public QObject
 {
     Q_OBJECT
+
 public:
-    VideoFrameObserver(QObject *parent = 0) : QObject(parent)
+
+    VideoFrameObserver(QObject *parent = 0)
+      : QObject(parent)
       , pos(0)
       , nb(1)
       , extracted(0)
@@ -48,18 +52,24 @@ public:
         view->widget()->show();
         connect(&extractor, SIGNAL(frameExtracted(QtAV::VideoFrame)), this, SLOT(onVideoFrameExtracted(QtAV::VideoFrame)));
     }
-    void setParameters(qint64 msec, int count) {
+
+    void setParameters(qint64 msec, int count)
+    {
         pos = msec;
         nb = count;
     }
-    void start(const QString& file) {
+
+    void start(const QString& file)
+    {
         extractor.setAsync(false);
         extractor.setSource(file);
         startTimer(20);
         timer.start();
         extractor.setPosition(pos);
     }
-    void startAsync(const QString& file) {
+
+    void startAsync(const QString& file)
+    {
         extractor.setAsync(true);
         extractor.setSource(file);
         startTimer(20);
@@ -68,23 +78,32 @@ public:
     }
 
 public Q_SLOTS:
-    void onVideoFrameExtracted(const QtAV::VideoFrame& frame) {
+
+    void onVideoFrameExtracted(const QtAV::VideoFrame& frame)
+    {
         view->receive(frame);
         qApp->processEvents();
         frame.toImage().save(QString::fromLatin1("%1.png").arg(frame.timestamp()));
         qDebug("frame %dx%d @%f", frame.width(), frame.height(), frame.timestamp());
-        if (++extracted >= nb) {
+
+        if (++extracted >= nb)
+        {
             qDebug("elapsed: %lld.", timer.elapsed());
             return;
         }
+
         extractor.setPosition(pos + extracted*1000);
     }
+
 protected:
-    void timerEvent(QTimerEvent *) {
+
+    void timerEvent(QTimerEvent *)
+    {
         qApp->processEvents(); // avoid ui blocking if async is not used
     }
 
 private:
+
     VideoRenderer *view;
     qint64 pos;
     int nb;
@@ -97,28 +116,36 @@ int main(int argc, char** argv)
 {
     QApplication a(argc, argv);
     int idx = a.arguments().indexOf(QLatin1String("-f"));
-    if (idx < 0) {
+
+    if (idx < 0)
+    {
         qDebug("-f file -t sec -n count -asyc");
         return -1;
     }
+
     QString file = a.arguments().at(idx+1);
     idx = a.arguments().indexOf(QLatin1String("-t"));
     int t = 0;
+
     if (idx > 0)
         t = a.arguments().at(idx+1).toInt();
+
     int n = 1;
     idx = a.arguments().indexOf(QLatin1String("-n"));
+
     if (idx > 0)
         n = a.arguments().at(idx+1).toInt();
-    bool async = a.arguments().contains(QString::fromLatin1("-async"));
 
+    bool async = a.arguments().contains(QString::fromLatin1("-async"));
 
     VideoFrameObserver obs;
     obs.setParameters(t*1000, n);
+
     if (async)
         obs.startAsync(file);
     else
         obs.start(file);
+
     return a.exec();
 }
 
