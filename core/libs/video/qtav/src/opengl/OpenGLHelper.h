@@ -37,7 +37,7 @@
     do { \
         if (!(x)) { \
             EGLint err = eglGetError(); \
-            qWarning("EGL error@%d<<%s. " #x ": %#x %s", __LINE__, __FILE__, err, eglQueryString(eglGetCurrentDisplay(), err)); \
+            qCWarning(DIGIKAM_QTAV_LOG_WARN) << QString::asprintf("EGL error@%d<<%s. " #x ": %#x %s", __LINE__, __FILE__, err, eglQueryString(eglGetCurrentDisplay(), err)); \
             return __VA_ARGS__; \
         } \
     } while(0)
@@ -45,7 +45,7 @@
     do { \
         if (!(x)) { \
             EGLint err = eglGetError(); \
-            qWarning("EGL error@%d<<%s. " #x ": %#x %s", __LINE__, __FILE__, err, eglQueryString(eglGetCurrentDisplay(), err)); \
+            qCWarning(DIGIKAM_QTAV_LOG_WARN) << QString::asprintf("EGL error@%d<<%s. " #x ": %#x %s", __LINE__, __FILE__, err, eglQueryString(eglGetCurrentDisplay(), err)); \
         } \
     } while(0)
 
@@ -53,14 +53,14 @@
 #define WGL_ENSURE(x, ...) \
     do { \
         if (!(x)) { \
-            qWarning() << "WGL error " << __FILE__ << "@" << __LINE__ << " " << #x << ": " << qt_error_string(GetLastError()); \
+            qCWarning(DIGIKAM_QTAV_LOG_WARN) << "WGL error " << __FILE__ << "@" << __LINE__ << " " << #x << ": " << qt_error_string(GetLastError()); \
             return __VA_ARGS__; \
         } \
     } while(0)
 #define WGL_WARN(x, ...) \
     do { \
         if (!(x)) { \
-    qWarning() << "WGL error " << __FILE__ << "@" << __LINE__ << " " << #x << ": " << qt_error_string(GetLastError()); \
+    qCWarning(DIGIKAM_QTAV_LOG_WARN) << "WGL error " << __FILE__ << "@" << __LINE__ << " " << #x << ": " << qt_error_string(GetLastError()); \
         } \
     } while(0)
 

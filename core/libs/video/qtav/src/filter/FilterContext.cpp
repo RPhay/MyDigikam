@@ -26,7 +26,7 @@
 #include <QPainter>
 #include <QTextDocument>
 #include "VideoFrame.h"
-#include "utils/Logger.h"
+#include "digikam_debug.h"
 
 namespace QtAV
 {
@@ -77,13 +77,13 @@ VideoFilterContext::~VideoFilterContext()
         //if (painter->isActive())
         //    painter->end();
         if (own_painter) {
-            qDebug("VideoFilterContext %p delete painter %p", this, painter);
+            qCDebug(DIGIKAM_QTAV_LOG) << QString::asprintf("VideoFilterContext %p delete painter %p", this, painter);
             delete painter;
             painter = 0;
         }
     }
     if (paint_device) {
-        qDebug("VideoFilterContext %p delete paint device in %p", this, paint_device);
+        qCDebug(DIGIKAM_QTAV_LOG) << QString::asprintf("VideoFilterContext %p delete paint device in %p", this, paint_device);
         if (own_paint_device)
             delete paint_device; //delete recursively for widget
         paint_device = 0;
@@ -129,7 +129,7 @@ void VideoFilterContext::drawRichText(const QRectF &rect, const QString &text, b
 void VideoFilterContext::shareFrom(VideoFilterContext *vctx)
 {
     if (!vctx) {
-        qWarning("shared filter context is null!");
+        qCWarning(DIGIKAM_QTAV_LOG_WARN) << QString::asprintf("shared filter context is null!");
         return;
     }
     painter = vctx->painter;
@@ -249,7 +249,7 @@ void QPainterFilterContext::initializeOnFrame(VideoFrame *vframe)
             paint_device = painter->device();
         }
         if (!paint_device && !painter->isActive()) {
-            qWarning("No paint device and painter is not active. No painting!");
+            qCWarning(DIGIKAM_QTAV_LOG_WARN) << QString::asprintf("No paint device and painter is not active. No painting!");
             return;
         }
         if (!painter->isActive())
@@ -258,7 +258,7 @@ void QPainterFilterContext::initializeOnFrame(VideoFrame *vframe)
     }
     VideoFormat format = vframe->format();
     if (!format.isValid()) {
-        qWarning("Not a valid format");
+        qCWarning(DIGIKAM_QTAV_LOG_WARN) << QString::asprintf("Not a valid format");
         return;
     }
     if (format.imageFormat() == QImage::Format_Invalid) {

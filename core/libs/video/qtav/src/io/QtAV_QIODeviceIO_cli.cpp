@@ -35,19 +35,19 @@ int main(int, char**)
 
     if (argc == 1)
     {
-        qDebug() << "QtAV test QIODevice IO - media file to stream";
-        qDebug() << "Usage: media files";
+        qCDebug(DIGIKAM_QTAV_LOG) << "QtAV test QIODevice IO - media file to stream";
+        qCDebug(DIGIKAM_QTAV_LOG) << "Usage: media files";
 
         return -1;
     }
 
     QtAV::QFileIO fi;
-    qDebug() << "protocols: " << fi.protocols();
+    qCDebug(DIGIKAM_QTAV_LOG) << "protocols: " << fi.protocols();
     fi.setUrl(QString::fromUtf8(argv[1]));
     QByteArray data(1024, 0);
     fi.read(data.data(), data.size());
-    qDebug("QFileIO url: %s, seekable: %d, size: %lld", fi.url().toUtf8().constData(), fi.isSeekable(), fi.size());
-    qDebug() << data;
+    qCDebug(DIGIKAM_QTAV_LOG) << QString::asprintf("QFileIO url: %s, seekable: %d, size: %lld", fi.url().toUtf8().constData(), fi.isSeekable(), fi.size());
+    qCDebug(DIGIKAM_QTAV_LOG) << data;
 
     return 0;
 }

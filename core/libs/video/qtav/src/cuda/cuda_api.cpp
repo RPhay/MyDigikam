@@ -27,7 +27,7 @@
 #include "helper_cuda.h"
 #include "cuda_api.h"
 #include "QtAV_Global.h"
-#include "utils/Logger.h"
+#include "digikam_debug.h"
 /*
 #if !NV_CONFIG(DLLAPI_CUDA) && !defined(CUDA_LINK)
 #define DEFINE_API() ...
@@ -88,13 +88,13 @@ public:
             cuda_dll.load();
         }
         if (!cuda_dll.isLoaded()) {
-            qWarning("can not load cuda!");
+            qCWarning(DIGIKAM_QTAV_LOG_WARN) << QString::asprintf("can not load cuda!");
             return;
         }
         cuvid_dll.setFileName(QStringLiteral("nvcuvid"));
         cuvid_dll.load();
         if (!cuvid_dll.isLoaded()) {
-            qWarning("can not load nvcuvid!");
+            qCWarning(DIGIKAM_QTAV_LOG_WARN) << QString::asprintf("can not load nvcuvid!");
             return;
         }
         loaded = true;
@@ -294,7 +294,7 @@ CUresult cuda_api::cuCtxCreate(CUcontext *pctx, unsigned int flags, CUdevice dev
         if (!ctx->api.cuCtxCreate)
 #endif
         {
-            qDebug("fallback to old driver api: %p", ctx->api.cuCtxCreate);
+            qCDebug(DIGIKAM_QTAV_LOG) << QString::asprintf("fallback to old driver api: %p", ctx->api.cuCtxCreate);
             ctx->api.cuCtxCreate = (context::api_t::tcuCtxCreate*)ctx->cuda_dll.resolve("cuCtxCreate");
         }
         assert(ctx->api.cuCtxCreate);
@@ -787,7 +787,7 @@ int cuda_api::GetMaxGflopsGraphicsDeviceId() {
         return -1;
 
     cuDriverGetVersion(&version);
-    qDebug("cuda driver api build version: %d, runtime version: %d", __CUDA_API_VERSION, version);
+    qCDebug(DIGIKAM_QTAV_LOG) << QString::asprintf("cuda driver api build version: %d, runtime version: %d", __CUDA_API_VERSION, version);
     // Find the best major SM Architecture GPU device that are graphics devices
     while (current_device < device_count) {
         cuDeviceGetName(deviceName, 256, current_device);

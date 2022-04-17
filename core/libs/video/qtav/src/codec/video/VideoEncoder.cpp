@@ -23,7 +23,7 @@
 #include "VideoEncoder.h"
 #include "private/AVEncoder_p.h"
 #include "private/factory.h"
-#include "utils/Logger.h"
+#include "digikam_debug.h"
 
 namespace QtAV
 {

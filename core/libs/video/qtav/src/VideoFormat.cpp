@@ -43,11 +43,16 @@ extern "C" {
 #else
 #define DESC_VAL(X) (X##_minus1 + 1)
 #endif
+
+#include "digikam_debug.h"
+
 namespace QtAV
 {
+
 class VideoFormatPrivate : public QSharedData
 {
 public:
+
     VideoFormatPrivate(VideoFormat::PixelFormat fmt)
         : pixfmt(fmt)
         , pixfmt_ff(QTAV_PIX_FMT_C(NONE))
@@ -111,7 +116,7 @@ public:
     void init() {
         // TODO: what if other formats not supported by ffmpeg? give attributes in QtAV?
         if (pixfmt_ff == QTAV_PIX_FMT_C(NONE)) {
-            qWarning("Invalid pixel format");
+            qCWarning(DIGIKAM_QTAV_LOG_WARN) << QString::asprintf("Invalid pixel format");
             return;
         }
         planes = qMax(av_pix_fmt_count_planes(pixfmt_ff), 0);

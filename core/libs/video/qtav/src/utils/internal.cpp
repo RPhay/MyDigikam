@@ -30,7 +30,7 @@
 #include <CoreFoundation/CoreFoundation.h>
 #endif
 #include "private/AVCompat.h"
-#include "utils/Logger.h"
+#include "digikam_debug.h"
 
 namespace QtAV
 {
@@ -160,7 +160,7 @@ QString fontsDir()
 
 QString options2StringHelper(void* obj, const char* unit)
 {
-    qDebug("obj: %p", obj);
+    qCDebug(DIGIKAM_QTAV_LOG) << QString::asprintf("obj: %p", obj);
     QString s;
     const AVOption* opt = NULL;
     while ((opt = av_opt_next(obj, opt))) {
@@ -213,9 +213,9 @@ void setOptionsToFFmpegObj(const QVariant& opt, void* obj)
         return;
     AVClass *c = obj ? *(AVClass**)obj : 0;
     if (c)
-        qDebug() << QStringLiteral("%1.%2 options:").arg(QLatin1String(c->class_name)).arg(QLatin1String(c->item_name(obj)));
+        qCDebug(DIGIKAM_QTAV_LOG) << QStringLiteral("%1.%2 options:").arg(QLatin1String(c->class_name)).arg(QLatin1String(c->item_name(obj)));
     else
-        qDebug() << "options:";
+        qCDebug(DIGIKAM_QTAV_LOG) << "options:";
     if (opt.type() == QVariant::Map) {
         QVariantMap options(opt.toMap());
         if (options.isEmpty())
@@ -227,7 +227,7 @@ void setOptionsToFFmpegObj(const QVariant& opt, void* obj)
             if (vt == QVariant::Map)
                 continue;
             const QByteArray key(i.key().toUtf8());
-            qDebug("%s=>%s", i.key().toUtf8().constData(), i.value().toByteArray().constData());
+            qCDebug(DIGIKAM_QTAV_LOG) << QString::asprintf("%s=>%s", i.key().toUtf8().constData(), i.value().toByteArray().constData());
             if (vt == QVariant::Int || vt == QVariant::UInt || vt == QVariant::Bool) {
                 // QVariant.toByteArray(): "true" or "false", can not recognized by avcodec
                 av_opt_set_int(obj, key.constData(), i.value().toInt(), AV_OPT_SEARCH_CHILDREN);
@@ -249,7 +249,7 @@ void setOptionsToFFmpegObj(const QVariant& opt, void* obj)
         if (vt == QVariant::Hash)
             continue;
         const QByteArray key(i.key().toUtf8());
-        qDebug("%s=>%s", i.key().toUtf8().constData(), i.value().toByteArray().constData());
+        qCDebug(DIGIKAM_QTAV_LOG) << QString::asprintf("%s=>%s", i.key().toUtf8().constData(), i.value().toByteArray().constData());
         if (vt == QVariant::Int || vt == QVariant::UInt || vt == QVariant::Bool) {
             av_opt_set_int(obj, key.constData(), i.value().toInt(), AV_OPT_SEARCH_CHILDREN);
         } else if (vt == QVariant::LongLong || vt == QVariant::ULongLong) {
@@ -284,7 +284,7 @@ void setOptionsToDict(const QVariant& opt, AVDictionary** dict)
                 av_dict_set(dict, i.key().toUtf8().constData(), i.value().toByteArray().constData(), 0);
                 break;
             }
-            qDebug("dict: %s=>%s", i.key().toUtf8().constData(), i.value().toByteArray().constData());
+            qCDebug(DIGIKAM_QTAV_LOG) << QString::asprintf("dict: %s=>%s", i.key().toUtf8().constData(), i.value().toByteArray().constData());
         }
         return;
     }
@@ -309,7 +309,7 @@ void setOptionsToDict(const QVariant& opt, AVDictionary** dict)
             av_dict_set(dict, i.key().toUtf8().constData(), i.value().toByteArray().constData(), 0);
             break;
         }
-        qDebug("dict: %s=>%s", i.key().toUtf8().constData(), i.value().toByteArray().constData());
+        qCDebug(DIGIKAM_QTAV_LOG) << QString::asprintf("dict: %s=>%s", i.key().toUtf8().constData(), i.value().toByteArray().constData());
     }
 }
 
@@ -317,7 +317,7 @@ void setOptionsForQObject(const QVariant& opt, QObject *obj)
 {
     if (!opt.isValid())
         return;
-    qDebug() << QStringLiteral("set %1(%2) meta properties:").arg(QLatin1String(obj->metaObject()->className())).arg(obj->objectName());
+    qCDebug(DIGIKAM_QTAV_LOG) << QStringLiteral("set %1(%2) meta properties:").arg(QLatin1String(obj->metaObject()->className())).arg(obj->objectName());
     if (opt.type() == QVariant::Hash) {
         QVariantHash options(opt.toHash());
         if (options.isEmpty())
@@ -328,7 +328,7 @@ void setOptionsForQObject(const QVariant& opt, QObject *obj)
             if (i.value().type() == QVariant::Hash) // for example "vaapi": {...}
                 continue;
             obj->setProperty(i.key().toUtf8().constData(), i.value());
-            qDebug("%s=>%s", i.key().toUtf8().constData(), i.value().toByteArray().constData());
+            qCDebug(DIGIKAM_QTAV_LOG) << QString::asprintf("%s=>%s", i.key().toUtf8().constData(), i.value().toByteArray().constData());
         }
     }
     if (opt.type() != QVariant::Map)
@@ -342,7 +342,7 @@ void setOptionsForQObject(const QVariant& opt, QObject *obj)
         if (i.value().type() == QVariant::Map) // for example "vaapi": {...}
             continue;
         obj->setProperty(i.key().toUtf8().constData(), i.value());
-        qDebug("%s=>%s", i.key().toUtf8().constData(), i.value().toByteArray().constData());
+        qCDebug(DIGIKAM_QTAV_LOG) << QString::asprintf("%s=>%s", i.key().toUtf8().constData(), i.value().toByteArray().constData());
     }
 }
 } //namespace Internal

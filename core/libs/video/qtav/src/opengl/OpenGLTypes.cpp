@@ -29,7 +29,7 @@
 #endif
 #include <QStringList>
 #include <QVariant>
-#include "utils/Logger.h"
+#include "digikam_debug.h"
 namespace QtAV
 {
 struct uniform_type_name {
@@ -238,8 +238,8 @@ bool Uniform::setGL()
         gl().Uniform4iv(location, arraySize(), address<int>());
         break;
     default:
-        qDebug() << *this;
-        qWarning("Unsupported uniform type in Qt. You should use 'VideoShader::setUserUniformValues()' to call glUniformXXX or directly call glUniformXXX instead");
+        qCDebug(DIGIKAM_QTAV_LOG) << *this;
+        qCWarning(DIGIKAM_QTAV_LOG_WARN) << QString::asprintf("Unsupported uniform type in Qt. You should use 'VideoShader::setUserUniformValues()' to call glUniformXXX or directly call glUniformXXX instead");
         return false;
     }
     dirty = false;
@@ -299,7 +299,7 @@ QVector<Uniform> ParseUniforms(const QByteArray &text, GLuint programId = 0)
 #endif
         Uniform u;
         const QStringList x = rx.capturedTexts();
-        //qDebug() << x;
+        //qCDebug(DIGIKAM_QTAV_LOG) << x;
         u.name = x.at(2).toUtf8();
         int array_size = 1;
         if (x.size() > 3)
@@ -310,7 +310,7 @@ QVector<Uniform> ParseUniforms(const QByteArray &text, GLuint programId = 0)
             u.location = gl().GetUniformLocation(programId, u.name.constData());
         uniforms.append(u);
     }
-    qDebug() << uniforms;
+    qCDebug(DIGIKAM_QTAV_LOG) << uniforms;
     return uniforms;
 }
 } // namespace QtAV

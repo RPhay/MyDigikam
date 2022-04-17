@@ -34,8 +34,11 @@
 #endif
 #include "utils/SharedPtr.h"
 
+#include "digikam_debug.h"
+
 namespace QtAV
 {
+
 #ifndef VA_FOURCC_RGBX
 #define VA_FOURCC_RGBX      0x58424752
 #endif
@@ -55,7 +58,7 @@ inline VAStatus vaCreateSurfaces(VADisplay dpy, unsigned int format, unsigned in
     do { \
         VAStatus ret = x; \
         if (ret != VA_STATUS_SUCCESS) { \
-            qWarning("VA-API error@%d. " #x ": %#x %s", __LINE__, ret, vaErrorStr(ret)); \
+            qCWarning(DIGIKAM_QTAV_LOG_WARN) << QString::asprintf("VA-API error@%d. " #x ": %#x %s", __LINE__, ret, vaErrorStr(ret)); \
             return __VA_ARGS__; \
         } \
     } while(0)
@@ -64,7 +67,7 @@ inline VAStatus vaCreateSurfaces(VADisplay dpy, unsigned int format, unsigned in
 do { \
   VAStatus res = a; \
   if(res != VA_STATUS_SUCCESS) \
-    qWarning("VA-API error %s@%d. " #a ": %#x %s", __FILE__, __LINE__, res, vaErrorStr(res)); \
+    qCWarning(DIGIKAM_QTAV_LOG_WARN) << QString::asprintf("VA-API error %s@%d. " #a ": %#x %s", __FILE__, __LINE__, res, vaErrorStr(res)); \
 } while(0);
 
 namespace vaapi {
@@ -275,7 +278,7 @@ public:
         , color_space(VA_SRC_BT709)
     {}
     ~surface_t() {
-        //qDebug("VAAPI - destroying surface 0x%x", (int)m_id);
+        //qCDebug(DIGIKAM_QTAV_LOG) << QString::asprintf("VAAPI - destroying surface 0x%x", (int)m_id);
         if (m_id != VA_INVALID_SURFACE)
             VAWARN(vaDestroySurfaces(m_display->get(), &m_id, 1))
     }

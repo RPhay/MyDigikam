@@ -44,7 +44,7 @@ using QRegExp = QRegularExpression;
 #define EGL_CAPI_NS
 #include "capi/egl_api.h"
 #endif //QTAV_HAVE(EGL_CAPI)
-#include "utils/Logger.h"
+#include "digikam_debug.h"
 
 #define BUG_GLES3_ANDROID 1 //FIXME: N7 android6 gles3 displays red images, only rgb32 is correct
 
@@ -136,7 +136,7 @@ int GLSLVersion()
     if (v >= 0)
         return v;
     if (!QOpenGLContext::currentContext()) {
-        qWarning("%s: current context is null", __FUNCTION__);
+        qCWarning(DIGIKAM_QTAV_LOG_WARN) << QString::asprintf("%s: current context is null", __FUNCTION__);
         return 0;
     }
     const char* vs = (const char*)DYGL(glGetString(GL_SHADING_LANGUAGE_VERSION));
@@ -148,7 +148,7 @@ int GLSLVersion()
     if (sscanf(vs, "%d.%d", &major, &minor) == 2) {
         v = major * 100 + minor;
     } else {
-        qWarning("Failed to detect glsl version using GL_SHADING_LANGUAGE_VERSION!");
+        qCWarning(DIGIKAM_QTAV_LOG_WARN) << QString::asprintf("Failed to detect glsl version using GL_SHADING_LANGUAGE_VERSION!");
         v = 110;
         if (isOpenGLES())
             v = QOpenGLContext::currentContext()->format().majorVersion() >= 3 ? 300 : 100;
@@ -188,7 +188,7 @@ bool isEGL()
 #if QT_VERSION >= QT_VERSION_CHECK(5, 5, 0)
     if (QGuiApplication::platformName().contains(QLatin1String("xcb"))) {
         is_egl = qgetenv("QT_XCB_GL_INTEGRATION") == "xcb_egl";
-        qDebug("xcb_egl=%d", is_egl);
+        qCDebug(DIGIKAM_QTAV_LOG) << QString::asprintf("xcb_egl=%d", is_egl);
         return !!is_egl;
     }
 #endif //5.5.0
@@ -234,7 +234,7 @@ bool hasExtensionEGL(const char *exts[])
     static bool print_exts = true;
     if (print_exts) {
         print_exts = false;
-        qDebug() << "EGL extensions: " << supported;
+        qCDebug(DIGIKAM_QTAV_LOG) << "EGL extensions: " << supported;
     }
     for (int i = 0; exts[i]; ++i) {
         if (supported.contains(QByteArray(exts[i])))
@@ -248,7 +248,7 @@ bool hasExtension(const char *exts[])
 {
     const QOpenGLContext *ctx = QOpenGLContext::currentContext();
     if (!ctx) {
-        qWarning("no gl context for hasExtension");
+        qCWarning(DIGIKAM_QTAV_LOG_WARN) << QString::asprintf("no gl context for hasExtension");
         return false;
     }
 #if QT_VERSION < QT_VERSION_CHECK(5, 0, 0)
@@ -352,7 +352,7 @@ static const gl_param_t gl_param_es2rg[] = {
 bool test_gl_param(const gl_param_t& gp, bool* has_16 = 0)
 {
     if (!QOpenGLContext::currentContext()) {
-        qWarning("%s: current context is null", __FUNCTION__);
+        qCWarning(DIGIKAM_QTAV_LOG_WARN) << QString::asprintf("%s: current context is null", __FUNCTION__);
         return false;
     }
     GLuint tex;
@@ -365,7 +365,7 @@ bool test_gl_param(const gl_param_t& gp, bool* has_16 = 0)
         return false;
     }
     if (!gl().GetTexLevelParameteriv) {
-        qDebug("Do not support glGetTexLevelParameteriv. test_gl_param returns false");
+        qCDebug(DIGIKAM_QTAV_LOG) << QString::asprintf("Do not support glGetTexLevelParameteriv. test_gl_param returns false");
         DYGL(glDeleteTextures(1, &tex));
         return false;
     }
@@ -376,7 +376,7 @@ bool test_gl_param(const gl_param_t& gp, bool* has_16 = 0)
 #endif
     gl().GetTexLevelParameteriv(GL_TEXTURE_2D, 0, GL_TEXTURE_INTERNAL_FORMAT, &param);
     if (param != gp.internal_format) {
-        qDebug("Do not support texture internal format: %#x (result %#x)", gp.internal_format, param);
+        qCDebug(DIGIKAM_QTAV_LOG) << QString::asprintf("Do not support texture internal format: %#x (result %#x)", gp.internal_format, param);
         DYGL(glDeleteTextures(1, &tex));
         return false;
     }
@@ -400,7 +400,7 @@ bool test_gl_param(const gl_param_t& gp, bool* has_16 = 0)
     if (pname)
         gl().GetTexLevelParameteriv(GL_TEXTURE_2D, 0, pname, &param);
     if (param) {
-        qDebug("16 bit texture depth: %d.\n", (int)param);
+        qCDebug(DIGIKAM_QTAV_LOG) << QString::asprintf("16 bit texture depth: %d.\n", (int)param);
         *has_16 = (int)param == 16;
     }
     DYGL(glDeleteTextures(1, &tex));
@@ -412,24 +412,24 @@ bool hasRG()
     static int has_rg = -1;
     if (has_rg >= 0)
         return !!has_rg;
-    qDebug("check gl3 rg: %#X", gl_param_3r16[1].internal_format);
+    qCDebug(DIGIKAM_QTAV_LOG) << QString::asprintf("check gl3 rg: %#X", gl_param_3r16[1].internal_format);
     if (test_gl_param(gl_param_3r16[1])) {
         has_rg = 1;
         return true;
     }
-    qDebug("check es3 rg: %#X", gl_param_es3rg8[1].internal_format);
+    qCDebug(DIGIKAM_QTAV_LOG) << QString::asprintf("check es3 rg: %#X", gl_param_es3rg8[1].internal_format);
     if (test_gl_param(gl_param_es3rg8[1])) {
         has_rg = 1;
         return true;
     }
-    qDebug("check GL_EXT_texture_rg");
+    qCDebug(DIGIKAM_QTAV_LOG) << QString::asprintf("check GL_EXT_texture_rg");
     static const char* ext[] = { "GL_EXT_texture_rg", 0}; //RED, RG, R8, RG8
     if (hasExtension(ext)) {
-        qDebug("has extension GL_EXT_texture_rg");
+        qCDebug(DIGIKAM_QTAV_LOG) << QString::asprintf("has extension GL_EXT_texture_rg");
         has_rg = 1;
         return true;
     }
-    qDebug("check gl es>=3 rg");
+    qCDebug(DIGIKAM_QTAV_LOG) << QString::asprintf("check gl es>=3 rg");
     if (QOpenGLContext::currentContext())
         has_rg = isOpenGLES() && QOpenGLContext::currentContext()->format().majorVersion() > 2; // Mesa GLES3 does not support (from qt)
     return has_rg;
@@ -439,7 +439,7 @@ static int has_16_tex = -1;
 static const gl_param_t* get_gl_param()
 {
     if (!QOpenGLContext::currentContext()) {
-        qWarning("%s: current context is null", __FUNCTION__);
+        qCWarning(DIGIKAM_QTAV_LOG_WARN) << QString::asprintf("%s: current context is null", __FUNCTION__);
         return gl_param_compat;
     }
     static gl_param_t* gp = 0;
@@ -454,14 +454,14 @@ static const gl_param_t* get_gl_param()
             gp = (gl_param_t*)gl_param_desktop_fallback;
         has_16_tex = has_16;
         if (!useDeprecatedFormats()) {
-            qDebug("using gl_param_%s", gp == gl_param_3r16? "3r16" : "desktop_fallback");
+            qCDebug(DIGIKAM_QTAV_LOG) << QString::asprintf("using gl_param_%s", gp == gl_param_3r16? "3r16" : "desktop_fallback");
             return gp;
         }
     } else if (test_gl_param(gl_param_es3rg8[4], &has_16)) { //3.0 will fail because no glGetTexLevelParameteriv
         gp = (gl_param_t*)gl_param_es3rg8;
         has_16_tex = has_16;
         if (!useDeprecatedFormats()) {
-            qDebug("using gl_param_es3rg8");
+            qCDebug(DIGIKAM_QTAV_LOG) << QString::asprintf("using gl_param_es3rg8");
             return gp;
         }
     } else if (isOpenGLES()) {
@@ -471,11 +471,11 @@ static const gl_param_t* get_gl_param()
             gp = (gl_param_t*)gl_param_es2rg;
         has_16_tex = has_16;
         if (gp && !useDeprecatedFormats()) {
-            qDebug("using gl_param_%s", gp == gl_param_es3rg8 ? "es3rg8" : "es2rg");
+            qCDebug(DIGIKAM_QTAV_LOG) << QString::asprintf("using gl_param_%s", gp == gl_param_es3rg8 ? "es3rg8" : "es2rg");
             return gp;
         }
     }
-    qDebug("fallback to gl_param_compat");
+    qCDebug(DIGIKAM_QTAV_LOG) << QString::asprintf("fallback to gl_param_compat");
     gp = (gl_param_t*)gl_param_compat;
     has_16_tex = false;
     return gp;
@@ -486,7 +486,7 @@ bool has16BitTexture()
     if (has_16_tex >= 0)
         return !!has_16_tex;
     if (!QOpenGLContext::currentContext()) {
-        qWarning("%s: current context is null", __FUNCTION__);
+        qCWarning(DIGIKAM_QTAV_LOG_WARN) << QString::asprintf("%s: current context is null", __FUNCTION__);
         return false;
     }
     get_gl_param();
@@ -561,7 +561,7 @@ static QMatrix4x4 channelMap(const VideoFormat& fmt)
     for (int i = 0; i < 4; ++i) {
         m(i, channels[i]) = 1;
     }
-    qDebug() << m;
+    qCDebug(DIGIKAM_QTAV_LOG) << m;
     return m;
 }
 
@@ -673,7 +673,7 @@ bool videoFormatToGL(const VideoFormat& fmt, GLint* internal_format, GLenum* dat
                 (OpenGLHelper::depth16BitTexture() == 16 && OpenGLHelper::has16BitTexture() && fmt.isBigEndian() && fmt.bitsPerComponent() > 8) // 16bit texture does not support be channel now
                 )) {
         gp = (gl_param_t*)gl_param_desktop_fallback;
-        qDebug("desktop_fallback for %s", nb_planes == 2 ? "bi-plane format" : "16bit big endian channel");
+        qCDebug(DIGIKAM_QTAV_LOG) << QString::asprintf("desktop_fallback for %s", nb_planes == 2 ? "bi-plane format" : "16bit big endian channel");
     }
     for (int p = 0; p < nb_planes; ++p) {
         // for packed rgb(swizzle required) and planar formats
@@ -767,7 +767,7 @@ int bytesOfGLFormat(GLenum format, GLenum dataType) // TODO: rename bytesOfTexel
     case GL_RGBA:
         return 4*component_size;
       default:
-        qWarning("bytesOfGLFormat - Unknown format %u", format);
+        qCWarning(DIGIKAM_QTAV_LOG_WARN) << QString::asprintf("bytesOfGLFormat - Unknown format %u", format);
         return 1;
       }
 }

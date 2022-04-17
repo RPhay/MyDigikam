@@ -26,7 +26,7 @@
 #include <QLibrary>
 #include <QSemaphore>
 #include "private/AVCompat.h"
-#include "utils/Logger.h"
+#include "digikam_debug.h"
 #define DX_LOG_COMPONENT "XAudio2"
 #include "utils/DirectXHelper.h"
 #include "xaudio2_compat.h"
@@ -69,7 +69,7 @@ public:
     STDMETHOD_(void, OnLoopEnd)(THIS_ void* bufferContext) Q_DECL_OVERRIDE { Q_UNUSED(bufferContext);}
     STDMETHOD_(void, OnVoiceError)(THIS_ void* bufferContext, HRESULT error) Q_DECL_OVERRIDE {
         Q_UNUSED(bufferContext);
-        qWarning() << __FUNCTION__ << ": (" << error << ") " << qt_error_string(error);
+        qCWarning(DIGIKAM_QTAV_LOG_WARN) << __FUNCTION__ << ": (" << error << ") " << qt_error_string(error);
     }
 
 private:
@@ -109,7 +109,7 @@ AudioOutputXAudio2::AudioOutputXAudio2(QObject *parent)
     available = false;
     //setDeviceFeatures(AudioOutput::DeviceFeatures()|AudioOutput::SetVolume);
 #ifdef Q_OS_WINRT
-    qDebug("XAudio2 for WinRT");
+    qCDebug(DIGIKAM_QTAV_LOG) << QString::asprintf("XAudio2 for WinRT");
     // winrt can only load package dlls
     DX_ENSURE(XAudio2Create(&winsdk.xaudio, 0, XAUDIO2_DEFAULT_PROCESSOR));
 #else
@@ -120,21 +120,21 @@ AudioOutputXAudio2::AudioOutputXAudio2(QObject *parent)
     int ver = 9;
     for (; ver >= 7; ver--) {
         dll.setFileName(QStringLiteral("XAudio2_%1").arg(ver));
-        qDebug() << dll.fileName();
+        qCDebug(DIGIKAM_QTAV_LOG) << dll.fileName();
         if (!dll.load()) {
-            qWarning() << dll.errorString();
+            qCWarning(DIGIKAM_QTAV_LOG_WARN) << dll.errorString();
             continue;
         }
 #if (_WIN32_WINNT < _WIN32_WINNT_WIN8)
         // defined as an inline function
-        qDebug("Build with XAudio2 from DXSDK");
+        qCDebug(DIGIKAM_QTAV_LOG) << QString::asprintf("Build with XAudio2 from DXSDK");
 #else
-        qDebug("Build with XAudio2 from Win8 or later SDK");
+        qCDebug(DIGIKAM_QTAV_LOG) << QString::asprintf("Build with XAudio2 from Win8 or later SDK");
 #endif
         bool ready = false;
         if (!ready && ver >= 8) {
             xaudio2_winsdk = true;
-            qDebug("Try symbol 'XAudio2Create' from WinSDK dll");
+            qCDebug(DIGIKAM_QTAV_LOG) << QString::asprintf("Try symbol 'XAudio2Create' from WinSDK dll");
             typedef HRESULT (__stdcall *XAudio2Create_t)(WinSDK::IXAudio2** ppXAudio2, UINT32 Flags, XAUDIO2_PROCESSOR XAudio2Processor);
             XAudio2Create_t XAudio2Create = (XAudio2Create_t)dll.resolve("XAudio2Create");
             if (XAudio2Create)
@@ -143,14 +143,14 @@ AudioOutputXAudio2::AudioOutputXAudio2(QObject *parent)
         if (!ready && ver < 8) {
             xaudio2_winsdk = false;
 #ifdef _XBOX // xbox < win8 is inline XAudio2Create
-            qDebug("Try symbol 'XAudio2Create' from DXSDK dll (XBOX)");
+            qCDebug(DIGIKAM_QTAV_LOG) << QString::asprintf("Try symbol 'XAudio2Create' from DXSDK dll (XBOX)");
             typedef HRESULT (__stdcall *XAudio2Create_t)(DXSDK::IXAudio2** ppXAudio2, UINT32 Flags, XAUDIO2_PROCESSOR XAudio2Processor);
             XAudio2Create_t XAudio2Create = (XAudio2Create_t)dll.resolve("XAudio2Create");
             if (XAudio2Create)
                 ready = SUCCEEDED(XAudio2Create(&dxsdk.xaudio, 0, XAUDIO2_DEFAULT_PROCESSOR));
 #else
             // try xaudio2 from dxsdk without symbol
-            qDebug("Try inline function 'XAudio2Create' from DXSDK");
+            qCDebug(DIGIKAM_QTAV_LOG) << QString::asprintf("Try inline function 'XAudio2Create' from DXSDK");
             ready = SUCCEEDED(DXSDK::XAudio2Create(&dxsdk.xaudio, 0, XAUDIO2_DEFAULT_PROCESSOR));
 #endif
         }
@@ -159,13 +159,13 @@ AudioOutputXAudio2::AudioOutputXAudio2(QObject *parent)
         dll.unload();
     }
 #endif //Q_OS_WINRT
-    qDebug("xaudio2: %p", winsdk.xaudio);
+    qCDebug(DIGIKAM_QTAV_LOG) << QString::asprintf("xaudio2: %p", winsdk.xaudio);
     available = !!(winsdk.xaudio);
 }
 
 AudioOutputXAudio2::~AudioOutputXAudio2()
 {
-    qDebug();
+    qCDebug(DIGIKAM_QTAV_LOG);
     if (xaudio2_winsdk)
         SafeRelease(&winsdk.xaudio);
     else
@@ -209,7 +209,7 @@ bool AudioOutputXAudio2::open()
         DX_ENSURE_OK(dxsdk.xaudio->StartEngine(), false);
     }
     DX_ENSURE_OK(source_voice->Start(0, XAUDIO2_COMMIT_NOW), false);
-    qDebug("source_voice:%p", source_voice);
+    qCDebug(DIGIKAM_QTAV_LOG) << QString::asprintf("source_voice:%p", source_voice);
 
     queue_data.resize(buffer_size*buffer_count);
     sem.release(buffer_count - sem.available());
@@ -218,7 +218,7 @@ bool AudioOutputXAudio2::open()
 
 bool AudioOutputXAudio2::close()
 {
-    qDebug("source_voice: %p, master: %p", source_voice, winsdk.master);
+    qCDebug(DIGIKAM_QTAV_LOG) << QString::asprintf("source_voice: %p, master: %p", source_voice, winsdk.master);
     if (source_voice) {
         source_voice->Stop(0, XAUDIO2_COMMIT_NOW);
         source_voice->FlushSourceBuffers();
@@ -275,7 +275,7 @@ void AudioOutputXAudio2::onCallback()
 
 bool AudioOutputXAudio2::write(const QByteArray &data)
 {
-    //qDebug("sem: %d, write: %d/%d", sem.available(), queue_data_write, queue_data.size());
+    //qCDebug(DIGIKAM_QTAV_LOG) << QString::asprintf("sem: %d, write: %d/%d", sem.available(), queue_data_write, queue_data.size());
     if (bufferControl() & CountCallback)
         sem.acquire();
     const int s = qMin(queue_data.size() - queue_data_write, data.size());

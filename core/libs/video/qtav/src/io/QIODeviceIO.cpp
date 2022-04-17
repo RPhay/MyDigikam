@@ -25,7 +25,7 @@
 #include "private/mkid.h"
 #include "private/factory.h"
 #include <QFile>
-#include "utils/Logger.h"
+#include "digikam_debug.h"
 #include <QtDebug>
 
 namespace QtAV
@@ -209,22 +209,22 @@ void QFileIO::onUrlChanged()
 #ifdef Q_OS_WIN
         int p = path.indexOf(QLatin1Char(':'));
         if (p < 1) {
-            qWarning("invalid path. ':' wrong position");
+            qCWarning(DIGIKAM_QTAV_LOG_WARN) << QString::asprintf("invalid path. ':' wrong position");
             return;
         }
         p -= 1;
         QChar c = path.at(p).toUpper();
         if (c < QLatin1Char('A') || c > QLatin1Char('Z')) {
-            qWarning("invalid path. wrong driver");
+            qCWarning(DIGIKAM_QTAV_LOG_WARN) << QString::asprintf("invalid path. wrong driver");
             return;
         }
         const QString path_maybe = path.mid(p);
-        qDebug() << path_maybe;
+        qCDebug(DIGIKAM_QTAV_LOG) << path_maybe;
         --p;
         while (p > 0) {
             c = path.at(p);
             if (c != QLatin1Char('\\') && c != QLatin1Char('/')) {
-                qWarning("invalid path. wrong dir seperator");
+                qCWarning(DIGIKAM_QTAV_LOG_WARN) << QString::asprintf("invalid path. wrong dir seperator");
                 return;
             }
             --p;
@@ -236,7 +236,7 @@ void QFileIO::onUrlChanged()
     if (path.isEmpty())
         return;
     if (!d.file.open(QIODevice::ReadOnly))
-        qWarning() << "Failed to open [" << d.file.fileName() << "]: " << d.file.errorString();
+        qCWarning(DIGIKAM_QTAV_LOG_WARN) << "Failed to open [" << d.file.fileName() << "]: " << d.file.errorString();
 }
 
 } // namespace QtAV

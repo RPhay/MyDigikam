@@ -28,7 +28,7 @@
 #include <QImage>
 #include "private/AVCompat.h"
 #include "utils/GPUMemCopy.h"
-#include "utils/Logger.h"
+#include "digikam_debug.h"
 
 // TODO: VideoFrame.copyPropertyies(VideoFrame) to avoid missing property copy
 namespace QtAV
@@ -214,7 +214,7 @@ VideoFrame VideoFrame::clone() const
     // data may be not set (ff decoder)
     if (d->planes.isEmpty() || !d->planes.at(0)) {//d->data.size() < width()*height()) { // at least width*height
         // maybe in gpu memory, then bits() is not set
-        qDebug("frame data not valid. size: %d", d->data.size());
+        qCDebug(DIGIKAM_QTAV_LOG) << QString::asprintf("frame data not valid. size: %d", d->data.size());
         VideoFrame f(width(), height(), d->format);
         f.d_ptr->metadata = d->metadata; // need metadata?
         f.setTimestamp(d->timestamp);
@@ -395,7 +395,7 @@ VideoFrame VideoFrame::to(const VideoFormat &fmt, const QSize& dstSize, const QR
     conv.setOutSize(w, h);
     conv.setInRange(colorRange());
     if (!conv.convert(d->planes.constData(), d->line_sizes.constData())) {
-        qWarning() << "VideoFrame::to error: " << format() << "=>" << fmt;
+        qCWarning(DIGIKAM_QTAV_LOG_WARN) << "VideoFrame::to error: " << format() << "=>" << fmt;
         return VideoFrame();
     }
     VideoFrame f(w, h, fmt, conv.outData(), ImageConverter::DataAlignment);

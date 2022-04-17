@@ -42,7 +42,7 @@ extern "C"
 using namespace Microsoft::WRL; //ComPtr
 
 #include "directx/SurfaceInteropD3D11.h"
-#include "utils/Logger.h"
+#include "digikam_debug.h"
 
 // define __mingw_uuidof
 #ifdef __CRT_UUID_DECL
@@ -168,7 +168,7 @@ public:
 VideoFrame VideoDecoderD3D11::frame()
 {
     DPTR_D(VideoDecoderD3D11);
-    //qDebug("frame size: %dx%d", d.frame->width, d.frame->height);
+    //qCDebug(DIGIKAM_QTAV_LOG) << QString::asprintf("frame size: %dx%d", d.frame->width, d.frame->height);
     if (!d.frame->opaque || !d.frame->data[0])
         return VideoFrame();
     if (d.frame->width <= 0 || d.frame->height <= 0 || !d.codec_ctx)
@@ -176,13 +176,13 @@ VideoFrame VideoDecoderD3D11::frame()
 
     ID3D11VideoDecoderOutputView *surface = (ID3D11VideoDecoderOutputView*)(uintptr_t)d.frame->data[3];
     if (!surface) {
-        qWarning("Get D3D11 surface error");
+        qCWarning(DIGIKAM_QTAV_LOG_WARN) << QString::asprintf("Get D3D11 surface error");
         return VideoFrame();
     }
     ComPtr<ID3D11Texture2D> texture;// = ((d3d11_surface_t*)(uintptr_t)d.frame->opaque)->texture;
     surface->GetResource((ID3D11Resource**)texture.GetAddressOf());
     if (!texture) {
-        qWarning("Get D3D11 texture error");
+        qCWarning(DIGIKAM_QTAV_LOG_WARN) << QString::asprintf("Get D3D11 texture error");
         return VideoFrame();
     }
     D3D11_VIDEO_DECODER_OUTPUT_VIEW_DESC view_desc;
@@ -202,7 +202,7 @@ VideoFrame VideoDecoderD3D11::frame()
         f.setDisplayAspectRatio(d.getDAR(d.frame));
         return f;
     }
-//    qDebug("process for view: %p, texture: %p", surface, texture.Get());
+//    qCDebug(DIGIKAM_QTAV_LOG) << QString::asprintf("process for view: %p, texture: %p", surface, texture.Get());
     d.d3dctx->CopySubresourceRegion(d.texture_cpu.Get(), 0, 0, 0, 0,
                                     texture.Get()
                                     , view_desc.Texture2D.ArraySlice
@@ -239,7 +239,7 @@ bool VideoDecoderD3D11Private::createDevice()
 #else
     fCreateDevice = (PFN_D3D11_CREATE_DEVICE)GetProcAddress(dll, "D3D11CreateDevice");
     if (!fCreateDevice) {
-        qWarning("Can not resolve symbol D3D11CreateDevice");
+        qCWarning(DIGIKAM_QTAV_LOG_WARN) << QString::asprintf("Can not resolve symbol D3D11CreateDevice");
     }
 #endif
     // TODO: feature levels
@@ -267,7 +267,7 @@ bool VideoDecoderD3D11Private::createDevice()
             .arg(desc.DeviceId)
             .arg(desc.Revision)
             ;
-    qDebug() << sD3D11Description;
+    qCDebug(DIGIKAM_QTAV_LOG) << sD3D11Description;
     description = sD3D11Description;
     return true;
 }
@@ -343,7 +343,7 @@ bool VideoDecoderD3D11Private::createDecoder(AVCodecID codec_id, int w, int h, Q
         s->setSurface(view.Get());
         surf[i] = s;
     }
-    qDebug("ID3D11VideoDecoderOutputView %d surfaces (%dx%d)", nb_surfaces, aligned(w), aligned(h));
+    qCDebug(DIGIKAM_QTAV_LOG) << QString::asprintf("ID3D11VideoDecoderOutputView %d surfaces (%dx%d)", nb_surfaces, aligned(w), aligned(h));
 
     D3D11_VIDEO_DECODER_DESC decoderDesc;
     ZeroMemory(&decoderDesc, sizeof(decoderDesc));
@@ -387,7 +387,7 @@ void* VideoDecoderD3D11Private::setupAVVAContext()
     // TODO: FF_DXVA2_WORKAROUND_SCALING_LIST_ZIGZAG
     if (isIntelClearVideo(&codec_guid)) {
 #ifdef FF_DXVA2_WORKAROUND_INTEL_CLEARVIDEO //2014-03-07 - 8b2a130 - lavc 55.50.0 / 55.53.100 - dxva2.h
-        qDebug("FF_DXVA2_WORKAROUND_INTEL_CLEARVIDEO");
+        qCDebug(DIGIKAM_QTAV_LOG) << QString::asprintf("FF_DXVA2_WORKAROUND_INTEL_CLEARVIDEO");
         hw.workaround |= FF_DXVA2_WORKAROUND_INTEL_CLEARVIDEO;
 #endif
     } else {

@@ -22,6 +22,7 @@
 
 #include "PacketBuffer.h"
 #include <QDateTime>
+#include "digikam_debug.h"
 
 namespace QtAV
 {
@@ -73,7 +74,7 @@ qint64 PacketBuffer::bufferValue() const
 void PacketBuffer::setBufferMax(qreal max)
 {
     if (max < 1.0) {
-        qWarning("max (%f) must >= 1.0", max);
+        qCWarning(DIGIKAM_QTAV_LOG_WARN) << QString::asprintf("max (%f) must >= 1.0", max);
         return;
     }
     m_max = max;
@@ -127,7 +128,7 @@ void PacketBuffer::onPut(const Packet &p)
         m_value1 = qint64(p.pts*1000.0); // FIXME: what if no pts
         m_value0 = qint64(queue[0].pts*1000.0); // must compute here because it is reset to 0 if take from empty
         //if (isBuffering())
-          //  qDebug("+buffering progress: %.1f%%=%.1f/%.1f~%.1fs %d-%d", bufferProgress()*100.0, (qreal)buffered()/1000.0, (qreal)bufferValue()/1000.0, qreal(bufferValue())*bufferMax()/1000.0, m_value1, m_value0);
+          //  qCDebug(DIGIKAM_QTAV_LOG) << QString::asprintf("+buffering progress: %.1f%%=%.1f/%.1f~%.1fs %d-%d", bufferProgress()*100.0, (qreal)buffered()/1000.0, (qreal)bufferValue()/1000.0, qreal(bufferValue())*bufferMax()/1000.0, m_value1, m_value0);
     } else if (m_mode == BufferBytes) {
         m_value1 += p.data.size();
     } else {
@@ -164,7 +165,7 @@ void PacketBuffer::onTake(const Packet &p)
     if (m_mode == BufferTime) {
         m_value0 = qint64(queue[0].pts*1000.0);
         //if (isBuffering())
-          //  qDebug("-buffering progress: %.1f=%.1f/%.1fs", bufferProgress(), (qreal)buffered()/1000.0, (qreal)bufferValue()/1000.0);
+          //  qCDebug(DIGIKAM_QTAV_LOG) << QString::asprintf("-buffering progress: %.1f=%.1f/%.1fs", bufferProgress(), (qreal)buffered()/1000.0, (qreal)bufferValue()/1000.0);
     } else if (m_mode == BufferBytes) {
         m_value1 -= p.data.size();
         m_value1 = qMax<qint64>(0LL, m_value1);
@@ -183,7 +184,7 @@ qreal PacketBuffer::calc_speed(bool use_bytes) const
         return 0;
     const qint64 delta = use_bytes ? m_history.back().bytes - m_history.front().bytes : m_history.back().v - m_history.front().v;
     if (delta < 0) {
-        qWarning("PacketBuffer internal error. delta(bytes %d): %lld", use_bytes, delta);
+        qCWarning(DIGIKAM_QTAV_LOG_WARN) << QString::asprintf("PacketBuffer internal error. delta(bytes %d): %lld", use_bytes, delta);
         return 0;
     }
     return (qreal)delta/dt;

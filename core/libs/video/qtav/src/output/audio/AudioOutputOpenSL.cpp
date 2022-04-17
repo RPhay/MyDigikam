@@ -32,7 +32,7 @@
 #endif
 #include "private/mkid.h"
 #include "private/factory.h"
-#include "utils/Logger.h"
+#include "digikam_debug.h"
 
 // TODO: native sample rate, so AUDIO_OUTPUT_FLAG_FAST is enabled
 namespace QtAV
@@ -113,7 +113,7 @@ FACTORY_REGISTER(AudioOutputBackend, OpenSL, kName)
     do { \
         SLresult ret = FUNC; \
         if (ret != SL_RESULT_SUCCESS) { \
-            qWarning("AudioOutputOpenSL Error>>> " #FUNC " (%lu)", ret); \
+            qCWarning(DIGIKAM_QTAV_LOG_WARN) << QString::asprintf("AudioOutputOpenSL Error>>> " #FUNC " (%lu)", ret); \
             return __VA_ARGS__; \
         } \
     } while(0)
@@ -152,7 +152,7 @@ void AudioOutputOpenSL::bufferQueueCallbackAndroid(SLAndroidSimpleBufferQueueItf
 #if 0
     SLAndroidSimpleBufferQueueState state;
     (*bufferQueue)->GetState(bufferQueue, &state);
-    qDebug(">>>>>>>>>>>>>>bufferQueueCallback state.count=%lu .playIndex=%lu", state.count, state.playIndex);
+    qCDebug(DIGIKAM_QTAV_LOG) << QString::asprintf(">>>>>>>>>>>>>>bufferQueueCallback state.count=%lu .playIndex=%lu", state.count, state.playIndex);
 #endif
     AudioOutputOpenSL *ao = reinterpret_cast<AudioOutputOpenSL*>(context);
     if (ao->bufferControl() & AudioOutputBackend::CountCallback) {
@@ -165,7 +165,7 @@ void AudioOutputOpenSL::bufferQueueCallback(SLBufferQueueItf bufferQueue, void *
 #if 0
     SLBufferQueueState state;
     (*bufferQueue)->GetState(bufferQueue, &state);
-    qDebug(">>>>>>>>>>>>>>bufferQueueCallback state.count=%lu .playIndex=%lu", state.count, state.playIndex);
+    qCDebug(DIGIKAM_QTAV_LOG) << QString::asprintf(">>>>>>>>>>>>>>bufferQueueCallback state.count=%lu .playIndex=%lu", state.count, state.playIndex);
 #endif
     AudioOutputOpenSL *ao = reinterpret_cast<AudioOutputOpenSL*>(context);
     if (ao->bufferControl() & AudioOutputBackend::CountCallback) {
@@ -178,7 +178,7 @@ void AudioOutputOpenSL::playCallback(SLPlayItf player, void *ctx, SLuint32 event
     Q_UNUSED(player);
     Q_UNUSED(ctx);
     Q_UNUSED(event);
-    //qDebug("---------%s  event=%lu", __FUNCTION__, event);
+    //qCDebug(DIGIKAM_QTAV_LOG) << QString::asprintf("---------%s  event=%lu", __FUNCTION__, event);
 }
 
 AudioOutputOpenSL::AudioOutputOpenSL(QObject *parent)
@@ -343,12 +343,12 @@ bool AudioOutputOpenSL::close()
 #ifdef Q_OS_ANDROID
     if (m_android) {
         if (m_bufferQueueItf_android && SL_RESULT_SUCCESS != (*m_bufferQueueItf_android)->Clear(m_bufferQueueItf_android))
-            qWarning("Unable to clear buffer");
+            qCWarning(DIGIKAM_QTAV_LOG_WARN) << QString::asprintf("Unable to clear buffer");
         m_bufferQueueItf_android = NULL;
     }
 #endif
     if (m_bufferQueueItf && SL_RESULT_SUCCESS != (*m_bufferQueueItf)->Clear(m_bufferQueueItf))
-        qWarning("Unable to clear buffer");
+        qCWarning(DIGIKAM_QTAV_LOG_WARN) << QString::asprintf("Unable to clear buffer");
 
     if (m_playerObject) {
         (*m_playerObject)->Destroy(m_playerObject);
@@ -375,7 +375,7 @@ bool AudioOutputOpenSL::write(const QByteArray& data)
     if (s < data.size())
         queue_data_write = 0;
     memcpy((char*)queue_data.constData() + queue_data_write, data.constData(), data.size());
-    //qDebug("enqueue %p, queue_data_write: %d/%d available:%d", data.constData(), queue_data_write, queue_data.size(), sem.available());
+    //qCDebug(DIGIKAM_QTAV_LOG) << QString::asprintf("enqueue %p, queue_data_write: %d/%d available:%d", data.constData(), queue_data_write, queue_data.size(), sem.available());
 #ifdef Q_OS_ANDROID
     if (m_android)
         SL_ENSURE((*m_bufferQueueItf_android)->Enqueue(m_bufferQueueItf_android, queue_data.constData() + queue_data_write, data.size()), false);
@@ -432,7 +432,7 @@ bool AudioOutputOpenSL::setVolume(qreal value)
     SLmillibel vmax = SL_MILLIBEL_MAX;
     SL_ENSURE((*m_volumeItf)->GetMaxVolumeLevel(m_volumeItf, &vmax), false);
     if (vmax < v) {
-        qDebug("OpenSL does not support volume: %f %d/%d. sw scale will be used", value, v, vmax);
+        qCDebug(DIGIKAM_QTAV_LOG) << QString::asprintf("OpenSL does not support volume: %f %d/%d. sw scale will be used", value, v, vmax);
         return false;
     }
     SL_ENSURE((*m_volumeItf)->SetVolumeLevel(m_volumeItf, v), false);

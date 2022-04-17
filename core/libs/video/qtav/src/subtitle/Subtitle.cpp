@@ -43,7 +43,7 @@ using QRegExp = QRegularExpression;
 #include <QRegExp>
 #endif
 #include "subtitle/CharsetDetector.h"
-#include "utils/Logger.h"
+#include "digikam_debug.h"
 
 namespace QtAV
 {
@@ -182,7 +182,7 @@ void Subtitle::setEngines(const QStringList &value)
     }
     QList<SubtitleProcessor*> sps;
     foreach (const QString& e, priv->engine_names) {
-        qDebug() << "engine:" << e;
+        qCDebug(DIGIKAM_QTAV_LOG) << "engine:" << e;
         QList<SubtitleProcessor*>::iterator it = priv->processors.begin();
         while (it != priv->processors.end()) {
             if (!(*it)) {
@@ -562,8 +562,8 @@ SubImageSet Subtitle::getSubImages(int width, int height, QRect *boundingRect)
 
 bool Subtitle::processHeader(const QByteArray& codec, const QByteArray &data)
 {
-    qDebug() << "codec: " << codec;
-    qDebug() << "header: " << data;
+    qCDebug(DIGIKAM_QTAV_LOG) << "codec: " << codec;
+    qCDebug(DIGIKAM_QTAV_LOG) << "header: " << data;
     SubtitleProcessor *old_processor = priv->processor;
     priv->reset(); // reset for the new subtitle stream (internal)
     if (priv->processors.isEmpty())
@@ -571,14 +571,14 @@ bool Subtitle::processHeader(const QByteArray& codec, const QByteArray &data)
     foreach (SubtitleProcessor *sp, priv->processors) {
         if (sp->supportedTypes().contains(QLatin1String(codec))) {
             priv->processor = sp;
-            qDebug() << "current subtitle processor: " << sp->name();
+            qCDebug(DIGIKAM_QTAV_LOG) << "current subtitle processor: " << sp->name();
             break;
         }
     }
     if (old_processor != priv->processor)
         Q_EMIT engineChanged();
     if (!priv->processor) {
-        qWarning("No subtitle processor supports the codec '%s'", codec.constData());
+        qCWarning(DIGIKAM_QTAV_LOG_WARN) << QString::asprintf("No subtitle processor supports the codec '%s'", codec.constData());
         return false;
     }
     if (!priv->processor->processHeader(codec, data))
@@ -714,7 +714,7 @@ QStringList Subtitle::Private::find()
     QFileInfoList list;
     foreach (const QString& d, search_dirs) {
         QDir dir(d);
-        //qDebug() << "dir: " << dir;
+        //qCDebug(DIGIKAM_QTAV_LOG) << "dir: " << dir;
         QFileInfoList fis = dir.entryInfoList(filters, QDir::Files, QDir::Unsorted);
         if (fis.isEmpty()) {
             if (filters_base.isEmpty())
@@ -762,18 +762,18 @@ QStringList Subtitle::Private::find()
         sorted.removeAll(file_name);
         sorted.prepend(file_name);
     }
-    qDebug() << "subtitles found: " << sorted;
+    qCDebug(DIGIKAM_QTAV_LOG) << "subtitles found: " << sorted;
     return sorted;
 }
 
 QByteArray Subtitle::Private::readFromFile(const QString &path)
 {
-    qDebug() << "read subtitle from: " << path;
+    qCDebug(DIGIKAM_QTAV_LOG) << "read subtitle from: " << path;
     QFile f(path);
     if (f.size() > kMaxSubtitleSize)
         return QByteArray();
     if (!f.open(QIODevice::ReadOnly)) {
-        qDebug() << "Failed to open subtitle [" << path << "]: " << f.errorString();
+        qCDebug(DIGIKAM_QTAV_LOG) << "Failed to open subtitle [" << path << "]: " << f.errorString();
         return QByteArray();
     }
     QTextStream ts(&f);
@@ -786,7 +786,7 @@ QByteArray Subtitle::Private::readFromFile(const QString &path)
             CharsetDetector det;
             if (det.isAvailable()) {
                 QByteArray charset = det.detect(f.readAll());
-                qDebug("charset>>>>>>>>: %s", charset.constData());
+                qCDebug(DIGIKAM_QTAV_LOG) << QString::asprintf("charset>>>>>>>>: %s", charset.constData());
                 f.seek(0);
                 if (!charset.isEmpty())
                     ts.setCodec(QTextCodec::codecForName(charset));
@@ -827,7 +827,7 @@ bool Subtitle::Private::processRawData(const QByteArray &data)
 
 bool Subtitle::Private::processRawData(SubtitleProcessor *sp, const QByteArray &data)
 {
-    qDebug("processing subtitle from raw data...");
+    qCDebug(DIGIKAM_QTAV_LOG) << QString::asprintf("processing subtitle from raw data...");
     QByteArray u8(data);
     QBuffer buf(&u8);
     if (buf.open(QIODevice::ReadOnly)) {
@@ -837,9 +837,9 @@ bool Subtitle::Private::processRawData(SubtitleProcessor *sp, const QByteArray &
         if (ok)
             return true;
     } else {
-        qWarning() << "open subtitle qbuffer error: " << buf.errorString();
+        qCWarning(DIGIKAM_QTAV_LOG_WARN) << "open subtitle qbuffer error: " << buf.errorString();
     }
-    qDebug("processing subtitle from a tmp utf8 file...");
+    qCDebug(DIGIKAM_QTAV_LOG) << QString::asprintf("processing subtitle from a tmp utf8 file...");
     QString name = QUrl::fromPercentEncoding(url.toEncoded()).section(ushort('/'), -1);
     if (name.isEmpty())
         name = QFileInfo(file_name).fileName(); //priv->name.section('/', -1); // if no seperator?

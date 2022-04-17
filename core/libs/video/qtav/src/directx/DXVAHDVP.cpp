@@ -23,7 +23,7 @@
 #include "DXVAHDVP.h"
 #define DX_LOG_COMPONENT "D3D9VP"
 #include "utils/DirectXHelper.h"
-#include "utils/Logger.h"
+#include "digikam_debug.h"
 #include "directx/DXVAHDVP.h"
 
 namespace QtAV
@@ -158,7 +158,7 @@ bool DXVAHDVP::ensureResource(UINT width, UINT height, D3DFORMAT format)
         }
     }
     if (!fmt_found) {
-        qDebug("input format is not supported by DXVAHD");
+        qCDebug(DIGIKAM_QTAV_LOG) << QString::asprintf("input format is not supported by DXVAHD");
         return false;
     }
     if (dirty || !m_vp)

@@ -25,7 +25,7 @@
 #include "private/AudioResampler_p.h"
 #include "private/factory.h"
 #include "private/mkid.h"
-#include "utils/Logger.h"
+#include "digikam_debug.h"
 
 namespace QtAV
 {
@@ -66,7 +66,7 @@ QByteArray AudioResampler::outData() const
 bool AudioResampler::prepare()
 {
     if (!inAudioFormat().isValid()) {
-        qWarning("src audio parameters 'channel layout(or channels), sample rate and sample format must be set before initialize resampler");
+        qCWarning(DIGIKAM_QTAV_LOG_WARN) << QString::asprintf("src audio parameters 'channel layout(or channels), sample rate and sample format must be set before initialize resampler");
         return false;
     }
     return true;

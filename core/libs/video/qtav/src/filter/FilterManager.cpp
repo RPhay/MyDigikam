@@ -25,7 +25,7 @@
 #include "AVPlayer.h"
 #include "Filter.h"
 #include "AVOutput.h"
-#include "utils/Logger.h"
+#include "digikam_debug.h"
 
 namespace QtAV
 {

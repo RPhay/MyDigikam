@@ -28,7 +28,7 @@
 #include "AVOutput.h"
 #include "Filter.h"
 #include "output/OutputSet.h"
-#include "utils/Logger.h"
+#include "digikam_debug.h"
 
 namespace QtAV
 {
@@ -39,7 +39,7 @@ QVariantHash AVThreadPrivate::dec_opt_normal;
 AVThreadPrivate::~AVThreadPrivate() {
     stop = true;
     if (!paused) {
-        qDebug("~AVThreadPrivate wake up paused thread");
+        qCDebug(DIGIKAM_QTAV_LOG) << QString::asprintf("~AVThreadPrivate wake up paused thread");
         paused = false;
         next_pause = false;
         cond.wakeAll();
@@ -164,7 +164,7 @@ qreal AVThread::previousHistoryPts() const
 {
     DPTR_D(const AVThread);
     if (d.pts_history.empty()) {
-        qDebug("pts history is EMPTY");
+        qCDebug(DIGIKAM_QTAV_LOG) << QString::asprintf("pts history is EMPTY");
         return 0;
     }
     if (d.pts_history.size() == 1)
@@ -214,7 +214,7 @@ void AVThread::pause(bool p)
         return;
     d.paused = p;
     if (!d.paused) {
-        qDebug("wake up paused thread");
+        qCDebug(DIGIKAM_QTAV_LOG) << QString::asprintf("wake up paused thread");
         d.next_pause = false;
         d.cond.wakeAll();
     }
@@ -332,7 +332,7 @@ bool AVThread::tryPause(unsigned long timeout)
     QMutexLocker lock(&d.mutex);
     Q_UNUSED(lock);
     return d.cond.wait(&d.mutex, timeout);
-    qDebug("paused thread waked up!!!");
+    qCDebug(DIGIKAM_QTAV_LOG) << QString::asprintf("paused thread waked up!!!");
     return true;
 }
 
@@ -370,7 +370,7 @@ void AVThread::waitAndCheck(ulong value, qreal pts)
         return;
     value += d.wait_err;
     d.wait_timer.restart();
-    //qDebug("wating for %lu msecs", value);
+    //qCDebug(DIGIKAM_QTAV_LOG) << QString::asprintf("wating for %lu msecs", value);
     ulong us = value * 1000UL;
     const ulong ms = value;
     static const ulong kWaitSlice = 20 * 1000UL; //20ms
@@ -382,7 +382,7 @@ void AVThread::waitAndCheck(ulong value, qreal pts)
             us -= kWaitSlice;
         if (pts > 0)
             us = qMin(us, ulong((double)(qMax<qreal>(0, pts - d.clock->value()))*1000000.0));
-        //qDebug("us: %lu/%lu, pts: %f, clock: %f", us, ms-et.elapsed(), pts, d.clock->value());
+        //qCDebug(DIGIKAM_QTAV_LOG) << QString::asprintf("us: %lu/%lu, pts: %f, clock: %f", us, ms-et.elapsed(), pts, d.clock->value());
         processNextTask();
         const qint64 left = qint64(ms) - d.wait_timer.elapsed();
         if (left <= 0) {
@@ -393,13 +393,13 @@ void AVThread::waitAndCheck(ulong value, qreal pts)
     }
     if (us > 0)
         usleep(us);
-    //qDebug("wait elapsed: %lu %d/%lld", us, ms, et.elapsed());
+    //qCDebug(DIGIKAM_QTAV_LOG) << QString::asprintf("wait elapsed: %lu %d/%lld", us, ms, et.elapsed());
     const int de = ((ms-d.wait_timer.elapsed()) - d.wait_err);
     if (de > -3 && de < 3)
         d.wait_err += de;
     else
         d.wait_err += de > 0 ? 1 : -1;
-    //qDebug("err: %lld", d.wait_err);
+    //qCDebug(DIGIKAM_QTAV_LOG) << QString::asprintf("err: %lld", d.wait_err);
 }
 
 } // namespace QtAV

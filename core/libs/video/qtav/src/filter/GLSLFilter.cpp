@@ -31,6 +31,7 @@
 #endif
 #include "SurfaceInterop.h"
 #include "OpenGLVideo.h"
+#include "digikam_debug.h"
 
 namespace QtAV
 {
@@ -87,7 +88,7 @@ void GLSLFilter::process(Statistics *statistics, VideoFrame *frame)
 {
     Q_UNUSED(statistics);
     if (!QOpenGLContext::currentContext()) {
-        qWarning() << "No current gl context for glsl filter: " << this;
+        qCWarning(DIGIKAM_QTAV_LOG_WARN) << "No current gl context for glsl filter: " << this;
         return;
     }
     DPTR_D(GLSLFilter);
@@ -114,7 +115,7 @@ void GLSLFilter::process(Statistics *statistics, VideoFrame *frame)
         QOpenGLContext *ctx = const_cast<QOpenGLContext*>(QOpenGLContext::currentContext()); //qt4 returns const
         d.glv.setOpenGLContext(ctx);
         d.glv.setProjectionMatrixToRect(QRectF(0, 0, d.fbo->width(), d.fbo->height()));
-        qDebug("new fbo texture: %d %dx%d", d.fbo->texture(), d.fbo->width(), d.fbo->height());
+        qCDebug(DIGIKAM_QTAV_LOG) << QString::asprintf("new fbo texture: %d %dx%d", d.fbo->texture(), d.fbo->width(), d.fbo->height());
     }
     d.fbo->bind();
     DYGL(glViewport(0, 0, d.fbo->width(), d.fbo->height()));

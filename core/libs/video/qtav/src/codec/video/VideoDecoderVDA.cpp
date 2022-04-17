@@ -42,7 +42,7 @@ extern "C"
 #endif //__cplusplus
 
 #include <VideoDecodeAcceleration/VDADecoder.h>
-#include "utils/Logger.h"
+#include "digikam_debug.h"
 
 // KDE includes
 
@@ -123,7 +123,7 @@ public:
         memset(&hw_ctx, 0, sizeof(hw_ctx));
 #endif
     }
-    ~VideoDecoderVDAPrivate() {qDebug("~VideoDecoderVDAPrivate");}
+    ~VideoDecoderVDAPrivate() {qCDebug(DIGIKAM_QTAV_LOG) << QString::asprintf("~VideoDecoderVDAPrivate");}
     bool open() Q_DECL_OVERRIDE;
     void close() Q_DECL_OVERRIDE;
 
@@ -196,16 +196,16 @@ VideoFrame VideoDecoderVDA::frame()
     DPTR_D(VideoDecoderVDA);
     CVPixelBufferRef cv_buffer = (CVPixelBufferRef)d.frame->data[3];
     if (!cv_buffer) {
-        qDebug("Frame buffer is empty.");
+        qCDebug(DIGIKAM_QTAV_LOG) << QString::asprintf("Frame buffer is empty.");
         return VideoFrame();
     }
     if (CVPixelBufferGetDataSize(cv_buffer) <= 0) {
-        qDebug("Empty frame buffer");
+        qCDebug(DIGIKAM_QTAV_LOG) << QString::asprintf("Empty frame buffer");
         return VideoFrame();
     }
     VideoFormat::PixelFormat pixfmt = cv::format_from_cv(CVPixelBufferGetPixelFormatType(cv_buffer));
     if (pixfmt == VideoFormat::Format_Invalid) {
-        qWarning("unsupported vda pixel format: %#x", CVPixelBufferGetPixelFormatType(cv_buffer));
+        qCWarning(DIGIKAM_QTAV_LOG_WARN) << QString::asprintf("unsupported vda pixel format: %#x", CVPixelBufferGetPixelFormatType(cv_buffer));
         return VideoFrame();
     }
     // we can map the cv buffer addresses to video frame in SurfaceInteropCVBuffer. (may need VideoSurfaceInterop::mapToTexture()
@@ -268,7 +268,7 @@ VideoFrame VideoDecoderVDA::frame()
             IOSurfaceRef surface  = CVPixelBufferGetIOSurface(cvbuf);
             int w = IOSurfaceGetWidthOfPlane(surface, plane);
             int h = IOSurfaceGetHeightOfPlane(surface, plane);
-            //qDebug("plane:%d, iosurface %dx%d, ctx: %p", plane, w, h, CGLGetCurrentContext());
+            //qCDebug(DIGIKAM_QTAV_LOG) << QString::asprintf("plane:%d, iosurface %dx%d, ctx: %p", plane, w, h, CGLGetCurrentContext());
             OSType pixfmt = IOSurfaceGetPixelFormat(surface); //CVPixelBufferGetPixelFormatType(cvbuf);
             GLenum iformat = GL_RGBA8;
             GLenum format = GL_BGRA;
@@ -293,7 +293,7 @@ VideoFrame VideoDecoderVDA::frame()
             DYGL(glBindTexture(target, *((GLuint*)handle)));
             CGLError err = CGLTexImageIOSurface2D(CGLGetCurrentContext(), target, iformat, w, h, format, dtype, surface, plane);
             if (err != kCGLNoError) {
-                qWarning("error creating IOSurface texture at plane %d: %s", plane, CGLErrorString(err));
+                qCWarning(DIGIKAM_QTAV_LOG_WARN) << QString::asprintf("error creating IOSurface texture at plane %d: %s", plane, CGLErrorString(err));
             }
             DYGL(glBindTexture(target, 0));
             return handle;
@@ -379,7 +379,7 @@ void VideoDecoderVDA::setFormat(PixelFormat fmt)
     if (kCFCoreFoundationVersionNumber >= kCFCoreFoundationVersionNumber10_7)
         return;
     if (fmt != YUV420P && fmt != UYVY)
-        qWarning("format is not supported on OSX < 10.7");
+        qCWarning(DIGIKAM_QTAV_LOG_WARN) << QString::asprintf("format is not supported on OSX < 10.7");
 }
 
 VideoDecoderVDA::PixelFormat VideoDecoderVDA::format() const
@@ -414,11 +414,11 @@ void* VideoDecoderVDAPrivate::setup(AVCodecContext *avctx)
     int status = ff_vda_create_decoder(&hw_ctx, codec_ctx->extradata, codec_ctx->extradata_size);
 #endif
     if (status) {
-        qWarning("Failed to init VDA decoder (%#x %s): %s", status, av_err2str(status), vda_err_str(status));
+        qCWarning(DIGIKAM_QTAV_LOG_WARN) << QString::asprintf("Failed to init VDA decoder (%#x %s): %s", status, av_err2str(status), vda_err_str(status));
         return NULL;
     }
     initUSWC(codedWidth(avctx));
-    qDebug() << "VDA decoder created. format: " << cv::format_from_cv(out_fmt);
+    qCDebug(DIGIKAM_QTAV_LOG) << "VDA decoder created. format: " << cv::format_from_cv(out_fmt);
 #ifdef AV_VDA_NEW
     return hw_ctx;
 #else
@@ -443,9 +443,9 @@ bool VideoDecoderVDAPrivate::open()
 {
     if (!prepare())
         return false;
-    qDebug("opening VDA module");
+    qCDebug(DIGIKAM_QTAV_LOG) << QString::asprintf("opening VDA module");
     if (codec_ctx->codec_id != AV_CODEC_ID_H264) {
-        qWarning("input codec (%s) isn't H264, canceling VDA decoding", avcodec_get_name(codec_ctx->codec_id));
+        qCWarning(DIGIKAM_QTAV_LOG_WARN) << QString::asprintf("input codec (%s) isn't H264, canceling VDA decoding", avcodec_get_name(codec_ctx->codec_id));
         return false;
     }
     switch (codec_ctx->profile) { //profile check code is from xbmc
@@ -467,7 +467,7 @@ bool VideoDecoderVDAPrivate::open()
 void VideoDecoderVDAPrivate::close()
 {
     restore(); //IMPORTANT. can not call restore in dtor because ctx is 0 there
-    qDebug("destroying VDA decoder");
+    qCDebug(DIGIKAM_QTAV_LOG) << QString::asprintf("destroying VDA decoder");
 #ifdef AV_VDA_NEW
     if (codec_ctx)
         av_vda_default_free(codec_ctx);

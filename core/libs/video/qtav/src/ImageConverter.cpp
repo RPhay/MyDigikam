@@ -24,7 +24,7 @@
 #include "private/AVCompat.h"
 #include "private/factory.h"
 #include "ImageConverter.h"
-#include "utils/Logger.h"
+#include "digikam_debug.h"
 
 namespace QtAV
 {
@@ -200,7 +200,7 @@ bool ImageConverter::convert(const quint8 * const src[], const int srcStride[])
 {
     DPTR_D(ImageConverter);
     if (d.update_data && !prepareData()) {
-        qWarning("prepair output data error");
+        qCWarning(DIGIKAM_QTAV_LOG_WARN) << QString::asprintf("prepair output data error");
         return false;
     } else {
         d.update_data = false;

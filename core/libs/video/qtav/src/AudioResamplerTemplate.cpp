@@ -25,7 +25,7 @@
 #include "private/AudioResampler_p.h"
 #include "private/AVCompat.h"
 #include "private/factory.h"
-#include "utils/Logger.h"
+#include "digikam_debug.h"
 
 namespace QtAV
 {
@@ -105,7 +105,7 @@ bool AudioResamplerFF::convert(const quint8 **data)
     int converted_samplers_per_channel = swr_convert(d.context, out, d.out_samples_per_channel, data, d.in_samples_per_channel);
     d.out_samples_per_channel = converted_samplers_per_channel;
     if (converted_samplers_per_channel < 0) {
-        qWarning("[AudioResamplerFF] %s", av_err2str(converted_samplers_per_channel));
+        qCWarning(DIGIKAM_QTAV_LOG_WARN) << QString::asprintf("[AudioResamplerFF] %s", av_err2str(converted_samplers_per_channel));
         return false;
     }
     //TODO: converted_samplers_per_channel==out_samples_per_channel means out_size is too small, see mplayer2
@@ -123,7 +123,7 @@ bool AudioResamplerFF::prepare()
 {
     DPTR_D(AudioResamplerFF);
     if (!d.in_format.isValid()) {
-        qWarning("src audio parameters 'channel layout(or channels), sample rate and sample format must be set before initialize resampler");
+        qCWarning(DIGIKAM_QTAV_LOG_WARN) << QString::asprintf("src audio parameters 'channel layout(or channels), sample rate and sample format must be set before initialize resampler");
         return false;
     }
     //TODO: also in do this statistics
@@ -131,7 +131,7 @@ bool AudioResamplerFF::prepare()
         if (!d.in_format.channelLayoutFFmpeg()) { //FIXME: already return
             d.in_format.setChannels(2);
             d.in_format.setChannelLayoutFFmpeg(av_get_default_channel_layout(d.in_format.channels())); //from mplayer2
-            qWarning("both channels and channel layout are not available, assume channels=%d, channel layout=%lld", d.in_format.channels(), d.in_format.channelLayoutFFmpeg());
+            qCWarning(DIGIKAM_QTAV_LOG_WARN) << QString::asprintf("both channels and channel layout are not available, assume channels=%d, channel layout=%lld", d.in_format.channels(), d.in_format.channelLayoutFFmpeg());
         } else {
             d.in_format.setChannels(av_get_channel_layout_nb_channels(d.in_format.channelLayoutFFmpeg()));
         }
@@ -139,7 +139,7 @@ bool AudioResamplerFF::prepare()
     if (!d.in_format.channels())
         d.in_format.setChannels(2); //TODO: why av_get_channel_layout_nb_channels() may return 0?
     if (!d.in_format.channelLayoutFFmpeg()) {
-        qWarning("channel layout not available, use default layout");
+        qCWarning(DIGIKAM_QTAV_LOG_WARN) << QString::asprintf("channel layout not available, use default layout");
         d.in_format.setChannelLayoutFFmpeg(av_get_default_channel_layout(d.in_format.channels()));
     }
     if (!d.out_format.channels()) {
@@ -164,7 +164,7 @@ bool AudioResamplerFF::prepare()
     //DO NOT set sample rate here, we should keep the original and multiply 1/speed when needed
     //if (d.speed != 1.0)
     //    d.out_format.setSampleRate(int(qreal(d.out_format.sampleFormat())/d.speed));
-    qDebug("swr speed=%.2f", d.speed);
+    qCDebug(DIGIKAM_QTAV_LOG) << QString::asprintf("swr speed=%.2f", d.speed);
 
     //d.in_planes = av_sample_fmt_is_planar((enum AVSampleFormat)d.in_sample_format) ? d.in_channels : 1;
     //d.out_planes = av_sample_fmt_is_planar((enum AVSampleFormat)d.out_sample_format) ? d.out_channels : 1;
@@ -187,17 +187,17 @@ bool AudioResamplerFF::prepare()
     av_opt_set_int(d.context, "out_sample_rate",       d.out_format.sampleRate(), 0);
     av_opt_set_sample_fmt(d.context, "out_sample_fmt", (enum AVSampleFormat)out_format.sampleFormatFFmpeg(), 0);
     */
-    qDebug("out: {cl: %lld, fmt: %s, freq: %d}"
+    qCDebug(DIGIKAM_QTAV_LOG) << QString::asprintf("out: {cl: %lld, fmt: %s, freq: %d}"
            , d.out_format.channelLayoutFFmpeg()
            , qPrintable(d.out_format.sampleFormatName())
            , d.out_format.sampleRate());
-    qDebug("in {cl: %lld, fmt: %s, freq: %d}"
+    qCDebug(DIGIKAM_QTAV_LOG) << QString::asprintf("in {cl: %lld, fmt: %s, freq: %d}"
            , d.in_format.channelLayoutFFmpeg()
            , qPrintable(d.in_format.sampleFormatName())
            , d.in_format.sampleRate());
 
     if (!d.context) {
-        qWarning("Allocat swr context failed!");
+        qCWarning(DIGIKAM_QTAV_LOG_WARN) << QString::asprintf("Allocat swr context failed!");
         return false;
     }
     //avresample 0.0.2(FFmpeg 0.11)~1.0.1(FFmpeg 1.1) has no channel mapping. but has remix matrix, so does swresample
@@ -269,7 +269,7 @@ bool AudioResamplerFF::prepare()
 #endif //QTAV_HAVE(SWR_AVR_MAP)
     int ret = swr_init(d.context);
     if (ret < 0) {
-        qWarning("swr_init failed: %s", av_err2str(ret));
+        qCWarning(DIGIKAM_QTAV_LOG_WARN) << QString::asprintf("swr_init failed: %s", av_err2str(ret));
         swr_free(&d.context);
         return false;
     }

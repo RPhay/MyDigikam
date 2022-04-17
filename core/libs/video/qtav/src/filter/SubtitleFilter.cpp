@@ -26,7 +26,7 @@
 #include "Subtitle.h"
 #include "VideoFrame.h"
 #include <QScopedPointer>
-#include "utils/Logger.h"
+#include "digikam_debug.h"
 
 namespace QtAV
 {
@@ -173,7 +173,7 @@ void SubtitleFilter::process(Statistics *statistics, VideoFrame *frame)
     Q_UNUSED(frame);
     DPTR_D(SubtitleFilter);
     if (!context()->paint_device) {
-        qWarning("no paint device!");
+        qCWarning(DIGIKAM_QTAV_LOG_WARN) << QString::asprintf("no paint device!");
         return;
     }
     if (frame && frame->timestamp() > 0.0)

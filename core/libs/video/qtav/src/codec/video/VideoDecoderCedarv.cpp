@@ -33,7 +33,7 @@ extern "C"
 #include <libcedarv/libcedarv.h>
 }
 
-#include "utils/Logger.h"
+#include "digikam_debug.h"
 
 // TODO: neon+nv12+opengl crash
 
@@ -351,7 +351,7 @@ bool VideoDecoderCedarvPrivate::open()
     /* format check */
     format_from_avcodec(codec_ctx->codec_id, &format, &sub_format);
     if (format == CEDARV_STREAM_FORMAT_UNKNOW) {
-        qWarning("CedarV: codec not supported '%s'", avcodec_get_name(codec_ctx->codec_id));
+        qCWarning(DIGIKAM_QTAV_LOG_WARN) << QString::asprintf("CedarV: codec not supported '%s'", avcodec_get_name(codec_ctx->codec_id));
         return false;
     }
     if (!cedarv) {
@@ -375,12 +375,12 @@ bool VideoDecoderCedarvPrivate::open()
     int cedarvRet;
     cedarvRet = cedarv->set_vstream_info(cedarv, &cedarStreamInfo);
     if (cedarvRet < 0) {
-        qWarning("CedarV: set_vstream_info error: %d", cedarvRet);
+        qCWarning(DIGIKAM_QTAV_LOG_WARN) << QString::asprintf("CedarV: set_vstream_info error: %d", cedarvRet);
         return false;
     }
     cedarvRet = cedarv->open(cedarv);
     if (cedarvRet < 0) {
-        qWarning("CedarV: set_vstream_info error: %d", cedarvRet);
+        qCWarning(DIGIKAM_QTAV_LOG_WARN) << QString::asprintf("CedarV: set_vstream_info error: %d", cedarvRet);
         return false;
     }
     cedarv->ioctrl(cedarv, CEDARV_COMMAND_RESET, 0);
@@ -399,7 +399,7 @@ bool VideoDecoderCedarv::decode(const Packet &packet)
     u8 *buf0, *buf1;
     int ret = d.cedarv->request_write(d.cedarv, packet.data.size(), &buf0, &bufsize0, &buf1, &bufsize1);
     if (ret < 0) {
-        qWarning("CedarV: request_write failed (%d)", ret);
+        qCWarning(DIGIKAM_QTAV_LOG_WARN) << QString::asprintf("CedarV: request_write failed (%d)", ret);
         return false;
     }
     memcpy(buf0, packet.data.constData(), bufsize0);
@@ -411,16 +411,16 @@ bool VideoDecoderCedarv::decode(const Packet &packet)
     stream_data_info.pts = packet.pts * 1000.0;
     stream_data_info.flags = CEDARV_FLAG_FIRST_PART | CEDARV_FLAG_LAST_PART | CEDARV_FLAG_PTS_VALID;
     if ((ret = d.cedarv->update_data(d.cedarv, &stream_data_info)) < 0) {
-        qWarning("CedarV: update_data failed (%d)", ret);
+        qCWarning(DIGIKAM_QTAV_LOG_WARN) << QString::asprintf("CedarV: update_data failed (%d)", ret);
         return false;
     }
     if ((ret = d.cedarv->decode(d.cedarv)) < 0) {
-       qWarning("CedarV: decode failed (%d)", ret);
+       qCWarning(DIGIKAM_QTAV_LOG_WARN) << QString::asprintf("CedarV: decode failed (%d)", ret);
        return false;
     }
     ret = d.cedarv->display_request(d.cedarv, &d.cedarPicture);
     if (ret > 3 || ret < 0) {
-       qWarning("CedarV: display_request failed (%d)", ret);
+       qCWarning(DIGIKAM_QTAV_LOG_WARN) << QString::asprintf("CedarV: display_request failed (%d)", ret);
        if (d.cedarPicture.id) {
            d.cedarv->display_release(d.cedarv, d.cedarPicture.id);
            d.cedarPicture.id = 0;

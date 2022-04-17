@@ -28,7 +28,7 @@
 #include <QTextDocument>
 #include <QMatrix4x4>
 #include "VideoFrame.h"
-#include "utils/Logger.h"
+#include "digikam_debug.h"
 
 #include <X11/Xlib.h>
 #include <X11/Xutil.h>
@@ -89,7 +89,7 @@ void X11FilterContext::resetX11(Display *dpy, GC g, Drawable d)
         gc = g;
         drawable = d;
     }
-    qDebug("resetX11 display:%p,gc:%p,drawable:%p", display, g, d);
+    qCDebug(DIGIKAM_QTAV_LOG) << QString::asprintf("resetX11 display:%p,gc:%p,drawable:%p", display, g, d);
 }
 
 void X11FilterContext::renderTextImageX11(QImage *img, const QPointF &pos)
@@ -98,7 +98,7 @@ void X11FilterContext::renderTextImageX11(QImage *img, const QPointF &pos)
         destroyX11Resources();
         mask_q  = img->createAlphaMask();
         if (mask_q.isNull()) {
-            qWarning("mask image is null");
+            qCWarning(DIGIKAM_QTAV_LOG_WARN) << QString::asprintf("mask image is null");
             return;
         }
         XWindowAttributes xwa;
@@ -106,7 +106,7 @@ void X11FilterContext::renderTextImageX11(QImage *img, const QPointF &pos)
         // force the stride to ensure we can safely set ximage data ptr to qimage data ptr
         mask_img = (XImage*)XCreateImage((::Display*)display, xwa.visual, 1, ZPixmap, 0, NULL, mask_q.width(), mask_q.height(), 8, mask_q.bytesPerLine());
         if (!mask_img) {
-            qWarning("error create mask image");
+            qCWarning(DIGIKAM_QTAV_LOG_WARN) << QString::asprintf("error create mask image");
             return;
         }
         ((::XImage*)mask_img)->data = (char*)mask_q.constBits();
@@ -255,7 +255,7 @@ void X11FilterContext::drawRichText(const QRectF &rect, const QString &text, boo
     const QPointF tl = m.map(rect.topLeft());
     m.setColumn(3, QVector4D(0, 0, 0, 1)); // reset O to let painter draw from 0
     const QPointF dp =  tl - r.topLeft(); //painter should start from the mapped top left relative to mapped rect's top left
-    //qDebug() << dp << r.;
+    //qCDebug(DIGIKAM_QTAV_LOG) << dp << r.;
     painter->setTransform(m.toTransform());
     painter->translate(dp);
 

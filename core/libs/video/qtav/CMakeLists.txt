@@ -35,7 +35,6 @@ set(libqtav_SRCS
     ${CMAKE_CURRENT_SOURCE_DIR}/src/subtitle/SubtitleProcessorFFmpeg.cpp
     ${CMAKE_CURRENT_SOURCE_DIR}/src/subtitle/SubImage.cpp
     ${CMAKE_CURRENT_SOURCE_DIR}/src/utils/GPUMemCopy.cpp
-    ${CMAKE_CURRENT_SOURCE_DIR}/src/utils/Logger.cpp
     ${CMAKE_CURRENT_SOURCE_DIR}/src/AudioThread.cpp
     ${CMAKE_CURRENT_SOURCE_DIR}/src/utils/internal.cpp
     ${CMAKE_CURRENT_SOURCE_DIR}/src/AVThread.cpp

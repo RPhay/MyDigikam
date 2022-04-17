@@ -26,7 +26,7 @@
 #include "VideoEncoder.h"
 #include "AudioEncoder.h"
 #include "utils/internal.h"
-#include "utils/Logger.h"
+#include "digikam_debug.h"
 
 namespace QtAV
 {
@@ -106,17 +106,17 @@ AVStream *AVMuxer::Private::addStream(AVFormatContext* ctx, const QString &codec
             }
         }
         if (!codec)
-            qWarning("Can not find encoder for %s", codecName.toUtf8().constData());
+            qCWarning(DIGIKAM_QTAV_LOG_WARN) << QString::asprintf("Can not find encoder for %s", codecName.toUtf8().constData());
     } else if (codecId != QTAV_CODEC_ID(NONE)) {
         codec = avcodec_find_encoder(codecId);
         if (!codec)
-            qWarning("Can not find encoder for %s", avcodec_get_name(codecId));
+            qCWarning(DIGIKAM_QTAV_LOG_WARN) << QString::asprintf("Can not find encoder for %s", avcodec_get_name(codecId));
     }
     if (!codec)
         return 0;
     AVStream *s = avformat_new_stream(ctx, codec);
     if (!s) {
-        qWarning("Can not allocate stream");
+        qCWarning(DIGIKAM_QTAV_LOG_WARN) << QString::asprintf("Can not allocate stream");
         return 0;
     }
     // set by avformat if unset
@@ -405,13 +405,13 @@ bool AVMuxer::open()
     // d->format_forced can be set from AVFormatContext.format_whitelist
     if (!d->format_forced.isEmpty()) {
         d->format = av_guess_format(d->format_forced.toUtf8().constData(), NULL, NULL);
-        qDebug() << "force format: " << d->format_forced;
+        qCDebug(DIGIKAM_QTAV_LOG) << "force format: " << d->format_forced;
     }
 
     //d->interrupt_hanlder->begin(InterruptHandler::Open);
     if (d->io) {
         if (d->io->accessMode() == MediaIO::Read) {
-            qWarning("wrong MediaIO accessMode. MUST be Write");
+            qCWarning(DIGIKAM_QTAV_LOG_WARN) << QString::asprintf("wrong MediaIO accessMode. MUST be Write");
         }
         AV_ENSURE_OK(avformat_alloc_output_context2(&d->format_ctx, d->format, d->format_forced.isEmpty() ? 0 : d->format_forced.toUtf8().constData(), ""), false);
         d->format_ctx->pb = (AVIOContext*)d->io->avioContext();
@@ -491,10 +491,10 @@ bool AVMuxer::writeVideo(const QtAV::Packet& packet)
     //av_write_frame
     av_interleaved_write_frame(d->format_ctx, pkt);
 #if 0
-    qDebug("mux packet.pts: %.3f dts:%.3f duration: %.3f, avpkt.pts: %lld,dts:%lld,duration:%lld"
+    qCDebug(DIGIKAM_QTAV_LOG) << QString::asprintf("mux packet.pts: %.3f dts:%.3f duration: %.3f, avpkt.pts: %lld,dts:%lld,duration:%lld"
            , packet.pts, packet.dts, packet.duration
            , pkt->pts, pkt->dts, pkt->duration);
-    qDebug("stream: %d duration: %lld, end: %lld. tb:{%d/%d}"
+    qCDebug(DIGIKAM_QTAV_LOG) << QString::asprintf("stream: %d duration: %lld, end: %lld. tb:{%d/%d}"
            , pkt->stream_index, s->duration
             , av_stream_get_end_pts(s)
            , s->time_base.num, s->time_base.den

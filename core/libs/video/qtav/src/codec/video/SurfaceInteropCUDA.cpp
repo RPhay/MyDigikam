@@ -22,7 +22,7 @@
 
 #include "SurfaceInteropCUDA.h"
 #include "VideoFrame.h"
-#include "utils/Logger.h"
+#include "digikam_debug.h"
 #include "helper_cuda.h"
 
 #define WORKAROUND_UNMAP_CONTEXT_SWITCH 1
@@ -129,7 +129,7 @@ bool HostInteropResource::map(int picIndex, const CUVIDPROCPARAMS &param, GLuint
 
         CUdeviceptr devptr;
         unsigned int pitch;
-        //qDebug("index: %d=>%d, plane: %d", host_mem.index, picIndex, plane);
+        //qCDebug(DIGIKAM_QTAV_LOG) << QString::asprintf("index: %d=>%d, plane: %d", host_mem.index, picIndex, plane);
         CUDA_ENSURE(cuvidMapVideoFrame(dec, picIndex, &devptr, &pitch, const_cast<CUVIDPROCPARAMS*>(&param)), false);
         CUVIDAutoUnmapper unmapper(this, dec, devptr);
         Q_UNUSED(unmapper);
@@ -140,7 +140,7 @@ bool HostInteropResource::map(int picIndex, const CUVIDPROCPARAMS &param, GLuint
         host_mem.index = picIndex;
     }
     // map to texture
-    //qDebug("map plane %d @%d", plane, picIndex);
+    //qCDebug(DIGIKAM_QTAV_LOG) << QString::asprintf("map plane %d @%d", plane, picIndex);
     GLint iformat[2];
     GLenum format[2], dtype[2];
     OpenGLHelper::videoFormatToGL(VideoFormat::Format_NV12, iformat, format, dtype);
@@ -166,7 +166,7 @@ bool HostInteropResource::ensureResource(int pitch, int height)
         CUDA_ENSURE(cuMemFreeHost(host_mem.data), false);
         host_mem.data = NULL;
     }
-    qDebug("allocate cuda host mem. %dx%d=>%dx%d", host_mem.pitch, host_mem.height, pitch, height);
+    qCDebug(DIGIKAM_QTAV_LOG) << QString::asprintf("allocate cuda host mem. %dx%d=>%dx%d", host_mem.pitch, host_mem.height, pitch, height);
     host_mem.pitch = pitch;
     host_mem.height = height;
     if (!ctx) {
@@ -294,19 +294,19 @@ bool EGLInteropResource::ensureD3DDevice()
     if (!dll9)
         dll9 = LoadLibrary(TEXT("D3D9.DLL"));
     if (!dll9) {
-        qWarning("cuda::EGLInteropResource cannot load d3d9.dll");
+        qCWarning(DIGIKAM_QTAV_LOG_WARN) << QString::asprintf("cuda::EGLInteropResource cannot load d3d9.dll");
         return false;
     }
     D3DADAPTER_IDENTIFIER9 ai9;
     ZeroMemory(&ai9, sizeof(ai9));
     device9 = DXHelper::CreateDevice9Ex(dll9, (IDirect3D9Ex**)(&d3d9), &ai9);
     if (!device9) {
-        qWarning("Failed to create d3d9 device ex, fallback to d3d9 device");
+        qCWarning(DIGIKAM_QTAV_LOG_WARN) << QString::asprintf("Failed to create d3d9 device ex, fallback to d3d9 device");
         device9 = DXHelper::CreateDevice9(dll9, &d3d9, &ai9);
     }
     if (!device9)
         return false;
-    qDebug() << QString().sprintf("CUDA.D3D9 (%.*s, vendor %lu, device %lu, revision %lu)",
+    qCDebug(DIGIKAM_QTAV_LOG) << QString().sprintf("CUDA.D3D9 (%.*s, vendor %lu, device %lu, revision %lu)",
                                     sizeof(ai9.Description), ai9.Description,
                                     ai9.VendorId, ai9.DeviceId, ai9.Revision);
 
@@ -364,7 +364,7 @@ bool EGLInteropResource::ensureD3D9CUDA(int w, int h, int W, int H)
         CUDA_WARN(cuStreamCreate(&res[0].stream, CU_STREAM_DEFAULT));
         CUDA_WARN(cuStreamCreate(&res[1].stream, CU_STREAM_DEFAULT));
 #endif //USE_STREAM
-        qDebug("cuda contex on gl thread: %p", ctx);
+        qCDebug(DIGIKAM_QTAV_LOG) << QString::asprintf("cuda contex on gl thread: %p", ctx);
         CUDA_ENSURE(cuCtxPopCurrent(&ctx), false); // TODO: why cuMemcpy2D need this
     }
     if (r.cuRes) {
@@ -402,7 +402,7 @@ bool EGLInteropResource::ensureD3D9EGL(int w, int h) {
         return true;
     releaseEGL();
     egl->dpy = eglGetCurrentDisplay();
-    qDebug("EGL version: %s, client api: %s", eglQueryString(egl->dpy, EGL_VERSION), eglQueryString(egl->dpy, EGL_CLIENT_APIS));
+    qCDebug(DIGIKAM_QTAV_LOG) << QString::asprintf("EGL version: %s, client api: %s", eglQueryString(egl->dpy, EGL_VERSION), eglQueryString(egl->dpy, EGL_CLIENT_APIS));
     EGLint cfg_attribs[] = {
         EGL_RED_SIZE, 8,
         EGL_GREEN_SIZE, 8,
@@ -415,7 +415,7 @@ bool EGLInteropResource::ensureD3D9EGL(int w, int h) {
     EGLint nb_cfgs;
     EGLConfig egl_cfg;
     if (!eglChooseConfig(egl->dpy, cfg_attribs, &egl_cfg, 1, &nb_cfgs)) {
-        qWarning("Failed to create EGL configuration");
+        qCWarning(DIGIKAM_QTAV_LOG_WARN) << QString::asprintf("Failed to create EGL configuration");
         return false;
     }
     // check extensions
@@ -424,12 +424,12 @@ bool EGLInteropResource::ensureD3D9EGL(int w, int h) {
     const bool kEGL_ANGLE_d3d_share_handle_client_buffer = extensions.contains("EGL_ANGLE_d3d_share_handle_client_buffer");
     const bool kEGL_ANGLE_query_surface_pointer = extensions.contains("EGL_ANGLE_query_surface_pointer");
     if (!kEGL_ANGLE_d3d_share_handle_client_buffer && !kEGL_ANGLE_query_surface_pointer) {
-        qWarning("EGL extension 'kEGL_ANGLE_query_surface_pointer' or 'ANGLE_d3d_share_handle_client_buffer' is required!");
+        qCWarning(DIGIKAM_QTAV_LOG_WARN) << QString::asprintf("EGL extension 'kEGL_ANGLE_query_surface_pointer' or 'ANGLE_d3d_share_handle_client_buffer' is required!");
         return false;
     }
     GLint has_alpha = 1; //QOpenGLContext::currentContext()->format().hasAlpha()
     eglGetConfigAttrib(egl->dpy, egl_cfg, EGL_BIND_TO_TEXTURE_RGBA, &has_alpha); //EGL_ALPHA_SIZE
-    qDebug("choose egl display:%p config: %p/%d, has alpha: %d", egl->dpy, egl_cfg, nb_cfgs, has_alpha);
+    qCDebug(DIGIKAM_QTAV_LOG) << QString::asprintf("choose egl display:%p config: %p/%d, has alpha: %d", egl->dpy, egl_cfg, nb_cfgs, has_alpha);
     EGLint attribs[] = {
         EGL_WIDTH, w,
         EGL_HEIGHT, h,
@@ -441,10 +441,10 @@ bool EGLInteropResource::ensureD3D9EGL(int w, int h) {
     HANDLE share_handle = NULL;
     if (!kEGL_ANGLE_d3d_share_handle_client_buffer && kEGL_ANGLE_query_surface_pointer) {
         EGL_ENSURE((egl->surface = eglCreatePbufferSurface(egl->dpy, egl_cfg, attribs)) != EGL_NO_SURFACE, false);
-        qDebug("pbuffer surface: %p", egl->surface);
+        qCDebug(DIGIKAM_QTAV_LOG) << QString::asprintf("pbuffer surface: %p", egl->surface);
         PFNEGLQUERYSURFACEPOINTERANGLEPROC eglQuerySurfacePointerANGLE = reinterpret_cast<PFNEGLQUERYSURFACEPOINTERANGLEPROC>(eglGetProcAddress("eglQuerySurfacePointerANGLE"));
         if (!eglQuerySurfacePointerANGLE) {
-            qWarning("EGL_ANGLE_query_surface_pointer is not supported");
+            qCWarning(DIGIKAM_QTAV_LOG_WARN) << QString::asprintf("EGL_ANGLE_query_surface_pointer is not supported");
             return false;
         }
         EGL_ENSURE(eglQuerySurfacePointerANGLE(egl->dpy, egl->surface, EGL_D3D_TEXTURE_2D_SHARE_HANDLE_ANGLE, &share_handle), false);
@@ -472,7 +472,7 @@ bool EGLInteropResource::ensureD3D9EGL(int w, int h) {
         // egl surface size must match d3d texture's
         // d3d9ex or d3d10 is required
         EGL_ENSURE((egl->surface = eglCreatePbufferFromClientBuffer(egl->dpy, EGL_D3D_TEXTURE_2D_SHARE_HANDLE_ANGLE, share_handle, egl_cfg, attribs)), false);
-        qDebug("pbuffer surface from client buffer: %p", egl->surface);
+        qCDebug(DIGIKAM_QTAV_LOG) << QString::asprintf("pbuffer surface from client buffer: %p", egl->surface);
     }
     return true;
 }
@@ -684,7 +684,7 @@ bool GLInteropResource::ensureResource(int w, int h, int H, GLuint tex, int plan
             CUDA_WARN(cuStreamCreate(&res[0].stream, CU_STREAM_DEFAULT));
             CUDA_WARN(cuStreamCreate(&res[1].stream, CU_STREAM_DEFAULT));
         }
-        qDebug("cuda contex on gl thread: %p", ctx);
+        qCDebug(DIGIKAM_QTAV_LOG) << QString::asprintf("cuda contex on gl thread: %p", ctx);
         CUDA_ENSURE(cuCtxPopCurrent(&ctx), false); // TODO: why cuMemcpy2D need this
     }
     if (r.cuRes) {

@@ -26,7 +26,7 @@
 #include "FilterContext.h"
 #include "filter/FilterManager.h"
 #include "output/OutputSet.h"
-#include "utils/Logger.h"
+#include "digikam_debug.h"
 
 namespace QtAV
 {

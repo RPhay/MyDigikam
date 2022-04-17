@@ -30,7 +30,7 @@
 #include "QtAV_Version.h"
 #include "private/AVDecoder_p.h"
 #include "utils/internal.h"
-#include "utils/Logger.h"
+#include "digikam_debug.h"
 
 namespace QtAV
 {
@@ -80,7 +80,7 @@ bool AVDecoder::open()
     DPTR_D(AVDecoder);
     // codec_ctx can't be null for none-ffmpeg based decoders because we may use it's properties in those decoders
     if (!d.codec_ctx) {
-        qWarning("FFmpeg codec context not ready");
+        qCWarning(DIGIKAM_QTAV_LOG_WARN) << QString::asprintf("FFmpeg codec context not ready");
         return false;
     }
     const QString hwa = property("hwaccel").toString();
@@ -94,7 +94,7 @@ bool AVDecoder::open()
         } else {
             es = es.arg(d.codec_name);
         }
-        qWarning() << es;
+        qCWarning(DIGIKAM_QTAV_LOG_WARN) << es;
         AVError::ErrorCode ec(AVError::CodecError);
         switch (d.codec_ctx->codec_type) {
         case AVMEDIA_TYPE_VIDEO:
@@ -126,7 +126,7 @@ bool AVDecoder::open()
     AV_ENSURE_OK(avcodec_open2(d.codec_ctx, codec, d.options.isEmpty() ? NULL : &d.dict), false);
     d.is_open = true;
     static const char* thread_name[] = { "Single", "Frame", "Slice"};
-    qDebug("%s thread type: %s, count: %d", metaObject()->className(), thread_name[d.codec_ctx->active_thread_type], d.codec_ctx->thread_count);
+    qCDebug(DIGIKAM_QTAV_LOG) << QString::asprintf("%s thread type: %s, count: %d", metaObject()->className(), thread_name[d.codec_ctx->active_thread_type], d.codec_ctx->thread_count);
     return true;
 }
 
@@ -172,7 +172,7 @@ void AVDecoder::setCodecContext(void *codecCtx)
     if (d.codec_ctx == ctx)
         return;
     if (isOpen()) {
-        qWarning("Can not copy codec properties when it's open");
+        qCWarning(DIGIKAM_QTAV_LOG_WARN) << QString::asprintf("Can not copy codec properties when it's open");
         close(); //
     }
     d.is_open = false;
@@ -185,7 +185,7 @@ void AVDecoder::setCodecContext(void *codecCtx)
         d.codec_ctx = avcodec_alloc_context3(NULL);
     // avcodec_alloc_context3(codec) equals to avcodec_alloc_context3(NULL) + avcodec_get_context_defaults3(codec), codec specified private data is initialized
     if (!d.codec_ctx) {
-        qWarning("avcodec_alloc_context3 failed");
+        qCWarning(DIGIKAM_QTAV_LOG_WARN) << QString::asprintf("avcodec_alloc_context3 failed");
         return;
     }
     AV_ENSURE_OK(avcodec_copy_context(d.codec_ctx, ctx));
@@ -262,7 +262,7 @@ void AVDecoderPrivate::applyOptionsForDict()
     // TODO: use QVariantMap only
     if (!options.contains(QStringLiteral("avcodec")))
         return;
-     qDebug("set AVCodecContext dict:");
+     qCDebug(DIGIKAM_QTAV_LOG) << QString::asprintf("set AVCodecContext dict:");
     // workaround for VideoDecoderFFmpeg. now it does not call av_opt_set_xxx, so set here in dict
     // TODO: wrong if opt is empty
     Internal::setOptionsToDict(options.value(QStringLiteral("avcodec")), &dict);

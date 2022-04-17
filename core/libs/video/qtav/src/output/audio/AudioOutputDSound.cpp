@@ -30,7 +30,7 @@
 #define DIRECTSOUND_VERSION 0x0600
 #include <dsound.h>
 #include "private/AVCompat.h"
-#include "utils/Logger.h"
+#include "digikam_debug.h"
 #define DX_LOG_COMPONENT "DSound"
 #include "utils/DirectXHelper.h"
 
@@ -86,7 +86,7 @@ private:
             while (ao->available) {
                dwResult = WaitForSingleObjectEx(ao->notify_event, 2000, FALSE);
                if (dwResult != WAIT_OBJECT_0) {
-                    //qWarning("WaitForSingleObjectEx for ao->notify_event error: %#lx", dwResult);
+                    //qCWarning(DIGIKAM_QTAV_LOG_WARN) << QString::asprintf("WaitForSingleObjectEx for ao->notify_event error: %#lx", dwResult);
                     continue;
                }
                ao->onCallback();
@@ -211,7 +211,7 @@ AudioOutputBackend::BufferControl AudioOutputDSound::bufferControl() const
 void AudioOutputDSound::onCallback()
 {
     if (bufferControl() & CountCallback) {
-        //qDebug("callback: %d", sem.available());
+        //qCDebug(DIGIKAM_QTAV_LOG) << QString::asprintf("callback: %d", sem.available());
         if (sem.available() < buffer_count) {
             sem.release();
             return;
@@ -224,7 +224,7 @@ void AudioOutputDSound::onCallback()
     }
     //DWORD status;
     //stream_buf->GetStatus(&status);
-    //qDebug("status: %lu", status);
+    //qCDebug(DIGIKAM_QTAV_LOG) << QString::asprintf("status: %lu", status);
     //return;
     //if (status & DSBSTATUS_LOOPING) {
     // sound will loop even if buffer is finished
@@ -237,7 +237,7 @@ void AudioOutputDSound::onCallback()
 
 bool AudioOutputDSound::write(const QByteArray &data)
 {
-    //qDebug("sem %d %d", sem.available(), buffers_free.load());
+    //qCDebug(DIGIKAM_QTAV_LOG) << QString::asprintf("sem %d %d", sem.available(), buffers_free.load());
     if (bufferControl() & CountCallback) {
         sem.acquire();
     } else {
@@ -254,7 +254,7 @@ bool AudioOutputDSound::write(const QByteArray &data)
         write_offset = 0;
     HRESULT res = stream_buf->Lock(write_offset, data.size(), &dst1, &size1, &dst2, &size2, 0); //DSBLOCK_ENTIREBUFFER
     if (res == DSERR_BUFFERLOST) {
-        qDebug("buffer lost");
+        qCDebug(DIGIKAM_QTAV_LOG) << QString::asprintf("buffer lost");
         DX_ENSURE(stream_buf->Restore(), false);
         DX_ENSURE(stream_buf->Lock(write_offset, data.size(), &dst1, &size1, &dst2, &size2, 0), false);
     }
@@ -306,7 +306,7 @@ bool AudioOutputDSound::loadDll()
 {
     dll = LoadLibrary(TEXT("dsound.dll"));
     if (!dll) {
-        qWarning("Can not load dsound.dll");
+        qCWarning(DIGIKAM_QTAV_LOG_WARN) << QString::asprintf("Can not load dsound.dll");
         return false;
     }
     return true;
@@ -328,7 +328,7 @@ bool AudioOutputDSound::init()
     DirectSoundCreateFunc dsound_create = (DirectSoundCreateFunc)GetProcAddress(dll, "DirectSoundCreate");
     //DirectSoundEnumerateFunc dsound_enumerate = (DirectSoundEnumerateFunc)GetProcAddress(dll, "DirectSoundEnumerateA");
     if (!dsound_create) {
-        qWarning("Failed to resolve 'DirectSoundCreate'");
+        qCWarning(DIGIKAM_QTAV_LOG_WARN) << QString::asprintf("Failed to resolve 'DirectSoundCreate'");
         unloadDll();
         return false;
     }
@@ -336,13 +336,13 @@ bool AudioOutputDSound::init()
     /*  DSSCL_EXCLUSIVE: can modify the settings of the primary buffer, only the sound of this app will be hearable when it will have the focus.
      */
     DX_ENSURE_OK(dsound->SetCooperativeLevel(GetDesktopWindow(), DSSCL_EXCLUSIVE), false);
-    qDebug("DirectSound initialized.");
+    qCDebug(DIGIKAM_QTAV_LOG) << QString::asprintf("DirectSound initialized.");
     DSCAPS dscaps;
     memset(&dscaps, 0, sizeof(DSCAPS));
     dscaps.dwSize = sizeof(DSCAPS);
     DX_ENSURE_OK(dsound->GetCaps(&dscaps), false);
     if (dscaps.dwFlags & DSCAPS_EMULDRIVER)
-        qDebug("DirectSound is emulated");
+        qCDebug(DIGIKAM_QTAV_LOG) << QString::asprintf("DirectSound is emulated");
 
     write_offset = 0;
     return true;

@@ -26,7 +26,7 @@
 #include <pulse/pulseaudio.h>
 #include "private/mkid.h"
 #include "private/factory.h"
-#include "utils/Logger.h"
+#include "digikam_debug.h"
 
 // KDE includes
 
@@ -97,7 +97,7 @@ FACTORY_REGISTER(AudioOutputBackend, Pulse, kName)
 #define PA_ENSURE_TRUE(expr, ...) \
     do { \
         if (!(expr)) { \
-            qWarning("PulseAudio error @%d " #expr ": %s", __LINE__, pa_strerror(pa_context_errno(ctx))); \
+            qCWarning(DIGIKAM_QTAV_LOG_WARN) << QString::asprintf("PulseAudio error @%d " #expr ": %s", __LINE__, pa_strerror(pa_context_errno(ctx))); \
             return __VA_ARGS__; \
         } \
     } while(0)
@@ -170,7 +170,7 @@ static void sink_input_event(pa_context* c, pa_subscription_event_type_t t, uint
 {
     switch (t) {
     case PA_SUBSCRIPTION_EVENT_REMOVE:
-        qWarning("PulseAudio sink killed");
+        qCWarning(DIGIKAM_QTAV_LOG_WARN) << QString::asprintf("PulseAudio sink killed");
         break;
     default:
         pa_operation *op = pa_context_get_sink_input_info(c, idx, sink_input_info_cb, ao);
@@ -193,7 +193,7 @@ void AudioOutputPulse::contextSubscribeCallback(pa_context *c, pa_subscription_e
             sink_input_event(c, t, idx, p);
         break;
     case  PA_SUBSCRIPTION_EVENT_CARD:
-        qDebug("PA_SUBSCRIPTION_EVENT_CARD");
+        qCDebug(DIGIKAM_QTAV_LOG) << QString::asprintf("PA_SUBSCRIPTION_EVENT_CARD");
         break;
     default:
         break;
@@ -205,7 +205,7 @@ void AudioOutputPulse::stateCallback(pa_stream *s, void *userdata)
     AudioOutputPulse *p = reinterpret_cast<AudioOutputPulse*>(userdata);
     switch (pa_stream_get_state(s)) {
     case PA_STREAM_FAILED:
-        qWarning("PA_STREAM_FAILED");
+        qCWarning(DIGIKAM_QTAV_LOG_WARN) << QString::asprintf("PA_STREAM_FAILED");
         pa_threaded_mainloop_signal(p->loop, 0);
         break;
     case PA_STREAM_READY:
@@ -229,7 +229,7 @@ void AudioOutputPulse::writeCallback(pa_stream *s, size_t length, void *userdata
     Q_UNUSED(s);
     // length: writable bytes. callback is called pirioddically
     AudioOutputPulse *p = reinterpret_cast<AudioOutputPulse*>(userdata);
-    //qDebug("write callback: %d + %d", p->writable_size, length);
+    //qCDebug(DIGIKAM_QTAV_LOG) << QString::asprintf("write callback: %d + %d", p->writable_size, length);
     p->writable_size = length;
     p->onCallback();
 }
@@ -247,7 +247,7 @@ void AudioOutputPulse::sinkInfoCallback(pa_context *c, const pa_sink_input_info 
     Q_UNUSED(c);
     AudioOutputPulse *p = reinterpret_cast<AudioOutputPulse*>(userdata);
     if (is_last < 0) {
-        qWarning("Failed to get sink input info");
+        qCWarning(DIGIKAM_QTAV_LOG_WARN) << QString::asprintf("Failed to get sink input info");
         return;
     }
     if (!i)
@@ -261,7 +261,7 @@ bool AudioOutputPulse::init(const AudioFormat &format)
     writable_size = 0;
     loop = pa_threaded_mainloop_new();
     if (pa_threaded_mainloop_start(loop) < 0) {
-        qWarning("PulseAudio failed to start mainloop");
+        qCWarning(DIGIKAM_QTAV_LOG_WARN) << QString::asprintf("PulseAudio failed to start mainloop");
         return false;
     }
 
@@ -270,10 +270,10 @@ bool AudioOutputPulse::init(const AudioFormat &format)
     pa_mainloop_api *api = pa_threaded_mainloop_get_api(loop);
     ctx = pa_context_new(api, qApp->applicationName().append(QLatin1String(" @%1 (QtAV)")).arg((quintptr)this).toUtf8().constData());
     if (!ctx) {
-        qWarning("PulseAudio failed to allocate a context");
+        qCWarning(DIGIKAM_QTAV_LOG_WARN) << QString::asprintf("PulseAudio failed to allocate a context");
         return false;
     }
-    qDebug() << i18n("PulseAudio %1, protocol: %2, server protocol: %3").arg(QString::fromLatin1(pa_get_library_version())).arg(pa_context_get_protocol_version(ctx)).arg(pa_context_get_server_protocol_version(ctx));
+    qCDebug(DIGIKAM_QTAV_LOG) << i18n("PulseAudio %1, protocol: %2, server protocol: %3").arg(QString::fromLatin1(pa_get_library_version())).arg(pa_context_get_protocol_version(ctx)).arg(pa_context_get_server_protocol_version(ctx));
     // TODO: host property
     pa_context_connect(ctx, NULL, PA_CONTEXT_NOFLAGS, NULL);
     pa_context_set_state_callback(ctx, AudioOutputPulse::contextStateCallback, this);
@@ -282,7 +282,7 @@ bool AudioOutputPulse::init(const AudioFormat &format)
         if (st == PA_CONTEXT_READY)
             break;
         if (!PA_CONTEXT_IS_GOOD(st)) {
-            qWarning("PulseAudio context init failed");
+            qCWarning(DIGIKAM_QTAV_LOG_WARN) << QString::asprintf("PulseAudio context init failed");
             return false;
         }
         pa_threaded_mainloop_wait(loop);
@@ -303,7 +303,7 @@ bool AudioOutputPulse::init(const AudioFormat &format)
     pa_format_info_set_rate(fi, format.sampleRate());
    // pa_format_info_set_channel_map(fi, NULL); // TODO
     if (!pa_format_info_valid(fi)) {
-        qWarning("PulseAudio: invalid format");
+        qCWarning(DIGIKAM_QTAV_LOG_WARN) << QString::asprintf("PulseAudio: invalid format");
         return false;
     }
     pa_proplist *pl = pa_proplist_new();
@@ -315,7 +315,7 @@ bool AudioOutputPulse::init(const AudioFormat &format)
     if (!stream) {
         pa_format_info_free(fi);
         pa_proplist_free(pl);
-        qWarning("PulseAudio: failed to create a stream");
+        qCWarning(DIGIKAM_QTAV_LOG_WARN) << QString::asprintf("PulseAudio: failed to create a stream");
         return false;
     }
     pa_format_info_free(fi);
@@ -333,7 +333,7 @@ bool AudioOutputPulse::init(const AudioFormat &format)
     // PA_STREAM_NOT_MONOTONIC?
     pa_stream_flags_t flags = pa_stream_flags_t(PA_STREAM_NOT_MONOTONIC|PA_STREAM_INTERPOLATE_TIMING|PA_STREAM_AUTO_TIMING_UPDATE);
     if (pa_stream_connect_playback(stream, NULL /*sink*/, &ba, flags, NULL, NULL) < 0) {
-        qWarning("PulseAudio failed: pa_stream_connect_playback");
+        qCWarning(DIGIKAM_QTAV_LOG_WARN) << QString::asprintf("PulseAudio failed: pa_stream_connect_playback");
         return false;
     }
 
@@ -342,13 +342,13 @@ bool AudioOutputPulse::init(const AudioFormat &format)
         if (st == PA_STREAM_READY)
             break;
         if (!PA_STREAM_IS_GOOD(st)) {
-            qWarning("PulseAudio stream init failed");
+            qCWarning(DIGIKAM_QTAV_LOG_WARN) << QString::asprintf("PulseAudio stream init failed");
             return false;
         }
         pa_threaded_mainloop_wait(loop);
     }
     if (pa_stream_is_suspended(stream)) {
-        qWarning("PulseAudio stream is suspende");
+        qCWarning(DIGIKAM_QTAV_LOG_WARN) << QString::asprintf("PulseAudio stream is suspende");
         return false;
     }
     return true;
@@ -380,7 +380,7 @@ bool AudioOutputPulse::open()
 {
     if (!init(format)) {
         if (ctx)
-            qWarning("%s", pa_strerror(pa_context_errno(ctx)));
+            qCWarning(DIGIKAM_QTAV_LOG_WARN) << QString::asprintf("%s", pa_strerror(pa_context_errno(ctx)));
         close();
         return false;
     }
@@ -423,7 +423,7 @@ int AudioOutputPulse::getWritableBytes()
 {
     //return writable_size;
     if (!loop || !stream) {
-        qWarning("pulseaudio is not open");
+        qCWarning(DIGIKAM_QTAV_LOG_WARN) << QString::asprintf("pulseaudio is not open");
         return 0;
     }
     ScopedPALocker palock(loop);

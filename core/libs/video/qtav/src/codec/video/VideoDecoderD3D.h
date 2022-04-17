@@ -111,12 +111,12 @@ private:
 
 template<typename T> int SelectConfig(AVCodecID codec_id, const T* cfgs, int nb_cfgs, T* cfg)
 {
-    qDebug("Decoder configurations: %d", nb_cfgs);
+    qCDebug(DIGIKAM_QTAV_LOG) << QString::asprintf("Decoder configurations: %d", nb_cfgs);
     /* Select the best decoder configuration */
     int cfg_score = 0;
     for (int i = 0; i < nb_cfgs; i++) {
         const T &c = cfgs[i];
-        qDebug("configuration[%d] ConfigBitstreamRaw %d", i, c.ConfigBitstreamRaw);
+        qCDebug(DIGIKAM_QTAV_LOG) << QString::asprintf("configuration[%d] ConfigBitstreamRaw %d", i, c.ConfigBitstreamRaw);
         /* */
         int score = 0;
         if (c.ConfigBitstreamRaw == 1)
@@ -133,7 +133,7 @@ template<typename T> int SelectConfig(AVCodecID codec_id, const T* cfgs, int nb_
         }
     }
     if (cfg_score <= 0)
-        qWarning("Failed to find a supported decoder configuration");
+        qCWarning(DIGIKAM_QTAV_LOG_WARN) << QString::asprintf("Failed to find a supported decoder configuration");
     return cfg_score;
 }
 

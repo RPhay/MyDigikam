@@ -31,7 +31,7 @@
 #include "QtAV_Version.h"
 #include "private/AVCompat.h"
 #include "private/factory.h"
-#include "utils/Logger.h"
+#include "digikam_debug.h"
 
 /*!
  * options (properties) are from libavcodec/options_table.h

@@ -23,6 +23,7 @@
 #include "SubImagesRenderer.h"
 #include "opengl/SubImagesGeometry.h"
 #include "GeometryRenderer.h"
+#include "digikam_debug.h"
 
 namespace QtAV
 {
@@ -86,7 +87,7 @@ void SubImagesRenderer::render(const SubImageSet &ass, const QRect &target, cons
         m_program.bindAttributeLocation("a_TexCoords", 1);
         m_program.bindAttributeLocation("a_Color", 2);
         if (!m_program.link())
-            qWarning() << m_program.log();
+            qCWarning(DIGIKAM_QTAV_LOG_WARN) << m_program.log();
     }
     m_program.bind();
     gl().ActiveTexture(GL_TEXTURE0);
