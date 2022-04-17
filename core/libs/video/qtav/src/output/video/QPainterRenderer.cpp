@@ -20,9 +20,9 @@
  *
  * ============================================================ */
 
-#include <QtAV/QPainterRenderer.h>
-#include <QtAV/private/QPainterRenderer_p.h>
-#include <QtAV/FilterContext.h>
+#include "QPainterRenderer.h"
+#include "private/QPainterRenderer_p.h"
+#include "FilterContext.h"
 
 namespace QtAV
 {

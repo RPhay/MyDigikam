@@ -20,7 +20,7 @@
  *
  * ============================================================ */
 
-#include <QtAV/AVClock.h>
+#include "AVClock.h"
 #include <QTimer>
 #include <QTimerEvent>
 #include <QDateTime>

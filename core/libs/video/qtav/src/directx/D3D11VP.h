@@ -26,7 +26,7 @@
 #include "directx/dxcompat.h"
 #include <d3d11.h>
 #include <wrl/client.h>
-#include <QtAV/QtAV_Global.h>
+#include "QtAV_Global.h"
 using namespace Microsoft::WRL;
 
 namespace QtAV

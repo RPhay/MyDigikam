@@ -27,7 +27,7 @@
 #include <d3d9.h>
 #include <dxvahd.h>
 #include <wrl/client.h>
-#include <QtAV/QtAV_Global.h>
+#include "QtAV_Global.h"
 using namespace Microsoft::WRL;
 // https://msdn.microsoft.com/en-us/library/windows/desktop/ee663581(v=vs.85).aspx
 

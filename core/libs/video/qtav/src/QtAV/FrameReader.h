@@ -24,7 +24,7 @@
 #define QTAV_FRAME_READER_H
 
 #include <QObject>
-#include <QtAV/VideoFrame.h>
+#include "VideoFrame.h"
 
 namespace QtAV
 {

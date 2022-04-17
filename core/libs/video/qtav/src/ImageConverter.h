@@ -23,8 +23,8 @@
 #ifndef QTAV_IMAGECONVERTER_H
 #define QTAV_IMAGECONVERTER_H
 
-#include <QtAV/QtAV_Global.h>
-#include <QtAV/VideoFormat.h>
+#include "QtAV_Global.h"
+#include "VideoFormat.h"
 #include <QVector>
 
 namespace QtAV
