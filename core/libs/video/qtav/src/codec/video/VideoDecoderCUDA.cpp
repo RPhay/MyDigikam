@@ -351,7 +351,7 @@ VideoDecoderCUDA::VideoDecoderCUDA():
     setProperty("detail_surfaces", i18n("Decoding surfaces"));
     setProperty("detail_flags", i18n("Decoder flags"));
     setProperty("detail_copyMode", QStringLiteral("%1\n%2\n%3\n%4")
-                .arg(i18n("Performace: ZeroCopy > DirectCopy > GenericCopy"))
+                .arg(i18n("Performance: ZeroCopy > DirectCopy > GenericCopy"))
                 .arg(i18n("ZeroCopy: no copy back from GPU to System memory. Directly render the decoded data on GPU"))
                 .arg(i18n("DirectCopy: copy back to host memory but video frames and map to GL texture"))
                 .arg(i18n("GenericCopy: copy back to host memory and each video frame"))
