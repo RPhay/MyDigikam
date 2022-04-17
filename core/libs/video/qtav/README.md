@@ -6,14 +6,16 @@ See the story for bugzilla: https://bugs.kde.org/show_bug.cgi?id=448681
 
 Code Review with plenty of fixes and improvements:
 
-- Compilation rules ported to clean Cmake with usual Find scripts for dependencies.
+- Compilation rules ported to clean CMake with usual Find scripts for dependencies.
   See core/cmake/rules/RulesMediaPlayer.cmake
 - Fix of all GCC 11 warnings.
 - Fixes Qt Signal/Slots.
 - Port code to pure Qt5/Qt6.
 - Use qCDebug()/qCWarning categories with digiKam debug spaces.
-* Fixes header guards.
-* Fixes includes rules from Qt and local.
+- Use KDE i18n() instead tr().
+* Fix header guards.
+* Fix includes rules/order from Qt and local.
+* Fix coding style.
 * Apply fixes for cppcheck static analyzer.
 * Apply fixes for Krazy static analyzer.
 * Apply fixes for Clang-Scan static analyzer.
