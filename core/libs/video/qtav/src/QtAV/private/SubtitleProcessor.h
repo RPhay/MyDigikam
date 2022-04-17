@@ -20,31 +20,41 @@
  *
  * ============================================================ */
 
-#ifndef QTAV_SUBTITLEPROCESSOR_H
-#define QTAV_SUBTITLEPROCESSOR_H
+#ifndef QTAV_SUBTITLE_PROCESSOR_H
+#define QTAV_SUBTITLE_PROCESSOR_H
 
-#include <QtCore/QList>
-#include <QtGui/QImage>
-#include <QtAV/QtAV_Global.h>
-#include <QtAV/Subtitle.h>
+// Qt includes
+
+#include <QList>
+#include <QImage>
+
+// Local includes
+
+#include "QtAV_Global.h"
+#include "Subtitle.h"
 
 namespace QtAV
 {
 
 typedef QString SubtitleProcessorId;
+
 class Q_AV_PRIVATE_EXPORT SubtitleProcessor
 {
 public:
+
     SubtitleProcessor();
     virtual ~SubtitleProcessor() {}
+
     virtual SubtitleProcessorId id() const = 0;
     virtual QString name() const = 0;
+
     /*!
      * \brief supportedTypes
      * \return a list of supported suffixes. e.g. [ "ass", "ssa", "srt" ]
      * used to find subtitle files with given suffixes
      */
     virtual QStringList supportedTypes() const = 0;
+
     /*!
      * \brief process
      * process subtitle from QIODevice.
@@ -52,6 +62,7 @@ public:
      * \return false if failed or does not supports iodevice, e.g. does not support sequential device
      */
     virtual bool process(QIODevice* dev) = 0;
+
     /*!
      * \brief process
      * default behavior is calling process(QFile*)
@@ -59,6 +70,7 @@ public:
      * \return false if failed or does not support file
      */
     virtual bool process(const QString& path);
+
     /*!
      * \brief timestamps
      * call this after process(). SubtitleFrame.text must be set
@@ -66,16 +78,23 @@ public:
      */
     virtual QList<SubtitleFrame> frames() const = 0;
     virtual bool canRender() const { return false;}
+
     // return false if not supported
-    virtual bool processHeader(const QByteArray& codec, const QByteArray& data) {
+
+    virtual bool processHeader(const QByteArray& codec, const QByteArray& data)
+    {
         Q_UNUSED(codec);
         Q_UNUSED(data);
         return false;
     }
+
     // return timestamp, insert it to Subtitle's internal linkedlist. can be invalid if only support renderering
+
     virtual SubtitleFrame processLine(const QByteArray& data, qreal pts = -1, qreal duration = 0) = 0;
     virtual QString getText(qreal pts) const = 0;
+
     // default null image
+
     virtual QImage getImage(qreal pts, QRect* boundingRect = 0);
     virtual SubImageSet getSubImages(qreal pts, QRect* boundingRect = 0);
     void setFrameSize(int width, int height);
@@ -84,14 +103,18 @@ public:
     int frameHeight() const;
 
     // font properties: libass only now
+
     virtual void setFontFile(const QString& file) {Q_UNUSED(file);}
     virtual void setFontsDir(const QString& dir) {Q_UNUSED(dir);}
     virtual void setFontFileForced(bool force) {Q_UNUSED(force);}
+
 public:
+
     static void registerAll();
     template<class C> static bool Register(SubtitleProcessorId id, const char* name) { return Register(id, create<C>, name);}
     static SubtitleProcessor* create(SubtitleProcessorId id);
     static SubtitleProcessor* create(const char* name = "FFmpeg");
+
     /*!
      * \brief next
      * \param id NULL to get the first id address
@@ -100,16 +123,24 @@ public:
     static SubtitleProcessorId* next(SubtitleProcessorId* id = 0);
     static const char* name(SubtitleProcessorId id);
     static SubtitleProcessorId id(const char* name);
+
 private:
+
     template<class C> static SubtitleProcessor* create() { return new C();}
     typedef SubtitleProcessor* (*SubtitleProcessorCreator)();
     static bool Register(SubtitleProcessorId id, SubtitleProcessorCreator, const char *name);
+
 protected:
+
     // default do nothing
+
     virtual void onFrameSizeChanged(int width, int height);
+
 private:
+
     int m_width, m_height;
 };
 
 } // namespace QtAV
-#endif // QTAV_SUBTITLEPROCESSOR_H
+
+#endif // QTAV_SUBTITLE_PROCESSOR_H

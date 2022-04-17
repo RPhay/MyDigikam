@@ -20,12 +20,17 @@
  *
  * ============================================================ */
 
-#ifndef QTAV_QPAINTERRENDERER_P_H
-#define QTAV_QPAINTERRENDERER_P_H
+#ifndef QTAV_QPAINTER_RENDERER_P_H
+#define QTAV_QPAINTER_RENDERER_P_H
 
-#include <QtGui/QImage>
-#include <QtGui/QPainter>
-#include <QtAV/private/VideoRenderer_p.h>
+// Qt includes
+
+#include <QImage>
+#include <QPainter>
+
+// Local includes
+
+#include "private/VideoRenderer_p.h"
 
 namespace QtAV
 {
@@ -33,37 +38,48 @@ namespace QtAV
 class Q_AV_PRIVATE_EXPORT QPainterRendererPrivate : public VideoRendererPrivate
 {
 public:
-    QPainterRendererPrivate():
-        painter(0)
-    {}
-    virtual ~QPainterRendererPrivate(){
-        if (painter) {
+
+    QPainterRendererPrivate()
+      : painter(0)
+    {
+    }
+
+    virtual ~QPainterRendererPrivate()
+    {
+        if (painter)
+        {
             delete painter;
             painter = 0;
         }
     }
-    void setupQuality() {
-        switch (quality) {
-        case VideoRenderer::QualityFastest:
-            painter->setRenderHint(QPainter::Antialiasing, false);
-            painter->setRenderHint(QPainter::TextAntialiasing, false);
-            painter->setRenderHint(QPainter::SmoothPixmapTransform, false);
-            painter->setRenderHint(QPainter::Antialiasing, false);
-            break;
-        case VideoRenderer::QualityBest:
-        default:
-            painter->setRenderHint(QPainter::Antialiasing, true);
-            painter->setRenderHint(QPainter::TextAntialiasing, true);
-            painter->setRenderHint(QPainter::SmoothPixmapTransform, true);
-            painter->setRenderHint(QPainter::Antialiasing, true);
-            break;
+
+    void setupQuality()
+    {
+        switch (quality)
+        {
+            case VideoRenderer::QualityFastest:
+                painter->setRenderHint(QPainter::Antialiasing, false);
+                painter->setRenderHint(QPainter::TextAntialiasing, false);
+                painter->setRenderHint(QPainter::SmoothPixmapTransform, false);
+                painter->setRenderHint(QPainter::Antialiasing, false);
+                break;
+
+            case VideoRenderer::QualityBest:
+            default:
+                painter->setRenderHint(QPainter::Antialiasing, true);
+                painter->setRenderHint(QPainter::TextAntialiasing, true);
+                painter->setRenderHint(QPainter::SmoothPixmapTransform, true);
+                painter->setRenderHint(QPainter::Antialiasing, true);
+                break;
         }
     }
 
     // drawPixmap() is faster for on screen painting
-    QPixmap pixmap;
-    QPainter *painter;
+
+    QPixmap   pixmap;
+    QPainter* painter;
 };
 
 } // namespace QtAV
-#endif // QTAV_QPAINTERRENDERER_P_H
+
+#endif // QTAV_QPAINTER_RENDERER_P_H

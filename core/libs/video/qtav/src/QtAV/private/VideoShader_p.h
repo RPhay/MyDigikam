@@ -20,43 +20,54 @@
  *
  * ============================================================ */
 
-#ifndef QTAV_VIDEOSHADER_P_H
-#define QTAV_VIDEOSHADER_P_H
+#ifndef QTAV_VIDEO_SHADER_P_H
+#define QTAV_VIDEO_SHADER_P_H
 
-#include "QtAV/OpenGLTypes.h"
-#include "QtAV/VideoFrame.h"
-#include "ColorTransform.h"
+// Qt includes
+
 #include <QVector4D>
+
 #if QT_VERSION >= QT_VERSION_CHECK(5, 0, 0)
-#include <QOpenGLBuffer>
-#include <QOpenGLShaderProgram>
-#include <QOpenGLFunctions>
+#   include <QOpenGLBuffer>
+#   include <QOpenGLShaderProgram>
+#   include <QOpenGLFunctions>
 #else
-#if QT_VERSION >= QT_VERSION_CHECK(4, 8, 0)
-#include <QtOpenGL/QGLFunctions>
-#endif
-#include <QtOpenGL/QGLBuffer>
-#include <QtOpenGL/QGLShaderProgram>
+#   if QT_VERSION >= QT_VERSION_CHECK(4, 8, 0)
+#       include <QtOpenGL/QGLFunctions>
+#   endif
+#   include <QtOpenGL/QGLBuffer>
+#   include <QtOpenGL/QGLShaderProgram>
 typedef QGLBuffer QOpenGLBuffer;
-#define QOpenGLShaderProgram QGLShaderProgram
-#define QOpenGLShader QGLShader
-#define QOpenGLFunctions QGLFunctions
-#define QOpenGLContext QGLContext
+#   define QOpenGLShaderProgram QGLShaderProgram
+#   define QOpenGLShader QGLShader
+#   define QOpenGLFunctions QGLFunctions
+#   define QOpenGLContext QGLContext
 #endif
+
+// Local includes
+
+#include "OpenGLTypes.h"
+#include "VideoFrame.h"
+#include "ColorTransform.h"
 
 namespace QtAV
 {
+
 // can not move to OpenGLHelper.h because that's not public/private header
-enum ShaderType {
+
+enum ShaderType
+{
     VertexShader,
     FragmentShader,
     ShaderTypeCount
 };
 
 class VideoShader;
+
 class Q_AV_PRIVATE_EXPORT VideoShaderPrivate : public DPtrPrivate<VideoShader>
 {
 public:
+
     VideoShaderPrivate()
         : owns_program(false)
         , rebuild_program(false)
@@ -69,15 +80,22 @@ public:
         , u_c(-1)
         , material_type(0)
         , texture_target(GL_TEXTURE_2D)
-    {}
-    virtual ~VideoShaderPrivate() {
-        if (owns_program && program) {
-            if (QOpenGLContext::currentContext()) {
+    {
+    }
+
+    virtual ~VideoShaderPrivate()
+    {
+        if (owns_program && program)
+        {
+            if (QOpenGLContext::currentContext())
+            {
                 // FIXME: may be not called from renderering thread. so we still have to detach shaders
                 program->removeAllShaders();
             }
+
             delete program;
         }
+
         program = 0;
     }
 
@@ -102,9 +120,11 @@ public:
 };
 
 class VideoMaterial;
+
 class VideoMaterialPrivate : public DPtrPrivate<VideoMaterial>
 {
 public:
+
     VideoMaterialPrivate()
         : update_texure(true)
         , init_textures_required(true)
@@ -126,12 +146,16 @@ public:
         data_format.reserve(4);
         data_type.reserve(4);
         static bool enable_pbo = qgetenv("QTAV_PBO").toInt() > 0;
+
         if (try_pbo)
             try_pbo = enable_pbo;
+
         pbo.reserve(4);
         colorTransform.setOutputColorSpace(ColorSpace_RGB);
     }
+
     ~VideoMaterialPrivate();
+
     bool initPBO(int plane, int size);
     bool initTexture(GLuint tex, GLint internal_format, GLenum format, GLenum dataType, int width, int height);
     bool updateTextureParameters(const VideoFormat& fmt);
@@ -140,27 +164,31 @@ public:
     bool ensureTextures();
     void setupQuality();
 
-    bool update_texure; // reduce upload/map times. true: new frame not bound. false: current frame is bound
+    bool update_texure;          // reduce upload/map times. true: new frame not bound. false: current frame is bound
     bool init_textures_required; // e.g. target changed
     int bpc;
-    int width, height; //avoid accessing frame(need lock)
+    int width, height;           // avoid accessing frame(need lock)
     VideoFrame frame;
+
     /*
      *  old format. used to check whether we have to update textures. set to current frame's format after textures are updated.
      * TODO: only VideoMaterial.type() is enough to check and update shader. so remove it
      */
     VideoFormat video_format;
     QSize plane0Size;
+
     // width is in bytes. different alignments may result in different plane 1 linesize even if plane 0 are the same
+
     int plane1_linesize;
 
     // textures.d in updateTextureParameters() changed. happens in qml. why?
-    quint8 workaround_vector_crash_on_linux[8]; //TODO: remove
-    QVector<GLuint> textures; //texture ids. size is plane count
+
+    quint8 workaround_vector_crash_on_linux[8]; // TODO: remove
+    QVector<GLuint> textures;                   // texture ids. size is plane count
     QHash<GLuint, bool> owns_texture;
     QVector<QSize> texture_size;
 
-    QVector<int> effective_tex_width; //without additional width for alignment
+    QVector<int> effective_tex_width;           // without additional width for alignment
     qreal effective_tex_width_ratio;
     GLenum target;
     QVector<GLint> internal_format;
@@ -171,7 +199,7 @@ public:
     ColorTransform colorTransform;
     bool try_pbo;
     QVector<QOpenGLBuffer> pbo;
-    QVector2D vec_to8; //TODO: vec3 to support both RG and LA (.rga, vec_to8)
+    QVector2D vec_to8;                          // TODO: vec3 to support both RG and LA (.rga, vec_to8)
     QMatrix4x4 channel_map;
     QVector<QVector2D> v_texel_size;
     QVector<QVector2D> v_texture_size;
@@ -179,4 +207,4 @@ public:
 
 } // namespace QtAV
 
-#endif // QTAV_VideoShader_P_H
+#endif // QTAV_VIDEO_SHADER_P_H
