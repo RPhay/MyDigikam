@@ -24,9 +24,9 @@
  * DO NOT appear qDebug, qWanring etc in Logger.cpp! They are undefined and redefined to QtAV:Internal::Logger.xxx
  */
 // we need LogLevel so must include QtAV_Global.h
-#include <QtCore/QString>
-#include <QtCore/QMutex>
-#include "QtAV/QtAV_Global.h"
+#include <QString>
+#include <QMutex>
+#include "QtAV_Global.h"
 #include "Logger.h"
 
 #ifndef QTAV_NO_LOG_LEVEL

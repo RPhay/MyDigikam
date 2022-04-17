@@ -21,15 +21,15 @@
  * ============================================================ */
 
 // FIXME: pause=>resume error
-#include "QtAV/private/AudioOutputBackend.h"
-#include <QtCore/QQueue>
-#include <QtCore/QSemaphore>
-#include <QtCore/QThread>
-#include <QtCore/QMutex> //qt4
-#include <QtCore/QWaitCondition>
+#include "private/AudioOutputBackend.h"
+#include <QQueue>
+#include <QSemaphore>
+#include <QThread>
+#include <QMutex> //qt4
+#include <QWaitCondition>
 #include <AudioToolbox/AudioToolbox.h>
-#include "QtAV/private/mkid.h"
-#include "QtAV/private/factory.h"
+#include "private/mkid.h"
+#include "private/factory.h"
 #include "utils/Logger.h"
 
 namespace QtAV

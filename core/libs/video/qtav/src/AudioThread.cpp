@@ -22,17 +22,17 @@
 
 #include "AudioThread.h"
 #include "AVThread_p.h"
-#include "QtAV/AudioDecoder.h"
-#include "QtAV/Packet.h"
-#include "QtAV/AudioFormat.h"
-#include "QtAV/AudioOutput.h"
-#include "QtAV/AudioResampler.h"
-#include "QtAV/AVClock.h"
-#include "QtAV/Filter.h"
+#include "AudioDecoder.h"
+#include "Packet.h"
+#include "AudioFormat.h"
+#include "AudioOutput.h"
+#include "AudioResampler.h"
+#include "AVClock.h"
+#include "Filter.h"
 #include "output/OutputSet.h"
-#include "QtAV/private/AVCompat.h"
-#include <QtCore/QCoreApplication>
-#include <QtCore/QDateTime>
+#include "private/AVCompat.h"
+#include <QCoreApplication>
+#include <QDateTime>
 #include "utils/Logger.h"
 
 namespace QtAV

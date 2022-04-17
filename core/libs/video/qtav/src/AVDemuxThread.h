@@ -23,10 +23,10 @@
 #ifndef QAV_DEMUXTHREAD_H
 #define QAV_DEMUXTHREAD_H
 
-#include <QtCore/QMutex>
-#include <QtCore/QSemaphore>
-#include <QtCore/QThread>
-#include <QtCore/QRunnable>
+#include <QMutex>
+#include <QSemaphore>
+#include <QThread>
+#include <QRunnable>
 #include "PacketBuffer.h"
 #include <QTimer>
 

@@ -20,8 +20,8 @@
  *
  * ============================================================ */
 
-#include "QtAV/AudioFormat.h"
-#include "QtAV/private/AVCompat.h"
+#include "AudioFormat.h"
+#include "private/AVCompat.h"
 #ifndef QT_NO_DEBUG_STREAM
 #include <QtDebug>
 #endif //QT_NO_DEBUG_STREAM

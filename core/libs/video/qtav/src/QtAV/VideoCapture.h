@@ -23,8 +23,8 @@
 #ifndef QTAV_VIDEO_CAPTURE_H
 #define QTAV_VIDEO_CAPTURE_H
 
-#include <QtCore/QObject>
-#include <QtGui/QImage>
+#include <QObject>
+#include <QImage>
 #include <QtAV/QtAV_Global.h>
 #include <QtAV/VideoFrame.h>
 

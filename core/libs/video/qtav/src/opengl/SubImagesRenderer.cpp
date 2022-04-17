@@ -22,7 +22,7 @@
 
 #include "SubImagesRenderer.h"
 #include "opengl/SubImagesGeometry.h"
-#include "QtAV/GeometryRenderer.h"
+#include "GeometryRenderer.h"
 
 namespace QtAV
 {

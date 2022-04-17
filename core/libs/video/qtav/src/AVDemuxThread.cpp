@@ -22,11 +22,11 @@
 
 #include "AVDemuxThread.h"
 #include <limits>
-#include "QtAV/AVClock.h"
-#include "QtAV/AVDemuxer.h"
-#include "QtAV/AVDecoder.h"
+#include "AVClock.h"
+#include "AVDemuxer.h"
+#include "AVDecoder.h"
 #include "VideoThread.h"
-#include <QtCore/QTime>
+#include <QTime>
 #include "utils/Logger.h"
 #include <QTimer>
 

@@ -20,14 +20,14 @@
  *
  * ============================================================ */
 
-#include "QtAV/FilterContext.h"
-#include <QtCore/QBuffer>
-#include <QtGui/QFontMetrics>
-#include <QtGui/QImage>
-#include <QtGui/QPainter>
-#include <QtGui/QTextDocument>
+#include "FilterContext.h"
+#include <QBuffer>
+#include <QFontMetrics>
+#include <QImage>
+#include <QPainter>
+#include <QTextDocument>
 #include <QMatrix4x4>
-#include "QtAV/VideoFrame.h"
+#include "VideoFrame.h"
 #include "utils/Logger.h"
 
 #include <X11/Xlib.h>

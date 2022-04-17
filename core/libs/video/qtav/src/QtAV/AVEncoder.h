@@ -25,8 +25,8 @@
 
 // Qt includes
 
-#include <QtCore/QVariant>
-#include <QtCore/QObject>
+#include <QVariant>
+#include <QObject>
 
 // Local includes
 

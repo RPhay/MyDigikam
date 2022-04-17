@@ -20,11 +20,11 @@
  *
  * ============================================================ */
 
-#include "QtAV/Filter.h"
-#include "QtAV/private/Filter_p.h"
-#include "QtAV/Statistics.h"
-#include "QtAV/AVOutput.h"
-#include "QtAV/AVPlayer.h"
+#include "Filter.h"
+#include "private/Filter_p.h"
+#include "Statistics.h"
+#include "AVOutput.h"
+#include "AVPlayer.h"
 #include "filter/FilterManager.h"
 #include "utils/Logger.h"
 

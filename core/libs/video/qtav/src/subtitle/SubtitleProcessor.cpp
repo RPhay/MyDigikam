@@ -20,9 +20,9 @@
  *
  * ============================================================ */
 
-#include "QtAV/private/SubtitleProcessor.h"
-#include "QtAV/private/factory.h"
-#include <QtCore/QFile>
+#include "private/SubtitleProcessor.h"
+#include "private/factory.h"
+#include <QFile>
 #include "utils/Logger.h"
 
 namespace QtAV

@@ -23,11 +23,11 @@
 #ifndef QTAV_OUTPUTSET_H
 #define QTAV_OUTPUTSET_H
 
-#include <QtCore/QObject>
-#include <QtCore/QMutex>
-#include <QtCore/QWaitCondition>
-#include "QtAV/QtAV_Global.h"
-#include "QtAV/AVOutput.h"
+#include <QObject>
+#include <QMutex>
+#include <QWaitCondition>
+#include "QtAV_Global.h"
+#include "AVOutput.h"
 
 namespace QtAV
 {

@@ -23,7 +23,7 @@
 #ifndef QTAV_SUBIMAGESRENDERER_H
 #define QTAV_SUBIMAGESRENDERER_H
 
-#include <QtGui/QMatrix4x4>
+#include <QMatrix4x4>
 #include <QtAV/SubImage.h>
 #include <QtAV/OpenGLTypes.h>
 #include "opengl/OpenGLHelper.h"
@@ -31,8 +31,8 @@
 #include <QOpenGLShaderProgram>
 #include <QOpenGLShader>
 #else
-#include <QtOpenGL/QGLShaderProgram>
-#include <QtOpenGL/QGLShader>
+#include <QGLShaderProgram>
+#include <QGLShader>
 #undef QOpenGLShaderProgram
 #undef QOpenGLShader
 #define QOpenGLShaderProgram QGLShaderProgram

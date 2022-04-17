@@ -21,10 +21,10 @@
  * ============================================================ */
 
 #include "filter/FilterManager.h"
-#include <QtCore/QMap>
-#include "QtAV/AVPlayer.h"
-#include "QtAV/Filter.h"
-#include "QtAV/AVOutput.h"
+#include <QMap>
+#include "AVPlayer.h"
+#include "Filter.h"
+#include "AVOutput.h"
 #include "utils/Logger.h"
 
 namespace QtAV

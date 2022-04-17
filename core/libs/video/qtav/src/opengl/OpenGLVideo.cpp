@@ -20,18 +20,18 @@
  *
  * ============================================================ */
 
-#include "QtAV/OpenGLVideo.h"
-#include <QtCore/QThreadStorage>
-#include <QtGui/QColor>
+#include "OpenGLVideo.h"
+#include <QThreadStorage>
+#include <QColor>
 #if QT_VERSION >= QT_VERSION_CHECK(5, 0, 0)
-#include <QtGui/QGuiApplication>
-#include <QtGui/QScreen>
-#include <QtGui/QSurface>
+#include <QGuiApplication>
+#include <QScreen>
+#include <QSurface>
 #endif //5.0
-#include "QtAV/SurfaceInterop.h"
-#include "QtAV/VideoShader.h"
+#include "SurfaceInterop.h"
+#include "VideoShader.h"
 #include "ShaderManager.h"
-#include "QtAV/GeometryRenderer.h"
+#include "GeometryRenderer.h"
 #include "opengl/OpenGLHelper.h"
 #include "utils/Logger.h"
 

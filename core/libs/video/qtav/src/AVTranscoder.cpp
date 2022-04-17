@@ -20,11 +20,11 @@
  *
  * ============================================================ */
 
-#include "QtAV/AVTranscoder.h"
-#include "QtAV/AVPlayer.h"
-#include "QtAV/AVMuxer.h"
-#include "QtAV/EncodeFilter.h"
-#include "QtAV/Statistics.h"
+#include "AVTranscoder.h"
+#include "AVPlayer.h"
+#include "AVMuxer.h"
+#include "EncodeFilter.h"
+#include "Statistics.h"
 #include "utils/BlockingQueue.h"
 #include "utils/Logger.h"
 

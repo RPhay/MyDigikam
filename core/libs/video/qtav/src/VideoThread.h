@@ -24,7 +24,7 @@
 #define QTAV_VIDEOTHREAD_H
 
 #include "AVThread.h"
-#include <QtCore/QSize>
+#include <QSize>
 
 namespace QtAV
 {

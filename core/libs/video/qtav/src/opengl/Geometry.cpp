@@ -20,9 +20,9 @@
  *
  * ============================================================ */
 
-#include "QtAV/Geometry.h"
+#include "Geometry.h"
 #include <QtDebug>
-#include <QtCore/qmath.h>
+#include <qmath.h>
 
 namespace QtAV
 {

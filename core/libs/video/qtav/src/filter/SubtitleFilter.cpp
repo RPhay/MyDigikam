@@ -20,12 +20,12 @@
  *
  * ============================================================ */
 
-#include "QtAV/SubtitleFilter.h"
-#include "QtAV/private/Filter_p.h"
-#include "QtAV/private/PlayerSubtitle.h"
-#include "QtAV/Subtitle.h"
-#include "QtAV/VideoFrame.h"
-#include <QtCore/QScopedPointer>
+#include "SubtitleFilter.h"
+#include "private/Filter_p.h"
+#include "private/PlayerSubtitle.h"
+#include "Subtitle.h"
+#include "VideoFrame.h"
+#include <QScopedPointer>
 #include "utils/Logger.h"
 
 namespace QtAV

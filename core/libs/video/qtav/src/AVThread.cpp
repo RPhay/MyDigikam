@@ -23,10 +23,10 @@
 #include "AVThread.h"
 #include <limits>
 #include "AVThread_p.h"
-#include "QtAV/AVClock.h"
-#include "QtAV/AVDecoder.h"
-#include "QtAV/AVOutput.h"
-#include "QtAV/Filter.h"
+#include "AVClock.h"
+#include "AVDecoder.h"
+#include "AVOutput.h"
+#include "Filter.h"
 #include "output/OutputSet.h"
 #include "utils/Logger.h"
 

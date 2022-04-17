@@ -20,8 +20,8 @@
  *
  * ============================================================ */
 
-#include "QtAV/private/AVCompat.h"
-#include "QtAV/QtAV_Version.h"
+#include "private/AVCompat.h"
+#include "QtAV_Version.h"
 
 #if !FFMPEG_MODULE_CHECK(LIBAVFORMAT, 56, 4, 101)
 int avio_feof(AVIOContext *s)

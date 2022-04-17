@@ -23,15 +23,15 @@
 #ifndef QTAV_AVTHREAD_P_H
 #define QTAV_AVTHREAD_P_H
 
-#include <QtCore/QMutex>
-#include <QtCore/QMutexLocker>
-#include <QtCore/QSemaphore>
-#include <QtCore/QVariant>
-#include <QtCore/QWaitCondition>
+#include <QMutex>
+#include <QMutexLocker>
+#include <QSemaphore>
+#include <QVariant>
+#include <QWaitCondition>
 #if QT_VERSION >= QT_VERSION_CHECK(4, 7, 0)
-#include <QtCore/QElapsedTimer>
+#include <QElapsedTimer>
 #else
-#include <QtCore/QTime>
+#include <QTime>
 typedef QTime QElapsedTimer;
 #endif
 

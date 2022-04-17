@@ -23,13 +23,13 @@
 #ifndef QTAV_SURFACEINTEROPVAAPI_H
 #define QTAV_SURFACEINTEROPVAAPI_H
 
-#include <QtCore/qglobal.h>
+#include <qglobal.h>
 #include "vaapi_helper.h"
 #define VA_X11_INTEROP 1
 #ifndef QT_NO_OPENGL
-#include <QtCore/QMap>
-#include <QtCore/QSharedPointer>
-#include "QtAV/SurfaceInterop.h"
+#include <QMap>
+#include <QSharedPointer>
+#include "SurfaceInterop.h"
 
 namespace QtAV
 {

@@ -23,10 +23,10 @@
 #ifndef QTAV_MEDIAIO_P_H
 #define QTAV_MEDIAIO_P_H
 
-#include "QtAV/QtAV_Global.h"
-#include "QtAV/private/AVCompat.h"
-#include <QtCore/QString>
-#include "QtAV/MediaIO.h"
+#include "QtAV_Global.h"
+#include "private/AVCompat.h"
+#include <QString>
+#include "MediaIO.h"
 
 namespace QtAV
 {

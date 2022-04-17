@@ -22,11 +22,11 @@
 
 #include <algorithm>
 #include <assert.h>
-#include <QtCore/QLibrary>
+#include <QLibrary>
 
 #include "helper_cuda.h"
 #include "cuda_api.h"
-#include "QtAV/QtAV_Global.h"
+#include "QtAV_Global.h"
 #include "utils/Logger.h"
 /*
 #if !NV_CONFIG(DLLAPI_CUDA) && !defined(CUDA_LINK)

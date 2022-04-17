@@ -24,8 +24,8 @@
 
 // Qt includes
 
-#include <QtCore/QLibraryInfo>
-#include <QtCore/QObject>
+#include <QLibraryInfo>
+#include <QObject>
 
 #if QT_VERSION >= QT_VERSION_CHECK(6, 0, 0)
 #   include <QtCore/QRegularExpression>
@@ -40,8 +40,8 @@ using QRegExp = QRegularExpression;
 
 // Local includes
 
-#include "QtAV/QtAV_Version.h"
-#include "QtAV/private/AVCompat.h"
+#include "QtAV_Version.h"
+#include "private/AVCompat.h"
 #include "utils/internal.h"
 #include "utils/Logger.h"
 

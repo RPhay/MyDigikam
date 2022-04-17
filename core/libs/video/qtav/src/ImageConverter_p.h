@@ -24,7 +24,7 @@
 #define QTAV_IMAGECONVERTER_P_H
 
 #include <QtAV/private/AVCompat.h>
-#include <QtCore/QVector>
+#include <QVector>
 
 namespace QtAV
 {

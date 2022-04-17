@@ -20,9 +20,9 @@
  *
  * ============================================================ */
 
-#include "QtAV/private/AudioOutputBackend.h"
-#include <QtCore/QSemaphore>
-#include <QtCore/QThread>
+#include "private/AudioOutputBackend.h"
+#include <QSemaphore>
+#include <QThread>
 #include <SLES/OpenSLES.h>
 #ifdef Q_OS_ANDROID
 #include <SLES/OpenSLES_Android.h>
@@ -30,8 +30,8 @@
 #include <sys/system_properties.h>
 #include <cmath>
 #endif
-#include "QtAV/private/mkid.h"
-#include "QtAV/private/factory.h"
+#include "private/mkid.h"
+#include "private/factory.h"
 #include "utils/Logger.h"
 
 // TODO: native sample rate, so AUDIO_OUTPUT_FLAG_FAST is enabled

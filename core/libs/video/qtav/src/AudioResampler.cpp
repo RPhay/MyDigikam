@@ -20,11 +20,11 @@
  *
  * ============================================================ */
 
-#include "QtAV/AudioResampler.h"
-#include "QtAV/AudioFormat.h"
-#include "QtAV/private/AudioResampler_p.h"
-#include "QtAV/private/factory.h"
-#include "QtAV/private/mkid.h"
+#include "AudioResampler.h"
+#include "AudioFormat.h"
+#include "private/AudioResampler_p.h"
+#include "private/factory.h"
+#include "private/mkid.h"
 #include "utils/Logger.h"
 
 namespace QtAV

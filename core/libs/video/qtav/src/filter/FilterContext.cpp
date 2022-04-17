@@ -20,12 +20,12 @@
  *
  * ============================================================ */
 
-#include "QtAV/FilterContext.h"
-#include <QtGui/QFontMetrics>
-#include <QtGui/QImage>
-#include <QtGui/QPainter>
-#include <QtGui/QTextDocument>
-#include "QtAV/VideoFrame.h"
+#include "FilterContext.h"
+#include <QFontMetrics>
+#include <QImage>
+#include <QPainter>
+#include <QTextDocument>
+#include "VideoFrame.h"
 #include "utils/Logger.h"
 
 namespace QtAV

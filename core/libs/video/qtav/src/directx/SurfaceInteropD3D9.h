@@ -23,7 +23,7 @@
 #ifndef QTAV_SURFACEINTEROPD3D9_H
 #define QTAV_SURFACEINTEROPD3D9_H
 #include <d3d9.h>
-#include "QtAV/SurfaceInterop.h"
+#include "SurfaceInterop.h"
 
 namespace QtAV
 {

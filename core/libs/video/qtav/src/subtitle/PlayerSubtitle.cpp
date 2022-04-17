@@ -20,11 +20,11 @@
  *
  * ============================================================ */
 
-#include "QtAV/private/PlayerSubtitle.h"
-#include <QtCore/QDir>
-#include <QtCore/QFileInfo>
-#include "QtAV/AVPlayer.h"
-#include "QtAV/Subtitle.h"
+#include "private/PlayerSubtitle.h"
+#include <QDir>
+#include <QFileInfo>
+#include "AVPlayer.h"
+#include "Subtitle.h"
 #include "utils/internal.h"
 #include "utils/Logger.h"
 

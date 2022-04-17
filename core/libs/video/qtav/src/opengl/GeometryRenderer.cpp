@@ -20,7 +20,7 @@
  *
  * ============================================================ */
 
-#include "QtAV/GeometryRenderer.h"
+#include "GeometryRenderer.h"
 #include "opengl/OpenGLHelper.h"
 #if QT_VERSION >= QT_VERSION_CHECK(5, 0, 0)
 #define QGLF(f) QOpenGLContext::currentContext()->functions()->f

@@ -24,26 +24,26 @@
 
 #include <limits>
 
-#include <QtCore/QCoreApplication>
-#include <QtCore/QEvent>
-#include <QtCore/QDir>
-#include <QtCore/QIODevice>
-#include <QtCore/QThreadPool>
-#include <QtCore/QTimer>
-#include "QtAV/AVDemuxer.h"
-#include "QtAV/Packet.h"
-#include "QtAV/AudioDecoder.h"
-#include "QtAV/MediaIO.h"
-#include "QtAV/VideoRenderer.h"
-#include "QtAV/AVClock.h"
-#include "QtAV/VideoCapture.h"
-#include "QtAV/VideoCapture.h"
+#include <QCoreApplication>
+#include <QEvent>
+#include <QDir>
+#include <QIODevice>
+#include <QThreadPool>
+#include <QTimer>
+#include "AVDemuxer.h"
+#include "Packet.h"
+#include "AudioDecoder.h"
+#include "MediaIO.h"
+#include "VideoRenderer.h"
+#include "AVClock.h"
+#include "VideoCapture.h"
+#include "VideoCapture.h"
 #include "filter/FilterManager.h"
 #include "output/OutputSet.h"
 #include "AudioThread.h"
 #include "VideoThread.h"
 #include "AVDemuxThread.h"
-#include "QtAV/private/AVCompat.h"
+#include "private/AVCompat.h"
 #include "utils/internal.h"
 #include "utils/Logger.h"
 extern "C" {

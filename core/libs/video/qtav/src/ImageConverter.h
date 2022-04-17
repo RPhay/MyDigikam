@@ -25,7 +25,7 @@
 
 #include <QtAV/QtAV_Global.h>
 #include <QtAV/VideoFormat.h>
-#include <QtCore/QVector>
+#include <QVector>
 
 namespace QtAV
 {

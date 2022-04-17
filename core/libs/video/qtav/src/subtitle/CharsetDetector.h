@@ -23,7 +23,7 @@
 #ifndef QTAV_UCHARDET_H
 #define QTAV_UCHARDET_H
 
-#include <QtCore/QByteArray>
+#include <QByteArray>
 
 class CharsetDetector
 {

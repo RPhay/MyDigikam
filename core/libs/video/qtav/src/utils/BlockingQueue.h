@@ -23,9 +23,9 @@
 #ifndef QTAV_BLOCKINGQUEUE_H
 #define QTAV_BLOCKINGQUEUE_H
 
-#include <QtCore/QReadWriteLock>
-#include <QtCore/QScopedPointer>
-#include <QtCore/QWaitCondition>
+#include <QReadWriteLock>
+#include <QScopedPointer>
+#include <QWaitCondition>
 
 //TODO: block full and empty condition separately
 QT_BEGIN_NAMESPACE

@@ -20,9 +20,9 @@
  *
  * ============================================================ */
 
-#include "QtAV/OpenGLWindowRenderer.h"
-#include "QtAV/private/OpenGLRendererBase_p.h"
-#include "QtAV/private/factory.h"
+#include "OpenGLWindowRenderer.h"
+#include "private/OpenGLRendererBase_p.h"
+#include "private/factory.h"
 #include <QResizeEvent>
 #include "utils/Logger.h"
 

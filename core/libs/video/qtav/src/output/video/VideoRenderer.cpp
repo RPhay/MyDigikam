@@ -20,14 +20,14 @@
  *
  * ============================================================ */
 
-#include "QtAV/VideoRenderer.h"
-#include "QtAV/private/VideoRenderer_p.h"
-#include "QtAV/Filter.h"
-#include <QtCore/QCoreApplication>
-#include <QtCore/QEvent>
-#include "QtAV/Statistics.h"
-#include "QtAV/private/factory.h"
-#include "QtAV/private/mkid.h"
+#include "VideoRenderer.h"
+#include "private/VideoRenderer_p.h"
+#include "Filter.h"
+#include <QCoreApplication>
+#include <QEvent>
+#include "Statistics.h"
+#include "private/factory.h"
+#include "private/mkid.h"
 #include "utils/Logger.h"
 
 namespace QtAV

@@ -21,7 +21,7 @@
  * ============================================================ */
 
 #include "SurfaceInteropD3D9.h"
-#include "QtAV/VideoFrame.h"
+#include "VideoFrame.h"
 #define DX_LOG_COMPONENT "D3D9 Interop"
 #include "utils/DirectXHelper.h"
 

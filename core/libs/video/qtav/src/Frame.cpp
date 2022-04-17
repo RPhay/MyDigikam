@@ -20,8 +20,8 @@
  *
  * ============================================================ */
 
-#include "QtAV/Frame.h"
-#include "QtAV/private/Frame_p.h"
+#include "Frame.h"
+#include "private/Frame_p.h"
 #include "utils/Logger.h"
 
 namespace QtAV
