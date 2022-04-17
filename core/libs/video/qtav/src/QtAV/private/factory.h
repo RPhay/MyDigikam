@@ -31,7 +31,7 @@
 
 // C++ includes
 
-#include <ctype.h>        // tolower
+#include <ctype.h>      // tolower
 #include <cstring>
 #include <ctime>
 #include <map>

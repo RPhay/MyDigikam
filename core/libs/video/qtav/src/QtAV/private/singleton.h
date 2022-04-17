@@ -20,24 +20,26 @@
  *
  * ============================================================ */
 
-#ifndef SINGLETON_H
-#define SINGLETON_H
+#ifndef QTAV_SINGLETON_H
+#define QTAV_SINGLETON_H
 
 #include <cstdio>
-#include <cstdlib> //harmattan: atexit
+#include <cstdlib>      // harmattan: atexit
 #include <cassert>
+
 #define USE_EXCEPTION 0
+
 #if USE_EXCEPTION
-#include <stdexcept> // std::string breaks abi
+#   include <stdexcept>    // std::string breaks abi
 #endif
 
 #ifdef DEBUG
-#define DBG(fmt, ...) \
+#   define DBG(fmt, ...) \
     fprintf(stderr, fmt, ##__VA_ARGS__); \
     fflush(0);
 #else
-#define DBG(...)
-#endif //DEBUG
+#   define DBG(...)
+#endif
 
 #define DISABLE_COPY(Class) \
     Class(const Class &); \
@@ -51,13 +53,19 @@ template <typename T>
 class Singleton
 {
     DISABLE_COPY(Singleton)
+
 public:
+
     typedef T ObjectType;
     static T& Instance();
+
 protected:
-    Singleton() {}
+
+    Singleton()          {}
     virtual ~Singleton() {}
+
 private:
+
     static void MakeInstance();
     static void  DestroySingleton();
 
@@ -65,11 +73,16 @@ private:
     static bool destroyed_;
 };
 
-/*if it is used as dll, template will instanced in dll and exe
- *, and pInstance_ are 0 for both*/
-//TODO: use static Singleton<T> inst; return inst;
+/*
+ * if it is used as dll, template will instanced in dll and exe,
+ * and pInstance_ are 0 for both
+ */
+
+// TODO: use static Singleton<T> inst; return inst;
+
 template<typename T>
 T* Singleton<T>::pInstance_ = 0; //Why it will be initialized twice? The order?
+
 template<typename T>
 bool Singleton<T>::destroyed_ = false;
 
@@ -77,26 +90,37 @@ template<typename T>
 T &Singleton<T>::Instance()
 {
     //DBG("instance = %p\n", pInstance_);
-    if (!pInstance_) {
+
+    if (!pInstance_)
+    {
         MakeInstance();
     }
+
     return *pInstance_;
 }
-
 
 template<typename T>
 void Singleton<T>::MakeInstance()
 {
-    if (!pInstance_) {
-        if (destroyed_) {
+    if (!pInstance_)
+    {
+        if (destroyed_)
+        {
             destroyed_ = false;
+
 #if USE_EXCEPTION
+
             throw std::logic_error("Dead Reference Detected");
+
 #else
+
             DBG("Dead Reference Detected");
             exit(1);
-#endif //QT_NO_EXCEPTIONS
+
+#endif
+
         }
+
         pInstance_ = new T();
         DBG("Singleton %p created...\n", pInstance_);
         std::atexit(&DestroySingleton);
@@ -113,4 +137,4 @@ void Singleton<T>::DestroySingleton()
     destroyed_ = true;
 }
 
-#endif // SINGLETON_H
+#endif // QTAV_SINGLETON_H
