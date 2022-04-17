@@ -21,9 +21,11 @@
  *
  * ============================================================ */
 
+// Qt includes
+
 #include <QPainterPath>
 
-// QtAv includes
+// Local includes
 
 #include "VideoDecoder.h"
 #include "VideoEncoder.h"

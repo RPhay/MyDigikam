@@ -20,8 +20,8 @@
  *
  * ============================================================ */
 
-#ifndef QTAV_GLWIDGETRENDERER2_H
-#define QTAV_GLWIDGETRENDERER2_H
+#ifndef QTAV_GLWIDGET_RENDERER2_H
+#define QTAV_GLWIDGET_RENDERER2_H
 
 #include "QtAVWidgets_Global.h"
 
@@ -98,4 +98,4 @@ typedef GLWidgetRenderer2 VideoRendererGLWidget2;
 
 #endif // QT_NO_OPENGL
 
-#endif // QTAV_GLWIDGETRENDERER2_H
+#endif // QTAV_GLWIDGET_RENDERER2_H

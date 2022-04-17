@@ -42,7 +42,7 @@
 #include "AudioDecoder.h"
 #include "AudioFormat.h"
 #include "AudioOutput.h"
-#include "AudioResampler."h
+#include "AudioResampler.h"
 
 #include "Filter.h"
 #include "FilterContext.h"

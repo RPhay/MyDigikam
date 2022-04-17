@@ -20,15 +20,46 @@
  *
  * ============================================================ */
 
-#ifndef QTAV_WIDGETS_H
-#define QTAV_WIDGETS_H
+// Qt includes
 
-#include "QtAVWidgets_Version.h"
-#include "QtAVWidgets_Global.h"
-#include "GraphicsItemRenderer.h"
-#include "WidgetRenderer.h"
-//#include "GLWidgetRenderer.h"
-#include "GLWidgetRenderer2.h"
-#include "VideoPreviewWidget.h"
+#include <QApplication>
+#include <QThread>
+#include <QTimer>
 
-#endif // QTAV_WIDGETS_H
+// Local includes
+
+#include "QtAV.h"
+#include "QtAVWidgets.h"
+
+using namespace QtAV;
+class Thread : public QThread
+{
+public:
+    Thread(AVPlayer *player):
+        QThread(0)
+      , mpPlayer(player)
+    {}
+protected:
+    virtual void run() {
+        //mpPlayer->play();
+        exec();
+    }
+    AVPlayer *mpPlayer;
+};
+
+int main(int argc, char *argv[])
+{
+    QApplication a(argc, argv);
+
+    AVPlayer player;
+    WidgetRenderer renderer;
+    renderer.show();
+    player.addVideoRenderer(&renderer);
+    player.setFile(a.arguments().last());
+    Thread thread(&player);
+    player.moveToThread(&thread);
+    thread.start();
+    player.play();
+
+    return a.exec();
+}

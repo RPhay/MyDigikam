@@ -13,6 +13,18 @@ include_directories(
     $<TARGET_PROPERTY:Qt${QT_VERSION_MAJOR}::Xml,INTERFACE_INCLUDE_DIRECTORIES>
 )
 
+if(HAVE_OPENGL)
+
+    include_directories($<TARGET_PROPERTY:Qt${QT_VERSION_MAJOR}::OpenGL,INTERFACE_INCLUDE_DIRECTORIES>)
+
+    if(Qt6_FOUND)
+
+        include_directories($<TARGET_PROPERTY:Qt${QT_VERSION_MAJOR}::OpenGLWidgets,INTERFACE_INCLUDE_DIRECTORIES>)
+
+    endif()
+
+endif()
+
 # -------------------------------------------------
 
 add_executable(framesencoder_cli ${CMAKE_CURRENT_SOURCE_DIR}/framesencoder_cli.cpp)
@@ -25,22 +37,6 @@ target_link_libraries(framesencoder_cli
                       ${COMMON_TEST_LINK}
 )
 
-# -------------------------------------------------
-
-add_executable(qtavcodecs_cli ${CMAKE_CURRENT_SOURCE_DIR}/qtavcodecs_cli.cpp)
-ecm_mark_nongui_executable(qtavcodecs_cli)
-
-target_link_libraries(qtavcodecs_cli
-
-                      digikamcore
-
-                      ${COMMON_TEST_LINK}
-)
-
-target_compile_definitions(qtavcodecs_cli
-                           PRIVATE
-                           ${MEDIAPLAYER_DEFINITIONS}
-)
 
 # -------------------------------------------------
 
@@ -63,3 +59,64 @@ target_link_libraries(videothumb_cli
 
                       ${COMMON_TEST_LINK}
 )
+
+# -------------------------------------------------
+
+macro(LIBRAW_BUILD_SAMPLES)
+
+    set(_filename ${ARGV0})
+    string(REPLACE "." ";" _temp ${_filename})
+    list(GET _temp 0 _target)
+
+    set(${_target}_SRCS ${CMAKE_SOURCE_DIR}/core/libs/video/qtav/tests/${_filename})
+
+    add_executable(qtav_${_target}_cli ${${_target}_SRCS})
+
+    target_link_libraries(qtav_${_target}_cli
+
+                          digikamcore
+
+                          ${COMMON_TEST_LINK}
+    )
+
+    target_compile_definitions(qtav_${_target}_cli
+                               PRIVATE
+                               ${MEDIAPLAYER_DEFINITIONS}
+    )
+
+endmacro()
+
+macro(QTAV_TESTS_BUILD)
+
+    set(_filename ${ARGV0})
+    string(REPLACE "." ";" _temp ${_filename})
+    list(GET _temp 0 _target)
+
+    set(_targetname qtav-${_target}_cli)
+
+    add_executable(${_targetname} ${CMAKE_SOURCE_DIR}/core/libs/video/qtav/tests/${_filename})
+    ecm_mark_nongui_executable(${_targetname})
+
+    target_link_libraries(${_targetname}
+
+                          digikamcore
+
+                          ${COMMON_TEST_LINK}
+    )
+
+    target_compile_definitions(${_targetname}
+                               PRIVATE
+                               ${MEDIAPLAYER_DEFINITIONS}
+    )
+
+endmacro()
+
+QTAV_TESTS_BUILD(codecslist.cpp)
+QTAV_TESTS_BUILD(ao.cpp)
+QTAV_TESTS_BUILD(decoder.cpp)
+QTAV_TESTS_BUILD(extract.cpp)
+QTAV_TESTS_BUILD(playerthread.cpp)
+QTAV_TESTS_BUILD(qiodevice.cpp)
+QTAV_TESTS_BUILD(qrc.cpp)
+QTAV_TESTS_BUILD(subtitle.cpp)
+QTAV_TESTS_BUILD(transcode.cpp)
