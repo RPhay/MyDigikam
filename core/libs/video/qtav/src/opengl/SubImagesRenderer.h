@@ -24,8 +24,8 @@
 #define QTAV_SUBIMAGESRENDERER_H
 
 #include <QMatrix4x4>
-#include <QtAV/SubImage.h>
-#include <QtAV/OpenGLTypes.h>
+#include "SubImage.h"
+#include "OpenGLTypes.h"
 #include "opengl/OpenGLHelper.h"
 #if QT_VERSION >= QT_VERSION_CHECK(5, 0, 0)
 #include <QOpenGLShaderProgram>

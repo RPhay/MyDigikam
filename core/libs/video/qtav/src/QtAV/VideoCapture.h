@@ -25,8 +25,8 @@
 
 #include <QObject>
 #include <QImage>
-#include <QtAV/QtAV_Global.h>
-#include <QtAV/VideoFrame.h>
+#include "QtAV_Global.h"
+#include "VideoFrame.h"
 
 namespace QtAV
 {

@@ -24,7 +24,7 @@
 #define QTAV_PACKETBUFFER_H
 
 #include <QQueue>
-#include <QtAV/Packet.h>
+#include "Packet.h"
 #include "utils/BlockingQueue.h"
 #include "utils/ring.h"
 

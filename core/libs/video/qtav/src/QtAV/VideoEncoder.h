@@ -23,8 +23,8 @@
 #ifndef QTAV_VIDEO_ENCODER_H
 #define QTAV_VIDEO_ENCODER_H
 
-#include <QtAV/AVEncoder.h>
-#include <QtAV/VideoFrame.h>
+#include "AVEncoder.h"
+#include "VideoFrame.h"
 #include <QStringList>
 
 namespace QtAV

@@ -24,7 +24,7 @@
 #define QTAV_VIDEO_OUTPUT_H
 
 #include <QObject>
-#include <QtAV/VideoRenderer.h>
+#include "VideoRenderer.h"
 
 namespace QtAV
 {

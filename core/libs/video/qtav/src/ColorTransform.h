@@ -25,7 +25,8 @@
 
 #include <QSharedDataPointer>
 #include <QMatrix4x4>
-#include <QtAV/QtAV_Global.h>
+#include "QtAV_Global.h"
+
 // TODO: kernel QGenericMatrix<M,N>
 //http://www.graficaobscura.com/matrix/index.html
 
