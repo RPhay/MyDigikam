@@ -56,9 +56,12 @@ int main(int argc, char *argv[])
     QByteArray data = vidfile.read(1024*1024);
     vidfile.seek(0);
     QBuffer buf(&data);
-    if (buf.open(QIODevice::ReadOnly)) {
+
+    if (buf.open(QIODevice::ReadOnly))
+    {
         player[1].setIODevice(&buf);
     }
+
     player[0].setIODevice(&vidfile);
     player[0].play();
     player[1].play();
