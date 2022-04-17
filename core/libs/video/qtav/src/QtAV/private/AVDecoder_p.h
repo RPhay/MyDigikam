@@ -33,6 +33,7 @@
 
 #include "QtAV_Global.h"
 #include "private/AVCompat.h"
+#include "digikam_debug.h"
 
 namespace QtAV
 {
@@ -76,7 +77,7 @@ public:
 
             if (!buf[i])
             {
-                qWarning("av_buffer_ref(frame->buf[%d]) error", i);
+                qCWarning(DIGIKAM_QTAV_LOG_WARN) << QString::asprintf("av_buffer_ref(frame->buf[%d]) error", i);
             }
         }
 
@@ -92,7 +93,7 @@ public:
 
             if (!buf[k])
             {
-                qWarning("av_buffer_ref(frame->extended_buf[%d]) error", i);
+                qCWarning(DIGIKAM_QTAV_LOG_WARN) << QString::asprintf("av_buffer_ref(frame->extended_buf[%d]) error", i);
             }
         }
 

@@ -71,12 +71,12 @@ static void InitParameters(D3DPRESENT_PARAMETERS* d3dpp)
 
 IDirect3DDevice9* CreateDevice9Ex(HINSTANCE dll, IDirect3D9Ex** d3d9ex, D3DADAPTER_IDENTIFIER9 *d3dai)
 {
-    qDebug("creating d3d9 device ex... dll: %p", dll);
+    qCDebug(DIGIKAM_QTAV_LOG) << QString::asprintf("creating d3d9 device ex... dll: %p", dll);
     //http://msdn.microsoft.com/en-us/library/windows/desktop/bb219676(v=vs.85).aspx
     typedef HRESULT (WINAPI *Create9ExFunc)(UINT SDKVersion, IDirect3D9Ex **ppD3D); //IDirect3D9Ex: void is ok
     Create9ExFunc Create9Ex = (Create9ExFunc)GetProcAddress(dll, "Direct3DCreate9Ex");
     if (!Create9Ex) {
-        qWarning("Symbol not found: Direct3DCreate9Ex");
+        qCWarning(DIGIKAM_QTAV_LOG_WARN) << QString::asprintf("Symbol not found: Direct3DCreate9Ex");
         return NULL;
     }
     DX_ENSURE(Create9Ex(D3D_SDK_VERSION, d3d9ex), NULL); //TODO: will D3D_SDK_VERSION be override by other headers?
@@ -100,22 +100,22 @@ IDirect3DDevice9* CreateDevice9Ex(HINSTANCE dll, IDirect3D9Ex** d3d9ex, D3DADAPT
                                          NULL,
                                          (IDirect3DDevice9Ex**)(&d3d9dev))
             , NULL);
-    qDebug("IDirect3DDevice9Ex created");
+    qCDebug(DIGIKAM_QTAV_LOG) << QString::asprintf("IDirect3DDevice9Ex created");
     return d3d9dev;
 }
 
 IDirect3DDevice9* CreateDevice9(HINSTANCE dll, IDirect3D9** d3d9, D3DADAPTER_IDENTIFIER9 *d3dai)
 {
-    qDebug("creating d3d9 device...");
+    qCDebug(DIGIKAM_QTAV_LOG) << QString::asprintf("creating d3d9 device...");
     typedef IDirect3D9* (WINAPI *Create9Func)(UINT SDKVersion);
     Create9Func Create9 = (Create9Func)GetProcAddress(dll, "Direct3DCreate9");
     if (!Create9) {
-        qWarning("Symbol not found: Direct3DCreate9");
+        qCWarning(DIGIKAM_QTAV_LOG_WARN) << QString::asprintf("Symbol not found: Direct3DCreate9");
         return NULL;
     }
     *d3d9 = Create9(D3D_SDK_VERSION);
     if (!(*d3d9)) {
-        qWarning("Direct3DCreate9 failed");
+        qCWarning(DIGIKAM_QTAV_LOG_WARN) << QString::asprintf("Direct3DCreate9 failed");
         return NULL;
     }
     if (d3dai)
@@ -130,7 +130,7 @@ IDirect3DDevice9* CreateDevice9(HINSTANCE dll, IDirect3D9** d3d9, D3DADAPTER_IDE
                                    flags,
                                    &d3dpp, &d3d9dev))
             , NULL);
-    qDebug("IDirect3DDevice9 created");
+    qCDebug(DIGIKAM_QTAV_LOG) << QString::asprintf("IDirect3DDevice9 created");
     return d3d9dev;
 }
 #endif //Q_OS_WINRT

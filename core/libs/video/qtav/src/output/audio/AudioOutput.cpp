@@ -441,7 +441,7 @@ bool AudioOutput::receiveData(const QByteArray &data, qreal pts)
     }
     // wait after all data processing finished to reduce time error
     if (!waitForNextBuffer()) { // TODO: wait or not parameter, set by user (async)
-        qWarning("ao backend maybe not open");
+        qCWarning(DIGIKAM_QTAV_LOG_WARN) << QString::asprintf("ao backend maybe not open");
         d.resetStatus();
         return false;
     }
@@ -486,7 +486,7 @@ AudioFormat AudioOutput::setAudioFormat(const AudioFormat& format)
         }
         if (af.bytesPerSample() < 1) {
             if (!check_up) {
-                qWarning("No sample format found");
+                qCWarning(DIGIKAM_QTAV_LOG_WARN) << QString::asprintf("No sample format found");
                 break;
             }
             af.setSampleFormat(AudioFormat::SampleFormat_Float);
@@ -636,7 +636,7 @@ bool AudioOutput::waitForNextBuffer() // parameter bool wait: if no wait and no 
         if (d.processed_remain < 0)
             return false;
         const int next = fi.data.size();
-        //qDebug("remain: %d-%d, size: %d, next: %d", processed, d.processed_remain, d.data.size(), next);
+        //qCDebug(DIGIKAM_QTAV_LOG) << QString::asprintf("remain: %d-%d, size: %d, next: %d", processed, d.processed_remain, d.data.size(), next);
         qint64 last_wait = 0LL;
         while (d.processed_remain - processed < next || d.processed_remain < fi.data.size()) { //implies next > 0
             const qint64 us = d.format.durationForBytes(next - (d.processed_remain - processed));
@@ -646,7 +646,7 @@ bool AudioOutput::waitForNextBuffer() // parameter bool wait: if no wait and no 
                 return false;
 #if AO_USE_TIMER
             if (!d.timer.isValid()) {
-                qWarning("invalid timer. closed in another thread");
+                qCWarning(DIGIKAM_QTAV_LOG_WARN) << QString::asprintf("invalid timer. closed in another thread");
                 return false;
             }
 #endif
@@ -704,7 +704,7 @@ bool AudioOutput::waitForNextBuffer() // parameter bool wait: if no wait and no 
     } else if (f & AudioOutputBackend::OffsetBytes) { //TODO: similar to Callback+getWritableBytes()
         int s = d.backend->getOffsetByBytes();
         int processed = s - d.play_pos;
-        //qDebug("s: %d, play_pos: %d, processed: %d, bufferSizeTotal: %d", s, d.play_pos, processed, bufferSizeTotal());
+        //qCDebug(DIGIKAM_QTAV_LOG) << QString::asprintf("s: %d, play_pos: %d, processed: %d, bufferSizeTotal: %d", s, d.play_pos, processed, bufferSizeTotal());
         if (processed < 0)
             processed += bufferSizeTotal();
         d.play_pos = s;
@@ -750,19 +750,19 @@ bool AudioOutput::waitForNextBuffer() // parameter bool wait: if no wait and no 
         while (free_bytes >= next && next > 0) {
             free_bytes -= next;
             if (d.frame_infos.empty()) {
-//                qWarning("buffer queue empty");
+//                qCWarning(DIGIKAM_QTAV_LOG_WARN) << QString::asprintf("buffer queue empty");
                 break;
             }
             d.frame_infos.pop_front();
             next = d.frame_infos.front().data.size();
         }
-        //qDebug("remove: %d, unremoved bytes < %d, writable_bytes: %d", remove, free_bytes, d.processed_remain);
+        //qCDebug(DIGIKAM_QTAV_LOG) << QString::asprintf("remove: %d, unremoved bytes < %d, writable_bytes: %d", remove, free_bytes, d.processed_remain);
         return true;
     }
-    //qDebug("remove count: %d", remove);
+    //qCDebug(DIGIKAM_QTAV_LOG) << QString::asprintf("remove count: %d", remove);
     while (remove-- > 0) {
         if (d.frame_infos.empty()) {
-//            qWarning("empty. can not pop!");
+//            qCWarning(DIGIKAM_QTAV_LOG_WARN) << QString::asprintf("empty. can not pop!");
             break;
         }
         d.frame_infos.pop_front();

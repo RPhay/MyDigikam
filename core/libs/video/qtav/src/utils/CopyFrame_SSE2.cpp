@@ -68,7 +68,7 @@ void CopyFrame_SSE2(void *pSrc, void *pDest, void *pCacheBlock, UINT width, UINT
     const bool src_unaligned = !!((intptr_t)pSrc & 0x0f);
     const bool dst_unaligned = !!((intptr_t)pDest & 0x0f);
     //if (src_unaligned || dst_unaligned)
-      //  qDebug("===========unaligned: src %d, dst: %d,  extraPitch: %d", src_unaligned, dst_unaligned, extraPitch);
+      //  qCDebug(DIGIKAM_QTAV_LOG) << QString::asprintf("===========unaligned: src %d, dst: %d,  extraPitch: %d", src_unaligned, dst_unaligned, extraPitch);
     //  COPY THROUGH 4KB CACHED BUFFER
     for (y = 0; y < height; y += rowsPerBlock) {
         //  ROWS LEFT TO COPY AT END

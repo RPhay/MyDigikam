@@ -60,7 +60,7 @@ AudioOutputPortAudio::AudioOutputPortAudio(QObject *parent)
 {
     PaError err = paNoError;
     if ((err = Pa_Initialize()) != paNoError) {
-        qWarning("Error when init portaudio: %s", Pa_GetErrorText(err));
+        qCWarning(DIGIKAM_QTAV_LOG_WARN) << QString::asprintf("Error when init portaudio: %s", Pa_GetErrorText(err));
         return;
     }
     initialized = true;
@@ -71,19 +71,19 @@ AudioOutputPortAudio::AudioOutputPortAudio(QObject *parent)
         if (deviceInfo) {
             const PaHostApiInfo *hostApiInfo = Pa_GetHostApiInfo(deviceInfo->hostApi);
             QString name = QString::fromUtf8(hostApiInfo->name) + QStringLiteral(": ") + QString::fromLocal8Bit(deviceInfo->name);
-            qDebug("audio device %d: %s", i, name.toUtf8().constData());
-            qDebug("max in/out channels: %d/%d", deviceInfo->maxInputChannels, deviceInfo->maxOutputChannels);
+            qCDebug(DIGIKAM_QTAV_LOG) << QString::asprintf("audio device %d: %s", i, name.toUtf8().constData());
+            qCDebug(DIGIKAM_QTAV_LOG) << QString::asprintf("max in/out channels: %d/%d", deviceInfo->maxInputChannels, deviceInfo->maxOutputChannels);
         }
     }
     memset(outputParameters, 0, sizeof(PaStreamParameters));
     outputParameters->device = Pa_GetDefaultOutputDevice();
     if (outputParameters->device == paNoDevice) {
-        qWarning("PortAudio get device error!");
+        qCWarning(DIGIKAM_QTAV_LOG_WARN) << QString::asprintf("PortAudio get device error!");
         return;
     }
     const PaDeviceInfo *deviceInfo = Pa_GetDeviceInfo(outputParameters->device);
-    qDebug("DEFAULT max in/out channels: %d/%d", deviceInfo->maxInputChannels, deviceInfo->maxOutputChannels);
-    qDebug("audio device: %s", QString::fromLocal8Bit(Pa_GetDeviceInfo(outputParameters->device)->name).toUtf8().constData());
+    qCDebug(DIGIKAM_QTAV_LOG) << QString::asprintf("DEFAULT max in/out channels: %d/%d", deviceInfo->maxInputChannels, deviceInfo->maxOutputChannels);
+    qCDebug(DIGIKAM_QTAV_LOG) << QString::asprintf("audio device: %s", QString::fromLocal8Bit(Pa_GetDeviceInfo(outputParameters->device)->name).toUtf8().constData());
     outputParameters->hostApiSpecificStreamInfo = NULL;
     outputParameters->suggestedLatency = Pa_GetDeviceInfo(outputParameters->device)->defaultHighOutputLatency;
 }
@@ -107,7 +107,7 @@ bool AudioOutputPortAudio::write(const QByteArray& data)
         Pa_StartStream(stream);
     PaError err = Pa_WriteStream(stream, data.constData(), data.size()/format.channels()/format.bytesPerSample());
     if (err == paUnanticipatedHostError) {
-        qWarning("Write portaudio stream error: %s", Pa_GetErrorText(err));
+        qCWarning(DIGIKAM_QTAV_LOG_WARN) << QString::asprintf("Write portaudio stream error: %s", Pa_GetErrorText(err));
         return   false;
     }
     return true;
@@ -137,7 +137,7 @@ bool AudioOutputPortAudio::open()
     outputParameters->channelCount = format.channels();
     PaError err = Pa_OpenStream(&stream, NULL, outputParameters, format.sampleRate(), 0, paNoFlag, NULL, NULL);
     if (err != paNoError) {
-        qWarning("Open portaudio stream error: %s", Pa_GetErrorText(err));
+        qCWarning(DIGIKAM_QTAV_LOG_WARN) << QString::asprintf("Open portaudio stream error: %s", Pa_GetErrorText(err));
         return false;
     }
     outputLatency = Pa_GetStreamInfo(stream)->outputLatency;
@@ -151,12 +151,12 @@ bool AudioOutputPortAudio::close()
     }
     PaError err = Pa_StopStream(stream); //may be already stopped: paStreamIsStopped
     if (err != paNoError) {
-        qWarning("Stop portaudio stream error: %s", Pa_GetErrorText(err));
+        qCWarning(DIGIKAM_QTAV_LOG_WARN) << QString::asprintf("Stop portaudio stream error: %s", Pa_GetErrorText(err));
         //return err == paStreamIsStopped;
     }
     err = Pa_CloseStream(stream);
     if (err != paNoError) {
-        qWarning("Close portaudio stream error: %s", Pa_GetErrorText(err));
+        qCWarning(DIGIKAM_QTAV_LOG_WARN) << QString::asprintf("Close portaudio stream error: %s", Pa_GetErrorText(err));
         return false;
     }
     stream = NULL;

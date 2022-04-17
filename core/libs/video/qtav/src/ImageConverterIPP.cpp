@@ -78,7 +78,7 @@ bool ImageConverterIPP::convert(const quint8 *const srcSlice[], const int srcStr
     d.data_out = d.orig_ori_rgb;
     return true;
     if (d.need_scale) {
-        qDebug("rs");
+        qCDebug(DIGIKAM_QTAV_LOG) << QString::asprintf("rs");
         ippiResize_8u_AC4R((const Ipp8u*)d.orig_ori_rgb.data(), (IppiSize){d.w_in, d.h_in}, 4*sizeof(quint8)*d.w_in, (IppiRect){0, 0, d.w_in, d.h_in}
                   , (Ipp8u*)d.data_out.data(), 4*sizeof(quint8)*d.w_in, (IppiSize){d.w_out, d.h_out}
                   , (double)d.w_out/(double)d.w_in, (double)d.h_out/(double)d.h_in, IPPI_INTER_CUBIC);
@@ -95,7 +95,7 @@ bool ImageConverterIPP::prepareData()
     DPTR_D(ImageConverterIPP);
     //for color convertion
     if (d.w_in > 0 && d.h_in > 0) {
-        qDebug("in size=%d x %d", d.w_in, d.h_in);
+        qCDebug(DIGIKAM_QTAV_LOG) << QString::asprintf("in size=%d x %d", d.w_in, d.h_in);
         int bytes = avpicture_get_size((PixelFormat)d.fmt_out, d.w_in, d.h_in);
         //if(d.orig_ori_rgb.size() < bytes) {
             d.orig_ori_rgb.resize(bytes);

@@ -126,7 +126,7 @@ bool D3D11VP::ensureResource(UINT width, UINT height, DXGI_FORMAT format)
     // TODO: check when format is changed, or record supported formats
     DX_ENSURE(m_enum->CheckVideoProcessorFormat(format, &flags), false);
     if (!(flags & D3D11_VIDEO_PROCESSOR_FORMAT_SUPPORT_INPUT)) {
-        qWarning("unsupported input format for d3d11 video processor: %d", format);
+        qCWarning(DIGIKAM_QTAV_LOG_WARN) << QString::asprintf("unsupported input format for d3d11 video processor: %d", format);
         return false;
     }
 

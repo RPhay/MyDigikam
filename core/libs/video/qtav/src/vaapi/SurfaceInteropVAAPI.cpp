@@ -119,7 +119,7 @@ void* SurfaceInteropVAAPI::mapToHost(const VideoFormat &format, void *handle, in
     VideoFormat::PixelFormat pixfmt = pixelFormatFromVA(image.format.fourcc);
     bool swap_uv = image.format.fourcc != VA_FOURCC_NV12;
     if (pixfmt == VideoFormat::Format_Invalid) {
-        qWarning("unsupported vaapi pixel format: %#x", image.format.fourcc);
+        qCWarning(DIGIKAM_QTAV_LOG_WARN) << QString::asprintf("unsupported vaapi pixel format: %#x", image.format.fourcc);
         VA_ENSURE(vaDestroyImage(m_surface->vadisplay(), image.image_id), NULL);
         return NULL;
     }
@@ -160,7 +160,7 @@ bool GLXInteropResource::map(const surface_ptr& surface, GLuint tex, int w, int 
     Q_UNUSED(h);
     surface_glx_ptr glx = surfaceGLX(surface->display(), tex);
     if (!glx) {
-        qWarning("Fail to create vaapi glx surface");
+        qCWarning(DIGIKAM_QTAV_LOG_WARN) << QString::asprintf("Fail to create vaapi glx surface");
         return false;
     }
     if (!glx->copy(surface))
@@ -187,7 +187,7 @@ public:
 protected:
     int createPixmap(int w, int h) {
         if (pixmap) {
-            qDebug("XFreePixmap");
+            qCDebug(DIGIKAM_QTAV_LOG) << QString::asprintf("XFreePixmap");
             XFreePixmap((::Display*)display, pixmap);
             pixmap = 0;
         }
@@ -195,9 +195,9 @@ protected:
         XGetWindowAttributes((::Display*)display, DefaultRootWindow((::Display*)display), &xwa);
         pixmap = XCreatePixmap((::Display*)display, DefaultRootWindow((::Display*)display), w, h, xwa.depth);
         // mpv always use 24 bpp
-        qDebug("XCreatePixmap %lu: %dx%d, depth: %d", pixmap, w, h, xwa.depth);
+        qCDebug(DIGIKAM_QTAV_LOG) << QString::asprintf("XCreatePixmap %lu: %dx%d, depth: %d", pixmap, w, h, xwa.depth);
         if (!pixmap) {
-            qWarning("X11InteropResource could not create pixmap");
+            qCWarning(DIGIKAM_QTAV_LOG_WARN) << QString::asprintf("X11InteropResource could not create pixmap");
             return 0;
         }
         return xwa.depth;
@@ -257,7 +257,7 @@ public:
         if (!createPixmap(w, h))
             return false;
         if (dpy == EGL_NO_DISPLAY) {
-            qDebug("eglGetCurrentDisplay");
+            qCDebug(DIGIKAM_QTAV_LOG) << QString::asprintf("eglGetCurrentDisplay");
             dpy = eglGetCurrentDisplay();
         }
         EGL_ENSURE(image[0] =  eglCreateImageKHR(dpy, EGL_NO_CONTEXT, EGL_NATIVE_PIXMAP_KHR, (EGLClientBuffer)pixmap, NULL), false);
@@ -291,7 +291,7 @@ public:
         if (fbc && display)
             return display;
         if (!display) {
-            qDebug("glXGetCurrentDisplay");
+            qCDebug(DIGIKAM_QTAV_LOG) << QString::asprintf("glXGetCurrentDisplay");
             display = (Display*)glXGetCurrentDisplay(); // use for all and not x11info
             if (!display)
                 return 0;
@@ -319,7 +319,7 @@ public:
         int fbcount;
         GLXFBConfig *fbcs = glXChooseFBConfig((::Display*)display, xscr, attribs, &fbcount);
         if (!fbcount) {
-            qWarning("No texture-from-pixmap support");
+            qCWarning(DIGIKAM_QTAV_LOG_WARN) << QString::asprintf("No texture-from-pixmap support");
             return 0;
         }
         if (fbcount)
@@ -356,7 +356,7 @@ X11InteropResource::X11InteropResource()
     , height(0)
     , x11(NULL)
 {
-    qDebug("X11InteropResource");
+    qCDebug(DIGIKAM_QTAV_LOG) << QString::asprintf("X11InteropResource");
 }
 
 X11InteropResource::~X11InteropResource()
@@ -382,7 +382,7 @@ bool X11InteropResource::ensurePixmaps(int w, int h)
         }
     }
     if (!x11) {
-        qWarning("no EGL and GLX interop (TFP) support");
+        qCWarning(DIGIKAM_QTAV_LOG_WARN) << QString::asprintf("no EGL and GLX interop (TFP) support");
         return false;
     }
     xdisplay  = x11->ensureGL();
@@ -398,7 +398,7 @@ bool X11InteropResource::ensurePixmaps(int w, int h)
 bool X11InteropResource::map(const surface_ptr& surface, GLuint tex, int w, int h, int)
 {
     if (surface->width() <= 0 || surface->height() <= 0) {
-        qWarning("invalid surface size");
+        qCWarning(DIGIKAM_QTAV_LOG_WARN) << QString::asprintf("invalid surface size");
         return false;
     }
     if (!ensurePixmaps(w, h)) //pixmap with frame size
@@ -447,7 +447,7 @@ public:
         }
     }
     void destroyImages(int plane) {
-        //qDebug("destroyImage %d image:%p, this: %p", plane, image,this);
+        //qCDebug(DIGIKAM_QTAV_LOG) << QString::asprintf("destroyImage %d image:%p, this: %p", plane, image,this);
         if (image[plane] != EGL_NO_IMAGE_KHR) {
             EGL_WARN(eglDestroyImageKHR(dpy, image[plane]));
             image[plane] = EGL_NO_IMAGE_KHR;
@@ -463,7 +463,7 @@ public:
     }
     bool bindImage(int plane, const EGLint *attrib_list) {
         if (dpy == EGL_NO_DISPLAY) {
-            qDebug("eglGetCurrentDisplay");
+            qCDebug(DIGIKAM_QTAV_LOG) << QString::asprintf("eglGetCurrentDisplay");
             dpy = eglGetCurrentDisplay();
         }
         EGL_ENSURE(image[plane] =  eglCreateImageKHR(eglGetCurrentDisplay(), EGL_NO_CONTEXT, EGL_LINUX_DMA_BUF_EXT, NULL, attrib_list), false);
@@ -559,7 +559,7 @@ void EGLInteropResource::destroy(VADisplay va_dpy)
         VAWARN(va_0_38::vaReleaseBufferHandle(va_dpy, va_image.buf));
         va_image.buf = VA_INVALID_ID;
         vabuf_handle = 0;
-        //qDebug("vabuf_handle: %#x", vabuf_handle);
+        //qCDebug(DIGIKAM_QTAV_LOG) << QString::asprintf("vabuf_handle: %#x", vabuf_handle);
     }
     if (va_image.image_id != VA_INVALID_ID) {
         VAWARN(vaDestroyImage(va_dpy, va_image.image_id));
@@ -573,11 +573,11 @@ bool EGLInteropResource::ensure()
         return true;
 #if QTAV_HAVE(EGL_CAPI)
     if (!OpenGLHelper::isEGL()) {
-        qWarning("Not using EGL");
+        qCWarning(DIGIKAM_QTAV_LOG_WARN) << QString::asprintf("Not using EGL");
         return false;
     }
 #else
-    qWarning("build QtAV with capi is required");
+    qCWarning(DIGIKAM_QTAV_LOG_WARN) << QString::asprintf("build QtAV with capi is required");
     return false;
 #endif //QTAV_HAVE(EGL_CAPI)
     static bool has_ext = false;
@@ -586,7 +586,7 @@ bool EGLInteropResource::ensure()
             return false;
         static const char* glexts[] = { "GL_OES_EGL_image", 0 };
         if (!OpenGLHelper::hasExtension(glexts)) {
-            qWarning("missing extension: GL_OES_EGL_image");
+            qCWarning(DIGIKAM_QTAV_LOG_WARN) << QString::asprintf("missing extension: GL_OES_EGL_image");
             return false;
         }
         has_ext = true;

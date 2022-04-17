@@ -125,7 +125,7 @@ public:
         //QString sws_flags_str;
         // pixel_aspect==sar, pixel_aspect is more compatible
         QString buffersrc_args = args;
-        qDebug("buffersrc_args=%s", buffersrc_args.toUtf8().constData());
+        qCDebug(DIGIKAM_QTAV_LOG) << QString::asprintf("buffersrc_args=%s", buffersrc_args.toUtf8().constData());
 #if LIBAVFILTER_VERSION_INT >= AV_VERSION_INT(7,0,0)
         const
 #endif
@@ -273,7 +273,7 @@ void* LibAVFilter::pullFrameHolder()
     int ret = av_buffersink_read(priv->out_filter_ctx, holder->bufferRef());
 #endif //QTAV_HAVE_av_buffersink_get_frame
     if (ret < 0) {
-        qWarning("av_buffersink_get_frame error: %s", av_err2str(ret));
+        qCWarning(DIGIKAM_QTAV_LOG_WARN) << QString::asprintf("av_buffersink_get_frame error: %s", av_err2str(ret));
         delete holder;
         return 0;
     }
@@ -480,7 +480,7 @@ bool LibAVFilter::Private::pushVideoFrame(Frame *frame, bool changed, const QStr
     VideoFrame *vf = static_cast<VideoFrame*>(frame);
     if (status == LibAVFilter::NotConfigured || !avframe || changed) {
         if (!setup(args, true)) {
-            qWarning("setup video filter graph error");
+            qCWarning(DIGIKAM_QTAV_LOG_WARN) << QString::asprintf("setup video filter graph error");
             //enabled = false; // skip this filter and avoid crash
             return false;
         }
@@ -517,7 +517,7 @@ bool LibAVFilter::Private::pushAudioFrame(Frame *frame, bool changed, const QStr
 #if QTAV_HAVE(AVFILTER)
     if (status == LibAVFilter::NotConfigured || !avframe || changed) {
         if (!setup(args, false)) {
-            qWarning("setup audio filter graph error");
+            qCWarning(DIGIKAM_QTAV_LOG_WARN) << QString::asprintf("setup audio filter graph error");
             //enabled = false; // skip this filter and avoid crash
             return false;
         }

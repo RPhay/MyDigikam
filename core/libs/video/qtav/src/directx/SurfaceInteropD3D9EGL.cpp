@@ -96,7 +96,7 @@ bool EGLInteropResource::ensureSurface(int w, int h) {
         return true;
     releaseEGL(); //
     egl->dpy = eglGetCurrentDisplay();
-    qDebug("EGL version: %s, client api: %s", eglQueryString(egl->dpy, EGL_VERSION), eglQueryString(egl->dpy, EGL_CLIENT_APIS));
+    qCDebug(DIGIKAM_QTAV_LOG) << QString::asprintf("EGL version: %s, client api: %s", eglQueryString(egl->dpy, EGL_VERSION), eglQueryString(egl->dpy, EGL_CLIENT_APIS));
     EGLint cfg_attribs[] = {
         EGL_RED_SIZE, 8,
         EGL_GREEN_SIZE, 8,
@@ -109,7 +109,7 @@ bool EGLInteropResource::ensureSurface(int w, int h) {
     EGLint nb_cfgs;
     EGLConfig egl_cfg;
     if (!eglChooseConfig(egl->dpy, cfg_attribs, &egl_cfg, 1, &nb_cfgs)) {
-        qWarning("Failed to create EGL configuration");
+        qCWarning(DIGIKAM_QTAV_LOG_WARN) << QString::asprintf("Failed to create EGL configuration");
         return false;
     }
     // check extensions
@@ -119,12 +119,12 @@ bool EGLInteropResource::ensureSurface(int w, int h) {
     const bool kEGL_ANGLE_d3d_share_handle_client_buffer = extensions.contains("EGL_ANGLE_d3d_share_handle_client_buffer");
     const bool kEGL_ANGLE_query_surface_pointer = extensions.contains("EGL_ANGLE_query_surface_pointer");
     if (!kEGL_ANGLE_d3d_share_handle_client_buffer && !kEGL_ANGLE_query_surface_pointer) {
-        qWarning("EGL extension 'kEGL_ANGLE_query_surface_pointer' or 'ANGLE_d3d_share_handle_client_buffer' is required!");
+        qCWarning(DIGIKAM_QTAV_LOG_WARN) << QString::asprintf("EGL extension 'kEGL_ANGLE_query_surface_pointer' or 'ANGLE_d3d_share_handle_client_buffer' is required!");
         return false;
     }
     GLint has_alpha = 1; //QOpenGLContext::currentContext()->format().hasAlpha()
     eglGetConfigAttrib(egl->dpy, egl_cfg, EGL_BIND_TO_TEXTURE_RGBA, &has_alpha); //EGL_ALPHA_SIZE
-    qDebug("choose egl display:%p config: %p/%d, has alpha: %d", egl->dpy, egl_cfg, nb_cfgs, has_alpha);
+    qCDebug(DIGIKAM_QTAV_LOG) << QString::asprintf("choose egl display:%p config: %p/%d, has alpha: %d", egl->dpy, egl_cfg, nb_cfgs, has_alpha);
     EGLint attribs[] = {
         EGL_WIDTH, w,
         EGL_HEIGHT, h,
@@ -136,10 +136,10 @@ bool EGLInteropResource::ensureSurface(int w, int h) {
     HANDLE share_handle = NULL;
     if (!kEGL_ANGLE_d3d_share_handle_client_buffer && kEGL_ANGLE_query_surface_pointer) {
         EGL_ENSURE((egl->surface = eglCreatePbufferSurface(egl->dpy, egl_cfg, attribs)) != EGL_NO_SURFACE, false);
-        qDebug("pbuffer surface: %p", egl->surface);
+        qCDebug(DIGIKAM_QTAV_LOG) << QString::asprintf("pbuffer surface: %p", egl->surface);
         PFNEGLQUERYSURFACEPOINTERANGLEPROC eglQuerySurfacePointerANGLE = reinterpret_cast<PFNEGLQUERYSURFACEPOINTERANGLEPROC>(eglGetProcAddress("eglQuerySurfacePointerANGLE"));
         if (!eglQuerySurfacePointerANGLE) {
-            qWarning("EGL_ANGLE_query_surface_pointer is not supported");
+            qCWarning(DIGIKAM_QTAV_LOG_WARN) << QString::asprintf("EGL_ANGLE_query_surface_pointer is not supported");
             return false;
         }
         EGL_ENSURE(eglQuerySurfacePointerANGLE(egl->dpy, egl->surface, EGL_D3D_TEXTURE_2D_SHARE_HANDLE_ANGLE, &share_handle), false);
@@ -165,7 +165,7 @@ bool EGLInteropResource::ensureSurface(int w, int h) {
         // egl surface size must match d3d texture's
         // d3d9ex or d3d10 is required
         EGL_ENSURE((egl->surface = eglCreatePbufferFromClientBuffer(egl->dpy, EGL_D3D_TEXTURE_2D_SHARE_HANDLE_ANGLE, share_handle, egl_cfg, attribs)), false);
-        qDebug("pbuffer surface from client buffer: %p", egl->surface);
+        qCDebug(DIGIKAM_QTAV_LOG) << QString::asprintf("pbuffer surface from client buffer: %p", egl->surface);
     }
     width = w;
     height = h;

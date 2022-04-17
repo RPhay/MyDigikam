@@ -114,7 +114,7 @@ void AndroidIO::onUrlChanged()
     struct GetContentResolver final: jmi::MethodTag { static const char* name() {return "getContentResolver";}};
     jmi::JObject<ContentResolver> cr = app_ctx.call<jmi::JObject<ContentResolver>, GetContentResolver>();
     if (!cr.error().empty()) {
-        qWarning("getContentResolver error: %s", cr.error().data());
+        qCWarning(DIGIKAM_QTAV_LOG_WARN) << QString::asprintf("getContentResolver error: %s", cr.error().data());
         return;
     }
     struct Uri final: jmi::ClassTag { static std::string name() { return "android/net/Uri";}};
@@ -129,7 +129,7 @@ void AndroidIO::onUrlChanged()
     struct OpenAssetFileDescriptor final: jmi::MethodTag { static const char* name() {return "openAssetFileDescriptor";}};
     jmi::JObject<AssetFileDescriptor> afd = cr.call<jmi::JObject<AssetFileDescriptor>, OpenAssetFileDescriptor>(std::move(uri), "r"); // TODO: rw
     if (!afd.error().empty()) {
-        qWarning("openAssetFileDescriptor error: %s", afd.error().data());
+        qCWarning(DIGIKAM_QTAV_LOG_WARN) << QString::asprintf("openAssetFileDescriptor error: %s", afd.error().data());
         return;
     }
     struct GetParcelFileDescriptor final: jmi::MethodTag { static const char* name() {return "getParcelFileDescriptor";}};
@@ -139,7 +139,7 @@ void AndroidIO::onUrlChanged()
     jmi::JObject<ParcelFileDescriptor> pfd = cr.call<jmi::JObject<ParcelFileDescriptor>, OpenFileDescriptor>(std::move(uri), "r");
 #endif
     if (!pfd.error().empty()) {
-        qWarning("get ParcelFileDescriptor error: %s", pfd.error().data());
+        qCWarning(DIGIKAM_QTAV_LOG_WARN) << QString::asprintf("get ParcelFileDescriptor error: %s", pfd.error().data());
         return;
     }
     struct DetachFd final: jmi::MethodTag { static const char* name() {return "detachFd";}};

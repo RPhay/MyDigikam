@@ -301,9 +301,9 @@ int getSupportedFourcc(int *formats, UINT nb_formats)
     for (const int *f = formats; f < &formats[nb_formats]; ++f) {
         const d3d_format_t *format = D3dFindFormat(*f);
         if (format) {
-            qDebug("%s is supported for output", format->name);
+            qCDebug(DIGIKAM_QTAV_LOG) << QString::asprintf("%s is supported for output", format->name);
         } else {
-            qDebug("%d is supported for output (%4.4s)", *f, (const char*)f);
+            qCDebug(DIGIKAM_QTAV_LOG) << QString::asprintf("%d is supported for output (%4.4s)", *f, (const char*)f);
         }
     }
     for (const d3d_format_t *format = d3d_formats; format->name; ++format) {
@@ -357,7 +357,7 @@ bool VideoDecoderD3DPrivate::open()
     if (codec_ctx->codec_id == QTAV_CODEC_ID(HEVC)) {
         // runtime hevc check
         if (!isHEVCSupported()) {
-            qWarning("HEVC DXVA2/D3D11VA is not supported by current FFmpeg runtime.");
+            qCWarning(DIGIKAM_QTAV_LOG_WARN) << QString::asprintf("HEVC DXVA2/D3D11VA is not supported by current FFmpeg runtime.");
             return false;
         }
     }
@@ -410,9 +410,9 @@ void* VideoDecoderD3DPrivate::setup(AVCodecContext *avctx)
         if (avctx->active_thread_type & FF_THREAD_FRAME)
             surface_count += avctx->thread_count;
     }
-    qDebug(">>>>>>>>>>>>>>>>>>>>>surfaces: %d, active_thread_type: %d, threads: %d, refs: %d", surface_count, avctx->active_thread_type, avctx->thread_count, avctx->refs);
+    qCDebug(DIGIKAM_QTAV_LOG) << QString::asprintf(">>>>>>>>>>>>>>>>>>>>>surfaces: %d, active_thread_type: %d, threads: %d, refs: %d", surface_count, avctx->active_thread_type, avctx->thread_count, avctx->refs);
     if (surface_count == 0) {
-        qWarning("internal error: wrong surface count.  %u auto=%d", surface_count, surface_auto);
+        qCWarning(DIGIKAM_QTAV_LOG_WARN) << QString::asprintf("internal error: wrong surface count.  %u auto=%d", surface_count, surface_auto);
         surface_count = 16 + 4;
     }
     qDeleteAll(surfaces);
@@ -481,9 +481,9 @@ const d3d_format_t* VideoDecoderD3DPrivate::getFormat(const AVCodecContext *avct
     foreach (const GUID& g, guids) {
         const dxva2_mode_t *mode = Dxva2FindMode(&g);
         if (mode) {
-            qDebug("- '%s' is supported by hardware", mode->name);
+            qCDebug(DIGIKAM_QTAV_LOG) << QString::asprintf("- '%s' is supported by hardware", mode->name);
         } else {
-            qDebug("- Unknown GUID = %08X-%04x-%04x-%02x-%02x-%02x-%02x-%02x-%02x-%02x-%02x",
+            qCDebug(DIGIKAM_QTAV_LOG) << QString::asprintf("- Unknown GUID = %08X-%04x-%04x-%02x-%02x-%02x-%02x-%02x-%02x-%02x-%02x",
                      (unsigned)g.Data1, g.Data2, g.Data3
                    , g.Data4[0], g.Data4[1]
                    , g.Data4[2], g.Data4[3], g.Data4[4], g.Data4[5], g.Data4[6], g.Data4[7]);
@@ -493,10 +493,10 @@ const d3d_format_t* VideoDecoderD3DPrivate::getFormat(const AVCodecContext *avct
     const dxva2_mode_t *mode = dxva2_modes;
     for (; mode->name; ++mode) {
         if (!mode->codec || mode->codec != avctx->codec_id) {
-            qDebug("codec does not match to %s: %s", avcodec_get_name(avctx->codec_id), avcodec_get_name((AVCodecID)mode->codec));
+            qCDebug(DIGIKAM_QTAV_LOG) << QString::asprintf("codec does not match to %s: %s", avcodec_get_name(avctx->codec_id), avcodec_get_name((AVCodecID)mode->codec));
             continue;
         }
-        qDebug("D3D found codec: %s. Check runtime support for the codec.", mode->name);
+        qCDebug(DIGIKAM_QTAV_LOG) << QString::asprintf("D3D found codec: %s. Check runtime support for the codec.", mode->name);
         bool is_supported = false;
         //TODO: find_if
         foreach (const GUID& g, guids) {
@@ -506,7 +506,7 @@ const d3d_format_t* VideoDecoderD3DPrivate::getFormat(const AVCodecContext *avct
             }
         }
         if (is_supported) {
-            qDebug("Check profile support: %s", AVDecoderPrivate::getProfileName(avctx));
+            qCDebug(DIGIKAM_QTAV_LOG) << QString::asprintf("Check profile support: %s", AVDecoderPrivate::getProfileName(avctx));
             is_supported = checkProfile(mode, avctx->profile);
         }
         if (!is_supported)

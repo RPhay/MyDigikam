@@ -51,12 +51,12 @@ public:
     }
     virtual void run() {
         if (app_is_dieing) {
-            qDebug("app is dieing. cancel capture task %p", this);
+            qCDebug(DIGIKAM_QTAV_LOG) << QString::asprintf("app is dieing. cancel capture task %p", this);
             return;
         }
         QImage image(frame.toImage());
         if (image.isNull()) {
-            qWarning("Failed to convert to QImage");
+            qCWarning(DIGIKAM_QTAV_LOG_WARN) << QString::asprintf("Failed to convert to QImage");
             QMetaObject::invokeMethod(cap, "failed");
             return;
         }
@@ -64,10 +64,10 @@ public:
         if (!save)
             return;
         bool main_thread = QThread::currentThread() == qApp->thread();
-        qDebug("capture task running in thread %p [main thread=%d]", QThread::currentThreadId(), main_thread);
+        qCDebug(DIGIKAM_QTAV_LOG) << QString::asprintf("capture task running in thread %p [main thread=%d]", QThread::currentThreadId(), main_thread);
         if (!QDir(dir).exists()) {
             if (!QDir().mkpath(dir)) {
-                qWarning("Failed to create capture dir [%s]", qPrintable(dir));
+                qCWarning(DIGIKAM_QTAV_LOG_WARN) << QString::asprintf("Failed to create capture dir [%s]", qPrintable(dir));
                 QMetaObject::invokeMethod(cap, "failed");
                 return;
             }
@@ -79,17 +79,17 @@ public:
                 frame = frame.to(frame.format());
             }
             path.append(frame.format().name());
-            qDebug("Saving capture to %s", qPrintable(path));
+            qCDebug(DIGIKAM_QTAV_LOG) << QString::asprintf("Saving capture to %s", qPrintable(path));
             QFile file(path);
             if (!file.open(QIODevice::WriteOnly)) {
-                qWarning("VideoCapture is failed to open file %s", qPrintable(path));
+                qCWarning(DIGIKAM_QTAV_LOG_WARN) << QString::asprintf("VideoCapture is failed to open file %s", qPrintable(path));
                 QMetaObject::invokeMethod(cap, "failed");
                 return;
             }
             int sz = 0;
             const char* data = (const char*)frame.frameDataPtr(&sz);
             if (file.write(data, sz) <= 0) {
-                qWarning("VideoCapture is failed to write captured frame with original format");
+                qCWarning(DIGIKAM_QTAV_LOG_WARN) << QString::asprintf("VideoCapture is failed to write captured frame with original format");
                 QMetaObject::invokeMethod(cap, "failed");
                 file.close();
                 return;
@@ -101,10 +101,10 @@ public:
         if (image.isNull())
             return;
         path.append(format.toLower());
-        qDebug("Saving capture to %s", qPrintable(path));
+        qCDebug(DIGIKAM_QTAV_LOG) << QString::asprintf("Saving capture to %s", qPrintable(path));
         bool ok = image.save(path, format.toLatin1().constData(), quality);
         if (!ok) {
-            qWarning("Failed to save capture");
+            qCWarning(DIGIKAM_QTAV_LOG_WARN) << QString::asprintf("Failed to save capture");
             QMetaObject::invokeMethod(cap, "failed");
         }
         QMetaObject::invokeMethod(cap, "saved", Q_ARG(QString, path));
@@ -198,7 +198,7 @@ void VideoCapture::start()
 {
     Q_EMIT frameAvailable(frame);
     if (!frame.isValid() || !frame.constBits(0)) { // if frame is always cloned, then size is at least width*height
-        qDebug("Captured frame from hardware decoder surface.");
+        qCDebug(DIGIKAM_QTAV_LOG) << QString::asprintf("Captured frame from hardware decoder surface.");
     }
     CaptureTask *task = new CaptureTask(this);
     // copy properties so the task will not be affect even if VideoCapture properties changed

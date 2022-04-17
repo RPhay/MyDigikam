@@ -109,7 +109,7 @@ public:
 
         const qreal dar = (rotate % 180) ? 1.0/outAspectRatio : outAspectRatio;
 
-        //qDebug("out rect: %f %dx%d ==>", out_aspect_ratio, out_rect.width(), out_rect.height());
+        //qCDebug(DIGIKAM_QTAV_LOG) << QString::asprintf("out rect: %f %dx%d ==>", out_aspect_ratio, out_rect.width(), out_rect.height());
 
         if      (rendererAspectRatio >= dar)
         {
@@ -131,7 +131,7 @@ public:
 
         out_aspect_ratio = outAspectRatio;
 
-        //qDebug("%f %dx%d <<<<<<<<", out_aspect_ratio, out_rect.width(), out_rect.height());
+        //qCDebug(DIGIKAM_QTAV_LOG) << QString::asprintf("%f %dx%d <<<<<<<<", out_aspect_ratio, out_rect.width(), out_rect.height());
 
         return (out_rect0 != out_rect);
     }

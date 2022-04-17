@@ -209,13 +209,13 @@ void QFileIO::onUrlChanged()
 #ifdef Q_OS_WIN
         int p = path.indexOf(QLatin1Char(':'));
         if (p < 1) {
-            qWarning("invalid path. ':' wrong position");
+            qCWarning(DIGIKAM_QTAV_LOG_WARN) << QString::asprintf("invalid path. ':' wrong position");
             return;
         }
         p -= 1;
         QChar c = path.at(p).toUpper();
         if (c < QLatin1Char('A') || c > QLatin1Char('Z')) {
-            qWarning("invalid path. wrong driver");
+            qCWarning(DIGIKAM_QTAV_LOG_WARN) << QString::asprintf("invalid path. wrong driver");
             return;
         }
         const QString path_maybe = path.mid(p);
@@ -224,7 +224,7 @@ void QFileIO::onUrlChanged()
         while (p > 0) {
             c = path.at(p);
             if (c != QLatin1Char('\\') && c != QLatin1Char('/')) {
-                qWarning("invalid path. wrong dir seperator");
+                qCWarning(DIGIKAM_QTAV_LOG_WARN) << QString::asprintf("invalid path. wrong dir seperator");
                 return;
             }
             --p;

@@ -50,7 +50,7 @@ Frame &Frame::operator =(const Frame &other)
 int Frame::bytesPerLine(int plane) const
 {
     if (plane < 0 || plane >= planeCount()) {
-        qWarning("Invalid plane! Valid range is [0, %d)", planeCount());
+        qCWarning(DIGIKAM_QTAV_LOG_WARN) << QString::asprintf("Invalid plane! Valid range is [0, %d)", planeCount());
         return 0;
     }
     return d_func()->line_sizes[plane];
@@ -69,7 +69,7 @@ int Frame::dataAlignment() const
 QByteArray Frame::data(int plane) const
 {
     if (plane < 0 || plane >= planeCount()) {
-        qWarning("Invalid plane! Valid range is [0, %d)", planeCount());
+        qCWarning(DIGIKAM_QTAV_LOG_WARN) << QString::asprintf("Invalid plane! Valid range is [0, %d)", planeCount());
         return QByteArray();
     }
     return QByteArray((char*)d_func()->planes[plane], bytesPerLine(plane));
@@ -78,7 +78,7 @@ QByteArray Frame::data(int plane) const
 uchar* Frame::bits(int plane)
 {
     if (plane < 0 || plane >= planeCount()) {
-        qWarning("Invalid plane! Valid range is [0, %d)", planeCount());
+        qCWarning(DIGIKAM_QTAV_LOG_WARN) << QString::asprintf("Invalid plane! Valid range is [0, %d)", planeCount());
         return 0;
     }
     return d_func()->planes[plane];
@@ -87,7 +87,7 @@ uchar* Frame::bits(int plane)
 const uchar* Frame::constBits(int plane) const
 {
     if (plane < 0 || plane >= planeCount()) {
-        qWarning("Invalid plane! Valid range is [0, %d)", planeCount());
+        qCWarning(DIGIKAM_QTAV_LOG_WARN) << QString::asprintf("Invalid plane! Valid range is [0, %d)", planeCount());
         return 0;
     }
     return d_func()->planes[plane];
@@ -96,7 +96,7 @@ const uchar* Frame::constBits(int plane) const
 void Frame::setBits(uchar *b, int plane)
 {
     if (plane < 0 || plane >= planeCount()) {
-        qWarning("Invalid plane! Valid range is [0, %d)", planeCount());
+        qCWarning(DIGIKAM_QTAV_LOG_WARN) << QString::asprintf("Invalid plane! Valid range is [0, %d)", planeCount());
         return;
     }
     Q_D(Frame);
@@ -124,7 +124,7 @@ void Frame::setBits(quint8 *slice[])
 void Frame::setBytesPerLine(int lineSize, int plane)
 {
     if (plane < 0 || plane >= planeCount()) {
-        qWarning("Invalid plane! Valid range is [0, %d)", planeCount());
+        qCWarning(DIGIKAM_QTAV_LOG_WARN) << QString::asprintf("Invalid plane! Valid range is [0, %d)", planeCount());
         return;
     }
     Q_D(Frame);

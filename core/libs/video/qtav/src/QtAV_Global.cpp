@@ -107,7 +107,7 @@ static unsigned get_qt_version()
     int major = 0, minor = 0, patch = 0;
 
     if (sscanf(qVersion(), "%d.%d.%d", &major, &minor, &patch) != 3)
-        qWarning("Can not recognize Qt runtime version");
+        qCWarning(DIGIKAM_QTAV_LOG_WARN) << QString::asprintf("Can not recognize Qt runtime version");
 
     return QT_VERSION_CHECK(major, minor, patch);
 }
@@ -177,9 +177,9 @@ void print_library_info()
     while (info)
     {
         if (!qstrcmp(info->lib, "avutil"))
-            qDebug("FFmpeg/Libav configuration: %s", info->config);
+            qCDebug(DIGIKAM_QTAV_LOG) << QString::asprintf("FFmpeg/Libav configuration: %s", info->config);
 
-        qDebug("Build with %s-%u.%u.%u"
+        qCDebug(DIGIKAM_QTAV_LOG) << QString::asprintf("Build with %s-%u.%u.%u"
                , info->lib
                , QTAV_VERSION_MAJOR(info->build_version)
                , QTAV_VERSION_MINOR(info->build_version)
@@ -189,7 +189,7 @@ void print_library_info()
         unsigned rt_version = info->rt_version;
 
         if (info->build_version != rt_version) {
-            qWarning("Warning: %s runtime version %u.%u.%u mismatch!"
+            qCWarning(DIGIKAM_QTAV_LOG_WARN) << QString::asprintf("Warning: %s runtime version %u.%u.%u mismatch!"
                     , info->lib
                     , QTAV_VERSION_MAJOR(rt_version)
                     , QTAV_VERSION_MINOR(rt_version)

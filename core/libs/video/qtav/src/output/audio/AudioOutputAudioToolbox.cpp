@@ -74,7 +74,7 @@ FACTORY_REGISTER(AudioOutputBackend, AudioToolbox, kName)
     do { \
         OSStatus ret = FUNC; \
         if (ret != noErr) { \
-            qWarning("AudioBackendAudioQueue Error>>> " #FUNC ": %#x", ret); \
+            qCWarning(DIGIKAM_QTAV_LOG_WARN) << QString::asprintf("AudioBackendAudioQueue Error>>> " #FUNC ": %#x", ret); \
             __VA_ARGS__; \
         } \
     } while(0)
@@ -112,10 +112,10 @@ void AudioOutputAudioToolbox::outCallback(void* inUserData, AudioQueueRef inAQ, 
 
     if (ao->m_waiting) {
         ao->m_waiting = false;
-        qDebug("wake up to fill buffer");
+        qCDebug(DIGIKAM_QTAV_LOG) << QString::asprintf("wake up to fill buffer");
         ao->m_cond.wakeOne();
     }
-    //qDebug("callback. sem: %d, fill queue: %d", ao->sem.available(), ao->m_buffer_fill.size());
+    //qCDebug(DIGIKAM_QTAV_LOG) << QString::asprintf("callback. sem: %d, fill queue: %d", ao->sem.available(), ao->m_buffer_fill.size());
     ao->tryPauseTimeline();
 }
 
@@ -147,7 +147,7 @@ void AudioOutputAudioToolbox::tryPauseTimeline()
     if (sem.available() == buffer_count) {
         AudioTimeStamp t;
         AudioQueueGetCurrentTime(m_queue, NULL, &t, NULL);
-        qDebug("pause audio queue timeline @%.3f (sample time)/%lld (host time)", t.mSampleTime, t.mHostTime);
+        qCDebug(DIGIKAM_QTAV_LOG) << QString::asprintf("pause audio queue timeline @%.3f (sample time)/%lld (host time)", t.mSampleTime, t.mHostTime);
         AT_ENSURE(AudioQueuePause(m_queue));
     }
 }
@@ -175,7 +175,7 @@ bool AudioOutputAudioToolbox::open()
 bool AudioOutputAudioToolbox::close()
 {
     if (!m_queue) {
-        qDebug("AudioQueue is not created. skip close");
+        qCDebug(DIGIKAM_QTAV_LOG) << QString::asprintf("AudioQueue is not created. skip close");
         return true;
     }
     UInt32 running = 0, s = 0;
@@ -192,7 +192,7 @@ bool AudioOutputAudioToolbox::write(const QByteArray& data)
 {
     // blocking queue.
     // if queue not full, fill buffer and enqueue buffer
-    //qDebug("write. sem: %d", sem.available());
+    //qCDebug(DIGIKAM_QTAV_LOG) << QString::asprintf("write. sem: %d", sem.available());
     if (bufferControl() & CountCallback)
         sem.acquire();
 
@@ -202,7 +202,7 @@ bool AudioOutputAudioToolbox::write(const QByteArray& data)
         Q_UNUSED(locker);
         // put to data queue, if has buffer to fill (was available in callback), fill the front data
         if (m_buffer_fill.isEmpty()) {
-            qDebug("buffer queue to fill is empty, wait a valid buffer to fill");
+            qCDebug(DIGIKAM_QTAV_LOG) << QString::asprintf("buffer queue to fill is empty, wait a valid buffer to fill");
             m_waiting = true;
             m_cond.wait(&m_mutex);
         }
@@ -221,13 +221,13 @@ bool AudioOutputAudioToolbox::play()
 {
     OSType err = AudioQueueStart(m_queue, nullptr);
     if (err == '!pla') { //AVAudioSessionErrorCodeCannotStartPlaying
-        qWarning("AudioQueueStart error: AVAudioSessionErrorCodeCannotStartPlaying. May play in background");
+        qCWarning(DIGIKAM_QTAV_LOG_WARN) << QString::asprintf("AudioQueueStart error: AVAudioSessionErrorCodeCannotStartPlaying. May play in background");
         close();
         open();
         return false;
     }
     if (err != noErr) {
-        qWarning("AudioQueueStart error: %#x", noErr);
+        qCWarning(DIGIKAM_QTAV_LOG_WARN) << QString::asprintf("AudioQueueStart error: %#x", noErr);
         return false;
     }
     return true;

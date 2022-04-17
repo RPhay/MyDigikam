@@ -74,10 +74,10 @@ InteropResource* InteropResource::create(IDirect3DDevice9 *dev, InteropType type
     if (type == InteropAuto || type == InteropEGL) {
         IDirect3DDevice9Ex *devEx;
         dev->QueryInterface(IID_IDirect3DDevice9Ex, (void**)&devEx);
-        qDebug("using D3D9Ex: %d", !!devEx);
+        qCDebug(DIGIKAM_QTAV_LOG) << QString::asprintf("using D3D9Ex: %d", !!devEx);
         //
         if (!devEx) {
-            qWarning("IDirect3DDevice9Ex is required to share d3d resource. It's available in vista and later. d3d9 can not CreateTexture with shared handle");
+            qCWarning(DIGIKAM_QTAV_LOG_WARN) << QString::asprintf("IDirect3DDevice9Ex is required to share d3d resource. It's available in vista and later. d3d9 can not CreateTexture with shared handle");
         }
         SafeRelease(&devEx);
 #if QTAV_HAVE(D3D9_EGL)
@@ -160,7 +160,7 @@ void* SurfaceInterop::mapToHost(const VideoFormat &format, void *handle, int pla
     public:
         ScopedD3DLock(IDirect3DSurface9* d3d, D3DLOCKED_RECT *rect) : mpD3D(d3d) {
             if (FAILED(mpD3D->LockRect(rect, NULL, D3DLOCK_READONLY))) {
-                qWarning("Failed to lock surface");
+                qCWarning(DIGIKAM_QTAV_LOG_WARN) << QString::asprintf("Failed to lock surface");
                 mpD3D = 0;
             }
         }
@@ -180,7 +180,7 @@ void* SurfaceInterop::mapToHost(const VideoFormat &format, void *handle, int pla
     m_surface->GetDesc(&desc);
     const VideoFormat fmt = VideoFormat(pixelFormatFromFourcc(desc.Format));
     if (!fmt.isValid()) {
-        qWarning("unsupported D3D9 pixel format: %#x", desc.Format);
+        qCWarning(DIGIKAM_QTAV_LOG_WARN) << QString::asprintf("unsupported D3D9 pixel format: %#x", desc.Format);
         return NULL;
     }
     //YV12 need swap, not imc3?

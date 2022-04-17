@@ -158,7 +158,7 @@ bool DXVAHDVP::ensureResource(UINT width, UINT height, D3DFORMAT format)
         }
     }
     if (!fmt_found) {
-        qDebug("input format is not supported by DXVAHD");
+        qCDebug(DIGIKAM_QTAV_LOG) << QString::asprintf("input format is not supported by DXVAHD");
         return false;
     }
     if (dirty || !m_vp)

@@ -158,7 +158,7 @@ void api::resolve()
             NULL,
         };
         if (OpenGLHelper::hasExtension(ext)) { // TODO: use wgl getprocaddress function (for qt4)
-            qDebug("resolving WGL_NV_DX_interop...");
+            qCDebug(DIGIKAM_QTAV_LOG) << QString::asprintf("resolving WGL_NV_DX_interop...");
             WGL_RESOLVE(DXSetResourceShareHandleNV);
             WGL_RESOLVE(DXOpenDeviceNV);
             WGL_RESOLVE(DXCloseDeviceNV);

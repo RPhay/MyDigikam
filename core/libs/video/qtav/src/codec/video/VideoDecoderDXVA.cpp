@@ -190,7 +190,7 @@ QString VideoDecoderDXVA::description() const
 VideoFrame VideoDecoderDXVA::frame()
 {
     DPTR_D(VideoDecoderDXVA);
-    //qDebug("frame size: %dx%d", d.frame->width, d.frame->height);
+    //qCDebug(DIGIKAM_QTAV_LOG) << QString::asprintf("frame size: %dx%d", d.frame->width, d.frame->height);
     if (!d.frame->opaque || !d.frame->data[0])
         return VideoFrame();
     if (d.frame->width <= 0 || d.frame->height <= 0 || !d.codec_ctx)
@@ -212,7 +212,7 @@ VideoFrame VideoDecoderDXVA::frame()
     public:
         ScopedD3DLock(IDirect3DSurface9* d3d, D3DLOCKED_RECT *rect) : mpD3D(d3d) {
             if (FAILED(mpD3D->LockRect(rect, NULL, D3DLOCK_READONLY))) {
-                qWarning("Failed to lock surface");
+                qCWarning(DIGIKAM_QTAV_LOG_WARN) << QString::asprintf("Failed to lock surface");
                 mpD3D = 0;
             }
         }
@@ -232,7 +232,7 @@ VideoFrame VideoDecoderDXVA::frame()
     d3d->GetDesc(&desc);
     const VideoFormat fmt = VideoFormat(pixelFormatFromFourcc(desc.Format));
     if (!fmt.isValid()) {
-        qWarning("unsupported dxva pixel format: %#x", desc.Format);
+        qCWarning(DIGIKAM_QTAV_LOG_WARN) << QString::asprintf("unsupported dxva pixel format: %#x", desc.Format);
         return VideoFrame();
     }
     //YV12 need swap, not imc3?
@@ -248,12 +248,12 @@ VideoFrame VideoDecoderDXVA::frame()
 bool VideoDecoderDXVAPrivate::loadDll() {
     hd3d9_dll = LoadLibrary(TEXT("D3D9.DLL"));
     if (!hd3d9_dll) {
-        qWarning("cannot load d3d9.dll");
+        qCWarning(DIGIKAM_QTAV_LOG_WARN) << QString::asprintf("cannot load d3d9.dll");
         return false;
     }
     hdxva2_dll = LoadLibrary(TEXT("DXVA2.DLL"));
     if (!hdxva2_dll) {
-        qWarning("cannot load dxva2.dll");
+        qCWarning(DIGIKAM_QTAV_LOG_WARN) << QString::asprintf("cannot load dxva2.dll");
         FreeLibrary(hd3d9_dll);
         return false;
     }
@@ -275,11 +275,11 @@ bool VideoDecoderDXVAPrivate::createDevice()
     ZeroMemory(&d3dai, sizeof(d3dai));
     d3ddev = DXHelper::CreateDevice9Ex(hd3d9_dll, (IDirect3D9Ex**)(&d3dobj), &d3dai);
     if (!d3ddev) {
-        qWarning("Failed to create d3d9 device ex, fallback to d3d9 device");
+        qCWarning(DIGIKAM_QTAV_LOG_WARN) << QString::asprintf("Failed to create d3d9 device ex, fallback to d3d9 device");
         d3ddev = DXHelper::CreateDevice9(hd3d9_dll, &d3dobj, &d3dai);
     }
     if (!d3ddev) {
-        qWarning("Failed to create d3d9 device");
+        qCWarning(DIGIKAM_QTAV_LOG_WARN) << QString::asprintf("Failed to create d3d9 device");
         return false;
     }
     vendor = QString::fromLatin1(DXHelper::vendorName(d3dai.VendorId));
@@ -289,19 +289,19 @@ bool VideoDecoderDXVAPrivate::createDevice()
 
     //if (copy_uswc)
       //  copy_uswc = vendor.toLower() == "intel";
-    qDebug("DXVA2 description:  %s", description.toUtf8().constData());
+    qCDebug(DIGIKAM_QTAV_LOG) << QString::asprintf("DXVA2 description:  %s", description.toUtf8().constData());
 
     if (!d3ddev)
         return false;
     typedef HRESULT (WINAPI *CreateDeviceManager9Func)(UINT *pResetToken, IDirect3DDeviceManager9 **);
     CreateDeviceManager9Func CreateDeviceManager9 = (CreateDeviceManager9Func)GetProcAddress(hdxva2_dll, "DXVA2CreateDirect3DDeviceManager9");
     if (!CreateDeviceManager9) {
-        qWarning("cannot load function DXVA2CreateDirect3DDeviceManager9");
+        qCWarning(DIGIKAM_QTAV_LOG_WARN) << QString::asprintf("cannot load function DXVA2CreateDirect3DDeviceManager9");
         return false;
     }
-    qDebug("OurDirect3DCreateDeviceManager9 Success!");
+    qCDebug(DIGIKAM_QTAV_LOG) << QString::asprintf("OurDirect3DCreateDeviceManager9 Success!");
     DX_ENSURE_OK(CreateDeviceManager9(&token, &devmng), false);
-    qDebug("obtained IDirect3DDeviceManager9");
+    qCDebug(DIGIKAM_QTAV_LOG) << QString::asprintf("obtained IDirect3DDeviceManager9");
     //http://msdn.microsoft.com/en-us/library/windows/desktop/ms693525%28v=vs.85%29.aspx
     DX_ENSURE_OK(devmng->ResetDevice(d3ddev, token), false);
     DX_ENSURE_OK(devmng->OpenDeviceHandle(&device), false);
@@ -340,7 +340,7 @@ int VideoDecoderDXVAPrivate::fourccFor(const GUID *guid) const
     UINT output_count = 0;
     D3DFORMAT *output_list = NULL;
     if (FAILED(vs->GetDecoderRenderTargets(*guid, &output_count, &output_list))) {
-        qWarning("IDirectXVideoDecoderService_GetDecoderRenderTargets failed");
+        qCWarning(DIGIKAM_QTAV_LOG_WARN) << QString::asprintf("IDirectXVideoDecoderService_GetDecoderRenderTargets failed");
         return 0;
     }
     int fmt = getSupportedFourcc((int*)output_list, output_count);
@@ -355,7 +355,7 @@ bool VideoDecoderDXVAPrivate::checkDevice()
     if (hr == DXVA2_E_NEW_VIDEO_DEVICE) {
         //https://technet.microsoft.com/zh-cn/aa965266(v=vs.98).aspx
         // CloseDeviceHandle,Release service&decoder, open a new device handle, create a new decoder
-        qWarning("DXVA2_E_NEW_VIDEO_DEVICE. Video decoder reset is not implemeted");
+        qCWarning(DIGIKAM_QTAV_LOG_WARN) << QString::asprintf("DXVA2_E_NEW_VIDEO_DEVICE. Video decoder reset is not implemeted");
             return false;
     } else if (FAILED(hr)) {
         qCWarning(DIGIKAM_QTAV_LOG_WARN) << "IDirect3DDeviceManager9.TestDevice (" << hr << "): " << qt_error_string(hr);
@@ -367,13 +367,13 @@ bool VideoDecoderDXVAPrivate::checkDevice()
 bool VideoDecoderDXVAPrivate::createDecoder(AVCodecID codec_id, int w, int h, QVector<va_surface_t*>& surf)
 {
     if (!vs || !d3ddev) {
-        qWarning("dx video surface is not ready. IDirectXVideoService: %p, IDirect3DDevice9: %p", vs, d3ddev);
+        qCWarning(DIGIKAM_QTAV_LOG_WARN) << QString::asprintf("dx video surface is not ready. IDirectXVideoService: %p, IDirect3DDevice9: %p", vs, d3ddev);
         return false;
     }
     const int nb_surfaces = surf.size();
     static const int kMaxSurfaceCount = 64;
     IDirect3DSurface9* surface_list[kMaxSurfaceCount];
-    qDebug("IDirectXVideoDecoderService=%p nb_surfaces=%d surface %dx%d", vs, nb_surfaces, aligned(w), aligned(h));
+    qCDebug(DIGIKAM_QTAV_LOG) << QString::asprintf("IDirectXVideoDecoderService=%p nb_surfaces=%d surface %dx%d", vs, nb_surfaces, aligned(w), aligned(h));
     DX_ENSURE_OK(vs->CreateSurface(aligned(w),
                                  aligned(h),
                                  nb_surfaces - 1, //The number of back buffers. The method creates BackBuffers + 1 surfaces.
@@ -390,7 +390,7 @@ bool VideoDecoderDXVAPrivate::createDecoder(AVCodecID codec_id, int w, int h, QV
         s->setSurface(surface_list[i]);
         surf[i] = s;
     }
-    qDebug("IDirectXVideoAccelerationService_CreateSurface succeed with %d surfaces (%dx%d)", nb_surfaces, w, h);
+    qCDebug(DIGIKAM_QTAV_LOG) << QString::asprintf("IDirectXVideoAccelerationService_CreateSurface succeed with %d surfaces (%dx%d)", nb_surfaces, w, h);
 
     /* */
     DXVA2_VideoDesc dsc;
@@ -429,7 +429,7 @@ bool VideoDecoderDXVAPrivate::createDecoder(AVCodecID codec_id, int w, int h, QV
         return false;
     /* Create the decoder */
     DX_ENSURE_OK(vs->CreateVideoDecoder(codec_guid, &dsc, &cfg, surface_list, nb_surfaces, &decoder), false);
-    qDebug("IDirectXVideoDecoderService.CreateVideoDecoder succeed. decoder=%p", decoder);
+    qCDebug(DIGIKAM_QTAV_LOG) << QString::asprintf("IDirectXVideoDecoderService.CreateVideoDecoder succeed. decoder=%p", decoder);
     return true;
 }
 
@@ -443,7 +443,7 @@ void* VideoDecoderDXVAPrivate::setupAVVAContext()
     // TODO: FF_DXVA2_WORKAROUND_SCALING_LIST_ZIGZAG
     if (isIntelClearVideo(&codec_guid)) {
 #ifdef FF_DXVA2_WORKAROUND_INTEL_CLEARVIDEO //2014-03-07 - 8b2a130 - lavc 55.50.0 / 55.53.100 - dxva2.h
-        qDebug("FF_DXVA2_WORKAROUND_INTEL_CLEARVIDEO");
+        qCDebug(DIGIKAM_QTAV_LOG) << QString::asprintf("FF_DXVA2_WORKAROUND_INTEL_CLEARVIDEO");
         hw_ctx.workaround |= FF_DXVA2_WORKAROUND_INTEL_CLEARVIDEO;
 #endif
     } else {

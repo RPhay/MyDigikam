@@ -37,7 +37,7 @@
     do { \
         if (!(x)) { \
             EGLint err = eglGetError(); \
-            qWarning("EGL error@%d<<%s. " #x ": %#x %s", __LINE__, __FILE__, err, eglQueryString(eglGetCurrentDisplay(), err)); \
+            qCWarning(DIGIKAM_QTAV_LOG_WARN) << QString::asprintf("EGL error@%d<<%s. " #x ": %#x %s", __LINE__, __FILE__, err, eglQueryString(eglGetCurrentDisplay(), err)); \
             return __VA_ARGS__; \
         } \
     } while(0)
@@ -45,7 +45,7 @@
     do { \
         if (!(x)) { \
             EGLint err = eglGetError(); \
-            qWarning("EGL error@%d<<%s. " #x ": %#x %s", __LINE__, __FILE__, err, eglQueryString(eglGetCurrentDisplay(), err)); \
+            qCWarning(DIGIKAM_QTAV_LOG_WARN) << QString::asprintf("EGL error@%d<<%s. " #x ": %#x %s", __LINE__, __FILE__, err, eglQueryString(eglGetCurrentDisplay(), err)); \
         } \
     } while(0)
 

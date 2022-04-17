@@ -267,7 +267,7 @@ void AVTranscoder::start()
         if (d->vfilter) {
             d->filters.append(d->vfilter);
             d->vfilter->setStartTime(startTime());
-            qDebug("framerate: %.3f/%.3f", videoEncoder()->frameRate(), sourcePlayer()->statistics().video.frame_rate);
+            qCDebug(DIGIKAM_QTAV_LOG) << QString::asprintf("framerate: %.3f/%.3f", videoEncoder()->frameRate(), sourcePlayer()->statistics().video.frame_rate);
             if (videoEncoder()->frameRate() <= 0) { // use source frame rate. set before install filter (so before open)
                 videoEncoder()->setFrameRate(sourcePlayer()->statistics().video.frame_rate);
             }
@@ -303,7 +303,7 @@ void AVTranscoder::stopInternal()
     d->muxer.close();
     d->started = false;
     Q_EMIT stopped();
-    qDebug("AVTranscoder stopped");
+    qCDebug(DIGIKAM_QTAV_LOG) << QString::asprintf("AVTranscoder stopped");
 }
 
 void AVTranscoder::pause(bool value)
@@ -318,7 +318,7 @@ void AVTranscoder::pause(bool value)
 void AVTranscoder::onSourceStarted()
 {
     if (d->vfilter) {
-        qDebug("onSourceStarted framerate: %.3f/%.3f", videoEncoder()->frameRate(), sourcePlayer()->statistics().video.frame_rate);
+        qCDebug(DIGIKAM_QTAV_LOG) << QString::asprintf("onSourceStarted framerate: %.3f/%.3f", videoEncoder()->frameRate(), sourcePlayer()->statistics().video.frame_rate);
         if (videoEncoder()->frameRate() <= 0) { // use source frame rate. set before install filter (so before open)
             videoEncoder()->setFrameRate(sourcePlayer()->statistics().video.frame_rate);
         }
@@ -331,7 +331,7 @@ void AVTranscoder::prepareMuxer()
     // open muxer only if all encoders are open
     if (audioEncoder() && videoEncoder()) {
         if (!audioEncoder()->isOpen() || !videoEncoder()->isOpen()) {
-            qDebug("encoders are not readly a:%d v:%d", audioEncoder()->isOpen(), videoEncoder()->isOpen());
+            qCDebug(DIGIKAM_QTAV_LOG) << QString::asprintf("encoders are not readly a:%d v:%d", audioEncoder()->isOpen(), videoEncoder()->isOpen());
             return;
         }
     }
@@ -342,7 +342,7 @@ void AVTranscoder::prepareMuxer()
     if (!d->format.isEmpty())
         d->muxer.setFormat(d->format); // clear when media changed
     if (!d->muxer.open()) {
-        qWarning("Failed to open muxer");
+        qCWarning(DIGIKAM_QTAV_LOG_WARN) << QString::asprintf("Failed to open muxer");
         return;
     }
 }
@@ -361,7 +361,7 @@ void AVTranscoder::writeAudio(const QtAV::Packet &packet)
         return;
     // TODO: startpts, duration, encoded size
     d->encoded_frames++;
-    //qDebug("encoded frames: %d, pos: %lld", d->encoded_frames, packet.position);
+    //qCDebug(DIGIKAM_QTAV_LOG) << QString::asprintf("encoded frames: %d, pos: %lld", d->encoded_frames, packet.position);
 }
 
 void AVTranscoder::writeVideo(const QtAV::Packet &packet)

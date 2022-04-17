@@ -93,13 +93,13 @@ void VideoShaderObject::programReady()
             const Uniform& u = uniforms[i];
             const int idx = metaObject()->indexOfProperty(u.name.constData());
             if (idx < 0) {
-                qDebug("VideoShaderObject has no meta property '%s'. Setting initial value from dynamic property", u.name.constData());
+                qCDebug(DIGIKAM_QTAV_LOG) << QString::asprintf("VideoShaderObject has no meta property '%s'. Setting initial value from dynamic property", u.name.constData());
                 const_cast<Uniform&>(u).set(property(u.name.constData()));
                 continue;
             }
             QMetaProperty mp = metaObject()->property(idx);
             if (!mp.hasNotifySignal()) {
-                qWarning("VideoShaderObject property '%s' has no signal", mp.name());
+                qCWarning(DIGIKAM_QTAV_LOG_WARN) << QString::asprintf("VideoShaderObject property '%s' has no signal", mp.name());
                 continue;
             }
             QMetaMethod mm = mp.notifySignal();

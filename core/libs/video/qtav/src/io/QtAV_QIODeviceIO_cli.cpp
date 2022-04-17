@@ -46,7 +46,7 @@ int main(int, char**)
     fi.setUrl(QString::fromUtf8(argv[1]));
     QByteArray data(1024, 0);
     fi.read(data.data(), data.size());
-    qDebug("QFileIO url: %s, seekable: %d, size: %lld", fi.url().toUtf8().constData(), fi.isSeekable(), fi.size());
+    qCDebug(DIGIKAM_QTAV_LOG) << QString::asprintf("QFileIO url: %s, seekable: %d, size: %lld", fi.url().toUtf8().constData(), fi.isSeekable(), fi.size());
     qCDebug(DIGIKAM_QTAV_LOG) << data;
 
     return 0;
