@@ -20,15 +20,20 @@
  *
  * ============================================================ */
 
-#ifndef QAV_DEMUXTHREAD_H
-#define QAV_DEMUXTHREAD_H
+#ifndef QTAV_DEMUX_THREAD_H
+#define QTAV_DEMUX_THREAD_H
+
+// Qt includes
 
 #include <QMutex>
 #include <QSemaphore>
 #include <QThread>
 #include <QRunnable>
-#include "PacketBuffer.h"
 #include <QTimer>
+
+// Local includes
+
+#include "PacketBuffer.h"
 
 namespace QtAV
 {
@@ -140,4 +145,4 @@ private:
 
 } // namespace QtAV
 
-#endif // QAV_DEMUXTHREAD_H
+#endif // QTAV_DEMUX_THREAD_H
