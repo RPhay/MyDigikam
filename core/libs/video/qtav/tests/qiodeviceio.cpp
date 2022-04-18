@@ -20,16 +20,21 @@
  *
  * ============================================================ */
 
-#include "MediaIO.h"
-#include "private/MediaIO_p.h"
-#include "private/mkid.h"
-#include "private/factory.h"
+// Qt includes
 
 #include <QFile>
 #include <QtDebug>
 #include <QApplication>
 
-int main(int, char**)
+// Local includes
+
+#include "MediaIO.h"
+#include "private/MediaIO_p.h"
+#include "private/mkid.h"
+#include "private/factory.h"
+#include "digikam_debug.h"
+
+int main(int argc, char** argv)
 {
     QApplication a(argc, argv);
 
