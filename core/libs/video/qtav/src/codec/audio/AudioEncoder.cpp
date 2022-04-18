@@ -21,6 +21,9 @@
  * ============================================================ */
 
 #include "AudioEncoder.h"
+
+// Loca includes
+
 #include "private/AVEncoder_p.h"
 #include "private/factory.h"
 #include "digikam_debug.h"
@@ -33,38 +36,55 @@ FACTORY_DEFINE(AudioEncoder)
 void AudioEncoder_RegisterAll()
 {
     static bool called = false;
+
     if (called)
         return;
+
     called = true;
+
     // factory.h does not check whether an id is registered
+
     if (AudioEncoder::id("FFmpeg")) //registered on load
         return;
+
     extern bool RegisterAudioEncoderFFmpeg_Man();
+
     RegisterAudioEncoderFFmpeg_Man();
 }
 
 QStringList AudioEncoder::supportedCodecs()
 {
     static QStringList codecs;
+
     if (!codecs.isEmpty())
         return codecs;
+
     const AVCodec* c = NULL;
+
 #if AVCODEC_STATIC_REGISTER
+
     void* it = NULL;
-    while ((c = av_codec_iterate(&it))) {
+    while ((c = av_codec_iterate(&it)))
+    {
+
 #else
+
     avcodec_register_all();
-    while ((c = av_codec_next(c))) {
+    while ((c = av_codec_next(c)))
+    {
+
 #endif
         if (!av_codec_is_encoder(c) || c->type != AVMEDIA_TYPE_AUDIO)
             continue;
+
         codecs.append(QString::fromLatin1(c->name));
     }
+
     return codecs;
 }
 
-AudioEncoder::AudioEncoder(AudioEncoderPrivate &d):
-    AVEncoder(d)
+AudioEncoder::AudioEncoder(AudioEncoderPrivate &d)
+    : AVEncoder(d)
 {
 }
 
@@ -76,10 +96,13 @@ QString AudioEncoder::name() const
 void AudioEncoder::setAudioFormat(const AudioFormat& format)
 {
     DPTR_D(AudioEncoder);
+
     if (d.format == format)
         return;
+
     d.format = format;
     d.format_used = format;
+
     Q_EMIT audioFormatChanged();
 }
 

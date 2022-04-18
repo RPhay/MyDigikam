@@ -21,22 +21,31 @@
  * ============================================================ */
 
 #include "AudioDecoder.h"
+
+// Local includes
+
 #include "private/AVDecoder_p.h"
 #include "private/AVCompat.h"
-#include "AudioResampler.h"
 #include "private/factory.h"
+#include "AudioResampler.h"
 #include "digikam_debug.h"
 
 namespace QtAV
 {
 
 FACTORY_DEFINE(AudioDecoder)
+
 // TODO: why vc can not declare extern func in a class member? resolved as &func@@YAXXZ
+
 extern bool RegisterAudioDecoderFFmpeg_Man();
-void AudioDecoder::registerAll() {
+
+void AudioDecoder::registerAll()
+{
     static bool done = false;
+
     if (done)
         return;
+
     done = true;
     RegisterAudioDecoderFFmpeg_Man();
 }
@@ -44,20 +53,31 @@ void AudioDecoder::registerAll() {
 QStringList AudioDecoder::supportedCodecs()
 {
     static QStringList codecs;
+
     if (!codecs.isEmpty())
         return codecs;
+
     const AVCodec* c = NULL;
+
 #if AVCODEC_STATIC_REGISTER
+
     void* it = NULL;
-    while ((c = av_codec_iterate(&it))) {
+    while ((c = av_codec_iterate(&it)))
+    {
+
 #else
+
     avcodec_register_all();
-    while ((c = av_codec_next(c))) {
+    while ((c = av_codec_next(c)))
+    {
+
 #endif
         if (!av_codec_is_decoder(c) || c->type != AVMEDIA_TYPE_AUDIO)
             continue;
+
         codecs.append(QString::fromLatin1(c->name));
     }
+
     return codecs;
 }
 
@@ -66,22 +86,25 @@ AudioDecoderPrivate::AudioDecoderPrivate()
     , resampler(0)
 {
     resampler = AudioResampler::create(AudioResamplerId_FF);
+
     if (!resampler)
         resampler = AudioResampler::create(AudioResamplerId_Libav);
+
     if (resampler)
         resampler->setOutSampleFormat(AV_SAMPLE_FMT_FLT);
 }
 
 AudioDecoderPrivate::~AudioDecoderPrivate()
 {
-    if (resampler) {
+    if (resampler)
+    {
         delete resampler;
         resampler = 0;
     }
 }
 
-AudioDecoder::AudioDecoder(AudioDecoderPrivate &d):
-    AVDecoder(d)
+AudioDecoder::AudioDecoder(AudioDecoderPrivate &d)
+    : AVDecoder(d)
 {
 }
 

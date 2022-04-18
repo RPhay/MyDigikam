@@ -21,6 +21,9 @@
  * ============================================================ */
 
 #include "AVEncoder.h"
+
+// Local includes
+
 #include "private/AVEncoder_p.h"
 #include "QtAV_Version.h"
 #include "utils/internal.h"
@@ -47,29 +50,38 @@ QString AVEncoder::description() const
 void AVEncoder::setCodecName(const QString &name)
 {
     DPTR_D(AVEncoder);
+
     if (d.codec_name == name)
         return;
+
     d.codec_name = name;
+
     Q_EMIT codecNameChanged();
 }
 
 QString AVEncoder::codecName() const
 {
     DPTR_D(const AVEncoder);
+
     if (!d.codec_name.isEmpty())
         return d.codec_name;
+
     if (d.avctx)
         return QLatin1String(avcodec_get_name(d.avctx->codec_id));
+
     return QString();
 }
 
 void AVEncoder::setBitRate(int value)
 {
     DPTR_D(AVEncoder);
+
     if (d.bit_rate == value)
         return;
+
     d.bit_rate = value;
-    emit bitRateChanged();
+
+    Q_EMIT bitRateChanged();
 }
 
 int AVEncoder::bitRate() const
@@ -85,35 +97,49 @@ AVEncoder::TimestampMode AVEncoder::timestampMode() const
 void AVEncoder::setTimestampMode(TimestampMode value)
 {
     DPTR_D(AVEncoder);
+
     if (d.timestamp_mode == (int)value)
         return;
+
     d.timestamp_mode = (int)value;
+
     Q_EMIT timestampModeChanged(value);
 }
 
 bool AVEncoder::open()
 {
     DPTR_D(AVEncoder);
-    if (d.avctx) {
+
+    if (d.avctx)
+    {
         d.applyOptionsForDict();
     }
-    if (!d.open()) {
+
+    if (!d.open())
+    {
         d.close();
         return false;
     }
+
     d.is_open = true;
+
     return true;
 }
 
 bool AVEncoder::close()
 {
-    if (!isOpen()) {
+    if (!isOpen())
+    {
         return true;
     }
+
     DPTR_D(AVEncoder);
     d.is_open = false;
+
     // hwa extra finalize can be here
+
     d.close();
+
     return true;
 }
 
@@ -126,6 +152,7 @@ void AVEncoder::flush()
 {
     if (!isOpen())
         return;
+
     if (d_func().avctx)
         avcodec_flush_buffers(d_func().avctx);
 }
@@ -144,12 +171,17 @@ void AVEncoder::copyAVCodecContext(void* ctx)
 {
     if (!ctx)
         return;
+
     DPTR_D(AVEncoder);
     AVCodecContext* c = static_cast<AVCodecContext*>(ctx);
-    if (d.avctx) {
+
+    if (d.avctx)
+    {
         // dest should be avcodec_alloc_context3(NULL)
+
         AV_ENSURE_OK(avcodec_copy_context(d.avctx, c));
         d.is_open = false;
+
         return;
     }
 }
@@ -158,21 +190,29 @@ void AVEncoder::setOptions(const QVariantHash &dict)
 {
     DPTR_D(AVEncoder);
     d.options = dict;
+
     // if dict is empty, can not return here, default options will be set for AVCodecContext
     // apply to AVCodecContext
+
     d.applyOptionsForContext();
+
     /* set AVEncoder meta properties.
      * we do not check whether the property exists thus we can set dynamic properties.
      */
+
     if (dict.isEmpty())
         return;
+
     if (name() == QLatin1String("avcodec"))
         return;
+
     QVariant opt(dict);
-    if (dict.contains(name()))
+
+    if      (dict.contains(name()))
         opt = dict.value(name());
     else if (dict.contains(name().toLower()))
         opt = dict.value(name().toLower());
+
     Internal::setOptionsForQObject(opt, this);
 }
 
@@ -183,18 +223,25 @@ QVariantHash AVEncoder::options() const
 
 void AVEncoderPrivate::applyOptionsForDict()
 {
-    if (dict) {
+    if (dict)
+    {
         av_dict_free(&dict);
         dict = 0; //aready 0 in av_free
     }
+
     if (options.isEmpty())
         return;
+
     qCDebug(DIGIKAM_QTAV_LOG).noquote() << QString::asprintf("set AVCodecContext dict:");
+
     // TODO: use QVariantMap only
+
     if (!options.contains(QStringLiteral("avcodec")))
         return;
+
     // workaround for VideoDecoderFFmpeg. now it does not call av_opt_set_xxx, so set here in dict
     // TODO: wrong if opt is empty
+
     Internal::setOptionsToDict(options.value(QStringLiteral("avcodec")), &dict);
 }
 
@@ -202,15 +249,22 @@ void AVEncoderPrivate::applyOptionsForContext()
 {
     if (!avctx)
         return;
-    if (options.isEmpty()) {
+
+    if (options.isEmpty())
+    {
         // av_opt_set_defaults(avctx); //can't set default values! result maybe unexpected
+
         return;
     }
+
     // TODO: use QVariantMap only
+
     if (!options.contains(QStringLiteral("avcodec")))
         return;
+
     // workaround for VideoDecoderFFmpeg. now it does not call av_opt_set_xxx, so set here in dict
     // TODO: wrong if opt is empty
+
     Internal::setOptionsToFFmpegObj(options.value(QStringLiteral("avcodec")), avctx);
 }
 
