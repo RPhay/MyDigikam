@@ -4,7 +4,7 @@ https://github.com/wang-bin/QtAV
 
 See the story for bugzilla: https://bugs.kde.org/show_bug.cgi?id=448681
 
-Code Review with plenty of fixes and improvements:
+Code review with plenty of fixes and improvements:
 
 - Compilation rules ported to clean CMake with usual Find scripts for dependencies.
   See core/cmake/rules/RulesMediaPlayer.cmake
@@ -16,6 +16,7 @@ Code Review with plenty of fixes and improvements:
 * Fix header guards.
 * Fix includes rules/order from Qt and local.
 * Fix coding style.
+* Use nullptr instead NULL or 0.
 * Apply fixes for cppcheck static analyzer.
 * Apply fixes for Krazy static analyzer.
 * Apply fixes for Clang-Scan static analyzer.
