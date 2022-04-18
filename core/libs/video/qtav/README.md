@@ -13,6 +13,7 @@ Code review with plenty of fixes and improvements:
 - Port code to pure Qt5/Qt6.
 - Use qCDebug()/qCWarning categories with digiKam debug spaces.
 - Use KDE i18n() instead tr().
+- Use cmake to find libuchardet dependency.
 * Fix header guards.
 * Fix includes rules/order from Qt and local.
 * Fix coding style.
@@ -25,7 +26,6 @@ Code review with plenty of fixes and improvements:
 
 TODO:
 
-- Use cmake to find libuchardet dependency.
 - Use cmake to find DirectX dependencies (Windows only).
 - Use cmake to find CUDA dependency.
 - Use cmake to find OpenSL dependency.

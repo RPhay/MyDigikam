@@ -136,6 +136,7 @@ add_subdirectory(ext_fcitx-qt)
 add_subdirectory(ext_ffmpeg)
 add_subdirectory(ext_drmingw)
 add_subdirectory(ext_imagemagick)
+add_subdirectory(ext_uchardet)
 
 if (${ENABLE_QTVERSION} MATCHES "5.*")
 

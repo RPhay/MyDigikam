@@ -24,6 +24,7 @@ find_package(OpenAL)
 find_package(Portaudio)
 find_package(PulseAudio)
 find_package(VAAPI)
+find_package(uchardet)
 
 if(ENABLE_MEDIAPLAYER)
 
@@ -60,6 +61,7 @@ if(ENABLE_MEDIAPLAYER)
     if (${FFMPEG_FOUND})
 
         MACRO_BOOL_TO_01(ASS_FOUND        HAVE_LIBASS)
+        MACRO_BOOL_TO_01(uchardet_FOUND   HAVE_LIBUCHARDET)
         MACRO_BOOL_TO_01(OPENAL_FOUND     HAVE_LIBOPENAL)
         MACRO_BOOL_TO_01(PORTAUDIO_FOUND  HAVE_LIBPORTAUDIO)
         MACRO_BOOL_TO_01(PULSEAUDIO_FOUND HAVE_LIBPULSEAUDIO)
@@ -83,6 +85,17 @@ if(ENABLE_MEDIAPLAYER)
         else()
 
             message(STATUS "MediaPlayer will be compiled with LibASS support    : no")
+
+        endif()
+
+        if(uchardet_FOUND)
+
+            set(MEDIAPLAYER_LIBRARIES ${MEDIAPLAYER_LIBRARIES} uchardet)
+            message(STATUS "MediaPlayer will be compiled with UCharDet support  : yes")
+
+        else()
+
+            message(STATUS "MediaPlayer will be compiled with UCharDet support  : no")
 
         endif()
 
@@ -172,6 +185,12 @@ if(ENABLE_MEDIAPLAYER)
         endif()
 
         set(MEDIAPLAYER_DEFINITIONS ${MEDIAPLAYER_DEFINITIONS} -DQTAV_HAVE_LIBASS=${HAVE_LIBASS})
+
+        if (uchardet_FOUND)
+
+            set(MEDIAPLAYER_DEFINITIONS ${MEDIAPLAYER_DEFINITIONS} -DLINK_UCHARDET)
+
+        endif()
 
         if(OPENAL_FOUND)
 
