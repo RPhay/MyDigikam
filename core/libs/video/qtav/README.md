@@ -27,6 +27,6 @@ Code review with plenty of fixes and improvements:
 TODO:
 
 - Use cmake to find DirectX dependencies (Windows only).
-- Use cmake to find CUDA dependency.
-- Use cmake to find OpenSL dependency.
+- Use cmake to find CUDA Toolkit dependency.
+- Use cmake to find OpenSL-ES dependency.
 - Port to FFMPEG 5.
