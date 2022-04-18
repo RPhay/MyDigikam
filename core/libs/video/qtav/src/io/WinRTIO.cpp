@@ -20,19 +20,26 @@
  *
  * ============================================================ */
 
-#include "MediaIO.h"
 #include "private/MediaIO_p.h"
-#include "private/mkid.h"
-#include "private/factory.h"
+
+// Windows includes
 
 #include <shcore.h>
 #include <wrl.h>
 #include <windows.foundation.h>
 #include <Windows.ApplicationModel.activation.h>
-#include <QCoreApplication> //required by qfunctions_winrt.h
+
+// Qt includes
+
+#include <QCoreApplication> // required by qfunctions_winrt.h
 #include <qfunctions_winrt.h>
 
+// Local includes
+
+#include "private/mkid.h"
+#include "private/factory.h"
 #include "digikam_debug.h"
+
 using namespace Microsoft::WRL;
 using namespace Microsoft::WRL::Wrappers;
 using namespace ABI::Windows::Storage;
@@ -54,15 +61,23 @@ using namespace ABI::Windows::Foundation::Collections;
 
 namespace QtAV
 {
+
 static const MediaIOId MediaIOId_WinRT = mkid::id32base36_5<'W','i','n','R','T'>::value;
 static const char kName[] = "WinRT";
 class WinRTIOPrivate;
+
 class WinRTIO : public MediaIO
 {
     DPTR_DECLARE_PRIVATE(WinRTIO)
+
 public:
+
     WinRTIO();
-    QString name() const Q_DECL_OVERRIDE { return QLatin1String(kName);}
+    QString name() const Q_DECL_OVERRIDE
+    {
+        return QLatin1String(kName);
+    }
+
     const QStringList& protocols() const Q_DECL_OVERRIDE
     {
         static QStringList p = QStringList() << name().toLower();
@@ -75,106 +90,138 @@ public:
     virtual qint64 write(const char *data, qint64 maxSize) Q_DECL_OVERRIDE;
     virtual bool seek(qint64 offset, int from) Q_DECL_OVERRIDE;
     virtual qint64 position() const Q_DECL_OVERRIDE;
+
     /*!
      * \brief size
      * \return <=0 if not support
      */
     virtual qint64 size() const Q_DECL_OVERRIDE;
+
 protected:
+
     WinRTIO(WinRTIOPrivate &d);
     void onUrlChanged() Q_DECL_OVERRIDE;
 
 private:
+
     // item available until this function finished. If app is launch from association, addRef there
+
     void openFromStorage(IStorageItem* item);
+
     // only special locations is supported, but seems better than qfile if not use file picker
     // qfile can not open those paths in standard paths directly
+
     void openFromPath(const QString& path);
     void open(ComPtr<IStorageFile>& file);
 };
+
 typedef WinRTIO MediaIOWinRT;
 FACTORY_REGISTER(MediaIO, WinRT, kName)
 
 class WinRTIOPrivate : public MediaIOPrivate
 {
 public:
+
     WinRTIOPrivate()
         : MediaIOPrivate()
         , pos(0)
-    {}
+    {
+    }
 
     ComPtr<IStorageItem> item;
     ComPtr<IStream> stream;
     qint64 pos;
 };
 
-WinRTIO::WinRTIO() : MediaIO(*new WinRTIOPrivate()) {}
-WinRTIO::WinRTIO(WinRTIOPrivate &d) : MediaIO(d) {}
+WinRTIO::WinRTIO()                  : MediaIO(*new WinRTIOPrivate()) {}
+WinRTIO::WinRTIO(WinRTIOPrivate &d) : MediaIO(d)                     {}
 
 bool WinRTIO::isSeekable() const
 {
     DPTR_D(const WinRTIO);
+
     return !!d.stream;
 }
 
 bool WinRTIO::isWritable() const
 {
     DPTR_D(const WinRTIO);
+
     return !!d.stream;
 }
 
 //http://www.codeproject.com/Tips/489450/Creating-Custom-FFmpeg-IO-Context
+
 qint64 WinRTIO::read(char *data, qint64 maxSize)
 {
     DPTR_D(WinRTIO);
+
     if (!d.stream)
         return 0;
+
     ULONG bytesRead = 0;
+
     // TODO: -1 0r 0 if error?
+
     COM_ENSURE(d.stream->Read(data, maxSize, &bytesRead), -1);
     d.pos += bytesRead;
+
     return bytesRead;
 }
 
 qint64 WinRTIO::write(const char *data, qint64 maxSize)
 {
     DPTR_D(WinRTIO);
+
     if (!d.stream)
         return 0;
+
     ULONG bytesWritten;
+
     // TODO: -1 0r 0 if error?
+
     COM_ENSURE(d.stream->Write(data, maxSize, &bytesWritten), -1);
     d.pos += bytesWritten;
+
     return bytesWritten;
 }
 
 bool WinRTIO::seek(qint64 offset, int from)
 {
     DPTR_D(WinRTIO);
+
     if (!d.stream)
         return false;
+
     LARGE_INTEGER in;
     in.QuadPart = offset;
     ULARGE_INTEGER out = { 0 };
-    //dwOrigin: has the same value as ffmpeg. STREAM_SEEK_SET, STREAM_SEEK_CUR, STREAM_SEEK_END
+
+    // dwOrigin: has the same value as ffmpeg. STREAM_SEEK_SET, STREAM_SEEK_CUR, STREAM_SEEK_END
+
     COM_ENSURE(d.stream->Seek(in, from, &out), false);
     d.pos = out.QuadPart;
+
     return true;
 }
 
 qint64 WinRTIO::position() const
 {
     DPTR_D(const WinRTIO);
+
     return d.pos;
 }
 
 qint64 WinRTIO::size() const
 {
     DPTR_D(const WinRTIO);
+
     if (!d.stream)
         return 0;
+
     STATSTG st;
     COM_ENSURE(d.stream->Stat(&st, STATFLAG_DEFAULT), 0);
+
     return st.cbSize.QuadPart;
 }
 
@@ -182,16 +229,23 @@ void WinRTIO::onUrlChanged()
 {
     d_func().pos = 0;
     qCDebug(DIGIKAM_QTAV_LOG) << "onUrlChanged: " << url();
+
     // winrt:@ptr_address:path
     // winrt:path
-    if (url().startsWith(name().append(QStringLiteral(":@")), Qt::CaseInsensitive)) {
+
+    if      (url().startsWith(name().append(QStringLiteral(":@")), Qt::CaseInsensitive))
+    {
         const int addr_begin = name().size() + 2;
         const int addr_end = url().indexOf(QLatin1Char(':'), addr_begin);
         QString addr(url().mid(addr_begin, addr_end - addr_begin));
         openFromStorage((IStorageItem*)(qptrdiff)addr.toULongLong());
-    } else if (url().startsWith(name().append(QStringLiteral(":")), Qt::CaseInsensitive)) {
+    }
+    else if (url().startsWith(name().append(QStringLiteral(":")), Qt::CaseInsensitive))
+    {
         openFromPath(url().mid(name().size() + 1));
-    } else {
+    }
+    else
+    {
         return;
     }
 }
@@ -216,12 +270,15 @@ void WinRTIO::openFromPath(const QString &path)
 {
     ComPtr<IStorageFileStatics> fileFactory;
     COM_ENSURE(RoGetActivationFactory(HString::MakeReference(RuntimeClass_Windows_Storage_StorageFile).Get(), IID_PPV_ARGS(&fileFactory)));
+
     // 2 bytes for utf-16, 4 bytes for ucs-4(unix)
+
     wchar_t *wp = new wchar_t[path.size()*4];
     const int len = path.toWCharArray(wp);
     HString p;
     p.Set(wp, len);
     delete [] wp;
+
     ComPtr<IAsyncOperation<StorageFile*>> op;
     COM_ENSURE(fileFactory->GetFileFromPathAsync(p.Get(), &op));
     ComPtr<IStorageFile> file;
@@ -235,7 +292,10 @@ void WinRTIO::open(ComPtr<IStorageFile> &file)
     COM_ENSURE(file->OpenAsync(accessMode() == Read ? FileAccessMode_Read : FileAccessMode_ReadWrite, &op));
     ComPtr<IRandomAccessStream> stream;
     COM_ENSURE(QWinRTFunctions::await(op, stream.GetAddressOf()));
+
     // Convert asynchronous IRandomAccessStream to synchronous IStream. This API requires shcore.h and shcore.lib
+
     COM_ENSURE(CreateStreamOverRandomAccessStream(reinterpret_cast<IUnknown*>(stream.Get()), IID_PPV_ARGS(&d_func().stream)));
 }
+
 } // namespace QtAV

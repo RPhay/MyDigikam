@@ -20,52 +20,70 @@
  *
  * ============================================================ */
 
-#include "MediaIO.h"
 #include "private/MediaIO_p.h"
-#include "private/mkid.h"
-#include "private/factory.h"
+
+// Qt includes
+
 #include <QFile>
 #include <QGuiApplication>
 #include <QtAndroidExtras>
-#include "digikam_debug.h"
+
+// Local includes
+
+#include "private/mkid.h"
+#include "private/factory.h"
 #include "jmi/jmi.h"
+#include "digikam_debug.h"
 
 // TODO: how to get filename and find subtitles?
-//http://stackoverflow.com/questions/5657411/android-getting-a-file-uri-from-a-content-uri
-//http://stackoverflow.com/questions/19834842/android-gallery-on-kitkat-returns-different-uri-for-intent-action-get-content/20559418#20559418
-//http://stackoverflow.com/questions/22029815/how-to-use-the-qt-jni-class-qandroidjniobject
+
+// http://stackoverflow.com/questions/5657411/android-getting-a-file-uri-from-a-content-uri
+// http://stackoverflow.com/questions/19834842/android-gallery-on-kitkat-returns-different-uri-for-intent-action-get-content/20559418#20559418
+// http://stackoverflow.com/questions/22029815/how-to-use-the-qt-jni-class-qandroidjniobject
 
 namespace QtAV
 {
+
 static const MediaIOId MediaIOId_Android = mkid::id32base36_6<'A','D','r','o','i', 'd'>::value;
-static const char kName[] = "Android";
+static const char kName[]                = "Android";
 class AndroidIOPrivate;
+
 class AndroidIO : public MediaIO
 {
     DPTR_DECLARE_PRIVATE(AndroidIO)
+
 public:
+
     AndroidIO();
+
     QString name() const Q_DECL_OVERRIDE { return QLatin1String(kName);}
+
     const QStringList& protocols() const Q_DECL_OVERRIDE
     {
         static QStringList p = QStringList() << QStringLiteral("content") << QStringLiteral("android.resource"); // "file:" is supported too but we use QFile
         return p;
     }
+
     virtual bool isSeekable() const Q_DECL_OVERRIDE;
     virtual qint64 read(char *data, qint64 maxSize) Q_DECL_OVERRIDE;
     virtual bool seek(qint64 offset, int from) Q_DECL_OVERRIDE;
     virtual qint64 position() const Q_DECL_OVERRIDE;
+
     /*!
      * \brief size
      * \return <=0 if not support
      */
     virtual qint64 size() const Q_DECL_OVERRIDE { return qt_file.size();}
+
 protected:
+
     AndroidIO(AndroidIOPrivate &d);
     void onUrlChanged() Q_DECL_OVERRIDE;
 
 private:
+
     QFile qt_file;
+
     // if use Java.io.InputStream, record pos
 };
 
@@ -90,10 +108,11 @@ qint64 AndroidIO::read(char *data, qint64 maxSize)
 
 bool AndroidIO::seek(qint64 offset, int from)
 {
-    if (from == SEEK_END)
+    if      (from == SEEK_END)
         offset = qt_file.size() - offset;
     else if (from == SEEK_CUR)
         offset = qt_file.pos() + offset;
+
     return qt_file.seek(offset);
 }
 
@@ -105,45 +124,70 @@ qint64 AndroidIO::position() const
 void AndroidIO::onUrlChanged()
 {
     qt_file.close();
+
     if (url().isEmpty())
         return;
-    struct Application final: jmi::ClassTag { static std::string name() {return "android/app/Application";}};
+
+    struct Application final: jmi::ClassTag { static std::string name() { return "android/app/Application"; } };
+
     jmi::JObject<Application> app_ctx(jmi::android::application());
 
-    struct ContentResolver final: jmi::ClassTag { static std::string name() { return "android/content/ContentResolver";}};
-    struct GetContentResolver final: jmi::MethodTag { static const char* name() {return "getContentResolver";}};
+    struct ContentResolver final: jmi::ClassTag { static std::string name() { return "android/content/ContentResolver";} };
+
+    struct GetContentResolver final: jmi::MethodTag { static const char* name() {return "getContentResolver";} };
+
     jmi::JObject<ContentResolver> cr = app_ctx.call<jmi::JObject<ContentResolver>, GetContentResolver>();
-    if (!cr.error().empty()) {
+
+    if (!cr.error().empty())
+    {
         qCWarning(DIGIKAM_QTAV_LOG_WARN) << QString::asprintf("getContentResolver error: %s", cr.error().data());
         return;
     }
-    struct Uri final: jmi::ClassTag { static std::string name() { return "android/net/Uri";}};
-    struct Parse final: jmi::MethodTag { static const char* name() {return "parse";}};
+
+    struct Uri final: jmi::ClassTag { static std::string name() { return "android/net/Uri";} };
+
+    struct Parse final: jmi::MethodTag { static const char* name() {return "parse";} };
+
     jmi::JObject<Uri> uri = jmi::JObject<Uri>::callStatic<jmi::JObject<Uri>, Parse>(url().toUtf8().constData()); // move?
+
     // openInputStream?
-    struct ParcelFileDescriptor final: jmi::ClassTag { static std::string name() { return "android/os/ParcelFileDescriptor";}};
+
+    struct ParcelFileDescriptor final: jmi::ClassTag { static std::string name() { return "android/os/ParcelFileDescriptor";} };
+
     // AssetFileDescriptor supported schemes: content, android.resource, file
     // ParcelFileDescriptor supported schemes: content, file
+
 #if 1
-    struct AssetFileDescriptor final: jmi::ClassTag { static std::string name() { return "android/content/res/AssetFileDescriptor";}};
-    struct OpenAssetFileDescriptor final: jmi::MethodTag { static const char* name() {return "openAssetFileDescriptor";}};
+
+    struct AssetFileDescriptor final: jmi::ClassTag { static std::string name() { return "android/content/res/AssetFileDescriptor";} };
+    struct OpenAssetFileDescriptor final: jmi::MethodTag { static const char* name() {return "openAssetFileDescriptor";} };
     jmi::JObject<AssetFileDescriptor> afd = cr.call<jmi::JObject<AssetFileDescriptor>, OpenAssetFileDescriptor>(std::move(uri), "r"); // TODO: rw
-    if (!afd.error().empty()) {
+
+    if (!afd.error().empty())
+    {
         qCWarning(DIGIKAM_QTAV_LOG_WARN) << QString::asprintf("openAssetFileDescriptor error: %s", afd.error().data());
         return;
     }
-    struct GetParcelFileDescriptor final: jmi::MethodTag { static const char* name() {return "getParcelFileDescriptor";}};
+
+    struct GetParcelFileDescriptor final: jmi::MethodTag { static const char* name() {return "getParcelFileDescriptor";} };
     jmi::JObject<ParcelFileDescriptor> pfd = afd.call<jmi::JObject<ParcelFileDescriptor>, GetParcelFileDescriptor>();
+
 #else
-    struct OpenFileDescriptor final: jmi::MethodTag { static const char* name() {return "openFileDescriptor";}};
+
+    struct OpenFileDescriptor final: jmi::MethodTag { static const char* name() {return "openFileDescriptor";} };
     jmi::JObject<ParcelFileDescriptor> pfd = cr.call<jmi::JObject<ParcelFileDescriptor>, OpenFileDescriptor>(std::move(uri), "r");
+
 #endif
-    if (!pfd.error().empty()) {
+
+    if (!pfd.error().empty())
+    {
         qCWarning(DIGIKAM_QTAV_LOG_WARN) << QString::asprintf("get ParcelFileDescriptor error: %s", pfd.error().data());
         return;
     }
-    struct DetachFd final: jmi::MethodTag { static const char* name() {return "detachFd";}};
+
+    struct DetachFd final: jmi::MethodTag { static const char* name() {return "detachFd";} };
     int fd = pfd.call<int,DetachFd>();
     qt_file.open(fd, QIODevice::ReadOnly);
 }
+
 } // namespace QtAV

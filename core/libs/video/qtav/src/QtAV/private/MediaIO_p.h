@@ -23,10 +23,17 @@
 #ifndef QTAV_MEDIAIO_P_H
 #define QTAV_MEDIAIO_P_H
 
+#include "MediaIO.h"
+
+// Qt includes
+
+#include <QString>
+#include <QFile>
+
+// Local includes
+
 #include "QtAV_Global.h"
 #include "private/AVCompat.h"
-#include <QString>
-#include "MediaIO.h"
 
 namespace QtAV
 {
@@ -48,6 +55,73 @@ public:
     int                 buffer_size;
     MediaIO::AccessMode mode;
     QString             url;
+};
+
+// -------------------------------------------------------------------
+
+class QIODeviceIOPrivate;
+
+class Q_AV_PRIVATE_EXPORT QIODeviceIO : public MediaIO
+{
+    Q_OBJECT
+    Q_PROPERTY(QIODevice* device READ device WRITE setDevice NOTIFY deviceChanged)
+    DPTR_DECLARE_PRIVATE(QIODeviceIO)
+
+public:
+
+    QIODeviceIO();
+    virtual QString name() const Q_DECL_OVERRIDE;
+
+    // MUST open/close outside
+
+    void setDevice(QIODevice *dev); // set private in QFileIO etc
+    QIODevice* device() const;
+
+    virtual bool isSeekable() const Q_DECL_OVERRIDE;
+    virtual bool isWritable() const Q_DECL_OVERRIDE;
+    virtual qint64 read(char *data, qint64 maxSize) Q_DECL_OVERRIDE;
+    virtual qint64 write(const char *data, qint64 maxSize) Q_DECL_OVERRIDE;
+    virtual bool seek(qint64 offset, int from) Q_DECL_OVERRIDE;
+    virtual qint64 position() const Q_DECL_OVERRIDE;
+
+    /*!
+     * \brief size
+     * \return <=0 if not support
+     */
+    virtual qint64 size() const Q_DECL_OVERRIDE;
+
+Q_SIGNALS:
+
+    void deviceChanged();
+
+protected:
+
+    QIODeviceIO(QIODeviceIOPrivate &d);
+};
+
+// -------------------------------------------------------------------
+
+class QFileIOPrivate;
+
+class Q_AV_PRIVATE_EXPORT QFileIO Q_DECL_FINAL: public QIODeviceIO
+{
+    DPTR_DECLARE_PRIVATE(QFileIO)
+
+public:
+
+    QFileIO();
+
+    QString name() const Q_DECL_OVERRIDE;
+
+    const QStringList& protocols() const Q_DECL_OVERRIDE;
+
+protected:
+
+    void onUrlChanged() Q_DECL_OVERRIDE;
+
+private:
+
+    using QIODeviceIO::setDevice;
 };
 
 } // namespace QtAV

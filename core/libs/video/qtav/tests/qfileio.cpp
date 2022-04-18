@@ -23,12 +23,10 @@
 // Qt includes
 
 #include <QFile>
-#include <QtDebug>
 #include <QApplication>
 
 // Local includes
 
-#include "MediaIO.h"
 #include "private/MediaIO_p.h"
 #include "private/mkid.h"
 #include "private/factory.h"

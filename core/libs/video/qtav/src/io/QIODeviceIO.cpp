@@ -20,12 +20,7 @@
  *
  * ============================================================ */
 
-#include "MediaIO.h"
 #include "private/MediaIO_p.h"
-
-// Qt includes
-
-#include <QFile>
 
 // Local includes
 
@@ -35,46 +30,6 @@
 
 namespace QtAV
 {
-
-class QIODeviceIOPrivate;
-
-class QIODeviceIO : public MediaIO
-{
-    Q_OBJECT
-    Q_PROPERTY(QIODevice* device READ device WRITE setDevice NOTIFY deviceChanged)
-    DPTR_DECLARE_PRIVATE(QIODeviceIO)
-
-public:
-
-    QIODeviceIO();
-    virtual QString name() const Q_DECL_OVERRIDE;
-
-    // MUST open/close outside
-
-    void setDevice(QIODevice *dev); // set private in QFileIO etc
-    QIODevice* device() const;
-
-    virtual bool isSeekable() const Q_DECL_OVERRIDE;
-    virtual bool isWritable() const Q_DECL_OVERRIDE;
-    virtual qint64 read(char *data, qint64 maxSize) Q_DECL_OVERRIDE;
-    virtual qint64 write(const char *data, qint64 maxSize) Q_DECL_OVERRIDE;
-    virtual bool seek(qint64 offset, int from) Q_DECL_OVERRIDE;
-    virtual qint64 position() const Q_DECL_OVERRIDE;
-
-    /*!
-     * \brief size
-     * \return <=0 if not support
-     */
-    virtual qint64 size() const Q_DECL_OVERRIDE;
-
-Q_SIGNALS:
-
-    void deviceChanged();
-
-protected:
-
-    QIODeviceIO(QIODeviceIOPrivate &d);
-};
 
 typedef QIODeviceIO MediaIOQIODevice;
 static const MediaIOId MediaIOId_QIODevice = mkid::id32base36_6<'Q','I','O','D','e','v'>::value;
@@ -94,9 +49,9 @@ public:
     QIODevice *dev;
 };
 
-QIODeviceIO::QIODeviceIO() : MediaIO(*new QIODeviceIOPrivate()) {}
-QIODeviceIO::QIODeviceIO(QIODeviceIOPrivate &d) : MediaIO(d) {}
-QString QIODeviceIO::name() const { return QLatin1String(kQIODevName);}
+QIODeviceIO::QIODeviceIO() : MediaIO(*new QIODeviceIOPrivate()) {                                    }
+QIODeviceIO::QIODeviceIO(QIODeviceIOPrivate &d) : MediaIO(d)    {                                    }
+QString QIODeviceIO::name() const                               { return QLatin1String(kQIODevName); }
 
 void QIODeviceIO::setDevice(QIODevice *dev)
 {
@@ -188,49 +143,35 @@ qint64 QIODeviceIO::size() const
     return d.dev->size(); // sequential device returns bytesAvailable()
 }
 
+// -------------------------------------------------------------------
+
 // qrc support
 
 static const char kQFileName[] = "QFile";
 
-class QFileIOPrivate;
-
-class QFileIO Q_DECL_FINAL: public QIODeviceIO
+QString QFileIO::name() const
 {
-    DPTR_DECLARE_PRIVATE(QFileIO)
+    return QLatin1String(kQFileName);
+}
 
-public:
-
-    QFileIO();
-
-    QString name() const Q_DECL_OVERRIDE { return QLatin1String(kQFileName);}
-
-    const QStringList& protocols() const Q_DECL_OVERRIDE
-    {
-        static QStringList p = QStringList() << QStringLiteral("") << QStringLiteral("qrc") << QStringLiteral("qfile")
+const QStringList& QFileIO::protocols() const
+{
+    static QStringList p = QStringList() << QStringLiteral("") << QStringLiteral("qrc") << QStringLiteral("qfile")
 
 #ifdef Q_OS_ANDROID
 
-                                             << QStringLiteral("assets")
+                                         << QStringLiteral("assets")
 
 #endif
 
 #ifdef Q_OS_IOS
 
-                                             << QStringLiteral("assets-library")
+                                         << QStringLiteral("assets-library")
 
 #endif
                                                 ;
-        return p;
-    }
-
-protected:
-
-    void onUrlChanged() Q_DECL_OVERRIDE;
-
-private:
-
-    using QIODeviceIO::setDevice;
-};
+    return p;
+}
 
 typedef QFileIO MediaIOQFile;
 
@@ -331,5 +272,3 @@ void QFileIO::onUrlChanged()
 }
 
 } // namespace QtAV
-
-#include "QIODeviceIO.moc"
