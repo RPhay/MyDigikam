@@ -377,7 +377,7 @@ public:
         if (is_1st)
         {
             is_1st = false;
-            fprintf(stderr, "capi::version: %s\n", ::capi::version::name);
+            fprintf(stderr, "digikam.qtav: capi::version: %s\n", ::capi::version::name);
             fflush(0);
         }
 
