@@ -99,6 +99,20 @@ set(libqtav_SRCS
     ${CMAKE_CURRENT_SOURCE_DIR}/widgets/WidgetRenderer.cpp
 )
 
+if(SSE4_1_FOUND)
+
+    set(libqtav_SRCS ${libqtav_SRCS}
+        ${CMAKE_CURRENT_SOURCE_DIR}/src/utils/CopyFrame_SSE4.cpp
+    )
+
+elseif(SSE2_FOUND)
+
+    set(libqtav_SRCS ${libqtav_SRCS}
+        ${CMAKE_CURRENT_SOURCE_DIR}/src/utils/CopyFrame_SSE2.cpp
+    )
+
+endif()
+
 qt5_add_resources(libqtav_SRCS ${CMAKE_CURRENT_SOURCE_DIR}/src/shaders/shaders.qrc)
 
 file(GLOB QTAV_HEADERS         ${CMAKE_CURRENT_SOURCE_DIR}/src/QtAV/*.h)

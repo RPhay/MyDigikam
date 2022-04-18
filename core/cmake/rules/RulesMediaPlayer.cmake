@@ -26,6 +26,9 @@ find_package(PulseAudio)
 find_package(VAAPI)
 find_package(uchardet)
 
+include(MacroSSE)
+FindSSE()
+
 if(ENABLE_MEDIAPLAYER)
 
     message(STATUS "FFMpeg AVCodec    : ${AVCODEC_FOUND}")
@@ -152,6 +155,7 @@ if(ENABLE_MEDIAPLAYER)
                 set(MEDIAPLAYER_LIBRARIES ${MEDIAPLAYER_LIBRARIES} Qt${QT_VERSION_MAJOR}::OpenGLWidgets)
 
             endif()
+
             message(STATUS "MediaPlayer will be compiled with OpenGL support    : yes")
 
         else()
@@ -177,6 +181,22 @@ if(ENABLE_MEDIAPLAYER)
 
         # This one is never used in QtAV
         #set(MEDIAPLAYER_DEFINITIONS ${MEDIAPLAYER_DEFINITIONS} -DQTAV_HAVE_X11=${HAVE_LIBX11})
+
+        if(SSE4_1_FOUND)
+
+            set(MEDIAPLAYER_DEFINITIONS ${MEDIAPLAYER_DEFINITIONS} -DQTAV_HAVE_SSE4_1=1)
+            set(MEDIAPLAYER_DEFINITIONS ${MEDIAPLAYER_DEFINITIONS} -DQTAV_HAVE_SSE2=0)
+
+            message(STATUS "MediaPlayer will be compiled with SSE4.1 support    : yes")
+
+        elseif(SSE2_FOUND)
+
+            set(MEDIAPLAYER_DEFINITIONS ${MEDIAPLAYER_DEFINITIONS} -DQTAV_HAVE_SSE4_1=0)
+            set(MEDIAPLAYER_DEFINITIONS ${MEDIAPLAYER_DEFINITIONS} -DQTAV_HAVE_SSE2=1)
+
+            message(STATUS "MediaPlayer will be compiled with SSE2 support      : yes")
+
+        endif()
 
         if(ASS_FOUND)
 

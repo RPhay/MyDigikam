@@ -14,6 +14,7 @@ Code review with plenty of fixes and improvements:
 - Use qCDebug()/qCWarning categories with digiKam debug spaces. Drop Logger class.
 - Use KDE i18n() instead tr().
 - Use cmake to find libuchardet dependency.
+- Add SSE2 and SSE4.1 support with CMake.
 * Fix header guards.
 * Fix includes rules/order from Qt and local.
 * Fix coding style.
