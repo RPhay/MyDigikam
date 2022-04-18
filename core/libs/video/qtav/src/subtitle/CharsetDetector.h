@@ -20,26 +20,33 @@
  *
  * ============================================================ */
 
-#ifndef QTAV_UCHARDET_H
-#define QTAV_UCHARDET_H
+#ifndef QTAV_CHAR_SET_DETECTOR_H
+#define QTAV_CHAR_SET_DETECTOR_H
+
+// Qt includes
 
 #include <QByteArray>
 
 class CharsetDetector
 {
 public:
+
     CharsetDetector();
     ~CharsetDetector();
+
     bool isAvailable() const;
+
     /*!
      * \brief detect
      * \param data text to parse
      * \return charset name
      */
     QByteArray detect(const QByteArray& data);
+
 private:
+
     class Private;
-    Private *priv;
+    Private* priv;
 };
 
-#endif // QTAV_UCHARDET_H
+#endif // QTAV_CHAR_SET_DETECTOR_H

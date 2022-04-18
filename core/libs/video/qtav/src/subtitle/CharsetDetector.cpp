@@ -21,15 +21,17 @@
  * ============================================================ */
 
 #include "CharsetDetector.h"
+
 #ifdef LINK_UCHARDET
-#include <uchardet/uchardet.h>
-#define HAVE_UCHARDET
+#   include <uchardet/uchardet.h>
+#   define HAVE_UCHARDET
 #else
-#ifdef BUILD_UCHARDET
-#include "uchardet.h"
-#define HAVE_UCHARDET
+#   ifdef BUILD_UCHARDET
+#       include "uchardet.h"
+#       define HAVE_UCHARDET
+#   endif
 #endif
-#endif //LINK_UCHARDET
+
 #ifndef HAVE_UCHARDET
 typedef struct uchardet* uchardet_t;
 #endif
@@ -37,35 +39,53 @@ typedef struct uchardet* uchardet_t;
 class CharsetDetector::Private
 {
 public:
+
     Private()
         : m_det(NULL)
     {
+
 #ifdef HAVE_UCHARDET
         m_det = uchardet_new();
 #endif
+
     }
-    ~Private() {
+
+    ~Private()
+    {
         if (!m_det)
             return;
+
 #ifdef HAVE_UCHARDET
         uchardet_delete(m_det);
 #endif
+
         m_det = NULL;
     }
-    QByteArray detect(const QByteArray& data) {
+
+    QByteArray detect(const QByteArray& data)
+    {
+
 #ifdef HAVE_UCHARDET
+
         if (!m_det)
             return QByteArray();
+
         if (uchardet_handle_data(m_det, data.constData(), data.size()) != 0)
             return QByteArray();
+
         uchardet_data_end(m_det);
         QByteArray cs(uchardet_get_charset(m_det));
         uchardet_reset(m_det);
+
         return cs.trimmed();
+
 #else
+
         Q_UNUSED(data);
         return QByteArray();
+
 #endif
+
     }
 
     uchardet_t m_det;
@@ -78,7 +98,8 @@ CharsetDetector::CharsetDetector()
 
 CharsetDetector::~CharsetDetector()
 {
-    if (priv) {
+    if (priv)
+    {
         delete priv;
         priv = 0;
     }
@@ -89,7 +110,7 @@ bool CharsetDetector::isAvailable() const
     return !!priv->m_det;
 }
 
-QByteArray CharsetDetector::detect(const QByteArray &data)
+QByteArray CharsetDetector::detect(const QByteArray& data)
 {
     return priv->detect(data);
 }

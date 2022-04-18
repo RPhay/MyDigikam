@@ -20,18 +20,21 @@
  *
  * ============================================================ */
 
-#ifndef QTAV_PLAINTEXT_H
-#define QTAV_PLAINTEXT_H
+#ifndef QTAV_PLAIN_TEXT_H
+#define QTAV_PLAIN_TEXT_H
 
 #include <QString>
 
 namespace QtAV
 {
-namespace PlainText {
+
+namespace PlainText
+{
 
 QString fromAss(const char* ass);
 
-} //namespace PlainText
+} // namespace PlainText
 
 } // namespace QtAV
-#endif // QTAV_PLAINTEXT_H
+
+#endif // QTAV_PLAIN_TEXT_H

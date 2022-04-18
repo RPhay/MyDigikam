@@ -21,8 +21,14 @@
  * ============================================================ */
 
 #include "private/SubtitleProcessor.h"
-#include "private/factory.h"
+
+// Qt includes
+
 #include <QFile>
+
+// Local includes
+
+#include "private/factory.h"
 #include "digikam_debug.h"
 
 namespace QtAV
@@ -31,18 +37,26 @@ namespace QtAV
 FACTORY_DEFINE(SubtitleProcessor)
 
 // can not declare in class member
+
 extern bool RegisterSubtitleProcessorFFmpeg_Man();
 extern bool RegisterSubtitleProcessorLibASS_Man();
+
 void SubtitleProcessor::registerAll()
 {
     static bool done = false;
+
     if (done)
         return;
+
     done = true;
     RegisterSubtitleProcessorFFmpeg_Man();
+
 #if QTAV_HAVE(LIBASS)
+
     RegisterSubtitleProcessorLibASS_Man();
+
 #endif
+
 }
 
 SubtitleProcessor::SubtitleProcessor()
@@ -54,12 +68,16 @@ SubtitleProcessor::SubtitleProcessor()
 bool SubtitleProcessor::process(const QString &path)
 {
     QFile f(path);
-    if (!f.open(QIODevice::ReadOnly)) {
+
+    if (!f.open(QIODevice::ReadOnly))
+    {
         qCWarning(DIGIKAM_QTAV_LOG_WARN) << "open subtitle file error: " << f.errorString();
         return false;
     }
+
     bool ok = process(&f);
     f.close();
+
     return ok;
 }
 
@@ -67,6 +85,7 @@ QImage SubtitleProcessor::getImage(qreal pts, QRect *boundingRect)
 {
     Q_UNUSED(pts)
     Q_UNUSED(boundingRect)
+
     return QImage();
 }
 
@@ -74,6 +93,7 @@ SubImageSet SubtitleProcessor::getSubImages(qreal pts, QRect *boundingRect)
 {
     Q_UNUSED(pts);
     Q_UNUSED(boundingRect);
+
     return SubImageSet();
 }
 
@@ -81,6 +101,7 @@ void SubtitleProcessor::setFrameSize(int width, int height)
 {
     if (width == m_width && height == m_height)
         return;
+
     m_width = width;
     m_height = height;
     onFrameSizeChanged(m_width, m_height);
