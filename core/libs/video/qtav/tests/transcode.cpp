@@ -23,7 +23,6 @@
 // Qt includes
 
 #include <QCoreApplication>
-#include <QtDebug>
 #include <QDir>
 #include <QElapsedTimer>
 #include <QStringList>
@@ -33,6 +32,7 @@
 #include "QtAV.h"
 #include "VideoEncoder.h"
 #include "AVMuxer.h"
+#include "digikam_debug.h"
 
 using namespace QtAV;
 
@@ -91,13 +91,13 @@ int main(int argc, char *argv[])
         decopt[decName] = subopt;
     }
 
-    qDebug() << decopt;
+    qCDebug(DIGIKAM_TESTS_LOG) << decopt;
 
     VideoDecoder *dec = VideoDecoder::create(decName.toLatin1().constData());
 
     if (!dec)
     {
-        qWarning("Can not find decoder: %s", decName.toUtf8().constData());
+        qCCritical(DIGIKAM_TESTS_LOG) << QString::asprintf("Can not find decoder: %s", decName.toUtf8().constData());
         return 1;
     }
 
@@ -109,7 +109,7 @@ int main(int argc, char *argv[])
 
     if (!demux.load())
     {
-        qWarning("Failed to load file: %s", file.toUtf8().constData());
+        qCCritical(DIGIKAM_TESTS_LOG) << QString::asprintf("Failed to load file: %s", file.toUtf8().constData());
         return 1;
     }
 
@@ -166,7 +166,7 @@ int main(int argc, char *argv[])
 
                 if (!venc->open())
                 {
-                    qWarning("failed to open encoder");
+                    qCCritical(DIGIKAM_TESTS_LOG) << QString::asprintf("failed to open encoder");
                     return 1;
                 }
             }
@@ -184,7 +184,7 @@ int main(int argc, char *argv[])
 
                 if (!mux.open())
                 {
-                    qWarning("failed to open muxer");
+                    qCCritical(DIGIKAM_TESTS_LOG) << QString::asprintf("failed to open muxer");
                     return 1;
                 }
 
@@ -214,14 +214,14 @@ int main(int argc, char *argv[])
 
     while (venc->encode())
     {
-        qDebug("encode delayed frames...\r");
+        qCDebug(DIGIKAM_TESTS_LOG) << QString::asprintf("encode delayed frames...\r");
         Packet pkt(venc->encoded());
         mux.writeVideo(pkt);
     }
 
     qint64 elapsed = timer.elapsed();
     int msec = elapsed/1000LL+1;
-    qDebug("decoded frames: %d, time: %d, average speed: %d", count, msec, count/msec);
+    qCDebug(DIGIKAM_TESTS_LOG) << QString::asprintf("decoded frames: %d, time: %d, average speed: %d", count, msec, count/msec);
     venc->close();
     mux.close();
 

@@ -23,7 +23,6 @@
 // Qt includes
 
 #include <QCoreApplication>
-#include <QtDebug>
 #include <QDateTime>
 #include <QQueue>
 #include <QStringList>
@@ -33,6 +32,7 @@
 #include "AVDemuxer.h"
 #include "VideoDecoder.h"
 #include "Packet.h"
+#include "digikam_debug.h"
 
 using namespace QtAV;
 
@@ -75,7 +75,7 @@ int main(int argc, char *argv[])
         decopt[decName] = subopt;
     }
 
-    qDebug() << decopt;
+    qCDebug(DIGIKAM_TESTS_LOG) << decopt;
 
     VideoDecoder *dec = VideoDecoder::create(decName.toLatin1().constData());
 
@@ -93,7 +93,7 @@ int main(int argc, char *argv[])
 
     if (!demux.load())
     {
-        qWarning("Failed to load file: %s", file.toUtf8().constData());
+        qCCritical(DIGIKAM_TESTS_LOG) << QString::asprintf("Failed to load file: %s", file.toUtf8().constData());
         return 1;
     }
 

@@ -20,8 +20,8 @@
  *
  * ============================================================ */
 
-#ifndef CUDA_API_H
-#define CUDA_API_H
+#ifndef QTAV_CUDA_API_H
+#define QTAV_CUDA_API_H
 
 #include "dllapi/nv_inc.h"
 
@@ -166,4 +166,4 @@ public:
     }
 };
 
-#endif // CUDA_API_H
+#endif // QTAV_CUDA_API_H

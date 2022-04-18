@@ -30,11 +30,11 @@
 #include <QCoreApplication>
 #include <QElapsedTimer>
 #include <QStringList>
-#include <QtDebug>
 
 // Local includes
 
 #include "AudioOutput.h"
+#include "digikam_debug.h"
 
 using namespace QtAV;
 
@@ -44,7 +44,7 @@ qint16 sin_table[kTableSize];
 
 void help()
 {
-    qDebug() << QLatin1String("parameters: [-ao ")
+    qCDebug(DIGIKAM_TESTS_LOG) << QLatin1String("parameters: [-ao ")
              << AudioOutput::backendsAvailable().join(QLatin1String("|"))
              << QLatin1String("]");
 }
@@ -71,7 +71,7 @@ int main(int argc, char** argv)
 
     if (ao.backend().isEmpty())
     {
-        qWarning("unknow backend");
+        qCCritical(DIGIKAM_TESTS_LOG) << QString::asprintf("unknow backend");
         return -1;
     }
 
@@ -82,7 +82,7 @@ int main(int argc, char** argv)
 
     if (!ao.isSupported(af))
     {
-        qDebug() << "does not support format: " << af;
+        qCDebug(DIGIKAM_TESTS_LOG) << "does not support format: " << af;
         return -1;
     }
 
@@ -92,7 +92,7 @@ int main(int argc, char** argv)
 
     if (!ao.open())
     {
-        qWarning("open audio error");
+        qCCritical(DIGIKAM_TESTS_LOG) << QString::asprintf("open audio error");
         return -1;
     }
 
