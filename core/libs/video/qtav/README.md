@@ -11,7 +11,7 @@ Code review with plenty of fixes and improvements:
 - Fix of all GCC 11 warnings.
 - Fixes Qt Signal/Slots.
 - Port code to pure Qt5/Qt6.
-- Use qCDebug()/qCWarning categories with digiKam debug spaces.
+- Use qCDebug()/qCWarning categories with digiKam debug spaces. Drop Logger class.
 - Use KDE i18n() instead tr().
 - Use cmake to find libuchardet dependency.
 * Fix header guards.
@@ -24,9 +24,14 @@ Code review with plenty of fixes and improvements:
 * Apply fixes for Clazy static analyzer.
 * Apply fixes for Coverity-Scan static analyzer.
 
+UNMAINTAINED FEATURES:
+
+- OpenSL-ES support.
+- WinRT support.
+- Android support.
+
 TODO:
 
 - Use cmake to find DirectX dependencies (Windows only).
 - Use cmake to find CUDA Toolkit dependency.
-- Use cmake to find OpenSL-ES dependency.
 - Port to FFMPEG 5.
