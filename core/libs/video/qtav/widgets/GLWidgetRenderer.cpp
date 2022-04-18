@@ -80,7 +80,7 @@ static void checkGlError(const char* op = 0)
     if (error == GL_NO_ERROR)
         return;
 
-    qCWarning(DIGIKAM_QTAVWIDGETS_LOG_WARN) << QString::asprintf("GL error %s (%#x): %s", op, error, glGetString(error));
+    qCWarning(DIGIKAM_QTAVWIDGETS_LOG_WARN).noquote() << QString::asprintf("GL error %s (%#x): %s", op, error, glGetString(error));
 }
 
 #define CHECK_GL_ERROR(FUNC) \
@@ -354,7 +354,7 @@ GLuint GLWidgetRendererPrivate::loadShader(GLenum shaderType, const char* pSourc
                 if (buf)
                 {
                     glGetShaderInfoLog(shader, infoLen, NULL, buf);
-                    qCWarning(DIGIKAM_QTAVWIDGETS_LOG_WARN) << QString::asprintf("Could not compile shader %d:\n%s\n", shaderType, buf);
+                    qCWarning(DIGIKAM_QTAVWIDGETS_LOG_WARN).noquote() << QString::asprintf("Could not compile shader %d:\n%s\n", shaderType, buf);
                     free(buf);
                 }
             }
@@ -410,7 +410,7 @@ GLuint GLWidgetRendererPrivate::createProgram(const char* pVertexSource, const c
             if (buf)
             {
                 glGetProgramInfoLog(program, bufLength, NULL, buf);
-                qCWarning(DIGIKAM_QTAVWIDGETS_LOG_WARN) << QString::asprintf("Could not link program:\n%s\n", buf);
+                qCWarning(DIGIKAM_QTAVWIDGETS_LOG_WARN).noquote() << QString::asprintf("Could not link program:\n%s\n", buf);
                 free(buf);
             }
         }
@@ -483,7 +483,7 @@ QString GLWidgetRendererPrivate::getShaderFromFile(const QString &fileName)
 
     if (!f.open(QIODevice::ReadOnly))
     {
-        qCWarning(DIGIKAM_QTAVWIDGETS_LOG_WARN) << QString::asprintf("Can not load shader %s: %s", f.fileName().toUtf8().constData(), f.errorString().toUtf8().constData());
+        qCWarning(DIGIKAM_QTAVWIDGETS_LOG_WARN).noquote() << QString::asprintf("Can not load shader %s: %s", f.fileName().toUtf8().constData(), f.errorString().toUtf8().constData());
 
         return QString();
     }
@@ -553,7 +553,7 @@ bool GLWidgetRendererPrivate::prepareShaderProgram(const VideoFormat &fmt, Color
 
     if (!program)
     {
-        qCWarning(DIGIKAM_QTAVWIDGETS_LOG_WARN) << QString::asprintf("Could not create shader program.");
+        qCWarning(DIGIKAM_QTAVWIDGETS_LOG_WARN).noquote() << QString::asprintf("Could not create shader program.");
         return false;
     }
 
@@ -573,19 +573,19 @@ bool GLWidgetRendererPrivate::prepareShaderProgram(const VideoFormat &fmt, Color
 
     if (!shader_program->addShaderFromSourceCode(QGLShader::Vertex, kVertexShader))
     {
-        qCWarning(DIGIKAM_QTAVWIDGETS_LOG_WARN) << QString::asprintf("Failed to add vertex shader: %s", shader_program->log().toUtf8().constData());
+        qCWarning(DIGIKAM_QTAVWIDGETS_LOG_WARN).noquote() << QString::asprintf("Failed to add vertex shader: %s", shader_program->log().toUtf8().constData());
         return false;
     }
 
     if (!shader_program->addShaderFromSourceCode(QGLShader::Fragment, frag))
     {
-        qCWarning(DIGIKAM_QTAVWIDGETS_LOG_WARN) << QString::asprintf("Failed to add fragment shader: %s", shader_program->log().toUtf8().constData());
+        qCWarning(DIGIKAM_QTAVWIDGETS_LOG_WARN).noquote() << QString::asprintf("Failed to add fragment shader: %s", shader_program->log().toUtf8().constData());
         return false;
     }
 
     if (!shader_program->link())
     {
-        qCWarning(DIGIKAM_QTAVWIDGETS_LOG_WARN) << QString::asprintf("Failed to link shader program...%s", shader_program->log().toUtf8().constData());
+        qCWarning(DIGIKAM_QTAVWIDGETS_LOG_WARN).noquote() << QString::asprintf("Failed to link shader program...%s", shader_program->log().toUtf8().constData());
         return false;
     }
 
@@ -603,12 +603,12 @@ bool GLWidgetRendererPrivate::prepareShaderProgram(const VideoFormat &fmt, Color
 
 #endif // NO_QGL_SHADER
 
-    qCDebug(DIGIKAM_QTAVWIDGETS_LOG) << QString::asprintf("glGetAttribLocation(\"a_Position\") = %d\n", a_Position);
-    qCDebug(DIGIKAM_QTAVWIDGETS_LOG) << QString::asprintf("glGetAttribLocation(\"a_TexCoords\") = %d\n", a_TexCoords);
-    qCDebug(DIGIKAM_QTAVWIDGETS_LOG) << QString::asprintf("glGetUniformLocation(\"u_MVP_matrix\") = %d\n", u_matrix);
-    qCDebug(DIGIKAM_QTAVWIDGETS_LOG) << QString::asprintf("glGetUniformLocation(\"u_bpp\") = %d\n", u_bpp);
-    qCDebug(DIGIKAM_QTAVWIDGETS_LOG) << QString::asprintf("glGetUniformLocation(\"u_opacity\") = %d\n", u_opacity);
-    qCDebug(DIGIKAM_QTAVWIDGETS_LOG) << QString::asprintf("glGetUniformLocation(\"u_colorMatrix\") = %d\n", u_colorMatrix);
+    qCDebug(DIGIKAM_QTAVWIDGETS_LOG).noquote() << QString::asprintf("glGetAttribLocation(\"a_Position\") = %d\n", a_Position);
+    qCDebug(DIGIKAM_QTAVWIDGETS_LOG).noquote() << QString::asprintf("glGetAttribLocation(\"a_TexCoords\") = %d\n", a_TexCoords);
+    qCDebug(DIGIKAM_QTAVWIDGETS_LOG).noquote() << QString::asprintf("glGetUniformLocation(\"u_MVP_matrix\") = %d\n", u_matrix);
+    qCDebug(DIGIKAM_QTAVWIDGETS_LOG).noquote() << QString::asprintf("glGetUniformLocation(\"u_bpp\") = %d\n", u_bpp);
+    qCDebug(DIGIKAM_QTAVWIDGETS_LOG).noquote() << QString::asprintf("glGetUniformLocation(\"u_opacity\") = %d\n", u_opacity);
+    qCDebug(DIGIKAM_QTAVWIDGETS_LOG).noquote() << QString::asprintf("glGetUniformLocation(\"u_colorMatrix\") = %d\n", u_colorMatrix);
 
     if (fmt.isRGB())
         u_Texture.resize(1);
@@ -629,7 +629,7 @@ bool GLWidgetRendererPrivate::prepareShaderProgram(const VideoFormat &fmt, Color
 
 #endif
 
-        qCDebug(DIGIKAM_QTAVWIDGETS_LOG) << QString::asprintf("glGetUniformLocation(\"%s\") = %d\n", tex_var.toUtf8().constData(), u_Texture[i]);
+        qCDebug(DIGIKAM_QTAVWIDGETS_LOG).noquote() << QString::asprintf("glGetUniformLocation(\"%s\") = %d\n", tex_var.toUtf8().constData(), u_Texture[i]);
     }
 
     return true;
@@ -689,7 +689,7 @@ bool GLWidgetRendererPrivate::initTextures(const VideoFormat &fmt)
 
         if (!OpenGLHelper::videoFormatToGL(fmt, &internal_fmt, &data_fmt, &data_t))
         {
-            qCWarning(DIGIKAM_QTAVWIDGETS_LOG_WARN) << QString::asprintf("no opengl format found");
+            qCWarning(DIGIKAM_QTAVWIDGETS_LOG_WARN).noquote() << QString::asprintf("no opengl format found");
             return false;
         }
 
@@ -709,7 +709,7 @@ bool GLWidgetRendererPrivate::initTextures(const VideoFormat &fmt)
              * GLES internal_format == data_format, GL_LUMINANCE_ALPHA is 2 bytes
              * so if NV12 use GL_LUMINANCE_ALPHA, YV12 use GL_ALPHA
              */
-            qCDebug(DIGIKAM_QTAVWIDGETS_LOG) << QString::asprintf("///////////bpp %d", fmt.bytesPerPixel());
+            qCDebug(DIGIKAM_QTAVWIDGETS_LOG).noquote() << QString::asprintf("///////////bpp %d", fmt.bytesPerPixel());
             internal_format[0] = data_format[0] = GL_LUMINANCE; //or GL_RED for GL
 
             if (fmt.planeCount() == 2)
@@ -748,7 +748,7 @@ bool GLWidgetRendererPrivate::initTextures(const VideoFormat &fmt)
 
     for (int i = 0 ; i < fmt.planeCount() ; ++i)
     {
-        //qCDebug(DIGIKAM_QTAVWIDGETS_LOG) << QString::asprintf("format: %#x GL_LUMINANCE_ALPHA=%#x", data_format[i], GL_LUMINANCE_ALPHA);
+        //qCDebug(DIGIKAM_QTAVWIDGETS_LOG).noquote() << QString::asprintf("format: %#x GL_LUMINANCE_ALPHA=%#x", data_format[i], GL_LUMINANCE_ALPHA);
 
         if (fmt.bytesPerPixel(i) == 2 && fmt.planeCount() == 3)
         {
@@ -762,7 +762,7 @@ bool GLWidgetRendererPrivate::initTextures(const VideoFormat &fmt)
         effective_tex_width[i] /= bpp_gl; // fmt.bytesPerPixel(i);
         //effective_tex_width_ratio =
 
-        qCDebug(DIGIKAM_QTAVWIDGETS_LOG) << QString::asprintf("texture width: %d - %d = pad: %d. bpp(gl): %d", texture_size[i].width(), effective_tex_width[i], pad, bpp_gl);
+        qCDebug(DIGIKAM_QTAVWIDGETS_LOG).noquote() << QString::asprintf("texture width: %d - %d = pad: %d. bpp(gl): %d", texture_size[i].width(), effective_tex_width[i], pad, bpp_gl);
     }
 
     /*
@@ -777,7 +777,7 @@ bool GLWidgetRendererPrivate::initTextures(const VideoFormat &fmt)
     if (textures.size() != fmt.planeCount())
     {
         glDeleteTextures(textures.size(), textures.data());
-        qCDebug(DIGIKAM_QTAVWIDGETS_LOG) << QString::asprintf("delete %d textures", textures.size());
+        qCDebug(DIGIKAM_QTAVWIDGETS_LOG).noquote() << QString::asprintf("delete %d textures", textures.size());
         textures.clear();
         textures.resize(fmt.planeCount());
         glGenTextures(textures.size(), textures.data());
@@ -789,12 +789,12 @@ bool GLWidgetRendererPrivate::initTextures(const VideoFormat &fmt)
 
         // more than 1?
 
-        qCWarning(DIGIKAM_QTAVWIDGETS_LOG_WARN) << QString::asprintf("Does not support GLSL!");
+        qCWarning(DIGIKAM_QTAVWIDGETS_LOG_WARN).noquote() << QString::asprintf("Does not support GLSL!");
 
         return false;
     }
 
-    qCDebug(DIGIKAM_QTAVWIDGETS_LOG) << QString::asprintf("init textures...");
+    qCDebug(DIGIKAM_QTAVWIDGETS_LOG).noquote() << QString::asprintf("init textures...");
 
     for (int i = 0 ; i < textures.size() ; ++i)
     {
@@ -812,7 +812,7 @@ void GLWidgetRendererPrivate::updateTexturesIfNeeded()
     if (fmt != video_format)
     {
         update_textures = true; //FIXME
-        qCDebug(DIGIKAM_QTAVWIDGETS_LOG) << QString::asprintf("updateTexturesIfNeeded pixel format changed: %s => %s", qPrintable(video_format.name()), qPrintable(fmt.name()));
+        qCDebug(DIGIKAM_QTAVWIDGETS_LOG).noquote() << QString::asprintf("updateTexturesIfNeeded pixel format changed: %s => %s", qPrintable(video_format.name()), qPrintable(fmt.name()));
     }
 
     // effective size may change even if plane size not changed
@@ -825,7 +825,7 @@ void GLWidgetRendererPrivate::updateTexturesIfNeeded()
         // no need to check height if plane 0 sizes are equal?
 
         update_textures = true;
-        qCDebug(DIGIKAM_QTAVWIDGETS_LOG) << QString::asprintf("---------------------update texture: %dx%d, %s", video_frame.width(), video_frame.height(), video_frame.format().name().toUtf8().constData());
+        qCDebug(DIGIKAM_QTAVWIDGETS_LOG).noquote() << QString::asprintf("---------------------update texture: %dx%d, %s", video_frame.width(), video_frame.height(), video_frame.format().name().toUtf8().constData());
         const int nb_planes = fmt.planeCount();
         texture_size.resize(nb_planes);
         texture_upload_size.resize(nb_planes);
@@ -833,9 +833,9 @@ void GLWidgetRendererPrivate::updateTexturesIfNeeded()
 
         for (int i = 0 ; i < nb_planes ; ++i)
         {
-            qCDebug(DIGIKAM_QTAVWIDGETS_LOG) << QString::asprintf("plane linesize %d: padded = %d, effective = %d", i, video_frame.bytesPerLine(i), video_frame.effectiveBytesPerLine(i));
-            qCDebug(DIGIKAM_QTAVWIDGETS_LOG) << QString::asprintf("plane width %d: effective = %d", video_frame.planeWidth(i), video_frame.effectivePlaneWidth(i));
-            qCDebug(DIGIKAM_QTAVWIDGETS_LOG) << QString::asprintf("planeHeight %d = %d", i, video_frame.planeHeight(i));
+            qCDebug(DIGIKAM_QTAVWIDGETS_LOG).noquote() << QString::asprintf("plane linesize %d: padded = %d, effective = %d", i, video_frame.bytesPerLine(i), video_frame.effectiveBytesPerLine(i));
+            qCDebug(DIGIKAM_QTAVWIDGETS_LOG).noquote() << QString::asprintf("plane width %d: effective = %d", video_frame.planeWidth(i), video_frame.effectivePlaneWidth(i));
+            qCDebug(DIGIKAM_QTAVWIDGETS_LOG).noquote() << QString::asprintf("planeHeight %d = %d", i, video_frame.planeHeight(i));
 
             // we have to consider size of opengl format. set bytesPerLine here and change to width later
 
@@ -860,7 +860,7 @@ void GLWidgetRendererPrivate::updateTexturesIfNeeded()
         }
 
         effective_tex_width_ratio = (qreal)video_frame.effectiveBytesPerLine(nb_planes-1)/(qreal)video_frame.bytesPerLine(nb_planes-1);
-        qCDebug(DIGIKAM_QTAVWIDGETS_LOG) << QString::asprintf("effective_tex_width_ratio=%f", effective_tex_width_ratio);
+        qCDebug(DIGIKAM_QTAVWIDGETS_LOG).noquote() << QString::asprintf("effective_tex_width_ratio=%f", effective_tex_width_ratio);
         plane0Size.setWidth(video_frame.bytesPerLine(0));
         plane0Size.setHeight(video_frame.height());
     }
@@ -877,7 +877,7 @@ void GLWidgetRendererPrivate::updateShaderIfNeeded()
 
     if (fmt != video_format)
     {
-        qCDebug(DIGIKAM_QTAVWIDGETS_LOG) << QString::asprintf("pixel format changed: %s => %s", qPrintable(video_format.name()), qPrintable(fmt.name()));
+        qCDebug(DIGIKAM_QTAVWIDGETS_LOG).noquote() << QString::asprintf("pixel format changed: %s => %s", qPrintable(video_format.name()), qPrintable(fmt.name()));
     }
 
     VideoMaterialType *newType = materialType(fmt);
@@ -906,12 +906,12 @@ void GLWidgetRendererPrivate::updateShaderIfNeeded()
 
     if (!prepareShaderProgram(fmt, cs))
     {
-        qCWarning(DIGIKAM_QTAVWIDGETS_LOG_WARN) << QString::asprintf("shader program create error...");
+        qCWarning(DIGIKAM_QTAVWIDGETS_LOG_WARN).noquote() << QString::asprintf("shader program create error...");
         return;
     }
     else
     {
-        qCDebug(DIGIKAM_QTAVWIDGETS_LOG) << QString::asprintf("shader program created!!!");
+        qCDebug(DIGIKAM_QTAVWIDGETS_LOG).noquote() << QString::asprintf("shader program created!!!");
     }
 }
 
@@ -942,7 +942,7 @@ void GLWidgetRendererPrivate::uploadPlane(int p, GLint internalFormat, GLenum fo
 
 #endif
 
-    //qCDebug(DIGIKAM_QTAVWIDGETS_LOG) << QString::asprintf("bpl[%d]=%d width=%d", p, video_frame.bytesPerLine(p), video_frame.planeWidth(p));
+    //qCDebug(DIGIKAM_QTAVWIDGETS_LOG).noquote() << QString::asprintf("bpl[%d]=%d width=%d", p, video_frame.bytesPerLine(p), video_frame.planeWidth(p));
 
     // This is necessary for non-power-of-two textures
 
@@ -986,7 +986,7 @@ void GLWidgetRendererPrivate::uploadPlane(int p, GLint internalFormat, GLenum fo
             roi_h = fmt.chromaHeight(roi_h);
         }
 
-        qCDebug(DIGIKAM_QTAVWIDGETS_LOG) << QString::asprintf("roi: %d, %d %dx%d", roi_x, roi_y, roi_w, roi_h);
+        qCDebug(DIGIKAM_QTAVWIDGETS_LOG).noquote() << QString::asprintf("roi: %d, %d %dx%d", roi_x, roi_y, roi_w, roi_h);
 
 #if 0// defined(GL_UNPACK_ROW_LENGTH) && defined(GL_UNPACK_SKIP_PIXELS)
 
@@ -1362,7 +1362,7 @@ void GLWidgetRenderer::initializeGL()
     //const QByteArray extensions(reinterpret_cast<const char *>(glGetString(GL_EXTENSIONS)));
 
     d.hasGLSL = QGLShaderProgram::hasOpenGLShaderPrograms();
-    qCDebug(DIGIKAM_QTAVWIDGETS_LOG) << QString::asprintf("OpenGL version: %d.%d  hasGLSL: %d", format().majorVersion(), format().minorVersion(), d.hasGLSL);
+    qCDebug(DIGIKAM_QTAVWIDGETS_LOG).noquote() << QString::asprintf("OpenGL version: %d.%d  hasGLSL: %d", format().majorVersion(), format().minorVersion(), d.hasGLSL);
 
 #if QTAV_HAVE(QGLFUNCTIONS)
 
@@ -1415,7 +1415,7 @@ void GLWidgetRenderer::resizeGL(int w, int h)
 {
     DPTR_D(GLWidgetRenderer);
 
-    //qCDebug(DIGIKAM_QTAVWIDGETS_LOG) << QString::asprintf("%s @%d %dx%d", __FUNCTION__, __LINE__, d.out_rect.width(), d.out_rect.height());
+    //qCDebug(DIGIKAM_QTAVWIDGETS_LOG).noquote() << QString::asprintf("%s @%d %dx%d", __FUNCTION__, __LINE__, d.out_rect.width(), d.out_rect.height());
 
     glViewport(0, 0, w, h);
     d.setupAspectRatio();

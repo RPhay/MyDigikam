@@ -89,7 +89,7 @@ void X11FilterContext::resetX11(Display *dpy, GC g, Drawable d)
         gc = g;
         drawable = d;
     }
-    qCDebug(DIGIKAM_QTAV_LOG) << QString::asprintf("resetX11 display:%p,gc:%p,drawable:%p", display, g, d);
+    qCDebug(DIGIKAM_QTAV_LOG).noquote() << QString::asprintf("resetX11 display:%p,gc:%p,drawable:%p", display, g, d);
 }
 
 void X11FilterContext::renderTextImageX11(QImage *img, const QPointF &pos)
@@ -98,7 +98,7 @@ void X11FilterContext::renderTextImageX11(QImage *img, const QPointF &pos)
         destroyX11Resources();
         mask_q  = img->createAlphaMask();
         if (mask_q.isNull()) {
-            qCWarning(DIGIKAM_QTAV_LOG_WARN) << QString::asprintf("mask image is null");
+            qCWarning(DIGIKAM_QTAV_LOG_WARN).noquote() << QString::asprintf("mask image is null");
             return;
         }
         XWindowAttributes xwa;
@@ -106,7 +106,7 @@ void X11FilterContext::renderTextImageX11(QImage *img, const QPointF &pos)
         // force the stride to ensure we can safely set ximage data ptr to qimage data ptr
         mask_img = (XImage*)XCreateImage((::Display*)display, xwa.visual, 1, ZPixmap, 0, NULL, mask_q.width(), mask_q.height(), 8, mask_q.bytesPerLine());
         if (!mask_img) {
-            qCWarning(DIGIKAM_QTAV_LOG_WARN) << QString::asprintf("error create mask image");
+            qCWarning(DIGIKAM_QTAV_LOG_WARN).noquote() << QString::asprintf("error create mask image");
             return;
         }
         ((::XImage*)mask_img)->data = (char*)mask_q.constBits();

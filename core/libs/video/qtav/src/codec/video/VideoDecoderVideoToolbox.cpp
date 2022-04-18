@@ -199,16 +199,16 @@ VideoFrame VideoDecoderVideoToolbox::frame()
     }
     CVPixelBufferRef cv_buffer = (CVPixelBufferRef)d.frame->data[3];
     if (!cv_buffer) {
-        qCDebug(DIGIKAM_QTAV_LOG) << QString::asprintf("Frame buffer is empty.");
+        qCDebug(DIGIKAM_QTAV_LOG).noquote() << QString::asprintf("Frame buffer is empty.");
         return VideoFrame();
     }
     if (CVPixelBufferGetDataSize(cv_buffer) <= 0) {
-        qCDebug(DIGIKAM_QTAV_LOG) << QString::asprintf("Empty frame buffer");
+        qCDebug(DIGIKAM_QTAV_LOG).noquote() << QString::asprintf("Empty frame buffer");
         return VideoFrame();
     }
     const VideoFormat::PixelFormat pixfmt = cv::format_from_cv(CVPixelBufferGetPixelFormatType(cv_buffer));
     if (pixfmt == VideoFormat::Format_Invalid) {
-        qCWarning(DIGIKAM_QTAV_LOG_WARN) << QString::asprintf("unsupported cv pixel format: %#x", (quint32)CVPixelBufferGetPixelFormatType(cv_buffer));
+        qCWarning(DIGIKAM_QTAV_LOG_WARN).noquote() << QString::asprintf("unsupported cv pixel format: %#x", (quint32)CVPixelBufferGetPixelFormatType(cv_buffer));
         return VideoFrame();
     }
 
@@ -265,7 +265,7 @@ void VideoDecoderVideoToolbox::setFormat(PixelFormat fmt)
     if (kCFCoreFoundationVersionNumber >= kCFCoreFoundationVersionNumber10_7)
         return;
     if (fmt != YUV420P && fmt != UYVY)
-        qCWarning(DIGIKAM_QTAV_LOG_WARN) << QString::asprintf("format is not supported on OSX < 10.7");
+        qCWarning(DIGIKAM_QTAV_LOG_WARN).noquote() << QString::asprintf("format is not supported on OSX < 10.7");
 }
 
 VideoDecoderVideoToolbox::PixelFormat VideoDecoderVideoToolbox::format() const
@@ -294,22 +294,22 @@ void* VideoDecoderVideoToolboxPrivate::setup(AVCodecContext *avctx)
     AVVideotoolboxContext *vtctx = av_videotoolbox_alloc_context();
     vtctx->cv_pix_fmt_type = out_fmt;
 
-    qCDebug(DIGIKAM_QTAV_LOG) << QString::asprintf("AVVideotoolboxContext: %p", vtctx);
+    qCDebug(DIGIKAM_QTAV_LOG).noquote() << QString::asprintf("AVVideotoolboxContext: %p", vtctx);
     int err = av_videotoolbox_default_init2(avctx, vtctx); //ios h264 crashes when processing extra data. null H264Context
     if (err < 0) {
-        qCWarning(DIGIKAM_QTAV_LOG_WARN) << QString::asprintf("Failed to init videotoolbox decoder (%#x %s): %s", err, av_err2str(err), cv_err_str(err));
+        qCWarning(DIGIKAM_QTAV_LOG_WARN).noquote() << QString::asprintf("Failed to init videotoolbox decoder (%#x %s): %s", err, av_err2str(err), cv_err_str(err));
         return NULL;
     }
     const CMVideoDimensions dim = CMVideoFormatDescriptionGetDimensions(vtctx->cm_fmt_desc);
     initUSWC(codedWidth(avctx)); // TODO: use stride
     qCDebug(DIGIKAM_QTAV_LOG) << "VideoToolbox decoder created. format: " << cv::format_from_cv(out_fmt);
-    qCDebug(DIGIKAM_QTAV_LOG) << QString::asprintf("AVVideotoolboxContext ready: %dx%d", dim.width, dim.height);
+    qCDebug(DIGIKAM_QTAV_LOG).noquote() << QString::asprintf("AVVideotoolboxContext ready: %dx%d", dim.width, dim.height);
     return vtctx; //the same as avctx->hwaccel_context;
 }
 
 bool VideoDecoderVideoToolboxPrivate::getBuffer(void **opaque, uint8_t **data)
 {
-    qCDebug(DIGIKAM_QTAV_LOG) << QString::asprintf("vt getbuffer");
+    qCDebug(DIGIKAM_QTAV_LOG).noquote() << QString::asprintf("vt getbuffer");
     *data = (uint8_t *)1; // dummy. it's AVFrame.data[0], must be non null required by ffmpeg
     Q_UNUSED(opaque);
     return true;
@@ -346,10 +346,10 @@ bool VideoDecoderVideoToolboxPrivate::open()
     case AV_CODEC_ID_MPEG1VIDEO:
         break;
     default:
-        qCWarning(DIGIKAM_QTAV_LOG_WARN) << QString::asprintf("VideoToolbox unsupported codec: %s", avcodec_get_name(codec_ctx->codec_id));
+        qCWarning(DIGIKAM_QTAV_LOG_WARN).noquote() << QString::asprintf("VideoToolbox unsupported codec: %s", avcodec_get_name(codec_ctx->codec_id));
         return false;
     }
-    qCDebug(DIGIKAM_QTAV_LOG) << QString::asprintf("opening VideoToolbox module");
+    qCDebug(DIGIKAM_QTAV_LOG).noquote() << QString::asprintf("opening VideoToolbox module");
     // setup() must be called in getFormat() from avcodec callback, otherwise in ffmpeg3.0 avctx->priv_data is null and crash
     // TODO: block AVDecoder.open() until hw callback is done
     //if (!setup(codec_ctx))
@@ -365,7 +365,7 @@ bool VideoDecoderVideoToolboxPrivate::open()
 void VideoDecoderVideoToolboxPrivate::close()
 {
     restore(); //IMPORTANT. can not call restore in dtor because ctx is 0 there
-    qCDebug(DIGIKAM_QTAV_LOG) << QString::asprintf("destroying VideoToolbox decoder");
+    qCDebug(DIGIKAM_QTAV_LOG).noquote() << QString::asprintf("destroying VideoToolbox decoder");
     if (codec_ctx) {
         av_videotoolbox_default_free(codec_ctx);
     }

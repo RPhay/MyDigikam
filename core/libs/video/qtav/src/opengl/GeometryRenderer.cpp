@@ -111,9 +111,9 @@ void GeometryRenderer::updateGeometry(Geometry *geo)
     }
     if (testFeatures(kIBO) && !ibo.isCreated()) {
         if (g->indexCount() > 0) {
-            qCDebug(DIGIKAM_QTAV_LOG) << QString::asprintf("creating IBO...");
+            qCDebug(DIGIKAM_QTAV_LOG).noquote() << QString::asprintf("creating IBO...");
             if (!ibo.create())
-                qCDebug(DIGIKAM_QTAV_LOG) << QString::asprintf("IBO create error");
+                qCDebug(DIGIKAM_QTAV_LOG).noquote() << QString::asprintf("IBO create error");
         }
     }
     if (ibo.isCreated()) {
@@ -136,9 +136,9 @@ void GeometryRenderer::updateGeometry(Geometry *geo)
         ibo.release();
     }
     if (testFeatures(kVBO) && !vbo.isCreated()) {
-        qCDebug(DIGIKAM_QTAV_LOG) << QString::asprintf("creating VBO...");
+        qCDebug(DIGIKAM_QTAV_LOG).noquote() << QString::asprintf("creating VBO...");
         if (!vbo.create())
-            qCWarning(DIGIKAM_QTAV_LOG_WARN) << QString::asprintf("VBO create error");
+            qCWarning(DIGIKAM_QTAV_LOG_WARN).noquote() << QString::asprintf("VBO create error");
     }
     if (vbo.isCreated()) {
         vbo.bind();
@@ -169,17 +169,17 @@ void GeometryRenderer::updateGeometry(Geometry *geo)
     attrib = g->attributes();
 
     if (testFeatures(kVAO) && !vao.isCreated()) {
-        qCDebug(DIGIKAM_QTAV_LOG) << QString::asprintf("creating VAO...");
+        qCDebug(DIGIKAM_QTAV_LOG).noquote() << QString::asprintf("creating VAO...");
         if (!vao.create())
-            qCDebug(DIGIKAM_QTAV_LOG) << QString::asprintf("VAO create error");
+            qCDebug(DIGIKAM_QTAV_LOG).noquote() << QString::asprintf("VAO create error");
     }
-    qCDebug(DIGIKAM_QTAV_LOG) << QString::asprintf("vao updated");
+    qCDebug(DIGIKAM_QTAV_LOG).noquote() << QString::asprintf("vao updated");
     if (vao.isCreated()) // can not use vao binder because it will create a vao if necessary
         vao.bind();
 // can set data before vao bind
     if (!vao.isCreated())
         return;
-    qCDebug(DIGIKAM_QTAV_LOG) << QString::asprintf("geometry attributes changed, rebind vao...");
+    qCDebug(DIGIKAM_QTAV_LOG).noquote() << QString::asprintf("geometry attributes changed, rebind vao...");
     // call once is enough if no feature and no geometry attribute is changed
     if (vbo.isCreated()) {
         vbo.bind();
@@ -198,7 +198,7 @@ void GeometryRenderer::updateGeometry(Geometry *geo)
     if (ibo.isCreated())
         ibo.release();
 #endif
-    qCDebug(DIGIKAM_QTAV_LOG) << QString::asprintf("geometry updated");
+    qCDebug(DIGIKAM_QTAV_LOG).noquote() << QString::asprintf("geometry updated");
 }
 
 void GeometryRenderer::bindBuffers()
@@ -214,7 +214,7 @@ void GeometryRenderer::bindBuffers()
         bind_ibo = false;
     }
 #endif
-    //qCDebug(DIGIKAM_QTAV_LOG) << QString::asprintf("bind ibo: %d vbo: %d; set v: %d", bind_ibo, bind_vbo, !setv_skip);
+    //qCDebug(DIGIKAM_QTAV_LOG).noquote() << QString::asprintf("bind ibo: %d vbo: %d; set v: %d", bind_ibo, bind_vbo, !setv_skip);
     if (bind_ibo)
         ibo.bind();
     // no vbo: set vertex attributes
@@ -249,7 +249,7 @@ void GeometryRenderer::unbindBuffers()
         unbind_ibo = false;
     }
 #endif //QT_VAO
-    //qCDebug(DIGIKAM_QTAV_LOG) << QString::asprintf("unbind ibo: %d vbo: %d; unset v: %d", unbind_ibo, unbind_vbo, !unsetv_skip);
+    //qCDebug(DIGIKAM_QTAV_LOG).noquote() << QString::asprintf("unbind ibo: %d vbo: %d; unset v: %d", unbind_ibo, unbind_vbo, !unsetv_skip);
     if (unbind_ibo)
         ibo.release();
     // release vbo. qpainter is affected if vbo is bound

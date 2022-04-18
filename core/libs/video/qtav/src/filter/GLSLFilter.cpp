@@ -115,7 +115,7 @@ void GLSLFilter::process(Statistics *statistics, VideoFrame *frame)
         QOpenGLContext *ctx = const_cast<QOpenGLContext*>(QOpenGLContext::currentContext()); //qt4 returns const
         d.glv.setOpenGLContext(ctx);
         d.glv.setProjectionMatrixToRect(QRectF(0, 0, d.fbo->width(), d.fbo->height()));
-        qCDebug(DIGIKAM_QTAV_LOG) << QString::asprintf("new fbo texture: %d %dx%d", d.fbo->texture(), d.fbo->width(), d.fbo->height());
+        qCDebug(DIGIKAM_QTAV_LOG).noquote() << QString::asprintf("new fbo texture: %d %dx%d", d.fbo->texture(), d.fbo->width(), d.fbo->height());
     }
     d.fbo->bind();
     DYGL(glViewport(0, 0, d.fbo->width(), d.fbo->height()));

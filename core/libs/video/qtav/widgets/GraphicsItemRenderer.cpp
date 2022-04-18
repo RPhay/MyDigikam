@@ -77,7 +77,7 @@ public:
             return false;
         }
         if (!glv.openGLContext()) {
-            //qCWarning(DIGIKAM_QTAVWIDGETS_LOG_WARN) << QString::asprintf("no opengl context! set current");
+            //qCWarning(DIGIKAM_QTAVWIDGETS_LOG_WARN).noquote() << QString::asprintf("no opengl context! set current");
             // null if not called from renderering thread;
             QOpenGLContext *ctx = const_cast<QOpenGLContext*>(QOpenGLContext::currentContext());
             if (!ctx)
@@ -188,7 +188,7 @@ void GraphicsItemRenderer::paint(QPainter *painter, const QStyleOptionGraphicsIt
     if (ctx) {
         ctx->painter = d.painter;
     } else {
-        qCWarning(DIGIKAM_QTAVWIDGETS_LOG_WARN) << QString::asprintf("FilterContext not available!");
+        qCWarning(DIGIKAM_QTAVWIDGETS_LOG_WARN).noquote() << QString::asprintf("FilterContext not available!");
     }
     // save painter state, switch to native opengl painting
     painter->save();
@@ -322,9 +322,9 @@ bool GraphicsItemRenderer::event(QEvent *event)
     else {
         setFocus(); //WHY: Force focus
         QEvent::Type type = event->type();
-        qCDebug(DIGIKAM_QTAVWIDGETS_LOG) << QString::asprintf("GraphicsItemRenderer event type = %d", type);
+        qCDebug(DIGIKAM_QTAVWIDGETS_LOG).noquote() << QString::asprintf("GraphicsItemRenderer event type = %d", type);
         if (type == QEvent::KeyPress) {
-            qCDebug(DIGIKAM_QTAVWIDGETS_LOG) << QString::asprintf("KeyPress Event. key=%d", static_cast<QKeyEvent*>(event)->key());
+            qCDebug(DIGIKAM_QTAVWIDGETS_LOG).noquote() << QString::asprintf("KeyPress Event. key=%d", static_cast<QKeyEvent*>(event)->key());
         }
     }
 
@@ -347,9 +347,9 @@ bool GraphicsItemRenderer::event(QEvent *event)
 bool GraphicsItemRenderer::sceneEvent(QEvent *event)
 {
     QEvent::Type type = event->type();
-    qCDebug(DIGIKAM_QTAVWIDGETS_LOG) << QString::asprintf("sceneEvent type = %d", type);
+    qCDebug(DIGIKAM_QTAVWIDGETS_LOG).noquote() << QString::asprintf("sceneEvent type = %d", type);
     if (type == QEvent::KeyPress) {
-        qCDebug(DIGIKAM_QTAVWIDGETS_LOG) << QString::asprintf("KeyPress Event. key=%d", static_cast<QKeyEvent*>(event)->key());
+        qCDebug(DIGIKAM_QTAVWIDGETS_LOG).noquote() << QString::asprintf("KeyPress Event. key=%d", static_cast<QKeyEvent*>(event)->key());
     }
     return true;
 }

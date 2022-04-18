@@ -324,7 +324,7 @@ void VideoDecoderVAAPI::setSurfaces(int num)
     d.nb_surfaces = num;
     const int kMaxSurfaces = 32;
     if (num > kMaxSurfaces) {
-        qCWarning(DIGIKAM_QTAV_LOG_WARN) << QString::asprintf("VAAPI- Too many surfaces. requested: %d, maximun: %d", num, kMaxSurfaces);
+        qCWarning(DIGIKAM_QTAV_LOG_WARN).noquote() << QString::asprintf("VAAPI- Too many surfaces. requested: %d, maximun: %d", num, kMaxSurfaces);
     }
 }
 
@@ -373,7 +373,7 @@ VideoFrame VideoDecoderVAAPI::frame()
             }
         }
         if (!p) {
-            qCWarning(DIGIKAM_QTAV_LOG_WARN) << QString::asprintf("VAAPI - Unable to find surface");
+            qCWarning(DIGIKAM_QTAV_LOG_WARN).noquote() << QString::asprintf("VAAPI - Unable to find surface");
             return VideoFrame();
         }
         SurfaceInteropVAAPI *interop = new SurfaceInteropVAAPI(d.interop_res);
@@ -413,10 +413,10 @@ VideoFrame VideoDecoderVAAPI::frame()
 #endif //QT_NO_OPENGL
 #if VA_CHECK_VERSION(0,31,0)
     if ((status = vaSyncSurface(d.display->get(), surface_id)) != VA_STATUS_SUCCESS) {
-        qCWarning(DIGIKAM_QTAV_LOG_WARN) << QString::asprintf("vaSyncSurface(VADisplay:%p, VASurfaceID:%#x) == %#x", d.display->get(), surface_id, status);
+        qCWarning(DIGIKAM_QTAV_LOG_WARN).noquote() << QString::asprintf("vaSyncSurface(VADisplay:%p, VASurfaceID:%#x) == %#x", d.display->get(), surface_id, status);
 #else
     if (vaSyncSurface(d.display->get(), d.context_id, surface_id)) {
-        qCWarning(DIGIKAM_QTAV_LOG_WARN) << QString::asprintf("vaSyncSurface(VADisplay:%#x, VAContextID:%#x, VASurfaceID:%#x) == %#x", d.display, d.context_id, surface_id, status);
+        qCWarning(DIGIKAM_QTAV_LOG_WARN).noquote() << QString::asprintf("vaSyncSurface(VADisplay:%#x, VAContextID:%#x, VASurfaceID:%#x) == %#x", d.display, d.context_id, surface_id, status);
 #endif
         return VideoFrame();
     }
@@ -439,7 +439,7 @@ VideoFrame VideoDecoderVAAPI::frame()
     VideoFormat::PixelFormat pixfmt = pixelFormatFromVA(d.image.format.fourcc);
     bool swap_uv = (d.disable_derive || !d.supports_derive || d.image.format.fourcc == VA_FOURCC_IYUV) && d.image.format.fourcc != VA_FOURCC_NV12;
     if (pixfmt == VideoFormat::Format_Invalid) {
-        qCWarning(DIGIKAM_QTAV_LOG_WARN) << QString::asprintf("unsupported vaapi pixel format: %#x", d.image.format.fourcc);
+        qCWarning(DIGIKAM_QTAV_LOG_WARN).noquote() << QString::asprintf("unsupported vaapi pixel format: %#x", d.image.format.fourcc);
         return VideoFrame();
     }
     const VideoFormat fmt(pixfmt);
@@ -488,7 +488,7 @@ bool VideoDecoderVAAPIPrivate::open()
     // TODO: allow wrong profile
     // FIXME: sometimes get wrong profile (switch copyMode)
     if (!pe) {
-        qCWarning(DIGIKAM_QTAV_LOG_WARN) << QString::asprintf("codec(%s) or profile(%s) is not supported", avcodec_get_name(codec_ctx->codec_id), getProfileName(codec_ctx->codec_id, codec_ctx->profile));
+        qCWarning(DIGIKAM_QTAV_LOG_WARN).noquote() << QString::asprintf("codec(%s) or profile(%s) is not supported", avcodec_get_name(codec_ctx->codec_id), getProfileName(codec_ctx->codec_id, codec_ctx->profile));
         return false;
     }
     /* Create a VA display */
@@ -508,7 +508,7 @@ bool VideoDecoderVAAPIPrivate::open()
         }
     }
     if (!display/* || vaDisplayIsValid(display->get()) != 0*/) {
-        qCWarning(DIGIKAM_QTAV_LOG_WARN) << QString::asprintf("Could not get a VAAPI device");
+        qCWarning(DIGIKAM_QTAV_LOG_WARN).noquote() << QString::asprintf("Could not get a VAAPI device");
         return false;
     }
     display->getVersion(&version_major, &version_minor);
@@ -527,7 +527,7 @@ bool VideoDecoderVAAPIPrivate::open()
     if (sscanf(vendor.toUtf8().constData(), "Intel i965 driver - %d.%d.%d", &major, &minor, &micro) == 3) {
         /* older version will crash and burn */
         if (VERSION_CHK(major, minor, micro) < VERSION_CHK(1, 0, 17)) {
-            qCDebug(DIGIKAM_QTAV_LOG) << QString::asprintf("VAAPI - deinterlace not support on this intel driver version");
+            qCDebug(DIGIKAM_QTAV_LOG).noquote() << QString::asprintf("VAAPI - deinterlace not support on this intel driver version");
         }
         // do the same check for 4K decoding: version < 1.2.0 (stable) and 1.0.21 (staging)
         // cannot decode 4K and will crash the GPU
@@ -536,27 +536,27 @@ bool VideoDecoderVAAPIPrivate::open()
         }
     }
     if (!support_4k && (codec_ctx->width > 1920 || codec_ctx->height > 1088)) {
-        qCWarning(DIGIKAM_QTAV_LOG_WARN) << QString::asprintf("VAAPI: frame size (%dx%d) is too large", codec_ctx->width, codec_ctx->height);
+        qCWarning(DIGIKAM_QTAV_LOG_WARN).noquote() << QString::asprintf("VAAPI: frame size (%dx%d) is too large", codec_ctx->width, codec_ctx->height);
         return false;
     }
     /* Check if the selected profile is supported */
-    qCDebug(DIGIKAM_QTAV_LOG) << QString::asprintf("checking profile: %s, %s",  avcodec_get_name(codec_ctx->codec_id), getProfileName(pe->codec, pe->profile));
+    qCDebug(DIGIKAM_QTAV_LOG).noquote() << QString::asprintf("checking profile: %s, %s",  avcodec_get_name(codec_ctx->codec_id), getProfileName(pe->codec, pe->profile));
     int nb_profiles = vaMaxNumProfiles(display->get());
     if (nb_profiles <= 0) {
-        qCWarning(DIGIKAM_QTAV_LOG_WARN) << QString::asprintf("No profile supported");
+        qCWarning(DIGIKAM_QTAV_LOG_WARN).noquote() << QString::asprintf("No profile supported");
         return false;
     }
     QVector<VAProfile> supported_profiles(nb_profiles, VAProfileNone);
     VA_ENSURE_TRUE(vaQueryConfigProfiles(display->get(), supported_profiles.data(), &nb_profiles), false);
     while (pe && !isProfileSupportedByRuntime(supported_profiles.constData(), nb_profiles, pe->va_profile)) {
-        qCDebug(DIGIKAM_QTAV_LOG) << QString::asprintf("Codec or profile %s %d is not directly supported by the hardware. Checking alternative profiles", vaapi::profileName(pe->va_profile), pe->va_profile);
+        qCDebug(DIGIKAM_QTAV_LOG).noquote() << QString::asprintf("Codec or profile %s %d is not directly supported by the hardware. Checking alternative profiles", vaapi::profileName(pe->va_profile), pe->va_profile);
         pe = findProfileEntry(codec_ctx->codec_id, codec_ctx->profile, pe);
     }
     if (!pe) {
-        qCDebug(DIGIKAM_QTAV_LOG) << QString::asprintf("Codec or profile is not supported by the hardware.");
+        qCDebug(DIGIKAM_QTAV_LOG).noquote() << QString::asprintf("Codec or profile is not supported by the hardware.");
         return false;
     }
-    qCDebug(DIGIKAM_QTAV_LOG) << QString::asprintf("using profile %s (%d)", vaapi::profileName(pe->va_profile), pe->va_profile);
+    qCDebug(DIGIKAM_QTAV_LOG).noquote() << QString::asprintf("using profile %s (%d)", vaapi::profileName(pe->va_profile), pe->va_profile);
     /* Create a VA configuration */
     VAConfigAttrib attrib;
     memset(&attrib, 0, sizeof(attrib));
@@ -574,7 +574,7 @@ bool VideoDecoderVAAPIPrivate::open()
     surface_width = codedWidth(codec_ctx);
     surface_height = codedHeight(codec_ctx);
 
-    qCDebug(DIGIKAM_QTAV_LOG) << QString::asprintf("checking surface resolution support");
+    qCDebug(DIGIKAM_QTAV_LOG).noquote() << QString::asprintf("checking surface resolution support");
     VASurfaceID test_surface = VA_INVALID_ID;
     VA_ENSURE_TRUE(vaCreateSurfaces(display->get(), VA_RT_FORMAT_YUV420, surface_width, surface_height,  &test_surface, 1, NULL, 0), false);
     // context create fail but surface create ok (tested 6k for intel)
@@ -604,10 +604,10 @@ bool VideoDecoderVAAPIPrivate::open()
 bool VideoDecoderVAAPIPrivate::ensureSurfaces(int count, int w, int h, bool discard_old)
 {
     if (!display) {
-        qCWarning(DIGIKAM_QTAV_LOG_WARN) << QString::asprintf("no va display");
+        qCWarning(DIGIKAM_QTAV_LOG_WARN).noquote() << QString::asprintf("no va display");
         return false;
     }
-    qCDebug(DIGIKAM_QTAV_LOG) << QString::asprintf("ensureSurfaces %d->%d %dx%d. discard old surfaces: %d", surfaces.size(), count, w, h, discard_old);
+    qCDebug(DIGIKAM_QTAV_LOG).noquote() << QString::asprintf("ensureSurfaces %d->%d %dx%d. discard old surfaces: %d", surfaces.size(), count, w, h, discard_old);
     Q_ASSERT(w > 0 && h > 0);
     const int old_size = discard_old ? 0 : surfaces.size();
     if (count <= old_size)
@@ -616,7 +616,7 @@ bool VideoDecoderVAAPIPrivate::ensureSurfaces(int count, int w, int h, bool disc
     surfaces.resize(count);
     VA_ENSURE_TRUE(vaCreateSurfaces(display->get(), VA_RT_FORMAT_YUV420, w, h,  surfaces.data() + old_size, count - old_size, NULL, 0), false);
     for (int i = old_size; i < surfaces.size(); ++i) {
-        //qCDebug(DIGIKAM_QTAV_LOG) << QString::asprintf("surface id: %p %dx%d", surfaces.at(i), w, height);
+        //qCDebug(DIGIKAM_QTAV_LOG).noquote() << QString::asprintf("surface id: %p %dx%d", surfaces.at(i), w, height);
         surfaces_free.push_back(surface_ptr(new surface_t(w, h, surfaces[i], display)));
     }
     return true;
@@ -633,12 +633,12 @@ bool VideoDecoderVAAPIPrivate::prepareVAImage(int w, int h)
     VAImage test_image;
     if (!disable_derive || copy_mode == VideoDecoderVAAPI::ZeroCopy) {
         if (vaDeriveImage(display->get(), surfaces[0], &test_image) == VA_STATUS_SUCCESS) {
-            qCDebug(DIGIKAM_QTAV_LOG) << QString::asprintf("vaDeriveImage supported");
+            qCDebug(DIGIKAM_QTAV_LOG).noquote() << QString::asprintf("vaDeriveImage supported");
             supports_derive = true;
             image_fmt = pixelFormatFromVA(image.format.fourcc);
             /* from vlc: Use vaDerive() iif it supports the best selected format */
             if (image.format.fourcc == test_image.format.fourcc) {
-                qCDebug(DIGIKAM_QTAV_LOG) << QString::asprintf("vaDerive is ok");
+                qCDebug(DIGIKAM_QTAV_LOG).noquote() << QString::asprintf("vaDerive is ok");
 //                supports_derive = true;
             }
             VAWARN(vaDestroyImage(display->get(), test_image.image_id));
@@ -655,13 +655,13 @@ void* VideoDecoderVAAPIPrivate::setup(AVCodecContext *avctx)
 {
     Q_UNUSED(avctx);
     if (!display || config_id == VA_INVALID_ID) {
-        qCWarning(DIGIKAM_QTAV_LOG_WARN) << QString::asprintf("va-api is not initialized. display: %p, config_id: %#x", display->get(), config_id);
+        qCWarning(DIGIKAM_QTAV_LOG_WARN).noquote() << QString::asprintf("va-api is not initialized. display: %p, config_id: %#x", display->get(), config_id);
         return NULL;
     }
     int surface_count =  nb_surfaces;
     if (surface_count <= 0) {
         surface_count = 2+1;
-        qCDebug(DIGIKAM_QTAV_LOG) << QString::asprintf("guess surface count");
+        qCDebug(DIGIKAM_QTAV_LOG).noquote() << QString::asprintf("guess surface count");
         if (codec_ctx->codec_id == QTAV_CODEC_ID(H264))
             surface_count = 16+2;
     #ifdef FF_PROFILE_HEVC_MAIN
@@ -739,18 +739,18 @@ bool VideoDecoderVAAPIPrivate::getBuffer(void **opaque, uint8_t **data)
             }
         }
         if (!found) {
-            qCWarning(DIGIKAM_QTAV_LOG_WARN) << QString::asprintf("surface not found!!!!!!!!!!!!!");
+            qCWarning(DIGIKAM_QTAV_LOG_WARN).noquote() << QString::asprintf("surface not found!!!!!!!!!!!!!");
             return false;
         }
     } else {
         for (; it != surfaces_free.end() && it->count() > 1; ++it) {}
         if (it == surfaces_free.end()) {
             if (!surfaces_free.empty())
-                qCWarning(DIGIKAM_QTAV_LOG_WARN) << QString::asprintf("VAAPI - renderer still using all freed up surfaces by decoder. unable to find free surface, trying to allocate a new one");
+                qCWarning(DIGIKAM_QTAV_LOG_WARN).noquote() << QString::asprintf("VAAPI - renderer still using all freed up surfaces by decoder. unable to find free surface, trying to allocate a new one");
 
             const int kMaxSurfaces = 32;
             if (surfaces.size() + 1 > kMaxSurfaces) {
-                qCWarning(DIGIKAM_QTAV_LOG_WARN) << QString::asprintf("VAAPI- Too many surfaces. requested: %d, maximun: %d", surfaces.size() + 1, kMaxSurfaces);
+                qCWarning(DIGIKAM_QTAV_LOG_WARN).noquote() << QString::asprintf("VAAPI- Too many surfaces. requested: %d, maximun: %d", surfaces.size() + 1, kMaxSurfaces);
             }
             // Set itarator position to the newly allocated surface (end-1)
             const int old_size = surfaces.size();

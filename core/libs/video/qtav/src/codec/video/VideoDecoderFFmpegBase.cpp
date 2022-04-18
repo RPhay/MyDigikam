@@ -59,7 +59,7 @@ static void SetColorDetailsByFFmpeg(VideoFrame *f, AVFrame* frame, AVCodecContex
                 cr = ColorRange_Full;
                 cs = ColorSpace_XYZ; // not here
             } else if (!f->format().isRGB()) {
-                //qCDebug(DIGIKAM_QTAV_LOG) << QString::asprintf("prefer limited yuv range");
+                //qCDebug(DIGIKAM_QTAV_LOG).noquote() << QString::asprintf("prefer limited yuv range");
                 cr = ColorRange_Limited;
             }
         }
@@ -76,7 +76,7 @@ void VideoDecoderFFmpegBasePrivate::updateColorDetails(VideoFrame *f)
     // hw decoder output frame may have a different format, e.g. gl interop frame may have rgb format for rendering(stored as yuv)
     const bool rgb_frame = f->format().isRGB();
     if (rgb_frame) {
-        //qCDebug(DIGIKAM_QTAV_LOG) << QString::asprintf("rgb output frame (yuv coded)");
+        //qCDebug(DIGIKAM_QTAV_LOG).noquote() << QString::asprintf("rgb output frame (yuv coded)");
         f->setColorSpace(f->format().isPlanar() ? ColorSpace_GBR : ColorSpace_RGB);
         f->setColorRange(ColorRange_Full);
         return;
@@ -131,19 +131,19 @@ bool VideoDecoderFFmpegBase::decode(const Packet &packet)
     } else {
         ret = avcodec_decode_video2(d.codec_ctx, d.frame, &got_frame_ptr, (AVPacket*)packet.asAVPacket());
     }
-    //qCDebug(DIGIKAM_QTAV_LOG) << QString::asprintf("pic_type=%c", av_get_picture_type_char(d.frame->pict_type));
+    //qCDebug(DIGIKAM_QTAV_LOG).noquote() << QString::asprintf("pic_type=%c", av_get_picture_type_char(d.frame->pict_type));
     d.undecoded_size = qMin(packet.data.size() - ret, packet.data.size());
     if (ret < 0) {
-        //qCWarning(DIGIKAM_QTAV_LOG_WARN) << QString::asprintf("[VideoDecoderFFmpegBase] %s", av_err2str(ret));
+        //qCWarning(DIGIKAM_QTAV_LOG_WARN).noquote() << QString::asprintf("[VideoDecoderFFmpegBase] %s", av_err2str(ret));
         return false;
     }
     if (!got_frame_ptr) {
-        qCWarning(DIGIKAM_QTAV_LOG_WARN) << QString::asprintf("no frame could be decompressed: %s %d/%d", av_err2str(ret), d.undecoded_size, packet.data.size());
+        qCWarning(DIGIKAM_QTAV_LOG_WARN).noquote() << QString::asprintf("no frame could be decompressed: %s %d/%d", av_err2str(ret), d.undecoded_size, packet.data.size());
         return !packet.isEOF();
     }
     if (!d.codec_ctx->width || !d.codec_ctx->height)
         return false;
-    //qCDebug(DIGIKAM_QTAV_LOG) << QString::asprintf("codec %dx%d, frame %dx%d", d.codec_ctx->width, d.codec_ctx->height, d.frame->width, d.frame->height);
+    //qCDebug(DIGIKAM_QTAV_LOG).noquote() << QString::asprintf("codec %dx%d, frame %dx%d", d.codec_ctx->width, d.codec_ctx->height, d.frame->width, d.frame->height);
     d.width = d.frame->width; // TODO: remove? used in hwdec
     d.height = d.frame->height;
     //avcodec_align_dimensions2(d.codec_ctx, &d.width_align, &d.height_align, aligns);

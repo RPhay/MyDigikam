@@ -117,7 +117,7 @@ void AudioEncodeFilter::finish()
         return;
     if (!d.finishing.testAndSetRelaxed(0, 1))
         return;
-    qCDebug(DIGIKAM_QTAV_LOG) << QString::asprintf("About finish audio encoding");
+    qCDebug(DIGIKAM_QTAV_LOG).noquote() << QString::asprintf("About finish audio encoding");
     AudioFrame f;
     f.setTimestamp(std::numeric_limits<qreal>::max());
     if (isAsync()) {
@@ -157,14 +157,14 @@ void AudioEncodeFilter::encode(const AudioFrame& frame)
         }
 #endif
         if (!d.enc->open()) { // TODO: error()
-            qCWarning(DIGIKAM_QTAV_LOG_WARN) << QString::asprintf("Failed to open audio encoder");
+            qCWarning(DIGIKAM_QTAV_LOG_WARN).noquote() << QString::asprintf("Failed to open audio encoder");
             return;
         }
         Q_EMIT readyToEncode();
     }
     if (!frame.isValid() && frame.timestamp() == std::numeric_limits<qreal>::max()) {
         while (d.enc->encode()) {
-            qCDebug(DIGIKAM_QTAV_LOG) << QString::asprintf("encode delayed audio frames...");
+            qCDebug(DIGIKAM_QTAV_LOG).noquote() << QString::asprintf("encode delayed audio frames...");
             Q_EMIT frameEncoded(d.enc->encoded());
         }
         d.enc->close();
@@ -293,7 +293,7 @@ void VideoEncodeFilter::finish()
         return;
     if (!d.finishing.testAndSetRelaxed(0, 1))
         return;
-    qCDebug(DIGIKAM_QTAV_LOG) << QString::asprintf("About finish video encoding");
+    qCDebug(DIGIKAM_QTAV_LOG).noquote() << QString::asprintf("About finish video encoding");
     VideoFrame f;
     f.setTimestamp(std::numeric_limits<qreal>::max());
     if (isAsync()) {
@@ -330,14 +330,14 @@ void VideoEncodeFilter::encode(const VideoFrame& frame)
             d.enc->setHeight(frame.height());
         }
         if (!d.enc->open()) { // TODO: error()
-            qCWarning(DIGIKAM_QTAV_LOG_WARN) << QString::asprintf("Failed to open video encoder");
+            qCWarning(DIGIKAM_QTAV_LOG_WARN).noquote() << QString::asprintf("Failed to open video encoder");
             return;
         }
         Q_EMIT readyToEncode();
     }
     if (!frame.isValid() && frame.timestamp() == std::numeric_limits<qreal>::max()) {
         while (d.enc->encode()) {
-            qCDebug(DIGIKAM_QTAV_LOG) << QString::asprintf("encode delayed video frames...");
+            qCDebug(DIGIKAM_QTAV_LOG).noquote() << QString::asprintf("encode delayed video frames...");
             Q_EMIT frameEncoded(d.enc->encoded());
         }
         d.enc->close();

@@ -195,7 +195,7 @@ double AVClock::value() const
             ++nb_restarted;
             pts_ += (double(timer.restart()) * kThousandth + avg_err)* speed();
         } else {//timer is paused
-            //qCDebug(DIGIKAM_QTAV_LOG) << QString::asprintf("clock is paused. return the last value %f", pts_);
+            //qCDebug(DIGIKAM_QTAV_LOG).noquote() << QString::asprintf("clock is paused. return the last value %f", pts_);
         }
         return pts_ + value0;
     } else {

@@ -140,7 +140,7 @@ void AndroidIO::onUrlChanged()
 
     if (!cr.error().empty())
     {
-        qCWarning(DIGIKAM_QTAV_LOG_WARN) << QString::asprintf("getContentResolver error: %s", cr.error().data());
+        qCWarning(DIGIKAM_QTAV_LOG_WARN).noquote() << QString::asprintf("getContentResolver error: %s", cr.error().data());
         return;
     }
 
@@ -165,7 +165,7 @@ void AndroidIO::onUrlChanged()
 
     if (!afd.error().empty())
     {
-        qCWarning(DIGIKAM_QTAV_LOG_WARN) << QString::asprintf("openAssetFileDescriptor error: %s", afd.error().data());
+        qCWarning(DIGIKAM_QTAV_LOG_WARN).noquote() << QString::asprintf("openAssetFileDescriptor error: %s", afd.error().data());
         return;
     }
 
@@ -181,7 +181,7 @@ void AndroidIO::onUrlChanged()
 
     if (!pfd.error().empty())
     {
-        qCWarning(DIGIKAM_QTAV_LOG_WARN) << QString::asprintf("get ParcelFileDescriptor error: %s", pfd.error().data());
+        qCWarning(DIGIKAM_QTAV_LOG_WARN).noquote() << QString::asprintf("get ParcelFileDescriptor error: %s", pfd.error().data());
         return;
     }
 

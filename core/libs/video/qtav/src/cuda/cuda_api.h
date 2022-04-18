@@ -129,7 +129,7 @@ private:
             const char* errDetail = NULL; \
             cuGetErrorName(cuR, &errName); \
             cuGetErrorString(cuR, &errDetail); \
-            qCWarning(DIGIKAM_QTAV_LOG_WARN) << QString::asprintf("CUDA error %s@%d. " #f ": %d %s - %s", __FILE__, __LINE__, cuR, errName, errDetail); \
+            qCWarning(DIGIKAM_QTAV_LOG_WARN).noquote() << QString::asprintf("CUDA error %s@%d. " #f ": %d %s - %s", __FILE__, __LINE__, cuR, errName, errDetail); \
             __VA_ARGS__ \
         } \
     } while (0)
@@ -138,7 +138,7 @@ private:
     do { \
         CUresult cuR = f; \
         if (cuR != CUDA_SUCCESS) { \
-            qCWarning(DIGIKAM_QTAV_LOG_WARN) << QString::asprintf("CUDA error %s@%d. " #f ": %d %s", __FILE__, __LINE__, cuR, _cudaGetErrorEnum(cuR)); \
+            qCWarning(DIGIKAM_QTAV_LOG_WARN).noquote() << QString::asprintf("CUDA error %s@%d. " #f ": %d %s", __FILE__, __LINE__, cuR, _cudaGetErrorEnum(cuR)); \
             __VA_ARGS__ \
         } \
     } while (0)

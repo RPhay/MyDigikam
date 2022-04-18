@@ -108,7 +108,7 @@ static VertexData* SetVertexPositionAndNormalize(VertexData* v, float x, float y
     v[2].ty /= texH;
     v[3].tx /= texW;
     v[3].ty /= texH;
-    //qCDebug(DIGIKAM_QTAV_LOG) << QString::asprintf("%f,%f<=%f,%f; %u,%u,%u,%u", v[3].x, v[3].y, v[3].tx, v[3].ty, v[3].r, v[3].g, v[3].b, v[3].a);
+    //qCDebug(DIGIKAM_QTAV_LOG).noquote() << QString::asprintf("%f,%f<=%f,%f; %u,%u,%u,%u", v[3].x, v[3].y, v[3].tx, v[3].ty, v[3].r, v[3].g, v[3].b, v[3].a);
     if (!useIndecies) {
         v[4] = v[1];
         v[5] = v[2];
@@ -150,7 +150,7 @@ bool SubImagesGeometry::generateVertexData(const QRect &rect, bool useIndecies, 
         allocate(4*m_images.images.size(), 6*m_images.images.size());
     else
         allocate(6*m_images.images.size());
-    qCDebug(DIGIKAM_QTAV_LOG) << QString::asprintf("images: %d/%d, %dx%d", m_images.isValid(), m_images.images.size(), m_images.width(), m_images.height());
+    qCDebug(DIGIKAM_QTAV_LOG).noquote() << QString::asprintf("images: %d/%d, %dx%d", m_images.isValid(), m_images.images.size(), m_images.width(), m_images.height());
     m_rects_upload.clear();
     m_w = m_h = 0;
     m_normalized = false;
@@ -184,7 +184,7 @@ bool SubImagesGeometry::generateVertexData(const QRect &rect, bool useIndecies, 
     H += h;
     m_w = W;
     m_h = H;
-    //qCDebug(DIGIKAM_QTAV_LOG) << QString::asprintf("sub texture %dx%d", m_w, m_h);
+    //qCDebug(DIGIKAM_QTAV_LOG).noquote() << QString::asprintf("sub texture %dx%d", m_w, m_h);
 
     const float dx0 = rect.x();
     const float dy0 = rect.y();
@@ -193,7 +193,7 @@ bool SubImagesGeometry::generateVertexData(const QRect &rect, bool useIndecies, 
     vd = (VertexData*)vertexData();
     foreach (const SubImage& i, m_images.images) {
         //qCDebug(DIGIKAM_QTAV_LOG) << rect;
-        //qCDebug(DIGIKAM_QTAV_LOG) << QString::asprintf("i: %d,%d", i.x, i.y);
+        //qCDebug(DIGIKAM_QTAV_LOG).noquote() << QString::asprintf("i: %d,%d", i.x, i.y);
         vd = SetVertexPositionAndNormalize(vd, dx0 + float(i.x)*sx, dy0 + float(i.y)*sy, i.w*sx, i.h*sy, m_w, m_h, useIndecies);
         m_normalized = true;
     }

@@ -73,7 +73,7 @@ static int ffmpeg_get_va_buffer2(struct AVCodecContext *ctx, AVFrame *frame, int
     // va must be available here
     VideoDecoderFFmpegHWPrivate *va = (VideoDecoderFFmpegHWPrivate*)ctx->opaque;
     if (!va->getBuffer(&frame->opaque, &frame->data[0])) {
-        qCWarning(DIGIKAM_QTAV_LOG_WARN) << QString::asprintf("va->getBuffer failed");
+        qCWarning(DIGIKAM_QTAV_LOG_WARN).noquote() << QString::asprintf("va->getBuffer failed");
         return -1;
     }
     ffmpeg_va_ref_t *ref = new ffmpeg_va_ref_t;
@@ -178,7 +178,7 @@ AVPixelFormat VideoDecoderFFmpegHWPrivate::getFormat(struct AVCodecContext *avct
             continue;
         bool hwaccel = (dsc->flags & AV_PIX_FMT_FLAG_HWACCEL) != 0;
 
-        qCDebug(DIGIKAM_QTAV_LOG) << QString::asprintf("available %sware decoder output format %d (%s)",
+        qCDebug(DIGIKAM_QTAV_LOG).noquote() << QString::asprintf("available %sware decoder output format %d (%s)",
                  hwaccel ? "hard" : "soft", pi_fmt[i], dsc->name);
         if (hwaccel)
             can_hwaccel = true;
@@ -195,18 +195,18 @@ AVPixelFormat VideoDecoderFFmpegHWPrivate::getFormat(struct AVCodecContext *avct
         // TODO: manage uswc here for x86 (surface size is decoder dependent)
         avctx->hwaccel_context = setup(avctx);
         if (!avctx->hwaccel_context) {
-            qCWarning(DIGIKAM_QTAV_LOG_WARN) << QString::asprintf("acceleration setup failure");
+            qCWarning(DIGIKAM_QTAV_LOG_WARN).noquote() << QString::asprintf("acceleration setup failure");
             break;
         }
         hw_w = codedWidth((avctx));
         hw_h = codedHeight(avctx);
         hw_profile = avctx->profile;
-        qCDebug(DIGIKAM_QTAV_LOG) << QString::asprintf("Using %s for hardware decoding.", qPrintable(description));
+        qCDebug(DIGIKAM_QTAV_LOG).noquote() << QString::asprintf("Using %s for hardware decoding.", qPrintable(description));
         return pi_fmt[i];
     }
     close();
 end:
-    qCWarning(DIGIKAM_QTAV_LOG_WARN) << QString::asprintf("hardware acceleration is not available" );
+    qCWarning(DIGIKAM_QTAV_LOG_WARN).noquote() << QString::asprintf("hardware acceleration is not available" );
     /* Fallback to default behaviour */
 #if QTAV_HAVE(AVBUFREF)
     avctx->get_buffer2 = avcodec_default_get_buffer2;

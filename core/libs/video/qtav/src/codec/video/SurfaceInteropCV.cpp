@@ -241,7 +241,7 @@ bool InteropResourceCVPixelBuffer::map(CVPixelBufferRef buf, GLuint *tex, int w,
     GLenum format, dtype;
     getParametersGL(CVPixelBufferGetPixelFormatType(buf), &iformat, &format, &dtype, plane); //TODO: call once when format changed
     const int texture_w = CVPixelBufferGetBytesPerRowOfPlane(buf, plane)/OpenGLHelper::bytesOfGLFormat(format, dtype);
-    //qCDebug(DIGIKAM_QTAV_LOG) << QString::asprintf("cv plane%d width: %d, stride: %d, tex width: %d", plane, CVPixelBufferGetWidthOfPlane(buf, plane), CVPixelBufferGetBytesPerRowOfPlane(buf, plane), texture_w);
+    //qCDebug(DIGIKAM_QTAV_LOG).noquote() << QString::asprintf("cv plane%d width: %d, stride: %d, tex width: %d", plane, CVPixelBufferGetWidthOfPlane(buf, plane), CVPixelBufferGetBytesPerRowOfPlane(buf, plane), texture_w);
     // get address results in internal copy
     DYGL(glBindTexture(GL_TEXTURE_2D, *tex));
     DYGL(glTexSubImage2D(GL_TEXTURE_2D, 0, 0, 0

@@ -77,7 +77,7 @@ public:
 
             if (!buf[i])
             {
-                qCWarning(DIGIKAM_QTAV_LOG_WARN) << QString::asprintf("av_buffer_ref(frame->buf[%d]) error", i);
+                qCWarning(DIGIKAM_QTAV_LOG_WARN).noquote() << QString::asprintf("av_buffer_ref(frame->buf[%d]) error", i);
             }
         }
 
@@ -93,7 +93,7 @@ public:
 
             if (!buf[k])
             {
-                qCWarning(DIGIKAM_QTAV_LOG_WARN) << QString::asprintf("av_buffer_ref(frame->extended_buf[%d]) error", i);
+                qCWarning(DIGIKAM_QTAV_LOG_WARN).noquote() << QString::asprintf("av_buffer_ref(frame->extended_buf[%d]) error", i);
             }
         }
 

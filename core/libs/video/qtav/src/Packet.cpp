@@ -88,7 +88,7 @@ bool Packet::fromAVPacket(Packet* pkt, const AVPacket *avpkt, double time_base)
     // what about marking avpkt as invalid and do not use isCorrupt?
     pkt->isCorrupt = !!(avpkt->flags & AV_PKT_FLAG_CORRUPT);
     if (pkt->isCorrupt)
-        qCDebug(DIGIKAM_QTAV_LOG) << QString::asprintf("currupt packet. pts: %f", pkt->pts);
+        qCDebug(DIGIKAM_QTAV_LOG).noquote() << QString::asprintf("currupt packet. pts: %f", pkt->pts);
 
     // from av_read_frame: pkt->pts can be AV_NOPTS_VALUE if the video format has B-frames, so it is better to rely on pkt->dts if you do not decompress the payload.
     // old code set pts as dts is valid
@@ -102,7 +102,7 @@ bool Packet::fromAVPacket(Packet* pkt, const AVPacket *avpkt, double time_base)
         pkt->dts = avpkt->dts * time_base;
     else
         pkt->dts = pkt->pts;
-    //qCDebug(DIGIKAM_QTAV_LOG) << QString::asprintf("avpacket pts %lld, dts: %lld ", avpkt->pts, avpkt->dts);
+    //qCDebug(DIGIKAM_QTAV_LOG).noquote() << QString::asprintf("avpacket pts %lld, dts: %lld ", avpkt->pts, avpkt->dts);
     //TODO: pts must >= 0? look at ffplay
     pkt->pts = qMax<qreal>(0, pkt->pts);
     pkt->dts = qMax<qreal>(0, pkt->dts);
@@ -121,7 +121,7 @@ bool Packet::fromAVPacket(Packet* pkt, const AVPacket *avpkt, double time_base)
             )
         pkt->duration = avpkt->convergence_duration * time_base;
 #endif
-    //qCDebug(DIGIKAM_QTAV_LOG) << QString::asprintf("AVPacket.pts=%f, duration=%f, dts=%lld", pkt->pts, pkt->duration, packet.dts);
+    //qCDebug(DIGIKAM_QTAV_LOG).noquote() << QString::asprintf("AVPacket.pts=%f, duration=%f, dts=%lld", pkt->pts, pkt->duration, packet.dts);
     pkt->data.clear();
     // TODO: pkt->avpkt. data is not necessary now. see mpv new_demux_packet_from_avpacket
     // copy properties and side data. does not touch data, size and ref

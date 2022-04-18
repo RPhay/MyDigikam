@@ -578,7 +578,7 @@ bool Subtitle::processHeader(const QByteArray& codec, const QByteArray &data)
     if (old_processor != priv->processor)
         Q_EMIT engineChanged();
     if (!priv->processor) {
-        qCWarning(DIGIKAM_QTAV_LOG_WARN) << QString::asprintf("No subtitle processor supports the codec '%s'", codec.constData());
+        qCWarning(DIGIKAM_QTAV_LOG_WARN).noquote() << QString::asprintf("No subtitle processor supports the codec '%s'", codec.constData());
         return false;
     }
     if (!priv->processor->processHeader(codec, data))
@@ -786,7 +786,7 @@ QByteArray Subtitle::Private::readFromFile(const QString &path)
             CharsetDetector det;
             if (det.isAvailable()) {
                 QByteArray charset = det.detect(f.readAll());
-                qCDebug(DIGIKAM_QTAV_LOG) << QString::asprintf("charset>>>>>>>>: %s", charset.constData());
+                qCDebug(DIGIKAM_QTAV_LOG).noquote() << QString::asprintf("charset>>>>>>>>: %s", charset.constData());
                 f.seek(0);
                 if (!charset.isEmpty())
                     ts.setCodec(QTextCodec::codecForName(charset));
@@ -827,7 +827,7 @@ bool Subtitle::Private::processRawData(const QByteArray &data)
 
 bool Subtitle::Private::processRawData(SubtitleProcessor *sp, const QByteArray &data)
 {
-    qCDebug(DIGIKAM_QTAV_LOG) << QString::asprintf("processing subtitle from raw data...");
+    qCDebug(DIGIKAM_QTAV_LOG).noquote() << QString::asprintf("processing subtitle from raw data...");
     QByteArray u8(data);
     QBuffer buf(&u8);
     if (buf.open(QIODevice::ReadOnly)) {
@@ -839,7 +839,7 @@ bool Subtitle::Private::processRawData(SubtitleProcessor *sp, const QByteArray &
     } else {
         qCWarning(DIGIKAM_QTAV_LOG_WARN) << "open subtitle qbuffer error: " << buf.errorString();
     }
-    qCDebug(DIGIKAM_QTAV_LOG) << QString::asprintf("processing subtitle from a tmp utf8 file...");
+    qCDebug(DIGIKAM_QTAV_LOG).noquote() << QString::asprintf("processing subtitle from a tmp utf8 file...");
     QString name = QUrl::fromPercentEncoding(url.toEncoded()).section(ushort('/'), -1);
     if (name.isEmpty())
         name = QFileInfo(file_name).fileName(); //priv->name.section('/', -1); // if no seperator?

@@ -67,7 +67,7 @@ WidgetRenderer::WidgetRenderer(QWidget *parent, Qt::WindowFlags f) :
     if (ctx) {
         ctx->painter = d.painter;
     } else {
-        qCWarning(DIGIKAM_QTAVWIDGETS_LOG_WARN) << QString::asprintf("FilterContext not available!");
+        qCWarning(DIGIKAM_QTAVWIDGETS_LOG_WARN).noquote() << QString::asprintf("FilterContext not available!");
     }
 }
 
@@ -82,7 +82,7 @@ WidgetRenderer::WidgetRenderer(WidgetRendererPrivate &d, QWidget *parent, Qt::Wi
     if (ctx) {
         ctx->painter = d.painter;
     } else {
-        qCWarning(DIGIKAM_QTAVWIDGETS_LOG_WARN) << QString::asprintf("FilterContext not available!");
+        qCWarning(DIGIKAM_QTAVWIDGETS_LOG_WARN).noquote() << QString::asprintf("FilterContext not available!");
     }
 }
 

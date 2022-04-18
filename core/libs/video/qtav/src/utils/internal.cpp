@@ -160,7 +160,7 @@ QString fontsDir()
 
 QString options2StringHelper(void* obj, const char* unit)
 {
-    qCDebug(DIGIKAM_QTAV_LOG) << QString::asprintf("obj: %p", obj);
+    qCDebug(DIGIKAM_QTAV_LOG).noquote() << QString::asprintf("obj: %p", obj);
     QString s;
     const AVOption* opt = NULL;
     while ((opt = av_opt_next(obj, opt))) {
@@ -227,7 +227,7 @@ void setOptionsToFFmpegObj(const QVariant& opt, void* obj)
             if (vt == QVariant::Map)
                 continue;
             const QByteArray key(i.key().toUtf8());
-            qCDebug(DIGIKAM_QTAV_LOG) << QString::asprintf("%s=>%s", i.key().toUtf8().constData(), i.value().toByteArray().constData());
+            qCDebug(DIGIKAM_QTAV_LOG).noquote() << QString::asprintf("%s=>%s", i.key().toUtf8().constData(), i.value().toByteArray().constData());
             if (vt == QVariant::Int || vt == QVariant::UInt || vt == QVariant::Bool) {
                 // QVariant.toByteArray(): "true" or "false", can not recognized by avcodec
                 av_opt_set_int(obj, key.constData(), i.value().toInt(), AV_OPT_SEARCH_CHILDREN);
@@ -249,7 +249,7 @@ void setOptionsToFFmpegObj(const QVariant& opt, void* obj)
         if (vt == QVariant::Hash)
             continue;
         const QByteArray key(i.key().toUtf8());
-        qCDebug(DIGIKAM_QTAV_LOG) << QString::asprintf("%s=>%s", i.key().toUtf8().constData(), i.value().toByteArray().constData());
+        qCDebug(DIGIKAM_QTAV_LOG).noquote() << QString::asprintf("%s=>%s", i.key().toUtf8().constData(), i.value().toByteArray().constData());
         if (vt == QVariant::Int || vt == QVariant::UInt || vt == QVariant::Bool) {
             av_opt_set_int(obj, key.constData(), i.value().toInt(), AV_OPT_SEARCH_CHILDREN);
         } else if (vt == QVariant::LongLong || vt == QVariant::ULongLong) {
@@ -284,7 +284,7 @@ void setOptionsToDict(const QVariant& opt, AVDictionary** dict)
                 av_dict_set(dict, i.key().toUtf8().constData(), i.value().toByteArray().constData(), 0);
                 break;
             }
-            qCDebug(DIGIKAM_QTAV_LOG) << QString::asprintf("dict: %s=>%s", i.key().toUtf8().constData(), i.value().toByteArray().constData());
+            qCDebug(DIGIKAM_QTAV_LOG).noquote() << QString::asprintf("dict: %s=>%s", i.key().toUtf8().constData(), i.value().toByteArray().constData());
         }
         return;
     }
@@ -309,7 +309,7 @@ void setOptionsToDict(const QVariant& opt, AVDictionary** dict)
             av_dict_set(dict, i.key().toUtf8().constData(), i.value().toByteArray().constData(), 0);
             break;
         }
-        qCDebug(DIGIKAM_QTAV_LOG) << QString::asprintf("dict: %s=>%s", i.key().toUtf8().constData(), i.value().toByteArray().constData());
+        qCDebug(DIGIKAM_QTAV_LOG).noquote() << QString::asprintf("dict: %s=>%s", i.key().toUtf8().constData(), i.value().toByteArray().constData());
     }
 }
 
@@ -328,7 +328,7 @@ void setOptionsForQObject(const QVariant& opt, QObject *obj)
             if (i.value().type() == QVariant::Hash) // for example "vaapi": {...}
                 continue;
             obj->setProperty(i.key().toUtf8().constData(), i.value());
-            qCDebug(DIGIKAM_QTAV_LOG) << QString::asprintf("%s=>%s", i.key().toUtf8().constData(), i.value().toByteArray().constData());
+            qCDebug(DIGIKAM_QTAV_LOG).noquote() << QString::asprintf("%s=>%s", i.key().toUtf8().constData(), i.value().toByteArray().constData());
         }
     }
     if (opt.type() != QVariant::Map)
@@ -342,7 +342,7 @@ void setOptionsForQObject(const QVariant& opt, QObject *obj)
         if (i.value().type() == QVariant::Map) // for example "vaapi": {...}
             continue;
         obj->setProperty(i.key().toUtf8().constData(), i.value());
-        qCDebug(DIGIKAM_QTAV_LOG) << QString::asprintf("%s=>%s", i.key().toUtf8().constData(), i.value().toByteArray().constData());
+        qCDebug(DIGIKAM_QTAV_LOG).noquote() << QString::asprintf("%s=>%s", i.key().toUtf8().constData(), i.value().toByteArray().constData());
     }
 }
 } //namespace Internal

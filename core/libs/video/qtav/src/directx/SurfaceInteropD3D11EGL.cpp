@@ -95,20 +95,20 @@ void EGLInteropResource::releaseEGL() {
 bool EGLInteropResource::ensureSurface(int w, int h) {
     if (egl->surface && width == w && height == h)
         return true;
-    qCDebug(DIGIKAM_QTAV_LOG) << QString::asprintf("update egl and dx");
+    qCDebug(DIGIKAM_QTAV_LOG).noquote() << QString::asprintf("update egl and dx");
     egl->dpy = eglGetCurrentDisplay();
     if (!egl->dpy) {
-        qCWarning(DIGIKAM_QTAV_LOG_WARN) << QString::asprintf("Failed to get current EGL display");
+        qCWarning(DIGIKAM_QTAV_LOG_WARN).noquote() << QString::asprintf("Failed to get current EGL display");
         return false;
     }
-    qCDebug(DIGIKAM_QTAV_LOG) << QString::asprintf("EGL version: %s, client api: %s", eglQueryString(egl->dpy, EGL_VERSION), eglQueryString(egl->dpy, EGL_CLIENT_APIS));
+    qCDebug(DIGIKAM_QTAV_LOG).noquote() << QString::asprintf("EGL version: %s, client api: %s", eglQueryString(egl->dpy, EGL_VERSION), eglQueryString(egl->dpy, EGL_CLIENT_APIS));
     // TODO: check runtime egl>=1.4 for eglGetCurrentContext()
     // check extensions
     QList<QByteArray> extensions = QByteArray(eglQueryString(egl->dpy, EGL_EXTENSIONS)).split(' ');
     // TODO: strstr is enough
     const bool kEGL_ANGLE_d3d_share_handle_client_buffer = extensions.contains("EGL_ANGLE_d3d_share_handle_client_buffer");
     if (!kEGL_ANGLE_d3d_share_handle_client_buffer) {
-        qCWarning(DIGIKAM_QTAV_LOG_WARN) << QString::asprintf("EGL extension 'ANGLE_d3d_share_handle_client_buffer' is required!");
+        qCWarning(DIGIKAM_QTAV_LOG_WARN).noquote() << QString::asprintf("EGL extension 'ANGLE_d3d_share_handle_client_buffer' is required!");
         return false;
     }
     //GLint has_alpha = 1; //QOpenGLContext::currentContext()->format().hasAlpha()
@@ -124,7 +124,7 @@ bool EGLInteropResource::ensureSurface(int w, int h) {
     EGLint nb_cfgs;
     EGLConfig egl_cfg;
     if (!eglChooseConfig(egl->dpy, cfg_attribs, &egl_cfg, 1, &nb_cfgs)) {
-        qCWarning(DIGIKAM_QTAV_LOG_WARN) << QString::asprintf("Failed to create EGL configuration");
+        qCWarning(DIGIKAM_QTAV_LOG_WARN).noquote() << QString::asprintf("Failed to create EGL configuration");
         return false;
     }
     // TODO: check alpha?
@@ -152,7 +152,7 @@ bool EGLInteropResource::ensureSurface(int w, int h) {
     };
     // egl surface size must match d3d texture's
     EGL_ENSURE((egl->surface = eglCreatePbufferFromClientBuffer(egl->dpy, EGL_D3D_TEXTURE_2D_SHARE_HANDLE_ANGLE, share_handle, egl_cfg, attribs)), false);
-    qCDebug(DIGIKAM_QTAV_LOG) << QString::asprintf("pbuffer surface from client buffer: %p", egl->surface);
+    qCDebug(DIGIKAM_QTAV_LOG).noquote() << QString::asprintf("pbuffer surface from client buffer: %p", egl->surface);
 
     width = w;
     height = h;

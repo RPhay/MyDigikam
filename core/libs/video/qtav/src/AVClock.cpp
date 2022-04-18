@@ -94,7 +94,7 @@ bool AVClock::isActive() const
 void AVClock::setInitialValue(double v)
 {
     value0 = v;
-    qCDebug(DIGIKAM_QTAV_LOG) << QString::asprintf("Clock initial value: %f", v);
+    qCDebug(DIGIKAM_QTAV_LOG).noquote() << QString::asprintf("Clock initial value: %f", v);
 }
 
 double AVClock::initialValue() const
@@ -117,7 +117,7 @@ void AVClock::updateExternalClock(qint64 msecs)
     if (clock_type == AudioClock)
         return;
 
-    qCDebug(DIGIKAM_QTAV_LOG) << QString::asprintf("External clock change: %f ==> %f", value(), double(msecs) * kThousandth);
+    qCDebug(DIGIKAM_QTAV_LOG).noquote() << QString::asprintf("External clock change: %f ==> %f", value(), double(msecs) * kThousandth);
 
     pts_ = double(msecs) * kThousandth; //can not use msec/1000.
 
@@ -136,7 +136,7 @@ void AVClock::updateExternalClock(const AVClock &clock)
     if (clock_type != ExternalClock)
         return;
 
-    qCDebug(DIGIKAM_QTAV_LOG) << QString::asprintf("External clock change: %f ==> %f", value(), clock.value());
+    qCDebug(DIGIKAM_QTAV_LOG).noquote() << QString::asprintf("External clock change: %f ==> %f", value(), clock.value());
 
     pts_ = clock.value();
 
@@ -174,7 +174,7 @@ bool AVClock::syncEndOnce(int id)
 {
     if (id != sync_id)
     {
-        qCWarning(DIGIKAM_QTAV_LOG_WARN) << QString::asprintf("bad sync id: %d, current: %d", id, sync_id);
+        qCWarning(DIGIKAM_QTAV_LOG_WARN).noquote() << QString::asprintf("bad sync id: %d, current: %d", id, sync_id);
         return true;
     }
 
@@ -187,7 +187,7 @@ bool AVClock::syncEndOnce(int id)
 void AVClock::start()
 {
     m_state = kRunning;
-    qCDebug(DIGIKAM_QTAV_LOG) << QString::asprintf("AVClock started!!!!!!!!");
+    qCDebug(DIGIKAM_QTAV_LOG).noquote() << QString::asprintf("AVClock started!!!!!!!!");
     timer.start();
     QTimer::singleShot(0, this, SLOT(restartCorrectionTimer()));
     Q_EMIT started();
@@ -281,7 +281,7 @@ void AVClock::timerEvent(QTimerEvent *event)
         avg_err += err/(nb_restarted+1);
     }
 
-    //qCDebug(DIGIKAM_QTAV_LOG) << QString::asprintf("correction timer event. error = %f, avg_err=%f, nb_restarted=%d", err, avg_err, nb_restarted);
+    //qCDebug(DIGIKAM_QTAV_LOG).noquote() << QString::asprintf("correction timer event. error = %f, avg_err=%f, nb_restarted=%d", err, avg_err, nb_restarted);
 
     last_pts = value();
     nb_restarted = 0;

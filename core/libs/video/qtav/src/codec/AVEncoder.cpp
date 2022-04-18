@@ -189,7 +189,7 @@ void AVEncoderPrivate::applyOptionsForDict()
     }
     if (options.isEmpty())
         return;
-    qCDebug(DIGIKAM_QTAV_LOG) << QString::asprintf("set AVCodecContext dict:");
+    qCDebug(DIGIKAM_QTAV_LOG).noquote() << QString::asprintf("set AVCodecContext dict:");
     // TODO: use QVariantMap only
     if (!options.contains(QStringLiteral("avcodec")))
         return;

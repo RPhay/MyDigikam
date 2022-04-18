@@ -93,7 +93,7 @@ QStringList ffmpeg_supported_sub_extensions_by_codec()
 #endif
         if (c->type != AVMEDIA_TYPE_SUBTITLE)
             continue;
-        qCDebug(DIGIKAM_QTAV_LOG) << QString::asprintf("sub codec: %s", c->name);
+        qCDebug(DIGIKAM_QTAV_LOG).noquote() << QString::asprintf("sub codec: %s", c->name);
 #if AVFORMAT_STATIC_REGISTER
         const AVInputFormat *i = NULL;
         void* it2 = NULL;
@@ -104,18 +104,18 @@ QStringList ffmpeg_supported_sub_extensions_by_codec()
         while ((i = av_iformat_next(i))) {
 #endif
             if (!strcmp(i->name, c->name)) {
-                qCDebug(DIGIKAM_QTAV_LOG) << QString::asprintf("found iformat");
+                qCDebug(DIGIKAM_QTAV_LOG).noquote() << QString::asprintf("found iformat");
                 if (i->extensions) {
                     exts.append(QString::fromLatin1(i->extensions).split(QLatin1Char(',')));
                 } else {
-                    qCDebug(DIGIKAM_QTAV_LOG) << QString::asprintf("has no exts");
+                    qCDebug(DIGIKAM_QTAV_LOG).noquote() << QString::asprintf("has no exts");
                     exts.append(QString::fromLatin1(i->name));
                 }
                 break;
             }
         }
         if (!i) {
-            //qCDebug(DIGIKAM_QTAV_LOG) << QString::asprintf("codec name '%s' is not found in AVInputFormat, just append codec name", c->name);
+            //qCDebug(DIGIKAM_QTAV_LOG).noquote() << QString::asprintf("codec name '%s' is not found in AVInputFormat, just append codec name", c->name);
             //exts.append(c->name);
         }
     }
@@ -200,7 +200,7 @@ bool SubtitleProcessorFFmpeg::process(QIODevice *dev)
         goto error;
     if (m_reader.subtitleStreams().isEmpty())
         goto error;
-    qCDebug(DIGIKAM_QTAV_LOG) << QString::asprintf("subtitle format: %s", m_reader.formatContext()->iformat->name);
+    qCDebug(DIGIKAM_QTAV_LOG).noquote() << QString::asprintf("subtitle format: %s", m_reader.formatContext()->iformat->name);
     if (!processSubtitle())
         goto error;
     m_reader.unload();
@@ -217,7 +217,7 @@ bool SubtitleProcessorFFmpeg::process(const QString &path)
         goto error;
     if (m_reader.subtitleStreams().isEmpty())
         goto error;
-    qCDebug(DIGIKAM_QTAV_LOG) << QString::asprintf("subtitle format: %s", m_reader.formatContext()->iformat->name);
+    qCDebug(DIGIKAM_QTAV_LOG).noquote() << QString::asprintf("subtitle format: %s", m_reader.formatContext()->iformat->name);
     if (!processSubtitle())
         goto error;
     m_reader.unload();
@@ -254,16 +254,16 @@ bool SubtitleProcessorFFmpeg::processHeader(const QByteArray &codec, const QByte
     }
     AVCodec *c = avcodec_find_decoder_by_name(codec.constData());
     if (!c) {
-        qCDebug(DIGIKAM_QTAV_LOG) << QString::asprintf("subtitle avcodec_descriptor_get_by_name %s", codec.constData());
+        qCDebug(DIGIKAM_QTAV_LOG).noquote() << QString::asprintf("subtitle avcodec_descriptor_get_by_name %s", codec.constData());
         const AVCodecDescriptor *desc = avcodec_descriptor_get_by_name(codec.constData());
         if (!desc) {
-            qCWarning(DIGIKAM_QTAV_LOG_WARN) << QString::asprintf("No codec descriptor found for %s", codec.constData());
+            qCWarning(DIGIKAM_QTAV_LOG_WARN).noquote() << QString::asprintf("No codec descriptor found for %s", codec.constData());
             return false;
         }
         c = avcodec_find_decoder(desc->id);
     }
     if (!c) {
-        qCWarning(DIGIKAM_QTAV_LOG_WARN) << QString::asprintf("No subtitle decoder found for codec: %s, try fron descriptor", codec.constData());
+        qCWarning(DIGIKAM_QTAV_LOG_WARN).noquote() << QString::asprintf("No subtitle decoder found for codec: %s, try fron descriptor", codec.constData());
         return false;
     }
     codec_ctx = avcodec_alloc_context3(c);
@@ -344,16 +344,16 @@ SubtitleFrame SubtitleProcessorFFmpeg::processLine(const QByteArray &data, qreal
     for (unsigned i = 0; i < sub.num_rects; i++) {
         switch (sub.rects[i]->type) {
         case SUBTITLE_ASS:
-            //qCDebug(DIGIKAM_QTAV_LOG) << QString::asprintf("ass frame: %s", sub.rects[i]->ass);
+            //qCDebug(DIGIKAM_QTAV_LOG).noquote() << QString::asprintf("ass frame: %s", sub.rects[i]->ass);
             frame.text.append(PlainText::fromAss(sub.rects[i]->ass)).append(ushort('\n'));
             break;
         case SUBTITLE_TEXT:
-            //qCDebug(DIGIKAM_QTAV_LOG) << QString::asprintf("txt frame: %s", sub.rects[i]->text);
+            //qCDebug(DIGIKAM_QTAV_LOG).noquote() << QString::asprintf("txt frame: %s", sub.rects[i]->text);
             frame.text.append(QString::fromUtf8(sub.rects[i]->text)).append(ushort('\n'));
             break;
         case SUBTITLE_BITMAP:
             //sub.rects[i]->w > 0 && sub.rects[i]->h > 0
-            //qCDebug(DIGIKAM_QTAV_LOG) << QString::asprintf("bmp sub");
+            //qCDebug(DIGIKAM_QTAV_LOG).noquote() << QString::asprintf("bmp sub");
             frame = SubtitleFrame(); // not support bmp subtitle now
             break;
         default:
@@ -370,7 +370,7 @@ bool SubtitleProcessorFFmpeg::processSubtitle()
     m_frames.clear();
     int ss = m_reader.subtitleStream();
     if (ss < 0) {
-        qCWarning(DIGIKAM_QTAV_LOG_WARN) << QString::asprintf("no subtitle stream found");
+        qCWarning(DIGIKAM_QTAV_LOG_WARN).noquote() << QString::asprintf("no subtitle stream found");
         return false;
     }
     codec_ctx = m_reader.subtitleCodecContext();
@@ -378,23 +378,23 @@ bool SubtitleProcessorFFmpeg::processSubtitle()
     const AVCodecDescriptor *dec_desc = avcodec_descriptor_get(codec_ctx->codec_id);
     if (!dec) {
         if (dec_desc)
-            qCWarning(DIGIKAM_QTAV_LOG_WARN) << QString::asprintf("Failed to find subtitle codec %s", dec_desc->name);
+            qCWarning(DIGIKAM_QTAV_LOG_WARN).noquote() << QString::asprintf("Failed to find subtitle codec %s", dec_desc->name);
         else
-            qCWarning(DIGIKAM_QTAV_LOG_WARN) << QString::asprintf("Failed to find subtitle codec %d", codec_ctx->codec_id);
+            qCWarning(DIGIKAM_QTAV_LOG_WARN).noquote() << QString::asprintf("Failed to find subtitle codec %d", codec_ctx->codec_id);
         return false;
     }
-    qCDebug(DIGIKAM_QTAV_LOG) << QString::asprintf("found subtitle decoder '%s'", dec_desc->name);
+    qCDebug(DIGIKAM_QTAV_LOG).noquote() << QString::asprintf("found subtitle decoder '%s'", dec_desc->name);
     // AV_CODEC_PROP_TEXT_SUB: ffmpeg >= 2.0
 #ifdef AV_CODEC_PROP_TEXT_SUB
     if (dec_desc && !(dec_desc->props & AV_CODEC_PROP_TEXT_SUB)) {
-        qCWarning(DIGIKAM_QTAV_LOG_WARN) << QString::asprintf("Only text based subtitles are currently supported");
+        qCWarning(DIGIKAM_QTAV_LOG_WARN).noquote() << QString::asprintf("Only text based subtitles are currently supported");
         return false;
     }
 #endif
     AVDictionary *codec_opts = NULL;
     int ret = avcodec_open2(codec_ctx, dec, &codec_opts);
     if (ret < 0) {
-        qCWarning(DIGIKAM_QTAV_LOG_WARN) << QString::asprintf("open subtitle codec error: %s", av_err2str(ret));
+        qCWarning(DIGIKAM_QTAV_LOG_WARN).noquote() << QString::asprintf("open subtitle codec error: %s", av_err2str(ret));
         av_dict_free(&codec_opts);
         return false;
     }

@@ -147,7 +147,7 @@ bool VideoFilter::prepareContext(VideoFilterContext *&ctx, Statistics *statistic
 {
     DPTR_D(VideoFilter);
     if (!ctx || !isSupported(ctx->type())) {
-        //qCDebug(DIGIKAM_QTAV_LOG) << QString::asprintf("no context: %p, or context type %d is not supported", ctx, ctx? ctx->type() : 0);
+        //qCDebug(DIGIKAM_QTAV_LOG).noquote() << QString::asprintf("no context: %p, or context type %d is not supported", ctx, ctx? ctx->type() : 0);
         return isSupported(VideoFilterContext::None);
     }
     if (!d.context || d.context->type() != ctx->type()) {

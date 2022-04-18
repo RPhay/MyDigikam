@@ -107,7 +107,7 @@ void VideoPreviewWidget::displayFrame(const QtAV::VideoFrame &frame)
 {
     int diff = qAbs(qint64(frame.timestamp()*1000.0) - m_extractor->position());
     if (diff > m_extractor->precision()) {
-        //qCWarning(DIGIKAM_QTAVWIDGETS_LOG_WARN) << QString::asprintf("timestamp difference (%d/%lld) is too large! ignore", diff);
+        //qCWarning(DIGIKAM_QTAVWIDGETS_LOG_WARN).noquote() << QString::asprintf("timestamp difference (%d/%lld) is too large! ignore", diff);
     }
     if (!frame.isValid()) {
         displayNoFrame();

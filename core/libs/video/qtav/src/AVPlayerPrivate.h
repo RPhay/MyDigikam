@@ -68,9 +68,9 @@ public:
         Out *old = pOut;
         bool delete_old = false;
         if (pOut == pNew) {
-            qCDebug(DIGIKAM_QTAV_LOG) << QString::asprintf("output not changed: %p", pOut);
+            qCDebug(DIGIKAM_QTAV_LOG).noquote() << QString::asprintf("output not changed: %p", pOut);
             if (thread && thread->output() == pNew) {//avthread already set that output
-                qCDebug(DIGIKAM_QTAV_LOG) << QString::asprintf("avthread already set that output");
+                qCDebug(DIGIKAM_QTAV_LOG).noquote() << QString::asprintf("avthread already set that output");
                 return;
             }
         } else {
@@ -78,7 +78,7 @@ public:
             delete_old = true;
         }
         if (!thread) {
-            qCDebug(DIGIKAM_QTAV_LOG) << QString::asprintf("avthread not ready. can not set output.");
+            qCDebug(DIGIKAM_QTAV_LOG).noquote() << QString::asprintf("avthread not ready. can not set output.");
             //no avthread, we can delete it safely
             //AVOutput must be allocated in heap. Just like QObject's children.
             if (delete_old) {
@@ -91,7 +91,7 @@ public:
         //bool need_lock = isPlaying() && !thread->isPaused();
         //if (need_lock)
         //    thread->lock();
-        qCDebug(DIGIKAM_QTAV_LOG) << QString::asprintf("set AVThread output");
+        qCDebug(DIGIKAM_QTAV_LOG).noquote() << QString::asprintf("set AVThread output");
         thread->setOutput(pOut);
         if (pOut) {
             pOut->setStatistics(&statistics);

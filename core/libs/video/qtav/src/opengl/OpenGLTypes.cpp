@@ -239,7 +239,7 @@ bool Uniform::setGL()
         break;
     default:
         qCDebug(DIGIKAM_QTAV_LOG) << *this;
-        qCWarning(DIGIKAM_QTAV_LOG_WARN) << QString::asprintf("Unsupported uniform type in Qt. You should use 'VideoShader::setUserUniformValues()' to call glUniformXXX or directly call glUniformXXX instead");
+        qCWarning(DIGIKAM_QTAV_LOG_WARN).noquote() << QString::asprintf("Unsupported uniform type in Qt. You should use 'VideoShader::setUserUniformValues()' to call glUniformXXX or directly call glUniformXXX instead");
         return false;
     }
     dirty = false;

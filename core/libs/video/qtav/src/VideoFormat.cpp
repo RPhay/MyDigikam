@@ -116,7 +116,7 @@ public:
     void init() {
         // TODO: what if other formats not supported by ffmpeg? give attributes in QtAV?
         if (pixfmt_ff == QTAV_PIX_FMT_C(NONE)) {
-            qCWarning(DIGIKAM_QTAV_LOG_WARN) << QString::asprintf("Invalid pixel format");
+            qCWarning(DIGIKAM_QTAV_LOG_WARN).noquote() << QString::asprintf("Invalid pixel format");
             return;
         }
         planes = qMax(av_pix_fmt_count_planes(pixfmt_ff), 0);

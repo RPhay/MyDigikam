@@ -69,13 +69,13 @@ bool VideoRenderer::setPreferredPixelFormat(VideoFormat::PixelFormat pixfmt)
     if (d.preferred_format == pixfmt)
         return false;
     if (!isSupported(pixfmt)) {
-        qCWarning(DIGIKAM_QTAV_LOG_WARN) << QString::asprintf("pixel format '%s' is not supported", VideoFormat(pixfmt).name().toUtf8().constData());
+        qCWarning(DIGIKAM_QTAV_LOG_WARN).noquote() << QString::asprintf("pixel format '%s' is not supported", VideoFormat(pixfmt).name().toUtf8().constData());
         return false;
     }
     VideoFormat::PixelFormat old = d.preferred_format;
     d.preferred_format = pixfmt;
     if (!onSetPreferredPixelFormat(pixfmt)) {
-        qCWarning(DIGIKAM_QTAV_LOG_WARN) << QString::asprintf("onSetPreferredPixelFormat failed");
+        qCWarning(DIGIKAM_QTAV_LOG_WARN).noquote() << QString::asprintf("onSetPreferredPixelFormat failed");
         d.preferred_format = old;
         return false;
     }
@@ -101,7 +101,7 @@ void VideoRenderer::forcePreferredPixelFormat(bool force)
     bool old = d.force_preferred;
     d.force_preferred = force;
     if (!onForcePreferredPixelFormat(force)) {
-        qCWarning(DIGIKAM_QTAV_LOG_WARN) << QString::asprintf("onForcePreferredPixelFormat failed");
+        qCWarning(DIGIKAM_QTAV_LOG_WARN).noquote() << QString::asprintf("onForcePreferredPixelFormat failed");
         d.force_preferred = old;
     }
 }
@@ -236,7 +236,7 @@ void VideoRenderer::setInSize(int width, int height)
     if (!d.aspect_ratio_changed)// && (d.src_width == width && d.src_height == height))
         return;
     //d.source_aspect_ratio = qreal(d.src_width)/qreal(d.src_height);
-    qCDebug(DIGIKAM_QTAV_LOG) << QString::asprintf("%s => calculating aspect ratio from converted input data(%f)", __FUNCTION__, d.source_aspect_ratio);
+    qCDebug(DIGIKAM_QTAV_LOG).noquote() << QString::asprintf("%s => calculating aspect ratio from converted input data(%f)", __FUNCTION__, d.source_aspect_ratio);
     //see setOutAspectRatioMode
     if (d.out_aspect_ratio_mode == VideoAspectRatio) {
         //source_aspect_ratio equals to original video aspect ratio here, also equals to out ratio
@@ -479,7 +479,7 @@ void VideoRenderer::handlePaintEvent()
             foreach(Filter* filter, d.filters) {
                 VideoFilter *vf = static_cast<VideoFilter*>(filter);
                 if (!vf) {
-                    qCWarning(DIGIKAM_QTAV_LOG_WARN) << QString::asprintf("a null filter!");
+                    qCWarning(DIGIKAM_QTAV_LOG_WARN).noquote() << QString::asprintf("a null filter!");
                     //d.filters.removeOne(filter);
                     continue;
                 }
@@ -508,7 +508,7 @@ void VideoRenderer::handlePaintEvent()
          */
         if (d.video_frame.isValid()) {
             drawFrame();
-            //qCDebug(DIGIKAM_QTAV_LOG) << QString::asprintf("render elapsed: %lld", et.elapsed());
+            //qCDebug(DIGIKAM_QTAV_LOG).noquote() << QString::asprintf("render elapsed: %lld", et.elapsed());
             if (d.statistics) {
                 d.statistics->video_only.frameDisplayed(d.video_frame.timestamp());
                 d.statistics->video.current_time = QTime(0, 0, 0).addMSecs(int(d.video_frame.timestamp() * 1000.0));
@@ -522,7 +522,7 @@ void VideoRenderer::handlePaintEvent()
         foreach(Filter* filter, d.filters) {
             VideoFilter *vf = static_cast<VideoFilter*>(filter);
             if (!vf) {
-                qCWarning(DIGIKAM_QTAV_LOG_WARN) << QString::asprintf("a null filter!");
+                qCWarning(DIGIKAM_QTAV_LOG_WARN).noquote() << QString::asprintf("a null filter!");
                 //d.filters.removeOne(filter);
                 continue;
             }

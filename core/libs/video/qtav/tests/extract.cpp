@@ -84,11 +84,11 @@ public Q_SLOTS:
         view->receive(frame);
         qApp->processEvents();
         frame.toImage().save(QString::fromLatin1("%1.png").arg(frame.timestamp()));
-        qCDebug(DIGIKAM_TESTS_LOG) << QString::asprintf("frame %dx%d @%f", frame.width(), frame.height(), frame.timestamp());
+        qCDebug(DIGIKAM_TESTS_LOG).noquote() << QString::asprintf("frame %dx%d @%f", frame.width(), frame.height(), frame.timestamp());
 
         if (++extracted >= nb)
         {
-            qCDebug(DIGIKAM_TESTS_LOG) << QString::asprintf("elapsed: %lld.", timer.elapsed());
+            qCDebug(DIGIKAM_TESTS_LOG).noquote() << QString::asprintf("elapsed: %lld.", timer.elapsed());
             return;
         }
 
@@ -119,7 +119,7 @@ int main(int argc, char** argv)
 
     if (idx < 0)
     {
-        qCDebug(DIGIKAM_TESTS_LOG) << QString::asprintf("-f file -t sec -n count -asyc");
+        qCDebug(DIGIKAM_TESTS_LOG).noquote() << QString::asprintf("-f file -t sec -n count -asyc");
         return -1;
     }
 

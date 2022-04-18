@@ -52,14 +52,14 @@ public:
 #endif
             qCDebug(DIGIKAM_QTAV_LOG) << "Loading QtAVWidgets module: " << avwidgets.fileName();
             if (!avwidgets.load()) {
-                qCWarning(DIGIKAM_QTAV_LOG_WARN) << QString::asprintf("Failed to load QtAVWidgets module");
+                qCWarning(DIGIKAM_QTAV_LOG_WARN).noquote() << QString::asprintf("Failed to load QtAVWidgets module");
             }
         }
         impl = VideoRenderer::create(rendererId);
         if (!impl && !force) {
             VideoRendererId *vid = NULL;
             while ((vid = VideoRenderer::next(vid))) {
-                qCDebug(DIGIKAM_QTAV_LOG) << QString::asprintf("next id: %d, name: %s", *vid, VideoRenderer::name(*vid));
+                qCDebug(DIGIKAM_QTAV_LOG).noquote() << QString::asprintf("next id: %d, name: %s", *vid, VideoRenderer::name(*vid));
                 if (impl) {
                     delete impl;
                     impl = 0;

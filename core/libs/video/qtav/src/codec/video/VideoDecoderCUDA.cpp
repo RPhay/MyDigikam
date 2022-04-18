@@ -276,7 +276,7 @@ public:
             || (cuvidfmt->coded_height != dci->ulHeight)
             || (cuvidfmt->chroma_format != dci->ChromaFormat)
             || p->force_sequence_update) {
-            qCDebug(DIGIKAM_QTAV_LOG) << QString::asprintf("recreate cuvid parser");
+            qCDebug(DIGIKAM_QTAV_LOG).noquote() << QString::asprintf("recreate cuvid parser");
             p->force_sequence_update = false;
             p->yuv_range = cuvidfmt->video_signal_description.video_full_range_flag ? ColorRange_Full : ColorRange_Limited;
             //coded_width or width?
@@ -291,14 +291,14 @@ public:
     }
     static int CUDAAPI HandlePictureDecode(void *obj, CUVIDPICPARAMS *cuvidpic) {
         VideoDecoderCUDAPrivate *p = reinterpret_cast<VideoDecoderCUDAPrivate*>(obj);
-        //qCDebug(DIGIKAM_QTAV_LOG) << QString::asprintf("%s @%d tid=%p dec=%p idx=%d inUse=%d", __FUNCTION__, __LINE__, QThread::currentThread(), p->dec, cuvidpic->CurrPicIdx, p->surface_in_use[cuvidpic->CurrPicIdx]);
+        //qCDebug(DIGIKAM_QTAV_LOG).noquote() << QString::asprintf("%s @%d tid=%p dec=%p idx=%d inUse=%d", __FUNCTION__, __LINE__, QThread::currentThread(), p->dec, cuvidpic->CurrPicIdx, p->surface_in_use[cuvidpic->CurrPicIdx]);
         p->doDecodePicture(cuvidpic);
         return 1;
     }
     static int CUDAAPI HandlePictureDisplay(void *obj, CUVIDPARSERDISPINFO *cuviddisp) {
         VideoDecoderCUDAPrivate *p = reinterpret_cast<VideoDecoderCUDAPrivate*>(obj);
         p->surface_in_use[cuviddisp->picture_index] = true;
-        //qCDebug(DIGIKAM_QTAV_LOG) << QString::asprintf("mark in use pic_index: %d", cuviddisp->picture_index);
+        //qCDebug(DIGIKAM_QTAV_LOG).noquote() << QString::asprintf("mark in use pic_index: %d", cuviddisp->picture_index);
 #if COPY_ON_DECODE
         return p->processDecodedData(cuviddisp, 0);
 #else
@@ -392,12 +392,12 @@ bool VideoDecoderCUDA::decode(const Packet &packet)
         return false;
     DPTR_D(VideoDecoderCUDA);
     if (!d.parser) {
-        qCWarning(DIGIKAM_QTAV_LOG_WARN) << QString::asprintf("CUVID parser not ready");
+        qCWarning(DIGIKAM_QTAV_LOG_WARN).noquote() << QString::asprintf("CUVID parser not ready");
         return false;
     }
     if (packet.isEOF()) {
         if (!d.flushParser()) {
-            qCDebug(DIGIKAM_QTAV_LOG) << QString::asprintf("Error decode EOS"); // when?
+            qCDebug(DIGIKAM_QTAV_LOG).noquote() << QString::asprintf("Error decode EOS"); // when?
             return false;
         }
         return !d.frame_queue.isEmpty();
@@ -411,9 +411,9 @@ bool VideoDecoderCUDA::decode(const Packet &packet)
         filtered = av_bitstream_filter_filter(d.bsf, d.codec_ctx, NULL, &outBuf, &outBufSize
                                                   , (const uint8_t*)packet.data.constData(), packet.data.size()
                                                   , 0);//d.is_keyframe);
-        //qCDebug(DIGIKAM_QTAV_LOG) << QString::asprintf("%s @%d filtered=%d outBuf=%p, outBufSize=%d", __FUNCTION__, __LINE__, filtered, outBuf, outBufSize);
+        //qCDebug(DIGIKAM_QTAV_LOG).noquote() << QString::asprintf("%s @%d filtered=%d outBuf=%p, outBufSize=%d", __FUNCTION__, __LINE__, filtered, outBuf, outBufSize);
         if (filtered < 0) {
-            qCDebug(DIGIKAM_QTAV_LOG) << QString::asprintf("failed to filter: %s", av_err2str(filtered));
+            qCDebug(DIGIKAM_QTAV_LOG).noquote() << QString::asprintf("failed to filter: %s", av_err2str(filtered));
         }
     } else {
         outBuf = (uint8_t*)packet.data.constData();
@@ -435,7 +435,7 @@ bool VideoDecoderCUDA::decode(const Packet &packet)
         av_freep(&outBuf);
     }
     // callbacks are in the same thread as this. so no queue is required?
-    //qCDebug(DIGIKAM_QTAV_LOG) << QString::asprintf("frame queue size on decode: %d", d.frame_queue.size());
+    //qCDebug(DIGIKAM_QTAV_LOG).noquote() << QString::asprintf("frame queue size on decode: %d", d.frame_queue.size());
     return !d.frame_queue.isEmpty();
     // video thread: if dec.hasFrame() keep pkt for the next loop and not decode, direct display the frame
 }
@@ -506,7 +506,7 @@ bool VideoDecoderCUDAPrivate::open()
     //TODO: destroy decoder
     // d.available is true if cuda decoder is ready
     if (!can_load) {
-        qCWarning(DIGIKAM_QTAV_LOG_WARN) << QString::asprintf("VideoDecoderCUDAPrivate::open(): CUVID library not available");
+        qCWarning(DIGIKAM_QTAV_LOG_WARN).noquote() << QString::asprintf("VideoDecoderCUDAPrivate::open(): CUVID library not available");
         return false;
     }
     if (!isLoaded()) //cuda_api
@@ -541,7 +541,7 @@ bool VideoDecoderCUDAPrivate::initCuda()
 #if 0 //FIXME: why mingw crash?
     unsigned api_ver = 0;
     CUDA_ENSURE(cuCtxGetApiVersion(cuctx, &api_ver), false);
-    qCDebug(DIGIKAM_QTAV_LOG) << QString::asprintf("cuCtxGetApiVersion: %u", api_ver);
+    qCDebug(DIGIKAM_QTAV_LOG).noquote() << QString::asprintf("cuCtxGetApiVersion: %u", api_ver);
 #endif
     CUDA_ENSURE(cuCtxPopCurrent(&cuctx), false);
     CUDA_ENSURE(cuvidCtxLockCreate(&vid_ctx_lock, cuctx), 0);
@@ -677,7 +677,7 @@ bool VideoDecoderCUDAPrivate::createCUVIDParser()
     parser_params.ulErrorThreshold = 0;//!wait for key frame
     //parser_params.pExtVideoInfo
 
-    qCDebug(DIGIKAM_QTAV_LOG) << QString::asprintf("~~~~~~~~~~~~~~~~extradata: %p %d", codec_ctx->extradata, codec_ctx->extradata_size);
+    qCDebug(DIGIKAM_QTAV_LOG).noquote() << QString::asprintf("~~~~~~~~~~~~~~~~extradata: %p %d", codec_ctx->extradata, codec_ctx->extradata_size);
     memset(&extra_parser_info, 0, sizeof(CUVIDEOFORMATEX));
     // nalu
     extra_parser_info.format.seqhdr_data_length = 0;
@@ -749,7 +749,7 @@ bool VideoDecoderCUDAPrivate::processDecodedData(CUVIDPARSERDISPINFO *cuviddisp,
         }
         } // lock end
         //CUDA_ENSURE(cuCtxPopCurrent(&cuctx), false);
-        //qCDebug(DIGIKAM_QTAV_LOG) << QString::asprintf("cuCtxPopCurrent %p", cuctx);
+        //qCDebug(DIGIKAM_QTAV_LOG).noquote() << QString::asprintf("cuCtxPopCurrent %p", cuctx);
 
         VideoFrame frame;
         if (copy_mode != VideoDecoderCUDA::GenericCopy && interop_res) {
@@ -787,7 +787,7 @@ bool VideoDecoderCUDAPrivate::processDecodedData(CUVIDPARSERDISPINFO *cuviddisp,
 #if COPY_ON_DECODE
         frame_queue.put(frame);
 #endif
-        //qCDebug(DIGIKAM_QTAV_LOG) << QString::asprintf("frame queue size: %d", frame_queue.size());
+        //qCDebug(DIGIKAM_QTAV_LOG).noquote() << QString::asprintf("frame queue size: %d", frame_queue.size());
         surface_in_use[cuviddisp->picture_index] = false; // FIXME: 0-copy still use the index
     }
     return true;

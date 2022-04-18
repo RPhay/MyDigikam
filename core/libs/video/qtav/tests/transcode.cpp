@@ -214,14 +214,14 @@ int main(int argc, char *argv[])
 
     while (venc->encode())
     {
-        qCDebug(DIGIKAM_TESTS_LOG) << QString::asprintf("encode delayed frames...\r");
+        qCDebug(DIGIKAM_TESTS_LOG).noquote() << QString::asprintf("encode delayed frames...\r");
         Packet pkt(venc->encoded());
         mux.writeVideo(pkt);
     }
 
     qint64 elapsed = timer.elapsed();
     int msec = elapsed/1000LL+1;
-    qCDebug(DIGIKAM_TESTS_LOG) << QString::asprintf("decoded frames: %d, time: %d, average speed: %d", count, msec, count/msec);
+    qCDebug(DIGIKAM_TESTS_LOG).noquote() << QString::asprintf("decoded frames: %d, time: %d, average speed: %d", count, msec, count/msec);
     venc->close();
     mux.close();
 

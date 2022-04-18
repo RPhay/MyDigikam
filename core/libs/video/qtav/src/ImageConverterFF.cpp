@@ -62,11 +62,11 @@ bool ImageConverterFF::check() const
         return false;
     DPTR_D(const ImageConverterFF);
     if (sws_isSupportedInput((AVPixelFormat)d.fmt_in) <= 0) {
-        qCWarning(DIGIKAM_QTAV_LOG_WARN) << QString::asprintf("Input pixel format not supported (%s)", av_get_pix_fmt_name((AVPixelFormat)d.fmt_in));
+        qCWarning(DIGIKAM_QTAV_LOG_WARN).noquote() << QString::asprintf("Input pixel format not supported (%s)", av_get_pix_fmt_name((AVPixelFormat)d.fmt_in));
         return false;
     }
     if (sws_isSupportedOutput((AVPixelFormat)d.fmt_out) <= 0) {
-        qCWarning(DIGIKAM_QTAV_LOG_WARN) << QString::asprintf("Output pixel format not supported (%s)", av_get_pix_fmt_name((AVPixelFormat)d.fmt_out));
+        qCWarning(DIGIKAM_QTAV_LOG_WARN).noquote() << QString::asprintf("Output pixel format not supported (%s)", av_get_pix_fmt_name((AVPixelFormat)d.fmt_out));
         return false;
     }
     return true;
@@ -95,7 +95,7 @@ bool ImageConverterFF::convert(const quint8 *const src[], const int srcStride[],
     d.setupColorspaceDetails(false);
     int result_h = sws_scale(d.sws_ctx, src, srcStride, 0, d.h_in, dst, dstStride);
     if (result_h != d.h_out) {
-        qCDebug(DIGIKAM_QTAV_LOG) << QString::asprintf("convert failed: %d, %d", result_h, d.h_out);
+        qCDebug(DIGIKAM_QTAV_LOG).noquote() << QString::asprintf("convert failed: %d, %d", result_h, d.h_out);
         return false;
     }
     Q_UNUSED(result_h);

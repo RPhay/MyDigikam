@@ -96,19 +96,19 @@ bool AudioEncoderFFmpegPrivate::open()
     format_used = format;
     if (format.sampleRate() <= 0) {
         if (codec->supported_samplerates) {
-            qCDebug(DIGIKAM_QTAV_LOG) << QString::asprintf("use first supported sample rate: %d", codec->supported_samplerates[0]);
+            qCDebug(DIGIKAM_QTAV_LOG).noquote() << QString::asprintf("use first supported sample rate: %d", codec->supported_samplerates[0]);
             format_used.setSampleRate(codec->supported_samplerates[0]);
         } else {
-            qCWarning(DIGIKAM_QTAV_LOG_WARN) << QString::asprintf("sample rate and supported sample rate are not set. use 44100");
+            qCWarning(DIGIKAM_QTAV_LOG_WARN).noquote() << QString::asprintf("sample rate and supported sample rate are not set. use 44100");
             format_used.setSampleRate(44100);
         }
     }
     if (format.sampleFormat() == AudioFormat::SampleFormat_Unknown) {
         if (codec->sample_fmts) {
-            qCDebug(DIGIKAM_QTAV_LOG) << QString::asprintf("use first supported sample format: %d", codec->sample_fmts[0]);
+            qCDebug(DIGIKAM_QTAV_LOG).noquote() << QString::asprintf("use first supported sample format: %d", codec->sample_fmts[0]);
             format_used.setSampleFormatFFmpeg((int)codec->sample_fmts[0]);
         } else {
-            qCWarning(DIGIKAM_QTAV_LOG_WARN) << QString::asprintf("sample format and supported sample format are not set. use s16");
+            qCWarning(DIGIKAM_QTAV_LOG_WARN).noquote() << QString::asprintf("sample format and supported sample format are not set. use s16");
             format_used.setSampleFormat(AudioFormat::SampleFormat_Signed16);
         }
     }
@@ -116,10 +116,10 @@ bool AudioEncoderFFmpegPrivate::open()
         if (codec->channel_layouts) {
             char cl[128];
             av_get_channel_layout_string(cl, sizeof(cl), -1, codec->channel_layouts[0]); //TODO: ff version
-            qCDebug(DIGIKAM_QTAV_LOG) << QString::asprintf("use first supported channel layout: %s", cl);
+            qCDebug(DIGIKAM_QTAV_LOG).noquote() << QString::asprintf("use first supported channel layout: %s", cl);
             format_used.setChannelLayoutFFmpeg((qint64)codec->channel_layouts[0]);
         } else {
-            qCWarning(DIGIKAM_QTAV_LOG_WARN) << QString::asprintf("channel layout and supported channel layout are not set. use stereo");
+            qCWarning(DIGIKAM_QTAV_LOG_WARN).noquote() << QString::asprintf("channel layout and supported channel layout are not set. use stereo");
             format_used.setChannelLayout(AudioFormat::ChannelLayout_Stereo);
         }
     }
@@ -210,19 +210,19 @@ bool AudioEncoderFFmpeg::encode(const AudioFrame &frame)
     int ret = avcodec_encode_audio2(d.avctx, &pkt, f, &got_packet);
     av_frame_free(&f);
     if (ret < 0) {
-        //qCWarning(DIGIKAM_QTAV_LOG_WARN) << QString::asprintf("error avcodec_encode_audio2: %s" ,av_err2str(ret));
+        //qCWarning(DIGIKAM_QTAV_LOG_WARN).noquote() << QString::asprintf("error avcodec_encode_audio2: %s" ,av_err2str(ret));
         //av_packet_unref(&pkt); //FIXME
         return false; //false
     }
     if (!got_packet) {
-        qCWarning(DIGIKAM_QTAV_LOG_WARN) << QString::asprintf("no packet got");
+        qCWarning(DIGIKAM_QTAV_LOG_WARN).noquote() << QString::asprintf("no packet got");
         d.packet = Packet();
         // invalid frame means eof
         return frame.isValid();
     }
-   // qCDebug(DIGIKAM_QTAV_LOG) << QString::asprintf("enc avpkt.pts: %lld, dts: %lld.", pkt.pts, pkt.dts);
+   // qCDebug(DIGIKAM_QTAV_LOG).noquote() << QString::asprintf("enc avpkt.pts: %lld, dts: %lld.", pkt.pts, pkt.dts);
     d.packet = Packet::fromAVPacket(&pkt, av_q2d(d.avctx->time_base));
-   // qCDebug(DIGIKAM_QTAV_LOG) << QString::asprintf("enc packet.pts: %.3f, dts: %.3f.", d.packet.pts, d.packet.dts);
+   // qCDebug(DIGIKAM_QTAV_LOG).noquote() << QString::asprintf("enc packet.pts: %.3f, dts: %.3f.", d.packet.pts, d.packet.dts);
     return true;
 }
 

@@ -136,7 +136,7 @@ static int64_t av_seek(void *opaque, int64_t offset, int whence)
 
     if (!io->isSeekable())
     {
-        qCWarning(DIGIKAM_QTAV_LOG_WARN) << QString::asprintf("Can not seek. MediaIO[%s] is not a seekable IO", MediaIO::staticMetaObject.className());
+        qCWarning(DIGIKAM_QTAV_LOG_WARN).noquote() << QString::asprintf("Can not seek. MediaIO[%s] is not a seekable IO", MediaIO::staticMetaObject.className());
         return -1;
     }
 
@@ -200,7 +200,7 @@ bool MediaIO::setAccessMode(AccessMode value)
 
     if (value == Write && !isWritable())
     {
-        qCWarning(DIGIKAM_QTAV_LOG_WARN) << QString::asprintf("Can not set Write access mode to this MediaIO");
+        qCWarning(DIGIKAM_QTAV_LOG_WARN).noquote() << QString::asprintf("Can not set Write access mode to this MediaIO");
         return false;
     }
 

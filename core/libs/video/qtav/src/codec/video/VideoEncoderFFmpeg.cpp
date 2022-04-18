@@ -167,7 +167,7 @@ bool VideoEncoderFFmpegPrivate::open()
             AV_ENSURE(av_hwdevice_ctx_create(&hw_device_ctx, dt, hwdev.toLatin1().constData(), NULL, 0), false);
             avctx->hw_frames_ctx = av_hwframe_ctx_alloc(hw_device_ctx);
             if (!avctx->hw_frames_ctx) {
-                qCWarning(DIGIKAM_QTAV_LOG_WARN) << QString::asprintf("Failed to create hw frame context for '%s'", codec_name.toLatin1().constData());
+                qCWarning(DIGIKAM_QTAV_LOG_WARN).noquote() << QString::asprintf("Failed to create hw frame context for '%s'", codec_name.toLatin1().constData());
                 return false;
             }
             // get sw formats
@@ -195,7 +195,7 @@ bool VideoEncoderFFmpegPrivate::open()
             // hw upload parameters. encoder's hwframes is just for parameter checking, will never be intialized, so we allocate an individual one.
             hwframes_ref = av_hwframe_ctx_alloc(hw_device_ctx);
             if (!hwframes_ref) {
-                qCWarning(DIGIKAM_QTAV_LOG_WARN) << QString::asprintf("Failed to create hw frame context for uploading '%s'", codec_name.toLatin1().constData());
+                qCWarning(DIGIKAM_QTAV_LOG_WARN).noquote() << QString::asprintf("Failed to create hw frame context for uploading '%s'", codec_name.toLatin1().constData());
             } else {
                 hwframes = (AVHWFramesContext*)hwframes_ref->data;
                 hwframes->format = hwfmt;
@@ -209,19 +209,19 @@ bool VideoEncoderFFmpegPrivate::open()
         if (hwfmt == AVPixelFormat(-1)) { // sw enc
             if (format_used == VideoFormat::Format_Invalid) {// requested format is not supported by sw enc
                 if (codec->pix_fmts) { //pix_fmts[0] is always a sw format here
-                    qCDebug(DIGIKAM_QTAV_LOG) << QString::asprintf("use first supported pixel format '%d' for sw encoder", codec->pix_fmts[0]);
+                    qCDebug(DIGIKAM_QTAV_LOG).noquote() << QString::asprintf("use first supported pixel format '%d' for sw encoder", codec->pix_fmts[0]);
                     format_used = VideoFormat::pixelFormatFromFFmpeg((int)codec->pix_fmts[0]);
                 }
             }
         } else {
             if (format_used == VideoFormat::Format_Invalid) { // requested format is not supported by hw enc
-                qCDebug(DIGIKAM_QTAV_LOG) << QString::asprintf("use first supported sw pixel format '%d' for hw encoder", codec->pix_fmts[1]);
+                qCDebug(DIGIKAM_QTAV_LOG).noquote() << QString::asprintf("use first supported sw pixel format '%d' for hw encoder", codec->pix_fmts[1]);
                 if (codec->pix_fmts && codec->pix_fmts[1] != AVPixelFormat(-1))
                     format_used = VideoFormat::pixelFormatFromFFmpeg(codec->pix_fmts[1]);
             }
         }
         if (format_used == VideoFormat::Format_Invalid) {
-            qCWarning(DIGIKAM_QTAV_LOG_WARN) << QString::asprintf("fallback to yuv420p");
+            qCWarning(DIGIKAM_QTAV_LOG_WARN).noquote() << QString::asprintf("fallback to yuv420p");
             format_used = VideoFormat::Format_YUV420P;
         }
         avctx->pix_fmt = (AVPixelFormat)VideoFormat::pixelFormatToFFmpeg(format_used);
@@ -230,7 +230,7 @@ bool VideoEncoderFFmpegPrivate::open()
         avctx->time_base = av_d2q(1.0/frame_rate, frame_rate*1001.0+2);
     else
         avctx->time_base = av_d2q(1.0/VideoEncoder::defaultFrameRate(), VideoEncoder::defaultFrameRate()*1001.0+2);
-    qCDebug(DIGIKAM_QTAV_LOG) << QString::asprintf("size: %dx%d tbc: %f=%d/%d", width, height, av_q2d(avctx->time_base), avctx->time_base.num, avctx->time_base.den);
+    qCDebug(DIGIKAM_QTAV_LOG).noquote() << QString::asprintf("size: %dx%d tbc: %f=%d/%d", width, height, av_q2d(avctx->time_base), avctx->time_base.num, avctx->time_base.den);
     avctx->bit_rate = bit_rate;
     //AVDictionary *dict = 0;
     if(avctx->codec_id == QTAV_CODEC_ID(H264)) {
@@ -333,7 +333,7 @@ bool VideoEncoderFFmpeg::encode(const VideoFrame &frame)
             // TODO: try to map to SourceSurface
             // checl valid sw_formats
             if (!d.hwframes_ref) {
-                qCWarning(DIGIKAM_QTAV_LOG_WARN) << QString::asprintf("no hw frame context for uploading");
+                qCWarning(DIGIKAM_QTAV_LOG_WARN).noquote() << QString::asprintf("no hw frame context for uploading");
                 return false;
             }
             if (pixfmt != d.hwframes->sw_format) {
@@ -378,19 +378,19 @@ bool VideoEncoderFFmpeg::encode(const VideoFrame &frame)
     int got_packet = 0;
     int ret = avcodec_encode_video2(d.avctx, &pkt, f.data(), &got_packet);
     if (ret < 0) {
-        qCWarning(DIGIKAM_QTAV_LOG_WARN) << QString::asprintf("error avcodec_encode_video2: %s" ,av_err2str(ret));
+        qCWarning(DIGIKAM_QTAV_LOG_WARN).noquote() << QString::asprintf("error avcodec_encode_video2: %s" ,av_err2str(ret));
         return false; //false
     }
     d.nb_encoded++;
     if (!got_packet) {
-        qCWarning(DIGIKAM_QTAV_LOG_WARN) << QString::asprintf("no packet got");
+        qCWarning(DIGIKAM_QTAV_LOG_WARN).noquote() << QString::asprintf("no packet got");
         d.packet = Packet();
         // invalid frame means eof
         return frame.isValid();
     }
-   // qCDebug(DIGIKAM_QTAV_LOG) << QString::asprintf("enc avpkt.pts: %lld, dts: %lld.", pkt.pts, pkt.dts);
+   // qCDebug(DIGIKAM_QTAV_LOG).noquote() << QString::asprintf("enc avpkt.pts: %lld, dts: %lld.", pkt.pts, pkt.dts);
     d.packet = Packet::fromAVPacket(&pkt, av_q2d(d.avctx->time_base));
-   // qCDebug(DIGIKAM_QTAV_LOG) << QString::asprintf("enc packet.pts: %.3f, dts: %.3f.", d.packet.pts, d.packet.dts);
+   // qCDebug(DIGIKAM_QTAV_LOG).noquote() << QString::asprintf("enc packet.pts: %.3f, dts: %.3f.", d.packet.pts, d.packet.dts);
     return true;
 }
 

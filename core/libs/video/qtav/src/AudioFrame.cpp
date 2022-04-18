@@ -264,7 +264,7 @@ AudioFrame AudioFrame::to(const AudioFormat &fmt) const
         if (!conv)
             conv = AudioResampler::create(AudioResamplerId_Libav);
         if (!conv) {
-            qCWarning(DIGIKAM_QTAV_LOG_WARN) << QString::asprintf("no audio resampler is available");
+            qCWarning(DIGIKAM_QTAV_LOG_WARN).noquote() << QString::asprintf("no audio resampler is available");
             return AudioFrame();
         }
         c.reset(conv);

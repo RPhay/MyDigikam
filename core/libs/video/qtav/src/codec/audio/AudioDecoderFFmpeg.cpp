@@ -112,11 +112,11 @@ bool AudioDecoderFFmpeg::decode(const Packet &packet)
         return false;
     }
     if (ret < 0) {
-        qCWarning(DIGIKAM_QTAV_LOG_WARN) << QString::asprintf("[AudioDecoder] %s", av_err2str(ret));
+        qCWarning(DIGIKAM_QTAV_LOG_WARN).noquote() << QString::asprintf("[AudioDecoder] %s", av_err2str(ret));
         return false;
     }
     if (!got_frame_ptr) {
-        qCWarning(DIGIKAM_QTAV_LOG_WARN) << QString::asprintf("[AudioDecoder] got_frame_ptr=false. decoded: %d, un: %d %s", ret, d.undecoded_size, av_err2str(ret));
+        qCWarning(DIGIKAM_QTAV_LOG_WARN).noquote() << QString::asprintf("[AudioDecoder] got_frame_ptr=false. decoded: %d, un: %d %s", ret, d.undecoded_size, av_err2str(ret));
         return !packet.isEOF();
     }
 #if USE_AUDIO_FRAME

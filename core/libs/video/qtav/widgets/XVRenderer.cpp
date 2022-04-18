@@ -142,7 +142,7 @@ int xvFormatInPort(Display* disp, XvPortID port, VideoFormat::PixelFormat fmt) {
     int count = 0;
     XvImageFormatValues *xvifmts = XvListImageFormats(disp, port, &count);
     for (const XvImageFormatValues *xvifmt = xvifmts; xvifmt <  xvifmts+count; ++xvifmt) {
-        qCDebug(DIGIKAM_QTAVWIDGETS_LOG) << QString::asprintf("XvImageFormatValues: %s", xvifmt->guid);
+        qCDebug(DIGIKAM_QTAVWIDGETS_LOG).noquote() << QString::asprintf("XvImageFormatValues: %s", xvifmt->guid);
         if (xvifmt->type == xv_type
                 && xvifmt->format == xv_plane
                 && xvifmt->id == xv_id
@@ -246,12 +246,12 @@ public:
         if (xv_image_width == w && xv_image_height == h && xv_image && format == pixfmt)
             return true;
         destroyXVImage();
-        qCDebug(DIGIKAM_QTAVWIDGETS_LOG) << QString::asprintf("port count: %d", num_adaptors);
+        qCDebug(DIGIKAM_QTAVWIDGETS_LOG).noquote() << QString::asprintf("port count: %d", num_adaptors);
         for (uint i = 0; i < num_adaptors; ++i) {
             //??
             if ((xv_adaptor_info[i].type & (XvInputMask | XvImageMask)) == (XvInputMask | XvImageMask)) {
                 for (XvPortID p = xv_adaptor_info[i].base_id; p < xv_adaptor_info[i].base_id + xv_adaptor_info[i].num_ports; ++p) {
-                    qCDebug(DIGIKAM_QTAVWIDGETS_LOG) << QString::asprintf("XvAdaptorInfo: %s", xv_adaptor_info[i].name);
+                    qCDebug(DIGIKAM_QTAVWIDGETS_LOG).noquote() << QString::asprintf("XvAdaptorInfo: %s", xv_adaptor_info[i].name);
                     format_id = xvFormatInPort(display, p, pixfmt);
                     if (format_id) {
                         xv_port = p;
@@ -263,35 +263,35 @@ public:
                 break;
         }
         if (!xv_port) {
-            qCWarning(DIGIKAM_QTAVWIDGETS_LOG_WARN) << QString::asprintf("xv port not found!");
+            qCWarning(DIGIKAM_QTAVWIDGETS_LOG_WARN).noquote() << QString::asprintf("xv port not found!");
         }
         format = pixfmt;
         xv_image_width = w;
         xv_image_height = h;
 #ifdef _XSHM_H_
         use_shm = XShmQueryExtension(display);
-        qCDebug(DIGIKAM_QTAVWIDGETS_LOG) << QString::asprintf("use xv shm: %d", use_shm);
+        qCDebug(DIGIKAM_QTAVWIDGETS_LOG).noquote() << QString::asprintf("use xv shm: %d", use_shm);
         if (!use_shm)
             goto no_shm;
         xv_image = XvShmCreateImage(display, xv_port, format_id, 0, xv_image_width, xv_image_height, &shm);
         if (!xv_image)
             goto no_shm;
         shm.shmid = shmget(IPC_PRIVATE, xv_image->data_size, IPC_CREAT | 0777);
-        qCDebug(DIGIKAM_QTAVWIDGETS_LOG) << QString::asprintf("shmid: %d xv_image->data_size: %d, %dx%d", shm.shmid, xv_image->data_size, xv_image_width, xv_image_height);
+        qCDebug(DIGIKAM_QTAVWIDGETS_LOG).noquote() << QString::asprintf("shmid: %d xv_image->data_size: %d, %dx%d", shm.shmid, xv_image->data_size, xv_image_width, xv_image_height);
         if (shm.shmid < 0) {
-            qCWarning(DIGIKAM_QTAVWIDGETS_LOG_WARN) << QString::asprintf("get shm failed. try to use none shm");
+            qCWarning(DIGIKAM_QTAVWIDGETS_LOG_WARN).noquote() << QString::asprintf("get shm failed. try to use none shm");
             goto no_shm;
         }
         shm.shmaddr = (char *)shmat(shm.shmid, 0, 0);
         if (shm.shmaddr == (char*)-1) {
             XFree(xv_image);
-            qCWarning(DIGIKAM_QTAVWIDGETS_LOG_WARN) << QString::asprintf("Shared memory error,disabling ( seg id error )");
+            qCWarning(DIGIKAM_QTAVWIDGETS_LOG_WARN).noquote() << QString::asprintf("Shared memory error,disabling ( seg id error )");
             goto no_shm;
         }
         xv_image->data = shm.shmaddr;
         shm.readOnly = False;
         if (!XShmAttach(display, &shm)) {
-            qCWarning(DIGIKAM_QTAVWIDGETS_LOG_WARN) << QString::asprintf("Attach to shm failed! try to use none shm");
+            qCWarning(DIGIKAM_QTAVWIDGETS_LOG_WARN).noquote() << QString::asprintf("Attach to shm failed! try to use none shm");
             goto no_shm;
         }
         XSync(display, False);
@@ -332,7 +332,7 @@ bool XVRendererPrivate::XvSetPortAttributeIfExists(const char *key, int value)
     int nb_attributes;
     XvAttribute *attributes = XvQueryPortAttributes(display, xv_port, &nb_attributes);
     if (!attributes) {
-        qCWarning(DIGIKAM_QTAVWIDGETS_LOG_WARN) << QString::asprintf("XvQueryPortAttributes error");
+        qCWarning(DIGIKAM_QTAVWIDGETS_LOG_WARN).noquote() << QString::asprintf("XvQueryPortAttributes error");
         return false;
     }
     for (int i = 0; i < nb_attributes; ++i) {
@@ -342,7 +342,7 @@ bool XVRendererPrivate::XvSetPortAttributeIfExists(const char *key, int value)
             return true;
         }
     }
-    qCWarning(DIGIKAM_QTAVWIDGETS_LOG_WARN) << QString::asprintf("Can not set Xv attribute at key '%s'", key);
+    qCWarning(DIGIKAM_QTAVWIDGETS_LOG_WARN).noquote() << QString::asprintf("Can not set Xv attribute at key '%s'", key);
     return false;
 }
 
@@ -365,7 +365,7 @@ XVRenderer::XVRenderer(QWidget *parent, Qt::WindowFlags f):
     setAttribute(Qt::WA_PaintOnScreen, true);
     d_func().filter_context = VideoFilterContext::create(VideoFilterContext::X11);
     if (!d_func().filter_context) {
-        qCWarning(DIGIKAM_QTAVWIDGETS_LOG_WARN) << QString::asprintf("No filter context for X11");
+        qCWarning(DIGIKAM_QTAVWIDGETS_LOG_WARN).noquote() << QString::asprintf("No filter context for X11");
     } else {
         d_func().filter_context->paint_device = this;
     }

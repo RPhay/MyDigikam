@@ -92,7 +92,7 @@ static QMatrix4x4 ColorRangeYUV(ColorRange from, ColorRange to)
     static const qreal Y2 = 235, Y1 = 16, C2 = 240, C1 = 16;
     static const qreal s = 255; //TODO: can be others
     if (from == ColorRange_Limited) { //TODO: Unknown. But what if realy want unknown?
-        qCDebug(DIGIKAM_QTAV_LOG) << QString::asprintf("input yuv limited range");
+        qCDebug(DIGIKAM_QTAV_LOG).noquote() << QString::asprintf("input yuv limited range");
         // [Y1, Y2] => [0, s]
         QMatrix4x4 m;
         m.scale(s/(Y2 - Y1), s/(C2 - C1), s/(C2 - C1));
@@ -118,7 +118,7 @@ static QMatrix4x4 ColorRangeRGB(ColorRange from, ColorRange to)
     static const qreal R2 = 235, R1 = 16;
     static const qreal s = 255;
     if (to == ColorRange_Limited) {
-        qCDebug(DIGIKAM_QTAV_LOG) << QString::asprintf("output rgb limited range");
+        qCDebug(DIGIKAM_QTAV_LOG).noquote() << QString::asprintf("output rgb limited range");
         QMatrix4x4 m;
         m.translate(R1/s, R1/s, R1/s);
         m.scale((R2 - R1)/s, (R2 - R1)/s, (R2 - R1)/s);
@@ -254,7 +254,7 @@ public:
             break;
         }
         if (bpc_scale != 1.0 && cs_in != ColorSpace_XYZ) { // why no range correction for xyz?
-            //qCDebug(DIGIKAM_QTAV_LOG) << QString::asprintf("bpc scale: %f", bpc_scale);
+            //qCDebug(DIGIKAM_QTAV_LOG).noquote() << QString::asprintf("bpc scale: %f", bpc_scale);
             M *= QMatrix4x4(bpc_scale, 0, 0, 0,
                             0, bpc_scale, 0, 0,
                             0, 0, bpc_scale, 0,
@@ -413,7 +413,7 @@ void ColorTransform::setChannelDepthScale(qreal value, bool scaleAlpha)
 {
     if (d->bpc_scale == value && d->a_bpc_scale == scaleAlpha)
         return;
-    qCDebug(DIGIKAM_QTAV_LOG) << QString::asprintf("ColorTransform bpc_scale %f=>%f, scale alpha: %d=>%d", d->bpc_scale, value, d->a_bpc_scale, scaleAlpha);
+    qCDebug(DIGIKAM_QTAV_LOG).noquote() << QString::asprintf("ColorTransform bpc_scale %f=>%f, scale alpha: %d=>%d", d->bpc_scale, value, d->a_bpc_scale, scaleAlpha);
     d->bpc_scale = value;
     d->a_bpc_scale = scaleAlpha;
     d->recompute = true;

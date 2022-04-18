@@ -66,7 +66,7 @@ QByteArray AudioResampler::outData() const
 bool AudioResampler::prepare()
 {
     if (!inAudioFormat().isValid()) {
-        qCWarning(DIGIKAM_QTAV_LOG_WARN) << QString::asprintf("src audio parameters 'channel layout(or channels), sample rate and sample format must be set before initialize resampler");
+        qCWarning(DIGIKAM_QTAV_LOG_WARN).noquote() << QString::asprintf("src audio parameters 'channel layout(or channels), sample rate and sample format must be set before initialize resampler");
         return false;
     }
     return true;

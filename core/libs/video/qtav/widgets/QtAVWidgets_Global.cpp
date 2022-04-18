@@ -108,7 +108,7 @@ namespace Widgets
 void registerRenderers()
 {
 #if !defined(QT_NO_DEBUG)
-    qCDebug(DIGIKAM_QTAVWIDGETS_LOG) << QString::asprintf("registerRenderers...........");
+    qCDebug(DIGIKAM_QTAVWIDGETS_LOG).noquote() << QString::asprintf("registerRenderers...........");
 #endif
 
     // check whether it is called
