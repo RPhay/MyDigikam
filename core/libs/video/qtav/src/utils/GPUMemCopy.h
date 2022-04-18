@@ -20,8 +20,10 @@
  *
  * ============================================================ */
 
-#ifndef GPUMemCopy_H
-#define GPUMemCopy_H
+#ifndef QTAV_GPU_MEM_COPY_H
+#define QTAV_GPU_MEM_COPY_H
+
+// C includes
 
 #include <stddef.h>
 
@@ -31,21 +33,31 @@ namespace QtAV
 class GPUMemCopy
 {
 public:
+
     static bool isAvailable();
+
     GPUMemCopy();
     ~GPUMemCopy();
+
     // available and initialized
+
     bool isReady() const;
     bool initCache(unsigned int width);
     void cleanCache();
     void copyFrame(void *pSrc, void *pDest, unsigned int width, unsigned int height, unsigned int pitch);
-    //memcpy
+
+    // memcpy
+
 private:
+
     bool mInitialized;
-    typedef struct {
+
+    typedef struct
+    {
         unsigned char* buffer;
         size_t size;
     } cache_t;
+
     cache_t mCache;
 };
 
@@ -53,4 +65,4 @@ void* gpu_memcpy(void* dst, const void* src, size_t size);
 
 } // namespace QtAV
 
-#endif // GPUMemCopy_H
+#endif //  QTAV_GPU_MEM_COPY_H

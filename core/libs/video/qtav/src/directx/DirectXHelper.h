@@ -20,20 +20,30 @@
  *
  * ============================================================ */
 
-#ifndef QTAV_DIRECTXHELPER_H
-#define QTAV_DIRECTXHELPER_H
+#ifndef QTAV_DIRECTX_HELPER_H
+#define QTAV_DIRECTX_HELPER_H
+
+// Qt includes
 
 #include <qglobal.h>
+
+// Windows includes
+
 #ifndef Q_OS_WINRT
-#include <d3d9.h>
+#   include <d3d9.h>
 #endif
+
+// Local includes
+
+#include "digikam_debug.h"
 
 namespace QtAV
 {
 
 #ifndef DX_LOG_COMPONENT
-#define DX_LOG_COMPONENT "DirectX"
-#endif //DX_LOG_COMPONENT
+#   define DX_LOG_COMPONENT "DirectX"
+#endif
+
 #define DX_ENSURE(f, ...) DX_CHECK(f, return __VA_ARGS__;)
 #define DX_WARN(f) DX_CHECK(f)
 #define DX_ENSURE_OK(f, ...) DX_CHECK(f, return __VA_ARGS__;)
@@ -47,21 +57,27 @@ namespace QtAV
     } while (0)
 
 
-template <class T> void SafeRelease(T **ppT) {
-  if (*ppT) {
-    (*ppT)->Release();
-    *ppT = NULL;
-  }
+template <class T> void SafeRelease(T **ppT)
+{
+    if (*ppT)
+    {
+        (*ppT)->Release();
+        *ppT = NULL;
+    }
 }
 
-namespace DXHelper {
+namespace DXHelper
+{
+
 const char* vendorName(unsigned id);
 
 #ifndef Q_OS_WINRT
 IDirect3DDevice9* CreateDevice9Ex(HINSTANCE dll, IDirect3D9Ex **d3d9ex, D3DADAPTER_IDENTIFIER9* d3dai = NULL);
 IDirect3DDevice9* CreateDevice9(HINSTANCE dll, IDirect3D9 **d3d9, D3DADAPTER_IDENTIFIER9* d3dai = NULL);
-#endif //Q_OS_WINRT
-} //namespace DXHelper
+#endif
+
+} // namespace DXHelper
 
 } // namespace QtAV
-#endif //QTAV_DIRECTXHELPER_H
+
+#endif // QTAV_DIRECTX_HELPER_H
