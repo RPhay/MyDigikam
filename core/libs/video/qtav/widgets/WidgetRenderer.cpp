@@ -33,6 +33,7 @@
 // Local includes
 
 #include "Filter.h"
+#include "digikam_debug.h"
 
 namespace QtAV
 {
@@ -66,7 +67,7 @@ WidgetRenderer::WidgetRenderer(QWidget *parent, Qt::WindowFlags f) :
     if (ctx) {
         ctx->painter = d.painter;
     } else {
-        qWarning("FilterContext not available!");
+        qCWarning(DIGIKAM_QTAVWIDGETS_LOG_WARN) << QString::asprintf("FilterContext not available!");
     }
 }
 
@@ -81,7 +82,7 @@ WidgetRenderer::WidgetRenderer(WidgetRendererPrivate &d, QWidget *parent, Qt::Wi
     if (ctx) {
         ctx->painter = d.painter;
     } else {
-        qWarning("FilterContext not available!");
+        qCWarning(DIGIKAM_QTAVWIDGETS_LOG_WARN) << QString::asprintf("FilterContext not available!");
     }
 }
 

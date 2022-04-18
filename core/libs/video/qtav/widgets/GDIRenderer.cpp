@@ -150,7 +150,7 @@ public:
         // TODO: check bitblt support
 
         int ret = GetDeviceCaps(device_context, RC_BITBLT);
-        qDebug("bitblt=%d", ret);
+        qCDebug(DIGIKAM_QTAVWIDGETS_LOG) << QString::asprintf("bitblt=%d", ret);
         // TODO: wingapi? vlc
 #if 0
         BITMAPINFOHEADER bih;
@@ -317,7 +317,7 @@ void GDIRenderer::drawFrame()
 #else
 
     if (FAILED(bitmap.GetHBITMAP(Color(), &d.off_bitmap))) {
-        qWarning("Failed GetHBITMAP");
+        qCWarning(DIGIKAM_QTAVWIDGETS_LOG_WARN) << QString::asprintf("Failed GetHBITMAP");
         return;
     }
 

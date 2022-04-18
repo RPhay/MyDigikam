@@ -314,7 +314,7 @@ public:
             }
             if (pkt.hasKeyFrame) {
                 // FIXME:
-                //qCritical("Internal error. Can not be a key frame!!!!");
+                //qCCritical(DIGIKAM_QTAV_LOG_CRITICAL) << QString::asprintf("Internal error. Can not be a key frame!!!!");
                 //return false; //??
             }
             qint64 diff = qint64(t*1000.0) - value;

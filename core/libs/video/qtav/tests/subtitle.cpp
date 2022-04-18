@@ -25,12 +25,12 @@
 #include <QCoreApplication>
 #include <QElapsedTimer>
 #include <QStringList>
-#include <QtDebug>
 #include <QTime>
 
 // Local includes
 
 #include "Subtitle.h"
+#include "digikam_debug.h"
 
 using namespace QtAV;
 
@@ -56,20 +56,20 @@ private Q_SLOTS:
     void onSubtitleChanged()
     {
         Subtitle *sub = qobject_cast<Subtitle*>(sender());
-        qDebug() << "subtitle changed at " << sub->timestamp() << "s\n" << sub->getText();
+        qCDebug(DIGIKAM_TESTS_LOG) << "subtitle changed at " << sub->timestamp() << "s\n" << sub->getText();
     }
 };
 
 int main(int argc, char *argv[])
 {
     QCoreApplication a(argc, argv);
-    qDebug() << "help: ./subtitle [-engine engine] [-f file] [-fuzzy] [-t sec] [-t1 sec] [-count n]";
-    qDebug() << "-fuzzy: fuzzy match subtitle name";
-    qDebug() << "-t: set subtitle begin time";
-    qDebug() << "-t1: set subtitle end time";
-    qDebug() << "-count: set subtitle frame count from t to t1";
-    qDebug() << "-engine: subtitle processing engine, can be 'ffmpeg' and 'libass'";
-    qDebug() << "-dir: add subtitle search directories";
+    qCDebug(DIGIKAM_TESTS_LOG) << "help: ./subtitle [-engine engine] [-f file] [-fuzzy] [-t sec] [-t1 sec] [-count n]";
+    qCDebug(DIGIKAM_TESTS_LOG) << "-fuzzy: fuzzy match subtitle name";
+    qCDebug(DIGIKAM_TESTS_LOG) << "-t: set subtitle begin time";
+    qCDebug(DIGIKAM_TESTS_LOG) << "-t1: set subtitle end time";
+    qCDebug(DIGIKAM_TESTS_LOG) << "-count: set subtitle frame count from t to t1";
+    qCDebug(DIGIKAM_TESTS_LOG) << "-engine: subtitle processing engine, can be 'ffmpeg' and 'libass'";
+    qCDebug(DIGIKAM_TESTS_LOG) << "-dir: add subtitle search directories";
 
     QString file;
     bool fuzzy = false;
@@ -121,7 +121,7 @@ int main(int argc, char *argv[])
     if (!engine.isEmpty())
         sub.setEngines(QStringList() << engine);
 
-    qDebug() << "supported extensions: " << sub.supportedSuffixes();
+    qCDebug(DIGIKAM_TESTS_LOG) << "supported extensions: " << sub.supportedSuffixes();
 
     if (file.isEmpty())
         return 0;
@@ -138,7 +138,7 @@ int main(int argc, char *argv[])
     if (!sub.isLoaded())
         return -1;
 
-    qDebug() << "process subtitle file elapsed: " << timer.elapsed() << "ms";
+    qCDebug(DIGIKAM_TESTS_LOG) << "process subtitle file elapsed: " << timer.elapsed() << "ms";
     timer.restart();
 
     if (t < 0 && t1 >= 0)
@@ -152,7 +152,7 @@ int main(int argc, char *argv[])
         if (t1 <= t)
         {
             sub.setTimestamp(qreal(t));
-            qDebug() << sub.timestamp() << "s: " << sub.getText();
+            qCDebug(DIGIKAM_TESTS_LOG) << sub.timestamp() << "s: " << sub.getText();
             QImage img(sub.getImage(720, 400));
             img.save(QString::fromLatin1("sub-%1.png").arg(sub.timestamp(), 0, 'f', 2));
         }
@@ -166,14 +166,14 @@ int main(int argc, char *argv[])
             for (int n = 0; n < count; ++n)
             {
                 sub.setTimestamp(qreal(t) + qreal(n)*kInterval);
-                qDebug() << sub.timestamp() << "s: " << sub.getText();
+                qCDebug(DIGIKAM_TESTS_LOG) << sub.timestamp() << "s: " << sub.getText();
                 QImage img(sub.getImage(720, 400));
                 img.save(QString::fromLatin1("sub-%1.png").arg(sub.timestamp(), 0, 'f', 2));
             }
         }
     }
 
-    qDebug() << "find subtitle content elapsed: " << timer.elapsed() << "ms";
+    qCDebug(DIGIKAM_TESTS_LOG) << "find subtitle content elapsed: " << timer.elapsed() << "ms";
 
     return 0;
 }

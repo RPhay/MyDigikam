@@ -56,6 +56,7 @@
 
 #include "private/factory.h"
 #include "private/mkid.h"
+#include "digikam_debug.h"
 
 namespace QtAV
 {
@@ -107,7 +108,7 @@ namespace Widgets
 void registerRenderers()
 {
 #if !defined(QT_NO_DEBUG)
-    qDebug("registerRenderers...........");
+    qCDebug(DIGIKAM_QTAVWIDGETS_LOG) << QString::asprintf("registerRenderers...........");
 #endif
 
     // check whether it is called

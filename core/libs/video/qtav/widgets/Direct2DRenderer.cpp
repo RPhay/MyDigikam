@@ -134,7 +134,7 @@ public:
 
         if (!dll.load()) {
             available = false;
-            qWarning("Direct2D is disabled. Failed to load 'd2d1.dll': %s", dll.errorString().toUtf8().constData());
+            qCWarning(DIGIKAM_QTAVWIDGETS_LOG_WARN) << QString::asprintf("Direct2D is disabled. Failed to load 'd2d1.dll': %s", dll.errorString().toUtf8().constData());
             return;
         }
 
@@ -144,7 +144,7 @@ public:
 
         if (!D2D1CreateFactory) {
             available = false;
-            qWarning("Direct2D is disabled. Failed to resolve symble 'D2D1CreateFactory': %s", dll.errorString().toUtf8().constData());
+            qCWarning(DIGIKAM_QTAVWIDGETS_LOG_WARN) << QString::asprintf("Direct2D is disabled. Failed to resolve symble 'D2D1CreateFactory': %s", dll.errorString().toUtf8().constData());
             return;
         }
 
@@ -161,7 +161,7 @@ public:
                                        , (void**)&d2d_factory);
         if (FAILED(hr)) {
             available = false;
-            qWarning("Direct2D is disabled. Create d2d factory failed");
+            qCWarning(DIGIKAM_QTAVWIDGETS_LOG_WARN) << QString::asprintf("Direct2D is disabled. Create d2d factory failed");
             return;
         }
 
@@ -229,7 +229,7 @@ public:
                                                          , &hwnd_rtp//D2D1::HwndRenderTargetProperties(, size)
                                                          , &render_target);
         if (FAILED(hr)) {
-            qWarning("Direct2D is disabled. CreateHwndRenderTarget() failed: %d", (int)GetLastError());
+            qCWarning(DIGIKAM_QTAVWIDGETS_LOG_WARN) << QString::asprintf("Direct2D is disabled. CreateHwndRenderTarget() failed: %d", (int)GetLastError());
             render_target = 0;
             return false;
         }
@@ -245,7 +245,7 @@ public:
     }
 
     void recreateDeviceResource() {
-        qDebug("D2DERR_RECREATE_TARGET");
+        qCDebug(DIGIKAM_QTAVWIDGETS_LOG) << QString::asprintf("D2DERR_RECREATE_TARGET");
         QMutexLocker locker(&img_mutex);
         Q_UNUSED(locker);
         update_background = true;
@@ -261,13 +261,13 @@ public:
             return true;
 
         if (!render_target) {
-            qWarning("No render target, bitmap will not be created!!!");
+            qCWarning(DIGIKAM_QTAVWIDGETS_LOG_WARN) << QString::asprintf("No render target, bitmap will not be created!!!");
             return false;
         }
 
         bitmap_width = w;
         bitmap_height = h;
-        qDebug("Resize bitmap to %d x %d", w, h);
+        qCDebug(DIGIKAM_QTAVWIDGETS_LOG) << QString::asprintf("Resize bitmap to %d x %d", w, h);
         SafeRelease(&bitmap);
 
         if (w ==0 || h == 0)
@@ -280,7 +280,7 @@ public:
                                                  , &bitmap_properties
                                                  , &bitmap);
         if (FAILED(hr)) {
-            qWarning("Failed to create ID2D1Bitmap (%ld)", hr);
+            qCWarning(DIGIKAM_QTAVWIDGETS_LOG_WARN) << QString::asprintf("Failed to create ID2D1Bitmap (%ld)", hr);
             SafeRelease(&bitmap);
             SafeRelease(&render_target);
             return false;
@@ -382,7 +382,7 @@ bool Direct2DRenderer::receiveFrame(const VideoFrame& frame)
                                   , frame.constBits(0) //data.constData() //msdn: const void*
                                   , frame.bytesPerLine(0));
     if (hr != S_OK) {
-        qWarning("Failed to copy from memory to bitmap (%ld)", hr);
+        qCWarning(DIGIKAM_QTAVWIDGETS_LOG_WARN) << QString::asprintf("Failed to copy from memory to bitmap (%ld)", hr);
     }
 
     updateUi();
@@ -450,7 +450,7 @@ void Direct2DRenderer::paintEvent(QPaintEvent *)
     DPTR_D(Direct2DRenderer);
 
     if (!d.render_target) {
-        qWarning("No render target!!!");
+        qCWarning(DIGIKAM_QTAVWIDGETS_LOG_WARN) << QString::asprintf("No render target!!!");
         return;
     }
 

@@ -20,8 +20,8 @@
  *
  * ============================================================ */
 
-#ifndef NV_INC_H
-#define NV_INC_H
+#ifndef QTAV_NV_INC_H
+#define QTAV_NV_INC_H
 
 #undef NV_CONFIG
 #define NV_CONFIG(FEATURE) (defined QTAV_HAVE_##FEATURE && QTAV_HAVE_##FEATURE)
@@ -63,4 +63,4 @@ namespace cuda {
 } //namespace cuda
 } //namespace dllapi
 #endif /*NV_CONFIG(DLLAPI_CUDA)*/
-#endif /* NV_INC_H*/
+#endif /* QTAV_NV_INC_H*/
