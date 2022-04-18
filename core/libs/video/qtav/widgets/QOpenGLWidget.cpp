@@ -93,11 +93,11 @@ bool QOpenGLWidget::isValid() const
 void QOpenGLWidget::makeCurrent()
 {
     if (!m_initialized) {
-        qWarning("QOpenGLWidget: Cannot make uninitialized widget current");
+        qCWarning(DIGIKAM_QTAVWIDGETS_LOG_WARN) << QString::asprintf("QOpenGLWidget: Cannot make uninitialized widget current");
         return;
     }
     if (!windowHandle()) {
-        qWarning("QOpenGLWidget: No window handle");
+        qCWarning(DIGIKAM_QTAVWIDGETS_LOG_WARN) << QString::asprintf("QOpenGLWidget: No window handle");
         return;
     }
     m_context->makeCurrent((QSurface*)windowHandle());
@@ -167,23 +167,23 @@ void QOpenGLWidget::initialize()
 
     QWindow *win = windowHandle();
     if (!win) {
-        qWarning("QOpenGLWidget: No window handle");
+        qCWarning(DIGIKAM_QTAVWIDGETS_LOG_WARN) << QString::asprintf("QOpenGLWidget: No window handle");
         return;
     }
     m_context = new QOpenGLContext(this);
     // TODO: shareContext()
     m_context->setFormat(m_requestedFormat);
     if (!m_context->create()) {
-        qWarning("QOpenGLWidget: Failed to create context");
+        qCWarning(DIGIKAM_QTAVWIDGETS_LOG_WARN) << QString::asprintf("QOpenGLWidget: Failed to create context");
         return;
     }
     //m_context = QOpenGLContext::currentContext();
     if (!m_context) {
-        qWarning("QOpenGLWidget: QOpenGLContext is null");
+        qCWarning(DIGIKAM_QTAVWIDGETS_LOG_WARN) << QString::asprintf("QOpenGLWidget: QOpenGLContext is null");
         return;
     }
     if (!m_context->makeCurrent(win)) {
-        qWarning("QOpenGLWidget: Failed to make context current");
+        qCWarning(DIGIKAM_QTAVWIDGETS_LOG_WARN) << QString::asprintf("QOpenGLWidget: Failed to make context current");
         return;
     }
     m_paintDevice = new QOpenGLWidgetPaintDevice(this);

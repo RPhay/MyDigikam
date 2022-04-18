@@ -182,18 +182,18 @@ public:
 #endif //_XSHM_H_
        //XvQueryExtension()
         char* dispName = XDisplayName(NULL);
-        qDebug("X11 open display: %s", dispName);
+        qCDebug(DIGIKAM_QTAVWIDGETS_LOG) << QString::asprintf("X11 open display: %s", dispName);
         display = XOpenDisplay(dispName);
         if (!display) {
             available = false;
-            qWarning("Open X11 display error");
+            qCWarning(DIGIKAM_QTAVWIDGETS_LOG_WARN) << QString::asprintf("Open X11 display error");
             return;
         }
         XWindowAttributes attribs;
         XGetWindowAttributes(display, DefaultRootWindow(display), &attribs);
         depth = attribs.depth;
         if (!XMatchVisualInfo(display, DefaultScreen(display), depth, TrueColor, &vinfo)) {
-            qWarning("XMatchVisualInfo error");
+            qCWarning(DIGIKAM_QTAVWIDGETS_LOG_WARN) << QString::asprintf("XMatchVisualInfo error");
             available = false;
             return;
         }
@@ -211,7 +211,7 @@ public:
             if ((ximage_depth+7)/8 != (bpp+7)/8) //24bpp use 32 depth
                 ximage_depth = bpp;
             mask = ximg->red_mask | ximg->green_mask | ximg->blue_mask;
-            qDebug("color mask: %X R:%1X G:%1X B:%1X", mask, ximg->red_mask, ximg->green_mask, ximg->blue_mask);
+            qCDebug(DIGIKAM_QTAVWIDGETS_LOG) << QString::asprintf("color mask: %X R:%1X G:%1X B:%1X", mask, ximg->red_mask, ximg->green_mask, ximg->blue_mask);
             XDestroyImage(ximg);
         }
         if (((ximage_depth + 7) / 8) == 2) {
@@ -252,7 +252,7 @@ public:
         gc = XCreateGC(display, q_func().winId(), 0, 0); //DefaultRootWindow
         if (!gc) {
             available = false;
-            qCritical("Create GC failed!");
+            qCCritical(DIGIKAM_QTAVWIDGETS_LOG_CRITICAL) << QString::asprintf("Create GC failed!");
             return false;
         }
         XSetBackground(display, gc, BlackPixel(display, DefaultScreen(display)));
@@ -275,19 +275,19 @@ public:
         destroyX11Image(index);
         use_shm = XShmQueryExtension(display);
         XShmSegmentInfo &shm = shm_pool[index];
-        qDebug("use x11 shm: %d", use_shm);
+        qCDebug(DIGIKAM_QTAVWIDGETS_LOG) << QString::asprintf("use x11 shm: %d", use_shm);
         if (!use_shm)
             goto no_shm;
         ShmCompletionEvent = XShmGetEventBase(display) + ShmCompletion;
         // data seems not aligned
         ximage = XShmCreateImage(display, vinfo.visual, depth, ZPixmap, NULL, &shm, w, h);
         if (!ximage) {
-            qWarning("XShmCreateImage error");
+            qCWarning(DIGIKAM_QTAVWIDGETS_LOG_WARN) << QString::asprintf("XShmCreateImage error");
             goto no_shm;
         }
         shm.shmid = shmget(IPC_PRIVATE, ximage->bytes_per_line*ximage->height, IPC_CREAT | 0777);
         if (shm.shmid < 0) {
-            qWarning("shmget error");
+            qCWarning(DIGIKAM_QTAVWIDGETS_LOG_WARN) << QString::asprintf("shmget error");
             goto no_shm;
         }
         shm.shmaddr = (char *)shmat(shm.shmid, 0, 0);
@@ -297,13 +297,13 @@ public:
             XDestroyImage(ximage);
             ximage = NULL;
             ximage_data[index].clear();
-            qWarning("Shared memory error,disabling ( seg id error )");
+            qCWarning(DIGIKAM_QTAVWIDGETS_LOG_WARN) << QString::asprintf("Shared memory error,disabling ( seg id error )");
             goto no_shm;
         }
         ximage->data = shm.shmaddr;
         shm.readOnly = False;
         if (!XShmAttach(display, &shm)) {
-            qWarning("Attach to shm failed! try to use none shm");
+            qCWarning(DIGIKAM_QTAVWIDGETS_LOG_WARN) << QString::asprintf("Attach to shm failed! try to use none shm");
             goto no_shm;
         }
         XSync(display, False);
@@ -363,7 +363,7 @@ X11Renderer::X11Renderer(QWidget *parent, Qt::WindowFlags f):
     setAttribute(Qt::WA_PaintOnScreen, true);
     d_func().filter_context = VideoFilterContext::create(VideoFilterContext::X11);
     if (!d_func().filter_context) {
-        qWarning("No filter context for X11");
+        qCWarning(DIGIKAM_QTAVWIDGETS_LOG_WARN) << QString::asprintf("No filter context for X11");
     } else {
         d_func().filter_context->paint_device = this;
     }
@@ -427,7 +427,7 @@ int X11RendererPrivate::resizeXImage(int index)
         } else { //copy line by line
             if (warn_bad_pitch) {
                 warn_bad_pitch = false;
-                qDebug("bad pitch: %d - % ximage_data[%d].size: %d", ximage->bytes_per_line, video_frame.bytesPerLine(0), index, ximage_data[index].size());
+                qCDebug(DIGIKAM_QTAVWIDGETS_LOG) << QString::asprintf("bad pitch: %d - % ximage_data[%d].size: %d", ximage->bytes_per_line, video_frame.bytesPerLine(0), index, ximage_data[index].size());
             }
             quint8* dst = (quint8*)ximage->data;
             if (!use_shm) {
@@ -480,7 +480,7 @@ void X11Renderer::drawFrame()
         int wait_count = 0;
         while (d.ShmCompletionWaitCount >= kPoolSize) {
             if (wait_count++ > 100) {
-                qDebug("reset ShmCompletionWaitCount");
+                qCDebug(DIGIKAM_QTAVWIDGETS_LOG) << QString::asprintf("reset ShmCompletionWaitCount");
                 d.ShmCompletionWaitCount = 0;
                 break;
             }
