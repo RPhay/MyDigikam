@@ -21,41 +21,55 @@
  * ============================================================ */
 
 #include "AVError.h"
-#include "private/AVCompat.h"
+
 #ifndef QT_NO_DEBUG_STREAM
-#include <qdebug.h>
+#   include <qdebug.h>
 #endif
 
 // KDE includes
 
 #include <klocalizedstring.h>
 
+// Local includes
+
+#include "private/AVCompat.h"
+
 namespace QtAV
 {
 
 namespace
 {
+
 class RegisterMetaTypes
 {
 public:
+
     RegisterMetaTypes()
     {
         qRegisterMetaType<QtAV::AVError>("QtAV::AVError");
     }
 } _registerMetaTypes;
-}
+
+} // namespace
 
 static AVError::ErrorCode errorFromFFmpeg(int fe)
 {
-    typedef struct {
+    typedef struct
+    {
         int ff;
         AVError::ErrorCode e;
     } err_entry;
-    static const err_entry err_map[] = {
+
+    static const err_entry err_map[] =
+    {
         { AVERROR_BSF_NOT_FOUND, AVError::FormatError },
+
 #ifdef AVERROR_BUFFER_TOO_SMALL
+
         { AVERROR_BUFFER_TOO_SMALL, AVError::ResourceError },
-#endif //AVERROR_BUFFER_TOO_SMALL
+
+#endif
+
         { AVERROR_DECODER_NOT_FOUND, AVError::CodecError },
         { AVERROR_ENCODER_NOT_FOUND, AVError::CodecError },
         { AVERROR_DEMUXER_NOT_FOUND, AVError::FormatError },
@@ -64,10 +78,13 @@ static AVError::ErrorCode errorFromFFmpeg(int fe)
         { AVERROR_STREAM_NOT_FOUND, AVError::ResourceError },
         { 0, AVError::UnknowError }
     };
-    for (int i = 0; err_map[i].ff; ++i) {
+
+    for (int i = 0 ; err_map[i].ff ; ++i)
+    {
         if (err_map[i].ff == fe)
             return err_map[i].e;
     }
+
     return AVError::UnknowError;
 }
 
@@ -79,7 +96,9 @@ static void correct_error_by_ffmpeg(AVError::ErrorCode *e, int fe)
 {
     if (!fe || !e)
         return;
+
     const AVError::ErrorCode ec = errorFromFFmpeg(fe);
+
     if (*e > ec)
         *e = ec;
 }
@@ -116,6 +135,7 @@ AVError& AVError::operator=(const AVError& other)
 {
     mError = other.mError;
     mFFmpegError = other.mFFmpegError;
+
     return *this;
 }
 
@@ -137,78 +157,98 @@ AVError::ErrorCode AVError::error() const
 QString AVError::string() const
 {
     QString errStr(mDetail);
-    if (errStr.isEmpty()) {
-        switch (mError) {
-        case NoError:
-            errStr = i18n("No error");
-            break;
-        case OpenError:
-            errStr = i18n("Open error");
-            break;
-        case OpenTimedout:
-            errStr = i18n("Open timed out");
-            break;
-        case ParseStreamTimedOut:
-            errStr = i18n("Parse stream timed out");
-            break;
-        case ParseStreamError:
-            errStr = i18n("Parse stream error");
-            break;
-        case StreamNotFound:
-            errStr = i18n("Stream not found");
-            break;
-        case ReadTimedout:
-            errStr = i18n("Read packet timed out");
-            break;
-        case ReadError:
-            errStr = i18n("Read error");
-            break;
-        case SeekError:
-            errStr = i18n("Seek error");
-            break;
-        case ResourceError:
-            errStr = i18n("Resource error");
-            break;
 
-        case OpenCodecError:
-            errStr = i18n("Open codec error");
-            break;
-        case CloseCodecError:
-            errStr = i18n("Close codec error");
-            break;
-        case VideoCodecNotFound:
-            errStr = i18n("Video codec not found");
-            break;
-        case AudioCodecNotFound:
-            errStr = i18n("Audio codec not found");
-            break;
-        case SubtitleCodecNotFound:
-            errStr = i18n("Subtitle codec not found");
-            break;
-        case CodecError:
-            errStr = i18n("Codec error");
-            break;
+    if (errStr.isEmpty())
+    {
+        switch (mError)
+        {
+            case NoError:
+                errStr = i18n("No error");
+                break;
 
-        case FormatError:
-            errStr = i18n("Format error");
-            break;
+            case OpenError:
+                errStr = i18n("Open error");
+                break;
 
-        case NetworkError:
-            errStr = i18n("Network error");
-            break;
+            case OpenTimedout:
+                errStr = i18n("Open timed out");
+                break;
 
-        case AccessDenied:
-            errStr = i18n("Access denied");
-            break;
+            case ParseStreamTimedOut:
+                errStr = i18n("Parse stream timed out");
+                break;
 
-        default:
-            errStr = i18n("Unknown error");
-            break;
+            case ParseStreamError:
+                errStr = i18n("Parse stream error");
+                break;
+
+            case StreamNotFound:
+                errStr = i18n("Stream not found");
+                break;
+
+            case ReadTimedout:
+                errStr = i18n("Read packet timed out");
+                break;
+
+            case ReadError:
+                errStr = i18n("Read error");
+                break;
+
+            case SeekError:
+                errStr = i18n("Seek error");
+                break;
+
+            case ResourceError:
+                errStr = i18n("Resource error");
+                break;
+
+            case OpenCodecError:
+                errStr = i18n("Open codec error");
+                break;
+
+            case CloseCodecError:
+                errStr = i18n("Close codec error");
+                break;
+
+            case VideoCodecNotFound:
+                errStr = i18n("Video codec not found");
+                break;
+
+            case AudioCodecNotFound:
+                errStr = i18n("Audio codec not found");
+                break;
+
+            case SubtitleCodecNotFound:
+                errStr = i18n("Subtitle codec not found");
+                break;
+
+            case CodecError:
+                errStr = i18n("Codec error");
+                break;
+
+            case FormatError:
+                errStr = i18n("Format error");
+                break;
+
+            case NetworkError:
+                errStr = i18n("Network error");
+                break;
+
+            case AccessDenied:
+                errStr = i18n("Access denied");
+                break;
+
+            default:
+                errStr = i18n("Unknown error");
+                break;
         }
     }
-    if (mFFmpegError != 0) {
+
+    if (mFFmpegError != 0)
+    {
         errStr += QStringLiteral("\n(FFmpeg %1: %2)").arg(mFFmpegError, 0, 16).arg(ffmpegErrorString());
     }
+
     return errStr;
 }
 
@@ -221,6 +261,7 @@ QString AVError::ffmpegErrorString() const
 {
     if (mFFmpegError == 0)
         return QString();
+
     return QString::fromUtf8(av_err2str(mFFmpegError));
 }
 
@@ -228,10 +269,13 @@ QString AVError::ffmpegErrorString() const
 
 
 #ifndef QT_NO_DEBUG_STREAM
-//class QDebug;
+
+// class QDebug;
+
 QDebug operator<<(QDebug debug, const QtAV::AVError &error)
 {
     debug << error.string();
     return debug;
 }
+
 #endif
