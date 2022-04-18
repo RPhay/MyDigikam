@@ -796,9 +796,7 @@ void INatWindow::slotUser1()
 
     // Create an observation.
 
-    QString obsDateTime = d->observationDateTime.toString(Qt::ISODate) +
-                          QLatin1Char(' ')                             +
-                          d->observationDateTime.timeZoneAbbreviation();
+    QString obsDateTime = d->observationDateTime.toString(Qt::ISODate);
     QJsonObject params;
     params.insert(QLatin1String("observed_on_string"), QJsonValue(obsDateTime));
     params.insert(QLatin1String("time_zone"),
