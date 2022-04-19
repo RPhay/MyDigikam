@@ -6,15 +6,15 @@ See the story for bugzilla: https://bugs.kde.org/show_bug.cgi?id=448681
 
 Code review with plenty of fixes and improvements:
 
-- Compilation rules ported to clean CMake with usual Find scripts for dependencies.
+x Compilation rules ported to clean CMake with usual Find scripts for dependencies.
   See core/cmake/rules/RulesMediaPlayer.cmake
-- Fix all GCC 11 warnings.
-- Fixes Qt Signal/Slots.
-- Port code to pure Qt5/Qt6.
-- Use qCDebug()/qCWarning categories with digiKam debug spaces. Drop Logger class.
-- Use KDE i18n() instead tr().
-- Use cmake to find libuchardet dependency.
-- Add SSE2 and SSE4.1 support with CMake.
+x Fix all GCC 11 warnings.
+x Fixes Qt Signal/Slots.
+x Port code to pure Qt5/Qt6.
+x Use qCDebug()/qCWarning categories with digiKam debug spaces. Drop Logger class.
+x Use KDE i18n() instead tr().
+x Use cmake to find libuchardet dependency.
+x Add SSE2 and SSE4.1 support with CMake.
 * Remove support of Qt version < 5.
 * Fix header guards.
 * Fix includes rules/order from Qt and local.
@@ -34,6 +34,6 @@ UNMAINTAINED FEATURES:
 
 TODO:
 
-- Use cmake to find DirectX dependencies (Windows only).
-- Use cmake to find CUDA Toolkit dependency.
-- Port to FFMPEG 5.
++ Use cmake to find DirectX dependencies (Windows only).
++ Use cmake to find CUDA Toolkit dependency.
++ Port to FFMPEG 5.
