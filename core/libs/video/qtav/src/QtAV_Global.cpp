@@ -70,21 +70,11 @@ namespace QtAV
 namespace Internal
 {
 
-// disable logging for release. you can manually enable it.
-
-#if defined(QT_NO_DEBUG)// && !defined(Q_OS_ANDROID) && !defined(Q_OS_IOS) && !defined(Q_OS_WINRT)
-static QtAV::LogLevel gLogLevel = QtAV::LogOff;
-#else
-static QtAV::LogLevel gLogLevel = QtAV::LogAll;
-#endif
-
-static bool gLogLevelSet = false;
-bool isLogLevelSet() { return gLogLevelSet;}
 static int gAVLogLevel = AV_LOG_INFO;
 
 } // namespace Internal
 
-//TODO: auto add new depend libraries information
+// TODO: auto add new depend libraries information
 
 QString aboutFFmpeg_PlainText()
 {
@@ -250,17 +240,6 @@ QString aboutQtAV_HTML()
            ).arg(i18n("Multimedia framework based on Qt and FFmpeg.\n"));
 
     return about;
-}
-
-void setLogLevel(LogLevel value)
-{
-    Internal::gLogLevelSet = true;
-    Internal::gLogLevel = value;
-}
-
-LogLevel logLevel()
-{
-    return (LogLevel)Internal::gLogLevel;
 }
 
 void setFFmpegLogHandler(void (*callback)(void *, int, const char *, va_list))

@@ -42,40 +42,20 @@
 #define Q_AV_EXPORT         DIGIKAM_EXPORT
 #define Q_AV_PRIVATE_EXPORT DIGIKAM_EXPORT
 
-/* runtime version. used to compare with compile time version */
-
+/**
+ * runtime version. used to compare with compile time version.
+ */
 Q_AV_EXPORT unsigned QtAV_Version();
-Q_AV_EXPORT QString QtAV_Version_String();
-Q_AV_EXPORT QString QtAV_Version_String_Long();
+Q_AV_EXPORT QString  QtAV_Version_String();
+Q_AV_EXPORT QString  QtAV_Version_String_Long();
 
 namespace QtAV
 {
 
-enum LogLevel
-{
-    LogOff,
-    LogDebug,       // log all
-    LogWarning,     // log warning, critical, fatal
-    LogCritical,    // log critical, fatal
-    LogFatal,       // log fatal
-    LogAll
-};
-
-Q_AV_EXPORT QString aboutFFmpeg_PlainText();
-Q_AV_EXPORT QString aboutFFmpeg_HTML();
-Q_AV_EXPORT QString aboutQtAV_PlainText();
-Q_AV_EXPORT QString aboutQtAV_HTML();
-
-/*!
- * Default value: LogOff for release build. LogAll for debug build.
- * The level can also be changed at runtime by setting the QTAV_LOG_LEVEL or QTAV_LOG environment variable;
- * QTAV_LOG_LEVEL can be: off, debug, warning, critical, fatal, all. Or use their enum values
- * if both setLogLevel() is called and QTAV_LOG_LEVEL is set, the environment variable takes preceden.
-*/
-Q_AV_EXPORT void setLogLevel(LogLevel value);
-Q_AV_EXPORT LogLevel logLevel();
-
-/// Default handler is qt message logger. Set environment QTAV_FFMPEG_LOG=0 or setFFmpegLogHandler(0) to disable.
+/**
+ * Default handler is qt message logger. Set environment QTAV_FFMPEG_LOG=0
+ * or setFFmpegLogHandler(0) to disable.
+ */
 Q_AV_EXPORT void setFFmpegLogHandler(void(*)(void *, int, const char *, va_list));
 
 /*!
@@ -84,9 +64,17 @@ Q_AV_EXPORT void setFFmpegLogHandler(void(*)(void *, int, const char *, va_list)
  */
 Q_AV_EXPORT void setFFmpegLogLevel(const QByteArray& level);
 
-/// query the common options of avformat/avcodec that can be used by AVPlayer::setOptionsForXXX. Format/codec specified options are also included
+/**
+ * query the common options of avformat/avcodec that can be used by AVPlayer::setOptionsForXXX.
+ * Format/codec specified options are also included
+ */
 Q_AV_EXPORT QString avformatOptions();
 Q_AV_EXPORT QString avcodecOptions();
+
+Q_AV_EXPORT QString aboutFFmpeg_PlainText();
+Q_AV_EXPORT QString aboutFFmpeg_HTML();
+Q_AV_EXPORT QString aboutQtAV_PlainText();
+Q_AV_EXPORT QString aboutQtAV_HTML();
 
 ////////////Types/////////////
 
@@ -94,13 +82,13 @@ enum MediaStatus
 {
     UnknownMediaStatus,
     NoMedia,
-    LoadingMedia,   // when source is set
-    LoadedMedia,    // if auto load and source is set. player is stopped state
-    StalledMedia,   // insufficient buffering or other interruptions (timeout, user interrupt)
-    BufferingMedia, // NOT IMPLEMENTED
-    BufferedMedia,  // when playing //NOT IMPLEMENTED
-    EndOfMedia,     // Playback has reached the end of the current media. The player is in the StoppedState.
-    InvalidMedia    // what if loop > 0 or stopPosition() is not mediaStopPosition()?
+    LoadingMedia,   ///< when source is set
+    LoadedMedia,    ///< if auto load and source is set. player is stopped state
+    StalledMedia,   ///< insufficient buffering or other interruptions (timeout, user interrupt)
+    BufferingMedia, ///< NOT IMPLEMENTED
+    BufferedMedia,  ///< when playing // NOT IMPLEMENTED
+    EndOfMedia,     ///< Playback has reached the end of the current media. The player is in the StoppedState.
+    InvalidMedia    ///< what if loop > 0 or stopPosition() is not mediaStopPosition()?
 };
 
 enum BufferMode
@@ -112,23 +100,23 @@ enum BufferMode
 
 enum MediaEndActionFlag
 {
-    MediaEndAction_Default,               /// stop playback (if loop end) and clear video renderer
-    MediaEndAction_KeepDisplay = 1,       /// stop playback but video renderer keeps the last frame
-    MediaEndAction_Pause       = 1 << 1   /// pause playback. Currently AVPlayer repeat mode will not work if this flag is set
+    MediaEndAction_Default,               ///< stop playback (if loop end) and clear video renderer
+    MediaEndAction_KeepDisplay = 1,       ///< stop playback but video renderer keeps the last frame
+    MediaEndAction_Pause       = 1 << 1   ///< pause playback. Currently AVPlayer repeat mode will not work if this flag is set
 };
 Q_DECLARE_FLAGS(MediaEndAction, MediaEndActionFlag)
 
 enum SeekUnit
 {
-    SeekByTime, // only this is supported now
+    SeekByTime, ///< only this is supported now
     SeekByByte,
     SeekByFrame
 };
 
 enum SeekType
 {
-    AccurateSeek, // slow
-    KeyFrameSeek, // fast
+    AccurateSeek, ///< slow
+    KeyFrameSeek, ///< fast
     AnyFrameSeek
 };
 
@@ -140,7 +128,7 @@ enum ColorSpace
 {
     ColorSpace_Unknown,
     ColorSpace_RGB,
-    ColorSpace_GBR, // for planar gbr format(e.g. video from x264) used in glsl
+    ColorSpace_GBR, ///< for planar gbr format(e.g. video from x264) used in glsl
     ColorSpace_BT601,
     ColorSpace_BT709,
     ColorSpace_XYZ
@@ -153,8 +141,8 @@ enum ColorSpace
 enum ColorRange
 {
     ColorRange_Unknown,
-    ColorRange_Limited, // TV, MPEG
-    ColorRange_Full     // PC, JPEG
+    ColorRange_Limited, ///< TV, MPEG
+    ColorRange_Full     ///< PC, JPEG
 };
 
 /*!
