@@ -173,7 +173,7 @@ if(ASS_FOUND)
     include_directories(${ASS_INCLUDE_DIRS})
 
     set(libqtav_SRCS ${libqtav_SRCS}
-        ${CMAKE_CURRENT_SOURCE_DIR}/src/capi/ass_api.cpp
+        ${CMAKE_CURRENT_SOURCE_DIR}/src/subtitle/ass_api.cpp
         ${CMAKE_CURRENT_SOURCE_DIR}/src/subtitle/SubtitleProcessorLibASS.cpp
     )
 
@@ -186,7 +186,7 @@ if(OPENAL_FOUND)
     include_directories(${OPENAL_INCLUDE_DIR})
 
     set(libqtav_SRCS ${libqtav_SRCS}
-        ${CMAKE_CURRENT_SOURCE_DIR}/src/capi/openal_api.cpp
+        ${CMAKE_CURRENT_SOURCE_DIR}/src/output/audio/openal_api.cpp
         ${CMAKE_CURRENT_SOURCE_DIR}/src/output/audio/AudioOutputOpenAL.cpp
     )
 

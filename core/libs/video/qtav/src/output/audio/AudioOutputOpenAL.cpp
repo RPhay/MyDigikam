@@ -29,7 +29,7 @@
 
 #if QTAV_HAVE(CAPI)
 #define OPENAL_CAPI_NS // CAPI_LINK_OPENAL will override it
-#include "capi/openal_api.h"
+#include "openal_api.h"
 #else
 #if defined(HEADER_OPENAL_PREFIX)
 #include <OpenAL/al.h>

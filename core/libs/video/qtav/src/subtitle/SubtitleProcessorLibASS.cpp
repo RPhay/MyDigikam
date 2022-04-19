@@ -46,7 +46,7 @@
 //#define ASS_CAPI_NS // do not unload() manually!
 //#define CAPI_LINK_ASS
 
-#include "capi/ass_api.h"
+#include "ass_api.h"
 
 namespace QtAV
 {

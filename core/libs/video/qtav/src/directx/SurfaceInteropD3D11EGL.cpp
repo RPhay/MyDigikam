@@ -33,7 +33,7 @@
 #else
 #define EGL_CAPI_NS
 #endif //QT_OPENGL_ES_2_ANGLE_STATIC
-#include "capi/egl_api.h"
+#include "egl_api.h"
 #include <EGL/eglext.h> //include after egl_capi.h to match types
 
 namespace QtAV
