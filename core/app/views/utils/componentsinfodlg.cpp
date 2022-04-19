@@ -82,8 +82,13 @@ public:
 
 #ifdef HAVE_GPHOTO2
 
+        const char** gpLibrary = gp_library_version(GP_VERSION_SHORT);
+
+        QString gpVersion      = gpLibrary ? QLatin1String(gpLibrary[0])
+                                           : i18nc("@item: component info", "Unknown");
+
         new QTreeWidgetItem(m_libraries, QStringList() <<
-                            i18nc("@item: component info", "LibGphoto2") <<             QLatin1String(gp_library_version(GP_VERSION_SHORT)[0]));
+                            i18nc("@item: component info", "LibGphoto2") <<             gpVersion);
 
 #else
 
