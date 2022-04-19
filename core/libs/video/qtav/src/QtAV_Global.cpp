@@ -57,7 +57,7 @@ QString QtAV_Version_String()
     return QString::fromLatin1(QTAV_VERSION_STR);
 }
 
-#define QTAV_VERSION_STR_LONG   QTAV_VERSION_STR
+#define QTAV_VERSION_STR_LONG QTAV_VERSION_STR
 
 QString QtAV_Version_String_Long()
 {
@@ -87,10 +87,10 @@ namespace Internal
 typedef struct depend_component
 {
     const char* lib;
-    unsigned build_version;
-    unsigned rt_version;
-    const char *config;
-    const char *license;
+    unsigned    build_version;
+    unsigned    rt_version;
+    const char* config;
+    const char* license;
 } depend_component;
 
 static unsigned get_qt_version()
@@ -108,38 +108,55 @@ static const depend_component* get_depend_component(const depend_component* info
     // DO NOT use QStringLiteral here because the install script use strings to search "Qt-" in the library. QStringLiteral will place it in .ro and strings can not find it
 
 #if QT_VERSION >= QT_VERSION_CHECK(5, 3, 0)
+
     static const char* qt_build_info = get_qt_version() >= QT_VERSION_CHECK(5, 3, 0) ? QLibraryInfo::build() : "";
+
 #else
+
     static const char* qt_build_info = "";
+
 #endif
 
-    static const depend_component components[] = {
+    static const depend_component components[] =
+    {
         {  "Qt", QT_VERSION, get_qt_version(), qt_build_info, "" },
+
         //TODO: auto check loaded libraries
 
 #define FF_COMPONENT(name, NAME) #name, LIB##NAME##_VERSION_INT, name##_version(), name##_configuration(), name##_license()
+
         { FF_COMPONENT(avutil, AVUTIL) },
         { FF_COMPONENT(avcodec, AVCODEC) },
         { FF_COMPONENT(avformat, AVFORMAT) },
 
 #if QTAV_HAVE(AVFILTER)
+
         { FF_COMPONENT(avfilter, AVFILTER) },
-#endif //QTAV_HAVE(AVFILTER)
+
+#endif
 
 #if QTAV_HAVE(AVDEVICE)
+
         { FF_COMPONENT(avdevice, AVDEVICE) },
-#endif //QTAV_HAVE(AVDEVICE)
+
+#endif
 
 #if QTAV_HAVE(AVRESAMPLE)
+
         { FF_COMPONENT(avresample, AVRESAMPLE) },
-#endif //QTAV_HAVE(AVRESAMPLE)
+
+#endif
 
 #if QTAV_HAVE(SWRESAMPLE)
+
         { FF_COMPONENT(swresample, SWRESAMPLE) },
-#endif //QTAV_HAVE(SWRESAMPLE)
+
+#endif
 
         { FF_COMPONENT(swscale, SWSCALE) },
+
 #undef FF_COMPONENT
+
         { 0, 0, 0, 0, 0 }
     };
 
@@ -257,10 +274,10 @@ void setFFmpegLogLevel(const QByteArray &level)
     if (level.isEmpty())
         return;
 
-    bool ok = false;
+    bool ok         = false;
     const int value = level.toInt(&ok);
 
-    if ((ok && value == 0) || level == "off" || level == "quiet")
+    if      ((ok && value == 0) || level == "off" || level == "quiet")
         Internal::gAVLogLevel = AV_LOG_QUIET;
     else if (level == "panic")
         Internal::gAVLogLevel = AV_LOG_PANIC;
@@ -276,10 +293,14 @@ void setFFmpegLogLevel(const QByteArray &level)
         Internal::gAVLogLevel = AV_LOG_VERBOSE;
     else if (level == "debug")
         Internal::gAVLogLevel = AV_LOG_DEBUG;
+
 #ifdef AV_LOG_TRACE
+
     else if (level == "trace")
         Internal::gAVLogLevel = AV_LOG_TRACE;
+
 #endif
+
     else
         Internal::gAVLogLevel = AV_LOG_INFO;
 
@@ -293,9 +314,9 @@ static void qtav_ffmpeg_log_callback(void* ctx, int level,const char* fmt, va_li
     if (level > Internal::gAVLogLevel)
         return;
 
-    AVClass *c = ctx ? *(AVClass**)ctx : 0;
+    AVClass* c   = ctx ? *(AVClass**)ctx : 0;
     QString qmsg = QString().asprintf("[FFmpeg:%s] ", c ? c->item_name(ctx) : "?") + QString().vasprintf(fmt, vl);
-    qmsg = qmsg.trimmed();
+    qmsg         = qmsg.trimmed();
 
     if      (level > AV_LOG_WARNING)
         qCDebug(DIGIKAM_QTAV_LOG) << qPrintable(qmsg);
@@ -310,18 +331,27 @@ QString avformatOptions()
     if (!opts.isEmpty())
         return opts;
 
-    void* obj =  const_cast<void*>(reinterpret_cast<const void*>(avformat_get_class()));
-    opts = Internal::optionsToString((void*)&obj);
+    void* obj = const_cast<void*>(reinterpret_cast<const void*>(avformat_get_class()));
+    opts      = Internal::optionsToString((void*)&obj);
     opts.append(ushort('\n'));
+
 #if AVFORMAT_STATIC_REGISTER
+
     const AVInputFormat *i = NULL;
-    void* it = NULL;
-    while ((i = av_demuxer_iterate(&it))) {
+    void* it               = NULL;
+
+    while ((i = av_demuxer_iterate(&it)))
+    {
+
 #else
+
     AVInputFormat *i = NULL;
     av_register_all(); // MUST register all input/output formats
-    while ((i = av_iformat_next(i))) {
+    while ((i = av_iformat_next(i)))
+    {
+
 #endif
+
         QString opt(Internal::optionsToString((void*)&i->priv_class).trimmed());
 
         if (opt.isEmpty())
@@ -331,15 +361,25 @@ QString avformatOptions()
                     .arg(QLatin1String(i->name))
                     .arg(opt));
     }
+
 #if AVFORMAT_STATIC_REGISTER
+
     const AVOutputFormat *o = NULL;
     it = NULL;
-    while ((o = av_muxer_iterate(&it))) {
+
+    while ((o = av_muxer_iterate(&it)))
+    {
+
 #else
+
     av_register_all(); // MUST register all input/output formats
     AVOutputFormat *o = NULL;
-    while ((o = av_oformat_next(o))) {
+
+    while ((o = av_oformat_next(o)))
+    {
+
 #endif
+
         QString opt(Internal::optionsToString((void*)&o->priv_class).trimmed());
 
         if (opt.isEmpty())
@@ -361,16 +401,26 @@ QString avcodecOptions()
         return opts;
 
     void* obj = const_cast<void*>(reinterpret_cast<const void*>(avcodec_get_class()));
-    opts = Internal::optionsToString((void*)&obj);
+    opts      = Internal::optionsToString((void*)&obj);
     opts.append(ushort('\n'));
     const AVCodec* c = NULL;
+
 #if AVCODEC_STATIC_REGISTER
+
     void* it = NULL;
-    while ((c = av_codec_iterate(&it))) {
+
+    while ((c = av_codec_iterate(&it)))
+    {
+
 #else
+
     avcodec_register_all();
-    while ((c = av_codec_next(c))) {
+
+    while ((c = av_codec_next(c)))
+    {
+
 #endif
+
         QString opt(Internal::optionsToString((void*)&c->priv_class).trimmed());
 
         if (opt.isEmpty())
@@ -383,6 +433,7 @@ QString avcodecOptions()
 }
 
 #if 0
+
 const QStringList& supportedInputMimeTypes()
 {
     static QStringList mimes;
@@ -415,6 +466,7 @@ static QStringList s_audio_mimes, s_video_mimes, s_subtitle_mimes;
 static void init_supported_codec_info()
 {
     const AVCodecDescriptor* cd = avcodec_descriptor_next(NULL);
+
     while (cd)
     {
         QStringList list;
@@ -477,7 +529,7 @@ const QStringList& supportedSubtitleMimeTypes()
     return s_subtitle_mimes;
 }
 
-#endif
+#endif // 0
 
 /*
  * AVColorSpace:
@@ -490,11 +542,12 @@ ColorSpace colorSpaceFromFFmpeg(AVColorSpace cs)
     switch (cs)
     {
         // from ffmpeg: order of coefficients is actually GBR
-        case AVCOL_SPC_RGB: return ColorSpace_GBR;
-        case AVCOL_SPC_BT709: return ColorSpace_BT709;
-        case AVCOL_SPC_BT470BG: return ColorSpace_BT601;
+
+        case AVCOL_SPC_RGB:       return ColorSpace_GBR;
+        case AVCOL_SPC_BT709:     return ColorSpace_BT709;
+        case AVCOL_SPC_BT470BG:   return ColorSpace_BT601;
         case AVCOL_SPC_SMPTE170M: return ColorSpace_BT601;
-        default: return ColorSpace_Unknown;
+        default:                  return ColorSpace_Unknown;
     }
 }
 
@@ -504,7 +557,7 @@ ColorRange colorRangeFromFFmpeg(AVColorRange cr)
     {
         case AVCOL_RANGE_MPEG: return ColorRange_Limited;
         case AVCOL_RANGE_JPEG: return ColorRange_Full;
-        default: return ColorRange_Unknown;
+        default:               return ColorRange_Unknown;
     }
 }
 
@@ -555,7 +608,11 @@ namespace
     class ResourceLoader
     {
     public:
-        ResourceLoader() { initResources(); }
+
+        ResourceLoader()
+        {
+            initResources();
+        }
     };
 
     ResourceLoader QtAV_QRCLoader;
