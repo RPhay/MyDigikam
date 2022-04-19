@@ -24,16 +24,18 @@
 #define QTAV_OPENGLHELPER_H
 
 #ifndef QT_NO_OPENGL
-#include "VideoFormat.h"
-#include "opengl/gl_api.h"
-// for dynamicgl. qglfunctions before qt5.3 does not have portable gl functions
-#ifdef QT_OPENGL_DYNAMIC
-#define DYGL(glFunc) QOpenGLContext::currentContext()->functions()->glFunc
-#else
-#define DYGL(glFunc) glFunc
-#endif
+#   include "VideoFormat.h"
+#   include "opengl/gl_api.h"
 
-#define EGL_ENSURE(x, ...) \
+// for dynamicgl. qglfunctions before qt5.3 does not have portable gl functions
+
+#   ifdef QT_OPENGL_DYNAMIC
+#       define DYGL(glFunc) QOpenGLContext::currentContext()->functions()->glFunc
+#   else
+#       define DYGL(glFunc) glFunc
+#   endif
+
+#   define EGL_ENSURE(x, ...) \
     do { \
         if (!(x)) { \
             EGLint err = eglGetError(); \
@@ -41,7 +43,8 @@
             return __VA_ARGS__; \
         } \
     } while(0)
-#define EGL_WARN(x, ...) \
+
+#   define EGL_WARN(x, ...) \
     do { \
         if (!(x)) { \
             EGLint err = eglGetError(); \
@@ -50,14 +53,15 @@
     } while(0)
 
 
-#define WGL_ENSURE(x, ...) \
+#   define WGL_ENSURE(x, ...) \
     do { \
         if (!(x)) { \
             qCWarning(DIGIKAM_QTAV_LOG_WARN) << "WGL error " << __FILE__ << "@" << __LINE__ << " " << #x << ": " << qt_error_string(GetLastError()); \
             return __VA_ARGS__; \
         } \
     } while(0)
-#define WGL_WARN(x, ...) \
+
+#   define WGL_WARN(x, ...) \
     do { \
         if (!(x)) { \
     qCWarning(DIGIKAM_QTAV_LOG_WARN) << "WGL error " << __FILE__ << "@" << __LINE__ << " " << #x << ": " << qt_error_string(GetLastError()); \
@@ -67,14 +71,23 @@
 QT_BEGIN_NAMESPACE
 class QMatrix4x4;
 QT_END_NAMESPACE
+
 namespace QtAV
 {
-namespace OpenGLHelper {
+
+namespace OpenGLHelper
+{
+
 QString removeComments(const QString& code);
+
 QByteArray compatibleShaderHeader(QOpenGLShader::ShaderType type);
+
 int GLSLVersion();
+
 bool isEGL();
+
 bool isOpenGLES();
+
 /*!
  * \brief hasExtensionEGL
  * Test if any of the given extensions is supported
@@ -82,12 +95,19 @@ bool isOpenGLES();
  * \return true if one of extension is supported
  */
 bool hasExtensionEGL(const char* exts[]);
+
 bool hasRG();
+
 bool has16BitTexture();
+
 // set by user (environment var "QTAV_TEXTURE16_DEPTH=8 or 16", default now is 8)
+
 int depth16BitTexture();
+
 // set by user (environment var "QTAV_GL_DEPRECATED=1")
+
 bool useDeprecatedFormats();
+
 /*!
  * \brief hasExtension
  * Test if any of the given extensions is supported. Current OpenGL context must be valid.
@@ -95,7 +115,9 @@ bool useDeprecatedFormats();
  * \return true if one of extension is supported
  */
 bool hasExtension(const char* exts[]);
+
 bool isPBOSupported();
+
 /*!
  * \brief videoFormatToGL
  * \param fmt
@@ -106,16 +128,32 @@ bool isPBOSupported();
  * \return false if fmt is not supported
  */
 bool videoFormatToGL(const VideoFormat& fmt, GLint* internal_format, GLenum* data_format, GLenum* data_type, QMatrix4x4* mat = NULL);
+
 int bytesOfGLFormat(GLenum format, GLenum dataType = GL_UNSIGNED_BYTE);
-} //namespace OpenGLHelper
+
+} // namespace OpenGLHelper
+
 } // namespace QtAV
+
 #else
+
 namespace QtAV
 {
-namespace OpenGLHelper {
-#define DYGL(f) f
-inline bool isOpenGLES() {return false;}
-} //namespace OpenGLHelper
+
+namespace OpenGLHelper
+{
+
+#   define DYGL(f) f
+
+inline bool isOpenGLES()
+{
+    return false;
+}
+
+} // namespace OpenGLHelper
+
 } // namespace QtAV
-#endif //QT_NO_OPENGL
+
+#endif // QT_NO_OPENGL
+
 #endif // QTAV_OPENGLHELPER_H
