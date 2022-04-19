@@ -38,28 +38,28 @@ static const char kVert[] = GLSL
     attribute vec4 a_Position;
     attribute vec2 a_TexCoords;
     attribute vec4 a_Color;
-    uniform mat4 u_Matrix;
-    varying vec2 v_TexCoords;
-    varying vec4 v_Color;
+    uniform mat4   u_Matrix;
+    varying vec2   v_TexCoords;
+    varying vec4   v_Color;
 
     void main()
     {
         gl_Position = u_Matrix * a_Position;
         v_TexCoords = a_TexCoords;
-        v_Color = a_Color;
+        v_Color     = a_Color;
     }
 );
 
 static const char kFrag[] = GLSL
 (
     uniform sampler2D u_Texture;
-    varying vec2 v_TexCoords;
-    varying vec4 v_Color;
+    varying vec2      v_TexCoords;
+    varying vec4      v_Color;
 
     void main()
     {
         gl_FragColor.rgb = v_Color.rgb;
-        gl_FragColor.a = v_Color.a*texture2D(u_Texture, v_TexCoords).r;
+        gl_FragColor.a   = v_Color.a*texture2D(u_Texture, v_TexCoords).r;
     }
 );
 
@@ -126,13 +126,13 @@ void SubImagesRenderer::render(const SubImageSet &ass, const QRect &target, cons
     DYGL(glDisable(GL_BLEND));
 }
 
-void SubImagesRenderer::setProjectionMatrixToRect(const QRectF &v)
+void SubImagesRenderer::setProjectionMatrixToRect(const QRectF& v)
 {
     m_mat.setToIdentity();
     m_mat.ortho(v);
 }
 
-void SubImagesRenderer::uploadTexture(SubImagesGeometry *g)
+void SubImagesRenderer::uploadTexture(SubImagesGeometry* g)
 {
     if (!m_tex)
     {
@@ -145,7 +145,7 @@ void SubImagesRenderer::uploadTexture(SubImagesGeometry *g)
 
     if (g->images().format() == SubImageSet::ASS)
         OpenGLHelper::videoFormatToGL(VideoFormat(VideoFormat::Format_Y8), &internal_fmt, &fmt, &data_type);
-    else //rgb32
+    else // rgb32
         OpenGLHelper::videoFormatToGL(VideoFormat(VideoFormat::Format_ARGB32), &internal_fmt, &fmt, &data_type);
 
     DYGL(glBindTexture(GL_TEXTURE_2D, m_tex));
@@ -157,9 +157,9 @@ void SubImagesRenderer::uploadTexture(SubImagesGeometry *g)
 
     //glPixelStorei(GL_UNPACK_ALIGNMENT, 1);
 
-    for (int i = 0; i < g->uploadRects().size(); ++i)
+    for (int i = 0 ; i < g->uploadRects().size() ; ++i)
     {
-        const QRect& r = g->uploadRects().at(i);
+        const QRect& r      = g->uploadRects().at(i);
         const SubImage& sub = g->images().images.at(i);
         DYGL(glTexSubImage2D(GL_TEXTURE_2D, 0, r.x(), r.y(), r.width(), r.height(), fmt, data_type, sub.data.constData()));
     }

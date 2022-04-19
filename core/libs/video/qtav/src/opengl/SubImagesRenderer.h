@@ -20,34 +20,44 @@
  *
  * ============================================================ */
 
-#ifndef QTAV_SUBIMAGESRENDERER_H
-#define QTAV_SUBIMAGESRENDERER_H
+#ifndef QTAV_SUB_IMAGES_RENDERER_H
+#define QTAV_SUB_IMAGES_RENDERER_H
+
+// Qt includes
 
 #include <QMatrix4x4>
+
+#if QT_VERSION >= QT_VERSION_CHECK(5, 0, 0)
+#   include <QOpenGLShaderProgram>
+#   include <QOpenGLShader>
+#else
+#   include <QGLShaderProgram>
+#   include <QGLShader>
+#   undef QOpenGLShaderProgram
+#   undef QOpenGLShader
+#   define QOpenGLShaderProgram QGLShaderProgram
+#   define QOpenGLShader QGLShader
+#endif
+
+// Local includes
+
 #include "SubImage.h"
 #include "OpenGLTypes.h"
 #include "opengl/OpenGLHelper.h"
-#if QT_VERSION >= QT_VERSION_CHECK(5, 0, 0)
-#include <QOpenGLShaderProgram>
-#include <QOpenGLShader>
-#else
-#include <QGLShaderProgram>
-#include <QGLShader>
-#undef QOpenGLShaderProgram
-#undef QOpenGLShader
-#define QOpenGLShaderProgram QGLShaderProgram
-#define QOpenGLShader QGLShader
-#endif
 
 namespace QtAV
 {
+
 class SubImagesGeometry;
 class GeometryRenderer;
+
 class SubImagesRenderer
 {
 public:
+
     SubImagesRenderer();
     ~SubImagesRenderer();
+
     /*!
      * \brief render
      * \param ass
@@ -55,6 +65,7 @@ public:
      * \param transform additional transform, e.g. aspect ratio
      */
     void render(const SubImageSet& ass, const QRect& target, const QMatrix4x4& transform = QMatrix4x4());
+
     /*!
      * \brief setProjectionMatrixToRect
      * the rect will be viewport
@@ -62,15 +73,20 @@ public:
     void setProjectionMatrixToRect(const QRectF& v);
 
 private:
+
     void uploadTexture(SubImagesGeometry* g);
 
-    SubImagesGeometry *m_geometry;
-    GeometryRenderer *m_renderer;
-    QMatrix4x4 m_mat;
-    QRect m_rect;
+private:
 
-    GLuint m_tex;
+    SubImagesGeometry*   m_geometry;
+    GeometryRenderer*    m_renderer;
+    QMatrix4x4           m_mat;
+    QRect                m_rect;
+
+    GLuint               m_tex;
     QOpenGLShaderProgram m_program;
 };
+
 } // namespace QtAV
-#endif //QTAV_SUBIMAGESRENDERER_H
+
+#endif // QTAV_SUB_IMAGES_RENDERER_H
