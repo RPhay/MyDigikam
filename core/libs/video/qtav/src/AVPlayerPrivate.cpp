@@ -22,8 +22,8 @@
  * ============================================================ */
 
 #include "AVPlayerPrivate.h"
-#include "filter/FilterManager.h"
-#include "output/OutputSet.h"
+#include "FilterManager.h"
+#include "OutputSet.h"
 #include "AudioDecoder.h"
 #include "AudioFormat.h"
 #include "AudioResampler.h"

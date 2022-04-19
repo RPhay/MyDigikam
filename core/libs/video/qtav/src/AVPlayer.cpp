@@ -39,13 +39,13 @@
 #include "AVClock.h"
 #include "VideoCapture.h"
 #include "VideoCapture.h"
-#include "filter/FilterManager.h"
-#include "output/OutputSet.h"
+#include "FilterManager.h"
+#include "OutputSet.h"
 #include "AudioThread.h"
 #include "VideoThread.h"
 #include "AVDemuxThread.h"
 #include "AVCompat.h"
-#include "utils/internal.h"
+#include "internal.h"
 #include "digikam_debug.h"
 extern "C" {
 #include <libavutil/mathematics.h>

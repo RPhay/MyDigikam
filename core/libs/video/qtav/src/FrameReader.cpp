@@ -26,7 +26,7 @@
 #include <QThread>
 #include "AVDemuxer.h"
 #include "VideoDecoder.h"
-#include "utils/BlockingQueue.h"
+#include "BlockingQueue.h"
 #include "digikam_debug.h"
 
 namespace QtAV

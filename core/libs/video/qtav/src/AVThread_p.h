@@ -37,7 +37,7 @@ typedef QTime QElapsedTimer;
 #endif
 
 #include "PacketBuffer.h"
-#include "utils/ring.h"
+#include "ring.h"
 
 QT_BEGIN_NAMESPACE
 class QRunnable;

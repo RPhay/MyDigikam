@@ -31,7 +31,7 @@
 #include <QTime>
 typedef QTime QElapsedTimer;
 #endif
-#include "utils/ring.h"
+#include "ring.h"
 #include "digikam_debug.h"
 
 #define AO_USE_TIMER 1

@@ -38,7 +38,7 @@
 
 #define DX_LOG_COMPONENT "DXVA2"
 
-#include "utils/DirectXHelper.h"
+#include "DirectXHelper.h"
 
 // d3d9ex: http://dxr.mozilla.org/mozilla-central/source/dom/media/wmf/DXVA2Manager.cpp
 

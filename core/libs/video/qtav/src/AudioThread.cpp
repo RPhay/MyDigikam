@@ -30,7 +30,7 @@
 #include "AudioResampler.h"
 #include "AVClock.h"
 #include "Filter.h"
-#include "output/OutputSet.h"
+#include "OutputSet.h"
 #include "AVCompat.h"
 #include <QCoreApplication>
 #include <QDateTime>

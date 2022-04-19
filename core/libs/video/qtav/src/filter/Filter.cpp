@@ -26,7 +26,7 @@
 #include "Statistics.h"
 #include "AVOutput.h"
 #include "AVPlayer.h"
-#include "filter/FilterManager.h"
+#include "FilterManager.h"
 #include "digikam_debug.h"
 
 /*

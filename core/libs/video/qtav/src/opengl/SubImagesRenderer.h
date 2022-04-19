@@ -44,7 +44,7 @@
 
 #include "SubImage.h"
 #include "OpenGLTypes.h"
-#include "opengl/OpenGLHelper.h"
+#include "OpenGLHelper.h"
 
 namespace QtAV
 {

@@ -39,7 +39,7 @@ extern "C"
 
 #include "AVCompat.h"
 #include "factory.h"
-#include "vaapi/SurfaceInteropVAAPI.h"
+#include "SurfaceInteropVAAPI.h"
 #include "digikam_debug.h"
 
 // KDE includes

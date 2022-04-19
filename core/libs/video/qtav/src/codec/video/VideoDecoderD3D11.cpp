@@ -29,7 +29,7 @@
 
 #define DX_LOG_COMPONENT "D3D11VA"
 
-#include "utils/DirectXHelper.h"
+#include "DirectXHelper.h"
 #include "directx/dxcompat.h"
 
 #include <d3d11.h> //include before <libavcodec/d3d11va.h> because d3d11va.h also includes d3d11.h but as a c header (for msvc)

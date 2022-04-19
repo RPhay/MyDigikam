@@ -23,7 +23,7 @@
 
 #include "DXVAHDVP.h"
 #define DX_LOG_COMPONENT "D3D9VP"
-#include "utils/DirectXHelper.h"
+#include "DirectXHelper.h"
 #include "digikam_debug.h"
 #include "directx/DXVAHDVP.h"
 

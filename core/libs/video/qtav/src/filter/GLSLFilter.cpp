@@ -24,7 +24,7 @@
 #include "GLSLFilter.h"
 #include "Filter_p.h"
 #include "VideoFrame.h"
-#include "opengl/OpenGLHelper.h"
+#include "OpenGLHelper.h"
 #if QT_VERSION >= QT_VERSION_CHECK(5, 0, 0)
 #include <QOpenGLFramebufferObject>
 #else

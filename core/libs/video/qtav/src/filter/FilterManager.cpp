@@ -21,7 +21,7 @@
  *
  * ============================================================ */
 
-#include "filter/FilterManager.h"
+#include "FilterManager.h"
 #include <QMap>
 #include "AVPlayer.h"
 #include "Filter.h"

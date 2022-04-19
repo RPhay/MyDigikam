@@ -31,7 +31,7 @@
 #include "Statistics.h"
 #include "Filter.h"
 #include "FilterContext.h"
-#include "output/OutputSet.h"
+#include "OutputSet.h"
 #include "AVCompat.h"
 #include <QFileInfo>
 #include "digikam_debug.h"

@@ -25,8 +25,8 @@
 #include "AVOutput_p.h"
 #include "Filter.h"
 #include "FilterContext.h"
-#include "filter/FilterManager.h"
-#include "output/OutputSet.h"
+#include "FilterManager.h"
+#include "OutputSet.h"
 #include "digikam_debug.h"
 
 namespace QtAV

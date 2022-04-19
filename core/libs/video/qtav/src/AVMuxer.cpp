@@ -29,7 +29,7 @@
 #include "MediaIO.h"
 #include "VideoEncoder.h"
 #include "AudioEncoder.h"
-#include "utils/internal.h"
+#include "internal.h"
 #include "digikam_debug.h"
 
 namespace QtAV

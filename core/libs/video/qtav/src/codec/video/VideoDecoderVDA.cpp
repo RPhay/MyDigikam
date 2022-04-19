@@ -23,11 +23,11 @@
 
 #include "VideoDecoderFFmpegHW.h"
 #include "VideoDecoderFFmpegHW_p.h"
-#include "utils/GPUMemCopy.h"
+#include "GPUMemCopy.h"
 #include "SurfaceInterop.h"
 #include "AVCompat.h"
 #include "factory.h"
-#include "opengl/OpenGLHelper.h"
+#include "OpenGLHelper.h"
 
 #include <assert.h>
 

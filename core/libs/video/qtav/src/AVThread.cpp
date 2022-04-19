@@ -28,7 +28,7 @@
 #include "AVDecoder.h"
 #include "AVOutput.h"
 #include "Filter.h"
-#include "output/OutputSet.h"
+#include "OutputSet.h"
 #include "digikam_debug.h"
 
 namespace QtAV

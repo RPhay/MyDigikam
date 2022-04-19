@@ -25,7 +25,7 @@
 
 // Local includes
 
-#include "opengl/SubImagesGeometry.h"
+#include "SubImagesGeometry.h"
 #include "GeometryRenderer.h"
 #include "digikam_debug.h"
 

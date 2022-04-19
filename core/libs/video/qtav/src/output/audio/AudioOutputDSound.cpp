@@ -33,7 +33,7 @@
 #include "AVCompat.h"
 #include "digikam_debug.h"
 #define DX_LOG_COMPONENT "DSound"
-#include "utils/DirectXHelper.h"
+#include "DirectXHelper.h"
 
 namespace QtAV
 {

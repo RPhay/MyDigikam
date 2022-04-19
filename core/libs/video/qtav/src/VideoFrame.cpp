@@ -28,7 +28,7 @@
 #include <QSharedPointer>
 #include <QImage>
 #include "AVCompat.h"
-#include "utils/GPUMemCopy.h"
+#include "GPUMemCopy.h"
 #include "digikam_debug.h"
 
 // TODO: VideoFrame.copyPropertyies(VideoFrame) to avoid missing property copy

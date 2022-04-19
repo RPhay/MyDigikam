@@ -23,7 +23,7 @@
 
 #include "VideoDecoderFFmpegHW.h"
 #include "VideoDecoderFFmpegHW_p.h"
-#include "utils/GPUMemCopy.h"
+#include "GPUMemCopy.h"
 #include "AVCompat.h"
 #include "factory.h"
 #include "SurfaceInteropCV.h"

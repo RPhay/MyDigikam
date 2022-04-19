@@ -23,9 +23,9 @@
 
 #include "SurfaceInteropD3D9.h"
 #define DX_LOG_COMPONENT "D3D9EGL Interop"
-#include "utils/DirectXHelper.h"
+#include "DirectXHelper.h"
 
-#include "opengl/OpenGLHelper.h"
+#include "OpenGLHelper.h"
 
 #ifdef QT_OPENGL_ES_2_ANGLE_STATIC
 #define CAPI_LINK_EGL

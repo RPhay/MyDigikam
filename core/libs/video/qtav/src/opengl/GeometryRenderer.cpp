@@ -25,7 +25,7 @@
 
 // Local includes
 
-#include "opengl/OpenGLHelper.h"
+#include "OpenGLHelper.h"
 #include "digikam_debug.h"
 
 #if QT_VERSION >= QT_VERSION_CHECK(5, 0, 0)

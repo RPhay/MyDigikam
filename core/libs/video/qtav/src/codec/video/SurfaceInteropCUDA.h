@@ -32,7 +32,7 @@
 
 #include "cuda_api.h"
 #include "SurfaceInterop.h"
-#include "opengl/OpenGLHelper.h"
+#include "OpenGLHelper.h"
 
 #ifndef QT_NO_OPENGL
 #ifdef Q_OS_WIN

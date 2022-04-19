@@ -21,7 +21,7 @@
  *
  * ============================================================ */
 
-#include "output/OutputSet.h"
+#include "OutputSet.h"
 #include "AVPlayer.h"
 #include "VideoRenderer.h"
 

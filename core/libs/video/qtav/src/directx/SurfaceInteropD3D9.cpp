@@ -24,9 +24,9 @@
 #include "SurfaceInteropD3D9.h"
 #include "VideoFrame.h"
 #define DX_LOG_COMPONENT "D3D9 Interop"
-#include "utils/DirectXHelper.h"
+#include "DirectXHelper.h"
 
-#include "opengl/OpenGLHelper.h"
+#include "OpenGLHelper.h"
 // no need to check qt4 because no ANGLE there
 #if QTAV_HAVE(EGL_CAPI) // always use dynamic load
 #if defined(QT_OPENGL_DYNAMIC) || defined(QT_OPENGL_ES_2) || defined(QT_OPENGL_ES_2_ANGLE)

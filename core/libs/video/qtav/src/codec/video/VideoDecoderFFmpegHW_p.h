@@ -27,7 +27,7 @@
 // Local includes
 
 #include "VideoDecoderFFmpegHW.h"
-#include "utils/GPUMemCopy.h"
+#include "GPUMemCopy.h"
 
 /*!
    QTAV_HAVE(AVBUFREF): use AVCodecContext.get_buffer2 instead of old callbacks. In order to avoid compile warnings, now disable old

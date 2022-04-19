@@ -125,14 +125,14 @@ static VertexData* SetUnnormalizedVertexData(VertexData* v, int tx, int ty, int 
 
 static VertexData* SetVertexPositionAndNormalize(VertexData* v, float x, float y, float w, float h, float texW, float texH, bool useIndecies)
 {
-    v[0].x = x;
-    v[0].y = y;
-    v[1].x = x;
-    v[1].y = y + h;
-    v[2].x = x + w;
-    v[2].y = y;
-    v[3].x = x + w;
-    v[3].y = y + h;
+    v[0].x   = x;
+    v[0].y   = y;
+    v[1].x   = x;
+    v[1].y   = y + h;
+    v[2].x   = x + w;
+    v[2].y   = y;
+    v[3].x   = x + w;
+    v[3].y   = y + h;
     v[0].tx /= texW;
     v[0].ty /= texH;
     v[1].tx /= texW;
@@ -217,10 +217,10 @@ bool SubImagesGeometry::generateVertexData(const QRect &rect, bool useIndecies, 
     {
         if (x + i.stride > maxWidth && maxWidth > 0)
         {
-            W = qMax(W, x);
+            W  = qMax(W, x);
             H += h;
-            x = 0;
-            h = 0;
+            x  = 0;
+            h  = 0;
         }
 
         // we use w instead of stride even if we must upload stride. when maping texture coordinates and view port coordinates, we can use the visual rects instead of stride, i.e. the geometry vertices are (x, y, w, h), not (x, y, stride, h)
@@ -239,11 +239,11 @@ bool SubImagesGeometry::generateVertexData(const QRect &rect, bool useIndecies, 
         }
 
         x += i.w;
-        h = qMax(h, i.h);
+        h  = qMax(h, i.h);
     }
 
-    W = qMax(W, x);
-    H += h;
+    W   = qMax(W, x);
+    H  += h;
     m_w = W;
     m_h = H;
 

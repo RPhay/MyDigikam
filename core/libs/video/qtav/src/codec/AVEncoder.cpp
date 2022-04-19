@@ -27,7 +27,7 @@
 
 #include "AVEncoder_p.h"
 #include "QtAV_Version.h"
-#include "utils/internal.h"
+#include "internal.h"
 #include "digikam_debug.h"
 
 namespace QtAV

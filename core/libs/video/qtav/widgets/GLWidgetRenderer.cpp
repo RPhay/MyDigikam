@@ -36,7 +36,7 @@
 // Local includes
 
 #include "VideoRenderer_p.h"
-#include "utils/OpenGLHelper.h"
+#include "OpenGLHelper.h"
 
 #define NO_QGL_SHADER (QT_VERSION >= QT_VERSION_CHECK(5, 0, 0))
 

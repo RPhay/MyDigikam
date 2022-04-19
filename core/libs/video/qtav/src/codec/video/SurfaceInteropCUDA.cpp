@@ -237,7 +237,7 @@ void SurfaceInteropCUDA::unmap(void *handle)
 #include "egl_api.h"
 #include <EGL/eglext.h> //include after egl_capi.h to match types
 #define DX_LOG_COMPONENT "CUDA.D3D"
-#include "utils/DirectXHelper.h"
+#include "DirectXHelper.h"
 
 namespace QtAV
 {

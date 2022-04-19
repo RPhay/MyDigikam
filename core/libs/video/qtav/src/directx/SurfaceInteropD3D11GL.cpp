@@ -23,8 +23,8 @@
 
 #include "SurfaceInteropD3D11.h"
 #define DX_LOG_COMPONENT "D3D11GL Interop"
-#include "utils/DirectXHelper.h"
-#include "opengl/OpenGLHelper.h"
+#include "DirectXHelper.h"
+#include "OpenGLHelper.h"
 #include <QVector>
 
 // TODO: does intel supports d3d11-gl interop?

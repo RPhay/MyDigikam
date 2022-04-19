@@ -22,7 +22,7 @@
  * ============================================================ */
 
 #include "Statistics.h"
-#include "utils/ring.h"
+#include "ring.h"
 
 namespace QtAV
 {

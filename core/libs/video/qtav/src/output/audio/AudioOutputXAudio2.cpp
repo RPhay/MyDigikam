@@ -29,7 +29,7 @@
 #include "AVCompat.h"
 #include "digikam_debug.h"
 #define DX_LOG_COMPONENT "XAudio2"
-#include "utils/DirectXHelper.h"
+#include "DirectXHelper.h"
 #include "xaudio2_compat.h"
 
 // ref: DirectXTK, SDL, wine

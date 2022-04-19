@@ -40,7 +40,7 @@
 #include "VideoShader.h"
 #include "ShaderManager.h"
 #include "GeometryRenderer.h"
-#include "opengl/OpenGLHelper.h"
+#include "OpenGLHelper.h"
 #include "digikam_debug.h"
 
 namespace QtAV

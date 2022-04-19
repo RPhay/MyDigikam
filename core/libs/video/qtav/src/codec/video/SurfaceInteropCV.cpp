@@ -23,7 +23,7 @@
 
 #include "SurfaceInteropCV.h"
 #include "VideoFrame.h"
-#include "opengl/OpenGLHelper.h"
+#include "OpenGLHelper.h"
 
 namespace QtAV
 {

@@ -34,7 +34,7 @@
 #include "VideoDecoder.h"
 #include "AVDemuxer.h"
 #include "Packet.h"
-#include "utils/BlockingQueue.h"
+#include "BlockingQueue.h"
 #include "digikam_debug.h"
 
 namespace QtAV

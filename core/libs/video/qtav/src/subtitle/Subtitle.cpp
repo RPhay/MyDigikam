@@ -55,7 +55,7 @@ using QRegExp = QRegularExpression;
 // Local includes
 
 #include "SubtitleProcessor.h"
-#include "subtitle/CharsetDetector.h"
+#include "CharsetDetector.h"
 #include "digikam_debug.h"
 
 namespace QtAV

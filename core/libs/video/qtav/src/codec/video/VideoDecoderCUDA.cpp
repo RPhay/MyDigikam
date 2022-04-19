@@ -42,7 +42,7 @@
 #endif
 
 #include "AVCompat.h"
-#include "utils/BlockingQueue.h"
+#include "BlockingQueue.h"
 
 /*
  * TODO: VC1, HEVC bsf
@@ -56,8 +56,8 @@
  * CUDA_ERROR_INVALID_VALUE "cuvidDecodePicture(p->dec, cuvidpic)"
  */
 
-#include "cuda/helper_cuda.h"
-#include "cuda/cuda_api.h"
+#include "helper_cuda.h"
+#include "cuda_api.h"
 #include "digikam_debug.h"
 #include "SurfaceInteropCUDA.h"
 

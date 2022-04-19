@@ -36,7 +36,7 @@
 // Local includes
 
 #include "ColorTransform.h"
-#include "opengl/OpenGLHelper.h"
+#include "OpenGLHelper.h"
 #include "digikam_debug.h"
 
 #define YUVA_DONE 0

@@ -23,8 +23,8 @@
 
 #include "SurfaceInteropD3D9.h"
 #define DX_LOG_COMPONENT "D3D9GL Interop"
-#include "utils/DirectXHelper.h"
-#include "opengl/OpenGLHelper.h"
+#include "DirectXHelper.h"
+#include "OpenGLHelper.h"
 
 //dynamic gl or desktop gl
 namespace QtAV

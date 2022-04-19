@@ -24,9 +24,9 @@
 #include "SurfaceInteropD3D11.h"
 #include "directx/D3D11VP.h"
 #define DX_LOG_COMPONENT "D3D11EGL Interop"
-#include "utils/DirectXHelper.h"
+#include "DirectXHelper.h"
 
-#include "opengl/OpenGLHelper.h"
+#include "OpenGLHelper.h"
 #if defined(QT_OPENGL_ES_2_ANGLE_STATIC) || defined(Q_OS_WINRT)
 #ifndef CAPI_LINK_EGL
 #define CAPI_LINK_EGL
