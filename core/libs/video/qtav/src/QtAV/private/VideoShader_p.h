@@ -23,6 +23,8 @@
 #ifndef QTAV_VIDEO_SHADER_P_H
 #define QTAV_VIDEO_SHADER_P_H
 
+#include "VideoShader.h"
+
 // Qt includes
 
 #include <QVector4D>
