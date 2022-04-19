@@ -410,7 +410,7 @@ public:
             ::close(m_handle);
     }
 
-    bool initialize (const NativeDisplay& display) Q_DECL_OVERRIDE*
+    bool initialize(const NativeDisplay& display) Q_DECL_OVERRIDE
     {
         assert(display.type == NativeDisplay::DRM || display.type == NativeDisplay::Auto);
 

@@ -33,7 +33,9 @@
 #endif
 
 #ifndef HAVE_UCHARDET
+
 typedef struct uchardet* uchardet_t;
+
 #endif
 
 class CharsetDetector::Private
@@ -45,7 +47,9 @@ public:
     {
 
 #ifdef HAVE_UCHARDET
+
         m_det = uchardet_new();
+
 #endif
 
     }
@@ -56,7 +60,9 @@ public:
             return;
 
 #ifdef HAVE_UCHARDET
+
         uchardet_delete(m_det);
+
 #endif
 
         m_det = NULL;

@@ -61,8 +61,11 @@ public:
 private:
 
     bool processSubtitle();
-    AVCodecContext *codec_ctx;
-    AVDemuxer m_reader;
+
+private:
+
+    AVCodecContext*      codec_ctx;
+    AVDemuxer            m_reader;
     QList<SubtitleFrame> m_frames;
 };
 
@@ -475,17 +478,18 @@ SubtitleFrame SubtitleProcessorFFmpeg::processLine(const QByteArray &data, qreal
     // no codec_ctx for internal sub
 
     const double unit = 1.0/av_q2d(codec_ctx->time_base); //time_base is deprecated, use framerate since 17085a0, check FF_API_AVCTX_TIMEBASE
-    packet.pts = pts * unit;
-    packet.duration = duration * unit;
+    packet.pts        = pts * unit;
+    packet.duration   = duration * unit;
     AVSubtitle sub;
     memset(&sub, 0, sizeof(sub));
-    int got_subtitle = 0;
-    int ret = avcodec_decode_subtitle2(codec_ctx, &sub, &got_subtitle, &packet);
+    int got_subtitle  = 0;
+    int ret           = avcodec_decode_subtitle2(codec_ctx, &sub, &got_subtitle, &packet);
 
     if (ret < 0 || !got_subtitle)
     {
         av_packet_unref(&packet);
         avsubtitle_free(&sub);
+
         return SubtitleFrame();
     }
 
@@ -494,7 +498,7 @@ SubtitleFrame SubtitleProcessorFFmpeg::processLine(const QByteArray &data, qreal
     // start_display_time and duration are in ms
 
     frame.begin = pts + qreal(sub.start_display_time)/1000.0;
-    frame.end = pts + qreal(sub.end_display_time)/1000.0;
+    frame.end   = pts + qreal(sub.end_display_time)/1000.0;
 
     //qCDebug(DIGIKAM_QTAV_LOG) << QTime(0, 0, 0).addMSecs(frame.begin*1000.0) << "-" << QTime(0, 0, 0).addMSecs(frame.end*1000.0) << " fmt: " << sub.format << " pts: " << m_reader.packet().pts //sub.pts
     //       << " rects: " << sub.num_rects << " end: " << sub.end_display_time;
@@ -504,18 +508,24 @@ SubtitleFrame SubtitleProcessorFFmpeg::processLine(const QByteArray &data, qreal
         switch (sub.rects[i]->type)
         {
             case SUBTITLE_ASS:
+
                 //qCDebug(DIGIKAM_QTAV_LOG).noquote() << QString::asprintf("ass frame: %s", sub.rects[i]->ass);
+
                 frame.text.append(PlainText::fromAss(sub.rects[i]->ass)).append(ushort('\n'));
                 break;
 
             case SUBTITLE_TEXT:
+
                 //qCDebug(DIGIKAM_QTAV_LOG).noquote() << QString::asprintf("txt frame: %s", sub.rects[i]->text);
+
                 frame.text.append(QString::fromUtf8(sub.rects[i]->text)).append(ushort('\n'));
                 break;
 
             case SUBTITLE_BITMAP:
+
                 //sub.rects[i]->w > 0 && sub.rects[i]->h > 0
                 //qCDebug(DIGIKAM_QTAV_LOG).noquote() << QString::asprintf("bmp sub");
+
                 frame = SubtitleFrame(); // not support bmp subtitle now
                 break;
 
@@ -540,9 +550,9 @@ bool SubtitleProcessorFFmpeg::processSubtitle()
         qCWarning(DIGIKAM_QTAV_LOG_WARN).noquote() << QString::asprintf("no subtitle stream found");
         return false;
     }
-    codec_ctx = m_reader.subtitleCodecContext();
-    AVCodec *dec = avcodec_find_decoder(codec_ctx->codec_id);
-    const AVCodecDescriptor *dec_desc = avcodec_descriptor_get(codec_ctx->codec_id);
+    codec_ctx                         = m_reader.subtitleCodecContext();
+    AVCodec* dec                      = avcodec_find_decoder(codec_ctx->codec_id);
+    const AVCodecDescriptor* dec_desc = avcodec_descriptor_get(codec_ctx->codec_id);
 
     if (!dec)
     {
@@ -563,18 +573,20 @@ bool SubtitleProcessorFFmpeg::processSubtitle()
     if (dec_desc && !(dec_desc->props & AV_CODEC_PROP_TEXT_SUB))
     {
         qCWarning(DIGIKAM_QTAV_LOG_WARN).noquote() << QString::asprintf("Only text based subtitles are currently supported");
+
         return false;
     }
 
 #endif
 
-    AVDictionary *codec_opts = NULL;
-    int ret = avcodec_open2(codec_ctx, dec, &codec_opts);
+    AVDictionary* codec_opts = NULL;
+    int ret                  = avcodec_open2(codec_ctx, dec, &codec_opts);
 
     if (ret < 0)
     {
         qCWarning(DIGIKAM_QTAV_LOG_WARN).noquote() << QString::asprintf("open subtitle codec error: %s", av_err2str(ret));
         av_dict_free(&codec_opts);
+
         return false;
     }
 
@@ -582,7 +594,8 @@ bool SubtitleProcessorFFmpeg::processSubtitle()
     {
         if (!m_reader.readFrame())
         {
-            // eof or other errors
+            // EOF or other errors
+
             continue;
         }
 

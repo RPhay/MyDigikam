@@ -92,6 +92,7 @@ SubImageSet::SubImageSet(int width, int height, Format format)
 #endif
 
 #define USE_QRGBA 0
+
 // C[i] = C'[i] = (k*c[i]+(255-k)*C[i])/255 = C[i] + k*(c[i]-C[i])/255, min(c[i],C[i]) <= C'[i] <= max(c[i],C[i])
 
 // render 1 ass image into a 32bit QImage with alpha channel.
@@ -127,7 +128,7 @@ void RenderASS(QImage *image, const SubImage& img, int dstX, int dstY)
 
 #else
 
-            quint8 *c = (quint8*)(&dst[x]);
+            quint8* c        = (quint8*)(&dst[x]);
             const unsigned A = ARGB32_A(c);
 
 #endif

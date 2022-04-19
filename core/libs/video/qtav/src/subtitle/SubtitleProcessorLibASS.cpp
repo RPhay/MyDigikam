@@ -60,29 +60,35 @@ public:
 
     SubtitleProcessorLibASS();
     ~SubtitleProcessorLibASS();
+
     void updateFontCache();
-    SubtitleProcessorId id() const Q_DECL_OVERRIDE;
-    QString name() const Q_DECL_OVERRIDE;
-    QStringList supportedTypes() const Q_DECL_OVERRIDE;
-    bool process(QIODevice* dev) Q_DECL_OVERRIDE;
+    SubtitleProcessorId id() const                                                          Q_DECL_OVERRIDE;
+    QString name() const                                                                    Q_DECL_OVERRIDE;
+    QStringList supportedTypes() const                                                      Q_DECL_OVERRIDE;
+    bool process(QIODevice* dev)                                                            Q_DECL_OVERRIDE;
 
     // supportsFromFile must be true
 
-    bool process(const QString& path) Q_DECL_OVERRIDE;
-    QList<SubtitleFrame> frames() const Q_DECL_OVERRIDE;
-    bool canRender() const Q_DECL_OVERRIDE { return true;}
-    QString getText(qreal pts) const Q_DECL_OVERRIDE;
-    QImage getImage(qreal pts, QRect *boundingRect = 0) Q_DECL_OVERRIDE;
-    SubImageSet getSubImages(qreal pts, QRect *boundingRect) Q_DECL_OVERRIDE;
-    bool processHeader(const QByteArray& codec, const QByteArray& data) Q_DECL_OVERRIDE;
-    SubtitleFrame processLine(const QByteArray& data, qreal pts = -1, qreal duration = 0) Q_DECL_OVERRIDE;
-    void setFontFile(const QString& file) Q_DECL_OVERRIDE;
-    void setFontsDir(const QString& dir) Q_DECL_OVERRIDE;
-    void setFontFileForced(bool force) Q_DECL_OVERRIDE;
+    bool process(const QString& path)                                                       Q_DECL_OVERRIDE;
+    QList<SubtitleFrame> frames() const                                                     Q_DECL_OVERRIDE;
+
+    bool canRender() const                                                                  Q_DECL_OVERRIDE
+    {
+        return true;
+    }
+
+    QString getText(qreal pts) const                                                        Q_DECL_OVERRIDE;
+    QImage getImage(qreal pts, QRect *boundingRect = 0)                                     Q_DECL_OVERRIDE;
+    SubImageSet getSubImages(qreal pts, QRect *boundingRect)                                Q_DECL_OVERRIDE;
+    bool processHeader(const QByteArray& codec, const QByteArray& data)                     Q_DECL_OVERRIDE;
+    SubtitleFrame processLine(const QByteArray& data, qreal pts = -1, qreal duration = 0)   Q_DECL_OVERRIDE;
+    void setFontFile(const QString& file)                                                   Q_DECL_OVERRIDE;
+    void setFontsDir(const QString& dir)                                                    Q_DECL_OVERRIDE;
+    void setFontFileForced(bool force)                                                      Q_DECL_OVERRIDE;
 
 protected:
 
-    void onFrameSizeChanged(int width, int height) Q_DECL_OVERRIDE;
+    void onFrameSizeChanged(int width, int height)                                          Q_DECL_OVERRIDE;
 
 private:
 
@@ -268,7 +274,6 @@ bool SubtitleProcessorLibASS::process(QIODevice *dev)
     return true;
 }
 
-
 bool SubtitleProcessorLibASS::process(const QString &path)
 {
     if (!ass::api::loaded())
@@ -418,12 +423,14 @@ QImage SubtitleProcessorLibASS::getImage(qreal pts, QRect *boundingRect)
 SubImageSet SubtitleProcessorLibASS::getSubImages(qreal pts, QRect *boundingRect)
 {
     m_assimages = getSubImages(pts, boundingRect, NULL, true);
+
     return m_assimages;
 }
 
 SubImageSet SubtitleProcessorLibASS::getSubImages(qreal pts, QRect *boundingRect, QImage *qimg, bool copy)
 {
     // ass dll is loaded if ass library is available
+
     {
         QMutexLocker lock(&m_mutex);
         Q_UNUSED(lock);
@@ -463,7 +470,7 @@ SubImageSet SubtitleProcessorLibASS::getSubImages(qreal pts, QRect *boundingRect
         return SubImageSet();
 
     int detect_change = 0;
-    ASS_Image *img = ass_render_frame(m_renderer, m_track, (long long)(pts * 1000.0), &detect_change);
+    ASS_Image* img    = ass_render_frame(m_renderer, m_track, (long long)(pts * 1000.0), &detect_change);
 
     if (!detect_change && !m_assimages.isValid())
     {
@@ -473,10 +480,10 @@ SubImageSet SubtitleProcessorLibASS::getSubImages(qreal pts, QRect *boundingRect
         return m_assimages;
     }
 
-    m_image = QImage();
+    m_image      = QImage();
     m_assimages.reset(frameWidth(), frameHeight(), SubImageSet::ASS);
     QRect rect(0, 0, 0, 0);
-    ASS_Image *i = img;
+    ASS_Image* i = img;
 
     while (i)
     {
@@ -506,7 +513,7 @@ SubImageSet SubtitleProcessorLibASS::getSubImages(qreal pts, QRect *boundingRect
 
         m_assimages.images.append(s);
         rect |= QRect(i->dst_x, i->dst_y, i->w, i->h);
-        i = i->next;
+        i     = i->next;
     }
 
     m_bound = rect;
@@ -596,7 +603,7 @@ void SubtitleProcessorLibASS::setFontsDir(const QString &dir)
     if (fonts_dir == dir)
         return;
 
-    fonts_dir = dir;
+    fonts_dir      = dir;
     m_update_cache = true; // update renderer when getting the next image
 
     if (m_renderer)
@@ -838,7 +845,7 @@ void SubtitleProcessorLibASS::updateFontCache()
 
     // prefer user settings
 
-    const QString kFont = font_file.isEmpty() ? sFont : Internal::Path::toLocal(font_file);
+    const QString kFont     = font_file.isEmpty() ? sFont : Internal::Path::toLocal(font_file);
     const QString kFontsDir = fonts_dir.isEmpty() ? sFontsDir : Internal::Path::toLocal(fonts_dir);
     qCDebug(DIGIKAM_QTAV_LOG) << "font file: " << kFont << "; fonts dir: " << kFontsDir;
 
@@ -932,9 +939,9 @@ void SubtitleProcessorLibASS::processTrack(ASS_Track *track)
     {
         SubtitleFrame frame;
         const ASS_Event& ae = track->events[i];
-        frame.text = PlainText::fromAss(ae.Text);
-        frame.begin = qreal(ae.Start)/1000.0;
-        frame.end = frame.begin + qreal(ae.Duration)/1000.0;
+        frame.text          = PlainText::fromAss(ae.Text);
+        frame.begin         = qreal(ae.Start)/1000.0;
+        frame.end           = frame.begin + qreal(ae.Duration)/1000.0;
         m_frames.append(frame);
     }
 }

@@ -60,9 +60,9 @@ static void append(struct buf *b, char c)
 
 static void ass_to_plaintext(struct buf *b, const char *in)
 {
-    bool in_tag = false;
+    bool in_tag              = false;
     const char *open_tag_pos = NULL;
-    bool in_drawing = false;
+    bool in_drawing          = false;
 
     while (*in)
     {
@@ -150,7 +150,7 @@ QString fromAss(const char* ass)
                             &hour1, &min1, &sec1, &hunsec1,
                             &hour2, &min2, &sec2, &hunsec2,
                             line) < 9)
-        if (sscanf(b.start, "Dialogue: %*d,%d:%d:%d.%d,%d:%d:%d.%d%[^\r\n]", // &nothing,
+        if (sscanf(b.start, "Dialogue: %*d,%d:%d:%d.%d,%d:%d:%d.%d%[^\r\n]",    // &nothing,
                 &hour1, &min1, &sec1, &hunsec1,
                 &hour2, &min2, &sec2, &hunsec2,
                 line) < 9)
