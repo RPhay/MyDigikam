@@ -23,24 +23,38 @@
 #ifndef QTAV_INTERNAL_H
 #define QTAV_INTERNAL_H
 
+// Qt includes
+
 #include <QString>
 #include <QVariant>
 #include <QObject>
+
+// Local includes
+
 #include "private/AVCompat.h"
 
 namespace QtAV
 {
-namespace Internal {
-namespace Path {
+
+namespace Internal
+{
+
+namespace Path
+{
+
 QString toLocal(const QString& fullPath);
+
 /// It may be variant from Qt version
+
 /*!
  * \brief appDataDir
  * use QStandardPath::AppDataLocation for Qt>=5.4, or QStarnardPath::DataLocation for Qt<5.4
  * \return
  */
 QString appDataDir();
+
 // writable font dir. it's fontsDir() if writable or appFontsDir()/fonts
+
 /*!
  * \brief appFontsDir
  * It's "appDataDir()/fonts". writable fonts dir from Qt may be not writable (OSX)
@@ -48,17 +62,25 @@ QString appDataDir();
  *       If fontsDir() is not writable, it's equals to "appDataDir()/fonts".
  */
 QString appFontsDir();
+
 // usually not writable. Maybe empty for some platforms, for example winrt
+
 QString fontsDir();
-}
+
+} // namespace Path
 
 // TODO: use namespace Options
+
 QString optionsToString(void* obj);
 void setOptionsToFFmpegObj(const QVariant& opt, void* obj);
 void setOptionsToDict(const QVariant& opt, AVDictionary** dict);
+
 // set qobject meta properties
+
 void setOptionsForQObject(const QVariant& opt, QObject* obj);
 
-} //namespace Internal
+} // namespace Internal
+
 } // namespace QtAV
+
 #endif //QTAV_INTERNAL_H

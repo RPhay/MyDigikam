@@ -48,11 +48,11 @@ extern "C"
 
 #define UINT unsigned int
 
-void CopyFrame_SSE2(void *pSrc, void *pDest, void *pCacheBlock, UINT width, UINT height, UINT pitch);
-void CopyFrame_SSE4(void *pSrc, void *pDest, void *pCacheBlock, UINT width, UINT height, UINT pitch);
+void CopyFrame_SSE2(void* pSrc, void* pDest, void* pCacheBlock, UINT width, UINT height, UINT pitch);
+void CopyFrame_SSE4(void* pSrc, void* pDest, void* pCacheBlock, UINT width, UINT height, UINT pitch);
 
-void *memcpy_sse2(void* dst, const void* src, size_t size);
-void *memcpy_sse4(void* dst, const void* src, size_t size);
+void* memcpy_sse2(void* dst, const void* src, size_t size);
+void* memcpy_sse4(void* dst, const void* src, size_t size);
 
 namespace QtAV
 {
@@ -75,14 +75,18 @@ bool GPUMemCopy::isAvailable()
 #if QTAV_HAVE(SSE4_1) && defined(Q_PROCESSOR_X86)
 
     if (detect_sse4())
+    {
         return true;
+    }
 
 #endif
 
 #if QTAV_HAVE(SSE2) && defined(Q_PROCESSOR_X86)
 
     if (detect_sse2())
+    {
         return true;
+    }
 
 #endif
 
@@ -116,7 +120,7 @@ bool GPUMemCopy::isReady() const
 
 bool GPUMemCopy::initCache(unsigned width)
 {
-    mInitialized = false;
+    mInitialized  = false;
 
 #if QTAV_HAVE(SSE2) && defined(Q_PROCESSOR_X86)
 
@@ -148,7 +152,7 @@ void GPUMemCopy::cleanCache()
     }
 
     mCache.buffer = 0;
-    mCache.size = 0;
+    mCache.size   = 0;
 
 #endif
 
@@ -160,12 +164,16 @@ void GPUMemCopy::copyFrame(void *pSrc, void *pDest, unsigned width, unsigned hei
 #if QTAV_HAVE(SSE4_1) && defined(Q_PROCESSOR_X86)
 
     if (detect_sse4())
+    {
         CopyFrame_SSE4(pSrc, pDest, mCache.buffer, width, height, pitch);
+    }
 
 #elif QTAV_HAVE(SSE2) && defined(Q_PROCESSOR_X86)
 
     if (detect_sse2())
+    {
         CopyFrame_SSE2(pSrc, pDest, mCache.buffer, width, height, pitch);
+    }
 
 #else
 
@@ -185,12 +193,16 @@ void* gpu_memcpy(void *dst, const void *src, size_t size)
 #if QTAV_HAVE(SSE4_1) && defined(Q_PROCESSOR_X86)
 
     if (detect_sse4())
+    {
         return memcpy_sse4(dst, src, size);
+    }
 
 #elif QTAV_HAVE(SSE2) && defined(Q_PROCESSOR_X86)
 
     if (detect_sse2())
+    {
         return memcpy_sse2(dst, src, size);
+    }
 
 #endif
 
