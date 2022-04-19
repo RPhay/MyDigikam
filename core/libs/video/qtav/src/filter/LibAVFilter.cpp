@@ -22,11 +22,11 @@
 
 #include "LibAVFilter.h"
 #include <QSharedPointer>
-#include "private/Filter_p.h"
+#include "Filter_p.h"
 #include "Statistics.h"
 #include "AudioFrame.h"
 #include "VideoFrame.h"
-#include "private/AVCompat.h"
+#include "AVCompat.h"
 #include "utils/internal.h"
 #include "digikam_debug.h"
 

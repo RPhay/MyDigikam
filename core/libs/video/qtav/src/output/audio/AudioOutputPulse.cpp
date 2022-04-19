@@ -20,12 +20,12 @@
  *
  * ============================================================ */
 
-#include "private/AudioOutputBackend.h"
+#include "AudioOutputBackend.h"
 #include <QCoreApplication>
 #include <QMetaObject>
 #include <pulse/pulseaudio.h>
-#include "private/mkid.h"
-#include "private/factory.h"
+#include "mkid.h"
+#include "factory.h"
 #include "digikam_debug.h"
 
 // KDE includes

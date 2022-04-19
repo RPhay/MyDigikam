@@ -21,8 +21,8 @@
  * ============================================================ */
 
 #include "SubtitleFilter.h"
-#include "private/Filter_p.h"
-#include "private/PlayerSubtitle.h"
+#include "Filter_p.h"
+#include "PlayerSubtitle.h"
 #include "Subtitle.h"
 #include "VideoFrame.h"
 #include <QScopedPointer>

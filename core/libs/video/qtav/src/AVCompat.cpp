@@ -22,7 +22,7 @@
 
 // Local includes
 
-#include "private/AVCompat.h"
+#include "AVCompat.h"
 #include "QtAV_Version.h"
 
 #if !FFMPEG_MODULE_CHECK(LIBAVFORMAT, 56, 4, 101)

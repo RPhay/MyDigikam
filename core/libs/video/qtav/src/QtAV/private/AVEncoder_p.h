@@ -32,7 +32,7 @@
 #include "AudioFormat.h"
 #include "Packet.h"
 #include "VideoFormat.h"
-#include "private/AVCompat.h"
+#include "AVCompat.h"
 
 namespace QtAV
 {

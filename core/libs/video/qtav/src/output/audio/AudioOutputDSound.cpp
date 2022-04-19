@@ -20,16 +20,16 @@
  *
  * ============================================================ */
 
-#include "private/AudioOutputBackend.h"
-#include "private/mkid.h"
-#include "private/factory.h"
+#include "AudioOutputBackend.h"
+#include "mkid.h"
+#include "factory.h"
 #include <QLibrary>
 #include <QSemaphore>
 #include <QThread>
 #include <math.h>
 #define DIRECTSOUND_VERSION 0x0600
 #include <dsound.h>
-#include "private/AVCompat.h"
+#include "AVCompat.h"
 #include "digikam_debug.h"
 #define DX_LOG_COMPONENT "DSound"
 #include "utils/DirectXHelper.h"

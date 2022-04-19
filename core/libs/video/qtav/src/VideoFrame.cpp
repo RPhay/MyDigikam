@@ -21,12 +21,12 @@
  * ============================================================ */
 
 #include "VideoFrame.h"
-#include "private/Frame_p.h"
+#include "Frame_p.h"
 #include "SurfaceInterop.h"
 #include "ImageConverter.h"
 #include <QSharedPointer>
 #include <QImage>
-#include "private/AVCompat.h"
+#include "AVCompat.h"
 #include "utils/GPUMemCopy.h"
 #include "digikam_debug.h"
 

@@ -54,8 +54,8 @@
 #   endif
 #endif
 
-#include "private/factory.h"
-#include "private/mkid.h"
+#include "factory.h"
+#include "mkid.h"
 #include "digikam_debug.h"
 
 namespace QtAV

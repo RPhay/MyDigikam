@@ -30,7 +30,7 @@
 #include "AVClock.h"
 #include "Filter.h"
 #include "output/OutputSet.h"
-#include "private/AVCompat.h"
+#include "AVCompat.h"
 #include <QCoreApplication>
 #include <QDateTime>
 #include "digikam_debug.h"

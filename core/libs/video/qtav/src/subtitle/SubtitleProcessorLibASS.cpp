@@ -20,7 +20,7 @@
  *
  * ============================================================ */
 
-#include "private/SubtitleProcessor.h"
+#include "SubtitleProcessor.h"
 
 // C includes
 
@@ -38,7 +38,7 @@
 // Local includes
 
 #include "Packet.h"
-#include "private/factory.h"
+#include "factory.h"
 #include "PlainText.h"
 #include "utils/internal.h"
 #include "digikam_debug.h"

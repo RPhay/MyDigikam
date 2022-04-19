@@ -21,8 +21,8 @@
 
 
 #include "ImageConverter_p.h"
-#include "private/AVCompat.h"
-#include "private/factory.h"
+#include "AVCompat.h"
+#include "factory.h"
 #include "ImageConverter.h"
 #include "digikam_debug.h"
 

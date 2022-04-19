@@ -21,7 +21,7 @@
  * ============================================================ */
 
 #include "Packet.h"
-#include "private/AVCompat.h"
+#include "AVCompat.h"
 #include "digikam_debug.h"
 
 namespace QtAV

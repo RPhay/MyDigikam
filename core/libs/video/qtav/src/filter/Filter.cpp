@@ -21,7 +21,7 @@
  * ============================================================ */
 
 #include "Filter.h"
-#include "private/Filter_p.h"
+#include "Filter_p.h"
 #include "Statistics.h"
 #include "AVOutput.h"
 #include "AVPlayer.h"

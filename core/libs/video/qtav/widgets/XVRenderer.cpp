@@ -25,7 +25,7 @@
  */
 
 #include "VideoRenderer.h"
-#include "private/VideoRenderer_p.h"
+#include "VideoRenderer_p.h"
 #include "FilterContext.h"
 
 // Qt includes
@@ -45,7 +45,7 @@
 
 // Local includes
 
-#include "private/factory.h"
+#include "factory.h"
 
 // http://huangbster.i.sohu.com/blog/view/256490057.htm
 

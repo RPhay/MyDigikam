@@ -31,7 +31,7 @@
 
 // Local includes
 
-#include "private/AVCompat.h"
+#include "AVCompat.h"
 
 namespace QtAV
 {

@@ -36,8 +36,8 @@ extern "C"
 #include <libavcodec/vaapi.h>
 }
 
-#include "private/AVCompat.h"
-#include "private/factory.h"
+#include "AVCompat.h"
+#include "factory.h"
 #include "vaapi/SurfaceInteropVAAPI.h"
 #include "digikam_debug.h"
 

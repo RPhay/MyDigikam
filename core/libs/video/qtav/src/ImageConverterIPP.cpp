@@ -22,9 +22,9 @@
 
 #include "ImageConverter.h"
 #include "ImageConverter_p.h"
-#include "private/AVCompat.h"
-#include "private/factory.h"
-#include "private/mkid.h"
+#include "AVCompat.h"
+#include "factory.h"
+#include "mkid.h"
 #if QTAV_HAVE(IPP)
 #include <ipp.h>
 #endif

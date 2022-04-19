@@ -22,9 +22,9 @@
 
 #if defined(BUILD_AVR) || defined(BUILD_SWR) // no this macro is fine too for qmake
 #include "AudioResampler.h"
-#include "private/AudioResampler_p.h"
-#include "private/AVCompat.h"
-#include "private/factory.h"
+#include "AudioResampler_p.h"
+#include "AVCompat.h"
+#include "factory.h"
 #include "digikam_debug.h"
 
 namespace QtAV

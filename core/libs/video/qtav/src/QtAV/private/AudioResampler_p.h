@@ -30,7 +30,7 @@
 // Local includes
 
 #include "AudioFormat.h"
-#include "private/AVCompat.h"
+#include "AVCompat.h"
 
 namespace QtAV
 {

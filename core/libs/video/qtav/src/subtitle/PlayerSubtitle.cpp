@@ -20,7 +20,7 @@
  *
  * ============================================================ */
 
-#include "private/PlayerSubtitle.h"
+#include "PlayerSubtitle.h"
 
 // Qt includes
 

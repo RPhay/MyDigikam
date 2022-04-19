@@ -26,7 +26,7 @@
 #ifndef QT_NO_DEBUG_STREAM
 #include <QtDebug>
 #endif
-#include "private/AVCompat.h"
+#include "AVCompat.h"
 extern "C" {
 #include <libavutil/imgutils.h>
 }

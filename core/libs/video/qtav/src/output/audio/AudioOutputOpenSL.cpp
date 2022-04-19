@@ -20,7 +20,7 @@
  *
  * ============================================================ */
 
-#include "private/AudioOutputBackend.h"
+#include "AudioOutputBackend.h"
 #include <QSemaphore>
 #include <QThread>
 #include <SLES/OpenSLES.h>
@@ -30,8 +30,8 @@
 #include <sys/system_properties.h>
 #include <cmath>
 #endif
-#include "private/mkid.h"
-#include "private/factory.h"
+#include "mkid.h"
+#include "factory.h"
 #include "digikam_debug.h"
 
 // TODO: native sample rate, so AUDIO_OUTPUT_FLAG_FAST is enabled

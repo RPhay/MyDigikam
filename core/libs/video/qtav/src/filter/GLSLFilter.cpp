@@ -21,7 +21,7 @@
  * ============================================================ */
 
 #include "GLSLFilter.h"
-#include "private/Filter_p.h"
+#include "Filter_p.h"
 #include "VideoFrame.h"
 #include "opengl/OpenGLHelper.h"
 #if QT_VERSION >= QT_VERSION_CHECK(5, 0, 0)

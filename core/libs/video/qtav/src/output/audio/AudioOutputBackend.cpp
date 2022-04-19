@@ -20,8 +20,8 @@
  *
  * ============================================================ */
 
-#include "private/AudioOutputBackend.h"
-#include "private/factory.h"
+#include "AudioOutputBackend.h"
+#include "factory.h"
 #include "digikam_debug.h"
 
 namespace QtAV

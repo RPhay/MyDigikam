@@ -24,7 +24,7 @@
 
 // Local includes
 
-#include "private/VideoShader_p.h"
+#include "VideoShader_p.h"
 
 namespace QtAV
 {

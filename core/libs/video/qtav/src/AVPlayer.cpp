@@ -43,7 +43,7 @@
 #include "AudioThread.h"
 #include "VideoThread.h"
 #include "AVDemuxThread.h"
-#include "private/AVCompat.h"
+#include "AVCompat.h"
 #include "utils/internal.h"
 #include "digikam_debug.h"
 extern "C" {

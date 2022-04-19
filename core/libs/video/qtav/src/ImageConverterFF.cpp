@@ -22,9 +22,9 @@
 
 #include "ImageConverter.h"
 #include "ImageConverter_p.h"
-#include "private/AVCompat.h"
-#include "private/mkid.h"
-#include "private/factory.h"
+#include "AVCompat.h"
+#include "mkid.h"
+#include "factory.h"
 #include "digikam_debug.h"
 
 namespace QtAV

@@ -53,7 +53,7 @@ using QRegExp = QRegularExpression;
 
 // Local includes
 
-#include "private/SubtitleProcessor.h"
+#include "SubtitleProcessor.h"
 #include "subtitle/CharsetDetector.h"
 #include "digikam_debug.h"
 

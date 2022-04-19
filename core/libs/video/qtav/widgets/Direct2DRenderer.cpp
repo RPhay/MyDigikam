@@ -30,8 +30,8 @@
 
 // Local includes
 
-#include "private/VideoRenderer_p.h"
-#include "private/factory.h"
+#include "VideoRenderer_p.h"
+#include "factory.h"
 
 // Windows includes
 

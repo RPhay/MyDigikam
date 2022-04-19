@@ -21,9 +21,9 @@
  * ============================================================ */
 
 #include "AudioFrame.h"
-#include "private/Frame_p.h"
+#include "Frame_p.h"
 #include "AudioResampler.h"
-#include "private/AVCompat.h"
+#include "AVCompat.h"
 #include "digikam_debug.h"
 
 namespace QtAV

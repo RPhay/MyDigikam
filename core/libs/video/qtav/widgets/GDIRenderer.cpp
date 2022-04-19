@@ -21,7 +21,7 @@
  * ============================================================ */
 
 #include "VideoRenderer.h"
-#include "private/VideoRenderer_p.h"
+#include "VideoRenderer_p.h"
 
 // Qt includes
 
@@ -35,7 +35,7 @@
 
 // Local includes
 
-#include "private/factory.h"
+#include "factory.h"
 
 #define USE_GRAPHICS 0
 

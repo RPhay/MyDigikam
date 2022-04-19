@@ -24,8 +24,8 @@
 #define QTAV_VIDEO_DECODER_FFMPEG_BASE_H
 
 #include "VideoDecoder.h"
-#include "private/AVDecoder_p.h"
-#include "private/AVCompat.h"
+#include "AVDecoder_p.h"
+#include "AVCompat.h"
 
 namespace QtAV
 {

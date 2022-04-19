@@ -20,12 +20,12 @@
  *
  * ============================================================ */
 
-#include "private/MediaIO_p.h"
+#include "MediaIO_p.h"
 
 // Local includes
 
-#include "private/mkid.h"
-#include "private/factory.h"
+#include "mkid.h"
+#include "factory.h"
 #include "digikam_debug.h"
 
 namespace QtAV

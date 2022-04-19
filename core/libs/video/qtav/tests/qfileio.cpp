@@ -27,9 +27,9 @@
 
 // Local includes
 
-#include "private/MediaIO_p.h"
-#include "private/mkid.h"
-#include "private/factory.h"
+#include "MediaIO_p.h"
+#include "mkid.h"
+#include "factory.h"
 #include "digikam_debug.h"
 
 int main(int argc, char** argv)

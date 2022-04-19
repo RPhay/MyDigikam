@@ -33,7 +33,7 @@
 
 #include "Statistics.h"
 #include "VideoFrame.h"
-#include "private/AVOutput_p.h"
+#include "AVOutput_p.h"
 #include "VideoRenderer.h"
 
 /*TODO:

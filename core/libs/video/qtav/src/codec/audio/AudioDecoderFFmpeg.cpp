@@ -26,10 +26,10 @@
 
 #include "AudioResampler.h"
 #include "Packet.h"
-#include "private/AVDecoder_p.h"
-#include "private/AVCompat.h"
-#include "private/mkid.h"
-#include "private/factory.h"
+#include "AVDecoder_p.h"
+#include "AVCompat.h"
+#include "mkid.h"
+#include "factory.h"
 #include "QtAV_Version.h"
 #include "digikam_debug.h"
 

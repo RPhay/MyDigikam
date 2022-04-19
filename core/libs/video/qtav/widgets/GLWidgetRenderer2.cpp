@@ -21,7 +21,7 @@
  * ============================================================ */
 
 #include "GLWidgetRenderer2.h"
-#include "private/OpenGLRendererBase_p.h"
+#include "OpenGLRendererBase_p.h"
 
 // Qt includes
 

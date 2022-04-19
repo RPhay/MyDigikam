@@ -20,9 +20,9 @@
  *
  * ============================================================ */
 
-#include "private/AudioOutputBackend.h"
-#include "private/mkid.h"
-#include "private/factory.h"
+#include "AudioOutputBackend.h"
+#include "mkid.h"
+#include "factory.h"
 
 namespace QtAV
 {

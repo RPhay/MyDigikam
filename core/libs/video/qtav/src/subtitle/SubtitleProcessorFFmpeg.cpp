@@ -20,7 +20,7 @@
  *
  * ============================================================ */
 
-#include "private/SubtitleProcessor.h"
+#include "SubtitleProcessor.h"
 
 // Qt includes
 
@@ -28,10 +28,10 @@
 
 // Local includes
 
-#include "private/factory.h"
+#include "factory.h"
 #include "AVDemuxer.h"
 #include "Packet.h"
-#include "private/AVCompat.h"
+#include "AVCompat.h"
 #include "PlainText.h"
 #include "digikam_debug.h"
 

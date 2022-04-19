@@ -20,7 +20,7 @@
  *
  * ============================================================ */
 
-#include "private/SubtitleProcessor.h"
+#include "SubtitleProcessor.h"
 
 // Qt includes
 
@@ -28,7 +28,7 @@
 
 // Local includes
 
-#include "private/factory.h"
+#include "factory.h"
 #include "digikam_debug.h"
 
 namespace QtAV

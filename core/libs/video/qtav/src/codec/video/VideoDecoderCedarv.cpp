@@ -21,10 +21,10 @@
  * ============================================================ */
 
 #include "VideoDecoder.h"
-#include "private/AVDecoder_p.h"
+#include "AVDecoder_p.h"
 #include "Packet.h"
-#include "private/AVCompat.h"
-#include "private/factory.h"
+#include "AVCompat.h"
+#include "factory.h"
 
 #include <libavcodec/avcodec.h>
 

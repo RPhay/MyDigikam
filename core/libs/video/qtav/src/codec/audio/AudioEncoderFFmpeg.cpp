@@ -24,10 +24,10 @@
 
 // Local includes
 
-#include "private/AVEncoder_p.h"
-#include "private/AVCompat.h"
-#include "private/mkid.h"
-#include "private/factory.h"
+#include "AVEncoder_p.h"
+#include "AVCompat.h"
+#include "mkid.h"
+#include "factory.h"
 #include "QtAV_Version.h"
 #include "digikam_debug.h"
 

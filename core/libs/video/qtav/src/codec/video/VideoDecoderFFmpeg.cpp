@@ -29,8 +29,8 @@
 // Local includes
 
 #include "QtAV_Version.h"
-#include "private/AVCompat.h"
-#include "private/factory.h"
+#include "AVCompat.h"
+#include "factory.h"
 #include "digikam_debug.h"
 
 /*!

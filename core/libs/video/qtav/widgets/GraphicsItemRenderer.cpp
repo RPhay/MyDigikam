@@ -21,7 +21,7 @@
  * ============================================================ */
 
 #include "GraphicsItemRenderer.h"
-#include "private/QPainterRenderer_p.h"
+#include "QPainterRenderer_p.h"
 #include "FilterContext.h"
 
 #if !defined QT_NO_OPENGL && (QT_VERSION >= QT_VERSION_CHECK(5, 0, 0) || defined(QT_OPENGL_LIB))

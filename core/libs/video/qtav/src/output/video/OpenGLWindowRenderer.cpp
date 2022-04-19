@@ -21,8 +21,8 @@
  * ============================================================ */
 
 #include "OpenGLWindowRenderer.h"
-#include "private/OpenGLRendererBase_p.h"
-#include "private/factory.h"
+#include "OpenGLRendererBase_p.h"
+#include "factory.h"
 #include <QResizeEvent>
 #include "digikam_debug.h"
 

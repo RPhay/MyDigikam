@@ -20,7 +20,7 @@
  *
  * ============================================================ */
 
-#include "private/VideoShader_p.h"
+#include "VideoShader_p.h"
 
 // C++ includes
 

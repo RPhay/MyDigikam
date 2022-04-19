@@ -28,7 +28,7 @@
 #include "AudioResampler.h"
 #include "MediaIO.h"
 #include "VideoCapture.h"
-#include "private/AVCompat.h"
+#include "AVCompat.h"
 #include <QIODevice>
 #if AV_MODULE_CHECK(LIBAVFORMAT, 55, 18, 0, 39, 100)
 extern "C" {

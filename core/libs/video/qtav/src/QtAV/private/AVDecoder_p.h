@@ -32,7 +32,7 @@
 // Local includes
 
 #include "QtAV_Global.h"
-#include "private/AVCompat.h"
+#include "AVCompat.h"
 #include "digikam_debug.h"
 
 namespace QtAV

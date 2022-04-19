@@ -29,7 +29,7 @@
 // Local includes
 
 #include "QtAV_Version.h"
-#include "private/AVDecoder_p.h"
+#include "AVDecoder_p.h"
 #include "utils/internal.h"
 #include "digikam_debug.h"
 

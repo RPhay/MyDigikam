@@ -21,7 +21,7 @@
  * ============================================================ */
 
 #include "AVOutput.h"
-#include "private/AVOutput_p.h"
+#include "AVOutput_p.h"
 #include "Filter.h"
 #include "FilterContext.h"
 #include "filter/FilterManager.h"

@@ -22,9 +22,9 @@
 
 #include "AudioResampler.h"
 #include "AudioFormat.h"
-#include "private/AudioResampler_p.h"
-#include "private/factory.h"
-#include "private/mkid.h"
+#include "AudioResampler_p.h"
+#include "factory.h"
+#include "mkid.h"
 #include "digikam_debug.h"
 
 namespace QtAV

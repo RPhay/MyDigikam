@@ -24,7 +24,7 @@
 
 // Local includes
 
-#include "private/AVCompat.h"
+#include "AVCompat.h"
 #include "MediaIO.h"
 #include "VideoEncoder.h"
 #include "AudioEncoder.h"

@@ -30,7 +30,7 @@
 
 // Local includes
 
-#include "private/VideoRenderer_p.h"
+#include "VideoRenderer_p.h"
 
 namespace QtAV
 {

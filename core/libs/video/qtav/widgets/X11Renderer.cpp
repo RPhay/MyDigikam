@@ -26,7 +26,7 @@
  * X11 headers define 'Bool' type which is used in qmetatype.h. we must include X11 files at last, i.e. X11Renderer_p.h. otherwise compile error
  */
 #include "VideoRenderer.h"
-#include "private/VideoRenderer_p.h"
+#include "VideoRenderer_p.h"
 #include "FilterContext.h"
 
 // Qt includes
@@ -47,7 +47,7 @@
 #include <X11/extensions/XShm.h>
 #include <unistd.h> //usleep
 
-//#include "private/factory.h"
+//#include "factory.h"
 //scale: http://www.opensource.apple.com/source/X11apps/X11apps-14/xmag/xmag-X11R7.0-1.0.1/Scale.c
 #define FFALIGN(x, a) (((x)+(a)-1)&~((a)-1))
 

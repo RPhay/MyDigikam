@@ -25,7 +25,7 @@
 #include <QAtomicInt>
 #include <QCoreApplication>
 #include <QThread>
-#include "private/Filter_p.h"
+#include "Filter_p.h"
 #include "AudioEncoder.h"
 #include "VideoEncoder.h"
 #include "digikam_debug.h"

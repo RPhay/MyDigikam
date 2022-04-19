@@ -23,8 +23,8 @@
 #include "VideoDecoderFFmpegHW.h"
 #include "VideoDecoderFFmpegHW_p.h"
 #include "utils/GPUMemCopy.h"
-#include "private/AVCompat.h"
-#include "private/factory.h"
+#include "AVCompat.h"
+#include "factory.h"
 #include "SurfaceInteropCV.h"
 
 //#include <OpenGLES/EAGL.h>

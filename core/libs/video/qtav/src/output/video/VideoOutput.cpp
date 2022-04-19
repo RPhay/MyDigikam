@@ -21,7 +21,7 @@
  * ============================================================ */
 
 #include "VideoOutput.h"
-#include "private/VideoRenderer_p.h"
+#include "VideoRenderer_p.h"
 #include "QtAV_Version.h"
 #include <QLibrary>
 #include <QResizeEvent>

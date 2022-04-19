@@ -21,7 +21,7 @@
  * ============================================================ */
 
 #include "QPainterRenderer.h"
-#include "private/QPainterRenderer_p.h"
+#include "QPainterRenderer_p.h"
 #include "FilterContext.h"
 
 namespace QtAV

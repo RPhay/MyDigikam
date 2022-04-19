@@ -33,14 +33,14 @@
 // Local includes
 
 #include "Packet.h"
-#include "private/AVDecoder_p.h"
-#include "private/factory.h"
+#include "AVDecoder_p.h"
+#include "factory.h"
 
 #if QTAV_HAVE(DLLAPI_CUDA)
 #   include "dllapi.h"
 #endif
 
-#include "private/AVCompat.h"
+#include "AVCompat.h"
 #include "utils/BlockingQueue.h"
 
 /*

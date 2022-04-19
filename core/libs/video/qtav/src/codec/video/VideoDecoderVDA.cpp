@@ -24,8 +24,8 @@
 #include "VideoDecoderFFmpegHW_p.h"
 #include "utils/GPUMemCopy.h"
 #include "SurfaceInterop.h"
-#include "private/AVCompat.h"
-#include "private/factory.h"
+#include "AVCompat.h"
+#include "factory.h"
 #include "opengl/OpenGLHelper.h"
 
 #include <assert.h>

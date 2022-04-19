@@ -21,9 +21,9 @@
  * ============================================================ */
 
 #include "AudioOutput.h"
-#include "private/AVOutput_p.h"
-#include "private/AudioOutputBackend.h"
-#include "private/AVCompat.h"
+#include "AVOutput_p.h"
+#include "AudioOutputBackend.h"
+#include "AVCompat.h"
 #if QT_VERSION >= QT_VERSION_CHECK(4, 7, 0)
 #include <QElapsedTimer>
 #else

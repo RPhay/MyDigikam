@@ -27,9 +27,9 @@
 #endif
 
 #include "VideoDecoderD3D.h"
-#include "private/AVCompat.h"
-#include "private/factory.h"
-//#include "private/mkid.h"
+#include "AVCompat.h"
+#include "factory.h"
+//#include "mkid.h"
 #include "digikam_debug.h"
 #include "directx/SurfaceInteropD3D9.h"
 

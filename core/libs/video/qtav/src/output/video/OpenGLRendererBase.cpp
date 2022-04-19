@@ -21,7 +21,7 @@
  * ============================================================ */
 
 #include "OpenGLRendererBase.h"
-#include "private/OpenGLRendererBase_p.h"
+#include "OpenGLRendererBase_p.h"
 #include "OpenGLVideo.h"
 #include "FilterContext.h"
 #include <QResizeEvent>

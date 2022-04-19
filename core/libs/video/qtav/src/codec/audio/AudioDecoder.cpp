@@ -24,9 +24,9 @@
 
 // Local includes
 
-#include "private/AVDecoder_p.h"
-#include "private/AVCompat.h"
-#include "private/factory.h"
+#include "AVDecoder_p.h"
+#include "AVCompat.h"
+#include "factory.h"
 #include "AudioResampler.h"
 #include "digikam_debug.h"
 

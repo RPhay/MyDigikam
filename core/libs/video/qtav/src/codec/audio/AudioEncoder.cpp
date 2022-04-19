@@ -24,8 +24,8 @@
 
 // Loca includes
 
-#include "private/AVEncoder_p.h"
-#include "private/factory.h"
+#include "AVEncoder_p.h"
+#include "factory.h"
 #include "digikam_debug.h"
 
 namespace QtAV

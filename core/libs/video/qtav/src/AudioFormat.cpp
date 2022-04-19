@@ -21,7 +21,7 @@
  * ============================================================ */
 
 #include "AudioFormat.h"
-#include "private/AVCompat.h"
+#include "AVCompat.h"
 #ifndef QT_NO_DEBUG_STREAM
 #include <QtDebug>
 #endif //QT_NO_DEBUG_STREAM

@@ -21,7 +21,7 @@
  * ============================================================ */
 
 #include "Frame.h"
-#include "private/Frame_p.h"
+#include "Frame_p.h"
 #include "digikam_debug.h"
 
 namespace QtAV

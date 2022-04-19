@@ -21,13 +21,13 @@
  * ============================================================ */
 
 #include "VideoRenderer.h"
-#include "private/VideoRenderer_p.h"
+#include "VideoRenderer_p.h"
 #include "Filter.h"
 #include <QCoreApplication>
 #include <QEvent>
 #include "Statistics.h"
-#include "private/factory.h"
-#include "private/mkid.h"
+#include "factory.h"
+#include "mkid.h"
 #include "digikam_debug.h"
 
 namespace QtAV
