@@ -134,7 +134,15 @@ void* SurfaceInteropVAAPI::mapToHost(const VideoFormat &format, void *handle, in
 {
     Q_UNUSED(plane);
     VAImage image;
-    static const unsigned int fcc[] = { VA_FOURCC_NV12, VA_FOURCC_YV12, VA_FOURCC_IYUV, 0};
+
+    static const unsigned int fcc[] =
+    {
+        VA_FOURCC_NV12,
+        VA_FOURCC_YV12,
+        VA_FOURCC_IYUV,
+        0
+    };
+
     va_new_image(m_surface->vadisplay(), fcc, &image, m_surface->width(), m_surface->height());
 
     if (image.image_id == VA_INVALID_ID)
@@ -144,7 +152,7 @@ void* SurfaceInteropVAAPI::mapToHost(const VideoFormat &format, void *handle, in
     VA_ENSURE(vaGetImage(m_surface->vadisplay(), m_surface->get(), 0, 0, m_surface->width(), m_surface->height(), image.image_id), NULL);
     VA_ENSURE(vaMapBuffer(m_surface->vadisplay(), image.buf, &p_base), NULL); // TODO: destroy image before return
     VideoFormat::PixelFormat pixfmt = pixelFormatFromVA(image.format.fourcc);
-    bool swap_uv = image.format.fourcc != VA_FOURCC_NV12;
+    bool swap_uv = (image.format.fourcc != VA_FOURCC_NV12);
 
     if (pixfmt == VideoFormat::Format_Invalid)
     {
@@ -155,12 +163,12 @@ void* SurfaceInteropVAAPI::mapToHost(const VideoFormat &format, void *handle, in
     }
 
     const VideoFormat fmt(pixfmt);
-    uint8_t *src[3];
+    uint8_t* src[3];
     int pitch[3];
 
-    for (int i = 0; i < fmt.planeCount(); ++i)
+    for (int i = 0 ; i < fmt.planeCount() ; ++i)
     {
-        src[i] = (uint8_t*)p_base + image.offsets[i];
+        src[i]   = (uint8_t*)p_base + image.offsets[i];
         pitch[i] = image.pitches[i];
     }
 
@@ -172,9 +180,9 @@ void* SurfaceInteropVAAPI::mapToHost(const VideoFormat &format, void *handle, in
     VAWARN(vaUnmapBuffer(m_surface->vadisplay(), image.buf));
     VAWARN(vaDestroyImage(m_surface->vadisplay(), image.image_id));
     image.image_id = VA_INVALID_ID;
-    VideoFrame *f = reinterpret_cast<VideoFrame*>(handle);
+    VideoFrame* f  = reinterpret_cast<VideoFrame*>(handle);
     frame.setTimestamp(f->timestamp());
-    *f = frame;
+    *f             = frame;
 
     return f;
 }
@@ -244,9 +252,9 @@ public:
         pixmap = 0;
     }
 
-    virtual Display* ensureGL() = 0;
+    virtual Display* ensureGL()           = 0;
     virtual bool bindPixmap(int w, int h) = 0;
-    virtual void bindTexture() = 0;
+    virtual void bindTexture()            = 0;
     Pixmap pixmap;
 
 protected:
@@ -316,13 +324,13 @@ public:
 
     X11_EGL() : dpy(EGL_NO_DISPLAY)
     {
-        for (unsigned i = 0; i < sizeof(image)/sizeof(image[0]); ++i)
+        for (unsigned i = 0 ; i < sizeof(image)/sizeof(image[0]) ; ++i)
             image[i] = EGL_NO_IMAGE_KHR;
     }
 
     ~X11_EGL()
     {
-        for (unsigned i = 0; i < sizeof(image)/sizeof(image[0]); ++i)
+        for (unsigned i = 0 ; i < sizeof(image)/sizeof(image[0]) ; ++i)
         {
             if (image[i] != EGL_NO_IMAGE_KHR)
             {
@@ -426,8 +434,8 @@ public:
                 return 0;
         }
 
-        int xscr = DefaultScreen(display);
-        const char *glxext = glXQueryExtensionsString((::Display*)display, xscr);
+        int xscr           = DefaultScreen(display);
+        const char* glxext = glXQueryExtensionsString((::Display*)display, xscr);
 
         if (!glxext || !strstr(glxext, "GLX_EXT_texture_from_pixmap"))
             return 0;
@@ -437,8 +445,8 @@ public:
 
         int attribs[] =
         {
-            GLX_RENDER_TYPE, GLX_RGBA_BIT, //xbmc
-            GLX_X_RENDERABLE, True, //xbmc
+            GLX_RENDER_TYPE, GLX_RGBA_BIT,  // xbmc
+            GLX_X_RENDERABLE, True,         // xbmc
             GLX_BIND_TO_TEXTURE_RGBA_EXT, True,
             GLX_DRAWABLE_TYPE, GLX_PIXMAP_BIT,
             GLX_BIND_TO_TEXTURE_TARGETS_EXT, GLX_TEXTURE_2D_BIT_EXT,
@@ -447,12 +455,12 @@ public:
             GLX_RED_SIZE, 8,
             GLX_GREEN_SIZE, 8,
             GLX_BLUE_SIZE, 8,
-            GLX_ALPHA_SIZE, 8, //0 for 24 bpp(vdpau)? mpv is 0
+            GLX_ALPHA_SIZE, 8,              // 0 for 24 bpp(vdpau)? mpv is 0
             None
         };
 
         int fbcount;
-        GLXFBConfig *fbcs = glXChooseFBConfig((::Display*)display, xscr, attribs, &fbcount);
+        GLXFBConfig* fbcs = glXChooseFBConfig((::Display*)display, xscr, attribs, &fbcount);
 
         if (!fbcount)
         {
@@ -710,7 +718,7 @@ bool EGLInteropResource::map(const surface_ptr &surface, GLuint tex, int w, int 
         memset(&vabuf, 0, sizeof(vabuf));
         vabuf.mem_type = VA_SURFACE_ATTRIB_MEM_TYPE_DRM_PRIME;
         VA_ENSURE(va_0_38::vaAcquireBufferHandle(surface->vadisplay(), va_image.buf, &vabuf), false);
-        vabuf_handle = vabuf.handle;
+        vabuf_handle   = vabuf.handle;
     }
 
     // (it would be nice if we could use EGL_IMAGE_INTERNAL_FORMAT_EXT)
@@ -806,7 +814,7 @@ bool EGLInteropResource::ensure()
     if (egl)
         return true;
 
-#if QTAV_HAVE(EGL_CAPI)
+#   if QTAV_HAVE(EGL_CAPI)
 
     if (!OpenGLHelper::isEGL())
     {
@@ -815,7 +823,7 @@ bool EGLInteropResource::ensure()
         return false;
     }
 
-#else
+#   else
 
     qCWarning(DIGIKAM_QTAV_LOG_WARN).noquote() << QString::asprintf("build QtAV with capi is required");
 
@@ -850,7 +858,7 @@ bool EGLInteropResource::ensure()
     return true;
 }
 
-#endif // QTAV_HAVE(EGL_CAPI)
+#   endif // QTAV_HAVE(EGL_CAPI)
 
 } // namespace QtAV
 
