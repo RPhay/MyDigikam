@@ -21,33 +21,45 @@
  * ============================================================ */
 
 #include "ConvolutionShader.h"
+
+// Local includes
+
 #include "private/VideoShader_p.h"
 
 namespace QtAV
 {
+
 class ConvolutionShaderPrivate : public VideoShaderPrivate
 {
 public:
-    ConvolutionShaderPrivate() : VideoShaderPrivate()
-      , u_Kernel(-1)
-      , radius(1)
+
+    ConvolutionShaderPrivate()
+        : VideoShaderPrivate()
+        , u_Kernel(-1)
+        , radius(1)
     {
         kernel.resize((2*radius+1)*(2*radius+1));
         updateShaderCode();
     }
-    void updateShaderCode() {
+
+    void updateShaderCode()
+    {
         const int ks = (2*radius+1)*(2*radius+1);
-        header = QStringLiteral("uniform float u_Kernel[%1];").arg(ks).toUtf8();
-        QString s = QStringLiteral("vec4 sample2d(sampler2D tex, vec2 pos, int p) { vec4 c = vec4(0.0);");
+        header       = QStringLiteral("uniform float u_Kernel[%1];").arg(ks).toUtf8();
+        QString s    = QStringLiteral("vec4 sample2d(sampler2D tex, vec2 pos, int p) { vec4 c = vec4(0.0);");
         const int kd = 2*radius+1;
-        for (int i = 0; i < ks; ++i) {
+
+        for (int i = 0; i < ks; ++i)
+        {
             const int x = i % kd - radius;
             const int y = i / kd - radius;
             s += QStringLiteral("c += texture(tex, pos + u_texelSize[p]*vec2(%1.0,%2.0))*u_Kernel[%3];")
                     .arg(x).arg(y).arg(i);
         }
+
         s += QStringLiteral("c.a = texture(tex, pos).a;"
              "return c;}\n");
+
         sample_func = s.toUtf8();
     }
 
@@ -59,11 +71,13 @@ public:
 
 ConvolutionShader::ConvolutionShader()
     : VideoShader(*new ConvolutionShaderPrivate())
-{}
+{
+}
 
 ConvolutionShader::ConvolutionShader(ConvolutionShaderPrivate &d)
     : VideoShader(d)
-{}
+{
+}
 
 int ConvolutionShader::kernelRadius() const
 {
@@ -73,8 +87,10 @@ int ConvolutionShader::kernelRadius() const
 void ConvolutionShader::setKernelRadius(int value)
 {
     DPTR_D(ConvolutionShader);
+
     if (d.radius == value)
         return;
+
     d.radius = value;
     d.kernel.resize(kernelSize());
     d.updateShaderCode();
@@ -90,6 +106,7 @@ const char* ConvolutionShader::userShaderHeader(QOpenGLShader::ShaderType t) con
 {
     if (t == QOpenGLShader::Vertex)
         return 0;
+
     return kernelUniformHeader().constData();
 }
 
@@ -101,6 +118,7 @@ const char* ConvolutionShader::userSample() const
 bool ConvolutionShader::setUserUniformValues()
 {
     setKernelUniformValue();
+
     return true;
 }
 

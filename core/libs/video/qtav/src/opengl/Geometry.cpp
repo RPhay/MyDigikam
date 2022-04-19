@@ -21,6 +21,9 @@
  * ============================================================ */
 
 #include "Geometry.h"
+
+// Qt includes
+
 #include <QtDebug>
 #include <qmath.h>
 
@@ -32,7 +35,8 @@ Attribute::Attribute(DataType type, int tupleSize, int offset, bool normalize)
     , m_type(type)
     , m_tupleSize(tupleSize)
     , m_offset(offset)
-{}
+{
+}
 
 Attribute::Attribute(const QByteArray& name, DataType type, int tupleSize, int offset, bool normalize)
     : m_normalize(normalize)
@@ -40,17 +44,22 @@ Attribute::Attribute(const QByteArray& name, DataType type, int tupleSize, int o
     , m_tupleSize(tupleSize)
     , m_offset(offset)
     , m_name(name)
-{}
+{
+}
 
 #ifndef QT_NO_DEBUG_STREAM
-QDebug operator<<(QDebug dbg, const Attribute &a) {
+
+QDebug operator<<(QDebug dbg, const Attribute &a)
+{
     dbg.nospace() << "attribute: " << a.name();
     dbg.nospace() << ", offset " << a.offset();
     dbg.nospace() << ", tupleSize " << a.tupleSize();
     dbg.nospace() << ", dataType " << a.type();
     dbg.nospace() << ", normalize " << a.normalize();
+
     return dbg.space();
 }
+
 #endif
 
 Geometry::Geometry(int vertexCount, int indexCount, DataType indexType)
@@ -58,67 +67,93 @@ Geometry::Geometry(int vertexCount, int indexCount, DataType indexType)
     , m_itype(indexType)
     , m_vcount(vertexCount)
     , m_icount(indexCount)
-{}
+{
+}
 
 int Geometry::indexDataSize() const
 {
-    switch (indexType()) {
-    case TypeU16: return indexCount()*2;
-    case TypeU32: return indexCount()*4;
-    default: return indexCount();
+    switch (indexType())
+    {
+        case TypeU16:
+            return indexCount()*2;
+
+        case TypeU32:
+            return indexCount()*4;
+
+        default:
+            return indexCount();
     }
 }
 
 void Geometry::setIndexValue(int index, int value)
 {
-    switch (indexType()) {
-    case TypeU8: {
-        quint8* d = (quint8*)m_idata.constData();
-        *(d+index) = value;
-    }
-        break;
-    case TypeU16: {
-        quint16* d = (quint16*)m_idata.constData();
-        *(d+index) = value;
-    }
-        break;
-    case TypeU32: {
-        quint32* d = (quint32*)m_idata.constData();
-        *(d+index) = value;
-    }
-        break;
-    default:
-        break;
+    switch (indexType())
+    {
+        case TypeU8:
+        {
+            quint8* d  = (quint8*)m_idata.constData();
+            *(d+index) = value;
+            break;
+        }
+
+        case TypeU16:
+        {
+            quint16* d = (quint16*)m_idata.constData();
+            *(d+index) = value;
+            break;
+        }
+
+        case TypeU32:
+        {
+            quint32* d = (quint32*)m_idata.constData();
+            *(d+index) = value;
+            break;
+        }
+
+        default:
+        {
+            break;
+        }
     }
 }
 
 void Geometry::setIndexValue(int index, int v1, int v2, int v3)
 {
     // TODO: *(d + 3*index), *(d + 3*index + 1), *(d + 3*index + 2)
-    switch (indexType()) {
-    case TypeU8: {
-        quint8* d = (quint8*)m_idata.constData();
-        *(d+index++) = v1;
-        *(d+index++) = v2;
-        *(d+index++) = v2;
-    }
-        break;
-    case TypeU16: {
-        quint16* d = (quint16*)m_idata.constData();
-        *(d+index++) = v1;
-        *(d+index++) = v2;
-        *(d+index++) = v3;
-    }
-        break;
-    case TypeU32: {
-        quint32* d = (quint32*)m_idata.constData();
-        *(d+index++) = v1;
-        *(d+index++) = v2;
-        *(d+index++) = v3;
-    }
-        break;
-    default:
-        break;
+
+    switch (indexType())
+    {
+        case TypeU8:
+        {
+            quint8* d    = (quint8*)m_idata.constData();
+            *(d+index++) = v1;
+            *(d+index++) = v2;
+            *(d+index++) = v2;
+            break;
+        }
+
+        case TypeU16:
+        {
+            quint16* d   = (quint16*)m_idata.constData();
+            *(d+index++) = v1;
+            *(d+index++) = v2;
+            *(d+index++) = v3;
+            break;
+        }
+
+        case TypeU32:
+        {
+            quint32* d   = (quint32*)m_idata.constData();
+            *(d+index++) = v1;
+            *(d+index++) = v2;
+            *(d+index++) = v3;
+            break;
+        }
+
+        default:
+        {
+            break;
+        }
     }
 }
 
@@ -126,38 +161,57 @@ void Geometry::dumpVertexData()
 {
     printf("vertex %p: ", m_vdata.constData());
     const int n = stride()/sizeof(float);
-    for (int i = 0; i < m_vcount; ++i) {
+
+    for (int i = 0; i < m_vcount; ++i)
+    {
         const float* f = (const float*)(m_vdata.constData()+i*stride());
-        for (int j = 0; j < n; ++j) {
+
+        for (int j = 0; j < n; ++j)
+        {
             printf("%f, ", *(f+j));
         }
+
         printf(";");
     }
-    printf("\n");fflush(0);
+
+    printf("\n");
+    fflush(0);
 }
 
 void Geometry::dumpIndexData()
 {
-    switch (indexType()) {
-    case TypeU8: {
-        quint8* d = (quint8*)m_idata.constData();
-        for (int i = 0; i < m_icount; ++i) printf("%u, ", *(d+i));
+    switch (indexType())
+    {
+        case TypeU8:
+        {
+            quint8* d  = (quint8*)m_idata.constData();
+            for (int i = 0; i < m_icount; ++i) printf("%u, ", *(d+i));
+            break;
+        }
+
+        case TypeU16:
+        {
+            quint16* d = (quint16*)m_idata.constData();
+            for (int i = 0; i < m_icount; ++i) printf("%u, ", *(d+i));
+            break;
+        }
+
+        case TypeU32:
+        {
+            quint32* d = (quint32*)m_idata.constData();
+            for (int i = 0; i < m_icount; ++i) printf("%u, ", *(d+i));
+            break;
+        }
+
+        default:
+        {
+            break;
+        }
+
     }
-        break;
-    case TypeU16: {
-        quint16* d = (quint16*)m_idata.constData();
-        for (int i = 0; i < m_icount; ++i) printf("%u, ", *(d+i));
-    }
-        break;
-    case TypeU32: {
-        quint32* d = (quint32*)m_idata.constData();
-        for (int i = 0; i < m_icount; ++i) printf("%u, ", *(d+i));
-    }
-        break;
-    default:
-        break;
-    }
-    printf("\n");fflush(0);
+
+    printf("\n");
+    fflush(0);
 }
 
 void Geometry::allocate(int nbVertex, int nbIndex)
@@ -166,33 +220,44 @@ void Geometry::allocate(int nbVertex, int nbIndex)
     m_vcount = nbVertex;
     m_vdata.resize(nbVertex*stride());
     memset(m_vdata.data(), 0, m_vdata.size());
-    if (nbIndex <= 0) {
+
+    if (nbIndex <= 0)
+    {
         m_idata.clear(); // required?
         return;
     }
-    switch (indexType()) {
-    case TypeU8:
-        m_idata.resize(nbIndex*sizeof(quint8));
-        break;
-    case TypeU16:
-        m_idata.resize(nbIndex*sizeof(quint16));
-        break;
-    case TypeU32:
-        m_idata.resize(nbIndex*sizeof(quint32));
-        break;
-    default:
-        break;
+
+    switch (indexType())
+    {
+        case TypeU8:
+            m_idata.resize(nbIndex*sizeof(quint8));
+            break;
+
+        case TypeU16:
+            m_idata.resize(nbIndex*sizeof(quint16));
+            break;
+
+        case TypeU32:
+            m_idata.resize(nbIndex*sizeof(quint32));
+            break;
+
+        default:
+            break;
     }
+
     memset((void*)m_idata.constData(), 0, m_idata.size());
 }
 
 bool Geometry::compare(const Geometry *other) const
 {
     // this == other: attributes and stride can be different
+
     if (!other)
         return false;
+
     if (stride() != other->stride())
         return false;
+
     return attributes() == other->attributes();
 }
 
@@ -213,6 +278,7 @@ void TexturedGeometry::setTextureCount(int value)
 {
     if (value == nb_tex)
         return;
+
     texRect.resize(value);
     nb_tex = value;
 }
@@ -231,34 +297,38 @@ void TexturedGeometry::setPoint(int index, const QPointF &p, const QPointF &tp, 
 void TexturedGeometry::setGeometryPoint(int index, const QPointF &p)
 {
     float *v = (float*)(m_vdata.constData() + index*stride());
-    *v = p.x();
-    *(v+1) = p.y();
+    *v       = p.x();
+    *(v+1)   = p.y();
 }
 
 void TexturedGeometry::setTexturePoint(int index, const QPointF &tp, int texIndex)
 {
     float *v = (float*)(m_vdata.constData() + index*stride() + (texIndex+1)*2*sizeof(float));
-    *v = tp.x();
-    *(v+1) = tp.y();
+    *v       = tp.x();
+    *(v+1)   = tp.y();
 }
 
 void TexturedGeometry::setRect(const QRectF &r, const QRectF &tr, int texIndex)
 {
     setPoint(0, r.topLeft(), tr.topLeft(), texIndex);
     setPoint(1, r.bottomLeft(), tr.bottomLeft(), texIndex);
-    switch (primitive()) {
-    case TriangleStrip:
-        setPoint(2, r.topRight(), tr.topRight(), texIndex);
-        setPoint(3, r.bottomRight(), tr.bottomRight(), texIndex);
-        break;
-    case TriangleFan:
-        setPoint(3, r.topRight(), tr.topRight(), texIndex);
-        setPoint(2, r.bottomRight(), tr.bottomRight(), texIndex);
-        break;
-    case Triangles:
-        break;
-    default:
-        break;
+    switch (primitive())
+    {
+        case TriangleStrip:
+            setPoint(2, r.topRight(), tr.topRight(), texIndex);
+            setPoint(3, r.bottomRight(), tr.bottomRight(), texIndex);
+            break;
+
+        case TriangleFan:
+            setPoint(3, r.topRight(), tr.topRight(), texIndex);
+            setPoint(2, r.bottomRight(), tr.bottomRight(), texIndex);
+            break;
+
+        case Triangles:
+            break;
+
+        default:
+            break;
     }
 }
 
@@ -271,6 +341,7 @@ void TexturedGeometry::setTextureRect(const QRectF &tr, int texIndex)
 {
     if (texRect.size() <= texIndex)
         texRect.resize(texIndex+1);
+
     texRect[texIndex] = tr;
 }
 
@@ -282,47 +353,58 @@ const QVector<Attribute>& TexturedGeometry::attributes() const
 void TexturedGeometry::create()
 {
     allocate(vertexCount());
-    if (a.size()-1 < textureCount()) { // the first is position
+
+    if (a.size()-1 < textureCount())
+    {
+        // the first is position
+
         for (int i = a.size()-1; i < textureCount(); ++i)
             a << Attribute(TypeF32, 2, int((i+1)* 2*sizeof(float)));
-    } else {
+    }
+    else
+    {
         a.resize(textureCount() + 1);
     }
 
     setGeometryPoint(0, geo_rect.topLeft());
     setGeometryPoint(1, geo_rect.bottomLeft());
-    switch (primitive()) {
-    case TriangleStrip:
-        setGeometryPoint(2, geo_rect.topRight());
-        setGeometryPoint(3, geo_rect.bottomRight());
-        break;
-    case TriangleFan:
-        setGeometryPoint(3, geo_rect.topRight());
-        setGeometryPoint(2, geo_rect.bottomRight());
-        break;
-    case Triangles:
-        break;
-    default:
-        break;
-    }
 
-    for (int i = 0; i < texRect.size(); ++i) {
-        const QRectF tr = texRect[i];
-        setTexturePoint(0, tr.topLeft(), i);
-        setTexturePoint(1, tr.bottomLeft(), i);
-        switch (primitive()) {
+    switch (primitive())
+    {
         case TriangleStrip:
-            setTexturePoint(2, tr.topRight(), i);
-            setTexturePoint(3, tr.bottomRight(), i);
+            setGeometryPoint(2, geo_rect.topRight());
+            setGeometryPoint(3, geo_rect.bottomRight());
             break;
         case TriangleFan:
-            setTexturePoint(3, tr.topRight(), i);
-            setTexturePoint(2, tr.bottomRight(), i);
+            setGeometryPoint(3, geo_rect.topRight());
+            setGeometryPoint(2, geo_rect.bottomRight());
             break;
         case Triangles:
             break;
         default:
             break;
+    }
+
+    for (int i = 0; i < texRect.size(); ++i)
+    {
+        const QRectF tr = texRect[i];
+        setTexturePoint(0, tr.topLeft(), i);
+        setTexturePoint(1, tr.bottomLeft(), i);
+
+        switch (primitive())
+        {
+            case TriangleStrip:
+                setTexturePoint(2, tr.topRight(), i);
+                setTexturePoint(3, tr.bottomRight(), i);
+                break;
+            case TriangleFan:
+                setTexturePoint(3, tr.topRight(), i);
+                setTexturePoint(2, tr.bottomRight(), i);
+                break;
+            case Triangles:
+                break;
+            default:
+                break;
         }
     }
 }
@@ -360,43 +442,65 @@ float Sphere::radius() const
 void Sphere::create()
 {
     allocate(vertexCount(), ru*rv*3*2); // quads * 2 triangles,
-    if (a.size()-1 < nb_tex) { // the first is position
+    if (a.size()-1 < nb_tex)
+    {
+        // the first is position
+
         for (int i = a.size()-1; i < nb_tex; ++i)
             a << Attribute(TypeF32, 2, 3*sizeof(float) + int(i* 2*sizeof(float)));
-    } else {
+    }
+    else
+    {
         a.resize(nb_tex + 1);
     }
 
     // TODO: use geo_rect?
+
     float *vd = (float*)m_vdata.constData();
     const float dTheta = M_PI*2.0/float(ru);
     const float dPhi = M_PI/float(rv);
+
     //const float du = 1.0f/float(ru);
     //const float dv = 1.0f/float(rv);
-    for (int lat = 0; lat <= rv; ++lat) {
+
+    for (int lat = 0; lat <= rv; ++lat)
+    {
         const float phi = M_PI_2 - float(lat)*dPhi;
         const float cosPhi = qCos(phi);
         const float sinPhi = qSin(phi);
+
         //const float v = 1.0f - float(lat)*dv; // flip y?
-        for (int lon = 0; lon <= ru; ++lon) {
+
+        for (int lon = 0; lon <= ru; ++lon)
+        {
             const float theta = float(lon)*dTheta;
             const float cosTheta = qCos(theta);
             const float sinTheta = qSin(theta);
+
             //const float u = float(lon) * du;
+
             *vd++ = r*cosPhi*cosTheta;//2.0*float(lon)/float(ru) -1.0;//
             *vd++ = r*sinPhi;//2.0*float(lat)/float(rv)-1.0;//
             *vd++ = r*cosPhi*sinTheta;
-            for (int i = 0; i < nb_tex; ++i) {
+
+            for (int i = 0; i < nb_tex; ++i)
+            {
                 *vd++ = texRect[i].x()+texRect[i].width()/float(ru) * float(lon);
                 *vd++ = texRect[i].y()+texRect[i].height()/float(rv) * float(lat);
             }
         }
     }
+
     // create index data
-    if (m_icount > 0) {
+
+    if (m_icount > 0)
+    {
         int idx = 0;
-        for (int lat = 0; lat < rv; ++lat) {
-            for (int lon = 0; lon < ru; ++lon) {
+
+        for (int lat = 0; lat < rv; ++lat)
+        {
+            for (int lon = 0; lon < ru; ++lon)
+            {
                 const int ring = lat*(ru+1) + lon;
                 const int ringNext = ring + ru+1;
                 setIndexValue(idx, ring, ringNext, ring+1);
@@ -406,4 +510,5 @@ void Sphere::create()
         }
     }
 }
+
 } // namespace QtAV
