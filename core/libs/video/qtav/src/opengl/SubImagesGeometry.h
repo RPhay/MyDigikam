@@ -20,18 +20,25 @@
  *
  * ============================================================ */
 
-#ifndef QTAV_SUBIMAGESGEOMETRY_H
-#define QTAV_SUBIMAGESGEOMETRY_H
+#ifndef QTAV_SUB_IMAGES_GEOMETRY_H
+#define QTAV_SUB_IMAGES_GEOMETRY_H
+
+// Local includes
 
 #include "Geometry.h"
 #include "SubImage.h"
 
 namespace QtAV
 {
-class SubImagesGeometry : public Geometry {
+
+class SubImagesGeometry : public Geometry
+{
 public:
+
     SubImagesGeometry();
+
     bool setSubImages(const SubImageSet& images);
+
     /*!
      * \brief generateVertexData
      * \param rect rect render to. If it's viewport rect, and fit video aspect ratio, ass images created from video frame size needs a scale transform is required when rendering
@@ -40,20 +47,47 @@ public:
      * \return false if current SubImageSet is invalid
      */
     bool generateVertexData(const QRect& rect, bool useIndecies = false, int maxWidth = -1);
+
     // available after generateVertexData is called
-    int width() { return m_w;}
-    int height() { return m_h;}
+
+    int width()
+    {
+        return m_w;
+    }
+
+    int height()
+    {
+        return m_h;
+    }
+
     int stride() const Q_DECL_OVERRIDE;
-    const QVector<Attribute>& attributes() const Q_DECL_OVERRIDE { return m_attributes;}
-    const SubImageSet& images() const { return m_images; }
-    const QVector<QRect>& uploadRects() const { return m_rects_upload;}
+
+    const QVector<Attribute>& attributes() const Q_DECL_OVERRIDE
+    {
+        return m_attributes;
+    }
+
+    const SubImageSet& images() const
+    {
+        return m_images;
+    }
+
+    const QVector<QRect>& uploadRects() const
+    {
+        return m_rects_upload;
+    }
+
 private:
+
     using Geometry::allocate;
-    bool m_normalized;
-    int m_w, m_h;
+
+    bool               m_normalized;
+    int                m_w, m_h;
     QVector<Attribute> m_attributes;
-    SubImageSet m_images; // for texture upload parameters
-    QVector<QRect> m_rects_upload;
+    SubImageSet        m_images; // for texture upload parameters
+    QVector<QRect>     m_rects_upload;
 };
+
 } // namespace QtAV
-#endif //QTAV_SUBIMAGESGEOMETRY_H
+
+#endif //QTAV_SUB_IMAGES_GEOMETRY_H

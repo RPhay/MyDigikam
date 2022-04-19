@@ -20,8 +20,8 @@
  *
  * ============================================================ */
 
-#ifndef QTAV_OPENGLHELPER_H
-#define QTAV_OPENGLHELPER_H
+#ifndef QTAV_OPENGL_HELPER_H
+#define QTAV_OPENGL_HELPER_H
 
 #ifndef QT_NO_OPENGL
 #   include "VideoFormat.h"
@@ -156,4 +156,4 @@ inline bool isOpenGLES()
 
 #endif // QT_NO_OPENGL
 
-#endif // QTAV_OPENGLHELPER_H
+#endif // QTAV_OPENGL_HELPER_H

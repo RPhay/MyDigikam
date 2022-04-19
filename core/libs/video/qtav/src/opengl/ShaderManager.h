@@ -20,15 +20,19 @@
  *
  * ============================================================ */
 
-#ifndef QTAV_SHADERMANAGER_H
-#define QTAV_SHADERMANAGER_H
+#ifndef QTAV_SHADER_MANAGER_H
+#define QTAV_SHADER_MANAGER_H
+
+// Qt includes
 
 #include <QObject>
 
 namespace QtAV
 {
+
 class VideoShader;
 class VideoMaterial;
+
 /*!
  * \brief The ShaderManager class
  * Cache VideoShader and shader programes for different video material type.
@@ -37,15 +41,22 @@ class VideoMaterial;
 class ShaderManager : public QObject
 {
     Q_OBJECT
+
 public:
+
     ShaderManager(QObject *parent = 0);
     ~ShaderManager();
+
     VideoShader* prepareMaterial(VideoMaterial *material, qint32 materialType = -1);
+
 //    void setCacheSize(int value);
 
 private:
+
     class Private;
     Private* d;
 };
+
 } // namespace QtAV
-#endif // QTAV_SHADERMANAGER_H
+
+#endif // QTAV_SHADER_MANAGER_H
