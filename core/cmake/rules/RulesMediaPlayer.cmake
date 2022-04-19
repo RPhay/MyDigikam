@@ -27,7 +27,7 @@ find_package(VAAPI)
 find_package(uchardet)
 
 include(MacroSSE)
-FindSSE()
+CheckSSESupport()
 
 if(ENABLE_MEDIAPLAYER)
 
@@ -77,6 +77,20 @@ if(ENABLE_MEDIAPLAYER)
         MACRO_BOOL_TO_01(SWSCALE_FOUND    HAVE_LIBSWSCALE)
         MACRO_BOOL_TO_01(AVRESAMPLE_FOUND HAVE_LIBAVRESAMPLE)
         MACRO_BOOL_TO_01(SWRESAMPLE_FOUND HAVE_LIBSWRESAMPLE)
+
+        if(SSE4_1_FOUND)
+
+            message(STATUS "MediaPlayer will be compiled with SSE4.1 support    : yes")
+            set(MEDIAPLAYER_FLAGS -msse4.1)
+
+        elseif(SSE2_FOUND)
+
+            message(STATUS "MediaPlayer will be compiled with SSE2 support      : yes")
+            set(MEDIAPLAYER_FLAGS -msse2)
+
+        endif()
+
+        # ---
 
         set(MEDIAPLAYER_LIBRARIES ${FFMPEG_LIBRARIES} ${CMAKE_DL_LIBS})
 
@@ -164,7 +178,6 @@ if(ENABLE_MEDIAPLAYER)
 
         endif()
 
-        message(STATUS "MediaPlayer libraries  : ${MEDIAPLAYER_LIBRARIES}")
 
         # ---
 
@@ -187,14 +200,10 @@ if(ENABLE_MEDIAPLAYER)
             set(MEDIAPLAYER_DEFINITIONS ${MEDIAPLAYER_DEFINITIONS} -DQTAV_HAVE_SSE4_1=1)
             set(MEDIAPLAYER_DEFINITIONS ${MEDIAPLAYER_DEFINITIONS} -DQTAV_HAVE_SSE2=0)
 
-            message(STATUS "MediaPlayer will be compiled with SSE4.1 support    : yes")
-
         elseif(SSE2_FOUND)
 
             set(MEDIAPLAYER_DEFINITIONS ${MEDIAPLAYER_DEFINITIONS} -DQTAV_HAVE_SSE4_1=0)
             set(MEDIAPLAYER_DEFINITIONS ${MEDIAPLAYER_DEFINITIONS} -DQTAV_HAVE_SSE2=1)
-
-            message(STATUS "MediaPlayer will be compiled with SSE2 support      : yes")
 
         endif()
 
@@ -248,7 +257,11 @@ if(ENABLE_MEDIAPLAYER)
         set(MEDIAPLAYER_DEFINITIONS ${MEDIAPLAYER_DEFINITIONS} -DQTAV_HAVE_EGL_CAPI=${HAVE_LIBOPENGL_EGL})
         set(MEDIAPLAYER_DEFINITIONS ${MEDIAPLAYER_DEFINITIONS} -DQTAV_HAVE_VAAPI=${HAVE_LIBVAAPI})
 
+        # ---
+
+        message(STATUS "MediaPlayer libraries  : ${MEDIAPLAYER_LIBRARIES}")
         message(STATUS "MediaPlayer definitions: ${MEDIAPLAYER_DEFINITIONS}")
+        message(STATUS "MediaPlayer flags      : ${MEDIAPLAYER_FLAGS}")
 
     endif()
 

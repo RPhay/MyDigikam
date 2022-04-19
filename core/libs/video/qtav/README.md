@@ -8,13 +8,14 @@ Code review with plenty of fixes and improvements:
 
 - Compilation rules ported to clean CMake with usual Find scripts for dependencies.
   See core/cmake/rules/RulesMediaPlayer.cmake
-- Fix of all GCC 11 warnings.
+- Fix all GCC 11 warnings.
 - Fixes Qt Signal/Slots.
 - Port code to pure Qt5/Qt6.
 - Use qCDebug()/qCWarning categories with digiKam debug spaces. Drop Logger class.
 - Use KDE i18n() instead tr().
 - Use cmake to find libuchardet dependency.
 - Add SSE2 and SSE4.1 support with CMake.
+* Remove support of Qt version < 5.
 * Fix header guards.
 * Fix includes rules/order from Qt and local.
 * Fix coding style.

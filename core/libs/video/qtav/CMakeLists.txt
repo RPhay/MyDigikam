@@ -282,3 +282,7 @@ target_compile_definitions(core_qtav_obj
                            ${MEDIAPLAYER_DEFINITIONS}
 )
 
+target_compile_options(core_qtav_obj
+                       PRIVATE
+                       ${MEDIAPLAYER_FLAGS}
+)
