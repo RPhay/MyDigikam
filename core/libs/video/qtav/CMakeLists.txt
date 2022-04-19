@@ -147,6 +147,7 @@ if(HAVE_OPENGL)
     set(libqtav_SRCS ${libqtav_SRCS}
         ${CMAKE_CURRENT_SOURCE_DIR}/src/opengl/ConvolutionShader.cpp
         ${CMAKE_CURRENT_SOURCE_DIR}/src/opengl/gl_api.cpp
+        ${CMAKE_CURRENT_SOURCE_DIR}/src/opengl/egl_api.cpp
         ${CMAKE_CURRENT_SOURCE_DIR}/src/opengl/OpenGLVideo.cpp
         ${CMAKE_CURRENT_SOURCE_DIR}/src/opengl/SubImagesRenderer.cpp
         ${CMAKE_CURRENT_SOURCE_DIR}/src/opengl/Geometry.cpp
@@ -160,7 +161,6 @@ if(HAVE_OPENGL)
         ${CMAKE_CURRENT_SOURCE_DIR}/src/filter/GLSLFilter.cpp
         ${CMAKE_CURRENT_SOURCE_DIR}/src/output/video/OpenGLRendererBase.cpp
         ${CMAKE_CURRENT_SOURCE_DIR}/src/output/video/OpenGLWindowRenderer.cpp
-        ${CMAKE_CURRENT_SOURCE_DIR}/src/capi/egl_api.cpp
 
         ${CMAKE_CURRENT_SOURCE_DIR}/widgets/GLWidgetRenderer2.cpp
         ${CMAKE_CURRENT_SOURCE_DIR}/widgets/QtAVWidgets/GLWidgetRenderer2.h

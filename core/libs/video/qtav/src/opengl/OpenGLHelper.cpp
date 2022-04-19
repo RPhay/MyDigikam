@@ -42,7 +42,7 @@ using QRegExp = QRegularExpression;
 #endif
 #if QTAV_HAVE(EGL_CAPI) // && QTAV_HAVE(QT_EGL) //make sure no crash if no egl library
 #define EGL_CAPI_NS
-#include "capi/egl_api.h"
+#include "egl_api.h"
 #endif //QTAV_HAVE(EGL_CAPI)
 #include "digikam_debug.h"
 

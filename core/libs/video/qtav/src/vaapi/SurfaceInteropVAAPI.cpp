@@ -36,7 +36,7 @@
 #       include <va/va_x11.h>
 #       if QTAV_HAVE(EGL_CAPI)
 #           define EGL_CAPI_NS
-#           include "capi/egl_api.h"
+#           include "egl_api.h"
 #           include <EGL/eglext.h>
 #           if VA_CHECK_VERSION(0, 33, 0)
 #               include <va/va_drmcommon.h>
