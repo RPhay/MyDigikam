@@ -59,13 +59,13 @@ if(ENABLE_MEDIAPLAYER)
       )
 
         include_directories(${FFMPEG_INCLUDE_DIRS})
-        message(STATUS "MediaPlayer support is enabled                      : yes")
+        message(STATUS "MediaPlayer support is enabled                       : yes")
 
     else()
 
         set(ENABLE_MEDIAPLAYER OFF)
         set(FFMPEG_FOUND OFF)
-        message(STATUS "MediaPlayer support is enabled                      : no")
+        message(STATUS "MediaPlayer support is enabled                       : no")
 
     endif()
 
@@ -91,7 +91,7 @@ if(ENABLE_MEDIAPLAYER)
 
         if(SSE4_1_FOUND)
 
-            message(STATUS "MediaPlayer will be compiled with SSE4.1 support    : yes")
+            message(STATUS "MediaPlayer will be compiled with SSE4.1 support     : yes")
 
             if (NOT MSVC)
 
@@ -101,7 +101,7 @@ if(ENABLE_MEDIAPLAYER)
 
         elseif(SSE2_FOUND)
 
-            message(STATUS "MediaPlayer will be compiled with SSE2 support      : yes")
+            message(STATUS "MediaPlayer will be compiled with SSE2 support       : yes")
 
             if (NOT MSVC)
 
