@@ -24,7 +24,12 @@
 #ifndef QTAV_VIDEO_OUTPUT_H
 #define QTAV_VIDEO_OUTPUT_H
 
+// Qt includes
+
 #include <QObject>
+
+// Local includes
+
 #include "VideoRenderer.h"
 
 namespace QtAV
@@ -74,63 +79,63 @@ public:
      */
     VideoOutput(VideoRendererId rendererId, QObject *parent = 0);
     ~VideoOutput();
-    VideoRendererId id() const Q_DECL_OVERRIDE;
+    VideoRendererId id() const                                              Q_DECL_OVERRIDE;
 
-    VideoFormat::PixelFormat preferredPixelFormat() const Q_DECL_OVERRIDE;
-    bool isSupported(VideoFormat::PixelFormat pixfmt) const Q_DECL_OVERRIDE;
-    QWindow* qwindow() Q_DECL_OVERRIDE Q_DECL_FINAL;
-    QWidget* widget() Q_DECL_OVERRIDE Q_DECL_FINAL;
-    QGraphicsItem* graphicsItem() Q_DECL_OVERRIDE Q_DECL_FINAL;
-    OpenGLVideo* opengl() const Q_DECL_OVERRIDE;
+    VideoFormat::PixelFormat preferredPixelFormat() const                   Q_DECL_OVERRIDE;
+    bool isSupported(VideoFormat::PixelFormat pixfmt) const                 Q_DECL_OVERRIDE;
+    QWindow* qwindow()                                                      Q_DECL_OVERRIDE Q_DECL_FINAL;
+    QWidget* widget()                                                       Q_DECL_OVERRIDE Q_DECL_FINAL;
+    QGraphicsItem* graphicsItem()                                           Q_DECL_OVERRIDE Q_DECL_FINAL;
+    OpenGLVideo* opengl() const                                             Q_DECL_OVERRIDE;
 
 Q_SIGNALS:
 
-    void sourceAspectRatioChanged(qreal value) Q_DECL_OVERRIDE Q_DECL_FINAL;
-    void regionOfInterestChanged() Q_DECL_OVERRIDE;
-    void outAspectRatioChanged() Q_DECL_OVERRIDE;
-    void outAspectRatioModeChanged() Q_DECL_OVERRIDE;
-    void brightnessChanged(qreal value) Q_DECL_OVERRIDE;
-    void contrastChanged(qreal) Q_DECL_OVERRIDE;
-    void hueChanged(qreal) Q_DECL_OVERRIDE;
-    void saturationChanged(qreal) Q_DECL_OVERRIDE;
-    void backgroundColorChanged() Q_DECL_OVERRIDE;
-    void orientationChanged() Q_DECL_OVERRIDE;
-    void videoRectChanged() Q_DECL_OVERRIDE;
-    void videoFrameSizeChanged() Q_DECL_OVERRIDE;
+    void sourceAspectRatioChanged(qreal value)                              Q_DECL_OVERRIDE Q_DECL_FINAL;
+    void regionOfInterestChanged()                                          Q_DECL_OVERRIDE;
+    void outAspectRatioChanged()                                            Q_DECL_OVERRIDE;
+    void outAspectRatioModeChanged()                                        Q_DECL_OVERRIDE;
+    void brightnessChanged(qreal value)                                     Q_DECL_OVERRIDE;
+    void contrastChanged(qreal)                                             Q_DECL_OVERRIDE;
+    void hueChanged(qreal)                                                  Q_DECL_OVERRIDE;
+    void saturationChanged(qreal)                                           Q_DECL_OVERRIDE;
+    void backgroundColorChanged()                                           Q_DECL_OVERRIDE;
+    void orientationChanged()                                               Q_DECL_OVERRIDE;
+    void videoRectChanged()                                                 Q_DECL_OVERRIDE;
+    void videoFrameSizeChanged()                                            Q_DECL_OVERRIDE;
 
 protected:
 
-    bool eventFilter(QObject *obj, QEvent *event) Q_DECL_OVERRIDE;
-    bool receiveFrame(const VideoFrame& frame) Q_DECL_OVERRIDE;
-    void drawBackground() Q_DECL_OVERRIDE;
-    void drawFrame() Q_DECL_OVERRIDE;
-    void handlePaintEvent() Q_DECL_OVERRIDE;
+    bool eventFilter(QObject *obj, QEvent *event)                           Q_DECL_OVERRIDE;
+    bool receiveFrame(const VideoFrame& frame)                              Q_DECL_OVERRIDE;
+    void drawBackground()                                                   Q_DECL_OVERRIDE;
+    void drawFrame()                                                        Q_DECL_OVERRIDE;
+    void handlePaintEvent()                                                 Q_DECL_OVERRIDE;
 
 private:
 
     virtual bool onSetPreferredPixelFormat(VideoFormat::PixelFormat pixfmt) Q_DECL_OVERRIDE;
-    virtual bool onForcePreferredPixelFormat(bool force = true) Q_DECL_OVERRIDE;
-    virtual void onSetOutAspectRatioMode(OutAspectRatioMode mode) Q_DECL_OVERRIDE;
-    virtual void onSetOutAspectRatio(qreal ratio) Q_DECL_OVERRIDE;
-    virtual bool onSetQuality(Quality q) Q_DECL_OVERRIDE;
-    virtual bool onSetOrientation(int value) Q_DECL_OVERRIDE;
-    virtual void onResizeRenderer(int width, int height) Q_DECL_OVERRIDE;
-    virtual bool onSetRegionOfInterest(const QRectF& roi) Q_DECL_OVERRIDE;
-    virtual QPointF onMapToFrame(const QPointF& p) const Q_DECL_OVERRIDE;
-    virtual QPointF onMapFromFrame(const QPointF& p) const Q_DECL_OVERRIDE;
+    virtual bool onForcePreferredPixelFormat(bool force = true)             Q_DECL_OVERRIDE;
+    virtual void onSetOutAspectRatioMode(OutAspectRatioMode mode)           Q_DECL_OVERRIDE;
+    virtual void onSetOutAspectRatio(qreal ratio)                           Q_DECL_OVERRIDE;
+    virtual bool onSetQuality(Quality q)                                    Q_DECL_OVERRIDE;
+    virtual bool onSetOrientation(int value)                                Q_DECL_OVERRIDE;
+    virtual void onResizeRenderer(int width, int height)                    Q_DECL_OVERRIDE;
+    virtual bool onSetRegionOfInterest(const QRectF& roi)                   Q_DECL_OVERRIDE;
+    virtual QPointF onMapToFrame(const QPointF& p) const                    Q_DECL_OVERRIDE;
+    virtual QPointF onMapFromFrame(const QPointF& p) const                  Q_DECL_OVERRIDE;
 
-    virtual bool onSetBrightness(qreal brightness) Q_DECL_OVERRIDE;
-    virtual bool onSetContrast(qreal contrast) Q_DECL_OVERRIDE;
-    virtual bool onSetHue(qreal hue) Q_DECL_OVERRIDE;
-    virtual bool onSetSaturation(qreal saturation) Q_DECL_OVERRIDE;
-    virtual void onSetBackgroundColor(const QColor& color) Q_DECL_OVERRIDE;
+    virtual bool onSetBrightness(qreal brightness)                          Q_DECL_OVERRIDE;
+    virtual bool onSetContrast(qreal contrast)                              Q_DECL_OVERRIDE;
+    virtual bool onSetHue(qreal hue)                                        Q_DECL_OVERRIDE;
+    virtual bool onSetSaturation(qreal saturation)                          Q_DECL_OVERRIDE;
+    virtual void onSetBackgroundColor(const QColor& color)                  Q_DECL_OVERRIDE;
 
     // from AVOutput
 
-    virtual void setStatistics(Statistics* statistics) Q_DECL_OVERRIDE; // called by friend AVPlayer
-    virtual bool onInstallFilter(Filter *filter, int index) Q_DECL_OVERRIDE;
-    virtual bool onUninstallFilter(Filter *filter) Q_DECL_OVERRIDE;
-    virtual bool onHanlePendingTasks() Q_DECL_OVERRIDE;
+    virtual void setStatistics(Statistics* statistics)                      Q_DECL_OVERRIDE; // called by friend AVPlayer
+    virtual bool onInstallFilter(Filter *filter, int index)                 Q_DECL_OVERRIDE;
+    virtual bool onUninstallFilter(Filter *filter)                          Q_DECL_OVERRIDE;
+    virtual bool onHanlePendingTasks()                                      Q_DECL_OVERRIDE;
 };
 
 } // namespace QtAV

@@ -71,22 +71,27 @@ public:
 
     enum OutAspectRatioMode
     {
-        RendererAspectRatio // Use renderer's aspect ratio, i.e. stretch to fit the renderer rect
-      , VideoAspectRatio    // Use video's aspect ratio and align center in renderer.
-      , CustomAspectRation  // Use the ratio set by setOutAspectRatio(qreal). Mode will be set to this if that function is called
+        RendererAspectRatio ///< Use renderer's aspect ratio, i.e. stretch to fit the renderer rect
+      , VideoAspectRatio    ///< Use video's aspect ratio and align center in renderer.
+      , CustomAspectRation  ///< Use the ratio set by setOutAspectRatio(qreal). Mode will be set to this if that function is called
       //, AspectRatio4_3, AspectRatio16_9
     };
 
     enum Quality
     {
          // TODO: deprecated. simpily use int 0~100
-        QualityDefault, // good
+
+        QualityDefault, ///< good
         QualityBest,
         QualityFastest
     };
 
     template<class C>
-    static bool Register(VideoRendererId id, const char* name) { return Register(id, create<C>, name);}
+    static bool Register(VideoRendererId id, const char* name)
+    {
+        return Register(id, create<C>, name);
+    }
+
     static VideoRenderer* create(VideoRendererId id);
     static VideoRenderer* create(const char* name);
 
@@ -208,19 +213,19 @@ public:
 
     // to avoid conflicting width QWidget::window()
 
-    virtual QWindow* qwindow() { return 0;}
+    virtual QWindow* qwindow()              { return 0;}
 
     /*!
      * \brief widget
      * \return default is 0. A QWidget subclass can return \a this
      */
-    virtual QWidget* widget() { return 0; }
+    virtual QWidget* widget()               { return 0; }
 
     /*!
      * \brief graphicsItem
      * \return default is 0. A QGraphicsItem subclass can return \a this
      */
-    virtual QGraphicsItem* graphicsItem() { return 0; }
+    virtual QGraphicsItem* graphicsItem()   { return 0; }
 
     /*!
      * \brief brightness, contrast, hue, saturation
@@ -244,7 +249,10 @@ public:
      * \brief opengl
      * Currently you can only use it to set custom shader OpenGLVideo.setUserShader()
      */
-    virtual OpenGLVideo* opengl() const { return NULL;}
+    virtual OpenGLVideo* opengl() const
+    {
+        return NULL;
+    }
 
 protected:
 
@@ -265,20 +273,20 @@ protected:
 
 private: // property change. used as signals in subclasses. implemented by moc
 
-    virtual void sourceAspectRatioChanged(qreal) {}
-    virtual void outAspectRatioChanged() {}
-    virtual void outAspectRatioModeChanged() {}
-    virtual void orientationChanged() {}
-    virtual void videoRectChanged() {}
-    virtual void contentRectChanged() {}
-    virtual void regionOfInterestChanged() {}
-    virtual void videoFrameSizeChanged() {}
-    virtual void rendererSizeChanged() {}
-    virtual void brightnessChanged(qreal) {}
-    virtual void contrastChanged(qreal) {}
-    virtual void hueChanged(qreal) {}
-    virtual void saturationChanged(qreal) {}
-    virtual void backgroundColorChanged() {}
+    virtual void sourceAspectRatioChanged(qreal)    {}
+    virtual void outAspectRatioChanged()            {}
+    virtual void outAspectRatioModeChanged()        {}
+    virtual void orientationChanged()               {}
+    virtual void videoRectChanged()                 {}
+    virtual void contentRectChanged()               {}
+    virtual void regionOfInterestChanged()          {}
+    virtual void videoFrameSizeChanged()            {}
+    virtual void rendererSizeChanged()              {}
+    virtual void brightnessChanged(qreal)           {}
+    virtual void contrastChanged(qreal)             {}
+    virtual void hueChanged(qreal)                  {}
+    virtual void saturationChanged(qreal)           {}
+    virtual void backgroundColorChanged()           {}
 
 private: // mainly used by VideoOutput class
 

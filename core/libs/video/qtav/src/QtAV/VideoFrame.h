@@ -158,6 +158,8 @@ public:
     void* createInteropHandle(void* handle, SurfaceType type, int plane);
 };
 
+// -----------------------------------------------------------------------------------------------
+
 class ImageConverter;
 
 class Q_AV_EXPORT VideoFrameConverter
@@ -182,8 +184,8 @@ public:
 
 private:
 
-    mutable ImageConverter *m_cvt;
-    int m_eq[3];
+    mutable ImageConverter* m_cvt;
+    int                     m_eq[3];
 };
 
 } // namespace QtAV

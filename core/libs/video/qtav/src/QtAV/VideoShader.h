@@ -85,8 +85,8 @@ public:
      * Vertex shader in: a_Position, a_TexCoordsN (see attributeNames())
      * Vertex shader out: v_TexCoordsN
      */
-    virtual const char *vertexShader() const;
-    virtual const char *fragmentShader() const;
+    virtual const char* vertexShader()   const;
+    virtual const char* fragmentShader() const;
 
     /*!
      * \brief initialize
@@ -101,15 +101,15 @@ public:
      * 1: packed RGB
      * number of channels: yuv or plannar RGB
      */
-    int textureLocationCount() const;
-    int textureLocation(int index) const;
-    int matrixLocation() const;
-    int colorMatrixLocation() const;
-    int opacityLocation() const;
-    int channelMapLocation() const;
-    int texelSizeLocation() const;
-    int textureSizeLocation() const;
-    VideoFormat videoFormat() const;
+    int textureLocationCount()      const;
+    int textureLocation(int index)  const;
+    int matrixLocation()            const;
+    int colorMatrixLocation()       const;
+    int opacityLocation()           const;
+    int channelMapLocation()        const;
+    int texelSizeLocation()         const;
+    int textureSizeLocation()       const;
+    VideoFormat videoFormat()       const;
 
     // defalut is GL_TEXTURE_2D
 
@@ -153,7 +153,10 @@ private:
      * \brief userShaderHeader
      * Must add additional uniform declarations here
      */
-    virtual const char* userShaderHeader(QOpenGLShader::ShaderType) const {return 0;}
+    virtual const char* userShaderHeader(QOpenGLShader::ShaderType) const
+    {
+        return 0;
+    }
 
     /*!
      * \brief setUserUniformValues
@@ -162,13 +165,18 @@ private:
      * or LUT texture used by userSample() or userPostProcess() etc.
      * \return false if use use setUserUniformValue(Uniform& u), true if call program()->setUniformValue() here
      */
-    virtual bool setUserUniformValues() {return false;}
+    virtual bool setUserUniformValues()
+    {
+        return false;
+    }
 
     /*!
      * \brief setUserUniformValue
      * Update value of uniform u. Call Uniform.set(const T& value, int count); VideoShader will call Uniform.setGL() later if value is changed
      */
-    virtual void setUserUniformValue(Uniform&) {}
+    virtual void setUserUniformValue(Uniform&)
+    {
+    }
 
     /*!
      * \brief userSample
@@ -181,14 +189,20 @@ private:
      * Σ_i c_i* Σ_j k_j*x_j=Σ_i k_i* Σ_j c_j*x_j
      * Because because the input yuv is from a real rgb color, so no clamp() is required for the transformed color.
      */
-    virtual const char* userSample() const { return 0;}
+    virtual const char* userSample() const
+    {
+        return 0;
+    }
 
     /*!
      * \brief userPostProcess
      * Fragment shader only. Process rgb color
      * TODO: parameter ShaderType?
      */
-    virtual const char* userPostProcess() const {return 0;}
+    virtual const char* userPostProcess() const
+    {
+        return 0;
+    }
 
     /// User configurable shader APIs END
 
@@ -205,6 +219,8 @@ protected:
     VideoShader(VideoShaderPrivate &d);
     DPTR_DECLARE(VideoShader)
 };
+
+// -------------------------------------------------------------------
 
 class VideoMaterialPrivate;
 
