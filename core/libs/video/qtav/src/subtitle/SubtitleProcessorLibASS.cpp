@@ -41,7 +41,7 @@
 #include "Packet.h"
 #include "factory.h"
 #include "PlainText.h"
-#include "internal.h"
+#include "QtAV_internal.h"
 #include "digikam_debug.h"
 
 //#define ASS_CAPI_NS // do not unload() manually!

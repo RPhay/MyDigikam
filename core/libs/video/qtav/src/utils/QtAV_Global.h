@@ -36,7 +36,7 @@
 
 // Local includes
 
-#include "dptr.h"
+#include "QtAV_dptr.h"
 #include "digikam_export.h"
 
 #define Q_AV_EXPORT         DIGIKAM_EXPORT

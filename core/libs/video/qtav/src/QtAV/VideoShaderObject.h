@@ -24,6 +24,8 @@
 #ifndef QTAV_VIDEO_SHADER_OBJECT_H
 #define QTAV_VIDEO_SHADER_OBJECT_H
 
+// Qt includes
+
 #include <QObject>
 #include <QVector>
 
@@ -44,7 +46,8 @@ class VideoShaderObjectPrivate;
  * and object dynamic properties.
  * Property value type T is limited to float, int, unsigned(ES3.0) and QVector<T>
  */
-class Q_AV_EXPORT VideoShaderObject : public QObject, public VideoShader
+class Q_AV_EXPORT VideoShaderObject : public QObject,
+                                      public VideoShader
 {
     DPTR_DECLARE_PRIVATE(VideoShaderObject)
     Q_OBJECT
@@ -66,6 +69,8 @@ private:
 
     void programReady() Q_DECL_OVERRIDE Q_DECL_FINAL;
 };
+
+// ---------------------------------------------------------------------------------------------------
 
 class DynamicShaderObjectPrivate;
 

@@ -25,7 +25,7 @@
 
 // Local includes
 
-#include "ring.h"
+#include "QtAV_ring.h"
 
 namespace QtAV
 {

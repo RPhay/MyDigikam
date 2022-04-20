@@ -26,7 +26,6 @@ include_directories($<TARGET_PROPERTY:Qt${QT_VERSION_MAJOR}::Widgets,INTERFACE_I
 
 set(libqtav_SRCS
     ${CMAKE_CURRENT_SOURCE_DIR}/src/AVCompat.cpp
-    ${CMAKE_CURRENT_SOURCE_DIR}/src/QtAV_Global.cpp
     ${CMAKE_CURRENT_SOURCE_DIR}/src/subtitle/CharsetDetector.cpp
     ${CMAKE_CURRENT_SOURCE_DIR}/src/subtitle/PlainText.cpp
     ${CMAKE_CURRENT_SOURCE_DIR}/src/subtitle/PlayerSubtitle.cpp
@@ -36,7 +35,8 @@ set(libqtav_SRCS
     ${CMAKE_CURRENT_SOURCE_DIR}/src/subtitle/SubImage.cpp
     ${CMAKE_CURRENT_SOURCE_DIR}/src/utils/GPUMemCopy.cpp
     ${CMAKE_CURRENT_SOURCE_DIR}/src/AudioThread.cpp
-    ${CMAKE_CURRENT_SOURCE_DIR}/src/utils/internal.cpp
+    ${CMAKE_CURRENT_SOURCE_DIR}/src/utils/QtAV_Global.cpp
+    ${CMAKE_CURRENT_SOURCE_DIR}/src/utils/QtAV_internal.cpp
     ${CMAKE_CURRENT_SOURCE_DIR}/src/AVThread.cpp
     ${CMAKE_CURRENT_SOURCE_DIR}/src/AudioFormat.cpp
     ${CMAKE_CURRENT_SOURCE_DIR}/src/AudioFrame.cpp

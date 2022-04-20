@@ -135,7 +135,7 @@ class DPtrPrivate
 {
 public:
 
-    virtual ~DPtrPrivate()               {}
+    virtual ~DPtrPrivate()               {                     }
     inline void DPTR_setPublic(PUB* pub) { dptr_p_ptr = pub;   }
 
 protected:

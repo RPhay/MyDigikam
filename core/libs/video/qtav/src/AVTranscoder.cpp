@@ -26,7 +26,7 @@
 #include "AVMuxer.h"
 #include "EncodeFilter.h"
 #include "Statistics.h"
-#include "BlockingQueue.h"
+#include "QtAV_BlockingQueue.h"
 #include "digikam_debug.h"
 
 namespace QtAV

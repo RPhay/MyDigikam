@@ -25,7 +25,7 @@
 //#define CAPI_IS_LAZY_RESOLVE 0
 
 #ifndef CAPI_LINK_ASS
-#   include "capi.h"
+#   include "QtAV_capi.h"
 #endif
 
 #include "ass_api.h" //include last to avoid covering types later

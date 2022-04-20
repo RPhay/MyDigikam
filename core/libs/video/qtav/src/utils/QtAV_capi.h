@@ -27,15 +27,15 @@
  * ============================================================ */
 
 /**
- * 
+ *
  * This header only tool helps you use C APIs in a shared library by dynamically loading instead of linking against it with minimal efforts.
- * 
+ *
  * Only depends on std C++
- * 
+ *
  * Here is a simple zlib example, if you want use zlib functions, inherits class zlib::api.
- * 
+ *
  * >define a class with zlib functions in zlib_api.h
- * 
+ *
  *     #ifndef CAPI_LINK_ZLIB
  *     namespace zlib { //need a unique namespace
  *     namespace capi {
@@ -47,7 +47,7 @@
  *     }
  *     #endif
  *     }
- * 
+ *
  *     namespace zlib { //need a unique namespace
  *     #ifndef CAPI_LINK_ZLIB
  *     using namespace capi;
@@ -71,16 +71,16 @@
  *     #else
  *     using namespace zlib;
  *     #endif
- * 
+ *
  * `zlib_api.h` is the header you will use
- * 
+ *
  * >zlib_api.cpp (some code can be generated from  tools/mkapi)
- * 
+ *
  *     #define DEBUG //log dll load and symbol resolve
  *     //#define CAPI_IS_LAZY_RESOLVE 0 //define it will resolve all symbols in constructor
- *     #include "capi.h"
+ *     #include "QtAV_capi.h"
  *     #include "zlib_api.h" //include last because zlib.h was in namespace capi to avoid covering types later
- * 
+ *
  *     namespace zlib {
  *     static const char* zlib[] = {
  *     #ifdef CAPI_TARGET_OS_WIN
@@ -99,14 +99,14 @@
  *     CAPI_DEFINE(const char*, zlibVersion, CAPI_ARG0())
  *     CAPI_DEFINE(const char*, zError, CAPI_ARG1(int))
  *     } //namespace zlib
- * 
+ *
  * >test.cpp (dynamically loaded symbols, not link to zlib):
- * 
+ *
  *     //#define ZLIB_CAPI_NS // namespace style
  *     //#define CAPI_LINK_ZLIB // direct linkt to zlib. add -lz is required
  *     #include <stdio.h>
  *     #include "zlib_api.h"
- * 
+ *
  *     class test_zlib_api
  *     #ifndef ZLIB_CAPI_NS
  *                 : protected zlib::api // will unload library in dtor
@@ -151,7 +151,7 @@
  *
  * ### Lazy Resolve
  *
- * The symbol is resolved at the first call. You can add `#define CAPI_IS_LAZY_RESOLVE 0` in zlib_api.cpp before `#include "capi.h"` to resolve all symbols as soon as the library is loaded.
+ * The symbol is resolved at the first call. You can add `#define CAPI_IS_LAZY_RESOLVE 0` in zlib_api.cpp before `#include "QtAV_capi.h"` to resolve all symbols as soon as the library is loaded.
  *
  * ### Auto Code Generation
  *
@@ -470,7 +470,7 @@ namespace internal
 {
 
 // the following code is for the case DLL=QLibrary + QT_NO_CAST_FROM_ASCII
-// you can add a new qstr_wrap like class and a specialization of dso_trait to support a new string type before/after include "capi.h"
+// you can add a new qstr_wrap like class and a specialization of dso_trait to support a new string type before/after include "QtAV_capi.h"
 
 struct qstr_wrap
 {

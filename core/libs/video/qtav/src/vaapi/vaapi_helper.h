@@ -45,7 +45,7 @@
 
 // Local includes
 
-#include "SharedPtr.h"
+#include "QtAV_SharedPtr.h"
 #include "digikam_debug.h"
 
 namespace QtAV

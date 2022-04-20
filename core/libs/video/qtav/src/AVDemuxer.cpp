@@ -44,7 +44,7 @@ typedef QTime QElapsedTimer;
 
 #include "MediaIO.h"
 #include "AVCompat.h"
-#include "internal.h"
+#include "QtAV_internal.h"
 #include "digikam_debug.h"
 
 namespace QtAV

@@ -28,7 +28,7 @@
 #include "AudioFrame.h"
 #include "VideoFrame.h"
 #include "AVCompat.h"
-#include "internal.h"
+#include "QtAV_internal.h"
 #include "digikam_debug.h"
 
 // KDE includes

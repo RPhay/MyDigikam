@@ -42,7 +42,7 @@
 #endif
 
 #include "AVCompat.h"
-#include "BlockingQueue.h"
+#include "QtAV_BlockingQueue.h"
 
 /*
  * TODO: VC1, HEVC bsf

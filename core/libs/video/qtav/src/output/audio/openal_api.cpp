@@ -28,7 +28,7 @@
 //#define CAPI_IS_LAZY_RESOLVE 0
 
 #ifndef CAPI_LINK_OPENAL
-#   include "capi.h"
+#   include "QtAV_capi.h"
 #endif
 
 #include "openal_api.h" // include last to avoid covering types later

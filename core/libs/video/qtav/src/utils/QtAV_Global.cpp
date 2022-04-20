@@ -43,7 +43,7 @@ using QRegExp = QRegularExpression;
 
 #include "QtAV_Version.h"
 #include "AVCompat.h"
-#include "internal.h"
+#include "QtAV_internal.h"
 #include "digikam_debug.h"
 
 unsigned QtAV_Version()

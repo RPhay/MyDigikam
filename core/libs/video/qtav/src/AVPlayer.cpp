@@ -45,7 +45,7 @@
 #include "VideoThread.h"
 #include "AVDemuxThread.h"
 #include "AVCompat.h"
-#include "internal.h"
+#include "QtAV_internal.h"
 #include "digikam_debug.h"
 extern "C" {
 #include <libavutil/mathematics.h>

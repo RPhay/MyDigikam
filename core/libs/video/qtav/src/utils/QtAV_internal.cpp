@@ -21,7 +21,7 @@
  *
  * ============================================================ */
 
-#include "internal.h"
+#include "QtAV_internal.h"
 
 // Qt includes
 

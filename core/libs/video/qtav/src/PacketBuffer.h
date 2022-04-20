@@ -26,8 +26,8 @@
 
 #include <QQueue>
 #include "Packet.h"
-#include "BlockingQueue.h"
-#include "ring.h"
+#include "QtAV_BlockingQueue.h"
+#include "QtAV_ring.h"
 
 namespace QtAV
 {

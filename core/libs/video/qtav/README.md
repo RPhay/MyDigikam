@@ -16,6 +16,7 @@ x Use KDE i18n() instead tr().
 x Use cmake to find libuchardet dependency.
 x Add SSE2 and SSE4.1 support with CMake.
 x Remove QML support.
+x Fix compilation under native Windows without DirectX (OpenGL).
 * Remove support of Qt version < 5.
 * Fix header guards.
 * Fix includes rules/order from Qt and local.
