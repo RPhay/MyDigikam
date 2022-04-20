@@ -31,8 +31,8 @@
 #include <sys/system_properties.h>
 #include <cmath>
 #endif
-#include "mkid.h"
-#include "factory.h"
+#include "QtAV_mkid.h"
+#include "QtAV_factory.h"
 #include "digikam_debug.h"
 
 // TODO: native sample rate, so AUDIO_OUTPUT_FLAG_FAST is enabled

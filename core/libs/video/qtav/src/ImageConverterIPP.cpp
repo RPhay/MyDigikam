@@ -24,8 +24,8 @@
 #include "ImageConverter.h"
 #include "ImageConverter_p.h"
 #include "AVCompat.h"
-#include "factory.h"
-#include "mkid.h"
+#include "QtAV_factory.h"
+#include "QtAV_mkid.h"
 #if QTAV_HAVE(IPP)
 #include <ipp.h>
 #endif

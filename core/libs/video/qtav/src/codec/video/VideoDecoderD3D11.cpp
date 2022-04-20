@@ -24,8 +24,8 @@
 #include <initguid.h> //IID_ID3D11VideoContext
 
 #include "VideoDecoderD3D.h"
-#include "factory.h"
-#include "mkid.h"
+#include "QtAV_factory.h"
+#include "QtAV_mkid.h"
 
 #define DX_LOG_COMPONENT "D3D11VA"
 

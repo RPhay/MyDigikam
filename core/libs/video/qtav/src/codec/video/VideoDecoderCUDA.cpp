@@ -35,7 +35,7 @@
 
 #include "Packet.h"
 #include "AVDecoder_p.h"
-#include "factory.h"
+#include "QtAV_factory.h"
 
 #if QTAV_HAVE(DLLAPI_CUDA)
 #   include "dllapi.h"

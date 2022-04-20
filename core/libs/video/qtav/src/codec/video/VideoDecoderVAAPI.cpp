@@ -38,7 +38,7 @@ extern "C"
 }
 
 #include "AVCompat.h"
-#include "factory.h"
+#include "QtAV_factory.h"
 #include "SurfaceInteropVAAPI.h"
 #include "digikam_debug.h"
 

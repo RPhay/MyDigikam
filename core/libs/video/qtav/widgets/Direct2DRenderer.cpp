@@ -32,7 +32,7 @@
 // Local includes
 
 #include "VideoRenderer_p.h"
-#include "factory.h"
+#include "QtAV_factory.h"
 
 // Windows includes
 

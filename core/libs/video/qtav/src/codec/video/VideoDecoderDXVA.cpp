@@ -29,8 +29,8 @@
 
 #include "VideoDecoderD3D.h"
 #include "AVCompat.h"
-#include "factory.h"
-//#include "mkid.h"
+#include "QtAV_factory.h"
+//#include "QtAV_mkid.h"
 #include "digikam_debug.h"
 #include "directx/SurfaceInteropD3D9.h"
 

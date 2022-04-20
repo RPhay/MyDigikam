@@ -41,9 +41,10 @@
 
 // Local includes
 
-#include "singleton.h"
+#include "QtAV_singleton.h"
 
 #if 0
+
 #include <loki/Singleton.h>
 
 template<class Class>
@@ -52,7 +53,7 @@ Class& Loki::Singleton<Class>::Instance()
     return Loki::SingletonHolder<Class>::Instance();
 }
 
-#endif
+#endif // 0
 
 #define FACTORY_REGISTER(BASE, _ID, NAME) FACTORY_REGISTER_ID_TYPE(BASE, BASE##Id_##_ID, BASE##_ID, NAME)
 #define FACTORY_REGISTER_ID_TYPE(BASE, ID, TYPE, NAME) \
@@ -90,6 +91,7 @@ Class& Loki::Singleton<Class>::Instance()
     } \
     T##Id T::id(const char* name) { DBG(#T "::id(\"%s\")\n", name); return T##Factory::Instance().id(name, false);} \
     const char* T::name(T##Id id) {return T##Factory::Instance().name(id);}
+
 /*
  * Used in library, can not be used both in library and outside. so we don't need export it
  */
@@ -108,8 +110,9 @@ public:
     template<class C>
 
     bool register_(const ID& id)
-    { 
+    {
         // register_<C>(id, name)
+
         std::pair<typename CreatorMap::iterator, bool> result = creators.insert(std::make_pair(id, create<C>));
 
         return result.second;
@@ -135,7 +138,7 @@ public:
 
 protected:
 
-    Factory() {}
+    Factory()          {}
     virtual ~Factory() {}
 
 private:
@@ -154,10 +157,12 @@ private:
 };
 
 #if 0
+
 template<typename Id, typename T, class Class>
 typename Factory<Id, T, Class>::CreatorMap Factory<Id, T, Class>::creators;
 template<typename Id, typename T, class Class>
 typename Factory<Id, T, Class>::NameMap Factory<Id, T, Class>::name_map;
+
 #endif
 
 template<typename Id, typename T, class Class>
@@ -169,6 +174,7 @@ typename Factory<Id, T, Class>::Type *Factory<Id, T, Class>::create(const ID& id
     {
         DBG("Unknown id ");
         return 0;
+
         //throw std::runtime_error(err_msg.arg(id).toStdString());
     }
 
@@ -179,6 +185,7 @@ template<typename Id, typename T, class Class>
 bool Factory<Id, T, Class>::registerCreator(const ID& id, const Creator& callback)
 {
     //DBG("%p id [%d] registered. size=%d\n", &Factory<Id, T, Class>::Instance(), id, ids.size());
+
     ids.insert(ids.end(), id);
 
     return creators.insert(typename CreatorMap::value_type(id, callback)).second;
@@ -194,6 +201,7 @@ template<typename Id, typename T, class Class>
 bool Factory<Id, T, Class>::unregisterCreator(const ID& id)
 {
     //DBG("Id [%d] unregistered\n", id);
+
     ids.erase(std::remove(ids.begin(), ids.end(), id), ids.end());
     name_map.erase(id);
 
@@ -208,7 +216,8 @@ typename Factory<Id, T, Class>::ID Factory<Id, T, Class>::id(const char* name, b
 #   define strcasecmp(s1, s2) _strcmpi(s1, s2)
 #endif
 
-    //need 'typename'  because 'Factory<Id, T, Class>::NameMap' is a dependent scope
+    // need 'typename'  because 'Factory<Id, T, Class>::NameMap' is a dependent scope
+
     for (typename NameMap::const_iterator it = name_map.begin(); it!=name_map.end(); ++it)
     {
         if (caseSensitive)
@@ -227,7 +236,7 @@ typename Factory<Id, T, Class>::ID Factory<Id, T, Class>::id(const char* name, b
 
     DBG("Not found\n");
 
-    return ID(); //can not return ref. TODO: Use a ID wrapper class
+    return ID(); // can not return ref. TODO: Use a ID wrapper class
 }
 
 template<typename Id, typename T, class Class>
@@ -251,6 +260,7 @@ template<typename Id, typename T, class Class>
 std::vector<const char*> Factory<Id, T, Class>::registeredNames() const
 {
     std::vector<const char*> names;
+
     for (typename NameMap::const_iterator it = name_map.begin(); it != name_map.end(); ++it)
     {
         names.push_back((*it).second);
@@ -263,6 +273,7 @@ template<typename Id, typename T, class Class>
 size_t Factory<Id, T, Class>::count() const
 {
     //DBG("%p size = %d", &Factory<Id, T, Class>::Instance(), ids.size());
+
     return ids.size();
 }
 
@@ -271,9 +282,13 @@ typename Factory<Id, T, Class>::Type* Factory<Id, T, Class>::getRandom()
 {
     srand(time(0));
     int index = rand() % ids.size();
+
     //DBG("random %d/%d", index, ids.size());
+
     ID new_eid = ids.at(index);
+
     //DBG("id %d", new_eid);
+
     return create(new_eid);
 }
 

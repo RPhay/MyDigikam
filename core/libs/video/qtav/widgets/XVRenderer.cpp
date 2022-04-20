@@ -46,7 +46,7 @@
 
 // Local includes
 
-#include "factory.h"
+#include "QtAV_factory.h"
 
 // http://huangbster.i.sohu.com/blog/view/256490057.htm
 

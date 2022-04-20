@@ -25,13 +25,13 @@
 #define QTAV_SINGLETON_H
 
 #include <cstdio>
-#include <cstdlib>      // harmattan: atexit
+#include <cstdlib>          // harmattan: atexit
 #include <cassert>
 
 #define USE_EXCEPTION 0
 
 #if USE_EXCEPTION
-#   include <stdexcept>    // std::string breaks abi
+#   include <stdexcept>     // std::string breaks abi
 #endif
 
 #ifdef DEBUG
@@ -82,7 +82,7 @@ private:
 // TODO: use static Singleton<T> inst; return inst;
 
 template<typename T>
-T* Singleton<T>::pInstance_ = 0; //Why it will be initialized twice? The order?
+T* Singleton<T>::pInstance_ = 0; // Why it will be initialized twice? The order?
 
 template<typename T>
 bool Singleton<T>::destroyed_ = false;

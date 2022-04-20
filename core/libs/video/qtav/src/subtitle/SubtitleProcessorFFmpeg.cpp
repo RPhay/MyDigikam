@@ -29,7 +29,7 @@
 
 // Local includes
 
-#include "factory.h"
+#include "QtAV_factory.h"
 #include "AVDemuxer.h"
 #include "Packet.h"
 #include "AVCompat.h"

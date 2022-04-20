@@ -25,7 +25,7 @@
 #include "AVDecoder_p.h"
 #include "Packet.h"
 #include "AVCompat.h"
-#include "factory.h"
+#include "QtAV_factory.h"
 
 #include <libavcodec/avcodec.h>
 

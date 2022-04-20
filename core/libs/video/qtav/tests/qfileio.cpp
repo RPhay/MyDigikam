@@ -29,8 +29,8 @@
 // Local includes
 
 #include "MediaIO_p.h"
-#include "mkid.h"
-#include "factory.h"
+#include "QtAV_mkid.h"
+#include "QtAV_factory.h"
 #include "digikam_debug.h"
 
 int main(int argc, char** argv)

@@ -22,8 +22,8 @@
  * ============================================================ */
 
 #include "AudioOutputBackend.h"
-#include "mkid.h"
-#include "factory.h"
+#include "QtAV_mkid.h"
+#include "QtAV_factory.h"
 #include <QLibrary>
 #include <QSemaphore>
 #include "AVCompat.h"

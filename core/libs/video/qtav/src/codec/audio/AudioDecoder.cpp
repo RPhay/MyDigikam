@@ -27,7 +27,7 @@
 
 #include "AVDecoder_p.h"
 #include "AVCompat.h"
-#include "factory.h"
+#include "QtAV_factory.h"
 #include "AudioResampler.h"
 #include "digikam_debug.h"
 

@@ -29,8 +29,8 @@
 #include <QMutex> //qt4
 #include <QWaitCondition>
 #include <AudioToolbox/AudioToolbox.h>
-#include "mkid.h"
-#include "factory.h"
+#include "QtAV_mkid.h"
+#include "QtAV_factory.h"
 #include "digikam_debug.h"
 
 namespace QtAV

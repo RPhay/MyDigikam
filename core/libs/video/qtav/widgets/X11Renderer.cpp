@@ -48,7 +48,7 @@
 #include <X11/extensions/XShm.h>
 #include <unistd.h> //usleep
 
-//#include "factory.h"
+//#include "QtAV_factory.h"
 //scale: http://www.opensource.apple.com/source/X11apps/X11apps-14/xmag/xmag-X11R7.0-1.0.1/Scale.c
 #define FFALIGN(x, a) (((x)+(a)-1)&~((a)-1))
 

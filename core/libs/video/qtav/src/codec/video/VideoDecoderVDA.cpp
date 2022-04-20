@@ -26,7 +26,7 @@
 #include "GPUMemCopy.h"
 #include "SurfaceInterop.h"
 #include "AVCompat.h"
-#include "factory.h"
+#include "QtAV_factory.h"
 #include "OpenGLHelper.h"
 
 #include <assert.h>

@@ -27,8 +27,8 @@
 
 #include "AVEncoder_p.h"
 #include "AVCompat.h"
-#include "mkid.h"
-#include "factory.h"
+#include "QtAV_mkid.h"
+#include "QtAV_factory.h"
 #include "QtAV_Version.h"
 #include "digikam_debug.h"
 

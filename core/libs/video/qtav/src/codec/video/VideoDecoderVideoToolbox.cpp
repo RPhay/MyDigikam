@@ -25,7 +25,7 @@
 #include "VideoDecoderFFmpegHW_p.h"
 #include "GPUMemCopy.h"
 #include "AVCompat.h"
-#include "factory.h"
+#include "QtAV_factory.h"
 #include "SurfaceInteropCV.h"
 
 //#include <OpenGLES/EAGL.h>

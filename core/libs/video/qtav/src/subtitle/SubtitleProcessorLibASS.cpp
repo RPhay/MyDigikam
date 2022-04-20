@@ -39,7 +39,7 @@
 // Local includes
 
 #include "Packet.h"
-#include "factory.h"
+#include "QtAV_factory.h"
 #include "PlainText.h"
 #include "QtAV_internal.h"
 #include "digikam_debug.h"

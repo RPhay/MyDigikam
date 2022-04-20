@@ -36,7 +36,7 @@
 
 // Local includes
 
-#include "factory.h"
+#include "QtAV_factory.h"
 
 #define USE_GRAPHICS 0
 

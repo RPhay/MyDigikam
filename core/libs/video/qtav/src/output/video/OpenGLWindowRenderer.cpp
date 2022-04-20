@@ -23,7 +23,7 @@
 
 #include "OpenGLWindowRenderer.h"
 #include "OpenGLRendererBase_p.h"
-#include "factory.h"
+#include "QtAV_factory.h"
 #include <QResizeEvent>
 #include "digikam_debug.h"
 

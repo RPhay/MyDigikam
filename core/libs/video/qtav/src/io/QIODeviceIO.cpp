@@ -25,8 +25,8 @@
 
 // Local includes
 
-#include "mkid.h"
-#include "factory.h"
+#include "QtAV_mkid.h"
+#include "QtAV_factory.h"
 #include "digikam_debug.h"
 
 namespace QtAV
