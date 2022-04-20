@@ -22,8 +22,7 @@
  *
  * ============================================================ */
 
-#include "videodecoder.h"
-#include "videodecoder_p.h"
+#include "videothumbdecoder_p.h"
 
 // Local includes
 
@@ -32,19 +31,19 @@
 namespace Digikam
 {
 
-VideoDecoder::VideoDecoder(const QString& filename)
+VideoThumbDecoder::VideoThumbDecoder(const QString& filename)
     : d(new Private)
 {
     initialize(filename);
 }
 
-VideoDecoder::~VideoDecoder()
+VideoThumbDecoder::~VideoThumbDecoder()
 {
     destroy();
     delete d;
 }
 
-void VideoDecoder::initialize(const QString& filename)
+void VideoThumbDecoder::initialize(const QString& filename)
 {
     d->lastWidth  = -1;
     d->lastHeight = -1;
@@ -89,12 +88,12 @@ void VideoDecoder::initialize(const QString& filename)
     }
 }
 
-bool VideoDecoder::getInitialized() const
+bool VideoThumbDecoder::getInitialized() const
 {
     return d->initialized;
 }
 
-void VideoDecoder::destroy()
+void VideoThumbDecoder::destroy()
 {
     d->deleteFilterGraph();
 
@@ -130,7 +129,7 @@ void VideoDecoder::destroy()
     }
 }
 
-QString VideoDecoder::getCodec() const
+QString VideoThumbDecoder::getCodec() const
 {
     QString codecName;
 
@@ -142,7 +141,7 @@ QString VideoDecoder::getCodec() const
     return codecName;
 }
 
-int VideoDecoder::getWidth() const
+int VideoThumbDecoder::getWidth() const
 {
     if (d->pVideoCodecContext)
     {
@@ -152,7 +151,7 @@ int VideoDecoder::getWidth() const
     return -1;
 }
 
-int VideoDecoder::getHeight() const
+int VideoThumbDecoder::getHeight() const
 {
     if (d->pVideoCodecContext)
     {
@@ -162,7 +161,7 @@ int VideoDecoder::getHeight() const
     return -1;
 }
 
-int VideoDecoder::getDuration() const
+int VideoThumbDecoder::getDuration() const
 {
     if (d->pFormatContext)
     {
@@ -172,7 +171,7 @@ int VideoDecoder::getDuration() const
     return 0;
 }
 
-void VideoDecoder::seek(int timeInSeconds)
+void VideoThumbDecoder::seek(int timeInSeconds)
 {
     if (!d->allowSeek)
     {
@@ -225,7 +224,7 @@ void VideoDecoder::seek(int timeInSeconds)
     }
 }
 
-bool VideoDecoder::decodeVideoFrame() const
+bool VideoThumbDecoder::decodeVideoFrame() const
 {
     bool frameFinished = false;
 
@@ -242,7 +241,7 @@ bool VideoDecoder::decodeVideoFrame() const
     return frameFinished;
 }
 
-void VideoDecoder::getScaledVideoFrame(int scaledSize,
+void VideoThumbDecoder::getScaledVideoFrame(int scaledSize,
                                        bool maintainAspectRatio,
                                        VideoFrame& videoFrame)
 {

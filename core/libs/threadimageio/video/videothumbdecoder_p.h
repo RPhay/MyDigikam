@@ -22,10 +22,10 @@
  *
  * ============================================================ */
 
-#ifndef DIGIKAM_VIDEO_DECODER_PRIVATE_H
-#define DIGIKAM_VIDEO_DECODER_PRIVATE_H
+#ifndef DIGIKAM_VIDEO_THUMB_DECODER_PRIVATE_H
+#define DIGIKAM_VIDEO_THUMB_DECODER_PRIVATE_H
 
-#include "videodecoder.h"
+#include "videothumbdecoder.h"
 
 // FFMpeg includes
 
@@ -43,7 +43,7 @@ extern "C"
 namespace Digikam
 {
 
-class Q_DECL_HIDDEN VideoDecoder::Private
+class Q_DECL_HIDDEN VideoThumbDecoder::Private
 {
 public:
 
@@ -115,4 +115,4 @@ private:
 
 } // namespace Digikam
 
-#endif // DIGIKAM_VIDEO_DECODER_PRIVATE_H
+#endif // DIGIKAM_VIDEO_THUMB_DECODER_PRIVATE_H

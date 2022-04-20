@@ -36,7 +36,7 @@
 
 // Local includes
 
-#include "videodecoder.h"
+#include "videothumbdecoder.h"
 #include "videostripfilter.h"
 #include "videothumbwriter.h"
 #include "digikam_debug.h"
@@ -167,7 +167,7 @@ void VideoThumbnailer::generateThumbnail(const QString& videoFile,
                                          VideoThumbWriter& imageWriter,
                                          QImage &image)
 {
-    VideoDecoder movieDecoder(videoFile);
+    VideoThumbDecoder movieDecoder(videoFile);
 
     if (movieDecoder.getInitialized())
     {
@@ -203,7 +203,7 @@ void VideoThumbnailer::generateThumbnail(const QString& videoFile,
     }
 }
 
-void VideoThumbnailer::generateSmartThumbnail(VideoDecoder& movieDecoder,
+void VideoThumbnailer::generateSmartThumbnail(VideoThumbDecoder& movieDecoder,
                                               VideoFrame& videoFrame)
 {
     vector<VideoFrame> videoFrames(d->SMART_FRAME_ATTEMPTS);

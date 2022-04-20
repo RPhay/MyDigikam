@@ -22,7 +22,7 @@
  *
  * ============================================================ */
 
-#include "videodecoder_p.h"
+#include "videothumbdecoder_p.h"
 
 // Local includes
 
@@ -31,7 +31,7 @@
 namespace Digikam
 {
 
-VideoDecoder::Private::Private()
+VideoThumbDecoder::Private::Private()
     : videoStream           (-1),
       pFormatContext        (nullptr),
       pVideoCodecContext    (nullptr),
@@ -53,11 +53,11 @@ VideoDecoder::Private::Private()
 {
 }
 
-VideoDecoder::Private::~Private()
+VideoThumbDecoder::Private::~Private()
 {
 }
 
-void VideoDecoder::Private::createAVFrame(AVFrame** const avFrame,
+void VideoThumbDecoder::Private::createAVFrame(AVFrame** const avFrame,
                                           quint8** const frameBuffer,
                                           int width,
                                           int height,
@@ -70,7 +70,7 @@ void VideoDecoder::Private::createAVFrame(AVFrame** const avFrame,
     av_image_fill_arrays((*avFrame)->data, (*avFrame)->linesize, *frameBuffer, format, width, height, 1);
 }
 
-bool VideoDecoder::Private::initializeVideo()
+bool VideoThumbDecoder::Private::initializeVideo()
 {
     for (unsigned int i = 0 ; i < pFormatContext->nb_streams ; ++i)
     {
@@ -115,7 +115,7 @@ bool VideoDecoder::Private::initializeVideo()
     return true;
 }
 
-bool VideoDecoder::Private::decodeVideoPacket() const
+bool VideoThumbDecoder::Private::decodeVideoPacket() const
 {
     if (pPacket->stream_index != videoStream)
     {
@@ -150,7 +150,7 @@ bool VideoDecoder::Private::decodeVideoPacket() const
     return (frameFinished > 0);
 }
 
-int VideoDecoder::Private::decodeVideoNew(AVCodecContext* const avContext,
+int VideoThumbDecoder::Private::decodeVideoNew(AVCodecContext* const avContext,
                                           AVFrame* const avFrame,
                                           int* gotFrame,
                                           AVPacket* const avPacket) const
@@ -186,7 +186,7 @@ int VideoDecoder::Private::decodeVideoNew(AVCodecContext* const avContext,
     return 0;
 }
 
-bool VideoDecoder::Private::getVideoPacket()
+bool VideoThumbDecoder::Private::getVideoPacket()
 {
     bool framesAvailable = true;
     bool frameDecoded    = false;
@@ -220,7 +220,7 @@ bool VideoDecoder::Private::getVideoPacket()
     return frameDecoded;
 }
 
-void VideoDecoder::Private::deleteFilterGraph()
+void VideoThumbDecoder::Private::deleteFilterGraph()
 {
     if (filterGraph)
     {
@@ -230,7 +230,7 @@ void VideoDecoder::Private::deleteFilterGraph()
     }
 }
 
-bool VideoDecoder::Private::initFilterGraph(enum AVPixelFormat pixfmt,
+bool VideoThumbDecoder::Private::initFilterGraph(enum AVPixelFormat pixfmt,
                                             int width, int height)
 {
     AVFilterInOut* inputs  = nullptr;
@@ -287,7 +287,7 @@ bool VideoDecoder::Private::initFilterGraph(enum AVPixelFormat pixfmt,
     return true;
 }
 
-bool VideoDecoder::Private::processFilterGraph(AVFrame* const dst,
+bool VideoThumbDecoder::Private::processFilterGraph(AVFrame* const dst,
                                                const AVFrame* const src,
                                                enum AVPixelFormat pixfmt,
                                                int width, int height)
@@ -330,7 +330,7 @@ bool VideoDecoder::Private::processFilterGraph(AVFrame* const dst,
     return true;
 }
 
-void VideoDecoder::Private::convertAndScaleFrame(AVPixelFormat format,
+void VideoThumbDecoder::Private::convertAndScaleFrame(AVPixelFormat format,
                                                  int scaledSize,
                                                  bool maintainAspectRatio,
                                                  int& scaledWidth,
@@ -420,7 +420,7 @@ void VideoDecoder::Private::convertAndScaleFrame(AVPixelFormat format,
     pFrameBuffer = convertedFrameBuffer;
 }
 
-void VideoDecoder::Private::calculateDimensions(int squareSize,
+void VideoThumbDecoder::Private::calculateDimensions(int squareSize,
                                                 bool maintainAspectRatio,
                                                 int& destWidth,
                                                 int& destHeight)

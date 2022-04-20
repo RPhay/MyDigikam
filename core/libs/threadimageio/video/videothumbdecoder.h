@@ -22,8 +22,8 @@
  *
  * ============================================================ */
 
-#ifndef DIGIKAM_VIDEO_DECODER_H
-#define DIGIKAM_VIDEO_DECODER_H
+#ifndef DIGIKAM_VIDEO_THUMB_DECODER_H
+#define DIGIKAM_VIDEO_THUMB_DECODER_H
 
 // Qt includes
 
@@ -36,12 +36,12 @@
 namespace Digikam
 {
 
-class VideoDecoder
+class VideoThumbDecoder
 {
 public:
 
-    explicit VideoDecoder(const QString& filename);
-    ~VideoDecoder();
+    explicit VideoThumbDecoder(const QString& filename);
+    ~VideoThumbDecoder();
 
 public:
 
@@ -63,8 +63,8 @@ public:
 private:
 
     // Disable
-    VideoDecoder(const VideoDecoder&)            = delete;
-    VideoDecoder& operator=(const VideoDecoder&) = delete;
+    VideoThumbDecoder(const VideoThumbDecoder&)            = delete;
+    VideoThumbDecoder& operator=(const VideoThumbDecoder&) = delete;
 
 private:
 
@@ -74,4 +74,4 @@ private:
 
 } // namespace Digikam
 
-#endif // DIGIKAM_VIDEO_DECODER_H
+#endif // DIGIKAM_VIDEO_THUMB_DECODER_H

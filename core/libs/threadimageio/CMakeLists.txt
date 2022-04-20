@@ -47,8 +47,8 @@ if(ENABLE_MEDIAPLAYER)
     set(libthreadimageio_SRCS
         ${libthreadimageio_SRCS}
         ${CMAKE_CURRENT_SOURCE_DIR}/video/videostripfilter.cpp
-        ${CMAKE_CURRENT_SOURCE_DIR}/video/videodecoder.cpp
-        ${CMAKE_CURRENT_SOURCE_DIR}/video/videodecoder_p.cpp
+        ${CMAKE_CURRENT_SOURCE_DIR}/video/videothumbdecoder.cpp
+        ${CMAKE_CURRENT_SOURCE_DIR}/video/videothumbdecoder_p.cpp
         ${CMAKE_CURRENT_SOURCE_DIR}/video/videothumbwriter.cpp
         ${CMAKE_CURRENT_SOURCE_DIR}/video/videothumbnailer.cpp
     )
