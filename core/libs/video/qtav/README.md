@@ -35,15 +35,16 @@ UNMAINTAINED FEATURES:
 - OpenSL-ES support.
 - WinRT support.
 - Android support.
+- IOS support.
 
 TODO:
 
 + Use cmake to find DirectX dependencies (Native Windows only):
-  - xaudio2
+  x xaudio2
   - direct2d
   - dxva
-  - d3d11va
-  - dsound
+  x d3d11va
+  x dsound
   - gdiplus
 
 + Use cmake to find CUDA Toolkit dependencies.

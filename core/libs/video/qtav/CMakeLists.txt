@@ -145,6 +145,14 @@ if(D3D11_FOUND)
 
 endif()
 
+if(DIRECTSOUND_FOUND)
+
+    set(libqtav_SRCS ${libqtav_SRCS}
+        ${CMAKE_CURRENT_SOURCE_DIR}/src/output/audio/AudioOutputDSound.cpp
+    )
+
+endif()
+
 if(XAUDIO2_FOUND)
 
     set(libqtav_SRCS ${libqtav_SRCS}

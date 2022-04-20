@@ -32,6 +32,7 @@ if(ENABLE_MEDIAPLAYER)
 
         find_package(D3D11)
         find_package(XAudio2)
+        find_package(DirectSound)
 
     endif()
 
@@ -70,22 +71,23 @@ if(ENABLE_MEDIAPLAYER)
 
     if (${FFMPEG_FOUND})
 
-        MACRO_BOOL_TO_01(ASS_FOUND        HAVE_LIBASS)
-        MACRO_BOOL_TO_01(uchardet_FOUND   HAVE_LIBUCHARDET)
-        MACRO_BOOL_TO_01(OPENAL_FOUND     HAVE_LIBOPENAL)
-        MACRO_BOOL_TO_01(PORTAUDIO_FOUND  HAVE_LIBPORTAUDIO)
-        MACRO_BOOL_TO_01(PULSEAUDIO_FOUND HAVE_LIBPULSEAUDIO)
-        MACRO_BOOL_TO_01(VAAPI_FOUND      HAVE_LIBVAAPI)
-        MACRO_BOOL_TO_01(AVCODEC_FOUND    HAVE_LIBAVCODEC)
-        MACRO_BOOL_TO_01(AVDEVICE_FOUND   HAVE_LIBAVDEVICE)
-        MACRO_BOOL_TO_01(AVFILTER_FOUND   HAVE_LIBAVFILTER)
-        MACRO_BOOL_TO_01(AVFORMAT_FOUND   HAVE_LIBAVFORMAT)
-        MACRO_BOOL_TO_01(AVUTIL_FOUND     HAVE_LIBAVUTIL)
-        MACRO_BOOL_TO_01(SWSCALE_FOUND    HAVE_LIBSWSCALE)
-        MACRO_BOOL_TO_01(AVRESAMPLE_FOUND HAVE_LIBAVRESAMPLE)
-        MACRO_BOOL_TO_01(SWRESAMPLE_FOUND HAVE_LIBSWRESAMPLE)
-        MACRO_BOOL_TO_01(D3D11_FOUND      HAVE_LIBD3D11)
-        MACRO_BOOL_TO_01(XAUDIO2_FOUND    HAVE_LIBXAUDIO2)
+        MACRO_BOOL_TO_01(ASS_FOUND         HAVE_LIBASS)
+        MACRO_BOOL_TO_01(uchardet_FOUND    HAVE_LIBUCHARDET)
+        MACRO_BOOL_TO_01(OPENAL_FOUND      HAVE_LIBOPENAL)
+        MACRO_BOOL_TO_01(PORTAUDIO_FOUND   HAVE_LIBPORTAUDIO)
+        MACRO_BOOL_TO_01(PULSEAUDIO_FOUND  HAVE_LIBPULSEAUDIO)
+        MACRO_BOOL_TO_01(VAAPI_FOUND       HAVE_LIBVAAPI)
+        MACRO_BOOL_TO_01(AVCODEC_FOUND     HAVE_LIBAVCODEC)
+        MACRO_BOOL_TO_01(AVDEVICE_FOUND    HAVE_LIBAVDEVICE)
+        MACRO_BOOL_TO_01(AVFILTER_FOUND    HAVE_LIBAVFILTER)
+        MACRO_BOOL_TO_01(AVFORMAT_FOUND    HAVE_LIBAVFORMAT)
+        MACRO_BOOL_TO_01(AVUTIL_FOUND      HAVE_LIBAVUTIL)
+        MACRO_BOOL_TO_01(SWSCALE_FOUND     HAVE_LIBSWSCALE)
+        MACRO_BOOL_TO_01(AVRESAMPLE_FOUND  HAVE_LIBAVRESAMPLE)
+        MACRO_BOOL_TO_01(SWRESAMPLE_FOUND  HAVE_LIBSWRESAMPLE)
+        MACRO_BOOL_TO_01(D3D11_FOUND       HAVE_LIBD3D11)
+        MACRO_BOOL_TO_01(DIRECTSOUND_FOUND HAVE_LIBDIRECTSOUND)
+        MACRO_BOOL_TO_01(XAUDIO2_FOUND     HAVE_LIBXAUDIO2)
 
         if(SSE4_1_FOUND)
 
@@ -116,66 +118,66 @@ if(ENABLE_MEDIAPLAYER)
         if(ASS_FOUND)
 
             set(MEDIAPLAYER_LIBRARIES ${MEDIAPLAYER_LIBRARIES} ${ASS_LIBRARIES})
-            message(STATUS "MediaPlayer will be compiled with LibASS support    : yes")
+            message(STATUS "MediaPlayer will be compiled with LibASS support     : yes")
 
         else()
 
-            message(STATUS "MediaPlayer will be compiled with LibASS support    : no")
+            message(STATUS "MediaPlayer will be compiled with LibASS support     : no")
 
         endif()
 
         if(uchardet_FOUND)
 
             set(MEDIAPLAYER_LIBRARIES ${MEDIAPLAYER_LIBRARIES} uchardet)
-            message(STATUS "MediaPlayer will be compiled with UCharDet support  : yes")
+            message(STATUS "MediaPlayer will be compiled with UCharDet support   : yes")
 
         else()
 
-            message(STATUS "MediaPlayer will be compiled with UCharDet support  : no")
+            message(STATUS "MediaPlayer will be compiled with UCharDet support   : no")
 
         endif()
 
         if(OPENAL_FOUND)
 
             set(MEDIAPLAYER_LIBRARIES ${MEDIAPLAYER_LIBRARIES} ${OPENAL_LIBRARY})
-            message(STATUS "MediaPlayer will be compiled with OpenAL support    : yes")
+            message(STATUS "MediaPlayer will be compiled with OpenAL support     : yes")
 
         else()
 
-            message(STATUS "MediaPlayer will be compiled with OpenAL support    : no")
+            message(STATUS "MediaPlayer will be compiled with OpenAL support     : no")
 
         endif()
 
         if(PORTAUDIO_FOUND)
 
             set(MEDIAPLAYER_LIBRARIES ${MEDIAPLAYER_LIBRARIES} ${PORTAUDIO_LIBRARIES})
-            message(STATUS "MediaPlayer will be compiled with PortAudio support : yes")
+            message(STATUS "MediaPlayer will be compiled with PortAudio support  : yes")
 
         else()
 
-            message(STATUS "MediaPlayer will be compiled with PortAudio support : no")
+            message(STATUS "MediaPlayer will be compiled with PortAudio support  : no")
 
         endif()
 
         if(PULSEAUDIO_FOUND)
 
             set(MEDIAPLAYER_LIBRARIES ${MEDIAPLAYER_LIBRARIES} ${PULSEAUDIO_LIBRARIES})
-            message(STATUS "MediaPlayer will be compiled with PulseAudio support: yes")
+            message(STATUS "MediaPlayer will be compiled with PulseAudio support : yes")
 
         else()
 
-            message(STATUS "MediaPlayer will be compiled with PukseAudio support: no")
+            message(STATUS "MediaPlayer will be compiled with PukseAudio support : no")
 
         endif()
 
         if(VAAPI_FOUND)
 
             set(MEDIAPLAYER_LIBRARIES ${MEDIAPLAYER_LIBRARIES} ${VAAPI_LIBRARIES})
-            message(STATUS "MediaPlayer will be compiled with VaAPI support     : yes")
+            message(STATUS "MediaPlayer will be compiled with VaAPI support      : yes")
 
         else()
 
-            message(STATUS "MediaPlayer will be compiled with VaAPI support     : no")
+            message(STATUS "MediaPlayer will be compiled with VaAPI support      : no")
 
         endif()
 
@@ -189,33 +191,44 @@ if(ENABLE_MEDIAPLAYER)
 
             endif()
 
-            message(STATUS "MediaPlayer will be compiled with OpenGL support    : yes")
+            message(STATUS "MediaPlayer will be compiled with OpenGL support     : yes")
 
         else()
 
-            message(STATUS "MediaPlayer will be compiled with OpenGL support    : no")
+            message(STATUS "MediaPlayer will be compiled with OpenGL support     : no")
 
         endif()
 
         if(D3D11_FOUND)
 
             set(MEDIAPLAYER_LIBRARIES ${MEDIAPLAYER_LIBRARIES} ${D3D11_LIBRARIES})
-            message(STATUS "MediaPlayer will be compiled with Direct3D support  : yes")
+            message(STATUS "MediaPlayer will be compiled with Direct3D support   : yes")
 
         else()
 
-            message(STATUS "MediaPlayer will be compiled with Direct3D support  : no")
+            message(STATUS "MediaPlayer will be compiled with Direct3D support   : no")
+
+        endif()
+
+        if(DIRECTSOUND_FOUND)
+
+            set(MEDIAPLAYER_LIBRARIES ${MEDIAPLAYER_LIBRARIES} ${DIRECTSOUND_LIBRARIES})
+            message(STATUS "MediaPlayer will be compiled with DirectSound support: yes")
+
+        else()
+
+            message(STATUS "MediaPlayer will be compiled with DirectSound support: no")
 
         endif()
 
         if(XAUDIO2_FOUND)
 
             set(MEDIAPLAYER_LIBRARIES ${MEDIAPLAYER_LIBRARIES} ${XAUDIO2_LIBRARIES})
-            message(STATUS "MediaPlayer will be compiled with XAudio2 support   : yes")
+            message(STATUS "MediaPlayer will be compiled with XAudio2 support    : yes")
 
         else()
 
-            message(STATUS "MediaPlayer will be compiled with XAudio2 support   : no")
+            message(STATUS "MediaPlayer will be compiled with XAudio2 support    : no")
 
         endif()
 
@@ -225,7 +238,6 @@ if(ENABLE_MEDIAPLAYER)
                                     -DQTAV_HAVE_GL=1             # For QtAVWidgets
                                     -DQTAV_HAVE_CAPI=1           # To load libass, vaapi, and EGL dynamically
                                     -DQTAV_HAVE_OPENSL=0         # OpenSLES is for Android only
-                                    -DQTAV_HAVE_DSOUND=0         # DirectX Sound for MSVC only (replaced by XAudio2)
                                     -DQTAV_HAVE_DXVA=0           # DirectX VA for MSVC only
                                     -DQTAV_HAVE_X11=0            # Never enabled in QtAV (see below)
         )
@@ -274,6 +286,7 @@ if(ENABLE_MEDIAPLAYER)
         set(MEDIAPLAYER_DEFINITIONS ${MEDIAPLAYER_DEFINITIONS} -DQTAV_HAVE_PULSEAUDIO=${HAVE_LIBPULSEAUDIO})
         set(MEDIAPLAYER_DEFINITIONS ${MEDIAPLAYER_DEFINITIONS} -DQTAV_HAVE_D3D11VA=${HAVE_LIBD3D11})           # DirectX 3D for MSVC only
         set(MEDIAPLAYER_DEFINITIONS ${MEDIAPLAYER_DEFINITIONS} -DQTAV_HAVE_XAUDIO2=${HAVE_LIBXAUDIO2})         # XAudio2 for MSVC only (replacement of DirectSound)
+        set(MEDIAPLAYER_DEFINITIONS ${MEDIAPLAYER_DEFINITIONS} -DQTAV_HAVE_DSOUND=${HAVE_LIBDIRECTSOUND})      # DirectX Sound for MSVC only (replaced by XAudio2)
 
         if(APPLE)
 
