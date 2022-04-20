@@ -59,27 +59,34 @@ struct Q_AV_EXPORT SubImage
 
 struct Q_AV_EXPORT SubImageSet
 {
-    enum Format { ASS, RGBA, Unknown };
+    enum Format
+    {
+        ASS,
+        RGBA,
+        Unknown
+    };
 
     SubImageSet(int width = 0, int height = 0, Format format = Unknown);
 
-    int width() const {return w;}
-    int height() const {return h;}
-    Format format() const {return fmt;}
-    bool isValid() const {return !images.isEmpty() && w > 0 && h > 0 && fmt != Unknown;}
+    int width() const       { return w; }
+    int height() const      { return h; }
+    Format format() const   { return fmt; }
+    bool isValid() const    { return !images.isEmpty() && w > 0 && h > 0 && fmt != Unknown; }
 
     void reset(int width = 0, int height = 0, Format format = Unknown)
     {
         fmt = format;
-        w = width;
-        h = height;
+        w   = width;
+        h   = height;
         ++id;
         images.clear();
     }
 
     bool operator ==(const SubImageSet& other) const
     {
-        return (id == other.id && w == other.w && h == other.h && fmt == other.fmt && images == other.images); // TODO: image data
+        // TODO: image data
+ 
+        return (id == other.id && w == other.w && h == other.h && fmt == other.fmt && images == other.images);
     }
 
     QVector<SubImage> images;
@@ -87,8 +94,8 @@ struct Q_AV_EXPORT SubImageSet
 private:
 
     Format fmt;
-    int w, h;
-    int id;
+    int    w, h;
+    int    id;
 };
 
 } // namespace QtAV

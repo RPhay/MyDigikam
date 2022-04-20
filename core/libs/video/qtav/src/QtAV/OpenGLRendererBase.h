@@ -46,9 +46,13 @@ namespace QtAV
 class OpenGLRendererBasePrivate;
 
 class Q_AV_EXPORT OpenGLRendererBase : public VideoRenderer
+
 #if QT_VERSION >= QT_VERSION_CHECK(4, 8, 0)
-        , public QOpenGLFunctions
+
+                                     , public QOpenGLFunctions
+
 #endif
+
 {
     DPTR_DECLARE_PRIVATE(OpenGLRendererBase)
 
@@ -62,9 +66,13 @@ public:
 protected:
 
     virtual bool receiveFrame(const VideoFrame& frame) Q_DECL_OVERRIDE;
-    //called in paintEvent before drawFrame() when required
+
+    // called in paintEvent before drawFrame() when required
+
     virtual void drawBackground() Q_DECL_OVERRIDE;
-    //draw the current frame using the current paint engine. called by paintEvent()
+
+    // draw the current frame using the current paint engine. called by paintEvent()
+
     virtual void drawFrame() Q_DECL_OVERRIDE;
     void onInitializeGL();
     void onPaintGL();

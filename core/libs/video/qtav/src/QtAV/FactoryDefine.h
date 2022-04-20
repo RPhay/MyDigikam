@@ -86,7 +86,7 @@
  *      };
  */
 
-/*
+/**
  * This should be in header
  */
 #define FACTORY_REGISTER(BASE, _ID, NAME) FACTORY_REGISTER_ID_TYPE(BASE, BASE##Id_##_ID, BASE##_ID, NAME)
@@ -108,7 +108,7 @@
     BASE##Factory::registerIdName(ID, NAME);
 
 /*
- *  FIXME: __init_##TYPE (only if static) and xxx_Man() has the same content, and are both defined, construtor functions will not be called for gcc5.
+ * FIXME: __init_##TYPE (only if static) and xxx_Man() has the same content, and are both defined, construtor functions will not be called for gcc5.
  * maybe also happens for ios
  * Remove xxx_Man() is also a workaround
  */
@@ -119,7 +119,7 @@
     } \
     PRE_FUNC_ADD(__init_##TYPE)
 
-/*
+/**
  * This should be in header
  */
 #define FACTORY_DECLARE(T) FACTORY_DECLARE_ID(T, T##Id)
@@ -144,7 +144,7 @@
         template<class C> static T* create() { return new C(); } \
     };
 
-/*
+/**
  * This should be in cpp
  */
 #define FACTORY_DEFINE(T) FACTORY_DEFINE_ID(T, T##Id)

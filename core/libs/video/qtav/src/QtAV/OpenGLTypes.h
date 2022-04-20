@@ -41,9 +41,16 @@ class Q_AV_EXPORT Uniform
 {
 public:
 
-    enum { V = 16, Vec = 1<<V, M = 20, Mat = 1<<M };
+    enum
+    {
+        V = 16,
+        Vec = 1<<V,
+        M = 20,
+        Mat = 1<<M
+    };
 
-    enum Type {
+    enum Type
+    {
         Unknown = 0,
         Bool = 1<<0,
         Int = 1<<1,
@@ -80,7 +87,7 @@ public:
     bool isMat() const {return type()&Mat;}
 
     bool dirty;
-    int location; //TODO: auto resolve location?
+    int location; // TODO: auto resolve location?
     QByteArray name;
 
     /*!
@@ -123,26 +130,29 @@ public:
     {
         if (type() != other.type())
             return false;
+
         if (name != other.name)
             return false;
+
         if (data != other.data)
             return false;
+
         return true;
     }
 
-    Type type() const {return t;}
+    Type type() const     { return t; }
 
     /*!
      * \brief tupleSize
      * 2, 3, 4 for vec2, vec3 and vec4; 2^2, 3^2 and 4^2 for mat2, mat3 and mat4
      */
-    int tupleSize() const {return tuple_size;}
+    int tupleSize() const { return tuple_size; }
 
     /*!
      * \brief arraySize
      * If uniform is an array, it's array size; otherwise 1
      */
-    int arraySize() const {return array_size;}
+    int arraySize() const { return array_size; }
 
     /*!
      * Return an array of given type. the type T must match type(), for example T is float for Float, VecN, MatN and array of them
@@ -152,37 +162,43 @@ public:
         Q_ASSERT(sizeof(T)*tupleSize()*arraySize() <= data.size()*sizeof(int) && "Bad type or array size");
         QVector<T> v(tupleSize()*arraySize());
         memcpy((char*)v.data(), (const char*)data.constData(), v.size()*sizeof(T));
+
         return v;
     }
 
     template<typename T> const T* address() const
     {
         Q_ASSERT(sizeof(T)*tupleSize()*arraySize() <= data.size()*sizeof(int) && "Bad type or array size");
+
         return reinterpret_cast<const T*>(data.constData());
     }
 
 private:
 
-    int tuple_size;
-    int array_size;
-    Type t;
-    QVector<int> data; //uniform array
+    int          tuple_size;
+    int          array_size;
+    Type         t;
+    QVector<int> data; // uniform array
 };
 
 #ifndef QT_NO_DEBUG_STREAM
+
 Q_AV_EXPORT QDebug operator<<(QDebug debug, const Uniform &u);
 Q_AV_EXPORT QDebug operator<<(QDebug debug, Uniform::Type ut);
+
 #endif
 
 } // namespace QtAV
 
 #if QT_VERSION < QT_VERSION_CHECK(5, 0, 0)
+
 QT_BEGIN_NAMESPACE
 Q_DECLARE_METATYPE(QVector<double>)
 Q_DECLARE_METATYPE(QVector<float>)
 Q_DECLARE_METATYPE(QVector<int>)
 Q_DECLARE_METATYPE(QVector<unsigned>)
 QT_END_NAMESPACE
+
 #endif
 
 #endif // QTAV_OPENGL_TYPES_H

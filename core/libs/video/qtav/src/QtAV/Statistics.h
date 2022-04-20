@@ -49,10 +49,12 @@ public:
 
     void reset();
 
-    QString url;
-    int bit_rate;
-    QString format;
-    QTime start_time, duration;
+public:
+
+    QString                 url;
+    int                     bit_rate;
+    QString                 format;
+    QTime                   start_time, duration;
     QHash<QString, QString> metadata;
 
     class Common
@@ -60,7 +62,9 @@ public:
     public:
 
         Common();
+
         // TODO: dynamic bit rate compute
+
         bool available;
         QString codec, codec_long;
         QString decoder;
@@ -69,15 +73,18 @@ public:
         int bit_rate;
         qint64 frames;
         qreal frame_rate; // average fps stored in media stream information
-        //union member with ctor, dtor, copy ctor only works in c++11
+
+        // union member with ctor, dtor, copy ctor only works in c++11
         /*union {
             audio_only audio;
             video_only video;
         } only;*/
+
         QHash<QString, QString> metadata;
     } audio, video; // init them
 
     // from AVCodecContext
+
     class Q_AV_EXPORT AudioOnly
     {
     public:
@@ -91,9 +98,10 @@ public:
 
         /**
          * Number of samples per channel in an audio frame.
-         * - decoding: may be set by some decoders to indicate constant frame size
+         * decoding: may be set by some decoders to indicate constant frame size
          */
         int frame_size;
+
         /**
          * number of bytes per packet if constant and known or 0
          * Used by some WAV based audio codecs.
@@ -108,12 +116,14 @@ public:
     public:
 
         // union member with ctor, dtor, copy ctor only works in c++11
+
         VideoOnly();
         VideoOnly(const VideoOnly&);
         VideoOnly& operator =(const VideoOnly&);
         ~VideoOnly();
 
         // compute from pts history
+
         qreal currentDisplayFPS() const;
         qreal pts() const; // last pts
 
@@ -128,11 +138,12 @@ public:
         /**
          * the number of pictures in a group of pictures, or 0 for intra_only
          */
-        int gop_size;
+        int     gop_size;
         QString pix_fmt;
-        int rotate;
+        int     rotate;
 
         /// return current absolute time (seconds since epcho
+
         qint64 frameDisplayed(qreal pts); // used to compute currentDisplayFPS()
 
     private:

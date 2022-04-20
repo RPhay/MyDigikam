@@ -51,6 +51,7 @@ public:
     ~Packet();
 
     // required if no defination of PacketPrivate
+
     Packet(const Packet& other);
     Packet& operator =(const Packet& other);
 
@@ -72,18 +73,20 @@ public:
      */
     void skip(int bytes);
 
-    bool hasKeyFrame;
-    bool isCorrupt;
-    QByteArray data;
+    bool        hasKeyFrame;
+    bool        isCorrupt;
+    QByteArray  data;
 
     // time unit is s.
-    qreal pts, duration;
-    qreal dts;
-    qint64 position; // position in source file byte stream
+
+    qreal       pts, duration;
+    qreal       dts;
+    qint64      position; // position in source file byte stream
 
 private:
 
     // we must define  default/copy ctor, dtor and operator= so that we can provide only forward declaration of PacketPrivate
+
     mutable QSharedDataPointer<PacketPrivate> d;
 };
 
@@ -93,7 +96,9 @@ bool Packet::isValid() const
 }
 
 #ifndef QT_NO_DEBUG_STREAM
+
 Q_AV_EXPORT QDebug operator<<(QDebug debug, const Packet &pkt);
+
 #endif
 
 } // namespace QtAV

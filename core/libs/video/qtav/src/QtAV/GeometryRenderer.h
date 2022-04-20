@@ -32,9 +32,9 @@
 
 #if QT_VAO
 #   include <QOpenGLVertexArrayObject>
-#endif //QT_VAO
+#endif
 
-# if QT_VERSION >= QT_VERSION_CHECK(5, 0, 0)
+#if QT_VERSION >= QT_VERSION_CHECK(5, 0, 0)
 #   include <QOpenGLBuffer>
 #else
 #   include <QGLBuffer>
@@ -57,21 +57,25 @@ class Q_AV_EXPORT GeometryRenderer
 public:
 
     // rendering features. Use all possible features as the default.
-    static const int kVBO = 0x01;
-    static const int kIBO = 0x02;
-    static const int kVAO = 0x04;
+
+    static const int kVBO       = 0x01;
+    static const int kIBO       = 0x02;
+    static const int kVAO       = 0x04;
     static const int kMapBuffer = 1<<16;
 
     // TODO: VAB, VBUM etc.
+
     GeometryRenderer();
     virtual ~GeometryRenderer() {}
 
     // call updateBuffer internally in bindBuffer if feature is changed
+
     void setFeature(int f, bool on);
     void setFeatures(int value);
     int features() const;
     int actualFeatures() const;
     bool testFeatures(int value) const;
+
     /*!
      * \brief updateGeometry
      * Update geometry buffer. Rebind VBO, IBO to VAO if geometry attributes is changed.
@@ -89,22 +93,25 @@ protected:
 
 private:
 
-    Geometry *g;
-    int features_;
-    int vbo_size, ibo_size; // QOpenGLBuffer.size() may get error 0x501
-    QOpenGLBuffer vbo; //VertexBuffer
+    Geometry*       g;
+    int             features_;
+    int             vbo_size, ibo_size; // QOpenGLBuffer.size() may get error 0x501
+    QOpenGLBuffer   vbo;                // VertexBuffer
 
 #if QT_VAO
+
     QOpenGLVertexArrayObject vao;
+
 #endif
 
     QOpenGLBuffer ibo;
 
     // geometry characteristic
-    int stride;
+
+    int                stride;
     QVector<Attribute> attrib;
 };
 
 } // namespace QtAV
 
-#endif //QTAV_GEOMETRY_RENDERER_H
+#endif // QTAV_GEOMETRY_RENDERER_H

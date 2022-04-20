@@ -53,24 +53,31 @@ public:
 
     virtual ~Filter();
     bool isEnabled() const;
+
     /*!
      * \brief setOwnedByTarget
      * If a filter is owned by target, it's not safe to access the filter after it's installed to a target.
      * QtAV will delete the installed filter internally if filter is owned by target AND it's parent (QObject) is null.
      */
     void setOwnedByTarget(bool value = true);
+
     // default is false
+
     bool isOwnedByTarget() const;
+
     // setInput/Output: no need to call installTo
     // bool setInput(Filter*);
     // bool setOutput(Filter*);
+
     /*!
      * \brief installTo
      * Install filter to player can process every frame before rendering.
      * Equals to player->installFilter(this)
      */
     virtual bool installTo(AVPlayer *player) = 0;
+
     // called in destructor automatically
+
     bool uninstall();
 
 public Q_SLOTS:
@@ -83,13 +90,15 @@ Q_SIGNALS:
 
 protected:
 
-    /*
+    /**
      * If the filter is in AVThread, it's safe to operate on ref.
      */
     Filter(FilterPrivate& d, QObject *parent = 0);
 
     DPTR_DECLARE(Filter)
 };
+
+// ----------------------------------------------------------------------------------
 
 class VideoFilterPrivate;
 
@@ -105,6 +114,7 @@ public:
     VideoFilterContext* context();
     virtual bool isSupported(VideoFilterContext::Type ct) const;
     bool installTo(AVPlayer *player);
+
     /*!
      * \brief installTo
      * The process() function is in rendering thread. Used by
@@ -112,16 +122,18 @@ public:
      * 2. QPainter rendering on widget based renderers. Changing the frame has no effect
      * \return false if already installed
      */
-    bool installTo(AVOutput *output); //only for video. move to video filter installToRenderer
+    bool installTo(AVOutput *output); // only for video. move to video filter installToRenderer
     void apply(Statistics* statistics, VideoFrame *frame = 0);
 
-    bool prepareContext(VideoFilterContext*& ctx, Statistics* statistics = 0, VideoFrame* frame = 0); //internal use
+    bool prepareContext(VideoFilterContext*& ctx, Statistics* statistics = 0, VideoFrame* frame = 0); // internal use
 
 protected:
 
     VideoFilter(VideoFilterPrivate& d, QObject *parent = 0);
     virtual void process(Statistics* statistics, VideoFrame* frame = 0) = 0;
 };
+
+// -------------------------------------------------------------------------------------
 
 class AudioFrame;
 class AudioFilterPrivate;

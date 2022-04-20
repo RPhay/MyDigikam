@@ -41,6 +41,7 @@ namespace QtAV
 enum DataType
 {
     // equals to GL_BYTE etc.
+
     TypeS8  = 0x1400, // S8
     TypeU8  = 0x1401, // U8
     TypeS16 = 0x1402, // S16
@@ -52,22 +53,24 @@ enum DataType
 
 class Q_AV_EXPORT Attribute
 {
-    bool m_normalize;
-    DataType m_type;
-    int m_tupleSize, m_offset;
-    QByteArray m_name;
+    bool        m_normalize;
+    DataType    m_type;
+    int         m_tupleSize, m_offset;
+    QByteArray  m_name;
 
 public:
 
     Attribute(DataType type = TypeF32, int tupleSize = 0, int offset = 0, bool normalize = false);
     Attribute(const QByteArray& name, DataType type = TypeF32, int tupleSize = 0, int offset = 0, bool normalize = false);
 
-    QByteArray name() const {return m_name;}
-    DataType type() const {return m_type;}
-    int tupleSize() const {return m_tupleSize;}
-    int offset() const {return m_offset;}
-    bool normalize() const {return m_normalize;}
-    bool operator==(const Attribute& other) const {
+    QByteArray name() const { return m_name;      }
+    DataType type() const   { return m_type;      }
+    int tupleSize() const   { return m_tupleSize; }
+    int offset() const      { return m_offset;    }
+    bool normalize() const  { return m_normalize; }
+
+    bool operator==(const Attribute& other) const
+    {
         return tupleSize() == other.tupleSize()
                 && offset() == other.offset()
                 && type() == other.type()
@@ -76,7 +79,9 @@ public:
 };
 
 #ifndef QT_NO_DEBUG_STREAM
+
 Q_AV_EXPORT QDebug operator<<(QDebug debug, const Attribute &a);
+
 #endif
 
 /*!
@@ -92,44 +97,60 @@ class Q_AV_EXPORT Geometry
 public:
 
     /// Strip or Triangles is preferred by ANGLE. The values are equal to opengl
+
     enum Primitive
     {
         Triangles     = 0x0004,
-        TriangleStrip = 0x0005, //default
-        TriangleFan   = 0x0006, // Not recommended
+        TriangleStrip = 0x0005, ///< default
+        TriangleFan   = 0x0006, ///< Not recommended
     };
 
     Geometry(int vertexCount = 0, int indexCount = 0, DataType indexType = TypeU16);
-    virtual ~Geometry() {}
+    virtual ~Geometry()
+    {
+    }
 
-    Primitive primitive() const {return m_primitive;}
-    void setPrimitive(Primitive value) {  m_primitive = value;}
-    int vertexCount() const {return m_vcount;}
-    void setVertexCount(int value) {m_vcount = value;} // TODO: remove, or allocate data here
+    Primitive primitive() const         { return m_primitive;   }
+    void setPrimitive(Primitive value)  {  m_primitive = value; }
+    int vertexCount() const             { return m_vcount;      }
+    void setVertexCount(int value)      { m_vcount = value;     } // TODO: remove, or allocate data here
+
     // TODO: setStride and no virtual
+
     virtual int stride() const = 0;
+
     // TODO: add/set/remove attributes()
+
     virtual const QVector<Attribute>& attributes() const = 0;
-    void* vertexData() { return m_vdata.data();}
-    const void* vertexData() const { return m_vdata.constData();}
-    const void* constVertexData() const { return m_vdata.constData();}
+
+    void* vertexData()                  { return m_vdata.data();      }
+    const void* vertexData() const      { return m_vdata.constData(); }
+    const void* constVertexData() const { return m_vdata.constData(); }
+
     void dumpVertexData();
-    void* indexData() { return m_icount > 0 ? m_idata.data() : NULL;}
-    const void* indexData() const { return m_icount > 0 ? m_idata.constData() : NULL;}
-    const void* constIndexData() const { return m_icount > 0 ? m_idata.constData() : NULL;}
-    int indexCount() const { return m_icount;}
+
+    void* indexData()                   { return m_icount > 0 ? m_idata.data() : NULL;      }
+    const void* indexData() const       { return m_icount > 0 ? m_idata.constData() : NULL; }
+    const void* constIndexData() const  { return m_icount > 0 ? m_idata.constData() : NULL; }
+    int indexCount() const              { return m_icount;                                  }
+
     int indexDataSize() const;
+
     // GL_UNSIGNED_BYTE/SHORT/INT
-    DataType indexType() const {return m_itype;}
-    void setIndexType(DataType value) { m_itype = value;}
+
+    DataType indexType() const          { return m_itype;  }
+    void setIndexType(DataType value)   { m_itype = value; }
+
     void setIndexValue(int index, int value);
     void setIndexValue(int index, int v1, int v2, int v3); // a triangle
     void dumpIndexData();
+
     /*!
      * \brief allocate
      * Call allocate() when all parameters are set. vertexData() may change
      */
     void allocate(int nbVertex, int nbIndex = 0);
+
     /*!
      * \brief compare
      * Compare each attribute and stride that used in glVertexAttribPointer
@@ -139,13 +160,15 @@ public:
 
 protected:
 
-    Primitive m_primitive;
-    DataType m_itype;
-    int m_vcount;
-    int m_icount;
-    QByteArray m_vdata;
-    QByteArray m_idata;
+    Primitive   m_primitive;
+    DataType    m_itype;
+    int         m_vcount;
+    int         m_icount;
+    QByteArray  m_vdata;
+    QByteArray  m_idata;
 };
+
+// ----------------------------------------------------------------------
 
 class Q_AV_EXPORT TexturedGeometry : public Geometry
 {
@@ -164,7 +187,9 @@ public:
     void setRect(const QRectF& r, const QRectF& tr, int texIndex = 0);
     void setGeometryRect(const QRectF& r);
     void setTextureRect(const QRectF& tr, int texIndex = 0);
+
     int stride() const Q_DECL_OVERRIDE { return 2*sizeof(float)*(textureCount()+1); }
+
     const QVector<Attribute>& attributes() const Q_DECL_OVERRIDE;
     virtual void create();
 
@@ -176,11 +201,13 @@ private:
 
 protected:
 
-    int nb_tex;
-    QRectF geo_rect;
-    QVector<QRectF> texRect;
-    QVector<Attribute> a;
+    int                 nb_tex;
+    QRectF              geo_rect;
+    QVector<QRectF>     texRect;
+    QVector<Attribute>  a;
 };
+
+// -----------------------------------------------------------------------------------
 
 class Q_AV_EXPORT Sphere : public TexturedGeometry
 {
@@ -192,6 +219,7 @@ public:
     void setRadius(float value);
     float radius() const;
     void create() Q_DECL_OVERRIDE;
+
     int stride() const Q_DECL_OVERRIDE { return 3*sizeof(float)+2*sizeof(float)*textureCount(); }
 
 protected:
@@ -200,7 +228,7 @@ protected:
 
 private:
 
-    int ru, rv;
+    int   ru, rv;
     float r;
 };
 

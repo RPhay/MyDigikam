@@ -81,12 +81,22 @@ if(ENABLE_MEDIAPLAYER)
         if(SSE4_1_FOUND)
 
             message(STATUS "MediaPlayer will be compiled with SSE4.1 support    : yes")
-            set(MEDIAPLAYER_FLAGS -msse4.1)
+
+            if (NOT MSVC)
+
+                set(MEDIAPLAYER_FLAGS -msse4.1)
+
+            endif()
 
         elseif(SSE2_FOUND)
 
             message(STATUS "MediaPlayer will be compiled with SSE2 support      : yes")
-            set(MEDIAPLAYER_FLAGS -msse2)
+
+            if (NOT MSVC)
+
+                set(MEDIAPLAYER_FLAGS -msse2)
+
+            endif()
 
         endif()
 

@@ -29,6 +29,7 @@
 
 namespace QtAV
 {
+
 /*!
  * \brief The FrameReader class
  * while (reader->readMore()) {
@@ -54,6 +55,7 @@ public:
 
     // TODO: load and get info
     // TODO: asnyc option
+
     explicit FrameReader(QObject *parent = 0);
     ~FrameReader();
 
@@ -64,10 +66,14 @@ public:
     VideoFrame getVideoFrame();
     bool hasVideoFrame() const;
     bool hasEnoughVideoFrames() const;
+
     // return false if eof
+
     bool readMore();
+
     // TODO: tryLoad on seek even at eof
     // TODO: compress seek requests
+
     bool seek(qint64 pos);
 
 Q_SIGNALS:
@@ -77,6 +83,7 @@ Q_SIGNALS:
     void seekFinished(qint64 pos);
 
     // internal
+
     void readMoreRequested();
     void seekRequested(qint64);
 

@@ -52,7 +52,9 @@ protected:
 
     bool preparePixmap(const VideoFrame& frame);
     void drawBackground() Q_DECL_OVERRIDE;
-    //draw the current frame using the current paint engine. called by paintEvent()
+
+    // draw the current frame using the current paint engine. called by paintEvent()
+
     void drawFrame() Q_DECL_OVERRIDE;
 
     QPainterRenderer(QPainterRendererPrivate& d);

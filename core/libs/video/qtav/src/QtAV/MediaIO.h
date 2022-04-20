@@ -26,7 +26,7 @@
 
 // C++ includes
 
-#include <cstdio> //SEEK_SET
+#include <cstdio> // SEEK_SET
 
 // Qt includes
 
@@ -71,6 +71,7 @@ public:
     };
 
     /// Registered MediaIO::name(): "QIODevice", "QFile"
+
     static QStringList builtInNames();
 
     /*!
@@ -110,6 +111,7 @@ public:
     AccessMode accessMode() const;
 
     /// supported protocols. default is empty
+
     virtual const QStringList& protocols() const;
     virtual bool isSeekable() const = 0;
     virtual bool isWritable() const { return false;}
@@ -168,14 +170,20 @@ public:
     int bufferSize() const;
 
     // The followings are for internal use. used by AVDemuxer, AVMuxer
-    //struct AVIOContext; //anonymous struct in FFmpeg1.0.x
-    void* avioContext(); //const?
-    void release(); //TODO: how to remove it?
+
+    //struct AVIOContext; // anonymous struct in FFmpeg1.0.x
+
+    void* avioContext(); // const?
+    void release(); // TODO: how to remove it?
 
 public:
 
     static void registerAll();
-    template<class C> static bool Register(MediaIOId id, const char* name) { return Register(id, create<C>, name);}
+    template<class C> static bool Register(MediaIOId id, const char* name)
+    {
+        return Register(id, create<C>, name);
+    }
+
     static MediaIO* create(MediaIOId id);
     static MediaIO* create(const char* name);
 
@@ -190,7 +198,7 @@ public:
 
 private:
 
-    template<class C> static MediaIO* create() { return new C();}
+    template<class C> static MediaIO* create() { return new C(); }
     typedef MediaIO* (*MediaIOCreator)();
     static bool Register(MediaIOId id, MediaIOCreator, const char *name);
 
@@ -220,8 +228,10 @@ Q_DECL_DEPRECATED typedef MediaIO AVInput; // for source compatibility
 #if QT_VERSION < QT_VERSION_CHECK(5, 0, 0)
 
 #   include <QtCore/QMetaType>
+
 Q_DECLARE_METATYPE(QtAV::MediaIO*)
 Q_DECLARE_METATYPE(QIODevice*)
+
 #endif
 
 #endif // QTAV_MEDIA_IO_H

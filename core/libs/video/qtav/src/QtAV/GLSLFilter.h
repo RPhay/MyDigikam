@@ -54,7 +54,8 @@ public:
 
     GLSLFilter(QObject* parent = 0);
 
-    bool isSupported(VideoFilterContext::Type ct) const  Q_DECL_OVERRIDE {
+    bool isSupported(VideoFilterContext::Type ct) const  Q_DECL_OVERRIDE
+    {
         return ct == VideoFilterContext::OpenGL;
     }
 
@@ -64,6 +65,7 @@ public:
      */
     OpenGLVideo* opengl() const;
     QOpenGLFramebufferObject* fbo() const;
+
     /*!
      * \brief outputSize
      * Output frame size. FBO uses the same size to render. An empty size means using the input frame size
@@ -80,6 +82,7 @@ Q_SIGNALS:
 protected:
 
     GLSLFilter(GLSLFilterPrivate& d, QObject *parent = 0);
+
     /*!
      * \brief process
      * Draw video frame into fbo and apply the user shader from opengl()->userShader();

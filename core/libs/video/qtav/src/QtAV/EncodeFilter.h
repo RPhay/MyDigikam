@@ -45,12 +45,14 @@ class Q_AV_EXPORT AudioEncodeFilter : public AudioFilter
 public:
 
     AudioEncodeFilter(QObject *parent = 0);
+
     /*!
      * \brief setAsync
      * Enable async encoding. Default is disabled.
      */
     void setAsync(bool value = true);
     bool isAsync() const;
+
     /*!
      * \brief createEncoder
      * Destroy old encoder and create a new one. Filter has the ownership.
@@ -59,12 +61,14 @@ public:
      * \return null if failed
      */
     AudioEncoder* createEncoder(const QString& name = QLatin1String("FFmpeg"));
+
     /*!
      * \brief encoder
      * Use this to set encoder properties and options
      * \return Encoder instance or null if createEncoder failed
      */
     AudioEncoder* encoder() const;
+
     // TODO: async property
 
     /*!
@@ -85,6 +89,7 @@ public Q_SLOTS:
 Q_SIGNALS:
 
     void finished();
+
     /*!
      * \brief readyToEncode
      * Emitted when encoder is open. All parameters are set and muxer can set codec properties now.
@@ -93,7 +98,9 @@ Q_SIGNALS:
     void readyToEncode();
     void frameEncoded(const QtAV::Packet& packet);
     void startTimeChanged(qint64 value);
+
     // internal use only
+
     void requestToEncode(const QtAV::AudioFrame& frame);
 
 protected Q_SLOTS:
@@ -104,6 +111,8 @@ protected:
 
     virtual void process(Statistics* statistics, AudioFrame* frame = 0) Q_DECL_OVERRIDE;
 };
+
+// --------------------------------------------------------------------
 
 class VideoEncoder;
 class VideoEncodeFilterPrivate;
@@ -123,7 +132,11 @@ public:
      */
     void setAsync(bool value = true);
     bool isAsync() const;
-    bool isSupported(VideoFilterContext::Type t) const Q_DECL_OVERRIDE { return t == VideoFilterContext::None;}
+    bool isSupported(VideoFilterContext::Type t) const Q_DECL_OVERRIDE
+    {
+        return t == VideoFilterContext::None;
+    }
+
     /*!
      * \brief createEncoder
      * Destroy old encoder and create a new one. Filter has the ownership.
@@ -132,12 +145,14 @@ public:
      * \return null if failed
      */
     VideoEncoder* createEncoder(const QString& name = QLatin1String("FFmpeg"));
+
     /*!
      * \brief encoder
      * Use this to set encoder properties and options
      * \return Encoder instance or null if createEncoder failed
      */
     VideoEncoder* encoder() const;
+
     // TODO: async property
 
     /*!
@@ -158,6 +173,7 @@ public Q_SLOTS:
 Q_SIGNALS:
 
     void finished();
+
     /*!
      * \brief readyToEncode
      * Emitted when encoder is open. All parameters are set and muxer can set codec properties now.
@@ -166,7 +182,9 @@ Q_SIGNALS:
     void readyToEncode();
     void frameEncoded(const QtAV::Packet& packet);
     void startTimeChanged(qint64 value);
+
     // internal use only
+
     void requestToEncode(const QtAV::VideoFrame& frame);
 
 protected Q_SLOTS:

@@ -24,9 +24,9 @@
 #ifndef QTAV_VERSION_H
 #define QTAV_VERSION_H
 
-#define QTAV_MAJOR 1    //((QTAV_VERSION&0xff0000)>>16)
-#define QTAV_MINOR 14   //((QTAV_VERSION&0xff00)>>8)
-#define QTAV_PATCH 0    //(QTAV_VERSION&0xff)
+#define QTAV_MAJOR 1    // ((QTAV_VERSION&0xff0000)>>16)
+#define QTAV_MINOR 14   // ((QTAV_VERSION&0xff00)>>8)
+#define QTAV_PATCH 0    // (QTAV_VERSION&0xff)
 
 #define QTAV_VERSION_MAJOR(V) ((V & 0xff0000) >> 16)
 #define QTAV_VERSION_MINOR(V) ((V & 0xff00) >> 8)
@@ -38,13 +38,16 @@
 #define QTAV_VERSION QTAV_VERSION_CHK(QTAV_MAJOR, QTAV_MINOR, QTAV_PATCH)
 
 /*! Stringify \a x. */
+
 #define _TOSTR(x)   #x
 
 /*! Stringify \a x, perform macro expansion. */
+
 #define TOSTR(x)  _TOSTR(x)
 
 /* the following are compile time version */
 /* C++11 requires a space between literal and identifier */
+
 #define QTAV_VERSION_STR        TOSTR(QTAV_MAJOR) "." TOSTR(QTAV_MINOR) "." TOSTR(QTAV_PATCH)
 
 #endif // QTAV_VERSION_H

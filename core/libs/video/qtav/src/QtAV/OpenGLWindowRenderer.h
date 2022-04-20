@@ -48,7 +48,9 @@ class Q_AV_EXPORT OpenGLWindowRenderer : public QOpenGLWindow,
     Q_PROPERTY(qreal outAspectRatio READ outAspectRatio WRITE setOutAspectRatio NOTIFY outAspectRatioChanged)
 
     // fillMode
+
     // TODO: how to use enums in base class as property or Q_ENUM
+
     Q_PROPERTY(OutAspectRatioMode outAspectRatioMode READ outAspectRatioMode WRITE setOutAspectRatioMode NOTIFY outAspectRatioModeChanged)
     Q_ENUMS(OutAspectRatioMode)
     Q_PROPERTY(int orientation READ orientation WRITE setOrientation NOTIFY orientationChanged)
