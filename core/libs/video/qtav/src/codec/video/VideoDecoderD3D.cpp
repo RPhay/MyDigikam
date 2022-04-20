@@ -23,14 +23,16 @@
 
 #include "VideoDecoderD3D.h"
 
+// C++ includes
+
 #include <initguid.h> /* must be last included to not redefine existing GUIDs */
 
-#if (FF_PROFILE_HEVC_MAIN == -1) //libav does not define it
-#ifdef _MSC_VER
-#pragma message("HEVC will not be supported. Update your FFmpeg")
-#else
-#warning "HEVC will not be supported. Update your FFmpeg"
-#endif
+#if (FF_PROFILE_HEVC_MAIN == -1) // libav does not define it
+#   ifdef _MSC_VER
+#       pragma message("HEVC will not be supported. Update your FFmpeg")
+#   else
+#       warning "HEVC will not be supported. Update your FFmpeg"
+#   endif
 #endif
 
 // KDE includes
@@ -42,27 +44,38 @@ namespace QtAV
 
 static bool check_ffmpeg_hevc_dxva2()
 {
+
 #if !AVCODEC_STATIC_REGISTER
+
     avcodec_register_all();
+
 #endif
+
     AVHWAccel *hwa = av_hwaccel_next(0);
-    while (hwa) {
+
+    while (hwa)
+    {
         if (strncmp("hevc_dxva2", hwa->name, 10) == 0)
             return true;
+
         if (strncmp("hevc_d3d11va", hwa->name, 12) == 0)
             return true;
+
         hwa = av_hwaccel_next(hwa);
     }
+
     return false;
 }
 
 bool isHEVCSupported()
 {
     static const bool support_hevc = check_ffmpeg_hevc_dxva2();
+
     return support_hevc;
 }
 
 // some MS_GUID are defined in mingw but some are not. move to namespace and define all is ok
+
 #define MS_GUID(name, l, w1, w2, b1, b2, b3, b4, b5, b6, b7, b8) \
     static const GUID name = { l, w1, w2, {b1, b2, b3, b4, b5, b6, b7, b8}}
 
@@ -142,16 +155,23 @@ static const int PROF_MPEG2_MAIN[]   = { FF_PROFILE_MPEG2_SIMPLE, FF_PROFILE_MPE
 static const int PROF_H264_HIGH[]    = { FF_PROFILE_H264_CONSTRAINED_BASELINE, FF_PROFILE_H264_MAIN, FF_PROFILE_H264_HIGH, 0 };
 static const int PROF_HEVC_MAIN[]    = { FF_PROFILE_HEVC_MAIN, 0 };
 static const int PROF_HEVC_MAIN10[]  = { FF_PROFILE_HEVC_MAIN, FF_PROFILE_HEVC_MAIN_10, 0 };
+
 // guids are from VLC
-struct dxva2_mode_t {
+
+struct dxva2_mode_t
+{
     const char   *name;
     const GUID   *guid;
     int          codec;
     const int    *profiles;
 };
+
 /* XXX Prefered modes must come first */
-static const dxva2_mode_t dxva2_modes[] = {
+
+static const dxva2_mode_t dxva2_modes[] =
+{
     /* MPEG-1/2 */
+
     { "MPEG-1 decoder, restricted profile A",                                         &DXVA_ModeMPEG1_A,                      0, NULL },
     { "MPEG-2 decoder, restricted profile A",                                         &DXVA_ModeMPEG2_A,                      0, NULL },
     { "MPEG-2 decoder, restricted profile B",                                         &DXVA_ModeMPEG2_B,                      0, NULL },
@@ -165,9 +185,11 @@ static const dxva2_mode_t dxva2_modes[] = {
     { "MPEG-2 inverse discrete cosine transform",                                     &DXVA2_ModeMPEG2_IDCT,                  0, NULL },
 
     /* MPEG-1 http://download.microsoft.com/download/B/1/7/B172A3C8-56F2-4210-80F1-A97BEA9182ED/DXVA_MPEG1_VLD.pdf */
+
     { "MPEG-1 variable-length decoder, no D pictures",                                &DXVA2_ModeMPEG1_VLD,                   0, NULL },
 
     /* H.264 http://www.microsoft.com/downloads/details.aspx?displaylang=en&FamilyID=3d1c290b-310b-4ea2-bf76-714063a6d7a6 */
+
     { "H.264 variable-length decoder, film grain technology",                         &DXVA2_ModeH264_F,                      QTAV_CODEC_ID(H264), PROF_H264_HIGH },
     { "H.264 variable-length decoder, no film grain technology (Intel ClearVideo)",   &DXVA_Intel_H264_NoFGT_ClearVideo,      QTAV_CODEC_ID(H264), PROF_H264_HIGH },
     { "H.264 variable-length decoder, no film grain technology",                      &DXVA2_ModeH264_E,                      QTAV_CODEC_ID(H264), PROF_H264_HIGH },
@@ -183,17 +205,20 @@ static const dxva2_mode_t dxva2_modes[] = {
     { "H.264 motion compensation, no film grain technology (Intel)",                  &DXVADDI_Intel_ModeH264_A,              0, NULL },
 
     /* http://download.microsoft.com/download/2/D/0/2D02E72E-7890-430F-BA91-4A363F72F8C8/DXVA_H264_MVC.pdf */
+
     { "H.264 stereo high profile, mbs flag set",                                      &DXVA_ModeH264_VLD_Stereo_Progressive_NoFGT, 0, NULL },
     { "H.264 stereo high profile",                                                    &DXVA_ModeH264_VLD_Stereo_NoFGT,             0, NULL },
     { "H.264 multiview high profile",                                                 &DXVA_ModeH264_VLD_Multiview_NoFGT,          0, NULL },
 
     /* SVC http://download.microsoft.com/download/C/8/A/C8AD9F1B-57D1-4C10-85A0-09E3EAC50322/DXVA_SVC_2012_06.pdf */
+
     { "H.264 scalable video coding, Scalable Baseline Profile",                       &DXVA_ModeH264_VLD_SVC_Scalable_Baseline,            0, NULL },
     { "H.264 scalable video coding, Scalable Constrained Baseline Profile",           &DXVA_ModeH264_VLD_SVC_Restricted_Scalable_Baseline, 0, NULL },
     { "H.264 scalable video coding, Scalable High Profile",                           &DXVA_ModeH264_VLD_SVC_Scalable_High,                0, NULL },
     { "H.264 scalable video coding, Scalable Constrained High Profile",               &DXVA_ModeH264_VLD_SVC_Restricted_Scalable_High_Progressive, 0, NULL },
 
     /* WMV */
+
     { "Windows Media Video 8 motion compensation",                                    &DXVA2_ModeWMV8_B,                      0, NULL },
     { "Windows Media Video 8 post processing",                                        &DXVA2_ModeWMV8_A,                      0, NULL },
 
@@ -202,6 +227,7 @@ static const dxva2_mode_t dxva2_modes[] = {
     { "Windows Media Video 9 post processing",                                        &DXVA2_ModeWMV9_A,                      0, NULL },
 
     /* VC-1 */
+
     { "VC-1 variable-length decoder",                                                 &DXVA2_ModeVC1_D,                       QTAV_CODEC_ID(VC1), NULL },
     { "VC-1 variable-length decoder",                                                 &DXVA2_ModeVC1_D,                       QTAV_CODEC_ID(WMV3), NULL },
     { "VC-1 variable-length decoder",                                                 &DXVA2_ModeVC1_D2010,                   QTAV_CODEC_ID(VC1), NULL },
@@ -214,6 +240,7 @@ static const dxva2_mode_t dxva2_modes[] = {
     { "VC-1 post processing",                                                         &DXVA2_ModeVC1_A,                       0, NULL },
 
     /* Xvid/Divx: TODO */
+
     { "MPEG-4 Part 2 nVidia bitstream decoder",                                       &DXVA_nVidia_MPEG4_ASP,                 0, NULL },
     { "MPEG-4 Part 2 variable-length decoder, Simple Profile",                        &DXVA_ModeMPEG4pt2_VLD_Simple,          0, NULL },
     { "MPEG-4 Part 2 variable-length decoder, Simple&Advanced Profile, no GMC",       &DXVA_ModeMPEG4pt2_VLD_AdvSimple_NoGMC, 0, NULL },
@@ -221,14 +248,17 @@ static const dxva2_mode_t dxva2_modes[] = {
     { "MPEG-4 Part 2 variable-length decoder, Simple&Advanced Profile, Avivo",        &DXVA_ModeMPEG4pt2_VLD_AdvSimple_Avivo, 0, NULL },
 
     /* HEVC */
+
     { "HEVC Main profile",                                                            &DXVA_ModeHEVC_VLD_Main,                QTAV_CODEC_ID(HEVC), PROF_HEVC_MAIN },
     { "HEVC Main 10 profile",                                                         &DXVA_ModeHEVC_VLD_Main10,              QTAV_CODEC_ID(HEVC), PROF_HEVC_MAIN10 },
 
     /* H.261 */
+
     { "H.261 decoder, restricted profile A",                                          &DXVA_ModeH261_A,                       0, NULL },
     { "H.261 decoder, restricted profile B",                                          &DXVA_ModeH261_B,                       0, NULL },
 
     /* H.263 */
+
     { "H.263 decoder, restricted profile A",                                          &DXVA_ModeH263_A,                       0, NULL },
     { "H.263 decoder, restricted profile B",                                          &DXVA_ModeH263_B,                       0, NULL },
     { "H.263 decoder, restricted profile C",                                          &DXVA_ModeH263_C,                       0, NULL },
@@ -241,10 +271,12 @@ static const dxva2_mode_t dxva2_modes[] = {
 
 static const dxva2_mode_t *Dxva2FindMode(const GUID *guid)
 {
-    for (unsigned i = 0; dxva2_modes[i].name; i++) {
+    for (unsigned i = 0; dxva2_modes[i].name; i++)
+    {
         if (IsEqualGUID(*dxva2_modes[i].guid, *guid))
             return &dxva2_modes[i];
     }
+
     return NULL;
 }
 
@@ -262,16 +294,22 @@ bool checkProfile(const dxva2_mode_t *mode, int profile)
 {
     if (!mode->profiles || !mode->profiles[0] || profile <= 0)
         return true;
-    for (const int *p = &mode->profiles[0]; *p; ++p) {
+
+    for (const int *p = &mode->profiles[0]; *p; ++p)
+    {
         if (*p == profile)
             return true;
     }
+
     return false;
 }
 
 /* XXX Prefered format must come first */
-//16-bit: https://msdn.microsoft.com/en-us/library/windows/desktop/bb970578(v=vs.85).aspx
-static const d3d_format_t d3d_formats[] = {
+
+// 16-bit: https://msdn.microsoft.com/en-us/library/windows/desktop/bb970578(v=vs.85).aspx
+
+static const d3d_format_t d3d_formats[] =
+{
     { "NV12",   MAKEFOURCC('N','V','1','2'),    VideoFormat::Format_NV12 },
     { "YV12",   MAKEFOURCC('Y','V','1','2'),    VideoFormat::Format_YUV420P },
     { "IMC3",   MAKEFOURCC('I','M','C','3'),    VideoFormat::Format_YUV420P },
@@ -282,38 +320,52 @@ static const d3d_format_t d3d_formats[] = {
 
 static const d3d_format_t *D3dFindFormat(int fourcc)
 {
-    for (unsigned i = 0; d3d_formats[i].name; i++) {
+    for (unsigned i = 0; d3d_formats[i].name; i++)
+    {
         if (d3d_formats[i].fourcc == fourcc)
             return &d3d_formats[i];
     }
+
     return NULL;
 }
 
 VideoFormat::PixelFormat pixelFormatFromFourcc(int format)
 {
     const d3d_format_t *fmt = D3dFindFormat(format);
+
     if (fmt)
         return fmt->pixfmt;
+
     return VideoFormat::Format_Invalid;
 }
 
 int getSupportedFourcc(int *formats, UINT nb_formats)
 {
-    for (const int *f = formats; f < &formats[nb_formats]; ++f) {
+    for (const int *f = formats; f < &formats[nb_formats]; ++f)
+    {
         const d3d_format_t *format = D3dFindFormat(*f);
-        if (format) {
+
+        if (format)
+        {
             qCDebug(DIGIKAM_QTAV_LOG).noquote() << QString::asprintf("%s is supported for output", format->name);
-        } else {
+        }
+        else
+        {
             qCDebug(DIGIKAM_QTAV_LOG).noquote() << QString::asprintf("%d is supported for output (%4.4s)", *f, (const char*)f);
         }
     }
-    for (const d3d_format_t *format = d3d_formats; format->name; ++format) {
+
+    for (const d3d_format_t *format = d3d_formats; format->name; ++format)
+    {
         bool is_supported = false;
-        for (unsigned k = 0; !is_supported && k < nb_formats; k++) {
+
+        for (unsigned k = 0; !is_supported && k < nb_formats; k++)
+        {
             if (format->fourcc == formats[k])
                 return format->fourcc;
         }
     }
+
     return 0;
 }
 
@@ -322,17 +374,21 @@ VideoDecoderD3D::VideoDecoderD3D(VideoDecoderD3DPrivate &d)
 {
     // dynamic properties about static property details. used by UI
     // format: detail_property
+
     setProperty("detail_surfaces", i18n("Decoding surfaces") + QStringLiteral(" ") + i18n("0: auto"));
-    setProperty("threads", 1); //FIXME: mt crash on close
+    setProperty("threads", 1); // FIXME: mt crash on close
 }
 
 void VideoDecoderD3D::setSurfaces(int num)
 {
     DPTR_D(VideoDecoderD3D);
+
     if (d.surface_count == num)
         return;
+
     d.surface_count = num;
     d.surface_auto = num <= 0;
+
     Q_EMIT surfacesChanged();
 }
 
@@ -355,23 +411,34 @@ bool VideoDecoderD3DPrivate::open()
 {
     if (!prepare())
         return false;
-    if (codec_ctx->codec_id == QTAV_CODEC_ID(HEVC)) {
+
+    if (codec_ctx->codec_id == QTAV_CODEC_ID(HEVC))
+    {
         // runtime hevc check
-        if (!isHEVCSupported()) {
+
+        if (!isHEVCSupported())
+        {
             qCWarning(DIGIKAM_QTAV_LOG_WARN).noquote() << QString::asprintf("HEVC DXVA2/D3D11VA is not supported by current FFmpeg runtime.");
+
             return false;
         }
     }
+
     if (!createDevice())
         return false;
+
     format_fcc = 0;
     QVector<GUID> codecs = getSupportedCodecs();
     const d3d_format_t *fmt = getFormat(codec_ctx, codecs, &codec_guid);
+
     if (!fmt)
         return false;
+
     format_fcc = fmt->fourcc;
+
     if (!setupSurfaceInterop())
         return false;
+
     return true;
 }
 
@@ -395,72 +462,100 @@ void* VideoDecoderD3DPrivate::setup(AVCodecContext *avctx)
     destroyDecoder();
 
     /* Allocates all surfaces needed for the decoder */
-    if (surface_auto) {
-        switch (codec_ctx->codec_id) {
-        case QTAV_CODEC_ID(HEVC):
-        case QTAV_CODEC_ID(H264):
-            surface_count = 16 + 4;
-            break;
-        case QTAV_CODEC_ID(MPEG1VIDEO):
-        case QTAV_CODEC_ID(MPEG2VIDEO):
-            surface_count = 2 + 4;
-        default:
-            surface_count = 2 + 4;
-            break;
+
+    if (surface_auto)
+    {
+        switch (codec_ctx->codec_id)
+        {
+            case QTAV_CODEC_ID(HEVC):
+            case QTAV_CODEC_ID(H264):
+                surface_count = 16 + 4;
+                break;
+
+            case QTAV_CODEC_ID(MPEG1VIDEO):
+            case QTAV_CODEC_ID(MPEG2VIDEO):
+                surface_count = 2 + 4;
+                break;
+
+            default:
+                surface_count = 2 + 4;
+                break;
         }
+
         if (avctx->active_thread_type & FF_THREAD_FRAME)
             surface_count += avctx->thread_count;
     }
+
     qCDebug(DIGIKAM_QTAV_LOG).noquote() << QString::asprintf(">>>>>>>>>>>>>>>>>>>>>surfaces: %d, active_thread_type: %d, threads: %d, refs: %d", surface_count, avctx->active_thread_type, avctx->thread_count, avctx->refs);
-    if (surface_count == 0) {
+
+    if (surface_count == 0)
+    {
         qCWarning(DIGIKAM_QTAV_LOG_WARN).noquote() << QString::asprintf("internal error: wrong surface count.  %u auto=%d", surface_count, surface_auto);
         surface_count = 16 + 4;
     }
+
     qDeleteAll(surfaces);
     surfaces.clear();
     hw_surfaces.clear();
     surfaces.resize(surface_count);
+
     if (!createDecoder(codec_ctx->codec_id, w, h, surfaces))
         return NULL;
+
     hw_surfaces.resize(surface_count);
-    for (int i = 0; i < surfaces.size(); ++i) {
+
+    for (int i = 0; i < surfaces.size(); ++i)
+    {
         hw_surfaces[i] = surfaces[i]->getSurface();
     }
+
     surface_order = 0;
     surface_width = aligned(w);
     surface_height = aligned(h);
     initUSWC(surface_width);
+
     return setupAVVAContext(); //can not use codec_ctx for threaded mode!
 }
 
 /* FIXME it is nearly common with VAAPI */
-bool VideoDecoderD3DPrivate::getBuffer(void **opaque, uint8_t **data)//vlc_va_t *external, AVFrame *ff)
+
+bool VideoDecoderD3DPrivate::getBuffer(void **opaque, uint8_t **data) // vlc_va_t *external, AVFrame *ff)
 {
     if (!checkDevice())
         return false;
+
     /* Grab an unused surface, in case none are, try the oldest
      * XXX using the oldest is a workaround in case a problem happens with libavcodec */
+
     int i, old;
-    for (i = 0, old = 0; i < surfaces.size(); i++) {
+
+    for (i = 0, old = 0; i < surfaces.size(); i++)
+    {
         const va_surface_t *s = surfaces[i];
+
         if (!s->ref)
             break;
+
         if (s->order < surfaces[old]->order)
             old = i;
     }
+
     if (i >= surfaces.size())
         i = old;
+
     va_surface_t *s = surfaces[i];
     s->ref = 1;
     s->order = surface_order++;
     *data = (uint8_t*)s->getSurface();
     *opaque = s;
+
     return true;
 }
 
 void VideoDecoderD3DPrivate::releaseBuffer(void *opaque, uint8_t *data)
 {
     Q_UNUSED(data);
+
     va_surface_t *surface = (va_surface_t*)opaque;
     surface->ref--;
 }
@@ -468,57 +563,85 @@ void VideoDecoderD3DPrivate::releaseBuffer(void *opaque, uint8_t *data)
 int VideoDecoderD3DPrivate::aligned(int x)
 {
     // from lavfilters
+
     int align = 16;
+
     // MPEG-2 needs higher alignment on Intel cards, and it doesn't seem to harm anything to do it for all cards.
-    if (codec_ctx->codec_id == QTAV_CODEC_ID(MPEG2VIDEO))
+
+    if      (codec_ctx->codec_id == QTAV_CODEC_ID(MPEG2VIDEO))
       align <<= 1;
     else if (codec_ctx->codec_id == QTAV_CODEC_ID(HEVC))
       align = 128;
+
     return FFALIGN(x, align);
 }
 
 const d3d_format_t* VideoDecoderD3DPrivate::getFormat(const AVCodecContext *avctx, const QVector<GUID> &guids, GUID* selected) const
 {
-    foreach (const GUID& g, guids) {
+    foreach (const GUID& g, guids)
+    {
         const dxva2_mode_t *mode = Dxva2FindMode(&g);
-        if (mode) {
+
+        if (mode)
+        {
             qCDebug(DIGIKAM_QTAV_LOG).noquote() << QString::asprintf("- '%s' is supported by hardware", mode->name);
-        } else {
+        }
+        else
+        {
             qCDebug(DIGIKAM_QTAV_LOG).noquote() << QString::asprintf("- Unknown GUID = %08X-%04x-%04x-%02x-%02x-%02x-%02x-%02x-%02x-%02x-%02x",
                      (unsigned)g.Data1, g.Data2, g.Data3
                    , g.Data4[0], g.Data4[1]
                    , g.Data4[2], g.Data4[3], g.Data4[4], g.Data4[5], g.Data4[6], g.Data4[7]);
         }
     }
+
     /* Try all supported mode by our priority */
+
     const dxva2_mode_t *mode = dxva2_modes;
-    for (; mode->name; ++mode) {
-        if (!mode->codec || mode->codec != avctx->codec_id) {
+
+    for (; mode->name; ++mode)
+    {
+        if (!mode->codec || mode->codec != avctx->codec_id)
+        {
             qCDebug(DIGIKAM_QTAV_LOG).noquote() << QString::asprintf("codec does not match to %s: %s", avcodec_get_name(avctx->codec_id), avcodec_get_name((AVCodecID)mode->codec));
+
             continue;
         }
+
         qCDebug(DIGIKAM_QTAV_LOG).noquote() << QString::asprintf("D3D found codec: %s. Check runtime support for the codec.", mode->name);
         bool is_supported = false;
+
         //TODO: find_if
-        foreach (const GUID& g, guids) {
-            if (IsEqualGUID(*mode->guid, g)) {
+
+        foreach (const GUID& g, guids)
+        {
+            if (IsEqualGUID(*mode->guid, g))
+            {
                 is_supported = true;
                 break;
             }
         }
-        if (is_supported) {
+
+        if (is_supported)
+        {
             qCDebug(DIGIKAM_QTAV_LOG).noquote() << QString::asprintf("Check profile support: %s", AVDecoderPrivate::getProfileName(avctx));
             is_supported = checkProfile(mode, avctx->profile);
         }
+
         if (!is_supported)
             continue;
+
         int dxfmt = fourccFor(mode->guid);
+
         if (!dxfmt)
             continue;
+
         if (selected)
             *selected = *mode->guid;
+
         return D3dFindFormat(dxfmt);
     }
+
     return NULL;
 }
 
