@@ -37,18 +37,18 @@ const char* vendorName(unsigned id)
         char     name[32];
     } vendors [] =
     {
-        { 0x1002, "ATI" },
-        { 0x10DE, "NVIDIA" },
-        { 0x1106, "VIA" },
-        { 0x8086, "Intel" },
-        { 0x5333, "S3 Graphics" },
+        { 0x1002,     "ATI" },
+        { 0x10DE,     "NVIDIA" },
+        { 0x1106,     "VIA" },
+        { 0x8086,     "Intel" },
+        { 0x5333,     "S3 Graphics" },
         { 0x4D4F4351, "Qualcomm" },
-        { 0, "" }
+        { 0,          "" }
     };
 
     const char* vendor = "Unknown";
 
-    for (int i = 0; vendors[i].id != 0; i++)
+    for (int i = 0 ; vendors[i].id != 0 ; i++)
     {
         if (vendors[i].id == id)
         {
@@ -76,10 +76,10 @@ static void InitParameters(D3DPRESENT_PARAMETERS* d3dpp)
     //d3dpp->MultiSampleType        = D3DMULTISAMPLE_NONE;
     //d3dpp->PresentationInterval   = D3DPRESENT_INTERVAL_DEFAULT;
 
-    d3dpp->BackBufferCount        = 1;              //0;                  /* FIXME what to put here */
-    d3dpp->BackBufferFormat       = D3DFMT_UNKNOWN; //D3DFMT_X8R8G8B8;    /* FIXME what to put here */
-    d3dpp->BackBufferWidth        = 1;              //0;
-    d3dpp->BackBufferHeight       = 1;              //0;
+    d3dpp->BackBufferCount        = 1;              // 0;                  /* FIXME what to put here */
+    d3dpp->BackBufferFormat       = D3DFMT_UNKNOWN; // D3DFMT_X8R8G8B8;    /* FIXME what to put here */
+    d3dpp->BackBufferWidth        = 1;              // 0;
+    d3dpp->BackBufferHeight       = 1;              // 0;
 
     //d3dpp->EnableAutoDepthStencil = FALSE;
 }
@@ -90,7 +90,7 @@ IDirect3DDevice9* CreateDevice9Ex(HINSTANCE dll, IDirect3D9Ex** d3d9ex, D3DADAPT
 
     // http://msdn.microsoft.com/en-us/library/windows/desktop/bb219676(v=vs.85).aspx
 
-    typedef HRESULT (WINAPI *Create9ExFunc)(UINT SDKVersion, IDirect3D9Ex **ppD3D); //IDirect3D9Ex: void is ok
+    typedef HRESULT (WINAPI *Create9ExFunc)(UINT SDKVersion, IDirect3D9Ex **ppD3D); // IDirect3D9Ex: void is ok
     Create9ExFunc Create9Ex = (Create9ExFunc)GetProcAddress(dll, "Direct3DCreate9Ex");
 
     if (!Create9Ex)
@@ -99,7 +99,7 @@ IDirect3DDevice9* CreateDevice9Ex(HINSTANCE dll, IDirect3D9Ex** d3d9ex, D3DADAPT
         return NULL;
     }
 
-    DX_ENSURE(Create9Ex(D3D_SDK_VERSION, d3d9ex), NULL); //TODO: will D3D_SDK_VERSION be override by other headers?
+    DX_ENSURE(Create9Ex(D3D_SDK_VERSION, d3d9ex), NULL); // TODO: will D3D_SDK_VERSION be override by other headers?
 
     if (d3dai)
         DX_WARN((*d3d9ex)->GetAdapterIdentifier(D3DADAPTER_DEFAULT, 0, d3dai));
@@ -110,14 +110,15 @@ IDirect3DDevice9* CreateDevice9Ex(HINSTANCE dll, IDirect3D9Ex** d3d9ex, D3DADAPT
     // D3DCREATE_MULTITHREADED is required by gl interop. https://www.opengl.org/registry/specs/NV/DX_interop.txt
     // D3DCREATE_SOFTWARE_VERTEXPROCESSING in other dxva decoders. D3DCREATE_HARDWARE_VERTEXPROCESSING is required by cuda in cuD3D9CtxCreate()
 
-    DWORD flags = D3DCREATE_FPU_PRESERVE | D3DCREATE_MULTITHREADED | D3DCREATE_HARDWARE_VERTEXPROCESSING;
-    IDirect3DDevice9Ex *d3d9dev = NULL;
+    DWORD flags                 = D3DCREATE_FPU_PRESERVE | D3DCREATE_MULTITHREADED | D3DCREATE_HARDWARE_VERTEXPROCESSING;
+    IDirect3DDevice9Ex* d3d9dev = NULL;
 
     // mpv:
 
     /* Direct3D needs a HWND to create a device, even without using ::Present
-    this HWND is used to alert Direct3D when there's a change of focus window.
-    For now, use GetDesktopWindow, as it looks harmless */
+       this HWND is used to alert Direct3D when there's a change of focus window.
+       For now, use GetDesktopWindow, as it looks harmless
+    */
 
     DX_ENSURE((*d3d9ex)->CreateDeviceEx(D3DADAPTER_DEFAULT,
                                         D3DDEVTYPE_HAL, GetShellWindow(), // GetDesktopWindow(), //GetShellWindow()?
@@ -158,14 +159,14 @@ IDirect3DDevice9* CreateDevice9(HINSTANCE dll, IDirect3D9** d3d9, D3DADAPTER_IDE
 
     D3DPRESENT_PARAMETERS d3dpp;
     InitParameters(&d3dpp);
-    DWORD flags = D3DCREATE_FPU_PRESERVE | D3DCREATE_MULTITHREADED | D3DCREATE_MIXED_VERTEXPROCESSING;
-    IDirect3DDevice9 *d3d9dev = NULL;
+    DWORD flags               = D3DCREATE_FPU_PRESERVE | D3DCREATE_MULTITHREADED | D3DCREATE_MIXED_VERTEXPROCESSING;
+    IDirect3DDevice9* d3d9dev = NULL;
 
     DX_ENSURE(((*d3d9)->CreateDevice(D3DADAPTER_DEFAULT,
-                                   D3DDEVTYPE_HAL, GetShellWindow(), // GetDesktopWindow(), //GetShellWindow()?
-                                   flags,
-                                   &d3dpp, &d3d9dev)),
-                                   NULL);
+                                     D3DDEVTYPE_HAL, GetShellWindow(), // GetDesktopWindow(), //GetShellWindow()?
+                                     flags,
+                                     &d3dpp, &d3d9dev)),
+                                     NULL);
 
     qCDebug(DIGIKAM_QTAV_LOG).noquote() << QString::asprintf("IDirect3DDevice9 created");
 

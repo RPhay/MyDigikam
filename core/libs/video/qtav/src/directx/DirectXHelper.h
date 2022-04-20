@@ -74,8 +74,10 @@ namespace DXHelper
 Q_AV_EXPORT const char* vendorName(unsigned id);
 
 #ifndef Q_OS_WINRT
+
 IDirect3DDevice9* CreateDevice9Ex(HINSTANCE dll, IDirect3D9Ex **d3d9ex, D3DADAPTER_IDENTIFIER9* d3dai = NULL);
 IDirect3DDevice9* CreateDevice9(HINSTANCE dll, IDirect3D9 **d3d9, D3DADAPTER_IDENTIFIER9* d3dai = NULL);
+
 #endif
 
 } // namespace DXHelper

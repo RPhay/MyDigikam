@@ -141,6 +141,7 @@ if(D3D11_FOUND)
         ${CMAKE_CURRENT_SOURCE_DIR}/src/codec/video/VideoDecoderD3D11.cpp
         ${CMAKE_CURRENT_SOURCE_DIR}/src/directx/SurfaceInteropD3D11.cpp
         ${CMAKE_CURRENT_SOURCE_DIR}/src/directx/D3D11VP.cpp
+        ${CMAKE_CURRENT_SOURCE_DIR}/src/directx/DirectXHelper.cpp
     )
 
 endif()
