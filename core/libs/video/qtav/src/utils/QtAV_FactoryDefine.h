@@ -35,7 +35,7 @@
  * of MyClass from factory by an id type MyClassId.
  * To create the factory, just 2 steps
  * 1. In MyClass.h:
- *      #include "FactoryDefine.h"
+ *      #include "QtAV_FactoryDefine.h"
  *      FACTORY_DECLARE(MyClass)
  * 2. In MyClass.cpp:
  *      #include "QtAV_factory.h"

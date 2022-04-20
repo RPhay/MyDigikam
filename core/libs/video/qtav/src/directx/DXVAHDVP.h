@@ -23,44 +23,68 @@
 
 #ifndef QTAV_D3D9VPP_H
 #define QTAV_D3D9VPP_H
+
+// Qt includes
+
 #include <QRect>
-#include "directx/dxcompat.h"
+
+// Local includes
+
+#include "QtAV_Global.h"
+#include "dxcompat.h"
+
+// Windows includes
+
 #include <d3d9.h>
 #include <dxvahd.h>
 #include <wrl/client.h>
-#include "QtAV_Global.h"
+
 using namespace Microsoft::WRL;
+
 // https://msdn.microsoft.com/en-us/library/windows/desktop/ee663581(v=vs.85).aspx
 
 namespace QtAV
 {
-namespace dx {
+
+namespace dx
+{
 
 class DXVAHDVP
 {
 public:
+
     // brightness, contrast, hue, saturation, rotation, source/dest rect
+
     DXVAHDVP(ComPtr<IDirect3DDevice9> dev);
+
     void setOutput(IDirect3DSurface9* surface);
     void setSourceRect(const QRect& r);
+
     // input color space and range
+
     void setColorSpace(ColorSpace value);
     void setColorRange(ColorRange value);
     bool process(IDirect3DSurface9 *surface);
+
 private:
+
     bool ensureResource(UINT width, UINT height, D3DFORMAT format);
 
     ComPtr<IDirect3DDevice9Ex> m_dev;
     ComPtr<IDXVAHD_Device> m_viddev;
     ComPtr<IDXVAHD_VideoProcessor> m_vp;
     ComPtr<IDirect3DSurface9> m_out;
-    UINT m_w, m_h; //enumerator
+
+    UINT m_w, m_h;      // enumerator
     ColorSpace m_cs;
     ColorRange m_range;
     QRect m_srcRect;
     PDXVAHD_CreateDevice fDXVAHD_CreateDevice;
     D3DFORMAT m_fmt;
 };
-} //namespace dx
+
+} // namespace dx
+
 } // namespace QtAV
-#endif //QTAV_D3D9VPP_H
+
+#endif // QTAV_D3D9VPP_H

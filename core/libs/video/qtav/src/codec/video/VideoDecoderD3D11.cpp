@@ -30,7 +30,7 @@
 #define DX_LOG_COMPONENT "D3D11VA"
 
 #include "DirectXHelper.h"
-#include "directx/dxcompat.h"
+#include "dxcompat.h"
 
 #include <d3d11.h> //include before <libavcodec/d3d11va.h> because d3d11va.h also includes d3d11.h but as a c header (for msvc)
 #include <wrl/client.h>
@@ -42,7 +42,7 @@ extern "C"
 
 using namespace Microsoft::WRL; //ComPtr
 
-#include "directx/SurfaceInteropD3D11.h"
+#include "SurfaceInteropD3D11.h"
 #include "digikam_debug.h"
 
 // define __mingw_uuidof

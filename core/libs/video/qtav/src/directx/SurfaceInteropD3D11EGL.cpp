@@ -22,7 +22,7 @@
  * ============================================================ */
 
 #include "SurfaceInteropD3D11.h"
-#include "directx/D3D11VP.h"
+#include "D3D11VP.h"
 #define DX_LOG_COMPONENT "D3D11EGL Interop"
 #include "DirectXHelper.h"
 

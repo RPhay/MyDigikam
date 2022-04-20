@@ -32,7 +32,7 @@
 #include "QtAV_factory.h"
 //#include "QtAV_mkid.h"
 #include "digikam_debug.h"
-#include "directx/SurfaceInteropD3D9.h"
+#include "SurfaceInteropD3D9.h"
 
 #include <QSysInfo>
 

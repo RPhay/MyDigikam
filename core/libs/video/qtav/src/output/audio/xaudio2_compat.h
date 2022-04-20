@@ -41,7 +41,7 @@
 #ifndef _WIN32_WINNT_WIN8
 #define _WIN32_WINNT_WIN8 0x0602
 #endif
-#include "directx/dxcompat.h"
+#include "dxcompat.h"
 #ifdef __GNUC__
 // macros used by XAudio 2.7 (June 2010 SDK)
 #ifndef __in

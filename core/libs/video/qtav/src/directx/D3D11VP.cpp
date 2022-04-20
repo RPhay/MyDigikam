@@ -22,11 +22,16 @@
  * ============================================================ */
 
 #include "D3D11VP.h"
+
 #define DX_LOG_COMPONENT "D3D11VP"
+
+// Local includes
+
 #include "DirectXHelper.h"
 #include "digikam_debug.h"
 
 // define __mingw_uuidof
+
 #ifdef __CRT_UUID_DECL
 __CRT_UUID_DECL(ID3D11VideoContext,0x61F21C45,0x3C0E,0x4a74,0x9C,0xEA,0x67,0x10,0x0D,0x9A,0xD5,0xE4)
 __CRT_UUID_DECL(ID3D11VideoDevice,0x10EC4D5B,0x975A,0x4689,0xB9,0xE4,0xD0,0xAA,0xC3,0x0F,0xE3,0x33)
@@ -34,7 +39,9 @@ __CRT_UUID_DECL(ID3D11VideoDevice,0x10EC4D5B,0x975A,0x4689,0xB9,0xE4,0xD0,0xAA,0
 
 namespace QtAV
 {
-namespace dx {
+
+namespace dx
+{
 
 D3D11VP::D3D11VP(ComPtr<ID3D11Device> dev)
     : m_dev(dev)
@@ -71,69 +78,97 @@ bool D3D11VP::process(ID3D11Texture2D *texture, int index)
 {
     if (!texture || !m_out)
         return false;
+
     D3D11_TEXTURE2D_DESC desc;
     texture->GetDesc(&desc);
+
     if (!ensureResource(desc.Width, desc.Height, desc.Format))
         return false;
 
-    D3D11_VIDEO_PROCESSOR_INPUT_VIEW_DESC inviewDesc = {
+    D3D11_VIDEO_PROCESSOR_INPUT_VIEW_DESC inviewDesc =
+    {
         0, D3D11_VPIV_DIMENSION_TEXTURE2D, { 0, (UINT)index }
     };
+
     ComPtr<ID3D11VideoProcessorInputView> inview;
+
     DX_ENSURE(m_viddev->CreateVideoProcessorInputView(
                 texture, m_enum.Get(), &inviewDesc, &inview), false);
+
     ComPtr<ID3D11DeviceContext> ctx;
     ComPtr<ID3D11VideoContext> videoctx;
     m_dev->GetImmediateContext(&ctx);
     DX_ENSURE(ctx.As(&videoctx), false);
-    if (!m_srcRect.isEmpty()) {
+
+    if (!m_srcRect.isEmpty())
+    {
         const RECT r = {m_srcRect.x(), m_srcRect.y(), m_srcRect.width(), m_srcRect.height()};
         videoctx->VideoProcessorSetStreamSourceRect(m_vp.Get(), 0, TRUE, &r);
     }
+
     // disable additional processing. this can fix the output frame is too dark, also make in/out color space parameters work
+
     videoctx->VideoProcessorSetStreamAutoProcessingMode(m_vp.Get(), 0, FALSE);
     D3D11_VIDEO_PROCESSOR_COLOR_SPACE cs;
     ZeroMemory(&cs, sizeof(cs));
-    cs.YCbCr_Matrix = m_cs == ColorSpace_BT601 ? 0 : 1; //0: bt601, 1: bt709
+    cs.YCbCr_Matrix = m_cs == ColorSpace_BT601 ? 0 : 1; // 0: bt601, 1: bt709
+
     // D3D11_VIDEO_PROCESSOR_NOMINAL_RANGE_xxx is desktop only?
+
     cs.Nominal_Range = m_range == ColorRange_Full ? D3D11_VIDEO_PROCESSOR_NOMINAL_RANGE_0_255 : D3D11_VIDEO_PROCESSOR_NOMINAL_RANGE_16_235;
     videoctx->VideoProcessorSetStreamColorSpace(m_vp.Get(), 0, &cs);
+
 #if 0
+
     cs.RGB_Range = 1; // 0: full, 1: limited
     videoctx->VideoProcessorSetOutputColorSpace(m_vp.Get(), &cs);
+
 #endif
+
     D3D11_VIDEO_PROCESSOR_STREAM stream;
     ZeroMemory(&stream, sizeof(stream));
     stream.Enable = TRUE;
     stream.pInputSurface = inview.Get();
     DX_ENSURE(videoctx->VideoProcessorBlt(m_vp.Get(), m_outview.Get(), 0, 1, &stream), false);
+
     return true;
 }
 
 bool D3D11VP::ensureResource(UINT width, UINT height, DXGI_FORMAT format)
 {
     bool dirty = width != m_w || height != m_h;
-    if (dirty || !m_enum) {
-        D3D11_VIDEO_PROCESSOR_CONTENT_DESC vpdesc = {
+
+    if (dirty || !m_enum)
+    {
+        D3D11_VIDEO_PROCESSOR_CONTENT_DESC vpdesc =
+        {
             D3D11_VIDEO_FRAME_FORMAT_PROGRESSIVE,
             { 0, 0 }, width, height,
             { 0, 0 }, width, height,
             D3D11_VIDEO_USAGE_PLAYBACK_NORMAL //D3D11_VIDEO_USAGE_OPTIMAL_SPEED
         };
+
         DX_ENSURE(m_viddev->CreateVideoProcessorEnumerator(&vpdesc, &m_enum), false);
     }
 
     UINT flags;
+
     // TODO: check when format is changed, or record supported formats
+
     DX_ENSURE(m_enum->CheckVideoProcessorFormat(format, &flags), false);
-    if (!(flags & D3D11_VIDEO_PROCESSOR_FORMAT_SUPPORT_INPUT)) {
+
+    if (!(flags & D3D11_VIDEO_PROCESSOR_FORMAT_SUPPORT_INPUT))
+    {
         qCWarning(DIGIKAM_QTAV_LOG_WARN).noquote() << QString::asprintf("unsupported input format for d3d11 video processor: %d", format);
+
         return false;
     }
 
     if (dirty || !m_vp)
         DX_ENSURE(m_viddev->CreateVideoProcessor(m_enum.Get(), 0, &m_vp), false);
-    if (dirty || !m_outview) {
+
+    if (dirty || !m_outview)
+    {
         D3D11_VIDEO_PROCESSOR_OUTPUT_VIEW_DESC outputDesc;
         ZeroMemory(&outputDesc, sizeof(outputDesc));
         outputDesc.ViewDimension = D3D11_VPOV_DIMENSION_TEXTURE2D;
@@ -142,7 +177,10 @@ bool D3D11VP::ensureResource(UINT width, UINT height, DXGI_FORMAT format)
 
     m_w = width;
     m_h = height;
+
     return true;
 }
-} //namespace dx
+
+} // namespace dx
+
 } // namespace QtAV
