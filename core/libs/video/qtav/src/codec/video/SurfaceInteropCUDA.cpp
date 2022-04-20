@@ -77,16 +77,17 @@ void* InteropResource::mapToHost(const VideoFormat &format, void *handle, int pi
     CUdeviceptr devptr;
     unsigned int pitch;
 
-    CUDA_ENSURE(cuvidMapVideoFrame(dec, picIndex, &devptr, &pitch, const_cast<CUVIDPROCPARAMS*>(&param)), false);
+    CUDA_ENSURE(cuvidMapVideoFrame(dec, picIndex, &devptr, &pitch, const_cast<CUVIDPROCPARAMS*>(&param)), NULL);
+
     CUVIDAutoUnmapper unmapper(this, dec, devptr);
     Q_UNUSED(unmapper);
     uchar* host_data = NULL;
     const unsigned int host_size = pitch*coded_height*3/2;
-    CUDA_ENSURE(cuMemAllocHost((void**)&host_data, host_size), false);
+    CUDA_ENSURE(cuMemAllocHost((void**)&host_data, host_size), NULL);
 
     // copy to the memory not allocated by cuda is possible but much slower
 
-    CUDA_ENSURE(cuMemcpyDtoH(host_data, devptr, host_size), false);
+    CUDA_ENSURE(cuMemcpyDtoH(host_data, devptr, host_size), NULL);
 
     VideoFrame frame(width, height, VideoFormat::Format_NV12);
 
