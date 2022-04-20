@@ -169,7 +169,7 @@ int SelectConfig(AVCodecID codec_id, const T* cfgs, int nb_cfgs, T* cfg)
         else
             continue;
 
-        if (isNoEncrypt(&c.guidConfigBitstreamEncryption))
+        if (VideoDecoderD3D::isNoEncrypt(&c.guidConfigBitstreamEncryption))
             score += 16;
 
         if (cfg_score < score)
