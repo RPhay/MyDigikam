@@ -40,19 +40,13 @@ if(WIN32)
 
     include(FindPackageHandleStandardArgs)
 
-    FIND_PACKAGE_HANDLE_STANDARD_ARGS(DIRECTSOUND DEFAULT_MSG DIRECTSOUND_LIBRARIES)
+    FIND_PACKAGE_HANDLE_STANDARD_ARGS(DirectSound DEFAULT_MSG DIRECTSOUND_LIBRARIES)
 
-    if(DIRECTSOUND_FOUND)
+    set(DIRECTSOUND_FOUND ${DirectSound_FOUND})
 
-        if(NOT DIRECTSOUND_FIND_QUIETLY)
-
-            message(STATUS "Found dsound: ${DIRECTSOUND_LIBRARIES}")
-
-        endif()
-
-        mark_as_advanced(DIRECTSOUND_INCLUDE_DIRS
-                         DIRECTSOUND_LIBRARIES
-        )
+    mark_as_advanced(DIRECTSOUND_INCLUDE_DIRS
+                     DIRECTSOUND_LIBRARIES
+    )
 
     endif()
 
