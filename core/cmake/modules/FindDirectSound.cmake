@@ -48,7 +48,5 @@ if(WIN32)
                      DIRECTSOUND_LIBRARIES
     )
 
-    endif()
-
 endif()
 
