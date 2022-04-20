@@ -4,32 +4,32 @@
 # Redistribution and use is allowed according to the terms of the BSD license.
 # For details see the accompanying COPYING-CMAKE-SCRIPTS file.
 
-message(STATUS "")
-message(STATUS "--------------------------------------------------")
-message(STATUS "digiKam MediaPlayer dependencies checks:")
-message(STATUS "")
-
-find_package(FFmpeg COMPONENTS AVCODEC
-                               AVDEVICE
-                               AVFILTER
-                               AVFORMAT
-                               AVUTIL
-                               SWSCALE
-                               AVRESAMPLE
-                               SWRESAMPLE
-)
-
-find_package(ASS        QUIET)
-find_package(OpenAL     QUIET)
-find_package(Portaudio  QUIET)
-find_package(PulseAudio QUIET)
-find_package(VAAPI      QUIET)
-find_package(uchardet   QUIET)
-
-include(MacroSSE)
-CheckSSESupport()
-
 if(ENABLE_MEDIAPLAYER)
+
+    message(STATUS "")
+    message(STATUS "--------------------------------------------------")
+    message(STATUS "digiKam MediaPlayer dependencies checks:")
+    message(STATUS "")
+
+    find_package(FFmpeg COMPONENTS AVCODEC
+                                   AVDEVICE
+                                   AVFILTER
+                                   AVFORMAT
+                                   AVUTIL
+                                   SWSCALE
+                                   AVRESAMPLE
+                                   SWRESAMPLE
+    )
+
+    find_package(ASS        QUIET)
+    find_package(OpenAL     QUIET)
+    find_package(Portaudio  QUIET)
+    find_package(PulseAudio QUIET)
+    find_package(VAAPI      QUIET)
+    find_package(uchardet   QUIET)
+
+    include(MacroSSE)
+    CheckSSESupport()
 
     message(STATUS "FFMpeg AVCodec    : ${AVCODEC_FOUND}")
     message(STATUS "FFMpeg AVDevice   : ${AVDEVICE_FOUND}")
