@@ -19,12 +19,12 @@ find_package(FFmpeg COMPONENTS AVCODEC
                                SWRESAMPLE
 )
 
-find_package(ASS)
-find_package(OpenAL)
-find_package(Portaudio)
-find_package(PulseAudio)
-find_package(VAAPI)
-find_package(uchardet)
+find_package(ASS        QUIET)
+find_package(OpenAL     QUIET)
+find_package(Portaudio  QUIET)
+find_package(PulseAudio QUIET)
+find_package(VAAPI      QUIET)
+find_package(uchardet   QUIET)
 
 include(MacroSSE)
 CheckSSESupport()
