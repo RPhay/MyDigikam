@@ -37,12 +37,14 @@ if(WIN32)
 
     include(FindPackageHandleStandardArgs)
 
-    FIND_PACKAGE_HANDLE_STANDARD_ARGS(XAUDIO2
+    FIND_PACKAGE_HANDLE_STANDARD_ARGS(XAudio2
                                       DEFAULT_MSG
                                           DirectX_ROOT_DIR
                                           XAUDIO2_LIBRARIES
                                           XAUDIO2_INCLUDE_DIRS
     )
+
+    set(XAUDIO2_FOUND ${XAudio2_FOUND})
 
     mark_as_advanced(XAUDIO2_INCLUDE_DIRS
                      XAUDIO2_LIBRARIES
