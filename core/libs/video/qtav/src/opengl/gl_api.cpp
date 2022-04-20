@@ -22,52 +22,81 @@
  * ============================================================ */
 
 #include "gl_api.h"
+
+// Local includes
+
 #include "OpenGLHelper.h"
+#include "digikam_debug.h"
 
 namespace QtAV
 {
+
 typedef void *(*GetProcAddress_t)(const char *);
+
 static GetProcAddress_t sGetProcAddress;
 
 void* GetProcAddress_Qt(const char *name)
 {
     if (!QOpenGLContext::currentContext())
         return 0;
+
     void* p = (void*)QOpenGLContext::currentContext()->getProcAddress(QByteArray((const char*)name));
-    if (!p) {
+
+    if (!p)
+    {
+
 #if defined(Q_OS_WIN) && defined(QT_OPENGL_DYNAMIC)
+
         HMODULE handle = (HMODULE)QOpenGLContext::openGLModuleHandle();
+
         if (handle)
             p = (void*)GetProcAddress(handle, name);
+
 #endif
+
     }
+
     //fallback to QOpenGLFunctions_1_0?
+
     return p;
 }
 
 static void* GetProcAddressWithExt(GetProcAddress_t get, const char *name)
 {
     void* fp = get(name);
+
     if (fp)
         return fp;
-    static const char *ext[] = {
+
+    static const char *ext[] =
+    {
         "ARB", "OES", "EXT", "ANGLE", "NV" //TODO: MESA, INTEL?
+
 #ifdef __APPLE__
+
         , "APPLE"
+
 #endif
+
         , NULL
     };
+
     char f[512];
     memcpy(f, name, strlen(name));
     char* const p = f + strlen(name);
-    for (int i = 0; ext[i]; ++i) {
+
+    for (int i = 0 ; ext[i] ; ++i)
+    {
         memcpy(p, ext[i], sizeof(ext[i]) + 1); //copy trail '\0'
         fp = get(f);
-        if (fp) {
+
+        if (fp)
+        {
             printf("extension resolved: %s", f);
             return fp;
         }
     }
+
     return NULL;
 }
 
@@ -77,32 +106,36 @@ static void* GetProcAddressDefault(const char *name)
 }
 
 #ifdef QT_OPENGL_DYNAMIC
-#define GETPROCADDRESS_RESOLVE
+#   define GETPROCADDRESS_RESOLVE
+
 // GL_RESOLVE_ES_X_X will link to lib or use getProcAddress
-#define GL_RESOLVE_ES_2_0(name) GL_RESOLVE(name)
-#define GL_RESOLVE_ES_3_0(name) GL_RESOLVE(name)
-#define GL_RESOLVE_ES_3_1(name) GL_RESOLVE(name)
+
+#   define GL_RESOLVE_ES_2_0(name) GL_RESOLVE(name)
+#   define GL_RESOLVE_ES_3_0(name) GL_RESOLVE(name)
+#   define GL_RESOLVE_ES_3_1(name) GL_RESOLVE(name)
 #else
-#ifdef GL_ES_VERSION_2_0
-#define GL_RESOLVE_ES_2_0(name) GL_RESOLVE(name)
-#define GL_RESOLVE_ES_3_0(name) GL_RESOLVE_EXT(name)
-#define GL_RESOLVE_ES_3_1(name) GL_RESOLVE_EXT(name)
-#elif GL_ES_VERSION_3_0
-#define GL_RESOLVE_ES_2_0(name) GL_RESOLVE(name)
-#define GL_RESOLVE_ES_3_0(name) GL_RESOLVE(name)
-#define GL_RESOLVE_ES_3_1(name) GL_RESOLVE_NONE(name) //gl3ext is empty
-#elif GL_ES_VERSION_3_1
-#define GL_RESOLVE_ES_2_0(name) GL_RESOLVE(name)
-#define GL_RESOLVE_ES_3_0(name) GL_RESOLVE(name)
-#define GL_RESOLVE_ES_3_1(name) GL_RESOLVE(name)
-#else
-#define GETPROCADDRESS_RESOLVE
+#   ifdef GL_ES_VERSION_2_0
+#       define GL_RESOLVE_ES_2_0(name) GL_RESOLVE(name)
+#       define GL_RESOLVE_ES_3_0(name) GL_RESOLVE_EXT(name)
+#       define GL_RESOLVE_ES_3_1(name) GL_RESOLVE_EXT(name)
+#   elif GL_ES_VERSION_3_0
+#       define GL_RESOLVE_ES_2_0(name) GL_RESOLVE(name)
+#       define GL_RESOLVE_ES_3_0(name) GL_RESOLVE(name)
+#       define GL_RESOLVE_ES_3_1(name) GL_RESOLVE_NONE(name) //gl3ext is empty
+#   elif GL_ES_VERSION_3_1
+#       define GL_RESOLVE_ES_2_0(name) GL_RESOLVE(name)
+#       define GL_RESOLVE_ES_3_0(name) GL_RESOLVE(name)
+#       define GL_RESOLVE_ES_3_1(name) GL_RESOLVE(name)
+#   else
+#       define GETPROCADDRESS_RESOLVE
+
 // GL_RESOLVE_ES_X_X will link to lib or use getProcAddress
-#define GL_RESOLVE_ES_2_0(name) GL_RESOLVE(name)
-#define GL_RESOLVE_ES_3_0(name) GL_RESOLVE(name)
-#define GL_RESOLVE_ES_3_1(name) GL_RESOLVE(name)
+
+#       define GL_RESOLVE_ES_2_0(name) GL_RESOLVE(name)
+#       define GL_RESOLVE_ES_3_0(name) GL_RESOLVE(name)
+#       define GL_RESOLVE_ES_3_1(name) GL_RESOLVE(name)
+#   endif
 #endif
-#endif //QT_OPENGL_DYNAMIC
 
 
 #define GL_RESOLVE_NONE(name) do { name = NULL;}while(0)
@@ -110,10 +143,11 @@ static void* GetProcAddressDefault(const char *name)
     void** fp = (void**)(&name); \
     *fp = GetProcAddressDefault("gl" # name); \
 } while(0)
+
 #ifdef GETPROCADDRESS_RESOLVE
-#define GL_RESOLVE(name) GL_RESOLVE_EXT(name)
+#   define GL_RESOLVE(name) GL_RESOLVE_EXT(name)
 #else
-#define GL_RESOLVE(name)  do {\
+#   define GL_RESOLVE(name)  do {\
     name = ::gl##name; \
 } while(0)
 #endif
@@ -126,6 +160,7 @@ static void* GetProcAddressDefault(const char *name)
 void api::resolve()
 {
     //memset(g, 0, sizeof(g));
+
     sGetProcAddress = GetProcAddressDefault;
     GL_RESOLVE(GetString);
     GL_RESOLVE(GetError);
@@ -152,13 +187,20 @@ void api::resolve()
     GL_RESOLVE_ES_3_1(GetTexLevelParameteriv);
 
 #ifdef Q_OS_WIN32
-    if (!OpenGLHelper::isOpenGLES()) {
-        static const char* ext[] = {
+
+    if (!OpenGLHelper::isOpenGLES())
+    {
+        static const char* ext[] =
+        {
             "WGL_NV_DX_interop2",
             "WGL_NV_DX_interop",
             NULL,
         };
-        if (OpenGLHelper::hasExtension(ext)) { // TODO: use wgl getprocaddress function (for qt4)
+
+        if (OpenGLHelper::hasExtension(ext))
+        {
+            // TODO: use wgl getprocaddress function (for qt4)
+
             qCDebug(DIGIKAM_QTAV_LOG).noquote() << QString::asprintf("resolving WGL_NV_DX_interop...");
             WGL_RESOLVE(DXSetResourceShareHandleNV);
             WGL_RESOLVE(DXOpenDeviceNV);
@@ -170,14 +212,21 @@ void api::resolve()
             WGL_RESOLVE(DXUnlockObjectsNV);
         }
     }
+
 #endif //Q_OS_WIN32
+
 }
 
-api& gl() {
+api& gl()
+{
     static api g;
-    if (!sGetProcAddress) {
+
+    if (!sGetProcAddress)
+    {
         g.resolve();
     }
+
     return g;
 }
+
 } // namespace QtAV

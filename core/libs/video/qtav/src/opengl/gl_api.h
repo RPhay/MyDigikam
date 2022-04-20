@@ -34,12 +34,14 @@
 #   elif defined(QT_OPENGL_LIB)
 #       if QT_VERSION >= QT_VERSION_CHECK(4, 8, 0)
 #           include <QtOpenGL/QGLFunctions>
-#       endif //4.8
+#       endif
 #       include <QtOpenGL/QGLBuffer>
 #       include <QtOpenGL/QGLContext>
 #       include <QtOpenGL/QGLShaderProgram>
 #       define QOpenGLShaderProgram QGLShaderProgram
+
 typedef QGLBuffer QOpenGLBuffer;
+
 #       define QOpenGLContext QGLContext
 #       define QOpenGLShaderProgram QGLShaderProgram
 #       define QOpenGLShader QGLShader
@@ -53,7 +55,7 @@ typedef QGLBuffer QOpenGLBuffer;
 #               include <OpenGLES/ES2/glext.h>
 #           else // "uncontrolled" ES2 platforms
 #               include <GLES2/gl2.h>
-#           endif // Q_OS_MAC
+#           endif
 #       else // non-ES2 platforms
 #           if defined(Q_OS_MAC)
 #               include <OpenGL/gl.h>
@@ -63,8 +65,8 @@ typedef QGLBuffer QOpenGLBuffer;
 #               include <OpenGL/glext.h>
 #           else
 #               include <GL/gl.h>
-#           endif // Q_OS_MAC
-#       endif // QT_OPENGL_ES_2
+#           endif
+#       endif
 #   endif
 #   ifndef GL_APIENTRY
 #       ifdef Q_OS_WIN
@@ -76,7 +78,9 @@ typedef QGLBuffer QOpenGLBuffer;
 #   ifndef GL_TEXTURE_RECTANGLE
 #       define GL_TEXTURE_RECTANGLE 0x84F5
 #   endif
+
 //GL_BGRA is available in OpenGL >= 1.2
+
 #   ifndef GL_BGRA
 #       define GL_BGRA 0x80E1
 #   endif
@@ -118,13 +122,17 @@ namespace QtAV
 {
 
 typedef char GLchar; // for qt4 mingw
+
 struct api;
+
 api& gl();
 
 struct api
 {
     void   resolve();
+
     // TODO: static, so gl::GetString
+
     const  GLubyte *(GL_APIENTRY *GetString)(GLenum);
     GLenum (GL_APIENTRY *GetError)(void);
     void   (GL_APIENTRY *ActiveTexture)(GLenum);
@@ -148,11 +156,12 @@ struct api
     void   (GL_APIENTRY *BlendFuncSeparate)(GLenum srcRGB, GLenum dstRGB, GLenum srcAlpha, GLenum dstAlpha);
 
     // Before using the following members, check null ptr first because they are not valid everywhere
-// ES3.1
+    // ES3.1
+
     void   (GL_APIENTRY *GetTexLevelParameteriv)(GLenum, GLint, GLenum, GLint *);
 
 #   if defined(Q_OS_WIN32)
-//#include <GL/wglext.h> //not found in vs2013
+//      #include <GL/wglext.h> //not found in vs2013
 //https://www.opengl.org/registry/specs/NV/DX_interop.txt
 #       ifndef WGL_ACCESS_READ_ONLY_NV
 #           define WGL_ACCESS_READ_ONLY_NV           0x00000000
@@ -168,10 +177,11 @@ struct api
     BOOL   (WINAPI* DXObjectAccessNV)(HANDLE hObject, GLenum access);
     BOOL   (WINAPI* DXLockObjectsNV)(HANDLE hDevice, GLint count, HANDLE *hObjects);
     BOOL   (WINAPI* DXUnlockObjectsNV)(HANDLE hDevice, GLint count, HANDLE *hObjects);
+
 #   endif
 
 };
-  
+
 } // namespace QtAV
 
 #endif // QT_NO_OPENGL
