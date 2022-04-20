@@ -63,12 +63,12 @@ public:
     enum PixelFormat
     {
         Format_Invalid = -1,
-        Format_ARGB32, // AARRGGBB or 00RRGGBB, check hasAlpha is required
-        Format_BGRA32, // BBGGRRAA
-        Format_ABGR32, // QImage.RGBA8888 le
-        Format_RGBA32, // QImage. no
-        Format_RGB32,  // 0xAARRGGBB native endian. same as QImage::Format_ARGB32. be: ARGB32, le: BGRA32
-        Format_BGR32,  // 0xAABBGGRR native endian
+        Format_ARGB32, ///< AARRGGBB or 00RRGGBB, check hasAlpha is required
+        Format_BGRA32, ///< BBGGRRAA
+        Format_ABGR32, ///< QImage.RGBA8888 le
+        Format_RGBA32, ///< QImage. no
+        Format_RGB32,  ///< 0xAARRGGBB native endian. same as QImage::Format_ARGB32. be: ARGB32, le: BGRA32
+        Format_BGR32,  ///< 0xAABBGGRR native endian
         Format_RGB24,
         Format_BGR24,
         Format_RGB565,
@@ -85,20 +85,20 @@ public:
         Format_YUV411P,
         Format_YUV410P,
         Format_YV12,
-        Format_UYVY, // 422
-        Format_VYUY, // not in ffmpeg. OMX_COLOR_FormatCrYCbY
-        Format_YUYV, // 422, aka yuy2
-        Format_YVYU, // 422
+        Format_UYVY, ///< 422
+        Format_VYUY, ///< not in ffmpeg. OMX_COLOR_FormatCrYCbY
+        Format_YUYV, ///< 422, aka yuy2
+        Format_YVYU, ///< 422
         Format_NV12,
         Format_NV21,
         Format_IMC1,
         Format_IMC2,
-        Format_IMC3, // same as IMC1, swap U V
-        Format_IMC4, // same as IMC2, swap U V
-        Format_Y8,   // GREY. single 8 bit Y plane
-        Format_Y16,  // single 16 bit Y plane. LE
+        Format_IMC3, ///< same as IMC1, swap U V
+        Format_IMC4, ///< same as IMC2, swap U V
+        Format_Y8,   ///< GREY. single 8 bit Y plane
+        Format_Y16,  ///< single 16 bit Y plane. LE
 
-        Format_Jpeg, // yuvj
+        Format_Jpeg, ///< yuvj
 
         // Format_CameraRaw,
         // Format_AdobeDng,
@@ -134,20 +134,20 @@ public:
         Format_YUV422P16BE,
         Format_YUV444P16BE,
 
-        Format_RGB48,   // native endian
+        Format_RGB48,   ///< native endian
         Format_RGB48LE,
         Format_RGB48BE,
         Format_BGR48,
         Format_BGR48LE,
         Format_BGR48BE,
-        Format_RGBA64,  // native endian
+        Format_RGBA64,  ///< native endian
         Format_RGBA64LE,
         Format_RGBA64BE,
-        Format_BGRA64,  // native endian
+        Format_BGRA64,  ///< native endian
         Format_BGRA64LE,
         Format_BGRA64BE,
 
-        Format_VYU,     // for rgb422_apple texture, the layout is like rgb24: (v, y, u, )
+        Format_VYU,     ///< for rgb422_apple texture, the layout is like rgb24: (v, y, u, )
         Format_XYZ12,
         Format_XYZ12LE,
         Format_XYZ12BE,
@@ -161,7 +161,7 @@ public:
      * If returns a negative value, the QImage format is the positive one but R/G components are swapped because no direct support by QImage. QImage can swap R/G very fast.
      */
     static QImage::Format imageFormatFromPixelFormat(PixelFormat format);
-    static PixelFormat pixelFormatFromFFmpeg(int ff); // AVPixelFormat
+    static PixelFormat pixelFormatFromFFmpeg(int ff);                       // AVPixelFormat
     static int pixelFormatToFFmpeg(PixelFormat fmt);
     static QVector<int> pixelFormatsFFmpeg();
 
@@ -230,9 +230,11 @@ public:
     int bitsPerPixel() const;
 
     /// nv12: 16 for uv plane
+
     int bitsPerPixel(int plane) const;
 
     /// bgr24 is 24 not 32
+
     int bitsPerPixelPadded() const;
     int bytesPerPixel() const;
     int bytesPerPixel(int plane) const;
@@ -244,6 +246,7 @@ public:
     int bitsPerComponent() const;
 
     // return line size with given width
+
     int bytesPerLine(int width, int plane) const;
 
     /*!
@@ -310,8 +313,10 @@ private:
 };
 
 #ifndef QT_NO_DEBUG_STREAM
+
 Q_AV_EXPORT QDebug operator<<(QDebug debug, const VideoFormat &fmt);
 Q_AV_EXPORT QDebug operator<<(QDebug debug, VideoFormat::PixelFormat pixFmt);
+
 #endif
 
 } // namespace QtAV

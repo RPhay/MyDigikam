@@ -35,8 +35,8 @@
 
 #include "SubImage.h"
 
-/*
- * to avoid read error, subtitle size > 10*1024*1024 will be ignored.
+/**
+ * NOTE: to avoid read error, subtitle size > 10*1024*1024 will be ignored.
  */
 
 namespace QtAV
@@ -53,15 +53,16 @@ public:
     }
 
     // valide: begin < end
-    bool isValid() const { return begin < end;}
-    operator bool() const { return isValid();}
-    bool operator !() const { return !isValid();}
-    inline bool operator <(const SubtitleFrame& f) const { return end < f.end;}
-    inline bool operator <(qreal t) const { return end < t;}
 
-    qreal begin;
-    qreal end;
-    QString text; // plain text. always valid
+    bool isValid() const                                 { return begin < end; }
+    operator bool() const                                { return isValid();   }
+    bool operator !() const                              { return !isValid();  }
+    inline bool operator <(const SubtitleFrame& f) const { return end < f.end; }
+    inline bool operator <(qreal t) const                { return end < t;     }
+
+    qreal   begin;
+    qreal   end;
+    QString text; ///< plain text. always valid
 };
 
 class Q_AV_EXPORT Subtitle : public QObject
@@ -70,6 +71,7 @@ class Q_AV_EXPORT Subtitle : public QObject
     Q_PROPERTY(QByteArray codec READ codec WRITE setCodec NOTIFY codecChanged)
 
     // QList<SubtitleProcessorId>
+
     Q_PROPERTY(QStringList engines READ engines WRITE setEngines NOTIFY enginesChanged)
     Q_PROPERTY(QString engine READ engine NOTIFY engineChanged)
     Q_PROPERTY(bool fuzzyMatch READ fuzzyMatch WRITE setFuzzyMatch NOTIFY fuzzyMatchChanged)
@@ -85,6 +87,7 @@ class Q_AV_EXPORT Subtitle : public QObject
     Q_PROPERTY(bool canRender READ canRender NOTIFY canRenderChanged)
 
     // font properties for libass engine
+
     Q_PROPERTY(QString fontFile READ fontFile WRITE setFontFile NOTIFY fontFileChanged)
     Q_PROPERTY(QString fontsDir READ fontsDir WRITE setFontsDir NOTIFY fontsDirChanged)
     Q_PROPERTY(bool fontFileForced READ isFontFileForced WRITE setFontFileForced NOTIFY fontFileForcedChanged)
@@ -263,7 +266,7 @@ private:
     void checkCapability();
 
     class Private;
-    Private *priv;
+    Private* priv;
 };
 
 // internal use
@@ -292,6 +295,7 @@ public:
     bool fuzzyMatch() const;
 
     // always use exact file path by setFile(). file name is used internally
+
     //void setFileName(const QString& name);
     //QString fileName() const;
 
@@ -322,8 +326,8 @@ public:
 
 private:
 
-    QObject *m_obj;
-    Subtitle *m_s;
+    QObject*  m_obj;
+    Subtitle* m_s;
 };
 
 } // namespace QtAV

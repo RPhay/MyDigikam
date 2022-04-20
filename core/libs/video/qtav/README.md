@@ -15,6 +15,7 @@ x Use qCDebug()/qCWarning categories with digiKam debug spaces. Drop Logger clas
 x Use KDE i18n() instead tr().
 x Use cmake to find libuchardet dependency.
 x Add SSE2 and SSE4.1 support with CMake.
+x Remove QML support.
 * Remove support of Qt version < 5.
 * Fix header guards.
 * Fix includes rules/order from Qt and local.
@@ -34,6 +35,13 @@ UNMAINTAINED FEATURES:
 
 TODO:
 
-+ Use cmake to find DirectX dependencies (Windows only).
-+ Use cmake to find CUDA Toolkit dependency.
-+ Port to FFMPEG 5.
++ Use cmake to find DirectX dependencies (Native Windows only):
+  - xaudio2
+  - direct2d
+  - dxva
+  - d3d11va
+  - dsound
+  - gdiplus
+
++ Use cmake to find CUDA Toolkit dependencies.
++ Port to FFMPEG 5 API with backward compatibility.

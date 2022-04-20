@@ -61,19 +61,19 @@ public:
     virtual ~OpenGLRendererBase();
 
     bool isSupported(VideoFormat::PixelFormat pixfmt) const Q_DECL_OVERRIDE;
-    OpenGLVideo* opengl() const Q_DECL_OVERRIDE;
+    OpenGLVideo* opengl() const                             Q_DECL_OVERRIDE;
 
 protected:
 
-    virtual bool receiveFrame(const VideoFrame& frame) Q_DECL_OVERRIDE;
+    virtual bool receiveFrame(const VideoFrame& frame)      Q_DECL_OVERRIDE;
 
     // called in paintEvent before drawFrame() when required
 
-    virtual void drawBackground() Q_DECL_OVERRIDE;
+    virtual void drawBackground()                           Q_DECL_OVERRIDE;
 
     // draw the current frame using the current paint engine. called by paintEvent()
 
-    virtual void drawFrame() Q_DECL_OVERRIDE;
+    virtual void drawFrame()                                Q_DECL_OVERRIDE;
     void onInitializeGL();
     void onPaintGL();
     void onResizeGL(int w, int h);
@@ -82,13 +82,13 @@ protected:
 
 private:
 
-    void onSetOutAspectRatioMode(OutAspectRatioMode mode) Q_DECL_OVERRIDE;
-    void onSetOutAspectRatio(qreal ratio) Q_DECL_OVERRIDE;
-    bool onSetOrientation(int value) Q_DECL_OVERRIDE;
-    bool onSetBrightness(qreal b) Q_DECL_OVERRIDE;
-    bool onSetContrast(qreal c) Q_DECL_OVERRIDE;
-    bool onSetHue(qreal h) Q_DECL_OVERRIDE;
-    bool onSetSaturation(qreal s) Q_DECL_OVERRIDE;
+    void onSetOutAspectRatioMode(OutAspectRatioMode mode)   Q_DECL_OVERRIDE;
+    void onSetOutAspectRatio(qreal ratio)                   Q_DECL_OVERRIDE;
+    bool onSetOrientation(int value)                        Q_DECL_OVERRIDE;
+    bool onSetBrightness(qreal b)                           Q_DECL_OVERRIDE;
+    bool onSetContrast(qreal c)                             Q_DECL_OVERRIDE;
+    bool onSetHue(qreal h)                                  Q_DECL_OVERRIDE;
+    bool onSetSaturation(qreal s)                           Q_DECL_OVERRIDE;
 
 protected:
 

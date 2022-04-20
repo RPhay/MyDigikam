@@ -57,6 +57,7 @@ public:
     enum Type
     {
         /// audio and video...
+
         QtPainter,
         OpenGL,
         Direct2D,   ///< Not implemeted

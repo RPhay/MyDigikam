@@ -51,7 +51,9 @@ class Q_AV_EXPORT SubtitleFilter : public VideoFilter,
     Q_PROPERTY(QStringList engines READ engines WRITE setEngines NOTIFY enginesChanged)
     Q_PROPERTY(QString engine READ engine NOTIFY engineChanged)
     Q_PROPERTY(bool fuzzyMatch READ fuzzyMatch WRITE setFuzzyMatch NOTIFY fuzzyMatchChanged)
+
     //Q_PROPERTY(QString fileName READ fileName WRITE setFileName NOTIFY fileNameChanged)
+
     Q_PROPERTY(QStringList dirs READ dirs WRITE setDirs NOTIFY dirsChanged)
     Q_PROPERTY(QStringList suffixes READ suffixes WRITE setSuffixes NOTIFY suffixesChanged)
     Q_PROPERTY(QStringList supportedSuffixes READ supportedSuffixes NOTIFY supportedSuffixesChanged)
@@ -75,6 +77,7 @@ public:
     explicit SubtitleFilter(QObject *parent = 0);
 
     void setPlayer(AVPlayer* player);
+
     bool isSupported(VideoFilterContext::Type ct) const Q_DECL_OVERRIDE
     {
         return ct == VideoFilterContext::QtPainter || ct == VideoFilterContext::X11;
@@ -94,6 +97,7 @@ public:
     bool autoLoad() const;
 
     // <1 means normalized. not valid means the whole target rect. default is (0, 0, 1, 0.9) and align bottom
+
     void setRect(const QRectF& r);
     QRectF rect() const;
     void setFont(const QFont& f);
@@ -124,7 +128,9 @@ Q_SIGNALS:
     void enginesChanged();
     void fuzzyMatchChanged();
     void contentChanged();
+
     //void fileNameChanged();
+
     void dirsChanged();
     void suffixesChanged();
     void supportedSuffixesChanged();

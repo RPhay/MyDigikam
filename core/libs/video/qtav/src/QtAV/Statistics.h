@@ -65,16 +65,17 @@ public:
 
         // TODO: dynamic bit rate compute
 
-        bool available;
-        QString codec, codec_long;
-        QString decoder;
-        QString decoder_detail;
-        QTime current_time, total_time, start_time;
-        int bit_rate;
-        qint64 frames;
-        qreal frame_rate; // average fps stored in media stream information
+        bool                    available;
+        QString                 codec, codec_long;
+        QString                 decoder;
+        QString                 decoder_detail;
+        QTime                   current_time, total_time, start_time;
+        int                     bit_rate;
+        qint64                  frames;
+        qreal                   frame_rate; // average fps stored in media stream information
 
         // union member with ctor, dtor, copy ctor only works in c++11
+
         /*union {
             audio_only audio;
             video_only video;
@@ -91,8 +92,8 @@ public:
 
         AudioOnly();
 
-        int sample_rate; ///< samples per second
-        int channels;    ///< number of audio channels
+        int     sample_rate; ///< samples per second
+        int     channels;    ///< number of audio channels
         QString channel_layout;
         QString sample_fmt;  ///< sample format
 
@@ -100,13 +101,13 @@ public:
          * Number of samples per channel in an audio frame.
          * decoding: may be set by some decoders to indicate constant frame size
          */
-        int frame_size;
+        int     frame_size;
 
         /**
          * number of bytes per packet if constant and known or 0
          * Used by some WAV based audio codecs.
          */
-        int block_align;
+        int     block_align;
     } audio_only;
 
     // from AVCodecContext
@@ -127,13 +128,13 @@ public:
         qreal currentDisplayFPS() const;
         qreal pts() const; // last pts
 
-        int width, height;
+        int     width, height;
 
         /**
          * Bitstream width / height, may be different from width/height if lowres enabled.
          * - decoding: Set by user before init if known. Codec should override / dynamically change if needed.
          */
-        int coded_width, coded_height;
+        int     coded_width, coded_height;
 
         /**
          * the number of pictures in a group of pictures, or 0 for intra_only

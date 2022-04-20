@@ -55,7 +55,7 @@ public:
     Packet(const Packet& other);
     Packet& operator =(const Packet& other);
 
-    bool isEOF()const;
+    bool isEOF() const;
     inline bool isValid() const;
 
     /*!

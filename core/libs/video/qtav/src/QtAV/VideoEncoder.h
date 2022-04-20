@@ -24,14 +24,20 @@
 #ifndef QTAV_VIDEO_ENCODER_H
 #define QTAV_VIDEO_ENCODER_H
 
+// Qt includes
+
+#include <QStringList>
+
+// Local includes
+
 #include "AVEncoder.h"
 #include "VideoFrame.h"
-#include <QStringList>
 
 namespace QtAV
 {
 
 typedef int VideoEncoderId;
+
 class VideoEncoderPrivate;
 
 class Q_AV_EXPORT VideoEncoder : public AVEncoder
@@ -78,7 +84,7 @@ public:
     void setHeight(int value);
     int height() const;
 
-    /// TODO: check avctx->supported_framerates. use frame_rate_used
+    // TODO: check avctx->supported_framerates. use frame_rate_used
 
     /*!
      * \brief setFrameRate
@@ -87,7 +93,7 @@ public:
      */
     void setFrameRate(qreal value);
     qreal frameRate() const;
-    static qreal defaultFrameRate() { return 25;}
+    static qreal defaultFrameRate() { return 25; }
 
     /*!
      * \brief setPixelFormat
@@ -125,7 +131,7 @@ public:
 
 private:
 
-    template<class C> static VideoEncoder* create() { return new C();}
+    template<class C> static VideoEncoder* create() { return new C(); }
     typedef VideoEncoder* (*VideoEncoderCreator)();
     static bool Register(VideoEncoderId id, VideoEncoderCreator, const char *name);
 

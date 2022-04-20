@@ -24,8 +24,13 @@
 #ifndef QTAV_VIDEO_CAPTURE_H
 #define QTAV_VIDEO_CAPTURE_H
 
+// Qt includes
+
 #include <QObject>
 #include <QImage>
+
+// Local includes
+
 #include "QtAV_Global.h"
 #include "VideoFrame.h"
 
@@ -158,11 +163,11 @@ private:
     // TODO: use blocking queue? If not, the parameters will change when thre previous is not finished
     // or use a capture event that wrapper all these parameters
 
-    int qual;
-    QImage::Format qfmt;
-    QString fmt;
-    QString name, dir;
-    VideoFrame frame;
+    int             qual;
+    QImage::Format  qfmt;
+    QString         fmt;
+    QString         name, dir;
+    VideoFrame      frame;
 };
 
 } // namespace QtAV

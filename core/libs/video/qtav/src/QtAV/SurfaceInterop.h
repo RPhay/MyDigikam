@@ -24,6 +24,8 @@
 #ifndef QTAV_SURFACE_INTEROP_H
 #define QTAV_SURFACE_INTEROP_H
 
+// Qt includes
+
 #include <QSharedPointer>
 
 // Local includes
@@ -37,7 +39,9 @@ class Q_AV_EXPORT VideoSurfaceInterop
 {
 public:
 
-    virtual ~VideoSurfaceInterop() {}
+    virtual ~VideoSurfaceInterop()
+    {
+    }
 
     /*!
      * \brief map
@@ -51,19 +55,21 @@ public:
      * \param plane
      * \return Null if not supported or failed. handle if success.
      */
-    virtual void* map(SurfaceType type, const VideoFormat& fmt, void* handle = 0, int plane = 0) {
+    virtual void* map(SurfaceType type, const VideoFormat& fmt, void* handle = 0, int plane = 0)
+    {
         Q_UNUSED(type);
         Q_UNUSED(fmt);
         Q_UNUSED(handle);
         Q_UNUSED(plane);
+
         return 0;
     }
 
     // TODO: SurfaceType. unmap is currenty used by opengl rendering
 
-    virtual void unmap(void* handle) { Q_UNUSED(handle);}
+    virtual void unmap(void* handle) { Q_UNUSED(handle); }
 
-    //virtual void unmap(void* handle, SurfaceType type) { Q_UNUSED(handle);} //for SourceSurfaceType
+    //virtual void unmap(void* handle, SurfaceType type) { Q_UNUSED(handle); } //for SourceSurfaceType
 
     /*!
      * \brief createHandle
@@ -71,13 +77,15 @@ public:
      * VideoSurfaceInterop does not have the ownership. VideoShader does
      * \return NULL if not used for opengl rendering. handle if create here
      */
-    virtual void* createHandle(void* handle, SurfaceType type, const VideoFormat &fmt, int plane, int planeWidth, int planeHeight) {
+    virtual void* createHandle(void* handle, SurfaceType type, const VideoFormat &fmt, int plane, int planeWidth, int planeHeight)
+    {
         Q_UNUSED(handle);
         Q_UNUSED(type);
         Q_UNUSED(fmt);
         Q_UNUSED(plane);
         Q_UNUSED(planeWidth);
         Q_UNUSED(planeHeight);
+
         return 0;
     }
 };

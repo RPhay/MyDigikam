@@ -61,32 +61,35 @@ class Q_AV_EXPORT OpenGLWindowRenderer : public QOpenGLWindow,
 public:
 
     explicit OpenGLWindowRenderer(UpdateBehavior updateBehavior = NoPartialUpdate, QWindow *parent = 0);
-    virtual VideoRendererId id() const Q_DECL_OVERRIDE;
+    virtual VideoRendererId id() const              Q_DECL_OVERRIDE;
 
-    QWindow* qwindow() Q_DECL_OVERRIDE Q_DECL_FINAL { return this; }
+    QWindow* qwindow()                              Q_DECL_OVERRIDE Q_DECL_FINAL
+    {
+        return this;
+    }
 
 Q_SIGNALS:
 
-    void sourceAspectRatioChanged(qreal value) Q_DECL_OVERRIDE Q_DECL_FINAL;
-    void regionOfInterestChanged() Q_DECL_OVERRIDE;
-    void outAspectRatioChanged() Q_DECL_OVERRIDE;
-    void outAspectRatioModeChanged() Q_DECL_OVERRIDE;
-    void brightnessChanged(qreal value) Q_DECL_OVERRIDE;
-    void contrastChanged(qreal) Q_DECL_OVERRIDE;
-    void hueChanged(qreal) Q_DECL_OVERRIDE;
-    void saturationChanged(qreal) Q_DECL_OVERRIDE;
-    void backgroundColorChanged() Q_DECL_OVERRIDE;
-    void orientationChanged() Q_DECL_OVERRIDE;
-    void videoRectChanged() Q_DECL_OVERRIDE;
-    void videoFrameSizeChanged() Q_DECL_OVERRIDE;
+    void sourceAspectRatioChanged(qreal value)      Q_DECL_OVERRIDE Q_DECL_FINAL;
+    void regionOfInterestChanged()                  Q_DECL_OVERRIDE;
+    void outAspectRatioChanged()                    Q_DECL_OVERRIDE;
+    void outAspectRatioModeChanged()                Q_DECL_OVERRIDE;
+    void brightnessChanged(qreal value)             Q_DECL_OVERRIDE;
+    void contrastChanged(qreal)                     Q_DECL_OVERRIDE;
+    void hueChanged(qreal)                          Q_DECL_OVERRIDE;
+    void saturationChanged(qreal)                   Q_DECL_OVERRIDE;
+    void backgroundColorChanged()                   Q_DECL_OVERRIDE;
+    void orientationChanged()                       Q_DECL_OVERRIDE;
+    void videoRectChanged()                         Q_DECL_OVERRIDE;
+    void videoFrameSizeChanged()                    Q_DECL_OVERRIDE;
 
 protected:
 
-    virtual void initializeGL() Q_DECL_OVERRIDE;
-    virtual void paintGL() Q_DECL_OVERRIDE;
-    virtual void resizeGL(int w, int h) Q_DECL_OVERRIDE;
-    virtual void resizeEvent(QResizeEvent *) Q_DECL_OVERRIDE;
-    virtual void showEvent(QShowEvent *) Q_DECL_OVERRIDE;
+    virtual void initializeGL()                     Q_DECL_OVERRIDE;
+    virtual void paintGL()                          Q_DECL_OVERRIDE;
+    virtual void resizeGL(int w, int h)             Q_DECL_OVERRIDE;
+    virtual void resizeEvent(QResizeEvent *)        Q_DECL_OVERRIDE;
+    virtual void showEvent(QShowEvent *)            Q_DECL_OVERRIDE;
 };
 
 typedef OpenGLWindowRenderer VideoRendererOpenGLWindow;

@@ -50,11 +50,11 @@ struct Q_AV_EXPORT SubImage
         return (x == o.x && y == o.y && w == o.w && h == o.h && stride == o.stride && color == o.color && data == o.data);
     }
 
-    int x, y;
-    int w, h;
-    int stride;
-    quint32 color;      // ass only
-    QByteArray data;    // size = stride*h
+    int         x, y;
+    int         w, h;
+    int         stride;
+    quint32     color;      ///< ass only
+    QByteArray  data;       ///< size = stride*h
 };
 
 struct Q_AV_EXPORT SubImageSet
@@ -85,7 +85,7 @@ struct Q_AV_EXPORT SubImageSet
     bool operator ==(const SubImageSet& other) const
     {
         // TODO: image data
- 
+
         return (id == other.id && w == other.w && h == other.h && fmt == other.fmt && images == other.images);
     }
 
