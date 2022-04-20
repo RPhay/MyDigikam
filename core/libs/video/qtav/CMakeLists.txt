@@ -134,7 +134,7 @@ set(libqtav_SRCS ${libqtav_SRCS}
                  ${QTAV_WIDGETS_HEADERS}
 )
 
-if(HAVE_D3D11)
+if(D3D11_FOUND)
 
     set(libqtav_SRCS ${libqtav_SRCS}
         ${CMAKE_CURRENT_SOURCE_DIR}/src/codec/video/VideoDecoderD3D11.cpp
@@ -144,7 +144,7 @@ if(HAVE_D3D11)
 
 endif()
 
-if(HAVE_XAUDIO2)
+if(XAUDIO2_FOUND)
 
     set(libqtav_SRCS ${libqtav_SRCS}
         ${CMAKE_CURRENT_SOURCE_DIR}/src/output/audio/AudioOutputXAudio2.cpp
@@ -184,7 +184,7 @@ if(HAVE_OPENGL)
         ${CMAKE_CURRENT_SOURCE_DIR}/widgets/QtAVWidgets/GLWidgetRenderer2.h
     )
 
-    if(HAVE_D3D11)
+    if(D3D11_FOUND)
 
         set(libqtav_SRCS ${libqtav_SRCS}
             ${CMAKE_CURRENT_SOURCE_DIR}/src/directx/SurfaceInteropD3D11EGL.cpp
