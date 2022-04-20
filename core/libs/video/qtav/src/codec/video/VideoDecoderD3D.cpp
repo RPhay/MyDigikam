@@ -376,7 +376,7 @@ VideoDecoderD3D::VideoDecoderD3D(VideoDecoderD3DPrivate &d)
     // dynamic properties about static property details. used by UI
     // format: detail_property
 
-    setProperty("detail_surfaces", i18n("Decoding surfaces") + QStringLiteral(" ") + i18n("0: auto"));
+    setProperty("detail_surfaces", QStringLiteral("%1 %2").arg(i18n("Decoding surfaces")).arg(i18n("0: auto")));
     setProperty("threads", 1); // FIXME: mt crash on close
 }
 
@@ -388,7 +388,7 @@ void VideoDecoderD3D::setSurfaces(int num)
         return;
 
     d.surface_count = num;
-    d.surface_auto = num <= 0;
+    d.surface_auto  = (num <= 0);
 
     Q_EMIT surfacesChanged();
 }
