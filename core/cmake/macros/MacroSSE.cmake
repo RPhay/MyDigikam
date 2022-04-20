@@ -220,11 +220,11 @@ macro(CheckSSESupport)
 
     endif()
 
-    message(STATUS "SSE2_FOUND   : ${SSE2_FOUND}")
-    message(STATUS "SSE3_FOUND   : ${SSE3_FOUND}")
-    message(STATUS "SSSE3_FOUND  : ${SSSE3_FOUND}")
-    message(STATUS "SSE4_1_FOUND : ${SSE4_1_FOUND}")
-    message(STATUS "SSE4_2_FOUND : ${SSE4_2_FOUND}")
+    message(STATUS "SSE2 support   : ${SSE2_FOUND}")
+    message(STATUS "SSE3 support   : ${SSE3_FOUND}")
+    message(STATUS "SSSE3 support  : ${SSSE3_FOUND}")
+    message(STATUS "SSE4.1 support : ${SSE4_1_FOUND}")
+    message(STATUS "SSE4.2 support : ${SSE4_2_FOUND}")
 
     mark_as_advanced(SSE2_FOUND SSE3_FOUND SSSE3_FOUND SSE4_1_FOUND SSE4_2_FOUND)
 
