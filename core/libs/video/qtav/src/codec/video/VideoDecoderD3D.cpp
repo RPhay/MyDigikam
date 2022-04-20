@@ -35,9 +35,18 @@
 #   endif
 #endif
 
+// Qt includes
+
+#include <QVariant>
+#include <QString>
+
 // KDE includes
 
 #include <klocalizedstring.h>
+
+// Local includes
+
+#include "digikam_debug.h"
 
 namespace QtAV
 {
@@ -311,7 +320,7 @@ static const d3d_format_t d3d_formats[] =
 
 static const d3d_format_t *D3dFindFormat(int fourcc)
 {
-    for (unsigned i = 0; d3d_formats[i].name; i++)
+    for (unsigned i = 0 ; d3d_formats[i].name ; i++)
     {
         if (d3d_formats[i].fourcc == fourcc)
             return &d3d_formats[i];
@@ -342,7 +351,7 @@ VideoFormat::PixelFormat VideoDecoderD3D::pixelFormatFromFourcc(int format)
 
 int VideoDecoderD3D::getSupportedFourcc(int *formats, UINT nb_formats)
 {
-    for (const int *f = formats; f < &formats[nb_formats]; ++f)
+    for (const int *f = formats ; f < &formats[nb_formats] ; ++f)
     {
         const d3d_format_t *format = D3dFindFormat(*f);
 
@@ -356,11 +365,11 @@ int VideoDecoderD3D::getSupportedFourcc(int *formats, UINT nb_formats)
         }
     }
 
-    for (const d3d_format_t *format = d3d_formats; format->name; ++format)
+    for (const d3d_format_t *format = d3d_formats ; format->name ; ++format)
     {
         bool is_supported = false;
 
-        for (unsigned k = 0; !is_supported && k < nb_formats; k++)
+        for (unsigned k = 0 ; !is_supported && k < nb_formats ; k++)
         {
             if (format->fourcc == formats[k])
                 return format->fourcc;
@@ -376,7 +385,9 @@ VideoDecoderD3D::VideoDecoderD3D(VideoDecoderD3DPrivate &d)
     // dynamic properties about static property details. used by UI
     // format: detail_property
 
-    setProperty("detail_surfaces", QStringLiteral("%1 %2").arg(i18n("Decoding surfaces")).arg(i18n("0: auto")));
+    setProperty("detail_surfaces", QStringLiteral("%1 %2")
+                                    .arg(i18n("Decoding surfaces"))
+                                    .arg(i18n("0: auto")));
     setProperty("threads", 1); // FIXME: mt crash on close
 }
 
@@ -428,9 +439,9 @@ bool VideoDecoderD3DPrivate::open()
     if (!createDevice())
         return false;
 
-    format_fcc = 0;
-    QVector<GUID> codecs = getSupportedCodecs();
-    const d3d_format_t *fmt = getFormat(codec_ctx, codecs, &codec_guid);
+    format_fcc              = 0;
+    QVector<GUID> codecs    = getSupportedCodecs();
+    const d3d_format_t* fmt = getFormat(codec_ctx, codecs, &codec_guid);
 
     if (!fmt)
         return false;
@@ -457,8 +468,8 @@ void* VideoDecoderD3DPrivate::setup(AVCodecContext *avctx)
 {
     const int w = codedWidth(avctx);
     const int h = codedHeight(avctx);
-    width = avctx->width; // not necessary. set in decode()
-    height = avctx->height;
+    width       = avctx->width; // not necessary. set in decode()
+    height      = avctx->height;
     releaseUSWC();
     destroyDecoder();
 
@@ -505,13 +516,13 @@ void* VideoDecoderD3DPrivate::setup(AVCodecContext *avctx)
 
     hw_surfaces.resize(surface_count);
 
-    for (int i = 0; i < surfaces.size(); ++i)
+    for (int i = 0 ; i < surfaces.size() ; ++i)
     {
         hw_surfaces[i] = surfaces[i]->getSurface();
     }
 
-    surface_order = 0;
-    surface_width = aligned(w);
+    surface_order  = 0;
+    surface_width  = aligned(w);
     surface_height = aligned(h);
     initUSWC(surface_width);
 
@@ -530,9 +541,9 @@ bool VideoDecoderD3DPrivate::getBuffer(void **opaque, uint8_t **data) // vlc_va_
 
     int i, old;
 
-    for (i = 0, old = 0; i < surfaces.size(); i++)
+    for (i = 0, old = 0 ; i < surfaces.size() ; i++)
     {
-        const va_surface_t *s = surfaces[i];
+        const va_surface_t* s = surfaces[i];
 
         if (!s->ref)
             break;
@@ -544,11 +555,11 @@ bool VideoDecoderD3DPrivate::getBuffer(void **opaque, uint8_t **data) // vlc_va_
     if (i >= surfaces.size())
         i = old;
 
-    va_surface_t *s = surfaces[i];
-    s->ref = 1;
-    s->order = surface_order++;
-    *data = (uint8_t*)s->getSurface();
-    *opaque = s;
+    va_surface_t* s = surfaces[i];
+    s->ref          = 1;
+    s->order        = surface_order++;
+    *data           = (uint8_t*)s->getSurface();
+    *opaque         = s;
 
     return true;
 }
@@ -557,7 +568,7 @@ void VideoDecoderD3DPrivate::releaseBuffer(void *opaque, uint8_t *data)
 {
     Q_UNUSED(data);
 
-    va_surface_t *surface = (va_surface_t*)opaque;
+    va_surface_t* surface = (va_surface_t*)opaque;
     surface->ref--;
 }
 
@@ -581,7 +592,7 @@ const d3d_format_t* VideoDecoderD3DPrivate::getFormat(const AVCodecContext *avct
 {
     foreach (const GUID& g, guids)
     {
-        const dxva2_mode_t *mode = Dxva2FindMode(&g);
+        const dxva2_mode_t* mode = Dxva2FindMode(&g);
 
         if (mode)
         {
@@ -598,9 +609,9 @@ const d3d_format_t* VideoDecoderD3DPrivate::getFormat(const AVCodecContext *avct
 
     /* Try all supported mode by our priority */
 
-    const dxva2_mode_t *mode = dxva2_modes;
+    const dxva2_mode_t* mode = dxva2_modes;
 
-    for (; mode->name; ++mode)
+    for ( ; mode->name ; ++mode)
     {
         if (!mode->codec || mode->codec != avctx->codec_id)
         {
@@ -612,7 +623,7 @@ const d3d_format_t* VideoDecoderD3DPrivate::getFormat(const AVCodecContext *avct
         qCDebug(DIGIKAM_QTAV_LOG).noquote() << QString::asprintf("D3D found codec: %s. Check runtime support for the codec.", mode->name);
         bool is_supported = false;
 
-        //TODO: find_if
+        // TODO: find_if
 
         foreach (const GUID& g, guids)
         {

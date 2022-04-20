@@ -1032,7 +1032,7 @@ bool AVDemuxer::setMedia(QIODevice* device)
         d->format_forced.clear();
     }
 
-    d->input->setProperty("device", QVariant::fromValue(device)); //open outside?
+    d->input->setProperty("device", QVariant::fromValue(device)); // open outside?
 
     return d->media_changed;
 }
