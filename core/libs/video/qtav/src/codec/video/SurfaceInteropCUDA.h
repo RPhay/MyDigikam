@@ -35,36 +35,47 @@
 #include "OpenGLHelper.h"
 
 #ifndef QT_NO_OPENGL
-#ifdef Q_OS_WIN
+#   ifdef Q_OS_WIN
+
 // no need to check qt4 because no ANGLE there
-#if QTAV_HAVE(EGL_CAPI) // always use dynamic load
-#if (defined(QT_OPENGL_DYNAMIC) || defined(QT_OPENGL_ES_2) || defined(QT_OPENGL_ES_2_ANGLE)) && !defined(Q_OS_WINRT)
-#define QTAV_HAVE_CUDA_EGL 1
-#include <d3d9.h>
+
+#       if QTAV_HAVE(EGL_CAPI) // always use dynamic load
+#           if (defined(QT_OPENGL_DYNAMIC) || defined(QT_OPENGL_ES_2) || defined(QT_OPENGL_ES_2_ANGLE)) && !defined(Q_OS_WINRT)
+#               define QTAV_HAVE_CUDA_EGL 1
+#               include <d3d9.h>
+#           endif
+#       endif
+#   endif
+#   if defined(QT_OPENGL_DYNAMIC) || !defined(QT_OPENGL_ES_2)
+#       define QTAV_HAVE_CUDA_GL 1
+#   endif
 #endif
-#endif //QTAV_HAVE(EGL_CAPI)
-#endif //Q_OS_WIN
-#if defined(QT_OPENGL_DYNAMIC) || !defined(QT_OPENGL_ES_2)
-#define QTAV_HAVE_CUDA_GL 1
-#endif
-#endif //QT_NO_OPENGL
+
 namespace QtAV
 {
-namespace cuda {
+
+namespace cuda
+{
 
 class InteropResource : protected cuda_api
 {
 public:
+
     InteropResource();
-    void setDevice(CUdevice d) { dev = d;}
-    void setShareContext(CUcontext c) {
+    void setDevice(CUdevice d)          { dev = d;  }
+
+    void setShareContext(CUcontext c)
+    {
         ctx = c;
         share_ctx = !!c;
     }
-    void setDecoder(CUvideodecoder d) { dec = d;}
-    void setLock(CUvideoctxlock l) { lock = l;}
+
+    void setDecoder(CUvideodecoder d)   { dec  = d; }
+    void setLock(CUvideoctxlock l)      { lock = l; }
     virtual ~InteropResource();
+
     /// copy from gpu (optimized if possible) and convert to target format if necessary
+
     // mapToHost
     /*!
      * \brief map
@@ -76,32 +87,51 @@ public:
      * \return true if success
      */
     virtual bool map(int picIndex, const CUVIDPROCPARAMS& param, GLuint tex, int w, int h, int H, int plane) = 0;
-    virtual bool unmap(GLuint tex) { Q_UNUSED(tex); return true;}
-    /// copy from gpu and convert to target format if necessary. used by VideoCapture
-    void* mapToHost(const VideoFormat &format, void *handle, int picIndex, const CUVIDPROCPARAMS &param, int width, int height, int surface_height);
-protected:
-    bool share_ctx;
-    CUdevice dev;
-    CUcontext ctx;
-    CUvideodecoder dec;
-    CUvideoctxlock lock;
 
-    typedef struct {
-       GLuint texture;
-       int w, h, W, H;
+    virtual bool unmap(GLuint tex) { Q_UNUSED(tex); return true;}
+
+    /// copy from gpu and convert to target format if necessary. used by VideoCapture
+
+    void* mapToHost(const VideoFormat &format, void *handle, int picIndex, const CUVIDPROCPARAMS &param, int width, int height, int surface_height);
+
+protected:
+
+    bool            share_ctx;
+    CUdevice        dev;
+    CUcontext       ctx;
+    CUvideodecoder  dec;
+    CUvideoctxlock  lock;
+
+    typedef struct
+    {
+       GLuint             texture;
+       int                w, h, W, H;
        CUgraphicsResource cuRes;
-       CUstream stream; // for async works
+       CUstream           stream; // for async works
     } TexRes;
     TexRes res[2];
 };
+
 typedef QSharedPointer<InteropResource> InteropResourcePtr;
 
 // avoid inheriting cuda_api because SurfaceInteropCUDA is frequently created and cuda functions are only used in mapToHost()
+
 class SurfaceInteropCUDA Q_DECL_FINAL: public VideoSurfaceInterop
 {
 public:
-    SurfaceInteropCUDA(const QWeakPointer<InteropResource>& res) : m_index(-1), m_resource(res), h(0), H(0) {}
-    ~SurfaceInteropCUDA() {}
+
+    SurfaceInteropCUDA(const QWeakPointer<InteropResource>& res)
+        : m_index(-1),
+          m_resource(res),
+          h(0),
+          H(0)
+    {
+    }
+
+    ~SurfaceInteropCUDA()
+    {
+    }
+
     /*!
      * \brief setSurface
      * \param picIndex cuda decoded picture index in cuda decoder.
@@ -113,40 +143,55 @@ public:
      * \param surface_height cuda decoded surface(picture) height
      */
     void setSurface(int picIndex, const CUVIDPROCPARAMS& param, int width, int height, int surface_height);
+
     /// GLTextureSurface only supports rgb32
+
     void* map(SurfaceType type, const VideoFormat& fmt, void* handle, int plane) Q_DECL_OVERRIDE;
     void unmap(void *handle) Q_DECL_OVERRIDE;
+
 private:
-    //CUdeviceptr m_surface; // invalid in a different context
+
+    // CUdeviceptr m_surface; // invalid in a different context
+
     int m_index;
     CUVIDPROCPARAMS m_param;
+
     // decoder is deleted but interop is still alive
+
     QWeakPointer<InteropResource> m_resource;
     int w, h, H;
 };
 
 #ifndef QT_NO_OPENGL
+
 class HostInteropResource Q_DECL_FINAL: public InteropResource
 {
 public:
+
     HostInteropResource();
     ~HostInteropResource();
     bool map(int picIndex, const CUVIDPROCPARAMS& param, GLuint tex, int w, int h, int H, int plane) Q_DECL_OVERRIDE;
     bool unmap(GLuint) Q_DECL_OVERRIDE;
+
 private:
+
     bool ensureResource(int pitch, int height);
 
-    struct {
+    struct
+    {
         int index;
         uchar* data;
         int height;
         int pitch;
     } host_mem;
 };
+
 #endif //QT_NO_OPENGL
 
 #if QTAV_HAVE(CUDA_EGL)
+
 class EGL;
+
 /*!
  * \brief The EGLInteropResource class
  * Interop with NV12 texture, then convert NV12 to RGB texture like DXVA+EGL does.
@@ -156,10 +201,13 @@ class EGL;
 class EGLInteropResource Q_DECL_FINAL: public InteropResource
 {
 public:
+
     EGLInteropResource();
     ~EGLInteropResource();
     bool map(int picIndex, const CUVIDPROCPARAMS& param, GLuint tex, int w, int h, int H, int plane) Q_DECL_OVERRIDE;
+
 private:
+
     bool map(IDirect3DSurface9 *surface, GLuint tex, int w, int h, int H);
     bool ensureD3DDevice();
     void releaseEGL();
@@ -170,23 +218,31 @@ private:
     EGL* egl;
     HINSTANCE dll9;
     IDirect3D9 *d3d9;
-    IDirect3DDevice9 *device9; // for CUDA
-    IDirect3DTexture9 *texture9; // for EGL.
-    IDirect3DSurface9 *surface9; // for EGL. size is frame size(visual size) for display
+    IDirect3DDevice9 *device9;      // for CUDA
+    IDirect3DTexture9 *texture9;    // for EGL.
+    IDirect3DSurface9 *surface9;    // for EGL. size is frame size(visual size) for display
     IDirect3DTexture9 *texture9_nv12;
+
     // If size is coded size, crop when StretchRect. If frame size, crop in cuMemcpy2D for each plane
+
     IDirect3DSurface9 *surface9_nv12;
     IDirect3DQuery9 *query9;
 };
+
 #endif //QTAV_HAVE(CUDA_EGL)
 
 #if QTAV_HAVE(CUDA_GL)
+
 class GLInteropResource Q_DECL_FINAL: public InteropResource
 {
+
 public:
+
     bool map(int picIndex, const CUVIDPROCPARAMS& param, GLuint tex, int w, int h, int H, int plane) Q_DECL_OVERRIDE;
     bool unmap(GLuint tex) Q_DECL_OVERRIDE;
+
 private:
+
     /*
      * TODO: do we need to check h, H etc? interop is created by decoder and frame size does not change in the playback.
      * playing a new stream will recreate the decoder and interop
