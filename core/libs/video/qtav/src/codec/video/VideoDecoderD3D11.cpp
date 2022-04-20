@@ -222,7 +222,7 @@ VideoFrame VideoDecoderD3D11::frame()
     Q_UNUSED(sm);
     int pitch[3] = { (int)mapped.RowPitch, 0, 0}; //compute chroma later
     uint8_t *src[] = { (uint8_t*)mapped.pData, 0, 0}; //compute chroma later
-    const VideoFormat format = pixelFormatFromFourcc(d.format_fcc); //tex_desc
+    const VideoFormat format = VideoDecoderD3D::pixelFormatFromFourcc(d.format_fcc); //tex_desc
     return copyToFrame(format, tex_desc.Height, src, pitch, false);
 }
 
@@ -386,7 +386,7 @@ bool VideoDecoderD3D11Private::setupSurfaceInterop()
 void* VideoDecoderD3D11Private::setupAVVAContext()
 {
     // TODO: FF_DXVA2_WORKAROUND_SCALING_LIST_ZIGZAG
-    if (isIntelClearVideo(&codec_guid)) {
+    if (VideoDecoderD3D::isIntelClearVideo(&codec_guid)) {
 #ifdef FF_DXVA2_WORKAROUND_INTEL_CLEARVIDEO //2014-03-07 - 8b2a130 - lavc 55.50.0 / 55.53.100 - dxva2.h
         qCDebug(DIGIKAM_QTAV_LOG).noquote() << QString::asprintf("FF_DXVA2_WORKAROUND_INTEL_CLEARVIDEO");
         hw.workaround |= FF_DXVA2_WORKAROUND_INTEL_CLEARVIDEO;

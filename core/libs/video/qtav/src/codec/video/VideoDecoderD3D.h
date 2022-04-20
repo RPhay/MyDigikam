@@ -46,14 +46,6 @@ struct d3d_format_t
     VideoFormat::PixelFormat pixfmt;
 };
 
-Q_AV_EXPORT bool isIntelClearVideo(const GUID *guid);
-
-Q_AV_EXPORT bool isNoEncrypt(const GUID* guid);
-
-Q_AV_EXPORT int getSupportedFourcc(int *formats, UINT nb_formats);
-
-Q_AV_EXPORT VideoFormat::PixelFormat pixelFormatFromFourcc(int format);
-
 class VideoDecoderD3DPrivate;
 
 class VideoDecoderD3D : public VideoDecoderFFmpegHW
@@ -68,6 +60,11 @@ public:
 
     void setSurfaces(int num);
     int surfaces() const;
+
+    static bool isIntelClearVideo(const GUID *guid);
+    static bool isNoEncrypt(const GUID* guid);
+    static int getSupportedFourcc(int *formats, UINT nb_formats);
+    static VideoFormat::PixelFormat pixelFormatFromFourcc(int format);
 
 Q_SIGNALS:
 

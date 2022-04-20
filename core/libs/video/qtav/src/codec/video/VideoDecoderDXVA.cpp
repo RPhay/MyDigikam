@@ -231,7 +231,7 @@ VideoFrame VideoDecoderDXVA::frame()
     //picth >= desc.Width
     D3DSURFACE_DESC desc;
     d3d->GetDesc(&desc);
-    const VideoFormat fmt = VideoFormat(pixelFormatFromFourcc(desc.Format));
+    const VideoFormat fmt = VideoFormat(VideoDecoderD3D::pixelFormatFromFourcc(desc.Format));
     if (!fmt.isValid()) {
         qCWarning(DIGIKAM_QTAV_LOG_WARN).noquote() << QString::asprintf("unsupported dxva pixel format: %#x", desc.Format);
         return VideoFrame();
@@ -344,7 +344,7 @@ int VideoDecoderDXVAPrivate::fourccFor(const GUID *guid) const
         qCWarning(DIGIKAM_QTAV_LOG_WARN).noquote() << QString::asprintf("IDirectXVideoDecoderService_GetDecoderRenderTargets failed");
         return 0;
     }
-    int fmt = getSupportedFourcc((int*)output_list, output_count);
+    int fmt = VideoDecoderD3D::getSupportedFourcc((int*)output_list, output_count);
     CoTaskMemFree(output_list);
     return fmt;
 }
@@ -442,7 +442,7 @@ void VideoDecoderDXVAPrivate::destroyDecoder()
 void* VideoDecoderDXVAPrivate::setupAVVAContext()
 {
     // TODO: FF_DXVA2_WORKAROUND_SCALING_LIST_ZIGZAG
-    if (isIntelClearVideo(&codec_guid)) {
+    if (VideoDecoderD3D::isIntelClearVideo(&codec_guid)) {
 #ifdef FF_DXVA2_WORKAROUND_INTEL_CLEARVIDEO //2014-03-07 - 8b2a130 - lavc 55.50.0 / 55.53.100 - dxva2.h
         qCDebug(DIGIKAM_QTAV_LOG).noquote() << QString::asprintf("FF_DXVA2_WORKAROUND_INTEL_CLEARVIDEO");
         hw_ctx.workaround |= FF_DXVA2_WORKAROUND_INTEL_CLEARVIDEO;

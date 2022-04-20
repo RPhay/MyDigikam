@@ -280,15 +280,6 @@ static const dxva2_mode_t *Dxva2FindMode(const GUID *guid)
     return NULL;
 }
 
-bool isIntelClearVideo(const GUID *guid)
-{
-    return IsEqualGUID(*guid, DXVA_Intel_H264_NoFGT_ClearVideo);
-}
-
-bool isNoEncrypt(const GUID *guid)
-{
-    return IsEqualGUID(*guid, DXVA_NoEncrypt);
-}
 
 bool checkProfile(const dxva2_mode_t *mode, int profile)
 {
@@ -329,7 +320,17 @@ static const d3d_format_t *D3dFindFormat(int fourcc)
     return NULL;
 }
 
-VideoFormat::PixelFormat pixelFormatFromFourcc(int format)
+bool VideoDecoderD3D::isIntelClearVideo(const GUID *guid)
+{
+    return IsEqualGUID(*guid, DXVA_Intel_H264_NoFGT_ClearVideo);
+}
+
+bool VideoDecoderD3D::isNoEncrypt(const GUID *guid)
+{
+    return IsEqualGUID(*guid, DXVA_NoEncrypt);
+}
+
+VideoFormat::PixelFormat VideoDecoderD3D::pixelFormatFromFourcc(int format)
 {
     const d3d_format_t *fmt = D3dFindFormat(format);
 
@@ -339,7 +340,7 @@ VideoFormat::PixelFormat pixelFormatFromFourcc(int format)
     return VideoFormat::Format_Invalid;
 }
 
-int getSupportedFourcc(int *formats, UINT nb_formats)
+int VideoDecoderD3D::getSupportedFourcc(int *formats, UINT nb_formats)
 {
     for (const int *f = formats; f < &formats[nb_formats]; ++f)
     {
