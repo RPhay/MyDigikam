@@ -31,6 +31,7 @@ if(ENABLE_MEDIAPLAYER)
     if(MSVC)
 
         find_package(D3D11)
+        find_package(XAudio2)
 
     endif()
 
@@ -84,6 +85,7 @@ if(ENABLE_MEDIAPLAYER)
         MACRO_BOOL_TO_01(AVRESAMPLE_FOUND HAVE_LIBAVRESAMPLE)
         MACRO_BOOL_TO_01(SWRESAMPLE_FOUND HAVE_LIBSWRESAMPLE)
         MACRO_BOOL_TO_01(D3D11_FOUND      HAVE_LIBD3D11)
+        MACRO_BOOL_TO_01(XAUDIO2_FOUND    HAVE_LIBXAUDIO2)
 
         if(SSE4_1_FOUND)
 
@@ -206,6 +208,16 @@ if(ENABLE_MEDIAPLAYER)
 
         endif()
 
+        if(XAUDIO2_FOUND)
+
+            set(MEDIAPLAYER_LIBRARIES ${MEDIAPLAYER_LIBRARIES} ${XAUDIO2_LIBRARIES})
+            message(STATUS "MediaPlayer will be compiled with XAudio2 support   : yes")
+
+        else()
+
+            message(STATUS "MediaPlayer will be compiled with XAudio2 support   : no")
+
+        endif()
 
         # ---
 
@@ -213,9 +225,8 @@ if(ENABLE_MEDIAPLAYER)
                                     -DQTAV_HAVE_GL=1             # For QtAVWidgets
                                     -DQTAV_HAVE_CAPI=1           # To load libass, vaapi, and EGL dynamically
                                     -DQTAV_HAVE_OPENSL=0         # OpenSLES is for Android only
-                                    -DQTAV_HAVE_DSOUND=0         # DirectX Sound for MSVC only
+                                    -DQTAV_HAVE_DSOUND=0         # DirectX Sound for MSVC only (replaced by XAudio2)
                                     -DQTAV_HAVE_DXVA=0           # DirectX VA for MSVC only
-                                    -DQTAV_HAVE_XAUDIO2=0        # DirectX Audio for MSVC only
                                     -DQTAV_HAVE_X11=0            # Never enabled in QtAV (see below)
         )
 
@@ -261,7 +272,8 @@ if(ENABLE_MEDIAPLAYER)
         set(MEDIAPLAYER_DEFINITIONS ${MEDIAPLAYER_DEFINITIONS} -DQTAV_HAVE_OPENAL=${HAVE_LIBOPENAL})
         set(MEDIAPLAYER_DEFINITIONS ${MEDIAPLAYER_DEFINITIONS} -DQTAV_HAVE_PORTAUDIO=${HAVE_LIBPORTAUDIO})
         set(MEDIAPLAYER_DEFINITIONS ${MEDIAPLAYER_DEFINITIONS} -DQTAV_HAVE_PULSEAUDIO=${HAVE_LIBPULSEAUDIO})
-        set(MEDIAPLAYER_DEFINITIONS ${MEDIAPLAYER_DEFINITIONS} -DDQTAV_HAVE_D3D11VA=${HAVE_LIBD3D11})           # DirectX 3D for MSVC only
+        set(MEDIAPLAYER_DEFINITIONS ${MEDIAPLAYER_DEFINITIONS} -DQTAV_HAVE_D3D11VA=${HAVE_LIBD3D11})           # DirectX 3D for MSVC only
+        set(MEDIAPLAYER_DEFINITIONS ${MEDIAPLAYER_DEFINITIONS} -DQTAV_HAVE_XAUDIO2=${HAVE_LIBXAUDIO2})         # XAudio2 for MSVC only (replacement of DirectSound)
 
         if(APPLE)
 

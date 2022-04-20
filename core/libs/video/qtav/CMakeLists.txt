@@ -144,6 +144,13 @@ if(HAVE_3D311)
 
 endif()
 
+if(HAVE_XAUDIO2)
+
+    set(libqtav_SRCS ${libqtav_SRCS}
+        ${CMAKE_CURRENT_SOURCE_DIR}/src/output/audio/AudioOutputXAudio2.cpp
+    )
+
+endif()
 
 if(HAVE_OPENGL)
 
