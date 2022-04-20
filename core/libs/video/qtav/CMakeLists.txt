@@ -134,6 +134,17 @@ set(libqtav_SRCS ${libqtav_SRCS}
                  ${QTAV_WIDGETS_HEADERS}
 )
 
+if(HAVE_3D311)
+
+    set(libqtav_SRCS ${libqtav_SRCS}
+        ${CMAKE_CURRENT_SOURCE_DIR}/src/codec/video/VideoDecoderD3D11.cpp
+        ${CMAKE_CURRENT_SOURCE_DIR}/src/directx/SurfaceInteropD3D11.cpp
+        ${CMAKE_CURRENT_SOURCE_DIR}/src/directx/D3D11VP.cpp
+    )
+
+endif()
+
+
 if(HAVE_OPENGL)
 
     include_directories($<TARGET_PROPERTY:Qt${QT_VERSION_MAJOR}::OpenGL,INTERFACE_INCLUDE_DIRECTORIES>)
@@ -165,6 +176,15 @@ if(HAVE_OPENGL)
         ${CMAKE_CURRENT_SOURCE_DIR}/widgets/GLWidgetRenderer2.cpp
         ${CMAKE_CURRENT_SOURCE_DIR}/widgets/QtAVWidgets/GLWidgetRenderer2.h
     )
+
+    if(HAVE_3D311)
+
+        set(libqtav_SRCS ${libqtav_SRCS}
+            ${CMAKE_CURRENT_SOURCE_DIR}/src/directx/SurfaceInteropD3D11EGL.cpp
+            ${CMAKE_CURRENT_SOURCE_DIR}/src/directx/SurfaceInteropD3D11GL.cpp
+        )
+
+    endif()
 
 endif()
 
