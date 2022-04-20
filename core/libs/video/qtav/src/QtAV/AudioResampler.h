@@ -36,24 +36,32 @@ typedef int AudioResamplerId;
 class AudioFormat;
 class AudioResamplerPrivate;
 
-class Q_AV_EXPORT AudioResampler //export is required for users who want add their own subclass outside QtAV
+class Q_AV_EXPORT AudioResampler // export is required for users who want add their own subclass outside QtAV
 {
     DPTR_DECLARE_PRIVATE(AudioResampler)
 
 public:
 
     virtual ~AudioResampler();
+
     // if QtAV is static linked (ios for example), components may be not automatically registered. Add registerAll() to workaround
+
     static void registerAll();
     template<class C>
-    static bool Register(AudioResamplerId id, const char* name) { return Register(id, create<C>, name);}
+    static bool Register(AudioResamplerId id, const char* name)
+    {
+        return Register(id, create<C>, name);
+    }
+
     static AudioResampler* create(AudioResamplerId id);
+
     /*!
      * \brief create
      * Create resampler from name
      * \param name can be "FFmpeg", "Libav"
      */
     static AudioResampler* create(const char* name);
+
     /*!
      * \brief next
      * \param id NULL to get the first id address
@@ -64,7 +72,9 @@ public:
     static AudioResamplerId id(const char* name);
 
     QByteArray outData() const;
+
     /* check whether the parameters are supported. If not, you should use ff*/
+
     /*!
      * \brief prepare
      * Check whether the parameters are supported and setup the resampler
@@ -72,8 +82,10 @@ public:
      */
     virtual bool prepare();
     virtual bool convert(const quint8** data);
-    //speed: >0, default is 1
-    void setSpeed(qreal speed); //out_sample_rate = out_sample_rate/speed
+
+    // speed: >0, default is 1
+
+    void setSpeed(qreal speed); // out_sample_rate = out_sample_rate/speed
     qreal speed() const;
 
     void setInAudioFormat(const AudioFormat& format);
@@ -84,29 +96,43 @@ public:
     AudioFormat& outAudioFormat();
     const AudioFormat& outAudioFormat() const;
 
-    //decoded frame's samples/channel
+    // decoded frame's samples/channel
+
     void setInSampesPerChannel(int samples);
+
     // > 0 valid after resample done
+
     int outSamplesPerChannel() const;
-    //channel count can be computed by av_get_channel_layout_nb_channels(chl)
+
+    // channel count can be computed by av_get_channel_layout_nb_channels(chl)
+
     void setInSampleRate(int isr);
-    void setOutSampleRate(int osr); //default is in
-    //TODO: enum
-    void setInSampleFormat(int isf); //FFmpeg sample format
-    void setOutSampleFormat(int osf); //FFmpeg sample format. set by user. default is in
-    //TODO: enum. layout will be set to the default layout of the channels if not defined
+    void setOutSampleRate(int osr); // default is in
+
+    // TODO: enum
+
+    void setInSampleFormat(int isf);  // FFmpeg sample format
+    void setOutSampleFormat(int osf); // FFmpeg sample format. set by user. default is in
+
+    // TODO: enum. layout will be set to the default layout of the channels if not defined
+
     void setInChannelLayout(qint64 icl);
     void setOutChannelLayout(qint64 ocl); //default is in
     void setInChannels(int channels);
     void setOutChannels(int channels);
-    //Are getter functions required?
+
+    // Are getter functions required?
+
 private:
 
     AudioResampler();
+
     template<class C>
-    static AudioResampler* create() {
+    static AudioResampler* create()
+    {
         return new C();
     }
+
     typedef AudioResampler* (*AudioResamplerCreator)();
     static bool Register(AudioResamplerId id, AudioResamplerCreator, const char *name);
 

@@ -94,6 +94,7 @@ public:
     static const qint64 kHz = 1000000LL;
 
     //typedef qint64 ChannelLayout; //currently use latest FFmpeg's
+
     // TODO: constexpr
 
     friend int RawSampleSize(SampleFormat fmt) { return fmt & ((1<<(kSize+1)) - 1); }
@@ -130,14 +131,18 @@ public:
      */
     void setChannelLayoutFFmpeg(qint64 layout);
     qint64 channelLayoutFFmpeg() const;
-    //currently a limitted set of channel layout is supported. call setChannelLayoutFFmpeg is recommended
+
+    // currently a limitted set of channel layout is supported. call setChannelLayoutFFmpeg is recommended
+
     void setChannelLayout(ChannelLayout layout);
     ChannelLayout channelLayout() const;
     QString channelLayoutName() const;
+
     /*!
      * setChannels also sets the default layout for this channels if channels does not match.
      */
     void setChannels(int channels);
+
     /*!
      * \brief channels
      *   For planar format, channel count == plane count. For packed format, plane count is 1
@@ -153,6 +158,7 @@ public:
 
     // Helper functions
     // in microseconds
+
     qint32 bytesForDuration(qint64 duration) const;
     qint64 durationForBytes(qint32 byteCount) const;
 
@@ -160,22 +166,25 @@ public:
     qint32 framesForBytes(qint32 byteCount) const;
 
     // in microseconds
+
     qint32 framesForDuration(qint64 duration) const;
     qint64 durationForFrames(qint32 frameCount) const;
 
     // 1 frame = 1 sample with channels
+
     /*!
         Returns the number of bytes required to represent one frame (a sample in each channel) in this format.
         Returns 0 if this format is invalid.
     */
     int bytesPerFrame() const;
+
     /*!
         Returns the current sample size value, in bytes.
         \sa bytesPerFrame()
     */
     int bytesPerSample() const;
     int sampleSize() const; // the same as bytesPerSample()
-    int bitRate() const; //bits per second
+    int bitRate() const;    // bits per second
     int bytesPerSecond() const;
 
 private:
@@ -184,9 +193,11 @@ private:
 };
 
 #ifndef QT_NO_DEBUG_STREAM
+
 Q_AV_EXPORT QDebug operator<<(QDebug debug, const AudioFormat &fmt);
 Q_AV_EXPORT QDebug operator<<(QDebug debug, AudioFormat::SampleFormat sampleFormat);
 Q_AV_EXPORT QDebug operator<<(QDebug debug, AudioFormat::ChannelLayout channelLayout);
+
 #endif
 
 } // namespace QtAV

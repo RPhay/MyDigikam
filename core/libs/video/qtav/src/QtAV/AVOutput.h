@@ -57,12 +57,15 @@ public:
 
     //void addSource(AVPlayer* player); //call player.addVideoRenderer(this)
     //void removeSource(AVPlayer* player);
-    //Demuxer thread automatically paused because packets will be full
-    //only pause the renderering, the thread going on. If all outputs are paused, then pause the thread(OutputSet.tryPause)
-    //TODO: what about audio's pause api?
-    void pause(bool p); //processEvents when waiting?
+
+    // Demuxer thread automatically paused because packets will be full
+    // only pause the renderering, the thread going on. If all outputs are paused, then pause the thread(OutputSet.tryPause)
+    // TODO: what about audio's pause api?
+
+    void pause(bool p); // processEvents when waiting?
     bool isPaused() const;
     QList<Filter*>& filters();
+
     /*!
      * \brief installFilter
      * Insert a filter at position 'index' of current filter list.
@@ -76,17 +79,22 @@ public:
 protected:
 
     AVOutput(AVOutputPrivate& d);
-    /*
+
+    /**
      * If the pause state is true setted by pause(true), then block the thread and wait for pause state changed, i.e. pause(false)
      * and return true. Otherwise, return false immediatly.
      */
-    Q_DECL_DEPRECATED bool tryPause(); //move to OutputSet
-    //TODO: we need an active set
+    Q_DECL_DEPRECATED bool tryPause(); // move to OutputSet
+
+    // TODO: we need an active set
+
     void addOutputSet(OutputSet *set);
     void removeOutputSet(OutputSet *set);
-    void attach(OutputSet *set); //add this to set
-    void detach(OutputSet *set = 0); //detatch from (all, if 0) output set(s)
+    void attach(OutputSet *set);        // add this to set
+    void detach(OutputSet *set = 0);    // detatch from (all, if 0) output set(s)
+
     // for thread safe
+
     void hanlePendingTasks();
 
     DPTR_DECLARE(AVOutput)
@@ -94,11 +102,14 @@ protected:
 private:
 
     // for proxy VideoOutput
-    virtual void setStatistics(Statistics* statistics); //called by friend AVPlayer
+
+    virtual void setStatistics(Statistics* statistics); // called by friend AVPlayer
     virtual bool onInstallFilter(Filter *filter, int index);
     virtual bool onUninstallFilter(Filter *filter);
+
     // only called in handlePaintEvent. But filters may change. so required by proxy to update it's filters
-    virtual bool onHanlePendingTasks(); //return true: proxy update filters
+
+    virtual bool onHanlePendingTasks(); // return true: proxy update filters
     friend class AVPlayer;
     friend class OutputSet;
     friend class VideoOutput;

@@ -31,6 +31,7 @@
 
 namespace QtAV
 {
+
 class AudioResampler;
 class AudioFramePrivate;
 
@@ -41,6 +42,7 @@ class Q_AV_EXPORT AudioFrame : public Frame
 public:
 
     //data must be complete
+
     /*!
      * \brief AudioFrame
      * construct an audio frame from a given buffer and format
@@ -60,6 +62,7 @@ public:
      */
     QByteArray data();
     virtual int channelCount() const;
+
     /*!
      * Deep copy. If you want to copy data from somewhere, knowing the format, width and height,
      * then you can use clone().
@@ -69,11 +72,16 @@ public:
     void prepend(AudioFrame &other);
     AudioFormat format() const;
     void setSamplesPerChannel(int samples);
+
     // may change after resampling
+
     int samplesPerChannel() const;
     AudioFrame to(const AudioFormat& fmt) const;
-    //AudioResamplerId
-    void setAudioResampler(AudioResampler *conv); //TODO: remove
+
+    // AudioResamplerId
+
+    void setAudioResampler(AudioResampler *conv); // TODO: remove
+
     /*!
         Returns the number of microseconds represented by \a bytes in this format.
         Returns 0 if this format is not valid.

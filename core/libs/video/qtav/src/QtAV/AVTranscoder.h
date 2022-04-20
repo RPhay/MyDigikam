@@ -45,18 +45,21 @@ public:
     ~AVTranscoder();
 
     // TODO: other source (more operations needed, e.g. seek)?
+
     void setMediaSource(AVPlayer* player);
     AVPlayer* sourcePlayer() const;
 
     QString outputFile() const;
     QIODevice* outputDevice() const;
     MediaIO* outputMediaIO() const;
+
     /*!
      * \brief setOutputMedia
      */
     void setOutputMedia(const QString& fileName);
     void setOutputMedia(QIODevice* dev);
     void setOutputMedia(MediaIO* io);
+
     /*!
      * \brief setOutputFormat
      * Force the output format. Useful for custom io
@@ -73,6 +76,7 @@ public:
      */
     void setAsync(bool value = true);
     bool isAsync() const;
+
     /*!
      * \brief createEncoder
      * Destroy old encoder and create a new one in filter chain. Filter has the ownership. You shall not manually open it. Transcoder will set the missing parameters open it.
@@ -80,6 +84,7 @@ public:
      * \return false if failed
      */
     bool createVideoEncoder(const QString& name = QLatin1String("FFmpeg"));
+
     /*!
      * \brief encoder
      * Use this to set encoder properties and options.
@@ -88,6 +93,7 @@ public:
      * \return Encoder instance or null if createVideoEncoder failed
      */
     VideoEncoder* videoEncoder() const;
+
     /*!
      * \brief createEncoder
      * Destroy old encoder and create a new one in filter chain. Filter has the ownership. You shall not manually open it. Transcoder will set the missing parameters open it.
@@ -95,6 +101,7 @@ public:
      * \return false if failed
      */
     bool createAudioEncoder(const QString& name = QLatin1String("FFmpeg"));
+
     /*!
      * \brief encoder
      * Use this to set encoder properties and options.
@@ -102,6 +109,7 @@ public:
      * \return Encoder instance or null if createAudioEncoder failed
      */
     AudioEncoder* audioEncoder() const;
+
     /*!
      * \brief isRunning
      * \return true if encoding started
@@ -132,12 +140,14 @@ Q_SIGNALS:
 public Q_SLOTS:
 
     void start();
+
     /*!
      * \brief stop
      * Call stop() to encode delayed frames remains in encoder and then stop encoding.
      * It's called internally when sourcePlayer() is stopped
      */
     void stop();
+
     /*!
      * \brief pause
      * pause the encoders

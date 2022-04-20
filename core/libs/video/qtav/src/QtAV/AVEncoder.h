@@ -104,7 +104,7 @@ public:
 
 Q_SIGNALS:
 
-    void error(const QtAV::AVError& e); //explictly use QtAV::AVError in connection for Qt4 syntax
+    void error(const QtAV::AVError& e); // explictly use QtAV::AVError in connection for Qt4 syntax
     void codecNameChanged();
     void bitRateChanged();
     void timestampModeChanged(TimestampMode mode);

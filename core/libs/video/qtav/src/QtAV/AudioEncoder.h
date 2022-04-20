@@ -60,7 +60,8 @@ public:
      */
     static AudioEncoder* create(const char* name = "FFmpeg");
     virtual AudioEncoderId id() const = 0;
-    QString name() const Q_DECL_OVERRIDE; //name from factory
+    QString name() const Q_DECL_OVERRIDE; // name from factory
+
     /*!
      * \brief encode
      * encode a audio frame to a Packet
@@ -70,6 +71,7 @@ public:
     virtual bool encode(const AudioFrame& frame = AudioFrame()) = 0;
 
     /// output parameters
+
     /*!
      * \brief audioFormat
      * If not set or set to an invalid format, a supported format will be used and audioFormat() will be that format after open()
@@ -88,6 +90,7 @@ Q_SIGNALS:
 public:
 
     template<class C> static bool Register(AudioEncoderId id, const char* name) { return Register(id, create<C>, name);}
+
     /*!
      * \brief next
      * \param id NULL to get the first id address

@@ -106,11 +106,12 @@ public:
     enum State
     {
         StoppedState,
-        PlayingState, /// Start to play if it was stopped, or resume if it was paused
+        PlayingState, ///< Start to play if it was stopped, or resume if it was paused
         PausedState
     };
 
     /// Supported input protocols. A static string list
+
     static const QStringList& supportedProtocols();
 
     explicit AVPlayer(QObject *parent = 0);
@@ -122,7 +123,9 @@ public:
      * \return
      */
     AVClock* masterClock();
+
     // If path is different from previous one, the stream to play will be reset to default.
+
     /*!
      * \brief setFile
      * TODO: Set current media source if current media is invalid or auto load is enabled.
@@ -132,11 +135,13 @@ public:
      */
     void setFile(const QString& path);
     QString file() const;
+
     /*!
      * \brief setIODevice
      * Play media stream from QIODevice. AVPlayer does not take the ownership. You have to manage device lifetime.
      */
     void setIODevice(QIODevice* device);
+
     /*!
      * \brief setInput
      * Play media stream from custom MediaIO. AVPlayer's demuxer takes the ownership. Call it when player is stopped.
@@ -145,12 +150,14 @@ public:
     MediaIO* input() const;
 
     bool isLoaded() const;
+
     /*!
      * \brief setAsyncLoad
      * async load is enabled by default
      */
     void setAsyncLoad(bool value = true);
     bool isAsyncLoad() const;
+
     /*!
      * \brief setAutoLoad
      * true: current media source changed immediatly and stop current playback if new media source is set.
@@ -159,10 +166,12 @@ public:
      * Default is false
      */
     void setAutoLoad(bool value = true); // NOT implemented
-    bool isAutoLoad() const; // NOT implemented
+    bool isAutoLoad() const;             // NOT implemented
 
     MediaStatus mediaStatus() const;
+
     // TODO: add hasAudio, hasVideo, isMusic(has pic)
+
     /*!
      * \brief relativeTimeMode
      * true (default): mediaStartPosition() is always 0. All time related API, for example setPosition(), position() and positionChanged()
@@ -171,36 +180,47 @@ public:
      * To get real start time, use statistics().start_time. Or setRelativeTimeMode(false) first but may affect playback when playing.
      */
     bool relativeTimeMode() const;
+
     /// Media stream property. The first timestamp in the media
+
     qint64 absoluteMediaStartPosition() const;
-    qreal durationF() const; //unit: s, This function may be removed in the future.
-    qint64 duration() const; //unit: ms. media duration. network stream may be very small, why?
+    qreal durationF() const; // unit: s, This function may be removed in the future.
+    qint64 duration() const; // unit: ms. media duration. network stream may be very small, why?
+
     /*!
      * \brief mediaStartPosition
      * If relativeTimeMode() is true (default), it's 0. Otherwise is the same as absoluteMediaStartPosition()
      */
     qint64 mediaStartPosition() const;
+
     /// mediaStartPosition() + duration().
+
     qint64 mediaStopPosition() const;
-    qreal mediaStartPositionF() const; //unit: s
-    qreal mediaStopPositionF() const; //unit: s
+    qreal mediaStartPositionF() const; // unit: s
+    qreal mediaStopPositionF() const;  // unit: s
+
     // can set by user. may be not the real media start position.
+
     qint64 startPosition() const;
+
     /*!
      * \brief stopPosition: the position at which player should stop playing
      * \return
      * If media stream is not a local file, stopPosition()==max value of qint64
      */
-    qint64 stopPosition() const; //unit: ms
-    qint64 position() const; //unit: ms
+    qint64 stopPosition() const; // unit: ms
+    qint64 position() const;     // unit: ms
     qint64 displayPosition() const;
-    //0: play once. N: play N+1 times. <0: infinity
-    int repeat() const; //or repeatMax()?
+
+    // 0: play once. N: play N+1 times. <0: infinity
+    int repeat() const; // or repeatMax()?
+
     /*!
      * \brief currentRepeat
      * \return -1 if not playback is stopped, otherwise (Playback times - 1)
      */
     int currentRepeat() const;
+
     /*!
      * \brief setExternalAudio
      * set audio track from an external audio stream. this will try to load the external audio and
@@ -213,6 +233,7 @@ public:
      */
     bool setExternalAudio(const QString& file);
     QString externalAudio() const;
+
     /*!
      * \brief externalAudioTracks
      * A list of QVariantMap. Using QVariantMap and QVariantList is mainly for QML support.
@@ -223,6 +244,7 @@ public:
      * \sa externalAudioTracksChanged
      */
     const QVariantList& externalAudioTracks() const;
+
     /*!
      * \brief internalAudioTracks
      * A list of QVariantMap. Using QVariantMap and QVariantList is mainly for QML support.
@@ -232,6 +254,7 @@ public:
      *               useful for interop with external libs that require absolute stream_index
      */
     const QVariantList& internalAudioTracks() const;
+
     /*!
      * \brief internalVideoTracks
      * A list of QVariantMap. Using QVariantMap and QVariantList is mainly for QML support.
@@ -241,6 +264,7 @@ public:
      *               useful for interop with external libs that require absolute stream_index
      */
     const QVariantList& internalVideoTracks() const;
+
     /*!
      * \brief setAudioStream
      * set an external audio file and stream number as audio track. It will be reset if setFile()/setIODevice()/setInput() is called
@@ -249,6 +273,7 @@ public:
      * \return false if fail
      */
     bool setAudioStream(const QString& file, int n = 0);
+
     /*!
      * set audio/video/subtitle stream to n. n=0, 1, 2..., means the 1st, 2nd, 3rd audio/video/subtitle stream
      * If n < 0, there will be no audio thread and sound/
@@ -257,13 +282,17 @@ public:
      * return: false if stream not changed, not valid
      * TODO: rename to track instead of stream
      */
+
     /*!
      * \brief setAudioStream
      * Set audio stream number in current media or external audio file
      */
     bool setAudioStream(int n);
-    //TODO: n<0, no video thread. It will be reset if setFile()/setIODevice()/setInput() is called
+
+    // TODO: n<0, no video thread. It will be reset if setFile()/setIODevice()/setInput() is called
+
     bool setVideoStream(int n);
+
     /*!
      * \brief internalAudioTracks
      * A list of QVariantMap. Using QVariantMap and QVariantList is mainly for QML support.
@@ -280,13 +309,16 @@ public:
     int audioStreamCount() const;
     int videoStreamCount() const;
     int subtitleStreamCount() const;
+
     /*!
      * \brief videoCapture
      * Capture the current frame using videoCapture()->capture()
      * \sa VideoCapture
      */
     VideoCapture *videoCapture() const;
-    //TODO: no replay, replay without parsing the stream if it's already loaded. (not implemented). to force reload the stream, unload() then play()
+
+    // TODO: no replay, replay without parsing the stream if it's already loaded. (not implemented). to force reload the stream, unload() then play()
+
     /*!
      * \brief play
      * If isAsyncLoad() is true (default), play() will return immediately. Signals started() and stateChanged() will be emitted if media is loaded and playback starts.
@@ -294,6 +326,7 @@ public:
     void play(const QString& path);
     bool isPlaying() const;
     bool isPaused() const;
+
     /*!
      * \brief state
      * Player's playback state. Default is StoppedState.
@@ -304,12 +337,14 @@ public:
     void setState(State value);
 
     // TODO: use id as parameter and return ptr?
+
     void addVideoRenderer(VideoRenderer *renderer);
     void removeVideoRenderer(VideoRenderer *renderer);
     void clearVideoRenderers();
     void setRenderer(VideoRenderer* renderer);
     VideoRenderer* renderer();
     QList<VideoRenderer*> videoOutputs();
+
     /*!
      * \brief audio
      * AVPlayer always has an AudioOutput instance. You can access or control audio output properties through audio().
@@ -317,6 +352,7 @@ public:
      * \return
      */
     AudioOutput* audio();
+
     /*!
      * \brief setSpeed
      * Set playback speed.
@@ -332,15 +368,19 @@ public:
      * If isInterruptOnTimeout() is true, abort current operation and stop playback
      * \param ms milliseconds. <0: never interrupt.
      */
+
     /// TODO: rename to timeout
+
     void setInterruptTimeout(qint64 ms);
     qint64 interruptTimeout() const;
+
     /*!
      * \brief setInterruptOnTimeout
      * \param value
      */
     void setInterruptOnTimeout(bool value);
     bool isInterruptOnTimeout() const;
+
     /*!
      * \brief setFrameRate
      * Force the (video) frame rate to a given value.
@@ -350,8 +390,11 @@ public:
      */
     void setFrameRate(qreal value);
     qreal forcedFrameRate() const;
+
     //Statistics& statistics();
+
     const Statistics& statistics() const;
+
     /*!
      * \brief installFilter
      * Insert a filter at position 'index' of current filter list.
@@ -366,6 +409,7 @@ public:
     bool uninstallFilter(VideoFilter* filter);
     QList<Filter*> audioFilters() const;
     QList<Filter*> videoFilters() const;
+
     /*!
      * \brief setPriority
      * A suitable decoder will be applied when video is playing. The decoder does not change in current playback if no decoder is found.
@@ -373,6 +417,7 @@ public:
      * \param ids
      */
     void setPriority(const QVector<VideoDecoderId>& ids);
+
     /*!
      * \brief setVideoDecoderPriority
      * also can set in opt.priority
@@ -380,7 +425,9 @@ public:
      */
     void setVideoDecoderPriority(const QStringList& names);
     QStringList videoDecoderPriority() const;
+
     //void setPriority(const QVector<AudioOutputId>& ids);
+
     /*!
      * below APIs are deprecated.
      * TODO: setValue("key", value) or setOption("key", value) ?
@@ -389,9 +436,10 @@ public:
      */
     int brightness() const;
     int contrast() const;
-    int hue() const; //not implemented
+    int hue() const;    // not implemented
     int saturation() const;
     unsigned int chapters() const;
+
     /*!
      * \sa AVDemuxer::setOptions()
      * example:
@@ -399,10 +447,14 @@ public:
      * opt["rtsp_transport"] = "tcp"
      * player->setOptionsForFormat(opt);
      */
+
     // avformat_open_input
+
     void setOptionsForFormat(const QVariantHash &dict);
     QVariantHash optionsForFormat() const;
+
     // avcodec_open2. TODO: the same for audio/video codec?
+
     /*!
      * \sa AVDecoder::setOptions()
      * example:
@@ -413,7 +465,9 @@ public:
      * opt["ffmpeg"] = ffopt; // only apply for ffmpeg software decoder
      * player->setOptionsForVideoCodec(opt);
      */
+
     // QVariantHash deprecated, use QVariantMap to get better js compatibility
+
     void setOptionsForAudioCodec(const QVariantHash &dict);
     QVariantHash optionsForAudioCodec() const;
     void setOptionsForVideoCodec(const QVariantHash& dict);
@@ -441,21 +495,25 @@ public Q_SLOTS:
 
     void togglePause();
     void pause(bool p = true);
+
     /*!
      * \brief play
      * Load media and start playback. If current media is playing and media source is not changed, nothing to do. If media source is not changed, try to load (not in LoadingStatus or LoadedStatus) and start playback. If media source changed, reload and start playback.
      */
     void play();
+
     /*!
      * \brief stop
      * Stop playback. It blocks current thread until the playback is stopped. Will emit signal stopped(). startPosition(), stopPosition(), repeat() are reset
      */
     void stop();
+
     /*!
      * \brief stepForward
      * Play the next frame and pause
      */
     void stepForward();
+
     /*!
      * \brief stepBackward
      * Play the previous frame and pause. Currently only support the previous decoded frames
@@ -463,6 +521,7 @@ public Q_SLOTS:
     void stepBackward();
 
     void setRelativeTimeMode(bool value);
+
     /*!
      * \brief setRepeat
      *  Repeat max times between startPosition() and endPosition(). It's reset if playback is stopped.
@@ -471,6 +530,7 @@ public Q_SLOTS:
      * \param max
      */
     void setRepeat(int max);
+
     /*!
      * \brief startPosition
      *  Used to repeat from startPosition() to endPosition().
@@ -484,6 +544,7 @@ public Q_SLOTS:
      *  pos > media end position, or pos > normalized stopPosition(): undefined
      */
     void setStartPosition(qint64 pos);
+
     /*!
      * \brief stopPosition
      *  pos > mediaStopPosition(): mediaStopPosition()
@@ -491,6 +552,7 @@ public Q_SLOTS:
      * With the default value, the playback will not stop until the end of media (including dynamically changed media duration, e.g. recording video)
      */
     void setStopPosition(qint64 pos = std::numeric_limits<qint64>::max());
+
     /*!
      * \brief setTimeRange
      * Set startPosition and stopPosition. Make sure start <= stop.
@@ -498,14 +560,15 @@ public Q_SLOTS:
     void setTimeRange(qint64 start, qint64 stop = std::numeric_limits<qint64>::max());
 
     bool isSeekable() const;
+
     /*!
      * \brief setPosition equals to seek(qreal)
      *  position < 0: 0
      * \param position in ms
      */
     void setPosition(qint64 position);
-    void seek(qreal r); // r: [0, 1]
-    void seek(qint64 pos); //ms. same as setPosition(pos)
+    void seek(qreal r);     // r: [0, 1]
+    void seek(qint64 pos);  // ms. same as setPosition(pos)
     void seekForward();
     void seekBackward();
     void seekNextChapter();
@@ -519,12 +582,14 @@ public Q_SLOTS:
      * Playback can start or resume only when the buffer is entirely filled.
      */
     qreal bufferProgress() const;
+
     /*!
      * \brief bufferSpeed
      * Bytes/s
      * \return 0 if not buffering. >= 0 if buffering
      */
     qreal bufferSpeed() const;
+
     /*!
      * \brief buffered
      * Current buffered value in msecs, bytes or packet count depending on bufferMode()
@@ -532,6 +597,7 @@ public Q_SLOTS:
     qint64 buffered() const;
     void setBufferMode(BufferMode mode);
     BufferMode bufferMode() const;
+
     /*!
      * \brief setBufferValue
      * Ensure the buffered msecs/bytes/packets in queue is at least the given value before playback starts.
@@ -547,13 +613,17 @@ public Q_SLOTS:
      * \param msec <=0: auto and compute internally depending on duration and fps
      */
     void setNotifyInterval(int msec);
+
     /// The real notify interval. Always > 0
+
     int notifyInterval() const;
-    void updateClock(qint64 msecs); //update AVClock's external clock
+    void updateClock(qint64 msecs); // update AVClock's external clock
+
     // for all renderers. val: [-100, 100]. other value changes nothing
+
     void setBrightness(int val);
     void setContrast(int val);
-    void setHue(int val);  //not implemented
+    void setHue(int val);           // not implemented
     void setSaturation(int val);
 
 Q_SIGNALS:
@@ -564,15 +634,17 @@ Q_SIGNALS:
     void asyncLoadChanged();
     void muteChanged();
     void sourceChanged();
-    void loaded(); // == mediaStatusChanged(QtAV::LoadedMedia)
-    void mediaStatusChanged(QtAV::MediaStatus status); //explictly use QtAV::MediaStatus
+    void loaded();                  // == mediaStatusChanged(QtAV::LoadedMedia)
+    void mediaStatusChanged(QtAV::MediaStatus status); // explictly use QtAV::MediaStatus
     void mediaEndActionChanged(QtAV::MediaEndAction action);
+
     /*!
      * \brief durationChanged emit when media is loaded/unloaded
      */
     void durationChanged(qint64);
-    void error(const QtAV::AVError& e); //explictly use QtAV::AVError in connection for Qt4 syntax
+    void error(const QtAV::AVError& e); // explictly use QtAV::AVError in connection for Qt4 syntax
     void paused(bool p);
+
     /*!
      * \brief started
      * Emitted when playback is started. Some functions that control playback should be called after playback is started, otherwise they won't work, e.g. setPosition(), pause(). stop() can be called at any time.
@@ -587,6 +659,7 @@ Q_SIGNALS:
     void startPositionChanged(qint64 position);
     void stopPositionChanged(qint64 position);
     void seekableChanged();
+
     /*!
      * \brief seekFinished
      * If there is a video stream currently playing, emitted when video seek is finished. If only an audio stream is playing, emitted when audio seek is finished. The position() is the master clock value, It can be very different from video timestamp at this time.
@@ -604,11 +677,13 @@ Q_SIGNALS:
     void saturationChanged(int val);
     void chaptersChanged(unsigned int val);
     void subtitleStreamChanged(int value);
+
     /*!
      * \brief internalAudioTracksChanged
      * Emitted when media is loaded. \sa internalAudioTracks
      */
     void internalAudioTracksChanged(const QVariantList& tracks);
+
     /*!
      * \brief internalVideoTracksChanged
      * Emitted when media is loaded. \sa internalVideoTracks
@@ -616,6 +691,7 @@ Q_SIGNALS:
     void internalVideoTracksChanged(const QVariantList& tracks);
     void externalAudioTracksChanged(const QVariantList& tracks);
     void internalSubtitleTracksChanged(const QVariantList& tracks);
+
     /*!
      * \brief internalSubtitleHeaderRead
      * Emitted when internal subtitle is loaded. Empty data if no data.
@@ -630,7 +706,9 @@ private Q_SLOTS:
     void playInternal(); // simply play
     void stopFromDemuxerThread();
     void aboutToQuitApp();
+
     // start/stop notify timer in this thread. use QMetaObject::invokeMethod
+
     void startNotifyTimer();
     void stopNotifyTimer();
     void onStarted();
@@ -644,6 +722,7 @@ private Q_SLOTS:
 protected:
 
     // TODO: set position check timer interval
+
     virtual void timerEvent(QTimerEvent *);
 
 private:
@@ -652,7 +731,7 @@ private:
      * \brief unload
      * If the media is loading or loaded but not playing, unload it. Internall use only.
      */
-    void unload(); //TODO: private. call in stop() if not load() by user? or always unload() in stop()?
+    void unload(); // TODO: private. call in stop() if not load() by user? or always unload() in stop()?
     qint64 normalizedPosition(qint64 pos);
 
     class Private;

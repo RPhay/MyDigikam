@@ -62,12 +62,17 @@ public:
     virtual void flush();
     void setCodecContext(void* codecCtx); //protected
     void* codecContext() const;
-    /*not available if AVCodecContext == 0*/
+
+    /**
+     * not available if AVCodecContext == 0
+     */
     bool isAvailable() const;
+
     virtual bool decode(const Packet& packet) = 0;
-    int undecodedSize() const; //TODO: remove. always decode whole input data completely
+    int undecodedSize() const; // TODO: remove. always decode whole input data completely
 
     // avcodec_open2
+
     /*!
      * \brief setOptions
      * 1. If has key "avcodec", it's value (suboption, a hash or map) will be used to set AVCodecContext use av_opt_set and av_dict_set. A value of hash type is ignored.
@@ -86,17 +91,20 @@ public:
 
 Q_SIGNALS:
 
-    void error(const QtAV::AVError& e); //explictly use QtAV::AVError in connection for Qt4 syntax
+    void error(const QtAV::AVError& e); // explictly use QtAV::AVError in connection for Qt4 syntax
     void descriptionChanged();
 
 protected:
 
     AVDecoder(AVDecoderPrivate& d);
     DPTR_DECLARE(AVDecoder)
-    // force a codec. only used by avcodec sw decoders. TODO: move to public? profile set?
+
+    /**
+     * force a codec. only used by avcodec sw decoders. TODO: move to public? profile set?
+     */
     void setCodecName(const QString& name);
     QString codecName() const;
-    virtual void codecNameChanged() {}//signals can not be decared virtual (winrt)
+    virtual void codecNameChanged() {} // signals can not be decared virtual (winrt)
 
 private:
 

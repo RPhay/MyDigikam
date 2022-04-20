@@ -52,15 +52,21 @@ public:
 
     static const QStringList& supportedFormats();
     static const QStringList& supportedExtensions();
+
     /// Supported ffmpeg/libav input protocols(not complete). A static string list
+
     static const QStringList& supportedProtocols();
 
     AVMuxer(QObject *parent = 0);
     ~AVMuxer();
+
     QString fileName() const;
     QIODevice* ioDevice() const;
+
     /// not null for QIODevice, custom protocols
+
     MediaIO *mediaIO() const;
+
     /*!
      * \brief setMedia
      * \return whether the media is changed
@@ -68,6 +74,7 @@ public:
     bool setMedia(const QString& fileName);
     bool setMedia(QIODevice* dev);
     bool setMedia(MediaIO* io);
+
     /*!
      * \brief setFormat
      * Force the output format.
@@ -83,7 +90,7 @@ public:
     bool isOpen() const;
 
     // TODO: copyAudioContext(void* avctx) for copy encoding without decoding
-    void copyProperties(VideoEncoder* enc); //rename to setEncoder
+    void copyProperties(VideoEncoder* enc); // rename to setEncoder
     void copyProperties(AudioEncoder* enc);
 
     void setOptions(const QVariantHash &dict);

@@ -72,24 +72,27 @@ public:
      */
     enum DeviceFeature {
         NoFeature = 0,
-        SetVolume = 1, /// Use backend volume control api rather than software scale. Ignore if backend does not support.
+        SetVolume = 1,          ///< Use backend volume control api rather than software scale. Ignore if backend does not support.
         SetMute = 1 << 1,
-        SetSampleRate = 1 << 2, /// NOT IMPLEMENTED
-        SetSpeed = 1 << 3,  /// NOT IMPLEMENTED
+        SetSampleRate = 1 << 2, ///< NOT IMPLEMENTED
+        SetSpeed = 1 << 3,      ///< NOT IMPLEMENTED
     };
     Q_DECLARE_FLAGS(DeviceFeatures, DeviceFeature)
+
     /*!
      * \brief backendsAvailable
      * All registered backends in default priority order
      * \return
      */
     static QStringList backendsAvailable();
+
     /*!
      * \brief AudioOutput
      * Audio format set to preferred sample format and channel layout
      */
     AudioOutput(QObject *parent = 0);
     ~AudioOutput();
+
     /*!
      * \brief setBackends
      * set the given backends. Old backend instance and backend() is updated soon if backendsChanged.
@@ -97,17 +100,20 @@ public:
      */
     void setBackends(const QStringList &backendNames = QStringList());
     QStringList backends() const;
+
     /*!
      * \brief backend
      * backend name currently in use
      */
     QString backend() const;
+
     /*!
      * \brief flush
      * Play the buffered audio data
      * \return
      */
     void flush();
+
     /*!
      * \brief clear
      * Clear audio buffers and set time to 0. The default behavior is flush and reset time
@@ -116,6 +122,7 @@ public:
     bool open();
     bool close();
     bool isOpen() const;
+
     /*!
      * \brief play
      * Play out the given audio data. It may block current thread until the data can be written to audio device
@@ -125,12 +132,14 @@ public:
      * \return false if currently isPaused(), no backend is available or backend failed to play
      */
     bool play(const QByteArray& data, qreal pts = 0.0);
+
     /*!
      * \brief pause
      * Pause audio rendering. play() will fail.
      */
     void pause(bool value);
     bool isPaused() const;
+
     /*!
      * \brief setAudioFormat
      * Set/Request to use the given \l format. If it's not supported, an preferred format will be used.
@@ -140,11 +149,13 @@ public:
      */
     AudioFormat setAudioFormat(const AudioFormat& format);
     const AudioFormat& requestedFormat() const;
+
     /*!
      * \brief audioFormat
      * \return actual format for requested format
      */
     const AudioFormat& audioFormat() const;
+
     /*!
      * \brief setVolume
      * Set volume level.
@@ -154,6 +165,7 @@ public:
      */
     void setVolume(qreal value);
     qreal volume() const;
+
     /*!
      * \brief setMute
      * If SetMute feature is not set or not supported, software implementation will be used.
@@ -161,6 +173,7 @@ public:
      */
     void setMute(bool value = true);
     bool isMute() const;
+
     /*!
      * \brief setSpeed  set audio playing speed
      * Currently only store the value and does nothing else in audio output. You may change sample rate to get the same effect.
@@ -172,6 +185,7 @@ public:
      */
     void setSpeed(qreal speed);
     qreal speed() const;
+
     /*!
      * \brief isSupported
      *  check \a isSupported(format.sampleFormat()) and \a isSupported(format.channelLayout())
@@ -180,6 +194,7 @@ public:
      * NOTE: may fail for some backends if it's closed, for example OpenAL
      */
     bool isSupported(const AudioFormat& format) const;
+
     /*!
      * \brief bufferSamples
      * Number of samples that audio output accept in 1 buffer. Feed the audio output this size of data every time.
@@ -189,6 +204,7 @@ public:
     int bufferSamples() const;
     void setBufferSamples(int value);
     int bufferSize() const; /// bufferSamples()*bytesPerSample
+
     /*!
      * \brief bufferCount
      * Total buffer count. If it's not large enough, playing high sample rate audio may be poor.
@@ -197,24 +213,31 @@ public:
      */
     int bufferCount() const;
     void setBufferCount(int value);
-    int bufferSizeTotal() const { return bufferCount() * bufferSize();}
+    int bufferSizeTotal() const
+    {
+        return bufferCount() * bufferSize();
+    }
+
     /*!
      * \brief setDeviceFeatures
      * Unsupported features will not be set.
      * You can call this in a backend ctor.
      */
     void setDeviceFeatures(DeviceFeatures value);
+
     /*!
      * \brief deviceFeatures
      * \return features set by setFeatures() excluding unsupported features
      */
     DeviceFeatures deviceFeatures() const;
+
     /*!
      * \brief supportedDeviceFeatures
      * Supported features of the backend, defined by AudioOutput(DeviceFeatures,AudioOutput&,QObject*) in a backend ctor
      */
     DeviceFeatures supportedDeviceFeatures() const;
     qreal timestamp() const;
+
     // timestamp of current playing data
 
 Q_SIGNALS:
@@ -227,7 +250,9 @@ Q_SIGNALS:
 protected:
 
     // Store and fill data to audio buffers
+
     bool receiveData(const QByteArray &data, qreal pts = 0.0);
+
     /*!
      * \brief waitForNextBuffer
      * wait until you can feed more data
@@ -242,8 +267,10 @@ private Q_SLOTS:
 private:
 
     void onCallback();
-    friend class AudioOutputBackend;
+
     Q_DISABLE_COPY(AudioOutput)
+
+    friend class AudioOutputBackend;
 };
 
 } // namespace QtAV

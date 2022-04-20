@@ -43,6 +43,7 @@ namespace QtAV
 typedef int AudioDecoderId;
 
 // built-in decoders
+
 extern Q_AV_EXPORT AudioDecoderId AudioDecoderId_FFmpeg;
 
 class AudioResampler;
@@ -57,6 +58,7 @@ public:
 
     static QStringList supportedCodecs();
     static AudioDecoder* create(AudioDecoderId id);
+
     /*!
      * \brief create
      * create a decoder from registered name. FFmpeg decoder will be created for empty name
@@ -65,14 +67,15 @@ public:
      */
     static AudioDecoder* create(const char* name = "FFmpeg");
     virtual AudioDecoderId id() const = 0;
-    QString name() const; //name from factory
-    virtual QByteArray data() const; //decoded data
+    QString name() const;               // name from factory
+    virtual QByteArray data() const;    // decoded data
     virtual AudioFrame frame() = 0;
-    AudioResampler *resampler(); //TODO: remove. can not share the same resampler for multiple frames
+    AudioResampler *resampler();        // TODO: remove. can not share the same resampler for multiple frames
 
 public:
 
     template<class C> static bool Register(AudioDecoderId id, const char* name) { return Register(id, create<C>, name);}
+
     /*!
      * \brief next
      * \param id NULL to get the first id address
@@ -85,6 +88,7 @@ public:
 private:
 
     // if QtAV is static linked (ios for example), components may be not automatically registered. Add registerAll() to workaround
+
     static void registerAll();
     template<class C> static AudioDecoder* create() { return new C();}
     typedef AudioDecoder* (*AudioDecoderCreator)();

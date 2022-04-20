@@ -105,9 +105,9 @@ public:
 
 private:
 
-    ErrorCode mError;
-    int mFFmpegError;
-    QString mDetail;
+    ErrorCode   mError;
+    int         mFFmpegError;
+    QString     mDetail;
 };
 
 } // namespace QtAV

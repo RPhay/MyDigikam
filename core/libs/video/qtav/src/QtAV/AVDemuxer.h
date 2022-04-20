@@ -59,6 +59,7 @@ public:
     enum StreamType
     {
         // TODO: move to common MediaType
+
         AudioStream,
         VideoStream,
         SubtitleStream,
@@ -66,7 +67,9 @@ public:
 
     static const QStringList& supportedFormats();
     static const QStringList& supportedExtensions();
+
     /// Supported ffmpeg/libav input protocols(not complete). A static string list
+
     static const QStringList& supportedProtocols();
 
     AVDemuxer(QObject *parent = 0);
@@ -75,7 +78,9 @@ public:
     bool atEnd() const;
     QString fileName() const;
     QIODevice* ioDevice() const;
+
     /// not null for QIODevice, custom protocols
+
     MediaIO* mediaIO() const;
 
     /*!
@@ -126,13 +131,15 @@ public:
     SeekUnit seekUnit() const;
     void setSeekType(SeekType target);
     SeekType seekType() const;
+
     /*!
      * \brief seek
      * seek to a given position. Only support timestamp seek now.
      * Experiment: if pos is out of range (>duration()), do nothing unless a seekable and variableSize MediaIO is used.
      * \return false if fail
      */
-    bool seek(qint64 pos); //pos: ms
+    bool seek(qint64 pos); // pos: ms
+
     /*!
      * \brief seek
      * Percentage seek. duration() must be >0LL
@@ -143,18 +150,25 @@ public:
     AVFormatContext* formatContext();
     QString formatName() const;
     QString formatLongName() const;
+
     // TODO: rename startPosition()
-    qint64 startTime() const; //ms, AVFormatContext::start_time/1000
-    qint64 duration() const; //ms, AVFormatContext::duration/1000
-    qint64 startTimeUs() const; //us, AVFormatContext::start_time
-    qint64 durationUs() const; //us, AVFormatContext::duration
-    //total bit rate
-    int bitRate() const; //AVFormatContext::bit_rate
-    qreal frameRate() const; //deprecated AVStream::avg_frame_rate
+
+    qint64 startTime() const;   // ms, AVFormatContext::start_time/1000
+    qint64 duration() const;    // ms, AVFormatContext::duration/1000
+    qint64 startTimeUs() const; // us, AVFormatContext::start_time
+    qint64 durationUs() const;  // us, AVFormatContext::duration
+
+    // total bit rate
+
+    int bitRate() const;        // AVFormatContext::bit_rate
+    qreal frameRate() const;    // deprecated AVStream::avg_frame_rate
+
     // if stream is -1, return the current video(or audio if no video) stream.
     // TODO: audio/videoFrames?
-    qint64 frames(int stream = -1) const; //AVFormatContext::nb_frames
+
+    qint64 frames(int stream = -1) const; // AVFormatContext::nb_frames
     bool hasAttacedPicture() const;
+
     /*!
      * \brief setStreamIndex
      * Set stream by index in stream list. call it after loaded.
@@ -162,25 +176,34 @@ public:
      * index < 0 is invalid
      */
     bool setStreamIndex(StreamType st, int index);
+
     // current open stream
+
     int currentStream(StreamType st) const;
     QList<int> streams(StreamType st) const;
+
     // TODO: stream(StreamType), streams(StreamType)
+
     // current open stream
+
     int audioStream() const;
     QList<int> audioStreams() const;
     int videoStream() const;
     QList<int> videoStreams() const;
     int subtitleStream() const;
     QList<int> subtitleStreams() const;
-    //codec. stream < 0: the stream going to play (or the stream set by setStreamIndex())
+
+    // codec. stream < 0: the stream going to play (or the stream set by setStreamIndex())
+
     AVCodecContext* audioCodecContext(int stream = -1) const;
     AVCodecContext* videoCodecContext(int stream = -1) const;
     AVCodecContext* subtitleCodecContext(int stream = -1) const;
+
     /**
      * @brief getInterruptTimeout return the interrupt timeout
      */
     qint64 getInterruptTimeout() const;
+
     /**
      * @brief setInterruptTimeout set the interrupt timeout
      * @param timeout in ms
@@ -188,6 +211,7 @@ public:
     void setInterruptTimeout(qint64 timeout);
     bool isInterruptOnTimeout() const;
     void setInterruptOnTimeout(bool value);
+
     /**
      * @brief getInterruptStatus return the interrupt status.
      * \return -1: interrupted by user
@@ -195,12 +219,14 @@ public:
      *         >0: timeout value of AVError::ErrorCode
      */
     int getInterruptStatus() const;
+
     /**
      * @brief setInterruptStatus set the interrupt status
      * @param interrupt <0: abort current operation like loading and reading packets.
      *                   0: no interrupt
      */
     void setInterruptStatus(int interrupt);
+
     /*!
      * \brief setOptions
      * libav's AVDictionary. we can ignore the flags used in av_dict_xxx because we can use hash api.
@@ -214,19 +240,24 @@ public:
 Q_SIGNALS:
 
     void unloaded();
-    void userInterrupted(); //NO direct connection because it's emit before interrupted happens
+    void userInterrupted(); // NO direct connection because it's emit before interrupted happens
     void loaded();
-    /*emit when the first frame is read*/
+
+    /**
+     * emit when the first frame is read
+     */
     void started();
-    void finished(); //end of file
-    void error(const QtAV::AVError& e); //explictly use QtAV::AVError in connection for Qt4 syntax
+    void finished(); // end of file
+    void error(const QtAV::AVError& e); // explictly use QtAV::AVError in connection for Qt4 syntax
     void mediaStatusChanged(QtAV::MediaStatus status);
     void seekableChanged();
 
 private:
 
     void setMediaStatus(MediaStatus status);
+
     // error code (errorCode) and message (msg) may be modified internally
+
     void handleError(int averr, AVError::ErrorCode* errorCode, QString& msg);
 
     class Private;
