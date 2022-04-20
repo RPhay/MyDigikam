@@ -233,7 +233,7 @@ bool HostInteropResource::ensureResource(int pitch, int height)
     return true;
 }
 
-#endif //QT_NO_OPENGL
+#endif // QT_NO_OPENGL
 
 void SurfaceInteropCUDA::setSurface(int picIndex, const CUVIDPROCPARAMS& param, int width, int height, int surface_height)
 {
@@ -435,10 +435,11 @@ bool EGLInteropResource::ensureResource(int w, int h, int W, int H, GLuint tex)
     if (ensureD3D9CUDA(w, h, W, H) && ensureD3D9EGL(w, h))
     {
         r.texture = tex;
-        r.w = w;
-        r.h = h;
-        r.W = W;
-        r.H = H;
+        r.w       = w;
+        r.h       = h;
+        r.W       = W;
+        r.H       = H;
+
         return true;
     }
 
@@ -451,6 +452,7 @@ bool EGLInteropResource::ensureResource(int w, int h, int W, int H, GLuint tex)
     SafeRelease(&texture9);
     SafeRelease(&surface9_nv12);
     SafeRelease(&texture9_nv12);
+
     return false;
 }
 
@@ -464,7 +466,7 @@ bool EGLInteropResource::ensureD3D9CUDA(int w, int h, int W, int H)
     if (share_ctx)
     {
         share_ctx = false;
-        ctx = NULL;
+        ctx       = NULL;
     }
 
     if (!ctx)
@@ -570,11 +572,12 @@ bool EGLInteropResource::ensureD3D9EGL(int w, int h)
     if (!kEGL_ANGLE_d3d_share_handle_client_buffer && !kEGL_ANGLE_query_surface_pointer)
     {
         qCWarning(DIGIKAM_QTAV_LOG_WARN).noquote() << QString::asprintf("EGL extension 'kEGL_ANGLE_query_surface_pointer' or 'ANGLE_d3d_share_handle_client_buffer' is required!");
+
         return false;
     }
 
     GLint has_alpha = 1; //QOpenGLContext::currentContext()->format().hasAlpha()
-    eglGetConfigAttrib(egl->dpy, egl_cfg, EGL_BIND_TO_TEXTURE_RGBA, &has_alpha); //EGL_ALPHA_SIZE
+    eglGetConfigAttrib(egl->dpy, egl_cfg, EGL_BIND_TO_TEXTURE_RGBA, &has_alpha); // EGL_ALPHA_SIZE
     qCDebug(DIGIKAM_QTAV_LOG).noquote() << QString::asprintf("choose egl display:%p config: %p/%d, has alpha: %d", egl->dpy, egl_cfg, nb_cfgs, has_alpha);
 
     EGLint attribs[] =
@@ -597,6 +600,7 @@ bool EGLInteropResource::ensureD3D9EGL(int w, int h)
         if (!eglQuerySurfacePointerANGLE)
         {
             qCWarning(DIGIKAM_QTAV_LOG_WARN).noquote() << QString::asprintf("EGL_ANGLE_query_surface_pointer is not supported");
+
             return false;
         }
 
@@ -693,7 +697,7 @@ bool EGLInteropResource::map(int picIndex, const CUVIDPROCPARAMS &param, GLuint 
         {
             //CUDA_WARN(cuCtxSynchronize(), false); //wait too long time? use cuStreamQuery?
 
-            CUDA_WARN(cuStreamSynchronize(res[plane].stream)); //slower than CtxSynchronize
+            CUDA_WARN(cuStreamSynchronize(res[plane].stream)); // slower than CtxSynchronize
         }
 
         /*
@@ -715,6 +719,7 @@ bool EGLInteropResource::map(int picIndex, const CUVIDPROCPARAMS &param, GLuint 
     DX_ENSURE(texture9_nv12->UnlockRect(0), false);
 
 #if 0
+
     //IDirect3DSurface9 *raw_surface = NULL;
     //DX_ENSURE(texture9_nv12->GetSurfaceLevel(0, &raw_surface), false);
 
@@ -910,6 +915,7 @@ bool GLInteropResource::ensureResource(int w, int h, int H, GLuint tex, int plan
     if (!ctx)
     {
         // TODO: how to use pop/push decoder's context without the context in opengl context
+
         CUDA_ENSURE(cuCtxCreate(&ctx, CU_CTX_SCHED_BLOCKING_SYNC, dev), false);
 
         if (USE_STREAM)

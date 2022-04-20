@@ -18,6 +18,7 @@ x Add SSE2 and SSE4.1 support with CMake.
 x Remove QML support.
 x Fix compilation under native Windows without DirectX (OpenGL).
 x Fix compilation under FreeBSD.
+* Fix API docs.
 * Remove support of Qt version < 5.
 * Fix header guards.
 * Fix includes rules/order from Qt and local.
