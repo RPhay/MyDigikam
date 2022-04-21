@@ -24,23 +24,25 @@
 // Windows includes
 /*
 #define NOMINMAX
-#include <algorithm>
 #include <Windows.h>
-#ifndef min
-#define min(x,y) ((x) < (y) ? (x) : (y))
-#endif
-#ifndef max
-#define max(x,y) ((x) > (y) ? (x) : (y))
-#endif
 #include <gdiplus.h>
 #undef min
 #undef max
 */
 
 #define WIN32_LEAN_AND_MEAN
+#include <algorithm>
 #include <windows.h>
 #include <winsock2.h>
 #include <unknwn.h>
+
+#ifndef min
+#define min(x,y) ((x) < (y) ? (x) : (y))
+#endif
+#ifndef max
+#define max(x,y) ((x) > (y) ? (x) : (y))
+#endif
+
 #include <gdiplus.h>
 
 #include "VideoRenderer_p.h"
