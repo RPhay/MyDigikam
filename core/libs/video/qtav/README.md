@@ -18,6 +18,7 @@ x Add SSE2 and SSE4.1 support with CMake.
 x Remove QML support.
 x Fix compilation under native Windows without DirectX (OpenGL).
 x Fix compilation under FreeBSD.
+x Use cmake to find X11 and XV dependencies.
 * Fix API docs.
 * Remove support of Qt version < 5.
 * Fix header guards.
@@ -47,6 +48,5 @@ TODO:
   x dsound
   - gdiplus
 
-+ Use cmake to find XV dependencies.
 + Use cmake to find CUDA Toolkit dependencies.
 + Port to FFMPEG 5 API with backward compatibility.
