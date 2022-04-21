@@ -30,6 +30,7 @@
 #include "VideoFrame.h"
 #include "DirectXHelper.h"
 #include "OpenGLHelper.h"
+#include "VideoDecoderD3D.h"
 #include "digikam_debug.h"
 
 // no need to check qt4 because no ANGLE there

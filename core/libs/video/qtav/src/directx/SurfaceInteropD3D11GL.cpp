@@ -31,6 +31,7 @@
 
 // Local includes
 
+#include "VideoDecoderD3D.h"
 #include "DirectXHelper.h"
 #include "OpenGLHelper.h"
 #include "digikam_debug.h"

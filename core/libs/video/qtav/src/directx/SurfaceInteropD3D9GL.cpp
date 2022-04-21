@@ -29,6 +29,7 @@
 
 #include "DirectXHelper.h"
 #include "OpenGLHelper.h"
+#include "VideoDecoderD3D.h"
 #include "digikam_debug.h"
 
 // dynamic gl or desktop gl

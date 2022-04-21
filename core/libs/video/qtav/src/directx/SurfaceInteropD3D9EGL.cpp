@@ -28,6 +28,7 @@
 // Local includes
 
 #include "DirectXHelper.h"
+#include "VideoDecoderD3D.h"
 #include "OpenGLHelper.h"
 
 #ifdef QT_OPENGL_ES_2_ANGLE_STATIC

@@ -27,6 +27,7 @@
 
 // Local includes
 
+#include "VideoDecoderD3D.h"
 #include "D3D11VP.h"
 #include "DirectXHelper.h"
 #include "OpenGLHelper.h"
