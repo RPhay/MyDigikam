@@ -42,7 +42,7 @@ namespace QtAV
 {
 
 int fourccFromDXGI(DXGI_FORMAT fmt); //FIXME: defined in d3d11 decoder
-VideoFormat::PixelFormat pixelFormatFromFourcc(int format);
+
 namespace d3d11 {
 
 bool InteropResource::isSupported(InteropType type)
@@ -149,7 +149,7 @@ void* SurfaceInterop::mapToHost(const VideoFormat &format, void *handle, int pla
     Q_UNUSED(sm);
     int pitch[3] = { (int)mapped.RowPitch, 0, 0}; //compute chroma later
     uint8_t *src[] = { (uint8_t*)mapped.pData, 0, 0}; //compute chroma later
-    const VideoFormat fmt = pixelFormatFromFourcc(fourccFromDXGI(desc.Format));
+    const VideoFormat fmt = VideoDecoderD3D::pixelFormatFromFourcc(fourccFromDXGI(desc.Format));
     VideoFrame frame = VideoFrame::fromGPU(fmt, frame_width, frame_height, desc.Height, src, pitch);
     if (fmt != format)
         frame = frame.to(format);

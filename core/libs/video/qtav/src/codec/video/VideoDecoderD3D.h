@@ -41,8 +41,8 @@ namespace QtAV
 
 struct d3d_format_t
 {
-    const char *name;
-    int fourcc;
+    const char*              name;
+    int                      fourcc;
     VideoFormat::PixelFormat pixfmt;
 };
 
@@ -100,18 +100,18 @@ public:
 
     VideoDecoderD3DPrivate();
 
-    bool open() Q_DECL_OVERRIDE;
-    void close() Q_DECL_OVERRIDE;
-    void* setup(AVCodecContext *avctx) Q_DECL_OVERRIDE;
-    bool getBuffer(void **opaque, uint8_t **data) Q_DECL_OVERRIDE;
-    void releaseBuffer(void *opaque, uint8_t *data) Q_DECL_OVERRIDE;
+    bool  open()                                     Q_DECL_OVERRIDE;
+    void  close()                                    Q_DECL_OVERRIDE;
+    void* setup(AVCodecContext *avctx)               Q_DECL_OVERRIDE;
+    bool  getBuffer(void **opaque, uint8_t **data)   Q_DECL_OVERRIDE;
+    void  releaseBuffer(void *opaque, uint8_t *data) Q_DECL_OVERRIDE;
 
     int aligned(int x);
 
 private:
 
     virtual bool setupSurfaceInterop()  { return true; }
-    virtual bool createDevice() = 0; // d3d device, video context etc.
+    virtual bool createDevice() = 0;                        // d3d device, video context etc.
     virtual void destroyDevice() = 0;
     virtual bool checkDevice()          { return true; }
     virtual QVector<GUID> getSupportedCodecs() const = 0;
@@ -130,18 +130,18 @@ public:
 
     // set by user. don't reset in when call destroy
 
-    bool surface_auto;
-    int surface_count;
-    QVector<IUnknown*> hw_surfaces;
-    int format_fcc;
-    GUID codec_guid;
+    bool                    surface_auto;
+    int                     surface_count;
+    QVector<IUnknown*>      hw_surfaces;
+    int                     format_fcc;
+    GUID                    codec_guid;
 
 private:
 
-    int surface_width;
-    int surface_height;
-    unsigned surface_order;
-    QVector<va_surface_t*> surfaces; // TODO: delete on close()
+    int                     surface_width;
+    int                     surface_height;
+    unsigned                surface_order;
+    QVector<va_surface_t*>  surfaces;           // TODO: delete on close()
 };
 
 template<typename T>
