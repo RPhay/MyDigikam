@@ -23,15 +23,19 @@
 
 #include "VideoRenderer_p.h"
 
+// Windows includes
+
+#include <windows.h> // GetDC()
+
+#undef min
+#undef max
+
+#include <gdiplus.h>
+
 // Qt includes
 
 #include <QWidget>
 #include <QResizeEvent>
-
-// Windows includes
-
-#include <windows.h> // GetDC()
-#include <gdiplus.h>
 
 // Local includes
 
