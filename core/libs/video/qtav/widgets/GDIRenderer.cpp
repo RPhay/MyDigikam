@@ -25,11 +25,8 @@
 
 // Windows includes
 
-#include <windows.h> // GetDC()
-
-#undef min
-#undef max
-
+#include <windows.h>
+#include <objidl.h>
 #include <gdiplus.h>
 
 // Qt includes
