@@ -455,7 +455,7 @@ bool MetaEngine::exportChanges(const QString& exvTmpFile, QStringList& removedTa
         {
             Exiv2::ExifData::const_iterator it2 = orgExif.findKey(Exiv2::ExifKey(it->key()));
 
-            if      (it2 == orgExif.end())
+            if (it2 == orgExif.end())
             {
                 // Original Exif do not have the tag.
 
@@ -464,15 +464,24 @@ bool MetaEngine::exportChanges(const QString& exvTmpFile, QStringList& removedTa
                 qCDebug(DIGIKAM_METAENGINE_LOG) << "New Exif tag" << it->key().c_str()
                                                 << "with value"   << it->toString().c_str();
             }
-            else if (getExifTagData(it2->key().c_str()) != getExifTagData(it->key().c_str()))
+            else
             {
-                // Original Exif has already the tag.
+                QByteArray dataNew((*it).size(), '\0');
+                (*it).copy((Exiv2::byte*)dataNew.data(), Exiv2::bigEndian);
 
-                chgExif[it->key().c_str()] = newExif[it->key().c_str()];
+                QByteArray dataOrg((*it2).size(), '\0');
+                (*it2).copy((Exiv2::byte*)dataOrg.data(), Exiv2::bigEndian);
 
-                qCDebug(DIGIKAM_METAENGINE_LOG) << "Changed Exif tag" << it->key().c_str()
-                                                << "old value"        << it2->toString().c_str()
-                                                << "new value"        << it->toString().c_str();
+                if (dataNew != dataOrg)
+                {
+                    // Original Exif has already the tag.
+
+                    chgExif[it->key().c_str()] = newExif[it->key().c_str()];
+
+                    qCDebug(DIGIKAM_METAENGINE_LOG) << "Changed Exif tag" << it->key().c_str()
+                                                    << "old value"        << it2->toString().c_str()
+                                                    << "new value"        << it->toString().c_str();
+                }
             }
         }
 
@@ -501,7 +510,7 @@ bool MetaEngine::exportChanges(const QString& exvTmpFile, QStringList& removedTa
         {
             Exiv2::IptcData::const_iterator it2 = orgIptc.findKey(Exiv2::IptcKey(it->key()));
 
-            if      (it2 == orgIptc.end())
+            if (it2 == orgIptc.end())
             {
                 // Original Iptc do not have the tag.
 
@@ -510,15 +519,24 @@ bool MetaEngine::exportChanges(const QString& exvTmpFile, QStringList& removedTa
                 qCDebug(DIGIKAM_METAENGINE_LOG) << "New Iptc tag" << it->key().c_str()
                                                 << "with value"   << it->toString().c_str();
             }
-            else if (getIptcTagData(it2->key().c_str()) != getIptcTagData(it->key().c_str()))
+            else
             {
-                // Original Iptc has already the tag.
+                QByteArray dataNew((*it).size(), '\0');
+                (*it).copy((Exiv2::byte*)dataNew.data(), Exiv2::bigEndian);
 
-                chgIptc[it->key().c_str()] = newIptc[it->key().c_str()];
+                QByteArray dataOrg((*it2).size(), '\0');
+                (*it2).copy((Exiv2::byte*)dataOrg.data(), Exiv2::bigEndian);
 
-                qCDebug(DIGIKAM_METAENGINE_LOG) << "Changed Iptc tag" << it->key().c_str()
-                                                << "old value"        << it2->toString().c_str()
-                                                << "new value"        << it->toString().c_str();
+                if (dataNew != dataOrg)
+                {
+                    // Original Iptc has already the tag.
+
+                    chgIptc[it->key().c_str()] = newIptc[it->key().c_str()];
+
+                    qCDebug(DIGIKAM_METAENGINE_LOG) << "Changed Iptc tag" << it->key().c_str()
+                                                    << "old value"        << it2->toString().c_str()
+                                                    << "new value"        << it->toString().c_str();
+                }
             }
         }
 
@@ -549,7 +567,7 @@ bool MetaEngine::exportChanges(const QString& exvTmpFile, QStringList& removedTa
         {
             Exiv2::XmpData::const_iterator it2 = orgXmp.findKey(Exiv2::XmpKey(it->key()));
 
-            if      (it2 == orgXmp.end())
+            if (it2 == orgXmp.end())
             {
                 // Original Xmp do not have the tag.
 
@@ -558,15 +576,20 @@ bool MetaEngine::exportChanges(const QString& exvTmpFile, QStringList& removedTa
                 qCDebug(DIGIKAM_METAENGINE_LOG) << "New Xmp tag" << it->key().c_str()
                                                 << "with value"  << it->toString().c_str();
             }
-            else if (getXmpTagVariant(it2->key().c_str()) != getXmpTagVariant(it->key().c_str()))
+            else
             {
-                // Original Xmp has already the tag.
+                // Exiv2::Xmpdatum::copy is not implemented, we try a string comparison.
 
-                chgXmp[it->key().c_str()] = newXmp[it->key().c_str()];
+                if (it->toString() != it2->toString())
+                {
+                    // Original Xmp has already the tag.
 
-                qCDebug(DIGIKAM_METAENGINE_LOG) << "Changed Xmp tag" << it->key().c_str()
-                                                << "old value"       << it2->toString().c_str()
-                                                << "new value"       << it->toString().c_str();
+                    chgXmp[it->key().c_str()] = newXmp[it->key().c_str()];
+
+                    qCDebug(DIGIKAM_METAENGINE_LOG) << "Changed Xmp tag" << it->key().c_str()
+                                                    << "old value"       << it2->toString().c_str()
+                                                    << "new value"       << it->toString().c_str();
+                }
             }
         }
 
