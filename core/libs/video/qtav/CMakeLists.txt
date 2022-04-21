@@ -134,18 +134,6 @@ set(libqtav_SRCS ${libqtav_SRCS}
                  ${QTAV_WIDGETS_HEADERS}
 )
 
-if(D3D11_FOUND)
-
-    set(libqtav_SRCS ${libqtav_SRCS}
-        ${CMAKE_CURRENT_SOURCE_DIR}/src/codec/video/VideoDecoderD3D.cpp
-        ${CMAKE_CURRENT_SOURCE_DIR}/src/codec/video/VideoDecoderD3D11.cpp
-        ${CMAKE_CURRENT_SOURCE_DIR}/src/directx/SurfaceInteropD3D11.cpp
-        ${CMAKE_CURRENT_SOURCE_DIR}/src/directx/D3D11VP.cpp
-        ${CMAKE_CURRENT_SOURCE_DIR}/src/directx/DirectXHelper.cpp
-    )
-
-endif()
-
 if(DIRECTSOUND_FOUND)
 
     set(libqtav_SRCS ${libqtav_SRCS}
@@ -158,6 +146,19 @@ if(XAUDIO2_FOUND)
 
     set(libqtav_SRCS ${libqtav_SRCS}
         ${CMAKE_CURRENT_SOURCE_DIR}/src/output/audio/AudioOutputXAudio2.cpp
+    )
+
+endif()
+
+if(D3D11_FOUND)
+
+    set(libqtav_SRCS ${libqtav_SRCS}
+        ${CMAKE_CURRENT_SOURCE_DIR}/src/codec/video/VideoDecoderD3D.cpp
+        ${CMAKE_CURRENT_SOURCE_DIR}/src/codec/video/VideoDecoderD3D11.cpp
+        ${CMAKE_CURRENT_SOURCE_DIR}/src/directx/SurfaceInteropD3D11.cpp
+        ${CMAKE_CURRENT_SOURCE_DIR}/src/directx/SurfaceInteropD3D9.cpp
+        ${CMAKE_CURRENT_SOURCE_DIR}/src/directx/D3D11VP.cpp
+        ${CMAKE_CURRENT_SOURCE_DIR}/src/directx/DirectXHelper.cpp
     )
 
 endif()
@@ -199,6 +200,8 @@ if(HAVE_OPENGL)
         set(libqtav_SRCS ${libqtav_SRCS}
             ${CMAKE_CURRENT_SOURCE_DIR}/src/directx/SurfaceInteropD3D11EGL.cpp
             ${CMAKE_CURRENT_SOURCE_DIR}/src/directx/SurfaceInteropD3D11GL.cpp
+            ${CMAKE_CURRENT_SOURCE_DIR}/src/directx/SurfaceInteropD3D9EGL.cpp
+            ${CMAKE_CURRENT_SOURCE_DIR}/src/directx/SurfaceInteropD3D9GL.cpp
         )
 
     endif()
