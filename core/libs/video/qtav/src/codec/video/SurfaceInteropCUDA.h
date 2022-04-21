@@ -239,7 +239,7 @@ class GLInteropResource Q_DECL_FINAL: public InteropResource
 public:
 
     bool map(int picIndex, const CUVIDPROCPARAMS& param, GLuint tex, int w, int h, int H, int plane) Q_DECL_OVERRIDE;
-    bool unmap(GLuint tex) Q_DECL_OVERRIDE;
+    bool unmap(GLuint tex)                                                                           Q_DECL_OVERRIDE;
 
 private:
 

@@ -97,6 +97,7 @@ public:
     {
         Q_UNUSED(buf);
         Q_UNUSED(tex);
+
         return true;
     }
 
@@ -106,6 +107,7 @@ public:
         Q_UNUSED(plane);
         Q_UNUSED(planeWidth);
         Q_UNUSED(planeHeight);
+
         return 0;
     }
 

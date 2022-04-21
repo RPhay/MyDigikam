@@ -24,6 +24,8 @@
 #ifndef QTAV_VIDEO_DECODER_FFMPEG_BASE_H
 #define QTAV_VIDEO_DECODER_FFMPEG_BASE_H
 
+// Local includes
+
 #include "VideoDecoder.h"
 #include "AVDecoder_p.h"
 #include "AVCompat.h"
@@ -32,44 +34,60 @@ namespace QtAV
 {
 
 class VideoDecoderFFmpegBasePrivate;
+
 class VideoDecoderFFmpegBase : public VideoDecoder
 {
     Q_DISABLE_COPY(VideoDecoderFFmpegBase)
     DPTR_DECLARE_PRIVATE(VideoDecoderFFmpegBase)
+
 public:
+
     virtual bool decode(const Packet& packet) Q_DECL_OVERRIDE;
     virtual VideoFrame frame() Q_DECL_OVERRIDE;
+
 protected:
+
     VideoDecoderFFmpegBase(VideoDecoderFFmpegBasePrivate &d);
+
 private:
-    VideoDecoderFFmpegBase(); //it's a base class
+
+    VideoDecoderFFmpegBase(); // it's a base class
 };
 
 class VideoDecoderFFmpegBasePrivate : public VideoDecoderPrivate
 {
 public:
+
     VideoDecoderFFmpegBasePrivate()
         : VideoDecoderPrivate()
         , frame(0)
         , width(0)
         , height(0)
     {
+
 #if !AVCODEC_STATIC_REGISTER
+
         avcodec_register_all();
+
 #endif
+
         frame = av_frame_alloc();
     }
-    virtual ~VideoDecoderFFmpegBasePrivate() {
-        if (frame) {
+
+    virtual ~VideoDecoderFFmpegBasePrivate()
+    {
+        if (frame)
+        {
             av_frame_free(&frame);
             frame = 0;
         }
     }
+
     void updateColorDetails(VideoFrame* f);
     qreal getDAR(AVFrame *f);
 
-    AVFrame *frame; //set once and not change
-    int width, height; //The current decoded frame size
+    AVFrame* frame;          // set once and not change
+    int      width, height;  // The current decoded frame size
 };
 
 } // namespace QtAV
