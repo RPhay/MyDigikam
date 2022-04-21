@@ -45,7 +45,7 @@ void AudioEncoder_RegisterAll()
 
     // factory.h does not check whether an id is registered
 
-    if (AudioEncoder::id("FFmpeg")) //registered on load
+    if (AudioEncoder::id("FFmpeg")) // registered on load
         return;
 
     extern bool RegisterAudioEncoderFFmpeg_Man();

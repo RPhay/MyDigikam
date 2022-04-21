@@ -95,7 +95,7 @@ public:
         }
     }
 
-    AVFrame *frame; //set once and not change
+    AVFrame *frame; // set once and not change
 };
 
 AudioDecoderId AudioDecoderFFmpeg::id() const
@@ -129,6 +129,7 @@ bool AudioDecoderFFmpeg::decode(const Packet &packet)
     else
     {
         // const AVPacket*: ffmpeg >= 1.0. no libav
+
         ret = avcodec_decode_audio4(d.codec_ctx, d.frame, &got_frame_ptr, (AVPacket*)packet.asAVPacket());
     }
 
@@ -166,8 +167,7 @@ bool AudioDecoderFFmpeg::decode(const Packet &packet)
 
     d.decoded = d.resampler->outData();
 
-    return true;
-    //return !d.decoded.isEmpty();
+    return true;  // return !d.decoded.isEmpty();
 }
 
 AudioFrame AudioDecoderFFmpeg::frame()
@@ -181,6 +181,7 @@ AudioFrame AudioDecoderFFmpeg::frame()
     if (!fmt.isValid())
     {
         // need more data to decode to get a frame
+
         return AudioFrame();
     }
 
@@ -188,7 +189,7 @@ AudioFrame AudioDecoderFFmpeg::frame()
 
     // av_frame_get_pkt_duration ffmpeg
 
-    f.setBits(d.frame->extended_data); // TODO: ref
+    f.setBits(d.frame->extended_data);          // TODO: ref
     f.setBytesPerLine(d.frame->linesize[0], 0); // for correct alignment
     f.setSamplesPerChannel(d.frame->nb_samples);
 

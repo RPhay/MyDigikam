@@ -163,10 +163,10 @@ bool AudioEncoderFFmpegPrivate::open()
         }
     }
 
-    avctx->sample_fmt = (AVSampleFormat)format_used.sampleFormatFFmpeg();
-    avctx->channel_layout = format_used.channelLayoutFFmpeg();
-    avctx->channels = format_used.channels();
-    avctx->sample_rate = format_used.sampleRate();
+    avctx->sample_fmt          = (AVSampleFormat)format_used.sampleFormatFFmpeg();
+    avctx->channel_layout      = format_used.channelLayoutFFmpeg();
+    avctx->channels            = format_used.channels();
+    avctx->sample_rate         = format_used.sampleRate();
     avctx->bits_per_raw_sample = format_used.bytesPerSample()*8;
 
     /// set the time base. TODO
@@ -189,16 +189,16 @@ bool AudioEncoderFFmpegPrivate::open()
 
     // from mpv ao_lavc
 
-    int pcm_hack = 0;
+    int pcm_hack    = 0;
     int buffer_size = 0;
-    frame_size = avctx->frame_size;
+    frame_size      = avctx->frame_size;
 
     if (frame_size <= 1)
         pcm_hack = av_get_bits_per_sample(avctx->codec_id)/8;
 
     if (pcm_hack)
     {
-        frame_size = 16384; // "enough"
+        frame_size  = 16384; // "enough"
         buffer_size = frame_size*pcm_hack*format_used.channels()*2+200;
     }
     else
@@ -235,13 +235,13 @@ AudioEncoderId AudioEncoderFFmpeg::id() const
 bool AudioEncoderFFmpeg::encode(const AudioFrame &frame)
 {
     DPTR_D(AudioEncoderFFmpeg);
-    AVFrame *f = NULL;
+    AVFrame* f = NULL;
 
     if (frame.isValid())
     {
-        f = av_frame_alloc();
+        f                 = av_frame_alloc();
         const AudioFormat fmt(frame.format());
-        f->format = fmt.sampleFormatFFmpeg();
+        f->format         = fmt.sampleFormatFFmpeg();
         f->channel_layout = fmt.channelLayoutFFmpeg();
 
         // f->channels = fmt.channels(); //remove? not availale in libav9
@@ -265,7 +265,7 @@ bool AudioEncoderFFmpeg::encode(const AudioFrame &frame)
 
         for (int i = 0 ; i < nb_planes ; ++i)
         {
-            f->linesize[i] = f->nb_samples * sample_stride;// frame.bytesPerLine(i); //
+            f->linesize[i] = f->nb_samples * sample_stride; // frame.bytesPerLine(i);
             f->extended_data[i] = (uint8_t*)frame.constBits(i);
         }
     }
