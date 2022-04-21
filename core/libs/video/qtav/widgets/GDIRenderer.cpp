@@ -21,7 +21,6 @@
  *
  * ============================================================ */
 
-#include "VideoRenderer.h"
 #include "VideoRenderer_p.h"
 
 // Qt includes
@@ -37,6 +36,7 @@
 // Local includes
 
 #include "QtAV_factory.h"
+#include "digikam_debug.h"
 
 #define USE_GRAPHICS 0
 
@@ -57,7 +57,7 @@ class GDIRenderer : public QWidget, public VideoRenderer
 
 public:
 
-    GDIRenderer(QWidget* parent = 0, Qt::WindowFlags f = 0); //offscreen?
+    GDIRenderer(QWidget* parent = 0, Qt::WindowFlags f = 0); // offscreen?
     VideoRendererId id() const Q_DECL_OVERRIDE;
     bool isSupported(VideoFormat::PixelFormat pixfmt) const Q_DECL_OVERRIDE;
 
@@ -78,11 +78,15 @@ protected:
     bool receiveFrame(const VideoFrame& frame) Q_DECL_OVERRIDE;
     void drawBackground() Q_DECL_OVERRIDE;
     void drawFrame() Q_DECL_OVERRIDE;
+
     /*usually you don't need to reimplement paintEvent, just drawXXX() is ok. unless you want do all
      *things yourself totally*/
+
     void paintEvent(QPaintEvent *) Q_DECL_OVERRIDE;
     void resizeEvent(QResizeEvent *) Q_DECL_OVERRIDE;
+
     //stay on top will change parent, hide then show(windows). we need GetDC() again
+
     void showEvent(QShowEvent *) Q_DECL_OVERRIDE;
 };
 
@@ -91,12 +95,16 @@ typedef GDIRenderer VideoRendererGDI;
 extern VideoRendererId VideoRendererId_GDI;
 
 #if 0
+
 FACTORY_REGISTER_ID_AUTO(VideoRenderer, GDI, "GDI")
+
 #else
+
 void RegisterVideoRendererGDI_Man()
 {
     VideoRenderer::Register<GDIRenderer>(VideoRendererId_GDI, "GDI");
 }
+
 #endif
 
 VideoRendererId GDIRenderer::id() const
@@ -115,45 +123,63 @@ public:
       , support_bitblt(true)
       , gdiplus_token(0)
       , device_context(0)
+
 #if USE_GRAPHICS
+
       , graphics(0)
+
 #endif
+
     {
         GdiplusStartupInput gdiplusStartupInput;
         GdiplusStartup(&gdiplus_token, &gdiplusStartupInput, NULL);
     }
 
-    ~GDIRendererPrivate() {
-        if (device_context) {
+    ~GDIRendererPrivate()
+    {
+        if (device_context)
+        {
             DPTR_P(GDIRenderer);
-            ReleaseDC((HWND)p.winId(), device_context); /*Q5: must cast WID to HWND*/
+            ReleaseDC((HWND)p.winId(), device_context); /* Qt5: must cast WID to HWND */
+
 #if !USE_GRAPHICS
+
             DeleteDC(off_dc);
+
 #endif
+
             device_context = 0;
         }
 
         GdiplusShutdown(gdiplus_token);
     }
 
-    void prepare() {
+    void prepare()
+    {
         update_background = true;
         DPTR_P(GDIRenderer);
-        device_context = GetDC((HWND)p.winId()); /* Q5: must cast WID to HWND */
+        device_context = GetDC((HWND)p.winId()); /* Qt5: must cast WID to HWND */
+
 #if USE_GRAPHICS
-        if (graphics) {
+
+        if (graphics)
+        {
             delete graphics;
         }
 
         graphics = new Graphics(device_context);
+
 #endif
 
         // TODO: check bitblt support
 
         int ret = GetDeviceCaps(device_context, RC_BITBLT);
         qCDebug(DIGIKAM_QTAVWIDGETS_LOG).noquote() << QString::asprintf("bitblt=%d", ret);
+
         // TODO: wingapi? vlc
+
 #if 0
+
         BITMAPINFOHEADER bih;
         bih.biSize          = sizeof(BITMAPINFOHEADER);
         bih.biSizeImage     = 0;
@@ -174,8 +200,11 @@ public:
 #endif
 
 #if !USE_GRAPHICS
+
         off_dc = CreateCompatibleDC(device_context);
+
 #endif
+
     }
 
     void setupQuality()
@@ -189,6 +218,7 @@ public:
          */
 
 #if USE_GRAPHICS
+
         if (!graphics)
             return;
 
@@ -206,7 +236,9 @@ public:
                 graphics->SetInterpolationMode(InterpolationModeDefault);
                 break;
         }
+
 #endif
+
     }
 
     bool support_bitblt;
@@ -221,10 +253,14 @@ public:
     /* Our offscreen bitmap and its framebuffer */
 
 #if USE_GRAPHICS
+
     Graphics *graphics;
+
 #else
+
     HDC        off_dc;
     HBITMAP    off_bitmap;
+
 #endif
 };
 
@@ -233,6 +269,7 @@ GDIRenderer::GDIRenderer(QWidget *parent, Qt::WindowFlags f)
       VideoRenderer(*new GDIRendererPrivate())
 {
     DPTR_INIT_PRIVATE(GDIRenderer);
+
     setAcceptDrops(true);
     setFocusPolicy(Qt::StrongFocus);
 
@@ -285,12 +322,13 @@ void GDIRenderer::drawBackground()
 
     const QColor bc(backgroundColor());
     DPTR_D(GDIRenderer);
-    //HDC hdc = d.device_context;
-    Graphics g(d.device_context);
-    SolidBrush brush(Color(bc.alpha(), bc.red(), bc.green(), bc.blue())); //argb
-    const QVector<QRect> bg(bgRegion.rects());
 
-    foreach (const QRect& r, bg)
+    //HDC hdc = d.device_context;
+
+    Graphics g(d.device_context);
+    SolidBrush brush(Color(bc.alpha(), bc.red(), bc.green(), bc.blue())); // argb
+
+    for (const QRect& r : bgRegion)
     {
         g.FillRectangle(&brush, r.x(), r.y(), r.width(), r.height());
     }
@@ -317,14 +355,16 @@ void GDIRenderer::drawFrame()
 
 #else
 
-    if (FAILED(bitmap.GetHBITMAP(Color(), &d.off_bitmap))) {
+    if (FAILED(bitmap.GetHBITMAP(Color(), &d.off_bitmap)))
+    {
         qCWarning(DIGIKAM_QTAVWIDGETS_LOG_WARN).noquote() << QString::asprintf("Failed GetHBITMAP");
+
         return;
     }
 
-    HDC hdc = d.device_context;
+    HDC hdc          = d.device_context;
     HBITMAP hbmp_old = (HBITMAP)SelectObject(d.off_dc, d.off_bitmap);
-    QRect roi = realROI();
+    QRect roi        = realROI();
 
     // && image.size() != size()
     // assume that the image data is already scaled to out_size(NOT renderer size!)
@@ -341,6 +381,7 @@ void GDIRenderer::drawFrame()
     DeleteObject(d.off_bitmap); // avoid mem leak
 
 #endif
+
 }
 
 void GDIRenderer::paintEvent(QPaintEvent *)

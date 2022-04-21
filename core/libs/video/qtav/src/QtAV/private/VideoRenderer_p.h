@@ -24,6 +24,8 @@
 #ifndef QTAV_VIDEO_RENDERER_P_H
 #define QTAV_VIDEO_RENDERER_P_H
 
+#include "VideoRenderer.h"
+
 // Qt includes
 
 #include <QMutex>
@@ -35,9 +37,8 @@
 #include "Statistics.h"
 #include "VideoFrame.h"
 #include "AVOutput_p.h"
-#include "VideoRenderer.h"
 
-/*TODO:
+/* TODO:
  * Region of Interest(ROI)
  * use matrix to compute out rect, mapped point etc
  */
@@ -77,8 +78,8 @@ public:
       , bg_color(0, 0, 0)
       , orientation(0)
     {
-        //conv.setInFormat(PIX_FMT_YUV420P);
-        //conv.setOutFormat(PIX_FMT_BGR32); //TODO: why not RGB32?
+        // conv.setInFormat(PIX_FMT_YUV420P);
+        // conv.setOutFormat(PIX_FMT_BGR32); // TODO: why not RGB32?
     }
 
     virtual ~VideoRendererPrivate()

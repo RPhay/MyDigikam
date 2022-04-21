@@ -31,6 +31,7 @@ if(ENABLE_MEDIAPLAYER)
     if(MSVC)
 
         find_package(D3D11)
+        find_package(GDI)
         find_package(XAudio2)
         find_package(DirectSound)
 
@@ -88,6 +89,7 @@ if(ENABLE_MEDIAPLAYER)
         MACRO_BOOL_TO_01(D3D11_FOUND       HAVE_LIBD3D11)
         MACRO_BOOL_TO_01(DIRECTSOUND_FOUND HAVE_LIBDIRECTSOUND)
         MACRO_BOOL_TO_01(XAUDIO2_FOUND     HAVE_LIBXAUDIO2)
+        MACRO_BOOL_TO_01(GDI_FOUND         HAVE_LIBGDI)
 
         if(SSE4_1_FOUND)
 
@@ -221,6 +223,17 @@ if(ENABLE_MEDIAPLAYER)
 
         endif()
 
+        if(GDI_FOUND)
+
+            set(MEDIAPLAYER_LIBRARIES ${MEDIAPLAYER_LIBRARIES} ${GDI_LIBRARIES})
+            message(STATUS "MediaPlayer will be compiled with GDI support        : yes")
+
+        else()
+
+            message(STATUS "MediaPlayer will be compiled with GDI support        : no")
+
+        endif()
+
         if(D3D11_FOUND)
 
             set(MEDIAPLAYER_LIBRARIES ${MEDIAPLAYER_LIBRARIES} ${D3D11_LIBRARIES})
@@ -307,6 +320,7 @@ if(ENABLE_MEDIAPLAYER)
         set(MEDIAPLAYER_DEFINITIONS ${MEDIAPLAYER_DEFINITIONS} -DQTAV_HAVE_D3D11VA=${HAVE_LIBD3D11})           # DirectX 3D for MSVC only
         set(MEDIAPLAYER_DEFINITIONS ${MEDIAPLAYER_DEFINITIONS} -DQTAV_HAVE_XAUDIO2=${HAVE_LIBXAUDIO2})         # XAudio2 for MSVC only (replacement of DirectSound)
         set(MEDIAPLAYER_DEFINITIONS ${MEDIAPLAYER_DEFINITIONS} -DQTAV_HAVE_DSOUND=${HAVE_LIBDIRECTSOUND})      # DirectX Sound for MSVC only (replaced by XAudio2)
+        set(MEDIAPLAYER_DEFINITIONS ${MEDIAPLAYER_DEFINITIONS} -DQTAV_HAVE_GDIPLUS=${HAVE_LIBGDI})             # Graphics Device Interface (GDI) for MSVC only (replaced by DirectX)
 
         if(APPLE)
 

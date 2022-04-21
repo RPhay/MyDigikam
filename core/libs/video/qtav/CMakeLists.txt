@@ -224,6 +224,14 @@ if(HAVE_OPENGL)
 
     endif()
 
+    if(GDI_FOUND)
+
+        set(libqtav_SRCS ${libqtav_SRCS}
+            ${CMAKE_CURRENT_SOURCE_DIR}/widgets/GDIRenderer.cpp
+        )
+
+    endif()
+
 endif()
 
 if(ASS_FOUND)

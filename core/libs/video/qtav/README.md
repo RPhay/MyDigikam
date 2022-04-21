@@ -33,8 +33,8 @@ x Use cmake to find X11 and XV dependencies.
 
 UNMAINTAINED FEATURES:
 
-- OpenSL-ES support.
-- WinRT support.
+- OpenSL-ES support (non-opensource toolkit).
+- WinRT support (used for Windows Phone only).
 - Android support.
 - IOS support.
 
@@ -46,7 +46,7 @@ TODO:
   - dxva
   x d3d11va
   x dsound
-  - gdiplus
+  x gdiplus
 
 + Use cmake to find CUDA Toolkit dependencies.
 + Port to FFMPEG 5 API with backward compatibility.
