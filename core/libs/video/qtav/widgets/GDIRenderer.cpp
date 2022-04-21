@@ -22,7 +22,7 @@
  * ============================================================ */
 
 // Windows includes
-
+/*
 #define NOMINMAX
 #include <algorithm>
 #include <Windows.h>
@@ -35,6 +35,13 @@
 #include <gdiplus.h>
 #undef min
 #undef max
+*/
+
+#define WIN32_LEAN_AND_MEAN
+#include <windows.h>
+#include <winsock2.h>
+#include <unknwn.h>
+#include <gdiplus.h>
 
 #include "VideoRenderer_p.h"
 
