@@ -181,6 +181,28 @@ if(ENABLE_MEDIAPLAYER)
 
         endif()
 
+        if(X11_FOUND)
+
+            set(MEDIAPLAYER_LIBRARIES ${MEDIAPLAYER_LIBRARIES} ${X11_LIBRARIES})
+            message(STATUS "MediaPlayer will be compiled with X11 support        : yes")
+
+        else()
+
+            message(STATUS "MediaPlayer will be compiled with X11 support        : no")
+
+        endif()
+
+        if(X11_Xv_FOUND)
+
+            set(MEDIAPLAYER_LIBRARIES ${MEDIAPLAYER_LIBRARIES} ${X11_Xv_LIB})
+            message(STATUS "MediaPlayer will be compiled with XV support         : yes")
+
+        else()
+
+            message(STATUS "MediaPlayer will be compiled with XV support         : no")
+
+        endif()
+
         if(OPENGL_FOUND)
 
             set(MEDIAPLAYER_LIBRARIES ${MEDIAPLAYER_LIBRARIES} ${OPENGL_LIBRARIES} Qt${QT_VERSION_MAJOR}::OpenGL)
@@ -239,11 +261,7 @@ if(ENABLE_MEDIAPLAYER)
                                     -DQTAV_HAVE_CAPI=1           # To load libass, vaapi, and EGL dynamically
                                     -DQTAV_HAVE_OPENSL=0         # OpenSLES is for Android only
                                     -DQTAV_HAVE_DXVA=0           # DirectX VA for MSVC only
-                                    -DQTAV_HAVE_X11=0            # Never enabled in QtAV (see below)
         )
-
-        # This one is never used in QtAV
-        #set(MEDIAPLAYER_DEFINITIONS ${MEDIAPLAYER_DEFINITIONS} -DQTAV_HAVE_X11=${HAVE_LIBX11})
 
         if(SSE4_1_FOUND)
 
@@ -281,6 +299,8 @@ if(ENABLE_MEDIAPLAYER)
 
         endif()
 
+        set(MEDIAPLAYER_DEFINITIONS ${MEDIAPLAYER_DEFINITIONS} -DQTAV_HAVE_X11=${HAVE_LIBX11})
+        set(MEDIAPLAYER_DEFINITIONS ${MEDIAPLAYER_DEFINITIONS} -DQTAV_HAVE_XV=${HAVE_LIBXV})
         set(MEDIAPLAYER_DEFINITIONS ${MEDIAPLAYER_DEFINITIONS} -DQTAV_HAVE_OPENAL=${HAVE_LIBOPENAL})
         set(MEDIAPLAYER_DEFINITIONS ${MEDIAPLAYER_DEFINITIONS} -DQTAV_HAVE_PORTAUDIO=${HAVE_LIBPORTAUDIO})
         set(MEDIAPLAYER_DEFINITIONS ${MEDIAPLAYER_DEFINITIONS} -DQTAV_HAVE_PULSEAUDIO=${HAVE_LIBPULSEAUDIO})

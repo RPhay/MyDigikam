@@ -163,6 +163,24 @@ if(D3D11_FOUND)
 
 endif()
 
+if(X11_FOUND)
+
+    set(libqtav_SRCS ${libqtav_SRCS}
+        ${CMAKE_CURRENT_SOURCE_DIR}/src/filter/X11FilterContext.cpp
+
+        ${CMAKE_CURRENT_SOURCE_DIR}/widgets/X11Renderer.cpp
+    )
+
+endif()
+
+if(X11_Xv_FOUND)
+
+    set(libqtav_SRCS ${libqtav_SRCS}
+        ${CMAKE_CURRENT_SOURCE_DIR}/widgets/XVRenderer.cpp
+    )
+
+endif()
+
 if(HAVE_OPENGL)
 
     include_directories($<TARGET_PROPERTY:Qt${QT_VERSION_MAJOR}::OpenGL,INTERFACE_INCLUDE_DIRECTORIES>)

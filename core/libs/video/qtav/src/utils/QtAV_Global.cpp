@@ -121,7 +121,7 @@ static const depend_component* get_depend_component(const depend_component* info
     {
         {  "Qt", QT_VERSION, get_qt_version(), qt_build_info, "" },
 
-        //TODO: auto check loaded libraries
+        // TODO: auto check loaded libraries
 
 #define FF_COMPONENT(name, NAME) #name, LIB##NAME##_VERSION_INT, name##_version(), name##_configuration(), name##_license()
 
@@ -168,7 +168,7 @@ static const depend_component* get_depend_component(const depend_component* info
     if (((ptrdiff_t)info - (ptrdiff_t)(&components[0]))%sizeof(depend_component))
         return 0;
 
-    const depend_component *next = info;
+    const depend_component* next = info;
     next++;
 
     if (!next->lib)
@@ -180,6 +180,7 @@ static const depend_component* get_depend_component(const depend_component* info
 void print_library_info()
 {
     qCDebug(DIGIKAM_QTAV_LOG) << aboutQtAV_PlainText().toUtf8().constData();
+
     const depend_component* info = Internal::get_depend_component(0);
 
     while (info)
@@ -192,17 +193,18 @@ void print_library_info()
                , QTAV_VERSION_MAJOR(info->build_version)
                , QTAV_VERSION_MINOR(info->build_version)
                , QTAV_VERSION_PATCH(info->build_version)
-               );
+        );
 
         unsigned rt_version = info->rt_version;
 
-        if (info->build_version != rt_version) {
+        if (info->build_version != rt_version)
+        {
             qCWarning(DIGIKAM_QTAV_LOG_WARN).noquote() << QString::asprintf("Warning: %s runtime version %u.%u.%u mismatch!"
                     , info->lib
                     , QTAV_VERSION_MAJOR(rt_version)
                     , QTAV_VERSION_MINOR(rt_version)
                     , QTAV_VERSION_PATCH(rt_version)
-                    );
+            );
         }
 
         info = Internal::get_depend_component(info);
@@ -213,7 +215,7 @@ void print_library_info()
 
 QString aboutFFmpeg_HTML()
 {
-    QString text = QStringLiteral("<h3>FFmpeg/Libav</h3>\n");
+    QString text                           = QStringLiteral("<h3>FFmpeg/Libav</h3>\n");
     const Internal::depend_component* info = Internal::get_depend_component(0);
 
     while (info)
@@ -224,7 +226,7 @@ QString aboutFFmpeg_HTML()
                 .arg(QTAV_VERSION_MAJOR(info->build_version))
                 .arg(QTAV_VERSION_MINOR(info->build_version))
                 .arg(QTAV_VERSION_PATCH(info->build_version))
-                ;
+        ;
 
         unsigned rt_version = info->rt_version;
 
@@ -235,11 +237,11 @@ QString aboutFFmpeg_HTML()
                     .arg(QTAV_VERSION_MAJOR(rt_version))
                     .arg(QTAV_VERSION_MINOR(rt_version))
                     .arg(QTAV_VERSION_PATCH(rt_version))
-                    ;
+            ;
         }
 
         text += QStringLiteral("<p>%1</p>\n<p>%2</p>\n").arg(QString::fromUtf8(info->config)).arg(QString::fromUtf8(info->license));
-        info = Internal::get_depend_component(info);
+        info  = Internal::get_depend_component(info);
     }
 
     return text;
@@ -252,9 +254,8 @@ QString aboutQtAV_PlainText()
 
 QString aboutQtAV_HTML()
 {
-    static QString about = QString::fromLatin1("<h3>QtAV " QTAV_VERSION_STR_LONG "</h3>\n"
-            "<p>%1</p>"
-           ).arg(i18n("Multimedia framework based on Qt and FFmpeg.\n"));
+    static QString about = QString::fromLatin1("<h3>QtAV " QTAV_VERSION_STR_LONG "</h3>\n<p>%1</p>")
+                           .arg(i18n("Multimedia framework based on Qt and FFmpeg.\n"));
 
     return about;
 }
@@ -346,7 +347,8 @@ QString avformatOptions()
 #else
 
     AVInputFormat *i = NULL;
-    av_register_all(); // MUST register all input/output formats
+    av_register_all();          // MUST register all input/output formats
+
     while ((i = av_iformat_next(i)))
     {
 
@@ -364,16 +366,16 @@ QString avformatOptions()
 
 #if AVFORMAT_STATIC_REGISTER
 
-    const AVOutputFormat *o = NULL;
-    it = NULL;
+    const AVOutputFormat* o = NULL;
+    it                      = NULL;
 
     while ((o = av_muxer_iterate(&it)))
     {
 
 #else
 
-    av_register_all(); // MUST register all input/output formats
-    AVOutputFormat *o = NULL;
+    av_register_all();                  // MUST register all input/output formats
+    AVOutputFormat* o = NULL;
 
     while ((o = av_oformat_next(o)))
     {
@@ -400,8 +402,8 @@ QString avcodecOptions()
     if (!opts.isEmpty())
         return opts;
 
-    void* obj = const_cast<void*>(reinterpret_cast<const void*>(avcodec_get_class()));
-    opts      = Internal::optionsToString((void*)&obj);
+    void* obj        = const_cast<void*>(reinterpret_cast<const void*>(avcodec_get_class()));
+    opts             = Internal::optionsToString((void*)&obj);
     opts.append(ushort('\n'));
     const AVCodec* c = NULL;
 
@@ -441,8 +443,8 @@ const QStringList& supportedInputMimeTypes()
     if (!mimes.isEmpty())
         return mimes;
 
-    av_register_all(); // MUST register all input/output formats
-    AVOutputFormat *i = av_oformat_next(NULL);
+    av_register_all();                          // MUST register all input/output formats
+    AVOutputFormat* i = av_oformat_next(NULL);
     QStringList list;
 
     while (i)
@@ -473,7 +475,7 @@ static void init_supported_codec_info()
 
         if (cd->mime_types)
         {
-            for (int i = 0; cd->mime_types[i]; ++i)
+            for (int i = 0 ; cd->mime_types[i] ; ++i)
             {
                 list.append(QString(cd->mime_types[i]).trimmed());
             }

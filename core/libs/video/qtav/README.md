@@ -47,5 +47,6 @@ TODO:
   x dsound
   - gdiplus
 
++ Use cmake to find XV dependencies.
 + Use cmake to find CUDA Toolkit dependencies.
 + Port to FFMPEG 5 API with backward compatibility.

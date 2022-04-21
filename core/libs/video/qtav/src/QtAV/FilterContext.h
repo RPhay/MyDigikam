@@ -95,7 +95,7 @@ public:
 
     // Fallback to QPainter if no other paint engine implemented
 
-    QPainter*       painter; // TODO: shared_ptr?
+    QPainter*       painter;                    // TODO: shared_ptr?
     qreal           opacity;
     QTransform      transform;
     QPainterPath    clip_path;
@@ -108,12 +108,12 @@ public:
      * can we allocate memory on stack?
      */
     QPaintDevice*   paint_device;
-    int             video_width, video_height; // original size
+    int             video_width, video_height;  // original size
 
 protected:
 
-    bool own_painter;
-    bool own_paint_device;
+    bool            own_painter;
+    bool            own_paint_device;
 
 protected:
 
@@ -123,11 +123,11 @@ protected:
 
     virtual bool prepare() = 0;
 
-    virtual void initializeOnFrame(VideoFrame *frame); // private?
+    virtual void initializeOnFrame(VideoFrame* frame); // private?
 
     // share qpainter etc.
 
-    virtual void shareFrom(VideoFilterContext *vctx);
+    virtual void shareFrom(VideoFilterContext* vctx);
     friend class VideoFilter;
 };
 
@@ -149,20 +149,20 @@ public:
 
     // empty source rect equals to the whole source rect
 
-    void drawImage(const QPointF& pos, const QImage& image, const QRectF& source = QRectF(), Qt::ImageConversionFlags flags = Qt::AutoColor) Q_DECL_OVERRIDE;
+    void drawImage(const QPointF& pos, const QImage& image, const QRectF& source = QRectF(), Qt::ImageConversionFlags flags = Qt::AutoColor)   Q_DECL_OVERRIDE;
     void drawImage(const QRectF& target, const QImage& image, const QRectF& source = QRectF(), Qt::ImageConversionFlags flags = Qt::AutoColor) Q_DECL_OVERRIDE;
-    void drawPlainText(const QPointF& pos, const QString& text) Q_DECL_OVERRIDE;
+    void drawPlainText(const QPointF& pos, const QString& text)                                                                                Q_DECL_OVERRIDE;
 
     // if rect is null, draw single line text at rect.topLeft(), ignoring flags
 
-    void drawPlainText(const QRectF& rect, int flags, const QString& text) Q_DECL_OVERRIDE;
+    void drawPlainText(const QRectF& rect, int flags, const QString& text)           Q_DECL_OVERRIDE;
     void drawRichText(const QRectF& rect, const QString& text, bool wordWrap = true) Q_DECL_OVERRIDE;
 
 protected:
 
-    bool isReady() const Q_DECL_OVERRIDE;
-    bool prepare() Q_DECL_OVERRIDE;
-    void initializeOnFrame(VideoFrame *vframe) Q_DECL_OVERRIDE;
+    bool isReady() const                        Q_DECL_OVERRIDE;
+    bool prepare()                              Q_DECL_OVERRIDE;
+    void initializeOnFrame(VideoFrame *vframe)  Q_DECL_OVERRIDE;
 
 protected:
 

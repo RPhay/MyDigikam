@@ -21,6 +21,16 @@ if(X11_FOUND)
 
     set(HAVE_X11 TRUE)
 
+    if (X11_Xv_FOUND)
+
+        set(HAVE_XV TRUE)
+
+    else()
+
+        set(HAVE_XV FALSE)
+
+    endif()
+
 else()
 
     set(HAVE_X11 FALSE)
@@ -28,4 +38,6 @@ else()
 endif()
 
 # For MediaPlayer linking
+
 MACRO_BOOL_TO_01(HAVE_X11 HAVE_LIBX11)
+MACRO_BOOL_TO_01(HAVE_XV  HAVE_LIBXV)
