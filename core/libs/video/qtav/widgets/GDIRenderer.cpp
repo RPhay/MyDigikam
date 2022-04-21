@@ -24,8 +24,8 @@
 // Windows includes
 
 #include <windows.h>
-#include <objidl.h>
-#include <gdiplus.h>
+//#include <objidl.h>
+//#include <gdiplus.h>
 
 #include "VideoRenderer_p.h"
 
