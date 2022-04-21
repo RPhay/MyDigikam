@@ -806,10 +806,8 @@ QByteArray MetaEngine::getExifTagData(const char* exifTagName) const
 
         if (it != exifData.end())
         {
-            char* const s = new char[(*it).size()];
-            (*it).copy((Exiv2::byte*)s, Exiv2::bigEndian);
-            QByteArray data(s, (*it).size());
-            delete[] s;
+            QByteArray data((*it).size(), '\0');
+            (*it).copy((Exiv2::byte*)data.data(), Exiv2::bigEndian);
 
             return data;
         }
