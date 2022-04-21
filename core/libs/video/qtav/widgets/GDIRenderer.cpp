@@ -23,12 +23,6 @@
 
 #include "VideoRenderer_p.h"
 
-// Windows includes
-
-#include <windows.h>
-#include <objidl.h>
-#include <gdiplus.h>
-
 // Qt includes
 
 #include <QWidget>
@@ -38,6 +32,12 @@
 
 #include "QtAV_factory.h"
 #include "digikam_debug.h"
+
+// Windows includes
+
+//#include <windows.h>
+#include <objidl.h>
+#include <gdiplus.h>
 
 #define USE_GRAPHICS 0
 

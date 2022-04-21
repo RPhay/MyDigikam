@@ -21,7 +21,7 @@
  *
  * ============================================================ */
 
-#include "VideoRenderer.h"
+#include "VideoRenderer_p.h"
 
 // Qt includes
 
@@ -31,7 +31,6 @@
 
 // Local includes
 
-#include "VideoRenderer_p.h"
 #include "QtAV_factory.h"
 
 // Windows includes
