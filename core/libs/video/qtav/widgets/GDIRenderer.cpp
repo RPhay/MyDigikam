@@ -23,9 +23,18 @@
 
 // Windows includes
 
-#include <windows.h>
-//#include <objidl.h>
-//#include <gdiplus.h>
+#define NOMINMAX
+#include <algorithm>
+#include <Windows.h>
+#ifndef min
+#define min(x,y) ((x) < (y) ? (x) : (y))
+#endif
+#ifndef max
+#define max(x,y) ((x) > (y) ? (x) : (y))
+#endif
+#include <gdiplus.h>
+#undef min
+#undef max
 
 #include "VideoRenderer_p.h"
 
