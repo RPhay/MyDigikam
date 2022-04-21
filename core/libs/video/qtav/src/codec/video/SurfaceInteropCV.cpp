@@ -125,8 +125,8 @@ InteropResource::InteropResource()
     : m_cvfmt(0)
 {
     memset(m_iformat, 0, sizeof(m_iformat));
-    memset(m_format, 0, sizeof(m_format));
-    memset(m_dtype, 0, sizeof(m_dtype));
+    memset(m_format,  0, sizeof(m_format));
+    memset(m_dtype,   0, sizeof(m_dtype));
 }
 
 bool InteropResource::stridesForWidth(int cvfmt, int width, int *strides, VideoFormat::PixelFormat *outFmt)
@@ -181,8 +181,8 @@ void InteropResource::getParametersGL(OSType cvpixfmt, GLint *internalFormat, GL
     }
 
     *internalFormat = m_iformat[plane];
-    *format = m_format[plane];
-    *dataType = m_dtype[plane];
+    *format         = m_format[plane];
+    *dataType       = m_dtype[plane];
 }
 
 void SurfaceInteropCV::setSurface(CVPixelBufferRef buf, int w, int h)

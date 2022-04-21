@@ -30,6 +30,7 @@
 #include "helper_cuda.h"
 
 #define WORKAROUND_UNMAP_CONTEXT_SWITCH 1
+
 #define USE_STREAM 1
 
 namespace QtAV
@@ -135,7 +136,7 @@ HostInteropResource::~HostInteropResource()
 
     if (host_mem.data)
     {
-        //FIXME: CUDA_ERROR_INVALID_VALUE
+        // FIXME: CUDA_ERROR_INVALID_VALUE
 
         CUDA_ENSURE(cuMemFreeHost(host_mem.data));
         host_mem.data = NULL;
@@ -165,7 +166,7 @@ bool HostInteropResource::map(int picIndex, const CUVIDPROCPARAMS &param, GLuint
         CUVIDAutoUnmapper unmapper(this, dec, devptr);
         Q_UNUSED(unmapper);
 
-        if (!ensureResource(pitch, H)) //copy height is coded height
+        if (!ensureResource(pitch, H)) // copy height is coded height
             return false;
 
         // the same thread (context) as cuMemAllocHost, so no ccontext switch is needed
@@ -459,7 +460,7 @@ bool EGLInteropResource::ensureResource(int w, int h, int W, int H, GLuint tex)
 
 bool EGLInteropResource::ensureD3D9CUDA(int w, int h, int W, int H)
 {
-    TexRes &r = res[0];// 1 NV12 texture
+    TexRes &r = res[0];     // 1 NV12 texture
 
     if (r.w == w && r.h == h && r.W == W && r.H == H && r.cuRes)
         return true;
@@ -546,8 +547,8 @@ bool EGLInteropResource::ensureD3D9EGL(int w, int h)
         EGL_RED_SIZE, 8,
         EGL_GREEN_SIZE, 8,
         EGL_BLUE_SIZE, 8,
-        EGL_ALPHA_SIZE, 8, //
-        EGL_BIND_TO_TEXTURE_RGBA, EGL_TRUE, //remove?
+        EGL_ALPHA_SIZE, 8,
+        EGL_BIND_TO_TEXTURE_RGBA, EGL_TRUE, // remove?
         EGL_SURFACE_TYPE, EGL_PBUFFER_BIT,
         EGL_NONE
     };
@@ -577,7 +578,7 @@ bool EGLInteropResource::ensureD3D9EGL(int w, int h)
         return false;
     }
 
-    GLint has_alpha = 1; //QOpenGLContext::currentContext()->format().hasAlpha()
+    GLint has_alpha = 1; // QOpenGLContext::currentContext()->format().hasAlpha()
     eglGetConfigAttrib(egl->dpy, egl_cfg, EGL_BIND_TO_TEXTURE_RGBA, &has_alpha); // EGL_ALPHA_SIZE
     qCDebug(DIGIKAM_QTAV_LOG).noquote() << QString::asprintf("choose egl display:%p config: %p/%d, has alpha: %d", egl->dpy, egl_cfg, nb_cfgs, has_alpha);
 
@@ -709,6 +710,7 @@ bool EGLInteropResource::map(int picIndex, const CUVIDPROCPARAMS &param, GLuint 
          * should not access any resources while they are mapped by CUDA. If an
          * application does so, the results are undefined.
          */
+
 //        CUDA_ENSURE(cuGraphicsUnmapResources(1, &res[plane].cuRes, 0), false);
     }
 
@@ -850,7 +852,7 @@ bool GLInteropResource::map(int picIndex, const CUVIDPROCPARAMS &param, GLuint t
         {
             //CUDA_WARN(cuCtxSynchronize(), false); //wait too long time? use cuStreamQuery?
 
-            CUDA_WARN(cuStreamSynchronize(res[plane].stream)); //slower than CtxSynchronize
+            CUDA_WARN(cuStreamSynchronize(res[plane].stream)); // slower than CtxSynchronize
         }
 
         /*

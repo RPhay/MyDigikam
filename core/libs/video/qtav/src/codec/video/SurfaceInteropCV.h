@@ -75,7 +75,10 @@ public:
      * If the input strides has a valid value, use this value to compute the output strides. Otherwise, use width to compute the output strides without taking care of padded data size.
      */
     virtual bool stridesForWidth(int cvfmt, int width, int* strides/*in_out*/, VideoFormat::PixelFormat* outFmt);
-    virtual bool mapToTexture2D() const { return true;}
+    virtual bool mapToTexture2D() const
+    {
+        return true;
+    }
 
     // egl supports yuv extension
 

@@ -7,7 +7,7 @@ See the story for bugzilla: https://bugs.kde.org/show_bug.cgi?id=448681
 Code review with plenty of fixes and improvements:
 
 x Compilation rules ported to clean CMake with usual Find scripts for dependencies.
-  See core/cmake/rules/RulesMediaPlayer.cmake
+  See core/cmake/rules/RulesMediaPlayer.cmake and files in core/cmake/modules.
 x Fix all GCC 11 warnings.
 x Fixes Qt Signal/Slots.
 x Port code to pure Qt5/Qt6.
@@ -39,7 +39,7 @@ UNMAINTAINED FEATURES:
 
 TODO:
 
-+ Use cmake to find DirectX dependencies (Native Windows only):
+* Use cmake to find DirectX dependencies (Native Windows only):
   x xaudio2
   - direct2d
   - dxva
