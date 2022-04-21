@@ -70,17 +70,19 @@ private:
 
     bool ensureResource(UINT width, UINT height, D3DFORMAT format);
 
-    ComPtr<IDirect3DDevice9Ex> m_dev;
-    ComPtr<IDXVAHD_Device> m_viddev;
-    ComPtr<IDXVAHD_VideoProcessor> m_vp;
-    ComPtr<IDirect3DSurface9> m_out;
+private:
 
-    UINT m_w, m_h;      // enumerator
-    ColorSpace m_cs;
-    ColorRange m_range;
-    QRect m_srcRect;
+    ComPtr<IDirect3DDevice9Ex>      m_dev;
+    ComPtr<IDXVAHD_Device>          m_viddev;
+    ComPtr<IDXVAHD_VideoProcessor>  m_vp;
+    ComPtr<IDirect3DSurface9>       m_out;
+
+    UINT                 m_w, m_h;      // enumerator
+    ColorSpace           m_cs;
+    ColorRange           m_range;
+    QRect                m_srcRect;
     PDXVAHD_CreateDevice fDXVAHD_CreateDevice;
-    D3DFORMAT m_fmt;
+    D3DFORMAT            m_fmt;
 };
 
 } // namespace dx
