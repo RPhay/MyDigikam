@@ -32,6 +32,7 @@
 // Local includes
 
 #include "QtAV_factory.h"
+#include "digikam_debug.h"
 
 // Windows includes
 
@@ -75,37 +76,37 @@ class Direct2DRenderer : public QWidget,
 public:
 
     Direct2DRenderer(QWidget* parent = 0, Qt::WindowFlags f = 0);
-    VideoRendererId id() const Q_DECL_OVERRIDE;
+    VideoRendererId id()                              const Q_DECL_OVERRIDE;
     bool isSupported(VideoFormat::PixelFormat pixfmt) const Q_DECL_OVERRIDE;
 
     /* WA_PaintOnScreen: To render outside of Qt's paint system, e.g. If you require
      * native painting primitives, you need to reimplement QWidget::paintEngine() to
      * return 0 and set this flag
      */
-    QPaintEngine* paintEngine() const Q_DECL_OVERRIDE;
+    QPaintEngine* paintEngine()                       const Q_DECL_OVERRIDE;
 
-    QWidget* widget() Q_DECL_OVERRIDE
+    QWidget* widget()                                       Q_DECL_OVERRIDE
     {
         return this;
     }
 
 protected:
 
-    bool receiveFrame(const VideoFrame& frame) Q_DECL_OVERRIDE;
-    void drawBackground() Q_DECL_OVERRIDE;
-    void drawFrame() Q_DECL_OVERRIDE;
+    bool receiveFrame(const VideoFrame& frame)              Q_DECL_OVERRIDE;
+    void drawBackground()                                   Q_DECL_OVERRIDE;
+    void drawFrame()                                        Q_DECL_OVERRIDE;
 
     /*
      * usually you don't need to reimplement paintEvent, just drawXXX() is ok. unless you want do all
      * things yourself totally
      */
-    void paintEvent(QPaintEvent *) Q_DECL_OVERRIDE;
+    void paintEvent(QPaintEvent *)                          Q_DECL_OVERRIDE;
 
-    void resizeEvent(QResizeEvent *) Q_DECL_OVERRIDE;
+    void resizeEvent(QResizeEvent *)                        Q_DECL_OVERRIDE;
 
     // stay on top will change parent, hide then show(windows)
 
-    void showEvent(QShowEvent *) Q_DECL_OVERRIDE;
+    void showEvent(QShowEvent *)                            Q_DECL_OVERRIDE;
 };
 
 typedef Direct2DRenderer VideoRendererDirect2D;
@@ -167,7 +168,10 @@ public:
             return;
         }
 
-        D2D1_FACTORY_OPTIONS factory_opt = { D2D1_DEBUG_LEVEL_NONE };
+        D2D1_FACTORY_OPTIONS factory_opt =
+        {
+            D2D1_DEBUG_LEVEL_NONE
+        };
 
         /*
          * d2d is accessed by AVThread and GUI thread, so we use D2D1_FACTORY_TYPE_MULTI_THREADED
@@ -185,6 +189,7 @@ public:
         {
             available = false;
             qCWarning(DIGIKAM_QTAVWIDGETS_LOG_WARN).noquote() << QString::asprintf("Direct2D is disabled. Create d2d factory failed");
+
             return;
         }
 
@@ -222,7 +227,7 @@ public:
     ~Direct2DRendererPrivate()
     {
         destroyDeviceResource();
-        SafeRelease(&d2d_factory);//vlc does not call this. why? bug?
+        SafeRelease(&d2d_factory);  // vlc does not call this. why? bug?
         dll.unload();
     }
 
@@ -239,7 +244,7 @@ public:
         //  change, remoting, removal of video card, etc).
         //
 
-        //TODO : move to prepare(), or private. how to call less times
+        // TODO : move to prepare(), or private. how to call less times
 
         D2D1_RENDER_TARGET_PROPERTIES rtp =
         {
@@ -285,7 +290,7 @@ public:
         SafeRelease(&bitmap);
         prepareBitmap(src_width, src_height); // bitmap depends on render target
 
-        return hr == S_OK;
+        return (hr == S_OK);
     }
 
     void destroyDeviceResource()
@@ -323,15 +328,15 @@ public:
         qCDebug(DIGIKAM_QTAVWIDGETS_LOG).noquote() << QString::asprintf("Resize bitmap to %d x %d", w, h);
         SafeRelease(&bitmap);
 
-        if (w ==0 || h == 0)
+        if (w == 0 || h == 0)
             return true;
 
         D2D1_SIZE_U s = {(UINT32)w, (UINT32)h};
-        HRESULT hr = render_target->CreateBitmap(s
-                                                 , NULL
-                                                 , 0
-                                                 , &bitmap_properties
-                                                 , &bitmap);
+        HRESULT hr    = render_target->CreateBitmap(s
+                                                    , NULL
+                                                    , 0
+                                                    , &bitmap_properties
+                                                    , &bitmap);
         if (FAILED(hr))
         {
             qCWarning(DIGIKAM_QTAVWIDGETS_LOG_WARN).noquote() << QString::asprintf("Failed to create ID2D1Bitmap (%ld)", hr);
@@ -514,6 +519,7 @@ void Direct2DRenderer::paintEvent(QPaintEvent *)
     if (!d.render_target)
     {
         qCWarning(DIGIKAM_QTAVWIDGETS_LOG_WARN).noquote() << QString::asprintf("No render target!!!");
+
         return;
     }
 
