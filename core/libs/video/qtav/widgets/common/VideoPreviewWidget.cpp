@@ -164,6 +164,7 @@ void VideoPreviewWidget::displayFrame(const QtAV::VideoFrame &frame)
     }
 
     m_out->receive(f);
+
     Q_EMIT gotFrame(f);
 }
 

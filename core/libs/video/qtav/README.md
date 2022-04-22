@@ -19,6 +19,8 @@ x Remove QML support.
 x Fix compilation under native Windows without DirectX (OpenGL).
 x Fix compilation under FreeBSD.
 x Use cmake to find X11 and XV dependencies.
+x Re-organize class files from QtAVWidgets by categories.
+* Re-organize class files from QtAV by categories.
 * Fix API docs.
 * Remove support of Qt version < 5.
 * Fix header guards.
@@ -37,6 +39,7 @@ UNMAINTAINED FEATURES:
 - WinRT support (used for Windows Phone only).
 - Android support.
 - IOS support.
+- Arm support.
 
 TODO:
 

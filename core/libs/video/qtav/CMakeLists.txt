@@ -92,9 +92,9 @@ set(libqtav_SRCS
     ${CMAKE_CURRENT_SOURCE_DIR}/src/VideoThread.cpp
     ${CMAKE_CURRENT_SOURCE_DIR}/src/VideoFrameExtractor.cpp
 
-    ${CMAKE_CURRENT_SOURCE_DIR}/widgets/GraphicsItemRenderer.cpp
-    ${CMAKE_CURRENT_SOURCE_DIR}/widgets/VideoPreviewWidget.cpp
-    ${CMAKE_CURRENT_SOURCE_DIR}/widgets/WidgetRenderer.cpp
+    ${CMAKE_CURRENT_SOURCE_DIR}/widgets/common/GraphicsItemRenderer.cpp
+    ${CMAKE_CURRENT_SOURCE_DIR}/widgets/common/VideoPreviewWidget.cpp
+    ${CMAKE_CURRENT_SOURCE_DIR}/widgets/common/WidgetRenderer.cpp
     ${CMAKE_CURRENT_SOURCE_DIR}/widgets/utils/QtAVWidgets_Global.cpp
     ${CMAKE_CURRENT_SOURCE_DIR}/widgets/opengl/OpenGLWidgetRenderer.cpp
 )

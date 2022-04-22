@@ -24,6 +24,8 @@
 #ifndef QTAV_WIDGETS_WIDGET_RENDERER_H
 #define QTAV_WIDGETS_WIDGET_RENDERER_H
 
+// Local includes
+
 #include "QtAVWidgets_Global.h"
 #include "QPainterRenderer.h"
 
@@ -60,40 +62,41 @@ class Q_AVWIDGETS_EXPORT WidgetRenderer : public QWidget,
 
 public:
 
-    explicit WidgetRenderer(QWidget *parent = 0, Qt::WindowFlags f =  Qt::WindowFlags(Qt::Widget));
-    virtual VideoRendererId id() const Q_DECL_OVERRIDE;
+    explicit WidgetRenderer(QWidget* parent = 0, Qt::WindowFlags f =  Qt::WindowFlags(Qt::Widget));
+    virtual VideoRendererId id()          const Q_DECL_OVERRIDE;
 
-    virtual QWidget* widget() Q_DECL_OVERRIDE
+    virtual QWidget* widget()                   Q_DECL_OVERRIDE
     {
         return this;
     }
 
 Q_SIGNALS:
 
-    void sourceAspectRatioChanged(qreal value) Q_DECL_OVERRIDE Q_DECL_FINAL;
-    void regionOfInterestChanged() Q_DECL_OVERRIDE;
-    void outAspectRatioChanged() Q_DECL_OVERRIDE;
-    void outAspectRatioModeChanged() Q_DECL_OVERRIDE;
-    void brightnessChanged(qreal value) Q_DECL_OVERRIDE;
-    void contrastChanged(qreal) Q_DECL_OVERRIDE;
-    void hueChanged(qreal) Q_DECL_OVERRIDE;
-    void saturationChanged(qreal) Q_DECL_OVERRIDE;
-    void backgroundColorChanged() Q_DECL_OVERRIDE;
-    void orientationChanged() Q_DECL_OVERRIDE;
-    void videoRectChanged() Q_DECL_OVERRIDE;
-    void videoFrameSizeChanged() Q_DECL_OVERRIDE;
+    void sourceAspectRatioChanged(qreal value)  Q_DECL_OVERRIDE Q_DECL_FINAL;
+    void regionOfInterestChanged()              Q_DECL_OVERRIDE;
+    void outAspectRatioChanged()                Q_DECL_OVERRIDE;
+    void outAspectRatioModeChanged()            Q_DECL_OVERRIDE;
+    void brightnessChanged(qreal value)         Q_DECL_OVERRIDE;
+    void contrastChanged(qreal)                 Q_DECL_OVERRIDE;
+    void hueChanged(qreal)                      Q_DECL_OVERRIDE;
+    void saturationChanged(qreal)               Q_DECL_OVERRIDE;
+    void backgroundColorChanged()               Q_DECL_OVERRIDE;
+    void orientationChanged()                   Q_DECL_OVERRIDE;
+    void videoRectChanged()                     Q_DECL_OVERRIDE;
+    void videoFrameSizeChanged()                Q_DECL_OVERRIDE;
+
     QTAVWIDGETS_DEPRECATED void imageReady(); // add frameReady() in the future?
 
 protected:
 
-    bool receiveFrame(const VideoFrame& frame) Q_DECL_OVERRIDE;
-    void resizeEvent(QResizeEvent *) Q_DECL_OVERRIDE;
+    bool receiveFrame(const VideoFrame& frame)  Q_DECL_OVERRIDE;
+    void resizeEvent(QResizeEvent*)             Q_DECL_OVERRIDE;
 
     /*usually you don't need to reimplement paintEvent, just drawXXX() is ok. unless you want do all
      *things yourself totally
      */
 
-    void paintEvent(QPaintEvent *) Q_DECL_OVERRIDE;
+    void paintEvent(QPaintEvent*)               Q_DECL_OVERRIDE;
 
     bool onSetOrientation(int value) Q_DECL_OVERRIDE;
 

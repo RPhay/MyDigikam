@@ -1,23 +1,25 @@
-/******************************************************************************
-    VideoRendererTypes: type id and manually id register function
-    Copyright (C) 2015 Wang Bin <wbsecg1@gmail.com>
-
-*   This file is part of QtAV
-
-    This library is free software; you can redistribute it and/or
-    modify it under the terms of the GNU Lesser General Public
-    License as published by the Free Software Foundation; either
-    version 2.1 of the License, or (at your option) any later version.
-
-    This library is distributed in the hope that it will be useful,
-    but WITHOUT ANY WARRANTY; without even the implied warranty of
-    MERCHANTABILITY or FITNESS FOR A PARTICULAR PURPOSE.  See the GNU
-    Lesser General Public License for more details.
-
-    You should have received a copy of the GNU Lesser General Public
-    License along with this library; if not, write to the Free Software
-    Foundation, Inc., 51 Franklin Street, Fifth Floor, Boston, MA  02110-1301  USA
-******************************************************************************/
+/* ============================================================
+ *
+ * This file is a part of digiKam project
+ * https://www.digikam.org
+ *
+ * Date        : 2012-10-31
+ * Description : QtAV: Multimedia framework based on Qt and FFmpeg
+ *
+ * Copyright (C) 2012-2022 Wang Bin <wbsecg1 at gmail dot com>
+ * Copyright (C)      2022 by Gilles Caulier, <caulier dot gilles at gmail dot com>
+ *
+ * This program is free software; you can redistribute it
+ * and/or modify it under the terms of the GNU General
+ * Public License as published by the Free Software Foundation;
+ * either version 2, or (at your option) any later version.
+ *
+ * This program is distributed in the hope that it will be useful,
+ * but WITHOUT ANY WARRANTY; without even the implied warranty of
+ * MERCHANTABILITY or FITNESS FOR A PARTICULAR PURPOSE.  See the
+ * GNU General Public License for more details.
+ *
+ * ============================================================ */
 
 #ifndef QTAV_WIDGETS_VIDEO_PREVIEW_WIDGET_H
 #define QTAV_WIDGETS_VIDEO_PREVIEW_WIDGET_H
@@ -77,11 +79,11 @@ Q_SIGNALS:
 
     /// emitted on real decode error -- in that case displayNoFrame() will be automatically called
 
-    void gotError(const QString &);
+    void gotError(const QString&);
 
     /// usually emitted when a new request for a frame came in and current request was aborted. displayNoFrame() will be automatically called
 
-    void gotAbort(const QString &);
+    void gotAbort(const QString&);
 
     /// useful if calling code is interested in keeping stats on good versus bad frame counts,
     /// or if it wants to cache preview frames. Keeping counts helps caller decide if
@@ -89,11 +91,11 @@ Q_SIGNALS:
     /// parameter frame will always have: frame.isValid() == true, and will be
     /// already-scaled and in the right format to fit in the preview widget
 
-    void gotFrame(const QtAV::VideoFrame & frame);
+    void gotFrame(const QtAV::VideoFrame& frame);
 
 protected:
 
-    virtual void resizeEvent(QResizeEvent *);
+    virtual void resizeEvent(QResizeEvent*);
 
 private:
 
