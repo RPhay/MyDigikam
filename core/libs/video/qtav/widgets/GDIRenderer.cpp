@@ -74,7 +74,8 @@ class GDIRenderer : public QWidget, public VideoRenderer
 public:
 
     GDIRenderer(QWidget* parent = 0, Qt::WindowFlags f = 0); // offscreen?
-    VideoRendererId id() const Q_DECL_OVERRIDE;
+
+    VideoRendererId id()                              const Q_DECL_OVERRIDE;
     bool isSupported(VideoFormat::PixelFormat pixfmt) const Q_DECL_OVERRIDE;
 
     /*
@@ -82,32 +83,35 @@ public:
      * native painting primitives, you need to reimplement QWidget::paintEngine() to
      * return 0 and set this flag
      */
-    QPaintEngine* paintEngine() const Q_DECL_OVERRIDE;
+    QPaintEngine* paintEngine()                       const Q_DECL_OVERRIDE;
 
     /*
      * http://lists.trolltech.com/qt4-preview-feedback/2005-04/thread00609-0.html
      * true: paintEngine.getDC(), double buffer is enabled by defalut.
      * false: GetDC(winId()), no double buffer, should reimplement paintEngine()
      */
-    QWidget* widget() Q_DECL_OVERRIDE { return this; }
+    QWidget* widget()                                       Q_DECL_OVERRIDE
+    {
+        return this;
+    }
 
 protected:
 
-    bool receiveFrame(const VideoFrame& frame) Q_DECL_OVERRIDE;
-    void drawBackground() Q_DECL_OVERRIDE;
-    void drawFrame() Q_DECL_OVERRIDE;
+    bool receiveFrame(const VideoFrame& frame)              Q_DECL_OVERRIDE;
+    void drawBackground()                                   Q_DECL_OVERRIDE;
+    void drawFrame()                                        Q_DECL_OVERRIDE;
 
     /*
      * usually you don't need to reimplement paintEvent, just drawXXX() is ok. unless you want do all
      * things yourself totally
      */
 
-    void paintEvent(QPaintEvent *) Q_DECL_OVERRIDE;
-    void resizeEvent(QResizeEvent *) Q_DECL_OVERRIDE;
+    void paintEvent(QPaintEvent *)                          Q_DECL_OVERRIDE;
+    void resizeEvent(QResizeEvent *)                        Q_DECL_OVERRIDE;
 
     // stay on top will change parent, hide then show(windows). we need GetDC() again
 
-    void showEvent(QShowEvent *) Q_DECL_OVERRIDE;
+    void showEvent(QShowEvent *)                            Q_DECL_OVERRIDE;
 };
 
 typedef GDIRenderer VideoRendererGDI;
@@ -178,7 +182,7 @@ public:
     {
         update_background = true;
         DPTR_P(GDIRenderer);
-        device_context = GetDC((HWND)p.winId()); /* Qt5: must cast WID to HWND */
+        device_context    = GetDC((HWND)p.winId()); /* Qt5: must cast WID to HWND */
 
 #if USE_GRAPHICS
 
@@ -274,12 +278,12 @@ public:
 
 #if USE_GRAPHICS
 
-    Graphics *graphics;
+    Graphics* graphics;
 
 #else
 
-    HDC        off_dc;
-    HBITMAP    off_bitmap;
+    HDC       off_dc;
+    HBITMAP   off_bitmap;
 
 #endif
 };
@@ -341,6 +345,7 @@ void GDIRenderer::drawBackground()
         return;
 
     const QColor bc(backgroundColor());
+
     DPTR_D(GDIRenderer);
 
     //HDC hdc = d.device_context;
@@ -419,6 +424,7 @@ void GDIRenderer::resizeEvent(QResizeEvent *e)
 void GDIRenderer::showEvent(QShowEvent *)
 {
     DPTR_D(GDIRenderer);
+
     d.update_background = true;
     d_func().prepare();
 }

@@ -268,7 +268,7 @@ public:
         mpv_matrix.scale((GLfloat)out_rect.width()/(GLfloat)renderer_width, (GLfloat)out_rect.height()/(GLfloat)renderer_height, 1);
 
         if (orientation)
-            mpv_matrix.rotate(orientation, 0, 0, 1); // Z axis
+            mpv_matrix.rotate(orientation, 0, 0, 1);    // Z axis
     }
 
     class VideoMaterialType
@@ -278,7 +278,7 @@ public:
     VideoMaterialType* materialType(const VideoFormat& fmt) const
     {
         static VideoMaterialType rgbType;
-        static VideoMaterialType packedType; // TODO: uyuy, yuy2
+        static VideoMaterialType packedType;            // TODO: uyuy, yuy2
         static VideoMaterialType planar16leType;
         static VideoMaterialType planar16beType;
         static VideoMaterialType yuv8Type;
@@ -305,7 +305,7 @@ public:
 
     bool                hasGLSL;
     bool                update_texcoords;
-    QVector<GLuint>     textures; // texture ids. size is plane count
+    QVector<GLuint>     textures;                   // texture ids. size is plane count
     QVector<QSize>      texture_size;
 
     /*
@@ -317,7 +317,7 @@ public:
      */
     QVector<QSize>      texture_upload_size;
 
-    QVector<int>        effective_tex_width; // without additional width for alignment
+    QVector<int>        effective_tex_width;        // without additional width for alignment
     qreal               effective_tex_width_ratio;
     QVector<GLint>      internal_format;
     QVector<GLenum>     data_format;
@@ -327,7 +327,7 @@ public:
     GLuint              vert, frag;
     GLint               a_Position;
     GLint               a_TexCoords;
-    QVector<GLint>      u_Texture;      // u_TextureN uniform. size is channel count
+    QVector<GLint>      u_Texture;                  // u_TextureN uniform. size is channel count
     GLint               u_matrix;
     GLint               u_colorMatrix;
     GLint               u_bpp;
@@ -393,7 +393,7 @@ GLuint GLWidgetRendererPrivate::createProgram(const char* pVertexSource, const c
     if (!hasGLSL)
         return 0;
 
-    program = glCreateProgram(); //TODO: var name conflict. temp var is better
+    program = glCreateProgram(); // TODO: var name conflict. temp var is better
 
     if (!program)
         return 0;
@@ -495,11 +495,11 @@ bool GLWidgetRendererPrivate::releaseShaderProgram()
 
 QString GLWidgetRendererPrivate::getShaderFromFile(const QString &fileName)
 {
-    QFile f(qApp->applicationDirPath() + '/' + fileName);
+    QFile f(qApp->applicationDirPath() + QLatin1Char('/') + fileName);
 
     if (!f.exists())
     {
-        f.setFileName(":/" + fileName);
+        f.setFileName(QLatin1String(":/") + fileName);
     }
 
     if (!f.open(QIODevice::ReadOnly))
@@ -575,16 +575,17 @@ bool GLWidgetRendererPrivate::prepareShaderProgram(const VideoFormat &fmt, Color
     if (!program)
     {
         qCWarning(DIGIKAM_QTAVWIDGETS_LOG_WARN).noquote() << QString::asprintf("Could not create shader program.");
+
         return false;
     }
 
     // vertex shader. we can set attribute locations calling glBindAttribLocation
 
-    a_Position  = glGetAttribLocation(program, "a_Position");
-    a_TexCoords = glGetAttribLocation(program, "a_TexCoords");
-    u_matrix    = glGetUniformLocation(program, "u_MVP_matrix");
-    u_bpp       = glGetUniformLocation(program, "u_bpp");
-    u_opacity   = glGetUniformLocation(program, "u_opacity");
+    a_Position    = glGetAttribLocation(program,  "a_Position");
+    a_TexCoords   = glGetAttribLocation(program,  "a_TexCoords");
+    u_matrix      = glGetUniformLocation(program, "u_MVP_matrix");
+    u_bpp         = glGetUniformLocation(program, "u_bpp");
+    u_opacity     = glGetUniformLocation(program, "u_opacity");
 
     // fragment shader
 
@@ -595,28 +596,31 @@ bool GLWidgetRendererPrivate::prepareShaderProgram(const VideoFormat &fmt, Color
     if (!shader_program->addShaderFromSourceCode(QGLShader::Vertex, kVertexShader))
     {
         qCWarning(DIGIKAM_QTAVWIDGETS_LOG_WARN).noquote() << QString::asprintf("Failed to add vertex shader: %s", shader_program->log().toUtf8().constData());
+
         return false;
     }
 
     if (!shader_program->addShaderFromSourceCode(QGLShader::Fragment, frag))
     {
         qCWarning(DIGIKAM_QTAVWIDGETS_LOG_WARN).noquote() << QString::asprintf("Failed to add fragment shader: %s", shader_program->log().toUtf8().constData());
+
         return false;
     }
 
     if (!shader_program->link())
     {
         qCWarning(DIGIKAM_QTAVWIDGETS_LOG_WARN).noquote() << QString::asprintf("Failed to link shader program...%s", shader_program->log().toUtf8().constData());
+
         return false;
     }
 
     // vertex shader
 
-    a_Position  = shader_program->attributeLocation("a_Position");
-    a_TexCoords = shader_program->attributeLocation("a_TexCoords");
-    u_matrix    = shader_program->uniformLocation("u_MVP_matrix");
-    u_bpp       = shader_program->uniformLocation("u_bpp");
-    u_opacity   = shader_program->uniformLocation("u_opacity");
+    a_Position    = shader_program->attributeLocation("a_Position");
+    a_TexCoords   = shader_program->attributeLocation("a_TexCoords");
+    u_matrix      = shader_program->uniformLocation("u_MVP_matrix");
+    u_bpp         = shader_program->uniformLocation("u_bpp");
+    u_opacity     = shader_program->uniformLocation("u_opacity");
 
     // fragment shader
 
@@ -674,6 +678,7 @@ bool GLWidgetRendererPrivate::initTexture(GLuint tex, GLint internalFormat, GLen
                  , format           // format, must the same as internal format?
                  , dataType
                  , NULL);
+
     glBindTexture(GL_TEXTURE_2D, 0);
 
     return true;
@@ -704,7 +709,7 @@ bool GLWidgetRendererPrivate::initTextures(const VideoFormat &fmt)
      */
     if (!fmt.isPlanar())
     {
-        GLint internal_fmt;
+        GLint  internal_fmt;
         GLenum data_fmt;
         GLenum data_t;
 
@@ -715,7 +720,7 @@ bool GLWidgetRendererPrivate::initTextures(const VideoFormat &fmt)
             return false;
         }
 
-        internal_format = QVector<GLint>(fmt.planeCount(), internal_fmt);
+        internal_format = QVector<GLint>(fmt.planeCount(),  internal_fmt);
         data_format     = QVector<GLenum>(fmt.planeCount(), data_fmt);
         data_type       = QVector<GLenum>(fmt.planeCount(), data_t);
     }
@@ -733,7 +738,7 @@ bool GLWidgetRendererPrivate::initTextures(const VideoFormat &fmt)
              */
             qCDebug(DIGIKAM_QTAVWIDGETS_LOG).noquote() << QString::asprintf("///////////bpp %d", fmt.bytesPerPixel());
 
-            internal_format[0] = data_format[0] = GL_LUMINANCE; //or GL_RED for GL
+            internal_format[0] = data_format[0] = GL_LUMINANCE; // or GL_RED for GL
 
             if (fmt.planeCount() == 2)
             {
@@ -755,7 +760,7 @@ bool GLWidgetRendererPrivate::initTextures(const VideoFormat &fmt)
                 }
             }
 
-            for (int i = 0; i < internal_format.size(); ++i)
+            for (int i = 0 ; i < internal_format.size() ; ++i)
             {
                 // xbmc use bpp not bpp(plane)
                 // internal_format[i] = GetGLInternalFormat(data_format[i], fmt.bytesPerPixel(i));
@@ -784,6 +789,7 @@ bool GLWidgetRendererPrivate::initTextures(const VideoFormat &fmt)
         texture_size[i].setWidth(qCeil((qreal)texture_size[i].width()/(qreal)bpp_gl));
         texture_upload_size[i].setWidth(qCeil((qreal)texture_upload_size[i].width()/(qreal)bpp_gl));
         effective_tex_width[i] /= bpp_gl; // fmt.bytesPerPixel(i);
+
         //effective_tex_width_ratio =
 
         qCDebug(DIGIKAM_QTAVWIDGETS_LOG).noquote() << QString::asprintf("texture width: %d - %d = pad: %d. bpp(gl): %d", texture_size[i].width(), effective_tex_width[i], pad, bpp_gl);
@@ -931,6 +937,7 @@ void GLWidgetRendererPrivate::updateShaderIfNeeded()
     if (!prepareShaderProgram(fmt, cs))
     {
         qCWarning(DIGIKAM_QTAVWIDGETS_LOG_WARN).noquote() << QString::asprintf("shader program create error...");
+
         return;
     }
     else
@@ -954,10 +961,11 @@ void GLWidgetRendererPrivate::uploadPlane(int p, GLint internalFormat, GLenum fo
     if (video_frame.bytesPerLine(p) <= 0)
         return;
 
-    OpenGLHelper::glActiveTexture(GL_TEXTURE0 + p); //xbmc: only for es, not for desktop?
+    OpenGLHelper::glActiveTexture(GL_TEXTURE0 + p); // xbmc: only for es, not for desktop?
     glBindTexture(GL_TEXTURE_2D, textures[p]);
 
-    //// nv12: 2
+    // nv12: 2
+
     //glPixelStorei(GL_UNPACK_ALIGNMENT, 1);//GetAlign(video_frame.bytesPerLine(p)));
 
 #if defined(GL_UNPACK_ROW_LENGTH)
@@ -1012,7 +1020,7 @@ void GLWidgetRendererPrivate::uploadPlane(int p, GLint internalFormat, GLenum fo
 
         qCDebug(DIGIKAM_QTAVWIDGETS_LOG).noquote() << QString::asprintf("roi: %d, %d %dx%d", roi_x, roi_y, roi_w, roi_h);
 
-#if 0// defined(GL_UNPACK_ROW_LENGTH) && defined(GL_UNPACK_SKIP_PIXELS)
+#if 0 // defined(GL_UNPACK_ROW_LENGTH) && defined(GL_UNPACK_SKIP_PIXELS)
 
         // http://stackoverflow.com/questions/205522/opengl-subtexturing
 
@@ -1105,10 +1113,10 @@ GLWidgetRenderer::GLWidgetRenderer(QWidget *parent, const QGLWidget* shareWidget
 
     setAutoBufferSwap(false);
     setAutoFillBackground(false);
-    d.painter = new QPainter();
+    d.painter                      = new QPainter();
     d.filter_context = VideoFilterContext::create(VideoFilterContext::QtPainter);
     d.filter_context->paint_device = this;
-    d.filter_context->painter = d.painter;
+    d.filter_context->painter      = d.painter;
 }
 
 VideoRendererId GLWidgetRenderer::id() const
@@ -1149,11 +1157,11 @@ void GLWidgetRenderer::drawFrame()
     DPTR_D(GLWidgetRenderer);
     d.updateTexturesIfNeeded();
     d.updateShaderIfNeeded();
-    QRect roi = realROI();
+    QRect roi           = realROI();
     const int nb_planes = d.video_frame.planeCount(); // number of texture id
-    int mapped = 0;
+    int mapped          = 0;
 
-    for (int i = 0; i < nb_planes; ++i)
+    for (int i = 0 ; i < nb_planes ; ++i)
     {
         if (d.video_frame.map(GLTextureSurface, &d.textures[i]))
         {
@@ -1231,7 +1239,7 @@ void GLWidgetRenderer::drawFrame()
         glPopMatrix();
         glDisable(GL_BLEND);
 
-        for (int i = 0; i < d.textures.size(); ++i)
+        for (int i = 0 ; i < d.textures.size() ; ++i)
         {
             d.video_frame.unmap(&d.textures[i]);
         }
