@@ -45,10 +45,11 @@
 #include <unknwn.h>
 
 #ifndef min
-#define min(x,y) ((x) < (y) ? (x) : (y))
+#   define min(x,y) ((x) < (y) ? (x) : (y))
 #endif
+
 #ifndef max
-#define max(x,y) ((x) > (y) ? (x) : (y))
+#   define max(x,y) ((x) > (y) ? (x) : (y))
 #endif
 
 #include <gdiplus.h>
@@ -76,13 +77,15 @@ public:
     VideoRendererId id() const Q_DECL_OVERRIDE;
     bool isSupported(VideoFormat::PixelFormat pixfmt) const Q_DECL_OVERRIDE;
 
-    /* WA_PaintOnScreen: To render outside of Qt's paint system, e.g. If you require
+    /*
+     * WA_PaintOnScreen: To render outside of Qt's paint system, e.g. If you require
      * native painting primitives, you need to reimplement QWidget::paintEngine() to
      * return 0 and set this flag
      */
     QPaintEngine* paintEngine() const Q_DECL_OVERRIDE;
 
-    /* http://lists.trolltech.com/qt4-preview-feedback/2005-04/thread00609-0.html
+    /*
+     * http://lists.trolltech.com/qt4-preview-feedback/2005-04/thread00609-0.html
      * true: paintEngine.getDC(), double buffer is enabled by defalut.
      * false: GetDC(winId()), no double buffer, should reimplement paintEngine()
      */
@@ -94,13 +97,15 @@ protected:
     void drawBackground() Q_DECL_OVERRIDE;
     void drawFrame() Q_DECL_OVERRIDE;
 
-    /*usually you don't need to reimplement paintEvent, just drawXXX() is ok. unless you want do all
-     *things yourself totally*/
+    /*
+     * usually you don't need to reimplement paintEvent, just drawXXX() is ok. unless you want do all
+     * things yourself totally
+     */
 
     void paintEvent(QPaintEvent *) Q_DECL_OVERRIDE;
     void resizeEvent(QResizeEvent *) Q_DECL_OVERRIDE;
 
-    //stay on top will change parent, hide then show(windows). we need GetDC() again
+    // stay on top will change parent, hide then show(windows). we need GetDC() again
 
     void showEvent(QShowEvent *) Q_DECL_OVERRIDE;
 };
@@ -199,7 +204,7 @@ public:
         bih.biSize          = sizeof(BITMAPINFOHEADER);
         bih.biSizeImage     = 0;
         bih.biPlanes        = 1;
-        bih.biCompression   = BI_RGB; //vlc: 16bpp=>BI_RGB, 15bpp=>BI_BITFIELDS
+        bih.biCompression   = BI_RGB; // vlc: 16bpp=>BI_RGB, 15bpp=>BI_BITFIELDS
         bih.biBitCount      = 32;
         bih.biWidth         = src_width;
         bih.biHeight        = src_height;
@@ -393,7 +398,7 @@ void GDIRenderer::drawFrame()
                , SRCCOPY);
 
     SelectObject(d.off_dc, hbmp_old);
-    DeleteObject(d.off_bitmap); // avoid mem leak
+    DeleteObject(d.off_bitmap);         // avoid mem leak
 
 #endif
 
