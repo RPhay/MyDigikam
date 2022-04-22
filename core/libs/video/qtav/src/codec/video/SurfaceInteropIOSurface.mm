@@ -39,7 +39,7 @@
 #endif //Q_OS_IOS
 
 #include "VideoFrame.h"
-#include "opengl/OpenGLHelper.h"
+#include "OpenGLHelper.h"
 
 namespace QtAV {
 namespace cv {

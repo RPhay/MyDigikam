@@ -42,7 +42,7 @@ extern "C"
 // QtAV's fastest mediacodec decoding/rendering code is private because all other projects I know require java code or is opengl incompatible(chrome, firefox, xbmc, vlc etc.). Maybe my code is the best implementation.
 #   ifdef MEDIACODEC_TEXTURE
 #       include "SurfaceInterop.h"
-#       include "opengl/OpenGLHelper.h"
+#       include "OpenGLHelper.h"
 #       include "MediaCodecTextureStandalone.h"
 #   endif
 

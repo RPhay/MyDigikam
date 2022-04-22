@@ -26,7 +26,7 @@
 #include "SurfaceInteropVAAPI.h"
 
 #ifndef QT_NO_OPENGL
-#   include "opengl/OpenGLHelper.h"
+#   include "OpenGLHelper.h"
 #   include "VideoFrame.h"
 #   include "digikam_debug.h"
 
