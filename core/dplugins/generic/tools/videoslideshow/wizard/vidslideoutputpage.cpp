@@ -39,7 +39,7 @@
 
 // QtAv includes
 
-#include <QtAV/AVMuxer.h>    // krazy:exclude=includes
+#include <AVMuxer.h>
 
 // Local includes
 

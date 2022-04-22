@@ -39,7 +39,7 @@
 
 // QtAV includes
 
-#include <QtAV/AVError.h> // krazy:exclude=includes
+#include <AVError.h>
 
 namespace DigikamGenericPresentationPlugin
 {

@@ -191,9 +191,11 @@ void AVClock::start()
     qCDebug(DIGIKAM_QTAV_LOG).noquote() << QString::asprintf("AVClock started!!!!!!!!");
     timer.start();
     QTimer::singleShot(0, this, SLOT(restartCorrectionTimer()));
+
     Q_EMIT started();
 }
 //remember last value because we don't reset  pts_, pts_v, delay_
+
 void AVClock::pause(bool p)
 {
     if (isPaused() == p)
@@ -228,6 +230,7 @@ void AVClock::pause(bool p)
     }
 
     t = QDateTime::currentMSecsSinceEpoch();
+
     Q_EMIT paused(p);
 }
 

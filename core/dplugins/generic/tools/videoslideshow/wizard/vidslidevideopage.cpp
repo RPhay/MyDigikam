@@ -41,7 +41,7 @@
 
 // QtAv includes
 
-#include <QtAV/VideoEncoder.h>   // krazy:exclude=includes
+#include <VideoEncoder.h>
 
 // Local includes
 
