@@ -232,6 +232,14 @@ if(HAVE_OPENGL)
 
     endif()
 
+    if(Direct2D_FOUND)
+
+        set(libqtav_SRCS ${libqtav_SRCS}
+            ${CMAKE_CURRENT_SOURCE_DIR}/widgets/Direct2DRenderer.cpp
+        )
+
+    endif()
+
 endif()
 
 if(ASS_FOUND)

@@ -57,7 +57,8 @@ namespace QtAV
 template<class Interface>
 inline void SafeRelease(Interface **ppInterfaceToRelease)
 {
-    if (*ppInterfaceToRelease != NULL){
+    if (*ppInterfaceToRelease != NULL)
+    {
         (*ppInterfaceToRelease)->Release();
         (*ppInterfaceToRelease) = NULL;
     }
@@ -82,18 +83,28 @@ public:
      * return 0 and set this flag
      */
     QPaintEngine* paintEngine() const Q_DECL_OVERRIDE;
-    QWidget* widget() Q_DECL_OVERRIDE { return this; }
+
+    QWidget* widget() Q_DECL_OVERRIDE
+    {
+        return this;
+    }
 
 protected:
 
     bool receiveFrame(const VideoFrame& frame) Q_DECL_OVERRIDE;
     void drawBackground() Q_DECL_OVERRIDE;
     void drawFrame() Q_DECL_OVERRIDE;
-    /*usually you don't need to reimplement paintEvent, just drawXXX() is ok. unless you want do all
-     *things yourself totally*/
+
+    /*
+     * usually you don't need to reimplement paintEvent, just drawXXX() is ok. unless you want do all
+     * things yourself totally
+     */
     void paintEvent(QPaintEvent *) Q_DECL_OVERRIDE;
+
     void resizeEvent(QResizeEvent *) Q_DECL_OVERRIDE;
-    //stay on top will change parent, hide then show(windows)
+
+    // stay on top will change parent, hide then show(windows)
+
     void showEvent(QShowEvent *) Q_DECL_OVERRIDE;
 };
 
@@ -102,12 +113,16 @@ typedef Direct2DRenderer VideoRendererDirect2D;
 extern VideoRendererId VideoRendererId_Direct2D;
 
 #if 0
+
 FACTORY_REGISTER_ID_AUTO(VideoRenderer, Direct2D, "Direct2D")
+
 #else
+
 void RegisterVideoRendererDirect2D_Man()
 {
     VideoRenderer::Register<Direct2DRenderer>(VideoRendererId_Direct2D, "Direct2D");
 }
+
 #endif
 
 VideoRendererId Direct2DRenderer::id() const
@@ -132,9 +147,11 @@ public:
     {
         dll.setFileName(QStringLiteral("d2d1"));
 
-        if (!dll.load()) {
+        if (!dll.load())
+        {
             available = false;
             qCWarning(DIGIKAM_QTAVWIDGETS_LOG_WARN).noquote() << QString::asprintf("Direct2D is disabled. Failed to load 'd2d1.dll': %s", dll.errorString().toUtf8().constData());
+
             return;
         }
 
@@ -142,24 +159,30 @@ public:
         D2D1CreateFactory_t D2D1CreateFactory;
         D2D1CreateFactory = (D2D1CreateFactory_t)dll.resolve("D2D1CreateFactory");
 
-        if (!D2D1CreateFactory) {
+        if (!D2D1CreateFactory)
+        {
             available = false;
             qCWarning(DIGIKAM_QTAVWIDGETS_LOG_WARN).noquote() << QString::asprintf("Direct2D is disabled. Failed to resolve symble 'D2D1CreateFactory': %s", dll.errorString().toUtf8().constData());
+
             return;
         }
 
         D2D1_FACTORY_OPTIONS factory_opt = { D2D1_DEBUG_LEVEL_NONE };
+
         /*
          * d2d is accessed by AVThread and GUI thread, so we use D2D1_FACTORY_TYPE_MULTI_THREADED
          * and let d2d to deal with the thread safe problems. otherwise, if we use
          * D2D1_FACTORY_TYPE_SINGLE_THREADED, we must use lock when copying ID2D1Bitmap and calling EndDraw.
          */
+
         /// http://msdn.microsoft.com/en-us/library/windows/desktop/dd368104%28v=vs.85%29.aspx
+
         HRESULT hr = D2D1CreateFactory(D2D1_FACTORY_TYPE_MULTI_THREADED
                                        , (REFIID)IID_ID2D1Factory
                                        , &factory_opt
                                        , (void**)&d2d_factory);
-        if (FAILED(hr)) {
+        if (FAILED(hr))
+        {
             available = false;
             qCWarning(DIGIKAM_QTAVWIDGETS_LOG_WARN).noquote() << QString::asprintf("Direct2D is disabled. Create d2d factory failed");
             return;
@@ -167,42 +190,59 @@ public:
 
         FLOAT dpiX, dpiY;
         d2d_factory->GetDesktopDpi(&dpiX, &dpiY);
-        //gcc: extended initializer lists only available with -std=c++11 or -std=gnu++11
-        //vc: http://msdn.microsoft.com/zh-cn/library/t8xe60cf(v=vs.80).aspx
-        /*pixel_format = {
+
+        // gcc: extended initializer lists only available with -std=c++11 or -std=gnu++11
+        // vc: http://msdn.microsoft.com/zh-cn/library/t8xe60cf(v=vs.80).aspx
+
+        /*
+        pixel_format =
+        {
             DXGI_FORMAT_B8G8R8A8_UNORM,
             D2D1_ALPHA_MODE_IGNORE
-        };*/
-        pixel_format.format = DXGI_FORMAT_B8G8R8A8_UNORM;
-        pixel_format.alphaMode = D2D1_ALPHA_MODE_PREMULTIPLIED;//D2D1_ALPHA_MODE_IGNORE;
-        /*bitmap_properties = {
+        };
+        */
+
+        pixel_format.format    = DXGI_FORMAT_B8G8R8A8_UNORM;
+        pixel_format.alphaMode = D2D1_ALPHA_MODE_PREMULTIPLIED; // D2D1_ALPHA_MODE_IGNORE;
+
+        /*
+        bitmap_properties =
+        {
             pixel_format,
             dpiX,
             dpiY
-        };*/
+        };
+        */
+
         bitmap_properties.pixelFormat = pixel_format;
-        bitmap_properties.dpiX = dpiX;
-        bitmap_properties.dpiY = dpiY;
+        bitmap_properties.dpiX        = dpiX;
+        bitmap_properties.dpiY        = dpiY;
     }
 
-    ~Direct2DRendererPrivate() {
+    ~Direct2DRendererPrivate()
+    {
         destroyDeviceResource();
         SafeRelease(&d2d_factory);//vlc does not call this. why? bug?
         dll.unload();
     }
 
-    bool createDeviceResource() {
+    bool createDeviceResource()
+    {
         DPTR_P(Direct2DRenderer);
+
         update_background = true;
         destroyDeviceResource();
-        //
+
         //  This method creates resources which are bound to a particular
         //  Direct3D device. It's all centralized here, in case the resources
         //  need to be recreated in case of Direct3D device loss (eg. display
         //  change, remoting, removal of video card, etc).
         //
-        //TODO: move to prepare(), or private. how to call less times
-        D2D1_RENDER_TARGET_PROPERTIES rtp = {
+
+        //TODO : move to prepare(), or private. how to call less times
+
+        D2D1_RENDER_TARGET_PROPERTIES rtp =
+        {
             D2D1_RENDER_TARGET_TYPE_DEFAULT,
             pixel_format,
             0,
@@ -211,40 +251,51 @@ public:
             D2D1_FEATURE_LEVEL_DEFAULT
         };
 
-        D2D1_SIZE_U size = {
+        D2D1_SIZE_U size =
+        {
             (UINT32)p.width(),
             (UINT32)p.height()
-        };//d.renderer_width, d.renderer_height?
+        };
+
+        // d.renderer_width, d.renderer_height?
 
         // Create a Direct2D render target.
 
-        D2D1_HWND_RENDER_TARGET_PROPERTIES hwnd_rtp = {
+        D2D1_HWND_RENDER_TARGET_PROPERTIES hwnd_rtp =
+        {
             (HWND)p.winId(),
             size,
-            //TODO: what do these mean?
-            D2D1_PRESENT_OPTIONS_RETAIN_CONTENTS //D2D1_PRESENT_OPTIONS_IMMEDIATELY /* this might need fiddling */
+
+            // TODO: what do these mean?
+
+            D2D1_PRESENT_OPTIONS_RETAIN_CONTENTS                        // D2D1_PRESENT_OPTIONS_IMMEDIATELY /* this might need fiddling */
         };
 
-        HRESULT hr = d2d_factory->CreateHwndRenderTarget(&rtp//D2D1::RenderTargetProperties() //TODO: vlc set properties
-                                                         , &hwnd_rtp//D2D1::HwndRenderTargetProperties(, size)
+        HRESULT hr = d2d_factory->CreateHwndRenderTarget(&rtp           // D2D1::RenderTargetProperties() //TODO: vlc set properties
+                                                         , &hwnd_rtp    // D2D1::HwndRenderTargetProperties(, size)
                                                          , &render_target);
-        if (FAILED(hr)) {
+        if (FAILED(hr))
+        {
             qCWarning(DIGIKAM_QTAVWIDGETS_LOG_WARN).noquote() << QString::asprintf("Direct2D is disabled. CreateHwndRenderTarget() failed: %d", (int)GetLastError());
             render_target = 0;
+
             return false;
         }
 
         SafeRelease(&bitmap);
         prepareBitmap(src_width, src_height); // bitmap depends on render target
+
         return hr == S_OK;
     }
 
-    void destroyDeviceResource() {
+    void destroyDeviceResource()
+    {
         SafeRelease(&render_target);
         SafeRelease(&bitmap);
     }
 
-    void recreateDeviceResource() {
+    void recreateDeviceResource()
+    {
         qCDebug(DIGIKAM_QTAVWIDGETS_LOG).noquote() << QString::asprintf("D2DERR_RECREATE_TARGET");
         QMutexLocker locker(&img_mutex);
         Q_UNUSED(locker);
@@ -260,12 +311,14 @@ public:
         if (w == bitmap_width && h == bitmap_height && bitmap)
             return true;
 
-        if (!render_target) {
+        if (!render_target)
+        {
             qCWarning(DIGIKAM_QTAVWIDGETS_LOG_WARN).noquote() << QString::asprintf("No render target, bitmap will not be created!!!");
+
             return false;
         }
 
-        bitmap_width = w;
+        bitmap_width  = w;
         bitmap_height = h;
         qCDebug(DIGIKAM_QTAVWIDGETS_LOG).noquote() << QString::asprintf("Resize bitmap to %d x %d", w, h);
         SafeRelease(&bitmap);
@@ -279,10 +332,12 @@ public:
                                                  , 0
                                                  , &bitmap_properties
                                                  , &bitmap);
-        if (FAILED(hr)) {
+        if (FAILED(hr))
+        {
             qCWarning(DIGIKAM_QTAVWIDGETS_LOG_WARN).noquote() << QString::asprintf("Failed to create ID2D1Bitmap (%ld)", hr);
             SafeRelease(&bitmap);
             SafeRelease(&render_target);
+
             return false;
         }
 
@@ -295,23 +350,23 @@ public:
     {
         switch (quality)
         {
-        case VideoRenderer::QualityFastest:
-            interpolation = D2D1_BITMAP_INTERPOLATION_MODE_NEAREST_NEIGHBOR;
-            render_target->SetAntialiasMode(D2D1_ANTIALIAS_MODE_ALIASED);
-            render_target->SetTextAntialiasMode(D2D1_TEXT_ANTIALIAS_MODE_ALIASED);
-            break;
+            case VideoRenderer::QualityFastest:
+                interpolation = D2D1_BITMAP_INTERPOLATION_MODE_NEAREST_NEIGHBOR;
+                render_target->SetAntialiasMode(D2D1_ANTIALIAS_MODE_ALIASED);
+                render_target->SetTextAntialiasMode(D2D1_TEXT_ANTIALIAS_MODE_ALIASED);
+                break;
 
-        case VideoRenderer::QualityBest:
-            interpolation = D2D1_BITMAP_INTERPOLATION_MODE_LINEAR;
-            render_target->SetAntialiasMode(D2D1_ANTIALIAS_MODE_PER_PRIMITIVE);
-            render_target->SetTextAntialiasMode(D2D1_TEXT_ANTIALIAS_MODE_CLEARTYPE);
-            break;
+            case VideoRenderer::QualityBest:
+                interpolation = D2D1_BITMAP_INTERPOLATION_MODE_LINEAR;
+                render_target->SetAntialiasMode(D2D1_ANTIALIAS_MODE_PER_PRIMITIVE);
+                render_target->SetTextAntialiasMode(D2D1_TEXT_ANTIALIAS_MODE_CLEARTYPE);
+                break;
 
-        default:
-            interpolation = D2D1_BITMAP_INTERPOLATION_MODE_LINEAR;
-            render_target->SetAntialiasMode(D2D1_ANTIALIAS_MODE_PER_PRIMITIVE);
-            render_target->SetTextAntialiasMode(D2D1_TEXT_ANTIALIAS_MODE_DEFAULT);
-            break;
+            default:
+                interpolation = D2D1_BITMAP_INTERPOLATION_MODE_LINEAR;
+                render_target->SetAntialiasMode(D2D1_ANTIALIAS_MODE_PER_PRIMITIVE);
+                render_target->SetTextAntialiasMode(D2D1_TEXT_ANTIALIAS_MODE_DEFAULT);
+                break;
         }
     }
 
@@ -320,7 +375,7 @@ public:
     D2D1_PIXEL_FORMAT pixel_format;
     D2D1_BITMAP_PROPERTIES bitmap_properties;
     ID2D1Bitmap *bitmap;
-    int bitmap_width, bitmap_height; //can not use src_width, src height because bitmap not update when they changes
+    int bitmap_width, bitmap_height; // can not use src_width, src height because bitmap not update when they changes
     D2D1_BITMAP_INTERPOLATION_MODE interpolation;
     QLibrary dll;
 };
@@ -330,6 +385,7 @@ Direct2DRenderer::Direct2DRenderer(QWidget *parent, Qt::WindowFlags f)
       VideoRenderer(*new Direct2DRendererPrivate())
 {
     DPTR_INIT_PRIVATE(Direct2DRenderer);
+
     setAcceptDrops(true);
     setFocusPolicy(Qt::StrongFocus);
 
@@ -356,8 +412,10 @@ bool Direct2DRenderer::receiveFrame(const VideoFrame& frame)
 {
     DPTR_D(Direct2DRenderer);
 
-    if (!frame.isValid()) {
+    if (!frame.isValid())
+    {
         //d.prepareBitmap(0, 0);
+
         return false;
     }
 
@@ -378,10 +436,11 @@ bool Direct2DRenderer::receiveFrame(const VideoFrame& frame)
     // if lock is required, do not use locker in if() scope, it will unlock outside the scope
     // TODO: d2d often crash, should we always lock? How about other renderer?
 
-    hr = d.bitmap->CopyFromMemory(NULL //&D2D1::RectU(0, 0, image.width(), image.height()) /*&dstRect, NULL?*/,
-                                  , frame.constBits(0) //data.constData() //msdn: const void*
+    hr = d.bitmap->CopyFromMemory(NULL                  // &D2D1::RectU(0, 0, image.width(), image.height()) /*&dstRect, NULL?*/,
+                                  , frame.constBits(0)  // data.constData() //msdn: const void*
                                   , frame.bytesPerLine(0));
-    if (hr != S_OK) {
+    if (hr != S_OK)
+    {
         qCWarning(DIGIKAM_QTAVWIDGETS_LOG_WARN).noquote() << QString::asprintf("Failed to copy from memory to bitmap (%ld)", hr);
     }
 
@@ -403,9 +462,10 @@ void Direct2DRenderer::drawBackground()
         return;
 
     DPTR_D(Direct2DRenderer);
+
     const QColor bc(backgroundColor());
     D2D1_COLOR_F c = {(float)bc.red(), (float)bc.green(), (float)bc.blue(), (float)bc.alpha()};
-    d.render_target->Clear(&c); //const D2D1_COlOR_F&?
+    d.render_target->Clear(&c);     // const D2D1_COlOR_F&?
 
     // http://msdn.microsoft.com/en-us/library/windows/desktop/dd535473(v=vs.85).aspx
     // ID2D1SolidColorBrush *brush;
@@ -420,7 +480,8 @@ void Direct2DRenderer::drawFrame()
     if (!d.bitmap || d.out_rect.isEmpty())
         return;
 
-    D2D1_RECT_F out_rect = {
+    D2D1_RECT_F out_rect =
+    {
         (FLOAT)d.out_rect.x(),
         (FLOAT)d.out_rect.y(),
         (FLOAT)(d.out_rect.x() + d.out_rect.width()), // QRect.right() is x+width-1 for historical reason
@@ -429,7 +490,8 @@ void Direct2DRenderer::drawFrame()
 
     QRect roi = realROI();
 
-    D2D1_RECT_F roi_d2d = {
+    D2D1_RECT_F roi_d2d =
+    {
         (FLOAT)roi.x(),
         (FLOAT)roi.y(),
         (FLOAT)(roi.x() + roi.width()),
@@ -440,7 +502,7 @@ void Direct2DRenderer::drawFrame()
 
     d.render_target->DrawBitmap(d.bitmap
                                 , &out_rect
-                                , 1 //opacity
+                                , 1                 // opacity
                                 , d.interpolation
                                 , &roi_d2d);
 }
@@ -449,7 +511,8 @@ void Direct2DRenderer::paintEvent(QPaintEvent *)
 {
     DPTR_D(Direct2DRenderer);
 
-    if (!d.render_target) {
+    if (!d.render_target)
+    {
         qCWarning(DIGIKAM_QTAVWIDGETS_LOG_WARN).noquote() << QString::asprintf("No render target!!!");
         return;
     }
@@ -461,13 +524,16 @@ void Direct2DRenderer::paintEvent(QPaintEvent *)
 
     HRESULT hr = S_OK;
     {
-        //if d2d factory is D2D1_FACTORY_TYPE_SINGLE_THREADED, we need to lock
+        // if d2d factory is D2D1_FACTORY_TYPE_SINGLE_THREADED, we need to lock
+
         //QMutexLocker locker(&d.img_mutex);
         //Q_UNUSED(locker);
+
         hr = d.render_target->EndDraw(NULL, NULL); //TODO: why it need lock? otherwise crash
     }
 
-    if (hr == D2DERR_RECREATE_TARGET) {
+    if (hr == D2DERR_RECREATE_TARGET)
+    {
         d.recreateDeviceResource();
     }
 }
@@ -476,17 +542,22 @@ void Direct2DRenderer::resizeEvent(QResizeEvent *e)
 {
     resizeRenderer(e->size());
     DPTR_D(Direct2DRenderer);
+
     d.update_background = true;
 
-    if (d.render_target) {
-        D2D1_SIZE_U size = {
+    if (d.render_target)
+    {
+        D2D1_SIZE_U size =
+        {
             (UINT32)e->size().width(),
             (UINT32)e->size().height()
         };
+
         // Note: This method can fail, but it's okay to ignore the
         // error here -- it will be repeated on the next call to
         // EndDraw.
-        d.render_target->Resize(&size); //D2D1_SIZE_U&?
+
+        d.render_target->Resize(&size); // D2D1_SIZE_U&?
     }
 
     update();
@@ -495,6 +566,7 @@ void Direct2DRenderer::resizeEvent(QResizeEvent *e)
 void Direct2DRenderer::showEvent(QShowEvent *)
 {
     DPTR_D(Direct2DRenderer);
+
     d.recreateDeviceResource();
 }
 

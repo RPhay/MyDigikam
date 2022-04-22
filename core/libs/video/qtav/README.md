@@ -42,7 +42,7 @@ TODO:
 
 * Use cmake to find DirectX and GDI+ dependencies (Native Windows only):
   x xaudio2
-  - direct2d
+  x direct2d
   - dxva
   x d3d11va
   x dsound

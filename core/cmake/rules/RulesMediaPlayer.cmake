@@ -34,6 +34,7 @@ if(ENABLE_MEDIAPLAYER)
         find_package(GDIPLUS)
         find_package(XAudio2)
         find_package(DirectSound)
+        find_package(Direct2D)
 
     endif()
 
@@ -90,6 +91,7 @@ if(ENABLE_MEDIAPLAYER)
         MACRO_BOOL_TO_01(DIRECTSOUND_FOUND HAVE_LIBDIRECTSOUND)
         MACRO_BOOL_TO_01(XAUDIO2_FOUND     HAVE_LIBXAUDIO2)
         MACRO_BOOL_TO_01(GDIPLUS_FOUND     HAVE_LIBGDIPLUS)
+        MACRO_BOOL_TO_01(Direct2D_FOUND    HAVE_LIBDIRECT2D)
 
         if(SSE4_1_FOUND)
 
@@ -245,6 +247,17 @@ if(ENABLE_MEDIAPLAYER)
 
         endif()
 
+        if(Direct2D_FOUND)
+
+            set(MEDIAPLAYER_LIBRARIES ${MEDIAPLAYER_LIBRARIES} ${Direct2D_LIBRARIES})
+            message(STATUS "MediaPlayer will be compiled with Direct2D support   : yes")
+
+        else()
+
+            message(STATUS "MediaPlayer will be compiled with Direct2D support   : no")
+
+        endif()
+
         if(DIRECTSOUND_FOUND)
 
             set(MEDIAPLAYER_LIBRARIES ${MEDIAPLAYER_LIBRARIES} ${DIRECTSOUND_LIBRARIES})
@@ -321,6 +334,7 @@ if(ENABLE_MEDIAPLAYER)
         set(MEDIAPLAYER_DEFINITIONS ${MEDIAPLAYER_DEFINITIONS} -DQTAV_HAVE_XAUDIO2=${HAVE_LIBXAUDIO2})         # XAudio2 for MSVC only (replacement of DirectSound)
         set(MEDIAPLAYER_DEFINITIONS ${MEDIAPLAYER_DEFINITIONS} -DQTAV_HAVE_DSOUND=${HAVE_LIBDIRECTSOUND})      # DirectX Sound for MSVC only (replaced by XAudio2)
         set(MEDIAPLAYER_DEFINITIONS ${MEDIAPLAYER_DEFINITIONS} -DQTAV_HAVE_GDIPLUS=${HAVE_LIBGDIPLUS})         # Graphics Device Interface Plus for MSVC only (replaced by DirectX)
+        set(MEDIAPLAYER_DEFINITIONS ${MEDIAPLAYER_DEFINITIONS} -DQTAV_HAVE_DIRECT2D=${HAVE_LIBDIRECT2D})       # DirectX 2D for MSVC only (replaced by DirectX 3D)
 
         if(APPLE)
 
