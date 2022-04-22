@@ -40,7 +40,7 @@ UNMAINTAINED FEATURES:
 
 TODO:
 
-* Use cmake to find DirectX dependencies (Native Windows only):
+* Use cmake to find DirectX and GDI+ dependencies (Native Windows only):
   x xaudio2
   - direct2d
   - dxva

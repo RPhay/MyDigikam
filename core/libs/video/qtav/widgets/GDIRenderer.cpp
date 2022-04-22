@@ -21,16 +21,24 @@
  *
  * ============================================================ */
 
-// Windows includes
-/*
-#define NOMINMAX
-#include <Windows.h>
-#include <gdiplus.h>
-#undef min
-#undef max
-*/
+#include "VideoRenderer_p.h"
 
-#define WIN32_LEAN_AND_MEAN
+// Qt includes
+
+#include <QWidget>
+#include <QResizeEvent>
+
+// Local includes
+
+#include "QtAV_factory.h"
+#include "digikam_debug.h"
+
+// Windows includes
+
+#ifndef WIN32_LEAN_AND_MEAN
+#   define WIN32_LEAN_AND_MEAN
+#endif
+
 #include <algorithm>
 #include <windows.h>
 #include <winsock2.h>
@@ -44,19 +52,6 @@
 #endif
 
 #include <gdiplus.h>
-
-#include "VideoRenderer_p.h"
-
-// Qt includes
-
-#include <QWidget>
-#include <QResizeEvent>
-
-// Local includes
-
-#include "QtAV_factory.h"
-#include "digikam_debug.h"
-
 
 #define USE_GRAPHICS 0
 
