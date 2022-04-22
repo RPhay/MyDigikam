@@ -49,7 +49,11 @@
 #include <AkonadiCore/Item>
 #endif
 
+#if AKONADI_VERSION >= QT_VERSION_CHECK(5, 19, 80)
+#include <Akonadi/ContactSearchJob>
+#else
 #include <Akonadi/Contact/ContactSearchJob>
+#endif
 #include <KContacts/Addressee>
 
 #if defined(Q_OS_DARWIN) && defined(Q_CC_CLANG)
