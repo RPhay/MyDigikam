@@ -30,10 +30,8 @@ if(ENABLE_MEDIAPLAYER)
 
     if(MSVC)
 
-        find_package(D3D11)
+        find_package(DirectX)
         find_package(GDIPLUS)
-        find_package(XAudio2)
-        find_package(DirectSound)
         find_package(Direct2D)
 
     endif()
@@ -73,25 +71,25 @@ if(ENABLE_MEDIAPLAYER)
 
     if (${FFMPEG_FOUND})
 
-        MACRO_BOOL_TO_01(ASS_FOUND         HAVE_LIBASS)
-        MACRO_BOOL_TO_01(uchardet_FOUND    HAVE_LIBUCHARDET)
-        MACRO_BOOL_TO_01(OPENAL_FOUND      HAVE_LIBOPENAL)
-        MACRO_BOOL_TO_01(PORTAUDIO_FOUND   HAVE_LIBPORTAUDIO)
-        MACRO_BOOL_TO_01(PULSEAUDIO_FOUND  HAVE_LIBPULSEAUDIO)
-        MACRO_BOOL_TO_01(VAAPI_FOUND       HAVE_LIBVAAPI)
-        MACRO_BOOL_TO_01(AVCODEC_FOUND     HAVE_LIBAVCODEC)
-        MACRO_BOOL_TO_01(AVDEVICE_FOUND    HAVE_LIBAVDEVICE)
-        MACRO_BOOL_TO_01(AVFILTER_FOUND    HAVE_LIBAVFILTER)
-        MACRO_BOOL_TO_01(AVFORMAT_FOUND    HAVE_LIBAVFORMAT)
-        MACRO_BOOL_TO_01(AVUTIL_FOUND      HAVE_LIBAVUTIL)
-        MACRO_BOOL_TO_01(SWSCALE_FOUND     HAVE_LIBSWSCALE)
-        MACRO_BOOL_TO_01(AVRESAMPLE_FOUND  HAVE_LIBAVRESAMPLE)
-        MACRO_BOOL_TO_01(SWRESAMPLE_FOUND  HAVE_LIBSWRESAMPLE)
-        MACRO_BOOL_TO_01(D3D11_FOUND       HAVE_LIBD3D11)
-        MACRO_BOOL_TO_01(DIRECTSOUND_FOUND HAVE_LIBDIRECTSOUND)
-        MACRO_BOOL_TO_01(XAUDIO2_FOUND     HAVE_LIBXAUDIO2)
-        MACRO_BOOL_TO_01(GDIPLUS_FOUND     HAVE_LIBGDIPLUS)
-        MACRO_BOOL_TO_01(Direct2D_FOUND    HAVE_LIBDIRECT2D)
+        MACRO_BOOL_TO_01(ASS_FOUND             HAVE_LIBASS)
+        MACRO_BOOL_TO_01(uchardet_FOUND        HAVE_LIBUCHARDET)
+        MACRO_BOOL_TO_01(OPENAL_FOUND          HAVE_LIBOPENAL)
+        MACRO_BOOL_TO_01(PORTAUDIO_FOUND       HAVE_LIBPORTAUDIO)
+        MACRO_BOOL_TO_01(PULSEAUDIO_FOUND      HAVE_LIBPULSEAUDIO)
+        MACRO_BOOL_TO_01(VAAPI_FOUND           HAVE_LIBVAAPI)
+        MACRO_BOOL_TO_01(AVCODEC_FOUND         HAVE_LIBAVCODEC)
+        MACRO_BOOL_TO_01(AVDEVICE_FOUND        HAVE_LIBAVDEVICE)
+        MACRO_BOOL_TO_01(AVFILTER_FOUND        HAVE_LIBAVFILTER)
+        MACRO_BOOL_TO_01(AVFORMAT_FOUND        HAVE_LIBAVFORMAT)
+        MACRO_BOOL_TO_01(AVUTIL_FOUND          HAVE_LIBAVUTIL)
+        MACRO_BOOL_TO_01(SWSCALE_FOUND         HAVE_LIBSWSCALE)
+        MACRO_BOOL_TO_01(AVRESAMPLE_FOUND      HAVE_LIBAVRESAMPLE)
+        MACRO_BOOL_TO_01(SWRESAMPLE_FOUND      HAVE_LIBSWRESAMPLE)
+        MACRO_BOOL_TO_01(DirectX_D3D11_FOUND   HAVE_LIBD3D11)
+        MACRO_BOOL_TO_01(DirectX_DSound_FOUND  HAVE_LIBDIRECTSOUND)
+        MACRO_BOOL_TO_01(DirectX_XAudio2_FOUND HAVE_LIBXAUDIO2)
+        MACRO_BOOL_TO_01(GDIPLUS_FOUND         HAVE_LIBGDIPLUS)
+        MACRO_BOOL_TO_01(Direct2D_FOUND        HAVE_LIBDIRECT2D)
 
         if(SSE4_1_FOUND)
 
@@ -236,14 +234,40 @@ if(ENABLE_MEDIAPLAYER)
 
         endif()
 
-        if(D3D11_FOUND)
+        if(DIRECTX_FOUND)
 
-            set(MEDIAPLAYER_LIBRARIES ${MEDIAPLAYER_LIBRARIES} ${D3D11_LIBRARIES})
-            message(STATUS "MediaPlayer will be compiled with Direct3D support   : yes")
+            set(MEDIAPLAYER_LIBRARIES ${MEDIAPLAYER_LIBRARIES} ${DIRECTX_LIBRARY_DIRS})
 
-        else()
+            if(DirectX_D3D11_FOUND)
 
-            message(STATUS "MediaPlayer will be compiled with Direct3D support   : no")
+                message(STATUS "MediaPlayer will be compiled with Direct3D support   : yes")
+
+            else()
+
+                message(STATUS "MediaPlayer will be compiled with Direct3D support   : no")
+
+            endif()
+
+
+            if(DirectX_DSound_FOUND)
+
+                message(STATUS "MediaPlayer will be compiled with DirectSound support: yes")
+
+            else()
+
+                message(STATUS "MediaPlayer will be compiled with DirectSound support: no")
+
+            endif()
+
+            if(DirectX_XAudio2_FOUND)
+
+                message(STATUS "MediaPlayer will be compiled with XAudio2 support    : yes")
+
+            else()
+
+                message(STATUS "MediaPlayer will be compiled with XAudio2 support    : no")
+
+            endif()
 
         endif()
 
@@ -255,28 +279,6 @@ if(ENABLE_MEDIAPLAYER)
         else()
 
             message(STATUS "MediaPlayer will be compiled with Direct2D support   : no")
-
-        endif()
-
-        if(DIRECTSOUND_FOUND)
-
-            set(MEDIAPLAYER_LIBRARIES ${MEDIAPLAYER_LIBRARIES} ${DIRECTSOUND_LIBRARIES})
-            message(STATUS "MediaPlayer will be compiled with DirectSound support: yes")
-
-        else()
-
-            message(STATUS "MediaPlayer will be compiled with DirectSound support: no")
-
-        endif()
-
-        if(XAUDIO2_FOUND)
-
-            set(MEDIAPLAYER_LIBRARIES ${MEDIAPLAYER_LIBRARIES} ${XAUDIO2_LIBRARIES})
-            message(STATUS "MediaPlayer will be compiled with XAudio2 support    : yes")
-
-        else()
-
-            message(STATUS "MediaPlayer will be compiled with XAudio2 support    : no")
 
         endif()
 

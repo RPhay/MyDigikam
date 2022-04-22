@@ -122,8 +122,7 @@ endif()
 
 qt5_add_resources(libqtav_SRCS ${CMAKE_CURRENT_SOURCE_DIR}/src/shaders/shaders.qrc)
 
-
-if(DIRECTSOUND_FOUND)
+if(DirectX_DSound_FOUND)
 
     set(libqtav_SRCS ${libqtav_SRCS}
         ${CMAKE_CURRENT_SOURCE_DIR}/src/output/audio/AudioOutputDSound.cpp
@@ -131,7 +130,7 @@ if(DIRECTSOUND_FOUND)
 
 endif()
 
-if(XAUDIO2_FOUND)
+if(DirectX_XAudio2_FOUND)
 
     set(libqtav_SRCS ${libqtav_SRCS}
         ${CMAKE_CURRENT_SOURCE_DIR}/src/output/audio/AudioOutputXAudio2.cpp
@@ -139,7 +138,7 @@ if(XAUDIO2_FOUND)
 
 endif()
 
-if(D3D11_FOUND)
+if(DirectX_D3D11_FOUND)
 
     set(libqtav_SRCS ${libqtav_SRCS}
         ${CMAKE_CURRENT_SOURCE_DIR}/src/codec/video/VideoDecoderD3D.cpp
