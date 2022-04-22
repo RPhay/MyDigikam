@@ -22,4 +22,4 @@ Dependencies:
 
 Options:
     run-cppcheck: False
-
+    use-ccache: True
