@@ -41,7 +41,11 @@ static const char kFileScheme[] = "file:";
 
 // Packet::asAVPacket() assumes time base is 0.001
 
-static const AVRational kTB = {1, 1000};
+static const AVRational kTB =
+{
+    1,
+    1000
+};
 
 class AVMuxer::Private
 {

@@ -71,7 +71,9 @@ public:
       , mTimeout(timeout)
       , mTimeoutAbort(true)
       , mEmitError(true)
+
       //, mLastTime(0)
+
       , mAction(Unknown)
       , mpDemuxer(demuxer)
     {
@@ -190,7 +192,7 @@ public:
 
         switch (handler->mAction)
         {
-            case Unknown: //callback is not called between begin()/end()
+            case Unknown: // callback is not called between begin()/end()
                 //qCWarning(DIGIKAM_QTAV_LOG_WARN).noquote() << QString::asprintf("Unknown timeout action");
                 break;
 
@@ -284,7 +286,9 @@ private:
     qint64 mTimeout;
     bool mTimeoutAbort;
     bool mEmitError;
+
     //qint64 mLastTime;
+
     Action mAction;
     AVDemuxer *mpDemuxer;
     QElapsedTimer mTimer;
@@ -469,16 +473,23 @@ AVDemuxer::AVDemuxer(QObject *parent)
         {
 
 #if !AVCODEC_STATIC_REGISTER
+
             avcodec_register_all();
+
 #endif
 
 #if QTAV_HAVE(AVDEVICE)
+
             avdevice_register_all();
+
 #endif
 
 #if !AVFORMAT_STATIC_REGISTER
+
             av_register_all();
+
 #endif
+
             avformat_network_init();
         }
 
@@ -602,7 +613,7 @@ const QStringList &AVDemuxer::supportedProtocols()
 
 #endif
 
-    void* opq = 0;
+    void* opq            = 0;
     const char* protocol = avio_enum_protocols(&opq, 0);
 
     while (protocol)
@@ -681,6 +692,7 @@ bool AVDemuxer::readFrame()
         {
             qCWarning(DIGIKAM_QTAV_LOG_WARN).noquote() << QString::asprintf("demuxer EAGAIN :%s", av_err2str(ret));
             av_packet_unref(&packet); //important!
+
             return false;
         }
 
@@ -700,6 +712,7 @@ bool AVDemuxer::readFrame()
     if (!d->started)
     {
         d->started = true;
+
         Q_EMIT started();
     }
 

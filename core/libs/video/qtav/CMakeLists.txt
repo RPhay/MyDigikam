@@ -25,7 +25,33 @@ include_directories($<TARGET_PROPERTY:Qt${QT_VERSION_MAJOR}::Widgets,INTERFACE_I
 )
 
 set(libqtav_SRCS
-    ${CMAKE_CURRENT_SOURCE_DIR}/src/AVCompat.cpp
+
+    ${CMAKE_CURRENT_SOURCE_DIR}/src/ffmpeg/AVCompat.cpp
+    ${CMAKE_CURRENT_SOURCE_DIR}/src/ffmpeg/AVMuxer.cpp
+    ${CMAKE_CURRENT_SOURCE_DIR}/src/ffmpeg/AVDemuxer.cpp
+    ${CMAKE_CURRENT_SOURCE_DIR}/src/ffmpeg/AVError.cpp
+    ${CMAKE_CURRENT_SOURCE_DIR}/src/ffmpeg/AVPlayer.cpp
+    ${CMAKE_CURRENT_SOURCE_DIR}/src/ffmpeg/AVPlayerPrivate.cpp
+    ${CMAKE_CURRENT_SOURCE_DIR}/src/ffmpeg/AudioFormat.cpp
+    ${CMAKE_CURRENT_SOURCE_DIR}/src/ffmpeg/AudioFrame.cpp
+    ${CMAKE_CURRENT_SOURCE_DIR}/src/ffmpeg/AudioResampler.cpp
+    ${CMAKE_CURRENT_SOURCE_DIR}/src/ffmpeg/AudioResamplerTemplate.cpp
+    ${CMAKE_CURRENT_SOURCE_DIR}/src/ffmpeg/AudioThread.cpp
+    ${CMAKE_CURRENT_SOURCE_DIR}/src/ffmpeg/ImageConverter.cpp
+    ${CMAKE_CURRENT_SOURCE_DIR}/src/ffmpeg/ImageConverterFF.cpp
+    ${CMAKE_CURRENT_SOURCE_DIR}/src/ffmpeg/VideoFrame.cpp
+    ${CMAKE_CURRENT_SOURCE_DIR}/src/ffmpeg/VideoFrameExtractor.cpp
+    ${CMAKE_CURRENT_SOURCE_DIR}/src/ffmpeg/VideoFormat.cpp
+    ${CMAKE_CURRENT_SOURCE_DIR}/src/ffmpeg/VideoThread.cpp
+    ${CMAKE_CURRENT_SOURCE_DIR}/src/ffmpeg/Packet.cpp
+    ${CMAKE_CURRENT_SOURCE_DIR}/src/ffmpeg/PacketBuffer.cpp
+    ${CMAKE_CURRENT_SOURCE_DIR}/src/ffmpeg/AVDemuxThread.cpp
+    ${CMAKE_CURRENT_SOURCE_DIR}/src/ffmpeg/AVThread.cpp
+    ${CMAKE_CURRENT_SOURCE_DIR}/src/ffmpeg/AVTranscoder.cpp
+    ${CMAKE_CURRENT_SOURCE_DIR}/src/ffmpeg/AVClock.cpp
+    ${CMAKE_CURRENT_SOURCE_DIR}/src/ffmpeg/Frame.cpp
+    ${CMAKE_CURRENT_SOURCE_DIR}/src/ffmpeg/FrameReader.cpp
+
     ${CMAKE_CURRENT_SOURCE_DIR}/src/subtitle/CharsetDetector.cpp
     ${CMAKE_CURRENT_SOURCE_DIR}/src/subtitle/PlainText.cpp
     ${CMAKE_CURRENT_SOURCE_DIR}/src/subtitle/PlayerSubtitle.cpp
@@ -33,47 +59,24 @@ set(libqtav_SRCS
     ${CMAKE_CURRENT_SOURCE_DIR}/src/subtitle/SubtitleProcessor.cpp
     ${CMAKE_CURRENT_SOURCE_DIR}/src/subtitle/SubtitleProcessorFFmpeg.cpp
     ${CMAKE_CURRENT_SOURCE_DIR}/src/subtitle/SubImage.cpp
+
+    ${CMAKE_CURRENT_SOURCE_DIR}/src/utils/VideoCapture.cpp
     ${CMAKE_CURRENT_SOURCE_DIR}/src/utils/GPUMemCopy.cpp
-    ${CMAKE_CURRENT_SOURCE_DIR}/src/AudioThread.cpp
+    ${CMAKE_CURRENT_SOURCE_DIR}/src/utils/Statistics.cpp
+    ${CMAKE_CURRENT_SOURCE_DIR}/src/utils/ColorTransform.cpp
     ${CMAKE_CURRENT_SOURCE_DIR}/src/utils/QtAV_Global.cpp
     ${CMAKE_CURRENT_SOURCE_DIR}/src/utils/QtAV_internal.cpp
-    ${CMAKE_CURRENT_SOURCE_DIR}/src/AVThread.cpp
-    ${CMAKE_CURRENT_SOURCE_DIR}/src/AudioFormat.cpp
-    ${CMAKE_CURRENT_SOURCE_DIR}/src/AudioFrame.cpp
-    ${CMAKE_CURRENT_SOURCE_DIR}/src/AudioResampler.cpp
-    ${CMAKE_CURRENT_SOURCE_DIR}/src/AudioResamplerTemplate.cpp
-    ${CMAKE_CURRENT_SOURCE_DIR}/src/codec/audio/AudioDecoder.cpp
-    ${CMAKE_CURRENT_SOURCE_DIR}/src/codec/audio/AudioDecoderFFmpeg.cpp
-    ${CMAKE_CURRENT_SOURCE_DIR}/src/codec/audio/AudioEncoder.cpp
-    ${CMAKE_CURRENT_SOURCE_DIR}/src/codec/audio/AudioEncoderFFmpeg.cpp
-    ${CMAKE_CURRENT_SOURCE_DIR}/src/codec/AVDecoder.cpp
-    ${CMAKE_CURRENT_SOURCE_DIR}/src/codec/AVEncoder.cpp
-    ${CMAKE_CURRENT_SOURCE_DIR}/src/AVMuxer.cpp
-    ${CMAKE_CURRENT_SOURCE_DIR}/src/AVDemuxer.cpp
-    ${CMAKE_CURRENT_SOURCE_DIR}/src/AVDemuxThread.cpp
-    ${CMAKE_CURRENT_SOURCE_DIR}/src/ColorTransform.cpp
-    ${CMAKE_CURRENT_SOURCE_DIR}/src/Frame.cpp
-    ${CMAKE_CURRENT_SOURCE_DIR}/src/FrameReader.cpp
+
     ${CMAKE_CURRENT_SOURCE_DIR}/src/filter/Filter.cpp
     ${CMAKE_CURRENT_SOURCE_DIR}/src/filter/FilterContext.cpp
     ${CMAKE_CURRENT_SOURCE_DIR}/src/filter/FilterManager.cpp
     ${CMAKE_CURRENT_SOURCE_DIR}/src/filter/LibAVFilter.cpp
     ${CMAKE_CURRENT_SOURCE_DIR}/src/filter/SubtitleFilter.cpp
     ${CMAKE_CURRENT_SOURCE_DIR}/src/filter/EncodeFilter.cpp
-    ${CMAKE_CURRENT_SOURCE_DIR}/src/ImageConverter.cpp
-    ${CMAKE_CURRENT_SOURCE_DIR}/src/ImageConverterFF.cpp
-    ${CMAKE_CURRENT_SOURCE_DIR}/src/Packet.cpp
-    ${CMAKE_CURRENT_SOURCE_DIR}/src/PacketBuffer.cpp
-    ${CMAKE_CURRENT_SOURCE_DIR}/src/AVError.cpp
-    ${CMAKE_CURRENT_SOURCE_DIR}/src/AVPlayer.cpp
-    ${CMAKE_CURRENT_SOURCE_DIR}/src/AVPlayerPrivate.cpp
-    ${CMAKE_CURRENT_SOURCE_DIR}/src/AVTranscoder.cpp
-    ${CMAKE_CURRENT_SOURCE_DIR}/src/AVClock.cpp
-    ${CMAKE_CURRENT_SOURCE_DIR}/src/VideoCapture.cpp
-    ${CMAKE_CURRENT_SOURCE_DIR}/src/VideoFormat.cpp
-    ${CMAKE_CURRENT_SOURCE_DIR}/src/VideoFrame.cpp
+
     ${CMAKE_CURRENT_SOURCE_DIR}/src/io/MediaIO.cpp
     ${CMAKE_CURRENT_SOURCE_DIR}/src/io/QIODeviceIO.cpp
+
     ${CMAKE_CURRENT_SOURCE_DIR}/src/output/audio/AudioOutput.cpp
     ${CMAKE_CURRENT_SOURCE_DIR}/src/output/audio/AudioOutputBackend.cpp
     ${CMAKE_CURRENT_SOURCE_DIR}/src/output/audio/AudioOutputNull.cpp
@@ -82,15 +85,19 @@ set(libqtav_SRCS
     ${CMAKE_CURRENT_SOURCE_DIR}/src/output/video/QPainterRenderer.cpp
     ${CMAKE_CURRENT_SOURCE_DIR}/src/output/AVOutput.cpp
     ${CMAKE_CURRENT_SOURCE_DIR}/src/output/OutputSet.cpp
-    ${CMAKE_CURRENT_SOURCE_DIR}/src/Statistics.cpp
+
+    ${CMAKE_CURRENT_SOURCE_DIR}/src/codec/audio/AudioDecoder.cpp
+    ${CMAKE_CURRENT_SOURCE_DIR}/src/codec/audio/AudioDecoderFFmpeg.cpp
+    ${CMAKE_CURRENT_SOURCE_DIR}/src/codec/audio/AudioEncoder.cpp
+    ${CMAKE_CURRENT_SOURCE_DIR}/src/codec/audio/AudioEncoderFFmpeg.cpp
+    ${CMAKE_CURRENT_SOURCE_DIR}/src/codec/AVDecoder.cpp
+    ${CMAKE_CURRENT_SOURCE_DIR}/src/codec/AVEncoder.cpp
     ${CMAKE_CURRENT_SOURCE_DIR}/src/codec/video/VideoDecoder.cpp
     ${CMAKE_CURRENT_SOURCE_DIR}/src/codec/video/VideoDecoderFFmpegBase.cpp
     ${CMAKE_CURRENT_SOURCE_DIR}/src/codec/video/VideoDecoderFFmpeg.cpp
     ${CMAKE_CURRENT_SOURCE_DIR}/src/codec/video/VideoDecoderFFmpegHW.cpp
     ${CMAKE_CURRENT_SOURCE_DIR}/src/codec/video/VideoEncoder.cpp
     ${CMAKE_CURRENT_SOURCE_DIR}/src/codec/video/VideoEncoderFFmpeg.cpp
-    ${CMAKE_CURRENT_SOURCE_DIR}/src/VideoThread.cpp
-    ${CMAKE_CURRENT_SOURCE_DIR}/src/VideoFrameExtractor.cpp
 
     ${CMAKE_CURRENT_SOURCE_DIR}/widgets/common/GraphicsItemRenderer.cpp
     ${CMAKE_CURRENT_SOURCE_DIR}/widgets/common/VideoPreviewWidget.cpp
@@ -309,7 +316,7 @@ endif()
 if(AVRESAMPLE_FOUND)
 
     set(libqtav_SRCS ${libqtav_SRCS}
-        ${CMAKE_CURRENT_SOURCE_DIR}/src/AudioResamplerLibav.cpp
+        ${CMAKE_CURRENT_SOURCE_DIR}/src/ffmpeg/AudioResamplerLibav.cpp
     )
 
 endif()
@@ -317,7 +324,7 @@ endif()
 if(SWRESAMPLE_FOUND)
 
     set(libqtav_SRCS ${libqtav_SRCS}
-        ${CMAKE_CURRENT_SOURCE_DIR}/src/AudioResamplerFF.cpp
+        ${CMAKE_CURRENT_SOURCE_DIR}/src/ffmpeg/AudioResamplerFF.cpp
     )
 
 endif()
