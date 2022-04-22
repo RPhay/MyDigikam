@@ -92,11 +92,11 @@ set(libqtav_SRCS
     ${CMAKE_CURRENT_SOURCE_DIR}/src/VideoThread.cpp
     ${CMAKE_CURRENT_SOURCE_DIR}/src/VideoFrameExtractor.cpp
 
-    ${CMAKE_CURRENT_SOURCE_DIR}/widgets/QtAVWidgets_Global.cpp
     ${CMAKE_CURRENT_SOURCE_DIR}/widgets/GraphicsItemRenderer.cpp
-    ${CMAKE_CURRENT_SOURCE_DIR}/widgets/OpenGLWidgetRenderer.cpp
     ${CMAKE_CURRENT_SOURCE_DIR}/widgets/VideoPreviewWidget.cpp
     ${CMAKE_CURRENT_SOURCE_DIR}/widgets/WidgetRenderer.cpp
+    ${CMAKE_CURRENT_SOURCE_DIR}/widgets/utils/QtAVWidgets_Global.cpp
+    ${CMAKE_CURRENT_SOURCE_DIR}/widgets/opengl/OpenGLWidgetRenderer.cpp
 )
 
 if(SSE4_1_FOUND)
@@ -118,20 +118,9 @@ qt5_add_resources(libqtav_SRCS ${CMAKE_CURRENT_SOURCE_DIR}/src/shaders/shaders.q
 file(GLOB QTAV_HEADERS         ${CMAKE_CURRENT_SOURCE_DIR}/src/QtAV/*.h)
 file(GLOB QTAV_PRIVATE_HEADERS ${CMAKE_CURRENT_SOURCE_DIR}/src/QtAV/private/*.h)
 
-set(QTAV_WIDGETS_HEADERS
-    ${CMAKE_CURRENT_SOURCE_DIR}/widgets/QtAVWidgets/QtAVWidgets_Global.h
-    ${CMAKE_CURRENT_SOURCE_DIR}/widgets/QtAVWidgets/QtAVWidgets_Version.h
-    ${CMAKE_CURRENT_SOURCE_DIR}/widgets/QtAVWidgets/GraphicsItemRenderer.h
-    ${CMAKE_CURRENT_SOURCE_DIR}/widgets/QtAVWidgets/OpenGLWidgetRenderer.h
-    ${CMAKE_CURRENT_SOURCE_DIR}/widgets/QtAVWidgets/QtAVWidgets.h
-    ${CMAKE_CURRENT_SOURCE_DIR}/widgets/QtAVWidgets/VideoPreviewWidget.h
-    ${CMAKE_CURRENT_SOURCE_DIR}/widgets/QtAVWidgets/WidgetRenderer.h
-)
-
 set(libqtav_SRCS ${libqtav_SRCS}
                  ${QTAV_HEADERS}
                  ${QTAV_PRIVATE_HEADERS}
-                 ${QTAV_WIDGETS_HEADERS}
 )
 
 if(DIRECTSOUND_FOUND)
@@ -168,7 +157,7 @@ if(X11_FOUND)
     set(libqtav_SRCS ${libqtav_SRCS}
         ${CMAKE_CURRENT_SOURCE_DIR}/src/filter/X11FilterContext.cpp
 
-        ${CMAKE_CURRENT_SOURCE_DIR}/widgets/X11Renderer.cpp
+        ${CMAKE_CURRENT_SOURCE_DIR}/widgets/X11/X11Renderer.cpp
     )
 
 endif()
@@ -176,7 +165,7 @@ endif()
 if(X11_Xv_FOUND)
 
     set(libqtav_SRCS ${libqtav_SRCS}
-        ${CMAKE_CURRENT_SOURCE_DIR}/widgets/XVRenderer.cpp
+        ${CMAKE_CURRENT_SOURCE_DIR}/widgets/X11/XVRenderer.cpp
     )
 
 endif()
@@ -209,8 +198,7 @@ if(HAVE_OPENGL)
         ${CMAKE_CURRENT_SOURCE_DIR}/src/output/video/OpenGLRendererBase.cpp
         ${CMAKE_CURRENT_SOURCE_DIR}/src/output/video/OpenGLWindowRenderer.cpp
 
-        ${CMAKE_CURRENT_SOURCE_DIR}/widgets/GLWidgetRenderer2.cpp
-        ${CMAKE_CURRENT_SOURCE_DIR}/widgets/QtAVWidgets/GLWidgetRenderer2.h
+        ${CMAKE_CURRENT_SOURCE_DIR}/widgets/opengl/GLWidgetRenderer2.cpp
     )
 
     if(D3D11_FOUND)
@@ -227,7 +215,7 @@ if(HAVE_OPENGL)
     if(GDIPLUS_FOUND)
 
         set(libqtav_SRCS ${libqtav_SRCS}
-            ${CMAKE_CURRENT_SOURCE_DIR}/widgets/GDIRenderer.cpp
+            ${CMAKE_CURRENT_SOURCE_DIR}/widgets/windows/GDIRenderer.cpp
         )
 
     endif()
@@ -235,7 +223,7 @@ if(HAVE_OPENGL)
     if(Direct2D_FOUND)
 
         set(libqtav_SRCS ${libqtav_SRCS}
-            ${CMAKE_CURRENT_SOURCE_DIR}/widgets/Direct2DRenderer.cpp
+            ${CMAKE_CURRENT_SOURCE_DIR}/widgets/windows/Direct2DRenderer.cpp
         )
 
     endif()
