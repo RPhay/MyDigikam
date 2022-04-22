@@ -28,7 +28,6 @@
 /**
  * X11 headers define 'Bool' type which is used in qmetatype.h. we must include X11 files at last, i.e. X11Renderer_p.h. otherwise compile error
  */
-#include "VideoRenderer.h"
 #include "VideoRenderer_p.h"
 #include "FilterContext.h"
 #include "digikam_debug.h"
@@ -283,7 +282,7 @@ public:
                 .arg(ximg->red_mask)
                 .arg(ximg->green_mask)
                 .arg(ximg->blue_mask);
-            
+
             XDestroyImage(ximg);
         }
 
@@ -455,27 +454,27 @@ no_shm:
 
     int resizeXImage(int index);
 
-    bool use_shm; // TODO: set by user
-    bool warn_bad_pitch;
-    unsigned int num_adaptors;
-    int bpp;
-    int depth;
-    int ShmCompletionEvent;
-    int ShmCompletionWaitCount;
-    XVisualInfo vinfo;
-    Display *display;
-    int current_index;
-    int next_index;
-    XImage *ximage_pool[kPoolSize];
-    GC gc;
-    XShmSegmentInfo shm_pool[kPoolSize];
-    VideoFormat::PixelFormat pixfmt;
+    bool                        use_shm;                // TODO: set by user
+    bool                        warn_bad_pitch;
+    unsigned int                num_adaptors;
+    int                         bpp;
+    int                         depth;
+    int                         ShmCompletionEvent;
+    int                         ShmCompletionWaitCount;
+    XVisualInfo                 vinfo;
+    Display*                    display;
+    int                         current_index;
+    int                         next_index;
+    XImage*                     ximage_pool[kPoolSize];
+    GC                          gc;
+    XShmSegmentInfo             shm_pool[kPoolSize];
+    VideoFormat::PixelFormat    pixfmt;
 
     // if the incoming image pitchs are different from ximage ones, use ximage pitchs and copy data in ximage_data
 
-    QByteArray ximage_data[kPoolSize];
-    VideoFrame frame_orig; // if renderer is resized, scale the original frame
-    bool frame_changed;
+    QByteArray                  ximage_data[kPoolSize];
+    VideoFrame                  frame_orig;             // if renderer is resized, scale the original frame
+    bool                        frame_changed;
 };
 
 X11Renderer::X11Renderer(QWidget *parent, Qt::WindowFlags f)
@@ -732,6 +731,7 @@ void X11Renderer::paintEvent(QPaintEvent *)
 void X11Renderer::resizeEvent(QResizeEvent *e)
 {
     DPTR_D(X11Renderer);
+
     d.frame_changed = true;
     resizeRenderer(e->size());
     update(); // update background

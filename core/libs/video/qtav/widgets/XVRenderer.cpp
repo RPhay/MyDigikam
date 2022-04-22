@@ -25,7 +25,6 @@
  * X11 headers define 'Bool' type which is used in qmetatype.h. we must include X11 files at last, i.e. XVRenderer_p.h. otherwise compile error
  */
 
-#include "VideoRenderer.h"
 #include "VideoRenderer_p.h"
 #include "FilterContext.h"
 

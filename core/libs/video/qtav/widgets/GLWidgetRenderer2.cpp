@@ -22,11 +22,14 @@
  * ============================================================ */
 
 #include "GLWidgetRenderer2.h"
-#include "OpenGLRendererBase_p.h"
 
 // Qt includes
 
 #include <QResizeEvent>
+
+// Local includes
+
+#include "OpenGLRendererBase_p.h"
 
 namespace QtAV
 {
@@ -34,9 +37,11 @@ namespace QtAV
 class GLWidgetRenderer2Private : public OpenGLRendererBasePrivate
 {
 public:
-    GLWidgetRenderer2Private(QPaintDevice *pd)
+
+    GLWidgetRenderer2Private(QPaintDevice* pd)
         : OpenGLRendererBasePrivate(pd)
-    {}
+    {
+    }
 };
 
 VideoRendererId GLWidgetRenderer2::id() const
@@ -44,12 +49,13 @@ VideoRendererId GLWidgetRenderer2::id() const
     return VideoRendererId_GLWidget2;
 }
 
-GLWidgetRenderer2::GLWidgetRenderer2(QWidget *parent, const QGLWidget* shareWidget, Qt::WindowFlags f):
-    QGLWidget(parent, shareWidget, f)
-  , OpenGLRendererBase(*new GLWidgetRenderer2Private(this))
+GLWidgetRenderer2::GLWidgetRenderer2(QWidget *parent, const QGLWidget* shareWidget, Qt::WindowFlags f)
+    : QGLWidget(parent, shareWidget, f)
+    , OpenGLRendererBase(*new GLWidgetRenderer2Private(this))
 {
     setAcceptDrops(true);
     setFocusPolicy(Qt::StrongFocus);
+
     /* To rapidly update custom widgets that constantly paint over their entire areas with
      * opaque content, e.g., video streaming widgets, it is better to set the widget's
      * Qt::WA_OpaquePaintEvent, avoiding any unnecessary overhead associated with repainting the
@@ -57,7 +63,9 @@ GLWidgetRenderer2::GLWidgetRenderer2(QWidget *parent, const QGLWidget* shareWidg
      */
     setAttribute(Qt::WA_OpaquePaintEvent);
     setAttribute(Qt::WA_NoSystemBackground);
-    //default: swap in qpainter dtor. we should swap before QPainter.endNativePainting()
+
+    // default: swap in qpainter dtor. we should swap before QPainter.endNativePainting()
+
     setAutoBufferSwap(false);
     setAutoFillBackground(false);
 }
@@ -65,12 +73,14 @@ GLWidgetRenderer2::GLWidgetRenderer2(QWidget *parent, const QGLWidget* shareWidg
 void GLWidgetRenderer2::initializeGL()
 {
     // already current
+
     onInitializeGL();
 }
 
 void GLWidgetRenderer2::paintGL()
 {
     DPTR_D(GLWidgetRenderer2);
+
     /* we can mix gl and qpainter.
      * QPainter painter(this);
      * painter.beginNativePainting();
@@ -80,6 +90,7 @@ void GLWidgetRenderer2::paintGL()
      */
     handlePaintEvent();
     swapBuffers();
+
     if (d.painter && d.painter->isActive())
         d.painter->end();
 }
@@ -92,7 +103,7 @@ void GLWidgetRenderer2::resizeGL(int w, int h)
 void GLWidgetRenderer2::resizeEvent(QResizeEvent *e)
 {
     onResizeEvent(e->size().width(), e->size().height());
-    QGLWidget::resizeEvent(e); //will call resizeGL(). TODO:will call paintEvent()?
+    QGLWidget::resizeEvent(e); // will call resizeGL(). TODO:will call paintEvent()?
 }
 
 void GLWidgetRenderer2::showEvent(QShowEvent *)

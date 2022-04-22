@@ -28,7 +28,9 @@
 #include "QtAVWidgets_Global.h"
 #include "GraphicsItemRenderer.h"
 #include "WidgetRenderer.h"
+
 //#include "GLWidgetRenderer.h"
+
 #include "GLWidgetRenderer2.h"
 #include "VideoPreviewWidget.h"
 

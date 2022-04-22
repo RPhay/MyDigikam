@@ -21,8 +21,8 @@
  *
  * ============================================================ */
 
-#ifndef QTAV_OPENGLWIDGETRENDERER_H
-#define QTAV_OPENGLWIDGETRENDERER_H
+#ifndef QTAV_WIDGETS_OPENGL_WIDGET_RENDERER_H
+#define QTAV_WIDGETS_OPENGL_WIDGET_RENDERER_H
 
 #include "QtAVWidgets_Global.h"
 
@@ -38,6 +38,7 @@ namespace QtAV
 {
 
 // do not define QOpenGLWidget here with ifdef to avoid moc error
+
 class OpenGLWidgetRendererPrivate;
 
 class Q_AVWIDGETS_EXPORT OpenGLWidgetRenderer : public QOpenGLWidget, public OpenGLRendererBase
@@ -52,8 +53,10 @@ class Q_AVWIDGETS_EXPORT OpenGLWidgetRenderer : public QOpenGLWidget, public Ope
     Q_PROPERTY(QRectF regionOfInterest READ regionOfInterest WRITE setRegionOfInterest NOTIFY regionOfInterestChanged)
     Q_PROPERTY(qreal sourceAspectRatio READ sourceAspectRatio NOTIFY sourceAspectRatioChanged)
     Q_PROPERTY(qreal outAspectRatio READ outAspectRatio WRITE setOutAspectRatio NOTIFY outAspectRatioChanged)
-    //fillMode
+
+    // fillMode
     // TODO: how to use enums in base class as property or Q_ENUM
+
     Q_PROPERTY(OutAspectRatioMode outAspectRatioMode READ outAspectRatioMode WRITE setOutAspectRatioMode NOTIFY outAspectRatioModeChanged)
     Q_ENUMS(OutAspectRatioMode)
     Q_PROPERTY(int orientation READ orientation WRITE setOrientation NOTIFY orientationChanged)
@@ -65,7 +68,11 @@ public:
 
     explicit OpenGLWidgetRenderer(QWidget* parent = 0, Qt::WindowFlags f = Qt::WindowFlags(Qt::Widget));
     virtual VideoRendererId id() const Q_DECL_OVERRIDE;
-    virtual QWidget* widget() Q_DECL_OVERRIDE { return this; }
+
+    virtual QWidget* widget() Q_DECL_OVERRIDE
+    {
+        return this;
+    }
 
 Q_SIGNALS:
 
@@ -95,4 +102,4 @@ typedef OpenGLWidgetRenderer VideoRendererOpenGLWidget;
 
 } // namespace QtAV
 
-#endif // QTAV_OPENGLWIDGETRENDERER_H
+#endif // QTAV_WIDGETS_OPENGL_WIDGET_RENDERER_H

@@ -21,8 +21,8 @@
  *
  * ============================================================ */
 
-#ifndef QTAVWIDGETS_GLOBAL_H
-#define QTAVWIDGETS_GLOBAL_H
+#ifndef QTAV_WIDGETS_GLOBAL_H
+#define QTAV_WIDGETS_GLOBAL_H
 
 // Local includes
 
@@ -30,19 +30,21 @@
 #include "digikam_export.h"
 
 #define Q_AVWIDGETS_EXPORT DIGIKAM_EXPORT
+
 /*
 #ifdef BUILD_QTAVWIDGETS_STATIC
-#define Q_AVWIDGETS_EXPORT
+#   define Q_AVWIDGETS_EXPORT
 #else
-#if defined(BUILD_QTAVWIDGETS_LIB)
-#  undef Q_AVWIDGETS_EXPORT
-#  define Q_AVWIDGETS_EXPORT Q_DECL_EXPORT
-#else
-#  undef Q_AVWIDGETS_EXPORT
-#  define Q_AVWIDGETS_EXPORT Q_DECL_IMPORT //only for vc?
-#endif
+#   if defined(BUILD_QTAVWIDGETS_LIB)
+#       undef Q_AVWIDGETS_EXPORT
+#       define Q_AVWIDGETS_EXPORT Q_DECL_EXPORT
+#   else
+#       undef Q_AVWIDGETS_EXPORT
+#       define Q_AVWIDGETS_EXPORT Q_DECL_IMPORT //only for vc?
+#   endif
 #endif //BUILD_QTAVWIDGETS_STATIC
 */
+
 #define Q_AVWIDGETS_PRIVATE_EXPORT Q_AVWIDGETS_EXPORT
 
 #if defined(BUILD_QTAVWIDGETS_LIB)
@@ -79,10 +81,11 @@ extern Q_AVWIDGETS_EXPORT VideoRendererId VideoRendererId_GLWidget2;
 extern Q_AVWIDGETS_EXPORT VideoRendererId VideoRendererId_OpenGLWidget;
 
 // popup a dialog
+
 Q_AVWIDGETS_EXPORT void about();
 Q_AVWIDGETS_EXPORT void aboutFFmpeg();
 Q_AVWIDGETS_EXPORT void aboutQtAV();
 
 } // namespace QtAV
 
-#endif // QTAVWIDGETS_GLOBAL_H
+#endif // QTAV_WIDGETS_GLOBAL_H

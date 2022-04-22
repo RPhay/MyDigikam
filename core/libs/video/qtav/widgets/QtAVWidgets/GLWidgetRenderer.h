@@ -21,8 +21,8 @@
  *
  * ============================================================ */
 
-#ifndef QTAV_GLWIDGET_RENDERER_H
-#define QTAV_GLWIDGET_RENDERER_H
+#ifndef QTAV_WIDGETS_GLWIDGET_RENDERER_H
+#define QTAV_WIDGETS_GLWIDGET_RENDERER_H
 
 #include "QtAVWidgets_Global.h"
 #include "VideoRenderer.h"
@@ -46,9 +46,13 @@ class GLWidgetRendererPrivate;
 
 class Q_AVWIDGETS_EXPORT GLWidgetRenderer : public QGLWidget
                                           , public VideoRenderer
+
 #if QTAV_HAVE(QGLFUNCTIONS) // TODO: why use QT_VERSION will result in moc error?
+
                                           , public QGLFunctions
+
 #endif
+
 {
     Q_OBJECT
     DPTR_DECLARE_PRIVATE(GLWidgetRenderer)
@@ -58,7 +62,11 @@ public:
     GLWidgetRenderer(QWidget* parent = 0, const QGLWidget* shareWidget = 0, Qt::WindowFlags f = Qt::WindowFlags(Qt::Widget));
     virtual VideoRendererId id() const;
     virtual bool isSupported(VideoFormat::PixelFormat pixfmt) const;
-    virtual QWidget* widget() { return this; }
+
+    virtual QWidget* widget()
+    {
+        return this;
+    }
 
 protected:
 
@@ -100,4 +108,4 @@ typedef GLWidgetRenderer VideoRendererGLWidget;
 
 } // namespace QtAV
 
-#endif // QTAV_GLWIDGET_RENDERER_H
+#endif // QTAV_WIDGETS_GLWIDGET_RENDERER_H

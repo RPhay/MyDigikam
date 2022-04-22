@@ -21,8 +21,8 @@
  *
  * ============================================================ */
 
-#ifndef QTAVWIDGETS_VERSION_H
-#define QTAVWIDGETS_VERSION_H
+#ifndef QTAV_WIDGETS_VERSION_H
+#define QTAV_WIDGETS_VERSION_H
 
 #include "QtAV_Version.h"
 
@@ -40,4 +40,4 @@
 /* C++11 requires a space between literal and identifier */
 #define QTAVWIDGETS_VERSION_STR        TOSTR(QTAVWIDGETS_MAJOR) "." TOSTR(QTAVWIDGETS_MINOR) "." TOSTR(QTAVWIDGETS_PATCH)
 
-#endif // QTAVWIDGETS_VERSION_H
+#endif // QTAV_WIDGETS_VERSION_H

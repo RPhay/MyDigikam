@@ -21,8 +21,8 @@
  *
  * ============================================================ */
 
-#ifndef QTAV_QOPENGLWIDGET_H
-#define QTAV_QOPENGLWIDGET_H
+#ifndef QTAV_WIDGETS_QOPENGL_WIDGET_H
+#define QTAV_WIDGETS_QOPENGL_WIDGET_H
 
 #include "QtAVWidgets_Global.h"
 
@@ -48,7 +48,9 @@ class Q_AVWIDGETS_EXPORT QOpenGLWidget : public QWidget
 {
     Q_OBJECT
     Q_DISABLE_COPY(QOpenGLWidget)
+
 public:
+
     explicit QOpenGLWidget(QWidget* parent = 0, Qt::WindowFlags f = Qt::WindowFlags(Qt::Widget));
     virtual ~QOpenGLWidget();
     void setFormat(const QSurfaceFormat &format);
@@ -57,24 +59,31 @@ public:
     void makeCurrent();
     void doneCurrent();
     QOpenGLContext *context() const;
+
 protected:
-    QPaintDevice* redirected(QPoint *offset) const Q_DECL_OVERRIDE;
+
+    QPaintDevice* redirected(QPoint *offset)  const Q_DECL_OVERRIDE;
     virtual void initializeGL();
     virtual void resizeGL(int w, int h);
     virtual void paintGL();
-    void paintEvent(QPaintEvent *e) Q_DECL_OVERRIDE;
-    void resizeEvent(QResizeEvent *e) Q_DECL_OVERRIDE;
+    void paintEvent(QPaintEvent *e)                 Q_DECL_OVERRIDE;
+    void resizeEvent(QResizeEvent *e)               Q_DECL_OVERRIDE;
+
 private:
+
     void initialize();
     void render();
     void invokeUserPaint();
 
-    bool m_initialized;
-    bool m_fakeHidden;
-    QOpenGLContext *m_context;
-    QOpenGLPaintDevice *m_paintDevice;
-    QSurfaceFormat m_requestedFormat;
+private:
+
+    bool                m_initialized;
+    bool                m_fakeHidden;
+    QOpenGLContext*     m_context;
+    QOpenGLPaintDevice* m_paintDevice;
+    QSurfaceFormat      m_requestedFormat;
 };
+
 } // namespace QtAV
 
-#endif //QTAV_QOPENGLWIDGET_H
+#endif //QTAV_WIDGETS_QOPENGL_WIDGET_H

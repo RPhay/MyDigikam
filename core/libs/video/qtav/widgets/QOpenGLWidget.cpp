@@ -29,6 +29,7 @@
 #include <QWindow>
 
 // for dynamicgl. qglfunctions before qt5.3 does not have portable gl functions
+
 #ifdef QT_OPENGL_DYNAMIC
 #   define DYGL(glFunc) QOpenGLContext::currentContext()->functions()->glFunc
 #else
@@ -39,19 +40,27 @@ namespace QtAV
 {
 
 // TODO: is QOpenGLWidgetPaintDevice required?
+
 class QOpenGLWidgetPaintDevice : public QOpenGLPaintDevice
 {
 public:
+
     QOpenGLWidgetPaintDevice(QOpenGLWidget *widget)
-            : QOpenGLPaintDevice()
-            , w(widget)
-    { }
-    void ensureActiveTarget() Q_DECL_OVERRIDE {
-        if (QOpenGLContext::currentContext() != w->context()) {
+        : QOpenGLPaintDevice()
+        , w(widget)
+    {
+    }
+
+    void ensureActiveTarget() Q_DECL_OVERRIDE
+    {
+        if (QOpenGLContext::currentContext() != w->context())
+        {
             w->makeCurrent();
         }
     }
+
 private:
+
     QOpenGLWidget *w;
 };
 
@@ -63,11 +72,17 @@ QOpenGLWidget::QOpenGLWidget(QWidget *parent, Qt::WindowFlags f)
     , m_paintDevice(0)
 {
     setAttribute(Qt::WA_NativeWindow); // ensure windowHandle() is not null
+
     // WA_PaintOnScreen: QWidget::paintEngine: Should no longer be called.  This flag is only supported on X11 and it disables double buffering
+
     //setAttribute(Qt::WA_PaintOnScreen); // enforce native window, so windowHandle() is not null
+
     setAttribute(Qt::WA_NoSystemBackground);
+
     //setAutoFillBackground(true); // for compatibility
+
     // FIXME: why setSurfaceType crash?
+
     //windowHandle()->setSurfaceType(QWindow::OpenGLSurface);
 }
 
@@ -93,14 +108,20 @@ bool QOpenGLWidget::isValid() const
 
 void QOpenGLWidget::makeCurrent()
 {
-    if (!m_initialized) {
+    if (!m_initialized)
+    {
         qCWarning(DIGIKAM_QTAVWIDGETS_LOG_WARN).noquote() << QString::asprintf("QOpenGLWidget: Cannot make uninitialized widget current");
+
         return;
     }
-    if (!windowHandle()) {
+
+    if (!windowHandle())
+    {
         qCWarning(DIGIKAM_QTAVWIDGETS_LOG_WARN).noquote() << QString::asprintf("QOpenGLWidget: No window handle");
+
         return;
     }
+
     m_context->makeCurrent((QSurface*)windowHandle());
 }
 
@@ -108,6 +129,7 @@ void QOpenGLWidget::doneCurrent()
 {
     if (!m_initialized)
         return;
+
     m_context->doneCurrent();
 }
 
@@ -119,13 +141,16 @@ QOpenGLContext *QOpenGLWidget::context() const
 QPaintDevice* QOpenGLWidget::redirected(QPoint *offset) const
 {
     Q_UNUSED(offset);
+
     // TODO: check backing store like Qt does
+
     return m_paintDevice;
 }
 
 void QOpenGLWidget::initializeGL()
 {
 }
+
 void QOpenGLWidget::paintGL()
 {
 }
@@ -139,25 +164,33 @@ void QOpenGLWidget::resizeGL(int w, int h)
 void QOpenGLWidget::paintEvent(QPaintEvent *e)
 {
     Q_UNUSED(e);
+
     if (!m_initialized)
         return;
+
     if (updatesEnabled())
         render();
 }
 
 void QOpenGLWidget::resizeEvent(QResizeEvent *e)
 {
-    if (e->size().isEmpty()) {
+    if (e->size().isEmpty())
+    {
         m_fakeHidden = true;
         return;
     }
+
     m_fakeHidden = false;
     initialize();
+
     if (!m_initialized)
         return;
+
     //recreateFbo();
+
     resizeGL(width(), height());
     invokeUserPaint();
+
     //resolveSamples();
 }
 
@@ -167,33 +200,56 @@ void QOpenGLWidget::initialize()
         return;
 
     QWindow *win = windowHandle();
-    if (!win) {
+
+    if (!win)
+    {
         qCWarning(DIGIKAM_QTAVWIDGETS_LOG_WARN).noquote() << QString::asprintf("QOpenGLWidget: No window handle");
+
         return;
     }
+
     m_context = new QOpenGLContext(this);
+
     // TODO: shareContext()
+
     m_context->setFormat(m_requestedFormat);
-    if (!m_context->create()) {
+
+    if (!m_context->create())
+    {
         qCWarning(DIGIKAM_QTAVWIDGETS_LOG_WARN).noquote() << QString::asprintf("QOpenGLWidget: Failed to create context");
+
         return;
     }
+
     //m_context = QOpenGLContext::currentContext();
-    if (!m_context) {
+
+    if (!m_context)
+    {
         qCWarning(DIGIKAM_QTAVWIDGETS_LOG_WARN).noquote() << QString::asprintf("QOpenGLWidget: QOpenGLContext is null");
+
         return;
     }
-    if (!m_context->makeCurrent(win)) {
+
+    if (!m_context->makeCurrent(win))
+    {
         qCWarning(DIGIKAM_QTAVWIDGETS_LOG_WARN).noquote() << QString::asprintf("QOpenGLWidget: Failed to make context current");
+
         return;
     }
+
     m_paintDevice = new QOpenGLWidgetPaintDevice(this);
+
 #if QT_VERSION >= QT_VERSION_CHECK(5, 1, 0)
+
     m_paintDevice->setSize(size() * devicePixelRatio());
     m_paintDevice->setDevicePixelRatio(devicePixelRatio());
+
 #else
+
     m_paintDevice->setSize(size());
+
 #endif
+
     m_initialized = true;
     initializeGL();
 }
@@ -202,10 +258,14 @@ void QOpenGLWidget::render()
 {
     if (m_fakeHidden || !m_initialized)
         return;
+
     // QOpenGLContext::swapBuffers() called with non-exposed window, behavior is undefined
+
     QWindow *win = windowHandle();
+
     if (!win || !win->isExposed())
         return;
+
     makeCurrent();
     invokeUserPaint();
     m_context->swapBuffers(win);
@@ -214,11 +274,17 @@ void QOpenGLWidget::render()
 void QOpenGLWidget::invokeUserPaint()
 {
 #if QT_VERSION >= QT_VERSION_CHECK(5, 1 , 0)
+
     DYGL(glViewport(0, 0, width()*devicePixelRatio(), height()*devicePixelRatio()));
+
 #else
+
     DYGL(glViewport(0, 0, width(), height()));
+
 #endif
+
     paintGL();
     DYGL(glFlush());
 }
+
 } // namespace QtAV

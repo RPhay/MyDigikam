@@ -21,8 +21,8 @@
  *
  * ============================================================ */
 
-#ifndef QAV_GRAPHICSITEMRENDERER_H
-#define QAV_GRAPHICSITEMRENDERER_H
+#ifndef QTAV_WIDGETS_GRAPHICS_ITEM_RENDERER_H
+#define QTAV_WIDGETS_GRAPHICS_ITEM_RENDERER_H
 
 #include "QtAVWidgets_Global.h"
 #include "QPainterRenderer.h"
@@ -34,6 +34,7 @@
 #endif
 
 // QGraphicsWidget will lose focus forever if TextItem inserted text. Why?
+
 #define CONFIG_GRAPHICSWIDGET 0
 
 #if CONFIG_GRAPHICSWIDGET
@@ -47,9 +48,8 @@ namespace QtAV
 
 class GraphicsItemRendererPrivate;
 
-class Q_AVWIDGETS_EXPORT GraphicsItemRenderer
-    : public GraphicsWidget,
-      public QPainterRenderer
+class Q_AVWIDGETS_EXPORT GraphicsItemRenderer : public GraphicsWidget,
+                                                public QPainterRenderer
 {
     Q_OBJECT
     DPTR_DECLARE_PRIVATE(GraphicsItemRenderer)
@@ -62,8 +62,10 @@ class Q_AVWIDGETS_EXPORT GraphicsItemRenderer
     Q_PROPERTY(QRectF regionOfInterest READ regionOfInterest WRITE setRegionOfInterest NOTIFY regionOfInterestChanged)
     Q_PROPERTY(qreal sourceAspectRatio READ sourceAspectRatio NOTIFY sourceAspectRatioChanged)
     Q_PROPERTY(qreal outAspectRatio READ outAspectRatio WRITE setOutAspectRatio NOTIFY outAspectRatioChanged)
-    //fillMode
+
+    // fillMode
     // TODO: how to use enums in base class as property or Q_ENUM
+
     Q_PROPERTY(OutAspectRatioMode outAspectRatioMode READ outAspectRatioMode WRITE setOutAspectRatioMode NOTIFY outAspectRatioModeChanged)
     Q_ENUMS(OutAspectRatioMode)
     Q_PROPERTY(int orientation READ orientation WRITE setOrientation NOTIFY orientationChanged)
@@ -74,12 +76,19 @@ class Q_AVWIDGETS_EXPORT GraphicsItemRenderer
 public:
 
     GraphicsItemRenderer(QGraphicsItem * parent = 0);
-    VideoRendererId id() const Q_DECL_OVERRIDE;
+    VideoRendererId id()                              const Q_DECL_OVERRIDE;
     bool isSupported(VideoFormat::PixelFormat pixfmt) const Q_DECL_OVERRIDE;
 
-    QRectF boundingRect() const Q_DECL_OVERRIDE;
-    void paint(QPainter *painter, const QStyleOptionGraphicsItem *option, QWidget *widget) Q_DECL_OVERRIDE;
-    QGraphicsItem* graphicsItem() Q_DECL_OVERRIDE { return this; }
+    QRectF boundingRect()                             const Q_DECL_OVERRIDE;
+
+    void paint(QPainter *painter,
+                const QStyleOptionGraphicsItem *option,
+                QWidget *widget)                            Q_DECL_OVERRIDE;
+
+    QGraphicsItem* graphicsItem()                           Q_DECL_OVERRIDE
+    {
+        return this;
+    }
 
     /*!
      * \brief isOpenGL
@@ -89,53 +98,60 @@ public:
     bool isOpenGL() const;
     void setOpenGL(bool o);
 
-    OpenGLVideo* opengl() const Q_DECL_OVERRIDE;
+    OpenGLVideo* opengl() const                             Q_DECL_OVERRIDE;
 
 Q_SIGNALS:
 
-    void sourceAspectRatioChanged(qreal value) Q_DECL_OVERRIDE Q_DECL_FINAL;
-    void regionOfInterestChanged() Q_DECL_OVERRIDE;
-    void outAspectRatioChanged() Q_DECL_OVERRIDE;
-    void outAspectRatioModeChanged() Q_DECL_OVERRIDE;
-    void brightnessChanged(qreal value) Q_DECL_OVERRIDE;
-    void contrastChanged(qreal) Q_DECL_OVERRIDE;
-    void hueChanged(qreal) Q_DECL_OVERRIDE;
-    void saturationChanged(qreal) Q_DECL_OVERRIDE;
-    void backgroundColorChanged() Q_DECL_OVERRIDE;
-    void orientationChanged() Q_DECL_OVERRIDE;
-    void videoRectChanged() Q_DECL_OVERRIDE;
-    void videoFrameSizeChanged() Q_DECL_OVERRIDE;
+    void sourceAspectRatioChanged(qreal value)              Q_DECL_OVERRIDE Q_DECL_FINAL;
+    void regionOfInterestChanged()                          Q_DECL_OVERRIDE;
+    void outAspectRatioChanged()                            Q_DECL_OVERRIDE;
+    void outAspectRatioModeChanged()                        Q_DECL_OVERRIDE;
+    void brightnessChanged(qreal value)                     Q_DECL_OVERRIDE;
+    void contrastChanged(qreal)                             Q_DECL_OVERRIDE;
+    void hueChanged(qreal)                                  Q_DECL_OVERRIDE;
+    void saturationChanged(qreal)                           Q_DECL_OVERRIDE;
+    void backgroundColorChanged()                           Q_DECL_OVERRIDE;
+    void orientationChanged()                               Q_DECL_OVERRIDE;
+    void videoRectChanged()                                 Q_DECL_OVERRIDE;
+    void videoFrameSizeChanged()                            Q_DECL_OVERRIDE;
     void openGLChanged();
 
 protected:
 
     GraphicsItemRenderer(GraphicsItemRendererPrivate& d, QGraphicsItem *parent);
 
-    bool receiveFrame(const VideoFrame& frame) Q_DECL_OVERRIDE;
-    void drawBackground() Q_DECL_OVERRIDE;
-    //draw the current frame using the current paint engine. called by paintEvent()
-    void drawFrame() Q_DECL_OVERRIDE;
+    bool receiveFrame(const VideoFrame& frame)              Q_DECL_OVERRIDE;
+    void drawBackground()                                   Q_DECL_OVERRIDE;
+
+    // draw the current frame using the current paint engine. called by paintEvent()
+
+    void drawFrame()                                        Q_DECL_OVERRIDE;
 
 #if CONFIG_GRAPHICSWIDGET
-    bool event(QEvent *event) Q_DECL_OVERRIDE;
+
+    bool event(QEvent *event)                               Q_DECL_OVERRIDE;
+
 #else
-    bool event(QEvent *event) Q_DECL_OVERRIDE;
+
+    bool event(QEvent *event)                               Q_DECL_OVERRIDE;
+
     //bool sceneEvent(QEvent *event) Q_DECL_OVERRIDE;
-#endif // CONFIG_GRAPHICSWIDGET
+
+#endif
 
 private:
 
-    void onSetOutAspectRatioMode(OutAspectRatioMode mode) Q_DECL_OVERRIDE;
-    void onSetOutAspectRatio(qreal ratio) Q_DECL_OVERRIDE;
-    bool onSetOrientation(int value) Q_DECL_OVERRIDE;
-    bool onSetBrightness(qreal b) Q_DECL_OVERRIDE;
-    bool onSetContrast(qreal c) Q_DECL_OVERRIDE;
-    bool onSetHue(qreal h) Q_DECL_OVERRIDE;
-    bool onSetSaturation(qreal s) Q_DECL_OVERRIDE;
+    void onSetOutAspectRatioMode(OutAspectRatioMode mode)   Q_DECL_OVERRIDE;
+    void onSetOutAspectRatio(qreal ratio)                   Q_DECL_OVERRIDE;
+    bool onSetOrientation(int value)                        Q_DECL_OVERRIDE;
+    bool onSetBrightness(qreal b)                           Q_DECL_OVERRIDE;
+    bool onSetContrast(qreal c)                             Q_DECL_OVERRIDE;
+    bool onSetHue(qreal h)                                  Q_DECL_OVERRIDE;
+    bool onSetSaturation(qreal s)                           Q_DECL_OVERRIDE;
 };
 
 typedef GraphicsItemRenderer VideoRendererGraphicsItem;
 
 } // namespace QtAV
 
-#endif // QAV_GRAPHICSITEMRENDERER_H
+#endif // QTAV_WIDGETS_GRAPHICS_ITEM_RENDERER_H

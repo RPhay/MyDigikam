@@ -22,7 +22,6 @@
  * ============================================================ */
 
 #include "WidgetRenderer.h"
-#include "QPainterRenderer_p.h"
 
 // Qt includes
 
@@ -33,6 +32,7 @@
 
 // Local includes
 
+#include "QPainterRenderer_p.h"
 #include "Filter.h"
 #include "digikam_debug.h"
 
@@ -42,6 +42,7 @@ namespace QtAV
 class WidgetRendererPrivate : public QPainterRendererPrivate
 {
 public:
+
     virtual ~WidgetRendererPrivate(){}
 };
 
@@ -50,13 +51,16 @@ VideoRendererId WidgetRenderer::id() const
     return VideoRendererId_Widget;
 }
 
-WidgetRenderer::WidgetRenderer(QWidget *parent, Qt::WindowFlags f) :
-    QWidget(parent, f),QPainterRenderer(*new WidgetRendererPrivate())
+WidgetRenderer::WidgetRenderer(QWidget *parent, Qt::WindowFlags f)
+    : QWidget(parent, f),
+      QPainterRenderer(*new WidgetRendererPrivate())
 {
     DPTR_D(WidgetRenderer);
+
     d.painter = new QPainter();
     setAcceptDrops(true);
     setFocusPolicy(Qt::StrongFocus);
+
     /* To rapidly update custom widgets that constantly paint over their entire areas with
      * opaque content, e.g., video streaming widgets, it is better to set the widget's
      * Qt::WA_OpaquePaintEvent, avoiding any unnecessary overhead associated with repainting the
@@ -65,24 +69,33 @@ WidgetRenderer::WidgetRenderer(QWidget *parent, Qt::WindowFlags f) :
     setAttribute(Qt::WA_OpaquePaintEvent);
     setAutoFillBackground(false);
     QPainterFilterContext *ctx = static_cast<QPainterFilterContext*>(d.filter_context);
-    if (ctx) {
+
+    if (ctx)
+    {
         ctx->painter = d.painter;
-    } else {
+    }
+    else
+    {
         qCWarning(DIGIKAM_QTAVWIDGETS_LOG_WARN).noquote() << QString::asprintf("FilterContext not available!");
     }
 }
 
 WidgetRenderer::WidgetRenderer(WidgetRendererPrivate &d, QWidget *parent, Qt::WindowFlags f)
-    :QWidget(parent, f),QPainterRenderer(d)
+    : QWidget(parent, f),
+      QPainterRenderer(d)
 {
     d.painter = new QPainter();
     setAcceptDrops(true);
     setFocusPolicy(Qt::StrongFocus);
     setAutoFillBackground(false);
     QPainterFilterContext *ctx = static_cast<QPainterFilterContext*>(d.filter_context);
-    if (ctx) {
+
+    if (ctx)
+    {
         ctx->painter = d.painter;
-    } else {
+    }
+    else
+    {
         qCWarning(DIGIKAM_QTAVWIDGETS_LOG_WARN).noquote() << QString::asprintf("FilterContext not available!");
     }
 }
@@ -91,18 +104,21 @@ bool WidgetRenderer::receiveFrame(const VideoFrame &frame)
 {
     preparePixmap(frame);
     updateUi();
+
     /*
      * workaround for the widget not updated if has parent. don't know why it works and why update() can't
      * Thanks to Vito Covito and Carlo Scarpato
      * Now it's fixed by posting a QUpdateLaterEvent
      */
     Q_EMIT imageReady();
+
     return true;
 }
 
 void WidgetRenderer::resizeEvent(QResizeEvent *e)
 {
     DPTR_D(WidgetRenderer);
+
     d.update_background = true;
     resizeRenderer(e->size());
     update();
@@ -111,8 +127,10 @@ void WidgetRenderer::resizeEvent(QResizeEvent *e)
 void WidgetRenderer::paintEvent(QPaintEvent *)
 {
     DPTR_D(WidgetRenderer);
-    d.painter->begin(this); //Widget painting can only begin as a result of a paintEvent
+
+    d.painter->begin(this); // Widget painting can only begin as a result of a paintEvent
     handlePaintEvent();
+
     if (d.painter->isActive())
         d.painter->end();
 }
@@ -121,6 +139,7 @@ bool WidgetRenderer::onSetOrientation(int value)
 {
     Q_UNUSED(value);
     update();
+
     return true;
 }
 

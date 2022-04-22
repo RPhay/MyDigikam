@@ -73,6 +73,7 @@ VideoRendererId VideoRendererId_XV = mkid::id32base36_6<'X', 'V', 'i', 'd', 'e',
 VideoRendererId VideoRendererId_X11 = mkid::id32base36_3<'X', '1', '1'>::value;
 
 // QPainterRenderer is abstract. So can not register(operator new will needed)
+
 #if AUTO_REGISTER
 
 FACTORY_REGISTER(VideoRenderer, Widget, "QWidegt")
@@ -83,18 +84,18 @@ FACTORY_REGISTER(VideoRenderer, GraphicsItem, "QGraphicsItem")
 
 FACTORY_REGISTER(VideoRenderer, GLWidget, "QGLWidegt")
 
-#       endif //QTAV_HAVE(GL1)
+#       endif
 
 FACTORY_REGISTER(VideoRenderer, GLWidget2, "QGLWidegt2")
 
-#   endif //QTAV_HAVE(GL)
+#   endif
 
 #   if QT_VERSION >= QT_VERSION_CHECK(5, 0, 0)
 #       ifndef QT_NO_OPENGL
 
 FACTORY_REGISTER(VideoRenderer, OpenGLWidget, "OpenGLWidget")
 
-#       endif //QT_NO_OPENGL
+#       endif
 #   endif
 #endif
 
@@ -108,11 +109,15 @@ namespace Widgets
 
 void registerRenderers()
 {
+
 #if !defined(QT_NO_DEBUG)
+
     qCDebug(DIGIKAM_QTAVWIDGETS_LOG).noquote() << QString::asprintf("registerRenderers...........");
+
 #endif
 
     // check whether it is called
+
     static bool initialized = false;
 
     if (initialized)
@@ -121,40 +126,55 @@ void registerRenderers()
     initialized = true;
 
     // factory.h does not check whether an id is registered
+
     if (VideoRenderer::name(VideoRendererId_Widget))
         return;
 
 #if QT_VERSION >= QT_VERSION_CHECK(5, 4, 0)
 #   ifndef QT_NO_OPENGL
+
     VideoRenderer::Register<OpenGLWidgetRenderer>(VideoRendererId_OpenGLWidget, "OpenGLWidget");
-#   endif //QT_NO_OPENGL
+
+#   endif
 #endif
 
 #if QTAV_HAVE(GL)
+
     VideoRenderer::Register<GLWidgetRenderer2>(VideoRendererId_GLWidget2, "QGLWidget2");
-#endif //QTAV_HAVE(GL)
+
+#endif
 
 #if QTAV_HAVE(GL1)
+
     VideoRenderer::Register<GLWidgetRenderer>(VideoRendererId_GLWidget, "QGLWidget");
-#endif //QTAV_HAVE(GL1)
+
+#endif
 
     VideoRenderer::Register<WidgetRenderer>(VideoRendererId_Widget, "Widget");
 
 #if QTAV_HAVE(GDIPLUS)
+
     RegisterVideoRendererGDI_Man();
-#endif //QTAV_HAVE(GDIPLUS)
+
+#endif
 
 #if QTAV_HAVE(DIRECT2D)
+
     RegisterVideoRendererDirect2D_Man();
-#endif //QTAV_HAVE(DIRECT2D)
+
+#endif
 
 #if QTAV_HAVE(XV)
+
     RegisterVideoRendererXV_Man();
-#endif //QTAV_HAVE(XV)
+
+#endif
 
 #if QTAV_HAVE(X11)
+
     RegisterVideoRendererX11_Man();
-#endif //QTAV_HAVE(XV)
+
+#endif
 
     VideoRenderer::Register<GraphicsItemRenderer>(VideoRendererId_GraphicsItem, "GraphicsItem");
 }
@@ -175,6 +195,7 @@ namespace
 void about()
 {
     // we should use new because a qobject will delete it's children
+
     QTextBrowser *viewQtAV = new QTextBrowser;
     QTextBrowser *viewFFmpeg = new QTextBrowser;
     viewQtAV->setOpenExternalLinks(true);

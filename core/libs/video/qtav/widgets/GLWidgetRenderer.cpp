@@ -99,9 +99,13 @@ static const char kVertexShader[] =
     "}\n";
 
 class GLWidgetRendererPrivate : public VideoRendererPrivate
+
 #if QTAV_HAVE(QGLFUNCTIONS)
+
                               , public QGLFunctions
+
 #endif
+
 {
 public:
 
@@ -123,8 +127,10 @@ public:
       , video_format(VideoFormat::Format_Invalid)
       , material_type(0)
     {
-        if (QGLFormat::openGLVersionFlags() == QGLFormat::OpenGL_Version_None) {
+        if (QGLFormat::openGLVersionFlags() == QGLFormat::OpenGL_Version_None)
+        {
             available = false;
+
             return;
         }
 
@@ -157,9 +163,13 @@ public:
     bool initWithContext(const QGLContext *ctx)
     {
         Q_UNUSED(ctx);
+
 #if !NO_QGL_SHADER
+
         shader_program = new QGLShaderProgram(ctx, 0);
+
 #endif
+
         return true;
     }
 
@@ -191,8 +201,11 @@ public:
 
                 // FIXME: GL_LINEAR_MIPMAP_LINEAR+GL_LINEAR=white screen?
                 // texture zoom out
+
                 glTexParameteri(GL_TEXTURE_2D, GL_TEXTURE_MIN_FILTER, GL_LINEAR);
+
                 // texture zoom in
+
                 glTexParameteri(GL_TEXTURE_2D, GL_TEXTURE_MAG_FILTER, GL_LINEAR);
 
 #ifndef QT_OPENGL_ES_2
@@ -201,7 +214,9 @@ public:
                 {
                     glHint(GL_POINT_SMOOTH_HINT, GL_NICEST);
                     glHint(GL_LINE_SMOOTH_HINT, GL_NICEST);
+
                     //glHint(GL_POLYGON_SMOOTH_HINT, GL_NICEST);
+
                     glHint(GL_PERSPECTIVE_CORRECTION_HINT, GL_NICEST);
                 }
 #endif
@@ -218,7 +233,9 @@ public:
                 {
                     glHint(GL_POINT_SMOOTH_HINT, GL_FASTEST);
                     glHint(GL_LINE_SMOOTH_HINT, GL_FASTEST);
+
                     //glHint(GL_POLYGON_SMOOTH_HINT, GL_FASTEST);
+
                     glHint(GL_PERSPECTIVE_CORRECTION_HINT, GL_FASTEST);
                 }
 #endif
@@ -227,7 +244,7 @@ public:
         default:
 
                 glTexParameteri(GL_TEXTURE_2D, GL_TEXTURE_MIN_FILTER, GL_NEAREST);
-                glTexParameteri(GL_TEXTURE_2D, GL_TEXTURE_MAG_FILTER, GL_LINEAR); //GL_NEAREST
+                glTexParameteri(GL_TEXTURE_2D, GL_TEXTURE_MAG_FILTER, GL_LINEAR); // GL_NEAREST
 
 #ifndef QT_OPENGL_ES_2
 
@@ -235,7 +252,9 @@ public:
                 {
                     glHint(GL_POINT_SMOOTH_HINT, GL_DONT_CARE);
                     glHint(GL_LINE_SMOOTH_HINT, GL_DONT_CARE);
+
                     //glHint(GL_POLYGON_SMOOTH_HINT, GL_DONT_CARE);
+
                     glHint(GL_PERSPECTIVE_CORRECTION_HINT, GL_DONT_CARE);
                 }
 #endif
@@ -284,10 +303,10 @@ public:
 
     void updateShaderIfNeeded();
 
-    bool hasGLSL;
-    bool update_texcoords;
-    QVector<GLuint> textures; // texture ids. size is plane count
-    QVector<QSize> texture_size;
+    bool                hasGLSL;
+    bool                update_texcoords;
+    QVector<GLuint>     textures; // texture ids. size is plane count
+    QVector<QSize>      texture_size;
 
     /*
      * actually if render a full frame, only plane 0 is enough. other planes are the same as texture size.
@@ -296,34 +315,35 @@ public:
      * 1. y/u is not an integer because of alignment. then padding size of y < padding size of u, and effective size y/u != texture size y/u
      * 2. odd size. enlarge y
      */
-    QVector<QSize> texture_upload_size;
+    QVector<QSize>      texture_upload_size;
 
-    QVector<int> effective_tex_width; // without additional width for alignment
-    qreal effective_tex_width_ratio;
-    QVector<GLint> internal_format;
-    QVector<GLenum> data_format;
-    QVector<GLenum> data_type;
-    QGLShaderProgram *shader_program;
-    GLuint program;
-    GLuint vert, frag;
-    GLint a_Position;
-    GLint a_TexCoords;
-    QVector<GLint> u_Texture; // u_TextureN uniform. size is channel count
-    GLint u_matrix;
-    GLint u_colorMatrix;
-    GLint u_bpp;
-    GLint u_opacity;
+    QVector<int>        effective_tex_width; // without additional width for alignment
+    qreal               effective_tex_width_ratio;
+    QVector<GLint>      internal_format;
+    QVector<GLenum>     data_format;
+    QVector<GLenum>     data_type;
+    QGLShaderProgram*   shader_program;
+    GLuint              program;
+    GLuint              vert, frag;
+    GLint               a_Position;
+    GLint               a_TexCoords;
+    QVector<GLint>      u_Texture;      // u_TextureN uniform. size is channel count
+    GLint               u_matrix;
+    GLint               u_colorMatrix;
+    GLint               u_bpp;
+    GLint               u_opacity;
 
-    QPainter *painter;
+    QPainter*           painter;
 
-    VideoFormat video_format;
-    QSize plane0Size;
+    VideoFormat         video_format;
+    QSize               plane0Size;
 
     // width is in bytes. different alignments may result in different plane 1 linesize even if plane 0 are the same
-    int plane1_linesize;
-    ColorTransform colorTransform;
-    QMatrix4x4 mpv_matrix;
-    VideoMaterialType *material_type;
+
+    int                 plane1_linesize;
+    ColorTransform      colorTransform;
+    QMatrix4x4          mpv_matrix;
+    VideoMaterialType*  material_type;
 };
 
 // http://www.opengl.org/wiki/GLSL#Error_Checking
@@ -539,7 +559,7 @@ bool GLWidgetRendererPrivate::prepareShaderProgram(const VideoFormat &fmt, Color
             frag.prepend("#define LA_16BITS_LE\n");
     }
 
-    if (cs == ColorTransform::BT601)
+    if      (cs == ColorTransform::BT601)
     {
         frag.prepend("#define CS_BT601\n");
     }
@@ -560,11 +580,11 @@ bool GLWidgetRendererPrivate::prepareShaderProgram(const VideoFormat &fmt, Color
 
     // vertex shader. we can set attribute locations calling glBindAttribLocation
 
-    a_Position = glGetAttribLocation(program, "a_Position");
+    a_Position  = glGetAttribLocation(program, "a_Position");
     a_TexCoords = glGetAttribLocation(program, "a_TexCoords");
-    u_matrix = glGetUniformLocation(program, "u_MVP_matrix");
-    u_bpp = glGetUniformLocation(program, "u_bpp");
-    u_opacity = glGetUniformLocation(program, "u_opacity");
+    u_matrix    = glGetUniformLocation(program, "u_MVP_matrix");
+    u_bpp       = glGetUniformLocation(program, "u_bpp");
+    u_opacity   = glGetUniformLocation(program, "u_opacity");
 
     // fragment shader
 
@@ -592,11 +612,11 @@ bool GLWidgetRendererPrivate::prepareShaderProgram(const VideoFormat &fmt, Color
 
     // vertex shader
 
-    a_Position = shader_program->attributeLocation("a_Position");
+    a_Position  = shader_program->attributeLocation("a_Position");
     a_TexCoords = shader_program->attributeLocation("a_TexCoords");
-    u_matrix = shader_program->uniformLocation("u_MVP_matrix");
-    u_bpp = shader_program->uniformLocation("u_bpp");
-    u_opacity = shader_program->uniformLocation("u_opacity");
+    u_matrix    = shader_program->uniformLocation("u_MVP_matrix");
+    u_bpp       = shader_program->uniformLocation("u_bpp");
+    u_opacity   = shader_program->uniformLocation("u_opacity");
 
     // fragment shader
 
@@ -691,12 +711,13 @@ bool GLWidgetRendererPrivate::initTextures(const VideoFormat &fmt)
         if (!OpenGLHelper::videoFormatToGL(fmt, &internal_fmt, &data_fmt, &data_t))
         {
             qCWarning(DIGIKAM_QTAVWIDGETS_LOG_WARN).noquote() << QString::asprintf("no opengl format found");
+
             return false;
         }
 
         internal_format = QVector<GLint>(fmt.planeCount(), internal_fmt);
-        data_format = QVector<GLenum>(fmt.planeCount(), data_fmt);
-        data_type = QVector<GLenum>(fmt.planeCount(), data_t);
+        data_format     = QVector<GLenum>(fmt.planeCount(), data_fmt);
+        data_type       = QVector<GLenum>(fmt.planeCount(), data_t);
     }
     else
     {
@@ -711,6 +732,7 @@ bool GLWidgetRendererPrivate::initTextures(const VideoFormat &fmt)
              * so if NV12 use GL_LUMINANCE_ALPHA, YV12 use GL_ALPHA
              */
             qCDebug(DIGIKAM_QTAVWIDGETS_LOG).noquote() << QString::asprintf("///////////bpp %d", fmt.bytesPerPixel());
+
             internal_format[0] = data_format[0] = GL_LUMINANCE; //or GL_RED for GL
 
             if (fmt.planeCount() == 2)
@@ -743,6 +765,7 @@ bool GLWidgetRendererPrivate::initTextures(const VideoFormat &fmt)
         else
         {
             //glPixelStorei(GL_UNPACK_ALIGNMENT, fmt.bytesPerPixel());
+
             // TODO: if no alpha, data_fmt is not GL_BGRA. align at every upload?
         }
     }
@@ -757,7 +780,7 @@ bool GLWidgetRendererPrivate::initTextures(const VideoFormat &fmt)
         }
 
         int bpp_gl = OpenGLHelper::bytesOfGLFormat(data_format[i], data_type[i]);
-        int pad = qCeil((qreal)(texture_size[i].width() - effective_tex_width[i])/(qreal)bpp_gl);
+        int pad    = qCeil((qreal)(texture_size[i].width() - effective_tex_width[i])/(qreal)bpp_gl);
         texture_size[i].setWidth(qCeil((qreal)texture_size[i].width()/(qreal)bpp_gl));
         texture_upload_size[i].setWidth(qCeil((qreal)texture_upload_size[i].width()/(qreal)bpp_gl));
         effective_tex_width[i] /= bpp_gl; // fmt.bytesPerPixel(i);
@@ -808,7 +831,7 @@ bool GLWidgetRendererPrivate::initTextures(const VideoFormat &fmt)
 void GLWidgetRendererPrivate::updateTexturesIfNeeded()
 {
     const VideoFormat &fmt = video_frame.format();
-    bool update_textures = false;
+    bool update_textures   = false;
 
     if (fmt != video_format)
     {
@@ -825,7 +848,7 @@ void GLWidgetRendererPrivate::updateTexturesIfNeeded()
 
         // no need to check height if plane 0 sizes are equal?
 
-        update_textures = true;
+        update_textures     = true;
         qCDebug(DIGIKAM_QTAVWIDGETS_LOG).noquote() << QString::asprintf("---------------------update texture: %dx%d, %s", video_frame.width(), video_frame.height(), video_frame.format().name().toUtf8().constData());
         const int nb_planes = fmt.planeCount();
         texture_size.resize(nb_planes);
@@ -840,7 +863,7 @@ void GLWidgetRendererPrivate::updateTexturesIfNeeded()
 
             // we have to consider size of opengl format. set bytesPerLine here and change to width later
 
-            texture_size[i] = QSize(video_frame.bytesPerLine(i), video_frame.planeHeight(i));
+            texture_size[i]        = QSize(video_frame.bytesPerLine(i), video_frame.planeHeight(i));
             texture_upload_size[i] = texture_size[i];
             effective_tex_width[i] = video_frame.effectiveBytesPerLine(i); //store bytes here, modify as width later
 
@@ -957,27 +980,27 @@ void GLWidgetRendererPrivate::uploadPlane(int p, GLint internalFormat, GLenum fo
     if (ROI_TEXCOORDS || roi.size() == video_frame.size())
     {
         glTexSubImage2D(GL_TEXTURE_2D
-                     , 0                                // level
-                     , 0                                // xoffset
-                     , 0                                // yoffset
-                     , texture_upload_size[p].width()
-                     , texture_upload_size[p].height()
-                     , format                           // format, must the same as internal format?
-                     , data_type[p]
-                     , video_frame.bits(p));
+                        , 0                                // level
+                        , 0                                // xoffset
+                        , 0                                // yoffset
+                        , texture_upload_size[p].width()
+                        , texture_upload_size[p].height()
+                        , format                           // format, must the same as internal format?
+                        , data_type[p]
+                        , video_frame.bits(p));
     }
     else
     {
-        int roi_x = roi.x();
-        int roi_y = roi.y();
-        int roi_w = roi.width();
-        int roi_h = roi.height();
-        int plane_w = video_frame.planeWidth(p);
+        int roi_x       = roi.x();
+        int roi_y       = roi.y();
+        int roi_w       = roi.width();
+        int roi_h       = roi.height();
+        int plane_w     = video_frame.planeWidth(p);
         VideoFormat fmt = video_frame.format();
 
         if (p == 0)
         {
-            plane0Size = QSize(roi_w, roi_h); //
+            plane0Size = QSize(roi_w, roi_h);
         }
         else
         {
@@ -1028,8 +1051,8 @@ void GLWidgetRendererPrivate::uploadPlane(int p, GLint internalFormat, GLenum fo
 #else
 
         int line_size = roi_w*fmt.bytesPerPixel(p);
-        char *sub = (char*)malloc(roi_h*line_size);
-        char *dst = sub;
+        char *sub     = (char*)malloc(roi_h*line_size);
+        char *dst     = sub;
 
         for (int y = 0 ; y < roi_h ; y++)
         {
@@ -1152,9 +1175,9 @@ void GLWidgetRenderer::drawFrame()
 
 #if ROI_TEXCOORDS
 
-/*!
-  tex coords: ROI/frameRect()*effective_tex_width_ratio
-*/
+    /*!
+     * tex coords: ROI/frameRect()*effective_tex_width_ratio
+     */
 
     const GLfloat kTexCoords[] =
     {
