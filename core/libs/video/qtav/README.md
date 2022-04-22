@@ -16,6 +16,7 @@ x Use KDE i18n() instead tr().
 x Use cmake to find libuchardet dependency.
 x Add SSE2 and SSE4.1 support with CMake.
 x Remove QML support.
+x Remove IPP compiler suport.
 x Fix compilation under native Windows without DirectX (OpenGL).
 x Fix compilation under FreeBSD.
 x Use cmake to find X11 and XV dependencies.

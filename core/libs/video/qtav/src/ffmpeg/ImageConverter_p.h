@@ -21,19 +21,28 @@
  *
  * ============================================================ */
 
-#ifndef QTAV_IMAGECONVERTER_P_H
-#define QTAV_IMAGECONVERTER_P_H
+#ifndef QTAV_IMAGE_CONVERTER_P_H
+#define QTAV_IMAGE_CONVERTER_P_H
+
+#include "ImageConverter.h"
+
+// Qt includes
+
+#include <QVector>
+
+// Local includee
 
 #include "AVCompat.h"
-#include <QVector>
 
 namespace QtAV
 {
 
 class ImageConverter;
+
 class ImageConverterPrivate : public DPtrPrivate<ImageConverter>
 {
 public:
+
     ImageConverterPrivate()
         : w_in(0),h_in(0)
         , w_out(0),h_out(0)
@@ -50,21 +59,25 @@ public:
         bits.reserve(8);
         pitchs.reserve(8);
     }
-    virtual bool setupColorspaceDetails(bool force = true) {
+
+    virtual bool setupColorspaceDetails(bool force = true)
+    {
         Q_UNUSED(force);
+
         return true;
     }
 
-    int w_in, h_in, w_out, h_out;
-    AVPixelFormat fmt_in, fmt_out;
-    ColorRange range_in, range_out;
-    int brightness, contrast, saturation;
-    bool update_data;
-    int out_offset;
-    QByteArray data_out;
+    int              w_in, h_in, w_out, h_out;
+    AVPixelFormat    fmt_in, fmt_out;
+    ColorRange       range_in, range_out;
+    int              brightness, contrast, saturation;
+    bool             update_data;
+    int              out_offset;
+    QByteArray       data_out;
     QVector<quint8*> bits;
-    QVector<int> pitchs;
+    QVector<int>     pitchs;
 };
 
 } // namespace QtAV
-#endif // QTAV_IMAGECONVERTER_P_H
+
+#endif // QTAV_IMAGE_CONVERTER_P_H

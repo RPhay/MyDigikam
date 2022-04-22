@@ -21,8 +21,10 @@
  *
  * ============================================================ */
 
-#include "ImageConverter.h"
 #include "ImageConverter_p.h"
+
+// Local includes
+
 #include "AVCompat.h"
 #include "QtAV_mkid.h"
 #include "QtAV_factory.h"
@@ -30,26 +32,34 @@
 
 namespace QtAV
 {
+
 ImageConverterId ImageConverterId_FF = mkid::id32base36_6<'F', 'F', 'm', 'p', 'e', 'g'>::value;
+
 FACTORY_REGISTER(ImageConverter, FF, "FFmpeg")
 
-class ImageConverterFFPrivate Q_DECL_FINAL: public ImageConverterPrivate
+class ImageConverterFFPrivate Q_DECL_FINAL : public ImageConverterPrivate
 {
 public:
+
     ImageConverterFFPrivate()
         : sws_ctx(0)
         , update_eq(true)
-    {}
-    ~ImageConverterFFPrivate() {
-        if (sws_ctx) {
+    {
+    }
+
+    ~ImageConverterFFPrivate()
+    {
+        if (sws_ctx)
+        {
             sws_freeContext(sws_ctx);
             sws_ctx = 0;
         }
     }
+
     virtual bool setupColorspaceDetails(bool force = true) Q_DECL_FINAL;
 
     SwsContext *sws_ctx;
-    bool update_eq;
+    bool        update_eq;
 };
 
 ImageConverterFF::ImageConverterFF()
@@ -61,66 +71,98 @@ bool ImageConverterFF::check() const
 {
     if (!ImageConverter::check())
         return false;
+
     DPTR_D(const ImageConverterFF);
-    if (sws_isSupportedInput((AVPixelFormat)d.fmt_in) <= 0) {
+
+    if (sws_isSupportedInput((AVPixelFormat)d.fmt_in) <= 0)
+    {
         qCWarning(DIGIKAM_QTAV_LOG_WARN).noquote() << QString::asprintf("Input pixel format not supported (%s)", av_get_pix_fmt_name((AVPixelFormat)d.fmt_in));
+
         return false;
     }
-    if (sws_isSupportedOutput((AVPixelFormat)d.fmt_out) <= 0) {
+
+    if (sws_isSupportedOutput((AVPixelFormat)d.fmt_out) <= 0)
+    {
         qCWarning(DIGIKAM_QTAV_LOG_WARN).noquote() << QString::asprintf("Output pixel format not supported (%s)", av_get_pix_fmt_name((AVPixelFormat)d.fmt_out));
+
         return false;
     }
+
     return true;
 }
 
 bool ImageConverterFF::convert(const quint8 *const src[], const int srcStride[], quint8 *const dst[], const int dstStride[])
 {
     DPTR_D(ImageConverterFF);
-    //Check out dimension. equals to in dimension if not setted. TODO: move to another common func
-    if (d.w_out == 0 || d.h_out == 0) {
+
+    // Check out dimension. equals to in dimension if not setted. TODO: move to another common func
+
+    if (d.w_out == 0 || d.h_out == 0)
+    {
         if (d.w_in == 0 || d.h_in == 0)
             return false;
+
         setOutSize(d.w_in, d.h_in);
     }
-//TODO: move those code to prepare()
+
+    // TODO: move those code to prepare()
+
     d.sws_ctx = sws_getCachedContext(d.sws_ctx
             , d.w_in, d.h_in, (AVPixelFormat)d.fmt_in
             , d.w_out, d.h_out, (AVPixelFormat)d.fmt_out
-            , (d.w_in == d.w_out && d.h_in == d.h_out) ? SWS_POINT : SWS_FAST_BILINEAR //SWS_BICUBIC
+            , (d.w_in == d.w_out && d.h_in == d.h_out) ? SWS_POINT : SWS_FAST_BILINEAR // SWS_BICUBIC
             , NULL, NULL, NULL
-            );
+    );
+
     //int64_t flags = SWS_CPU_CAPS_SSE2 | SWS_CPU_CAPS_MMX | SWS_CPU_CAPS_MMX2;
+
     //av_opt_set_int(d.sws_ctx, "sws_flags", flags, 0);
+
     if (!d.sws_ctx)
         return false;
+
     d.setupColorspaceDetails(false);
     int result_h = sws_scale(d.sws_ctx, src, srcStride, 0, d.h_in, dst, dstStride);
-    if (result_h != d.h_out) {
+
+    if (result_h != d.h_out)
+    {
         qCDebug(DIGIKAM_QTAV_LOG).noquote() << QString::asprintf("convert failed: %d, %d", result_h, d.h_out);
+
         return false;
     }
+
     Q_UNUSED(result_h);
-    for (int i = 0; i < d.pitchs.size(); ++i) {
-        d.bits[i] = dst[i];
+
+    for (int i = 0; i < d.pitchs.size(); ++i)
+    {
+        d.bits[i]   = dst[i];
         d.pitchs[i] = dstStride[i];
     }
+
     return true;
 }
 
 bool ImageConverterFFPrivate::setupColorspaceDetails(bool force)
 {
-    if (!sws_ctx) {
+    if (!sws_ctx)
+    {
         update_eq = true;
         return false;
     }
+
     if (force)
         update_eq = true;
-    if (!update_eq) {
+
+    if (!update_eq)
+    {
         return true;
     }
-    const int srcRange = range_in == ColorRange_Limited ? 0 : 1;
-    int dstRange = range_out == ColorRange_Limited ? 0 : 1;
+
+    const int srcRange = range_in  == ColorRange_Limited ? 0 : 1;
+    int dstRange       = range_out == ColorRange_Limited ? 0 : 1;
+
     // TODO: color space
+
     bool supported = sws_setColorspaceDetails(sws_ctx, sws_getCoefficients(SWS_CS_DEFAULT)
                              , srcRange, sws_getCoefficients(SWS_CS_DEFAULT)
                              , dstRange
@@ -128,8 +170,11 @@ bool ImageConverterFFPrivate::setupColorspaceDetails(bool force)
                              , (((contrast + 100) << 16) + 50)/100
                              , (((saturation + 100) << 16) + 50)/100
                              ) >= 0;
-    //sws_init_context(d.sws_ctx, NULL, NULL);
+
+    // sws_init_context(d.sws_ctx, NULL, NULL);
+
     update_eq = false;
+
     return supported;
 }
 
