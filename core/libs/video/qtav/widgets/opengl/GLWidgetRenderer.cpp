@@ -841,7 +841,7 @@ void GLWidgetRendererPrivate::updateTexturesIfNeeded()
 
     if (fmt != video_format)
     {
-        update_textures = true; //FIXME
+        update_textures = true; // FIXME
         qCDebug(DIGIKAM_QTAVWIDGETS_LOG).noquote() << QString::asprintf("updateTexturesIfNeeded pixel format changed: %s => %s", qPrintable(video_format.name()), qPrintable(fmt.name()));
     }
 
@@ -928,7 +928,7 @@ void GLWidgetRendererPrivate::updateShaderIfNeeded()
     }
     else
     {
-        if (video_frame.width() >= 1280 || video_frame.height() > 576) //values from mpv
+        if (video_frame.width() >= 1280 || video_frame.height() > 576) // values from mpv
             cs = ColorTransform::BT709;
         else
             cs = ColorTransform::BT601;
@@ -1305,7 +1305,7 @@ void GLWidgetRenderer::drawFrame()
      * which seems not correct because QMatrix4x4 has a flag var
      */
 
-    GLfloat *mat = (GLfloat*)d.colorTransform.matrixRef().data();
+    GLfloat* mat = (GLfloat*)d.colorTransform.matrixRef().data();
     GLfloat glm[16];
 
 #if QT_VERSION < QT_VERSION_CHECK(5, 0, 0)
@@ -1354,7 +1354,7 @@ void GLWidgetRenderer::drawFrame()
 
 #else
 
-    d.shader_program->setAttributeArray(d.a_Position, GL_FLOAT, kVertices, 2);
+    d.shader_program->setAttributeArray(d.a_Position,  GL_FLOAT, kVertices, 2);
     d.shader_program->setAttributeArray(d.a_TexCoords, GL_FLOAT, kTexCoords, 2);
     d.shader_program->enableAttributeArray(d.a_Position);
     d.shader_program->enableAttributeArray(d.a_TexCoords);
@@ -1411,10 +1411,10 @@ void GLWidgetRenderer::initializeGL()
 
 #ifndef QT_OPENGL_ES_2
 
-        glShadeModel(GL_SMOOTH); //setupQuality?
+        glShadeModel(GL_SMOOTH); // setupQuality?
         glClearDepth(1.0f);
 
-#endif //QT_OPENGL_ES_2
+#endif // QT_OPENGL_ES_2
 
     }
     else

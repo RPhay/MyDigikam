@@ -207,8 +207,18 @@ if(HAVE_OPENGL)
         ${CMAKE_CURRENT_SOURCE_DIR}/src/output/video/OpenGLRendererBase.cpp
         ${CMAKE_CURRENT_SOURCE_DIR}/src/output/video/OpenGLWindowRenderer.cpp
 
-        ${CMAKE_CURRENT_SOURCE_DIR}/widgets/opengl/GLWidgetRenderer2.cpp
     )
+
+    if(NOT Qt6_FOUND)
+
+        set(libqtav_SRCS ${libqtav_SRCS}
+            ${CMAKE_CURRENT_SOURCE_DIR}/widgets/opengl/GLWidgetRenderer2.cpp
+
+# Disabled in QtAV
+#            ${CMAKE_CURRENT_SOURCE_DIR}/widgets/opengl/GLWidgetRenderer.cpp
+        )
+
+    endif()
 
     if(OpenGL_EGL_FOUND)
 

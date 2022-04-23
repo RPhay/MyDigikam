@@ -45,11 +45,11 @@ namespace QtAV
 class GLWidgetRendererPrivate;
 
 class QTAV_WIDGETS_EXPORT GLWidgetRenderer : public QGLWidget
-                                          , public VideoRenderer
+                                           , public VideoRenderer
 
 #if QTAV_HAVE(QGLFUNCTIONS) // TODO: why use QT_VERSION will result in moc error?
 
-                                          , public QGLFunctions
+                                           , public QGLFunctions
 
 #endif
 
@@ -60,7 +60,7 @@ class QTAV_WIDGETS_EXPORT GLWidgetRenderer : public QGLWidget
 public:
 
     GLWidgetRenderer(QWidget* parent = 0, const QGLWidget* shareWidget = 0, Qt::WindowFlags f = Qt::WindowFlags(Qt::Widget));
-    virtual VideoRendererId id() const;
+    virtual VideoRendererId id()                              const;
     virtual bool isSupported(VideoFormat::PixelFormat pixfmt) const;
 
     virtual QWidget* widget()
@@ -101,7 +101,6 @@ private:
     virtual bool onSetContrast(qreal c);
     virtual bool onSetHue(qreal h);
     virtual bool onSetSaturation(qreal s);
-
 };
 
 typedef GLWidgetRenderer VideoRendererGLWidget;

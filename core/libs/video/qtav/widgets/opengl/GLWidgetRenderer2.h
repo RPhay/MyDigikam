@@ -42,7 +42,7 @@ class GLWidgetRenderer2Private;
  * TODO: for Qt5, no QtOpenGL, use QWindow instead.
  */
 class QTAV_WIDGETS_EXPORT GLWidgetRenderer2 : public QGLWidget,
-                                             public OpenGLRendererBase
+                                              public OpenGLRendererBase
 {
     Q_OBJECT
     DPTR_DECLARE_PRIVATE(GLWidgetRenderer2)
