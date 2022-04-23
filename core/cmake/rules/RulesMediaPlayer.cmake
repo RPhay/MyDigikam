@@ -28,7 +28,7 @@ if(ENABLE_MEDIAPLAYER)
     find_package(VAAPI      QUIET)
     find_package(uchardet   QUIET)
 
-    if(MSVC)
+    if(WIN32)
 
         find_package(DirectX)
         find_package(GDIPLUS)
@@ -294,6 +294,40 @@ if(ENABLE_MEDIAPLAYER)
 
         endif()
 
+        if(APPLE)
+
+            set(MEDIAPLAYER_LIBRARIES ${MEDIAPLAYER_LIBRARIES} -framework AudioToolbox
+                                                               -framework VideoToolbox
+                                                               -framework CoreVideo
+                                                               -framework CoreMedia
+                                                               -framework CoreFoundation
+                                                               -framework VideoDecodeAcceleration
+            )
+
+            if(AVDEVICE_FOUND)
+
+                set(MEDIAPLAYER_LIBRARIES ${MEDIAPLAYER_LIBRARIES} -framework Foundation
+                                                                   -framework QuartzCore
+                                                                   -framework CoreGraphics
+                                                                   -framework AVFoundation
+                )
+
+            endif()
+
+            if(AVFILTER_FOUND)
+
+                set(MEDIAPLAYER_LIBRARIES ${MEDIAPLAYER_LIBRARIES} -framework AppKit)
+
+            endif()
+
+            if(OPENAL_FOUND)
+
+                set(MEDIAPLAYER_LIBRARIES ${MEDIAPLAYER_LIBRARIES} -framework OpenAL)
+
+            endif()
+
+        endif()
+
         # --- Definitions -------------------------------------------------------------------------------------
 
         set(MEDIAPLAYER_DEFINITIONS -D__STDC_CONSTANT_MACROS
@@ -359,11 +393,13 @@ if(ENABLE_MEDIAPLAYER)
         if(APPLE)
 
             set(MEDIAPLAYER_DEFINITIONS ${MEDIAPLAYER_DEFINITIONS} -DQTAV_HAVE_VIDEOTOOLBOX=1)
+            set(MEDIAPLAYER_DEFINITIONS ${MEDIAPLAYER_DEFINITIONS} -DQTAV_HAVE_VDA=1)
             set(MEDIAPLAYER_DEFINITIONS ${MEDIAPLAYER_DEFINITIONS} -DQTAV_HAVE_CUDA=0)
 
         else()
 
             set(MEDIAPLAYER_DEFINITIONS ${MEDIAPLAYER_DEFINITIONS} -DQTAV_HAVE_VIDEOTOOLBOX=0)
+            set(MEDIAPLAYER_DEFINITIONS ${MEDIAPLAYER_DEFINITIONS} -DQTAV_HAVE_VDA=0)
             set(MEDIAPLAYER_DEFINITIONS ${MEDIAPLAYER_DEFINITIONS} -DQTAV_HAVE_CUDA=1)
 
         endif()
