@@ -78,6 +78,7 @@ bool DMetadata::loadUsingExifTool(const QString& filePath)
         {
             qCDebug(DIGIKAM_METAENGINE_LOG) << "EXV chunk size loaded with ExifTool:" << exv.size();
             loadFromData(exv);
+            setFilePath(filePath);
         }
     }
     else

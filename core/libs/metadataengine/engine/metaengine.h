@@ -399,12 +399,10 @@ public:
     bool applyChanges(bool setVersion = false) const;
 
     /**
-     * List changed tags compared to original file contents and export result to
-     * a temporary EXV file container.
+     *  Export metadata to a temporary EXV file container.
      * 'exvTmpFile' is the path to the temporary EXV container to create.
-     * 'removedTags' is populated with the list of tags removed.
      */
-    bool exportChanges(const QString& exvTmpFile, QStringList& removedTags) const;
+    bool exportChanges(const QString& exvTmpFile) const;
 
     //@}
 
