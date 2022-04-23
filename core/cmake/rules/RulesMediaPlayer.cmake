@@ -331,7 +331,6 @@ if(ENABLE_MEDIAPLAYER)
         # --- Definitions -------------------------------------------------------------------------------------
 
         set(MEDIAPLAYER_DEFINITIONS -D__STDC_CONSTANT_MACROS
-                                    -DQTAV_HAVE_GL=1             # For QtAVWidgets
                                     -DQTAV_HAVE_CAPI=1           # To load libass, vaapi, EGL, and more dynamically
                                     -DQTAV_HAVE_OPENSL=0         # OpenSLES is for Android only
                                     -DQTAV_HAVE_DXVA=0           # DirectX VA for MSVC only
@@ -380,6 +379,7 @@ if(ENABLE_MEDIAPLAYER)
 
         endif()
 
+        set(MEDIAPLAYER_DEFINITIONS ${MEDIAPLAYER_DEFINITIONS} -DQTAV_HAVE_GL=${HAVE_LIBOPENGL})               # For QtAVWidgets
         set(MEDIAPLAYER_DEFINITIONS ${MEDIAPLAYER_DEFINITIONS} -DQTAV_HAVE_X11=${HAVE_LIBX11})
         set(MEDIAPLAYER_DEFINITIONS ${MEDIAPLAYER_DEFINITIONS} -DQTAV_HAVE_XV=${HAVE_LIBXV})
         set(MEDIAPLAYER_DEFINITIONS ${MEDIAPLAYER_DEFINITIONS} -DQTAV_HAVE_OPENAL=${HAVE_LIBOPENAL})
