@@ -428,6 +428,7 @@ bool MetaEngine::exportChanges(const QString& exvTmpFile) const
         // Create target EXV container.
 
         Exiv2::Image::AutoPtr targetExv = Exiv2::ImageFactory::create(Exiv2::ImageType::exv, exvTmpFile.toStdString());
+        targetExv->setComment(d->itemComments());
         targetExv->setExifData(d->exifMetadata());
         targetExv->setIptcData(d->iptcMetadata());
 
