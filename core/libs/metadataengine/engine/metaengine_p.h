@@ -139,8 +139,7 @@ public:
     bool saveUsingExiv2(const QFileInfo& finfo, Exiv2::Image::AutoPtr image)      const;
     bool saveUsingExifTool(const QFileInfo& finfo)                                const;
 
-    bool exportChanges(const QString& exvTmpFile,
-                       QStringList& removedTags)                                  const;
+    bool exportChanges(const QString& exvTmpFile)                                 const;
 
     /**
      * Wrapper method to convert a Comments content to a QString.

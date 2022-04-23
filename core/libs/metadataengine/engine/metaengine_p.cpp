@@ -539,8 +539,7 @@ bool MetaEngine::Private::saveUsingExifTool(const QFileInfo& finfo) const
 
         // ---
 
-        QStringList removedTags;
-        parent->exportChanges(exvPath, removedTags);
+        parent->exportChanges(exvPath);
 
         if (!updateFileTimeStamp)
         {

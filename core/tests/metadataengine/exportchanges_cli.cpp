@@ -60,9 +60,8 @@ int main(int argc, char** argv)
 
     meta.setImageDateTime(QDateTime::currentDateTime(), true);
 
-    QString     exvPath = input.baseName() + QLatin1String("_changes.exv");
-    QStringList removedTags;
-    meta.exportChanges(exvPath, removedTags);
+    QString exvPath = input.baseName() + QLatin1String("_changes.exv");
+    meta.exportChanges(exvPath);
 
     return 0;
 }
