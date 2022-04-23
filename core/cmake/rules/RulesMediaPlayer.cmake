@@ -296,8 +296,8 @@ if(ENABLE_MEDIAPLAYER)
 
         if(APPLE)
 
-            set(MEDIAPLAYER_LIBRARIES ${MEDIAPLAYER_LIBRARIES} -framework AudioToolbox
-                                                               -framework VideoToolbox
+            set(MEDIAPLAYER_LIBRARIES ${MEDIAPLAYER_LIBRARIES} -framework VideoToolbox
+                                                               #-framework AudioToolbox
                                                                -framework CoreVideo
                                                                -framework CoreMedia
                                                                -framework CoreFoundation
