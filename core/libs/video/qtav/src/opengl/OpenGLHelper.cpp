@@ -336,7 +336,7 @@ bool hasExtensionEGL(const char *exts[])
     {
         EGLDisplay display = eglGetDisplay(EGL_DEFAULT_DISPLAY);
         eglInitialize(display, NULL, NULL);
-        supported = QByteArray(eglQueryString(display, EGL_EXTENSIONS)).split(' ');
+        supported          = QByteArray(eglQueryString(display, EGL_EXTENSIONS)).split(' ');
     }
 
     static bool print_exts = true;
@@ -353,6 +353,10 @@ bool hasExtensionEGL(const char *exts[])
             return true;
     }
 
+#else
+
+    Q_UNUSED(exts);
+
 #endif
 
     return false;
@@ -365,12 +369,13 @@ bool hasExtension(const char *exts[])
     if (!ctx)
     {
         qCWarning(DIGIKAM_QTAV_LOG_WARN).noquote() << QString::asprintf("no gl context for hasExtension");
+
         return false;
     }
 
 #if QT_VERSION < QT_VERSION_CHECK(5, 0, 0)
 
-    const char *ext = (const char*)glGetString(GL_EXTENSIONS);
+    const char* ext = (const char*)glGetString(GL_EXTENSIONS);
 
     if (!ext)
         return false;
@@ -399,13 +404,13 @@ bool isPBOSupported()
 {
     // check pbo support
 
-    static bool support = false;
+    static bool support     = false;
     static bool pbo_checked = false;
 
     if (pbo_checked)
         return support;
 
-    const QOpenGLContext *ctx = QOpenGLContext::currentContext();
+    const QOpenGLContext* ctx = QOpenGLContext::currentContext();
 
     Q_ASSERT(ctx);
 
@@ -449,10 +454,10 @@ static const gl_param_t gl_param_compat[] =
 {
     // it's legacy
 
-    { GL_LUMINANCE, GL_LUMINANCE, GL_UNSIGNED_BYTE},
+    { GL_LUMINANCE,       GL_LUMINANCE,       GL_UNSIGNED_BYTE},
     { GL_LUMINANCE_ALPHA, GL_LUMINANCE_ALPHA, GL_UNSIGNED_BYTE},
-    { GL_RGB, GL_RGB, GL_UNSIGNED_BYTE},
-    { GL_RGBA, GL_RGBA, GL_UNSIGNED_BYTE},
+    { GL_RGB,             GL_RGB,             GL_UNSIGNED_BYTE},
+    { GL_RGBA,            GL_RGBA,            GL_UNSIGNED_BYTE},
     { GL_LUMINANCE_ALPHA, GL_LUMINANCE_ALPHA, GL_UNSIGNED_BYTE}, // 2 x 8 fallback to ra
     {0,0,0},
 };
@@ -481,11 +486,11 @@ static const gl_param_t gl_param_desktop_fallback[] =
 
 static const gl_param_t gl_param_es3rg8[] =
 {
-    {GL_R8,       GL_RED,    GL_UNSIGNED_BYTE},      // 1 x 8
-    {GL_RG8,      GL_RG,     GL_UNSIGNED_BYTE},      // 2 x 8
-    {GL_RGB8,     GL_RGB,    GL_UNSIGNED_BYTE},      // 3 x 8
-    {GL_RGBA8,    GL_RGBA,   GL_UNSIGNED_BYTE},      // 4 x 8
-    {GL_RG8,      GL_RG,     GL_UNSIGNED_BYTE},      // 2 x 8 fallback to rg
+    {GL_R8,      GL_RED,     GL_UNSIGNED_BYTE},      // 1 x 8
+    {GL_RG8,     GL_RG,      GL_UNSIGNED_BYTE},      // 2 x 8
+    {GL_RGB8,    GL_RGB,     GL_UNSIGNED_BYTE},      // 3 x 8
+    {GL_RGBA8,   GL_RGBA,    GL_UNSIGNED_BYTE},      // 4 x 8
+    {GL_RG8,     GL_RG,      GL_UNSIGNED_BYTE},      // 2 x 8 fallback to rg
     {0,0,0},
 };
 
@@ -494,11 +499,11 @@ static const gl_param_t gl_param_es3rg8[] =
 
 static const gl_param_t gl_param_es2rg[] =
 {
-    {GL_RED,     GL_RED,    GL_UNSIGNED_BYTE},      // 1 x 8 //es2: GL_EXT_texture_rg. R8, RG8 are for render buffer
-    {GL_RG,      GL_RG,     GL_UNSIGNED_BYTE},      // 2 x 8
-    {GL_RGB,     GL_RGB,    GL_UNSIGNED_BYTE},      // 3 x 8
-    {GL_RGBA,    GL_RGBA,   GL_UNSIGNED_BYTE},      // 4 x 8
-    {GL_RG,      GL_RG,     GL_UNSIGNED_BYTE},      // 2 x 8 fallback to rg
+    {GL_RED,     GL_RED,     GL_UNSIGNED_BYTE},      // 1 x 8 // es2: GL_EXT_texture_rg. R8, RG8 are for render buffer
+    {GL_RG,      GL_RG,      GL_UNSIGNED_BYTE},      // 2 x 8
+    {GL_RGB,     GL_RGB,     GL_UNSIGNED_BYTE},      // 3 x 8
+    {GL_RGBA,    GL_RGBA,    GL_UNSIGNED_BYTE},      // 4 x 8
+    {GL_RG,      GL_RG,      GL_UNSIGNED_BYTE},      // 2 x 8 fallback to rg
     {0,0,0},
 };
 
@@ -523,6 +528,7 @@ bool test_gl_param(const gl_param_t& gp, bool* has_16 = 0)
     if (DYGL(glGetError()) != GL_NO_ERROR)
     {
         DYGL(glDeleteTextures(1, &tex));
+
         return false;
     }
 
@@ -530,6 +536,7 @@ bool test_gl_param(const gl_param_t& gp, bool* has_16 = 0)
     {
         qCDebug(DIGIKAM_QTAV_LOG).noquote() << QString::asprintf("Do not support glGetTexLevelParameteriv. test_gl_param returns false");
         DYGL(glDeleteTextures(1, &tex));
+
         return false;
     }
 
@@ -573,10 +580,12 @@ bool test_gl_param(const gl_param_t& gp, bool* has_16 = 0)
     {
         case GL_RED:
             pname = GL_TEXTURE_RED_SIZE;
+
             break;
 
         case GL_LUMINANCE:
             pname = GL_TEXTURE_LUMINANCE_SIZE;
+
             break;
     }
 
@@ -652,6 +661,7 @@ static const gl_param_t* get_gl_param()
     if (!QOpenGLContext::currentContext())
     {
         qCWarning(DIGIKAM_QTAV_LOG_WARN).noquote() << QString::asprintf("%s: current context is null", __FUNCTION__);
+
         return gl_param_compat;
     }
 
@@ -683,7 +693,7 @@ static const gl_param_t* get_gl_param()
     {
         // 3.0 will fail because no glGetTexLevelParameteriv
 
-        gp = (gl_param_t*)gl_param_es3rg8;
+        gp         = (gl_param_t*)gl_param_es3rg8;
         has_16_tex = has_16;
 
         if (!useDeprecatedFormats())
@@ -816,7 +826,7 @@ static QMatrix4x4 channelMap(const VideoFormat& fmt)
 
     m.fill(0);
 
-    for (int i = 0; i < 4; ++i)
+    for (int i = 0 ; i < 4 ; ++i)
     {
         m(i, channels[i]) = 1;
     }
@@ -842,8 +852,8 @@ bool videoFormatToGL(const VideoFormat& fmt, GLint* internal_format, GLenum* dat
 
     static const fmt_entry pixfmt_to_gles[] =
     {
-        {VideoFormat::Format_BGRA32, GL_BGRA, GL_BGRA, GL_UNSIGNED_BYTE }, // tested for angle
-        {VideoFormat::Format_RGB32,  GL_BGRA, GL_BGRA, GL_UNSIGNED_BYTE },
+        {VideoFormat::Format_BGRA32,  GL_BGRA, GL_BGRA, GL_UNSIGNED_BYTE }, // tested for angle
+        {VideoFormat::Format_RGB32,   GL_BGRA, GL_BGRA, GL_UNSIGNED_BYTE },
         {VideoFormat::Format_Invalid, 0, 0, 0}
     };
 
@@ -853,6 +863,7 @@ bool videoFormatToGL(const VideoFormat& fmt, GLint* internal_format, GLenum* dat
     {
         {VideoFormat::Format_BGRA32, GL_RGBA, GL_BGRA, GL_UNSIGNED_BYTE }, // bgra bgra works on win but not macOS
         {VideoFormat::Format_RGB32,  GL_RGBA, GL_BGRA, GL_UNSIGNED_BYTE }, // FIXMEL endian check
+
         //{VideoFormat::Format_BGRA32,  GL_RGBA, GL_RGBA, GL_UNSIGNED_BYTE }, // {2,1,0,3}
         //{VideoFormat::Format_BGR24,   GL_RGB,  GL_BGR,  GL_UNSIGNED_BYTE }, // {0,1,2,3}
 
@@ -891,7 +902,7 @@ bool videoFormatToGL(const VideoFormat& fmt, GLint* internal_format, GLenum* dat
 
     Q_UNUSED(pixfmt_to_desktop);
 
-    const fmt_entry *pixfmt_gl_entry = pixfmt_to_desktop;
+    const fmt_entry* pixfmt_gl_entry = pixfmt_to_desktop;
 
     if (OpenGLHelper::isOpenGLES())
         pixfmt_gl_entry = pixfmt_to_gles;
@@ -925,7 +936,7 @@ bool videoFormatToGL(const VideoFormat& fmt, GLint* internal_format, GLenum* dat
         }
     }
 
-    for (size_t i = 0; i < ARRAY_SIZE(pixfmt_gl_base); ++i)
+    for (size_t i = 0 ; i < ARRAY_SIZE(pixfmt_gl_base); ++i)
     {
         const fmt_entry& e = pixfmt_gl_base[i];
 
