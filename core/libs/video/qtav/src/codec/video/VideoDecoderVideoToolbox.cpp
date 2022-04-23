@@ -229,7 +229,7 @@ VideoDecoderVideoToolbox::VideoDecoderVideoToolbox()
                     .arg(i18n("CVPixelBuffer: macOS+iOS"))
                     .arg(i18n("CVOpenGLES: iOS, no copy, fast"))
                     .arg(i18n("IOSurface: macOS, no copy, fast"))
-                    .arg(i18n("Auto: choose the fastest"));
+                    .arg(i18n("Auto: choose the fastest")));
 
     Q_UNUSED(i18n("interop"));
     Q_UNUSED(i18n("format"));
