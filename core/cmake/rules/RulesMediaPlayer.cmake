@@ -296,33 +296,33 @@ if(ENABLE_MEDIAPLAYER)
 
         if(APPLE)
 
-            set(MEDIAPLAYER_LIBRARIES ${MEDIAPLAYER_LIBRARIES} -framework VideoToolbox
-                                                               #-framework AudioToolbox
-                                                               -framework CoreVideo
-                                                               -framework CoreMedia
-                                                               -framework CoreFoundation
-                                                               -framework VideoDecodeAcceleration
+            set(MEDIAPLAYER_LIBRARIES ${MEDIAPLAYER_LIBRARIES} "-framework CoreMedia"
+                                                               "-framework CoreVideo"
+                                                               "-framework VideoToolbox"
+                                                               "-framework AudioToolbox"
+                                                               "-framework CoreFoundation"
+                                                               "-framework VideoDecodeAcceleration"
             )
 
             if(AVDEVICE_FOUND)
 
-                set(MEDIAPLAYER_LIBRARIES ${MEDIAPLAYER_LIBRARIES} -framework Foundation
-                                                                   -framework QuartzCore
-                                                                   -framework CoreGraphics
-                                                                   -framework AVFoundation
+                set(MEDIAPLAYER_LIBRARIES ${MEDIAPLAYER_LIBRARIES} "-framework Foundation"
+                                                                   "-framework QuartzCore"
+                                                                   "-framework CoreGraphics"
+                                                                   "-framework AVFoundation"
                 )
 
             endif()
 
             if(AVFILTER_FOUND)
 
-                set(MEDIAPLAYER_LIBRARIES ${MEDIAPLAYER_LIBRARIES} -framework AppKit)
+                set(MEDIAPLAYER_LIBRARIES ${MEDIAPLAYER_LIBRARIES} "-framework AppKit")
 
             endif()
 
             if(OPENAL_FOUND)
 
-                set(MEDIAPLAYER_LIBRARIES ${MEDIAPLAYER_LIBRARIES} -framework OpenAL)
+                set(MEDIAPLAYER_LIBRARIES ${MEDIAPLAYER_LIBRARIES} "-framework OpenAL")
 
             endif()
 
@@ -332,10 +332,10 @@ if(ENABLE_MEDIAPLAYER)
 
         set(MEDIAPLAYER_DEFINITIONS -D__STDC_CONSTANT_MACROS
                                     -DQTAV_HAVE_GL=1             # For QtAVWidgets
-                                    -DQTAV_HAVE_CAPI=1           # To load libass, vaapi, and EGL dynamically
+                                    -DQTAV_HAVE_CAPI=1           # To load libass, vaapi, EGL, and more dynamically
                                     -DQTAV_HAVE_OPENSL=0         # OpenSLES is for Android only
                                     -DQTAV_HAVE_DXVA=0           # DirectX VA for MSVC only
-                                    -DQTAV_HAVE_VDA=0            # hardware acceleration video decoder from ffmpeg ?
+                                    -DQTAV_HAVE_VDA=0            # Hardware acceleration video decoder from ffmpeg ?
         )
 
         if(SSE4_1_FOUND)

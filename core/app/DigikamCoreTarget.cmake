@@ -347,7 +347,7 @@ if(APPLE)
 
     target_link_libraries(digikamcore
                           PRIVATE
-                          /System/Library/Frameworks/AppKit.framework
+                          "-framework AppKit"
     )
 
 endif()
