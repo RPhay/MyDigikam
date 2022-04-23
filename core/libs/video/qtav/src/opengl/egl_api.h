@@ -29,32 +29,19 @@
 // no need to include the C header if only functions declared there
 
 #ifndef CAPI_LINK_EGL
-
-namespace egl
-{
-
-namespace capi
-{
-
 #   define EGLAPI // avoid warning and link error
 #else
 
 extern "C"
 {
 
-#endif
-
 // the following line will be replaced by the content of config/EGL/include if exists
 
-#include <EGL/egl.h>
+#   include <EGL/egl.h>
 
-#ifndef CAPI_LINK_EGL
-
-}
+} // extern "C"
 
 #endif
-
-}
 
 namespace egl
 {
