@@ -120,7 +120,15 @@ elseif(SSE2_FOUND)
 
 endif()
 
-qt5_add_resources(libqtav_SRCS ${CMAKE_CURRENT_SOURCE_DIR}/src/shaders/shaders.qrc)
+if(Qt6_FOUND)
+
+    qt6_add_resources(libqtav_SRCS ${CMAKE_CURRENT_SOURCE_DIR}/src/shaders/shaders.qrc)
+
+else()
+
+    qt5_add_resources(libqtav_SRCS ${CMAKE_CURRENT_SOURCE_DIR}/src/shaders/shaders.qrc)
+
+endif()
 
 if(DirectX_DSound_FOUND)
 
