@@ -310,7 +310,9 @@ if(APPLE)
         ${CMAKE_CURRENT_SOURCE_DIR}/src/codec/video/VideoDecoderVideoToolbox.cpp
         ${CMAKE_CURRENT_SOURCE_DIR}/src/codec/video/SurfaceInteropCV.cpp
         ${CMAKE_CURRENT_SOURCE_DIR}/src/codec/video/SurfaceInteropIOSurface.mm
-        ${CMAKE_CURRENT_SOURCE_DIR}/src/codec/video/VideoDecoderVDA.cpp
+
+# Hardware acceleration from ffmpeg ?
+#        ${CMAKE_CURRENT_SOURCE_DIR}/src/codec/video/VideoDecoderVDA.cpp
     )
 
 else()

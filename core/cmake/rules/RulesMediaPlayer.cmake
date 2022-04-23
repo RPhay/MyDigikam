@@ -335,6 +335,7 @@ if(ENABLE_MEDIAPLAYER)
                                     -DQTAV_HAVE_CAPI=1           # To load libass, vaapi, and EGL dynamically
                                     -DQTAV_HAVE_OPENSL=0         # OpenSLES is for Android only
                                     -DQTAV_HAVE_DXVA=0           # DirectX VA for MSVC only
+                                    -DQTAV_HAVE_VDA=0            # hardware acceleration video decoder from ffmpeg ?
         )
 
         if(SSE4_1_FOUND)
@@ -393,13 +394,11 @@ if(ENABLE_MEDIAPLAYER)
         if(APPLE)
 
             set(MEDIAPLAYER_DEFINITIONS ${MEDIAPLAYER_DEFINITIONS} -DQTAV_HAVE_VIDEOTOOLBOX=1)
-            set(MEDIAPLAYER_DEFINITIONS ${MEDIAPLAYER_DEFINITIONS} -DQTAV_HAVE_VDA=1)
             set(MEDIAPLAYER_DEFINITIONS ${MEDIAPLAYER_DEFINITIONS} -DQTAV_HAVE_CUDA=0)
 
         else()
 
             set(MEDIAPLAYER_DEFINITIONS ${MEDIAPLAYER_DEFINITIONS} -DQTAV_HAVE_VIDEOTOOLBOX=0)
-            set(MEDIAPLAYER_DEFINITIONS ${MEDIAPLAYER_DEFINITIONS} -DQTAV_HAVE_VDA=0)
             set(MEDIAPLAYER_DEFINITIONS ${MEDIAPLAYER_DEFINITIONS} -DQTAV_HAVE_CUDA=1)
 
         endif()
