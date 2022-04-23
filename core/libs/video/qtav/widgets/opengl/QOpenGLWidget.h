@@ -44,7 +44,7 @@ namespace QtAV
  * \brief The QOpenGLWidget class
  * A widget for rendering OpenGL graphics without QtOpenGL module
  */
-class Q_AVWIDGETS_EXPORT QOpenGLWidget : public QWidget
+class QTAV_WIDGETS_EXPORT QOpenGLWidget : public QWidget
 {
     Q_OBJECT
     Q_DISABLE_COPY(QOpenGLWidget)

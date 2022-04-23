@@ -38,7 +38,7 @@
 namespace QtAV
 {
 
-class Q_AV_PRIVATE_EXPORT AVEncoderPrivate : public DPtrPrivate<AVEncoder>
+class QTAV_PRIVATE_EXPORT AVEncoderPrivate : public DPtrPrivate<AVEncoder>
 {
 public:
 
@@ -105,7 +105,7 @@ public:
     int             frame_size; // used if avctx->frame_size == 0
 };
 
-class Q_AV_PRIVATE_EXPORT VideoEncoderPrivate : public AVEncoderPrivate
+class QTAV_PRIVATE_EXPORT VideoEncoderPrivate : public AVEncoderPrivate
 {
 public:
 

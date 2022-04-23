@@ -35,7 +35,7 @@
 namespace QtAV
 {
 
-class Q_AV_EXPORT VideoSurfaceInterop
+class QTAV_EXPORT VideoSurfaceInterop
 {
 public:
 

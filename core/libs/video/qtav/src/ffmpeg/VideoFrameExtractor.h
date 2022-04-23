@@ -39,7 +39,7 @@ namespace QtAV
 
 class VideoFrameExtractorPrivate;
 
-class Q_AV_EXPORT VideoFrameExtractor : public QObject
+class QTAV_EXPORT VideoFrameExtractor : public QObject
 {
     Q_OBJECT
     DPTR_DECLARE_PRIVATE(VideoFrameExtractor)

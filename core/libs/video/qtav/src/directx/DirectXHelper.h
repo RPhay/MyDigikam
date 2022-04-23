@@ -71,7 +71,7 @@ template <class T> void SafeRelease(T **ppT)
 namespace DXHelper
 {
 
-Q_AV_EXPORT const char* vendorName(unsigned id);
+QTAV_EXPORT const char* vendorName(unsigned id);
 
 #ifndef Q_OS_WINRT
 

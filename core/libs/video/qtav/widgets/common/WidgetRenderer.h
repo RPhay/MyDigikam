@@ -40,7 +40,7 @@ namespace QtAV
 
 class WidgetRendererPrivate;
 
-class Q_AVWIDGETS_EXPORT WidgetRenderer : public QWidget,
+class QTAV_WIDGETS_EXPORT WidgetRenderer : public QWidget,
                                           public QPainterRenderer
 {
     Q_OBJECT

@@ -35,7 +35,7 @@ class Filter;
 class VideoFilterContext;
 class Statistics;
 
-class Q_AV_PRIVATE_EXPORT FilterPrivate : public DPtrPrivate<Filter>
+class QTAV_PRIVATE_EXPORT FilterPrivate : public DPtrPrivate<Filter>
 {
 public:
 
@@ -51,7 +51,7 @@ public:
     bool owned_by_target;
 };
 
-class Q_AV_PRIVATE_EXPORT VideoFilterPrivate : public FilterPrivate
+class QTAV_PRIVATE_EXPORT VideoFilterPrivate : public FilterPrivate
 {
 public:
 
@@ -63,7 +63,7 @@ public:
     VideoFilterContext *context; // used only when is necessary
 };
 
-class Q_AV_PRIVATE_EXPORT AudioFilterPrivate : public FilterPrivate
+class QTAV_PRIVATE_EXPORT AudioFilterPrivate : public FilterPrivate
 {
 };
 

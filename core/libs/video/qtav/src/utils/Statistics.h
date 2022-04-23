@@ -40,7 +40,7 @@
 namespace QtAV
 {
 
-class Q_AV_EXPORT Statistics
+class QTAV_EXPORT Statistics
 {
 public:
 
@@ -86,7 +86,7 @@ public:
 
     // from AVCodecContext
 
-    class Q_AV_EXPORT AudioOnly
+    class QTAV_EXPORT AudioOnly
     {
     public:
 
@@ -112,7 +112,7 @@ public:
 
     // from AVCodecContext
 
-    class Q_AV_EXPORT VideoOnly
+    class QTAV_EXPORT VideoOnly
     {
     public:
 

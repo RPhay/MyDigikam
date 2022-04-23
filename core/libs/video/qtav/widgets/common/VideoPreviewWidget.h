@@ -39,7 +39,7 @@ class VideoFrame;
 class VideoOutput;
 class VideoFrameExtractor;
 
-class Q_AVWIDGETS_EXPORT VideoPreviewWidget : public QWidget
+class QTAV_WIDGETS_EXPORT VideoPreviewWidget : public QWidget
 {
     Q_OBJECT
 

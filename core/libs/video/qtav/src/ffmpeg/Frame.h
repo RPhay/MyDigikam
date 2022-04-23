@@ -36,7 +36,7 @@ namespace QtAV
 
 class FramePrivate;
 
-class Q_AV_EXPORT Frame
+class QTAV_EXPORT Frame
 {
     Q_DECLARE_PRIVATE(Frame)
 

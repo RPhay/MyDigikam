@@ -54,7 +54,7 @@ class OpenGLVideoPrivate;
  * By default, VBO is used. Set environment var QTAV_NO_VBO=1 or 0 to disable/enable VBO.
  * VAO will be enabled if supported. Disabling VAO is the same as VBO.
  */
-class Q_AV_EXPORT OpenGLVideo : public QObject
+class QTAV_EXPORT OpenGLVideo : public QObject
 {
     Q_OBJECT
     DPTR_DECLARE_PRIVATE(OpenGLVideo)

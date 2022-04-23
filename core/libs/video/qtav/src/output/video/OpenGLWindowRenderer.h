@@ -33,7 +33,7 @@ namespace QtAV
 
 class OpenGLWindowRendererPrivate;
 
-class Q_AV_EXPORT OpenGLWindowRenderer : public QOpenGLWindow,
+class QTAV_EXPORT OpenGLWindowRenderer : public QOpenGLWindow,
                                          public OpenGLRendererBase
 {
     Q_OBJECT

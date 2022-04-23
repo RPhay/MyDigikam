@@ -42,7 +42,7 @@ namespace QtAV
 
 class VideoFramePrivate;
 
-class Q_AV_EXPORT VideoFrame : public Frame
+class QTAV_EXPORT VideoFrame : public Frame
 {
     Q_DECLARE_PRIVATE(VideoFrame)
 
@@ -162,7 +162,7 @@ public:
 
 class ImageConverter;
 
-class Q_AV_EXPORT VideoFrameConverter
+class QTAV_EXPORT VideoFrameConverter
 {
 public:
 

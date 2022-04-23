@@ -65,7 +65,7 @@ typedef int VideoDecoderId;
 
 class VideoDecoderPrivate;
 
-class Q_AV_EXPORT VideoDecoder : public AVDecoder
+class QTAV_EXPORT VideoDecoder : public AVDecoder
 {
     Q_DISABLE_COPY(VideoDecoder)
     DPTR_DECLARE_PRIVATE(VideoDecoder)
@@ -119,18 +119,18 @@ private:
     VideoDecoder();
 };
 
-extern Q_AV_EXPORT VideoDecoderId VideoDecoderId_FFmpeg;
-extern Q_AV_EXPORT VideoDecoderId VideoDecoderId_CUDA;
-extern Q_AV_EXPORT VideoDecoderId VideoDecoderId_DXVA;
-extern Q_AV_EXPORT VideoDecoderId VideoDecoderId_D3D11;
-extern Q_AV_EXPORT VideoDecoderId VideoDecoderId_VAAPI;
-extern Q_AV_EXPORT VideoDecoderId VideoDecoderId_Cedarv;
-extern Q_AV_EXPORT VideoDecoderId VideoDecoderId_VDA;
-extern Q_AV_EXPORT VideoDecoderId VideoDecoderId_VideoToolbox;
-extern Q_AV_EXPORT VideoDecoderId VideoDecoderId_MediaCodec;
-extern Q_AV_EXPORT VideoDecoderId VideoDecoderId_MMAL;
-extern Q_AV_EXPORT VideoDecoderId VideoDecoderId_QSV;
-extern Q_AV_EXPORT VideoDecoderId VideoDecoderId_CrystalHD;
+extern QTAV_EXPORT VideoDecoderId VideoDecoderId_FFmpeg;
+extern QTAV_EXPORT VideoDecoderId VideoDecoderId_CUDA;
+extern QTAV_EXPORT VideoDecoderId VideoDecoderId_DXVA;
+extern QTAV_EXPORT VideoDecoderId VideoDecoderId_D3D11;
+extern QTAV_EXPORT VideoDecoderId VideoDecoderId_VAAPI;
+extern QTAV_EXPORT VideoDecoderId VideoDecoderId_Cedarv;
+extern QTAV_EXPORT VideoDecoderId VideoDecoderId_VDA;
+extern QTAV_EXPORT VideoDecoderId VideoDecoderId_VideoToolbox;
+extern QTAV_EXPORT VideoDecoderId VideoDecoderId_MediaCodec;
+extern QTAV_EXPORT VideoDecoderId VideoDecoderId_MMAL;
+extern QTAV_EXPORT VideoDecoderId VideoDecoderId_QSV;
+extern QTAV_EXPORT VideoDecoderId VideoDecoderId_CrystalHD;
 
 } // namespace QtAV
 

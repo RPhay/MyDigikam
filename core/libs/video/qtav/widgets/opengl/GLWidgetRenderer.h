@@ -44,7 +44,7 @@ namespace QtAV
 
 class GLWidgetRendererPrivate;
 
-class Q_AVWIDGETS_EXPORT GLWidgetRenderer : public QGLWidget
+class QTAV_WIDGETS_EXPORT GLWidgetRenderer : public QGLWidget
                                           , public VideoRenderer
 
 #if QTAV_HAVE(QGLFUNCTIONS) // TODO: why use QT_VERSION will result in moc error?

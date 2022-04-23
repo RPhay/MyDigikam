@@ -42,7 +42,7 @@ namespace QtAV
 
 class AudioFormatPrivate;
 
-class Q_AV_EXPORT AudioFormat
+class QTAV_EXPORT AudioFormat
 {
     enum
     {
@@ -194,9 +194,9 @@ private:
 
 #ifndef QT_NO_DEBUG_STREAM
 
-Q_AV_EXPORT QDebug operator<<(QDebug debug, const AudioFormat &fmt);
-Q_AV_EXPORT QDebug operator<<(QDebug debug, AudioFormat::SampleFormat sampleFormat);
-Q_AV_EXPORT QDebug operator<<(QDebug debug, AudioFormat::ChannelLayout channelLayout);
+QTAV_EXPORT QDebug operator<<(QDebug debug, const AudioFormat &fmt);
+QTAV_EXPORT QDebug operator<<(QDebug debug, AudioFormat::SampleFormat sampleFormat);
+QTAV_EXPORT QDebug operator<<(QDebug debug, AudioFormat::ChannelLayout channelLayout);
 
 #endif
 

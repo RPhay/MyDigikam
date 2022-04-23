@@ -41,7 +41,7 @@ namespace QtAV
 
 class MediaIO;
 
-class Q_AV_PRIVATE_EXPORT MediaIOPrivate : public DPtrPrivate<MediaIO>
+class QTAV_PRIVATE_EXPORT MediaIOPrivate : public DPtrPrivate<MediaIO>
 {
 public:
 
@@ -62,7 +62,7 @@ public:
 
 class QIODeviceIOPrivate;
 
-class Q_AV_PRIVATE_EXPORT QIODeviceIO : public MediaIO
+class QTAV_PRIVATE_EXPORT QIODeviceIO : public MediaIO
 {
     Q_OBJECT
     Q_PROPERTY(QIODevice* device READ device WRITE setDevice NOTIFY deviceChanged)
@@ -104,7 +104,7 @@ protected:
 
 class QFileIOPrivate;
 
-class Q_AV_PRIVATE_EXPORT QFileIO Q_DECL_FINAL: public QIODeviceIO
+class QTAV_PRIVATE_EXPORT QFileIO Q_DECL_FINAL: public QIODeviceIO
 {
     DPTR_DECLARE_PRIVATE(QFileIO)
 

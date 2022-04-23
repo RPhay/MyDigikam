@@ -32,7 +32,7 @@
 namespace QtAV
 {
 
-class Q_AV_PRIVATE_EXPORT OpenGLRendererBasePrivate : public VideoRendererPrivate
+class QTAV_PRIVATE_EXPORT OpenGLRendererBasePrivate : public VideoRendererPrivate
 {
 public:
 

@@ -71,7 +71,7 @@ class VideoCapture;
  *  player->play();
  * \endcode
  */
-class Q_AV_EXPORT AVPlayer : public QObject
+class QTAV_EXPORT AVPlayer : public QObject
 {
     Q_OBJECT
     Q_PROPERTY(bool relativeTimeMode READ relativeTimeMode WRITE setRelativeTimeMode NOTIFY relativeTimeModeChanged)

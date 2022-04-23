@@ -52,7 +52,7 @@ namespace QtAV
  * \brief The GeometryRenderer class
  * TODO: support multiple geometry with same primitive (glPrimitiveRestartIndex, glDrawArraysInstanced, glDrawArraysInstanced, glMultiDrawArrays...)
  */
-class Q_AV_EXPORT GeometryRenderer
+class QTAV_EXPORT GeometryRenderer
 {
 public:
 

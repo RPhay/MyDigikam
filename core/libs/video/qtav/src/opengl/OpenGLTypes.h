@@ -37,7 +37,7 @@ namespace QtAV
 
 // TODO: namespace gl/gfx?
 
-class Q_AV_EXPORT Uniform
+class QTAV_EXPORT Uniform
 {
 public:
 
@@ -183,8 +183,8 @@ private:
 
 #ifndef QT_NO_DEBUG_STREAM
 
-Q_AV_EXPORT QDebug operator<<(QDebug debug, const Uniform &u);
-Q_AV_EXPORT QDebug operator<<(QDebug debug, Uniform::Type ut);
+QTAV_EXPORT QDebug operator<<(QDebug debug, const Uniform &u);
+QTAV_EXPORT QDebug operator<<(QDebug debug, Uniform::Type ut);
 
 #endif
 

@@ -45,7 +45,7 @@ namespace QtAV
  */
 class OpenGLRendererBasePrivate;
 
-class Q_AV_EXPORT OpenGLRendererBase : public VideoRenderer
+class QTAV_EXPORT OpenGLRendererBase : public VideoRenderer
 
 #if QT_VERSION >= QT_VERSION_CHECK(4, 8, 0)
 

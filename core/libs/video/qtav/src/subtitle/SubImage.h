@@ -41,7 +41,7 @@ namespace QtAV
  */
 struct SubImageSet;
 
-struct Q_AV_EXPORT SubImage
+struct QTAV_EXPORT SubImage
 {
     SubImage(int x = 0, int y = 0, int w = 0, int h = 0, int stride = 0);
 
@@ -57,7 +57,7 @@ struct Q_AV_EXPORT SubImage
     QByteArray  data;       ///< size = stride*h
 };
 
-struct Q_AV_EXPORT SubImageSet
+struct QTAV_EXPORT SubImageSet
 {
     enum Format
     {

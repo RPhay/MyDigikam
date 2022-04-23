@@ -39,7 +39,7 @@ namespace QtAV
 
 class PacketPrivate;
 
-class Q_AV_EXPORT Packet
+class QTAV_EXPORT Packet
 {
 public:
 
@@ -97,7 +97,7 @@ bool Packet::isValid() const
 
 #ifndef QT_NO_DEBUG_STREAM
 
-Q_AV_EXPORT QDebug operator<<(QDebug debug, const Packet &pkt);
+QTAV_EXPORT QDebug operator<<(QDebug debug, const Packet &pkt);
 
 #endif
 

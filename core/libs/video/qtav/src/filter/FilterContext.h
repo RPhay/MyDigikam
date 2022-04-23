@@ -50,7 +50,7 @@ namespace QtAV
 
 class VideoFrame;
 
-class Q_AV_EXPORT VideoFilterContext
+class QTAV_EXPORT VideoFilterContext
 {
 public:
 
@@ -135,7 +135,7 @@ class VideoFrameConverter;
 
 // TODO: font, pen, brush etc?
 
-class Q_AV_EXPORT QPainterFilterContext Q_DECL_FINAL: public VideoFilterContext
+class QTAV_EXPORT QPainterFilterContext Q_DECL_FINAL: public VideoFilterContext
 {
 public:
 
@@ -172,7 +172,7 @@ protected:
 
 #if QTAV_HAVE(X11)
 
-class Q_AV_EXPORT X11FilterContext Q_DECL_FINAL : public VideoFilterContext
+class QTAV_EXPORT X11FilterContext Q_DECL_FINAL : public VideoFilterContext
 {
 public:
 

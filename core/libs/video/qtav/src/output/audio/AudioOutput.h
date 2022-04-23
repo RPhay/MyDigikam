@@ -51,7 +51,7 @@ namespace QtAV
 class AudioFormat;
 class AudioOutputPrivate;
 
-class Q_AV_EXPORT AudioOutput : public QObject,
+class QTAV_EXPORT AudioOutput : public QObject,
                                 public AVOutput
 {
     Q_OBJECT

@@ -48,7 +48,7 @@ namespace QtAV
 
 class GraphicsItemRendererPrivate;
 
-class Q_AVWIDGETS_EXPORT GraphicsItemRenderer : public GraphicsWidget,
+class QTAV_WIDGETS_EXPORT GraphicsItemRenderer : public GraphicsWidget,
                                                 public QPainterRenderer
 {
     Q_OBJECT

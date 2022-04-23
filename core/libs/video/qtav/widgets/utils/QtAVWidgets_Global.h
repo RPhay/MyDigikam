@@ -29,29 +29,9 @@
 #include "VideoRenderer.h"
 #include "digikam_export.h"
 
-#define Q_AVWIDGETS_EXPORT DIGIKAM_EXPORT
-
-/*
-#ifdef BUILD_QTAVWIDGETS_STATIC
-#   define Q_AVWIDGETS_EXPORT
-#else
-#   if defined(BUILD_QTAVWIDGETS_LIB)
-#       undef Q_AVWIDGETS_EXPORT
-#       define Q_AVWIDGETS_EXPORT Q_DECL_EXPORT
-#   else
-#       undef Q_AVWIDGETS_EXPORT
-#       define Q_AVWIDGETS_EXPORT Q_DECL_IMPORT //only for vc?
-#   endif
-#endif //BUILD_QTAVWIDGETS_STATIC
-*/
-
-#define Q_AVWIDGETS_PRIVATE_EXPORT Q_AVWIDGETS_EXPORT
-
-#if defined(BUILD_QTAVWIDGETS_LIB)
-#   define QTAVWIDGETS_DEPRECATED
-#else
-#   define QTAVWIDGETS_DEPRECATED Q_DECL_DEPRECATED
-#endif
+#define QTAV_WIDGETS_EXPORT         DIGIKAM_EXPORT
+#define QTAV_WIDGETS_PRIVATE_EXPORT DIGIKAM_EXPORT
+#define QTAVWIDGETS_DEPRECATED
 
 namespace QtAV
 {
@@ -66,25 +46,25 @@ namespace Widgets
  * QtAVWidgets module maybe not linked to your program and renderers will not be available.
  * Then you have to call registerRenderers() to ensure QtAVWidgets module is linked.
  */
-Q_AVWIDGETS_EXPORT void registerRenderers();
+QTAV_WIDGETS_EXPORT void registerRenderers();
 
 } // namespace Widgets
 
-extern Q_AVWIDGETS_EXPORT VideoRendererId VideoRendererId_Widget;
-extern Q_AVWIDGETS_EXPORT VideoRendererId VideoRendererId_GraphicsItem;
-extern Q_AVWIDGETS_EXPORT VideoRendererId VideoRendererId_GLWidget;
-extern Q_AVWIDGETS_EXPORT VideoRendererId VideoRendererId_GDI;
-extern Q_AVWIDGETS_EXPORT VideoRendererId VideoRendererId_Direct2D;
-extern Q_AVWIDGETS_EXPORT VideoRendererId VideoRendererId_XV;
-extern Q_AVWIDGETS_EXPORT VideoRendererId VideoRendererId_X11;
-extern Q_AVWIDGETS_EXPORT VideoRendererId VideoRendererId_GLWidget2;
-extern Q_AVWIDGETS_EXPORT VideoRendererId VideoRendererId_OpenGLWidget;
+extern QTAV_WIDGETS_EXPORT VideoRendererId VideoRendererId_Widget;
+extern QTAV_WIDGETS_EXPORT VideoRendererId VideoRendererId_GraphicsItem;
+extern QTAV_WIDGETS_EXPORT VideoRendererId VideoRendererId_GLWidget;
+extern QTAV_WIDGETS_EXPORT VideoRendererId VideoRendererId_GDI;
+extern QTAV_WIDGETS_EXPORT VideoRendererId VideoRendererId_Direct2D;
+extern QTAV_WIDGETS_EXPORT VideoRendererId VideoRendererId_XV;
+extern QTAV_WIDGETS_EXPORT VideoRendererId VideoRendererId_X11;
+extern QTAV_WIDGETS_EXPORT VideoRendererId VideoRendererId_GLWidget2;
+extern QTAV_WIDGETS_EXPORT VideoRendererId VideoRendererId_OpenGLWidget;
 
 // popup a dialog
 
-Q_AVWIDGETS_EXPORT void about();
-Q_AVWIDGETS_EXPORT void aboutFFmpeg();
-Q_AVWIDGETS_EXPORT void aboutQtAV();
+QTAV_WIDGETS_EXPORT void about();
+QTAV_WIDGETS_EXPORT void aboutFFmpeg();
+QTAV_WIDGETS_EXPORT void aboutQtAV();
 
 } // namespace QtAV
 

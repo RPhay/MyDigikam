@@ -53,14 +53,14 @@ namespace QtAV
 
 typedef int VideoRendererId;
 
-extern Q_AV_EXPORT VideoRendererId VideoRendererId_OpenGLWindow;
+extern QTAV_EXPORT VideoRendererId VideoRendererId_OpenGLWindow;
 
 class Filter;
 class OpenGLVideo;
 class VideoFormat;
 class VideoRendererPrivate;
 
-class Q_AV_EXPORT VideoRenderer : public AVOutput
+class QTAV_EXPORT VideoRenderer : public AVOutput
 {
     DPTR_DECLARE_PRIVATE(VideoRenderer)
 

@@ -133,7 +133,7 @@ class ImageConverterFFPrivate;
  * \brief The ImageConverterFF class
  * based on libswscale
  */
-class ImageConverterFF Q_DECL_FINAL: public ImageConverter // Q_AV_EXPORT is not needed
+class ImageConverterFF Q_DECL_FINAL: public ImageConverter // QTAV_EXPORT is not needed
 {
     DPTR_DECLARE_PRIVATE(ImageConverterFF)
 

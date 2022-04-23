@@ -35,7 +35,7 @@
 namespace QtAV
 {
 
-class Q_AV_EXPORT AVError
+class QTAV_EXPORT AVError
 {
 public:
 
@@ -120,7 +120,7 @@ QT_BEGIN_NAMESPACE
 class QDebug;
 QT_END_NAMESPACE
 
-Q_AV_EXPORT QDebug operator<<(QDebug debug, const QtAV::AVError &error);
+QTAV_EXPORT QDebug operator<<(QDebug debug, const QtAV::AVError &error);
 
 #endif
 

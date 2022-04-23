@@ -46,7 +46,7 @@ class VideoShaderObjectPrivate;
  * and object dynamic properties.
  * Property value type T is limited to float, int, unsigned(ES3.0) and QVector<T>
  */
-class Q_AV_EXPORT VideoShaderObject : public QObject,
+class QTAV_EXPORT VideoShaderObject : public QObject,
                                       public VideoShader
 {
     DPTR_DECLARE_PRIVATE(VideoShaderObject)
@@ -78,7 +78,7 @@ class DynamicShaderObjectPrivate;
  * \brief The DynamicShaderObject class
  * Able to set custom shader code
  */
-class Q_AV_EXPORT DynamicShaderObject : public VideoShaderObject
+class QTAV_EXPORT DynamicShaderObject : public VideoShaderObject
 {
     Q_OBJECT
     DPTR_DECLARE_PRIVATE(DynamicShaderObject)

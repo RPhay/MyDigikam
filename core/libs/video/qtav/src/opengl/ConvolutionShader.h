@@ -37,7 +37,7 @@ class ConvolutionShaderPrivate;
  * \brief The ConvolutionShader class
  * Uniform u_Kernel is used
  */
-class Q_AV_EXPORT ConvolutionShader : public VideoShader
+class QTAV_EXPORT ConvolutionShader : public VideoShader
 {
     DPTR_DECLARE_PRIVATE(ConvolutionShader)
 

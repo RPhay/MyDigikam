@@ -51,7 +51,7 @@ enum DataType
     TypeF32 = 0x1406  // F32
 };
 
-class Q_AV_EXPORT Attribute
+class QTAV_EXPORT Attribute
 {
     bool        m_normalize;
     DataType    m_type;
@@ -80,7 +80,7 @@ public:
 
 #ifndef QT_NO_DEBUG_STREAM
 
-Q_AV_EXPORT QDebug operator<<(QDebug debug, const Attribute &a);
+QTAV_EXPORT QDebug operator<<(QDebug debug, const Attribute &a);
 
 #endif
 
@@ -92,7 +92,7 @@ Q_AV_EXPORT QDebug operator<<(QDebug debug, const Attribute &a);
  * }
  * \endcode
  */
-class Q_AV_EXPORT Geometry
+class QTAV_EXPORT Geometry
 {
 public:
 
@@ -170,7 +170,7 @@ protected:
 
 // ----------------------------------------------------------------------
 
-class Q_AV_EXPORT TexturedGeometry : public Geometry
+class QTAV_EXPORT TexturedGeometry : public Geometry
 {
 public:
 
@@ -209,7 +209,7 @@ protected:
 
 // -----------------------------------------------------------------------------------
 
-class Q_AV_EXPORT Sphere : public TexturedGeometry
+class QTAV_EXPORT Sphere : public TexturedGeometry
 {
 public:
 

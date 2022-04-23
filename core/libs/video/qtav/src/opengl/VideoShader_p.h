@@ -67,7 +67,7 @@ enum ShaderType
 
 class VideoShader;
 
-class Q_AV_PRIVATE_EXPORT VideoShaderPrivate : public DPtrPrivate<VideoShader>
+class QTAV_PRIVATE_EXPORT VideoShaderPrivate : public DPtrPrivate<VideoShader>
 {
 public:
 

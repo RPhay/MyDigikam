@@ -50,7 +50,7 @@ namespace QtAV
 class AVError;
 class MediaIO;
 
-class Q_AV_EXPORT AVDemuxer : public QObject
+class QTAV_EXPORT AVDemuxer : public QObject
 {
     Q_OBJECT
 

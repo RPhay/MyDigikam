@@ -39,7 +39,7 @@ namespace QtAV
 
 // One capture per thread or all in one thread?
 
-class Q_AV_EXPORT VideoCapture : public QObject
+class QTAV_EXPORT VideoCapture : public QObject
 {
     Q_OBJECT
     Q_PROPERTY(bool async READ isAsync WRITE setAsync NOTIFY asyncChanged)

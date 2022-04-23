@@ -44,12 +44,12 @@ typedef int AudioDecoderId;
 
 // built-in decoders
 
-extern Q_AV_EXPORT AudioDecoderId AudioDecoderId_FFmpeg;
+extern QTAV_EXPORT AudioDecoderId AudioDecoderId_FFmpeg;
 
 class AudioResampler;
 class AudioDecoderPrivate;
 
-class Q_AV_EXPORT AudioDecoder : public AVDecoder
+class QTAV_EXPORT AudioDecoder : public AVDecoder
 {
     Q_DISABLE_COPY(AudioDecoder)
     DPTR_DECLARE_PRIVATE(AudioDecoder)

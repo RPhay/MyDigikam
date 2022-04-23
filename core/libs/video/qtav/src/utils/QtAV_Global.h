@@ -39,15 +39,15 @@
 #include "QtAV_dptr.h"
 #include "digikam_export.h"
 
-#define Q_AV_EXPORT         DIGIKAM_EXPORT
-#define Q_AV_PRIVATE_EXPORT DIGIKAM_EXPORT
+#define QTAV_EXPORT         DIGIKAM_EXPORT
+#define QTAV_PRIVATE_EXPORT DIGIKAM_EXPORT
 
 /**
  * runtime version. used to compare with compile time version.
  */
-Q_AV_EXPORT unsigned QtAV_Version();
-Q_AV_EXPORT QString  QtAV_Version_String();
-Q_AV_EXPORT QString  QtAV_Version_String_Long();
+QTAV_EXPORT unsigned QtAV_Version();
+QTAV_EXPORT QString  QtAV_Version_String();
+QTAV_EXPORT QString  QtAV_Version_String_Long();
 
 namespace QtAV
 {
@@ -56,25 +56,25 @@ namespace QtAV
  * Default handler is qt message logger. Set environment QTAV_FFMPEG_LOG=0
  * or setFFmpegLogHandler(0) to disable.
  */
-Q_AV_EXPORT void setFFmpegLogHandler(void(*)(void *, int, const char *, va_list));
+QTAV_EXPORT void setFFmpegLogHandler(void(*)(void *, int, const char *, va_list));
 
 /*!
  * \brief setFFmpegLogLevel
  * \param level can be: quiet, panic, fatal, error, warn, info, verbose, debug, trace
  */
-Q_AV_EXPORT void setFFmpegLogLevel(const QByteArray& level);
+QTAV_EXPORT void setFFmpegLogLevel(const QByteArray& level);
 
 /**
  * query the common options of avformat/avcodec that can be used by AVPlayer::setOptionsForXXX.
  * Format/codec specified options are also included
  */
-Q_AV_EXPORT QString avformatOptions();
-Q_AV_EXPORT QString avcodecOptions();
+QTAV_EXPORT QString avformatOptions();
+QTAV_EXPORT QString avcodecOptions();
 
-Q_AV_EXPORT QString aboutFFmpeg_PlainText();
-Q_AV_EXPORT QString aboutFFmpeg_HTML();
-Q_AV_EXPORT QString aboutQtAV_PlainText();
-Q_AV_EXPORT QString aboutQtAV_HTML();
+QTAV_EXPORT QString aboutFFmpeg_PlainText();
+QTAV_EXPORT QString aboutFFmpeg_HTML();
+QTAV_EXPORT QString aboutQtAV_PlainText();
+QTAV_EXPORT QString aboutQtAV_HTML();
 
 ////////////Types/////////////
 
@@ -192,10 +192,6 @@ Q_DECLARE_METATYPE(QtAV::MediaEndAction)
 #   define Q_DECL_FINAL
 #endif
 
-#if defined(BUILD_QTAV_LIB)
-#   define QTAV_DEPRECATED
-#else
-#   define QTAV_DEPRECATED Q_DECL_DEPRECATED
-#endif
+#define QTAV_DEPRECATED
 
 #endif // QTAV_GLOBAL_H
