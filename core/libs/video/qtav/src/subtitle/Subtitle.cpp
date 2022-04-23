@@ -87,14 +87,14 @@ public:
     {
         QMutexLocker lock(&mutex);
         Q_UNUSED(lock);
-        loaded = false;
-        processor = 0;
-        update_text = true;
-        update_image = true;
-        t = 0;
-        frame = SubtitleFrame();
+        loaded        = false;
+        processor     = 0;
+        update_text   = true;
+        update_image  = true;
+        t             = 0;
+        frame         = SubtitleFrame();
         frames.clear();
-        itf = frames.begin();
+        itf           = frames.begin();
         current_count = 0;
     }
 
@@ -121,42 +121,45 @@ public:
     bool processRawData(const QByteArray& data);
     bool processRawData(SubtitleProcessor* sp, const QByteArray& data);
 
-    bool loaded;
-    bool fuzzy_match;
-    bool update_text;
-    bool update_image; // TODO: detect image change from engine
-    bool last_can_render;
-    SubtitleProcessor *processor;
-    QList<SubtitleProcessor*> processors;
-    QByteArray codec;
-    QStringList engine_names;
-    QList<SubtitleFrame> frames;
-    QUrl url;
-    QByteArray raw_data;
-    QString file_name;
-    QStringList dirs;
-    QStringList suffixes;
-    QStringList supported_suffixes;
-    QIODevice *dev;
+public:
+
+    bool                            loaded;
+    bool                            fuzzy_match;
+    bool                            update_text;
+    bool                            update_image; // TODO: detect image change from engine
+    bool                            last_can_render;
+    SubtitleProcessor*              processor;
+    QList<SubtitleProcessor*>       processors;
+    QByteArray                      codec;
+    QStringList                     engine_names;
+    QList<SubtitleFrame>            frames;
+    QUrl                            url;
+    QByteArray                      raw_data;
+    QString                         file_name;
+    QStringList                     dirs;
+    QStringList                     suffixes;
+    QStringList                     supported_suffixes;
+    QIODevice*                      dev;
 
     // last time image
-    qreal t;
-    qreal delay;
-    SubtitleFrame frame;
-    QString current_text;
-    QImage current_image;
-    SubImageSet current_ass;
-    QList<SubtitleFrame>::iterator itf;
+
+    qreal                           t;
+    qreal                           delay;
+    SubtitleFrame                   frame;
+    QString                         current_text;
+    QImage                          current_image;
+    SubImageSet                     current_ass;
+    QList<SubtitleFrame>::iterator  itf;
 
     /* number of subtitle frames at current time.
      * <0 means itf is the last. >0 means itf is the 1st
      */
-    int current_count;
-    QMutex mutex;
+    int                             current_count;
+    QMutex                          mutex;
 
-    bool force_font_file;
-    QString font_file;
-    QString fonts_dir;
+    bool                            force_font_file;
+    QString                         font_file;
+    QString                         fonts_dir;
 };
 
 Subtitle::Subtitle(QObject *parent)
@@ -993,7 +996,7 @@ QStringList Subtitle::Private::find()
 
 #if QT_VERSION >= QT_VERSION_CHECK(6, 0, 0)
 
-        auto rx = QRegularExpression::fromWildcard(QStringLiteral("*.") + suf);
+        auto rx = QRegularExpression::fromWildcard(QString::fromLatin1("*.%1").arg(suf));
 
 #else
 

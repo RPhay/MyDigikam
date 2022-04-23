@@ -24,6 +24,10 @@
 #ifndef QTAV_BLOCKING_QUEUE_H
 #define QTAV_BLOCKING_QUEUE_H
 
+// C++ includes
+
+#include <climits>
+
 // Qt includes
 
 #include <QReadWriteLock>

@@ -22,24 +22,29 @@
  * ============================================================ */
 
 #include "OutputSet.h"
+
+// Local includes
+
 #include "AVPlayer.h"
 #include "VideoRenderer.h"
 
 namespace QtAV
 {
 
-OutputSet::OutputSet(AVPlayer *player):
-    QObject(player)
-  , mCanPauseThread(false)
-  , mpPlayer(player)
-  , mPauseCount(0)
+OutputSet::OutputSet(AVPlayer *player)
+    : QObject(player)
+    , mCanPauseThread(false)
+    , mpPlayer(player)
+    , mPauseCount(0)
 {
 }
 
 OutputSet::~OutputSet()
 {
     mCond.wakeAll();
-    //delete? may be deleted by vo's parent
+
+    // delete? may be deleted by vo's parent
+
     clearOutputs();
 }
 
@@ -62,14 +67,21 @@ void OutputSet::sendVideoFrame(const VideoFrame &frame)
 {
     if (mOutputs.isEmpty())
         return;
+
     VideoFrame f(frame);
-    foreach(AVOutput *output, mOutputs) {
+
+    foreach(AVOutput *output, mOutputs)
+    {
         if (!output->isAvailable())
             continue;
+
         VideoRenderer *vo = static_cast<VideoRenderer*>(output);
+
         // TODO: sort vo by supported formats when a new vo is added to reduce convertion
+
         if (!vo->isSupported(frame.pixelFormat()))
             f = frame.to(vo->preferredPixelFormat());
+
         vo->receive(f);
     }
 }
@@ -78,11 +90,15 @@ void OutputSet::clearOutputs()
 {
     QMutexLocker lock(&mMutex);
     Q_UNUSED(lock);
+
     if (mOutputs.isEmpty())
         return;
-    foreach(AVOutput *output, mOutputs) {
+
+    foreach(AVOutput *output, mOutputs)
+    {
         output->removeOutputSet(this);
     }
+
     mOutputs.clear();
 }
 
@@ -104,16 +120,24 @@ void OutputSet::removeOutput(AVOutput *output)
 
 void OutputSet::notifyPauseChange(AVOutput *output)
 {
-    if (output->isPaused()) {
+    if (output->isPaused())
+    {
         mPauseCount++;
-        if (mPauseCount == mOutputs.size()) {
+
+        if (mPauseCount == mOutputs.size())
+        {
             mCanPauseThread = true;
         }
-        //DO NOT pause here because it must be paused in AVThread
-    } else {
+
+        // DO NOT pause here because it must be paused in AVThread
+    }
+    else
+    {
         mPauseCount--;
         mCanPauseThread = false;
-        if (mPauseCount == mOutputs.size() - 1) {
+
+        if (mPauseCount == mOutputs.size() - 1)
+        {
             resumeThread();
         }
     }
@@ -128,6 +152,7 @@ bool OutputSet::pauseThread(unsigned long timeout)
 {
     QMutexLocker lock(&mMutex);
     Q_UNUSED(lock);
+
     return mCond.wait(&mMutex, timeout);
 }
 
