@@ -91,6 +91,8 @@ if(ENABLE_MEDIAPLAYER)
         MACRO_BOOL_TO_01(GDIPLUS_FOUND         HAVE_LIBGDIPLUS)
         MACRO_BOOL_TO_01(Direct2D_FOUND        HAVE_LIBDIRECT2D)
 
+        # --- Reports and Libraries -----------------------------------------------------------
+
         if(SSE4_1_FOUND)
 
             message(STATUS "MediaPlayer will be compiled with SSE4.1 support     : yes")
@@ -112,8 +114,6 @@ if(ENABLE_MEDIAPLAYER)
             endif()
 
         endif()
-
-        # ---
 
         set(MEDIAPLAYER_LIBRARIES ${FFMPEG_LIBRARIES} ${CMAKE_DL_LIBS})
 
@@ -217,9 +217,21 @@ if(ENABLE_MEDIAPLAYER)
 
             message(STATUS "MediaPlayer will be compiled with OpenGL support     : yes")
 
+            if (OpenGL_EGL_FOUND)
+
+                set(MEDIAPLAYER_LIBRARIES ${MEDIAPLAYER_LIBRARIES} ${OPENGL_egl_LIBRARY})
+                message(STATUS "MediaPlayer will be compiled with OpenGL-EGL support : yes")
+
+            else()
+
+                message(STATUS "MediaPlayer will be compiled with OpenGL-EGL support : no")
+
+            endif()
+
         else()
 
             message(STATUS "MediaPlayer will be compiled with OpenGL support     : no")
+            message(STATUS "MediaPlayer will be compiled with OpenGL-EGL support : no")
 
         endif()
 
@@ -282,7 +294,7 @@ if(ENABLE_MEDIAPLAYER)
 
         endif()
 
-        # ---
+        # --- Definitions -------------------------------------------------------------------------------------
 
         set(MEDIAPLAYER_DEFINITIONS -D__STDC_CONSTANT_MACROS
                                     -DQTAV_HAVE_GL=1             # For QtAVWidgets
@@ -327,6 +339,12 @@ if(ENABLE_MEDIAPLAYER)
 
         endif()
 
+        if(OpenGL_EGL_FOUND)
+
+            set(MEDIAPLAYER_DEFINITIONS ${MEDIAPLAYER_DEFINITIONS} -DCAPI_LINK_EGL)
+
+        endif()
+
         set(MEDIAPLAYER_DEFINITIONS ${MEDIAPLAYER_DEFINITIONS} -DQTAV_HAVE_X11=${HAVE_LIBX11})
         set(MEDIAPLAYER_DEFINITIONS ${MEDIAPLAYER_DEFINITIONS} -DQTAV_HAVE_XV=${HAVE_LIBXV})
         set(MEDIAPLAYER_DEFINITIONS ${MEDIAPLAYER_DEFINITIONS} -DQTAV_HAVE_OPENAL=${HAVE_LIBOPENAL})
@@ -360,7 +378,7 @@ if(ENABLE_MEDIAPLAYER)
         set(MEDIAPLAYER_DEFINITIONS ${MEDIAPLAYER_DEFINITIONS} -DQTAV_HAVE_EGL_CAPI=${HAVE_LIBOPENGL_EGL})
         set(MEDIAPLAYER_DEFINITIONS ${MEDIAPLAYER_DEFINITIONS} -DQTAV_HAVE_VAAPI=${HAVE_LIBVAAPI})
 
-        # ---
+        # --- Resume ---------------------------------------------------------------------------------------
 
         message(STATUS "MediaPlayer libraries  : ${MEDIAPLAYER_LIBRARIES}")
         message(STATUS "MediaPlayer definitions: ${MEDIAPLAYER_DEFINITIONS}")

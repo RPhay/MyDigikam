@@ -78,13 +78,15 @@ public:
         // from qwindowseglcontext.cpp. Play nice with 32-bit mingw: Try func first, then func@0, func@4, ..., func@64.
         // The def file does not provide any aliases in libEGL and libGLESv2 in these builds which results in exporting function names like eglInitialize@12.
         // This cannot be fixed without breaking binary compatibility. So be flexible here instead.
+
         void *proc = 0;
 
-        for (int n = -4; !proc && n <= 64; n += 4)
+        for (int n = -4 ; !proc && n <= 64 ; n += 4)
         {
             if (n < 0)
             {
                 proc = (void*)dso::resolve(symbol);
+
                 continue;
             }
 
@@ -107,7 +109,9 @@ typedef EGLLib user_dso;
 static const int versions[] =
 {
     ::capi::NoVersion,
+
     // the following line will be replaced by the content of config/egl/version if exists
+
     1,
     ::capi::EndVersion
 };
@@ -163,7 +167,7 @@ CAPI_DEFINE_M_ENTRY(EGLBoolean, EGLAPIENTRY, eglSwapInterval, CAPI_ARG2(EGLDispl
 #ifdef EGL_VERSION_1_2
 
 CAPI_DEFINE_M_ENTRY(EGLBoolean, EGLAPIENTRY, eglBindAPI, CAPI_ARG1(EGLenum))
-CAPI_DEFINE_M_ENTRY(EGLenum, EGLAPIENTRY, eglQueryAPI, CAPI_ARG0())
+CAPI_DEFINE_M_ENTRY(EGLenum,    EGLAPIENTRY, eglQueryAPI, CAPI_ARG0())
 CAPI_DEFINE_M_ENTRY(EGLSurface, EGLAPIENTRY, eglCreatePbufferFromClientBuffer, CAPI_ARG5(EGLDisplay, EGLenum, EGLClientBuffer, EGLConfig, const EGLint *))
 CAPI_DEFINE_M_ENTRY(EGLBoolean, EGLAPIENTRY, eglReleaseThread, CAPI_ARG0())
 CAPI_DEFINE_M_ENTRY(EGLBoolean, EGLAPIENTRY, eglWaitClient, CAPI_ARG0())
@@ -178,11 +182,11 @@ CAPI_DEFINE_M_ENTRY(EGLContext, EGLAPIENTRY, eglGetCurrentContext, CAPI_ARG0())
 
 #ifdef EGL_VERSION_1_5
 
-CAPI_DEFINE_M_ENTRY(EGLSync, EGLAPIENTRY, eglCreateSync, CAPI_ARG3(EGLDisplay, EGLenum, const EGLAttrib *))
+CAPI_DEFINE_M_ENTRY(EGLSync,    EGLAPIENTRY, eglCreateSync, CAPI_ARG3(EGLDisplay, EGLenum, const EGLAttrib *))
 CAPI_DEFINE_M_ENTRY(EGLBoolean, EGLAPIENTRY, eglDestroySync, CAPI_ARG2(EGLDisplay, EGLSync))
-CAPI_DEFINE_M_ENTRY(EGLint, EGLAPIENTRY, eglClientWaitSync, CAPI_ARG4(EGLDisplay, EGLSync, EGLint, EGLTime))
+CAPI_DEFINE_M_ENTRY(EGLint,     EGLAPIENTRY, eglClientWaitSync, CAPI_ARG4(EGLDisplay, EGLSync, EGLint, EGLTime))
 CAPI_DEFINE_M_ENTRY(EGLBoolean, EGLAPIENTRY, eglGetSyncAttrib, CAPI_ARG4(EGLDisplay, EGLSync, EGLint, EGLAttrib *))
-CAPI_DEFINE_M_ENTRY(EGLImage, EGLAPIENTRY, eglCreateImage, CAPI_ARG5(EGLDisplay, EGLContext, EGLenum, EGLClientBuffer, const EGLAttrib *))
+CAPI_DEFINE_M_ENTRY(EGLImage,   EGLAPIENTRY, eglCreateImage, CAPI_ARG5(EGLDisplay, EGLContext, EGLenum, EGLClientBuffer, const EGLAttrib *))
 CAPI_DEFINE_M_ENTRY(EGLBoolean, EGLAPIENTRY, eglDestroyImage, CAPI_ARG2(EGLDisplay, EGLImage))
 CAPI_DEFINE_M_ENTRY(EGLDisplay, EGLAPIENTRY, eglGetPlatformDisplay, CAPI_ARG3(EGLenum, void *, const EGLAttrib *))
 CAPI_DEFINE_M_ENTRY(EGLSurface, EGLAPIENTRY, eglCreatePlatformWindowSurface, CAPI_ARG4(EGLDisplay, EGLConfig, void *, const EGLAttrib *))
@@ -211,7 +215,7 @@ CAPI_DEFINE(EGLBoolean, eglGetConfigs, CAPI_ARG4(EGLDisplay, EGLConfig *, EGLint
 CAPI_DEFINE(EGLDisplay, eglGetCurrentDisplay, CAPI_ARG0())
 CAPI_DEFINE(EGLSurface, eglGetCurrentSurface, CAPI_ARG1(EGLint))
 CAPI_DEFINE(EGLDisplay, eglGetDisplay, CAPI_ARG1(EGLNativeDisplayType))
-CAPI_DEFINE(EGLint, eglGetError, CAPI_ARG0())
+CAPI_DEFINE(EGLint,     eglGetError, CAPI_ARG0())
 CAPI_DEFINE(__eglMustCastToProperFunctionPointerType, eglGetProcAddress, CAPI_ARG1(const char *))
 CAPI_DEFINE(EGLBoolean, eglInitialize, CAPI_ARG3(EGLDisplay, EGLint *, EGLint *))
 CAPI_DEFINE(EGLBoolean, eglMakeCurrent, CAPI_ARG4(EGLDisplay, EGLSurface, EGLSurface, EGLContext))
@@ -237,7 +241,7 @@ CAPI_DEFINE(EGLBoolean, eglSwapInterval, CAPI_ARG2(EGLDisplay, EGLint))
 #ifdef EGL_VERSION_1_2
 
 CAPI_DEFINE(EGLBoolean, eglBindAPI, CAPI_ARG1(EGLenum))
-CAPI_DEFINE(EGLenum, eglQueryAPI, CAPI_ARG0())
+CAPI_DEFINE(EGLenum,    eglQueryAPI, CAPI_ARG0())
 CAPI_DEFINE(EGLSurface, eglCreatePbufferFromClientBuffer, CAPI_ARG5(EGLDisplay, EGLenum, EGLClientBuffer, EGLConfig, const EGLint *))
 CAPI_DEFINE(EGLBoolean, eglReleaseThread, CAPI_ARG0())
 CAPI_DEFINE(EGLBoolean, eglWaitClient, CAPI_ARG0())
@@ -252,11 +256,11 @@ CAPI_DEFINE(EGLContext, eglGetCurrentContext, CAPI_ARG0())
 
 #ifdef EGL_VERSION_1_5
 
-CAPI_DEFINE(EGLSync, eglCreateSync, CAPI_ARG3(EGLDisplay, EGLenum, const EGLAttrib *))
+CAPI_DEFINE(EGLSync,    eglCreateSync, CAPI_ARG3(EGLDisplay, EGLenum, const EGLAttrib *))
 CAPI_DEFINE(EGLBoolean, eglDestroySync, CAPI_ARG2(EGLDisplay, EGLSync))
-CAPI_DEFINE(EGLint, eglClientWaitSync, CAPI_ARG4(EGLDisplay, EGLSync, EGLint, EGLTime))
+CAPI_DEFINE(EGLint,     eglClientWaitSync, CAPI_ARG4(EGLDisplay, EGLSync, EGLint, EGLTime))
 CAPI_DEFINE(EGLBoolean, eglGetSyncAttrib, CAPI_ARG4(EGLDisplay, EGLSync, EGLint, EGLAttrib *))
-CAPI_DEFINE(EGLImage, eglCreateImage, CAPI_ARG5(EGLDisplay, EGLContext, EGLenum, EGLClientBuffer, const EGLAttrib *))
+CAPI_DEFINE(EGLImage,   eglCreateImage, CAPI_ARG5(EGLDisplay, EGLContext, EGLenum, EGLClientBuffer, const EGLAttrib *))
 CAPI_DEFINE(EGLBoolean, eglDestroyImage, CAPI_ARG2(EGLDisplay, EGLImage))
 CAPI_DEFINE(EGLDisplay, eglGetPlatformDisplay, CAPI_ARG3(EGLenum, void *, const EGLAttrib *))
 CAPI_DEFINE(EGLSurface, eglCreatePlatformWindowSurface, CAPI_ARG4(EGLDisplay, EGLConfig, void *, const EGLAttrib *))

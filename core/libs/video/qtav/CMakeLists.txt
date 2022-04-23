@@ -180,9 +180,8 @@ if(HAVE_OPENGL)
     endif()
 
     set(libqtav_SRCS ${libqtav_SRCS}
-        ${CMAKE_CURRENT_SOURCE_DIR}/src/opengl/ConvolutionShader.cpp
         ${CMAKE_CURRENT_SOURCE_DIR}/src/opengl/gl_api.cpp
-        ${CMAKE_CURRENT_SOURCE_DIR}/src/opengl/egl_api.cpp
+        ${CMAKE_CURRENT_SOURCE_DIR}/src/opengl/ConvolutionShader.cpp
         ${CMAKE_CURRENT_SOURCE_DIR}/src/opengl/OpenGLVideo.cpp
         ${CMAKE_CURRENT_SOURCE_DIR}/src/opengl/SubImagesRenderer.cpp
         ${CMAKE_CURRENT_SOURCE_DIR}/src/opengl/Geometry.cpp
@@ -193,12 +192,23 @@ if(HAVE_OPENGL)
         ${CMAKE_CURRENT_SOURCE_DIR}/src/opengl/OpenGLTypes.cpp
         ${CMAKE_CURRENT_SOURCE_DIR}/src/opengl/SubImagesGeometry.cpp
         ${CMAKE_CURRENT_SOURCE_DIR}/src/opengl/VideoShaderObject.cpp
+
+        ${CMAKE_CURRENT_SOURCE_DIR}/src/opengl/egl_api.cpp
+
         ${CMAKE_CURRENT_SOURCE_DIR}/src/filter/GLSLFilter.cpp
         ${CMAKE_CURRENT_SOURCE_DIR}/src/output/video/OpenGLRendererBase.cpp
         ${CMAKE_CURRENT_SOURCE_DIR}/src/output/video/OpenGLWindowRenderer.cpp
 
         ${CMAKE_CURRENT_SOURCE_DIR}/widgets/opengl/GLWidgetRenderer2.cpp
     )
+
+    if(OpenGL_EGL_FOUND)
+
+        set(libqtav_SRCS ${libqtav_SRCS}
+            ${CMAKE_CURRENT_SOURCE_DIR}/src/opengl/egl_api.cpp
+        )
+
+    endif()
 
     if(D3D11_FOUND)
 
