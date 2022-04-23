@@ -29,6 +29,7 @@
  */
 #define QTAV_USE_FFMPEG(MODULE) (MODULE##_VERSION_MICRO >= 100)
 #define QTAV_USE_LIBAV(MODULE)  !QTAV_USE_FFMPEG(MODULE)
+
 #define FFMPEG_MODULE_CHECK(MODULE, MAJOR, MINOR, MICRO) \
     (QTAV_USE_FFMPEG(MODULE) && MODULE##_VERSION_INT >= AV_VERSION_INT(MAJOR, MINOR, MICRO))
 
@@ -41,8 +42,8 @@
 /// example: AV_ENSURE(avcodec_close(avctx), false) will print error and return false if failed. AV_WARN just prints error.
 
 #define AV_ENSURE_OK(FUNC, ...) AV_RUN_CHECK(FUNC, return, __VA_ARGS__)
-#define AV_ENSURE(FUNC, ...) AV_RUN_CHECK(FUNC, return, __VA_ARGS__)
-#define AV_WARN(FUNC) AV_RUN_CHECK(FUNC, void)
+#define AV_ENSURE(FUNC, ...)    AV_RUN_CHECK(FUNC, return, __VA_ARGS__)
+#define AV_WARN(FUNC)           AV_RUN_CHECK(FUNC, void)
 
 // Local includes
 
@@ -74,7 +75,7 @@ extern "C"
 #include <libavutil/avstring.h>
 #include <libavfilter/version.h>
 
-#define AVCODEC_STATIC_REGISTER FFMPEG_MODULE_CHECK(LIBAVCODEC, 58, 10, 100)
+#define AVCODEC_STATIC_REGISTER  FFMPEG_MODULE_CHECK(LIBAVCODEC,  58, 10, 100)
 #define AVFORMAT_STATIC_REGISTER FFMPEG_MODULE_CHECK(LIBAVFORMAT, 58, 9, 100)
 
 #if !FFMPEG_MODULE_CHECK(LIBAVUTIL, 51, 73, 101)
@@ -90,7 +91,9 @@ extern "C"
 #   ifndef LIBSWRESAMPLE_VERSION_INT // ffmpeg 0.9, swr 0.5
 #       define LIBSWRESAMPLE_VERSION_INT AV_VERSION_INT(LIBSWRESAMPLE_VERSION_MAJOR, LIBSWRESAMPLE_VERSION_MINOR, LIBSWRESAMPLE_VERSION_MICRO)
 #   endif
+
 // ffmpeg >= 0.11.x. swr0.6.100: ffmpeg-0.10.x
+
 #   define HAVE_SWR_GET_DELAY (LIBSWRESAMPLE_VERSION_INT > AV_VERSION_INT(0, 6, 100))
 #endif
 
@@ -166,7 +169,9 @@ int avformat_alloc_output_context2(AVFormatContext **avctx, AVOutputFormat *ofor
     (__GNUC__ > major || (__GNUC__ == major && (__GNUC_MINOR__ > minor \
     || (__GNUC_MINOR__ == minor && __GNUC_PATCHLEVEL__ >= patch))))
 #else
+
 /* Define this for !GCC compilers, just so we can write things like GCC_VERSION_AT_LEAST(4, 1, 0). */
+
 #   define GCC_VERSION_AT_LEAST(major, minor, patch) 0
 #endif
 
@@ -177,7 +182,9 @@ int avformat_alloc_output_context2(AVFormatContext **avctx, AVOutputFormat *ofor
 #if defined(_MSC_VER) || !defined(av_err2str) || (GCC_VERSION_AT_LEAST(4, 7, 0) && __cplusplus)
 #   ifdef av_err2str
 #       undef av_err2str
+
 /* #define av_make_error_string qtav_make_error_string */
+
 #   else
 
 /**
@@ -193,6 +200,7 @@ int avformat_alloc_output_context2(AVFormatContext **avctx, AVOutputFormat *ofor
 static av_always_inline char *av_make_error_string(char *errbuf, size_t errbuf_size, int errnum)
 {
     av_strerror(errnum, errbuf, errbuf_size);
+
     return errbuf;
 }
 
@@ -207,6 +215,7 @@ av_always_inline QSharedPointer<char> av_err2str_qsp(int errnum)
 {
     QSharedPointer<char> str((char*)calloc(AV_ERROR_MAX_STRING_SIZE, 1), ::free);
     av_strerror(errnum, str.data(), AV_ERROR_MAX_STRING_SIZE);
+
     return str;
 }
 
@@ -216,6 +225,7 @@ av_always_inline char* av_err2str(int errnum)
 {
     static char str[AV_ERROR_MAX_STRING_SIZE];
     memset(str, 0, sizeof(str));
+
     return av_make_error_string(str, AV_ERROR_MAX_STRING_SIZE, errnum);
 }
 
@@ -265,12 +275,16 @@ int64_t av_get_default_channel_layout(int nb_channels);
     }
 #   define swr_get_class() avresample_get_class()
 #   define swr_alloc() avresample_alloc_context()
+
 //# define swr_next_pts()
+
 #   define swr_set_compensation() avresample_set_compensation()
 #   define swr_set_channel_mapping(ctx, map) avresample_set_channel_mapping(ctx, map)
 #   define swr_set_matrix(ctx, matrix, stride) avresample_set_matrix(ctx, matrix, stride)
+
 //# define swr_drop_output(ctx, count)
 //# define swr_inject_silence(ctx, count)
+
 #   define swr_get_delay(ctx, ...) avresample_get_delay(ctx)
 #   if LIBAVRESAMPLE_VERSION_INT >= AV_VERSION_INT(1, 0, 0) //ffmpeg >= 1.1
 #       define swr_convert(ctx, out, out_count, in, in_count) \
@@ -296,7 +310,7 @@ struct SwrContext *swr_alloc_set_opts(struct SwrContext *s, int64_t out_ch_layou
 #if LIBAVUTIL_VERSION_INT < AV_VERSION_INT(52, 13, 100) //(51, 42, 0)
 typedef enum PixelFormat AVPixelFormat; // so we must avoid using  enum AVPixelFormat
 #   define QTAV_PIX_FMT_C(X) PIX_FMT_##X
-#else //FFmpeg >= 2.0
+#else // FFmpeg >= 2.0
 typedef enum AVPixelFormat AVPixelFormat;
 #   define QTAV_PIX_FMT_C(X) AV_PIX_FMT_##X
 #endif
@@ -340,7 +354,9 @@ typedef enum AVPixelFormat AVPixelFormat;
 /*
  * rename PIX_FMT_* flags to AV_PIX_FMT_FLAG_*. git e6c4ac7b5f038be56dfbb0171f5dd0cb850d9b28
  */
+
 //#if LIBAVUTIL_VERSION_INT < AV_VERSION_INT(52, 11, 0)
+
 #ifndef AV_PIX_FMT_FLAG_BE
 #   define AV_PIX_FMT_FLAG_BE           PIX_FMT_BE
 #   define AV_PIX_FMT_FLAG_PAL          PIX_FMT_PAL
@@ -348,15 +364,19 @@ typedef enum AVPixelFormat AVPixelFormat;
 #   define AV_PIX_FMT_FLAG_HWACCEL      PIX_FMT_HWACCEL
 
 // FFmpeg >=  0.9, libav >= 0.8.8(51,22,1)
+
 #   define AV_PIX_FMT_FLAG_PLANAR       PIX_FMT_PLANAR
 #   define AV_PIX_FMT_FLAG_RGB          PIX_FMT_RGB
 
 // FFmpeg >= 1.0, libav >= 9.7
+
 #   define AV_PIX_FMT_FLAG_PSEUDOPAL    PIX_FMT_PSEUDOPAL
 
 // FFmpeg >= 1.1, libav >= 9.7
+
 #   define AV_PIX_FMT_FLAG_ALPHA        PIX_FMT_ALPHA
 #endif
+
 //#endif //AV_VERSION_INT(52, 11, 0)
 
 // FFmpeg >= 1.1, but use internal av_pix_fmt_descriptors. FFmpeg < 1.1 has extern av_pix_fmt_descriptors
@@ -373,10 +393,11 @@ enum AVColorSpace av_frame_get_colorspace(const AVFrame *frame);
 enum AVColorRange av_frame_get_color_range(const AVFrame *frame);
 #endif
 
-/*
+/**
  * lavu 52.9.0 git 2c328a907978b61949fd20f7c991803174337855
  * FFmpeg >= 2.0.
  */
+
 #if LIBAVUTIL_VERSION_INT < AV_VERSION_INT(52, 38, 100)
 int av_pix_fmt_count_planes(AVPixelFormat pix_fmt);
 #endif //AV_VERSION_INT(52, 38, 100)
@@ -384,6 +405,7 @@ int av_pix_fmt_count_planes(AVPixelFormat pix_fmt);
 // FFmpeg < 1.0 has no av_samples_copy
 
 #if LIBAVUTIL_VERSION_INT < AV_VERSION_INT(51, 73, 101)
+
 /**
  * Copy samples from src to dst.
  *
@@ -403,6 +425,7 @@ int av_samples_copy(uint8_t **dst, uint8_t * const *src, int dst_offset,
 // < ffmpeg 1.0
 
 //#if LIBAVCODEC_VERSION_INT < AV_VERSION_INT(54, 59, 100)
+
 #if AV_MODULE_CHECK(LIBAVCODEC, 54, 25, 0, 51, 100)
 #   define QTAV_CODEC_ID(X) AV_CODEC_ID_##X
 #else
@@ -476,10 +499,14 @@ enum AVMediaType avfilter_pad_get_type(const AVFilterPad *pads, int pad_idx);
 
 #   if QTAV_USE_FFMPEG(LIBAVFILTER)
 #       ifdef __cplusplus
+
 extern "C" {
+
 #       endif
+
 struct AVFilterBufferRef;
 int avfilter_copy_buf_props(AVFrame *dst, const AVFilterBufferRef *src);
+
 #       ifdef __cplusplus
 }
 #       endif
@@ -493,16 +520,16 @@ const char *get_codec_long_name(AVCodecID id);
 
 // AV_CODEC_ID_H265 is a macro defined as AV_CODEC_ID_HEVC in ffmpeg but not in libav. so we can use FF_PROFILE_HEVC_MAIN to avoid libavcodec version check. (from ffmpeg 2.1)
 
-#ifndef FF_PROFILE_HEVC_MAIN //libav does not define it
-#   define AV_CODEC_ID_HEVC ((AVCodecID)0) //QTAV_CODEC_ID(NONE)
-#   define CODEC_ID_HEVC ((AVCodecID)0) //QTAV_CODEC_ID(NONE)
+#ifndef FF_PROFILE_HEVC_MAIN                    // libav does not define it
+#   define AV_CODEC_ID_HEVC ((AVCodecID)0)      // QTAV_CODEC_ID(NONE)
+#   define CODEC_ID_HEVC ((AVCodecID)0)         // QTAV_CODEC_ID(NONE)
 #   define FF_PROFILE_HEVC_MAIN -1
 #   define FF_PROFILE_HEVC_MAIN_10 -1
 #endif
 
-#if !FFMPEG_MODULE_CHECK(LIBAVCODEC, 54, 92, 100) && !LIBAV_MODULE_CHECK(LIBAVCODEC, 55, 34, 1) //ffmpeg1.2 libav10
-#   define AV_CODEC_ID_VP9 ((AVCodecID)0) //QTAV_CODEC_ID(NONE)
-#   define CODEC_ID_VP9 ((AVCodecID)0) //QTAV_CODEC_ID(NONE)
+#if !FFMPEG_MODULE_CHECK(LIBAVCODEC, 54, 92, 100) && !LIBAV_MODULE_CHECK(LIBAVCODEC, 55, 34, 1) // ffmpeg1.2 libav10
+#   define AV_CODEC_ID_VP9 ((AVCodecID)0)       // QTAV_CODEC_ID(NONE)
+#   define CODEC_ID_VP9 ((AVCodecID)0)          // QTAV_CODEC_ID(NONE)
 #endif
 
 #ifndef FF_PROFILE_VP9_0

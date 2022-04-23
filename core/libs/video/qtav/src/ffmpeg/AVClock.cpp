@@ -126,7 +126,7 @@ void AVClock::updateExternalClock(qint64 msecs)
         timer.restart();
 
     last_pts = pts_;
-    t = QDateTime::currentMSecsSinceEpoch();
+    t        = QDateTime::currentMSecsSinceEpoch();
 
     if (clockType() == VideoClock)
         pts_v = pts_;
@@ -145,7 +145,7 @@ void AVClock::updateExternalClock(const AVClock &clock)
         timer.restart();
 
     last_pts = pts_;
-    t = QDateTime::currentMSecsSinceEpoch();
+    t        = QDateTime::currentMSecsSinceEpoch();
 }
 
 void AVClock::setSpeed(qreal speed)
@@ -226,6 +226,7 @@ void AVClock::pause(bool p)
     {
         timer.start();
         QTimer::singleShot(0, this, SLOT(restartCorrectionTimer()));
+
         Q_EMIT resumed();
     }
 
@@ -242,8 +243,8 @@ void AVClock::reset()
     // keep mSpeed
 
     m_state = kStopped;
-    value0 = 0;
-    pts_ = pts_v = delay_ = 0;
+    value0  = 0;
+    pts_    = pts_v = delay_ = 0;
     QTimer::singleShot(0, this, SLOT(stopCorrectionTimer()));
 
 #if QT_VERSION >= QT_VERSION_CHECK(4, 7, 0)
@@ -287,14 +288,14 @@ void AVClock::timerEvent(QTimerEvent *event)
 
     //qCDebug(DIGIKAM_QTAV_LOG).noquote() << QString::asprintf("correction timer event. error = %f, avg_err=%f, nb_restarted=%d", err, avg_err, nb_restarted);
 
-    last_pts = value();
+    last_pts     = value();
     nb_restarted = 0;
 }
 
 void AVClock::restartCorrectionTimer()
 {
     nb_restarted = 0;
-    avg_err = 0;
+    avg_err      = 0;
     correction_schedule_timer.stop();
 
     if (clockType() == AudioClock) // TODO: for all clock type
@@ -317,7 +318,7 @@ void AVClock::restartCorrectionTimer()
 void AVClock::stopCorrectionTimer()
 {
     nb_restarted = 0;
-    avg_err = 0;
+    avg_err      = 0;
     correction_schedule_timer.stop();
 }
 

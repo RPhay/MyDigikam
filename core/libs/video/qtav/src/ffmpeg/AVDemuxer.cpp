@@ -132,8 +132,15 @@ public:
         mAction = Unknown;
     }
 
-    qint64 getTimeout() const { return mTimeout; }
-    void setTimeout(qint64 timeout) { mTimeout = timeout; }
+    qint64 getTimeout() const
+    {
+        return mTimeout;
+    }
+
+    void setTimeout(qint64 timeout)
+    {
+        mTimeout = timeout;
+    }
 
     bool setInterruptOnTimeout(bool value)
     {
@@ -150,9 +157,20 @@ public:
         return true;
     }
 
-    bool isInterruptOnTimeout() const {return mTimeoutAbort;}
-    int getStatus() const { return mStatus; }
-    void setStatus(int status) { mStatus = status; }
+    bool isInterruptOnTimeout() const
+    {
+        return mTimeoutAbort;
+    }
+
+    int getStatus() const
+    {
+        return mStatus;
+    }
+
+    void setStatus(int status)
+    {
+        mStatus = status;
+    }
 
     /*
      * metodo per interruzione loop ffmpeg
@@ -167,6 +185,7 @@ public:
         if (!handler)
         {
             qCWarning(DIGIKAM_QTAV_LOG_WARN).noquote() << QString::asprintf("InterruptHandler is null");
+
             return -1;
         }
 
@@ -193,17 +212,23 @@ public:
         switch (handler->mAction)
         {
             case Unknown: // callback is not called between begin()/end()
+
                 //qCWarning(DIGIKAM_QTAV_LOG_WARN).noquote() << QString::asprintf("Unknown timeout action");
+
                 break;
 
             case Open:
             case FindStreamInfo:
+
                 //qCDebug(DIGIKAM_QTAV_LOG).noquote() << QString::asprintf("set loading media for %d from: %d", handler->mAction, handler->mpDemuxer->mediaStatus());
+
                 handler->mpDemuxer->setMediaStatus(LoadingMedia);
                 break;
 
             case Read:
+
                 //handler->mpDemuxer->setMediaStatus(BufferingMedia);
+
                 break;
 
             default:
@@ -272,7 +297,7 @@ public:
         if (handler->mEmitError)
         {
             handler->mEmitError = false;
-            AVError::ErrorCode ec = AVError::ErrorCode(handler->mStatus); //FIXME: maybe changed in other threads
+            AVError::ErrorCode ec = AVError::ErrorCode(handler->mStatus); // FIXME: maybe changed in other threads
             QString es;
             handler->mpDemuxer->handleError(AVERROR_EXIT, &ec, es);
         }
@@ -282,15 +307,15 @@ public:
 
 private:
 
-    int mStatus;
-    qint64 mTimeout;
-    bool mTimeoutAbort;
-    bool mEmitError;
+    int           mStatus;
+    qint64        mTimeout;
+    bool          mTimeoutAbort;
+    bool          mEmitError;
 
-    //qint64 mLastTime;
+    //qint64        mLastTime;
 
-    Action mAction;
-    AVDemuxer *mpDemuxer;
+    Action        mAction;
+    AVDemuxer*    mpDemuxer;
     QElapsedTimer mTimer;
 };
 
@@ -359,10 +384,10 @@ public:
 
         if (!file.isEmpty()
                 && file.contains(QLatin1String(":"))
-                && (file.startsWith(QLatin1String("http")) //http, https, httpproxy
-                || file.startsWith(QLatin1String("rtmp")) //rtmp{,e,s,te,ts}
-                || file.startsWith(QLatin1String("mms")) //mms{,h,t}
-                || file.startsWith(QLatin1String("ffrtmp")) //ffrtmpcrypt, ffrtmphttp
+                && (file.startsWith(QLatin1String("http"))  // http, https, httpproxy
+                || file.startsWith(QLatin1String("rtmp"))   // rtmp{,e,s,te,ts}
+                || file.startsWith(QLatin1String("mms"))    // mms{,h,t}
+                || file.startsWith(QLatin1String("ffrtmp")) // ffrtmpcrypt, ffrtmphttp
                 || file.startsWith(QLatin1String("rtp:"))
                 || file.startsWith(QLatin1String("rtsp:"))
                 || file.startsWith(QLatin1String("sctp:"))
@@ -449,7 +474,7 @@ public:
         // wanted_stream is REQUIRED. e.g. always set -1 to indicate the default stream, -2 to disable
 
         int stream, wanted_stream; // -1 default, selected by ff
-        int index, wanted_index; // index in a kind of streams
+        int index, wanted_index;   // index in a kind of streams
         AVCodecContext *avctx;
     } StreamInfo;
 
@@ -529,7 +554,7 @@ static void getFFmpegInputFormats(QStringList* formats, QStringList* extensions)
 #else
 
         AVInputFormat *i = NULL;
-        av_register_all(); // MUST register all input/output formats
+        av_register_all();          // MUST register all input/output formats
 
         while ((i = av_iformat_next(i)))
         {
@@ -677,6 +702,7 @@ bool AVDemuxer::readFrame()
 
                     d->started = false;
                     setMediaStatus(EndOfMedia);
+
                     Q_EMIT finished();
 #endif
                     qCDebug(DIGIKAM_QTAV_LOG).noquote() << QString::asprintf("End of file. erreof=%d feof=%d", ret == AVERROR_EOF, avio_feof(d->format_ctx->pb));
@@ -796,7 +822,7 @@ SeekType AVDemuxer::seekType() const
     return d->seek_type;
 }
 
-//TODO: seek by byte
+// TODO: seek by byte
 
 bool AVDemuxer::seek(qint64 pos)
 {
@@ -822,6 +848,7 @@ bool AVDemuxer::seek(qint64 pos)
         else
         {
             qCWarning(DIGIKAM_QTAV_LOG_WARN).noquote() << QString::asprintf("Invalid seek position %lld %.2f. valid range [%lld, %lld]", upos, double(upos)/double(durationUs()), startTimeUs(), startTimeUs()+durationUs());
+
             return false;
         }
     }
@@ -893,6 +920,7 @@ bool AVDemuxer::seek(qint64 pos)
         AVError::ErrorCode ec(AVError::SeekError);
         QString msg(i18n("seek error"));
         handleError(ret, &ec, msg);
+
         return false;
     }
 
@@ -959,7 +987,7 @@ bool AVDemuxer::setMedia(const QString &fileName)
 
     d->file_orig = fileName;
     const QString url_old(d->file);
-    d->file = fileName.trimmed();
+    d->file      = fileName.trimmed();
 
     if      (d->file.startsWith(QLatin1String("mms:")))
         d->file.insert(3, QLatin1Char('h'));
@@ -1022,7 +1050,7 @@ bool AVDemuxer::setMedia(const QString &fileName)
 
 bool AVDemuxer::setMedia(QIODevice* device)
 {
-    d->file = QString();
+    d->file      = QString();
     d->file_orig = QString();
 
     if (d->input)
@@ -1038,7 +1066,7 @@ bool AVDemuxer::setMedia(QIODevice* device)
         d->input = MediaIO::create("QIODevice");
 
     QIODevice* old_dev = d->input->property("device").value<QIODevice*>();
-    d->media_changed = old_dev != device;
+    d->media_changed   = (old_dev != device);
 
     if (d->media_changed)
     {
@@ -1052,14 +1080,14 @@ bool AVDemuxer::setMedia(QIODevice* device)
 
 bool AVDemuxer::setMedia(MediaIO *in)
 {
-    d->media_changed = in != d->input;
+    d->media_changed = (in != d->input);
 
     if (d->media_changed)
     {
         d->format_forced.clear();
     }
 
-    d->file = QString();
+    d->file      = QString();
     d->file_orig = QString();
 
     if (!d->input)
@@ -1092,6 +1120,7 @@ bool AVDemuxer::load()
     if (d->file.isEmpty() && !d->input)
     {
         setMediaStatus(NoMedia);
+
         return false;
     }
 
@@ -1107,21 +1136,25 @@ bool AVDemuxer::load()
     if (d->file.startsWith(avd_scheme))
     {
         QStringList parts = d->file.split(QStringLiteral(":"));
-        int s0 = avd_scheme.size();
-        const int s1 = d->file.indexOf(QLatin1Char(':'), s0);
+        int s0            = avd_scheme.size();
+        const int s1      = d->file.indexOf(QLatin1Char(':'), s0);
 
         if (s1 < 0)
         {
             qCDebug(DIGIKAM_QTAV_LOG).noquote() << QString::asprintf("invalid avdevice specification");
             setMediaStatus(InvalidMedia);
+
             return false;
         }
 
         if (d->file.at(s0) == QLatin1Char('/') && d->file.at(s0+1) == QLatin1Char('/'))
         {
             // avdevice://avfoundation:device_name
+
             s0 += 2;
-        } // else avdevice:video4linux2:file_name
+        }
+
+        // else avdevice:video4linux2:file_name
 
         d->input_format = av_find_input_format(d->file.mid(s0, s1-s0).toUtf8().constData());
         d->file = d->file.mid(s1+1);
@@ -1187,15 +1220,16 @@ bool AVDemuxer::load()
         handleError(ret, &ec, msg);
         qCWarning(DIGIKAM_QTAV_LOG_WARN) << "Can't open media: " << msg;
 
-        if (mediaStatus() == LoadingMedia) //workaround for timeout but not interrupted
+        if (mediaStatus() == LoadingMedia) // workaround for timeout but not interrupted
             setMediaStatus(InvalidMedia);
 
-        Q_EMIT unloaded(); //context not ready. so will not emit in unload()
+        Q_EMIT unloaded(); // context not ready. so will not emit in unload()
 
         return false;
     }
 
     // deprecated
+
     //if(av_find_stread->inputfo(d->format_ctx)<0) {
 
     // TODO: avformat_find_stread->inputfo is too slow, only useful for some video format
@@ -1234,7 +1268,7 @@ bool AVDemuxer::load()
     Q_EMIT loaded();
 
     const bool was_seekable = d->seekable;
-    d->seekable = d->checkSeekable();
+    d->seekable             = d->checkSeekable();
 
     if (was_seekable != d->seekable)
         Q_EMIT seekableChanged();
@@ -1267,12 +1301,12 @@ bool AVDemuxer::unload()
     }
     */
 
-    d->network = false;
+    d->network          = false;
     d->has_attached_pic = false;
-    d->eof = false; // true and set false in load()?
-    d->buf_pos = 0;
-    d->started = false;
-    d->max_pts = 0.0;
+    d->eof              = false; // true and set false in load()?
+    d->buf_pos          = 0;
+    d->started          = false;
+    d->max_pts          = 0.0;
     d->resetStreams();
     d->interrupt_hanlder->setStatus(0);
 
@@ -1282,7 +1316,7 @@ bool AVDemuxer::unload()
     {
         qCDebug(DIGIKAM_QTAV_LOG).noquote() << QString::asprintf("closing d->format_ctx");
         avformat_close_input(&d->format_ctx); //libavf > 53.10.0
-        d->format_ctx = 0;
+        d->format_ctx   = 0;
         d->input_format = 0;
 
         // no delete. may be used in next load
@@ -1308,30 +1342,31 @@ bool AVDemuxer::hasAttacedPicture() const
 
 bool AVDemuxer::setStreamIndex(StreamType st, int index)
 {
-    QList<int> *streams = 0;
+    QList<int> *streams     = 0;
     Private::StreamInfo *si = 0;
 
     if      (st == AudioStream)
     {
         // TODO: use a struct
 
-        si = &d->astream;
+        si      = &d->astream;
         streams = &d->audio_streams;
     }
     else if (st == VideoStream)
     {
-        si = &d->vstream;
+        si      = &d->vstream;
         streams = &d->video_streams;
     }
     else if (st == SubtitleStream)
     {
-        si = &d->sstream;
+        si      = &d->sstream;
         streams = &d->subtitle_streams;
     }
 
     if (!si)
     {
         qCWarning(DIGIKAM_QTAV_LOG_WARN).noquote() << QString::asprintf("stream type %d for index %d not found", st, index);
+
         return false;
     }
 
@@ -1349,8 +1384,8 @@ bool AVDemuxer::setStreamIndex(StreamType st, int index)
     if (index < 0)
     {
         qCDebug(DIGIKAM_QTAV_LOG).noquote() << QString::asprintf("disable %d stream", st);
-        si->stream = -1;
-        si->wanted_index = -1;
+        si->stream        = -1;
+        si->wanted_index  = -1;
         si->wanted_stream = -1;
 
         return true;
@@ -1414,7 +1449,7 @@ qint64 AVDemuxer::durationUs() const
     if (!d->format_ctx || d->format_ctx->duration == AV_NOPTS_VALUE)
         return 0;
 
-    return d->format_ctx->duration; //time base: AV_TIME_BASE
+    return d->format_ctx->duration; // time base: AV_TIME_BASE
 }
 
 int AVDemuxer::bitRate() const
@@ -1620,7 +1655,7 @@ void AVDemuxer::Private::applyOptionsForDict()
     if (dict)
     {
         av_dict_free(&dict);
-        dict = 0; //aready 0 in av_free
+        dict = 0; // aready 0 in av_free
     }
 
     if (options.isEmpty())
@@ -1667,6 +1702,7 @@ void AVDemuxer::Private::applyOptionsForContext()
     if (options.isEmpty())
     {
         //av_opt_set_defaults(format_ctx);  //can't set default values! result maybe unexpected
+
         return;
     }
 
@@ -1753,24 +1789,24 @@ bool AVDemuxer::Private::setStream(AVDemuxer::StreamType st, int streamValue)
     if (streamValue < -1)
         streamValue = -1;
 
-    QList<int> *streams = 0;
+    QList<int> *streams     = 0;
     Private::StreamInfo *si = 0;
 
     if      (st == AudioStream)
     {
         // TODO: use a struct
 
-        si = &astream;
+        si      = &astream;
         streams = &audio_streams;
     }
     else if (st == VideoStream)
     {
-        si = &vstream;
+        si      = &vstream;
         streams = &video_streams;
     }
     else if (st == SubtitleStream)
     {
-        si = &sstream;
+        si      = &sstream;
         streams = &subtitle_streams;
     }
 
@@ -1789,7 +1825,7 @@ bool AVDemuxer::Private::setStream(AVDemuxer::StreamType st, int streamValue)
     //}
 
     bool index_valid = si->wanted_index >= 0 && si->wanted_index < streams->size();
-    int s = AVERROR_STREAM_NOT_FOUND;
+    int s            = AVERROR_STREAM_NOT_FOUND;
 
     if (streamValue >= 0 || !index_valid)
     {
@@ -1814,10 +1850,10 @@ bool AVDemuxer::Private::setStream(AVDemuxer::StreamType st, int streamValue)
 
     // don't touch wanted index
 
-    si->stream = s;
+    si->stream        = s;
     si->wanted_stream = streamValue;
-    si->avctx = format_ctx->streams[s]->codec;
-    has_attached_pic = !!(format_ctx->streams[s]->disposition & AV_DISPOSITION_ATTACHED_PIC);
+    si->avctx         = format_ctx->streams[s]->codec;
+    has_attached_pic  = !!(format_ctx->streams[s]->disposition & AV_DISPOSITION_ATTACHED_PIC);
 
     return true;
 }

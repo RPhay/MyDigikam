@@ -43,6 +43,7 @@ class QTAV_EXPORT AVDecoder : public QObject
 {
     Q_OBJECT
     DPTR_DECLARE_PRIVATE(AVDecoder)
+
     //Q_PROPERTY(QString description READ description NOTIFY descriptionChanged)
 
 public:
@@ -60,7 +61,7 @@ public:
     virtual bool close();
     bool isOpen() const;
     virtual void flush();
-    void setCodecContext(void* codecCtx); //protected
+    void setCodecContext(void* codecCtx); // protected
     void* codecContext() const;
 
     /**

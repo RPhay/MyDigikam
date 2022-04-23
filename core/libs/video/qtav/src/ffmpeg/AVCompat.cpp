@@ -21,9 +21,10 @@
  *
  * ============================================================ */
 
+#include "AVCompat.h"
+
 // Local includes
 
-#include "AVCompat.h"
 #include "QtAV_Version.h"
 
 #if !FFMPEG_MODULE_CHECK(LIBAVFORMAT, 56, 4, 101)
@@ -32,10 +33,15 @@ int avio_feof(AVIOContext *s)
 {
 
 #   if QTAV_USE_FFMPEG(LIBAVFORMAT)
+
     return url_feof(s);
+
 #   else
+
     return s && s->eof_reached;
+
 #   endif
+
 }
 
 #endif
@@ -45,9 +51,8 @@ int avio_feof(AVIOContext *s)
 int avformat_alloc_output_context2(AVFormatContext **avctx, AVOutputFormat *oformat, const char *format, const char *filename)
 {
     AVFormatContext *s = avformat_alloc_context();
-    int ret = 0;
-
-    *avctx = NULL;
+    int ret            = 0;
+    *avctx             = NULL;
 
     if (!s)
         goto nomem;
@@ -62,6 +67,7 @@ int avformat_alloc_output_context2(AVFormatContext **avctx, AVOutputFormat *ofor
             {
                 av_log(s, AV_LOG_ERROR, "Requested output format '%s' is not a suitable output format\n", format);
                 ret = AVERROR(EINVAL);
+
                 goto error;
             }
         }
@@ -72,8 +78,8 @@ int avformat_alloc_output_context2(AVFormatContext **avctx, AVOutputFormat *ofor
             if (!oformat)
             {
                 ret = AVERROR(EINVAL);
-                av_log(s, AV_LOG_ERROR, "Unable to find a suitable output format for '%s'\n",
-                       filename);
+                av_log(s, AV_LOG_ERROR, "Unable to find a suitable output format for '%s'\n", filename);
+
                 goto error;
             }
         }
@@ -111,6 +117,7 @@ nomem:
 error:
 
     avformat_free_context(s);
+
     return ret;
 }
 
@@ -120,9 +127,9 @@ error:
 
 static const struct
 {
-    const char *name;
+    const char* name;
     int         nb_channels;
-    uint64_t     layout;
+    uint64_t    layout;
 } channel_layout_map[] =
 {
     { "mono",        1,  AV_CH_LAYOUT_MONO },
