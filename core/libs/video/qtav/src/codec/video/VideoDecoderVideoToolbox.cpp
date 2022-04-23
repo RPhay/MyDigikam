@@ -224,11 +224,12 @@ VideoDecoderVideoToolbox::VideoDecoderVideoToolbox()
 
     setProperty("detail_format", i18n("Output pixel format from decoder. Performance NV12 > UYVY > BGRA > YUV420P > YUYV.\nOSX < 10.7 only supports UYVY, BGRA and YUV420p"));
     setProperty("detail_interop"
-                , QString::fromLatin1("%1\n").arg(i18n("Interop with OpenGL"))             +
-                  QString::fromLatin1("%1\n").arg(i18n("CVPixelBuffer: macOS+iOS"))        +
-                  QString::fromLatin1("%1\n").arg(i18n("CVOpenGLES: iOS, no copy, fast"))  +
-                  QString::fromLatin1("%1\n").arg(i18n("IOSurface: macOS, no copy, fast")) +
-                  i18n("Auto: choose the fastest"));
+                , QString::fromLatin1("%1\n%2\n%3\n%4\n%5")
+                    .arg(i18n("Interop with OpenGL"))
+                    .arg(i18n("CVPixelBuffer: macOS+iOS"))
+                    .arg(i18n("CVOpenGLES: iOS, no copy, fast"))
+                    .arg(i18n("IOSurface: macOS, no copy, fast"))
+                    .arg(i18n("Auto: choose the fastest"));
 
     Q_UNUSED(i18n("interop"));
     Q_UNUSED(i18n("format"));
