@@ -335,6 +335,7 @@ if(ENABLE_MEDIAPLAYER)
                                     -DQTAV_HAVE_OPENSL=0         # OpenSLES is for Android only
                                     -DQTAV_HAVE_DXVA=0           # DirectX VA for MSVC only
                                     -DQTAV_HAVE_VDA=0            # Hardware acceleration video decoder from ffmpeg ?
+                                    -DQTAV_HAVE_GL1=0            # disabled in QtAVWidgets.
         )
 
         if(SSE4_1_FOUND)
@@ -379,7 +380,12 @@ if(ENABLE_MEDIAPLAYER)
 
         endif()
 
-        set(MEDIAPLAYER_DEFINITIONS ${MEDIAPLAYER_DEFINITIONS} -DQTAV_HAVE_GL=${HAVE_LIBOPENGL})               # For QtAVWidgets
+        if(NOT Qt6_FOUND)
+
+            set(MEDIAPLAYER_DEFINITIONS ${MEDIAPLAYER_DEFINITIONS} -DQTAV_HAVE_GL=${HAVE_LIBOPENGL})               # For QtAVWidgets with Qt < 6
+
+        endif()
+
         set(MEDIAPLAYER_DEFINITIONS ${MEDIAPLAYER_DEFINITIONS} -DQTAV_HAVE_X11=${HAVE_LIBX11})
         set(MEDIAPLAYER_DEFINITIONS ${MEDIAPLAYER_DEFINITIONS} -DQTAV_HAVE_XV=${HAVE_LIBXV})
         set(MEDIAPLAYER_DEFINITIONS ${MEDIAPLAYER_DEFINITIONS} -DQTAV_HAVE_OPENAL=${HAVE_LIBOPENAL})

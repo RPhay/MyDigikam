@@ -73,7 +73,7 @@ class X11Renderer: public QWidget,
 
 public:
 
-    X11Renderer(QWidget* parent = 0, Qt::WindowFlags f = 0);
+    X11Renderer(QWidget* parent = 0, Qt::WindowFlags f = Qt::WindowFlags(Qt::Widget));
 
     VideoRendererId id() const Q_DECL_OVERRIDE;
     bool isSupported(VideoFormat::PixelFormat pixfmt) const Q_DECL_OVERRIDE;

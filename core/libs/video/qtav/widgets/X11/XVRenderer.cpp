@@ -70,7 +70,7 @@ class XVRenderer: public QWidget, public VideoRenderer
 
 public:
 
-    XVRenderer(QWidget* parent = 0, Qt::WindowFlags f = 0);
+    XVRenderer(QWidget* parent = 0, Qt::WindowFlags f = Qt::WindowFlags(Qt::Widget));
 
     virtual VideoRendererId id()                              const Q_DECL_OVERRIDE;
     virtual bool isSupported(VideoFormat::PixelFormat pixfmt) const Q_DECL_OVERRIDE;

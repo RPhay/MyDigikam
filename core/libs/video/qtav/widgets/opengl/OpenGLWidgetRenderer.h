@@ -41,7 +41,8 @@ namespace QtAV
 
 class OpenGLWidgetRendererPrivate;
 
-class QTAV_WIDGETS_EXPORT OpenGLWidgetRenderer : public QOpenGLWidget, public OpenGLRendererBase
+class QTAV_WIDGETS_EXPORT OpenGLWidgetRenderer : public QOpenGLWidget,
+                                                 public OpenGLRendererBase
 {
     Q_OBJECT
     DPTR_DECLARE_PRIVATE(OpenGLWidgetRenderer)
