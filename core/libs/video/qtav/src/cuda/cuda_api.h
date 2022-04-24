@@ -26,34 +26,43 @@
 
 #include "dllapi/nv_inc.h"
 
-#define CUDA_ENSURE(f, ...) CUDA_CHECK(f, return __VA_ARGS__;) //call cuda_api.cuGetErrorXXX
-#define CUDA_WARN(f) CUDA_CHECK(f) //call cuda_api.cuGetErrorXXX
+#define CUDA_ENSURE(f, ...)  CUDA_CHECK(f, return __VA_ARGS__;) // call cuda_api.cuGetErrorXXX
+#define CUDA_WARN(f)         CUDA_CHECK(f)                      // call cuda_api.cuGetErrorXXX
 #define CUDA_ENSURE2(f, ...) CUDA_CHECK2(f, return __VA_ARGS__;)
-#define CUDA_WARN2(f) CUDA_CHECK2(f)
+#define CUDA_WARN2(f)        CUDA_CHECK2(f)
 
 #if CUDA_VERSION < 7050
-#if CUDA_VERSION < 6050
-#define cudaVideoCodec_HEVC cudaVideoCodec(cudaVideoCodec_H264_MVC + 1)
-#endif //6050
-#define cudaVideoCodec_VP8 cudaVideoCodec(cudaVideoCodec_HEVC+1)
-#define cudaVideoCodec_VP9 cudaVideoCodec(cudaVideoCodec_VP8+1)
-#endif //7050
+#   if CUDA_VERSION < 6050
+#       define cudaVideoCodec_HEVC cudaVideoCodec(cudaVideoCodec_H264_MVC + 1)
+#   endif
+#   define cudaVideoCodec_VP8 cudaVideoCodec(cudaVideoCodec_HEVC+1)
+#   define cudaVideoCodec_VP9 cudaVideoCodec(cudaVideoCodec_VP8+1)
+#endif
+
 struct IDirect3DDevice9;
 struct IDirect3DResource9;
+
 // TODO: cuda_drvapi_dylink.c/h
 
-class cuda_api {
+class cuda_api
+{
 public:
+
     cuda_api();
     virtual ~cuda_api();
+
     bool isLoaded() const;
+
 #if !NV_CONFIG(DLLAPI_CUDA) && !defined(CUDA_LINK)
+
     typedef unsigned int GLuint;
     typedef unsigned int GLenum;
+
     ////////////////////////////////////////////////////
     /// CUDA functions
     ////////////////////////////////////////////////////
-    CUresult cuGetErrorName(CUresult error, const char **pStr); // since 6.0. fallback to _cudaGetErrorEnum defined in helper_cuda.h if symbol not found
+
+    CUresult cuGetErrorName(CUresult error, const char **pStr);   // since 6.0. fallback to _cudaGetErrorEnum defined in helper_cuda.h if symbol not found
     CUresult cuGetErrorString(CUresult error, const char **pStr); // since 6.0. fallback to a empty string if symbol not found
     CUresult cuInit(unsigned int Flags);
     CUresult cuCtxGetApiVersion(CUcontext pctx, unsigned int *version);
@@ -65,11 +74,11 @@ public:
     CUresult cuCtxSynchronize();
     CUresult cuMemAllocHost(void **pp, size_t bytesize);
     CUresult cuMemFreeHost(void *p);
-    CUresult cuMemcpyDtoH(void *dstHost, CUdeviceptr srcDevice, size_t ByteCount); //TODO: size_t in new version
-    CUresult cuMemcpyDtoHAsync(void *dstHost, CUdeviceptr srcDevice, size_t ByteCount, CUstream hStream); //TODO: size_t in new version
+    CUresult cuMemcpyDtoH(void *dstHost, CUdeviceptr srcDevice, size_t ByteCount); // TODO: size_t in new version
+    CUresult cuMemcpyDtoHAsync(void *dstHost, CUdeviceptr srcDevice, size_t ByteCount, CUstream hStream); // TODO: size_t in new version
     CUresult cuMemcpy2D(const CUDA_MEMCPY2D *pCopy);
     CUresult cuMemcpy2DAsync(const CUDA_MEMCPY2D *pCopy, CUstream hStream);
-    CUresult cuStreamCreate(CUstream *phStream, unsigned int Flags); //TODO: size_t in new version
+    CUresult cuStreamCreate(CUstream *phStream, unsigned int Flags); // TODO: size_t in new version
     CUresult cuStreamDestroy(CUstream hStream);
     CUresult cuStreamQuery(CUstream hStream);
     CUresult cuStreamSynchronize(CUstream hStream);
@@ -92,6 +101,7 @@ public:
     ////////////////////////////////////////////////////
     /// CUVID functions
     ////////////////////////////////////////////////////
+
     CUresult cuvidCtxLockCreate(CUvideoctxlock *pLock, CUcontext cuctx);
     CUresult cuvidCtxLockDestroy(CUvideoctxlock lck);
     CUresult cuvidCtxLock(CUvideoctxlock lck, unsigned int reserved_flags);
@@ -102,22 +112,31 @@ public:
     CUresult cuvidDestroyVideoParser(CUvideoparser obj);
 
     // Create/Destroy the decoder object
+
     CUresult cuvidCreateDecoder(CUvideodecoder *phDecoder, CUVIDDECODECREATEINFO *pdci);
     CUresult cuvidDestroyDecoder(CUvideodecoder hDecoder);
 
     // Decode a single picture (field or frame)
+
     CUresult cuvidDecodePicture(CUvideodecoder hDecoder, CUVIDPICPARAMS *pPicParams);
 
     // Post-process and map a video frame for use in cuda.
     // unsigned long long* (CUdevicePtr 64) for x64+cuda3.2, otherwise unsigned int* (CUdevicePtr 32)
+
     CUresult cuvidMapVideoFrame(CUvideodecoder hDecoder, int nPicIdx, CUdeviceptr *pDevPtr, unsigned int *pPitch, CUVIDPROCPARAMS *pVPP);
+
     // Unmap a previously mapped video frame
+
     CUresult cuvidUnmapVideoFrame(CUvideodecoder hDecoder, CUdeviceptr DevPtr);
 
-#endif // !NV_CONFIG(DLLAPI_CUDA) && !defined(CUDA_LINK)
+#endif
+
     // This function returns the best Graphics GPU based on performance
+
     int GetMaxGflopsGraphicsDeviceId();
+
 private:
+
     class context;
     context *ctx;
 };
@@ -146,23 +165,44 @@ private:
 
 
 // TODO: error check
-class AutoCtxLock {
-    cuda_api *m_api;
-    CUvideoctxlock m_lock;
+
+class AutoCtxLock
+{
+    cuda_api*       m_api;
+    CUvideoctxlock  m_lock;
+
 public:
-    AutoCtxLock(cuda_api *api, CUvideoctxlock lck) : m_api(api), m_lock(lck) {
+
+    AutoCtxLock(cuda_api *api, CUvideoctxlock lck)
+        : m_api(api),
+          m_lock(lck)
+    {
         m_api->cuvidCtxLock(m_lock, 0);
     }
-    ~AutoCtxLock() { m_api->cuvidCtxUnlock(m_lock, 0); }
+
+    ~AutoCtxLock()
+    {
+        m_api->cuvidCtxUnlock(m_lock, 0);
+    }
 };
 
-class CUVIDAutoUnmapper {
-    cuda_api *api;
-    CUvideodecoder dec;
-    CUdeviceptr devptr;
+class CUVIDAutoUnmapper
+{
+    cuda_api*       api;
+    CUvideodecoder  dec;
+    CUdeviceptr     devptr;
+
 public:
-    CUVIDAutoUnmapper(cuda_api *a, CUvideodecoder d, CUdeviceptr p) : api(a), dec(d), devptr(p) {}
-    ~CUVIDAutoUnmapper() {
+
+    CUVIDAutoUnmapper(cuda_api *a, CUvideodecoder d, CUdeviceptr p)
+        : api(a),
+          dec(d),
+          devptr(p)
+    {
+    }
+
+    ~CUVIDAutoUnmapper()
+    {
         api->cuvidUnmapVideoFrame(dec, devptr);
     }
 };

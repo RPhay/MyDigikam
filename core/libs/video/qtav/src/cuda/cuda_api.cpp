@@ -21,36 +21,50 @@
  *
  * ============================================================ */
 
+// C++ includes
+
 #include <algorithm>
 #include <assert.h>
+
+// Qt includes
+
 #include <QLibrary>
+
+// Local includes
 
 #include "helper_cuda.h"
 #include "cuda_api.h"
 #include "QtAV_Global.h"
 #include "digikam_debug.h"
+
 /*
 #if !NV_CONFIG(DLLAPI_CUDA) && !defined(CUDA_LINK)
-#define DEFINE_API() ...
+#   define DEFINE_API() ...
 #else
-#define DEFINE_API() ... ::api()
+#   define DEFINE_API() ... ::api()
 #endif
 */
+
 #if 0
-#define DECLARE_API_CONTEXT(API, ..) \
+#   define DECLARE_API_CONTEXT(API, ..) \
     typedef API##_t (...); \
     API##_t* API##_fp; \
     void resolve_##API () { API##_fp = ... } \
     resolve_t *resolve_##API##_fp = resolve_##API;
-// in ctor
+
+    // in ctor
 
     //memset()
-    for (int i = 0; i < sizeof(api_t)/sizeof(void*); ++i) {
+
+    for (int i = 0 ; i < sizeof(api_t)/sizeof(void*) ; ++i)
+    {
         (resolve_t*)(char*)(&api)+(2*i+1)*sizeof(void*))();
     }
+
 #endif
 
 #if __CUDA_API_VERSION >= 3020
+
 typedef struct
 {
     unsigned int srcXInBytes;
@@ -70,39 +84,61 @@ typedef struct
     unsigned int WidthInBytes;
     unsigned int Height;
 } CUDA_MEMCPY2D_old;
+
 #else
+
 typedef CUDA_MEMCPY2D CUDA_MEMCPY2D_old;
+
 #endif
 
-class cuda_api::context {
+class cuda_api::context
+{
 public:
+
     context()
-        : loaded(true) {
+        : loaded(true)
+        {
+
 #if !NV_CONFIG(DLLAPI_CUDA) && !defined(CUDA_LINK)
+
         loaded = false;
         memset(&api, 0, sizeof(api));
         cuda_dll.setFileName(QStringLiteral("cuda"));
+
         if (!cuda_dll.isLoaded())
             cuda_dll.load();
-        if (!cuda_dll.isLoaded()) {
+
+        if (!cuda_dll.isLoaded())
+        {
             cuda_dll.setFileName(QStringLiteral("nvcuda"));
             cuda_dll.load();
         }
-        if (!cuda_dll.isLoaded()) {
+
+        if (!cuda_dll.isLoaded())
+        {
             qCWarning(DIGIKAM_QTAV_LOG_WARN).noquote() << QString::asprintf("can not load cuda!");
             return;
         }
+
         cuvid_dll.setFileName(QStringLiteral("nvcuvid"));
         cuvid_dll.load();
-        if (!cuvid_dll.isLoaded()) {
+
+        if (!cuvid_dll.isLoaded())
+        {
             qCWarning(DIGIKAM_QTAV_LOG_WARN).noquote() << QString::asprintf("can not load nvcuvid!");
             return;
         }
+
         loaded = true;
-#endif // !NV_CONFIG(DLLAPI_CUDA) && !defined(CUDA_LINK)
+
+#endif
+
     }
+
 #if !NV_CONFIG(DLLAPI_CUDA) && !defined(CUDA_LINK)
-    ~context() {
+
+    ~context()
+    {
         loaded = false;
         cuvid_dll.unload();
         cuda_dll.unload();
@@ -110,7 +146,9 @@ public:
 
     QLibrary cuda_dll;
     QLibrary cuvid_dll;
-    typedef struct {
+
+    typedef struct
+    {
         typedef CUresult CUDAAPI tcuGetErrorName(CUresult error, const char **pStr);
         tcuGetErrorName* cuGetErrorName;
         typedef CUresult CUDAAPI tcuGetErrorString(CUresult error, const char **pStr);
@@ -210,8 +248,11 @@ public:
         typedef CUresult CUDAAPI tcuvidUnmapVideoFrame(CUvideodecoder hDecoder, CUdeviceptr DevPtr);
         tcuvidUnmapVideoFrame* cuvidUnmapVideoFrame;
     } api_t;
+
     api_t api;
-#endif // !NV_CONFIG(DLLAPI_CUDA) && !defined(CUDA_LINK)
+
+#endif
+
     bool loaded;
 };
 
@@ -231,6 +272,7 @@ bool cuda_api::isLoaded() const
 }
 
 #if !NV_CONFIG(DLLAPI_CUDA) && !defined(CUDA_LINK)
+
 ////////////////////////////////////////////////////
 /// CUDA functions
 ////////////////////////////////////////////////////
@@ -238,14 +280,22 @@ bool cuda_api::isLoaded() const
 CUresult cuda_api::cuGetErrorName(CUresult error, const char **pStr)
 {
     static bool fallback = false;
-    if (fallback) {
+
+    if (fallback)
+    {
         *pStr = _cudaGetErrorEnum(error);
+
         return CUDA_SUCCESS;
     }
-    if (!ctx->api.cuGetErrorName) {
+
+    if (!ctx->api.cuGetErrorName)
+    {
         ctx->api.cuGetErrorName = (context::api_t::tcuGetErrorName*)ctx->cuda_dll.resolve("cuGetErrorName");
-        if (!ctx->api.cuGetErrorName) {
+
+        if (!ctx->api.cuGetErrorName)
+        {
             fallback = true;
+
             return cuGetErrorName(error, pStr);
         }
     }
@@ -255,198 +305,282 @@ CUresult cuda_api::cuGetErrorName(CUresult error, const char **pStr)
 CUresult cuda_api::cuGetErrorString(CUresult error, const char **pStr)
 {
     static bool fallback = false;
-    if (fallback) {
+
+    if (fallback)
+    {
         *pStr = "";
+
         return CUDA_SUCCESS;
     }
-    if (!ctx->api.cuGetErrorString) {
+
+    if (!ctx->api.cuGetErrorString)
+    {
         ctx->api.cuGetErrorString = (context::api_t::tcuGetErrorString*)ctx->cuda_dll.resolve("cuGetErrorString");
-        if (!ctx->api.cuGetErrorString) {
+
+        if (!ctx->api.cuGetErrorString)
+        {
             fallback = true;
+
             return cuGetErrorString(error, pStr);
         }
     }
+
     return ctx->api.cuGetErrorString(error, pStr);
 }
 
 CUresult cuda_api::cuInit(unsigned int Flags)
 {
-    if (!ctx->api.cuInit) {
+    if (!ctx->api.cuInit)
+    {
         ctx->api.cuInit = (context::api_t::tcuInit*)ctx->cuda_dll.resolve("cuInit");
         assert(ctx->api.cuInit);
     }
+
     return ctx->api.cuInit(Flags);
 }
 
 CUresult cuda_api::cuCtxGetApiVersion(CUcontext pctx, unsigned int *version)
 {
-    if (!ctx->api.cuCtxGetApiVersion) {
+    if (!ctx->api.cuCtxGetApiVersion)
+    {
         ctx->api.cuCtxGetApiVersion = (context::api_t::tcuCtxGetApiVersion*)ctx->cuda_dll.resolve("cuCtxGetApiVersion");
         assert(ctx->api.cuCtxGetApiVersion);
     }
+
     return ctx->api.cuCtxGetApiVersion(pctx, version);
 }
 
 CUresult cuda_api::cuCtxCreate(CUcontext *pctx, unsigned int flags, CUdevice dev)
 {
-    if (!ctx->api.cuCtxCreate) {
+    if (!ctx->api.cuCtxCreate)
+    {
+
 #if __CUDA_API_VERSION >= 3020
+
         ctx->api.cuCtxCreate = (context::api_t::tcuCtxCreate*)ctx->cuda_dll.resolve("cuCtxCreate_v2");
+
         if (!ctx->api.cuCtxCreate)
+
 #endif
         {
             qCDebug(DIGIKAM_QTAV_LOG).noquote() << QString::asprintf("fallback to old driver api: %p", ctx->api.cuCtxCreate);
             ctx->api.cuCtxCreate = (context::api_t::tcuCtxCreate*)ctx->cuda_dll.resolve("cuCtxCreate");
         }
+
         assert(ctx->api.cuCtxCreate);
     }
+
     return ctx->api.cuCtxCreate(pctx, flags, dev);
 }
 
 CUresult cuda_api::cuD3D9CtxCreate(CUcontext *pCtx, CUdevice *pCudaDevice, unsigned int Flags, IDirect3DDevice9 *pD3DDevice)
 {
-    if (!ctx->api.cuD3D9CtxCreate) {
+    if (!ctx->api.cuD3D9CtxCreate)
+    {
+
 #if __CUDA_API_VERSION >= 3020
+
         ctx->api.cuD3D9CtxCreate = (context::api_t::tcuD3D9CtxCreate*)ctx->cuda_dll.resolve("cuD3D9CtxCreate_v2");
+
         if (!ctx->api.cuD3D9CtxCreate)
+
 #endif
             ctx->api.cuD3D9CtxCreate = (context::api_t::tcuD3D9CtxCreate*)ctx->cuda_dll.resolve("cuD3D9CtxCreate");
+
         assert(ctx->api.cuD3D9CtxCreate);
     }
+
     return ctx->api.cuD3D9CtxCreate(pCtx, pCudaDevice, Flags, pD3DDevice);
 }
 
 CUresult cuda_api::cuGraphicsD3D9RegisterResource(CUgraphicsResource *pCudaResource, IDirect3DResource9 *pD3DResource, unsigned int Flags)
 {
-    if (!ctx->api.cuGraphicsD3D9RegisterResource) {
+    if (!ctx->api.cuGraphicsD3D9RegisterResource)
+    {
         ctx->api.cuGraphicsD3D9RegisterResource = (context::api_t::tcuGraphicsD3D9RegisterResource*)ctx->cuda_dll.resolve("cuGraphicsD3D9RegisterResource");
         assert(ctx->api.cuGraphicsD3D9RegisterResource);
     }
+
     return ctx->api.cuGraphicsD3D9RegisterResource(pCudaResource, pD3DResource, Flags);
 }
 
 CUresult cuda_api::cuGLCtxCreate(CUcontext *pctx, unsigned int flags, CUdevice dev)
 {
-    if (!ctx->api.cuGLCtxCreate) {
+    if (!ctx->api.cuGLCtxCreate)
+    {
+
 #if __CUDA_API_VERSION >= 3020
+
         ctx->api.cuGLCtxCreate = (context::api_t::tcuGLCtxCreate*)ctx->cuda_dll.resolve("cuGLCtxCreate_v2");
+
         if (!ctx->api.cuGLCtxCreate)
+
 #endif
             ctx->api.cuGLCtxCreate = (context::api_t::tcuGLCtxCreate*)ctx->cuda_dll.resolve("cuGLCtxCreate");
         assert(ctx->api.cuGLCtxCreate);
     }
+
     return ctx->api.cuGLCtxCreate(pctx, flags, dev);
 }
 
 CUresult cuda_api::cuCtxDestroy(CUcontext cuctx)
 {
-    if (!ctx->api.cuCtxDestroy) {
+    if (!ctx->api.cuCtxDestroy)
+    {
+
 #if __CUDA_API_VERSION >= 3020
+
         ctx->api.cuCtxDestroy = (context::api_t::tcuCtxDestroy*)this->ctx->cuda_dll.resolve("cuCtxDestroy_v2");
         if (!ctx->api.cuCtxDestroy)
+
 #endif
             ctx->api.cuCtxDestroy = (context::api_t::tcuCtxDestroy*)this->ctx->cuda_dll.resolve("cuCtxDestroy");
+
         assert(ctx->api.cuCtxDestroy);
     }
+
     return ctx->api.cuCtxDestroy(cuctx);
 }
 
 CUresult cuda_api::cuCtxPushCurrent(CUcontext cuctx)
 {
-    if (!ctx->api.cuCtxPushCurrent) {
+    if (!ctx->api.cuCtxPushCurrent)
+    {
+
 #if __CUDA_API_VERSION >= 3020
+
         ctx->api.cuCtxPushCurrent = (context::api_t::tcuCtxPushCurrent*)this->ctx->cuda_dll.resolve("cuCtxPushCurrent_v2");
+
         if (!ctx->api.cuCtxPushCurrent)
+
 #endif
             ctx->api.cuCtxPushCurrent = (context::api_t::tcuCtxPushCurrent*)this->ctx->cuda_dll.resolve("cuCtxPushCurrent");
         assert(ctx->api.cuCtxPushCurrent);
     }
+
     return ctx->api.cuCtxPushCurrent(cuctx);
 }
 
 CUresult cuda_api::cuCtxPopCurrent(CUcontext *pctx)
 {
-    if (!ctx->api.cuCtxPopCurrent) {
+    if (!ctx->api.cuCtxPopCurrent)
+    {
+
 #if __CUDA_API_VERSION >= 3020
+
         ctx->api.cuCtxPopCurrent = (context::api_t::tcuCtxPopCurrent*)this->ctx->cuda_dll.resolve("cuCtxPopCurrent_v2");
+
         if (!ctx->api.cuCtxPopCurrent)
+
 #endif
             ctx->api.cuCtxPopCurrent = (context::api_t::tcuCtxPopCurrent*)this->ctx->cuda_dll.resolve("cuCtxPopCurrent");
         assert(ctx->api.cuCtxPopCurrent);
     }
+
     return ctx->api.cuCtxPopCurrent(pctx);
 }
 
 CUresult cuda_api::cuCtxGetCurrent(CUcontext *pctx)
 {
-    if (!ctx->api.cuCtxGetCurrent) {
+    if (!ctx->api.cuCtxGetCurrent)
+    {
         ctx->api.cuCtxGetCurrent = (context::api_t::tcuCtxGetCurrent*)this->ctx->cuda_dll.resolve("cuCtxGetCurrent");
         assert(ctx->api.cuCtxGetCurrent);
     }
+
     return ctx->api.cuCtxGetCurrent(pctx);
 }
 
 CUresult cuda_api::cuMemAllocHost(void **pp, size_t bytesize)
 {
-    if(!ctx->api.cuMemAllocHost) {
+    if(!ctx->api.cuMemAllocHost)
+    {
+
 #if __CUDA_API_VERSION >= 3020
+
         ctx->api.cuMemAllocHost = (context::api_t::tcuMemAllocHost*)ctx->cuda_dll.resolve("cuMemAllocHost_v2");
+
         if(!ctx->api.cuMemAllocHost)
 #endif
             ctx->api.cuMemAllocHost = (context::api_t::tcuMemAllocHost*)ctx->cuda_dll.resolve("cuMemAllocHost");
+
         assert(ctx->api.cuMemAllocHost);
     }
+
     return ctx->api.cuMemAllocHost(pp, bytesize);
 }
 
 CUresult cuda_api::cuMemFreeHost(void *p)
 {
-    if (!ctx->api.cuMemFreeHost) {
+    if (!ctx->api.cuMemFreeHost)
+    {
         ctx->api.cuMemFreeHost = (context::api_t::tcuMemFreeHost*)ctx->cuda_dll.resolve("cuMemFreeHost");
         assert(ctx->api.cuMemFreeHost);
     }
+
     return ctx->api.cuMemFreeHost(p);
 }
 
 CUresult cuda_api::cuMemcpyDtoH(void *dstHost, CUdeviceptr srcDevice, size_t ByteCount)
 {
-    if (!ctx->api.cuMemcpyDtoH) {
+    if (!ctx->api.cuMemcpyDtoH)
+    {
+
 #if __CUDA_API_VERSION >= 3020
+
         ctx->api.cuMemcpyDtoH = (context::api_t::tcuMemcpyDtoH*)ctx->cuda_dll.resolve("cuMemcpyDtoH_v2");
+
         if (!ctx->api.cuMemcpyDtoH)
 #endif
             ctx->api.cuMemcpyDtoH = (context::api_t::tcuMemcpyDtoH*)ctx->cuda_dll.resolve("cuMemcpyDtoH");
+
         assert(ctx->api.cuMemcpyDtoH);
     }
+
     return ctx->api.cuMemcpyDtoH(dstHost, srcDevice, ByteCount);
 }
 
 CUresult cuda_api::cuMemcpyDtoHAsync(void *dstHost, CUdeviceptr srcDevice, size_t ByteCount, CUstream hStream)
 {
-    if (!ctx->api.cuMemcpyDtoHAsync) {
+    if (!ctx->api.cuMemcpyDtoHAsync)
+    {
+
 #if __CUDA_API_VERSION >= 3020
+
         ctx->api.cuMemcpyDtoHAsync = (context::api_t::tcuMemcpyDtoHAsync*)ctx->cuda_dll.resolve("cuMemcpyDtoHAsync_v2");
+
         if (!ctx->api.cuMemcpyDtoHAsync)
+
 #endif
             ctx->api.cuMemcpyDtoHAsync = (context::api_t::tcuMemcpyDtoHAsync*)ctx->cuda_dll.resolve("cuMemcpyDtoHAsync");
+
         assert(ctx->api.cuMemcpyDtoHAsync);
     }
+
     return ctx->api.cuMemcpyDtoHAsync(dstHost, srcDevice, ByteCount, hStream);
 }
 
 CUresult cuda_api::cuMemcpy2DAsync(const CUDA_MEMCPY2D *pCopy, CUstream hStream)
 {
-    if (!ctx->api.cuMemcpy2DAsync && !ctx->api.cuMemcpy2DAsync_old) {
+    if (!ctx->api.cuMemcpy2DAsync && !ctx->api.cuMemcpy2DAsync_old)
+    {
+
 #if __CUDA_API_VERSION >= 3020
+
         ctx->api.cuMemcpy2DAsync = (context::api_t::tcuMemcpy2DAsync*)ctx->cuda_dll.resolve("cuMemcpy2DAsync_v2");
+
         if (!ctx->api.cuMemcpy2DAsync)
 #endif
             ctx->api.cuMemcpy2DAsync_old = (context::api_t::tcuMemcpy2DAsync_old*)ctx->cuda_dll.resolve("cuMemcpy2DAsync");
+
         assert(ctx->api.cuMemcpy2DAsync || ctx->api.cuMemcpy2DAsync_old);
     }
+
 #if __CUDA_API_VERSION >= 3020
+
     if (ctx->api.cuMemcpy2DAsync)
         return ctx->api.cuMemcpy2DAsync(pCopy, hStream);
+
     CUDA_MEMCPY2D_old old;
     old.dstArray = pCopy->dstArray;
     old.dstDevice = pCopy->dstDevice;
@@ -464,10 +598,15 @@ CUresult cuda_api::cuMemcpy2DAsync(const CUDA_MEMCPY2D *pCopy, CUstream hStream)
     old.srcXInBytes = (unsigned int)pCopy->srcXInBytes;
     old.srcY = (unsigned int)pCopy->srcY;
     old.WidthInBytes = (unsigned int)pCopy->WidthInBytes;
+
     return ctx->api.cuMemcpy2DAsync_old(&old, hStream);
+
 #else
+
     return ctx->api.cuMemcpy2DAsync_old(pCopy, hStream);
+
 #endif
+
 }
 
 CUresult cuda_api::cuMemcpy2D(const CUDA_MEMCPY2D *pCopy)

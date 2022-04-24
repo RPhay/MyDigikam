@@ -21,22 +21,28 @@
  *
  * ============================================================ */
 
-///from nv's helper_cuda.h
+/// from nv's helper_cuda.h
 
-#include <stdio.h>
+// C++ includes
+
+#include <cstdio>
+
+// Local includes
 
 #include "dllapi/nv_inc.h"
+
 #if NV_CONFIG(DLLAPI_CUDA)
 using namespace dllapi::cuda;
-#endif /* NV_CONFIG(DLLAPI_CUDA)*/
-
+#endif
 
 #ifdef __cuda_cuda_h__
 
 // CUDA Driver API errors
+
 inline const char *_cudaGetErrorEnum(CUresult error)
 {
-    switch (error) {
+    switch (error)
+    {
         case CUDA_SUCCESS: return "CUDA_SUCCESS";
         case CUDA_ERROR_INVALID_VALUE: return "CUDA_ERROR_INVALID_VALUE";
         case CUDA_ERROR_OUT_OF_MEMORY: return "CUDA_ERROR_OUT_OF_MEMORY";
@@ -83,16 +89,20 @@ inline const char *_cudaGetErrorEnum(CUresult error)
         default:
             return "CUDA_ERROR_UNKNOWN";
     }
+
     return "<unknown>";
 }
+
 #endif //__cuda_cuda_h__
 
+// from helper_cuda
 
-//from helper_cuda
 // Beginning of GPU Architecture definitions
+
 inline int _ConvertSMVer2Cores(int major, int minor)
 {
     // Defines for GPU Architecture types (using the SM version to determine the # of cores per SM
+
     typedef struct
     {
         int SM; // 0xMm (hexidecimal notation), M = SM Major version, and m = SM minor version
@@ -120,15 +130,23 @@ inline int _ConvertSMVer2Cores(int major, int minor)
         { 0x70, 64 }, // Volta Generation (SM 7.0) GV100 class
         {   -1, -1 }
     };
+
     int index = 0;
-    while (nGpuArchCoresPerSM[index].SM != -1) {
-        if (nGpuArchCoresPerSM[index].SM == ((major << 4) + minor)) {
+
+    while (nGpuArchCoresPerSM[index].SM != -1)
+    {
+        if (nGpuArchCoresPerSM[index].SM == ((major << 4) + minor))
+        {
             return nGpuArchCoresPerSM[index].Cores;
         }
+
         ++index;
     }
+
     // If we don't find the values, we default use the previous one to run properly
+
     printf("MapSMtoCores for SM %d.%d is undefined.  Default to use %d Cores/SM\n", major, minor, nGpuArchCoresPerSM[index-1].Cores);
+
     return nGpuArchCoresPerSM[index - 1].Cores;
 }
 
