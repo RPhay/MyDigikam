@@ -611,17 +611,26 @@ CUresult cuda_api::cuMemcpy2DAsync(const CUDA_MEMCPY2D *pCopy, CUstream hStream)
 
 CUresult cuda_api::cuMemcpy2D(const CUDA_MEMCPY2D *pCopy)
 {
-    if (!ctx->api.cuMemcpy2D && !ctx->api.cuMemcpy2D_old) {
+    if (!ctx->api.cuMemcpy2D && !ctx->api.cuMemcpy2D_old)
+    {
+
 #if __CUDA_API_VERSION >= 3020
+
         ctx->api.cuMemcpy2D = (context::api_t::tcuMemcpy2D*)ctx->cuda_dll.resolve("cuMemcpy2D_v2");
+
         if (!ctx->api.cuMemcpy2D)
+
 #endif
             ctx->api.cuMemcpy2D_old = (context::api_t::tcuMemcpy2D_old*)ctx->cuda_dll.resolve("cuMemcpy2D");
+
         assert(ctx->api.cuMemcpy2D || ctx->api.cuMemcpy2D_old);
     }
+
 #if __CUDA_API_VERSION >= 3020
+
     if (ctx->api.cuMemcpy2D)
         return ctx->api.cuMemcpy2D(pCopy);
+
     CUDA_MEMCPY2D_old old;
     old.dstArray = pCopy->dstArray;
     old.dstDevice = pCopy->dstDevice;
@@ -639,156 +648,198 @@ CUresult cuda_api::cuMemcpy2D(const CUDA_MEMCPY2D *pCopy)
     old.srcXInBytes = (unsigned int)pCopy->srcXInBytes;
     old.srcY = (unsigned int)pCopy->srcY;
     old.WidthInBytes = (unsigned int)pCopy->WidthInBytes;
+
     return ctx->api.cuMemcpy2D_old(&old);
+
 #else
+
     return ctx->api.cuMemcpy2D_old(pCopy);
+
 #endif
+
 }
 
 CUresult cuda_api::cuStreamCreate(CUstream *phStream, unsigned int Flags)
 {
-    if (!ctx->api.cuStreamCreate) {
+    if (!ctx->api.cuStreamCreate)
+    {
         ctx->api.cuStreamCreate = (context::api_t::tcuStreamCreate*)ctx->cuda_dll.resolve("cuStreamCreate");
         assert(ctx->api.cuStreamCreate);
     }
+
     return ctx->api.cuStreamCreate(phStream, Flags);
 }
 
 CUresult cuda_api::cuStreamDestroy(CUstream hStream)
 {
-    if (!ctx->api.cuStreamDestroy) {
+    if (!ctx->api.cuStreamDestroy)
+    {
+
 #if __CUDA_API_VERSION >= 3020
+
         ctx->api.cuStreamDestroy = (context::api_t::tcuStreamDestroy*)ctx->cuda_dll.resolve("cuStreamDestroy_v2");
+
         if (!ctx->api.cuStreamDestroy)
+
 #endif
             ctx->api.cuStreamDestroy = (context::api_t::tcuStreamDestroy*)ctx->cuda_dll.resolve("cuStreamDestroy");
+
         assert(ctx->api.cuStreamDestroy);
     }
+
     return ctx->api.cuStreamDestroy(hStream);
 }
 
 CUresult cuda_api::cuStreamQuery(CUstream hStream)
 {
-    if (!ctx->api.cuStreamQuery) {
+    if (!ctx->api.cuStreamQuery)
+    {
         ctx->api.cuStreamQuery = (context::api_t::tcuStreamQuery*)ctx->cuda_dll.resolve("cuStreamQuery");
         assert(ctx->api.cuStreamQuery);
     }
+
     return ctx->api.cuStreamQuery(hStream);
 }
 
 CUresult cuda_api::cuStreamSynchronize(CUstream hStream)
 {
-    if (!ctx->api.cuStreamSynchronize) {
+    if (!ctx->api.cuStreamSynchronize)
+    {
         ctx->api.cuStreamSynchronize = (context::api_t::tcuStreamSynchronize*)ctx->cuda_dll.resolve("cuStreamSynchronize");
         assert(ctx->api.cuStreamSynchronize);
     }
+
     return ctx->api.cuStreamSynchronize(hStream);
 }
 
 CUresult cuda_api::cuDeviceGetCount(int *count)
 {
-    if (!ctx->api.cuDeviceGetCount) {
+    if (!ctx->api.cuDeviceGetCount)
+    {
         ctx->api.cuDeviceGetCount = (context::api_t::tcuDeviceGetCount*)ctx->cuda_dll.resolve("cuDeviceGetCount");
         assert(ctx->api.cuDeviceGetCount);
     }
+
     return ctx->api.cuDeviceGetCount(count);
 }
 
 CUresult cuda_api::cuDriverGetVersion(int *driverVersion)
 {
-    if (!ctx->api.cuDriverGetVersion) {
+    if (!ctx->api.cuDriverGetVersion)
+    {
         ctx->api.cuDriverGetVersion = (context::api_t::tcuDriverGetVersion*)ctx->cuda_dll.resolve("cuDriverGetVersion");
         assert(ctx->api.cuDriverGetVersion);
     }
+
     return ctx->api.cuDriverGetVersion(driverVersion);
 }
 
 CUresult cuda_api::cuDeviceGetName(char *name, int len, CUdevice dev)
 {
-    if (!ctx->api.cuDeviceGetName) {
+    if (!ctx->api.cuDeviceGetName)
+    {
         ctx->api.cuDeviceGetName = (context::api_t::tcuDeviceGetName*)ctx->cuda_dll.resolve("cuDeviceGetName");
         assert(ctx->api.cuDeviceGetName);
     }
+
     return ctx->api.cuDeviceGetName(name, len, dev);
 }
 
 CUresult cuda_api::cuDeviceComputeCapability(int *major, int *minor, CUdevice dev)
 {
-    if (!ctx->api.cuDeviceComputeCapability) {
+    if (!ctx->api.cuDeviceComputeCapability)
+    {
         ctx->api.cuDeviceComputeCapability = (context::api_t::tcuDeviceComputeCapability*)ctx->cuda_dll.resolve("cuDeviceComputeCapability");
         assert(ctx->api.cuDeviceComputeCapability);
     }
+
     return ctx->api.cuDeviceComputeCapability(major, minor, dev);
 }
 
 CUresult cuda_api::cuDeviceGetAttribute(int *pi, CUdevice_attribute attrib, CUdevice dev)
 {
-    if (!ctx->api.cuDeviceGetAttribute) {
+    if (!ctx->api.cuDeviceGetAttribute)
+    {
         ctx->api.cuDeviceGetAttribute = (context::api_t::tcuDeviceGetAttribute*)ctx->cuda_dll.resolve("cuDeviceGetAttribute");
         assert(ctx->api.cuDeviceGetAttribute);
     }
+
     return ctx->api.cuDeviceGetAttribute(pi, attrib, dev);
 }
 
 CUresult cuda_api::cuGraphicsGLRegisterImage(CUgraphicsResource *pCudaResource, GLuint image, GLenum target, unsigned int Flags)
 {
-    if (!ctx->api.cuGraphicsGLRegisterImage) {
+    if (!ctx->api.cuGraphicsGLRegisterImage)
+    {
         ctx->api.cuGraphicsGLRegisterImage = (context::api_t::tcuGraphicsGLRegisterImage*)ctx->cuda_dll.resolve("cuGraphicsGLRegisterImage");
         assert(ctx->api.cuGraphicsGLRegisterImage);
     }
+
     return ctx->api.cuGraphicsGLRegisterImage(pCudaResource, image, target, Flags);
 }
 
 CUresult cuda_api::cuGraphicsUnregisterResource(CUgraphicsResource resource)
 {
-    if (!ctx->api.cuGraphicsUnregisterResource) {
+    if (!ctx->api.cuGraphicsUnregisterResource)
+    {
         ctx->api.cuGraphicsUnregisterResource = (context::api_t::tcuGraphicsUnregisterResource*)ctx->cuda_dll.resolve("cuGraphicsUnregisterResource");
         assert(ctx->api.cuGraphicsUnregisterResource);
     }
+
     return ctx->api.cuGraphicsUnregisterResource(resource);
 }
 
 CUresult cuda_api::cuGraphicsMapResources(unsigned int count, CUgraphicsResource *resources, CUstream hStream)
 {
-    if (!ctx->api.cuGraphicsMapResources) {
+    if (!ctx->api.cuGraphicsMapResources)
+    {
         ctx->api.cuGraphicsMapResources = (context::api_t::tcuGraphicsMapResources*)ctx->cuda_dll.resolve("cuGraphicsMapResources");
         assert(ctx->api.cuGraphicsMapResources);
     }
+
     return ctx->api.cuGraphicsMapResources(count, resources, hStream);
 }
 
 CUresult cuda_api::cuGraphicsSubResourceGetMappedArray(CUarray *pArray, CUgraphicsResource resource, unsigned int arrayIndex, unsigned int mipLevel)
 {
-    if (!ctx->api.cuGraphicsSubResourceGetMappedArray) {
+    if (!ctx->api.cuGraphicsSubResourceGetMappedArray)
+    {
         ctx->api.cuGraphicsSubResourceGetMappedArray = (context::api_t::tcuGraphicsSubResourceGetMappedArray*)ctx->cuda_dll.resolve("cuGraphicsSubResourceGetMappedArray");
         assert(ctx->api.cuGraphicsSubResourceGetMappedArray);
     }
+
     return ctx->api.cuGraphicsSubResourceGetMappedArray(pArray, resource, arrayIndex, mipLevel);
 }
 
 CUresult cuda_api::cuGraphicsUnmapResources(unsigned int count, CUgraphicsResource *resources, CUstream hStream)
 {
-    if (!ctx->api.cuGraphicsUnmapResources) {
+    if (!ctx->api.cuGraphicsUnmapResources)
+    {
         ctx->api.cuGraphicsUnmapResources = (context::api_t::tcuGraphicsUnmapResources*)ctx->cuda_dll.resolve("cuGraphicsUnmapResources");
         assert(ctx->api.cuGraphicsUnmapResources);
     }
+
     return ctx->api.cuGraphicsUnmapResources(count, resources, hStream);
 }
 
 ////////////////////////////////////////////////////
 /// D3D Interop
 ////////////////////////////////////////////////////
-//CUresult cuda_api::cuD3D9CtxCreate( CUcontext *pCtx, CUdevice *pCudaDevice, unsigned int Flags, IDirect3DDevice9 *pD3DDevice);
+
+// CUresult cuda_api::cuD3D9CtxCreate( CUcontext *pCtx, CUdevice *pCudaDevice, unsigned int Flags, IDirect3DDevice9 *pD3DDevice);
 
 ////////////////////////////////////////////////////
 /// CUVID functions
 ////////////////////////////////////////////////////
+
 CUresult cuda_api::cuvidCtxLockCreate(CUvideoctxlock *pLock, CUcontext cuctx)
 {
-    if (!ctx->api.cuvidCtxLockCreate) {
+    if (!ctx->api.cuvidCtxLockCreate)
+    {
         ctx->api.cuvidCtxLockCreate = (context::api_t::tcuvidCtxLockCreate*)this->ctx->cuvid_dll.resolve("cuvidCtxLockCreate");
         assert(ctx->api.cuvidCtxLockCreate);
     }
+
     return ctx->api.cuvidCtxLockCreate(pLock, cuctx);
 }
 
@@ -796,124 +847,164 @@ CUresult cuda_api::cuvidCtxLockDestroy(CUvideoctxlock lck)
 {
     if (!ctx->api.cuvidCtxLockDestroy)
         ctx->api.cuvidCtxLockDestroy = (context::api_t::tcuvidCtxLockDestroy*)ctx->cuvid_dll.resolve("cuvidCtxLockDestroy");
+
     assert(ctx->api.cuvidCtxLockDestroy);
+
     return ctx->api.cuvidCtxLockDestroy(lck);
 }
 
 CUresult cuda_api::cuvidCtxLock(CUvideoctxlock lck, unsigned int reserved_flags)
 {
-    if (!ctx->api.cuvidCtxLock) {
+    if (!ctx->api.cuvidCtxLock)
+    {
         ctx->api.cuvidCtxLock = (context::api_t::tcuvidCtxLock*)ctx->cuvid_dll.resolve("cuvidCtxLock");
         assert(ctx->api.cuvidCtxLock);
     }
+
     return ctx->api.cuvidCtxLock(lck, reserved_flags);
 }
 
 CUresult cuda_api::cuvidCtxUnlock(CUvideoctxlock lck, unsigned int reserved_flags)
 {
-    if (!ctx->api.cuvidCtxUnlock) {
+    if (!ctx->api.cuvidCtxUnlock)
+    {
         ctx->api.cuvidCtxUnlock = (context::api_t::tcuvidCtxUnlock*)ctx->cuvid_dll.resolve("cuvidCtxUnlock");
         assert(ctx->api.cuvidCtxUnlock);
     }
+
     return ctx->api.cuvidCtxUnlock(lck, reserved_flags);
 }
 
 CUresult cuda_api::cuCtxSynchronize()
 {
-    if (!ctx->api.cuCtxSynchronize) {
+    if (!ctx->api.cuCtxSynchronize)
+    {
         ctx->api.cuCtxSynchronize = (context::api_t::tcuCtxSynchronize*)ctx->cuda_dll.resolve("cuCtxSynchronize");
         assert(ctx->api.cuCtxSynchronize);
     }
+
     return ctx->api.cuCtxSynchronize();
 }
 
 CUresult cuda_api::cuvidCreateVideoParser(CUvideoparser *pObj, CUVIDPARSERPARAMS *pParams)
 {
-    if (!ctx->api.cuvidCreateVideoParser) {
+    if (!ctx->api.cuvidCreateVideoParser)
+    {
         ctx->api.cuvidCreateVideoParser = (context::api_t::tcuvidCreateVideoParser*)ctx->cuvid_dll.resolve("cuvidCreateVideoParser");
         assert(ctx->api.cuvidCreateVideoParser);
     }
+
     return ctx->api.cuvidCreateVideoParser(pObj, pParams);
 }
 
 CUresult cuda_api::cuvidParseVideoData(CUvideoparser obj, CUVIDSOURCEDATAPACKET *pPacket)
 {
-    if (!ctx->api.cuvidParseVideoData) {
+    if (!ctx->api.cuvidParseVideoData)
+    {
         ctx->api.cuvidParseVideoData = (context::api_t::tcuvidParseVideoData*)ctx->cuvid_dll.resolve("cuvidParseVideoData");
         assert(ctx->api.cuvidParseVideoData);
     }
+
     return ctx->api.cuvidParseVideoData(obj, pPacket);
 }
 
 CUresult cuda_api::cuvidDestroyVideoParser(CUvideoparser obj)
 {
-    if (!ctx->api.cuvidDestroyVideoParser) {
+    if (!ctx->api.cuvidDestroyVideoParser)
+    {
         ctx->api.cuvidDestroyVideoParser = (context::api_t::tcuvidDestroyVideoParser*)ctx->cuvid_dll.resolve("cuvidDestroyVideoParser");
         assert(ctx->api.cuvidDestroyVideoParser);
     }
+
     return ctx->api.cuvidDestroyVideoParser(obj);
 }
 
 // Create/Destroy the decoder object
+
 CUresult cuda_api::cuvidCreateDecoder(CUvideodecoder *phDecoder, CUVIDDECODECREATEINFO *pdci)
 {
-    if (!ctx->api.cuvidCreateDecoder) {
+    if (!ctx->api.cuvidCreateDecoder)
+    {
         ctx->api.cuvidCreateDecoder = (context::api_t::tcuvidCreateDecoder*)ctx->cuvid_dll.resolve("cuvidCreateDecoder");
         assert(ctx->api.cuvidCreateDecoder);
     }
+
     return ctx->api.cuvidCreateDecoder(phDecoder, pdci);
 }
 
 CUresult cuda_api::cuvidDestroyDecoder(CUvideodecoder hDecoder)
 {
-    if (!ctx->api.cuvidDestroyDecoder) {
+    if (!ctx->api.cuvidDestroyDecoder)
+    {
         ctx->api.cuvidDestroyDecoder = (context::api_t::tcuvidDestroyDecoder*)ctx->cuvid_dll.resolve("cuvidDestroyDecoder");
         assert(ctx->api.cuvidDestroyDecoder);
     }
+
     return ctx->api.cuvidDestroyDecoder(hDecoder);
 }
 
 // Decode a single picture (field or frame)
+
 CUresult cuda_api::cuvidDecodePicture(CUvideodecoder hDecoder, CUVIDPICPARAMS *pPicParams)
 {
-    if (!ctx->api.cuvidDecodePicture) {
+    if (!ctx->api.cuvidDecodePicture)
+    {
         ctx->api.cuvidDecodePicture = (context::api_t::tcuvidDecodePicture*)   ctx->cuvid_dll.resolve("cuvidDecodePicture");
         assert(ctx->api.cuvidDecodePicture);
     }
+
     return ctx->api.cuvidDecodePicture(hDecoder, pPicParams);
 }
 
 // Post-process and map a video frame for use in cuda
+
 CUresult cuda_api::cuvidMapVideoFrame(CUvideodecoder hDecoder, int nPicIdx, CUdeviceptr *pDevPtr, unsigned int *pPitch, CUVIDPROCPARAMS *pVPP)
 {
-    if (!ctx->api.cuvidMapVideoFrame) {
+    if (!ctx->api.cuvidMapVideoFrame)
+    {
+
 #if defined(__CUVID_DEVPTR64)
+
         ctx->api.cuvidMapVideoFrame = (context::api_t::tcuvidMapVideoFrame*)ctx->cuvid_dll.resolve("cuvidMapVideoFrame64");
+
 #else
+
         ctx->api.cuvidMapVideoFrame = (context::api_t::tcuvidMapVideoFrame*)ctx->cuvid_dll.resolve("cuvidMapVideoFrame");
 
 #endif
         assert(ctx->api.cuvidMapVideoFrame);
     }
+
     return ctx->api.cuvidMapVideoFrame(hDecoder, nPicIdx, pDevPtr, pPitch, pVPP);
 }
 
 // Unmap a previously mapped video frame
+
 CUresult cuda_api::cuvidUnmapVideoFrame(CUvideodecoder hDecoder, CUdeviceptr DevPtr)
 {
-    if (!ctx->api.cuvidUnmapVideoFrame) {
+    if (!ctx->api.cuvidUnmapVideoFrame)
+    {
+
 #if defined(__CUVID_DEVPTR64)
+
         ctx->api.cuvidUnmapVideoFrame = (context::api_t::tcuvidUnmapVideoFrame*)ctx->cuvid_dll.resolve("cuvidUnmapVideoFrame64");
+
 #else
+
         ctx->api.cuvidUnmapVideoFrame = (context::api_t::tcuvidUnmapVideoFrame*)ctx->cuvid_dll.resolve("cuvidUnmapVideoFrame");
+
 #endif
+
         assert(ctx->api.cuvidUnmapVideoFrame);
     }
+
     return ctx->api.cuvidUnmapVideoFrame(hDecoder, DevPtr);
 }
 
 #endif // !NV_CONFIG(DLLAPI_CUDA) && !defined(CUDA_LINK)
-int cuda_api::GetMaxGflopsGraphicsDeviceId() {
+
+int cuda_api::GetMaxGflopsGraphicsDeviceId()
+{
     CUdevice current_device = 0, max_perf_device = 0;
     int device_count     = 0, sm_per_multiproc = 0;
     int max_compute_perf = 0, best_SM_arch     = 0;
@@ -923,53 +1014,78 @@ int cuda_api::GetMaxGflopsGraphicsDeviceId() {
     char deviceName[256];
 
     cuDeviceGetCount(&device_count);
+
     if (device_count <= 0)
         return -1;
 
     cuDriverGetVersion(&version);
     qCDebug(DIGIKAM_QTAV_LOG).noquote() << QString::asprintf("cuda driver api build version: %d, runtime version: %d", __CUDA_API_VERSION, version);
+
     // Find the best major SM Architecture GPU device that are graphics devices
-    while (current_device < device_count) {
+
+    while (current_device < device_count)
+    {
         cuDeviceGetName(deviceName, 256, current_device);
         cuDeviceComputeCapability(&major, &minor, current_device);
-        if (version >= 3020) {
+
+        if (version >= 3020)
+        {
             cuDeviceGetAttribute(&bTCC, CU_DEVICE_ATTRIBUTE_TCC_DRIVER, current_device);
-        } else {
+        }
+        else
+        {
             // Assume a Tesla GPU is running in TCC if we are running CUDA 3.1
+
             if (deviceName[0] == 'T')
                 bTCC = 1;
         }
 
         int computeMode;
         cuDeviceGetAttribute(&computeMode, CU_DEVICE_ATTRIBUTE_COMPUTE_MODE, current_device);
-        if (computeMode != CU_COMPUTEMODE_PROHIBITED) {
-            if (!bTCC) {
-                if (major > 0 && major < 9999) {
+
+        if (computeMode != CU_COMPUTEMODE_PROHIBITED)
+        {
+            if (!bTCC)
+            {
+                if (major > 0 && major < 9999)
+                {
                     best_SM_arch = std::max(best_SM_arch, major);
                 }
             }
-        } else {
+        }
+        else
+        {
             devices_prohibited++;
         }
 
         current_device++;
     }
 
-    if (devices_prohibited == device_count) {
+    if (devices_prohibited == device_count)
+    {
         fprintf(stderr, "GetMaxGflopsGraphicsDeviceId error: all devices have compute mode prohibited.\n");
+
         return -1;
     }
 
     // Find the best CUDA capable GPU device
+
     current_device = 0;
-    while (current_device < device_count) {
+
+    while (current_device < device_count)
+    {
         cuDeviceGetAttribute(&multiProcessorCount, CU_DEVICE_ATTRIBUTE_MULTIPROCESSOR_COUNT, current_device);
         cuDeviceGetAttribute(&clockRate, CU_DEVICE_ATTRIBUTE_CLOCK_RATE, current_device);
         cuDeviceComputeCapability(&major, &minor, current_device);
-        if (version >= 3020) {
+
+        if (version >= 3020)
+        {
             cuDeviceGetAttribute(&bTCC, CU_DEVICE_ATTRIBUTE_TCC_DRIVER, current_device);
-        } else {
+        }
+        else
+        {
             // Assume a Tesla GPU is running in TCC if we are running CUDA 3.1
+
             if (deviceName[0] == 'T')
                 bTCC = 1;
         }
@@ -977,35 +1093,56 @@ int cuda_api::GetMaxGflopsGraphicsDeviceId() {
         int computeMode;
         cuDeviceGetAttribute(&computeMode, CU_DEVICE_ATTRIBUTE_COMPUTE_MODE, current_device);
 
-        if (computeMode != CU_COMPUTEMODE_PROHIBITED) {
-            if (major == 9999 && minor == 9999) {
+        if (computeMode != CU_COMPUTEMODE_PROHIBITED)
+        {
+            if (major == 9999 && minor == 9999)
+            {
                 sm_per_multiproc = 1;
-            } else {
+            }
+            else
+            {
                 sm_per_multiproc = _ConvertSMVer2Cores(major, minor);
             }
+
             // If this is a Tesla based GPU and SM 2.0, and TCC is disabled, this is a contendor
-            if (!bTCC) {// Is this GPU running the TCC driver?  If so we pass on this
+
+            if (!bTCC)
+            {
+                // Is this GPU running the TCC driver?  If so we pass on this
+
                 int compute_perf = multiProcessorCount * sm_per_multiproc * clockRate;
                 printf("%s @%d compute_perf=%d max_compute_perf=%d\n", __FUNCTION__, __LINE__, compute_perf, max_compute_perf);
-                if (compute_perf > max_compute_perf) {
+
+                if (compute_perf > max_compute_perf)
+                {
                     // If we find GPU with SM major > 2, search only these
-                    if (best_SM_arch > 2) {
+
+                    if (best_SM_arch > 2)
+                    {
                         printf("%s @%d best_SM_arch=%d\n", __FUNCTION__, __LINE__, best_SM_arch);
+
                         // If our device = dest_SM_arch, then we pick this one
-                        if (major == best_SM_arch) {
+
+                        if (major == best_SM_arch)
+                        {
                             max_compute_perf = compute_perf;
                             max_perf_device = current_device;
                         }
-                    } else {
+                    }
+                    else
+                    {
                         max_compute_perf = compute_perf;
                         max_perf_device = current_device;
                     }
                 }
+
                 cuDeviceGetName(deviceName, 256, current_device);
                 printf("CUDA Device: %s, Compute: %d.%d, CUDA Cores: %d, Clock: %d MHz\n", deviceName, major, minor, multiProcessorCount * sm_per_multiproc, clockRate / 1000);
             }
         }
+
         ++current_device;
     }
+
     return max_perf_device;
 }

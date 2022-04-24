@@ -25,18 +25,30 @@
 #include "dllapi.h"
 
 // include nv_inc.h headers later to avoid build error. have not find out why it happens
+
 #define __CUVID_INTERNAL //avoid replaced bt 64 api
 #define __CUDA_API_VERSION_INTERNAL
+
 #include "nv_inc.h"
 
 using namespace dllapi;
-namespace dllapi {
-namespace cuda {
 
-namespace { //the macro define class dll. so a namespace wrapper is required
+namespace dllapi
+{
+
+namespace cuda
+{
+
+namespace
+{
+// the macro define class dll. so a namespace wrapper is required
+
 //DEFINE_DLL_INSTANCE_N("cuda", "nvcuda", NULL) //now may crash for vc
+
 static char* cuda_names[] = { "nvcuda", NULL };
+
 DEFINE_DLL_INSTANCE_V("cuda", cuda_names)
+
 }
 
 DEFINE_DLLAPI_M_ARG(1, CUresult, CUDAAPI, cuInit, unsigned int)
@@ -236,11 +248,14 @@ DEFINE_DLLAPI_M_ARG(3, CUresult, CUDAAPI, cuGraphicsUnmapResources, unsigned int
 DEFINE_DLLAPI_M_ARG(2, CUresult, CUDAAPI, cuGetExportTable, const void **, const CUuuid *)
 
 #if defined(__x86_64) || defined(AMD64) || defined(_M_AMD64)
+
 DEFINE_DLLAPI_M_ARG(2, CUresult, CUDAAPI, cuMemAllocHost, void **, unsigned int)
 DEFINE_DLLAPI_M_ARG(2, CUresult, CUDAAPI, cuMemAllocHost_v2, void **, unsigned int)
 DEFINE_DLLAPI_M_ARG(4, CUresult, CUDAAPI, cuMemcpyDtoHAsync, void *, CUdeviceptr, unsigned int, CUstream)
 DEFINE_DLLAPI_M_ARG(4, CUresult, CUDAAPI, cuMemcpyDtoHAsync_v2, void *, CUdeviceptr, unsigned int, CUstream)
+
 #endif
 
-} //namespace cuda
-} //namespace dllapi
+} // namespace cuda
+
+} // namespace dllapi
