@@ -48,9 +48,10 @@ using namespace ABI::Windows::Storage::Streams;
 using namespace ABI::Windows::Foundation;
 using namespace ABI::Windows::Foundation::Collections;
 
-#define COM_LOG_COMPONENT "WinRTIO"
+#define COM_LOG_COMPONENT  "WinRTIO"
 #define COM_ENSURE(f, ...) COM_CHECK(f, return __VA_ARGS__;)
-#define COM_WARN(f) COM_CHECK(f)
+#define COM_WARN(f)        COM_CHECK(f)
+
 #define COM_CHECK(f, ...) \
     do { \
         HRESULT hr = f; \

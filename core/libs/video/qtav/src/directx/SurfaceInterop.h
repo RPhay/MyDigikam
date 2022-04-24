@@ -67,7 +67,10 @@ public:
 
     // TODO: SurfaceType. unmap is currenty used by opengl rendering
 
-    virtual void unmap(void* handle) { Q_UNUSED(handle); }
+    virtual void unmap(void* handle)
+    {
+        Q_UNUSED(handle);
+    }
 
     //virtual void unmap(void* handle, SurfaceType type) { Q_UNUSED(handle); } //for SourceSurfaceType
 

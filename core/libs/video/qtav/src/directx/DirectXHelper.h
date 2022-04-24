@@ -46,9 +46,10 @@ namespace QtAV
 #   define DX_LOG_COMPONENT "DirectX"
 #endif
 
-#define DX_ENSURE(f, ...) DX_CHECK(f, return __VA_ARGS__;)
-#define DX_WARN(f) DX_CHECK(f)
+#define DX_ENSURE(f, ...)    DX_CHECK(f, return __VA_ARGS__;)
+#define DX_WARN(f)           DX_CHECK(f)
 #define DX_ENSURE_OK(f, ...) DX_CHECK(f, return __VA_ARGS__;)
+
 #define DX_CHECK(f, ...) \
     do { \
         HRESULT hr = f; \
@@ -58,8 +59,8 @@ namespace QtAV
         } \
     } while (0)
 
-
-template <class T> void SafeRelease(T **ppT)
+template <class T>
+void SafeRelease(T **ppT)
 {
     if (*ppT)
     {

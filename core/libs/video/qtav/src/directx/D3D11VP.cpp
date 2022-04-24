@@ -94,8 +94,7 @@ bool D3D11VP::process(ID3D11Texture2D *texture, int index)
 
     ComPtr<ID3D11VideoProcessorInputView> inview;
 
-    DX_ENSURE(m_viddev->CreateVideoProcessorInputView(
-                texture, m_enum.Get(), &inviewDesc, &inview), false);
+    DX_ENSURE(m_viddev->CreateVideoProcessorInputView(texture, m_enum.Get(), &inviewDesc, &inview), false);
 
     ComPtr<ID3D11DeviceContext> ctx;
     ComPtr<ID3D11VideoContext> videoctx;
@@ -113,7 +112,7 @@ bool D3D11VP::process(ID3D11Texture2D *texture, int index)
     videoctx->VideoProcessorSetStreamAutoProcessingMode(m_vp.Get(), 0, FALSE);
     D3D11_VIDEO_PROCESSOR_COLOR_SPACE cs;
     ZeroMemory(&cs, sizeof(cs));
-    cs.YCbCr_Matrix = m_cs == ColorSpace_BT601 ? 0 : 1; // 0: bt601, 1: bt709
+    cs.YCbCr_Matrix  = m_cs == ColorSpace_BT601 ? 0 : 1; // 0: bt601, 1: bt709
 
     // D3D11_VIDEO_PROCESSOR_NOMINAL_RANGE_xxx is desktop only?
 
@@ -122,14 +121,14 @@ bool D3D11VP::process(ID3D11Texture2D *texture, int index)
 
 #if 0
 
-    cs.RGB_Range = 1; // 0: full, 1: limited
+    cs.RGB_Range     = 1; // 0: full, 1: limited
     videoctx->VideoProcessorSetOutputColorSpace(m_vp.Get(), &cs);
 
 #endif
 
     D3D11_VIDEO_PROCESSOR_STREAM stream;
     ZeroMemory(&stream, sizeof(stream));
-    stream.Enable = TRUE;
+    stream.Enable        = TRUE;
     stream.pInputSurface = inview.Get();
     DX_ENSURE(videoctx->VideoProcessorBlt(m_vp.Get(), m_outview.Get(), 0, 1, &stream), false);
 
@@ -147,7 +146,7 @@ bool D3D11VP::ensureResource(UINT width, UINT height, DXGI_FORMAT format)
             D3D11_VIDEO_FRAME_FORMAT_PROGRESSIVE,
             { 0, 0 }, width, height,
             { 0, 0 }, width, height,
-            D3D11_VIDEO_USAGE_PLAYBACK_NORMAL //D3D11_VIDEO_USAGE_OPTIMAL_SPEED
+            D3D11_VIDEO_USAGE_PLAYBACK_NORMAL // D3D11_VIDEO_USAGE_OPTIMAL_SPEED
         };
 
         DX_ENSURE(m_viddev->CreateVideoProcessorEnumerator(&vpdesc, &m_enum), false);

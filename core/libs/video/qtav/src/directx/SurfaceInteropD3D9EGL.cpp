@@ -131,12 +131,12 @@ bool EGLInteropResource::ensureSurface(int w, int h)
 
     EGLint cfg_attribs[] =
     {
-        EGL_RED_SIZE, 8,
-        EGL_GREEN_SIZE, 8,
-        EGL_BLUE_SIZE, 8,
-        EGL_ALPHA_SIZE, 8, //
-        EGL_BIND_TO_TEXTURE_RGBA, EGL_TRUE, //remove?
-        EGL_SURFACE_TYPE, EGL_PBUFFER_BIT,
+        EGL_RED_SIZE,             8,
+        EGL_GREEN_SIZE,           8,
+        EGL_BLUE_SIZE,            8,
+        EGL_ALPHA_SIZE,           8,
+        EGL_BIND_TO_TEXTURE_RGBA, EGL_TRUE,             // remove?
+        EGL_SURFACE_TYPE,         EGL_PBUFFER_BIT,
         EGL_NONE
     };
 

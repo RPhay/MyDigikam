@@ -37,13 +37,13 @@ const char* vendorName(unsigned id)
         char     name[32];
     } vendors [] =
     {
-        { 0x1002,     "ATI" },
-        { 0x10DE,     "NVIDIA" },
-        { 0x1106,     "VIA" },
-        { 0x8086,     "Intel" },
+        { 0x1002,     "ATI"         },
+        { 0x10DE,     "NVIDIA"      },
+        { 0x1106,     "VIA"         },
+        { 0x8086,     "Intel"       },
         { 0x5333,     "S3 Graphics" },
-        { 0x4D4F4351, "Qualcomm" },
-        { 0,          "" }
+        { 0x4D4F4351, "Qualcomm"    },
+        { 0,          ""            }
     };
 
     const char* vendor = "Unknown";
@@ -53,6 +53,7 @@ const char* vendorName(unsigned id)
         if (vendors[i].id == id)
         {
             vendor = vendors[i].name;
+
             break;
         }
     }
@@ -76,10 +77,10 @@ static void InitParameters(D3DPRESENT_PARAMETERS* d3dpp)
     //d3dpp->MultiSampleType        = D3DMULTISAMPLE_NONE;
     //d3dpp->PresentationInterval   = D3DPRESENT_INTERVAL_DEFAULT;
 
-    d3dpp->BackBufferCount        = 1;              // 0;                  /* FIXME what to put here */
-    d3dpp->BackBufferFormat       = D3DFMT_UNKNOWN; // D3DFMT_X8R8G8B8;    /* FIXME what to put here */
-    d3dpp->BackBufferWidth        = 1;              // 0;
-    d3dpp->BackBufferHeight       = 1;              // 0;
+    d3dpp->BackBufferCount        = 1;                      // 0;                  /* FIXME what to put here */
+    d3dpp->BackBufferFormat       = D3DFMT_UNKNOWN;         // D3DFMT_X8R8G8B8;    /* FIXME what to put here */
+    d3dpp->BackBufferWidth        = 1;                      // 0;
+    d3dpp->BackBufferHeight       = 1;                      // 0;
 
     //d3dpp->EnableAutoDepthStencil = FALSE;
 }
@@ -91,11 +92,13 @@ IDirect3DDevice9* CreateDevice9Ex(HINSTANCE dll, IDirect3D9Ex** d3d9ex, D3DADAPT
     // http://msdn.microsoft.com/en-us/library/windows/desktop/bb219676(v=vs.85).aspx
 
     typedef HRESULT (WINAPI *Create9ExFunc)(UINT SDKVersion, IDirect3D9Ex **ppD3D); // IDirect3D9Ex: void is ok
+
     Create9ExFunc Create9Ex = (Create9ExFunc)GetProcAddress(dll, "Direct3DCreate9Ex");
 
     if (!Create9Ex)
     {
         qCWarning(DIGIKAM_QTAV_LOG_WARN).noquote() << QString::asprintf("Symbol not found: Direct3DCreate9Ex");
+
         return NULL;
     }
 
@@ -138,11 +141,13 @@ IDirect3DDevice9* CreateDevice9(HINSTANCE dll, IDirect3D9** d3d9, D3DADAPTER_IDE
     qCDebug(DIGIKAM_QTAV_LOG).noquote() << QString::asprintf("creating d3d9 device...");
 
     typedef IDirect3D9* (WINAPI *Create9Func)(UINT SDKVersion);
+
     Create9Func Create9 = (Create9Func)GetProcAddress(dll, "Direct3DCreate9");
 
     if (!Create9)
     {
         qCWarning(DIGIKAM_QTAV_LOG_WARN).noquote() << QString::asprintf("Symbol not found: Direct3DCreate9");
+
         return NULL;
     }
 

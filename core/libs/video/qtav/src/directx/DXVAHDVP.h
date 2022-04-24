@@ -21,8 +21,8 @@
  *
  * ============================================================ */
 
-#ifndef QTAV_D3D9VPP_H
-#define QTAV_D3D9VPP_H
+#ifndef QTAV_DXVAHDVP_H
+#define QTAV_DXVAHDVP_H
 
 // Qt includes
 
@@ -77,16 +77,16 @@ private:
     ComPtr<IDXVAHD_VideoProcessor>  m_vp;
     ComPtr<IDirect3DSurface9>       m_out;
 
-    UINT                 m_w, m_h;      // enumerator
-    ColorSpace           m_cs;
-    ColorRange           m_range;
-    QRect                m_srcRect;
-    PDXVAHD_CreateDevice fDXVAHD_CreateDevice;
-    D3DFORMAT            m_fmt;
+    UINT                            m_w, m_h;      // enumerator
+    ColorSpace                      m_cs;
+    ColorRange                      m_range;
+    QRect                           m_srcRect;
+    PDXVAHD_CreateDevice            fDXVAHD_CreateDevice;
+    D3DFORMAT                       m_fmt;
 };
 
 } // namespace dx
 
 } // namespace QtAV
 
-#endif // QTAV_D3D9VPP_H
+#endif // QTAV_DXVAHDVP_H

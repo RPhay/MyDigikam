@@ -75,10 +75,10 @@ private:
     ComPtr<ID3D11VideoProcessor>            m_vp;
     ComPtr<ID3D11VideoProcessorOutputView>  m_outview;
 
-    UINT        m_w, m_h;      // enumerator
-    ColorSpace  m_cs;
-    ColorRange  m_range;
-    QRect       m_srcRect;
+    UINT                                    m_w, m_h;      // enumerator
+    ColorSpace                              m_cs;
+    ColorRange                              m_range;
+    QRect                                   m_srcRect;
 };
 
 } // namespace dx
