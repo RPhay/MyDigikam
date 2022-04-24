@@ -22,4 +22,5 @@
  * ============================================================ */
 
 #define BUILD_SWR
+
 #include "AudioResamplerTemplate.cpp"

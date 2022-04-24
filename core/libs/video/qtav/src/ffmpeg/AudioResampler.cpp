@@ -22,6 +22,9 @@
  * ============================================================ */
 
 #include "AudioResampler.h"
+
+// Local includes
+
 #include "AudioFormat.h"
 #include "AudioResampler_p.h"
 #include "QtAV_factory.h"
@@ -30,6 +33,7 @@
 
 namespace QtAV
 {
+
 FACTORY_DEFINE(AudioResampler)
 
 AudioResamplerId AudioResamplerId_FF = mkid::id32base36_6<'F', 'F', 'm', 'p', 'e', 'g'>::value;
@@ -37,18 +41,28 @@ AudioResamplerId AudioResamplerId_Libav = mkid::id32base36_5<'L', 'i', 'b', 'a',
 
 extern bool RegisterAudioResamplerFF_Man();
 extern bool RegisterAudioResamplerLibav_Man();
+
 void AudioResampler::registerAll()
 {
     static bool done = false;
+
     if (done)
         return;
+
     done = true;
+
 #if QTAV_HAVE(SWRESAMPLE)
+
     RegisterAudioResamplerFF_Man();
+
 #endif
+
 #if QTAV_HAVE(AVRESAMPLE)
+
     RegisterAudioResamplerLibav_Man();
+
 #endif
+
 }
 
 AudioResampler::AudioResampler(AudioResamplerPrivate& d):DPTR_INIT(&d)
@@ -66,24 +80,30 @@ QByteArray AudioResampler::outData() const
 
 bool AudioResampler::prepare()
 {
-    if (!inAudioFormat().isValid()) {
+    if (!inAudioFormat().isValid())
+    {
         qCWarning(DIGIKAM_QTAV_LOG_WARN).noquote() << QString::asprintf("src audio parameters 'channel layout(or channels), sample rate and sample format must be set before initialize resampler");
+
         return false;
     }
+
     return true;
 }
 
-bool AudioResampler::convert(const quint8 **data)
+bool AudioResampler::convert(const quint8** data)
 {
     Q_UNUSED(data);
+
     return false;
 }
 
 void AudioResampler::setSpeed(qreal speed)
 {
     DPTR_D(AudioResampler);
+
     if (d.speed == speed)
         return;
+
     d.speed = speed;
     prepare();
 }
@@ -93,12 +113,13 @@ qreal AudioResampler::speed() const
     return d_func().speed;
 }
 
-
 void AudioResampler::setInAudioFormat(const AudioFormat& format)
 {
     DPTR_D(AudioResampler);
+
     if (d.in_format == format)
         return;
+
     d.in_format = format;
     prepare();
 }
@@ -116,8 +137,10 @@ const AudioFormat& AudioResampler::inAudioFormat() const
 void AudioResampler::setOutAudioFormat(const AudioFormat& format)
 {
     DPTR_D(AudioResampler);
+
     if (d.out_format == format)
         return;
+
     d.out_format = format;
     prepare();
 }
@@ -142,7 +165,8 @@ int AudioResampler::outSamplesPerChannel() const
     return d_func().out_samples_per_channel;
 }
 
-//channel count can be computed by av_get_channel_layout_nb_channels(chl)
+// channel count can be computed by av_get_channel_layout_nb_channels(chl)
+
 void AudioResampler::setInSampleRate(int isr)
 {
     AudioFormat af(d_func().in_format);
