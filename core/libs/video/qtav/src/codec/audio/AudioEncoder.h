@@ -21,8 +21,8 @@
  *
  * ============================================================ */
 
-#ifndef QTAV_AUDIOENCODER_H
-#define QTAV_AUDIOENCODER_H
+#ifndef QTAV_AUDIO_ENCODER_H
+#define QTAV_AUDIO_ENCODER_H
 
 // Qt includes
 
@@ -59,7 +59,9 @@ public:
      * \return 0 if not registered
      */
     static AudioEncoder* create(const char* name = "FFmpeg");
+
     virtual AudioEncoderId id() const = 0;
+
     QString name() const Q_DECL_OVERRIDE; // name from factory
 
     /*!
@@ -89,7 +91,11 @@ Q_SIGNALS:
 
 public:
 
-    template<class C> static bool Register(AudioEncoderId id, const char* name) { return Register(id, create<C>, name);}
+    template<class C>
+    static bool Register(AudioEncoderId id, const char* name)
+    {
+        return Register(id, create<C>, name);
+    }
 
     /*!
      * \brief next
@@ -102,8 +108,13 @@ public:
 
 private:
 
-    template<class C> static AudioEncoder* create() { return new C();}
+    template<class C> static AudioEncoder* create()
+    {
+        return new C();
+    }
+
     typedef AudioEncoder* (*AudioEncoderCreator)();
+
     static bool Register(AudioEncoderId id, AudioEncoderCreator, const char *name);
 
 protected:
@@ -117,4 +128,4 @@ private:
 
 } // namespace QtAV
 
-#endif // QTAV_AUDIOENCODER_H
+#endif // QTAV_AUDIO_ENCODER_H

@@ -37,7 +37,7 @@
 namespace QtAV
 {
 
-static AVCodec* get_codec(const QString &name, const QString& hwa, AVCodecID cid)
+static AVCodec* get_codec(const QString& name, const QString& hwa, AVCodecID cid)
 {
     QString fullname(name);
 
@@ -49,7 +49,7 @@ static AVCodec* get_codec(const QString &name, const QString& hwa, AVCodecID cid
         fullname = QStringLiteral("%1_%2").arg(QString::fromLatin1(avcodec_get_name(cid))).arg(hwa);
     }
 
-    AVCodec *codec = avcodec_find_decoder_by_name(fullname.toUtf8().constData());
+    AVCodec* codec = avcodec_find_decoder_by_name(fullname.toUtf8().constData());
 
     if (codec)
         return codec;
@@ -103,7 +103,7 @@ bool AVDecoder::open()
     }
 
     const QString hwa = property("hwaccel").toString();
-    AVCodec* codec = get_codec(codecName(), hwa, d.codec_ctx->codec_id);
+    AVCodec* codec    = get_codec(codecName(), hwa, d.codec_ctx->codec_id);
 
     if (!codec)
     {
@@ -154,6 +154,7 @@ bool AVDecoder::open()
     if (!d.open())
     {
         d.close();
+
         return false;
     }
 
@@ -171,11 +172,11 @@ bool AVDecoder::open()
 
     AV_ENSURE_OK(avcodec_open2(d.codec_ctx, codec, d.options.isEmpty() ? NULL : &d.dict), false);
 
-    d.is_open = true;
-    static const char* thread_name[] = { "Single", "Frame", "Slice"};
+    d.is_open                        = true;
+    static const char* thread_name[] = { "Single", "Frame", "Slice" };
     qCDebug(DIGIKAM_QTAV_LOG).noquote() << QString::asprintf("%s thread type: %s, count: %d", metaObject()->className(), thread_name[d.codec_ctx->active_thread_type], d.codec_ctx->thread_count);
 
-    return true;
+    return true; 
 }
 
 bool AVDecoder::close()

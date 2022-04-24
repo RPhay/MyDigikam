@@ -50,11 +50,12 @@ class AudioEncoderFFmpeg Q_DECL_FINAL: public AudioEncoder
 public:
 
     AudioEncoderFFmpeg();
-    AudioEncoderId id() const Q_DECL_OVERRIDE;
+    AudioEncoderId id() const                           Q_DECL_OVERRIDE;
     bool encode(const AudioFrame &frame = AudioFrame()) Q_DECL_OVERRIDE;
 };
 
 static const AudioEncoderId AudioEncoderId_FFmpeg = mkid::id32base36_6<'F', 'F', 'm', 'p', 'e', 'g'>::value;
+
 FACTORY_REGISTER(AudioEncoder, FFmpeg, "FFmpeg")
 
 class AudioEncoderFFmpegPrivate Q_DECL_FINAL: public AudioEncoderPrivate
@@ -71,7 +72,7 @@ public:
         avctx = avcodec_alloc_context3(NULL);
     }
 
-    bool open() Q_DECL_OVERRIDE;
+    bool open()  Q_DECL_OVERRIDE;
     bool close() Q_DECL_OVERRIDE;
 
     QByteArray buffer;
@@ -83,13 +84,13 @@ bool AudioEncoderFFmpegPrivate::open()
     {
         // copy ctx from muxer by copyAVCodecContext
 
-        AVCodec *codec = avcodec_find_encoder(avctx->codec_id);
+        AVCodec* codec = avcodec_find_encoder(avctx->codec_id);
         AV_ENSURE_OK(avcodec_open2(avctx, codec, &dict), false);
 
         return true;
     }
 
-    AVCodec *codec = avcodec_find_encoder_by_name(codec_name.toUtf8().constData());
+    AVCodec* codec = avcodec_find_encoder_by_name(codec_name.toUtf8().constData());
 
     if (!codec)
     {
@@ -104,6 +105,7 @@ bool AudioEncoderFFmpegPrivate::open()
     if (!codec)
     {
         qCWarning(DIGIKAM_QTAV_LOG_WARN) << "Can not find encoder for codec " << codec_name;
+
         return false;
     }
 
@@ -113,7 +115,7 @@ bool AudioEncoderFFmpegPrivate::open()
         avctx = 0;
     }
 
-    avctx = avcodec_alloc_context3(codec);
+    avctx       = avcodec_alloc_context3(codec);
 
     // reset format_used to user defined format. important to update default format if format is invalid
 
@@ -152,7 +154,7 @@ bool AudioEncoderFFmpegPrivate::open()
         if (codec->channel_layouts)
         {
             char cl[128];
-            av_get_channel_layout_string(cl, sizeof(cl), -1, codec->channel_layouts[0]); //TODO: ff version
+            av_get_channel_layout_string(cl, sizeof(cl), -1, codec->channel_layouts[0]); // TODO: ff version
             qCDebug(DIGIKAM_QTAV_LOG).noquote() << QString::asprintf("use first supported channel layout: %s", cl);
             format_used.setChannelLayoutFFmpeg((qint64)codec->channel_layouts[0]);
         }
@@ -171,10 +173,10 @@ bool AudioEncoderFFmpegPrivate::open()
 
     /// set the time base. TODO
 
-    avctx->time_base.num = 1;
-    avctx->time_base.den = format_used.sampleRate();
+    avctx->time_base.num       = 1;
+    avctx->time_base.den       = format_used.sampleRate();
+    avctx->bit_rate            = bit_rate;
 
-    avctx->bit_rate = bit_rate;
     qCDebug(DIGIKAM_QTAV_LOG) << format_used;
 
     /** Allow the use of the experimental AAC encoder */
@@ -221,7 +223,6 @@ bool AudioEncoderFFmpegPrivate::close()
     return true;
 }
 
-
 AudioEncoderFFmpeg::AudioEncoderFFmpeg()
     : AudioEncoder(*new AudioEncoderFFmpegPrivate())
 {
@@ -250,7 +251,7 @@ bool AudioEncoderFFmpeg::encode(const AudioFrame &frame)
 
         f->nb_samples = d.frame_size;
 
-        // f->quality = d.avctx->global_quality; //TODO
+        // f->quality = d.avctx->global_quality; // TODO
         // TODO: record last pts. mpv compute pts internally and also use playback time
 
         f->pts = int64_t(frame.timestamp()*fmt.sampleRate()); // TODO
@@ -272,8 +273,8 @@ bool AudioEncoderFFmpeg::encode(const AudioFrame &frame)
 
     AVPacket pkt;
     av_init_packet(&pkt);
-    pkt.data = (uint8_t*)d.buffer.constData(); //NULL
-    pkt.size = d.buffer.size(); //0
+    pkt.data = (uint8_t*)d.buffer.constData(); // NULL
+    pkt.size = d.buffer.size(); // 0
     int got_packet = 0;
     int ret = avcodec_encode_audio2(d.avctx, &pkt, f, &got_packet);
     av_frame_free(&f);
@@ -281,9 +282,9 @@ bool AudioEncoderFFmpeg::encode(const AudioFrame &frame)
     if (ret < 0)
     {
         //qCWarning(DIGIKAM_QTAV_LOG_WARN).noquote() << QString::asprintf("error avcodec_encode_audio2: %s" ,av_err2str(ret));
-        //av_packet_unref(&pkt); //FIXME
+        //av_packet_unref(&pkt); // FIXME
 
-        return false; // false
+        return false;
     }
 
     if (!got_packet)

@@ -21,8 +21,8 @@
  *
  * ============================================================ */
 
-#ifndef QTAV_AUDIODECODER_H
-#define QTAV_AUDIODECODER_H
+#ifndef QTAV_AUDIO_DECODER_H
+#define QTAV_AUDIO_DECODER_H
 
 // Qt includes
 
@@ -67,14 +67,18 @@ public:
      */
     static AudioDecoder* create(const char* name = "FFmpeg");
     virtual AudioDecoderId id() const = 0;
-    QString name() const;               // name from factory
-    virtual QByteArray data() const;    // decoded data
-    virtual AudioFrame frame() = 0;
-    AudioResampler *resampler();        // TODO: remove. can not share the same resampler for multiple frames
+    QString name()              const;              // name from factory
+    virtual QByteArray data()   const;              // decoded data
+    virtual AudioFrame frame()        = 0;
+    AudioResampler* resampler();                    // TODO: remove. can not share the same resampler for multiple frames
 
 public:
 
-    template<class C> static bool Register(AudioDecoderId id, const char* name) { return Register(id, create<C>, name);}
+    template<class C>
+    static bool Register(AudioDecoderId id, const char* name)
+    {
+        return Register(id, create<C>, name);
+    }
 
     /*!
      * \brief next
@@ -87,11 +91,19 @@ public:
 
 private:
 
-    // if QtAV is static linked (ios for example), components may be not automatically registered. Add registerAll() to workaround
+    // if QtAV is static linked (ios for example), components may be not automatically registered.
+    // Add registerAll() to workaround.
 
     static void registerAll();
-    template<class C> static AudioDecoder* create() { return new C();}
+
+    template<class C>
+    static AudioDecoder* create()
+    {
+        return new C();
+    }
+
     typedef AudioDecoder* (*AudioDecoderCreator)();
+
     static bool Register(AudioDecoderId id, AudioDecoderCreator, const char *name);
 
 protected:
@@ -105,4 +117,4 @@ private:
 
 } // namespace QtAV
 
-#endif // QTAV_AUDIODECODER_H
+#endif // QTAV_AUDIO_DECODER_H

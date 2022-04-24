@@ -65,12 +65,14 @@ QStringList AudioEncoder::supportedCodecs()
 #if AVCODEC_STATIC_REGISTER
 
     void* it = NULL;
+
     while ((c = av_codec_iterate(&it)))
     {
 
 #else
 
     avcodec_register_all();
+
     while ((c = av_codec_next(c)))
     {
 
@@ -101,7 +103,7 @@ void AudioEncoder::setAudioFormat(const AudioFormat& format)
     if (d.format == format)
         return;
 
-    d.format = format;
+    d.format      = format;
     d.format_used = format;
 
     Q_EMIT audioFormatChanged();
