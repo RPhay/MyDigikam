@@ -225,26 +225,34 @@ if(HAVE_OPENGL)
 
     endif()
 
+    if(DirectX_D3D11_FOUND)
+
+        set(libqtav_SRCS ${libqtav_SRCS}
+            ${CMAKE_CURRENT_SOURCE_DIR}/src/directx/SurfaceInteropD3D11GL.cpp
+            ${CMAKE_CURRENT_SOURCE_DIR}/src/directx/SurfaceInteropD3D9GL.cpp
+        )
+
+    endif()
+
     if(OpenGL_EGL_FOUND)
 
         set(libqtav_SRCS ${libqtav_SRCS}
             ${CMAKE_CURRENT_SOURCE_DIR}/src/opengl/egl_api.cpp
         )
 
+        if (DirectX_D3D11_FOUND)
+
+            set(libqtav_SRCS ${libqtav_SRCS}
+                ${CMAKE_CURRENT_SOURCE_DIR}/src/directx/SurfaceInteropD3D11EGL.cpp
+                ${CMAKE_CURRENT_SOURCE_DIR}/src/directx/SurfaceInteropD3D9EGL.cpp
+            )
+
+        endif()
+
     endif()
 
 endif()
 
-if(DirectX_D3D11_FOUND)
-
-    set(libqtav_SRCS ${libqtav_SRCS}
-        ${CMAKE_CURRENT_SOURCE_DIR}/src/directx/SurfaceInteropD3D11EGL.cpp
-        ${CMAKE_CURRENT_SOURCE_DIR}/src/directx/SurfaceInteropD3D11GL.cpp
-        ${CMAKE_CURRENT_SOURCE_DIR}/src/directx/SurfaceInteropD3D9EGL.cpp
-        ${CMAKE_CURRENT_SOURCE_DIR}/src/directx/SurfaceInteropD3D9GL.cpp
-    )
-
-endif()
 
 if(GDIPLUS_FOUND)
 
