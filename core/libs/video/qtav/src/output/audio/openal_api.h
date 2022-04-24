@@ -37,7 +37,8 @@ namespace capi
 #define AL_LIBTYPE_STATIC // openal-soft AL_API dllimport error. mac's macro is AL_BUILD_LIBRARY
 #else
 
-extern "C" {
+extern "C"
+{
 
 #endif
 
@@ -68,13 +69,18 @@ using namespace capi;               // original header is in namespace capi, typ
 
 #endif
 
-namespace capi { bool loaded(); }   // For link or NS style. Or load test for class style. api.loaded for class style.
+// For link or NS style. Or load test for class style. api.loaded for class style.
+
+namespace capi
+{
+    bool loaded();
+}
 
 class api_dll;
 
 class api
 {
-    api_dll *dll;
+    api_dll* dll;
 
 public:
 

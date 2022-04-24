@@ -44,7 +44,8 @@ bool api::loaded() const { return true; }
 
 #else
 
-static const char* names[] = {
+static const char* names[] =
+{
     "openal",
 
 #ifdef CAPI_TARGET_OS_WIN

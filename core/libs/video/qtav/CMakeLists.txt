@@ -23,6 +23,11 @@ REMOVE_COMPILER_WARNINGS("-Wexpansion-to-defined")
 DISABLE_GCC_COMPILER_WARNINGS("5.99.99" "-Wno-expansion-to-defined")
 DISABLE_CLANG_COMPILER_WARNINGS("3.99.99" "-Wno-expansion-to-defined")
 
+# For CAPI anonymous non-C-compatible type given name for linkage purposes by typedef declaration.
+REMOVE_COMPILER_WARNINGS("-Wnon-c-typedef-for-linkage")
+DISABLE_CLANG_COMPILER_WARNINGS("3.99.99" "-Wno-non-c-typedef-for-linkage")
+
+
 include_directories($<TARGET_PROPERTY:Qt${QT_VERSION_MAJOR}::Widgets,INTERFACE_INCLUDE_DIRECTORIES>
                     $<TARGET_PROPERTY:Qt${QT_VERSION_MAJOR}::Core,INTERFACE_INCLUDE_DIRECTORIES>
 )

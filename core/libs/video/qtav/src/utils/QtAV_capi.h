@@ -12,7 +12,6 @@
  *
  * Copyright (C) 2012-2022 Wang Bin <wbsecg1 at gmail dot com>
  * Copyright (C)      2022 by Gilles Caulier, <caulier dot gilles at gmail dot com>
- * Copyright (C)      2022 by Gilles Caulier, <caulier dot gilles at gmail dot com>
  *
  * This program is free software; you can redistribute it
  * and/or modify it under the terms of the GNU General
@@ -232,14 +231,14 @@ enum
   */
 class dso
 {
-    void *handle;
+    void* handle;
     char full_name[256];
     dso(const dso&);
     dso& operator=(const dso&);
 
 public:
 
-    dso(): handle(0)                          {                               }
+    dso() : handle(0)                         {                               }
     virtual ~dso()                            { unload();                     }
     inline void setFileName(const char* name);
     inline void setFileNameAndVersion(const char* name, int ver);
@@ -255,17 +254,27 @@ protected:
 
 } // namespace capi
 
-/// DLL_CLASS is a library loader and symbols resolver class. Must implement api like capi::dso (the same function name and return type, but string parameter type can be different):
-/// unload() must support ref count. i.e. do unload if no one is using the real library
-/// Currently you can use ::capi::dso and QLibrary for DLL_CLASS. You can also use your own library resolver
+/**
+ * DLL_CLASS is a library loader and symbols resolver class. Must implement api like capi::dso (the same function
+ * name and return type, but string parameter type can be different):
+ * unload() must support ref count. i.e. do unload if no one is using the real library
+ * Currently you can use ::capi::dso and QLibrary for DLL_CLASS. You can also use your own library resolver
+ */
 
-#define CAPI_BEGIN_DLL(names, DLL_CLASS) \
-    class api_dll : public ::capi::internal::dll_helper<DLL_CLASS> { \
-    public: api_dll() : ::capi::internal::dll_helper<DLL_CLASS>(names) CAPI_DLL_BODY_DEFINE
+#define CAPI_BEGIN_DLL(names, DLL_CLASS)                                    \
+    class api_dll : public ::capi::internal::dll_helper<DLL_CLASS>          \
+    {                                                                       \
+        public: api_dll()                                                   \
+            : ::capi::internal::dll_helper<DLL_CLASS>(names)                \
+    CAPI_DLL_BODY_DEFINE
 
-#define CAPI_BEGIN_DLL_VER(names, versions, DLL_CLASS) \
-    class api_dll : public ::capi::internal::dll_helper<DLL_CLASS> { \
-    public: api_dll() : ::capi::internal::dll_helper<DLL_CLASS>(names, versions) CAPI_DLL_BODY_DEFINE
+#define CAPI_BEGIN_DLL_VER(names, versions, DLL_CLASS)                      \
+    class api_dll : public ::capi::internal::dll_helper<DLL_CLASS>          \
+    {                                                                       \
+        public:                                                             \
+            api_dll()                                                       \
+                : ::capi::internal::dll_helper<DLL_CLASS>(names, versions)  \
+     CAPI_DLL_BODY_DEFINE
 
 #if CAPI_IS(LAZY_RESOLVE)
 #   define CAPI_END_DLL() } api_t; api_t api; };
@@ -274,14 +283,14 @@ protected:
 #endif
 
 #define CAPI_DEFINE_DLL api::api():dll(new api_dll()){} \
-    api::~api(){delete dll;} \
+    api::~api(){delete dll;}                            \
     bool api::loaded() const { return dll->isLoaded();} \
-    namespace capi { \
-        static api_dll* dll = NULL; \
-        bool loaded() { \
-            if (!dll) dll = new api_dll(); \
-            return dll->isLoaded(); \
-        } \
+    namespace capi {                                    \
+        static api_dll* dll = NULL;                     \
+        bool loaded() {                                 \
+            if (!dll) dll = new api_dll();              \
+            return dll->isLoaded();                     \
+        }                                               \
     }
 
 /*!
@@ -318,23 +327,23 @@ protected:
 #   define CAPI_DLL_BODY_DEFINE { CAPI_DBG_RESOLVE("capi resolved dll symbols...");}
 #endif
 
-#define CAPI_DEFINE_T_V(R, name, ARG_T, ARG_T_V, ARG_V) \
-    R api::name ARG_T_V { \
-        CAPI_DBG_CALL(" "); \
-        assert(dll && dll->isLoaded() && "dll is not loaded"); \
-        return dll->name ARG_V; \
+#define CAPI_DEFINE_T_V(R, name, ARG_T, ARG_T_V, ARG_V)         \
+    R api::name ARG_T_V {                                       \
+        CAPI_DBG_CALL(" ");                                     \
+        assert(dll && dll->isLoaded() && "dll is not loaded");  \
+        return dll->name ARG_V;                                 \
     }
 
-#define CAPI_DEFINE2_T_V(R, name, sym, ARG_T, ARG_T_V, ARG_V) \
-    R api::name ARG_T_V { \
-        CAPI_DBG_CALL(" "); \
-        assert(dll && dll->isLoaded() && "dll is not loaded"); \
-        if (!dll->api.name) { \
-            dll->api.name = (api_dll::api_t::name##_t)dll->resolve(#sym); \
-            CAPI_DBG_RESOLVE("dll::api_t::" #name ": @%p", dll->api.name); \
-        } \
-        assert(dll->api.name && "failed to resolve " #R #sym #ARG_T_V); \
-        return dll->api.name ARG_V; \
+#define CAPI_DEFINE2_T_V(R, name, sym, ARG_T, ARG_T_V, ARG_V)               \
+    R api::name ARG_T_V {                                                   \
+        CAPI_DBG_CALL(" ");                                                 \
+        assert(dll && dll->isLoaded() && "dll is not loaded");              \
+        if (!dll->api.name) {                                               \
+            dll->api.name = (api_dll::api_t::name##_t)dll->resolve(#sym);   \
+            CAPI_DBG_RESOLVE("dll::api_t::" #name ": @%p", dll->api.name);  \
+        }                                                                   \
+        assert(dll->api.name && "failed to resolve " #R #sym #ARG_T_V);     \
+        return dll->api.name ARG_V;                                         \
     }
 
 /*
@@ -346,53 +355,53 @@ protected:
 #   define CAPI_LINKAGE
 #endif
 
-#define CAPI_NS_DEFINE_T_V(R, name, ARG_T, ARG_T_V, ARG_V) \
-    namespace capi { \
-    using capi::dll; \
-    R CAPI_LINKAGE name ARG_T_V { \
-        CAPI_DBG_CALL(" "); \
-        if (!dll) dll = new api_dll(); \
-        assert(dll && dll->isLoaded() && "dll is not loaded"); \
-        return dll->name ARG_V; \
+#define CAPI_NS_DEFINE_T_V(R, name, ARG_T, ARG_T_V, ARG_V)      \
+    namespace capi {                                            \
+    using capi::dll;                                            \
+    R CAPI_LINKAGE name ARG_T_V {                               \
+        CAPI_DBG_CALL(" ");                                     \
+        if (!dll) dll = new api_dll();                          \
+        assert(dll && dll->isLoaded() && "dll is not loaded");  \
+        return dll->name ARG_V;                                 \
     } }
 
-#define CAPI_NS_DEFINE2_T_V(R, name, sym, ARG_T, ARG_T_V, ARG_V) \
-    namespace capi { \
-    using capi::dll; \
-    R CAPI_LINKAGE name ARG_T_V { \
-        CAPI_DBG_CALL(" "); \
-        if (!dll) dll = new api_dll(); \
-        assert(dll && dll->isLoaded() && "dll is not loaded"); \
-        if (!dll->api.name) { \
-            dll->api.name = (api_dll::api_t::name##_t)dll->resolve(#sym); \
-            CAPI_DBG_RESOLVE("dll::api_t::" #name ": @%p", dll->api.name); \
-        } \
-        assert(dll->api.name && "failed to resolve " #R #sym #ARG_T_V); \
-        return dll->api.name ARG_V; \
+#define CAPI_NS_DEFINE2_T_V(R, name, sym, ARG_T, ARG_T_V, ARG_V)            \
+    namespace capi {                                                        \
+    using capi::dll;                                                        \
+    R CAPI_LINKAGE name ARG_T_V {                                           \
+        CAPI_DBG_CALL(" ");                                                 \
+        if (!dll) dll = new api_dll();                                      \
+        assert(dll && dll->isLoaded() && "dll is not loaded");              \
+        if (!dll->api.name) {                                               \
+            dll->api.name = (api_dll::api_t::name##_t)dll->resolve(#sym);   \
+            CAPI_DBG_RESOLVE("dll::api_t::" #name ": @%p", dll->api.name);  \
+        }                                                                   \
+        assert(dll->api.name && "failed to resolve " #R #sym #ARG_T_V);     \
+        return dll->api.name ARG_V;                                         \
     } }
 
 // nested class can not call non-static members outside the class, so hack the address here
 // need -Wno-invalid-offsetof
 
-#define CAPI_DEFINE_M_RESOLVER_T_V(R, M, name, sym, ARG_T, ARG_T_V, ARG_V) \
-    public: \
-        typedef R (M *name##_t) ARG_T; \
-        name##_t name; \
-    private: \
-        struct name##_resolver_t { \
-            name##_resolver_t() { \
-                const ptrdiff_t diff = ptrdiff_t(&((api_dll*)0)->name##_resolver) - ptrdiff_t(&((api_dll*)0)->name); \
-                name##_t *p = (name##_t*)((char*)this - diff); \
-                api_dll* dll = (api_dll*)((char*)this - ((ptrdiff_t)(&((api_dll*)0)->name##_resolver))); \
-                if (!dll->isLoaded()) { \
-                    CAPI_WARN_LOAD("dll not loaded"); \
-                    *p = NULL; \
-                    return; \
-                } \
-                *p = (name##_t)dll->resolve(#sym); \
-                if (*p) { CAPI_DBG_RESOLVE("dll::" #name ": @%p", *p); } \
-                else { CAPI_WARN_RESOLVE("capi resolve error '" #name "'"); } \
-            } \
+#define CAPI_DEFINE_M_RESOLVER_T_V(R, M, name, sym, ARG_T, ARG_T_V, ARG_V)                                              \
+    public:                                                                                                             \
+        typedef R (M *name##_t) ARG_T;                                                                                  \
+        name##_t name;                                                                                                  \
+    private:                                                                                                            \
+        struct name##_resolver_t {                                                                                      \
+            name##_resolver_t() {                                                                                       \
+                const ptrdiff_t diff = ptrdiff_t(&((api_dll*)0)->name##_resolver) - ptrdiff_t(&((api_dll*)0)->name);    \
+                name##_t *p = (name##_t*)((char*)this - diff);                                                          \
+                api_dll* dll = (api_dll*)((char*)this - ((ptrdiff_t)(&((api_dll*)0)->name##_resolver)));                \
+                if (!dll->isLoaded()) {                                                                                 \
+                    CAPI_WARN_LOAD("dll not loaded");                                                                   \
+                    *p = NULL;                                                                                          \
+                    return;                                                                                             \
+                }                                                                                                       \
+                *p = (name##_t)dll->resolve(#sym);                                                                      \
+                if (*p) { CAPI_DBG_RESOLVE("dll::" #name ": @%p", *p); }                                                \
+                else { CAPI_WARN_RESOLVE("capi resolve error '" #name "'"); }                                           \
+            }                                                                                                           \
         } name##_resolver;
 
 #if defined(__GNUC__)
