@@ -249,15 +249,15 @@ if(ENABLE_MEDIAPLAYER)
 
         if(DIRECTX_FOUND)
 
-            set(MEDIAPLAYER_LIBRARIES ${MEDIAPLAYER_LIBRARIES} ${DIRECTX_LIBRARY_DIRS} ${DIRECT3D_LIBRARIES})
+            set(MEDIAPLAYER_LIBRARIES ${MEDIAPLAYER_LIBRARIES} ${DIRECT3D_LIBRARIES})
 
             if(DirectX_D3D11_FOUND)
 
-                message(STATUS "MediaPlayer will be compiled with Direct3D support   : yes")
+                message(STATUS "MediaPlayer will be compiled with Direct3D11 support : yes")
 
             else()
 
-                message(STATUS "MediaPlayer will be compiled with Direct3D support   : no")
+                message(STATUS "MediaPlayer will be compiled with Direct3D11 support : no")
 
             endif()
 

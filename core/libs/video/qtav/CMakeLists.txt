@@ -214,7 +214,6 @@ if(HAVE_OPENGL)
         ${CMAKE_CURRENT_SOURCE_DIR}/src/filter/GLSLFilter.cpp
         ${CMAKE_CURRENT_SOURCE_DIR}/src/output/video/OpenGLRendererBase.cpp
         ${CMAKE_CURRENT_SOURCE_DIR}/src/output/video/OpenGLWindowRenderer.cpp
-
     )
 
     if(NOT Qt6_FOUND)
@@ -222,8 +221,8 @@ if(HAVE_OPENGL)
         set(libqtav_SRCS ${libqtav_SRCS}
             ${CMAKE_CURRENT_SOURCE_DIR}/widgets/opengl/GLWidgetRenderer2.cpp
 
-# Disabled in QtAV
-#            ${CMAKE_CURRENT_SOURCE_DIR}/widgets/opengl/GLWidgetRenderer.cpp
+            # Disabled in QtAV
+            #${CMAKE_CURRENT_SOURCE_DIR}/widgets/opengl/GLWidgetRenderer.cpp
         )
 
     endif()
@@ -236,32 +235,32 @@ if(HAVE_OPENGL)
 
     endif()
 
-    if(D3D11_FOUND)
+endif()
 
-        set(libqtav_SRCS ${libqtav_SRCS}
-            ${CMAKE_CURRENT_SOURCE_DIR}/src/directx/SurfaceInteropD3D11EGL.cpp
-            ${CMAKE_CURRENT_SOURCE_DIR}/src/directx/SurfaceInteropD3D11GL.cpp
-            ${CMAKE_CURRENT_SOURCE_DIR}/src/directx/SurfaceInteropD3D9EGL.cpp
-            ${CMAKE_CURRENT_SOURCE_DIR}/src/directx/SurfaceInteropD3D9GL.cpp
-        )
+if(DirectX_D3D11_FOUND)
 
-    endif()
+    set(libqtav_SRCS ${libqtav_SRCS}
+        ${CMAKE_CURRENT_SOURCE_DIR}/src/directx/SurfaceInteropD3D11EGL.cpp
+        ${CMAKE_CURRENT_SOURCE_DIR}/src/directx/SurfaceInteropD3D11GL.cpp
+        ${CMAKE_CURRENT_SOURCE_DIR}/src/directx/SurfaceInteropD3D9EGL.cpp
+        ${CMAKE_CURRENT_SOURCE_DIR}/src/directx/SurfaceInteropD3D9GL.cpp
+    )
 
-    if(GDIPLUS_FOUND)
+endif()
 
-        set(libqtav_SRCS ${libqtav_SRCS}
-            ${CMAKE_CURRENT_SOURCE_DIR}/widgets/windows/GDIRenderer.cpp
-        )
+if(GDIPLUS_FOUND)
 
-    endif()
+    set(libqtav_SRCS ${libqtav_SRCS}
+        ${CMAKE_CURRENT_SOURCE_DIR}/widgets/windows/GDIRenderer.cpp
+    )
 
-    if(Direct2D_FOUND)
+endif()
 
-        set(libqtav_SRCS ${libqtav_SRCS}
-            ${CMAKE_CURRENT_SOURCE_DIR}/widgets/windows/Direct2DRenderer.cpp
-        )
+if(Direct2D_FOUND)
 
-    endif()
+    set(libqtav_SRCS ${libqtav_SRCS}
+        ${CMAKE_CURRENT_SOURCE_DIR}/widgets/windows/Direct2DRenderer.cpp
+    )
 
 endif()
 
