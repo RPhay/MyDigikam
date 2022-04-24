@@ -30,7 +30,7 @@
 #   include "QtAV_capi.h"
 #endif
 
-#include "egl_api.h" //include last to avoid covering types later
+#include "egl_api.h" // include last to avoid covering types later
 
 // TODO: winrt resolver use GetModuleHandle first?
 

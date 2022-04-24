@@ -50,7 +50,14 @@ namespace egl
 using namespace capi;               // original header is in namespace capi, types are changed
 #endif
 
-namespace capi { bool loaded(); }   // For link or NS style. Or load test for class style. api.loaded for class style.
+// For link or NS style. Or load test for class style. api.loaded for class style.
+
+namespace capi
+{
+
+    bool loaded();
+
+} // namespace capi
 
 class api_dll;
 

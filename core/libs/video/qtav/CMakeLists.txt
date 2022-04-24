@@ -209,8 +209,6 @@ if(HAVE_OPENGL)
         ${CMAKE_CURRENT_SOURCE_DIR}/src/opengl/SubImagesGeometry.cpp
         ${CMAKE_CURRENT_SOURCE_DIR}/src/opengl/VideoShaderObject.cpp
 
-        ${CMAKE_CURRENT_SOURCE_DIR}/src/opengl/egl_api.cpp
-
         ${CMAKE_CURRENT_SOURCE_DIR}/src/filter/GLSLFilter.cpp
         ${CMAKE_CURRENT_SOURCE_DIR}/src/output/video/OpenGLRendererBase.cpp
         ${CMAKE_CURRENT_SOURCE_DIR}/src/output/video/OpenGLWindowRenderer.cpp

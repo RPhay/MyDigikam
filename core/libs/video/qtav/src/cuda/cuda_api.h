@@ -24,7 +24,7 @@
 #ifndef QTAV_CUDA_API_H
 #define QTAV_CUDA_API_H
 
-#include "dllapi/nv_inc.h"
+#include "QtAV_nv_inc.h"
 
 #define CUDA_ENSURE(f, ...)  CUDA_CHECK(f, return __VA_ARGS__;) // call cuda_api.cuGetErrorXXX
 #define CUDA_WARN(f)         CUDA_CHECK(f)                      // call cuda_api.cuGetErrorXXX

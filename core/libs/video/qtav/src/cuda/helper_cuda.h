@@ -29,7 +29,7 @@
 
 // Local includes
 
-#include "dllapi/nv_inc.h"
+#include "QtAV_nv_inc.h"
 
 #if NV_CONFIG(DLLAPI_CUDA)
 using namespace dllapi::cuda;

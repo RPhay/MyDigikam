@@ -79,7 +79,7 @@ typedef QGLBuffer QOpenGLBuffer;
 #       define GL_TEXTURE_RECTANGLE 0x84F5
 #   endif
 
-//GL_BGRA is available in OpenGL >= 1.2
+// GL_BGRA is available in OpenGL >= 1.2
 
 #   ifndef GL_BGRA
 #       define GL_BGRA 0x80E1
