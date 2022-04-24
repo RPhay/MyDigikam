@@ -235,7 +235,7 @@ if(HAVE_OPENGL)
         if(AVCODEC_FOUND)
 
             set(libqtav_SRCS ${libqtav_SRCS}
-                ${CMAKE_CURRENT_SOURCE_DIR}/src/directx/VideoDecoderDXVA.cpp
+                ${CMAKE_CURRENT_SOURCE_DIR}/src/codec/video/VideoDecoderDXVA.cpp
             )
 
         endif()
