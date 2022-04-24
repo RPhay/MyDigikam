@@ -30,6 +30,7 @@ if(ENABLE_MEDIAPLAYER)
 
     if(WIN32)
 
+        set(DirectX_FIND_REQUIRED_D3D11 TRUE)
         find_package(DirectX)
         find_package(GDIPLUS)
         find_package(Direct2D)
