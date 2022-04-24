@@ -83,6 +83,12 @@ QRecursiveMutex s_metaEngineMutex;
  */
 bool s_metaEngineSupportBmff = false;
 
+/**
+ * Boolean value about Exiv2 warning or error in the Exiv2::LogMsg.
+ * Changed in MetaEngine::Private::printExiv2MessageHandler.
+ */
+bool s_metaEngineWarnOrError = false;
+
 MetaEngine::Private::Private(MetaEngine* const q)
     : writeWithExifTool     (false),
       writeRawFiles         (false),
@@ -637,6 +643,8 @@ void MetaEngine::Private::printExiv2ExceptionError(const QString& msg, Exiv2::An
 void MetaEngine::Private::printExiv2MessageHandler(int lvl, const char* msg)
 {
     qCDebug(DIGIKAM_METAENGINE_LOG) << "Exiv2 (" << lvl << ") : " << msg;
+
+    s_metaEngineWarnOrError |= ((lvl == Exiv2::LogMsg::warn) || (lvl == Exiv2::LogMsg::error));
 }
 
 QString MetaEngine::Private::convertCommentValue(const Exiv2::Exifdatum& exifDatum) const

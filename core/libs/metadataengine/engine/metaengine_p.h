@@ -122,6 +122,7 @@ namespace Digikam
 
 extern QRecursiveMutex s_metaEngineMutex;            ///< Mutex to fix no re-entrancy from Exiv2.
 extern bool            s_metaEngineSupportBmff;      ///< Flag for Exiv2 Base Media File Format support.
+extern bool            s_metaEngineWarnOrError;      ///< Flag for Exiv2 has printed a warning or error.
 
 // --------------------------------------------------------------------------
 

@@ -147,6 +147,8 @@ bool MetaEngine::load(const QString& filePath, Backend* backend)
 
     QMutexLocker lock(&s_metaEngineMutex);
 
+    s_metaEngineWarnOrError = false;
+
     try
     {
         Exiv2::Image::AutoPtr image;
@@ -191,6 +193,10 @@ bool MetaEngine::load(const QString& filePath, Backend* backend)
 
 #endif // _XMP_SUPPORT_
 
+        if (s_metaEngineWarnOrError)
+        {
+            return false;
+        }
 
         if (backend)
         {
