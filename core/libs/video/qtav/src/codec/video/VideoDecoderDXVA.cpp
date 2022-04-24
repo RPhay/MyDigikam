@@ -32,7 +32,7 @@
 
 // Qt includes
 
-#include <QSysInfo>
+#include <QOperatingSystemVersion>
 
 // Local includes
 
@@ -144,8 +144,11 @@ public:
     {
         // d3d9+gl interop may not work on optimus moble platforms, 0-copy is enabled only for egl interop
 
-        if (d3d9::InteropResource::isSupported(d3d9::InteropEGL) && QSysInfo::windowsVersion() >= QSysInfo::WV_VISTA)
+        if (d3d9::InteropResource::isSupported(d3d9::InteropEGL) &&
+            (QOperatingSystemVersion::current() >= QOperatingSystemVersion::Windows7))
+        {
             copy_mode = VideoDecoderFFmpegHW::ZeroCopy;
+        }
 
         hd3d9_dll   = 0;
         hdxva2_dll  = 0;
@@ -164,7 +167,7 @@ public:
         unloadDll();
     }
 
-    AVPixelFormat vaPixelFormat() const Q_DECL_OVERRIDE
+    AVPixelFormat vaPixelFormat()                 const Q_DECL_OVERRIDE
     {
         return QTAV_PIX_FMT_C(DXVA2_VLD);
     }
@@ -406,7 +409,9 @@ bool VideoDecoderDXVAPrivate::createDevice()
     }
 
     qCDebug(DIGIKAM_QTAV_LOG).noquote() << QString::asprintf("OurDirect3DCreateDeviceManager9 Success!");
+
     DX_ENSURE_OK(CreateDeviceManager9(&token, &devmng), false);
+
     qCDebug(DIGIKAM_QTAV_LOG).noquote() << QString::asprintf("obtained IDirect3DDeviceManager9");
 
     // http://msdn.microsoft.com/en-us/library/windows/desktop/ms693525%28v=vs.85%29.aspx
