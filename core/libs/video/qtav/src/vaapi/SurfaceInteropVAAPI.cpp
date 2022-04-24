@@ -367,7 +367,7 @@ public:
     }
 
     bool bindPixmap(int w, int h) Q_DECL_OVERRIDE
-
+    {
         if (!createPixmap(w, h))
             return false;
 
