@@ -170,6 +170,7 @@ VAImageFormat va_new_image(VADisplay display, const unsigned int *fourccs, VAIma
                 img->image_id = VA_INVALID_ID;
                 memset(&fmt, 0, sizeof(fmt));
                 qCDebug(DIGIKAM_QTAV_LOG).noquote() << QString::asprintf("vaCreateImage error: %c%c%c%c", fcc<<24>>24, fcc<<16>>24, fcc<<8>>24, fcc>>24);
+
                 continue;
             }
 
@@ -249,7 +250,9 @@ class NativeDisplayBase
     Q_DISABLE_COPY(NativeDisplayBase)
 
 public:
-    NativeDisplayBase() :m_handle(0)
+
+    NativeDisplayBase()
+        : m_handle(0)
     {
     }
 
@@ -259,7 +262,12 @@ public:
 
     virtual bool initialize(const NativeDisplay& display) = 0;
     virtual VADisplay getVADisplay() = 0;
-    uintptr_t handle() { return m_handle;}
+
+    uintptr_t handle()
+    {
+        return m_handle;
+    }
+
     virtual NativeDisplay::Type type() const = 0;
 
 protected:

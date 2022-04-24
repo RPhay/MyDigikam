@@ -24,7 +24,12 @@
 #ifndef QTAV_SURFACE_INTEROP_VAAPI_H
 #define QTAV_SURFACE_INTEROP_VAAPI_H
 
+// Qt includes
+
 #include <qglobal.h>
+
+// Local includes
+
 #include "vaapi_helper.h"
 
 #define VA_X11_INTEROP 1
@@ -77,11 +82,17 @@ typedef QSharedPointer<InteropResource> InteropResourcePtr;
 
 // ----------------------------------------------------------------------------------
 
-class SurfaceInteropVAAPI Q_DECL_FINAL: public VideoSurfaceInterop
+class SurfaceInteropVAAPI Q_DECL_FINAL : public VideoSurfaceInterop
 {
 public:
 
-    SurfaceInteropVAAPI(const InteropResourcePtr& res) : frame_width(0), frame_height(0), m_resource(res) {}
+    SurfaceInteropVAAPI(const InteropResourcePtr& res)
+        : frame_width(0),
+          frame_height(0),
+          m_resource(res)
+    {
+    }
+
     void setSurface(const surface_ptr& surface, int w, int h);      // use surface->width/height if w/h is 0
     void* map(SurfaceType type, const VideoFormat& fmt, void* handle, int plane) Q_DECL_OVERRIDE;
     void unmap(void *handle) Q_DECL_OVERRIDE;
@@ -126,15 +137,19 @@ public:
 
     X11InteropResource();
     ~X11InteropResource();
+
     bool map(const surface_ptr &surface, GLuint tex, int w, int h, int) Q_DECL_OVERRIDE;
     bool unmap(const surface_ptr &surface, GLuint tex)                  Q_DECL_OVERRIDE;
 
 private:
 
     bool ensurePixmaps(int w, int h);
-    Display *xdisplay;
-    int width, height;
-    X11 *x11;
+
+private:
+
+    Display* xdisplay;
+    int      width, height;
+    X11*     x11;
 };
 
 #   if QTAV_HAVE(EGL_CAPI)
@@ -157,10 +172,13 @@ private:
 
     bool ensure();
     void destroy(VADisplay va_dpy); // destroy dma buffer and egl images
-    uintptr_t vabuf_handle;
-    VAImage va_image;
+
+private:
+
+    uintptr_t         vabuf_handle;
+    VAImage           va_image;
     QMap<GLuint, int> mapped;
-    EGL *egl;
+    EGL*              egl;
 };
 
 #   endif // QTAV_HAVE(EGL_CAPI)

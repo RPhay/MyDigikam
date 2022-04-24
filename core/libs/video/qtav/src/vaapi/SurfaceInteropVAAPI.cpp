@@ -42,9 +42,13 @@
 #           if VA_CHECK_VERSION(0, 33, 0)
 #               include <va/va_drmcommon.h>
 #           else
+
 /** \brief Kernel DRM buffer memory type.  */
+
 #               define VA_SURFACE_ATTRIB_MEM_TYPE_KERNEL_DRM       0x10000000
+
 /** \brief DRM PRIME memory type. */
+
 #               define VA_SURFACE_ATTRIB_MEM_TYPE_DRM_PRIME        0x20000000
 #           endif
 #       endif
@@ -149,7 +153,7 @@ void* SurfaceInteropVAAPI::mapToHost(const VideoFormat &format, void *handle, in
     if (image.image_id == VA_INVALID_ID)
         return NULL;
 
-    void *p_base;
+    void* p_base;
     VA_ENSURE(vaGetImage(m_surface->vadisplay(), m_surface->get(), 0, 0, m_surface->width(), m_surface->height(), image.image_id), NULL);
     VA_ENSURE(vaMapBuffer(m_surface->vadisplay(), image.buf, &p_base), NULL); // TODO: destroy image before return
     VideoFormat::PixelFormat pixfmt = pixelFormatFromVA(image.format.fourcc);
@@ -235,7 +239,7 @@ class X11
 {
 protected:
 
-    Display *display;
+    Display* display;
 
 public:
 
@@ -363,7 +367,7 @@ public:
     }
 
     bool bindPixmap(int w, int h) Q_DECL_OVERRIDE
-    {
+
         if (!createPixmap(w, h))
             return false;
 
@@ -373,7 +377,7 @@ public:
             dpy = eglGetCurrentDisplay();
         }
 
-        EGL_ENSURE(image[0] =  eglCreateImageKHR(dpy, EGL_NO_CONTEXT, EGL_NATIVE_PIXMAP_KHR, (EGLClientBuffer)pixmap, NULL), false);
+        EGL_ENSURE(image[0] = eglCreateImageKHR(dpy, EGL_NO_CONTEXT, EGL_NATIVE_PIXMAP_KHR, (EGLClientBuffer)pixmap, NULL), false);
 
         return true;
     }
@@ -547,9 +551,11 @@ bool X11InteropResource::ensurePixmaps(int w, int h)
 #   if !defined(QT_OPENGL_ES_2)
 
             // TODO: check GLX_EXT_texture_from_pixmap
+
             x11 = new X11_GLX();
 
 #   endif
+
         }
     }
 
@@ -581,7 +587,7 @@ bool X11InteropResource::map(const surface_ptr& surface, GLuint tex, int w, int 
         return false;
     }
 
-    if (!ensurePixmaps(w, h)) //pixmap with frame size
+    if (!ensurePixmaps(w, h)) // pixmap with frame size
         return false;
 
     VAWARN(vaSyncSurface(surface->vadisplay(), surface->get()));
@@ -592,7 +598,7 @@ bool X11InteropResource::map(const surface_ptr& surface, GLuint tex, int w, int 
                                 , 0, 0, w, h
                                 , 0, 0, w, h
                                 , NULL, 0, VA_FRAME_PICTURE | surface->colorSpace())
-                   );
+    );
 
     XSync((::Display*)xdisplay, False);
     DYGL(glBindTexture(GL_TEXTURE_2D, tex));
@@ -631,13 +637,13 @@ public:
 
     EGL() : dpy(EGL_NO_DISPLAY)
     {
-        for (unsigned i = 0; i < sizeof(image)/sizeof(image[0]); ++i)
+        for (unsigned i = 0 ; i < sizeof(image)/sizeof(image[0]) ; ++i)
             image[i] = EGL_NO_IMAGE_KHR;
     }
 
     ~EGL()
     {
-        for (unsigned i = 0; i < sizeof(image)/sizeof(image[0]); ++i)
+        for (unsigned i = 0 ; i < sizeof(image)/sizeof(image[0]) ; ++i)
         {
             destroyImages(i);
         }
@@ -674,7 +680,7 @@ public:
             dpy = eglGetCurrentDisplay();
         }
 
-        EGL_ENSURE(image[plane] =  eglCreateImageKHR(eglGetCurrentDisplay(), EGL_NO_CONTEXT, EGL_LINUX_DMA_BUF_EXT, NULL, attrib_list), false);
+        EGL_ENSURE(image[plane] = eglCreateImageKHR(eglGetCurrentDisplay(), EGL_NO_CONTEXT, EGL_LINUX_DMA_BUF_EXT, NULL, attrib_list), false);
 
         return true;
     }

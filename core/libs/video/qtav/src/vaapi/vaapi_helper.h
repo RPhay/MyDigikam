@@ -65,8 +65,7 @@ struct VASurfaceAttrib;
 
 inline VAStatus vaCreateSurfaces(VADisplay dpy, unsigned int format, unsigned int width, unsigned int height,
                                  VASurfaceID *surfaces, unsigned int num_surfaces,
-                                 VASurfaceAttrib *attrib_list, unsigned int num_attribs
-)
+                                 VASurfaceAttrib *attrib_list, unsigned int num_attribs)
 {
     return ::vaCreateSurfaces(dpy, width, height, format, num_surfaces, surfaces);
 }
@@ -109,6 +108,7 @@ class dll_helper
 public:
 
     dll_helper(const QString& soname, int version = -1);
+
     virtual ~dll_helper()
     {
         m_lib.unload();
@@ -230,18 +230,19 @@ public:
     VADisplay vaGetDisplay(Display *dpy)
     {
         assert(fp_vaGetDisplay);
+
         return fp_vaGetDisplay(dpy);
     }
 
-    VAStatus vaPutSurface (VADisplay dpy, VASurfaceID surface,  Drawable draw, /* X Drawable */
+    VAStatus vaPutSurface(VADisplay dpy, VASurfaceID surface, Drawable draw,   /* X Drawable */
         short srcx, short srcy, unsigned short srcw,  unsigned short srch,
         short destx, short desty, unsigned short destw, unsigned short desth,
-        VARectangle *cliprects, /* client supplied destination clip list */
-        unsigned int number_cliprects, /* number of clip rects in the clip list */
-        unsigned int flags /* PutSurface flags */
-        )
+        VARectangle *cliprects,                                                /* client supplied destination clip list */
+        unsigned int number_cliprects,                                         /* number of clip rects in the clip list */
+        unsigned int flags)                                                    /* PutSurface flags */
     {
         assert(fp_vaPutSurface);
+
         return fp_vaPutSurface(dpy, surface, draw, srcx, srcy, srcw, srch, destx, desty, destw, desth, cliprects, number_cliprects, flags);
     }
 
@@ -283,17 +284,17 @@ class VAAPI_GLX : protected dll_helper
 public:
 
     typedef VADisplay vaGetDisplayGLX_t(Display *);
-    typedef VAStatus vaCreateSurfaceGLX_t(VADisplay, GLenum, GLuint, void **);
-    typedef VAStatus vaDestroySurfaceGLX_t(VADisplay, void *);
-    typedef VAStatus vaCopySurfaceGLX_t(VADisplay, void *, VASurfaceID, unsigned int);
+    typedef VAStatus  vaCreateSurfaceGLX_t(VADisplay, GLenum, GLuint, void **);
+    typedef VAStatus  vaDestroySurfaceGLX_t(VADisplay, void *);
+    typedef VAStatus  vaCopySurfaceGLX_t(VADisplay, void *, VASurfaceID, unsigned int);
 
     VAAPI_GLX()
         : dll_helper(QString::fromLatin1("va-glx"), 1)
     {
-        fp_vaGetDisplayGLX = (vaGetDisplayGLX_t*)resolve("vaGetDisplayGLX");
-        fp_vaCreateSurfaceGLX = (vaCreateSurfaceGLX_t*)resolve("vaCreateSurfaceGLX");
+        fp_vaGetDisplayGLX     = (vaGetDisplayGLX_t*)resolve("vaGetDisplayGLX");
+        fp_vaCreateSurfaceGLX  = (vaCreateSurfaceGLX_t*)resolve("vaCreateSurfaceGLX");
         fp_vaDestroySurfaceGLX = (vaDestroySurfaceGLX_t*)resolve("vaDestroySurfaceGLX");
-        fp_vaCopySurfaceGLX = (vaCopySurfaceGLX_t*)resolve("vaCopySurfaceGLX");
+        fp_vaCopySurfaceGLX    = (vaCopySurfaceGLX_t*)resolve("vaCopySurfaceGLX");
     }
 
     VADisplay vaGetDisplayGLX(Display *dpy)
@@ -411,9 +412,9 @@ public:
 
 private:
 
-    VADisplay m_display;
+    VADisplay        m_display;
     NativeDisplayPtr m_native;
-    int m_major, m_minor;
+    int              m_major, m_minor;
 };
 
 class surface_t
@@ -481,8 +482,8 @@ private:
 
     VASurfaceID m_id;
     display_ptr m_display;
-    int m_width, m_height;
-    int color_space;
+    int         m_width, m_height;
+    int         color_space;
 };
 
 typedef SharedPtr<surface_t> surface_ptr;
