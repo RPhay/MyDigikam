@@ -102,7 +102,7 @@ public:
 
             // null if not called from renderering thread;
 
-            QOpenGLContext *ctx = const_cast<QOpenGLContext*>(QOpenGLContext::currentContext());
+            QOpenGLContext* ctx = const_cast<QOpenGLContext*>(QOpenGLContext::currentContext());
 
             if (!ctx)
                 return false;
@@ -135,7 +135,8 @@ VideoRendererId GraphicsItemRenderer::id() const
 }
 
 GraphicsItemRenderer::GraphicsItemRenderer(QGraphicsItem * parent)
-    : GraphicsWidget(parent),QPainterRenderer(*new GraphicsItemRendererPrivate())
+    : GraphicsWidget(parent),
+      QPainterRenderer(*new GraphicsItemRendererPrivate())
 {
     setFlag(ItemIsFocusable); // receive key events
 
@@ -150,7 +151,8 @@ GraphicsItemRenderer::GraphicsItemRenderer(QGraphicsItem * parent)
 }
 
 GraphicsItemRenderer::GraphicsItemRenderer(GraphicsItemRendererPrivate &d, QGraphicsItem *parent)
-    : GraphicsWidget(parent),QPainterRenderer(d)
+    : GraphicsWidget(parent),
+      QPainterRenderer(d)
 {
     setFlag(ItemIsFocusable); // receive key events
 
@@ -248,6 +250,7 @@ void GraphicsItemRenderer::paint(QPainter *painter, const QStyleOptionGraphicsIt
     Q_UNUSED(option);
     Q_UNUSED(widget);
     DPTR_D(GraphicsItemRenderer);
+
     d.painter = painter;
     QPainterFilterContext *ctx = static_cast<QPainterFilterContext*>(d.filter_context);
 

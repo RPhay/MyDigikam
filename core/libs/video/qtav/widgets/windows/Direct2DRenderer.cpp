@@ -75,7 +75,7 @@ class Direct2DRenderer : public QWidget,
 
 public:
 
-    Direct2DRenderer(QWidget* parent = 0, Qt::WindowFlags f = 0);
+    Direct2DRenderer(QWidget* parent = 0, Qt::WindowFlags f = Qt::WindowFlags(Qt::Widget));
     VideoRendererId id()                              const Q_DECL_OVERRIDE;
     bool isSupported(VideoFormat::PixelFormat pixfmt) const Q_DECL_OVERRIDE;
 

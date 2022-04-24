@@ -66,14 +66,15 @@ namespace QtAV
 
 class GDIRendererPrivate;
 
-class GDIRenderer : public QWidget, public VideoRenderer
+class GDIRenderer : public QWidget,
+                    public VideoRenderer
 {
     Q_OBJECT
     DPTR_DECLARE_PRIVATE(GDIRenderer)
 
 public:
 
-    GDIRenderer(QWidget* parent = 0, Qt::WindowFlags f = 0); // offscreen?
+    GDIRenderer(QWidget* parent = 0, Qt::WindowFlags f = Qt::WindowFlags(Qt::Widget)); // offscreen?
 
     VideoRendererId id()                              const Q_DECL_OVERRIDE;
     bool isSupported(VideoFormat::PixelFormat pixfmt) const Q_DECL_OVERRIDE;
@@ -288,7 +289,7 @@ public:
 #endif
 };
 
-GDIRenderer::GDIRenderer(QWidget *parent, Qt::WindowFlags f)
+GDIRenderer::GDIRenderer(QWidget* parent, Qt::WindowFlags f)
     : QWidget(parent, f),
       VideoRenderer(*new GDIRendererPrivate())
 {

@@ -45,7 +45,7 @@ class QTAV_WIDGETS_EXPORT VideoPreviewWidget : public QWidget
 
 public:
 
-    explicit VideoPreviewWidget(QWidget *parent = 0);
+    explicit VideoPreviewWidget(QWidget* parent = 0);
     void setTimestamp(qint64 msec);
     qint64 timestamp() const;
     void preview();
@@ -54,18 +54,18 @@ public:
 
     // default is false
 
-    void setKeepAspectRatio(bool value = true) { m_keep_ar = value; }
-    bool isKeepAspectRatio() const { return m_keep_ar; }
+    void setKeepAspectRatio(bool value = true)  { m_keep_ar = value;     }
+    bool isKeepAspectRatio() const              { return m_keep_ar;      }
 
     /// AutoDisplayFrame -- default is true. if true, new frames from underlying extractor will update display widget automatically.
 
-    bool isAutoDisplayFrame() const { return m_auto_display; }
+    bool isAutoDisplayFrame() const             { return m_auto_display; }
 
     /// If false, new frames (or frame errors) won't automatically update widget
     /// (caller must ensure to call displayFrame()/displayFrame(frame) for this if false).
     /// set to false only if you want to do your own frame caching magic with preview frames.
 
-    void setAutoDisplayFrame(bool b=true);
+    void setAutoDisplayFrame(bool b = true);
 
 public Q_SLOTS: // these were previously private but made public to allow calling code to cache some preview frames and directly display frames to this class
 

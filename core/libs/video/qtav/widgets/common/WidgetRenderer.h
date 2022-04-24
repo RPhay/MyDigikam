@@ -41,7 +41,7 @@ namespace QtAV
 class WidgetRendererPrivate;
 
 class QTAV_WIDGETS_EXPORT WidgetRenderer : public QWidget,
-                                          public QPainterRenderer
+                                           public QPainterRenderer
 {
     Q_OBJECT
     DPTR_DECLARE_PRIVATE(WidgetRenderer)
@@ -62,7 +62,7 @@ class QTAV_WIDGETS_EXPORT WidgetRenderer : public QWidget,
 
 public:
 
-    explicit WidgetRenderer(QWidget* parent = 0, Qt::WindowFlags f =  Qt::WindowFlags(Qt::Widget));
+    explicit WidgetRenderer(QWidget* parent = 0, Qt::WindowFlags f = Qt::WindowFlags(Qt::Widget));
     virtual VideoRendererId id()          const Q_DECL_OVERRIDE;
 
     virtual QWidget* widget()                   Q_DECL_OVERRIDE
@@ -92,17 +92,17 @@ protected:
     bool receiveFrame(const VideoFrame& frame)  Q_DECL_OVERRIDE;
     void resizeEvent(QResizeEvent*)             Q_DECL_OVERRIDE;
 
-    /*usually you don't need to reimplement paintEvent, just drawXXX() is ok. unless you want do all
-     *things yourself totally
+    /* usually you don't need to reimplement paintEvent, just drawXXX() is ok. unless you want do all
+     * things yourself totally
      */
 
     void paintEvent(QPaintEvent*)               Q_DECL_OVERRIDE;
 
-    bool onSetOrientation(int value) Q_DECL_OVERRIDE;
+    bool onSetOrientation(int value)            Q_DECL_OVERRIDE;
 
 protected:
 
-    WidgetRenderer(WidgetRendererPrivate& d, QWidget *parent, Qt::WindowFlags f);
+    WidgetRenderer(WidgetRendererPrivate& d, QWidget* parent, Qt::WindowFlags f);
 };
 
 typedef WidgetRenderer VideoRendererWidget;

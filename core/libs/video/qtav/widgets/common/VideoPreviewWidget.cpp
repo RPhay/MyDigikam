@@ -45,7 +45,9 @@ VideoPreviewWidget::VideoPreviewWidget(QWidget *parent)
     // FIXME: opengl may crash, so use software renderer here
 {
     setWindowFlags(Qt::FramelessWindowHint);
+
     Q_ASSERT_X(m_out->widget(), "VideoPreviewWidget()", "widget based renderer is not found");
+
     m_out->widget()->setParent(this);
     connect(m_extractor, SIGNAL(positionChanged()), this, SIGNAL(timestampChanged()));
     connect(m_extractor, SIGNAL(error(const QString &)), this, SIGNAL(gotError(const QString &)));

@@ -43,7 +43,9 @@ class WidgetRendererPrivate : public QPainterRendererPrivate
 {
 public:
 
-    virtual ~WidgetRendererPrivate(){}
+    virtual ~WidgetRendererPrivate()
+    {
+    }
 };
 
 VideoRendererId WidgetRenderer::id() const
@@ -100,7 +102,7 @@ WidgetRenderer::WidgetRenderer(WidgetRendererPrivate &d, QWidget *parent, Qt::Wi
     }
 }
 
-bool WidgetRenderer::receiveFrame(const VideoFrame &frame)
+bool WidgetRenderer::receiveFrame(const VideoFrame& frame)
 {
     preparePixmap(frame);
     updateUi();

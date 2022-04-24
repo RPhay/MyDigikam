@@ -37,11 +37,10 @@
 #include <QWidget>
 #include <QResizeEvent>
 #include <qmath.h>
-#include <QtDebug>
 
 // QTextStream must be included before any header file that defines Status. Xlib.h defines Status
 
-#include <QTextStream> //build error
+#include <QTextStream> // build error
 
 // X11 includes
 

@@ -49,7 +49,7 @@ namespace QtAV
 class GraphicsItemRendererPrivate;
 
 class QTAV_WIDGETS_EXPORT GraphicsItemRenderer : public GraphicsWidget,
-                                                public QPainterRenderer
+                                                 public QPainterRenderer
 {
     Q_OBJECT
     DPTR_DECLARE_PRIVATE(GraphicsItemRenderer)
@@ -75,15 +75,15 @@ class QTAV_WIDGETS_EXPORT GraphicsItemRenderer : public GraphicsWidget,
 
 public:
 
-    GraphicsItemRenderer(QGraphicsItem * parent = 0);
+    GraphicsItemRenderer(QGraphicsItem* parent = 0);
     VideoRendererId id()                              const Q_DECL_OVERRIDE;
     bool isSupported(VideoFormat::PixelFormat pixfmt) const Q_DECL_OVERRIDE;
 
     QRectF boundingRect()                             const Q_DECL_OVERRIDE;
 
-    void paint(QPainter *painter,
+    void paint(QPainter* painter,
                 const QStyleOptionGraphicsItem *option,
-                QWidget *widget)                            Q_DECL_OVERRIDE;
+                QWidget* widget)                            Q_DECL_OVERRIDE;
 
     QGraphicsItem* graphicsItem()                           Q_DECL_OVERRIDE
     {
@@ -118,7 +118,7 @@ Q_SIGNALS:
 
 protected:
 
-    GraphicsItemRenderer(GraphicsItemRendererPrivate& d, QGraphicsItem *parent);
+    GraphicsItemRenderer(GraphicsItemRendererPrivate& d, QGraphicsItem* parent);
 
     bool receiveFrame(const VideoFrame& frame)              Q_DECL_OVERRIDE;
     void drawBackground()                                   Q_DECL_OVERRIDE;
@@ -129,11 +129,11 @@ protected:
 
 #if CONFIG_GRAPHICSWIDGET
 
-    bool event(QEvent *event)                               Q_DECL_OVERRIDE;
+    bool event(QEvent* event)                               Q_DECL_OVERRIDE;
 
 #else
 
-    bool event(QEvent *event)                               Q_DECL_OVERRIDE;
+    bool event(QEvent* event)                               Q_DECL_OVERRIDE;
 
     //bool sceneEvent(QEvent *event) Q_DECL_OVERRIDE;
 
