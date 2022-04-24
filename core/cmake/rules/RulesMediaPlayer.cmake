@@ -32,8 +32,8 @@ if(ENABLE_MEDIAPLAYER)
 
         set(DirectX_FIND_REQUIRED_D3D11 TRUE)
         find_package(DirectX)
-        find_package(GDIPLUS)
         find_package(Direct2D)
+        find_package(GDIPLUS)
 
     endif()
 
