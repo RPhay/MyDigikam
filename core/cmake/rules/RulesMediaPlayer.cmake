@@ -340,8 +340,8 @@ if(ENABLE_MEDIAPLAYER)
         set(MEDIAPLAYER_DEFINITIONS -D__STDC_CONSTANT_MACROS
                                     -DQTAV_HAVE_CAPI=1           # To load libass, vaapi, EGL, and more dynamically
                                     -DQTAV_HAVE_OPENSL=0         # OpenSLES is for Android only
-                                    -DQTAV_HAVE_DXVA=0           # DirectX VA for MSVC only
-                                    -DQTAV_HAVE_VDA=0            # Hardware acceleration video decoder from ffmpeg ?
+                                    -DQTAV_HAVE_DXVA=0           # DirectX VA for Windows only.  Depends of FFMpeg::libavcodec/dxva2.h
+                                    -DQTAV_HAVE_VDA=0            # Hardware acceleration video decoder removed with ffmpeg  4.0
                                     -DQTAV_HAVE_GL1=0            # disabled in QtAVWidgets.
         )
 
