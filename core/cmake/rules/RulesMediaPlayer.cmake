@@ -340,7 +340,6 @@ if(ENABLE_MEDIAPLAYER)
         set(MEDIAPLAYER_DEFINITIONS -D__STDC_CONSTANT_MACROS
                                     -DQTAV_HAVE_CAPI=1           # To load libass, vaapi, EGL, and more dynamically
                                     -DQTAV_HAVE_OPENSL=0         # OpenSLES is for Android only
-                                    -DQTAV_HAVE_DXVA=0           # DirectX VA for Windows only.  Depends of FFMpeg::libavcodec/dxva2.h
                                     -DQTAV_HAVE_VDA=0            # Hardware acceleration video decoder removed with ffmpeg  4.0
                                     -DQTAV_HAVE_GL1=0            # disabled in QtAVWidgets.
         )
@@ -354,6 +353,18 @@ if(ENABLE_MEDIAPLAYER)
 
             set(MEDIAPLAYER_DEFINITIONS ${MEDIAPLAYER_DEFINITIONS} -DQTAV_HAVE_SSE4_1=0)
             set(MEDIAPLAYER_DEFINITIONS ${MEDIAPLAYER_DEFINITIONS} -DQTAV_HAVE_SSE2=1)
+
+        endif()
+
+        if(AVCODEC_FOUND AND DirectX_D3D11_FOUND)
+
+            # DirectX VA for Windows only.  Depends of FFMpeg::libavcodec/dxva2.h
+
+            set(MEDIAPLAYER_DEFINITIONS ${MEDIAPLAYER_DEFINITIONS} -DQTAV_HAVE_DXVA=1)
+
+        else()
+
+            set(MEDIAPLAYER_DEFINITIONS ${MEDIAPLAYER_DEFINITIONS} -DQTAV_HAVE_DXVA=0)
 
         endif()
 

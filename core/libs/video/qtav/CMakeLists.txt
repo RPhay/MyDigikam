@@ -232,6 +232,14 @@ if(HAVE_OPENGL)
             ${CMAKE_CURRENT_SOURCE_DIR}/src/directx/SurfaceInteropD3D9GL.cpp
         )
 
+        if(AVCODEC_FOUND)
+
+            set(libqtav_SRCS ${libqtav_SRCS}
+                ${CMAKE_CURRENT_SOURCE_DIR}/src/directx/VideoDecoderDXVA.cpp
+            )
+
+        endif()
+
     endif()
 
     if(OpenGL_EGL_FOUND)
