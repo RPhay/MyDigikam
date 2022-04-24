@@ -134,7 +134,7 @@ VideoRendererId GraphicsItemRenderer::id() const
     return VideoRendererId_GraphicsItem;
 }
 
-GraphicsItemRenderer::GraphicsItemRenderer(QGraphicsItem * parent)
+GraphicsItemRenderer::GraphicsItemRenderer(QGraphicsItem[* parent)
     : GraphicsWidget(parent),
       QPainterRenderer(*new GraphicsItemRendererPrivate())
 {

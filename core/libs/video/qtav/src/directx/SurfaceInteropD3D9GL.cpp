@@ -44,11 +44,11 @@ class GLInteropResource Q_DECL_FINAL : public InteropResource
 {
 public:
 
-    GLInteropResource(IDirect3DDevice9 * d3device);
+    GLInteropResource(IDirect3DDevice9* d3device);
     ~GLInteropResource();
 
-    bool map(IDirect3DSurface9 *surface, GLuint tex, int frame_w, int frame_h, int) Q_DECL_OVERRIDE;
-    bool unmap(GLuint tex) Q_DECL_OVERRIDE;
+    bool map(IDirect3DSurface9* surface, GLuint tex, int frame_w, int frame_h, int) Q_DECL_OVERRIDE;
+    bool unmap(GLuint tex)                                                          Q_DECL_OVERRIDE;
 
 private:
 
@@ -80,6 +80,7 @@ bool GLInteropResource::map(IDirect3DSurface9 *surface, GLuint tex, int w, int h
     if (!ensureResource(w, h, tex))
     {
         releaseDX();
+
         return false;
     }
 

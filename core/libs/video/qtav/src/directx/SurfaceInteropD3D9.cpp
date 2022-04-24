@@ -46,7 +46,7 @@
 #endif
 
 #define MS_GUID(name, l, w1, w2, b1, b2, b3, b4, b5, b6, b7, b8) \
-    static const GUID name = { l, w1, w2, {b1, b2, b3, b4, b5, b6, b7, b8}}
+    static const GUID name = { l, w1, w2, {b1, b2, b3, b4, b5, b6, b7, b8} }
 
 namespace QtAV
 {
@@ -92,7 +92,7 @@ InteropResource* InteropResource::create(IDirect3DDevice9 *dev, InteropType type
 
     if (type == InteropAuto || type == InteropEGL)
     {
-        IDirect3DDevice9Ex *devEx;
+        IDirect3DDevice9Ex* devEx;
         dev->QueryInterface(IID_IDirect3DDevice9Ex, (void**)&devEx);
         qCDebug(DIGIKAM_QTAV_LOG).noquote() << QString::asprintf("using D3D9Ex: %d", !!devEx);
 
@@ -242,9 +242,11 @@ void* SurfaceInterop::mapToHost(const VideoFormat &format, void *handle, int pla
     // nv12 bpp(1)==1
     // 3rd plane is not used for nv12
 
-    int pitch[3] = { lock.Pitch, 0, 0}; //compute chroma later
-    quint8 *src[] = { (quint8*)lock.pBits, 0, 0}; //compute chroma later
+    int pitch[3]  = { lock.Pitch, 0, 0 };           // compute chroma later
+    quint8 *src[] = { (quint8*)lock.pBits, 0, 0 };  // compute chroma later
+
     Q_ASSERT(src[0] && pitch[0] > 0);
+
     const bool swap_uv = desc.Format ==  MAKEFOURCC('I','M','C','3');
 
     // try to use SSE. fallback to normal copy if SSE is not supported
@@ -256,9 +258,9 @@ void* SurfaceInterop::mapToHost(const VideoFormat &format, void *handle, int pla
     if (format != fmt)
         frame = frame.to(format);
 
-    VideoFrame *f = reinterpret_cast<VideoFrame*>(handle);
+    VideoFrame* f = reinterpret_cast<VideoFrame*>(handle);
     frame.setTimestamp(f->timestamp());
-    *f = frame;
+    *f            = frame;
 
     return f;
 }

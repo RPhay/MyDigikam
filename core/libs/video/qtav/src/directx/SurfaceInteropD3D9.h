@@ -50,10 +50,10 @@ class InteropResource
 public:
 
     static bool isSupported(InteropType type = InteropAuto);
-    static InteropResource* create(IDirect3DDevice9 * dev, InteropType type = InteropAuto);
+    static InteropResource* create(IDirect3DDevice9* dev, InteropType type = InteropAuto);
     typedef unsigned int GLuint;
 
-    InteropResource(IDirect3DDevice9 * d3device);
+    InteropResource(IDirect3DDevice9* d3device);
     virtual ~InteropResource();
 
     /*!
@@ -66,7 +66,12 @@ public:
      * \return true if success
      */
     virtual bool map(IDirect3DSurface9* surface, GLuint tex, int w, int h, int plane) = 0;
-    virtual bool unmap(GLuint tex) { Q_UNUSED(tex); return true;}
+
+    virtual bool unmap(GLuint tex)
+    {
+        Q_UNUSED(tex);
+        return true;
+    }
 
 protected:
 
@@ -86,7 +91,14 @@ class SurfaceInterop Q_DECL_FINAL: public VideoSurfaceInterop
 {
 public:
 
-    SurfaceInterop(const InteropResourcePtr& res) : m_surface(0), m_resource(res), frame_width(0), frame_height(0) {}
+    SurfaceInterop(const InteropResourcePtr& res)
+        : m_surface(0),
+          m_resource(res),
+          frame_width(0),
+          frame_height(0)
+    {
+    }
+
     ~SurfaceInterop();
 
     /*!
@@ -100,13 +112,13 @@ public:
     /// GLTextureSurface only supports rgb32
 
     void* map(SurfaceType type, const VideoFormat& fmt, void* handle, int plane) Q_DECL_OVERRIDE;
-    void unmap(void *handle) Q_DECL_OVERRIDE;
+    void unmap(void* handle) Q_DECL_OVERRIDE;
 
 protected:
 
     /// copy from gpu (optimized if possible) and convert to target format if necessary
 
-    void* mapToHost(const VideoFormat &format, void *handle, int plane);
+    void* mapToHost(const VideoFormat& format, void* handle, int plane);
 
 private:
 

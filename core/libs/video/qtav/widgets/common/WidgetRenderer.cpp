@@ -53,7 +53,7 @@ VideoRendererId WidgetRenderer::id() const
     return VideoRendererId_Widget;
 }
 
-WidgetRenderer::WidgetRenderer(QWidget *parent, Qt::WindowFlags f)
+WidgetRenderer::WidgetRenderer(QWidget* parent, Qt::WindowFlags f)
     : QWidget(parent, f),
       QPainterRenderer(*new WidgetRendererPrivate())
 {
@@ -70,7 +70,7 @@ WidgetRenderer::WidgetRenderer(QWidget *parent, Qt::WindowFlags f)
      */
     setAttribute(Qt::WA_OpaquePaintEvent);
     setAutoFillBackground(false);
-    QPainterFilterContext *ctx = static_cast<QPainterFilterContext*>(d.filter_context);
+    QPainterFilterContext* ctx = static_cast<QPainterFilterContext*>(d.filter_context);
 
     if (ctx)
     {

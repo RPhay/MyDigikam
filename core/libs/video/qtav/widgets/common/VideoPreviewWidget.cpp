@@ -35,7 +35,7 @@
 namespace QtAV
 {
 
-VideoPreviewWidget::VideoPreviewWidget(QWidget *parent)
+VideoPreviewWidget::VideoPreviewWidget(QWidget* parent)
     : QWidget(parent)
     , m_keep_ar(false)
     , m_auto_display(false) // set to false initially to trigger connections in setAutoDisplayFrame() below -- will default to true

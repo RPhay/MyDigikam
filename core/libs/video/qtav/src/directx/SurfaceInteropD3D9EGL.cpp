@@ -69,10 +69,10 @@ class EGLInteropResource Q_DECL_FINAL: public InteropResource
 {
 public:
 
-    EGLInteropResource(IDirect3DDevice9 * d3device);
+    EGLInteropResource(IDirect3DDevice9* d3device);
     ~EGLInteropResource();
 
-    bool map(IDirect3DSurface9 *surface, GLuint tex, int w, int h, int) Q_DECL_OVERRIDE;
+    bool map(IDirect3DSurface9* surface, GLuint tex, int w, int h, int) Q_DECL_OVERRIDE;
 
 private:
 
@@ -83,12 +83,12 @@ private:
     IDirect3DQuery9 *dx_query;
 };
 
-InteropResource* CreateInteropEGL(IDirect3DDevice9 *dev)
+InteropResource* CreateInteropEGL(IDirect3DDevice9* dev)
 {
     return new EGLInteropResource(dev);
 }
 
-EGLInteropResource::EGLInteropResource(IDirect3DDevice9 * d3device)
+EGLInteropResource::EGLInteropResource(IDirect3DDevice9* d3device)
     : InteropResource(d3device)
     , egl(new EGL())
     , dx_query(NULL)
@@ -189,6 +189,7 @@ bool EGLInteropResource::ensureSurface(int w, int h)
         if (!eglQuerySurfacePointerANGLE)
         {
             qCWarning(DIGIKAM_QTAV_LOG_WARN).noquote() << QString::asprintf("EGL_ANGLE_query_surface_pointer is not supported");
+
             return false;
         }
 
@@ -223,7 +224,7 @@ bool EGLInteropResource::ensureSurface(int w, int h)
         qCDebug(DIGIKAM_QTAV_LOG).noquote() << QString::asprintf("pbuffer surface from client buffer: %p", egl->surface);
     }
 
-    width = w;
+    width  = w;
     height = h;
 
     return true;
@@ -239,7 +240,11 @@ bool EGLInteropResource::map(IDirect3DSurface9* surface, GLuint tex, int w, int 
         return false;
     }
 
-    const RECT src = { 0, 0, (~0-1)&w, (~0-1)&h};
+    const RECT src =
+    {
+        0, 0, (~0-1)&w, (~0-1)&h
+    };
+
     DX_ENSURE(d3ddev->StretchRect(surface, &src, dx_surface, NULL, D3DTEXF_NONE), false);
 
     if (dx_query)
