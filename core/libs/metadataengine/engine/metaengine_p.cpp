@@ -292,7 +292,7 @@ bool MetaEngine::Private::saveUsingExiv2(const QFileInfo& finfo, Exiv2::Image::A
 
     QString ext = finfo.suffix().toLower();
 
-    if (s_rawFileExtensions().contains(ext))
+    if (s_rawFileExtensions().contains(ext) && (image->imageType() != Exiv2::ImageType::xmp))
     {
         // NOTE: never touch RAW files with Exiv2 as it's not safe. Use ExifTool backend instead.
 
