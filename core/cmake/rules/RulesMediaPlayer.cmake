@@ -282,6 +282,12 @@ if(ENABLE_MEDIAPLAYER)
 
             endif()
 
+        else()
+
+            message(STATUS "MediaPlayer will be compiled with Direct3D11 support : no")
+            message(STATUS "MediaPlayer will be compiled with DirectSound support: no")
+            message(STATUS "MediaPlayer will be compiled with XAudio2 support    : no")
+
         endif()
 
         if(Direct2D_FOUND)
