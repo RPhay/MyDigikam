@@ -53,8 +53,8 @@ using namespace Microsoft::WRL; // ComPtr
 
 #ifdef __CRT_UUID_DECL
 
-__CRT_UUID_DECL(ID3D11VideoContext,0x61F21C45,0x3C0E,0x4a74,0x9C,0xEA,0x67,0x10,0x0D,0x9A,0xD5,0xE4)
-__CRT_UUID_DECL(ID3D11VideoDevice,0x10EC4D5B,0x975A,0x4689,0xB9,0xE4,0xD0,0xAA,0xC3,0x0F,0xE3,0x33)
+__CRT_UUID_DECL(ID3D11VideoContext, 0x61F21C45,0x3C0E,0x4a74,0x9C,0xEA,0x67,0x10,0x0D,0x9A,0xD5,0xE4)
+__CRT_UUID_DECL(ID3D11VideoDevice,  0x10EC4D5B,0x975A,0x4689,0xB9,0xE4,0xD0,0xAA,0xC3,0x0F,0xE3,0x33)
 
 #endif //__CRT_UUID_DECL
 
@@ -293,10 +293,10 @@ VideoFrame VideoDecoderD3D11::frame()
     };
 
     D3D11_MAPPED_SUBRESOURCE mapped;
-    ScopedMap sm(d.d3dctx, d.texture_cpu, &mapped); //mingw error if ComPtr<T> constructs from ComPtr<U> [T=ID3D11Resource, U=ID3D11Texture2D]
+    ScopedMap sm(d.d3dctx, d.texture_cpu, &mapped);                // mingw error if ComPtr<T> constructs from ComPtr<U> [T=ID3D11Resource, U=ID3D11Texture2D]
     Q_UNUSED(sm);
-    int pitch[3] = { (int)mapped.RowPitch, 0, 0}; //compute chroma later
-    uint8_t *src[] = { (uint8_t*)mapped.pData, 0, 0}; //compute chroma later
+    int pitch[3]             = { (int)mapped.RowPitch, 0, 0 };     // compute chroma later
+    uint8_t *src[]           = { (uint8_t*)mapped.pData, 0, 0 };   // compute chroma later
     const VideoFormat format = VideoDecoderD3D::pixelFormatFromFourcc(d.format_fcc); //tex_desc
 
     return copyToFrame(format, tex_desc.Height, src, pitch, false);
@@ -425,7 +425,7 @@ bool VideoDecoderD3D11Private::createDecoder(AVCodecID codec_id, int w, int h, Q
         texDesc.ArraySize      = 1;
         texDesc.Usage          = D3D11_USAGE_STAGING;
         texDesc.CPUAccessFlags = D3D11_CPU_ACCESS_READ;
-        texDesc.BindFlags      = 0; //?
+        texDesc.BindFlags      = 0; // ?
         DX_ENSURE(d3ddev->CreateTexture2D(&texDesc, NULL, &texture_cpu), false);
     }
 

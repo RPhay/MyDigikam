@@ -354,7 +354,7 @@ EGLInteropResource::EGLInteropResource()
     , surface9_nv12(NULL)
     , query9(NULL)
 {
-    ctx = NULL; // need a context created with d3d (TODO: check it?)
+    ctx       = NULL; // need a context created with d3d (TODO: check it?)
     share_ctx = false;
 }
 
@@ -690,6 +690,7 @@ bool EGLInteropResource::map(int picIndex, const CUVIDPROCPARAMS &param, GLuint 
         CUDA_ENSURE(cuMemcpy2D(&cu2d), false);
 
     // TODO: delay cuCtxSynchronize && unmap. do it in unmap(tex)?
+
     // map to an already mapped resource will crash. sometimes I can not unmap the resource in unmap(tex) because if context switch error
     // so I simply unmap the resource here
 

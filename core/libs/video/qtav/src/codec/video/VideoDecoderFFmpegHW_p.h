@@ -57,10 +57,18 @@ public:
     {
     }
 
-    virtual ~VideoDecoderFFmpegHWPrivate() {} // ctx is 0 now
+    virtual ~VideoDecoderFFmpegHWPrivate()
+    {
+        // ctx is 0 now
+    }
 
-    bool enableFrameRef() const Q_DECL_OVERRIDE { return false;} // because of ffmpeg_get_va_buffer2?
+    bool enableFrameRef() const Q_DECL_OVERRIDE
+    {
+        return false; // because of ffmpeg_get_va_buffer2?
+    }
+
     bool prepare();
+
     void restore()
     {
         codec_ctx->pix_fmt = pixfmt;
@@ -68,21 +76,36 @@ public:
         codec_ctx->get_format = get_format;
 
 #if QTAV_HAVE(AVBUFREF)
+
         codec_ctx->get_buffer2 = get_buffer2;
+
 #else
+
         codec_ctx->get_buffer = get_buffer;
         codec_ctx->release_buffer = release_buffer;
         codec_ctx->reget_buffer = reget_buffer;
 #endif
+
     }
 
-    virtual bool open() Q_DECL_OVERRIDE { return prepare();}
-    virtual void close() Q_DECL_OVERRIDE {restore();}
+    virtual bool open() Q_DECL_OVERRIDE
+    {
+        return prepare();
+    }
+
+    virtual void close() Q_DECL_OVERRIDE
+    {
+        restore();
+    }
+
     // return hwaccel_context or null
+
     virtual void* setup(AVCodecContext* avctx) = 0;
 
     AVPixelFormat getFormat(struct AVCodecContext *p_context, const AVPixelFormat *pi_fmt);
+
     // TODO: remove opaque
+
     virtual bool getBuffer(void **opaque, uint8_t **data) = 0;
     virtual void releaseBuffer(void *opaque, uint8_t *data) = 0;
     virtual AVPixelFormat vaPixelFormat() const = 0;
@@ -95,6 +118,7 @@ public:
     AVPixelFormat pixfmt; // store old one
 
     // store old values because it does not own AVCodecContext
+
     AVPixelFormat (*get_format)(struct AVCodecContext *s, const AVPixelFormat * fmt);
     int (*get_buffer)(struct AVCodecContext *c, AVFrame *pic);
     void (*release_buffer)(struct AVCodecContext *c, AVFrame *pic);
@@ -106,6 +130,7 @@ public:
 
     // false for not intel gpu. my test result is intel gpu is supper fast and lower cpu usage if use optimized uswc copy. but nv is worse.
     // TODO: flag enable, disable, auto
+
     VideoDecoderFFmpegHW::CopyMode copy_mode;
     GPUMemCopy gpu_mem;
 

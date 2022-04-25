@@ -252,12 +252,14 @@ void* SurfaceInteropCV::createHandle(void *handle, SurfaceType type, const Video
 void* SurfaceInteropCV::mapToHost(const VideoFormat &format, void *handle, int plane)
 {
     Q_UNUSED(plane);
+
     CVPixelBufferLockBaseAddress(m_surface, kCVPixelBufferLock_ReadOnly);
     const VideoFormat fmt(format_from_cv(CVPixelBufferGetPixelFormatType(m_surface)));
 
     if (!fmt.isValid())
     {
         CVPixelBufferUnlockBaseAddress(m_surface, kCVPixelBufferLock_ReadOnly);
+
         return NULL;
     }
 
@@ -311,6 +313,7 @@ bool InteropResourceCVPixelBuffer::map(CVPixelBufferRef buf, GLuint *tex, int w,
 {
     Q_UNUSED(h);
     Q_UNUSED(w);
+
     CVPixelBufferLockBaseAddress(buf, kCVPixelBufferLock_ReadOnly);
     GLint iformat;
     GLenum format, dtype;

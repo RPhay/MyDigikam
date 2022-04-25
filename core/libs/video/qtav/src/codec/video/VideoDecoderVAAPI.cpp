@@ -42,16 +42,16 @@ extern "C"
 #include <libavcodec/vaapi.h>
 }
 
+// KDE includes
+
+#include <klocalizedstring.h>
+
 // Local includes
 
 #include "AVCompat.h"
 #include "QtAV_factory.h"
 #include "SurfaceInteropVAAPI.h"
 #include "digikam_debug.h"
-
-// KDE includes
-
-#include <klocalizedstring.h>
 
 #define VERSION_CHK(major, minor, patch) \
     (((major&0xff)<<16) | ((minor&0xff)<<8) | (patch&0xff))

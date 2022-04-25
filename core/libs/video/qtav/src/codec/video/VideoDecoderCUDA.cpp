@@ -142,17 +142,17 @@ static struct
     cudaVideoCodec cudaCodec;
 } const ff_cuda_codecs[] =
 {
-    { QTAV_CODEC_ID(MPEG1VIDEO), cudaVideoCodec_MPEG1 },
-    { QTAV_CODEC_ID(MPEG2VIDEO), cudaVideoCodec_MPEG2 },
-    { QTAV_CODEC_ID(MPEG4),      cudaVideoCodec_MPEG4 },
-    { QTAV_CODEC_ID(VC1),        cudaVideoCodec_VC1   },
-    { QTAV_CODEC_ID(H264),       cudaVideoCodec_H264  },
-    { QTAV_CODEC_ID(H264),       cudaVideoCodec_H264_SVC},
-    { QTAV_CODEC_ID(H264),       cudaVideoCodec_H264_MVC},
-    { QTAV_CODEC_ID(HEVC),       cudaVideoCodec_HEVC },
-    { QTAV_CODEC_ID(VP8),        cudaVideoCodec_VP8 },
-    { QTAV_CODEC_ID(VP9),        cudaVideoCodec_VP9 },
-    { QTAV_CODEC_ID(NONE),       cudaVideoCodec_NumCodecs}
+    { QTAV_CODEC_ID(MPEG1VIDEO), cudaVideoCodec_MPEG1       },
+    { QTAV_CODEC_ID(MPEG2VIDEO), cudaVideoCodec_MPEG2       },
+    { QTAV_CODEC_ID(MPEG4),      cudaVideoCodec_MPEG4       },
+    { QTAV_CODEC_ID(VC1),        cudaVideoCodec_VC1         },
+    { QTAV_CODEC_ID(H264),       cudaVideoCodec_H264        },
+    { QTAV_CODEC_ID(H264),       cudaVideoCodec_H264_SVC    },
+    { QTAV_CODEC_ID(H264),       cudaVideoCodec_H264_MVC    },
+    { QTAV_CODEC_ID(HEVC),       cudaVideoCodec_HEVC        },
+    { QTAV_CODEC_ID(VP8),        cudaVideoCodec_VP8         },
+    { QTAV_CODEC_ID(VP9),        cudaVideoCodec_VP9         },
+    { QTAV_CODEC_ID(NONE),       cudaVideoCodec_NumCodecs   }
 };
 
 static cudaVideoCodec mapCodecFromFFmpeg(AVCodecID codec)
@@ -256,6 +256,7 @@ public:
     bool initCuda();
     bool releaseCuda();
     bool createCUVIDDecoder(cudaVideoCodec cudaCodec, int cw, int ch);
+
     void createInterop()
     {
         if      (copy_mode == VideoDecoderCUDA::ZeroCopy)
@@ -311,6 +312,7 @@ public:
     bool doDecodePicture(CUVIDPICPARAMS *cuvidpic)
     {
         AutoCtxLock lock(this, vid_ctx_lock);
+
         Q_UNUSED(lock);
         CUDA_ENSURE(cuvidDecodePicture(dec, cuvidpic), false);
 
@@ -457,6 +459,7 @@ VideoDecoderCUDA::VideoDecoderCUDA():
                 .arg(i18n("DirectCopy: copy back to host memory but video frames and map to GL texture"))
                 .arg(i18n("GenericCopy: copy back to host memory and each video frame"))
                 );
+
     Q_UNUSED(i18n("ZeroCopy"));
     Q_UNUSED(i18n("DirectCopy"));
     Q_UNUSED(i18n("GenericCopy"));
@@ -552,7 +555,7 @@ bool VideoDecoderCUDA::decode(const Packet &packet)
         cuvid_pkt.timestamp = packet.pts * 1000.0; // TODO: 10MHz?
     }
 
-    //TODO: fill NALU header for h264? https://devtalk.nvidia.com/default/topic/515571/what-the-data-format-34-cuvidparsevideodata-34-can-accept-/
+    // TODO: fill NALU header for h264? https://devtalk.nvidia.com/default/topic/515571/what-the-data-format-34-cuvidparsevideodata-34-can-accept-/
 
     d.doParseVideoData(&cuvid_pkt);
 
@@ -645,6 +648,7 @@ void VideoDecoderCUDA::setCopyMode(CopyMode value)
 bool VideoDecoderCUDAPrivate::open()
 {
     // TODO: destroy decoder
+
     // d.available is true if cuda decoder is ready
 
     if (!can_load)
@@ -724,7 +728,7 @@ bool VideoDecoderCUDAPrivate::releaseCuda()
     available = false;
 
     if (cuctx)
-        CUDA_WARN(cuCtxPushCurrent(cuctx)); //cuMemFreeHost need the context of cuMemAllocHost which was called in VideoThread, while releaseCuda() in dtor can be called in any thread
+        CUDA_WARN(cuCtxPushCurrent(cuctx)); // cuMemFreeHost need the context of cuMemAllocHost which was called in VideoThread, while releaseCuda() in dtor can be called in any thread
 
     if (!can_load)
         return true;
@@ -785,11 +789,11 @@ bool VideoDecoderCUDAPrivate::createCUVIDDecoder(cudaVideoCodec cudaCodec, int c
     }
 
     memset(&dec_create_info, 0, sizeof(CUVIDDECODECREATEINFO));
-    dec_create_info.ulWidth = cw; // Coded Sequence Width
+    dec_create_info.ulWidth = cw;                               // Coded Sequence Width
     dec_create_info.ulHeight = ch;
-    dec_create_info.ulNumDecodeSurfaces = nb_dec_surface; // same as ulMaxNumDecodeSurfaces
+    dec_create_info.ulNumDecodeSurfaces = nb_dec_surface;       // same as ulMaxNumDecodeSurfaces
     dec_create_info.CodecType = cudaCodec;
-    dec_create_info.ChromaFormat = cudaVideoChromaFormat_420;  // cudaVideoChromaFormat_XXX (only 4:2:0 is currently supported)
+    dec_create_info.ChromaFormat = cudaVideoChromaFormat_420;   // cudaVideoChromaFormat_XXX (only 4:2:0 is currently supported)
 
     // cudaVideoCreate_PreferCUVID is slow in example. DXVA may failed to create (CUDA_ERROR_NO_DEVICE)
 
@@ -845,7 +849,7 @@ bool VideoDecoderCUDAPrivate::createCUVIDParser()
     {
         QString es(i18n("Codec %1 is not supported by CUDA").arg(QLatin1String(avcodec_get_name(codec_ctx->codec_id))));
 
-        //emit error(AVError::CodecError, es);
+        //Q_EMIT error(AVError::CodecError, es);
 
         qCWarning(DIGIKAM_QTAV_LOG_WARN) << es;
         available = false;
@@ -859,7 +863,7 @@ bool VideoDecoderCUDAPrivate::createCUVIDParser()
         parser = 0;
     }
 
-    //lavfilter check level C
+    // lavfilter check level C
 
     CUVIDPARSERPARAMS parser_params;
     memset(&parser_params, 0, sizeof(CUVIDPARSERPARAMS));
@@ -876,7 +880,7 @@ bool VideoDecoderCUDAPrivate::createCUVIDParser()
 
     parser_params.ulMaxNumDecodeSurfaces = nb_dec_surface;
 
-    //parser_params.ulMaxDisplayDelay = 4; //?
+    //parser_params.ulMaxDisplayDelay = 4; // ?
 
     parser_params.pUserData = this;
 
@@ -887,7 +891,7 @@ bool VideoDecoderCUDAPrivate::createCUVIDParser()
     parser_params.pfnSequenceCallback = VideoDecoderCUDAPrivate::HandleVideoSequence;
     parser_params.pfnDecodePicture = VideoDecoderCUDAPrivate::HandlePictureDecode;
     parser_params.pfnDisplayPicture = VideoDecoderCUDAPrivate::HandlePictureDisplay;
-    parser_params.ulErrorThreshold = 0;//!wait for key frame
+    parser_params.ulErrorThreshold = 0;     // !wait for key frame
 
     //parser_params.pExtVideoInfo
 
@@ -919,7 +923,7 @@ bool VideoDecoderCUDAPrivate::createCUVIDParser()
         CUDA_ENSURE(cuvidParseVideoData(parser, &seq_pkt), false);
     }
 
-    //lavfilter: cuStreamCreate
+    // lavfilter: cuStreamCreate
 
     force_sequence_update = true;
 
@@ -945,14 +949,14 @@ bool VideoDecoderCUDAPrivate::processDecodedData(CUVIDPARSERDISPINFO *cuviddisp,
     {
         CUVIDPROCPARAMS proc_params;
         memset(&proc_params, 0, sizeof(CUVIDPROCPARAMS));
-        proc_params.progressive_frame = cuviddisp->progressive_frame; // check user config
-        proc_params.second_field = active_field == 1; // check user config
+        proc_params.progressive_frame = cuviddisp->progressive_frame;   // check user config
+        proc_params.second_field = active_field == 1;                   // check user config
         proc_params.top_field_first = cuviddisp->top_field_first;
         proc_params.unpaired_field = cuviddisp->progressive_frame == 1;
 
         //const uint cw = dec_create_info.ulWidth;//PAD_ALIGN(dec_create_info.ulWidth, 0x3F);
 
-        const uint ch = dec_create_info.ulHeight;   //PAD_ALIGN(dec_create_info.ulHeight, 0x0F); //?
+        const uint ch = dec_create_info.ulHeight;   // PAD_ALIGN(dec_create_info.ulHeight, 0x0F); //?
         CUdeviceptr devptr;
         unsigned int pitch;
 
@@ -989,7 +993,7 @@ bool VideoDecoderCUDAPrivate::processDecodedData(CUVIDPARSERDISPINFO *cuviddisp,
                 CUDA_ENSURE(cuMemcpyDtoHAsync(host_data, devptr, size, stream), false);
                 CUDA_WARN(cuStreamSynchronize(stream));
             }
-        } // lock end
+        }       // lock end
 
         //CUDA_ENSURE(cuCtxPopCurrent(&cuctx), false);
         //qCDebug(DIGIKAM_QTAV_LOG).noquote() << QString::asprintf("cuCtxPopCurrent %p", cuctx);
@@ -1035,7 +1039,7 @@ bool VideoDecoderCUDAPrivate::processDecodedData(CUVIDPARSERDISPINFO *cuviddisp,
 
         frame.setTimestamp((double)cuviddisp->timestamp/1000.0);
 
-        if (codec_ctx && codec_ctx->sample_aspect_ratio.num > 1) //skip 1/1 because is the default value
+        if (codec_ctx && codec_ctx->sample_aspect_ratio.num > 1) // skip 1/1 because is the default value
             frame.setDisplayAspectRatio(frame.displayAspectRatio()*av_q2d(codec_ctx->sample_aspect_ratio));
 
         if (copy_mode == VideoDecoderCUDA::GenericCopy)

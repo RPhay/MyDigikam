@@ -125,6 +125,7 @@ QVector<VideoDecoderId> VideoDecoder::registered()
 #if QT_VERSION >= QT_VERSION_CHECK(5, 14, 0)
 
     const auto ids = VideoDecoderFactory::Instance().registeredIds();
+
     return {ids.begin(), ids.end()};
 
 #else
@@ -147,17 +148,18 @@ QStringList VideoDecoder::supportedCodecs()
 #if AVCODEC_STATIC_REGISTER
 
     void* it = NULL;
+
     while ((c = av_codec_iterate(&it)))
     {
 
 #else
 
     avcodec_register_all();
+
     while ((c = av_codec_next(c)))
     {
 
 #endif
-
         if (!av_codec_is_decoder(c) || c->type != AVMEDIA_TYPE_VIDEO)
             continue;
 

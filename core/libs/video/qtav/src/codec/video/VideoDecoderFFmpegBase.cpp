@@ -51,7 +51,8 @@ static void SetColorDetailsByFFmpeg(VideoFrame *f, AVFrame* frame, AVCodecContex
         const AVPixelFormat pixfmt = (AVPixelFormat)frame->format;
         switch (pixfmt)
         {
-            //case QTAV_PIX_FMT_C(YUVJ411P): //not in ffmpeg<2 and libav
+            //case QTAV_PIX_FMT_C(YUVJ411P): // not in ffmpeg<2 and libav
+
             case QTAV_PIX_FMT_C(YUVJ420P):
             case QTAV_PIX_FMT_C(YUVJ422P):
             case QTAV_PIX_FMT_C(YUVJ440P):
@@ -92,6 +93,7 @@ void VideoDecoderFFmpegBasePrivate::updateColorDetails(VideoFrame *f)
     if (f->format().pixelFormatFFmpeg() == frame->format)
     {
         SetColorDetailsByFFmpeg(f, frame, codec_ctx);
+
         return;
     }
 
@@ -110,6 +112,7 @@ void VideoDecoderFFmpegBasePrivate::updateColorDetails(VideoFrame *f)
     }
 
     // yuv frame. When happens?
+
     const bool rgb_coded = (av_pix_fmt_desc_get(codec_ctx->pix_fmt)->flags & AV_PIX_FMT_FLAG_RGB) == AV_PIX_FMT_FLAG_RGB;
 
     if (rgb_coded)
@@ -184,6 +187,7 @@ bool VideoDecoderFFmpegBase::decode(const Packet &packet)
     if (ret < 0)
     {
         //qCWarning(DIGIKAM_QTAV_LOG_WARN).noquote() << QString::asprintf("[VideoDecoderFFmpegBase] %s", av_err2str(ret));
+
         return false;
     }
 

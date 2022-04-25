@@ -39,24 +39,36 @@ class VideoDecoderFFmpegHW : public VideoDecoderFFmpegBase
     Q_PROPERTY(int threads READ threads WRITE setThreads NOTIFY threadsChanged) // <=0 is auto
     Q_PROPERTY(CopyMode copyMode READ copyMode WRITE setCopyMode NOTIFY copyModeChanged)
     Q_ENUMS(CopyMode)
+
 public:
-    enum CopyMode {
+
+    enum CopyMode
+    {
         ZeroCopy,
         OptimizedCopy,
         GenericCopy
     };
+
     VideoFrame copyToFrame(const VideoFormat& fmt, int surface_h, quint8* src[], int pitch[], bool swapUV);
+
     // properties
+
     int threads() const;
     void setThreads(int value);
     void setCopyMode(CopyMode value);
     CopyMode copyMode() const;
+
 Q_SIGNALS:
+
     void copyModeChanged();
     void threadsChanged();
+
 protected:
+
     VideoDecoderFFmpegHW(VideoDecoderFFmpegHWPrivate &d);
+
 private:
+
     VideoDecoderFFmpegHW();
 };
 

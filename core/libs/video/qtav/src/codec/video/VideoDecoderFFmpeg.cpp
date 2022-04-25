@@ -55,6 +55,7 @@ class VideoDecoderFFmpeg : public VideoDecoderFFmpegBase
     Q_PROPERTY(DiscardType skip_idct READ skipIDCT WRITE setSkipIDCT)
 
     // Force a strict standard compliance when encoding (accepted values: -2 to 2)
+
     //Q_PROPERTY(StrictType strict READ strict WRITE setStrict)
 
     Q_PROPERTY(DiscardType skip_frame READ skipFrame WRITE setSkipFrame)
@@ -77,23 +78,23 @@ public:
 
     enum StrictType
     {
-        Very = FF_COMPLIANCE_VERY_STRICT,
-        Strict = FF_COMPLIANCE_STRICT,
-        Normal = FF_COMPLIANCE_NORMAL, // default
-        Unofficial = FF_COMPLIANCE_UNOFFICIAL,
-        Experimental = FF_COMPLIANCE_EXPERIMENTAL
+        Very            = FF_COMPLIANCE_VERY_STRICT,
+        Strict          = FF_COMPLIANCE_STRICT,
+        Normal          = FF_COMPLIANCE_NORMAL, // default
+        Unofficial      = FF_COMPLIANCE_UNOFFICIAL,
+        Experimental    = FF_COMPLIANCE_EXPERIMENTAL
     };
 
     enum DiscardType
     {
         // TODO: discard_type
 
-        None = AVDISCARD_NONE,
+        None    = AVDISCARD_NONE,
         Default = AVDISCARD_DEFAULT, // default
-        NoRef = AVDISCARD_NONREF,
-        Bidir = AVDISCARD_BIDIR,
-        NoKey = AVDISCARD_NONKEY,
-        All = AVDISCARD_ALL
+        NoRef   = AVDISCARD_NONREF,
+        Bidir   = AVDISCARD_BIDIR,
+        NoKey   = AVDISCARD_NONKEY,
+        All     = AVDISCARD_ALL
     };
 
     enum ThreadFlag
@@ -105,6 +106,7 @@ public:
     Q_DECLARE_FLAGS(ThreadFlags, ThreadFlag)
 
     // flags. visualize motion vectors (MVs)
+
     enum MotionVectorVisFlag
     {
         No = 0, // default
@@ -116,18 +118,18 @@ public:
 
     enum BugFlag
     {
-        autodetect = FF_BUG_AUTODETECT, // default
+        autodetect          = FF_BUG_AUTODETECT,  // default
 
 #if FF_API_OLD_MSMPEG4
-
-        //old_msmpeg4 = FF_BUG_OLD_MSMPEG4, //moc does not support PP?
-
+/*
+        old_msmpeg4         = FF_BUG_OLD_MSMPEG4, // moc does not support PP?
+*/
 #endif
 
-        xvid_ilace = FF_BUG_XVID_ILACE,
-        ump4 = FF_BUG_UMP4,
-        no_padding = FF_BUG_NO_PADDING,
-        amv = FF_BUG_AMV,
+        xvid_ilace          = FF_BUG_XVID_ILACE,
+        ump4                = FF_BUG_UMP4,
+        no_padding          = FF_BUG_NO_PADDING,
+        amv                 = FF_BUG_AMV,
 
 #if FF_API_AC_VLC
 
@@ -135,14 +137,14 @@ public:
 
 #endif
 
-        qpel_chroma = FF_BUG_QPEL_CHROMA,
-        std_qpel = FF_BUG_QPEL_CHROMA2,
-        direct_blocksize = FF_BUG_DIRECT_BLOCKSIZE,
-        edge = FF_BUG_EDGE,
-        hpel_chroma = FF_BUG_HPEL_CHROMA,
-        dc_clip = FF_BUG_DC_CLIP,
-        ms = FF_BUG_MS,
-        trunc = FF_BUG_TRUNCATED
+        qpel_chroma         = FF_BUG_QPEL_CHROMA,
+        std_qpel            = FF_BUG_QPEL_CHROMA2,
+        direct_blocksize    = FF_BUG_DIRECT_BLOCKSIZE,
+        edge                = FF_BUG_EDGE,
+        hpel_chroma         = FF_BUG_HPEL_CHROMA,
+        dc_clip             = FF_BUG_DC_CLIP,
+        ms                  = FF_BUG_MS,
+        trunc               = FF_BUG_TRUNCATED
     };
     Q_DECLARE_FLAGS(BugFlags, BugFlag)
 
@@ -175,14 +177,14 @@ public:
 
 #if defined(Q_OS_WIN32) || (defined(Q_OS_LINUX) && !defined(Q_PROCESSOR_ARM) && !defined(QT_ARCH_ARM))
 
-        VideoDecoder::Register(VideoDecoderId_QSV, createQSV, "QSV");
+        VideoDecoder::Register(VideoDecoderId_QSV,       createQSV,       "QSV");
 
 #endif
 
 #ifdef Q_OS_LINUX
 #   if defined(Q_PROCESSOR_ARM)/*qt5*/ || defined(QT_ARCH_ARM) /*qt4*/
 
-        VideoDecoder::Register(VideoDecoderId_MMAL, createMMAL, "MMAL");
+        VideoDecoder::Register(VideoDecoderId_MMAL,      createMMAL,      "MMAL");
 
 #   else
 
@@ -199,6 +201,7 @@ public:
     QString description() const Q_DECL_OVERRIDE Q_DECL_FINAL
     {
         const int patch = QTAV_VERSION_PATCH(avcodec_version());
+
         return QStringLiteral("%1 avcodec %2.%3.%4")
                 .arg(patch>=100?QStringLiteral("FFmpeg"):QStringLiteral("Libav"))
                 .arg(QTAV_VERSION_MAJOR(avcodec_version())).arg(QTAV_VERSION_MINOR(avcodec_version())).arg(patch);
@@ -271,14 +274,14 @@ public:
 
     bool open() Q_DECL_OVERRIDE
     {
-        av_opt_set_int(codec_ctx, "skip_loop_filter", (int64_t)skip_loop_filter, 0);
-        av_opt_set_int(codec_ctx, "skip_idct", (int64_t)skip_idct, 0);
-        av_opt_set_int(codec_ctx, "strict", (int64_t)strict, 0);
-        av_opt_set_int(codec_ctx, "skip_frame", (int64_t)skip_frame, 0);
-        av_opt_set_int(codec_ctx, "threads", (int64_t)threads, 0);
-        av_opt_set_int(codec_ctx, "thread_type", (int64_t)thread_type, 0);
-        av_opt_set_int(codec_ctx, "vismv", (int64_t)debug_mv, 0);
-        av_opt_set_int(codec_ctx, "bug", (int64_t)bug, 0);
+        av_opt_set_int(codec_ctx, "skip_loop_filter", (int64_t)skip_loop_filter,    0);
+        av_opt_set_int(codec_ctx, "skip_idct",        (int64_t)skip_idct,           0);
+        av_opt_set_int(codec_ctx, "strict",           (int64_t)strict,              0);
+        av_opt_set_int(codec_ctx, "skip_frame",       (int64_t)skip_frame,          0);
+        av_opt_set_int(codec_ctx, "threads",          (int64_t)threads,             0);
+        av_opt_set_int(codec_ctx, "thread_type",      (int64_t)thread_type,         0);
+        av_opt_set_int(codec_ctx, "vismv",            (int64_t)debug_mv,            0);
+        av_opt_set_int(codec_ctx, "bug",              (int64_t)bug,                 0);
 
         //CODEC_FLAG_EMU_EDGE: deprecated in ffmpeg >=? & libav>=10. always set by ffmpeg
 
@@ -497,6 +500,7 @@ void VideoDecoderFFmpeg::setHwaccel(const QString &value)
         return;
 
     d.hwa = value.toLower();
+
     Q_EMIT hwaccelChanged();
 }
 

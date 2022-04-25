@@ -156,6 +156,7 @@ int SelectConfig(AVCodecID codec_id, const T* cfgs, int nb_cfgs, T* cfg)
     for (int i = 0; i < nb_cfgs; i++)
     {
         const T &c = cfgs[i];
+
         qCDebug(DIGIKAM_QTAV_LOG).noquote() << QString::asprintf("configuration[%d] ConfigBitstreamRaw %d", i, c.ConfigBitstreamRaw);
 
         /* */

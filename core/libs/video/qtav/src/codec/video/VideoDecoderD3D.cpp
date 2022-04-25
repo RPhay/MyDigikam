@@ -310,12 +310,12 @@ bool checkProfile(const dxva2_mode_t *mode, int profile)
 
 static const d3d_format_t d3d_formats[] =
 {
-    { "NV12",   MAKEFOURCC('N','V','1','2'),    VideoFormat::Format_NV12 },
-    { "YV12",   MAKEFOURCC('Y','V','1','2'),    VideoFormat::Format_YUV420P },
-    { "IMC3",   MAKEFOURCC('I','M','C','3'),    VideoFormat::Format_YUV420P },
+    { "NV12",   MAKEFOURCC('N','V','1','2'),    VideoFormat::Format_NV12        },
+    { "YV12",   MAKEFOURCC('Y','V','1','2'),    VideoFormat::Format_YUV420P     },
+    { "IMC3",   MAKEFOURCC('I','M','C','3'),    VideoFormat::Format_YUV420P     },
     { "P010",   MAKEFOURCC('P','0','1','0'),    VideoFormat::Format_YUV420P10LE },
-    { "P016",   MAKEFOURCC('P','0','1','6'),    VideoFormat::Format_YUV420P16LE }, //FIXME:
-    { NULL, 0, VideoFormat::Format_Invalid }
+    { "P016",   MAKEFOURCC('P','0','1','6'),    VideoFormat::Format_YUV420P16LE }, // FIXME:
+    { NULL,     0,                              VideoFormat::Format_Invalid     }
 };
 
 static const d3d_format_t *D3dFindFormat(int fourcc)
