@@ -49,17 +49,18 @@ if(ENABLE_MEDIAPLAYER)
     message(STATUS "FFMpeg AVResample : ${AVRESAMPLE_FOUND}")
     message(STATUS "FFMpeg SWResample : ${SWRESAMPLE_FOUND}")
 
-    if(${AVCODEC_FOUND}    AND
-       ${AVDEVICE_FOUND}   AND
-       ${AVFILTER_FOUND}   AND
-       ${AVFORMAT_FOUND}   AND
-       ${AVUTIL_FOUND}     AND
-       ${SWSCALE_FOUND}    AND
-       ${AVRESAMPLE_FOUND} AND
-       ${SWRESAMPLE_FOUND}
+    if(    ${AVCODEC_FOUND}
+       AND ${AVDEVICE_FOUND}
+       AND ${AVFILTER_FOUND}
+       AND ${AVFORMAT_FOUND}
+       AND ${AVUTIL_FOUND}
+       AND ${SWSCALE_FOUND}
+#       AND ${AVRESAMPLE_FOUND}
+#       AND ${SWRESAMPLE_FOUND}
       )
 
         include_directories(${FFMPEG_INCLUDE_DIRS})
+        set(FFMPEG_FOUND ON)
         message(STATUS "MediaPlayer support is enabled                       : yes")
 
     else()
