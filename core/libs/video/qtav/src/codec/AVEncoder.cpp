@@ -227,7 +227,7 @@ void AVEncoderPrivate::applyOptionsForDict()
     if (dict)
     {
         av_dict_free(&dict);
-        dict = 0; //aready 0 in av_free
+        dict = 0; // aready 0 in av_free
     }
 
     if (options.isEmpty())

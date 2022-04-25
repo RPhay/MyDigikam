@@ -65,7 +65,7 @@ namespace cv
 
 VideoFormat::PixelFormat format_from_cv(int cv)
 {
-    for (int i = 0; cv_formats[i].cv_pixfmt; ++i)
+    for (int i = 0 ; cv_formats[i].cv_pixfmt ; ++i)
     {
         if (cv_formats[i].cv_pixfmt == cv)
             return cv_formats[i].pixfmt;
@@ -187,9 +187,9 @@ void InteropResource::getParametersGL(OSType cvpixfmt, GLint *internalFormat, GL
 
 void SurfaceInteropCV::setSurface(CVPixelBufferRef buf, int w, int h)
 {
-    m_surface = buf;
+    m_surface    = buf;
     CVPixelBufferRetain(buf); // videotoolbox need it for map and CVPixelBufferRelease
-    frame_width = w;
+    frame_width  = w;
     frame_height = h;
 }
 
@@ -268,11 +268,11 @@ void* SurfaceInteropCV::mapToHost(const VideoFormat &format, void *handle, int p
     uint8_t *src[3];
     int pitch[3];
 
-    for (int i = 0; i < fmt.planeCount(); ++i)
+    for (int i = 0 ; i < fmt.planeCount() ; ++i)
     {
         // get address results in internal copy
 
-        src[i] = (uint8_t*)CVPixelBufferGetBaseAddressOfPlane(m_surface, i);
+        src[i]   = (uint8_t*)CVPixelBufferGetBaseAddressOfPlane(m_surface, i);
         pitch[i] = CVPixelBufferGetBytesPerRowOfPlane(m_surface, i);
     }
 

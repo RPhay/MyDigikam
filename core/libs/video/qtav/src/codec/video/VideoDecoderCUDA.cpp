@@ -202,23 +202,23 @@ public:
 
         // CUDA+GL/D3D interop requires NV GPU is used for rendering. Windows can use CUDA with intel GPU, I don't know how to detect this, so 0-copy interop can fail in this case. But linux always requires nvidia GPU to use CUDA, so interop works.
 
-        copy_mode = VideoDecoderCUDA::ZeroCopy;
+        copy_mode    = VideoDecoderCUDA::ZeroCopy;
 
 #endif
 
 #if QTAV_HAVE(DLLAPI_CUDA)
 
-        can_load = dllapi::testLoad("nvcuvid");
+        can_load     = dllapi::testLoad("nvcuvid");
 
 #endif
-        available = false;
-        bsf = 0;
-        cuctx = 0;
-        cudev = 0;
-        dec = 0;
+        available    = false;
+        bsf          = 0;
+        cuctx        = 0;
+        cudev        = 0;
+        dec          = 0;
         vid_ctx_lock = 0;
-        parser = 0;
-        stream = 0;
+        parser       = 0;
+        stream       = 0;
         force_sequence_update = false;
         frame_queue.setCapacity(20);
         frame_queue.setThreshold(10);
@@ -303,6 +303,7 @@ public:
         //CUDA_ENSURE(cuCtxPushCurrent(cuctx), false);
 
         AutoCtxLock lock(this, vid_ctx_lock);
+
         Q_UNUSED(lock);
         CUDA_ENSURE(cuvidParseVideoData(parser, pPkt), false);
 
@@ -329,7 +330,7 @@ public:
 #else
 
         VideoFrame vf;
-        CUVIDPARSERDISPINFO *cuviddisp = frame_queue.take();
+        CUVIDPARSERDISPINFO* cuviddisp = frame_queue.take();
         processDecodedData(cuviddisp, &vf);
 
         return vf;
@@ -402,23 +403,27 @@ public:
     }
 
     void setBSF(AVCodecID codec);
-    bool can_load; // if linked to cuvid, it's true. otherwise(use dllapi) equals to whether cuvid can be loaded
-    uchar *host_data;
-    int host_data_size;
-    CUcontext cuctx;
-    CUdevice cudev;
 
-    cudaVideoCreateFlags create_flags;
-    cudaVideoDeinterlaceMode deinterlace;
-    CUvideodecoder dec;
-    CUVIDDECODECREATEINFO dec_create_info;
-    CUvideoctxlock vid_ctx_lock; // NULL
-    CUVIDPICPARAMS pic_params;
-    CUVIDEOFORMATEX extra_parser_info;
-    CUvideoparser parser;
-    CUstream stream;
-    bool force_sequence_update;
-    ColorRange yuv_range;
+    // if linked to cuvid, it's true. otherwise(use dllapi) equals to whether cuvid can be loaded.
+
+    bool                                can_load;
+
+    uchar*                              host_data;
+    int                                 host_data_size;
+    CUcontext                           cuctx;
+    CUdevice                            cudev;
+
+    cudaVideoCreateFlags                create_flags;
+    cudaVideoDeinterlaceMode            deinterlace;
+    CUvideodecoder                      dec;
+    CUVIDDECODECREATEINFO               dec_create_info;
+    CUvideoctxlock                      vid_ctx_lock; // NULL
+    CUVIDPICPARAMS                      pic_params;
+    CUVIDEOFORMATEX                     extra_parser_info;
+    CUvideoparser                       parser;
+    CUstream                            stream;
+    bool                                force_sequence_update;
+    ColorRange                          yuv_range;
 
     /*
      * callbacks are in the same thread as cuvidParseVideoData. so video thread may be blocked
@@ -427,7 +432,7 @@ public:
 
 #if COPY_ON_DECODE
 
-    BlockingQueue<VideoFrame> frame_queue;
+    BlockingQueue<VideoFrame>           frame_queue;
 
 #else
 
@@ -435,18 +440,18 @@ public:
 
 #endif
 
-    QVector<bool> surface_in_use;
-    int nb_dec_surface;
-    QString description;
+    QVector<bool>                       surface_in_use;
+    int                                 nb_dec_surface;
+    QString                             description;
 
-    AVBitStreamFilterContext *bsf; // TODO: rename bsf_ctx
+    AVBitStreamFilterContext*           bsf; // TODO: rename bsf_ctx
 
-    VideoDecoderCUDA::CopyMode copy_mode;
-    cuda::InteropResourcePtr interop_res; // may be still used in video frames when decoder is destroyed
+    VideoDecoderCUDA::CopyMode          copy_mode;
+    cuda::InteropResourcePtr            interop_res; // may be still used in video frames when decoder is destroyed
 };
 
-VideoDecoderCUDA::VideoDecoderCUDA():
-    VideoDecoder(*new VideoDecoderCUDAPrivate())
+VideoDecoderCUDA::VideoDecoderCUDA()
+    : VideoDecoder(*new VideoDecoderCUDAPrivate())
 {
     // dynamic properties about static property details. used by UI
     // format: detail_property
@@ -488,6 +493,7 @@ QString VideoDecoderCUDA::description() const
 void VideoDecoderCUDA::flush()
 {
     DPTR_D(VideoDecoderCUDA);
+
     d.frame_queue.clear();
     d.surface_in_use.fill(false);
 }
@@ -502,6 +508,7 @@ bool VideoDecoderCUDA::decode(const Packet &packet)
     if (!d.parser)
     {
         qCWarning(DIGIKAM_QTAV_LOG_WARN).noquote() << QString::asprintf("CUVID parser not ready");
+
         return false;
     }
 
@@ -510,6 +517,7 @@ bool VideoDecoderCUDA::decode(const Packet &packet)
         if (!d.flushParser())
         {
             qCDebug(DIGIKAM_QTAV_LOG).noquote() << QString::asprintf("Error decode EOS"); // when?
+
             return false;
         }
 
@@ -517,8 +525,8 @@ bool VideoDecoderCUDA::decode(const Packet &packet)
     }
 
     uint8_t *outBuf = 0;
-    int outBufSize = 0;
-    int filtered = 0;
+    int outBufSize  = 0;
+    int filtered    = 0;
 
     if (d.bsf)
     {
@@ -527,7 +535,7 @@ bool VideoDecoderCUDA::decode(const Packet &packet)
 
         filtered = av_bitstream_filter_filter(d.bsf, d.codec_ctx, NULL, &outBuf, &outBufSize
                                                   , (const uint8_t*)packet.data.constData(), packet.data.size()
-                                                  , 0);//d.is_keyframe);
+                                                  , 0); // d.is_keyframe);
 
         //qCDebug(DIGIKAM_QTAV_LOG).noquote() << QString::asprintf("%s @%d filtered=%d outBuf=%p, outBufSize=%d", __FUNCTION__, __LINE__, filtered, outBuf, outBufSize);
 
@@ -538,20 +546,20 @@ bool VideoDecoderCUDA::decode(const Packet &packet)
     }
     else
     {
-        outBuf = (uint8_t*)packet.data.constData();
+        outBuf     = (uint8_t*)packet.data.constData();
         outBufSize = packet.data.size();
     }
 
     CUVIDSOURCEDATAPACKET cuvid_pkt;
     memset(&cuvid_pkt, 0, sizeof(CUVIDSOURCEDATAPACKET));
-    cuvid_pkt.payload = outBuf;             // (unsigned char *)packet.data.constData();
+    cuvid_pkt.payload      = outBuf;        // (unsigned char *)packet.data.constData();
     cuvid_pkt.payload_size = outBufSize;    // packet.data.size();
 
     // TODO: other flags
 
     if (packet.pts >= 0.0)
     {
-        cuvid_pkt.flags = CUVID_PKT_TIMESTAMP;
+        cuvid_pkt.flags     = CUVID_PKT_TIMESTAMP;
         cuvid_pkt.timestamp = packet.pts * 1000.0; // TODO: 10MHz?
     }
 
@@ -690,11 +698,16 @@ bool VideoDecoderCUDAPrivate::initCuda()
     CUDA_WARN(cuDeviceComputeCapability(&major, &minor, cudev));
     char devname[256];
     CUDA_WARN(cuDeviceGetName(devname, 256, cudev));
-    description = QStringLiteral("CUDA device: %1 %2.%3 %4 MHz @%5").arg(QLatin1String((const char*)devname)).arg(major).arg(minor).arg(clockRate/1000).arg(cudev);
+    description = QStringLiteral("CUDA device: %1 %2.%3 %4 MHz @%5")
+                  .arg(QLatin1String((const char*)devname))
+                  .arg(major)
+                  .arg(minor)
+                  .arg(clockRate/1000)
+                  .arg(cudev);
 
     // cuD3DCtxCreate > cuGLCtxCreate(deprecated) > cuCtxCreate (fallback if d3d and gl return status is failed)
 
-    CUDA_ENSURE(cuCtxCreate(&cuctx, CU_CTX_SCHED_BLOCKING_SYNC, cudev), false); //CU_CTX_SCHED_AUTO: slower in my test
+    CUDA_ENSURE(cuCtxCreate(&cuctx, CU_CTX_SCHED_BLOCKING_SYNC, cudev), false); // CU_CTX_SCHED_AUTO: slower in my test
 
 #if 0 //FIXME: why mingw crash?
 
@@ -789,11 +802,11 @@ bool VideoDecoderCUDAPrivate::createCUVIDDecoder(cudaVideoCodec cudaCodec, int c
     }
 
     memset(&dec_create_info, 0, sizeof(CUVIDDECODECREATEINFO));
-    dec_create_info.ulWidth = cw;                               // Coded Sequence Width
-    dec_create_info.ulHeight = ch;
-    dec_create_info.ulNumDecodeSurfaces = nb_dec_surface;       // same as ulMaxNumDecodeSurfaces
-    dec_create_info.CodecType = cudaCodec;
-    dec_create_info.ChromaFormat = cudaVideoChromaFormat_420;   // cudaVideoChromaFormat_XXX (only 4:2:0 is currently supported)
+    dec_create_info.ulWidth             = cw;                          // Coded Sequence Width
+    dec_create_info.ulHeight            = ch;
+    dec_create_info.ulNumDecodeSurfaces = nb_dec_surface;              // same as ulMaxNumDecodeSurfaces
+    dec_create_info.CodecType           = cudaCodec;
+    dec_create_info.ChromaFormat        = cudaVideoChromaFormat_420;   // cudaVideoChromaFormat_XXX (only 4:2:0 is currently supported)
 
     // cudaVideoCreate_PreferCUVID is slow in example. DXVA may failed to create (CUDA_ERROR_NO_DEVICE)
 
@@ -801,18 +814,18 @@ bool VideoDecoderCUDAPrivate::createCUVIDDecoder(cudaVideoCodec cudaCodec, int c
 
     // TODO: lav yv12
 
-    dec_create_info.OutputFormat = cudaVideoSurfaceFormat_NV12; // NV12 (currently the only supported output format)
+    dec_create_info.OutputFormat    = cudaVideoSurfaceFormat_NV12; // NV12 (currently the only supported output format)
     dec_create_info.DeinterlaceMode = deinterlace;
 
     // No scaling
 
-    dec_create_info.ulTargetWidth = cw;
+    dec_create_info.ulTargetWidth  = cw;
     dec_create_info.ulTargetHeight = ch;
 
     // TODO: dec_create_info.display_area.
 
-    dec_create_info.ulNumOutputSurfaces = 2;  // We won't simultaneously map more than 8 surfaces
-    dec_create_info.vidLock = vid_ctx_lock;//vidCtxLock; //FIXME
+    dec_create_info.ulNumOutputSurfaces = 2;                // We won't simultaneously map more than 8 surfaces
+    dec_create_info.vidLock             = vid_ctx_lock;     // vidCtxLock; // FIXME
 
     // Limit decode memory to 24MB (16M pixels at 4:2:0 = 24M bytes)
     // otherwise CUDA_ERROR_OUT_OF_MEMORY on cuMemcpyDtoH
@@ -875,7 +888,6 @@ bool VideoDecoderCUDAPrivate::createCUVIDParser()
      * HandlePictureDecode must check whether CUVIDPICPARAMS.CurrPicIdx is in use
      * HandlePictureDisplay must mark CUVIDPARSERDISPINFO.picture_index is in use
      * If a frame is unmapped, mark the index not in use
-     *
      */
 
     parser_params.ulMaxNumDecodeSurfaces = nb_dec_surface;
@@ -889,13 +901,15 @@ bool VideoDecoderCUDAPrivate::createCUVIDParser()
     // be decoded and/or displayed.
 
     parser_params.pfnSequenceCallback = VideoDecoderCUDAPrivate::HandleVideoSequence;
-    parser_params.pfnDecodePicture = VideoDecoderCUDAPrivate::HandlePictureDecode;
-    parser_params.pfnDisplayPicture = VideoDecoderCUDAPrivate::HandlePictureDisplay;
-    parser_params.ulErrorThreshold = 0;     // !wait for key frame
+    parser_params.pfnDecodePicture    = VideoDecoderCUDAPrivate::HandlePictureDecode;
+    parser_params.pfnDisplayPicture   = VideoDecoderCUDAPrivate::HandlePictureDisplay;
+    parser_params.ulErrorThreshold    = 0;     // !wait for key frame
 
     //parser_params.pExtVideoInfo
 
-    qCDebug(DIGIKAM_QTAV_LOG).noquote() << QString::asprintf("~~~~~~~~~~~~~~~~extradata: %p %d", codec_ctx->extradata, codec_ctx->extradata_size);
+    qCDebug(DIGIKAM_QTAV_LOG).noquote() << QString::asprintf("~~~~~~~~~~~~~~~~extradata: %p %d",
+                                           codec_ctx->extradata, codec_ctx->extradata_size);
+
     memset(&extra_parser_info, 0, sizeof(CUVIDEOFORMATEX));
 
     // nalu
@@ -915,7 +929,7 @@ bool VideoDecoderCUDAPrivate::createCUVIDParser()
 
     CUDA_ENSURE(cuvidCreateVideoParser(&parser, &parser_params), false);
     CUVIDSOURCEDATAPACKET seq_pkt;
-    seq_pkt.payload = extra_parser_info.raw_seqhdr_data;
+    seq_pkt.payload      = extra_parser_info.raw_seqhdr_data;
     seq_pkt.payload_size = extra_parser_info.format.seqhdr_data_length;
 
     if (seq_pkt.payload_size > 0)
@@ -945,14 +959,14 @@ bool VideoDecoderCUDAPrivate::processDecodedData(CUVIDPARSERDISPINFO *cuviddisp,
 {
     int num_fields = cuviddisp->progressive_frame ? 1 : 2+cuviddisp->repeat_first_field;
 
-    for (int active_field = 0; active_field < num_fields; ++active_field)
+    for (int active_field = 0 ; active_field < num_fields ; ++active_field)
     {
         CUVIDPROCPARAMS proc_params;
         memset(&proc_params, 0, sizeof(CUVIDPROCPARAMS));
         proc_params.progressive_frame = cuviddisp->progressive_frame;   // check user config
-        proc_params.second_field = active_field == 1;                   // check user config
-        proc_params.top_field_first = cuviddisp->top_field_first;
-        proc_params.unpaired_field = cuviddisp->progressive_frame == 1;
+        proc_params.second_field      = active_field == 1;              // check user config
+        proc_params.top_field_first   = cuviddisp->top_field_first;
+        proc_params.unpaired_field    = cuviddisp->progressive_frame == 1;
 
         //const uint cw = dec_create_info.ulWidth;//PAD_ALIGN(dec_create_info.ulWidth, 0x3F);
 
@@ -977,7 +991,7 @@ bool VideoDecoderCUDAPrivate::processDecodedData(CUVIDPARSERDISPINFO *cuviddisp,
                 if (size > host_data_size && host_data)
                 {
                     cuMemFreeHost(host_data);
-                    host_data = 0;
+                    host_data      = 0;
                     host_data_size = 0;
                 }
 
@@ -1004,9 +1018,9 @@ bool VideoDecoderCUDAPrivate::processDecodedData(CUVIDPARSERDISPINFO *cuviddisp,
         {
             if (OpenGLHelper::isOpenGLES() && copy_mode == VideoDecoderCUDA::ZeroCopy)
             {
-                proc_params.Reserved[0] = pitch; // TODO: pass pitch to setSurface()
+                proc_params.Reserved[0] = pitch;             // TODO: pass pitch to setSurface()
                 frame = VideoFrame(codec_ctx->width, codec_ctx->height, VideoFormat::Format_RGB32);
-                frame.setBytesPerLine(codec_ctx->width * 4); //used by gl to compute texture size
+                frame.setBytesPerLine(codec_ctx->width * 4); // used by gl to compute texture size
             }
             else
             {
@@ -1029,7 +1043,11 @@ bool VideoDecoderCUDAPrivate::processDecodedData(CUVIDPARSERDISPINFO *cuviddisp,
             frame.setBits(planes);
         }
 
-        int pitches[] = { (int)pitch, (int)pitch };
+        int pitches[] =
+        {
+            (int)pitch,
+            (int)pitch
+        };
 
         if (!frame.format().isRGB())
         {

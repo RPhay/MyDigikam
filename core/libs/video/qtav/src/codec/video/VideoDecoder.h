@@ -90,7 +90,11 @@ public:
 
     typedef int Id;
     static QVector<VideoDecoderId> registered();
-    template<class C> static bool Register(VideoDecoderId id, const char* name) { return Register(id, create<C>, name);}
+
+    template<class C> static bool Register(VideoDecoderId id, const char* name)
+    {
+        return Register(id, create<C>, name);
+    }
 
     /*!
      * \brief next
@@ -103,7 +107,11 @@ public:
 
 private:
 
-    template<class C> static VideoDecoder* create() { return new C();}
+    template<class C> static VideoDecoder* create()
+    {
+        return new C();
+    }
+
     typedef VideoDecoder* (*VideoDecoderCreator)();
 
 protected:

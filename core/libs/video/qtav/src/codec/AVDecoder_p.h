@@ -51,6 +51,7 @@ class AVFrameBuffers
 #endif
 
 public:
+
     AVFrameBuffers(AVFrame* frame)
     {
         Q_UNUSED(frame);
@@ -101,6 +102,7 @@ public:
 #endif
 
     }
+
     ~AVFrameBuffers()
     {
 

@@ -41,7 +41,7 @@ namespace cv
 
 VideoFormat::PixelFormat format_from_cv(int cv);
 
-typedef uint32_t GLuint; ///< define here to avoid including gl headers which are not required by decoder
+typedef uint32_t GLuint;    ///< define here to avoid including gl headers which are not required by decoder
 typedef uint32_t GLenum;
 typedef int32_t  GLint;
 
@@ -65,6 +65,7 @@ public:
     // Must have CreateInteropXXX in each implemention
 
     static InteropResource* create(InteropType type);
+
     virtual ~InteropResource()
     {
     }
@@ -75,6 +76,7 @@ public:
      * If the input strides has a valid value, use this value to compute the output strides. Otherwise, use width to compute the output strides without taking care of padded data size.
      */
     virtual bool stridesForWidth(int cvfmt, int width, int* strides/*in_out*/, VideoFormat::PixelFormat* outFmt);
+
     virtual bool mapToTexture2D() const
     {
         return true;
@@ -101,7 +103,8 @@ public:
         return true;
     }
 
-    virtual GLuint createTexture(CVPixelBufferRef, const VideoFormat &fmt, int plane, int planeWidth, int planeHeight)
+    virtual GLuint createTexture(CVPixelBufferRef, const VideoFormat &fmt,
+                                 int plane, int planeWidth, int planeHeight)
     {
         Q_UNUSED(fmt);
         Q_UNUSED(plane);
@@ -137,9 +140,13 @@ public:
     ~SurfaceInteropCV();
 
     void setSurface(CVPixelBufferRef buf, int w, int h);
-    void* map(SurfaceType type, const VideoFormat& fmt, void* handle, int plane)                                                   Q_DECL_OVERRIDE;
-    void unmap(void *handle)                                                                                                       Q_DECL_OVERRIDE;
-    virtual void* createHandle(void* handle, SurfaceType type, const VideoFormat &fmt, int plane, int planeWidth, int planeHeight) Q_DECL_OVERRIDE;
+    void* map(SurfaceType type,
+              const VideoFormat& fmt,
+              void* handle, int plane)                              Q_DECL_OVERRIDE;
+    void unmap(void *handle)                                        Q_DECL_OVERRIDE;
+    virtual void* createHandle(void* handle, SurfaceType type,
+                               const VideoFormat &fmt, int plane,
+                               int planeWidth, int planeHeight)     Q_DECL_OVERRIDE;
 
 protected:
 

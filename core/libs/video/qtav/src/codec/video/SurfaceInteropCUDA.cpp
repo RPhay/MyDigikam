@@ -82,7 +82,7 @@ void* InteropResource::mapToHost(const VideoFormat &format, void *handle, int pi
 
     CUVIDAutoUnmapper unmapper(this, dec, devptr);
     Q_UNUSED(unmapper);
-    uchar* host_data = NULL;
+    uchar* host_data             = NULL;
     const unsigned int host_size = pitch*coded_height*3/2;
     CUDA_ENSURE(cuMemAllocHost((void**)&host_data, host_size), NULL);
 
@@ -307,7 +307,7 @@ void SurfaceInteropCUDA::unmap(void *handle)
 #endif
 
 #include "egl_api.h"
-#include <EGL/eglext.h> //include after egl_capi.h to match types
+#include <EGL/eglext.h> // include after egl_capi.h to match types
 
 #define DX_LOG_COMPONENT "CUDA.D3D"
 
@@ -509,10 +509,14 @@ bool EGLInteropResource::ensureD3D9CUDA(int w, int h, int W, int H)
                                          //, H
                                          , H*3/2
                                          , 1
-                                         , D3DUSAGE_DYNAMIC //D3DUSAGE_DYNAMIC is lockable // 0 is from NV example. cudaD3D9.h says The primary rendertarget may not be registered with CUDA. So can not be D3DUSAGE_RENDERTARGET?
+                                         , D3DUSAGE_DYNAMIC // D3DUSAGE_DYNAMIC is lockable // 0 is from NV example. cudaD3D9.h says The primary rendertarget may not be registered with CUDA. So can not be D3DUSAGE_RENDERTARGET?
+
                                          //, D3DUSAGE_RENDERTARGET
+
                                          , D3DFMT_L8
+
                                          //, (D3DFORMAT)MAKEFOURCC('N','V','1','2') // can not create nv12. use 2 textures L8+A8L8?
+
                                          , D3DPOOL_DEFAULT // must be D3DPOOL_DEFAULT for cuda?
                                          , &texture9_nv12
                                          , NULL) // - Resources allocated as shared may not be registered with CUDA.
@@ -953,4 +957,4 @@ bool GLInteropResource::ensureResource(int w, int h, int H, GLuint tex, int plan
 
 } // namespace QtAV
 
-#endif //QTAV_HAVE(CUDA_GL)
+#endif // QTAV_HAVE(CUDA_GL)

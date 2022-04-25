@@ -62,7 +62,11 @@ class InteropResource : protected cuda_api
 public:
 
     InteropResource();
-    void setDevice(CUdevice d)          { dev = d;  }
+
+    void setDevice(CUdevice d)
+    {
+        dev = d;
+    }
 
     void setShareContext(CUcontext c)
     {
@@ -70,8 +74,16 @@ public:
         share_ctx = !!c;
     }
 
-    void setDecoder(CUvideodecoder d)   { dec  = d; }
-    void setLock(CUvideoctxlock l)      { lock = l; }
+    void setDecoder(CUvideodecoder d)
+    {
+        dec  = d;
+    }
+
+    void setLock(CUvideoctxlock l)
+    {
+        lock = l;
+    }
+
     virtual ~InteropResource();
 
     /// copy from gpu (optimized if possible) and convert to target format if necessary
@@ -88,7 +100,12 @@ public:
      */
     virtual bool map(int picIndex, const CUVIDPROCPARAMS& param, GLuint tex, int w, int h, int H, int plane) = 0;
 
-    virtual bool unmap(GLuint tex) { Q_UNUSED(tex); return true;}
+    virtual bool unmap(GLuint tex)
+    {
+        Q_UNUSED(tex);
+
+        return true;
+    }
 
     /// copy from gpu and convert to target format if necessary. used by VideoCapture
 

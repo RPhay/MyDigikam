@@ -249,16 +249,16 @@ bool AudioEncoderFFmpeg::encode(const AudioFrame &frame)
         // must be (not the last frame) exactly frame_size unless CODEC_CAP_VARIABLE_FRAME_SIZE is set (frame_size==0)
         // TODO: mpv use pcmhack for avctx.frame_size==0. can we use input frame.samplesPerChannel?
 
-        f->nb_samples = d.frame_size;
+        f->nb_samples           = d.frame_size;
 
         // f->quality = d.avctx->global_quality; // TODO
         // TODO: record last pts. mpv compute pts internally and also use playback time
 
-        f->pts = int64_t(frame.timestamp()*fmt.sampleRate()); // TODO
+        f->pts                  = int64_t(frame.timestamp()*fmt.sampleRate()); // TODO
 
         // pts is set in muxer
 
-        const int nb_planes = frame.planeCount();
+        const int nb_planes     = frame.planeCount();
 
         // bytes between 2 samples on a plane. TODO: add to AudioFormat? what about bytesPerFrame?
 
@@ -266,17 +266,17 @@ bool AudioEncoderFFmpeg::encode(const AudioFrame &frame)
 
         for (int i = 0 ; i < nb_planes ; ++i)
         {
-            f->linesize[i] = f->nb_samples * sample_stride; // frame.bytesPerLine(i);
+            f->linesize[i]      = f->nb_samples * sample_stride; // frame.bytesPerLine(i);
             f->extended_data[i] = (uint8_t*)frame.constBits(i);
         }
     }
 
     AVPacket pkt;
     av_init_packet(&pkt);
-    pkt.data = (uint8_t*)d.buffer.constData(); // NULL
-    pkt.size = d.buffer.size(); // 0
+    pkt.data       = (uint8_t*)d.buffer.constData(); // NULL
+    pkt.size       = d.buffer.size(); // 0
     int got_packet = 0;
-    int ret = avcodec_encode_audio2(d.avctx, &pkt, f, &got_packet);
+    int ret        = avcodec_encode_audio2(d.avctx, &pkt, f, &got_packet);
     av_frame_free(&f);
 
     if (ret < 0)
