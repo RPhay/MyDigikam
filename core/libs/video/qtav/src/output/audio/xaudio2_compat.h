@@ -55,7 +55,7 @@
 // do not add dxsdk xaudio2.h dir to INCLUDE for other file build with winsdk to avoid runtime crash
 // currently you can use dxsdk 2010 header for mingw
 // MinGW64 cross: XAudio2.h
-#include <XAudio2.h>
+#include <xaudio2.h>
 
 /* sdk check
  * winsdk: defines XAUDIO2_DLL
