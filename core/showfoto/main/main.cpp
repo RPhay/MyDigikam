@@ -80,7 +80,6 @@ using namespace Digikam;
 int main(int argc, char* argv[])
 {
     SystemSettings system(QLatin1String("showfoto"));
-    system.readSettings();
 
 #if (QT_VERSION < QT_VERSION_CHECK(6, 0, 0))
 
@@ -221,11 +220,16 @@ int main(int argc, char* argv[])
 
     w->show();
 
-    QPointer<FilesDownloader> floader = new FilesDownloader(qApp->activeWindow());
-
-    if (!floader->checkDownloadFiles())
+    if (!system.disableFaceEngine)
     {
-        floader->startDownload();
+        QPointer<FilesDownloader> floader = new FilesDownloader(qApp->activeWindow());
+
+        if (!floader->checkDownloadFiles())
+        {
+            floader->startDownload();
+        }
+
+        delete floader;
     }
 
     int ret = app.exec();

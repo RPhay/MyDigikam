@@ -49,6 +49,10 @@ public:
     void readSettings();
     void saveSettings();
 
+private Q_SLOTS:
+
+    void slotFaceDownload();
+
 private:
 
     class Private;

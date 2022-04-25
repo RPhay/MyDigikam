@@ -45,7 +45,6 @@ public:
 
 public:
 
-    void readSettings();
     void saveSettings();
 
 public:
@@ -54,13 +53,19 @@ public:
 
     bool useHighDpiPixmaps;
 
+    bool disableFaceEngine;
+
     bool enableLogging;
 
     bool disableOpenCL;
 
 private:
 
-    QString m_appName;
+    void readSettings();
+
+private:
+
+    QString m_path;
 };
 
 } // namespace Digikam
