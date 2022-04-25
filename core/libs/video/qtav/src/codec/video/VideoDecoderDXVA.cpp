@@ -374,26 +374,33 @@ bool VideoDecoderDXVAPrivate::createDevice()
 
     if (!d3ddev)
     {
-        qCWarning(DIGIKAM_QTAV_LOG_WARN).noquote() << QString::asprintf("Failed to create d3d9 device ex, fallback to d3d9 device");
+        qCWarning(DIGIKAM_QTAV_LOG_WARN) << "Failed to create d3d9 device ex, fallback to d3d9 device";
         d3ddev = DXHelper::CreateDevice9(hd3d9_dll, &d3dobj, &d3dai);
     }
 
     if (!d3ddev)
     {
-        qCWarning(DIGIKAM_QTAV_LOG_WARN).noquote() << QString::asprintf("Failed to create d3d9 device");
+        qCWarning(DIGIKAM_QTAV_LOG_WARN) << "Failed to create d3d9 device";
 
         return false;
     }
 
     vendor      = QString::fromLatin1(DXHelper::vendorName(d3dai.VendorId));
-    description = QString().sprintf("DXVA2 (%.*s, vendor %lu(%s), device %lu, revision %lu)",
-                                    sizeof(d3dai.Description), d3dai.Description,
-                                    d3dai.VendorId, qPrintable(vendor), d3dai.DeviceId, d3dai.Revision);
+    description = QString().asprintf("DXVA2 (%.*s, vendor %lu(%s), device %lu, revision %lu)",
+                                     sizeof(d3dai.Description),
+                                     d3dai.Description,
+                                     d3dai.VendorId,
+                                     qPrintable(vendor),
+                                     d3dai.DeviceId,
+                                     d3dai.Revision);
+/*
+    if (copy_uswc)
+        copy_uswc = vendor.toLower() == "intel";
+*/
 
-    //if (copy_uswc)
-      //  copy_uswc = vendor.toLower() == "intel";
-
-    qCDebug(DIGIKAM_QTAV_LOG).noquote() << QString::asprintf("DXVA2 description:  %s", description.toUtf8().constData());
+    qCDebug(DIGIKAM_QTAV_LOG).noquote()
+        << QString::asprintf("DXVA2 description:  %s",
+                             description.toUtf8().constData());
 
     if (!d3ddev)
         return false;
@@ -403,16 +410,16 @@ bool VideoDecoderDXVAPrivate::createDevice()
 
     if (!CreateDeviceManager9)
     {
-        qCWarning(DIGIKAM_QTAV_LOG_WARN).noquote() << QString::asprintf("cannot load function DXVA2CreateDirect3DDeviceManager9");
+        qCWarning(DIGIKAM_QTAV_LOG_WARN) << "cannot load function DXVA2CreateDirect3DDeviceManager9";
 
         return false;
     }
 
-    qCDebug(DIGIKAM_QTAV_LOG).noquote() << QString::asprintf("OurDirect3DCreateDeviceManager9 Success!");
+    qCDebug(DIGIKAM_QTAV_LOG) << "OurDirect3DCreateDeviceManager9 Success!";
 
     DX_ENSURE_OK(CreateDeviceManager9(&token, &devmng), false);
 
-    qCDebug(DIGIKAM_QTAV_LOG).noquote() << QString::asprintf("obtained IDirect3DDeviceManager9");
+    qCDebug(DIGIKAM_QTAV_LOG) << "obtained IDirect3DDeviceManager9";
 
     // http://msdn.microsoft.com/en-us/library/windows/desktop/ms693525%28v=vs.85%29.aspx
 
@@ -460,7 +467,8 @@ int VideoDecoderDXVAPrivate::fourccFor(const GUID *guid) const
 
     if (FAILED(vs->GetDecoderRenderTargets(*guid, &output_count, &output_list)))
     {
-        qCWarning(DIGIKAM_QTAV_LOG_WARN).noquote() << QString::asprintf("IDirectXVideoDecoderService_GetDecoderRenderTargets failed");
+        qCWarning(DIGIKAM_QTAV_LOG_WARN)
+            << "IDirectXVideoDecoderService_GetDecoderRenderTargets failed";
 
         return 0;
     }
@@ -482,13 +490,16 @@ bool VideoDecoderDXVAPrivate::checkDevice()
         // https://technet.microsoft.com/zh-cn/aa965266(v=vs.98).aspx
         // CloseDeviceHandle,Release service&decoder, open a new device handle, create a new decoder
 
-        qCWarning(DIGIKAM_QTAV_LOG_WARN).noquote() << QString::asprintf("DXVA2_E_NEW_VIDEO_DEVICE. Video decoder reset is not implemeted");
+        qCWarning(DIGIKAM_QTAV_LOG_WARN)
+            << "DXVA2_E_NEW_VIDEO_DEVICE. Video decoder reset is not implemented";
 
         return false;
     }
     else if (FAILED(hr))
     {
-        qCWarning(DIGIKAM_QTAV_LOG_WARN) << "IDirect3DDeviceManager9.TestDevice (" << hr << "): " << qt_error_string(hr);
+        qCWarning(DIGIKAM_QTAV_LOG_WARN)
+            << "IDirect3DDeviceManager9.TestDevice (" << hr << "): "
+            << qt_error_string(hr);
 
         return false;
     }
@@ -508,7 +519,10 @@ bool VideoDecoderDXVAPrivate::createDecoder(AVCodecID codec_id, int w, int h, QV
     const int nb_surfaces             = surf.size();
     static const int kMaxSurfaceCount = 64;
     IDirect3DSurface9* surface_list[kMaxSurfaceCount];
-    qCDebug(DIGIKAM_QTAV_LOG).noquote() << QString::asprintf("IDirectXVideoDecoderService=%p nb_surfaces=%d surface %dx%d", vs, nb_surfaces, aligned(w), aligned(h));
+
+    qCDebug(DIGIKAM_QTAV_LOG).noquote()
+        << QString::asprintf("IDirectXVideoDecoderService=%p nb_surfaces=%d surface %dx%d",
+                             vs, nb_surfaces, aligned(w), aligned(h));
 
     DX_ENSURE_OK(vs->CreateSurface(aligned(w),
                                  aligned(h),
@@ -528,14 +542,16 @@ bool VideoDecoderDXVAPrivate::createDecoder(AVCodecID codec_id, int w, int h, QV
         surf[i]           = s;
     }
 
-    qCDebug(DIGIKAM_QTAV_LOG).noquote() << QString::asprintf("IDirectXVideoAccelerationService_CreateSurface succeed with %d surfaces (%dx%d)", nb_surfaces, w, h);
+    qCDebug(DIGIKAM_QTAV_LOG).noquote()
+        << QString::asprintf("IDirectXVideoAccelerationService_CreateSurface succeed with %d surfaces (%dx%d)",
+                             nb_surfaces, w, h);
 
     /* */
 
     DXVA2_VideoDesc dsc;
     ZeroMemory(&dsc, sizeof(dsc));
-    dsc.SampleWidth                 = w; // coded_width
-    dsc.SampleHeight                = h; // coded_height
+    dsc.SampleWidth                 = w;        // coded_width
+    dsc.SampleHeight                = h;        // coded_height
     dsc.Format                      = fourccToD3D(format_fcc);
     dsc.InputSampleFreq.Numerator   = 0;
     dsc.InputSampleFreq.Denominator = 0;
@@ -577,7 +593,10 @@ bool VideoDecoderDXVAPrivate::createDecoder(AVCodecID codec_id, int w, int h, QV
     /* Create the decoder */
 
     DX_ENSURE_OK(vs->CreateVideoDecoder(codec_guid, &dsc, &cfg, surface_list, nb_surfaces, &decoder), false);
-    qCDebug(DIGIKAM_QTAV_LOG).noquote() << QString::asprintf("IDirectXVideoDecoderService.CreateVideoDecoder succeed. decoder=%p", decoder);
+
+    qCDebug(DIGIKAM_QTAV_LOG).noquote()
+        << QString::asprintf("IDirectXVideoDecoderService.CreateVideoDecoder succeed. decoder=%p",
+                             decoder);
 
     return true;
 }
@@ -594,9 +613,10 @@ void* VideoDecoderDXVAPrivate::setupAVVAContext()
     if (VideoDecoderD3D::isIntelClearVideo(&codec_guid))
     {
 
-#ifdef FF_DXVA2_WORKAROUND_INTEL_CLEARVIDEO //2014-03-07 - 8b2a130 - lavc 55.50.0 / 55.53.100 - dxva2.h
+#ifdef FF_DXVA2_WORKAROUND_INTEL_CLEARVIDEO // 2014-03-07 - 8b2a130 - lavc 55.50.0 / 55.53.100 - dxva2.h
 
-        qCDebug(DIGIKAM_QTAV_LOG).noquote() << QString::asprintf("FF_DXVA2_WORKAROUND_INTEL_CLEARVIDEO");
+        qCDebug(DIGIKAM_QTAV_LOG) << "FF_DXVA2_WORKAROUND_INTEL_CLEARVIDEO";
+
         hw_ctx.workaround |= FF_DXVA2_WORKAROUND_INTEL_CLEARVIDEO;
 
 #endif
