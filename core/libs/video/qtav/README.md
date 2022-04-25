@@ -36,6 +36,7 @@ x Use cmake to find DirectX and GDI+ dependencies (Native Windows only):
                     https://github.com/FFmpeg/FFmpeg/blob/master/libavcodec/dxva2.h
 x Port to pure Qt5 LTS and Qt6
 x Fix broken compilation under MinGW (MXE)
+x Use cmake to find CUDA Toolkit dependencies ==> no needs, CUDA is always loaded dynamically.
 
 * Fix API docs.
 * Remove support of Qt version < 5.
@@ -58,5 +59,4 @@ UNMAINTAINED FEATURES:
 
 TODO:
 
-+ Use cmake to find CUDA Toolkit dependencies.
 + Port to FFMPEG 5 API with backward compatibility.
