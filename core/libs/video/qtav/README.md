@@ -25,6 +25,16 @@ x Re-organize class files from QtAV by categories.
 x Drop VDA support: QTAV_HAVE_VDA=1 : codec/video/VideoDecoderVDA.cpp
   FFMpeg::libavcodec/vda.h have been dropped from version 4.0 in favor of VideoToolbox Apple Framework.
   https://github.com/FFmpeg/FFmpeg/blob/16463520d9de05481320303dd49ea5158c715c9f/Changelog#L310
+x Use cmake to find DirectX and GDI+ dependencies (Native Windows only):
+  x xaudio2
+  x direct2d
+  x d3d11va
+  x dsound
+  x gdiplus
+  x dxva        ==> QTAV_HAVE_DXVA=1 : codec/video/VideoDecoderDXVA.cpp
+                    Depends of FFMpeg::libavcodec/dxva2.h
+                    https://github.com/FFmpeg/FFmpeg/blob/master/libavcodec/dxva2.h
+x Port to pure Qt5 LTS and Qt6
 
 * Fix API docs.
 * Remove support of Qt version < 5.
@@ -48,15 +58,6 @@ UNMAINTAINED FEATURES:
 
 TODO:
 
-* Use cmake to find DirectX and GDI+ dependencies (Native Windows only):
-  x xaudio2
-  x direct2d
-  x d3d11va
-  x dsound
-  x gdiplus
-  - dxva        ==> QTAV_HAVE_DXVA=1 : codec/video/VideoDecoderDXVA.cpp
-                    Depends of FFMpeg::libavcodec/dxva2.h
-                    https://github.com/FFmpeg/FFmpeg/blob/master/libavcodec/dxva2.h
 
 + Use cmake to find CUDA Toolkit dependencies.
 + Port to FFMPEG 5 API with backward compatibility.
