@@ -76,7 +76,7 @@ public:
 
     VideoFrame &operator =(const VideoFrame &other);
 
-    int channelCount() const Q_DECL_OVERRIDE;
+    int channelCount() const override;
 
     /*!
      * Deep copy. Given the format, width and height, plane addresses and line sizes.

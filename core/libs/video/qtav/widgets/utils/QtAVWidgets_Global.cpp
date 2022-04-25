@@ -76,24 +76,24 @@ VideoRendererId VideoRendererId_X11             = mkid::id32base36_3<'X', '1', '
 
 #if AUTO_REGISTER
 
-FACTORY_REGISTER(VideoRenderer, Widget, "QWidegt")
-FACTORY_REGISTER(VideoRenderer, GraphicsItem, "QGraphicsItem")
+FACTORY_REGISTER(VideoRenderer, Widget,         "QWidegt")
+FACTORY_REGISTER(VideoRenderer, GraphicsItem,   "QGraphicsItem")
 
 #   if QTAV_HAVE(GL)
 #       if QTAV_HAVE(GL1)
 
-FACTORY_REGISTER(VideoRenderer, GLWidget, "QGLWidegt")
+FACTORY_REGISTER(VideoRenderer, GLWidget,       "QGLWidegt")
 
 #       endif
 
-FACTORY_REGISTER(VideoRenderer, GLWidget2, "QGLWidegt2")
+FACTORY_REGISTER(VideoRenderer, GLWidget2,      "QGLWidegt2")
 
 #   endif
 
 #   if QT_VERSION >= QT_VERSION_CHECK(5, 0, 0)
 #       ifndef QT_NO_OPENGL
 
-FACTORY_REGISTER(VideoRenderer, OpenGLWidget, "OpenGLWidget")
+FACTORY_REGISTER(VideoRenderer, OpenGLWidget,   "OpenGLWidget")
 
 #       endif
 #   endif
@@ -140,17 +140,17 @@ void registerRenderers()
 
 #if QTAV_HAVE(GL)
 
-    VideoRenderer::Register<GLWidgetRenderer2>(VideoRendererId_GLWidget2, "QGLWidget2");
+    VideoRenderer::Register<GLWidgetRenderer2>(VideoRendererId_GLWidget2,       "QGLWidget2");
 
 #endif
 
 #if QTAV_HAVE(GL1)
 
-    VideoRenderer::Register<GLWidgetRenderer>(VideoRendererId_GLWidget, "QGLWidget");
+    VideoRenderer::Register<GLWidgetRenderer>(VideoRendererId_GLWidget,         "QGLWidget");
 
 #endif
 
-    VideoRenderer::Register<WidgetRenderer>(VideoRendererId_Widget, "Widget");
+    VideoRenderer::Register<WidgetRenderer>(VideoRendererId_Widget,             "Widget");
 
 #if QTAV_HAVE(GDIPLUS)
 
@@ -196,30 +196,35 @@ void about()
 {
     // we should use new because a qobject will delete it's children
 
-    QTextBrowser *viewQtAV = new QTextBrowser;
+    QTextBrowser *viewQtAV   = new QTextBrowser;
     QTextBrowser *viewFFmpeg = new QTextBrowser;
     viewQtAV->setOpenExternalLinks(true);
     viewFFmpeg->setOpenExternalLinks(true);
     viewQtAV->setHtml(aboutQtAV_HTML());
     viewFFmpeg->setHtml(aboutFFmpeg_HTML());
-    QTabWidget *tab = new QTabWidget;
+    QTabWidget *tab         = new QTabWidget;
     tab->addTab(viewQtAV, QStringLiteral("QtAV"));
     tab->addTab(viewFFmpeg, QStringLiteral("FFmpeg"));
-    QPushButton *qbtn = new QPushButton(i18n("About Qt"));
-    QPushButton *btn = new QPushButton(i18n("Ok"));
-    QHBoxLayout *btnLayout = new QHBoxLayout;
+    QPushButton *qbtn       = new QPushButton(i18n("About Qt"));
+    QPushButton *btn        = new QPushButton(i18n("Ok"));
+    QHBoxLayout *btnLayout  = new QHBoxLayout;
     btnLayout->addWidget(btn);
     btnLayout->addStretch();
     btnLayout->addWidget(qbtn);
     btn->setFocus();
     QDialog dialog;
     dialog.setWindowTitle(i18n("About") + QStringLiteral("  QtAV"));
-    QVBoxLayout *layout = new QVBoxLayout;
+    QVBoxLayout *layout     = new QVBoxLayout;
     dialog.setLayout(layout);
     layout->addWidget(tab);
     layout->addLayout(btnLayout);
-    QObject::connect(qbtn, SIGNAL(clicked()), qApp, SLOT(aboutQt()));
-    QObject::connect(btn, SIGNAL(clicked()), &dialog, SLOT(accept()));
+    
+    QObject::connect(qbtn, SIGNAL(clicked()),
+                     qApp, SLOT(aboutQt()));
+    
+    QObject::connect(btn, SIGNAL(clicked()),
+                     &dialog, SLOT(accept()));
+    
     dialog.exec();
 }
 

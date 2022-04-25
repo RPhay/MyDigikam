@@ -48,28 +48,28 @@ namespace QtAV
 
 static const char kName[] = "AudioToolbox";
 
-class AudioOutputAudioToolbox Q_DECL_FINAL : public AudioOutputBackend
+class AudioOutputAudioToolbox final : public AudioOutputBackend
 {
 public:
 
     AudioOutputAudioToolbox(QObject *parent = 0);
 
-    QString name()                                     const Q_DECL_OVERRIDE
+    QString name()                                     const override
     {
         return QLatin1String(kName);
     }
 
-    bool isSupported(AudioFormat::SampleFormat smpfmt) const Q_DECL_OVERRIDE;
-    bool open()                                              Q_DECL_OVERRIDE;
-    bool close()                                             Q_DECL_OVERRIDE;
+    bool isSupported(AudioFormat::SampleFormat smpfmt) const override;
+    bool open()                                              override;
+    bool close()                                             override;
 
-    //bool flush()                                             Q_DECL_OVERRIDE;
+    //bool flush()                                             override;
 
-    BufferControl bufferControl()                      const Q_DECL_OVERRIDE;
-    void onCallback()                                        Q_DECL_OVERRIDE;
-    bool write(const QByteArray& data)                       Q_DECL_OVERRIDE;
-    bool play()                                              Q_DECL_OVERRIDE;
-    bool setVolume(qreal value)                              Q_DECL_OVERRIDE;
+    BufferControl bufferControl()                      const override;
+    void onCallback()                                        override;
+    bool write(const QByteArray& data)                       override;
+    bool play()                                              override;
+    bool setVolume(qreal value)                              override;
 
 private:
 

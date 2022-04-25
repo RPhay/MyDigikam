@@ -62,12 +62,12 @@ public:
 
 protected:
 
-    QPaintDevice* redirected(QPoint *offset)  const Q_DECL_OVERRIDE;
+    QPaintDevice* redirected(QPoint *offset)  const override;
     virtual void initializeGL();
     virtual void resizeGL(int w, int h);
     virtual void paintGL();
-    void paintEvent(QPaintEvent *e)                 Q_DECL_OVERRIDE;
-    void resizeEvent(QResizeEvent *e)               Q_DECL_OVERRIDE;
+    void paintEvent(QPaintEvent *e)                 override;
+    void resizeEvent(QResizeEvent *e)               override;
 
 private:
 

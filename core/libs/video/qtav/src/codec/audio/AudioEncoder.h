@@ -62,7 +62,7 @@ public:
 
     virtual AudioEncoderId id() const = 0;
 
-    QString name() const Q_DECL_OVERRIDE; // name from factory
+    QString name() const override; // name from factory
 
     /*!
      * \brief encode

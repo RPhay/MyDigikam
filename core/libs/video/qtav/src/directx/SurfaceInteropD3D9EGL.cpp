@@ -65,14 +65,14 @@ public:
     EGLSurface surface;
 };
 
-class EGLInteropResource Q_DECL_FINAL: public InteropResource
+class EGLInteropResource final: public InteropResource
 {
 public:
 
     EGLInteropResource(IDirect3DDevice9* d3device);
     ~EGLInteropResource();
 
-    bool map(IDirect3DSurface9* surface, GLuint tex, int w, int h, int) Q_DECL_OVERRIDE;
+    bool map(IDirect3DSurface9* surface, GLuint tex, int w, int h, int) override;
 
 private:
 

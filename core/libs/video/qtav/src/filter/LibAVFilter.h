@@ -94,17 +94,17 @@ public:
 
     LibAVFilterVideo(QObject *parent = 0);
 
-    bool isSupported(VideoFilterContext::Type t) const Q_DECL_OVERRIDE { return t == VideoFilterContext::None;}
+    bool isSupported(VideoFilterContext::Type t) const override { return t == VideoFilterContext::None;}
     QStringList filters() const; // the same as LibAVFilter::videoFilters
 
 Q_SIGNALS:
 
-    void optionsChanged() Q_DECL_OVERRIDE;
+    void optionsChanged() override;
 
 protected:
 
-    void process(Statistics *statistics, VideoFrame *frame) Q_DECL_OVERRIDE;
-    QString sourceArguments() const Q_DECL_OVERRIDE;
+    void process(Statistics *statistics, VideoFrame *frame) override;
+    QString sourceArguments() const override;
 };
 
 // ---------------------------------------------------------------------------------
@@ -124,12 +124,12 @@ public:
 
 Q_SIGNALS:
 
-    void optionsChanged() Q_DECL_OVERRIDE;
+    void optionsChanged() override;
 
 protected:
 
-    void process(Statistics *statistics, AudioFrame *frame) Q_DECL_OVERRIDE;
-    QString sourceArguments() const Q_DECL_OVERRIDE;
+    void process(Statistics *statistics, AudioFrame *frame) override;
+    QString sourceArguments() const override;
 };
 
 } // namespace QtAV

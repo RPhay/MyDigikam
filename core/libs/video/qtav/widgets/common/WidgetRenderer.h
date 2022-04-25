@@ -29,11 +29,9 @@
 #include "QtAVWidgets_Global.h"
 #include "QPainterRenderer.h"
 
-#if QT_VERSION >= QT_VERSION_CHECK(5, 0, 0)
-#   include <QWidget>
-#else
-#   include <QWidget>
-#endif
+// Qt includes
+
+#include <QWidget>
 
 namespace QtAV
 {
@@ -51,6 +49,7 @@ class QTAV_WIDGETS_EXPORT WidgetRenderer : public QWidget,
     Q_PROPERTY(qreal outAspectRatio READ outAspectRatio WRITE setOutAspectRatio NOTIFY outAspectRatioChanged)
 
     // fillMode
+
     // TODO: how to use enums in base class as property or Q_ENUM
 
     Q_PROPERTY(OutAspectRatioMode outAspectRatioMode READ outAspectRatioMode WRITE setOutAspectRatioMode NOTIFY outAspectRatioModeChanged)
@@ -64,42 +63,42 @@ public:
 
     explicit WidgetRenderer(QWidget* parent = 0, Qt::WindowFlags f = Qt::WindowFlags(Qt::Widget));
 
-    virtual VideoRendererId id()          const Q_DECL_OVERRIDE;
+    virtual VideoRendererId id()          const override;
 
-    virtual QWidget* widget()                   Q_DECL_OVERRIDE
+    virtual QWidget* widget()                   override
     {
         return this;
     }
 
 Q_SIGNALS:
 
-    void sourceAspectRatioChanged(qreal value)  Q_DECL_OVERRIDE Q_DECL_FINAL;
-    void regionOfInterestChanged()              Q_DECL_OVERRIDE;
-    void outAspectRatioChanged()                Q_DECL_OVERRIDE;
-    void outAspectRatioModeChanged()            Q_DECL_OVERRIDE;
-    void brightnessChanged(qreal value)         Q_DECL_OVERRIDE;
-    void contrastChanged(qreal)                 Q_DECL_OVERRIDE;
-    void hueChanged(qreal)                      Q_DECL_OVERRIDE;
-    void saturationChanged(qreal)               Q_DECL_OVERRIDE;
-    void backgroundColorChanged()               Q_DECL_OVERRIDE;
-    void orientationChanged()                   Q_DECL_OVERRIDE;
-    void videoRectChanged()                     Q_DECL_OVERRIDE;
-    void videoFrameSizeChanged()                Q_DECL_OVERRIDE;
+    void sourceAspectRatioChanged(qreal value)  override final;
+    void regionOfInterestChanged()              override;
+    void outAspectRatioChanged()                override;
+    void outAspectRatioModeChanged()            override;
+    void brightnessChanged(qreal value)         override;
+    void contrastChanged(qreal)                 override;
+    void hueChanged(qreal)                      override;
+    void saturationChanged(qreal)               override;
+    void backgroundColorChanged()               override;
+    void orientationChanged()                   override;
+    void videoRectChanged()                     override;
+    void videoFrameSizeChanged()                override;
 
-    QTAVWIDGETS_DEPRECATED void imageReady(); // add frameReady() in the future?
+    void imageReady();
 
 protected:
 
-    bool receiveFrame(const VideoFrame& frame)  Q_DECL_OVERRIDE;
-    void resizeEvent(QResizeEvent*)             Q_DECL_OVERRIDE;
+    bool receiveFrame(const VideoFrame& frame)  override;
+    void resizeEvent(QResizeEvent*)             override;
 
     /* usually you don't need to reimplement paintEvent, just drawXXX() is ok. unless you want do all
      * things yourself totally
      */
 
-    void paintEvent(QPaintEvent*)               Q_DECL_OVERRIDE;
+    void paintEvent(QPaintEvent*)               override;
 
-    bool onSetOrientation(int value)            Q_DECL_OVERRIDE;
+    bool onSetOrientation(int value)            override;
 
 protected:
 

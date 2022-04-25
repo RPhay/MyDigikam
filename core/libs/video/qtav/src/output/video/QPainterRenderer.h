@@ -46,16 +46,16 @@ class QTAV_EXPORT QPainterRenderer : public VideoRenderer
 public:
 
     QPainterRenderer();
-    bool isSupported(VideoFormat::PixelFormat pixfmt) const Q_DECL_OVERRIDE;
+    bool isSupported(VideoFormat::PixelFormat pixfmt) const override;
 
 protected:
 
     bool preparePixmap(const VideoFrame& frame);
-    void drawBackground() Q_DECL_OVERRIDE;
+    void drawBackground() override;
 
     // draw the current frame using the current paint engine. called by paintEvent()
 
-    void drawFrame() Q_DECL_OVERRIDE;
+    void drawFrame() override;
 
     QPainterRenderer(QPainterRendererPrivate& d);
 };

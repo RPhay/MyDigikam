@@ -196,9 +196,9 @@ public:
     }
 
     VideoDecoderFFmpeg();
-    VideoDecoderId id() const Q_DECL_OVERRIDE Q_DECL_FINAL;
+    VideoDecoderId id() const override final;
 
-    QString description() const Q_DECL_OVERRIDE Q_DECL_FINAL
+    QString description() const override final
     {
         const int patch = QTAV_VERSION_PATCH(avcodec_version());
 
@@ -230,7 +230,7 @@ public:
 
 Q_SIGNALS:
 
-    void codecNameChanged() Q_DECL_OVERRIDE;
+    void codecNameChanged() override;
     void hwaccelChanged();
 };
 
@@ -254,7 +254,7 @@ namespace
     } sInit_FFmpegHWA;
 }
 
-class VideoDecoderFFmpegPrivate Q_DECL_FINAL
+class VideoDecoderFFmpegPrivate final
     : public VideoDecoderFFmpegBasePrivate
 {
 public:
@@ -272,7 +272,7 @@ public:
     {
     }
 
-    bool open() Q_DECL_OVERRIDE
+    bool open() override
     {
         av_opt_set_int(codec_ctx, "skip_loop_filter", (int64_t)skip_loop_filter,    0);
         av_opt_set_int(codec_ctx, "skip_idct",        (int64_t)skip_idct,           0);

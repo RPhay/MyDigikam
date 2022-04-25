@@ -104,9 +104,9 @@ public:
 
     VideoDecoderVAAPI();
 
-    VideoDecoderId id()       const Q_DECL_OVERRIDE;
-    QString description()     const Q_DECL_OVERRIDE;
-    VideoFrame frame()              Q_DECL_OVERRIDE;
+    VideoDecoderId id()       const override;
+    QString description()     const override;
+    VideoFrame frame()              override;
 
     // QObject properties
 
@@ -244,7 +244,7 @@ VideoFormat::PixelFormat pixelFormatFromVA(uint32_t fourcc)
     return VideoFormat::Format_Invalid;
 }
 
-class VideoDecoderVAAPIPrivate Q_DECL_FINAL : public VideoDecoderFFmpegHWPrivate,
+class VideoDecoderVAAPIPrivate final : public VideoDecoderFFmpegHWPrivate,
                                               protected VAAPI_DRM,
                                               protected VAAPI_X11
 #ifndef QT_NO_OPENGL
@@ -312,14 +312,14 @@ public:
         image_fmt       = VideoFormat::Format_Invalid;
     }
 
-    bool open() Q_DECL_OVERRIDE;
-    void close() Q_DECL_OVERRIDE;
+    bool open() override;
+    void close() override;
     bool ensureSurfaces(int count, int w, int h, bool discard_old = false);
     bool prepareVAImage(int w, int h);
-    void* setup(AVCodecContext *avctx) Q_DECL_OVERRIDE;
-    bool getBuffer(void **opaque, uint8_t **data) Q_DECL_OVERRIDE;
-    void releaseBuffer(void *opaque, uint8_t *data) Q_DECL_OVERRIDE;
-    AVPixelFormat vaPixelFormat() const Q_DECL_OVERRIDE { return QTAV_PIX_FMT_C(VAAPI_VLD); }
+    void* setup(AVCodecContext *avctx) override;
+    bool getBuffer(void **opaque, uint8_t **data) override;
+    void releaseBuffer(void *opaque, uint8_t *data) override;
+    AVPixelFormat vaPixelFormat() const override { return QTAV_PIX_FMT_C(VAAPI_VLD); }
 
     bool support_4k;
     VideoDecoderVAAPI::DisplayType display_type;

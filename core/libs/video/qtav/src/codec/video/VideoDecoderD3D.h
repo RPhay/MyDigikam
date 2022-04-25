@@ -100,11 +100,11 @@ public:
 
     VideoDecoderD3DPrivate();
 
-    bool  open()                                     Q_DECL_OVERRIDE;
-    void  close()                                    Q_DECL_OVERRIDE;
-    void* setup(AVCodecContext *avctx)               Q_DECL_OVERRIDE;
-    bool  getBuffer(void **opaque, uint8_t **data)   Q_DECL_OVERRIDE;
-    void  releaseBuffer(void *opaque, uint8_t *data) Q_DECL_OVERRIDE;
+    bool  open()                                     override;
+    void  close()                                    override;
+    void* setup(AVCodecContext *avctx)               override;
+    bool  getBuffer(void **opaque, uint8_t **data)   override;
+    void  releaseBuffer(void *opaque, uint8_t *data) override;
 
     int aligned(int x);
 

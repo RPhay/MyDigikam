@@ -78,7 +78,7 @@ public:
 
     void setPlayer(AVPlayer* player);
 
-    bool isSupported(VideoFilterContext::Type ct) const Q_DECL_OVERRIDE
+    bool isSupported(VideoFilterContext::Type ct) const override
     {
         return ct == VideoFilterContext::QtPainter || ct == VideoFilterContext::X11;
     }
@@ -142,7 +142,7 @@ Q_SIGNALS:
 
 protected:
 
-    void process(Statistics* statistics, VideoFrame* frame) Q_DECL_OVERRIDE;
+    void process(Statistics* statistics, VideoFrame* frame) override;
 };
 
 } // namespace QtAV

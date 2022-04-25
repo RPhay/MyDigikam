@@ -80,43 +80,43 @@ public:
 
     GDIRenderer(QWidget* parent = 0, Qt::WindowFlags f = Qt::WindowFlags(Qt::Widget)); // offscreen?
 
-    VideoRendererId id()                              const Q_DECL_OVERRIDE;
-    bool isSupported(VideoFormat::PixelFormat pixfmt) const Q_DECL_OVERRIDE;
+    VideoRendererId id()                              const override;
+    bool isSupported(VideoFormat::PixelFormat pixfmt) const override;
 
     /*
      * WA_PaintOnScreen: To render outside of Qt's paint system, e.g. If you require
      * native painting primitives, you need to reimplement QWidget::paintEngine() to
      * return 0 and set this flag
      */
-    QPaintEngine* paintEngine()                       const Q_DECL_OVERRIDE;
+    QPaintEngine* paintEngine()                       const override;
 
     /*
      * http://lists.trolltech.com/qt4-preview-feedback/2005-04/thread00609-0.html
      * true: paintEngine.getDC(), double buffer is enabled by defalut.
      * false: GetDC(winId()), no double buffer, should reimplement paintEngine()
      */
-    QWidget* widget()                                       Q_DECL_OVERRIDE
+    QWidget* widget()                                       override
     {
         return this;
     }
 
 protected:
 
-    bool receiveFrame(const VideoFrame& frame)              Q_DECL_OVERRIDE;
-    void drawBackground()                                   Q_DECL_OVERRIDE;
-    void drawFrame()                                        Q_DECL_OVERRIDE;
+    bool receiveFrame(const VideoFrame& frame)              override;
+    void drawBackground()                                   override;
+    void drawFrame()                                        override;
 
     /*
      * usually you don't need to reimplement paintEvent, just drawXXX() is ok. unless you want do all
      * things yourself totally
      */
 
-    void paintEvent(QPaintEvent *)                          Q_DECL_OVERRIDE;
-    void resizeEvent(QResizeEvent *)                        Q_DECL_OVERRIDE;
+    void paintEvent(QPaintEvent *)                          override;
+    void resizeEvent(QResizeEvent *)                        override;
 
     // stay on top will change parent, hide then show(windows). we need GetDC() again
 
-    void showEvent(QShowEvent *)                            Q_DECL_OVERRIDE;
+    void showEvent(QShowEvent *)                            override;
 };
 
 typedef GDIRenderer VideoRendererGDI;

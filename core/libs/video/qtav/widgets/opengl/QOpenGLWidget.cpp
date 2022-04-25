@@ -51,7 +51,7 @@ public:
     {
     }
 
-    void ensureActiveTarget() Q_DECL_OVERRIDE
+    void ensureActiveTarget() override
     {
         if (QOpenGLContext::currentContext() != w->context())
         {

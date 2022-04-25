@@ -40,15 +40,15 @@ namespace QtAV
 namespace d3d9
 {
 
-class GLInteropResource Q_DECL_FINAL : public InteropResource
+class GLInteropResource final : public InteropResource
 {
 public:
 
     GLInteropResource(IDirect3DDevice9* d3device);
     ~GLInteropResource();
 
-    bool map(IDirect3DSurface9* surface, GLuint tex, int frame_w, int frame_h, int) Q_DECL_OVERRIDE;
-    bool unmap(GLuint tex)                                                          Q_DECL_OVERRIDE;
+    bool map(IDirect3DSurface9* surface, GLuint tex, int frame_w, int frame_h, int) override;
+    bool unmap(GLuint tex)                                                          override;
 
 private:
 

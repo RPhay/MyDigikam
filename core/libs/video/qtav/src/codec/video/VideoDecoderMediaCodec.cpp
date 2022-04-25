@@ -54,7 +54,7 @@ namespace QtAV
 
 class VideoDecoderMediaCodecPrivate;
 
-class VideoDecoderMediaCodec Q_DECL_FINAL : public VideoDecoderFFmpegHW
+class VideoDecoderMediaCodec final : public VideoDecoderFFmpegHW
 {
     DPTR_DECLARE_PRIVATE(VideoDecoderMediaCodec)
 
@@ -62,11 +62,11 @@ public:
 
     VideoDecoderMediaCodec();
 
-    VideoDecoderId id() const Q_DECL_OVERRIDE;
-    QString description() const Q_DECL_OVERRIDE;
-    VideoFrame frame() Q_DECL_OVERRIDE;
+    VideoDecoderId id() const override;
+    QString description() const override;
+    VideoFrame frame() override;
 
-    void flush() Q_DECL_OVERRIDE
+    void flush() override
     {
         // workaroudn for EAGAIN error in avcodec_receive_frame
 
@@ -84,7 +84,7 @@ extern VideoDecoderId VideoDecoderId_MediaCodec;
 
 FACTORY_REGISTER(VideoDecoder, MediaCodec, "MediaCodec")
 
-class VideoDecoderMediaCodecPrivate Q_DECL_FINAL : public VideoDecoderFFmpegHWPrivate
+class VideoDecoderMediaCodecPrivate final : public VideoDecoderFFmpegHWPrivate
 {
 public:
 
@@ -100,7 +100,7 @@ public:
 
     }
 
-    void close() Q_DECL_OVERRIDE
+    void close() override
     {
         restore();
 
@@ -113,12 +113,12 @@ public:
 
     }
 
-    bool enableFrameRef() const Q_DECL_OVERRIDE
+    bool enableFrameRef() const override
     {
         return true;
     }
 
-    void* setup(AVCodecContext *avctx) Q_DECL_OVERRIDE
+    void* setup(AVCodecContext *avctx) override
     {
         if (copy_mode != VideoDecoderFFmpegHW::ZeroCopy)
             return nullptr;

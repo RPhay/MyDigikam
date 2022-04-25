@@ -135,34 +135,34 @@ class VideoFrameConverter;
 
 // TODO: font, pen, brush etc?
 
-class QTAV_EXPORT QPainterFilterContext Q_DECL_FINAL: public VideoFilterContext
+class QTAV_EXPORT QPainterFilterContext final: public VideoFilterContext
 {
 public:
 
     QPainterFilterContext();
     virtual ~QPainterFilterContext();
 
-    Type type() const Q_DECL_OVERRIDE
+    Type type() const override
     {
         return VideoFilterContext::QtPainter;
     }
 
     // empty source rect equals to the whole source rect
 
-    void drawImage(const QPointF& pos, const QImage& image, const QRectF& source = QRectF(), Qt::ImageConversionFlags flags = Qt::AutoColor)   Q_DECL_OVERRIDE;
-    void drawImage(const QRectF& target, const QImage& image, const QRectF& source = QRectF(), Qt::ImageConversionFlags flags = Qt::AutoColor) Q_DECL_OVERRIDE;
-    void drawPlainText(const QPointF& pos, const QString& text)                                                                                Q_DECL_OVERRIDE;
+    void drawImage(const QPointF& pos, const QImage& image, const QRectF& source = QRectF(), Qt::ImageConversionFlags flags = Qt::AutoColor)   override;
+    void drawImage(const QRectF& target, const QImage& image, const QRectF& source = QRectF(), Qt::ImageConversionFlags flags = Qt::AutoColor) override;
+    void drawPlainText(const QPointF& pos, const QString& text)                                                                                override;
 
     // if rect is null, draw single line text at rect.topLeft(), ignoring flags
 
-    void drawPlainText(const QRectF& rect, int flags, const QString& text)           Q_DECL_OVERRIDE;
-    void drawRichText(const QRectF& rect, const QString& text, bool wordWrap = true) Q_DECL_OVERRIDE;
+    void drawPlainText(const QRectF& rect, int flags, const QString& text)           override;
+    void drawRichText(const QRectF& rect, const QString& text, bool wordWrap = true) override;
 
 protected:
 
-    bool isReady() const                        Q_DECL_OVERRIDE;
-    bool prepare()                              Q_DECL_OVERRIDE;
-    void initializeOnFrame(VideoFrame *vframe)  Q_DECL_OVERRIDE;
+    bool isReady() const                        override;
+    bool prepare()                              override;
+    void initializeOnFrame(VideoFrame *vframe)  override;
 
 protected:
 
@@ -172,7 +172,7 @@ protected:
 
 #if QTAV_HAVE(X11)
 
-class QTAV_EXPORT X11FilterContext Q_DECL_FINAL : public VideoFilterContext
+class QTAV_EXPORT X11FilterContext final : public VideoFilterContext
 {
 public:
 
@@ -185,7 +185,7 @@ public:
     X11FilterContext();
     virtual ~X11FilterContext();
 
-    Type type() const Q_DECL_OVERRIDE
+    Type type() const override
     {
         return VideoFilterContext::X11;
     }
@@ -194,21 +194,21 @@ public:
 
     // empty source rect equals to the whole source rect
 
-    void drawImage(const QPointF& pos, const QImage& image, const QRectF& source = QRectF(), Qt::ImageConversionFlags flags = Qt::AutoColor) Q_DECL_OVERRIDE;
-    void drawImage(const QRectF& target, const QImage& image, const QRectF& source = QRectF(), Qt::ImageConversionFlags flags = Qt::AutoColor) Q_DECL_OVERRIDE;
-    void drawPlainText(const QPointF& pos, const QString& text) Q_DECL_OVERRIDE;
+    void drawImage(const QPointF& pos, const QImage& image, const QRectF& source = QRectF(), Qt::ImageConversionFlags flags = Qt::AutoColor) override;
+    void drawImage(const QRectF& target, const QImage& image, const QRectF& source = QRectF(), Qt::ImageConversionFlags flags = Qt::AutoColor) override;
+    void drawPlainText(const QPointF& pos, const QString& text) override;
 
     // if rect is null, draw single line text at rect.topLeft(), ignoring flags
 
-    void drawPlainText(const QRectF& rect, int flags, const QString& text) Q_DECL_OVERRIDE;
-    void drawRichText(const QRectF& rect, const QString& text, bool wordWrap = true) Q_DECL_OVERRIDE;
+    void drawPlainText(const QRectF& rect, int flags, const QString& text) override;
+    void drawRichText(const QRectF& rect, const QString& text, bool wordWrap = true) override;
 
 protected:
 
-    bool isReady() const Q_DECL_OVERRIDE;
-    bool prepare() Q_DECL_OVERRIDE;
-    void initializeOnFrame(VideoFrame *vframe) Q_DECL_OVERRIDE;
-    void shareFrom(VideoFilterContext *vctx) Q_DECL_OVERRIDE;
+    bool isReady() const override;
+    bool prepare() override;
+    void initializeOnFrame(VideoFrame *vframe) override;
+    void shareFrom(VideoFilterContext *vctx) override;
 
     // null image: use the old x11 image/pixmap
 

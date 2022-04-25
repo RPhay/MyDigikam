@@ -57,29 +57,29 @@ public:
 
     AndroidIO();
 
-    QString name() const Q_DECL_OVERRIDE { return QLatin1String(kName);}
+    QString name() const override { return QLatin1String(kName);}
 
-    const QStringList& protocols() const Q_DECL_OVERRIDE
+    const QStringList& protocols() const override
     {
         static QStringList p = QStringList() << QStringLiteral("content") << QStringLiteral("android.resource"); // "file:" is supported too but we use QFile
         return p;
     }
 
-    virtual bool isSeekable() const Q_DECL_OVERRIDE;
-    virtual qint64 read(char *data, qint64 maxSize) Q_DECL_OVERRIDE;
-    virtual bool seek(qint64 offset, int from) Q_DECL_OVERRIDE;
-    virtual qint64 position() const Q_DECL_OVERRIDE;
+    virtual bool isSeekable() const override;
+    virtual qint64 read(char *data, qint64 maxSize) override;
+    virtual bool seek(qint64 offset, int from) override;
+    virtual qint64 position() const override;
 
     /*!
      * \brief size
      * \return <=0 if not support
      */
-    virtual qint64 size() const Q_DECL_OVERRIDE { return qt_file.size();}
+    virtual qint64 size() const override { return qt_file.size();}
 
 protected:
 
     AndroidIO(AndroidIOPrivate &d);
-    void onUrlChanged() Q_DECL_OVERRIDE;
+    void onUrlChanged() override;
 
 private:
 

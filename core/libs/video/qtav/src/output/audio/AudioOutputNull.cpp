@@ -41,34 +41,34 @@ public:
 
     AudioOutputNull(QObject *parent = 0);
 
-    QString name() const                Q_DECL_OVERRIDE
+    QString name() const                override
     {
         return QLatin1String(kName);
     }
 
-    bool open()                         Q_DECL_OVERRIDE
+    bool open()                         override
     {
         return true;
     }
 
-    bool close()                        Q_DECL_OVERRIDE
+    bool close()                        override
     {
         return true;
     }
 
     // TODO: check channel layout. Null supports channels>2
 
-    BufferControl bufferControl() const Q_DECL_OVERRIDE
+    BufferControl bufferControl() const override
     {
         return Blocking;
     }
 
-    bool write(const QByteArray&)       Q_DECL_OVERRIDE
+    bool write(const QByteArray&)       override
     {
         return true;
     }
 
-    bool play()                         Q_DECL_OVERRIDE
+    bool play()                         override
     {
         return true;
     }

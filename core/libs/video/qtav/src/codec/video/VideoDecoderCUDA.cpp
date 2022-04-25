@@ -111,11 +111,11 @@ public:
     VideoDecoderCUDA();
     ~VideoDecoderCUDA();
 
-    VideoDecoderId id() const Q_DECL_OVERRIDE;
-    QString description() const Q_DECL_OVERRIDE;
-    void flush() Q_DECL_OVERRIDE;
-    bool decode(const Packet &packet) Q_DECL_OVERRIDE;
-    virtual VideoFrame frame() Q_DECL_OVERRIDE;
+    VideoDecoderId id() const override;
+    QString description() const override;
+    void flush() override;
+    bool decode(const Packet &packet) override;
+    virtual VideoFrame frame() override;
 
     // properties
 
@@ -181,7 +181,7 @@ static AVCodecID mapCodecToFFmpeg(cudaVideoCodec cudaCodec)
     return QTAV_CODEC_ID(NONE);
 }
 
-class VideoDecoderCUDAPrivate Q_DECL_FINAL : public VideoDecoderPrivate
+class VideoDecoderCUDAPrivate final : public VideoDecoderPrivate
                                            , protected cuda_api
 {
 public:
@@ -252,7 +252,7 @@ public:
         releaseCuda();
     }
 
-    bool open() Q_DECL_OVERRIDE;
+    bool open() override;
     bool initCuda();
     bool releaseCuda();
     bool createCUVIDDecoder(cudaVideoCodec cudaCodec, int cw, int ch);

@@ -135,7 +135,7 @@ void AVThread::requestSeek()
         AVThread *self;
     public:
         SeekPTS(AVThread* thread) : self(thread) {}
-        void run() Q_DECL_OVERRIDE {
+        void run() override {
             self->d_func().seek_requested = true;
         }
     };
@@ -149,7 +149,7 @@ void AVThread::scheduleFrameDrop(bool value)
         bool drop;
     public:
         FrameDropTask(AVDecoder *dec, bool value) : decoder(dec), drop(value) {}
-        void run() Q_DECL_OVERRIDE {
+        void run() override {
             if (!decoder)
                 return;
             if (drop)

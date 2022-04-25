@@ -133,7 +133,7 @@ typedef QSharedPointer<InteropResource> InteropResourcePtr;
 
 // avoid inheriting cuda_api because SurfaceInteropCUDA is frequently created and cuda functions are only used in mapToHost()
 
-class SurfaceInteropCUDA Q_DECL_FINAL: public VideoSurfaceInterop
+class SurfaceInteropCUDA final: public VideoSurfaceInterop
 {
 public:
 
@@ -163,8 +163,8 @@ public:
 
     /// GLTextureSurface only supports rgb32
 
-    void* map(SurfaceType type, const VideoFormat& fmt, void* handle, int plane) Q_DECL_OVERRIDE;
-    void unmap(void *handle) Q_DECL_OVERRIDE;
+    void* map(SurfaceType type, const VideoFormat& fmt, void* handle, int plane) override;
+    void unmap(void *handle) override;
 
 private:
 
@@ -181,14 +181,14 @@ private:
 
 #ifndef QT_NO_OPENGL
 
-class HostInteropResource Q_DECL_FINAL: public InteropResource
+class HostInteropResource final: public InteropResource
 {
 public:
 
     HostInteropResource();
     ~HostInteropResource();
-    bool map(int picIndex, const CUVIDPROCPARAMS& param, GLuint tex, int w, int h, int H, int plane) Q_DECL_OVERRIDE;
-    bool unmap(GLuint) Q_DECL_OVERRIDE;
+    bool map(int picIndex, const CUVIDPROCPARAMS& param, GLuint tex, int w, int h, int H, int plane) override;
+    bool unmap(GLuint) override;
 
 private:
 
@@ -215,13 +215,13 @@ class EGL;
  * TODO: use pixel shader to convert L8+A8L8 textures to a NV12 texture, or an rgb texture directly on pbuffer surface
  * The VideoFrame from CUDA decoder is RGB format
  */
-class EGLInteropResource Q_DECL_FINAL: public InteropResource
+class EGLInteropResource final: public InteropResource
 {
 public:
 
     EGLInteropResource();
     ~EGLInteropResource();
-    bool map(int picIndex, const CUVIDPROCPARAMS& param, GLuint tex, int w, int h, int H, int plane) Q_DECL_OVERRIDE;
+    bool map(int picIndex, const CUVIDPROCPARAMS& param, GLuint tex, int w, int h, int H, int plane) override;
 
 private:
 
@@ -250,13 +250,13 @@ private:
 
 #if QTAV_HAVE(CUDA_GL)
 
-class GLInteropResource Q_DECL_FINAL: public InteropResource
+class GLInteropResource final: public InteropResource
 {
 
 public:
 
-    bool map(int picIndex, const CUVIDPROCPARAMS& param, GLuint tex, int w, int h, int H, int plane) Q_DECL_OVERRIDE;
-    bool unmap(GLuint tex)                                                                           Q_DECL_OVERRIDE;
+    bool map(int picIndex, const CUVIDPROCPARAMS& param, GLuint tex, int w, int h, int H, int plane) override;
+    bool unmap(GLuint tex)                                                                           override;
 
 private:
 

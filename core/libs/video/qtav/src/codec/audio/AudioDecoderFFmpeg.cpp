@@ -50,9 +50,9 @@ public:
 
     AudioDecoderFFmpeg();
 
-    AudioDecoderId id()             const Q_DECL_OVERRIDE Q_DECL_FINAL;
+    AudioDecoderId id()             const override final;
 
-    virtual QString description()   const Q_DECL_OVERRIDE Q_DECL_FINAL
+    virtual QString description()   const override final
     {
         const int patch = QTAV_VERSION_PATCH(avcodec_version());
 
@@ -61,19 +61,19 @@ public:
                 .arg(QTAV_VERSION_MAJOR(avcodec_version())).arg(QTAV_VERSION_MINOR(avcodec_version())).arg(patch);
     }
 
-    bool decode(const Packet& packet)     Q_DECL_OVERRIDE Q_DECL_FINAL;
-    AudioFrame frame()                    Q_DECL_OVERRIDE Q_DECL_FINAL;
+    bool decode(const Packet& packet)     override final;
+    AudioFrame frame()                    override final;
 
 Q_SIGNALS:
 
-    void codecNameChanged()               Q_DECL_OVERRIDE Q_DECL_FINAL;
+    void codecNameChanged()               override final;
 };
 
 AudioDecoderId AudioDecoderId_FFmpeg = mkid::id32base36_6<'F','F','m','p','e','g'>::value;
 
 FACTORY_REGISTER(AudioDecoder, FFmpeg, "FFmpeg")
 
-class AudioDecoderFFmpegPrivate Q_DECL_FINAL: public AudioDecoderPrivate
+class AudioDecoderFFmpegPrivate final: public AudioDecoderPrivate
 {
 public:
 

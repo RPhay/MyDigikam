@@ -59,7 +59,7 @@ public:
 protected:
 
     VideoShaderObject(VideoShaderObjectPrivate &d, QObject* parent = 0);
-    bool event(QEvent *event) Q_DECL_OVERRIDE;
+    bool event(QEvent *event) override;
 
 private Q_SLOTS:
 
@@ -67,7 +67,7 @@ private Q_SLOTS:
 
 private:
 
-    void programReady() Q_DECL_OVERRIDE Q_DECL_FINAL;
+    void programReady() override final;
 };
 
 // ---------------------------------------------------------------------------------------------------
@@ -108,9 +108,9 @@ protected:
 
 private:
 
-    const char* userShaderHeader(QOpenGLShader::ShaderType st) const Q_DECL_OVERRIDE;
-    const char* userSample() const Q_DECL_OVERRIDE;
-    const char* userPostProcess() const Q_DECL_OVERRIDE;
+    const char* userShaderHeader(QOpenGLShader::ShaderType st) const override;
+    const char* userSample() const override;
+    const char* userPostProcess() const override;
 };
 
 } // namespace QtAV

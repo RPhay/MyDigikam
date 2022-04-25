@@ -52,28 +52,28 @@ namespace QtAV
 
 static const char kName[] = "DirectSound";
 
-class AudioOutputDSound Q_DECL_FINAL: public AudioOutputBackend
+class AudioOutputDSound final: public AudioOutputBackend
 {
 public:
 
     AudioOutputDSound(QObject *parent = 0);
 
-    QString name()                                           const Q_DECL_OVERRIDE
+    QString name()                                           const override
     {
         return QString::fromLatin1(kName);
     }
 
-    bool open()                                                    Q_DECL_OVERRIDE;
-    bool close()                                                   Q_DECL_OVERRIDE;
-    bool isSupported(AudioFormat::SampleFormat sampleFormat) const Q_DECL_OVERRIDE;
-    BufferControl bufferControl()                            const Q_DECL_OVERRIDE;
-    bool write(const QByteArray& data)                             Q_DECL_OVERRIDE;
-    bool play()                                                    Q_DECL_OVERRIDE;
-    int getOffsetByBytes()                                         Q_DECL_OVERRIDE;
+    bool open()                                                    override;
+    bool close()                                                   override;
+    bool isSupported(AudioFormat::SampleFormat sampleFormat) const override;
+    BufferControl bufferControl()                            const override;
+    bool write(const QByteArray& data)                             override;
+    bool play()                                                    override;
+    int getOffsetByBytes()                                         override;
 
-    bool setVolume(qreal value)                                    Q_DECL_OVERRIDE;
-    qreal getVolume()                                        const Q_DECL_OVERRIDE;
-    void onCallback()                                              Q_DECL_OVERRIDE;
+    bool setVolume(qreal value)                                    override;
+    qreal getVolume()                                        const override;
+    void onCallback()                                              override;
 
 private:
 
@@ -118,7 +118,7 @@ private:
         {
         }
 
-        void run() Q_DECL_OVERRIDE
+        void run() override
         {
             DWORD dwResult = 0;
 

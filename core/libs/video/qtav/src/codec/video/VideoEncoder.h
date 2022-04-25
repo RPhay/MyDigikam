@@ -63,7 +63,7 @@ public:
      */
     static VideoEncoder* create(const char* name = "FFmpeg");
     virtual VideoEncoderId id() const = 0;
-    QString name() const Q_DECL_OVERRIDE; // name from factory
+    QString name() const override; // name from factory
 
     /*!
      * \brief encode

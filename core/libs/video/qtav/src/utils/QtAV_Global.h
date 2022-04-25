@@ -31,7 +31,7 @@
 // Qt includes
 
 #include <QMetaType>
-#include <QByteArray> // QByteArrayLiteral check
+#include <QByteArray>
 #include <qglobal.h>
 
 // Local includes
@@ -170,28 +170,6 @@ enum SurfaceType
 Q_DECLARE_METATYPE(QtAV::MediaStatus)
 Q_DECLARE_METATYPE(QtAV::MediaEndAction)
 
-// TODO: internal use. move to a private header
-
-#if QT_VERSION < QT_VERSION_CHECK(5, 0, 0)
-#   define QStringLiteral(X) QString::fromUtf8(X)
-#endif
-
-#ifndef QByteArrayLiteral
-#   define QByteArrayLiteral(str) QByteArray(str, sizeof(str) - 1)
-#endif
-
-// TODO: internal use. move to a private header
-
 #define QTAV_HAVE(FEATURE) (QTAV_HAVE_##FEATURE+0)
-
-#ifndef Q_DECL_OVERRIDE
-#   define Q_DECL_OVERRIDE
-#endif
-
-#ifndef Q_DECL_FINAL
-#   define Q_DECL_FINAL
-#endif
-
-#define QTAV_DEPRECATED
 
 #endif // QTAV_GLOBAL_H

@@ -72,8 +72,8 @@ public:
 
     XVRenderer(QWidget* parent = 0, Qt::WindowFlags f = Qt::WindowFlags(Qt::Widget));
 
-    virtual VideoRendererId id()                              const Q_DECL_OVERRIDE;
-    virtual bool isSupported(VideoFormat::PixelFormat pixfmt) const Q_DECL_OVERRIDE;
+    virtual VideoRendererId id()                              const override;
+    virtual bool isSupported(VideoFormat::PixelFormat pixfmt) const override;
 
     /* WA_PaintOnScreen: To render outside of Qt's paint system, e.g. If you require
      * native painting primitives, you need to reimplement QWidget::paintEngine() to
@@ -81,33 +81,33 @@ public:
      * If paintEngine != 0, the window will flicker when drawing without QPainter.
      * Make sure that paintEngine returns 0 to avoid flicking.
      */
-    virtual QPaintEngine* paintEngine() const Q_DECL_OVERRIDE;
+    virtual QPaintEngine* paintEngine() const override;
 
     /* http://lists.trolltech.com/qt4-preview-feedback/2005-04/thread00609-0.html
      * true: paintEngine is QPainter. Painting with QPainter support double buffer
      * false: no double buffer, should reimplement paintEngine() to return 0 to avoid flicker
      */
 
-    virtual QWidget* widget() Q_DECL_OVERRIDE { return this; }
+    virtual QWidget* widget() override { return this; }
 
 protected:
 
-    virtual bool receiveFrame(const VideoFrame& frame)  Q_DECL_OVERRIDE;
-    virtual void drawBackground()                       Q_DECL_OVERRIDE;
-    virtual void drawFrame()                            Q_DECL_OVERRIDE;
-    virtual void paintEvent(QPaintEvent *)              Q_DECL_OVERRIDE;
-    virtual void resizeEvent(QResizeEvent *)            Q_DECL_OVERRIDE;
+    virtual bool receiveFrame(const VideoFrame& frame)  override;
+    virtual void drawBackground()                       override;
+    virtual void drawFrame()                            override;
+    virtual void paintEvent(QPaintEvent *)              override;
+    virtual void resizeEvent(QResizeEvent *)            override;
 
     // stay on top will change parent, hide then show(windows)
 
-    virtual void showEvent(QShowEvent *)                Q_DECL_OVERRIDE;
+    virtual void showEvent(QShowEvent *)                override;
 
 private:
 
-    virtual bool onSetBrightness(qreal b)               Q_DECL_OVERRIDE;
-    virtual bool onSetContrast(qreal c)                 Q_DECL_OVERRIDE;
-    virtual bool onSetHue(qreal h)                      Q_DECL_OVERRIDE;
-    virtual bool onSetSaturation(qreal s)               Q_DECL_OVERRIDE;
+    virtual bool onSetBrightness(qreal b)               override;
+    virtual bool onSetContrast(qreal c)                 override;
+    virtual bool onSetHue(qreal h)                      override;
+    virtual bool onSetSaturation(qreal s)               override;
 };
 
 typedef XVRenderer VideoRendererXV;

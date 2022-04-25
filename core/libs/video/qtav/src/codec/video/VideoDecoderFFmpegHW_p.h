@@ -62,7 +62,7 @@ public:
         // ctx is 0 now
     }
 
-    bool enableFrameRef() const Q_DECL_OVERRIDE
+    bool enableFrameRef() const override
     {
         return false; // because of ffmpeg_get_va_buffer2?
     }
@@ -88,12 +88,12 @@ public:
 
     }
 
-    virtual bool open() Q_DECL_OVERRIDE
+    virtual bool open() override
     {
         return prepare();
     }
 
-    virtual void close() Q_DECL_OVERRIDE
+    virtual void close() override
     {
         restore();
     }

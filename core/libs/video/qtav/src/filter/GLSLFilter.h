@@ -54,7 +54,7 @@ public:
 
     GLSLFilter(QObject* parent = 0);
 
-    bool isSupported(VideoFilterContext::Type ct) const  Q_DECL_OVERRIDE
+    bool isSupported(VideoFilterContext::Type ct) const  override
     {
         return ct == VideoFilterContext::OpenGL;
     }
@@ -90,7 +90,7 @@ protected:
      * Output frame holds an RGB texture, which can be processed in the next GPU filter, or rendered by OpenGL renderers.
      * When process() is done, FBO before before process() is bounded.
      */
-    void process(Statistics* statistics, VideoFrame* frame = 0) Q_DECL_OVERRIDE;
+    void process(Statistics* statistics, VideoFrame* frame = 0) override;
 };
 
 } // namespace QtAV

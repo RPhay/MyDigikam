@@ -68,7 +68,7 @@ public:
     EGLSurface surface;
 };
 
-class EGLInteropResource Q_DECL_FINAL: public InteropResource
+class EGLInteropResource final: public InteropResource
 {
 
 public:
@@ -82,12 +82,12 @@ public:
 
     ~EGLInteropResource();
 
-    VideoFormat::PixelFormat format(DXGI_FORMAT) const Q_DECL_OVERRIDE
+    VideoFormat::PixelFormat format(DXGI_FORMAT) const override
     {
         return VideoFormat::Format_RGB32;
     }
 
-    bool map(ComPtr<ID3D11Texture2D> surface, int index, GLuint tex, int w, int h, int) Q_DECL_OVERRIDE;
+    bool map(ComPtr<ID3D11Texture2D> surface, int index, GLuint tex, int w, int h, int) override;
 
 private:
 

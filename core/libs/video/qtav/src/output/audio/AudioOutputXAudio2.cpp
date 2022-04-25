@@ -47,7 +47,7 @@ namespace QtAV
 
 static const char kName[] = "XAudio2";
 
-class AudioOutputXAudio2 Q_DECL_FINAL : public AudioOutputBackend,
+class AudioOutputXAudio2 final : public AudioOutputBackend,
                                         public IXAudio2VoiceCallback
 {
 public:
@@ -55,48 +55,48 @@ public:
     AudioOutputXAudio2(QObject* parent = 0);
     ~AudioOutputXAudio2();
 
-    QString name() const                                                        Q_DECL_OVERRIDE
+    QString name() const                                                        override
     {
         return QString::fromLatin1(kName);
     }
 
-    bool open()                                                                 Q_DECL_OVERRIDE;
-    bool close()                                                                Q_DECL_OVERRIDE;
+    bool open()                                                                 override;
+    bool close()                                                                override;
 
     // TODO: check channel layout. xaudio2 supports channels>2
 
-    bool isSupported(const AudioFormat& format)                           const Q_DECL_OVERRIDE;
-    bool isSupported(AudioFormat::SampleFormat sampleFormat)              const Q_DECL_OVERRIDE;
-    bool isSupported(AudioFormat::ChannelLayout channelLayout)            const Q_DECL_OVERRIDE;
-    BufferControl bufferControl()                                         const Q_DECL_OVERRIDE;
-    void onCallback()                                                           Q_DECL_OVERRIDE;
-    bool write(const QByteArray& data)                                          Q_DECL_OVERRIDE;
-    bool play()                                                                 Q_DECL_OVERRIDE;
+    bool isSupported(const AudioFormat& format)                           const override;
+    bool isSupported(AudioFormat::SampleFormat sampleFormat)              const override;
+    bool isSupported(AudioFormat::ChannelLayout channelLayout)            const override;
+    BufferControl bufferControl()                                         const override;
+    void onCallback()                                                           override;
+    bool write(const QByteArray& data)                                          override;
+    bool play()                                                                 override;
 
-    bool setVolume(qreal value)                                                 Q_DECL_OVERRIDE;
-    qreal getVolume()                                                     const Q_DECL_OVERRIDE;
+    bool setVolume(qreal value)                                                 override;
+    qreal getVolume()                                                     const override;
 
 public:
 
-    STDMETHOD_(void, OnVoiceProcessingPassStart)(THIS_ UINT32 bytesRequired)    Q_DECL_OVERRIDE
+    STDMETHOD_(void, OnVoiceProcessingPassStart)(THIS_ UINT32 bytesRequired)    override
     {
         Q_UNUSED(bytesRequired);
     }
 
-    STDMETHOD_(void, OnVoiceProcessingPassEnd)(THIS)                            Q_DECL_OVERRIDE
+    STDMETHOD_(void, OnVoiceProcessingPassEnd)(THIS)                            override
     {
     }
 
-    STDMETHOD_(void, OnStreamEnd)(THIS)                                         Q_DECL_OVERRIDE
+    STDMETHOD_(void, OnStreamEnd)(THIS)                                         override
     {
     }
 
-    STDMETHOD_(void, OnBufferStart)(THIS_ void* bufferContext)                  Q_DECL_OVERRIDE
+    STDMETHOD_(void, OnBufferStart)(THIS_ void* bufferContext)                  override
     {
         Q_UNUSED(bufferContext);
     }
 
-    STDMETHOD_(void, OnBufferEnd)(THIS_ void* bufferContext)                    Q_DECL_OVERRIDE
+    STDMETHOD_(void, OnBufferEnd)(THIS_ void* bufferContext)                    override
     {
         AudioOutputXAudio2 *ao = reinterpret_cast<AudioOutputXAudio2*>(bufferContext);
 
@@ -106,12 +106,12 @@ public:
         }
     }
 
-    STDMETHOD_(void, OnLoopEnd)(THIS_ void* bufferContext)                      Q_DECL_OVERRIDE
+    STDMETHOD_(void, OnLoopEnd)(THIS_ void* bufferContext)                      override
     {
         Q_UNUSED(bufferContext);
     }
 
-    STDMETHOD_(void, OnVoiceError)(THIS_ void* bufferContext, HRESULT error)    Q_DECL_OVERRIDE
+    STDMETHOD_(void, OnVoiceError)(THIS_ void* bufferContext, HRESULT error)    override
     {
         Q_UNUSED(bufferContext);
 

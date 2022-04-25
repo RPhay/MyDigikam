@@ -99,9 +99,9 @@ public:
 
     VideoDecoderDXVA();
 
-    VideoDecoderId id()   const Q_DECL_OVERRIDE;
-    QString description() const Q_DECL_OVERRIDE;
-    VideoFrame frame()          Q_DECL_OVERRIDE;
+    VideoDecoderId id()   const override;
+    QString description() const override;
+    VideoFrame frame()          override;
 };
 
 extern VideoDecoderId VideoDecoderId_DXVA;
@@ -121,7 +121,7 @@ struct d3d9_surface_t : public va_surface_t
         SafeRelease(&d3d);
     }
 
-    void setSurface(IUnknown* s) Q_DECL_OVERRIDE
+    void setSurface(IUnknown* s) override
     {
         d3d = (IDirect3DSurface9*)s;
     }
@@ -135,7 +135,7 @@ private:
 
 // https://technet.microsoft.com/zh-cn/aa965266(v=vs.98).aspx
 
-class VideoDecoderDXVAPrivate Q_DECL_FINAL : public VideoDecoderD3DPrivate
+class VideoDecoderDXVAPrivate final : public VideoDecoderD3DPrivate
 {
 public:
 
@@ -167,7 +167,7 @@ public:
         unloadDll();
     }
 
-    AVPixelFormat vaPixelFormat()                 const Q_DECL_OVERRIDE
+    AVPixelFormat vaPixelFormat()                 const override
     {
         return QTAV_PIX_FMT_C(DXVA2_VLD);
     }
@@ -176,20 +176,20 @@ private:
 
     bool loadDll();
     bool unloadDll();
-    bool createDevice()                                 Q_DECL_OVERRIDE;
+    bool createDevice()                                 override;
 
     // d3d device and it's resources, device manager, video device and decoder service
 
-    void destroyDevice()                                Q_DECL_OVERRIDE;
-    QVector<GUID> getSupportedCodecs()            const Q_DECL_OVERRIDE;
-    bool checkDevice()                                  Q_DECL_OVERRIDE;
+    void destroyDevice()                                override;
+    QVector<GUID> getSupportedCodecs()            const override;
+    bool checkDevice()                                  override;
     bool createDecoder(AVCodecID codec_id,
                        int w, int h,
-                       QVector<va_surface_t*>& surf)    Q_DECL_OVERRIDE;
-    void destroyDecoder()                               Q_DECL_OVERRIDE;
-    bool setupSurfaceInterop()                          Q_DECL_OVERRIDE;
-    void* setupAVVAContext()                            Q_DECL_OVERRIDE;
-    int fourccFor(const GUID *guid) const               Q_DECL_OVERRIDE;
+                       QVector<va_surface_t*>& surf)    override;
+    void destroyDecoder()                               override;
+    bool setupSurfaceInterop()                          override;
+    void* setupAVVAContext()                            override;
+    int fourccFor(const GUID *guid) const               override;
 
     /* DLL */
 

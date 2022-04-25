@@ -45,14 +45,14 @@ namespace QtAV
 namespace d3d11
 {
 
-class GLInteropResource Q_DECL_FINAL : public InteropResource
+class GLInteropResource final : public InteropResource
 {
 public:
 
     GLInteropResource();
     ~GLInteropResource();
 
-    VideoFormat::PixelFormat format(DXGI_FORMAT dxfmt) const Q_DECL_OVERRIDE
+    VideoFormat::PixelFormat format(DXGI_FORMAT dxfmt) const override
     {
         if (dxfmt == DXGI_FORMAT_NV12)
             return VideoFormat::Format_NV12;
@@ -66,8 +66,8 @@ public:
         return VideoFormat::Format_Invalid;
     }
 
-    bool map(ComPtr<ID3D11Texture2D> surface, int index, GLuint tex, int w, int h, int plane) Q_DECL_OVERRIDE;
-    bool unmap(GLuint tex) Q_DECL_OVERRIDE;
+    bool map(ComPtr<ID3D11Texture2D> surface, int index, GLuint tex, int w, int h, int plane) override;
+    bool unmap(GLuint tex) override;
 
 private:
 

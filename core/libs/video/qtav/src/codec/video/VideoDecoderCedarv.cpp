@@ -68,12 +68,12 @@ public:
         NV12
     };
     VideoDecoderCedarv();
-    VideoDecoderId id() const Q_DECL_OVERRIDE Q_DECL_FINAL;
-    QString description() const Q_DECL_OVERRIDE Q_DECL_FINAL{
+    VideoDecoderId id() const override final;
+    QString description() const override final{
         return QStringLiteral("Allwinner A10 CedarX video hardware acceleration");
     }
-    bool decode(const Packet& packet) Q_DECL_OVERRIDE Q_DECL_FINAL;
-    VideoFrame frame() Q_DECL_OVERRIDE Q_DECL_FINAL;
+    bool decode(const Packet& packet) override final;
+    VideoFrame frame() override final;
 
     //properties
     void setNeon(bool value);
@@ -270,7 +270,7 @@ enum AVPixelFormat pixel_format_from_cedarv(cedarv_pixel_format_e cpf)
     return QTAV_PIX_FMT_C(NONE);
 }
 
-class VideoDecoderCedarvPrivate Q_DECL_FINAL: public VideoDecoderPrivate
+class VideoDecoderCedarvPrivate final: public VideoDecoderPrivate
 {
 public:
     VideoDecoderCedarvPrivate()
@@ -289,7 +289,7 @@ public:
         //libcedarv_exit(cedarv);
         cedarv = NULL;
     }
-    bool open()  Q_DECL_OVERRIDE;
+    bool open()  override;
 
     CEDARV_DECODER *cedarv;
     cedarv_picture_t cedarPicture;

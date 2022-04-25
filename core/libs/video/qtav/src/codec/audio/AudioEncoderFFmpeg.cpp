@@ -43,22 +43,22 @@ namespace QtAV
 
 class AudioEncoderFFmpegPrivate;
 
-class AudioEncoderFFmpeg Q_DECL_FINAL: public AudioEncoder
+class AudioEncoderFFmpeg final: public AudioEncoder
 {
     DPTR_DECLARE_PRIVATE(AudioEncoderFFmpeg)
 
 public:
 
     AudioEncoderFFmpeg();
-    AudioEncoderId id() const                           Q_DECL_OVERRIDE;
-    bool encode(const AudioFrame &frame = AudioFrame()) Q_DECL_OVERRIDE;
+    AudioEncoderId id() const                           override;
+    bool encode(const AudioFrame &frame = AudioFrame()) override;
 };
 
 static const AudioEncoderId AudioEncoderId_FFmpeg = mkid::id32base36_6<'F', 'F', 'm', 'p', 'e', 'g'>::value;
 
 FACTORY_REGISTER(AudioEncoder, FFmpeg, "FFmpeg")
 
-class AudioEncoderFFmpegPrivate Q_DECL_FINAL: public AudioEncoderPrivate
+class AudioEncoderFFmpegPrivate final: public AudioEncoderPrivate
 {
 public:
 
@@ -72,8 +72,8 @@ public:
         avctx = avcodec_alloc_context3(NULL);
     }
 
-    bool open()  Q_DECL_OVERRIDE;
-    bool close() Q_DECL_OVERRIDE;
+    bool open()  override;
+    bool close() override;
 
     QByteArray buffer;
 };

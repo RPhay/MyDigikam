@@ -42,8 +42,8 @@ class VideoDecoderFFmpegBase : public VideoDecoder
 
 public:
 
-    virtual bool decode(const Packet& packet) Q_DECL_OVERRIDE;
-    virtual VideoFrame frame() Q_DECL_OVERRIDE;
+    virtual bool decode(const Packet& packet) override;
+    virtual VideoFrame frame() override;
 
 protected:
 

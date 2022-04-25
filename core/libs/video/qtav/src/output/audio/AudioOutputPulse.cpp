@@ -51,31 +51,31 @@ namespace QtAV
 
 static const char kName[] = "Pulse";
 
-class AudioOutputPulse Q_DECL_FINAL : public AudioOutputBackend
+class AudioOutputPulse final : public AudioOutputBackend
 {
 public:
 
     AudioOutputPulse(QObject *parent = 0);
 
-    QString name()                const Q_DECL_FINAL
+    QString name()                const final
     {
         return QString::fromLatin1(kName);
     }
 
     bool isSampleFormatSupported(AudioFormat::SampleFormat sampleFormat) const;
-    bool open()                         Q_DECL_FINAL;
-    bool close()                        Q_DECL_FINAL;
+    bool open()                         final;
+    bool close()                        final;
 
 protected:
 
-    bool write(const QByteArray& data)  Q_DECL_FINAL;
-    bool play()                         Q_DECL_FINAL;
-    BufferControl bufferControl() const Q_DECL_FINAL;
-    int getWritableBytes()              Q_DECL_FINAL;
+    bool write(const QByteArray& data)  final;
+    bool play()                         final;
+    BufferControl bufferControl() const final;
+    int getWritableBytes()              final;
 
-    bool setVolume(qreal value)         Q_DECL_FINAL;
-    qreal getVolume()             const Q_DECL_FINAL;
-    bool setMute(bool value = true)     Q_DECL_FINAL;
+    bool setVolume(qreal value)         final;
+    qreal getVolume()             const final;
+    bool setMute(bool value = true)     final;
 
 private:
 

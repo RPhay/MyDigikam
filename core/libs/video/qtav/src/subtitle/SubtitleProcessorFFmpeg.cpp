@@ -39,25 +39,25 @@
 namespace QtAV
 {
 
-class SubtitleProcessorFFmpeg Q_DECL_FINAL: public SubtitleProcessor
+class SubtitleProcessorFFmpeg final: public SubtitleProcessor
 {
 public:
 
     SubtitleProcessorFFmpeg();
     ~SubtitleProcessorFFmpeg();
 
-    SubtitleProcessorId id() const Q_DECL_OVERRIDE;
-    QString name() const Q_DECL_OVERRIDE;
-    QStringList supportedTypes() const Q_DECL_OVERRIDE;
-    bool process(QIODevice* dev) Q_DECL_OVERRIDE;
+    SubtitleProcessorId id() const override;
+    QString name() const override;
+    QStringList supportedTypes() const override;
+    bool process(QIODevice* dev) override;
 
     // supportsFromFile must be true
 
-    bool process(const QString& path) Q_DECL_OVERRIDE;
-    QList<SubtitleFrame> frames() const Q_DECL_OVERRIDE;
-    bool processHeader(const QByteArray& codec, const QByteArray& data) Q_DECL_OVERRIDE;
-    SubtitleFrame processLine(const QByteArray& data, qreal pts = -1, qreal duration = 0) Q_DECL_OVERRIDE;
-    QString getText(qreal pts) const Q_DECL_OVERRIDE;
+    bool process(const QString& path) override;
+    QList<SubtitleFrame> frames() const override;
+    bool processHeader(const QByteArray& codec, const QByteArray& data) override;
+    SubtitleFrame processLine(const QByteArray& data, qreal pts = -1, qreal duration = 0) override;
+    QString getText(qreal pts) const override;
 
 private:
 

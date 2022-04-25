@@ -327,7 +327,7 @@ void AVPlayer::setPriority(const QVector<VideoDecoderId> &ids)
         AVPlayer* player;
     public:
         ChangeDecoderTask(AVPlayer *p) : player(p) {}
-        void run() Q_DECL_OVERRIDE {
+        void run() override {
             player->d->tryApplyDecoderPriority(player);
         }
     };
@@ -338,7 +338,7 @@ void AVPlayer::setPriority(const QVector<VideoDecoderId> &ids)
         AVPlayer *player;
     public:
         NewDecoderTask(AVPlayer *p) : player(p) {}
-        void run() Q_DECL_OVERRIDE {
+        void run() override {
             VideoDecoder *vd = NULL;
             AVCodecContext *avctx = player->d->demuxer.videoCodecContext();
             foreach(VideoDecoderId vid, player->d->vc_ids) {
@@ -369,7 +369,7 @@ void AVPlayer::setPriority(const QVector<VideoDecoderId> &ids)
                 VideoDecoder *dec;
             public:
                 ApplyNewDecoderTask(AVPlayer *p, VideoDecoder *d) : player(p), dec(d) {}
-                void run() Q_DECL_OVERRIDE {
+                void run() override {
                     qint64 pos = player->position();
                     VideoThread *vthread = player->d->vthread;
                     vthread->packetQueue()->clear();

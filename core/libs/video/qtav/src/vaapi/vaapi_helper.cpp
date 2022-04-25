@@ -291,7 +291,7 @@ protected:
     bool     m_selfCreated;
 };
 
-class NativeDisplayX11 Q_DECL_FINAL: public NativeDisplayBase,
+class NativeDisplayX11 final: public NativeDisplayBase,
                                      protected VAAPI_X11,
                                      protected X11_API
 {
@@ -307,7 +307,7 @@ public:
             XCloseDisplay((Display*)(m_handle));
     }
 
-    bool initialize (const NativeDisplay& display) Q_DECL_OVERRIDE
+    bool initialize (const NativeDisplay& display) override
     {
         assert(display.type == NativeDisplay::X11 || display.type == NativeDisplay::Auto);
 
@@ -328,7 +328,7 @@ public:
         return !!m_handle;
     }
 
-    VADisplay getVADisplay() Q_DECL_OVERRIDE
+    VADisplay getVADisplay() override
     {
         if (!m_handle)
             return 0;
@@ -339,7 +339,7 @@ public:
         return vaGetDisplay((Display*)m_handle);
     }
 
-    NativeDisplay::Type type() const Q_DECL_OVERRIDE
+    NativeDisplay::Type type() const override
     {
         return NativeDisplay::X11;
     }
@@ -347,7 +347,7 @@ public:
 
 #ifndef QT_NO_OPENGL
 
-class NativeDisplayGLX Q_DECL_FINAL: public NativeDisplayBase,
+class NativeDisplayGLX final: public NativeDisplayBase,
                                      protected VAAPI_GLX,
                                      protected X11_API
 {
@@ -363,7 +363,7 @@ public:
             XCloseDisplay((Display*)(m_handle));
     }
 
-    bool initialize (const NativeDisplay& display) Q_DECL_OVERRIDE
+    bool initialize (const NativeDisplay& display) override
     {
         assert(display.type == NativeDisplay::GLX || display.type == NativeDisplay::Auto);
 
@@ -384,7 +384,7 @@ public:
         return !!m_handle;
     }
 
-    VADisplay getVADisplay() Q_DECL_OVERRIDE
+    VADisplay getVADisplay() override
     {
         if (!m_handle)
             return 0;
@@ -395,7 +395,7 @@ public:
         return vaGetDisplayGLX((Display*)m_handle);
     }
 
-    NativeDisplay::Type type() const Q_DECL_OVERRIDE
+    NativeDisplay::Type type() const override
     {
         return NativeDisplay::GLX;
     }
@@ -403,7 +403,7 @@ public:
 
 #endif // QT_NO_OPENGL
 
-class NativeDisplayDrm Q_DECL_FINAL: public NativeDisplayBase,
+class NativeDisplayDrm final: public NativeDisplayBase,
                                      protected VAAPI_DRM
 {
 public:
@@ -419,7 +419,7 @@ public:
             ::close(m_handle);
     }
 
-    bool initialize(const NativeDisplay& display) Q_DECL_OVERRIDE
+    bool initialize(const NativeDisplay& display) override
     {
         assert(display.type == NativeDisplay::DRM || display.type == NativeDisplay::Auto);
 
@@ -454,7 +454,7 @@ public:
         return m_handle != -1;
     }
 
-    VADisplay getVADisplay() Q_DECL_OVERRIDE
+    VADisplay getVADisplay() override
     {
         if (m_handle == -1)
             return 0;
@@ -465,13 +465,13 @@ public:
         return vaGetDisplayDRM(m_handle);
     }
 
-    NativeDisplay::Type type() const Q_DECL_OVERRIDE
+    NativeDisplay::Type type() const override
     {
         return NativeDisplay::DRM;
     }
 };
 
-class NativeDisplayVADisplay Q_DECL_FINAL: public NativeDisplayBase
+class NativeDisplayVADisplay final: public NativeDisplayBase
 {
 public:
 
@@ -480,19 +480,19 @@ public:
     {
     }
 
-    bool initialize (const NativeDisplay& display) Q_DECL_OVERRIDE
+    bool initialize (const NativeDisplay& display) override
     {
         assert(display.type == NativeDisplay::VA);
 
         return acceptValidExternalHandle(display);
     }
 
-    VADisplay getVADisplay() Q_DECL_OVERRIDE
+    VADisplay getVADisplay() override
     {
         return (VADisplay)m_handle;
     }
 
-    NativeDisplay::Type type() const Q_DECL_OVERRIDE
+    NativeDisplay::Type type() const override
     {
         return NativeDisplay::VA;
     }

@@ -126,7 +126,7 @@ private:
 
 typedef QSharedPointer<InteropResource> InteropResourcePtr;
 
-class SurfaceInteropCV Q_DECL_FINAL : public VideoSurfaceInterop
+class SurfaceInteropCV final : public VideoSurfaceInterop
 {
 public:
 
@@ -142,11 +142,11 @@ public:
     void setSurface(CVPixelBufferRef buf, int w, int h);
     void* map(SurfaceType type,
               const VideoFormat& fmt,
-              void* handle, int plane)                              Q_DECL_OVERRIDE;
-    void unmap(void *handle)                                        Q_DECL_OVERRIDE;
+              void* handle, int plane)                              override;
+    void unmap(void *handle)                                        override;
     virtual void* createHandle(void* handle, SurfaceType type,
                                const VideoFormat &fmt, int plane,
-                               int planeWidth, int planeHeight)     Q_DECL_OVERRIDE;
+                               int planeWidth, int planeHeight)     override;
 
 protected:
 

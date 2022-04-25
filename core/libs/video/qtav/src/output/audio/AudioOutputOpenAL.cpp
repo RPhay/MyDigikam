@@ -57,32 +57,32 @@ namespace QtAV
 
 static const char kName[] = "OpenAL";
 
-class AudioOutputOpenAL Q_DECL_FINAL : public AudioOutputBackend
+class AudioOutputOpenAL final : public AudioOutputBackend
 {
 public:
 
     AudioOutputOpenAL(QObject* parent = 0);
 
-    QString name() const Q_DECL_FINAL
+    QString name() const final
     {
         return QLatin1String(kName);
     }
 
     QString deviceName() const;
-    bool open() Q_DECL_FINAL;
-    bool close() Q_DECL_FINAL;
-    bool isSupported(const AudioFormat& format) const Q_DECL_FINAL;
-    bool isSupported(AudioFormat::SampleFormat sampleFormat) const Q_DECL_FINAL;
-    bool isSupported(AudioFormat::ChannelLayout channelLayout) const Q_DECL_FINAL;
+    bool open() final;
+    bool close() final;
+    bool isSupported(const AudioFormat& format) const final;
+    bool isSupported(AudioFormat::SampleFormat sampleFormat) const final;
+    bool isSupported(AudioFormat::ChannelLayout channelLayout) const final;
 
 protected:
 
-    BufferControl bufferControl() const Q_DECL_FINAL;
-    bool write(const QByteArray& data) Q_DECL_FINAL;
-    bool play() Q_DECL_FINAL;
-    int getPlayedCount() Q_DECL_FINAL;
-    bool setVolume(qreal value) Q_DECL_FINAL;
-    qreal getVolume() const Q_DECL_FINAL;
+    BufferControl bufferControl() const final;
+    bool write(const QByteArray& data) final;
+    bool play() final;
+    int getPlayedCount() final;
+    bool setVolume(qreal value) final;
+    qreal getVolume() const final;
     int getQueued();
 
     bool openDevice()

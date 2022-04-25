@@ -109,7 +109,7 @@ protected Q_SLOTS:
 
 protected:
 
-    virtual void process(Statistics* statistics, AudioFrame* frame = 0) Q_DECL_OVERRIDE;
+    virtual void process(Statistics* statistics, AudioFrame* frame = 0) override;
 };
 
 // --------------------------------------------------------------------
@@ -132,7 +132,7 @@ public:
      */
     void setAsync(bool value = true);
     bool isAsync() const;
-    bool isSupported(VideoFilterContext::Type t) const Q_DECL_OVERRIDE
+    bool isSupported(VideoFilterContext::Type t) const override
     {
         return t == VideoFilterContext::None;
     }
@@ -193,7 +193,7 @@ protected Q_SLOTS:
 
 protected:
 
-    virtual void process(Statistics* statistics, VideoFrame* frame = 0) Q_DECL_OVERRIDE;
+    virtual void process(Statistics* statistics, VideoFrame* frame = 0) override;
 };
 
 } // namespace QtAV

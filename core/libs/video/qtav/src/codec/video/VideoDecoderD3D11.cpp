@@ -109,9 +109,9 @@ class VideoDecoderD3D11 : public VideoDecoderD3D
 public:
 
     VideoDecoderD3D11();
-    VideoDecoderId id() const Q_DECL_OVERRIDE;
-    QString description() const Q_DECL_OVERRIDE;
-    VideoFrame frame() Q_DECL_OVERRIDE;
+    VideoDecoderId id() const override;
+    QString description() const override;
+    VideoFrame frame() override;
 };
 
 extern VideoDecoderId VideoDecoderId_D3D11;
@@ -155,7 +155,7 @@ private:
     ComPtr<ID3D11VideoDecoderOutputView> view;
 };
 
-class VideoDecoderD3D11Private Q_DECL_FINAL : public VideoDecoderD3DPrivate
+class VideoDecoderD3D11Private final : public VideoDecoderD3DPrivate
 {
 public:
 
@@ -189,18 +189,18 @@ public:
 
     }
 
-    AVPixelFormat vaPixelFormat() const Q_DECL_OVERRIDE { return QTAV_PIX_FMT_C(D3D11VA_VLD);}
+    AVPixelFormat vaPixelFormat() const override { return QTAV_PIX_FMT_C(D3D11VA_VLD);}
 
 private:
 
-    bool createDevice() Q_DECL_OVERRIDE;
-    void destroyDevice() Q_DECL_OVERRIDE; // d3d device and it's resources
-    bool createDecoder(AVCodecID codec_id, int w, int h, QVector<va_surface_t*>& surf) Q_DECL_OVERRIDE;
-    void destroyDecoder() Q_DECL_OVERRIDE;
-    bool setupSurfaceInterop() Q_DECL_OVERRIDE;
-    void* setupAVVAContext() Q_DECL_OVERRIDE;
-    QVector<GUID> getSupportedCodecs() const Q_DECL_OVERRIDE;
-    int fourccFor(const GUID *guid) const Q_DECL_OVERRIDE;
+    bool createDevice() override;
+    void destroyDevice() override; // d3d device and it's resources
+    bool createDecoder(AVCodecID codec_id, int w, int h, QVector<va_surface_t*>& surf) override;
+    void destroyDecoder() override;
+    bool setupSurfaceInterop() override;
+    void* setupAVVAContext() override;
+    QVector<GUID> getSupportedCodecs() const override;
+    int fourccFor(const GUID *guid) const override;
 
     HMODULE dll;
     ComPtr<ID3D11Device> d3ddev;

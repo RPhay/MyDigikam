@@ -76,16 +76,16 @@ class QTAV_WIDGETS_EXPORT GraphicsItemRenderer : public GraphicsWidget,
 public:
 
     GraphicsItemRenderer(QGraphicsItem* parent = 0);
-    VideoRendererId id()                              const Q_DECL_OVERRIDE;
-    bool isSupported(VideoFormat::PixelFormat pixfmt) const Q_DECL_OVERRIDE;
+    VideoRendererId id()                              const override;
+    bool isSupported(VideoFormat::PixelFormat pixfmt) const override;
 
-    QRectF boundingRect()                             const Q_DECL_OVERRIDE;
+    QRectF boundingRect()                             const override;
 
     void paint(QPainter* painter,
                 const QStyleOptionGraphicsItem *option,
-                QWidget* widget)                            Q_DECL_OVERRIDE;
+                QWidget* widget)                            override;
 
-    QGraphicsItem* graphicsItem()                           Q_DECL_OVERRIDE
+    QGraphicsItem* graphicsItem()                           override
     {
         return this;
     }
@@ -98,56 +98,56 @@ public:
     bool isOpenGL() const;
     void setOpenGL(bool o);
 
-    OpenGLVideo* opengl() const                             Q_DECL_OVERRIDE;
+    OpenGLVideo* opengl() const                             override;
 
 Q_SIGNALS:
 
-    void sourceAspectRatioChanged(qreal value)              Q_DECL_OVERRIDE Q_DECL_FINAL;
-    void regionOfInterestChanged()                          Q_DECL_OVERRIDE;
-    void outAspectRatioChanged()                            Q_DECL_OVERRIDE;
-    void outAspectRatioModeChanged()                        Q_DECL_OVERRIDE;
-    void brightnessChanged(qreal value)                     Q_DECL_OVERRIDE;
-    void contrastChanged(qreal)                             Q_DECL_OVERRIDE;
-    void hueChanged(qreal)                                  Q_DECL_OVERRIDE;
-    void saturationChanged(qreal)                           Q_DECL_OVERRIDE;
-    void backgroundColorChanged()                           Q_DECL_OVERRIDE;
-    void orientationChanged()                               Q_DECL_OVERRIDE;
-    void videoRectChanged()                                 Q_DECL_OVERRIDE;
-    void videoFrameSizeChanged()                            Q_DECL_OVERRIDE;
+    void sourceAspectRatioChanged(qreal value)              override final;
+    void regionOfInterestChanged()                          override;
+    void outAspectRatioChanged()                            override;
+    void outAspectRatioModeChanged()                        override;
+    void brightnessChanged(qreal value)                     override;
+    void contrastChanged(qreal)                             override;
+    void hueChanged(qreal)                                  override;
+    void saturationChanged(qreal)                           override;
+    void backgroundColorChanged()                           override;
+    void orientationChanged()                               override;
+    void videoRectChanged()                                 override;
+    void videoFrameSizeChanged()                            override;
     void openGLChanged();
 
 protected:
 
     GraphicsItemRenderer(GraphicsItemRendererPrivate& d, QGraphicsItem* parent);
 
-    bool receiveFrame(const VideoFrame& frame)              Q_DECL_OVERRIDE;
-    void drawBackground()                                   Q_DECL_OVERRIDE;
+    bool receiveFrame(const VideoFrame& frame)              override;
+    void drawBackground()                                   override;
 
     // draw the current frame using the current paint engine. called by paintEvent()
 
-    void drawFrame()                                        Q_DECL_OVERRIDE;
+    void drawFrame()                                        override;
 
 #if CONFIG_GRAPHICSWIDGET
 
-    bool event(QEvent* event)                               Q_DECL_OVERRIDE;
+    bool event(QEvent* event)                               override;
 
 #else
 
-    bool event(QEvent* event)                               Q_DECL_OVERRIDE;
+    bool event(QEvent* event)                               override;
 
-    //bool sceneEvent(QEvent *event) Q_DECL_OVERRIDE;
+    //bool sceneEvent(QEvent *event) override;
 
 #endif
 
 private:
 
-    void onSetOutAspectRatioMode(OutAspectRatioMode mode)   Q_DECL_OVERRIDE;
-    void onSetOutAspectRatio(qreal ratio)                   Q_DECL_OVERRIDE;
-    bool onSetOrientation(int value)                        Q_DECL_OVERRIDE;
-    bool onSetBrightness(qreal b)                           Q_DECL_OVERRIDE;
-    bool onSetContrast(qreal c)                             Q_DECL_OVERRIDE;
-    bool onSetHue(qreal h)                                  Q_DECL_OVERRIDE;
-    bool onSetSaturation(qreal s)                           Q_DECL_OVERRIDE;
+    void onSetOutAspectRatioMode(OutAspectRatioMode mode)   override;
+    void onSetOutAspectRatio(qreal ratio)                   override;
+    bool onSetOrientation(int value)                        override;
+    bool onSetBrightness(qreal b)                           override;
+    bool onSetContrast(qreal c)                             override;
+    bool onSetHue(qreal h)                                  override;
+    bool onSetSaturation(qreal s)                           override;
 };
 
 typedef GraphicsItemRenderer VideoRendererGraphicsItem;

@@ -91,7 +91,7 @@ typedef QSharedPointer<InteropResource> InteropResourcePtr;
 
 // ---------------------------------------------------------------------------
 
-class SurfaceInterop Q_DECL_FINAL: public VideoSurfaceInterop
+class SurfaceInterop final: public VideoSurfaceInterop
 {
 public:
 
@@ -113,8 +113,8 @@ public:
 
     /// GLTextureSurface only supports rgb32
 
-    void* map(SurfaceType type, const VideoFormat& fmt, void* handle, int plane) Q_DECL_OVERRIDE;
-    void  unmap(void *handle)                                                    Q_DECL_OVERRIDE;
+    void* map(SurfaceType type, const VideoFormat& fmt, void* handle, int plane) override;
+    void  unmap(void *handle)                                                    override;
 
 protected:
 

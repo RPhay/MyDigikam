@@ -188,9 +188,9 @@ public:
     void setGeometryRect(const QRectF& r);
     void setTextureRect(const QRectF& tr, int texIndex = 0);
 
-    int stride() const Q_DECL_OVERRIDE { return 2*sizeof(float)*(textureCount()+1); }
+    int stride() const override { return 2*sizeof(float)*(textureCount()+1); }
 
-    const QVector<Attribute>& attributes() const Q_DECL_OVERRIDE;
+    const QVector<Attribute>& attributes() const override;
     virtual void create();
 
 private:
@@ -218,9 +218,9 @@ public:
     void setResolution(int w, int h); // >= 2x2
     void setRadius(float value);
     float radius() const;
-    void create() Q_DECL_OVERRIDE;
+    void create() override;
 
-    int stride() const Q_DECL_OVERRIDE { return 3*sizeof(float)+2*sizeof(float)*textureCount(); }
+    int stride() const override { return 3*sizeof(float)+2*sizeof(float)*textureCount(); }
 
 protected:
 

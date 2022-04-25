@@ -73,7 +73,7 @@ namespace QtAV
 
 class VideoDecoderVideoToolboxPrivate;
 
-// qt4 moc can not correctly process Q_DECL_FINAL here
+// qt4 moc can not correctly process final here
 
 class VideoDecoderVideoToolbox : public VideoDecoderFFmpegHW
 {
@@ -110,9 +110,9 @@ public:
 
     VideoDecoderVideoToolbox();
 
-    VideoDecoderId id()   const Q_DECL_OVERRIDE;
-    QString description() const Q_DECL_OVERRIDE;
-    VideoFrame frame()          Q_DECL_OVERRIDE;
+    VideoDecoderId id()   const override;
+    QString description() const override;
+    VideoFrame frame()          override;
 
     // QObject properties
 
@@ -132,7 +132,7 @@ extern VideoDecoderId VideoDecoderId_VideoToolbox;
 
 FACTORY_REGISTER(VideoDecoder, VideoToolbox, "VideoToolbox")
 
-class VideoDecoderVideoToolboxPrivate Q_DECL_FINAL : public VideoDecoderFFmpegHWPrivate
+class VideoDecoderVideoToolboxPrivate final : public VideoDecoderFFmpegHWPrivate
 {
 public:
 
@@ -152,13 +152,13 @@ public:
     {
     }
 
-    bool open()                                     Q_DECL_OVERRIDE;
-    void close() Q_DECL_OVERRIDE;
+    bool open()                                     override;
+    void close() override;
 
-    void* setup(AVCodecContext *avctx)              Q_DECL_OVERRIDE;
-    bool getBuffer(void **opaque, uint8_t **data)   Q_DECL_OVERRIDE;
-    void releaseBuffer(void *opaque, uint8_t *data) Q_DECL_OVERRIDE;
-    AVPixelFormat vaPixelFormat() const             Q_DECL_OVERRIDE
+    void* setup(AVCodecContext *avctx)              override;
+    bool getBuffer(void **opaque, uint8_t **data)   override;
+    void releaseBuffer(void *opaque, uint8_t *data) override;
+    AVPixelFormat vaPixelFormat() const             override
     {
         return AV_PIX_FMT_VIDEOTOOLBOX;
     }

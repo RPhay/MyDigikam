@@ -69,9 +69,9 @@ private:
 
     /// default implementions
 
-    const char* userShaderHeader(QOpenGLShader::ShaderType t) const Q_DECL_OVERRIDE;
-    const char* userSample() const Q_DECL_OVERRIDE;
-    bool setUserUniformValues() Q_DECL_OVERRIDE;
+    const char* userShaderHeader(QOpenGLShader::ShaderType t) const override;
+    const char* userSample() const override;
+    bool setUserUniformValues() override;
 
 protected:
 

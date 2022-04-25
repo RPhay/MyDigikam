@@ -60,20 +60,20 @@ public:
 
     virtual ~OpenGLRendererBase();
 
-    bool isSupported(VideoFormat::PixelFormat pixfmt) const Q_DECL_OVERRIDE;
-    OpenGLVideo* opengl() const                             Q_DECL_OVERRIDE;
+    bool isSupported(VideoFormat::PixelFormat pixfmt) const override;
+    OpenGLVideo* opengl() const                             override;
 
 protected:
 
-    virtual bool receiveFrame(const VideoFrame& frame)      Q_DECL_OVERRIDE;
+    virtual bool receiveFrame(const VideoFrame& frame)      override;
 
     // called in paintEvent before drawFrame() when required
 
-    virtual void drawBackground()                           Q_DECL_OVERRIDE;
+    virtual void drawBackground()                           override;
 
     // draw the current frame using the current paint engine. called by paintEvent()
 
-    virtual void drawFrame()                                Q_DECL_OVERRIDE;
+    virtual void drawFrame()                                override;
     void onInitializeGL();
     void onPaintGL();
     void onResizeGL(int w, int h);
@@ -82,13 +82,13 @@ protected:
 
 private:
 
-    void onSetOutAspectRatioMode(OutAspectRatioMode mode)   Q_DECL_OVERRIDE;
-    void onSetOutAspectRatio(qreal ratio)                   Q_DECL_OVERRIDE;
-    bool onSetOrientation(int value)                        Q_DECL_OVERRIDE;
-    bool onSetBrightness(qreal b)                           Q_DECL_OVERRIDE;
-    bool onSetContrast(qreal c)                             Q_DECL_OVERRIDE;
-    bool onSetHue(qreal h)                                  Q_DECL_OVERRIDE;
-    bool onSetSaturation(qreal s)                           Q_DECL_OVERRIDE;
+    void onSetOutAspectRatioMode(OutAspectRatioMode mode)   override;
+    void onSetOutAspectRatio(qreal ratio)                   override;
+    bool onSetOrientation(int value)                        override;
+    bool onSetBrightness(qreal b)                           override;
+    bool onSetContrast(qreal c)                             override;
+    bool onSetHue(qreal h)                                  override;
+    bool onSetSaturation(qreal s)                           override;
 
 protected:
 

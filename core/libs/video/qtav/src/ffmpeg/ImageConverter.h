@@ -133,19 +133,19 @@ class ImageConverterFFPrivate;
  * \brief The ImageConverterFF class
  * based on libswscale
  */
-class ImageConverterFF Q_DECL_FINAL: public ImageConverter // QTAV_EXPORT is not needed
+class ImageConverterFF final: public ImageConverter // QTAV_EXPORT is not needed
 {
     DPTR_DECLARE_PRIVATE(ImageConverterFF)
 
 public:
 
     ImageConverterFF();
-    bool check() const Q_DECL_OVERRIDE;
+    bool check() const override;
 
     // FIXME: why match to the pure virtual one if not declare here?
 
-    bool convert(const quint8 *const src[], const int srcStride[]) Q_DECL_OVERRIDE { return ImageConverter::convert(src, srcStride);}
-    bool convert(const quint8 *const src[], const int srcStride[], quint8 *const dst[], const int dstStride[]) Q_DECL_OVERRIDE;
+    bool convert(const quint8 *const src[], const int srcStride[]) override { return ImageConverter::convert(src, srcStride);}
+    bool convert(const quint8 *const src[], const int srcStride[], quint8 *const dst[], const int dstStride[]) override;
 };
 
 typedef ImageConverterFF ImageConverterSWS;

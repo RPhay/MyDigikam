@@ -61,9 +61,9 @@ public:
         return m_h;
     }
 
-    int stride() const Q_DECL_OVERRIDE;
+    int stride() const override;
 
-    const QVector<Attribute>& attributes() const Q_DECL_OVERRIDE
+    const QVector<Attribute>& attributes() const override
     {
         return m_attributes;
     }

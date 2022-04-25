@@ -75,34 +75,34 @@ class WinRTIO : public MediaIO
 public:
 
     WinRTIO();
-    QString name() const Q_DECL_OVERRIDE
+    QString name() const override
     {
         return QLatin1String(kName);
     }
 
-    const QStringList& protocols() const Q_DECL_OVERRIDE
+    const QStringList& protocols() const override
     {
         static QStringList p = QStringList() << name().toLower();
         return p;
     }
 
-    virtual bool isSeekable() const Q_DECL_OVERRIDE;
-    virtual bool isWritable() const Q_DECL_OVERRIDE;
-    virtual qint64 read(char *data, qint64 maxSize) Q_DECL_OVERRIDE;
-    virtual qint64 write(const char *data, qint64 maxSize) Q_DECL_OVERRIDE;
-    virtual bool seek(qint64 offset, int from) Q_DECL_OVERRIDE;
-    virtual qint64 position() const Q_DECL_OVERRIDE;
+    virtual bool isSeekable() const override;
+    virtual bool isWritable() const override;
+    virtual qint64 read(char *data, qint64 maxSize) override;
+    virtual qint64 write(const char *data, qint64 maxSize) override;
+    virtual bool seek(qint64 offset, int from) override;
+    virtual qint64 position() const override;
 
     /*!
      * \brief size
      * \return <=0 if not support
      */
-    virtual qint64 size() const Q_DECL_OVERRIDE;
+    virtual qint64 size() const override;
 
 protected:
 
     WinRTIO(WinRTIOPrivate &d);
-    void onUrlChanged() Q_DECL_OVERRIDE;
+    void onUrlChanged() override;
 
 private:
 

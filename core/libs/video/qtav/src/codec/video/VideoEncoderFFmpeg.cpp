@@ -91,8 +91,8 @@ class VideoEncoderFFmpeg : public VideoEncoder
 public:
 
     VideoEncoderFFmpeg();
-    VideoEncoderId id() const Q_DECL_OVERRIDE;
-    bool encode(const VideoFrame &frame = VideoFrame()) Q_DECL_OVERRIDE;
+    VideoEncoderId id() const override;
+    bool encode(const VideoFrame &frame = VideoFrame()) override;
 
     void setHWDevice(const QString& name);
     QString hwDevice() const;
@@ -106,7 +106,7 @@ static const VideoEncoderId VideoEncoderId_FFmpeg = mkid::id32base36_6<'F', 'F',
 
 FACTORY_REGISTER(VideoEncoder, FFmpeg, "FFmpeg")
 
-class VideoEncoderFFmpegPrivate Q_DECL_FINAL: public VideoEncoderPrivate
+class VideoEncoderFFmpegPrivate final: public VideoEncoderPrivate
 {
 public:
 
@@ -125,8 +125,8 @@ public:
         avctx = avcodec_alloc_context3(NULL);
     }
 
-    bool open() Q_DECL_OVERRIDE;
-    bool close() Q_DECL_OVERRIDE;
+    bool open() override;
+    bool close() override;
 
     qint64 nb_encoded;
     QByteArray buffer;

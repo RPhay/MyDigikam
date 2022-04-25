@@ -38,24 +38,24 @@ namespace QtAV
 
 static const char kName[] = "PortAudio";
 
-class AudioOutputPortAudio Q_DECL_FINAL : public AudioOutputBackend
+class AudioOutputPortAudio final : public AudioOutputBackend
 {
 public:
 
     AudioOutputPortAudio(QObject* parent = 0);
     ~AudioOutputPortAudio();
 
-    QString name() const                        Q_DECL_FINAL
+    QString name() const                        final
     {
         return QString::fromLatin1(kName);
     }
 
-    bool open()                                 Q_DECL_FINAL;
-    bool close()                                Q_DECL_FINAL;
-    virtual BufferControl bufferControl() const Q_DECL_FINAL;
-    virtual bool write(const QByteArray& data)  Q_DECL_FINAL;
+    bool open()                                 final;
+    bool close()                                final;
+    virtual BufferControl bufferControl() const final;
+    virtual bool write(const QByteArray& data)  final;
 
-    virtual bool play() Q_DECL_FINAL
+    virtual bool play() final
     {
         return true;
     }

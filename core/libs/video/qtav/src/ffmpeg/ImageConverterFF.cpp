@@ -37,7 +37,7 @@ ImageConverterId ImageConverterId_FF = mkid::id32base36_6<'F', 'F', 'm', 'p', 'e
 
 FACTORY_REGISTER(ImageConverter, FF, "FFmpeg")
 
-class ImageConverterFFPrivate Q_DECL_FINAL : public ImageConverterPrivate
+class ImageConverterFFPrivate final : public ImageConverterPrivate
 {
 public:
 
@@ -56,7 +56,7 @@ public:
         }
     }
 
-    virtual bool setupColorspaceDetails(bool force = true) Q_DECL_FINAL;
+    virtual bool setupColorspaceDetails(bool force = true) final;
 
     SwsContext *sws_ctx;
     bool        update_eq;

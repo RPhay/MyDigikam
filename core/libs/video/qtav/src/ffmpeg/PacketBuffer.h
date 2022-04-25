@@ -81,10 +81,10 @@ public:
     qreal bufferSpeed() const;
     qreal bufferSpeedInBytes() const;
 protected:
-    bool checkEnough() const Q_DECL_OVERRIDE;
-    bool checkFull() const Q_DECL_OVERRIDE;
-    void onTake(const Packet &) Q_DECL_OVERRIDE;
-    void onPut(const Packet &) Q_DECL_OVERRIDE;
+    bool checkEnough() const override;
+    bool checkFull() const override;
+    void onTake(const Packet &) override;
+    void onPut(const Packet &) override;
 protected:
     typedef BlockingQueue<Packet, QQueue> PQ;
     using PQ::setCapacity;

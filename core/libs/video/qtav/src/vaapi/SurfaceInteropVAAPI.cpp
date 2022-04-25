@@ -323,7 +323,7 @@ typedef void (EGLAPIENTRYP PFNGLEGLIMAGETARGETTEXTURE2DOESPROC) (GLenum target, 
 
 static PFNGLEGLIMAGETARGETTEXTURE2DOESPROC glEGLImageTargetTexture2DOES = NULL;
 
-class X11_EGL Q_DECL_FINAL: public X11
+class X11_EGL final: public X11
 {
 public:
 
@@ -344,7 +344,7 @@ public:
         }
     }
 
-    Display* ensureGL() Q_DECL_OVERRIDE
+    Display* ensureGL() override
     {
         if (display && eglCreateImageKHR && glEGLImageTargetTexture2DOES)
             return display;
@@ -366,7 +366,7 @@ public:
         return display;
     }
 
-    bool bindPixmap(int w, int h) Q_DECL_OVERRIDE
+    bool bindPixmap(int w, int h) override
     {
         if (!createPixmap(w, h))
             return false;
@@ -382,7 +382,7 @@ public:
         return true;
     }
 
-    void bindTexture() Q_DECL_OVERRIDE
+    void bindTexture() override
     {
         glEGLImageTargetTexture2DOES(GL_TEXTURE_2D, image[0]);
     }
@@ -401,7 +401,7 @@ typedef void (*glXReleaseTexImageEXT_t)(Display *dpy, GLXDrawable draw, int buff
 static glXReleaseTexImageEXT_t glXReleaseTexImageEXT = 0;
 static glXBindTexImageEXT_t glXBindTexImageEXT       = 0;
 
-class X11_GLX Q_DECL_FINAL : public X11
+class X11_GLX final : public X11
 {
 public:
 
@@ -425,7 +425,7 @@ public:
         glxpixmap = 0;
     }
 
-    Display* ensureGL() Q_DECL_OVERRIDE
+    Display* ensureGL() override
     {
         if (fbc && display)
             return display;
@@ -481,7 +481,7 @@ public:
         return display;
     }
 
-    bool bindPixmap(int w, int h) Q_DECL_OVERRIDE
+    bool bindPixmap(int w, int h) override
     {
         const int depth = createPixmap(w, h);
 
@@ -501,7 +501,7 @@ public:
         return true;
     }
 
-    void bindTexture() Q_DECL_OVERRIDE
+    void bindTexture() override
     {
         glXBindTexImageEXT(display, glxpixmap, GLX_FRONT_EXT, NULL);
     }

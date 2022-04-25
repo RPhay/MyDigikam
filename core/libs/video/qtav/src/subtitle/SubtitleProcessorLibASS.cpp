@@ -54,7 +54,7 @@ namespace QtAV
 
 void RenderASS(QImage *image, const SubImage &img, int dstX, int dstY);
 
-class SubtitleProcessorLibASS Q_DECL_FINAL : public SubtitleProcessor
+class SubtitleProcessorLibASS final : public SubtitleProcessor
                                            , protected ass::api
 {
 public:
@@ -63,33 +63,33 @@ public:
     ~SubtitleProcessorLibASS();
 
     void updateFontCache();
-    SubtitleProcessorId id() const                                                          Q_DECL_OVERRIDE;
-    QString name() const                                                                    Q_DECL_OVERRIDE;
-    QStringList supportedTypes() const                                                      Q_DECL_OVERRIDE;
-    bool process(QIODevice* dev)                                                            Q_DECL_OVERRIDE;
+    SubtitleProcessorId id() const                                                          override;
+    QString name() const                                                                    override;
+    QStringList supportedTypes() const                                                      override;
+    bool process(QIODevice* dev)                                                            override;
 
     // supportsFromFile must be true
 
-    bool process(const QString& path)                                                       Q_DECL_OVERRIDE;
-    QList<SubtitleFrame> frames() const                                                     Q_DECL_OVERRIDE;
+    bool process(const QString& path)                                                       override;
+    QList<SubtitleFrame> frames() const                                                     override;
 
-    bool canRender() const                                                                  Q_DECL_OVERRIDE
+    bool canRender() const                                                                  override
     {
         return true;
     }
 
-    QString getText(qreal pts) const                                                        Q_DECL_OVERRIDE;
-    QImage getImage(qreal pts, QRect *boundingRect = 0)                                     Q_DECL_OVERRIDE;
-    SubImageSet getSubImages(qreal pts, QRect *boundingRect)                                Q_DECL_OVERRIDE;
-    bool processHeader(const QByteArray& codec, const QByteArray& data)                     Q_DECL_OVERRIDE;
-    SubtitleFrame processLine(const QByteArray& data, qreal pts = -1, qreal duration = 0)   Q_DECL_OVERRIDE;
-    void setFontFile(const QString& file)                                                   Q_DECL_OVERRIDE;
-    void setFontsDir(const QString& dir)                                                    Q_DECL_OVERRIDE;
-    void setFontFileForced(bool force)                                                      Q_DECL_OVERRIDE;
+    QString getText(qreal pts) const                                                        override;
+    QImage getImage(qreal pts, QRect *boundingRect = 0)                                     override;
+    SubImageSet getSubImages(qreal pts, QRect *boundingRect)                                override;
+    bool processHeader(const QByteArray& codec, const QByteArray& data)                     override;
+    SubtitleFrame processLine(const QByteArray& data, qreal pts = -1, qreal duration = 0)   override;
+    void setFontFile(const QString& file)                                                   override;
+    void setFontsDir(const QString& dir)                                                    override;
+    void setFontFileForced(bool force)                                                      override;
 
 protected:
 
-    void onFrameSizeChanged(int width, int height)                                          Q_DECL_OVERRIDE;
+    void onFrameSizeChanged(int width, int height)                                          override;
 
 private:
 

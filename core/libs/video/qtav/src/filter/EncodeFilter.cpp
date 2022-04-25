@@ -34,7 +34,7 @@
 namespace QtAV
 {
 
-class AudioEncodeFilterPrivate Q_DECL_FINAL : public AudioFilterPrivate
+class AudioEncodeFilterPrivate final : public AudioFilterPrivate
 {
 public:
     AudioEncodeFilterPrivate() : enc(0), start_time(0), async(false), finishing(0), leftOverAudio() {}
@@ -211,7 +211,7 @@ void AudioEncodeFilter::encode(const AudioFrame& frame)
 }
 
 
-class VideoEncodeFilterPrivate Q_DECL_FINAL : public VideoFilterPrivate
+class VideoEncodeFilterPrivate final : public VideoFilterPrivate
 {
 public:
     VideoEncodeFilterPrivate() : enc(0), start_time(0), async(false), finishing(0) {}

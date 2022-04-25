@@ -51,29 +51,29 @@ struct SLDataFormat_PCM_EX : SLDataFormat_PCM {
 #endif
 
 static const char kName[] = "OpenSL";
-class AudioOutputOpenSL Q_DECL_FINAL: public AudioOutputBackend
+class AudioOutputOpenSL final: public AudioOutputBackend
 {
 public:
     AudioOutputOpenSL(QObject *parent = 0);
     ~AudioOutputOpenSL();
 
     int engineVersion() const { return m_sl_major*100+m_sl_minor*10+m_sl_step;}
-    QString name() const Q_DECL_OVERRIDE { return QLatin1String(kName);}
-    bool isSupported(const AudioFormat& format) const Q_DECL_OVERRIDE;
-    bool isSupported(AudioFormat::SampleFormat sampleFormat) const Q_DECL_OVERRIDE;
-    bool isSupported(AudioFormat::ChannelLayout channelLayout) const Q_DECL_OVERRIDE;
-    bool open() Q_DECL_OVERRIDE;
-    bool close() Q_DECL_OVERRIDE;
-    BufferControl bufferControl() const Q_DECL_OVERRIDE;
-    void onCallback() Q_DECL_OVERRIDE;
-    void acquireNextBuffer() Q_DECL_OVERRIDE;
-    bool write(const QByteArray& data) Q_DECL_OVERRIDE;
-    bool play() Q_DECL_OVERRIDE;
+    QString name() const override { return QLatin1String(kName);}
+    bool isSupported(const AudioFormat& format) const override;
+    bool isSupported(AudioFormat::SampleFormat sampleFormat) const override;
+    bool isSupported(AudioFormat::ChannelLayout channelLayout) const override;
+    bool open() override;
+    bool close() override;
+    BufferControl bufferControl() const override;
+    void onCallback() override;
+    void acquireNextBuffer() override;
+    bool write(const QByteArray& data) override;
+    bool play() override;
     //default return -1. means not the control
-    int getPlayedCount() Q_DECL_OVERRIDE;
-    bool setVolume(qreal value) Q_DECL_OVERRIDE;
-    qreal getVolume() const Q_DECL_OVERRIDE;
-    bool setMute(bool value = true) Q_DECL_OVERRIDE;
+    int getPlayedCount() override;
+    bool setVolume(qreal value) override;
+    qreal getVolume() const override;
+    bool setMute(bool value = true) override;
 
 #ifdef Q_OS_ANDROID
     static void bufferQueueCallbackAndroid(SLAndroidSimpleBufferQueueItf bufferQueue, void *context);

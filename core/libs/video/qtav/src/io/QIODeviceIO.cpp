@@ -180,7 +180,7 @@ static const MediaIOId MediaIOId_QFile = mkid::id32base36_5<'Q','F','i','l','e'>
 
 FACTORY_REGISTER(MediaIO, QFile, kQFileName)
 
-class QFileIOPrivate Q_DECL_FINAL: public QIODeviceIOPrivate
+class QFileIOPrivate final: public QIODeviceIOPrivate
 {
 public:
 

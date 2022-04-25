@@ -82,7 +82,7 @@ typedef QSharedPointer<InteropResource> InteropResourcePtr;
 
 // ----------------------------------------------------------------------------------
 
-class SurfaceInteropVAAPI Q_DECL_FINAL : public VideoSurfaceInterop
+class SurfaceInteropVAAPI final : public VideoSurfaceInterop
 {
 public:
 
@@ -94,8 +94,8 @@ public:
     }
 
     void setSurface(const surface_ptr& surface, int w, int h);      // use surface->width/height if w/h is 0
-    void* map(SurfaceType type, const VideoFormat& fmt, void* handle, int plane) Q_DECL_OVERRIDE;
-    void unmap(void *handle) Q_DECL_OVERRIDE;
+    void* map(SurfaceType type, const VideoFormat& fmt, void* handle, int plane) override;
+    void unmap(void *handle) override;
 
 protected:
 
@@ -115,12 +115,12 @@ private:
 
 // load/resolve symbols only once in decoder and pass a VAAPI_XXX ptr or use pool
 
-class GLXInteropResource Q_DECL_FINAL: public InteropResource,
+class GLXInteropResource final: public InteropResource,
                                        protected VAAPI_GLX
 {
 public:
 
-    bool map(const surface_ptr &surface, GLuint tex, int w, int h, int) Q_DECL_OVERRIDE;
+    bool map(const surface_ptr &surface, GLuint tex, int w, int h, int) override;
 
 private:
 
@@ -130,7 +130,7 @@ private:
 
 class X11;
 
-class X11InteropResource Q_DECL_FINAL: public InteropResource,
+class X11InteropResource final: public InteropResource,
                                        protected VAAPI_X11
 {
 public:
@@ -138,8 +138,8 @@ public:
     X11InteropResource();
     ~X11InteropResource();
 
-    bool map(const surface_ptr &surface, GLuint tex, int w, int h, int) Q_DECL_OVERRIDE;
-    bool unmap(const surface_ptr &surface, GLuint tex)                  Q_DECL_OVERRIDE;
+    bool map(const surface_ptr &surface, GLuint tex, int w, int h, int) override;
+    bool unmap(const surface_ptr &surface, GLuint tex)                  override;
 
 private:
 
@@ -158,15 +158,15 @@ private:
 
 class EGL;
 
-class EGLInteropResource Q_DECL_FINAL : public InteropResource
+class EGLInteropResource final : public InteropResource
 {
 public:
 
     EGLInteropResource();
     ~EGLInteropResource();
 
-    bool map(const surface_ptr &surface, GLuint tex, int w, int h, int plane) Q_DECL_OVERRIDE;
-    bool unmap(const surface_ptr &surface, GLuint tex)                        Q_DECL_OVERRIDE;
+    bool map(const surface_ptr &surface, GLuint tex, int w, int h, int plane) override;
+    bool unmap(const surface_ptr &surface, GLuint tex)                        override;
 
 private:
 
