@@ -51,8 +51,11 @@ static const char kFileScheme[] = "file:";
 
 static QString fromCFString(CFStringRef string)
 {
+
 #   if QT_VERSION >= QT_VERSION_CHECK(5, 2, 0)
+
     return QString().fromCFString(string);
+
 #   else
 
     if (!string)
@@ -149,10 +152,16 @@ QString getLocalPath(const QString& fullPath)
 
         // win: ffmpeg does not supports file:///C:/xx.mov, only supports file:C:/xx.mov or C:/xx.mov
 
+        // TODO: add mingw support?
+
 #ifndef Q_OS_WIN // for QUrl
 
         if (has_slash)
             --pos;
+
+#else
+
+    Q_UNUSED(has_slash);
 
 #endif
 
