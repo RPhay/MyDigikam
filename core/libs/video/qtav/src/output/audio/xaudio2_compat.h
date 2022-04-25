@@ -59,6 +59,14 @@
 #      define __out
 #   endif
 
+    // Use default arguments if compiling as C++
+
+#   ifdef __cplusplus
+#       define X2DEFAULT(x) =x
+#   else
+#       define X2DEFAULT(x)
+#   endif
+
 #endif
 
 // TODO: winrt test
