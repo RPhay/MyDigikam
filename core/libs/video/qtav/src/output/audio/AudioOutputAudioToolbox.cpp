@@ -30,7 +30,7 @@
 #include <QQueue>
 #include <QSemaphore>
 #include <QThread>
-#include <QMutex> // qt4
+#include <QMutex>
 #include <QWaitCondition>
 
 // Apple includes
@@ -45,30 +45,31 @@
 
 namespace QtAV
 {
+
 static const char kName[] = "AudioToolbox";
 
-class AudioOutputAudioToolbox Q_DECL_FINAL: public AudioOutputBackend
+class AudioOutputAudioToolbox Q_DECL_FINAL : public AudioOutputBackend
 {
 public:
 
     AudioOutputAudioToolbox(QObject *parent = 0);
 
-    QString name() const Q_DECL_OVERRIDE
+    QString name()                                     const Q_DECL_OVERRIDE
     {
         return QLatin1String(kName);
     }
 
     bool isSupported(AudioFormat::SampleFormat smpfmt) const Q_DECL_OVERRIDE;
-    bool open() Q_DECL_OVERRIDE;
-    bool close() Q_DECL_OVERRIDE;
+    bool open()                                              Q_DECL_OVERRIDE;
+    bool close()                                             Q_DECL_OVERRIDE;
 
-    //bool flush() Q_DECL_OVERRIDE;
+    //bool flush()                                             Q_DECL_OVERRIDE;
 
-    BufferControl bufferControl() const Q_DECL_OVERRIDE;
-    void onCallback() Q_DECL_OVERRIDE;
-    bool write(const QByteArray& data) Q_DECL_OVERRIDE;
-    bool play() Q_DECL_OVERRIDE;
-    bool setVolume(qreal value) override;
+    BufferControl bufferControl()                      const Q_DECL_OVERRIDE;
+    void onCallback()                                        Q_DECL_OVERRIDE;
+    bool write(const QByteArray& data)                       Q_DECL_OVERRIDE;
+    bool play()                                              Q_DECL_OVERRIDE;
+    bool setVolume(qreal value)                              Q_DECL_OVERRIDE;
 
 private:
 
@@ -109,8 +110,8 @@ static AudioStreamBasicDescription audioFormatToAT(const AudioFormat &format)
     // AudioQueue only supports interleave
 
     AudioStreamBasicDescription desc;
-    desc.mSampleRate = format.sampleRate();
-    desc.mFormatID = kAudioFormatLinearPCM;
+    desc.mSampleRate  = format.sampleRate();
+    desc.mFormatID    = kAudioFormatLinearPCM;
     desc.mFormatFlags = kAudioFormatFlagIsPacked; // TODO: kAudioFormatFlagIsPacked?
 
     if      (format.isFloat())
@@ -166,7 +167,7 @@ AudioOutputAudioToolbox::AudioOutputAudioToolbox(QObject *parent)
 
 AudioOutputBackend::BufferControl AudioOutputAudioToolbox::bufferControl() const
 {
-    return CountCallback; //BufferControl(Callback | PlayedCount);
+    return CountCallback; // BufferControl(Callback | PlayedCount);
 }
 
 void AudioOutputAudioToolbox::onCallback()
@@ -177,7 +178,9 @@ void AudioOutputAudioToolbox::onCallback()
 
 void AudioOutputAudioToolbox::tryPauseTimeline()
 {
-    /// All buffers are rendered but the AudioQueue timeline continues. If the next buffer sample time is earlier than AudioQueue timeline value, for example resume after pause, the buffer will not be rendered
+    // All buffers are rendered but the AudioQueue timeline continues.
+    // If the next buffer sample time is earlier than AudioQueue timeline value,
+    // for example resume after pause, the buffer will not be rendered
 
     if (sem.available() == buffer_count)
     {
@@ -197,6 +200,7 @@ bool AudioOutputAudioToolbox::open()
 {
     m_buffer.resize(buffer_count);
     m_desc = audioFormatToAT(format);
+
     AT_ENSURE(AudioQueueNewOutput(&m_desc, AudioOutputAudioToolbox::outCallback, this, NULL, kCFRunLoopCommonModes/*NULL*/, 0, &m_queue), false);
 
     for (int i = 0 ; i < m_buffer.size() ; ++i)
@@ -207,7 +211,7 @@ bool AudioOutputAudioToolbox::open()
     m_buffer_fill = m_buffer;
 
     sem.release(buffer_count - sem.available());
-    m_waiting = false;
+    m_waiting     = false;
 
     return true;
 }

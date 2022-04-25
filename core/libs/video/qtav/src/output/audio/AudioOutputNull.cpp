@@ -22,33 +22,67 @@
  * ============================================================ */
 
 #include "AudioOutputBackend.h"
+
+// Local includes
+
 #include "QtAV_mkid.h"
 #include "QtAV_factory.h"
 
 namespace QtAV
 {
-//TODO: block internally
+
+// TODO: block internally
+
 static const char kName[] = "null";
+
 class AudioOutputNull : public AudioOutputBackend
 {
 public:
-    AudioOutputNull(QObject *parent = 0);
-    QString name() const Q_DECL_OVERRIDE { return QLatin1String(kName);}
-    bool open() Q_DECL_OVERRIDE { return true;}
-    bool close() Q_DECL_OVERRIDE { return true;}
-    // TODO: check channel layout. Null supports channels>2
-    BufferControl bufferControl() const Q_DECL_OVERRIDE { return Blocking;}
-    bool write(const QByteArray&) Q_DECL_OVERRIDE { return true;}
-    bool play() Q_DECL_OVERRIDE { return true;}
 
+    AudioOutputNull(QObject *parent = 0);
+
+    QString name() const                Q_DECL_OVERRIDE
+    {
+        return QLatin1String(kName);
+    }
+
+    bool open()                         Q_DECL_OVERRIDE
+    {
+        return true;
+    }
+
+    bool close()                        Q_DECL_OVERRIDE
+    {
+        return true;
+    }
+
+    // TODO: check channel layout. Null supports channels>2
+
+    BufferControl bufferControl() const Q_DECL_OVERRIDE
+    {
+        return Blocking;
+    }
+
+    bool write(const QByteArray&)       Q_DECL_OVERRIDE
+    {
+        return true;
+    }
+
+    bool play()                         Q_DECL_OVERRIDE
+    {
+        return true;
+    }
 };
 
 typedef AudioOutputNull AudioOutputBackendNull;
+
 static const AudioOutputBackendId AudioOutputBackendId_Null = mkid::id32base36_4<'n', 'u', 'l', 'l'>::value;
+
 FACTORY_REGISTER(AudioOutputBackend, Null, kName)
 
 AudioOutputNull::AudioOutputNull(QObject *parent)
     : AudioOutputBackend(AudioOutput::DeviceFeatures(), parent)
-{}
+{
+}
 
 } // namespace QtAV

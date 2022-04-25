@@ -21,8 +21,8 @@
  *
  * ============================================================ */
 
-#ifndef QTAV_AUDIOOUTPUT_H
-#define QTAV_AUDIOOUTPUT_H
+#ifndef QTAV_AUDIO_OUTPUT_H
+#define QTAV_AUDIO_OUTPUT_H
 
 // Qt includes
 
@@ -275,4 +275,4 @@ private:
 
 } // namespace QtAV
 
-#endif // QTAV_AUDIOOUTPUT_H
+#endif // QTAV_AUDIO_OUTPUT_H
