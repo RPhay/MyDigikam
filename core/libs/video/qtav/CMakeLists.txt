@@ -30,6 +30,7 @@ DISABLE_CLANG_COMPILER_WARNINGS("3.99.99" "-Wno-non-c-typedef-for-linkage")
 
 include_directories($<TARGET_PROPERTY:Qt${QT_VERSION_MAJOR}::Widgets,INTERFACE_INCLUDE_DIRECTORIES>
                     $<TARGET_PROPERTY:Qt${QT_VERSION_MAJOR}::Core,INTERFACE_INCLUDE_DIRECTORIES>
+                    ${DIRECTX_LIBRARY_DIRS}             # Populated under Windows, else empty
 )
 
 set(libqtav_SRCS

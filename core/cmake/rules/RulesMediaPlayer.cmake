@@ -237,6 +237,8 @@ if(ENABLE_MEDIAPLAYER)
 
         endif()
 
+        # --- Windows config ---
+
         if(GDIPLUS_FOUND)
 
             set(MEDIAPLAYER_LIBRARIES ${MEDIAPLAYER_LIBRARIES} ${GDIPLUS_LIBRARIES})
@@ -301,6 +303,8 @@ if(ENABLE_MEDIAPLAYER)
             message(STATUS "MediaPlayer will be compiled with Direct2D support   : no")
 
         endif()
+
+        # --- MacOS config ---
 
         if(APPLE)
 
