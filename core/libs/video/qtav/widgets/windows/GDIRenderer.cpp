@@ -44,12 +44,16 @@
 #include <winsock2.h>
 #include <unknwn.h>
 
-#ifndef min
-#   define min(x,y) ((x) < (y) ? (x) : (y))
-#endif
+#ifndef __MINGW32__
 
-#ifndef max
-#   define max(x,y) ((x) > (y) ? (x) : (y))
+#   ifndef min
+#       define min(x,y) ((x) < (y) ? (x) : (y))
+#   endif
+
+#   ifndef max
+#       define max(x,y) ((x) > (y) ? (x) : (y))
+#   endif
+
 #endif
 
 #include <gdiplus.h>
