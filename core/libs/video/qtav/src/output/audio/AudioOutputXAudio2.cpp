@@ -47,20 +47,21 @@ namespace QtAV
 
 static const char kName[] = "XAudio2";
 
-class AudioOutputXAudio2 Q_DECL_FINAL: public AudioOutputBackend, public IXAudio2VoiceCallback
+class AudioOutputXAudio2 Q_DECL_FINAL : public AudioOutputBackend,
+                                        public IXAudio2VoiceCallback
 {
 public:
 
-    AudioOutputXAudio2(QObject *parent = 0);
+    AudioOutputXAudio2(QObject* parent = 0);
     ~AudioOutputXAudio2();
 
-    QString name() const Q_DECL_OVERRIDE
+    QString name() const                                                        Q_DECL_OVERRIDE
     {
         return QString::fromLatin1(kName);
     }
 
-    bool open()  Q_DECL_OVERRIDE;
-    bool close() Q_DECL_OVERRIDE;
+    bool open()                                                                 Q_DECL_OVERRIDE;
+    bool close()                                                                Q_DECL_OVERRIDE;
 
     // TODO: check channel layout. xaudio2 supports channels>2
 
@@ -292,19 +293,19 @@ bool AudioOutputXAudio2::open()
 #endif
 
     WAVEFORMATEX wf;
-    wf.cbSize = 0; // sdl: sizeof(wf)
-    wf.nChannels = format.channels();
-    wf.nSamplesPerSec = format.sampleRate(); // FIXME: use supported values
-    wf.wFormatTag = format.isFloat() ? WAVE_FORMAT_IEEE_FLOAT : WAVE_FORMAT_PCM;
-    wf.wBitsPerSample = format.bytesPerSample() * 8;
-    wf.nBlockAlign = wf.nChannels * format.bytesPerSample();
-    wf.nAvgBytesPerSec = wf.nSamplesPerSec * wf.nBlockAlign;
+    wf.cbSize           = 0; // sdl: sizeof(wf)
+    wf.nChannels        = format.channels();
+    wf.nSamplesPerSec   = format.sampleRate(); // FIXME: use supported values
+    wf.wFormatTag       = format.isFloat() ? WAVE_FORMAT_IEEE_FLOAT : WAVE_FORMAT_PCM;
+    wf.wBitsPerSample   = format.bytesPerSample() * 8;
+    wf.nBlockAlign      = wf.nChannels * format.bytesPerSample();
+    wf.nAvgBytesPerSec  = wf.nSamplesPerSec * wf.nBlockAlign;
 
     // dwChannelMask
 
     // TODO: channels >2, see dsound
 
-    const UINT32 flags = 0; // AUDIO2_VOICE_NOSRC | XAUDIO2_VOICE_NOPITCH;
+    const UINT32 flags  = 0; // AUDIO2_VOICE_NOSRC | XAUDIO2_VOICE_NOPITCH;
 
     // TODO: sdl freq 1.0
 

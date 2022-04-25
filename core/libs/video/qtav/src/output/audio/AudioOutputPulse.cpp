@@ -57,21 +57,25 @@ public:
 
     AudioOutputPulse(QObject *parent = 0);
 
-    QString name() const Q_DECL_FINAL { return QString::fromLatin1(kName);}
+    QString name()                const Q_DECL_FINAL
+    {
+        return QString::fromLatin1(kName);
+    }
+
     bool isSampleFormatSupported(AudioFormat::SampleFormat sampleFormat) const;
-    bool open() Q_DECL_FINAL;
-    bool close() Q_DECL_FINAL;
+    bool open()                         Q_DECL_FINAL;
+    bool close()                        Q_DECL_FINAL;
 
 protected:
 
-    bool write(const QByteArray& data) Q_DECL_FINAL;
-    bool play() Q_DECL_FINAL;
+    bool write(const QByteArray& data)  Q_DECL_FINAL;
+    bool play()                         Q_DECL_FINAL;
     BufferControl bufferControl() const Q_DECL_FINAL;
-    int getWritableBytes() Q_DECL_FINAL;
+    int getWritableBytes()              Q_DECL_FINAL;
 
-    bool setVolume(qreal value) Q_DECL_FINAL;
-    qreal getVolume() const Q_DECL_FINAL;
-    bool setMute(bool value = true) Q_DECL_FINAL;
+    bool setVolume(qreal value)         Q_DECL_FINAL;
+    qreal getVolume()             const Q_DECL_FINAL;
+    bool setMute(bool value = true)     Q_DECL_FINAL;
 
 private:
 
@@ -105,11 +109,13 @@ private:
         return state == PA_OPERATION_DONE;
     }
 
-    pa_threaded_mainloop *loop;
-    pa_context *ctx;
-    pa_stream *stream;
-    pa_sink_input_info info;
-    size_t writable_size; //has the same effect as pa_stream_writable_size
+private:
+
+    pa_threaded_mainloop*   loop;
+    pa_context*             ctx;
+    pa_stream*              stream;
+    pa_sink_input_info      info;
+    size_t                  writable_size; // has the same effect as pa_stream_writable_size
 };
 
 typedef AudioOutputPulse AudioOutputBackendPulse;

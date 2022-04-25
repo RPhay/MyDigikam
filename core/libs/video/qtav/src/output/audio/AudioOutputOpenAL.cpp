@@ -63,7 +63,11 @@ public:
 
     AudioOutputOpenAL(QObject* parent = 0);
 
-    QString name() const Q_DECL_FINAL { return QLatin1String(kName);}
+    QString name() const Q_DECL_FINAL
+    {
+        return QLatin1String(kName);
+    }
+
     QString deviceName() const;
     bool open() Q_DECL_FINAL;
     bool close() Q_DECL_FINAL;
@@ -89,7 +93,7 @@ protected:
         const ALCchar *default_device = alcGetString(NULL, ALC_DEFAULT_DEVICE_SPECIFIER);
 
         qCDebug(DIGIKAM_QTAV_LOG).noquote() << QString::asprintf("OpenAL opening default device: %s", default_device);
-        device = alcOpenDevice(NULL); //parameter: NULL or default_device
+        device = alcOpenDevice(NULL); // parameter: NULL or default_device
 
         if (!device)
         {
@@ -149,7 +153,7 @@ static ALenum audioFormatToAL(const AudioFormat& fmt)
     typedef union
     {
         const char* ext;
-        ALenum fmt;
+        ALenum      fmt;
     } al_fmt_t;
 
     ALenum format = 0;
@@ -157,10 +161,10 @@ static ALenum audioFormatToAL(const AudioFormat& fmt)
     // al functions need a context
 
     ALCcontext *ctx = alcGetCurrentContext(); //a context is required for al functions!
-    const int c = fmt.channels();
+    const int c     = fmt.channels();
     const AudioFormat::SampleFormat spfmt = fmt.sampleFormat(); //TODO: planar formats are fine too
 
-    if (AudioFormat::SampleFormat_Unsigned8 == spfmt)
+    if      (AudioFormat::SampleFormat_Unsigned8 == spfmt)
     {
         static const al_fmt_t u8fmt[] =
         {
@@ -174,7 +178,7 @@ static ALenum audioFormatToAL(const AudioFormat& fmt)
             { "AL_FORMAT_71CHN8"                }
         };
 
-        if (c < 3)
+        if      (c < 3)
         {
             format = u8fmt[c-1].fmt;
         }
@@ -210,7 +214,7 @@ static ALenum audioFormatToAL(const AudioFormat& fmt)
     }
     else if (ctx)
     {
-        if (AudioFormat::SampleFormat_Float == spfmt)
+        if      (AudioFormat::SampleFormat_Float == spfmt)
         {
             static const al_fmt_t f32fmt[] =
             {
@@ -227,7 +231,7 @@ static ALenum audioFormatToAL(const AudioFormat& fmt)
                 { "AL_FORMAT_71CHN32"           }
             };
 
-            if (c <=8 && f32fmt[c-1].ext)
+            if (c <= 8 && f32fmt[c-1].ext)
             {
                 format = alGetEnumValue(f32fmt[c-1].ext);
             }
@@ -330,6 +334,7 @@ bool AudioOutputOpenAL::open()
 {
     if (!openDevice())
         return false;
+
     {
         SCOPE_LOCK_CONTEXT();
 
@@ -384,7 +389,6 @@ bool AudioOutputOpenAL::open()
         alListener3f(AL_POSITION, 0.0, 0.0, 0.0);
         state = 0;
         qCDebug(DIGIKAM_QTAV_LOG).noquote() << QString::asprintf("AudioOutputOpenAL open ok...");
-
     }
 
     return true;
@@ -437,6 +441,7 @@ bool AudioOutputOpenAL::close()
     if (err != ALC_NO_ERROR)
     {
         // ALC_INVALID_CONTEXT
+
         qCWarning(DIGIKAM_QTAV_LOG_WARN).noquote() << QString::asprintf("AudioOutputOpenAL Failed to destroy context: %s", alcGetString(device, err));
 
         return false;
@@ -570,7 +575,7 @@ bool AudioOutputOpenAL::setVolume(qreal value)
 qreal AudioOutputOpenAL::getVolume() const
 {
     SCOPE_LOCK_CONTEXT();
-    ALfloat v = 1.0;
+    ALfloat v  = 1.0;
     alGetListenerf(AL_GAIN, &v);
     ALenum err = alGetError();
 

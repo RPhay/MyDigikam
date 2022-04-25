@@ -70,12 +70,13 @@ public:
      * Features supported by the audio playback api (we call device or backend here)
      * If a feature is not supported, e.g. SetVolume, then a software implementation is used.
      */
-    enum DeviceFeature {
-        NoFeature = 0,
-        SetVolume = 1,          ///< Use backend volume control api rather than software scale. Ignore if backend does not support.
-        SetMute = 1 << 1,
+    enum DeviceFeature
+    {
+        NoFeature     = 0,
+        SetVolume     = 1,      ///< Use backend volume control api rather than software scale. Ignore if backend does not support.
+        SetMute       = 1 << 1,
         SetSampleRate = 1 << 2, ///< NOT IMPLEMENTED
-        SetSpeed = 1 << 3,      ///< NOT IMPLEMENTED
+        SetSpeed      = 1 << 3, ///< NOT IMPLEMENTED
     };
     Q_DECLARE_FLAGS(DeviceFeatures, DeviceFeature)
 
@@ -90,7 +91,7 @@ public:
      * \brief AudioOutput
      * Audio format set to preferred sample format and channel layout
      */
-    AudioOutput(QObject *parent = 0);
+    AudioOutput(QObject* parent = 0);
     ~AudioOutput();
 
     /*!
