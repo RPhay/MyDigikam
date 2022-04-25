@@ -185,9 +185,9 @@ IXAudio2 : public IUnknown
 
 // XAudio 2.7 (June 2010 SDK)
 
-DEFINE_CLSID(XAudio2, 5a508685, a254, 4fba, 9b, 82, 9a, 24, b0, 03, 06, af);
+DEFINE_CLSID(XAudio2,       5a508685, a254, 4fba, 9b, 82, 9a, 24, b0, 03, 06, af);
 DEFINE_CLSID(XAudio2_Debug, db05ea35, 0329, 4d4b, a5, 3a, 6d, ea, d0, 3d, 38, 52);
-DEFINE_IID(IXAudio2, 8bcf1f58, 9fe7, 4583, 8a, c6, e2, ad, c4, 65, c8, bb);
+DEFINE_IID(IXAudio2,        8bcf1f58, 9fe7, 4583, 8a, c6, e2, ad, c4, 65, c8, bb);
 
 // Flags
 
@@ -195,14 +195,18 @@ DEFINE_IID(IXAudio2, 8bcf1f58, 9fe7, 4583, 8a, c6, e2, ad, c4, 65, c8, bb);
 
 #define XAUDIO2_DEBUG_ENGINE            0x0001        // Used in XAudio2Create on Windows only
 
-HRESULT __stdcall XAudio2Create(__deref_out IXAudio2** ppXAudio2, UINT32 Flags X2DEFAULT(0),
+HRESULT __stdcall XAudio2Create(__deref_out IXAudio2** ppXAudio2,
+                                UINT32 Flags X2DEFAULT(0),
                                 XAUDIO2_PROCESSOR XAudio2Processor X2DEFAULT(XAUDIO2_DEFAULT_PROCESSOR))
 {
     // Instantiate the appropriate XAudio2 engine
 
     IXAudio2* pXAudio2;
     HRESULT hr = CoCreateInstance((Flags & XAUDIO2_DEBUG_ENGINE) ? CLSID_XAudio2_Debug : CLSID_XAudio2,
-                                  NULL, CLSCTX_INPROC_SERVER, IID_IXAudio2, (void**)&pXAudio2);
+                                  NULL,
+                                  CLSCTX_INPROC_SERVER,
+                                  IID_IXAudio2,
+                                  (void**)&pXAudio2);
     if (SUCCEEDED(hr))
     {
         hr = pXAudio2->Initialize(Flags, XAudio2Processor);
@@ -222,8 +226,9 @@ HRESULT __stdcall XAudio2Create(__deref_out IXAudio2** ppXAudio2, UINT32 Flags X
 #else
 #   ifndef _XBOX
 
-HRESULT __stdcall XAudio2Create(__deref_out IXAudio2** ppXAudio2, UINT32 Flags X2DEFAULT(0),
-                               XAUDIO2_PROCESSOR XAudio2Processor X2DEFAULT(XAUDIO2_DEFAULT_PROCESSOR))
+HRESULT __stdcall XAudio2Create(__deref_out IXAudio2** ppXAudio2,
+                                UINT32 Flags X2DEFAULT(0),
+                                XAUDIO2_PROCESSOR XAudio2Processor X2DEFAULT(XAUDIO2_DEFAULT_PROCESSOR))
 {
     return ::XAudio2Create(ppXAudio2, Flags, XAudio2Processor);
 }

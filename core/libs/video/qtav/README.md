@@ -36,6 +36,7 @@ x Use cmake to find DirectX and GDI+ dependencies (Native Windows only):
                     https://github.com/FFmpeg/FFmpeg/blob/master/libavcodec/dxva2.h
 x Port to pure Qt5 LTS and Qt6
 
+* Fix broken compilation under MinGW (MXE)
 * Fix API docs.
 * Remove support of Qt version < 5.
 * Fix header guards.
@@ -51,7 +52,6 @@ x Port to pure Qt5 LTS and Qt6
 UNMAINTAINED FEATURES:
 
 - OpenSL-ES support (non-opensource toolkit).
-- WinRT support (used for Windows Phone only).
 - Android support.
 - IOS support.
 - Arm support.
