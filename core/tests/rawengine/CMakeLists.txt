@@ -69,6 +69,16 @@ macro(LIBRAW_BUILD_SAMPLES)
                           ${COMMON_TEST_LINK}
     )
 
+    if(WIN32)
+
+        target_compile_definitions(${_target}_cli
+                                   PRIVATE
+                                   -DWIN32
+        )
+
+    endif()
+
+
 endmacro()
 
 LIBRAW_BUILD_SAMPLES(4channels.cpp)
