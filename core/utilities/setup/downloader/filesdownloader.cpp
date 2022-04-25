@@ -146,10 +146,13 @@ FilesDownloader::~FilesDownloader()
         d->reply = nullptr;
     }
 
-    SystemSettings system(qApp->applicationName());
+    if (d->faceCheck)
+    {
+        SystemSettings system(qApp->applicationName());
 
-    system.disableFaceEngine = d->faceCheck->isChecked();
-    system.saveSettings();
+        system.disableFaceEngine = d->faceCheck->isChecked();
+        system.saveSettings();
+    }
 
     delete d;
 }
