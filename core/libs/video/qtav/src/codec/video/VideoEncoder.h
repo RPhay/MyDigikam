@@ -63,7 +63,7 @@ public:
      */
     static VideoEncoder* create(const char* name = "FFmpeg");
     virtual VideoEncoderId id() const = 0;
-    QString name() const Q_DECL_OVERRIDE; //name from factory
+    QString name() const Q_DECL_OVERRIDE; // name from factory
 
     /*!
      * \brief encode
@@ -93,7 +93,11 @@ public:
      */
     void setFrameRate(qreal value);
     qreal frameRate() const;
-    static qreal defaultFrameRate() { return 25; }
+
+    static qreal defaultFrameRate()
+    {
+        return 25;
+    }
 
     /*!
      * \brief setPixelFormat
@@ -118,7 +122,10 @@ Q_SIGNALS:
 
 public:
 
-    template<class C> static bool Register(VideoEncoderId id, const char* name) { return Register(id, create<C>, name);}
+    template<class C> static bool Register(VideoEncoderId id, const char* name)
+    {
+        return Register(id, create<C>, name);
+    }
 
     /*!
      * \brief next
@@ -131,7 +138,11 @@ public:
 
 private:
 
-    template<class C> static VideoEncoder* create() { return new C(); }
+    template<class C> static VideoEncoder* create()
+    {
+        return new C();
+    }
+
     typedef VideoEncoder* (*VideoEncoderCreator)();
     static bool Register(VideoEncoderId id, VideoEncoderCreator, const char *name);
 

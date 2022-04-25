@@ -22,6 +22,9 @@
  * ============================================================ */
 
 #include "VideoEncoder.h"
+
+// Local includes
+
 #include "AVEncoder_p.h"
 #include "QtAV_factory.h"
 #include "digikam_debug.h"
@@ -34,34 +37,54 @@ FACTORY_DEFINE(VideoEncoder)
 void VideoEncoder_RegisterAll()
 {
     static bool called = false;
+
     if (called)
         return;
+
     called = true;
+
     // factory.h does not check whether an id is registered
+
     if (!VideoEncoderFactory::Instance().registeredIds().empty()) //registered on load
         return;
+
     extern bool RegisterVideoEncoderFFmpeg_Man();
+
     RegisterVideoEncoderFFmpeg_Man();
 }
 
 QStringList VideoEncoder::supportedCodecs()
 {
     // should check every registered encoders
+
     static QStringList codecs;
+
     if (!codecs.isEmpty())
         return codecs;
+
     const AVCodec* c = NULL;
+
 #if AVCODEC_STATIC_REGISTER
+
     void* it = NULL;
-    while ((c = av_codec_iterate(&it))) {
+
+    while ((c = av_codec_iterate(&it)))
+    {
+
 #else
+
     avcodec_register_all();
-    while ((c = av_codec_next(c))) {
+
+    while ((c = av_codec_next(c)))
+    {
+
 #endif
         if (!av_codec_is_encoder(c) || c->type != AVMEDIA_TYPE_VIDEO)
             continue;
+
         codecs.append(QString::fromLatin1(c->name));
     }
+
     return codecs;
 }
 
@@ -78,10 +101,13 @@ QString VideoEncoder::name() const
 void VideoEncoder::setWidth(int value)
 {
     DPTR_D(VideoEncoder);
+
     if (d.width == value)
         return;
+
     d.width = value;
-    emit widthChanged();
+
+    Q_EMIT widthChanged();
 }
 
 int VideoEncoder::width() const
@@ -92,10 +118,13 @@ int VideoEncoder::width() const
 void VideoEncoder::setHeight(int value)
 {
     DPTR_D(VideoEncoder);
+
     if (d.height == value)
         return;
+
     d.height = value;
-    emit heightChanged();
+
+    Q_EMIT heightChanged();
 }
 
 int VideoEncoder::height() const
@@ -106,10 +135,13 @@ int VideoEncoder::height() const
 void VideoEncoder::setFrameRate(qreal value)
 {
     DPTR_D(VideoEncoder);
+
     if (d.frame_rate == value)
         return;
+
     d.frame_rate = value;
-    emit frameRateChanged();
+
+    Q_EMIT frameRateChanged();
 }
 
 qreal VideoEncoder::frameRate() const
@@ -120,10 +152,13 @@ qreal VideoEncoder::frameRate() const
 void VideoEncoder::setPixelFormat(const VideoFormat::PixelFormat format)
 {
     DPTR_D(VideoEncoder);
+
     if (d.format.pixelFormat() == format)
         return;
+
     d.format.setPixelFormat(format);
     d.format_used = format;
+
     Q_EMIT pixelFormatChanged();
 }
 
