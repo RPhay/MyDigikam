@@ -29,6 +29,7 @@
 #include <QLabel>
 #include <QTimer>
 #include <QPointer>
+#include <QCheckBox>
 #include <QByteArray>
 #include <QMessageBox>
 #include <QPushButton>
@@ -48,6 +49,7 @@
 // Local includes
 
 #include "digikam_debug.h"
+#include "systemsettings.h"
 #include "itempropertiestab.h"
 
 namespace Digikam
@@ -66,6 +68,7 @@ public:
         redirects   (0),
         buttons     (nullptr),
         progress    (nullptr),
+        faceCheck   (nullptr),
         nameLabel   (nullptr),
         reply       (nullptr),
         netMngr     (nullptr)
@@ -84,6 +87,7 @@ public:
 
     QDialogButtonBox*      buttons;
     QProgressBar*          progress;
+    QCheckBox*             faceCheck;
     QLabel*                nameLabel;
 
     QNetworkReply*         reply;
@@ -142,6 +146,11 @@ FilesDownloader::~FilesDownloader()
         d->reply = nullptr;
     }
 
+    SystemSettings system(qApp->applicationName());
+
+    system.disableFaceEngine = d->faceCheck->isChecked();
+    system.saveSettings();
+
     delete d;
 }
 
@@ -197,7 +206,10 @@ void FilesDownloader::startDownload()
                                                  "<p>The files will be downloaded to %1. Make sure there are "
                                                  "around %2 available. <b>After the successful download you "
                                                  "have to restart digiKam.</b></p>", path, total), mainWidget);
+
     infoLabel->setWordWrap(true);
+
+    d->faceCheck              = new QCheckBox(i18n("Disable face engine feature and don't ask again"), mainWidget);
 
     d->progress               = new QProgressBar(mainWidget);
     d->progress->setMinimum(0);
@@ -207,7 +219,9 @@ void FilesDownloader::startDownload()
     d->nameLabel              = new QLabel(mainWidget);
 
     vBox->addWidget(infoLabel);
-    vBox->addStretch(10);
+    vBox->addStretch(5);
+    vBox->addWidget(d->faceCheck);
+    vBox->addStretch(1);
     vBox->addWidget(d->nameLabel);
     vBox->addWidget(d->progress);
     vBox->addWidget(d->buttons);
@@ -243,6 +257,8 @@ void FilesDownloader::slotDownload()
 
         QMessageBox::information(this, qApp->applicationName(),
                                  i18n("All files were downloaded successfully."));
+
+        d->faceCheck->setChecked(false);
 
         close();
     }

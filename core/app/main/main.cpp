@@ -98,7 +98,6 @@ using namespace Digikam;
 int main(int argc, char* argv[])
 {
     SystemSettings system(QLatin1String("digikam"));
-    system.readSettings();
 
 #if (QT_VERSION < QT_VERSION_CHECK(6, 0, 0))
 
@@ -397,14 +396,17 @@ int main(int argc, char* argv[])
     digikam->restoreSession();
     digikam->show();
 
-    QPointer<FilesDownloader> floader = new FilesDownloader(qApp->activeWindow());
-
-    if (!floader->checkDownloadFiles())
+    if (!system.disableFaceEngine)
     {
-        floader->startDownload();
-    }
+        QPointer<FilesDownloader> floader = new FilesDownloader(qApp->activeWindow());
 
-    delete floader;
+        if (!floader->checkDownloadFiles())
+        {
+            floader->startDownload();
+        }
+
+        delete floader;
+    }
 
     if      (parser.isSet(QLatin1String("download-from")))
     {

@@ -45,7 +45,6 @@ public:
 
 public:
 
-    void readSettings();
     void saveSettings();
 
 public:
@@ -53,6 +52,8 @@ public:
     bool useHighDpiScaling;
 
     bool useHighDpiPixmaps;
+
+    bool disableFaceEngine;
 
     bool enableLogging;
 
