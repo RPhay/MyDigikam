@@ -61,7 +61,11 @@ public:
 
 private:
 
-    QString m_appName;
+    void readSettings();
+
+private:
+
+    QString m_path;
 };
 
 } // namespace Digikam

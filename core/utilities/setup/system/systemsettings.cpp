@@ -40,13 +40,29 @@ SystemSettings::SystemSettings(const QString& name)
       useHighDpiPixmaps(false),
       disableFaceEngine(false),
       enableLogging    (false),
-      disableOpenCL    (true),
-      m_appName        (name)
+      disableOpenCL    (true)
 {
-    QString path = QStandardPaths::writableLocation(QStandardPaths::GenericConfigLocation) +
-                   QLatin1Char('/') + m_appName + QLatin1String("_systemrc");
+    if (!name.isEmpty())
+    {
+        m_path = QStandardPaths::writableLocation(QStandardPaths::GenericConfigLocation) +
+                 QLatin1Char('/') + name + QLatin1String("_systemrc");
+    }
 
-    QSettings settings(path, QSettings::IniFormat);
+    readSettings();
+}
+
+SystemSettings::~SystemSettings()
+{
+}
+
+void SystemSettings::readSettings()
+{
+    if (m_path.isEmpty())
+    {
+        return;
+    }
+
+    QSettings settings(m_path, QSettings::IniFormat);
 
     settings.beginGroup(QLatin1String("System"));
     useHighDpiScaling = settings.value(QLatin1String("useHighDpiScaling"), false).toBool();
@@ -57,16 +73,14 @@ SystemSettings::SystemSettings(const QString& name)
     settings.endGroup();
 }
 
-SystemSettings::~SystemSettings()
-{
-}
-
 void SystemSettings::saveSettings()
 {
-    QString path = QStandardPaths::writableLocation(QStandardPaths::GenericConfigLocation) +
-                   QLatin1Char('/') + m_appName + QLatin1String("_systemrc");
+    if (m_path.isEmpty())
+    {
+        return;
+    }
 
-    QSettings settings(path, QSettings::IniFormat);
+    QSettings settings(m_path, QSettings::IniFormat);
 
     settings.beginGroup(QLatin1String("System"));
     settings.setValue(QLatin1String("useHighDpiScaling"), useHighDpiScaling);

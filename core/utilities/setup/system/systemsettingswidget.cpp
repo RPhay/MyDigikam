@@ -55,8 +55,8 @@ public:
         useHighDpiPixmapsCheck(nullptr),
         disableOpenCLCheck    (nullptr),
         enableLoggingCheck    (nullptr),
-        faceDownloadButton    (nullptr),
-        faceDownloader        (nullptr)
+        filesDownloadButton   (nullptr),
+        filesDownloader       (nullptr)
     {
     }
 
@@ -65,9 +65,9 @@ public:
     QCheckBox*       disableOpenCLCheck;
     QCheckBox*       enableLoggingCheck;
 
-    QPushButton*     faceDownloadButton;
+    QPushButton*     filesDownloadButton;
 
-    FilesDownloader* faceDownloader;
+    FilesDownloader* filesDownloader;
 };
 
 SystemSettingsWidget::SystemSettingsWidget(QWidget* const parent)
@@ -79,15 +79,15 @@ SystemSettingsWidget::SystemSettingsWidget(QWidget* const parent)
 
     QGridLayout* const layout = new QGridLayout(this);
 
-    d->faceDownloader         = new FilesDownloader(this);
+    d->filesDownloader        = new FilesDownloader(this);
 
     d->useHighDpiScalingCheck = new QCheckBox(i18n("Use high DPI scaling from the screen factor"), this);
     d->useHighDpiPixmapsCheck = new QCheckBox(i18n("Use pixmaps with high DPI resolution"), this);
     d->disableOpenCLCheck     = new QCheckBox(i18n("Disable hardware acceleration OpenCL"), this);
     d->enableLoggingCheck     = new QCheckBox(i18n("Enable internal debug logging"), this);
 
-    d->faceDownloadButton     = new QPushButton(i18n("Download Face Engine Data..."), this);
-    d->faceDownloadButton->setEnabled(!d->faceDownloader->checkDownloadFiles());
+    d->filesDownloadButton    = new QPushButton(i18n("Download Face Engine Data..."), this);
+    d->filesDownloadButton->setEnabled(!d->filesDownloader->checkDownloadFiles());
 
     if (qApp->applicationName() == QLatin1String("showfoto"))
     {
@@ -104,12 +104,12 @@ SystemSettingsWidget::SystemSettingsWidget(QWidget* const parent)
     layout->addWidget(d->useHighDpiPixmapsCheck, 1, 0, 1, 1);
     layout->addWidget(d->disableOpenCLCheck,     2, 0, 1, 1);
     layout->addWidget(d->enableLoggingCheck,     3, 0, 1, 1);
-    layout->addWidget(d->faceDownloadButton,     4, 0, 1, 1);
+    layout->addWidget(d->filesDownloadButton,    4, 0, 1, 1);
     layout->addWidget(systemNote,                5, 0, 1, 2);
     layout->setContentsMargins(spacing, spacing, spacing, spacing);
     layout->setRowStretch(6, 10);
 
-    connect(d->faceDownloadButton, &QPushButton::pressed,
+    connect(d->filesDownloadButton, &QPushButton::pressed,
             this, &SystemSettingsWidget::slotFaceDownload);
 }
 
@@ -142,11 +142,8 @@ void SystemSettingsWidget::saveSettings()
 
 void SystemSettingsWidget::slotFaceDownload()
 {
-    d->faceDownloadButton->setEnabled(false);
-
-    d->faceDownloader->startDownload();
-
-    d->faceDownloadButton->setEnabled(!d->faceDownloader->checkDownloadFiles());
+    d->filesDownloader->startDownload();
+    d->filesDownloadButton->setEnabled(!d->filesDownloader->checkDownloadFiles());
 }
 
 } // namespace Digikam
