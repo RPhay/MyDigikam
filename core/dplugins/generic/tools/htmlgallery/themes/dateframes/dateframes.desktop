@@ -274,7 +274,7 @@ Default=Welcome to my web gallery!
 [X-HTMLGallery Parameter longformat]
 Name=Caption Date Format (see xsltsl.sourceforge.net/date-time.html)
 Name[ca]=Format de la data de la llegenda (vegeu xsltsl.sourceforge.net/date-time.html)
-Name[ca@valencia]=Format de la data de la llegenda (vegeu xsltsl.sourceforge.net/date-time.html)
+Name[ca@valencia]=Format de la data de la llegenda (vejau xsltsl.sourceforge.net/date-time.html)
 Name[cs]=Formát data titulku (viz xsltsl.sourceforge.net/date-time.html)
 Name[de]=Datumsformat des Titels (siehe xsltsl.sourceforge.net/date-time.html)
 Name[en_GB]=Caption Date Format (see xsltsl.sourceforge.net/date-time.html)
