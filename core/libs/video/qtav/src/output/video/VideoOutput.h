@@ -56,6 +56,7 @@ class QTAV_EXPORT VideoOutput : public QObject,
     Q_PROPERTY(qreal outAspectRatio READ outAspectRatio WRITE setOutAspectRatio NOTIFY outAspectRatioChanged)
 
     // fillMode
+
     // TODO: how to use enums in base class as property or Q_ENUM
 
     Q_PROPERTY(OutAspectRatioMode outAspectRatioMode READ outAspectRatioMode WRITE setOutAspectRatioMode NOTIFY outAspectRatioModeChanged)

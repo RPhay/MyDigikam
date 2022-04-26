@@ -22,26 +22,35 @@
  * ============================================================ */
 
 #include "OpenGLWindowRenderer.h"
+
+// Qt includes
+
+#include <QResizeEvent>
+
+// Local includes
+
 #include "OpenGLRendererBase_p.h"
 #include "QtAV_factory.h"
-#include <QResizeEvent>
 #include "digikam_debug.h"
 
 namespace QtAV
 {
+
 FACTORY_REGISTER(VideoRenderer, OpenGLWindow, "OpenGLWindow")
 
 class OpenGLWindowRendererPrivate : public OpenGLRendererBasePrivate
 {
 public:
+
     OpenGLWindowRendererPrivate(QPaintDevice* pd)
         : OpenGLRendererBasePrivate(pd)
-    {}
+    {
+    }
 };
 
-OpenGLWindowRenderer::OpenGLWindowRenderer(UpdateBehavior updateBehavior, QWindow *parent):
-    QOpenGLWindow(updateBehavior, parent)
-  , OpenGLRendererBase(*new OpenGLWindowRendererPrivate(this))
+OpenGLWindowRenderer::OpenGLWindowRenderer(UpdateBehavior updateBehavior, QWindow *parent)
+    : QOpenGLWindow(updateBehavior, parent)
+    , OpenGLRendererBase(*new OpenGLWindowRendererPrivate(this))
 {
 }
 
@@ -49,7 +58,9 @@ VideoRendererId OpenGLWindowRenderer::id() const
 {
     return VideoRendererId_OpenGLWindow;
 }
+
 // MUST call update() on gui(main) thread that the window belongs to because update() will finally call startTimer
+
 void OpenGLWindowRenderer::initializeGL()
 {
     onInitializeGL();
@@ -68,7 +79,7 @@ void OpenGLWindowRenderer::resizeGL(int w, int h)
 void OpenGLWindowRenderer::resizeEvent(QResizeEvent *e)
 {
     onResizeEvent(e->size().width(), e->size().height());
-    QOpenGLWindow::resizeEvent(e); //will call resizeGL(). TODO:will call paintEvent()?
+    QOpenGLWindow::resizeEvent(e); // will call resizeGL(). TODO:will call paintEvent()?
 }
 
 void OpenGLWindowRenderer::showEvent(QShowEvent *)

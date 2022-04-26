@@ -112,23 +112,23 @@ public:
 
         // set members as impl's that may be already set in ctor
 
-        filters = impl->filters();
-        renderer_width = impl->rendererWidth();
-        renderer_height = impl->rendererHeight();
-        src_width = impl->videoFrameSize().width();
-        src_height = impl->videoFrameSize().height();
-        source_aspect_ratio = qreal(src_width)/qreal(src_height);
-        out_aspect_ratio_mode = impl->outAspectRatioMode();
-        out_aspect_ratio = impl->outAspectRatio();
-        quality = impl->quality();
-        out_rect = impl->videoRect();
-        roi = impl->regionOfInterest();
-        preferred_format = impl->preferredPixelFormat();
-        force_preferred = impl->isPreferredPixelFormatForced();
-        brightness = impl->brightness();
-        contrast = impl->contrast();
-        hue = impl->hue();
-        saturation = impl->saturation();
+        filters                 = impl->filters();
+        renderer_width          = impl->rendererWidth();
+        renderer_height         = impl->rendererHeight();
+        src_width               = impl->videoFrameSize().width();
+        src_height              = impl->videoFrameSize().height();
+        source_aspect_ratio     = qreal(src_width)/qreal(src_height);
+        out_aspect_ratio_mode   = impl->outAspectRatioMode();
+        out_aspect_ratio        = impl->outAspectRatio();
+        quality                 = impl->quality();
+        out_rect                = impl->videoRect();
+        roi                     = impl->regionOfInterest();
+        preferred_format        = impl->preferredPixelFormat();
+        force_preferred         = impl->isPreferredPixelFormatForced();
+        brightness              = impl->brightness();
+        contrast                = impl->contrast();
+        hue                     = impl->hue();
+        saturation              = impl->saturation();
     }
 
     ~VideoOutputPrivate()

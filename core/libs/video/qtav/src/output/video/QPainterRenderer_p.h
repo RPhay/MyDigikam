@@ -24,6 +24,8 @@
 #ifndef QTAV_QPAINTER_RENDERER_P_H
 #define QTAV_QPAINTER_RENDERER_P_H
 
+#include "QPainterRenderer.h"
+
 // Qt includes
 
 #include <QImage>
@@ -50,6 +52,7 @@ public:
         if (painter)
         {
             delete painter;
+
             painter = 0;
         }
     }

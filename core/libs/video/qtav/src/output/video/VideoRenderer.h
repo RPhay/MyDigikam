@@ -67,6 +67,7 @@ class QTAV_EXPORT VideoRenderer : public AVOutput
 public:
 
     // TODO: original video size mode
+
     // fillmode: keepsize
 
     enum OutAspectRatioMode
@@ -74,6 +75,7 @@ public:
         RendererAspectRatio ///< Use renderer's aspect ratio, i.e. stretch to fit the renderer rect
       , VideoAspectRatio    ///< Use video's aspect ratio and align center in renderer.
       , CustomAspectRation  ///< Use the ratio set by setOutAspectRatio(qreal). Mode will be set to this if that function is called
+
       //, AspectRatio4_3, AspectRatio16_9
     };
 
@@ -106,6 +108,7 @@ public:
 
     VideoRenderer();
     virtual ~VideoRenderer();
+
     virtual VideoRendererId id() const = 0;
 
     bool receive(const VideoFrame& frame);
