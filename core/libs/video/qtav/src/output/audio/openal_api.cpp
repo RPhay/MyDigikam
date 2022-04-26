@@ -71,7 +71,9 @@ typedef ::capi::dso user_dso;
 static const int versions[] =
 {
     ::capi::NoVersion,
+
     // the following line will be replaced by the content of config/openal/version if exists
+
     1,
     ::capi::EndVersion
 };
@@ -86,101 +88,102 @@ CAPI_BEGIN_DLL(names, user_dso)
 
 // CAPI_DEFINE_RESOLVER(argc, return_type, name, argv_no_name)
 
-CAPI_DEFINE_M_ENTRY(void, AL_APIENTRY, alDopplerFactor, CAPI_ARG1(ALfloat))
-CAPI_DEFINE_M_ENTRY(void, AL_APIENTRY, alDopplerVelocity, CAPI_ARG1(ALfloat))
-CAPI_DEFINE_M_ENTRY(void, AL_APIENTRY, alSpeedOfSound, CAPI_ARG1(ALfloat))
-CAPI_DEFINE_M_ENTRY(void, AL_APIENTRY, alDistanceModel, CAPI_ARG1(ALenum))
-CAPI_DEFINE_M_ENTRY(void, AL_APIENTRY, alEnable, CAPI_ARG1(ALenum))
-CAPI_DEFINE_M_ENTRY(void, AL_APIENTRY, alDisable, CAPI_ARG1(ALenum))
-CAPI_DEFINE_M_ENTRY(ALboolean, AL_APIENTRY, alIsEnabled, CAPI_ARG1(ALenum))
-CAPI_DEFINE_M_ENTRY(const ALchar *, AL_APIENTRY, alGetString, CAPI_ARG1(ALenum))
-CAPI_DEFINE_M_ENTRY(void, AL_APIENTRY, alGetBooleanv, CAPI_ARG2(ALenum, ALboolean *))
-CAPI_DEFINE_M_ENTRY(void, AL_APIENTRY, alGetIntegerv, CAPI_ARG2(ALenum, ALint *))
-CAPI_DEFINE_M_ENTRY(void, AL_APIENTRY, alGetFloatv, CAPI_ARG2(ALenum, ALfloat *))
-CAPI_DEFINE_M_ENTRY(void, AL_APIENTRY, alGetDoublev, CAPI_ARG2(ALenum, ALdouble *))
-CAPI_DEFINE_M_ENTRY(ALboolean, AL_APIENTRY, alGetBoolean, CAPI_ARG1(ALenum))
-CAPI_DEFINE_M_ENTRY(ALint, AL_APIENTRY, alGetInteger, CAPI_ARG1(ALenum))
-CAPI_DEFINE_M_ENTRY(ALfloat, AL_APIENTRY, alGetFloat, CAPI_ARG1(ALenum))
-CAPI_DEFINE_M_ENTRY(ALdouble, AL_APIENTRY, alGetDouble, CAPI_ARG1(ALenum))
-CAPI_DEFINE_M_ENTRY(ALenum, AL_APIENTRY, alGetError, CAPI_ARG0())
-CAPI_DEFINE_M_ENTRY(ALboolean, AL_APIENTRY, alIsExtensionPresent, CAPI_ARG1(const ALchar *))
-CAPI_DEFINE_M_ENTRY(void *, AL_APIENTRY, alGetProcAddress, CAPI_ARG1(const ALchar *))
-CAPI_DEFINE_M_ENTRY(ALenum, AL_APIENTRY, alGetEnumValue, CAPI_ARG1(const ALchar *))
-CAPI_DEFINE_M_ENTRY(void, AL_APIENTRY, alListenerf, CAPI_ARG2(ALenum, ALfloat))
-CAPI_DEFINE_M_ENTRY(void, AL_APIENTRY, alListener3f, CAPI_ARG4(ALenum, ALfloat, ALfloat, ALfloat))
-CAPI_DEFINE_M_ENTRY(void, AL_APIENTRY, alListenerfv, CAPI_ARG2(ALenum, const ALfloat *))
-CAPI_DEFINE_M_ENTRY(void, AL_APIENTRY, alListeneri, CAPI_ARG2(ALenum, ALint))
-CAPI_DEFINE_M_ENTRY(void, AL_APIENTRY, alListener3i, CAPI_ARG4(ALenum, ALint, ALint, ALint))
-CAPI_DEFINE_M_ENTRY(void, AL_APIENTRY, alListeneriv, CAPI_ARG2(ALenum, const ALint *))
-CAPI_DEFINE_M_ENTRY(void, AL_APIENTRY, alGetListenerf, CAPI_ARG2(ALenum, ALfloat *))
-CAPI_DEFINE_M_ENTRY(void, AL_APIENTRY, alGetListener3f, CAPI_ARG4(ALenum, ALfloat *, ALfloat *, ALfloat *))
-CAPI_DEFINE_M_ENTRY(void, AL_APIENTRY, alGetListenerfv, CAPI_ARG2(ALenum, ALfloat *))
-CAPI_DEFINE_M_ENTRY(void, AL_APIENTRY, alGetListeneri, CAPI_ARG2(ALenum, ALint *))
-CAPI_DEFINE_M_ENTRY(void, AL_APIENTRY, alGetListener3i, CAPI_ARG4(ALenum, ALint *, ALint *, ALint *))
-CAPI_DEFINE_M_ENTRY(void, AL_APIENTRY, alGetListeneriv, CAPI_ARG2(ALenum, ALint *))
-CAPI_DEFINE_M_ENTRY(void, AL_APIENTRY, alGenSources, CAPI_ARG2(ALsizei, ALuint *))
-CAPI_DEFINE_M_ENTRY(void, AL_APIENTRY, alDeleteSources, CAPI_ARG2(ALsizei, const ALuint *))
-CAPI_DEFINE_M_ENTRY(ALboolean, AL_APIENTRY, alIsSource, CAPI_ARG1(ALuint))
-CAPI_DEFINE_M_ENTRY(void, AL_APIENTRY, alSourcef, CAPI_ARG3(ALuint, ALenum, ALfloat))
-CAPI_DEFINE_M_ENTRY(void, AL_APIENTRY, alSource3f, CAPI_ARG5(ALuint, ALenum, ALfloat, ALfloat, ALfloat))
-CAPI_DEFINE_M_ENTRY(void, AL_APIENTRY, alSourcefv, CAPI_ARG3(ALuint, ALenum, const ALfloat *))
-CAPI_DEFINE_M_ENTRY(void, AL_APIENTRY, alSourcei, CAPI_ARG3(ALuint, ALenum, ALint))
-CAPI_DEFINE_M_ENTRY(void, AL_APIENTRY, alSource3i, CAPI_ARG5(ALuint, ALenum, ALint, ALint, ALint))
-CAPI_DEFINE_M_ENTRY(void, AL_APIENTRY, alSourceiv, CAPI_ARG3(ALuint, ALenum, const ALint *))
-CAPI_DEFINE_M_ENTRY(void, AL_APIENTRY, alGetSourcef, CAPI_ARG3(ALuint, ALenum, ALfloat *))
-CAPI_DEFINE_M_ENTRY(void, AL_APIENTRY, alGetSource3f, CAPI_ARG5(ALuint, ALenum, ALfloat *, ALfloat *, ALfloat *))
-CAPI_DEFINE_M_ENTRY(void, AL_APIENTRY, alGetSourcefv, CAPI_ARG3(ALuint, ALenum, ALfloat *))
-CAPI_DEFINE_M_ENTRY(void, AL_APIENTRY, alGetSourcei, CAPI_ARG3(ALuint, ALenum, ALint *))
-CAPI_DEFINE_M_ENTRY(void, AL_APIENTRY, alGetSource3i, CAPI_ARG5(ALuint, ALenum, ALint *, ALint *, ALint *))
-CAPI_DEFINE_M_ENTRY(void, AL_APIENTRY, alGetSourceiv, CAPI_ARG3(ALuint, ALenum, ALint *))
-CAPI_DEFINE_M_ENTRY(void, AL_APIENTRY, alSourcePlayv, CAPI_ARG2(ALsizei, const ALuint *))
-CAPI_DEFINE_M_ENTRY(void, AL_APIENTRY, alSourceStopv, CAPI_ARG2(ALsizei, const ALuint *))
-CAPI_DEFINE_M_ENTRY(void, AL_APIENTRY, alSourceRewindv, CAPI_ARG2(ALsizei, const ALuint *))
-CAPI_DEFINE_M_ENTRY(void, AL_APIENTRY, alSourcePausev, CAPI_ARG2(ALsizei, const ALuint *))
-CAPI_DEFINE_M_ENTRY(void, AL_APIENTRY, alSourcePlay, CAPI_ARG1(ALuint))
-CAPI_DEFINE_M_ENTRY(void, AL_APIENTRY, alSourceStop, CAPI_ARG1(ALuint))
-CAPI_DEFINE_M_ENTRY(void, AL_APIENTRY, alSourceRewind, CAPI_ARG1(ALuint))
-CAPI_DEFINE_M_ENTRY(void, AL_APIENTRY, alSourcePause, CAPI_ARG1(ALuint))
-CAPI_DEFINE_M_ENTRY(void, AL_APIENTRY, alSourceQueueBuffers, CAPI_ARG3(ALuint, ALsizei, const ALuint *))
-CAPI_DEFINE_M_ENTRY(void, AL_APIENTRY, alSourceUnqueueBuffers, CAPI_ARG3(ALuint, ALsizei, ALuint *))
-CAPI_DEFINE_M_ENTRY(void, AL_APIENTRY, alGenBuffers, CAPI_ARG2(ALsizei, ALuint *))
-CAPI_DEFINE_M_ENTRY(void, AL_APIENTRY, alDeleteBuffers, CAPI_ARG2(ALsizei, const ALuint *))
-CAPI_DEFINE_M_ENTRY(ALboolean, AL_APIENTRY, alIsBuffer, CAPI_ARG1(ALuint))
-CAPI_DEFINE_M_ENTRY(void, AL_APIENTRY, alBufferData, CAPI_ARG5(ALuint, ALenum, const ALvoid *, ALsizei, ALsizei))
-CAPI_DEFINE_M_ENTRY(void, AL_APIENTRY, alBufferf, CAPI_ARG3(ALuint, ALenum, ALfloat))
-CAPI_DEFINE_M_ENTRY(void, AL_APIENTRY, alBuffer3f, CAPI_ARG5(ALuint, ALenum, ALfloat, ALfloat, ALfloat))
-CAPI_DEFINE_M_ENTRY(void, AL_APIENTRY, alBufferfv, CAPI_ARG3(ALuint, ALenum, const ALfloat *))
-CAPI_DEFINE_M_ENTRY(void, AL_APIENTRY, alBufferi, CAPI_ARG3(ALuint, ALenum, ALint))
-CAPI_DEFINE_M_ENTRY(void, AL_APIENTRY, alBuffer3i, CAPI_ARG5(ALuint, ALenum, ALint, ALint, ALint))
-CAPI_DEFINE_M_ENTRY(void, AL_APIENTRY, alBufferiv, CAPI_ARG3(ALuint, ALenum, const ALint *))
-CAPI_DEFINE_M_ENTRY(void, AL_APIENTRY, alGetBufferf, CAPI_ARG3(ALuint, ALenum, ALfloat *))
-CAPI_DEFINE_M_ENTRY(void, AL_APIENTRY, alGetBuffer3f, CAPI_ARG5(ALuint, ALenum, ALfloat *, ALfloat *, ALfloat *))
-CAPI_DEFINE_M_ENTRY(void, AL_APIENTRY, alGetBufferfv, CAPI_ARG3(ALuint, ALenum, ALfloat *))
-CAPI_DEFINE_M_ENTRY(void, AL_APIENTRY, alGetBufferi, CAPI_ARG3(ALuint, ALenum, ALint *))
-CAPI_DEFINE_M_ENTRY(void, AL_APIENTRY, alGetBuffer3i, CAPI_ARG5(ALuint, ALenum, ALint *, ALint *, ALint *))
-CAPI_DEFINE_M_ENTRY(void, AL_APIENTRY, alGetBufferiv, CAPI_ARG3(ALuint, ALenum, ALint *))
-CAPI_DEFINE_M_ENTRY(ALCcontext *, ALC_APIENTRY, alcCreateContext, CAPI_ARG2(ALCdevice *, const ALCint*))
-CAPI_DEFINE_M_ENTRY(ALCboolean, ALC_APIENTRY, alcMakeContextCurrent, CAPI_ARG1(ALCcontext *))
-CAPI_DEFINE_M_ENTRY(void, ALC_APIENTRY, alcProcessContext, CAPI_ARG1(ALCcontext *))
-CAPI_DEFINE_M_ENTRY(void, ALC_APIENTRY, alcSuspendContext, CAPI_ARG1(ALCcontext *))
-CAPI_DEFINE_M_ENTRY(void, ALC_APIENTRY, alcDestroyContext, CAPI_ARG1(ALCcontext *))
-CAPI_DEFINE_M_ENTRY(ALCcontext *, ALC_APIENTRY, alcGetCurrentContext, CAPI_ARG0())
-CAPI_DEFINE_M_ENTRY(ALCdevice *, ALC_APIENTRY, alcGetContextsDevice, CAPI_ARG1(ALCcontext *))
-CAPI_DEFINE_M_ENTRY(ALCdevice *, ALC_APIENTRY, alcOpenDevice, CAPI_ARG1(const ALCchar *))
-CAPI_DEFINE_M_ENTRY(ALCboolean, ALC_APIENTRY, alcCloseDevice, CAPI_ARG1(ALCdevice *))
-CAPI_DEFINE_M_ENTRY(ALCenum, ALC_APIENTRY, alcGetError, CAPI_ARG1(ALCdevice *))
-CAPI_DEFINE_M_ENTRY(ALCboolean, ALC_APIENTRY, alcIsExtensionPresent, CAPI_ARG2(ALCdevice *, const ALCchar *))
-CAPI_DEFINE_M_ENTRY(void *, ALC_APIENTRY, alcGetProcAddress, CAPI_ARG2(ALCdevice *, const ALCchar *))
-CAPI_DEFINE_M_ENTRY(ALCenum, ALC_APIENTRY, alcGetEnumValue, CAPI_ARG2(ALCdevice *, const ALCchar *))
-CAPI_DEFINE_M_ENTRY(const ALCchar *, ALC_APIENTRY, alcGetString, CAPI_ARG2(ALCdevice *, ALCenum))
-CAPI_DEFINE_M_ENTRY(void, ALC_APIENTRY, alcGetIntegerv, CAPI_ARG4(ALCdevice *, ALCenum, ALCsizei, ALCint *))
-CAPI_DEFINE_M_ENTRY(ALCdevice *, ALC_APIENTRY, alcCaptureOpenDevice, CAPI_ARG4(const ALCchar *, ALCuint, ALCenum, ALCsizei))
-CAPI_DEFINE_M_ENTRY(ALCboolean, ALC_APIENTRY, alcCaptureCloseDevice, CAPI_ARG1(ALCdevice *))
-CAPI_DEFINE_M_ENTRY(void, ALC_APIENTRY, alcCaptureStart, CAPI_ARG1(ALCdevice *))
-CAPI_DEFINE_M_ENTRY(void, ALC_APIENTRY, alcCaptureStop, CAPI_ARG1(ALCdevice *))
-CAPI_DEFINE_M_ENTRY(void, ALC_APIENTRY, alcCaptureSamples, CAPI_ARG3(ALCdevice *, ALCvoid *, ALCsizei))
+CAPI_DEFINE_M_ENTRY(void, AL_APIENTRY, alDopplerFactor, CAPI_ARG1(ALfloat))                                                     // cppcheck-suppress thisSubtraction
+CAPI_DEFINE_M_ENTRY(void, AL_APIENTRY, alDopplerVelocity, CAPI_ARG1(ALfloat))                                                   // cppcheck-suppress thisSubtraction
+CAPI_DEFINE_M_ENTRY(void, AL_APIENTRY, alSpeedOfSound, CAPI_ARG1(ALfloat))                                                      // cppcheck-suppress thisSubtraction
+CAPI_DEFINE_M_ENTRY(void, AL_APIENTRY, alDistanceModel, CAPI_ARG1(ALenum))                                                      // cppcheck-suppress thisSubtraction
+CAPI_DEFINE_M_ENTRY(void, AL_APIENTRY, alEnable, CAPI_ARG1(ALenum))                                                             // cppcheck-suppress thisSubtraction
+CAPI_DEFINE_M_ENTRY(void, AL_APIENTRY, alDisable, CAPI_ARG1(ALenum))                                                            // cppcheck-suppress thisSubtraction
+CAPI_DEFINE_M_ENTRY(ALboolean, AL_APIENTRY, alIsEnabled, CAPI_ARG1(ALenum))                                                     // cppcheck-suppress thisSubtraction
+CAPI_DEFINE_M_ENTRY(const ALchar *, AL_APIENTRY, alGetString, CAPI_ARG1(ALenum))                                                // cppcheck-suppress thisSubtraction
+CAPI_DEFINE_M_ENTRY(void, AL_APIENTRY, alGetBooleanv, CAPI_ARG2(ALenum, ALboolean *))                                           // cppcheck-suppress thisSubtraction
+CAPI_DEFINE_M_ENTRY(void, AL_APIENTRY, alGetIntegerv, CAPI_ARG2(ALenum, ALint *))                                               // cppcheck-suppress thisSubtraction
+CAPI_DEFINE_M_ENTRY(void, AL_APIENTRY, alGetFloatv, CAPI_ARG2(ALenum, ALfloat *))                                               // cppcheck-suppress thisSubtraction
+CAPI_DEFINE_M_ENTRY(void, AL_APIENTRY, alGetDoublev, CAPI_ARG2(ALenum, ALdouble *))                                             // cppcheck-suppress thisSubtraction
+CAPI_DEFINE_M_ENTRY(ALboolean, AL_APIENTRY, alGetBoolean, CAPI_ARG1(ALenum))                                                    // cppcheck-suppress thisSubtraction
+CAPI_DEFINE_M_ENTRY(ALint, AL_APIENTRY, alGetInteger, CAPI_ARG1(ALenum))                                                        // cppcheck-suppress thisSubtraction
+CAPI_DEFINE_M_ENTRY(ALfloat, AL_APIENTRY, alGetFloat, CAPI_ARG1(ALenum))                                                        // cppcheck-suppress thisSubtraction
+CAPI_DEFINE_M_ENTRY(ALdouble, AL_APIENTRY, alGetDouble, CAPI_ARG1(ALenum))                                                      // cppcheck-suppress thisSubtraction
+CAPI_DEFINE_M_ENTRY(ALenum, AL_APIENTRY, alGetError, CAPI_ARG0())                                                               // cppcheck-suppress thisSubtraction
+CAPI_DEFINE_M_ENTRY(ALboolean, AL_APIENTRY, alIsExtensionPresent, CAPI_ARG1(const ALchar *))                                    // cppcheck-suppress thisSubtraction
+CAPI_DEFINE_M_ENTRY(void *, AL_APIENTRY, alGetProcAddress, CAPI_ARG1(const ALchar *))                                           // cppcheck-suppress thisSubtraction
+CAPI_DEFINE_M_ENTRY(ALenum, AL_APIENTRY, alGetEnumValue, CAPI_ARG1(const ALchar *))                                             // cppcheck-suppress thisSubtraction
+CAPI_DEFINE_M_ENTRY(void, AL_APIENTRY, alListenerf, CAPI_ARG2(ALenum, ALfloat))                                                 // cppcheck-suppress thisSubtraction
+CAPI_DEFINE_M_ENTRY(void, AL_APIENTRY, alListener3f, CAPI_ARG4(ALenum, ALfloat, ALfloat, ALfloat))                              // cppcheck-suppress thisSubtraction
+CAPI_DEFINE_M_ENTRY(void, AL_APIENTRY, alListenerfv, CAPI_ARG2(ALenum, const ALfloat *))                                        // cppcheck-suppress thisSubtraction
+CAPI_DEFINE_M_ENTRY(void, AL_APIENTRY, alListeneri, CAPI_ARG2(ALenum, ALint))                                                   // cppcheck-suppress thisSubtraction
+CAPI_DEFINE_M_ENTRY(void, AL_APIENTRY, alListener3i, CAPI_ARG4(ALenum, ALint, ALint, ALint))                                    // cppcheck-suppress thisSubtraction
+CAPI_DEFINE_M_ENTRY(void, AL_APIENTRY, alListeneriv, CAPI_ARG2(ALenum, const ALint *))                                          // cppcheck-suppress thisSubtraction
+CAPI_DEFINE_M_ENTRY(void, AL_APIENTRY, alGetListenerf, CAPI_ARG2(ALenum, ALfloat *))                                            // cppcheck-suppress thisSubtraction
+CAPI_DEFINE_M_ENTRY(void, AL_APIENTRY, alGetListener3f, CAPI_ARG4(ALenum, ALfloat *, ALfloat *, ALfloat *))                     // cppcheck-suppress thisSubtraction
+CAPI_DEFINE_M_ENTRY(void, AL_APIENTRY, alGetListenerfv, CAPI_ARG2(ALenum, ALfloat *))                                           // cppcheck-suppress thisSubtraction
+CAPI_DEFINE_M_ENTRY(void, AL_APIENTRY, alGetListeneri, CAPI_ARG2(ALenum, ALint *))                                              // cppcheck-suppress thisSubtraction
+CAPI_DEFINE_M_ENTRY(void, AL_APIENTRY, alGetListener3i, CAPI_ARG4(ALenum, ALint *, ALint *, ALint *))                           // cppcheck-suppress thisSubtraction
+CAPI_DEFINE_M_ENTRY(void, AL_APIENTRY, alGetListeneriv, CAPI_ARG2(ALenum, ALint *))                                             // cppcheck-suppress thisSubtraction
+CAPI_DEFINE_M_ENTRY(void, AL_APIENTRY, alGenSources, CAPI_ARG2(ALsizei, ALuint *))                                              // cppcheck-suppress thisSubtraction
+CAPI_DEFINE_M_ENTRY(void, AL_APIENTRY, alDeleteSources, CAPI_ARG2(ALsizei, const ALuint *))                                     // cppcheck-suppress thisSubtraction
+CAPI_DEFINE_M_ENTRY(ALboolean, AL_APIENTRY, alIsSource, CAPI_ARG1(ALuint))                                                      // cppcheck-suppress thisSubtraction
+CAPI_DEFINE_M_ENTRY(void, AL_APIENTRY, alSourcef, CAPI_ARG3(ALuint, ALenum, ALfloat))                                           // cppcheck-suppress thisSubtraction
+CAPI_DEFINE_M_ENTRY(void, AL_APIENTRY, alSource3f, CAPI_ARG5(ALuint, ALenum, ALfloat, ALfloat, ALfloat))                        // cppcheck-suppress thisSubtraction
+CAPI_DEFINE_M_ENTRY(void, AL_APIENTRY, alSourcefv, CAPI_ARG3(ALuint, ALenum, const ALfloat *))                                  // cppcheck-suppress thisSubtraction
+CAPI_DEFINE_M_ENTRY(void, AL_APIENTRY, alSourcei, CAPI_ARG3(ALuint, ALenum, ALint))                                             // cppcheck-suppress thisSubtraction
+CAPI_DEFINE_M_ENTRY(void, AL_APIENTRY, alSource3i, CAPI_ARG5(ALuint, ALenum, ALint, ALint, ALint))                              // cppcheck-suppress thisSubtraction
+CAPI_DEFINE_M_ENTRY(void, AL_APIENTRY, alSourceiv, CAPI_ARG3(ALuint, ALenum, const ALint *))                                    // cppcheck-suppress thisSubtraction
+CAPI_DEFINE_M_ENTRY(void, AL_APIENTRY, alGetSourcef, CAPI_ARG3(ALuint, ALenum, ALfloat *))                                      // cppcheck-suppress thisSubtraction
+CAPI_DEFINE_M_ENTRY(void, AL_APIENTRY, alGetSource3f, CAPI_ARG5(ALuint, ALenum, ALfloat *, ALfloat *, ALfloat *))               // cppcheck-suppress thisSubtraction
+CAPI_DEFINE_M_ENTRY(void, AL_APIENTRY, alGetSourcefv, CAPI_ARG3(ALuint, ALenum, ALfloat *))                                     // cppcheck-suppress thisSubtraction
+CAPI_DEFINE_M_ENTRY(void, AL_APIENTRY, alGetSourcei, CAPI_ARG3(ALuint, ALenum, ALint *))                                        // cppcheck-suppress thisSubtraction
+CAPI_DEFINE_M_ENTRY(void, AL_APIENTRY, alGetSource3i, CAPI_ARG5(ALuint, ALenum, ALint *, ALint *, ALint *))                     // cppcheck-suppress thisSubtraction
+CAPI_DEFINE_M_ENTRY(void, AL_APIENTRY, alGetSourceiv, CAPI_ARG3(ALuint, ALenum, ALint *))                                       // cppcheck-suppress thisSubtraction
+CAPI_DEFINE_M_ENTRY(void, AL_APIENTRY, alSourcePlayv, CAPI_ARG2(ALsizei, const ALuint *))                                       // cppcheck-suppress thisSubtraction
+CAPI_DEFINE_M_ENTRY(void, AL_APIENTRY, alSourceStopv, CAPI_ARG2(ALsizei, const ALuint *))                                       // cppcheck-suppress thisSubtraction
+CAPI_DEFINE_M_ENTRY(void, AL_APIENTRY, alSourceRewindv, CAPI_ARG2(ALsizei, const ALuint *))                                     // cppcheck-suppress thisSubtraction
+CAPI_DEFINE_M_ENTRY(void, AL_APIENTRY, alSourcePausev, CAPI_ARG2(ALsizei, const ALuint *))                                      // cppcheck-suppress thisSubtraction
+CAPI_DEFINE_M_ENTRY(void, AL_APIENTRY, alSourcePlay, CAPI_ARG1(ALuint))                                                         // cppcheck-suppress thisSubtraction
+CAPI_DEFINE_M_ENTRY(void, AL_APIENTRY, alSourceStop, CAPI_ARG1(ALuint))                                                         // cppcheck-suppress thisSubtraction
+CAPI_DEFINE_M_ENTRY(void, AL_APIENTRY, alSourceRewind, CAPI_ARG1(ALuint))                                                       // cppcheck-suppress thisSubtraction
+CAPI_DEFINE_M_ENTRY(void, AL_APIENTRY, alSourcePause, CAPI_ARG1(ALuint))                                                        // cppcheck-suppress thisSubtraction
+CAPI_DEFINE_M_ENTRY(void, AL_APIENTRY, alSourceQueueBuffers, CAPI_ARG3(ALuint, ALsizei, const ALuint *))                        // cppcheck-suppress thisSubtraction
+CAPI_DEFINE_M_ENTRY(void, AL_APIENTRY, alSourceUnqueueBuffers, CAPI_ARG3(ALuint, ALsizei, ALuint *))                            // cppcheck-suppress thisSubtraction
+CAPI_DEFINE_M_ENTRY(void, AL_APIENTRY, alGenBuffers, CAPI_ARG2(ALsizei, ALuint *))                                              // cppcheck-suppress thisSubtraction
+CAPI_DEFINE_M_ENTRY(void, AL_APIENTRY, alDeleteBuffers, CAPI_ARG2(ALsizei, const ALuint *))                                     // cppcheck-suppress thisSubtraction
+CAPI_DEFINE_M_ENTRY(ALboolean, AL_APIENTRY, alIsBuffer, CAPI_ARG1(ALuint))                                                      // cppcheck-suppress thisSubtraction
+CAPI_DEFINE_M_ENTRY(void, AL_APIENTRY, alBufferData, CAPI_ARG5(ALuint, ALenum, const ALvoid *, ALsizei, ALsizei))               // cppcheck-suppress thisSubtraction
+CAPI_DEFINE_M_ENTRY(void, AL_APIENTRY, alBufferf, CAPI_ARG3(ALuint, ALenum, ALfloat))                                           // cppcheck-suppress thisSubtraction
+CAPI_DEFINE_M_ENTRY(void, AL_APIENTRY, alBuffer3f, CAPI_ARG5(ALuint, ALenum, ALfloat, ALfloat, ALfloat))                        // cppcheck-suppress thisSubtraction
+CAPI_DEFINE_M_ENTRY(void, AL_APIENTRY, alBufferfv, CAPI_ARG3(ALuint, ALenum, const ALfloat *))                                  // cppcheck-suppress thisSubtraction
+CAPI_DEFINE_M_ENTRY(void, AL_APIENTRY, alBufferi, CAPI_ARG3(ALuint, ALenum, ALint))                                             // cppcheck-suppress thisSubtraction
+CAPI_DEFINE_M_ENTRY(void, AL_APIENTRY, alBuffer3i, CAPI_ARG5(ALuint, ALenum, ALint, ALint, ALint))                              // cppcheck-suppress thisSubtraction
+CAPI_DEFINE_M_ENTRY(void, AL_APIENTRY, alBufferiv, CAPI_ARG3(ALuint, ALenum, const ALint *))                                    // cppcheck-suppress thisSubtraction
+CAPI_DEFINE_M_ENTRY(void, AL_APIENTRY, alGetBufferf, CAPI_ARG3(ALuint, ALenum, ALfloat *))                                      // cppcheck-suppress thisSubtraction
+CAPI_DEFINE_M_ENTRY(void, AL_APIENTRY, alGetBuffer3f, CAPI_ARG5(ALuint, ALenum, ALfloat *, ALfloat *, ALfloat *))               // cppcheck-suppress thisSubtraction
+CAPI_DEFINE_M_ENTRY(void, AL_APIENTRY, alGetBufferfv, CAPI_ARG3(ALuint, ALenum, ALfloat *))                                     // cppcheck-suppress thisSubtraction
+CAPI_DEFINE_M_ENTRY(void, AL_APIENTRY, alGetBufferi, CAPI_ARG3(ALuint, ALenum, ALint *))                                        // cppcheck-suppress thisSubtraction
+CAPI_DEFINE_M_ENTRY(void, AL_APIENTRY, alGetBuffer3i, CAPI_ARG5(ALuint, ALenum, ALint *, ALint *, ALint *))                     // cppcheck-suppress thisSubtraction
+CAPI_DEFINE_M_ENTRY(void, AL_APIENTRY, alGetBufferiv, CAPI_ARG3(ALuint, ALenum, ALint *))                                       // cppcheck-suppress thisSubtraction
+CAPI_DEFINE_M_ENTRY(ALCcontext *, ALC_APIENTRY, alcCreateContext, CAPI_ARG2(ALCdevice *, const ALCint*))                        // cppcheck-suppress thisSubtraction
+CAPI_DEFINE_M_ENTRY(ALCboolean, ALC_APIENTRY, alcMakeContextCurrent, CAPI_ARG1(ALCcontext *))                                   // cppcheck-suppress thisSubtraction
+CAPI_DEFINE_M_ENTRY(void, ALC_APIENTRY, alcProcessContext, CAPI_ARG1(ALCcontext *))                                             // cppcheck-suppress thisSubtraction
+CAPI_DEFINE_M_ENTRY(void, ALC_APIENTRY, alcSuspendContext, CAPI_ARG1(ALCcontext *))                                             // cppcheck-suppress thisSubtraction
+CAPI_DEFINE_M_ENTRY(void, ALC_APIENTRY, alcDestroyContext, CAPI_ARG1(ALCcontext *))                                             // cppcheck-suppress thisSubtraction
+CAPI_DEFINE_M_ENTRY(ALCcontext *, ALC_APIENTRY, alcGetCurrentContext, CAPI_ARG0())                                              // cppcheck-suppress thisSubtraction
+CAPI_DEFINE_M_ENTRY(ALCdevice *, ALC_APIENTRY, alcGetContextsDevice, CAPI_ARG1(ALCcontext *))                                   // cppcheck-suppress thisSubtraction
+CAPI_DEFINE_M_ENTRY(ALCdevice *, ALC_APIENTRY, alcOpenDevice, CAPI_ARG1(const ALCchar *))                                       // cppcheck-suppress thisSubtraction
+CAPI_DEFINE_M_ENTRY(ALCboolean, ALC_APIENTRY, alcCloseDevice, CAPI_ARG1(ALCdevice *))                                           // cppcheck-suppress thisSubtraction
+CAPI_DEFINE_M_ENTRY(ALCenum, ALC_APIENTRY, alcGetError, CAPI_ARG1(ALCdevice *))                                                 // cppcheck-suppress thisSubtraction
+CAPI_DEFINE_M_ENTRY(ALCboolean, ALC_APIENTRY, alcIsExtensionPresent, CAPI_ARG2(ALCdevice *, const ALCchar *))                   // cppcheck-suppress thisSubtraction
+CAPI_DEFINE_M_ENTRY(void *, ALC_APIENTRY, alcGetProcAddress, CAPI_ARG2(ALCdevice *, const ALCchar *))                           // cppcheck-suppress thisSubtraction
+CAPI_DEFINE_M_ENTRY(ALCenum, ALC_APIENTRY, alcGetEnumValue, CAPI_ARG2(ALCdevice *, const ALCchar *))                            // cppcheck-suppress thisSubtraction
+CAPI_DEFINE_M_ENTRY(const ALCchar *, ALC_APIENTRY, alcGetString, CAPI_ARG2(ALCdevice *, ALCenum))                               // cppcheck-suppress thisSubtraction
+CAPI_DEFINE_M_ENTRY(void, ALC_APIENTRY, alcGetIntegerv, CAPI_ARG4(ALCdevice *, ALCenum, ALCsizei, ALCint *))                    // cppcheck-suppress thisSubtraction
+CAPI_DEFINE_M_ENTRY(ALCdevice *, ALC_APIENTRY, alcCaptureOpenDevice, CAPI_ARG4(const ALCchar *, ALCuint, ALCenum, ALCsizei))    // cppcheck-suppress thisSubtraction
+CAPI_DEFINE_M_ENTRY(ALCboolean, ALC_APIENTRY, alcCaptureCloseDevice, CAPI_ARG1(ALCdevice *))                                    // cppcheck-suppress thisSubtraction
+CAPI_DEFINE_M_ENTRY(void, ALC_APIENTRY, alcCaptureStart, CAPI_ARG1(ALCdevice *))                                                // cppcheck-suppress thisSubtraction
+CAPI_DEFINE_M_ENTRY(void, ALC_APIENTRY, alcCaptureStop, CAPI_ARG1(ALCdevice *))                                                 // cppcheck-suppress thisSubtraction
+CAPI_DEFINE_M_ENTRY(void, ALC_APIENTRY, alcCaptureSamples, CAPI_ARG3(ALCdevice *, ALCvoid *, ALCsizei))                         // cppcheck-suppress thisSubtraction
 
 CAPI_END_DLL()
+
 CAPI_DEFINE_DLL
 
 // CAPI_DEFINE(argc, return_type, name, argv_no_name)
