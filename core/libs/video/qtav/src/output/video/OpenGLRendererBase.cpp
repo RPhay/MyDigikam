@@ -41,8 +41,10 @@ OpenGLRendererBasePrivate::OpenGLRendererBasePrivate(QPaintDevice* pd)
     filter_context->painter = painter;
 }
 
-OpenGLRendererBasePrivate::~OpenGLRendererBasePrivate() {
-    if (painter) {
+OpenGLRendererBasePrivate::~OpenGLRendererBasePrivate()
+{
+    if (painter)
+    {
         delete painter;
         painter = 0;
     }
@@ -52,6 +54,7 @@ void OpenGLRendererBasePrivate::setupAspectRatio()
 {
     matrix.setToIdentity();
     matrix.scale((GLfloat)out_rect.width()/(GLfloat)renderer_width, (GLfloat)out_rect.height()/(GLfloat)renderer_height, 1);
+
     if (rotation())
         matrix.rotate(rotation(), 0, 0, 1); // Z axis
 }
@@ -80,9 +83,11 @@ OpenGLVideo* OpenGLRendererBase::opengl() const
 bool OpenGLRendererBase::receiveFrame(const VideoFrame& frame)
 {
     DPTR_D(OpenGLRendererBase);
+
     d.video_frame = frame;
     d.frame_changed = true;
-    updateUi(); //can not call updateGL() directly because no event and paintGL() will in video thread
+    updateUi(); // can not call updateGL() directly because no event and paintGL() will in video thread
+
     return true;
 }
 
@@ -94,23 +99,34 @@ void OpenGLRendererBase::drawBackground()
 void OpenGLRendererBase::drawFrame()
 {
     DPTR_D(OpenGLRendererBase);
+
     QRect roi = realROI();
+
     //d.glv.render(QRectF(-1, 1, 2, -2), roi, d.matrix);
+
     // QRectF() means the whole viewport
-    if (d.frame_changed) {
+
+    if (d.frame_changed)
+    {
         d.glv.setCurrentFrame(d.video_frame);
         d.frame_changed = false;
     }
+
     d.glv.render(QRectF(), roi, d.matrix);
 }
 
 void OpenGLRendererBase::onInitializeGL()
 {
     DPTR_D(OpenGLRendererBase);
+
     //makeCurrent();
+
 #if QT_VERSION >= QT_VERSION_CHECK(4, 8, 0)
+
     initializeOpenGLFunctions();
+
 #endif
+
     QOpenGLContext *ctx = const_cast<QOpenGLContext*>(QOpenGLContext::currentContext()); //qt4 returns const
     d.glv.setOpenGLContext(ctx);
 }
@@ -118,6 +134,7 @@ void OpenGLRendererBase::onInitializeGL()
 void OpenGLRendererBase::onPaintGL()
 {
     DPTR_D(OpenGLRendererBase);
+
     /* we can mix gl and qpainter.
      * QPainter painter(this);
      * painter.beginNativePainting();
@@ -125,8 +142,11 @@ void OpenGLRendererBase::onPaintGL()
      * painter.endNativePainting();
      * swapBuffers();
      */
+
     handlePaintEvent();
+
     //context()->swapBuffers(this);
+
     if (d.painter && d.painter->isActive())
         d.painter->end();
 }
@@ -135,7 +155,9 @@ void OpenGLRendererBase::onResizeGL(int w, int h)
 {
     if (!QOpenGLContext::currentContext())
         return;
+
     DPTR_D(OpenGLRendererBase);
+
     d.glv.setProjectionMatrixToRect(QRectF(0, 0, w, h));
     d.setupAspectRatio();
 }
@@ -143,16 +165,22 @@ void OpenGLRendererBase::onResizeGL(int w, int h)
 void OpenGLRendererBase::onResizeEvent(int w, int h)
 {
     DPTR_D(OpenGLRendererBase);
+
     d.update_background = true;
     resizeRenderer(w, h);
     d.setupAspectRatio();
+
     //QOpenGLWindow::resizeEvent(e); //will call resizeGL(). TODO:will call paintEvent()?
 }
-//TODO: out_rect not correct when top level changed
+
+// TODO: out_rect not correct when top level changed
+
 void OpenGLRendererBase::onShowEvent()
 {
     DPTR_D(OpenGLRendererBase);
+
     d.update_background = true;
+
     /*
      * Do something that depends on widget below! e.g. recreate render target for direct2d.
      * When Qt::WindowStaysOnTopHint changed, window will hide first then show. If you
@@ -164,6 +192,7 @@ void OpenGLRendererBase::onSetOutAspectRatio(qreal ratio)
 {
     Q_UNUSED(ratio);
     DPTR_D(OpenGLRendererBase);
+
     d.setupAspectRatio();
 }
 
@@ -171,6 +200,7 @@ void OpenGLRendererBase::onSetOutAspectRatioMode(OutAspectRatioMode mode)
 {
     Q_UNUSED(mode);
     DPTR_D(OpenGLRendererBase);
+
     d.setupAspectRatio();
 }
 
@@ -178,30 +208,35 @@ bool OpenGLRendererBase::onSetOrientation(int value)
 {
     Q_UNUSED(value)
     d_func().setupAspectRatio();
+
     return true;
 }
 
 bool OpenGLRendererBase::onSetBrightness(qreal b)
 {
     d_func().glv.setBrightness(b);
+
     return true;
 }
 
 bool OpenGLRendererBase::onSetContrast(qreal c)
 {
     d_func().glv.setContrast(c);
+
     return true;
 }
 
 bool OpenGLRendererBase::onSetHue(qreal h)
 {
     d_func().glv.setHue(h);
+
     return true;
 }
 
 bool OpenGLRendererBase::onSetSaturation(qreal s)
 {
     d_func().glv.setSaturation(s);
+
     return true;
 }
 

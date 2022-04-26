@@ -24,6 +24,8 @@
 #ifndef QTAV_AV_OUTPUT_P_H
 #define QTAV_AV_OUTPUT_P_H
 
+#include "AVOutput.h"
+
 // Qt includes
 
 #include <QList>

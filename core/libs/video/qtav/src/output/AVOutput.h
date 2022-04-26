@@ -53,6 +53,7 @@ public:
 
     AVOutput();
     virtual ~AVOutput();
+
     bool isAvailable() const;
 
     //void addSource(AVPlayer* player); //call player.addVideoRenderer(this)

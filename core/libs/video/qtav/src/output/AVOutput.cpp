@@ -21,8 +21,10 @@
  *
  * ============================================================ */
 
-#include "AVOutput.h"
 #include "AVOutput_p.h"
+
+// Local includes
+
 #include "Filter.h"
 #include "FilterContext.h"
 #include "FilterManager.h"
@@ -32,8 +34,9 @@
 namespace QtAV
 {
 
-AVOutputPrivate::~AVOutputPrivate() {
-    cond.wakeAll(); //WHY: failed to wake up
+AVOutputPrivate::~AVOutputPrivate()
+{
+    cond.wakeAll(); // WHY: failed to wake up
 }
 
 AVOutput::AVOutput()
@@ -47,28 +50,40 @@ AVOutput::AVOutput(AVOutputPrivate &d)
 
 AVOutput::~AVOutput()
 {
-    pause(false); //Does not work. cond may still waiting when destroyed
+    pause(false); // Does not work. cond may still waiting when destroyed
     detach();
     DPTR_D(AVOutput);
-    if (d.filter_context) {
+
+    if (d.filter_context)
+    {
         delete d.filter_context;
         d.filter_context = 0;
     }
-    foreach (Filter *f, d.pending_uninstall_filters) {
+
+    foreach (Filter *f, d.pending_uninstall_filters)
+    {
         d.filters.removeAll(f);
     }
+
     QList<Filter*>::iterator it = d.filters.begin();
-    while (it != d.filters.end()) {
+
+    while (it != d.filters.end())
+    {
         // if not uninstall here, if AVOutput is also an QObject (for example, widget based renderers)
         // then qobject children filters will be deleted when parent is destroying and call FilterManager::uninstallFilter()
         // and FilterManager::instance().unregisterFilter(filter, this) too late that AVOutput is almost be destroyed
+
         uninstallFilter(*it);
+
         // 1 filter has 1 target. so if has output filter in manager, the output is this output
+
         /*FilterManager::instance().hasOutputFilter(*it) && */
+
         if ((*it)->isOwnedByTarget() && !(*it)->parent())
             delete *it;
         ++it;
     }
+
     d.filters.clear();
 }
 
@@ -80,8 +95,10 @@ bool AVOutput::isAvailable() const
 void AVOutput::pause(bool p)
 {
     DPTR_D(AVOutput);
+
     if (d.paused == p)
         return;
+
     d.paused = p;
 }
 
@@ -90,15 +107,21 @@ bool AVOutput::isPaused() const
     return d_func().paused;
 }
 
-//TODO: how to call this automatically before write()?
+// TODO: how to call this automatically before write()?
+
 bool AVOutput::tryPause()
 {
     DPTR_D(AVOutput);
+
     if (!d.paused)
         return false;
+
     QMutexLocker lock(&d.mutex);
+
     Q_UNUSED(lock);
+
     d.cond.wait(&d.mutex);
+
     return true;
 }
 
@@ -120,11 +143,15 @@ void AVOutput::attach(OutputSet *set)
 void AVOutput::detach(OutputSet *set)
 {
     DPTR_D(AVOutput);
-    if (set) {
+
+    if (set)
+    {
         set->removeOutput(this);
         return;
     }
-    foreach(OutputSet *set, d.output_sets) {
+
+    foreach(OutputSet *set, d.output_sets)
+    {
         set->removeOutput(this);
     }
 }
@@ -137,6 +164,7 @@ QList<Filter*>& AVOutput::filters()
 void AVOutput::setStatistics(Statistics *statistics)
 {
     DPTR_D(AVOutput);
+
     d.statistics = statistics;
 }
 
@@ -147,11 +175,15 @@ bool AVOutput::installFilter(Filter *filter, int index)
 
 bool AVOutput::onInstallFilter(Filter *filter, int index)
 {
-    if (!FilterManager::instance().registerFilter(filter, this, index)) {
+    if (!FilterManager::instance().registerFilter(filter, this, index))
+    {
         return false;
     }
+
     DPTR_D(AVOutput);
+
     d.filters = FilterManager::instance().outputFilters(this);
+
     return true;
 }
 
@@ -159,6 +191,7 @@ bool AVOutput::onInstallFilter(Filter *filter, int index)
  * FIXME: how to ensure thread safe using mutex etc? for a video filter, both are in main thread.
  * an audio filter on audio output may be in audio thread
  */
+
 bool AVOutput::uninstallFilter(Filter *filter)
 {
     return onUninstallFilter(filter);
@@ -167,8 +200,10 @@ bool AVOutput::uninstallFilter(Filter *filter)
 bool AVOutput::onUninstallFilter(Filter *filter)
 {
     DPTR_D(AVOutput);
+
     FilterManager::instance().unregisterFilter(filter, this);
     d.pending_uninstall_filters.push_back(filter);
+
     return true;
 }
 
@@ -180,12 +215,17 @@ void AVOutput::hanlePendingTasks()
 bool AVOutput::onHanlePendingTasks()
 {
     DPTR_D(AVOutput);
+
     if (d.pending_uninstall_filters.isEmpty())
         return false;
-    foreach (Filter *filter, d.pending_uninstall_filters) {
+
+    foreach (Filter *filter, d.pending_uninstall_filters)
+    {
         d.filters.removeAll(filter);
     }
+
     d.pending_uninstall_filters.clear();
+
     return true;
 }
 

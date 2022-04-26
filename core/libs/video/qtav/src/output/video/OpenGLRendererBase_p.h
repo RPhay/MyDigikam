@@ -41,6 +41,8 @@ public:
 
     void setupAspectRatio();
 
+public:
+
     QPainter*   painter;
     OpenGLVideo glv;
     QMatrix4x4  matrix;

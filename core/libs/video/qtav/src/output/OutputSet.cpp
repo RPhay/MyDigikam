@@ -106,6 +106,7 @@ void OutputSet::addOutput(AVOutput *output)
 {
     QMutexLocker lock(&mMutex);
     Q_UNUSED(lock);
+
     mOutputs.append(output);
     output->addOutputSet(this);
 }
@@ -114,6 +115,7 @@ void OutputSet::removeOutput(AVOutput *output)
 {
     QMutexLocker lock(&mMutex);
     Q_UNUSED(lock);
+
     mOutputs.removeAll(output);
     output->removeOutputSet(this);
 }
