@@ -825,20 +825,25 @@ bool AVDemuxer::seek(qint64 pos)
         {
             // FIXME
 
-            qCDebug(DIGIKAM_QTAV_LOG).noquote()
-                << QString::asprintf("Seek (%lld) when video duration is growing %lld=>%lld",
-                    pos,
-                    duration(),
-                    qint64(d->max_pts*1000.0));
+            qCDebug(DIGIKAM_QTAV_LOG)
+                << "Seek ("
+                << pos
+                << ") when video duration is growing"
+                << duration()
+                << "=>"
+                << qint64(d->max_pts*1000.0);
         }
         else
         {
-            qCWarning(DIGIKAM_QTAV_LOG_WARN).noquote()
-                << QString::asprintf("Invalid seek position %lld %.2f. valid range [%lld, %lld]",
-                    upos,
-                    double(upos) / double(durationUs()),
-                    startTimeUs(),
-                    startTimeUs()+durationUs());
+            qCWarning(DIGIKAM_QTAV_LOG_WARN)
+                << "Invalid seek position"
+                << upos
+                << double(upos) / double(durationUs())
+                << "valid range ["
+                << startTimeUs()
+                << ","
+                << startTimeUs()+durationUs()
+                << "]";
 
             return false;
         }
