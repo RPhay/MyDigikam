@@ -104,7 +104,6 @@ bool DMetadata::getItemFacesMap(QMultiMap<QString, QVariant>& faces) const
 
     QString qxmpTagName = QLatin1String("Xmp.mwg-rs.Regions/mwg-rs:RegionList");
     QString nameTagKey  = qxmpTagName + QLatin1String("[%1]/mwg-rs:Name");
-    QString typeTagKey  = qxmpTagName + QLatin1String("[%1]/mwg-rs:Type");
     QString areaxTagKey = qxmpTagName + QLatin1String("[%1]/mwg-rs:Area/stArea:x");
     QString areayTagKey = qxmpTagName + QLatin1String("[%1]/mwg-rs:Area/stArea:y");
     QString areawTagKey = qxmpTagName + QLatin1String("[%1]/mwg-rs:Area/stArea:w");
@@ -128,13 +127,6 @@ bool DMetadata::getItemFacesMap(QMultiMap<QString, QVariant>& faces) const
         if (person.isEmpty() && !rect.isValid())
         {
             break;
-        }
-
-        QString type = getXmpTagString(typeTagKey.arg(i).toLatin1().constData(), false);
-
-        if (type != QLatin1String("Face"))
-        {
-            continue;
         }
 
         // Ignore the full size face region.
