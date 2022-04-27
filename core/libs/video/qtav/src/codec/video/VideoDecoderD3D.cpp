@@ -577,7 +577,7 @@ void VideoDecoderD3DPrivate::releaseBuffer(void *opaque, uint8_t *data)
 {
     Q_UNUSED(data);
 
-    va_surface_t* surface = (va_surface_t*)opaque;
+    va_surface_t* surface = reinterpret_cast<va_surface_t*>(opaque);
     surface->ref--;
 }
 

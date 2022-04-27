@@ -73,7 +73,7 @@ InteropResource::~InteropResource()
 
 void* InteropResource::mapToHost(const VideoFormat &format, void *handle, int picIndex, const CUVIDPROCPARAMS &param, int width, int height, int coded_height)
 {
-    AutoCtxLock locker((cuda_api*)this, lock);
+    AutoCtxLock locker(reinterpret_cast<cuda_api*>(this), lock);
     Q_UNUSED(locker);
     CUdeviceptr devptr;
     unsigned int pitch;
@@ -154,7 +154,7 @@ bool HostInteropResource::map(int picIndex, const CUVIDPROCPARAMS &param, GLuint
 
     if (host_mem.index != picIndex || !host_mem.data)
     {
-        AutoCtxLock locker((cuda_api*)this, lock);
+        AutoCtxLock locker(reinterpret_cast<cuda_api*>(this), lock);
         Q_UNUSED(locker);
 
         CUdeviceptr devptr;
@@ -800,7 +800,7 @@ namespace cuda
 
 bool GLInteropResource::map(int picIndex, const CUVIDPROCPARAMS &param, GLuint tex, int w, int h, int H, int plane)
 {
-    AutoCtxLock locker((cuda_api*)this, lock);
+    AutoCtxLock locker(reinterpret_cast<cuda_api*>(this), lock);
     Q_UNUSED(locker);
 
     if (!ensureResource(w, h, H, tex, plane)) // TODO surface size instead of frame size because we copy the device data
