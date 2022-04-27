@@ -77,17 +77,7 @@ public:
 
     ~InterruptHandler()
     {
-
-#if QT_VERSION >= QT_VERSION_CHECK(4, 7, 0)
-
         mTimer.invalidate();
-
-#else
-
-        mTimer.stop();
-
-#endif
-
     }
 
     void begin(Action act)
@@ -102,16 +92,7 @@ public:
 
     void end() 
     {
-
-#if QT_VERSION >= QT_VERSION_CHECK(4, 7, 0)
-
         mTimer.invalidate();
-
-#else
-
-        mTimer.stop();
-
-#endif
 
         switch (mAction)
         {
@@ -245,15 +226,7 @@ public:
 
         // use restart
 
-#if QT_VERSION >= QT_VERSION_CHECK(4, 7, 0)
-
         if (!handler->mTimer.hasExpired(handler->mTimeout))
-
-#else
-
-        if (handler->mTimer.elapsed() < handler->mTimeout)
-
-#endif
             return 0;
 
         qCDebug(DIGIKAM_QTAV_LOG).noquote() << QString::asprintf("status: %d, Timeout expired: %lld/%lld -> quit!", (int)handler->mStatus, handler->mTimer.elapsed(), handler->mTimeout);

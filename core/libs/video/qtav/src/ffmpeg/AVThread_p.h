@@ -29,12 +29,7 @@
 #include <QSemaphore>
 #include <QVariant>
 #include <QWaitCondition>
-#if QT_VERSION >= QT_VERSION_CHECK(4, 7, 0)
 #include <QElapsedTimer>
-#else
-#include <QTime>
-typedef QTime QElapsedTimer;
-#endif
 
 #include "PacketBuffer.h"
 #include "QtAV_ring.h"

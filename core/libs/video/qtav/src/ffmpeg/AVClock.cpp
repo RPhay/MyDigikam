@@ -209,16 +209,7 @@ void AVClock::pause(bool p)
     if (p)
     {
         QTimer::singleShot(0, this, SLOT(stopCorrectionTimer()));
-
-#if QT_VERSION >= QT_VERSION_CHECK(4, 7, 0)
-
         timer.invalidate();
-
-#else
-
-        timer.stop();
-
-#endif
 
         Q_EMIT paused();
     }
@@ -246,18 +237,10 @@ void AVClock::reset()
     value0  = 0;
     pts_    = pts_v = delay_ = 0;
     QTimer::singleShot(0, this, SLOT(stopCorrectionTimer()));
-
-#if QT_VERSION >= QT_VERSION_CHECK(4, 7, 0)
-
     timer.invalidate();
 
-#else
-
-    timer.stop();
-
-#endif
-
     t = QDateTime::currentMSecsSinceEpoch();
+
     Q_EMIT resetted();
 }
 

@@ -25,12 +25,7 @@
 
 // Qt includes
 
-#if QT_VERSION >= QT_VERSION_CHECK(4, 7, 0)
-#   include <QElapsedTimer>
-#else
-#   include <QTime>
-typedef QTime QElapsedTimer;
-#endif
+#include <QElapsedTimer>
 
 // Local includes
 
