@@ -56,7 +56,7 @@
 #include "FilterContext.h"
 #include "digikam_debug.h"
 
-#define UPLOAD_ROI 0
+#define UPLOAD_ROI    0
 #define ROI_TEXCOORDS 1
 
 #define AVALIGN(x, a) (((x)+(a)-1)&~((a)-1))
@@ -78,10 +78,11 @@ static void checkGlError(const char* op = 0)
 {
     GLenum error = glGetError();
 
-    if (error == GL_NO_ERROR)
+    if (error == GL_NO_ERROR || op == 0)
         return;
 
-    qCWarning(DIGIKAM_QTAVWIDGETS_LOG_WARN).noquote() << QString::asprintf("GL error %s (%#x): %s", op, error, glGetString(error));
+    qCWarning(DIGIKAM_QTAVWIDGETS_LOG_WARN).noquote()
+        << QString::asprintf("GL error %s (%#x): %s", op, error, glGetString(error));
 }
 
 #define CHECK_GL_ERROR(FUNC) \
@@ -219,6 +220,7 @@ public:
 
                     glHint(GL_PERSPECTIVE_CORRECTION_HINT, GL_NICEST);
                 }
+
 #endif
                 break;
 
@@ -257,6 +259,7 @@ public:
 
                     glHint(GL_PERSPECTIVE_CORRECTION_HINT, GL_DONT_CARE);
                 }
+
 #endif
                 break;
         }
@@ -784,8 +787,8 @@ bool GLWidgetRendererPrivate::initTextures(const VideoFormat &fmt)
             //data_type[i] = GL_UNSIGNED_SHORT;
         }
 
-        int bpp_gl = OpenGLHelper::bytesOfGLFormat(data_format[i], data_type[i]);
-        int pad    = qCeil((qreal)(texture_size[i].width() - effective_tex_width[i])/(qreal)bpp_gl);
+        int bpp_gl              = OpenGLHelper::bytesOfGLFormat(data_format[i], data_type[i]);
+        int pad                 = qCeil((qreal)(texture_size[i].width() - effective_tex_width[i])/(qreal)bpp_gl);
         texture_size[i].setWidth(qCeil((qreal)texture_size[i].width()/(qreal)bpp_gl));
         texture_upload_size[i].setWidth(qCeil((qreal)texture_upload_size[i].width()/(qreal)bpp_gl));
         effective_tex_width[i] /= bpp_gl; // fmt.bytesPerPixel(i);
@@ -847,9 +850,10 @@ void GLWidgetRendererPrivate::updateTexturesIfNeeded()
 
     // effective size may change even if plane size not changed
 
-    if (update_textures
-            || video_frame.bytesPerLine(0) != plane0Size.width() || video_frame.height() != plane0Size.height()
-            || (plane1_linesize > 0 && video_frame.bytesPerLine(1) != plane1_linesize))
+    if (   update_textures
+        || video_frame.bytesPerLine(0) != plane0Size.width() || video_frame.height() != plane0Size.height()
+        || (plane1_linesize > 0 && video_frame.bytesPerLine(1) != plane1_linesize)
+       )
         {
 
         // no need to check height if plane 0 sizes are equal?
@@ -910,7 +914,7 @@ void GLWidgetRendererPrivate::updateShaderIfNeeded()
         qCDebug(DIGIKAM_QTAVWIDGETS_LOG).noquote() << QString::asprintf("pixel format changed: %s => %s", qPrintable(video_format.name()), qPrintable(fmt.name()));
     }
 
-    VideoMaterialType *newType = materialType(fmt);
+    VideoMaterialType* newType = materialType(fmt);
 
     if (material_type == newType)
         return;
@@ -1045,7 +1049,7 @@ void GLWidgetRendererPrivate::uploadPlane(int p, GLint internalFormat, GLenum fo
         //glPixelStorei(GL_UNPACK_ALIGNMENT, 1);
 
         glTexImage2D(GL_TEXTURE_2D, 0, internalFormat, roi_w, roi_h, 0, format, GL_UNSIGNED_BYTE, NULL);
-        const char *src = (char*)video_frame.bits(p) + roi_y*plane_w + roi_x*fmt.bytesPerPixel(p);
+        const char* src = (char*)video_frame.bits(p) + roi_y*plane_w + roi_x*fmt.bytesPerPixel(p);
 
 #define UPLOAD_LINE 1
 
@@ -1199,10 +1203,10 @@ void GLWidgetRenderer::drawFrame()
 
     const GLfloat kTexCoords[] =
     {
-            0, 0,
-            1, 0,
-            1, 1,
-            0, 1,
+        0, 0,
+        1, 0,
+        1, 1,
+        0, 1,
     };
 
 #endif // ROI_TEXCOORDS
@@ -1220,6 +1224,7 @@ void GLWidgetRenderer::drawFrame()
     if (!d.hasGLSL)
     {
         // qpainter will reset gl state, so need glMatrixMode and clear color(in drawBackground())
+
         // TODO: study what state will be reset
 
         glMatrixMode(GL_PROJECTION);
@@ -1389,6 +1394,7 @@ void GLWidgetRenderer::drawFrame()
 void GLWidgetRenderer::initializeGL()
 {
     DPTR_D(GLWidgetRenderer);
+
     makeCurrent();
 
     //const QByteArray extensions(reinterpret_cast<const char *>(glGetString(GL_EXTENSIONS)));
@@ -1471,6 +1477,7 @@ void GLWidgetRenderer::resizeGL(int w, int h)
 void GLWidgetRenderer::resizeEvent(QResizeEvent *e)
 {
     DPTR_D(GLWidgetRenderer);
+
     d.update_background = true;
     resizeRenderer(e->size());
     QGLWidget::resizeEvent(e); // will call resizeGL(). TODO:will call paintEvent()?
@@ -1481,6 +1488,7 @@ void GLWidgetRenderer::resizeEvent(QResizeEvent *e)
 void GLWidgetRenderer::showEvent(QShowEvent *)
 {
     DPTR_D(GLWidgetRenderer);
+
     d.update_background = true;
 
     /*
