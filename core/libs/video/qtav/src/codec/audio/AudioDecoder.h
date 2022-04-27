@@ -67,7 +67,7 @@ public:
      */
     static AudioDecoder* create(const char* name = "FFmpeg");
     virtual AudioDecoderId id() const = 0;
-    QString name()              const;              // name from factory
+    QString name()              const override;     // name from factory
     virtual QByteArray data()   const;              // decoded data
     virtual AudioFrame frame()        = 0;
     AudioResampler* resampler();                    // TODO: remove. can not share the same resampler for multiple frames

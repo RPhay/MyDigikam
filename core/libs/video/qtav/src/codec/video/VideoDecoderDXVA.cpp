@@ -126,7 +126,10 @@ struct d3d9_surface_t : public va_surface_t
         d3d = (IDirect3DSurface9*)s;
     }
 
-    IUnknown* getSurface() const {return d3d;}
+    IUnknown* getSurface() const override
+    {
+        return d3d;
+    }
 
 private:
 

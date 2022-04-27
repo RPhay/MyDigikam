@@ -21,8 +21,8 @@
  *
  * ============================================================ */
 
-#ifndef QTAV_AUDIOFRAME_H
-#define QTAV_AUDIOFRAME_H
+#ifndef QTAV_AUDIO_FRAME_H
+#define QTAV_AUDIO_FRAME_H
 
 // Local includes
 
@@ -41,19 +41,24 @@ class QTAV_EXPORT AudioFrame : public Frame
 
 public:
 
-    //data must be complete
+    // data must be complete
 
     /*!
      * \brief AudioFrame
      * construct an audio frame from a given buffer and format
      */
     AudioFrame(const AudioFormat& format = AudioFormat(), const QByteArray& data = QByteArray());
-    AudioFrame(const AudioFrame &other);
+    AudioFrame(const AudioFrame& other);
     virtual ~AudioFrame();
-    AudioFrame &operator =(const AudioFrame &other);
 
-    bool isValid() const;
-    operator bool() const { return isValid();}
+    AudioFrame& operator =(const AudioFrame& other);
+
+    bool isValid()                        const;
+
+    operator bool()                       const
+    {
+        return isValid();
+    }
 
     /*!
      * \brief data
@@ -61,26 +66,26 @@ public:
      * \return
      */
     QByteArray data();
-    virtual int channelCount() const;
+    virtual int channelCount()            const override;
 
     /*!
      * Deep copy. If you want to copy data from somewhere, knowing the format, width and height,
      * then you can use clone().
      */
-    AudioFrame clone() const;
+    AudioFrame clone()                    const;
     AudioFrame mid(int pos, int len = -1) const;
-    void prepend(AudioFrame &other);
-    AudioFormat format() const;
+    void prepend(AudioFrame& other);
+    AudioFormat format()                  const;
     void setSamplesPerChannel(int samples);
 
     // may change after resampling
 
-    int samplesPerChannel() const;
+    int samplesPerChannel()               const;
     AudioFrame to(const AudioFormat& fmt) const;
 
     // AudioResamplerId
 
-    void setAudioResampler(AudioResampler *conv); // TODO: remove
+    void setAudioResampler(AudioResampler* conv); // TODO: remove
 
     /*!
         Returns the number of microseconds represented by \a bytes in this format.
@@ -88,11 +93,11 @@ public:
         Note that some rounding may occur if \a bytes is not an exact multiple
         of the number of bytes per frame.
     */
-    qint64 duration() const;
+    qint64 duration()                     const;
 };
 
 } // namespace QtAV
 
 Q_DECLARE_METATYPE(QtAV::AudioFrame)
 
-#endif // QTAV_AUDIOFRAME_H
+#endif // QTAV_AUDIO_FRAME_H

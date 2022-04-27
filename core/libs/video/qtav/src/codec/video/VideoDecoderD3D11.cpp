@@ -140,12 +140,12 @@ struct d3d11_surface_t
     {
     }
 
-    void setSurface(IUnknown* s)
+    void setSurface(IUnknown* s) override
     {
         view = (ID3D11VideoDecoderOutputView*)s;
     }
 
-    IUnknown* getSurface() const
+    IUnknown* getSurface() const override
     {
         return view.Get();
     }
