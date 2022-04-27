@@ -34,7 +34,7 @@
 #include <QResizeEvent>
 #include <qmath.h>
 
-//#error qtextstream.h must be included before any header file that defines Status. Xlib.h defines Status
+// #error qtextstream.h must be included before any header file that defines Status. Xlib.h defines Status
 
 #include <QTextStream> // build error
 
@@ -63,7 +63,8 @@ inline int scaleEQValue(int val, int min, int max)
 
 class XVRendererPrivate;
 
-class XVRenderer: public QWidget, public VideoRenderer
+class XVRenderer : public QWidget,
+                   public VideoRenderer
 {
     Q_OBJECT
     DPTR_DECLARE_PRIVATE(XVRenderer)
@@ -81,14 +82,17 @@ public:
      * If paintEngine != 0, the window will flicker when drawing without QPainter.
      * Make sure that paintEngine returns 0 to avoid flicking.
      */
-    virtual QPaintEngine* paintEngine() const override;
+    virtual QPaintEngine* paintEngine()                       const override;
 
     /* http://lists.trolltech.com/qt4-preview-feedback/2005-04/thread00609-0.html
      * true: paintEngine is QPainter. Painting with QPainter support double buffer
      * false: no double buffer, should reimplement paintEngine() to return 0 to avoid flicker
      */
 
-    virtual QWidget* widget() override { return this; }
+    virtual QWidget* widget() override
+    {
+        return this;
+    }
 
 protected:
 
@@ -137,25 +141,25 @@ VideoRendererId XVRenderer::id() const
 static const struct xv_format_entry_t
 {
     VideoFormat::PixelFormat format;
-    int fourcc;
+    int                      fourcc;
 } xv_fmt[] =
 {
     { VideoFormat::Format_YUV420P, FOURCC('Y', 'V', '1', '2')},
     { VideoFormat::Format_YUV420P, FOURCC('I', '4', '2', '0')},
-    { VideoFormat::Format_UYVY, FOURCC('U', 'Y', 'V', 'Y')},
-    { VideoFormat::Format_YUYV, FOURCC('Y', 'U', 'Y', '2')},
+    { VideoFormat::Format_UYVY,    FOURCC('U', 'Y', 'V', 'Y')},
+    { VideoFormat::Format_YUYV,    FOURCC('Y', 'U', 'Y', '2')},
 
     // split nv12 in xv to reduce copy times(no need to convert in sws)
 
-    { VideoFormat::Format_NV12, FOURCC('Y', 'V', '1', '2')},
-    { VideoFormat::Format_NV21, FOURCC('Y', 'V', '1', '2')},
+    { VideoFormat::Format_NV12,    FOURCC('Y', 'V', '1', '2')},
+    { VideoFormat::Format_NV21,    FOURCC('Y', 'V', '1', '2')},
 };
 
 #undef FOURCC
 
 int pixelFormatToXv(VideoFormat::PixelFormat fmt)
 {
-    for (size_t i = 0; i < sizeof(xv_fmt)/sizeof(xv_fmt[0]); ++i)
+    for (size_t i = 0 ; i < sizeof(xv_fmt)/sizeof(xv_fmt[0]) ; ++i)
     {
         if (xv_fmt[i].format == fmt)
             return xv_fmt[i].fourcc;
@@ -180,10 +184,11 @@ int xvFormatInPort(Display* disp, XvPortID port, VideoFormat::PixelFormat fmt)
     {
         qCDebug(DIGIKAM_QTAVWIDGETS_LOG).noquote() << QString::asprintf("XvImageFormatValues: %s", xvifmt->guid);
 
-        if (xvifmt->type == xv_type
-                && xvifmt->format == xv_plane
-                && xvifmt->id == xv_id
-                )
+        if (
+               xvifmt->type == xv_type
+            && xvifmt->format == xv_plane
+            && xvifmt->id == xv_id
+           )
         {
             if (XvGrabPort(disp, port, 0) == Success)
             {
@@ -231,6 +236,7 @@ public:
         {
             available = false;
             qCCritical(DIGIKAM_QTAVWIDGETS_LOG_CRITICAL) << QString::asprintf("Query adaptors failed!");
+
             return;
         }
 
@@ -238,6 +244,7 @@ public:
         {
             available = false;
             qCCritical(DIGIKAM_QTAVWIDGETS_LOG_CRITICAL) << QString::asprintf("No adaptor found!");
+
             return;
         }
     }
@@ -312,6 +319,7 @@ public:
         {
             available = false;
             qCCritical(DIGIKAM_QTAVWIDGETS_LOG_CRITICAL) << QString::asprintf("Create GC failed!");
+
             return false;
         }
 
@@ -331,7 +339,7 @@ public:
         destroyXVImage();
         qCDebug(DIGIKAM_QTAVWIDGETS_LOG).noquote() << QString::asprintf("port count: %d", num_adaptors);
 
-        for (uint i = 0; i < num_adaptors; ++i)
+        for (uint i = 0 ; i < num_adaptors ; ++i)
         {
             if ((xv_adaptor_info[i].type & (XvInputMask | XvImageMask)) == (XvInputMask | XvImageMask))
             {
@@ -343,6 +351,7 @@ public:
                     if (format_id)
                     {
                         xv_port = p;
+
                         break;
                     }
                 }
@@ -409,9 +418,9 @@ public:
 
         return true;
 
-#endif //_XSHM_H_
-
 no_shm:
+
+#endif //_XSHM_H_
 
         xv_image = XvCreateImage(display, xv_port, format_id, 0, xv_image_width, xv_image_height);
 
@@ -432,15 +441,15 @@ no_shm:
 
     bool XvSetPortAttributeIfExists(const char *key, int value);
 
-    bool use_shm; // TODO: set by user
-    unsigned int num_adaptors;
-    XvAdaptorInfo *xv_adaptor_info;
-    Display *display;
-    XvImage *xv_image;
-    int format_id;
-    int xv_image_width, xv_image_height;
-    XvPortID xv_port;
-    GC gc;
+    bool            use_shm; // TODO: set by user
+    unsigned int    num_adaptors;
+    XvAdaptorInfo*  xv_adaptor_info;
+    Display*        display;
+    XvImage*        xv_image;
+    int             format_id;
+    int             xv_image_width, xv_image_height;
+    XvPortID        xv_port;
+    GC              gc;
 
 #ifdef _XSHM_H_
 
@@ -454,7 +463,7 @@ no_shm:
 bool XVRendererPrivate::XvSetPortAttributeIfExists(const char *key, int value)
 {
     int nb_attributes;
-    XvAttribute *attributes = XvQueryPortAttributes(display, xv_port, &nb_attributes);
+    XvAttribute* attributes = XvQueryPortAttributes(display, xv_port, &nb_attributes);
 
     if (!attributes)
     {
@@ -518,10 +527,10 @@ bool XVRenderer::isSupported(VideoFormat::PixelFormat pixfmt) const
 {
     // TODO: rgb use copyplane
 
-    return pixfmt == VideoFormat::Format_YUV420P || pixfmt == VideoFormat::Format_YV12
-            || pixfmt == VideoFormat::Format_NV12|| pixfmt == VideoFormat::Format_NV21
-            || pixfmt == VideoFormat::Format_UYVY || pixfmt == VideoFormat::Format_YUYV
-            ;
+    return     pixfmt == VideoFormat::Format_YUV420P || pixfmt == VideoFormat::Format_YV12
+            || pixfmt == VideoFormat::Format_NV12    || pixfmt == VideoFormat::Format_NV21
+            || pixfmt == VideoFormat::Format_UYVY    || pixfmt == VideoFormat::Format_YUYV
+    ;
 }
 
 static void SplitPlanes(quint8 *dstu, size_t dstu_pitch,
@@ -529,9 +538,9 @@ static void SplitPlanes(quint8 *dstu, size_t dstu_pitch,
                         const quint8 *src, size_t src_pitch,
                         unsigned width, unsigned height)
 {
-    for (unsigned y = 0; y < height; y++)
+    for (unsigned y = 0 ; y < height ; y++)
     {
-        for (unsigned x = 0; x < width; x++)
+        for (unsigned x = 0 ; x < width ; x++)
         {
             dstu[x] = src[2*x+0];
             dstv[x] = src[2*x+1];
@@ -575,7 +584,7 @@ void CopyFromYv12_2(quint8 *dst[], size_t dst_pitch[],
      }
      else
      {
-         for (unsigned i = 0; i < height; ++i)
+         for (unsigned i = 0 ; i < height ; ++i)
          {
              memcpy(dst[2], src[2], width);
              memcpy(dst[1], src[1], width);
@@ -612,9 +621,9 @@ bool XVRenderer::receiveFrame(const VideoFrame& frame)
     QVector<size_t> src_linesize(nb_planes);
     QVector<const quint8*> src(nb_planes);
 
-    for (int i = 0; i < nb_planes; ++i)
+    for (int i = 0 ; i < nb_planes ; ++i)
     {
-        src[i] = d.video_frame.constBits(i);
+        src[i]          = d.video_frame.constBits(i);
         src_linesize[i] = d.video_frame.bytesPerLine(i);
     }
 
