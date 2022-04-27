@@ -111,20 +111,20 @@ public:
 private:
 
     virtual bool setupSurfaceInterop()  { return true; }
-    virtual bool createDevice() = 0;                        // d3d device, video context etc.
-    virtual void destroyDevice() = 0;
+    virtual bool createDevice()                      = 0;      // d3d device, video context etc.
+    virtual void destroyDevice()                     = 0;
     virtual bool checkDevice()          { return true; }
     virtual QVector<GUID> getSupportedCodecs() const = 0;
 
-    virtual void* setupAVVAContext() = 0;
+    virtual void* setupAVVAContext()                 = 0;
 
     /// create surfaces and decoder. width and height are coded value, maybe not aligned for d3d surface
     /// surfaces count is given, but not allocated
 
     virtual bool createDecoder(AVCodecID codec, int width, int height, QVector<va_surface_t*>& surf) = 0;
-    virtual void destroyDecoder() = 0;
-    virtual int fourccFor(const GUID *guid) const = 0;
-    const d3d_format_t *getFormat(const AVCodecContext* avctx, const QVector<GUID>& guids, GUID *selected) const;
+    virtual void destroyDecoder()                                                                    = 0;
+    virtual int fourccFor(const GUID *guid) const                                                    = 0;
+    const d3d_format_t* getFormat(const AVCodecContext* avctx, const QVector<GUID>& guids, GUID *selected) const;
 
 public:
 
@@ -181,7 +181,10 @@ int SelectConfig(AVCodecID codec_id, const T* cfgs, int nb_cfgs, T* cfg)
     }
 
     if (cfg_score <= 0)
-        qCWarning(DIGIKAM_QTAV_LOG_WARN).noquote() << QString::asprintf("Failed to find a supported decoder configuration");
+    {
+        qCWarning(DIGIKAM_QTAV_LOG_WARN).noquote()
+            << QString::asprintf("Failed to find a supported decoder configuration");
+    }
 
     return cfg_score;
 }

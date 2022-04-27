@@ -86,7 +86,7 @@ bool isHEVCSupported()
 // some MS_GUID are defined in mingw but some are not. move to namespace and define all is ok
 
 #define MS_GUID(name, l, w1, w2, b1, b2, b3, b4, b5, b6, b7, b8) \
-    static const GUID name = { l, w1, w2, {b1, b2, b3, b4, b5, b6, b7, b8}}
+    static const GUID name = { l, w1, w2, { b1, b2, b3, b4, b5, b6, b7, b8 } }
 
 MS_GUID    (DXVA_NoEncrypt,                         0x1b81bed0, 0xa0c7, 0x11d3, 0xb9, 0x84, 0x00, 0xc0, 0x4f, 0x2e, 0x73, 0xc5);
 
@@ -158,21 +158,20 @@ DEFINE_GUID(DXVA_ModeH263_D,                        0x1b81be06, 0xa0c7, 0x11d3, 
 DEFINE_GUID(DXVA_ModeH263_E,                        0x1b81be07, 0xa0c7, 0x11d3, 0xb9, 0x84, 0x00, 0xc0, 0x4f, 0x2e, 0x73, 0xc5);
 DEFINE_GUID(DXVA_ModeH263_F,                        0x1b81be08, 0xa0c7, 0x11d3, 0xb9, 0x84, 0x00, 0xc0, 0x4f, 0x2e, 0x73, 0xc5);
 
-
-static const int PROF_MPEG2_SIMPLE[] = { FF_PROFILE_MPEG2_SIMPLE, 0 };
-static const int PROF_MPEG2_MAIN[]   = { FF_PROFILE_MPEG2_SIMPLE, FF_PROFILE_MPEG2_MAIN, 0 };
+static const int PROF_MPEG2_SIMPLE[] = { FF_PROFILE_MPEG2_SIMPLE, 0                                                          };
+static const int PROF_MPEG2_MAIN[]   = { FF_PROFILE_MPEG2_SIMPLE, FF_PROFILE_MPEG2_MAIN, 0                                   };
 static const int PROF_H264_HIGH[]    = { FF_PROFILE_H264_CONSTRAINED_BASELINE, FF_PROFILE_H264_MAIN, FF_PROFILE_H264_HIGH, 0 };
-static const int PROF_HEVC_MAIN[]    = { FF_PROFILE_HEVC_MAIN, 0 };
-static const int PROF_HEVC_MAIN10[]  = { FF_PROFILE_HEVC_MAIN, FF_PROFILE_HEVC_MAIN_10, 0 };
+static const int PROF_HEVC_MAIN[]    = { FF_PROFILE_HEVC_MAIN, 0                                                             };
+static const int PROF_HEVC_MAIN10[]  = { FF_PROFILE_HEVC_MAIN, FF_PROFILE_HEVC_MAIN_10, 0                                    };
 
 // guids are from VLC
 
 struct dxva2_mode_t
 {
-    const char   *name;
-    const GUID   *guid;
-    int          codec;
-    const int    *profiles;
+    const char* name;
+    const GUID* guid;
+    int         codec;
+    const int*  profiles;
 };
 
 /* XXX Prefered modes must come first */
@@ -275,12 +274,12 @@ static const dxva2_mode_t dxva2_modes[] =
     { "H.263 decoder, restricted profile E",                                          &DXVA_ModeH263_E,                       0, NULL },
     { "H.263 decoder, restricted profile F",                                          &DXVA_ModeH263_F,                       0, NULL },
 
-    { NULL, NULL, 0, NULL }
+    { NULL,                                                                           NULL,                                   0, NULL }
 };
 
 static const dxva2_mode_t *Dxva2FindMode(const GUID *guid)
 {
-    for (unsigned i = 0; dxva2_modes[i].name; i++)
+    for (unsigned i = 0 ; dxva2_modes[i].name ; i++)
     {
         if (IsEqualGUID(*dxva2_modes[i].guid, *guid))
             return &dxva2_modes[i];
@@ -295,7 +294,7 @@ bool checkProfile(const dxva2_mode_t *mode, int profile)
     if (!mode->profiles || !mode->profiles[0] || profile <= 0)
         return true;
 
-    for (const int *p = &mode->profiles[0]; *p; ++p)
+    for (const int *p = &mode->profiles[0] ; *p ; ++p)
     {
         if (*p == profile)
             return true;
@@ -351,17 +350,19 @@ VideoFormat::PixelFormat VideoDecoderD3D::pixelFormatFromFourcc(int format)
 
 int VideoDecoderD3D::getSupportedFourcc(int *formats, UINT nb_formats)
 {
-    for (const int *f = formats ; f < &formats[nb_formats] ; ++f)
+    for (const int* f = formats ; f < &formats[nb_formats] ; ++f)
     {
         const d3d_format_t *format = D3dFindFormat(*f);
 
         if (format)
         {
-            qCDebug(DIGIKAM_QTAV_LOG).noquote() << QString::asprintf("%s is supported for output", format->name);
+            qCDebug(DIGIKAM_QTAV_LOG).noquote()
+                << QString::asprintf("%s is supported for output", format->name);
         }
         else
         {
-            qCDebug(DIGIKAM_QTAV_LOG).noquote() << QString::asprintf("%d is supported for output (%4.4s)", *f, (const char*)f);
+            qCDebug(DIGIKAM_QTAV_LOG).noquote()
+                << QString::asprintf("%d is supported for output (%4.4s)", *f, (const char*)f);
         }
     }
 
@@ -430,7 +431,8 @@ bool VideoDecoderD3DPrivate::open()
 
         if (!isHEVCSupported())
         {
-            qCWarning(DIGIKAM_QTAV_LOG_WARN).noquote() << QString::asprintf("HEVC DXVA2/D3D11VA is not supported by current FFmpeg runtime.");
+            qCWarning(DIGIKAM_QTAV_LOG_WARN).noquote()
+                << QString::asprintf("HEVC DXVA2/D3D11VA is not supported by current FFmpeg runtime.");
 
             return false;
         }
@@ -498,11 +500,18 @@ void* VideoDecoderD3DPrivate::setup(AVCodecContext *avctx)
             surface_count += avctx->thread_count;
     }
 
-    qCDebug(DIGIKAM_QTAV_LOG).noquote() << QString::asprintf(">>>>>>>>>>>>>>>>>>>>>surfaces: %d, active_thread_type: %d, threads: %d, refs: %d", surface_count, avctx->active_thread_type, avctx->thread_count, avctx->refs);
+    qCDebug(DIGIKAM_QTAV_LOG).noquote() 
+        << QString::asprintf(">>> surfaces: %d, active_thread_type: %d, threads: %d, refs: %d",
+            surface_count,
+            avctx->active_thread_type,
+            avctx->thread_count,
+            avctx->refs);
 
     if (surface_count == 0)
     {
-        qCWarning(DIGIKAM_QTAV_LOG_WARN).noquote() << QString::asprintf("internal error: wrong surface count.  %u auto=%d", surface_count, surface_auto);
+        qCWarning(DIGIKAM_QTAV_LOG_WARN) << "internal error: wrong surface count:"
+                                         << surface_count << "auto=" << surface_auto;
+
         surface_count = 16 + 4;
     }
 
@@ -526,7 +535,7 @@ void* VideoDecoderD3DPrivate::setup(AVCodecContext *avctx)
     surface_height = aligned(h);
     initUSWC(surface_width);
 
-    return setupAVVAContext(); //can not use codec_ctx for threaded mode!
+    return setupAVVAContext(); // can not use codec_ctx for threaded mode!
 }
 
 /* FIXME it is nearly common with VAAPI */
@@ -581,9 +590,9 @@ int VideoDecoderD3DPrivate::aligned(int x)
     // MPEG-2 needs higher alignment on Intel cards, and it doesn't seem to harm anything to do it for all cards.
 
     if      (codec_ctx->codec_id == QTAV_CODEC_ID(MPEG2VIDEO))
-      align <<= 1;
+        align <<= 1;
     else if (codec_ctx->codec_id == QTAV_CODEC_ID(HEVC))
-      align = 128;
+        align = 128;
 
     return FFALIGN(x, align);
 }
@@ -615,12 +624,17 @@ const d3d_format_t* VideoDecoderD3DPrivate::getFormat(const AVCodecContext *avct
     {
         if (!mode->codec || mode->codec != avctx->codec_id)
         {
-            qCDebug(DIGIKAM_QTAV_LOG).noquote() << QString::asprintf("codec does not match to %s: %s", avcodec_get_name(avctx->codec_id), avcodec_get_name((AVCodecID)mode->codec));
+            qCDebug(DIGIKAM_QTAV_LOG).noquote()
+                << QString::asprintf("codec does not match to %s: %s",
+                    avcodec_get_name(avctx->codec_id),
+                    avcodec_get_name((AVCodecID)mode->codec));
 
             continue;
         }
 
-        qCDebug(DIGIKAM_QTAV_LOG).noquote() << QString::asprintf("D3D found codec: %s. Check runtime support for the codec.", mode->name);
+        qCDebug(DIGIKAM_QTAV_LOG).noquote()
+            << QString::asprintf("D3D found codec: %s. Check runtime support for the codec.", mode->name);
+
         bool is_supported = false;
 
         // TODO: find_if
@@ -630,6 +644,7 @@ const d3d_format_t* VideoDecoderD3DPrivate::getFormat(const AVCodecContext *avct
             if (IsEqualGUID(*mode->guid, g))
             {
                 is_supported = true;
+
                 break;
             }
         }
