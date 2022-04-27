@@ -52,13 +52,14 @@ bool DMetadata::getItemFacesMap(QMultiMap<QString, QVariant>& faces) const
     // I think that means I have to iterate over the WLPG face tags in the clunky
     // way below (guess numbers and look them up as strings). (Leif)
 
-    const QString personPathTemplate = QLatin1String("Xmp.MP.RegionInfo/MPRI:Regions[%1]/MPReg:PersonDisplayName");
-    const QString rectPathTemplate   = QLatin1String("Xmp.MP.RegionInfo/MPRI:Regions[%1]/MPReg:Rectangle");
+    QString winQxmpTagName = QLatin1String("Xmp.MP.RegionInfo/MPRI:Regions");
+    QString winRectTagKey  = winQxmpTagName + QLatin1String("[%1]/MPReg:Rectangle");
+    QString winNameTagKey  = winQxmpTagName + QLatin1String("[%1]/MPReg:PersonDisplayName");
 
     for (int i = 1 ; ; ++i)
     {
-        QString person     = getXmpTagString(personPathTemplate.arg(i).toLatin1().constData(), false);
-        QString rectString = getXmpTagString(rectPathTemplate.arg(i).toLatin1().constData(), false);
+        QString person     = getXmpTagString(winNameTagKey.arg(i).toLatin1().constData(), false);
+        QString rectString = getXmpTagString(winRectTagKey.arg(i).toLatin1().constData(), false);
 
         person.replace(QLatin1Char('/'), QLatin1Char('\\'));
 
@@ -101,30 +102,39 @@ bool DMetadata::getItemFacesMap(QMultiMap<QString, QVariant>& faces) const
     // Read face tags as saved by Picasa
     // https://www.exiv2.org/tags-xmp-mwg-rs.html
 
-    const QString mwg_personPathTemplate  = QLatin1String("Xmp.mwg-rs.Regions/mwg-rs:RegionList[%1]/mwg-rs:Name");
-    const QString mwg_rect_x_PathTemplate = QLatin1String("Xmp.mwg-rs.Regions/mwg-rs:RegionList[%1]/mwg-rs:Area/stArea:x");
-    const QString mwg_rect_y_PathTemplate = QLatin1String("Xmp.mwg-rs.Regions/mwg-rs:RegionList[%1]/mwg-rs:Area/stArea:y");
-    const QString mwg_rect_w_PathTemplate = QLatin1String("Xmp.mwg-rs.Regions/mwg-rs:RegionList[%1]/mwg-rs:Area/stArea:w");
-    const QString mwg_rect_h_PathTemplate = QLatin1String("Xmp.mwg-rs.Regions/mwg-rs:RegionList[%1]/mwg-rs:Area/stArea:h");
+    QString qxmpTagName = QLatin1String("Xmp.mwg-rs.Regions/mwg-rs:RegionList");
+    QString nameTagKey  = qxmpTagName + QLatin1String("[%1]/mwg-rs:Name");
+    QString typeTagKey  = qxmpTagName + QLatin1String("[%1]/mwg-rs:Type");
+    QString areaxTagKey = qxmpTagName + QLatin1String("[%1]/mwg-rs:Area/stArea:x");
+    QString areayTagKey = qxmpTagName + QLatin1String("[%1]/mwg-rs:Area/stArea:y");
+    QString areawTagKey = qxmpTagName + QLatin1String("[%1]/mwg-rs:Area/stArea:w");
+    QString areahTagKey = qxmpTagName + QLatin1String("[%1]/mwg-rs:Area/stArea:h");
 
     for (int i = 1 ; ; ++i)
     {
-        QString person = getXmpTagString(mwg_personPathTemplate.arg(i).toLatin1().constData(), false);
+        QString person = getXmpTagString(nameTagKey.arg(i).toLatin1().constData(), false);
 
         person.replace(QLatin1Char('/'), QLatin1Char('\\'));
 
         // x and y is the center point
 
-        float x = getXmpTagString(mwg_rect_x_PathTemplate.arg(i).toLatin1().constData(), false).toFloat();
-        float y = getXmpTagString(mwg_rect_y_PathTemplate.arg(i).toLatin1().constData(), false).toFloat();
-        float w = getXmpTagString(mwg_rect_w_PathTemplate.arg(i).toLatin1().constData(), false).toFloat();
-        float h = getXmpTagString(mwg_rect_h_PathTemplate.arg(i).toLatin1().constData(), false).toFloat();
+        float x = getXmpTagString(areaxTagKey.arg(i).toLatin1().constData(), false).toFloat();
+        float y = getXmpTagString(areayTagKey.arg(i).toLatin1().constData(), false).toFloat();
+        float w = getXmpTagString(areawTagKey.arg(i).toLatin1().constData(), false).toFloat();
+        float h = getXmpTagString(areahTagKey.arg(i).toLatin1().constData(), false).toFloat();
 
         QRectF rect(x - w / 2, y - h / 2, w, h);
 
         if (person.isEmpty() && !rect.isValid())
         {
             break;
+        }
+
+        QString type = getXmpTagString(typeTagKey.arg(i).toLatin1().constData(), false);
+
+        if (type != QLatin1String("Face"))
+        {
+            continue;
         }
 
         // Ignore the full size face region.
