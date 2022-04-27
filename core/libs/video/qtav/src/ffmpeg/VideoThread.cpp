@@ -22,6 +22,13 @@
  * ============================================================ */
 
 #include "VideoThread.h"
+
+// Qt includes
+
+#include <QFileInfo>
+
+// Local includes
+
 #include "AVThread_p.h"
 #include "Packet.h"
 #include "AVClock.h"
@@ -33,7 +40,6 @@
 #include "FilterContext.h"
 #include "OutputSet.h"
 #include "AVCompat.h"
-#include <QFileInfo>
 #include "digikam_debug.h"
 
 namespace QtAV
@@ -42,6 +48,7 @@ namespace QtAV
 class VideoThreadPrivate : public AVThreadPrivate
 {
 public:
+
     VideoThreadPrivate():
         AVThreadPrivate()
       , force_fps(0)
@@ -50,23 +57,28 @@ public:
       , filter_context(0)
     {
     }
-    ~VideoThreadPrivate() {
-        //not neccesary context is managed by filters.
-        if (filter_context) {
+
+    ~VideoThreadPrivate()
+    {
+        // not neccesary context is managed by filters.
+
+        if (filter_context)
+        {
             delete filter_context;
             filter_context = 0;
         }
     }
 
     VideoFrameConverter conv;
-    qreal force_fps; // <=0: try to use pts. if no pts in stream(guessed by 5 packets), use |force_fps|
-    // not const.
-    int force_dt; //unit: ms. force_fps = 1/force_dt.
+    qreal               force_fps;      // <=0: try to use pts. if no pts in stream(guessed by 5 packets), use |force_fps|
 
-    double pts; //current decoded pts. for capture. TODO: remove
-    VideoCapture *capture;
-    VideoFilterContext *filter_context;//TODO: use own smart ptr. QSharedPointer "=" is ugly
-    VideoFrame displayed_frame;
+    // not const.
+    int                 force_dt;       // unit: ms. force_fps = 1/force_dt.
+
+    double              pts;            // current decoded pts. for capture. TODO: remove
+    VideoCapture*       capture;
+    VideoFilterContext* filter_context; // TODO: use own smart ptr. QSharedPointer "=" is ugly
+    VideoFrame          displayed_frame;
 };
 
 VideoThread::VideoThread(QObject *parent) :
@@ -74,22 +86,36 @@ VideoThread::VideoThread(QObject *parent) :
 {
 }
 
-//it is called in main thread usually, but is being used in video thread,
+// it is called in main thread usually, but is being used in video thread,
+
 VideoCapture* VideoThread::setVideoCapture(VideoCapture *cap)
 {
     qCDebug(DIGIKAM_QTAV_LOG).noquote() << QString::asprintf("setCapture %p", cap);
     DPTR_D(VideoThread);
+
     QMutexLocker locker(&d.mutex);
-    VideoCapture *old = d.capture;
-    d.capture = cap;
+    VideoCapture* old = d.capture;
+    d.capture         = cap;
+
     if (old)
-        disconnect(old, SIGNAL(requested()), this, SLOT(addCaptureTask()));
+    {
+        disconnect(old, SIGNAL(requested()),
+                   this, SLOT(addCaptureTask()));
+    }
+
     if (cap)
-        connect(cap, SIGNAL(requested()), this, SLOT(addCaptureTask()));
-    if (cap->autoSave() && cap->name.isEmpty()) {
+    {
+        connect(cap, SIGNAL(requested()),
+                this, SLOT(addCaptureTask()));
+    }
+
+    if (cap->autoSave() && cap->name.isEmpty())
+    {
         // statistics is already set by AVPlayer
+
         cap->setCaptureName(QFileInfo(d.statistics->url).completeBaseName());
     }
+
     return old;
 }
 
