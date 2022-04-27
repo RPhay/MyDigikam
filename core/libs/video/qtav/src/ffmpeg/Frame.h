@@ -24,8 +24,12 @@
 #ifndef QTAV_FRAME_H
 #define QTAV_FRAME_H
 
+// Qt includes
+
 #include <QVariant>
 #include <QSharedData>
+
+// Local includes
 
 #include "QtAV_Global.h"
 
@@ -45,7 +49,7 @@ public:
     Frame(const Frame& other);
     virtual ~Frame() = 0;
 
-    Frame& operator =(const Frame &other);
+    Frame& operator =(const Frame& other);
 
     /*!
      * \brief planeCount
@@ -81,8 +85,8 @@ public:
 
     uchar* frameDataPtr(int* size = NULL) const
     {
-        const int a = dataAlignment();
-        uchar* p = (uchar*)frameData().constData();
+        const int a      = dataAlignment();
+        uchar* p         = (uchar*)frameData().constData();
         const int offset = (a - ((quintptr)p & (a-1))) & (a-1);
 
         if (size)
@@ -95,7 +99,12 @@ public:
 
     QByteArray data(int plane = 0) const;
     uchar* bits(int plane = 0);
-    const uchar *bits(int plane = 0) const { return constBits(plane);}
+
+    const uchar *bits(int plane = 0) const
+    {
+        return constBits(plane);
+    }
+
     const uchar* constBits(int plane = 0) const;
 
     /*!
@@ -125,14 +134,14 @@ public:
     void setTimestamp(qreal ts);
     qreal timestamp() const;
 
-    inline void swap(Frame &other)
-    {
-        qSwap(d_ptr, other.d_ptr);
-    }
+    void swap(Frame& other);
 
 protected:
 
-    Frame(FramePrivate *d);
+    Frame(FramePrivate* d);
+
+protected:
+
     QExplicitlySharedDataPointer<FramePrivate> d_ptr;
 };
 

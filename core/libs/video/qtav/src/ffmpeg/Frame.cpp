@@ -21,15 +21,21 @@
  *
  * ============================================================ */
 
-#include "Frame.h"
 #include "Frame_p.h"
+
+// C++ includes
+
+#include "algorithm"
+
+// Local includes
+
 #include "digikam_debug.h"
 
 namespace QtAV
 {
 
 Frame::Frame(const Frame &other)
-    :d_ptr(other.d_ptr)
+    : d_ptr(other.d_ptr)
 {
 }
 
@@ -45,15 +51,19 @@ Frame::~Frame()
 Frame &Frame::operator =(const Frame &other)
 {
     d_ptr = other.d_ptr;
+
     return *this;
 }
 
 int Frame::bytesPerLine(int plane) const
 {
-    if (plane < 0 || plane >= planeCount()) {
+    if (plane < 0 || plane >= planeCount())
+    {
         qCWarning(DIGIKAM_QTAV_LOG_WARN).noquote() << QString::asprintf("Invalid plane! Valid range is [0, %d)", planeCount());
+
         return 0;
     }
+
     return d_func()->line_sizes[plane];
 }
 
@@ -69,47 +79,63 @@ int Frame::dataAlignment() const
 
 QByteArray Frame::data(int plane) const
 {
-    if (plane < 0 || plane >= planeCount()) {
+    if (plane < 0 || plane >= planeCount())
+    {
         qCWarning(DIGIKAM_QTAV_LOG_WARN).noquote() << QString::asprintf("Invalid plane! Valid range is [0, %d)", planeCount());
+
         return QByteArray();
     }
+
     return QByteArray((char*)d_func()->planes[plane], bytesPerLine(plane));
 }
 
 uchar* Frame::bits(int plane)
 {
-    if (plane < 0 || plane >= planeCount()) {
+    if (plane < 0 || plane >= planeCount())
+    {
         qCWarning(DIGIKAM_QTAV_LOG_WARN).noquote() << QString::asprintf("Invalid plane! Valid range is [0, %d)", planeCount());
+
         return 0;
     }
+
     return d_func()->planes[plane];
 }
 
 const uchar* Frame::constBits(int plane) const
 {
-    if (plane < 0 || plane >= planeCount()) {
+    if (plane < 0 || plane >= planeCount())
+    {
         qCWarning(DIGIKAM_QTAV_LOG_WARN).noquote() << QString::asprintf("Invalid plane! Valid range is [0, %d)", planeCount());
+
         return 0;
     }
+
     return d_func()->planes[plane];
 }
 
 void Frame::setBits(uchar *b, int plane)
 {
-    if (plane < 0 || plane >= planeCount()) {
+    if (plane < 0 || plane >= planeCount())
+    {
         qCWarning(DIGIKAM_QTAV_LOG_WARN).noquote() << QString::asprintf("Invalid plane! Valid range is [0, %d)", planeCount());
+
         return;
     }
+
     Q_D(Frame);
+
     d->planes[plane] = b;
 }
 
 void Frame::setBits(const QVector<uchar *> &b)
 {
     Q_D(Frame);
+
     const int nb_planes = planeCount();
-    d->planes = b;
-    if (d->planes.size() > nb_planes) {
+    d->planes           = b;
+
+    if (d->planes.size() > nb_planes)
+    {
         d->planes.reserve(nb_planes);
         d->planes.resize(nb_planes);
     }
@@ -117,27 +143,35 @@ void Frame::setBits(const QVector<uchar *> &b)
 
 void Frame::setBits(quint8 *slice[])
 {
-    for (int i = 0; i < planeCount(); ++i ) {
+    for (int i = 0; i < planeCount(); ++i )
+    {
         setBits(slice[i], i);
     }
 }
 
 void Frame::setBytesPerLine(int lineSize, int plane)
 {
-    if (plane < 0 || plane >= planeCount()) {
+    if (plane < 0 || plane >= planeCount())
+    {
         qCWarning(DIGIKAM_QTAV_LOG_WARN).noquote() << QString::asprintf("Invalid plane! Valid range is [0, %d)", planeCount());
+
         return;
     }
+
     Q_D(Frame);
+
     d->line_sizes[plane] = lineSize;
 }
 
 void Frame::setBytesPerLine(const QVector<int> &lineSize)
 {
     Q_D(Frame);
+
     const int nb_planes = planeCount();
-    d->line_sizes = lineSize;
-    if (d->line_sizes.size() > nb_planes) {
+    d->line_sizes       = lineSize;
+
+    if (d->line_sizes.size() > nb_planes)
+    {
         d->line_sizes.reserve(nb_planes);
         d->line_sizes.resize(nb_planes);
     }
@@ -145,7 +179,8 @@ void Frame::setBytesPerLine(const QVector<int> &lineSize)
 
 void Frame::setBytesPerLine(int stride[])
 {
-    for (int i = 0; i < planeCount(); ++i ) {
+    for (int i = 0 ; i < planeCount() ; ++i )
+    {
         setBytesPerLine(stride[i], i);
     }
 }
@@ -153,6 +188,7 @@ void Frame::setBytesPerLine(int stride[])
 int Frame::planeCount() const
 {
     Q_D(const Frame);
+
     return d->planes.size();
 }
 
@@ -167,6 +203,7 @@ int Frame::channelCount() const
 QVariantMap Frame::availableMetaData() const
 {
     Q_D(const Frame);
+
     return d->metadata;
 }
 
@@ -182,6 +219,7 @@ QVariantMap Frame::availableMetaData() const
 QVariant Frame::metaData(const QString &key) const
 {
     Q_D(const Frame);
+
     return d->metadata.value(key);
 }
 
@@ -197,6 +235,7 @@ QVariant Frame::metaData(const QString &key) const
 void Frame::setMetaData(const QString &key, const QVariant &value)
 {
     Q_D(Frame);
+
     if (!value.isNull())
         d->metadata.insert(key, value);
     else
@@ -211,6 +250,11 @@ qreal Frame::timestamp() const
 void Frame::setTimestamp(qreal ts)
 {
     d_func()->timestamp = ts;
+}
+
+void Frame::swap(Frame& other)
+{
+    std::swap(d_ptr, other.d_ptr);
 }
 
 } // namespace QtAV

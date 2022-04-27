@@ -24,6 +24,8 @@
 #ifndef QTAV_FRAME_P_H
 #define QTAV_FRAME_P_H
 
+#include "Frame.h"
+
 // Qt includes
 
 #include <QVector>
@@ -36,8 +38,6 @@
 
 namespace QtAV
 {
-
-class Frame;
 
 class FramePrivate : public QSharedData
 {
