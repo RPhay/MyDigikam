@@ -132,7 +132,7 @@ public:
         m_data.resize(capacity);
     }
 
-    size_t capacity() const
+    size_t capacity() const override
     {
         return m_data.size();
     }

@@ -236,7 +236,7 @@ public:
 
     }
 
-    void setupQuality()
+    void setupQuality() override
     {
         // http://www.codeproject.com/Articles/9184/Custom-AntiAliasing-with-GDI
         // http://msdn.microsoft.com/en-us/library/windows/desktop/ms533836%28v=vs.85%29.aspx

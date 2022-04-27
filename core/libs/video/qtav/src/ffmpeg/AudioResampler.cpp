@@ -36,7 +36,7 @@ namespace QtAV
 
 FACTORY_DEFINE(AudioResampler)
 
-AudioResamplerId AudioResamplerId_FF = mkid::id32base36_6<'F', 'F', 'm', 'p', 'e', 'g'>::value;
+AudioResamplerId AudioResamplerId_FF    = mkid::id32base36_6<'F', 'F', 'm', 'p', 'e', 'g'>::value;
 AudioResamplerId AudioResamplerId_Libav = mkid::id32base36_5<'L', 'i', 'b', 'a', 'v'>::value;
 
 extern bool RegisterAudioResamplerFF_Man();
@@ -82,7 +82,9 @@ bool AudioResampler::prepare()
 {
     if (!inAudioFormat().isValid())
     {
-        qCWarning(DIGIKAM_QTAV_LOG_WARN).noquote() << QString::asprintf("src audio parameters 'channel layout(or channels), sample rate and sample format must be set before initialize resampler");
+        qCWarning(DIGIKAM_QTAV_LOG_WARN).noquote()
+            << QString::asprintf("src audio parameters 'channel layout(or channels), "
+                                 "sample rate and sample format must be set before initialize resampler");
 
         return false;
     }

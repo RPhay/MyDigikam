@@ -59,27 +59,29 @@ class QTAV_WIDGETS_EXPORT GLWidgetRenderer : public QGLWidget
 
 public:
 
-    GLWidgetRenderer(QWidget* parent = 0, const QGLWidget* shareWidget = 0, Qt::WindowFlags f = Qt::WindowFlags(Qt::Widget));
-    virtual VideoRendererId id()                              const;
-    virtual bool isSupported(VideoFormat::PixelFormat pixfmt) const;
+    GLWidgetRenderer(QWidget* parent = 0, const QGLWidget* shareWidget = 0,
+                     Qt::WindowFlags f = Qt::WindowFlags(Qt::Widget));
 
-    virtual QWidget* widget()
+    virtual VideoRendererId id()                              const override;
+    virtual bool isSupported(VideoFormat::PixelFormat pixfmt) const override;
+
+    virtual QWidget* widget()                                       override
     {
         return this;
     }
 
 protected:
 
-    virtual bool receiveFrame(const VideoFrame& frame);
+    virtual bool receiveFrame(const VideoFrame& frame)              override;
     virtual bool needUpdateBackground() const;
 
     // called in paintEvent before drawFrame() when required
 
-    virtual void drawBackground();
+    virtual void drawBackground()                                   override;
 
     // draw the current frame using the current paint engine. called by paintEvent()
 
-    virtual void drawFrame();
+    virtual void drawFrame()                                        override;
     virtual void initializeGL();
     virtual void paintGL();
     virtual void resizeGL(int w, int h);
@@ -88,19 +90,19 @@ protected:
 
 private:
 
-    virtual void onSetOutAspectRatioMode(OutAspectRatioMode mode);
-    virtual void onSetOutAspectRatio(qreal ratio);
-    virtual bool onSetOrientation(int value);
+    virtual void onSetOutAspectRatioMode(OutAspectRatioMode mode)   override;
+    virtual void onSetOutAspectRatio(qreal ratio)                   override;
+    virtual bool onSetOrientation(int value)                        override;
 
     /*!
      * \brief onSetBrightness
      *  only works for GLSL. otherwise return false, means that do nothing, brightness() does not change.
      * \return
      */
-    virtual bool onSetBrightness(qreal b);
-    virtual bool onSetContrast(qreal c);
-    virtual bool onSetHue(qreal h);
-    virtual bool onSetSaturation(qreal s);
+    virtual bool onSetBrightness(qreal b)                           override;
+    virtual bool onSetContrast(qreal c)                             override;
+    virtual bool onSetHue(qreal h)                                  override;
+    virtual bool onSetSaturation(qreal s)                           override;
 };
 
 typedef GLWidgetRenderer VideoRendererGLWidget;

@@ -194,7 +194,7 @@ public:
      * TODO: understand what each parameter means. GL_TEXTURE_WRAP_S, GL_TEXTURE_WRAP_T
      * what is MIPMAP?
      */
-    void setupQuality()
+    void setupQuality() override
     {
         switch (quality)
         {

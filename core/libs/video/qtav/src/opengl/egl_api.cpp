@@ -66,7 +66,7 @@ class EGLLib : public ::capi::dso
 {
 public:
 
-    virtual void* resolve(const char *symbol)
+    virtual void* resolve(const char *symbol) override
     {
 
 #ifndef __MINGW32__
