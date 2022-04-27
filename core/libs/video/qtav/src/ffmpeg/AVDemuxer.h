@@ -72,16 +72,17 @@ public:
 
     static const QStringList& supportedProtocols();
 
-    AVDemuxer(QObject *parent = 0);
+    AVDemuxer(QObject* parent = 0);
     ~AVDemuxer();
+
     MediaStatus mediaStatus() const;
-    bool atEnd() const;
-    QString fileName() const;
-    QIODevice* ioDevice() const;
+    bool atEnd()              const;
+    QString fileName()        const;
+    QIODevice* ioDevice()     const;
 
     /// not null for QIODevice, custom protocols
 
-    MediaIO* mediaIO() const;
+    MediaIO* mediaIO()        const;
 
     /*!
      * \brief setMedia
@@ -103,7 +104,7 @@ public:
     QString formatForced() const;
     bool load();
     bool unload();
-    bool isLoaded() const;
+    bool isLoaded()        const;
 
     /*!
      * \brief readFrame
@@ -118,15 +119,15 @@ public:
      * \brief packet
      * return the packet read by demuxer. packet is invalid if readFrame() returns false.
      */
-    Packet packet() const;
+    Packet packet()     const;
 
     /*!
      * \brief stream
      * Current readFrame() readed stream index.
      */
-    int stream() const;
+    int stream()        const;
 
-    bool isSeekable() const; // TODO: change in unload?
+    bool isSeekable()   const; // TODO: change in unload?
     void setSeekUnit(SeekUnit unit);
     SeekUnit seekUnit() const;
     void setSeekType(SeekType target);
@@ -148,26 +149,26 @@ public:
      */
     bool seek(qreal q);
     AVFormatContext* formatContext();
-    QString formatName() const;
+    QString formatName()     const;
     QString formatLongName() const;
 
     // TODO: rename startPosition()
 
-    qint64 startTime() const;   // ms, AVFormatContext::start_time/1000
-    qint64 duration() const;    // ms, AVFormatContext::duration/1000
+    qint64 startTime()   const; // ms, AVFormatContext::start_time/1000
+    qint64 duration()    const; // ms, AVFormatContext::duration/1000
     qint64 startTimeUs() const; // us, AVFormatContext::start_time
-    qint64 durationUs() const;  // us, AVFormatContext::duration
+    qint64 durationUs()  const; // us, AVFormatContext::duration
 
     // total bit rate
 
-    int bitRate() const;        // AVFormatContext::bit_rate
-    qreal frameRate() const;    // deprecated AVStream::avg_frame_rate
+    int bitRate()        const; // AVFormatContext::bit_rate
+    qreal frameRate()    const; // deprecated AVStream::avg_frame_rate
 
     // if stream is -1, return the current video(or audio if no video) stream.
     // TODO: audio/videoFrames?
 
     qint64 frames(int stream = -1) const; // AVFormatContext::nb_frames
-    bool hasAttacedPicture() const;
+    bool hasAttacedPicture()       const;
 
     /*!
      * \brief setStreamIndex
@@ -179,24 +180,24 @@ public:
 
     // current open stream
 
-    int currentStream(StreamType st) const;
+    int currentStream(StreamType st)  const;
     QList<int> streams(StreamType st) const;
 
     // TODO: stream(StreamType), streams(StreamType)
 
     // current open stream
 
-    int audioStream() const;
-    QList<int> audioStreams() const;
-    int videoStream() const;
-    QList<int> videoStreams() const;
-    int subtitleStream() const;
+    int audioStream()            const;
+    QList<int> audioStreams()    const;
+    int videoStream()            const;
+    QList<int> videoStreams()    const;
+    int subtitleStream()         const;
     QList<int> subtitleStreams() const;
 
     // codec. stream < 0: the stream going to play (or the stream set by setStreamIndex())
 
-    AVCodecContext* audioCodecContext(int stream = -1) const;
-    AVCodecContext* videoCodecContext(int stream = -1) const;
+    AVCodecContext* audioCodecContext(int stream = -1)    const;
+    AVCodecContext* videoCodecContext(int stream = -1)    const;
     AVCodecContext* subtitleCodecContext(int stream = -1) const;
 
     /**
@@ -247,7 +248,7 @@ Q_SIGNALS:
      * emit when the first frame is read
      */
     void started();
-    void finished(); // end of file
+    void finished();                    // end of file
     void error(const QtAV::AVError& e); // explictly use QtAV::AVError in connection for Qt4 syntax
     void mediaStatusChanged(QtAV::MediaStatus status);
     void seekableChanged();

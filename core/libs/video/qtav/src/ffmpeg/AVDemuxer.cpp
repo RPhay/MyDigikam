@@ -28,13 +28,7 @@
 #include <QMutex>
 #include <QStringList>
 #include <QIODevice>
-
-#if QT_VERSION >= QT_VERSION_CHECK(4, 7, 0)
-#   include <QElapsedTimer>
-#else
-#   include <QTime>
-typedef QTime QElapsedTimer;
-#endif
+#include <QElapsedTimer>
 
 // KDE includes
 
@@ -382,9 +376,9 @@ public:
         // FIXME: is there a good way to check network? now use URLContext.flags == URL_PROTOCOL_FLAG_NETWORK
         // not network: concat cache pipe avdevice crypto?
 
-        if (!file.isEmpty()
-                && file.contains(QLatin1String(":"))
-                && (file.startsWith(QLatin1String("http"))  // http, https, httpproxy
+        if (   !file.isEmpty()
+            && file.contains(QLatin1String(":"))
+            && (   file.startsWith(QLatin1String("http"))  // http, https, httpproxy
                 || file.startsWith(QLatin1String("rtmp"))   // rtmp{,e,s,te,ts}
                 || file.startsWith(QLatin1String("mms"))    // mms{,h,t}
                 || file.startsWith(QLatin1String("ffrtmp")) // ffrtmpcrypt, ffrtmphttp
@@ -395,7 +389,8 @@ public:
                 || file.startsWith(QLatin1String("tls:"))
                 || file.startsWith(QLatin1String("udp:"))
                 || file.startsWith(QLatin1String("gopher:"))
-                ))
+               )
+           )
         {
             network = true;
         }
@@ -437,7 +432,7 @@ public:
     bool network;
     bool has_attached_pic;
     bool started;
-    qreal max_pts; // max pts read
+    qreal max_pts;            // max pts read
     bool eof;
     bool media_changed;
     mutable qptrdiff buf_pos; // detect eof for dynamic size (growing) stream even if detectDynamicStreamInterval() is not set
@@ -704,12 +699,17 @@ bool AVDemuxer::readFrame()
                     setMediaStatus(EndOfMedia);
 
                     Q_EMIT finished();
+
 #endif
-                    qCDebug(DIGIKAM_QTAV_LOG).noquote() << QString::asprintf("End of file. erreof=%d feof=%d", ret == AVERROR_EOF, avio_feof(d->format_ctx->pb));
+
+                    qCDebug(DIGIKAM_QTAV_LOG).noquote()
+                        << QString::asprintf("End of file. erreof=%d feof=%d",
+                            ret == AVERROR_EOF,
+                            avio_feof(d->format_ctx->pb));
                 }
             }
 
-            av_packet_unref(&packet); //important!
+            av_packet_unref(&packet); // important!
 
             return false;
         }
@@ -717,7 +717,8 @@ bool AVDemuxer::readFrame()
         if (ret == AVERROR(EAGAIN))
         {
             qCWarning(DIGIKAM_QTAV_LOG_WARN).noquote() << QString::asprintf("demuxer EAGAIN :%s", av_err2str(ret));
-            av_packet_unref(&packet); //important!
+
+            av_packet_unref(&packet); // important!
 
             return false;
         }
@@ -725,8 +726,10 @@ bool AVDemuxer::readFrame()
         AVError::ErrorCode ec(AVError::ReadError);
         QString msg(i18n("error reading stream data"));
         handleError(ret, &ec, msg);
+
         qCWarning(DIGIKAM_QTAV_LOG_WARN).noquote() << QString::asprintf("[AVDemuxer] error: %s", av_err2str(ret));
-        av_packet_unref(&packet); //important!
+
+        av_packet_unref(&packet); // important!
 
         return false;
     }
@@ -837,17 +840,32 @@ bool AVDemuxer::seek(qint64 pos)
     {
         if      (pos >= 0LL && d->input && d->input->isSeekable() && d->input->isVariableSize())
         {
-            qCDebug(DIGIKAM_QTAV_LOG).noquote() << QString::asprintf("Seek for variable size hack. %lld %.2f. valid range [%lld, %lld]", upos, double(upos)/double(durationUs()), startTimeUs(), startTimeUs()+durationUs());
+            qCDebug(DIGIKAM_QTAV_LOG)
+                << "Seek for variable size hack."
+                << upos << double(upos) / double(durationUs())
+                << "valid range ["
+                << startTimeUs()
+                << startTimeUs() + durationUs()
+                << "]";
         }
         else if (d->max_pts > qreal(duration())/1000.0)
         {
             // FIXME
 
-            qCDebug(DIGIKAM_QTAV_LOG).noquote() << QString::asprintf("Seek (%lld) when video duration is growing %lld=>%lld", pos, duration(), qint64(d->max_pts*1000.0));
+            qCDebug(DIGIKAM_QTAV_LOG).noquote()
+                << QString::asprintf("Seek (%lld) when video duration is growing %lld=>%lld",
+                    pos,
+                    duration(),
+                    qint64(d->max_pts*1000.0));
         }
         else
         {
-            qCWarning(DIGIKAM_QTAV_LOG_WARN).noquote() << QString::asprintf("Invalid seek position %lld %.2f. valid range [%lld, %lld]", upos, double(upos)/double(durationUs()), startTimeUs(), startTimeUs()+durationUs());
+            qCWarning(DIGIKAM_QTAV_LOG_WARN).noquote()
+                << QString::asprintf("Invalid seek position %lld %.2f. valid range [%lld, %lld]",
+                    upos,
+                    double(upos) / double(durationUs()),
+                    startTimeUs(),
+                    startTimeUs()+durationUs());
 
             return false;
         }
@@ -863,7 +881,13 @@ bool AVDemuxer::seek(qint64 pos)
 
     qreal t = q;    // * (double)d->format_ctx->duration; //
     int ret = av_seek_frame(d->format_ctx, -1, (int64_t)(t*AV_TIME_BASE), t > d->pkt.pts ? 0 : AVSEEK_FLAG_BACKWARD);
-    qCDebug(DIGIKAM_QTAV_LOG).noquote() << QString::asprintf("[AVDemuxer] seek to %f %f %lld / %lld", q, d->pkt.pts, (int64_t)(t*AV_TIME_BASE), durationUs());
+
+    qCDebug(DIGIKAM_QTAV_LOG).noquote()
+        << QString::asprintf("[AVDemuxer] seek to %f %f %lld / %lld",
+            q,
+            d->pkt.pts,
+            (int64_t)(t*AV_TIME_BASE),
+            durationUs());
 
 #else
 
@@ -906,9 +930,12 @@ bool AVDemuxer::seek(qint64 pos)
     {
         // seek to 0?
 
-        qCDebug(DIGIKAM_QTAV_LOG).noquote() << QString::asprintf("av_seek_frame error with flag AVSEEK_FLAG_BACKWARD: %s. try to seek without the flag", av_err2str(ret));
+        qCDebug(DIGIKAM_QTAV_LOG).noquote()
+            << QString::asprintf("av_seek_frame error with flag AVSEEK_FLAG_BACKWARD: %s. try to seek without the flag",
+                av_err2str(ret));
+
         seek_flag &= ~AVSEEK_FLAG_BACKWARD;
-        ret = av_seek_frame(d->format_ctx, -1, upos, seek_flag);
+        ret        = av_seek_frame(d->format_ctx, -1, upos, seek_flag);
     }
 
     //qCDebug(DIGIKAM_QTAV_LOG).noquote() << QString::asprintf("av_seek_frame ret: %d", ret);
@@ -928,8 +955,8 @@ bool AVDemuxer::seek(qint64 pos)
 
     if (upos <= startTime())
     {
-        qCDebug(DIGIKAM_QTAV_LOG).noquote() << QString::asprintf("************seek to beginning. started = false");
-        d->started = false; //???
+        qCDebug(DIGIKAM_QTAV_LOG).noquote() << QString::asprintf("*** seek to beginning. started = false");
+        d->started = false; // ???
 
         if (d->astream.avctx)
             d->astream.avctx->frame_number = 0;
@@ -1199,15 +1226,29 @@ bool AVDemuxer::load()
 
         d->format_ctx->pb = (AVIOContext*)d->input->avioContext();
         d->format_ctx->flags |= AVFMT_FLAG_CUSTOM_IO;
-        qCDebug(DIGIKAM_QTAV_LOG).noquote() << QString::asprintf("avformat_open_input: d->format_ctx:'%p'..., MediaIO('%s'): %p", d->format_ctx, d->input->name().toUtf8().constData(), d->input);
+
+        qCDebug(DIGIKAM_QTAV_LOG).noquote()
+            << QString::asprintf("avformat_open_input: d->format_ctx:'%p'..., MediaIO('%s'): %p",
+                d->format_ctx,
+                d->input->name().toUtf8().constData(),
+                d->input);
+
         ret = avformat_open_input(&d->format_ctx, "MediaIO", d->input_format, d->options.isEmpty() ? NULL : &d->dict);
+
         qCDebug(DIGIKAM_QTAV_LOG).noquote() << QString::asprintf("avformat_open_input: (with MediaIO) ret:%d", ret);
     }
     else
     {
-        qCDebug(DIGIKAM_QTAV_LOG).noquote() << QString::asprintf("avformat_open_input: d->format_ctx:'%p', url:'%s'...",d->format_ctx, qPrintable(d->file));
+        qCDebug(DIGIKAM_QTAV_LOG).noquote()
+            << QString::asprintf("avformat_open_input: d->format_ctx:'%p', url:'%s'...",
+                d->format_ctx,
+                qPrintable(d->file));
+
         ret = avformat_open_input(&d->format_ctx, d->file.toUtf8().constData(), d->input_format, d->options.isEmpty() ? NULL : &d->dict);
-        qCDebug(DIGIKAM_QTAV_LOG).noquote() << QString::asprintf("avformat_open_input: url:'%s' ret:%d",qPrintable(d->file), ret);
+
+        qCDebug(DIGIKAM_QTAV_LOG).noquote()
+            << QString::asprintf("avformat_open_input: url:'%s' ret:%d",
+                qPrintable(d->file), ret);
     }
 
     d->interrupt_hanlder->end();
@@ -1273,7 +1314,11 @@ bool AVDemuxer::load()
     if (was_seekable != d->seekable)
         Q_EMIT seekableChanged();
 
-    qCDebug(DIGIKAM_QTAV_LOG) << "avfmtctx.flags:" << d->format_ctx->flags << "iformat.flags" << d->format_ctx->iformat->flags;
+    qCDebug(DIGIKAM_QTAV_LOG)
+        << "avfmtctx.flags:"
+        << d->format_ctx->flags
+        << "iformat.flags"
+        << d->format_ctx->iformat->flags;
 
     if (getInterruptStatus() < 0)
     {
@@ -1365,7 +1410,10 @@ bool AVDemuxer::setStreamIndex(StreamType st, int index)
 
     if (!si)
     {
-        qCWarning(DIGIKAM_QTAV_LOG_WARN).noquote() << QString::asprintf("stream type %d for index %d not found", st, index);
+        qCWarning(DIGIKAM_QTAV_LOG_WARN).noquote()
+            << QString::asprintf("stream type %d for index %d not found",
+                st,
+                index);
 
         return false;
     }
@@ -1376,7 +1424,11 @@ bool AVDemuxer::setStreamIndex(StreamType st, int index)
 
         //si->wanted_stream = -1;
 
-        qCWarning(DIGIKAM_QTAV_LOG_WARN).noquote() << QString::asprintf("invalid index %d (valid is 0~%d) for stream type %d.", index, streams->size(), st);
+        qCWarning(DIGIKAM_QTAV_LOG_WARN).noquote()
+            << QString::asprintf("invalid index %d (valid is 0~%d) for stream type %d.",
+                index,
+                streams->size(),
+                st);
 
         return false;
     }
@@ -1384,6 +1436,7 @@ bool AVDemuxer::setStreamIndex(StreamType st, int index)
     if (index < 0)
     {
         qCDebug(DIGIKAM_QTAV_LOG).noquote() << QString::asprintf("disable %d stream", st);
+
         si->stream        = -1;
         si->wanted_index  = -1;
         si->wanted_stream = -1;
@@ -1424,12 +1477,12 @@ QString AVDemuxer::formatLongName() const
 
 qint64 AVDemuxer::startTime() const
 {
-    return startTimeUs()/1000LL; // TODO: av_rescale
+    return startTimeUs() / 1000LL; // TODO: av_rescale
 }
 
 qint64 AVDemuxer::duration() const
 {
-    return durationUs()/1000LL; // time base: AV_TIME_BASE TODO: av_rescale
+    return durationUs() / 1000LL; // time base: AV_TIME_BASE TODO: av_rescale
 }
 
 // AVFrameContext use AV_TIME_BASE as time base. AVStream use their own timebase
@@ -1789,8 +1842,8 @@ bool AVDemuxer::Private::setStream(AVDemuxer::StreamType st, int streamValue)
     if (streamValue < -1)
         streamValue = -1;
 
-    QList<int> *streams     = 0;
-    Private::StreamInfo *si = 0;
+    QList<int>* streams     = 0;
+    Private::StreamInfo* si = 0;
 
     if      (st == AudioStream)
     {
