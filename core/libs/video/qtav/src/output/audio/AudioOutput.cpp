@@ -354,7 +354,9 @@ void AudioOutput::setBackends(const QStringList &backendNames)
         return;
 
     d.update_backend = true;
-    d.backends = backendNames;
+
+    d.backends       = backendNames;
+    Q_UNUSED(d.update_backend);
 
     // create backend here because we have to check format support before open which needs a backend
 

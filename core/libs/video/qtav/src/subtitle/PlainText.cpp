@@ -142,20 +142,32 @@ QString fromAss(const char* ass)
     b.size = sizeof(text) - 1;
     b.len = 0;
     ass_to_plaintext(&b, ass);
-    int hour1, min1, sec1, hunsec1,hour2, min2, sec2, hunsec2;
+    int hour1, min1, sec1, hunsec1, hour2, min2, sec2, hunsec2;
     char line[512], *ret;
 
     // fixme: "\0" maybe not allowed
 
-    if (sscanf(b.start, "Dialogue: Marked=%*d,%d:%d:%d.%d,%d:%d:%d.%d%[^\r\n]", // &nothing,
-                            &hour1, &min1, &sec1, &hunsec1,
-                            &hour2, &min2, &sec2, &hunsec2,
-                            line) < 9)
-        if (sscanf(b.start, "Dialogue: %*d,%d:%d:%d.%d,%d:%d:%d.%d%[^\r\n]",    // &nothing,
+    if (
+        // cppcheck-suppress invalidscanf
+        sscanf(b.start,
+               "Dialogue: Marked=%*d,%d:%d:%d.%d,%d:%d:%d.%d%[^\r\n]", // &nothing,
                 &hour1, &min1, &sec1, &hunsec1,
                 &hour2, &min2, &sec2, &hunsec2,
-                line) < 9)
+                line) < 9
+       )
+    {
+        if (
+            // cppcheck-suppress invalidscanf
+            sscanf(b.start,
+                   "Dialogue: %*d,%d:%d:%d.%d,%d:%d:%d.%d%[^\r\n]",    // &nothing,
+                    &hour1, &min1, &sec1, &hunsec1,
+                    &hour2, &min2, &sec2, &hunsec2,
+                    line) < 9
+           )
+        {
             return QString::fromUtf8(b.start); // libass ASS_Event. Text has no Dialogue
+        }
+    }
 
     ret = strchr(line, ',');
 
