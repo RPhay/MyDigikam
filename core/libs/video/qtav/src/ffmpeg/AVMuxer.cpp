@@ -650,9 +650,9 @@ bool AVMuxer::isOpen() const
 
 bool AVMuxer::writeAudio(const QtAV::Packet& packet)
 {
-    AVPacket *pkt = (AVPacket*)packet.asAVPacket(); // FIXME
-    pkt->stream_index = d->audio_streams[0];        // FIXME
-    AVStream *s = d->format_ctx->streams[pkt->stream_index];
+    AVPacket* pkt     = const_cast<AVPacket*>(packet.asAVPacket());   // FIXME
+    pkt->stream_index = d->audio_streams[0];                          // FIXME
+    AVStream* s       = d->format_ctx->streams[pkt->stream_index];
 
     // stream.time_base is set in avformat_write_header
 
@@ -666,9 +666,9 @@ bool AVMuxer::writeAudio(const QtAV::Packet& packet)
 
 bool AVMuxer::writeVideo(const QtAV::Packet& packet)
 {
-    AVPacket *pkt = (AVPacket*)packet.asAVPacket();
+    AVPacket* pkt     = const_cast<AVPacket*>(packet.asAVPacket());
     pkt->stream_index = d->video_streams[0];
-    AVStream *s = d->format_ctx->streams[pkt->stream_index];
+    AVStream* s       = d->format_ctx->streams[pkt->stream_index];
 
     // stream.time_base is set in avformat_write_header
 
@@ -686,9 +686,8 @@ bool AVMuxer::writeVideo(const QtAV::Packet& packet)
 
     qCDebug(DIGIKAM_QTAV_LOG).noquote() << QString::asprintf("stream: %d duration: %lld, end: %lld. tb:{%d/%d}"
            , pkt->stream_index, s->duration
-            , av_stream_get_end_pts(s)
-           , s->time_base.num, s->time_base.den
-            );
+           , av_stream_get_end_pts(s)
+           , s->time_base.num, s->time_base.den);
 
 #endif
 
@@ -771,6 +770,7 @@ void AVMuxer::Private::applyOptionsForContext()
     if (options.isEmpty())
     {
         //av_opt_set_defaults(format_ctx);  //can't set default values! result maybe unexpected
+
         return;
     }
 

@@ -129,13 +129,19 @@ bool AudioDecoderFFmpeg::decode(const Packet &packet)
         av_init_packet(&eofpkt);
         eofpkt.data = NULL;
         eofpkt.size = 0;
-        ret         = avcodec_decode_audio4(d.codec_ctx, d.frame, &got_frame_ptr, &eofpkt);
+        ret         = avcodec_decode_audio4(d.codec_ctx,
+                                            d.frame,
+                                            &got_frame_ptr,
+                                            &eofpkt);
     }
     else
     {
         // const AVPacket*: ffmpeg >= 1.0. no libav
 
-        ret = avcodec_decode_audio4(d.codec_ctx, d.frame, &got_frame_ptr, (AVPacket*)packet.asAVPacket());
+        ret = avcodec_decode_audio4(d.codec_ctx,
+                                    d.frame,
+                                    &got_frame_ptr,
+                                    const_cast<AVPacket*>(packet.asAVPacket()));
     }
 
     d.undecoded_size = qMin(packet.data.size() - ret, packet.data.size());

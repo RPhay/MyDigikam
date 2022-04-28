@@ -173,11 +173,17 @@ bool VideoDecoderFFmpegBase::decode(const Packet &packet)
         av_init_packet(&eofpkt);
         eofpkt.data = NULL;
         eofpkt.size = 0;
-        ret = avcodec_decode_video2(d.codec_ctx, d.frame, &got_frame_ptr, &eofpkt);
+        ret = avcodec_decode_video2(d.codec_ctx,
+                                    d.frame,
+                                    &got_frame_ptr,
+                                    &eofpkt);
     }
     else
     {
-        ret = avcodec_decode_video2(d.codec_ctx, d.frame, &got_frame_ptr, (AVPacket*)packet.asAVPacket());
+        ret = avcodec_decode_video2(d.codec_ctx,
+                                    d.frame,
+                                    &got_frame_ptr,
+                                    const_cast<AVPacket*>(packet.asAVPacket()));
     }
 
     //qCDebug(DIGIKAM_QTAV_LOG).noquote() << QString::asprintf("pic_type=%c", av_get_picture_type_char(d.frame->pict_type));
@@ -194,6 +200,7 @@ bool VideoDecoderFFmpegBase::decode(const Packet &packet)
     if (!got_frame_ptr)
     {
         qCWarning(DIGIKAM_QTAV_LOG_WARN).noquote() << QString::asprintf("no frame could be decompressed: %s %d/%d", av_err2str(ret), d.undecoded_size, packet.data.size());
+
         return !packet.isEOF();
     }
 
