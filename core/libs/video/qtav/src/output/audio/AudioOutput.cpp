@@ -95,10 +95,10 @@ static inline void scale_samples_s32(quint8 *dst, const quint8 *src, int nb_samp
 template<typename T>
 static inline void scale_samples(quint8 *dst, const quint8 *src, int nb_samples, int, float volume)
 {
-    T *smp_dst       = (T *)dst;
-    const T *smp_src = (const T *)src;
+    T* smp_dst       = reinterpret_cast<T*>(dst);
+    const T* smp_src = reinterpret_cast<const T*>(src);
 
-    for (int i = 0; i < nb_samples; ++i)
+    for (int i = 0 ; i < nb_samples ; ++i)
         smp_dst[i] = smp_src[i] * (T)volume;
 }
 

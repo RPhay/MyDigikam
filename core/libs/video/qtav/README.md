@@ -73,6 +73,8 @@ Code review with plenty of fixes and improvements:
 
 - [DONE] Fix header guards.
 
+- [PROG] Fix comments formating everywhere.
+
 - [PROG] Fix includes rules/order from Qt and local.
 
 - [PROG] Fix coding style.
