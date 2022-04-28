@@ -73,13 +73,13 @@ Code review with plenty of fixes and improvements:
 
 - [DONE] Fix header guards.
 
+- [DONE] Use Clang-tidy to patch code with nullptr instead NULL or 0.
+
 - [PROG] Fix comments formating everywhere.
 
 - [PROG] Fix includes rules/order from Qt and local.
 
 - [PROG] Fix coding style.
-
-- [PROG] Use nullptr instead NULL or 0.
 
 - [PROG] Apply fixes for cppcheck static analyzer.
 
