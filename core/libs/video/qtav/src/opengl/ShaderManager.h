@@ -45,7 +45,7 @@ class ShaderManager : public QObject
 
 public:
 
-    ShaderManager(QObject *parent = 0);
+    ShaderManager(QObject *parent = nullptr);
     ~ShaderManager();
 
     VideoShader* prepareMaterial(VideoMaterial *material, qint32 materialType = -1);

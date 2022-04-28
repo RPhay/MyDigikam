@@ -92,7 +92,7 @@ public:
      * \brief initialize
      * \param shaderProgram: 0 means create a shader program internally. if not linked, vertex/fragment shader will be added and linked
      */
-    virtual void initialize(QOpenGLShaderProgram* shaderProgram = 0);
+    virtual void initialize(QOpenGLShaderProgram* shaderProgram = nullptr);
     int uniformLocation(const char* name) const;
 
     /*!
@@ -155,7 +155,7 @@ private:
      */
     virtual const char* userShaderHeader(QOpenGLShader::ShaderType) const
     {
-        return 0;
+        return nullptr;
     }
 
     /*!
@@ -191,7 +191,7 @@ private:
      */
     virtual const char* userSample() const
     {
-        return 0;
+        return nullptr;
     }
 
     /*!
@@ -201,7 +201,7 @@ private:
      */
     virtual const char* userPostProcess() const
     {
-        return 0;
+        return nullptr;
     }
 
     /// User configurable shader APIs END

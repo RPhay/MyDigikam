@@ -249,7 +249,7 @@ QString options2StringHelper(void* obj, const char* unit)
 {
     qCDebug(DIGIKAM_QTAV_LOG).noquote() << QString::asprintf("obj: %p", obj);
     QString s;
-    const AVOption* opt = NULL;
+    const AVOption* opt = nullptr;
 
     while ((opt = av_opt_next(obj, opt)))
     {
@@ -308,7 +308,7 @@ QString options2StringHelper(void* obj, const char* unit)
 
 QString optionsToString(void* obj)
 {
-    return options2StringHelper(obj, NULL);
+    return options2StringHelper(obj, nullptr);
 }
 
 void setOptionsToFFmpegObj(const QVariant& opt, void* obj)
@@ -316,7 +316,7 @@ void setOptionsToFFmpegObj(const QVariant& opt, void* obj)
     if (!opt.isValid())
         return;
 
-    AVClass *c = obj ? *(AVClass**)obj : 0;
+    AVClass *c = obj ? *(AVClass**)obj : nullptr;
 
     if (c)
         qCDebug(DIGIKAM_QTAV_LOG) << QStringLiteral("%1.%2 options:").arg(QLatin1String(c->class_name)).arg(QLatin1String(c->item_name(obj)));

@@ -93,7 +93,7 @@ protected:
     /**
      * If the filter is in AVThread, it's safe to operate on ref.
      */
-    Filter(FilterPrivate& d, QObject *parent = 0);
+    Filter(FilterPrivate& d, QObject *parent = nullptr);
 
     DPTR_DECLARE(Filter)
 };
@@ -109,7 +109,7 @@ class QTAV_EXPORT VideoFilter : public Filter
 
 public:
 
-    VideoFilter(QObject* parent = 0);
+    VideoFilter(QObject* parent = nullptr);
 
     VideoFilterContext* context();
     virtual bool isSupported(VideoFilterContext::Type ct) const;
@@ -123,14 +123,14 @@ public:
      * \return false if already installed
      */
     bool installTo(AVOutput* output); // only for video. move to video filter installToRenderer
-    void apply(Statistics* statistics, VideoFrame* frame = 0);
+    void apply(Statistics* statistics, VideoFrame* frame = nullptr);
 
-    bool prepareContext(VideoFilterContext*& ctx, Statistics* statistics = 0, VideoFrame* frame = 0); // internal use
+    bool prepareContext(VideoFilterContext*& ctx, Statistics* statistics = nullptr, VideoFrame* frame = nullptr); // internal use
 
 protected:
 
-    VideoFilter(VideoFilterPrivate& d, QObject* parent = 0);
-    virtual void process(Statistics* statistics, VideoFrame* frame = 0) = 0;
+    VideoFilter(VideoFilterPrivate& d, QObject* parent = nullptr);
+    virtual void process(Statistics* statistics, VideoFrame* frame = nullptr) = 0;
 };
 
 // -------------------------------------------------------------------------------------
@@ -145,14 +145,14 @@ class QTAV_EXPORT AudioFilter : public Filter
 
 public:
 
-    AudioFilter(QObject* parent = 0);
+    AudioFilter(QObject* parent = nullptr);
     bool installTo(AVPlayer* player) override;
-    void apply(Statistics* statistics, AudioFrame* frame = 0);
+    void apply(Statistics* statistics, AudioFrame* frame = nullptr);
 
 protected:
 
-    AudioFilter(AudioFilterPrivate& d, QObject* parent = 0);
-    virtual void process(Statistics* statistics, AudioFrame* frame = 0) = 0;
+    AudioFilter(AudioFilterPrivate& d, QObject* parent = nullptr);
+    virtual void process(Statistics* statistics, AudioFrame* frame = nullptr) = 0;
 };
 
 } // namespace QtAV

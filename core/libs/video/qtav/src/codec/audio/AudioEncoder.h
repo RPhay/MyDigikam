@@ -102,7 +102,7 @@ public:
      * \param id NULL to get the first id address
      * \return address of id or NULL if not found/end
      */
-    static AudioEncoderId* next(AudioEncoderId* id = 0);
+    static AudioEncoderId* next(AudioEncoderId* id = nullptr);
     static const char* name(AudioEncoderId id);
     static AudioEncoderId id(const char* name);
 

@@ -61,7 +61,7 @@ class QTAV_WIDGETS_EXPORT WidgetRenderer : public QWidget,
 
 public:
 
-    explicit WidgetRenderer(QWidget* parent = 0, Qt::WindowFlags f = Qt::WindowFlags(Qt::Widget));
+    explicit WidgetRenderer(QWidget* parent = nullptr, Qt::WindowFlags f = Qt::WindowFlags(Qt::Widget));
 
     virtual VideoRendererId id()          const override;
 

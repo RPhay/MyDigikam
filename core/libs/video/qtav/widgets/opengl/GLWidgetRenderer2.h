@@ -67,7 +67,7 @@ class QTAV_WIDGETS_EXPORT GLWidgetRenderer2 : public QGLWidget,
 
 public:
 
-    GLWidgetRenderer2(QWidget* parent = 0, const QGLWidget* shareWidget = 0, Qt::WindowFlags f = Qt::WindowFlags(Qt::Widget));
+    GLWidgetRenderer2(QWidget* parent = nullptr, const QGLWidget* shareWidget = nullptr, Qt::WindowFlags f = Qt::WindowFlags(Qt::Widget));
     virtual VideoRendererId id() const          override;
 
     virtual QWidget* widget()                   override

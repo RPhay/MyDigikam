@@ -429,12 +429,12 @@ void *VideoFrame::map(SurfaceType type, void *handle, const VideoFormat& fmt, in
     Q_D(VideoFrame);
     const QVariant v = d->metadata.value(QStringLiteral("surface_interop"));
     if (!v.isValid())
-        return 0;
+        return nullptr;
     d->surface_interop = v.value<VideoSurfaceInteropPtr>();
     if (!d->surface_interop)
-        return 0;
+        return nullptr;
     if (plane > planeCount())
-        return 0;
+        return nullptr;
     return d->surface_interop->map(type, fmt, handle, plane);
 }
 
@@ -451,17 +451,17 @@ void* VideoFrame::createInteropHandle(void* handle, SurfaceType type, int plane)
     Q_D(VideoFrame);
     const QVariant v = d->metadata.value(QStringLiteral("surface_interop"));
     if (!v.isValid())
-        return 0;
+        return nullptr;
     d->surface_interop = v.value<VideoSurfaceInteropPtr>();
     if (!d->surface_interop)
-        return 0;
+        return nullptr;
     if (plane > planeCount())
-        return 0;
+        return nullptr;
     return d->surface_interop->createHandle(handle, type, format(), plane, planeWidth(plane), planeHeight(plane));
 }
 
 VideoFrameConverter::VideoFrameConverter()
-    : m_cvt(0)
+    : m_cvt(nullptr)
 {
     memset(m_eq, 0, sizeof(m_eq));
 }
@@ -470,7 +470,7 @@ VideoFrameConverter::~VideoFrameConverter()
 {
     if (m_cvt) {
         delete m_cvt;
-        m_cvt = 0;
+        m_cvt = nullptr;
     }
 }
 

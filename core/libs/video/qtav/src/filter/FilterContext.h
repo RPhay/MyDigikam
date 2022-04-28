@@ -190,7 +190,7 @@ public:
         return VideoFilterContext::X11;
     }
 
-    void resetX11(Display* dpy = 0, GC g = 0, Drawable d = 0);
+    void resetX11(Display* dpy = nullptr, GC g = nullptr, Drawable d = 0);
 
     // empty source rect equals to the whole source rect
 

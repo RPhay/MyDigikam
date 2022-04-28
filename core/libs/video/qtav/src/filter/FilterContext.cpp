@@ -34,7 +34,7 @@ namespace QtAV
 
 VideoFilterContext *VideoFilterContext::create(Type t)
 {
-    VideoFilterContext *ctx = 0;
+    VideoFilterContext *ctx = nullptr;
     switch (t) {
     case QtPainter:
         ctx = new QPainterFilterContext();
@@ -56,9 +56,9 @@ void VideoFilterContext::initializeOnFrame(VideoFrame *frame)
 }
 
 VideoFilterContext::VideoFilterContext():
-    painter(0)
+    painter(nullptr)
   , opacity(1)
-  , paint_device(0)
+  , paint_device(nullptr)
   , video_width(0)
   , video_height(0)
   , own_painter(false)
@@ -80,14 +80,14 @@ VideoFilterContext::~VideoFilterContext()
         if (own_painter) {
             qCDebug(DIGIKAM_QTAV_LOG).noquote() << QString::asprintf("VideoFilterContext %p delete painter %p", this, painter);
             delete painter;
-            painter = 0;
+            painter = nullptr;
         }
     }
     if (paint_device) {
         qCDebug(DIGIKAM_QTAV_LOG).noquote() << QString::asprintf("VideoFilterContext %p delete paint device in %p", this, paint_device);
         if (own_paint_device)
             delete paint_device; //delete recursively for widget
-        paint_device = 0;
+        paint_device = nullptr;
     }
 }
 
@@ -142,19 +142,19 @@ void VideoFilterContext::shareFrom(VideoFilterContext *vctx)
 }
 
 QPainterFilterContext::QPainterFilterContext() : VideoFilterContext()
-    , doc(0)
-    , cvt(0)
+    , doc(nullptr)
+    , cvt(nullptr)
 {}
 
 QPainterFilterContext::~QPainterFilterContext()
 {
     if (doc) {
         delete doc;
-        doc = 0;
+        doc = nullptr;
     }
     if (cvt) {
         delete cvt;
-        cvt = 0;
+        cvt = nullptr;
     }
 }
 
@@ -274,7 +274,7 @@ void QPainterFilterContext::initializeOnFrame(VideoFrame *vframe)
             painter->end(); //destroy a paint device that is being painted is not allowed!
         }
         delete paint_device;
-        paint_device = 0;
+        paint_device = nullptr;
     }
     Q_ASSERT(video_width > 0 && video_height > 0);
     // direct draw on frame data, so use VideoFrame::constBits()

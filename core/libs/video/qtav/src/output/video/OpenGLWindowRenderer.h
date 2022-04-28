@@ -60,7 +60,7 @@ class QTAV_EXPORT OpenGLWindowRenderer : public QOpenGLWindow,
 
 public:
 
-    explicit OpenGLWindowRenderer(UpdateBehavior updateBehavior = NoPartialUpdate, QWindow *parent = 0);
+    explicit OpenGLWindowRenderer(UpdateBehavior updateBehavior = NoPartialUpdate, QWindow *parent = nullptr);
     virtual VideoRendererId id() const              override;
 
     QWindow* qwindow()                              override final

@@ -190,7 +190,7 @@ void* memcpy_sse2(void* dst, const void* src, size_t size)
     static const size_t kRegsInLoop = sizeof(size_t) * 2; // 8 or 16
 
     if (!dst || !src)
-        return NULL;
+        return nullptr;
 
     // If memory is not aligned, use memcpy
     // TODO: only check dst aligned

@@ -36,7 +36,7 @@ class SubtitleFilterPrivate : public VideoFilterPrivate
 {
 public:
     SubtitleFilterPrivate()
-        : player_sub(new PlayerSubtitle(0))
+        : player_sub(new PlayerSubtitle(nullptr))
         , rect(0.0, 0.0, 1.0, 0.9)
         , color(Qt::white)
     {

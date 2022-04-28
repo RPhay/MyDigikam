@@ -41,7 +41,7 @@ class QTAV_EXPORT AVTranscoder : public QObject
 
 public:
 
-    AVTranscoder(QObject* parent = 0);
+    AVTranscoder(QObject* parent = nullptr);
     ~AVTranscoder();
 
     // TODO: other source (more operations needed, e.g. seek)?

@@ -44,7 +44,7 @@ class CharsetDetector::Private
 public:
 
     Private()
-        : m_det(NULL)
+        : m_det(nullptr)
     {
 
 #ifdef HAVE_UCHARDET
@@ -66,7 +66,7 @@ public:
 
 #endif
 
-        m_det = NULL;
+        m_det = nullptr;
     }
 
     QByteArray detect(const QByteArray& data)
@@ -108,7 +108,7 @@ CharsetDetector::~CharsetDetector()
     if (priv)
     {
         delete priv;
-        priv = 0;
+        priv = nullptr;
     }
 }
 

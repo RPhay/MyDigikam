@@ -246,7 +246,7 @@ bool ImageConverter::prepareData()
     if (d.fmt_out == QTAV_PIX_FMT_C(NONE) || d.w_out <=0 || d.h_out <= 0)
         return false;
 
-    AV_ENSURE(av_image_check_size(d.w_out, d.h_out, 0, NULL), false);
+    AV_ENSURE(av_image_check_size(d.w_out, d.h_out, 0, nullptr), false);
 
     const int nb_planes = qMax(av_pix_fmt_count_planes(d.fmt_out), 0);
     d.bits.resize(nb_planes);
@@ -261,7 +261,7 @@ bool ImageConverter::prepareData()
     for (int i = 0 ; i < d.pitchs.size() ; ++i)
         d.pitchs[i] = FFALIGN(d.pitchs[i], kAlign);
 
-    int s = av_image_fill_pointers((uint8_t**)d.bits.constData(), d.fmt_out, d.h_out, NULL, d.pitchs.constData());
+    int s = av_image_fill_pointers((uint8_t**)d.bits.constData(), d.fmt_out, d.h_out, nullptr, d.pitchs.constData());
 
     if (s < 0)
         return false;

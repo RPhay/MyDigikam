@@ -230,12 +230,12 @@ void about()
 
 void aboutFFmpeg()
 {
-    QMessageBox::about(0, i18n("About FFmpeg"), aboutFFmpeg_HTML());
+    QMessageBox::about(nullptr, i18n("About FFmpeg"), aboutFFmpeg_HTML());
 }
 
 void aboutQtAV()
 {
-    QMessageBox::about(0, i18n("About QtAV"), aboutQtAV_HTML());
+    QMessageBox::about(nullptr, i18n("About QtAV"), aboutQtAV_HTML());
 }
 
 } // namespace QtAV

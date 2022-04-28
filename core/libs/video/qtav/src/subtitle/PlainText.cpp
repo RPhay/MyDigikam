@@ -62,7 +62,7 @@ static void append(struct buf *b, char c)
 static void ass_to_plaintext(struct buf *b, const char *in)
 {
     bool in_tag              = false;
-    const char *open_tag_pos = NULL;
+    const char *open_tag_pos = nullptr;
     bool in_drawing          = false;
 
     while (*in)

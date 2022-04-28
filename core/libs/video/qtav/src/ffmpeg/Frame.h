@@ -83,7 +83,7 @@ public:
     QByteArray frameData() const;
     int dataAlignment() const;
 
-    uchar* frameDataPtr(int* size = NULL) const
+    uchar* frameDataPtr(int* size = nullptr) const
     {
         const int a      = dataAlignment();
         uchar* p         = (uchar*)frameData().constData();

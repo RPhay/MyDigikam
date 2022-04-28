@@ -44,7 +44,7 @@ class VideoThread : public AVThread
 
 public:
 
-    explicit VideoThread(QObject* parent = 0);
+    explicit VideoThread(QObject* parent = nullptr);
     VideoCapture *setVideoCapture(VideoCapture* cap); // ensure thread safe
     VideoCapture *videoCapture() const;
     VideoFrame displayedFrame()  const;

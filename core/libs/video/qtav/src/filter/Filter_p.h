@@ -60,7 +60,7 @@ class QTAV_PRIVATE_EXPORT VideoFilterPrivate : public FilterPrivate
 public:
 
     VideoFilterPrivate()
-      : context(0)
+      : context(nullptr)
     {
     }
 

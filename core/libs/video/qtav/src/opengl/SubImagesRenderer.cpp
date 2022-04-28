@@ -154,7 +154,7 @@ void SubImagesRenderer::uploadTexture(SubImagesGeometry* g)
     DYGL(glTexParameteri(GL_TEXTURE_2D, GL_TEXTURE_MIN_FILTER, GL_LINEAR));
     DYGL(glTexParameteri(GL_TEXTURE_2D, GL_TEXTURE_WRAP_S, GL_CLAMP_TO_EDGE));
     DYGL(glTexParameteri(GL_TEXTURE_2D, GL_TEXTURE_WRAP_T, GL_CLAMP_TO_EDGE));
-    DYGL(glTexImage2D(GL_TEXTURE_2D, 0, internal_fmt, g->width(), g->height(), 0, fmt, data_type, NULL));
+    DYGL(glTexImage2D(GL_TEXTURE_2D, 0, internal_fmt, g->width(), g->height(), 0, fmt, data_type, nullptr));
 
     //glPixelStorei(GL_UNPACK_ALIGNMENT, 1);
 

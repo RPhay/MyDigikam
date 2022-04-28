@@ -82,7 +82,7 @@ private:
 // TODO: use static Singleton<T> inst; return inst;
 
 template<typename T>
-T* Singleton<T>::pInstance_ = 0; // Why it will be initialized twice? The order?
+T* Singleton<T>::pInstance_ = nullptr; // Why it will be initialized twice? The order?
 
 template<typename T>
 bool Singleton<T>::destroyed_ = false;
@@ -134,7 +134,7 @@ void Singleton<T>::DestroySingleton()
     DBG("DestroySingleton...\n");
     assert(!destroyed_);
     delete pInstance_;
-    pInstance_ = 0;
+    pInstance_ = nullptr;
     destroyed_ = true;
 }
 

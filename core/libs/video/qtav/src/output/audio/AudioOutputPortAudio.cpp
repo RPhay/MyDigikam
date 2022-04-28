@@ -42,7 +42,7 @@ class AudioOutputPortAudio final : public AudioOutputBackend
 {
 public:
 
-    AudioOutputPortAudio(QObject* parent = 0);
+    AudioOutputPortAudio(QObject* parent = nullptr);
     ~AudioOutputPortAudio();
 
     QString name() const                        final
@@ -78,7 +78,7 @@ AudioOutputPortAudio::AudioOutputPortAudio(QObject *parent)
     : AudioOutputBackend(AudioOutput::NoFeature, parent)
     , initialized(false)
     , outputParameters(new PaStreamParameters)
-    , stream(0)
+    , stream(nullptr)
 {
     PaError err = paNoError;
 
@@ -117,7 +117,7 @@ AudioOutputPortAudio::AudioOutputPortAudio(QObject *parent)
     const PaDeviceInfo *deviceInfo = Pa_GetDeviceInfo(outputParameters->device);
     qCDebug(DIGIKAM_QTAV_LOG).noquote() << QString::asprintf("DEFAULT max in/out channels: %d/%d", deviceInfo->maxInputChannels, deviceInfo->maxOutputChannels);
     qCDebug(DIGIKAM_QTAV_LOG).noquote() << QString::asprintf("audio device: %s", QString::fromLocal8Bit(Pa_GetDeviceInfo(outputParameters->device)->name).toUtf8().constData());
-    outputParameters->hostApiSpecificStreamInfo = NULL;
+    outputParameters->hostApiSpecificStreamInfo = nullptr;
     outputParameters->suggestedLatency = Pa_GetDeviceInfo(outputParameters->device)->defaultHighOutputLatency;
 }
 
@@ -126,7 +126,7 @@ AudioOutputPortAudio::~AudioOutputPortAudio()
     if (outputParameters)
     {
         delete outputParameters;
-        outputParameters = 0;
+        outputParameters = nullptr;
     }
 }
 
@@ -179,7 +179,7 @@ bool AudioOutputPortAudio::open()
 {
     outputParameters->sampleFormat = toPaSampleFormat(format.sampleFormat());
     outputParameters->channelCount = format.channels();
-    PaError err = Pa_OpenStream(&stream, NULL, outputParameters, format.sampleRate(), 0, paNoFlag, NULL, NULL);
+    PaError err = Pa_OpenStream(&stream, nullptr, outputParameters, format.sampleRate(), 0, paNoFlag, nullptr, nullptr);
 
     if (err != paNoError)
     {
@@ -218,7 +218,7 @@ bool AudioOutputPortAudio::close()
         return false;
     }
 
-    stream = NULL;
+    stream = nullptr;
 
     if (initialized)
         Pa_Terminate(); // Do NOT call this if init failed. See document

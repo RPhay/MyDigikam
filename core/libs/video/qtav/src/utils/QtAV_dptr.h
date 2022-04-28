@@ -166,7 +166,7 @@ public:
         if (pvt)
         {
             delete pvt;
-            pvt = 0;
+            pvt = nullptr;
         }
     }
 

@@ -71,9 +71,9 @@ static int ffmpeg_get_va_buffer2(struct AVCodecContext* ctx, AVFrame* frame, int
 
     for (unsigned i = 0 ; i < AV_NUM_DATA_POINTERS ; i++)
     {
-        frame->data[i]     = NULL;
+        frame->data[i]     = nullptr;
         frame->linesize[i] = 0;
-        frame->buf[i]      = NULL;
+        frame->buf[i]      = nullptr;
     }
 
     //frame->reordered_opaque = ctx->reordered_opaque; //?? xbmc
@@ -105,7 +105,7 @@ static int ffmpeg_get_va_buffer2(struct AVCodecContext* ctx, AVFrame* frame, int
         return -1;
     }
 
-    Q_ASSERT(frame->data[0] != NULL);
+    Q_ASSERT(frame->data[0] != nullptr);
 
     return 0;
 }
@@ -239,7 +239,7 @@ AVPixelFormat VideoDecoderFFmpegHWPrivate::getFormat(struct AVCodecContext *avct
     {
         const AVPixFmtDescriptor *dsc = av_pix_fmt_desc_get(pi_fmt[i]);
 
-        if (dsc == NULL)
+        if (dsc == nullptr)
             continue;
 
         bool hwaccel = (dsc->flags & AV_PIX_FMT_FLAG_HWACCEL) != 0;

@@ -41,7 +41,7 @@ class SubtitleObserver : public QObject
 
 public:
 
-    SubtitleObserver(QObject* parent = 0)
+    SubtitleObserver(QObject* parent = nullptr)
       : QObject(parent)
     {
     }

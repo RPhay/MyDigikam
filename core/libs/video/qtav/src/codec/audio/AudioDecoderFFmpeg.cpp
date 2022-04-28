@@ -95,7 +95,7 @@ public:
         if (frame)
         {
             av_frame_free(&frame);
-            frame = 0;
+            frame = nullptr;
         }
     }
 
@@ -127,7 +127,7 @@ bool AudioDecoderFFmpeg::decode(const Packet &packet)
     {
         AVPacket eofpkt;
         av_init_packet(&eofpkt);
-        eofpkt.data = NULL;
+        eofpkt.data = nullptr;
         eofpkt.size = 0;
         ret         = avcodec_decode_audio4(d.codec_ctx,
                                             d.frame,

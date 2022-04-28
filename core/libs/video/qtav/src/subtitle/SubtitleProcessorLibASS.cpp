@@ -79,7 +79,7 @@ public:
     }
 
     QString getText(qreal pts) const                                                        override;
-    QImage getImage(qreal pts, QRect *boundingRect = 0)                                     override;
+    QImage getImage(qreal pts, QRect *boundingRect = nullptr)                                     override;
     SubImageSet getSubImages(qreal pts, QRect *boundingRect)                                override;
     bool processHeader(const QByteArray& codec, const QByteArray& data)                     override;
     SubtitleFrame processLine(const QByteArray& data, qreal pts = -1, qreal duration = 0)   override;
@@ -154,7 +154,7 @@ static void ass_msg_cb(int level, const char *fmt, va_list va, void *data)
     printf("[libass]: ");
     vprintf(fmt, va);
     printf("\n");
-    fflush(0);
+    fflush(nullptr);
 
     return;
 
@@ -171,9 +171,9 @@ static void ass_msg_cb(int level, const char *fmt, va_list va, void *data)
 SubtitleProcessorLibASS::SubtitleProcessorLibASS()
     : m_update_cache(true)
     , force_font_file(true)
-    , m_ass(0)
-    , m_renderer(0)
-    , m_track(0)
+    , m_ass(nullptr)
+    , m_renderer(nullptr)
+    , m_track(nullptr)
 {
     if (!ass::api::loaded())
         return;
@@ -186,7 +186,7 @@ SubtitleProcessorLibASS::SubtitleProcessorLibASS()
         return;
     }
 
-    ass_set_message_cb(m_ass, ass_msg_cb, NULL);
+    ass_set_message_cb(m_ass, ass_msg_cb, nullptr);
 }
 
 SubtitleProcessorLibASS::~SubtitleProcessorLibASS()
@@ -196,7 +196,7 @@ SubtitleProcessorLibASS::~SubtitleProcessorLibASS()
     if (m_track)
     {
         ass_free_track(m_track);
-        m_track = 0;
+        m_track = nullptr;
     }
 
     if (m_renderer)
@@ -204,13 +204,13 @@ SubtitleProcessorLibASS::~SubtitleProcessorLibASS()
         QMutexLocker lock(&m_mutex);
         Q_UNUSED(lock);
         ass_renderer_done(m_renderer); // check async update cache!!
-        m_renderer = 0;
+        m_renderer = nullptr;
     }
 
     if (m_ass)
     {
         ass_library_done(m_ass);
-        m_ass = 0;
+        m_ass = nullptr;
     }
 }
 
@@ -249,7 +249,7 @@ bool SubtitleProcessorLibASS::process(QIODevice *dev)
     if (m_track)
     {
         ass_free_track(m_track);
-        m_track = 0;
+        m_track = nullptr;
     }
 
     if (!dev->isOpen())
@@ -262,7 +262,7 @@ bool SubtitleProcessorLibASS::process(QIODevice *dev)
     }
 
     QByteArray data(dev->readAll());
-    m_track = ass_read_memory(m_ass, (char*)data.constData(), data.size(), NULL); //utf-8
+    m_track = ass_read_memory(m_ass, (char*)data.constData(), data.size(), nullptr); //utf-8
 
     if (!m_track)
     {
@@ -286,10 +286,10 @@ bool SubtitleProcessorLibASS::process(const QString &path)
     if (m_track)
     {
         ass_free_track(m_track);
-        m_track = 0;
+        m_track = nullptr;
     }
 
-    m_track = ass_read_file(m_ass, (char*)path.toUtf8().constData(), NULL);
+    m_track = ass_read_file(m_ass, (char*)path.toUtf8().constData(), nullptr);
 
     if (!m_track)
     {
@@ -316,7 +316,7 @@ bool SubtitleProcessorLibASS::processHeader(const QByteArray& codec, const QByte
     if (m_track)
     {
         ass_free_track(m_track);
-        m_track = 0;
+        m_track = nullptr;
     }
 
     m_track = ass_new_track(m_ass);
@@ -423,7 +423,7 @@ QImage SubtitleProcessorLibASS::getImage(qreal pts, QRect *boundingRect)
 
 SubImageSet SubtitleProcessorLibASS::getSubImages(qreal pts, QRect *boundingRect)
 {
-    m_assimages = getSubImages(pts, boundingRect, NULL, true);
+    m_assimages = getSubImages(pts, boundingRect, nullptr, true);
 
     return m_assimages;
 }
@@ -571,7 +571,7 @@ void SubtitleProcessorLibASS::setFontFile(const QString &file)
 
         setFrameSize(-1, -1);
         ass_renderer_done(m_renderer);
-        m_renderer = 0;
+        m_renderer = nullptr;
     }
 }
 
@@ -595,7 +595,7 @@ void SubtitleProcessorLibASS::setFontFileForced(bool force)
 
         setFrameSize(-1, -1);
         ass_renderer_done(m_renderer);
-        m_renderer = 0;
+        m_renderer = nullptr;
     }
 }
 
@@ -616,7 +616,7 @@ void SubtitleProcessorLibASS::setFontsDir(const QString &dir)
 
         setFrameSize(-1, -1);
         ass_renderer_done(m_renderer);
-        m_renderer = 0;
+        m_renderer = nullptr;
     }
 }
 
@@ -862,7 +862,7 @@ void SubtitleProcessorLibASS::updateFontCache()
     // will call strdup, so safe to use temp array .toUtf8().constData()
 
     if (!force_font_file || (!font_file.isEmpty() && !QFile::exists(kFont)))
-        ass_set_fonts_dir(m_ass, kFontsDir.isEmpty() ? 0 : kFontsDir.toUtf8().constData()); // look up fonts in fonts dir can be slow. force font file to skip lookup
+        ass_set_fonts_dir(m_ass, kFontsDir.isEmpty() ? nullptr : kFontsDir.toUtf8().constData()); // look up fonts in fonts dir can be slow. force font file to skip lookup
 
 #endif
 
@@ -875,14 +875,14 @@ void SubtitleProcessorLibASS::updateFontCache()
     // if provider is enabled, libass can fallback to the given font if provider can not provide a font
 
     const QByteArray a_conf(conf.toUtf8());
-    const char* kConf = conf.isEmpty() ? 0 : a_conf.constData();
+    const char* kConf = conf.isEmpty() ? nullptr : a_conf.constData();
 
     if (kFont.isEmpty())
     {
         // TODO: always use font provider if no font file is set, i.e. ignore force_font_file
 
         qCDebug(DIGIKAM_QTAV_LOG).noquote() << QString::asprintf("No font file is set, use font provider");
-        ass_set_fonts(m_renderer, NULL, family.constData(), !force_font_file, kConf, 1);
+        ass_set_fonts(m_renderer, nullptr, family.constData(), !force_font_file, kConf, 1);
     }
     else
     {

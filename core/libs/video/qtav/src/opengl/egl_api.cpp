@@ -39,7 +39,7 @@ namespace egl
 
 #ifdef CAPI_LINK_EGL
 
-api::api()               { dll = 0;     }
+api::api()               { dll = nullptr;     }
 api::~api()              {              }
 bool api::loaded() const { return true; }
 

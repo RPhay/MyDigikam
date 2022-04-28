@@ -206,7 +206,7 @@ int main(int argc, char *argv[])
                     fps = qreal(count*1000)/qreal(timer.elapsed());
                 }
 
-                printf("decode count: %d, fps: %.2f frame size: %dx%d %d\r", count, fps, frame.width(), frame.height(), frame.data().size());fflush(0);
+                printf("decode count: %d, fps: %.2f frame size: %dx%d %d\r", count, fps, frame.width(), frame.height(), frame.data().size());fflush(nullptr);
             }
         }
     }

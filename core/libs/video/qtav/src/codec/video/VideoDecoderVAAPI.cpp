@@ -190,13 +190,13 @@ static bool isProfileSupportedByRuntime(const VAProfile *profiles, int count, VA
     return false;
 }
 
-const codec_profile_t* findProfileEntry(AVCodecID codec, int profile, const codec_profile_t* p0 = NULL)
+const codec_profile_t* findProfileEntry(AVCodecID codec, int profile, const codec_profile_t* p0 = nullptr)
 {
     if (codec == QTAV_CODEC_ID(NONE))
-        return 0;
+        return nullptr;
 
     if (p0 && p0->codec == QTAV_CODEC_ID(NONE)) // search from the end
-        return 0;
+        return nullptr;
 
     const codec_profile_t* pe0 = p0 ? ++p0 : va_profiles;
 
@@ -213,7 +213,7 @@ const codec_profile_t* findProfileEntry(AVCodecID codec, int profile, const code
             return p;
     }
 
-    return 0;
+    return nullptr;
 }
 
 
@@ -762,7 +762,7 @@ bool VideoDecoderVAAPIPrivate::open()
 
     qCDebug(DIGIKAM_QTAV_LOG).noquote() << QString::asprintf("checking surface resolution support");
     VASurfaceID test_surface = VA_INVALID_ID;
-    VA_ENSURE_TRUE(vaCreateSurfaces(display->get(), VA_RT_FORMAT_YUV420, surface_width, surface_height,  &test_surface, 1, NULL, 0), false);
+    VA_ENSURE_TRUE(vaCreateSurfaces(display->get(), VA_RT_FORMAT_YUV420, surface_width, surface_height,  &test_surface, 1, nullptr, 0), false);
 
     // context create fail but surface create ok (tested 6k for intel)
 
@@ -818,7 +818,7 @@ bool VideoDecoderVAAPIPrivate::ensureSurfaces(int count, int w, int h, bool disc
 
     surfaces.resize(old_size); // clear the old surfaces if discard_old. when initializing va-api, we must discard old surfaces (vdpau_video.c:595: vdpau_CreateContext: Assertion `obj_surface->va_context == 0xffffffff' failed.)
     surfaces.resize(count);
-    VA_ENSURE_TRUE(vaCreateSurfaces(display->get(), VA_RT_FORMAT_YUV420, w, h,  surfaces.data() + old_size, count - old_size, NULL, 0), false);
+    VA_ENSURE_TRUE(vaCreateSurfaces(display->get(), VA_RT_FORMAT_YUV420, w, h,  surfaces.data() + old_size, count - old_size, nullptr, 0), false);
 
     for (int i = old_size; i < surfaces.size(); ++i)
     {
@@ -879,7 +879,7 @@ void* VideoDecoderVAAPIPrivate::setup(AVCodecContext *avctx)
     {
         qCWarning(DIGIKAM_QTAV_LOG_WARN).noquote() << QString::asprintf("va-api is not initialized. display: %p, config_id: %#x", display->get(), config_id);
 
-        return NULL;
+        return nullptr;
     }
 
     int surface_count =  nb_surfaces;
@@ -921,7 +921,7 @@ void* VideoDecoderVAAPIPrivate::setup(AVCodecContext *avctx)
     // TODO: config_id reset?
 
     if (!ensureSurfaces(surface_count, surface_width, surface_height, true))
-        return NULL;
+        return nullptr;
 
     if (copy_mode != VideoDecoderFFmpegHW::ZeroCopy || OpenGLHelper::isEGL())
     {
@@ -930,11 +930,11 @@ void* VideoDecoderVAAPIPrivate::setup(AVCodecContext *avctx)
         // egl needs VAImage too
 
         if (!prepareVAImage(surface_width, surface_height))
-            return NULL;
+            return nullptr;
     }
 
     initUSWC(surface_width);
-    VA_ENSURE_TRUE(vaCreateContext(display->get(), config_id, surface_width, surface_height, VA_PROGRESSIVE, surfaces.data(), surfaces.size(), &context_id), NULL);
+    VA_ENSURE_TRUE(vaCreateContext(display->get(), config_id, surface_width, surface_height, VA_PROGRESSIVE, surfaces.data(), surfaces.size(), &context_id), nullptr);
 
     /* Setup the ffmpeg hardware context */
 

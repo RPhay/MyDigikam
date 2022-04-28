@@ -62,11 +62,11 @@ QStringList VideoEncoder::supportedCodecs()
     if (!codecs.isEmpty())
         return codecs;
 
-    const AVCodec* c = NULL;
+    const AVCodec* c = nullptr;
 
 #if AVCODEC_STATIC_REGISTER
 
-    void* it = NULL;
+    void* it = nullptr;
 
     while ((c = av_codec_iterate(&it)))
     {

@@ -53,8 +53,8 @@ class OpenGLVideoPrivate : public DPtrPrivate<OpenGLVideo>
 public:
 
     OpenGLVideoPrivate()
-        : ctx(0)
-        , manager(0)
+        : ctx(nullptr)
+        , manager(nullptr)
         , material(new VideoMaterial())
         , material_type(0)
         , norm_viewport(true)
@@ -62,9 +62,9 @@ public:
         , tex_target(0)
         , valiad_tex_width(1.0)
         , mesh_type(OpenGLVideo::RectMesh)
-        , geometry(NULL)
-        , gr(NULL)
-        , user_shader(NULL)
+        , geometry(nullptr)
+        , gr(nullptr)
+        , user_shader(nullptr)
     {
     }
 
@@ -73,7 +73,7 @@ public:
         if (material)
         {
             delete material;
-            material = 0;
+            material = nullptr;
         }
 
         delete geometry;
@@ -88,22 +88,22 @@ public:
 
     void resetGL()
     {
-        ctx = 0;
+        ctx = nullptr;
 
         if (gr)
-            gr->updateGeometry(NULL);
+            gr->updateGeometry(nullptr);
 
         if (!manager)
             return;
 
-        manager->setParent(0);
+        manager->setParent(nullptr);
         delete manager;
-        manager = 0;
+        manager = nullptr;
 
         if (material)
         {
             delete material;
-            material = 0;
+            material = nullptr;
         }
     }
 
@@ -210,7 +210,7 @@ void OpenGLVideoPrivate::updateGeometry(VideoShader* shader, const QRectF &t, co
         return;
 
     delete geometry;
-    geometry = NULL;
+    geometry = nullptr;
 
     if (mesh_type == OpenGLVideo::SphereMesh)
         geometry = new Sphere();
@@ -276,7 +276,7 @@ void OpenGLVideo::setOpenGLContext(QOpenGLContext *ctx)
         h = d.material->hue();
         s = d.material->saturation();
         delete d.material;
-        d.material = 0;
+        d.material = nullptr;
     }
 
     d.resetGL(); // TODO: is it ok to destroygl resources in another context?

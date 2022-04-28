@@ -238,7 +238,7 @@ class dso
 
 public:
 
-    dso() : handle(0)                         {                               }
+    dso() : handle(nullptr)                         {                               }
     virtual ~dso()                            { unload();                     }
     inline void setFileName(const char* name);
     inline void setFileNameAndVersion(const char* name, int ver);
@@ -528,7 +528,7 @@ public:
         {
             is_1st = false;
             fprintf(stderr, "digikam.qtav: capi::version: %s\n", ::capi::version::name);
-            fflush(0);
+            fflush(nullptr);
         }
 
         for (int i = 0 ; names[i] ; ++i)
@@ -669,7 +669,7 @@ bool dso::unload()
 
 #endif
 
-    handle = NULL;  // TODO: check ref?
+    handle = nullptr;  // TODO: check ref?
 
     return true;
 }

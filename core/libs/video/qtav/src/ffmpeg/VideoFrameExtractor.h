@@ -51,7 +51,7 @@ class QTAV_EXPORT VideoFrameExtractor : public QObject
 
 public:
 
-    explicit VideoFrameExtractor(QObject *parent = 0);
+    explicit VideoFrameExtractor(QObject *parent = nullptr);
 
     /*!
      * \brief setSource

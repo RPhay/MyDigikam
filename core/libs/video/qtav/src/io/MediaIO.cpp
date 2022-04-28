@@ -94,7 +94,7 @@ MediaIO* MediaIO::createForProtocol(const QString &protocol)
         delete in;
     }
 
-    return 0;
+    return nullptr;
 }
 
 MediaIO* MediaIO::createForUrl(const QString &url)
@@ -102,12 +102,12 @@ MediaIO* MediaIO::createForUrl(const QString &url)
     const int p = url.indexOf(QLatin1String(":"));
 
     if (p < 0)
-        return 0;
+        return nullptr;
 
     MediaIO *io = MediaIO::createForProtocol(url.left(p));
 
     if (!io)
-        return 0;
+        return nullptr;
 
     io->setUrl(url);
 
@@ -255,7 +255,7 @@ void* MediaIO::avioContext()
     // open for write if 1. SET 0 if open for read otherwise data ptr in av_read(data, ...) does not change
 
     const int write_flag = (accessMode() == Write) && isWritable();
-    d.ctx = avio_alloc_context(buf, bufferSize() > 0 ? bufferSize() : kBufferSizeDefault, write_flag, this, &av_read, write_flag ? &av_write : NULL, &av_seek);
+    d.ctx = avio_alloc_context(buf, bufferSize() > 0 ? bufferSize() : kBufferSizeDefault, write_flag, this, &av_read, write_flag ? &av_write : nullptr, &av_seek);
 
     // if seekable==false, containers that estimate duration from pts(or bit rate) will not seek to the last frame when computing duration
     // but it's still seekable if call seek outside(e.g. from demuxer)

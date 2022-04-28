@@ -53,7 +53,7 @@ public:
         : FramePrivate()
         , format(fmt)
         , samples_per_ch(0)
-        , conv(0)
+        , conv(nullptr)
     {
         if (!format.isValid())
             return;

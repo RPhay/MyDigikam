@@ -82,7 +82,7 @@ void AudioThread::run()
     if (!d.dec || !d.dec->isAvailable() || !d.outputSet)
         return;
     // resetState(); // we can't reset the thread state from here
-    Q_ASSERT(d.clock != 0);
+    Q_ASSERT(d.clock != nullptr);
     d.init();
     Packet pkt;
     qint64 fake_duration = 0LL;
@@ -228,7 +228,7 @@ void AudioThread::run()
             pkt = Packet(); //mark invalid to take next
             continue;
         }
-        AudioOutput *ao = 0;
+        AudioOutput *ao = nullptr;
         // first() is not null even if list empty
         if (!d.outputSet->outputs().isEmpty())
             ao = static_cast<AudioOutput*>(d.outputSet->outputs().first());

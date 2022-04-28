@@ -285,7 +285,7 @@ AVOutput* AVThread::output() const
 {
     DPTR_D(const AVThread);
     if (!d.outputSet || d.outputSet->outputs().isEmpty())
-        return 0;
+        return nullptr;
     return d.outputSet->outputs().first();
 }
 

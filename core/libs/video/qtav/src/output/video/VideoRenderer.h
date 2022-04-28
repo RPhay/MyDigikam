@@ -102,7 +102,7 @@ public:
      * \param id NULL to get the first id address
      * \return address of id or NULL if not found/end
      */
-    static VideoRendererId* next(VideoRendererId* id = 0);
+    static VideoRendererId* next(VideoRendererId* id = nullptr);
     static const char* name(VideoRendererId id);
     static VideoRendererId id(const char* name);
 
@@ -216,19 +216,19 @@ public:
 
     // to avoid conflicting width QWidget::window()
 
-    virtual QWindow* qwindow()              { return 0;}
+    virtual QWindow* qwindow()              { return nullptr;}
 
     /*!
      * \brief widget
      * \return default is 0. A QWidget subclass can return \a this
      */
-    virtual QWidget* widget()               { return 0; }
+    virtual QWidget* widget()               { return nullptr; }
 
     /*!
      * \brief graphicsItem
      * \return default is 0. A QGraphicsItem subclass can return \a this
      */
-    virtual QGraphicsItem* graphicsItem()   { return 0; }
+    virtual QGraphicsItem* graphicsItem()   { return nullptr; }
 
     /*!
      * \brief brightness, contrast, hue, saturation
@@ -254,7 +254,7 @@ public:
      */
     virtual OpenGLVideo* opengl() const
     {
-        return NULL;
+        return nullptr;
     }
 
 protected:

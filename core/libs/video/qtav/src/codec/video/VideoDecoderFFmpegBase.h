@@ -60,7 +60,7 @@ public:
 
     VideoDecoderFFmpegBasePrivate()
         : VideoDecoderPrivate()
-        , frame(0)
+        , frame(nullptr)
         , width(0)
         , height(0)
     {
@@ -79,7 +79,7 @@ public:
         if (frame)
         {
             av_frame_free(&frame);
-            frame = 0;
+            frame = nullptr;
         }
     }
 

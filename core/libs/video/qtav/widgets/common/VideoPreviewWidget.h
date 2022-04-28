@@ -45,7 +45,7 @@ class QTAV_WIDGETS_EXPORT VideoPreviewWidget : public QWidget
 
 public:
 
-    explicit VideoPreviewWidget(QWidget* parent = 0);
+    explicit VideoPreviewWidget(QWidget* parent = nullptr);
     void setTimestamp(qint64 msec);
     qint64 timestamp() const;
     void preview();

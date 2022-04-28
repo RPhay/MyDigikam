@@ -335,7 +335,7 @@ bool hasExtensionEGL(const char *exts[])
     if (supported.isEmpty())
     {
         EGLDisplay display = eglGetDisplay(EGL_DEFAULT_DISPLAY);
-        eglInitialize(display, NULL, NULL);
+        eglInitialize(display, nullptr, nullptr);
         supported          = QByteArray(eglQueryString(display, EGL_EXTENSIONS)).split(' ');
     }
 
@@ -422,7 +422,7 @@ bool isPBOSupported()
         "GL_ARB_pixel_buffer_object",
         "GL_EXT_pixel_buffer_object",
         "GL_NV_pixel_buffer_object", // OpenGL ES
-        NULL
+        nullptr
     };
 
     support = hasExtension(exts);
@@ -507,7 +507,7 @@ static const gl_param_t gl_param_es2rg[] =
     {0,0,0},
 };
 
-bool test_gl_param(const gl_param_t& gp, bool* has_16 = 0)
+bool test_gl_param(const gl_param_t& gp, bool* has_16 = nullptr)
 {
     if (!QOpenGLContext::currentContext())
     {
@@ -523,7 +523,7 @@ bool test_gl_param(const gl_param_t& gp, bool* has_16 = 0)
     {
     }
 
-    DYGL(glTexImage2D(GL_TEXTURE_2D, 0, gp.internal_format, 64, 64, 0, gp.format, gp.type, NULL));
+    DYGL(glTexImage2D(GL_TEXTURE_2D, 0, gp.internal_format, 64, 64, 0, gp.format, gp.type, nullptr));
 
     if (DYGL(glGetError()) != GL_NO_ERROR)
     {
@@ -635,7 +635,7 @@ bool hasRG()
     static const char* ext[] =
     {
         "GL_EXT_texture_rg",
-         0
+         nullptr
     }; // RED, RG, R8, RG8
 
     if (hasExtension(ext))
@@ -665,7 +665,7 @@ static const gl_param_t* get_gl_param()
         return gl_param_compat;
     }
 
-    static gl_param_t* gp = 0;
+    static gl_param_t* gp = nullptr;
 
     if (gp)
         return gp;
@@ -808,7 +808,7 @@ static QMatrix4x4 channelMap(const VideoFormat& fmt)
             break;
     }
 
-    const quint8 *channels = NULL; // { 0, 1, 2, 3};
+    const quint8 *channels = nullptr; // { 0, 1, 2, 3};
 
     for (int i = 0 ; gl_channel_maps[i].pixfmt != VideoFormat::Format_Invalid ; ++i)
     {

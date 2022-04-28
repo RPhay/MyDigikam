@@ -69,8 +69,8 @@ dll_helper::dll_helper(const QString &soname, int version)
         qCDebug(DIGIKAM_QTAV_LOG).noquote() << QString::asprintf("can not load %s: %s", m_lib.fileName().toUtf8().constData(), m_lib.errorString().toUtf8().constData());
 }
 
-va_0_38::vaAcquireBufferHandle_t va_0_38::f_vaAcquireBufferHandle = 0;
-va_0_38::vaReleaseBufferHandle_t va_0_38::f_vaReleaseBufferHandle = 0;
+va_0_38::vaAcquireBufferHandle_t va_0_38::f_vaAcquireBufferHandle = nullptr;
+va_0_38::vaReleaseBufferHandle_t va_0_38::f_vaReleaseBufferHandle = nullptr;
 
 #define CONCAT(a, b)    CONCAT_(a, b)
 #define CONCAT_(a, b)   a##b
@@ -322,7 +322,7 @@ public:
             return false;
         }
 
-        m_handle      = (uintptr_t)XOpenDisplay(NULL);
+        m_handle      = (uintptr_t)XOpenDisplay(nullptr);
         m_selfCreated = true;
 
         return !!m_handle;
@@ -331,10 +331,10 @@ public:
     VADisplay getVADisplay() override
     {
         if (!m_handle)
-            return 0;
+            return nullptr;
 
         if (!VAAPI_X11::isLoaded())
-            return 0;
+            return nullptr;
 
         return vaGetDisplay((Display*)m_handle);
     }
@@ -378,7 +378,7 @@ public:
             return false;
         }
 
-        m_handle = (uintptr_t)XOpenDisplay(NULL);
+        m_handle = (uintptr_t)XOpenDisplay(nullptr);
         m_selfCreated = true;
 
         return !!m_handle;
@@ -387,10 +387,10 @@ public:
     VADisplay getVADisplay() override
     {
         if (!m_handle)
-            return 0;
+            return nullptr;
 
         if (!VAAPI_GLX::isLoaded())
-            return 0;
+            return nullptr;
 
         return vaGetDisplayGLX((Display*)m_handle);
     }
@@ -434,7 +434,7 @@ public:
         {
             "/dev/dri/renderD128", // DRM Render-Nodes
             "/dev/dri/card0",
-            NULL
+            nullptr
         };
 
         for (int i = 0; drm_dev[i]; ++i)
@@ -457,10 +457,10 @@ public:
     VADisplay getVADisplay() override
     {
         if (m_handle == -1)
-            return 0;
+            return nullptr;
 
         if (!VAAPI_DRM::isLoaded())
-            return 0;
+            return nullptr;
 
         return vaGetDisplayDRM(m_handle);
     }
@@ -587,7 +587,7 @@ display_t::~display_t()
 
     qCDebug(DIGIKAM_QTAV_LOG).noquote() << QString::asprintf("vaapi: destroy display %p", m_display);
     VAWARN(vaTerminate(m_display));     // FIXME: what about thread?
-    m_display = 0;
+    m_display = nullptr;
 }
 
 NativeDisplay::Type display_t::nativeDisplayType() const

@@ -95,7 +95,7 @@ uchar* Frame::bits(int plane)
     {
         qCWarning(DIGIKAM_QTAV_LOG_WARN).noquote() << QString::asprintf("Invalid plane! Valid range is [0, %d)", planeCount());
 
-        return 0;
+        return nullptr;
     }
 
     return d_func()->planes[plane];
@@ -107,7 +107,7 @@ const uchar* Frame::constBits(int plane) const
     {
         qCWarning(DIGIKAM_QTAV_LOG_WARN).noquote() << QString::asprintf("Invalid plane! Valid range is [0, %d)", planeCount());
 
-        return 0;
+        return nullptr;
     }
 
     return d_func()->planes[plane];

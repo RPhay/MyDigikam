@@ -84,7 +84,7 @@ public:
             //AVOutput must be allocated in heap. Just like QObject's children.
             if (delete_old) {
                 delete old;
-                old = 0;
+                old = nullptr;
             }
             return;
         }
@@ -103,7 +103,7 @@ public:
         //AVOutput must be allocated in heap. Just like QObject's children.
         if (delete_old) {
             delete old;
-            old = 0;
+            old = nullptr;
         }
     }
 

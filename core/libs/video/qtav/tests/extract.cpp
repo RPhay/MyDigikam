@@ -42,7 +42,7 @@ class VideoFrameObserver : public QObject
 
 public:
 
-    VideoFrameObserver(QObject *parent = 0)
+    VideoFrameObserver(QObject *parent = nullptr)
       : QObject(parent)
       , pos(0)
       , nb(1)

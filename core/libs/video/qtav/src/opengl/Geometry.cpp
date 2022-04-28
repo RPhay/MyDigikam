@@ -176,7 +176,7 @@ void Geometry::dumpVertexData()
     }
 
     printf("\n");
-    fflush(0);
+    fflush(nullptr);
 }
 
 void Geometry::dumpIndexData()
@@ -212,7 +212,7 @@ void Geometry::dumpIndexData()
     }
 
     printf("\n");
-    fflush(0);
+    fflush(nullptr);
 }
 
 void Geometry::allocate(int nbVertex, int nbIndex)

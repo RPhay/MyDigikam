@@ -101,7 +101,7 @@ const char *profileName(VAProfile profile);
  * if s is not null, also test vaGetImage for the fourcc
  */
 
-VAImageFormat va_new_image(VADisplay display, const unsigned int* fourccs, VAImage* img = 0, int w = 0, int h = 0, VASurfaceID s = VA_INVALID_SURFACE);
+VAImageFormat va_new_image(VADisplay display, const unsigned int* fourccs, VAImage* img = nullptr, int w = 0, int h = 0, VASurfaceID s = VA_INVALID_SURFACE);
 
 class dll_helper
 {
@@ -495,7 +495,7 @@ class surface_glx_t : public VAAPI_GLX
 public:
 
     surface_glx_t(const display_ptr& dpy)
-        : m_dpy(dpy), m_glx(0)
+        : m_dpy(dpy), m_glx(nullptr)
     {
     }
 
@@ -518,7 +518,7 @@ public:
             return true;
 
         VA_ENSURE_TRUE(vaDestroySurfaceGLX(m_dpy->get(), m_glx), false);
-        m_glx = 0;
+        m_glx = nullptr;
 
         return true;
     }

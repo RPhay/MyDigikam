@@ -173,7 +173,7 @@ typename Factory<Id, T, Class>::Type *Factory<Id, T, Class>::create(const ID& id
     if (it == creators.end())
     {
         DBG("Unknown id ");
-        return 0;
+        return nullptr;
 
         //throw std::runtime_error(err_msg.arg(id).toStdString());
     }
@@ -245,7 +245,7 @@ const char* Factory<Id, T, Class>::name(const ID &id) const
     typename NameMap::const_iterator it = name_map.find(id);
 
     if (it == name_map.end())
-        return NULL;
+        return nullptr;
 
     return it->second;
 }
@@ -280,7 +280,7 @@ size_t Factory<Id, T, Class>::count() const
 template<typename Id, typename T, class Class>
 typename Factory<Id, T, Class>::Type* Factory<Id, T, Class>::getRandom()
 {
-    srand(time(0));
+    srand(time(nullptr));
     int index = rand() % ids.size();
 
     //DBG("random %d/%d", index, ids.size());

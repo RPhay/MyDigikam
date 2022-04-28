@@ -45,7 +45,7 @@ class AVThread : public QThread
     Q_OBJECT
     DPTR_DECLARE_PRIVATE(AVThread)
 public:
-    explicit AVThread(QObject *parent = 0);
+    explicit AVThread(QObject *parent = nullptr);
     virtual ~AVThread();
 
     //used for changing some components when running
@@ -103,7 +103,7 @@ private Q_SLOTS:
     void onStarted();
     void onFinished();
 protected:
-    AVThread(AVThreadPrivate& d, QObject *parent = 0);
+    AVThread(AVThreadPrivate& d, QObject *parent = nullptr);
     /*
      * If the pause state is true setted by pause(true), then block the thread and wait for pause state changed, i.e. pause(false)
      * and return true. Otherwise, return false immediatly.

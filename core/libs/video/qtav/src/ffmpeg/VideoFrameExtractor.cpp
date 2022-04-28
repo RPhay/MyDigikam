@@ -50,7 +50,7 @@ class ExtractThread : public QThread
 {
 public:
 
-    ExtractThread(QObject *parent = 0)
+    ExtractThread(QObject *parent = nullptr)
         : QThread(parent)
         , timeout_ms(50UL)
         , stop(false)
@@ -179,7 +179,7 @@ public:
         , seek_count(0)
         , position(-2*kDefaultPrecision)
         , precision(kDefaultPrecision)
-        , decoder(0)
+        , decoder(nullptr)
     {
         QVariantHash opt;
         opt[QString::fromLatin1("skip_frame")] = 8;                 // 8 for "avcodec", "NoRef" for "FFmpeg". see AVDiscard
@@ -241,7 +241,7 @@ public:
             return true;
 
         seek_count = 0;
-        decoder.reset(0);
+        decoder.reset(nullptr);
 
         if (!loaded || demuxer.atEnd())
         {
@@ -291,7 +291,7 @@ public:
 
             if (!cctx || !decoder->open())
             {
-                decoder.reset(0);
+                decoder.reset(nullptr);
 
                 continue;
             }
@@ -559,7 +559,7 @@ public:
 
         // close codec context first.
 
-        decoder.reset(0);
+        decoder.reset(nullptr);
         demuxer.unload();
     }
 

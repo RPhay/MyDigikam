@@ -44,11 +44,11 @@ public:
 
     VideoDecoderFFmpegHWPrivate()
         : VideoDecoderFFmpegBasePrivate()
-        , get_format(NULL)
-        , get_buffer(NULL)
-        , release_buffer(NULL)
-        , reget_buffer(NULL)
-        , get_buffer2(NULL)
+        , get_format(nullptr)
+        , get_buffer(nullptr)
+        , release_buffer(nullptr)
+        , reget_buffer(nullptr)
+        , get_buffer2(nullptr)
         , threads(0)
         , copy_mode(VideoDecoderFFmpegHW::OptimizedCopy)
         , hw_w(0)
@@ -72,7 +72,7 @@ public:
     void restore()
     {
         codec_ctx->pix_fmt = pixfmt;
-        codec_ctx->opaque = 0;
+        codec_ctx->opaque = nullptr;
         codec_ctx->get_format = get_format;
 
 #if QTAV_HAVE(AVBUFREF)

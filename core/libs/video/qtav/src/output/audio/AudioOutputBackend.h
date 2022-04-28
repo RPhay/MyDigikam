@@ -151,7 +151,7 @@ public:
      * \param id NULL to get the first id address
      * \return address of id or NULL if not found/end
      */
-    static AudioOutputBackendId* next(AudioOutputBackendId* id = 0);
+    static AudioOutputBackendId* next(AudioOutputBackendId* id = nullptr);
     static const char* name(AudioOutputBackendId id);
     static AudioOutputBackendId id(const char* name);
 

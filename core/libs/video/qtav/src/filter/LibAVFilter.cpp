@@ -84,13 +84,13 @@ class LibAVFilter::Private
 {
 public:
     Private()
-        : avframe(0)
+        : avframe(nullptr)
         , status(LibAVFilter::NotConfigured)
     {
 #if QTAV_HAVE(AVFILTER)
-        filter_graph = 0;
-        in_filter_ctx = 0;
-        out_filter_ctx = 0;
+        filter_graph = nullptr;
+        in_filter_ctx = nullptr;
+        out_filter_ctx = nullptr;
         avfilter_register_all();
 #endif //QTAV_HAVE(AVFILTER)
     }
@@ -100,7 +100,7 @@ public:
 #endif //QTAV_HAVE(AVFILTER)
         if (avframe) {
             av_frame_free(&avframe);
-            avframe = 0;
+            avframe = nullptr;
         }
     }
 
@@ -117,7 +117,7 @@ public:
     bool setup(const QString& args, bool video) {
         if (avframe) {
             av_frame_free(&avframe);
-            avframe = 0;
+            avframe = nullptr;
         }
         status = LibAVFilter::ConfigureFailed;
 #if QTAV_HAVE(AVFILTER)
@@ -134,7 +134,7 @@ public:
         Q_ASSERT(buffersrc);
         AV_ENSURE_OK(avfilter_graph_create_filter(&in_filter_ctx,
                                                buffersrc,
-                                               "in", buffersrc_args.toUtf8().constData(), NULL,
+                                               "in", buffersrc_args.toUtf8().constData(), nullptr,
                                                filter_graph)
                      , false);
         /* buffer video sink: to terminate the filter chain. */
@@ -144,7 +144,7 @@ public:
         AVFilter *buffersink = avfilter_get_by_name(video ? "buffersink" : "abuffersink");
         Q_ASSERT(buffersink);
         AV_ENSURE_OK(avfilter_graph_create_filter(&out_filter_ctx, buffersink, "out",
-                                           NULL, NULL, filter_graph)
+                                           nullptr, nullptr, filter_graph)
                 , false);
         /* Endpoints for the filter graph. */
         AVFilterInOut *outputs = avfilter_inout_alloc();
@@ -152,12 +152,12 @@ public:
         outputs->name       = av_strdup("in");
         outputs->filter_ctx = in_filter_ctx;
         outputs->pad_idx    = 0;
-        outputs->next       = NULL;
+        outputs->next       = nullptr;
 
         inputs->name       = av_strdup("out");
         inputs->filter_ctx = out_filter_ctx;
         inputs->pad_idx    = 0;
-        inputs->next       = NULL;
+        inputs->next       = nullptr;
 
         struct delete_helper {
             AVFilterInOut **x;
@@ -170,8 +170,8 @@ public:
             }
         } scoped_in(&inputs), scoped_out(&outputs);
         //avfilter_graph_parse, avfilter_graph_parse2?
-        AV_ENSURE_OK(avfilter_graph_parse_ptr(filter_graph, options.toUtf8().constData(), &inputs, &outputs, NULL), false);
-        AV_ENSURE_OK(avfilter_graph_config(filter_graph, NULL), false);
+        AV_ENSURE_OK(avfilter_graph_parse_ptr(filter_graph, options.toUtf8().constData(), &inputs, &outputs, nullptr), false);
+        AV_ENSURE_OK(avfilter_graph_config(filter_graph, nullptr), false);
         avframe = av_frame_alloc();
         status = LibAVFilter::ConfigureOk;
 #if DBG_GRAPH
@@ -266,7 +266,7 @@ bool LibAVFilter::pushAudioFrame(Frame *frame, bool changed)
 void* LibAVFilter::pullFrameHolder()
 {
 #if QTAV_HAVE(AVFILTER)
-    AVFrameHolder *holder = NULL;
+    AVFrameHolder *holder = nullptr;
     holder = new AVFrameHolder();
 #if QTAV_HAVE_av_buffersink_get_frame
     int ret = av_buffersink_get_frame(priv->out_filter_ctx, holder->frame());
@@ -276,14 +276,14 @@ void* LibAVFilter::pullFrameHolder()
     if (ret < 0) {
         qCWarning(DIGIKAM_QTAV_LOG_WARN).noquote() << QString::asprintf("av_buffersink_get_frame error: %s", av_err2str(ret));
         delete holder;
-        return 0;
+        return nullptr;
     }
 #if !QTAV_HAVE_av_buffersink_get_frame
     holder->copyBufferToFrame();
 #endif
     return holder;
 #endif //QTAV_HAVE(AVFILTER)
-    return 0;
+    return nullptr;
 }
 
 QStringList LibAVFilter::registeredFilters(int type)
@@ -291,8 +291,8 @@ QStringList LibAVFilter::registeredFilters(int type)
     QStringList filters;
 #if QTAV_HAVE(AVFILTER)
     avfilter_register_all();
-    const AVFilter* f = NULL;
-    AVFilterPad* fp = NULL; // no const in avfilter_pad_get_name() for ffmpeg<=1.2 libav<=9
+    const AVFilter* f = nullptr;
+    AVFilterPad* fp = nullptr; // no const in avfilter_pad_get_name() for ffmpeg<=1.2 libav<=9
 #if AV_MODULE_CHECK(LIBAVFILTER, 3, 8, 0, 53, 100)
     while ((f = avfilter_next(f))) {
 #else

@@ -46,7 +46,7 @@ class QTAV_PRIVATE_EXPORT MediaIOPrivate : public DPtrPrivate<MediaIO>
 public:
 
     MediaIOPrivate()
-        : ctx(NULL)
+        : ctx(nullptr)
         , buffer_size(-1)
         , mode(MediaIO::Read)
     {

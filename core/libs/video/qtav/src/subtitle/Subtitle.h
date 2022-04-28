@@ -94,7 +94,7 @@ class QTAV_EXPORT Subtitle : public QObject
 
 public:
 
-    explicit Subtitle(QObject *parent = 0);
+    explicit Subtitle(QObject *parent = nullptr);
     virtual ~Subtitle();
 
     /*!
@@ -196,8 +196,8 @@ public:
       * The result image format is QImage::Format_ARGB32
       * \return empty image if no image, or subtitle processor does not support renderering
       */
-    QImage getImage(int width, int height, QRect* boundingRect = 0);
-    SubImageSet getSubImages(int width, int height, QRect* boundingRect = 0);
+    QImage getImage(int width, int height, QRect* boundingRect = nullptr);
+    SubImageSet getSubImages(int width, int height, QRect* boundingRect = nullptr);
 
     // used for embedded subtitles.
 

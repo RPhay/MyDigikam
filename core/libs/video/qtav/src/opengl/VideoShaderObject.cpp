@@ -242,10 +242,10 @@ void DynamicShaderObject::setPostProcess(const QString &text)
 const char* DynamicShaderObject::userShaderHeader(QOpenGLShader::ShaderType st) const
 {
     if (st == QOpenGLShader::Vertex)
-        return 0;
+        return nullptr;
 
     if (d_func().header.isEmpty())
-        return 0;
+        return nullptr;
 
     return d_func().header.toUtf8().constData();
 }
@@ -253,7 +253,7 @@ const char* DynamicShaderObject::userShaderHeader(QOpenGLShader::ShaderType st) 
 const char* DynamicShaderObject::userSample() const
 {
     if (d_func().sampleFunc.isEmpty())
-        return 0;
+        return nullptr;
 
     return d_func().sampleFunc.toUtf8().constData();
 }
@@ -261,7 +261,7 @@ const char* DynamicShaderObject::userSample() const
 const char* DynamicShaderObject::userPostProcess() const
 {
     if (d_func().pp.isEmpty())
-        return 0;
+        return nullptr;
 
     return d_func().pp.toUtf8().constData();
 }

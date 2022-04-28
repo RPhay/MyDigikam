@@ -58,11 +58,11 @@ QStringList AudioDecoder::supportedCodecs()
     if (!codecs.isEmpty())
         return codecs;
 
-    const AVCodec* c = NULL;
+    const AVCodec* c = nullptr;
 
 #if AVCODEC_STATIC_REGISTER
 
-    void* it = NULL;
+    void* it = nullptr;
 
     while ((c = av_codec_iterate(&it)))
     {
@@ -86,7 +86,7 @@ QStringList AudioDecoder::supportedCodecs()
 
 AudioDecoderPrivate::AudioDecoderPrivate()
     : AVDecoderPrivate()
-    , resampler(0)
+    , resampler(nullptr)
 {
     resampler = AudioResampler::create(AudioResamplerId_FF);
 
@@ -102,7 +102,7 @@ AudioDecoderPrivate::~AudioDecoderPrivate()
     if (resampler)
     {
         delete resampler;
-        resampler = 0;
+        resampler = nullptr;
     }
 }
 

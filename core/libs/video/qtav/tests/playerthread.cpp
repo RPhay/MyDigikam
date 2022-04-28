@@ -39,7 +39,7 @@ class Thread : public QThread
 public:
 
     Thread(AVPlayer *player)
-      : QThread(0)
+      : QThread(nullptr)
       , mpPlayer(player)
     {
     }

@@ -75,7 +75,7 @@ class QTAV_WIDGETS_EXPORT GraphicsItemRenderer : public GraphicsWidget,
 
 public:
 
-    GraphicsItemRenderer(QGraphicsItem* parent = 0);
+    GraphicsItemRenderer(QGraphicsItem* parent = nullptr);
     VideoRendererId id()                              const override;
     bool isSupported(VideoFormat::PixelFormat pixfmt) const override;
 

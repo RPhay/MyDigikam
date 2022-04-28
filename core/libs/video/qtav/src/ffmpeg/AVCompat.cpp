@@ -181,7 +181,7 @@ AVAudioResampleContext *swr_alloc_set_opts(AVAudioResampleContext *s
         s = avresample_alloc_context();
 
     if (!s)
-        return 0;
+        return nullptr;
 
     Q_UNUSED(log_offset);
     Q_UNUSED(log_ctx);
@@ -520,7 +520,7 @@ const char *get_codec_long_name(enum AVCodecID id)
     if (cd)
         return cd->long_name;
 
-    av_log(NULL, AV_LOG_WARNING, "Codec 0x%x is not in the full list.\n", id);
+    av_log(nullptr, AV_LOG_WARNING, "Codec 0x%x is not in the full list.\n", id);
     AVCodec *codec = avcodec_find_decoder(id);
 
     if (codec)

@@ -52,7 +52,7 @@ class QTAV_EXPORT GLSLFilter : public VideoFilter
 
 public:
 
-    GLSLFilter(QObject* parent = 0);
+    GLSLFilter(QObject* parent = nullptr);
 
     bool isSupported(VideoFilterContext::Type ct) const  override
     {
@@ -81,7 +81,7 @@ Q_SIGNALS:
 
 protected:
 
-    GLSLFilter(GLSLFilterPrivate& d, QObject *parent = 0);
+    GLSLFilter(GLSLFilterPrivate& d, QObject *parent = nullptr);
 
     /*!
      * \brief process
@@ -90,7 +90,7 @@ protected:
      * Output frame holds an RGB texture, which can be processed in the next GPU filter, or rendered by OpenGL renderers.
      * When process() is done, FBO before before process() is bounded.
      */
-    void process(Statistics* statistics, VideoFrame* frame = 0) override;
+    void process(Statistics* statistics, VideoFrame* frame = nullptr) override;
 };
 
 } // namespace QtAV

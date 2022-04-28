@@ -114,7 +114,7 @@ class SharedPtr
 {
 public:
 
-    explicit SharedPtr(T* ptr = 0)
+    explicit SharedPtr(T* ptr = nullptr)
         : m_impl(new impl::SharedPtrImpl<T>(ptr))
     {
     }

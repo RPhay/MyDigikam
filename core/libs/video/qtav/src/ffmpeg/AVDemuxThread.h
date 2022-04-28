@@ -48,8 +48,8 @@ class AVDemuxThread : public QThread
 
 public:
 
-    explicit AVDemuxThread(QObject *parent = 0);
-    explicit AVDemuxThread(AVDemuxer *dmx, QObject *parent = 0);
+    explicit AVDemuxThread(QObject *parent = nullptr);
+    explicit AVDemuxThread(AVDemuxer *dmx, QObject *parent = nullptr);
     void setDemuxer(AVDemuxer *dmx);
     void setAudioDemuxer(AVDemuxer *demuxer);   ///< not thread safe
     void setAudioThread(AVThread *thread);

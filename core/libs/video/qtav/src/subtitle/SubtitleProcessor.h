@@ -96,8 +96,8 @@ public:
 
     // default null image
 
-    virtual QImage getImage(qreal pts, QRect* boundingRect = 0);
-    virtual SubImageSet getSubImages(qreal pts, QRect* boundingRect = 0);
+    virtual QImage getImage(qreal pts, QRect* boundingRect = nullptr);
+    virtual SubImageSet getSubImages(qreal pts, QRect* boundingRect = nullptr);
     void setFrameSize(int width, int height);
     QSize frameSize() const;
     int frameWidth() const;
@@ -121,7 +121,7 @@ public:
      * \param id NULL to get the first id address
      * \return address of id or NULL if not found/end
      */
-    static SubtitleProcessorId* next(SubtitleProcessorId* id = 0);
+    static SubtitleProcessorId* next(SubtitleProcessorId* id = nullptr);
     static const char* name(SubtitleProcessorId id);
     static SubtitleProcessorId id(const char* name);
 

@@ -189,7 +189,7 @@ public:
     VideoDecoderCUDAPrivate()
       : VideoDecoderPrivate()
       , can_load(true)
-      , host_data(0)
+      , host_data(nullptr)
       , host_data_size(0)
       , create_flags(cudaVideoCreate_Default)
       , deinterlace(cudaVideoDeinterlaceMode_Adaptive)
@@ -212,13 +212,13 @@ public:
 
 #endif
         available    = false;
-        bsf          = 0;
-        cuctx        = 0;
+        bsf          = nullptr;
+        cuctx        = nullptr;
         cudev        = 0;
-        dec          = 0;
-        vid_ctx_lock = 0;
-        parser       = 0;
-        stream       = 0;
+        dec          = nullptr;
+        vid_ctx_lock = nullptr;
+        parser       = nullptr;
+        stream       = nullptr;
         force_sequence_update = false;
         frame_queue.setCapacity(20);
         frame_queue.setThreshold(10);
@@ -296,7 +296,7 @@ public:
 
     bool createCUVIDParser();
     bool flushParser();
-    bool processDecodedData(CUVIDPARSERDISPINFO *cuviddisp, VideoFrame* outFrame = 0);
+    bool processDecodedData(CUVIDPARSERDISPINFO *cuviddisp, VideoFrame* outFrame = nullptr);
 
     bool doParseVideoData(CUVIDSOURCEDATAPACKET* pPkt)
     {
@@ -390,7 +390,7 @@ public:
 
 #if COPY_ON_DECODE
 
-        return p->processDecodedData(cuviddisp, 0);
+        return p->processDecodedData(cuviddisp, nullptr);
 
 #else
 
@@ -524,7 +524,7 @@ bool VideoDecoderCUDA::decode(const Packet &packet)
         return !d.frame_queue.isEmpty();
     }
 
-    uint8_t *outBuf = 0;
+    uint8_t *outBuf = nullptr;
     int outBufSize  = 0;
     int filtered    = 0;
 
@@ -533,7 +533,7 @@ bool VideoDecoderCUDA::decode(const Packet &packet)
         // h264_mp4toannexb_filter does not use last parameter 'keyFrame', so just set 0
         // return: 0: not changed, no outBuf allocated. >0: ok. <0: fail
 
-        filtered = av_bitstream_filter_filter(d.bsf, d.codec_ctx, NULL, &outBuf, &outBufSize
+        filtered = av_bitstream_filter_filter(d.bsf, d.codec_ctx, nullptr, &outBuf, &outBufSize
                                                   , (const uint8_t*)packet.data.constData(), packet.data.size()
                                                   , 0); // d.is_keyframe);
 
@@ -749,38 +749,38 @@ bool VideoDecoderCUDAPrivate::releaseCuda()
     if (dec)
     {
         CUDA_WARN(cuvidDestroyDecoder(dec));
-        dec = 0;
+        dec = nullptr;
     }
 
     if (parser)
     {
         CUDA_WARN(cuvidDestroyVideoParser(parser));
-        parser = 0;
+        parser = nullptr;
     }
 
     if (stream)
     {
         CUDA_WARN(cuStreamDestroy(stream));
-        stream = 0;
+        stream = nullptr;
     }
 
     if (host_data)
     {
         CUDA_WARN(cuMemFreeHost(host_data)); // CUDA_ERROR_INVALID_CONTEXT
-        host_data = 0;
+        host_data = nullptr;
         host_data_size = 0;
     }
 
     if (vid_ctx_lock)
     {
         CUDA_WARN(cuvidCtxLockDestroy(vid_ctx_lock));
-        vid_ctx_lock = 0;
+        vid_ctx_lock = nullptr;
     }
 
     if (cuctx)
     {
         CUDA_ENSURE(cuCtxDestroy(cuctx), false);
-        cuctx = 0;
+        cuctx = nullptr;
     }
 
     return true;
@@ -873,7 +873,7 @@ bool VideoDecoderCUDAPrivate::createCUVIDParser()
     if (parser)
     {
         CUDA_WARN(cuvidDestroyVideoParser(parser));
-        parser = 0;
+        parser = nullptr;
     }
 
     // lavfilter check level C
@@ -991,7 +991,7 @@ bool VideoDecoderCUDAPrivate::processDecodedData(CUVIDPARSERDISPINFO *cuviddisp,
                 if (size > host_data_size && host_data)
                 {
                     cuMemFreeHost(host_data);
-                    host_data      = 0;
+                    host_data      = nullptr;
                     host_data_size = 0;
                 }
 
@@ -1103,7 +1103,7 @@ void VideoDecoderCUDAPrivate::setBSF(AVCodecID codec)
         if (bsf)
         {
             av_bitstream_filter_close(bsf);
-            bsf = 0;
+            bsf = nullptr;
         }
     }
 }

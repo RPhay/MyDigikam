@@ -114,7 +114,7 @@ public:
 
     static const QStringList& supportedProtocols();
 
-    explicit AVPlayer(QObject *parent = 0);
+    explicit AVPlayer(QObject *parent = nullptr);
     ~AVPlayer();
 
     /*!

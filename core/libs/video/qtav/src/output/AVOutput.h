@@ -92,7 +92,7 @@ protected:
     void addOutputSet(OutputSet *set);
     void removeOutputSet(OutputSet *set);
     void attach(OutputSet *set);        // add this to set
-    void detach(OutputSet *set = 0);    // detatch from (all, if 0) output set(s)
+    void detach(OutputSet *set = nullptr);    // detatch from (all, if 0) output set(s)
 
     // for thread safe
 

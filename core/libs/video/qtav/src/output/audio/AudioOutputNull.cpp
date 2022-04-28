@@ -39,7 +39,7 @@ class AudioOutputNull : public AudioOutputBackend
 {
 public:
 
-    AudioOutputNull(QObject *parent = 0);
+    AudioOutputNull(QObject *parent = nullptr);
 
     QString name() const                override
     {

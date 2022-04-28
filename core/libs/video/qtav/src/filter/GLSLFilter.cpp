@@ -40,7 +40,7 @@ class GLSLFilterPrivate : public VideoFilterPrivate
 {
 public:
     GLSLFilterPrivate() : VideoFilterPrivate()
-      , fbo(0)
+      , fbo(nullptr)
     {}
 
     QOpenGLFramebufferObject *fbo;
@@ -102,12 +102,12 @@ void GLSLFilter::process(Statistics *statistics, VideoFrame *frame)
         if (d.size.isEmpty()) {
             if (d.fbo->size() != frame->size()) {
                 delete d.fbo;
-                d.fbo = 0;
+                d.fbo = nullptr;
             }
         } else {
             if (d.fbo->size() != d.size) {
                 delete d.fbo;
-                d.fbo = 0;
+                d.fbo = nullptr;
             }
         }
     }

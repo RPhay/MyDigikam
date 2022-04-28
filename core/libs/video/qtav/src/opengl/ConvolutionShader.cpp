@@ -106,7 +106,7 @@ int ConvolutionShader::kernelSize() const
 const char* ConvolutionShader::userShaderHeader(QOpenGLShader::ShaderType t) const
 {
     if (t == QOpenGLShader::Vertex)
-        return 0;
+        return nullptr;
 
     return kernelUniformHeader().constData();
 }

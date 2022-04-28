@@ -132,7 +132,7 @@ public:
      * \param id NULL to get the first id address
      * \return address of id or NULL if not found/end
      */
-    static VideoEncoderId* next(VideoEncoderId* id = 0);
+    static VideoEncoderId* next(VideoEncoderId* id = nullptr);
     static const char* name(VideoEncoderId id);
     static VideoEncoderId id(const char* name);
 

@@ -147,13 +147,13 @@ public:
     }
 
     AVDecoderPrivate()
-      : codec_ctx(0)
+      : codec_ctx(nullptr)
       , available(true)
       , is_open(false)
       , undecoded_size(0)
-      , dict(0)
+      , dict(nullptr)
     {
-        codec_ctx = avcodec_alloc_context3(NULL);
+        codec_ctx = avcodec_alloc_context3(nullptr);
     }
 
     virtual ~AVDecoderPrivate()

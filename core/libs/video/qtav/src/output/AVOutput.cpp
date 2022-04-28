@@ -57,7 +57,7 @@ AVOutput::~AVOutput()
     if (d.filter_context)
     {
         delete d.filter_context;
-        d.filter_context = 0;
+        d.filter_context = nullptr;
     }
 
     foreach (Filter *f, d.pending_uninstall_filters)

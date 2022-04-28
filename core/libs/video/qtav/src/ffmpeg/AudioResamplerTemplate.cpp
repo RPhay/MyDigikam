@@ -72,7 +72,7 @@ class AudioResamplerFFPrivate : public AudioResamplerPrivate
 public:
 
     AudioResamplerFFPrivate()
-        : context(0)
+        : context(nullptr)
     {
     }
 
@@ -81,7 +81,7 @@ public:
         if (context)
         {
             swr_free(&context);
-            context = 0;
+            context = nullptr;
         }
     }
 
@@ -257,7 +257,7 @@ bool AudioResamplerFF::prepare()
                                    , d.in_format.channelLayoutFFmpeg()
                                    , (enum AVSampleFormat)inAudioFormat().sampleFormatFFmpeg()
                                    , inAudioFormat().sampleRate()
-                                   , 0 /*log_offset*/, 0 /*log_ctx*/);
+                                   , 0 /*log_offset*/, nullptr /*log_ctx*/);
 /*
     av_opt_set_int(d.context, "in_channel_layout",    d.in_channel_layout, 0);
     av_opt_set_int(d.context, "in_sample_rate",       d.in_format.sampleRate(), 0);
@@ -296,7 +296,7 @@ bool AudioResamplerFF::prepare()
      * matrix[i + stride * o] is the weight of input channel i in output channel o.
      */
 
-    double* matrix = 0;
+    double* matrix = nullptr;
 
     if (d.out_format.channelLayout() == AudioFormat::ChannelLayout_Left)
     {

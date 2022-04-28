@@ -60,7 +60,7 @@ static AVCodec* get_codec(const QString& name, const QString& hwa, AVCodecID cid
 
         return avcodec_find_decoder(cd->id);
 
-    return NULL;
+    return nullptr;
 }
 
 AVDecoder::AVDecoder(AVDecoderPrivate &d)
@@ -77,7 +77,7 @@ AVDecoder::AVDecoder(AVDecoderPrivate &d)
 
 AVDecoder::~AVDecoder()
 {
-    setCodecContext(0); // FIXME:  will call virtual
+    setCodecContext(nullptr); // FIXME:  will call virtual
 }
 
 QString AVDecoder::name() const
@@ -170,7 +170,7 @@ bool AVDecoder::open()
 
     // dict is used for a specified AVCodec options (priv_class), av_opt_set_xxx(avctx) is only for avctx
 
-    AV_ENSURE_OK(avcodec_open2(d.codec_ctx, codec, d.options.isEmpty() ? NULL : &d.dict), false);
+    AV_ENSURE_OK(avcodec_open2(d.codec_ctx, codec, d.options.isEmpty() ? nullptr : &d.dict), false);
 
     d.is_open                        = true;
     static const char* thread_name[] = { "Single", "Frame", "Slice" };
@@ -243,12 +243,12 @@ void AVDecoder::setCodecContext(void *codecCtx)
     if (!ctx)
     {
         avcodec_free_context(&d.codec_ctx);
-        d.codec_ctx = 0;
+        d.codec_ctx = nullptr;
         return;
     }
 
     if (!d.codec_ctx)
-        d.codec_ctx = avcodec_alloc_context3(NULL);
+        d.codec_ctx = avcodec_alloc_context3(nullptr);
 
     // avcodec_alloc_context3(codec) equals to avcodec_alloc_context3(NULL) + avcodec_get_context_defaults3(codec), codec specified private data is initialized
 
@@ -289,7 +289,7 @@ QString AVDecoder::codecName() const
 
 bool AVDecoder::isAvailable() const
 {
-    return d_func().codec_ctx != 0;
+    return d_func().codec_ctx != nullptr;
 }
 
 int AVDecoder::undecodedSize() const
@@ -337,7 +337,7 @@ void AVDecoderPrivate::applyOptionsForDict()
     if (dict)
     {
         av_dict_free(&dict);
-        dict = 0; //aready 0 in av_free
+        dict = nullptr; //aready 0 in av_free
     }
 
     // enable ref if possible

@@ -77,7 +77,7 @@ bool FrameReader::Private::tryLoad()
         return true;
     if (decoder) { // new source
         decoder->close();
-        decoder.reset(0);
+        decoder.reset(nullptr);
     }
     if (!loaded || demuxer.atEnd()) {
         demuxer.unload();
@@ -97,7 +97,7 @@ bool FrameReader::Private::tryLoad()
             decoder.reset(vd);
             decoder->setCodecContext(demuxer.videoCodecContext());
             if (!decoder->open())
-                decoder.reset(0);
+                decoder.reset(nullptr);
         }
     } else {
         foreach (const QString& c, vdecs) {
@@ -108,7 +108,7 @@ bool FrameReader::Private::tryLoad()
             decoder->setCodecContext(demuxer.videoCodecContext());
             decoder->setProperty("copyMode", QLatin1String("OptimizedCopy"));
             if (!decoder->open()) {
-                decoder.reset(0);
+                decoder.reset(nullptr);
                 continue;
             }
             break;

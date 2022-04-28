@@ -710,7 +710,7 @@ void VideoRenderer::handlePaintEvent()
             if (!vf->context() || vf->context()->type()  == VideoFilterContext::OpenGL)
                 continue;
 
-            if (vf->prepareContext(d.filter_context, d.statistics, 0))
+            if (vf->prepareContext(d.filter_context, d.statistics, nullptr))
             {
                 if (!vf->isSupported(d.filter_context->type()))
                     continue;

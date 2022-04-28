@@ -61,7 +61,7 @@ class AudioOutputOpenAL final : public AudioOutputBackend
 {
 public:
 
-    AudioOutputOpenAL(QObject* parent = 0);
+    AudioOutputOpenAL(QObject* parent = nullptr);
 
     QString name() const final
     {
@@ -90,20 +90,20 @@ protected:
         if (context)
             return true;
 
-        const ALCchar *default_device = alcGetString(NULL, ALC_DEFAULT_DEVICE_SPECIFIER);
+        const ALCchar *default_device = alcGetString(nullptr, ALC_DEFAULT_DEVICE_SPECIFIER);
 
         qCDebug(DIGIKAM_QTAV_LOG).noquote() << QString::asprintf("OpenAL opening default device: %s", default_device);
-        device = alcOpenDevice(NULL); // parameter: NULL or default_device
+        device = alcOpenDevice(nullptr); // parameter: NULL or default_device
 
         if (!device)
         {
-            qCWarning(DIGIKAM_QTAV_LOG_WARN).noquote() << QString::asprintf("OpenAL failed to open sound device: %s", alcGetString(0, alcGetError(0)));
+            qCWarning(DIGIKAM_QTAV_LOG_WARN).noquote() << QString::asprintf("OpenAL failed to open sound device: %s", alcGetString(nullptr, alcGetError(nullptr)));
 
             return false;
         }
 
         qCDebug(DIGIKAM_QTAV_LOG).noquote() << QString::asprintf("AudioOutputOpenAL creating context...");
-        context = alcCreateContext(device, NULL);
+        context = alcCreateContext(device, nullptr);
         alcMakeContextCurrent(context);
 
         return true;
@@ -170,7 +170,7 @@ static ALenum audioFormatToAL(const AudioFormat& fmt)
         {
             { (const char*)AL_FORMAT_MONO8      },
             { (const char*)AL_FORMAT_STEREO8    },
-            { (const char*)0                    },
+            { (const char*)nullptr                    },
             { "AL_FORMAT_QUAD8"                 },
             { "AL_FORMAT_REAR8"                 },
             { "AL_FORMAT_51CHN8"                },
@@ -194,7 +194,7 @@ static ALenum audioFormatToAL(const AudioFormat& fmt)
         {
             { (const char*)AL_FORMAT_MONO16     },
             { (const char*)AL_FORMAT_STEREO16   },
-            { (const char*)0                    },
+            { (const char*)nullptr                    },
             { "AL_FORMAT_QUAD16"                },
             { "AL_FORMAT_REAR16"                },
             { "AL_FORMAT_51CHN16"               },
@@ -220,7 +220,7 @@ static ALenum audioFormatToAL(const AudioFormat& fmt)
             {
                 { "AL_FORMAT_MONO_FLOAT32"      },
                 { "AL_FORMAT_STEREO_FLOAT32"    },
-                { 0                             },
+                { nullptr                             },
 
                 // AL_EXT_MCFORMATS
 
@@ -280,8 +280,8 @@ QMutex AudioOutputOpenAL::global_mutex;
 
 AudioOutputOpenAL::AudioOutputOpenAL(QObject *parent)
     : AudioOutputBackend(AudioOutput::SetVolume, parent)
-    , device(0)
-    , context(0)
+    , device(nullptr)
+    , context(nullptr)
     , format_al(AL_FORMAT_STEREO16)
     , state(0)
 {
@@ -308,16 +308,16 @@ AudioOutputOpenAL::AudioOutputOpenAL(QObject *parent)
     // TODO: AudioOutput::getDevices() => ao.setDevice() => ao.open
 
     QVector<QByteArray> _devices;
-    const char *p = NULL;
+    const char *p = nullptr;
 
-    if (alcIsExtensionPresent(NULL, "ALC_ENUMERATE_ALL_EXT"))
+    if (alcIsExtensionPresent(nullptr, "ALC_ENUMERATE_ALL_EXT"))
     {
         // ALC_ALL_DEVICES_SPECIFIER maybe not defined
-        p = alcGetString(NULL, alcGetEnumValue(NULL, "ALC_ALL_DEVICES_SPECIFIER"));
+        p = alcGetString(nullptr, alcGetEnumValue(nullptr, "ALC_ALL_DEVICES_SPECIFIER"));
     }
     else
     {
-        p = alcGetString(NULL, ALC_DEVICE_SPECIFIER);
+        p = alcGetString(nullptr, ALC_DEVICE_SPECIFIER);
     }
 
     while (p && *p)
@@ -395,11 +395,11 @@ bool AudioOutputOpenAL::open()
 
 fail:
 
-    alcMakeContextCurrent(NULL);
+    alcMakeContextCurrent(nullptr);
     alcDestroyContext(context);
     alcCloseDevice(device);
-    context = 0;
-    device  = 0;
+    context = nullptr;
+    device  = nullptr;
 
     return false;
 }
@@ -433,7 +433,7 @@ bool AudioOutputOpenAL::close()
     alDeleteSources(1, &source);
     alDeleteBuffers(buffer.size(), buffer.constData());
 
-    alcMakeContextCurrent(NULL);
+    alcMakeContextCurrent(nullptr);
     qCDebug(DIGIKAM_QTAV_LOG).noquote() << QString::asprintf("alcDestroyContext(%p)", context);
     alcDestroyContext(context);
     ALCenum err = alcGetError(device);
@@ -447,7 +447,7 @@ bool AudioOutputOpenAL::close()
         return false;
     }
 
-    context = 0;
+    context = nullptr;
 
     if (device)
     {
@@ -456,7 +456,7 @@ bool AudioOutputOpenAL::close()
 
         // ALC_INVALID_DEVICE now
 
-        device = 0;
+        device = nullptr;
     }
 
     return true;

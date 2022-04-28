@@ -55,7 +55,7 @@ ShaderManager::ShaderManager(QObject *parent)
 ShaderManager::~ShaderManager()
 {
     delete d;
-    d = 0;
+    d = nullptr;
 }
 
 VideoShader* ShaderManager::prepareMaterial(VideoMaterial *material, qint32 materialType)

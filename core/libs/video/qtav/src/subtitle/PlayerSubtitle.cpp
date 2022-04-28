@@ -80,7 +80,7 @@ PlayerSubtitle::PlayerSubtitle(QObject *parent)
     : QObject(parent)
     , m_auto(true)
     , m_enabled(true)
-    , m_player(0)
+    , m_player(nullptr)
     , m_sub(new Subtitle(this))
 {
 }

@@ -103,7 +103,7 @@ static unsigned get_qt_version()
     return QT_VERSION_CHECK(major, minor, patch);
 }
 
-static const depend_component* get_depend_component(const depend_component* info = 0)
+static const depend_component* get_depend_component(const depend_component* info = nullptr)
 {
     // DO NOT use QStringLiteral here because the install script use strings to search "Qt-" in the library. QStringLiteral will place it in .ro and strings can not find it
 
@@ -157,7 +157,7 @@ static const depend_component* get_depend_component(const depend_component* info
 
 #undef FF_COMPONENT
 
-        { 0, 0, 0, 0, 0 }
+        { nullptr, 0, 0, nullptr, nullptr }
     };
 
     if (!info)
@@ -166,13 +166,13 @@ static const depend_component* get_depend_component(const depend_component* info
     // invalid input ptr
 
     if (((ptrdiff_t)info - (ptrdiff_t)(&components[0]))%sizeof(depend_component))
-        return 0;
+        return nullptr;
 
     const depend_component* next = info;
     next++;
 
     if (!next->lib)
-        return 0;
+        return nullptr;
 
     return next;
 }
@@ -181,7 +181,7 @@ void print_library_info()
 {
     qCDebug(DIGIKAM_QTAV_LOG) << aboutQtAV_PlainText().toUtf8().constData();
 
-    const depend_component* info = Internal::get_depend_component(0);
+    const depend_component* info = Internal::get_depend_component(nullptr);
 
     while (info)
     {
@@ -216,7 +216,7 @@ void print_library_info()
 QString aboutFFmpeg_HTML()
 {
     QString text                           = QStringLiteral("<h3>FFmpeg/Libav</h3>\n");
-    const Internal::depend_component* info = Internal::get_depend_component(0);
+    const Internal::depend_component* info = Internal::get_depend_component(nullptr);
 
     while (info)
     {
@@ -315,7 +315,7 @@ static void qtav_ffmpeg_log_callback(void* ctx, int level,const char* fmt, va_li
     if (level > Internal::gAVLogLevel)
         return;
 
-    AVClass* c   = ctx ? *(AVClass**)ctx : 0;
+    AVClass* c   = ctx ? *(AVClass**)ctx : nullptr;
     QString qmsg = QString().asprintf("[FFmpeg:%s] ", c ? c->item_name(ctx) : "?") + QString().vasprintf(fmt, vl);
     qmsg         = qmsg.trimmed();
 
@@ -338,8 +338,8 @@ QString avformatOptions()
 
 #if AVFORMAT_STATIC_REGISTER
 
-    const AVInputFormat *i = NULL;
-    void* it               = NULL;
+    const AVInputFormat *i = nullptr;
+    void* it               = nullptr;
 
     while ((i = av_demuxer_iterate(&it)))
     {
@@ -366,8 +366,8 @@ QString avformatOptions()
 
 #if AVFORMAT_STATIC_REGISTER
 
-    const AVOutputFormat* o = NULL;
-    it                      = NULL;
+    const AVOutputFormat* o = nullptr;
+    it                      = nullptr;
 
     while ((o = av_muxer_iterate(&it)))
     {
@@ -405,11 +405,11 @@ QString avcodecOptions()
     void* obj        = const_cast<void*>(reinterpret_cast<const void*>(avcodec_get_class()));
     opts             = Internal::optionsToString((void*)&obj);
     opts.append(ushort('\n'));
-    const AVCodec* c = NULL;
+    const AVCodec* c = nullptr;
 
 #if AVCODEC_STATIC_REGISTER
 
-    void* it = NULL;
+    void* it = nullptr;
 
     while ((c = av_codec_iterate(&it)))
     {

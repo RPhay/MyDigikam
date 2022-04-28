@@ -83,7 +83,7 @@ public:
      * Make sure the old geometry is not destroyed before this call because it will be used to compare with the new \l geo
      * \param geo null: release vao/vbo
      */
-    void updateGeometry(Geometry* geo = NULL);
+    void updateGeometry(Geometry* geo = nullptr);
     virtual void render();
 
 protected:

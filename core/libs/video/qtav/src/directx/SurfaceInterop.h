@@ -55,14 +55,14 @@ public:
      * \param plane
      * \return Null if not supported or failed. handle if success.
      */
-    virtual void* map(SurfaceType type, const VideoFormat& fmt, void* handle = 0, int plane = 0)
+    virtual void* map(SurfaceType type, const VideoFormat& fmt, void* handle = nullptr, int plane = 0)
     {
         Q_UNUSED(type);
         Q_UNUSED(fmt);
         Q_UNUSED(handle);
         Q_UNUSED(plane);
 
-        return 0;
+        return nullptr;
     }
 
     // TODO: SurfaceType. unmap is currenty used by opengl rendering
@@ -89,7 +89,7 @@ public:
         Q_UNUSED(planeWidth);
         Q_UNUSED(planeHeight);
 
-        return 0;
+        return nullptr;
     }
 };
 

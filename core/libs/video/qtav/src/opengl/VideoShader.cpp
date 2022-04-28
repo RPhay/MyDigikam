@@ -73,7 +73,7 @@ char const *const* VideoShader::attributeNames() const
     {
         "a_Position",
         "a_TexCoords0",
-        0
+        nullptr
     };
 
     if (textureTarget() == GL_TEXTURE_2D)
@@ -87,7 +87,7 @@ char const *const* VideoShader::attributeNames() const
         "a_TexCoords0",
         "a_TexCoords1",
         "a_TexCoords2",
-        0
+        nullptr
     };
 
 #if YUVA_DONE
@@ -124,7 +124,7 @@ const char* VideoShader::vertexShader() const
     if (vert.isEmpty())
     {
         qCWarning(DIGIKAM_QTAV_LOG_WARN).noquote() << QString::asprintf("Empty vertex shader!");
-        return 0;
+        return nullptr;
     }
 
     if (textureTarget() == GL_TEXTURE_RECTANGLE && d.video_format.isPlanar())
@@ -182,7 +182,7 @@ const char* VideoShader::fragmentShader() const
     {
         qCWarning(DIGIKAM_QTAV_LOG_WARN).noquote() << QString::asprintf("Empty fragment shader!");
 
-        return 0;
+        return nullptr;
     }
 
     const int nb_planes = d.video_format.planeCount();
@@ -914,14 +914,14 @@ void VideoMaterialPrivate::uploadPlane(int p, bool updateTexture)
     //glPixelStorei(GL_UNPACK_ALIGNMENT, get_alignment(stride)); 8, 4, 2, 1
     // glPixelStorei(GL_UNPACK_ROW_LENGTH, stride/glbpp); // for stride%glbpp > 0?
 
-    DYGL(glTexSubImage2D(target, 0, 0, 0, texture_size[p].width(), texture_size[p].height(), data_format[p], data_type[p], try_pbo ? 0 : frame.constBits(p)));
+    DYGL(glTexSubImage2D(target, 0, 0, 0, texture_size[p].width(), texture_size[p].height(), data_format[p], data_type[p], try_pbo ? nullptr : frame.constBits(p)));
 
     if (false)
     {
         //texture_size[].width()*gl_bpp != bytesPerLine[]
 
         for (int y = 0 ; y < plane0Size.height() ; ++y)
-            DYGL(glTexSubImage2D(target, 0, 0, y, texture_size[p].width(), 1, data_format[p], data_type[p], try_pbo ? 0 : frame.constBits(p)+y*plane0Size.width()));
+            DYGL(glTexSubImage2D(target, 0, 0, y, texture_size[p].width(), 1, data_format[p], data_type[p], try_pbo ? nullptr : frame.constBits(p)+y*plane0Size.width()));
     }
 
     //DYGL(glBindTexture(target, 0)); // no bind 0 because glActiveTexture was called
@@ -1265,7 +1265,7 @@ bool VideoMaterialPrivate::initTexture(GLuint tex, GLint internal_format, GLenum
 
     DYGL(glTexParameteri(target, GL_TEXTURE_WRAP_S, GL_CLAMP_TO_EDGE));
     DYGL(glTexParameteri(target, GL_TEXTURE_WRAP_T, GL_CLAMP_TO_EDGE));
-    DYGL(glTexImage2D(target, 0, internal_format, width, height, 0 /*border, ES not support*/, format, dataType, NULL));
+    DYGL(glTexImage2D(target, 0, internal_format, width, height, 0 /*border, ES not support*/, format, dataType, nullptr));
     DYGL(glBindTexture(target, 0));
 
     return true;

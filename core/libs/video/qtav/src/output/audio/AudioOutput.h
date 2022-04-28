@@ -91,7 +91,7 @@ public:
      * \brief AudioOutput
      * Audio format set to preferred sample format and channel layout
      */
-    AudioOutput(QObject* parent = 0);
+    AudioOutput(QObject* parent = nullptr);
     ~AudioOutput();
 
     /*!

@@ -71,7 +71,7 @@ class XVRenderer : public QWidget,
 
 public:
 
-    XVRenderer(QWidget* parent = 0, Qt::WindowFlags f = Qt::WindowFlags(Qt::Widget));
+    XVRenderer(QWidget* parent = nullptr, Qt::WindowFlags f = Qt::WindowFlags(Qt::Widget));
 
     virtual VideoRendererId id()                              const override;
     virtual bool isSupported(VideoFormat::PixelFormat pixfmt) const override;
@@ -212,12 +212,12 @@ public:
     XVRendererPrivate()
       : use_shm(true)
       , num_adaptors(0)
-      , xv_image(0)
+      , xv_image(nullptr)
       , format_id(0x32315659) /*YV12*/
       , xv_image_width(0)
       , xv_image_height(0)
       , xv_port(0)
-      , gc(NULL)
+      , gc(nullptr)
       , format(VideoFormat::Format_Invalid)
     {
         XInitThreads();
@@ -230,7 +230,7 @@ public:
 
         //XvQueryExtension()
 
-        display = XOpenDisplay(NULL);
+        display = XOpenDisplay(nullptr);
 
         if (XvQueryAdaptors(display, DefaultRootWindow(display), &num_adaptors, &xv_adaptor_info) != Success)
         {
@@ -254,7 +254,7 @@ public:
         if (xv_adaptor_info)
         {
             XvFreeAdaptorInfo(xv_adaptor_info);
-            xv_adaptor_info = 0;
+            xv_adaptor_info = nullptr;
         }
 
         destroyXVImage();
@@ -262,7 +262,7 @@ public:
         if (gc)
         {
             XFreeGC(display, gc);
-            gc = 0;
+            gc = nullptr;
         }
 
         if (xv_port)
@@ -286,7 +286,7 @@ public:
             if (shm.shmaddr)
             {
                 XShmDetach(display, &shm);
-                shmctl(shm.shmid, IPC_RMID, 0);
+                shmctl(shm.shmid, IPC_RMID, nullptr);
                 shmdt(shm.shmaddr);
             }
         }
@@ -310,10 +310,10 @@ public:
         if (gc)
         {
             XFreeGC(display, gc);
-            gc = 0;
+            gc = nullptr;
         }
 
-        gc = XCreateGC(display, q_func().winId(), 0, 0);
+        gc = XCreateGC(display, q_func().winId(), 0, nullptr);
 
         if (!gc)
         {
@@ -379,7 +379,7 @@ public:
         if (!use_shm)
             goto no_shm;
 
-        xv_image = XvShmCreateImage(display, xv_port, format_id, 0, xv_image_width, xv_image_height, &shm);
+        xv_image = XvShmCreateImage(display, xv_port, format_id, nullptr, xv_image_width, xv_image_height, &shm);
 
         if (!xv_image)
             goto no_shm;
@@ -395,7 +395,7 @@ public:
             goto no_shm;
         }
 
-        shm.shmaddr = (char *)shmat(shm.shmid, 0, 0);
+        shm.shmaddr = (char *)shmat(shm.shmid, nullptr, 0);
 
         if (shm.shmaddr == (char*)-1)
         {
@@ -416,7 +416,7 @@ public:
         }
 
         XSync(display, False);
-        shmctl(shm.shmid, IPC_RMID, 0);
+        shmctl(shm.shmid, IPC_RMID, nullptr);
 
         return true;
 
@@ -424,7 +424,7 @@ no_shm:
 
 #endif //_XSHM_H_
 
-        xv_image = XvCreateImage(display, xv_port, format_id, 0, xv_image_width, xv_image_height);
+        xv_image = XvCreateImage(display, xv_port, format_id, nullptr, xv_image_width, xv_image_height);
 
         if (!xv_image)
             return false;
@@ -683,7 +683,7 @@ bool XVRenderer::receiveFrame(const VideoFrame& frame)
 
 QPaintEngine* XVRenderer::paintEngine() const
 {
-    return 0; // use native engine
+    return nullptr; // use native engine
 }
 
 void XVRenderer::drawBackground()

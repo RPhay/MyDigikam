@@ -129,9 +129,9 @@ public:
 
     void dumpVertexData();
 
-    void* indexData()                   { return m_icount > 0 ? m_idata.data() : NULL;      }
-    const void* indexData() const       { return m_icount > 0 ? m_idata.constData() : NULL; }
-    const void* constIndexData() const  { return m_icount > 0 ? m_idata.constData() : NULL; }
+    void* indexData()                   { return m_icount > 0 ? m_idata.data() : nullptr;      }
+    const void* indexData() const       { return m_icount > 0 ? m_idata.constData() : nullptr; }
+    const void* constIndexData() const  { return m_icount > 0 ? m_idata.constData() : nullptr; }
     int indexCount() const              { return m_icount;                                  }
 
     int indexDataSize() const;

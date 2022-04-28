@@ -53,8 +53,8 @@ public:
     AVOutputPrivate()
       : paused(false)
       , available(true)
-      , statistics(0)
-      , filter_context(0)
+      , statistics(nullptr)
+      , filter_context(nullptr)
     {
     }
 

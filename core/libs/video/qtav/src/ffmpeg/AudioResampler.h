@@ -68,7 +68,7 @@ public:
      * \param id NULL to get the first id address
      * \return address of id or NULL if not found/end
      */
-    static AudioResamplerId* next(AudioResamplerId* id = 0);
+    static AudioResamplerId* next(AudioResamplerId* id = nullptr);
     static const char* name(AudioResamplerId id);
     static AudioResamplerId id(const char* name);
 

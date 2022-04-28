@@ -112,11 +112,11 @@ AVDemuxThread::AVDemuxThread(QObject* parent)
     , end(false)
     , end_action(MediaEndAction_Default)
     , m_buffering(false)
-    , m_buffer(0)
-    , demuxer(0)
-    , ademuxer(0)
-    , audio_thread(0)
-    , video_thread(0)
+    , m_buffer(nullptr)
+    , demuxer(nullptr)
+    , ademuxer(nullptr)
+    , audio_thread(nullptr)
+    , video_thread(nullptr)
     , clock_type(-1)
     , last_seek_pos(0)
     , current_seek_task(nullptr)
@@ -136,11 +136,11 @@ AVDemuxThread::AVDemuxThread(AVDemuxer* dmx, QObject* parent)
     , end(false)
     , end_action(MediaEndAction_Default)
     , m_buffering(false)
-    , m_buffer(0)
-    , demuxer(0)
-    , ademuxer(0)
-    , audio_thread(0)
-    , video_thread(0)
+    , m_buffer(nullptr)
+    , demuxer(nullptr)
+    , ademuxer(nullptr)
+    , audio_thread(nullptr)
+    , video_thread(nullptr)
     , clock_type(-1)
     , last_seek_pos(0)
     , current_seek_task(nullptr)
@@ -397,7 +397,7 @@ void AVDemuxThread::seekInternal(qint64 pos, SeekType type, qint64 external_pos)
         ademuxer->seek(pos);
     }
 
-    AVThread *watch_thread = 0;
+    AVThread *watch_thread = nullptr;
 
     // TODO: why queue may not empty?
 
@@ -819,8 +819,8 @@ void AVDemuxThread::run()
     Packet pkt;
     pause(false);
     qCDebug(DIGIKAM_QTAV_LOG).noquote() << QString::asprintf("get av queue a/v thread = %p %p", audio_thread, video_thread);
-    PacketBuffer *aqueue = audio_thread ? audio_thread->packetQueue() : 0;
-    PacketBuffer *vqueue = video_thread ? video_thread->packetQueue() : 0;
+    PacketBuffer *aqueue = audio_thread ? audio_thread->packetQueue() : nullptr;
+    PacketBuffer *vqueue = video_thread ? video_thread->packetQueue() : nullptr;
 
     // aqueue as a primary buffer: music with/without cover
 
@@ -863,7 +863,7 @@ void AVDemuxThread::run()
 
         // vthread maybe changed by AVPlayer.setPriority() from no dec case
 
-        vqueue = video_thread ? video_thread->packetQueue() : 0;
+        vqueue = video_thread ? video_thread->packetQueue() : nullptr;
 
         if (demuxer->atEnd())
         {
@@ -1080,7 +1080,7 @@ void AVDemuxThread::run()
     }
 
     m_buffering = false;
-    m_buffer = 0;
+    m_buffer = nullptr;
 
     while (audio_thread && audio_thread->isRunning())
     {

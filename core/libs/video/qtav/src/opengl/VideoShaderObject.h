@@ -54,11 +54,11 @@ class QTAV_EXPORT VideoShaderObject : public QObject,
 
 public:
 
-    VideoShaderObject(QObject* parent = 0);
+    VideoShaderObject(QObject* parent = nullptr);
 
 protected:
 
-    VideoShaderObject(VideoShaderObjectPrivate &d, QObject* parent = 0);
+    VideoShaderObject(VideoShaderObjectPrivate &d, QObject* parent = nullptr);
     bool event(QEvent *event) override;
 
 private Q_SLOTS:
@@ -88,7 +88,7 @@ class QTAV_EXPORT DynamicShaderObject : public VideoShaderObject
 
 public:
 
-    DynamicShaderObject(QObject* parent = 0);
+    DynamicShaderObject(QObject* parent = nullptr);
     QString header() const;
     void setHeader(const QString& text);
     QString sample() const;
@@ -104,7 +104,7 @@ Q_SIGNALS:
 
 protected:
 
-    DynamicShaderObject(DynamicShaderObjectPrivate &d, QObject* parent = 0);
+    DynamicShaderObject(DynamicShaderObjectPrivate &d, QObject* parent = nullptr);
 
 private:
 

@@ -43,11 +43,11 @@ class QTAV_PRIVATE_EXPORT AVEncoderPrivate : public DPtrPrivate<AVEncoder>
 public:
 
     AVEncoderPrivate()
-      : avctx(0)
+      : avctx(nullptr)
       , is_open(false)
       , bit_rate(0)
       , timestamp_mode(0)
-      , dict(0)
+      , dict(nullptr)
     {
     }
 

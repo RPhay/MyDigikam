@@ -84,7 +84,7 @@ QStringList AudioOutputBackend::defaultPriority()
 
 AudioOutputBackend::AudioOutputBackend(AudioOutput::DeviceFeatures f, QObject *parent)
     : QObject(parent)
-    , audio(0)
+    , audio(nullptr)
     , available(true)
     , buffer_size(0)
     , buffer_count(0)

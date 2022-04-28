@@ -37,7 +37,7 @@ class AudioThread : public AVThread
     Q_OBJECT
     DPTR_DECLARE_PRIVATE(AudioThread)
 public:
-    explicit AudioThread(QObject *parent = 0);
+    explicit AudioThread(QObject *parent = nullptr);
 
 protected:
     void applyFilters(AudioFrame& frame);

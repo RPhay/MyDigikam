@@ -74,7 +74,7 @@ class QTAV_EXPORT SubtitleFilter : public VideoFilter,
 
 public:
 
-    explicit SubtitleFilter(QObject *parent = 0);
+    explicit SubtitleFilter(QObject *parent = nullptr);
 
     void setPlayer(AVPlayer* player);
 

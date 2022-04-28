@@ -117,7 +117,7 @@ public:
      * \param id NULL to get the first id address
      * \return address of id or NULL if not found/end
      */
-    static ImageConverterId* next(ImageConverterId* id = 0);
+    static ImageConverterId* next(ImageConverterId* id = nullptr);
     static const char* name(ImageConverterId id);
     static ImageConverterId id(const char* name);
 

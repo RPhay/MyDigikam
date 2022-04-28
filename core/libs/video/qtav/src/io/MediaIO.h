@@ -192,7 +192,7 @@ public:
      * \param id NULL to get the first id address
      * \return address of id or NULL if not found/end
      */
-    static MediaIOId* next(MediaIOId* id = 0);
+    static MediaIOId* next(MediaIOId* id = nullptr);
     static const char* name(MediaIOId id);
     static MediaIOId id(const char* name);
 
@@ -204,7 +204,7 @@ private:
 
 protected:
 
-    MediaIO(MediaIOPrivate& d, QObject* parent = 0);
+    MediaIO(MediaIOPrivate& d, QObject* parent = nullptr);
 
     /*!
      * \brief onUrlChanged
@@ -218,7 +218,7 @@ protected:
     // base class, not direct create. only final class has public ctor is enough
     // FIXME: it's required by Q_DECLARE_METATYPE (also copy ctor)
 
-    MediaIO(QObject* parent = 0);
+    MediaIO(QObject* parent = nullptr);
 };
 
 Q_DECL_DEPRECATED typedef MediaIO AVInput; // for source compatibility

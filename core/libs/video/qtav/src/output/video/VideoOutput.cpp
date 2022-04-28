@@ -87,7 +87,7 @@ public:
 
         if (!impl && !force)
         {
-            VideoRendererId *vid = NULL;
+            VideoRendererId *vid = nullptr;
 
             while ((vid = VideoRenderer::next(vid)))
             {
@@ -96,7 +96,7 @@ public:
                 if (impl)
                 {
                     delete impl;
-                    impl = 0;
+                    impl = nullptr;
                 }
 
                 impl = VideoRenderer::create(*vid);
@@ -141,7 +141,7 @@ public:
             if (obj && !obj->parent())
                 obj->deleteLater();
 
-            impl = 0;
+            impl = nullptr;
         }
     }
 
@@ -217,7 +217,7 @@ bool VideoOutput::isSupported(VideoFormat::PixelFormat pixfmt) const
 QWindow* VideoOutput::qwindow()
 {
     if (!isAvailable())
-        return 0;
+        return nullptr;
 
     return d_func().impl->qwindow();
 }
@@ -225,7 +225,7 @@ QWindow* VideoOutput::qwindow()
 QWidget* VideoOutput::widget()
 {
     if (!isAvailable())
-        return 0;
+        return nullptr;
 
     return d_func().impl->widget();
 }
@@ -233,7 +233,7 @@ QWidget* VideoOutput::widget()
 QGraphicsItem* VideoOutput::graphicsItem()
 {
     if (!isAvailable())
-        return 0;
+        return nullptr;
 
     return d_func().impl->graphicsItem();
 }
@@ -241,7 +241,7 @@ QGraphicsItem* VideoOutput::graphicsItem()
 OpenGLVideo* VideoOutput::opengl() const
 {
     if (!isAvailable())
-        return 0;
+        return nullptr;
 
     return d_func().impl->opengl();
 }

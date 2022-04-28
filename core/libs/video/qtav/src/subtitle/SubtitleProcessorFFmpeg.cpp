@@ -82,7 +82,7 @@ static const char kName[] = "FFmpeg";
 FACTORY_REGISTER(SubtitleProcessor, FFmpeg, kName)
 
 SubtitleProcessorFFmpeg::SubtitleProcessorFFmpeg()
-    : codec_ctx(0)
+    : codec_ctx(nullptr)
 {
 }
 
@@ -104,11 +104,11 @@ QString SubtitleProcessorFFmpeg::name() const
 QStringList ffmpeg_supported_sub_extensions_by_codec()
 {
     QStringList exts;
-    const AVCodec* c = NULL;
+    const AVCodec* c = nullptr;
 
 #if AVCODEC_STATIC_REGISTER
 
-    void* it = NULL;
+    void* it = nullptr;
 
     while ((c = av_codec_iterate(&it)))
     {
@@ -128,8 +128,8 @@ QStringList ffmpeg_supported_sub_extensions_by_codec()
 
 #if AVFORMAT_STATIC_REGISTER
 
-        const AVInputFormat *i = NULL;
-        void* it2 = NULL;
+        const AVInputFormat *i = nullptr;
+        void* it2 = nullptr;
 
         while ((i = av_demuxer_iterate(&it2)))
         {
@@ -177,8 +177,8 @@ QStringList ffmpeg_supported_sub_extensions()
 
 #if AVFORMAT_STATIC_REGISTER
 
-    const AVInputFormat *i = NULL;
-    void* it = NULL;
+    const AVInputFormat *i = nullptr;
+    void* it = nullptr;
 
     while ((i = av_demuxer_iterate(&it)))
     {
@@ -210,11 +210,11 @@ QStringList ffmpeg_supported_sub_extensions()
     // AVCodecDescriptor.name and AVCodec.name may be different. avcodec_get_name() use AVCodecDescriptor if possible
 
     QStringList codecs;
-    const AVCodec* c = NULL;
+    const AVCodec* c = nullptr;
 
 #if AVCODEC_STATIC_REGISTER
 
-    it = NULL;
+    it = nullptr;
 
     while ((c = av_codec_iterate(&it)))
     {
@@ -232,7 +232,7 @@ QStringList ffmpeg_supported_sub_extensions()
             codecs.append(QString::fromLatin1(c->name));
     }
 
-    const AVCodecDescriptor *desc = NULL;
+    const AVCodecDescriptor *desc = nullptr;
 
     while ((desc = avcodec_descriptor_next(desc)))
     {
@@ -417,7 +417,7 @@ bool SubtitleProcessorFFmpeg::processHeader(const QByteArray &codec, const QByte
         memcpy(codec_ctx->extradata, data.constData(), data.size());
     }
 
-    if (avcodec_open2(codec_ctx, c, NULL) < 0)
+    if (avcodec_open2(codec_ctx, c, nullptr) < 0)
     {
         avcodec_free_context(&codec_ctx);
 
@@ -580,7 +580,7 @@ bool SubtitleProcessorFFmpeg::processSubtitle()
 
 #endif
 
-    AVDictionary* codec_opts = NULL;
+    AVDictionary* codec_opts = nullptr;
     int ret                  = avcodec_open2(codec_ctx, dec, &codec_opts);
 
     if (ret < 0)
@@ -615,7 +615,7 @@ bool SubtitleProcessorFFmpeg::processSubtitle()
     }
 
     avcodec_close(codec_ctx);
-    codec_ctx = 0;
+    codec_ctx = nullptr;
 
     return true;
 }

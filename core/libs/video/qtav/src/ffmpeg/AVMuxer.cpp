@@ -58,12 +58,12 @@ public:
         , eof(false)
         , media_changed(true)
         , open(false)
-        , format_ctx(0)
-        , format(0)
-        , io(0)
-        , dict(0)
-        , aenc(0)
-        , venc(0)
+        , format_ctx(nullptr)
+        , format(nullptr)
+        , io(nullptr)
+        , dict(nullptr)
+        , aenc(nullptr)
+        , venc(nullptr)
     {
 
 #if !AVFORMAT_STATIC_REGISTER
@@ -81,13 +81,13 @@ public:
         if (dict)
         {
             av_dict_free(&dict);
-            dict = 0;
+            dict = nullptr;
         }
 
         if (io)
         {
             delete io;
-            io = 0;
+            io = nullptr;
         }
     }
 
@@ -121,7 +121,7 @@ public:
 
 AVStream *AVMuxer::Private::addStream(AVFormatContext* ctx, const QString &codecName, AVCodecID codecId)
 {
-    AVCodec *codec = NULL;
+    AVCodec *codec = nullptr;
 
     if      (!codecName.isEmpty())
     {
@@ -149,14 +149,14 @@ AVStream *AVMuxer::Private::addStream(AVFormatContext* ctx, const QString &codec
     }
 
     if (!codec)
-        return 0;
+        return nullptr;
 
     AVStream *s = avformat_new_stream(ctx, codec);
 
     if (!s)
     {
         qCWarning(DIGIKAM_QTAV_LOG_WARN).noquote() << QString::asprintf("Can not allocate stream");
-        return 0;
+        return nullptr;
     }
 
     // set by avformat if unset
@@ -262,8 +262,8 @@ static void getFFmpegOutputFormats(QStringList* formats, QStringList* extensions
 
 #if AVFORMAT_STATIC_REGISTER
 
-        const AVOutputFormat *o = NULL;
-        void* it = NULL;
+        const AVOutputFormat *o = nullptr;
+        void* it = nullptr;
         while ((o = av_muxer_iterate(&it)))
         {
 
@@ -322,7 +322,7 @@ const QStringList& AVMuxer::supportedFormats()
     static QStringList fmts;
 
     if (fmts.isEmpty())
-        getFFmpegOutputFormats(&fmts, NULL);
+        getFFmpegOutputFormats(&fmts, nullptr);
 
     return fmts;
 }
@@ -332,7 +332,7 @@ const QStringList& AVMuxer::supportedExtensions()
     static QStringList exts;
 
     if (exts.isEmpty())
-        getFFmpegOutputFormats(NULL, &exts);
+        getFFmpegOutputFormats(nullptr, &exts);
 
     return exts;
 }
@@ -364,7 +364,7 @@ const QStringList &AVMuxer::supportedProtocols()
 
 #endif
 
-    void* opq = 0;
+    void* opq = nullptr;
     const char* protocol = avio_enum_protocols(&opq, 1);
     while (protocol)
     {
@@ -396,10 +396,10 @@ QString AVMuxer::fileName() const
 QIODevice* AVMuxer::ioDevice() const
 {
     if (!d->io)
-        return 0;
+        return nullptr;
 
     if (d->io->name() != QLatin1String("QIODevice"))
-        return 0;
+        return nullptr;
 
     return d->io->property("device").value<QIODevice*>();
 }
@@ -414,7 +414,7 @@ bool AVMuxer::setMedia(const QString &fileName)
     if (d->io)
     {
         delete d->io;
-        d->io = 0;
+        d->io = nullptr;
     }
 
     d->file_orig = fileName;
@@ -489,7 +489,7 @@ bool AVMuxer::setMedia(QIODevice* device)
         if (d->io->name() != QLatin1String("QIODevice"))
         {
             delete d->io;
-            d->io = 0;
+            d->io = nullptr;
         }
     }
 
@@ -561,7 +561,7 @@ bool AVMuxer::open()
 
     if (!d->format_forced.isEmpty())
     {
-        d->format = av_guess_format(d->format_forced.toUtf8().constData(), NULL, NULL);
+        d->format = av_guess_format(d->format_forced.toUtf8().constData(), nullptr, nullptr);
         qCDebug(DIGIKAM_QTAV_LOG) << "force format: " << d->format_forced;
     }
 
@@ -574,7 +574,7 @@ bool AVMuxer::open()
             qCWarning(DIGIKAM_QTAV_LOG_WARN).noquote() << QString::asprintf("wrong MediaIO accessMode. MUST be Write");
         }
 
-        AV_ENSURE_OK(avformat_alloc_output_context2(&d->format_ctx, d->format, d->format_forced.isEmpty() ? 0 : d->format_forced.toUtf8().constData(), ""), false);
+        AV_ENSURE_OK(avformat_alloc_output_context2(&d->format_ctx, d->format, d->format_forced.isEmpty() ? nullptr : d->format_forced.toUtf8().constData(), ""), false);
         d->format_ctx->pb = (AVIOContext*)d->io->avioContext();
         d->format_ctx->flags |= AVFMT_FLAG_CUSTOM_IO;
 
@@ -583,7 +583,7 @@ bool AVMuxer::open()
     }
     else
     {
-        AV_ENSURE_OK(avformat_alloc_output_context2(&d->format_ctx, d->format, d->format_forced.isEmpty() ? 0 : d->format_forced.toUtf8().constData(), fileName().toUtf8().constData()), false);
+        AV_ENSURE_OK(avformat_alloc_output_context2(&d->format_ctx, d->format, d->format_forced.isEmpty() ? nullptr : d->format_forced.toUtf8().constData(), fileName().toUtf8().constData()), false);
     }
 
     //d->interrupt_hanlder->end();
@@ -629,12 +629,12 @@ bool AVMuxer::close()
         {
             avio_flush(d->format_ctx->pb);
             avio_close(d->format_ctx->pb);
-            d->format_ctx->pb = 0;
+            d->format_ctx->pb = nullptr;
         }
     }
 
     avformat_free_context(d->format_ctx);
-    d->format_ctx = 0;
+    d->format_ctx = nullptr;
     d->audio_streams.clear();
     d->video_streams.clear();
     d->subtitle_streams.clear();
@@ -722,7 +722,7 @@ void AVMuxer::Private::applyOptionsForDict()
     if (dict)
     {
         av_dict_free(&dict);
-        dict = 0; //aready 0 in av_free
+        dict = nullptr; //aready 0 in av_free
     }
 
     if (options.isEmpty())

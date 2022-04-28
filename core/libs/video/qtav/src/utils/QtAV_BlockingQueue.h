@@ -80,7 +80,7 @@ public:
      * \param isValid a pointer to a bool (optional).  If isValid is set to true after a call, the returned item is valid. False means the queue was empty or the timeout expired.
      * \return the item taken.  It may not be valid if the queue was empty and timeout expired. Check optional isValid flag to determine if that is the case.
      */
-    T take(unsigned long wait_timeout_ms = ULONG_MAX, bool *isValid = 0);
+    T take(unsigned long wait_timeout_ms = ULONG_MAX, bool *isValid = nullptr);
 
     void setBlocking(bool block); // will wake if false. called when no more data can enqueue
     void blockEmpty(bool block);
@@ -150,9 +150,9 @@ BlockingQueue<T, Container>::BlockingQueue()
     , block_full(true)
     , cap(48)
     , thres(32)
-    , empty_callback(0)
-    , threshold_callback(0)
-    , full_callback(0)
+    , empty_callback(nullptr)
+    , threshold_callback(nullptr)
+    , full_callback(nullptr)
 {
 }
 

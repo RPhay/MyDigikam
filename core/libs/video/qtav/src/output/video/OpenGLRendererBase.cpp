@@ -46,7 +46,7 @@ OpenGLRendererBasePrivate::~OpenGLRendererBasePrivate()
     if (painter)
     {
         delete painter;
-        painter = 0;
+        painter = nullptr;
     }
 }
 
@@ -67,7 +67,7 @@ OpenGLRendererBase::OpenGLRendererBase(OpenGLRendererBasePrivate &d)
 
 OpenGLRendererBase::~OpenGLRendererBase()
 {
-   d_func().glv.setOpenGLContext(0);
+   d_func().glv.setOpenGLContext(nullptr);
 }
 
 bool OpenGLRendererBase::isSupported(VideoFormat::PixelFormat pixfmt) const

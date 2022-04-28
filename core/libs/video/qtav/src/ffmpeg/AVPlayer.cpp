@@ -167,7 +167,7 @@ VideoRenderer *AVPlayer::renderer()
 {
     //QList assert empty in debug mode
     if (!d->vos || d->vos->outputs().isEmpty())
-        return 0;
+        return nullptr;
     return static_cast<VideoRenderer*>(d->vos->outputs().last());
 }
 
@@ -553,9 +553,9 @@ void AVPlayer::setInput(MediaIO *in)
 MediaIO* AVPlayer::input() const
 {
     if (d->current_source.type() == QVariant::String)
-        return 0;
+        return nullptr;
     if (!d->current_source.canConvert<QtAV::MediaIO*>())
-        return 0;
+        return nullptr;
     return d->current_source.value<QtAV::MediaIO*>();
 }
 
@@ -663,9 +663,9 @@ void AVPlayer::loadInternal()
     //close decoders here to make sure open and close in the same thread if not async load
     if (isLoaded()) {
         if (d->adec)
-            d->adec->setCodecContext(0);
+            d->adec->setCodecContext(nullptr);
         if (d->vdec)
-            d->vdec->setCodecContext(0);
+            d->vdec->setCodecContext(nullptr);
     }
     qCDebug(DIGIKAM_QTAV_LOG) << "Loading " << d->current_source << " ...";
     if (d->current_source.type() == QVariant::String) {
@@ -724,14 +724,14 @@ void AVPlayer::unload()
     d->demuxer.setInterruptStatus(-1);
 
     if (d->adec) { // FIXME: crash if audio external=>internal then replay
-        d->adec->setCodecContext(0);
+        d->adec->setCodecContext(nullptr);
         delete d->adec;
-        d->adec = 0;
+        d->adec = nullptr;
     }
     if (d->vdec) {
-        d->vdec->setCodecContext(0);
+        d->vdec->setCodecContext(nullptr);
         delete d->vdec;
-        d->vdec = 0;
+        d->vdec = nullptr;
     }
     d->demuxer.unload();
     Q_EMIT chaptersChanged(0);
@@ -985,7 +985,7 @@ bool AVPlayer::setAudioStream(const QString &file, int n)
     d->external_audio = path;
     d->audio_demuxer.setMedia(d->external_audio);
     struct scoped_pause {
-        scoped_pause() : was_paused(false), player(0) {}
+        scoped_pause() : was_paused(false), player(nullptr) {}
         void set(bool old, AVPlayer* p) {
             was_paused = old;
             player = p;
@@ -1027,7 +1027,7 @@ update_demuxer:
     if (!isPlaying()) {
         if (d->external_audio.isEmpty()) {
             if (audio_changed) {
-                d->read_thread->setAudioDemuxer(0);
+                d->read_thread->setAudioDemuxer(nullptr);
                 d->audio_demuxer.unload();
             }
         }
@@ -1041,7 +1041,7 @@ update_demuxer:
 
     if (d->external_audio.isEmpty()) {
         if (audio_changed) {
-            d->read_thread->setAudioDemuxer(0);
+            d->read_thread->setAudioDemuxer(nullptr);
             d->audio_demuxer.unload();
         }
     } else {
@@ -1169,9 +1169,9 @@ bool AVPlayer::load()
     if (isLoaded()) {
         // release codec ctx. if not loaded, they are released by avformat. TODO: always let avformat release them?
         if (d->adec)
-            d->adec->setCodecContext(0);
+            d->adec->setCodecContext(nullptr);
         if (d->vdec)
-            d->vdec->setCodecContext(0);
+            d->vdec->setCodecContext(nullptr);
     }
     d->loaded = false;
     d->status = LoadingMedia;
@@ -1228,19 +1228,19 @@ void AVPlayer::playInternal()
     // FIXME: if call play() frequently playInternal may not be called if disconnect here
     disconnect(this, SIGNAL(loaded()), this, SLOT(playInternal()));
     if (!d->setupAudioThread(this)) {
-        d->read_thread->setAudioThread(0); //set 0 before delete. ptr is used in demux thread when set 0
+        d->read_thread->setAudioThread(nullptr); //set 0 before delete. ptr is used in demux thread when set 0
         if (d->athread) {
             qCDebug(DIGIKAM_QTAV_LOG).noquote() << QString::asprintf("release audio thread.");
             delete d->athread;
-            d->athread = 0;//shared ptr?
+            d->athread = nullptr;//shared ptr?
         }
     }
     if (!d->setupVideoThread(this)) {
-        d->read_thread->setVideoThread(0); //set 0 before delete. ptr is used in demux thread when set 0
+        d->read_thread->setVideoThread(nullptr); //set 0 before delete. ptr is used in demux thread when set 0
         if (d->vthread) {
             qCDebug(DIGIKAM_QTAV_LOG).noquote() << QString::asprintf("release video thread.");
             delete d->vthread;
-            d->vthread = 0;//shared ptr?
+            d->vthread = nullptr;//shared ptr?
         }
     }
     if (!d->athread && !d->vthread) {

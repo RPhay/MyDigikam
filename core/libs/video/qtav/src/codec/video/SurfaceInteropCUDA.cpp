@@ -42,9 +42,9 @@ namespace cuda
 InteropResource::InteropResource()
     : cuda_api()
     , dev(0)
-    , ctx(0)
-    , dec(0)
-    , lock(0)
+    , ctx(nullptr)
+    , dec(nullptr)
+    , lock(nullptr)
 {
     memset(res, 0, sizeof(res));
 }
@@ -78,17 +78,17 @@ void* InteropResource::mapToHost(const VideoFormat &format, void *handle, int pi
     CUdeviceptr devptr;
     unsigned int pitch;
 
-    CUDA_ENSURE(cuvidMapVideoFrame(dec, picIndex, &devptr, &pitch, const_cast<CUVIDPROCPARAMS*>(&param)), NULL);
+    CUDA_ENSURE(cuvidMapVideoFrame(dec, picIndex, &devptr, &pitch, const_cast<CUVIDPROCPARAMS*>(&param)), nullptr);
 
     CUVIDAutoUnmapper unmapper(this, dec, devptr);
     Q_UNUSED(unmapper);
-    uchar* host_data             = NULL;
+    uchar* host_data             = nullptr;
     const unsigned int host_size = pitch*coded_height*3/2;
-    CUDA_ENSURE(cuMemAllocHost((void**)&host_data, host_size), NULL);
+    CUDA_ENSURE(cuMemAllocHost((void**)&host_data, host_size), nullptr);
 
     // copy to the memory not allocated by cuda is possible but much slower
 
-    CUDA_ENSURE(cuMemcpyDtoH(host_data, devptr, host_size), NULL);
+    CUDA_ENSURE(cuMemcpyDtoH(host_data, devptr, host_size), nullptr);
 
     VideoFrame frame(width, height, VideoFormat::Format_NV12);
 
@@ -139,12 +139,12 @@ HostInteropResource::~HostInteropResource()
         // FIXME: CUDA_ERROR_INVALID_VALUE
 
         CUDA_ENSURE(cuMemFreeHost(host_mem.data));
-        host_mem.data = NULL;
+        host_mem.data = nullptr;
     }
 
     if (ctx)
     {
-        CUDA_WARN(cuCtxPopCurrent(NULL));
+        CUDA_WARN(cuCtxPopCurrent(nullptr));
     }
 }
 
@@ -208,7 +208,7 @@ bool HostInteropResource::ensureResource(int pitch, int height)
     if (host_mem.data)
     {
         CUDA_ENSURE(cuMemFreeHost(host_mem.data), false);
-        host_mem.data = NULL;
+        host_mem.data = nullptr;
     }
 
     qCDebug(DIGIKAM_QTAV_LOG).noquote() << QString::asprintf("allocate cuda host mem. %dx%d=>%dx%d", host_mem.pitch, host_mem.height, pitch, height);
@@ -230,7 +230,7 @@ bool HostInteropResource::ensureResource(int pitch, int height)
     CUDA_ENSURE(cuMemAllocHost((void**)&host_mem.data, pitch*height*3/2), false);
 
     if (!share_ctx)
-        CUDA_WARN(cuCtxPopCurrent(NULL)); // can be null or &ctx
+        CUDA_WARN(cuCtxPopCurrent(nullptr)); // can be null or &ctx
 
     return true;
 }
@@ -251,13 +251,13 @@ void* SurfaceInteropCUDA::map(SurfaceType type, const VideoFormat &fmt, void *ha
     Q_UNUSED(fmt);
 
     if (m_resource.isNull())
-        return NULL;
+        return nullptr;
 
     if (!handle)
-        return NULL;
+        return nullptr;
 
     if (m_index < 0)
-        return 0;
+        return nullptr;
 
     if      (type == GLTextureSurface)
     {
@@ -277,7 +277,7 @@ void* SurfaceInteropCUDA::map(SurfaceType type, const VideoFormat &fmt, void *ha
         return m_resource.toStrongRef()->mapToHost(fmt, handle, m_index, m_param, w, h, H);
     }
 
-    return NULL;
+    return nullptr;
 }
 
 void SurfaceInteropCUDA::unmap(void *handle)
@@ -817,7 +817,7 @@ bool GLInteropResource::map(int picIndex, const CUVIDPROCPARAMS &param, GLuint t
 
     // TODO: why can not use res[plane].stream? CUDA_ERROR_INVALID_HANDLE
 
-    CUDA_ENSURE(cuGraphicsMapResources(1, &res[plane].cuRes, 0), false);
+    CUDA_ENSURE(cuGraphicsMapResources(1, &res[plane].cuRes, nullptr), false);
     CUarray array;
     CUDA_ENSURE(cuGraphicsSubResourceGetMappedArray(&array, res[plane].cuRes, 0, 0), false);
 
@@ -868,7 +868,7 @@ bool GLInteropResource::map(int picIndex, const CUVIDPROCPARAMS &param, GLuint t
          * should not access any resources while they are mapped by CUDA. If an
          * application does so, the results are undefined.
          */
-        CUDA_ENSURE(cuGraphicsUnmapResources(1, &res[plane].cuRes, 0), false);
+        CUDA_ENSURE(cuGraphicsUnmapResources(1, &res[plane].cuRes, nullptr), false);
     }
     else
     {
@@ -905,7 +905,7 @@ bool GLInteropResource::unmap(GLuint tex)
     // Because the decoder switch the context in another thread so we have to switch the context back?
     // to workaround the context issue, we must pop the context that valid in map() and push it here
 
-    CUDA_ENSURE(cuGraphicsUnmapResources(1, &res[plane].cuRes, 0), false);
+    CUDA_ENSURE(cuGraphicsUnmapResources(1, &res[plane].cuRes, nullptr), false);
     CUDA_ENSURE(cuCtxPopCurrent(&ctx), false);
 
     return true;
@@ -939,7 +939,7 @@ bool GLInteropResource::ensureResource(int w, int h, int H, GLuint tex, int plan
     if (r.cuRes)
     {
         CUDA_ENSURE(cuGraphicsUnregisterResource(r.cuRes), false);
-        r.cuRes = NULL;
+        r.cuRes = nullptr;
     }
 
     // CU_GRAPHICS_REGISTER_FLAGS_WRITE_DISCARD works too for opengl, but not d3d

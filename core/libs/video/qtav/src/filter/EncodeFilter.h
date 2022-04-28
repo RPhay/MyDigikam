@@ -44,7 +44,7 @@ class QTAV_EXPORT AudioEncodeFilter : public AudioFilter
 
 public:
 
-    AudioEncodeFilter(QObject *parent = 0);
+    AudioEncodeFilter(QObject *parent = nullptr);
 
     /*!
      * \brief setAsync
@@ -109,7 +109,7 @@ protected Q_SLOTS:
 
 protected:
 
-    virtual void process(Statistics* statistics, AudioFrame* frame = 0) override;
+    virtual void process(Statistics* statistics, AudioFrame* frame = nullptr) override;
 };
 
 // --------------------------------------------------------------------
@@ -124,7 +124,7 @@ class QTAV_EXPORT VideoEncodeFilter : public VideoFilter
 
 public:
 
-    VideoEncodeFilter(QObject* parent = 0);
+    VideoEncodeFilter(QObject* parent = nullptr);
 
     /*!
      * \brief setAsync
@@ -193,7 +193,7 @@ protected Q_SLOTS:
 
 protected:
 
-    virtual void process(Statistics* statistics, VideoFrame* frame = 0) override;
+    virtual void process(Statistics* statistics, VideoFrame* frame = nullptr) override;
 };
 
 } // namespace QtAV

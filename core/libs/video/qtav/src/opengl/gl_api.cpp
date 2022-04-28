@@ -38,7 +38,7 @@ static GetProcAddress_t sGetProcAddress;
 void* GetProcAddress_Qt(const char *name)
 {
     if (!QOpenGLContext::currentContext())
-        return 0;
+        return nullptr;
 
     void* p = (void*)QOpenGLContext::currentContext()->getProcAddress(QByteArray((const char*)name));
 
@@ -78,7 +78,7 @@ static void* GetProcAddressWithExt(GetProcAddress_t get, const char *name)
 
 #endif
 
-        , NULL
+        , nullptr
     };
 
     char f[512];
@@ -97,7 +97,7 @@ static void* GetProcAddressWithExt(GetProcAddress_t get, const char *name)
         }
     }
 
-    return NULL;
+    return nullptr;
 }
 
 static void* GetProcAddressDefault(const char *name)

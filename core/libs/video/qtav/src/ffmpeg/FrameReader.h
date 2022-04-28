@@ -61,7 +61,7 @@ public:
     // TODO: load and get info
     // TODO: asnyc option
 
-    explicit FrameReader(QObject *parent = 0);
+    explicit FrameReader(QObject *parent = nullptr);
     ~FrameReader();
 
     void setMedia(const QString& url);

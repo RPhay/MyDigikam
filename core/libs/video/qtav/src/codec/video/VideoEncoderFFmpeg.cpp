@@ -122,7 +122,7 @@ public:
 #endif
 
         // NULL: codec-specific defaults won't be initialized, which may result in suboptimal default settings (this is important mainly for encoders, e.g. libx264).
-        avctx = avcodec_alloc_context3(NULL);
+        avctx = avcodec_alloc_context3(nullptr);
     }
 
     bool open() override;
@@ -179,7 +179,7 @@ bool VideoEncoderFFmpegPrivate::open()
     if (avctx)
     {
         avcodec_free_context(&avctx);
-        avctx = 0;
+        avctx = nullptr;
     }
 
     avctx = avcodec_alloc_context3(codec);
@@ -224,8 +224,8 @@ bool VideoEncoderFFmpegPrivate::open()
         {
             use_hwctx = true;
             avctx->pix_fmt = hwfmt;
-            hw_device_ctx = NULL;
-            AV_ENSURE(av_hwdevice_ctx_create(&hw_device_ctx, dt, hwdev.toLatin1().constData(), NULL, 0), false);
+            hw_device_ctx = nullptr;
+            AV_ENSURE(av_hwdevice_ctx_create(&hw_device_ctx, dt, hwdev.toLatin1().constData(), nullptr, 0), false);
             avctx->hw_frames_ctx = av_hwframe_ctx_alloc(hw_device_ctx);
 
             if (!avctx->hw_frames_ctx)
@@ -237,7 +237,7 @@ bool VideoEncoderFFmpegPrivate::open()
 
             // get sw formats
 
-            const void *hwcfg = NULL;
+            const void *hwcfg = nullptr;
             AVHWFramesConstraints *constraints = av_hwdevice_get_hwframe_constraints(hw_device_ctx, hwcfg);
             const AVPixelFormat* in_fmts = constraints->valid_sw_formats;
             AVPixelFormat sw_fmt = AVPixelFormat(-1);

@@ -40,9 +40,9 @@ public:
         , async(false)
         , encoded_frames(0)
         , start_time(0)
-        , source_player(0)
-        , afilter(0)
-        , vfilter(0)
+        , source_player(nullptr)
+        , afilter(nullptr)
+        , vfilter(nullptr)
     {}
 
     ~Private() {
@@ -186,7 +186,7 @@ bool AVTranscoder::createVideoEncoder(const QString &name)
 VideoEncoder* AVTranscoder::videoEncoder() const
 {
     if (!d->vfilter)
-        return 0;
+        return nullptr;
     return d->vfilter->encoder();
 }
 
@@ -207,7 +207,7 @@ bool AVTranscoder::createAudioEncoder(const QString &name)
 AudioEncoder* AVTranscoder::audioEncoder() const
 {
     if (!d->afilter)
-        return 0;
+        return nullptr;
     return d->afilter->encoder();
 }
 
@@ -374,7 +374,7 @@ void AVTranscoder::writeVideo(const QtAV::Packet &packet)
     Q_EMIT videoFrameEncoded(packet.pts);
     // TODO: startpts, duration, encoded size
     d->encoded_frames++;
-    printf("encoded frames: %d, @%.3f pos: %lld\r", d->encoded_frames, packet.pts, packet.position);fflush(0);
+    printf("encoded frames: %d, @%.3f pos: %lld\r", d->encoded_frames, packet.pts, packet.position);fflush(nullptr);
 }
 
 void AVTranscoder::tryFinish()

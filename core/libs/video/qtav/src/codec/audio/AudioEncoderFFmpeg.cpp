@@ -69,7 +69,7 @@ public:
 
         // NULL: codec-specific defaults won't be initialized, which may result in suboptimal default settings (this is important mainly for encoders, e.g. libx264).
 
-        avctx = avcodec_alloc_context3(NULL);
+        avctx = avcodec_alloc_context3(nullptr);
     }
 
     bool open()  override;
@@ -112,7 +112,7 @@ bool AudioEncoderFFmpegPrivate::open()
     if (avctx)
     {
         avcodec_free_context(&avctx);
-        avctx = 0;
+        avctx = nullptr;
     }
 
     avctx       = avcodec_alloc_context3(codec);
@@ -236,7 +236,7 @@ AudioEncoderId AudioEncoderFFmpeg::id() const
 bool AudioEncoderFFmpeg::encode(const AudioFrame &frame)
 {
     DPTR_D(AudioEncoderFFmpeg);
-    AVFrame* f = NULL;
+    AVFrame* f = nullptr;
 
     if (frame.isValid())
     {

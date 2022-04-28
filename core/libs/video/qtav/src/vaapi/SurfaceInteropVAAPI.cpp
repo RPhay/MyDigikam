@@ -72,7 +72,7 @@ bool checkEGL_DMA()
 
 #   ifndef QT_NO_OPENGL
 
-    static const char* eglexts[] = { "EGL_EXT_image_dma_buf_import", NULL};
+    static const char* eglexts[] = { "EGL_EXT_image_dma_buf_import", nullptr};
 
     return OpenGLHelper::hasExtensionEGL(eglexts);
 
@@ -88,7 +88,7 @@ bool checkEGL_Pixmap()
 
 #   ifndef QT_NO_OPENGL
 
-    static const char* eglexts[] = { "EGL_KHR_image_pixmap", NULL};
+    static const char* eglexts[] = { "EGL_KHR_image_pixmap", nullptr};
 
     return OpenGLHelper::hasExtensionEGL(eglexts);
 
@@ -107,27 +107,27 @@ void SurfaceInteropVAAPI::setSurface(const surface_ptr& surface,  int w, int h)
 void* SurfaceInteropVAAPI::map(SurfaceType type, const VideoFormat &fmt, void *handle, int plane)
 {
     if (!handle)
-        return NULL;
+        return nullptr;
 /*
     if (!fmt.isRGB())
         return 0;
 */
     if (!m_surface)
-        return 0;
+        return nullptr;
 
     if      (type == GLTextureSurface)
     {
         if (m_resource->map(m_surface, *((GLuint*)handle), frame_width, frame_height, plane))
             return handle;
 
-        return NULL;
+        return nullptr;
     }
     else if (type == HostMemorySurface)
     {
         return mapToHost(fmt, handle, plane);
     }
 
-    return NULL;
+    return nullptr;
 }
 
 void SurfaceInteropVAAPI::unmap(void *handle)
@@ -151,20 +151,20 @@ void* SurfaceInteropVAAPI::mapToHost(const VideoFormat &format, void *handle, in
     va_new_image(m_surface->vadisplay(), fcc, &image, m_surface->width(), m_surface->height());
 
     if (image.image_id == VA_INVALID_ID)
-        return NULL;
+        return nullptr;
 
     void* p_base;
-    VA_ENSURE(vaGetImage(m_surface->vadisplay(), m_surface->get(), 0, 0, m_surface->width(), m_surface->height(), image.image_id), NULL);
-    VA_ENSURE(vaMapBuffer(m_surface->vadisplay(), image.buf, &p_base), NULL); // TODO: destroy image before return
+    VA_ENSURE(vaGetImage(m_surface->vadisplay(), m_surface->get(), 0, 0, m_surface->width(), m_surface->height(), image.image_id), nullptr);
+    VA_ENSURE(vaMapBuffer(m_surface->vadisplay(), image.buf, &p_base), nullptr); // TODO: destroy image before return
     VideoFormat::PixelFormat pixfmt = pixelFormatFromVA(image.format.fourcc);
     bool swap_uv = (image.format.fourcc != VA_FOURCC_NV12);
 
     if (pixfmt == VideoFormat::Format_Invalid)
     {
         qCWarning(DIGIKAM_QTAV_LOG_WARN).noquote() << QString::asprintf("unsupported vaapi pixel format: %#x", image.format.fourcc);
-        VA_ENSURE(vaDestroyImage(m_surface->vadisplay(), image.image_id), NULL);
+        VA_ENSURE(vaDestroyImage(m_surface->vadisplay(), image.image_id), nullptr);
 
-        return NULL;
+        return nullptr;
     }
 
     const VideoFormat fmt(pixfmt);
@@ -244,7 +244,7 @@ protected:
 public:
 
     X11()
-        : display(NULL),
+        : display(nullptr),
           pixmap(0)
     {
     }
@@ -311,8 +311,8 @@ protected:
 
 //static PFNEGLQUERYNATIVEDISPLAYNVPROC eglQueryNativeDisplayNV = NULL;
 
-static PFNEGLCREATEIMAGEKHRPROC eglCreateImageKHR = NULL;
-static PFNEGLDESTROYIMAGEKHRPROC eglDestroyImageKHR = NULL;
+static PFNEGLCREATEIMAGEKHRPROC eglCreateImageKHR = nullptr;
+static PFNEGLDESTROYIMAGEKHRPROC eglDestroyImageKHR = nullptr;
 
 #   ifndef GL_OES_EGL_image
 
@@ -321,7 +321,7 @@ typedef void (EGLAPIENTRYP PFNGLEGLIMAGETARGETTEXTURE2DOESPROC) (GLenum target, 
 
 #   endif
 
-static PFNGLEGLIMAGETARGETTEXTURE2DOESPROC glEGLImageTargetTexture2DOES = NULL;
+static PFNGLEGLIMAGETARGETTEXTURE2DOESPROC glEGLImageTargetTexture2DOES = nullptr;
 
 class X11_EGL final: public X11
 {
@@ -377,7 +377,7 @@ public:
             dpy = eglGetCurrentDisplay();
         }
 
-        EGL_ENSURE(image[0] = eglCreateImageKHR(dpy, EGL_NO_CONTEXT, EGL_NATIVE_PIXMAP_KHR, (EGLClientBuffer)pixmap, NULL), false);
+        EGL_ENSURE(image[0] = eglCreateImageKHR(dpy, EGL_NO_CONTEXT, EGL_NATIVE_PIXMAP_KHR, (EGLClientBuffer)pixmap, nullptr), false);
 
         return true;
     }
@@ -398,15 +398,15 @@ public:
 typedef void (*glXBindTexImageEXT_t)(Display *dpy, GLXDrawable draw, int buffer, int *a);
 typedef void (*glXReleaseTexImageEXT_t)(Display *dpy, GLXDrawable draw, int buffer);
 
-static glXReleaseTexImageEXT_t glXReleaseTexImageEXT = 0;
-static glXBindTexImageEXT_t glXBindTexImageEXT       = 0;
+static glXReleaseTexImageEXT_t glXReleaseTexImageEXT = nullptr;
+static glXBindTexImageEXT_t glXBindTexImageEXT       = nullptr;
 
 class X11_GLX final : public X11
 {
 public:
 
     X11_GLX()
-        : fbc(0),
+        : fbc(nullptr),
           glxpixmap(0)
     {
     }
@@ -436,14 +436,14 @@ public:
             display = (Display*)glXGetCurrentDisplay(); // use for all and not x11info
 
             if (!display)
-                return 0;
+                return nullptr;
         }
 
         int xscr           = DefaultScreen(display);
         const char* glxext = glXQueryExtensionsString((::Display*)display, xscr);
 
         if (!glxext || !strstr(glxext, "GLX_EXT_texture_from_pixmap"))
-            return 0;
+            return nullptr;
 
         RESOLVE_GLX(glXBindTexImageEXT);
         RESOLVE_GLX(glXReleaseTexImageEXT);
@@ -470,7 +470,7 @@ public:
         if (!fbcount)
         {
             qCWarning(DIGIKAM_QTAV_LOG_WARN).noquote() << QString::asprintf("No texture-from-pixmap support");
-            return 0;
+            return nullptr;
         }
 
         if (fbcount)
@@ -503,7 +503,7 @@ public:
 
     void bindTexture() override
     {
-        glXBindTexImageEXT(display, glxpixmap, GLX_FRONT_EXT, NULL);
+        glXBindTexImageEXT(display, glxpixmap, GLX_FRONT_EXT, nullptr);
     }
 
     GLXFBConfig fbc;
@@ -515,10 +515,10 @@ public:
 X11InteropResource::X11InteropResource()
     : InteropResource()
     , VAAPI_X11()
-    , xdisplay(NULL)
+    , xdisplay(nullptr)
     , width(0)
     , height(0)
-    , x11(NULL)
+    , x11(nullptr)
 {
     qCDebug(DIGIKAM_QTAV_LOG).noquote() << QString::asprintf("X11InteropResource");
 }
@@ -597,7 +597,7 @@ bool X11InteropResource::map(const surface_ptr& surface, GLuint tex, int w, int 
     VAWARN(vaPutSurface(surface->vadisplay(), surface->get(), x11->pixmap
                                 , 0, 0, w, h
                                 , 0, 0, w, h
-                                , NULL, 0, VA_FRAME_PICTURE | surface->colorSpace())
+                                , nullptr, 0, VA_FRAME_PICTURE | surface->colorSpace())
     );
 
     XSync((::Display*)xdisplay, False);
@@ -680,7 +680,7 @@ public:
             dpy = eglGetCurrentDisplay();
         }
 
-        EGL_ENSURE(image[plane] = eglCreateImageKHR(eglGetCurrentDisplay(), EGL_NO_CONTEXT, EGL_LINUX_DMA_BUF_EXT, NULL, attrib_list), false);
+        EGL_ENSURE(image[plane] = eglCreateImageKHR(eglGetCurrentDisplay(), EGL_NO_CONTEXT, EGL_LINUX_DMA_BUF_EXT, nullptr, attrib_list), false);
 
         return true;
     }
@@ -697,7 +697,7 @@ public:
 EGLInteropResource::EGLInteropResource()
     : InteropResource()
     , vabuf_handle(0)
-    , egl(0)
+    , egl(nullptr)
 {
     va_image.buf = va_image.image_id = VA_INVALID_ID;
 }
@@ -845,7 +845,7 @@ bool EGLInteropResource::ensure()
         if (!vaapi::checkEGL_DMA())
             return false;
 
-        static const char* glexts[] = { "GL_OES_EGL_image", 0 };
+        static const char* glexts[] = { "GL_OES_EGL_image", nullptr };
 
         if (!OpenGLHelper::hasExtension(glexts))
         {

@@ -61,7 +61,7 @@ static const char* names[] =
 #endif
 
     "OpenAL", // blackberry
-    NULL
+    nullptr
 };
 
 typedef ::capi::dso user_dso;

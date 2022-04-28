@@ -38,7 +38,7 @@ namespace QtAV
 {
 
 GeometryRenderer::GeometryRenderer()
-    : g(NULL)
+    : g(nullptr)
     , features_(kVBO | kIBO | kVAO | kMapBuffer)
     , vbo_size(0)
     , ibo_size(0)
@@ -121,7 +121,7 @@ void GeometryRenderer::updateGeometry(Geometry *geo)
 
     if (support_map < 0)
     {
-        static const char* ext[] = { "GL_OES_mapbuffer", NULL};
+        static const char* ext[] = { "GL_OES_mapbuffer", nullptr};
 
         if (OpenGLHelper::isOpenGLES())
         {
@@ -152,7 +152,7 @@ void GeometryRenderer::updateGeometry(Geometry *geo)
 
         if (bs == ibo_size)
         {
-            void * p = NULL;
+            void * p = nullptr;
 
             if (support_map && testFeatures(kMapBuffer))
                 p = ibo.map(QOpenGLBuffer::WriteOnly);
@@ -197,7 +197,7 @@ void GeometryRenderer::updateGeometry(Geometry *geo)
         {
             // vbo.size() error 0x501 on rpi, and query gl value can be slow
 
-            void* p = NULL;
+            void* p = nullptr;
 
             if (support_map && testFeatures(kMapBuffer))
                 p = vbo.map(QOpenGLBuffer::WriteOnly);
@@ -321,7 +321,7 @@ void GeometryRenderer::bindBuffers()
     if (bind_vbo)
     {
         vbo.bind();
-        vdata = NULL;
+        vdata = nullptr;
     }
 
     for (int an = 0 ; an < g->attributes().size() ; ++an)
@@ -385,7 +385,7 @@ void GeometryRenderer::render()
 
     if (g->indexCount() > 0)
     {
-        DYGL(glDrawElements(g->primitive(), g->indexCount(), g->indexType(), ibo.isCreated() ? NULL : g->indexData())); // null: data in vao or ibo. not null: data in memory
+        DYGL(glDrawElements(g->primitive(), g->indexCount(), g->indexType(), ibo.isCreated() ? nullptr : g->indexData())); // null: data in vao or ibo. not null: data in memory
     }
     else
     {

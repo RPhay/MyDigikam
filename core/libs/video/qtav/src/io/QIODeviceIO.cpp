@@ -43,7 +43,7 @@ public:
 
     QIODeviceIOPrivate()
         : MediaIOPrivate()
-        , dev(0)
+        , dev(nullptr)
     {
     }
 

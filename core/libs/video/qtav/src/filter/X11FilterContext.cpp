@@ -47,13 +47,13 @@ namespace QtAV
 
 X11FilterContext::X11FilterContext()
     : VideoFilterContext()
-    , doc(0)
-    , cvt(0)
-    , display(0)
-    , gc(0)
+    , doc(nullptr)
+    , cvt(nullptr)
+    , display(nullptr)
+    , gc(nullptr)
     , drawable(0)
-    , text_img(0)
-    , mask_img(0)
+    , text_img(nullptr)
+    , mask_img(nullptr)
     , mask_pix(0)
     , plain(0)
 {
@@ -65,13 +65,13 @@ X11FilterContext::~X11FilterContext()
     if (doc)
     {
         delete doc;
-        doc = 0;
+        doc = nullptr;
     }
 
     if (cvt)
     {
         delete cvt;
-        cvt = 0;
+        cvt = nullptr;
     }
 
     resetX11();
@@ -87,16 +87,16 @@ void X11FilterContext::destroyX11Resources()
 
     if (mask_img)
     {
-        ((::XImage*)mask_img)->data = 0; // pointed to qimage data
+        ((::XImage*)mask_img)->data = nullptr; // pointed to qimage data
         XDestroyImage((::XImage*)mask_img);
-        mask_img                    = 0;
+        mask_img                    = nullptr;
     }
 
     if (text_img)
     {
-        ((::XImage*)text_img)->data = 0; // pointed to qimage data
+        ((::XImage*)text_img)->data = nullptr; // pointed to qimage data
         XDestroyImage((::XImage*)text_img);
-        text_img                    = 0;
+        text_img                    = nullptr;
     }
 }
 
@@ -133,7 +133,7 @@ void X11FilterContext::renderTextImageX11(QImage *img, const QPointF &pos)
 
         // force the stride to ensure we can safely set ximage data ptr to qimage data ptr
 
-        mask_img = (XImage*)XCreateImage((::Display*)display, xwa.visual, 1, ZPixmap, 0, NULL, mask_q.width(), mask_q.height(), 8, mask_q.bytesPerLine());
+        mask_img = (XImage*)XCreateImage((::Display*)display, xwa.visual, 1, ZPixmap, 0, nullptr, mask_q.width(), mask_q.height(), 8, mask_q.bytesPerLine());
 
         if (!mask_img)
         {
@@ -145,11 +145,11 @@ void X11FilterContext::renderTextImageX11(QImage *img, const QPointF &pos)
 
         // force the stride to ensure we can safely set ximage data ptr to qimage data ptr
 
-        text_img     = (XImage*)XCreateImage((::Display*)display, xwa.visual, xwa.depth, ZPixmap, 0, NULL, img->width(), img->height(), 8, img->bytesPerLine());
+        text_img     = (XImage*)XCreateImage((::Display*)display, xwa.visual, xwa.depth, ZPixmap, 0, nullptr, img->width(), img->height(), 8, img->bytesPerLine());
         ((::XImage*)text_img)->data = (char*)img->constBits();
 
         mask_pix     = XCreatePixmap((::Display*)display, drawable, ((::XImage*)mask_img)->width, ((::XImage*)mask_img)->height, ((::XImage*)mask_img)->depth);
-        ::GC mask_gc = XCreateGC((::Display*)display, (::Pixmap)mask_pix, 0, NULL);
+        ::GC mask_gc = XCreateGC((::Display*)display, (::Pixmap)mask_pix, 0, nullptr);
         XPutImage((::Display*)display, mask_pix, mask_gc, (::XImage*)mask_img, 0,0,0,0, ((::XImage*)mask_img)->width, ((::XImage*)mask_img)->height);
     }
 
@@ -222,7 +222,7 @@ void X11FilterContext::drawPlainText(const QPointF &pos, const QString &text)
 {
     if (text == this->text && plain && mask_pix)
     {
-        renderTextImageX11(0, pos);
+        renderTextImageX11(nullptr, pos);
         return;
     }
 
@@ -266,7 +266,7 @@ void X11FilterContext::drawPlainText(const QRectF &rect, int flags, const QStrin
 
     if (text == this->text && plain && mask_pix)
     {
-        renderTextImageX11(0, br.topLeft());
+        renderTextImageX11(nullptr, br.topLeft());
         return;
     }
 
@@ -289,7 +289,7 @@ void X11FilterContext::drawRichText(const QRectF &rect, const QString &text, boo
 
     if (text == this->text && plain && mask_pix)
     {
-        renderTextImageX11(0, rect.topLeft());
+        renderTextImageX11(nullptr, rect.topLeft());
         return;
     }
 

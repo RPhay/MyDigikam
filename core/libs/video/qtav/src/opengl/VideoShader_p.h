@@ -75,7 +75,7 @@ public:
         : owns_program(false)
         , rebuild_program(false)
         , update_builtin_uniforms(true)
-        , program(0)
+        , program(nullptr)
         , u_Matrix(-1)
         , u_colorMatrix(-1)
         , u_to8(-1)
@@ -99,7 +99,7 @@ public:
             delete program;
         }
 
-        program = 0;
+        program = nullptr;
     }
 
     bool owns_program; // shader program is not created by this. e.g. scene graph create it's own program and we store it here

@@ -35,7 +35,7 @@ namespace ass
 
 #ifdef CAPI_LINK_ASS
 
-api::api()               { dll = 0;     }
+api::api()               { dll = nullptr;     }
 api::~api()              {              }
 bool api::loaded() const { return true; }
 

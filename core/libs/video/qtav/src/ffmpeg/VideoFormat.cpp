@@ -78,7 +78,7 @@ public:
         , bpp(0)
         , bpp_pad(0)
         , bpc(0)
-        , pixdesc(0)
+        , pixdesc(nullptr)
     {
         if (fmt == VideoFormat::Format_Invalid)
         {
@@ -99,7 +99,7 @@ public:
         , bpp(0)
         , bpp_pad(0)
         , bpc(0)
-        , pixdesc(0)
+        , pixdesc(nullptr)
     {
         init(fmt);
     }
@@ -112,7 +112,7 @@ public:
         , bpp(0)
         , bpp_pad(0)
         , bpc(0)
-        , pixdesc(0)
+        , pixdesc(nullptr)
     {
         init(fmt);
     }
@@ -521,7 +521,7 @@ QVector<int> VideoFormat::pixelFormatsFFmpeg()
 
     if (sFmts.isEmpty())
     {
-        const AVPixFmtDescriptor *desc = NULL;
+        const AVPixFmtDescriptor *desc = nullptr;
 
         while ((desc = av_pix_fmt_desc_next(desc)))
         {

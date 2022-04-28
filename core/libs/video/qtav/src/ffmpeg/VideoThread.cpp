@@ -53,8 +53,8 @@ public:
         AVThreadPrivate()
       , force_fps(0)
       , force_dt(0)
-      , capture(0)
-      , filter_context(0)
+      , capture(nullptr)
+      , filter_context(nullptr)
     {
     }
 
@@ -65,7 +65,7 @@ public:
         if (filter_context)
         {
             delete filter_context;
-            filter_context = 0;
+            filter_context = nullptr;
         }
     }
 
@@ -284,7 +284,7 @@ bool VideoThread::deliverVideoFrame(VideoFrame &frame)
 
     d.outputSet->lock();
     QList<AVOutput *> outputs = d.outputSet->outputs();
-    VideoRenderer *vo = 0;
+    VideoRenderer *vo = nullptr;
 
     if (!outputs.isEmpty())
         vo = static_cast<VideoRenderer*>(outputs.first());
@@ -372,7 +372,7 @@ void VideoThread::run()
 
     // bool wait_audio_drain
 
-    const char* pkt_data     = NULL; // workaround for libav9 decode fail but error code >= 0
+    const char* pkt_data     = nullptr; // workaround for libav9 decode fail but error code >= 0
     qint64 last_deliver_time = 0;
     int sync_id              = 0;
 

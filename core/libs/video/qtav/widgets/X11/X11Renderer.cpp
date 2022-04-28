@@ -72,7 +72,7 @@ class X11Renderer: public QWidget,
 
 public:
 
-    X11Renderer(QWidget* parent = 0, Qt::WindowFlags f = Qt::WindowFlags(Qt::Widget));
+    X11Renderer(QWidget* parent = nullptr, Qt::WindowFlags f = Qt::WindowFlags(Qt::Widget));
 
     VideoRendererId id() const override;
     bool isSupported(VideoFormat::PixelFormat pixfmt) const override;
@@ -212,7 +212,7 @@ public:
       , ShmCompletionWaitCount(0)
       , current_index(0)
       , next_index(0)
-      , gc(NULL)
+      , gc(nullptr)
       , pixfmt(VideoFormat::Format_Invalid)
       , frame_changed(false)
     {
@@ -227,7 +227,7 @@ public:
 
         //XvQueryExtension()
 
-        char* dispName = XDisplayName(NULL);
+        char* dispName = XDisplayName(nullptr);
         qCDebug(DIGIKAM_QTAVWIDGETS_LOG).noquote() << QString::asprintf("X11 open display: %s", dispName);
         display = XOpenDisplay(dispName);
 
@@ -249,7 +249,7 @@ public:
             return;
         }
 
-        XImage *ximg = NULL;
+        XImage *ximg = nullptr;
 
         if (depth != 15 && depth != 16 && depth != 24 && depth != 32)
         {
@@ -311,7 +311,7 @@ public:
             if (shm.shmaddr)
             {
                 XShmDetach(display, &shm);
-                shmctl(shm.shmid, IPC_RMID, 0);
+                shmctl(shm.shmid, IPC_RMID, nullptr);
                 shmdt(shm.shmaddr);
             }
         }
@@ -321,12 +321,12 @@ public:
         if (ximage)
         {
             if (!ximage_data[index].isEmpty())
-                ximage->data = NULL; // we point it to our own data if shm is not used
+                ximage->data = nullptr; // we point it to our own data if shm is not used
 
             XDestroyImage(ximage);
         }
 
-        ximage_pool[index] = NULL;
+        ximage_pool[index] = nullptr;
         ximage_data[index].clear();
     }
 
@@ -335,10 +335,10 @@ public:
         if (gc)
         {
             XFreeGC(display, gc);
-            gc = 0;
+            gc = nullptr;
         }
 
-        gc = XCreateGC(display, q_func().winId(), 0, 0); // DefaultRootWindow
+        gc = XCreateGC(display, q_func().winId(), 0, nullptr); // DefaultRootWindow
 
         if (!gc)
         {
@@ -387,7 +387,7 @@ public:
 
         // data seems not aligned
 
-        ximage = XShmCreateImage(display, vinfo.visual, depth, ZPixmap, NULL, &shm, w, h);
+        ximage = XShmCreateImage(display, vinfo.visual, depth, ZPixmap, nullptr, &shm, w, h);
 
         if (!ximage)
         {
@@ -403,15 +403,15 @@ public:
             goto no_shm;
         }
 
-        shm.shmaddr = (char *)shmat(shm.shmid, 0, 0);
+        shm.shmaddr = (char *)shmat(shm.shmid, nullptr, 0);
 
         if (shm.shmaddr == (char*)-1)
         {
             if (!ximage_data[index].isEmpty())
-                   ximage->data = NULL;
+                   ximage->data = nullptr;
 
             XDestroyImage(ximage);
-            ximage = NULL;
+            ximage = nullptr;
             ximage_data[index].clear();
             qCWarning(DIGIKAM_QTAVWIDGETS_LOG_WARN).noquote() << QString::asprintf("Shared memory error,disabling ( seg id error )");
             goto no_shm;
@@ -427,7 +427,7 @@ public:
         }
 
         XSync(display, False);
-        shmctl(shm.shmid, IPC_RMID, 0);
+        shmctl(shm.shmid, IPC_RMID, nullptr);
         pixfmt = pixelFormat(ximage);
 
         return true;
@@ -435,13 +435,13 @@ public:
 no_shm:
 
         ShmCompletionEvent = 0;
-        ximage             = XCreateImage(display, vinfo.visual, depth, ZPixmap, 0, NULL, w, h, 8, 0);
+        ximage             = XCreateImage(display, vinfo.visual, depth, ZPixmap, 0, nullptr, w, h, 8, 0);
 
         if (!ximage)
             return false;
 
         pixfmt       = pixelFormat(ximage);
-        ximage->data = NULL;
+        ximage->data = nullptr;
         XSync(display, False);
 
         // TODO: align 16 or?
@@ -622,7 +622,7 @@ int X11RendererPrivate::resizeXImage(int index)
 
 QPaintEngine* X11Renderer::paintEngine() const
 {
-    return 0; // use native engine
+    return nullptr; // use native engine
 }
 
 void X11Renderer::drawBackground()

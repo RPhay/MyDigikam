@@ -74,7 +74,7 @@ public:
         , update_text(true)
         , update_image(true)
         , last_can_render(false)
-        , processor(0)
+        , processor(nullptr)
         , codec("AutoDetect")
         , t(0)
         , delay(0)
@@ -88,7 +88,7 @@ public:
         QMutexLocker lock(&mutex);
         Q_UNUSED(lock);
         loaded        = false;
-        processor     = 0;
+        processor     = nullptr;
         update_text   = true;
         update_image  = true;
         t             = 0;
@@ -176,7 +176,7 @@ Subtitle::~Subtitle()
     if (priv)
     {
         delete priv;
-        priv = 0;
+        priv = nullptr;
     }
 }
 
@@ -1102,7 +1102,7 @@ QByteArray Subtitle::Private::readFromFile(const QString &path)
 
 bool Subtitle::Private::processRawData(const QByteArray &data)
 {
-    processor = 0;
+    processor = nullptr;
     frames.clear();
 
     if (data.size() > kMaxSubtitleSize)
@@ -1188,7 +1188,7 @@ bool Subtitle::Private::processRawData(SubtitleProcessor *sp, const QByteArray &
 
 SubtitleAPIProxy::SubtitleAPIProxy(QObject* obj)
     : m_obj(obj)
-    , m_s(0)
+    , m_s(nullptr)
 {
 }
 

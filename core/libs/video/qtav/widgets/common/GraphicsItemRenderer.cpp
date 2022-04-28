@@ -91,7 +91,7 @@ public:
 
         if (!opengl)
         {
-            glv.setOpenGLContext(0); // it's for Qt4. may not in rendering thread
+            glv.setOpenGLContext(nullptr); // it's for Qt4. may not in rendering thread
 
             return false;
         }
@@ -242,7 +242,7 @@ OpenGLVideo* GraphicsItemRenderer::opengl() const
 
 #endif
 
-    return NULL;
+    return nullptr;
 }
 
 void GraphicsItemRenderer::paint(QPainter *painter, const QStyleOptionGraphicsItem *option, QWidget *widget)
@@ -275,10 +275,10 @@ void GraphicsItemRenderer::paint(QPainter *painter, const QStyleOptionGraphicsIt
     painter->endNativePainting();
     painter->restore();
 
-    d.painter = 0; // painter may be not available outside this function
+    d.painter = nullptr; // painter may be not available outside this function
 
     if (ctx)
-        ctx->painter = 0;
+        ctx->painter = nullptr;
 }
 
 void GraphicsItemRenderer::drawBackground()

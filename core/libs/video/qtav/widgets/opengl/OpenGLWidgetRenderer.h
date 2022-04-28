@@ -67,7 +67,7 @@ class QTAV_WIDGETS_EXPORT OpenGLWidgetRenderer : public QOpenGLWidget,
 
 public:
 
-    explicit OpenGLWidgetRenderer(QWidget* parent = 0, Qt::WindowFlags f = Qt::WindowFlags(Qt::Widget));
+    explicit OpenGLWidgetRenderer(QWidget* parent = nullptr, Qt::WindowFlags f = Qt::WindowFlags(Qt::Widget));
     virtual VideoRendererId id() const override;
 
     virtual QWidget* widget() override

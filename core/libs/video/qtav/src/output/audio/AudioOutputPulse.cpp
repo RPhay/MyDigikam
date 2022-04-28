@@ -55,7 +55,7 @@ class AudioOutputPulse final : public AudioOutputBackend
 {
 public:
 
-    AudioOutputPulse(QObject *parent = 0);
+    AudioOutputPulse(QObject *parent = nullptr);
 
     QString name()                const final
     {
@@ -356,7 +356,7 @@ bool AudioOutputPulse::init(const AudioFormat &format)
 
     // TODO: host property
 
-    pa_context_connect(ctx, NULL, PA_CONTEXT_NOFLAGS, NULL);
+    pa_context_connect(ctx, nullptr, PA_CONTEXT_NOFLAGS, nullptr);
     pa_context_set_state_callback(ctx, AudioOutputPulse::contextStateCallback, this);
 
     while (true)
@@ -381,7 +381,7 @@ bool AudioOutputPulse::init(const AudioFormat &format)
                                  PA_SUBSCRIPTION_MASK_CARD |
                                  PA_SUBSCRIPTION_MASK_SINK |
                                  PA_SUBSCRIPTION_MASK_SINK_INPUT),
-                         NULL, NULL);
+                         nullptr, nullptr);
     // pa_sample_spec
     // setup format
 
@@ -434,7 +434,7 @@ bool AudioOutputPulse::init(const AudioFormat &format)
     // PA_STREAM_NOT_MONOTONIC?
     pa_stream_flags_t flags = pa_stream_flags_t(PA_STREAM_NOT_MONOTONIC|PA_STREAM_INTERPOLATE_TIMING|PA_STREAM_AUTO_TIMING_UPDATE);
 
-    if (pa_stream_connect_playback(stream, NULL /*sink*/, &ba, flags, NULL, NULL) < 0)
+    if (pa_stream_connect_playback(stream, nullptr /*sink*/, &ba, flags, nullptr, nullptr) < 0)
     {
         qCWarning(DIGIKAM_QTAV_LOG_WARN).noquote() << QString::asprintf("PulseAudio failed: pa_stream_connect_playback");
 
@@ -473,9 +473,9 @@ AudioOutputPulse::AudioOutputPulse(QObject *parent)
                          |AudioOutput::SetVolume
                          |AudioOutput::SetMute
                          |AudioOutput::SetSampleRate, parent)
-    , loop(0)
-    , ctx(0)
-    , stream(0)
+    , loop(nullptr)
+    , ctx(nullptr)
+    , stream(nullptr)
     , writable_size(0)
 {
     //setDeviceFeatures(DeviceFeatures()|SetVolume|SetMute);
@@ -527,20 +527,20 @@ bool AudioOutputPulse::close()
     {
         pa_stream_disconnect(stream);
         pa_stream_unref(stream);
-        stream = NULL;
+        stream = nullptr;
     }
 
     if (ctx)
     {
         pa_context_disconnect(ctx);
         pa_context_unref(ctx);
-        ctx = NULL;
+        ctx = nullptr;
     }
 
     if (loop)
     {
         pa_threaded_mainloop_free(loop);
-        loop = NULL;
+        loop = nullptr;
     }
 
     return true;
@@ -575,7 +575,7 @@ bool AudioOutputPulse::write(const QByteArray &data)
 
     Q_UNUSED(palock);
 
-    PA_ENSURE_TRUE(pa_stream_write(stream, data.constData(), data.size(), NULL, 0LL, PA_SEEK_RELATIVE) >= 0, false);
+    PA_ENSURE_TRUE(pa_stream_write(stream, data.constData(), data.size(), nullptr, 0LL, PA_SEEK_RELATIVE) >= 0, false);
 
     writable_size -= data.size();
 
@@ -597,8 +597,8 @@ bool AudioOutputPulse::setVolume(qreal value)
     struct pa_cvolume vol; // TODO: per-channel volume
     pa_cvolume_reset(&vol, format.channels());
     pa_cvolume_set(&vol, format.channels(), pa_volume_t(value*qreal(PA_VOLUME_NORM)));
-    pa_operation *o = 0;
-    PA_ENSURE_TRUE((o = pa_context_set_sink_input_volume(ctx, stream_idx, &vol, NULL, NULL)) != NULL, false);
+    pa_operation *o = nullptr;
+    PA_ENSURE_TRUE((o = pa_context_set_sink_input_volume(ctx, stream_idx, &vol, nullptr, nullptr)) != nullptr, false);
     pa_operation_unref(o);
 
     return true;
@@ -623,8 +623,8 @@ bool AudioOutputPulse::setMute(bool value)
     Q_UNUSED(palock);
 
     uint32_t stream_idx = pa_stream_get_index(stream);
-    pa_operation *o = 0;
-    PA_ENSURE_TRUE((o = pa_context_set_sink_input_mute(ctx, stream_idx, value, NULL, NULL)) != NULL, false);
+    pa_operation *o = nullptr;
+    PA_ENSURE_TRUE((o = pa_context_set_sink_input_mute(ctx, stream_idx, value, nullptr, nullptr)) != nullptr, false);
     pa_operation_unref(o);
 
     return true;

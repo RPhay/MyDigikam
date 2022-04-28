@@ -132,7 +132,7 @@ scale_samples_func get_scaler(AudioFormat::SampleFormat fmt, qreal vol, int* vol
             return scale_samples<double>;
 
         default:
-            return 0;
+            return nullptr;
     }
 }
 
@@ -153,8 +153,8 @@ public:
       , play_pos(0)
       , processed_remain(0)
       , msecs_ahead(0)
-      , scale_samples(0)
-      , backend(0)
+      , scale_samples(nullptr)
+      , backend(nullptr)
       , update_backend(true)
       , index_enqueue(-1)
       , index_deuqueue(-1)
@@ -333,9 +333,9 @@ QStringList AudioOutput::backendsAvailable()
     if (!all.isEmpty())
         return all;
 
-    AudioOutputBackendId* i = NULL;
+    AudioOutputBackendId* i = nullptr;
 
-    while ((i = AudioOutputBackend::next(i)) != NULL)
+    while ((i = AudioOutputBackend::next(i)) != nullptr)
     {
         all.append(QLatin1String(AudioOutputBackend::name(*i)));
     }
@@ -366,7 +366,7 @@ void AudioOutput::setBackends(const QStringList &backendNames)
     {
         d.backend->close();
         delete d.backend;
-        d.backend = 0;
+        d.backend = nullptr;
     }
 
     // TODO: empty backends use dummy backend
@@ -384,7 +384,7 @@ void AudioOutput::setBackends(const QStringList &backendNames)
                 break;
 
             delete d.backend;
-            d.backend = NULL;
+            d.backend = nullptr;
         }
     }
 
@@ -490,7 +490,7 @@ bool AudioOutput::close()
 
     // TODO: drain() before close
 
-    d.backend->audio = 0;
+    d.backend->audio = nullptr;
 
     return d.backend->close();
 }
@@ -589,7 +589,7 @@ AudioFormat AudioOutput::setAudioFormat(const AudioFormat& format)
     if (!d.backend)
     {
         d.format = AudioFormat();
-        d.scale_samples = NULL;
+        d.scale_samples = nullptr;
 
         return AudioFormat();
     }
