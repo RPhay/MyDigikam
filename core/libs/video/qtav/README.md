@@ -100,3 +100,11 @@ UNMAINTAINED FEATURES:
 - IOS support.
 
 - Arm support.
+
+NOTES:
+
+- Only the Desktop features are maintained (MacOS, Linux, and Windows).
+
+- Compilation are processed with Continuous Integration : MSVC, FreeBSD, Suse Linux.
+
+- Compilation are processed with Continuous deployement : MacOS CLang, Windows MinGW (MXE), Linux GCC.
