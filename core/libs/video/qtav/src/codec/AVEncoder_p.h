@@ -89,8 +89,9 @@ class AudioEncoderPrivate : public AVEncoderPrivate
 public:
 
     AudioEncoderPrivate()
-        : AVEncoderPrivate()
-        , frame_size(0)
+        : AVEncoderPrivate(),
+          resampler(nullptr),
+          frame_size(0)
     {
         bit_rate = 64000;
     }
