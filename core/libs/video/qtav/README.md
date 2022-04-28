@@ -6,8 +6,11 @@ See the story for bugzilla: https://bugs.kde.org/show_bug.cgi?id=448681
 
 Code review with plenty of fixes and improvements:
 
-- [DONE] Compilation rules ported to improved and simplified CMake with usual Find scripts for dependencies.
-         See core/cmake/rules/RulesMediaPlayer.cmake and files in core/cmake/modules.
+- [DONE] Compilation rules ported to improved and simplified CMake :
+
+         - Use Find scripts to resolve dependencies.
+         - See core/cmake/rules/RulesMediaPlayer.cmake
+         - See files in core/cmake/modules.
 
 - [DONE] Fix all GCC 11 warnings.
 
@@ -40,17 +43,20 @@ Code review with plenty of fixes and improvements:
 - [DONE] Re-organize class files from QtAV by categories.
 
 - [DONE] Drop VDA support:
+
          - QTAV_HAVE_VDA=1 : codec/video/VideoDecoderVDA.cpp
          - FFMpeg::libavcodec/vda.h have been dropped from version 4.0 in favor of VideoToolbox Apple Framework.
          - See Changelog : https://github.com/FFmpeg/FFmpeg/blob/16463520d9de05481320303dd49ea5158c715c9f/Changelog#L310
 
 - [DONE] Use cmake to find DirectX and GDI+ dependencies (Native Windows only):
+
          - xaudio2
          - direct2d
          - d3d11va
          - dsound
          - gdiplus
          - dxva:
+
             - QTAV_HAVE_DXVA=1 : codec/video/VideoDecoderDXVA.cpp
             - Depends of FFMPEG::libavcodec/dxva2.h
             - See implementation : https://github.com/FFmpeg/FFmpeg/blob/master/libavcodec/dxva2.h
