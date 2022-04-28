@@ -158,7 +158,7 @@ void AudioOutputAudioToolbox::outCallback(void* inUserData, AudioQueueRef inAQ, 
 
 AudioOutputAudioToolbox::AudioOutputAudioToolbox(QObject *parent)
     : AudioOutputBackend(AudioOutput::DeviceFeatures() | AudioOutput::SetVolume, parent)
-    , m_queue(NULL)
+    , m_queue(nullptr)
     , m_waiting(false)
 {
     available = false;
@@ -185,7 +185,7 @@ void AudioOutputAudioToolbox::tryPauseTimeline()
     if (sem.available() == buffer_count)
     {
         AudioTimeStamp t;
-        AudioQueueGetCurrentTime(m_queue, NULL, &t, NULL);
+        AudioQueueGetCurrentTime(m_queue, nullptr, &t, nullptr);
         qCDebug(DIGIKAM_QTAV_LOG).noquote() << QString::asprintf("pause audio queue timeline @%.3f (sample time)/%lld (host time)", t.mSampleTime, t.mHostTime);
         AT_ENSURE(AudioQueuePause(m_queue));
     }
@@ -201,7 +201,7 @@ bool AudioOutputAudioToolbox::open()
     m_buffer.resize(buffer_count);
     m_desc = audioFormatToAT(format);
 
-    AT_ENSURE(AudioQueueNewOutput(&m_desc, AudioOutputAudioToolbox::outCallback, this, NULL, kCFRunLoopCommonModes/*NULL*/, 0, &m_queue), false);
+    AT_ENSURE(AudioQueueNewOutput(&m_desc, AudioOutputAudioToolbox::outCallback, this, nullptr, kCFRunLoopCommonModes/*nullptr*/, 0, &m_queue), false);
 
     for (int i = 0 ; i < m_buffer.size() ; ++i)
     {
@@ -232,7 +232,7 @@ bool AudioOutputAudioToolbox::close()
         AT_ENSURE(AudioQueueStop(m_queue, true), false);
 
     AT_ENSURE(AudioQueueDispose(m_queue, true), false); // dispose all resouces including buffers, so we can remove AudioQueueFreeBuffer
-    m_queue = NULL;
+    m_queue = nullptr;
     m_buffer.clear();
 
     return true;
@@ -248,7 +248,7 @@ bool AudioOutputAudioToolbox::write(const QByteArray& data)
     if (bufferControl() & CountCallback)
         sem.acquire();
 
-    AudioQueueBufferRef buf = NULL;
+    AudioQueueBufferRef buf = nullptr;
     {
         QMutexLocker locker(&m_mutex);
         Q_UNUSED(locker);
@@ -272,7 +272,7 @@ bool AudioOutputAudioToolbox::write(const QByteArray& data)
 
     //buf->mUserData
 
-    AT_ENSURE(AudioQueueEnqueueBuffer(m_queue, buf, 0, NULL), false);
+    AT_ENSURE(AudioQueueEnqueueBuffer(m_queue, buf, 0, nullptr), false);
 
     return true;
 }

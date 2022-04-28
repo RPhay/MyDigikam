@@ -250,7 +250,7 @@ void AVDecoder::setCodecContext(void *codecCtx)
     if (!d.codec_ctx)
         d.codec_ctx = avcodec_alloc_context3(nullptr);
 
-    // avcodec_alloc_context3(codec) equals to avcodec_alloc_context3(NULL) + avcodec_get_context_defaults3(codec), codec specified private data is initialized
+    // avcodec_alloc_context3(codec) equals to avcodec_alloc_context3(nullptr) + avcodec_get_context_defaults3(codec), codec specified private data is initialized
 
     if (!d.codec_ctx)
     {

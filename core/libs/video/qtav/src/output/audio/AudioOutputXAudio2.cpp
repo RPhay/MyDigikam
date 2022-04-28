@@ -158,7 +158,7 @@ AudioOutputXAudio2::AudioOutputXAudio2(QObject *parent)
     : AudioOutputBackend(AudioOutput::DeviceFeatures()|AudioOutput::SetVolume, parent)
     , xaudio2_winsdk(true)
     , uninit_com(false)
-    , source_voice(NULL)
+    , source_voice(nullptr)
     , queue_data_write(0)
 {
     memset(&dxsdk, 0, sizeof(dxsdk));
@@ -179,7 +179,7 @@ AudioOutputXAudio2::AudioOutputXAudio2(QObject *parent)
     // https://github.com/wang-bin/QtAV/issues/518
     // already initialized in qtcore for main thread. If RPC_E_CHANGED_MODE no ref is added, CoUninitialize can lead to crash
 
-    uninit_com = CoInitializeEx(NULL, COINIT_MULTITHREADED) != RPC_E_CHANGED_MODE;
+    uninit_com = CoInitializeEx(nullptr, COINIT_MULTITHREADED) != RPC_E_CHANGED_MODE;
 
     // load dll. < win8: XAudio2_7.DLL, <win10: XAudio2_8.DLL, win10: XAudio2_9.DLL. also defined by XAUDIO2_DLL_A in xaudio2.h
 
@@ -315,13 +315,13 @@ bool AudioOutputXAudio2::open()
         // TODO: parameters now default.
 
         DX_ENSURE_OK(winsdk.xaudio->CreateMasteringVoice(&winsdk.master, XAUDIO2_DEFAULT_CHANNELS, XAUDIO2_DEFAULT_SAMPLERATE), false);
-        DX_ENSURE_OK(winsdk.xaudio->CreateSourceVoice(&source_voice, &wf, flags, XAUDIO2_DEFAULT_FREQ_RATIO, this, NULL, NULL), false);
+        DX_ENSURE_OK(winsdk.xaudio->CreateSourceVoice(&source_voice, &wf, flags, XAUDIO2_DEFAULT_FREQ_RATIO, this, nullptr, nullptr), false);
         DX_ENSURE_OK(winsdk.xaudio->StartEngine(), false);
     }
     else
     {
         DX_ENSURE_OK(dxsdk.xaudio->CreateMasteringVoice(&dxsdk.master, XAUDIO2_DEFAULT_CHANNELS, XAUDIO2_DEFAULT_SAMPLERATE), false);
-        DX_ENSURE_OK(dxsdk.xaudio->CreateSourceVoice(&source_voice, &wf, flags, XAUDIO2_DEFAULT_FREQ_RATIO, this, NULL, NULL), false);
+        DX_ENSURE_OK(dxsdk.xaudio->CreateSourceVoice(&source_voice, &wf, flags, XAUDIO2_DEFAULT_FREQ_RATIO, this, nullptr, nullptr), false);
         DX_ENSURE_OK(dxsdk.xaudio->StartEngine(), false);
     }
 
@@ -344,7 +344,7 @@ bool AudioOutputXAudio2::close()
         source_voice->Stop(0, XAUDIO2_COMMIT_NOW);
         source_voice->FlushSourceBuffers();
         source_voice->DestroyVoice();
-        source_voice = NULL;
+        source_voice = nullptr;
     }
 
     if (xaudio2_winsdk)
@@ -352,7 +352,7 @@ bool AudioOutputXAudio2::close()
         if (winsdk.master)
         {
             winsdk.master->DestroyVoice();
-            winsdk.master = NULL;
+            winsdk.master = nullptr;
         }
         if (winsdk.xaudio)
             winsdk.xaudio->StopEngine();
@@ -362,7 +362,7 @@ bool AudioOutputXAudio2::close()
         if (dxsdk.master)
         {
             dxsdk.master->DestroyVoice();
-            dxsdk.master = NULL;
+            dxsdk.master = nullptr;
         }
 
         if (dxsdk.xaudio)
@@ -433,7 +433,7 @@ bool AudioOutputXAudio2::write(const QByteArray &data)
     if (queue_data_write == queue_data.size())
         queue_data_write = 0;
 
-    DX_ENSURE_OK(source_voice->SubmitSourceBuffer(&xb, NULL), false);
+    DX_ENSURE_OK(source_voice->SubmitSourceBuffer(&xb, nullptr), false);
 
     // TODO: XAUDIO2_E_DEVICE_INVALIDATED
 

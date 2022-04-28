@@ -70,7 +70,7 @@ public:
 
     void setShareContext(CUcontext c)
     {
-        ctx = c;
+        ctx       = c;
         share_ctx = !!c;
     }
 
@@ -133,7 +133,7 @@ typedef QSharedPointer<InteropResource> InteropResourcePtr;
 
 // avoid inheriting cuda_api because SurfaceInteropCUDA is frequently created and cuda functions are only used in mapToHost()
 
-class SurfaceInteropCUDA final: public VideoSurfaceInterop
+class SurfaceInteropCUDA final : public VideoSurfaceInterop
 {
 public:
 
@@ -164,19 +164,19 @@ public:
     /// GLTextureSurface only supports rgb32
 
     void* map(SurfaceType type, const VideoFormat& fmt, void* handle, int plane) override;
-    void unmap(void *handle) override;
+    void unmap(void *handle)                                                     override;
 
 private:
 
     // CUdeviceptr m_surface; // invalid in a different context
 
-    int m_index;
-    CUVIDPROCPARAMS m_param;
+    int                           m_index;
+    CUVIDPROCPARAMS               m_param;
 
     // decoder is deleted but interop is still alive
 
     QWeakPointer<InteropResource> m_resource;
-    int w, h, H;
+    int                           w, h, H;
 };
 
 #ifndef QT_NO_OPENGL
@@ -196,14 +196,14 @@ private:
 
     struct
     {
-        int index;
-        uchar* data;
-        int height;
-        int pitch;
+        int     index;
+        uchar*  data;
+        int     height;
+        int     pitch;
     } host_mem;
 };
 
-#endif //QT_NO_OPENGL
+#endif // QT_NO_OPENGL
 
 #if QTAV_HAVE(CUDA_EGL)
 
@@ -232,13 +232,15 @@ private:
     bool ensureD3D9CUDA(int w, int h, int W, int H); // check/update nv12 texture and register for cuda interoperation
     bool ensureD3D9EGL(int w, int h);
 
-    EGL* egl;
-    HINSTANCE dll9;
-    IDirect3D9 *d3d9;
-    IDirect3DDevice9 *device9;      // for CUDA
-    IDirect3DTexture9 *texture9;    // for EGL.
-    IDirect3DSurface9 *surface9;    // for EGL. size is frame size(visual size) for display
-    IDirect3DTexture9 *texture9_nv12;
+private:
+
+    EGL*                egl;
+    HINSTANCE           dll9;
+    IDirect3D9*         d3d9;
+    IDirect3DDevice9*   device9;        // for CUDA
+    IDirect3DTexture9*  texture9;       // for EGL.
+    IDirect3DSurface9*  surface9;       // for EGL. size is frame size(visual size) for display
+    IDirect3DTexture9*  texture9_nv12;
 
     // If size is coded size, crop when StretchRect. If frame size, crop in cuMemcpy2D for each plane
 
@@ -246,11 +248,11 @@ private:
     IDirect3DQuery9 *query9;
 };
 
-#endif //QTAV_HAVE(CUDA_EGL)
+#endif // QTAV_HAVE(CUDA_EGL)
 
 #if QTAV_HAVE(CUDA_GL)
 
-class GLInteropResource final: public InteropResource
+class GLInteropResource final : public InteropResource
 {
 
 public:
@@ -268,7 +270,7 @@ private:
     bool ensureResource(int w, int h, int H, GLuint tex, int plane);
 };
 
-#endif //QTAV_HAVE(CUDA_GL)
+#endif // QTAV_HAVE(CUDA_GL)
 
 } // namespace cuda
 

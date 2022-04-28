@@ -545,7 +545,7 @@ const char *get_codec_long_name(AVCodecID id);
         char str[AV_ERROR_MAX_STRING_SIZE]; \
         memset(str, 0, sizeof(str)); \
         av_strerror(ret, str, sizeof(str)); \
-        av_log(NULL, AV_LOG_WARNING, "Error " #FUNC " @%d " __FILE__ ": (%#x) %s\n", __LINE__, ret, str); \
+        av_log(nullptr, AV_LOG_WARNING, "Error " #FUNC " @%d " __FILE__ ": (%#x) %s\n", __LINE__, ret, str); \
         RETURN __VA_ARGS__; \
      } } while(0)
 

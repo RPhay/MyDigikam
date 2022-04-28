@@ -93,7 +93,7 @@ protected:
         const ALCchar *default_device = alcGetString(nullptr, ALC_DEFAULT_DEVICE_SPECIFIER);
 
         qCDebug(DIGIKAM_QTAV_LOG).noquote() << QString::asprintf("OpenAL opening default device: %s", default_device);
-        device = alcOpenDevice(nullptr); // parameter: NULL or default_device
+        device = alcOpenDevice(nullptr); // parameter: nullptr or default_device
 
         if (!device)
         {

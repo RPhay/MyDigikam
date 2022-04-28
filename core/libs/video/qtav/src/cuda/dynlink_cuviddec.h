@@ -148,7 +148,7 @@ typedef struct _CUVIDDECODECREATEINFO
     unsigned long ulTargetWidth;               /**< Post-processed Output Width (Should be aligned to 2) */
     unsigned long ulTargetHeight;              /**< Post-processed Output Height (Should be aligbed to 2) */
     unsigned long ulNumOutputSurfaces;         /**< Maximum number of output surfaces simultaneously mapped */
-    CUvideoctxlock vidLock;                    /**< If non-NULL, context lock used for synchronizing ownership of the cuda context */
+    CUvideoctxlock vidLock;                    /**< If non-nullptr, context lock used for synchronizing ownership of the cuda context */
     /**
     * target rectangle in the output frame (for aspect ratio conversion)
     * if a null rectangle is specified, {0,0,ulTargetWidth,ulTargetHeight} will be used
@@ -711,7 +711,7 @@ typedef struct _CUVIDPROCPARAMS
 /**
  *
  * Context-locking: to facilitate multi-threaded implementations, the following 4 functions
- * provide a simple mutex-style host synchronization. If a non-NULL context is specified
+ * provide a simple mutex-style host synchronization. If a non-nullptr context is specified
  * in CUVIDDECODECREATEINFO, the codec library will acquire the mutex associated with the given
  * context before making any cuda calls.
  * A multi-threaded application could create a lock associated with a context handle so that

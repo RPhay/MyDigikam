@@ -76,7 +76,7 @@ typedef enum CUctx_flags_enum
  */
 typedef enum CUstream_flags_enum {
     CU_STREAM_DEFAULT      = 0x0, /**< Default stream flag */
-    CU_STREAM_NON_BLOCKING = 0x1  /**< Stream does not synchronize with stream 0 (the NULL stream) */
+    CU_STREAM_NON_BLOCKING = 0x1  /**< Stream does not synchronize with stream 0 (the nullptr stream) */
 } CUstream_flags;
 
 /**

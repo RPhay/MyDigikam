@@ -92,7 +92,7 @@ bool isOpenGLES();
 /*!
  * \brief hasExtensionEGL
  * Test if any of the given extensions is supported
- * \param exts Ends with NULL
+ * \param exts Ends with nullptr
  * \return true if one of extension is supported
  */
 bool hasExtensionEGL(const char* exts[]);
@@ -112,7 +112,7 @@ bool useDeprecatedFormats();
 /*!
  * \brief hasExtension
  * Test if any of the given extensions is supported. Current OpenGL context must be valid.
- * \param exts Ends with NULL
+ * \param exts Ends with nullptr
  * \return true if one of extension is supported
  */
 bool hasExtension(const char* exts[]);

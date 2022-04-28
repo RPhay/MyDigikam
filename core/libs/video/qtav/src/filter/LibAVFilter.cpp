@@ -176,7 +176,7 @@ public:
         status = LibAVFilter::ConfigureOk;
 #if DBG_GRAPH
         //not available in libav9
-        const char* g = avfilter_graph_dump(filter_graph, NULL);
+        const char* g = avfilter_graph_dump(filter_graph, nullptr);
         if (g)
             qCDebug(DIGIKAM_QTAV_LOG).nospace() << "filter graph:\n" << g; // use << to not print special chars in qt5.5
         av_freep(&g);
@@ -296,7 +296,7 @@ QStringList LibAVFilter::registeredFilters(int type)
 #if AV_MODULE_CHECK(LIBAVFILTER, 3, 8, 0, 53, 100)
     while ((f = avfilter_next(f))) {
 #else
-    AVFilter** ff = NULL;
+    AVFilter** ff = nullptr;
     while ((ff = av_filter_next(ff)) && *ff) {
         f = (*ff);
 #endif

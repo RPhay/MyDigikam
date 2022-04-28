@@ -67,7 +67,7 @@ public:
     {
         avcodec_register_all();
 
-        // NULL: codec-specific defaults won't be initialized, which may result in suboptimal default settings (this is important mainly for encoders, e.g. libx264).
+        // nullptr: codec-specific defaults won't be initialized, which may result in suboptimal default settings (this is important mainly for encoders, e.g. libx264).
 
         avctx = avcodec_alloc_context3(nullptr);
     }
@@ -273,7 +273,7 @@ bool AudioEncoderFFmpeg::encode(const AudioFrame &frame)
 
     AVPacket pkt;
     av_init_packet(&pkt);
-    pkt.data       = (uint8_t*)d.buffer.constData(); // NULL
+    pkt.data       = (uint8_t*)d.buffer.constData(); // nullptr
     pkt.size       = d.buffer.size(); // 0
     int got_packet = 0;
     int ret        = avcodec_encode_audio2(d.avctx, &pkt, f, &got_packet);

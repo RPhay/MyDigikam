@@ -287,7 +287,7 @@ public:
         // FIXME: why crash?
         //cedarv->close(cedarv);
         //libcedarv_exit(cedarv);
-        cedarv = NULL;
+        cedarv = nullptr;
     }
     bool open()  override;
 
@@ -358,7 +358,7 @@ bool VideoDecoderCedarvPrivate::open()
     if (!cedarv) {
         int ret;
         cedarv = libcedarv_init(&ret);
-        if (ret < 0 || cedarv == NULL)
+        if (ret < 0 || cedarv == nullptr)
             return false;
     }
 

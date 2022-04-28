@@ -65,8 +65,8 @@ InteropResource* CreateInteropGL(IDirect3DDevice9 *dev)
 
 GLInteropResource::GLInteropResource(IDirect3DDevice9 *d3device)
     : InteropResource(d3device)
-    , interop_dev(NULL)
-    , interop_obj(NULL)
+    , interop_dev(nullptr)
+    , interop_obj(nullptr)
 {
 }
 
@@ -87,16 +87,16 @@ bool GLInteropResource::map(IDirect3DSurface9 *surface, GLuint tex, int w, int h
     // open/close and register/unregster in every map/unmap to ensure called in current context and avoid crash (tested on intel driver)
     // interop operations begin
 
-    WGL_ENSURE((interop_dev = gl().DXOpenDeviceNV(d3ddev)) != NULL, false);
+    WGL_ENSURE((interop_dev = gl().DXOpenDeviceNV(d3ddev)) != nullptr, false);
 
     // call in ensureResource or in map?
 
-    WGL_ENSURE((interop_obj = gl().DXRegisterObjectNV(interop_dev, dx_surface, tex, GL_TEXTURE_2D, WGL_ACCESS_READ_ONLY_NV)) != NULL, false);
+    WGL_ENSURE((interop_obj = gl().DXRegisterObjectNV(interop_dev, dx_surface, tex, GL_TEXTURE_2D, WGL_ACCESS_READ_ONLY_NV)) != nullptr, false);
 
     // prepare dx resources for gl
 
     const RECT src = { 0, 0, (~0-1)&w, (~0-1)&h}; // StretchRect does not supports odd values
-    DX_ENSURE_OK(d3ddev->StretchRect(surface, &src, dx_surface, NULL, D3DTEXF_NONE), false);
+    DX_ENSURE_OK(d3ddev->StretchRect(surface, &src, dx_surface, nullptr, D3DTEXF_NONE), false);
 
     // lock dx resources
 
@@ -121,8 +121,8 @@ bool GLInteropResource::unmap(GLuint tex)
     // interop operations end
 
     WGL_WARN(gl().DXCloseDeviceNV(interop_dev));
-    interop_obj = NULL;
-    interop_dev = NULL;
+    interop_obj = nullptr;
+    interop_dev = nullptr;
 
     return true;
 }
@@ -138,7 +138,7 @@ bool GLInteropResource::ensureResource(int w, int h, GLuint tex)
         return true;
 
     releaseDX();
-    HANDLE share_handle = NULL;
+    HANDLE share_handle = nullptr;
 
 #if QT_VERSION >= QT_VERSION_CHECK(5, 0, 0)
 

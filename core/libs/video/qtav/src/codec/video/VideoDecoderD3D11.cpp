@@ -285,7 +285,7 @@ VideoFrame VideoDecoderD3D11::frame()
     d.d3dctx->CopySubresourceRegion(d.texture_cpu.Get(), 0, 0, 0, 0,
                                     texture.Get()
                                     , view_desc.Texture2D.ArraySlice
-                                    , NULL);
+                                    , nullptr);
 
     struct ScopedMap
     {
@@ -324,7 +324,7 @@ bool VideoDecoderD3D11Private::createDevice()
 {
     // if (d3dviddev) return true;
 
-    PFN_D3D11_CREATE_DEVICE fCreateDevice = NULL;
+    PFN_D3D11_CREATE_DEVICE fCreateDevice = nullptr;
 
 #if defined(Q_OS_WINRT)
 
@@ -343,9 +343,9 @@ bool VideoDecoderD3D11Private::createDevice()
 
     // TODO: feature levels
 
-    DX_ENSURE(fCreateDevice(NULL, D3D_DRIVER_TYPE_HARDWARE, NULL,
-                            D3D11_CREATE_DEVICE_VIDEO_SUPPORT, NULL, 0,
-                            D3D11_SDK_VERSION, d3ddev.ReleaseAndGetAddressOf(), NULL,
+    DX_ENSURE(fCreateDevice(nullptr, D3D_DRIVER_TYPE_HARDWARE, nullptr,
+                            D3D11_CREATE_DEVICE_VIDEO_SUPPORT, nullptr, 0,
+                            D3D11_SDK_VERSION, d3ddev.ReleaseAndGetAddressOf(), nullptr,
                             d3dctx.ReleaseAndGetAddressOf()), false);
 
     ComPtr<ID3D10Multithread> mt;
@@ -426,7 +426,7 @@ bool VideoDecoderD3D11Private::createDecoder(AVCodecID codec_id, int w, int h, Q
     texDesc.BindFlags        = D3D11_BIND_DECODER;
     texDesc.CPUAccessFlags   = 0;
     ComPtr<ID3D11Texture2D> tex;
-    DX_ENSURE(d3ddev->CreateTexture2D(&texDesc, NULL, tex.GetAddressOf()), false);
+    DX_ENSURE(d3ddev->CreateTexture2D(&texDesc, nullptr, tex.GetAddressOf()), false);
 
     if (copy_mode != VideoDecoderFFmpegHW::ZeroCopy || !interop_res)
     {
@@ -439,7 +439,7 @@ bool VideoDecoderD3D11Private::createDecoder(AVCodecID codec_id, int w, int h, Q
         texDesc.Usage          = D3D11_USAGE_STAGING;
         texDesc.CPUAccessFlags = D3D11_CPU_ACCESS_READ;
         texDesc.BindFlags      = 0; // ?
-        DX_ENSURE(d3ddev->CreateTexture2D(&texDesc, NULL, &texture_cpu), false);
+        DX_ENSURE(d3ddev->CreateTexture2D(&texDesc, nullptr, &texture_cpu), false);
     }
 
     D3D11_VIDEO_DECODER_OUTPUT_VIEW_DESC viewDesc;

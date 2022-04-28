@@ -230,12 +230,12 @@ static int channelLayoutToMS(qint64 av)
 
 AudioOutputDSound::AudioOutputDSound(QObject *parent)
     : AudioOutputBackend(AudioOutput::DeviceFeatures()|AudioOutput::SetVolume, parent)
-    , dll(NULL)
-    , dsound(NULL)
-    , prim_buf(NULL)
-    , stream_buf(NULL)
-    , notify(NULL)
-    , notify_event(NULL)
+    , dll(nullptr)
+    , dsound(nullptr)
+    , prim_buf(nullptr)
+    , stream_buf(nullptr)
+    , notify(nullptr)
+    , notify_event(nullptr)
     , write_offset(0)
     , watcher(this)
 {
@@ -338,7 +338,7 @@ bool AudioOutputDSound::write(const QByteArray &data)
             buffers_free.ref();
     }
 
-    LPVOID dst1 = NULL, dst2 = NULL;
+    LPVOID dst1 = nullptr, dst2 = nullptr;
     DWORD size1 = 0, size2 = 0;
 
     if (write_offset >= buffer_size*buffer_count) ///!!! >=
@@ -387,7 +387,7 @@ bool AudioOutputDSound::play()
 int AudioOutputDSound::getOffsetByBytes()
 {
     DWORD read_offset = 0;
-    stream_buf->GetCurrentPosition(&read_offset /*play*/, NULL /*write*/); // what's this write_offset?
+    stream_buf->GetCurrentPosition(&read_offset /*play*/, nullptr /*write*/); // what's this write_offset?
 
     return (int)read_offset;
 }
@@ -456,7 +456,7 @@ bool AudioOutputDSound::init()
         return false;
     }
 
-    DX_ENSURE_OK(dsound_create(NULL/*dev guid*/, &dsound, NULL), false);
+    DX_ENSURE_OK(dsound_create(nullptr/*dev guid*/, &dsound, nullptr), false);
 
     /*  DSSCL_EXCLUSIVE: can modify the settings of the primary buffer, only the sound of this app will be hearable when it will have the focus.
      */
@@ -537,7 +537,7 @@ bool AudioOutputDSound::createDSoundBuffers()
 
         // create primary buffer and set its format
 
-        DX_ENSURE(dsound->CreateSoundBuffer(&dsbpridesc, &prim_buf, NULL), (destroy() && false));
+        DX_ENSURE(dsound->CreateSoundBuffer(&dsbpridesc, &prim_buf, nullptr), (destroy() && false));
         DX_ENSURE(prim_buf->SetFormat((WAVEFORMATEX *)&wformat), false);
     }
 
@@ -560,7 +560,7 @@ bool AudioOutputDSound::createDSoundBuffers()
 
     // now create the stream buffer (secondary buffer)
 
-    HRESULT res = dsound->CreateSoundBuffer(&dsbdesc, &stream_buf, NULL);
+    HRESULT res = dsound->CreateSoundBuffer(&dsbdesc, &stream_buf, nullptr);
 
     if (res != DS_OK)
     {
@@ -569,7 +569,7 @@ bool AudioOutputDSound::createDSoundBuffers()
             // Try without DSBCAPS_LOCHARDWARE
 
             dsbdesc.dwFlags &= ~DSBCAPS_LOCHARDWARE;
-            DX_ENSURE_OK(dsound->CreateSoundBuffer(&dsbdesc, &stream_buf, NULL), (destroy() && false));
+            DX_ENSURE_OK(dsound->CreateSoundBuffer(&dsbdesc, &stream_buf, nullptr), (destroy() && false));
         }
     }
 
@@ -579,7 +579,7 @@ bool AudioOutputDSound::createDSoundBuffers()
 
     DX_ENSURE(stream_buf->QueryInterface(IID_IDirectSoundNotify, (void**)&notify), false);
 
-    notify_event = CreateEvent(NULL, FALSE, FALSE, NULL);
+    notify_event = CreateEvent(nullptr, FALSE, FALSE, nullptr);
     QVector<DSBPOSITIONNOTIFY> notification(buffer_count);
 
     for (int i = 0 ; i < buffer_count ; ++i)

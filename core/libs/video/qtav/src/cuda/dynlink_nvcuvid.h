@@ -175,7 +175,7 @@ typedef struct _CUVIDSOURCEDATAPACKET
 {
     unsigned long flags;            /**< Combination of CUVID_PKT_XXX flags */
     unsigned long payload_size;     /**< number of bytes in the payload (may be zero if EOS flag is set) */
-    const unsigned char *payload;   /**< Pointer to packet payload data (may be NULL if EOS flag is set) */
+    const unsigned char *payload;   /**< Pointer to packet payload data (may be nullptr if EOS flag is set) */
     CUvideotimestamp timestamp;     /**< Presentation timestamp (10MHz clock), only valid if CUVID_PKT_TIMESTAMP flag is set */
 } CUVIDSOURCEDATAPACKET;
 
@@ -193,7 +193,7 @@ typedef struct _CUVIDSOURCEPARAMS
     void *pUserData;                            /**< Parameter passed in to the data handlers  */
     PFNVIDSOURCECALLBACK pfnVideoDataHandler;   /**< Called to deliver audio packets  */
     PFNVIDSOURCECALLBACK pfnAudioDataHandler;   /**< Called to deliver video packets  */
-    void *pvReserved2[8];                       /**< Reserved for future use - set to NULL */
+    void *pvReserved2[8];                       /**< Reserved for future use - set to nullptr */
 } CUVIDSOURCEPARAMS;
 
 /*!
@@ -240,7 +240,7 @@ typedef struct _CUVIDPARSERPARAMS
     PFNVIDSEQUENCECALLBACK pfnSequenceCallback; /**< Called before decoding frames and/or whenever there is a format change */
     PFNVIDDECODECALLBACK pfnDecodePicture;      /**< Called when a picture is ready to be decoded (decode order) */
     PFNVIDDISPLAYCALLBACK pfnDisplayPicture;    /**< Called whenever a picture is ready to be displayed (display order)  */
-    void *pvReserved2[7];                       /**< Reserved for future use - set to NULL */
+    void *pvReserved2[7];                       /**< Reserved for future use - set to nullptr */
     CUVIDEOFORMATEX *pExtVideoInfo;             /**< [Optional] sequence header data from system layer */
 } CUVIDPARSERPARAMS;
 

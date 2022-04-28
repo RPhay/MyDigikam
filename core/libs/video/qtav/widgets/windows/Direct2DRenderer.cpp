@@ -58,10 +58,10 @@ namespace QtAV
 template<class Interface>
 inline void SafeRelease(Interface **ppInterfaceToRelease)
 {
-    if (*ppInterfaceToRelease != NULL)
+    if (*ppInterfaceToRelease != nullptr)
     {
         (*ppInterfaceToRelease)->Release();
-        (*ppInterfaceToRelease) = NULL;
+        (*ppInterfaceToRelease) = nullptr;
     }
 }
 
@@ -333,7 +333,7 @@ public:
 
         D2D1_SIZE_U s = {(UINT32)w, (UINT32)h};
         HRESULT hr    = render_target->CreateBitmap(s
-                                                    , NULL
+                                                    , nullptr
                                                     , 0
                                                     , &bitmap_properties
                                                     , &bitmap);
@@ -441,7 +441,7 @@ bool Direct2DRenderer::receiveFrame(const VideoFrame& frame)
     // if lock is required, do not use locker in if() scope, it will unlock outside the scope
     // TODO: d2d often crash, should we always lock? How about other renderer?
 
-    hr = d.bitmap->CopyFromMemory(NULL                  // &D2D1::RectU(0, 0, image.width(), image.height()) /*&dstRect, NULL?*/,
+    hr = d.bitmap->CopyFromMemory(nullptr                  // &D2D1::RectU(0, 0, image.width(), image.height()) /*&dstRect, nullptr?*/,
                                   , frame.constBits(0)  // data.constData() //msdn: const void*
                                   , frame.bytesPerLine(0));
     if (hr != S_OK)
@@ -535,7 +535,7 @@ void Direct2DRenderer::paintEvent(QPaintEvent *)
         //QMutexLocker locker(&d.img_mutex);
         //Q_UNUSED(locker);
 
-        hr = d.render_target->EndDraw(NULL, NULL); //TODO: why it need lock? otherwise crash
+        hr = d.render_target->EndDraw(nullptr, nullptr); //TODO: why it need lock? otherwise crash
     }
 
     if (hr == D2DERR_RECREATE_TARGET)

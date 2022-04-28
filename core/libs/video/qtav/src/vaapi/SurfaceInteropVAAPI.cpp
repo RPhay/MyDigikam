@@ -309,7 +309,7 @@ protected:
 
 #   if QTAV_HAVE(EGL_CAPI)
 
-//static PFNEGLQUERYNATIVEDISPLAYNVPROC eglQueryNativeDisplayNV = NULL;
+//static PFNEGLQUERYNATIVEDISPLAYNVPROC eglQueryNativeDisplayNV = nullptr;
 
 static PFNEGLCREATEIMAGEKHRPROC eglCreateImageKHR = nullptr;
 static PFNEGLDESTROYIMAGEKHRPROC eglDestroyImageKHR = nullptr;

@@ -211,7 +211,7 @@ HRESULT __stdcall XAudio2Create(__deref_out IXAudio2** ppXAudio2,
 
     IXAudio2* pXAudio2;
     HRESULT hr = CoCreateInstance((Flags & XAUDIO2_DEBUG_ENGINE) ? CLSID_XAudio2_Debug : CLSID_XAudio2,
-                                  NULL,
+                                  nullptr,
                                   CLSCTX_INPROC_SERVER,
                                   IID_IXAudio2,
                                   (void**)&pXAudio2);

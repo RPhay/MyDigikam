@@ -193,7 +193,7 @@ static const cv_error cv_errors[] =
     },
     {
         0,
-        NULL
+        nullptr
     },
 };
 
@@ -400,7 +400,7 @@ void* VideoDecoderVideoToolboxPrivate::setup(AVCodecContext *avctx)
     {
         qCWarning(DIGIKAM_QTAV_LOG_WARN).noquote() << QString::asprintf("Failed to init videotoolbox decoder (%#x %s): %s", err, av_err2str(err), cv_err_str(err));
 
-        return NULL;
+        return nullptr;
     }
 
     const CMVideoDimensions dim = CMVideoFormatDescriptionGetDimensions(vtctx->cm_fmt_desc);

@@ -195,10 +195,10 @@ bool EGLInteropResource::ensureSurface(int w, int h)
 
     desc.BindFlags |= D3D11_BIND_RENDER_TARGET; // also required by VideoProcessorOutputView https://msdn.microsoft.com/en-us/library/windows/desktop/hh447791(v=vs.85).aspx
     desc.MiscFlags = D3D11_RESOURCE_MISC_SHARED;
-    DX_ENSURE(d3ddev->CreateTexture2D(&desc, NULL, &d3dtex), false);
+    DX_ENSURE(d3ddev->CreateTexture2D(&desc, nullptr, &d3dtex), false);
     ComPtr<IDXGIResource> resource;
     DX_ENSURE(d3dtex.As(&resource), false);
-    HANDLE share_handle = NULL;
+    HANDLE share_handle = nullptr;
     DX_ENSURE(resource->GetSharedHandle(&share_handle), false);
 
     if (!vp)

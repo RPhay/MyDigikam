@@ -176,7 +176,7 @@ VideoDecoderMediaCodec::VideoDecoderMediaCodec()
 
 #   endif
 
-    av_jni_set_java_vm(QAndroidJniEnvironment::javaVM(), NULL);
+    av_jni_set_java_vm(QAndroidJniEnvironment::javaVM(), nullptr);
 }
 
 VideoDecoderId VideoDecoderMediaCodec::id() const

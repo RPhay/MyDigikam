@@ -339,7 +339,7 @@ void AVPlayer::setPriority(const QVector<VideoDecoderId> &ids)
     public:
         NewDecoderTask(AVPlayer *p) : player(p) {}
         void run() override {
-            VideoDecoder *vd = NULL;
+            VideoDecoder *vd = nullptr;
             AVCodecContext *avctx = player->d->demuxer.videoCodecContext();
             foreach(VideoDecoderId vid, player->d->vc_ids) {
                 qCDebug(DIGIKAM_QTAV_LOG).noquote() << QString::asprintf("**********trying video decoder: %s...", VideoDecoderFactory::name(vid).c_str());
@@ -1475,7 +1475,7 @@ void AVPlayer::seekChapter(int incr)
     if (i >= (int)chapters())
         return;
 
-    //av_log(NULL, AV_LOG_VERBOSE, "Seeking to chapter %d.\n", i);
+    //av_log(nullptr, AV_LOG_VERBOSE, "Seeking to chapter %d.\n", i);
     qCDebug(DIGIKAM_QTAV_LOG) << QString::fromLatin1("Seeking to chapter : ") << QString::number(i);
     setPosition(av_rescale_q(ic->chapters[i]->start, ic->chapters[i]->time_base,
                              av_time_base_q) / 1000);

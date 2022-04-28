@@ -87,7 +87,7 @@
  *     #else
  *         "z",
  *     #endif
- *         NULL
+ *         nullptr
  *     };
  *     static const int versions[] = { 0, ::capi::NoVersion, 1, ::capi::EndVersion };
  *     CAPI_BEGIN_DLL_VER(zlib, versions, ::capi::dso) // you can also use QLibrary or your custom library resolver instead of ::capi::dso
@@ -220,7 +220,7 @@ enum
       "z",
     #endif
       /usr/local/lib/libmyz.so, // absolute path is ok
-      NULL};
+      nullptr};
     CAPI_BEGIN_DLL(zlib, ::capi::dso) // the 2nd parameter is a dynamic shared object loader class. \sa dll_helper class
     ...
   * -Multiple library versions
@@ -286,7 +286,7 @@ protected:
     api::~api(){delete dll;}                            \
     bool api::loaded() const { return dll->isLoaded();} \
     namespace capi {                                    \
-        static api_dll* dll = NULL;                     \
+        static api_dll* dll = nullptr;                     \
         bool loaded() {                                 \
             if (!dll) dll = new api_dll();              \
             return dll->isLoaded();                     \
@@ -395,7 +395,7 @@ protected:
                 api_dll* dll = (api_dll*)((char*)this - ((ptrdiff_t)(&((api_dll*)0)->name##_resolver)));                \
                 if (!dll->isLoaded()) {                                                                                 \
                     CAPI_WARN_LOAD("dll not loaded");                                                                   \
-                    *p = NULL;                                                                                          \
+                    *p = nullptr;                                                                                          \
                     return;                                                                                             \
                 }                                                                                                       \
                 *p = (name##_t)dll->resolve(#sym);                                                                      \
@@ -640,7 +640,7 @@ bool dso::load()
 
 #   else
 
-    handle = (void*)::LoadLibraryExA(full_name, NULL, 0); //DONT_RESOLVE_DLL_REFERENCES
+    handle = (void*)::LoadLibraryExA(full_name, nullptr, 0); //DONT_RESOLVE_DLL_REFERENCES
 
 #   endif
 #else

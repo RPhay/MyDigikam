@@ -171,7 +171,7 @@ bool ImageConverterFFPrivate::setupColorspaceDetails(bool force)
                                               , (((saturation + 100) << 16) + 50)/100
                                              ) >= 0;
 
-    // sws_init_context(d.sws_ctx, NULL, NULL);
+    // sws_init_context(d.sws_ctx, nullptr, nullptr);
 
     update_eq = false;
 

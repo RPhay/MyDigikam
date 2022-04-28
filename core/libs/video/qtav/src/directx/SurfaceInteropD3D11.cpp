@@ -115,7 +115,7 @@ InteropResource* InteropResource::create(InteropType type)
 
     }
 
-    return NULL;
+    return nullptr;
 }
 
 void InteropResource::setDevice(ComPtr<ID3D11Device> dev)
@@ -134,7 +134,7 @@ void SurfaceInterop::setSurface(ComPtr<ID3D11Texture2D> surface, int index, int 
 void* SurfaceInterop::map(SurfaceType type, const VideoFormat &fmt, void *handle, int plane)
 {
     if (!handle)
-        return NULL;
+        return nullptr;
 
     if (!m_surface)
         return 0;
@@ -149,7 +149,7 @@ void* SurfaceInterop::map(SurfaceType type, const VideoFormat &fmt, void *handle
         return mapToHost(fmt, handle, plane);
     }
 
-    return NULL;
+    return nullptr;
 }
 
 void SurfaceInterop::unmap(void *handle)
@@ -171,14 +171,14 @@ void* SurfaceInterop::mapToHost(const VideoFormat &format, void *handle, int pla
     desc.CPUAccessFlags = D3D11_CPU_ACCESS_READ;
     desc.BindFlags = 0; //?
     ComPtr<ID3D11Texture2D> tex;
-    DX_ENSURE(dev->CreateTexture2D(&desc, NULL, &tex), NULL);
+    DX_ENSURE(dev->CreateTexture2D(&desc, nullptr, &tex), nullptr);
     ComPtr<ID3D11DeviceContext> ctx;
     dev->GetImmediateContext(&ctx);
 
     ctx->CopySubresourceRegion(tex.Get(), 0, 0, 0, 0
                                , m_surface.Get()
                                , m_index
-                               , NULL);
+                               , nullptr);
 
     struct ScopedMap
     {

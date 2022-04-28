@@ -346,7 +346,7 @@ QString avformatOptions()
 
 #else
 
-    AVInputFormat *i = NULL;
+    AVInputFormat *i = nullptr;
     av_register_all();          // MUST register all input/output formats
 
     while ((i = av_iformat_next(i)))
@@ -375,7 +375,7 @@ QString avformatOptions()
 #else
 
     av_register_all();                  // MUST register all input/output formats
-    AVOutputFormat* o = NULL;
+    AVOutputFormat* o = nullptr;
 
     while ((o = av_oformat_next(o)))
     {
@@ -444,7 +444,7 @@ const QStringList& supportedInputMimeTypes()
         return mimes;
 
     av_register_all();                          // MUST register all input/output formats
-    AVOutputFormat* i = av_oformat_next(NULL);
+    AVOutputFormat* i = av_oformat_next(nullptr);
     QStringList list;
 
     while (i)
@@ -467,7 +467,7 @@ static QStringList s_audio_mimes, s_video_mimes, s_subtitle_mimes;
 
 static void init_supported_codec_info()
 {
-    const AVCodecDescriptor* cd = avcodec_descriptor_next(NULL);
+    const AVCodecDescriptor* cd = avcodec_descriptor_next(nullptr);
 
     while (cd)
     {

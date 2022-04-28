@@ -31,7 +31,7 @@
 #if QT_VERSION >= QT_VERSION_CHECK(5, 0, 0)
 #   define QGLF(f) QOpenGLContext::currentContext()->functions()->f
 #else
-#   define QGLF(f) QGLFunctions(NULL).f
+#   define QGLF(f) QGLFunctions(nullptr).f
 #endif
 
 namespace QtAV
@@ -169,7 +169,7 @@ void GeometryRenderer::updateGeometry(Geometry *geo)
         }
         else
         {
-            ibo.allocate(g->indexData(), bs); // TODO: allocate NULL and then map or BufferSubData?
+            ibo.allocate(g->indexData(), bs); // TODO: allocate nullptr and then map or BufferSubData?
             ibo_size = bs;
         }
 
@@ -270,7 +270,7 @@ void GeometryRenderer::updateGeometry(Geometry *geo)
     // TODO: bind pointers if vbo is disabled
     // bind ibo to vao thus no bind is required later
 
-    if (ibo.isCreated())    // if not bind here, glDrawElements(...,NULL) crashes and must use ibo data ptr, why?
+    if (ibo.isCreated())    // if not bind here, glDrawElements(...,nullptr) crashes and must use ibo data ptr, why?
         ibo.bind();
 
     vao.release();

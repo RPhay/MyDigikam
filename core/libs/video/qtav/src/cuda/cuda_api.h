@@ -145,8 +145,8 @@ private:
     do { \
         CUresult cuR = f; \
         if (cuR != CUDA_SUCCESS) { \
-            const char* errName = NULL; \
-            const char* errDetail = NULL; \
+            const char* errName = nullptr; \
+            const char* errDetail = nullptr; \
             cuGetErrorName(cuR, &errName); \
             cuGetErrorString(cuR, &errDetail); \
             qCWarning(DIGIKAM_QTAV_LOG_WARN).noquote() << QString::asprintf("CUDA error %s@%d. " #f ": %d %s - %s", __FILE__, __LINE__, cuR, errName, errDetail); \

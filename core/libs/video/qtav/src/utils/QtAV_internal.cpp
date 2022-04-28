@@ -89,7 +89,7 @@ QString absolutePathFromOSX(const QString& s)
 
     if (cfStr)
     {
-        CFURLRef cfUrl = CFURLCreateWithString(kCFAllocatorDefault, cfStr, NULL);
+        CFURLRef cfUrl = CFURLCreateWithString(kCFAllocatorDefault, cfStr, nullptr);
 
         if (cfUrl)
         {

@@ -208,7 +208,7 @@ AudioOutputOpenSL::AudioOutputOpenSL(QObject *parent)
 #endif
     available = false;
     SLEngineOption opt[] = {(SLuint32) SL_ENGINEOPTION_THREADSAFE, (SLuint32) SL_BOOLEAN_TRUE};
-    SL_ENSURE(slCreateEngine(&engineObject, 1, opt, 0, NULL, NULL)); // SLEngineOption is ignored by android
+    SL_ENSURE(slCreateEngine(&engineObject, 1, opt, 0, nullptr, nullptr)); // SLEngineOption is ignored by android
     SL_ENSURE((*engineObject)->Realize(engineObject, SL_BOOLEAN_FALSE));
     SL_ENSURE((*engineObject)->GetInterface(engineObject, SL_IID_ENGINE, &engine));
     available = true;
@@ -276,10 +276,10 @@ bool AudioOutputOpenSL::open()
         audioSrc.pLocator = &bufferQueueLocator_android;
 #endif
     // OutputMix
-    SL_ENSURE((*engine)->CreateOutputMix(engine, &m_outputMixObject, 0, NULL, NULL), false);
+    SL_ENSURE((*engine)->CreateOutputMix(engine, &m_outputMixObject, 0, nullptr, nullptr), false);
     SL_ENSURE((*m_outputMixObject)->Realize(m_outputMixObject, SL_BOOLEAN_FALSE), false);
     SLDataLocator_OutputMix outputMixLocator = { SL_DATALOCATOR_OUTPUTMIX, m_outputMixObject };
-    SLDataSink audioSink = { &outputMixLocator, NULL };
+    SLDataSink audioSink = { &outputMixLocator, nullptr };
 
     const SLInterfaceID ids[] = { SL_IID_BUFFERQUEUE, SL_IID_VOLUME
 #ifdef Q_OS_ANDROID
@@ -345,7 +345,7 @@ bool AudioOutputOpenSL::close()
     if (m_android) {
         if (m_bufferQueueItf_android && SL_RESULT_SUCCESS != (*m_bufferQueueItf_android)->Clear(m_bufferQueueItf_android))
             qCWarning(DIGIKAM_QTAV_LOG_WARN).noquote() << QString::asprintf("Unable to clear buffer");
-        m_bufferQueueItf_android = NULL;
+        m_bufferQueueItf_android = nullptr;
     }
 #endif
     if (m_bufferQueueItf && SL_RESULT_SUCCESS != (*m_bufferQueueItf)->Clear(m_bufferQueueItf))
@@ -353,16 +353,16 @@ bool AudioOutputOpenSL::close()
 
     if (m_playerObject) {
         (*m_playerObject)->Destroy(m_playerObject);
-        m_playerObject = NULL;
+        m_playerObject = nullptr;
     }
     if (m_outputMixObject) {
         (*m_outputMixObject)->Destroy(m_outputMixObject);
-        m_outputMixObject = NULL;
+        m_outputMixObject = nullptr;
     }
 
-    m_playItf = NULL;
-    m_volumeItf = NULL;
-    m_bufferQueueItf = NULL;
+    m_playItf = nullptr;
+    m_volumeItf = nullptr;
+    m_bufferQueueItf = nullptr;
     queue_data.clear();
     queue_data_write = 0;
     return true;

@@ -87,7 +87,7 @@ InteropResource* CreateInteropGL()
 }
 
 GLInteropResource::GLInteropResource()
-    : interop_dev(NULL)
+    : interop_dev(nullptr)
     , tex_format(DXGI_FORMAT_UNKNOWN)
     , mapped(0)
 {
@@ -114,11 +114,11 @@ bool GLInteropResource::map(ComPtr<ID3D11Texture2D> surface, int index, GLuint t
     // open/close and register/unregster in every map/unmap to ensure called in current context and avoid crash (tested on intel driver)
     // interop operations begin
 
-    WGL_ENSURE((interop_dev = gl().DXOpenDeviceNV(d3ddev.Get())) != NULL, false);
+    WGL_ENSURE((interop_dev = gl().DXOpenDeviceNV(d3ddev.Get())) != nullptr, false);
 
     // call in ensureResource or in map?
 
-    WGL_ENSURE((interop_obj[plane] = gl().DXRegisterObjectNV(interop_dev, d3dtex[plane].Get(), tex, GL_TEXTURE_2D, WGL_ACCESS_READ_ONLY_NV)) != NULL, false);
+    WGL_ENSURE((interop_obj[plane] = gl().DXRegisterObjectNV(interop_dev, d3dtex[plane].Get(), tex, GL_TEXTURE_2D, WGL_ACCESS_READ_ONLY_NV)) != nullptr, false);
 
     // prepare dx resources for gl
 
@@ -169,7 +169,7 @@ bool GLInteropResource::unmap(GLuint tex)
     // interop operations end
 
     WGL_WARN(gl().DXCloseDeviceNV(interop_dev));
-    interop_obj[plane] = NULL;
+    interop_obj[plane] = nullptr;
 
     return true;
 }
@@ -217,13 +217,13 @@ bool GLInteropResource::ensureResource(DXGI_FORMAT fmt, int w, int h, GLuint tex
     CD3D11_TEXTURE2D_DESC desc(GetPlaneFormat(fmt, plane), w, h, 1, 1);
     desc.BindFlags |= D3D11_BIND_RENDER_TARGET;
     desc.MiscFlags = D3D11_RESOURCE_MISC_SHARED;
-    DX_ENSURE(d3ddev->CreateTexture2D(&desc, NULL, &d3dtex[plane]), false);
+    DX_ENSURE(d3ddev->CreateTexture2D(&desc, nullptr, &d3dtex[plane]), false);
 
 #if 0
 
     ComPtr<IDXGIResource> resource;
     DX_ENSURE(d3dtex[plane].As(&resource), false);
-    HANDLE share_handle = NULL;
+    HANDLE share_handle = nullptr;
     DX_ENSURE(resource->GetSharedHandle(&share_handle), false);
 
     // required by d3d9 not d3d10&11: https://www.opengl.org/registry/specs/NV/DX_interop2.txt

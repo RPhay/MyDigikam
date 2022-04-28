@@ -161,7 +161,7 @@ public:
 
     {
         GdiplusStartupInput gdiplusStartupInput;
-        GdiplusStartup(&gdiplus_token, &gdiplusStartupInput, NULL);
+        GdiplusStartup(&gdiplus_token, &gdiplusStartupInput, nullptr);
     }
 
     ~GDIRendererPrivate()
@@ -225,7 +225,7 @@ public:
         off_bitmap = CreateDIBSection(device_context,
                                       , (BITMAPINFO*)&bih
                                       , DIB_RGB_COLORS
-                                      , &p_pic_buffer, NULL, 0);
+                                      , &p_pic_buffer, nullptr, 0);
 #endif
 
 #if !USE_GRAPHICS

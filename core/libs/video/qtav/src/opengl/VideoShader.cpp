@@ -887,7 +887,7 @@ void VideoMaterialPrivate::uploadPlane(int p, bool updateTexture)
         pb.bind();
 
         // glMapBuffer() causes sync issue.
-        // Call glBufferData() with NULL pointer before glMapBuffer(), the previous data in PBO will be discarded and
+        // Call glBufferData() with nullptr pointer before glMapBuffer(), the previous data in PBO will be discarded and
         // glMapBuffer() returns a new allocated pointer or an unused block immediately even if GPU is still working with the previous data.
         // https://www.opengl.org/wiki/Buffer_Object_Streaming#Buffer_re-specification
 

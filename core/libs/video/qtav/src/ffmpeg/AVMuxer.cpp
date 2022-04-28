@@ -270,7 +270,7 @@ static void getFFmpegOutputFormats(QStringList* formats, QStringList* extensions
 #else
 
         av_register_all(); // MUST register all input/output formats
-        AVOutputFormat *o = NULL;
+        AVOutputFormat *o = nullptr;
         while ((o = av_oformat_next(o)))
         {
 

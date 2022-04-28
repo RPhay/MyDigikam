@@ -132,7 +132,7 @@ bool AudioResamplerFF::convert(const quint8 **data)
 
     // TODO: why crash for swr 0.5?
 
-    //int out_size = av_samples_get_buffer_size(NULL/*out linesize*/, d.out_channels, d.out_samples_per_channel, (AVSampleFormat)d.out_sample_format, 0/*alignment default*/);
+    //int out_size = av_samples_get_buffer_size(nullptr/*out linesize*/, d.out_channels, d.out_samples_per_channel, (AVSampleFormat)d.out_sample_format, 0/*alignment default*/);
 
     int size_per_sample_with_channels = d.out_format.channels()*d.out_format.bytesPerSample();
     int out_size = d.out_samples_per_channel*size_per_sample_with_channels;

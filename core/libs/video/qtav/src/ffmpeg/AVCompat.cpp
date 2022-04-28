@@ -52,7 +52,7 @@ int avformat_alloc_output_context2(AVFormatContext **avctx, AVOutputFormat *ofor
 {
     AVFormatContext *s = avformat_alloc_context();
     int ret            = 0;
-    *avctx             = NULL;
+    *avctx             = nullptr;
 
     if (!s)
         goto nomem;
@@ -61,7 +61,7 @@ int avformat_alloc_output_context2(AVFormatContext **avctx, AVOutputFormat *ofor
     {
         if (format)
         {
-            oformat = av_guess_format(format, NULL, NULL);
+            oformat = av_guess_format(format, nullptr, nullptr);
 
             if (!oformat)
             {
@@ -73,7 +73,7 @@ int avformat_alloc_output_context2(AVFormatContext **avctx, AVOutputFormat *ofor
         }
         else
         {
-            oformat = av_guess_format(NULL, filename, NULL);
+            oformat = av_guess_format(nullptr, filename, nullptr);
 
             if (!oformat)
             {
@@ -101,7 +101,7 @@ int avformat_alloc_output_context2(AVFormatContext **avctx, AVOutputFormat *ofor
         }
     }
     else
-        s->priv_data = NULL;
+        s->priv_data = nullptr;
 
     if (filename)
         av_strlcpy(s->filename, filename, sizeof(s->filename));
@@ -205,7 +205,7 @@ extern const AVPixFmtDescriptor av_pix_fmt_descriptors[];
 const AVPixFmtDescriptor *av_pix_fmt_desc_get(AVPixelFormat pix_fmt)
 {
     if (pix_fmt < 0 || pix_fmt >= QTAV_PIX_FMT_C(NB))
-        return NULL;
+        return nullptr;
 
     return &av_pix_fmt_descriptors[pix_fmt];
 }
@@ -225,7 +225,7 @@ const AVPixFmtDescriptor *av_pix_fmt_desc_next(const AVPixFmtDescriptor *prev)
             return prev;
     }
 
-    return NULL;
+    return nullptr;
 }
 
 AVPixelFormat av_pix_fmt_desc_get_id(const AVPixFmtDescriptor *desc)
@@ -338,7 +338,7 @@ const char *avcodec_get_name(enum AVCodecID id)
     if (cd)
         return cd->name;
 
-    av_log(NULL, AV_LOG_WARNING, "Codec 0x%x is not in the full list.\n", id);
+    av_log(nullptr, AV_LOG_WARNING, "Codec 0x%x is not in the full list.\n", id);
     codec = avcodec_find_decoder(id);
 
     if (codec)
@@ -455,8 +455,8 @@ int av_packet_ref(AVPacket *dst, const AVPacket *src)
     } while (0)
 
     *dst = *src;
-    dst->data      = NULL;
-    dst->side_data = NULL;
+    dst->data      = nullptr;
+    dst->side_data = nullptr;
     DUP_DATA(dst->data, src->data, dst->size, 1);
     dst->destruct = av_destruct_packet;
 

@@ -91,7 +91,7 @@ InteropResource* CreateInteropEGL(IDirect3DDevice9* dev)
 EGLInteropResource::EGLInteropResource(IDirect3DDevice9* d3device)
     : InteropResource(d3device)
     , egl(new EGL())
-    , dx_query(NULL)
+    , dx_query(nullptr)
 {
     DX_ENSURE_OK(d3device->CreateQuery(D3DQUERYTYPE_EVENT, &dx_query));
     dx_query->Issue(D3DISSUE_END);
@@ -104,7 +104,7 @@ EGLInteropResource::~EGLInteropResource()
     if (egl)
     {
         delete egl;
-        egl = NULL;
+        egl = nullptr;
     }
 
     SafeRelease(&dx_query);
@@ -178,7 +178,7 @@ bool EGLInteropResource::ensureSurface(int w, int h)
         EGL_NONE
     };
 
-    HANDLE share_handle = NULL;
+    HANDLE share_handle = nullptr;
 
     if (!kEGL_ANGLE_d3d_share_handle_client_buffer && kEGL_ANGLE_query_surface_pointer)
     {
@@ -245,7 +245,7 @@ bool EGLInteropResource::map(IDirect3DSurface9* surface, GLuint tex, int w, int 
         0, 0, (~0-1)&w, (~0-1)&h
     };
 
-    DX_ENSURE(d3ddev->StretchRect(surface, &src, dx_surface, NULL, D3DTEXF_NONE), false);
+    DX_ENSURE(d3ddev->StretchRect(surface, &src, dx_surface, nullptr, D3DTEXF_NONE), false);
 
     if (dx_query)
     {
@@ -264,7 +264,7 @@ bool EGLInteropResource::map(IDirect3DSurface9* surface, GLuint tex, int w, int 
 
         int k = 0;
 
-        while ((dx_query->GetData(NULL, 0, D3DGETDATA_FLUSH) == FALSE) && ++k < 10) 
+        while ((dx_query->GetData(nullptr, 0, D3DGETDATA_FLUSH) == FALSE) && ++k < 10) 
         {
             Sleep(1);
         }

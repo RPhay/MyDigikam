@@ -137,7 +137,7 @@ QStringList ffmpeg_supported_sub_extensions_by_codec()
 #else
 
         av_register_all(); // MUST register all input/output formats
-        AVInputFormat *i = NULL;
+        AVInputFormat *i = nullptr;
 
         while ((i = av_iformat_next(i)))
         {
@@ -186,7 +186,7 @@ QStringList ffmpeg_supported_sub_extensions()
 #else
 
     av_register_all(); // MUST register all input/output formats
-    AVInputFormat *i = NULL;
+    AVInputFormat *i = nullptr;
 
     while ((i = av_iformat_next(i)))
     {

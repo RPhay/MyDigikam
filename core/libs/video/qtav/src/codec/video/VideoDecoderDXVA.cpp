@@ -285,7 +285,7 @@ VideoFrame VideoDecoderDXVA::frame()
         ScopedD3DLock(IDirect3DSurface9* d3d, D3DLOCKED_RECT* rect)
             : mpD3D(d3d)
         {
-            if (FAILED(mpD3D->LockRect(rect, NULL, D3DLOCK_READONLY)))
+            if (FAILED(mpD3D->LockRect(rect, nullptr, D3DLOCK_READONLY)))
             {
                 qCWarning(DIGIKAM_QTAV_LOG_WARN).noquote() << QString::asprintf("Failed to lock surface");
                 mpD3D = 0;
@@ -453,7 +453,7 @@ QVector<GUID> VideoDecoderDXVAPrivate::getSupportedCodecs() const
     /* Retreive supported modes from the decoder service */
 
     UINT input_count = 0;
-    GUID* input_list = NULL;
+    GUID* input_list = nullptr;
     QVector<GUID> guids;
     DX_ENSURE_OK(vs->GetDecoderDeviceGuids(&input_count, &input_list), guids);
     guids.resize(input_count);
@@ -466,7 +466,7 @@ QVector<GUID> VideoDecoderDXVAPrivate::getSupportedCodecs() const
 int VideoDecoderDXVAPrivate::fourccFor(const GUID *guid) const
 {
     UINT output_count      = 0;
-    D3DFORMAT* output_list = NULL;
+    D3DFORMAT* output_list = nullptr;
 
     if (FAILED(vs->GetDecoderRenderTargets(*guid, &output_count, &output_list)))
     {
@@ -535,7 +535,7 @@ bool VideoDecoderDXVAPrivate::createDecoder(AVCodecID codec_id, int w, int h, QV
                                  0,
                                  DXVA2_VideoDecoderRenderTarget,
                                  surface_list,
-                                 NULL)
+                                 nullptr)
             , false);
 
     for (int i = 0 ; i < nb_surfaces ; i++)
@@ -578,11 +578,11 @@ bool VideoDecoderDXVAPrivate::createDecoder(AVCodecID codec_id, int w, int h, QV
     /* List all configurations available for the decoder */
 
     UINT                      cfg_count = 0;
-    DXVA2_ConfigPictureDecode* cfg_list = NULL;
+    DXVA2_ConfigPictureDecode* cfg_list = nullptr;
 
     DX_ENSURE_OK(vs->GetDecoderConfigurations(codec_guid,
                                               &dsc,
-                                              NULL,
+                                              nullptr,
                                               &cfg_count,
                                               &cfg_list)
                  , false);

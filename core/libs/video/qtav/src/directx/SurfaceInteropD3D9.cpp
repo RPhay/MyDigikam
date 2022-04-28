@@ -124,13 +124,13 @@ InteropResource* InteropResource::create(IDirect3DDevice9 *dev, InteropType type
 
     }
 
-    return NULL;
+    return nullptr;
 }
 
 InteropResource::InteropResource(IDirect3DDevice9 *d3device)
     : d3ddev(d3device)
-    , dx_texture(NULL)
-    , dx_surface(NULL)
+    , dx_texture(nullptr)
+    , dx_surface(nullptr)
     , width(0)
     , height(0)
 {
@@ -165,7 +165,7 @@ void SurfaceInterop::setSurface(IDirect3DSurface9 *surface, int frame_w, int fra
 void* SurfaceInterop::map(SurfaceType type, const VideoFormat &fmt, void *handle, int plane)
 {
     if (!handle)
-        return NULL;
+        return nullptr;
 
     if (!m_surface)
         return 0;
@@ -173,7 +173,7 @@ void* SurfaceInterop::map(SurfaceType type, const VideoFormat &fmt, void *handle
     if      (type == GLTextureSurface)
     {
         if (!fmt.isRGB())
-            return NULL;
+            return nullptr;
 
         if (m_resource->map(m_surface, *((GLuint*)handle), frame_width, frame_height, plane))
             return handle;
@@ -183,7 +183,7 @@ void* SurfaceInterop::map(SurfaceType type, const VideoFormat &fmt, void *handle
         return mapToHost(fmt, handle, plane);
     }
 
-    return NULL;
+    return nullptr;
 }
 
 void SurfaceInterop::unmap(void *handle)
@@ -204,7 +204,7 @@ void* SurfaceInterop::mapToHost(const VideoFormat &format, void *handle, int pla
         ScopedD3DLock(IDirect3DSurface9* d3d, D3DLOCKED_RECT *rect)
             : mpD3D(d3d)
         {
-            if (FAILED(mpD3D->LockRect(rect, NULL, D3DLOCK_READONLY)))
+            if (FAILED(mpD3D->LockRect(rect, nullptr, D3DLOCK_READONLY)))
             {
                 qCWarning(DIGIKAM_QTAV_LOG_WARN).noquote() << QString::asprintf("Failed to lock surface");
                 mpD3D = 0;
@@ -222,7 +222,7 @@ void* SurfaceInterop::mapToHost(const VideoFormat &format, void *handle, int pla
     ScopedD3DLock(m_surface, &lock);
 
     if (lock.Pitch == 0)
-        return NULL;
+        return nullptr;
 
     // TODO: use the same code as VideoDecoderDXVA::frame() like vaapi.
     // picth >= desc.Width
@@ -234,7 +234,7 @@ void* SurfaceInterop::mapToHost(const VideoFormat &format, void *handle, int pla
     if (!fmt.isValid())
     {
         qCWarning(DIGIKAM_QTAV_LOG_WARN).noquote() << QString::asprintf("unsupported D3D9 pixel format: %#x", desc.Format);
-        return NULL;
+        return nullptr;
     }
 
     // YV12 need swap, not imc3?

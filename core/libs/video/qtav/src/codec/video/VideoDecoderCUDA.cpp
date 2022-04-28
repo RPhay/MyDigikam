@@ -417,7 +417,7 @@ public:
     cudaVideoDeinterlaceMode            deinterlace;
     CUvideodecoder                      dec;
     CUVIDDECODECREATEINFO               dec_create_info;
-    CUvideoctxlock                      vid_ctx_lock; // NULL
+    CUvideoctxlock                      vid_ctx_lock; // nullptr
     CUVIDPICPARAMS                      pic_params;
     CUVIDEOFORMATEX                     extra_parser_info;
     CUvideoparser                       parser;

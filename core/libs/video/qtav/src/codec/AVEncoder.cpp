@@ -178,7 +178,7 @@ void AVEncoder::copyAVCodecContext(void* ctx)
 
     if (d.avctx)
     {
-        // dest should be avcodec_alloc_context3(NULL)
+        // dest should be avcodec_alloc_context3(nullptr)
 
         AV_ENSURE_OK(avcodec_copy_context(d.avctx, c));
         d.is_open = false;

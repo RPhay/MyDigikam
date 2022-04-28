@@ -84,9 +84,9 @@ Class& Loki::Singleton<Class>::Instance()
         if (!id) return (T##Id*)&ids[0]; \
         T##Id *id0 = (T##Id*)&ids[0], *id1 = (T##Id*)&ids[ids.size() - 1]; \
         if (id >= id0 && id < id1) return id + 1; \
-        if (id == id1) return NULL; \
+        if (id == id1) return nullptr; \
         std::vector<T##Id>::const_iterator it = std::find(ids.begin(), ids.end(), *id); \
-        if (it == ids.end()) return NULL; \
+        if (it == ids.end()) return nullptr; \
         return (T##Id*)&*(it++); \
     } \
     T##Id T::id(const char* name) { DBG(#T "::id(\"%s\")\n", name); return T##Factory::Instance().id(name, false);} \

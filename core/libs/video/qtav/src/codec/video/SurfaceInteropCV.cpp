@@ -115,10 +115,10 @@ InteropResource* InteropResource::create(InteropType type)
 
 #endif
 
-        default: return NULL;
+        default: return nullptr;
     }
 
-    return NULL;
+    return nullptr;
 }
 
 InteropResource::InteropResource()
@@ -202,7 +202,7 @@ SurfaceInteropCV::~SurfaceInteropCV()
 void* SurfaceInteropCV::map(SurfaceType type, const VideoFormat &fmt, void *handle, int plane)
 {
     if (!handle)
-        return NULL;
+        return nullptr;
 
     if (!m_surface)
         return 0;
@@ -224,7 +224,7 @@ void* SurfaceInteropCV::map(SurfaceType type, const VideoFormat &fmt, void *hand
         return handle;
     }
 
-    return NULL;
+    return nullptr;
 }
 
 void SurfaceInteropCV::unmap(void *handle)
@@ -237,12 +237,12 @@ void SurfaceInteropCV::unmap(void *handle)
 void* SurfaceInteropCV::createHandle(void *handle, SurfaceType type, const VideoFormat &fmt, int plane, int planeWidth, int planeHeight)
 {
     if (type != GLTextureSurface)
-        return NULL;
+        return nullptr;
 
     GLuint tex = m_resource->createTexture(m_surface, fmt, plane, planeWidth, planeHeight);
 
     if (tex == 0)
-        return NULL;
+        return nullptr;
 
     *((GLuint*)handle) = tex;
 
@@ -260,7 +260,7 @@ void* SurfaceInteropCV::mapToHost(const VideoFormat &format, void *handle, int p
     {
         CVPixelBufferUnlockBaseAddress(m_surface, kCVPixelBufferLock_ReadOnly);
 
-        return NULL;
+        return nullptr;
     }
 
     const int w = CVPixelBufferGetWidth(m_surface);

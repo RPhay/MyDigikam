@@ -51,7 +51,7 @@ static const char* names[] =
 
 #endif
 
-    NULL
+    nullptr
 };
 
 typedef ::capi::dso user_dso;

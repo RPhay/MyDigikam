@@ -361,7 +361,7 @@ GLuint GLWidgetRendererPrivate::loadShader(GLenum shaderType, const char* pSourc
 
     if (shader)
     {
-        glShaderSource(shader, 1, &pSource, NULL);
+        glShaderSource(shader, 1, &pSource, nullptr);
         glCompileShader(shader);
         GLint compiled = GL_FALSE;
         glGetShaderiv(shader, GL_COMPILE_STATUS, &compiled);
@@ -377,7 +377,7 @@ GLuint GLWidgetRendererPrivate::loadShader(GLenum shaderType, const char* pSourc
 
                 if (buf)
                 {
-                    glGetShaderInfoLog(shader, infoLen, NULL, buf);
+                    glGetShaderInfoLog(shader, infoLen, nullptr, buf);
                     qCWarning(DIGIKAM_QTAVWIDGETS_LOG_WARN).noquote() << QString::asprintf("Could not compile shader %d:\n%s\n", shaderType, buf);
                     free(buf);
                 }
@@ -433,7 +433,7 @@ GLuint GLWidgetRendererPrivate::createProgram(const char* pVertexSource, const c
 
             if (buf)
             {
-                glGetProgramInfoLog(program, bufLength, NULL, buf);
+                glGetProgramInfoLog(program, bufLength, nullptr, buf);
                 qCWarning(DIGIKAM_QTAVWIDGETS_LOG_WARN).noquote() << QString::asprintf("Could not link program:\n%s\n", buf);
                 free(buf);
             }
@@ -680,7 +680,7 @@ bool GLWidgetRendererPrivate::initTexture(GLuint tex, GLint internalFormat, GLen
                  , 0                // border, ES not support
                  , format           // format, must the same as internal format?
                  , dataType
-                 , NULL);
+                 , nullptr);
 
     glBindTexture(GL_TEXTURE_2D, 0);
 
@@ -1048,7 +1048,7 @@ void GLWidgetRendererPrivate::uploadPlane(int p, GLint internalFormat, GLenum fo
 
         //glPixelStorei(GL_UNPACK_ALIGNMENT, 1);
 
-        glTexImage2D(GL_TEXTURE_2D, 0, internalFormat, roi_w, roi_h, 0, format, GL_UNSIGNED_BYTE, NULL);
+        glTexImage2D(GL_TEXTURE_2D, 0, internalFormat, roi_w, roi_h, 0, format, GL_UNSIGNED_BYTE, nullptr);
         const char* src = (char*)video_frame.bits(p) + roi_y*plane_w + roi_x*fmt.bytesPerPixel(p);
 
 #define UPLOAD_LINE 1

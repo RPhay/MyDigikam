@@ -38,12 +38,12 @@ namespace dx
 {
 
 DXVAHDVP::DXVAHDVP(ComPtr<IDirect3DDevice9> dev)
-    : m_dev(NULL)
+    : m_dev(nullptr)
     , m_w(0)
     , m_h(0)
     , m_cs(ColorSpace_BT709)
     , m_range(ColorRange_Limited)
-    , fDXVAHD_CreateDevice(NULL)
+    , fDXVAHD_CreateDevice(nullptr)
 {
     DX_ENSURE(dev.As(&m_dev));
     fDXVAHD_CreateDevice = (PDXVAHD_CreateDevice)GetProcAddress(GetModuleHandle(TEXT("dxva2.dll")), "DXVAHD_CreateDevice");
@@ -166,7 +166,7 @@ bool DXVAHDVP::ensureResource(UINT width, UINT height, D3DFORMAT format)
         desc.OutputFrameRate  = fps;
         desc.OutputWidth      = width;
         desc.OutputHeight     = height;
-        DX_ENSURE(fDXVAHD_CreateDevice(m_dev.Get(), &desc, DXVAHD_DEVICE_USAGE_PLAYBACK_NORMAL, NULL, &m_viddev), false);
+        DX_ENSURE(fDXVAHD_CreateDevice(m_dev.Get(), &desc, DXVAHD_DEVICE_USAGE_PLAYBACK_NORMAL, nullptr, &m_viddev), false);
     }
 
     // TODO: check when format is changed, or record supported formats

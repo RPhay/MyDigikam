@@ -93,7 +93,7 @@ static int ffmpeg_get_va_buffer2(struct AVCodecContext* ctx, AVFrame* frame, int
     ref->va              = va;
     ref->opaque          = frame->opaque;
 
-    /* data[0] must be non-NULL for libavcodec internal checks. data[3] actually contains the format-specific surface handle. */
+    /* data[0] must be non-nullptr for libavcodec internal checks. data[3] actually contains the format-specific surface handle. */
 
     frame->data[3] = frame->data[0];
     frame->buf[0]  = av_buffer_create(frame->data[0], 0, ffmpeg_release_va_buffer2, ref, 0);

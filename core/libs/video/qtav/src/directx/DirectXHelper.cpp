@@ -71,7 +71,7 @@ static void InitParameters(D3DPRESENT_PARAMETERS* d3dpp)
 
     d3dpp->Flags                  = D3DPRESENTFLAG_VIDEO;
     d3dpp->Windowed               = TRUE;
-    d3dpp->hDeviceWindow          = ::GetShellWindow();     // NULL;
+    d3dpp->hDeviceWindow          = ::GetShellWindow();     // nullptr;
     d3dpp->SwapEffect             = D3DSWAPEFFECT_DISCARD;
 
     //d3dpp->MultiSampleType        = D3DMULTISAMPLE_NONE;
@@ -99,10 +99,10 @@ IDirect3DDevice9* CreateDevice9Ex(HINSTANCE dll, IDirect3D9Ex** d3d9ex, D3DADAPT
     {
         qCWarning(DIGIKAM_QTAV_LOG_WARN).noquote() << QString::asprintf("Symbol not found: Direct3DCreate9Ex");
 
-        return NULL;
+        return nullptr;
     }
 
-    DX_ENSURE(Create9Ex(D3D_SDK_VERSION, d3d9ex), NULL); // TODO: will D3D_SDK_VERSION be override by other headers?
+    DX_ENSURE(Create9Ex(D3D_SDK_VERSION, d3d9ex), nullptr); // TODO: will D3D_SDK_VERSION be override by other headers?
 
     if (d3dai)
         DX_WARN((*d3d9ex)->GetAdapterIdentifier(D3DADAPTER_DEFAULT, 0, d3dai));
@@ -114,7 +114,7 @@ IDirect3DDevice9* CreateDevice9Ex(HINSTANCE dll, IDirect3D9Ex** d3d9ex, D3DADAPT
     // D3DCREATE_SOFTWARE_VERTEXPROCESSING in other dxva decoders. D3DCREATE_HARDWARE_VERTEXPROCESSING is required by cuda in cuD3D9CtxCreate()
 
     DWORD flags                 = D3DCREATE_FPU_PRESERVE | D3DCREATE_MULTITHREADED | D3DCREATE_HARDWARE_VERTEXPROCESSING;
-    IDirect3DDevice9Ex* d3d9dev = NULL;
+    IDirect3DDevice9Ex* d3d9dev = nullptr;
 
     // mpv:
 
@@ -127,9 +127,9 @@ IDirect3DDevice9* CreateDevice9Ex(HINSTANCE dll, IDirect3D9Ex** d3d9ex, D3DADAPT
                                         D3DDEVTYPE_HAL, GetShellWindow(), // GetDesktopWindow(), //GetShellWindow()?
                                         flags,
                                         &d3dpp,
-                                        NULL,
+                                        nullptr,
                                         (IDirect3DDevice9Ex**)(&d3d9dev)),
-                                        NULL);
+                                        nullptr);
 
     qCDebug(DIGIKAM_QTAV_LOG).noquote() << QString::asprintf("IDirect3DDevice9Ex created");
 
@@ -148,7 +148,7 @@ IDirect3DDevice9* CreateDevice9(HINSTANCE dll, IDirect3D9** d3d9, D3DADAPTER_IDE
     {
         qCWarning(DIGIKAM_QTAV_LOG_WARN).noquote() << QString::asprintf("Symbol not found: Direct3DCreate9");
 
-        return NULL;
+        return nullptr;
     }
 
     *d3d9 = Create9(D3D_SDK_VERSION);
@@ -156,7 +156,7 @@ IDirect3DDevice9* CreateDevice9(HINSTANCE dll, IDirect3D9** d3d9, D3DADAPTER_IDE
     if (!(*d3d9))
     {
         qCWarning(DIGIKAM_QTAV_LOG_WARN).noquote() << QString::asprintf("Direct3DCreate9 failed");
-        return NULL;
+        return nullptr;
     }
 
     if (d3dai)
@@ -165,13 +165,13 @@ IDirect3DDevice9* CreateDevice9(HINSTANCE dll, IDirect3D9** d3d9, D3DADAPTER_IDE
     D3DPRESENT_PARAMETERS d3dpp;
     InitParameters(&d3dpp);
     DWORD flags               = D3DCREATE_FPU_PRESERVE | D3DCREATE_MULTITHREADED | D3DCREATE_MIXED_VERTEXPROCESSING;
-    IDirect3DDevice9* d3d9dev = NULL;
+    IDirect3DDevice9* d3d9dev = nullptr;
 
     DX_ENSURE(((*d3d9)->CreateDevice(D3DADAPTER_DEFAULT,
                                      D3DDEVTYPE_HAL, GetShellWindow(), // GetDesktopWindow(), //GetShellWindow()?
                                      flags,
                                      &d3dpp, &d3d9dev)),
-                                     NULL);
+                                     nullptr);
 
     qCDebug(DIGIKAM_QTAV_LOG).noquote() << QString::asprintf("IDirect3DDevice9 created");
 

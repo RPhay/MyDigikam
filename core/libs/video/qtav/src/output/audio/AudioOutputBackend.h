@@ -148,8 +148,8 @@ public:
 
     /*!
      * \brief next
-     * \param id NULL to get the first id address
-     * \return address of id or NULL if not found/end
+     * \param id nullptr to get the first id address
+     * \return address of id or nullptr if not found/end
      */
     static AudioOutputBackendId* next(AudioOutputBackendId* id = nullptr);
     static const char* name(AudioOutputBackendId id);

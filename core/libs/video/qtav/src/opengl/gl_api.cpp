@@ -138,7 +138,7 @@ static void* GetProcAddressDefault(const char *name)
 #endif
 
 
-#define GL_RESOLVE_NONE(name) do { name = NULL;}while(0)
+#define GL_RESOLVE_NONE(name) do { name = nullptr;}while(0)
 #define GL_RESOLVE_EXT(name) do {\
     void** fp = (void**)(&name); \
     *fp = GetProcAddressDefault("gl" # name); \
@@ -194,7 +194,7 @@ void api::resolve()
         {
             "WGL_NV_DX_interop2",
             "WGL_NV_DX_interop",
-            NULL,
+            nullptr,
         };
 
         if (OpenGLHelper::hasExtension(ext))

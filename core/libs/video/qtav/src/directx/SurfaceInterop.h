@@ -78,7 +78,7 @@ public:
      * \brief createHandle
      * It is used by opengl renderer to create a texture when rendering frame from VDA/VideoToolbox decoder
      * VideoSurfaceInterop does not have the ownership. VideoShader does
-     * \return NULL if not used for opengl rendering. handle if create here
+     * \return nullptr if not used for opengl rendering. handle if create here
      */
     virtual void* createHandle(void* handle, SurfaceType type, const VideoFormat &fmt, int plane, int planeWidth, int planeHeight)
     {

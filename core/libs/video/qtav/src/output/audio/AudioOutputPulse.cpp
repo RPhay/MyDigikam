@@ -391,7 +391,7 @@ bool AudioOutputPulse::init(const AudioFormat &format)
     pa_format_info_set_channels(fi, format.channels());
     pa_format_info_set_rate(fi, format.sampleRate());
 
-    // pa_format_info_set_channel_map(fi, NULL); // TODO
+    // pa_format_info_set_channel_map(fi, nullptr); // TODO
 
     if (!pa_format_info_valid(fi))
     {

@@ -59,7 +59,7 @@ static const char* names[] =
 #else
     "EGL",
 #endif
-    NULL
+    nullptr
 };
 
 class EGLLib : public ::capi::dso

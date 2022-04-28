@@ -55,8 +55,8 @@ public:
      * \param width frame width
      * \param height frame height
      * \param surface_h surface height. Can be greater than visual frame height because of alignment
-     * \param src CPU accessible address of frame planes on GPU. src[0] must be valid. src[i>0] will be filled depending on pixel format, pitch and surface_h if it's NULL.
-     * \param pitch plane pitch on GPU. pitch[0] must be valid. pitch[i>0] will be filled depending on pixel format, pitch[0] and surface_h if it's NULL.
+     * \param src CPU accessible address of frame planes on GPU. src[0] must be valid. src[i>0] will be filled depending on pixel format, pitch and surface_h if it's nullptr.
+     * \param pitch plane pitch on GPU. pitch[0] must be valid. pitch[i>0] will be filled depending on pixel format, pitch[0] and surface_h if it's nullptr.
      * \param optimized try to use SIMD to copy from GPU. otherwise use memcpy
      * \param swapUV it's required if u/v src are null
      */

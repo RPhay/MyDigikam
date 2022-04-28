@@ -521,7 +521,7 @@ static void getFFmpegInputFormats(QStringList* formats, QStringList* extensions)
 
 #else
 
-        AVInputFormat *i = NULL;
+        AVInputFormat *i = nullptr;
         av_register_all();          // MUST register all input/output formats
 
         while ((i = av_iformat_next(i)))
