@@ -166,7 +166,7 @@ public:
 
 #ifndef Q_OS_WINRT
 
-        dll = LoadLibrary(TEXT("d3d11.dll"));
+        dll = LoadLibrary(TEXT("d3d11.dll")); // cppcheck-suppress useInitializationList
         available = !!dll;
 
 #endif
@@ -189,32 +189,41 @@ public:
 
     }
 
-    AVPixelFormat vaPixelFormat() const override { return QTAV_PIX_FMT_C(D3D11VA_VLD);}
+    AVPixelFormat vaPixelFormat() const override
+    {
+        return QTAV_PIX_FMT_C(D3D11VA_VLD);
+    }
 
 private:
 
-    bool createDevice() override;
-    void destroyDevice() override; // d3d device and it's resources
-    bool createDecoder(AVCodecID codec_id, int w, int h, QVector<va_surface_t*>& surf) override;
-    void destroyDecoder() override;
-    bool setupSurfaceInterop() override;
-    void* setupAVVAContext() override;
-    QVector<GUID> getSupportedCodecs() const override;
-    int fourccFor(const GUID *guid) const override;
+    bool createDevice()                              override;
+    void destroyDevice()                             override;      // d3d device and it's resources
 
-    HMODULE dll;
-    ComPtr<ID3D11Device> d3ddev;
-    ComPtr<ID3D11VideoDevice> d3dviddev;
-    ComPtr<ID3D11VideoDecoder> d3ddec;
-    ComPtr<ID3D11VideoContext> d3dvidctx;
-    D3D11_VIDEO_DECODER_CONFIG cfg;
-    struct AVD3D11VAContext hw;
+    bool createDecoder(AVCodecID codec_id,
+                       int w, int h,
+                       QVector<va_surface_t*>& surf) override;
+
+    void destroyDecoder()                            override;
+    bool setupSurfaceInterop()                       override;
+    void* setupAVVAContext()                         override;
+    QVector<GUID> getSupportedCodecs()         const override;
+    int fourccFor(const GUID *guid)            const override;
+
+private:
+
+    HMODULE                     dll;
+    ComPtr<ID3D11Device>        d3ddev;
+    ComPtr<ID3D11VideoDevice>   d3dviddev;
+    ComPtr<ID3D11VideoDecoder>  d3ddec;
+    ComPtr<ID3D11VideoContext>  d3dvidctx;
+    D3D11_VIDEO_DECODER_CONFIG  cfg;
+    struct AVD3D11VAContext     hw;
 
 public:
 
     ComPtr<ID3D11DeviceContext> d3dctx;
-    ComPtr<ID3D11Texture2D> texture_cpu;    // used by copy mode. d3d11 texture can not be accessed by both gpu and cpu
-    d3d11::InteropResourcePtr interop_res;  // may be still used in video frames when decoder is destroyed
+    ComPtr<ID3D11Texture2D>     texture_cpu;  // used by copy mode. d3d11 texture can not be accessed by both gpu and cpu
+    d3d11::InteropResourcePtr   interop_res;  // may be still used in video frames when decoder is destroyed
 };
 
 VideoFrame VideoDecoderD3D11::frame()
@@ -259,7 +268,7 @@ VideoFrame VideoDecoderD3D11::frame()
         VideoFormat fmt(d.interop_res->format(tex_desc.Format));
         VideoFrame f(d.width, d.height, fmt);
 
-        for (int i = 0; i < fmt.planeCount(); ++i)
+        for (int i = 0 ; i < fmt.planeCount() ; ++i)
         {
             f.setBytesPerLine(fmt.bytesPerLine(d.width, i), i); //used by gl to compute texture size
         }
@@ -297,11 +306,11 @@ VideoFrame VideoDecoderD3D11::frame()
     };
 
     D3D11_MAPPED_SUBRESOURCE mapped;
-    ScopedMap sm(d.d3dctx, d.texture_cpu, &mapped);                // mingw error if ComPtr<T> constructs from ComPtr<U> [T=ID3D11Resource, U=ID3D11Texture2D]
+    ScopedMap sm(d.d3dctx, d.texture_cpu, &mapped);                                     // mingw error if ComPtr<T> constructs from ComPtr<U> [T=ID3D11Resource, U=ID3D11Texture2D]
     Q_UNUSED(sm);
-    int pitch[3]             = { (int)mapped.RowPitch, 0, 0 };     // compute chroma later
-    uint8_t *src[]           = { (uint8_t*)mapped.pData, 0, 0 };   // compute chroma later
-    const VideoFormat format = VideoDecoderD3D::pixelFormatFromFourcc(d.format_fcc); //tex_desc
+    int pitch[3]             = { (int)mapped.RowPitch, 0, 0 };                          // compute chroma later
+    uint8_t *src[]           = { (uint8_t*)mapped.pData, 0, 0 };                        // compute chroma later
+    const VideoFormat format = VideoDecoderD3D::pixelFormatFromFourcc(d.format_fcc);    // tex_desc
 
     return copyToFrame(format, tex_desc.Height, src, pitch, false);
 }
@@ -376,7 +385,7 @@ int VideoDecoderD3D11Private::fourccFor(const GUID *guid) const
 {
     BOOL is_supported = FALSE;
 
-    for (size_t i = 0; i < sizeof(dxgi_formats)/sizeof(dxgi_formats[i]); ++i)
+    for (size_t i = 0 ; i < sizeof(dxgi_formats)/sizeof(dxgi_formats[i]) ; ++i)
     {
         const dxgi_fcc& f = dxgi_formats[i];
         DX_ENSURE(d3dviddev->CheckVideoDecoderFormat(guid, f.dxgi, &is_supported), 0);
@@ -393,7 +402,7 @@ QVector<GUID> VideoDecoderD3D11Private::getSupportedCodecs() const
     UINT nb_profiles = d3dviddev->GetVideoDecoderProfileCount();
     QVector<GUID> guids(nb_profiles);
 
-    for (UINT i = 0; i < nb_profiles; ++i)
+    for (UINT i = 0 ; i < nb_profiles ; ++i)
     {
         DX_ENSURE(d3dviddev->GetVideoDecoderProfile(i, &guids[i]), QVector<GUID>());
     }
@@ -465,7 +474,7 @@ bool VideoDecoderD3D11Private::createDecoder(AVCodecID codec_id, int w, int h, Q
 
     QVector<D3D11_VIDEO_DECODER_CONFIG> cfg_list(cfg_count);
 
-    for (unsigned i = 0; i < cfg_count; i++)
+    for (unsigned i = 0 ; i < cfg_count ; i++)
     {
         DX_ENSURE(d3dviddev->GetVideoDecoderConfig(&decoderDesc, i, &cfg_list[i]), false);
     }

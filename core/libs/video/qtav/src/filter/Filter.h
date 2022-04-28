@@ -113,7 +113,7 @@ public:
 
     VideoFilterContext* context();
     virtual bool isSupported(VideoFilterContext::Type ct) const;
-    bool installTo(AVPlayer *player);
+    bool installTo(AVPlayer* player) override;
 
     /*!
      * \brief installTo
@@ -122,14 +122,14 @@ public:
      * 2. QPainter rendering on widget based renderers. Changing the frame has no effect
      * \return false if already installed
      */
-    bool installTo(AVOutput *output); // only for video. move to video filter installToRenderer
-    void apply(Statistics* statistics, VideoFrame *frame = 0);
+    bool installTo(AVOutput* output); // only for video. move to video filter installToRenderer
+    void apply(Statistics* statistics, VideoFrame* frame = 0);
 
     bool prepareContext(VideoFilterContext*& ctx, Statistics* statistics = 0, VideoFrame* frame = 0); // internal use
 
 protected:
 
-    VideoFilter(VideoFilterPrivate& d, QObject *parent = 0);
+    VideoFilter(VideoFilterPrivate& d, QObject* parent = 0);
     virtual void process(Statistics* statistics, VideoFrame* frame = 0) = 0;
 };
 
@@ -146,12 +146,12 @@ class QTAV_EXPORT AudioFilter : public Filter
 public:
 
     AudioFilter(QObject* parent = 0);
-    bool installTo(AVPlayer *player);
-    void apply(Statistics* statistics, AudioFrame *frame = 0);
+    bool installTo(AVPlayer* player) override;
+    void apply(Statistics* statistics, AudioFrame* frame = 0);
 
 protected:
 
-    AudioFilter(AudioFilterPrivate& d, QObject *parent = 0);
+    AudioFilter(AudioFilterPrivate& d, QObject* parent = 0);
     virtual void process(Statistics* statistics, AudioFrame* frame = 0) = 0;
 };
 

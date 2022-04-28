@@ -57,7 +57,7 @@ public:
         }
     }
 
-    void setupQuality()
+    void setupQuality() override
     {
         switch (quality)
         {

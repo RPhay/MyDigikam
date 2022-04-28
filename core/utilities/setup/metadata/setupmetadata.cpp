@@ -69,14 +69,8 @@ SetupMetadata::SetupMetadata(QWidget* const parent)
 
     // --------------------------------------------------------
 
-    connect(d->sidecarFileNameBox, SIGNAL(toggled(bool)),
-            this, SLOT(slotSidecarFileNameToggled(bool)));
-
     connect(d->exifRotateBox, SIGNAL(toggled(bool)),
             this, SLOT(slotExifAutoRotateToggled(bool)));
-
-    connect(d->clearMetadataIfRescanBox, SIGNAL(toggled(bool)),
-            this, SLOT(slotClearMetadataToggled(bool)));
 
     connect(d->writeWithExifToolBox, SIGNAL(toggled(bool)),
             this, SLOT(slotWriteWithExifToolToggled(bool)));
@@ -96,6 +90,12 @@ SetupMetadata::SetupMetadata(QWidget* const parent)
 
     connect(d->writeRawFilesBox, SIGNAL(toggled(bool)),
             this, SLOT(slotWriteRawFilesToggled(bool)));
+
+    connect(d->sidecarFileNameBox, SIGNAL(toggled(bool)),
+            this, SLOT(slotSidecarFileNameToggled(bool)));
+
+    connect(d->clearMetadataIfRescanBox, SIGNAL(toggled(bool)),
+            this, SLOT(slotClearMetadataToggled(bool)));
 
     // --------------------------------------------------------
 

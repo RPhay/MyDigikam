@@ -351,7 +351,7 @@ public:
 
     // it seems that only D2D1_BITMAP_INTERPOLATION_MODE(used in DrawBitmap) matters when drawing an image
 
-    void setupQuality()
+    void setupQuality() override
     {
         switch (quality)
         {

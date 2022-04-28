@@ -24,6 +24,8 @@
 #ifndef QTAV_FILTER_P_H
 #define QTAV_FILTER_P_H
 
+#include "Filter.h"
+
 // Local includes
 
 #include "QtAV_Global.h"
@@ -45,7 +47,9 @@ public:
     {
     }
 
-    virtual ~FilterPrivate() {}
+    virtual ~FilterPrivate()
+    {
+    }
 
     bool enabled;
     bool owned_by_target;

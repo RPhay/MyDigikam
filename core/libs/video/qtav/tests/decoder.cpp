@@ -119,11 +119,20 @@ int main(int argc, char *argv[])
         {
             VideoFrame frame = dec->frame(); // why is faster to call frame() for hwdec? no frame() is very slow for VDA
             Q_UNUSED(frame);
+
             count++;
             const qint64 now = QDateTime::currentMSecsSinceEpoch();
             const qint64 dt = now - t0;
             t.enqueue(now);
-            printf("decode count: %d, elapsed: %lld, fps: %.1f/%.1f\r", count, dt, count*1000.0/dt, t.size()*1000.0/(now - t.first()));fflush(0);
+
+            qCDebug(DIGIKAM_TESTS_LOG) << "decode count:"
+                << count
+                << "elapsed:"
+                << dt
+                << ", fps:"
+                << count*1000.0/dt
+                << "/"
+                << t.size()*1000.0/(now - t.first());
 
             if (t.size() > 10)
                 t.dequeue();

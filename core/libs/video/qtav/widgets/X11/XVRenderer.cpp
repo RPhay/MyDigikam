@@ -345,7 +345,8 @@ public:
             {
                 for (XvPortID p = xv_adaptor_info[i].base_id; p < xv_adaptor_info[i].base_id + xv_adaptor_info[i].num_ports; ++p)
                 {
-                    qCDebug(DIGIKAM_QTAVWIDGETS_LOG).noquote() << QString::asprintf("XvAdaptorInfo: %s", xv_adaptor_info[i].name);
+                    qCDebug(DIGIKAM_QTAVWIDGETS_LOG) << "XvAdaptorInfo:" << xv_adaptor_info[i].name;
+
                     format_id = xvFormatInPort(display, p, pixfmt);
 
                     if (format_id)
@@ -384,6 +385,7 @@ public:
             goto no_shm;
 
         shm.shmid = shmget(IPC_PRIVATE, xv_image->data_size, IPC_CREAT | 0777);
+
         qCDebug(DIGIKAM_QTAVWIDGETS_LOG).noquote() << QString::asprintf("shmid: %d xv_image->data_size: %d, %dx%d", shm.shmid, xv_image->data_size, xv_image_width, xv_image_height);
 
         if (shm.shmid < 0)

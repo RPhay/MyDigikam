@@ -23,8 +23,10 @@
 
 #if defined(BUILD_AVR) || defined(BUILD_SWR) // no this macro is fine too for qmake
 
-#   include "AudioResampler.h"
 #   include "AudioResampler_p.h"
+
+// Local includes
+
 #   include "AVCompat.h"
 #   include "QtAV_factory.h"
 #   include "digikam_debug.h"
@@ -33,11 +35,11 @@ namespace QtAV
 {
 
 #   if QTAV_HAVE(SWR_AVR_MAP)
-#       define AudioResamplerFF AudioResamplerLibav
-#       define AudioResamplerFFPrivate AudioResamplerLibavPrivate
-#       define AudioResamplerId_FF AudioResamplerId_Libav
+#       define AudioResamplerFF             AudioResamplerLibav
+#       define AudioResamplerFFPrivate      AudioResamplerLibavPrivate
+#       define AudioResamplerId_FF          AudioResamplerId_Libav
 #       define RegisterAudioResamplerFF_Man RegisterAudioResamplerLibav_Man
-#       define FF Libav
+#       define FF                           Libav
 
 static const char kName[] = "Libav";
 
@@ -57,8 +59,8 @@ public:
 
     AudioResamplerFF();
 
-    virtual bool convert(const quint8** data);
-    virtual bool prepare();
+    virtual bool convert(const quint8** data) override;
+    virtual bool prepare()                    override;
 };
 
 extern AudioResamplerId AudioResamplerId_FF;
@@ -294,7 +296,7 @@ bool AudioResamplerFF::prepare()
      * matrix[i + stride * o] is the weight of input channel i in output channel o.
      */
 
-    double *matrix = 0;
+    double* matrix = 0;
 
     if (d.out_format.channelLayout() == AudioFormat::ChannelLayout_Left)
     {

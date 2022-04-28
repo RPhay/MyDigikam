@@ -24,6 +24,8 @@
 #ifndef QTAV_AUDIO_RESAMPLER_P_H
 #define QTAV_AUDIO_RESAMPLER_P_H
 
+#include "AudioResampler.h"
+
 // Qt includes
 
 #include <QByteArray>

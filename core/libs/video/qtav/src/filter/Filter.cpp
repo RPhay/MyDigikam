@@ -21,8 +21,10 @@
  *
  * ============================================================ */
 
-#include "Filter.h"
 #include "Filter_p.h"
+
+// Local includes
+
 #include "Statistics.h"
 #include "AVOutput.h"
 #include "AVPlayer.h"
@@ -57,15 +59,19 @@ Filter::~Filter()
 void Filter::setEnabled(bool enabled)
 {
     DPTR_D(Filter);
+
     if (d.enabled == enabled)
         return;
+
     d.enabled = enabled;
+
     Q_EMIT enabledChanged(enabled);
 }
 
 bool Filter::isEnabled() const
 {
     DPTR_D(const Filter);
+
     return d.enabled;
 }
 
@@ -86,44 +92,57 @@ bool Filter::uninstall()
 
 AudioFilter::AudioFilter(QObject *parent)
     : Filter(*new AudioFilterPrivate(), parent)
-{}
+{
+}
 
 AudioFilter::AudioFilter(AudioFilterPrivate& d, QObject *parent)
     : Filter(d, parent)
-{}
+{
+}
 
-/*TODO: move to AVPlayer.cpp to reduce dependency?*/
+/*
+ * TODO: move to AVPlayer.cpp to reduce dependency?
+ */
+
 bool AudioFilter::installTo(AVPlayer *player)
 {
     return player->installFilter(this);
 }
 
-void AudioFilter::apply(Statistics *statistics, AudioFrame *frame)
+void AudioFilter::apply(Statistics* statistics, AudioFrame *frame)
 {
     process(statistics, frame);
 }
 
 VideoFilter::VideoFilter(QObject *parent)
     : Filter(*new VideoFilterPrivate(), parent)
-{}
+{
+}
 
 VideoFilter::VideoFilter(VideoFilterPrivate &d, QObject *parent)
     : Filter(d, parent)
-{}
+{
+}
 
 VideoFilterContext *VideoFilter::context()
 {
     DPTR_D(VideoFilter);
-    if (!d.context) {
-        //fake. only to store some parameters at the beginnig. it will be destroyed and set to a new instance if context type mismatch in prepareContext, with old parameters
+
+    if (!d.context)
+    {
+        // Fake. only to store some parameters at the beginnig.
+        // It will be destroyed and set to a new instance if context type mismatch in prepareContext, with old parameters
+
         d.context = VideoFilterContext::create(VideoFilterContext::QtPainter);
     }
+
     return d.context;
 }
 
 bool VideoFilter::isSupported(VideoFilterContext::Type ct) const
 {
     // TODO: return false
+
     return VideoFilterContext::None == ct;
 }
 
@@ -132,7 +151,8 @@ bool VideoFilter::installTo(AVPlayer *player)
     return player->installFilter(this);
 }
 
-/*TODO: move to AVOutput.cpp to reduce dependency?*/
+/* TODO: move to AVOutput.cpp to reduce dependency?*/
+
 /*
  * filter.installTo(target,...) calls target.installFilter(filter)
  * If filter is already registered in FilterManager, then return false
@@ -147,13 +167,20 @@ bool VideoFilter::installTo(AVOutput *output)
 bool VideoFilter::prepareContext(VideoFilterContext *&ctx, Statistics *statistics, VideoFrame *frame)
 {
     DPTR_D(VideoFilter);
-    if (!ctx || !isSupported(ctx->type())) {
+
+    if (!ctx || !isSupported(ctx->type()))
+    {
         //qCDebug(DIGIKAM_QTAV_LOG).noquote() << QString::asprintf("no context: %p, or context type %d is not supported", ctx, ctx? ctx->type() : 0);
+
         return isSupported(VideoFilterContext::None);
     }
-    if (!d.context || d.context->type() != ctx->type()) {
+
+    if (!d.context || d.context->type() != ctx->type())
+    {
         VideoFilterContext* c = VideoFilterContext::create(ctx->type());//each filter has it's own context instance, but share the common parameters
-        if (d.context) {
+
+        if (d.context)
+        {
             c->pen = d.context->pen;
             c->brush = d.context->brush;
             c->clip_path = d.context->clip_path;
@@ -163,20 +190,26 @@ bool VideoFilter::prepareContext(VideoFilterContext *&ctx, Statistics *statistic
             c->opacity = d.context->opacity;
             c->paint_device = d.context->paint_device;
         }
-        if (d.context) {
+
+        if (d.context)
+        {
             delete d.context;
         }
+
         d.context = c;
     }
-    d.context->video_width = statistics->video_only.width;
+
+    d.context->video_width  = statistics->video_only.width;
     d.context->video_height = statistics->video_only.height;
-    ctx->video_width = statistics->video_only.width;
-    ctx->video_height = statistics->video_only.height;
+    ctx->video_width        = statistics->video_only.width;
+    ctx->video_height       = statistics->video_only.height;
 
     // share common data
+
     d.context->shareFrom(ctx);
     d.context->initializeOnFrame(frame);
     ctx->shareFrom(d.context);
+
     return true;
 }
 

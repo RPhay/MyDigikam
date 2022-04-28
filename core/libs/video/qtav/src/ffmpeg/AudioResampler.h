@@ -21,8 +21,8 @@
  *
  * ============================================================ */
 
-#ifndef QTAV_AUDIORESAMPLER_H
-#define QTAV_AUDIORESAMPLER_H
+#ifndef QTAV_AUDIO_RESAMPLER_H
+#define QTAV_AUDIO_RESAMPLER_H
 
 // Local includes
 
@@ -47,6 +47,7 @@ public:
     // if QtAV is static linked (ios for example), components may be not automatically registered. Add registerAll() to workaround
 
     static void registerAll();
+
     template<class C>
     static bool Register(AudioResamplerId id, const char* name)
     {
@@ -117,7 +118,7 @@ public:
     // TODO: enum. layout will be set to the default layout of the channels if not defined
 
     void setInChannelLayout(qint64 icl);
-    void setOutChannelLayout(qint64 ocl); //default is in
+    void setOutChannelLayout(qint64 ocl); // default is in
     void setInChannels(int channels);
     void setOutChannels(int channels);
 
@@ -134,6 +135,7 @@ private:
     }
 
     typedef AudioResampler* (*AudioResamplerCreator)();
+
     static bool Register(AudioResamplerId id, AudioResamplerCreator, const char *name);
 
 protected:
@@ -147,4 +149,4 @@ extern QTAV_EXPORT AudioResamplerId AudioResamplerId_Libav;
 
 } // namespace QtAV
 
-#endif // QTAV_AUDIORESAMPLER_H
+#endif // QTAV_AUDIO_RESAMPLER_H
