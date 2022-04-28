@@ -27,6 +27,8 @@
 
 #include <QCoreApplication>
 #include <QEvent>
+#include <QWidget>
+#include <QWindow>
 
 // Local includes
 
@@ -872,7 +874,7 @@ void VideoRenderer::setBackgroundColor(const QColor &c)
 
 void VideoRenderer::updateUi()
 {
-    QObject *obj = (QObject*)widget();
+    QObject* obj = dynamic_cast<QObject*>(widget());
 
     if (obj)
     {
@@ -906,7 +908,7 @@ void VideoRenderer::updateUi()
     }
     else
     {
-        obj = (QObject*)qwindow();
+        obj = dynamic_cast<QObject*>(qwindow());
 
         if (obj)
             QCoreApplication::instance()->postEvent(obj, new QEvent(QEvent::UpdateRequest));

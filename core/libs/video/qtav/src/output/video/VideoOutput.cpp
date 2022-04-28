@@ -27,6 +27,7 @@
 
 #include <QLibrary>
 #include <QString>
+#include <QWidget>
 #include <QResizeEvent>
 
 // Local includes
@@ -144,8 +145,8 @@ public:
         }
     }
 
-    VideoRenderer *impl;
-    QLibrary avwidgets;
+    VideoRenderer* impl;
+    QLibrary       avwidgets;
 };
 
 VideoOutput::VideoOutput(QObject *parent)
@@ -154,7 +155,7 @@ VideoOutput::VideoOutput(QObject *parent)
 {
     if (d_func().impl && d_func().impl->widget())
     {
-        ((QObject*)d_func().impl->widget())->installEventFilter(this);
+        dynamic_cast<QObject*>(d_func().impl->widget())->installEventFilter(this);
     }
 }
 
@@ -164,7 +165,7 @@ VideoOutput::VideoOutput(VideoRendererId rendererId, QObject *parent)
 {
     if (d_func().impl && d_func().impl->widget())
     {
-        ((QObject*)d_func().impl->widget())->installEventFilter(this);
+        dynamic_cast<QObject*>(d_func().impl->widget())->installEventFilter(this);
     }
 }
 
@@ -172,7 +173,7 @@ VideoOutput::~VideoOutput()
 {
     if (d_func().impl && d_func().impl->widget())
     {
-        ((QObject*)d_func().impl->widget())->removeEventFilter(this);
+        dynamic_cast<QObject*>(d_func().impl->widget())->removeEventFilter(this);
     }
 }
 
@@ -245,16 +246,16 @@ OpenGLVideo* VideoOutput::opengl() const
     return d_func().impl->opengl();
 }
 
-bool VideoOutput::eventFilter(QObject *obj, QEvent *event)
+bool VideoOutput::eventFilter(QObject* obj, QEvent* event)
 {
     DPTR_D(VideoOutput);
 
-    if (!d.impl || (QObject*)d.impl->widget() != obj)
+    if (!d.impl || dynamic_cast<QObject*>(d.impl->widget()) != obj)
         return QObject::eventFilter(obj, event);
 
     if (event->type() == QEvent::Resize)
     {
-        QResizeEvent *re = static_cast<QResizeEvent*>(event);
+        QResizeEvent* re = static_cast<QResizeEvent*>(event);
         resizeRenderer(re->size());
     }
 
