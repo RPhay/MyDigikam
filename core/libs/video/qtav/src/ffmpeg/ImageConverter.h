@@ -25,9 +25,14 @@
 #ifndef QTAV_IMAGE_CONVERTER_H
 #define QTAV_IMAGE_CONVERTER_H
 
+// Qt includes
+
+#include <QVector>
+
+// Local includes
+
 #include "QtAV_Global.h"
 #include "VideoFormat.h"
-#include <QVector>
 
 namespace QtAV
 {
@@ -39,6 +44,7 @@ class ImageConverterPrivate;
 class ImageConverter // export is not needed
 {
     DPTR_DECLARE_PRIVATE(ImageConverter)
+
 public:
 
     enum
@@ -90,11 +96,19 @@ public:
     QVector<quint8*> outPlanes() const;
     QVector<int> outLineSizes() const;
     virtual bool convert(const quint8 *const src[], const int srcStride[]);
-    virtual bool convert(const quint8 *const src[], const int srcStride[], quint8 *const dst[], const int dstStride[]) = 0;
+
+    virtual bool convert(const quint8 *const src[],
+                         const int srcStride[],
+                         quint8 *const dst[],
+                         const int dstStride[]) = 0;
 
 public:
 
-    template<class C> static bool Register(ImageConverterId id, const char* name) { return Register(id, create<C>, name);}
+    template<class C> static bool Register(ImageConverterId id, const char* name)
+    {
+        return Register(id, create<C>, name);
+    }
+
     static ImageConverter* create(ImageConverterId id);
     static ImageConverter* create(const char* name);
 
@@ -115,6 +129,7 @@ private:
     }
 
     typedef ImageConverter* (*ImageConverterCreator)();
+
     static bool Register(ImageConverterId id, ImageConverterCreator, const char *name);
 
 protected:
@@ -133,7 +148,7 @@ class ImageConverterFFPrivate;
  * \brief The ImageConverterFF class
  * based on libswscale
  */
-class ImageConverterFF final: public ImageConverter // QTAV_EXPORT is not needed
+class ImageConverterFF final : public ImageConverter // QTAV_EXPORT is not needed
 {
     DPTR_DECLARE_PRIVATE(ImageConverterFF)
 
@@ -144,8 +159,15 @@ public:
 
     // FIXME: why match to the pure virtual one if not declare here?
 
-    bool convert(const quint8 *const src[], const int srcStride[]) override { return ImageConverter::convert(src, srcStride);}
-    bool convert(const quint8 *const src[], const int srcStride[], quint8 *const dst[], const int dstStride[]) override;
+    bool convert(const quint8 *const src[], const int srcStride[]) override
+    {
+        return ImageConverter::convert(src, srcStride);
+    }
+
+    bool convert(const quint8 *const src[],
+                 const int srcStride[],
+                 quint8 *const dst[],
+                 const int dstStride[]) override;
 };
 
 typedef ImageConverterFF ImageConverterSWS;

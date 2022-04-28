@@ -70,7 +70,7 @@ void Filter::setEnabled(bool enabled)
 
 bool Filter::isEnabled() const
 {
-    DPTR_D(const Filter);
+    DPTR_D(const Filter); // cppcheck-suppress constVariable
 
     return d.enabled;
 }

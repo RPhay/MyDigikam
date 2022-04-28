@@ -408,7 +408,7 @@ void VideoRenderer::setOrientation(int value)
 
 int VideoRenderer::orientation() const
 {
-    DPTR_D(const VideoRenderer);
+    DPTR_D(const VideoRenderer); // cppcheck-suppress constVariable
 
     return d.orientation;
 }

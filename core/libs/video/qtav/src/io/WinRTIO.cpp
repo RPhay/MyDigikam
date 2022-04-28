@@ -75,6 +75,7 @@ class WinRTIO : public MediaIO
 public:
 
     WinRTIO();
+
     QString name() const override
     {
         return QLatin1String(kName);
@@ -131,8 +132,8 @@ public:
     }
 
     ComPtr<IStorageItem> item;
-    ComPtr<IStream> stream;
-    qint64 pos;
+    ComPtr<IStream>      stream;
+    qint64               pos;
 };
 
 WinRTIO::WinRTIO()                  : MediaIO(*new WinRTIOPrivate()) {}
@@ -140,14 +141,14 @@ WinRTIO::WinRTIO(WinRTIOPrivate &d) : MediaIO(d)                     {}
 
 bool WinRTIO::isSeekable() const
 {
-    DPTR_D(const WinRTIO);
+    DPTR_D(const WinRTIO); // cppcheck-suppress constVariable
 
     return !!d.stream;
 }
 
 bool WinRTIO::isWritable() const
 {
-    DPTR_D(const WinRTIO);
+    DPTR_D(const WinRTIO); // cppcheck-suppress constVariable
 
     return !!d.stream;
 }
@@ -196,7 +197,7 @@ bool WinRTIO::seek(qint64 offset, int from)
         return false;
 
     LARGE_INTEGER in;
-    in.QuadPart = offset;
+    in.QuadPart        = offset;
     ULARGE_INTEGER out = { 0 };
 
     // dwOrigin: has the same value as ffmpeg. STREAM_SEEK_SET, STREAM_SEEK_CUR, STREAM_SEEK_END
@@ -209,7 +210,7 @@ bool WinRTIO::seek(qint64 offset, int from)
 
 qint64 WinRTIO::position() const
 {
-    DPTR_D(const WinRTIO);
+    DPTR_D(const WinRTIO); // cppcheck-suppress constVariable
 
     return d.pos;
 }
@@ -238,7 +239,7 @@ void WinRTIO::onUrlChanged()
     if      (url().startsWith(name().append(QStringLiteral(":@")), Qt::CaseInsensitive))
     {
         const int addr_begin = name().size() + 2;
-        const int addr_end = url().indexOf(QLatin1Char(':'), addr_begin);
+        const int addr_end   = url().indexOf(QLatin1Char(':'), addr_begin);
         QString addr(url().mid(addr_begin, addr_end - addr_begin));
         openFromStorage((IStorageItem*)(qptrdiff)addr.toULongLong());
     }
@@ -275,7 +276,7 @@ void WinRTIO::openFromPath(const QString &path)
 
     // 2 bytes for utf-16, 4 bytes for ucs-4(unix)
 
-    wchar_t *wp = new wchar_t[path.size()*4];
+    wchar_t *wp   = new wchar_t[path.size()*4];
     const int len = path.toWCharArray(wp);
     HString p;
     p.Set(wp, len);

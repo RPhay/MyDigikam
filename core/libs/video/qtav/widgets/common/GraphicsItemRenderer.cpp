@@ -283,7 +283,7 @@ void GraphicsItemRenderer::paint(QPainter *painter, const QStyleOptionGraphicsIt
 
 void GraphicsItemRenderer::drawBackground()
 {
-    DPTR_D(GraphicsItemRenderer);
+    DPTR_D(GraphicsItemRenderer); // cppcheck-suppress constVariable
 
 #if QTAV_HAVE(OPENGL)
 
@@ -304,7 +304,7 @@ void GraphicsItemRenderer::drawBackground()
 
 void GraphicsItemRenderer::drawFrame()
 {
-    DPTR_D(GraphicsItemRenderer);
+    DPTR_D(GraphicsItemRenderer); // cppcheck-suppress constVariable
 
     if (!d.painter)
         return;

@@ -282,7 +282,7 @@ void AVDecoder::setCodecName(const QString &name)
 
 QString AVDecoder::codecName() const
 {
-    DPTR_D(const AVDecoder);
+    DPTR_D(const AVDecoder); // cppcheck-suppress constVariable
 
     return d.codec_name;
 }

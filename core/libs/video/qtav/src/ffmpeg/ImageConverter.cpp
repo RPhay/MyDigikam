@@ -23,6 +23,9 @@
  * ============================================================ */
 
 #include "ImageConverter_p.h"
+
+// Local includes
+
 #include "AVCompat.h"
 #include "QtAV_factory.h"
 #include "ImageConverter.h"
@@ -48,16 +51,16 @@ ImageConverter::~ImageConverter()
 
 QByteArray ImageConverter::outData() const
 {
-    DPTR_D(const ImageConverter);
+    DPTR_D(const ImageConverter); // cppcheck-suppress constVariable
 
     return d.data_out;
 }
 
 bool ImageConverter::check() const
 {
-    DPTR_D(const ImageConverter);
+    DPTR_D(const ImageConverter); // cppcheck-suppress constVariable
 
-    return d.w_in > 0 && d.w_out > 0 && d.h_in > 0 && d.h_out > 0
+    return    d.w_in > 0 && d.w_out > 0 && d.h_in > 0 && d.h_out > 0
            && d.fmt_in != QTAV_PIX_FMT_C(NONE) && d.fmt_out != QTAV_PIX_FMT_C(NONE);
 }
 
@@ -73,6 +76,7 @@ void ImageConverter::setInSize(int width, int height)
 }
 
 // TODO: default is in size
+
 void ImageConverter::setOutSize(int width, int height)
 {
     DPTR_D(ImageConverter);
@@ -80,8 +84,8 @@ void ImageConverter::setOutSize(int width, int height)
     if (d.w_out == width && d.h_out == height)
         return;
 
-    d.w_out = width;
-    d.h_out = height;
+    d.w_out       = width;
+    d.h_out       = height;
     d.update_data = true;
     prepareData();
     d.update_data = false;
@@ -243,6 +247,7 @@ bool ImageConverter::prepareData()
         return false;
 
     AV_ENSURE(av_image_check_size(d.w_out, d.h_out, 0, NULL), false);
+
     const int nb_planes = qMax(av_pix_fmt_count_planes(d.fmt_out), 0);
     d.bits.resize(nb_planes);
     d.pitchs.resize(nb_planes);
@@ -250,9 +255,10 @@ bool ImageConverter::prepareData()
     // alignment is 16. sws in ffmpeg is 16, libav10 is 8. if not aligned sws will print warnings and go slow code paths
 
     const int kAlign = DataAlignment;
+
     AV_ENSURE(av_image_fill_linesizes((int*)d.pitchs.constData(), d.fmt_out, kAlign > 7 ? FFALIGN(d.w_out, 8) : d.w_out), false);
 
-    for (int i = 0; i < d.pitchs.size(); ++i)
+    for (int i = 0 ; i < d.pitchs.size() ; ++i)
         d.pitchs[i] = FFALIGN(d.pitchs[i], kAlign);
 
     int s = av_image_fill_pointers((uint8_t**)d.bits.constData(), d.fmt_out, d.h_out, NULL, d.pitchs.constData());
@@ -269,7 +275,7 @@ bool ImageConverter::prepareData()
     if (desc->flags & AV_PIX_FMT_FLAG_PAL || desc->flags & AV_PIX_FMT_FLAG_PSEUDOPAL)
         avpriv_set_systematic_pal2((uint32_t*)pointers[1], pix_fmt);
 */
-    for (int i = 0; i < d.pitchs.size(); ++i)
+    for (int i = 0 ; i < d.pitchs.size() ; ++i)
     {
         Q_ASSERT(d.pitchs[i]%kAlign == 0);
         Q_ASSERT(qptrdiff(d.bits[i])%kAlign == 0);

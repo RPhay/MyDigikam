@@ -58,12 +58,12 @@ public:
 
     virtual bool setupColorspaceDetails(bool force = true) final;
 
-    SwsContext *sws_ctx;
+    SwsContext* sws_ctx;
     bool        update_eq;
 };
 
 ImageConverterFF::ImageConverterFF()
-    :ImageConverter(*new ImageConverterFFPrivate())
+    : ImageConverter(*new ImageConverterFFPrivate())
 {
 }
 
@@ -133,7 +133,7 @@ bool ImageConverterFF::convert(const quint8 *const src[], const int srcStride[],
 
     Q_UNUSED(result_h);
 
-    for (int i = 0; i < d.pitchs.size(); ++i)
+    for (int i = 0 ; i < d.pitchs.size() ; ++i)
     {
         d.bits[i]   = dst[i];
         d.pitchs[i] = dstStride[i];
@@ -164,12 +164,12 @@ bool ImageConverterFFPrivate::setupColorspaceDetails(bool force)
     // TODO: color space
 
     bool supported = sws_setColorspaceDetails(sws_ctx, sws_getCoefficients(SWS_CS_DEFAULT)
-                             , srcRange, sws_getCoefficients(SWS_CS_DEFAULT)
-                             , dstRange
-                             , ((brightness << 16) + 50)/100
-                             , (((contrast + 100) << 16) + 50)/100
-                             , (((saturation + 100) << 16) + 50)/100
-                             ) >= 0;
+                                              , srcRange, sws_getCoefficients(SWS_CS_DEFAULT)
+                                              , dstRange
+                                              , ((brightness << 16) + 50)/100
+                                              , (((contrast + 100) << 16) + 50)/100
+                                              , (((saturation + 100) << 16) + 50)/100
+                                             ) >= 0;
 
     // sws_init_context(d.sws_ctx, NULL, NULL);
 

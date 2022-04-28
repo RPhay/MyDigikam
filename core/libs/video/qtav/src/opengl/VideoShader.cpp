@@ -742,21 +742,22 @@ void VideoMaterial::setCurrentFrame(const VideoFrame &frame)
     {
         qCDebug(DIGIKAM_QTAV_LOG) << fmt;
         qCDebug(DIGIKAM_QTAV_LOG).noquote() << QString::asprintf("pixel format changed: %s => %s %d", qPrintable(d.video_format.name()), qPrintable(fmt.name()), fmt.pixelFormat());
-        d.video_format = fmt;
+
+        d.video_format           = fmt;
         d.init_textures_required = true;
     }
 }
 
 VideoFormat VideoMaterial::currentFormat() const
 {
-    DPTR_D(const VideoMaterial);
+    DPTR_D(const VideoMaterial); // cppcheck-suppress constVariable
 
     return d.video_format;
 }
 
 VideoShader* VideoMaterial::createShader() const
 {
-    VideoShader *shader = new VideoShader();
+    VideoShader* shader = new VideoShader();
 
     // initialize shader
 
@@ -783,14 +784,14 @@ QString VideoMaterial::typeName(qint32 value)
 
 qint32 VideoMaterial::type() const
 {
-    DPTR_D(const VideoMaterial);
+    DPTR_D(const VideoMaterial); // cppcheck-suppress constVariable
 
-    const VideoFormat &fmt = d.video_format;
-    const bool tex_2d = d.target == GL_TEXTURE_2D;
+    const VideoFormat& fmt = d.video_format;
+    const bool tex_2d      = d.target == GL_TEXTURE_2D;
 
     // 2d,alpha,planar,8bit
 
-    const int rg_biplane = fmt.planeCount() == 2 && !OpenGLHelper::useDeprecatedFormats() && OpenGLHelper::hasRG();
+    const int rg_biplane    = fmt.planeCount() == 2 && !OpenGLHelper::useDeprecatedFormats() && OpenGLHelper::hasRG();
     const int channel16_to8 = d.bpc > 8 && (OpenGLHelper::depth16BitTexture() < 16 || !OpenGLHelper::has16BitTexture() || fmt.isBigEndian());
 
     return (fmt.isXYZ()<<5)|(rg_biplane<<4)|(tex_2d<<3)|(fmt.hasAlpha()<<2)|(fmt.isPlanar()<<1)|(channel16_to8);
@@ -813,7 +814,7 @@ bool VideoMaterial::bind()
 
     d.ensureTextures();
 
-    for (int i = 0; i < nb_planes; ++i)
+    for (int i = 0 ; i < nb_planes ; ++i)
     {
         const int p = (i + 1) % nb_planes; // 0 must active at last?
         d.uploadPlane(p, d.update_texure);
@@ -824,7 +825,7 @@ bool VideoMaterial::bind()
     if (d.update_texure)
     {
         d.update_texure = false;
-        d.frame = VideoFrame(); //FIXME: why need this? we must unmap correctly before frame is reset.
+        d.frame         = VideoFrame(); //FIXME: why need this? we must unmap correctly before frame is reset.
     }
 
 #endif
@@ -919,7 +920,7 @@ void VideoMaterialPrivate::uploadPlane(int p, bool updateTexture)
     {
         //texture_size[].width()*gl_bpp != bytesPerLine[]
 
-        for (int y = 0; y < plane0Size.height(); ++y)
+        for (int y = 0 ; y < plane0Size.height() ; ++y)
             DYGL(glTexSubImage2D(target, 0, 0, y, texture_size[p].width(), 1, data_format[p], data_type[p], try_pbo ? 0 : frame.constBits(p)+y*plane0Size.width()));
     }
 
@@ -936,7 +937,7 @@ void VideoMaterial::unbind()
     DPTR_D(VideoMaterial);
     const int nb_planes = d.textures.size(); // number of texture id
 
-    for (int i = 0; i < nb_planes; ++i)
+    for (int i = 0 ; i < nb_planes ; ++i)
     {
         // unbind planes in the same order as bind. GPU frame's unmap() can be async works, assume the work finished earlier if it started in map() earlier, thus unbind order matter
 
@@ -957,7 +958,7 @@ int VideoMaterial::compare(const VideoMaterial *other) const
 {
     DPTR_D(const VideoMaterial);
 
-    for (int i = 0; i < d.textures.size(); ++i)
+    for (int i = 0 ; i < d.textures.size() ; ++i)
     {
         const int diff = d.textures[i] - other->d_func().textures[i]; // TODO
 
