@@ -4,9 +4,14 @@
 #
 # Run Krazy static analyzer on whole digiKam source code.
 # https://github.com/Krazy-collection/krazy
+#
+# Production revision: 0b3a02537d4c56135bd81cd5e4f436fcea7da657
+#
 # Dependencies:
+#
 #  - Perl:Tie::IxHash and Perl:XML::LibXML modules at run-time.
 #  - Saxon 9HE java xml parser (saxon.jar) to export report as HTML [https://www.saxonica.com/download/java.xml].
+#    Production files: saxon9he.jar  saxon9-test.jar  saxon9-xqj.jar
 #
 # If '--nowebupdate' is passed as argument, static analyzer results are just created locally.
 #
