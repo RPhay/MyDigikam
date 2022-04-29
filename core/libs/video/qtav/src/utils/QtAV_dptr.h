@@ -7,8 +7,7 @@
  * Description : QtAV: Multimedia framework based on Qt and FFmpeg
  *               dptr.h: An improved d-pointer interface from Qxt <http://libqxt.org>
  *
- * copyright (C) 2006-2008 by Adam Higerd
- * Copyright (c) 2006-2011 the LibQxt project <foundation at libqxt dot org>
+ * Copyright (c) 2006-2011 Adam Higerd from LibQxt project <foundation at libqxt dot org>
  * Copyright (C) 2012-2022 Wang Bin <wbsecg1 at gmail dot com>
  * Copyright (C)      2022 by Gilles Caulier, <caulier dot gilles at gmail dot com>
  *
