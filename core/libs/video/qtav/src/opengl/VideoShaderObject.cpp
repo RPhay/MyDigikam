@@ -93,9 +93,9 @@ void VideoShaderObject::propertyChanged(int id)
 {
     DPTR_D(VideoShaderObject);
 
-    const int st = id>>16;
-    const int idx = id&0xffff;
-    Uniform &u = d.user_uniforms[st][idx];
+    const int st     = id >> 16;
+    const int idx    = id&0xffff;
+    Uniform &u       = d.user_uniforms[st][idx];
     const QVariant v = property(u.name.constData());
     u.set(v);
 
@@ -123,6 +123,7 @@ void VideoShaderObject::programReady()
             {
                 qCDebug(DIGIKAM_QTAV_LOG).noquote() << QString::asprintf("VideoShaderObject has no meta property '%s'. Setting initial value from dynamic property", u.name.constData());
                 const_cast<Uniform&>(u).set(property(u.name.constData()));
+
                 continue;
             }
 
@@ -131,6 +132,7 @@ void VideoShaderObject::programReady()
             if (!mp.hasNotifySignal())
             {
                 qCWarning(DIGIKAM_QTAV_LOG_WARN).noquote() << QString::asprintf("VideoShaderObject property '%s' has no signal", mp.name());
+
                 continue;
             }
 

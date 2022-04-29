@@ -135,7 +135,9 @@ private:
      * \brief programReady
      * Called when program is linked and all uniforms are resolved
      */
-    virtual void programReady() {}
+    virtual void programReady()
+    {
+    }
 
     /// User configurable shader APIs BEGIN
 
@@ -236,7 +238,9 @@ class QTAV_EXPORT VideoMaterial
 public:
 
     VideoMaterial();
-    virtual ~VideoMaterial() {}
+    virtual ~VideoMaterial()
+    {
+    }
 
     void setCurrentFrame(const VideoFrame& frame);
     VideoFormat currentFormat() const;

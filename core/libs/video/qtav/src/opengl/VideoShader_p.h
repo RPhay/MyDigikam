@@ -72,17 +72,19 @@ class QTAV_PRIVATE_EXPORT VideoShaderPrivate : public DPtrPrivate<VideoShader>
 public:
 
     VideoShaderPrivate()
-        : owns_program(false)
-        , rebuild_program(false)
-        , update_builtin_uniforms(true)
-        , program(nullptr)
-        , u_Matrix(-1)
-        , u_colorMatrix(-1)
-        , u_to8(-1)
-        , u_opacity(-1)
-        , u_c(-1)
-        , material_type(0)
-        , texture_target(GL_TEXTURE_2D)
+        : owns_program(false),
+          rebuild_program(false),
+          update_builtin_uniforms(true),
+          program(nullptr),
+          u_Matrix(-1),
+          u_colorMatrix(-1),
+          u_to8(-1),
+          u_opacity(-1),
+          u_c(-1),
+          u_texelSize(0),
+          u_textureSize(0),
+          material_type(0),
+          texture_target(GL_TEXTURE_2D)
     {
     }
 
@@ -93,6 +95,7 @@ public:
             if (QOpenGLContext::currentContext())
             {
                 // FIXME: may be not called from renderering thread. so we still have to detach shaders
+
                 program->removeAllShaders();
             }
 
@@ -102,25 +105,27 @@ public:
         program = nullptr;
     }
 
-    bool owns_program; // shader program is not created by this. e.g. scene graph create it's own program and we store it here
-    bool rebuild_program;
-    bool update_builtin_uniforms; //builtin uniforms are static, set the values once is enough if no change
-    QOpenGLShaderProgram *program;
-    int u_Matrix;
-    int u_colorMatrix;
-    int u_to8;
-    int u_opacity;
-    int u_c;
-    int u_texelSize;
-    int u_textureSize;
-    qint32 material_type;
-    QVector<int> u_Texture;
-    GLenum texture_target;
-    VideoFormat video_format;
-    mutable QByteArray planar_frag, packed_frag;
-    mutable QByteArray vert;
-    QVector<Uniform> user_uniforms[ShaderTypeCount];
+    bool                    owns_program; // shader program is not created by this. e.g. scene graph create it's own program and we store it here
+    bool                    rebuild_program;
+    bool                    update_builtin_uniforms; // builtin uniforms are static, set the values once is enough if no change
+    QOpenGLShaderProgram*   program;
+    int                     u_Matrix;
+    int                     u_colorMatrix;
+    int                     u_to8;
+    int                     u_opacity;
+    int                     u_c;
+    int                     u_texelSize;
+    int                     u_textureSize;
+    qint32                  material_type;
+    QVector<int>            u_Texture;
+    GLenum                  texture_target;
+    VideoFormat             video_format;
+    mutable QByteArray      planar_frag, packed_frag;
+    mutable QByteArray      vert;
+    QVector<Uniform>        user_uniforms[ShaderTypeCount];
 };
+
+// ---------------------------------------------------------------------
 
 class VideoMaterial;
 
@@ -167,45 +172,48 @@ public:
     bool ensureTextures();
     void setupQuality();
 
-    bool update_texure;          // reduce upload/map times. true: new frame not bound. false: current frame is bound
-    bool init_textures_required; // e.g. target changed
-    int bpc;
-    int width, height;           // avoid accessing frame(need lock)
-    VideoFrame frame;
+public:
+
+    bool                    update_texure;          // reduce upload/map times. true: new frame not bound. false: current frame is bound
+    bool                    init_textures_required; // e.g. target changed
+    int                     bpc;
+    int                     width, height;          // avoid accessing frame(need lock)
+    VideoFrame              frame;
 
     /*
-     *  old format. used to check whether we have to update textures. set to current frame's format after textures are updated.
+     * old format. used to check whether we have to update textures. set to current frame's format after textures are updated.
      * TODO: only VideoMaterial.type() is enough to check and update shader. so remove it
      */
-    VideoFormat video_format;
-    QSize plane0Size;
+
+    VideoFormat             video_format;
+    QSize                   plane0Size;
 
     // width is in bytes. different alignments may result in different plane 1 linesize even if plane 0 are the same
 
-    int plane1_linesize;
+    int                     plane1_linesize;
 
     // textures.d in updateTextureParameters() changed. happens in qml. why?
 
-    quint8 workaround_vector_crash_on_linux[8]; // TODO: remove
-    QVector<GLuint> textures;                   // texture ids. size is plane count
-    QHash<GLuint, bool> owns_texture;
-    QVector<QSize> texture_size;
+    quint8                  workaround_vector_crash_on_linux[8] = { 0 }; // TODO: remove
+    QVector<GLuint>         textures;                                    // texture ids. size is plane count
+    QHash<GLuint, bool>     owns_texture;
+    QVector<QSize>          texture_size;
 
-    QVector<int> effective_tex_width;           // without additional width for alignment
-    qreal effective_tex_width_ratio;
-    GLenum target;
-    QVector<GLint> internal_format;
-    QVector<GLenum> data_format;
-    QVector<GLenum> data_type;
+    QVector<int>            effective_tex_width;                         // without additional width for alignment
+    qreal                   effective_tex_width_ratio;
+    GLenum                  target;
+    QVector<GLint>          internal_format;
+    QVector<GLenum>         data_format;
+    QVector<GLenum>         data_type;
 
-    bool dirty;
-    ColorTransform colorTransform;
-    bool try_pbo;
-    QVector<QOpenGLBuffer> pbo;
-    QVector2D vec_to8;                          // TODO: vec3 to support both RG and LA (.rga, vec_to8)
-    QMatrix4x4 channel_map;
-    QVector<QVector2D> v_texel_size;
-    QVector<QVector2D> v_texture_size;
+    bool                    dirty;
+    ColorTransform          colorTransform;
+    bool                    try_pbo;
+    QVector<QOpenGLBuffer>  pbo;
+    QVector2D               vec_to8;                             // TODO: vec3 to support both RG and LA (.rga, vec_to8)
+    QMatrix4x4              channel_map;
+    QVector<QVector2D>      v_texel_size;
+    QVector<QVector2D>      v_texture_size;
 };
 
 } // namespace QtAV
