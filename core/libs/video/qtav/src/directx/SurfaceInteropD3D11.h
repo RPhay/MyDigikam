@@ -63,7 +63,9 @@ public:
      */
     static bool isSupported(InteropType type = InteropAuto);
 
-    virtual ~InteropResource() {}
+    virtual ~InteropResource()
+    {
+    }
 
     void setDevice(ComPtr<ID3D11Device> dev);
     virtual VideoFormat::PixelFormat format(DXGI_FORMAT dxfmt) const = 0;
@@ -79,7 +81,13 @@ public:
      * \return true if success
      */
     virtual bool map(ComPtr<ID3D11Texture2D> surface, int index, GLuint tex, int w, int h, int plane) = 0;
-    virtual bool unmap(GLuint tex) { Q_UNUSED(tex); return true;}
+
+    virtual bool unmap(GLuint tex)
+    {
+        Q_UNUSED(tex);
+
+        return true;
+    }
 
 protected:
 
@@ -91,12 +99,13 @@ typedef QSharedPointer<InteropResource> InteropResourcePtr;
 
 // ---------------------------------------------------------------------------
 
-class SurfaceInterop final: public VideoSurfaceInterop
+class SurfaceInterop final : public VideoSurfaceInterop
 {
 public:
 
-    SurfaceInterop(const InteropResourcePtr& res)
-        : m_resource(res),
+    explicit SurfaceInterop(const InteropResourcePtr& res)
+        : m_index(0),
+          m_resource(res),
           frame_width(0),
           frame_height(0)
     {

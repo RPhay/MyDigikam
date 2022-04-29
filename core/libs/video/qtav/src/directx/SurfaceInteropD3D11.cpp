@@ -167,7 +167,7 @@ void* SurfaceInterop::mapToHost(const VideoFormat &format, void *handle, int pla
     desc.MipLevels = 1;
     desc.MiscFlags = 0;
     desc.ArraySize = 1;
-    desc.Usage = D3D11_USAGE_STAGING;
+    desc.Usage     = D3D11_USAGE_STAGING;
     desc.CPUAccessFlags = D3D11_CPU_ACCESS_READ;
     desc.BindFlags = 0; //?
     ComPtr<ID3D11Texture2D> tex;
@@ -202,7 +202,7 @@ void* SurfaceInterop::mapToHost(const VideoFormat &format, void *handle, int pla
     ScopedMap sm(ctx, tex, &mapped); // mingw error if ComPtr<T> constructs from ComPtr<U> [T=ID3D11Resource, U=ID3D11Texture2D]
     Q_UNUSED(sm);
 
-    int pitch[3]   = { (int)mapped.RowPitch, 0, 0   }; // compute chroma later
+    int pitch[3]   = { (int)mapped.RowPitch,   0, 0 }; // compute chroma later
     uint8_t *src[] = { (uint8_t*)mapped.pData, 0, 0 }; // compute chroma later
 
     const VideoFormat fmt = VideoDecoderD3D::pixelFormatFromFourcc(fourccFromDXGI(desc.Format));
@@ -213,7 +213,7 @@ void* SurfaceInterop::mapToHost(const VideoFormat &format, void *handle, int pla
 
     VideoFrame *f = reinterpret_cast<VideoFrame*>(handle);
     frame.setTimestamp(f->timestamp());
-    *f = frame;
+    *f            = frame;
 
     return f;
 }
