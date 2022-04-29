@@ -224,8 +224,8 @@ VideoDecoderVideoToolbox::VideoDecoderVideoToolbox()
     // dynamic properties about static property details. used by UI
 
     setProperty("detail_format", i18n("Output pixel format from decoder. "
-                                      "Performance NV12 > UYVY > BGRA > YUV420P > YUYV. "
-                                      "OSX < 10.7 only supports UYVY, BGRA and YUV420p"));
+                                      "Performance (better first)⁾: NV12 ; UYVY ; BGRA ; YUV420P ; YUYV. "
+                                      "OSX superior to 10.7 only supports UYVY, BGRA and YUV420p"));
     setProperty("detail_interop"
                 , QString::fromLatin1("%1\n%2\n%3\n%4\n%5")
                     .arg(i18n("Interop with OpenGL"))
