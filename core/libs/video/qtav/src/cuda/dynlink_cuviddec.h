@@ -5,8 +5,9 @@
  *
  * Date        : 2012-10-31
  * Description : QtAV: Multimedia framework based on Qt and FFmpeg
+ *               NVIDIA Corporation CUDA header
  *
- * Copyright (c) 2010-2016 NVIDIA Corporation
+ * Copyright (C) 2012-2022 Wang Bin <wbsecg1 at gmail dot com>
  *
  * This program is free software; you can redistribute it
  * and/or modify it under the terms of the GNU General
