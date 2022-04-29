@@ -21,17 +21,17 @@
  *
  * ============================================================ */
 
-#ifndef __cuda_cuda_h__
-#define __cuda_cuda_h__
+#ifndef QTAV_DYNLINK_CUDA_H
+#define QTAV_DYNLINK_CUDA_H
 
 #include <stddef.h>
 
 #define CUDA_VERSION 7050
 
 #if defined(_WIN32) || defined(__CYGWIN__)
-#define CUDAAPI __stdcall
+#   define CUDAAPI __stdcall
 #else
-#define CUDAAPI
+#   define CUDAAPI
 #endif
 
 typedef int CUdevice;
@@ -70,7 +70,8 @@ typedef enum CUctx_flags_enum
 /**
  * Stream creation flags
  */
-typedef enum CUstream_flags_enum {
+typedef enum CUstream_flags_enum
+{
     CU_STREAM_DEFAULT      = 0x0, /**< Default stream flag */
     CU_STREAM_NON_BLOCKING = 0x1  /**< Stream does not synchronize with stream 0 (the nullptr stream) */
 } CUstream_flags;
@@ -394,7 +395,7 @@ typedef enum cudaError_enum
      * ::cuCtxDisablePeerAccess() is trying to disable peer access
      * which has not been enabled yet.
      */
-    CUDA_ERROR_PEER_ACCESS_NOT_ENABLED    = 705,
+    CUDA_ERROR_PEER_ACCESS_NOT_ENABLED        = 705,
 
     /**
      * This error indicates that a call to ::cuMemPeerRegister is trying to
@@ -475,7 +476,8 @@ typedef enum CUgraphicsMapResourceFlags_enum
     CU_GRAPHICS_MAP_RESOURCE_FLAGS_WRITE_DISCARD = 0x02
 } CUgraphicsMapResourceFlags;
 
-typedef struct CUDA_MEMCPY2D_st {
+typedef struct CUDA_MEMCPY2D_st
+{
     size_t srcXInBytes;
     size_t srcY;
     CUmemorytype srcMemoryType;
@@ -495,4 +497,5 @@ typedef struct CUDA_MEMCPY2D_st {
     size_t WidthInBytes;
     size_t Height;
 } CUDA_MEMCPY2D;
-#endif
+
+#endif // QTAV_DYNLINK_CUDA_H

@@ -6,6 +6,9 @@
  * Date        : 2012-10-31
  * Description : QtAV: Multimedia framework based on Qt and FFmpeg
  *               NVIDIA Corporation CUDA header
+ *               NvCuvid API provides Video Decoding interface to NVIDIA GPU devices.
+ *               This file contains constants, structure definitions and
+ *               function prototypes used for decoding.
  *
  * Copyright (C) 2012-2022 Wang Bin <wbsecg1 at gmail dot com>
  *
@@ -21,28 +24,22 @@
  *
  * ============================================================ */
 
-/**
- * \file cuviddec.h
- * NvCuvid API provides Video Decoding interface to NVIDIA GPU devices.
- * \date 2015-2016
- * This file contains constants, structure definitions and function prototypes used for decoding.
- */
-
-#if !defined(__CUDA_VIDEO_H__)
-#define __CUDA_VIDEO_H__
+#ifndef QTAV_DYNLINK_CUVIDDEC_H
+#define QTAV_DYNLINK_CUVIDDEC_H
 
 #if defined(__x86_64) || defined(AMD64) || defined(_M_AMD64)
-#if (CUDA_VERSION >= 3020) && (!defined(CUDA_FORCE_API_VERSION) || (CUDA_FORCE_API_VERSION >= 3020))
-#define __CUVID_DEVPTR64
-#endif
+#   if (CUDA_VERSION >= 3020) && (!defined(CUDA_FORCE_API_VERSION) || (CUDA_FORCE_API_VERSION >= 3020))
+#       define __CUVID_DEVPTR64
+#   endif
 #endif
 
 #if defined(__cplusplus)
-extern "C" {
-#endif /* __cplusplus */
+extern "C"
+{
+#endif
 
-typedef void *CUvideodecoder;
-typedef struct _CUcontextlock_st *CUvideoctxlock;
+typedef void*                     CUvideodecoder;
+typedef struct _CUcontextlock_st* CUvideoctxlock;
 
 /**
  * \addtogroup VIDEO_DECODER Video Decoder
@@ -53,7 +50,8 @@ typedef struct _CUcontextlock_st *CUvideoctxlock;
  * \enum cudaVideoCodec
  * Video Codec Enums
  */
-typedef enum cudaVideoCodec_enum {
+typedef enum cudaVideoCodec_enum
+{
     cudaVideoCodec_MPEG1=0,                 /**<  MPEG1   */
     cudaVideoCodec_MPEG2,                   /**<  MPEG2  */
     cudaVideoCodec_MPEG4,                   /**<  MPEG4   */
@@ -78,7 +76,8 @@ typedef enum cudaVideoCodec_enum {
  * \enum cudaVideoSurfaceFormat
  * Video Surface Formats Enums
  */
-typedef enum cudaVideoSurfaceFormat_enum {
+typedef enum cudaVideoSurfaceFormat_enum
+{
     cudaVideoSurfaceFormat_NV12=0,      /**< NV12  */
     cudaVideoSurfaceFormat_P016=1       /**< P016  */
 } cudaVideoSurfaceFormat;
@@ -87,7 +86,8 @@ typedef enum cudaVideoSurfaceFormat_enum {
  * \enum cudaVideoDeinterlaceMode
  * Deinterlacing Modes Enums
  */
-typedef enum cudaVideoDeinterlaceMode_enum {
+typedef enum cudaVideoDeinterlaceMode_enum
+{
     cudaVideoDeinterlaceMode_Weave=0,   /**< Weave both fields (no deinterlacing) */
     cudaVideoDeinterlaceMode_Bob,       /**< Drop one field  */
     cudaVideoDeinterlaceMode_Adaptive   /**< Adaptive deinterlacing  */
@@ -97,7 +97,8 @@ typedef enum cudaVideoDeinterlaceMode_enum {
  * \enum cudaVideoChromaFormat
  * Chroma Formats Enums
  */
-typedef enum cudaVideoChromaFormat_enum {
+typedef enum cudaVideoChromaFormat_enum
+{
     cudaVideoChromaFormat_Monochrome=0,  /**< MonoChrome */
     cudaVideoChromaFormat_420,           /**< 4:2:0 */
     cudaVideoChromaFormat_422,           /**< 4:2:2 */
@@ -108,7 +109,8 @@ typedef enum cudaVideoChromaFormat_enum {
  * \enum cudaVideoCreateFlags
  * Decoder Flags Enums
  */
-typedef enum cudaVideoCreateFlags_enum {
+typedef enum cudaVideoCreateFlags_enum
+{
     cudaVideoCreate_Default = 0x00,     /**< Default operation mode: use dedicated video engines */
     cudaVideoCreate_PreferCUDA = 0x01,  /**< Use a CUDA-based decoder if faster than dedicated engines (requires a valid vidLock object for multi-threading) */
     cudaVideoCreate_PreferDXVA = 0x02,  /**< Go through DXVA internally if possible (requires D3D9 interop) */
@@ -132,7 +134,8 @@ typedef struct _CUVIDDECODECREATEINFO
     /**
     * area of the frame that should be displayed
     */
-    struct {
+    struct
+    {
         short left;
         short top;
         short right;
@@ -149,7 +152,8 @@ typedef struct _CUVIDDECODECREATEINFO
     * target rectangle in the output frame (for aspect ratio conversion)
     * if a null rectangle is specified, {0,0,ulTargetWidth,ulTargetHeight} will be used
     */
-    struct {
+    struct
+    {
         short left;
         short top;
         short right;
@@ -536,8 +540,10 @@ typedef struct _CUVIDVP8PICPARAMS
     unsigned char LastRefIdx;
     unsigned char GoldenRefIdx;
     unsigned char AltRefIdx;
-    union {
-        struct {
+    union
+    {
+        struct
+        {
             unsigned char frame_type : 1;    /**< 0 = KEYFRAME, 1 = INTERFRAME  */
             unsigned char version : 3;
             unsigned char show_frame : 1;
@@ -642,7 +648,8 @@ typedef struct _CUVIDPICPARAMS
     int intra_pic_flag;                    /**< This picture is entirely intra coded */
     unsigned int Reserved[30];             /**< Reserved for future use */
     // Codec-specific data
-    union {
+    union
+    {
         CUVIDMPEG2PICPARAMS mpeg2;         /**< Also used for MPEG-1 */
         CUVIDH264PICPARAMS h264;
         CUVIDVC1PICPARAMS vc1;
@@ -723,6 +730,6 @@ typedef struct _CUVIDPROCPARAMS
 
 #if defined(__cplusplus)
 }
-#endif /* __cplusplus */
+#endif
 
-#endif // __CUDA_VIDEO_H__
+#endif // QTAV_DYNLINK_CUVIDDEC_H

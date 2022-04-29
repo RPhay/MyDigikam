@@ -6,6 +6,9 @@
  * Date        : 2012-10-31
  * Description : QtAV: Multimedia framework based on Qt and FFmpeg
  *               NVIDIA Corporation CUDA header
+ *               NvCuvid API provides Video Decoding interface to NVIDIA GPU devices.
+ *               This file contains the interface constants, structure definitions
+ *               and function prototypes.
  *
  * Copyright (C) 2012-2022 Wang Bin <wbsecg1 at gmail dot com>
  *
@@ -21,29 +24,23 @@
  *
  * ============================================================ */
 
-/**
- * \file nvcuvid.h
- *   NvCuvid API provides Video Decoding interface to NVIDIA GPU devices.
- * \date 2015-2015
- *  This file contains the interface constants, structure definitions and function prototypes.
- */
-
-#if !defined(__NVCUVID_H__)
-#define __NVCUVID_H__
+#ifndef QTAV_DYNLINK_NVCUVID_H
+#define QTAV_DYNLINK_NVCUVID_H
 
 #include "dynlink_cuviddec.h"
 
 #if defined(__cplusplus)
-extern "C" {
-#endif /* __cplusplus */
+extern "C"
+{
+#endif
 
 ////////////////////////////////////////////////////////////////////////////////////////////////
 //
 // High-level helper APIs for video sources
 //
 
-typedef void *CUvideosource;
-typedef void *CUvideoparser;
+typedef void*     CUvideosource;
+typedef void*     CUvideoparser;
 typedef long long CUvideotimestamp;
 
 /**
@@ -55,7 +52,8 @@ typedef long long CUvideotimestamp;
  * \enum cudaVideoState
  * Video Source State
  */
-typedef enum {
+typedef enum
+{
     cudaVideoState_Error   = -1,    /**< Error state (invalid source)  */
     cudaVideoState_Stopped = 0,     /**< Source is stopped (or reached end-of-stream)  */
     cudaVideoState_Started = 1      /**< Source is running and delivering data  */
@@ -65,7 +63,8 @@ typedef enum {
  * \enum cudaAudioCodec
  * Audio compression
  */
-typedef enum {
+typedef enum
+{
     cudaAudioCodec_MPEG1=0,         /**< MPEG-1 Audio  */
     cudaAudioCodec_MPEG2,           /**< MPEG-2 Audio  */
     cudaAudioCodec_MP3,             /**< MPEG-1 Layer III Audio  */
@@ -83,7 +82,8 @@ typedef struct
    /**
     * frame rate = numerator / denominator (for example: 30000/1001)
     */
-    struct {
+    struct
+    {
         unsigned int numerator;             /**< frame rate numerator   (0 = unspecified or variable frame rate) */
         unsigned int denominator;           /**< frame rate denominator (0 = unspecified or variable frame rate) */
     } frame_rate;
@@ -99,7 +99,8 @@ typedef struct
     *   coded_width = 1920, coded_height = 1088
     *   display_area = { 0,0,1920,1080 }
     */
-    struct {
+    struct
+    {
         int left;                           /**< left position of display rect  */
         int top;                            /**< top position of display rect  */
         int right;                          /**< right position of display rect  */
@@ -110,14 +111,16 @@ typedef struct
    /**
     * Display Aspect Ratio = x:y (4:3, 16:9, etc)
     */
-    struct {
+    struct
+    {
         int x;
         int y;
     } display_aspect_ratio;
     /**
     * Video Signal Description
     */
-    struct {
+    struct
+    {
         unsigned char video_format          : 3;
         unsigned char video_full_range_flag : 1;
         unsigned char reserved_zero_bits    : 4;
@@ -157,7 +160,8 @@ typedef struct
  * \enum CUvideopacketflags
  * Data packet flags
  */
-typedef enum {
+typedef enum
+{
     CUVID_PKT_ENDOFSTREAM   = 0x01,   /**< Set when this is the last packet for this stream  */
     CUVID_PKT_TIMESTAMP     = 0x02,   /**< Timestamp is valid  */
     CUVID_PKT_DISCONTINUITY = 0x04    /**< Set when a discontinuity has to be signalled  */
@@ -196,7 +200,8 @@ typedef struct _CUVIDSOURCEPARAMS
  * \enum CUvideosourceformat_flags
  * CUvideosourceformat_flags
  */
-typedef enum {
+typedef enum
+{
     CUVID_FMT_EXTFORMATINFO = 0x100             /**< Return extended format structure (CUVIDEOFORMATEX) */
 } CUvideosourceformat_flags;
 
@@ -245,8 +250,6 @@ typedef struct _CUVIDPARSERPARAMS
 
 #if defined(__cplusplus)
 }
-#endif /* __cplusplus */
+#endif
 
-#endif // __NVCUVID_H__
-
-
+#endif // QTAV_DYNLINK_NVCUVID_H
