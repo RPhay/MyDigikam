@@ -61,12 +61,14 @@ namespace QtAV
 bool detect_sse4()
 {
     static bool is_sse4 = !!(av_get_cpu_flags() & AV_CPU_FLAG_SSE4);
+
     return is_sse4;
 }
 
 bool detect_sse2()
 {
     static bool is_sse2 = !!(av_get_cpu_flags() & AV_CPU_FLAG_SSE2);
+
     return is_sse2;
 }
 
@@ -97,14 +99,8 @@ bool GPUMemCopy::isAvailable()
 GPUMemCopy::GPUMemCopy()
     : mInitialized(false)
 {
-
-#if QTAV_HAVE(SSE2) && defined(Q_PROCESSOR_X86)
-
-    mCache.buffer = 0;
+    mCache.buffer = nullptr;
     mCache.size   = 0;
-
-#endif
-
 }
 
 GPUMemCopy::~GPUMemCopy()
@@ -159,7 +155,7 @@ void GPUMemCopy::cleanCache()
 
 }
 
-void GPUMemCopy::copyFrame(void *pSrc, void *pDest, unsigned width, unsigned height, unsigned pitch)
+void GPUMemCopy::copyFrame(void* pSrc, void* pDest, unsigned width, unsigned height, unsigned pitch)
 {
 
 #if QTAV_HAVE(SSE4_1) && defined(Q_PROCESSOR_X86)
@@ -188,7 +184,7 @@ void GPUMemCopy::copyFrame(void *pSrc, void *pDest, unsigned width, unsigned hei
 
 }
 
-void* gpu_memcpy(void *dst, const void *src, size_t size)
+void* gpu_memcpy(void* dst, const void* src, size_t size)
 {
 
 #if QTAV_HAVE(SSE4_1) && defined(Q_PROCESSOR_X86)

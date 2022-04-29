@@ -45,7 +45,7 @@ public:
     bool isReady() const;
     bool initCache(unsigned int width);
     void cleanCache();
-    void copyFrame(void *pSrc, void *pDest, unsigned int width, unsigned int height, unsigned int pitch);
+    void copyFrame(void* pSrc, void* pDest, unsigned int width, unsigned int height, unsigned int pitch);
 
     // memcpy
 
