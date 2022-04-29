@@ -53,18 +53,19 @@ class OpenGLVideoPrivate : public DPtrPrivate<OpenGLVideo>
 public:
 
     OpenGLVideoPrivate()
-        : ctx(nullptr)
-        , manager(nullptr)
-        , material(new VideoMaterial())
-        , material_type(0)
-        , norm_viewport(true)
-        , update_geo(true)
-        , tex_target(0)
-        , valiad_tex_width(1.0)
-        , mesh_type(OpenGLVideo::RectMesh)
-        , geometry(nullptr)
-        , gr(nullptr)
-        , user_shader(nullptr)
+        : ctx(nullptr),
+          manager(nullptr),
+          material(new VideoMaterial()),
+          material_type(0),
+          norm_viewport(true),
+          has_a(false),
+          update_geo(true),
+          tex_target(0),
+          valiad_tex_width(1.0),
+          mesh_type(OpenGLVideo::RectMesh),
+          geometry(nullptr),
+          gr(nullptr),
+          user_shader(nullptr)
     {
     }
 
@@ -113,24 +114,24 @@ public:
 
 public:
 
-    QOpenGLContext *ctx;
-    ShaderManager *manager;
-    VideoMaterial *material;
-    qint64 material_type;
-    bool norm_viewport;
-    bool has_a;
-    bool update_geo;
-    int tex_target;
-    qreal valiad_tex_width;
-    QSize video_size;
-    QRectF target;
-    QRectF roi;         // including invalid padding width
-    OpenGLVideo::MeshType mesh_type;
-    TexturedGeometry *geometry;
-    GeometryRenderer* gr;
-    QRectF rect;
-    QMatrix4x4 matrix;
-    VideoShader *user_shader;
+    QOpenGLContext*         ctx;
+    ShaderManager*          manager;
+    VideoMaterial*          material;
+    qint64                  material_type;
+    bool                    norm_viewport;
+    bool                    has_a;
+    bool                    update_geo;
+    int                     tex_target;
+    qreal                   valiad_tex_width;
+    QSize                   video_size;
+    QRectF                  target;
+    QRectF                  roi;         ///< including invalid padding width
+    OpenGLVideo::MeshType   mesh_type;
+    TexturedGeometry*       geometry;
+    GeometryRenderer*       gr;
+    QRectF                  rect;
+    QMatrix4x4              matrix;
+    VideoShader*            user_shader;
 };
 
 void OpenGLVideoPrivate::updateGeometry(VideoShader* shader, const QRectF &t, const QRectF &r)
@@ -192,7 +193,7 @@ void OpenGLVideoPrivate::updateGeometry(VideoShader* shader, const QRectF &t, co
     {
         if (roi_changed || target != t)
         {
-            target = t;
+            target     = t;
             update_geo = true;
 
             //target_rect = target (if valid). // relate to gvf bug?
@@ -309,6 +310,7 @@ void OpenGLVideo::setOpenGLContext(QOpenGLContext *ctx)
 #if QT_VERSION >= QT_VERSION_CHECK(5, 0, 0)
 
     d.manager = new ShaderManager(ctx);
+
     QObject::connect(ctx, SIGNAL(aboutToBeDestroyed()),
                      this, SLOT(resetGL()),
                      Qt::DirectConnection); // direct to make sure there is a valid context. makeCurrent in window.aboutToBeDestroyed()?
@@ -325,7 +327,7 @@ void OpenGLVideo::setOpenGLContext(QOpenGLContext *ctx)
 
     //const QByteArray extensions(reinterpret_cast<const char *>(glGetString(GL_EXTENSIONS)));
 
-    bool hasGLSL = QOpenGLShaderProgram::hasOpenGLShaderPrograms();
+    bool hasGLSL      = QOpenGLShaderProgram::hasOpenGLShaderPrograms();
     qCDebug(DIGIKAM_QTAV_LOG).noquote() << QString::asprintf("OpenGL version: %d.%d  hasGLSL: %d", ctx->format().majorVersion(), ctx->format().minorVersion(), hasGLSL);
     static bool sInfo = true;
 
@@ -341,15 +343,15 @@ void OpenGLVideo::setOpenGLContext(QOpenGLContext *ctx)
 
         bool v = OpenGLHelper::isOpenGLES();
         qCDebug(DIGIKAM_QTAV_LOG).noquote() << QString::asprintf("Is OpenGLES: %d", v);
-        v = OpenGLHelper::isEGL();
+        v      = OpenGLHelper::isEGL();
         qCDebug(DIGIKAM_QTAV_LOG).noquote() << QString::asprintf("Is EGL: %d", v);
         const int glsl_ver = OpenGLHelper::GLSLVersion();
         qCDebug(DIGIKAM_QTAV_LOG).noquote() << QString::asprintf("GLSL version: %d", glsl_ver);
-        v = OpenGLHelper::isPBOSupported();
+        v      = OpenGLHelper::isPBOSupported();
         qCDebug(DIGIKAM_QTAV_LOG).noquote() << QString::asprintf("Has PBO: %d", v);
-        v = OpenGLHelper::has16BitTexture();
+        v      = OpenGLHelper::has16BitTexture();
         qCDebug(DIGIKAM_QTAV_LOG).noquote() << QString::asprintf("Has 16bit texture: %d", v);
-        v = OpenGLHelper::hasRG();
+        v      = OpenGLHelper::hasRG();
         qCDebug(DIGIKAM_QTAV_LOG).noquote() << QString::asprintf("Has RG texture: %d", v);
         qCDebug(DIGIKAM_QTAV_LOG) << ctx->format();
     }
@@ -437,7 +439,7 @@ void OpenGLVideo::setMeshType(MeshType value)
     if (d.mesh_type == value)
         return;
 
-    d.mesh_type = value;
+    d.mesh_type  = value;
     d.update_geo = true;
 
     if (d.mesh_type == SphereMesh && d.norm_viewport)
@@ -477,7 +479,7 @@ void OpenGLVideo::render(const QRectF &target, const QRectF& roi, const QMatrix4
     if (!d.material->bind()) // bind first because texture parameters(target) mapped from native buffer is unknown before it
         return;
 
-    VideoShader *shader = d.user_shader;
+    VideoShader* shader = d.user_shader;
 
     if (!shader)
         shader = d.manager->prepareMaterial(d.material, mt); // TODO: print shader type name if changed. prepareMaterial(,sample_code, pp_code)
