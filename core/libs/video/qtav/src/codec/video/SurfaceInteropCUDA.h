@@ -140,7 +140,7 @@ class SurfaceInteropCUDA final : public VideoSurfaceInterop
 {
 public:
 
-    SurfaceInteropCUDA(const QWeakPointer<InteropResource>& res) // cppcheck-suppress uninitMemberVar
+    explicit SurfaceInteropCUDA(const QWeakPointer<InteropResource>& res) // cppcheck-suppress uninitMemberVar
         : m_index(-1),
           m_resource(res),
           w(0),
