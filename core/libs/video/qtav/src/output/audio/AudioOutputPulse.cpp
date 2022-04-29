@@ -352,7 +352,10 @@ bool AudioOutputPulse::init(const AudioFormat &format)
         return false;
     }
 
-    qCDebug(DIGIKAM_QTAV_LOG) << i18n("PulseAudio %1, protocol: %2, server protocol: %3").arg(QString::fromLatin1(pa_get_library_version())).arg(pa_context_get_protocol_version(ctx)).arg(pa_context_get_server_protocol_version(ctx));
+    qCDebug(DIGIKAM_QTAV_LOG) << i18n("PulseAudio %1, protocol: %2, server protocol: %3",
+                                    QString::fromLatin1(pa_get_library_version()),
+                                    pa_context_get_protocol_version(ctx),
+                                    pa_context_get_server_protocol_version(ctx));
 
     // TODO: host property
 

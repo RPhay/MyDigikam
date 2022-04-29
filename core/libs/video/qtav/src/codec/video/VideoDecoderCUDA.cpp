@@ -111,21 +111,21 @@ public:
     VideoDecoderCUDA();
     ~VideoDecoderCUDA();
 
-    VideoDecoderId id() const override;
-    QString description() const override;
-    void flush() override;
+    VideoDecoderId id()         const override;
+    QString description()       const override;
+    void flush()                      override;
     bool decode(const Packet &packet) override;
-    virtual VideoFrame frame() override;
+    virtual VideoFrame frame()        override;
 
     // properties
 
-    int surfaces() const;
+    int surfaces()              const;
     void setSurfaces(int n);
-    Flags flags() const;
+    Flags flags()               const;
     void setFlags(Flags f);
-    Deinterlace deinterlace() const;
+    Deinterlace deinterlace()   const;
     void setDeinterlace(Deinterlace di);
-    CopyMode copyMode() const;
+    CopyMode copyMode()         const;
     void setCopyMode(CopyMode value);
 
 Q_SIGNALS:
@@ -138,7 +138,7 @@ FACTORY_REGISTER(VideoDecoder, CUDA, "CUDA")
 
 static struct
 {
-    AVCodecID ffCodec;
+    AVCodecID      ffCodec;
     cudaVideoCodec cudaCodec;
 } const ff_cuda_codecs[] =
 {
@@ -182,7 +182,7 @@ static AVCodecID mapCodecToFFmpeg(cudaVideoCodec cudaCodec)
 }
 
 class VideoDecoderCUDAPrivate final : public VideoDecoderPrivate
-                                           , protected cuda_api
+                                    , protected cuda_api
 {
 public:
 
@@ -341,18 +341,18 @@ public:
 
     static int CUDAAPI HandleVideoSequence(void *obj, CUVIDEOFORMAT *cuvidfmt)
     {
-        VideoDecoderCUDAPrivate *p = reinterpret_cast<VideoDecoderCUDAPrivate*>(obj);
-        CUVIDDECODECREATEINFO *dci = &p->dec_create_info;
+        VideoDecoderCUDAPrivate* p = reinterpret_cast<VideoDecoderCUDAPrivate*>(obj);
+        CUVIDDECODECREATEINFO* dci = &p->dec_create_info;
 
-        if ((cuvidfmt->codec != dci->CodecType)
-            || (cuvidfmt->coded_width != dci->ulWidth)
-            || (cuvidfmt->coded_height != dci->ulHeight)
-            || (cuvidfmt->chroma_format != dci->ChromaFormat)
-            || p->force_sequence_update)
+        if ((   cuvidfmt->codec != dci->CodecType)
+             || (cuvidfmt->coded_width != dci->ulWidth)
+             || (cuvidfmt->coded_height != dci->ulHeight)
+             || (cuvidfmt->chroma_format != dci->ChromaFormat)
+             || p->force_sequence_update)
         {
             qCDebug(DIGIKAM_QTAV_LOG).noquote() << QString::asprintf("recreate cuvid parser");
             p->force_sequence_update = false;
-            p->yuv_range = cuvidfmt->video_signal_description.video_full_range_flag ? ColorRange_Full : ColorRange_Limited;
+            p->yuv_range             = cuvidfmt->video_signal_description.video_full_range_flag ? ColorRange_Full : ColorRange_Limited;
 
             // coded_width or width?
 
@@ -360,7 +360,7 @@ public:
 
             // how about parser.ulMaxNumDecodeSurfaces? recreate?
 
-            AVCodecID codec = mapCodecToFFmpeg(cuvidfmt->codec);
+            AVCodecID codec          = mapCodecToFFmpeg(cuvidfmt->codec);
             p->setBSF(codec);
             p->createInterop();
         }
@@ -372,7 +372,7 @@ public:
 
     static int CUDAAPI HandlePictureDecode(void *obj, CUVIDPICPARAMS *cuvidpic)
     {
-        VideoDecoderCUDAPrivate *p = reinterpret_cast<VideoDecoderCUDAPrivate*>(obj);
+        VideoDecoderCUDAPrivate* p = reinterpret_cast<VideoDecoderCUDAPrivate*>(obj);
 
         //qCDebug(DIGIKAM_QTAV_LOG).noquote() << QString::asprintf("%s @%d tid=%p dec=%p idx=%d inUse=%d", __FUNCTION__, __LINE__, QThread::currentThread(), p->dec, cuvidpic->CurrPicIdx, p->surface_in_use[cuvidpic->CurrPicIdx]);
 
@@ -383,7 +383,7 @@ public:
 
     static int CUDAAPI HandlePictureDisplay(void *obj, CUVIDPARSERDISPINFO *cuviddisp)
     {
-        VideoDecoderCUDAPrivate *p = reinterpret_cast<VideoDecoderCUDAPrivate*>(obj);
+        VideoDecoderCUDAPrivate* p                  = reinterpret_cast<VideoDecoderCUDAPrivate*>(obj);
         p->surface_in_use[cuviddisp->picture_index] = true;
 
         //qCDebug(DIGIKAM_QTAV_LOG).noquote() << QString::asprintf("mark in use pic_index: %d", cuviddisp->picture_index);
@@ -463,7 +463,7 @@ VideoDecoderCUDA::VideoDecoderCUDA()
                 .arg(i18n("ZeroCopy: no copy back from GPU to System memory. Directly render the decoded data on GPU"))
                 .arg(i18n("DirectCopy: copy back to host memory but video frames and map to GL texture"))
                 .arg(i18n("GenericCopy: copy back to host memory and each video frame"))
-                );
+    );
 
     Q_UNUSED(i18n("ZeroCopy"));
     Q_UNUSED(i18n("DirectCopy"));
@@ -534,8 +534,8 @@ bool VideoDecoderCUDA::decode(const Packet &packet)
         // return: 0: not changed, no outBuf allocated. >0: ok. <0: fail
 
         filtered = av_bitstream_filter_filter(d.bsf, d.codec_ctx, nullptr, &outBuf, &outBufSize
-                                                  , (const uint8_t*)packet.data.constData(), packet.data.size()
-                                                  , 0); // d.is_keyframe);
+                                                   , (const uint8_t*)packet.data.constData(), packet.data.size()
+                                                   , 0); // d.is_keyframe);
 
         //qCDebug(DIGIKAM_QTAV_LOG).noquote() << QString::asprintf("%s @%d filtered=%d outBuf=%p, outBufSize=%d", __FUNCTION__, __LINE__, filtered, outBuf, outBufSize);
 
@@ -767,7 +767,7 @@ bool VideoDecoderCUDAPrivate::releaseCuda()
     if (host_data)
     {
         CUDA_WARN(cuMemFreeHost(host_data)); // CUDA_ERROR_INVALID_CONTEXT
-        host_data = nullptr;
+        host_data      = nullptr;
         host_data_size = 0;
     }
 
@@ -810,17 +810,17 @@ bool VideoDecoderCUDAPrivate::createCUVIDDecoder(cudaVideoCodec cudaCodec, int c
 
     // cudaVideoCreate_PreferCUVID is slow in example. DXVA may failed to create (CUDA_ERROR_NO_DEVICE)
 
-    dec_create_info.ulCreationFlags = create_flags;
+    dec_create_info.ulCreationFlags     = create_flags;
 
     // TODO: lav yv12
 
-    dec_create_info.OutputFormat    = cudaVideoSurfaceFormat_NV12; // NV12 (currently the only supported output format)
-    dec_create_info.DeinterlaceMode = deinterlace;
+    dec_create_info.OutputFormat        = cudaVideoSurfaceFormat_NV12; // NV12 (currently the only supported output format)
+    dec_create_info.DeinterlaceMode     = deinterlace;
 
     // No scaling
 
-    dec_create_info.ulTargetWidth  = cw;
-    dec_create_info.ulTargetHeight = ch;
+    dec_create_info.ulTargetWidth       = cw;
+    dec_create_info.ulTargetHeight      = ch;
 
     // TODO: dec_create_info.display_area.
 
@@ -860,7 +860,7 @@ bool VideoDecoderCUDAPrivate::createCUVIDParser()
 
     if (cudaCodec == cudaVideoCodec_NumCodecs)
     {
-        QString es(i18n("Codec %1 is not supported by CUDA").arg(QLatin1String(avcodec_get_name(codec_ctx->codec_id))));
+        QString es(i18n("Codec %1 is not supported by CUDA", QLatin1String(avcodec_get_name(codec_ctx->codec_id))));
 
         //Q_EMIT error(AVError::CodecError, es);
 

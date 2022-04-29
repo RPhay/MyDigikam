@@ -104,19 +104,19 @@ public:
 
     VideoDecoderVAAPI();
 
-    VideoDecoderId id()       const override;
-    QString description()     const override;
-    VideoFrame frame()              override;
+    VideoDecoderId id()             const override;
+    QString description()           const override;
+    VideoFrame frame()                    override;
 
     // QObject properties
 
     void setDerive(bool y);
-    bool derive() const;
+    bool derive()                   const;
     void setSurfaces(int num);
-    int surfaces() const;
+    int surfaces()                  const;
     void setDisplayPriority(const QStringList& priority);
-    QStringList displayPriority() const;
-    DisplayType display() const;
+    QStringList displayPriority()   const;
+    DisplayType display()           const;
     void setDisplay(DisplayType disp);
 };
 
@@ -126,7 +126,7 @@ FACTORY_REGISTER(VideoDecoder, VAAPI, "VAAPI")
 
 const char* getProfileName(AVCodecID id, int profile)
 {
-    AVCodec *c = avcodec_find_decoder(id);
+    AVCodec* c = avcodec_find_decoder(id);
 
     if (!c)
         return "Unknow";
@@ -181,7 +181,7 @@ static const  codec_profile_t va_profiles[] =
 
 static bool isProfileSupportedByRuntime(const VAProfile *profiles, int count, VAProfile p)
 {
-    for (int i = 0; i < count; ++i)
+    for (int i = 0 ; i < count ; ++i)
     {
         if (profiles[i] == p)
             return true;
@@ -200,17 +200,19 @@ const codec_profile_t* findProfileEntry(AVCodecID codec, int profile, const code
 
     const codec_profile_t* pe0 = p0 ? ++p0 : va_profiles;
 
-    for (const codec_profile_t* p = pe0; p < va_profiles+sizeof(va_profiles)/sizeof(va_profiles[0]); ++p)
+    for (const codec_profile_t* p = pe0 ; p < va_profiles+sizeof(va_profiles)/sizeof(va_profiles[0]) ; ++p)
     {
         if (codec != p->codec || profile != p->profile)
             continue;
 
         // return the first profile entry if given profile is unknow
 
-        if (profile == FF_PROFILE_UNKNOWN
-                || p->profile == FF_PROFILE_UNKNOWN // force the profile
-                || profile == p->profile)
+        if (   profile == FF_PROFILE_UNKNOWN
+            || p->profile == FF_PROFILE_UNKNOWN // force the profile
+            || profile == p->profile)
+        {
             return p;
+        }
     }
 
     return nullptr;
@@ -219,7 +221,7 @@ const codec_profile_t* findProfileEntry(AVCodecID codec, int profile, const code
 
 struct fmtentry
 {
-    uint32_t va;
+    uint32_t                 va;
     VideoFormat::PixelFormat fmt;
 };
 
@@ -245,11 +247,11 @@ VideoFormat::PixelFormat pixelFormatFromVA(uint32_t fourcc)
 }
 
 class VideoDecoderVAAPIPrivate final : public VideoDecoderFFmpegHWPrivate,
-                                              protected VAAPI_DRM,
-                                              protected VAAPI_X11
+                                       protected VAAPI_DRM,
+                                       protected VAAPI_X11
 #ifndef QT_NO_OPENGL
 
-                                            , protected VAAPI_GLX
+                                     , protected VAAPI_GLX
 
 #endif //QT_NO_OPENGL
 
@@ -312,42 +314,50 @@ public:
         image_fmt       = VideoFormat::Format_Invalid;
     }
 
-    bool open() override;
-    void close() override;
+    bool open()                                     override;
+    void close()                                    override;
+
     bool ensureSurfaces(int count, int w, int h, bool discard_old = false);
+
     bool prepareVAImage(int w, int h);
-    void* setup(AVCodecContext *avctx) override;
-    bool getBuffer(void **opaque, uint8_t **data) override;
+    void* setup(AVCodecContext *avctx)              override;
+    bool getBuffer(void **opaque, uint8_t **data)   override;
     void releaseBuffer(void *opaque, uint8_t *data) override;
-    AVPixelFormat vaPixelFormat() const override { return QTAV_PIX_FMT_C(VAAPI_VLD); }
 
-    bool support_4k;
-    VideoDecoderVAAPI::DisplayType display_type;
-    QList<VideoDecoderVAAPI::DisplayType> display_priority;
-    display_ptr display;
+    AVPixelFormat vaPixelFormat()             const override
+    {
+        return QTAV_PIX_FMT_C(VAAPI_VLD);
+    }
 
-    VAConfigID    config_id;
-    VAContextID   context_id;
+public:
 
-    struct vaapi_context hw_ctx;
-    int version_major;
-    int version_minor;
-    int surface_width;
-    int surface_height;
+    bool                                    support_4k;
+    VideoDecoderVAAPI::DisplayType          display_type;
+    QList<VideoDecoderVAAPI::DisplayType>   display_priority;
+    display_ptr                             display;
 
-    int nb_surfaces;
-    QVector<VASurfaceID> surfaces;
-    std::list<surface_ptr> surfaces_free, surfaces_used;
-    VAImage image;
-    bool disable_derive;
-    bool supports_derive;
-    VideoFormat::PixelFormat image_fmt;
+    VAConfigID                              config_id;
+    VAContextID                             context_id;
 
-    QString vendor;
+    struct vaapi_context                    hw_ctx;
+    int                                     version_major;
+    int                                     version_minor;
+    int                                     surface_width;
+    int                                     surface_height;
+
+    int                                     nb_surfaces;
+    QVector<VASurfaceID>                    surfaces;
+    std::list<surface_ptr>                  surfaces_free, surfaces_used;
+    VAImage                                 image;
+    bool                                    disable_derive;
+    bool                                    supports_derive;
+    VideoFormat::PixelFormat                image_fmt;
+
+    QString                                 vendor;
 
 #ifndef QT_NO_OPENGL
 
-    InteropResourcePtr interop_res; // may be still used in video frames when decoder is destroyed
+    InteropResourcePtr                      interop_res; // may be still used in video frames when decoder is destroyed
 
 #endif
 };
@@ -396,7 +406,7 @@ bool VideoDecoderVAAPI::derive() const
 void VideoDecoderVAAPI::setSurfaces(int num)
 {
     DPTR_D(VideoDecoderVAAPI);
-    d.nb_surfaces = num;
+    d.nb_surfaces          = num;
     const int kMaxSurfaces = 32;
 
     if (num > kMaxSurfaces)
@@ -557,7 +567,7 @@ VideoFrame VideoDecoderVAAPI::frame()
         VA_ENSURE_TRUE(vaGetImage(d.display->get(), surface_id, 0, 0, d.surface_width, d.surface_height, d.image.image_id), VideoFrame());
     }
 
-    void *p_base;
+    void* p_base;
     VA_ENSURE_TRUE(vaMapBuffer(d.display->get(), d.image.buf, &p_base), VideoFrame());
 
     VideoFormat::PixelFormat pixfmt = pixelFormatFromVA(d.image.format.fourcc);
@@ -570,12 +580,12 @@ VideoFrame VideoDecoderVAAPI::frame()
     }
 
     const VideoFormat fmt(pixfmt);
-    uint8_t *src[3];
+    uint8_t* src[3];
     int pitch[3];
 
     for (int i = 0; i < fmt.planeCount(); ++i)
     {
-        src[i] = (uint8_t*)p_base + d.image.offsets[i];
+        src[i]   = (uint8_t*)p_base + d.image.offsets[i];
         pitch[i] = d.image.pitches[i];
     }
 
@@ -678,11 +688,11 @@ bool VideoDecoderVAAPIPrivate::open()
 
     // disable_derive = !copy_uswc;
 
-    description = i18n("VA API version %1.%2; Vendor: %3;").arg(version_major).arg(version_minor).arg(vendor);
+    description        = i18n("VA API version %1.%2; Vendor: %3;", version_major, version_minor, vendor);
     DPTR_P(VideoDecoderVAAPI);
-    int idx = p.staticMetaObject.indexOfEnumerator("DisplayType");
+    int idx            = p.staticMetaObject.indexOfEnumerator("DisplayType");
     const QMetaEnum me = p.staticMetaObject.enumerator(idx);
-    description += QStringLiteral(" Display: ") + QString::fromLatin1(me.valueToKey(display_type));
+    description       += QStringLiteral(" Display: ") + QString::fromLatin1(me.valueToKey(display_type));
 
     // check 4k support. from xbmc
 
@@ -709,6 +719,7 @@ bool VideoDecoderVAAPIPrivate::open()
     if (!support_4k && (codec_ctx->width > 1920 || codec_ctx->height > 1088))
     {
         qCWarning(DIGIKAM_QTAV_LOG_WARN).noquote() << QString::asprintf("VAAPI: frame size (%dx%d) is too large", codec_ctx->width, codec_ctx->height);
+
         return false;
     }
 
@@ -720,6 +731,7 @@ bool VideoDecoderVAAPIPrivate::open()
     if (nb_profiles <= 0)
     {
         qCWarning(DIGIKAM_QTAV_LOG_WARN).noquote() << QString::asprintf("No profile supported");
+
         return false;
     }
 
@@ -752,13 +764,13 @@ bool VideoDecoderVAAPIPrivate::open()
     if ((attrib.value & VA_RT_FORMAT_YUV420) == 0)
         return false;
 
-    config_id  = VA_INVALID_ID;
+    config_id       = VA_INVALID_ID;
     VA_ENSURE_TRUE(vaCreateConfig(display->get(), pe->va_profile, VAEntrypointVLD, &attrib, 1, &config_id), false);
     supports_derive = false;
-    width = codec_ctx->width;
-    height = codec_ctx->height;
-    surface_width = codedWidth(codec_ctx);
-    surface_height = codedHeight(codec_ctx);
+    width           = codec_ctx->width;
+    height          = codec_ctx->height;
+    surface_width   = codedWidth(codec_ctx);
+    surface_height  = codedHeight(codec_ctx);
 
     qCDebug(DIGIKAM_QTAV_LOG).noquote() << QString::asprintf("checking surface resolution support");
     VASurfaceID test_surface = VA_INVALID_ID;
@@ -848,7 +860,7 @@ bool VideoDecoderVAAPIPrivate::prepareVAImage(int w, int h)
         {
             qCDebug(DIGIKAM_QTAV_LOG).noquote() << QString::asprintf("vaDeriveImage supported");
             supports_derive = true;
-            image_fmt = pixelFormatFromVA(image.format.fourcc);
+            image_fmt       = pixelFormatFromVA(image.format.fourcc);
 
             /* from vlc: Use vaDerive() iif it supports the best selected format */
 
@@ -939,8 +951,8 @@ void* VideoDecoderVAAPIPrivate::setup(AVCodecContext *avctx)
     /* Setup the ffmpeg hardware context */
 
     memset(&hw_ctx, 0, sizeof(hw_ctx));
-    hw_ctx.display = display->get();
-    hw_ctx.config_id = config_id;
+    hw_ctx.display    = display->get();
+    hw_ctx.config_id  = config_id;
     hw_ctx.context_id = context_id;
 
     return &hw_ctx;
@@ -972,11 +984,11 @@ void VideoDecoderVAAPIPrivate::close()
 
     display.clear();
     releaseUSWC();
-    nb_surfaces = 0;
+    nb_surfaces    = 0;
     surfaces.clear();
     surfaces_free.clear();
     surfaces_used.clear();
-    surface_width = 0;
+    surface_width  = 0;
     surface_height = 0;
 }
 
@@ -1044,7 +1056,7 @@ bool VideoDecoderVAAPIPrivate::getBuffer(void **opaque, uint8_t **data)
         }
     }
 
-    id =(*it)->get();
+    id           = (*it)->get();
     surface_t *s = it->get();
 
     // !erase later. otherwise it may be destroyed
@@ -1054,18 +1066,18 @@ bool VideoDecoderVAAPIPrivate::getBuffer(void **opaque, uint8_t **data)
     // TODO: why QList may erase an invalid iterator(first iterator)at the same position?
 
     surfaces_free.erase(it); // ref not increased, but can not be used.
-    *data = (uint8_t*)(quintptr)id;
+    *data   = (uint8_t*)(quintptr)id;
     *opaque = s;
 
     return true;
 }
 
-void VideoDecoderVAAPIPrivate::releaseBuffer(void *opaque, uint8_t *data)
+void VideoDecoderVAAPIPrivate::releaseBuffer(void* opaque, uint8_t* data)
 {
     Q_UNUSED(opaque);
     VASurfaceID id = (VASurfaceID)(uintptr_t)data;
 
-    for (std::list<surface_ptr>::iterator it = surfaces_used.begin(); it != surfaces_used.end(); ++it)
+    for (std::list<surface_ptr>::iterator it = surfaces_used.begin() ; it != surfaces_used.end() ; ++it)
     {
         if ((*it)->get() == id)
         {

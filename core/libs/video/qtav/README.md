@@ -98,7 +98,11 @@ Code review with plenty of fixes and improvements. See the list of tasks below.
 
     - Apply fixes for Coverity-Scan static analyzer.
 
+* TODO:
+
     - Port to FFMPEG 5 API with backward compatibility with FFMPEG 4.
+
+    - Add config widgets to setup video and audio backends.
 
 * Unmaintained Features:
 

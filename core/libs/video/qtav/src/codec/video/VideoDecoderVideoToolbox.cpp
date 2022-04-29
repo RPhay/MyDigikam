@@ -153,12 +153,13 @@ public:
     }
 
     bool open()                                     override;
-    void close() override;
+    void close()                                    override;
 
     void* setup(AVCodecContext *avctx)              override;
     bool getBuffer(void **opaque, uint8_t **data)   override;
     void releaseBuffer(void *opaque, uint8_t *data) override;
-    AVPixelFormat vaPixelFormat() const             override
+
+    AVPixelFormat vaPixelFormat()             const override
     {
         return AV_PIX_FMT_VIDEOTOOLBOX;
     }
@@ -199,7 +200,7 @@ static const cv_error cv_errors[] =
 
 static const char* cv_err_str(int err)
 {
-    for (int i = 0; cv_errors[i].code; ++i)
+    for (int i = 0 ; cv_errors[i].code ; ++i)
     {
         if (cv_errors[i].code != err)
             continue;
@@ -222,7 +223,9 @@ VideoDecoderVideoToolbox::VideoDecoderVideoToolbox()
 
     // dynamic properties about static property details. used by UI
 
-    setProperty("detail_format", i18n("Output pixel format from decoder. Performance NV12 > UYVY > BGRA > YUV420P > YUYV.\nOSX < 10.7 only supports UYVY, BGRA and YUV420p"));
+    setProperty("detail_format", i18n("Output pixel format from decoder. "
+                                      "Performance NV12 > UYVY > BGRA > YUV420P > YUYV. "
+                                      "OSX < 10.7 only supports UYVY, BGRA and YUV420p"));
     setProperty("detail_interop"
                 , QString::fromLatin1("%1\n%2\n%3\n%4\n%5")
                     .arg(i18n("Interop with OpenGL"))

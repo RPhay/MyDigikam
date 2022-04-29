@@ -109,7 +109,7 @@ bool AVDecoder::open()
     {
         // TODO: can be null for none-ffmpeg based decoders
 
-        QString es(i18n("No codec could be found for '%1'"));
+        QString es(i18n("No codec could be found for: "));
 
         if (d.codec_name.isEmpty())
         {
