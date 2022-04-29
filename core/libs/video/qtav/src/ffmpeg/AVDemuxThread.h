@@ -50,6 +50,7 @@ public:
 
     explicit AVDemuxThread(QObject *parent = nullptr);
     explicit AVDemuxThread(AVDemuxer *dmx, QObject *parent = nullptr);
+
     void setDemuxer(AVDemuxer *dmx);
     void setAudioDemuxer(AVDemuxer *demuxer);   ///< not thread safe
     void setAudioThread(AVThread *thread);

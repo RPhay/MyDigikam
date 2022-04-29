@@ -186,7 +186,9 @@ void AVDemuxThread::setAVThread(AVThread*& pOld, AVThread *pNew)
         return;
 
     pOld->packetQueue()->setEmptyCallback(new QueueEmptyCall(this));
-    connect(pOld, SIGNAL(finished()), SLOT(onAVThreadQuit()));
+
+    connect(pOld, SIGNAL(finished()), 
+            this, SLOT(onAVThreadQuit()));
 }
 
 void AVDemuxThread::setAudioThread(AVThread *thread)
@@ -223,6 +225,7 @@ void AVDemuxThread::stepBackward()
     if (pre_pts == 0.0)
     {
         qCWarning(DIGIKAM_QTAV_LOG_WARN).noquote() << QString::asprintf("can not get previous pts");
+
         return;
     }
 
@@ -449,6 +452,7 @@ void AVDemuxThread::seekInternal(qint64 pos, SeekType type, qint64 external_pos)
     if (watch_thread)
     {
         pauseInternal(false);
+
         Q_EMIT requestClockPause(false); // need direct connection
 
         // direct connection is fine here
@@ -467,6 +471,7 @@ void AVDemuxThread::newSeekRequest(QRunnable *r)
         if (r && r->autoDelete())
             delete r;
     }
+
     seek_tasks.put(r);
 }
 
@@ -563,7 +568,11 @@ void AVDemuxThread::stop()
     // this will not affect the pause state if we pause the output
     // TODO: why remove blockFull(false) can not play another file?
 
-    AVThread* av[] = { audio_thread, video_thread};
+    AVThread* av[] =
+    {
+        audio_thread,
+        video_thread
+    };
 
     for (size_t i = 0 ; i < sizeof(av)/sizeof(av[0]) ; ++i)
     {
@@ -573,7 +582,7 @@ void AVDemuxThread::stop()
             continue;
 
         t->packetQueue()->clear();
-        t->packetQueue()->blockFull(false); //??
+        t->packetQueue()->blockFull(false); // ??
 
         while (t->isRunning())
         {
@@ -585,7 +594,9 @@ void AVDemuxThread::stop()
 
     pause(false);
     cond.wakeAll();
+
     qCDebug(DIGIKAM_QTAV_LOG).noquote() << QString::asprintf("all avthread finished. try to exit demux thread<<<<<<");
+
     end = true;
 }
 
@@ -642,7 +653,7 @@ void AVDemuxThread::stepForward()
 
     for (size_t i = 0 ; i < sizeof(av)/sizeof(av[0]) ; ++i)
     {
-        AVThread *t = av[i];
+        AVThread* t = av[i];
 
         if (!t)
             continue;
@@ -676,7 +687,7 @@ void AVDemuxThread::stepForward()
 
 void AVDemuxThread::seekOnPauseFinished()
 {
-    AVThread *thread = video_thread ? video_thread : audio_thread;
+    AVThread* thread = video_thread ? video_thread : audio_thread;
     Q_ASSERT(thread);
 
     disconnect(thread, SIGNAL(seekFinished(qint64)),
@@ -685,6 +696,7 @@ void AVDemuxThread::seekOnPauseFinished()
     if (user_paused)
     {
         pause(true); // restore pause state
+
         Q_EMIT requestClockPause(true); // need direct connection
 
         // pause video/audio thread
@@ -824,8 +836,8 @@ void AVDemuxThread::run()
 
     // aqueue as a primary buffer: music with/without cover
 
-    AVThread* thread = !video_thread || (audio_thread && demuxer->hasAttacedPicture()) ? audio_thread : video_thread;
-    m_buffer = thread->packetQueue();
+    AVThread* thread  = !video_thread || (audio_thread && demuxer->hasAttacedPicture()) ? audio_thread : video_thread;
+    m_buffer          = thread->packetQueue();
     const qint64 buf2 = aqueue ? aqueue->bufferValue() : 1; // TODO: may be changed by user. Deal with audio track change
 
     if (aqueue)
@@ -869,7 +881,7 @@ void AVDemuxThread::run()
         {
             // if avthread may skip 1st eof packet because of a/v sync
 
-            const int kMaxEof = 1;//if buffer packet, we can use qMax(aqueue->bufferValue(), vqueue->bufferValue()) and not call blockEmpty(false);
+            const int kMaxEof = 1; //if buffer packet, we can use qMax(aqueue->bufferValue(), vqueue->bufferValue()) and not call blockEmpty(false);
 
             if (aqueue && (!was_end || aqueue->isEmpty()))
             {
@@ -883,7 +895,7 @@ void AVDemuxThread::run()
                     Packet fake_apkt;
                     fake_apkt.duration = last_vpts - qMin(thread->clock()->videoTime(), thread->clock()->value()); // FIXME: when clock value < 0?
                     qCDebug(DIGIKAM_QTAV_LOG).noquote() << QString::asprintf("audio is too short than video: %.3f, fake_apkt.duration: %.3f", dpts, fake_apkt.duration);
-                    last_apts = last_vpts = 0; // if not reset to 0, for example real eof pts, then no fake apkt after seek because dpts < 0
+                    last_apts          = last_vpts = 0; // if not reset to 0, for example real eof pts, then no fake apkt after seek because dpts < 0
                     aqueue->put(fake_apkt);
                 }
 
@@ -940,6 +952,7 @@ void AVDemuxThread::run()
         if (demuxer->mediaStatus() == StalledMedia)
         {
             qCDebug(DIGIKAM_QTAV_LOG).noquote() << QString::asprintf("stalled media. exiting demuxing thread");
+
             break;
         }
 
@@ -947,7 +960,7 @@ void AVDemuxThread::run()
 
         if (tryPause())
         {
-            continue; //the queue is empty and will block
+            continue; // the queue is empty and will block
         }
 
         updateBufferState();
@@ -957,11 +970,11 @@ void AVDemuxThread::run()
             continue;
         }
 
-        stream = demuxer->stream();
-        pkt = demuxer->packet();
+        stream             = demuxer->stream();
+        pkt                = demuxer->packet();
         Packet apkt;
         bool audio_has_pic = demuxer->hasAttacedPicture();
-        int a_ext = 0;
+        int a_ext          = 0;
 
         if (ademuxer)
         {
@@ -970,7 +983,7 @@ void AVDemuxThread::run()
 
             if (ademuxer)
             {
-                a_ext = -1;
+                a_ext         = -1;
                 audio_has_pic = ademuxer->hasAttacedPicture();
 
                 // FIXME: buffer full but buffering!!!
@@ -984,7 +997,7 @@ void AVDemuxThread::run()
                         if (ademuxer->stream() == ademuxer->audioStream())
                         {
                             a_ext = 1;
-                            apkt = ademuxer->packet();
+                            apkt  = ademuxer->packet();
                         }
                     }
 
@@ -1033,6 +1046,7 @@ void AVDemuxThread::run()
                 if (!audio_thread || !audio_thread->isRunning())
                 {
                     aqueue->clear();
+
                     continue;
                 }
 
@@ -1062,15 +1076,19 @@ void AVDemuxThread::run()
                 if (!video_thread || !video_thread->isRunning())
                 {
                     vqueue->clear();
+
                     continue;
                 }
 
                 vqueue->blockFull(!audio_thread || !audio_thread->isRunning() || !aqueue || aqueue->isEnough());
-                vqueue->put(pkt); //affect audio_thread
+                vqueue->put(pkt); // affect audio_thread
                 last_vpts = pkt.pts;
             }
         }
-        else if (demuxer->subtitleStreams().contains(stream)) { //subtitle
+        else if (demuxer->subtitleStreams().contains(stream))
+        {
+            // subtitle
+
             Q_EMIT internalSubtitlePacketRead(demuxer->subtitleStreams().indexOf(stream), pkt);
         }
         else
@@ -1080,7 +1098,7 @@ void AVDemuxThread::run()
     }
 
     m_buffering = false;
-    m_buffer = nullptr;
+    m_buffer    = nullptr;
 
     while (audio_thread && audio_thread->isRunning())
     {
@@ -1088,7 +1106,7 @@ void AVDemuxThread::run()
         Packet quit_pkt(Packet::createEOF());
         quit_pkt.position = 0;
         aqueue->put(quit_pkt);
-        aqueue->blockEmpty(false); //FIXME: why need this
+        aqueue->blockEmpty(false); // FIXME: why need this
         audio_thread->pause(false);
         audio_thread->wait(500);
     }

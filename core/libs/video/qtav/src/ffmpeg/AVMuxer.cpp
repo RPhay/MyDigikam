@@ -638,7 +638,7 @@ bool AVMuxer::close()
     d->audio_streams.clear();
     d->video_streams.clear();
     d->subtitle_streams.clear();
-    d->started = false;
+    d->started    = false;
 
     return true;
 }

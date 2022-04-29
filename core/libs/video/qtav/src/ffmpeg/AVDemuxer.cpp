@@ -97,7 +97,9 @@ public:
         switch (mAction)
         {
             case Read:
+
                 //mpDemuxer->setMediaStatus(BufferedMedia);
+
                 break;
 
             default:
