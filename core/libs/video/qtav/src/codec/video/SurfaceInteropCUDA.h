@@ -109,7 +109,10 @@ public:
 
     /// copy from gpu and convert to target format if necessary. used by VideoCapture
 
-    void* mapToHost(const VideoFormat &format, void *handle, int picIndex, const CUVIDPROCPARAMS &param, int width, int height, int surface_height);
+    void* mapToHost(const VideoFormat& format,
+                    void* handle, int picIndex,
+                    const CUVIDPROCPARAMS& param,
+                    int width, int height, int surface_height);
 
 protected:
 
@@ -124,7 +127,7 @@ protected:
        GLuint             texture;
        int                w, h, W, H;
        CUgraphicsResource cuRes;
-       CUstream           stream; // for async works
+       CUstream           stream; ///< for async works
     } TexRes;
     TexRes res[2];
 };
@@ -137,9 +140,10 @@ class SurfaceInteropCUDA final : public VideoSurfaceInterop
 {
 public:
 
-    SurfaceInteropCUDA(const QWeakPointer<InteropResource>& res)
+    SurfaceInteropCUDA(const QWeakPointer<InteropResource>& res) // cppcheck-suppress uninitMemberVar
         : m_index(-1),
           m_resource(res),
+          w(0),
           h(0),
           H(0)
     {
@@ -168,7 +172,7 @@ public:
 
 private:
 
-    // CUdeviceptr m_surface; // invalid in a different context
+    // CUdeviceptr                  m_surface; // invalid in a different context
 
     int                           m_index;
     CUVIDPROCPARAMS               m_param;
@@ -181,12 +185,13 @@ private:
 
 #ifndef QT_NO_OPENGL
 
-class HostInteropResource final: public InteropResource
+class HostInteropResource final : public InteropResource
 {
 public:
 
     HostInteropResource();
     ~HostInteropResource();
+
     bool map(int picIndex, const CUVIDPROCPARAMS& param, GLuint tex, int w, int h, int H, int plane) override;
     bool unmap(GLuint) override;
 
@@ -215,12 +220,13 @@ class EGL;
  * TODO: use pixel shader to convert L8+A8L8 textures to a NV12 texture, or an rgb texture directly on pbuffer surface
  * The VideoFrame from CUDA decoder is RGB format
  */
-class EGLInteropResource final: public InteropResource
+class EGLInteropResource final : public InteropResource
 {
 public:
 
     EGLInteropResource();
     ~EGLInteropResource();
+
     bool map(int picIndex, const CUVIDPROCPARAMS& param, GLuint tex, int w, int h, int H, int plane) override;
 
 private:

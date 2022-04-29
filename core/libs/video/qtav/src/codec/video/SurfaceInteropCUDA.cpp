@@ -72,7 +72,8 @@ InteropResource::~InteropResource()
         CUDA_ENSURE(cuCtxDestroy(ctx));
 }
 
-void* InteropResource::mapToHost(const VideoFormat &format, void *handle, int picIndex, const CUVIDPROCPARAMS &param, int width, int height, int coded_height)
+void* InteropResource::mapToHost(const VideoFormat &format, void *handle, int picIndex,
+                                 const CUVIDPROCPARAMS &param, int width, int height, int coded_height)
 {
     AutoCtxLock locker(reinterpret_cast<cuda_api*>(this), lock);
     Q_UNUSED(locker);
@@ -84,7 +85,7 @@ void* InteropResource::mapToHost(const VideoFormat &format, void *handle, int pi
     CUVIDAutoUnmapper unmapper(this, dec, devptr);
     Q_UNUSED(unmapper);
     uchar* host_data             = nullptr;
-    const unsigned int host_size = pitch*coded_height*3/2;
+    const unsigned int host_size = pitch * coded_height * 3/2;
     CUDA_ENSURE(cuMemAllocHost((void**)&host_data, host_size), nullptr);
 
     // copy to the memory not allocated by cuda is possible but much slower
@@ -122,6 +123,8 @@ void* InteropResource::mapToHost(const VideoFormat &format, void *handle, int pi
 
     return f;
 }
+
+// ----------------------------------------------------------------------------
 
 #ifndef QT_NO_OPENGL
 
@@ -244,7 +247,10 @@ bool HostInteropResource::ensureResource(int pitch, int height)
 
 #endif // QT_NO_OPENGL
 
-void SurfaceInteropCUDA::setSurface(int picIndex, const CUVIDPROCPARAMS& param, int width, int height, int surface_height)
+// -------------------------------------------------------------------------------------------------
+
+void SurfaceInteropCUDA::setSurface(int picIndex, const CUVIDPROCPARAMS& param,
+                                    int width, int height, int surface_height)
 {
     m_index = picIndex;
     m_param = param;
@@ -831,23 +837,23 @@ bool GLInteropResource::map(int picIndex, const CUVIDPROCPARAMS &param, GLuint t
 
     CUDA_MEMCPY2D cu2d;
     memset(&cu2d, 0, sizeof(cu2d));
-    cu2d.srcDevice = devptr;
+    cu2d.srcDevice     = devptr;
     cu2d.srcMemoryType = CU_MEMORYTYPE_DEVICE;
-    cu2d.srcPitch = pitch;
-    cu2d.dstArray = array;
+    cu2d.srcPitch      = pitch;
+    cu2d.dstArray      = array;
     cu2d.dstMemoryType = CU_MEMORYTYPE_ARRAY;
-    cu2d.dstPitch = pitch;
+    cu2d.dstPitch      = pitch;
 
     // the whole size or copy size?
 
-    cu2d.WidthInBytes = pitch;
-    cu2d.Height = h;
+    cu2d.WidthInBytes  = pitch;
+    cu2d.Height        = h;
 
     if (plane == 1)
     {
         cu2d.srcXInBytes = 0;   // +srcY*srcPitch + srcXInBytes
-        cu2d.srcY = H;          // skip the padding height
-        cu2d.Height /= 2;
+        cu2d.srcY        = H;   // skip the padding height
+        cu2d.Height     /= 2;
     }
 
     if (res[plane].stream)
@@ -897,7 +903,7 @@ bool GLInteropResource::unmap(GLuint tex)
 
     int plane = -1;
 
-    if (res[0].texture == tex)
+    if      (res[0].texture == tex)
         plane = 0;
     else if (res[1].texture == tex)
         plane = 1;
