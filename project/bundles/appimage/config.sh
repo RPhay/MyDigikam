@@ -44,8 +44,8 @@ DK_KF5_VERSION="5.92"
 # The list of tags can be listed with this url: https://invent.kde.org/graphics/digikam/-/tags
 # If you want to package current implementation from git, use "master" as tag.
 #DK_VERSION=v7.0.0
-#DK_VERSION=master
-DK_VERSION=gsoc21-qt6-port
+DK_VERSION=master
+#DK_VERSION=gsoc21-qt6-port
 
 # Installer sub version to differentiates newer updates of the installer itself, even if the underlying application hasn’t changed.
 #DK_SUBVER="-01"
