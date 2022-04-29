@@ -6,6 +6,7 @@
 # https://github.com/Krazy-collection/krazy
 #
 # Production revision: 0b3a02537d4c56135bd81cd5e4f436fcea7da657
+# Production patch   : ./krazy.patch
 #
 # Dependencies:
 #

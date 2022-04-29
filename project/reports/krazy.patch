@@ -1,0 +1,17 @@
+diff --git a/lib/Krazy/Config.pm b/lib/Krazy/Config.pm
+index aa44643..43fa756 100644
+--- a/lib/Krazy/Config.pm
++++ b/lib/Krazy/Config.pm
+@@ -148,9 +148,9 @@ sub ParseKrazyRC {
+               $directive eq "STYLE_PYTHONSTYLE_LINEMAX") {
+       &pythonStyleSettings( $directive, $arg, $linecnt, $rcfile );
+     } else {
+-      print "$rcfile: Invalid directive \"$saveDirective\" (line $linecnt)\n";
+-      close(F);
+-      exit 1;
++#      print "$rcfile: Invalid directive \"$saveDirective\" (line $linecnt)\n";
++#      close(F);
++#      exit 1;
+     }
+   }
+   close(F);
