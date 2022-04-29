@@ -134,7 +134,7 @@ public:
      * Load Exif, Iptc, and Xmp chunk as Exiv2 EXV byte-array from a file.
      * Use currentData() to get the container.
      */
-    bool loadChunk(const QString& path);
+    bool loadChunk(const QString& path, bool fromVideo = false);
 
     /**
      * Apply tag changes to a target file using ExifTool with a list of tag properties.

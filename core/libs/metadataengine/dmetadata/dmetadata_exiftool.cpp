@@ -41,13 +41,13 @@
 namespace Digikam
 {
 
-bool DMetadata::loadUsingExifTool(const QString& filePath)
+bool DMetadata::loadUsingExifTool(const QString& filePath, bool fromVideo)
 {
     ExifToolParser* const parser = new ExifToolParser(nullptr);
 
     if (parser->exifToolAvailable())
     {
-        bool ret = parser->loadChunk(filePath);
+        bool ret = parser->loadChunk(filePath, fromVideo);
 
         if (!ret)
         {

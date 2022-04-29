@@ -89,7 +89,7 @@ bool ExifToolParser::load(const QString& path, bool async)
     return (d->startProcess(cmdArgs, ExifToolProcess::LOAD_METADATA));
 }
 
-bool ExifToolParser::loadChunk(const QString& path)
+bool ExifToolParser::loadChunk(const QString& path, bool fromVideo)
 {
     QFileInfo fileInfo(path);
 
@@ -110,7 +110,15 @@ bool ExifToolParser::loadChunk(const QString& path)
     QByteArrayList cmdArgs;
     cmdArgs << QByteArray("-TagsFromFile");
     cmdArgs << d->filePathEncoding(fileInfo);
-    cmdArgs << QByteArray("-all:all>all");
+
+    QByteArray cpyOpt("-all:all>all");
+
+    if (!fromVideo)
+    {
+        cpyOpt += ":all";
+    }
+
+    cmdArgs << cpyOpt;
     cmdArgs << QByteArray("-o");
     cmdArgs << QByteArray("-.exv");
     d->currentPath = fileInfo.filePath();
