@@ -110,10 +110,19 @@ public:
 
 private:
 
-    virtual bool setupSurfaceInterop()  { return true; }
+    virtual bool setupSurfaceInterop()
+    {
+        return true;
+    }
+
     virtual bool createDevice()                      = 0;      // d3d device, video context etc.
     virtual void destroyDevice()                     = 0;
-    virtual bool checkDevice()          { return true; }
+
+    virtual bool checkDevice()
+    {
+        return true;
+    }
+
     virtual QVector<GUID> getSupportedCodecs() const = 0;
 
     virtual void* setupAVVAContext()                 = 0;

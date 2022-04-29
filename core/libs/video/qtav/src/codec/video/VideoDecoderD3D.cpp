@@ -274,10 +274,10 @@ static const dxva2_mode_t dxva2_modes[] =
     { "H.263 decoder, restricted profile E",                                          &DXVA_ModeH263_E,                       0, nullptr },
     { "H.263 decoder, restricted profile F",                                          &DXVA_ModeH263_F,                       0, nullptr },
 
-    { nullptr,                                                                           nullptr,                                   0, nullptr }
+    { nullptr,                                                                        nullptr,                                0, nullptr }
 };
 
-static const dxva2_mode_t *Dxva2FindMode(const GUID *guid)
+static const dxva2_mode_t* Dxva2FindMode(const GUID *guid)
 {
     for (unsigned i = 0 ; dxva2_modes[i].name ; i++)
     {
@@ -294,7 +294,7 @@ bool checkProfile(const dxva2_mode_t *mode, int profile)
     if (!mode->profiles || !mode->profiles[0] || profile <= 0)
         return true;
 
-    for (const int *p = &mode->profiles[0] ; *p ; ++p)
+    for (const int* p = &mode->profiles[0] ; *p ; ++p)
     {
         if (*p == profile)
             return true;
@@ -314,7 +314,7 @@ static const d3d_format_t d3d_formats[] =
     { "IMC3",   MAKEFOURCC('I','M','C','3'),    VideoFormat::Format_YUV420P     },
     { "P010",   MAKEFOURCC('P','0','1','0'),    VideoFormat::Format_YUV420P10LE },
     { "P016",   MAKEFOURCC('P','0','1','6'),    VideoFormat::Format_YUV420P16LE }, // FIXME:
-    { nullptr,     0,                              VideoFormat::Format_Invalid     }
+    { nullptr,  0,                              VideoFormat::Format_Invalid     }
 };
 
 static const d3d_format_t *D3dFindFormat(int fourcc)
@@ -340,7 +340,7 @@ bool VideoDecoderD3D::isNoEncrypt(const GUID *guid)
 
 VideoFormat::PixelFormat VideoDecoderD3D::pixelFormatFromFourcc(int format)
 {
-    const d3d_format_t *fmt = D3dFindFormat(format);
+    const d3d_format_t* fmt = D3dFindFormat(format);
 
     if (fmt)
         return fmt->pixfmt;
@@ -411,12 +411,13 @@ int VideoDecoderD3D::surfaces() const
 }
 
 VideoDecoderD3DPrivate::VideoDecoderD3DPrivate()
-    : VideoDecoderFFmpegHWPrivate()
-    , surface_auto(true)
-    , surface_count(0)
-    , surface_width(0)
-    , surface_height(0)
-    , surface_order(0)
+    : VideoDecoderFFmpegHWPrivate(),
+      surface_auto(true),
+      surface_count(0),
+      format_fcc(0),
+      surface_width(0),
+      surface_height(0),
+      surface_order(0)
 {
 }
 
