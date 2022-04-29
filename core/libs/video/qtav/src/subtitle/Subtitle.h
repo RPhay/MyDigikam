@@ -286,13 +286,13 @@ public:
      * \param value codec name. see QTextCodec.availableCodecs(). Empty value means using the default codec in QTextCodec
      */
     void setCodec(const QByteArray& value);
-    QByteArray codec() const;
-    bool isLoaded() const;
+    QByteArray codec()              const;
+    bool isLoaded()                 const;
     void setEngines(const QStringList& value);
-    QStringList engines() const;
-    QString engine() const;
+    QStringList engines()           const;
+    QString engine()                const;
     void setFuzzyMatch(bool value);
-    bool fuzzyMatch() const;
+    bool fuzzyMatch()               const;
 
     // always use exact file path by setFile(). file name is used internally
 
@@ -300,19 +300,19 @@ public:
     //QString fileName() const;
 
     void setDirs(const QStringList& value);
-    QStringList dirs() const;
+    QStringList dirs()              const;
     QStringList supportedSuffixes() const;
     void setSuffixes(const QStringList& value);
-    QStringList suffixes() const;
+    QStringList suffixes()          const;
     bool canRender() const; // TODO: rename to capability()
-    qreal delay() const;
+    qreal delay()                   const;
     void setDelay(qreal value);
 
-    QString fontFile() const;
+    QString fontFile()              const;
     void setFontFile(const QString& value);
-    QString fontsDir() const;
+    QString fontsDir()              const;
     void setFontsDir(const QString& value);
-    bool isFontFileForced() const;
+    bool isFontFileForced()         const;
     void setFontFileForced(bool value);
 
     // API from PlayerSubtitle

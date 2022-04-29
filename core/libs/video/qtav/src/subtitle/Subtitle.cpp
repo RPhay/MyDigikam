@@ -69,17 +69,18 @@ class Subtitle::Private
 public:
 
     Private()
-        : loaded(false)
-        , fuzzy_match(true)
-        , update_text(true)
-        , update_image(true)
-        , last_can_render(false)
-        , processor(nullptr)
-        , codec("AutoDetect")
-        , t(0)
-        , delay(0)
-        , current_count(0)
-        , force_font_file(false)
+        : loaded(false),
+          fuzzy_match(true),
+          update_text(true),
+          update_image(true),
+          last_can_render(false),
+          processor(nullptr),
+          codec("AutoDetect"),
+          dev(nullptr),
+          t(0),
+          delay(0),
+          current_count(0),
+          force_font_file(false)
     {
     }
 
@@ -163,8 +164,8 @@ public:
 };
 
 Subtitle::Subtitle(QObject *parent)
-    : QObject(parent)
-    , priv(new Private())
+    : QObject(parent),
+      priv(new Private())
 {
     // TODO: use factory.registedNames() and the order
 
@@ -191,6 +192,7 @@ void Subtitle::setCodec(const QByteArray& value)
         return;
 
     priv->codec = value;
+
     Q_EMIT codecChanged();
 }
 
@@ -261,6 +263,7 @@ void Subtitle::setEngines(const QStringList& value)
     {
         Q_EMIT enginesChanged();
         Q_EMIT supportedSuffixesChanged();
+
         return;
     }
 
@@ -401,7 +404,7 @@ void Subtitle::setTimestamp(qreal t)
         if (!priv->prepareCurrentFrame())
             return;
 
-        priv->update_text = true;
+        priv->update_text  = true;
         priv->update_image = true;
     }
 
@@ -654,12 +657,12 @@ QString Subtitle::getText() const
     if (!priv->update_text)
         return priv->current_text;
 
-    priv->update_text = false;
+    priv->update_text                 = false;
     priv->current_text.clear();
-    const int count = qAbs(priv->current_count);
+    const int count                   = qAbs(priv->current_count);
     QList<SubtitleFrame>::iterator it = priv->current_count > 0 ? priv->itf : priv->itf + (priv->current_count+1);
 
-    for (int i = 0; i < count; ++i)
+    for (int i = 0 ; i < count ; ++i)
     {
         priv->current_text.append(it->text).append(QStringLiteral("\n"));
         ++it;
@@ -748,6 +751,7 @@ bool Subtitle::processHeader(const QByteArray& codec, const QByteArray &data)
         {
             priv->processor = sp;
             qCDebug(DIGIKAM_QTAV_LOG) << "current subtitle processor: " << sp->name();
+
             break;
         }
     }
@@ -758,6 +762,7 @@ bool Subtitle::processHeader(const QByteArray& codec, const QByteArray &data)
     if (!priv->processor)
     {
         qCWarning(DIGIKAM_QTAV_LOG_WARN).noquote() << QString::asprintf("No subtitle processor supports the codec '%s'", codec.constData());
+
         return false;
     }
 
@@ -787,6 +792,7 @@ bool Subtitle::processLine(const QByteArray &data, qreal pts, qreal duration)
     {
         priv->frames.append(f);
         priv->itf = priv->frames.begin();
+
         return true;
     }
 
@@ -821,9 +827,9 @@ bool Subtitle::Private::prepareCurrentFrame()
         return false;
 
     QList<SubtitleFrame>::iterator it = itf;
-    int found = 0;
-    const int old_current_count = current_count;
-    const qreal t = this->t - delay;
+    int found                         = 0;
+    const int old_current_count       = current_count;
+    const qreal t                     = this->t - delay;
 
     if (t < it->begin)
     {
@@ -841,6 +847,7 @@ bool Subtitle::Private::prepareCurrentFrame()
                 if (old_current_count)
                 {
                     current_count = 0;
+
                     return true;
                 }
 
@@ -861,6 +868,7 @@ bool Subtitle::Private::prepareCurrentFrame()
         if (found > 0)
         {
             frame = *it;
+
             return true;
         }
 
@@ -880,6 +888,7 @@ bool Subtitle::Private::prepareCurrentFrame()
         {
             ++it;
             it_changed = true;
+
             continue;
         }
 
@@ -893,6 +902,7 @@ bool Subtitle::Private::prepareCurrentFrame()
             if (old_current_count)
             {
                 current_count = 0;
+
                 return true;
             }
 
@@ -1014,6 +1024,7 @@ QStringList Subtitle::Private::find()
                 // why it happens?
 
                 it = list.erase(it);
+
                 continue;
             }
 
@@ -1029,6 +1040,7 @@ QStringList Subtitle::Private::find()
 
 #endif
                 ++it;
+
                 continue;
             }
 
@@ -1113,6 +1125,7 @@ bool Subtitle::Private::processRawData(const QByteArray &data)
         if (processRawData(sp, data))
         {
             processor = sp;
+
             break;
         }
     }
@@ -1132,7 +1145,7 @@ bool Subtitle::Private::processRawData(const QByteArray &data)
        frames.push_back(f);
     }
 
-    itf = frames.begin();
+    itf   = frames.begin();
     frame = *itf;
 
     return true;
@@ -1187,8 +1200,8 @@ bool Subtitle::Private::processRawData(SubtitleProcessor *sp, const QByteArray &
 
 
 SubtitleAPIProxy::SubtitleAPIProxy(QObject* obj)
-    : m_obj(obj)
-    , m_s(nullptr)
+    : m_obj(obj),
+      m_s(nullptr)
 {
 }
 
