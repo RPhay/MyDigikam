@@ -68,10 +68,25 @@ struct QTAV_EXPORT SubImageSet
 
     SubImageSet(int width = 0, int height = 0, Format format = Unknown);
 
-    int width() const       { return w; }
-    int height() const      { return h; }
-    Format format() const   { return fmt; }
-    bool isValid() const    { return !images.isEmpty() && w > 0 && h > 0 && fmt != Unknown; }
+    int width() const
+    {
+        return w;
+    }
+
+    int height() const
+    {
+        return h;
+    }
+
+    Format format() const
+    {
+        return fmt;
+    }
+
+    bool isValid() const
+    {
+        return !images.isEmpty() && w > 0 && h > 0 && fmt != Unknown;
+    }
 
     void reset(int width = 0, int height = 0, Format format = Unknown)
     {
@@ -93,9 +108,9 @@ struct QTAV_EXPORT SubImageSet
 
 private:
 
-    Format fmt;
-    int    w, h;
-    int    id;
+    Format            fmt;
+    int               w, h;
+    int               id;
 };
 
 } // namespace QtAV
