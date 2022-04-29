@@ -24,8 +24,11 @@
 #ifndef QTAV_AVPLAYER_PRIVATE_H
 #define QTAV_AVPLAYER_PRIVATE_H
 
-#include "AVDemuxer.h"
 #include "AVPlayer.h"
+
+// Local includes
+
+#include "AVDemuxer.h"
 #include "AudioThread.h"
 #include "VideoThread.h"
 #include "AVDemuxThread.h"
@@ -60,48 +63,80 @@ public:
     bool setupAudioThread(AVPlayer *player);
     bool setupVideoThread(AVPlayer *player);
     bool tryApplyDecoderPriority(AVPlayer *player);
+
     // TODO: what if buffer mode changed during playback?
+
     void updateBufferValue(PacketBuffer *buf);
     void updateBufferValue();
+
     //TODO: addAVOutput()
+
     template<class Out>
-    void setAVOutput(Out *&pOut, Out *pNew, AVThread *thread) {
-        Out *old = pOut;
+
+    void setAVOutput(Out *&pOut, Out *pNew, AVThread *thread)
+    {
+        Out *old        = pOut;
         bool delete_old = false;
-        if (pOut == pNew) {
+
+        if (pOut == pNew)
+        {
             qCDebug(DIGIKAM_QTAV_LOG).noquote() << QString::asprintf("output not changed: %p", pOut);
-            if (thread && thread->output() == pNew) {//avthread already set that output
+
+            if (thread && thread->output() == pNew)
+            {
+                // avthread already set that output
+
                 qCDebug(DIGIKAM_QTAV_LOG).noquote() << QString::asprintf("avthread already set that output");
+
                 return;
             }
-        } else {
-            pOut = pNew;
+        }
+        else
+        {
+            pOut       = pNew;
             delete_old = true;
         }
-        if (!thread) {
+
+        if (!thread)
+        {
             qCDebug(DIGIKAM_QTAV_LOG).noquote() << QString::asprintf("avthread not ready. can not set output.");
-            //no avthread, we can delete it safely
-            //AVOutput must be allocated in heap. Just like QObject's children.
-            if (delete_old) {
+
+            // no avthread, we can delete it safely
+            // AVOutput must be allocated in heap. Just like QObject's children.
+
+            if (delete_old)
+            {
                 delete old;
                 old = nullptr;
             }
+
             return;
         }
-        //FIXME: what if isPaused()==false but pause(true) in another thread?
+
+        // FIXME: what if isPaused()==false but pause(true) in another thread?
+
         //bool need_lock = isPlaying() && !thread->isPaused();
         //if (need_lock)
         //    thread->lock();
+
         qCDebug(DIGIKAM_QTAV_LOG).noquote() << QString::asprintf("set AVThread output");
+
         thread->setOutput(pOut);
-        if (pOut) {
+
+        if (pOut)
+        {
             pOut->setStatistics(&statistics);
+
             //if (need_lock)
             //    thread->unlock(); //??why here?
         }
-        //now the old avoutput is not used by avthread, we can delete it safely
+
+        // now the old avoutput is not used by avthread, we can delete it safely
+
         //AVOutput must be allocated in heap. Just like QObject's children.
-        if (delete_old) {
+
+        if (delete_old)
+        {
             delete old;
             old = nullptr;
         }
@@ -113,6 +148,7 @@ public:
     bool                    async_load;
 
     // can be QString, QIODevice*
+
     QVariant                current_source, pendding_source;
 
     bool                    loaded;                                     ///< for current source
@@ -170,7 +206,7 @@ public:
      */
     int                     notify_interval;
 
-    MediaStatus             status;                                     ///< status changes can be from demuxer or demux thread
+    MediaStatus             status;                       ///< status changes can be from demuxer or demux thread
     AVPlayer::State         state;
     MediaEndAction          end_action;
     QMutex                  load_mutex;
