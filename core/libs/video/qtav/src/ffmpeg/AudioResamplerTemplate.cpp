@@ -53,7 +53,7 @@ class AudioResamplerFFPrivate;
 
 class AudioResamplerFF : public AudioResampler
 {
-    DPTR_DECLARE_PRIVATE(AudioResampler)
+    DPTR_DECLARE_PRIVATE(AudioResampler)    // cppcheck-suppress unusedPrivateFunction
 
 public:
 
@@ -93,7 +93,7 @@ public:
 #       define SWR_CH_MAX 64
 #   endif
 
-    int channel_map[SWR_CH_MAX];
+    int channel_map[SWR_CH_MAX] = { 0 };
 };
 
 AudioResamplerFF::AudioResamplerFF():
@@ -324,7 +324,7 @@ bool AudioResamplerFF::prepare()
     {
         remix = true;
 
-        //double matrix[in_c*out_c]; //C99, VLA
+        //double matrix[in_c*out_c]; // C99, VLA
 
         matrix = (double*)calloc(in_c*out_c, sizeof(double));
 

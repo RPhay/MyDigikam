@@ -62,6 +62,7 @@ public:
 
     AVClock(ClockType c, QObject* parent = nullptr);
     AVClock(QObject* parent = nullptr);
+
     void setClockType(ClockType ct);
     ClockType clockType() const;
     bool isActive() const;

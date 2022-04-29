@@ -43,32 +43,34 @@ enum
     kStopped
 };
 
-AVClock::AVClock(AVClock::ClockType c, QObject *parent)
-  : QObject(parent)
-  , auto_clock(true)
-  , m_state(kStopped)
-  , clock_type(c)
-  , mSpeed(1.0)
-  , value0(0)
-  , avg_err(0)
-  , nb_restarted(0)
-  , nb_sync(0)
-  , sync_id(0)
+AVClock::AVClock(AVClock::ClockType c, QObject* parent)
+  : QObject(parent),
+    auto_clock(true),
+    m_state(kStopped),
+    clock_type(c),
+    mSpeed(1.0),
+    value0(0),
+    t(0),
+    avg_err(0),
+    nb_restarted(0),
+    nb_sync(0),
+    sync_id(0)
 {
     last_pts = pts_ = pts_v = delay_ = 0;
 }
 
-AVClock::AVClock(QObject *parent)
-  : QObject(parent)
-  , auto_clock(true)
-  , m_state(kStopped)
-  , clock_type(AudioClock)
-  , mSpeed(1.0)
-  , value0(0)
-  , avg_err(0)
-  , nb_restarted(0)
-  , nb_sync(0)
-  , sync_id(0)
+AVClock::AVClock(QObject* parent)
+  : QObject(parent),
+    auto_clock(true),
+    m_state(kStopped),
+    clock_type(AudioClock),
+    mSpeed(1.0),
+    value0(0),
+    t(0),
+    avg_err(0),
+    nb_restarted(0),
+    nb_sync(0),
+    sync_id(0)
 {
     last_pts = pts_ = pts_v = delay_ = 0;
 }
@@ -79,6 +81,7 @@ void AVClock::setClockType(ClockType ct)
         return;
 
     clock_type = ct;
+
     QTimer::singleShot(0, this, SLOT(restartCorrectionTimer()));
 }
 
@@ -95,6 +98,7 @@ bool AVClock::isActive() const
 void AVClock::setInitialValue(double v)
 {
     value0 = v;
+
     qCDebug(DIGIKAM_QTAV_LOG).noquote() << QString::asprintf("Clock initial value: %f", v);
 }
 
@@ -176,6 +180,7 @@ bool AVClock::syncEndOnce(int id)
     if (id != sync_id)
     {
         qCWarning(DIGIKAM_QTAV_LOG_WARN).noquote() << QString::asprintf("bad sync id: %d, current: %d", id, sync_id);
+
         return true;
     }
 
@@ -190,6 +195,7 @@ void AVClock::start()
     m_state = kRunning;
     qCDebug(DIGIKAM_QTAV_LOG).noquote() << QString::asprintf("AVClock started!!!!!!!!");
     timer.start();
+
     QTimer::singleShot(0, this, SLOT(restartCorrectionTimer()));
 
     Q_EMIT started();
@@ -260,7 +266,7 @@ void AVClock::timerEvent(QTimerEvent *event)
 
     const qint64 now = QDateTime::currentMSecsSinceEpoch();
     const double err = double(now - t) * kThousandth - delta_pts;
-    t = now;
+    t                = now;
 
     // FIXME: avfoundation camera error is large (about -0.6s)
 
