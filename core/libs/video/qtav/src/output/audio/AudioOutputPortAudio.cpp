@@ -74,17 +74,19 @@ static const AudioOutputBackendId AudioOutputBackendId_PortAudio = mkid::id32bas
 
 FACTORY_REGISTER(AudioOutputBackend, PortAudio, kName)
 
-AudioOutputPortAudio::AudioOutputPortAudio(QObject *parent)
-    : AudioOutputBackend(AudioOutput::NoFeature, parent)
-    , initialized(false)
-    , outputParameters(new PaStreamParameters)
-    , stream(nullptr)
+AudioOutputPortAudio::AudioOutputPortAudio(QObject* parent)
+    : AudioOutputBackend(AudioOutput::NoFeature, parent),
+      initialized(false),
+      outputParameters(new PaStreamParameters),
+      stream(nullptr),
+      outputLatency(0.0)
 {
     PaError err = paNoError;
 
     if ((err = Pa_Initialize()) != paNoError)
     {
         qCWarning(DIGIKAM_QTAV_LOG_WARN).noquote() << QString::asprintf("Error when init portaudio: %s", Pa_GetErrorText(err));
+
         return;
     }
 
@@ -94,12 +96,13 @@ AudioOutputPortAudio::AudioOutputPortAudio(QObject *parent)
 
     for (int i = 0 ; i < numDevices ; ++i)
     {
-        const PaDeviceInfo *deviceInfo = Pa_GetDeviceInfo(i);
+        const PaDeviceInfo* deviceInfo = Pa_GetDeviceInfo(i);
 
         if (deviceInfo)
         {
             const PaHostApiInfo *hostApiInfo = Pa_GetHostApiInfo(deviceInfo->hostApi);
             QString name = QString::fromUtf8(hostApiInfo->name) + QStringLiteral(": ") + QString::fromLocal8Bit(deviceInfo->name);
+
             qCDebug(DIGIKAM_QTAV_LOG).noquote() << QString::asprintf("audio device %d: %s", i, name.toUtf8().constData());
             qCDebug(DIGIKAM_QTAV_LOG).noquote() << QString::asprintf("max in/out channels: %d/%d", deviceInfo->maxInputChannels, deviceInfo->maxOutputChannels);
         }
@@ -111,14 +114,15 @@ AudioOutputPortAudio::AudioOutputPortAudio(QObject *parent)
     if (outputParameters->device == paNoDevice)
     {
         qCWarning(DIGIKAM_QTAV_LOG_WARN).noquote() << QString::asprintf("PortAudio get device error!");
+
         return;
     }
 
-    const PaDeviceInfo *deviceInfo = Pa_GetDeviceInfo(outputParameters->device);
+    const PaDeviceInfo* deviceInfo              = Pa_GetDeviceInfo(outputParameters->device);
     qCDebug(DIGIKAM_QTAV_LOG).noquote() << QString::asprintf("DEFAULT max in/out channels: %d/%d", deviceInfo->maxInputChannels, deviceInfo->maxOutputChannels);
     qCDebug(DIGIKAM_QTAV_LOG).noquote() << QString::asprintf("audio device: %s", QString::fromLocal8Bit(Pa_GetDeviceInfo(outputParameters->device)->name).toUtf8().constData());
     outputParameters->hostApiSpecificStreamInfo = nullptr;
-    outputParameters->suggestedLatency = Pa_GetDeviceInfo(outputParameters->device)->defaultHighOutputLatency;
+    outputParameters->suggestedLatency          = Pa_GetDeviceInfo(outputParameters->device)->defaultHighOutputLatency;
 }
 
 AudioOutputPortAudio::~AudioOutputPortAudio()
@@ -148,6 +152,7 @@ bool AudioOutputPortAudio::write(const QByteArray& data)
 
         return false;
     }
+
     return true;
 }
 
@@ -174,7 +179,8 @@ static int toPaSampleFormat(AudioFormat::SampleFormat format)
     }
 }
 
-//TODO: call open after audio format changed?
+// TODO: call open after audio format changed?
+
 bool AudioOutputPortAudio::open()
 {
     outputParameters->sampleFormat = toPaSampleFormat(format.sampleFormat());
@@ -225,4 +231,5 @@ bool AudioOutputPortAudio::close()
 
     return true;
 }
+
 } // namespace QtAV
