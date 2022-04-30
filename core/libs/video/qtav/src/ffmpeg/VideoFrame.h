@@ -70,8 +70,8 @@ public:
     // alignment: data ptr alignment
 
     VideoFrame(int width, int height, const VideoFormat& format, const QByteArray& data = QByteArray(), int alignment = 1);
-    VideoFrame(const QImage& image);
-    VideoFrame(const VideoFrame &other);
+    explicit VideoFrame(const QImage& image);
+    VideoFrame(const VideoFrame& other);
     ~VideoFrame();
 
     VideoFrame &operator =(const VideoFrame &other);

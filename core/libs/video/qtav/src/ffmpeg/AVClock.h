@@ -60,8 +60,8 @@ public:
         VideoClock     ///< sync to video timestamp
     } ClockType;
 
-    AVClock(ClockType c, QObject* parent = nullptr);
-    AVClock(QObject* parent = nullptr);
+    explicit AVClock(ClockType c, QObject* parent = nullptr);
+    explicit AVClock(QObject* parent = nullptr);
 
     void setClockType(ClockType ct);
     ClockType clockType() const;

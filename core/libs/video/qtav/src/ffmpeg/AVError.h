@@ -76,7 +76,7 @@ public:
     };
 
     AVError();
-    AVError(ErrorCode code, int ffmpegError = 0);
+    explicit AVError(ErrorCode code, int ffmpegError = 0);
 
     /*!
      * \brief AVError

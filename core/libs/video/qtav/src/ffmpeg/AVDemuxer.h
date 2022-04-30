@@ -72,7 +72,7 @@ public:
 
     static const QStringList& supportedProtocols();
 
-    AVDemuxer(QObject* parent = nullptr);
+    explicit AVDemuxer(QObject* parent = nullptr);
     ~AVDemuxer();
 
     MediaStatus mediaStatus() const;

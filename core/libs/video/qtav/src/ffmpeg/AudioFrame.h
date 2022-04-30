@@ -47,7 +47,7 @@ public:
      * \brief AudioFrame
      * construct an audio frame from a given buffer and format
      */
-    AudioFrame(const AudioFormat& format = AudioFormat(), const QByteArray& data = QByteArray());
+    explicit AudioFrame(const AudioFormat& format = AudioFormat(), const QByteArray& data = QByteArray());
     AudioFrame(const AudioFrame& other);
     virtual ~AudioFrame();
 

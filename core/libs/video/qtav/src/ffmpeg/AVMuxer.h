@@ -57,7 +57,7 @@ public:
 
     static const QStringList& supportedProtocols();
 
-    AVMuxer(QObject *parent = nullptr);
+    explicit AVMuxer(QObject *parent = nullptr);
     ~AVMuxer();
 
     QString fileName() const;
