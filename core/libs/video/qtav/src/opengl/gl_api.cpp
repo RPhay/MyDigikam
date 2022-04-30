@@ -56,7 +56,7 @@ void* GetProcAddress_Qt(const char *name)
 
     }
 
-    //fallback to QOpenGLFunctions_1_0?
+    // fallback to QOpenGLFunctions_1_0?
 
     return p;
 }
@@ -70,9 +70,9 @@ static void* GetProcAddressWithExt(GetProcAddress_t get, const char *name)
 
     static const char *ext[] =
     {
-        "ARB", "OES", "EXT", "ANGLE", "NV" //TODO: MESA, INTEL?
+        "ARB", "OES", "EXT", "ANGLE", "NV" // TODO: MESA, INTEL?
 
-#ifdef __APPLE__
+#ifdef __APPLE__         // krazy:exclude=cpp
 
         , "APPLE"
 
@@ -87,7 +87,7 @@ static void* GetProcAddressWithExt(GetProcAddress_t get, const char *name)
 
     for (int i = 0 ; ext[i] ; ++i)
     {
-        memcpy(p, ext[i], sizeof(ext[i]) + 1); //copy trail '\0'
+        memcpy(p, ext[i], sizeof(ext[i]) + 1); // copy trail '\0'
         fp = get(f);
 
         if (fp)
@@ -121,7 +121,7 @@ static void* GetProcAddressDefault(const char *name)
 #   elif GL_ES_VERSION_3_0
 #       define GL_RESOLVE_ES_2_0(name) GL_RESOLVE(name)
 #       define GL_RESOLVE_ES_3_0(name) GL_RESOLVE(name)
-#       define GL_RESOLVE_ES_3_1(name) GL_RESOLVE_NONE(name) //gl3ext is empty
+#       define GL_RESOLVE_ES_3_1(name) GL_RESOLVE_NONE(name) // gl3ext is empty
 #   elif GL_ES_VERSION_3_1
 #       define GL_RESOLVE_ES_2_0(name) GL_RESOLVE(name)
 #       define GL_RESOLVE_ES_3_0(name) GL_RESOLVE(name)
@@ -136,7 +136,6 @@ static void* GetProcAddressDefault(const char *name)
 #       define GL_RESOLVE_ES_3_1(name) GL_RESOLVE(name)
 #   endif
 #endif
-
 
 #define GL_RESOLVE_NONE(name) do { name = nullptr;}while(0)
 #define GL_RESOLVE_EXT(name) do {\
@@ -213,7 +212,7 @@ void api::resolve()
         }
     }
 
-#endif //Q_OS_WIN32
+#endif // Q_OS_WIN32
 
 }
 

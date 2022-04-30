@@ -66,7 +66,7 @@
  *http://research.microsoft.com/en-us/um/redmond/projects/invisible/src/crt/md/ppc/_crt.c.htm
  */
 
-#if defined(_MSC_VER)
+#if defined(_MSC_VER)                           // krazy:exclude=cpp
 #   pragma section(".CRT$XIU", long, read)
 #   pragma section(".CRT$XPU", long, read)
 #   define _CRTALLOC(x) __declspec(allocate(x))

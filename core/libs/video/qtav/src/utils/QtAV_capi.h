@@ -406,7 +406,7 @@ protected:
 
 #if defined(__GNUC__)
 #   define CAPI_FUNC_INFO __PRETTY_FUNCTION__
-#elif defined(_MSC_VER)
+#elif defined(_MSC_VER)                                 // krazy:exclude=cpp
 #   define CAPI_FUNC_INFO __FUNCSIG__
 #else
 #   define CAPI_FUNC_INFO __FUNCTION__
@@ -451,6 +451,7 @@ protected:
 // fully expand. used by VC. VC will not expand __VA_ARGS__ but treats it as 1 parameter
 
 #define EXPAND(expr) expr   // TODO: rename CAPI_EXPAND
+// krazy:exclude=cpp
 #if defined(WIN64) || defined(_WIN64) || defined(__WIN64__) \
     || defined(WIN32) || defined(_WIN32) || defined(__WIN32__) || defined(__NT__) \
     || defined(WINCE) || defined(_WIN32_WCE)
@@ -464,7 +465,7 @@ protected:
 #   endif
 #endif
 
-#if defined(__APPLE__)
+#if defined(__APPLE__)               // krazy:exclude=cpp
 #   define CAPI_TARGET_OS_MAC 1
 #endif
 
@@ -707,8 +708,8 @@ void* dso::resolve(const char* sym, bool try_)
 
 } // namespace capi
 
-#if defined(_MSC_VER)
-#   pragma warning(disable:4098) //vc return void
+#if defined(_MSC_VER)                                   // krazy:exclude=cpp
+#   pragma warning(disable:4098) // vc return void
 #endif
 
 #ifdef __GNUC__
