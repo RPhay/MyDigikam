@@ -106,6 +106,8 @@ Code review with plenty of fixes and improvements. See the list of tasks below.
 
     - Add config widgets to setup video and audio backends.
 
+    - Remove GLWidgetRenderer class and port GLWidgetRenderer2 to Qt6::QOpenGLWidget.
+
 * Unmaintained Features:
 
     - IOS support.
