@@ -49,14 +49,18 @@ public:
         GenericCopy
     };
 
-    VideoFrame copyToFrame(const VideoFormat& fmt, int surface_h, quint8* src[], int pitch[], bool swapUV);
+    VideoFrame copyToFrame(const VideoFormat& fmt,
+                           int surface_h,
+                           quint8* src[],
+                           int pitch[],
+                           bool swapUV);
 
     // properties
 
-    int threads() const;
+    int threads()                       const;
     void setThreads(int value);
     void setCopyMode(CopyMode value);
-    CopyMode copyMode() const;
+    CopyMode copyMode()                 const;
 
 Q_SIGNALS:
 

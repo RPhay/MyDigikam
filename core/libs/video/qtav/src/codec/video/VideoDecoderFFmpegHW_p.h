@@ -71,19 +71,19 @@ public:
 
     void restore()
     {
-        codec_ctx->pix_fmt = pixfmt;
-        codec_ctx->opaque = nullptr;
-        codec_ctx->get_format = get_format;
+        codec_ctx->pix_fmt        = pixfmt;
+        codec_ctx->opaque         = nullptr;
+        codec_ctx->get_format     = get_format;
 
 #if QTAV_HAVE(AVBUFREF)
 
-        codec_ctx->get_buffer2 = get_buffer2;
+        codec_ctx->get_buffer2    = get_buffer2;
 
 #else
 
-        codec_ctx->get_buffer = get_buffer;
+        codec_ctx->get_buffer     = get_buffer;
         codec_ctx->release_buffer = release_buffer;
-        codec_ctx->reget_buffer = reget_buffer;
+        codec_ctx->reget_buffer   = reget_buffer;
 #endif
 
     }
@@ -106,12 +106,12 @@ public:
 
     // TODO: remove opaque
 
-    virtual bool getBuffer(void **opaque, uint8_t **data) = 0;
-    virtual void releaseBuffer(void *opaque, uint8_t *data) = 0;
-    virtual AVPixelFormat vaPixelFormat() const = 0;
+    virtual bool getBuffer(void **opaque, uint8_t **data)         = 0;
+    virtual void releaseBuffer(void *opaque, uint8_t *data)       = 0;
+    virtual AVPixelFormat vaPixelFormat()                   const = 0;
 
-    int codedWidth(AVCodecContext *avctx) const;  // TODO: virtual int surfaceWidth(AVCodecContext*) const;
-    int codedHeight(AVCodecContext *avctx) const;
+    int codedWidth(AVCodecContext *avctx)                   const;  // TODO: virtual int surfaceWidth(AVCodecContext*) const;
+    int codedHeight(AVCodecContext *avctx)                  const;
     bool initUSWC(int lineSize);
     void releaseUSWC();
 

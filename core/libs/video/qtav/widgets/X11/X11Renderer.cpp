@@ -64,8 +64,8 @@ namespace QtAV
 
 class X11RendererPrivate;
 
-class X11Renderer: public QWidget,
-                   public VideoRenderer
+class X11Renderer : public QWidget,
+                    public VideoRenderer
 {
     Q_OBJECT
     DPTR_DECLARE_PRIVATE(X11Renderer)
@@ -74,7 +74,7 @@ public:
 
     X11Renderer(QWidget* parent = nullptr, Qt::WindowFlags f = Qt::WindowFlags(Qt::Widget));
 
-    VideoRendererId id() const override;
+    VideoRendererId id()                              const override;
     bool isSupported(VideoFormat::PixelFormat pixfmt) const override;
 
     /* WA_PaintOnScreen: To render outside of Qt's paint system, e.g. If you require
@@ -83,34 +83,34 @@ public:
      * If paintEngine != 0, the window will flicker when drawing without QPainter.
      * Make sure that paintEngine returns 0 to avoid flicking.
      */
-    QPaintEngine* paintEngine() const override;
+    QPaintEngine* paintEngine()                       const override;
 
     /* http://lists.trolltech.com/qt4-preview-feedback/2005-04/thread00609-0.html
      * true: paintEngine is QPainter. Painting with QPainter support double buffer
      * false: no double buffer, should reimplement paintEngine() to return 0 to avoid flicker
      */
-    QWidget* widget() override
+    QWidget* widget()                                       override
     {
         return this;
     }
 
 protected:
 
-    bool receiveFrame(const VideoFrame& frame) override;
+    bool receiveFrame(const VideoFrame& frame)              override;
 
     // called in paintEvent before drawFrame() when required
 
-    void drawBackground() override;
+    void drawBackground()                                   override;
 
     // draw the current frame using the current paint engine. called by paintEvent()
 
-    void drawFrame() override;
-    void paintEvent(QPaintEvent *) override;
-    void resizeEvent(QResizeEvent *) override;
+    void drawFrame()                                        override;
+    void paintEvent(QPaintEvent *)                          override;
+    void resizeEvent(QResizeEvent *)                        override;
 
     // stay on top will change parent, hide then show(windows)
 
-    void showEvent(QShowEvent *) override;
+    void showEvent(QShowEvent *)                            override;
 };
 
 typedef X11Renderer VideoRendererX11;
@@ -152,27 +152,27 @@ static const struct fmt2Xfmtentry
     unsigned blue_mask;
 } fmt2Xfmt[] =
 {
-    {VideoFormat::Format_BGR555,  BO_NATIVE,    0x0000001F, 0x000003E0, 0x00007C00},
-    {VideoFormat::Format_BGR555,  BO_NATIVE,    0x00007C00, 0x000003E0, 0x0000001F},
-    {VideoFormat::Format_BGR565,  BO_NATIVE,    0x0000001F, 0x000007E0, 0x0000F800},
-    {VideoFormat::Format_RGB565,  BO_NATIVE,    0x0000F800, 0x000007E0, 0x0000001F},
-    {VideoFormat::Format_RGB24,   MSBFirst,     0x00FF0000, 0x0000FF00, 0x000000FF},
-    {VideoFormat::Format_RGB24,   LSBFirst,     0x000000FF, 0x0000FF00, 0x00FF0000},
-    {VideoFormat::Format_BGR24,   MSBFirst,     0x000000FF, 0x0000FF00, 0x00FF0000},
-    {VideoFormat::Format_BGR24,   LSBFirst,     0x00FF0000, 0x0000FF00, 0x000000FF},
-    {VideoFormat::Format_BGR32,   BO_NATIVE,    0x000000FF, 0x0000FF00, 0x00FF0000},
-    {VideoFormat::Format_BGR32,   BO_NONNATIVE, 0xFF000000, 0x00FF0000, 0x0000FF00}, // abgr rgba
-    {VideoFormat::Format_RGB32,   BO_NATIVE,    0x00FF0000, 0x0000FF00, 0x000000FF}, // argb bgra
-    {VideoFormat::Format_RGB32,   BO_NONNATIVE, 0x0000FF00, 0x00FF0000, 0xFF000000},
-    {VideoFormat::Format_ARGB32,  MSBFirst,     0x00FF0000, 0x0000FF00, 0x000000FF},
-    {VideoFormat::Format_ARGB32,  LSBFirst,     0x0000FF00, 0x00FF0000, 0xFF000000},
-    {VideoFormat::Format_ABGR32,  MSBFirst,     0x000000FF, 0x0000FF00, 0x00FF0000},
-    {VideoFormat::Format_ABGR32,  LSBFirst,     0xFF000000, 0x00FF0000, 0x0000FF00},
-    {VideoFormat::Format_RGBA32,  MSBFirst,     0xFF000000, 0x00FF0000, 0x0000FF00},
-    {VideoFormat::Format_RGBA32,  LSBFirst,     0x000000FF, 0x0000FF00, 0x00FF0000},
-    {VideoFormat::Format_BGRA32,  MSBFirst,     0x0000FF00, 0x00FF0000, 0xFF000000},
-    {VideoFormat::Format_BGRA32,  LSBFirst,     0x00FF0000, 0x0000FF00, 0x000000FF},
-    {VideoFormat::Format_Invalid, BO_NATIVE, 0, 0, 0}
+    { VideoFormat::Format_BGR555,  BO_NATIVE,    0x0000001F, 0x000003E0, 0x00007C00 },
+    { VideoFormat::Format_BGR555,  BO_NATIVE,    0x00007C00, 0x000003E0, 0x0000001F },
+    { VideoFormat::Format_BGR565,  BO_NATIVE,    0x0000001F, 0x000007E0, 0x0000F800 },
+    { VideoFormat::Format_RGB565,  BO_NATIVE,    0x0000F800, 0x000007E0, 0x0000001F },
+    { VideoFormat::Format_RGB24,   MSBFirst,     0x00FF0000, 0x0000FF00, 0x000000FF },
+    { VideoFormat::Format_RGB24,   LSBFirst,     0x000000FF, 0x0000FF00, 0x00FF0000 },
+    { VideoFormat::Format_BGR24,   MSBFirst,     0x000000FF, 0x0000FF00, 0x00FF0000 },
+    { VideoFormat::Format_BGR24,   LSBFirst,     0x00FF0000, 0x0000FF00, 0x000000FF },
+    { VideoFormat::Format_BGR32,   BO_NATIVE,    0x000000FF, 0x0000FF00, 0x00FF0000 },
+    { VideoFormat::Format_BGR32,   BO_NONNATIVE, 0xFF000000, 0x00FF0000, 0x0000FF00 }, // abgr rgba
+    { VideoFormat::Format_RGB32,   BO_NATIVE,    0x00FF0000, 0x0000FF00, 0x000000FF }, // argb bgra
+    { VideoFormat::Format_RGB32,   BO_NONNATIVE, 0x0000FF00, 0x00FF0000, 0xFF000000 },
+    { VideoFormat::Format_ARGB32,  MSBFirst,     0x00FF0000, 0x0000FF00, 0x000000FF },
+    { VideoFormat::Format_ARGB32,  LSBFirst,     0x0000FF00, 0x00FF0000, 0xFF000000 },
+    { VideoFormat::Format_ABGR32,  MSBFirst,     0x000000FF, 0x0000FF00, 0x00FF0000 },
+    { VideoFormat::Format_ABGR32,  LSBFirst,     0xFF000000, 0x00FF0000, 0x0000FF00 },
+    { VideoFormat::Format_RGBA32,  MSBFirst,     0xFF000000, 0x00FF0000, 0x0000FF00 },
+    { VideoFormat::Format_RGBA32,  LSBFirst,     0x000000FF, 0x0000FF00, 0x00FF0000 },
+    { VideoFormat::Format_BGRA32,  MSBFirst,     0x0000FF00, 0x00FF0000, 0xFF000000 },
+    { VideoFormat::Format_BGRA32,  LSBFirst,     0x00FF0000, 0x0000FF00, 0x000000FF },
+    { VideoFormat::Format_Invalid, BO_NATIVE,    0,          0,          0          }
 };
 
 VideoFormat::PixelFormat pixelFormat(XImage* xi)
@@ -185,11 +185,14 @@ VideoFormat::PixelFormat pixelFormat(XImage* xi)
 
         // 15->16? mpv
 
-        if (depth == xi->bits_per_pixel && fmte->byte_order == xi->byte_order
-                && fmte->red_mask == xi->red_mask
-                && fmte->green_mask == xi->green_mask
-                && fmte->blue_mask == xi->blue_mask)
+        if (   depth == xi->bits_per_pixel && fmte->byte_order == xi->byte_order
+            && fmte->red_mask == xi->red_mask
+            && fmte->green_mask == xi->green_mask
+            && fmte->blue_mask == xi->blue_mask
+           )
+        {
             break;
+        }
 
         //qDebug() << fmte->fmt;
 
@@ -229,12 +232,13 @@ public:
 
         char* dispName = XDisplayName(nullptr);
         qCDebug(DIGIKAM_QTAVWIDGETS_LOG).noquote() << QString::asprintf("X11 open display: %s", dispName);
-        display = XOpenDisplay(dispName);
+        display        = XOpenDisplay(dispName);
 
         if (!display)
         {
             available = false;
             qCWarning(DIGIKAM_QTAVWIDGETS_LOG_WARN).noquote() << QString::asprintf("Open X11 display error");
+
             return;
         }
 
@@ -246,6 +250,7 @@ public:
         {
             qCWarning(DIGIKAM_QTAVWIDGETS_LOG_WARN).noquote() << QString::asprintf("XMatchVisualInfo error");
             available = false;
+
             return;
         }
 
@@ -296,7 +301,7 @@ public:
 
     ~X11RendererPrivate()
     {
-        for (int i = 0; i < kPoolSize; ++i)
+        for (int i = 0 ; i < kPoolSize ; ++i)
             destroyX11Image(i);
 
         XCloseDisplay(display);
@@ -358,7 +363,7 @@ public:
 
     bool ensureImage(int w, int h)
     {
-        for (int i = 0; i < kPoolSize; ++i)
+        for (int i = 0 ; i < kPoolSize ; ++i)
         {
             if (!ensureImage(i, w, h))
                 return false;
@@ -374,9 +379,9 @@ public:
         if (ximage && ximage->width == w && ximage->height == h)
             return true;
 
-        warn_bad_pitch = true;
+        warn_bad_pitch       = true;
         destroyX11Image(index);
-        use_shm = XShmQueryExtension(display);
+        use_shm              = XShmQueryExtension(display);
         XShmSegmentInfo &shm = shm_pool[index];
         qCDebug(DIGIKAM_QTAVWIDGETS_LOG).noquote() << QString::asprintf("use x11 shm: %d", use_shm);
 
@@ -392,6 +397,7 @@ public:
         if (!ximage)
         {
             qCWarning(DIGIKAM_QTAVWIDGETS_LOG_WARN).noquote() << QString::asprintf("XShmCreateImage error");
+
             goto no_shm;
         }
 
@@ -400,6 +406,7 @@ public:
         if (shm.shmid < 0)
         {
             qCWarning(DIGIKAM_QTAVWIDGETS_LOG_WARN).noquote() << QString::asprintf("shmget error");
+
             goto no_shm;
         }
 
@@ -414,6 +421,7 @@ public:
             ximage = nullptr;
             ximage_data[index].clear();
             qCWarning(DIGIKAM_QTAVWIDGETS_LOG_WARN).noquote() << QString::asprintf("Shared memory error,disabling ( seg id error )");
+
             goto no_shm;
         }
 
@@ -423,6 +431,7 @@ public:
         if (!XShmAttach(display, &shm))
         {
             qCWarning(DIGIKAM_QTAVWIDGETS_LOG_WARN).noquote() << QString::asprintf("Attach to shm failed! try to use none shm");
+
             goto no_shm;
         }
 
@@ -527,6 +536,7 @@ bool X11Renderer::receiveFrame(const VideoFrame& frame)
     {
         d.video_frame = VideoFrame(); // fill background
         update();
+
         return true;
     }
 
@@ -563,12 +573,13 @@ int X11RendererPrivate::resizeXImage(int index)
         interopFrame.setBytesPerLine(ximage->bytes_per_line);
     }
 
-    if (frame_orig.constBits(0)
-            || !video_frame.map(UserSurface, &interopFrame, VideoFormat(VideoFormat::Format_RGB32)) //check pixel format and scale to ximage size&line_size
-            )
+    if (   frame_orig.constBits(0)
+        || !video_frame.map(UserSurface, &interopFrame, VideoFormat(VideoFormat::Format_RGB32)) //check pixel format and scale to ximage size&line_size
+       )
     {
-        if (!frame_orig.constBits(0) // always convert hw frames
-                || frame_orig.pixelFormat() != pixfmt || frame_orig.width() != ximage->width || frame_orig.height() != ximage->height)
+        if (   !frame_orig.constBits(0) // always convert hw frames
+            || frame_orig.pixelFormat() != pixfmt || frame_orig.width() != ximage->width || frame_orig.height() != ximage->height
+           )
             video_frame = frame_orig.to(pixfmt, QSize(ximage->width, ximage->height));
         else
             video_frame = frame_orig;
@@ -708,7 +719,7 @@ void X11Renderer::drawFrame()
     if (d.use_shm)
     {
         XShmPutImage(d.display, winId(), d.gc, ximage
-                      , roi.x(), roi.y()//, roi.width(), roi.height()
+                      , roi.x(), roi.y() //, roi.width(), roi.height()
                       , d.out_rect.x(), d.out_rect.y(), d.out_rect.width(), d.out_rect.height()
                       , True /*true: send event*/);
         d.ShmCompletionWaitCount++;
@@ -716,7 +727,7 @@ void X11Renderer::drawFrame()
     else
     {
         XPutImage(d.display, winId(), d.gc, ximage
-                   , roi.x(), roi.y()//, roi.width(), roi.height()
+                   , roi.x(), roi.y() //, roi.width(), roi.height()
                    , d.out_rect.x(), d.out_rect.y(), d.out_rect.width(), d.out_rect.height());
         XSync(d.display, False); // update immediately
     }

@@ -69,7 +69,7 @@ static int ffmpeg_get_va_buffer2(struct AVCodecContext* ctx, AVFrame* frame, int
 {
     Q_UNUSED(flags);
 
-    for (unsigned i = 0 ; i < AV_NUM_DATA_POINTERS ; i++)
+    for (unsigned i = 0 ; i < AV_NUM_DATA_POINTERS ; ++i)
     {
         frame->data[i]     = nullptr;
         frame->linesize[i] = 0;
@@ -112,9 +112,9 @@ static int ffmpeg_get_va_buffer2(struct AVCodecContext* ctx, AVFrame* frame, int
 
 #else
 
-static int ffmpeg_get_va_buffer(struct AVCodecContext *c, AVFrame *ff) // vlc_va_t *external, AVFrame *ff)
+static int ffmpeg_get_va_buffer(struct AVCodecContext* c, AVFrame* ff) // vlc_va_t *external, AVFrame *ff)
 {
-    VideoDecoderFFmpegHWPrivate *va = reinterpret_cast<VideoDecoderFFmpegHWPrivate*>(c->opaque);
+    VideoDecoderFFmpegHWPrivate* va = reinterpret_cast<VideoDecoderFFmpegHWPrivate*>(c->opaque);
 
     //ff->reordered_opaque = c->reordered_opaque; // TODO: dxva?
 
@@ -128,7 +128,7 @@ static int ffmpeg_get_va_buffer(struct AVCodecContext *c, AVFrame *ff) // vlc_va
 
 #   if LIBAVCODEC_VERSION_MAJOR < 54
 
-    ff->age = 256*256*256*64;
+    ff->age = 256 * 256 * 256 * 64;
 
 #   endif
 
@@ -162,8 +162,8 @@ bool VideoDecoderFFmpegHWPrivate::prepare()
 {
     //// From vlc begin
 
-    codec_ctx->thread_safe_callbacks = true; // ?
-    codec_ctx->thread_count = threads;
+    codec_ctx->thread_safe_callbacks = true;
+    codec_ctx->thread_count          = threads;
 
 #ifdef _MSC_VER
 #   pragma warning(disable:4065) // vc: switch has default but no case
@@ -188,28 +188,28 @@ bool VideoDecoderFFmpegHWPrivate::prepare()
 
     // From vlc end
 
-    codec_ctx->opaque = this;
+    codec_ctx->opaque         = this;
 
-    pixfmt     = codec_ctx->pix_fmt;
-    get_format = codec_ctx->get_format;
+    pixfmt                    = codec_ctx->pix_fmt;
+    get_format                = codec_ctx->get_format;
 
 #if QTAV_HAVE(AVBUFREF)
 
-    get_buffer2 = codec_ctx->get_buffer2;
+    get_buffer2               = codec_ctx->get_buffer2;
 
 #else
 
-    get_buffer     = codec_ctx->get_buffer;
-    reget_buffer   = codec_ctx->reget_buffer;
-    release_buffer = codec_ctx->release_buffer;
+    get_buffer                = codec_ctx->get_buffer;
+    reget_buffer              = codec_ctx->reget_buffer;
+    release_buffer            = codec_ctx->release_buffer;
 
 #endif // QTAV_HAVE(AVBUFREF)
 
-    codec_ctx->get_format = ffmpeg_get_va_format;
+    codec_ctx->get_format     = ffmpeg_get_va_format;
 
 #if QTAV_HAVE(AVBUFREF)
 
-    codec_ctx->get_buffer2 = ffmpeg_get_va_buffer2;
+    codec_ctx->get_buffer2    = ffmpeg_get_va_buffer2;
 
 #else
 
@@ -237,7 +237,7 @@ AVPixelFormat VideoDecoderFFmpegHWPrivate::getFormat(struct AVCodecContext *avct
 
     for (size_t i = 0 ; pi_fmt[i] != QTAV_PIX_FMT_C(NONE) ; i++)
     {
-        const AVPixFmtDescriptor *dsc = av_pix_fmt_desc_get(pi_fmt[i]);
+        const AVPixFmtDescriptor* dsc = av_pix_fmt_desc_get(pi_fmt[i]);
 
         if (dsc == nullptr)
             continue;
@@ -479,7 +479,7 @@ VideoFrame VideoDecoderFFmpegHW::copyToFrame(const VideoFormat& fmt, int surface
         frame = frame.clone();
     }
 
-    frame.setTimestamp(double(d.frame->pkt_pts)/1000.0);
+    frame.setTimestamp(double(d.frame->pkt_pts) / 1000.0);
     frame.setDisplayAspectRatio(d.getDAR(d.frame));
     d.updateColorDetails(&frame);
 

@@ -39,25 +39,30 @@
 namespace QtAV
 {
 
-class SubtitleProcessorFFmpeg final: public SubtitleProcessor
+class SubtitleProcessorFFmpeg final : public SubtitleProcessor
 {
 public:
 
     SubtitleProcessorFFmpeg();
     ~SubtitleProcessorFFmpeg();
 
-    SubtitleProcessorId id() const override;
-    QString name() const override;
-    QStringList supportedTypes() const override;
-    bool process(QIODevice* dev) override;
+    SubtitleProcessorId id()                const override;
+    QString name()                          const override;
+    QStringList supportedTypes()            const override;
+    bool process(QIODevice* dev)                  override;
 
     // supportsFromFile must be true
 
-    bool process(const QString& path) override;
-    QList<SubtitleFrame> frames() const override;
-    bool processHeader(const QByteArray& codec, const QByteArray& data) override;
-    SubtitleFrame processLine(const QByteArray& data, qreal pts = -1, qreal duration = 0) override;
-    QString getText(qreal pts) const override;
+    bool process(const QString& path)             override;
+    QList<SubtitleFrame> frames()           const override;
+    bool processHeader(const QByteArray& codec,
+                       const QByteArray& data)    override;
+
+    SubtitleFrame processLine(const QByteArray& data,
+                              qreal pts = -1,
+                              qreal duration = 0) override;
+
+    QString getText(qreal pts)              const override;
 
 private:
 
@@ -260,15 +265,17 @@ QStringList SubtitleProcessorFFmpeg::supportedTypes() const
 
     static const sub_ext_t sub_ext[] =
     {
-        { "ass", "ass" },
-        { "ssa", "ass" },
+        { "ass", "ass"       },
+        { "ssa", "ass"       },
         { "sub", "subviewer" },
-        { ""
-    }
+        { ""                 }
+    };
 
     // from ffmpeg/tests/fate/subtitles.mak
 
-    static const QStringList sSuffixes = QStringList() << "ass" << "ssa" << "sub" << "srt" << "txt" << "vtt" << "smi" << "pjs" << "jss" << "aqt";
+    static const QStringList sSuffixes = QStringList() << "ass" << "ssa" << "sub" << "srt"
+                                                       << "txt" << "vtt" << "smi" << "pjs"
+                                                       << "jss" << "aqt";
 
 #endif
 
@@ -284,6 +291,7 @@ bool SubtitleProcessorFFmpeg::process(QIODevice *dev)
         if (!dev->open(QIODevice::ReadOnly))
         {
             qCWarning(DIGIKAM_QTAV_LOG_WARN) << "open qiodevice error: " << dev->errorString();
+
             return false;
         }
     }
@@ -296,7 +304,8 @@ bool SubtitleProcessorFFmpeg::process(QIODevice *dev)
     if (m_reader.subtitleStreams().isEmpty())
         goto error;
 
-    qCDebug(DIGIKAM_QTAV_LOG).noquote() << QString::asprintf("subtitle format: %s", m_reader.formatContext()->iformat->name);
+    qCDebug(DIGIKAM_QTAV_LOG).noquote() << QString::asprintf("subtitle format: %s",
+                                             m_reader.formatContext()->iformat->name);
 
     if (!processSubtitle())
         goto error;
@@ -347,11 +356,12 @@ QString SubtitleProcessorFFmpeg::getText(qreal pts) const
 {
     QString text;
 
-    for (int i = 0; i < m_frames.size(); ++i)
+    for (int i = 0 ; i < m_frames.size() ; ++i)
     {
         if (m_frames[i].begin <= pts && m_frames[i].end >= pts)
         {
             text += m_frames[i].text + QStringLiteral("\n");
+
             continue;
         }
 
@@ -454,7 +464,7 @@ SubtitleFrame SubtitleProcessorFFmpeg::processLine(const QByteArray& data, qreal
     {
         SubtitleFrame f;
         f.begin = pts;
-        f.end = pts + duration;
+        f.end   = pts + duration;
 
         if (data.startsWith(QByteArray("Dialogue:"))) // e.g. decoding embedded subtitles
             f.text = PlainText::fromAss(data.constData());
@@ -498,13 +508,13 @@ SubtitleFrame SubtitleProcessorFFmpeg::processLine(const QByteArray& data, qreal
 
     // start_display_time and duration are in ms
 
-    frame.begin = pts + qreal(sub.start_display_time)/1000.0;
-    frame.end   = pts + qreal(sub.end_display_time)/1000.0;
+    frame.begin = pts + qreal(sub.start_display_time) / 1000.0;
+    frame.end   = pts + qreal(sub.end_display_time)   / 1000.0;
 
     //qCDebug(DIGIKAM_QTAV_LOG) << QTime(0, 0, 0).addMSecs(frame.begin*1000.0) << "-" << QTime(0, 0, 0).addMSecs(frame.end*1000.0) << " fmt: " << sub.format << " pts: " << m_reader.packet().pts //sub.pts
     //       << " rects: " << sub.num_rects << " end: " << sub.end_display_time;
 
-    for (unsigned i = 0; i < sub.num_rects; i++)
+    for (unsigned i = 0 ; i < sub.num_rects ; ++i)
     {
         switch (sub.rects[i]->type)
         {
@@ -551,6 +561,7 @@ bool SubtitleProcessorFFmpeg::processSubtitle()
         qCWarning(DIGIKAM_QTAV_LOG_WARN).noquote() << QString::asprintf("no subtitle stream found");
         return false;
     }
+
     codec_ctx                         = m_reader.subtitleCodecContext();
     AVCodec* dec                      = avcodec_find_decoder(codec_ctx->codec_id);
     const AVCodecDescriptor* dec_desc = avcodec_descriptor_get(codec_ctx->codec_id);

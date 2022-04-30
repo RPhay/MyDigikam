@@ -162,7 +162,7 @@ int SelectConfig(AVCodecID codec_id, const T* cfgs, int nb_cfgs, T* cfg)
 
     int cfg_score = 0;
 
-    for (int i = 0; i < nb_cfgs; i++)
+    for (int i = 0 ; i < nb_cfgs ; i++)
     {
         const T &c = cfgs[i];
 
@@ -199,8 +199,10 @@ int SelectConfig(AVCodecID codec_id, const T* cfgs, int nb_cfgs, T* cfg)
 }
 
 #ifndef MAKEFOURCC // winrt
+
 #   define MAKEFOURCC(ch0, ch1, ch2, ch3) \
   ((DWORD)(BYTE)(ch0)|((DWORD)(BYTE)(ch1)<<8)|((DWORD)(BYTE)(ch2)<<16)|((DWORD)(BYTE)(ch3)<<24))
+
 #endif
 
 } // namespace QtAV

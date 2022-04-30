@@ -55,8 +55,8 @@ using namespace Microsoft::WRL; // ComPtr
 
 #   ifndef __MINGW32__
 
-__CRT_UUID_DECL(ID3D11VideoContext, 0x61F21C45,0x3C0E,0x4a74,0x9C,0xEA,0x67,0x10,0x0D,0x9A,0xD5,0xE4)
-__CRT_UUID_DECL(ID3D11VideoDevice,  0x10EC4D5B,0x975A,0x4689,0xB9,0xE4,0xD0,0xAA,0xC3,0x0F,0xE3,0x33)
+__CRT_UUID_DECL(ID3D11VideoContext, 0x61F21C45, 0x3C0E, 0x4a74, 0x9C, 0xEA, 0x67, 0x10, 0x0D, 0x9A, 0xD5, 0xE4)
+__CRT_UUID_DECL(ID3D11VideoDevice,  0x10EC4D5B, 0x975A, 0x4689, 0xB9, 0xE4, 0xD0, 0xAA, 0xC3, 0x0F, 0xE3, 0x33)
 
 #   endif
 
@@ -73,9 +73,9 @@ struct dxgi_fcc
     DXGI_FORMAT dxgi;
 } dxgi_formats[] =
 {
-    {MAKEFOURCC('N','V','1','2'), DXGI_FORMAT_NV12},
-    {MAKEFOURCC('P','0','1','0'), DXGI_FORMAT_P010},
-    {MAKEFOURCC('P','0','1','6'), DXGI_FORMAT_P016},
+    { MAKEFOURCC('N','V','1','2'), DXGI_FORMAT_NV12 },
+    { MAKEFOURCC('P','0','1','0'), DXGI_FORMAT_P010 },
+    { MAKEFOURCC('P','0','1','6'), DXGI_FORMAT_P016 },
 };
 
 DXGI_FORMAT fourccToDXGI(int fourcc)
@@ -109,9 +109,9 @@ class VideoDecoderD3D11 : public VideoDecoderD3D
 public:
 
     VideoDecoderD3D11();
-    VideoDecoderId id() const override;
-    QString description() const override;
-    VideoFrame frame() override;
+    VideoDecoderId id()     const override;
+    QString description()   const override;
+    VideoFrame frame()            override;
 };
 
 extern VideoDecoderId VideoDecoderId_D3D11;
@@ -308,7 +308,7 @@ VideoFrame VideoDecoderD3D11::frame()
     D3D11_MAPPED_SUBRESOURCE mapped;
     ScopedMap sm(d.d3dctx, d.texture_cpu, &mapped);                                     // mingw error if ComPtr<T> constructs from ComPtr<U> [T=ID3D11Resource, U=ID3D11Texture2D]
     Q_UNUSED(sm);
-    int pitch[3]             = { (int)mapped.RowPitch, 0, 0 };                          // compute chroma later
+    int pitch[3]             = { (int)mapped.RowPitch, 0, 0   };                        // compute chroma later
     uint8_t *src[]           = { (uint8_t*)mapped.pData, 0, 0 };                        // compute chroma later
     const VideoFormat format = VideoDecoderD3D::pixelFormatFromFourcc(d.format_fcc);    // tex_desc
 
@@ -438,7 +438,7 @@ bool VideoDecoderD3D11Private::createDecoder(AVCodecID codec_id, int w, int h, Q
         texDesc.ArraySize      = 1;
         texDesc.Usage          = D3D11_USAGE_STAGING;
         texDesc.CPUAccessFlags = D3D11_CPU_ACCESS_READ;
-        texDesc.BindFlags      = 0; // ?
+        texDesc.BindFlags      = 0;
         DX_ENSURE(d3ddev->CreateTexture2D(&texDesc, nullptr, &texture_cpu), false);
     }
 
@@ -474,7 +474,7 @@ bool VideoDecoderD3D11Private::createDecoder(AVCodecID codec_id, int w, int h, Q
 
     QVector<D3D11_VIDEO_DECODER_CONFIG> cfg_list(cfg_count);
 
-    for (unsigned i = 0 ; i < cfg_count ; i++)
+    for (unsigned i = 0 ; i < cfg_count ; ++i)
     {
         DX_ENSURE(d3dviddev->GetVideoDecoderConfig(&decoderDesc, i, &cfg_list[i]), false);
     }

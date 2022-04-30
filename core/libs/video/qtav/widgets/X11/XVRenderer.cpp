@@ -89,29 +89,29 @@ public:
      * false: no double buffer, should reimplement paintEngine() to return 0 to avoid flicker
      */
 
-    virtual QWidget* widget() override
+    virtual QWidget* widget()                                       override
     {
         return this;
     }
 
 protected:
 
-    virtual bool receiveFrame(const VideoFrame& frame)  override;
-    virtual void drawBackground()                       override;
-    virtual void drawFrame()                            override;
-    virtual void paintEvent(QPaintEvent *)              override;
-    virtual void resizeEvent(QResizeEvent *)            override;
+    virtual bool receiveFrame(const VideoFrame& frame)              override;
+    virtual void drawBackground()                                   override;
+    virtual void drawFrame()                                        override;
+    virtual void paintEvent(QPaintEvent *)                          override;
+    virtual void resizeEvent(QResizeEvent *)                        override;
 
     // stay on top will change parent, hide then show(windows)
 
-    virtual void showEvent(QShowEvent *)                override;
+    virtual void showEvent(QShowEvent *)                            override;
 
 private:
 
-    virtual bool onSetBrightness(qreal b)               override;
-    virtual bool onSetContrast(qreal c)                 override;
-    virtual bool onSetHue(qreal h)                      override;
-    virtual bool onSetSaturation(qreal s)               override;
+    virtual bool onSetBrightness(qreal b)                           override;
+    virtual bool onSetContrast(qreal c)                             override;
+    virtual bool onSetHue(qreal h)                                  override;
+    virtual bool onSetSaturation(qreal s)                           override;
 };
 
 typedef XVRenderer VideoRendererXV;
@@ -540,9 +540,9 @@ static void SplitPlanes(quint8 *dstu, size_t dstu_pitch,
                         const quint8 *src, size_t src_pitch,
                         unsigned width, unsigned height)
 {
-    for (unsigned y = 0 ; y < height ; y++)
+    for (unsigned y = 0 ; y < height ; ++y)
     {
-        for (unsigned x = 0 ; x < width ; x++)
+        for (unsigned x = 0 ; x < width ; ++x)
         {
             dstu[x] = src[2*x+0];
             dstv[x] = src[2*x+1];
