@@ -59,7 +59,8 @@ public:
         DUBLIN,
         DIGIKAM,
         HISTORY,
-        XPKEYWORDS
+        XPKEYWORDS,
+        COMMENT
     };
 
 public:
@@ -109,25 +110,28 @@ void RemoveMetadata::registerSettingsWidget()
 
     d->removeExif            = new QCheckBox(i18nc("@title", "Exif:"), panel);
     d->exifComboBox          = new QComboBox(panel);
-    d->exifComboBox->addItem(i18nc("@item: exif namespace", "Completely"), Private::ALL);
-    d->exifComboBox->addItem(i18nc("@item: exif namespace", "Date"),       Private::DATE);
-    d->exifComboBox->addItem(i18nc("@item: exif namespace", "GPS"),        Private::GPS);
-    d->exifComboBox->addItem(i18nc("@item: exif namespace", "XPKeywords"), Private::XPKEYWORDS);
+    d->exifComboBox->addItem(i18nc("@item: exif namespace", "Completely"),              Private::ALL);
+    d->exifComboBox->addItem(i18nc("@item: exif namespace", "Date"),                    Private::DATE);
+    d->exifComboBox->addItem(i18nc("@item: exif namespace", "GPS"),                     Private::GPS);
+    d->exifComboBox->addItem(i18nc("@item: exif namespace", "XPKeywords"),              Private::XPKEYWORDS);
+    d->exifComboBox->addItem(i18nc("@item: exif namespace", "Comment and description"), Private::COMMENT);
 
     d->removeIptc            = new QCheckBox(i18nc("@title", "Iptc:"), panel);
     d->iptcComboBox          = new QComboBox(panel);
     d->iptcComboBox->addItem(i18nc("@item: iptc namespace", "Completely"), Private::ALL);
     d->iptcComboBox->addItem(i18nc("@item: iptc namespace", "Date"),       Private::DATE);
+    d->iptcComboBox->addItem(i18nc("@item: iptc namespace", "Caption"),    Private::COMMENT);
 
     d->removeXmp             = new QCheckBox(i18nc("@title", "Xmp:"), panel);
     d->xmpComboBox           = new QComboBox(panel);
-    d->xmpComboBox->addItem(i18nc("@item: xmp namespace", "Completely"),            Private::ALL);
-    d->xmpComboBox->addItem(i18nc("@item: xmp namespace", "Date"),                  Private::DATE);
-    d->xmpComboBox->addItem(i18nc("@item: xmp namespace", "DigiKam"),               Private::DIGIKAM);
-    d->xmpComboBox->addItem(i18nc("@item: xmp namespace", "DigiKam image history"), Private::HISTORY);
-    d->xmpComboBox->addItem(i18nc("@item: xmp namespace", "Dublin Core"),           Private::DUBLIN);
-    d->xmpComboBox->addItem(i18nc("@item: xmp namespace", "Exif"),                  Private::EXIF);
-    d->xmpComboBox->addItem(i18nc("@item: xmp namespace", "Video"),                 Private::VIDEO);
+    d->xmpComboBox->addItem(i18nc("@item: xmp namespace", "Completely"),                       Private::ALL);
+    d->xmpComboBox->addItem(i18nc("@item: xmp namespace", "Date"),                             Private::DATE);
+    d->xmpComboBox->addItem(i18nc("@item: xmp namespace", "DigiKam"),                          Private::DIGIKAM);
+    d->xmpComboBox->addItem(i18nc("@item: xmp namespace", "DigiKam image history"),            Private::HISTORY);
+    d->xmpComboBox->addItem(i18nc("@item: xmp namespace", "Dublin Core"),                      Private::DUBLIN);
+    d->xmpComboBox->addItem(i18nc("@item: xmp namespace", "Exif"),                             Private::EXIF);
+    d->xmpComboBox->addItem(i18nc("@item: xmp namespace", "Video"),                            Private::VIDEO);
+    d->xmpComboBox->addItem(i18nc("@item: xmp namespace", "Caption, Comment and Description"), Private::COMMENT);
 
     grid->addWidget(d->removeExif,   0, 0, 1, 1);
     grid->addWidget(d->exifComboBox, 0, 1, 1, 2);
@@ -272,6 +276,11 @@ bool RemoveMetadata::toolOperations()
         {
             meta->removeExifTag("Exif.Image.XPKeywords");
         }
+        else if (exifData == Private::COMMENT)
+        {
+            meta->removeExifTag("Exif.Image.ImageDescription");
+            meta->removeExifTag("Exif.Photo.UserComment");
+        }
     }
 
     if (removeIptc)
@@ -284,6 +293,10 @@ bool RemoveMetadata::toolOperations()
         {
             meta->removeIptcTag("Iptc.Application2.DateCreated");
             meta->removeIptcTag("Iptc.Application2.TimeCreated");
+        }
+        else if (exifData == Private::COMMENT)
+        {
+            meta->removeIptcTag("Iptc.Application2.Caption");
         }
     }
 
@@ -325,6 +338,16 @@ bool RemoveMetadata::toolOperations()
         else if (xmpData == Private::VIDEO)
         {
             meta->removeXmpTags(QStringList() << QLatin1String("video"));
+        }
+        else if (exifData == Private::COMMENT)
+        {
+            meta->removeXmpTag("Xmp.acdsee.Caption");
+            meta->removeXmpTag("Xmp.dc.Description");
+            meta->removeXmpTag("Xmp.crs.Description");
+            meta->removeXmpTag("Xmp.exif.UserComment");
+            meta->removeXmpTag("Xmp.tiff.ImageDescription");
+            meta->removeXmpTag("Xmp.xmp.Description");
+            meta->removeXmpTag("Xmp.xmpDM.DMComment");
         }
     }
 
