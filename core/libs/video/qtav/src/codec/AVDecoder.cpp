@@ -21,7 +21,7 @@
  *
  * ============================================================ */
 
-#include "AVDecoder.h"
+#include "AVDecoder_p.h"
 
 // KDE includes
 
@@ -30,7 +30,6 @@
 // Local includes
 
 #include "QtAV_Version.h"
-#include "AVDecoder_p.h"
 #include "QtAV_internal.h"
 #include "digikam_debug.h"
 

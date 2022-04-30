@@ -24,6 +24,8 @@
 #ifndef QTAV_AV_ENCODER_P_H
 #define QTAV_AV_ENCODER_P_H
 
+#include "AVEncoder.h"
+
 // Qt includes
 
 #include <QVariant>

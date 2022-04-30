@@ -24,6 +24,8 @@
 #ifndef QTAV_AV_DECODER_P_H
 #define QTAV_AV_DECODER_P_H
 
+#include "AVDecoder.h"
+
 // Qt includes
 
 #include <QHash>

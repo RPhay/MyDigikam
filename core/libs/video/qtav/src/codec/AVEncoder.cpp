@@ -21,11 +21,10 @@
  *
  * ============================================================ */
 
-#include "AVEncoder.h"
+#include "AVEncoder_p.h"
 
 // Local includes
 
-#include "AVEncoder_p.h"
 #include "QtAV_Version.h"
 #include "QtAV_internal.h"
 #include "digikam_debug.h"

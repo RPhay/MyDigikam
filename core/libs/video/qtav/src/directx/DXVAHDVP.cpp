@@ -28,7 +28,6 @@
 // Local includes
 
 #include "DirectXHelper.h"
-#include "DXVAHDVP.h"
 #include "digikam_debug.h"
 
 namespace QtAV
