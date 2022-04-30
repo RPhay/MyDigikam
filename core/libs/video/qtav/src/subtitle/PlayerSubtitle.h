@@ -52,7 +52,8 @@ class QTAV_PRIVATE_EXPORT PlayerSubtitle : public QObject
 
 public:
 
-    PlayerSubtitle(QObject *parent = nullptr);
+    explicit PlayerSubtitle(QObject *parent = nullptr);
+
     void setPlayer(AVPlayer* player);
     Subtitle* subtitle();
 

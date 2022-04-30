@@ -145,7 +145,7 @@ class QTAV_EXPORT AudioFilter : public Filter
 
 public:
 
-    AudioFilter(QObject* parent = nullptr);
+    explicit AudioFilter(QObject* parent = nullptr);
     bool installTo(AVPlayer* player) override;
     void apply(Statistics* statistics, AudioFrame* frame = nullptr);
 

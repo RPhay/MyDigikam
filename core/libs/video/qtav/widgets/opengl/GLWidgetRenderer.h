@@ -59,8 +59,9 @@ class QTAV_WIDGETS_EXPORT GLWidgetRenderer : public QGLWidget
 
 public:
 
-    GLWidgetRenderer(QWidget* parent = 0, const QGLWidget* shareWidget = 0,
-                     Qt::WindowFlags f = Qt::WindowFlags(Qt::Widget));
+    explicit GLWidgetRenderer(QWidget* parent = 0,
+                              const QGLWidget* shareWidget = 0,
+                              Qt::WindowFlags f = Qt::WindowFlags(Qt::Widget));
 
     virtual VideoRendererId id()                              const override;
     virtual bool isSupported(VideoFormat::PixelFormat pixfmt) const override;
@@ -85,8 +86,8 @@ protected:
     virtual void initializeGL();
     virtual void paintGL();
     virtual void resizeGL(int w, int h);
-    virtual void resizeEvent(QResizeEvent *);
-    virtual void showEvent(QShowEvent *);
+    virtual void resizeEvent(QResizeEvent*);
+    virtual void showEvent(QShowEvent*);
 
 private:
 

@@ -275,7 +275,8 @@ class QTAV_EXPORT SubtitleAPIProxy
 {
 public:
 
-    SubtitleAPIProxy(QObject* obj);
+    explicit SubtitleAPIProxy(QObject* obj);
+
     void setSubtitle(Subtitle *sub);
 
     // API from Subtitle

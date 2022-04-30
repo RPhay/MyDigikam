@@ -56,6 +56,7 @@ class QTAV_WIDGETS_EXPORT GLWidgetRenderer2 : public QGLWidget,
     Q_PROPERTY(qreal outAspectRatio READ outAspectRatio WRITE setOutAspectRatio NOTIFY outAspectRatioChanged)
 
     // fillMode
+
     // TODO: how to use enums in base class as property or Q_ENUM
 
     Q_PROPERTY(OutAspectRatioMode outAspectRatioMode READ outAspectRatioMode WRITE setOutAspectRatioMode NOTIFY outAspectRatioModeChanged)
@@ -67,7 +68,10 @@ class QTAV_WIDGETS_EXPORT GLWidgetRenderer2 : public QGLWidget,
 
 public:
 
-    GLWidgetRenderer2(QWidget* parent = nullptr, const QGLWidget* shareWidget = nullptr, Qt::WindowFlags f = Qt::WindowFlags(Qt::Widget));
+    explicit GLWidgetRenderer2(QWidget* parent = nullptr,
+                               const QGLWidget* shareWidget = nullptr,
+                               Qt::WindowFlags f = Qt::WindowFlags(Qt::Widget));
+
     virtual VideoRendererId id() const          override;
 
     virtual QWidget* widget()                   override

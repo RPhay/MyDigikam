@@ -75,15 +75,16 @@ class QTAV_WIDGETS_EXPORT GraphicsItemRenderer : public GraphicsWidget,
 
 public:
 
-    GraphicsItemRenderer(QGraphicsItem* parent = nullptr);
+    explicit GraphicsItemRenderer(QGraphicsItem* parent = nullptr);
+
     VideoRendererId id()                              const override;
     bool isSupported(VideoFormat::PixelFormat pixfmt) const override;
 
     QRectF boundingRect()                             const override;
 
     void paint(QPainter* painter,
-                const QStyleOptionGraphicsItem *option,
-                QWidget* widget)                            override;
+               const QStyleOptionGraphicsItem *option,
+               QWidget* widget)                             override;
 
     QGraphicsItem* graphicsItem()                           override
     {
