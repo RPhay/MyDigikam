@@ -109,7 +109,7 @@ class QTAV_EXPORT VideoFilter : public Filter
 
 public:
 
-    VideoFilter(QObject* parent = nullptr);
+    explicit VideoFilter(QObject* parent = nullptr);
 
     VideoFilterContext* context();
     virtual bool isSupported(VideoFilterContext::Type ct) const;

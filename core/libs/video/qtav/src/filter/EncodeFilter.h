@@ -44,7 +44,7 @@ class QTAV_EXPORT AudioEncodeFilter : public AudioFilter
 
 public:
 
-    AudioEncodeFilter(QObject *parent = nullptr);
+    explicit AudioEncodeFilter(QObject *parent = nullptr);
 
     /*!
      * \brief setAsync
@@ -124,7 +124,7 @@ class QTAV_EXPORT VideoEncodeFilter : public VideoFilter
 
 public:
 
-    VideoEncodeFilter(QObject* parent = nullptr);
+    explicit VideoEncodeFilter(QObject* parent = nullptr);
 
     /*!
      * \brief setAsync

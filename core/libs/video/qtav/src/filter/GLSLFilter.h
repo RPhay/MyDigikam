@@ -52,7 +52,7 @@ class QTAV_EXPORT GLSLFilter : public VideoFilter
 
 public:
 
-    GLSLFilter(QObject* parent = nullptr);
+    explicit GLSLFilter(QObject* parent = nullptr);
 
     bool isSupported(VideoFilterContext::Type ct) const  override
     {
