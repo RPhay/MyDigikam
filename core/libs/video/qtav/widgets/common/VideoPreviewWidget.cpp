@@ -49,9 +49,16 @@ VideoPreviewWidget::VideoPreviewWidget(QWidget* parent)
     Q_ASSERT_X(m_out->widget(), "VideoPreviewWidget()", "widget based renderer is not found");
 
     m_out->widget()->setParent(this);
-    connect(m_extractor, SIGNAL(positionChanged()), this, SIGNAL(timestampChanged()));
-    connect(m_extractor, SIGNAL(error(const QString &)), this, SIGNAL(gotError(const QString &)));
-    connect(m_extractor, SIGNAL(aborted(const QString &)), this, SIGNAL(gotAbort(const QString &)));
+
+    connect(m_extractor, SIGNAL(positionChanged()),
+            this, SIGNAL(timestampChanged()));
+
+    connect(m_extractor, SIGNAL(error(QString)),
+            this, SIGNAL(gotError(QString)));
+
+    connect(m_extractor, SIGNAL(aborted(QString)),
+            this, SIGNAL(gotAbort(QString)));
+
     m_extractor->setAutoExtract(false);
     m_auto_display = false;
     setAutoDisplayFrame(true); // set up frame-related connections, defaulting autoDisplayFrame to true
@@ -66,10 +73,10 @@ void VideoPreviewWidget::setAutoDisplayFrame(bool b)
         connect(m_extractor, SIGNAL(frameExtracted(QtAV::VideoFrame)),
                 this, SLOT(displayFrame(QtAV::VideoFrame)));
 
-        connect(m_extractor, SIGNAL(error(const QString &)),
+        connect(m_extractor, SIGNAL(error(QString)),
                 this, SLOT(displayNoFrame()));
 
-        connect(m_extractor, SIGNAL(aborted(const QString &)),
+        connect(m_extractor, SIGNAL(aborted(QString)),
                 this, SLOT(displayNoFrame()));
 
         connect(this, SIGNAL(fileChanged()),
@@ -80,10 +87,10 @@ void VideoPreviewWidget::setAutoDisplayFrame(bool b)
         disconnect(m_extractor, SIGNAL(frameExtracted(QtAV::VideoFrame)),
                    this, SLOT(displayFrame(QtAV::VideoFrame)));
 
-        disconnect(m_extractor, SIGNAL(error(const QString &)),
+        disconnect(m_extractor, SIGNAL(error(QString)),
                    this, SLOT(displayNoFrame()));
 
-        disconnect(m_extractor, SIGNAL(aborted(const QString &)),
+        disconnect(m_extractor, SIGNAL(aborted(QString)),
                    this, SLOT(displayNoFrame()));
 
         disconnect(this, SIGNAL(fileChanged()),
