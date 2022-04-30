@@ -36,7 +36,7 @@ class QTAV_PRIVATE_EXPORT OpenGLRendererBasePrivate : public VideoRendererPrivat
 {
 public:
 
-    OpenGLRendererBasePrivate(QPaintDevice* pd);
+    explicit OpenGLRendererBasePrivate(QPaintDevice* pd);
     virtual ~OpenGLRendererBasePrivate();
 
     void setupAspectRatio();

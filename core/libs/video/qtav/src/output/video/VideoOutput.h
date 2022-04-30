@@ -72,14 +72,15 @@ public:
      * \brief VideoOutput
      * Create a QWidget based renderer. Result can be a QOpenGLWidget or QGLWidget based renderer if possible. Otherwise fallback to a software renderer
      */
-    VideoOutput(QObject *parent = nullptr);
+    explicit VideoOutput(QObject *parent = nullptr);
 
     /*!
      * \brief VideoOutput
      * Create a renderer with given rendererId. MUST check VideoOutput::isAvailable() later!
      */
-    VideoOutput(VideoRendererId rendererId, QObject *parent = nullptr);
+    explicit VideoOutput(VideoRendererId rendererId, QObject *parent = nullptr);
     ~VideoOutput();
+
     VideoRendererId id() const                                              override;
 
     VideoFormat::PixelFormat preferredPixelFormat() const                   override;

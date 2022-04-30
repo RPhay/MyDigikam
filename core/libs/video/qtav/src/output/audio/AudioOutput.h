@@ -91,7 +91,7 @@ public:
      * \brief AudioOutput
      * Audio format set to preferred sample format and channel layout
      */
-    AudioOutput(QObject* parent = nullptr);
+    explicit AudioOutput(QObject* parent = nullptr);
     ~AudioOutput();
 
     /*!
@@ -214,6 +214,7 @@ public:
      */
     int bufferCount() const;
     void setBufferCount(int value);
+
     int bufferSizeTotal() const
     {
         return bufferCount() * bufferSize();

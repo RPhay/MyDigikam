@@ -51,7 +51,7 @@ class OutputSet : public QObject
 
 public:
 
-    OutputSet(AVPlayer *player);
+    explicit OutputSet(AVPlayer *player);
     virtual ~OutputSet();
 
     // required when accessing renderers
