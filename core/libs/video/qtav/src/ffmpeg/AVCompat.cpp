@@ -107,6 +107,7 @@ int avformat_alloc_output_context2(AVFormatContext **avctx, AVOutputFormat *ofor
         av_strlcpy(s->filename, filename, sizeof(s->filename));
 
     *avctx = s;
+
     return 0;
 
 nomem:
@@ -132,18 +133,18 @@ static const struct
     uint64_t    layout;
 } channel_layout_map[] =
 {
-    { "mono",        1,  AV_CH_LAYOUT_MONO },
-    { "stereo",      2,  AV_CH_LAYOUT_STEREO },
-    { "4.0",         4,  AV_CH_LAYOUT_4POINT0 },
-    { "quad",        4,  AV_CH_LAYOUT_QUAD },
-    { "5.0",         5,  AV_CH_LAYOUT_5POINT0 },
-    { "5.0",         5,  AV_CH_LAYOUT_5POINT0_BACK },
-    { "5.1",         6,  AV_CH_LAYOUT_5POINT1 },
-    { "5.1",         6,  AV_CH_LAYOUT_5POINT1_BACK },
-    { "5.1+downmix", 8,  AV_CH_LAYOUT_5POINT1|AV_CH_LAYOUT_STEREO_DOWNMIX, },
-    { "7.1",         8,  AV_CH_LAYOUT_7POINT1 },
-    { "7.1(wide)",   8,  AV_CH_LAYOUT_7POINT1_WIDE },
-    { "7.1+downmix", 10, AV_CH_LAYOUT_7POINT1|AV_CH_LAYOUT_STEREO_DOWNMIX, },
+    { "mono",        1,  AV_CH_LAYOUT_MONO                                  },
+    { "stereo",      2,  AV_CH_LAYOUT_STEREO                                },
+    { "4.0",         4,  AV_CH_LAYOUT_4POINT0                               },
+    { "quad",        4,  AV_CH_LAYOUT_QUAD                                  },
+    { "5.0",         5,  AV_CH_LAYOUT_5POINT0                               },
+    { "5.0",         5,  AV_CH_LAYOUT_5POINT0_BACK                          },
+    { "5.1",         6,  AV_CH_LAYOUT_5POINT1                               },
+    { "5.1",         6,  AV_CH_LAYOUT_5POINT1_BACK                          },
+    { "5.1+downmix", 8,  AV_CH_LAYOUT_5POINT1|AV_CH_LAYOUT_STEREO_DOWNMIX,  },
+    { "7.1",         8,  AV_CH_LAYOUT_7POINT1                               },
+    { "7.1(wide)",   8,  AV_CH_LAYOUT_7POINT1_WIDE                          },
+    { "7.1+downmix", 10, AV_CH_LAYOUT_7POINT1|AV_CH_LAYOUT_STEREO_DOWNMIX,  },
     { 0 }
 };
 
@@ -168,13 +169,13 @@ int64_t av_get_default_channel_layout(int nb_channels)
 #if QTAV_HAVE(AVRESAMPLE)
 
 AVAudioResampleContext *swr_alloc_set_opts(AVAudioResampleContext *s
-                                      , int64_t out_ch_layout
-                                      , enum AVSampleFormat out_sample_fmt
-                                      , int out_sample_rate
-                                      , int64_t in_ch_layout
-                                      , enum AVSampleFormat in_sample_fmt
-                                      , int in_sample_rate
-                                      , int log_offset, void *log_ctx)
+                                         , int64_t out_ch_layout
+                                         , enum AVSampleFormat out_sample_fmt
+                                         , int out_sample_rate
+                                         , int64_t in_ch_layout
+                                         , enum AVSampleFormat in_sample_fmt
+                                         , int in_sample_rate
+                                         , int log_offset, void *log_ctx)
 {
     // DO NOT use swr_alloc() because it's not defined as a macro in QtAV_Compat.h
     if (!s)
@@ -284,13 +285,13 @@ int av_pix_fmt_count_planes(AVPixelFormat pix_fmt)
     for (i = 0 ; i < desc->nb_components ; i++)
         planes[desc->comp[i].plane] = 1;
 
-    for (i = 0 ; i < (int)FF_ARRAY_ELEMS(planes) ; i++)
+    for (i = 0 ; i < (int)FF_ARRAY_ELEMS(planes) ; ++i)
         ret += planes[i];
 
     return ret;
 }
 
-#endif //AV_VERSION_INT(52, 38, 100)
+#endif // AV_VERSION_INT(52, 38, 100)
 
 #if LIBAVUTIL_VERSION_INT < AV_VERSION_INT(51, 73, 101)
 
@@ -309,12 +310,12 @@ int av_samples_copy(uint8_t **dst, uint8_t * const *src, int dst_offset,
 
     if((dst[0] < src[0] ? src[0] - dst[0] : dst[0] - src[0]) >= data_size)
     {
-        for (i = 0; i < planes; i++)
+        for (i = 0 ; i < planes ; ++i)
             memcpy(dst[i] + dst_offset, src[i] + src_offset, data_size);
     }
     else
     {
-        for (i = 0; i < planes; i++)
+        for (i = 0 ; i < planes ; ++i)
             memmove(dst[i] + dst_offset, src[i] + src_offset, data_size);
     }
 
@@ -414,7 +415,7 @@ int av_packet_copy_props(AVPacket *dst, const AVPacket *src)
 
 void av_packet_free_side_data(AVPacket *pkt)
 {
-    for (int i = 0; i < pkt->side_data_elems; ++i)
+    for (int i = 0 ; i < pkt->side_data_elems ; ++i)
         av_freep(&pkt->side_data[i].data);
 
     av_freep(&pkt->side_data);
@@ -468,7 +469,7 @@ int av_packet_ref(AVPacket *dst, const AVPacket *src)
         memset(dst->side_data, 0,
                 dst->side_data_elems * sizeof(*dst->side_data));
 
-        for (i = 0 ; i < dst->side_data_elems ; i++)
+        for (i = 0 ; i < dst->side_data_elems ; ++i)
         {
             DUP_DATA(dst->side_data[i].data, src->side_data[i].data, src->side_data[i].size, 1);
             dst->side_data[i].size = src->side_data[i].size;
@@ -481,6 +482,7 @@ int av_packet_ref(AVPacket *dst, const AVPacket *src)
 failed_alloc:
 
     av_destruct_packet(dst);
+
     return AVERROR(ENOMEM);
 
 #   endif

@@ -95,7 +95,7 @@ void CopyFrame_SSE2(void* pSrc, void* pDest, void* pCacheBlock, UINT width, UINT
 
         // LOAD ROWS OF PITCH WIDTH INTO CACHED BLOCK
 
-        for (yLoad = 0 ; yLoad < rowsPerBlock ; yLoad++)
+        for (yLoad = 0 ; yLoad < rowsPerBlock ; ++yLoad)
         {
             // COPY A ROW, CACHE LINE AT A TIME
 
@@ -138,7 +138,7 @@ void CopyFrame_SSE2(void* pSrc, void* pDest, void* pCacheBlock, UINT width, UINT
 
         // STORE ROWS OF FRAME WIDTH FROM CACHED BLOCK
 
-        for (yStore = 0 ; yStore < rowsPerBlock ; yStore++)
+        for (yStore = 0 ; yStore < rowsPerBlock ; ++yStore)
         {
             // copy a row, cache line at a time
 
