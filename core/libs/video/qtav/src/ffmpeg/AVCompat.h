@@ -178,7 +178,7 @@ int avformat_alloc_output_context2(AVFormatContext **avctx, AVOutputFormat *ofor
 
 #define QTAV_HAVE_AVBUFREF AV_MODULE_CHECK(LIBAVUTIL, 52, 8, 0, 19, 100)
 
-#if defined(_MSC_VER) || !defined(av_err2str) || (GCC_VERSION_AT_LEAST(4, 7, 0) && __cplusplus)
+#if defined(_MSC_VER) || !defined(av_err2str) || (GCC_VERSION_AT_LEAST(4, 7, 0) && __cplusplus)  // krazy:exclude=cpp
 #   ifdef av_err2str
 #       undef av_err2str
 

@@ -39,9 +39,9 @@ namespace egl
 
 #ifdef CAPI_LINK_EGL
 
-api::api()               { dll = nullptr;     }
-api::~api()              {              }
-bool api::loaded() const { return true; }
+api::api()               { dll = nullptr; }
+api::~api()              {                }
+bool api::loaded() const { return true;   }
 
 #else
 
@@ -69,7 +69,7 @@ public:
     virtual void* resolve(const char *symbol) override
     {
 
-#ifndef __MINGW32__
+#ifndef __MINGW32__ // krazy:exclude=cpp
 
         return (void*)dso::resolve(symbol);
 

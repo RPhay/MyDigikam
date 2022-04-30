@@ -28,7 +28,7 @@
 
 #define CUDA_VERSION 7050
 
-#if defined(_WIN32) || defined(__CYGWIN__)
+#if defined(_WIN32) || defined(__CYGWIN__)   // krazy:exclude=cpp
 #   define CUDAAPI __stdcall
 #else
 #   define CUDAAPI
