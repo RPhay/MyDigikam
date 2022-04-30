@@ -55,7 +55,7 @@ public:
 
     // brightness, contrast, hue, saturation, rotation, source/dest rect
 
-    DXVAHDVP(ComPtr<IDirect3DDevice9> dev);
+    explicit DXVAHDVP(ComPtr<IDirect3DDevice9> dev);
 
     void setOutput(IDirect3DSurface9* surface);
     void setSourceRect(const QRect& r);

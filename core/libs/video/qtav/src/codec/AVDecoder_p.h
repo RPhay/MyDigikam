@@ -54,7 +54,7 @@ class AVFrameBuffers
 
 public:
 
-    AVFrameBuffers(AVFrame* frame)
+    explicit AVFrameBuffers(AVFrame* frame)
     {
         Q_UNUSED(frame);
 

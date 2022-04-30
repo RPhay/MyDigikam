@@ -107,7 +107,7 @@ class dll_helper
 {
 public:
 
-    dll_helper(const QString& soname, int version = -1);
+    explicit dll_helper(const QString& soname, int version = -1);
 
     virtual ~dll_helper()
     {
@@ -495,7 +495,7 @@ class surface_glx_t : public VAAPI_GLX
 {
 public:
 
-    surface_glx_t(const display_ptr& dpy)
+    explicit surface_glx_t(const display_ptr& dpy)
         : m_dpy(dpy), m_glx(nullptr)
     {
     }

@@ -52,7 +52,7 @@ public:
 
     // brightness, contrast, hue, saturation, rotation, source/dest rect
 
-    D3D11VP(ComPtr<ID3D11Device> dev);
+    explicit D3D11VP(ComPtr<ID3D11Device> dev);
     void setOutput(ID3D11Texture2D* tex);
     void setSourceRect(const QRect& r);
 

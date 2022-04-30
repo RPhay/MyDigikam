@@ -53,7 +53,7 @@ public:
     static InteropResource* create(IDirect3DDevice9* dev, InteropType type = InteropAuto);
     typedef unsigned int GLuint;
 
-    InteropResource(IDirect3DDevice9* d3device);
+    explicit InteropResource(IDirect3DDevice9* d3device);
     virtual ~InteropResource();
 
     /*!
