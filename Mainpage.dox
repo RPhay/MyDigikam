@@ -346,6 +346,7 @@ The full list of mandatory (X) and (optional) external dependencies required to 
 | libopenal            |   optional  | >= 1.20       |               | https://github.com/kcat/openal-soft                   | To play video and audio (ENABLE_MEDIAPLAYER=on)        | Audio 3D support in QtAV MediaPlayer                                                  |
 | libportaudio         |   optional  | >= 19.0       |               | https://github.com/PortAudio/portaudio                | To play video and audio (ENABLE_MEDIAPLAYER=on)        | Audio support in QtAV MediaPlayer                                                     |
 | libpulseaudio        |   optional  | >= 14.0       |               | https://github.com/pulseaudio/pulseaudio              | To play video and audio (ENABLE_MEDIAPLAYER=on)        | Audio support in QtAV MediaPlayer                                                     |
+| libopensles          |   optional  | >= 1.1        |               | https://www.khronos.org/opensles/                     | To play video and audio (ENABLE_MEDIAPLAYER=on)        | Audio support in QtAV MediaPlayer (Android)                                           |
 | libvaapi             |   optional  | >= 2.4        |               | https://github.com/01org/intel-vaapi-driver           | To play video and audio (ENABLE_MEDIAPLAYER=on)        | Intel Video support in QtAV MediaPlayer                                               |
 
 \section getsourcecode Get Source Code
