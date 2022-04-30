@@ -57,10 +57,11 @@ public:
         EXIF,
         VIDEO,
         DUBLIN,
+        COMMENT,
         DIGIKAM,
         HISTORY,
-        XPKEYWORDS,
-        COMMENT
+        XPKEYWORDS
+
     };
 
 public:
@@ -294,7 +295,7 @@ bool RemoveMetadata::toolOperations()
             meta->removeIptcTag("Iptc.Application2.DateCreated");
             meta->removeIptcTag("Iptc.Application2.TimeCreated");
         }
-        else if (exifData == Private::COMMENT)
+        else if (iptcData == Private::COMMENT)
         {
             meta->removeIptcTag("Iptc.Application2.Caption");
         }
@@ -339,7 +340,7 @@ bool RemoveMetadata::toolOperations()
         {
             meta->removeXmpTags(QStringList() << QLatin1String("video"));
         }
-        else if (exifData == Private::COMMENT)
+        else if (xmpData == Private::COMMENT)
         {
             meta->removeXmpTag("Xmp.acdsee.Caption");
             meta->removeXmpTag("Xmp.dc.Description");
