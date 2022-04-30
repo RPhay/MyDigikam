@@ -66,6 +66,7 @@ namespace QtAV
 
 static const MediaIOId MediaIOId_WinRT = mkid::id32base36_5<'W','i','n','R','T'>::value;
 static const char kName[] = "WinRT";
+
 class WinRTIOPrivate;
 
 class WinRTIO : public MediaIO
@@ -76,34 +77,35 @@ public:
 
     WinRTIO();
 
-    QString name() const override
+    QString name()                                          const override
     {
         return QLatin1String(kName);
     }
 
-    const QStringList& protocols() const override
+    const QStringList& protocols()                          const override
     {
         static QStringList p = QStringList() << name().toLower();
+
         return p;
     }
 
-    virtual bool isSeekable() const override;
-    virtual bool isWritable() const override;
-    virtual qint64 read(char *data, qint64 maxSize) override;
-    virtual qint64 write(const char *data, qint64 maxSize) override;
-    virtual bool seek(qint64 offset, int from) override;
-    virtual qint64 position() const override;
+    virtual bool isSeekable()                               const override;
+    virtual bool isWritable()                               const override;
+    virtual qint64 read(char *data, qint64 maxSize)               override;
+    virtual qint64 write(const char *data, qint64 maxSize)        override;
+    virtual bool seek(qint64 offset, int from)                    override;
+    virtual qint64 position()                               const override;
 
     /*!
      * \brief size
      * \return <=0 if not support
      */
-    virtual qint64 size() const override;
+    virtual qint64 size()                                   const override;
 
 protected:
 
     WinRTIO(WinRTIOPrivate &d);
-    void onUrlChanged() override;
+    void onUrlChanged()                                           override;
 
 private:
 
@@ -119,6 +121,7 @@ private:
 };
 
 typedef WinRTIO MediaIOWinRT;
+
 FACTORY_REGISTER(MediaIO, WinRT, kName)
 
 class WinRTIOPrivate : public MediaIOPrivate
@@ -136,8 +139,15 @@ public:
     qint64               pos;
 };
 
-WinRTIO::WinRTIO()                  : MediaIO(*new WinRTIOPrivate()) {}
-WinRTIO::WinRTIO(WinRTIOPrivate &d) : MediaIO(d)                     {}
+WinRTIO::WinRTIO()
+    : MediaIO(*new WinRTIOPrivate())
+{
+}
+
+WinRTIO::WinRTIO(WinRTIOPrivate& d)
+    : MediaIO(d)
+{
+}
 
 bool WinRTIO::isSeekable() const
 {
@@ -263,10 +273,12 @@ void WinRTIO::openFromStorage(IStorageItem *item)
     quint32 pathLen;
     const wchar_t *pathStr = path.GetRawBuffer(&pathLen);
     const QString filePath = QString::fromWCharArray(pathStr, pathLen);
+
     qCDebug(DIGIKAM_QTAV_LOG) << "winrt.io from storage file: " << filePath;
+
     ComPtr<IStorageFile> file;
     COM_ENSURE(d.item.As(&file));
-    open(file);
+    open(file);     // krazy:exclude=syscalls
 }
 
 void WinRTIO::openFromPath(const QString &path)
@@ -286,7 +298,7 @@ void WinRTIO::openFromPath(const QString &path)
     COM_ENSURE(fileFactory->GetFileFromPathAsync(p.Get(), &op));
     ComPtr<IStorageFile> file;
     COM_ENSURE(QWinRTFunctions::await(op, file.GetAddressOf()));
-    open(file);
+    open(file);      // krazy:exclude=syscalls
 }
 
 void WinRTIO::open(ComPtr<IStorageFile> &file)

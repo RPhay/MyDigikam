@@ -71,25 +71,25 @@ class QTAV_PRIVATE_EXPORT QIODeviceIO : public MediaIO
 public:
 
     QIODeviceIO();
-    virtual QString name() const override;
+    virtual QString name()                                  const override;
 
     // MUST open/close outside
 
     void setDevice(QIODevice *dev); // set private in QFileIO etc
-    QIODevice* device() const;
+    QIODevice* device()                                     const;
 
-    virtual bool isSeekable() const override;
-    virtual bool isWritable() const override;
-    virtual qint64 read(char *data, qint64 maxSize) override;
-    virtual qint64 write(const char *data, qint64 maxSize) override;
-    virtual bool seek(qint64 offset, int from) override;
-    virtual qint64 position() const override;
+    virtual bool isSeekable()                               const override;
+    virtual bool isWritable()                               const override;
+    virtual qint64 read(char *data, qint64 maxSize)               override;
+    virtual qint64 write(const char *data, qint64 maxSize)        override;
+    virtual bool seek(qint64 offset, int from)                    override;
+    virtual qint64 position()                               const override;
 
     /*!
      * \brief size
      * \return <=0 if not support
      */
-    virtual qint64 size() const override;
+    virtual qint64 size()                                   const override;
 
 Q_SIGNALS:
 
@@ -112,13 +112,13 @@ public:
 
     QFileIO();
 
-    QString name() const override;
+    QString name()                  const override;
 
-    const QStringList& protocols() const override;
+    const QStringList& protocols()  const override;
 
 protected:
 
-    void onUrlChanged() override;
+    void onUrlChanged()                   override;
 
 private:
 

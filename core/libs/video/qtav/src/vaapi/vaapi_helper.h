@@ -170,7 +170,8 @@ public:
 
 protected:
 
-    va_0_38() : dll_helper(QString::fromLatin1("va"), 1)
+    va_0_38()
+        : dll_helper(QString::fromLatin1("va"), 1)
     {
         f_vaAcquireBufferHandle = (vaAcquireBufferHandle_t)resolve("vaAcquireBufferHandle");
         f_vaReleaseBufferHandle = (vaReleaseBufferHandle_t)resolve("vaReleaseBufferHandle");
@@ -528,7 +529,11 @@ public:
         if (!m_glx)
             return false;
 
-        VA_ENSURE_TRUE(vaCopySurfaceGLX(m_dpy->get(), m_glx, surface->get(), VA_FRAME_PICTURE | surface->colorSpace()), false);
+        VA_ENSURE_TRUE(vaCopySurfaceGLX(m_dpy->get(),
+                                        m_glx,
+                                        surface->get(),
+                                        VA_FRAME_PICTURE | surface->colorSpace()),
+                       false);
 
         return true;
     }

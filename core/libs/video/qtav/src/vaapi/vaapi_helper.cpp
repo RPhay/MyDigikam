@@ -66,7 +66,9 @@ dll_helper::dll_helper(const QString &soname, int version)
     }
 
     if (!m_lib.isLoaded())
-        qCDebug(DIGIKAM_QTAV_LOG).noquote() << QString::asprintf("can not load %s: %s", m_lib.fileName().toUtf8().constData(), m_lib.errorString().toUtf8().constData());
+        qCDebug(DIGIKAM_QTAV_LOG).noquote()
+            << QString::asprintf("can not load %s: %s",
+               m_lib.fileName().toUtf8().constData(), m_lib.errorString().toUtf8().constData());
 }
 
 va_0_38::vaAcquireBufferHandle_t va_0_38::f_vaAcquireBufferHandle = nullptr;
@@ -132,7 +134,7 @@ VAImageFormat va_new_image(VADisplay display, const unsigned int *fourccs, VAIma
     VAImageFormat fmt;
     memset(&fmt, 0, sizeof(fmt));
     int nb_fmts          = vaMaxNumImageFormats(display);
-    VAImageFormat *p_fmt = (VAImageFormat*)calloc(nb_fmts, sizeof(*p_fmt));
+    VAImageFormat* p_fmt = (VAImageFormat*)calloc(nb_fmts, sizeof(*p_fmt));
 
     if (!p_fmt)
         return fmt;
@@ -140,18 +142,20 @@ VAImageFormat va_new_image(VADisplay display, const unsigned int *fourccs, VAIma
     if (vaQueryImageFormats(display, p_fmt, &nb_fmts))
     {
         free(p_fmt);
+
         return fmt;
     }
 
-    for (int i = 0; fourccs[i]; i++)
+    for (int i = 0 ; fourccs[i] ; i++)
     {
         // TODO: loop fourccs
 
-        for (int j = 0; j < nb_fmts; ++j)
+        for (int j = 0 ; j < nb_fmts ; ++j)
         {
             if (p_fmt[j].fourcc == fourccs[i])
             {
                 fmt = p_fmt[j];
+
                 break;
             }
         }
@@ -163,13 +167,16 @@ VAImageFormat va_new_image(VADisplay display, const unsigned int *fourccs, VAIma
 
         if (img && w > 0 && h > 0)
         {
-            qCDebug(DIGIKAM_QTAV_LOG).noquote() << QString::asprintf("vaCreateImage: %c%c%c%c", fcc<<24>>24, fcc<<16>>24, fcc<<8>>24, fcc>>24);
+            qCDebug(DIGIKAM_QTAV_LOG).noquote()
+                << QString::asprintf("vaCreateImage: %c%c%c%c", fcc<<24>>24, fcc<<16>>24, fcc<<8>>24, fcc>>24);
 
             if (vaCreateImage(display, &fmt, w, h, img) != VA_STATUS_SUCCESS)
             {
                 img->image_id = VA_INVALID_ID;
                 memset(&fmt, 0, sizeof(fmt));
-                qCDebug(DIGIKAM_QTAV_LOG).noquote() << QString::asprintf("vaCreateImage error: %c%c%c%c", fcc<<24>>24, fcc<<16>>24, fcc<<8>>24, fcc>>24);
+
+                qCDebug(DIGIKAM_QTAV_LOG).noquote()
+                    << QString::asprintf("vaCreateImage error: %c%c%c%c", fcc<<24>>24, fcc<<16>>24, fcc<<8>>24, fcc>>24);
 
                 continue;
             }
@@ -183,7 +190,10 @@ VAImageFormat va_new_image(VADisplay display, const unsigned int *fourccs, VAIma
                 if ((st = vaGetImage(display, s, 0, 0, w, h, img->image_id)) != VA_STATUS_SUCCESS)
                 {
                     VAWARN(vaDestroyImage(display, img->image_id));
-                    qCDebug(DIGIKAM_QTAV_LOG).noquote() << QString::asprintf("vaGetImage error: %c%c%c%c  (%#x) %s", fcc<<24>>24, fcc<<16>>24, fcc<<8>>24, fcc>>24, st, vaErrorStr(st));
+
+                    qCDebug(DIGIKAM_QTAV_LOG).noquote()
+                        << QString::asprintf("vaGetImage error: %c%c%c%c  (%#x) %s", fcc<<24>>24, fcc<<16>>24, fcc<<8>>24, fcc>>24, st, vaErrorStr(st));
+
                     img->image_id = VA_INVALID_ID;
                     memset(&fmt, 0, sizeof(fmt));
 
@@ -319,6 +329,7 @@ public:
         if (!XInitThreads())
         {
             qCWarning(DIGIKAM_QTAV_LOG_WARN).noquote() << QString::asprintf("XInitThreads failed!");
+
             return false;
         }
 
@@ -347,9 +358,9 @@ public:
 
 #ifndef QT_NO_OPENGL
 
-class NativeDisplayGLX final: public NativeDisplayBase,
-                                     protected VAAPI_GLX,
-                                     protected X11_API
+class NativeDisplayGLX final : public NativeDisplayBase,
+                               protected VAAPI_GLX,
+                               protected X11_API
 {
 public:
 
@@ -375,10 +386,11 @@ public:
         if (!XInitThreads())
         {
             qCWarning(DIGIKAM_QTAV_LOG_WARN).noquote() << QString::asprintf("XInitThreads failed!");
+
             return false;
         }
 
-        m_handle = (uintptr_t)XOpenDisplay(nullptr);
+        m_handle      = (uintptr_t)XOpenDisplay(nullptr);
         m_selfCreated = true;
 
         return !!m_handle;
@@ -403,8 +415,8 @@ public:
 
 #endif // QT_NO_OPENGL
 
-class NativeDisplayDrm final: public NativeDisplayBase,
-                                     protected VAAPI_DRM
+class NativeDisplayDrm final : public NativeDisplayBase,
+                               protected VAAPI_DRM
 {
 public:
 
@@ -437,14 +449,15 @@ public:
             nullptr
         };
 
-        for (int i = 0; drm_dev[i]; ++i)
+        for (int i = 0 ; drm_dev[i] ; ++i)
         {
-            m_handle = ::open(drm_dev[i], O_RDWR);
+            m_handle = ::open(drm_dev[i], O_RDWR);   // krazy:exclude=syscalls
 
             if (m_handle < 0)
                 continue;
 
-            qCDebug(DIGIKAM_QTAV_LOG).noquote() << QString::asprintf("using drm device: %s, handle: %p", drm_dev[i], (void*)m_handle); //drmGetDeviceNameFromFd
+            qCDebug(DIGIKAM_QTAV_LOG).noquote() << QString::asprintf("using drm device: %s, handle: %p",
+                                                   drm_dev[i], (void*)m_handle); // drmGetDeviceNameFromFd
 
             break;
         }
@@ -471,7 +484,7 @@ public:
     }
 };
 
-class NativeDisplayVADisplay final: public NativeDisplayBase
+class NativeDisplayVADisplay final : public NativeDisplayBase
 {
 public:
 
@@ -547,9 +560,9 @@ display_ptr display_t::create(const NativeDisplay &display)
     VA_ENSURE(vaInitialize(va, &majorVersion, &minorVersion), display_ptr());
     display_ptr d(new display_t());
     d->m_display = va;
-    d->m_native = native;
-    d->m_major = majorVersion;
-    d->m_minor = minorVersion;
+    d->m_native  = native;
+    d->m_major   = majorVersion;
+    d->m_minor   = minorVersion;
 
     return d;
 }

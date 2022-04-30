@@ -114,7 +114,11 @@ public:
 
     virtual const QStringList& protocols() const;
     virtual bool isSeekable() const = 0;
-    virtual bool isWritable() const { return false;}
+
+    virtual bool isWritable() const
+    {
+        return false;
+    }
 
     /*!
      * \brief read
@@ -160,7 +164,10 @@ public:
      * when the size of playback start reaches. So playback will not stop.
      * Demuxer seeking should work for this case.
      */
-    virtual bool isVariableSize() const { return false;}
+    virtual bool isVariableSize() const
+    {
+        return false;
+    }
 
     /*!
      * \brief setBufferSize
@@ -179,7 +186,9 @@ public:
 public:
 
     static void registerAll();
-    template<class C> static bool Register(MediaIOId id, const char* name)
+
+    template<class C>
+    static bool Register(MediaIOId id, const char* name)
     {
         return Register(id, create<C>, name);
     }
@@ -198,8 +207,14 @@ public:
 
 private:
 
-    template<class C> static MediaIO* create() { return new C(); }
+    template<class C>
+    static MediaIO* create()
+    {
+        return new C();
+    }
+
     typedef MediaIO* (*MediaIOCreator)();
+
     static bool Register(MediaIOId id, MediaIOCreator, const char *name);
 
 protected:
