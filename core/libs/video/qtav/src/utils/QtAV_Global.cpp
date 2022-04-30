@@ -54,6 +54,7 @@ unsigned QtAV_Version()
 QString QtAV_Version_String()
 {
     // vs<2015: C2308: concatenating mismatched strings for QStringLiteral("a" "b")
+
     return QString::fromLatin1(QTAV_VERSION_STR);
 }
 
@@ -119,45 +120,45 @@ static const depend_component* get_depend_component(const depend_component* info
 
     static const depend_component components[] =
     {
-        {  "Qt", QT_VERSION, get_qt_version(), qt_build_info, "" },
+        {  "Qt", QT_VERSION, get_qt_version(), qt_build_info, ""    },
 
         // TODO: auto check loaded libraries
 
 #define FF_COMPONENT(name, NAME) #name, LIB##NAME##_VERSION_INT, name##_version(), name##_configuration(), name##_license()
 
-        { FF_COMPONENT(avutil, AVUTIL) },
-        { FF_COMPONENT(avcodec, AVCODEC) },
-        { FF_COMPONENT(avformat, AVFORMAT) },
+        { FF_COMPONENT(avutil, AVUTIL)                              },
+        { FF_COMPONENT(avcodec, AVCODEC)                            },
+        { FF_COMPONENT(avformat, AVFORMAT)                          },
 
 #if QTAV_HAVE(AVFILTER)
 
-        { FF_COMPONENT(avfilter, AVFILTER) },
+        { FF_COMPONENT(avfilter, AVFILTER)                          },
 
 #endif
 
 #if QTAV_HAVE(AVDEVICE)
 
-        { FF_COMPONENT(avdevice, AVDEVICE) },
+        { FF_COMPONENT(avdevice, AVDEVICE)                          },
 
 #endif
 
 #if QTAV_HAVE(AVRESAMPLE)
 
-        { FF_COMPONENT(avresample, AVRESAMPLE) },
+        { FF_COMPONENT(avresample, AVRESAMPLE)                      },
 
 #endif
 
 #if QTAV_HAVE(SWRESAMPLE)
 
-        { FF_COMPONENT(swresample, SWRESAMPLE) },
+        { FF_COMPONENT(swresample, SWRESAMPLE)                      },
 
 #endif
 
-        { FF_COMPONENT(swscale, SWSCALE) },
+        { FF_COMPONENT(swscale, SWSCALE)                            },
 
 #undef FF_COMPONENT
 
-        { nullptr, 0, 0, nullptr, nullptr }
+        { nullptr, 0, 0, nullptr, nullptr                           }
     };
 
     if (!info)
@@ -270,7 +271,7 @@ void setFFmpegLogHandler(void (*callback)(void *, int, const char *, va_list))
     av_log_set_callback(callback);
 }
 
-void setFFmpegLogLevel(const QByteArray &level)
+void setFFmpegLogLevel(const QByteArray& level)
 {
     if (level.isEmpty())
         return;
@@ -278,7 +279,7 @@ void setFFmpegLogLevel(const QByteArray &level)
     bool ok         = false;
     const int value = level.toInt(&ok);
 
-    if      ((ok && value == 0) || level == "off" || level == "quiet")
+    if      ((ok && value == 0) || (level == "off") || (level == "quiet"))
         Internal::gAVLogLevel = AV_LOG_QUIET;
     else if (level == "panic")
         Internal::gAVLogLevel = AV_LOG_PANIC;
@@ -286,7 +287,7 @@ void setFFmpegLogLevel(const QByteArray &level)
         Internal::gAVLogLevel = AV_LOG_FATAL;
     else if (level == "error")
         Internal::gAVLogLevel = AV_LOG_ERROR;
-    else if (level.startsWith("warn"))
+    else if (level.startsWith(QByteArray("warn")))
         Internal::gAVLogLevel = AV_LOG_WARNING;
     else if (level == "info")
         Internal::gAVLogLevel = AV_LOG_INFO;

@@ -427,7 +427,7 @@ bool SubtitleProcessorFFmpeg::processHeader(const QByteArray &codec, const QByte
     return true; // codec != QByteArrayLiteral("ass") && codec != QByteArrayLiteral("ssa");
 }
 
-SubtitleFrame SubtitleProcessorFFmpeg::processLine(const QByteArray &data, qreal pts, qreal duration)
+SubtitleFrame SubtitleProcessorFFmpeg::processLine(const QByteArray& data, qreal pts, qreal duration)
 {
     //qCDebug(DIGIKAM_QTAV_LOG) << "line: " << data;
 
@@ -441,22 +441,22 @@ SubtitleFrame SubtitleProcessorFFmpeg::processLine(const QByteArray &data, qreal
     // libav-9: packet data from demuxer contains time and but duration is 0, must decode
     // Always decode the data because it may contain styles
 
-    if (false && duration > 0 && (!codec_ctx
+    if (   false && duration > 0 && (!codec_ctx
 
 #if QTAV_USE_FFMPEG(LIBAVCODEC)
 
-            || codec_ctx->codec_id == AV_CODEC_ID_SUBRIP
+        || codec_ctx->codec_id == AV_CODEC_ID_SUBRIP
 
 #endif
 
-            || codec_ctx->codec_id == AV_CODEC_ID_SRT
-            ))
+        || codec_ctx->codec_id == AV_CODEC_ID_SRT
+       ))
     {
         SubtitleFrame f;
         f.begin = pts;
         f.end = pts + duration;
 
-        if (data.startsWith("Dialogue:")) // e.g. decoding embedded subtitles
+        if (data.startsWith(QByteArray("Dialogue:"))) // e.g. decoding embedded subtitles
             f.text = PlainText::fromAss(data.constData());
         else
             f.text = QString::fromUtf8(data.constData(), data.size()); //utf-8 is required
