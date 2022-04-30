@@ -1,11 +1,11 @@
-
+#
 # - Try to find Portaudio
 # Once done this will define
 #
-# PORTAUDIO_FOUND - system has Portaudio
-# PORTAUDIO_INCLUDE_DIRS - the Portaudio include directory
-# PORTAUDIO_LIBRARIES - Link these to use Portaudio
-# PORTAUDIO_DEFINITIONS - Compiler switches required for using Portaudio
+# PORTAUDIO_FOUND        - System has Portaudio
+# PORTAUDIO_INCLUDE_DIRS - The Portaudio include directory
+# PORTAUDIO_LIBRARIES    - Link these to use Portaudio
+# PORTAUDIO_DEFINITIONS  - Compiler switches required for using Portaudio
 #
 # Copyright (c) 2006 Andreas Schneider <mail@cynapses.org>
 #

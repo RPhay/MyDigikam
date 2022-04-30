@@ -305,6 +305,18 @@ endif()
 
 # ---
 
+if(OPENSLES_FOUND)
+
+    include_directories(${OPENSLES_INCLUDE_DIR})
+
+    set(libqtav_SRCS ${libqtav_SRCS}
+        ${CMAKE_CURRENT_SOURCE_DIR}/src/output/audio/AudioOutputOpenSL.cpp
+    )
+
+endif()
+
+# ---
+
 if(PORTAUDIO_FOUND)
 
     include_directories(${PORTAUDIO_INCLUDE_DIRS})

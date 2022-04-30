@@ -27,6 +27,7 @@ if(ENABLE_MEDIAPLAYER)
     find_package(PulseAudio QUIET)
     find_package(VAAPI      QUIET)
     find_package(uchardet   QUIET)
+    find_package(OpenSLES   QUIET)
 
     if(WIN32)
 
@@ -55,8 +56,8 @@ if(ENABLE_MEDIAPLAYER)
        AND ${AVFORMAT_FOUND}
        AND ${AVUTIL_FOUND}
        AND ${SWSCALE_FOUND}
-#       AND ${AVRESAMPLE_FOUND}
-#       AND ${SWRESAMPLE_FOUND}
+#       AND ${AVRESAMPLE_FOUND} # optional
+#       AND ${SWRESAMPLE_FOUND} # optional
       )
 
         include_directories(${FFMPEG_INCLUDE_DIRS})
@@ -92,6 +93,7 @@ if(ENABLE_MEDIAPLAYER)
         MACRO_BOOL_TO_01(DirectX_XAudio2_FOUND HAVE_LIBXAUDIO2)
         MACRO_BOOL_TO_01(GDIPLUS_FOUND         HAVE_LIBGDIPLUS)
         MACRO_BOOL_TO_01(Direct2D_FOUND        HAVE_LIBDIRECT2D)
+        MACRO_BOOL_TO_01(OPENSLES_FOUND        HAVE_LIBOPENSLES)
 
         # --- Reports and Libraries -----------------------------------------------------------
 
@@ -170,7 +172,18 @@ if(ENABLE_MEDIAPLAYER)
 
         else()
 
-            message(STATUS "MediaPlayer will be compiled with PukseAudio support : no")
+            message(STATUS "MediaPlayer will be compiled with PulseAudio support : no")
+
+        endif()
+
+        if(OPENSLES_FOUND)
+
+            set(MEDIAPLAYER_LIBRARIES ${MEDIAPLAYER_LIBRARIES} ${OPENSLES_LIBRARIES})
+            message(STATUS "MediaPlayer will be compiled with OpenSLES support   : yes")
+
+        else()
+
+            message(STATUS "MediaPlayer will be compiled with OpenSLES support   : no")
 
         endif()
 
@@ -344,7 +357,6 @@ if(ENABLE_MEDIAPLAYER)
 
         set(MEDIAPLAYER_DEFINITIONS -D__STDC_CONSTANT_MACROS
                                     -DQTAV_HAVE_CAPI=1           # To load libass, vaapi, EGL, and more dynamically
-                                    -DQTAV_HAVE_OPENSL=0         # OpenSLES is for Android only
                                     -DQTAV_HAVE_VDA=0            # Hardware acceleration video decoder removed with ffmpeg  4.0
                                     -DQTAV_HAVE_GL1=0            # disabled in QtAVWidgets.
         )
@@ -414,6 +426,7 @@ if(ENABLE_MEDIAPLAYER)
         set(MEDIAPLAYER_DEFINITIONS ${MEDIAPLAYER_DEFINITIONS} -DQTAV_HAVE_OPENAL=${HAVE_LIBOPENAL})
         set(MEDIAPLAYER_DEFINITIONS ${MEDIAPLAYER_DEFINITIONS} -DQTAV_HAVE_PORTAUDIO=${HAVE_LIBPORTAUDIO})
         set(MEDIAPLAYER_DEFINITIONS ${MEDIAPLAYER_DEFINITIONS} -DQTAV_HAVE_PULSEAUDIO=${HAVE_LIBPULSEAUDIO})
+        set(MEDIAPLAYER_DEFINITIONS ${MEDIAPLAYER_DEFINITIONS} -DQTAV_HAVE_OPENSL=${HAVE_LIBOPENSLES})
         set(MEDIAPLAYER_DEFINITIONS ${MEDIAPLAYER_DEFINITIONS} -DQTAV_HAVE_D3D11VA=${HAVE_LIBD3D11})           # DirectX 3D for MSVC only
         set(MEDIAPLAYER_DEFINITIONS ${MEDIAPLAYER_DEFINITIONS} -DQTAV_HAVE_XAUDIO2=${HAVE_LIBXAUDIO2})         # XAudio2 for MSVC only (replacement of DirectSound)
         set(MEDIAPLAYER_DEFINITIONS ${MEDIAPLAYER_DEFINITIONS} -DQTAV_HAVE_DSOUND=${HAVE_LIBDIRECTSOUND})      # DirectX Sound for MSVC only (replaced by XAudio2)

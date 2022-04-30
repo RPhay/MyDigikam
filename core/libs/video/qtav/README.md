@@ -53,6 +53,8 @@ Code review with plenty of fixes and improvements. See the list of tasks below.
       - FFMpeg::libavcodec/vda.h have been dropped from version 4.0 in favor of VideoToolbox Apple Framework.
       - See Changelog : https://github.com/FFmpeg/FFmpeg/blob/16463520d9de05481320303dd49ea5158c715c9f/Changelog#L310
 
+    - Use Cmake to find OpenSL-ES dependency.
+
     - Use Cmake to find DirectX and GDI+ dependencies with Native Windows and MinGW:
 
       - xaudio2
@@ -86,7 +88,7 @@ Code review with plenty of fixes and improvements. See the list of tasks below.
 
     - Fix includes rules/order from Qt and local.
 
-    - Fix coding style.
+    - Fix coding style (brackets, tabs to spaces, indents, etc.).
 
     - Apply fixes for cppcheck static analyzer.
 
@@ -105,10 +107,6 @@ Code review with plenty of fixes and improvements. See the list of tasks below.
     - Add config widgets to setup video and audio backends.
 
 * Unmaintained Features:
-
-    - OpenSL-ES support (non-opensource toolkit).
-
-    - Android support.
 
     - IOS support.
 
