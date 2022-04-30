@@ -60,8 +60,8 @@ class QTAV_EXPORT Attribute
 
 public:
 
-    Attribute(DataType type = TypeF32, int tupleSize = 0, int offset = 0, bool normalize = false);
-    Attribute(const QByteArray& name, DataType type = TypeF32, int tupleSize = 0, int offset = 0, bool normalize = false);
+    explicit Attribute(DataType type = TypeF32, int tupleSize = 0, int offset = 0, bool normalize = false);
+    explicit Attribute(const QByteArray& name, DataType type = TypeF32, int tupleSize = 0, int offset = 0, bool normalize = false);
 
     QByteArray name() const { return m_name;      }
     DataType type() const   { return m_type;      }
@@ -71,10 +71,10 @@ public:
 
     bool operator==(const Attribute& other) const
     {
-        return tupleSize() == other.tupleSize()
-                && offset() == other.offset()
-                && type() == other.type()
-                && normalize() == other.normalize();
+        return    tupleSize() == other.tupleSize()
+               && offset() == other.offset()
+               && type() == other.type()
+               && normalize() == other.normalize();
     }
 };
 
@@ -105,7 +105,7 @@ public:
         TriangleFan   = 0x0006, ///< Not recommended
     };
 
-    Geometry(int vertexCount = 0, int indexCount = 0, DataType indexType = TypeU16);
+    explicit Geometry(int vertexCount = 0, int indexCount = 0, DataType indexType = TypeU16);
     virtual ~Geometry()
     {
     }
@@ -220,7 +220,10 @@ public:
     float radius() const;
     void create() override;
 
-    int stride() const override { return 3*sizeof(float)+2*sizeof(float)*textureCount(); }
+    int stride() const override
+    {
+        return 3*sizeof(float)+2*sizeof(float)*textureCount();
+    }
 
 protected:
 

@@ -54,7 +54,7 @@ class QTAV_EXPORT VideoShaderObject : public QObject,
 
 public:
 
-    VideoShaderObject(QObject* parent = nullptr);
+    explicit VideoShaderObject(QObject* parent = nullptr);
 
 protected:
 
@@ -88,7 +88,7 @@ class QTAV_EXPORT DynamicShaderObject : public VideoShaderObject
 
 public:
 
-    DynamicShaderObject(QObject* parent = nullptr);
+    explicit DynamicShaderObject(QObject* parent = nullptr);
     QString header() const;
     void setHeader(const QString& text);
     QString sample() const;

@@ -108,7 +108,7 @@ void VideoShaderObject::programReady()
 
     // find property name. if has property, bind to property
 
-    for (int st = VertexShader; st < ShaderTypeCount; ++st)
+    for (int st = VertexShader ; st < ShaderTypeCount ; ++st)
     {
         qDeleteAll(d.sigMap[st]);
         d.sigMap[st].clear();
@@ -136,9 +136,9 @@ void VideoShaderObject::programReady()
                 continue;
             }
 
-            QMetaMethod mm = mp.notifySignal();
+            QMetaMethod mm        = mp.notifySignal();
             QSignalMapper *mapper = new QSignalMapper();
-            mapper->setMapping(this, i|(st<<16));
+            mapper->setMapping(this, i|(st << 16));
 
 #if QT_VERSION >= QT_VERSION_CHECK(4, 8, 0)
 
