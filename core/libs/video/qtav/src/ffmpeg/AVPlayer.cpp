@@ -23,7 +23,11 @@
 
 #include "AVPlayerPrivate.h"
 
+// C++ includes
+
 #include <limits>
+
+// Qt includes
 
 #include <QCoreApplication>
 #include <QEvent>
@@ -31,13 +35,15 @@
 #include <QIODevice>
 #include <QThreadPool>
 #include <QTimer>
+
+// Local includes
+
 #include "AVDemuxer.h"
 #include "Packet.h"
 #include "AudioDecoder.h"
 #include "MediaIO.h"
 #include "VideoRenderer.h"
 #include "AVClock.h"
-#include "VideoCapture.h"
 #include "VideoCapture.h"
 #include "FilterManager.h"
 #include "OutputSet.h"
@@ -47,7 +53,11 @@
 #include "AVCompat.h"
 #include "QtAV_internal.h"
 #include "digikam_debug.h"
-extern "C" {
+
+// FFMpeg includes
+
+extern "C"
+{
 #include <libavutil/mathematics.h>
 }
 

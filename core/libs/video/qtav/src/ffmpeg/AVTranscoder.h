@@ -21,8 +21,8 @@
  *
  * ============================================================ */
 
-#ifndef QTAV_AV_TRANSCODE_H
-#define QTAV_AV_TRANSCODE_H
+#ifndef QTAV_AV_TRANSCODER_H
+#define QTAV_AV_TRANSCODER_H
 
 // Local includes
 
@@ -173,4 +173,4 @@ private:
 
 } // namespace QtAV
 
-#endif // QTAV_AV_TRANSCODE_H
+#endif // QTAV_AV_TRANSCODER_H

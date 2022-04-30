@@ -21,9 +21,14 @@
  *
  * ============================================================ */
 
-#include "AVThread.h"
-#include <limits>
 #include "AVThread_p.h"
+
+// C++ includes
+
+#include <limits>
+
+// Local includes
+
 #include "AVClock.h"
 #include "AVDecoder.h"
 #include "AVOutput.h"

@@ -21,12 +21,11 @@
  *
  * ============================================================ */
 
-#include "AudioResampler.h"
+#include "AudioResampler_p.h"
 
 // Local includes
 
 #include "AudioFormat.h"
-#include "AudioResampler_p.h"
 #include "QtAV_factory.h"
 #include "QtAV_mkid.h"
 #include "digikam_debug.h"

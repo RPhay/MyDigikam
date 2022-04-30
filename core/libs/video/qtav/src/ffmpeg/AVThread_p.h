@@ -24,12 +24,18 @@
 #ifndef QTAV_AVTHREAD_P_H
 #define QTAV_AVTHREAD_P_H
 
+#include "AVThread.h"
+
+// Qt includes
+
 #include <QMutex>
 #include <QMutexLocker>
 #include <QSemaphore>
 #include <QVariant>
 #include <QWaitCondition>
 #include <QElapsedTimer>
+
+// Local includes
 
 #include "PacketBuffer.h"
 #include "QtAV_ring.h"

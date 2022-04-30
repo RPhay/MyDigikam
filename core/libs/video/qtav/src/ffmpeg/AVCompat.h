@@ -62,7 +62,6 @@ extern "C"
 #include <libswscale/swscale.h>
 #include <libavcodec/avcodec.h>
 #include <libavutil/avutil.h>
-#include <libavutil/avstring.h>
 #include <libavutil/dict.h>
 #include <libavutil/imgutils.h>
 #include <libavutil/log.h>

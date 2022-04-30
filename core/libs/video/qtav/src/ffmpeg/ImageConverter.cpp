@@ -28,7 +28,6 @@
 
 #include "AVCompat.h"
 #include "QtAV_factory.h"
-#include "ImageConverter.h"
 #include "digikam_debug.h"
 
 namespace QtAV
@@ -229,6 +228,7 @@ bool ImageConverter::convert(const quint8 * const src[], const int srcStride[])
     if (d.update_data && !prepareData())
     {
         qCWarning(DIGIKAM_QTAV_LOG_WARN).noquote() << QString::asprintf("prepair output data error");
+
         return false;
     }
     else
