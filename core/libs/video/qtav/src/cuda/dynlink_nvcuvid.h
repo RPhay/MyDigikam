@@ -5,7 +5,7 @@
  *
  * Date        : 2012-10-31
  * Description : QtAV: Multimedia framework based on Qt and FFmpeg
- *               NVIDIA Corporation CUDA header
+ *               Base on NVIDIA Corporation CUDA header
  *               NvCuvid API provides Video Decoding interface to NVIDIA GPU devices.
  *               This file contains the interface constants, structure definitions
  *               and function prototypes.

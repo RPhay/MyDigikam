@@ -5,7 +5,7 @@
  *
  * Date        : 2012-10-31
  * Description : QtAV: Multimedia framework based on Qt and FFmpeg
- *               NVIDIA Corporation CUDA header
+ *               Based on NVIDIA Corporation CUDA header
  *               NvCuvid API provides Video Decoding interface to NVIDIA GPU devices.
  *               This file contains constants, structure definitions and
  *               function prototypes used for decoding.
@@ -625,7 +625,6 @@ typedef struct _CUVIDVP9PICPARAMS
     unsigned int reserved128Bits[4];
 
 } CUVIDVP9PICPARAMS;
-
 
 /*!
  * \struct CUVIDPICPARAMS
