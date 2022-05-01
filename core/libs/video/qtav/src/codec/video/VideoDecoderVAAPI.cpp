@@ -554,10 +554,13 @@ VideoFrame VideoDecoderVAAPI::frame()
     {
 
         /*
-         * http://web.archiveorange.com/archive/v/OAywENyq88L319OcRnHI
-         * vaDeriveImage is faster than vaGetImage. But VAImage is uncached memory and copying from it would be terribly slow
+         * http://web.archiveorange.com/archive/v/OAywENyq88L319OcRnHI     // krazy:exclude=insecurenet
+         * vaDeriveImage is faster than vaGetImage. But VAImage is
+         * uncached memory and copying from it would be terribly slow
+         *
          * TODO: copy from USWC, see vlc and https://github.com/OpenELEC/OpenELEC.tv/pull/2937.diff
-         * https://software.intel.com/en-us/articles/increasing-memory-throughput-with-intel-streaming-simd-extensions-4-intel-sse4-streaming-load      // krazy:exclude=insecurenet
+         *
+         * https://software.intel.com/en-us/articles/increasing-memory-throughput-with-intel-streaming-simd-extensions-4-intel-sse4-streaming-load 
          */
 
         VA_ENSURE_TRUE(vaDeriveImage(d.display->get(), surface_id, &d.image), VideoFrame());

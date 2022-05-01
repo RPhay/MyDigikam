@@ -60,7 +60,7 @@
 
 #define USE_GRAPHICS 0
 
-// http://msdn.microsoft.com/en-us/library/ms927613.aspx
+// http://msdn.microsoft.com/en-us/library/ms927613.aspx        // krazy:exclude=insecurenet
 // #pragma comment(lib, "gdiplus.lib")
 
 using namespace Gdiplus;
@@ -91,7 +91,7 @@ public:
     QPaintEngine* paintEngine()                       const override;
 
     /*
-     * http://lists.trolltech.com/qt4-preview-feedback/2005-04/thread00609-0.html
+     * http://lists.trolltech.com/qt4-preview-feedback/2005-04/thread00609-0.html       // krazy:exclude=insecurenet
      * true: paintEngine.getDC(), double buffer is enabled by defalut.
      * false: GetDC(winId()), no double buffer, should reimplement paintEngine()
      */
@@ -238,8 +238,8 @@ public:
 
     void setupQuality() override
     {
-        // http://www.codeproject.com/Articles/9184/Custom-AntiAliasing-with-GDI
-        // http://msdn.microsoft.com/en-us/library/windows/desktop/ms533836%28v=vs.85%29.aspx
+        // http://www.codeproject.com/Articles/9184/Custom-AntiAliasing-with-GDI                // krazy:exclude=insecurenet
+        // http://msdn.microsoft.com/en-us/library/windows/desktop/ms533836%28v=vs.85%29.aspx   // krazy:exclude=insecurenet
 
         /*
          * Graphics.DrawImage, Graphics.InterpolationMode
@@ -368,12 +368,12 @@ void GDIRenderer::drawFrame()
 {
     DPTR_D(GDIRenderer);
 
-    /* http://msdn.microsoft.com/en-us/library/windows/desktop/ms533829%28v=vs.85%29.aspx
+    /* http://msdn.microsoft.com/en-us/library/windows/desktop/ms533829%28v=vs.85%29.aspx       // krazy:exclude=insecurenet
      * Improving Performance by Avoiding Automatic Scaling
      * TODO: How about QPainter?
      */
 
-    // steps to use BitBlt: http://bbs.csdn.net/topics/60183502
+    // steps to use BitBlt: http://bbs.csdn.net/topics/60183502                                 // krazy:exclude=insecurenet
 
     Bitmap bitmap(d.video_frame.width(), d.video_frame.height(), d.video_frame.bytesPerLine(0)
                   , PixelFormat32bppRGB, (BYTE*)d.video_frame.constBits(0));

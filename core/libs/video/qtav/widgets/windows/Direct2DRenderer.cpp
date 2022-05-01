@@ -36,7 +36,7 @@
 
 // Windows includes
 
-//#define CINTERFACE //http://rxlib.ru/faqs/faqc_en/15596.html
+//#define CINTERFACE // http://rxlib.ru/faqs/faqc_en/15596.html                                 // krazy:exclude=insecurenet
 
 #include <sal.h>
 
@@ -47,10 +47,10 @@
 #include <initguid.h> // IID_ID2D1Factory
 #include <d2d1.h>
 
-// steps: http://msdn.microsoft.com/zh-cn/library/dd317121(v=vs.85).aspx
-// performance: http://msdn.microsoft.com/en-us/library/windows/desktop/dd372260(v=vs.85).aspx
+// steps: http://msdn.microsoft.com/zh-cn/library/dd317121(v=vs.85).aspx                        // krazy:exclude=insecurenet
+// performance: http://msdn.microsoft.com/en-us/library/windows/desktop/dd372260(v=vs.85).aspx  // krazy:exclude=insecurenet
 // vlc is helpful
-// layer(opacity): http://www.cnblogs.com/graphics/archive/2013/04/15/2781969.html
+// layer(opacity): http://www.cnblogs.com/graphics/archive/2013/04/15/2781969.html              // krazy:exclude=insecurenet
 
 namespace QtAV
 {
@@ -179,7 +179,7 @@ public:
          * D2D1_FACTORY_TYPE_SINGLE_THREADED, we must use lock when copying ID2D1Bitmap and calling EndDraw.
          */
 
-        /// http://msdn.microsoft.com/en-us/library/windows/desktop/dd368104%28v=vs.85%29.aspx
+        /// http://msdn.microsoft.com/en-us/library/windows/desktop/dd368104%28v=vs.85%29.aspx      // krazy:exclude=insecurenet
 
         HRESULT hr = D2D1CreateFactory(D2D1_FACTORY_TYPE_MULTI_THREADED
                                        , (REFIID)IID_ID2D1Factory
@@ -197,7 +197,7 @@ public:
         d2d_factory->GetDesktopDpi(&dpiX, &dpiY);
 
         // gcc: extended initializer lists only available with -std=c++11 or -std=gnu++11
-        // vc: http://msdn.microsoft.com/zh-cn/library/t8xe60cf(v=vs.80).aspx
+        // vc: http://msdn.microsoft.com/zh-cn/library/t8xe60cf(v=vs.80).aspx               // krazy:exclude=insecurenet
 
         /*
         pixel_format =
@@ -469,10 +469,19 @@ void Direct2DRenderer::drawBackground()
     DPTR_D(Direct2DRenderer);
 
     const QColor bc(backgroundColor());
-    D2D1_COLOR_F c = {(float)bc.red(), (float)bc.green(), (float)bc.blue(), (float)bc.alpha()};
+
+    D2D1_COLOR_F c =
+    {
+        (float)bc.red(),
+        (float)bc.green(),
+        (float)bc.blue(),
+        (float)bc.alpha()
+    };
+
     d.render_target->Clear(&c);     // const D2D1_COlOR_F&?
 
-    // http://msdn.microsoft.com/en-us/library/windows/desktop/dd535473(v=vs.85).aspx
+    // http://msdn.microsoft.com/en-us/library/windows/desktop/dd535473(v=vs.85).aspx       // krazy:exclude=insecurenet
+
     // ID2D1SolidColorBrush *brush;
     // d.render_target->CreateSolidColorBrush(D2D1::ColorF(D2D1::ColorF::Black), &brush);
     // d.render_target->FillRectangle(D2D1::RectF(0, 0, width(), height()), brush);
@@ -523,7 +532,7 @@ void Direct2DRenderer::paintEvent(QPaintEvent *)
         return;
     }
 
-    // http://www.daimakuai.net/?page_id=1574
+    // http://www.daimakuai.net/?page_id=1574       // krazy:exclude=insecurenet
 
     d.render_target->BeginDraw();
     handlePaintEvent();

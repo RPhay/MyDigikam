@@ -26,7 +26,8 @@
 // Local includes
 
 /**
- * X11 headers define 'Bool' type which is used in qmetatype.h. we must include X11 files at last, i.e. X11Renderer_p.h. otherwise compile error
+ * X11 headers define 'Bool' type which is used in qmetatype.h. we must include X11 files at last,
+ * i.e. X11Renderer_p.h. otherwise compile error
  */
 #include "VideoRenderer_p.h"
 #include "FilterContext.h"
@@ -53,7 +54,7 @@
 
 #include <unistd.h> // usleep
 
-// scale: http://www.opensource.apple.com/source/X11apps/X11apps-14/xmag/xmag-X11R7.0-1.0.1/Scale.c
+// scale: http://www.opensource.apple.com/source/X11apps/X11apps-14/xmag/xmag-X11R7.0-1.0.1/Scale.c     // krazy:exclude=insecurenet
 
 #define FFALIGN(x, a) (((x)+(a)-1)&~((a)-1))
 
@@ -85,7 +86,7 @@ public:
      */
     QPaintEngine* paintEngine()                       const override;
 
-    /* http://lists.trolltech.com/qt4-preview-feedback/2005-04/thread00609-0.html
+    /* http://lists.trolltech.com/qt4-preview-feedback/2005-04/thread00609-0.html       // krazy:exclude=insecurenet
      * true: paintEngine is QPainter. Painting with QPainter support double buffer
      * false: no double buffer, should reimplement paintEngine() to return 0 to avoid flicker
      */

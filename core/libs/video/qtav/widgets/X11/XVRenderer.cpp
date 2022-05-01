@@ -22,7 +22,8 @@
  * ============================================================ */
 
 /**
- * X11 headers define 'Bool' type which is used in qmetatype.h. we must include X11 files at last, i.e. XVRenderer_p.h. otherwise compile error
+ * X11 headers define 'Bool' type which is used in qmetatype.h. we must include X11 files at last,
+ * i.e. XVRenderer_p.h. otherwise compile error
  */
 
 #include "VideoRenderer_p.h"
@@ -34,9 +35,9 @@
 #include <QResizeEvent>
 #include <qmath.h>
 
-// #error qtextstream.h must be included before any header file that defines Status. Xlib.h defines Status
+// qtextstream.h must be included before any header file that defines Status. Xlib.h defines Status
 
-#include <QTextStream> // build error
+#include <QTextStream>
 
 // X11 includes
 
@@ -49,7 +50,7 @@
 #include "QtAV_factory.h"
 #include "digikam_debug.h"
 
-// http://huangbster.i.sohu.com/blog/view/256490057.htm
+// http://huangbster.i.sohu.com/blog/view/256490057.htm     // krazy:exclude=insecurenet
 
 namespace QtAV
 {
@@ -84,7 +85,7 @@ public:
      */
     virtual QPaintEngine* paintEngine()                       const override;
 
-    /* http://lists.trolltech.com/qt4-preview-feedback/2005-04/thread00609-0.html
+    /* http://lists.trolltech.com/qt4-preview-feedback/2005-04/thread00609-0.html           // krazy:exclude=insecurenet
      * true: paintEngine is QPainter. Painting with QPainter support double buffer
      * false: no double buffer, should reimplement paintEngine() to return 0 to avoid flicker
      */

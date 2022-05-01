@@ -40,9 +40,12 @@
 
 #define NO_QGL_SHADER (QT_VERSION >= QT_VERSION_CHECK(5, 0, 0))
 
-// TODO: vsync http://stackoverflow.com/questions/589064/how-to-enable-vertical-sync-in-opengl
+// TODO: vsync http://stackoverflow.com/questions/589064/how-to-enable-vertical-sync-in-opengl      // krazy:exclude=insecurenet
+
 // TODO: check gl errors
-// glEGLImageTargetTexture2DOES:http://software.intel.com/en-us/articles/using-opengl-es-to-accelerate-apps-with-legacy-2d-guis
+
+// glEGLImageTargetTexture2DOES
+// http://software.intel.com/en-us/articles/using-opengl-es-to-accelerate-apps-with-legacy-2d-guis  // krazy:exclude=insecurenet
 
 //#ifdef GL_EXT_unpack_subimage
 
@@ -190,10 +193,14 @@ public:
 
     /*
      * it seems that only glTexParameteri matters when drawing an image
-     * MAG_FILTER/MIN_FILTER combinations: http://gregs-blog.com/2008/01/17/opengl-texture-filter-parameters-explained/
+     *
+     * MAG_FILTER/MIN_FILTER combinations:
+     * http://gregs-blog.com/2008/01/17/opengl-texture-filter-parameters-explained/         // krazy:exclude=insecurenet
+     *
      * TODO: understand what each parameter means. GL_TEXTURE_WRAP_S, GL_TEXTURE_WRAP_T
      * what is MIPMAP?
      */
+
     void setupQuality() override
     {
         switch (quality)
@@ -349,7 +356,8 @@ public:
     VideoMaterialType*  material_type;
 };
 
-// http://www.opengl.org/wiki/GLSL#Error_Checking
+// http://www.opengl.org/wiki/GLSL#Error_Checking       // krazy:exclude=insecurenet
+
 // TODO: use QGLShaderProgram for better compatiblity
 
 GLuint GLWidgetRendererPrivate::loadShader(GLenum shaderType, const char* pSource)
@@ -696,20 +704,29 @@ bool GLWidgetRendererPrivate::initTextures(const VideoFormat &fmt)
 
     video_format.setPixelFormatFFmpeg(fmt.pixelFormatFFmpeg());
 
-    // http://www.berkelium.com/OpenGL/GDC99/internalformat.html
+    // http://www.berkelium.com/OpenGL/GDC99/internalformat.html                            // krazy:exclude=insecurenet
+
     // NV12: UV is 1 plane. 16 bits as a unit. GL_LUMINANCE4, 8, 16, ... 32?
     // GL_LUMINANCE, GL_LUMINANCE_ALPHA are deprecated in GL3, removed in GL3.1
     // replaced by GL_RED, GL_RG, GL_RGB, GL_RGBA? for 1, 2, 3, 4 channel image
-    // http://www.gamedev.net/topic/634850-do-luminance-textures-still-exist-to-opengl/
-    // https://github.com/kivy/kivy/issues/1738: GL_LUMINANCE does work on a Galaxy Tab 2. LUMINANCE_ALPHA very slow on Linux
+
+    // http://www.gamedev.net/topic/634850-do-luminance-textures-still-exist-to-opengl/     // krazy:exclude=insecurenet
+
+    // https://github.com/kivy/kivy/issues/1738: GL_LUMINANCE does work on a Galaxy Tab 2.
+    // LUMINANCE_ALPHA very slow on Linux
+
     // ALPHA: vec4(1,1,1,A), LUMINANCE: (L,L,L,1), LUMINANCE_ALPHA: (L,L,L,A)
 
     /*
      * To support both planar and packed use GL_ALPHA and in shader use r,g,a like xbmc does.
-     * or use Swizzle_mask to layout the channels: http://www.opengl.org/wiki/Texture#Swizzle_mask
+     * or use Swizzle_mask to layout the channels:
+     * http://www.opengl.org/wiki/Texture#Swizzle_mask                                      // krazy:exclude=insecurenet
+     *
      * GL ES2 support: GL_RGB, GL_RGBA, GL_LUMINANCE, GL_LUMINANCE_ALPHA, GL_ALPHA
-     * http://stackoverflow.com/questions/18688057/which-opengl-es-2-0-texture-formats-are-color-depth-or-stencil-renderable
+     *
+     * http://stackoverflow.com/questions/18688057/which-opengl-es-2-0-texture-formats-are-color-depth-or-stencil-renderable    // krazy:exclude=insecurenet
      */
+
     if (!fmt.isPlanar())
     {
         GLint  internal_fmt;
@@ -921,7 +938,7 @@ void GLWidgetRendererPrivate::updateShaderIfNeeded()
 
     material_type = newType;
 
-    // http://forum.doom9.org/archive/index.php/t-160211.html
+    // http://forum.doom9.org/archive/index.php/t-160211.html       // krazy:exclude=insecurenet
 
     ColorTransform::ColorSpace cs = ColorTransform::RGB;
 
@@ -1026,11 +1043,11 @@ void GLWidgetRendererPrivate::uploadPlane(int p, GLint internalFormat, GLenum fo
 
 #if 0 // defined(GL_UNPACK_ROW_LENGTH) && defined(GL_UNPACK_SKIP_PIXELS)
 
-        // http://stackoverflow.com/questions/205522/opengl-subtexturing
+        // http://stackoverflow.com/questions/205522/opengl-subtexturing        // krazy:exclude=insecurenet
 
         glPixelStorei(GL_UNPACK_ROW_LENGTH, plane_w);
 
-        //glPixelStorei or compute pointer
+        // glPixelStorei or compute pointer
 
         glPixelStorei(GL_UNPACK_SKIP_PIXELS, roi_x);
         glPixelStorei(GL_UNPACK_SKIP_ROWS, roi_y);
