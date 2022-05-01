@@ -1176,7 +1176,7 @@ bool Subtitle::Private::processRawData(SubtitleProcessor *sp, const QByteArray &
     QString name = QUrl::fromPercentEncoding(url.toEncoded()).section(ushort('/'), -1);
 
     if (name.isEmpty())
-        name = QFileInfo(file_name).fileName(); //priv->name.section('/', -1); // if no seperator?
+        name = QFileInfo(file_name).fileName(); //priv->name.section('/', -1); // if no separator ?
 
     if (name.isEmpty())
         name = QStringLiteral("QtAV_u8_sub_cache");

@@ -1305,7 +1305,7 @@ bool AVDemuxer::load()
         QString msg;
         qCDebug(DIGIKAM_QTAV_LOG).noquote() << QString::asprintf("AVERROR_EXIT: %d", AVERROR_EXIT);
         handleError(AVERROR_EXIT, nullptr, msg);
-        qCWarning(DIGIKAM_QTAV_LOG_WARN) << "User interupted: " << msg;
+        qCWarning(DIGIKAM_QTAV_LOG_WARN) << "User interrupted: " << msg;
 
         return false;
     }
@@ -1772,7 +1772,7 @@ void AVDemuxer::handleError(int averr, AVError::ErrorCode *errorCode, QString &m
         }
         else
         {
-            // FIXME: if not interupt on timeout and ffmpeg exits, still LoadingMedia
+            // FIXME: if not interrupt on timeout and ffmpeg exits, still LoadingMedia
 
             if (isInterruptOnTimeout())
                 setMediaStatus(StalledMedia);

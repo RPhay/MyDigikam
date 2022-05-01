@@ -421,7 +421,7 @@ void AVPlayer::setPriority(const QVector<VideoDecoderId> &ids)
     if (!isPlaying())
         return;
 
-    // TODO: add an option to apply immediatly?
+    // TODO: add an option to apply immediately?
 
     if (!d->vthread || !d->vthread->isRunning())
     {
@@ -1376,7 +1376,7 @@ void AVPlayer::playInternal()
         qCWarning(DIGIKAM_QTAV_LOG_WARN).noquote() << QString::asprintf("load failed");
         return;
     }
-    // setup clock before avthread.start() becuase avthreads use clock. after avthreads setup because of ao check
+    // setup clock before avthread.start() because avthreads use clock. after avthreads setup because of ao check
     masterClock()->reset();
     // TODO: add isVideo() or hasVideo()?
     if (masterClock()->isClockAuto()) {
@@ -1618,7 +1618,7 @@ void AVPlayer::stop()
          * then timer goes on, and player find that d->stop_position reached(d->stop_position is already
          * 0 after user call stop),
          * stop() is called again by player and reset state. but this call is later than demuxer stop.
-         * so if user call play() immediatly, may be stopped by AVPlayer
+         * so if user call play() immediately, may be stopped by AVPlayer
          */
         // TODO: invokeMethod "stopNotifyTimer"
         if (d->timer_id >= 0) {

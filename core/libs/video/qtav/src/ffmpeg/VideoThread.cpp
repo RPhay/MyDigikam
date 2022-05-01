@@ -60,7 +60,7 @@ public:
 
     ~VideoThreadPrivate()
     {
-        // not neccessary context is managed by filters.
+        // not necessary context is managed by filters.
 
         if (filter_context)
         {
@@ -335,7 +335,7 @@ void VideoThread::run()
         d.capture->setCaptureName(QFileInfo(d.statistics->url).completeBaseName());
     }
 
-    // not neccessary context is managed by filters.
+    // not necessary context is managed by filters.
 
     d.filter_context      = VideoFilterContext::create(VideoFilterContext::QtPainter);
     VideoDecoder *dec     = static_cast<VideoDecoder*>(d.dec);
@@ -343,7 +343,7 @@ void VideoThread::run()
     QVariantHash *dec_opt = &d.dec_opt_normal; // TODO: restore old framedrop option after seek
 
     /*!
-     * if we skip some frames(e.g. seek, drop frames to speed up), then then first frame to decode must
+     * if we skip some frames(e.g. seek, drop frames to speed up), then first frame to decode must
      * be a key frame for hardware decoding. otherwise may crash
      */
 

@@ -65,7 +65,7 @@ public:
         return nullptr;
     }
 
-    // TODO: SurfaceType. unmap is currenty used by opengl rendering
+    // TODO: SurfaceType. unmap is currently used by opengl rendering
 
     virtual void unmap(void* handle)
     {

@@ -102,7 +102,7 @@ protected:
 
     /**
      * If the pause state is true set by pause(true), then block the thread and wait for pause state changed, i.e. pause(false)
-     * and return true. Otherwise, return false immediatly.
+     * and return true. Otherwise, return false immediately.
      */
     bool tryPause(unsigned long timeout = 100);
 

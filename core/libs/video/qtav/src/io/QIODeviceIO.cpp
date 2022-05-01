@@ -250,7 +250,7 @@ void QFileIO::onUrlChanged()
 
             if (c != QLatin1Char('\\') && c != QLatin1Char('/'))
             {
-                qCWarning(DIGIKAM_QTAV_LOG_WARN).noquote() << QString::asprintf("invalid path. wrong dir seperator");
+                qCWarning(DIGIKAM_QTAV_LOG_WARN).noquote() << QString::asprintf("invalid path. wrong dir separator ");
                 return;
             }
 
