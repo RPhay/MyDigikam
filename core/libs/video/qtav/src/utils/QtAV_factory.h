@@ -107,8 +107,8 @@ class Factory : public Singleton<Class>
 public:
 
     Type* create(const ID& id);
-    template<class C>
 
+    template<class C>
     bool register_(const ID& id)
     {
         // register_<C>(id, name)
@@ -126,20 +126,26 @@ public:
 
     //bool unregisterAll();
 
-    ID id(const char* name, bool caseSensitive = true) const;
-    const char* name(const ID &id) const;
-    size_t count() const;
-    const std::vector<ID> &registeredIds() const;
-    std::vector<const char*> registeredNames() const;
-    Type* getRandom();      // remove
-
-//    Type* at(int index);
-//    ID idAt(int index);
+    ID id(const char* name, bool caseSensitive = true)  const;
+    const char* name(const ID &id)                      const;
+    size_t count()                                      const;
+    const std::vector<ID> &registeredIds()              const;
+    std::vector<const char*> registeredNames()          const;
+    Type* getRandom();                                          // remove
+/*
+    Type* at(int index);
+    ID idAt(int index);
+*/
 
 protected:
 
-    Factory()          {}
-    virtual ~Factory() {}
+    Factory()
+    {
+    }
+
+    virtual ~Factory()
+    {
+    }
 
 private:
 
@@ -149,17 +155,18 @@ private:
         return new C();
     }
 
-    typedef std::map<ID, Creator> CreatorMap;
-    CreatorMap creators;
-    std::vector<ID> ids;
+    typedef std::map<ID, Creator>     CreatorMap;
+    CreatorMap                        creators;
+    std::vector<ID>                   ids;
     typedef std::map<ID, const char*> NameMap;
-    NameMap name_map;   // static?
+    NameMap                           name_map;   // static?
 };
 
 #if 0
 
 template<typename Id, typename T, class Class>
 typename Factory<Id, T, Class>::CreatorMap Factory<Id, T, Class>::creators;
+
 template<typename Id, typename T, class Class>
 typename Factory<Id, T, Class>::NameMap Factory<Id, T, Class>::name_map;
 
@@ -173,6 +180,7 @@ typename Factory<Id, T, Class>::Type *Factory<Id, T, Class>::create(const ID& id
     if (it == creators.end())
     {
         DBG("Unknown id ");
+
         return nullptr;
 
         //throw std::runtime_error(err_msg.arg(id).toStdString());
@@ -212,13 +220,13 @@ template<typename Id, typename T, class Class>
 typename Factory<Id, T, Class>::ID Factory<Id, T, Class>::id(const char* name, bool caseSensitive) const
 {
 
-#ifdef _MSC_VER
+#ifdef _MSC_VER     // krazy:exclude=cpp
 #   define strcasecmp(s1, s2) _strcmpi(s1, s2)
 #endif
 
     // need 'typename'  because 'Factory<Id, T, Class>::NameMap' is a dependent scope
 
-    for (typename NameMap::const_iterator it = name_map.begin(); it!=name_map.end(); ++it)
+    for (typename NameMap::const_iterator it = name_map.begin() ; it!=name_map.end() ; ++it)
     {
         if (caseSensitive)
         {

@@ -28,11 +28,11 @@
 #define PREFER_WINSDK 0 // 1 if use xaudio2 from windows sdk, _WIN32_WINNT must >= win8
 
 #if PREFER_WINSDK
-#   if _WIN32_WINNT < _WIN32_WINNT_WIN8
+#   if _WIN32_WINNT < _WIN32_WINNT_WIN8         // krazy:exclude=cpp
 #       undef _WIN32_WINNT
 #       define _WIN32_WINNT _WIN32_WINNT_WIN8
 #   endif
-#endif //PREFER_WINSDK
+#endif // PREFER_WINSDK
 
 /*!
  *  IXAudio2 and IXAudio2MasteringVoice are different defined in DXSDK(2010 June) and WINSDK(>=win8).
@@ -41,7 +41,7 @@
 
 #include <windows.h>
 
-#ifndef _WIN32_WINNT_WIN8
+#ifndef _WIN32_WINNT_WIN8                       // krazy:exclude=cpp
 #   define _WIN32_WINNT_WIN8 0x0602
 #endif
 

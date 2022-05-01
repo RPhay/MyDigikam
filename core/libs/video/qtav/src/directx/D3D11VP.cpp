@@ -34,10 +34,10 @@
 
 #ifdef __CRT_UUID_DECL
 
-#   ifndef __MINGW32__
+#   ifndef __MINGW32__      // krazy:exclude=cpp
 
-__CRT_UUID_DECL(ID3D11VideoContext,0x61F21C45,0x3C0E,0x4a74,0x9C,0xEA,0x67,0x10,0x0D,0x9A,0xD5,0xE4)
-__CRT_UUID_DECL(ID3D11VideoDevice,0x10EC4D5B,0x975A,0x4689,0xB9,0xE4,0xD0,0xAA,0xC3,0x0F,0xE3,0x33)
+__CRT_UUID_DECL(ID3D11VideoContext, 0x61F21C45, 0x3C0E, 0x4a74, 0x9C, 0xEA, 0x67, 0x10, 0x0D, 0x9A, 0xD5, 0xE4)
+__CRT_UUID_DECL(ID3D11VideoDevice,  0x10EC4D5B, 0x975A, 0x4689, 0xB9, 0xE4, 0xD0, 0xAA, 0xC3, 0x0F, 0xE3, 0x33)
 
 #   endif
 
@@ -107,7 +107,14 @@ bool D3D11VP::process(ID3D11Texture2D *texture, int index)
 
     if (!m_srcRect.isEmpty())
     {
-        const RECT r = {m_srcRect.x(), m_srcRect.y(), m_srcRect.width(), m_srcRect.height()};
+        const RECT r =
+        {
+            m_srcRect.x(),
+            m_srcRect.y(),
+            m_srcRect.width(),
+            m_srcRect.height()
+        };
+
         videoctx->VideoProcessorSetStreamSourceRect(m_vp.Get(), 0, TRUE, &r);
     }
 

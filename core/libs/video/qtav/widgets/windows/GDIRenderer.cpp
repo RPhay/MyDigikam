@@ -35,7 +35,7 @@
 
 // Windows includes
 
-#ifndef WIN32_LEAN_AND_MEAN
+#ifndef WIN32_LEAN_AND_MEAN     // krazy:exclude=cpp
 #   define WIN32_LEAN_AND_MEAN
 #endif
 
@@ -44,7 +44,7 @@
 #include <winsock2.h>
 #include <unknwn.h>
 
-#ifndef __MINGW32__
+#ifndef __MINGW32__             // krazy:exclude=cpp
 
 #   ifndef min
 #       define min(x,y) ((x) < (y) ? (x) : (y))
@@ -111,12 +111,12 @@ protected:
      * things yourself totally
      */
 
-    void paintEvent(QPaintEvent *)                          override;
-    void resizeEvent(QResizeEvent *)                        override;
+    void paintEvent(QPaintEvent*)                           override;
+    void resizeEvent(QResizeEvent*)                         override;
 
     // stay on top will change parent, hide then show(windows). we need GetDC() again
 
-    void showEvent(QShowEvent *)                            override;
+    void showEvent(QShowEvent*)                             override;
 };
 
 typedef GDIRenderer VideoRendererGDI;
@@ -414,19 +414,19 @@ void GDIRenderer::drawFrame()
 
 }
 
-void GDIRenderer::paintEvent(QPaintEvent *)
+void GDIRenderer::paintEvent(QPaintEvent*)
 {
     handlePaintEvent();
 }
 
-void GDIRenderer::resizeEvent(QResizeEvent *e)
+void GDIRenderer::resizeEvent(QResizeEvent* e)
 {
     d_func().update_background = true;
     resizeRenderer(e->size());
     update();
 }
 
-void GDIRenderer::showEvent(QShowEvent *)
+void GDIRenderer::showEvent(QShowEvent*)
 {
     DPTR_D(GDIRenderer);
 

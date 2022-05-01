@@ -54,7 +54,7 @@ static const char* names[] =
 
 #endif
 
-#ifdef __APPLE__
+#ifdef __APPLE__    // krazy:exclude=cpp
 
     "/System/Library/Frameworks/OpenAL.framework/OpenAL", // iOS and macOS
 

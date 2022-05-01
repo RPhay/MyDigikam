@@ -34,7 +34,7 @@ namespace openal
 namespace capi
 {
 
-#define AL_LIBTYPE_STATIC // openal-soft AL_API dllimport error. mac's macro is AL_BUILD_LIBRARY
+#   define AL_LIBTYPE_STATIC // openal-soft AL_API dllimport error. mac's macro is AL_BUILD_LIBRARY
 #else
 
 extern "C"
@@ -44,7 +44,7 @@ extern "C"
 
 // the following line will be replaced by the content of config/OPENAL/include if exists
 
-#ifdef __APPLE__
+#ifdef __APPLE__                // krazy:exclude=cpp
 #   include <OpenAL/al.h>
 #   include <OpenAL/alc.h>
 #else

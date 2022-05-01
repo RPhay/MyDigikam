@@ -22,8 +22,8 @@
  *
  * ============================================================ */
 
-#ifdef _MSC_VER
-#   pragma comment(lib, "ole32.lib") // CoTaskMemFree. why link failed?
+#ifdef _MSC_VER                         // krazy:exclude=cpp
+#   pragma comment(lib, "ole32.lib")    // CoTaskMemFree. why link failed?
 #endif
 
 #include "VideoDecoderD3D.h"
@@ -73,11 +73,11 @@ extern "C"
 #define MS_GUID(name, l, w1, w2, b1, b2, b3, b4, b5, b6, b7, b8) \
     static const GUID name = { l, w1, w2, {b1, b2, b3, b4, b5, b6, b7, b8 } }
 
-#ifdef __MINGW32__
+#ifdef __MINGW32__                          // krazy:exclude=cpp
 #   include <_mingw.h>
 #   if !defined(__MINGW64_VERSION_MAJOR)
 #       undef MS_GUID
-#       define MS_GUID DEFINE_GUID /* dxva2api.h fails to declare those, redefine as static */
+#       define MS_GUID DEFINE_GUID          // dxva2api.h fails to declare those, redefine as static
 #   else
 #       include <dxva.h>
 #   endif

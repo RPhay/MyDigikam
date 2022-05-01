@@ -36,7 +36,7 @@
 
 // Windows includes
 
-#include <d3d11.h> // include before <libavcodec/d3d11va.h> because d3d11va.h also includes d3d11.h but as a c header (for msvc)
+#include <d3d11.h>    // include before <libavcodec/d3d11va.h> because d3d11va.h also includes d3d11.h but as a c header (for msvc)
 #include <wrl/client.h>
 #include <initguid.h> // IID_ID3D11VideoContext
 
@@ -53,7 +53,7 @@ using namespace Microsoft::WRL; // ComPtr
 
 #ifdef __CRT_UUID_DECL
 
-#   ifndef __MINGW32__
+#   ifndef __MINGW32__          // krazy:exclude=cpp
 
 __CRT_UUID_DECL(ID3D11VideoContext, 0x61F21C45, 0x3C0E, 0x4a74, 0x9C, 0xEA, 0x67, 0x10, 0x0D, 0x9A, 0xD5, 0xE4)
 __CRT_UUID_DECL(ID3D11VideoDevice,  0x10EC4D5B, 0x975A, 0x4689, 0xB9, 0xE4, 0xD0, 0xAA, 0xC3, 0x0F, 0xE3, 0x33)
@@ -80,7 +80,7 @@ struct dxgi_fcc
 
 DXGI_FORMAT fourccToDXGI(int fourcc)
 {
-    for (size_t i = 0; i < sizeof(dxgi_formats)/sizeof(dxgi_formats[0]); ++i)
+    for (size_t i = 0 ; i < sizeof(dxgi_formats)/sizeof(dxgi_formats[0]) ; ++i)
     {
         if (dxgi_formats[i].fourcc == fourcc)
             return dxgi_formats[i].dxgi;
@@ -91,7 +91,7 @@ DXGI_FORMAT fourccToDXGI(int fourcc)
 
 int fourccFromDXGI(DXGI_FORMAT fmt)
 {
-    for (const dxgi_fcc* f = dxgi_formats; f < dxgi_formats + sizeof(dxgi_formats)/sizeof(dxgi_formats[0]); ++f)
+    for (const dxgi_fcc* f = dxgi_formats ; f < dxgi_formats + sizeof(dxgi_formats)/sizeof(dxgi_formats[0]) ; ++f)
     {
         if (f->dxgi == fmt)
             return f->fourcc;
@@ -166,7 +166,7 @@ public:
 
 #ifndef Q_OS_WINRT
 
-        dll = LoadLibrary(TEXT("d3d11.dll")); // cppcheck-suppress useInitializationList
+        dll       = LoadLibrary(TEXT("d3d11.dll")); // cppcheck-suppress useInitializationList
         available = !!dll;
 
 #endif
@@ -263,7 +263,7 @@ VideoFrame VideoDecoderD3D11::frame()
 
     if (copyMode() == VideoDecoderFFmpegHW::ZeroCopy && d.interop_res)
     {
-        d3d11::SurfaceInterop *interop = new d3d11::SurfaceInterop(d.interop_res);
+        d3d11::SurfaceInterop* interop = new d3d11::SurfaceInterop(d.interop_res);
         interop->setSurface(texture, view_desc.Texture2D.ArraySlice, d.width, d.height);
         VideoFormat fmt(d.interop_res->format(tex_desc.Format));
         VideoFrame f(d.width, d.height, fmt);
@@ -309,7 +309,7 @@ VideoFrame VideoDecoderD3D11::frame()
     ScopedMap sm(d.d3dctx, d.texture_cpu, &mapped);                                     // mingw error if ComPtr<T> constructs from ComPtr<U> [T=ID3D11Resource, U=ID3D11Texture2D]
     Q_UNUSED(sm);
     int pitch[3]             = { (int)mapped.RowPitch, 0, 0   };                        // compute chroma later
-    uint8_t *src[]           = { (uint8_t*)mapped.pData, 0, 0 };                        // compute chroma later
+    uint8_t* src[]           = { (uint8_t*)mapped.pData, 0, 0 };                        // compute chroma later
     const VideoFormat format = VideoDecoderD3D::pixelFormatFromFourcc(d.format_fcc);    // tex_desc
 
     return copyToFrame(format, tex_desc.Height, src, pitch, false);
@@ -360,6 +360,7 @@ bool VideoDecoderD3D11Private::createDevice()
     DX_ENSURE(dxgi_dev->GetAdapter(dxgi_adapter.GetAddressOf()), false);
     DXGI_ADAPTER_DESC desc;
     DX_ENSURE(dxgi_adapter->GetDesc(&desc), false);
+
     sD3D11Description = QStringLiteral("D3D11 Video Acceleration (%1, vendor %2(%3), device %4, revision %5)")
             .arg(QString::fromWCharArray(desc.Description))
             .arg(desc.VendorId)
@@ -367,6 +368,7 @@ bool VideoDecoderD3D11Private::createDevice()
             .arg(desc.DeviceId)
             .arg(desc.Revision)
             ;
+
     qCDebug(DIGIKAM_QTAV_LOG) << sD3D11Description;
     description = sD3D11Description;
 

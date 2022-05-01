@@ -27,11 +27,11 @@
 
 #include <initguid.h> /* must be last included to not redefine existing GUIDs */
 
-#if (FF_PROFILE_HEVC_MAIN == -1) // libav does not define it
-#   ifdef _MSC_VER
+#if (FF_PROFILE_HEVC_MAIN == -1)                                            // libav does not define it
+#   ifdef _MSC_VER                                                          // krazy:exclude=cpp
 #       pragma message("HEVC will not be supported. Update your FFmpeg")
 #   else
-#       warning "HEVC will not be supported. Update your FFmpeg"
+#       warning "HEVC will not be supported. Update your FFmpeg"            // krazy:exclude=cpp
 #   endif
 #endif
 

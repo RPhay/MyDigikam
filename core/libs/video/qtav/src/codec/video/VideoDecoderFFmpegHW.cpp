@@ -157,17 +157,16 @@ static void ffmpeg_release_va_buffer(struct AVCodecContext *c, AVFrame *ff)
 
 #endif // QTAV_HAVE(AVBUFREF)
 
-
 bool VideoDecoderFFmpegHWPrivate::prepare()
 {
-    //// From vlc begin
+    // From vlc begin
 
     codec_ctx->thread_safe_callbacks = true;
     codec_ctx->thread_count          = threads;
 
-#ifdef _MSC_VER
+#ifdef _MSC_VER                  // krazy:exclude=cpp
 #   pragma warning(disable:4065) // vc: switch has default but no case
-#endif //_MSC_VER
+#endif
 
     switch (codec_ctx->codec_id)
     {

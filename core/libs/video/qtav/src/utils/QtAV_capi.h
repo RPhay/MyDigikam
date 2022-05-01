@@ -451,10 +451,7 @@ protected:
 // fully expand. used by VC. VC will not expand __VA_ARGS__ but treats it as 1 parameter
 
 #define EXPAND(expr) expr   // TODO: rename CAPI_EXPAND
-// krazy:exclude=cpp
-#if defined(WIN64) || defined(_WIN64) || defined(__WIN64__) \
-    || defined(WIN32) || defined(_WIN32) || defined(__WIN32__) || defined(__NT__) \
-    || defined(WINCE) || defined(_WIN32_WCE)
+#if defined(WIN64) || defined(_WIN64) || defined(__WIN64__) || defined(WIN32) || defined(_WIN32) || defined(__WIN32__) || defined(__NT__) || defined(WINCE) || defined(_WIN32_WCE) // krazy:exclude=cpp
 #   define CAPI_TARGET_OS_WIN 1
 #   include <windows.h>
 #   ifdef WINAPI_FAMILY
