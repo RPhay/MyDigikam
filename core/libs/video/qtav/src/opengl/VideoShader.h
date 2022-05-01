@@ -218,7 +218,8 @@ private:
 
 protected:
 
-    VideoShader(VideoShaderPrivate &d);
+    explicit VideoShader(VideoShaderPrivate &d);
+
     DPTR_DECLARE(VideoShader)
 };
 
@@ -340,7 +341,8 @@ public:
 
 protected:
 
-    VideoMaterial(VideoMaterialPrivate &d);
+    explicit VideoMaterial(VideoMaterialPrivate &d);
+
     DPTR_DECLARE(VideoMaterial)
 };
 
