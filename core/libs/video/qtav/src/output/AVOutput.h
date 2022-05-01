@@ -65,6 +65,7 @@ public:
 
     void pause(bool p); // processEvents when waiting?
     bool isPaused() const;
+
     QList<Filter*>& filters();
 
     /*!
@@ -79,20 +80,20 @@ public:
 
 protected:
 
-    AVOutput(AVOutputPrivate& d);
+    explicit AVOutput(AVOutputPrivate& d);
 
     /**
      * If the pause state is true set by pause(true), then block the thread and wait for pause state changed, i.e. pause(false)
      * and return true. Otherwise, return false immediately.
      */
-    Q_DECL_DEPRECATED bool tryPause(); // move to OutputSet
+    bool tryPause();                            // move to OutputSet
 
     // TODO: we need an active set
 
     void addOutputSet(OutputSet *set);
     void removeOutputSet(OutputSet *set);
-    void attach(OutputSet *set);        // add this to set
-    void detach(OutputSet *set = nullptr);    // detatch from (all, if 0) output set(s)
+    void attach(OutputSet *set);                // add this to set
+    void detach(OutputSet *set = nullptr);      // detatch from (all, if 0) output set(s)
 
     // for thread safe
 
@@ -111,6 +112,7 @@ private:
     // only called in handlePaintEvent. But filters may change. so required by proxy to update it's filters
 
     virtual bool onHanlePendingTasks(); // return true: proxy update filters
+
     friend class AVPlayer;
     friend class OutputSet;
     friend class VideoOutput;

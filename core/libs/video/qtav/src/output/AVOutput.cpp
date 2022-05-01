@@ -60,7 +60,7 @@ AVOutput::~AVOutput()
         d.filter_context = nullptr;
     }
 
-    foreach (Filter *f, d.pending_uninstall_filters)
+    foreach (Filter* f, d.pending_uninstall_filters)
     {
         d.filters.removeAll(f);
     }
@@ -81,6 +81,7 @@ AVOutput::~AVOutput()
 
         if ((*it)->isOwnedByTarget() && !(*it)->parent())
             delete *it;
+
         ++it;
     }
 

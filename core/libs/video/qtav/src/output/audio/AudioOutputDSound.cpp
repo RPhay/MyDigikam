@@ -56,7 +56,7 @@ class AudioOutputDSound final: public AudioOutputBackend
 {
 public:
 
-    AudioOutputDSound(QObject *parent = 0);
+    AudioOutputDSound(QObject* parent = 0);
 
     QString name()                                           const override
     {
@@ -93,27 +93,28 @@ private:
     }
 
     bool createDSoundBuffers();
+
     static DWORD WINAPI notificationThread(LPVOID lpThreadParameter);
 
 private:
 
-    HINSTANCE dll;
-    LPDIRECTSOUND dsound;               /// direct sound object
-    LPDIRECTSOUNDBUFFER prim_buf;       /// primary direct sound buffer
-    LPDIRECTSOUNDBUFFER stream_buf;     /// secondary direct sound buffer (stream buffer)
+    HINSTANCE           dll;
+    LPDIRECTSOUND       dsound;         ///< direct sound object
+    LPDIRECTSOUNDBUFFER prim_buf;       ///< primary direct sound buffer
+    LPDIRECTSOUNDBUFFER stream_buf;     ///< secondary direct sound buffer (stream buffer)
     LPDIRECTSOUNDNOTIFY notify;
-    HANDLE notify_event;
-    QSemaphore sem;
-    int write_offset;                   /// offset of the write cursor in the direct sound buffer
-    QAtomicInt buffers_free;
+    HANDLE              notify_event;
+    QSemaphore          sem;
+    int                 write_offset;   ///< offset of the write cursor in the direct sound buffer
+    QAtomicInt          buffers_free;
 
     class PositionWatcher : public QThread
     {
-        AudioOutputDSound *ao;
+        AudioOutputDSound* ao;
 
     public:
 
-        PositionWatcher(AudioOutputDSound* dsound)
+        explicit PositionWatcher(AudioOutputDSound* dsound)
             : ao(dsound)
         {
         }
@@ -154,8 +155,10 @@ FACTORY_REGISTER(AudioOutputBackend, DSound, kName)
 #define WAVE_FORMAT_EXTENSIBLE      0xFFFE
 
 /* GUID SubFormat IDs */
+
 /* We need both b/c const variables are not compile-time constants in C, giving
- * us an error if we use the const GUID in an enum */
+ * us an error if we use the const GUID in an enum
+ */
 
 #undef DEFINE_GUID
 #define DEFINE_GUID(name,l,w1,w2,b1,b2,b3,b4,b5,b6,b7,b8) EXTERN_C const GUID DECLSPEC_SELECTANY name = { l, w1, w2, { b1, b2, b3, b4, b5, b6, b7, b8 } }
@@ -170,7 +173,7 @@ DEFINE_GUID(_KSDATAFORMAT_SUBTYPE_UNKNOWN,         0x00000000,                  
 #   define MS_GUID(name, l, w1, w2, b1, b2, b3, b4, b5, b6, b7, b8) \
     static const GUID name = { l, w1, w2, { b1, b2, b3, b4, b5, b6, b7, b8 } }
 
-#endif //MS_GUID
+#endif // MS_GUID
 
 #ifndef _WAVEFORMATEXTENSIBLE_
 
@@ -341,7 +344,7 @@ bool AudioOutputDSound::write(const QByteArray &data)
     LPVOID dst1 = nullptr, dst2 = nullptr;
     DWORD size1 = 0, size2 = 0;
 
-    if (write_offset >= buffer_size*buffer_count) ///!!! >=
+    if (write_offset >= buffer_size*buffer_count) // !!! >=
         write_offset = 0;
 
     HRESULT res = stream_buf->Lock(write_offset, data.size(), &dst1, &size1, &dst2, &size2, 0); // DSBLOCK_ENTIREBUFFER
@@ -410,7 +413,7 @@ qreal AudioOutputDSound::getVolume() const
     LONG vol = 0;
     DX_ENSURE_OK(stream_buf->GetVolume(&vol), 1.0);
 
-    return pow(10.0, double(vol - DSBVOLUME_MIN)/5000.0)/100.0;
+    return pow(10.0, double(vol - DSBVOLUME_MIN) / 5000.0) / 100.0;
 }
 
 bool AudioOutputDSound::loadDll()
@@ -458,7 +461,8 @@ bool AudioOutputDSound::init()
 
     DX_ENSURE_OK(dsound_create(nullptr/*dev guid*/, &dsound, nullptr), false);
 
-    /*  DSSCL_EXCLUSIVE: can modify the settings of the primary buffer, only the sound of this app will be hearable when it will have the focus.
+    /**
+     * DSSCL_EXCLUSIVE: can modify the settings of the primary buffer, only the sound of this app will be hearable when it will have the focus.
      */
 
     DX_ENSURE_OK(dsound->SetCooperativeLevel(GetDesktopWindow(), DSSCL_EXCLUSIVE), false);
@@ -471,7 +475,7 @@ bool AudioOutputDSound::init()
     if (dscaps.dwFlags & DSCAPS_EMULDRIVER)
         qCDebug(DIGIKAM_QTAV_LOG).noquote() << QString::asprintf("DirectSound is emulated");
 
-    write_offset = 0;
+    write_offset  = 0;
 
     return true;
 }
@@ -506,20 +510,20 @@ bool AudioOutputDSound::createDSoundBuffers()
 
     if (format.channels() > 2)
     {
-        wf.cbSize         = sizeof(WAVEFORMATEXTENSIBLE) - sizeof(WAVEFORMATEX);
-        wf.wFormatTag     = WAVE_FORMAT_EXTENSIBLE;
-        wformat.SubFormat = _KSDATAFORMAT_SUBTYPE_PCM;
+        wf.cbSize                           = sizeof(WAVEFORMATEXTENSIBLE) - sizeof(WAVEFORMATEX);
+        wf.wFormatTag                       = WAVE_FORMAT_EXTENSIBLE;
+        wformat.SubFormat                   = _KSDATAFORMAT_SUBTYPE_PCM;
         wformat.Samples.wValidBitsPerSample = wf.wBitsPerSample;
     }
 
     if (format.isFloat())
     {
-        wf.wFormatTag = WAVE_FORMAT_IEEE_FLOAT;
+        wf.wFormatTag     = WAVE_FORMAT_IEEE_FLOAT;
         wformat.SubFormat = _KSDATAFORMAT_SUBTYPE_IEEE_FLOAT;
     }
     else
     {
-        wf.wFormatTag = WAVE_FORMAT_PCM;
+        wf.wFormatTag     = WAVE_FORMAT_PCM;
         wformat.SubFormat = _KSDATAFORMAT_SUBTYPE_PCM;
     }
 
@@ -532,7 +536,7 @@ bool AudioOutputDSound::createDSoundBuffers()
 
         DSBUFFERDESC dsbpridesc;
         memset(&dsbpridesc, 0, sizeof(DSBUFFERDESC));
-        dsbpridesc.dwSize = sizeof(DSBUFFERDESC);
+        dsbpridesc.dwSize  = sizeof(DSBUFFERDESC);
         dsbpridesc.dwFlags = DSBCAPS_PRIMARYBUFFER;
 
         // create primary buffer and set its format
@@ -545,13 +549,15 @@ bool AudioOutputDSound::createDSoundBuffers()
 
     DSBUFFERDESC dsbdesc;
     memset(&dsbdesc, 0, sizeof(DSBUFFERDESC));
-    dsbdesc.dwSize = sizeof(DSBUFFERDESC);
-    dsbdesc.dwFlags = DSBCAPS_GETCURRENTPOSITION2 /** Better position accuracy */
-                      | DSBCAPS_GLOBALFOCUS       /** Allows background playing */
-                      | DSBCAPS_CTRLVOLUME        /** volume control enabled */
+    dsbdesc.dwSize  = sizeof(DSBUFFERDESC);
+
+    dsbdesc.dwFlags =   DSBCAPS_GETCURRENTPOSITION2 /** Better position accuracy */
+                      | DSBCAPS_GLOBALFOCUS         /** Allows background playing */
+                      | DSBCAPS_CTRLVOLUME          /** volume control enabled */
                       | DSBCAPS_CTRLPOSITIONNOTIFY;
+
     dsbdesc.dwBufferBytes = buffer_size*buffer_count;
-    dsbdesc.lpwfxFormat = (WAVEFORMATEX *)&wformat;
+    dsbdesc.lpwfxFormat   = (WAVEFORMATEX *)&wformat;
 
     // Needed for 5.1 on emu101k - shit soundblaster
 
@@ -584,7 +590,7 @@ bool AudioOutputDSound::createDSoundBuffers()
 
     for (int i = 0 ; i < buffer_count ; ++i)
     {
-        notification[i].dwOffset = buffer_size*(i+1)-1;
+        notification[i].dwOffset     = buffer_size*(i+1)-1;
         notification[i].hEventNotify = notify_event;
     }
 

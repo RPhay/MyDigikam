@@ -58,7 +58,8 @@ public:
 
 protected:
 
-    VideoShaderObject(VideoShaderObjectPrivate &d, QObject* parent = nullptr);
+    explicit VideoShaderObject(VideoShaderObjectPrivate &d, QObject* parent = nullptr);
+
     bool event(QEvent *event) override;
 
 private Q_SLOTS:
@@ -89,10 +90,13 @@ class QTAV_EXPORT DynamicShaderObject : public VideoShaderObject
 public:
 
     explicit DynamicShaderObject(QObject* parent = nullptr);
+
     QString header() const;
     void setHeader(const QString& text);
+
     QString sample() const;
     void setSample(const QString& text);
+
     QString postProcess() const;
     void setPostProcess(const QString& text);
 
@@ -104,13 +108,13 @@ Q_SIGNALS:
 
 protected:
 
-    DynamicShaderObject(DynamicShaderObjectPrivate &d, QObject* parent = nullptr);
+    explicit DynamicShaderObject(DynamicShaderObjectPrivate &d, QObject* parent = nullptr);
 
 private:
 
-    const char* userShaderHeader(QOpenGLShader::ShaderType st) const override;
-    const char* userSample() const override;
-    const char* userPostProcess() const override;
+    const char* userShaderHeader(QOpenGLShader::ShaderType st)  const override;
+    const char* userSample()                                    const override;
+    const char* userPostProcess()                               const override;
 };
 
 } // namespace QtAV

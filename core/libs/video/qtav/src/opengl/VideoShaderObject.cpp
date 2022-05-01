@@ -71,7 +71,7 @@ bool VideoShaderObject::event(QEvent *event)
     if (event->type() != QEvent::DynamicPropertyChange)
         return QObject::event(event);
 
-    QDynamicPropertyChangeEvent *e = static_cast<QDynamicPropertyChangeEvent*>(event);
+    QDynamicPropertyChangeEvent* e = static_cast<QDynamicPropertyChangeEvent*>(event);
 
     for (int shaderType = VertexShader ; shaderType < ShaderTypeCount ; ++shaderType)
     {
@@ -117,11 +117,15 @@ void VideoShaderObject::programReady()
         for (int i = 0 ; i < uniforms.size() ; ++i)
         {
             const Uniform& u = uniforms[i];
-            const int idx = metaObject()->indexOfProperty(u.name.constData());
+            const int idx    = metaObject()->indexOfProperty(u.name.constData());
 
             if (idx < 0)
             {
-                qCDebug(DIGIKAM_QTAV_LOG).noquote() << QString::asprintf("VideoShaderObject has no meta property '%s'. Setting initial value from dynamic property", u.name.constData());
+                qCDebug(DIGIKAM_QTAV_LOG).noquote()
+                    << QString::asprintf("VideoShaderObject has no meta property '%s'. "
+                                         "Setting initial value from dynamic property",
+                                         u.name.constData());
+
                 const_cast<Uniform&>(u).set(property(u.name.constData()));
 
                 continue;
@@ -131,7 +135,9 @@ void VideoShaderObject::programReady()
 
             if (!mp.hasNotifySignal())
             {
-                qCWarning(DIGIKAM_QTAV_LOG_WARN).noquote() << QString::asprintf("VideoShaderObject property '%s' has no signal", mp.name());
+                qCWarning(DIGIKAM_QTAV_LOG_WARN).noquote()
+                     << QString::asprintf("VideoShaderObject property '%s' has no signal",
+                                          mp.name());
 
                 continue;
             }
@@ -157,7 +163,7 @@ void VideoShaderObject::programReady()
 
             qCDebug(DIGIKAM_QTAV_LOG) << "set uniform property: " << u.name << property(u.name.constData());
 
-            propertyChanged(i|(st<<16)); // set the initial value
+            propertyChanged(i | (st << 16)); // set the initial value
         }
     }
 
@@ -173,12 +179,12 @@ public:
     QString pp;
 };
 
-DynamicShaderObject::DynamicShaderObject(QObject *parent)
+DynamicShaderObject::DynamicShaderObject(QObject* parent)
     : VideoShaderObject(*new DynamicShaderObjectPrivate(), parent)
 {
 }
 
-DynamicShaderObject::DynamicShaderObject(DynamicShaderObjectPrivate &d, QObject *parent)
+DynamicShaderObject::DynamicShaderObject(DynamicShaderObjectPrivate& d, QObject* parent)
     : VideoShaderObject(d, parent)
 {
 }
@@ -188,7 +194,7 @@ QString DynamicShaderObject::header() const
     return d_func().header;
 }
 
-void DynamicShaderObject::setHeader(const QString &text)
+void DynamicShaderObject::setHeader(const QString& text)
 {
     DPTR_D(DynamicShaderObject);
 
@@ -208,7 +214,7 @@ QString DynamicShaderObject::sample() const
     return d_func().sampleFunc;
 }
 
-void DynamicShaderObject::setSample(const QString &text)
+void DynamicShaderObject::setSample(const QString& text)
 {
     DPTR_D(DynamicShaderObject);
 
@@ -227,7 +233,7 @@ QString DynamicShaderObject::postProcess() const
     return d_func().pp;
 }
 
-void DynamicShaderObject::setPostProcess(const QString &text)
+void DynamicShaderObject::setPostProcess(const QString& text)
 {
     DPTR_D(DynamicShaderObject);
 
