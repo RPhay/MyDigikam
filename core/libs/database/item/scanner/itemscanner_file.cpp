@@ -279,14 +279,28 @@ bool ItemScanner::scanFromIdenticalFile()
         // Sort by priority, as implemented by custom lessThan()
 
         std::stable_sort(candidates.begin(), candidates.end(), lessThanForIdentity);
+        qlonglong imageId = candidates.first().id;
+
+        // Prefer item found in the same album
+
+        foreach (const ItemScanInfo& info, candidates)
+        {
+            if (info.albumID == d->scanInfo.albumID)
+            {
+                qCDebug(DIGIKAM_DATABASE_LOG) << "Found identical item" << info.itemName
+                                              << "in the same album" << info.albumID;
+                imageId = info.id;
+                break;
+            }
+        }
 
         qCDebug(DIGIKAM_DATABASE_LOG) << "Recognized" << d->fileInfo.filePath()
-                                      << "as identical to item" << candidates.first().id;
+                                      << "as identical to item" << imageId;
 
         // Copy attributes.
         // Todo for the future is to worry about syncing identical files.
 
-        d->commit.copyImageAttributesId = candidates.first().id;
+        d->commit.copyImageAttributesId = imageId;
 
         return true;
     }
