@@ -49,7 +49,8 @@ static const struct RegisterMetaTypes
 class AudioFramePrivate : public FramePrivate
 {
 public:
-    AudioFramePrivate(const AudioFormat& fmt)
+
+    explicit AudioFramePrivate(const AudioFormat& fmt)
         : FramePrivate()
         , format(fmt)
         , samples_per_ch(0)
@@ -316,7 +317,7 @@ AudioFrame AudioFrame::to(const AudioFormat &fmt) const
 
     // TODO: use a pool
 
-    AudioResampler *conv = d->conv;
+    AudioResampler* conv = d->conv;
     QScopedPointer<AudioResampler> c;
 
     if (!conv)

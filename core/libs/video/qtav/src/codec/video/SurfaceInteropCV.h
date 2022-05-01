@@ -130,7 +130,7 @@ class SurfaceInteropCV final : public VideoSurfaceInterop
 {
 public:
 
-    SurfaceInteropCV(const InteropResourcePtr& res)
+    explicit SurfaceInteropCV(const InteropResourcePtr& res)
         : frame_width(0),
           frame_height(0),
           m_resource(res)

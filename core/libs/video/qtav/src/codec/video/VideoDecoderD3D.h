@@ -72,7 +72,7 @@ Q_SIGNALS:
 
 protected:
 
-    VideoDecoderD3D(VideoDecoderD3DPrivate& d);
+    explicit VideoDecoderD3D(VideoDecoderD3DPrivate& d);
 };
 
 struct va_surface_t

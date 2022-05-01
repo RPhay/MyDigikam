@@ -108,17 +108,17 @@ public:
     // channel count can be computed by av_get_channel_layout_nb_channels(chl)
 
     void setInSampleRate(int isr);
-    void setOutSampleRate(int osr); // default is in
+    void setOutSampleRate(int osr);         // default is in
 
     // TODO: enum
 
-    void setInSampleFormat(int isf);  // FFmpeg sample format
-    void setOutSampleFormat(int osf); // FFmpeg sample format. set by user. default is in
+    void setInSampleFormat(int isf);        // FFmpeg sample format
+    void setOutSampleFormat(int osf);       // FFmpeg sample format. set by user. default is in
 
     // TODO: enum. layout will be set to the default layout of the channels if not defined
 
     void setInChannelLayout(qint64 icl);
-    void setOutChannelLayout(qint64 ocl); // default is in
+    void setOutChannelLayout(qint64 ocl);   // default is in
     void setInChannels(int channels);
     void setOutChannels(int channels);
 
@@ -140,7 +140,7 @@ private:
 
 protected:
 
-    AudioResampler(AudioResamplerPrivate& d);
+    explicit AudioResampler(AudioResamplerPrivate& d);
     DPTR_DECLARE(AudioResampler)
 };
 

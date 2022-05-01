@@ -60,7 +60,7 @@ public:
 
     // default network timeout: 30000
 
-    InterruptHandler(AVDemuxer* demuxer, int timeout = 30000)
+    explicit InterruptHandler(AVDemuxer* demuxer, int timeout = 30000)
       : mStatus(0)
       , mTimeout(timeout)
       , mTimeoutAbort(true)
@@ -72,7 +72,7 @@ public:
       , mpDemuxer(demuxer)
     {
         callback = handleTimeout;
-        opaque = this;
+        opaque   = this;
     }
 
     ~InterruptHandler()

@@ -44,7 +44,7 @@ class GLInteropResource final : public InteropResource
 {
 public:
 
-    GLInteropResource(IDirect3DDevice9* d3device);
+    explicit GLInteropResource(IDirect3DDevice9* d3device);
     ~GLInteropResource();
 
     bool map(IDirect3DSurface9* surface, GLuint tex, int frame_w, int frame_h, int) override;

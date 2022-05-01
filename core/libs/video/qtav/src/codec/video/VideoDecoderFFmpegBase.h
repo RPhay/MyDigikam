@@ -47,7 +47,7 @@ public:
 
 protected:
 
-    VideoDecoderFFmpegBase(VideoDecoderFFmpegBasePrivate &d);
+    explicit VideoDecoderFFmpegBase(VideoDecoderFFmpegBasePrivate &d);
 
 private:
 

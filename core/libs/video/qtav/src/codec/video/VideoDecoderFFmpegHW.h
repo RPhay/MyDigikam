@@ -69,7 +69,7 @@ Q_SIGNALS:
 
 protected:
 
-    VideoDecoderFFmpegHW(VideoDecoderFFmpegHWPrivate &d);
+    explicit VideoDecoderFFmpegHW(VideoDecoderFFmpegHWPrivate &d);
 
 private:
 

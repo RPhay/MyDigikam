@@ -166,10 +166,10 @@ public:
     static QVector<int> pixelFormatsFFmpeg();
 
     VideoFormat(PixelFormat format = Format_Invalid);
-    VideoFormat(int formatFF);
-    VideoFormat(QImage::Format fmt);
-    VideoFormat(const QString& name);
-    VideoFormat(const VideoFormat &other);
+    explicit VideoFormat(int formatFF);
+    explicit VideoFormat(QImage::Format fmt);
+    explicit VideoFormat(const QString& name);
+    VideoFormat(const VideoFormat& other);
     ~VideoFormat();
 
     VideoFormat& operator=(const VideoFormat &other);

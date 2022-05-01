@@ -69,7 +69,7 @@ class EGLInteropResource final: public InteropResource
 {
 public:
 
-    EGLInteropResource(IDirect3DDevice9* d3device);
+    explicit EGLInteropResource(IDirect3DDevice9* d3device);
     ~EGLInteropResource();
 
     bool map(IDirect3DSurface9* surface, GLuint tex, int w, int h, int) override;

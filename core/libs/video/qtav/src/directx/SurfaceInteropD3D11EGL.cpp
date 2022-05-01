@@ -68,7 +68,7 @@ public:
     EGLSurface surface;
 };
 
-class EGLInteropResource final: public InteropResource
+class EGLInteropResource final : public InteropResource
 {
 
 public:
