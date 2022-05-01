@@ -42,7 +42,7 @@ public:
 
     /*!
      * \brief generateVertexData
-     * \param rect rect render to. If it's viewport rect, and fit video aspect ratio, ass images created from video frame size needs a scale transform is required when rendering
+     * \param rect render to. If it's viewport rect, and fit video aspect ratio, ass images created from video frame size needs a scale transform is required when rendering
      * \param useIndecies
      * \param maxWidth
      * \return false if current SubImageSet is invalid
@@ -85,7 +85,7 @@ private:
     bool               m_normalized;
     int                m_w, m_h;
     QVector<Attribute> m_attributes;
-    SubImageSet        m_images; // for texture upload parameters
+    SubImageSet        m_images;        ///< for texture upload parameters
     QVector<QRect>     m_rects_upload;
 };
 

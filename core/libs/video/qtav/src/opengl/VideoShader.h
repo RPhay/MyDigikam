@@ -85,15 +85,15 @@ public:
      * Vertex shader in: a_Position, a_TexCoordsN (see attributeNames())
      * Vertex shader out: v_TexCoordsN
      */
-    virtual const char* vertexShader()   const;
-    virtual const char* fragmentShader() const;
+    virtual const char* vertexShader()          const;
+    virtual const char* fragmentShader()        const;
 
     /*!
      * \brief initialize
      * \param shaderProgram: 0 means create a shader program internally. if not linked, vertex/fragment shader will be added and linked
      */
     virtual void initialize(QOpenGLShaderProgram* shaderProgram = nullptr);
-    int uniformLocation(const char* name) const;
+    int uniformLocation(const char* name)       const;
 
     /*!
      * \brief textureLocationCount
@@ -101,19 +101,19 @@ public:
      * 1: packed RGB
      * number of channels: yuv or plannar RGB
      */
-    int textureLocationCount()      const;
-    int textureLocation(int index)  const;
-    int matrixLocation()            const;
-    int colorMatrixLocation()       const;
-    int opacityLocation()           const;
-    int channelMapLocation()        const;
-    int texelSizeLocation()         const;
-    int textureSizeLocation()       const;
-    VideoFormat videoFormat()       const;
+    int textureLocationCount()                  const;
+    int textureLocation(int index)              const;
+    int matrixLocation()                        const;
+    int colorMatrixLocation()                   const;
+    int opacityLocation()                       const;
+    int channelMapLocation()                    const;
+    int texelSizeLocation()                     const;
+    int textureSizeLocation()                   const;
+    VideoFormat videoFormat()                   const;
 
     // defalut is GL_TEXTURE_2D
 
-    int textureTarget() const;
+    int textureTarget()                         const;
     QOpenGLShaderProgram* program();
 
     /*!
@@ -165,7 +165,7 @@ private:
      * Call program()->setUniformValue(...) here
      * You can upload a texture for blending in userPostProcess(),
      * or LUT texture used by userSample() or userPostProcess() etc.
-     * \return false if use use setUserUniformValue(Uniform& u), true if call program()->setUniformValue() here
+     * \return false if use setUserUniformValue(Uniform& u), true if call program()->setUniformValue() here
      */
     virtual bool setUserUniformValues()
     {
