@@ -220,6 +220,7 @@ bool GLXInteropResource::map(const surface_ptr& surface, GLuint tex, int w, int 
     if (!glx)
     {
         qCWarning(DIGIKAM_QTAV_LOG_WARN).noquote() << QString::asprintf("Fail to create vaapi glx surface");
+
         return false;
     }
 
@@ -284,6 +285,7 @@ protected:
         if (!pixmap)
         {
             qCWarning(DIGIKAM_QTAV_LOG_WARN).noquote() << QString::asprintf("X11InteropResource could not create pixmap");
+
             return 0;
         }
 
@@ -562,6 +564,7 @@ bool X11InteropResource::ensurePixmaps(int w, int h)
     if (!x11)
     {
         qCWarning(DIGIKAM_QTAV_LOG_WARN).noquote() << QString::asprintf("no EGL and GLX interop (TFP) support");
+
         return false;
     }
 
@@ -584,6 +587,7 @@ bool X11InteropResource::map(const surface_ptr& surface, GLuint tex, int w, int 
     if (surface->width() <= 0 || surface->height() <= 0)
     {
         qCWarning(DIGIKAM_QTAV_LOG_WARN).noquote() << QString::asprintf("invalid surface size");
+
         return false;
     }
 
@@ -595,9 +599,9 @@ bool X11InteropResource::map(const surface_ptr& surface, GLuint tex, int w, int 
     // FIXME: invalid surface at the first time vaPutSurface is called. If return false, vaPutSurface will always fail, why?
 
     VAWARN(vaPutSurface(surface->vadisplay(), surface->get(), x11->pixmap
-                                , 0, 0, w, h
-                                , 0, 0, w, h
-                                , nullptr, 0, VA_FRAME_PICTURE | surface->colorSpace())
+                        , 0, 0, w, h
+                        , 0, 0, w, h
+                        , nullptr, 0, VA_FRAME_PICTURE | surface->colorSpace())
     );
 
     XSync((::Display*)xdisplay, False);

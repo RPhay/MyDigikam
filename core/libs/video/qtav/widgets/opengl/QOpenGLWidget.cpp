@@ -45,7 +45,7 @@ class QOpenGLWidgetPaintDevice : public QOpenGLPaintDevice
 {
 public:
 
-    QOpenGLWidgetPaintDevice(QOpenGLWidget *widget)
+    explicit QOpenGLWidgetPaintDevice(QOpenGLWidget *widget)
         : QOpenGLPaintDevice()
         , w(widget)
     {
@@ -177,6 +177,7 @@ void QOpenGLWidget::resizeEvent(QResizeEvent *e)
     if (e->size().isEmpty())
     {
         m_fakeHidden = true;
+
         return;
     }
 

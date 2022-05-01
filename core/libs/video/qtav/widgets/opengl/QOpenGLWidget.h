@@ -54,11 +54,11 @@ public:
     explicit QOpenGLWidget(QWidget* parent = 0, Qt::WindowFlags f = Qt::WindowFlags(Qt::Widget));
     virtual ~QOpenGLWidget();
     void setFormat(const QSurfaceFormat &format);
-    QSurfaceFormat format() const;
-    bool isValid() const;
+    QSurfaceFormat format()                   const;
+    bool isValid()                            const;
     void makeCurrent();
     void doneCurrent();
-    QOpenGLContext *context() const;
+    QOpenGLContext *context()                 const;
 
 protected:
 

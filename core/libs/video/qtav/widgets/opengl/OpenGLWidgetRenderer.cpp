@@ -40,7 +40,7 @@ class OpenGLWidgetRendererPrivate : public OpenGLRendererBasePrivate
 {
 public:
 
-    OpenGLWidgetRendererPrivate(QPaintDevice *pd)
+    explicit OpenGLWidgetRendererPrivate(QPaintDevice *pd)
         : OpenGLRendererBasePrivate(pd)
     {
     }
@@ -99,7 +99,7 @@ void OpenGLWidgetRenderer::resizeGL(int w, int h)
 void OpenGLWidgetRenderer::resizeEvent(QResizeEvent *e)
 {
     onResizeEvent(e->size().width(), e->size().height());
-    QOpenGLWidget::resizeEvent(e); // will call resizeGL(). TODO:will call paintEvent()?
+    QOpenGLWidget::resizeEvent(e); // will call resizeGL(). TODO: will call paintEvent()?
 }
 
 void OpenGLWidgetRenderer::showEvent(QShowEvent* /*e*/)

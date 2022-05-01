@@ -125,7 +125,7 @@ class ring : public ring_api<T, std::vector<T> >
 
 public:
 
-    ring(size_t capacity)
+    explicit ring(size_t capacity)
         : ring_api<T, std::vector<T> >()
     {
         m_data.reserve(capacity);

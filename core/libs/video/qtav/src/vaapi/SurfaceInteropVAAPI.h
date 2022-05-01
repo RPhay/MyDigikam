@@ -86,7 +86,7 @@ class SurfaceInteropVAAPI final : public VideoSurfaceInterop
 {
 public:
 
-    SurfaceInteropVAAPI(const InteropResourcePtr& res)
+    explicit SurfaceInteropVAAPI(const InteropResourcePtr& res)
         : frame_width(0),
           frame_height(0),
           m_resource(res)
@@ -103,20 +103,20 @@ protected:
 
 private:
 
-    int frame_width, frame_height;
+    int                frame_width, frame_height;
 
     // NOTE: must ensure va-x11/va-glx is unloaded after all va calls(don't know why, but it's true), for example vaTerminate(), to avoid crash
     // so declare InteropResourcePtr first then surface_ptr. InteropResource (va-xxx.so) will be destroyed later than surface_t (vaTerminate())
     // also call vaInitialize() before vaTerminate() can avoid such crashes. Don't know why.
 
     InteropResourcePtr m_resource;
-    surface_ptr m_surface;
+    surface_ptr        m_surface;
 };
 
 // load/resolve symbols only once in decoder and pass a VAAPI_XXX ptr or use pool
 
 class GLXInteropResource final: public InteropResource,
-                                       protected VAAPI_GLX
+                                protected VAAPI_GLX
 {
 public:
 
@@ -131,7 +131,7 @@ private:
 class X11;
 
 class X11InteropResource final: public InteropResource,
-                                       protected VAAPI_X11
+                                protected VAAPI_X11
 {
 public:
 

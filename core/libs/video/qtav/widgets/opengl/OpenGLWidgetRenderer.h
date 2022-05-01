@@ -67,36 +67,38 @@ class QTAV_WIDGETS_EXPORT OpenGLWidgetRenderer : public QOpenGLWidget,
 
 public:
 
-    explicit OpenGLWidgetRenderer(QWidget* parent = nullptr, Qt::WindowFlags f = Qt::WindowFlags(Qt::Widget));
-    virtual VideoRendererId id() const override;
+    explicit OpenGLWidgetRenderer(QWidget* parent = nullptr,
+                                  Qt::WindowFlags f = Qt::WindowFlags(Qt::Widget));
 
-    virtual QWidget* widget() override
+    virtual VideoRendererId id()          const override;
+
+    virtual QWidget* widget()                   override
     {
         return this;
     }
 
 Q_SIGNALS:
 
-    void sourceAspectRatioChanged(qreal value) override final;
-    void regionOfInterestChanged() override;
-    void outAspectRatioChanged() override;
-    void outAspectRatioModeChanged() override;
-    void brightnessChanged(qreal value) override;
-    void contrastChanged(qreal) override;
-    void hueChanged(qreal) override;
-    void saturationChanged(qreal) override;
-    void orientationChanged() override;
-    void videoRectChanged() override;
-    void videoFrameSizeChanged() override;
-    void backgroundColorChanged() override;
+    void sourceAspectRatioChanged(qreal value)  override final;
+    void regionOfInterestChanged()              override;
+    void outAspectRatioChanged()                override;
+    void outAspectRatioModeChanged()            override;
+    void brightnessChanged(qreal value)         override;
+    void contrastChanged(qreal)                 override;
+    void hueChanged(qreal)                      override;
+    void saturationChanged(qreal)               override;
+    void orientationChanged()                   override;
+    void videoRectChanged()                     override;
+    void videoFrameSizeChanged()                override;
+    void backgroundColorChanged()               override;
 
 protected:
 
-    virtual void initializeGL() override;
-    virtual void paintGL() override;
-    virtual void resizeGL(int w, int h) override;
-    virtual void resizeEvent(QResizeEvent *e) override;
-    virtual void showEvent(QShowEvent *) override;
+    virtual void initializeGL()                 override;
+    virtual void paintGL()                      override;
+    virtual void resizeGL(int w, int h)         override;
+    virtual void resizeEvent(QResizeEvent *e)   override;
+    virtual void showEvent(QShowEvent *)        override;
 };
 
 typedef OpenGLWidgetRenderer VideoRendererOpenGLWidget;

@@ -158,8 +158,16 @@ class DPtrInterface
 
 public:
 
-    DPtrInterface(PVT* d):pvt(d)   {}
-    DPtrInterface():pvt(new PVT()) {}
+    explicit DPtrInterface(PVT* d)
+        : pvt(d)
+    {
+    }
+
+    DPtrInterface()
+        : pvt(new PVT())
+    {
+    }
+
     ~DPtrInterface()
     {
         if (pvt)

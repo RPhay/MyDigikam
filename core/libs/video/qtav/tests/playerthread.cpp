@@ -38,7 +38,7 @@ class Thread : public QThread
 {
 public:
 
-    Thread(AVPlayer *player)
+    explicit Thread(AVPlayer* player)
       : QThread(nullptr)
       , mpPlayer(player)
     {
@@ -49,6 +49,7 @@ protected:
     virtual void run()
     {
         //mpPlayer->play();
+
         exec();
     }
 
