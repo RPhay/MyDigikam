@@ -88,13 +88,16 @@ public:
     {
         QMutexLocker lock(&mutex);
         Q_UNUSED(lock);
+
         loaded        = false;
         processor     = nullptr;
         update_text   = true;
         update_image  = true;
         t             = 0;
+
         frame         = SubtitleFrame();
         frames.clear();
+
         itf           = frames.begin();
         current_count = 0;
     }
@@ -163,7 +166,7 @@ public:
     QString                         fonts_dir;
 };
 
-Subtitle::Subtitle(QObject *parent)
+Subtitle::Subtitle(QObject* parent)
     : QObject(parent),
       priv(new Private())
 {
@@ -231,17 +234,20 @@ void Subtitle::setEngines(const QStringList& value)
             if (!(*it))
             {
                 it = priv->processors.erase(it);
+
                 continue;
             }
 
             if ((*it)->name() != e)
             {
                 ++it;
+
                 continue;
             }
 
             sps.append(*it);
             it = priv->processors.erase(it);
+
             break;
         }
 
@@ -493,7 +499,7 @@ void Subtitle::setFontFileForced(bool value)
 
 void Subtitle::load()
 {
-    SubtitleProcessor *old_processor = priv->processor;
+    SubtitleProcessor* old_processor = priv->processor;
     priv->reset();
 
     Q_EMIT contentChanged(); // notify user to update subtitle
@@ -619,7 +625,7 @@ void Subtitle::loadAsync()
     {
     public:
 
-        Loader(Subtitle *sub)
+        explicit Loader(Subtitle* sub)
             : m_sub(sub)
         {
         }

@@ -27,9 +27,12 @@
 // C++ includes
 
 #include <algorithm>
+
+// Qt includes
+
 #include <QAtomicInt>
 
-/*
+/**
  * a simple thread safe shared ptr. QSharedPointer does not provide a way to get how many the ref count is.
  */
 
@@ -138,7 +141,7 @@ public:
     }
 
     template <typename U>
-    SharedPtr(const SharedPtr<U>& other)
+    explicit SharedPtr(const SharedPtr<U>& other)
     {
         m_impl = other.m_impl;
         m_impl->ref();

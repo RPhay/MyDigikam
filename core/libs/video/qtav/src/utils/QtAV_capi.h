@@ -232,20 +232,37 @@ enum
 class dso
 {
     void* handle;
-    char full_name[256];
+    char  full_name[256];
+
     dso(const dso&);
     dso& operator=(const dso&);
 
 public:
 
-    dso() : handle(nullptr)                         {                               }
-    virtual ~dso()                            { unload();                     }
+    dso()
+        : handle(nullptr)
+    {
+    }
+
+    virtual ~dso()
+    {
+        unload();
+    }
+
     inline void setFileName(const char* name);
     inline void setFileNameAndVersion(const char* name, int ver);
     inline bool load();
     inline bool unload();
-    bool isLoaded() const                     { return !!handle;              }
-    virtual void* resolve(const char* symbol) { return resolve(symbol, true); }
+
+    bool isLoaded() const
+    {
+        return !!handle;
+    }
+
+    virtual void* resolve(const char* symbol)
+    {
+        return resolve(symbol, true);
+    }
 
 protected:
 
@@ -518,7 +535,7 @@ template <class DLL> class dll_helper
 
 public:
 
-    dll_helper(const char* names[], const int versions[] = kDefaultVersions)
+    explicit dll_helper(const char* names[], const int versions[] = kDefaultVersions)
     {
         static bool is_1st = true;
 

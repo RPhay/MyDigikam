@@ -94,7 +94,7 @@ class QTAV_EXPORT Subtitle : public QObject
 
 public:
 
-    explicit Subtitle(QObject *parent = nullptr);
+    explicit Subtitle(QObject* parent = nullptr);
     virtual ~Subtitle();
 
     /*!
