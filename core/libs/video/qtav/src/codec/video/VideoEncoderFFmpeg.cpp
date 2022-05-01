@@ -269,7 +269,7 @@ bool VideoEncoderFFmpegPrivate::open()
             hwfs->format = hwfmt;       // must the same as avctx->pix_fmt
             hwfs->sw_format = sw_fmt;   // if it's not set, vaapi will choose the last valid_sw_formats, but that's wrong for vaGetImage/DeriveImage. nvenc always need sw_format
 
-            // hw upload parameters. encoder's hwframes is just for parameter checking, will never be intialized, so we allocate an individual one.
+            // hw upload parameters. encoder's hwframes is just for parameter checking, will never be initialized, so we allocate an individual one.
 
             hwframes_ref = av_hwframe_ctx_alloc(hw_device_ctx);
 

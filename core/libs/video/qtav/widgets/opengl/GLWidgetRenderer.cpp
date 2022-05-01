@@ -358,7 +358,7 @@ public:
 
 // http://www.opengl.org/wiki/GLSL#Error_Checking       // krazy:exclude=insecurenet
 
-// TODO: use QGLShaderProgram for better compatiblity
+// TODO: use QGLShaderProgram for better compatibility
 
 GLuint GLWidgetRendererPrivate::loadShader(GLenum shaderType, const char* pSource)
 {

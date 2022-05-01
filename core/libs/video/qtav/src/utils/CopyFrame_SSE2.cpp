@@ -248,7 +248,7 @@ void* memcpy_sse2(void* dst, const void* src, size_t size)
 
         pSrc += kRegsInLoop;
 
-        // _mm_store_si128 emit the SSE2 intruction MOVDQA (aligned store)
+        // _mm_store_si128 emit the SSE2 instruction MOVDQA (aligned store)
         // TODO: why not _mm_stream_si128? it works
 
         _mm_store_si128(pTrg     , xmm0);

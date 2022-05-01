@@ -158,7 +158,7 @@ public Q_SLOTS:
     void pause(bool p);
 
     /**
-     * reset clock intial value and external clock parameters (and stop timer). keep speed() and isClockAuto()
+     * reset clock initial value and external clock parameters (and stop timer). keep speed() and isClockAuto()
      */
     void reset();
 
