@@ -338,13 +338,13 @@ public:
             return true;
 
         destroyXVImage();
-        qCDebug(DIGIKAM_QTAVWIDGETS_LOG).noquote() << QString::asprintf("port count: %d", num_adaptors);
+        qCDebug(DIGIKAM_QTAVWIDGETS_LOG) << "port count:" << num_adaptors;
 
         for (uint i = 0 ; i < num_adaptors ; ++i)
         {
             if ((xv_adaptor_info[i].type & (XvInputMask | XvImageMask)) == (XvInputMask | XvImageMask))
             {
-                for (XvPortID p = xv_adaptor_info[i].base_id; p < xv_adaptor_info[i].base_id + xv_adaptor_info[i].num_ports; ++p)
+                for (XvPortID p = xv_adaptor_info[i].base_id ; p < xv_adaptor_info[i].base_id + xv_adaptor_info[i].num_ports ; ++p)
                 {
                     qCDebug(DIGIKAM_QTAVWIDGETS_LOG) << "XvAdaptorInfo:" << xv_adaptor_info[i].name;
 
@@ -475,7 +475,7 @@ bool XVRendererPrivate::XvSetPortAttributeIfExists(const char *key, int value)
         return false;
     }
 
-    for (int i = 0; i < nb_attributes; ++i)
+    for (int i = 0 ; i < nb_attributes ; ++i)
     {
         const XvAttribute &attribute = ((XvAttribute*)attributes)[i];
 
@@ -720,6 +720,7 @@ void XVRenderer::drawFrame()
                           , roi.x(), roi.y(), roi.width(), roi.height()
                           , d.out_rect.x(), d.out_rect.y(), d.out_rect.width(), d.out_rect.height()
                           , false /*true: send event*/);
+
             XSync(d.display, False); // update immediately
 
             return;
@@ -743,6 +744,7 @@ void XVRenderer::resizeEvent(QResizeEvent *e)
     DPTR_D(XVRenderer);
     d.update_background = true;
     resizeRenderer(e->size());
+
     update(); // update background
 }
 

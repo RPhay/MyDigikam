@@ -41,12 +41,12 @@ VideoPreviewWidget::VideoPreviewWidget(QWidget* parent)
     , m_auto_display(false) // set to false initially to trigger connections in setAutoDisplayFrame() below -- will default to true
     , m_extractor(new VideoFrameExtractor(this))
     , m_out(new VideoOutput(VideoRendererId_Widget, this))
-
-    // FIXME: opengl may crash, so use software renderer here
 {
+    // FIXME: opengl may crash, so use software renderer here
+
     setWindowFlags(Qt::FramelessWindowHint);
 
-    Q_ASSERT_X(m_out->widget(), "VideoPreviewWidget()", "widget based renderer is not found");
+    Q_ASSERT_X(m_out->widget(), "VideoPreviewWidget()", "widget based renderer is not found");       // cppcheck-suppress assertWithSideEffect
 
     m_out->widget()->setParent(this);
 

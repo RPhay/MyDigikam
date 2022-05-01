@@ -103,7 +103,7 @@ SubtitleProcessorId SubtitleProcessorFFmpeg::id() const
 
 QString SubtitleProcessorFFmpeg::name() const
 {
-    return QLatin1String(kName);//SubtitleProcessorFactory::name(id());
+    return QLatin1String(kName); // SubtitleProcessorFactory::name(id());
 }
 
 QStringList ffmpeg_supported_sub_extensions_by_codec()
@@ -133,16 +133,16 @@ QStringList ffmpeg_supported_sub_extensions_by_codec()
 
 #if AVFORMAT_STATIC_REGISTER
 
-        const AVInputFormat *i = nullptr;
-        void* it2 = nullptr;
+        const AVInputFormat* i = nullptr;
+        void* it2              = nullptr;
 
         while ((i = av_demuxer_iterate(&it2)))
         {
 
 #else
 
-        av_register_all(); // MUST register all input/output formats
-        AVInputFormat *i = nullptr;
+        av_register_all();              // MUST register all input/output formats
+        AVInputFormat* i = nullptr;
 
         while ((i = av_iformat_next(i)))
         {
@@ -169,6 +169,7 @@ QStringList ffmpeg_supported_sub_extensions_by_codec()
         if (!i)
         {
             //qCDebug(DIGIKAM_QTAV_LOG).noquote() << QString::asprintf("codec name '%s' is not found in AVInputFormat, just append codec name", c->name);
+
             //exts.append(c->name);
         }
     }
@@ -441,7 +442,7 @@ SubtitleFrame SubtitleProcessorFFmpeg::processLine(const QByteArray& data, qreal
 {
     //qCDebug(DIGIKAM_QTAV_LOG) << "line: " << data;
 
-    if (!codec_ctx)
+    if (!codec_ctx)                                 // cppcheck-suppress identicalConditionAfterEarlyExit
     {
         return SubtitleFrame();
     }
@@ -451,7 +452,7 @@ SubtitleFrame SubtitleProcessorFFmpeg::processLine(const QByteArray& data, qreal
     // libav-9: packet data from demuxer contains time and but duration is 0, must decode
     // Always decode the data because it may contain styles
 
-    if (   false && duration > 0 && (!codec_ctx
+    if (   false && duration > 0 && (!codec_ctx     // cppcheck-suppress identicalConditionAfterEarlyExit
 
 #if QTAV_USE_FFMPEG(LIBAVCODEC)
 
@@ -466,10 +467,10 @@ SubtitleFrame SubtitleProcessorFFmpeg::processLine(const QByteArray& data, qreal
         f.begin = pts;
         f.end   = pts + duration;
 
-        if (data.startsWith(QByteArray("Dialogue:"))) // e.g. decoding embedded subtitles
+        if (data.startsWith(QByteArray("Dialogue:")))                   // e.g. decoding embedded subtitles
             f.text = PlainText::fromAss(data.constData());
         else
-            f.text = QString::fromUtf8(data.constData(), data.size()); //utf-8 is required
+            f.text = QString::fromUtf8(data.constData(), data.size());  // utf-8 is required
 
         return f;
     }
@@ -488,7 +489,7 @@ SubtitleFrame SubtitleProcessorFFmpeg::processLine(const QByteArray& data, qreal
 
     // no codec_ctx for internal sub
 
-    const double unit = 1.0/av_q2d(codec_ctx->time_base); //time_base is deprecated, use framerate since 17085a0, check FF_API_AVCTX_TIMEBASE
+    const double unit = 1.0/av_q2d(codec_ctx->time_base); // time_base is deprecated, use framerate since 17085a0, check FF_API_AVCTX_TIMEBASE
     packet.pts        = pts * unit;
     packet.duration   = duration * unit;
     AVSubtitle sub;
