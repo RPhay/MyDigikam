@@ -92,7 +92,7 @@ private:
 
 protected:
 
-    OpenGLRendererBase(OpenGLRendererBasePrivate &d);
+    explicit OpenGLRendererBase(OpenGLRendererBasePrivate& d);
 };
 
 } // namespace QtAV

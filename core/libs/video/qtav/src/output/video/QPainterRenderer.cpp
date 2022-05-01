@@ -66,7 +66,7 @@ bool QPainterRenderer::preparePixmap(const VideoFrame &frame)
         if (imgfmt == QImage::Format_Invalid)
         {
             d.video_frame = frame.to(VideoFormat::Format_RGB32);
-            imgfmt = d.video_frame.imageFormat();
+            imgfmt        = d.video_frame.imageFormat();
         }
         else
         {
@@ -83,7 +83,11 @@ bool QPainterRenderer::preparePixmap(const VideoFrame &frame)
 
     // DO NOT use frameData().data() because it's temp ptr while d.image does not deep copy the data
 
-    QImage image = QImage((uchar*)d.video_frame.constBits(), d.video_frame.width(), d.video_frame.height(), d.video_frame.bytesPerLine(), imgfmt);
+    QImage image = QImage((uchar*)d.video_frame.constBits(),
+                          d.video_frame.width(),
+                          d.video_frame.height(),
+                          d.video_frame.bytesPerLine(),
+                          imgfmt);
 
     if (swapRGB)
         image = image.rgbSwapped();
@@ -164,17 +168,17 @@ void QPainterRenderer::drawFrame()
     // scale ratio is different from gl based renderers. gl always fill the whole rect
 
     d.painter->save();
-    d.painter->translate(rendererWidth()/2, rendererHeight()/2);
+    d.painter->translate(rendererWidth() / 2, rendererHeight() / 2);
 
     // TODO: why rotate then scale gives wrong result?
 
     if (d.rotation() % 180)
-        d.painter->scale((qreal)d.out_rect.width()/(qreal)rendererHeight(), (qreal)d.out_rect.height()/(qreal)rendererWidth());
+        d.painter->scale((qreal)d.out_rect.width() / (qreal)rendererHeight(), (qreal)d.out_rect.height() / (qreal)rendererWidth());
     else
-        d.painter->scale((qreal)d.out_rect.width()/(qreal)rendererWidth(), (qreal)d.out_rect.height()/(qreal)rendererHeight());
+        d.painter->scale((qreal)d.out_rect.width() / (qreal)rendererWidth(),  (qreal)d.out_rect.height() / (qreal)rendererHeight());
 
     d.painter->rotate(d.rotation());
-    d.painter->translate(-rendererWidth()/2, -rendererHeight()/2);
+    d.painter->translate(-rendererWidth() / 2, -rendererHeight() / 2);
     d.painter->drawPixmap(QRect(0, 0, rendererWidth(), rendererHeight()), d.pixmap, roi);
     d.painter->restore();
 }

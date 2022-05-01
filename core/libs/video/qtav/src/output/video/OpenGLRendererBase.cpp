@@ -36,9 +36,9 @@ OpenGLRendererBasePrivate::OpenGLRendererBasePrivate(QPaintDevice* pd)
     : painter(new QPainter())
     , frame_changed(false)
 {
-    filter_context = VideoFilterContext::create(VideoFilterContext::QtPainter);
+    filter_context               = VideoFilterContext::create(VideoFilterContext::QtPainter);
     filter_context->paint_device = pd;
-    filter_context->painter = painter;
+    filter_context->painter      = painter;
 }
 
 OpenGLRendererBasePrivate::~OpenGLRendererBasePrivate()
@@ -53,7 +53,8 @@ OpenGLRendererBasePrivate::~OpenGLRendererBasePrivate()
 void OpenGLRendererBasePrivate::setupAspectRatio()
 {
     matrix.setToIdentity();
-    matrix.scale((GLfloat)out_rect.width()/(GLfloat)renderer_width, (GLfloat)out_rect.height()/(GLfloat)renderer_height, 1);
+    matrix.scale((GLfloat)out_rect.width()  / (GLfloat)renderer_width,
+                 (GLfloat)out_rect.height() / (GLfloat)renderer_height, 1);
 
     if (rotation())
         matrix.rotate(rotation(), 0, 0, 1); // Z axis
@@ -84,7 +85,7 @@ bool OpenGLRendererBase::receiveFrame(const VideoFrame& frame)
 {
     DPTR_D(OpenGLRendererBase);
 
-    d.video_frame = frame;
+    d.video_frame   = frame;
     d.frame_changed = true;
     updateUi(); // can not call updateGL() directly because no event and paintGL() will in video thread
 
@@ -127,7 +128,7 @@ void OpenGLRendererBase::onInitializeGL()
 
 #endif
 
-    QOpenGLContext *ctx = const_cast<QOpenGLContext*>(QOpenGLContext::currentContext()); //qt4 returns const
+    QOpenGLContext* ctx = const_cast<QOpenGLContext*>(QOpenGLContext::currentContext()); //qt4 returns const
     d.glv.setOpenGLContext(ctx);
 }
 

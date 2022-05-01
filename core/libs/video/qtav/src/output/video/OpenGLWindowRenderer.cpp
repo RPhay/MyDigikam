@@ -42,13 +42,13 @@ class OpenGLWindowRendererPrivate : public OpenGLRendererBasePrivate
 {
 public:
 
-    OpenGLWindowRendererPrivate(QPaintDevice* pd)
+    explicit OpenGLWindowRendererPrivate(QPaintDevice* pd)
         : OpenGLRendererBasePrivate(pd)
     {
     }
 };
 
-OpenGLWindowRenderer::OpenGLWindowRenderer(UpdateBehavior updateBehavior, QWindow *parent)
+OpenGLWindowRenderer::OpenGLWindowRenderer(UpdateBehavior updateBehavior, QWindow* parent)
     : QOpenGLWindow(updateBehavior, parent)
     , OpenGLRendererBase(*new OpenGLWindowRendererPrivate(this))
 {
@@ -76,15 +76,16 @@ void OpenGLWindowRenderer::resizeGL(int w, int h)
     onResizeGL(w, h);
 }
 
-void OpenGLWindowRenderer::resizeEvent(QResizeEvent *e)
+void OpenGLWindowRenderer::resizeEvent(QResizeEvent* e)
 {
     onResizeEvent(e->size().width(), e->size().height());
-    QOpenGLWindow::resizeEvent(e); // will call resizeGL(). TODO:will call paintEvent()?
+    QOpenGLWindow::resizeEvent(e);                          // will call resizeGL(). TODO: will call paintEvent()?
 }
 
-void OpenGLWindowRenderer::showEvent(QShowEvent *)
+void OpenGLWindowRenderer::showEvent(QShowEvent*)
 {
     onShowEvent();
     resizeGL(width(), height());
 }
+
 } // namespace QtAV

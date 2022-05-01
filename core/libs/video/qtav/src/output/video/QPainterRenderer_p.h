@@ -43,7 +43,7 @@ class QTAV_PRIVATE_EXPORT QPainterRendererPrivate : public VideoRendererPrivate
 public:
 
     QPainterRendererPrivate()
-      : painter(nullptr)
+        : painter(nullptr)
     {
     }
 
