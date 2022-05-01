@@ -58,29 +58,39 @@ public:
 
     AndroidIO();
 
-    QString name() const override { return QLatin1String(kName);}
-
-    const QStringList& protocols() const override
+    QString name()                                      const override
     {
-        static QStringList p = QStringList() << QStringLiteral("content") << QStringLiteral("android.resource"); // "file:" is supported too but we use QFile
+        return QLatin1String(kName);
+    }
+
+    const QStringList& protocols()                      const override
+    {
+        static QStringList p = QStringList() << QStringLiteral("content")
+                                             << QStringLiteral("android.resource");
+
+        // "file:" is supported too but we use QFile
+
         return p;
     }
 
-    virtual bool isSeekable() const override;
-    virtual qint64 read(char *data, qint64 maxSize) override;
-    virtual bool seek(qint64 offset, int from) override;
-    virtual qint64 position() const override;
+    virtual bool isSeekable()                           const override;
+    virtual qint64 read(char *data, qint64 maxSize)           override;
+    virtual bool seek(qint64 offset, int from)                override;
+    virtual qint64 position()                           const override;
 
     /*!
      * \brief size
      * \return <=0 if not support
      */
-    virtual qint64 size() const override { return qt_file.size();}
+    virtual qint64 size()                               const override
+    {
+        return qt_file.size();
+    }
 
 protected:
 
-    AndroidIO(AndroidIOPrivate &d);
-    void onUrlChanged() override;
+    explicit AndroidIO(AndroidIOPrivate &d);
+    void onUrlChanged()                                       override;
 
 private:
 
@@ -90,6 +100,7 @@ private:
 };
 
 typedef AndroidIO MediaIOAndroid;
+
 FACTORY_REGISTER(MediaIO, Android, kName)
 
 AndroidIO::AndroidIO()
@@ -113,7 +124,7 @@ bool AndroidIO::seek(qint64 offset, int from)
     if      (from == SEEK_END)
         offset = qt_file.size() - offset;
     else if (from == SEEK_CUR)
-        offset = qt_file.pos() + offset;
+        offset = qt_file.pos()  + offset;
 
     return qt_file.seek(offset);
 }

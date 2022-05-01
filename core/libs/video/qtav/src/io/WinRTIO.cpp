@@ -65,7 +65,7 @@ namespace QtAV
 {
 
 static const MediaIOId MediaIOId_WinRT = mkid::id32base36_5<'W','i','n','R','T'>::value;
-static const char kName[] = "WinRT";
+static const char kName[]              = "WinRT";
 
 class WinRTIOPrivate;
 
@@ -104,7 +104,7 @@ public:
 
 protected:
 
-    WinRTIO(WinRTIOPrivate &d);
+    explicit WinRTIO(WinRTIOPrivate &d);
     void onUrlChanged()                                           override;
 
 private:
@@ -278,6 +278,7 @@ void WinRTIO::openFromStorage(IStorageItem *item)
 
     ComPtr<IStorageFile> file;
     COM_ENSURE(d.item.As(&file));
+
     open(file);     // krazy:exclude=syscalls
 }
 
@@ -298,6 +299,7 @@ void WinRTIO::openFromPath(const QString &path)
     COM_ENSURE(fileFactory->GetFileFromPathAsync(p.Get(), &op));
     ComPtr<IStorageFile> file;
     COM_ENSURE(QWinRTFunctions::await(op, file.GetAddressOf()));
+
     open(file);      // krazy:exclude=syscalls
 }
 

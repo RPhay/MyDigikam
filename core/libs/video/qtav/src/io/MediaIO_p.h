@@ -97,7 +97,7 @@ Q_SIGNALS:
 
 protected:
 
-    QIODeviceIO(QIODeviceIOPrivate &d);
+    explicit QIODeviceIO(QIODeviceIOPrivate &d);
 };
 
 // -------------------------------------------------------------------
