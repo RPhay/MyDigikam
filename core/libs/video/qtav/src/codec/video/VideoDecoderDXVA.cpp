@@ -450,7 +450,7 @@ void VideoDecoderDXVAPrivate::destroyDevice()
 
 QVector<GUID> VideoDecoderDXVAPrivate::getSupportedCodecs() const
 {
-    /* Retreive supported modes from the decoder service */
+    /* Retrieve supported modes from the decoder service */
 
     UINT input_count = 0;
     GUID* input_list = nullptr;

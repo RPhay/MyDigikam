@@ -82,6 +82,8 @@ Code review with plenty of fixes and improvements. See the list of tasks below.
 
     - Use Clang-tidy to patch code with nullptr instead NULL or 0.
 
+    - Apply fixes for Krazy static analyzer.
+
 * Under Progress:
 
     - Fix comments formating everywhere.
@@ -91,8 +93,6 @@ Code review with plenty of fixes and improvements. See the list of tasks below.
     - Fix coding style (brackets, tabs to spaces, indents, etc.).
 
     - Apply fixes for cppcheck static analyzer.
-
-    - Apply fixes for Krazy static analyzer.
 
     - Apply fixes for Clang-Scan static analyzer.
 

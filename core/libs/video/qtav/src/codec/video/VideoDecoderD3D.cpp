@@ -175,7 +175,7 @@ struct dxva2_mode_t
     const int*  profiles;
 };
 
-/* XXX Prefered modes must come first */
+/* XXX Preferred modes must come first */
 
 static const dxva2_mode_t dxva2_modes[] =
 {
@@ -304,7 +304,7 @@ bool checkProfile(const dxva2_mode_t *mode, int profile)
     return false;
 }
 
-/* XXX Prefered format must come first */
+/* XXX Preferred format must come first */
 
 // 16-bit: https://msdn.microsoft.com/en-us/library/windows/desktop/bb970578(v=vs.85).aspx
 

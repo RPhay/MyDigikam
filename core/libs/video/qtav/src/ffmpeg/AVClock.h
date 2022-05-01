@@ -141,7 +141,7 @@ Q_SIGNALS:
     void paused();      // equals to paused(true)
     void resumed();     // equals to paused(false)
     void started();
-    void resetted();
+    void resetted();    // krazy:exclude=spelling
 
 public Q_SLOTS:
 
