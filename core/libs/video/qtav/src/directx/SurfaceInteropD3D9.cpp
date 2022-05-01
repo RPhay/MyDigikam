@@ -219,7 +219,7 @@ void* SurfaceInterop::mapToHost(const VideoFormat &format, void *handle, int pla
     };
 
     D3DLOCKED_RECT lock;
-    ScopedD3DLock(m_surface, &lock);
+    ScopedD3DLock(m_surface, &lock);             // cppcheck-suppress unusedScopedObject
 
     if (lock.Pitch == 0)
         return nullptr;

@@ -94,7 +94,7 @@ protected:
 private:
 
     bool initRenderer();
-    void updateFontCacheAsync();
+    void updateFontCacheAsync();          // cppcheck-suppress unusedPrivateFunction
     SubImageSet getSubImages(qreal pts, QRect *boundingRect, QImage* qimg, bool copy);
     void processTrack(ASS_Track *track);
 
@@ -542,9 +542,9 @@ SubImageSet SubtitleProcessorLibASS::getSubImages(qreal pts, QRect *boundingRect
     *qimg = QImage(rect.size(), QImage::Format_ARGB32);
     qimg->fill(Qt::transparent);
 
-    foreach (const SubImage& i, m_assimages.images)
+    foreach (const SubImage& img, m_assimages.images)
     {
-        RenderASS(qimg, i, i.x - rect.x(), i.y - rect.y());
+        RenderASS(qimg, img, img.x - rect.x(), img.y - rect.y());
     }
 
     return m_assimages;

@@ -141,19 +141,20 @@ void AVOutput::attach(OutputSet *set)
     set->addOutput(this);
 }
 
-void AVOutput::detach(OutputSet *set)
+void AVOutput::detach(OutputSet* set)
 {
     DPTR_D(AVOutput);  // cppcheck-suppress constVariable
 
     if (set)
     {
         set->removeOutput(this);
+
         return;
     }
 
-    foreach (OutputSet* set, d.output_sets)
+    foreach (OutputSet* set2, d.output_sets)
     {
-        set->removeOutput(this);
+        set2->removeOutput(this);
     }
 }
 

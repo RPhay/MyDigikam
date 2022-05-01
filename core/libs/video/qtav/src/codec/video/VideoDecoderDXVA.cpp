@@ -300,7 +300,7 @@ VideoFrame VideoDecoderDXVA::frame()
     };
 
     D3DLOCKED_RECT lock;
-    ScopedD3DLock(d3d, &lock);
+    ScopedD3DLock(d3d, &lock);           // cppcheck-suppress unusedScopedObject
 
     if (lock.Pitch == 0)
     {

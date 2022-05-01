@@ -41,7 +41,7 @@ class QPainterRendererPrivate;
 
 class QTAV_EXPORT QPainterRenderer : public VideoRenderer
 {
-    DPTR_DECLARE_PRIVATE(QPainterRenderer)
+    DPTR_DECLARE_PRIVATE(QPainterRenderer)          // cppcheck-suppress unusedPrivateFunction
 
 public:
 

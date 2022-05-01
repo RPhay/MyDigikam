@@ -104,7 +104,8 @@ public:
 
 public:
 
-    template<class C> static bool Register(ImageConverterId id, const char* name)
+    template<class C>
+    static bool Register(ImageConverterId id, const char* name)
     {
         return Register(id, create<C>, name);
     }
@@ -123,14 +124,15 @@ public:
 
 private:
 
-    template<class C> static ImageConverter* create()
+    template<class C>
+    static ImageConverter* create()
     {
         return new C();
     }
 
     typedef ImageConverter* (*ImageConverterCreator)();
 
-    static bool Register(ImageConverterId id, ImageConverterCreator, const char *name);
+    static bool Register(ImageConverterId id, ImageConverterCreator, const char* name);
 
 protected:
 
@@ -150,12 +152,12 @@ class ImageConverterFFPrivate;
  */
 class ImageConverterFF final : public ImageConverter // QTAV_EXPORT is not needed
 {
-    DPTR_DECLARE_PRIVATE(ImageConverterFF)
+    DPTR_DECLARE_PRIVATE(ImageConverterFF)           // cppcheck-suppress unusedPrivateFunction
 
 public:
 
     ImageConverterFF();
-    bool check() const override;
+    bool check() const                                             override;
 
     // FIXME: why match to the pure virtual one if not declare here?
 
@@ -167,7 +169,7 @@ public:
     bool convert(const quint8 *const src[],
                  const int srcStride[],
                  quint8 *const dst[],
-                 const int dstStride[]) override;
+                 const int dstStride[])                            override;
 };
 
 typedef ImageConverterFF ImageConverterSWS;

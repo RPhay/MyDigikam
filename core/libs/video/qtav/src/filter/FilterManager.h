@@ -21,11 +21,16 @@
  *
  * ============================================================ */
 
-#ifndef QTAV_FILTERMANAGER_H
-#define QTAV_FILTERMANAGER_H
+#ifndef QTAV_FILTER_MANAGER_H
+#define QTAV_FILTER_MANAGER_H
+
+// Qt includes
 
 #include <QList>
-#include "Filter.h" // signal qobj parameter
+
+// Local includes
+
+#include "Filter.h"         // signal qobj parameter
 #include "QtAV_Global.h"
 
 namespace QtAV
@@ -34,12 +39,16 @@ namespace QtAV
 class AVOutput;
 class AVPlayer;
 class FilterManagerPrivate;
+
 class FilterManager
 {
-    DPTR_DECLARE_PRIVATE(FilterManager)
+    DPTR_DECLARE_PRIVATE(FilterManager)         // cppcheck-suppress unusedPrivateFunction
     Q_DISABLE_COPY(FilterManager)
+
 public:
+
     static FilterManager& instance();
+
     /*!
      * \brief registerFilter
      * record the filter in manager
@@ -54,14 +63,20 @@ public:
     bool unregisterAudioFilter(Filter *filter, AVPlayer *player);
     bool unregisterVideoFilter(Filter *filter, AVPlayer *player);
     bool unregisterFilter(Filter *filter, AVOutput *output);
+
     // unregister and call target.uninstall
+
     bool uninstallFilter(Filter *filter); //called by filter.uninstall
     bool uninstallAudioFilter(Filter *filter, AVPlayer* player);
     bool uninstallVideoFilter(Filter *filter, AVPlayer* player);
     bool uninstallFilter(Filter *filter, AVOutput* output);
+
 private:
+
     // return bool is for AVPlayer.installAudio/VideoFilter compatibility
+
     bool insert(Filter* filter, QList<Filter*>& filters, int pos);
+
     FilterManager();
     ~FilterManager();
 
@@ -70,4 +85,4 @@ private:
 
 } // namespace QtAV
 
-#endif // QTAV_FILTERMANAGER_H
+#endif // QTAV_FILTER_MANAGER_H

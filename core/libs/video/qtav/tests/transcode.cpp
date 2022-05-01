@@ -41,7 +41,7 @@ int main(int argc, char *argv[])
 {
     QCoreApplication a(argc, argv);
     QString file = QString::fromLatin1("test.avi");
-    int idx = a.arguments().indexOf(QLatin1String("-i"));
+    int idx      = a.arguments().indexOf(QLatin1String("-i"));
 
     if (idx > 0)
         file = a.arguments().at(idx + 1);
@@ -78,14 +78,14 @@ int main(int argc, char *argv[])
 
     if (idx > 0)
     {
-        opt = decName.right(decName.size() - idx -1);
+        opt     = decName.right(decName.size() - idx -1);
         decName = decName.left(idx);
         QStringList opts(opt.split(QString::fromLatin1(";")));
         QVariantHash subopt;
 
-        foreach (QString o, opts)
+        foreach (const QString& o, opts)
         {
-            idx = o.indexOf(QLatin1String(":"));
+            idx                 = o.indexOf(QLatin1String(":"));
             subopt[o.left(idx)] = o.right(o.size() - idx - 1);
         }
 
@@ -94,11 +94,12 @@ int main(int argc, char *argv[])
 
     qCDebug(DIGIKAM_TESTS_LOG) << decopt;
 
-    VideoDecoder *dec = VideoDecoder::create(decName.toLatin1().constData());
+    VideoDecoder* dec = VideoDecoder::create(decName.toLatin1().constData());
 
     if (!dec)
     {
         qCCritical(DIGIKAM_TESTS_LOG) << QString::asprintf("Can not find decoder: %s", decName.toUtf8().constData());
+
         return 1;
     }
 
@@ -111,6 +112,7 @@ int main(int argc, char *argv[])
     if (!demux.load())
     {
         qCCritical(DIGIKAM_TESTS_LOG) << QString::asprintf("Failed to load file: %s", file.toUtf8().constData());
+
         return 1;
     }
 
@@ -118,9 +120,9 @@ int main(int argc, char *argv[])
     dec->open();
     QElapsedTimer timer;
     timer.start();
-    int count = 0;
-    int vstream = demux.videoStream();
-    VideoEncoder *venc = VideoEncoder::create("FFmpeg");
+    int count          = 0;
+    int vstream        = demux.videoStream();
+    VideoEncoder* venc = VideoEncoder::create("FFmpeg");
     venc->setCodecName(cv);
 
     //venc->setCodecName("png");
@@ -136,11 +138,11 @@ int main(int argc, char *argv[])
 
     mux.setMedia(outFile);
     QVariantHash muxopt, avfopt;
-    avfopt[QString::fromLatin1("segment_time")] = 4;
+    avfopt[QString::fromLatin1("segment_time")]      = 4;
     avfopt[QString::fromLatin1("segment_list_size")] = 0;
-    avfopt[QString::fromLatin1("segment_list")] = outFile.left(outFile.lastIndexOf(QLatin1Char('/'))+1).append(QString::fromLatin1("index.m3u8"));
-    avfopt[QString::fromLatin1("segment_format")] = QString::fromLatin1("mpegts");
-    muxopt[QString::fromLatin1("avformat")] = avfopt;
+    avfopt[QString::fromLatin1("segment_list")]      = outFile.left(outFile.lastIndexOf(QLatin1Char('/'))+1).append(QString::fromLatin1("index.m3u8"));
+    avfopt[QString::fromLatin1("segment_format")]    = QString::fromLatin1("mpegts");
+    muxopt[QString::fromLatin1("avformat")]          = avfopt;
     qreal fps = 0;
 
     while (!demux.atEnd())
@@ -168,6 +170,7 @@ int main(int argc, char *argv[])
                 if (!venc->open())
                 {
                     qCCritical(DIGIKAM_TESTS_LOG) << QString::asprintf("failed to open encoder");
+
                     return 1;
                 }
             }
@@ -186,6 +189,7 @@ int main(int argc, char *argv[])
                 if (!mux.open())
                 {
                     qCCritical(DIGIKAM_TESTS_LOG) << QString::asprintf("failed to open muxer");
+
                     return 1;
                 }
 
@@ -197,16 +201,18 @@ int main(int argc, char *argv[])
 
             if (venc->encode(frame))
             {
-                Packet pkt(venc->encoded());
-                mux.writeVideo(pkt);
+                Packet pkt2(venc->encoded());
+                mux.writeVideo(pkt2);
                 count++;
 
-                if (count%20 == 0)
+                if (count % 20 == 0)
                 {
                     fps = qreal(count*1000)/qreal(timer.elapsed());
                 }
 
-                printf("decode count: %d, fps: %.2f frame size: %dx%d %d\r", count, fps, frame.width(), frame.height(), frame.data().size());fflush(nullptr);
+                qCDebug(DIGIKAM_TESTS_LOG).noquote()
+                    << QString::asprintf("decode count: %d, fps: %.2f frame size: %dx%d %d\r",
+                        count, fps, frame.width(), frame.height(), frame.data().size());
             }
         }
     }
@@ -216,12 +222,12 @@ int main(int argc, char *argv[])
     while (venc->encode())
     {
         qCDebug(DIGIKAM_TESTS_LOG).noquote() << QString::asprintf("encode delayed frames...\r");
-        Packet pkt(venc->encoded());
-        mux.writeVideo(pkt);
+        Packet pkt3(venc->encoded());
+        mux.writeVideo(pkt3);
     }
 
     qint64 elapsed = timer.elapsed();
-    int msec = elapsed/1000LL+1;
+    int msec       = elapsed / 1000LL+1;
     qCDebug(DIGIKAM_TESTS_LOG).noquote() << QString::asprintf("decoded frames: %d, time: %d, average speed: %d", count, msec, count/msec);
     venc->close();
     mux.close();
