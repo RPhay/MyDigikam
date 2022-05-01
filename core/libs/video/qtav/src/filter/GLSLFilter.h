@@ -21,8 +21,8 @@
  *
  * ============================================================ */
 
-#ifndef QTAV_GLS_LFILTER_H
-#define QTAV_GLS_LFILTER_H
+#ifndef QTAV_GLSL_FILTER_H
+#define QTAV_GLSL_FILTER_H
 
 // Local includes
 
@@ -54,7 +54,7 @@ public:
 
     explicit GLSLFilter(QObject* parent = nullptr);
 
-    bool isSupported(VideoFilterContext::Type ct) const  override
+    bool isSupported(VideoFilterContext::Type ct)   const override
     {
         return ct == VideoFilterContext::OpenGL;
     }
@@ -63,15 +63,15 @@ public:
      * \brief opengl
      * Currently you can only use it to set custom shader OpenGLVideo.setUserShader()
      */
-    OpenGLVideo* opengl() const;
-    QOpenGLFramebufferObject* fbo() const;
+    OpenGLVideo* opengl()                           const;
+    QOpenGLFramebufferObject* fbo()                 const;
 
     /*!
      * \brief outputSize
      * Output frame size. FBO uses the same size to render. An empty size means using the input frame size
      * \return
      */
-    QSize outputSize() const;
+    QSize outputSize()                              const;
     void setOutputSize(const QSize& value);
     void setOutputSize(int width, int height);
 
@@ -81,7 +81,7 @@ Q_SIGNALS:
 
 protected:
 
-    GLSLFilter(GLSLFilterPrivate& d, QObject *parent = nullptr);
+    explicit GLSLFilter(GLSLFilterPrivate& d, QObject* parent = nullptr);
 
     /*!
      * \brief process
@@ -95,4 +95,4 @@ protected:
 
 } // namespace QtAV
 
-#endif // QTAV_GLS_LFILTER_H
+#endif // QTAV_GLSL_FILTER_H

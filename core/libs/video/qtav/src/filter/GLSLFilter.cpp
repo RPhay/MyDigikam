@@ -22,14 +22,20 @@
  * ============================================================ */
 
 #include "GLSLFilter.h"
+
+// Qt includes
+
+#if QT_VERSION >= QT_VERSION_CHECK(5, 0, 0)
+#   include <QOpenGLFramebufferObject>
+#else
+#   include <QGLFramebufferObject>
+#endif
+
+// Local includes
+
 #include "Filter_p.h"
 #include "VideoFrame.h"
 #include "OpenGLHelper.h"
-#if QT_VERSION >= QT_VERSION_CHECK(5, 0, 0)
-#include <QOpenGLFramebufferObject>
-#else
-#include <QGLFramebufferObject>
-#endif
 #include "SurfaceInterop.h"
 #include "OpenGLVideo.h"
 #include "digikam_debug.h"
@@ -39,22 +45,27 @@ namespace QtAV
 class GLSLFilterPrivate : public VideoFilterPrivate
 {
 public:
-    GLSLFilterPrivate() : VideoFilterPrivate()
-      , fbo(nullptr)
-    {}
 
-    QOpenGLFramebufferObject *fbo;
-    QSize size;
-    OpenGLVideo glv;
+    GLSLFilterPrivate()
+        : VideoFilterPrivate(),
+          fbo(nullptr)
+    {
+    }
+
+    QOpenGLFramebufferObject* fbo;
+    QSize                     size;
+    OpenGLVideo               glv;
 };
 
 GLSLFilter::GLSLFilter(QObject *parent)
     : VideoFilter(*new GLSLFilterPrivate(), parent)
-{}
+{
+}
 
 GLSLFilter::GLSLFilter(GLSLFilterPrivate &d, QObject *parent)
     : VideoFilter(d, parent)
-{}
+{
+}
 
 OpenGLVideo* GLSLFilter::opengl() const
 {
@@ -74,9 +85,12 @@ QSize GLSLFilter::outputSize() const
 void GLSLFilter::setOutputSize(const QSize &value)
 {
     DPTR_D(GLSLFilter);
+
     if (d.size == value)
         return;
+
     d.size = value;
+
     Q_EMIT outputSizeChanged(value);
 }
 
@@ -88,36 +102,53 @@ void GLSLFilter::setOutputSize(int width, int height)
 void GLSLFilter::process(Statistics *statistics, VideoFrame *frame)
 {
     Q_UNUSED(statistics);
-    if (!QOpenGLContext::currentContext()) {
+
+    if (!QOpenGLContext::currentContext())
+    {
         qCWarning(DIGIKAM_QTAV_LOG_WARN) << "No current gl context for glsl filter: " << this;
+
         return;
     }
+
     DPTR_D(GLSLFilter);
+
     if (!frame || !*frame)
         return;
+
     GLint currentFbo = 0;
     DYGL(glGetIntegerv(GL_FRAMEBUFFER_BINDING, &currentFbo));
+
     // now use the frame size
-    if (d.fbo) {
-        if (d.size.isEmpty()) {
-            if (d.fbo->size() != frame->size()) {
+
+    if (d.fbo)
+    {
+        if (d.size.isEmpty())
+        {
+            if (d.fbo->size() != frame->size())
+            {
                 delete d.fbo;
                 d.fbo = nullptr;
             }
-        } else {
-            if (d.fbo->size() != d.size) {
+        }
+        else
+        {
+            if (d.fbo->size() != d.size)
+            {
                 delete d.fbo;
                 d.fbo = nullptr;
             }
         }
     }
-    if (!d.fbo) {
-        d.fbo = new QOpenGLFramebufferObject(outputSize().isEmpty() ? frame->size() : outputSize(), GL_TEXTURE_2D); //TODO: prefer 16bit rgb
-        QOpenGLContext *ctx = const_cast<QOpenGLContext*>(QOpenGLContext::currentContext()); //qt4 returns const
+
+    if (!d.fbo)
+    {
+        d.fbo               = new QOpenGLFramebufferObject(outputSize().isEmpty() ? frame->size() : outputSize(), GL_TEXTURE_2D); //TODO: prefer 16bit rgb
+        QOpenGLContext* ctx = const_cast<QOpenGLContext*>(QOpenGLContext::currentContext()); // qt4 returns const
         d.glv.setOpenGLContext(ctx);
         d.glv.setProjectionMatrixToRect(QRectF(0, 0, d.fbo->width(), d.fbo->height()));
         qCDebug(DIGIKAM_QTAV_LOG).noquote() << QString::asprintf("new fbo texture: %d %dx%d", d.fbo->texture(), d.fbo->width(), d.fbo->height());
     }
+
     d.fbo->bind();
     DYGL(glViewport(0, 0, d.fbo->width(), d.fbo->height()));
     d.glv.setCurrentFrame(*frame);
@@ -126,23 +157,36 @@ void GLSLFilter::process(Statistics *statistics, VideoFrame *frame)
     d.glv.render(QRectF(), QRectF(), mat);
     gl().BindFramebuffer(GL_FRAMEBUFFER, (GLuint)currentFbo);
     VideoFormat fmt(VideoFormat::Format_RGB32);
-    VideoFrame f(d.fbo->width(), d.fbo->height(), fmt); //
+    VideoFrame f(d.fbo->width(), d.fbo->height(), fmt);
     f.setBytesPerLine(d.fbo->width()*fmt.bytesPerPixel(), 0);
+
     // set interop;
+
     class GLTextureInterop : public VideoSurfaceInterop
     {
         GLuint tex;
+
     public:
-        GLTextureInterop(GLuint id) : tex(id) {}
-        void* map(SurfaceType, const VideoFormat &, void *handle, int plane) {
+
+        explicit GLTextureInterop(GLuint id)
+            : tex(id)
+        {
+        }
+
+        void* map(SurfaceType, const VideoFormat &, void *handle, int plane)
+        {
             Q_UNUSED(plane);
+
             GLuint* t = reinterpret_cast<GLuint*>(handle);
-            *t = tex;
+            *t        = tex;
+
             return t;
         }
     };
-    GLTextureInterop *interop = new GLTextureInterop(d.fbo->texture());
+
+    GLTextureInterop* interop = new GLTextureInterop(d.fbo->texture());
     f.setMetaData(QStringLiteral("surface_interop"), QVariant::fromValue(VideoSurfaceInteropPtr((interop))));
-    *frame = f;
+    *frame                    = f;
 }
+
 } // namespace QtAV
