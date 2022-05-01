@@ -63,8 +63,8 @@ static inline void scale_samples_u8_small(quint8 *dst, const quint8 *src, int nb
 
 static inline void scale_samples_s16(quint8 *dst, const quint8 *src, int nb_samples, int volume, float)
 {
-    int16_t *smp_dst       = (int16_t *)dst;
-    const int16_t *smp_src = (const int16_t *)src;
+    int16_t *smp_dst       = (int16_t *)dst;            // krazy:exclude=typedefs
+    const int16_t *smp_src = (const int16_t *)src;      // krazy:exclude=typedefs
 
     for (int i = 0; i < nb_samples; i++)
         smp_dst[i] = av_clip_int16(((qint64)smp_src[i] * volume + 128) >> 8);
@@ -72,8 +72,8 @@ static inline void scale_samples_s16(quint8 *dst, const quint8 *src, int nb_samp
 
 static inline void scale_samples_s16_small(quint8 *dst, const quint8 *src, int nb_samples, int volume, float)
 {
-    int16_t *smp_dst       = (int16_t *)dst;
-    const int16_t *smp_src = (const int16_t *)src;
+    int16_t *smp_dst       = (int16_t *)dst;            // krazy:exclude=typedefs
+    const int16_t *smp_src = (const int16_t *)src;      // krazy:exclude=typedefs
 
     for (int i = 0; i < nb_samples; i++)
         smp_dst[i] = av_clip_int16((smp_src[i] * volume + 128) >> 8);

@@ -43,7 +43,7 @@ VideoFormat::PixelFormat format_from_cv(int cv);
 
 typedef uint32_t GLuint;    ///< define here to avoid including gl headers which are not required by decoder
 typedef uint32_t GLenum;
-typedef int32_t  GLint;
+typedef int32_t  GLint;     // krazy:exclude=typedefs
 
 // FIXME: not texture if change from InteropCVOpenGLES to InteropCVPixelBuffer
 

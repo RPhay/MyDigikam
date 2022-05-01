@@ -50,7 +50,7 @@ int avio_feof(AVIOContext *s)
 
 int avformat_alloc_output_context2(AVFormatContext **avctx, AVOutputFormat *oformat, const char *format, const char *filename)
 {
-    AVFormatContext *s = avformat_alloc_context();
+    AVFormatContext* s = avformat_alloc_context();
     int ret            = 0;
     *avctx             = nullptr;
 
@@ -148,7 +148,7 @@ static const struct
     { 0 }
 };
 
-int64_t av_get_default_channel_layout(int nb_channels)
+int64_t av_get_default_channel_layout(int nb_channels)      // krazy:exclude=typedefs
 {
     int i;
 
@@ -168,14 +168,14 @@ int64_t av_get_default_channel_layout(int nb_channels)
 
 #if QTAV_HAVE(AVRESAMPLE)
 
-AVAudioResampleContext *swr_alloc_set_opts(AVAudioResampleContext *s
-                                         , int64_t out_ch_layout
+AVAudioResampleContext* swr_alloc_set_opts(AVAudioResampleContext* s
+                                         , int64_t out_ch_layout                // krazy:exclude=typedefs
                                          , enum AVSampleFormat out_sample_fmt
                                          , int out_sample_rate
-                                         , int64_t in_ch_layout
+                                         , int64_t in_ch_layout                 // krazy:exclude=typedefs
                                          , enum AVSampleFormat in_sample_fmt
                                          , int in_sample_rate
-                                         , int log_offset, void *log_ctx)
+                                         , int log_offset, void* log_ctx)
 {
     // DO NOT use swr_alloc() because it's not defined as a macro in QtAV_Compat.h
     if (!s)

@@ -128,7 +128,7 @@ static int av_write(void *opaque, unsigned char *buf, int buf_size)
     return io->write((const char*)buf, buf_size);
 }
 
-static int64_t av_seek(void *opaque, int64_t offset, int whence)
+static int64_t av_seek(void *opaque, int64_t offset, int whence)    // krazy:exclude=typedefs
 {
     if (whence == SEEK_SET && offset < 0)
         return -1;
@@ -160,8 +160,8 @@ MediaIO::MediaIO(QObject *parent)
 }
 
 MediaIO::MediaIO(MediaIOPrivate &d, QObject *parent)
-    : QObject(parent)
-    , DPTR_INIT(&d)
+    : QObject(parent),
+      DPTR_INIT(&d)
 {
 }
 
@@ -180,6 +180,7 @@ void MediaIO::setUrl(const QString &url)
     // TODO: check protocol
 
     d.url = url;
+
     onUrlChanged();
 }
 
@@ -250,18 +251,27 @@ void* MediaIO::avioContext()
 
     // buffer will be released in av_probe_input_buffer2=>ffio_rewind_with_probe_data. always is? may be another context
 
-    unsigned char* buf = (unsigned char*)av_malloc(IODATA_BUFFER_SIZE);
+    unsigned char* buf   = (unsigned char*)av_malloc(IODATA_BUFFER_SIZE);
 
     // open for write if 1. SET 0 if open for read otherwise data ptr in av_read(data, ...) does not change
 
     const int write_flag = (accessMode() == Write) && isWritable();
-    d.ctx = avio_alloc_context(buf, bufferSize() > 0 ? bufferSize() : kBufferSizeDefault, write_flag, this, &av_read, write_flag ? &av_write : nullptr, &av_seek);
+
+    d.ctx                = avio_alloc_context(buf,
+                                              bufferSize() > 0 ? bufferSize()
+                                                               : kBufferSizeDefault,
+                                              write_flag,
+                                              this,
+                                              &av_read,
+                                              write_flag ? &av_write
+                                                         : nullptr,
+                                              &av_seek);
 
     // if seekable==false, containers that estimate duration from pts(or bit rate) will not seek to the last frame when computing duration
     // but it's still seekable if call seek outside(e.g. from demuxer)
     // TODO: isVariableSize: size = -real_size
 
-    d.ctx->seekable = isSeekable() && !isVariableSize() ? AVIO_SEEKABLE_NORMAL : 0;
+    d.ctx->seekable      = isSeekable() && !isVariableSize() ? AVIO_SEEKABLE_NORMAL : 0;
 
     return d.ctx;
 }
