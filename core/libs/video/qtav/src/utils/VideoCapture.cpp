@@ -177,11 +177,11 @@ VideoCapture::VideoCapture(QObject* parent)
 
 #if QT_VERSION < QT_VERSION_CHECK(5, 0, 0)
 
-    dir = QDesktopServices::storageLocation(QDesktopServices::PicturesLocation);
+    dir = QDesktopServices::storageLocation(QDesktopServices::PicturesLocation);    // cppcheck-suppress useInitializationList
 
 #else
 
-    dir = QStandardPaths::writableLocation(QStandardPaths::PicturesLocation);
+    dir = QStandardPaths::writableLocation(QStandardPaths::PicturesLocation);       // cppcheck-suppress useInitializationList
 
 #endif
 

@@ -299,23 +299,33 @@ void AudioOutputDSound::onCallback()
     }
     else
     {
-       // if (buffers_free.deref()) {
-     //       return;
-        //}
-       // buffers_free.ref();
-    }
+/*
+        if (buffers_free.deref())
+        {
+            return;
+        }
 
-    //DWORD status;
-    //stream_buf->GetStatus(&status);
-    //qCDebug(DIGIKAM_QTAV_LOG).noquote() << QString::asprintf("status: %lu", status);
-    //return;
-    //if (status & DSBSTATUS_LOOPING) {
-    // sound will loop even if buffer is finished
-    //DX_ENSURE(stream_buf->Stop());
-    // reset positions to ensure the notification positions and played buffer matches
-    //DX_ENSURE(stream_buf->SetCurrentPosition(0));
-    //write_offset = 0;
-    //}
+        buffers_free.ref();
+*/
+    }
+/*
+    DWORD status;
+    stream_buf->GetStatus(&status);
+    qCDebug(DIGIKAM_QTAV_LOG).noquote() << QString::asprintf("status: %lu", status);
+    return;
+
+    if (status & DSBSTATUS_LOOPING)
+    {
+        // sound will loop even if buffer is finished
+
+        DX_ENSURE(stream_buf->Stop());
+
+        // reset positions to ensure the notification positions and played buffer matches
+
+        DX_ENSURE(stream_buf->SetCurrentPosition(0));
+        write_offset = 0;
+    }
+*/
 }
 
 bool AudioOutputDSound::write(const QByteArray &data)
@@ -502,7 +512,7 @@ bool AudioOutputDSound::createDSoundBuffers()
     WAVEFORMATEX wf;
     wf.cbSize               = 0;
     wf.nChannels            = format.channels();
-    wf.nSamplesPerSec       = format.sampleRate(); // FIXME: use supported values
+    wf.nSamplesPerSec       = format.sampleRate();                      // FIXME: use supported values
     wf.wBitsPerSample       = format.bytesPerSample() * 8;
     wf.nBlockAlign          = wf.nChannels * format.bytesPerSample();
     wf.nAvgBytesPerSec      = wf.nSamplesPerSec * wf.nBlockAlign;
@@ -515,6 +525,8 @@ bool AudioOutputDSound::createDSoundBuffers()
         wformat.SubFormat                   = _KSDATAFORMAT_SUBTYPE_PCM;
         wformat.Samples.wValidBitsPerSample = wf.wBitsPerSample;
     }
+
+    Q_UNUSED(wformat.SubFormat);
 
     if (format.isFloat())
     {
