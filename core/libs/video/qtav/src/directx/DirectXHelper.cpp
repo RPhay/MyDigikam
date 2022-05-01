@@ -73,25 +73,26 @@ static void InitParameters(D3DPRESENT_PARAMETERS* d3dpp)
     d3dpp->Windowed               = TRUE;
     d3dpp->hDeviceWindow          = ::GetShellWindow();     // nullptr;
     d3dpp->SwapEffect             = D3DSWAPEFFECT_DISCARD;
-
-    //d3dpp->MultiSampleType        = D3DMULTISAMPLE_NONE;
-    //d3dpp->PresentationInterval   = D3DPRESENT_INTERVAL_DEFAULT;
-
+/*
+    d3dpp->MultiSampleType        = D3DMULTISAMPLE_NONE;
+    d3dpp->PresentationInterval   = D3DPRESENT_INTERVAL_DEFAULT;
+*/
     d3dpp->BackBufferCount        = 1;                      // 0;                  /* FIXME what to put here */
     d3dpp->BackBufferFormat       = D3DFMT_UNKNOWN;         // D3DFMT_X8R8G8B8;    /* FIXME what to put here */
     d3dpp->BackBufferWidth        = 1;                      // 0;
     d3dpp->BackBufferHeight       = 1;                      // 0;
-
-    //d3dpp->EnableAutoDepthStencil = FALSE;
+/*
+    d3dpp->EnableAutoDepthStencil = FALSE;
+*/
 }
 
 IDirect3DDevice9* CreateDevice9Ex(HINSTANCE dll, IDirect3D9Ex** d3d9ex, D3DADAPTER_IDENTIFIER9 *d3dai)
 {
     qCDebug(DIGIKAM_QTAV_LOG).noquote() << QString::asprintf("creating d3d9 device ex... dll: %p", dll);
 
-    // http://msdn.microsoft.com/en-us/library/windows/desktop/bb219676(v=vs.85).aspx
+    // http://msdn.microsoft.com/en-us/library/windows/desktop/bb219676(v=vs.85).aspx   // krazy:exclude=insecurenet
 
-    typedef HRESULT (WINAPI *Create9ExFunc)(UINT SDKVersion, IDirect3D9Ex **ppD3D); // IDirect3D9Ex: void is ok
+    typedef HRESULT (WINAPI *Create9ExFunc)(UINT SDKVersion, IDirect3D9Ex **ppD3D);     // IDirect3D9Ex: void is ok
 
     Create9ExFunc Create9Ex = (Create9ExFunc)GetProcAddress(dll, "Direct3DCreate9Ex");
 

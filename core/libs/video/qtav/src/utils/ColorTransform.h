@@ -29,7 +29,8 @@
 #include "QtAV_Global.h"
 
 // TODO: kernel QGenericMatrix<M,N>
-//http://www.graficaobscura.com/matrix/index.html
+
+// http://www.graficaobscura.com/matrix/index.html      // krazy:exclude=insecurenet
 
 namespace QtAV
 {
@@ -41,12 +42,16 @@ namespace QtAV
 class ColorTransform
 {
 public:
-    //http://msdn.microsoft.com/en-us/library/dd206750.aspx
+
+    // http://msdn.microsoft.com/en-us/library/dd206750.aspx    // krazy:exclude=insecurenet
+
     // cs: BT601 or BT709
+
     static const QMatrix4x4& YUV2RGB(ColorSpace cs);
 
     ColorTransform();
-    ~ColorTransform(); //required by QSharedDataPointer if Private is forward declared
+    ~ColorTransform(); // required by QSharedDataPointer if Private is forward declared
+
     /*!
      * \brief inputColorSpace
      * if inputColorSpace is different from outputColorSpace, then the result matrix(), matrixRef() and
@@ -58,11 +63,14 @@ public:
     void setInputColorSpace(ColorSpace cs);
     ColorSpace outputColorSpace() const;
     void setOutputColorSpace(ColorSpace cs);
+
     /// Currently assume input is yuv, output is rgb
+
     void setInputColorRange(ColorRange value);
     ColorRange inputColorRange() const;
     void setOutputColorRange(ColorRange value);
     ColorRange outputColorRange() const;
+
     /*!
      * \brief matrix
      * \return result matrix to transform from inputColorSpace to outputColorSpace with given brightness,
@@ -74,7 +82,8 @@ public:
     /*!
      * Get the matrix in column-major order. Used by OpenGL
      */
-    template<typename T> void matrixData(T* M) const {
+    template<typename T> void matrixData(T* M) const
+    {
         const QMatrix4x4 &m = matrixRef();
         M[0] = m(0,0), M[4] = m(0,1), M[8] = m(0,2), M[12] = m(0,3),
         M[1] = m(1,0), M[5] = m(1,1), M[9] = m(1,2), M[13] = m(1,3),
@@ -87,24 +96,35 @@ public:
      *   only set in-space transform to identity. other parameters such as in/out color space does not change
      */
     void reset();
+
     // -1~1
+
     void setBrightness(qreal brightness);
     qreal brightness() const;
+
     // -1~1
+
     void setHue(qreal hue);
     qreal hue() const;
+
     // -1~1
+
     void setContrast(qreal contrast);
     qreal contrast() const;
+
     // -1~1
+
     void setSaturation(qreal saturation);
     qreal saturation() const;
 
     void setChannelDepthScale(qreal value, bool scaleAlpha = false);
 
 private:
+
     class Private;
     QSharedDataPointer<ColorTransform::Private> d;
 };
+
 } // namespace QtAV
+
 #endif // QTAV_COLORTRANSFORM_H

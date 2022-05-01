@@ -45,7 +45,7 @@
 #include "SurfaceInteropD3D9.h"
 #include "DirectXHelper.h"
 
-// d3d9ex: http://dxr.mozilla.org/mozilla-central/source/dom/media/wmf/DXVA2Manager.cpp
+// d3d9ex: http://dxr.mozilla.org/mozilla-central/source/dom/media/wmf/DXVA2Manager.cpp     // krazy:exclude=insecurenet
 
 // to use c api, add define COBJMACROS and CINTERFACE
 
@@ -55,7 +55,7 @@
 
 extern "C"
 {
-#include <libavcodec/dxva2.h> //will include d3d9.h, dxva2api.h
+#include <libavcodec/dxva2.h> // will include d3d9.h, dxva2api.h
 }
 
 // Windows includes
@@ -64,7 +64,7 @@ extern "C"
 #include <dxva2api.h>
 #include <initguid.h> /* must be last included to not redefine existing GUIDs */
 
-/* dxva2api.h GUIDs: http://msdn.microsoft.com/en-us/library/windows/desktop/ms697067(v=vs100).aspx
+/* dxva2api.h GUIDs: http://msdn.microsoft.com/en-us/library/windows/desktop/ms697067(v=vs100).aspx     // krazy:exclude=insecurenet
  * assume that they are declared in dxva2api.h
  */
 
@@ -424,7 +424,7 @@ bool VideoDecoderDXVAPrivate::createDevice()
 
     qCDebug(DIGIKAM_QTAV_LOG) << "obtained IDirect3DDeviceManager9";
 
-    // http://msdn.microsoft.com/en-us/library/windows/desktop/ms693525%28v=vs.85%29.aspx
+    // http://msdn.microsoft.com/en-us/library/windows/desktop/ms693525%28v=vs.85%29.aspx   // krazy:exclude=insecurenet
 
     DX_ENSURE_OK(devmng->ResetDevice(d3ddev, token), false);
     DX_ENSURE_OK(devmng->OpenDeviceHandle(&device), false);

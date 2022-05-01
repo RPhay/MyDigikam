@@ -703,7 +703,7 @@ void VideoMaterial::setCurrentFrame(const VideoFrame &frame)
             d.colorTransform.setChannelDepthScale(1.0);
     }
 
-    // http://forum.doom9.org/archive/index.php/t-160211.html
+    // http://forum.doom9.org/archive/index.php/t-160211.html       // krazy:exclude=insecurenet
 
     ColorSpace cs = frame.colorSpace(); // ColorSpace_RGB;
 
@@ -1306,11 +1306,14 @@ bool VideoMaterialPrivate::updateTextureParameters(const VideoFormat& fmt)
     if (!fmt.isValid())
         return false;
 
-    // http://www.berkelium.com/OpenGL/GDC99/internalformat.html
+    // http://www.berkelium.com/OpenGL/GDC99/internalformat.html                            // krazy:exclude=insecurenet
+
     // NV12: UV is 1 plane. 16 bits as a unit. GL_LUMINANCE4, 8, 16, ... 32?
     // GL_LUMINANCE, GL_LUMINANCE_ALPHA are deprecated in GL3, removed in GL3.1
     // replaced by GL_RED, GL_RG, GL_RGB, GL_RGBA? for 1, 2, 3, 4 channel image
-    // http://www.gamedev.net/topic/634850-do-luminance-textures-still-exist-to-opengl/
+
+    // http://www.gamedev.net/topic/634850-do-luminance-textures-still-exist-to-opengl/     // krazy:exclude=insecurenet
+
     // https://github.com/kivy/kivy/issues/1738: GL_LUMINANCE does work on a Galaxy Tab 2. LUMINANCE_ALPHA very slow on Linux
     // ALPHA: vec4(1,1,1,A), LUMINANCE: (L,L,L,1), LUMINANCE_ALPHA: (L,L,L,A)
 

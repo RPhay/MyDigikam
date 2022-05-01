@@ -76,7 +76,7 @@ public:
         Format_RGB555,
         Format_BGR555,
 
-        // http://www.fourcc.org/yuv.php
+        // http://www.fourcc.org/yuv.php        // krazy:exclude=insecurenet
 
         Format_AYUV444,
         Format_YUV444P,

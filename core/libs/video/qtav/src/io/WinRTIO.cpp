@@ -163,7 +163,7 @@ bool WinRTIO::isWritable() const
     return !!d.stream;
 }
 
-//http://www.codeproject.com/Tips/489450/Creating-Custom-FFmpeg-IO-Context
+//http://www.codeproject.com/Tips/489450/Creating-Custom-FFmpeg-IO-Context      // krazy:exclude=insecurenet
 
 qint64 WinRTIO::read(char *data, qint64 maxSize)
 {

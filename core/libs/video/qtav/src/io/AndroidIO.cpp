@@ -38,15 +38,16 @@
 
 // TODO: how to get filename and find subtitles?
 
-// http://stackoverflow.com/questions/5657411/android-getting-a-file-uri-from-a-content-uri
-// http://stackoverflow.com/questions/19834842/android-gallery-on-kitkat-returns-different-uri-for-intent-action-get-content/20559418#20559418
-// http://stackoverflow.com/questions/22029815/how-to-use-the-qt-jni-class-qandroidjniobject
+// http://stackoverflow.com/questions/5657411/android-getting-a-file-uri-from-a-content-uri                                                     // krazy:exclude=insecurenet
+// http://stackoverflow.com/questions/19834842/android-gallery-on-kitkat-returns-different-uri-for-intent-action-get-content/20559418#20559418  // krazy:exclude=insecurenet
+// http://stackoverflow.com/questions/22029815/how-to-use-the-qt-jni-class-qandroidjniobject                                                    // krazy:exclude=insecurenet
 
 namespace QtAV
 {
 
 static const MediaIOId MediaIOId_Android = mkid::id32base36_6<'A','D','r','o','i', 'd'>::value;
 static const char kName[]                = "Android";
+
 class AndroidIOPrivate;
 
 class AndroidIO : public MediaIO

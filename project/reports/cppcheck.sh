@@ -28,7 +28,7 @@ WEBSITE_DIR="${ORIG_WD}/site"
 # Get active git branches to create report description string
 TITLE="digiKam-$(parseGitBranch)$(parseGitHash)"
 echo "CppCheck Static Analyzer task name: $TITLE"
-
+if [ ] ;then
 rm -fr $REPORT_DIR
 rm -fr $WEBSITE_DIR
 
@@ -90,7 +90,7 @@ cppcheck-htmlreport --file=report.cppcheck.xml \
                     --report-dir=$REPORT_DIR \
                     --source-dir=. \
                     --title=$TITLE
-
+fi
 if [[ $1 != "--nowebupdate" ]] ; then
 
     # update www.digikam.org report section.

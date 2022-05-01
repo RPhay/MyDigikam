@@ -513,7 +513,7 @@ AudioOutputBackend::BufferControl AudioOutputOpenAL::bufferControl() const
     return PlayedCount; //TODO: AL_BYTE_OFFSET
 }
 
-// http://kcat.strangesoft.net/openal-tutorial.html
+// http://kcat.strangesoft.net/openal-tutorial.html     // krazy:exclude=insecurenet
 
 bool AudioOutputOpenAL::write(const QByteArray& data)
 {

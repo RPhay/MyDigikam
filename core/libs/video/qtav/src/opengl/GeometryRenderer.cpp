@@ -264,7 +264,7 @@ void GeometryRenderer::updateGeometry(Geometry *geo)
             QGLF(glEnableVertexAttribArray(an));
         }
 
-        vbo.release(); // unbind after vao unbind? http://www.zwqxin.com/archives/opengl/vao-and-vbo-stuff.html
+        vbo.release(); // unbind after vao unbind? http://www.zwqxin.com/archives/opengl/vao-and-vbo-stuff.html     // krazy:exclude=insecurenet
     }
 
     // TODO: bind pointers if vbo is disabled

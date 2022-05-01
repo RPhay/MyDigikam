@@ -51,9 +51,9 @@
 
 /*
  * avc1, ccv1 => h264 + sps, pps, nal. use filter or lavcudiv
- * http://blog.csdn.net/gavinr/article/details/7183499
+ * http://blog.csdn.net/gavinr/article/details/7183499              // krazy:exclude=insecurenet
  * https://www.ffmpeg.org/ffmpeg-bitstream-filters.html
- * http://hi.baidu.com/freenaut/item/49ca125112587314aaf6d733
+ * http://hi.baidu.com/freenaut/item/49ca125112587314aaf6d733       // krazy:exclude=insecurenet
  * CUDA_ERROR_INVALID_VALUE "cuvidDecodePicture(p->dec, cuvidpic)"
  */
 

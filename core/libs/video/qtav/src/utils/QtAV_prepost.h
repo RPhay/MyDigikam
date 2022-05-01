@@ -32,8 +32,8 @@
 /*
  * TODO:
  *  boost::call_once
- *  http://stackoverflow.com/questions/4173384/how-to-make-sure-a-function-is-only-called-once
- *  http://publib.boulder.ibm.com/infocenter/lnxpcomp/v8v101/index.jsp?topic=%2Fcom.ibm.xlcpp8l.doc%2Flanguage%2Fref%2Fco.htm
+ *  http://stackoverflow.com/questions/4173384/how-to-make-sure-a-function-is-only-called-once                                  // krazy:exclude=insecurenet
+ *  http://publib.boulder.ibm.com/infocenter/lnxpcomp/v8v101/index.jsp?topic=%2Fcom.ibm.xlcpp8l.doc%2Flanguage%2Fref%2Fco.htm   // krazy:exclude=insecurenet
  */
 
 #ifdef __cplusplus
@@ -62,8 +62,8 @@
 #else /*for C. ! defined __cplusplus*/
 
 /*
- *http://buliedian.iteye.com/blog/1069072
- *http://research.microsoft.com/en-us/um/redmond/projects/invisible/src/crt/md/ppc/_crt.c.htm
+ *http://buliedian.iteye.com/blog/1069072                                                       // krazy:exclude=insecurenet
+ *http://research.microsoft.com/en-us/um/redmond/projects/invisible/src/crt/md/ppc/_crt.c.htm   // krazy:exclude=insecurenet
  */
 
 #if defined(_MSC_VER)                           // krazy:exclude=cpp

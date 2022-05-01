@@ -120,7 +120,7 @@ enum SeekType
     AnyFrameSeek
 };
 
-// http://www.itu.int/dms_pubrec/itu-r/rec/bt/R-REC-BT.709-5-200204-I!!PDF-E.pdf
+// http://www.itu.int/dms_pubrec/itu-r/rec/bt/R-REC-BT.709-5-200204-I!!PDF-E.pdf    https://bitbucket.org/libqxt/libqxt/wiki/Home
 
 // TODO: other color spaces (yuv itu.xxxx, XYZ, ...)
 
