@@ -711,7 +711,7 @@ bool AVDemuxer::readFrame()
 
     d->stream = packet.stream_index;
 
-    // check whether the 1st frame is alreay got. emit only once
+    // check whether the 1st frame is already got. emit only once
 
     if (!d->started)
     {

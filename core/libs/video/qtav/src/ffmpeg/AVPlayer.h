@@ -160,7 +160,7 @@ public:
 
     /*!
      * \brief setAutoLoad
-     * true: current media source changed immediatly and stop current playback if new media source is set.
+     * true: current media source changed imediatly and stop current playback if new media source is set.
      * status becomes LoadingMedia=>LoadedMedia before play( and BufferedMedia when playing?)
      * false:
      * Default is false

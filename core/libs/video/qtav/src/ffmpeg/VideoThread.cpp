@@ -60,7 +60,7 @@ public:
 
     ~VideoThreadPrivate()
     {
-        // not neccesary context is managed by filters.
+        // not neccessary context is managed by filters.
 
         if (filter_context)
         {
@@ -335,7 +335,7 @@ void VideoThread::run()
         d.capture->setCaptureName(QFileInfo(d.statistics->url).completeBaseName());
     }
 
-    // not neccesary context is managed by filters.
+    // not neccessary context is managed by filters.
 
     d.filter_context      = VideoFilterContext::create(VideoFilterContext::QtPainter);
     VideoDecoder *dec     = static_cast<VideoDecoder*>(d.dec);

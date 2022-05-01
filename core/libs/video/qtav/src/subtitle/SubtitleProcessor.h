@@ -59,7 +59,7 @@ public:
     /*!
      * \brief process
      * process subtitle from QIODevice.
-     * \param dev dev is open and you don't have to close it
+     * \param dev is open and you don't have to close it
      * \return false if failed or does not supports iodevice, e.g. does not support sequential device
      */
     virtual bool process(QIODevice* dev) = 0;

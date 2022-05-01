@@ -76,14 +76,16 @@ bool ImageConverterFF::check() const
 
     if (sws_isSupportedInput((AVPixelFormat)d.fmt_in) <= 0)
     {
-        qCWarning(DIGIKAM_QTAV_LOG_WARN).noquote() << QString::asprintf("Input pixel format not supported (%s)", av_get_pix_fmt_name((AVPixelFormat)d.fmt_in));
+        qCWarning(DIGIKAM_QTAV_LOG_WARN).noquote() << QString::asprintf("Input pixel format not supported (%s)",
+                                                         av_get_pix_fmt_name((AVPixelFormat)d.fmt_in));
 
         return false;
     }
 
     if (sws_isSupportedOutput((AVPixelFormat)d.fmt_out) <= 0)
     {
-        qCWarning(DIGIKAM_QTAV_LOG_WARN).noquote() << QString::asprintf("Output pixel format not supported (%s)", av_get_pix_fmt_name((AVPixelFormat)d.fmt_out));
+        qCWarning(DIGIKAM_QTAV_LOG_WARN).noquote() << QString::asprintf("Output pixel format not supported (%s)",
+                                                         av_get_pix_fmt_name((AVPixelFormat)d.fmt_out));
 
         return false;
     }
@@ -95,7 +97,7 @@ bool ImageConverterFF::convert(const quint8 *const src[], const int srcStride[],
 {
     DPTR_D(ImageConverterFF);
 
-    // Check out dimension. equals to in dimension if not setted. TODO: move to another common func
+    // Check out dimension. equals to in dimension if not set. TODO: move to another common function
 
     if (d.w_out == 0 || d.h_out == 0)
     {

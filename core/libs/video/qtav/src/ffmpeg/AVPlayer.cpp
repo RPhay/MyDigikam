@@ -102,7 +102,7 @@ AVPlayer::AVPlayer(QObject* parent)
 
     /*
      * call stop() before the window(d->vo) closed to stop the waitcondition
-     * If close the d->vo widget, the the d->vo may destroy before waking up.
+     * If close the d->vo widget, the d->vo may destroy before waking up.
      */
     connect(qApp, SIGNAL(aboutToQuit()),
             this, SLOT(aboutToQuitApp()));
@@ -608,7 +608,7 @@ MediaEndAction AVPlayer::mediaEndAction() const
 }
 
 /*
- * loaded state is the state of current setted file.
+ * loaded state is the state of current set file.
  * For replaying, we can avoid load a seekable file again.
  * For playing a new file, load() is required.
  */

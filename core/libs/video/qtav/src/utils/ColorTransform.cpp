@@ -109,7 +109,7 @@ static QMatrix4x4 ColorRangeYUV(ColorRange from, ColorRange to)
 
     if (from == ColorRange_Limited)
     {
-        // TODO: Unknown. But what if realy want unknown?
+        // TODO: Unknown. But what if really want unknown?
 
         qCDebug(DIGIKAM_QTAV_LOG).noquote() << QString::asprintf("input yuv limited range");
 

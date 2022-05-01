@@ -172,7 +172,7 @@ public:
     int orientation() const;
     void setOrientation(int value);
 
-    // The video frame rect in renderer you shoud paint to. e.g. in RendererAspectRatio mode, the rect equals to renderer's
+    // The video frame rect in renderer youshouldpaint to. e.g. in RendererAspectRatio mode, the rect equals to renderer's
     QRect videoRect() const;
 
     /*

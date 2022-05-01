@@ -209,7 +209,7 @@ void VideoCapture::start()
     task->name = name;
     task->format = fmt;
     task->qfmt = qfmt;
-    task->frame = frame; //copy here and it's safe in capture thread because start() is called immediatly after setVideoFrame
+    task->frame = frame; //copy here and it's safe in capture thread because start() is called imediatly after setVideoFrame
     if (isAsync()) {
         videoCaptureThreadPool()->start(task);
     } else {

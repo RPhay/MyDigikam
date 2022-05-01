@@ -21,14 +21,20 @@
  *
  * ============================================================ */
 
-#ifndef QTAV_AVTHREAD_H
-#define QTAV_AVTHREAD_H
+#ifndef QTAV_AV_THREAD_H
+#define QTAV_AV_THREAD_H
+
+// Qt includes
 
 #include <QRunnable>
 #include <QScopedPointer>
 #include <QThread>
+
+// Local includes
+
 #include "PacketBuffer.h"
-//TODO: pause functions. AVOutput may be null, use AVThread's pause state
+
+// TODO: pause functions. AVOutput may be null, use AVThread's pause state
 
 namespace QtAV
 {
@@ -40,15 +46,19 @@ class AVClock;
 class Filter;
 class Statistics;
 class OutputSet;
+
 class AVThread : public QThread
 {
     Q_OBJECT
     DPTR_DECLARE_PRIVATE(AVThread)
+
 public:
+
     explicit AVThread(QObject *parent = nullptr);
     virtual ~AVThread();
 
-    //used for changing some components when running
+    // used for changing some components when running
+
     Q_DECL_DEPRECATED void lock();
     Q_DECL_DEPRECATED void unlock();
 
@@ -60,8 +70,8 @@ public:
     void setDecoder(AVDecoder *decoder);
     AVDecoder *decoder() const;
 
-    void setOutput(AVOutput *out); //Q_DECL_DEPRECATED
-    AVOutput* output() const; //Q_DECL_DEPRECATED
+    void setOutput(AVOutput *out);
+    AVOutput* output() const;
 
     void setOutputSet(OutputSet *set);
     OutputSet* outputSet() const;
@@ -77,48 +87,69 @@ public:
     const QList<Filter *> &filters() const;
 
     // TODO: resample, resize task etc.
+
     void scheduleTask(QRunnable *task);
     void requestSeek();
     void scheduleFrameDrop(bool value = true);
-    qreal previousHistoryPts() const; //move to statistics?
-    qreal decodeFrameRate() const; //move to statistics?
+    qreal previousHistoryPts() const;           // move to statistics?
+    qreal decodeFrameRate() const;              // move to statistics?
     void setDropFrameOnSeek(bool value);
 
     void resetState();
+
 public Q_SLOTS:
+
     virtual void stop();
+
     /*change pause state. the pause/continue action will do in the next loop*/
-    void pause(bool p); //processEvents when waiting?
-    void nextAndPause(); //process 1 frame and pause
+
+    void pause(bool p);     // processEvents when waiting?
+
+    void nextAndPause();    // process 1 frame and pause
 
 Q_SIGNALS:
+
     void frameDelivered();
+
     /*!
      * \brief seekFinished
      * \param timestamp the frame pts after seek
      */
     void seekFinished(qint64 timestamp);
     void eofDecoded();
+
 private Q_SLOTS:
+
     void onStarted();
     void onFinished();
+
 protected:
+
     AVThread(AVThreadPrivate& d, QObject *parent = nullptr);
+
     /*
-     * If the pause state is true setted by pause(true), then block the thread and wait for pause state changed, i.e. pause(false)
-     * and return true. Otherwise, return false immediatly.
+     * If the pause state is true set by pause(true), then block the thread and wait for pause
+     * state changed, i.e. pause(false)
+     * and return true. Otherwise, return false imediatly.
      */
+
     // has timeout so that the pending tasks can be processed
+
     bool tryPause(unsigned long timeout = 100);
-    bool processNextTask(); //in AVThread
+    bool processNextTask(); // in AVThread
+
     // pts > 0: compare pts and clock when waiting
+
     void waitAndCheck(ulong value, qreal pts);
 
     DPTR_DECLARE(AVThread)
+
 private:
+
     void setStatistics(Statistics* statistics);
     friend class AVPlayer;
 };
-}
 
-#endif // QTAV_AVTHREAD_H
+} // namespace QtAV
+
+#endif // QTAV_AV_THREAD_H

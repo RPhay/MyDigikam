@@ -149,7 +149,7 @@ private:
 
     void setVideoFrame(const VideoFrame& frame);
 
-    // It's called by VideoThread after immediatly setVideoFrame(). Will emit ready()
+    // It's called by VideoThread after imediatly setVideoFrame(). Will emit ready()
 
     void start();
 

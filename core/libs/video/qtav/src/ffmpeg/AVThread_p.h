@@ -21,8 +21,8 @@
  *
  * ============================================================ */
 
-#ifndef QTAV_AVTHREAD_P_H
-#define QTAV_AVTHREAD_P_H
+#ifndef QTAV_AV_THREAD_P_H
+#define QTAV_AV_THREAD_P_H
 
 #include "AVThread.h"
 
@@ -43,6 +43,7 @@
 QT_BEGIN_NAMESPACE
 class QRunnable;
 QT_END_NAMESPACE
+
 namespace QtAV
 {
 
@@ -82,20 +83,22 @@ public:
     virtual ~AVThreadPrivate();
 
     bool paused, next_pause;
-    volatile bool stop; //true when packets is empty and demux is end.
+    volatile bool stop; // true when packets is empty and demux is end.
     AVClock *clock;
     PacketBuffer packets;
     AVDecoder *dec;
     OutputSet *outputSet;
     QMutex mutex;
-    QWaitCondition cond; //pause
+    QWaitCondition cond; // pause
     qreal delay;
     QList<Filter*> filters;
-    Statistics *statistics; //not obj. Statistics is unique for the player, which is in AVPlayer
+    Statistics *statistics; // not obj. Statistics is unique for the player, which is in AVPlayer
     BlockingQueue<QRunnable*> tasks;
     QSemaphore sem;
     bool seek_requested;
+
     //only decode video without display or skip decode audio until pts reaches
+
     qreal render_pts0;
 
     static QVariantHash dec_opt_framedrop, dec_opt_normal;
@@ -107,4 +110,5 @@ public:
 };
 
 } // namespace QtAV
-#endif // QTAV_AVTHREAD_P_H
+
+#endif // QTAV_AV_THREAD_P_H

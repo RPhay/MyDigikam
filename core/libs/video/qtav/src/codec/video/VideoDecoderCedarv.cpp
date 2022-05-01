@@ -87,7 +87,7 @@ Q_SIGNALS:
 extern VideoDecoderId VideoDecoderId_Cedarv;
 FACTORY_REGISTER(VideoDecoder, Cedarv, "Cedarv")
 
-// source data is colum major. every block is 32x32
+// source data iscolumnmajor. every block is 32x32
 static void map32x32_to_yuv_Y(void* srcY, void* tarY, unsigned int dst_pitch, unsigned int coded_width, unsigned int coded_height)
 {
     unsigned long offset;

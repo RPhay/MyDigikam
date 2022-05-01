@@ -308,7 +308,7 @@ void BlockingQueue<T, Container>::blockFull(bool block)
     }
 
     // DO NOT use the same lock that put() get() use. it may be already locked
-    // this function usualy called in demux thread, so no lock is ok
+    // this function usually called in demux thread, so no lock is ok
 
     QWriteLocker locker(&block_change_lock);
     Q_UNUSED(locker);

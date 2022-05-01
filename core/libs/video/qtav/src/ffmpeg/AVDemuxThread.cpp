@@ -830,9 +830,11 @@ void AVDemuxThread::run()
     int stream = 0;
     Packet pkt;
     pause(false);
-    qCDebug(DIGIKAM_QTAV_LOG).noquote() << QString::asprintf("get av queue a/v thread = %p %p", audio_thread, video_thread);
-    PacketBuffer *aqueue = audio_thread ? audio_thread->packetQueue() : nullptr;
-    PacketBuffer *vqueue = video_thread ? video_thread->packetQueue() : nullptr;
+    qCDebug(DIGIKAM_QTAV_LOG).noquote() << QString::asprintf("get av queue a/v thread = %p %p",
+                                                                 audio_thread, video_thread);
+
+    PacketBuffer* aqueue = audio_thread ? audio_thread->packetQueue() : nullptr;
+    PacketBuffer* vqueue = video_thread ? video_thread->packetQueue() : nullptr;
 
     // aqueue as a primary buffer: music with/without cover
 
@@ -987,7 +989,7 @@ void AVDemuxThread::run()
                 audio_has_pic = ademuxer->hasAttacedPicture();
 
                 // FIXME: buffer full but buffering!!!
-                // avoid read external track everytime. aqueue may not block full
+                // avoid read external track every time. aqueue may not block full
                 // vqueue will not block if aqueue is not enough
 
                 if (!aqueue->isFull() || aqueue->isBuffering())
@@ -1008,12 +1010,12 @@ void AVDemuxThread::run()
 
         //qCDebug(DIGIKAM_QTAV_LOG).noquote() << QString::asprintf("vqueue: %d, aqueue: %d/isbuffering %d isfull: %d, buffer: %d/%d", vqueue->size(), aqueue->size(), aqueue->isBuffering(), aqueue->isFull(), aqueue->buffered(), aqueue->bufferValue());
 
-        //QMutexLocker locker(&buffer_mutex); //TODO: seems we do not need to lock
+        //QMutexLocker locker(&buffer_mutex); // TODO: seems we do not need to lock
         //Q_UNUSED(locker);
 
-        /*1 is empty but another is enough, then do not block to
-          ensure the empty one can put packets immediatly.
-          But usually it will not happen, why?
+        /* 1 is empty but another is enough, then do not block to
+           ensure the empty one can put packets imediatly.
+           But usually it will not happen, why?
         */
 
         /* demux thread will be blocked only when 1 queue is full and still put
@@ -1024,7 +1026,7 @@ void AVDemuxThread::run()
          * stream data: aavavvavvavavavavavavavavvvaavavavava, it's ok
          */
 
-        //TODO: use cache queue, take from cache queue if not empty?
+        // TODO: use cache queue, take from cache queue if not empty?
 
         const bool a_internal = stream == demuxer->audioStream();
 

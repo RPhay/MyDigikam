@@ -178,13 +178,13 @@ public:
 
     /*!
      * \brief canRender
-     * wether current processor supports rendering. Check before getImage()
+     *whethercurrent processor supports rendering. Check before getImage()
      * \return
      */
     bool canRender() const;
 
     // call setTimestamp before getText/Image
-    // plain text. separated by '\n' if more more than 1 text rects found
+    // plain text. separated by '\n' if more than 1 text rects found
 
     QString getText() const;
 

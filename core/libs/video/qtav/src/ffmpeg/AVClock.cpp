@@ -124,7 +124,7 @@ void AVClock::updateExternalClock(qint64 msecs)
 
     qCDebug(DIGIKAM_QTAV_LOG).noquote() << QString::asprintf("External clock change: %f ==> %f", value(), double(msecs) * kThousandth);
 
-    pts_ = double(msecs) * kThousandth; //can not use msec/1000.
+    pts_ = double(msecs) * kThousandth; // can not use msec/1000.
 
     if (!isPaused())
         timer.restart();
@@ -200,7 +200,8 @@ void AVClock::start()
 
     Q_EMIT started();
 }
-//remember last value because we don't reset  pts_, pts_v, delay_
+
+// remember last value because we don't reset  pts_, pts_v, delay_
 
 void AVClock::pause(bool p)
 {
@@ -247,7 +248,7 @@ void AVClock::reset()
 
     t = QDateTime::currentMSecsSinceEpoch();
 
-    Q_EMIT resetted();
+    Q_EMIT resetted();      // krazy:exclude=spelling
 }
 
 void AVClock::timerEvent(QTimerEvent *event)

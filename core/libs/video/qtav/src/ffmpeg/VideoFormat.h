@@ -203,7 +203,7 @@ public:
 
     /*!
      * \brief channels
-     * \return number of channels(components) the the format. e.g. RGBA has 4 channels, NV12 is 3
+     * \return number of channels(components) the format. e.g. RGBA has 4 channels, NV12 is 3
      */
     int channels() const;
 

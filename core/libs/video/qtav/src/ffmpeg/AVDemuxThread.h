@@ -101,7 +101,7 @@ protected:
     virtual void run();
 
     /**
-     * If the pause state is true setted by pause(true), then block the thread and wait for pause state changed, i.e. pause(false)
+     * If the pause state is true set by pause(true), then block the thread and wait for pause state changed, i.e. pause(false)
      * and return true. Otherwise, return false immediatly.
      */
     bool tryPause(unsigned long timeout = 100);
