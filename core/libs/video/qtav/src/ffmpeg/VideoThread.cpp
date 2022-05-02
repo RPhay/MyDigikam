@@ -109,7 +109,7 @@ VideoCapture* VideoThread::setVideoCapture(VideoCapture *cap)
                 this, SLOT(addCaptureTask()));
     }
 
-    if (cap->autoSave() && cap->name.isEmpty())
+    if (cap && cap->autoSave() && cap->name.isEmpty())
     {
         // statistics is already set by AVPlayer
 
