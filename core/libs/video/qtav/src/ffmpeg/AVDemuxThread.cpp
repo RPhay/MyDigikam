@@ -839,6 +839,14 @@ void AVDemuxThread::run()
     // aqueue as a primary buffer: music with/without cover
 
     AVThread* thread  = !video_thread || (audio_thread && demuxer->hasAttacedPicture()) ? audio_thread : video_thread;
+
+    if (!thread)
+    {
+        qCCritical(DIGIKAM_QTAV_LOG_CRITICAL) << "No audio or video thread to process!";
+
+        return;
+    }
+
     m_buffer          = thread->packetQueue();
     const qint64 buf2 = aqueue ? aqueue->bufferValue() : 1; // TODO: may be changed by user. Deal with audio track change
 
