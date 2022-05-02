@@ -136,7 +136,7 @@ public:
 
     SharedPtr(const SharedPtr& other)
     {
-        m_impl = other.m_impl;
+        m_impl = other.m_impl;      // cppcheck-suppress copyCtorPointerCopying
         m_impl->ref();
     }
 
