@@ -384,7 +384,7 @@ class display_t;
 
 typedef QSharedPointer<display_t> display_ptr;
 
-class display_t
+class display_t         // cppcheck-suppress noConstructor
 {
 public:
 

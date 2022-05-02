@@ -130,7 +130,7 @@
 // interface
 
 template <typename PUB>
-class DPtrPrivate
+class DPtrPrivate           // cppcheck-suppress noConstructor
 {
 public:
 
