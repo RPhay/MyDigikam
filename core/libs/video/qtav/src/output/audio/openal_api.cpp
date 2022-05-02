@@ -184,7 +184,7 @@ CAPI_DEFINE_M_ENTRY(void, ALC_APIENTRY, alcCaptureSamples, CAPI_ARG3(ALCdevice *
 
 CAPI_END_DLL()
 
-CAPI_DEFINE_DLL             // cppcheck-suppress noOperatorEq
+CAPI_DEFINE_DLL             // cppcheck-suppress[noOperatorEq,noCopyConstructor]
 
 // CAPI_DEFINE(argc, return_type, name, argv_no_name)
 

@@ -310,7 +310,7 @@ void GeometryRenderer::bindBuffers()
     // has vbo, no vao: bind vbo & set vertex attributes
     // has vbo, has vao: skip
 
-    if (setv_skip)
+    if (setv_skip)          // cppcheck-suppress knownConditionTrueFalse
         return;
 
     if (!g)

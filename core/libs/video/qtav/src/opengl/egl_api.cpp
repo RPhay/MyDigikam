@@ -196,7 +196,7 @@ CAPI_DEFINE_M_ENTRY(EGLBoolean, EGLAPIENTRY, eglWaitSync, CAPI_ARG3(EGLDisplay, 
 #endif
 
 CAPI_END_DLL()
-CAPI_DEFINE_DLL         // cppcheck-suppress noOperatorEq
+CAPI_DEFINE_DLL         // cppcheck-suppress[noOperatorEq,noCopyConstructor]
 
 // CAPI_DEFINE(argc, return_type, name, argv_no_name)
 
