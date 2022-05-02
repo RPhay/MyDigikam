@@ -75,6 +75,8 @@ static void SetColorDetailsByFFmpeg(VideoFrame *f, AVFrame* frame, AVCodecContex
             {
                 cr = ColorRange_Full;
                 cs = ColorSpace_XYZ; // not here
+
+                Q_UNUSED(cs);
             }
             else if (!f->format().isRGB())
             {

@@ -179,7 +179,7 @@ void VideoThread::setFrameRate(qreal value)
 
     if (d.force_fps != 0.0)
     {
-        d.force_dt = int(1000.0/d.force_fps);
+        d.force_dt = int(1000.0 / d.force_fps);
     }
     else
     {
@@ -231,9 +231,9 @@ void VideoThread::setEQ(int b, int c, int s)
 
     DPTR_D(VideoThread);
 
-    EQTask *task = new EQTask(&d.conv);
+    EQTask *task     = new EQTask(&d.conv);
     task->brightness = b;
-    task->contrast = c;
+    task->contrast   = c;
     task->saturation = s;
 
     if (isRunning())
@@ -251,6 +251,7 @@ void VideoThread::setEQ(int b, int c, int s)
 void VideoThread::applyFilters(VideoFrame &frame)
 {
     DPTR_D(VideoThread);
+
     QMutexLocker locker(&d.mutex);
     Q_UNUSED(locker);
 
@@ -284,14 +285,14 @@ bool VideoThread::deliverVideoFrame(VideoFrame &frame)
 
     d.outputSet->lock();
     QList<AVOutput *> outputs = d.outputSet->outputs();
-    VideoRenderer *vo = nullptr;
+    VideoRenderer *vo         = nullptr;
 
     if (!outputs.isEmpty())
         vo = static_cast<VideoRenderer*>(outputs.first());
 
-    if (vo && (!vo->isSupported(frame.pixelFormat())
-            || (vo->isPreferredPixelFormatForced() && vo->preferredPixelFormat() != frame.pixelFormat())
-            ))
+    if (   vo && (!vo->isSupported(frame.pixelFormat())
+        || (vo->isPreferredPixelFormatForced() && vo->preferredPixelFormat() != frame.pixelFormat())
+       ))
     {
         VideoFormat fmt(frame.format());
 
@@ -305,6 +306,7 @@ bool VideoThread::deliverVideoFrame(VideoFrame &frame)
         if (!outFrame.isValid())
         {
             d.outputSet->unlock();
+
             return false;
         }
 
@@ -337,21 +339,20 @@ void VideoThread::run()
 
     // not necessary context is managed by filters.
 
-    d.filter_context      = VideoFilterContext::create(VideoFilterContext::QtPainter);
-    VideoDecoder *dec     = static_cast<VideoDecoder*>(d.dec);
+    d.filter_context           = VideoFilterContext::create(VideoFilterContext::QtPainter);
+    VideoDecoder *dec          = static_cast<VideoDecoder*>(d.dec);
     Packet pkt;
-    QVariantHash *dec_opt = &d.dec_opt_normal; // TODO: restore old framedrop option after seek
+    QVariantHash *dec_opt      = &d.dec_opt_normal; // TODO: restore old framedrop option after seek
 
     /*!
      * if we skip some frames(e.g. seek, drop frames to speed up), then first frame to decode must
      * be a key frame for hardware decoding. otherwise may crash
      */
 
-    bool wait_key_frame = false;
-    int nb_dec_slow     = 0;
-    int nb_dec_fast     = 0;
-
-    qint32 seek_count = 0; // wm4 says: 1st seek can not use frame drop for decoder
+    bool wait_key_frame        = false;
+    int nb_dec_slow            = 0;
+    int nb_dec_fast            = 0;
+    qint32 seek_count          = 0; // wm4 says: 1st seek can not use frame drop for decoder
 
     // TODO: kNbSlowSkip depends on video fps, ensure slow time <= 2s
 
@@ -359,22 +360,25 @@ void VideoThread::run()
      * if slow count > kNbSlowSkip/2, skip rendering every 3 or 6 frames
      */
 
-    const int kNbSlowSkip = 20;
+    const int kNbSlowSkip      = 20;
 
     // kNbSlowFrameDrop: if video frame slow count > kNbSlowFrameDrop, skip decoding nonref frames. only some of ffmpeg based decoders support it.
 
     const int kNbSlowFrameDrop = 10;
-    bool sync_audio = d.clock->clockType() == AVClock::AudioClock;
-    bool sync_video = d.clock->clockType() == AVClock::VideoClock; // no frame drop
-    const qint64 start_time = QDateTime::currentMSecsSinceEpoch();
-    qreal v_a = 0;
-    int nb_no_pts = 0;
+    bool sync_audio            = d.clock->clockType() == AVClock::AudioClock;
+    bool sync_video            = d.clock->clockType() == AVClock::VideoClock; // no frame drop
+    const qint64 start_time    = QDateTime::currentMSecsSinceEpoch();
+    qreal v_a                  = 0;
+    int nb_no_pts              = 0;
+
+    Q_UNUSED(sync_audio);
+    Q_UNUSED(sync_video);
 
     // bool wait_audio_drain
 
-    const char* pkt_data     = nullptr; // workaround for libav9 decode fail but error code >= 0
-    qint64 last_deliver_time = 0;
-    int sync_id              = 0;
+    const char* pkt_data       = nullptr; // workaround for libav9 decode fail but error code >= 0
+    qint64 last_deliver_time   = 0;
+    int sync_id                = 0;
 
     while (!d.stop)
     {
@@ -402,8 +406,10 @@ void VideoThread::run()
         if (d.seek_requested)
         {
             d.seek_requested = false;
+
             qCDebug(DIGIKAM_QTAV_LOG).noquote() << QString::asprintf("request seek video thread");
-            pkt = Packet(); // last decode failed and pkt is valid, reset pkt to force take the next packet if seek is requested
+
+            pkt              = Packet(); // last decode failed and pkt is valid, reset pkt to force take the next packet if seek is requested
             msleep(1);
         }
         else
@@ -418,6 +424,7 @@ void VideoThread::run()
                 {
                     msleep(10);
                     v_a = 0;
+
                     continue;
                 }
             }
@@ -457,15 +464,16 @@ void VideoThread::run()
                     << QString::asprintf("Invalid packet! flush video codec context!!!!!!!!!! video packet queue size: %d",
                         d.packets.size());
 
-                d.dec->flush(); //d.dec instead of dec because d.dec maybe changed in processNextTask() but dec is not
+                d.dec->flush(); // d.dec instead of dec because d.dec maybe changed in processNextTask() but dec is not
+
                 d.render_pts0 = pkt.pts;
-                sync_id = pkt.position;
+                sync_id       = pkt.position;
 
                 if (pkt.pts >= 0)
                     qCDebug(DIGIKAM_QTAV_LOG).noquote() << QString::asprintf("video seek: %.3f, id: %d", d.render_pts0, sync_id);
 
                 d.pts_history = ring<qreal>(d.pts_history.capacity());
-                v_a = 0;
+                v_a           = 0;
 
                 continue;
             }
@@ -516,7 +524,7 @@ void VideoThread::run()
         qreal diff = dts > 0 ? dts - d.clock->value() + v_a : v_a;
 
         if (pkt.isEOF())
-            diff = qMin<qreal>(1.0, qMax<qreal>(d.delay, 1.0/d.statistics->video_only.currentDisplayFPS()));
+            diff = qMin<qreal>(1.0, qMax<qreal>(d.delay, 1.0 / d.statistics->video_only.currentDisplayFPS()));
 
         if (diff < 0 && sync_video)
             diff = 0; // this ensures no frame drop
@@ -552,10 +560,10 @@ void VideoThread::run()
 
                     // TODO: when to reset so frame drop flag can reset?
 
-                    nb_dec_slow = 0;
+                    nb_dec_slow    = 0;
                     wait_key_frame = true;
-                    pkt = Packet();
-                    v_a = 0;
+                    pkt            = Packet();
+                    v_a            = 0;
 
                     // TODO: use discard flag
 
@@ -630,8 +638,8 @@ void VideoThread::run()
                 const double s = qMin<qreal>(0.01*(nb_dec_fast>>1), diff);
                 qCWarning(DIGIKAM_QTAV_LOG_WARN).noquote() << QString::asprintf("video too fast!!! sleep %.2f s, nb fast: %d, v_a: %.4f", s, nb_dec_fast, v_a);
                 waitAndCheck(s*1000UL, dts);
-                diff = 0;
-                skip_render = false;
+                diff           = 0;
+                skip_render    = false;
             }
         }
 
@@ -711,7 +719,8 @@ void VideoThread::run()
             if (!pkt.hasKeyFrame)
             {
                 wait_key_frame = true;
-                v_a = 0;
+                v_a            = 0;
+
                 continue;
             }
 
@@ -818,12 +827,13 @@ void VideoThread::run()
             qCDebug(DIGIKAM_QTAV_LOG).noquote() << QString::asprintf("skip rendering @%.3f", pts);
             pkt = Packet();
             v_a = 0;
+
             continue;
         }
 
         Q_ASSERT(d.statistics);
 
-        d.statistics->video.current_time = QTime(0, 0, 0).addMSecs(int(pts * 1000.0)); //TODO: is it expensive?
+        d.statistics->video.current_time = QTime(0, 0, 0).addMSecs(int(pts * 1000.0)); // TODO: is it expensive?
         applyFilters(frame);
 
         // while can pause, processNextTask, not call outset.puase which is deperecated
@@ -843,7 +853,7 @@ void VideoThread::run()
         {
             // && qFuzzyCompare(d.clock->speed(), 1.0)) {
 
-            const qint64 now = QDateTime::currentMSecsSinceEpoch();
+            const qint64 now   = QDateTime::currentMSecsSinceEpoch();
             const qint64 delta = qint64(d.force_dt) - (now - last_deliver_time);
 
             if (frame.timestamp() <= 0)
@@ -852,15 +862,17 @@ void VideoThread::run()
 
                 const int msecs_started(now + qMax(0LL, delta) - start_time);
                 frame.setTimestamp(qreal(msecs_started)/1000.0);
-                clock()->updateValue(frame.timestamp()); //external clock?
+                clock()->updateValue(frame.timestamp()); // external clock?
             }
 
             if (delta > 0LL)
             {
                 // limit up bound?
+
                 waitAndCheck((ulong)delta, -1); // wait and not compare pts-clock
             }
-        } else if (false)
+        }
+        else if (false)
         {
             // FIXME: may block a while when seeking
 
@@ -886,6 +898,7 @@ void VideoThread::run()
 
         if (d.force_dt > 0)
             last_deliver_time = QDateTime::currentMSecsSinceEpoch();
+
         // TODO: store original frame. now the frame is filtered and maybe converted to renderer perferred format
 
         d.displayed_frame = frame;

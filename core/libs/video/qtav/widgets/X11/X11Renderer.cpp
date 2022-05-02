@@ -29,6 +29,7 @@
  * X11 headers define 'Bool' type which is used in qmetatype.h. we must include X11 files at last,
  * i.e. X11Renderer_p.h. otherwise compile error
  */
+
 #include "VideoRenderer_p.h"
 #include "FilterContext.h"
 #include "digikam_debug.h"
@@ -208,6 +209,7 @@ class X11RendererPrivate : public VideoRendererPrivate
 public:
 
     DPTR_DECLARE_PUBLIC(X11Renderer)
+
     X11RendererPrivate()
       : use_shm(true)
       , warn_bad_pitch(true)
@@ -270,14 +272,14 @@ public:
             ximg = XGetImage(display, DefaultRootWindow(display), 0, 0, 1, 1, AllPlanes, ZPixmap);
         }
 
-        int ximage_depth = depth;
+        int ximage_depth  = depth;
         unsigned int mask = 0;
 
         if (ximg)
         {
             bpp = ximg->bits_per_pixel;
 
-            if ((ximage_depth+7)/8 != (bpp+7)/8) // 24bpp use 32 depth
+            if ((ximage_depth+7) / 8 != (bpp+7) / 8) // 24bpp use 32 depth
                 ximage_depth = bpp;
 
             mask = ximg->red_mask | ximg->green_mask | ximg->blue_mask;
@@ -298,6 +300,8 @@ public:
             else if (mask == 0xFFFF)
                 ximage_depth = 16;
         }
+
+        Q_UNUSED(ximage_depth);
     }
 
     ~X11RendererPrivate()
@@ -312,7 +316,7 @@ public:
     {
         if (use_shm)
         {
-            XShmSegmentInfo &shm = shm_pool[index];
+            XShmSegmentInfo& shm = shm_pool[index];
 
             if (shm.shmaddr)
             {

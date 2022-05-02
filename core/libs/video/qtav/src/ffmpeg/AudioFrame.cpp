@@ -193,6 +193,8 @@ AudioFrame AudioFrame::mid(int pos, int len) const
         pos = 0;
     }
 
+    Q_UNUSED(pos);
+
     int lenBytes = len * d->format.bytesPerSample();
 
     if (len > 0 && lenBytes < bufSize)

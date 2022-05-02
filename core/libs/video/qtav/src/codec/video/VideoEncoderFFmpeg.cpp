@@ -61,15 +61,15 @@ struct
     const char* name;
 } hwdevs[] =
 {
-    {AV_HWDEVICE_TYPE_VDPAU, "vdpau"},
-    {AV_HWDEVICE_TYPE_CUDA,  "cuda"},
-    {AV_HWDEVICE_TYPE_VAAPI, "vaapi"},
-    {AV_HWDEVICE_TYPE_DXVA2, "dxva2"},
+    { AV_HWDEVICE_TYPE_VDPAU, "vdpau" },
+    { AV_HWDEVICE_TYPE_CUDA,  "cuda"  },
+    { AV_HWDEVICE_TYPE_VAAPI, "vaapi" },
+    { AV_HWDEVICE_TYPE_DXVA2, "dxva2" },
 };
 
 AVHWDeviceType fromHWAName(const char* name)
 {
-    for (size_t i = 0; i < sizeof(hwdevs)/sizeof(hwdevs[0]); ++i)
+    for (size_t i = 0 ; i < sizeof(hwdevs)/sizeof(hwdevs[0]) ; ++i)
     {
         if (qstrcmp(name, hwdevs[i].name) == 0)
             return hwdevs[i].type;
@@ -91,7 +91,7 @@ class VideoEncoderFFmpeg : public VideoEncoder
 public:
 
     VideoEncoderFFmpeg();
-    VideoEncoderId id() const override;
+    VideoEncoderId id() const                           override;
     bool encode(const VideoFrame &frame = VideoFrame()) override;
 
     void setHWDevice(const QString& name);
@@ -125,20 +125,22 @@ public:
         avctx = avcodec_alloc_context3(nullptr);
     }
 
-    bool open() override;
+    bool open()  override;
     bool close() override;
 
-    qint64 nb_encoded;
-    QByteArray buffer;
-    QString hwdev;
+public:
+
+    qint64                  nb_encoded;
+    QByteArray              buffer;
+    QString                 hwdev;
 
 #ifdef HAVE_AVHWCTX
 
-    AVBufferRef *hw_device_ctx;
+    AVBufferRef*            hw_device_ctx;
 
-    AVBufferRef *hwframes_ref;
-    AVHWFramesContext *hwframes;
-    QVector<AVPixelFormat> sw_fmts;
+    AVBufferRef*            hwframes_ref;
+    AVHWFramesContext*      hwframes;
+    QVector<AVPixelFormat>  sw_fmts;
 
 #endif
 
@@ -147,6 +149,7 @@ public:
 bool VideoEncoderFFmpegPrivate::open()
 {
     nb_encoded = 0LL;
+
     if (codec_name.isEmpty())
     {
         // copy ctx from muxer by copyAVCodecContext
@@ -182,18 +185,18 @@ bool VideoEncoderFFmpegPrivate::open()
         avctx = nullptr;
     }
 
-    avctx = avcodec_alloc_context3(codec);
-    avctx->width = width; // coded_width works, why?
+    avctx         = avcodec_alloc_context3(codec);
+    avctx->width  = width; // coded_width works, why?
     avctx->height = height;
 
     // reset format_used to user defined format. important to update default format if format is invalid
 
-    format_used = VideoFormat::Format_Invalid;
+    format_used         = VideoFormat::Format_Invalid;
     AVPixelFormat fffmt = (AVPixelFormat)format.pixelFormatFFmpeg();
 
     if (codec->pix_fmts && format.isValid())
     {
-        for (int i = 0; codec->pix_fmts[i] != AVPixelFormat(-1); ++i)
+        for (int i = 0 ; codec->pix_fmts[i] != AVPixelFormat(-1) ; ++i)
         {
             if (fffmt == codec->pix_fmts[i])
             {
@@ -208,8 +211,11 @@ bool VideoEncoderFFmpegPrivate::open()
 
     AVPixelFormat hwfmt = AVPixelFormat(-1);
 
-    if (av_pix_fmt_desc_get(codec->pix_fmts[0])->flags & AV_PIX_FMT_FLAG_HWACCEL)
-        hwfmt = codec->pix_fmts[0];
+    if (codec->pix_fmts && format.isValid())
+    {
+        if (av_pix_fmt_desc_get(codec->pix_fmts[0])->flags & AV_PIX_FMT_FLAG_HWACCEL)
+            hwfmt = codec->pix_fmts[0];
+    }
 
     bool use_hwctx = false;
 
@@ -222,9 +228,9 @@ bool VideoEncoderFFmpegPrivate::open()
 
         if (dt != AVHWDeviceType(-1))
         {
-            use_hwctx = true;
-            avctx->pix_fmt = hwfmt;
-            hw_device_ctx = nullptr;
+            use_hwctx            = true;
+            avctx->pix_fmt       = hwfmt;
+            hw_device_ctx        = nullptr;
             AV_ENSURE(av_hwdevice_ctx_create(&hw_device_ctx, dt, hwdev.toLatin1().constData(), nullptr, 0), false);
             avctx->hw_frames_ctx = av_hwframe_ctx_alloc(hw_device_ctx);
 
@@ -237,10 +243,10 @@ bool VideoEncoderFFmpegPrivate::open()
 
             // get sw formats
 
-            const void *hwcfg = nullptr;
+            const void *hwcfg                  = nullptr;
             AVHWFramesConstraints *constraints = av_hwdevice_get_hwframe_constraints(hw_device_ctx, hwcfg);
-            const AVPixelFormat* in_fmts = constraints->valid_sw_formats;
-            AVPixelFormat sw_fmt = AVPixelFormat(-1);
+            const AVPixelFormat* in_fmts       = constraints->valid_sw_formats;
+            AVPixelFormat sw_fmt               = AVPixelFormat(-1);
 
             if (in_fmts)
             {
@@ -266,8 +272,8 @@ bool VideoEncoderFFmpegPrivate::open()
             // encoder surface pool parameters
 
             AVHWFramesContext* hwfs = (AVHWFramesContext*)avctx->hw_frames_ctx->data;
-            hwfs->format = hwfmt;       // must the same as avctx->pix_fmt
-            hwfs->sw_format = sw_fmt;   // if it's not set, vaapi will choose the last valid_sw_formats, but that's wrong for vaGetImage/DeriveImage. nvenc always need sw_format
+            hwfs->format            = hwfmt;       // must the same as avctx->pix_fmt
+            hwfs->sw_format         = sw_fmt;      // if it's not set, vaapi will choose the last valid_sw_formats, but that's wrong for vaGetImage/DeriveImage. nvenc always need sw_format
 
             // hw upload parameters. encoder's hwframes is just for parameter checking, will never be initialized, so we allocate an individual one.
 
@@ -333,9 +339,9 @@ bool VideoEncoderFFmpegPrivate::open()
     }
 
     if (frame_rate > 0)
-        avctx->time_base = av_d2q(1.0/frame_rate, frame_rate*1001.0+2);
+        avctx->time_base = av_d2q(1.0 / frame_rate, frame_rate*1001.0+2);
     else
-        avctx->time_base = av_d2q(1.0/VideoEncoder::defaultFrameRate(), VideoEncoder::defaultFrameRate()*1001.0+2);
+        avctx->time_base = av_d2q(1.0 / VideoEncoder::defaultFrameRate(), VideoEncoder::defaultFrameRate()*1001.0+2);
 
     qCDebug(DIGIKAM_QTAV_LOG).noquote() << QString::asprintf("size: %dx%d tbc: %f=%d/%d", width, height, av_q2d(avctx->time_base), avctx->time_base.num, avctx->time_base.den);
 
@@ -349,10 +355,10 @@ bool VideoEncoderFFmpegPrivate::open()
 
         //avctx->max_b_frames = 3;//h264
 
-        av_dict_set(&dict, "preset", "fast", 0); //x264
-        av_dict_set(&dict, "tune", "zerolatency", 0);  //x264
+        av_dict_set(&dict, "preset", "fast", 0);        // x264
+        av_dict_set(&dict, "tune", "zerolatency", 0);   // x264
 
-        //av_dict_set(&dict, "profile", "main", 0); // conflict with vaapi (int values)
+        //av_dict_set(&dict, "profile", "main", 0);     // conflict with vaapi (int values)
     }
 
     if (avctx->codec_id == AV_CODEC_ID_HEVC)
@@ -363,7 +369,7 @@ bool VideoEncoderFFmpegPrivate::open()
 
     if (avctx->codec_id == AV_CODEC_ID_MPEG2VIDEO)
     {
-        av_dict_set(&dict, "strict", "-2", 0); // mpeg2 arbitrary fps
+        av_dict_set(&dict, "strict", "-2", 0);          // mpeg2 arbitrary fps
     }
 
     applyOptionsForContext();
@@ -403,6 +409,7 @@ void VideoEncoderFFmpeg::setHWDevice(const QString &name)
         return;
 
     d.hwdev = name;
+
     Q_EMIT hwDeviceChanged();
 }
 
@@ -422,6 +429,7 @@ struct ScopedAVFrameDeleter
 bool VideoEncoderFFmpeg::encode(const VideoFrame &frame)
 {
     DPTR_D(VideoEncoderFFmpeg);
+
     QScopedPointer<AVFrame, ScopedAVFrameDeleter> f;
 
     // hwupload
@@ -455,7 +463,7 @@ bool VideoEncoderFFmpeg::encode(const VideoFrame &frame)
 
         const int nb_planes = frame.planeCount();
 
-        for (int i = 0; i < nb_planes; ++i)
+        for (int i = 0 ; i < nb_planes ; ++i)
         {
             f->linesize[i] = frame.bytesPerLine(i);
             f->data[i] = (uint8_t*)frame.constBits(i);
@@ -502,22 +510,22 @@ bool VideoEncoderFFmpeg::encode(const VideoFrame &frame)
                 {
                     // convert to supported sw format
 
-                    pixfmt = d.sw_fmts[0];
-                    f->format = pixfmt;
+                    pixfmt               = d.sw_fmts[0];
+                    f->format            = pixfmt;
                     VideoFrame converted = frame.to(VideoFormat::pixelFormatFromFFmpeg(pixfmt));
 
-                    for (int i = 0; i < converted.planeCount(); ++i)
+                    for (int i = 0 ; i < converted.planeCount() ; ++i)
                     {
                         f->linesize[i] = converted.bytesPerLine(i);
-                        f->data[i] = (uint8_t*)frame.constBits(i);
+                        f->data[i]     = (uint8_t*)frame.constBits(i);
                     }
                 }
 
                 if (init_frames_ctx)
                 {
                     d.hwframes->sw_format = pixfmt;
-                    d.hwframes->width = frame.width();
-                    d.hwframes->height = frame.height();
+                    d.hwframes->width     = frame.width();
+                    d.hwframes->height    = frame.height();
                     AV_ENSURE(av_hwframe_ctx_init(d.hwframes_ref), false);
                 }
             }
@@ -543,10 +551,10 @@ bool VideoEncoderFFmpeg::encode(const VideoFrame &frame)
 
     AVPacket pkt;
     av_init_packet(&pkt);
-    pkt.data = (uint8_t*)d.buffer.constData();
-    pkt.size = d.buffer.size();
+    pkt.data       = (uint8_t*)d.buffer.constData();
+    pkt.size       = d.buffer.size();
     int got_packet = 0;
-    int ret = avcodec_encode_video2(d.avctx, &pkt, f.data(), &got_packet);
+    int ret        = avcodec_encode_video2(d.avctx, &pkt, f.data(), &got_packet);
 
     if (ret < 0)
     {
