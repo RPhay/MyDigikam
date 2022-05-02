@@ -48,6 +48,7 @@
 //#define CAPI_LINK_ASS
 
 #include "ass_api.h"
+#include "digikam_debug.h"
 
 namespace QtAV
 {
@@ -154,11 +155,8 @@ static void ass_msg_cb(int level, const char *fmt, va_list va, void *data)
 
 #endif
 
-    printf("[libass]: ");
-    vprintf(fmt, va);
-    printf("\n");
-    fflush(nullptr);
-
+    qCDebug(DIGIKAM_QTAV_LOG).noquote() << "[libass]: " << QString::vasprintf(fmt, va);
+    
     return;
 
     QString msg(QStringLiteral("{libass} ") + QString().vasprintf(fmt, va));

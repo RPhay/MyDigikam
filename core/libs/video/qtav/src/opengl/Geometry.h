@@ -42,13 +42,13 @@ enum DataType
 {
     // equals to GL_BYTE etc.
 
-    TypeS8  = 0x1400, // S8
-    TypeU8  = 0x1401, // U8
-    TypeS16 = 0x1402, // S16
-    TypeU16 = 0x1403, // U16
-    TypeS32 = 0x1404, // S32
-    TypeU32 = 0x1405, // U32
-    TypeF32 = 0x1406  // F32
+    TypeS8  = 0x1400, ///< S8
+    TypeU8  = 0x1401, ///< U8
+    TypeS16 = 0x1402, ///< S16
+    TypeU16 = 0x1403, ///< U16
+    TypeS32 = 0x1404, ///< S32
+    TypeU32 = 0x1405, ///< U32
+    TypeF32 = 0x1406  ///< F32
 };
 
 class QTAV_EXPORT Attribute
@@ -72,8 +72,8 @@ public:
     bool operator==(const Attribute& other) const
     {
         return    tupleSize() == other.tupleSize()
-               && offset() == other.offset()
-               && type() == other.type()
+               && offset()    == other.offset()
+               && type()      == other.type()
                && normalize() == other.normalize();
     }
 };
@@ -123,23 +123,23 @@ public:
 
     virtual const QVector<Attribute>& attributes() const = 0;
 
-    void* vertexData()                  { return m_vdata.data();      }
-    const void* vertexData() const      { return m_vdata.constData(); }
-    const void* constVertexData() const { return m_vdata.constData(); }
+    void* vertexData()                  { return m_vdata.data();                                }
+    const void* vertexData() const      { return m_vdata.constData();                           }
+    const void* constVertexData() const { return m_vdata.constData();                           }
 
     void dumpVertexData();
 
-    void* indexData()                   { return m_icount > 0 ? m_idata.data() : nullptr;      }
-    const void* indexData() const       { return m_icount > 0 ? m_idata.constData() : nullptr; }
-    const void* constIndexData() const  { return m_icount > 0 ? m_idata.constData() : nullptr; }
-    int indexCount() const              { return m_icount;                                  }
+    void* indexData()                   { return m_icount > 0 ? m_idata.data()      : nullptr;  }
+    const void* indexData() const       { return m_icount > 0 ? m_idata.constData() : nullptr;  }
+    const void* constIndexData() const  { return m_icount > 0 ? m_idata.constData() : nullptr;  }
+    int indexCount() const              { return m_icount;                                      }
 
     int indexDataSize() const;
 
     // GL_UNSIGNED_BYTE/SHORT/INT
 
-    DataType indexType() const          { return m_itype;  }
-    void setIndexType(DataType value)   { m_itype = value; }
+    DataType indexType() const          { return m_itype;                                       }
+    void setIndexType(DataType value)   { m_itype = value;                                      }
 
     void setIndexValue(int index, int value);
     void setIndexValue(int index, int v1, int v2, int v3); // a triangle
