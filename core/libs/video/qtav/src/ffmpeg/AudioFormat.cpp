@@ -22,90 +22,112 @@
  * ============================================================ */
 
 #include "AudioFormat.h"
-#include "AVCompat.h"
+
+// Qt includes
+
 #ifndef QT_NO_DEBUG_STREAM
-#include <QtDebug>
-#endif //QT_NO_DEBUG_STREAM
-//FF_API_OLD_SAMPLE_FMT. e.g. FFmpeg 0.9
+#   include <QtDebug>
+#endif
+
+// Local includes
+
+#include "AVCompat.h"
+
+// FF_API_OLD_SAMPLE_FMT. e.g. FFmpeg 0.9
+
 #ifdef SampleFormat
-#undef SampleFormat
+#   undef SampleFormat
 #endif
 
 namespace QtAV
 {
 
-typedef struct {
-    AVSampleFormat avfmt;
+typedef struct
+{
+    AVSampleFormat            avfmt;
     AudioFormat::SampleFormat fmt;
-    const char* name;
+    const char*               name;
 } sample_fmt_entry;
-static const sample_fmt_entry samplefmts[] = {
-    { AV_SAMPLE_FMT_U8, AudioFormat::SampleFormat_Unsigned8, "u8" },
-    { AV_SAMPLE_FMT_S16, AudioFormat::SampleFormat_Signed16, "s16" },
-    { AV_SAMPLE_FMT_S32, AudioFormat::SampleFormat_Signed32, "s32" },
-    { AV_SAMPLE_FMT_FLT, AudioFormat::SampleFormat_Float, "float" },
-    { AV_SAMPLE_FMT_DBL, AudioFormat::SampleFormat_Double, "double" },
-    { AV_SAMPLE_FMT_U8P, AudioFormat::SampleFormat_Unsigned8Planar, "u8p" },
-    { AV_SAMPLE_FMT_S16P, AudioFormat::SampleFormat_Signed16Planar, "s16p" },
-    { AV_SAMPLE_FMT_S32P, AudioFormat::SampleFormat_Signed32Planar, "s32p" },
-    { AV_SAMPLE_FMT_FLTP, AudioFormat::SampleFormat_FloatPlanar, "floatp" },
-    { AV_SAMPLE_FMT_DBLP, AudioFormat::SampleFormat_DoublePlanar, "doublep" },
-    { AV_SAMPLE_FMT_NONE, AudioFormat::SampleFormat_Unknown, "unknown" }
+
+static const sample_fmt_entry samplefmts[] =
+{
+    { AV_SAMPLE_FMT_U8, AudioFormat::SampleFormat_Unsigned8,        "u8"      },
+    { AV_SAMPLE_FMT_S16, AudioFormat::SampleFormat_Signed16,        "s16"     },
+    { AV_SAMPLE_FMT_S32, AudioFormat::SampleFormat_Signed32,        "s32"     },
+    { AV_SAMPLE_FMT_FLT, AudioFormat::SampleFormat_Float,           "float"   },
+    { AV_SAMPLE_FMT_DBL, AudioFormat::SampleFormat_Double,          "double"  },
+    { AV_SAMPLE_FMT_U8P, AudioFormat::SampleFormat_Unsigned8Planar, "u8p"     },
+    { AV_SAMPLE_FMT_S16P, AudioFormat::SampleFormat_Signed16Planar, "s16p"    },
+    { AV_SAMPLE_FMT_S32P, AudioFormat::SampleFormat_Signed32Planar, "s32p"    },
+    { AV_SAMPLE_FMT_FLTP, AudioFormat::SampleFormat_FloatPlanar,    "floatp"  },
+    { AV_SAMPLE_FMT_DBLP, AudioFormat::SampleFormat_DoublePlanar,   "doublep" },
+    { AV_SAMPLE_FMT_NONE, AudioFormat::SampleFormat_Unknown,        "unknown" }
 };
 
 AudioFormat::SampleFormat AudioFormat::sampleFormatFromFFmpeg(int fffmt)
 {
-    for (int i = 0; samplefmts[i].fmt != AudioFormat::SampleFormat_Unknown; ++i) {
+    for (int i = 0 ; samplefmts[i].fmt != AudioFormat::SampleFormat_Unknown ; ++i)
+    {
         if ((int)samplefmts[i].avfmt == fffmt)
             return samplefmts[i].fmt;
     }
+
     return AudioFormat::SampleFormat_Unknown;
 }
 
 int AudioFormat::sampleFormatToFFmpeg(AudioFormat::SampleFormat fmt)
 {
-    for (int i = 0; samplefmts[i].fmt != AudioFormat::SampleFormat_Unknown; ++i) {
+    for (int i = 0 ; samplefmts[i].fmt != AudioFormat::SampleFormat_Unknown ; ++i)
+    {
         if (samplefmts[i].fmt == fmt)
             return (int)samplefmts[i].avfmt;
     }
+
     return (int)AV_SAMPLE_FMT_NONE;
 }
 
-typedef struct {
-    qint64 ff;
+typedef struct
+{
+    qint64                     ff;
     AudioFormat::ChannelLayout cl;
 } ChannelLayoutMap;
 
-static const ChannelLayoutMap kChannelLayoutMap[] = {
-    { AV_CH_FRONT_LEFT, AudioFormat::ChannelLayout_Left },
-    { AV_CH_FRONT_RIGHT, AudioFormat::ChannelLayout_Right },
-    { AV_CH_FRONT_CENTER, AudioFormat::ChannelLayout_Center },
-    { AV_CH_LAYOUT_MONO, AudioFormat::ChannelLayout_Mono },
-    { AV_CH_LAYOUT_STEREO, AudioFormat::ChannelLayout_Stereo },
-    { 0, AudioFormat::ChannelLayout_Unsupported}
+static const ChannelLayoutMap kChannelLayoutMap[] =
+{
+    { AV_CH_FRONT_LEFT, AudioFormat::ChannelLayout_Left         },
+    { AV_CH_FRONT_RIGHT, AudioFormat::ChannelLayout_Right       },
+    { AV_CH_FRONT_CENTER, AudioFormat::ChannelLayout_Center     },
+    { AV_CH_LAYOUT_MONO, AudioFormat::ChannelLayout_Mono        },
+    { AV_CH_LAYOUT_STEREO, AudioFormat::ChannelLayout_Stereo    },
+    { 0, AudioFormat::ChannelLayout_Unsupported                 }
 };
 
 AudioFormat::ChannelLayout AudioFormat::channelLayoutFromFFmpeg(qint64 clff)
 {
-    for (unsigned int i = 0; i < sizeof(kChannelLayoutMap)/sizeof(ChannelLayoutMap); ++i) {
+    for (unsigned int i = 0 ; i < sizeof(kChannelLayoutMap)/sizeof(ChannelLayoutMap) ; ++i)
+    {
         if (kChannelLayoutMap[i].ff == clff)
             return kChannelLayoutMap[i].cl;
     }
+
     return AudioFormat::ChannelLayout_Unsupported;
 }
 
 qint64 AudioFormat::channelLayoutToFFmpeg(AudioFormat::ChannelLayout cl)
 {
-    for (unsigned int i = 0; i < sizeof(kChannelLayoutMap)/sizeof(ChannelLayoutMap); ++i) {
+    for (unsigned int i = 0 ; i < sizeof(kChannelLayoutMap)/sizeof(ChannelLayoutMap) ; ++i)
+    {
         if (kChannelLayoutMap[i].cl == cl)
             return kChannelLayoutMap[i].ff;
     }
+
     return 0;
 }
 
 class AudioFormatPrivate : public QSharedData
 {
 public:
+
     AudioFormatPrivate()
       : sample_fmt(AudioFormat::SampleFormat_Input)
       , av_sample_fmt(AV_SAMPLE_FMT_NONE)
@@ -113,38 +135,51 @@ public:
       , sample_rate(0)
       , channel_layout(AudioFormat::ChannelLayout_Unsupported)
       , channel_layout_ff(0)
-    {}
-    void setChannels(int cs) {
+    {
+    }
+
+    void setChannels(int cs)
+    {
         channels = cs;
-        if (av_get_channel_layout_nb_channels(channel_layout_ff) != channels) {
+
+        if (av_get_channel_layout_nb_channels(channel_layout_ff) != channels)
+        {
             channel_layout_ff = av_get_default_channel_layout(channels);
             channel_layout = AudioFormat::channelLayoutFromFFmpeg(channel_layout_ff);
         }
     }
-    void setChannelLayoutFF(qint64 clff) {
+
+    void setChannelLayoutFF(qint64 clff)
+    {
         channel_layout_ff = clff;
-        if (av_get_channel_layout_nb_channels(channel_layout_ff) != channels) {
+
+        if (av_get_channel_layout_nb_channels(channel_layout_ff) != channels)
+        {
             channels = av_get_channel_layout_nb_channels(channel_layout_ff);
         }
     }
 
-    AudioFormat::SampleFormat sample_fmt;
-    AVSampleFormat av_sample_fmt;
-    int channels;
-    int sample_rate;
-    AudioFormat::ChannelLayout channel_layout;
-    qint64 channel_layout_ff;
+    AudioFormat::SampleFormat   sample_fmt;
+    AVSampleFormat              av_sample_fmt;
+    int                         channels;
+    int                         sample_rate;
+    AudioFormat::ChannelLayout  channel_layout;
+    qint64                      channel_layout_ff;
 };
 
 AudioFormat::SampleFormat AudioFormat::make(int bytesPerSample, bool isFloat, bool isUnsigned, bool isPlanar)
 {
     int f = bytesPerSample;
+
     if (isFloat)
         f |= kFloat;
+
     if (isUnsigned)
         f |= kUnsigned;
+
     if (isPlanar)
         f |= kPlanar;
+
     return SampleFormat(f);
 }
 
@@ -168,6 +203,7 @@ AudioFormat::~AudioFormat()
 AudioFormat& AudioFormat::operator=(const AudioFormat &other)
 {
     d = other.d;
+
     return *this;
 }
 
@@ -179,11 +215,13 @@ AudioFormat& AudioFormat::operator=(const AudioFormat &other)
 */
 bool AudioFormat::operator==(const AudioFormat &other) const
 {
-    return d->sample_rate == other.d->sample_rate &&
-            //compare channel layout first because it determines channel count
-            d->channel_layout_ff == other.d->channel_layout_ff &&
-            d->channel_layout == other.d->channel_layout &&
-            d->channels == other.d->channels &&
+    return d->sample_rate == other.d->sample_rate               &&
+
+            // compare channel layout first because it determines channel count
+
+            d->channel_layout_ff == other.d->channel_layout_ff  &&
+            d->channel_layout == other.d->channel_layout        &&
+            d->channels == other.d->channels                    &&
             d->sample_fmt == other.d->sample_fmt;
 }
 
@@ -204,7 +242,7 @@ bool AudioFormat::operator!=(const AudioFormat& other) const
 bool AudioFormat::isValid() const
 {
     return d->sample_rate > 0 && (d->channels > 0 || d->channel_layout > 0) &&
-            d->sample_fmt != AudioFormat::SampleFormat_Unknown;
+           d->sample_fmt != AudioFormat::SampleFormat_Unknown;
 }
 
 bool AudioFormat::isFloat() const
@@ -230,7 +268,7 @@ int AudioFormat::planeCount() const
 /*!
    Sets the sample rate to \a samplerate Hertz.
 
-*/
+ */
 void AudioFormat::setSampleRate(int sampleRate)
 {
     d->sample_rate = sampleRate;
@@ -239,7 +277,7 @@ void AudioFormat::setSampleRate(int sampleRate)
 /*!
     Returns the current sample rate in Hertz.
 
-*/
+ */
 int AudioFormat::sampleRate() const
 {
     return d->sample_rate;
@@ -247,10 +285,11 @@ int AudioFormat::sampleRate() const
 
 /*!
    Sets the channel layout to \a layout. Currently use FFmpeg's. see avutil/channel_layout.h
-*/
+ */
 void AudioFormat::setChannelLayoutFFmpeg(qint64 layout)
 {
-    //FFmpeg channel layout is more complete, so we just it
+    // FFmpeg channel layout is more complete, so we just it
+
     d->channel_layout = channelLayoutFromFFmpeg(layout);
     d->setChannelLayoutFF(layout);
 }
@@ -264,9 +303,12 @@ void AudioFormat::setChannelLayout(ChannelLayout layout)
 {
     qint64 clff = channelLayoutToFFmpeg(layout);
     d->channel_layout = layout;
-    //TODO: shall we set ffmpeg channel layout to 0(not valid value)?
+
+    // TODO: shall we set ffmpeg channel layout to 0(not valid value)?
+
     if (!clff)
         return;
+
     d->setChannelLayoutFF(clff);
 }
 
@@ -279,6 +321,7 @@ QString AudioFormat::channelLayoutName() const
 {
     char cl[128];
     av_get_channel_layout_string(cl, sizeof(cl), -1, channelLayoutFFmpeg()); //TODO: ff version
+
     return QLatin1String(cl);
 }
 
@@ -330,15 +373,17 @@ int AudioFormat::sampleFormatFFmpeg() const
 
 QString AudioFormat::sampleFormatName() const
 {
-    if (d->av_sample_fmt == AV_SAMPLE_FMT_NONE) {
-        for (int i = 0; samplefmts[i].fmt != SampleFormat_Unknown; ++i) {
+    if (d->av_sample_fmt == AV_SAMPLE_FMT_NONE)
+    {
+        for (int i = 0; samplefmts[i].fmt != SampleFormat_Unknown; ++i)
+        {
             if (samplefmts[i].fmt == d->sample_fmt)
                 return QLatin1String(samplefmts[i].name);
         }
     }
+
     return QLatin1String(av_get_sample_fmt_name((AVSampleFormat)sampleFormatFFmpeg()));
 }
-
 
 /*!
     Returns the number of bytes required for this audio format for \a duration microseconds.
@@ -399,8 +444,10 @@ qint32 AudioFormat::bytesForFrames(qint32 frameCount) const
 qint32 AudioFormat::framesForBytes(qint32 byteCount) const
 {
     int size = bytesPerFrame();
+
     if (size > 0)
         return byteCount / size;
+
     return 0;
 }
 
@@ -438,6 +485,7 @@ int AudioFormat::bytesPerFrame() const
 }
 
 // kSize: assume 12 bytes(long double) at most
+
 int AudioFormat::bytesPerSample() const
 {
     return d->sample_fmt & ((1<<(kSize+1)) - 1);
@@ -459,6 +507,7 @@ int AudioFormat::bytesPerSecond() const
 }
 
 #ifndef QT_NO_DEBUG_STREAM
+
 QDebug operator<<(QDebug dbg, const QtAV::AudioFormat &fmt)
 {
     dbg.nospace() << "QtAV::AudioFormat(" << fmt.sampleRate();
@@ -474,23 +523,27 @@ QDebug operator<<(QDebug dbg, const QtAV::AudioFormat &fmt)
 QDebug operator<<(QDebug dbg, QtAV::AudioFormat::SampleFormat sampleFormat)
 {
     dbg.nospace() << av_get_sample_fmt_name((AVSampleFormat)AudioFormat::sampleFormatToFFmpeg(sampleFormat));
+
     return dbg.space();
 }
 
 QDebug operator<<(QDebug dbg, QtAV::AudioFormat::ChannelLayout channelLayout)
 {
     char cl[128];
-    av_get_channel_layout_string(cl, sizeof(cl), -1, AudioFormat::channelLayoutToFFmpeg(channelLayout)); //TODO: ff version
+    av_get_channel_layout_string(cl, sizeof(cl), -1, AudioFormat::channelLayoutToFFmpeg(channelLayout)); // TODO: ff version
     dbg.nospace() << cl;
+
     return dbg.space();
 }
+
 #endif
 
-
-namespace {
+namespace
+{
     class AudioFormatPrivateRegisterMetaTypes
     {
     public:
+
         AudioFormatPrivateRegisterMetaTypes()
         {
             qRegisterMetaType<QtAV::AudioFormat>();
