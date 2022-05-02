@@ -1000,7 +1000,7 @@ void AVDemuxThread::run()
                 // avoid read external track every time. aqueue may not block full
                 // vqueue will not block if aqueue is not enough
 
-                if (!aqueue->isFull() || aqueue->isBuffering())
+                if (aqueue && (!aqueue->isFull() || aqueue->isBuffering()))
                 {
                     if (ademuxer->readFrame())
                     {
