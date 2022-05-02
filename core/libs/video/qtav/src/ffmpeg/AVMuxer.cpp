@@ -96,27 +96,29 @@ public:
     void applyOptionsForDict();
     void applyOptionsForContext();
 
-    bool seekable;
-    bool network;
-    bool started;
-    bool eof;
-    bool media_changed;
-    bool open;
-    AVFormatContext *format_ctx;
+public:
+
+    bool                seekable;
+    bool                network;
+    bool                started;
+    bool                eof;
+    bool                media_changed;
+    bool                open;
+    AVFormatContext*    format_ctx;
 
     // copy the info, not parse the file when constructed, then need member vars
 
-    QString file;
-    QString file_orig;
-    AVOutputFormat *format;
-    QString format_forced;
-    MediaIO *io;
+    QString             file;
+    QString             file_orig;
+    AVOutputFormat*     format;
+    QString             format_forced;
+    MediaIO*            io;
 
-    AVDictionary *dict;
-    QVariantHash options;
-    QList<int> audio_streams, video_streams, subtitle_streams;
-    AudioEncoder *aenc; // not owner
-    VideoEncoder *venc; // not owner
+    AVDictionary*       dict;
+    QVariantHash        options;
+    QList<int>          audio_streams, video_streams, subtitle_streams;
+    AudioEncoder*       aenc;       // not owner
+    VideoEncoder*       venc;       // not owner
 };
 
 AVStream *AVMuxer::Private::addStream(AVFormatContext* ctx, const QString &codecName, AVCodecID codecId)
@@ -191,6 +193,7 @@ bool AVMuxer::Private::prepareStreams()
     if (venc)
     {
         AVStream *s = addStream(format_ctx, venc->codecName(), fmt->video_codec);
+
         if (s)
         {
             AVCodecContext *c = s->codec;
@@ -198,7 +201,7 @@ bool AVMuxer::Private::prepareStreams()
             c->width = venc->width();
             c->height = venc->height();
 
-            /// MUST set after encoder is open to ensure format is valid and the same
+            // MUST set after encoder is open to ensure format is valid and the same
 
             c->pix_fmt = (AVPixelFormat)VideoFormat::pixelFormatToFFmpeg(venc->pixelFormat());
 
@@ -256,6 +259,7 @@ static void getFFmpegOutputFormats(QStringList* formats, QStringList* extensions
 {
     static QStringList exts;
     static QStringList fmts;
+
     if (exts.isEmpty() && fmts.isEmpty())
     {
         QStringList e, f;
@@ -264,6 +268,7 @@ static void getFFmpegOutputFormats(QStringList* formats, QStringList* extensions
 
         const AVOutputFormat *o = nullptr;
         void* it = nullptr;
+
         while ((o = av_muxer_iterate(&it)))
         {
 
@@ -271,6 +276,7 @@ static void getFFmpegOutputFormats(QStringList* formats, QStringList* extensions
 
         av_register_all(); // MUST register all input/output formats
         AVOutputFormat *o = nullptr;
+
         while ((o = av_oformat_next(o)))
         {
 

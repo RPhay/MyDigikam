@@ -60,12 +60,12 @@ public:
     explicit AVMuxer(QObject *parent = nullptr);
     ~AVMuxer();
 
-    QString fileName() const;
-    QIODevice* ioDevice() const;
+    QString fileName()      const;
+    QIODevice* ioDevice()   const;
 
     /// not null for QIODevice, custom protocols
 
-    MediaIO *mediaIO() const;
+    MediaIO *mediaIO()      const;
 
     /*!
      * \brief setMedia
@@ -83,18 +83,18 @@ public:
      * Also useful for custom io
      */
     void setFormat(const QString& fmt);
-    QString formatForced() const;
+    QString formatForced()  const;
 
     bool open();
     bool close();
-    bool isOpen() const;
+    bool isOpen()           const;
 
     // TODO: copyAudioContext(void* avctx) for copy encoding without decoding
     void copyProperties(VideoEncoder* enc); // rename to setEncoder
     void copyProperties(AudioEncoder* enc);
 
     void setOptions(const QVariantHash &dict);
-    QVariantHash options() const;
+    QVariantHash options()  const;
 
 public Q_SLOTS:
 

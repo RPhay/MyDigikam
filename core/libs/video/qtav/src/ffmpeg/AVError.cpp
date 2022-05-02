@@ -63,21 +63,21 @@ static AVError::ErrorCode errorFromFFmpeg(int fe)
 
     static const err_entry err_map[] =
     {
-        { AVERROR_BSF_NOT_FOUND, AVError::FormatError        },
+        { AVERROR_BSF_NOT_FOUND,      AVError::FormatError   },
 
 #ifdef AVERROR_BUFFER_TOO_SMALL
 
-        { AVERROR_BUFFER_TOO_SMALL, AVError::ResourceError   },
+        { AVERROR_BUFFER_TOO_SMALL,   AVError::ResourceError },
 
 #endif
 
-        { AVERROR_DECODER_NOT_FOUND, AVError::CodecError     },
-        { AVERROR_ENCODER_NOT_FOUND, AVError::CodecError     },
-        { AVERROR_DEMUXER_NOT_FOUND, AVError::FormatError    },
-        { AVERROR_MUXER_NOT_FOUND, AVError::FormatError      },
+        { AVERROR_DECODER_NOT_FOUND,  AVError::CodecError    },
+        { AVERROR_ENCODER_NOT_FOUND,  AVError::CodecError    },
+        { AVERROR_DEMUXER_NOT_FOUND,  AVError::FormatError   },
+        { AVERROR_MUXER_NOT_FOUND,    AVError::FormatError   },
         { AVERROR_PROTOCOL_NOT_FOUND, AVError::ResourceError },
-        { AVERROR_STREAM_NOT_FOUND, AVError::ResourceError   },
-        { 0, AVError::UnknowError                            }
+        { AVERROR_STREAM_NOT_FOUND,   AVError::ResourceError },
+        { 0,                          AVError::UnknowError   }
     };
 
     for (int i = 0 ; err_map[i].ff ; ++i)
@@ -134,7 +134,7 @@ AVError::AVError(const AVError& other)
 
 AVError& AVError::operator=(const AVError& other)
 {
-    mError = other.mError;
+    mError       = other.mError;
     mFFmpegError = other.mFFmpegError;
 
     return *this;
@@ -271,9 +271,9 @@ QString AVError::ffmpegErrorString() const
 
 #ifndef QT_NO_DEBUG_STREAM
 
-// class QDebug;
+// class QDebug
 
-QDebug operator<<(QDebug debug, const QtAV::AVError &error)
+QDebug operator<<(QDebug debug, const QtAV::AVError& error)
 {
     debug << error.string();
 

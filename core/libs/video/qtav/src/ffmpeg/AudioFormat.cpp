@@ -51,17 +51,17 @@ typedef struct
 
 static const sample_fmt_entry samplefmts[] =
 {
-    { AV_SAMPLE_FMT_U8, AudioFormat::SampleFormat_Unsigned8,        "u8"      },
-    { AV_SAMPLE_FMT_S16, AudioFormat::SampleFormat_Signed16,        "s16"     },
-    { AV_SAMPLE_FMT_S32, AudioFormat::SampleFormat_Signed32,        "s32"     },
-    { AV_SAMPLE_FMT_FLT, AudioFormat::SampleFormat_Float,           "float"   },
-    { AV_SAMPLE_FMT_DBL, AudioFormat::SampleFormat_Double,          "double"  },
-    { AV_SAMPLE_FMT_U8P, AudioFormat::SampleFormat_Unsigned8Planar, "u8p"     },
-    { AV_SAMPLE_FMT_S16P, AudioFormat::SampleFormat_Signed16Planar, "s16p"    },
-    { AV_SAMPLE_FMT_S32P, AudioFormat::SampleFormat_Signed32Planar, "s32p"    },
-    { AV_SAMPLE_FMT_FLTP, AudioFormat::SampleFormat_FloatPlanar,    "floatp"  },
-    { AV_SAMPLE_FMT_DBLP, AudioFormat::SampleFormat_DoublePlanar,   "doublep" },
-    { AV_SAMPLE_FMT_NONE, AudioFormat::SampleFormat_Unknown,        "unknown" }
+    { AV_SAMPLE_FMT_U8,   AudioFormat::SampleFormat_Unsigned8,       "u8"      },
+    { AV_SAMPLE_FMT_S16,  AudioFormat::SampleFormat_Signed16,        "s16"     },
+    { AV_SAMPLE_FMT_S32,  AudioFormat::SampleFormat_Signed32,        "s32"     },
+    { AV_SAMPLE_FMT_FLT,  AudioFormat::SampleFormat_Float,           "float"   },
+    { AV_SAMPLE_FMT_DBL,  AudioFormat::SampleFormat_Double,          "double"  },
+    { AV_SAMPLE_FMT_U8P,  AudioFormat::SampleFormat_Unsigned8Planar, "u8p"     },
+    { AV_SAMPLE_FMT_S16P, AudioFormat::SampleFormat_Signed16Planar,  "s16p"    },
+    { AV_SAMPLE_FMT_S32P, AudioFormat::SampleFormat_Signed32Planar,  "s32p"    },
+    { AV_SAMPLE_FMT_FLTP, AudioFormat::SampleFormat_FloatPlanar,     "floatp"  },
+    { AV_SAMPLE_FMT_DBLP, AudioFormat::SampleFormat_DoublePlanar,    "doublep" },
+    { AV_SAMPLE_FMT_NONE, AudioFormat::SampleFormat_Unknown,         "unknown" }
 };
 
 AudioFormat::SampleFormat AudioFormat::sampleFormatFromFFmpeg(int fffmt)
@@ -94,12 +94,12 @@ typedef struct
 
 static const ChannelLayoutMap kChannelLayoutMap[] =
 {
-    { AV_CH_FRONT_LEFT, AudioFormat::ChannelLayout_Left         },
-    { AV_CH_FRONT_RIGHT, AudioFormat::ChannelLayout_Right       },
-    { AV_CH_FRONT_CENTER, AudioFormat::ChannelLayout_Center     },
-    { AV_CH_LAYOUT_MONO, AudioFormat::ChannelLayout_Mono        },
-    { AV_CH_LAYOUT_STEREO, AudioFormat::ChannelLayout_Stereo    },
-    { 0, AudioFormat::ChannelLayout_Unsupported                 }
+    { AV_CH_FRONT_LEFT,    AudioFormat::ChannelLayout_Left        },
+    { AV_CH_FRONT_RIGHT,   AudioFormat::ChannelLayout_Right       },
+    { AV_CH_FRONT_CENTER,  AudioFormat::ChannelLayout_Center      },
+    { AV_CH_LAYOUT_MONO,   AudioFormat::ChannelLayout_Mono        },
+    { AV_CH_LAYOUT_STEREO, AudioFormat::ChannelLayout_Stereo      },
+    { 0,                   AudioFormat::ChannelLayout_Unsupported }
 };
 
 AudioFormat::ChannelLayout AudioFormat::channelLayoutFromFFmpeg(qint64 clff)
@@ -145,7 +145,7 @@ public:
         if (av_get_channel_layout_nb_channels(channel_layout_ff) != channels)
         {
             channel_layout_ff = av_get_default_channel_layout(channels);
-            channel_layout = AudioFormat::channelLayoutFromFFmpeg(channel_layout_ff);
+            channel_layout    = AudioFormat::channelLayoutFromFFmpeg(channel_layout_ff);
         }
     }
 
@@ -320,14 +320,13 @@ AudioFormat::ChannelLayout AudioFormat::channelLayout() const
 QString AudioFormat::channelLayoutName() const
 {
     char cl[128];
-    av_get_channel_layout_string(cl, sizeof(cl), -1, channelLayoutFFmpeg()); //TODO: ff version
+    av_get_channel_layout_string(cl, sizeof(cl), -1, channelLayoutFFmpeg()); // TODO: ff version
 
     return QLatin1String(cl);
 }
 
 /*!
    Sets the channel count to \a channels.
-
 */
 void AudioFormat::setChannels(int channels)
 {
@@ -336,7 +335,6 @@ void AudioFormat::setChannels(int channels)
 
 /*!
     Returns the current channel count value.
-
 */
 int AudioFormat::channels() const
 {
@@ -348,7 +346,7 @@ int AudioFormat::channels() const
 */
 void AudioFormat::setSampleFormat(AudioFormat::SampleFormat sampleFormat)
 {
-    d->sample_fmt = sampleFormat;
+    d->sample_fmt    = sampleFormat;
     d->av_sample_fmt = (AVSampleFormat)AudioFormat::sampleFormatToFFmpeg(sampleFormat);
 }
 
@@ -362,7 +360,7 @@ AudioFormat::SampleFormat AudioFormat::sampleFormat() const
 
 void AudioFormat::setSampleFormatFFmpeg(int ffSampleFormat)
 {
-    d->sample_fmt = AudioFormat::sampleFormatFromFFmpeg(ffSampleFormat);
+    d->sample_fmt    = AudioFormat::sampleFormatFromFFmpeg(ffSampleFormat);
     d->av_sample_fmt = (AVSampleFormat)ffSampleFormat;
 }
 
@@ -375,7 +373,7 @@ QString AudioFormat::sampleFormatName() const
 {
     if (d->av_sample_fmt == AV_SAMPLE_FMT_NONE)
     {
-        for (int i = 0; samplefmts[i].fmt != SampleFormat_Unknown; ++i)
+        for (int i = 0 ; samplefmts[i].fmt != SampleFormat_Unknown ; ++i)
         {
             if (samplefmts[i].fmt == d->sample_fmt)
                 return QLatin1String(samplefmts[i].name);
