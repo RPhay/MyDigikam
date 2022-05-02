@@ -48,6 +48,7 @@ set(libqtav_SRCS
     ${CMAKE_CURRENT_SOURCE_DIR}/src/ffmpeg/AudioThread.cpp
     ${CMAKE_CURRENT_SOURCE_DIR}/src/ffmpeg/ImageConverter.cpp
     ${CMAKE_CURRENT_SOURCE_DIR}/src/ffmpeg/ImageConverterFF.cpp
+    ${CMAKE_CURRENT_SOURCE_DIR}/src/ffmpeg/VideoCapture.cpp
     ${CMAKE_CURRENT_SOURCE_DIR}/src/ffmpeg/VideoFrame.cpp
     ${CMAKE_CURRENT_SOURCE_DIR}/src/ffmpeg/VideoFrameExtractor.cpp
     ${CMAKE_CURRENT_SOURCE_DIR}/src/ffmpeg/VideoFormat.cpp
@@ -69,7 +70,6 @@ set(libqtav_SRCS
     ${CMAKE_CURRENT_SOURCE_DIR}/src/subtitle/SubtitleProcessorFFmpeg.cpp
     ${CMAKE_CURRENT_SOURCE_DIR}/src/subtitle/SubImage.cpp
 
-    ${CMAKE_CURRENT_SOURCE_DIR}/src/utils/VideoCapture.cpp
     ${CMAKE_CURRENT_SOURCE_DIR}/src/utils/GPUMemCopy.cpp
     ${CMAKE_CURRENT_SOURCE_DIR}/src/utils/Statistics.cpp
     ${CMAKE_CURRENT_SOURCE_DIR}/src/utils/ColorTransform.cpp
