@@ -145,6 +145,7 @@ AVPlayer::Private::Private()
     , end_action(MediaEndAction_Default)
 {
     demuxer.setInterruptTimeout(interrupt_timeout);
+
     /*
      * reset_state = true;
      * must be the same value at the end of stop(), and must be different from value in
@@ -256,7 +257,7 @@ void AVPlayer::Private::applyFrameRate()
     bool force         = vfps > 0;
     const bool ao_null = ao && ao->backend().toLower() == QLatin1String("null");
 
-    if (athread && !ao_null)
+    if      (athread && !ao_null)
     {
         // TODO: no null ao check. null ao block internally
 
@@ -289,16 +290,22 @@ void AVPlayer::Private::applyFrameRate()
     else
     {
         clock->setClockAuto(true);
-        clock->setClockType(athread && ao->isOpen() ? AVClock::AudioClock : AVClock::ExternalClock);
+
+        clock->setClockType(athread && !ao_null && ao->isOpen() ? AVClock::AudioClock
+                                                                : AVClock::ExternalClock);
 
         if (vthread)
             vthread->setFrameRate(0.0);
 
-        ao->setSpeed(1);
+        if (!ao_null)
+            ao->setSpeed(1);
+
         clock->setSpeed(1);
     }
 
-    ao->setSpeed(r);
+    if (!ao_null)
+        ao->setSpeed(r);
+
     clock->setSpeed(r);
 }
 
