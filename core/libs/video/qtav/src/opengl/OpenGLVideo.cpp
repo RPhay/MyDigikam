@@ -139,13 +139,13 @@ void OpenGLVideoPrivate::updateGeometry(VideoShader* shader, const QRectF &t, co
     // also check size change for normalizedROI computation if roi is not normalized
 
     const bool roi_changed = valiad_tex_width != material->validTextureWidth() || roi != r || video_size != material->frameSize();
-    const int tc = shader->textureLocationCount();
+    const int tc           = shader->textureLocationCount();
 
     if (roi_changed)
     {
-        roi = r;
+        roi              = r;
         valiad_tex_width = material->validTextureWidth();
-        video_size = material->frameSize();
+        video_size       = material->frameSize();
     }
 
     if (tex_target != shader->textureTarget())
@@ -166,18 +166,18 @@ void OpenGLVideoPrivate::updateGeometry(VideoShader* shader, const QRectF &t, co
     {
         // TODO: only update VAO, not the whole GeometryRenderer
 
-        update_geo = true;
+        update_geo               = true;
         new_thread.setLocalData(false);
-        GeometryRenderer *r = new GeometryRenderer(); // local var is captured by lambda
-        gr = r;
+        GeometryRenderer* geordr = new GeometryRenderer(); // local var is captured by lambda
+        gr                       = geordr;
 
 #if QT_VERSION >= QT_VERSION_CHECK(5, 0, 0) && defined(Q_COMPILER_LAMBDA)
 
         QObject::connect(QOpenGLContext::currentContext(), &QOpenGLContext::aboutToBeDestroyed,
-                         [r]
+                         [geordr]
             {
-                qCDebug(DIGIKAM_QTAV_LOG).noquote() << QString::asprintf("destroy GeometryRenderer %p", r);
-                delete r;
+                qCDebug(DIGIKAM_QTAV_LOG).noquote() << QString::asprintf("destroy GeometryRenderer %p", geordr);
+                delete geordr;
             }
         );
 
@@ -272,10 +272,10 @@ void OpenGLVideo::setOpenGLContext(QOpenGLContext *ctx)
 
     if (d.material)
     {
-        b = d.material->brightness();
-        c = d.material->contrast();
-        h = d.material->hue();
-        s = d.material->saturation();
+        b          = d.material->brightness();
+        c          = d.material->contrast();
+        h          = d.material->hue();
+        s          = d.material->saturation();
         delete d.material;
         d.material = nullptr;
     }
@@ -328,7 +328,11 @@ void OpenGLVideo::setOpenGLContext(QOpenGLContext *ctx)
     //const QByteArray extensions(reinterpret_cast<const char *>(glGetString(GL_EXTENSIONS)));
 
     bool hasGLSL      = QOpenGLShaderProgram::hasOpenGLShaderPrograms();
-    qCDebug(DIGIKAM_QTAV_LOG).noquote() << QString::asprintf("OpenGL version: %d.%d  hasGLSL: %d", ctx->format().majorVersion(), ctx->format().minorVersion(), hasGLSL);
+
+    qCDebug(DIGIKAM_QTAV_LOG).noquote()
+        << QString::asprintf("OpenGL version: %d.%d  hasGLSL: %d",
+            ctx->format().majorVersion(), ctx->format().minorVersion(), hasGLSL);
+
     static bool sInfo = true;
 
     if (sInfo)

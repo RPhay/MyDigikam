@@ -139,7 +139,7 @@ CAPI_DEFINE_ENTRY(ASS_Track *, ass_read_memory, CAPI_ARG4(ASS_Library *, char *,
 //CAPI_DEFINE_ENTRY(long long, ass_step_sub, CAPI_ARG3(ASS_Track *, long long, int))                                    // cppcheck-suppress thisSubtraction
 
 CAPI_END_DLL()
-CAPI_DEFINE_DLL         // cppcheck-suppress noCopyConstructor // cppcheck-suppress noOperatorEq
+CAPI_DEFINE_DLL         // cppcheck-suppress noOperatorEq
 
 // CAPI_DEFINE(argc, return_type, name, argv_no_name)
 

@@ -542,9 +542,9 @@ SubImageSet SubtitleProcessorLibASS::getSubImages(qreal pts, QRect *boundingRect
     *qimg = QImage(rect.size(), QImage::Format_ARGB32);
     qimg->fill(Qt::transparent);
 
-    foreach (const SubImage& img, m_assimages.images)
+    foreach (const SubImage& subimg, m_assimages.images)
     {
-        RenderASS(qimg, img, img.x - rect.x(), img.y - rect.y());
+        RenderASS(qimg, subimg, subimg.x - rect.x(), subimg.y - rect.y());
     }
 
     return m_assimages;

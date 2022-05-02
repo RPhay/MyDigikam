@@ -880,7 +880,7 @@ bool AudioOutput::waitForNextBuffer()
 
         // TODO: compare processed_remain with fi.data.size because input chuncks can be in different sizes
 
-        while (!no_wait && d.processed_remain < next)
+        while (!no_wait && d.processed_remain < next)       // cppcheck-suppress knownConditionTrueFalse
         {
             const qint64 us = d.format.durationForBytes(next - d.processed_remain);
 
@@ -901,7 +901,7 @@ bool AudioOutput::waitForNextBuffer()
 
 #if AO_USE_TIMER
 
-        if (!d.timer.isValid())
+        if (!d.timer.isValid())         // cppcheck-suppress knownConditionTrueFalse
             d.timer.start();
 
         qint64 elapsed = 0;
@@ -914,7 +914,7 @@ bool AudioOutput::waitForNextBuffer()
 
         qint64 us = 0;
 
-        while (!no_wait && c < 1)
+        while (!no_wait && c < 1)       // cppcheck-suppress knownConditionTrueFalse
         {
             if (us <= 0)
                 us = fi.duration;
@@ -955,7 +955,7 @@ bool AudioOutput::waitForNextBuffer()
         const int next = fi.data.size();
         int writable_size = d.processed_remain + processed;
 
-        while (!no_wait && (/*processed < next ||*/ writable_size < fi.data.size()) && next > 0)
+        while (!no_wait && (/*processed < next ||*/ writable_size < fi.data.size()) && next > 0)        // cppcheck-suppress knownConditionTrueFalse
         {
             const qint64 us = d.format.durationForBytes(next - writable_size);
             d.uwait(us);
@@ -986,7 +986,7 @@ bool AudioOutput::waitForNextBuffer()
         // TODO: timer
         // TODO: avoid always 0
 
-        while (!no_wait && processed < 1)
+        while (!no_wait && processed < 1)       // cppcheck-suppress knownConditionTrueFalse
         {
             d.uwait(fi.duration);
             n = d.backend->getOffset();

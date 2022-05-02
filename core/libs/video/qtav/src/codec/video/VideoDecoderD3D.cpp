@@ -371,7 +371,7 @@ int VideoDecoderD3D::getSupportedFourcc(int *formats, UINT nb_formats)
     {
         bool is_supported = false;
 
-        for (unsigned k = 0 ; !is_supported && k < nb_formats ; ++k)
+        for (unsigned k = 0 ; !is_supported && k < nb_formats ; ++k)         // cppcheck-suppress knownConditionTrueFalse
         {
             if (format->fourcc == formats[k])
                 return format->fourcc;

@@ -232,7 +232,7 @@ enum
 class dso
 {
     void* handle;
-    char  full_name[256];
+    char  full_name[256] = { 0 };
 
     dso(const dso&);
     dso& operator=(const dso&);

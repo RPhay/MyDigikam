@@ -287,7 +287,7 @@ bool VideoEncoderFFmpegPrivate::open()
 
     }
 
-    if (!use_hwctx)
+    if (!use_hwctx)         // cppcheck-suppress knownConditionTrueFalse
     {
         // no hw device (videotoolbox, wrong device name etc.), or old ffmpeg
 

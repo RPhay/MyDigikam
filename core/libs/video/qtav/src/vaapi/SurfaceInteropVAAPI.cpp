@@ -475,7 +475,7 @@ public:
             return nullptr;
         }
 
-        if (fbcount)
+        if (fbcount)            // cppcheck-suppress knownConditionTrueFalse
             fbc = fbcs[0];
 
         XFree(fbcs);

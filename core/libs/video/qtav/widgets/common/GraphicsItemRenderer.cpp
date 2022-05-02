@@ -357,7 +357,7 @@ void GraphicsItemRenderer::onSetOutAspectRatioMode(OutAspectRatioMode mode)
 
 bool GraphicsItemRenderer::onSetBrightness(qreal b)
 {
-    if (!isOpenGL())
+    if (!isOpenGL())        // cppcheck-suppress knownConditionTrueFalse
         return false;
 
     Q_UNUSED(b);
@@ -376,7 +376,7 @@ bool GraphicsItemRenderer::onSetBrightness(qreal b)
 
 bool GraphicsItemRenderer::onSetContrast(qreal c)
 {
-    if (!isOpenGL())
+    if (!isOpenGL())        // cppcheck-suppress knownConditionTrueFalse
         return false;
 
     Q_UNUSED(c);
@@ -395,7 +395,7 @@ bool GraphicsItemRenderer::onSetContrast(qreal c)
 
 bool GraphicsItemRenderer::onSetHue(qreal h)
 {
-    if (!isOpenGL())
+    if (!isOpenGL())        // cppcheck-suppress knownConditionTrueFalse
         return false;
 
     Q_UNUSED(h);
@@ -414,7 +414,7 @@ bool GraphicsItemRenderer::onSetHue(qreal h)
 
 bool GraphicsItemRenderer::onSetSaturation(qreal s)
 {
-    if (!isOpenGL())
+    if (!isOpenGL())        // cppcheck-suppress knownConditionTrueFalse
         return false;
 
     Q_UNUSED(s);

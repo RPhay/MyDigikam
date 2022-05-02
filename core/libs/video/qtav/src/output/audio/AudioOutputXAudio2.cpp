@@ -211,7 +211,7 @@ AudioOutputXAudio2::AudioOutputXAudio2(QObject *parent)
 
         bool ready = false;
 
-        if (!ready && ver >= 8)
+        if (!ready && ver >= 8)     // cppcheck-suppress knownConditionTrueFalse
         {
             xaudio2_winsdk = true;
             qCDebug(DIGIKAM_QTAV_LOG).noquote() << QString::asprintf("Try symbol 'XAudio2Create' from WinSDK dll");

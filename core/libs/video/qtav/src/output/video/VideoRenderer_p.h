@@ -65,7 +65,7 @@ public:
       , source_aspect_ratio(0)
       , src_width(0)
       , src_height(0)
-      , aspect_ratio_changed(true) //to set the initial parameters
+      , aspect_ratio_changed(true) // to set the initial parameters
       , out_aspect_ratio_mode(VideoRenderer::VideoAspectRatio)
       , out_aspect_ratio(0)
       , quality(VideoRenderer::QualityBest)
@@ -96,7 +96,8 @@ public:
         if (out_aspect_ratio_mode == VideoRenderer::RendererAspectRatio)
         {
             out_aspect_ratio = rendererAspectRatio;
-            out_rect = QRect(0, 0, renderer_width, renderer_height);
+            out_rect         = QRect(0, 0, renderer_width, renderer_height);
+
             return out_rect0 != out_rect;
         }
 
@@ -120,15 +121,15 @@ public:
 
             const int h = renderer_height;
             const int w = qRound(dar * qreal(h));
-            out_rect = QRect((renderer_width - w)/2, 0, w, h);
+            out_rect    = QRect((renderer_width - w)/2, 0, w, h);
         }
-        else if (rendererAspectRatio < dar)
+        else if (rendererAspectRatio < dar)     // cppcheck-suppress knownConditionTrueFalse
         {
             // renderer is too high, use renderer's width
 
             const int w = renderer_width;
             const int h = qRound(qreal(w)/dar);
-            out_rect = QRect(0, (renderer_height - h)/2, w, h);
+            out_rect    = QRect(0, (renderer_height - h)/2, w, h);
         }
 
         out_aspect_ratio = outAspectRatio;
