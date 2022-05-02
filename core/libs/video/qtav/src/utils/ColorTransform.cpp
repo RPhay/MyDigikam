@@ -38,15 +38,15 @@ namespace QtAV
 
 static const QMatrix4x4 kXYZ2sRGB(3.2404542f,  -1.5371385f, -0.4985314f, 0.0f,
                                   -0.9692660f,  1.8760108f,  0.0415560f, 0.0f,
-                                  0.0556434f, -0.2040259f,  1.0572252f, 0.0f,
-                                  0.0f, 0.0f, 0.0f, 1.0f);
+                                  0.0556434f,  -0.2040259f,  1.0572252f, 0.0f,
+                                  0.0f,         0.0f,        0.0f,       1.0f);
 
 // http://www.cs.utah.edu/~halzahaw/CS7650/Project2/project2_index.html no gamma correction     // krazy:exclude=insecurenet
 
-static const QMatrix4x4 kXYZ_RGB(2.5623f,  -1.1661f, -0.3962f, 0.0f,
-                                 -1.0215f,  1.9778f, 0.0437f,  0.0f,
-                                 0.0752f, -0.2562f, 1.1810f,  0.0f,
-                                 0.0f, 0.0f, 0.0f, 1.0f);
+static const QMatrix4x4 kXYZ_RGB(2.5623f,  -1.1661f, -0.3962f,  0.0f,
+                                 -1.0215f,  1.9778f,  0.0437f,  0.0f,
+                                 0.0752f,  -0.2562f,  1.1810f,  0.0f,
+                                 0.0f,      0.0f,     0.0f,     1.0f);
 
 static const QMatrix4x4 kGBR2RGB = QMatrix4x4(0, 0, 1, 0,
                                               1, 0, 0, 0,
@@ -146,7 +146,7 @@ static QMatrix4x4 ColorRangeRGB(ColorRange from, ColorRange to)
         return QMatrix4x4();
 
     static const qreal R2 = 235, R1 = 16;
-    static const qreal s = 255;
+    static const qreal s  = 255;
 
     if (to == ColorRange_Limited)
     {
@@ -163,8 +163,8 @@ static QMatrix4x4 ColorRangeRGB(ColorRange from, ColorRange to)
         // TODO: Unknown
 
         QMatrix4x4 m;
-        m.scale(s/(R2 - R1), s/(R2 - R1), s/(R2 - R1));
-        m.translate(-s/R1, -s/R1, -s/R1);
+        m.scale(s / (R2 - R1), s / (R2 - R1), s / (R2 - R1));
+        m.translate(-s / R1, -s / R1, -s / R1);
 
         return m;
     }
@@ -212,14 +212,16 @@ public:
 
     void reset()
     {
-        recompute = true;
-        // cs_in = cs_out = ColorSpace_RGB; ///
+        recompute   = true;
+
+        // cs_in = cs_out = ColorSpace_RGB;
         // range_in = range_out = ColorRange_Unknown;
-        hue = 0;
-        saturation = 0;
-        contrast = 0;
-        brightness = 0;
-        bpc_scale = 1.0;
+
+        hue         = 0;
+        saturation  = 0;
+        contrast    = 0;
+        brightness  = 0;
+        bpc_scale   = 1.0;
         a_bpc_scale = false;
         M.setToIdentity();
     }
@@ -245,7 +247,7 @@ public:
 
         // Contrast (offset) R,G,B
 
-        const float c = contrast+1.0;
+        const float c = contrast + 1.0;
         const float t = (1.0 - c) / 2.0;
         QMatrix4x4 C(c, 0, 0, t,
                      0, c, 0, t,
@@ -257,7 +259,7 @@ public:
         const float wr = 0.3086f;
         const float wg = 0.6094f;
         const float wb = 0.0820f;
-        float s = saturation + 1.0f;
+        float s        = saturation + 1.0f;
 
         QMatrix4x4 S(
             (1.0f - s)*wr + s, (1.0f - s)*wg    , (1.0f - s)*wb    , 0.0f,
@@ -268,8 +270,8 @@ public:
 
         // Hue
 
-        const float n = 1.0f / sqrtf(3.0f);       // normalized hue rotation axis: sqrt(3)*(1 1 1)
-        const float h = hue*M_PI;                 // hue rotation angle
+        const float n  = 1.0f / sqrtf(3.0f);       // normalized hue rotation axis: sqrt(3)*(1 1 1)
+        const float h  = hue*M_PI;                 // hue rotation angle
         const float hc = cosf(h);
         const float hs = sinf(h);
 
@@ -282,7 +284,7 @@ public:
 
         // B*C*S*H*rgb_range_mat(*yuv2rgb*yuv_range_mat)*bpc_scale
 
-        M = B*C*S*H;
+        M = B * C * S * H;
 
         // M *= rgb_range_translate*rgb_range_scale
         // TODO: transform to output color space other than RGB
@@ -340,13 +342,13 @@ public:
         //qCDebug(DIGIKAM_QTAV_LOG) << "color mat: " << M;
     }
 
-    mutable bool recompute;
-    ColorSpace cs_in, cs_out;
-    ColorRange range_in, range_out;
-    qreal hue, saturation, contrast, brightness;
-    qreal bpc_scale;
-    bool a_bpc_scale;
-    mutable QMatrix4x4 M; // count the transformations between spaces
+    mutable bool        recompute;
+    ColorSpace          cs_in, cs_out;
+    ColorRange          range_in, range_out;
+    qreal               hue, saturation, contrast, brightness;
+    qreal               bpc_scale;
+    bool                a_bpc_scale;
+    mutable QMatrix4x4  M;                      ///< count the transformations between spaces
 };
 
 ColorTransform::ColorTransform()
@@ -445,7 +447,7 @@ void ColorTransform::setBrightness(qreal brightness)
         return;
 
     d->brightness = brightness;
-    d->recompute = true;
+    d->recompute  = true;
 }
 
 qreal ColorTransform::brightness() const
@@ -460,7 +462,7 @@ void ColorTransform::setHue(qreal hue)
     if (d->hue == hue)
         return;
 
-    d->hue = hue;
+    d->hue       = hue;
     d->recompute = true;
 }
 
@@ -474,7 +476,7 @@ void ColorTransform::setContrast(qreal contrast)
     if (d->contrast == contrast)
         return;
 
-    d->contrast = contrast;
+    d->contrast  = contrast;
     d->recompute = true;
 }
 
@@ -489,7 +491,7 @@ void ColorTransform::setSaturation(qreal saturation)
         return;
 
     d->saturation = saturation;
-    d->recompute = true;
+    d->recompute  = true;
 }
 
 qreal ColorTransform::saturation() const
@@ -502,7 +504,9 @@ void ColorTransform::setChannelDepthScale(qreal value, bool scaleAlpha)
     if (d->bpc_scale == value && d->a_bpc_scale == scaleAlpha)
         return;
 
-    qCDebug(DIGIKAM_QTAV_LOG).noquote() << QString::asprintf("ColorTransform bpc_scale %f=>%f, scale alpha: %d=>%d", d->bpc_scale, value, d->a_bpc_scale, scaleAlpha);
+    qCDebug(DIGIKAM_QTAV_LOG).noquote()
+        << QString::asprintf("ColorTransform bpc_scale %f=>%f, scale alpha: %d=>%d",
+            d->bpc_scale, value, d->a_bpc_scale, scaleAlpha);
 
     d->bpc_scale = value;
     d->a_bpc_scale = scaleAlpha;

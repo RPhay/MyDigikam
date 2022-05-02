@@ -21,11 +21,16 @@
  *
  * ============================================================ */
 
-#ifndef QTAV_COLORTRANSFORM_H
-#define QTAV_COLORTRANSFORM_H
+#ifndef QTAV_COLOR_TRANSFORM_H
+#define QTAV_COLOR_TRANSFORM_H
+
+// Qt includes
 
 #include <QSharedDataPointer>
 #include <QMatrix4x4>
+
+// Local includes
+
 #include "QtAV_Global.h"
 
 // TODO: kernel QGenericMatrix<M,N>
@@ -85,8 +90,8 @@ public:
     template<typename T> void matrixData(T* M) const
     {
         const QMatrix4x4 &m = matrixRef();
-        M[0] = m(0,0), M[4] = m(0,1), M[8] = m(0,2), M[12] = m(0,3),
-        M[1] = m(1,0), M[5] = m(1,1), M[9] = m(1,2), M[13] = m(1,3),
+        M[0] = m(0,0), M[4] = m(0,1), M[8]  = m(0,2), M[12] = m(0,3),
+        M[1] = m(1,0), M[5] = m(1,1), M[9]  = m(1,2), M[13] = m(1,3),
         M[2] = m(2,0), M[6] = m(2,1), M[10] = m(2,2), M[14] = m(2,3),
         M[3] = m(3,0), M[7] = m(3,1), M[11] = m(3,2), M[15] = m(3,3);
     }
@@ -127,4 +132,4 @@ private:
 
 } // namespace QtAV
 
-#endif // QTAV_COLORTRANSFORM_H
+#endif // QTAV_COLOR_TRANSFORM_H
