@@ -92,7 +92,8 @@ static void* GetProcAddressWithExt(GetProcAddress_t get, const char *name)
 
         if (fp)
         {
-            printf("extension resolved: %s", f);
+            qCDebug(DIGIKAM_QTAV_LOG) << "extension resolved:" << f;
+
             return fp;
         }
     }
