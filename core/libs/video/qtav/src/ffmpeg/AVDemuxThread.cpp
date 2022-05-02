@@ -1115,8 +1115,13 @@ void AVDemuxThread::run()
         qCDebug(DIGIKAM_QTAV_LOG).noquote() << QString::asprintf("waiting audio thread.......");
         Packet quit_pkt(Packet::createEOF());
         quit_pkt.position = 0;
-        aqueue->put(quit_pkt);
-        aqueue->blockEmpty(false); // FIXME: why need this
+
+        if (aqueue)
+        {
+            aqueue->put(quit_pkt);
+            aqueue->blockEmpty(false); // FIXME: why need this
+        }
+
         audio_thread->pause(false);
         audio_thread->wait(500);
     }
@@ -1126,8 +1131,13 @@ void AVDemuxThread::run()
         qCDebug(DIGIKAM_QTAV_LOG).noquote() << QString::asprintf("waiting video thread.......");
         Packet quit_pkt(Packet::createEOF());
         quit_pkt.position = 0;
-        vqueue->put(quit_pkt);
-        vqueue->blockEmpty(false);
+
+        if (vqueue)
+        {
+            vqueue->put(quit_pkt);
+            vqueue->blockEmpty(false);
+        }
+
         video_thread->pause(false);
         video_thread->wait(500);
     }
