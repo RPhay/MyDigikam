@@ -53,7 +53,7 @@
 
 // NO COPY in push/pull
 
-#define QTAV_HAVE_av_buffersink_get_frame (LIBAV_MODULE_CHECK(LIBAVFILTER, 4, 2, 0) || FFMPEG_MODULE_CHECK(LIBAVFILTER, 3, 79, 100)) //3.79.101: ff2.0.4
+#define QTAV_HAVE_av_buffersink_get_frame (LIBAV_MODULE_CHECK(LIBAVFILTER, 4, 2, 0) || FFMPEG_MODULE_CHECK(LIBAVFILTER, 3, 79, 100)) // 3.79.101: ff2.0.4
 
 namespace QtAV
 {
@@ -234,15 +234,15 @@ public:
 
         AVFilterInOut *outputs = avfilter_inout_alloc();
         AVFilterInOut *inputs  = avfilter_inout_alloc();
-        outputs->name       = av_strdup("in");
-        outputs->filter_ctx = in_filter_ctx;
-        outputs->pad_idx    = 0;
-        outputs->next       = nullptr;
+        outputs->name          = av_strdup("in");
+        outputs->filter_ctx    = in_filter_ctx;
+        outputs->pad_idx       = 0;
+        outputs->next          = nullptr;
 
-        inputs->name       = av_strdup("out");
-        inputs->filter_ctx = out_filter_ctx;
-        inputs->pad_idx    = 0;
-        inputs->next       = nullptr;
+        inputs->name           = av_strdup("out");
+        inputs->filter_ctx     = out_filter_ctx;
+        inputs->pad_idx        = 0;
+        inputs->next           = nullptr;
 
         struct delete_helper
         {
@@ -271,7 +271,7 @@ public:
         AV_ENSURE_OK(avfilter_graph_parse_ptr(filter_graph, options.toUtf8().constData(), &inputs, &outputs, nullptr), false);
         AV_ENSURE_OK(avfilter_graph_config(filter_graph, nullptr), false);
         avframe = av_frame_alloc();
-        status = LibAVFilter::ConfigureOk;
+        status  = LibAVFilter::ConfigureOk;
 
 #if DBG_GRAPH
 

@@ -132,6 +132,7 @@ public:
      */
     void setAsync(bool value = true);
     bool isAsync() const;
+
     bool isSupported(VideoFilterContext::Type t) const override
     {
         return t == VideoFilterContext::None;

@@ -24,6 +24,10 @@
 #ifndef QTAV_LIBAV_FILTER_H
 #define QTAV_LIBAV_FILTER_H
 
+// Qt includes
+
+#include <QObject>
+
 // Local includes
 
 #include "Filter.h"
@@ -73,12 +77,13 @@ protected:
     bool pushAudioFrame(Frame* frame, bool changed);
     void* pullFrameHolder();
     static QStringList registeredFilters(int type); // filters whose input/output type matches
-    virtual void optionsChanged() {}
+
+    virtual void optionsChanged() {};
 
 protected:
 
     class Private;
-    Private *priv;
+    Private* priv;
 
 private:
 
@@ -100,12 +105,16 @@ public:
 
     explicit LibAVFilterVideo(QObject *parent = nullptr);
 
-    bool isSupported(VideoFilterContext::Type t) const override { return t == VideoFilterContext::None;}
+    bool isSupported(VideoFilterContext::Type t) const override
+    {
+        return t == VideoFilterContext::None;
+    }
+
     QStringList filters() const; // the same as LibAVFilter::videoFilters
 
 Q_SIGNALS:
 
-    void optionsChanged() override;
+    void optionsChanged();
 
 protected:
 
@@ -130,7 +139,7 @@ public:
 
 Q_SIGNALS:
 
-    void optionsChanged() override;
+    void optionsChanged();
 
 protected:
 
