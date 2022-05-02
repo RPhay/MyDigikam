@@ -96,6 +96,12 @@ private:
 
 private:
 
+    // Disable
+    EGLInteropResource(const EGLInteropResource&)            = delete;
+    EGLInteropResource& operator=(const EGLInteropResource&) = delete;
+
+private:
+
     EGL*                    egl;
     dx::D3D11VP*            vp;
     ComPtr<ID3D11Texture2D> d3dtex;

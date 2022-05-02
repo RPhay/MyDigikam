@@ -200,6 +200,7 @@ public:
     VADisplay vaGetDisplayDRM(int fd)
     {
         assert(fp_vaGetDisplayDRM);
+
         return fp_vaGetDisplayDRM(fd);
     }
 
@@ -253,7 +254,7 @@ private:
     vaPutSurface_t* fp_vaPutSurface;
 };
 
-typedef void*   EGLClientBuffer;
+typedef void* EGLClientBuffer;
 
 class VAAPI_EGL : protected dll_helper
 {
@@ -363,14 +364,14 @@ struct NativeDisplay
     {
         Auto,
         X11,
-        GLX, ///< the same as X11 but use vaGetDisplayGLX()?
+        GLX,        ///< the same as X11 but use vaGetDisplayGLX()?
         DRM,
         Wayland,
         VA
     };
 
     intptr_t handle;
-    Type type;
+    Type     type;
 
     NativeDisplay()
         : handle(-1),
@@ -496,7 +497,8 @@ class surface_glx_t : public VAAPI_GLX
 public:
 
     explicit surface_glx_t(const display_ptr& dpy)
-        : m_dpy(dpy), m_glx(nullptr)
+        : m_dpy(dpy),
+          m_glx(nullptr)
     {
     }
 

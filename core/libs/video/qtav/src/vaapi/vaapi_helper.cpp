@@ -45,7 +45,7 @@ bool isEGL();
 namespace vaapi
 {
 
-dll_helper::dll_helper(const QString &soname, int version)
+dll_helper::dll_helper(const QString& soname, int version)
 {
     if (version >= 0)
         m_lib.setFileNameAndVersion(soname, version);
@@ -54,7 +54,8 @@ dll_helper::dll_helper(const QString &soname, int version)
 
     if (m_lib.load())
     {
-        qCDebug(DIGIKAM_QTAV_LOG).noquote() << QString::asprintf("%s loaded", m_lib.fileName().toUtf8().constData());
+        qCDebug(DIGIKAM_QTAV_LOG).noquote()
+            << QString::asprintf("%s loaded", m_lib.fileName().toUtf8().constData());
     }
     else
     {
@@ -168,7 +169,8 @@ VAImageFormat va_new_image(VADisplay display, const unsigned int *fourccs, VAIma
         if (img && w > 0 && h > 0)
         {
             qCDebug(DIGIKAM_QTAV_LOG).noquote()
-                << QString::asprintf("vaCreateImage: %c%c%c%c", fcc<<24>>24, fcc<<16>>24, fcc<<8>>24, fcc>>24);
+                << QString::asprintf("vaCreateImage: %c%c%c%c",
+                                     fcc << 24 >> 24, fcc << 16 >> 24, fcc << 8 >> 24, fcc >> 24);
 
             if (vaCreateImage(display, &fmt, w, h, img) != VA_STATUS_SUCCESS)
             {
@@ -176,7 +178,8 @@ VAImageFormat va_new_image(VADisplay display, const unsigned int *fourccs, VAIma
                 memset(&fmt, 0, sizeof(fmt));
 
                 qCDebug(DIGIKAM_QTAV_LOG).noquote()
-                    << QString::asprintf("vaCreateImage error: %c%c%c%c", fcc<<24>>24, fcc<<16>>24, fcc<<8>>24, fcc>>24);
+                    << QString::asprintf("vaCreateImage error: %c%c%c%c",
+                                         fcc << 24 >> 24, fcc << 16 >> 24, fcc << 8 >> 24, fcc >> 24);
 
                 continue;
             }
@@ -192,7 +195,8 @@ VAImageFormat va_new_image(VADisplay display, const unsigned int *fourccs, VAIma
                     VAWARN(vaDestroyImage(display, img->image_id));
 
                     qCDebug(DIGIKAM_QTAV_LOG).noquote()
-                        << QString::asprintf("vaGetImage error: %c%c%c%c  (%#x) %s", fcc<<24>>24, fcc<<16>>24, fcc<<8>>24, fcc>>24, st, vaErrorStr(st));
+                        << QString::asprintf("vaGetImage error: %c%c%c%c  (%#x) %s",
+                                             fcc << 24 >> 24, fcc << 16 >> 24, fcc << 8 >> 24, fcc >> 24, st, vaErrorStr(st));
 
                     img->image_id = VA_INVALID_ID;
                     memset(&fmt, 0, sizeof(fmt));
@@ -262,7 +266,8 @@ class NativeDisplayBase
 public:
 
     NativeDisplayBase()
-        : m_handle(0)
+        : m_handle(0),
+          m_selfCreated(false)
     {
     }
 
@@ -301,9 +306,9 @@ protected:
     bool     m_selfCreated;
 };
 
-class NativeDisplayX11 final: public NativeDisplayBase,
-                                     protected VAAPI_X11,
-                                     protected X11_API
+class NativeDisplayX11 final : public NativeDisplayBase,
+                               protected VAAPI_X11,
+                               protected X11_API
 {
 public:
 

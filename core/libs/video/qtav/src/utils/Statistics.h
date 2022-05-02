@@ -76,10 +76,13 @@ public:
 
         // union member with ctor, dtor, copy ctor only works in c++11
 
-        /*union {
+/*
+        union
+        {
             audio_only audio;
             video_only video;
-        } only;*/
+        } only;
+*/
 
         QHash<QString, QString> metadata;
     } audio, video; // init them
@@ -92,10 +95,10 @@ public:
 
         AudioOnly();
 
-        int     sample_rate; ///< samples per second
-        int     channels;    ///< number of audio channels
+        int     sample_rate;    ///< samples per second
+        int     channels;       ///< number of audio channels
         QString channel_layout;
-        QString sample_fmt;  ///< sample format
+        QString sample_fmt;     ///< sample format
 
         /**
          * Number of samples per channel in an audio frame.
@@ -126,7 +129,7 @@ public:
         // compute from pts history
 
         qreal currentDisplayFPS() const;
-        qreal pts() const; // last pts
+        qreal pts() const;              // last pts
 
         int     width, height;
 

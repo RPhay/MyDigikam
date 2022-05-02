@@ -48,6 +48,12 @@ private:
 
     class Private;
     Private* priv;
+
+private:
+
+    // Disable
+    CharsetDetector(const CharsetDetector&)            = delete;
+    CharsetDetector& operator=(const CharsetDetector&) = delete;
 };
 
 #endif // QTAV_CHAR_SET_DETECTOR_H

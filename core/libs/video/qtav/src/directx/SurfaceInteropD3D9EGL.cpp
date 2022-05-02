@@ -65,7 +65,7 @@ public:
     EGLSurface surface;
 };
 
-class EGLInteropResource final: public InteropResource
+class EGLInteropResource final : public InteropResource
 {
 public:
 
@@ -79,8 +79,15 @@ private:
     void releaseEGL();
     bool ensureSurface(int w, int h);
 
-    EGL* egl;
-    IDirect3DQuery9 *dx_query;
+    EGL*             egl;
+    IDirect3DQuery9* dx_query;
+
+private:
+
+    // Disable
+    EGLInteropResource(const EGLInteropResource&)            = delete;
+    EGLInteropResource& operator=(const EGLInteropResource&) = delete;
+
 };
 
 InteropResource* CreateInteropEGL(IDirect3DDevice9* dev)
@@ -127,7 +134,9 @@ bool EGLInteropResource::ensureSurface(int w, int h)
 
     releaseEGL();
     egl->dpy = eglGetCurrentDisplay();
-    qCDebug(DIGIKAM_QTAV_LOG).noquote() << QString::asprintf("EGL version: %s, client api: %s", eglQueryString(egl->dpy, EGL_VERSION), eglQueryString(egl->dpy, EGL_CLIENT_APIS));
+    qCDebug(DIGIKAM_QTAV_LOG).noquote()
+        << QString::asprintf("EGL version: %s, client api: %s",
+            eglQueryString(egl->dpy, EGL_VERSION), eglQueryString(egl->dpy, EGL_CLIENT_APIS));
 
     EGLint cfg_attribs[] =
     {
@@ -146,6 +155,7 @@ bool EGLInteropResource::ensureSurface(int w, int h)
     if (!eglChooseConfig(egl->dpy, cfg_attribs, &egl_cfg, 1, &nb_cfgs))
     {
         qCWarning(DIGIKAM_QTAV_LOG_WARN).noquote() << QString::asprintf("Failed to create EGL configuration");
+
         return false;
     }
 
@@ -162,6 +172,7 @@ bool EGLInteropResource::ensureSurface(int w, int h)
     if (!kEGL_ANGLE_d3d_share_handle_client_buffer && !kEGL_ANGLE_query_surface_pointer)
     {
         qCWarning(DIGIKAM_QTAV_LOG_WARN).noquote() << QString::asprintf("EGL extension 'kEGL_ANGLE_query_surface_pointer' or 'ANGLE_d3d_share_handle_client_buffer' is required!");
+
         return false;
     }
 
@@ -242,7 +253,10 @@ bool EGLInteropResource::map(IDirect3DSurface9* surface, GLuint tex, int w, int 
 
     const RECT src =
     {
-        0, 0, (~0-1)&w, (~0-1)&h
+        0,
+        0,
+        (~0-1)&w,
+        (~0-1)&h
     };
 
     DX_ENSURE(d3ddev->StretchRect(surface, &src, dx_surface, nullptr, D3DTEXF_NONE), false);

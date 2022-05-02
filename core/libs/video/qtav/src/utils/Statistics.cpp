@@ -108,7 +108,7 @@ qint64 Statistics::VideoOnly::frameDisplayed(qreal pts)
 {
     d->pts             = pts;
     const qint64 msecs = QDateTime::currentMSecsSinceEpoch();
-    const qreal t      = (double)msecs/1000.0;
+    const qreal t      = (double)msecs / 1000.0;
     d->history.push_back(t);
 
     return msecs;
@@ -123,17 +123,18 @@ qreal Statistics::VideoOnly::currentDisplayFPS() const
 
     // DO NOT use d->history.last-first
 
-    const qreal dt = (double)QDateTime::currentMSecsSinceEpoch()/1000.0 - d->history.front();
+    const qreal dt = (double)QDateTime::currentMSecsSinceEpoch() / 1000.0 - d->history.front();
 
     // dt should be always > 0 because history stores absolute time
 
     if (qFuzzyIsNull(dt))
         return 0;
 
-    return (qreal)d->history.size()/dt;
+    return (qreal)d->history.size() / dt;
 }
 
 Statistics::Statistics()
+    : bit_rate(0)
 {
 }
 

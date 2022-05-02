@@ -129,6 +129,7 @@ public:
       , u_opacity(-1)
       , painter(0)
       , video_format(VideoFormat::Format_Invalid)
+      , plane1_linesize(0),
       , material_type(0)
     {
         if (QGLFormat::openGLVersionFlags() == QGLFormat::OpenGL_Version_None)

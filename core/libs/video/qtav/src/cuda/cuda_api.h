@@ -139,6 +139,12 @@ private:
 
     class context;
     context *ctx;
+
+private:
+
+    // Disable
+    cuda_api(const cuda_api&)            = delete;
+    cuda_api& operator=(const cuda_api&) = delete;
 };
 
 #define CUDA_CHECK(f, ...) \

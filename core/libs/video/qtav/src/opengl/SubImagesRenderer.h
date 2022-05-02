@@ -86,6 +86,12 @@ private:
 
     GLuint               m_tex;
     QOpenGLShaderProgram m_program;
+
+private:
+
+    // Disable
+    SubImagesRenderer(const SubImagesRenderer&)            = delete;
+    SubImagesRenderer& operator=(const SubImagesRenderer&) = delete;
 };
 
 } // namespace QtAV

@@ -79,6 +79,12 @@ protected:
 
     class Private;
     Private *priv;
+
+private:
+
+    // Disable
+    LibAVFilter(const LibAVFilter&)            = delete;
+    LibAVFilter& operator=(const LibAVFilter&) = delete;
 };
 
 // ---------------------------------------------------------------------------------
