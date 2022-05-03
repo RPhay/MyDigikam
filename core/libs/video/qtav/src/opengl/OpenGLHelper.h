@@ -128,7 +128,8 @@ bool isPBOSupported();
  * \param mat channel reorder matrix used in glsl
  * \return false if fmt is not supported
  */
-bool videoFormatToGL(const VideoFormat& fmt, GLint* internal_format, GLenum* data_format, GLenum* data_type, QMatrix4x4* mat = nullptr);
+bool videoFormatToGL(const VideoFormat& fmt, GLint* internal_format, GLenum* data_format,
+                     GLenum* data_type, QMatrix4x4* mat = nullptr);
 
 int bytesOfGLFormat(GLenum format, GLenum dataType = GL_UNSIGNED_BYTE);
 

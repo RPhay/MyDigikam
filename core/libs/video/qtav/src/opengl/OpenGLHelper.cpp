@@ -105,14 +105,14 @@ static QByteArray commonShaderHeader(QOpenGLShader::ShaderType type)
     {
         h += "precision mediump int;\n"
              "precision mediump float;\n"
-             ;
+        ;
     }
     else
     {
         h += "#define highp\n"
              "#define mediump\n"
              "#define lowp\n"
-             ;
+        ;
     }
 
     if (type == QOpenGLShader::Fragment)
@@ -125,7 +125,7 @@ static QByteArray commonShaderHeader(QOpenGLShader::ShaderType type)
              "#else\n"
              "#define texture2D texture\n"
              "#endif // < 130\n"
-             ;
+        ;
     }
 
     return h;
@@ -157,18 +157,18 @@ QByteArray compatibleShaderHeader(QOpenGLShader::ShaderType type)
     {
         // gl(es) 3
 
-        if (type == QOpenGLShader::Vertex)
+        if      (type == QOpenGLShader::Vertex)
         {
             h += "#define attribute in\n"
                  "#define varying out\n"
-                 ;
+            ;
         }
         else if (type == QOpenGLShader::Fragment)
         {
             h += "#define varying in\n"
                  "#define gl_FragColor out_color\n"  // can not starts with 'gl_'
                  "out vec4 gl_FragColor;\n"
-                 ;
+            ;
         }
     }
 
@@ -184,7 +184,8 @@ int GLSLVersion()
 
     if (!QOpenGLContext::currentContext())
     {
-        qCWarning(DIGIKAM_QTAV_LOG_WARN).noquote() << QString::asprintf("%s: current context is null", __FUNCTION__);
+        qCWarning(DIGIKAM_QTAV_LOG_WARN).noquote()
+            << QString::asprintf("%s: current context is null", __FUNCTION__);
 
         return 0;
     }
@@ -561,7 +562,10 @@ bool test_gl_param(const gl_param_t& gp, bool* has_16 = nullptr)
 
     if (param != gp.internal_format)
     {
-        qCDebug(DIGIKAM_QTAV_LOG).noquote() << QString::asprintf("Do not support texture internal format: %#x (result %#x)", gp.internal_format, param);
+        qCDebug(DIGIKAM_QTAV_LOG).noquote()
+            << QString::asprintf("Do not support texture internal format: %#x (result %#x)",
+                gp.internal_format, param);
+
         DYGL(glDeleteTextures(1, &tex));
 
         return false;
@@ -574,7 +578,7 @@ bool test_gl_param(const gl_param_t& gp, bool* has_16 = nullptr)
         return true;
     }
 
-    *has_16 = false;
+    *has_16      = false;
     GLenum pname = 0;
 
 #ifndef GL_TEXTURE_RED_SIZE
@@ -695,6 +699,7 @@ static const gl_param_t* get_gl_param()
         if (!useDeprecatedFormats())
         {
             qCDebug(DIGIKAM_QTAV_LOG).noquote() << QString::asprintf("using gl_param_%s", gp == gl_param_3r16? "3r16" : "desktop_fallback");
+
             return gp;
         }
     }
@@ -708,6 +713,7 @@ static const gl_param_t* get_gl_param()
         if (!useDeprecatedFormats())
         {
             qCDebug(DIGIKAM_QTAV_LOG).noquote() << QString::asprintf("using gl_param_es3rg8");
+
             return gp;
         }
     }
@@ -723,6 +729,7 @@ static const gl_param_t* get_gl_param()
         if (gp && !useDeprecatedFormats())
         {
             qCDebug(DIGIKAM_QTAV_LOG).noquote() << QString::asprintf("using gl_param_%s", gp == gl_param_es3rg8 ? "es3rg8" : "es2rg");
+
             return gp;
         }
     }
@@ -819,13 +826,14 @@ static QMatrix4x4 channelMap(const VideoFormat& fmt)
             break;
     }
 
-    const quint8 *channels = nullptr; // { 0, 1, 2, 3};
+    const quint8* channels = nullptr; // { 0, 1, 2, 3};
 
     for (int i = 0 ; gl_channel_maps[i].pixfmt != VideoFormat::Format_Invalid ; ++i)
     {
         if (gl_channel_maps[i].pixfmt == fmt.pixelFormat())
         {
             channels = gl_channel_maps[i].channels;
+
             break;
         }
     }
@@ -851,64 +859,65 @@ static QMatrix4x4 channelMap(const VideoFormat& fmt)
 
 #define ARRAY_SIZE(a) (sizeof(a)/sizeof((a)[0]))
 
-bool videoFormatToGL(const VideoFormat& fmt, GLint* internal_format, GLenum* data_format, GLenum* data_type, QMatrix4x4* mat)
+bool videoFormatToGL(const VideoFormat& fmt, GLint* internal_format, GLenum* data_format,
+                     GLenum* data_type, QMatrix4x4* mat)
 {
     typedef struct fmt_entry
     {
         VideoFormat::PixelFormat pixfmt;
-        GLint internal_format;
-        GLenum format;
-        GLenum type;
+        GLint                    internal_format;
+        GLenum                   format;
+        GLenum                   type;
     } fmt_entry;
 
     static const fmt_entry pixfmt_to_gles[] =
     {
-        {VideoFormat::Format_BGRA32,  GL_BGRA, GL_BGRA, GL_UNSIGNED_BYTE }, // tested for angle
-        {VideoFormat::Format_RGB32,   GL_BGRA, GL_BGRA, GL_UNSIGNED_BYTE },
-        {VideoFormat::Format_Invalid, 0, 0, 0}
+        { VideoFormat::Format_BGRA32,  GL_BGRA, GL_BGRA, GL_UNSIGNED_BYTE }, // tested for angle
+        { VideoFormat::Format_RGB32,   GL_BGRA, GL_BGRA, GL_UNSIGNED_BYTE },
+        { VideoFormat::Format_Invalid, 0,       0,       0                }
     };
 
     Q_UNUSED(pixfmt_to_gles);
 
     static const fmt_entry pixfmt_to_desktop[] =
     {
-        {VideoFormat::Format_BGRA32, GL_RGBA, GL_BGRA, GL_UNSIGNED_BYTE }, // bgra works on win but not macOS
-        {VideoFormat::Format_RGB32,  GL_RGBA, GL_BGRA, GL_UNSIGNED_BYTE }, // FIXME: endian check
-
-        //{VideoFormat::Format_BGRA32,  GL_RGBA, GL_RGBA, GL_UNSIGNED_BYTE }, // {2,1,0,3}
-        //{VideoFormat::Format_BGR24,   GL_RGB,  GL_BGR,  GL_UNSIGNED_BYTE }, // {0,1,2,3}
-
+        { VideoFormat::Format_BGRA32, GL_RGBA, GL_BGRA, GL_UNSIGNED_BYTE }, // bgra works on win but not macOS
+        { VideoFormat::Format_RGB32,  GL_RGBA, GL_BGRA, GL_UNSIGNED_BYTE }, // FIXME: endian check
+/*
+        { VideoFormat::Format_BGRA32, GL_RGBA, GL_RGBA, GL_UNSIGNED_BYTE }, // { 2, 1, 0, 3 }
+        { VideoFormat::Format_BGR24,  GL_RGB,  GL_BGR,  GL_UNSIGNED_BYTE }, // { 0, 1, 2, 3 }
+*/
 #ifdef GL_UNSIGNED_SHORT_5_6_5_REV
 
-        {VideoFormat::Format_BGR565, GL_RGB,  GL_RGB,  GL_UNSIGNED_SHORT_5_6_5_REV}, // es error, use channel map
+        { VideoFormat::Format_BGR565, GL_RGB,  GL_RGB,  GL_UNSIGNED_SHORT_5_6_5_REV     }, // es error, use channel map
 
 #endif
 
 #ifdef GL_UNSIGNED_SHORT_1_5_5_5_REV
 
-        {VideoFormat::Format_RGB555, GL_RGBA, GL_BGRA, GL_UNSIGNED_SHORT_1_5_5_5_REV},
+        { VideoFormat::Format_RGB555, GL_RGBA, GL_BGRA, GL_UNSIGNED_SHORT_1_5_5_5_REV   },
 
 #endif
 
 #ifdef GL_UNSIGNED_SHORT_1_5_5_5_REV
 
-        {VideoFormat::Format_BGR555, GL_RGBA, GL_RGBA, GL_UNSIGNED_SHORT_1_5_5_5_REV},
+        { VideoFormat::Format_BGR555, GL_RGBA, GL_RGBA, GL_UNSIGNED_SHORT_1_5_5_5_REV   },
 
 #endif
 
         // TODO: BE formats not implemeted
 
-        {VideoFormat::Format_RGB48, GL_RGB, GL_RGB, GL_UNSIGNED_SHORT }, // TODO: they are not work for ANGLE, and rgb16 works on desktop gl, so remove these lines to use rgb16?
-        {VideoFormat::Format_RGB48LE, GL_RGB, GL_RGB, GL_UNSIGNED_SHORT },
-        {VideoFormat::Format_RGB48BE, GL_RGB, GL_RGB, GL_UNSIGNED_SHORT },
-        {VideoFormat::Format_BGR48, GL_RGB, GL_BGR, GL_UNSIGNED_SHORT }, // RGB16?
-        {VideoFormat::Format_BGR48LE, GL_RGB, GL_BGR, GL_UNSIGNED_SHORT },
-        {VideoFormat::Format_BGR48BE, GL_RGB, GL_BGR, GL_UNSIGNED_SHORT },
-        {VideoFormat::Format_RGBA64LE, GL_RGBA, GL_RGBA, GL_UNSIGNED_SHORT },
-        {VideoFormat::Format_RGBA64BE, GL_RGBA, GL_RGBA, GL_UNSIGNED_SHORT },
-        {VideoFormat::Format_BGRA64LE, GL_RGBA, GL_BGRA, GL_UNSIGNED_SHORT },
-        {VideoFormat::Format_BGRA64BE, GL_RGBA, GL_BGRA, GL_UNSIGNED_SHORT },
-        {VideoFormat::Format_Invalid, 0, 0, 0}
+        { VideoFormat::Format_RGB48,    GL_RGB,  GL_RGB,  GL_UNSIGNED_SHORT             }, // TODO: they are not work for ANGLE, and rgb16 works on desktop gl, so remove these lines to use rgb16?
+        { VideoFormat::Format_RGB48LE,  GL_RGB,  GL_RGB,  GL_UNSIGNED_SHORT             },
+        { VideoFormat::Format_RGB48BE,  GL_RGB,  GL_RGB,  GL_UNSIGNED_SHORT             },
+        { VideoFormat::Format_BGR48,    GL_RGB,  GL_BGR,  GL_UNSIGNED_SHORT             }, // RGB16?
+        { VideoFormat::Format_BGR48LE,  GL_RGB,  GL_BGR,  GL_UNSIGNED_SHORT             },
+        { VideoFormat::Format_BGR48BE,  GL_RGB,  GL_BGR,  GL_UNSIGNED_SHORT             },
+        { VideoFormat::Format_RGBA64LE, GL_RGBA, GL_RGBA, GL_UNSIGNED_SHORT             },
+        { VideoFormat::Format_RGBA64BE, GL_RGBA, GL_RGBA, GL_UNSIGNED_SHORT             },
+        { VideoFormat::Format_BGRA64LE, GL_RGBA, GL_BGRA, GL_UNSIGNED_SHORT             },
+        { VideoFormat::Format_BGRA64BE, GL_RGBA, GL_BGRA, GL_UNSIGNED_SHORT             },
+        { VideoFormat::Format_Invalid,  0,       0,       0                             }
     };
 
     Q_UNUSED(pixfmt_to_desktop);
@@ -922,17 +931,17 @@ bool videoFormatToGL(const VideoFormat& fmt, GLint* internal_format, GLenum* dat
 
     static const fmt_entry pixfmt_gl_base[] =
     {
-        {VideoFormat::Format_RGBA32, GL_RGBA, GL_RGBA, GL_UNSIGNED_BYTE }, // only tested for macOS, win, angle
-        {VideoFormat::Format_RGB24,  GL_RGB,  GL_RGB,  GL_UNSIGNED_BYTE },
-        {VideoFormat::Format_RGB565, GL_RGB,  GL_RGB,  GL_UNSIGNED_SHORT_5_6_5},
-        {VideoFormat::Format_BGR32,  GL_BGRA, GL_BGRA, GL_UNSIGNED_BYTE }, // rgba(tested) or abgr, depending on endian
+        { VideoFormat::Format_RGBA32, GL_RGBA, GL_RGBA, GL_UNSIGNED_BYTE        }, // only tested for macOS, win, angle
+        { VideoFormat::Format_RGB24,  GL_RGB,  GL_RGB,  GL_UNSIGNED_BYTE        },
+        { VideoFormat::Format_RGB565, GL_RGB,  GL_RGB,  GL_UNSIGNED_SHORT_5_6_5 },
+        { VideoFormat::Format_BGR32,  GL_BGRA, GL_BGRA, GL_UNSIGNED_BYTE        }, // rgba(tested) or abgr, depending on endian
     };
 
     const VideoFormat::PixelFormat pixfmt = fmt.pixelFormat();
 
     // can not use array size because pixfmt_gl_entry is set on runtime
 
-    for (const fmt_entry* e = pixfmt_gl_entry; e->pixfmt != VideoFormat::Format_Invalid; ++e)
+    for (const fmt_entry* e = pixfmt_gl_entry ; e->pixfmt != VideoFormat::Format_Invalid ; ++e)
     {
         if (e->pixfmt == pixfmt)
         {
@@ -947,7 +956,7 @@ bool videoFormatToGL(const VideoFormat& fmt, GLint* internal_format, GLenum* dat
         }
     }
 
-    for (size_t i = 0 ; i < ARRAY_SIZE(pixfmt_gl_base); ++i)
+    for (size_t i = 0 ; i < ARRAY_SIZE(pixfmt_gl_base) ; ++i)
     {
         const fmt_entry& e = pixfmt_gl_base[i];
 
@@ -966,14 +975,14 @@ bool videoFormatToGL(const VideoFormat& fmt, GLint* internal_format, GLenum* dat
 
     static const fmt_entry pixfmt_to_gl_swizzele[] =
     {
-        {VideoFormat::Format_VYU, GL_RGBA, GL_RGBA, GL_UNSIGNED_BYTE  },
-        {VideoFormat::Format_UYVY, GL_RGBA, GL_RGBA, GL_UNSIGNED_BYTE },
-        {VideoFormat::Format_YUYV, GL_RGBA, GL_RGBA, GL_UNSIGNED_BYTE },
-        {VideoFormat::Format_VYUY, GL_RGBA, GL_RGBA, GL_UNSIGNED_BYTE },
-        {VideoFormat::Format_YVYU, GL_RGBA, GL_RGBA, GL_UNSIGNED_BYTE },
-        {VideoFormat::Format_BGR565, GL_RGB,  GL_RGB,  GL_UNSIGNED_SHORT_5_6_5},   // swizzle
-        {VideoFormat::Format_RGB555, GL_RGBA, GL_RGBA, GL_UNSIGNED_SHORT_5_5_5_1}, // not working
-        {VideoFormat::Format_BGR555, GL_RGBA, GL_RGBA, GL_UNSIGNED_SHORT_5_5_5_1}, // not working
+        {VideoFormat::Format_VYU,    GL_RGBA, GL_RGBA, GL_UNSIGNED_BYTE             },
+        {VideoFormat::Format_UYVY,   GL_RGBA, GL_RGBA, GL_UNSIGNED_BYTE             },
+        {VideoFormat::Format_YUYV,   GL_RGBA, GL_RGBA, GL_UNSIGNED_BYTE             },
+        {VideoFormat::Format_VYUY,   GL_RGBA, GL_RGBA, GL_UNSIGNED_BYTE             },
+        {VideoFormat::Format_YVYU,   GL_RGBA, GL_RGBA, GL_UNSIGNED_BYTE             },
+        {VideoFormat::Format_BGR565, GL_RGB,  GL_RGB,  GL_UNSIGNED_SHORT_5_6_5      }, // swizzle
+        {VideoFormat::Format_RGB555, GL_RGBA, GL_RGBA, GL_UNSIGNED_SHORT_5_5_5_1    }, // not working
+        {VideoFormat::Format_BGR555, GL_RGBA, GL_RGBA, GL_UNSIGNED_SHORT_5_5_5_1    }, // not working
     };
 
     for (size_t i = 0 ; i < ARRAY_SIZE(pixfmt_to_gl_swizzele) ; ++i)
@@ -999,16 +1008,21 @@ bool videoFormatToGL(const VideoFormat& fmt, GLint* internal_format, GLenum* dat
     gl_param_t* gp      = (gl_param_t*)get_gl_param();
     const int nb_planes = fmt.planeCount();
 
-    if (gp == gl_param_3r16 && (
-        // nb_planes == 2 || // nv12 UV plane is 16bit, but we use rg
-        (OpenGLHelper::depth16BitTexture() == 16 && OpenGLHelper::has16BitTexture() && fmt.isBigEndian() && fmt.bitsPerComponent() > 8) // 16bit texture does not support be channel now
-        ))
+    if (gp == gl_param_3r16 &&
+        (
+         // nb_planes == 2 || // nv12 UV plane is 16bit, but we use rg
+         (OpenGLHelper::depth16BitTexture() == 16 && OpenGLHelper::has16BitTexture() && fmt.isBigEndian() && fmt.bitsPerComponent() > 8) // 16bit texture does not support be channel now
+        )
+       )
     {
         gp = (gl_param_t*)gl_param_desktop_fallback;
-        qCDebug(DIGIKAM_QTAV_LOG).noquote() << QString::asprintf("desktop_fallback for %s", nb_planes == 2 ? "bi-plane format" : "16bit big endian channel");
+
+        qCDebug(DIGIKAM_QTAV_LOG).noquote()
+            << QString::asprintf("desktop_fallback for %s",
+                 nb_planes == 2 ? "bi-plane format" : "16bit big endian channel");
     }
 
-    for (int p = 0; p < nb_planes; ++p)
+    for (int p = 0 ; p < nb_planes ; ++p)
     {
         // for packed rgb(swizzle required) and planar formats
 
@@ -1047,6 +1061,7 @@ bool videoFormatToGL(const VideoFormat& fmt, GLint* internal_format, GLenum* dat
 int bytesOfGLFormat(GLenum format, GLenum dataType) // TODO: rename bytesOfTexel
 {
     int component_size = 0;
+
     switch (dataType)
     {
 
@@ -1158,7 +1173,9 @@ int bytesOfGLFormat(GLenum format, GLenum dataType) // TODO: rename bytesOfTexel
             return 4*component_size;
 
         default:
-            qCWarning(DIGIKAM_QTAV_LOG_WARN).noquote() << QString::asprintf("bytesOfGLFormat - Unknown format %u", format);
+            qCWarning(DIGIKAM_QTAV_LOG_WARN).noquote()
+                << QString::asprintf("bytesOfGLFormat - Unknown format %u", format);
+
             return 1;
       }
 }
