@@ -116,7 +116,7 @@ public:
 
 Q_SIGNALS:
 
-    void optionsChanged();
+    void optionsChanged() override;
 
 protected:
 
@@ -141,7 +141,7 @@ public:
 
 Q_SIGNALS:
 
-    void optionsChanged();
+    void optionsChanged() override;
 
 protected:
 

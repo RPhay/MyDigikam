@@ -66,7 +66,7 @@ public:
 
     enum AccessMode
     {
-        Read, // default
+        Read, ///< default
         Write
     };
 
@@ -134,6 +134,7 @@ public:
     {
         Q_UNUSED(data);
         Q_UNUSED(maxSize);
+
         return 0;
     }
 

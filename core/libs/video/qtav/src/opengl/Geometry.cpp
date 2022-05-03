@@ -103,14 +103,14 @@ void Geometry::setIndexValue(int index, int value)
 
         case TypeU16:
         {
-            quint16* d = (quint16*)m_idata.constData();
+            quint16* d = reinterpret_cast<quint16*>(m_idata.data());
             *(d+index) = value;
             break;
         }
 
         case TypeU32:
         {
-            quint32* d = (quint32*)m_idata.constData();
+            quint32* d = reinterpret_cast<quint32*>(m_idata.data());
             *(d+index) = value;
             break;
         }
@@ -139,7 +139,7 @@ void Geometry::setIndexValue(int index, int v1, int v2, int v3)
 
         case TypeU16:
         {
-            quint16* d   = (quint16*)m_idata.constData();
+            quint16* d   = reinterpret_cast<quint16*>(m_idata.data());
             *(d+index++) = v1;
             *(d+index++) = v2;
             *(d+index++) = v3;
@@ -148,7 +148,7 @@ void Geometry::setIndexValue(int index, int v1, int v2, int v3)
 
         case TypeU32:
         {
-            quint32* d   = (quint32*)m_idata.constData();
+            quint32* d   = reinterpret_cast<quint32*>(m_idata.data());
             *(d+index++) = v1;
             *(d+index++) = v2;
             *(d+index++) = v3;
@@ -165,14 +165,15 @@ void Geometry::setIndexValue(int index, int v1, int v2, int v3)
 void Geometry::dumpVertexData()
 {
     qCDebug(DIGIKAM_QTAV_LOG).noquote() << QString::asprintf("vertex %p: ", m_vdata.constData());
-    const int n = stride()/sizeof(float);
+
+    const int n = stride() / sizeof(float);
 
     for (int i = 0 ; i < m_vcount ; ++i)
     {
-        const float* f = (const float*)(m_vdata.constData()+i*stride());
+        const float* f = reinterpret_cast<const float*>(m_vdata.data() + i * stride());
 
         QString mess;
-        
+
         for (int j = 0 ; j < n ; ++j)
         {
             mess += QString::asprintf("%f, ", *(f+j));
@@ -198,21 +199,21 @@ void Geometry::dumpIndexData()
 
         case TypeU16:
         {
-            quint16* d = (quint16*)m_idata.constData();
+            quint16* d = reinterpret_cast<quint16*>(m_idata.data());
 
             for (int i = 0 ; i < m_icount ; ++i)
                 qCDebug(DIGIKAM_QTAV_LOG).noquote() << QString::asprintf("%u, ", *(d+i));
-            
+
             break;
         }
 
         case TypeU32:
         {
-            quint32* d = (quint32*)m_idata.constData();
+            quint32* d = reinterpret_cast<quint32*>(m_idata.data());
 
             for (int i = 0 ; i < m_icount ; ++i)
                 qCDebug(DIGIKAM_QTAV_LOG).noquote() << QString::asprintf("%u, ", *(d+i));
-            
+
             break;
         }
 
@@ -277,10 +278,12 @@ TexturedGeometry::TexturedGeometry()
     , geo_rect(-1, 1, 2, -2) // (-1, -1, 2, 2) flip y
 {
     setVertexCount(4);
+
     a = QVector<Attribute>()
             << Attribute(TypeF32, 2, 0)
             << Attribute(TypeF32, 2, 2*sizeof(float))
     ;
+
     setTextureCount(1);
 }
 
@@ -298,40 +301,40 @@ int TexturedGeometry::textureCount() const
     return nb_tex;
 }
 
-void TexturedGeometry::setPoint(int index, const QPointF &p, const QPointF &tp, int texIndex)
+void TexturedGeometry::setPoint(int index, const QPointF& p, const QPointF& tp, int texIndex)
 {
     setGeometryPoint(index, p);
     setTexturePoint(index, tp, texIndex);
 }
 
-void TexturedGeometry::setGeometryPoint(int index, const QPointF &p)
+void TexturedGeometry::setGeometryPoint(int index, const QPointF& p)
 {
-    float *v = (float*)(m_vdata.constData() + index*stride());
+    float *v = reinterpret_cast<float*>(m_vdata.data() + index*stride());
     *v       = p.x();
     *(v+1)   = p.y();
 }
 
-void TexturedGeometry::setTexturePoint(int index, const QPointF &tp, int texIndex)
+void TexturedGeometry::setTexturePoint(int index, const QPointF& tp, int texIndex)
 {
-    float *v = (float*)(m_vdata.constData() + index*stride() + (texIndex+1)*2*sizeof(float));
+    float *v = reinterpret_cast<float*>(m_vdata.data() + index*stride() + (texIndex+1)*2*sizeof(float));
     *v       = tp.x();
     *(v+1)   = tp.y();
 }
 
-void TexturedGeometry::setRect(const QRectF &r, const QRectF &tr, int texIndex)
+void TexturedGeometry::setRect(const QRectF& r, const QRectF& tr, int texIndex)
 {
-    setPoint(0, r.topLeft(), tr.topLeft(), texIndex);
+    setPoint(0, r.topLeft(),    tr.topLeft(),    texIndex);
     setPoint(1, r.bottomLeft(), tr.bottomLeft(), texIndex);
 
     switch (primitive())
     {
         case TriangleStrip:
-            setPoint(2, r.topRight(), tr.topRight(), texIndex);
+            setPoint(2, r.topRight(),    tr.topRight(),    texIndex);
             setPoint(3, r.bottomRight(), tr.bottomRight(), texIndex);
             break;
 
         case TriangleFan:
-            setPoint(3, r.topRight(), tr.topRight(), texIndex);
+            setPoint(3, r.topRight(),    tr.topRight(),    texIndex);
             setPoint(2, r.bottomRight(), tr.bottomRight(), texIndex);
             break;
 
@@ -343,12 +346,12 @@ void TexturedGeometry::setRect(const QRectF &r, const QRectF &tr, int texIndex)
     }
 }
 
-void TexturedGeometry::setGeometryRect(const QRectF &r)
+void TexturedGeometry::setGeometryRect(const QRectF& r)
 {
     geo_rect = r;
 }
 
-void TexturedGeometry::setTextureRect(const QRectF &tr, int texIndex)
+void TexturedGeometry::setTextureRect(const QRectF& tr, int texIndex)
 {
     if (texRect.size() <= texIndex)
         texRect.resize(texIndex+1);
@@ -402,18 +405,18 @@ void TexturedGeometry::create()
     for (int i = 0 ; i < texRect.size() ; ++i)
     {
         const QRectF tr = texRect[i];
-        setTexturePoint(0, tr.topLeft(), i);
+        setTexturePoint(0, tr.topLeft(),    i);
         setTexturePoint(1, tr.bottomLeft(), i);
 
         switch (primitive())
         {
             case TriangleStrip:
-                setTexturePoint(2, tr.topRight(), i);
+                setTexturePoint(2, tr.topRight(),    i);
                 setTexturePoint(3, tr.bottomRight(), i);
                 break;
 
             case TriangleFan:
-                setTexturePoint(3, tr.topRight(), i);
+                setTexturePoint(3, tr.topRight(),    i);
                 setTexturePoint(2, tr.bottomRight(), i);
                 break;
 
@@ -433,6 +436,7 @@ Sphere::Sphere()
 {
     setPrimitive(Triangles);
     setResolution(128, 128);
+
     a = QVector<Attribute>()
             << Attribute(TypeF32, 3, 0)
             << Attribute(TypeF32, 2, 3*sizeof(float))
@@ -474,9 +478,9 @@ void Sphere::create()
 
     // TODO: use geo_rect?
 
-    float *vd          = (float*)m_vdata.constData();
-    const float dTheta = M_PI*2.0/float(ru);
-    const float dPhi   = M_PI/float(rv);
+    float* vd          = reinterpret_cast<float*>(m_vdata.data());
+    const float dTheta = M_PI*2.0 / float(ru);
+    const float dPhi   = M_PI / float(rv);
 
     //const float du = 1.0f/float(ru);
     //const float dv = 1.0f/float(rv);
@@ -503,8 +507,8 @@ void Sphere::create()
 
             for (int i = 0 ; i < nb_tex ; ++i)
             {
-                *vd++ = texRect[i].x()+texRect[i].width()/float(ru) * float(lon);
-                *vd++ = texRect[i].y()+texRect[i].height()/float(rv) * float(lat);
+                *vd++ = texRect[i].x()+texRect[i].width()  / float(ru) * float(lon);
+                *vd++ = texRect[i].y()+texRect[i].height() / float(rv) * float(lat);
             }
         }
     }

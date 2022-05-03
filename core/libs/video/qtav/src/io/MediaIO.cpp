@@ -48,7 +48,7 @@ void MediaIO::registerAll()
     if (done)
         return;
 
-    done = true;
+    done             = true;
     RegisterMediaIOQIODevice_Man();
     RegisterMediaIOQFile_Man();
 
@@ -80,13 +80,13 @@ QStringList MediaIO::builtInNames()
 // TODO: plugin
 // TODO: plugin use metadata(Qt plugin system) to avoid loading
 
-MediaIO* MediaIO::createForProtocol(const QString &protocol)
+MediaIO* MediaIO::createForProtocol(const QString& protocol)
 {
     std::vector<MediaIOId> ids(MediaIOFactory::Instance().registeredIds());
 
     foreach (MediaIOId id, ids)
     {
-        MediaIO *in = MediaIO::create(id);
+        MediaIO* in = MediaIO::create(id);
 
         if (in->protocols().contains(protocol))
             return in;
@@ -97,14 +97,14 @@ MediaIO* MediaIO::createForProtocol(const QString &protocol)
     return nullptr;
 }
 
-MediaIO* MediaIO::createForUrl(const QString &url)
+MediaIO* MediaIO::createForUrl(const QString& url)
 {
     const int p = url.indexOf(QLatin1String(":"));
 
     if (p < 0)
         return nullptr;
 
-    MediaIO *io = MediaIO::createForProtocol(url.left(p));
+    MediaIO* io = MediaIO::createForProtocol(url.left(p));
 
     if (!io)
         return nullptr;
@@ -114,21 +114,21 @@ MediaIO* MediaIO::createForUrl(const QString &url)
     return io;
 }
 
-static int av_read(void *opaque, unsigned char *buf, int buf_size)
+static int av_read(void* opaque, unsigned char* buf, int buf_size)
 {
     MediaIO* io = static_cast<MediaIO*>(opaque);
 
     return io->read((char*)buf, buf_size);
 }
 
-static int av_write(void *opaque, unsigned char *buf, int buf_size)
+static int av_write(void* opaque, unsigned char* buf, int buf_size)
 {
     MediaIO* io = static_cast<MediaIO*>(opaque);
 
     return io->write((const char*)buf, buf_size);
 }
 
-static int64_t av_seek(void *opaque, int64_t offset, int whence)    // krazy:exclude=typedefs
+static int64_t av_seek(void* opaque, int64_t offset, int whence)    // krazy:exclude=typedefs
 {
     if (whence == SEEK_SET && offset < 0)
         return -1;
@@ -138,6 +138,7 @@ static int64_t av_seek(void *opaque, int64_t offset, int whence)    // krazy:exc
     if (!io->isSeekable())
     {
         qCWarning(DIGIKAM_QTAV_LOG_WARN).noquote() << QString::asprintf("Can not seek. MediaIO[%s] is not a seekable IO", MediaIO::staticMetaObject.className());
+
         return -1;
     }
 
@@ -203,6 +204,7 @@ bool MediaIO::setAccessMode(AccessMode value)
     if (value == Write && !isWritable())
     {
         qCWarning(DIGIKAM_QTAV_LOG_WARN).noquote() << QString::asprintf("Can not set Write access mode to this MediaIO");
+
         return false;
     }
 

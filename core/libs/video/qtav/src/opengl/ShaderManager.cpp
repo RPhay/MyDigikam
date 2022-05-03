@@ -39,14 +39,14 @@ public:
     {
         // TODO: thread safe required?
 
-        qDeleteAll(shader_cache.values());
+        qDeleteAll(shader_cache);
         shader_cache.clear();
     }
 
     QHash<qint32, VideoShader*> shader_cache;
 };
 
-ShaderManager::ShaderManager(QObject *parent)
+ShaderManager::ShaderManager(QObject* parent)
     : QObject(parent)
     , d(new Private())
 {
@@ -58,15 +58,17 @@ ShaderManager::~ShaderManager()
     d = nullptr;
 }
 
-VideoShader* ShaderManager::prepareMaterial(VideoMaterial *material, qint32 materialType)
+VideoShader* ShaderManager::prepareMaterial(VideoMaterial* material, qint32 materialType)
 {
     const qint32 type   = (materialType != -1) ? materialType : material->type();
-    VideoShader *shader = d->shader_cache.value(type, 0);
+    VideoShader* shader = d->shader_cache.value(type, 0);
 
     if (shader)
         return shader;
 
-    qCDebug(DIGIKAM_QTAV_LOG) << QStringLiteral("[ShaderManager] cache a new shader material type(%1): %2").arg(type).arg(VideoMaterial::typeName(type));
+    qCDebug(DIGIKAM_QTAV_LOG)
+        << QStringLiteral("[ShaderManager] cache a new shader material type(%1): %2")
+            .arg(type).arg(VideoMaterial::typeName(type));
 
     shader                = material->createShader();
     shader->initialize();

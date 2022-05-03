@@ -59,23 +59,23 @@ public:
     void initSubtitleStatistics(int s);
     QVariantList getTracksInfo(AVDemuxer* demuxer, AVDemuxer::StreamType st);
 
-    bool applySubtitleStream(int n, AVPlayer *player);
-    bool setupAudioThread(AVPlayer *player);
-    bool setupVideoThread(AVPlayer *player);
-    bool tryApplyDecoderPriority(AVPlayer *player);
+    bool applySubtitleStream(int n, AVPlayer* player);
+    bool setupAudioThread(AVPlayer* player);
+    bool setupVideoThread(AVPlayer* player);
+    bool tryApplyDecoderPriority(AVPlayer* player);
 
     // TODO: what if buffer mode changed during playback?
 
-    void updateBufferValue(PacketBuffer *buf);
+    void updateBufferValue(PacketBuffer* buf);
     void updateBufferValue();
 
     //TODO: addAVOutput()
 
     template<class Out>
 
-    void setAVOutput(Out *&pOut, Out *pNew, AVThread *thread)
+    void setAVOutput(Out*& pOut, Out* pNew, AVThread* thread)
     {
-        Out *old        = pOut;
+        Out* old        = pOut;
         bool delete_old = false;
 
         if (pOut == pNew)
@@ -114,11 +114,12 @@ public:
         }
 
         // FIXME: what if isPaused()==false but pause(true) in another thread?
+/*
+        bool need_lock = isPlaying() && !thread->isPaused();
 
-        //bool need_lock = isPlaying() && !thread->isPaused();
-        //if (need_lock)
-        //    thread->lock();
-
+        if (need_lock)
+            thread->lock();
+*/
         qCDebug(DIGIKAM_QTAV_LOG).noquote() << QString::asprintf("set AVThread output");
 
         thread->setOutput(pOut);
@@ -126,14 +127,15 @@ public:
         if (pOut)
         {
             pOut->setStatistics(&statistics);
-
-            //if (need_lock)
-            //    thread->unlock(); //??why here?
+/*
+            if (need_lock)
+                thread->unlock(); //??why here?
+*/
         }
 
         // now the old avoutput is not used by avthread, we can delete it safely
 
-        //AVOutput must be allocated in heap. Just like QObject's children.
+        // AVOutput must be allocated in heap. Just like QObject's children.
 
         if (delete_old)
         {

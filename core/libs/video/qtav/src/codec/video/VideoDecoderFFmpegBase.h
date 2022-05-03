@@ -37,6 +37,7 @@ class VideoDecoderFFmpegBasePrivate;
 
 class VideoDecoderFFmpegBase : public VideoDecoder
 {
+    Q_OBJECT
     Q_DISABLE_COPY(VideoDecoderFFmpegBase)
     DPTR_DECLARE_PRIVATE(VideoDecoderFFmpegBase)
 
