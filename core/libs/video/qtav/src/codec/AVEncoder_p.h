@@ -66,8 +66,15 @@ public:
         }
     }
 
-    virtual bool open()  { return true; }
-    virtual bool close() { return true; }
+    virtual bool open()
+    {
+        return true;
+    }
+
+    virtual bool close()
+    {
+        return true;
+    }
 
     // used iff avctx != null
 

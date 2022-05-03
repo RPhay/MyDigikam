@@ -134,6 +134,7 @@ bool AVEncoder::close()
     }
 
     DPTR_D(AVEncoder);
+
     d.is_open = false;
 
     // hwa extra finalize can be here
@@ -173,6 +174,7 @@ void AVEncoder::copyAVCodecContext(void* ctx)
         return;
 
     DPTR_D(AVEncoder);
+
     AVCodecContext* c = static_cast<AVCodecContext*>(ctx);
 
     if (d.avctx)
@@ -189,6 +191,7 @@ void AVEncoder::copyAVCodecContext(void* ctx)
 void AVEncoder::setOptions(const QVariantHash &dict)
 {
     DPTR_D(AVEncoder);
+
     d.options = dict;
 
     // if dict is empty, can not return here, default options will be set for AVCodecContext
@@ -240,6 +243,7 @@ void AVEncoderPrivate::applyOptionsForDict()
         return;
 
     // workaround for VideoDecoderFFmpeg. now it does not call av_opt_set_xxx, so set here in dict
+
     // TODO: wrong if opt is empty
 
     Internal::setOptionsToDict(options.value(QStringLiteral("avcodec")), &dict);
@@ -263,6 +267,7 @@ void AVEncoderPrivate::applyOptionsForContext()
         return;
 
     // workaround for VideoDecoderFFmpeg. now it does not call av_opt_set_xxx, so set here in dict
+
     // TODO: wrong if opt is empty
 
     Internal::setOptionsToFFmpegObj(options.value(QStringLiteral("avcodec")), avctx);

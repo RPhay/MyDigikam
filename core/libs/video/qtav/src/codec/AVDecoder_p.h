@@ -81,7 +81,8 @@ public:
 
             if (!buf[i])
             {
-                qCWarning(DIGIKAM_QTAV_LOG_WARN).noquote() << QString::asprintf("av_buffer_ref(frame->buf[%d]) error", i);
+                qCWarning(DIGIKAM_QTAV_LOG_WARN).noquote()
+                    << QString::asprintf("av_buffer_ref(frame->buf[%d]) error", i);
             }
         }
 
@@ -97,7 +98,8 @@ public:
 
             if (!buf[k])
             {
-                qCWarning(DIGIKAM_QTAV_LOG_WARN).noquote() << QString::asprintf("av_buffer_ref(frame->extended_buf[%d]) error", i);
+                qCWarning(DIGIKAM_QTAV_LOG_WARN).noquote()
+                    << QString::asprintf("av_buffer_ref(frame->extended_buf[%d]) error", i);
             }
         }
 
@@ -177,6 +179,8 @@ public:
     void applyOptionsForDict();
     void applyOptionsForContext();
 
+public:
+
     AVCodecContext* codec_ctx;              // set once and not change
     bool            available;              // TODO: true only when context(and hw ctx) is ready
     bool            is_open;
@@ -195,7 +199,9 @@ public:
     AudioDecoderPrivate();
     virtual ~AudioDecoderPrivate();
 
-    AudioResampler *resampler;
+public:
+
+    AudioResampler* resampler;
     QByteArray      decoded;
 };
 

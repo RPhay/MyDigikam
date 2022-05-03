@@ -98,6 +98,7 @@ bool AVDecoder::open()
     if (!d.codec_ctx)
     {
         qCWarning(DIGIKAM_QTAV_LOG_WARN).noquote() << QString::asprintf("FFmpeg codec context not ready");
+
         return false;
     }
 
@@ -158,6 +159,7 @@ bool AVDecoder::open()
     }
 
     // CODEC_FLAG_OUTPUT_CORRUPT, CODEC_FLAG2_SHOW_ALL?
+
     // TODO: skip for none-ffmpeg based decoders
 
     d.applyOptionsForDict();
@@ -173,7 +175,10 @@ bool AVDecoder::open()
 
     d.is_open                        = true;
     static const char* thread_name[] = { "Single", "Frame", "Slice" };
-    qCDebug(DIGIKAM_QTAV_LOG).noquote() << QString::asprintf("%s thread type: %s, count: %d", metaObject()->className(), thread_name[d.codec_ctx->active_thread_type], d.codec_ctx->thread_count);
+
+    qCDebug(DIGIKAM_QTAV_LOG).noquote()
+        << QString::asprintf("%s thread type: %s, count: %d",
+            metaObject()->className(), thread_name[d.codec_ctx->active_thread_type], d.codec_ctx->thread_count);
 
     return true; 
 }
@@ -233,8 +238,10 @@ void AVDecoder::setCodecContext(void *codecCtx)
 
     if (isOpen())
     {
-        qCWarning(DIGIKAM_QTAV_LOG_WARN).noquote() << QString::asprintf("Can not copy codec properties when it's open");
-        close(); //
+        qCWarning(DIGIKAM_QTAV_LOG_WARN).noquote()
+            << QString::asprintf("Can not copy codec properties when it's open");
+
+        close();
     }
 
     d.is_open = false;
@@ -243,6 +250,7 @@ void AVDecoder::setCodecContext(void *codecCtx)
     {
         avcodec_free_context(&d.codec_ctx);
         d.codec_ctx = nullptr;
+
         return;
     }
 
@@ -299,6 +307,7 @@ int AVDecoder::undecodedSize() const
 void AVDecoder::setOptions(const QVariantHash &dict)
 {
     DPTR_D(AVDecoder);
+
     d.options = dict;
 
     // if dict is empty, can not return here, default options will be set for AVCodecContext
@@ -336,7 +345,7 @@ void AVDecoderPrivate::applyOptionsForDict()
     if (dict)
     {
         av_dict_free(&dict);
-        dict = nullptr; //aready 0 in av_free
+        dict = nullptr;         // aready 0 in av_free
     }
 
     // enable ref if possible

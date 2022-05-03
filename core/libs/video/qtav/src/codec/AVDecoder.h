@@ -105,12 +105,15 @@ protected:
      */
     void setCodecName(const QString& name);
     QString codecName() const;
-    virtual void codecNameChanged() {} // signals can not be decared virtual (winrt)
+
+    virtual void codecNameChanged()   // signals can not be decared virtual (winrt)
+    {
+    }
 
 private:
 
     Q_DISABLE_COPY(AVDecoder)
-    AVDecoder(); // base class, not direct create. only final class has is enough
+    AVDecoder();                        // base class, not direct create. only final class has is enough
 };
 
 } // namespace QtAV

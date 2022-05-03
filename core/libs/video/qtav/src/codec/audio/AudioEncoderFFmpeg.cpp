@@ -144,7 +144,9 @@ bool AudioEncoderFFmpegPrivate::open()
         }
         else
         {
-            qCWarning(DIGIKAM_QTAV_LOG_WARN).noquote() << QString::asprintf("sample format and supported sample format are not set. use s16");
+            qCWarning(DIGIKAM_QTAV_LOG_WARN).noquote()
+                << QString::asprintf("sample format and supported sample format are not set. use s16");
+
             format_used.setSampleFormat(AudioFormat::SampleFormat_Signed16);
         }
     }
@@ -155,12 +157,16 @@ bool AudioEncoderFFmpegPrivate::open()
         {
             char cl[128];
             av_get_channel_layout_string(cl, sizeof(cl), -1, codec->channel_layouts[0]); // TODO: ff version
+
             qCDebug(DIGIKAM_QTAV_LOG).noquote() << QString::asprintf("use first supported channel layout: %s", cl);
+
             format_used.setChannelLayoutFFmpeg((qint64)codec->channel_layouts[0]);
         }
         else
         {
-            qCWarning(DIGIKAM_QTAV_LOG_WARN).noquote() << QString::asprintf("channel layout and supported channel layout are not set. use stereo");
+            qCWarning(DIGIKAM_QTAV_LOG_WARN).noquote()
+                << QString::asprintf("channel layout and supported channel layout are not set. use stereo");
+
             format_used.setChannelLayout(AudioFormat::ChannelLayout_Stereo);
         }
     }
@@ -281,9 +287,12 @@ bool AudioEncoderFFmpeg::encode(const AudioFrame &frame)
 
     if (ret < 0)
     {
-        //qCWarning(DIGIKAM_QTAV_LOG_WARN).noquote() << QString::asprintf("error avcodec_encode_audio2: %s" ,av_err2str(ret));
-        //av_packet_unref(&pkt); // FIXME
+/*
+        qCWarning(DIGIKAM_QTAV_LOG_WARN).noquote()
+            << QString::asprintf("error avcodec_encode_audio2: %s" ,av_err2str(ret));
 
+        av_packet_unref(&pkt); // FIXME
+*/
         return false;
     }
 

@@ -85,8 +85,8 @@ QStringList AudioDecoder::supportedCodecs()
 }
 
 AudioDecoderPrivate::AudioDecoderPrivate()
-    : AVDecoderPrivate()
-    , resampler(nullptr)
+    : AVDecoderPrivate(),
+      resampler(nullptr)
 {
     resampler = AudioResampler::create(AudioResamplerId_FF);
 

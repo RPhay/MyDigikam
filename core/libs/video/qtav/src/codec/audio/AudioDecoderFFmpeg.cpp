@@ -57,8 +57,11 @@ public:
         const int patch = QTAV_VERSION_PATCH(avcodec_version());
 
         return QStringLiteral("%1 avcodec %2.%3.%4")
-                .arg(patch>=100?QStringLiteral("FFmpeg"):QStringLiteral("Libav"))
-                .arg(QTAV_VERSION_MAJOR(avcodec_version())).arg(QTAV_VERSION_MINOR(avcodec_version())).arg(patch);
+                .arg(patch >= 100 ? QStringLiteral("FFmpeg")
+                                  : QStringLiteral("Libav"))
+                .arg(QTAV_VERSION_MAJOR(avcodec_version()))
+                .arg(QTAV_VERSION_MINOR(avcodec_version()))
+                .arg(patch);
     }
 
     bool decode(const Packet& packet)     override final;
@@ -78,8 +81,8 @@ class AudioDecoderFFmpegPrivate final: public AudioDecoderPrivate
 public:
 
     AudioDecoderFFmpegPrivate()
-        : AudioDecoderPrivate()
-        , frame(av_frame_alloc())
+        : AudioDecoderPrivate(),
+          frame(av_frame_alloc())
     {
 
 #if !AVCODEC_STATIC_REGISTER
@@ -99,7 +102,7 @@ public:
         }
     }
 
-    AVFrame *frame; // set once and not change
+    AVFrame* frame; // set once and not change
 };
 
 AudioDecoderId AudioDecoderFFmpeg::id() const
@@ -136,7 +139,7 @@ bool AudioDecoderFFmpeg::decode(const Packet &packet)
     }
     else
     {
-        // const AVPacket*: ffmpeg >= 1.0. no libav
+        // const AVPacket*: ffmpeg >= 1.0. not libav
 
         ret = avcodec_decode_audio4(d.codec_ctx,
                                     d.frame,
@@ -153,14 +156,18 @@ bool AudioDecoderFFmpeg::decode(const Packet &packet)
 
     if (ret < 0)
     {
-        qCWarning(DIGIKAM_QTAV_LOG_WARN).noquote() << QString::asprintf("[AudioDecoder] %s", av_err2str(ret));
+        qCWarning(DIGIKAM_QTAV_LOG_WARN).noquote()
+            << QString::asprintf("[AudioDecoder] %s",
+                av_err2str(ret));
 
         return false;
     }
 
     if (!got_frame_ptr)
     {
-        qCWarning(DIGIKAM_QTAV_LOG_WARN).noquote() << QString::asprintf("[AudioDecoder] got_frame_ptr=false. decoded: %d, un: %d %s", ret, d.undecoded_size, av_err2str(ret));
+        qCWarning(DIGIKAM_QTAV_LOG_WARN).noquote()
+            << QString::asprintf("[AudioDecoder] got_frame_ptr=false. decoded: %d, un: %d %s",
+                ret, d.undecoded_size, av_err2str(ret));
 
         return !packet.isEOF();
     }
@@ -203,14 +210,14 @@ AudioFrame AudioDecoderFFmpeg::frame()
 
     // av_frame_get_pkt_duration ffmpeg
 
-    f.setBits(d.frame->extended_data);          // TODO: ref
-    f.setBytesPerLine(d.frame->linesize[0], 0); // for correct alignment
+    f.setBits(d.frame->extended_data);              // TODO: ref
+    f.setBytesPerLine(d.frame->linesize[0], 0);     // for correct alignment
     f.setSamplesPerChannel(d.frame->nb_samples);
 
     // TODO: ffplay check AVFrame.pts, pkt_pts, last_pts+nb_samples. move to AudioFrame::from(AVFrame*)
 
     f.setTimestamp((double)d.frame->pkt_pts/1000.0);
-    f.setAudioResampler(d.resampler); // TODO: remove. it's not safe if frame is shared. use a pool or detach if ref >1
+    f.setAudioResampler(d.resampler);               // TODO: remove. it's not safe if frame is shared. use a pool or detach if ref >1
 
     return f;
 }
