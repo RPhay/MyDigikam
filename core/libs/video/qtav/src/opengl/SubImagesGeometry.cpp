@@ -45,7 +45,7 @@ typedef struct
 
     union
     {
-        quint8 r, g, b, a;  // to be normalized
+        quint8  r, g, b, a;  // to be normalized
         quint32 rgba;
     };
 
@@ -68,7 +68,7 @@ static VertexData* SetUnnormalizedVertexData(VertexData* v, int tx, int ty, int 
         quint32 rgba;
     };
 
-    r = color >> 24;
+    r = color  >> 24;
     g = (color >> 16) & 0xff;
     b = (color >> 8) & 0xff;
     a = 255 - (color & 0xff);
@@ -76,7 +76,7 @@ static VertexData* SetUnnormalizedVertexData(VertexData* v, int tx, int ty, int 
 #else
 
     float r, g, b, a;
-    r = (float)(color >> 24)/255.0;
+    r = (float)(color  >> 24)/255.0;
     g = (float)((color >> 16) & 0xff)/255.0;
     b = (float)((color >> 8) & 0xff)/255.0;
     a = (float)(255 - (color & 0xff))/255.0;
@@ -177,7 +177,7 @@ SubImagesGeometry::SubImagesGeometry()
 
 }
 
-bool SubImagesGeometry::setSubImages(const SubImageSet &images)
+bool SubImagesGeometry::setSubImages(const SubImageSet& images)
 {
     // TODO: operator ==
 
@@ -189,29 +189,31 @@ bool SubImagesGeometry::setSubImages(const SubImageSet &images)
     return true;
 }
 
-bool SubImagesGeometry::generateVertexData(const QRect &rect, bool useIndecies, int maxWidth)
+bool SubImagesGeometry::generateVertexData(const QRect& rect, bool useIndecies, int maxWidth)
 {
     if (maxWidth < 0)
         maxWidth = kMaxTexWidth;
 
     if (useIndecies)
-        allocate(4*m_images.images.size(), 6*m_images.images.size());
+        allocate(4 * m_images.images.size(), 6 * m_images.images.size());
     else
-        allocate(6*m_images.images.size());
+        allocate(6 * m_images.images.size());
 
-    qCDebug(DIGIKAM_QTAV_LOG).noquote() << QString::asprintf("images: %d/%d, %dx%d", m_images.isValid(), m_images.images.size(), m_images.width(), m_images.height());
+    qCDebug(DIGIKAM_QTAV_LOG).noquote()
+        << QString::asprintf("images: %d/%d, %dx%d",
+            m_images.isValid(), m_images.images.size(), m_images.width(), m_images.height());
 
     m_rects_upload.clear();
-    m_w = m_h = 0;
+    m_w          = m_h = 0;
     m_normalized = false;
 
     if (!m_images.isValid())
         return false;
 
-    int W = 0, H = 0;
-    int x = 0, h = 0;
+    int W          = 0, H = 0;
+    int x          = 0, h = 0;
     VertexData* vd = (VertexData*)vertexData();
-    int index = 0;
+    int index      = 0;
 
     foreach (const SubImage& i, m_images.images)
     {
@@ -232,10 +234,10 @@ bool SubImagesGeometry::generateVertexData(const QRect &rect, bool useIndecies, 
         {
             // TODO: set only once because it never changes, use IBO
 
-            const int v0 = index*4/6;
+            const int v0 = index * 4 / 6;
             setIndexValue(index, v0, v0+1, v0+2);
             setIndexValue(index+3, v0+1, v0+2, v0+3);
-            index += 6;
+            index       += 6;
         }
 
         x += i.w;
@@ -251,8 +253,8 @@ bool SubImagesGeometry::generateVertexData(const QRect &rect, bool useIndecies, 
 
     const float dx0 = rect.x();
     const float dy0 = rect.y();
-    const float sx  = float(rect.width())/float(m_images.width());
-    const float sy  = float(rect.height())/float(m_images.height());
+    const float sx  = float(rect.width())  / float(m_images.width());
+    const float sy  = float(rect.height()) / float(m_images.height());
     vd              = (VertexData*)vertexData();
 
     foreach (const SubImage& i, m_images.images)
@@ -260,7 +262,7 @@ bool SubImagesGeometry::generateVertexData(const QRect &rect, bool useIndecies, 
         //qCDebug(DIGIKAM_QTAV_LOG) << rect;
         //qCDebug(DIGIKAM_QTAV_LOG).noquote() << QString::asprintf("i: %d,%d", i.x, i.y);
 
-        vd = SetVertexPositionAndNormalize(vd, dx0 + float(i.x)*sx, dy0 + float(i.y)*sy, i.w*sx, i.h*sy, m_w, m_h, useIndecies);
+        vd           = SetVertexPositionAndNormalize(vd, dx0 + float(i.x)*sx, dy0 + float(i.y)*sy, i.w*sx, i.h*sy, m_w, m_h, useIndecies);
         m_normalized = true;
     }
 

@@ -91,4 +91,4 @@ private:
 
 } // namespace QtAV
 
-#endif //QTAV_SUB_IMAGES_GEOMETRY_H
+#endif // QTAV_SUB_IMAGES_GEOMETRY_H
