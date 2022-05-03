@@ -49,10 +49,10 @@ public:
     {
     }
 
-    QList<Filter*>                   pending_release_filters;
-    QMap<AVOutput*, QList<Filter*> > filter_out_map;
-    QMap<AVPlayer*, QList<Filter*> > afilter_player_map;
-    QMap<AVPlayer*, QList<Filter*> > vfilter_player_map;
+    QList<Filter*>                    pending_release_filters;
+    QHash<AVOutput*, QList<Filter*> > filter_out_map;
+    QHash<AVPlayer*, QList<Filter*> > afilter_player_map;
+    QHash<AVPlayer*, QList<Filter*> > vfilter_player_map;
 };
 
 FilterManager::FilterManager()
@@ -202,8 +202,8 @@ bool FilterManager::unregisterFilter(Filter *filter, AVOutput *output)
 bool FilterManager::uninstallFilter(Filter *filter)
 {
     DPTR_D(FilterManager);
-    QMap<AVPlayer*, QList<Filter*> > map1(d.vfilter_player_map); // NB: copy it for iteration because called code may modify map -- which caused crashes
-    QMap<AVPlayer*, QList<Filter*> >::iterator it = map1.begin();
+    QHash<AVPlayer*, QList<Filter*> > map1(d.vfilter_player_map); // NB: copy it for iteration because called code may modify map -- which caused crashes
+    QHash<AVPlayer*, QList<Filter*> >::iterator it = map1.begin();
 
     while (it != map1.end())
     {
@@ -213,7 +213,7 @@ bool FilterManager::uninstallFilter(Filter *filter)
         ++it;
     }
 
-    QMap<AVPlayer*, QList<Filter*> > map2(d.afilter_player_map); // copy to avoid crashes when called-code modifies map
+    QHash<AVPlayer*, QList<Filter*> > map2(d.afilter_player_map); // copy to avoid crashes when called-code modifies map
     it = map2.begin();
 
     while (it != map2.end())
@@ -224,8 +224,8 @@ bool FilterManager::uninstallFilter(Filter *filter)
         ++it;
     }
 
-    QMap<AVOutput*, QList<Filter*> > map3(d.filter_out_map);    // copy to avoid crashes
-    QMap<AVOutput*, QList<Filter*> >::iterator it2 = map3.begin();
+    QHash<AVOutput*, QList<Filter*> > map3(d.filter_out_map);    // copy to avoid crashes
+    QHash<AVOutput*, QList<Filter*> >::iterator it2 = map3.begin();
 
     while (it2 != map3.end())
     {
