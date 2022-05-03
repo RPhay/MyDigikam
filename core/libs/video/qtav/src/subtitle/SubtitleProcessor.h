@@ -132,7 +132,7 @@ public:
     static void registerAll();
 
     template<class C>
-    static bool Register(SubtitleProcessorId id, const char* name)
+    static bool Register(const SubtitleProcessorId& id, const char* name)
     {
         return Register(id, create<C>, name);
     }
