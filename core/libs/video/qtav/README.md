@@ -88,13 +88,13 @@ Code review with plenty of fixes and improvements. See the list of tasks below.
 
     - Apply fixes for Clang-Scan static analyzer.
 
-* Under Progress:
-
     - Fix comments formating everywhere.
 
     - Fix includes rules/order from Qt and local.
 
     - Fix coding style (brackets, tabs to spaces, indents, etc.).
+
+* Under Progress:
 
     - Apply fixes for Clazy static analyzer.
 
