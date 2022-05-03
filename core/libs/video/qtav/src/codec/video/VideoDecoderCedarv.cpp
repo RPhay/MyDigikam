@@ -61,7 +61,7 @@ class VideoDecoderCedarv : public VideoDecoder
     Q_PROPERTY(bool neon READ neon WRITE setNeon NOTIFY neonChanged)
 #endif
     Q_PROPERTY(PixFmt outputPixelFormat READ outputPixelFormat WRITE setOutputPixelFormat NOTIFY outputPixelFormatChanged)
-    Q_ENUMS(PixFmt)
+    Q_ENUM(PixFmt)
 public:
     enum PixFmt {
         YUV420p,

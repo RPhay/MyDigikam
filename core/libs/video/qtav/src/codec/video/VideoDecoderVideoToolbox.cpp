@@ -84,8 +84,8 @@ class VideoDecoderVideoToolbox : public VideoDecoderFFmpegHW
 
     // TODO: try async property
 
-    Q_ENUMS(PixelFormat)
-    Q_ENUMS(Interop)
+    Q_ENUM(PixelFormat)
+    Q_ENUM(Interop)
 
 public:
 

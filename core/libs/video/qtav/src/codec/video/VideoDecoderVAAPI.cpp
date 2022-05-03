@@ -91,7 +91,6 @@ class VideoDecoderVAAPI : public VideoDecoderFFmpegHW
     //Q_PROPERTY(QStringList displayPriority READ displayPriority WRITE setDisplayPriority)
 
     Q_PROPERTY(DisplayType display READ display WRITE setDisplay)
-    Q_ENUMS(DisplayType)
 
 public:
 
@@ -101,6 +100,7 @@ public:
         GLX,
         DRM
     };
+    Q_ENUM(DisplayType)
 
     VideoDecoderVAAPI();
 

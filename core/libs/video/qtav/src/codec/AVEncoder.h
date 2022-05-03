@@ -47,7 +47,6 @@ class QTAV_EXPORT AVEncoder : public QObject
     Q_PROPERTY(int bitRate READ bitRate WRITE setBitRate NOTIFY bitRateChanged)
     Q_PROPERTY(QString codecName READ codecName WRITE setCodecName NOTIFY codecNameChanged)
     Q_PROPERTY(TimestampMode timestampMode READ timestampMode WRITE setTimestampMode NOTIFY timestampModeChanged)
-    Q_ENUMS(TimestampMode)
 
 public:
 
@@ -56,6 +55,7 @@ public:
         TimestampMonotonic,
         TimestampCopy
     };
+    Q_ENUM(TimestampMode)
 
     virtual ~AVEncoder();
     virtual QString name() const = 0;

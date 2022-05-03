@@ -38,7 +38,6 @@ class VideoDecoderFFmpegHW : public VideoDecoderFFmpegBase
     DPTR_DECLARE_PRIVATE(VideoDecoderFFmpegHW)
     Q_PROPERTY(int threads READ threads WRITE setThreads NOTIFY threadsChanged) // <=0 is auto
     Q_PROPERTY(CopyMode copyMode READ copyMode WRITE setCopyMode NOTIFY copyModeChanged)
-    Q_ENUMS(CopyMode)
 
 public:
 
@@ -48,6 +47,7 @@ public:
         OptimizedCopy,
         GenericCopy
     };
+    Q_ENUM(CopyMode)
 
     VideoFrame copyToFrame(const VideoFormat& fmt,
                            int surface_h,

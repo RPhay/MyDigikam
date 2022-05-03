@@ -30,6 +30,7 @@
 #include <QSize>
 #include <QRectF>
 #include <QColor>
+#include <QObject>
 
 // Local includes
 

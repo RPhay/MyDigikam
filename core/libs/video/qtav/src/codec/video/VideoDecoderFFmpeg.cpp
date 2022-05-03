@@ -65,13 +65,8 @@ class VideoDecoderFFmpeg : public VideoDecoderFFmpegBase
 
     //Q_PROPERTY(BugFlags bug READ bugFlags WRITE setBugFlags)
 
-    Q_ENUMS(StrictType)
-    Q_ENUMS(DiscardType)
-    Q_ENUMS(ThreadFlag)
     Q_FLAGS(ThreadFlags)
-    Q_ENUMS(MotionVectorVisFlag)
     Q_FLAGS(MotionVectorVisFlags)
-    Q_ENUMS(BugFlag)
     Q_FLAGS(BugFlags)
 
 public:
@@ -84,6 +79,7 @@ public:
         Unofficial      = FF_COMPLIANCE_UNOFFICIAL,
         Experimental    = FF_COMPLIANCE_EXPERIMENTAL
     };
+    Q_ENUM(StrictType)
 
     enum DiscardType
     {
@@ -96,7 +92,8 @@ public:
         NoKey   = AVDISCARD_NONKEY,
         All     = AVDISCARD_ALL
     };
-
+    Q_ENUM(DiscardType)
+    
     enum ThreadFlag
     {
         DefaultType = FF_THREAD_SLICE | FF_THREAD_FRAME, // default
@@ -104,7 +101,8 @@ public:
         Frame = FF_THREAD_FRAME
     };
     Q_DECLARE_FLAGS(ThreadFlags, ThreadFlag)
-
+    Q_ENUM(ThreadFlag)
+    
     // flags. visualize motion vectors (MVs)
 
     enum MotionVectorVisFlag
@@ -115,6 +113,7 @@ public:
         BB = FF_DEBUG_VIS_MV_B_BACK
     };
     Q_DECLARE_FLAGS(MotionVectorVisFlags, MotionVectorVisFlag)
+    Q_ENUM(MotionVectorVisFlag)
 
     enum BugFlag
     {
@@ -147,6 +146,7 @@ public:
         trunc               = FF_BUG_TRUNCATED
     };
     Q_DECLARE_FLAGS(BugFlags, BugFlag)
+    Q_ENUM(BugFlag)
 
     static VideoDecoder* createMMAL()
     {

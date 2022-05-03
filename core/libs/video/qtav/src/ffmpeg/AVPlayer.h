@@ -96,7 +96,6 @@ class QTAV_EXPORT AVPlayer : public QObject
     Q_PROPERTY(QtAV::MediaStatus mediaStatus READ mediaStatus NOTIFY mediaStatusChanged)
     Q_PROPERTY(QtAV::MediaEndAction mediaEndAction READ mediaEndAction WRITE setMediaEndAction NOTIFY mediaEndActionChanged)
     Q_PROPERTY(unsigned int chapters READ chapters NOTIFY chaptersChanged)
-    Q_ENUMS(State)
 
 public:
 
@@ -110,6 +109,7 @@ public:
         PlayingState, ///< Start to play if it was stopped, or resume if it was paused
         PausedState
     };
+    Q_ENUM(State)
 
     /// Supported input protocols. A static string list
 

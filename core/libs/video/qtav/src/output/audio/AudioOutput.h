@@ -56,7 +56,6 @@ class QTAV_EXPORT AudioOutput : public QObject,
 {
     Q_OBJECT
     DPTR_DECLARE_PRIVATE(AudioOutput)
-    Q_ENUMS(DeviceFeature)
     Q_FLAGS(DeviceFeatures)
     Q_PROPERTY(qreal volume READ volume WRITE setVolume NOTIFY volumeChanged)
     Q_PROPERTY(bool mute READ isMute WRITE setMute NOTIFY muteChanged)
@@ -79,6 +78,7 @@ public:
         SetSpeed      = 1 << 3, ///< NOT IMPLEMENTED
     };
     Q_DECLARE_FLAGS(DeviceFeatures, DeviceFeature)
+    Q_ENUM(DeviceFeature)
 
     /*!
      * \brief backendsAvailable

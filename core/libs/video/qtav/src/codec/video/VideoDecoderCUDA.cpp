@@ -80,33 +80,33 @@ class VideoDecoderCUDA : public VideoDecoder
     Q_PROPERTY(Flags flags READ flags WRITE setFlags)
     Q_PROPERTY(Deinterlace deinterlace READ deinterlace WRITE setDeinterlace)
     Q_FLAGS(Flags)
-    Q_ENUMS(Flags)
-    Q_ENUMS(Deinterlace)
-    Q_ENUMS(CopyMode)
 
 public:
 
     enum Flags
     {
-        Default = cudaVideoCreate_Default,   // Default operation mode: use dedicated video engines
-        CUDA = cudaVideoCreate_PreferCUDA,   // Use a CUDA-based decoder if faster than dedicated engines (requires a valid vidLock object for multi-threading)
-        DXVA = cudaVideoCreate_PreferDXVA,   // Go through DXVA internally if possible (requires D3D9 interop)
-        CUVID = cudaVideoCreate_PreferCUVID  // Use dedicated video engines directly
+        Default = cudaVideoCreate_Default,   ///< Default operation mode: use dedicated video engines
+        CUDA = cudaVideoCreate_PreferCUDA,   ///< Use a CUDA-based decoder if faster than dedicated engines (requires a valid vidLock object for multi-threading)
+        DXVA = cudaVideoCreate_PreferDXVA,   ///< Go through DXVA internally if possible (requires D3D9 interop)
+        CUVID = cudaVideoCreate_PreferCUVID  ///< Use dedicated video engines directly
     };
+    Q_ENUM(Flags)
 
     enum Deinterlace
     {
-        Bob = cudaVideoDeinterlaceMode_Bob,           // Drop one field
-        Weave = cudaVideoDeinterlaceMode_Weave,       // Weave both fields (no deinterlacing)
-        Adaptive = cudaVideoDeinterlaceMode_Adaptive  // Adaptive deinterlacing
+        Bob = cudaVideoDeinterlaceMode_Bob,           ///< Drop one field
+        Weave = cudaVideoDeinterlaceMode_Weave,       ///< Weave both fields (no deinterlacing)
+        Adaptive = cudaVideoDeinterlaceMode_Adaptive  ///< Adaptive deinterlacing
     };
+    Q_ENUM(Deinterlace)
 
     enum CopyMode
     {
-        ZeroCopy, // default for linux
-        DirectCopy, // use the same host address without additional copy to frame. If address does not change, it should be safe
+        ZeroCopy,   ///< default for linux
+        DirectCopy, ///< use the same host address without additional copy to frame. If address does not change, it should be safe
         GenericCopy
     };
+    Q_ENUM(CopyMode)
 
     VideoDecoderCUDA();
     ~VideoDecoderCUDA();
@@ -114,7 +114,7 @@ public:
     VideoDecoderId id()         const override;
     QString description()       const override;
     void flush()                      override;
-    bool decode(const Packet &packet) override;
+    bool decode(const Packet& packet) override;
     virtual VideoFrame frame()        override;
 
     // properties
@@ -157,7 +157,7 @@ static struct
 
 static cudaVideoCodec mapCodecFromFFmpeg(AVCodecID codec)
 {
-    for (int i = 0; ff_cuda_codecs[i].ffCodec != QTAV_CODEC_ID(NONE); ++i)
+    for (int i = 0 ; ff_cuda_codecs[i].ffCodec != QTAV_CODEC_ID(NONE) ; ++i)
     {
         if (ff_cuda_codecs[i].ffCodec == codec)
         {
@@ -170,7 +170,7 @@ static cudaVideoCodec mapCodecFromFFmpeg(AVCodecID codec)
 
 static AVCodecID mapCodecToFFmpeg(cudaVideoCodec cudaCodec)
 {
-    for (int i = 0; ff_cuda_codecs[i].ffCodec != QTAV_CODEC_ID(NONE); ++i)
+    for (int i = 0 ; ff_cuda_codecs[i].ffCodec != QTAV_CODEC_ID(NONE) ; ++i)
     {
         if (ff_cuda_codecs[i].cudaCodec == cudaCodec)
         {
