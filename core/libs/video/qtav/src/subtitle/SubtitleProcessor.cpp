@@ -35,7 +35,7 @@
 namespace QtAV
 {
 
-FACTORY_DEFINE(SubtitleProcessor)
+FACTORY_DEFINE(SubtitleProcessor)       // clazy:exclude=function-args-by-ref
 
 // can not declare in class member
 
@@ -61,8 +61,8 @@ void SubtitleProcessor::registerAll()
 }
 
 SubtitleProcessor::SubtitleProcessor()
-    : m_width(0)
-    , m_height(0)
+    : m_width(0),
+      m_height(0)
 {
 }
 
@@ -100,7 +100,7 @@ SubImageSet SubtitleProcessor::getSubImages(qreal pts, QRect *boundingRect)
 
 void SubtitleProcessor::setFrameSize(int width, int height)
 {
-    if (width == m_width && height == m_height)
+    if ((width == m_width) && (height == m_height))
         return;
 
     m_width  = width;

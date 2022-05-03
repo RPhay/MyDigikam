@@ -99,7 +99,7 @@ public:
     // return timestamp, insert it to Subtitle's internal linkedlist. can be invalid if only support renderering
 
     virtual SubtitleFrame processLine(const QByteArray& data, qreal pts = -1, qreal duration = 0) = 0;
-    virtual QString getText(qreal pts) const = 0;
+    virtual QString getText(qreal pts) const                                                      = 0;
 
     // default null image
 
