@@ -45,11 +45,11 @@ GeometryRenderer::GeometryRenderer()
     , ibo(QOpenGLBuffer::IndexBuffer)
     , stride(0)
 {
-    static bool disable_ibo = qgetenv("QTAV_NO_IBO").toInt() > 0;
+    static bool disable_ibo = qEnvironmentVariableIntValue("QTAV_NO_IBO") > 0;
     setFeature(kIBO, !disable_ibo);
-    static bool disable_vbo = qgetenv("QTAV_NO_VBO").toInt() > 0;
+    static bool disable_vbo = qEnvironmentVariableIntValue("QTAV_NO_VBO") > 0;
     setFeature(kVBO, !disable_vbo);
-    static bool disable_vao = qgetenv("QTAV_NO_VAO").toInt() > 0;
+    static bool disable_vao = qEnvironmentVariableIntValue("QTAV_NO_VAO") > 0;
     setFeature(kVAO, !disable_vao);
 }
 
@@ -121,12 +121,12 @@ void GeometryRenderer::updateGeometry(Geometry *geo)
 
     if (support_map < 0)
     {
-        static const char* ext[] = { "GL_OES_mapbuffer", nullptr};
+        static const char* ext[] = { "GL_OES_mapbuffer", nullptr };
 
         if (OpenGLHelper::isOpenGLES())
         {
             support_map = QOpenGLContext::currentContext()->format().majorVersion() > 2 ||
-                    OpenGLHelper::hasExtension(ext);
+                          OpenGLHelper::hasExtension(ext);
         }
         else
         {

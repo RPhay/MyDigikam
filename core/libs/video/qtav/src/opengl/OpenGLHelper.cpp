@@ -73,14 +73,14 @@ namespace OpenGLHelper
 
 int depth16BitTexture()
 {
-    static int depth = qgetenv("QTAV_TEXTURE16_DEPTH").toInt() == 8 ? 8 : 16; //8 ? 8 : 16;
+    static int depth = qEnvironmentVariableIntValue("QTAV_TEXTURE16_DEPTH") == 8 ? 8 : 16; // 8 ? 8 : 16;
 
     return depth;
 }
 
 bool useDeprecatedFormats()
 {
-    static bool v = qgetenv("QTAV_GL_DEPRECATED").toInt() == 1;
+    static bool v = qEnvironmentVariableIntValue("QTAV_GL_DEPRECATED") == 1;
 
     return v;
 }
@@ -185,11 +185,12 @@ int GLSLVersion()
     if (!QOpenGLContext::currentContext())
     {
         qCWarning(DIGIKAM_QTAV_LOG_WARN).noquote() << QString::asprintf("%s: current context is null", __FUNCTION__);
+
         return 0;
     }
 
     const char* vs = (const char*)DYGL(glGetString(GL_SHADING_LANGUAGE_VERSION));
-    int major = 0, minor = 0;
+    int major      = 0, minor = 0;
 
     // es: "OpenGL ES GLSL ES 1.00 (ANGLE 2.1.99...)" can use ""%*[ a-zA-Z] %d.%d" in sscanf, desktop: "2.1"
     //QRegExp rx("(\\d+)\\.(\\d+)");
@@ -203,7 +204,9 @@ int GLSLVersion()
     }
     else
     {
-        qCWarning(DIGIKAM_QTAV_LOG_WARN).noquote() << QString::asprintf("Failed to detect glsl version using GL_SHADING_LANGUAGE_VERSION!");
+        qCWarning(DIGIKAM_QTAV_LOG_WARN).noquote()
+            << QString::asprintf("Failed to detect glsl version using GL_SHADING_LANGUAGE_VERSION!");
+
         v = 110;
 
         if (isOpenGLES())
@@ -223,6 +226,7 @@ bool isEGL()
 #ifdef Q_OS_IOS
 
     is_egl = 0;
+
     return false;
 
 #endif
@@ -264,6 +268,7 @@ bool isEGL()
     if (QGuiApplication::platformName().contains(QLatin1String("egl")))
     {
         is_egl = 1;
+
         return true;
     }
 
@@ -273,6 +278,7 @@ bool isEGL()
     {
         is_egl = qgetenv("QT_XCB_GL_INTEGRATION") == "xcb_egl";
         qCDebug(DIGIKAM_QTAV_LOG).noquote() << QString::asprintf("xcb_egl=%d", is_egl);
+
         return !!is_egl;
     }
 
@@ -437,7 +443,7 @@ bool isPBOSupported()
 
 typedef struct
 {
-    GLint internal_format;
+    GLint  internal_format;
     GLenum format;
     GLenum type;
 } gl_param_t;
@@ -454,44 +460,44 @@ static const gl_param_t gl_param_compat[] =
 {
     // it's legacy
 
-    { GL_LUMINANCE,       GL_LUMINANCE,       GL_UNSIGNED_BYTE},
-    { GL_LUMINANCE_ALPHA, GL_LUMINANCE_ALPHA, GL_UNSIGNED_BYTE},
-    { GL_RGB,             GL_RGB,             GL_UNSIGNED_BYTE},
-    { GL_RGBA,            GL_RGBA,            GL_UNSIGNED_BYTE},
-    { GL_LUMINANCE_ALPHA, GL_LUMINANCE_ALPHA, GL_UNSIGNED_BYTE}, // 2 x 8 fallback to ra
-    {0,0,0},
+    { GL_LUMINANCE,       GL_LUMINANCE,       GL_UNSIGNED_BYTE  },
+    { GL_LUMINANCE_ALPHA, GL_LUMINANCE_ALPHA, GL_UNSIGNED_BYTE  },
+    { GL_RGB,             GL_RGB,             GL_UNSIGNED_BYTE  },
+    { GL_RGBA,            GL_RGBA,            GL_UNSIGNED_BYTE  },
+    { GL_LUMINANCE_ALPHA, GL_LUMINANCE_ALPHA, GL_UNSIGNED_BYTE  }, // 2 x 8 fallback to ra
+    { 0,                  0,                  0                 },
 };
 static const gl_param_t gl_param_3r16[] =
 {
-    {GL_R8,      GL_RED,     GL_UNSIGNED_BYTE},      // 1 x 8
-    {GL_RG8,     GL_RG,      GL_UNSIGNED_BYTE},      // 2 x 8
-    {GL_RGB8,    GL_RGB,     GL_UNSIGNED_BYTE},      // 3 x 8
-    {GL_RGBA8,   GL_RGBA,    GL_UNSIGNED_BYTE},      // 4 x 8
-    {GL_R16,     GL_RED,     GL_UNSIGNED_SHORT},     // 1 x 16
-    {GL_RG16,    GL_RG,      GL_UNSIGNED_SHORT},     // 2 x 16
-    {GL_RGB16,   GL_RGB,     GL_UNSIGNED_SHORT},     // 3 x 16
-    {GL_RGBA16,  GL_RGBA,    GL_UNSIGNED_SHORT},     // 4 x 16
-    {0,0,0},
+    { GL_R8,      GL_RED,     GL_UNSIGNED_BYTE  },     // 1 x 8
+    { GL_RG8,     GL_RG,      GL_UNSIGNED_BYTE  },     // 2 x 8
+    { GL_RGB8,    GL_RGB,     GL_UNSIGNED_BYTE  },     // 3 x 8
+    { GL_RGBA8,   GL_RGBA,    GL_UNSIGNED_BYTE  },     // 4 x 8
+    { GL_R16,     GL_RED,     GL_UNSIGNED_SHORT },     // 1 x 16
+    { GL_RG16,    GL_RG,      GL_UNSIGNED_SHORT },     // 2 x 16
+    { GL_RGB16,   GL_RGB,     GL_UNSIGNED_SHORT },     // 3 x 16
+    { GL_RGBA16,  GL_RGBA,    GL_UNSIGNED_SHORT },     // 4 x 16
+    { 0,          0,          0                 },
 };
 
 static const gl_param_t gl_param_desktop_fallback[] =
 {
-    {GL_RED,     GL_RED,     GL_UNSIGNED_BYTE},      // 1 x 8
-    {GL_RG,      GL_RG,      GL_UNSIGNED_BYTE},      // 2 x 8
-    {GL_RGB,     GL_RGB,     GL_UNSIGNED_BYTE},      // 3 x 8
-    {GL_RGBA,    GL_RGBA,    GL_UNSIGNED_BYTE},      // 4 x 8
-    {GL_RG,      GL_RG,      GL_UNSIGNED_BYTE},      // 2 x 8
-    {0,0,0},
+    { GL_RED,     GL_RED,     GL_UNSIGNED_BYTE  },      // 1 x 8
+    { GL_RG,      GL_RG,      GL_UNSIGNED_BYTE  },      // 2 x 8
+    { GL_RGB,     GL_RGB,     GL_UNSIGNED_BYTE  },      // 3 x 8
+    { GL_RGBA,    GL_RGBA,    GL_UNSIGNED_BYTE  },      // 4 x 8
+    { GL_RG,      GL_RG,      GL_UNSIGNED_BYTE  },      // 2 x 8
+    { 0,          0,          0                 },
 };
 
 static const gl_param_t gl_param_es3rg8[] =
 {
-    {GL_R8,      GL_RED,     GL_UNSIGNED_BYTE},      // 1 x 8
-    {GL_RG8,     GL_RG,      GL_UNSIGNED_BYTE},      // 2 x 8
-    {GL_RGB8,    GL_RGB,     GL_UNSIGNED_BYTE},      // 3 x 8
-    {GL_RGBA8,   GL_RGBA,    GL_UNSIGNED_BYTE},      // 4 x 8
-    {GL_RG8,     GL_RG,      GL_UNSIGNED_BYTE},      // 2 x 8 fallback to rg
-    {0,0,0},
+    { GL_R8,      GL_RED,     GL_UNSIGNED_BYTE  },      // 1 x 8
+    { GL_RG8,     GL_RG,      GL_UNSIGNED_BYTE  },      // 2 x 8
+    { GL_RGB8,    GL_RGB,     GL_UNSIGNED_BYTE  },      // 3 x 8
+    { GL_RGBA8,   GL_RGBA,    GL_UNSIGNED_BYTE  },      // 4 x 8
+    { GL_RG8,     GL_RG,      GL_UNSIGNED_BYTE  },      // 2 x 8 fallback to rg
+    { 0,          0,          0                 },
 };
 
 // https://www.khronos.org/registry/gles/extensions/EXT/EXT_texture_rg.txt
@@ -499,12 +505,12 @@ static const gl_param_t gl_param_es3rg8[] =
 
 static const gl_param_t gl_param_es2rg[] =
 {
-    {GL_RED,     GL_RED,     GL_UNSIGNED_BYTE},      // 1 x 8 // es2: GL_EXT_texture_rg. R8, RG8 are for render buffer
-    {GL_RG,      GL_RG,      GL_UNSIGNED_BYTE},      // 2 x 8
-    {GL_RGB,     GL_RGB,     GL_UNSIGNED_BYTE},      // 3 x 8
-    {GL_RGBA,    GL_RGBA,    GL_UNSIGNED_BYTE},      // 4 x 8
-    {GL_RG,      GL_RG,      GL_UNSIGNED_BYTE},      // 2 x 8 fallback to rg
-    {0,0,0},
+    { GL_RED,     GL_RED,     GL_UNSIGNED_BYTE  },      // 1 x 8 // es2: GL_EXT_texture_rg. R8, RG8 are for render buffer
+    { GL_RG,      GL_RG,      GL_UNSIGNED_BYTE  },      // 2 x 8
+    { GL_RGB,     GL_RGB,     GL_UNSIGNED_BYTE  },      // 3 x 8
+    { GL_RGBA,    GL_RGBA,    GL_UNSIGNED_BYTE  },      // 4 x 8
+    { GL_RG,      GL_RG,      GL_UNSIGNED_BYTE  },      // 2 x 8 fallback to rg
+    { 0,          0,          0                 },
 };
 
 bool test_gl_param(const gl_param_t& gp, bool* has_16 = nullptr)
@@ -512,6 +518,7 @@ bool test_gl_param(const gl_param_t& gp, bool* has_16 = nullptr)
     if (!QOpenGLContext::currentContext())
     {
         qCWarning(DIGIKAM_QTAV_LOG_WARN).noquote() << QString::asprintf("%s: current context is null", __FUNCTION__);
+
         return false;
     }
 
@@ -534,7 +541,9 @@ bool test_gl_param(const gl_param_t& gp, bool* has_16 = nullptr)
 
     if (!gl().GetTexLevelParameteriv)
     {
-        qCDebug(DIGIKAM_QTAV_LOG).noquote() << QString::asprintf("Do not support glGetTexLevelParameteriv. test_gl_param returns false");
+        qCDebug(DIGIKAM_QTAV_LOG).noquote()
+            << QString::asprintf("Do not support glGetTexLevelParameteriv. test_gl_param returns false");
+
         DYGL(glDeleteTextures(1, &tex));
 
         return false;
@@ -753,18 +762,20 @@ typedef struct
 
 static const reorder_t gl_channel_maps[] =
 {
-    { VideoFormat::Format_ARGB32, {1, 2, 3, 0}},
-    { VideoFormat::Format_ABGR32, {3, 2, 1, 0}}, // R->gl.?(a)->R
-    { VideoFormat::Format_BGR24,  {2, 1, 0, 3}},
-    { VideoFormat::Format_BGR565, {2, 1, 0, 3}},
-    { VideoFormat::Format_BGRA32, {2, 1, 0, 3}},
-    { VideoFormat::Format_BGR32,  {2, 1, 0, 3}},
-    { VideoFormat::Format_BGR48LE,{2, 1, 0, 3}},
-    { VideoFormat::Format_BGR48BE,{2, 1, 0, 3}},
-    { VideoFormat::Format_BGR48,  {2, 1, 0, 3}},
-    { VideoFormat::Format_BGR555, {2, 1, 0, 3}},
+    { VideoFormat::Format_ARGB32, {1, 2, 3, 0} },
+    { VideoFormat::Format_ABGR32, {3, 2, 1, 0} }, // R->gl.?(a)->R
+    { VideoFormat::Format_BGR24,  {2, 1, 0, 3} },
+    { VideoFormat::Format_BGR565, {2, 1, 0, 3} },
+    { VideoFormat::Format_BGRA32, {2, 1, 0, 3} },
+    { VideoFormat::Format_BGR32,  {2, 1, 0, 3} },
+    { VideoFormat::Format_BGR48LE,{2, 1, 0, 3} },
+    { VideoFormat::Format_BGR48BE,{2, 1, 0, 3} },
+    { VideoFormat::Format_BGR48,  {2, 1, 0, 3} },
+    { VideoFormat::Format_BGR555, {2, 1, 0, 3} },
+
     // TODO: rgb444le/be etc
-    { VideoFormat::Format_Invalid,{1, 2, 3}}
+
+    { VideoFormat::Format_Invalid,{1, 2, 3   } }
 };
 
 static QMatrix4x4 channelMap(const VideoFormat& fmt)

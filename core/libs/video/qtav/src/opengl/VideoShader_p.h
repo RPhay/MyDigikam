@@ -153,7 +153,7 @@ public:
         internal_format.reserve(4);
         data_format.reserve(4);
         data_type.reserve(4);
-        static bool enable_pbo = qgetenv("QTAV_PBO").toInt() > 0;
+        static bool enable_pbo = qEnvironmentVariableIntValue("QTAV_PBO") > 0;
 
         if (try_pbo)
             try_pbo = enable_pbo;
