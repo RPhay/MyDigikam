@@ -84,8 +84,6 @@ class VideoDecoderVideoToolbox : public VideoDecoderFFmpegHW
 
     // TODO: try async property
 
-    Q_ENUM(PixelFormat)
-    Q_ENUM(Interop)
 
 public:
 
@@ -97,6 +95,7 @@ public:
         YUV420P = 'y420',
         YUYV    = 'yuvs',
     };
+    Q_ENUM(PixelFormat)
 
     // no ios macro check in Interop because moc is an idiot
 
@@ -107,6 +106,7 @@ public:
         IOSurface     = cv::InteropIOSurface,
         Auto          = cv::InteropAuto
     };
+    Q_ENUM(Interop)
 
     VideoDecoderVideoToolbox();
 
