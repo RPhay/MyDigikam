@@ -111,8 +111,8 @@ class VideoEncoderFFmpegPrivate final: public VideoEncoderPrivate
 public:
 
     VideoEncoderFFmpegPrivate()
-        : VideoEncoderPrivate()
-        , nb_encoded(0)
+        : VideoEncoderPrivate(),
+          nb_encoded(0)
     {
 
 #if !AVCODEC_STATIC_REGISTER
@@ -121,7 +121,9 @@ public:
 
 #endif
 
-        // nullptr: codec-specific defaults won't be initialized, which may result in suboptimal default settings (this is important mainly for encoders, e.g. libx264).
+        // nullptr: codec-specific defaults won't be initialized, which may result in suboptimal
+        // default settings (this is important mainly for encoders, e.g. libx264).
+
         avctx = avcodec_alloc_context3(nullptr);
     }
 
@@ -287,7 +289,7 @@ bool VideoEncoderFFmpegPrivate::open()
             }
             else
             {
-                hwframes = (AVHWFramesContext*)hwframes_ref->data;
+                hwframes         = reinterpret_cast<AVHWFramesContext*>(hwframes_ref->data);
                 hwframes->format = hwfmt;
             }
         }
@@ -357,13 +359,13 @@ bool VideoEncoderFFmpegPrivate::open()
 
     avctx->bit_rate = bit_rate;
 
-    //AVDictionary *dict = 0;
+    // AVDictionary *dict = 0;
 
     if (avctx->codec_id == QTAV_CODEC_ID(H264))
     {
         avctx->gop_size = 10;
 
-        //avctx->max_b_frames = 3;//h264
+        //avctx->max_b_frames = 3; // h264
 
         av_dict_set(&dict, "preset", "fast", 0);        // x264
         av_dict_set(&dict, "tune", "zerolatency", 0);   // x264
@@ -545,18 +547,18 @@ bool VideoEncoderFFmpeg::encode(const VideoFrame &frame)
 
             QScopedPointer<AVFrame, ScopedAVFrameDeleter> hwf( av_frame_alloc());
             AV_ENSURE(av_hwframe_get_buffer(d.hwframes_ref, hwf.data(), 0), false);
-
-            //hwf->format = d.hwframes->format; // not necessary
-            //hwf->width = f->width;
-            //hwf->height = f->height;
-
+/*
+            hwf->format = d.hwframes->format; // not necessary
+            hwf->width = f->width;
+            hwf->height = f->height;
+*/
             AV_ENSURE(av_hwframe_transfer_data(hwf.data(), f.data(), 0), false);
             AV_ENSURE(av_frame_copy_props(hwf.data(), f.data()), false);
             av_frame_unref(f.data());
             av_frame_move_ref(f.data(), hwf.data());
         }
 
-#endif //HAVE_AVHWCTX
+#endif // HAVE_AVHWCTX
 
     }
 
@@ -569,9 +571,11 @@ bool VideoEncoderFFmpeg::encode(const VideoFrame &frame)
 
     if (ret < 0)
     {
-        qCWarning(DIGIKAM_QTAV_LOG_WARN).noquote() << QString::asprintf("error avcodec_encode_video2: %s" ,av_err2str(ret));
+        qCWarning(DIGIKAM_QTAV_LOG_WARN).noquote()
+            << QString::asprintf("error avcodec_encode_video2: %s",
+                av_err2str(ret));
 
-        return false; //false
+        return false; // false
     }
 
     d.nb_encoded++;
