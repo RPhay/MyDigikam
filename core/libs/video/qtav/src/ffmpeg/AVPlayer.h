@@ -71,6 +71,7 @@ class VideoCapture;
  *  player->play();
  * \endcode
  */
+
 class QTAV_EXPORT AVPlayer : public QObject
 {
     Q_OBJECT
@@ -114,7 +115,7 @@ public:
 
     static const QStringList& supportedProtocols();
 
-    explicit AVPlayer(QObject *parent = nullptr);
+    explicit AVPlayer(QObject* parent = nullptr);
     ~AVPlayer();
 
     /*!
@@ -212,7 +213,9 @@ public:
     qint64 position() const;     // unit: ms
     qint64 displayPosition() const;
 
-    // 0: play once. N: play N+1 times. <0: infinity
+    /**
+     * 0: play once. N: play N+1 times. <0: infinity
+     */
     int repeat() const; // or repeatMax()?
 
     /*!
@@ -315,7 +318,7 @@ public:
      * Capture the current frame using videoCapture()->capture()
      * \sa VideoCapture
      */
-    VideoCapture *videoCapture() const;
+    VideoCapture* videoCapture() const;
 
     // TODO: no replay, replay without parsing the stream if it's already loaded. (not implemented). to force reload the stream, unload() then play()
 
@@ -338,8 +341,8 @@ public:
 
     // TODO: use id as parameter and return ptr?
 
-    void addVideoRenderer(VideoRenderer *renderer);
-    void removeVideoRenderer(VideoRenderer *renderer);
+    void addVideoRenderer(VideoRenderer* renderer);
+    void removeVideoRenderer(VideoRenderer* renderer);
     void clearVideoRenderers();
     void setRenderer(VideoRenderer* renderer);
     VideoRenderer* renderer();
@@ -723,7 +726,7 @@ protected:
 
     // TODO: set position check timer interval
 
-    virtual void timerEvent(QTimerEvent *);
+    virtual void timerEvent(QTimerEvent*);
 
 private:
 
