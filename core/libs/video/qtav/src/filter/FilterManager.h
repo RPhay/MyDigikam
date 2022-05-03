@@ -66,7 +66,7 @@ public:
 
     // unregister and call target.uninstall
 
-    bool uninstallFilter(Filter *filter); //called by filter.uninstall
+    bool uninstallFilter(Filter *filter);                           // called by filter.uninstall
     bool uninstallAudioFilter(Filter *filter, AVPlayer* player);
     bool uninstallVideoFilter(Filter *filter, AVPlayer* player);
     bool uninstallFilter(Filter *filter, AVOutput* output);

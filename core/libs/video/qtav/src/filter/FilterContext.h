@@ -177,7 +177,7 @@ class QTAV_EXPORT X11FilterContext final : public VideoFilterContext
 public:
 
     typedef struct  _XDisplay Display;
-    typedef struct  _XGC *GC;
+    typedef struct  _XGC* GC;
     typedef         quintptr Drawable;
     typedef         quintptr Pixmap;
     struct          XImage;
@@ -231,7 +231,7 @@ protected:
 
     bool                    plain;
     QString                 text;
-    QImage                  test_img; // for computing bounding rect
+    QImage                  test_img; ///< for computing bounding rect
 };
 
 #endif // QTAV_HAVE(X11)

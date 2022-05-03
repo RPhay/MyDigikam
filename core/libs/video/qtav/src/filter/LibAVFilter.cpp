@@ -170,13 +170,13 @@ public:
             return false;
 
         options = opt;
-        status = LibAVFilter::NotConfigured;
+        status  = LibAVFilter::NotConfigured;
 
         return true;
     }
 
-    bool pushAudioFrame(Frame *frame, bool changed, const QString& args);
-    bool pushVideoFrame(Frame *frame, bool changed, const QString& args);
+    bool pushAudioFrame(Frame* frame, bool changed, const QString& args);
+    bool pushVideoFrame(Frame* frame, bool changed, const QString& args);
 
     bool setup(const QString& args, bool video)
     {
@@ -186,7 +186,7 @@ public:
             avframe = nullptr;
         }
 
-        status = LibAVFilter::ConfigureFailed;
+        status       = LibAVFilter::ConfigureFailed;
 
 #if QTAV_HAVE(AVFILTER)
 
@@ -198,7 +198,10 @@ public:
         // pixel_aspect==sar, pixel_aspect is more compatible
 
         QString buffersrc_args = args;
-        qCDebug(DIGIKAM_QTAV_LOG).noquote() << QString::asprintf("buffersrc_args=%s", buffersrc_args.toUtf8().constData());
+
+        qCDebug(DIGIKAM_QTAV_LOG).noquote()
+            << QString::asprintf("buffersrc_args=%s",
+                buffersrc_args.toUtf8().constData());
 
 #if LIBAVFILTER_VERSION_INT >= AV_VERSION_INT(7,0,0)
 
@@ -206,13 +209,13 @@ public:
 
 #endif
 
-        AVFilter *buffersrc = avfilter_get_by_name(video ? "buffer" : "abuffer");
+        AVFilter* buffersrc = avfilter_get_by_name(video ? "buffer" : "abuffer");
 
         Q_ASSERT(buffersrc);
         AV_ENSURE_OK(avfilter_graph_create_filter(&in_filter_ctx,
-                                               buffersrc,
-                                               "in", buffersrc_args.toUtf8().constData(), nullptr,
-                                               filter_graph)
+                                                  buffersrc,
+                                                  "in", buffersrc_args.toUtf8().constData(), nullptr,
+                                                  filter_graph)
                      , false);
 
         /* buffer video sink: to terminate the filter chain. */
@@ -223,12 +226,12 @@ public:
 
 #endif
 
-        AVFilter *buffersink = avfilter_get_by_name(video ? "buffersink" : "abuffersink");
+        AVFilter* buffersink = avfilter_get_by_name(video ? "buffersink" : "abuffersink");
 
         Q_ASSERT(buffersink);
         AV_ENSURE_OK(avfilter_graph_create_filter(&out_filter_ctx, buffersink, "out",
-                                           nullptr, nullptr, filter_graph)
-                , false);
+                                                  nullptr, nullptr, filter_graph)
+                     , false);
 
         /* Endpoints for the filter graph. */
 
@@ -327,7 +330,7 @@ QString LibAVFilter::filterDescription(const QString &filterName)
 #if QTAV_HAVE(AVFILTER)
 
     avfilter_register_all();
-    const AVFilter *f = avfilter_get_by_name(filterName.toUtf8().constData());
+    const AVFilter* f = avfilter_get_by_name(filterName.toUtf8().constData());
 
     if (!f)
         return s;
@@ -392,8 +395,8 @@ void* LibAVFilter::pullFrameHolder()
 
 #if QTAV_HAVE(AVFILTER)
 
-    AVFrameHolder *holder = nullptr;
-    holder = new AVFrameHolder();
+    AVFrameHolder* holder = nullptr;
+    holder                = new AVFrameHolder();
 
 #if QTAV_HAVE_av_buffersink_get_frame
 
@@ -409,6 +412,7 @@ void* LibAVFilter::pullFrameHolder()
     {
         qCWarning(DIGIKAM_QTAV_LOG_WARN).noquote() << QString::asprintf("av_buffersink_get_frame error: %s", av_err2str(ret));
         delete holder;
+
         return nullptr;
     }
 
@@ -516,8 +520,8 @@ void LibAVFilterVideo::process(Statistics *statistics, VideoFrame *frame)
 
     if (d.width != frame->width() || d.height != frame->height() || d.pixfmt != frame->pixelFormatFFmpeg())
     {
-        changed = true;
-        d.width = frame->width();
+        changed  = true;
+        d.width  = frame->width();
         d.height = frame->height();
         d.pixfmt = (AVPixelFormat)frame->pixelFormatFFmpeg();
     }
@@ -535,7 +539,7 @@ void LibAVFilterVideo::process(Statistics *statistics, VideoFrame *frame)
     if (!ref)
         return;
 
-    const AVFrame *f = ref->frame();
+    const AVFrame* f = ref->frame();
     VideoFrame vf(f->width, f->height, VideoFormat(f->format));
     vf.setBits((quint8**)f->data);
     vf.setBytesPerLine((int*)f->linesize);
@@ -569,9 +573,9 @@ QString LibAVFilterVideo::sourceArguments() const
 #endif
 
             .arg(d.width).arg(d.height).arg(d.pixfmt)
-            .arg(1).arg(AV_TIME_BASE) // time base 1/1?
-            .arg(1).arg(1) // sar
-            ;
+            .arg(1).arg(AV_TIME_BASE)   // time base 1/1?
+            .arg(1).arg(1)              // sar
+    ;
 }
 
 class LibAVFilterAudioPrivate : public AudioFilterPrivate
@@ -586,9 +590,9 @@ public:
     {
     }
 
-    int sample_rate;
+    int            sample_rate;
     AVSampleFormat sample_fmt;
-    qint64 channel_layout;
+    qint64         channel_layout;
 };
 
 LibAVFilterAudio::LibAVFilterAudio(QObject *parent)
@@ -610,11 +614,13 @@ QString LibAVFilterAudio::sourceArguments() const
             .arg(1)
             .arg(AV_TIME_BASE)
             .arg(d.sample_rate)
+
             //ffmpeg new: AV_OPT_TYPE_SAMPLE_FMT
             //libav, ffmpeg old: AV_OPT_TYPE_STRING
+
             .arg(QLatin1String(av_get_sample_fmt_name(d.sample_fmt)))
-            .arg(d.channel_layout, 0, 16) //AV_OPT_TYPE_STRING
-            ;
+            .arg(d.channel_layout, 0, 16) // AV_OPT_TYPE_STRING
+    ;
 }
 
 void LibAVFilterAudio::process(Statistics *statistics, AudioFrame *frame)
@@ -633,11 +639,13 @@ void LibAVFilterAudio::process(Statistics *statistics, AudioFrame *frame)
     bool changed = false;
     const AudioFormat afmt(frame->format());
 
-    if (d.sample_rate != afmt.sampleRate() || d.sample_fmt != afmt.sampleFormatFFmpeg() || d.channel_layout != afmt.channelLayoutFFmpeg())
+    if (d.sample_rate    != afmt.sampleRate()         ||
+        d.sample_fmt     != afmt.sampleFormatFFmpeg() ||
+        d.channel_layout != afmt.channelLayoutFFmpeg())
     {
-        changed = true;
-        d.sample_rate = afmt.sampleRate();
-        d.sample_fmt = (AVSampleFormat)afmt.sampleFormatFFmpeg();
+        changed          = true;
+        d.sample_rate    = afmt.sampleRate();
+        d.sample_fmt     = (AVSampleFormat)afmt.sampleFormatFFmpeg();
         d.channel_layout = afmt.channelLayoutFFmpeg();
     }
 
@@ -654,7 +662,7 @@ void LibAVFilterAudio::process(Statistics *statistics, AudioFrame *frame)
     if (!ref)
         return;
 
-    const AVFrame *f = ref->frame();
+    const AVFrame* f = ref->frame();
     AudioFormat fmt;
     fmt.setSampleFormatFFmpeg(f->format);
     fmt.setChannelLayoutFFmpeg(f->channel_layout);
@@ -672,11 +680,11 @@ void LibAVFilterAudio::process(Statistics *statistics, AudioFrame *frame)
     //af.setBits((quint8**)f->extended_data);
     //af.setBytesPerLine((int*)f->linesize);
 
-    af.setBits(f->extended_data); // TODO: ref
-    af.setBytesPerLine(f->linesize[0], 0); // for correct alignment
+    af.setBits(f->extended_data);                   // TODO: ref
+    af.setBytesPerLine(f->linesize[0], 0);          // for correct alignment
     af.setSamplesPerChannel(f->nb_samples);
     af.setMetaData(QStringLiteral("avframe_hoder_ref"), QVariant::fromValue(ref));
-    af.setTimestamp(ref->frame()->pts/1000000.0); // pkt_pts?
+    af.setTimestamp(ref->frame()->pts / 1000000.0);   // pkt_pts?
 
     //af.setMetaData(frame->availableMetaData());
 
@@ -690,12 +698,12 @@ void LibAVFilterAudio::process(Statistics *statistics, AudioFrame *frame)
 
 }
 
-bool LibAVFilter::Private::pushVideoFrame(Frame *frame, bool changed, const QString &args)
+bool LibAVFilter::Private::pushVideoFrame(Frame* frame, bool changed, const QString& args)
 {
 
 #if QTAV_HAVE(AVFILTER)
 
-    VideoFrame *vf = static_cast<VideoFrame*>(frame);
+    VideoFrame* vf = static_cast<VideoFrame*>(frame);
 
     if (status == LibAVFilter::NotConfigured || !avframe || changed)
     {
@@ -714,14 +722,14 @@ bool LibAVFilter::Private::pushVideoFrame(Frame *frame, bool changed, const QStr
         *vf = vf->to(vf->format());
     }
 
-    avframe->pts = frame->timestamp() * 1000000.0; // time_base is 1/1000000
-    avframe->width = vf->width();
+    avframe->pts    = frame->timestamp() * 1000000.0; // time_base is 1/1000000
+    avframe->width  = vf->width();
     avframe->height = vf->height();
     avframe->format = (AVPixelFormat)vf->pixelFormatFFmpeg();
 
-    for (int i = 0; i < vf->planeCount(); ++i)
+    for (int i = 0 ; i < vf->planeCount() ; ++i)
     {
-        avframe->data[i] = (uint8_t*)vf->constBits(i);
+        avframe->data[i]     = (uint8_t*)vf->constBits(i);
         avframe->linesize[i] = vf->bytesPerLine(i);
     }
 
@@ -765,27 +773,27 @@ bool LibAVFilter::Private::pushAudioFrame(Frame *frame, bool changed, const QStr
         }
     }
 
-    AudioFrame *af = static_cast<AudioFrame*>(frame);
+    AudioFrame* af          = static_cast<AudioFrame*>(frame);
     const AudioFormat afmt(af->format());
-    avframe->pts = frame->timestamp() * 1000000.0; // time_base is 1/1000000
-    avframe->sample_rate = afmt.sampleRate();
+    avframe->pts            = frame->timestamp() * 1000000.0; // time_base is 1/1000000
+    avframe->sample_rate    = afmt.sampleRate();
     avframe->channel_layout = afmt.channelLayoutFFmpeg();
 
 #if QTAV_USE_FFMPEG(LIBAVCODEC) || QTAV_USE_FFMPEG(LIBAVUTIL) // AVFrame was in avcodec
 
-    avframe->channels = afmt.channels(); // MUST set because av_buffersrc_write_frame will compare channels and layout
+    avframe->channels       = afmt.channels(); // MUST set because av_buffersrc_write_frame will compare channels and layout
 
 #endif
 
-    avframe->format = (AVSampleFormat)afmt.sampleFormatFFmpeg();
-    avframe->nb_samples = af->samplesPerChannel();
+    avframe->format         = (AVSampleFormat)afmt.sampleFormatFFmpeg();
+    avframe->nb_samples     = af->samplesPerChannel();
 
-    for (int i = 0; i < af->planeCount(); ++i)
+    for (int i = 0 ; i < af->planeCount() ; ++i)
     {
         //avframe->data[i] = (uint8_t*)af->constBits(i);
 
         avframe->extended_data[i] = (uint8_t*)af->constBits(i);
-        avframe->linesize[i] = af->bytesPerLine(i);
+        avframe->linesize[i]      = af->bytesPerLine(i);
     }
 
     AV_ENSURE_OK(av_buffersrc_write_frame(in_filter_ctx, avframe), false);

@@ -40,6 +40,7 @@
  * if delete filter first, filter must notify FilterManager (uninstall in dtor here) to uninstall to avoid target to access it (in ~target())
  * if delete target first, target remove the filter but not delete it (parent not null now).
  */
+ 
 namespace QtAV
 {
 
@@ -146,7 +147,7 @@ bool VideoFilter::isSupported(VideoFilterContext::Type ct) const
     return VideoFilterContext::None == ct;
 }
 
-bool VideoFilter::installTo(AVPlayer *player)
+bool VideoFilter::installTo(AVPlayer* player)
 {
     return player->installFilter(this);
 }
@@ -159,12 +160,12 @@ bool VideoFilter::installTo(AVPlayer *player)
  * Otherwise, call FilterManager.register(filter) and target.filters.push_back(filter), return true
  * NOTE: the installed filter will be deleted by the target if filter is owned by target AND it's parent (QObject) is null.
  */
-bool VideoFilter::installTo(AVOutput *output)
+bool VideoFilter::installTo(AVOutput* output)
 {
     return output->installFilter(this);
 }
 
-bool VideoFilter::prepareContext(VideoFilterContext *&ctx, Statistics *statistics, VideoFrame *frame)
+bool VideoFilter::prepareContext(VideoFilterContext*& ctx, Statistics* statistics, VideoFrame* frame)
 {
     DPTR_D(VideoFilter);
 
@@ -181,13 +182,13 @@ bool VideoFilter::prepareContext(VideoFilterContext *&ctx, Statistics *statistic
 
         if (d.context)
         {
-            c->pen = d.context->pen;
-            c->brush = d.context->brush;
-            c->clip_path = d.context->clip_path;
-            c->rect = d.context->rect;
-            c->transform = d.context->transform;
-            c->font = d.context->font;
-            c->opacity = d.context->opacity;
+            c->pen          = d.context->pen;
+            c->brush        = d.context->brush;
+            c->clip_path    = d.context->clip_path;
+            c->rect         = d.context->rect;
+            c->transform    = d.context->transform;
+            c->font         = d.context->font;
+            c->opacity      = d.context->opacity;
             c->paint_device = d.context->paint_device;
         }
 
@@ -213,7 +214,7 @@ bool VideoFilter::prepareContext(VideoFilterContext *&ctx, Statistics *statistic
     return true;
 }
 
-void VideoFilter::apply(Statistics *statistics, VideoFrame *frame)
+void VideoFilter::apply(Statistics* statistics, VideoFrame* frame)
 {
     process(statistics, frame);
 }

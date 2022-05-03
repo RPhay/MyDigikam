@@ -100,7 +100,7 @@ void X11FilterContext::destroyX11Resources()
     }
 }
 
-void X11FilterContext::resetX11(Display *dpy, GC g, Drawable d)
+void X11FilterContext::resetX11(Display* dpy, GC g, Drawable d)
 {
     if (dpy != display || g != gc || d != drawable)
     {
@@ -125,6 +125,7 @@ void X11FilterContext::renderTextImageX11(QImage *img, const QPointF &pos)
         if (mask_q.isNull())
         {
             qCWarning(DIGIKAM_QTAV_LOG_WARN).noquote() << QString::asprintf("mask image is null");
+
             return;
         }
 
@@ -138,6 +139,7 @@ void X11FilterContext::renderTextImageX11(QImage *img, const QPointF &pos)
         if (!mask_img)
         {
             qCWarning(DIGIKAM_QTAV_LOG_WARN).noquote() << QString::asprintf("error create mask image");
+
             return;
         }
 
@@ -223,6 +225,7 @@ void X11FilterContext::drawPlainText(const QPointF &pos, const QString &text)
     if (text == this->text && plain && mask_pix)
     {
         renderTextImageX11(nullptr, pos);
+
         return;
     }
 
@@ -307,14 +310,14 @@ void X11FilterContext::drawRichText(const QRectF &rect, const QString &text, boo
         doc->setTextWidth(rect.width());
 
     QMatrix4x4 m(transform);
-    const QRectF r = m.mapRect(QRectF(rect.x(), rect.y(), doc->size().width(), doc->size().height()));
-    text_q         = QImage(r.size().toSize(), QImage::Format_ARGB32);
+    const QRectF r   = m.mapRect(QRectF(rect.x(), rect.y(), doc->size().width(), doc->size().height()));
+    text_q           = QImage(r.size().toSize(), QImage::Format_ARGB32);
     text_q.fill(0);
     painter->begin(&text_q);
     prepare();
     const QPointF tl = m.map(rect.topLeft());
-    m.setColumn(3, QVector4D(0, 0, 0, 1));  // reset O to let painter draw from 0
-    const QPointF dp =  tl - r.topLeft();   // painter should start from the mapped top left relative to mapped rect's top left
+    m.setColumn(3, QVector4D(0, 0, 0, 1));      // reset O to let painter draw from 0
+    const QPointF dp =  tl - r.topLeft();       // painter should start from the mapped top left relative to mapped rect's top left
 
     //qCDebug(DIGIKAM_QTAV_LOG) << dp << r.;
 
@@ -323,7 +326,7 @@ void X11FilterContext::drawRichText(const QRectF &rect, const QString &text, boo
 
     doc->drawContents(painter);
     painter->end();
-    renderTextImageX11(&text_q, r.topLeft()); // TODO: use boundingRect?
+    renderTextImageX11(&text_q, r.topLeft());   // TODO: use boundingRect?
 }
 
 } // namespace QtAV

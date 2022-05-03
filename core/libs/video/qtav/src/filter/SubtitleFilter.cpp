@@ -232,7 +232,7 @@ void SubtitleFilter::process(Statistics *statistics, VideoFrame *frame)
     {
         QRect rect;
 
-        /*
+        /**
          * image quality maybe to low if use video frame resolution for large display.
          * The difference is small if use paint_device size and video frame aspect ratio ~ renderer aspect ratio
          * if use renderer's resolution, we have to map bounding rect from video frame coordinate to renderer's

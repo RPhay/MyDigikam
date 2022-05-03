@@ -114,7 +114,7 @@ void RenderASS(QImage *image, const SubImage& img, int dstX, int dstY)
 
     // use QRgb to avoid endian issue
 
-    QRgb* dst = (QRgb*)image->constBits() + dstY * image->width() + dstX;
+    QRgb* dst         = (QRgb*)image->constBits() + dstY * image->width() + dstX;
 
     // k*src+(1-k)*dst
 
@@ -176,7 +176,10 @@ void RenderASS(QImage *image, const SubImage& img, int dstX, int dstY)
 
                 // no need to &0xff because always be 0~255
 
-                dst[x] += qRgba2(k*(r-qRed(dst[x]))/255, k*(g-qGreen(dst[x]))/255, k*(b-qBlue(dst[x]))/255, k*(a-A)/255);
+                dst[x] += qRgba2(k*(r-qRed(dst[x]))   / 255,
+                                 k*(g-qGreen(dst[x])) / 255,
+                                 k*(b-qBlue(dst[x]))  / 255,
+                                 k*(a-A)              / 255);
 
 #else
 
@@ -184,7 +187,10 @@ void RenderASS(QImage *image, const SubImage& img, int dstX, int dstY)
                 const unsigned G = ARGB32_G(c);
                 const unsigned B = ARGB32_B(c);
 
-                ARGB32_ADD(c, r == R ? 0 : k*(r-R)/255, g == G ? 0 : k*(g-G)/255, b == B ? 0 : k*(b-B)/255, a == A ? 0 : k*(a-A)/255);
+                ARGB32_ADD(c, r == R ? 0 : k*(r-R) / 255,
+                              g == G ? 0 : k*(g-G) / 255,
+                              b == B ? 0 : k*(b-B) / 255,
+                              a == A ? 0 : k*(a-A) / 255);
 
 #endif
 

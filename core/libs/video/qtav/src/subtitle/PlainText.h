@@ -24,6 +24,8 @@
 #ifndef QTAV_PLAIN_TEXT_H
 #define QTAV_PLAIN_TEXT_H
 
+// Qt include
+
 #include <QString>
 
 namespace QtAV

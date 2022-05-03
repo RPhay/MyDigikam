@@ -59,6 +59,7 @@ VideoFilterContext *VideoFilterContext::create(Type t)
         default:
             break;
     }
+
     return ctx;
 }
 
@@ -87,7 +88,9 @@ VideoFilterContext::~VideoFilterContext()
     if (painter)
     {
         // painter is shared, so may be end() multiple times.
+
         // TODO: use shared ptr
+
         //if (painter->isActive())
         //    painter->end();
 
@@ -155,12 +158,12 @@ void VideoFilterContext::shareFrom(VideoFilterContext *vctx)
         return;
     }
 
-    painter = vctx->painter;
-    paint_device = vctx->paint_device;
-    own_painter = false;
+    painter          = vctx->painter;
+    paint_device     = vctx->paint_device;
+    own_painter      = false;
     own_paint_device = false;
-    video_width = vctx->video_width;
-    video_height = vctx->video_height;
+    video_width      = vctx->video_width;
+    video_height     = vctx->video_height;
 }
 
 QPainterFilterContext::QPainterFilterContext() : VideoFilterContext()
@@ -351,7 +354,7 @@ void QPainterFilterContext::initializeOnFrame(VideoFrame *vframe)
     if (!painter)
         painter = new QPainter();
 
-    own_painter = true;
+    own_painter      = true;
     own_paint_device = true; // TODO: what about renderer if not a widget?
     painter->begin((QImage*)paint_device);
 }

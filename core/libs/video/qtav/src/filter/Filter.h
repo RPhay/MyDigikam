@@ -74,7 +74,7 @@ public:
      * Install filter to player can process every frame before rendering.
      * Equals to player->installFilter(this)
      */
-    virtual bool installTo(AVPlayer *player) = 0;
+    virtual bool installTo(AVPlayer* player) = 0;
 
     // called in destructor automatically
 
@@ -93,7 +93,7 @@ protected:
     /**
      * If the filter is in AVThread, it's safe to operate on ref.
      */
-    Filter(FilterPrivate& d, QObject *parent = nullptr);
+    Filter(FilterPrivate& d, QObject* parent = nullptr);
 
     DPTR_DECLARE(Filter)
 };
@@ -122,7 +122,7 @@ public:
      * 2. QPainter rendering on widget based renderers. Changing the frame has no effect
      * \return false if already installed
      */
-    bool installTo(AVOutput* output); // only for video. move to video filter installToRenderer
+    bool installTo(AVOutput* output);           // only for video. move to video filter installToRenderer
     void apply(Statistics* statistics, VideoFrame* frame = nullptr);
 
     bool prepareContext(VideoFilterContext*& ctx, Statistics* statistics = nullptr, VideoFrame* frame = nullptr); // internal use

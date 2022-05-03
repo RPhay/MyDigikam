@@ -47,7 +47,13 @@ struct QTAV_EXPORT SubImage
 
     bool operator ==(const SubImage& o) const
     {
-        return (x == o.x && y == o.y && w == o.w && h == o.h && stride == o.stride && color == o.color && data == o.data);
+        return (x      == o.x &&
+                y      == o.y &&
+                w      == o.w &&
+                h      == o.h &&
+                stride == o.stride &&
+                color  == o.color &&
+                data   == o.data);
     }
 
     int         x, y;
@@ -101,7 +107,11 @@ struct QTAV_EXPORT SubImageSet
     {
         // TODO: image data
 
-        return (id == other.id && w == other.w && h == other.h && fmt == other.fmt && images == other.images);
+        return (id     == other.id  &&
+                w      == other.w   &&
+                h      == other.h   &&
+                fmt    == other.fmt &&
+                images == other.images);
     }
 
     QVector<SubImage> images;

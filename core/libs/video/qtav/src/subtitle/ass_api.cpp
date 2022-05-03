@@ -35,9 +35,9 @@ namespace ass
 
 #ifdef CAPI_LINK_ASS
 
-api::api()               { dll = nullptr;     }
-api::~api()              {              }
-bool api::loaded() const { return true; }
+api::api()               { dll = nullptr; }
+api::~api()              {                }
+bool api::loaded() const { return true;   }
 
 #else
 
@@ -61,7 +61,9 @@ typedef ::capi::dso user_dso;
 static const int versions[] =
 {
     ::capi::NoVersion,
+
     // the following line will be replaced by the content of config/ass/version if exists
+
     5, 4,
     ::capi::EndVersion
 };

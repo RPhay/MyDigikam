@@ -146,13 +146,16 @@ void GLSLFilter::process(Statistics *statistics, VideoFrame *frame)
         QOpenGLContext* ctx = const_cast<QOpenGLContext*>(QOpenGLContext::currentContext()); // qt4 returns const
         d.glv.setOpenGLContext(ctx);
         d.glv.setProjectionMatrixToRect(QRectF(0, 0, d.fbo->width(), d.fbo->height()));
-        qCDebug(DIGIKAM_QTAV_LOG).noquote() << QString::asprintf("new fbo texture: %d %dx%d", d.fbo->texture(), d.fbo->width(), d.fbo->height());
+
+        qCDebug(DIGIKAM_QTAV_LOG).noquote()
+            << QString::asprintf("new fbo texture: %d %dx%d",
+                d.fbo->texture(), d.fbo->width(), d.fbo->height());
     }
 
     d.fbo->bind();
     DYGL(glViewport(0, 0, d.fbo->width(), d.fbo->height()));
     d.glv.setCurrentFrame(*frame);
-    QMatrix4x4 mat; // flip vertical
+    QMatrix4x4 mat;                     // flip vertical
     mat.scale(1, -1);
     d.glv.render(QRectF(), QRectF(), mat);
     gl().BindFramebuffer(GL_FRAMEBUFFER, (GLuint)currentFbo);
@@ -173,7 +176,7 @@ void GLSLFilter::process(Statistics *statistics, VideoFrame *frame)
         {
         }
 
-        void* map(SurfaceType, const VideoFormat &, void *handle, int plane)
+        void* map(SurfaceType, const VideoFormat&, void* handle, int plane)
         {
             Q_UNUSED(plane);
 

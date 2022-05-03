@@ -44,17 +44,19 @@ class QTAV_PRIVATE_EXPORT SubtitleProcessor
 public:
 
     SubtitleProcessor();
-    virtual ~SubtitleProcessor() {}
+    virtual ~SubtitleProcessor()
+    {
+    }
 
-    virtual SubtitleProcessorId id() const = 0;
-    virtual QString name() const = 0;
+    virtual SubtitleProcessorId id()        const = 0;
+    virtual QString name()                  const = 0;
 
     /*!
      * \brief supportedTypes
      * \return a list of supported suffixes. e.g. [ "ass", "ssa", "srt" ]
      * used to find subtitle files with given suffixes
      */
-    virtual QStringList supportedTypes() const = 0;
+    virtual QStringList supportedTypes()    const = 0;
 
     /*!
      * \brief process
@@ -62,7 +64,7 @@ public:
      * \param dev is open and you don't have to close it
      * \return false if failed or does not supports iodevice, e.g. does not support sequential device
      */
-    virtual bool process(QIODevice* dev) = 0;
+    virtual bool process(QIODevice* dev)          = 0;
 
     /*!
      * \brief process
@@ -78,7 +80,11 @@ public:
      * \return
      */
     virtual QList<SubtitleFrame> frames() const = 0;
-    virtual bool canRender() const { return false;}
+
+    virtual bool canRender() const
+    {
+        return false;
+    }
 
     // return false if not supported
 
@@ -86,6 +92,7 @@ public:
     {
         Q_UNUSED(codec);
         Q_UNUSED(data);
+
         return false;
     }
 
@@ -100,19 +107,36 @@ public:
     virtual SubImageSet getSubImages(qreal pts, QRect* boundingRect = nullptr);
     void setFrameSize(int width, int height);
     QSize frameSize() const;
-    int frameWidth() const;
+    int frameWidth()  const;
     int frameHeight() const;
 
     // font properties: libass only now
 
-    virtual void setFontFile(const QString& file) {Q_UNUSED(file);}
-    virtual void setFontsDir(const QString& dir) {Q_UNUSED(dir);}
-    virtual void setFontFileForced(bool force) {Q_UNUSED(force);}
+    virtual void setFontFile(const QString& file)
+    {
+        Q_UNUSED(file);
+    }
+
+    virtual void setFontsDir(const QString& dir)
+    {
+        Q_UNUSED(dir);
+    }
+
+    virtual void setFontFileForced(bool force)
+    {
+        Q_UNUSED(force);
+    }
 
 public:
 
     static void registerAll();
-    template<class C> static bool Register(SubtitleProcessorId id, const char* name) { return Register(id, create<C>, name);}
+
+    template<class C>
+    static bool Register(SubtitleProcessorId id, const char* name)
+    {
+        return Register(id, create<C>, name);
+    }
+
     static SubtitleProcessor* create(SubtitleProcessorId id);
     static SubtitleProcessor* create(const char* name = "FFmpeg");
 
@@ -127,8 +151,13 @@ public:
 
 private:
 
-    template<class C> static SubtitleProcessor* create() { return new C();}
+    template<class C> static SubtitleProcessor* create()
+    {
+        return new C();
+    }
+
     typedef SubtitleProcessor* (*SubtitleProcessorCreator)();
+
     static bool Register(SubtitleProcessorId id, SubtitleProcessorCreator, const char *name);
 
 protected:

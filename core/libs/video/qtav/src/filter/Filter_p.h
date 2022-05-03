@@ -64,7 +64,7 @@ public:
     {
     }
 
-    VideoFilterContext *context; // used only when is necessary
+    VideoFilterContext* context; ///< used only when is necessary
 };
 
 class QTAV_PRIVATE_EXPORT AudioFilterPrivate : public FilterPrivate

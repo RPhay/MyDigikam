@@ -277,7 +277,7 @@ public:
 
     explicit SubtitleAPIProxy(QObject* obj);
 
-    void setSubtitle(Subtitle *sub);
+    void setSubtitle(Subtitle* sub);
 
     // API from Subtitle
 
@@ -302,10 +302,13 @@ public:
 
     void setDirs(const QStringList& value);
     QStringList dirs()              const;
+
     QStringList supportedSuffixes() const;
     void setSuffixes(const QStringList& value);
     QStringList suffixes()          const;
-    bool canRender() const; // TODO: rename to capability()
+
+    bool canRender() const;                     // TODO: rename to capability()
+
     qreal delay()                   const;
     void setDelay(qreal value);
 

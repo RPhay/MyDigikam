@@ -51,7 +51,7 @@ public:
      * Enable async encoding. Default is disabled.
      */
     void setAsync(bool value = true);
-    bool isAsync() const;
+    bool isAsync()                  const;
 
     /*!
      * \brief createEncoder
@@ -67,7 +67,7 @@ public:
      * Use this to set encoder properties and options
      * \return Encoder instance or null if createEncoder failed
      */
-    AudioEncoder* encoder() const;
+    AudioEncoder* encoder()         const;
 
     // TODO: async property
 
@@ -75,7 +75,7 @@ public:
      * \brief startTime
      * start to encode after startTime()
      */
-    qint64 startTime() const;
+    qint64 startTime()              const;
     void setStartTime(qint64 value);
 
 public Q_SLOTS:

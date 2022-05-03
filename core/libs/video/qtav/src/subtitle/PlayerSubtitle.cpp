@@ -59,7 +59,7 @@ static QString getSubtitleBasePath(const QString& fullPath)
 
     if (lastSep >= 0)
     {
-        name = name.mid(lastSep + 1);
+        name = name.mid(lastSep  + 1);
         path = path.left(lastSep + 1); // endsWidth "/"
     }
 
@@ -196,7 +196,7 @@ void PlayerSubtitle::onPlayerStart()
     }
 
     if (autoLoad() && !m_sub->fileName().isEmpty())
-        return; // already loaded in onPlayerSourceChanged()
+        return;     // already loaded in onPlayerSourceChanged()
 
     // try embedded subtitles
 
@@ -205,6 +205,7 @@ void PlayerSubtitle::onPlayerStart()
     if (n < 0 || m_tracks.isEmpty() || m_tracks.size() <= n)
     {
         m_sub->processHeader(QByteArray(), QByteArray()); // reset
+
         return;
     }
 
@@ -223,6 +224,7 @@ void PlayerSubtitle::onEnabledChanged(bool value)
     if (!m_enabled)
     {
         disconnectSignals();
+
         return;
     }
 
@@ -271,11 +273,12 @@ void PlayerSubtitle::tryReload(int flag)
     if (!m_player->isPlaying())
         return;
 
-    const int kReloadExternal = 1<<1;
+    const int kReloadExternal = 1 << 1;
 
     if (flag & kReloadExternal)
     {
-        //engine or charset changed
+        // engine or charset changed
+
         m_sub->processHeader(QByteArray(), QByteArray()); // reset
         m_sub->loadAsync();
 
@@ -291,6 +294,7 @@ void PlayerSubtitle::tryReload(int flag)
     {
         m_sub->processHeader(QByteArray(), QByteArray()); // reset, null processor
         m_sub->loadAsync();
+
         return;
     }
 

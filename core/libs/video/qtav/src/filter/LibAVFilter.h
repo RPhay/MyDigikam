@@ -78,7 +78,9 @@ protected:
     void* pullFrameHolder();
     static QStringList registeredFilters(int type); // filters whose input/output type matches
 
-    virtual void optionsChanged() {};
+    virtual void optionsChanged()
+    {
+    };
 
 protected:
 
@@ -103,11 +105,11 @@ class QTAV_EXPORT LibAVFilterVideo : public VideoFilter,
 
 public:
 
-    explicit LibAVFilterVideo(QObject *parent = nullptr);
+    explicit LibAVFilterVideo(QObject* parent = nullptr);
 
     bool isSupported(VideoFilterContext::Type t) const override
     {
-        return t == VideoFilterContext::None;
+        return (t == VideoFilterContext::None);
     }
 
     QStringList filters() const; // the same as LibAVFilter::videoFilters
@@ -118,7 +120,7 @@ Q_SIGNALS:
 
 protected:
 
-    void process(Statistics *statistics, VideoFrame *frame) override;
+    void process(Statistics* statistics, VideoFrame* frame) override;
     QString sourceArguments() const override;
 };
 
@@ -133,7 +135,7 @@ class QTAV_EXPORT LibAVFilterAudio : public AudioFilter,
 
 public:
 
-    explicit LibAVFilterAudio(QObject *parent = nullptr);
+    explicit LibAVFilterAudio(QObject* parent = nullptr);
 
     QStringList filters() const; // the same as LibAVFilter::audioFilters
 
@@ -143,8 +145,8 @@ Q_SIGNALS:
 
 protected:
 
-    void process(Statistics *statistics, AudioFrame *frame) override;
-    QString sourceArguments() const override;
+    void process(Statistics* statistics, AudioFrame* frame) override;
+    QString sourceArguments()                         const override;
 };
 
 } // namespace QtAV

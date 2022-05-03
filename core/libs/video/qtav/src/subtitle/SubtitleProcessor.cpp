@@ -103,7 +103,7 @@ void SubtitleProcessor::setFrameSize(int width, int height)
     if (width == m_width && height == m_height)
         return;
 
-    m_width = width;
+    m_width  = width;
     m_height = height;
     onFrameSizeChanged(m_width, m_height);
 }

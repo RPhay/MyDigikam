@@ -225,6 +225,7 @@ void AudioEncodeFilter::encode(const AudioFrame& frame)
 
             return;
         }
+
         Q_EMIT readyToEncode();
     }
 
@@ -342,7 +343,8 @@ VideoEncodeFilter::VideoEncodeFilter(QObject *parent)
 
 #endif
 
-    connect(this, SIGNAL(finished()), &d_func().enc_thread, SLOT(quit()));
+    connect(this, SIGNAL(finished()),
+            &d_func().enc_thread, SLOT(quit()));
 }
 
 void VideoEncodeFilter::setAsync(bool value)

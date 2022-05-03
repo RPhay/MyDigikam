@@ -638,7 +638,7 @@ void Subtitle::loadAsync()
 
     private:
 
-        Subtitle *m_sub;
+        Subtitle* m_sub;
     };
 
     QThreadPool::globalInstance()->start(new Loader(this));
@@ -745,7 +745,7 @@ bool Subtitle::processHeader(const QByteArray& codec, const QByteArray &data)
 {
     qCDebug(DIGIKAM_QTAV_LOG) << "codec: " << codec;
     qCDebug(DIGIKAM_QTAV_LOG) << "header: " << data;
-    SubtitleProcessor *old_processor = priv->processor;
+    SubtitleProcessor* old_processor = priv->processor;
     priv->reset(); // reset for the new subtitle stream (internal)
 
     if (priv->processors.isEmpty())
@@ -958,7 +958,7 @@ QStringList Subtitle::Private::find()
         return QStringList() << file_name;
 
     QFileInfo fi(file_name);
-    QString name = fi.fileName();
+    QString name      = fi.fileName();
     QString base_name = fi.completeBaseName(); // a.mp4=>a, video suffix has only 1 dot
     QStringList filters, filters_base;
 
@@ -1157,7 +1157,7 @@ bool Subtitle::Private::processRawData(const QByteArray &data)
     return true;
 }
 
-bool Subtitle::Private::processRawData(SubtitleProcessor *sp, const QByteArray &data)
+bool Subtitle::Private::processRawData(SubtitleProcessor* sp, const QByteArray& data)
 {
     qCDebug(DIGIKAM_QTAV_LOG).noquote() << QString::asprintf("processing subtitle from raw data...");
     QByteArray u8(data);

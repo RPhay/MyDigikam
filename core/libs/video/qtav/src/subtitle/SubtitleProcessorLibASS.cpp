@@ -156,9 +156,8 @@ static void ass_msg_cb(int level, const char *fmt, va_list va, void *data)
 #endif
 
     qCDebug(DIGIKAM_QTAV_LOG).noquote() << "[libass]: " << QString::vasprintf(fmt, va);
-    
-    return;
 
+/*
     QString msg(QStringLiteral("{libass} ") + QString().vasprintf(fmt, va));
 
     if      (level == MSGL_FATAL)
@@ -167,6 +166,7 @@ static void ass_msg_cb(int level, const char *fmt, va_list va, void *data)
         qCWarning(DIGIKAM_QTAV_LOG_WARN) << msg;
     else if (level <= MSGL_INFO)
         qCDebug(DIGIKAM_QTAV_LOG) << msg;
+*/
 }
 
 SubtitleProcessorLibASS::SubtitleProcessorLibASS()
@@ -402,7 +402,7 @@ QString SubtitleProcessorLibASS::getText(qreal pts) const
     Q_UNUSED(lock);
     QString text;
 
-    for (int i = 0; i < m_frames.size(); ++i)
+    for (int i = 0 ; i < m_frames.size() ; ++i)
     {
         if (m_frames[i].begin <= pts && m_frames[i].end >= pts)
         {
@@ -721,8 +721,6 @@ void SubtitleProcessorLibASS::updateFontCache()
 
                 if (cfgout.exists() && cfgout.size() != cfg.size())
                 {
-                    // TODO:
-
                     qCDebug(DIGIKAM_QTAV_LOG) << "new " << kFontCfg << " with the same name. remove old: " << cfgout.fileName();
                     cfgout.remove();
                 }
@@ -754,7 +752,7 @@ void SubtitleProcessorLibASS::updateFontCache()
      * (for example fontconfig) to speed up(skip) libass font look up.
      * Skip setting fonts dir
      */
-    static QString sFont(0, QChar()); // if exists, fontconfig will be disabled and directly use this font
+    static QString sFont(0, QChar());       // if exists, fontconfig will be disabled and directly use this font
     static QString sFontsDir(0, QChar());
 
     if (sFontsDir.isEmpty() && !sFontsDir.isNull())
@@ -784,11 +782,13 @@ void SubtitleProcessorLibASS::updateFontCache()
                 {
                     qCDebug(DIGIKAM_QTAV_LOG).noquote() << QString::asprintf("invalid default font");
                     fonts.clear();
+
                     continue;
                 }
             }
 
             sFontsDir = fdir;
+
             break;
         }
 
@@ -860,7 +860,7 @@ void SubtitleProcessorLibASS::updateFontCache()
 
     // prefer user settings
 
-    const QString kFont     = font_file.isEmpty() ? sFont : Internal::Path::toLocal(font_file);
+    const QString kFont     = font_file.isEmpty() ? sFont     : Internal::Path::toLocal(font_file);
     const QString kFontsDir = fonts_dir.isEmpty() ? sFontsDir : Internal::Path::toLocal(fonts_dir);
 
     qCDebug(DIGIKAM_QTAV_LOG) << "font file: " << kFont << "; fonts dir: " << kFontsDir;
@@ -954,7 +954,7 @@ void SubtitleProcessorLibASS::processTrack(ASS_Track *track)
 
     m_frames.clear();
 
-    for (int i = 0; i < track->n_events; ++i)
+    for (int i = 0 ; i < track->n_events ; ++i)
     {
         SubtitleFrame frame;
         const ASS_Event& ae = track->events[i];

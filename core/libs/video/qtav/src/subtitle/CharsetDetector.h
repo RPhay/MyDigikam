@@ -28,6 +28,9 @@
 
 #include <QByteArray>
 
+namespace QtAV
+{
+
 class CharsetDetector
 {
 public:
@@ -55,5 +58,7 @@ private:
     CharsetDetector(const CharsetDetector&)            = delete;
     CharsetDetector& operator=(const CharsetDetector&) = delete;
 };
+
+} // namespace QtAV
 
 #endif // QTAV_CHAR_SET_DETECTOR_H

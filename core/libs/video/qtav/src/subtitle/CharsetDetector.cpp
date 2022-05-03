@@ -23,6 +23,8 @@
 
 #include "CharsetDetector.h"
 
+// Libuchardet includes
+
 #ifdef LINK_UCHARDET
 #   include <uchardet/uchardet.h>
 #   define HAVE_UCHARDET
@@ -38,6 +40,9 @@
 typedef struct uchardet* uchardet_t;
 
 #endif
+
+namespace QtAV
+{
 
 class CharsetDetector::Private
 {
@@ -89,6 +94,7 @@ public:
 #else
 
         Q_UNUSED(data);
+
         return QByteArray();
 
 #endif
@@ -121,3 +127,5 @@ QByteArray CharsetDetector::detect(const QByteArray& data)
 {
     return priv->detect(data);
 }
+
+} // namespace QtAV

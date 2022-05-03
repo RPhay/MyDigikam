@@ -213,7 +213,7 @@ bool FilterManager::uninstallFilter(Filter *filter)
         ++it;
     }
 
-    QMap<AVPlayer *, QList<Filter *> > map2(d.afilter_player_map); // copy to avoid crashes when called-code modifies map
+    QMap<AVPlayer*, QList<Filter*> > map2(d.afilter_player_map); // copy to avoid crashes when called-code modifies map
     it = map2.begin();
 
     while (it != map2.end())
@@ -224,7 +224,7 @@ bool FilterManager::uninstallFilter(Filter *filter)
         ++it;
     }
 
-    QMap<AVOutput*, QList<Filter*> > map3(d.filter_out_map); // copy to avoid crashes
+    QMap<AVOutput*, QList<Filter*> > map3(d.filter_out_map);    // copy to avoid crashes
     QMap<AVOutput*, QList<Filter*> >::iterator it2 = map3.begin();
 
     while (it2 != map3.end())
