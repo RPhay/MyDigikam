@@ -33,8 +33,10 @@ namespace QtAV
 {
 
 typedef QIODeviceIO MediaIOQIODevice;
+
 static const MediaIOId MediaIOId_QIODevice = mkid::id32base36_6<'Q','I','O','D','e','v'>::value;
 static const char kQIODevName[]            = "QIODevice";
+
 FACTORY_REGISTER(MediaIO, QIODevice, kQIODevName)
 
 class QIODeviceIOPrivate : public MediaIOPrivate
@@ -157,7 +159,7 @@ QString QFileIO::name() const
 
 const QStringList& QFileIO::protocols() const
 {
-    static QStringList p = QStringList() << QStringLiteral("") << QStringLiteral("qrc") << QStringLiteral("qfile")
+    static QStringList p = QStringList() << QLatin1String("") << QStringLiteral("qrc") << QStringLiteral("qfile")
 
 #ifdef Q_OS_ANDROID
 
@@ -228,6 +230,7 @@ void QFileIO::onUrlChanged()
         if (p < 1)
         {
             qCWarning(DIGIKAM_QTAV_LOG_WARN).noquote() << QString::asprintf("invalid path. ':' wrong position");
+
             return;
         }
 
@@ -237,6 +240,7 @@ void QFileIO::onUrlChanged()
         if (c < QLatin1Char('A') || c > QLatin1Char('Z'))
         {
             qCWarning(DIGIKAM_QTAV_LOG_WARN).noquote() << QString::asprintf("invalid path. wrong driver");
+
             return;
         }
 
@@ -251,6 +255,7 @@ void QFileIO::onUrlChanged()
             if (c != QLatin1Char('\\') && c != QLatin1Char('/'))
             {
                 qCWarning(DIGIKAM_QTAV_LOG_WARN).noquote() << QString::asprintf("invalid path. wrong dir separator ");
+
                 return;
             }
 

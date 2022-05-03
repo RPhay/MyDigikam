@@ -266,12 +266,13 @@ void WinRTIO::onUrlChanged()
 void WinRTIO::openFromStorage(IStorageItem *item)
 {
     DPTR_D(WinRTIO);
-    d.item = item;
+
+    d.item                 = item;
 
     HString path;
     COM_ENSURE(item->get_Path(path.GetAddressOf()));
     quint32 pathLen;
-    const wchar_t *pathStr = path.GetRawBuffer(&pathLen);
+    const wchar_t* pathStr = path.GetRawBuffer(&pathLen);
     const QString filePath = QString::fromWCharArray(pathStr, pathLen);
 
     qCDebug(DIGIKAM_QTAV_LOG) << "winrt.io from storage file: " << filePath;
@@ -289,7 +290,7 @@ void WinRTIO::openFromPath(const QString &path)
 
     // 2 bytes for utf-16, 4 bytes for ucs-4(unix)
 
-    wchar_t *wp   = new wchar_t[path.size()*4];
+    wchar_t* wp   = new wchar_t[path.size()*4];
     const int len = path.toWCharArray(wp);
     HString p;
     p.Set(wp, len);
