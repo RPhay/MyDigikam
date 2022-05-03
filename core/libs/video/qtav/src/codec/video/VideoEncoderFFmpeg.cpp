@@ -58,7 +58,7 @@ namespace QtAV
 struct
 {
     AVHWDeviceType type;
-    const char* name;
+    const char*    name;
 } hwdevs[] =
 {
     { AV_HWDEVICE_TYPE_VDPAU, "vdpau" },
@@ -154,7 +154,7 @@ bool VideoEncoderFFmpegPrivate::open()
     {
         // copy ctx from muxer by copyAVCodecContext
 
-        AVCodec *codec = avcodec_find_encoder(avctx->codec_id);
+        AVCodec* codec = avcodec_find_encoder(avctx->codec_id);
         AV_ENSURE_OK(avcodec_open2(avctx, codec, &dict), false);
 
         return true;
@@ -185,9 +185,9 @@ bool VideoEncoderFFmpegPrivate::open()
         avctx = nullptr;
     }
 
-    avctx         = avcodec_alloc_context3(codec);
-    avctx->width  = width; // coded_width works, why?
-    avctx->height = height;
+    avctx               = avcodec_alloc_context3(codec);
+    avctx->width        = width;                            // coded_width works, why?
+    avctx->height       = height;
 
     // reset format_used to user defined format. important to update default format if format is invalid
 
@@ -243,8 +243,8 @@ bool VideoEncoderFFmpegPrivate::open()
 
             // get sw formats
 
-            const void *hwcfg                  = nullptr;
-            AVHWFramesConstraints *constraints = av_hwdevice_get_hwframe_constraints(hw_device_ctx, hwcfg);
+            const void* hwcfg                  = nullptr;
+            AVHWFramesConstraints* constraints = av_hwdevice_get_hwframe_constraints(hw_device_ctx, hwcfg);
             const AVPixelFormat* in_fmts       = constraints->valid_sw_formats;
             AVPixelFormat sw_fmt               = AVPixelFormat(-1);
 
@@ -271,7 +271,7 @@ bool VideoEncoderFFmpegPrivate::open()
 
             // encoder surface pool parameters
 
-            AVHWFramesContext* hwfs = (AVHWFramesContext*)avctx->hw_frames_ctx->data;
+            AVHWFramesContext* hwfs = reinterpret_cast<AVHWFramesContext*>(avctx->hw_frames_ctx->data);
             hwfs->format            = hwfmt;       // must the same as avctx->pix_fmt
             hwfs->sw_format         = sw_fmt;      // if it's not set, vaapi will choose the last valid_sw_formats, but that's wrong for vaGetImage/DeriveImage. nvenc always need sw_format
 
@@ -279,8 +279,11 @@ bool VideoEncoderFFmpegPrivate::open()
 
             hwframes_ref = av_hwframe_ctx_alloc(hw_device_ctx);
 
-            if (!hwframes_ref){
-                qCWarning(DIGIKAM_QTAV_LOG_WARN).noquote() << QString::asprintf("Failed to create hw frame context for uploading '%s'", codec_name.toLatin1().constData());
+            if (!hwframes_ref)
+            {
+                qCWarning(DIGIKAM_QTAV_LOG_WARN).noquote()
+                    << QString::asprintf("Failed to create hw frame context for uploading '%s'",
+                        codec_name.toLatin1().constData());
             }
             else
             {
@@ -289,7 +292,7 @@ bool VideoEncoderFFmpegPrivate::open()
             }
         }
 
-#endif //HAVE_AVHWCTX
+#endif // HAVE_AVHWCTX
 
     }
 
@@ -311,7 +314,10 @@ bool VideoEncoderFFmpegPrivate::open()
                 {
                     // pix_fmts[0] is always a sw format here
 
-                    qCDebug(DIGIKAM_QTAV_LOG).noquote() << QString::asprintf("use first supported pixel format '%d' for sw encoder", codec->pix_fmts[0]);
+                    qCDebug(DIGIKAM_QTAV_LOG).noquote()
+                        << QString::asprintf("use first supported pixel format '%d' for sw encoder",
+                            codec->pix_fmts[0]);
+
                     format_used = VideoFormat::pixelFormatFromFFmpeg((int)codec->pix_fmts[0]);
                 }
             }
@@ -322,7 +328,9 @@ bool VideoEncoderFFmpegPrivate::open()
             {
                 // requested format is not supported by hw enc
 
-                qCDebug(DIGIKAM_QTAV_LOG).noquote() << QString::asprintf("use first supported sw pixel format '%d' for hw encoder", codec->pix_fmts[1]);
+                qCDebug(DIGIKAM_QTAV_LOG).noquote()
+                    << QString::asprintf("use first supported sw pixel format '%d' for hw encoder",
+                        codec->pix_fmts[1]);
 
                 if (codec->pix_fmts && codec->pix_fmts[1] != AVPixelFormat(-1))
                     format_used = VideoFormat::pixelFormatFromFFmpeg(codec->pix_fmts[1]);
@@ -343,7 +351,9 @@ bool VideoEncoderFFmpegPrivate::open()
     else
         avctx->time_base = av_d2q(1.0 / VideoEncoder::defaultFrameRate(), VideoEncoder::defaultFrameRate()*1001.0+2);
 
-    qCDebug(DIGIKAM_QTAV_LOG).noquote() << QString::asprintf("size: %dx%d tbc: %f=%d/%d", width, height, av_q2d(avctx->time_base), avctx->time_base.num, avctx->time_base.den);
+    qCDebug(DIGIKAM_QTAV_LOG).noquote()
+        << QString::asprintf("size: %dx%d tbc: %f=%d/%d",
+            width, height, av_q2d(avctx->time_base), avctx->time_base.num, avctx->time_base.den);
 
     avctx->bit_rate = bit_rate;
 
@@ -378,7 +388,7 @@ bool VideoEncoderFFmpegPrivate::open()
 
     // from mpv ao_lavc
 
-    const int buffer_size = qMax<int>(qMax<int>(width*height*6+200, AV_INPUT_BUFFER_MIN_SIZE), sizeof(AVPicture));//??
+    const int buffer_size = qMax<int>(qMax<int>(width * height * 6 + 200, AV_INPUT_BUFFER_MIN_SIZE), sizeof(AVPicture)); // ??
     buffer.resize(buffer_size);
 
     return true;
@@ -440,7 +450,7 @@ bool VideoEncoderFFmpeg::encode(const VideoFrame &frame)
     {
         f.reset(av_frame_alloc());
         f->format = pixfmt;
-        f->width = frame.width();
+        f->width  = frame.width();
         f->height = frame.height();
 
         // f->quality = d.avctx->global_quality;
@@ -466,7 +476,7 @@ bool VideoEncoderFFmpeg::encode(const VideoFrame &frame)
         for (int i = 0 ; i < nb_planes ; ++i)
         {
             f->linesize[i] = frame.bytesPerLine(i);
-            f->data[i] = (uint8_t*)frame.constBits(i);
+            f->data[i]     = (uint8_t*)frame.constBits(i);
         }
 
         if (d.avctx->width <= 0)
@@ -504,6 +514,7 @@ bool VideoEncoderFFmpeg::encode(const VideoFrame &frame)
                 if (d.sw_fmts.contains(pixfmt))
                 {
                     // format changed
+
                     init_frames_ctx = true;
                 }
                 else
