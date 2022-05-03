@@ -68,13 +68,20 @@ HTMLImageSettingsPage::HTMLImageSettingsPage(QWizard* const dialog, const QStrin
 {
     setObjectName(QLatin1String("ImageSettingsPage"));
 
+    const int spacing   = qMin(QApplication::style()->pixelMetric(QStyle::PM_LayoutHorizontalSpacing),
+                               QApplication::style()->pixelMetric(QStyle::PM_LayoutVerticalSpacing));
+
     QWidget* const box  = new QWidget(this);
 
     QLabel* const label = new QLabel(this);
     label->setObjectName(QLatin1String("label"));
     QFont font;
     font.setBold(true);
-    font.setPointSize(75);
+#if (QT_VERSION > QT_VERSION_CHECK(5, 99, 0))
+        font.setWeight((QFont::Weight)75);
+#else
+        font.setWeight(75);
+#endif
     label->setFont(font);
     label->setText(i18n("Full Image Properties:"));
 
@@ -85,7 +92,7 @@ HTMLImageSettingsPage::HTMLImageSettingsPage(QWizard* const dialog, const QStrin
 
     QLabel* const textLabel2_2_2_2 = new QLabel(this);
     textLabel2_2_2_2->setObjectName(QLatin1String("textLabel2_2_2_2"));
-    textLabel2_2_2_2->setAlignment(Qt::AlignRight|Qt::AlignTrailing|Qt::AlignVCenter);
+    textLabel2_2_2_2->setAlignment(Qt::AlignRight | Qt::AlignTrailing | Qt::AlignVCenter);
     textLabel2_2_2_2->setWordWrap(false);
     textLabel2_2_2_2->setText(i18n("Format:"));
 
@@ -100,7 +107,7 @@ HTMLImageSettingsPage::HTMLImageSettingsPage(QWizard* const dialog, const QStrin
 
     QLabel* const textLabel4 = new QLabel(this);
     textLabel4->setObjectName(QLatin1String("textLabel4"));
-    textLabel4->setAlignment(Qt::AlignRight|Qt::AlignTrailing|Qt::AlignVCenter);
+    textLabel4->setAlignment(Qt::AlignRight  |Qt::AlignTrailing | Qt::AlignVCenter);
     textLabel4->setWordWrap(false);
     textLabel4->setText(i18n("Quality:"));
 
@@ -131,8 +138,7 @@ HTMLImageSettingsPage::HTMLImageSettingsPage(QWizard* const dialog, const QStrin
 
     QHBoxLayout* const horizontalLayout_2 = new QHBoxLayout(widget);
     horizontalLayout_2->setContentsMargins(QMargins());
-    horizontalLayout_2->setSpacing(qMin(QApplication::style()->pixelMetric(QStyle::PM_LayoutHorizontalSpacing),
-                             QApplication::style()->pixelMetric(QStyle::PM_LayoutVerticalSpacing)));
+    horizontalLayout_2->setSpacing(spacing);
     horizontalLayout_2->setObjectName(QLatin1String("horizontalLayout_2"));
     horizontalLayout_2->addWidget(kcfg_fullResize);
     horizontalLayout_2->addWidget(kcfg_fullSize);
@@ -148,8 +154,7 @@ HTMLImageSettingsPage::HTMLImageSettingsPage(QWizard* const dialog, const QStrin
 
     QHBoxLayout* const horizontalLayout = new QHBoxLayout();
     horizontalLayout->setContentsMargins(QMargins());
-    horizontalLayout->setSpacing(qMin(QApplication::style()->pixelMetric(QStyle::PM_LayoutHorizontalSpacing),
-                             QApplication::style()->pixelMetric(QStyle::PM_LayoutVerticalSpacing)));
+    horizontalLayout->setSpacing(spacing);
     horizontalLayout->setObjectName(QLatin1String("horizontalLayout"));
     horizontalLayout->addWidget(kcfg_copyOriginalImage);
     horizontalLayout->addItem(horizontalSpacer_3);
@@ -168,7 +173,7 @@ HTMLImageSettingsPage::HTMLImageSettingsPage(QWizard* const dialog, const QStrin
 
     QLabel* const textLabel2_2_2 = new QLabel(this);
     textLabel2_2_2->setObjectName(QLatin1String("textLabel2_2_2"));
-    textLabel2_2_2->setAlignment(Qt::AlignRight|Qt::AlignTrailing|Qt::AlignVCenter);
+    textLabel2_2_2->setAlignment(Qt::AlignRight | Qt::AlignTrailing | Qt::AlignVCenter);
     textLabel2_2_2->setWordWrap(false);
     textLabel2_2_2->setText(i18n("Format:"));
 
@@ -183,7 +188,7 @@ HTMLImageSettingsPage::HTMLImageSettingsPage(QWizard* const dialog, const QStrin
 
     QLabel* const textLabel4_2 = new QLabel(this);
     textLabel4_2->setObjectName(QLatin1String("textLabel4_2"));
-    textLabel4_2->setAlignment(Qt::AlignRight|Qt::AlignTrailing|Qt::AlignVCenter);
+    textLabel4_2->setAlignment(Qt::AlignRight | Qt::AlignTrailing | Qt::AlignVCenter);
     textLabel4_2->setWordWrap(false);
     textLabel4_2->setText(i18n("Quality:"));
 
@@ -197,7 +202,7 @@ HTMLImageSettingsPage::HTMLImageSettingsPage(QWizard* const dialog, const QStrin
 
     QLabel* const textLabel2_2 = new QLabel(this);
     textLabel2_2->setObjectName(QLatin1String("textLabel2_2"));
-    textLabel2_2->setAlignment(Qt::AlignRight|Qt::AlignTrailing|Qt::AlignVCenter);
+    textLabel2_2->setAlignment(Qt::AlignRight | Qt::AlignTrailing | Qt::AlignVCenter);
     textLabel2_2->setWordWrap(false);
     textLabel2_2->setText(i18n("Size:"));
 
@@ -220,8 +225,7 @@ HTMLImageSettingsPage::HTMLImageSettingsPage(QWizard* const dialog, const QStrin
 
     QGridLayout* const gridLayout       = new QGridLayout(box);
     gridLayout->setContentsMargins(QMargins());
-    gridLayout->setSpacing(qMin(QApplication::style()->pixelMetric(QStyle::PM_LayoutHorizontalSpacing),
-                             QApplication::style()->pixelMetric(QStyle::PM_LayoutVerticalSpacing)));
+    gridLayout->setSpacing(spacing);
     gridLayout->setObjectName(QLatin1String("gridLayout"));
     gridLayout->addWidget(label,                    0, 0, 1, 2);
     gridLayout->addWidget(mSaveImageButton,         1, 0, 1, 2);
