@@ -100,9 +100,9 @@ SubImageSet::SubImageSet(int width, int height, Format format)
 // render 1 ass image into a 32bit QImage with alpha channel.
 // use dstX, dstY instead of img->dst_x/y because image size is small then ass renderer size
 
-void RenderASS(QImage *image, const SubImage& img, int dstX, int dstY)
+void RenderASS(QImage* image, const SubImage& img, int dstX, int dstY)
 {
-    const quint8 a = 255 - _a(img.color);
+    const quint8 a    = 255 - _a(img.color);
 
     if (a == 0)
         return;
@@ -114,7 +114,7 @@ void RenderASS(QImage *image, const SubImage& img, int dstX, int dstY)
 
     // use QRgb to avoid endian issue
 
-    QRgb* dst         = (QRgb*)image->constBits() + dstY * image->width() + dstX;
+    QRgb* dst         = reinterpret_cast<QRgb*>(image->bits()) + dstY * image->width() + dstX;
 
     // k*src+(1-k)*dst
 
@@ -122,7 +122,7 @@ void RenderASS(QImage *image, const SubImage& img, int dstX, int dstY)
     {
         for (int x = 0 ; x < img.w ; ++x)
         {
-            const unsigned k = ((unsigned) src[x])*a/255;
+            const unsigned k = ((unsigned)src[x]) * a / 255;
 
 #if USE_QRGBA
 
@@ -176,10 +176,10 @@ void RenderASS(QImage *image, const SubImage& img, int dstX, int dstY)
 
                 // no need to &0xff because always be 0~255
 
-                dst[x] += qRgba2(k*(r-qRed(dst[x]))   / 255,
-                                 k*(g-qGreen(dst[x])) / 255,
-                                 k*(b-qBlue(dst[x]))  / 255,
-                                 k*(a-A)              / 255);
+                dst[x] += qRgba2(k * (r-qRed(dst[x]))   / 255,
+                                 k * (g-qGreen(dst[x])) / 255,
+                                 k * (b-qBlue(dst[x]))  / 255,
+                                 k * (a-A)              / 255);
 
 #else
 
