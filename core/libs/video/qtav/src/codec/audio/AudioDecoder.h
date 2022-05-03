@@ -51,6 +51,7 @@ class AudioDecoderPrivate;
 
 class QTAV_EXPORT AudioDecoder : public AVDecoder
 {
+    Q_OBJECT
     Q_DISABLE_COPY(AudioDecoder)
     DPTR_DECLARE_PRIVATE(AudioDecoder)
 

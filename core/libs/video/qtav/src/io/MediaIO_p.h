@@ -106,6 +106,7 @@ class QFileIOPrivate;
 
 class QTAV_PRIVATE_EXPORT QFileIO final : public QIODeviceIO
 {
+    Q_OBJECT
     DPTR_DECLARE_PRIVATE(QFileIO)
 
 public:
