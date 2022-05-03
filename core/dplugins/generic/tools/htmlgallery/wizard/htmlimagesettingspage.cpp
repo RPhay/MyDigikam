@@ -103,7 +103,7 @@ HTMLImageSettingsPage::HTMLImageSettingsPage(QWizard* const dialog, const QStrin
 
     QLabel* const textLabel4 = new QLabel(this);
     textLabel4->setObjectName(QLatin1String("textLabel4"));
-    textLabel4->setAlignment(Qt::AlignRight  |Qt::AlignTrailing | Qt::AlignVCenter);
+    textLabel4->setAlignment(Qt::AlignRight | Qt::AlignTrailing | Qt::AlignVCenter);
     textLabel4->setWordWrap(false);
     textLabel4->setText(i18n("Quality:"));
 
