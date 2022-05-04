@@ -41,13 +41,13 @@ namespace sse4
 {
 
 #   define INC_FROM_NAMESPACE
-#   include "CopyFrame_SSE2.cpp"
+#   include "GPUMemCopy_Frame_SSE2.cpp"
 
 } // namespace sse4
 
 // QT_FUNCTION_TARGET("sse4.1")
 
-void CopyFrame_SSE4(void *pSrc, void *pDest, void *pCacheBlock, UINT width, UINT height, UINT pitch)
+void CopyFrame_SSE4(void* pSrc, void* pDest, void *pCacheBlock, UINT width, UINT height, UINT pitch)
 {
     sse4::CopyFrame_SSE2(pSrc, pDest, pCacheBlock, width, height, pitch);
 }

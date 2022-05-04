@@ -118,13 +118,13 @@ set(libqtav_SRCS
 if(SSE4_1_FOUND)
 
     set(libqtav_SRCS ${libqtav_SRCS}
-        ${CMAKE_CURRENT_SOURCE_DIR}/src/utils/CopyFrame_SSE4.cpp
+        ${CMAKE_CURRENT_SOURCE_DIR}/src/utils/GPUMemCopy_Frame_SSE4.cpp
     )
 
 elseif(SSE2_FOUND)
 
     set(libqtav_SRCS ${libqtav_SRCS}
-        ${CMAKE_CURRENT_SOURCE_DIR}/src/utils/CopyFrame_SSE2.cpp
+        ${CMAKE_CURRENT_SOURCE_DIR}/src/utils/GPUMemCopy_Frame_SSE2.cpp
     )
 
 endif()
