@@ -65,11 +65,11 @@ public:
     ~FrameReader();
 
     void setMedia(const QString& url);
-    QString mediaUrl() const;
+    QString mediaUrl()          const;
     void setVideoDecoders(const QStringList& names);
     QStringList videoDecoders() const;
     VideoFrame getVideoFrame();
-    bool hasVideoFrame() const;
+    bool hasVideoFrame()        const;
     bool hasEnoughVideoFrames() const;
 
     // return false if eof
