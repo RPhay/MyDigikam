@@ -276,63 +276,87 @@ QueueSettingsView::QueueSettingsView(QWidget* const parent)
     sv4->setWidgetResizable(true);
     DPluginLoader* const ploader = DPluginLoader::instance();
 
-    QGroupBox* const  box1   = new QGroupBox;
-    QVBoxLayout* const lbox1 = new QVBoxLayout;
-    d->jpgSettings           = ploader->exportWidget(QLatin1String("JPEG"));
-    d->jpgSettings->setParent(this);
-    lbox1->addWidget(d->jpgSettings);
-    box1->setLayout(lbox1);
-    slay->addWidget(box1);
+    d->jpgSettings               = ploader->exportWidget(QLatin1String("JPEG"));
 
-    QGroupBox* const  box2   = new QGroupBox;
-    QVBoxLayout* const lbox2 = new QVBoxLayout;
-    d->pngSettings           = ploader->exportWidget(QLatin1String("PNG"));
-    d->pngSettings->setParent(this);;
-    lbox2->addWidget(d->pngSettings);
-    box2->setLayout(lbox2);
-    slay->addWidget(box2);
+    if (d->jpgSettings)
+    {
+        QGroupBox* const  box1   = new QGroupBox;
+        QVBoxLayout* const lbox1 = new QVBoxLayout;
+        d->jpgSettings->setParent(this);
+        lbox1->addWidget(d->jpgSettings);
+        box1->setLayout(lbox1);
+        slay->addWidget(box1);
+    }
 
-    QGroupBox* const  box3   = new QGroupBox;
-    QVBoxLayout* const lbox3 = new QVBoxLayout;
-    d->tifSettings           = ploader->exportWidget(QLatin1String("TIFF"));
-    d->tifSettings->setParent(this);
-    lbox3->addWidget(d->tifSettings);
-    box3->setLayout(lbox3);
-    slay->addWidget(box3);
+    d->pngSettings               = ploader->exportWidget(QLatin1String("PNG"));
+
+    if (d->pngSettings)
+    {
+        QGroupBox* const  box2   = new QGroupBox;
+        QVBoxLayout* const lbox2 = new QVBoxLayout;
+        d->pngSettings->setParent(this);;
+        lbox2->addWidget(d->pngSettings);
+        box2->setLayout(lbox2);
+        slay->addWidget(box2);
+    }
+
+    d->tifSettings               = ploader->exportWidget(QLatin1String("TIFF"));
+
+    if (d->tifSettings)
+    {
+        QGroupBox* const  box3   = new QGroupBox;
+        QVBoxLayout* const lbox3 = new QVBoxLayout;
+        d->tifSettings->setParent(this);
+        lbox3->addWidget(d->tifSettings);
+        box3->setLayout(lbox3);
+        slay->addWidget(box3);
+    }
 
 #ifdef HAVE_JASPER
 
-    QGroupBox* const  box4   = new QGroupBox;
-    QVBoxLayout* const lbox4 = new QVBoxLayout;
-    d->j2kSettings           = ploader->exportWidget(QLatin1String("JP2"));
-    d->j2kSettings->setParent(this);
-    lbox4->addWidget(d->j2kSettings);
-    box4->setLayout(lbox4);
-    slay->addWidget(box4);
+    d->j2kSettings               = ploader->exportWidget(QLatin1String("JP2"));
+
+    if (d->j2kSettings)
+    {
+        QGroupBox* const  box4   = new QGroupBox;
+        QVBoxLayout* const lbox4 = new QVBoxLayout;
+        d->j2kSettings->setParent(this);
+        lbox4->addWidget(d->j2kSettings);
+        box4->setLayout(lbox4);
+        slay->addWidget(box4);
+    }
 
 #endif // HAVE_JASPER
 
-    QGroupBox* const  box5   = new QGroupBox;
-    QVBoxLayout* const lbox5 = new QVBoxLayout;
-    d->pgfSettings           = ploader->exportWidget(QLatin1String("PGF"));
-    d->pgfSettings->setParent(this);
-    lbox5->addWidget(d->pgfSettings);
-    box5->setLayout(lbox5);
-    slay->addWidget(box5);
+    d->pgfSettings               = ploader->exportWidget(QLatin1String("PGF"));
+
+    if (d->pgfSettings)
+    {
+        QGroupBox* const  box5   = new QGroupBox;
+        QVBoxLayout* const lbox5 = new QVBoxLayout;
+        d->pgfSettings->setParent(this);
+        lbox5->addWidget(d->pgfSettings);
+        box5->setLayout(lbox5);
+        slay->addWidget(box5);
+    }
 
 #ifdef HAVE_X265
 
-    QGroupBox* const  box6   = new QGroupBox;
-    QVBoxLayout* const lbox6 = new QVBoxLayout;
-    d->heifSettings          = ploader->exportWidget(QLatin1String("HEIF"));
-    d->heifSettings->setParent(this);
-    lbox6->addWidget(d->heifSettings);
-    box6->setLayout(lbox6);
-    slay->addWidget(box6);
+    d->heifSettings              = ploader->exportWidget(QLatin1String("HEIF"));
+
+    if (d->heifSettings)
+    {
+        QGroupBox* const  box6   = new QGroupBox;
+        QVBoxLayout* const lbox6 = new QVBoxLayout;
+        d->heifSettings->setParent(this);
+        lbox6->addWidget(d->heifSettings);
+        box6->setLayout(lbox6);
+        slay->addWidget(box6);
+    }
 
 #endif // HAVE_X265
 
-    d->jxlSettings           = ploader->exportWidget(QLatin1String("JXL"));
+    d->jxlSettings               = ploader->exportWidget(QLatin1String("JXL"));
 
     if (d->jxlSettings)
     {
@@ -344,7 +368,7 @@ QueueSettingsView::QueueSettingsView(QWidget* const parent)
         slay->addWidget(box7);
     }
 
-    d->webpSettings          = ploader->exportWidget(QLatin1String("WEBP"));
+    d->webpSettings              = ploader->exportWidget(QLatin1String("WEBP"));
 
     if (d->webpSettings)
     {
@@ -356,7 +380,7 @@ QueueSettingsView::QueueSettingsView(QWidget* const parent)
         slay->addWidget(box8);
     }
 
-    d->avifSettings          = ploader->exportWidget(QLatin1String("AVIF"));
+    d->avifSettings              = ploader->exportWidget(QLatin1String("AVIF"));
 
     if (d->avifSettings)
     {
@@ -493,43 +517,61 @@ void QueueSettingsView::slotResetSettings()
 
     QueueSettings settings;
 
-    set.clear();
-    set.insert(QLatin1String("quality"),     settings.ioFileSettings.JPEGCompression);
-    set.insert(QLatin1String("subsampling"), settings.ioFileSettings.JPEGSubSampling);
-    d->jpgSettings->setSettings(set);
+    if (d->jpgSettings)
+    {
+        set.clear();
+        set.insert(QLatin1String("quality"),     settings.ioFileSettings.JPEGCompression);
+        set.insert(QLatin1String("subsampling"), settings.ioFileSettings.JPEGSubSampling);
+        d->jpgSettings->setSettings(set);
+    }
 
     // ---
 
-    set.clear();
-    set.insert(QLatin1String("quality"),  settings.ioFileSettings.PNGCompression);
-    d->pngSettings->setSettings(set);
+    if (d->pngSettings)
+    {
+        set.clear();
+        set.insert(QLatin1String("quality"),  settings.ioFileSettings.PNGCompression);
+        d->pngSettings->setSettings(set);
+    }
 
     // ---
 
-    set.clear();
-    set.insert(QLatin1String("compress"),  settings.ioFileSettings.TIFFCompression);
-    d->tifSettings->setSettings(set);
+    if (d->tifSettings)
+    {
+        set.clear();
+        set.insert(QLatin1String("compress"),  settings.ioFileSettings.TIFFCompression);
+        d->tifSettings->setSettings(set);
+    }
 
 #ifdef HAVE_JASPER
 
-    set.clear();
-    set.insert(QLatin1String("quality"),  settings.ioFileSettings.JPEG2000Compression);
-    set.insert(QLatin1String("lossless"), settings.ioFileSettings.JPEG2000LossLess);
-    d->j2kSettings->setSettings(set);
+    if (d->j2kSettings)
+    {
+        set.clear();
+        set.insert(QLatin1String("quality"),  settings.ioFileSettings.JPEG2000Compression);
+        set.insert(QLatin1String("lossless"), settings.ioFileSettings.JPEG2000LossLess);
+        d->j2kSettings->setSettings(set);
+    }
 
 #endif // HAVE_JASPER
 
-    set.clear();
-    set.insert(QLatin1String("quality"),  settings.ioFileSettings.PGFCompression);
-    set.insert(QLatin1String("lossless"), settings.ioFileSettings.PGFLossLess);
-    d->pgfSettings->setSettings(set);
+    if (d->pgfSettings)
+    {
+        set.clear();
+        set.insert(QLatin1String("quality"),  settings.ioFileSettings.PGFCompression);
+        set.insert(QLatin1String("lossless"), settings.ioFileSettings.PGFLossLess);
+        d->pgfSettings->setSettings(set);
+    }
 
 #ifdef HAVE_X265
 
-    set.clear();
-    set.insert(QLatin1String("quality"),  settings.ioFileSettings.HEIFCompression);
-    set.insert(QLatin1String("lossless"), settings.ioFileSettings.HEIFLossLess);
-    d->heifSettings->setSettings(set);
+    if (d->heifSettings)
+    {
+        set.clear();
+        set.insert(QLatin1String("quality"),  settings.ioFileSettings.HEIFCompression);
+        set.insert(QLatin1String("lossless"), settings.ioFileSettings.HEIFLossLess);
+        d->heifSettings->setSettings(set);
+    }
 
 #endif // HAVE_X265
 
@@ -673,31 +715,49 @@ void QueueSettingsView::slotSettingsChanged()
 
     // ---
 
-    settings.ioFileSettings.JPEGCompression     = d->jpgSettings->settings()[QLatin1String("quality")].toInt();
-    settings.ioFileSettings.JPEGSubSampling     = d->jpgSettings->settings()[QLatin1String("subsampling")].toInt();
+    if (d->jpgSettings)
+    {
+        settings.ioFileSettings.JPEGCompression     = d->jpgSettings->settings()[QLatin1String("quality")].toInt();
+        settings.ioFileSettings.JPEGSubSampling     = d->jpgSettings->settings()[QLatin1String("subsampling")].toInt();
+    }
 
     // ---
 
-    settings.ioFileSettings.PNGCompression      = d->pngSettings->settings()[QLatin1String("quality")].toInt();
+    if (d->pngSettings)
+    {
+        settings.ioFileSettings.PNGCompression      = d->pngSettings->settings()[QLatin1String("quality")].toInt();
+    }
 
     // ---
 
-    settings.ioFileSettings.TIFFCompression     = d->tifSettings->settings()[QLatin1String("compress")].toBool();
+    if (d->tifSettings)
+    {
+        settings.ioFileSettings.TIFFCompression     = d->tifSettings->settings()[QLatin1String("compress")].toBool();
+    }
 
 #ifdef HAVE_JASPER
 
-    settings.ioFileSettings.JPEG2000Compression = d->j2kSettings->settings()[QLatin1String("quality")].toInt();
-    settings.ioFileSettings.JPEG2000LossLess    = d->j2kSettings->settings()[QLatin1String("lossless")].toBool();
+    if (d->j2kSettings)
+    {
+        settings.ioFileSettings.JPEG2000Compression = d->j2kSettings->settings()[QLatin1String("quality")].toInt();
+        settings.ioFileSettings.JPEG2000LossLess    = d->j2kSettings->settings()[QLatin1String("lossless")].toBool();
+    }
 
 #endif // HAVE_JASPER
 
-    settings.ioFileSettings.PGFCompression      = d->pgfSettings->settings()[QLatin1String("quality")].toInt();
-    settings.ioFileSettings.PGFLossLess         = d->pgfSettings->settings()[QLatin1String("lossless")].toBool();
+    if (d->pgfSettings)
+    {
+        settings.ioFileSettings.PGFCompression      = d->pgfSettings->settings()[QLatin1String("quality")].toInt();
+        settings.ioFileSettings.PGFLossLess         = d->pgfSettings->settings()[QLatin1String("lossless")].toBool();
+    }
 
 #ifdef HAVE_X265
 
-    settings.ioFileSettings.HEIFCompression     = d->heifSettings->settings()[QLatin1String("quality")].toInt();
-    settings.ioFileSettings.HEIFLossLess        = d->heifSettings->settings()[QLatin1String("lossless")].toBool();
+    if (d->heifSettings)
+    {
+        settings.ioFileSettings.HEIFCompression     = d->heifSettings->settings()[QLatin1String("quality")].toInt();
+        settings.ioFileSettings.HEIFLossLess        = d->heifSettings->settings()[QLatin1String("lossless")].toBool();
+    }
 
 #endif // HAVE_X265
 
