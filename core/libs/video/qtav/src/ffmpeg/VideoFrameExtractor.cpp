@@ -185,8 +185,8 @@ public:
         , decoder(nullptr)
     {
         QVariantHash opt;
-        opt[QString::fromLatin1("skip_frame")]           = 8;      // 8 for "avcodec", "NoRef" for "FFmpeg". see AVDiscard
-        opt[QString::fromLatin1("skip_loop_filter")]     = 8;      // skip all?
+        opt[QString::fromLatin1("skip_frame")]            = 8;      // 8 for "avcodec", "NoRef" for "FFmpeg". see AVDiscard
+        opt[QString::fromLatin1("skip_loop_filter")]      = 8;      // skip all?
 
         // skip_dict is slower
 
@@ -200,31 +200,25 @@ public:
 
             // << QStringLiteral("DXVA")
 
-#endif //QTAV_HAVE(DXVA)
+#endif // QTAV_HAVE(DXVA)
 
 #if QTAV_HAVE(VAAPI)
 
             // << QStringLiteral("VAAPI")
 
-#endif //QTAV_HAVE(VAAPI)
-
-#if QTAV_HAVE(CEDARV)
-
-            //<< QStringLiteral("Cedarv")
-
-#endif //QTAV_HAVE(CEDARV)
+#endif // QTAV_HAVE(VAAPI)
 
 #if QTAV_HAVE(VDA)
 
             // << QStringLiteral("VDA") // only 1 app can use VDA at a given time
 
-#endif //QTAV_HAVE(VDA)
+#endif // QTAV_HAVE(VDA)
 
 #if QTAV_HAVE(VIDEOTOOLBOX)
 
             // << QStringLiteral("VideoToolbox")
 
-#endif //QTAV_HAVE(VIDEOTOOLBOX)
+#endif // QTAV_HAVE(VIDEOTOOLBOX)
 
             << QStringLiteral("FFmpeg");
     }

@@ -40,7 +40,6 @@ VideoDecoderId VideoDecoderId_CUDA          = mkid::id32base36_4<'C', 'U', 'D', 
 VideoDecoderId VideoDecoderId_DXVA          = mkid::id32base36_4<'D', 'X', 'V', 'A'>::value;
 VideoDecoderId VideoDecoderId_D3D11         = mkid::id32base36_5<'D','3','D','1','1'>::value;
 VideoDecoderId VideoDecoderId_VAAPI         = mkid::id32base36_5<'V', 'A', 'A', 'P', 'I'>::value;
-VideoDecoderId VideoDecoderId_Cedarv        = mkid::id32base36_6<'C', 'e', 'd', 'a', 'r', 'V'>::value;
 VideoDecoderId VideoDecoderId_VDA           = mkid::id32base36_3<'V', 'D', 'A'>::value;
 VideoDecoderId VideoDecoderId_VideoToolbox  = mkid::id32base36_5<'V', 'T', 'B', 'o', 'x'>::value;
 VideoDecoderId VideoDecoderId_MediaCodec    = mkid::id32base36_4<'F','F','M','C'>::value;
@@ -106,13 +105,6 @@ static void VideoDecoder_RegisterAll()
     RegisterVideoDecoderVDA_Man();
 
 #endif //QTAV_HAVE(VDA)
-
-#if QTAV_HAVE(CEDARV)
-
-    extern bool RegisterVideoDecoderCedarv_Man();
-    RegisterVideoDecoderCedarv_Man();
-
-#endif //QTAV_HAVE(CEDARV)
 
 }
 

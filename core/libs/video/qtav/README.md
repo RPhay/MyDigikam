@@ -114,7 +114,7 @@ Code review with plenty of fixes and improvements. See the list of tasks below.
 
     - IOS support.
 
-    - Arm support.
+    - CdeArv Arm chip video decoding support.
 
 * Notes:
 

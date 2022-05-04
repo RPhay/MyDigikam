@@ -55,8 +55,6 @@ typedef int VideoDecoderId;
       surfaces: 0 default
     DXVA, VA-API, VDA:
       sse4: bool
-    CedarV
-      neon: bool
     FFmpeg
       skip_loop_filter, skip_idct, skip_frame: -16 "None", 0: "Default", 8 "NoRef", 16 "Bidir", 32 "NoKey", 64 "All"
       threads: int, 0 is auto
@@ -79,7 +77,7 @@ public:
     /*!
      * \brief create
      * create a decoder from registered name. FFmpeg decoder will be created for empty name
-     * \param name can be "FFmpeg", "CUDA", "VDA", "VAAPI", "DXVA", "Cedarv"
+     * \param name can be "FFmpeg", "CUDA", "VDA", "VAAPI", "DXVA"
      * \return 0 if not registered
      */
     static VideoDecoder* create(const char* name = "FFmpeg");
@@ -134,7 +132,6 @@ extern QTAV_EXPORT VideoDecoderId VideoDecoderId_CUDA;
 extern QTAV_EXPORT VideoDecoderId VideoDecoderId_DXVA;
 extern QTAV_EXPORT VideoDecoderId VideoDecoderId_D3D11;
 extern QTAV_EXPORT VideoDecoderId VideoDecoderId_VAAPI;
-extern QTAV_EXPORT VideoDecoderId VideoDecoderId_Cedarv;
 extern QTAV_EXPORT VideoDecoderId VideoDecoderId_VDA;
 extern QTAV_EXPORT VideoDecoderId VideoDecoderId_VideoToolbox;
 extern QTAV_EXPORT VideoDecoderId VideoDecoderId_MediaCodec;

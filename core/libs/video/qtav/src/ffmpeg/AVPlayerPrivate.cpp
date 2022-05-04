@@ -168,12 +168,6 @@ AVPlayer::Private::Private()
 
 #endif // QTAV_HAVE(VAAPI)
 
-#if QTAV_HAVE(CEDARV)
-
-            << VideoDecoderId_Cedarv
-
-#endif // QTAV_HAVE(CEDARV)
-
             << VideoDecoderId_FFmpeg;
 }
 
