@@ -35,15 +35,17 @@
 
 // TODO: kernel QGenericMatrix<M,N>
 
-// http://www.graficaobscura.com/matrix/index.html      // krazy:exclude=insecurenet
+// http://www.graficaobscura.com/matrix/index.html              // krazy:exclude=insecurenet
 
 namespace QtAV
 {
+
 /*!
  * \brief The ColorTransform class
  *  A convenience class to get color transformation matrix.
  *  Implicitly shared.
  */
+
 class ColorTransform
 {
 public:
@@ -64,30 +66,32 @@ public:
      * default in/output color space is rgb
      * \param cs
      */
-    ColorSpace inputColorSpace() const;
+    ColorSpace inputColorSpace()                const;
     void setInputColorSpace(ColorSpace cs);
-    ColorSpace outputColorSpace() const;
+
+    ColorSpace outputColorSpace()               const;
     void setOutputColorSpace(ColorSpace cs);
 
     /// Currently assume input is yuv, output is rgb
 
     void setInputColorRange(ColorRange value);
-    ColorRange inputColorRange() const;
+    ColorRange inputColorRange()                const;
+
     void setOutputColorRange(ColorRange value);
-    ColorRange outputColorRange() const;
+    ColorRange outputColorRange()               const;
 
     /*!
      * \brief matrix
      * \return result matrix to transform from inputColorSpace to outputColorSpace with given brightness,
      * contrast, saturation and hue
      */
-    QMatrix4x4 matrix() const;
-    const QMatrix4x4& matrixRef() const;
+    QMatrix4x4 matrix()                         const;
+    const QMatrix4x4& matrixRef()               const;
 
     /*!
      * Get the matrix in column-major order. Used by OpenGL
      */
-    template<typename T> void matrixData(T* M) const
+    template<typename T> void matrixData(T* M)  const
     {
         const QMatrix4x4 &m = matrixRef();
         M[0] = m(0,0), M[4] = m(0,1), M[8]  = m(0,2), M[12] = m(0,3),
@@ -105,22 +109,22 @@ public:
     // -1~1
 
     void setBrightness(qreal brightness);
-    qreal brightness() const;
+    qreal brightness()                          const;
 
     // -1~1
 
     void setHue(qreal hue);
-    qreal hue() const;
+    qreal hue()                                 const;
 
     // -1~1
 
     void setContrast(qreal contrast);
-    qreal contrast() const;
+    qreal contrast()                            const;
 
     // -1~1
 
     void setSaturation(qreal saturation);
-    qreal saturation() const;
+    qreal saturation()                          const;
 
     void setChannelDepthScale(qreal value, bool scaleAlpha = false);
 

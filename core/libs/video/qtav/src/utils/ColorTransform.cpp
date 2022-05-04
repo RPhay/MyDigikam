@@ -99,6 +99,7 @@ const QMatrix4x4& ColorTransform::YUV2RGB(ColorSpace cs)
 
 // For yuv->rgb, assume yuv is full range before convertion, rgb is full range after convertion. so if input yuv is limited range, transform to full range first. If display rgb is limited range, transform to limited range at last.
 // *ColorRangeYUV(...)
+
 static QMatrix4x4 ColorRangeYUV(ColorRange from, ColorRange to)
 {
     if (from == to)
@@ -116,8 +117,8 @@ static QMatrix4x4 ColorRangeYUV(ColorRange from, ColorRange to)
         // [Y1, Y2] => [0, s]
 
         QMatrix4x4 m;
-        m.scale(s/(Y2 - Y1), s/(C2 - C1), s/(C2 - C1));
-        m.translate(-Y1/s, -C1/s, -C1/s);
+        m.scale(s / (Y2 - Y1), s / (C2 - C1), s / (C2 - C1));
+        m.translate(-Y1 / s, -C1 / s, -C1 / s);
 
         return m;
     }
@@ -127,8 +128,8 @@ static QMatrix4x4 ColorRangeYUV(ColorRange from, ColorRange to)
         // [0, s] => [Y1, Y2]
 
         QMatrix4x4 m;
-        m.translate(Y1/s, C1/s, C1/s);
-        m.scale((Y2 - Y1)/s, (C2 - C1)/s, (C2 - C1)/s);
+        m.translate(Y1 / s, C1 / s, C1 / s);
+        m.scale((Y2 - Y1) / s, (C2 - C1) / s, (C2 - C1) / s);
 
         return m;
     }
@@ -152,8 +153,8 @@ static QMatrix4x4 ColorRangeRGB(ColorRange from, ColorRange to)
     {
         qCDebug(DIGIKAM_QTAV_LOG).noquote() << QString::asprintf("output rgb limited range");
         QMatrix4x4 m;
-        m.translate(R1/s, R1/s, R1/s);
-        m.scale((R2 - R1)/s, (R2 - R1)/s, (R2 - R1)/s);
+        m.translate(R1 / s, R1 / s, R1 / s);
+        m.scale((R2 - R1) / s, (R2 - R1) / s, (R2 - R1) / s);
 
         return m;
     }
@@ -275,7 +276,9 @@ public:
         const float hc = cosf(h);
         const float hs = sinf(h);
 
-        QMatrix4x4 H(     // conversion of angle/axis representation to matrix representation
+        // conversion of angle/axis representation to matrix representation
+
+        QMatrix4x4 H(
             n*n*(1.0f - hc) + hc  , n*n*(1.0f - hc) - n*hs, n*n*(1.0f - hc) + n*hs, 0.0f,
             n*n*(1.0f - hc) + n*hs, n*n*(1.0f - hc) + hc  , n*n*(1.0f - hc) - n*hs, 0.0f,
             n*n*(1.0f - hc) - n*hs, n*n*(1.0f - hc) + n*hs, n*n*(1.0f - hc) + hc  , 0.0f,
@@ -370,7 +373,7 @@ void ColorTransform::setInputColorSpace(ColorSpace cs)
     if (d->cs_in == cs)
         return;
 
-    d->cs_in = cs;
+    d->cs_in     = cs;
     d->recompute = true; // TODO: only recompute color space transform
 }
 
@@ -384,7 +387,7 @@ void ColorTransform::setOutputColorSpace(ColorSpace cs)
     if (d->cs_out == cs)
         return;
 
-    d->cs_out = cs;
+    d->cs_out    = cs;
     d->recompute = true; // TODO: only recompute color space transform
 }
 
@@ -501,16 +504,16 @@ qreal ColorTransform::saturation() const
 
 void ColorTransform::setChannelDepthScale(qreal value, bool scaleAlpha)
 {
-    if (d->bpc_scale == value && d->a_bpc_scale == scaleAlpha)
+    if ((d->bpc_scale == value) && (d->a_bpc_scale == scaleAlpha))
         return;
 
     qCDebug(DIGIKAM_QTAV_LOG).noquote()
         << QString::asprintf("ColorTransform bpc_scale %f=>%f, scale alpha: %d=>%d",
             d->bpc_scale, value, d->a_bpc_scale, scaleAlpha);
 
-    d->bpc_scale = value;
+    d->bpc_scale   = value;
     d->a_bpc_scale = scaleAlpha;
-    d->recompute = true;
+    d->recompute   = true;
 }
 
 } // namespace QtAV
