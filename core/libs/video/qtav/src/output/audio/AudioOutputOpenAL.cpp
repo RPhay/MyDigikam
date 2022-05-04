@@ -63,26 +63,26 @@ public:
 
     AudioOutputOpenAL(QObject* parent = nullptr);
 
-    QString name() const final
+    QString name()                                              const final
     {
         return QLatin1String(kName);
     }
 
-    QString deviceName() const;
-    bool open() final;
-    bool close() final;
-    bool isSupported(const AudioFormat& format) const final;
-    bool isSupported(AudioFormat::SampleFormat sampleFormat) const final;
-    bool isSupported(AudioFormat::ChannelLayout channelLayout) const final;
+    QString deviceName()                                        const;
+    bool open()                                                       final;
+    bool close()                                                      final;
+    bool isSupported(const AudioFormat& format)                 const final;
+    bool isSupported(AudioFormat::SampleFormat sampleFormat)    const final;
+    bool isSupported(AudioFormat::ChannelLayout channelLayout)  const final;
 
 protected:
 
-    BufferControl bufferControl() const final;
-    bool write(const QByteArray& data) final;
-    bool play() final;
-    int getPlayedCount() final;
-    bool setVolume(qreal value) final;
-    qreal getVolume() const final;
+    BufferControl bufferControl()                               const final;
+    bool write(const QByteArray& data)                                final;
+    bool play()                                                       final;
+    int getPlayedCount()                                              final;
+    bool setVolume(qreal value)                                       final;
+    qreal getVolume() const                                           final;
     int getQueued();
 
     bool openDevice()
@@ -90,14 +90,19 @@ protected:
         if (context)
             return true;
 
-        const ALCchar *default_device = alcGetString(nullptr, ALC_DEFAULT_DEVICE_SPECIFIER);
+        const ALCchar* default_device = alcGetString(nullptr, ALC_DEFAULT_DEVICE_SPECIFIER);
 
-        qCDebug(DIGIKAM_QTAV_LOG).noquote() << QString::asprintf("OpenAL opening default device: %s", default_device);
-        device = alcOpenDevice(nullptr); // parameter: nullptr or default_device
+        qCDebug(DIGIKAM_QTAV_LOG).noquote()
+            << QString::asprintf("OpenAL opening default device: %s",
+                default_device);
+
+        device                        = alcOpenDevice(nullptr);         // parameter: nullptr or default_device
 
         if (!device)
         {
-            qCWarning(DIGIKAM_QTAV_LOG_WARN).noquote() << QString::asprintf("OpenAL failed to open sound device: %s", alcGetString(nullptr, alcGetError(nullptr)));
+            qCWarning(DIGIKAM_QTAV_LOG_WARN).noquote()
+                << QString::asprintf("OpenAL failed to open sound device: %s",
+                    alcGetString(nullptr, alcGetError(nullptr)));
 
             return false;
         }
@@ -109,18 +114,20 @@ protected:
         return true;
     }
 
-    ALCdevice *device;
-    ALCcontext *context;
-    ALenum format_al;
+protected:
+
+    ALCdevice*      device;
+    ALCcontext*     context;
+    ALenum          format_al;
     QVector<ALuint> buffer;
-    ALuint source;
-    ALint state;
-    QMutex mutex;
-    QWaitCondition cond;
+    ALuint          source;
+    ALint           state;
+    QMutex          mutex;
+    QWaitCondition  cond;
 
     // used for 1 context per instance. lock when makeCurrent
 
-    static QMutex global_mutex;
+    static QMutex   global_mutex;
 };
 
 typedef AudioOutputOpenAL AudioOutputBackendOpenAL;
@@ -156,13 +163,13 @@ static ALenum audioFormatToAL(const AudioFormat& fmt)
         ALenum      fmt;
     } al_fmt_t;
 
-    ALenum format = 0;
+    ALenum format                         = 0;
 
     // al functions need a context
 
-    ALCcontext *ctx = alcGetCurrentContext(); //a context is required for al functions!
-    const int c     = fmt.channels();
-    const AudioFormat::SampleFormat spfmt = fmt.sampleFormat(); //TODO: planar formats are fine too
+    ALCcontext* ctx                       = alcGetCurrentContext();     // a context is required for al functions!
+    const int c                           = fmt.channels();
+    const AudioFormat::SampleFormat spfmt = fmt.sampleFormat();         // TODO: planar formats are fine too
 
     if      (AudioFormat::SampleFormat_Unsigned8 == spfmt)
     {
@@ -170,7 +177,7 @@ static ALenum audioFormatToAL(const AudioFormat& fmt)
         {
             { (const char*)AL_FORMAT_MONO8      },
             { (const char*)AL_FORMAT_STEREO8    },
-            { (const char*)nullptr                    },
+            { (const char*)nullptr              },
             { "AL_FORMAT_QUAD8"                 },
             { "AL_FORMAT_REAR8"                 },
             { "AL_FORMAT_51CHN8"                },
@@ -182,7 +189,7 @@ static ALenum audioFormatToAL(const AudioFormat& fmt)
         {
             format = u8fmt[c-1].fmt;
         }
-        else if (c > 3 && c <= 8 && ctx)
+        else if ((c > 3) && (c <= 8) && ctx)
         {
             if (alIsExtensionPresent("AL_EXT_MCFORMATS"))
                 format = alGetEnumValue(u8fmt[c-1].ext);
@@ -194,7 +201,7 @@ static ALenum audioFormatToAL(const AudioFormat& fmt)
         {
             { (const char*)AL_FORMAT_MONO16     },
             { (const char*)AL_FORMAT_STEREO16   },
-            { (const char*)nullptr                    },
+            { (const char*)nullptr              },
             { "AL_FORMAT_QUAD16"                },
             { "AL_FORMAT_REAR16"                },
             { "AL_FORMAT_51CHN16"               },
@@ -206,7 +213,7 @@ static ALenum audioFormatToAL(const AudioFormat& fmt)
         {
             format = s16fmt[c-1].fmt;
         }
-        else if (c > 3 && c <= 8 && ctx)
+        else if ((c > 3) && (c <= 8) && ctx)
         {
             if (alIsExtensionPresent("AL_EXT_MCFORMATS"))
                 format = alGetEnumValue(s16fmt[c-1].ext);
@@ -220,7 +227,7 @@ static ALenum audioFormatToAL(const AudioFormat& fmt)
             {
                 { "AL_FORMAT_MONO_FLOAT32"      },
                 { "AL_FORMAT_STEREO_FLOAT32"    },
-                { nullptr                             },
+                { nullptr                       },
 
                 // AL_EXT_MCFORMATS
 
@@ -231,7 +238,7 @@ static ALenum audioFormatToAL(const AudioFormat& fmt)
                 { "AL_FORMAT_71CHN32"           }
             };
 
-            if (c <= 8 && f32fmt[c-1].ext)
+            if ((c <= 8) && f32fmt[c-1].ext)
             {
                 format = alGetEnumValue(f32fmt[c-1].ext);
             }
@@ -278,12 +285,12 @@ static ALenum audioFormatToAL(const AudioFormat& fmt)
 
 QMutex AudioOutputOpenAL::global_mutex;
 
-AudioOutputOpenAL::AudioOutputOpenAL(QObject *parent)
-    : AudioOutputBackend(AudioOutput::SetVolume, parent)
-    , device(nullptr)
-    , context(nullptr)
-    , format_al(AL_FORMAT_STEREO16)
-    , state(0)
+AudioOutputOpenAL::AudioOutputOpenAL(QObject* parent)
+    : AudioOutputBackend(AudioOutput::SetVolume, parent),
+      device(nullptr),
+      context(nullptr),
+      format_al(AL_FORMAT_STEREO16),
+      state(0)
 {
 
 #if QTAV_HAVE(CAPI)
@@ -308,11 +315,12 @@ AudioOutputOpenAL::AudioOutputOpenAL(QObject *parent)
     // TODO: AudioOutput::getDevices() => ao.setDevice() => ao.open
 
     QVector<QByteArray> _devices;
-    const char *p = nullptr;
+    const char* p = nullptr;
 
     if (alcIsExtensionPresent(nullptr, "ALC_ENUMERATE_ALL_EXT"))
     {
         // ALC_ALL_DEVICES_SPECIFIER maybe not defined
+
         p = alcGetString(nullptr, alcGetEnumValue(nullptr, "ALC_ALL_DEVICES_SPECIFIER"));
     }
     else
@@ -340,7 +348,9 @@ bool AudioOutputOpenAL::open()
 
         // alGetString: alsoft needs a context. apple does not
 
-        qCDebug(DIGIKAM_QTAV_LOG).noquote() << QString::asprintf("OpenAL %s vendor: %s; renderer: %s", alGetString(AL_VERSION), alGetString(AL_VENDOR), alGetString(AL_RENDERER));
+        qCDebug(DIGIKAM_QTAV_LOG).noquote()
+            << QString::asprintf("OpenAL %s vendor: %s; renderer: %s",
+                alGetString(AL_VERSION), alGetString(AL_VENDOR), alGetString(AL_RENDERER));
 
         //alcProcessContext(ctx); // used when dealing witg multiple contexts
 
@@ -348,12 +358,15 @@ bool AudioOutputOpenAL::open()
 
         if (err != ALC_NO_ERROR)
         {
-            qCWarning(DIGIKAM_QTAV_LOG_WARN).noquote() << QString::asprintf("AudioOutputOpenAL Error: %s", alcGetString(device, err));
+            qCWarning(DIGIKAM_QTAV_LOG_WARN).noquote()
+                << QString::asprintf("AudioOutputOpenAL Error: %s",
+                    alcGetString(device, err));
 
             return false;
         }
 
-        qCDebug(DIGIKAM_QTAV_LOG).noquote() << QString::asprintf("device: %p, context: %p", device, context);
+        qCDebug(DIGIKAM_QTAV_LOG).noquote()
+            << QString::asprintf("device: %p, context: %p", device, context);
 
         // init params. move to another func?
 
@@ -361,11 +374,12 @@ bool AudioOutputOpenAL::open()
 
         buffer.resize(buffer_count);
         alGenBuffers(buffer.size(), buffer.data());
-        err = alGetError();
+        err       = alGetError();
 
         if (err != AL_NO_ERROR)
         {
-            qCWarning(DIGIKAM_QTAV_LOG_WARN).noquote() << QString::asprintf("Failed to generate OpenAL buffers: %s", alGetString(err));
+            qCWarning(DIGIKAM_QTAV_LOG_WARN).noquote()
+                << QString::asprintf("Failed to generate OpenAL buffers: %s", alGetString(err));
 
             goto fail;
         }
@@ -375,19 +389,22 @@ bool AudioOutputOpenAL::open()
 
         if (err != AL_NO_ERROR)
         {
-            qCWarning(DIGIKAM_QTAV_LOG_WARN).noquote() << QString::asprintf("Failed to generate OpenAL source: %s", alGetString(err));
+            qCWarning(DIGIKAM_QTAV_LOG_WARN).noquote()
+                << QString::asprintf("Failed to generate OpenAL source: %s", alGetString(err));
+
             alDeleteBuffers(buffer.size(), buffer.constData());
 
             goto fail;
         }
 
-        alSourcei(source, AL_LOOPING, AL_FALSE);
-        alSourcei(source, AL_SOURCE_RELATIVE, AL_TRUE);
-        alSourcei(source, AL_ROLLOFF_FACTOR, 0);
+        alSourcei(source,  AL_LOOPING, AL_FALSE);
+        alSourcei(source,  AL_SOURCE_RELATIVE, AL_TRUE);
+        alSourcei(source,  AL_ROLLOFF_FACTOR, 0);
         alSource3f(source, AL_POSITION, 0.0, 0.0, 0.0);
         alSource3f(source, AL_VELOCITY, 0.0, 0.0, 0.0);
         alListener3f(AL_POSITION, 0.0, 0.0, 0.0);
         state = 0;
+
         qCDebug(DIGIKAM_QTAV_LOG).noquote() << QString::asprintf("AudioOutputOpenAL open ok...");
     }
 
@@ -418,7 +435,7 @@ bool AudioOutputOpenAL::close()
     {
         alGetSourcei(source, AL_SOURCE_STATE, &state);
     }
-    while (alGetError() == AL_NO_ERROR && state == AL_PLAYING);
+    while ((alGetError() == AL_NO_ERROR) && (state == AL_PLAYING));
 
     ALint processed = 0; // android need this!! otherwise the value may be undefined
 
@@ -442,7 +459,9 @@ bool AudioOutputOpenAL::close()
     {
         // ALC_INVALID_CONTEXT
 
-        qCWarning(DIGIKAM_QTAV_LOG_WARN).noquote() << QString::asprintf("AudioOutputOpenAL Failed to destroy context: %s", alcGetString(device, err));
+        qCWarning(DIGIKAM_QTAV_LOG_WARN).noquote()
+            << QString::asprintf("AudioOutputOpenAL Failed to destroy context: %s",
+                alcGetString(device, err));
 
         return false;
     }
@@ -464,9 +483,10 @@ bool AudioOutputOpenAL::close()
 
 bool AudioOutputOpenAL::isSupported(const AudioFormat& format) const
 {
-    //if (!context)
-      //  openDevice(); //not const
-
+/*
+    if (!context)
+        openDevice(); // not const
+*/
     SCOPE_LOCK_CONTEXT();
 
     return !!audioFormatToAL(format);
@@ -495,7 +515,7 @@ bool AudioOutputOpenAL::isSupported(AudioFormat::SampleFormat sampleFormat) cons
 
 bool AudioOutputOpenAL::isSupported(AudioFormat::ChannelLayout channelLayout) const // FIXME: check
 {
-    return channelLayout == AudioFormat::ChannelLayout_Mono || channelLayout == AudioFormat::ChannelLayout_Stereo;
+    return ((channelLayout == AudioFormat::ChannelLayout_Mono) || (channelLayout == AudioFormat::ChannelLayout_Stereo));
 }
 
 QString AudioOutputOpenAL::deviceName() const
@@ -503,14 +523,14 @@ QString AudioOutputOpenAL::deviceName() const
     if (!device)
         return QString();
 
-    const ALCchar *name = alcGetString(device, ALC_DEVICE_SPECIFIER);
+    const ALCchar* aname = alcGetString(device, ALC_DEVICE_SPECIFIER);
 
-    return QString::fromUtf8(name);
+    return QString::fromUtf8(aname);
 }
 
 AudioOutputBackend::BufferControl AudioOutputOpenAL::bufferControl() const
 {
-    return PlayedCount; //TODO: AL_BYTE_OFFSET
+    return PlayedCount; // TODO: AL_BYTE_OFFSET
 }
 
 // http://kcat.strangesoft.net/openal-tutorial.html     // krazy:exclude=insecurenet
@@ -581,7 +601,9 @@ qreal AudioOutputOpenAL::getVolume() const
 
     if (err != AL_NO_ERROR)
     {
-        qCWarning(DIGIKAM_QTAV_LOG_WARN).noquote() << QString::asprintf("AudioOutputOpenAL Error>>> getVolume (%d) : %s", err, alGetString(err));
+        qCWarning(DIGIKAM_QTAV_LOG_WARN).noquote()
+            << QString::asprintf("AudioOutputOpenAL Error>>> getVolume (%d) : %s",
+                err, alGetString(err));
     }
 
     return v;
