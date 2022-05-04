@@ -55,7 +55,7 @@ public:
     virtual BufferControl bufferControl() const final;
     virtual bool write(const QByteArray& data)  final;
 
-    virtual bool play() final
+    virtual bool play()                         final
     {
         return true;
     }
@@ -85,7 +85,8 @@ AudioOutputPortAudio::AudioOutputPortAudio(QObject* parent)
 
     if ((err = Pa_Initialize()) != paNoError)
     {
-        qCWarning(DIGIKAM_QTAV_LOG_WARN).noquote() << QString::asprintf("Error when init portaudio: %s", Pa_GetErrorText(err));
+        qCWarning(DIGIKAM_QTAV_LOG_WARN).noquote()
+            << QString::asprintf("Error when init portaudio: %s", Pa_GetErrorText(err));
 
         return;
     }
@@ -100,11 +101,15 @@ AudioOutputPortAudio::AudioOutputPortAudio(QObject* parent)
 
         if (deviceInfo)
         {
-            const PaHostApiInfo *hostApiInfo = Pa_GetHostApiInfo(deviceInfo->hostApi);
-            QString name = QString::fromUtf8(hostApiInfo->name) + QStringLiteral(": ") + QString::fromLocal8Bit(deviceInfo->name);
+            const PaHostApiInfo* hostApiInfo = Pa_GetHostApiInfo(deviceInfo->hostApi);
+            QString pname                    = QString::fromUtf8(hostApiInfo->name) + QStringLiteral(": ") + QString::fromLocal8Bit(deviceInfo->name);
 
-            qCDebug(DIGIKAM_QTAV_LOG).noquote() << QString::asprintf("audio device %d: %s", i, name.toUtf8().constData());
-            qCDebug(DIGIKAM_QTAV_LOG).noquote() << QString::asprintf("max in/out channels: %d/%d", deviceInfo->maxInputChannels, deviceInfo->maxOutputChannels);
+            qCDebug(DIGIKAM_QTAV_LOG).noquote()
+                << QString::asprintf("audio device %d: %s", i, pname.toUtf8().constData());
+
+            qCDebug(DIGIKAM_QTAV_LOG).noquote()
+                << QString::asprintf("max in/out channels: %d/%d",
+                    deviceInfo->maxInputChannels, deviceInfo->maxOutputChannels);
         }
     }
 
@@ -119,8 +124,15 @@ AudioOutputPortAudio::AudioOutputPortAudio(QObject* parent)
     }
 
     const PaDeviceInfo* deviceInfo              = Pa_GetDeviceInfo(outputParameters->device);
-    qCDebug(DIGIKAM_QTAV_LOG).noquote() << QString::asprintf("DEFAULT max in/out channels: %d/%d", deviceInfo->maxInputChannels, deviceInfo->maxOutputChannels);
-    qCDebug(DIGIKAM_QTAV_LOG).noquote() << QString::asprintf("audio device: %s", QString::fromLocal8Bit(Pa_GetDeviceInfo(outputParameters->device)->name).toUtf8().constData());
+
+    qCDebug(DIGIKAM_QTAV_LOG).noquote()
+        << QString::asprintf("DEFAULT max in/out channels: %d/%d",
+            deviceInfo->maxInputChannels, deviceInfo->maxOutputChannels);
+
+    qCDebug(DIGIKAM_QTAV_LOG).noquote()
+        << QString::asprintf("audio device: %s",
+            QString::fromLocal8Bit(Pa_GetDeviceInfo(outputParameters->device)->name).toUtf8().constData());
+
     outputParameters->hostApiSpecificStreamInfo = nullptr;
     outputParameters->suggestedLatency          = Pa_GetDeviceInfo(outputParameters->device)->defaultHighOutputLatency;
 }
@@ -144,11 +156,12 @@ bool AudioOutputPortAudio::write(const QByteArray& data)
     if (Pa_IsStreamStopped(stream))
         Pa_StartStream(stream);
 
-    PaError err = Pa_WriteStream(stream, data.constData(), data.size()/format.channels()/format.bytesPerSample());
+    PaError err = Pa_WriteStream(stream, data.constData(), data.size() / format.channels() / format.bytesPerSample());
 
     if (err == paUnanticipatedHostError)
     {
-        qCWarning(DIGIKAM_QTAV_LOG_WARN).noquote() << QString::asprintf("Write portaudio stream error: %s", Pa_GetErrorText(err));
+        qCWarning(DIGIKAM_QTAV_LOG_WARN).noquote()
+            << QString::asprintf("Write portaudio stream error: %s", Pa_GetErrorText(err));
 
         return false;
     }
@@ -185,7 +198,7 @@ bool AudioOutputPortAudio::open()
 {
     outputParameters->sampleFormat = toPaSampleFormat(format.sampleFormat());
     outputParameters->channelCount = format.channels();
-    PaError err = Pa_OpenStream(&stream, nullptr, outputParameters, format.sampleRate(), 0, paNoFlag, nullptr, nullptr);
+    PaError err                    = Pa_OpenStream(&stream, nullptr, outputParameters, format.sampleRate(), 0, paNoFlag, nullptr, nullptr);
 
     if (err != paNoError)
     {
@@ -194,7 +207,7 @@ bool AudioOutputPortAudio::open()
         return false;
     }
 
-    outputLatency = Pa_GetStreamInfo(stream)->outputLatency;
+    outputLatency                  = Pa_GetStreamInfo(stream)->outputLatency;
 
     return true;
 }
