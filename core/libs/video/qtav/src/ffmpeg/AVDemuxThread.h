@@ -48,18 +48,18 @@ class AVDemuxThread : public QThread
 
 public:
 
-    explicit AVDemuxThread(QObject *parent = nullptr);
-    explicit AVDemuxThread(AVDemuxer *dmx, QObject *parent = nullptr);
+    explicit AVDemuxThread(QObject* parent = nullptr);
+    explicit AVDemuxThread(AVDemuxer* dmx, QObject* parent = nullptr);
 
-    void setDemuxer(AVDemuxer *dmx);
-    void setAudioDemuxer(AVDemuxer *demuxer);   ///< not thread safe
-    void setAudioThread(AVThread *thread);
+    void setDemuxer(AVDemuxer* dmx);
+    void setAudioDemuxer(AVDemuxer* demuxer);   ///< not thread safe
+    void setAudioThread(AVThread* thread);
     AVThread* audioThread();
-    void setVideoThread(AVThread *thread);
+    void setVideoThread(AVThread* thread);
     AVThread* videoThread();
     void stepForward();                         ///< show next video frame and pause
     void stepBackward();
-    void seek(qint64 external_pos, qint64 pos, SeekType type); //ms
+    void seek(qint64 external_pos, qint64 pos, SeekType type); // ms
 
     //AVDemuxer* demuxer
 
@@ -108,10 +108,10 @@ protected:
 
 private:
 
-    void setAVThread(AVThread *&pOld, AVThread* pNew);
-    void newSeekRequest(QRunnable *r);
+    void setAVThread(AVThread*& pOld, AVThread* pNew);
+    void newSeekRequest(QRunnable* r);
     void processNextSeekTask();
-    void seekInternal(qint64 pos, SeekType type, qint64 external_pos = std::numeric_limits < qint64 >::min()); //must call in AVDemuxThread
+    void seekInternal(qint64 pos, SeekType type, qint64 external_pos = std::numeric_limits<qint64>::min()); // must call in AVDemuxThread
     void pauseInternal(bool value);
 
 private:
@@ -125,7 +125,7 @@ private:
     AVDemuxer*                  demuxer;
     AVDemuxer*                  ademuxer;
     AVThread*                   audio_thread, *video_thread;
-    int                         clock_type;         ///< change happens in different threads(direct connection)
+    int                         clock_type;                     ///< change happens in different threads(direct connection)
     qint64                      last_seek_pos;
     QRunnable*                  current_seek_task;
     bool                        stepping;
