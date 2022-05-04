@@ -96,6 +96,9 @@ Code review with plenty of fixes and improvements. See the list of tasks below.
 
     - Fix coding style (brackets, tabs to spaces, indents, etc.).
 
+    - Port GLWidgetRenderer class to QOpenGLWidget for Qt5 and Qt6 
+      GLWidgetRenderer2 still based on Qt5::QGLWidget and is disabled for Qt6.
+
 * Under Progress:
 
     - Apply fixes for Clazy static analyzer.
@@ -107,8 +110,6 @@ Code review with plenty of fixes and improvements. See the list of tasks below.
     - Port to FFMPEG 5 API with backward compatibility with FFMPEG 4.
 
     - Add config widgets to setup video and audio backends.
-
-    - Remove GLWidgetRenderer class and port GLWidgetRenderer2 to Qt6::QOpenGLWidget.
 
 * Unmaintained Features:
 

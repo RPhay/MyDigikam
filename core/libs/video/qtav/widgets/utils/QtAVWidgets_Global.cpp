@@ -42,11 +42,8 @@
 #include "GraphicsItemRenderer.h"
 
 #if QTAV_HAVE(GL)
-#   include "GLWidgetRenderer2.h"
-#endif
-
-#if QTAV_HAVE(GL1)
-#   include "GLWidgetRenderer.h"
+#   include "GLWidgetRenderer.h"        // Qt5 and Qt6
+#   include "GLWidgetRenderer2.h"       // Qt5
 #endif
 
 #if QT_VERSION >= QT_VERSION_CHECK(5, 0, 0)
@@ -80,12 +77,8 @@ FACTORY_REGISTER(VideoRenderer, Widget,         "QWidegt")
 FACTORY_REGISTER(VideoRenderer, GraphicsItem,   "QGraphicsItem")
 
 #   if QTAV_HAVE(GL)
-#       if QTAV_HAVE(GL1)
 
 FACTORY_REGISTER(VideoRenderer, GLWidget,       "QGLWidegt")
-
-#       endif
-
 FACTORY_REGISTER(VideoRenderer, GLWidget2,      "QGLWidegt2")
 
 #   endif
@@ -140,13 +133,8 @@ void registerRenderers()
 
 #if QTAV_HAVE(GL)
 
-    VideoRenderer::Register<GLWidgetRenderer2>(VideoRendererId_GLWidget2,       "QGLWidget2");
-
-#endif
-
-#if QTAV_HAVE(GL1)
-
     VideoRenderer::Register<GLWidgetRenderer>(VideoRendererId_GLWidget,         "QGLWidget");
+    VideoRenderer::Register<GLWidgetRenderer2>(VideoRendererId_GLWidget2,       "QGLWidget2");
 
 #endif
 
@@ -202,29 +190,29 @@ void about()
     viewFFmpeg->setOpenExternalLinks(true);
     viewQtAV->setHtml(aboutQtAV_HTML());
     viewFFmpeg->setHtml(aboutFFmpeg_HTML());
-    QTabWidget *tab         = new QTabWidget;
+    QTabWidget* tab         = new QTabWidget;
     tab->addTab(viewQtAV, QStringLiteral("QtAV"));
     tab->addTab(viewFFmpeg, QStringLiteral("FFmpeg"));
-    QPushButton *qbtn       = new QPushButton(i18n("About Qt"));
-    QPushButton *btn        = new QPushButton(i18n("Ok"));
-    QHBoxLayout *btnLayout  = new QHBoxLayout;
+    QPushButton* qbtn       = new QPushButton(i18n("About Qt"));
+    QPushButton* btn        = new QPushButton(i18n("Ok"));
+    QHBoxLayout* btnLayout  = new QHBoxLayout;
     btnLayout->addWidget(btn);
     btnLayout->addStretch();
     btnLayout->addWidget(qbtn);
     btn->setFocus();
     QDialog dialog;
     dialog.setWindowTitle(i18n("About") + QStringLiteral("  QtAV"));
-    QVBoxLayout *layout     = new QVBoxLayout;
+    QVBoxLayout* layout     = new QVBoxLayout;
     dialog.setLayout(layout);
     layout->addWidget(tab);
     layout->addLayout(btnLayout);
-    
+
     QObject::connect(qbtn, SIGNAL(clicked()),
                      qApp, SLOT(aboutQt()));
-    
+
     QObject::connect(btn, SIGNAL(clicked()),
                      &dialog, SLOT(accept()));
-    
+
     dialog.exec();
 }
 

@@ -25,89 +25,86 @@
 #define QTAV_WIDGETS_GLWIDGET_RENDERER_H
 
 #include "QtAVWidgets_Global.h"
-#include "VideoRenderer.h"
 
-// Qt includes
+#if !defined(QT_NO_OPENGL)
 
-#include <QGLWidget>
-
-// TODO: QGLFunctions is in Qt4.8+. meego is 4.7
-
-#define QTAV_HAVE_QGLFUNCTIONS QT_VERSION >= QT_VERSION_CHECK(4, 8, 0)
-
-#if QTAV_HAVE(QGLFUNCTIONS)
-#   include <QGLFunctions>
-#endif
+#   include <QOpenGLWidget>
+#   include "OpenGLRendererBase.h"
 
 namespace QtAV
 {
 
 class GLWidgetRendererPrivate;
 
-class QTAV_WIDGETS_EXPORT GLWidgetRenderer : public QGLWidget
-                                           , public VideoRenderer
-
-#if QTAV_HAVE(QGLFUNCTIONS) // TODO: why use QT_VERSION will result in moc error?
-
-                                           , public QGLFunctions
-
-#endif
-
+/*!
+ * \brief The GLWidgetRenderer class
+ * Renderering video frames using GLSL. A more generic high level class OpenGLVideo is used internally.
+ */
+class QTAV_WIDGETS_EXPORT GLWidgetRenderer : public QOpenGLWidget,
+                                             public OpenGLRendererBase
 {
     Q_OBJECT
     DPTR_DECLARE_PRIVATE(GLWidgetRenderer)
+    Q_PROPERTY(qreal brightness READ brightness WRITE setBrightness NOTIFY brightnessChanged)
+    Q_PROPERTY(qreal contrast READ contrast WRITE setContrast NOTIFY contrastChanged)
+    Q_PROPERTY(qreal hue READ hue WRITE setHue NOTIFY hueChanged)
+    Q_PROPERTY(qreal saturation READ saturation WRITE setSaturation NOTIFY saturationChanged)
+    Q_PROPERTY(QColor backgroundColor READ backgroundColor WRITE setBackgroundColor NOTIFY backgroundColorChanged)
+    Q_PROPERTY(QRectF regionOfInterest READ regionOfInterest WRITE setRegionOfInterest NOTIFY regionOfInterestChanged)
+    Q_PROPERTY(qreal sourceAspectRatio READ sourceAspectRatio NOTIFY sourceAspectRatioChanged)
+    Q_PROPERTY(qreal outAspectRatio READ outAspectRatio WRITE setOutAspectRatio NOTIFY outAspectRatioChanged)
+
+    // fillMode
+
+    // TODO: how to use enums in base class as property or Q_ENUM
+
+    Q_PROPERTY(OutAspectRatioMode outAspectRatioMode READ outAspectRatioMode WRITE setOutAspectRatioMode NOTIFY outAspectRatioModeChanged)
+    Q_ENUMS(OutAspectRatioMode)
+    Q_PROPERTY(int orientation READ orientation WRITE setOrientation NOTIFY orientationChanged)
+    Q_PROPERTY(QRect videoRect READ videoRect NOTIFY videoRectChanged)
+    Q_PROPERTY(QSize videoFrameSize READ videoFrameSize NOTIFY videoFrameSizeChanged)
+    Q_ENUMS(Quality)
 
 public:
 
-    explicit GLWidgetRenderer(QWidget* parent = 0,
-                              const QGLWidget* shareWidget = 0,
+    explicit GLWidgetRenderer(QWidget* const parent = nullptr,
                               Qt::WindowFlags f = Qt::WindowFlags(Qt::Widget));
 
-    virtual VideoRendererId id()                              const override;
-    virtual bool isSupported(VideoFormat::PixelFormat pixfmt) const override;
+    virtual VideoRendererId id() const          override;
 
-    virtual QWidget* widget()                                       override
+    virtual QWidget* widget()                   override
     {
         return this;
     }
 
+Q_SIGNALS:
+
+    void sourceAspectRatioChanged(qreal value)  override final;
+    void regionOfInterestChanged()              override;
+    void outAspectRatioChanged()                override;
+    void outAspectRatioModeChanged()            override;
+    void brightnessChanged(qreal value)         override;
+    void contrastChanged(qreal)                 override;
+    void hueChanged(qreal)                      override;
+    void saturationChanged(qreal)               override;
+    void orientationChanged()                   override;
+    void videoRectChanged()                     override;
+    void videoFrameSizeChanged()                override;
+    void backgroundColorChanged()               override;
+
 protected:
 
-    virtual bool receiveFrame(const VideoFrame& frame)              override;
-    virtual bool needUpdateBackground() const;
-
-    // called in paintEvent before drawFrame() when required
-
-    virtual void drawBackground()                                   override;
-
-    // draw the current frame using the current paint engine. called by paintEvent()
-
-    virtual void drawFrame()                                        override;
-    virtual void initializeGL();
-    virtual void paintGL();
-    virtual void resizeGL(int w, int h);
-    virtual void resizeEvent(QResizeEvent*);
-    virtual void showEvent(QShowEvent*);
-
-private:
-
-    virtual void onSetOutAspectRatioMode(OutAspectRatioMode mode)   override;
-    virtual void onSetOutAspectRatio(qreal ratio)                   override;
-    virtual bool onSetOrientation(int value)                        override;
-
-    /*!
-     * \brief onSetBrightness
-     *  only works for GLSL. otherwise return false, means that do nothing, brightness() does not change.
-     * \return
-     */
-    virtual bool onSetBrightness(qreal b)                           override;
-    virtual bool onSetContrast(qreal c)                             override;
-    virtual bool onSetHue(qreal h)                                  override;
-    virtual bool onSetSaturation(qreal s)                           override;
+    virtual void initializeGL()                 override;
+    virtual void paintGL()                      override;
+    virtual void resizeGL(int w, int h)         override;
+    virtual void resizeEvent(QResizeEvent*)     override;
+    virtual void showEvent(QShowEvent*)         override;
 };
 
 typedef GLWidgetRenderer VideoRendererGLWidget;
 
 } // namespace QtAV
+
+#endif // QT_NO_OPENGL
 
 #endif // QTAV_WIDGETS_GLWIDGET_RENDERER_H

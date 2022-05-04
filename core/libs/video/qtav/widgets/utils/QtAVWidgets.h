@@ -29,9 +29,8 @@
 #include "GraphicsItemRenderer.h"
 #include "WidgetRenderer.h"
 
-//#include "GLWidgetRenderer.h"
-
-#include "GLWidgetRenderer2.h"
+#include "GLWidgetRenderer.h"       // Qt5 and Qt6
+#include "GLWidgetRenderer2.h"      // Qt5
 #include "VideoPreviewWidget.h"
 
 #endif // QTAV_WIDGETS_H
