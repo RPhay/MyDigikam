@@ -208,7 +208,7 @@ void PTalker::getToken(const QString& code)
     query.addQueryItem(QLatin1String("redirect_uri"), d->redirectUrl);
     query.addQueryItem(QLatin1String("code"),         code);
 
-    QByteArray basic = d->clientId.toLatin1() + ":" + d->clientSecret.toLatin1();
+    QByteArray basic = d->clientId.toLatin1() + QByteArray(":") + d->clientSecret.toLatin1();
     basic            = basic.toBase64();
 
     QNetworkRequest netRequest(QUrl(d->tokenUrl));
