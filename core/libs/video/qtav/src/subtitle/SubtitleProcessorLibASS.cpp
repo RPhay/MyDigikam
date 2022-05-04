@@ -48,7 +48,6 @@
 //#define CAPI_LINK_ASS
 
 #include "ass_api.h"
-#include "digikam_debug.h"
 
 namespace QtAV
 {
