@@ -34,7 +34,7 @@
 
 using namespace QtAV;
 
-class Thread : public QThread
+class Q_DECL_HIDDEN Thread : public QThread
 {
 public:
 

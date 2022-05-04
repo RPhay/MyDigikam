@@ -37,7 +37,7 @@
 namespace QtAV
 {
 
-class VideoShaderObjectPrivate : public VideoShaderPrivate
+class Q_DECL_HIDDEN VideoShaderObjectPrivate : public VideoShaderPrivate
 {
 public:
 
@@ -170,7 +170,7 @@ void VideoShaderObject::programReady()
     //ready();
 }
 
-class DynamicShaderObjectPrivate : public VideoShaderObjectPrivate
+class Q_DECL_HIDDEN DynamicShaderObjectPrivate : public VideoShaderObjectPrivate
 {
 public:
 

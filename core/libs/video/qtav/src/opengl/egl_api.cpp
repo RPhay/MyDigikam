@@ -62,7 +62,7 @@ static const char* names[] =
     nullptr
 };
 
-class EGLLib : public ::capi::dso
+class Q_DECL_HIDDEN EGLLib : public ::capi::dso
 {
 public:
 

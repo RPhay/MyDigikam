@@ -36,7 +36,7 @@ const int kQueueMin = 2;
 static QVariantHash dec_opt_framedrop;
 static QVariantHash dec_opt_normal;
 
-class FrameReader::Private {
+class Q_DECL_HIDDEN FrameReader::Private {
 public:
     Private() : nb_seek(0) {
         QVariantHash opt;

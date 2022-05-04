@@ -39,7 +39,7 @@ static const char kQIODevName[]            = "QIODevice";
 
 FACTORY_REGISTER(MediaIO, QIODevice, kQIODevName)
 
-class QIODeviceIOPrivate : public MediaIOPrivate
+class Q_DECL_HIDDEN QIODeviceIOPrivate : public MediaIOPrivate
 {
 public:
 
@@ -182,7 +182,7 @@ static const MediaIOId MediaIOId_QFile = mkid::id32base36_5<'Q','F','i','l','e'>
 
 FACTORY_REGISTER(MediaIO, QFile, kQFileName)
 
-class QFileIOPrivate final: public QIODeviceIOPrivate
+class Q_DECL_HIDDEN QFileIOPrivate final: public QIODeviceIOPrivate
 {
 public:
 

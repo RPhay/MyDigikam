@@ -37,7 +37,7 @@
 namespace QtAV
 {
 
-class FilterManagerPrivate : public DPtrPrivate<FilterManager>
+class Q_DECL_HIDDEN FilterManagerPrivate : public DPtrPrivate<FilterManager>
 {
 public:
 

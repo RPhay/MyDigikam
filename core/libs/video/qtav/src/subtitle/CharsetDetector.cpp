@@ -44,7 +44,7 @@ typedef struct uchardet* uchardet_t;
 namespace QtAV
 {
 
-class CharsetDetector::Private
+class Q_DECL_HIDDEN CharsetDetector::Private
 {
 public:
 

@@ -46,7 +46,7 @@ Statistics::AudioOnly::AudioOnly()
 {
 }
 
-class Statistics::VideoOnly::Private : public QSharedData
+class Q_DECL_HIDDEN Statistics::VideoOnly::Private : public QSharedData
 {
 public:
 

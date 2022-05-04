@@ -52,7 +52,7 @@ namespace QtAV
 
 static const char kName[] = "DirectSound";
 
-class AudioOutputDSound final: public AudioOutputBackend
+class Q_DECL_HIDDEN AudioOutputDSound final: public AudioOutputBackend
 {
 public:
 
@@ -108,7 +108,7 @@ private:
     int                 write_offset;   ///< offset of the write cursor in the direct sound buffer
     QAtomicInt          buffers_free;
 
-    class PositionWatcher : public QThread
+    class Q_DECL_HIDDEN PositionWatcher : public QThread
     {
         AudioOutputDSound* ao;
 

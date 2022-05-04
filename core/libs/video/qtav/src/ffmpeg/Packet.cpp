@@ -44,7 +44,7 @@ static const struct RegisterMetaTypes
 
 } // namespace
 
-class PacketPrivate : public QSharedData
+class Q_DECL_HIDDEN PacketPrivate : public QSharedData
 {
 public:
 

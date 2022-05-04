@@ -297,7 +297,7 @@ void* SurfaceInteropCV::mapToHost(const VideoFormat &format, void *handle, int p
  * \brief The InteropResourceCVPixelBuffer class
  * The mapping is not 0-copy. Use CVPixelBufferGetBaseAddressOfPlane to upload video frame to opengl.
  */
-class InteropResourceCVPixelBuffer final : public InteropResource
+class Q_DECL_HIDDEN InteropResourceCVPixelBuffer final : public InteropResource
 {
 public:
 

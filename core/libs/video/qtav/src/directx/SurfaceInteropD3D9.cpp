@@ -195,7 +195,7 @@ void* SurfaceInterop::mapToHost(const VideoFormat &format, void *handle, int pla
 {
     Q_UNUSED(plane);
 
-    class ScopedD3DLock
+    class Q_DECL_HIDDEN ScopedD3DLock
     {
         IDirect3DSurface9 *mpD3D;
 

@@ -45,7 +45,7 @@
 namespace QtAV
 {
 
-class VideoThreadPrivate : public AVThreadPrivate
+class Q_DECL_HIDDEN VideoThreadPrivate : public AVThreadPrivate
 {
 public:
 
@@ -129,7 +129,7 @@ void VideoThread::addCaptureTask()
     if (!isRunning())
         return;
 
-    class CaptureTask : public QRunnable
+    class Q_DECL_HIDDEN CaptureTask : public QRunnable
     {
     public:
 
@@ -204,7 +204,7 @@ void VideoThread::setSaturation(int val)
 
 void VideoThread::setEQ(int b, int c, int s)
 {
-    class EQTask : public QRunnable
+    class Q_DECL_HIDDEN EQTask : public QRunnable
     {
     public:
 

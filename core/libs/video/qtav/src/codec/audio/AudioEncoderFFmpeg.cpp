@@ -43,7 +43,7 @@ namespace QtAV
 
 class AudioEncoderFFmpegPrivate;
 
-class AudioEncoderFFmpeg final: public AudioEncoder
+class Q_DECL_HIDDEN AudioEncoderFFmpeg final: public AudioEncoder
 {
     DPTR_DECLARE_PRIVATE(AudioEncoderFFmpeg)
 
@@ -58,7 +58,7 @@ static const AudioEncoderId AudioEncoderId_FFmpeg = mkid::id32base36_6<'F', 'F',
 
 FACTORY_REGISTER(AudioEncoder, FFmpeg, "FFmpeg")
 
-class AudioEncoderFFmpegPrivate final: public AudioEncoderPrivate
+class Q_DECL_HIDDEN AudioEncoderFFmpegPrivate final : public AudioEncoderPrivate
 {
 public:
 

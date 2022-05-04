@@ -38,7 +38,7 @@ namespace QtAV
 
 static const char kName[] = "PortAudio";
 
-class AudioOutputPortAudio final : public AudioOutputBackend
+class Q_DECL_HIDDEN AudioOutputPortAudio final : public AudioOutputBackend
 {
 public:
 

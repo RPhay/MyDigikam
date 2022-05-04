@@ -53,7 +53,7 @@ namespace QtAV
 namespace d3d11
 {
 
-class EGL
+class Q_DECL_HIDDEN EGL
 {
 
 public:
@@ -68,7 +68,7 @@ public:
     EGLSurface surface;
 };
 
-class EGLInteropResource final : public InteropResource
+class Q_DECL_HIDDEN EGLInteropResource final : public InteropResource
 {
 
 public:

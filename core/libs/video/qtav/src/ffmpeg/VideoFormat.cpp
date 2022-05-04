@@ -66,7 +66,7 @@ extern "C"
 namespace QtAV
 {
 
-class VideoFormatPrivate : public QSharedData
+class Q_DECL_HIDDEN VideoFormatPrivate : public QSharedData
 {
 public:
 
@@ -944,7 +944,7 @@ QDebug operator<<(QDebug dbg, VideoFormat::PixelFormat pixFmt)
 
 namespace
 {
-    class VideoFormatPrivateRegisterMetaTypes
+    class Q_DECL_HIDDEN VideoFormatPrivateRegisterMetaTypes
     {
     public:
 

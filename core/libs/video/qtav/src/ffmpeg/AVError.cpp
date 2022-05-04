@@ -41,7 +41,7 @@ namespace QtAV
 namespace
 {
 
-class RegisterMetaTypes
+class Q_DECL_HIDDEN RegisterMetaTypes
 {
 public:
 
@@ -268,10 +268,7 @@ QString AVError::ffmpegErrorString() const
 
 } // namespace QtAV
 
-
 #ifndef QT_NO_DEBUG_STREAM
-
-// class QDebug
 
 QDebug operator<<(QDebug debug, const QtAV::AVError& error)
 {

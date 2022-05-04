@@ -582,7 +582,7 @@ static const struct RegisterMetaTypes
 namespace
 {
 
-class InitFFmpegLog
+class Q_DECL_HIDDEN InitFFmpegLog
 {
 public:
 

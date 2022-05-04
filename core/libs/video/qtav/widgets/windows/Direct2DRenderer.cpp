@@ -67,8 +67,8 @@ inline void SafeRelease(Interface **ppInterfaceToRelease)
 
 class Direct2DRendererPrivate;
 
-class Direct2DRenderer : public QWidget,
-                         public VideoRenderer
+class Q_DECL_HIDDEN Direct2DRenderer : public QWidget,
+                                       public VideoRenderer
 {
     Q_OBJECT
     DPTR_DECLARE_PRIVATE(Direct2DRenderer)
@@ -131,7 +131,7 @@ VideoRendererId Direct2DRenderer::id() const
     return VideoRendererId_Direct2D;
 }
 
-class Direct2DRendererPrivate : public VideoRendererPrivate
+class Q_DECL_HIDDEN Direct2DRendererPrivate : public VideoRendererPrivate
 {
 public:
 

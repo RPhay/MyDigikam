@@ -38,7 +38,7 @@
 namespace QtAV
 {
 
-class SubtitleFilterPrivate : public VideoFilterPrivate
+class Q_DECL_HIDDEN SubtitleFilterPrivate : public VideoFilterPrivate
 {
 public:
 

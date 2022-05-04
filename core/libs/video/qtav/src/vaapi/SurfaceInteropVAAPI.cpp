@@ -236,7 +236,7 @@ bool GLXInteropResource::map(const surface_ptr& surface, GLuint tex, int w, int 
 
 #   if VA_X11_INTEROP
 
-class X11
+class Q_DECL_HIDDEN X11
 {
 protected:
 
@@ -325,7 +325,7 @@ typedef void (EGLAPIENTRYP PFNGLEGLIMAGETARGETTEXTURE2DOESPROC) (GLenum target, 
 
 static PFNGLEGLIMAGETARGETTEXTURE2DOESPROC glEGLImageTargetTexture2DOES = nullptr;
 
-class X11_EGL final: public X11
+class Q_DECL_HIDDEN X11_EGL final: public X11
 {
 public:
 
@@ -403,7 +403,7 @@ typedef void (*glXReleaseTexImageEXT_t)(Display *dpy, GLXDrawable draw, int buff
 static glXReleaseTexImageEXT_t glXReleaseTexImageEXT = nullptr;
 static glXBindTexImageEXT_t glXBindTexImageEXT       = nullptr;
 
-class X11_GLX final : public X11
+class Q_DECL_HIDDEN X11_GLX final : public X11
 {
 public:
 
@@ -635,7 +635,7 @@ bool X11InteropResource::unmap(const surface_ptr &surface, GLuint tex)
 
 // 2010 https://www.khronos.org/registry/egl/extensions/MESA/EGL_MESA_drm_image.txt: only support EGL_DRM_BUFFER_FORMAT_ARGB32_MESA
 
-class EGL
+class Q_DECL_HIDDEN EGL
 {
 public:
 

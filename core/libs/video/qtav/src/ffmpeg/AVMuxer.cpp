@@ -47,7 +47,7 @@ static const AVRational kTB =
     1000
 };
 
-class AVMuxer::Private
+class Q_DECL_HIDDEN AVMuxer::Private
 {
 public:
 

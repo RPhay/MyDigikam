@@ -66,8 +66,8 @@ namespace QtAV
 
 class X11RendererPrivate;
 
-class X11Renderer : public QWidget,
-                    public VideoRenderer
+class Q_DECL_HIDDEN X11Renderer : public QWidget,
+                                  public VideoRenderer
 {
     Q_OBJECT
     DPTR_DECLARE_PRIVATE(X11Renderer)
@@ -204,7 +204,7 @@ VideoFormat::PixelFormat pixelFormat(XImage* xi)
     return fmte->fmt;
 }
 
-class X11RendererPrivate : public VideoRendererPrivate
+class Q_DECL_HIDDEN X11RendererPrivate : public VideoRendererPrivate
 {
 public:
 

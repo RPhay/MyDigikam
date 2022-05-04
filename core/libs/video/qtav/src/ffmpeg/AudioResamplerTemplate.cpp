@@ -49,9 +49,9 @@ static const char kName[] = "FFmpeg";
 
 #   endif
 
-class AudioResamplerFFPrivate;
+class Q_DECL_HIDDEN AudioResamplerFFPrivate;
 
-class AudioResamplerFF : public AudioResampler
+class Q_DECL_HIDDEN AudioResamplerFF : public AudioResampler
 {
     DPTR_DECLARE_PRIVATE(AudioResampler)    // cppcheck-suppress unusedPrivateFunction
 
@@ -67,7 +67,7 @@ extern AudioResamplerId AudioResamplerId_FF;
 
 FACTORY_REGISTER(AudioResampler, FF, kName)
 
-class AudioResamplerFFPrivate : public AudioResamplerPrivate
+class Q_DECL_HIDDEN AudioResamplerFFPrivate : public AudioResamplerPrivate
 {
 public:
 

@@ -440,7 +440,7 @@ void AVPlayer::setPriority(const QVector<VideoDecoderId> &ids)
 
 #ifndef ASYNC_DECODER_OPEN
 
-    class ChangeDecoderTask : public QRunnable
+    class Q_DECL_HIDDEN ChangeDecoderTask : public QRunnable
     {
         AVPlayer* player;
 
@@ -463,7 +463,7 @@ void AVPlayer::setPriority(const QVector<VideoDecoderId> &ids)
 
     // maybe better experience
 
-    class NewDecoderTask : public QRunnable
+    class Q_DECL_HIDDEN NewDecoderTask : public QRunnable
     {
         AVPlayer* player;
 
@@ -519,7 +519,7 @@ void AVPlayer::setPriority(const QVector<VideoDecoderId> &ids)
                 return;
             }
 
-            class ApplyNewDecoderTask : public QRunnable 
+            class Q_DECL_HIDDEN ApplyNewDecoderTask : public QRunnable 
             {
                 AVPlayer*     player;
                 VideoDecoder* dec;
@@ -1622,7 +1622,7 @@ bool AVPlayer::load()
         return d->loaded;
     }
 
-    class LoadWorker : public QRunnable
+    class Q_DECL_HIDDEN LoadWorker : public QRunnable
     {
     public:
 

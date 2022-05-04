@@ -35,7 +35,7 @@
 
 using namespace QtAV;
 
-class SubtitleObserver : public QObject
+class Q_DECL_HIDDEN SubtitleObserver : public QObject
 {
     Q_OBJECT
 

@@ -112,7 +112,7 @@ void VideoFrame::copyPlane(quint8 *dst, size_t dst_stride, const quint8 *src, si
     }
 }
 
-class VideoFramePrivate : public FramePrivate
+class Q_DECL_HIDDEN VideoFramePrivate : public FramePrivate
 {
     Q_DISABLE_COPY(VideoFramePrivate)
 public:

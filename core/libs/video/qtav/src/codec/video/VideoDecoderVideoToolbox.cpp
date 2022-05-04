@@ -75,7 +75,7 @@ class VideoDecoderVideoToolboxPrivate;
 
 // qt4 moc can not correctly process final here
 
-class VideoDecoderVideoToolbox : public VideoDecoderFFmpegHW
+class Q_DECL_HIDDEN VideoDecoderVideoToolbox : public VideoDecoderFFmpegHW
 {
     Q_OBJECT
     DPTR_DECLARE_PRIVATE(VideoDecoderVideoToolbox)
@@ -132,7 +132,7 @@ extern VideoDecoderId VideoDecoderId_VideoToolbox;
 
 FACTORY_REGISTER(VideoDecoder, VideoToolbox, "VideoToolbox")
 
-class VideoDecoderVideoToolboxPrivate final : public VideoDecoderFFmpegHWPrivate
+class Q_DECL_HIDDEN VideoDecoderVideoToolboxPrivate final : public VideoDecoderFFmpegHWPrivate
 {
 public:
 

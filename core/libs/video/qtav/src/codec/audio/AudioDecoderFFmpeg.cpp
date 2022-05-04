@@ -39,7 +39,7 @@ namespace QtAV
 
 class AudioDecoderFFmpegPrivate;
 
-class AudioDecoderFFmpeg : public AudioDecoder
+class Q_DECL_HIDDEN AudioDecoderFFmpeg : public AudioDecoder
 {
     Q_OBJECT
     Q_DISABLE_COPY(AudioDecoderFFmpeg)
@@ -76,7 +76,7 @@ AudioDecoderId AudioDecoderId_FFmpeg = mkid::id32base36_6<'F','F','m','p','e','g
 
 FACTORY_REGISTER(AudioDecoder, FFmpeg, "FFmpeg")
 
-class AudioDecoderFFmpegPrivate final: public AudioDecoderPrivate
+class Q_DECL_HIDDEN AudioDecoderFFmpegPrivate final: public AudioDecoderPrivate
 {
 public:
 

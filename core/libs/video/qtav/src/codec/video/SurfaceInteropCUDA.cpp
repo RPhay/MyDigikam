@@ -331,7 +331,8 @@ namespace QtAV
 
 namespace cuda
 {
-class EGL
+    
+class Q_DECL_HIDDEN EGL
 {
 public:
 

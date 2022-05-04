@@ -102,7 +102,7 @@ int fourccFromDXGI(DXGI_FORMAT fmt)
 
 class VideoDecoderD3D11Private;
 
-class VideoDecoderD3D11 : public VideoDecoderD3D
+class Q_DECL_HIDDEN VideoDecoderD3D11 : public VideoDecoderD3D
 {
     DPTR_DECLARE_PRIVATE(VideoDecoderD3D11)
 
@@ -155,7 +155,7 @@ private:
     ComPtr<ID3D11VideoDecoderOutputView> view;
 };
 
-class VideoDecoderD3D11Private final : public VideoDecoderD3DPrivate
+class Q_DECL_HIDDEN VideoDecoderD3D11Private final : public VideoDecoderD3DPrivate
 {
 public:
 

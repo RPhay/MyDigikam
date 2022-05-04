@@ -30,7 +30,7 @@
 namespace QtAV
 {
 
-class ConvolutionShaderPrivate : public VideoShaderPrivate
+class Q_DECL_HIDDEN ConvolutionShaderPrivate : public VideoShaderPrivate
 {
 public:
 

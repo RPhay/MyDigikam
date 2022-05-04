@@ -41,7 +41,7 @@ namespace QtAV
 
 // TODO: is QOpenGLWidgetPaintDevice required?
 
-class QOpenGLWidgetPaintDevice : public QOpenGLPaintDevice
+class Q_DECL_HIDDEN QOpenGLWidgetPaintDevice : public QOpenGLPaintDevice
 {
 public:
 

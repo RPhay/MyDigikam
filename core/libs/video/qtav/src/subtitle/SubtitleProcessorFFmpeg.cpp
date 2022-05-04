@@ -39,7 +39,7 @@
 namespace QtAV
 {
 
-class SubtitleProcessorFFmpeg final : public SubtitleProcessor
+class Q_DECL_HIDDEN SubtitleProcessorFFmpeg final : public SubtitleProcessor
 {
 public:
 

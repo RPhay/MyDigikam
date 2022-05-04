@@ -69,7 +69,7 @@ static const char kName[]              = "WinRT";
 
 class WinRTIOPrivate;
 
-class WinRTIO : public MediaIO
+class Q_DECL_HIDDEN WinRTIO : public MediaIO
 {
     DPTR_DECLARE_PRIVATE(WinRTIO)
 
@@ -124,7 +124,7 @@ typedef WinRTIO MediaIOWinRT;
 
 FACTORY_REGISTER(MediaIO, WinRT, kName)
 
-class WinRTIOPrivate : public MediaIOPrivate
+class Q_DECL_HIDDEN WinRTIOPrivate : public MediaIOPrivate
 {
 public:
 

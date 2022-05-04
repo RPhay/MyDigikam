@@ -91,7 +91,7 @@ MS_GUID(IID_IDirectXVideoAccelerationService, 0xfc51a550, 0xd5e7, 0x11d9, 0xaf,0
 
 class VideoDecoderDXVAPrivate;
 
-class VideoDecoderDXVA : public VideoDecoderD3D
+class Q_DECL_HIDDEN VideoDecoderDXVA : public VideoDecoderD3D
 {
     DPTR_DECLARE_PRIVATE(VideoDecoderDXVA)
 
@@ -138,7 +138,7 @@ private:
 
 // https://technet.microsoft.com/zh-cn/aa965266(v=vs.98).aspx
 
-class VideoDecoderDXVAPrivate final : public VideoDecoderD3DPrivate
+class Q_DECL_HIDDEN VideoDecoderDXVAPrivate final : public VideoDecoderD3DPrivate
 {
 public:
 
@@ -276,7 +276,7 @@ VideoFrame VideoDecoderDXVA::frame()
         return f;
     }
 
-    class ScopedD3DLock
+    class Q_DECL_HIDDEN ScopedD3DLock
     {
         IDirect3DSurface9 *mpD3D;
 

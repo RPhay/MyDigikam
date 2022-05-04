@@ -35,7 +35,7 @@ namespace QtAV
 
 static const char kName[] = "null";
 
-class AudioOutputNull : public AudioOutputBackend
+class Q_DECL_HIDDEN AudioOutputNull : public AudioOutputBackend
 {
 public:
 

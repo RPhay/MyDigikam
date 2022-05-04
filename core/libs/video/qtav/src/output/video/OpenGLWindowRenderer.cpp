@@ -38,7 +38,7 @@ namespace QtAV
 
 FACTORY_REGISTER(VideoRenderer, OpenGLWindow, "OpenGLWindow")
 
-class OpenGLWindowRendererPrivate : public OpenGLRendererBasePrivate
+class Q_DECL_HIDDEN OpenGLWindowRendererPrivate : public OpenGLRendererBasePrivate
 {
 public:
 

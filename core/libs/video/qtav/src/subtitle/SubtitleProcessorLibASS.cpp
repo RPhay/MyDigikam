@@ -55,7 +55,7 @@ namespace QtAV
 
 void RenderASS(QImage *image, const SubImage &img, int dstX, int dstY);
 
-class SubtitleProcessorLibASS final : public SubtitleProcessor
+class Q_DECL_HIDDEN SubtitleProcessorLibASS final : public SubtitleProcessor
                                     , protected ass::api
 {
 public:
@@ -912,7 +912,7 @@ void SubtitleProcessorLibASS::updateFontCache()
 
 void SubtitleProcessorLibASS::updateFontCacheAsync()
 {
-    class FontCacheUpdater : public QThread
+    class Q_DECL_HIDDEN FontCacheUpdater : public QThread
     {
         SubtitleProcessorLibASS* sp;
 

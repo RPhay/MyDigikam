@@ -39,7 +39,7 @@
 namespace QtAV
 {
 
-class AudioThreadPrivate : public AVThreadPrivate
+class Q_DECL_HIDDEN AudioThreadPrivate : public AVThreadPrivate
 {
 public:
     void init() {

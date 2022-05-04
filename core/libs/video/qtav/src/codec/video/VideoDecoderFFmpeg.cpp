@@ -45,7 +45,7 @@ namespace QtAV
 
 class VideoDecoderFFmpegPrivate;
 
-class VideoDecoderFFmpeg : public VideoDecoderFFmpegBase
+class Q_DECL_HIDDEN VideoDecoderFFmpeg : public VideoDecoderFFmpegBase
 {
     Q_OBJECT
     DPTR_DECLARE_PRIVATE(VideoDecoderFFmpeg)
@@ -254,8 +254,7 @@ namespace
     } sInit_FFmpegHWA;
 }
 
-class VideoDecoderFFmpegPrivate final
-    : public VideoDecoderFFmpegBasePrivate
+class Q_DECL_HIDDEN VideoDecoderFFmpegPrivate final : public VideoDecoderFFmpegBasePrivate
 {
 public:
 

@@ -47,8 +47,8 @@ namespace QtAV
 
 static const char kName[] = "XAudio2";
 
-class AudioOutputXAudio2 final : public AudioOutputBackend,
-                                        public IXAudio2VoiceCallback
+class Q_DECL_HIDDEN AudioOutputXAudio2 final : public AudioOutputBackend,
+                                               public IXAudio2VoiceCallback
 {
 public:
 

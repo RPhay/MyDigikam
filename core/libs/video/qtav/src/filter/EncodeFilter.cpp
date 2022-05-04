@@ -43,7 +43,7 @@
 namespace QtAV
 {
 
-class AudioEncodeFilterPrivate final : public AudioFilterPrivate
+class Q_DECL_HIDDEN AudioEncodeFilterPrivate final : public AudioFilterPrivate
 {
 public:
 
@@ -299,7 +299,7 @@ void AudioEncodeFilter::encode(const AudioFrame& frame)
     }
 }
 
-class VideoEncodeFilterPrivate final : public VideoFilterPrivate
+class Q_DECL_HIDDEN VideoEncodeFilterPrivate final : public VideoFilterPrivate
 {
 public:
 

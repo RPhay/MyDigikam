@@ -124,7 +124,7 @@ qint64 AudioFormat::channelLayoutToFFmpeg(AudioFormat::ChannelLayout cl)
     return 0;
 }
 
-class AudioFormatPrivate : public QSharedData
+class Q_DECL_HIDDEN AudioFormatPrivate : public QSharedData
 {
 public:
 
@@ -538,7 +538,7 @@ QDebug operator<<(QDebug dbg, QtAV::AudioFormat::ChannelLayout channelLayout)
 
 namespace
 {
-    class AudioFormatPrivateRegisterMetaTypes
+    class Q_DECL_HIDDEN AudioFormatPrivateRegisterMetaTypes
     {
     public:
 

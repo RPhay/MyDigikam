@@ -57,7 +57,7 @@ namespace QtAV
 
 static const char kName[] = "OpenAL";
 
-class AudioOutputOpenAL final : public AudioOutputBackend
+class Q_DECL_HIDDEN AudioOutputOpenAL final : public AudioOutputBackend
 {
 public:
 

@@ -172,7 +172,7 @@ static QMatrix4x4 ColorRangeRGB(ColorRange from, ColorRange to)
     return QMatrix4x4();
 }
 
-class ColorTransform::Private : public QSharedData
+class Q_DECL_HIDDEN ColorTransform::Private : public QSharedData
 {
 public:
 

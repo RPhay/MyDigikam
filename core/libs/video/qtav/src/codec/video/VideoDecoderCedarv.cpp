@@ -53,7 +53,8 @@ namespace QtAV
 {
 
 class VideoDecoderCedarvPrivate;
-class VideoDecoderCedarv : public VideoDecoder
+
+class Q_DECL_HIDDEN VideoDecoderCedarv : public VideoDecoder
 {
     Q_OBJECT
     DPTR_DECLARE_PRIVATE(VideoDecoderCedarv)
@@ -270,7 +271,7 @@ enum AVPixelFormat pixel_format_from_cedarv(cedarv_pixel_format_e cpf)
     return QTAV_PIX_FMT_C(NONE);
 }
 
-class VideoDecoderCedarvPrivate final: public VideoDecoderPrivate
+class Q_DECL_HIDDEN VideoDecoderCedarvPrivate final : public VideoDecoderPrivate
 {
 public:
     VideoDecoderCedarvPrivate()

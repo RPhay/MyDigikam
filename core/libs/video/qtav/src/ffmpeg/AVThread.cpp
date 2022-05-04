@@ -176,7 +176,7 @@ void AVThread::scheduleTask(QRunnable *task)
 
 void AVThread::requestSeek()
 {
-    class SeekPTS : public QRunnable
+    class Q_DECL_HIDDEN SeekPTS : public QRunnable
     {
         AVThread *self;
 
@@ -198,10 +198,10 @@ void AVThread::requestSeek()
 
 void AVThread::scheduleFrameDrop(bool value)
 {
-    class FrameDropTask : public QRunnable
+    class Q_DECL_HIDDEN FrameDropTask : public QRunnable
     {
-        AVDecoder *decoder;
-        bool drop;
+        AVDecoder* decoder;
+        bool       drop;
 
     public:
 

@@ -43,7 +43,7 @@
 namespace QtAV
 {
 
-class VideoOutputPrivate : public VideoRendererPrivate
+class Q_DECL_HIDDEN VideoOutputPrivate : public VideoRendererPrivate
 {
 public:
 

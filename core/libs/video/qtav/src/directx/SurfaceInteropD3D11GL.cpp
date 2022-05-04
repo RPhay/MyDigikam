@@ -45,7 +45,7 @@ namespace QtAV
 namespace d3d11
 {
 
-class GLInteropResource final : public InteropResource
+class Q_DECL_HIDDEN GLInteropResource final : public InteropResource
 {
 public:
 

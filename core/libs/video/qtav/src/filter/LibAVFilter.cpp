@@ -62,7 +62,7 @@ namespace QtAV
 
 // local types can not be used as template parameters
 
-class AVFrameHolder
+class Q_DECL_HIDDEN AVFrameHolder
 {
 public:
 
@@ -128,7 +128,7 @@ typedef QSharedPointer<AVFrameHolder> AVFrameHolderRef;
 #endif // QTAV_HAVE(AVFILTER)
 
 
-class LibAVFilter::Private
+class Q_DECL_HIDDEN LibAVFilter::Private
 {
 public:
 
@@ -476,7 +476,7 @@ QStringList LibAVFilter::registeredFilters(int type)
     return filters;
 }
 
-class LibAVFilterVideoPrivate : public VideoFilterPrivate
+class Q_DECL_HIDDEN LibAVFilterVideoPrivate : public VideoFilterPrivate
 {
 public:
 
@@ -578,7 +578,7 @@ QString LibAVFilterVideo::sourceArguments() const
     ;
 }
 
-class LibAVFilterAudioPrivate : public AudioFilterPrivate
+class Q_DECL_HIDDEN LibAVFilterAudioPrivate : public AudioFilterPrivate
 {
 public:
 

@@ -49,7 +49,7 @@ static bool app_is_dieing = false;
 
 // TODO: cancel if qapp is quit
 
-class CaptureTask : public QRunnable
+class Q_DECL_HIDDEN CaptureTask : public QRunnable
 {
 public:
 

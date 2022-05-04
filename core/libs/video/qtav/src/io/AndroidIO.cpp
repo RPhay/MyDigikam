@@ -50,7 +50,7 @@ static const char kName[]                = "Android";
 
 class AndroidIOPrivate;
 
-class AndroidIO : public MediaIO
+class Q_DECL_HIDDEN AndroidIO : public MediaIO
 {
     DPTR_DECLARE_PRIVATE(AndroidIO)
 

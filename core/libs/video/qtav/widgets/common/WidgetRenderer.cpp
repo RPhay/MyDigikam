@@ -39,7 +39,7 @@
 namespace QtAV
 {
 
-class WidgetRendererPrivate : public QPainterRendererPrivate
+class Q_DECL_HIDDEN WidgetRendererPrivate : public QPainterRendererPrivate
 {
 public:
 

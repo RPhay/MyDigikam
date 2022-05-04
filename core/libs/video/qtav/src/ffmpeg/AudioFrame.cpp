@@ -46,7 +46,7 @@ static const struct RegisterMetaTypes
 
 } // namespace
 
-class AudioFramePrivate : public FramePrivate
+class Q_DECL_HIDDEN AudioFramePrivate : public FramePrivate
 {
 public:
 

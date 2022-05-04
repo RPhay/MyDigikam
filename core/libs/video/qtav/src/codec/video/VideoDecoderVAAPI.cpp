@@ -81,7 +81,7 @@ bool isEGL()
 
 class VideoDecoderVAAPIPrivate;
 
-class VideoDecoderVAAPI : public VideoDecoderFFmpegHW
+class Q_DECL_HIDDEN VideoDecoderVAAPI : public VideoDecoderFFmpegHW
 {
     Q_OBJECT
     DPTR_DECLARE_PRIVATE(VideoDecoderVAAPI)
@@ -246,12 +246,12 @@ VideoFormat::PixelFormat pixelFormatFromVA(uint32_t fourcc)
     return VideoFormat::Format_Invalid;
 }
 
-class VideoDecoderVAAPIPrivate final : public VideoDecoderFFmpegHWPrivate,
-                                       protected VAAPI_DRM,
-                                       protected VAAPI_X11
+class Q_DECL_HIDDEN VideoDecoderVAAPIPrivate final : public VideoDecoderFFmpegHWPrivate,
+                                                     protected VAAPI_DRM,
+                                                     protected VAAPI_X11
 #ifndef QT_NO_OPENGL
 
-                                     , protected VAAPI_GLX
+                                                   , protected VAAPI_GLX
 
 #endif //QT_NO_OPENGL
 

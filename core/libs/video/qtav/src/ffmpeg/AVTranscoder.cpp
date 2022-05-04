@@ -35,7 +35,7 @@
 namespace QtAV
 {
 
-class AVTranscoder::Private
+class Q_DECL_HIDDEN AVTranscoder::Private
 {
 public:
 

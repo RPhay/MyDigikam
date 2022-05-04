@@ -36,7 +36,7 @@
 namespace QtAV
 {
 
-class OpenGLWidgetRendererPrivate : public OpenGLRendererBasePrivate
+class Q_DECL_HIDDEN OpenGLWidgetRendererPrivate : public OpenGLRendererBasePrivate
 {
 public:
 

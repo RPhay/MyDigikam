@@ -54,7 +54,7 @@ namespace QtAV
 
 class VideoDecoderMediaCodecPrivate;
 
-class VideoDecoderMediaCodec final : public VideoDecoderFFmpegHW
+class Q_DECL_HIDDEN VideoDecoderMediaCodec final : public VideoDecoderFFmpegHW
 {
     DPTR_DECLARE_PRIVATE(VideoDecoderMediaCodec)
 
@@ -84,7 +84,7 @@ extern VideoDecoderId VideoDecoderId_MediaCodec;
 
 FACTORY_REGISTER(VideoDecoder, MediaCodec, "MediaCodec")
 
-class VideoDecoderMediaCodecPrivate final : public VideoDecoderFFmpegHWPrivate
+class Q_DECL_HIDDEN VideoDecoderMediaCodecPrivate final : public VideoDecoderFFmpegHWPrivate
 {
 public:
 
@@ -233,7 +233,7 @@ VideoFrame VideoDecoderMediaCodec::frame()
 
 #   ifdef MEDIACODEC_TEXTURE
 
-    class MediaCodecTextureInterop : public VideoSurfaceInterop
+    class Q_DECL_HIDDEN MediaCodecTextureInterop : public VideoSurfaceInterop
     {
         const MdkMediaCodecTextureAPI* api_ = nullptr;
         MdkMediaCodecTextureAPI::Texture *tex_ = nullptr;

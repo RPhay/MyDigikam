@@ -59,7 +59,7 @@ typedef float GLfloat;
 namespace QtAV
 {
 
-class GraphicsItemRendererPrivate : public QPainterRendererPrivate
+class Q_DECL_HIDDEN GraphicsItemRendererPrivate : public QPainterRendererPrivate
 {
 public:
 

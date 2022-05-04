@@ -31,7 +31,7 @@
 namespace QtAV
 {
 
-class ShaderManager::Private
+class Q_DECL_HIDDEN ShaderManager::Private
 {
 public:
 

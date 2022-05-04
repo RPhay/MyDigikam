@@ -37,7 +37,7 @@ ImageConverterId ImageConverterId_FF = mkid::id32base36_6<'F', 'F', 'm', 'p', 'e
 
 FACTORY_REGISTER(ImageConverter, FF, "FFmpeg")
 
-class ImageConverterFFPrivate final : public ImageConverterPrivate
+class Q_DECL_HIDDEN ImageConverterFFPrivate final : public ImageConverterPrivate
 {
 public:
 

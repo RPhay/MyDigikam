@@ -46,9 +46,9 @@
 namespace QtAV
 {
 
-class ExtractThread : public QThread
+class Q_DECL_HIDDEN ExtractThread : public QThread
 {
-Q_OBJECT
+    Q_OBJECT
 
 public:
 
@@ -114,7 +114,7 @@ public:
 
     void scheduleStop()
     {
-        class StopTask : public QRunnable
+        class Q_DECL_HIDDEN StopTask : public QRunnable
         {
         public:
 
@@ -169,7 +169,7 @@ private:
 
 const int kDefaultPrecision = 500;
 
-class VideoFrameExtractorPrivate : public DPtrPrivate<VideoFrameExtractor>
+class Q_DECL_HIDDEN VideoFrameExtractorPrivate : public DPtrPrivate<VideoFrameExtractor>
 {
 public:
 
@@ -577,7 +577,7 @@ public:
 
     void safeReleaseResource()
     {
-        class Cleaner : public QRunnable
+        class Q_DECL_HIDDEN Cleaner : public QRunnable
         {
             VideoFrameExtractorPrivate* p;
 
@@ -744,7 +744,7 @@ void VideoFrameExtractor::extract()
         return;
     }
 
-    class ExtractTask : public QRunnable
+    class Q_DECL_HIDDEN ExtractTask : public QRunnable
     {
     public:
 

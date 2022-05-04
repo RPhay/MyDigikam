@@ -42,7 +42,7 @@
 
 namespace QtAV
 {
-class GLSLFilterPrivate : public VideoFilterPrivate
+class Q_DECL_HIDDEN GLSLFilterPrivate : public VideoFilterPrivate
 {
 public:
 
@@ -165,7 +165,7 @@ void GLSLFilter::process(Statistics *statistics, VideoFrame *frame)
 
     // set interop;
 
-    class GLTextureInterop : public VideoSurfaceInterop
+    class Q_DECL_HIDDEN GLTextureInterop : public VideoSurfaceInterop
     {
         GLuint tex;
 

@@ -64,8 +64,8 @@ inline int scaleEQValue(int val, int min, int max)
 
 class XVRendererPrivate;
 
-class XVRenderer : public QWidget,
-                   public VideoRenderer
+class Q_DECL_HIDDEN XVRenderer : public QWidget,
+                                 public VideoRenderer
 {
     Q_OBJECT
     DPTR_DECLARE_PRIVATE(XVRenderer)
@@ -204,7 +204,7 @@ int xvFormatInPort(Display* disp, XvPortID port, VideoFormat::PixelFormat fmt)
     return 0;
 }
 
-class XVRendererPrivate : public VideoRendererPrivate
+class Q_DECL_HIDDEN XVRendererPrivate : public VideoRendererPrivate
 {
 public:
 

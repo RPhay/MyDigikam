@@ -46,7 +46,7 @@ namespace QtAV
 
 static const char kFileScheme[] = "file:";
 
-class AVDemuxer::InterruptHandler : public AVIOInterruptCB
+class Q_DECL_HIDDEN AVDemuxer::InterruptHandler : public AVIOInterruptCB
 {
 public:
 
@@ -288,7 +288,7 @@ private:
     QElapsedTimer mTimer;
 };
 
-class AVDemuxer::Private
+class Q_DECL_HIDDEN AVDemuxer::Private
 {
 public:
 
@@ -460,7 +460,7 @@ AVDemuxer::AVDemuxer(QObject *parent)
 {
     // TODO: xxx_register_all already use static var
 
-    class AVInitializer
+    class Q_DECL_HIDDEN AVInitializer
     {
     public:
 

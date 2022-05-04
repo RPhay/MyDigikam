@@ -71,7 +71,7 @@ static const unsigned int kMaxDecodeSurfaces = 20;
 
 class VideoDecoderCUDAPrivate;
 
-class VideoDecoderCUDA : public VideoDecoder
+class Q_DECL_HIDDEN VideoDecoderCUDA : public VideoDecoder
 {
     Q_OBJECT
     DPTR_DECLARE_PRIVATE(VideoDecoderCUDA)
@@ -181,8 +181,8 @@ static AVCodecID mapCodecToFFmpeg(cudaVideoCodec cudaCodec)
     return QTAV_CODEC_ID(NONE);
 }
 
-class VideoDecoderCUDAPrivate final : public VideoDecoderPrivate
-                                    , protected cuda_api
+class Q_DECL_HIDDEN VideoDecoderCUDAPrivate final : public VideoDecoderPrivate
+                                                  , protected cuda_api
 {
 public:
 

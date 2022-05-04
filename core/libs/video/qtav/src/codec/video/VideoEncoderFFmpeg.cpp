@@ -82,7 +82,7 @@ AVHWDeviceType fromHWAName(const char* name)
 
 class VideoEncoderFFmpegPrivate;
 
-class VideoEncoderFFmpeg : public VideoEncoder
+class Q_DECL_HIDDEN VideoEncoderFFmpeg : public VideoEncoder
 {
     Q_OBJECT
     DPTR_DECLARE_PRIVATE(VideoEncoderFFmpeg)
@@ -106,7 +106,7 @@ static const VideoEncoderId VideoEncoderId_FFmpeg = mkid::id32base36_6<'F', 'F',
 
 FACTORY_REGISTER(VideoEncoder, FFmpeg, "FFmpeg")
 
-class VideoEncoderFFmpegPrivate final: public VideoEncoderPrivate
+class Q_DECL_HIDDEN VideoEncoderFFmpegPrivate final : public VideoEncoderPrivate
 {
 public:
 

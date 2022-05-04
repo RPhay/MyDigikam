@@ -70,8 +70,8 @@ namespace QtAV
 
 class GDIRendererPrivate;
 
-class GDIRenderer : public QWidget,
-                    public VideoRenderer
+class Q_DECL_HIDDEN GDIRenderer : public QWidget,
+                                  public VideoRenderer
 {
     Q_OBJECT
     DPTR_DECLARE_PRIVATE(GDIRenderer)
@@ -141,7 +141,7 @@ VideoRendererId GDIRenderer::id() const
     return VideoRendererId_GDI;
 }
 
-class GDIRendererPrivate : public VideoRendererPrivate
+class Q_DECL_HIDDEN GDIRendererPrivate : public VideoRendererPrivate
 {
 public:
 

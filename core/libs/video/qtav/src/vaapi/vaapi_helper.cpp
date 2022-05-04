@@ -216,7 +216,7 @@ VAImageFormat va_new_image(VADisplay display, const unsigned int *fourccs, VAIma
 
 // TODO: use macro template. DEFINE_DL_SYMB(R, NAME, ARG....);
 
-class X11_API : protected dll_helper
+class Q_DECL_HIDDEN X11_API : protected dll_helper
 {
 public:
 
@@ -259,7 +259,7 @@ private:
     XInitThreads_t*  fp_XInitThreads;
 };
 
-class NativeDisplayBase
+class Q_DECL_HIDDEN NativeDisplayBase
 {
     Q_DISABLE_COPY(NativeDisplayBase)
 
@@ -306,9 +306,9 @@ protected:
     bool     m_selfCreated;
 };
 
-class NativeDisplayX11 final : public NativeDisplayBase,
-                               protected VAAPI_X11,
-                               protected X11_API
+class Q_DECL_HIDDEN NativeDisplayX11 final : public NativeDisplayBase,
+                                             protected VAAPI_X11,
+                                             protected X11_API
 {
 public:
 
@@ -363,9 +363,9 @@ public:
 
 #ifndef QT_NO_OPENGL
 
-class NativeDisplayGLX final : public NativeDisplayBase,
-                               protected VAAPI_GLX,
-                               protected X11_API
+class Q_DECL_HIDDEN NativeDisplayGLX final : public NativeDisplayBase,
+                                             protected VAAPI_GLX,
+                                             protected X11_API
 {
 public:
 
@@ -420,8 +420,8 @@ public:
 
 #endif // QT_NO_OPENGL
 
-class NativeDisplayDrm final : public NativeDisplayBase,
-                               protected VAAPI_DRM
+class Q_DECL_HIDDEN NativeDisplayDrm final : public NativeDisplayBase,
+                                             protected VAAPI_DRM
 {
 public:
 
@@ -489,7 +489,7 @@ public:
     }
 };
 
-class NativeDisplayVADisplay final : public NativeDisplayBase
+class Q_DECL_HIDDEN NativeDisplayVADisplay final : public NativeDisplayBase
 {
 public:
 

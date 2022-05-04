@@ -48,7 +48,7 @@ namespace QtAV
 
 static const char kName[] = "AudioToolbox";
 
-class AudioOutputAudioToolbox final : public AudioOutputBackend
+class Q_DECL_HIDDEN AudioOutputAudioToolbox final : public AudioOutputBackend
 {
 public:
 

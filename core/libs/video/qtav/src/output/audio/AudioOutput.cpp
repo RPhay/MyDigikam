@@ -136,7 +136,7 @@ scale_samples_func get_scaler(AudioFormat::SampleFormat fmt, qreal vol, int* vol
     }
 }
 
-class AudioOutputPrivate : public AVOutputPrivate
+class Q_DECL_HIDDEN AudioOutputPrivate : public AVOutputPrivate
 {
 public:
 

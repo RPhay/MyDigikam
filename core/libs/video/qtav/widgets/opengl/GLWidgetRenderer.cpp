@@ -102,11 +102,11 @@ static const char kVertexShader[] =
     "  v_TexCoords = a_TexCoords; \n"
     "}\n";
 
-class GLWidgetRendererPrivate : public VideoRendererPrivate
+class Q_DECL_HIDDEN GLWidgetRendererPrivate : public VideoRendererPrivate
 
 #if QTAV_HAVE(QGLFUNCTIONS)
 
-                              , public QGLFunctions
+                                            , public QGLFunctions
 
 #endif
 
@@ -282,7 +282,7 @@ public:
             mpv_matrix.rotate(orientation, 0, 0, 1);    // Z axis
     }
 
-    class VideoMaterialType
+    class Q_DECL_HIDDEN VideoMaterialType
     {
     };
 

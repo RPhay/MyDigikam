@@ -67,7 +67,7 @@ struct SLDataFormat_PCM_EX : SLDataFormat_PCM
 
 static const char kName[] = "OpenSL";
 
-class AudioOutputOpenSL final : public AudioOutputBackend
+class Q_DECL_HIDDEN AudioOutputOpenSL final : public AudioOutputBackend
 {
 public:
 

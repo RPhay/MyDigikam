@@ -51,7 +51,7 @@ namespace QtAV
 
 static const char kName[] = "Pulse";
 
-class AudioOutputPulse final : public AudioOutputBackend
+class Q_DECL_HIDDEN AudioOutputPulse final : public AudioOutputBackend
 {
 public:
 
@@ -168,7 +168,7 @@ static pa_sample_format sampleFormatToPulse(AudioFormat::SampleFormat format)
     return PA_SAMPLE_INVALID;
 }
 
-class ScopedPALocker
+class Q_DECL_HIDDEN ScopedPALocker
 {
     pa_threaded_mainloop* ml;
 

@@ -63,7 +63,7 @@ namespace QtAV
 
 const int kMaxSubtitleSize = 10 * 1024 * 1024; // TODO: remove because we find the matched extenstions
 
-class Subtitle::Private
+class Q_DECL_HIDDEN Subtitle::Private
 {
 
 public:
@@ -621,7 +621,7 @@ void Subtitle::loadAsync()
     if (fileName().isEmpty())
         return;
 
-    class Loader : public QRunnable
+    class Q_DECL_HIDDEN Loader : public QRunnable
     {
     public:
 

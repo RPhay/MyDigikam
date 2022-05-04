@@ -881,7 +881,7 @@ void VideoRenderer::updateUi()
         // UpdateRequest only sync backing store but do not shedule repainting. UpdateLater does
         // Copy from qwidget_p.h. QWidget::event() will convert UpdateLater to QUpdateLaterEvent and get it's region()
 
-        class QUpdateLaterEvent : public QEvent
+        class Q_DECL_HIDDEN QUpdateLaterEvent : public QEvent
         {
         public:
 

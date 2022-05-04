@@ -36,7 +36,7 @@
 
 using namespace QtAV;
 
-class VideoFrameObserver : public QObject
+class Q_DECL_HIDDEN VideoFrameObserver : public QObject
 {
     Q_OBJECT
 

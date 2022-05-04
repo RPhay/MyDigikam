@@ -48,7 +48,7 @@ namespace QtAV
 
 // FIXME: why crash if inherits both QObject and DPtrPrivate?
 
-class OpenGLVideoPrivate : public DPtrPrivate<OpenGLVideo>
+class Q_DECL_HIDDEN OpenGLVideoPrivate : public DPtrPrivate<OpenGLVideo>
 {
 public:
 

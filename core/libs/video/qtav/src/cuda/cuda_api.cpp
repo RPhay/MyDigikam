@@ -92,7 +92,7 @@ typedef CUDA_MEMCPY2D CUDA_MEMCPY2D_old;
 
 #endif
 
-class cuda_api::context
+class Q_DECL_HIDDEN cuda_api::context
 {
 public:
 
