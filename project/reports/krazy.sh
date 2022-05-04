@@ -82,6 +82,7 @@ krazy2all --export xml \
           --priority all \
           --verbose \
           --exclude qclasses \
+          --exclude-types qml,python,qdoc,perl \
           --topdir ../../ \
           --config ../../.krazy \
           --outfile ./report.krazy.xml \
