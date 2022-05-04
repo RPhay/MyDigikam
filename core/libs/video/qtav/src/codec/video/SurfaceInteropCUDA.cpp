@@ -72,8 +72,8 @@ InteropResource::~InteropResource()
         CUDA_ENSURE(cuCtxDestroy(ctx));
 }
 
-void* InteropResource::mapToHost(const VideoFormat &format, void *handle, int picIndex,
-                                 const CUVIDPROCPARAMS &param, int width, int height, int coded_height)
+void* InteropResource::mapToHost(const VideoFormat& format, void *handle, int picIndex,
+                                 const CUVIDPROCPARAMS& param, int width, int height, int coded_height)
 {
     AutoCtxLock locker(reinterpret_cast<cuda_api*>(this), lock);
     Q_UNUSED(locker);
@@ -85,7 +85,7 @@ void* InteropResource::mapToHost(const VideoFormat &format, void *handle, int pi
     CUVIDAutoUnmapper unmapper(this, dec, devptr);
     Q_UNUSED(unmapper);
     uchar* host_data             = nullptr;
-    const unsigned int host_size = pitch * coded_height * 3/2;
+    const unsigned int host_size = pitch * coded_height * 3 / 2;
     CUDA_ENSURE(cuMemAllocHost((void**)&host_data, host_size), nullptr);
 
     // copy to the memory not allocated by cuda is possible but much slower
@@ -158,7 +158,7 @@ HostInteropResource::~HostInteropResource()
     }
 }
 
-bool HostInteropResource::map(int picIndex, const CUVIDPROCPARAMS &param, GLuint tex, int w, int h, int H, int plane)
+bool HostInteropResource::map(int picIndex, const CUVIDPROCPARAMS& param, GLuint tex, int w, int h, int H, int plane)
 {
     Q_UNUSED(w);
 
@@ -193,12 +193,14 @@ bool HostInteropResource::map(int picIndex, const CUVIDPROCPARAMS &param, GLuint
     GLenum format[2], dtype[2];
     OpenGLHelper::videoFormatToGL(VideoFormat::Format_NV12, iformat, format, dtype);
     DYGL(glBindTexture(GL_TEXTURE_2D, tex));
-    const int chroma = plane != 0;
+    const int chroma = (plane != 0);
 
     // chroma pitch for gl is 1/2 (gl_rg)
     // texture height is not coded height!
 
-    DYGL(glTexSubImage2D(GL_TEXTURE_2D, 0, 0, 0, host_mem.pitch>>chroma, h>>chroma, format[plane], dtype[plane], host_mem.data + chroma*host_mem.pitch*host_mem.height));
+    DYGL(glTexSubImage2D(GL_TEXTURE_2D, 0, 0, 0, host_mem.pitch>>chroma,
+                         h >> chroma, format[plane], dtype[plane],
+                         host_mem.data + chroma*host_mem.pitch*host_mem.height));
 
     //DYGL(glTexImage2D(GL_TEXTURE_2D, 0, iformat[plane], host_mem.pitch>>chroma, h>>chroma, 0, format[plane], dtype[plane], host_mem.data + chroma*host_mem.pitch*host_mem.height));
 
@@ -212,7 +214,7 @@ bool HostInteropResource::unmap(GLuint)
 
 bool HostInteropResource::ensureResource(int pitch, int height)
 {
-    if (host_mem.data && host_mem.pitch == pitch && host_mem.height == height)
+    if (host_mem.data && (host_mem.pitch == pitch) && (host_mem.height == height))
         return true;
 
     if (host_mem.data)
@@ -259,7 +261,7 @@ void SurfaceInteropCUDA::setSurface(int picIndex, const CUVIDPROCPARAMS& param,
     H       = surface_height;
 }
 
-void* SurfaceInteropCUDA::map(SurfaceType type, const VideoFormat &fmt, void *handle, int plane)
+void* SurfaceInteropCUDA::map(SurfaceType type, const VideoFormat& fmt, void* handle, int plane)
 {
     Q_UNUSED(fmt);
 
@@ -331,7 +333,7 @@ namespace QtAV
 
 namespace cuda
 {
-    
+
 class Q_DECL_HIDDEN EGL
 {
 public:
@@ -404,7 +406,8 @@ bool EGLInteropResource::ensureD3DDevice()
 
     if (!dll9)
     {
-        qCWarning(DIGIKAM_QTAV_LOG_WARN).noquote() << QString::asprintf("cuda::EGLInteropResource cannot load d3d9.dll");
+        qCWarning(DIGIKAM_QTAV_LOG_WARN).noquote()
+            << QString::asprintf("cuda::EGLInteropResource cannot load d3d9.dll");
 
         return false;
     }
@@ -415,7 +418,9 @@ bool EGLInteropResource::ensureD3DDevice()
 
     if (!device9)
     {
-        qCWarning(DIGIKAM_QTAV_LOG_WARN).noquote() << QString::asprintf("Failed to create d3d9 device ex, fallback to d3d9 device");
+        qCWarning(DIGIKAM_QTAV_LOG_WARN).noquote()
+            << QString::asprintf("Failed to create d3d9 device ex, fallback to d3d9 device");
+
         device9 = DXHelper::CreateDevice9(dll9, &d3d9, &ai9);
     }
 
@@ -476,7 +481,7 @@ bool EGLInteropResource::ensureD3D9CUDA(int w, int h, int W, int H)
 {
     TexRes &r = res[0];     // 1 NV12 texture
 
-    if (r.w == w && r.h == h && r.W == W && r.H == H && r.cuRes)
+    if ((r.w == w) && (r.h == h) && (r.W == W) && (r.H == H) && r.cuRes)
         return true;
 
     if (share_ctx)
@@ -503,7 +508,9 @@ bool EGLInteropResource::ensureD3D9CUDA(int w, int h, int W, int H)
 
 #endif
 
-        qCDebug(DIGIKAM_QTAV_LOG).noquote() << QString::asprintf("cuda contex on gl thread: %p", ctx);
+        qCDebug(DIGIKAM_QTAV_LOG).noquote()
+            << QString::asprintf("cuda contex on gl thread: %p", ctx);
+
         CUDA_ENSURE(cuCtxPopCurrent(&ctx), false); // TODO: why cuMemcpy2D need this
     }
 
@@ -553,7 +560,7 @@ bool EGLInteropResource::ensureD3D9CUDA(int w, int h, int W, int H)
 
 bool EGLInteropResource::ensureD3D9EGL(int w, int h)
 {
-    if (egl->surface && res[0].w == w && res[0].h == h)
+    if (egl->surface && (res[0].w == w) && (res[0].h == h))
         return true;
 
     releaseEGL();
@@ -563,21 +570,22 @@ bool EGLInteropResource::ensureD3D9EGL(int w, int h)
 
     EGLint cfg_attribs[] =
     {
-        EGL_RED_SIZE, 8,
-        EGL_GREEN_SIZE, 8,
-        EGL_BLUE_SIZE, 8,
-        EGL_ALPHA_SIZE, 8,
+        EGL_RED_SIZE,             8,
+        EGL_GREEN_SIZE,           8,
+        EGL_BLUE_SIZE,            8,
+        EGL_ALPHA_SIZE,           8,
         EGL_BIND_TO_TEXTURE_RGBA, EGL_TRUE, // remove?
-        EGL_SURFACE_TYPE, EGL_PBUFFER_BIT,
+        EGL_SURFACE_TYPE,         EGL_PBUFFER_BIT,
         EGL_NONE
     };
 
-    EGLint nb_cfgs;
+    EGLint    nb_cfgs;
     EGLConfig egl_cfg;
 
     if (!eglChooseConfig(egl->dpy, cfg_attribs, &egl_cfg, 1, &nb_cfgs))
     {
         qCWarning(DIGIKAM_QTAV_LOG_WARN).noquote() << QString::asprintf("Failed to create EGL configuration");
+
         return false;
     }
 
@@ -603,8 +611,8 @@ bool EGLInteropResource::ensureD3D9EGL(int w, int h)
 
     EGLint attribs[] =
     {
-        EGL_WIDTH, w,
-        EGL_HEIGHT, h,
+        EGL_WIDTH,          w,
+        EGL_HEIGHT,         h,
         EGL_TEXTURE_FORMAT, has_alpha ? EGL_TEXTURE_RGBA : EGL_TEXTURE_RGB,
         EGL_TEXTURE_TARGET, EGL_TEXTURE_2D,
         EGL_NONE
@@ -615,12 +623,16 @@ bool EGLInteropResource::ensureD3D9EGL(int w, int h)
     if (!kEGL_ANGLE_d3d_share_handle_client_buffer && kEGL_ANGLE_query_surface_pointer)
     {
         EGL_ENSURE((egl->surface = eglCreatePbufferSurface(egl->dpy, egl_cfg, attribs)) != EGL_NO_SURFACE, false);
-        qCDebug(DIGIKAM_QTAV_LOG).noquote() << QString::asprintf("pbuffer surface: %p", egl->surface);
+
+        qCDebug(DIGIKAM_QTAV_LOG).noquote()
+            << QString::asprintf("pbuffer surface: %p", egl->surface);
+
         PFNEGLQUERYSURFACEPOINTERANGLEPROC eglQuerySurfacePointerANGLE = reinterpret_cast<PFNEGLQUERYSURFACEPOINTERANGLEPROC>(eglGetProcAddress("eglQuerySurfacePointerANGLE"));
 
         if (!eglQuerySurfacePointerANGLE)
         {
-            qCWarning(DIGIKAM_QTAV_LOG_WARN).noquote() << QString::asprintf("EGL_ANGLE_query_surface_pointer is not supported");
+            qCWarning(DIGIKAM_QTAV_LOG_WARN).noquote()
+                << QString::asprintf("EGL_ANGLE_query_surface_pointer is not supported");
 
             return false;
         }
@@ -640,11 +652,12 @@ bool EGLInteropResource::ensureD3D9EGL(int w, int h)
      * d3d9ex or d3d10:
      */
     DX_ENSURE(device9->CreateTexture(w, h, 1,
-                                        D3DUSAGE_RENDERTARGET,
-                                        has_alpha ? D3DFMT_A8R8G8B8 : D3DFMT_X8R8G8B8,
-                                        D3DPOOL_DEFAULT,
-                                        &texture9,
-                                        &share_handle) , false);
+                                     D3DUSAGE_RENDERTARGET,
+                                     has_alpha ? D3DFMT_A8R8G8B8 : D3DFMT_X8R8G8B8,
+                                     D3DPOOL_DEFAULT,
+                                     &texture9,
+                                     &share_handle) , false);
+
     DX_ENSURE(texture9->GetSurfaceLevel(0, &surface9), false);
 
     if (kEGL_ANGLE_d3d_share_handle_client_buffer)
@@ -654,7 +667,9 @@ bool EGLInteropResource::ensureD3D9EGL(int w, int h)
         // d3d9ex or d3d10 is required
 
         EGL_ENSURE((egl->surface = eglCreatePbufferFromClientBuffer(egl->dpy, EGL_D3D_TEXTURE_2D_SHARE_HANDLE_ANGLE, share_handle, egl_cfg, attribs)), false);
-        qCDebug(DIGIKAM_QTAV_LOG).noquote() << QString::asprintf("pbuffer surface from client buffer: %p", egl->surface);
+
+        qCDebug(DIGIKAM_QTAV_LOG).noquote()
+            << QString::asprintf("pbuffer surface from client buffer: %p", egl->surface);
     }
 
     return true;
@@ -701,7 +716,7 @@ bool EGLInteropResource::map(int picIndex, const CUVIDPROCPARAMS &param, GLuint 
     // the whole size or copy size?
 
     cu2d.WidthInBytes  = res[plane].W; // the same value as texture9_nv12
-    cu2d.Height        = H*3/2;
+    cu2d.Height        = H*3 / 2;
 
     if (res[plane].stream)
         CUDA_ENSURE(cuMemcpy2DAsync(&cu2d, res[plane].stream), false);
@@ -737,7 +752,7 @@ bool EGLInteropResource::map(int picIndex, const CUVIDPROCPARAMS &param, GLuint 
     D3DLOCKED_RECT rect_src, rect_dst;
     DX_ENSURE(texture9_nv12->LockRect(0, &rect_src, nullptr, D3DLOCK_READONLY), false);
     DX_ENSURE(surface9_nv12->LockRect(&rect_dst, nullptr, D3DLOCK_DISCARD), false);
-    memcpy(rect_dst.pBits, rect_src.pBits, res[plane].W*H*3/2); // exactly w and h
+    memcpy(rect_dst.pBits, rect_src.pBits, res[plane].W*H*3 / 2); // exactly w and h
     DX_ENSURE(surface9_nv12->UnlockRect(), false);
     DX_ENSURE(texture9_nv12->UnlockRect(0), false);
 
@@ -746,7 +761,7 @@ bool EGLInteropResource::map(int picIndex, const CUVIDPROCPARAMS &param, GLuint 
     //IDirect3DSurface9 *raw_surface = nullptr;
     //DX_ENSURE(texture9_nv12->GetSurfaceLevel(0, &raw_surface), false);
 
-    const RECT src = { 0, 0, (~0-1)&w, (~0-1)&(h*3/2)};
+    const RECT src = { 0, 0, (~0-1)&w, (~0-1)&(h*3 / 2) };
     DX_ENSURE(device9->StretchRect(raw_surface, &src, surface9_nv12, nullptr, D3DTEXF_NONE), false);
 
 #endif
@@ -762,7 +777,8 @@ bool EGLInteropResource::map(IDirect3DSurface9* surface, GLuint tex, int w, int 
     Q_UNUSED(H);
     D3DSURFACE_DESC dxvaDesc;
     surface->GetDesc(&dxvaDesc);
-    const RECT src = { 0, 0, (~0-1)&w, (~0-1)&h}; // StretchRect does not supports odd values
+    const RECT src = { 0, 0, (~0-1)&w, (~0-1)&h }; // StretchRect does not supports odd values
+
     DX_ENSURE(device9->StretchRect(surface, &src, surface9, nullptr, D3DTEXF_NONE), false);
 
     if (query9)
@@ -784,7 +800,10 @@ bool EGLInteropResource::map(IDirect3DSurface9* surface, GLuint tex, int w, int 
 
         // skip at decoder.close()
 
-        while (/*!skip_dx.load() && */(query9->GetData(nullptr, 0, D3DGETDATA_FLUSH) == FALSE) && ++k < 10)
+        while (
+               /*!skip_dx.load() && */
+               (query9->GetData(nullptr, 0, D3DGETDATA_FLUSH) == FALSE) &&
+               (++k < 10))
         {
             Sleep(1);
         }
@@ -932,7 +951,7 @@ bool GLInteropResource::ensureResource(int w, int h, int H, GLuint tex, int plan
 
     TexRes &r = res[plane];
 
-    if (r.texture == tex && r.w == w && r.h == h && r.H == H && r.cuRes)
+    if ((r.texture == tex) && (r.w == w) && (r.h == h) && (r.H == H) && r.cuRes)
         return true;
 
     if (!ctx)
