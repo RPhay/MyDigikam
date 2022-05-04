@@ -21,10 +21,15 @@
  *
  * ============================================================ */
 
-#ifndef QTAV_PACKETBUFFER_H
-#define QTAV_PACKETBUFFER_H
+#ifndef QTAV_PACKET_BUFFER_H
+#define QTAV_PACKET_BUFFER_H
+
+// Qt includes
 
 #include <QQueue>
+
+// Local includes
+
 #include "Packet.h"
 #include "QtAV_BlockingQueue.h"
 #include "QtAV_ring.h"
@@ -41,73 +46,93 @@ namespace QtAV
 class PacketBuffer : public BlockingQueue<Packet, QQueue>
 {
 public:
+
     PacketBuffer();
     ~PacketBuffer();
 
     void setBufferMode(BufferMode mode);
-    BufferMode bufferMode() const;
+    BufferMode bufferMode()     const;
+
     /*!
      * \brief setBufferValue
      * Ensure the buffered msecs/bytes/packets in queue is at least the given value
      * \param value BufferBytes: bytes, BufferTime: msecs, BufferPackets: packets count
      */
     void setBufferValue(qint64 value);
-    qint64 bufferValue() const;
+    qint64 bufferValue()        const;
+
     /*!
      * \brief setBufferMax
      * stop buffering if max value reached. Real value is bufferValue()*bufferMax()
      * \param max the ratio to bufferValue(). always >= 1.0
      */
     void setBufferMax(qreal max);
-    qreal bufferMax() const;
+    qreal bufferMax()           const;
+
     /*!
      * \brief buffered
      * Current buffered value in the queue
      */
-    qint64 buffered() const;
-    bool isBuffering() const;
+    qint64 buffered()           const;
+    bool isBuffering()          const;
+
     /*!
      * \brief bufferProgress
      * How much of the data buffer is currently filled, from 0.0 (empty) to 1.0 (enough or full).
      * bufferProgress() can be less than 1 if not isBuffering();
      * \return Percent of buffered time, bytes or packets.
      */
-    qreal bufferProgress() const;
+    qreal bufferProgress()      const;
+
     /*!
      * \brief bufferSpeed
      * Depending on BufferMode, the result is delta_pts/s, packets/s or bytes/s
      * \return
      */
-    qreal bufferSpeed() const;
-    qreal bufferSpeedInBytes() const;
+    qreal bufferSpeed()         const;
+    qreal bufferSpeedInBytes()  const;
+
 protected:
-    bool checkEnough() const override;
-    bool checkFull() const override;
-    void onTake(const Packet &) override;
-    void onPut(const Packet &) override;
+
+    bool checkEnough()          const override;
+    bool checkFull()            const override;
+    void onTake(const Packet&)        override;
+    void onPut(const Packet&)         override;
+
 protected:
+
     typedef BlockingQueue<Packet, QQueue> PQ;
+
     using PQ::setCapacity;
     using PQ::setThreshold;
     using PQ::capacity;
     using PQ::threshold;
 
 private:
+
     qreal calc_speed(bool use_bytes) const;
 
-    BufferMode m_mode;
-    bool m_buffering;
-    qreal m_max;
+private:
+
+    BufferMode          m_mode;
+    bool                m_buffering;
+    qreal               m_max;
+
     // bytes or count
-    qint64 m_buffer;
-    qint64 m_value0, m_value1;
-    typedef struct {
-        qint64 v; //pts, total packes or total bytes
-        qint64 bytes; //total bytes
+
+    qint64              m_buffer;
+    qint64              m_value0, m_value1;
+
+    typedef struct
+    {
+        qint64 v;       ///< pts, total packes or total bytes
+        qint64 bytes;   ///< total bytes
         qint64 t;
     } BufferInfo;
-    ring<BufferInfo> m_history;
+
+    ring<BufferInfo>    m_history;
 };
 
 } // namespace QtAV
-#endif // QTAV_PACKETBUFFER_H
+
+#endif // QTAV_PACKET_BUFFER_H
