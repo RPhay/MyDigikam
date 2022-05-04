@@ -219,7 +219,7 @@ const codec_profile_t* findProfileEntry(AVCodecID codec, int profile, const code
 }
 
 
-struct fmtentry
+struct Q_DECL_HIDDEN fmtentry
 {
     uint32_t                 va;
     VideoFormat::PixelFormat fmt;

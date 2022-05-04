@@ -58,7 +58,7 @@ namespace QtAV
 #   define SL_PCM_REPRESENTATION_FLOAT         ((SLuint32) 0x00000003)
 #   define SL_DATAFORMAT_PCM_EX                ((SLuint32) 0x00000004)
 
-struct SLDataFormat_PCM_EX : SLDataFormat_PCM
+struct Q_DECL_HIDDEN SLDataFormat_PCM_EX : SLDataFormat_PCM
 {
     SLuint32 representation;
 };

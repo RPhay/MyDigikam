@@ -16,8 +16,8 @@ Code review with plenty of fixes and improvements. See the list of tasks below.
       - See files in core/cmake/modules.
 
     - Fix all GCC 11 warnings.
-    
-    - Hide all private classes symbols with Q_DECL_HIDDEN macro.
+
+    - Hide all private class and structure symbols with Q_DECL_HIDDEN macro.
 
     - Fix all Clang warnings under MacOS.
 

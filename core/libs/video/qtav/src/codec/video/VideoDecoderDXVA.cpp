@@ -108,7 +108,7 @@ extern VideoDecoderId VideoDecoderId_DXVA;
 
 FACTORY_REGISTER(VideoDecoder, DXVA, "DXVA")
 
-struct d3d9_surface_t : public va_surface_t
+struct Q_DECL_HIDDEN d3d9_surface_t : public va_surface_t
 {
     d3d9_surface_t()
         : va_surface_t(),

@@ -43,7 +43,7 @@ namespace PlainText
  * ass_to_plaintext() was written by wm4 and he says it can be under LGPL
  */
 
-struct buf
+struct Q_DECL_HIDDEN buf
 {
     char *start;
     int size;

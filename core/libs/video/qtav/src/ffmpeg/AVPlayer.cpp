@@ -1351,7 +1351,7 @@ bool AVPlayer::setAudioStream(const QString &file, int n)
     d->external_audio = path;
     d->audio_demuxer.setMedia(d->external_audio);
 
-    struct scoped_pause
+    struct Q_DECL_HIDDEN scoped_pause
     {
         scoped_pause()
             : was_paused(false),

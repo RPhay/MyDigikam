@@ -247,7 +247,7 @@ public:
         inputs->pad_idx        = 0;
         inputs->next           = nullptr;
 
-        struct delete_helper
+        struct Q_DECL_HIDDEN delete_helper
         {
             AVFilterInOut **x;
 

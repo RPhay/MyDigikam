@@ -131,7 +131,7 @@ QString VideoDecoderD3D11::description() const
     return QStringLiteral("D3D11 Video Acceleration");
 }
 
-struct d3d11_surface_t
+struct Q_DECL_HIDDEN d3d11_surface_t
     : public va_surface_t
 {
     d3d11_surface_t()
@@ -287,7 +287,7 @@ VideoFrame VideoDecoderD3D11::frame()
                                     , view_desc.Texture2D.ArraySlice
                                     , nullptr);
 
-    struct ScopedMap
+    struct Q_DECL_HIDDEN ScopedMap
     {
         ScopedMap(ComPtr<ID3D11DeviceContext> ctx, ComPtr<ID3D11Texture2D> res, D3D11_MAPPED_SUBRESOURCE *mapped)
             : c(ctx),

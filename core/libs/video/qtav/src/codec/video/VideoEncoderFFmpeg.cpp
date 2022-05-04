@@ -430,7 +430,7 @@ QString VideoEncoderFFmpeg::hwDevice() const
     return d_func().hwdev;
 }
 
-struct ScopedAVFrameDeleter
+struct Q_DECL_HIDDEN ScopedAVFrameDeleter
 {
     static inline void cleanup(void *pointer)
     {

@@ -167,7 +167,7 @@ static const int PROF_HEVC_MAIN10[]  = { FF_PROFILE_HEVC_MAIN, FF_PROFILE_HEVC_M
 
 // guids are from VLC
 
-struct dxva2_mode_t
+struct Q_DECL_HIDDEN dxva2_mode_t
 {
     const char* name;
     const GUID* guid;

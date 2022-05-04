@@ -179,7 +179,7 @@ public:
         cond.wait(&mutex, (us+500LL)/1000LL);
     }
 
-    struct FrameInfo
+    struct Q_DECL_HIDDEN FrameInfo
     {
         FrameInfo(const QByteArray& d = QByteArray(), qreal t = 0, int us = 0) : timestamp(t), duration(us), data(d) {}
         qreal timestamp;
