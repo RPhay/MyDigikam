@@ -188,8 +188,8 @@ void SetupMetadata::appendBehaviorTab()
 
     // --------------------------------------------------------
 
-    QFrame* const infoBox           = new QFrame;
-    QGridLayout* const infoBoxGrid  = new QGridLayout;
+    QFrame* const infoBox              = new QFrame;
+    QGridLayout* const infoBoxGrid     = new QGridLayout;
     infoBox->setFrameStyle(QFrame::StyledPanel | QFrame::Raised);
 
     DActiveLabel* const exiv2LogoLabel = new DActiveLabel(QUrl(QLatin1String("https://github.com/Exiv2/exiv2")),
@@ -197,7 +197,7 @@ void SetupMetadata::appendBehaviorTab()
                                                           infoBox);
     exiv2LogoLabel->setWhatsThis(i18nc("@info:whatsthis", "Visit Exiv2 project website"));
 
-    QLabel* const explanation = new QLabel(infoBox);
+    QLabel* const explanation          = new QLabel(infoBox);
     explanation->setOpenExternalLinks(true);
     explanation->setWordWrap(true);
     QString txt;
@@ -250,8 +250,8 @@ void SetupMetadata::slotExifToolSettingsChanged(bool available)
         d->writeWithExifToolBox->setEnabled(false);
         d->writeDngFilesBox->setEnabled(false);
         d->writeRawFilesBox->setEnabled(false);
-        d->writeWithExifToolLabel->setText(i18nc("@label", "Note: these options depends of <a href='https://exiftool.org/'>ExifTool backend</a> availability. "
-                                                 "Check in the ExifTool tab for details."));
+        d->writeWithExifToolLabel->setText(xi18nc("@label", "Note: these options depends of <a href='https://exiftool.org/'>ExifTool backend</a> availability. "
+                                                  "Check in the ExifTool tab for details."));
     }
 }
 
