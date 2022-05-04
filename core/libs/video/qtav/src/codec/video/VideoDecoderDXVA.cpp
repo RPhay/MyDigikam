@@ -62,13 +62,13 @@ extern "C"
 
 #include <d3d9.h>
 #include <dxva2api.h>
-#include <initguid.h> /* must be last included to not redefine existing GUIDs */
+#include <initguid.h> // must be last included to not redefine existing GUIDs
 
 /* dxva2api.h GUIDs: http://msdn.microsoft.com/en-us/library/windows/desktop/ms697067(v=vs100).aspx     // krazy:exclude=insecurenet
  * assume that they are declared in dxva2api.h
  */
 
-//#define MS_GUID(name, l, w1, w2, b1, b2, b3, b4, b5, b6, b7, b8) ///TODO: ???
+//#define MS_GUID(name, l, w1, w2, b1, b2, b3, b4, b5, b6, b7, b8) // TODO: ???
 
 #define MS_GUID(name, l, w1, w2, b1, b2, b3, b4, b5, b6, b7, b8) \
     static const GUID name = { l, w1, w2, {b1, b2, b3, b4, b5, b6, b7, b8 } }
@@ -86,8 +86,8 @@ extern "C"
 namespace QtAV
 {
 
-MS_GUID(IID_IDirectXVideoDecoderService,      0xfc51a551, 0xd5e7, 0x11d9, 0xaf,0x55,0x00,0x05,0x4e,0x43,0xff,0x02);
-MS_GUID(IID_IDirectXVideoAccelerationService, 0xfc51a550, 0xd5e7, 0x11d9, 0xaf,0x55,0x00,0x05,0x4e,0x43,0xff,0x02);
+MS_GUID(IID_IDirectXVideoDecoderService,      0xfc51a551, 0xd5e7, 0x11d9, 0xaf, 0x55, 0x00, 0x05, 0x4e, 0x43, 0xff, 0x02);
+MS_GUID(IID_IDirectXVideoAccelerationService, 0xfc51a550, 0xd5e7, 0x11d9, 0xaf, 0x55, 0x00, 0x05, 0x4e, 0x43, 0xff, 0x02);
 
 class VideoDecoderDXVAPrivate;
 
@@ -133,7 +133,7 @@ struct Q_DECL_HIDDEN d3d9_surface_t : public va_surface_t
 
 private:
 
-    IDirect3DSurface9 *d3d;
+    IDirect3DSurface9* d3d;
 };
 
 // https://technet.microsoft.com/zh-cn/aa965266(v=vs.98).aspx
@@ -199,7 +199,7 @@ private:
     HINSTANCE                       hd3d9_dll;
     HINSTANCE                       hdxva2_dll;
     IDirect3D9*                     d3dobj;
-    IDirect3DDevice9*               d3ddev; // can be Ex
+    IDirect3DDevice9*               d3ddev;     ///< can be d3ddev-Ex
 
     /* Device manager */
 
@@ -221,7 +221,7 @@ private:
 
 public:
 
-    d3d9::InteropResourcePtr interop_res; // may be still used in video frames when decoder is destroyed
+    d3d9::InteropResourcePtr        interop_res; ///< may be still used in video frames when decoder is destroyed
 };
 
 static D3DFORMAT fourccToD3D(int fcc)
@@ -258,19 +258,20 @@ VideoFrame VideoDecoderDXVA::frame()
     if (!d.frame->opaque || !d.frame->data[0])
         return VideoFrame();
 
-    if (d.frame->width <= 0 || d.frame->height <= 0 || !d.codec_ctx)
+    if ((d.frame->width <= 0) || (d.frame->height <= 0) || !d.codec_ctx)
         return VideoFrame();
 
-    IDirect3DSurface9 *d3d = (IDirect3DSurface9*)(uintptr_t)d.frame->data[3];
+    IDirect3DSurface9* d3d = (IDirect3DSurface9*)(uintptr_t)d.frame->data[3];
 
     if (copyMode() == ZeroCopy && d.interop_res)
     {
         d3d9::SurfaceInterop* interop = new d3d9::SurfaceInterop(d.interop_res);
         interop->setSurface(d3d, d.width, d.height);
         VideoFrame f(d.width, d.height, VideoFormat::Format_RGB32);
-        f.setBytesPerLine(d.width * 4); // used by gl to compute texture size
+
+        f.setBytesPerLine(d.width * 4);             // used by gl to compute texture size
         f.setMetaData(QStringLiteral("surface_interop"), QVariant::fromValue(VideoSurfaceInteropPtr(interop)));
-        f.setTimestamp(d.frame->pkt_pts/1000.0);
+        f.setTimestamp(d.frame->pkt_pts / 1000.0);
         f.setDisplayAspectRatio(d.getDAR(d.frame));
 
         return f;
@@ -278,7 +279,7 @@ VideoFrame VideoDecoderDXVA::frame()
 
     class Q_DECL_HIDDEN ScopedD3DLock
     {
-        IDirect3DSurface9 *mpD3D;
+        IDirect3DSurface9* mpD3D;
 
     public:
 
@@ -315,7 +316,8 @@ VideoFrame VideoDecoderDXVA::frame()
 
     if (!fmt.isValid())
     {
-        qCWarning(DIGIKAM_QTAV_LOG_WARN).noquote() << QString::asprintf("unsupported dxva pixel format: %#x", desc.Format);
+        qCWarning(DIGIKAM_QTAV_LOG_WARN).noquote()
+            << QString::asprintf("unsupported dxva pixel format: %#x", desc.Format);
 
         return VideoFrame();
     }
@@ -325,8 +327,8 @@ VideoFrame VideoDecoderDXVA::frame()
     // nv12 bpp(1)==1
     // 3rd plane is not used for nv12
 
-    int pitch[3]        = { lock.Pitch, 0, 0 };             // compute chroma later
-    uint8_t* src[]      = { (uint8_t*)lock.pBits, 0, 0};    // compute chroma later
+    int pitch[3]        = { lock.Pitch,           0, 0 };   // compute chroma later
+    uint8_t* src[]      = { (uint8_t*)lock.pBits, 0, 0 };   // compute chroma later
     const bool swap_uv  = desc.Format ==  MAKEFOURCC('I','M','C','3');
 
     return copyToFrame(fmt, desc.Height, src, pitch, swap_uv);
@@ -381,7 +383,7 @@ bool VideoDecoderDXVAPrivate::createDevice()
         d3ddev = DXHelper::CreateDevice9(hd3d9_dll, &d3dobj, &d3dai);
     }
 
-    if (!d3ddev)
+    if (!d3ddev)        // cppcheck-suppress duplicateCondition
     {
         qCWarning(DIGIKAM_QTAV_LOG_WARN) << "Failed to create d3d9 device";
 
@@ -408,7 +410,8 @@ bool VideoDecoderDXVAPrivate::createDevice()
     if (!d3ddev)
         return false;
 
-    typedef HRESULT (WINAPI* CreateDeviceManager9Func)(UINT *pResetToken, IDirect3DDeviceManager9 **);
+    typedef HRESULT (WINAPI* CreateDeviceManager9Func)(UINT* pResetToken, IDirect3DDeviceManager9**);
+
     CreateDeviceManager9Func CreateDeviceManager9 = (CreateDeviceManager9Func)GetProcAddress(hdxva2_dll, "DXVA2CreateDirect3DDeviceManager9");
 
     if (!CreateDeviceManager9)
@@ -553,8 +556,8 @@ bool VideoDecoderDXVAPrivate::createDecoder(AVCodecID codec_id, int w, int h, QV
 
     DXVA2_VideoDesc dsc;
     ZeroMemory(&dsc, sizeof(dsc));
-    dsc.SampleWidth                 = w;        // coded_width
-    dsc.SampleHeight                = h;        // coded_height
+    dsc.SampleWidth                 = w;            // coded_width
+    dsc.SampleHeight                = h;            // coded_height
     dsc.Format                      = fourccToD3D(format_fcc);
     dsc.InputSampleFreq.Numerator   = 0;
     dsc.InputSampleFreq.Denominator = 0;
