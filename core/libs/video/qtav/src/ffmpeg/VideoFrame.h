@@ -74,50 +74,54 @@ public:
     VideoFrame(const VideoFrame& other);
     ~VideoFrame();
 
-    VideoFrame &operator =(const VideoFrame &other);
+    VideoFrame& operator =(const VideoFrame& other);
 
-    int channelCount() const override;
+    int channelCount()                                      const override;
 
     /*!
      * Deep copy. Given the format, width and height, plane addresses and line sizes.
      */
-    VideoFrame clone() const;
-    VideoFormat format() const;
-    VideoFormat::PixelFormat pixelFormat() const;
-    QImage::Format imageFormat() const;
-    int pixelFormatFFmpeg() const;
+    VideoFrame clone()                                      const;
+    VideoFormat format()                                    const;
+    VideoFormat::PixelFormat pixelFormat()                  const;
+    QImage::Format imageFormat()                            const;
+    int pixelFormatFFmpeg()                                 const;
 
-    bool isValid() const;
-    operator bool() const { return isValid();}
+    bool isValid()                                          const;
 
-    QSize size() const;
+    operator bool()                                         const
+    {
+        return isValid();
+    }
+
+    QSize size()                                            const;
 
     // int width(int plane = 0) const?
 
-    int width() const;
-    int height() const;
+    int width()                                             const;
+    int height()                                            const;
 
     /*!
      * \brief effectiveBytesPerLine
      * The plane bytes contains valid image data without padded data for alignment reason
      */
-    int effectiveBytesPerLine(int plane) const;
+    int effectiveBytesPerLine(int plane)                    const;
 
     // plane width with padded bytes for alignment.
 
-    int planeWidth(int plane) const;
-    int planeHeight(int plane) const;
+    int planeWidth(int plane)                               const;
+    int planeHeight(int plane)                              const;
 
     // display attributes
 
-    float displayAspectRatio() const;
+    float displayAspectRatio()                              const;
     void setDisplayAspectRatio(float displayAspectRatio);
 
     // TODO: pixel aspect ratio
 
-    ColorSpace colorSpace() const;
+    ColorSpace colorSpace()                                 const;
     void setColorSpace(ColorSpace value);
-    ColorRange colorRange() const;
+    ColorRange colorRange()                                 const;
     void setColorRange(ColorRange value);
 
     /*!
@@ -127,7 +131,9 @@ public:
      * \param dstSize result image size
      * \param roi NOT implemented!
      */
-    QImage toImage(QImage::Format fmt = QImage::Format_ARGB32, const QSize& dstSize = QSize(), const QRectF& roi = QRect()) const;
+    QImage toImage(QImage::Format fmt = QImage::Format_ARGB32,
+                   const QSize& dstSize = QSize(),
+                   const QRectF& roi = QRect())             const;
 
     /*!
      * \brief to
@@ -136,10 +142,25 @@ public:
      * \param dstSize target frame size
      * \param roi interested region of source frame
      */
-    VideoFrame to(VideoFormat::PixelFormat pixfmt, const QSize& dstSize = QSize(), const QRectF& roi = QRect()) const;
-    VideoFrame to(const VideoFormat& fmt, const QSize& dstSize = QSize(), const QRectF& roi = QRect()) const;
-    bool to(VideoFormat::PixelFormat pixfmt, quint8 *const dst[], const int dstStride[], const QSize& dstSize = QSize(), const QRectF& roi = QRect()) const;
-    bool to(const VideoFormat& fmt, quint8 *const dst[], const int dstStride[], const QSize& dstSize = QSize(), const QRectF& roi = QRect()) const;
+    VideoFrame to(VideoFormat::PixelFormat pixfmt,
+                  const QSize& dstSize = QSize(),
+                  const QRectF& roi = QRect())              const;
+
+    VideoFrame to(const VideoFormat& fmt,
+                  const QSize& dstSize = QSize(),
+                  const QRectF& roi = QRect())              const;
+
+    bool to(VideoFormat::PixelFormat pixfmt,
+            quint8 *const dst[],
+            const int dstStride[],
+            const QSize& dstSize = QSize(),
+            const QRectF& roi = QRect())                    const;
+
+    bool to(const VideoFormat& fmt,
+            quint8 *const dst[],
+            const int dstStride[],
+            const QSize& dstSize = QSize(),
+            const QRectF& roi = QRect())                    const;
 
     /*!
      * map a gpu frame to opengl texture or d3d texture or other handle.
@@ -177,10 +198,10 @@ public:
      * \brief convert
      * return a frame with a given format from a given source frame. The result frame data is always on host memory.
      */
-    VideoFrame convert(const VideoFrame& frame, const VideoFormat& fmt) const;
-    VideoFrame convert(const VideoFrame& frame, VideoFormat::PixelFormat fmt) const;
-    VideoFrame convert(const VideoFrame& frame, QImage::Format fmt) const;
-    VideoFrame convert(const VideoFrame& frame, int fffmt) const;
+    VideoFrame convert(const VideoFrame& frame, const VideoFormat& fmt)         const;
+    VideoFrame convert(const VideoFrame& frame, VideoFormat::PixelFormat fmt)   const;
+    VideoFrame convert(const VideoFrame& frame, QImage::Format fmt)             const;
+    VideoFrame convert(const VideoFrame& frame, int fffmt)                      const;
 
 private:
 
