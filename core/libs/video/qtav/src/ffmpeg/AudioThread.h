@@ -21,8 +21,10 @@
  *
  * ============================================================ */
 
-#ifndef QAV_AUDIOTHREAD_H
-#define QAV_AUDIOTHREAD_H
+#ifndef QAV_AUDIO_THREAD_H
+#define QAV_AUDIO_THREAD_H
+
+// Local includes
 
 #include "AVThread.h"
 
@@ -32,17 +34,22 @@ namespace QtAV
 class AudioDecoder;
 class AudioFrame;
 class AudioThreadPrivate;
+
 class AudioThread : public AVThread
 {
     Q_OBJECT
     DPTR_DECLARE_PRIVATE(AudioThread)
+
 public:
+
     explicit AudioThread(QObject *parent = nullptr);
 
 protected:
+
     void applyFilters(AudioFrame& frame);
     virtual void run();
 };
 
 } // namespace QtAV
-#endif // QAV_AUDIOTHREAD_H
+
+#endif // QAV_AUDIO_THREAD_H
