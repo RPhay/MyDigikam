@@ -203,7 +203,7 @@ AVAudioResampleContext* swr_alloc_set_opts(AVAudioResampleContext* s
 
 extern const AVPixFmtDescriptor av_pix_fmt_descriptors[];
 
-const AVPixFmtDescriptor *av_pix_fmt_desc_get(AVPixelFormat pix_fmt)
+const AVPixFmtDescriptor* av_pix_fmt_desc_get(AVPixelFormat pix_fmt)
 {
     if (pix_fmt < 0 || pix_fmt >= QTAV_PIX_FMT_C(NB))
         return nullptr;
@@ -211,7 +211,7 @@ const AVPixFmtDescriptor *av_pix_fmt_desc_get(AVPixelFormat pix_fmt)
     return &av_pix_fmt_descriptors[pix_fmt];
 }
 
-const AVPixFmtDescriptor *av_pix_fmt_desc_next(const AVPixFmtDescriptor *prev)
+const AVPixFmtDescriptor* av_pix_fmt_desc_next(const AVPixFmtDescriptor* prev)
 {
     if (!prev)
         return &av_pix_fmt_descriptors[0];
@@ -229,7 +229,7 @@ const AVPixFmtDescriptor *av_pix_fmt_desc_next(const AVPixFmtDescriptor *prev)
     return nullptr;
 }
 
-AVPixelFormat av_pix_fmt_desc_get_id(const AVPixFmtDescriptor *desc)
+AVPixelFormat av_pix_fmt_desc_get_id(const AVPixFmtDescriptor* desc)
 {
     if (desc < av_pix_fmt_descriptors ||
         desc >= av_pix_fmt_descriptors + QTAV_PIX_FMT_C(NB))
@@ -242,12 +242,12 @@ AVPixelFormat av_pix_fmt_desc_get_id(const AVPixFmtDescriptor *desc)
 
 #if !FFMPEG_MODULE_CHECK(LIBAVUTIL, 52, 48, 101)
 
-enum AVColorSpace av_frame_get_colorspace(const AVFrame *frame)
+enum AVColorSpace av_frame_get_colorspace(const AVFrame* frame)
 {
     if (!frame)
         return AVCOL_SPC_NB;
 
-#if LIBAV_MODULE_CHECK(LIBAVUTIL, 53, 16, 0) //8c02adc
+#if LIBAV_MODULE_CHECK(LIBAVUTIL, 53, 16, 0) // 8c02adc
 
     return frame->colorspace;
 
@@ -256,12 +256,12 @@ enum AVColorSpace av_frame_get_colorspace(const AVFrame *frame)
     return AVCOL_SPC_NB;
 }
 
-enum AVColorRange av_frame_get_color_range(const AVFrame *frame)
+enum AVColorRange av_frame_get_color_range(const AVFrame* frame)
 {
     if (!frame)
         return AVCOL_RANGE_UNSPECIFIED;
 
-#if LIBAV_MODULE_CHECK(LIBAVUTIL, 53, 16, 0) //8c02adc
+#if LIBAV_MODULE_CHECK(LIBAVUTIL, 53, 16, 0) // 8c02adc
 
     return frame->color_range;
 
@@ -276,7 +276,7 @@ enum AVColorRange av_frame_get_color_range(const AVFrame *frame)
 
 int av_pix_fmt_count_planes(AVPixelFormat pix_fmt)
 {
-    const AVPixFmtDescriptor *desc = av_pix_fmt_desc_get(pix_fmt);
+    const AVPixFmtDescriptor* desc = av_pix_fmt_desc_get(pix_fmt);
     int i, planes[4] = { 0 }, ret = 0;
 
     if (!desc)
@@ -295,7 +295,7 @@ int av_pix_fmt_count_planes(AVPixelFormat pix_fmt)
 
 #if LIBAVUTIL_VERSION_INT < AV_VERSION_INT(51, 73, 101)
 
-int av_samples_copy(uint8_t **dst, uint8_t * const *src, int dst_offset,
+int av_samples_copy(uint8_t** dst, uint8_t* const *src, int dst_offset,
                     int src_offset, int nb_samples, int nb_channels,
                     enum AVSampleFormat sample_fmt)
 {
@@ -308,7 +308,7 @@ int av_samples_copy(uint8_t **dst, uint8_t * const *src, int dst_offset,
     dst_offset *= block_align;
     src_offset *= block_align;
 
-    if((dst[0] < src[0] ? src[0] - dst[0] : dst[0] - src[0]) >= data_size)
+    if ((dst[0] < src[0] ? src[0] - dst[0] : dst[0] - src[0]) >= data_size)
     {
         for (i = 0 ; i < planes ; ++i)
             memcpy(dst[i] + dst_offset, src[i] + src_offset, data_size);
@@ -357,7 +357,7 @@ const char *avcodec_get_name(enum AVCodecID id)
 
 #if !AV_MODULE_CHECK(LIBAVCODEC, 55, 55, 0, 68, 100)
 
-void av_packet_rescale_ts(AVPacket *pkt, AVRational src_tb, AVRational dst_tb)
+void av_packet_rescale_ts(AVPacket* pkt, AVRational src_tb, AVRational dst_tb)
 {
     if (pkt->pts != (int64_t)AV_NOPTS_VALUE)
         pkt->pts = av_rescale_q(pkt->pts, src_tb, dst_tb);
@@ -378,7 +378,7 @@ void av_packet_rescale_ts(AVPacket *pkt, AVRational src_tb, AVRational dst_tb)
 
 #if !LIBAV_MODULE_CHECK(LIBAVCODEC, 56, 1, 0) && !FFMPEG_MODULE_CHECK(LIBAVCODEC, 55, 39, 100)
 
-int av_packet_copy_props(AVPacket *dst, const AVPacket *src)
+int av_packet_copy_props(AVPacket* dst, const AVPacket* src)
 {
     dst->pts                  = src->pts;
     dst->dts                  = src->dts;
@@ -392,12 +392,13 @@ int av_packet_copy_props(AVPacket *dst, const AVPacket *src)
     {
          enum AVPacketSideDataType type = src->side_data[i].type;
          int size          = src->side_data[i].size;
-         uint8_t *src_data = src->side_data[i].data;
-         uint8_t *dst_data = av_packet_new_side_data(dst, type, size);
+         uint8_t* src_data = src->side_data[i].data;
+         uint8_t* dst_data = av_packet_new_side_data(dst, type, size);
 
         if (!dst_data)
         {
             av_packet_free_side_data(dst);
+
             return AVERROR(ENOMEM);
         }
 
@@ -413,7 +414,7 @@ int av_packet_copy_props(AVPacket *dst, const AVPacket *src)
 
 #if !LIBAV_MODULE_CHECK(LIBAVCODEC, 55, 34, 1) && !FFMPEG_MODULE_CHECK(LIBAVCODEC, 55, 39, 100)
 
-void av_packet_free_side_data(AVPacket *pkt)
+void av_packet_free_side_data(AVPacket* pkt)
 {
     for (int i = 0 ; i < pkt->side_data_elems ; ++i)
         av_freep(&pkt->side_data[i].data);
@@ -426,7 +427,7 @@ void av_packet_free_side_data(AVPacket *pkt)
 
 #if !AV_MODULE_CHECK(LIBAVCODEC, 55, 34, 1, 39, 101)
 
-int av_packet_ref(AVPacket *dst, const AVPacket *src)
+int av_packet_ref(AVPacket* dst, const AVPacket* src)
 {
 
 #if QTAV_USE_FFMPEG(LIBAVCODEC)
@@ -455,17 +456,19 @@ int av_packet_ref(AVPacket *dst, const AVPacket *src)
         *((void**)&dst) = data;                                         \
     } while (0)
 
-    *dst = *src;
+    *dst           = *src;
     dst->data      = nullptr;
     dst->side_data = nullptr;
     DUP_DATA(dst->data, src->data, dst->size, 1);
-    dst->destruct = av_destruct_packet;
+    dst->destruct  = av_destruct_packet;
 
     if (dst->side_data_elems)
     {
         int i;
+
         DUP_DATA(dst->side_data, src->side_data,
                 dst->side_data_elems * sizeof(*dst->side_data), 0);
+
         memset(dst->side_data, 0,
                 dst->side_data_elems * sizeof(*dst->side_data));
 
@@ -493,10 +496,10 @@ failed_alloc:
 
 #if !AV_MODULE_CHECK(LIBAVCODEC, 55, 52, 0, 63, 100)
 
-void avcodec_free_context(AVCodecContext **pavctx)
+void avcodec_free_context(AVCodecContext** pavctx)
 {
 
-    AVCodecContext *avctx = *pavctx;
+    AVCodecContext* avctx = *pavctx;
 
     if (!avctx)
         return;
@@ -523,7 +526,7 @@ const char *get_codec_long_name(enum AVCodecID id)
         return cd->long_name;
 
     av_log(nullptr, AV_LOG_WARNING, "Codec 0x%x is not in the full list.\n", id);
-    AVCodec *codec = avcodec_find_decoder(id);
+    AVCodec* codec = avcodec_find_decoder(id);
 
     if (codec)
         return codec->long_name;
@@ -540,12 +543,12 @@ const char *get_codec_long_name(enum AVCodecID id)
 
 #   if !AV_MODULE_CHECK(LIBAVFILTER, 2, 22, 0, 79, 100) //FF_API_AVFILTERPAD_PUBLIC
 
-const char *avfilter_pad_get_name(const AVFilterPad *pads, int pad_idx)
+const char* avfilter_pad_get_name(const AVFilterPad* pads, int pad_idx)
 {
     return pads[pad_idx].name;
 }
 
-enum AVMediaType avfilter_pad_get_type(const AVFilterPad *pads, int pad_idx)
+enum AVMediaType avfilter_pad_get_type(const AVFilterPad* pads, int pad_idx)
 {
     return pads[pad_idx].type;
 }

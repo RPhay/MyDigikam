@@ -200,7 +200,7 @@ AudioFormat::~AudioFormat()
 /*!
     Assigns \a other to this AudioFormat implementation.
 */
-AudioFormat& AudioFormat::operator=(const AudioFormat &other)
+AudioFormat& AudioFormat::operator=(const AudioFormat& other)
 {
     d = other.d;
 
@@ -213,7 +213,7 @@ AudioFormat& AudioFormat::operator=(const AudioFormat &other)
 
   All elements of AudioFormat are used for the comparison.
 */
-bool AudioFormat::operator==(const AudioFormat &other) const
+bool AudioFormat::operator==(const AudioFormat& other) const
 {
     return d->sample_rate == other.d->sample_rate               &&
 

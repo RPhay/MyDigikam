@@ -93,7 +93,7 @@ static AVError::ErrorCode errorFromFFmpeg(int fe)
  *  correct wrong AVError to a right category by ffmpeg error code
  *  does nothing if ffmpeg error code is 0
  */
-static void correct_error_by_ffmpeg(AVError::ErrorCode *e, int fe)
+static void correct_error_by_ffmpeg(AVError::ErrorCode* e, int fe)
 {
     if (!fe || !e)
         return;

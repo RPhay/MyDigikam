@@ -52,7 +52,7 @@ public:
         ParseStreamTimedOut,
         FindStreamInfoTimedout = ParseStreamTimedOut,
         ParseStreamError,
-        FindStreamInfoError = ParseStreamError,
+        FindStreamInfoError    = ParseStreamError,
         StreamNotFound,     // a,v,s?
         ReadTimedout,
         ReadError,

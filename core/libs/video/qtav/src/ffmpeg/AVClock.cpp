@@ -44,33 +44,33 @@ enum
 };
 
 AVClock::AVClock(AVClock::ClockType c, QObject* parent)
-  : QObject(parent),
-    auto_clock(true),
-    m_state(kStopped),
-    clock_type(c),
-    mSpeed(1.0),
-    value0(0),
-    t(0),
-    avg_err(0),
-    nb_restarted(0),
-    nb_sync(0),
-    sync_id(0)
+    : QObject(parent),
+      auto_clock(true),
+      m_state(kStopped),
+      clock_type(c),
+      mSpeed(1.0),
+      value0(0),
+      t(0),
+      avg_err(0),
+      nb_restarted(0),
+      nb_sync(0),
+      sync_id(0)
 {
     last_pts = pts_ = pts_v = delay_ = 0;
 }
 
 AVClock::AVClock(QObject* parent)
-  : QObject(parent),
-    auto_clock(true),
-    m_state(kStopped),
-    clock_type(AudioClock),
-    mSpeed(1.0),
-    value0(0),
-    t(0),
-    avg_err(0),
-    nb_restarted(0),
-    nb_sync(0),
-    sync_id(0)
+    : QObject(parent),
+      auto_clock(true),
+      m_state(kStopped),
+      clock_type(AudioClock),
+      mSpeed(1.0),
+      value0(0),
+      t(0),
+      avg_err(0),
+      nb_restarted(0),
+      nb_sync(0),
+      sync_id(0)
 {
     last_pts = pts_ = pts_v = delay_ = 0;
 }
@@ -165,12 +165,12 @@ bool AVClock::isPaused() const
 int AVClock::syncStart(int count)
 {
     static int sId = 0;
-    nb_sync = count;
+    nb_sync        = count;
 
     if (sId == -1)
         sId = 0;
 
-    sync_id = ++sId;
+    sync_id        = ++sId;
 
     return sId;
 }
@@ -243,6 +243,7 @@ void AVClock::reset()
     m_state = kStopped;
     value0  = 0;
     pts_    = pts_v = delay_ = 0;
+
     QTimer::singleShot(0, this, SLOT(stopCorrectionTimer()));
     timer.invalidate();
 
@@ -265,9 +266,9 @@ void AVClock::timerEvent(QTimerEvent *event)
 
     //const double err = double(correction_timer.restart()) * kThousandth - delta_pts;
 
-    const qint64 now = QDateTime::currentMSecsSinceEpoch();
-    const double err = double(now - t) * kThousandth - delta_pts;
-    t                = now;
+    const qint64 now       = QDateTime::currentMSecsSinceEpoch();
+    const double err       = double(now - t) * kThousandth - delta_pts;
+    t                      = now;
 
     // FIXME: avfoundation camera error is large (about -0.6s)
 

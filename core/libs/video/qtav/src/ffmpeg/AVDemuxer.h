@@ -101,10 +101,10 @@ public:
      * For example, setOptions({"format_whitelist": "rawvideo"})
      */
     void setFormat(const QString& fmt);
-    QString formatForced() const;
+    QString formatForced()    const;
     bool load();
     bool unload();
-    bool isLoaded()        const;
+    bool isLoaded()           const;
 
     /*!
      * \brief readFrame

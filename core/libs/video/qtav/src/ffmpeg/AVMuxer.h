@@ -57,7 +57,7 @@ public:
 
     static const QStringList& supportedProtocols();
 
-    explicit AVMuxer(QObject *parent = nullptr);
+    explicit AVMuxer(QObject* parent = nullptr);
     ~AVMuxer();
 
     QString fileName()      const;
@@ -65,7 +65,7 @@ public:
 
     /// not null for QIODevice, custom protocols
 
-    MediaIO *mediaIO()      const;
+    MediaIO* mediaIO()      const;
 
     /*!
      * \brief setMedia

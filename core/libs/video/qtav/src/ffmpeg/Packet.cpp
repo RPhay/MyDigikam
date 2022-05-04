@@ -49,15 +49,15 @@ class Q_DECL_HIDDEN PacketPrivate : public QSharedData
 public:
 
     PacketPrivate()
-        : QSharedData()
-        , initialized(false)
+        : QSharedData(),
+          initialized(false)
     {
         av_init_packet(&avpkt);
     }
 
     PacketPrivate(const PacketPrivate& o)
-        : QSharedData(o)
-        , initialized(o.initialized)
+        : QSharedData(o),
+          initialized(o.initialized)
     {
         // used by QSharedDataPointer.detach()
 
