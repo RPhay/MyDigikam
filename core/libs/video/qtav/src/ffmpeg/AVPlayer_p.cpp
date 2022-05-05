@@ -21,7 +21,7 @@
  *
  * ============================================================ */
 
-#include "AVPlayerPrivate.h"
+#include "AVPlayer_p.h"
 
 // Qt includes
 
