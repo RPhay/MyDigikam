@@ -29,7 +29,7 @@
 #include <QMenu>
 #include <QMessageBox>
 #include <QMimeData>
-#include <QtCore/QUrl>
+#include <QUrl>
 #include <QtAV/AudioOutput.h>
 #include <QtAVWidgets>
 

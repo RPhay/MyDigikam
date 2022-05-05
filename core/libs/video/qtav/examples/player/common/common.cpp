@@ -24,18 +24,18 @@
 #include "common.h"
 #include <cstdio>
 #include <cstdlib>
-#include <QtCore/QSettings>
+#include <QSettings>
 #include <QFileOpenEvent>
-#include <QtCore/QLocale>
-#include <QtCore/QTranslator>
-#include <QtCore/QCoreApplication>
-#include <QtCore/QDir>
-#include <QtCore/QFile>
-#include <QtCore/QTextStream>
+#include <QLocale>
+#include <QTranslator>
+#include <QCoreApplication>
+#include <QDir>
+#include <QFile>
+#include <QTextStream>
 #if QT_VERSION < QT_VERSION_CHECK(5, 0, 0)
-#include <QtGui/QDesktopServices>
+#include <QDesktopServices>
 #else
-#include <QtCore/QStandardPaths>
+#include <QStandardPaths>
 #endif
 #include <QtDebug>
 #include <QMutex>

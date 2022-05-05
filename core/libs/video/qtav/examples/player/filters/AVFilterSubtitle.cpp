@@ -22,10 +22,10 @@
  * ============================================================ */
 
 #include "AVFilterSubtitle.h"
-#include <QtCore/QDir>
-#include <QtCore/QFile>
-#include <QtCore/QFileInfo>
-#include <QtCore/QTextStream>
+#include <QDir>
+#include <QFile>
+#include <QFileInfo>
+#include <QTextStream>
 
 AVFilterSubtitle::AVFilterSubtitle(QObject *parent)
     :  LibAVFilterVideo(parent)

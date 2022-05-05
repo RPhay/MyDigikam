@@ -19,10 +19,10 @@
 ******************************************************************************/
 #include <cstdio>
 #include <cstdlib>
-#include <QtCore/QCoreApplication>
-#include <QtCore/QDateTime>
-#include <QtCore/QQueue>
-#include <QtCore/QStringList>
+#include <QCoreApplication>
+#include <QDateTime>
+#include <QQueue>
+#include <QStringList>
 #include <QtAV/FrameReader.h>
 using namespace QtAV;
 int main(int argc, char *argv[])

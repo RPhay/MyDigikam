@@ -22,15 +22,15 @@
  * ============================================================ */
 
 #include "Config.h"
-#include <QtCore/QSettings>
-#include <QtCore/QCoreApplication>
-#include <QtCore/QDir>
-#include <QtCore/QFile>
-#include <QtCore/QMetaEnum>
+#include <QSettings>
+#include <QCoreApplication>
+#include <QDir>
+#include <QFile>
+#include <QMetaEnum>
 #if QT_VERSION < QT_VERSION_CHECK(5, 0, 0)
-#include <QtGui/QDesktopServices>
+#include <QDesktopServices>
 #else
-#include <QtCore/QStandardPaths>
+#include <QStandardPaths>
 #endif
 #include <QtSql/QSqlDatabase>
 #include <QtSql/QSqlQuery>

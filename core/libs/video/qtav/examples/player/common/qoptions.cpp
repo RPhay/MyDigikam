@@ -22,8 +22,8 @@
  * ============================================================ */
 
 #include "qoptions.h"
-#include <QtCore/QStringList>
-#include <QtCore/QtDebug>
+#include <QStringList>
+#include <QtDebug>
 
 QOption::QOption()
 {}

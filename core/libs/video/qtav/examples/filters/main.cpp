@@ -22,9 +22,9 @@
 #include <QApplication>
 
 #include <QtDebug>
-#include <QtCore/QDir>
-#include <QtCore/QLocale>
-#include <QtCore/QTranslator>
+#include <QDir>
+#include <QLocale>
+#include <QTranslator>
 #include <QMessageBox>
 
 #include <QtAV/QtAV>

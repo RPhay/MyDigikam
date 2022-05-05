@@ -23,8 +23,8 @@
 #define QTAV_EXAMPLE_SIMPLEFILTER_H
 
 #include <QtAV/Filter.h>
-#include <QtCore/QElapsedTimer>
-#include <QtGui/QMatrix4x4>
+#include <QElapsedTimer>
+#include <QMatrix4x4>
 
 namespace QtAV {
 

@@ -22,15 +22,14 @@
  * ============================================================ */
 
 
-#ifndef PLAYER_CONFIG_H
-#define PLAYER_CONFIG_H
+#ifndef QTAV_PLAYER_CONFIG_H
+#define QTAV_PLAYER_CONFIG_H
 
-#include "common_export.h"
-#include <QtCore/QObject>
-#include <QtCore/QStringList>
-#include <QtCore/QVariant>
-#include <QtGui/QColor>
-#include <QtGui/QFont>
+#include <QObject>
+#include <QStringList>
+#include <QVariant>
+#include <QColor>
+#include <QFont>
 
 //TODO: use hash to simplify api
 /*
@@ -39,7 +38,7 @@
  * apply() will change the value in Config
  */
 
-class COMMON_EXPORT Config : public QObject
+class Config : public QObject
 {
     Q_OBJECT
     Q_PROPERTY(QVariantList history READ history NOTIFY historyChanged)
@@ -293,4 +292,4 @@ private:
     Data *mpData;
 };
 
-#endif // PLAYER_CONFIG_H
+#endif // QTAV_PLAYER_CONFIG_H

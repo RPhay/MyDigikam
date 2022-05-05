@@ -21,8 +21,8 @@
  *
  * ============================================================ */
 
-#ifndef PLAYLISTDELEGATE_H
-#define PLAYLISTDELEGATE_H
+#ifndef QTAV_PLAYER_PLAYLISTDELEGATE_H
+#define QTAV_PLAYER_PLAYLISTDELEGATE_H
 
 #include <QStyledItemDelegate>
 
@@ -40,4 +40,4 @@ private:
     mutable QList<int> mSelectedRows;
 };
 
-#endif // PLAYLISTDELEGATE_H
+#endif // QTAV_PLAYER_PLAYLISTDELEGATE_H

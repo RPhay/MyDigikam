@@ -21,8 +21,8 @@
  *
  * ============================================================ */
 
-#ifndef CONFIGPAGEBASE_H
-#define CONFIGPAGEBASE_H
+#ifndef QTAV_PLAYER_CONFIGPAGEBASE_H
+#define QTAV_PLAYER_CONFIGPAGEBASE_H
 
 #include <QWidget>
 
@@ -58,4 +58,4 @@ private:
     bool mApplyOnUiChange;
 };
 
-#endif // CONFIGPAGEBASE_H
+#endif // QTAV_PLAYER_CONFIGPAGEBASE_H

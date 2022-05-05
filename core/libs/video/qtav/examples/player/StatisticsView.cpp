@@ -22,7 +22,7 @@
  * ============================================================ */
 
 #include "StatisticsView.h"
-#include <QtCore/QTimerEvent>
+#include <QTimerEvent>
 #include <QTreeWidget>
 #include <QTreeWidgetItem>
 #include <QLayout>

@@ -22,10 +22,11 @@
  * ============================================================ */
 
 
-#ifndef PLAYLISTMODEL_H
-#define PLAYLISTMODEL_H
+#ifndef QTAV_PLAYER_PLAYLISTMODEL_H
+#define QTAV_PLAYER_PLAYLISTMODEL_H
 
 #include <QAbstractListModel>
+
 #include "PlayListItem.h"
 
 class PlayListModel : public QAbstractListModel
@@ -50,4 +51,4 @@ private:
     QList<PlayListItem> mItems;
 };
 
-#endif // PLAYLISTMODEL_H
+#endif // QTAV_PLAYER_PLAYLISTMODEL_H

@@ -21,7 +21,7 @@
 #ifndef QTAV_VIDEOWALL_H
 #define QTAV_VIDEOWALL_H
 
-#include <QtCore/QList>
+#include <QList>
 #include <QtAV>
 #include <QtAVWidgets>
 #include <QPushButton>

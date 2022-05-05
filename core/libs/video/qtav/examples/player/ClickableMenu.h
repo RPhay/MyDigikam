@@ -22,8 +22,8 @@
  * ============================================================ */
 
 
-#ifndef CLICKABLEMENU_H
-#define CLICKABLEMENU_H
+#ifndef QTAV_PLAYER_CLICKABLE_MENU_H
+#define QTAV_PLAYER_CLICKABLE_MENU_H
 
 #include <QMenu>
 
@@ -39,4 +39,4 @@ protected:
 	
 };
 
-#endif // CLICKABLEMENU_H
+#endif // QTAV_PLAYER_CLICKABLE_MENU_H

@@ -22,11 +22,11 @@
  * ============================================================ */
 
 
-#ifndef PLAYLISTITEM_H
-#define PLAYLISTITEM_H
+#ifndef QTAV_PLAYER_PLAYLISTITEM_H
+#define QTAV_PLAYER_PLAYLISTITEM_H
 
-#include <QtCore/QString>
-#include <QtCore/QVariant>
+#include <QString>
+#include <QVariant>
 
 class PlayListItem
 {
@@ -59,4 +59,4 @@ Q_DECLARE_METATYPE(PlayListItem);
 QDataStream& operator>> (QDataStream& s, PlayListItem& p);
 QDataStream& operator<< (QDataStream& s, const PlayListItem& p);
 
-#endif // PLAYLISTITEM_H
+#endif // QTAV_PLAYER_PLAYLISTITEM_H

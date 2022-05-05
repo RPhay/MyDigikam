@@ -25,11 +25,11 @@
 #include "common/Config.h"
 #include <QLabel>
 #include <QFormLayout>
-#include <QtGui/QImageWriter>
+#include <QImageWriter>
 #include <QToolButton>
 #include <QDesktopServices>
 #include <QFileDialog>
-#include <QtCore/QUrl>
+#include <QUrl>
 #include "../Slider.h"
 
 CaptureConfigPage::CaptureConfigPage(QWidget *parent) :

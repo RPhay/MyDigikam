@@ -24,8 +24,8 @@
 
 //TODO: hover support(like youtube and ExMplayer timeline preview)
 
-#ifndef SLIDER_H
-#define SLIDER_H
+#ifndef QTAV_PLAYER_SLIDER_H
+#define QTAV_PLAYER_SLIDER_H
 
 #include <QSlider>
 
@@ -53,5 +53,5 @@ protected:
 //#endif
 };
 
-#endif //SLIDER_H
+#endif // QTAV_PLAYER_SLIDER_H
 

@@ -29,8 +29,8 @@
 #include <QListView>
 #include <QLayout>
 #include <QToolButton>
-#include <QtCore/QFile>
-#include <QtCore/QDataStream>
+#include <QFile>
+#include <QDataStream>
 
 PlayList::PlayList(QWidget *parent) :
     QWidget(parent)

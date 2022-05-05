@@ -21,20 +21,12 @@
  *
  * ============================================================ */
 
-#ifndef QOPTIONS_H
-#define QOPTIONS_H
+#ifndef QTAV_PLAYER_QOPTIONS_H
+#define QTAV_PLAYER_QOPTIONS_H
 
-#include <QtCore/QVariant>
-#include <QtCore/QMap>
-#include <QtCore/QList>
-
-#if defined(BUILD_QOPT_LIB)
-#  define QOPT_EXPORT Q_DECL_EXPORT
-#elif defined(BUILD_QOPT_IMPORT)
-#  define QOPT_EXPORT Q_DECL_IMPORT //only for vc?
-#else
-#  define QOPT_EXPORT
-#endif
+#include <QVariant>
+#include <QMap>
+#include <QList>
 
 /*
  command line: some_cmd -short1 value --long1 value --long2=value -short_novalue --long_novalue...
@@ -55,7 +47,7 @@
  int v1 = options.value("short1").toInt();
  */
 
-class QOPT_EXPORT QOption {
+class QOption {
 public:
     // TODO: MultiToken -name value1 -name value2 ...
 	enum Type {
@@ -99,7 +91,7 @@ private:
 };
 
 
-class QOPT_EXPORT QOptions {
+class QOptions {
 public:
 	//e.g. application information, copyright etc.
 	QOptions();
@@ -135,4 +127,4 @@ private:
     QMap<QOption, QString/*group*/> mOptionGroupMap;
 };
 
-#endif // QOPTIONS_H
+#endif // QTAV_PLAYER_QOPTIONS_H

@@ -21,9 +21,9 @@
 #include <QtAV/OpenGLVideo.h>
 #include <QtAV/ConvolutionShader.h>
 #include <QtAV/VideoShaderObject.h>
-#include <QtCore/qmath.h>
+#include <qmath.h>
 #include <QApplication>
-#include <QtCore/QScopedPointer>
+#include <QScopedPointer>
 #include <QWidget>
 using namespace QtAV;
 

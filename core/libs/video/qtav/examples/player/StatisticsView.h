@@ -21,8 +21,8 @@
  *
  * ============================================================ */
 
-#ifndef STATISTICSVIEW_H
-#define STATISTICSVIEW_H
+#ifndef QTAV_PLAYER_STATISTICSVIEW_H
+#define QTAV_PLAYER_STATISTICSVIEW_H
 
 #include <QDialog>
 #include "QtAV_Statistics.h"
@@ -65,4 +65,4 @@ private:
     QTreeWidgetItem *mpMetadata, *mpAudioMetadata, *mpVideoMetadata;
 };
 
-#endif // STATISTICSVIEW_H
+#endif // QTAV_PLAYER_STATISTICSVIEW_H

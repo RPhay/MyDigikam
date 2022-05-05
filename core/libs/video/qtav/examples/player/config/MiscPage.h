@@ -21,8 +21,8 @@
  *
  * ============================================================ */
 
-#ifndef MISCPAGE_H
-#define MISCPAGE_H
+#ifndef QTAV_PLAYER_MISCPAGE_H
+#define QTAV_PLAYER_MISCPAGE_H
 
 #include "ConfigPageBase.h"
 #include <QCheckBox>
@@ -53,4 +53,4 @@ private:
     QComboBox *m_log;
 };
 
-#endif // MISCPAGE_H
+#endif // QTAV_PLAYER_MISCPAGE_H

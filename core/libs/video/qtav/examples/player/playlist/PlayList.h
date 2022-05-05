@@ -22,11 +22,12 @@
  * ============================================================ */
 
 
-#ifndef PLAYLIST_H
-#define PLAYLIST_H
+#ifndef QTAV_PLAYER_PLAYLIST_H
+#define QTAV_PLAYER_PLAYLIST_H
 
 #include <QWidget>
-#include <QtCore/QModelIndex>
+#include <QModelIndex>
+
 #include "PlayListItem.h"
 
 QT_BEGIN_NAMESPACE
@@ -77,4 +78,4 @@ private:
     bool mFirstShow;
 };
 
-#endif // PLAYLIST_H
+#endif // QTAV_PLAYER_PLAYLIST_H

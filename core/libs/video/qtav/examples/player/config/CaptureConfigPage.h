@@ -21,10 +21,11 @@
  *
  * ============================================================ */
 
-#ifndef CAPTURECONFIGPAGE_H
-#define CAPTURECONFIGPAGE_H
+#ifndef QTAV_PLAYER_CAPTURECONFIGPAGE_H
+#define QTAV_PLAYER_CAPTURECONFIGPAGE_H
 
 #include "ConfigPageBase.h"
+
 #include <QLineEdit>
 #include <QComboBox>
 #include <QCheckBox>
@@ -55,4 +56,4 @@ private:
     Slider *mpQuality;
 };
 
-#endif // CAPTURECONFIGPAGE_H
+#endif // QTAV_PLAYER_CAPTURECONFIGPAGE_H

@@ -21,8 +21,8 @@
  *
  * ============================================================ */
 
-#ifndef TVVIEW_H
-#define TVVIEW_H
+#ifndef QTAV_PLAYER_TVVIEW_H
+#define QTAV_PLAYER_TVVIEW_H
 
 #include <QWidget>
 
@@ -51,4 +51,4 @@ private:
 
 };
 
-#endif // TVVIEW_H
+#endif // QTAV_PLAYER_TVVIEW_H

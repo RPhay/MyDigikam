@@ -21,9 +21,11 @@
  *
  * ============================================================ */
 
-#ifndef SHADER_PAGE_H
-#define SHADER_PAGE_H
+#ifndef QTAV_PLAYER_SHADER_PAGE_H
+#define QTAV_PLAYER_SHADER_PAGE_H
+
 #include "ConfigPageBase.h"
+
 #include <QTextEdit>
 #include <QCheckBox>
 
@@ -43,4 +45,4 @@ private:
     QTextEdit *m_pp;
 };
 
-#endif //SHADER_PAGE_H
+#endif // QTAV_PLAYER_SHADER_PAGE_H

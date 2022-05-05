@@ -18,8 +18,8 @@
     along with this program.  If not, see <http://www.gnu.org/licenses/>.
 ******************************************************************************/
 #include <QtAV>
-#include <QtCore/QCoreApplication>
-#include <QtCore/QScopedPointer>
+#include <QCoreApplication>
+#include <QScopedPointer>
 #include <QtDebug>
 using namespace QtAV;
 

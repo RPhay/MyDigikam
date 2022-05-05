@@ -23,8 +23,8 @@
 
 
 #include "PlayListItem.h"
-#include <QtCore/QTime>
-#include <QtCore/QDataStream>
+#include <QTime>
+#include <QDataStream>
 
 QDataStream& operator>> (QDataStream& s, PlayListItem& p)
 {

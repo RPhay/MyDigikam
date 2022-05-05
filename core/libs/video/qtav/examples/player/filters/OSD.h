@@ -21,8 +21,8 @@
  *
  * ============================================================ */
 
-#ifndef QTAV_OSD_H
-#define QTAV_OSD_H
+#ifndef QTAV_PLAYER_OSD_H
+#define QTAV_PLAYER_OSD_H
 
 #include "QtAV_Global.h"
 #include <QPoint>
@@ -54,5 +54,6 @@ protected:
     int mSecsTotal;
 };
 
-}//namespace QtAV
-#endif // QTAV_OSD_H
+} // namespace QtAV
+
+#endif // QTAV_PLAYER_OSD_H

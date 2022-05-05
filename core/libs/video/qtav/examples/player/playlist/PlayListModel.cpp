@@ -23,7 +23,7 @@
 
 #include "PlayListModel.h"
 #include "PlayListItem.h"
-#include <QtCore/QVector>
+#include <QVector>
 
 PlayListModel::PlayListModel(QObject *parent) :
     QAbstractListModel(parent)

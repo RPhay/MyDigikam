@@ -21,15 +21,14 @@
  *
  * ============================================================ */
 
-#ifndef SCREENSAVER_H
-#define SCREENSAVER_H
+#ifndef QTAV_PLAYER_SCREENSAVER_H
+#define QTAV_PLAYER_SCREENSAVER_H
 
-#include "common_export.h"
-#include <QtCore/QObject>
+#include <QObject>
 
 // TODO: read QtSystemInfo.ScreenSaver
 
-class COMMON_EXPORT ScreenSaver : QObject
+class ScreenSaver : QObject
 {
     Q_OBJECT
 public:
@@ -59,4 +58,4 @@ private:
     quint32 osxIOPMAssertionId; // for mac OSX >= 10.8
 };
 
-#endif // SCREENSAVER_H
+#endif // QTAV_PLAYER_SCREENSAVER_H

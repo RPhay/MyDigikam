@@ -22,11 +22,12 @@
  * ============================================================ */
 
 
-#ifndef DECODERCONFIGPAGE_H
-#define DECODERCONFIGPAGE_H
+#ifndef QTAV_PLAYER_DECODERCONFIGPAGE_H
+#define QTAV_PLAYER_DECODERCONFIGPAGE_H
 
-#include <QtCore/QVariant>
+#include <QVariant>
 #include <QWidget>
+
 #include "ConfigPageBase.h"
 
 QT_BEGIN_NAMESPACE
@@ -65,4 +66,4 @@ private:
     QVBoxLayout *mpDecLayout;
 };
 
-#endif // DECODERCONFIGPAGE_H
+#endif // QTAV_PLAYER_DECODERCONFIGPAGE_H

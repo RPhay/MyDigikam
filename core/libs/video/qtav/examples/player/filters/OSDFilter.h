@@ -21,8 +21,8 @@
  *
  * ============================================================ */
 
-#ifndef QTAV_OSDFILTER_H
-#define QTAV_OSDFILTER_H
+#ifndef QTAV_PLAYER_OSDFILTER_H
+#define QTAV_PLAYER_OSDFILTER_H
 
 #include "Filter.h"
 #include "FilterContext.h"
@@ -40,4 +40,4 @@ protected:
     void process(Statistics* statistics, VideoFrame* frame);
 };
 
-#endif // QTAV_OSDFILTER_H
+#endif // QTAV_PLAYER_OSDFILTER_H

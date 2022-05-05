@@ -21,27 +21,28 @@
  *
  * ============================================================ */
 
-#ifndef COMMON_H
-#define COMMON_H
-#include <QtCore/QObject>
-#include <QtCore/QStringList>
-#include <QtCore/QUrl>
+#ifndef QTAV_PLAYER_COMMON_H
+#define QTAV_PLAYER_COMMON_H
+
+#include <QObject>
+#include <QStringList>
+#include <QUrl>
 #include "qoptions.h"
 #include "Config.h"
 #include "ScreenSaver.h"
 
-QOptions COMMON_EXPORT get_common_options();
-void COMMON_EXPORT do_common_options_before_qapp(const QOptions& options);
+QOptions get_common_options();
+void do_common_options_before_qapp(const QOptions& options);
 /// help, log file, ffmpeg log level
-void COMMON_EXPORT do_common_options(const QOptions& options, const QString& appName = QString());
-void COMMON_EXPORT load_qm(const QStringList& names, const QString &lang = QLatin1String("system"));
+void do_common_options(const QOptions& options, const QString& appName = QString());
+void load_qm(const QStringList& names, const QString &lang = QLatin1String("system"));
 // if appname ends with 'desktop', 'es', 'angle', software', 'sw', set by appname. otherwise set by command line option glopt, or Config file
 // TODO: move to do_common_options_before_qapp
-void COMMON_EXPORT set_opengl_backend(const QString& glopt = QString::fromLatin1("auto"), const QString& appname = QString());
+void set_opengl_backend(const QString& glopt = QString::fromLatin1("auto"), const QString& appname = QString());
 
-QString COMMON_EXPORT appDataDir();
+QString appDataDir();
 
-class COMMON_EXPORT AppEventFilter : public QObject
+class AppEventFilter : public QObject
 {
 public:
     AppEventFilter(QObject *player = 0, QObject* parent = 0);
@@ -51,4 +52,4 @@ private:
     QObject *m_player;
 };
 
-#endif // COMMON_H
+#endif // QTAV_PLAYER_COMMON_H

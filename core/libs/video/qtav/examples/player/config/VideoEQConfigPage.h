@@ -21,8 +21,8 @@
  *
  * ============================================================ */
 
-#ifndef VIDEOEQCONFIGPAGE_H
-#define VIDEOEQCONFIGPAGE_H
+#ifndef QTAV_PLAYER_VIDEOEQCONFIGPAGE_H
+#define QTAV_PLAYER_VIDEOEQCONFIGPAGE_H
 
 #include <QWidget>
 
@@ -73,4 +73,4 @@ private:
     QVector<Engine> mEngines;
 };
 
-#endif // VIDEOEQCONFIGPAGE_H
+#endif // QTAV_PLAYER_VIDEOEQCONFIGPAGE_H

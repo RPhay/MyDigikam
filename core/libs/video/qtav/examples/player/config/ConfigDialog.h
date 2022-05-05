@@ -21,13 +21,13 @@
  *
  * ============================================================ */
 
-#ifndef CONFIGDIALOG_H
-#define CONFIGDIALOG_H
+#ifndef QTAV_PLAYER_CONFIGDIALOG_H
+#define QTAV_PLAYER_CONFIGDIALOG_H
 
 #include <QDialog>
 #include <QDialogButtonBox>
 #include <QTabWidget>
-#include <QtCore/QList>
+#include <QList>
 
 class ConfigPageBase;
 class ConfigDialog : public QDialog
@@ -51,4 +51,4 @@ private:
     QList<ConfigPageBase*> mPages;
 };
 
-#endif // CONFIGDIALOG_H
+#endif // QTAV_PLAYER_CONFIGDIALOG_H

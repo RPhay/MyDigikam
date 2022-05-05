@@ -24,7 +24,7 @@
 #include "PlayListDelegate.h"
 #include "PlayListItem.h"
 
-#include <QtGui/QPainter>
+#include <QPainter>
 #include <QApplication>
 #include "PlayListModel.h"
 

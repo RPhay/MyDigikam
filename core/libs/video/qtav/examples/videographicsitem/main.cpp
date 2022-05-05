@@ -1,8 +1,8 @@
 #include "videoplayer.h"
 #include <QApplication>
 
-#include <QtCore/QLocale>
-#include <QtCore/QTranslator>
+#include <QLocale>
+#include <QTranslator>
 
 int main(int argc, char *argv[])
 {

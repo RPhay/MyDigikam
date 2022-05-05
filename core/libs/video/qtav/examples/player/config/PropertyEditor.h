@@ -21,12 +21,12 @@
  *
  * ============================================================ */
 
-#ifndef PROPERTYEDITOR_H
-#define PROPERTYEDITOR_H
+#ifndef QTAV_PLAYER_PROPERTYEDITOR_H
+#define QTAV_PLAYER_PROPERTYEDITOR_H
 
 #include <QObject>
-#include <QtCore/QMetaProperty>
-#include <QtCore/QMetaEnum>
+#include <QMetaProperty>
+#include <QMetaEnum>
 
 QT_BEGIN_NAMESPACE
 class QAction;
@@ -83,4 +83,4 @@ private:
     QVariantHash mPropertyDetails;
 };
 
-#endif // PROPERTYEDITOR_H
+#endif // QTAV_PLAYER_PROPERTYEDITOR_H

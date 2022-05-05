@@ -21,8 +21,8 @@
  *
  * ============================================================ */
 
-#ifndef MAINWINDOW_H
-#define MAINWINDOW_H
+#ifndef QTAV_PLAYER_MAINWINDOW_H
+#define QTAV_PLAYER_MAINWINDOW_H
 
 #include <QWidget>
 #include <QUrl>
@@ -219,4 +219,4 @@ private:
 };
 
 
-#endif // MAINWINDOW_H
+#endif // QTAV_PLAYER_MAINWINDOW_H

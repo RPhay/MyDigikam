@@ -22,7 +22,7 @@
  * ============================================================ */
 
 #include "ConfigDialog.h"
-#include <QtCore/QFile>
+#include <QFile>
 #include <QLayout>
 #include <QPushButton>
 #include "CaptureConfigPage.h"

@@ -24,7 +24,7 @@
 #include <QEvent>
 #include <QFileDialog>
 #include <QGridLayout>
-#include <QtCore/QUrl>
+#include <QUrl>
 #include <QtAV/AudioOutput.h>
 #include <QtAVWidgets>
 #if QT_VERSION < QT_VERSION_CHECK(6,0,0)

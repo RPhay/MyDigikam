@@ -22,8 +22,8 @@
  * ============================================================ */
 
 #include "ScreenSaver.h"
-#include <QtCore/QTimerEvent>
-#include <QtCore/QLibrary>
+#include <QTimerEvent>
+#include <QLibrary>
 #ifdef Q_OS_LINUX
 //#include <X11/Xlib.h>
 #ifndef Success

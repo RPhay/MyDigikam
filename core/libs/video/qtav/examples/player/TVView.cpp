@@ -22,14 +22,14 @@
  * ============================================================ */
 
 #include "TVView.h"
-#include <QtCore/QTimer>
-#include <QtCore/QFile>
+#include <QTimer>
+#include <QFile>
 #include <QLayout>
 #include <QTreeWidget>
 #include <QTreeWidgetItem>
 #include <QString>
 #include <QApplication>
-#include <QtCore/QTextStream>
+#include <QTextStream>
 
 TVView::TVView(QWidget *parent) :
     QWidget(parent)

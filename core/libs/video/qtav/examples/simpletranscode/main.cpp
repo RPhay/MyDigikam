@@ -19,7 +19,7 @@
 ******************************************************************************/
 
 #include <QCoreApplication>
-#include <QtCore/QDir>
+#include <QDir>
 #include <QtAV>
 #include <QtAV/AVTranscoder.h>
 #include <QtDebug>

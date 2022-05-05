@@ -21,11 +21,12 @@
  *
  * ============================================================ */
 
-#ifndef AVFORMATCONFIGPAGE_H
-#define AVFORMATCONFIGPAGE_H
+#ifndef QTAV_PLAYER_AVFORMATCONFIGPAGE_H
+#define QTAV_PLAYER_AVFORMATCONFIGPAGE_H
 
 #include "ConfigPageBase.h"
-#include <QtCore/QVariant>
+
+#include <QVariant>
 
 QT_BEGIN_NAMESPACE
 class QCheckBox;
@@ -49,4 +50,4 @@ private:
     QLineEdit *m_extra;
 };
 
-#endif // AVFORMATCONFIGPAGE_H
+#endif // QTAV_PLAYER_AVFORMATCONFIGPAGE_H

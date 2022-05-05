@@ -22,14 +22,14 @@
  * ============================================================ */
 
 
-#ifndef QTAV_EVENTFILTER_H
-#define QTAV_EVENTFILTER_H
+#ifndef QTAV_PLAYER_EVENT_FILTER_H
+#define QTAV_PLAYER_EVENT_FILTER_H
 
 /*
  * This class is used interally as QtAV's default event filter. It is suite for single player object
  */
-#include <QtCore/QObject>
-#include <QtCore/QPoint>
+#include <QObject>
+#include <QPoint>
 
 QT_BEGIN_NAMESPACE
 class QMenu;
@@ -83,4 +83,4 @@ private:
     QPoint gMousePos, iMousePos;
 };
 
-#endif // QTAV_EVENTFILTER_H
+#endif // QTAV_PLAYER_EVENT_FILTER_H

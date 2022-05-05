@@ -25,7 +25,7 @@
 #include "QtAVWidgets.h"
 
 #include <QApplication>
-#include <QtCore/QUrl>
+#include <QUrl>
 #include <QEvent>
 #include <QFileDialog>
 #include <QGraphicsObject>
@@ -36,7 +36,7 @@
 #include <QMessageBox>
 #include <QMimeData>
 #include <QMouseEvent>
-#include <QtGui/QWindowStateChangeEvent>
+#include <QWindowStateChangeEvent>
 #include "AVPlayer.h"
 #include "AudioOutput.h"
 #include "VideoCapture.h"

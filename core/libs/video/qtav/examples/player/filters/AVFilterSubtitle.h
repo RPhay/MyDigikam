@@ -21,11 +21,11 @@
  *
  * ============================================================ */
 
-#ifndef QTAV_AVFilterSubtitle_H
-#define QTAV_AVFilterSubtitle_H
+#ifndef QTAV_PLAYER_AVFilterSubtitle_H
+#define QTAV_PLAYER_AVFilterSubtitle_H
 
-#include <QtCore/QObject>
-#include <QtCore/QHash>
+#include <QObject>
+#include <QHash>
 #include "LibAVFilter.h"
 #include "AVPlayer.h"
 using namespace QtAV;
@@ -62,4 +62,4 @@ private:
     QHash<QString,QString> m_u8_files;
 };
 
-#endif // QTAV_AVFilterSubtitle_H
+#endif // QTAV_PLAYER_AVFilterSubtitle_H

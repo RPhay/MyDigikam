@@ -21,8 +21,8 @@
  *
  * ============================================================ */
 
-#ifndef AVFILTERCONFIGPAGE_H
-#define AVFILTERCONFIGPAGE_H
+#ifndef QTAV_PLAYER_AVFILTERCONFIGPAGE_H
+#define QTAV_PLAYER_AVFILTERCONFIGPAGE_H
 
 #include "ConfigPageBase.h"
 
@@ -54,4 +54,4 @@ private:
     } m_ui[2]; //0: video, 1: audio
 };
 
-#endif // AVFILTERCONFIGPAGE_H
+#endif // QTAV_PLAYER_AVFILTERCONFIGPAGE_H
