@@ -359,7 +359,7 @@ if(APPLE)
     set(libqtav_SRCS ${libqtav_SRCS}
         ${CMAKE_CURRENT_SOURCE_DIR}/src/codec/video/VideoDecoderVideoToolbox.cpp
         ${CMAKE_CURRENT_SOURCE_DIR}/src/codec/video/SurfaceInteropCV.cpp
-        ${CMAKE_CURRENT_SOURCE_DIR}/src/codec/video/SurfaceInteropIO_Surface.mm
+        ${CMAKE_CURRENT_SOURCE_DIR}/src/codec/video/SurfaceInteropCV_IOSurface.mm
 
         ${CMAKE_CURRENT_SOURCE_DIR}/src/output/audio/AudioOutputAudioToolbox.cpp
     )
