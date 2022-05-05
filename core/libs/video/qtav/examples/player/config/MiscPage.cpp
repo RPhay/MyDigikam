@@ -80,7 +80,7 @@ MiscPage::MiscPage()
     m_opengl->addItem(QString::fromLatin1("Desktop"), Config::Desktop);
     m_opengl->addItem(QString::fromLatin1("OpenGLES"), Config::OpenGLES);
     m_opengl->addItem(QString::fromLatin1("Software"), Config::Software);
-    m_opengl->setToolTip(tr("Windows only") + " Qt>=5.4 + dynamicgl" + QString::fromLatin1("\n") + tr("OpenGLES is Used by DXVA Zero Copy"));
+    m_opengl->setToolTip(tr("Windows only") + QLatin1String(" Qt>=5.4 + dynamicgl") + QString::fromLatin1("\n") + tr("OpenGLES is Used by DXVA Zero Copy"));
     gl->addWidget(m_opengl, r, 1);
     m_angle_platform = new QComboBox();
     m_angle_platform->setToolTip(tr("D3D9 has performance if ZeroCopy is disabled or for software decoders") + QString::fromLatin1("\n") + tr("RESTART REQUIRED"));
@@ -91,7 +91,7 @@ MiscPage::MiscPage()
 #endif
     gl->addWidget(m_angle_platform, r++, 2);
 
-    gl->addWidget(new QLabel("EGL"), r, 0);
+    gl->addWidget(new QLabel(QLatin1String("EGL")), r, 0);
     m_egl = new QCheckBox();
     m_egl->setToolTip(tr("Currently only works for Qt>=5.5 XCB build"));
 #if QT_VERSION < QT_VERSION_CHECK(5, 5, 0) || !defined(Q_OS_LINUX)
@@ -99,7 +99,7 @@ MiscPage::MiscPage()
 #endif
     gl->addWidget(m_egl, r++, 1);
 
-    gl->addWidget(new QLabel("Log"), r, 0);
+    gl->addWidget(new QLabel(QLatin1String("Log")), r, 0);
     m_log = new QComboBox();
     m_log->addItems(QStringList() << QString::fromLatin1("off") << QString::fromLatin1("warning") << QString::fromLatin1("debug") << QString::fromLatin1("all"));
     gl->addWidget(m_log, r++, 1);

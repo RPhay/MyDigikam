@@ -170,7 +170,7 @@ void do_common_options_before_qapp(const QOptions& options)
 {
 #ifdef Q_OS_LINUX
     QSettings cfg(Config::defaultConfigFile(), QSettings::IniFormat);
-    const bool set_egl = cfg.value("opengl/egl").toBool();
+    const bool set_egl = cfg.value(QLatin1String("opengl/egl")).toBool();
     //https://bugreports.qt.io/browse/QTBUG-49529
     // it's too late if qApp is created. but why ANGLE is not?
     if (options.value(QString::fromLatin1("egl")).toBool() || set_egl) { //FIXME: Config is constructed too early because it requires qApp
@@ -360,7 +360,7 @@ bool AppEventFilter::eventFilter(QObject *obj, QEvent *ev)
 }
 
 static void initResources() {
-    Q_INIT_RESOURCE(theme);
+    // FIXME Q_INIT_RESOURCE(theme);
 }
 
 namespace {

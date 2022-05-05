@@ -279,10 +279,10 @@ void Config::reload()
     QSqlDatabase db(QSqlDatabase::database());
     if (!db.isOpen()) {
         db = QSqlDatabase::addDatabase(QString::fromUtf8("QSQLITE"));
-        db.setDatabaseName(appDataDir().append(QString("/%1.db").arg(mpData->name)));
+        db.setDatabaseName(appDataDir().append(QString::fromLatin1("/%1.db").arg(mpData->name)));
         if (!db.open())
             qWarning("error open db");
-        db.exec("CREATE TABLE IF NOT EXISTS history (url TEXT primary key, start BIGINT, duration BIGINT)");
+        db.exec(QString::fromUtf8("CREATE TABLE IF NOT EXISTS history (url TEXT primary key, start BIGINT, duration BIGINT)"));
     }
     QSqlQuery query(db.exec(QString::fromUtf8("SELECT * FROM history")));
     while (query.next()) {
@@ -1054,9 +1054,9 @@ void Config::addHistory(const QVariantMap &value)
                               "VALUES (:url, :start, :duration)"))) {
             qWarning("error prepare sql query");
     }
-    query.bindValue(QString::fromUtf8(":url"), value.value("url").toString());
-    query.bindValue(QString::fromUtf8(":start"), value.value("start").toLongLong());
-    query.bindValue(QString::fromUtf8(":duration"), value.value("duration").toLongLong());
+    query.bindValue(QString::fromUtf8(":url"), value.value(QLatin1String("url")).toString());
+    query.bindValue(QString::fromUtf8(":start"), value.value(QLatin1String("start")).toLongLong());
+    query.bindValue(QString::fromUtf8(":duration"), value.value(QLatin1String("duration")).toLongLong());
     if (!query.exec())
         qWarning("failed to add history: %d", db.isOpen());
 }
@@ -1066,7 +1066,7 @@ void Config::removeHistory(const QString &url)
     QVariantList::Iterator it = mpData->history.begin();
     bool change = false;
     while (it != mpData->history.end()) {
-        if (it->toMap().value("url") != url) {
+        if (it->toMap().value(QLatin1String("url")) != url) {
             ++it;
             continue;
         }

@@ -23,22 +23,22 @@
 
 #include "MainWindow.h"
 #include "EventFilter.h"
-#include <QtAV>
+#include "QtAV.h"
 #include "OpenGLVideo.h"
 #include "VideoShaderObject.h"
 #include "QtAVWidgets.h"
-#include <QtCore/QtDebug>
-#include <QtCore/QLocale>
-#include <QtCore/QTimer>
+#include <QtDebug>
+#include <QLocale>
+#include <QTimer>
 #include <QTimeEdit>
 #include <QLabel>
 #include <QApplication>
 #include <QDesktopWidget>
 #include <QDesktopServices>
-#include <QtCore/QFileInfo>
-#include <QtCore/QTextCodec>
-#include <QtCore/QTextStream>
-#include <QtCore/QUrl>
+#include <QFileInfo>
+#include <QTextCodec>
+#include <QTextStream>
+#include <QUrl>
 #include <QGraphicsOpacityEffect>
 #include <QComboBox>
 #include <QResizeEvent>
@@ -68,7 +68,7 @@
 #include "playlist/PlayList.h"
 #include "../common/common.h"
 #ifndef QT_NO_OPENGL
-#include "QtAV/GLSLFilter.h"
+#include "GLSLFilter.h"
 #endif
 /*
  *TODO:
@@ -1404,13 +1404,13 @@ void MainWindow::onBufferProgress(qreal percent)
     const qreal bs = mpPlayer->bufferSpeed();
     QString s;
     if (bs > 1024*1024*1024)
-        s = QString("%1G/s").arg(bs/1024.0/1024.0/1024.0, 6, 'f', 1);
+        s = QString::fromLatin1("%1G/s").arg(bs/1024.0/1024.0/1024.0, 6, 'f', 1);
     else if (bs > 1024*1024)
-        s = QString("%1M/s").arg(bs/1024.0/1024.0, 6, 'f', 1);
+        s = QString::fromLatin1("%1M/s").arg(bs/1024.0/1024.0, 6, 'f', 1);
     else if (bs > 1024)
-        s = QString("%1K/s").arg(bs/1024.0, 6, 'f', 1);
+        s = QString::fromLatin1("%1K/s").arg(bs/1024.0, 6, 'f', 1);
     else
-        s = QString("%1B/s").arg(bs, 6, 'f', 1);
+        s = QString::fromLatin1("%1B/s").arg(bs, 6, 'f', 1);
     setWindowTitle(QString::fromLatin1("Buffering... %1% @%2 ").arg(percent*100.0, 5, 'f', 1).arg(s) + mTitle);
 }
 

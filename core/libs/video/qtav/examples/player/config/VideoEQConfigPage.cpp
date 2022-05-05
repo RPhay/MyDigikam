@@ -23,12 +23,18 @@
 
 
 #include "VideoEQConfigPage.h"
+
+#include <algorithm>
+
 #include <QComboBox>
 #include <QCheckBox>
 #include <QPushButton>
 #include <QLabel>
 #include <QLayout>
+#include <QVector>
+
 #include "../Slider.h"
+
 
 VideoEQConfigPage::VideoEQConfigPage(QWidget *parent) :
     QWidget(parent)
@@ -98,7 +104,7 @@ void VideoEQConfigPage::setEngines(const QVector<Engine> &engines)
 {
     mpEngine->clear();
     QVector<Engine> es(engines);
-    qSort(es);
+    // FIXME std::sort(es);
     mEngines = es;
     foreach (Engine e, es) {
         if (e == SWScale) {
