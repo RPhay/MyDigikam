@@ -40,7 +40,7 @@ set(libqtav_SRCS
     ${CMAKE_CURRENT_SOURCE_DIR}/src/ffmpeg/AVDemuxer.cpp
     ${CMAKE_CURRENT_SOURCE_DIR}/src/ffmpeg/AVError.cpp
     ${CMAKE_CURRENT_SOURCE_DIR}/src/ffmpeg/AVPlayer.cpp
-    ${CMAKE_CURRENT_SOURCE_DIR}/src/ffmpeg/AVPlayerPrivate.cpp
+    ${CMAKE_CURRENT_SOURCE_DIR}/src/ffmpeg/AVPlayer_p.cpp
     ${CMAKE_CURRENT_SOURCE_DIR}/src/ffmpeg/AudioFormat.cpp
     ${CMAKE_CURRENT_SOURCE_DIR}/src/ffmpeg/AudioFrame.cpp
     ${CMAKE_CURRENT_SOURCE_DIR}/src/ffmpeg/AudioResampler.cpp
@@ -359,7 +359,7 @@ if(APPLE)
     set(libqtav_SRCS ${libqtav_SRCS}
         ${CMAKE_CURRENT_SOURCE_DIR}/src/codec/video/VideoDecoderVideoToolbox.cpp
         ${CMAKE_CURRENT_SOURCE_DIR}/src/codec/video/SurfaceInteropCV.cpp
-        ${CMAKE_CURRENT_SOURCE_DIR}/src/codec/video/SurfaceInteropIO_Surface.mm
+        ${CMAKE_CURRENT_SOURCE_DIR}/src/codec/video/SurfaceInteropCV_IOSurface.mm
 
         ${CMAKE_CURRENT_SOURCE_DIR}/src/output/audio/AudioOutputAudioToolbox.cpp
     )

@@ -21,8 +21,8 @@
  *
  * ============================================================ */
 
-#ifndef QTAV_AVPLAYER_PRIVATE_H
-#define QTAV_AVPLAYER_PRIVATE_H
+#ifndef QTAV_AVPLAYER_P_H
+#define QTAV_AVPLAYER_P_H
 
 #include "AVPlayer.h"
 
@@ -216,4 +216,4 @@ public:
 
 } // namespace QtAV
 
-#endif // QTAV_AVPLAYER_PRIVATE_H
+#endif // QTAV_AVPLAYER_P_H
