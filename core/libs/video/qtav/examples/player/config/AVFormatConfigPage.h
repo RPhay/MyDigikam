@@ -1,0 +1,52 @@
+/* ============================================================
+ *
+ * This file is a part of digiKam project
+ * https://www.digikam.org
+ *
+ * Date        : 2012-10-31
+ * Description : QtAV: Multimedia framework based on Qt and FFmpeg
+ *
+ * Copyright (C) 2012-2022 Wang Bin <wbsecg1 at gmail dot com>
+ * Copyright (C)      2022 by Gilles Caulier, <caulier dot gilles at gmail dot com>
+ *
+ * This program is free software; you can redistribute it
+ * and/or modify it under the terms of the GNU General
+ * Public License as published by the Free Software Foundation;
+ * either version 2, or (at your option) any later version.
+ *
+ * This program is distributed in the hope that it will be useful,
+ * but WITHOUT ANY WARRANTY; without even the implied warranty of
+ * MERCHANTABILITY or FITNESS FOR A PARTICULAR PURPOSE.  See the
+ * GNU General Public License for more details.
+ *
+ * ============================================================ */
+
+#ifndef AVFORMATCONFIGPAGE_H
+#define AVFORMATCONFIGPAGE_H
+
+#include "ConfigPageBase.h"
+#include <QtCore/QVariant>
+
+QT_BEGIN_NAMESPACE
+class QCheckBox;
+class QSpinBox;
+class QLineEdit;
+QT_END_NAMESPACE
+class AVFormatConfigPage : public ConfigPageBase
+{
+    Q_OBJECT
+public:
+    explicit AVFormatConfigPage(QWidget *parent = 0);
+    virtual QString name() const;
+protected:
+    virtual void applyToUi();
+    virtual void applyFromUi();
+private:
+    QCheckBox* m_on;
+    QCheckBox *m_direct;
+    QSpinBox *m_probeSize;
+    QSpinBox *m_analyzeDuration;
+    QLineEdit *m_extra;
+};
+
+#endif // AVFORMATCONFIGPAGE_H

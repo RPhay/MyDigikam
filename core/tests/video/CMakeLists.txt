@@ -124,6 +124,10 @@ set(qtavplayer_SRCS ${CMAKE_SOURCE_DIR}/core/libs/video/qtav/examples/player/Cli
                     ${CMAKE_SOURCE_DIR}/core/libs/video/qtav/examples/player/playlist/PlayListItem.cpp
                     ${CMAKE_SOURCE_DIR}/core/libs/video/qtav/examples/player/playlist/PlayListDelegate.cpp
                     ${CMAKE_SOURCE_DIR}/core/libs/video/qtav/examples/player/playlist/PlayList.cpp
+                    ${CMAKE_SOURCE_DIR}/core/libs/video/qtav/examples/player/common/ScreenSaver.cpp
+                    ${CMAKE_SOURCE_DIR}/core/libs/video/qtav/examples/player/common/qoptions.cpp
+                    ${CMAKE_SOURCE_DIR}/core/libs/video/qtav/examples/player/common/Config.cpp
+                    ${CMAKE_SOURCE_DIR}/core/libs/video/qtav/examples/player/common/common.cpp
 )
 
 add_executable(qtavplayer_gui ${qtavplayer_SRCS})
