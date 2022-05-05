@@ -123,7 +123,6 @@ MainWindow::MainWindow(QWidget *parent) :
         QApplication::setStyle(QStyleFactory::create("Fusion"));
     #endif
 
-    setWindowIcon(QIcon(QString::fromLatin1(":/QtAV.svg")));
     mpOSD = new OSDFilter(this);
     mpSubtitle = new SubtitleFilter(this);
     mpChannelAction = 0;
@@ -172,7 +171,6 @@ void MainWindow::initPlayer()
     //mpPlayer->setAudioOutput(AudioOutputFactory::create(AudioOutputId_OpenAL));
     EventFilter *ef = new EventFilter(mpPlayer);
     qApp->installEventFilter(ef);
-    connect(ef, SIGNAL(helpRequested()), SLOT(help()));
     connect(ef, SIGNAL(showNextOSD()), SLOT(showNextOSD()));
     onCaptureConfigChanged();
     onAVFilterVideoConfigChanged();
@@ -325,8 +323,6 @@ void MainWindow::setupUi()
 
     //mpMenu->addAction(tr("Report"))->setEnabled(false); //report bug, suggestions etc. using maillist?
     mpMenu->addAction(tr("About"), this, SLOT(about()));
-    mpMenu->addAction(tr("Help"), this, SLOT(help()));
-    mpMenu->addAction(tr("Donate"), this, SLOT(donate()));
     mpMenu->addAction(tr("Setup"), this, SLOT(setup()));
     mpMenu->addSeparator();
     mpMenuBtn->setMenu(mpMenu);
@@ -1064,14 +1060,20 @@ void MainWindow::wheelEvent(QWheelEvent *e)
 #else
     qreal deg = e->delta()/8;
 #endif //QT_VERSION
-#if WHEEL_SPEED
-    if (!mControlOn) {
+
+#ifdef WHEEL_SPEED
+
+    if (!mControlOn)
+    {
         qreal speed = mpPlayer->speed();
         mpPlayer->setSpeed(qMax(0.01, speed + deg/15.0*0.02));
+
         return;
     }
+
 #endif //WHEEL_SPEED
-    QPointF p = mpRenderer->widget()->mapFrom(this, e->pos());
+
+    QPointF p = mpRenderer->widget()->mapFrom(this, e->position().toPoint());
     QPointF fp = mpRenderer->mapToFrame(p);
     //qDebug() <<  p << fp;
     if (fp.x() < 0)
@@ -1108,29 +1110,6 @@ void MainWindow::wheelEvent(QWheelEvent *e)
 void MainWindow::about()
 {
     QtAV::about();
-}
-
-void MainWindow::help()
-{
-    QString name = QString::fromLatin1("help-%1.html").arg(QLocale::system().name());
-    QFile f(qApp->applicationDirPath() + QString::fromLatin1("/") + name);
-    if (!f.exists()) {
-        f.setFileName(QString::fromLatin1(":/") + name);
-    }
-    if (!f.exists()) {
-        f.setFileName(qApp->applicationDirPath() + QString::fromLatin1("/help.html"));
-    }
-    if (!f.exists()) {
-        f.setFileName(QString::fromLatin1(":/help.html"));
-    }
-    if (!f.open(QIODevice::ReadOnly)) {
-        qWarning("Failed to open help-%s.html and help.html: %s", qPrintable(QLocale::system().name()), qPrintable(f.errorString()));
-        return;
-    }
-    QTextStream ts(&f);
-    ts.setCodec("UTF-8");
-    QString text = ts.readAll();
-    QMessageBox::information(0, tr("Help"), text);
 }
 
 void MainWindow::openUrl()
@@ -1523,12 +1502,6 @@ void MainWindow::onAVFilterAudioConfigChanged()
     mpAudioFilter->setEnabled(Config::instance().avfilterAudioEnable());
     mpAudioFilter->installTo(mpPlayer);
     mpAudioFilter->setOptions(Config::instance().avfilterAudioOptions());
-}
-
-void MainWindow::donate()
-{
-    //QDesktopServices::openUrl(QUrl("https://sourceforge.net/p/qtav/wiki/Donate%20%E6%8D%90%E8%B5%A0/"));
-    QDesktopServices::openUrl(QUrl(QString::fromLatin1("http://www.qtav.org/donate.html")));
 }
 
 void MainWindow::onBufferValueChanged()

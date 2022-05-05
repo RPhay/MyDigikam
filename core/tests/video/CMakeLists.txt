@@ -130,11 +130,26 @@ set(qtavplayer_SRCS ${CMAKE_SOURCE_DIR}/core/libs/video/qtav/examples/player/Cli
                     ${CMAKE_SOURCE_DIR}/core/libs/video/qtav/examples/player/common/common.cpp
 )
 
-add_executable(qtavplayer_gui ${qtavplayer_SRCS})
+if(Qt6_FOUND)
 
-target_link_libraries(qtavplayer_gui
+    qt6_add_resources(qtavplayer_SRCS ${CMAKE_SOURCE_DIR}/core/libs/video/qtav/examples/player/common/theme/theme.qrc)
+
+else()
+
+    qt5_add_resources(qtavplayer_SRCS ${CMAKE_SOURCE_DIR}/core/libs/video/qtav/examples/player/common/theme/theme.qrc)
+
+endif()
+
+add_executable(qtav-player_gui ${qtavplayer_SRCS})
+
+target_link_libraries(qtav-player_gui
 
                       digikamcore
 
                       ${COMMON_TEST_LINK}
+)
+
+target_compile_definitions(qtav-player_gui
+                           PRIVATE
+                           ${MEDIAPLAYER_DEFINITIONS}
 )

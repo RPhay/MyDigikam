@@ -121,7 +121,7 @@ int main(int argc, char *argv[])
     MainWindow window;
     window.setProperty("rendererId", rendererId_from_opt_name(vo.toLower()));
     window.show();
-    window.setWindowTitle(QString::fromLatin1("QtAV %1 wbsecg1@gmail.com").arg(QtAV_Version_String_Long()));
+    window.setWindowTitle(QString::fromLatin1("QtAV Player %1").arg(QtAV_Version_String_Long()));
     AppEventFilter ae(&window);
     qApp->installEventFilter(&ae);
 
