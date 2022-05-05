@@ -116,6 +116,10 @@ void Logger(QtMsgType type, const QMessageLogContext &, const QString& qmsg)
          printf("Debug: %s\n", msg);
          fileLogger()->write(QByteArray("Debug: "));
          break;
+     case QtInfoMsg:
+         printf("Info: %s\n", msg);
+         fileLogger()->write(QByteArray("Info: "));
+         break;
      case QtWarningMsg:
          printf("Warning: %s\n", msg);
          fileLogger()->write(QByteArray("Warning: "));
@@ -360,7 +364,7 @@ bool AppEventFilter::eventFilter(QObject *obj, QEvent *ev)
 }
 
 static void initResources() {
-    // FIXME Q_INIT_RESOURCE(theme);
+    Q_INIT_RESOURCE(theme);
 }
 
 namespace {
