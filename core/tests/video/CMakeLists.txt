@@ -62,30 +62,6 @@ target_link_libraries(videothumb_cli
 
 # -------------------------------------------------
 
-macro(LIBRAW_BUILD_SAMPLES)
-
-    set(_filename ${ARGV0})
-    string(REPLACE "." ";" _temp ${_filename})
-    list(GET _temp 0 _target)
-
-    set(${_target}_SRCS ${CMAKE_SOURCE_DIR}/core/libs/video/qtav/tests/${_filename})
-
-    add_executable(qtav_${_target}_cli ${${_target}_SRCS})
-
-    target_link_libraries(qtav_${_target}_cli
-
-                          digikamcore
-
-                          ${COMMON_TEST_LINK}
-    )
-
-    target_compile_definitions(qtav_${_target}_cli
-                               PRIVATE
-                               ${MEDIAPLAYER_DEFINITIONS}
-    )
-
-endmacro()
-
 macro(QTAV_TESTS_BUILD)
 
     set(_filename ${ARGV0})
@@ -121,3 +97,40 @@ QTAV_TESTS_BUILD(qfileio.cpp)
 QTAV_TESTS_BUILD(qrc.cpp)
 QTAV_TESTS_BUILD(subtitle.cpp)
 QTAV_TESTS_BUILD(transcode.cpp)
+
+# -------------------------------------------------
+
+set(qtavplayer_SRCS ${CMAKE_SOURCE_DIR}/core/libs/video/qtav/examples/player/ClickableMenu.cpp
+                    ${CMAKE_SOURCE_DIR}/core/libs/video/qtav/examples/player/EventFilter.cpp
+                    ${CMAKE_SOURCE_DIR}/core/libs/video/qtav/examples/player/main.cpp
+                    ${CMAKE_SOURCE_DIR}/core/libs/video/qtav/examples/player/MainWindow.cpp
+                    ${CMAKE_SOURCE_DIR}/core/libs/video/qtav/examples/player/Slider.cpp
+                    ${CMAKE_SOURCE_DIR}/core/libs/video/qtav/examples/player/StatisticsView.cpp
+                    ${CMAKE_SOURCE_DIR}/core/libs/video/qtav/examples/player/TVView.cpp
+                    ${CMAKE_SOURCE_DIR}/core/libs/video/qtav/examples/player/config/VideoEQConfigPage.cpp
+                    ${CMAKE_SOURCE_DIR}/core/libs/video/qtav/examples/player/config/PropertyEditor.cpp
+                    ${CMAKE_SOURCE_DIR}/core/libs/video/qtav/examples/player/config/DecoderConfigPage.cpp
+                    ${CMAKE_SOURCE_DIR}/core/libs/video/qtav/examples/player/config/ConfigDialog.cpp
+                    ${CMAKE_SOURCE_DIR}/core/libs/video/qtav/examples/player/config/AVFormatConfigPage.cpp
+                    ${CMAKE_SOURCE_DIR}/core/libs/video/qtav/examples/player/config/ShaderPage.cpp
+                    ${CMAKE_SOURCE_DIR}/core/libs/video/qtav/examples/player/config/MiscPage.cpp
+                    ${CMAKE_SOURCE_DIR}/core/libs/video/qtav/examples/player/config/ConfigPageBase.cpp
+                    ${CMAKE_SOURCE_DIR}/core/libs/video/qtav/examples/player/config/CaptureConfigPage.cpp
+                    ${CMAKE_SOURCE_DIR}/core/libs/video/qtav/examples/player/config/AVFilterConfigPage.cpp
+                    ${CMAKE_SOURCE_DIR}/core/libs/video/qtav/examples/player/filters/OSDFilter.cpp
+                    ${CMAKE_SOURCE_DIR}/core/libs/video/qtav/examples/player/filters/OSD.cpp
+                    ${CMAKE_SOURCE_DIR}/core/libs/video/qtav/examples/player/filters/AVFilterSubtitle.cpp
+                    ${CMAKE_SOURCE_DIR}/core/libs/video/qtav/examples/player/playlist/PlayListModel.cpp
+                    ${CMAKE_SOURCE_DIR}/core/libs/video/qtav/examples/player/playlist/PlayListItem.cpp
+                    ${CMAKE_SOURCE_DIR}/core/libs/video/qtav/examples/player/playlist/PlayListDelegate.cpp
+                    ${CMAKE_SOURCE_DIR}/core/libs/video/qtav/examples/player/playlist/PlayList.cpp
+)
+
+add_executable(qtavplayer_gui ${qtavplayer_SRCS})
+
+target_link_libraries(qtavplayer_gui
+
+                      digikamcore
+
+                      ${COMMON_TEST_LINK}
+)
