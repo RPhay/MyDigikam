@@ -58,7 +58,7 @@ namespace Internal
 
 int computeNotifyPrecision(qint64 duration, qreal fps)
 {
-    if (duration <= 0 || duration > 60*1000) // no duration or 10min
+    if ((duration <= 0) || (duration > 60*1000)) // no duration or 10min
         return 500;
 
     if (duration > 20*1000)
@@ -68,7 +68,7 @@ int computeNotifyPrecision(qint64 duration, qreal fps)
 
     if (fps > 1)
     {
-        dt = qMin(250, int(qreal(dt*2)/fps));
+        dt = qMin(250, int(qreal(dt*2) / fps));
     }
     else
     {
@@ -97,7 +97,7 @@ static bool correct_audio_channels(AVCodecContext *ctx)
         }
     }
 
-    return ctx->channel_layout > 0 && ctx->channels > 0;
+    return ((ctx->channel_layout > 0) && (ctx->channels > 0));
 }
 
 AVPlayer::Private::Private()
@@ -229,12 +229,12 @@ AVPlayer::Private::~Private()
 bool AVPlayer::Private::checkSourceChange()
 {
     if (current_source.type() == QVariant::String)
-        return demuxer.fileName() != current_source.toString();
+        return (demuxer.fileName() != current_source.toString());
 
     if (current_source.canConvert<QIODevice*>())
-        return demuxer.ioDevice() != current_source.value<QIODevice*>();
+        return (demuxer.ioDevice() != current_source.value<QIODevice*>());
 
-    return demuxer.mediaIO() != current_source.value<QtAV::MediaIO*>();
+    return (demuxer.mediaIO() != current_source.value<QtAV::MediaIO*>());
 }
 
 void AVPlayer::Private::updateNotifyInterval()
@@ -319,7 +319,7 @@ void AVPlayer::Private::initStatistics()
 void AVPlayer::Private::initBaseStatistics()
 {
     statistics.reset();
-    statistics.url           = current_source.type() == QVariant::String ? current_source.toString() : QString();
+    statistics.url           = (current_source.type() == QVariant::String) ? current_source.toString() : QString();
     statistics.start_time    = QTime(0, 0, 0).addMSecs(int(demuxer.startTime()));
     statistics.duration      = QTime(0, 0, 0).addMSecs((int)demuxer.duration());
     AVFormatContext *fmt_ctx = demuxer.formatContext();
@@ -339,7 +339,7 @@ void AVPlayer::Private::initBaseStatistics()
 
     //fmt_ctx->duration may be AV_NOPTS_VALUE. AVDemuxer.duration deals with this case
 
-    AVDictionaryEntry *tag = nullptr;
+    AVDictionaryEntry* tag = nullptr;
 
     while ((tag = av_dict_get(fmt_ctx->metadata, "", tag, AV_DICT_IGNORE_SUFFIX)))
     {
@@ -351,11 +351,12 @@ void AVPlayer::Private::initBaseStatistics()
 
 void AVPlayer::Private::initCommonStatistics(int s, Statistics::Common *st, AVCodecContext *avctx)
 {
-    AVFormatContext *fmt_ctx = demuxer.formatContext();
+    AVFormatContext* fmt_ctx = demuxer.formatContext();
 
     if (!fmt_ctx)
     {
-        qCWarning(DIGIKAM_QTAV_LOG_WARN).noquote() << QString::asprintf("demuxer.formatContext()==null. internal error");
+        qCWarning(DIGIKAM_QTAV_LOG_WARN).noquote()
+            << QString::asprintf("demuxer.formatContext()==null. internal error");
 
         return;
     }
@@ -374,19 +375,19 @@ void AVPlayer::Private::initCommonStatistics(int s, Statistics::Common *st, AVCo
 
     // AVCodecContext.codec_name is deprecated. use avcodec_get_name. check null avctx->codec?
 
-    st->codec = QLatin1String(avcodec_get_name(avctx->codec_id));
+    st->codec      = QLatin1String(avcodec_get_name(avctx->codec_id));
     st->codec_long = QLatin1String(get_codec_long_name(avctx->codec_id));
-    st->total_time = QTime(0, 0, 0).addMSecs(stream->duration == (qint64)AV_NOPTS_VALUE ? 0 : int(qreal(stream->duration)*av_q2d(stream->time_base)*1000.0));
-    st->start_time = QTime(0, 0, 0).addMSecs(stream->start_time == (qint64)AV_NOPTS_VALUE ? 0 : int(qreal(stream->start_time)*av_q2d(stream->time_base)*1000.0));
+    st->total_time = QTime(0, 0, 0).addMSecs((stream->duration   == (qint64)AV_NOPTS_VALUE) ? 0 : int(qreal(stream->duration)*av_q2d(stream->time_base)*1000.0));
+    st->start_time = QTime(0, 0, 0).addMSecs((stream->start_time == (qint64)AV_NOPTS_VALUE) ? 0 : int(qreal(stream->start_time)*av_q2d(stream->time_base)*1000.0));
 
     qCDebug(DIGIKAM_QTAV_LOG).noquote()
         << QString::asprintf("codec: %s(%s)",
             qPrintable(st->codec), qPrintable(st->codec_long));
 
     st->bit_rate = avctx->bit_rate; // fmt_ctx
-    st->frames = stream->nb_frames;
+    st->frames   = stream->nb_frames;
 
-    if (stream->avg_frame_rate.den && stream->avg_frame_rate.num)
+    if      (stream->avg_frame_rate.den && stream->avg_frame_rate.num)
         st->frame_rate = av_q2d(stream->avg_frame_rate);
 
 #if (defined FF_API_R_FRAME_RATE && FF_API_R_FRAME_RATE) // removed in libav10
@@ -398,7 +399,8 @@ void AVPlayer::Private::initCommonStatistics(int s, Statistics::Common *st, AVCo
         if (stream->r_frame_rate.num < 90000)
             st->frame_rate = av_q2d(stream->r_frame_rate);
 
-        qCDebug(DIGIKAM_QTAV_LOG).noquote() << QString::asprintf("%d/%d", stream->r_frame_rate.num, stream->r_frame_rate.den);
+        qCDebug(DIGIKAM_QTAV_LOG).noquote()
+            << QString::asprintf("%d/%d", stream->r_frame_rate.num, stream->r_frame_rate.den);
     }
 
 #endif // FF_API_R_FRAME_RATE
@@ -408,7 +410,7 @@ void AVPlayer::Private::initCommonStatistics(int s, Statistics::Common *st, AVCo
 
     //qCDebug(DIGIKAM_QTAV_LOG).noquote() << QString::asprintf("time: %f~%f, nb_frames=%lld", st->start_time, st->total_time, stream->nb_frames); //why crash on mac? av_q2d({0,0})?
 
-    AVDictionaryEntry *tag = nullptr;
+    AVDictionaryEntry* tag = nullptr;
 
     while ((tag = av_dict_get(stream->metadata, "", tag, AV_DICT_IGNORE_SUFFIX)))
     {
@@ -418,61 +420,61 @@ void AVPlayer::Private::initCommonStatistics(int s, Statistics::Common *st, AVCo
 
 void AVPlayer::Private::initAudioStatistics(int s)
 {
-    AVCodecContext *avctx = demuxer.audioCodecContext();
+    AVCodecContext* avctx = demuxer.audioCodecContext();
     statistics.audio      = Statistics::Common();
     statistics.audio_only = Statistics::AudioOnly();
 
     if (!avctx)
         return;
 
-    statistics.audio.available = s == demuxer.audioStream();
+    statistics.audio.available = (s == demuxer.audioStream());
     initCommonStatistics(s, &statistics.audio, avctx);
 
     if (adec)
     {
-        statistics.audio.decoder = adec->name();
+        statistics.audio.decoder        = adec->name();
         statistics.audio.decoder_detail = adec->description();
     }
 
     correct_audio_channels(avctx);
     statistics.audio_only.block_align = avctx->block_align;
-    statistics.audio_only.channels = avctx->channels;
+    statistics.audio_only.channels    = avctx->channels;
     char cl[128];
 
     // nb_channels -1: will use av_get_channel_layout_nb_channels
 
     av_get_channel_layout_string(cl, sizeof(cl), avctx->channels, avctx->channel_layout);
     statistics.audio_only.channel_layout = QLatin1String(cl);
-    statistics.audio_only.sample_fmt = QLatin1String(av_get_sample_fmt_name(avctx->sample_fmt));
-    statistics.audio_only.frame_size = avctx->frame_size;
-    statistics.audio_only.sample_rate = avctx->sample_rate;
+    statistics.audio_only.sample_fmt     = QLatin1String(av_get_sample_fmt_name(avctx->sample_fmt));
+    statistics.audio_only.frame_size     = avctx->frame_size;
+    statistics.audio_only.sample_rate    = avctx->sample_rate;
 }
 
 void AVPlayer::Private::initVideoStatistics(int s)
 {
-    AVCodecContext *avctx = demuxer.videoCodecContext();
-    statistics.video = Statistics::Common();
+    AVCodecContext* avctx = demuxer.videoCodecContext();
+    statistics.video      = Statistics::Common();
     statistics.video_only = Statistics::VideoOnly();
 
     if (!avctx)
         return;
 
-    statistics.video.available = s == demuxer.videoStream();
+    statistics.video.available = (s == demuxer.videoStream());
     initCommonStatistics(s, &statistics.video, avctx);
 
     if (vdec)
     {
-        statistics.video.decoder = vdec->name();
+        statistics.video.decoder        = vdec->name();
         statistics.video.decoder_detail = vdec->description();
     }
 
     statistics.video_only.coded_height = avctx->coded_height;
-    statistics.video_only.coded_width = avctx->coded_width;
-    statistics.video_only.gop_size = avctx->gop_size;
-    statistics.video_only.pix_fmt = QLatin1String(av_get_pix_fmt_name(avctx->pix_fmt));
-    statistics.video_only.height = avctx->height;
-    statistics.video_only.width = avctx->width;
-    statistics.video_only.rotate = 0;
+    statistics.video_only.coded_width  = avctx->coded_width;
+    statistics.video_only.gop_size     = avctx->gop_size;
+    statistics.video_only.pix_fmt      = QLatin1String(av_get_pix_fmt_name(avctx->pix_fmt));
+    statistics.video_only.height       = avctx->height;
+    statistics.video_only.width        = avctx->width;
+    statistics.video_only.rotate       = 0;
 
 #if AV_MODULE_CHECK(LIBAVFORMAT, 55, 18, 0, 39, 100)
 
@@ -496,7 +498,7 @@ void AVPlayer::Private::initVideoStatistics(int s)
 
 bool AVPlayer::Private::setupAudioThread(AVPlayer *player)
 {
-    AVDemuxer *ademuxer = &demuxer;
+    AVDemuxer* ademuxer = &demuxer;
 
     if (!external_audio.isEmpty())
         ademuxer = &audio_demuxer;
@@ -513,7 +515,7 @@ bool AVPlayer::Private::setupAudioThread(AVPlayer *player)
         athread->setOutput(nullptr);
     }
 
-    AVCodecContext *avctx = ademuxer->audioCodecContext();
+    AVCodecContext* avctx = ademuxer->audioCodecContext();
 
     if (!avctx)
     {
@@ -581,9 +583,12 @@ bool AVPlayer::Private::setupAudioThread(AVPlayer *player)
     {
         qCDebug(DIGIKAM_QTAV_LOG).noquote() << QString::asprintf("ao audio format is changed. reopen ao");
 */
-        ao->setAudioFormat(af); /// set before close to workaround OpenAL context lost
+        ao->setAudioFormat(af);     // set before close to workaround OpenAL context lost
         ao->close();
-        qCDebug(DIGIKAM_QTAV_LOG) << "AudioOutput format: " << ao->audioFormat() << "; requested: " << ao->requestedFormat();
+
+        qCDebug(DIGIKAM_QTAV_LOG) << "AudioOutput format: "
+                                  << ao->audioFormat() << "; requested: "
+                                  << ao->requestedFormat();
 
         if (!ao->open())
         {
@@ -626,7 +631,7 @@ bool AVPlayer::Private::setupAudioThread(AVPlayer *player)
 
         if (filters.size() > 0)
         {
-            foreach (Filter *filter, filters)
+            foreach (Filter* const filter, filters)
             {
                 athread->installFilter(filter);
             }
@@ -678,12 +683,12 @@ QVariantList AVPlayer::Private::getTracksInfo(AVDemuxer *demuxer, AVDemuxer::Str
     foreach (int s, streams)
     {
         QVariantMap t;
-        t[QStringLiteral("id")] = info.size();
-        t[QStringLiteral("file")] = demuxer->fileName();
+        t[QStringLiteral("id")]           = info.size();
+        t[QStringLiteral("file")]         = demuxer->fileName();
         t[QStringLiteral("stream_index")] = QVariant(s);
 
-        AVStream *stream = demuxer->formatContext()->streams[s];
-        AVCodecContext *ctx = stream->codec;
+        AVStream* stream                  = demuxer->formatContext()->streams[s];
+        AVCodecContext* ctx               = stream->codec;
 
         if (ctx)
         {
@@ -698,7 +703,7 @@ QVariantList AVPlayer::Private::getTracksInfo(AVDemuxer *demuxer, AVDemuxer::Str
                 t[QStringLiteral("extra")] = QByteArray((const char*)ctx->extradata, ctx->extradata_size);
         }
 
-        AVDictionaryEntry *tag = av_dict_get(stream->metadata, "language", nullptr, 0);
+        AVDictionaryEntry* tag = av_dict_get(stream->metadata, "language", nullptr, 0);
 
         if (!tag)
             tag = av_dict_get(stream->metadata, "lang", nullptr, 0);
@@ -730,14 +735,14 @@ bool AVPlayer::Private::applySubtitleStream(int n, AVPlayer *player)
     if (!demuxer.setStreamIndex(AVDemuxer::SubtitleStream, n))
         return false;
 
-    AVCodecContext *ctx = demuxer.subtitleCodecContext();
+    AVCodecContext* ctx = demuxer.subtitleCodecContext();
 
     if (!ctx)
         return false;
 
     // FIXME: AVCodecDescriptor.name and AVCodec.name are different!
 
-    const AVCodecDescriptor *codec_desc = avcodec_descriptor_get(ctx->codec_id);
+    const AVCodecDescriptor* codec_desc = avcodec_descriptor_get(ctx->codec_id);
 
     if (!codec_desc)
         return false;
@@ -776,7 +781,8 @@ bool AVPlayer::Private::tryApplyDecoderPriority(AVPlayer *player)
 
         if (vd->open())
         {
-            qCDebug(DIGIKAM_QTAV_LOG).noquote() << QString::asprintf("**************Video decoder found:%p", vd);
+            qCDebug(DIGIKAM_QTAV_LOG).noquote()
+                << QString::asprintf("**************Video decoder found:%p", vd);
 
             break;
         }
@@ -785,7 +791,8 @@ bool AVPlayer::Private::tryApplyDecoderPriority(AVPlayer *player)
         vd = nullptr;
     }
 
-    qCDebug(DIGIKAM_QTAV_LOG).noquote() << QString::asprintf("**************set new decoder:%p -> %p", vdec, vd);
+    qCDebug(DIGIKAM_QTAV_LOG).noquote()
+        << QString::asprintf("**************set new decoder:%p -> %p", vdec, vd);
 
     if (!vd)
     {
@@ -794,7 +801,7 @@ bool AVPlayer::Private::tryApplyDecoderPriority(AVPlayer *player)
         return false;
     }
 
-    if (vd->id() == vdec->id() && vd->options() == vdec->options())
+    if ((vd->id() == vdec->id()) && (vd->options() == vdec->options()))
     {
         qCDebug(DIGIKAM_QTAV_LOG).noquote() << QString::asprintf("Video decoder does not change");
         delete vd;
@@ -824,7 +831,7 @@ bool AVPlayer::Private::tryApplyDecoderPriority(AVPlayer *player)
     return true;
 }
 
-bool AVPlayer::Private::setupVideoThread(AVPlayer *player)
+bool AVPlayer::Private::setupVideoThread(AVPlayer* player)
 {
     demuxer.setStreamIndex(AVDemuxer::VideoStream, video_track);
 
@@ -853,7 +860,9 @@ bool AVPlayer::Private::setupVideoThread(AVPlayer *player)
 
     foreach (VideoDecoderId vid, vc_ids)
     {
-        qCDebug(DIGIKAM_QTAV_LOG).noquote() << QString::asprintf("**********trying video decoder: %s...", VideoDecoder::name(vid));
+        qCDebug(DIGIKAM_QTAV_LOG).noquote()
+            << QString::asprintf("**********trying video decoder: %s...", VideoDecoder::name(vid));
+
         VideoDecoder* vd = VideoDecoder::create(vid);
 
         if (!vd)
@@ -869,7 +878,9 @@ bool AVPlayer::Private::setupVideoThread(AVPlayer *player)
         if (vd->open())
         {
             vdec = vd;
-            qCDebug(DIGIKAM_QTAV_LOG).noquote() << QString::asprintf("**************Video decoder found:%p", vdec);
+
+            qCDebug(DIGIKAM_QTAV_LOG).noquote()
+                << QString::asprintf("**************Video decoder found:%p", vdec);
 
             break;
         }
@@ -905,7 +916,7 @@ bool AVPlayer::Private::setupVideoThread(AVPlayer *player)
 
         if (filters.size() > 0)
         {
-            foreach (Filter *filter, filters)
+            foreach (Filter* const filter, filters)
             {
                 vthread->installFilter(filter);
             }
@@ -943,8 +954,8 @@ void AVPlayer::Private::updateBufferValue(PacketBuffer* buf)
     {
         // if has video, then audio buffer should not block the video buffer (bufferValue == 1, modified in AVDemuxThread)
 
-        bv = statistics.audio.frame_rate > 0 && statistics.audio.frame_rate < 60 ?
-                        statistics.audio.frame_rate : 3LL;
+        bv = (statistics.audio.frame_rate > 0) && (statistics.audio.frame_rate < 60) ? statistics.audio.frame_rate
+                                                                                     : 3LL;
     }
 
     if      (buffer_mode == BufferTime)
@@ -956,12 +967,12 @@ void AVPlayer::Private::updateBufferValue(PacketBuffer* buf)
 
     if (video)
     {
-        if (demuxer.hasAttacedPicture() || (statistics.video.frames > 0 && statistics.video.frames < bv))
+        if (demuxer.hasAttacedPicture() || ((statistics.video.frames > 0) && (statistics.video.frames < bv)))
             bv = qMax<qint64>(1LL, statistics.video.frames);
     }
 
     buf->setBufferMode(buffer_mode);
-    buf->setBufferValue(buffer_value < 0LL ? bv : buffer_value);
+    buf->setBufferValue((buffer_value < 0LL) ? bv : buffer_value);
 }
 
 void AVPlayer::Private::updateBufferValue()
