@@ -737,6 +737,8 @@ private:
     void unload(); // TODO: private. call in stop() if not load() by user? or always unload() in stop()?
     qint64 normalizedPosition(qint64 pos);
 
+private:
+
     class Private;
     QScopedPointer<Private> d;
 };
