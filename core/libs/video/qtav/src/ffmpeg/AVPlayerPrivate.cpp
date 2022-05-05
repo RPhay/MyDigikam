@@ -250,19 +250,19 @@ void AVPlayer::Private::updateNotifyInterval()
 void AVPlayer::Private::applyFrameRate()
 {
     qreal vfps         = force_fps;
-    bool force         = vfps > 0;
-    const bool ao_null = ao && ao->backend().toLower() == QLatin1String("null");
+    bool force         = (vfps > 0);
+    const bool ao_null = ao && (ao->backend().toLower() == QLatin1String("null"));
 
     if      (athread && !ao_null)
     {
         // TODO: no null ao check. null ao block internally
 
-        force = vfps > 0 && !!vthread;
+        force = (vfps > 0) && !!vthread;
     }
     else if (!force)
     {
         force = !!vthread;
-        vfps  = statistics.video.frame_rate > 0 ? statistics.video.frame_rate : 25;
+        vfps  = (statistics.video.frame_rate > 0) ? statistics.video.frame_rate : 25;
 
         // vfps<0: try to use pts (ExternalClock). if no pts (raw codec), try the default fps(VideoClock)
 
@@ -277,29 +277,29 @@ void AVPlayer::Private::applyFrameRate()
 
         // vfps>0: force video fps to vfps. clock must be external
 
-        clock->setClockType(vfps > 0 ? AVClock::VideoClock : AVClock::ExternalClock);
+        clock->setClockType((vfps > 0) ? AVClock::VideoClock : AVClock::ExternalClock);
         vthread->setFrameRate(vfps);
 
         if (statistics.video.frame_rate > 0)
-            r = qAbs(qreal(vfps))/statistics.video.frame_rate;
+            r = qAbs(qreal(vfps)) / statistics.video.frame_rate;
     }
     else
     {
         clock->setClockAuto(true);
 
-        clock->setClockType(athread && !ao_null && ao->isOpen() ? AVClock::AudioClock
-                                                                : AVClock::ExternalClock);
+        clock->setClockType(athread && ao && ao->isOpen() ? AVClock::AudioClock
+                                                          : AVClock::ExternalClock);
 
         if (vthread)
             vthread->setFrameRate(0.0);
 
-        if (!ao_null)
+        if (ao)
             ao->setSpeed(1);
 
         clock->setSpeed(1);
     }
 
-    if (!ao_null)
+    if (ao)
         ao->setSpeed(r);
 
     clock->setSpeed(r);
