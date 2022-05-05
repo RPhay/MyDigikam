@@ -37,7 +37,7 @@
 #include "AVOutput.h"
 #include "AVPlayer.h"
 #include "Packet.h"
-#include "Statistics.h"
+#include "QtAV_Statistics.h"
 
 #include "AudioEncoder.h"
 #include "AudioDecoder.h"

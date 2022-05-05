@@ -25,7 +25,7 @@
 
 // Local includes
 
-#include "Statistics.h"
+#include "QtAV_Statistics.h"
 #include "AVOutput.h"
 #include "AVPlayer.h"
 #include "FilterManager.h"

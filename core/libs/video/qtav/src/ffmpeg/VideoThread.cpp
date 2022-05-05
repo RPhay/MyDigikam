@@ -35,7 +35,7 @@
 #include "VideoCapture.h"
 #include "VideoDecoder.h"
 #include "VideoRenderer.h"
-#include "Statistics.h"
+#include "QtAV_Statistics.h"
 #include "Filter.h"
 #include "FilterContext.h"
 #include "OutputSet.h"

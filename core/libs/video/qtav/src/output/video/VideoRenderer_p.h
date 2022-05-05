@@ -34,7 +34,7 @@
 
 // Local includes
 
-#include "Statistics.h"
+#include "QtAV_Statistics.h"
 #include "VideoFrame.h"
 #include "AVOutput_p.h"
 

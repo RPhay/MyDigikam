@@ -33,7 +33,7 @@
 // Local includes
 
 #include "Filter.h"
-#include "Statistics.h"
+#include "QtAV_Statistics.h"
 #include "QtAV_factory.h"
 #include "QtAV_mkid.h"
 #include "digikam_debug.h"

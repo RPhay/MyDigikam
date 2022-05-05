@@ -21,7 +21,7 @@
  *
  * ============================================================ */
 
-#include "Statistics.h"
+#include "QtAV_Statistics.h"
 
 // Local includes
 

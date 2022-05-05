@@ -34,7 +34,7 @@
 // Local includes
 
 #include "Filter_p.h"
-#include "Statistics.h"
+#include "QtAV_Statistics.h"
 #include "AudioFrame.h"
 #include "VideoFrame.h"
 #include "AVCompat.h"

@@ -37,7 +37,7 @@
 
 #include "AudioOutput.h"
 #include "AVClock.h"
-#include "Statistics.h"
+#include "QtAV_Statistics.h"
 #include "VideoDecoder.h"
 #include "AVError.h"
 

@@ -28,7 +28,7 @@
 #include "AVPlayer.h"
 #include "AVMuxer.h"
 #include "EncodeFilter.h"
-#include "Statistics.h"
+#include "QtAV_Statistics.h"
 #include "QtAV_BlockingQueue.h"
 #include "digikam_debug.h"
 

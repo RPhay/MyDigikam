@@ -71,8 +71,8 @@ set(libqtav_SRCS
     ${CMAKE_CURRENT_SOURCE_DIR}/src/subtitle/SubImage.cpp
 
     ${CMAKE_CURRENT_SOURCE_DIR}/src/utils/GPUMemCopy.cpp
-    ${CMAKE_CURRENT_SOURCE_DIR}/src/utils/Statistics.cpp
     ${CMAKE_CURRENT_SOURCE_DIR}/src/utils/ColorTransform.cpp
+    ${CMAKE_CURRENT_SOURCE_DIR}/src/utils/QtAV_Statistics.cpp
     ${CMAKE_CURRENT_SOURCE_DIR}/src/utils/QtAV_Global.cpp
     ${CMAKE_CURRENT_SOURCE_DIR}/src/utils/QtAV_internal.cpp
 
