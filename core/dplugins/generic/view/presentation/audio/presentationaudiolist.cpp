@@ -43,7 +43,7 @@
 // QtAV includes
 
 #include "AVPlayer.h"
-#include "Statistics.h"
+#include "QtAV_Statistics.h"
 
 // KDE includes
 
