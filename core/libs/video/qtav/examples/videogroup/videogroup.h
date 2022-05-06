@@ -46,7 +46,7 @@ public:
     void play(const QString& file);
     void updateROI();
 
-public slots:
+public Q_SLOTS:
     void setSingleWindow(bool s);
     void toggleSingleFrame(bool s);
     void toggleFrameless(bool f);

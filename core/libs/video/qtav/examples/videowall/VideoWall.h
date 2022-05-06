@@ -47,7 +47,7 @@ public:
     void show();
     void play(const QString& file);
 
-public slots:
+public Q_SLOTS:
     void stop();
     void openLocalFile();
     void openUrl();

@@ -50,7 +50,7 @@ protected:
     virtual void applyToUi();
     virtual void applyFromUi();
 
-private slots:
+private Q_SLOTS:
     void videoDecoderEnableChanged();
     void priorityUp();
     void priorityDown();

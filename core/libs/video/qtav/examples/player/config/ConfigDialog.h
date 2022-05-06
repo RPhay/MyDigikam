@@ -36,9 +36,9 @@ class ConfigDialog : public QDialog
 public:
     static void display();
 
-signals:
+Q_SIGNALS:
 
-private slots:
+private Q_SLOTS:
     void onButtonClicked(QAbstractButton* btn);
     void onApply();
     void onCancel();

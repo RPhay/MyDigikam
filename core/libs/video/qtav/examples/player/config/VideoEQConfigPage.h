@@ -51,14 +51,14 @@ public:
     qreal hue() const;
     qreal saturation() const;
 
-signals:
+Q_SIGNALS:
     void engineChanged();
     void brightnessChanged(int);
     void contrastChanged(int);
     void hueChanegd(int);
     void saturationChanged(int);
 
-private slots:
+private Q_SLOTS:
     void onGlobalSet(bool);
     void onReset();
     void onEngineChangedByUI();

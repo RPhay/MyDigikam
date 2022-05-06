@@ -57,10 +57,10 @@ public:
     void setMaxRows(int r);
     int maxRows() const;
 
-signals:
+Q_SIGNALS:
     void aboutToPlay(const QString& url);
 
-private slots:
+private Q_SLOTS:
     void removeSelectedItems();
     void clearItems();
     //

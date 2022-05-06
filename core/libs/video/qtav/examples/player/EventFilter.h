@@ -46,11 +46,11 @@ public:
     explicit EventFilter(QtAV::AVPlayer *player);
     virtual ~EventFilter();
 
-signals:
+Q_SIGNALS:
     void helpRequested();
     void showNextOSD();
 
-public slots:
+public Q_SLOTS:
     void openLocalFile();
     void openUrl();
     void about();
@@ -72,7 +72,7 @@ class WindowEventFilter : public QObject
 public:
     WindowEventFilter(QWidget *window);
 
-signals:
+Q_SIGNALS:
     void fullscreenChanged();
 
 protected:

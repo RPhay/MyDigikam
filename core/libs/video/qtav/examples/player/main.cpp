@@ -21,44 +21,59 @@
  *
  * ============================================================ */
 
+// Qt includes
+
 #include <QApplication>
 #include <QtDebug>
 #include <QDir>
 #include <QMessageBox>
 
+// Local includes
+
 #include "AVPlayer.h"
 #include "VideoOutput.h"
 #include "QtAVWidgets.h"
-#include "config/PropertyEditor.h"
+#include "PropertyEditor.h"
 #include "MainWindow.h"
-#include "../common/common.h"
+#include "common/common.h"
 
 using namespace QtAV;
-static const struct {
-    const char* name;
+
+static const struct
+{
+    const char*     name;
     VideoRendererId id;
-} vid_map[] = {
-{ "opengl", VideoRendererId_OpenGLWidget },
-{ "gl", VideoRendererId_GLWidget2 },
-{ "d2d", VideoRendererId_Direct2D },
-{ "gdi", VideoRendererId_GDI },
-{ "xv", VideoRendererId_XV },
-{ "x11", VideoRendererId_X11 },
-{ "qt", VideoRendererId_Widget },
-{ 0, 0 }
+} vid_map[] =
+{
+    { "opengl", VideoRendererId_OpenGLWidget },
+    { "gl", VideoRendererId_GLWidget2 },
+    { "d2d", VideoRendererId_Direct2D },
+    { "gdi", VideoRendererId_GDI },
+    { "xv", VideoRendererId_XV },
+    { "x11", VideoRendererId_X11 },
+    { "qt", VideoRendererId_Widget },
+    { 0, 0 }
 };
 
-VideoRendererId rendererId_from_opt_name(const QString& name) {
-    for (int i = 0; vid_map[i].name; ++i) {
+VideoRendererId rendererId_from_opt_name(const QString& name)
+{
+    for (int i = 0 ; vid_map[i].name ; ++i)
+    {
         if (name == QLatin1String(vid_map[i].name))
             return vid_map[i].id;
     }
+
 #ifndef QT_NO_OPENGL
-#if defined(Q_OS_ANDROID) || defined(Q_OS_IOS)
+#   if defined(Q_OS_ANDROID) || defined(Q_OS_IOS)
+
     return VideoRendererId_OpenGLWidget; // qglwidget is not suitable for android
-#endif
+
+#   endif
+
     return VideoRendererId_GLWidget2;
+
 #endif
+
     return VideoRendererId_Widget;
 }
 
@@ -71,52 +86,70 @@ int main(int argc, char *argv[])
             ("ffmpeg-log",  QString(), QString::fromLatin1("ffmpeg log level. can be: quiet, panic, fatal, error, warn, info, verbose, debug. this can override env 'QTAV_FFMPEG_LOG'"))
             ("vd-list", QString::fromLatin1("List video decoders and their properties"))
             ("-vo",
+
 #ifndef QT_NO_OPENGL
-#if defined(Q_OS_ANDROID) || defined(Q_OS_IOS)
+#   if defined(Q_OS_ANDROID) || defined(Q_OS_IOS)
+
              QString::fromLatin1("opengl")
-#else
+
+#   else
+
              QString::fromLatin1("gl")
-#endif
+
+#   endif
 #else
+
              QString::fromLatin1("qt")
+
 #endif
+
              , QString::fromLatin1("video renderer engine. can be gl, qt, d2d, gdi, xv, x11."))
             ;
+
     options.parse(argc, argv);
     do_common_options_before_qapp(options);
 
-    if (options.value(QString::fromLatin1("vd-list")).toBool()) {
+    if (options.value(QString::fromLatin1("vd-list")).toBool())
+    {
         PropertyEditor pe;
         VideoDecoderId *vid = NULL;
-        while ((vid = VideoDecoder::next(vid)) != NULL) {
+
+        while ((vid = VideoDecoder::next(vid)) != NULL)
+        {
             VideoDecoder *vd = VideoDecoder::create(*vid);
             pe.getProperties(vd);
             qDebug("- %s:", vd->name().toUtf8().constData());
             qDebug() << pe.buildOptions().toUtf8().constData();
         }
+
         exit(0);
     }
+
     QApplication a(argc, argv);
     a.setAttribute(Qt::AA_DontCreateNativeWidgetSiblings);
     qDebug() <<a.arguments();
-    a.setApplicationName(QString::fromLatin1("Player"));
-//    a.setApplicationDisplayName(QString::fromLatin1("QtAV Player"));
+
+    a.setApplicationDisplayName(QString::fromLatin1("QtAV Player"));
     QDir::setCurrent(qApp->applicationDirPath());
 
     do_common_options(options);
     set_opengl_backend(options.option(QString::fromLatin1("gl")).value().toString(), a.arguments().first());
-    load_qm(QStringList() << QString::fromLatin1("player"), options.value(QString::fromLatin1("language")).toString());
     QtAV::setFFmpegLogLevel(options.value(QString::fromLatin1("ffmpeg-log")).toByteArray());
 
     QOption op = options.option(QString::fromLatin1("vo"));
     QString vo = op.value().toString();
-    if (!op.isSet()) {
+
+    if (!op.isSet())
+    {
         QString exe(a.arguments().at(0));
         int i = exe.lastIndexOf(QLatin1Char('-'));
-        if (i > 0) {
+
+        if (i > 0)
+        {
             vo = exe.mid(i+1, exe.indexOf(QLatin1Char('.')) - i - 1);
         }
     }
+
     qDebug("vo: %s", vo.toUtf8().constData());
     MainWindow window;
     window.setProperty("rendererId", rendererId_from_opt_name(vo.toLower()));
@@ -132,59 +165,95 @@ int main(int argc, char *argv[])
     op = options.option(QString::fromLatin1("height"));
     int h = op.value().toInt();
     op = options.option(QString::fromLatin1("x"));
+
     if (op.isSet())
         x = op.value().toInt();
+
     op = options.option(QString::fromLatin1("y"));
+
     if (op.isSet())
         y = op.value().toInt();
+
     window.resize(w, h);
     window.move(x, y);
+
     if (options.value(QString::fromLatin1("fullscreen")).toBool())
         window.showFullScreen();
 
     op = options.option(QString::fromLatin1("ao"));
-    if (op.isSet()) {
+
+    if (op.isSet())
+    {
         QString aos(op.value().toString());
         QStringList ao;
+
         if (aos.contains(QString::fromLatin1(";")))
             ao = aos.split(QString::fromLatin1(";"),
+
 #if QT_VERSION >= QT_VERSION_CHECK(5, 14, 0)
+
             Qt::SkipEmptyParts
+
 #else
+
             QString::SkipEmptyParts
+
 #endif
+
             );
         else
             ao = aos.split(QString::fromLatin1(","),
+
 #if QT_VERSION >= QT_VERSION_CHECK(5, 14, 0)
+
             Qt::SkipEmptyParts
+
 #else
+
             QString::SkipEmptyParts
+
 #endif
+
             );
         window.setAudioBackends(ao);
     }
 
     op = options.option(QString::fromLatin1("vd"));
-    if (op.isSet()) {
+
+    if (op.isSet())
+    {
         QStringList vd = op.value().toString().split(QString::fromLatin1(";"),
+
 #if QT_VERSION >= QT_VERSION_CHECK(5, 14, 0)
+
             Qt::SkipEmptyParts
+
 #else
+
             QString::SkipEmptyParts
+
 #endif
+
         );
+
         if (!vd.isEmpty())
             window.setVideoDecoderNames(vd);
     }
+
     op = options.option(QString::fromLatin1("file"));
-    if (op.isSet()) {
+
+    if (op.isSet())
+    {
         qDebug() << "-f set: " << op.value().toString();
         window.play(op.value().toString());
-    } else {
+    }
+    else
+    {
         if (argc > 1 && !a.arguments().last().startsWith(QLatin1Char('-')) && !a.arguments().at(argc-2).startsWith(QLatin1Char('-')))
             window.play(a.arguments().last());
     }
+
     int ret = a.exec();
+
     return ret;
 }

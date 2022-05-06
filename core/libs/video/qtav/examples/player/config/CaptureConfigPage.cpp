@@ -22,7 +22,9 @@
  * ============================================================ */
 
 #include "CaptureConfigPage.h"
-#include "common/Config.h"
+
+// Qt includes
+
 #include <QLabel>
 #include <QFormLayout>
 #include <QImageWriter>
@@ -30,7 +32,11 @@
 #include <QDesktopServices>
 #include <QFileDialog>
 #include <QUrl>
-#include "../Slider.h"
+
+// Local includes
+
+#include "common/Config.h"
+#include "Slider.h"
 
 CaptureConfigPage::CaptureConfigPage(QWidget *parent) :
     ConfigPageBase(parent)
@@ -54,9 +60,12 @@ CaptureConfigPage::CaptureConfigPage(QWidget *parent) :
     formLayout->addRow(tr("Save format"), mpFormat);
     QList<QByteArray> formats;
     formats << "Original" << QImageWriter::supportedImageFormats();
-    foreach (const QByteArray& fmt, formats) {
+
+    foreach (const QByteArray& fmt, formats)
+    {
         mpFormat->addItem(QString::fromLatin1(fmt));
     }
+
     mpQuality = new Slider();
     formLayout->addRow(tr("Quality"), mpQuality);
     mpQuality->setRange(0, 100);
@@ -65,11 +74,21 @@ CaptureConfigPage::CaptureConfigPage(QWidget *parent) :
     mpQuality->setTickInterval(10);
     mpQuality->setTickPosition(QSlider::TicksBelow);
 
-    connect(&Config::instance(), SIGNAL(captureDirChanged(QString)), mpDir, SLOT(setText(QString)));
-    connect(&Config::instance(), SIGNAL(captureQualityChanged(int)), mpQuality, SLOT(setValue(int)));
-    connect(mpDir, SIGNAL(textChanged(QString)), SLOT(changeDirByUi(QString)));
-    connect(mpFormat, SIGNAL(currentIndexChanged(QString)), SLOT(changeFormatByUi(QString)));
-    connect(mpQuality, SIGNAL(valueChanged(int)), SLOT(changeQualityByUi(int)));
+    connect(&Config::instance(), SIGNAL(captureDirChanged(QString)),
+            mpDir, SLOT(setText(QString)));
+
+    connect(&Config::instance(), SIGNAL(captureQualityChanged(int)),
+            mpQuality, SLOT(setValue(int)));
+/*
+    connect(mpDir, SIGNAL(textChanged(QString)),
+            this, SLOT(changeDirByUi(QString)));
+
+    connect(mpFormat, SIGNAL(currentIndexChanged(QString)),
+            this, SLOT(changeFormatByUi(QString)));
+
+    connect(mpQuality, SIGNAL(valueChanged(int)),
+            this, SLOT(changeQualityByUi(int)));
+*/
 }
 
 QString CaptureConfigPage::name() const
@@ -88,16 +107,20 @@ void CaptureConfigPage::applyToUi()
 {
     mpDir->setText(Config::instance().captureDir());
     int idx = mpFormat->findText(Config::instance().captureFormat());
+
     if (idx >= 0)
         mpFormat->setCurrentIndex(idx);
+
     mpQuality->setValue(Config::instance().captureQuality());
 }
 
 void CaptureConfigPage::selectSaveDir()
 {
     QString dir = QFileDialog::getExistingDirectory(0, tr("Save dir"), mpDir->text());
+
     if (dir.isEmpty())
         return;
+
     mpDir->setText(dir);
 }
 

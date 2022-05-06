@@ -45,9 +45,9 @@ protected:
     virtual void showEvent(QShowEvent* e);
     virtual void timerEvent(QTimerEvent *e);
 
-signals:
+Q_SIGNALS:
     
-public slots:
+public Q_SLOTS:
     
 private:
     void initBaseItems(QList<QTreeWidgetItem*>* items);

@@ -42,7 +42,7 @@ public:
     explicit Widget(QWidget *parent = 0);
     ~Widget();
     
-public slots:
+public Q_SLOTS:
     void setVideo();
     void playVideo();
     void testRTSP();

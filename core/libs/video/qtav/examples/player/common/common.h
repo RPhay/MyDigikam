@@ -24,20 +24,29 @@
 #ifndef QTAV_PLAYER_COMMON_H
 #define QTAV_PLAYER_COMMON_H
 
+// Qt includes
+
 #include <QObject>
 #include <QStringList>
 #include <QUrl>
+
+// Local includes
+
 #include "qoptions.h"
 #include "Config.h"
 #include "ScreenSaver.h"
 
 QOptions get_common_options();
 void do_common_options_before_qapp(const QOptions& options);
+
 /// help, log file, ffmpeg log level
+
 void do_common_options(const QOptions& options, const QString& appName = QString());
-void load_qm(const QStringList& names, const QString &lang = QLatin1String("system"));
+
 // if appname ends with 'desktop', 'es', 'angle', software', 'sw', set by appname. otherwise set by command line option glopt, or Config file
+
 // TODO: move to do_common_options_before_qapp
+
 void set_opengl_backend(const QString& glopt = QString::fromLatin1("auto"), const QString& appname = QString());
 
 QString appDataDir();
@@ -45,10 +54,14 @@ QString appDataDir();
 class AppEventFilter : public QObject
 {
 public:
-    AppEventFilter(QObject *player = 0, QObject* parent = 0);
+
+    AppEventFilter(QObject* player = 0, QObject* parent = 0);
+
     QUrl url() const;
     virtual bool eventFilter(QObject *obj, QEvent *ev);
+
 private:
+
     QObject *m_player;
 };
 

@@ -59,7 +59,6 @@
 #include "ClickableMenu.h"
 #include "Slider.h"
 #include "StatisticsView.h"
-#include "TVView.h"
 #include "config/DecoderConfigPage.h"
 #include "config/VideoEQConfigPage.h"
 #include "config/ConfigDialog.h"
@@ -207,7 +206,7 @@ void MainWindow::initPlayer()
 
     connect(mpCaptureBtn, SIGNAL(clicked()), mpPlayer->videoCapture(), SLOT(capture()));
 
-    emit ready(); //emit this signal after connection. otherwise the slots may not be called for the first time
+    emit ready(); //emit this signal after connection. otherwise the Q_SLOTS may not be called for the first time
 }
 
 void MainWindow::onSeekFinished(qint64 pos)
@@ -295,7 +294,6 @@ void MainWindow::setupUi()
     QWidgetAction *pWA = 0;
     mpMenu = new QMenu(mpMenuBtn);
     mpMenu->addAction(tr("Open Url"), this, SLOT(openUrl()));
-    //mpMenu->addAction(tr("Online channels"), this, SLOT(onTVMenuClick()));
     mpMenu->addSeparator();
 
     subMenu = new QMenu(tr("Play list"));
@@ -1252,15 +1250,6 @@ void MainWindow::playOnlineVideo(QAction *action)
 {
     mTitle = action->text();
     play(action->data().toString());
-}
-
-void MainWindow::onTVMenuClick()
-{
-    static TVView *tvv = new TVView;
-    tvv->show();
-    connect(tvv, SIGNAL(clicked(QString,QString)), SLOT(onPlayListClick(QString,QString)));
-    tvv->setMaximumHeight(qApp->desktop()->height());
-    tvv->setMinimumHeight(tvv->width()*2);
 }
 
 void MainWindow::onPlayListClick(const QString &key, const QString &value)

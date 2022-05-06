@@ -125,10 +125,10 @@ public:
     void setDescription(const QString& desc) { mpDesc->setText(desc); }
     QString description() const { return mpDesc->text();}
 
-signals:
+Q_SIGNALS:
     void enableChanged();
     void selected(DecoderItemWidget*);
-private slots:
+private Q_SLOTS:
     void checkPressed() {
         select(true);
         emit selected(this);

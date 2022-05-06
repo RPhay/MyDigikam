@@ -24,11 +24,15 @@
 #ifndef QTAV_PLAYER_CAPTURECONFIGPAGE_H
 #define QTAV_PLAYER_CAPTURECONFIGPAGE_H
 
-#include "ConfigPageBase.h"
+// Qt includes
 
 #include <QLineEdit>
 #include <QComboBox>
 #include <QCheckBox>
+
+// Local includes
+
+#include "ConfigPageBase.h"
 
 /*
  * TODO: ConfigPageBase: auto save(true for menu ui, false for dialog ui)
@@ -36,24 +40,33 @@
  */
 
 class Slider;
+
 class CaptureConfigPage : public ConfigPageBase
 {
     Q_OBJECT
+
 public:
+
     explicit CaptureConfigPage(QWidget *parent = 0);
     virtual QString name() const;
+
 protected:
+
     virtual void applyToUi();
     virtual void applyFromUi();
-private slots:
-    // only emit signals. no value stores.
+
+private Q_SLOTS:
+
+    // only emit Q_SIGNALS. no value stores.
+
     void selectSaveDir();
     void browseCaptureDir();
 
 private:
-    QLineEdit *mpDir;
-    QComboBox *mpFormat;
-    Slider *mpQuality;
+
+    QLineEdit* mpDir;
+    QComboBox* mpFormat;
+    Slider*    mpQuality;
 };
 
 #endif // QTAV_PLAYER_CAPTURECONFIGPAGE_H

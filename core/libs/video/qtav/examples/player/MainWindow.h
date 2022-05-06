@@ -24,14 +24,25 @@
 #ifndef QTAV_PLAYER_MAINWINDOW_H
 #define QTAV_PLAYER_MAINWINDOW_H
 
+// Qt includes
+
 #include <QWidget>
 #include <QUrl>
 
 QT_BEGIN_NAMESPACE
 class QWidgetAction;
 class QToolButton;
+class QMenu;
+class QTimeEdit;
+class QVBoxLayout;
+class QLabel;
+class QPushButton;
+class QSpinBox;
+class QTimeEdit;
 QT_END_NAMESPACE
-namespace QtAV {
+
+namespace QtAV
+{
 class AudioOutput;
 class AVError;
 class AVPlayer;
@@ -44,15 +55,7 @@ class VideoPreviewWidget;
 class DynamicShaderObject;
 class GLSLFilter;
 }
-QT_BEGIN_NAMESPACE
-class QMenu;
-class QTimeEdit;
-class QVBoxLayout;
-class QLabel;
-class QPushButton;
-class QSpinBox;
-class QTimeEdit;
-QT_END_NAMESPACE
+
 class Button;
 class Slider;
 class PlayList;
@@ -62,27 +65,34 @@ class StatisticsView;
 class OSDFilter;
 class AVFilterSubtitle;
 class Preview;
+
 class MainWindow : public QWidget
 {
     Q_OBJECT
+
 public:
+
     explicit MainWindow(QWidget *parent = 0);
     ~MainWindow();
+
     void setAudioBackends(const QStringList& backends);
     bool setRenderer(QtAV::VideoRenderer* renderer);
     void setVideoDecoderNames(const QStringList& vd);
 
-public slots:
+public Q_SLOTS:
+
     void play(const QString& name);
     void play(const QUrl& url);
     void openFile();
     void togglePlayPause();
     void showNextOSD();
 
-signals:
+Q_SIGNALS:
+
     void ready();
 
-private slots:
+private Q_SLOTS:
+
     void stopUnload();
     void about();
     void openUrl();
@@ -94,7 +104,6 @@ private slots:
     void changeVO(QAction* action);
     void changeChannel(QAction* action);
     void changeAudioTrack(QAction* action);
-    void onTVMenuClick();
     void playOnlineVideo(QAction *action);
     void onPlayListClick(const QString& key, const QString& value);
     void processPendingActions();
@@ -149,7 +158,9 @@ private slots:
 
     void changeClockType(QAction* action);
     void syncVolumeUi(qreal value);
+
 protected:
+
     virtual void closeEvent(QCloseEvent *e);
     virtual void resizeEvent(QResizeEvent *);
     virtual void timerEvent(QTimerEvent *);
@@ -160,9 +171,11 @@ protected:
     void wheelEvent(QWheelEvent *e);
 
 private:
+
     void workaroundRendererSize();
 
 private:
+
     bool mIsReady, mHasPendingPlay;
     bool mControlOn;
     int mCursorTimer;
@@ -217,6 +230,5 @@ private:
     QtAV::DynamicShaderObject *m_shader;
     QtAV::GLSLFilter *m_glsl;
 };
-
 
 #endif // QTAV_PLAYER_MAINWINDOW_H

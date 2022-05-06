@@ -42,17 +42,17 @@ public:
     QString file() const;
     bool autoLoad() const;
 
-signals:
+Q_SIGNALS:
     void loaded();
     void loadError();
     void fileChanged(const QString& path);
     void autoLoadChanged(bool value);
-public slots:
+public Q_SLOTS:
     // TODO: enable changed & autoload=> load
     void setAutoLoad(bool value);
     void findAndSetFile(const QString& path);
     void onPlayerStart();
-private slots:
+private Q_SLOTS:
     void onStatusChanged();
 private:
     bool m_auto;

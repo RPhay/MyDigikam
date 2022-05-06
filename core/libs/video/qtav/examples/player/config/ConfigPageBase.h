@@ -36,7 +36,7 @@ public:
     // default is true. in dialog is false, must call ConfigDialog::apply() to apply
     bool applyOnUiChange() const;
 
-public slots:
+public Q_SLOTS:
     // deprecated. call applyFromUi()
     void apply();
     // deprecated. call applyToUi().

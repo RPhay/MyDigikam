@@ -37,7 +37,7 @@ public:
     ~ScreenSaver();
     // enable: just restore the previous settings. settings changed during the object life will ignored
     bool enable(bool yes);
-public slots:
+public Q_SLOTS:
     void enable();
     void disable();
 protected:

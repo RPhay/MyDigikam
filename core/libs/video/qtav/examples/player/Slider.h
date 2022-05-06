@@ -36,7 +36,7 @@ public:
     Slider(QWidget *parent = 0);
     ~Slider();
 
-signals:
+Q_SIGNALS:
     void onEnter();
     void onLeave();
     void onHover(int pos, int value);

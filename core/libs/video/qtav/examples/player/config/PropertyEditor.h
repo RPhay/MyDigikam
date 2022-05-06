@@ -68,7 +68,7 @@ private:
 
     // called if value changed by ui (in onXXXChange)
     void updatePropertyValue(const QString& name, const QVariant& value);
-private slots:
+private Q_SLOTS:
     // updatePropertyValue
     void onFlagChange(QAction *action);
     void onEnumChange(int value);

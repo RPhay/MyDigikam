@@ -33,8 +33,8 @@
 
 //TODO: use hash to simplify api
 /*
- * MVC model. signals from Config notify ui update. signals from ui does not change Config unless ui changes applyed by XXXPage.apply()
- * signals from ui will emit Config::xxxChanged() with the value in ui. ui cancel the change also emit it with the value stores in Config.
+ * MVC model. Q_SIGNALS from Config notify ui update. Q_SIGNALS from ui does not change Config unless ui changes applyed by XXXPage.apply()
+ * Q_SIGNALS from ui will emit Config::xxxChanged() with the value in ui. ui cancel the change also emit it with the value stores in Config.
  * apply() will change the value in Config
  */
 
@@ -244,7 +244,7 @@ public:
     Q_SIGNAL void fragPostProcessChanged();
 
     Q_SIGNAL void lastFileChanged();
-    //keyword 'signals' maybe protected. we need call the signals in other classes. Q_SIGNAL is empty
+    //keyword 'Q_SIGNALS' maybe protected. we need call the Q_SIGNALS in other classes. Q_SIGNAL is empty
     Q_SIGNAL void forceFrameRateChanged();
     Q_SIGNAL void decodingThreadsChanged(int n);
     Q_SIGNAL void decoderPriorityNamesChanged();

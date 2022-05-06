@@ -106,7 +106,6 @@ set(qtavplayer_SRCS ${CMAKE_SOURCE_DIR}/core/libs/video/qtav/examples/player/Cli
                     ${CMAKE_SOURCE_DIR}/core/libs/video/qtav/examples/player/MainWindow.cpp
                     ${CMAKE_SOURCE_DIR}/core/libs/video/qtav/examples/player/Slider.cpp
                     ${CMAKE_SOURCE_DIR}/core/libs/video/qtav/examples/player/StatisticsView.cpp
-                    ${CMAKE_SOURCE_DIR}/core/libs/video/qtav/examples/player/TVView.cpp
                     ${CMAKE_SOURCE_DIR}/core/libs/video/qtav/examples/player/config/VideoEQConfigPage.cpp
                     ${CMAKE_SOURCE_DIR}/core/libs/video/qtav/examples/player/config/PropertyEditor.cpp
                     ${CMAKE_SOURCE_DIR}/core/libs/video/qtav/examples/player/config/DecoderConfigPage.cpp
