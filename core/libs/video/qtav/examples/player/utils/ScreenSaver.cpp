@@ -233,7 +233,7 @@ bool ScreenSaver::enable(bool yes)
     /*
         int val; //SPI_SETLOWPOWERTIMEOUT, SPI_SETPOWEROFFTIMEOUT. SPI_SETSCREENSAVETIMEOUT
         if ( SystemParametersInfo(SPI_GETSCREENSAVETIMEOUT, 0, &val, 0)) {
-            SystemParametersInfo(SPI_SETSCREENSAVETIMEOUT, val, NULL, 0);
+            SystemParametersInfo(SPI_SETSCREENSAVETIMEOUT, val, nullptr, 0);
         }
      */
     //http://msdn.microsoft.com/en-us/library/aa373208%28VS.85%29.aspx

@@ -24,7 +24,6 @@
 // Qt includes
 
 #include <QApplication>
-#include <QtDebug>
 #include <QDir>
 #include <QMessageBox>
 
@@ -48,13 +47,13 @@ static const struct
 } vid_map[] =
 {
     { "opengl", VideoRendererId_OpenGLWidget },
-    { "gl", VideoRendererId_GLWidget2 },
-    { "d2d", VideoRendererId_Direct2D },
-    { "gdi", VideoRendererId_GDI },
-    { "xv", VideoRendererId_XV },
-    { "x11", VideoRendererId_X11 },
-    { "qt", VideoRendererId_Widget },
-    { 0, 0 }
+    { "gl",     VideoRendererId_GLWidget2    },
+    { "d2d",    VideoRendererId_Direct2D     },
+    { "gdi",    VideoRendererId_GDI          },
+    { "xv",     VideoRendererId_XV           },
+    { "x11",    VideoRendererId_X11          },
+    { "qt",     VideoRendererId_Widget       },
+    { 0,        0                            }
 };
 
 VideoRendererId rendererId_from_opt_name(const QString& name)
@@ -82,11 +81,12 @@ VideoRendererId rendererId_from_opt_name(const QString& name)
 int main(int argc, char *argv[])
 {
     qCDebug(DIGIKAM_QTAVPLAYER_LOG) << aboutQtAV_PlainText();
+
     Config::setName(QString::fromLatin1("Player"));
     QOptions options = get_common_options();
     options.add(QString::fromLatin1("player options"))
             ("ffmpeg-log",  QString(), QString::fromLatin1("ffmpeg log level. can be: quiet, panic, fatal, error, warn, info, verbose, debug. this can override env 'QTAV_FFMPEG_LOG'"))
-            ("vd-list", QString::fromLatin1("List video decoders and their properties"))
+            ("vd-list",                QString::fromLatin1("List video decoders and their properties"))
             ("-vo",
 
 #ifndef QT_NO_OPENGL
@@ -106,7 +106,7 @@ int main(int argc, char *argv[])
 #endif
 
              , QString::fromLatin1("video renderer engine. can be gl, qt, d2d, gdi, xv, x11."))
-            ;
+    ;
 
     options.parse(argc, argv);
     do_common_options_before_qapp(options);
@@ -114,12 +114,13 @@ int main(int argc, char *argv[])
     if (options.value(QString::fromLatin1("vd-list")).toBool())
     {
         PropertyEditor pe;
-        VideoDecoderId *vid = NULL;
+        VideoDecoderId* vid = nullptr;
 
-        while ((vid = VideoDecoder::next(vid)) != NULL)
+        while ((vid = VideoDecoder::next(vid)) != nullptr)
         {
-            VideoDecoder *vd = VideoDecoder::create(*vid);
+            VideoDecoder* vd = VideoDecoder::create(*vid);
             pe.getProperties(vd);
+
             qCDebug(DIGIKAM_QTAVPLAYER_LOG).noquote() << QString::asprintf("- %s:", vd->name().toUtf8().constData());
             qCDebug(DIGIKAM_QTAVPLAYER_LOG) << pe.buildOptions().toUtf8().constData();
         }
@@ -251,8 +252,12 @@ int main(int argc, char *argv[])
     }
     else
     {
-        if (argc > 1 && !a.arguments().last().startsWith(QLatin1Char('-')) && !a.arguments().at(argc-2).startsWith(QLatin1Char('-')))
+        if ((argc > 1)                                          &&
+            !a.arguments().last().startsWith(QLatin1Char('-'))  &&
+            !a.arguments().at(argc-2).startsWith(QLatin1Char('-')))
+        {
             window.play(a.arguments().last());
+        }
     }
 
     int ret = a.exec();
