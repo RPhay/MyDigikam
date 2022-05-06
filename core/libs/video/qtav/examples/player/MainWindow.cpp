@@ -1307,9 +1307,11 @@ void MainWindow::resizeEvent(QResizeEvent* e)
 
 void MainWindow::timerEvent(QTimerEvent *e)
 {
-    if (e->timerId() == mCursorTimer) {
+    if (e->timerId() == mCursorTimer)
+    {
         if (mpControl->isVisible())
             return;
+
         setCursor(Qt::BlankCursor);
     }
 }
@@ -1318,7 +1320,9 @@ void MainWindow::onPositionChange(qint64 pos)
 {
     if (mpPlayer->isSeekable())
         mpTimeSlider->setValue(pos);
+
     mpCurrent->setText(QTime(0, 0, 0).addMSecs(pos).toString(QString::fromLatin1("HH:mm:ss")));
+
     //setWindowTitle(QString::number(mpPlayer->statistics().video_only.currentDisplayFPS(), 'f', 2).append(" ").append(mTitle));
 }
 
@@ -1326,6 +1330,7 @@ void MainWindow::repeatAChanged(const QTime& t)
 {
     if (!mpPlayer)
         return;
+
     mpPlayer->setStartPosition(QTime(0, 0, 0).msecsTo(t));
 }
 
@@ -1333,48 +1338,61 @@ void MainWindow::repeatBChanged(const QTime& t)
 {
     if (!mpPlayer)
         return;
+
     // when this slot is called? even if only range is set?
+
     if (t <= mpRepeatA->time())
         return;
+
     mpPlayer->setStopPosition(QTime(0, 0, 0).msecsTo(t));
 }
 
-void MainWindow::keyPressEvent(QKeyEvent *e)
+void MainWindow::keyPressEvent(QKeyEvent* e)
 {
-    mControlOn = e->key() == Qt::Key_Control;
+    mControlOn = (e->key() == Qt::Key_Control);
 }
 
-void MainWindow::keyReleaseEvent(QKeyEvent *e)
+void MainWindow::keyReleaseEvent(QKeyEvent* e)
 {
     Q_UNUSED(e);
     mControlOn = false;
 }
 
-void MainWindow::mousePressEvent(QMouseEvent *e)
+void MainWindow::mousePressEvent(QMouseEvent* e)
 {
     if (!mControlOn)
         return;
+
     mGlobalMouse = e->globalPos();
 }
 
 void MainWindow::mouseMoveEvent(QMouseEvent *e)
 {
     unsetCursor();
-    if (e->pos().y() > height() - mpTimeSlider->height() - mpControl->height()) {
-        if (mShowControl == 0) {
+
+    if (e->pos().y() > height() - mpTimeSlider->height() - mpControl->height())
+    {
+        if (mShowControl == 0)
+        {
             mShowControl = 1;
             tryShowControlBar();
         }
-    } else {
-        if (mShowControl == 1) {
+    }
+    else
+    {
+        if (mShowControl == 1)
+        {
             mShowControl = 0;
             QTimer::singleShot(3000, this, SLOT(tryHideControlBar()));
         }
     }
-    if (mControlOn && e->button() == Qt::LeftButton) {
+
+    if (mControlOn && (e->button() == Qt::LeftButton))
+    {
         if (!mpRenderer || !mpRenderer->widget())
             return;
-        QRectF roi = mpRenderer->realROI();
+
+        QRectF roi    = mpRenderer->realROI();
         QPointF delta = e->pos() - mGlobalMouse;
         roi.moveLeft(-delta.x());
         roi.moveTop(-delta.y());
@@ -1382,63 +1400,93 @@ void MainWindow::mouseMoveEvent(QMouseEvent *e)
     }
 }
 
-void MainWindow::wheelEvent(QWheelEvent *e)
+void MainWindow::wheelEvent(QWheelEvent* e)
 {
-    if (!mpRenderer || !mpRenderer->widget()) {
+    if (!mpRenderer || !mpRenderer->widget())
+    {
         return;
     }
+
     QPoint dp;
+
 #if QT_VERSION >= QT_VERSION_CHECK(5, 0, 0)
+
     qreal deg = e->angleDelta().y()/8;
-    dp = e->pixelDelta();
+    dp        = e->pixelDelta();
+
 #else
+
     qreal deg = e->delta()/8;
-#endif //QT_VERSION
+
+#endif // QT_VERSION
 
 #ifdef WHEEL_SPEED
 
     if (!mControlOn)
     {
         qreal speed = mpPlayer->speed();
-        mpPlayer->setSpeed(qMax(0.01, speed + deg/15.0*0.02));
+        mpPlayer->setSpeed(qMax(0.01, speed + deg / 15.0*0.02));
 
         return;
     }
 
-#endif //WHEEL_SPEED
+#endif // WHEEL_SPEED
 
-    QPointF p = mpRenderer->widget()->mapFrom(this, e->position().toPoint());
+    QPointF p  = mpRenderer->widget()->mapFrom(this, e->position().toPoint());
     QPointF fp = mpRenderer->mapToFrame(p);
+
     //qCDebug(DIGIKAM_QTAVPLAYER_LOG) <<  p << fp;
+
     if (fp.x() < 0)
         fp.setX(0);
+
     if (fp.y() < 0)
         fp.setY(0);
+
     if (fp.x() > mpRenderer->videoFrameSize().width())
         fp.setX(mpRenderer->videoFrameSize().width());
+
     if (fp.y() > mpRenderer->videoFrameSize().height())
         fp.setY(mpRenderer->videoFrameSize().height());
-    QRectF viewport = QRectF(mpRenderer->mapToFrame(QPointF(0, 0)), mpRenderer->mapToFrame(QPointF(mpRenderer->rendererWidth(), mpRenderer->rendererHeight())));
+
+    QRectF viewport = QRectF(mpRenderer->mapToFrame(QPointF(0, 0)),
+                             mpRenderer->mapToFrame(QPointF(mpRenderer->rendererWidth(),
+                             mpRenderer->rendererHeight())));
+
+    Q_UNUSED(viewport);
+
     //qCDebug(DIGIKAM_QTAVPLAYER_LOG).noquote() << QString::asprintf("vo: (%.1f, %.1f)=> frame: (%.1f, %.1f)", p.x(), p.y(), fp.x(), fp.y());
-    qreal zoom = 1.0 + deg*3.14/180.0;
-    if (!dp.isNull()) {
+
+    qreal zoom = 1.0 + deg*3.14 / 180.0;
+
+    if (!dp.isNull())
+    {
         zoom = 1.0 + (qreal)dp.y()/100.0;
     }
+
     static qreal z = 1.0;
-    z *= zoom;
+    z             *= zoom;
+
     if (z < 1.0)
         z = 1.0;
+
     qreal x0 = fp.x() - fp.x()/z;
     qreal y0 = fp.y() - fp.y()/z;
+
     //qCDebug(DIGIKAM_QTAVPLAYER_LOG) << "fr: " << QRectF(x0, y0, qreal(mpRenderer->videoFrameSize().width())/z, qreal(mpRenderer->videoFrameSize().height())/z) << fp << z;
-    mpRenderer->setRegionOfInterest(QRectF(x0, y0, qreal(mpRenderer->videoFrameSize().width())/z, qreal(mpRenderer->videoFrameSize().height())/z));
-    return;
+
+    mpRenderer->setRegionOfInterest(QRectF(x0, y0,
+                                           qreal(mpRenderer->videoFrameSize().width())  / z,
+                                           qreal(mpRenderer->videoFrameSize().height()) / z));
+
+/*
     QTransform m;
     m.translate(fp.x(), fp.y());
     m.scale(1.0/zoom, 1.0/zoom);
     m.translate(-fp.x(), -fp.y());
     QRectF r = m.mapRect(mpRenderer->realROI());
     mpRenderer->setRegionOfInterest((r | m.mapRect(viewport))&QRectF(QPointF(0,0), mpRenderer->videoFrameSize()));
+*/
 }
 
 void MainWindow::about()
@@ -1449,8 +1497,10 @@ void MainWindow::about()
 void MainWindow::openUrl()
 {
     QString url = QInputDialog::getText(0, tr("Open an url"), tr("Url"));
+
     if (url.isEmpty())
         return;
+
     play(url);
 }
 
@@ -1458,47 +1508,64 @@ void MainWindow::updateChannelMenu()
 {
     if (mpChannelAction)
         mpChannelAction->setChecked(false);
-    AudioOutput *ao = mpPlayer ? mpPlayer->audio() : 0; //getAO()?
-    if (!ao) {
+
+    AudioOutput* ao = mpPlayer ? mpPlayer->audio() : 0; // getAO() ?
+
+    if (!ao)
+    {
         return;
     }
+
     AudioFormat::ChannelLayout cl = ao->audioFormat().channelLayout();
-    QList<QAction*> as = mpChannelMenu->actions();
-    foreach (QAction *action, as) {
+    QList<QAction*> as            = mpChannelMenu->actions();
+
+    foreach (QAction* const action, as)
+    {
         if (action->data().toInt() != (int)cl)
             continue;
+
         action->setChecked(true);
         mpChannelAction = action;
+
         break;
     }
 }
 
 void MainWindow::initAudioTrackMenu()
 {
-    int track = -2;
-    QAction *a = 0;
+    int track  = -2;
+    QAction* a = nullptr;
     QList<QAction*> as;
     int tracks = 0;
-    if (!mpPlayer) {
+
+    if (!mpPlayer)
+    {
         a = mpAudioTrackMenu->addAction(tr("External"));
         a->setData(-1);
         a->setCheckable(true);
         a->setChecked(false);
         as.push_back(a);
         mpAudioTrackAction = 0;
+
         goto end;
     }
-    track = mpPlayer->currentAudioStream();
-    as = mpAudioTrackMenu->actions();
+
+    track  = mpPlayer->currentAudioStream();
+    as     = mpAudioTrackMenu->actions();
     tracks = mpPlayer->audioStreamCount();
-    if (mpAudioTrackAction && tracks == as.size()-1 && mpAudioTrackAction->data().toInt() == track)
+
+    if (mpAudioTrackAction && (tracks == as.size()-1) && (mpAudioTrackAction->data().toInt() == track))
         return;
-    while (tracks + 1 < as.size()) {
+
+    while (tracks + 1 < as.size())
+    {
         a = as.takeLast();
         mpAudioTrackMenu->removeAction(a);
         delete a;
     }
-    if (as.isEmpty()) {
+
+    if (as.isEmpty())
+    {
         a = mpAudioTrackMenu->addAction(tr("External"));
         a->setData(-1);
         a->setCheckable(true);
@@ -1506,28 +1573,40 @@ void MainWindow::initAudioTrackMenu()
         as.push_back(a);
         mpAudioTrackAction = 0;
     }
-    while (tracks + 1 > as.size()) {
+
+    while (tracks + 1 > as.size())
+    {
         a = mpAudioTrackMenu->addAction(QString::number(as.size()-1));
         a->setData(as.size()-1);
         a->setCheckable(true);
         a->setChecked(false);
         as.push_back(a);
     }
+
 end:
-    foreach(QAction *ac, as) {
-        if (ac->data().toInt() == track && track >= 0) {
-            if (mpPlayer && mpPlayer->externalAudio().isEmpty()) {
+
+    foreach(QAction* const ac, as)
+    {
+        if ((ac->data().toInt() == track) && (track >= 0))
+        {
+            if (mpPlayer && mpPlayer->externalAudio().isEmpty())
+            {
                 qCDebug(DIGIKAM_QTAVPLAYER_LOG).noquote() << QString::asprintf("track found!!!!!");
                 mpAudioTrackAction = ac;
                 ac->setChecked(true);
             }
-        } else {
+        }
+        else
+        {
             ac->setChecked(false);
         }
     }
-    if (mpPlayer && !mpPlayer->externalAudio().isEmpty()) {
+
+    if (mpPlayer && !mpPlayer->externalAudio().isEmpty())
+    {
         mpAudioTrackAction = as.first();
     }
+
     if (mpAudioTrackAction)
         mpAudioTrackAction->setChecked(true);
 }
@@ -1535,20 +1614,31 @@ end:
 void MainWindow::switchAspectRatio(QAction *action)
 {
     qreal r = action->data().toDouble();
-    if (action == mpARAction && r != -2) {
-        action->toggle(); //check state changes if clicked
+
+    if ((action == mpARAction) && (r != -2))
+    {
+        action->toggle(); // check state changes if clicked
+
         return;
     }
-    if (r == 0) {
+
+    if      (r == 0)
+    {
         mpPlayer->renderer()->setOutAspectRatioMode(VideoRenderer::VideoAspectRatio);
-    } else if (r == -1) {
+    }
+    else if (r == -1)
+    {
         mpPlayer->renderer()->setOutAspectRatioMode(VideoRenderer::RendererAspectRatio);
-    } else {
+    }
+    else
+    {
         if (r == -2)
             r = QInputDialog::getDouble(0, tr("Aspect ratio"), QString(), 1.0);
+
         mpPlayer->renderer()->setOutAspectRatioMode(VideoRenderer::CustomAspectRation);
         mpPlayer->renderer()->setOutAspectRatio(r);
     }
+
     mpARAction->setChecked(false);
     mpARAction = action;
     mpARAction->setChecked(true);
@@ -1557,18 +1647,28 @@ void MainWindow::switchAspectRatio(QAction *action)
 void MainWindow::toggleRepeat(bool r)
 {
     mpRepeatEnableAction->setChecked(r);
-    mpRepeatAction->defaultWidget()->setEnabled(r); //why need defaultWidget?
-    if (r) {
+    mpRepeatAction->defaultWidget()->setEnabled(r); // why need defaultWidget?
+
+    if (r)
+    {
         mRepeateMax = mpRepeatBox->value();
-    } else {
+    }
+    else
+    {
         mRepeateMax = 0;
     }
-    if (mpPlayer) {
+
+    if (mpPlayer)
+    {
         mpPlayer->setRepeat(mRepeateMax);
-        if (r) {
+
+        if (r)
+        {
             repeatAChanged(mpRepeatA->time());
             repeatBChanged(mpRepeatB->time());
-        } else {
+        }
+        else
+        {
             mpPlayer->setTimeRange(0);
         }
     }
@@ -1577,7 +1677,9 @@ void MainWindow::toggleRepeat(bool r)
 void MainWindow::setRepeateMax(int m)
 {
     mRepeateMax = m;
-    if (mpPlayer) {
+
+    if (mpPlayer)
+    {
         mpPlayer->setRepeat(m);
     }
 }
@@ -1596,11 +1698,14 @@ void MainWindow::onPlayListClick(const QString &key, const QString &value)
 
 void MainWindow::tryHideControlBar()
 {
-    if (mShowControl > 0) {
+    if (mShowControl > 0)
+    {
         return;
     }
+
     if (mpControl->isHidden() && mpTimeSlider->isHidden())
         return;
+
     mpControl->hide();
     mpTimeSlider->hide();
     workaroundRendererSize();
@@ -1609,8 +1714,10 @@ void MainWindow::tryHideControlBar()
 void MainWindow::tryShowControlBar()
 {
     unsetCursor();
+
     if (mpTimeSlider && mpTimeSlider->isHidden())
         mpTimeSlider->show();
+
     if (mpControl && mpControl->isHidden())
         mpControl->show();
 }
@@ -1619,8 +1726,10 @@ void MainWindow::showInfo()
 {
     if (!mpStatisticsView)
         mpStatisticsView = new StatisticsView();
+
     if (mpPlayer)
         mpStatisticsView->setStatistics(mpPlayer->statistics());
+
     mpStatisticsView->show();
 }
 
@@ -1628,33 +1737,40 @@ void MainWindow::onTimeSliderHover(int pos, int value)
 {
     QPoint gpos = mapToGlobal(mpTimeSlider->pos() + QPoint(pos, 0));
     QToolTip::showText(gpos, QTime(0, 0, 0).addMSecs(value).toString(QString::fromLatin1("HH:mm:ss")));
+
     if (!Config::instance().previewEnabled())
         return;
+
     if (!m_preview)
         m_preview = new VideoPreviewWidget();
+
     m_preview->setFile(mpPlayer->file());
     m_preview->setTimestamp(value);
     m_preview->preview();
     const int w = Config::instance().previewWidth();
     const int h = Config::instance().previewHeight();
-    m_preview->setWindowFlags(Qt::Tool |Qt::FramelessWindowHint|Qt::WindowStaysOnTopHint);
+    m_preview->setWindowFlags(Qt::Tool | Qt::FramelessWindowHint | Qt::WindowStaysOnTopHint);
     m_preview->resize(w, h);
-    m_preview->move(gpos - QPoint(w/2, h));
+    m_preview->move(gpos - QPoint(w / 2, h));
     m_preview->show();
 }
 
 void MainWindow::onTimeSliderLeave()
 {
-    /*if (m_preview && m_preview->isVisible())
-        m_preview->hide();*/
+/*
+    if (m_preview && m_preview->isVisible())
+        m_preview->hide();
+*/
     if (!m_preview)
     {
         return;
     }
+
     if (m_preview->isVisible())
     {
         m_preview->close();
     }
+
     delete m_preview;
     m_preview = nullptr;
 }
@@ -1667,38 +1783,53 @@ void MainWindow::handleError(const AVError &e)
 void MainWindow::onMediaStatusChanged()
 {
     QString status;
-    AVPlayer *player = reinterpret_cast<AVPlayer*>(sender());
-    if (!player) { //why it happens? reinterpret_cast  works.
+    AVPlayer* player = reinterpret_cast<AVPlayer*>(sender());
+
+    if (!player)
+    {
+        // why it happens? reinterpret_cast  works.
+
         qCWarning(DIGIKAM_QTAVPLAYER_LOG) << "invalid sender() " << sender() << player;
+
         return;
     }
-    switch (player->mediaStatus()) {
-    case NoMedia:
-        status = tr("No media");
-        break;
-    case InvalidMedia:
-        status = tr("Invalid meida");
-        break;
-    case BufferingMedia:
-        status = tr("Buffering...");
-        break;
-    case BufferedMedia:
-        status = tr("Buffered");
-        break;
-    case LoadingMedia:
-        status = tr("Loading...");
-        break;
-    case LoadedMedia:
-        status = tr("Loaded");
-        break;
-    case StalledMedia:
-        status = tr("Stalled");
-        break;
-    default:
-        status = QString();
-        onStopPlay();
-        break;
+
+    switch (player->mediaStatus())
+    {
+        case NoMedia:
+            status = tr("No media");
+            break;
+
+        case InvalidMedia:
+            status = tr("Invalid meida");
+            break;
+
+        case BufferingMedia:
+            status = tr("Buffering...");
+            break;
+
+        case BufferedMedia:
+            status = tr("Buffered");
+            break;
+
+        case LoadingMedia:
+            status = tr("Loading...");
+            break;
+
+        case LoadedMedia:
+            status = tr("Loaded");
+            break;
+
+        case StalledMedia:
+            status = tr("Stalled");
+            break;
+
+        default:
+            status = QString();
+            onStopPlay();
+            break;
     }
+
     qCDebug(DIGIKAM_QTAVPLAYER_LOG) << "status changed " << status;
     setWindowTitle(status + QString::fromLatin1(" ") + mTitle);
 }
@@ -1707,7 +1838,8 @@ void MainWindow::onBufferProgress(qreal percent)
 {
     const qreal bs = mpPlayer->bufferSpeed();
     QString s;
-    if (bs > 1024*1024*1024)
+
+    if      (bs > 1024 * 1024 * 1024)
         s = QString::fromLatin1("%1G/s").arg(bs/1024.0/1024.0/1024.0, 6, 'f', 1);
     else if (bs > 1024*1024)
         s = QString::fromLatin1("%1M/s").arg(bs/1024.0/1024.0, 6, 'f', 1);
@@ -1715,21 +1847,28 @@ void MainWindow::onBufferProgress(qreal percent)
         s = QString::fromLatin1("%1K/s").arg(bs/1024.0, 6, 'f', 1);
     else
         s = QString::fromLatin1("%1B/s").arg(bs, 6, 'f', 1);
+
     setWindowTitle(QString::fromLatin1("Buffering... %1% @%2 ").arg(percent*100.0, 5, 'f', 1).arg(s) + mTitle);
 }
 
 void MainWindow::onVideoEQEngineChanged()
 {
-    VideoRenderer *vo = mpPlayer->renderer();
+    VideoRenderer* vo = mpPlayer->renderer();
     VideoEQConfigPage::Engine e = mpVideoEQ->engine();
-    if (e == VideoEQConfigPage::SWScale
-            && vo->id() != VideoRendererId_X11 // X11 scales in the renderer
-            ) {
+
+    if (
+           e == VideoEQConfigPage::SWScale
+        && vo->id() != VideoRendererId_X11 // X11 scales in the renderer
+       )
+    {
         vo->forcePreferredPixelFormat(true);
         vo->setPreferredPixelFormat(VideoFormat::Format_RGB32);
-    } else {
+    }
+    else
+    {
         vo->forcePreferredPixelFormat(false);
     }
+
     onBrightnessChanged(mpVideoEQ->brightness()*100.0);
     onContrastChanged(mpVideoEQ->contrast()*100.0);
     onHueChanged(mpVideoEQ->hue()*100.0);
@@ -1738,11 +1877,15 @@ void MainWindow::onVideoEQEngineChanged()
 
 void MainWindow::onBrightnessChanged(int b)
 {
-    VideoRenderer *vo = mpPlayer->renderer();
-    if (mpVideoEQ->engine() != VideoEQConfigPage::SWScale
-            && vo->setBrightness(mpVideoEQ->brightness())) {
+    VideoRenderer* vo = mpPlayer->renderer();
+
+    if (   mpVideoEQ->engine() != VideoEQConfigPage::SWScale
+        && vo->setBrightness(mpVideoEQ->brightness()))
+    {
         mpPlayer->setBrightness(0);
-    } else {
+    }
+    else
+    {
         vo->setBrightness(0);
         mpPlayer->setBrightness(b);
     }
@@ -1750,11 +1893,15 @@ void MainWindow::onBrightnessChanged(int b)
 
 void MainWindow::onContrastChanged(int c)
 {
-    VideoRenderer *vo = mpPlayer->renderer();
-    if (mpVideoEQ->engine() != VideoEQConfigPage::SWScale
-            && vo->setContrast(mpVideoEQ->contrast())) {
+    VideoRenderer* vo = mpPlayer->renderer();
+
+    if (   mpVideoEQ->engine() != VideoEQConfigPage::SWScale
+        && vo->setContrast(mpVideoEQ->contrast()))
+    {
         mpPlayer->setContrast(0);
-    } else {
+    }
+    else
+    {
         vo->setContrast(0);
         mpPlayer->setContrast(c);
     }
@@ -1762,11 +1909,15 @@ void MainWindow::onContrastChanged(int c)
 
 void MainWindow::onHueChanged(int h)
 {
-    VideoRenderer *vo = mpPlayer->renderer();
-    if (mpVideoEQ->engine() != VideoEQConfigPage::SWScale
-            && vo->setHue(mpVideoEQ->hue())) {
+    VideoRenderer* vo = mpPlayer->renderer();
+
+    if (   mpVideoEQ->engine() != VideoEQConfigPage::SWScale
+        && vo->setHue(mpVideoEQ->hue()))
+    {
         mpPlayer->setHue(0);
-    } else {
+    }
+    else
+    {
         vo->setHue(0);
         mpPlayer->setHue(h);
     }
@@ -1774,11 +1925,15 @@ void MainWindow::onHueChanged(int h)
 
 void MainWindow::onSaturationChanged(int s)
 {
-    VideoRenderer *vo = mpPlayer->renderer();
-    if (mpVideoEQ->engine() != VideoEQConfigPage::SWScale
-            && vo->setSaturation(mpVideoEQ->saturation())) {
+    VideoRenderer* vo = mpPlayer->renderer();
+
+    if (   mpVideoEQ->engine() != VideoEQConfigPage::SWScale
+        && vo->setSaturation(mpVideoEQ->saturation()))
+    {
         mpPlayer->setSaturation(0);
-    } else {
+    }
+    else
+    {
         vo->setSaturation(0);
         mpPlayer->setSaturation(s);
     }
@@ -1788,28 +1943,34 @@ void MainWindow::onCaptureConfigChanged()
 {
     mpPlayer->videoCapture()->setCaptureDir(Config::instance().captureDir());
     mpPlayer->videoCapture()->setQuality(Config::instance().captureQuality());
-    if (Config::instance().captureFormat().toLower() == QLatin1String("original")) {
+
+    if (Config::instance().captureFormat().toLower() == QLatin1String("original"))
+    {
         mpPlayer->videoCapture()->setOriginalFormat(true);
-    } else {
+    }
+    else
+    {
         mpPlayer->videoCapture()->setOriginalFormat(false);
         mpPlayer->videoCapture()->setSaveFormat(Config::instance().captureFormat());
     }
+
     mpCaptureBtn->setToolTip(QString::fromLatin1("%1\n%2: %3\n%4: %5")
                              .arg(tr("Capture video frame"))
                              .arg(tr("Save to"))
                              .arg(mpPlayer->videoCapture()->captureDir())
                              .arg(tr("Format"))
                              .arg(Config::instance().captureFormat()));
-
 }
 
 void MainWindow::onAVFilterVideoConfigChanged()
 {
-    if (mpVideoFilter) {
+    if (mpVideoFilter)
+    {
         mpVideoFilter->uninstall();
         delete mpVideoFilter;
         mpVideoFilter = 0;
     }
+
     mpVideoFilter = new LibAVFilterVideo(this);
     mpVideoFilter->setEnabled(Config::instance().avfilterVideoEnable());
     mpPlayer->installFilter(mpVideoFilter);
@@ -1818,11 +1979,13 @@ void MainWindow::onAVFilterVideoConfigChanged()
 
 void MainWindow::onAVFilterAudioConfigChanged()
 {
-    if (mpAudioFilter) {
+    if (mpAudioFilter)
+    {
         mpAudioFilter->uninstall();
         delete mpAudioFilter;
         mpAudioFilter = 0;
     }
+
     mpAudioFilter = new LibAVFilterAudio(this);
     mpAudioFilter->setEnabled(Config::instance().avfilterAudioEnable());
     mpAudioFilter->installTo(mpPlayer);
@@ -1833,6 +1996,7 @@ void MainWindow::onBufferValueChanged()
 {
     if (!mpPlayer)
         return;
+
     mpPlayer->setBufferValue(Config::instance().bufferValue());
 }
 
@@ -1840,6 +2004,7 @@ void MainWindow::onAbortOnTimeoutChanged()
 {
     if (!mpPlayer)
         return;
+
     mpPlayer->setInterruptOnTimeout(Config::instance().abortOnTimeout());
 }
 
@@ -1847,26 +2012,39 @@ void MainWindow::onUserShaderChanged()
 {
     if (!mpRenderer || !mpRenderer->opengl())
         return;
+
 #ifndef QT_NO_OPENGL
-    if (Config::instance().userShaderEnabled()) {
-        if (Config::instance().intermediateFBO()) {
+
+    if (Config::instance().userShaderEnabled())
+    {
+        if (Config::instance().intermediateFBO())
+        {
             if (!m_glsl)
                 m_glsl = new GLSLFilter(this);
+
             m_glsl->installTo(mpRenderer);
-        } else {
+        }
+        else
+        {
             if (m_glsl)
                 m_glsl->uninstall();
         }
+
         if (!m_shader)
             m_shader = new DynamicShaderObject(this);
+
         m_shader->setHeader(Config::instance().fragHeader());
         m_shader->setSample(Config::instance().fragSample());
         m_shader->setPostProcess(Config::instance().fragPostProcess());
         mpRenderer->opengl()->setUserShader(m_shader);
-    } else {
+    }
+    else
+    {
         mpRenderer->opengl()->setUserShader(nullptr);
     }
+
 #endif
+
 }
 
 void MainWindow::setup()
@@ -1879,7 +2057,9 @@ void MainWindow::handleFullscreenChange()
     workaroundRendererSize();
 
     // workaround renderer display size for ubuntu
+
     tryShowControlBar();
+
     QTimer::singleShot(3000, this, SLOT(tryHideControlBar()));
 }
 
@@ -1896,47 +2076,62 @@ void MainWindow::toggleSubtitleAutoLoad(bool value)
 void MainWindow::openSubtitle()
 {
     QString file = QFileDialog::getOpenFileName(0, tr("Open a subtitle file"));
+
     if (file.isEmpty())
         return;
+
     mpSubtitle->setFile(file);
 }
 
-void MainWindow::setSubtitleCharset(const QString &charSet)
+void MainWindow::setSubtitleCharset(const QString& charSet)
 {
     Q_UNUSED(charSet);
-    QComboBox *box = qobject_cast<QComboBox*>(sender());
+
+    QComboBox* box = qobject_cast<QComboBox*>(sender());
+
     if (!box)
         return;
+
     mpSubtitle->setCodec(box->itemData(box->currentIndex()).toByteArray());
 }
 
 void MainWindow::setSubtitleEngine(const QString &value)
 {
     Q_UNUSED(value)
-    QComboBox *box = qobject_cast<QComboBox*>(sender());
+
+    QComboBox* box = qobject_cast<QComboBox*>(sender());
+
     if (!box)
         return;
+
     mpSubtitle->setEngines(QStringList() << box->itemData(box->currentIndex()).toString());
 }
 
-void MainWindow::changeClockType(QAction *action)
+void MainWindow::changeClockType(QAction* action)
 {
     action->setChecked(true);
     int value = action->data().toInt();
-    if (value < 0) {
+
+    if (value < 0)
+    {
         mpPlayer->masterClock()->setClockAuto(true);
+
         // TODO: guess clock type
+
         return;
     }
+
     mpPlayer->masterClock()->setClockAuto(false);
     mpPlayer->masterClock()->setClockType(AVClock::ClockType(value));
 }
 
 void MainWindow::syncVolumeUi(qreal value)
 {
-    const int v(value/kVolumeInterval);
+    const int v(value / kVolumeInterval);
+
     if (mpVolumeSlider->value() == v)
         return;
+
     mpVolumeSlider->setValue(v);
 }
 
@@ -1944,9 +2139,12 @@ void MainWindow::workaroundRendererSize()
 {
     if (!mpRenderer)
         return;
+
     QSize s = rect().size();
+
     //resize(QSize(s.width()-1, s.height()-1));
     //resize(s); //window resize to fullscreen size will create another fullScreenChange event
+
     mpRenderer->widget()->resize(QSize(s.width()+1, s.height()+1));
     mpRenderer->widget()->resize(s);
 }
