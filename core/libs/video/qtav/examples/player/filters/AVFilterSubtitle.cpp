@@ -27,6 +27,8 @@
 #include <QFileInfo>
 #include <QTextStream>
 
+#include "digikam_debug.h"
+
 namespace QtAVPlayer
 {
 
@@ -70,7 +72,7 @@ bool AVFilterSubtitle::setFile(const QString &filePath)
     if (u.isEmpty()) {
         QFile f(filePath);
         if (!f.open(QIODevice::ReadOnly)) {
-            qWarning("open '%s' error: %s", filePath.toUtf8().constData(), f.errorString().toUtf8().constData());
+            qCWarning(DIGIKAM_QTAVPLAYER_LOG).noquote() << QString::asprintf("open '%s' error: %s", filePath.toUtf8().constData(), f.errorString().toUtf8().constData());
             return false;
         }
         QTextStream ts(&f);
@@ -82,7 +84,7 @@ bool AVFilterSubtitle::setFile(const QString &filePath)
             m_u8_files[filePath] = u;
         } else {
             // read the origin file
-            qWarning("open cache file '%s' error, originanl subtitle file will be used", filePath.toUtf8().constData());
+            qCWarning(DIGIKAM_QTAVPLAYER_LOG).noquote() << QString::asprintf("open cache file '%s' error, originanl subtitle file will be used", filePath.toUtf8().constData());
         }
     }
     if (u.isEmpty())
@@ -90,7 +92,7 @@ bool AVFilterSubtitle::setFile(const QString &filePath)
     // filter_name=argument. use ' to quote the argument, use \ to escaping chars within quoted text. on windows, path can be C:/a/b/c, ":" must be escaped
     u.replace(QLatin1String(":"), QLatin1String("\\:"));
     setOptions(QString::fromLatin1("subtitles='%1'").arg(u));
-    qDebug("subtitle loaded: %s", filePath.toUtf8().constData());
+    qCDebug(DIGIKAM_QTAVPLAYER_LOG).noquote() << QString::asprintf("subtitle loaded: %s", filePath.toUtf8().constData());
     return true;
 }
 

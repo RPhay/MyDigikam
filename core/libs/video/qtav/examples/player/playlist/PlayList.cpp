@@ -22,15 +22,18 @@
  * ============================================================ */
 
 #include "PlayList.h"
-#include "PlayListModel.h"
-#include "PlayListDelegate.h"
-#include "common.h"
+
 #include <QFileDialog>
 #include <QListView>
 #include <QLayout>
 #include <QToolButton>
 #include <QFile>
 #include <QDataStream>
+
+#include "PlayListModel.h"
+#include "PlayListDelegate.h"
+#include "common.h"
+#include "digikam_debug.h"
 
 namespace QtAVPlayer
 {
@@ -77,7 +80,7 @@ PlayList::PlayList(QWidget *parent) :
 
 PlayList::~PlayList()
 {
-    qDebug("+++++++++++++~PlayList()");
+    qCDebug(DIGIKAM_QTAVPLAYER_LOG).noquote() << QString::asprintf("+++++++++++++~PlayList()");
     save();
 }
 
@@ -110,7 +113,7 @@ void PlayList::save()
 {
     QFile f(mFile);
     if (!f.open(QIODevice::WriteOnly)) {
-        qWarning("File open error: %s", qPrintable(f.errorString()));
+        qCWarning(DIGIKAM_QTAVPLAYER_LOG).noquote() << QString::asprintf("File open error: %s", qPrintable(f.errorString()));
         return;
     }
     QDataStream ds(&f);
@@ -120,7 +123,7 @@ void PlayList::save()
 PlayListItem PlayList::itemAt(int row)
 {
     if (mpModel->rowCount() < 0) {
-        qWarning("Invalid rowCount");
+        qCWarning(DIGIKAM_QTAVPLAYER_LOG).noquote() << QString::asprintf("Invalid rowCount");
         return PlayListItem();
     }
     return mpModel->data(mpModel->index(row), Qt::DisplayRole).value<PlayListItem>();

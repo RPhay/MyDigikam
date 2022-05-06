@@ -26,6 +26,8 @@
 #include <QTimerEvent>
 #include <QLibrary>
 
+#include "digikam_debug.h"
+
 #ifdef Q_OS_LINUX
 /*
 #   include <X11/Xlib.h>
@@ -112,11 +114,11 @@ public:
     bool nativeEventFilter(const QByteArray &eventType, void *message, long *result) {
         Q_UNUSED(eventType);
         MSG* msg = static_cast<MSG*>(message);
-        //qDebug("ScreenSaverEventFilter: %p", msg->message);
+        //qCDebug(DIGIKAM_QTAVPLAYER_LOG).noquote() << QString::asprintf("ScreenSaverEventFilter: %p", msg->message);
         if (WM_DEVICECHANGE == msg->message) {
-            qDebug("~~~~~~~~~~device event");
+            qCDebug(DIGIKAM_QTAVPLAYER_LOG).noquote() << QString::asprintf("~~~~~~~~~~device event");
             /*if (msg->wParam == DBT_DEVICEREMOVECOMPLETE) {
-                qDebug("Remove device");
+                qCDebug(DIGIKAM_QTAVPLAYER_LOG).noquote() << QString::asprintf("Remove device");
             }*/
 
         }
@@ -124,7 +126,7 @@ public:
                 && ((msg->wParam & 0xFFF0) == SC_SCREENSAVE
                     || (msg->wParam & 0xFFF0) == SC_MONITORPOWER)
         ) {
-            //qDebug("WM_SYSCOMMAND SC_SCREENSAVE SC_MONITORPOWER");
+            //qCDebug(DIGIKAM_QTAVPLAYER_LOG).noquote() << QString::asprintf("WM_SYSCOMMAND SC_SCREENSAVE SC_MONITORPOWER");
             if (result) {
                 //*result = 0; //why crash?
             }
@@ -179,7 +181,7 @@ ScreenSaver::ScreenSaver()
             isX11 = xlib.load();
         }
         if (!isX11) {
-            qDebug("open X11 so failed: %s", xlib.errorString().toUtf8().constData());
+            qCDebug(DIGIKAM_QTAVPLAYER_LOG).noquote() << QString::asprintf("open X11 so failed: %s", xlib.errorString().toUtf8().constData());
         } else {
             XOpenDisplay = (fXOpenDisplay)xlib.resolve("XOpenDisplay");
             XCloseDisplay = (fXCloseDisplay)xlib.resolve("XCloseDisplay");
@@ -261,7 +263,7 @@ bool ScreenSaver::enable(bool yes)
         ret = XResetScreenSaver(display);
         XCloseDisplay(display);
         rv = ret==Success;
-        qDebug("ScreenSaver::enable %d, ret %d timeout origin: %d", yes, ret, timeout);
+        qCDebug(DIGIKAM_QTAVPLAYER_LOG).noquote() << QString::asprintf("ScreenSaver::enable %d, ret %d timeout origin: %d", yes, ret, timeout);
     }
     modified = true;
     if (!yes) {
@@ -288,9 +290,9 @@ bool ScreenSaver::enable(bool yes)
     modified = true;
 #endif //Q_OS_MAC
     if (!rv) {
-        qWarning("Failed to enable screen saver (%d)", yes);
+        qCWarning(DIGIKAM_QTAVPLAYER_LOG).noquote() << QString::asprintf("Failed to enable screen saver (%d)", yes);
     } else {
-        qDebug("Succeed to enable screen saver (%d)", yes);
+        qCDebug(DIGIKAM_QTAVPLAYER_LOG).noquote() << QString::asprintf("Succeed to enable screen saver (%d)", yes);
     }
     return rv;
 }
@@ -307,20 +309,20 @@ void ScreenSaver::disable()
 
 bool ScreenSaver::retrieveState() {
     bool rv = false;
-    qDebug("ScreenSaver::retrieveState");
+    qCDebug(DIGIKAM_QTAVPLAYER_LOG).noquote() << QString::asprintf("ScreenSaver::retrieveState");
     if (!state_saved) {
 #ifdef Q_OS_LINUX
         if (isX11) {
             Display *display = XOpenDisplay(0);
             XGetScreenSaver(display, &timeout, &interval, &preferBlanking, &allowExposures);
             XCloseDisplay(display);
-            qDebug("ScreenSaver::retrieveState timeout: %d, interval: %d, preferBlanking:%d, allowExposures:%d", timeout, interval, preferBlanking, allowExposures);
+            qCDebug(DIGIKAM_QTAVPLAYER_LOG).noquote() << QString::asprintf("ScreenSaver::retrieveState timeout: %d, interval: %d, preferBlanking:%d, allowExposures:%d", timeout, interval, preferBlanking, allowExposures);
             state_saved = true;
             rv = true;
         }
 #endif //Q_OS_LINUX
     } else {
-        qDebug("ScreenSaver::retrieveState: state already saved previously, doing nothing");
+        qCDebug(DIGIKAM_QTAVPLAYER_LOG).noquote() << QString::asprintf("ScreenSaver::retrieveState: state already saved previously, doing nothing");
     }
     return rv;
 }
@@ -328,7 +330,7 @@ bool ScreenSaver::retrieveState() {
 bool ScreenSaver::restoreState() {
     bool rv = false;
     if (!modified) {
-        qDebug("ScreenSaver::restoreState: state did not change, doing nothing");
+        qCDebug(DIGIKAM_QTAVPLAYER_LOG).noquote() << QString::asprintf("ScreenSaver::restoreState: state did not change, doing nothing");
         return true;
     }
     if (state_saved) {
@@ -350,7 +352,7 @@ bool ScreenSaver::restoreState() {
         }
 #endif //Q_OS_LINUX
     } else {
-        qWarning("ScreenSaver::restoreState: no data, doing nothing");
+        qCWarning(DIGIKAM_QTAVPLAYER_LOG).noquote() << QString::asprintf("ScreenSaver::restoreState: no data, doing nothing");
     }
     return rv;
 }

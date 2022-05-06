@@ -120,7 +120,7 @@ int main(int argc, char *argv[])
         {
             VideoDecoder *vd = VideoDecoder::create(*vid);
             pe.getProperties(vd);
-            qDebug("- %s:", vd->name().toUtf8().constData());
+            qCDebug(DIGIKAM_QTAVPLAYER_LOG).noquote() << QString::asprintf("- %s:", vd->name().toUtf8().constData());
             qCDebug(DIGIKAM_QTAVPLAYER_LOG) << pe.buildOptions().toUtf8().constData();
         }
 
@@ -152,7 +152,7 @@ int main(int argc, char *argv[])
         }
     }
 
-    qDebug("vo: %s", vo.toUtf8().constData());
+    qCDebug(DIGIKAM_QTAVPLAYER_LOG).noquote() << QString::asprintf("vo: %s", vo.toUtf8().constData());
     MainWindow window;
     window.setProperty("rendererId", rendererId_from_opt_name(vo.toLower()));
     window.show();

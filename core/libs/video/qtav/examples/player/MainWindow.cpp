@@ -79,7 +79,7 @@
 
 
 #define AVDEBUG() \
-    qDebug("%s %s @%d", __FILE__, __FUNCTION__, __LINE__);
+    qCDebug(DIGIKAM_QTAVPLAYER_LOG).noquote() << QString::asprintf("%s %s @%d", __FILE__, __FUNCTION__, __LINE__);
 
 using namespace QtAV;
 
@@ -217,7 +217,7 @@ void MainWindow::initPlayer()
 
 void MainWindow::onSeekFinished(qint64 pos)
 {
-    qDebug("seek finished at %lld/%lld", pos, mpPlayer->position());
+    qCDebug(DIGIKAM_QTAVPLAYER_LOG).noquote() << QString::asprintf("seek finished at %lld/%lld", pos, mpPlayer->position());
 }
 
 void MainWindow::stopUnload()
@@ -572,21 +572,21 @@ void MainWindow::changeChannel(QAction *action)
     AudioFormat::ChannelLayout cl = (AudioFormat::ChannelLayout)action->data().toInt();
     AudioOutput *ao = mpPlayer ? mpPlayer->audio() : 0; //getAO()?
     if (!ao) {
-        qWarning("No audio output!");
+        qCWarning(DIGIKAM_QTAVPLAYER_LOG).noquote() << QString::asprintf("No audio output!");
         return;
     }
     mpChannelAction->setChecked(false);
     mpChannelAction = action;
     mpChannelAction->setChecked(true);
     if (!ao->close()) {
-        qWarning("close audio failed");
+        qCWarning(DIGIKAM_QTAVPLAYER_LOG).noquote() << QString::asprintf("close audio failed");
         return;
     }
     AudioFormat af(ao->audioFormat());
     af.setChannelLayout(cl);
     ao->setAudioFormat(af);
     if (!ao->open()) {
-        qWarning("open audio failed");
+        qCWarning(DIGIKAM_QTAVPLAYER_LOG).noquote() << QString::asprintf("open audio failed");
         return;
     }
 }
@@ -799,7 +799,7 @@ void MainWindow::openFile()
 void MainWindow::togglePlayPause()
 {
     if (mpPlayer->isPlaying()) {
-        qDebug("isPaused = %d", mpPlayer->isPaused());
+        qCDebug(DIGIKAM_QTAVPLAYER_LOG).noquote() << QString::asprintf("isPaused = %d", mpPlayer->isPaused());
         mpPlayer->pause(!mpPlayer->isPaused());
     } else {
         if (mFile.isEmpty())
@@ -829,10 +829,10 @@ void MainWindow::onSpinBoxChanged(double v)
 void MainWindow::onPaused(bool p)
 {
     if (p) {
-        qDebug("start pausing...");
+        qCDebug(DIGIKAM_QTAVPLAYER_LOG).noquote() << QString::asprintf("start pausing...");
         mpPlayPauseBtn->setIcon(QIcon(QString::fromLatin1(":/theme/dark/play.svg")));
     } else {
-        qDebug("stop pausing...");
+        qCDebug(DIGIKAM_QTAVPLAYER_LOG).noquote() << QString::asprintf("stop pausing...");
         mpPlayPauseBtn->setIcon(QIcon(QString::fromLatin1(":/theme/dark/pause.svg")));
     }
 }
@@ -889,7 +889,7 @@ void MainWindow::onStopPlay()
 
     mpPlayPauseBtn->setIcon(QIcon(QString::fromLatin1(":/theme/dark/play.svg")));
     mpTimeSlider->setValue(0);
-    qDebug(">>>>>>>>>>>>>>disable slider");
+    qCDebug(DIGIKAM_QTAVPLAYER_LOG).noquote() << QString::asprintf(">>>>>>>>>>>>>>disable slider");
     mpTimeSlider->setDisabled(true);
     mpTimeSlider->setMinimum(0);
     mpTimeSlider->setMaximum(0);
@@ -1089,7 +1089,7 @@ void MainWindow::wheelEvent(QWheelEvent *e)
     if (fp.y() > mpRenderer->videoFrameSize().height())
         fp.setY(mpRenderer->videoFrameSize().height());
     QRectF viewport = QRectF(mpRenderer->mapToFrame(QPointF(0, 0)), mpRenderer->mapToFrame(QPointF(mpRenderer->rendererWidth(), mpRenderer->rendererHeight())));
-    //qDebug("vo: (%.1f, %.1f)=> frame: (%.1f, %.1f)", p.x(), p.y(), fp.x(), fp.y());
+    //qCDebug(DIGIKAM_QTAVPLAYER_LOG).noquote() << QString::asprintf("vo: (%.1f, %.1f)=> frame: (%.1f, %.1f)", p.x(), p.y(), fp.x(), fp.y());
     qreal zoom = 1.0 + deg*3.14/180.0;
     if (!dp.isNull()) {
         zoom = 1.0 + (qreal)dp.y()/100.0;
@@ -1187,7 +1187,7 @@ end:
     foreach(QAction *ac, as) {
         if (ac->data().toInt() == track && track >= 0) {
             if (mpPlayer && mpPlayer->externalAudio().isEmpty()) {
-                qDebug("track found!!!!!");
+                qCDebug(DIGIKAM_QTAVPLAYER_LOG).noquote() << QString::asprintf("track found!!!!!");
                 mpAudioTrackAction = ac;
                 ac->setChecked(true);
             }

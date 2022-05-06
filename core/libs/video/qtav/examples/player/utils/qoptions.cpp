@@ -51,7 +51,7 @@ QOption::QOption(const char *name, Type type, const QString &description)
 /*
 QOption::QOption(const char *name, const QVariant& value, Type type, const QString &description)
 :mType(type),mDescription(description),mDefaultValue(*value),mValue(value)
-{qDebug("%s %s %d", __FILE__, __FUNCTION__, __LINE__);
+{qCDebug(DIGIKAM_QTAVPLAYER_LOG).noquote() << QString::asprintf("%s %s %d", __FILE__, __FUNCTION__, __LINE__);
     setName(name);
 }
 */
@@ -223,19 +223,19 @@ bool QOptions::parse(int argc, const char *const*argv)
                 if (it_list->longName() == it->mid(2,e-2)) {
                     if (it_list->type()==QOption::NoToken) {
                         it_list->setValue(true);
-                        //qDebug("%d %s", __LINE__, qPrintable(it_list->value().toString()));
+                        //qCDebug(DIGIKAM_QTAVPLAYER_LOG).noquote() << QString::asprintf("%d %s", __LINE__, qPrintable(it_list->value().toString()));
 						it = args.erase(it);
 						break;
 					}
 					if (e>0) { //
                         it_list->setValue(it->mid(e+1));
-                        //qDebug("%d %s", __LINE__, qPrintable(it_list->value().toString()));
+                        //qCDebug(DIGIKAM_QTAVPLAYER_LOG).noquote() << QString::asprintf("%d %s", __LINE__, qPrintable(it_list->value().toString()));
 					} else {
 						it = args.erase(it);
                         if (it == args.end())
                             break;
                         it_list->setValue(*it);
-                        //qDebug("%d %s", __LINE__, qPrintable(it_list->value().toString()));
+                        //qCDebug(DIGIKAM_QTAVPLAYER_LOG).noquote() << QString::asprintf("%d %s", __LINE__, qPrintable(it_list->value().toString()));
 					}
 					it = args.erase(it);
 					break;
@@ -263,10 +263,10 @@ bool QOptions::parse(int argc, const char *const*argv)
                         if (it == args.end())
                             break;
                         it_list->setValue(*it);
-                        //qDebug("%d %s", __LINE__, qPrintable(it_list->value().toString()));
+                        //qCDebug(DIGIKAM_QTAVPLAYER_LOG).noquote() << QString::asprintf("%d %s", __LINE__, qPrintable(it_list->value().toString()));
                     } else {
                         it_list->setValue(it->mid(sname_len+1));
-                        //qDebug("%d %s", __LINE__, qPrintable(it_list->value().toString()));
+                        //qCDebug(DIGIKAM_QTAVPLAYER_LOG).noquote() << QString::asprintf("%d %s", __LINE__, qPrintable(it_list->value().toString()));
                     }
 					it = args.erase(it);
 					break;
@@ -385,7 +385,7 @@ QString QOptions::help() const
 
 void QOptions::print() const
 {
-    qDebug("%s", help().toUtf8().constData());
+    qCDebug(DIGIKAM_QTAVPLAYER_LOG).noquote() << QString::asprintf("%s", help().toUtf8().constData());
 }
 
 } // namespace QtAVPlayer

@@ -264,7 +264,7 @@ bool AppEventFilter::eventFilter(QObject *obj, QEvent *ev)
     {
         // winrt file open/pick. since qt5.6.1
 
-        qDebug("QEvent::WinEventAct");
+        qCDebug(DIGIKAM_QTAVPLAYER_LOG).noquote() << QString::asprintf("QEvent::WinEventAct");
 
 #ifdef Q_OS_WINRT
 

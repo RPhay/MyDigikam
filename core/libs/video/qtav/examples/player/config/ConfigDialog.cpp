@@ -38,6 +38,7 @@
 #include "MiscPage.h"
 #include "ShaderPage.h"
 #include "Config.h"
+#include "digikam_debug.h"
 
 namespace QtAVPlayer
 {
@@ -94,18 +95,18 @@ ConfigDialog::ConfigDialog(QWidget* parent)
 
 void ConfigDialog::onButtonClicked(QAbstractButton *btn)
 {
-    qDebug("QDialogButtonBox clicked role=%d", mpButtonBox->buttonRole(btn));
+    qCDebug(DIGIKAM_QTAVPLAYER_LOG).noquote() << QString::asprintf("QDialogButtonBox clicked role=%d", mpButtonBox->buttonRole(btn));
 
     switch (mpButtonBox->buttonRole(btn))
     {
         case QDialogButtonBox::ResetRole:
-            qDebug("QDialogButtonBox ResetRole clicked");
+            qCDebug(DIGIKAM_QTAVPLAYER_LOG).noquote() << QString::asprintf("QDialogButtonBox ResetRole clicked");
             onReset();
             break;
 
         case QDialogButtonBox::AcceptRole:
         case QDialogButtonBox::ApplyRole:
-            qDebug("QDialogButtonBox ApplyRole clicked");
+            qCDebug(DIGIKAM_QTAVPLAYER_LOG).noquote() << QString::asprintf("QDialogButtonBox ApplyRole clicked");
             onApply();
             break;
 

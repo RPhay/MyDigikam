@@ -76,13 +76,13 @@ public:
                 old = dir_old + QString::fromLatin1("/playlist.qds");
                 if (QFile(old).exists()) {
                     if (!QFile::copy(old, appDataDir() + QString::fromLatin1("/playlist.qds")))
-                        qWarning("error to move old playlist data");
+                        qCWarning(DIGIKAM_QTAVPLAYER_LOG).noquote() << QString::asprintf("error to move old playlist data");
                     QFile::remove(old);
                 }
                 old = dir_old + QString::fromLatin1("/history.qds");
                 if (QFile(old).exists()) {
                     if (!QFile::copy(old, appDataDir() + QString::fromLatin1("/history.qds")))
-                        qWarning("error to move old history data");
+                        qCWarning(DIGIKAM_QTAVPLAYER_LOG).noquote() << QString::asprintf("error to move old history data");
                     QFile::remove(old);
                 }
             }
@@ -287,7 +287,7 @@ void Config::reload()
         db = QSqlDatabase::addDatabase(QString::fromUtf8("QSQLITE"));
         db.setDatabaseName(appDataDir().append(QString::fromLatin1("/%1.db").arg(mpData->name)));
         if (!db.open())
-            qWarning("error open db");
+            qCWarning(DIGIKAM_QTAVPLAYER_LOG).noquote() << QString::asprintf("error open db");
         db.exec(QString::fromUtf8("CREATE TABLE IF NOT EXISTS history (url TEXT primary key, start BIGINT, duration BIGINT)"));
     }
     QSqlQuery query(db.exec(QString::fromUtf8("SELECT * FROM history")));
@@ -425,7 +425,7 @@ QStringList Config::decoderPriorityNames() const
 Config& Config::setDecoderPriorityNames(const QStringList &value)
 {
     if (mpData->video_decoders == value) {
-        qDebug("decoderPriority not changed");
+        qCDebug(DIGIKAM_QTAVPLAYER_LOG).noquote() << QString::asprintf("decoderPriority not changed");
         return *this;
     }
     mpData->video_decoders = value;
@@ -1058,13 +1058,13 @@ void Config::addHistory(const QVariantMap &value)
     QSqlQuery query(db);
     if (!query.prepare(QString::fromUtf8("INSERT INTO history (url, start, duration) "
                               "VALUES (:url, :start, :duration)"))) {
-            qWarning("error prepare sql query");
+            qCWarning(DIGIKAM_QTAVPLAYER_LOG).noquote() << QString::asprintf("error prepare sql query");
     }
     query.bindValue(QString::fromUtf8(":url"), value.value(QLatin1String("url")).toString());
     query.bindValue(QString::fromUtf8(":start"), value.value(QLatin1String("start")).toLongLong());
     query.bindValue(QString::fromUtf8(":duration"), value.value(QLatin1String("duration")).toLongLong());
     if (!query.exec())
-        qWarning("failed to add history: %d", db.isOpen());
+        qCWarning(DIGIKAM_QTAVPLAYER_LOG).noquote() << QString::asprintf("failed to add history: %d", db.isOpen());
 }
 
 void Config::removeHistory(const QString &url)
@@ -1087,7 +1087,7 @@ void Config::removeHistory(const QString &url)
     query.prepare(QString::fromUtf8("DELETE FROM history WHERE url = :url"));
     query.bindValue(QString::fromUtf8(":url"), url);
     if (!query.exec())
-        qWarning("failed to remove history");
+        qCWarning(DIGIKAM_QTAVPLAYER_LOG).noquote() << QString::asprintf("failed to remove history");
 }
 
 void Config::clearHistory()
@@ -1101,7 +1101,7 @@ void Config::clearHistory()
     query.prepare(QString::fromUtf8("DELETE FROM history"));
     // 'TRUNCATE table history' is faster
     if (!query.exec())
-        qWarning("failed to clear history");
+        qCWarning(DIGIKAM_QTAVPLAYER_LOG).noquote() << QString::asprintf("failed to clear history");
 }
 
 bool Config::abortOnTimeout() const

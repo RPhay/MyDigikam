@@ -22,8 +22,11 @@
  * ============================================================ */
 
 #include "OSDFilter.h"
-#include "QtAV_Statistics.h"
+
 #include <QPainter>
+
+#include "QtAV_Statistics.h"
+#include "digikam_debug.h"
 
 namespace QtAVPlayer
 {
@@ -39,7 +42,7 @@ void OSDFilter::process(Statistics *statistics, VideoFrame *frame)
     Q_UNUSED(frame);
     if (mShowType == ShowNone)
         return;
-    //qDebug("ctx=%p tid=%p main tid=%p", ctx, QThread::currentThread(), qApp->thread());
+    //qCDebug(DIGIKAM_QTAVPLAYER_LOG).noquote() << QString::asprintf("ctx=%p tid=%p main tid=%p", ctx, QThread::currentThread(), qApp->thread());
     context()->drawPlainText(context()->rect, Qt::AlignCenter, text(statistics));
 }
 
