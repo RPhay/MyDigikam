@@ -503,8 +503,9 @@ QStringList IccProfile::defaultSearchPaths()
 
 #ifdef Q_OS_WIN
 
-    candidates << QDir::rootPath() + QLatin1String("/Windows/Spool/Drivers/Color/");   // For Win2K and WinXP
-    candidates << QDir::rootPath() + QLatin1String("/Windows/Color/");                 // For Win98 and WinMe
+    candidates << QDir::rootPath() + QLatin1String("/Windows/System32/spool/drivers/color/")    // For Win10 and Win7
+    candidates << QDir::rootPath() + QLatin1String("/Windows/Spool/Drivers/Color/");            // For Win2K and WinXP
+    candidates << QDir::rootPath() + QLatin1String("/Windows/Color/");                          // For Win98 and WinMe
 
 #elif defined (Q_OS_MACOS)
 
