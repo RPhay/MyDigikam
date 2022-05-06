@@ -37,7 +37,7 @@ class ConfigPageBase : public QWidget
 
 public:
 
-    explicit ConfigPageBase(QWidget* parent = 0);
+    explicit ConfigPageBase(QWidget* parent = nullptr);
 
     virtual QString name() const = 0;
 

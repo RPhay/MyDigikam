@@ -24,8 +24,12 @@
 #ifndef QTAV_PLAYER_DECODERCONFIGPAGE_H
 #define QTAV_PLAYER_DECODERCONFIGPAGE_H
 
+// Qt includes
+
 #include <QVariant>
 #include <QWidget>
+
+// Local includes
 
 #include "ConfigPageBase.h"
 
@@ -42,18 +46,23 @@ namespace QtAVPlayer
 class DecoderConfigPage : public ConfigPageBase
 {
     Q_OBJECT
+
     class DecoderItemWidget;
+
 public:
-    explicit DecoderConfigPage(QWidget *parent = 0);
-    virtual QString name() const;
+
+    explicit DecoderConfigPage(QWidget* parent = nullptr);
+    virtual QString name()             const;
     QVariantHash audioDecoderOptions() const;
     QVariantHash videoDecoderOptions() const;
 
 protected:
+
     virtual void applyToUi();
     virtual void applyFromUi();
 
 private Q_SLOTS:
+
     void videoDecoderEnableChanged();
     void priorityUp();
     void priorityDown();
@@ -62,11 +71,12 @@ private Q_SLOTS:
     void onConfigChanged();
 
 private:
-    QSpinBox *mpThreads;
-    QToolButton *mpUp, *mpDown;
-    QList<DecoderItemWidget*> mDecItems;
-    DecoderItemWidget *mpSelectedDec;
-    QVBoxLayout *mpDecLayout;
+
+    QSpinBox*                   mpThreads;
+    QToolButton*                mpUp, *mpDown;
+    QList<DecoderItemWidget*>   mDecItems;
+    DecoderItemWidget*          mpSelectedDec;
+    QVBoxLayout*                mpDecLayout;
 };
 
 } // namespace QtAVPlayer
