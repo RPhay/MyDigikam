@@ -22,11 +22,9 @@
  * ============================================================ */
 
 #include "MainWindow.h"
-#include "EventFilter.h"
-#include "QtAV.h"
-#include "OpenGLVideo.h"
-#include "VideoShaderObject.h"
-#include "QtAVWidgets.h"
+
+// Qt includes
+
 #include <QtDebug>
 #include <QLocale>
 #include <QTimer>
@@ -56,6 +54,13 @@
 #include <QWheelEvent>
 #include <QStyleFactory>
 
+// Local includes
+
+#include "EventFilter.h"
+#include "QtAV.h"
+#include "OpenGLVideo.h"
+#include "VideoShaderObject.h"
+#include "QtAVWidgets.h"
 #include "ClickableMenu.h"
 #include "Slider.h"
 #include "StatisticsView.h"
@@ -69,10 +74,11 @@
 #include "digikam_debug.h"
 
 #ifndef QT_NO_OPENGL
-#include "GLSLFilter.h"
+#   include "GLSLFilter.h"
 #endif
+
 /*
- *TODO:
+ * TODO:
  * disable a/v actions if player is 0;
  * use action's value to set player's parameters when start to play a new file
  */
@@ -88,75 +94,96 @@ namespace QtAVPlayer
 
 const qreal kVolumeInterval = 0.04;
 
-extern QStringList idsToNames(QVector<VideoDecoderId> ids);
+extern QStringList             idsToNames(QVector<VideoDecoderId> ids);
 extern QVector<VideoDecoderId> idsFromNames(const QStringList& names);
 
-void QLabelSetElideText(QLabel *label, QString text, int W = 0)
+void QLabelSetElideText(QLabel* label, QString text, int W = 0)
 {
     QFontMetrics metrix(label->font());
     int width = label->width() - label->indent() - label->margin();
-    if (W || label->parent()) {
+
+    if (W || label->parent())
+    {
         int w = W;
+
         if (!w)
             w = ((QWidget*)label->parent())->width();
-        width = qMax(w - label->indent() - label->margin() - 13*(30), 0); //TODO: why 30?
+
+        width = qMax(w - label->indent() - label->margin() - 13*(30), 0); // TODO: why 30?
     }
+
     QString clippedText = metrix.elidedText(text, Qt::ElideRight, width);
     label->setText(clippedText);
 }
 
-MainWindow::MainWindow(QWidget *parent) :
-    QWidget(parent)
-  , mIsReady(false)
-  , mHasPendingPlay(false)
-  , mControlOn(false)
-  , mShowControl(2)
-  , mRepeateMax(0)
-  , mpVOAction(0)
-  , mpPlayer(0)
-  , mpRenderer(0)
-  , mpVideoFilter(0)
-  , mpAudioFilter(0)
-  , mpStatisticsView(0)
-  , mpOSD(0)
-  , mpSubtitle(0)
-  , m_preview(0)
-  , m_shader(NULL)
-  , m_glsl(NULL)
+MainWindow::MainWindow(QWidget* parent)
+    : QWidget(parent)
+    , mIsReady(false)
+    , mHasPendingPlay(false)
+    , mControlOn(false)
+    , mShowControl(2)
+    , mRepeateMax(0)
+    , mpVOAction(0)
+    , mpPlayer(0)
+    , mpRenderer(0)
+    , mpVideoFilter(0)
+    , mpAudioFilter(0)
+    , mpStatisticsView(0)
+    , mpOSD(0)
+    , mpSubtitle(0)
+    , m_preview(0)
+    , m_shader(NULL)
+    , m_glsl(NULL)
 {
-    #if defined(Q_OS_MACX) && QT_VERSION >= QT_VERSION_CHECK(5, 0, 0)
-        QApplication::setStyle(QStyleFactory::create("Fusion"));
-    #endif
+#if defined(Q_OS_MACX) && QT_VERSION >= QT_VERSION_CHECK(5, 0, 0)
 
-    mpOSD = new OSDFilter(this);
-    mpSubtitle = new SubtitleFilter(this);
-    mpChannelAction = 0;
-    mpChannelMenu = 0;
+    QApplication::setStyle(QStyleFactory::create("Fusion"));
+
+#endif
+
+    mpOSD              = new OSDFilter(this);
+    mpSubtitle         = new SubtitleFilter(this);
+    mpChannelAction    = 0;
+    mpChannelMenu      = 0;
     mpAudioTrackAction = 0;
-    setMouseTracking(true); //mouseMoveEvent without press.
-    connect(this, SIGNAL(ready()), SLOT(processPendingActions()));
+    setMouseTracking(true); // mouseMoveEvent without press.
+
+    connect(this, SIGNAL(ready()),
+            this, SLOT(processPendingActions()));
+
     //QTimer::singleShot(10, this, SLOT(setupUi()));
+
     setupUi();
+
     //setToolTip(tr("Click black area to use shortcut(see right click menu)"));
-    WindowEventFilter *we = new WindowEventFilter(this);
+
+    WindowEventFilter* we = new WindowEventFilter(this);
     installEventFilter(we);
-    connect(we, SIGNAL(fullscreenChanged()), SLOT(handleFullscreenChange()));
+
+    connect(we, SIGNAL(fullscreenChanged()),
+            this, SLOT(handleFullscreenChange()));
 }
 
 MainWindow::~MainWindow()
 {
-    if (m_preview) {
+    if (m_preview)
+    {
         m_preview->close();
         delete m_preview;
     }
+
     mpHistory->save();
     mpPlayList->save();
-    if (mpVolumeSlider && !mpVolumeSlider->parentWidget()) {
+
+    if (mpVolumeSlider && !mpVolumeSlider->parentWidget())
+    {
         mpVolumeSlider->close();
         delete mpVolumeSlider;
         mpVolumeSlider = 0;
     }
-    if (mpStatisticsView) {
+
+    if (mpStatisticsView)
+    {
         delete mpStatisticsView;
         mpStatisticsView = 0;
     }
@@ -164,55 +191,122 @@ MainWindow::~MainWindow()
 
 void MainWindow::initPlayer()
 {
-    mpPlayer = new AVPlayer(this);
-    mIsReady = true;
-    VideoRenderer *vo = VideoRenderer::create((VideoRendererId)property("rendererId").toInt());
-    if (!vo || !vo->isAvailable() || !vo->widget()) {
-        QMessageBox::critical(0, QString::fromLatin1("QtAV"), tr("Video renderer is ") + tr("not availabe on your platform!"));
+    mpPlayer          = new AVPlayer(this);
+    mIsReady          = true;
+    VideoRenderer* vo = VideoRenderer::create((VideoRendererId)property("rendererId").toInt());
+
+    if (!vo || !vo->isAvailable() || !vo->widget())
+    {
+        QMessageBox::critical(0, QString::fromLatin1("QtAV"),
+                              tr("Video renderer is ") + tr("not availabe on your platform!"));
     }
+
     setRenderer(vo);
+
     //mpSubtitle->installTo(mpPlayer); //filter on frame
+
     mpSubtitle->setPlayer(mpPlayer);
+
     //mpPlayer->setAudioOutput(AudioOutputFactory::create(AudioOutputId_OpenAL));
-    EventFilter *ef = new EventFilter(mpPlayer);
+
+    EventFilter* ef = new EventFilter(mpPlayer);
     qApp->installEventFilter(ef);
-    connect(ef, SIGNAL(showNextOSD()), SLOT(showNextOSD()));
+
+    connect(ef, SIGNAL(showNextOSD()),
+            this, SLOT(showNextOSD()));
+
     onCaptureConfigChanged();
     onAVFilterVideoConfigChanged();
     onAVFilterAudioConfigChanged();
-    connect(&Config::instance(), SIGNAL(forceFrameRateChanged()), SLOT(setFrameRate()));
-    connect(&Config::instance(), SIGNAL(captureDirChanged(QString)), SLOT(onCaptureConfigChanged()));
-    connect(&Config::instance(), SIGNAL(captureFormatChanged(QString)), SLOT(onCaptureConfigChanged()));
-    connect(&Config::instance(), SIGNAL(captureQualityChanged(int)), SLOT(onCaptureConfigChanged()));
-    connect(&Config::instance(), SIGNAL(avfilterVideoChanged()), SLOT(onAVFilterVideoConfigChanged()));
-    connect(&Config::instance(), SIGNAL(avfilterAudioChanged()), SLOT(onAVFilterAudioConfigChanged()));
-    connect(&Config::instance(), SIGNAL(bufferValueChanged()), SLOT(onBufferValueChanged()));
-    connect(&Config::instance(), SIGNAL(abortOnTimeoutChanged()), SLOT(onAbortOnTimeoutChanged()));
-    connect(mpStopBtn, SIGNAL(clicked()), this, SLOT(stopUnload()));
-    connect(mpForwardBtn, SIGNAL(clicked()), mpPlayer, SLOT(seekForward()));
-    connect(mpBackwardBtn, SIGNAL(clicked()), mpPlayer, SLOT(seekBackward()));
-    connect(mpVolumeBtn, SIGNAL(clicked()), SLOT(showHideVolumeBar()));
-    connect(mpVolumeSlider, SIGNAL(sliderPressed()), SLOT(setVolume()));
-    connect(mpVolumeSlider, SIGNAL(valueChanged(int)), SLOT(setVolume()));
 
-    connect(mpPlayer, SIGNAL(seekFinished(qint64)), SLOT(onSeekFinished(qint64)));
-    connect(mpPlayer, SIGNAL(mediaStatusChanged(QtAV::MediaStatus)), SLOT(onMediaStatusChanged()));
-    connect(mpPlayer, SIGNAL(bufferProgressChanged(qreal)), SLOT(onBufferProgress(qreal)));
-    connect(mpPlayer, SIGNAL(error(QtAV::AVError)), this, SLOT(handleError(QtAV::AVError)));
-    connect(mpPlayer, SIGNAL(started()), this, SLOT(onStartPlay()));
-    connect(mpPlayer, SIGNAL(stopped()), this, SLOT(onStopPlay()));
-    connect(mpPlayer, SIGNAL(paused(bool)), this, SLOT(onPaused(bool)));
-    connect(mpPlayer, SIGNAL(speedChanged(qreal)), this, SLOT(onSpeedChange(qreal)));
-    connect(mpPlayer, SIGNAL(positionChanged(qint64)), this, SLOT(onPositionChange(qint64)));
-    //connect(mpPlayer, SIGNAL(volumeChanged(qreal)), SLOT(syncVolumeUi(qreal)));
-    connect(mpVideoEQ, SIGNAL(brightnessChanged(int)), this, SLOT(onBrightnessChanged(int)));
-    connect(mpVideoEQ, SIGNAL(contrastChanged(int)), this, SLOT(onContrastChanged(int)));
-    connect(mpVideoEQ, SIGNAL(hueChanegd(int)), this, SLOT(onHueChanged(int)));
-    connect(mpVideoEQ, SIGNAL(saturationChanged(int)), this, SLOT(onSaturationChanged(int)));
+    connect(&Config::instance(), SIGNAL(forceFrameRateChanged()),
+            this, SLOT(setFrameRate()));
 
-    connect(mpCaptureBtn, SIGNAL(clicked()), mpPlayer->videoCapture(), SLOT(capture()));
+    connect(&Config::instance(), SIGNAL(captureDirChanged(QString)),
+            this, SLOT(onCaptureConfigChanged()));
 
-    emit ready(); //emit this signal after connection. otherwise the Q_SLOTS may not be called for the first time
+    connect(&Config::instance(), SIGNAL(captureFormatChanged(QString)),
+            this, SLOT(onCaptureConfigChanged()));
+
+    connect(&Config::instance(), SIGNAL(captureQualityChanged(int)),
+            this, SLOT(onCaptureConfigChanged()));
+
+    connect(&Config::instance(), SIGNAL(avfilterVideoChanged()),
+            this, SLOT(onAVFilterVideoConfigChanged()));
+
+    connect(&Config::instance(), SIGNAL(avfilterAudioChanged()),
+            this, SLOT(onAVFilterAudioConfigChanged()));
+
+    connect(&Config::instance(), SIGNAL(bufferValueChanged()),
+            this, SLOT(onBufferValueChanged()));
+
+    connect(&Config::instance(), SIGNAL(abortOnTimeoutChanged()),
+            this, SLOT(onAbortOnTimeoutChanged()));
+
+    connect(mpStopBtn, SIGNAL(clicked()),
+            this, SLOT(stopUnload()));
+
+    connect(mpForwardBtn, SIGNAL(clicked()),
+             mpPlayer, SLOT(seekForward()));
+
+    connect(mpBackwardBtn, SIGNAL(clicked()),
+            mpPlayer, SLOT(seekBackward()));
+
+    connect(mpVolumeBtn, SIGNAL(clicked()),
+            this, SLOT(showHideVolumeBar()));
+
+    connect(mpVolumeSlider, SIGNAL(sliderPressed()),
+            this, SLOT(setVolume()));
+
+    connect(mpVolumeSlider, SIGNAL(valueChanged(int)),
+            this, SLOT(setVolume()));
+
+    connect(mpPlayer, SIGNAL(seekFinished(qint64)),
+            this, SLOT(onSeekFinished(qint64)));
+
+    connect(mpPlayer, SIGNAL(mediaStatusChanged(QtAV::MediaStatus)),
+            this, SLOT(onMediaStatusChanged()));
+
+    connect(mpPlayer, SIGNAL(bufferProgressChanged(qreal)),
+            this, SLOT(onBufferProgress(qreal)));
+
+    connect(mpPlayer, SIGNAL(error(QtAV::AVError)),
+            this, SLOT(handleError(QtAV::AVError)));
+
+    connect(mpPlayer, SIGNAL(started()),
+            this, SLOT(onStartPlay()));
+
+    connect(mpPlayer, SIGNAL(stopped()),
+            this, SLOT(onStopPlay()));
+
+    connect(mpPlayer, SIGNAL(paused(bool)),
+            this, SLOT(onPaused(bool)));
+
+    connect(mpPlayer, SIGNAL(speedChanged(qreal)),
+            this, SLOT(onSpeedChange(qreal)));
+
+    connect(mpPlayer, SIGNAL(positionChanged(qint64)),
+            this, SLOT(onPositionChange(qint64)));
+/*
+    connect(mpPlayer, SIGNAL(volumeChanged(qreal)),
+            this, SLOT(syncVolumeUi(qreal)));
+*/
+    connect(mpVideoEQ, SIGNAL(brightnessChanged(int)),
+            this, SLOT(onBrightnessChanged(int)));
+
+    connect(mpVideoEQ, SIGNAL(contrastChanged(int)),
+            this, SLOT(onContrastChanged(int)));
+
+    connect(mpVideoEQ, SIGNAL(hueChanegd(int)),
+            this, SLOT(onHueChanged(int)));
+
+    connect(mpVideoEQ, SIGNAL(saturationChanged(int)),
+            this, SLOT(onSaturationChanged(int)));
+
+    connect(mpCaptureBtn, SIGNAL(clicked()),
+            mpPlayer->videoCapture(), SLOT(capture()));
+
+    emit ready(); // emit this signal after connection. otherwise the Q_SLOTS may not be called for the first time
 }
 
 void MainWindow::onSeekFinished(qint64 pos)

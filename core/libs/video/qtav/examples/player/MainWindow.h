@@ -75,7 +75,7 @@ class MainWindow : public QWidget
 
 public:
 
-    explicit MainWindow(QWidget *parent = 0);
+    explicit MainWindow(QWidget* parent = nullptr);
     ~MainWindow();
 
     void setAudioBackends(const QStringList& backends);
@@ -107,7 +107,7 @@ private Q_SLOTS:
     void changeVO(QAction* action);
     void changeChannel(QAction* action);
     void changeAudioTrack(QAction* action);
-    void playOnlineVideo(QAction *action);
+    void playOnlineVideo(QAction* action);
     void onPlayListClick(const QString& key, const QString& value);
     void processPendingActions();
     void initPlayer();
@@ -164,14 +164,15 @@ private Q_SLOTS:
 
 protected:
 
-    virtual void closeEvent(QCloseEvent *e);
-    virtual void resizeEvent(QResizeEvent *);
-    virtual void timerEvent(QTimerEvent *);
-    virtual void keyPressEvent(QKeyEvent *e);
-    virtual void keyReleaseEvent(QKeyEvent *e);
-    void mousePressEvent(QMouseEvent *e);
-    void mouseMoveEvent(QMouseEvent *e);
-    void wheelEvent(QWheelEvent *e);
+    void mousePressEvent(QMouseEvent* e);
+    void mouseMoveEvent(QMouseEvent* e);
+    void wheelEvent(QWheelEvent* e);
+
+    virtual void closeEvent(QCloseEvent* e);
+    virtual void resizeEvent(QResizeEvent* e);
+    virtual void timerEvent(QTimerEvent* e);
+    virtual void keyPressEvent(QKeyEvent* e);
+    virtual void keyReleaseEvent(QKeyEvent* e);
 
 private:
 
@@ -179,59 +180,59 @@ private:
 
 private:
 
-    bool mIsReady, mHasPendingPlay;
-    bool mControlOn;
-    int mCursorTimer;
-    int mShowControl; //0: can hide, 1: show and playing, 2: always show(not playing)
-    int mRepeateMax;
-    QStringList mAudioBackends;
-    QVBoxLayout *mpPlayerLayout;
+    bool                            mIsReady, mHasPendingPlay;
+    bool                            mControlOn;
+    int                             mCursorTimer;
+    int                             mShowControl;           ///< 0: can hide, 1: show and playing, 2: always show(not playing)
+    int                             mRepeateMax;
+    QStringList                     mAudioBackends;
+    QVBoxLayout*                    mpPlayerLayout;
 
-    QWidget *mpControl;
-    QLabel *mpCurrent, *mpEnd;
-    QLabel *mpTitle;
-    QLabel *mpSpeed;
-    Slider *mpTimeSlider, *mpVolumeSlider;
-    QToolButton *mpVolumeBtn;
-    QToolButton *mpPlayPauseBtn;
-    QToolButton *mpStopBtn, *mpForwardBtn, *mpBackwardBtn;
-    QToolButton *mpOpenBtn;
-    QToolButton *mpInfoBtn, *mpMenuBtn, *mpSetupBtn, *mpCaptureBtn;
-    QMenu *mpMenu;
-    QAction *mpVOAction, *mpARAction; //remove mpVOAction if vo.id() is supported
-    QAction *mpRepeatEnableAction;
-    QWidgetAction *mpRepeatAction;
-    QSpinBox *mpRepeatBox;
-    QTimeEdit *mpRepeatA, *mpRepeatB;
-    QAction *mpAudioTrackAction;
-    QMenu *mpAudioTrackMenu;
-    QMenu *mpChannelMenu;
-    QAction *mpChannelAction;
-    QList<QAction*> mVOActions;
+    QWidget*                        mpControl;
+    QLabel*                         mpCurrent, *mpEnd;
+    QLabel*                         mpTitle;
+    QLabel*                         mpSpeed;
+    Slider*                         mpTimeSlider, *mpVolumeSlider;
+    QToolButton*                    mpVolumeBtn;
+    QToolButton*                    mpPlayPauseBtn;
+    QToolButton*                    mpStopBtn, *mpForwardBtn, *mpBackwardBtn;
+    QToolButton*                    mpOpenBtn;
+    QToolButton*                    mpInfoBtn, *mpMenuBtn, *mpSetupBtn, *mpCaptureBtn;
+    QMenu*                          mpMenu;
+    QAction*                        mpVOAction, *mpARAction; // remove mpVOAction if vo.id() is supported
+    QAction*                        mpRepeatEnableAction;
+    QWidgetAction*                  mpRepeatAction;
+    QSpinBox*                       mpRepeatBox;
+    QTimeEdit*                      mpRepeatA, *mpRepeatB;
+    QAction*                        mpAudioTrackAction;
+    QMenu*                          mpAudioTrackMenu;
+    QMenu*                          mpChannelMenu;
+    QAction*                        mpChannelAction;
+    QList<QAction*>                 mVOActions;
 
-    QtAV::AVClock *mpClock;
-    QtAV::AVPlayer *mpPlayer;
-    QtAV::VideoRenderer *mpRenderer;
-    QtAV::LibAVFilterVideo *mpVideoFilter;
-    QtAV::LibAVFilterAudio *mpAudioFilter;
-    QString mFile;
-    QString mTitle;
+    QtAV::AVClock*                  mpClock;
+    QtAV::AVPlayer*                 mpPlayer;
+    QtAV::VideoRenderer*            mpRenderer;
+    QtAV::LibAVFilterVideo*         mpVideoFilter;
+    QtAV::LibAVFilterAudio*         mpAudioFilter;
+    QString                         mFile;
+    QString                         mTitle;
 
-    QLabel *mpPreview;
+    QLabel*                         mpPreview;
 
-    DecoderConfigPage *mpDecoderConfigPage;
-    VideoEQConfigPage *mpVideoEQ;
+    DecoderConfigPage*              mpDecoderConfigPage;
+    VideoEQConfigPage*              mpVideoEQ;
 
-    PlayList *mpPlayList, *mpHistory;
+    PlayList*                       mpPlayList, *mpHistory;
 
-    QPointF mGlobalMouse;
-    StatisticsView *mpStatisticsView;
+    QPointF                         mGlobalMouse;
+    StatisticsView*                 mpStatisticsView;
 
-    OSDFilter *mpOSD;
-    QtAV::SubtitleFilter *mpSubtitle;
-    QtAV::VideoPreviewWidget *m_preview;
-    QtAV::DynamicShaderObject *m_shader;
-    QtAV::GLSLFilter *m_glsl;
+    OSDFilter*                      mpOSD;
+    QtAV::SubtitleFilter*           mpSubtitle;
+    QtAV::VideoPreviewWidget*       m_preview;
+    QtAV::DynamicShaderObject*      m_shader;
+    QtAV::GLSLFilter*               m_glsl;
 };
 
 } // namespace QtAVPlayer
