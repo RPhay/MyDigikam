@@ -29,7 +29,7 @@
 #include <QLineEdit>
 #include <QLabel>
 
-#include "common/Config.h"
+#include "Config.h"
 
 AVFormatConfigPage::AVFormatConfigPage(QWidget *parent) :
     ConfigPageBase(parent)

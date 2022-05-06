@@ -35,7 +35,7 @@
 
 // Local includes
 
-#include "common/Config.h"
+#include "Config.h"
 #include "Slider.h"
 
 CaptureConfigPage::CaptureConfigPage(QWidget *parent) :

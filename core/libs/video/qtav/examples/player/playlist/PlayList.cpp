@@ -24,7 +24,7 @@
 #include "PlayList.h"
 #include "PlayListModel.h"
 #include "PlayListDelegate.h"
-#include "common/common.h"
+#include "common.h"
 #include <QFileDialog>
 #include <QListView>
 #include <QLayout>

@@ -31,7 +31,7 @@
 #include "AVFilterConfigPage.h"
 #include "MiscPage.h"
 #include "ShaderPage.h"
-#include "common/Config.h"
+#include "Config.h"
 void ConfigDialog::display()
 {
     static ConfigDialog *dialog = new ConfigDialog();

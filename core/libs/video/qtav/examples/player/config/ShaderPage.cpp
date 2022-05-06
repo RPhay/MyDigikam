@@ -24,7 +24,7 @@
 #include "ShaderPage.h"
 #include <QLabel>
 #include <QLayout>
-#include "common/Config.h"
+#include "Config.h"
 
 ShaderPage::ShaderPage(QWidget *parent)
     : ConfigPageBase(parent)

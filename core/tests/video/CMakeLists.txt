@@ -100,12 +100,14 @@ QTAV_TESTS_BUILD(transcode.cpp)
 
 # -------------------------------------------------
 
-set(qtavplayer_SRCS ${CMAKE_SOURCE_DIR}/core/libs/video/qtav/examples/player/ClickableMenu.cpp
-                    ${CMAKE_SOURCE_DIR}/core/libs/video/qtav/examples/player/EventFilter.cpp
-                    ${CMAKE_SOURCE_DIR}/core/libs/video/qtav/examples/player/main.cpp
-                    ${CMAKE_SOURCE_DIR}/core/libs/video/qtav/examples/player/MainWindow.cpp
-                    ${CMAKE_SOURCE_DIR}/core/libs/video/qtav/examples/player/Slider.cpp
-                    ${CMAKE_SOURCE_DIR}/core/libs/video/qtav/examples/player/StatisticsView.cpp
+set(qtavplayer_SRCS ${CMAKE_SOURCE_DIR}/core/libs/video/qtav/examples/player/utils/ClickableMenu.cpp
+                    ${CMAKE_SOURCE_DIR}/core/libs/video/qtav/examples/player/utils/EventFilter.cpp
+                    ${CMAKE_SOURCE_DIR}/core/libs/video/qtav/examples/player/utils/Slider.cpp
+                    ${CMAKE_SOURCE_DIR}/core/libs/video/qtav/examples/player/utils/StatisticsView.cpp
+                    ${CMAKE_SOURCE_DIR}/core/libs/video/qtav/examples/player/utils/ScreenSaver.cpp
+                    ${CMAKE_SOURCE_DIR}/core/libs/video/qtav/examples/player/utils/qoptions.cpp
+                    ${CMAKE_SOURCE_DIR}/core/libs/video/qtav/examples/player/utils/Config.cpp
+                    ${CMAKE_SOURCE_DIR}/core/libs/video/qtav/examples/player/utils/common.cpp
                     ${CMAKE_SOURCE_DIR}/core/libs/video/qtav/examples/player/config/VideoEQConfigPage.cpp
                     ${CMAKE_SOURCE_DIR}/core/libs/video/qtav/examples/player/config/PropertyEditor.cpp
                     ${CMAKE_SOURCE_DIR}/core/libs/video/qtav/examples/player/config/DecoderConfigPage.cpp
@@ -123,19 +125,17 @@ set(qtavplayer_SRCS ${CMAKE_SOURCE_DIR}/core/libs/video/qtav/examples/player/Cli
                     ${CMAKE_SOURCE_DIR}/core/libs/video/qtav/examples/player/playlist/PlayListItem.cpp
                     ${CMAKE_SOURCE_DIR}/core/libs/video/qtav/examples/player/playlist/PlayListDelegate.cpp
                     ${CMAKE_SOURCE_DIR}/core/libs/video/qtav/examples/player/playlist/PlayList.cpp
-                    ${CMAKE_SOURCE_DIR}/core/libs/video/qtav/examples/player/common/ScreenSaver.cpp
-                    ${CMAKE_SOURCE_DIR}/core/libs/video/qtav/examples/player/common/qoptions.cpp
-                    ${CMAKE_SOURCE_DIR}/core/libs/video/qtav/examples/player/common/Config.cpp
-                    ${CMAKE_SOURCE_DIR}/core/libs/video/qtav/examples/player/common/common.cpp
+                    ${CMAKE_SOURCE_DIR}/core/libs/video/qtav/examples/player/main.cpp
+                    ${CMAKE_SOURCE_DIR}/core/libs/video/qtav/examples/player/MainWindow.cpp
 )
 
 if(Qt6_FOUND)
 
-    qt6_add_resources(qtavplayer_SRCS ${CMAKE_SOURCE_DIR}/core/libs/video/qtav/examples/player/common/theme/theme.qrc)
+    qt6_add_resources(qtavplayer_SRCS ${CMAKE_SOURCE_DIR}/core/libs/video/qtav/examples/player/utils/theme/theme.qrc)
 
 else()
 
-    qt5_add_resources(qtavplayer_SRCS ${CMAKE_SOURCE_DIR}/core/libs/video/qtav/examples/player/common/theme/theme.qrc)
+    qt5_add_resources(qtavplayer_SRCS ${CMAKE_SOURCE_DIR}/core/libs/video/qtav/examples/player/utils/theme/theme.qrc)
 
 endif()
 

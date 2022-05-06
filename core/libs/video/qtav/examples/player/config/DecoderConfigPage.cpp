@@ -24,7 +24,7 @@
 // scroll area code is from Xuno: https://github.com/Xuno/Xuno-QtAV/blob/master/examples/player/config/DecoderConfigPage.cpp
 
 #include "DecoderConfigPage.h"
-#include "common/Config.h"
+#include "Config.h"
 #include "PropertyEditor.h"
 
 #include <QListView>

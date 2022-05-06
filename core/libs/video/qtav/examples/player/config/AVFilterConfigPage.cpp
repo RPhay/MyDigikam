@@ -28,7 +28,7 @@
 #include <QLabel>
 #include <QTextEdit>
 #include "LibAVFilter.h"
-#include "common/Config.h"
+#include "Config.h"
 
 AVFilterConfigPage::AVFilterConfigPage(QWidget *parent)
     : ConfigPageBase(parent)

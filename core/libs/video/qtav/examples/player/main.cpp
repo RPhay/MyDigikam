@@ -35,7 +35,7 @@
 #include "QtAVWidgets.h"
 #include "PropertyEditor.h"
 #include "MainWindow.h"
-#include "common/common.h"
+#include "common.h"
 
 using namespace QtAV;
 

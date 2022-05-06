@@ -24,7 +24,7 @@
 #include "MiscPage.h"
 #include <QLabel>
 #include <QLayout>
-#include "common/Config.h"
+#include "Config.h"
 
 MiscPage::MiscPage()
 {
