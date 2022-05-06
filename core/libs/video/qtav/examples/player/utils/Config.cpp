@@ -22,6 +22,7 @@
  * ============================================================ */
 
 #include "Config.h"
+
 #include <QSettings>
 #include <QCoreApplication>
 #include <QDir>
@@ -35,7 +36,9 @@
 #include <QtSql/QSqlDatabase>
 #include <QtSql/QSqlQuery>
 #include <QtDebug>
+
 #include "common.h"
+#include "digikam_debug.h"
 
 namespace QtAVPlayer
 {
@@ -51,7 +54,7 @@ public:
             file = appDataDir() + QString::fromLatin1("/") + qApp->applicationName() + QString::fromLatin1(".ini");
         if (!QDir(appDataDir()).exists()) {
             if (!QDir().mkpath(appDataDir())) {
-                qWarning() << "Failed to create appDataDir: " << appDataDir();
+                qCWarning(DIGIKAM_QTAVPLAYER_LOG) << "Failed to create appDataDir: " << appDataDir();
             }
         }
         moveOldCfg();
@@ -89,7 +92,7 @@ public:
     void save() {
         if (is_loading)
             return;
-        qDebug() << "sync config to " << file;
+        qCDebug(DIGIKAM_QTAVPLAYER_LOG) << "sync config to " << file;
         QSettings settings(file, QSettings::IniFormat);
         // TODO: why crash on mac qt5.4 if call on aboutToQuit()
         settings.setValue(QString::fromLatin1("log"), log);
@@ -161,7 +164,7 @@ public:
         settings.beginGroup(QString::fromLatin1("buffer"));
         settings.setValue(QString::fromLatin1("value"), buffer_value);
         settings.endGroup();
-        qDebug() << "sync end";
+        qCDebug(DIGIKAM_QTAVPLAYER_LOG) << "sync end";
     }
 
     QString file;
@@ -269,7 +272,7 @@ bool Config::reset()
 {
     QFile cf(mpData->file);
     if (!cf.remove()) {
-        qWarning() << "Failed to remove config file: " << cf.errorString();
+        qCWarning(DIGIKAM_QTAVPLAYER_LOG) << "Failed to remove config file: " << cf.errorString();
         return false;
     }
     reload();

@@ -42,6 +42,10 @@
 #include <QtDebug>
 #include <QMutex>
 
+// Local includes
+
+#include "digikam_debug.h"
+
 // Windows includes
 
 #ifdef Q_OS_WINRT
@@ -66,7 +70,7 @@ using namespace ABI::Windows::Storage::Pickers;
     do { \
         HRESULT hr = f; \
         if (FAILED(hr)) { \
-            qWarning() << QString::fromLatin1(COM_LOG_COMPONENT " error@%1. " #f ": (0x%2) %3").arg(__LINE__).arg(hr, 0, 16).arg(qt_error_string(hr)); \
+            qCWarning(DIGIKAM_QTAVPLAYER_LOG) << QString::fromLatin1(COM_LOG_COMPONENT " error@%1. " #f ": (0x%2) %3").arg(__LINE__).arg(hr, 0, 16).arg(qt_error_string(hr)); \
             __VA_ARGS__ \
         } \
     } while (0)
@@ -85,7 +89,7 @@ QString UrlFromFileArgs(IInspectable *args)
     quint32 pathLen;
     const wchar_t *pathStr = path.GetRawBuffer(&pathLen);
     const QString filePath = QString::fromWCharArray(pathStr, pathLen);
-    qDebug() << "file path: " << filePath;
+    qCDebug(DIGIKAM_QTAVPLAYER_LOG) << "file path: " << filePath;
     item->AddRef(); // ensure we can access it later. TODO: how to release?
 
     return QString::fromLatin1("winrt:@%1:%2").arg((qint64)(qptrdiff)item.Get()).arg(filePath);
@@ -141,7 +145,7 @@ void do_common_options_before_qapp(const QOptions& options)
         qputenv("QT_XCB_GL_INTEGRATION", "xcb_glx");
     }
 
-    qDebug() << "QT_XCB_GL_INTEGRATION: " << qgetenv("QT_XCB_GL_INTEGRATION");
+    qCDebug(DIGIKAM_QTAVPLAYER_LOG) << "QT_XCB_GL_INTEGRATION: " << qgetenv("QT_XCB_GL_INTEGRATION");
 
 #endif //Q_OS_LINUX
 
@@ -251,7 +255,7 @@ AppEventFilter::AppEventFilter(QObject *player, QObject *parent)
 
 bool AppEventFilter::eventFilter(QObject *obj, QEvent *ev)
 {
-    //qDebug() << __FUNCTION__ << " watcher: " << obj << ev;
+    //qCDebug(DIGIKAM_QTAVPLAYER_LOG) << __FUNCTION__ << " watcher: " << obj << ev;
 
     if (obj != qApp)
         return false;
@@ -275,7 +279,7 @@ bool AppEventFilter::eventFilter(QObject *obj, QEvent *ev)
 
         if (!url.isEmpty())
         {
-            qDebug() << "winrt url: " << url;
+            qCDebug(DIGIKAM_QTAVPLAYER_LOG) << "winrt url: " << url;
 
             if (m_player)
                 QMetaObject::invokeMethod(m_player, "play", Q_ARG(QUrl, QUrl(url)));

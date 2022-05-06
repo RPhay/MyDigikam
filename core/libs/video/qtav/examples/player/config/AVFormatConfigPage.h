@@ -24,9 +24,13 @@
 #ifndef QTAV_PLAYER_AVFORMATCONFIGPAGE_H
 #define QTAV_PLAYER_AVFORMATCONFIGPAGE_H
 
-#include "ConfigPageBase.h"
+// Qt includes
 
 #include <QVariant>
+
+// Local includes
+
+#include "ConfigPageBase.h"
 
 QT_BEGIN_NAMESPACE
 class QCheckBox;
@@ -40,18 +44,24 @@ namespace QtAVPlayer
 class AVFormatConfigPage : public ConfigPageBase
 {
     Q_OBJECT
+
 public:
-    explicit AVFormatConfigPage(QWidget *parent = 0);
+
+    explicit AVFormatConfigPage(QWidget* parent = 0);
     virtual QString name() const;
+
 protected:
+
     virtual void applyToUi();
     virtual void applyFromUi();
+
 private:
+
     QCheckBox* m_on;
-    QCheckBox *m_direct;
-    QSpinBox *m_probeSize;
-    QSpinBox *m_analyzeDuration;
-    QLineEdit *m_extra;
+    QCheckBox* m_direct;
+    QSpinBox*  m_probeSize;
+    QSpinBox*  m_analyzeDuration;
+    QLineEdit* m_extra;
 };
 
 } // namespace QtAVPlayer

@@ -40,13 +40,13 @@ Q_LOGGING_CATEGORY(DIGIKAM_METAENGINE_LOG,              "digikam.metaengine",   
 Q_LOGGING_CATEGORY(DIGIKAM_RAWENGINE_LOG,               "digikam.rawengine",                QtInfoMsg)
 Q_LOGGING_CATEGORY(DIGIKAM_FACESENGINE_LOG,             "digikam.facesengine",              QtInfoMsg)
 Q_LOGGING_CATEGORY(DIGIKAM_GEOIFACE_LOG,                "digikam.geoiface",                 QtInfoMsg)
-                                                        
+
 Q_LOGGING_CATEGORY(DIGIKAM_TESTS_LOG,                   "digikam.tests",                    QtInfoMsg)
-                                                        
+
 Q_LOGGING_CATEGORY(DIGIKAM_DPLUGIN_GENERIC_LOG,         "digikam.dplugin.generic",          QtInfoMsg)
 Q_LOGGING_CATEGORY(DIGIKAM_DPLUGIN_EDITOR_LOG,          "digikam.dplugin.editor",           QtInfoMsg)
 Q_LOGGING_CATEGORY(DIGIKAM_DPLUGIN_BQM_LOG,             "digikam.dplugin.bqm",              QtInfoMsg)
-                                                        
+
 Q_LOGGING_CATEGORY(DIGIKAM_DATABASE_LOG,                "digikam.database",                 QtInfoMsg)
 Q_LOGGING_CATEGORY(DIGIKAM_DBENGINE_LOG,                "digikam.dbengine",                 QtInfoMsg)
 Q_LOGGING_CATEGORY(DIGIKAM_DBJOB_LOG,                   "digikam.dbjob",                    QtInfoMsg)
@@ -68,14 +68,14 @@ Q_LOGGING_CATEGORY(DIGIKAM_DIMG_LOG_RAW,                "digikam.dimg.raw",     
 Q_LOGGING_CATEGORY(DIGIKAM_DIMG_LOG_QIMAGE,             "digikam.dimg.qimage",              QtWarningMsg)
 Q_LOGGING_CATEGORY(DIGIKAM_DIMG_LOG_HEIF,               "digikam.dimg.heif",                QtWarningMsg)
 Q_LOGGING_CATEGORY(DIGIKAM_DIMG_LOG_MAGICK,             "digikam.dimg.magick",              QtWarningMsg)
-                                                        
+
 Q_LOGGING_CATEGORY(DIGIKAM_MEDIASRV_LOG,                "digikam.mediaserver",              QtInfoMsg)
 Q_LOGGING_CATEGORY(DIGIKAM_MEDIASRV_LOG_INFO,           "digikam.mediaserver.info",         QtInfoMsg)
 Q_LOGGING_CATEGORY(DIGIKAM_MEDIASRV_LOG_DEBUG,          "digikam.mediaserver.debug",        QtInfoMsg)
 Q_LOGGING_CATEGORY(DIGIKAM_MEDIASRV_LOG_WARN,           "digikam.mediaserver.warn",         QtWarningMsg)
 Q_LOGGING_CATEGORY(DIGIKAM_MEDIASRV_LOG_CRITICAL,       "digikam.mediaserver.critical",     QtWarningMsg)
 Q_LOGGING_CATEGORY(DIGIKAM_MEDIASRV_LOG_FATAL,          "digikam.mediaserver.fatal",        QtCriticalMsg)
-                                                        
+
 Q_LOGGING_CATEGORY(DIGIKAM_QTAV_LOG,                    "digikam.qtav",                     QtInfoMsg)
 Q_LOGGING_CATEGORY(DIGIKAM_QTAV_LOG_INFO,               "digikam.qtav.info",                QtInfoMsg)
 Q_LOGGING_CATEGORY(DIGIKAM_QTAV_LOG_DEBUG,              "digikam.qtav.debug",               QtInfoMsg)
@@ -88,6 +88,7 @@ Q_LOGGING_CATEGORY(DIGIKAM_QTAVWIDGETS_LOG_DEBUG,       "digikam.qtavwidgets.deb
 Q_LOGGING_CATEGORY(DIGIKAM_QTAVWIDGETS_LOG_WARN,        "digikam.qtavwidgets.warn",         QtWarningMsg)
 Q_LOGGING_CATEGORY(DIGIKAM_QTAVWIDGETS_LOG_CRITICAL,    "digikam.qtavwidgets.critical",     QtWarningMsg)
 Q_LOGGING_CATEGORY(DIGIKAM_QTAVWIDGETS_LOG_FATAL,       "digikam.qtavwidgets.fatal",        QtCriticalMsg)
+Q_LOGGING_CATEGORY(DIGIKAM_QTAVPLAYER_LOG,              "digikam.qtavplayer",               QtInfoMsg)
 
 void digikamSetDebugFilterRules(bool on)
 {

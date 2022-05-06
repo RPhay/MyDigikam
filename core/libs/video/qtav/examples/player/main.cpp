@@ -36,6 +36,7 @@
 #include "PropertyEditor.h"
 #include "MainWindow.h"
 #include "common.h"
+#include "digikam_debug.h"
 
 using namespace QtAV;
 using namespace QtAVPlayer;
@@ -80,7 +81,7 @@ VideoRendererId rendererId_from_opt_name(const QString& name)
 
 int main(int argc, char *argv[])
 {
-    qDebug() << aboutQtAV_PlainText();
+    qCDebug(DIGIKAM_QTAVPLAYER_LOG) << aboutQtAV_PlainText();
     Config::setName(QString::fromLatin1("Player"));
     QOptions options = get_common_options();
     options.add(QString::fromLatin1("player options"))
@@ -120,7 +121,7 @@ int main(int argc, char *argv[])
             VideoDecoder *vd = VideoDecoder::create(*vid);
             pe.getProperties(vd);
             qDebug("- %s:", vd->name().toUtf8().constData());
-            qDebug() << pe.buildOptions().toUtf8().constData();
+            qCDebug(DIGIKAM_QTAVPLAYER_LOG) << pe.buildOptions().toUtf8().constData();
         }
 
         exit(0);
@@ -128,7 +129,7 @@ int main(int argc, char *argv[])
 
     QApplication a(argc, argv);
     a.setAttribute(Qt::AA_DontCreateNativeWidgetSiblings);
-    qDebug() <<a.arguments();
+    qCDebug(DIGIKAM_QTAVPLAYER_LOG) <<a.arguments();
 
     a.setApplicationDisplayName(QString::fromLatin1("QtAV Player"));
     QDir::setCurrent(qApp->applicationDirPath());
@@ -245,7 +246,7 @@ int main(int argc, char *argv[])
 
     if (op.isSet())
     {
-        qDebug() << "-f set: " << op.value().toString();
+        qCDebug(DIGIKAM_QTAVPLAYER_LOG) << "-f set: " << op.value().toString();
         window.play(op.value().toString());
     }
     else

@@ -22,9 +22,15 @@
  * ============================================================ */
 
 #include "ConfigDialog.h"
+
+// Qt includes
+
 #include <QFile>
 #include <QLayout>
 #include <QPushButton>
+
+// Local includes
+
 #include "CaptureConfigPage.h"
 #include "DecoderConfigPage.h"
 #include "AVFormatConfigPage.h"
@@ -38,29 +44,34 @@ namespace QtAVPlayer
 
 void ConfigDialog::display()
 {
-    static ConfigDialog *dialog = new ConfigDialog();
+    static ConfigDialog* dialog = new ConfigDialog();
     dialog->show();
 }
 
-ConfigDialog::ConfigDialog(QWidget *parent) :
-    QDialog(parent)
+ConfigDialog::ConfigDialog(QWidget* parent)
+    : QDialog(parent)
 {
-    QVBoxLayout *vbl = new QVBoxLayout();
+    QVBoxLayout* vbl = new QVBoxLayout();
     setLayout(vbl);
     vbl->setSizeConstraint(QLayout::SetFixedSize);
 
-    mpContent = new QTabWidget();
+    mpContent   = new QTabWidget();
     mpContent->setTabPosition(QTabWidget::West);
 
     mpButtonBox = new QDialogButtonBox(Qt::Horizontal);
-    mpButtonBox->addButton(tr("Reset"), QDialogButtonBox::ResetRole);// (QDialogButtonBox::Reset);
-    mpButtonBox->addButton(tr("Ok"), QDialogButtonBox::AcceptRole); //QDialogButtonBox::Ok
+    mpButtonBox->addButton(tr("Reset"),  QDialogButtonBox::ResetRole);      // QDialogButtonBox::Reset;
+    mpButtonBox->addButton(tr("Ok"),     QDialogButtonBox::AcceptRole);     // QDialogButtonBox::Ok
     mpButtonBox->addButton(tr("Cancel"), QDialogButtonBox::RejectRole);
-    mpButtonBox->addButton(tr("Apply"), QDialogButtonBox::ApplyRole);
+    mpButtonBox->addButton(tr("Apply"),  QDialogButtonBox::ApplyRole);
 
-    connect(mpButtonBox, SIGNAL(accepted()), SLOT(accept()));
-    connect(mpButtonBox, SIGNAL(rejected()), SLOT(reject()));
-    connect(mpButtonBox, SIGNAL(clicked(QAbstractButton*)), SLOT(onButtonClicked(QAbstractButton*)));
+    connect(mpButtonBox, SIGNAL(accepted()),
+            this, SLOT(accept()));
+
+    connect(mpButtonBox, SIGNAL(rejected()),
+            this, SLOT(reject()));
+
+    connect(mpButtonBox, SIGNAL(clicked(QAbstractButton*)),
+            this, SLOT(onButtonClicked(QAbstractButton*)));
 
     vbl->addWidget(mpContent);
     vbl->addWidget(mpButtonBox);
@@ -71,9 +82,10 @@ ConfigDialog::ConfigDialog(QWidget *parent) :
            << new AVFormatConfigPage()
            << new AVFilterConfigPage()
            << new ShaderPage()
-              ;
+    ;
 
-    foreach (ConfigPageBase* page, mPages) {
+    foreach (ConfigPageBase* page, mPages)
+    {
         page->applyToUi();
         page->applyOnUiChange(false);
         mpContent->addTab(page, page->name());
@@ -83,30 +95,38 @@ ConfigDialog::ConfigDialog(QWidget *parent) :
 void ConfigDialog::onButtonClicked(QAbstractButton *btn)
 {
     qDebug("QDialogButtonBox clicked role=%d", mpButtonBox->buttonRole(btn));
-    switch (mpButtonBox->buttonRole(btn)) {
-    case QDialogButtonBox::ResetRole:
-        qDebug("QDialogButtonBox ResetRole clicked");
-        onReset();
-        break;
-    case QDialogButtonBox::AcceptRole:
-    case QDialogButtonBox::ApplyRole:
-        qDebug("QDialogButtonBox ApplyRole clicked");
-        onApply();
-        break;
-    case QDialogButtonBox::DestructiveRole:
-    case QDialogButtonBox::RejectRole:
-        onCancel();
-        break;
-    default:
-        break;
+
+    switch (mpButtonBox->buttonRole(btn))
+    {
+        case QDialogButtonBox::ResetRole:
+            qDebug("QDialogButtonBox ResetRole clicked");
+            onReset();
+            break;
+
+        case QDialogButtonBox::AcceptRole:
+        case QDialogButtonBox::ApplyRole:
+            qDebug("QDialogButtonBox ApplyRole clicked");
+            onApply();
+            break;
+
+        case QDialogButtonBox::DestructiveRole:
+        case QDialogButtonBox::RejectRole:
+            onCancel();
+            break;
+
+        default:
+            break;
     }
 }
 
 void ConfigDialog::onReset()
 {
     Config::instance().reset();
+
     // TODO: check change
-    foreach (ConfigPageBase* page, mPages) {
+
+    foreach (ConfigPageBase* page, mPages)
+    {
         page->reset();
     }
 }
@@ -114,16 +134,21 @@ void ConfigDialog::onReset()
 void ConfigDialog::onApply()
 {
     // TODO: check change
-    foreach (ConfigPageBase* page, mPages) {
+
+    foreach (ConfigPageBase* page, mPages)
+    {
         page->apply();
     }
+
     Config::instance().save();
 }
 
 void ConfigDialog::onCancel()
 {
     // TODO: check change
-    foreach (ConfigPageBase* page, mPages) {
+
+    foreach (ConfigPageBase* page, mPages)
+    {
         page->cancel();
     }
 }

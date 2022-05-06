@@ -66,6 +66,8 @@
 //#include "AVFilterSubtitle.h"
 #include "PlayList.h"
 #include "common.h"
+#include "digikam_debug.h"
+
 #ifndef QT_NO_OPENGL
 #include "GLSLFilter.h"
 #endif
@@ -754,7 +756,7 @@ void MainWindow::play(const QString &name)
     mpPlayer->setOptionsForVideoCodec(mpDecoderConfigPage->videoDecoderOptions());
     if (Config::instance().avformatOptionsEnabled())
         mpPlayer->setOptionsForFormat(Config::instance().avformatOptions());
-    qDebug() << Config::instance().avformatOptions();
+    qCDebug(DIGIKAM_QTAVPLAYER_LOG) << Config::instance().avformatOptions();
     PlayListItem item;
     item.setUrl(mFile);
     item.setTitle(mTitle);
@@ -1077,7 +1079,7 @@ void MainWindow::wheelEvent(QWheelEvent *e)
 
     QPointF p = mpRenderer->widget()->mapFrom(this, e->position().toPoint());
     QPointF fp = mpRenderer->mapToFrame(p);
-    //qDebug() <<  p << fp;
+    //qCDebug(DIGIKAM_QTAVPLAYER_LOG) <<  p << fp;
     if (fp.x() < 0)
         fp.setX(0);
     if (fp.y() < 0)
@@ -1098,7 +1100,7 @@ void MainWindow::wheelEvent(QWheelEvent *e)
         z = 1.0;
     qreal x0 = fp.x() - fp.x()/z;
     qreal y0 = fp.y() - fp.y()/z;
-    //qDebug() << "fr: " << QRectF(x0, y0, qreal(mpRenderer->videoFrameSize().width())/z, qreal(mpRenderer->videoFrameSize().height())/z) << fp << z;
+    //qCDebug(DIGIKAM_QTAVPLAYER_LOG) << "fr: " << QRectF(x0, y0, qreal(mpRenderer->videoFrameSize().width())/z, qreal(mpRenderer->videoFrameSize().height())/z) << fp << z;
     mpRenderer->setRegionOfInterest(QRectF(x0, y0, qreal(mpRenderer->videoFrameSize().width())/z, qreal(mpRenderer->videoFrameSize().height())/z));
     return;
     QTransform m;
@@ -1337,7 +1339,7 @@ void MainWindow::onMediaStatusChanged()
     QString status;
     AVPlayer *player = reinterpret_cast<AVPlayer*>(sender());
     if (!player) { //why it happens? reinterpret_cast  works.
-        qWarning() << "invalid sender() " << sender() << player;
+        qCWarning(DIGIKAM_QTAVPLAYER_LOG) << "invalid sender() " << sender() << player;
         return;
     }
     switch (player->mediaStatus()) {
@@ -1367,7 +1369,7 @@ void MainWindow::onMediaStatusChanged()
         onStopPlay();
         break;
     }
-    qDebug() << "status changed " << status;
+    qCDebug(DIGIKAM_QTAVPLAYER_LOG) << "status changed " << status;
     setWindowTitle(status + QString::fromLatin1(" ") + mTitle);
 }
 

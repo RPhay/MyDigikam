@@ -50,7 +50,7 @@ class CaptureConfigPage : public ConfigPageBase
 
 public:
 
-    explicit CaptureConfigPage(QWidget *parent = 0);
+    explicit CaptureConfigPage(QWidget* parent = 0);
     virtual QString name() const;
 
 protected:

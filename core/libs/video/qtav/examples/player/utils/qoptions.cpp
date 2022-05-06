@@ -22,8 +22,11 @@
  * ============================================================ */
 
 #include "qoptions.h"
+
 #include <QStringList>
 #include <QtDebug>
+
+#include "digikam_debug.h"
 
 namespace QtAVPlayer
 {
@@ -239,7 +242,7 @@ bool QOptions::parse(int argc, const char *const*argv)
 				}
 			}
             if (it_list == mOptions.end()) {
-                qWarning() << "unknown option: " << *it;
+                qCWarning(DIGIKAM_QTAVPLAYER_LOG) << "unknown option: " << *it;
                 result = false;
 				++it;
             }
@@ -270,13 +273,13 @@ bool QOptions::parse(int argc, const char *const*argv)
 				}
 			}
             if (it_list==mOptions.end()) {
-                qWarning() << "unknown option: " << *it;
+                qCWarning(DIGIKAM_QTAVPLAYER_LOG) << "unknown option: " << *it;
                 result = false;
 				++it;
             }
 			//handle unknown option
         } else {
-            qWarning() << "unknown option: " << *it;
+            qCWarning(DIGIKAM_QTAVPLAYER_LOG) << "unknown option: " << *it;
             ++it;
         }
 	}

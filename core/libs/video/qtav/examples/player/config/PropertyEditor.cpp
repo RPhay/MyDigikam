@@ -22,6 +22,7 @@
  * ============================================================ */
 
 #include "PropertyEditor.h"
+
 #include <QComboBox>
 #include <QSpinBox>
 #include <QLabel>
@@ -33,6 +34,7 @@
 #include <QtDebug>
 
 #include "ClickableMenu.h"
+#include "digikam_debug.h"
 
 namespace QtAVPlayer
 {
@@ -274,7 +276,7 @@ void PropertyEditor::updatePropertyValue(const QString &name, const QVariant &va
         return;
     if (!mProperties.contains(name))
         return;
-    qDebug() << name << " >>> " << value;
+    qCDebug(DIGIKAM_QTAVPLAYER_LOG) << name << " >>> " << value;
     mProperties[name] = value;
 }
 

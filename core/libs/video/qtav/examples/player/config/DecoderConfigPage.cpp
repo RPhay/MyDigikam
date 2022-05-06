@@ -24,8 +24,6 @@
 // scroll area code is from Xuno: https://github.com/Xuno/Xuno-QtAV/blob/master/examples/player/config/DecoderConfigPage.cpp
 
 #include "DecoderConfigPage.h"
-#include "Config.h"
-#include "PropertyEditor.h"
 
 #include <QListView>
 #include <QSpinBox>
@@ -35,10 +33,13 @@
 #include <QCheckBox>
 #include <QScrollArea>
 #include <QSpacerItem>
-
-#include "VideoDecoder.h"
 #include <QPainter>
 #include <QtDebug>
+
+#include "Config.h"
+#include "PropertyEditor.h"
+#include "VideoDecoder.h"
+#include "digikam_debug.h"
 
 using namespace QtAV;
 
@@ -372,7 +373,7 @@ void DecoderConfigPage::updateDecodersUi()
 {
     QStringList names = idsToNames(sPriorityUi);
     QStringList all_names = idsToNames(sDecodersUi);
-    //qDebug() << "updateDecodersUi " << this << " " << names << " all: " << all_names;
+    //qCDebug(DIGIKAM_QTAVPLAYER_LOG) << "updateDecodersUi " << this << " " << names << " all: " << all_names;
     int idx = 0;
     foreach (const QString& name, all_names) {
         DecoderItemWidget * iw = 0;

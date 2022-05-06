@@ -41,25 +41,32 @@
 namespace QtAVPlayer
 {
 
-CaptureConfigPage::CaptureConfigPage(QWidget *parent) :
-    ConfigPageBase(parent)
+CaptureConfigPage::CaptureConfigPage(QWidget* parent)
+    : ConfigPageBase(parent)
 {
-    QFormLayout *formLayout = new QFormLayout();
+    QFormLayout* formLayout = new QFormLayout();
     setLayout(formLayout);
-    QHBoxLayout *hb = new QHBoxLayout();
-    mpDir = new QLineEdit();
+
+    QHBoxLayout* hb = new QHBoxLayout();
+    mpDir           = new QLineEdit();
     hb->addWidget(mpDir);
-    QToolButton *bt = new QToolButton();
+    QToolButton* bt = new QToolButton();
     bt->setText(QString::fromLatin1("..."));
     hb->addWidget(bt);
-    connect(bt, SIGNAL(clicked()), SLOT(selectSaveDir()));
-    bt = new QToolButton();
+
+    connect(bt, SIGNAL(clicked()),
+            this,  SLOT(selectSaveDir()));
+
+    bt              = new QToolButton();
     bt->setText(tr("Browse"));
     hb->addWidget(bt);
-    connect(bt, SIGNAL(clicked()), SLOT(browseCaptureDir()));
+
+    connect(bt, SIGNAL(clicked()),
+            this, SLOT(browseCaptureDir()));
+
     formLayout->addRow(tr("Save dir"), hb);
     mpDir->setEnabled(false);
-    mpFormat = new QComboBox();
+    mpFormat        = new QComboBox();
     formLayout->addRow(tr("Save format"), mpFormat);
     QList<QByteArray> formats;
     formats << "Original" << QImageWriter::supportedImageFormats();
@@ -69,7 +76,7 @@ CaptureConfigPage::CaptureConfigPage(QWidget *parent) :
         mpFormat->addItem(QString::fromLatin1(fmt));
     }
 
-    mpQuality = new Slider();
+    mpQuality       = new Slider();
     formLayout->addRow(tr("Quality"), mpQuality);
     mpQuality->setRange(0, 100);
     mpQuality->setOrientation(Qt::Horizontal);

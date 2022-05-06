@@ -24,6 +24,8 @@
 #ifndef QTAV_PLAYER_CONFIGDIALOG_H
 #define QTAV_PLAYER_CONFIGDIALOG_H
 
+// Qt includes
+
 #include <QDialog>
 #include <QDialogButtonBox>
 #include <QTabWidget>
@@ -37,21 +39,26 @@ class ConfigPageBase;
 class ConfigDialog : public QDialog
 {
     Q_OBJECT
+
 public:
+
     static void display();
 
-Q_SIGNALS:
-
 private Q_SLOTS:
+
     void onButtonClicked(QAbstractButton* btn);
     void onApply();
     void onCancel();
     void onReset();
 
 private:
-    explicit ConfigDialog(QWidget *parent = 0);
-    QTabWidget *mpContent;
-    QDialogButtonBox *mpButtonBox;
+
+    explicit ConfigDialog(QWidget* parent = 0);
+
+private:
+
+    QTabWidget*            mpContent;
+    QDialogButtonBox*      mpButtonBox;
     QList<ConfigPageBase*> mPages;
 };
 
