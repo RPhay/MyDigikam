@@ -21,10 +21,12 @@
  *
  * ============================================================ */
 
-
 #include "PlayListItem.h"
 #include <QTime>
 #include <QDataStream>
+
+namespace QtAVPlayer
+{
 
 QDataStream& operator>> (QDataStream& s, PlayListItem& p)
 {
@@ -119,3 +121,5 @@ bool PlayListItem::operator ==(const PlayListItem& other) const
 {
     return url() == other.url();
 }
+
+} // namespace QtAVPlayer

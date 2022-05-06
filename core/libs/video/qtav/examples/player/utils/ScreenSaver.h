@@ -26,6 +26,9 @@
 
 #include <QObject>
 
+namespace QtAVPlayer
+{
+
 // TODO: read QtSystemInfo.ScreenSaver
 
 class ScreenSaver : QObject
@@ -57,5 +60,7 @@ private:
     int ssTimerId; //for mac
     quint32 osxIOPMAssertionId; // for mac OSX >= 10.8
 };
+
+} // namespace QtAVPlayer
 
 #endif // QTAV_PLAYER_SCREENSAVER_H

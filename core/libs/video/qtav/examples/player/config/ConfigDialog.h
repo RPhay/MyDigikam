@@ -29,7 +29,11 @@
 #include <QTabWidget>
 #include <QList>
 
+namespace QtAVPlayer
+{
+
 class ConfigPageBase;
+
 class ConfigDialog : public QDialog
 {
     Q_OBJECT
@@ -50,5 +54,7 @@ private:
     QDialogButtonBox *mpButtonBox;
     QList<ConfigPageBase*> mPages;
 };
+
+} // namespace QtAVPlayer
 
 #endif // QTAV_PLAYER_CONFIGDIALOG_H

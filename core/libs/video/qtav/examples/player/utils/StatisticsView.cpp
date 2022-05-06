@@ -29,6 +29,9 @@
 #include <QHeaderView>
 #include <QPushButton>
 
+namespace QtAVPlayer
+{
+
 QStringList getBaseInfoKeys() {
     return QStringList()
             << QObject::tr("Url")
@@ -258,3 +261,5 @@ void StatisticsView::setMetadataItem(QTreeWidgetItem *parent, const QHash<QStrin
         item->setText(1, it.value());
     }
 }
+
+} // namespace QtAVPlayer

@@ -21,7 +21,6 @@
  *
  * ============================================================ */
 
-
 #ifndef QTAV_PLAYER_PLAYLIST_H
 #define QTAV_PLAYER_PLAYLIST_H
 
@@ -34,6 +33,10 @@ QT_BEGIN_NAMESPACE
 class QListView;
 class QToolButton;
 QT_END_NAMESPACE
+
+namespace QtAVPlayer
+{
+
 class PlayListDelegate;
 
 class PlayListModel;
@@ -77,5 +80,7 @@ private:
     QString mFile;
     bool mFirstShow;
 };
+
+} // namespace QtAVPlayer
 
 #endif // QTAV_PLAYER_PLAYLIST_H

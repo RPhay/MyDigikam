@@ -29,6 +29,9 @@
 #include <QTextEdit>
 #include <QCheckBox>
 
+namespace QtAVPlayer
+{
+
 class ShaderPage : public ConfigPageBase
 {
 public:
@@ -44,5 +47,7 @@ private:
     QTextEdit *m_sample;
     QTextEdit *m_pp;
 };
+
+} // namespace QtAVPlayer
 
 #endif // QTAV_PLAYER_SHADER_PAGE_H

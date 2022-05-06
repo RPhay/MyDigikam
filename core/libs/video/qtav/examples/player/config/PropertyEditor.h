@@ -32,6 +32,10 @@ QT_BEGIN_NAMESPACE
 class QAction;
 class QWidget;
 QT_END_NAMESPACE
+
+namespace QtAVPlayer
+{
+
 class PropertyEditor : public QObject
 {
     Q_OBJECT
@@ -82,5 +86,7 @@ private:
     QVariantHash mProperties;
     QVariantHash mPropertyDetails;
 };
+
+} // namespace QtAVPlayer
 
 #endif // QTAV_PLAYER_PROPERTYEDITOR_H

@@ -21,22 +21,28 @@
  *
  * ============================================================ */
 
-
 #ifndef QTAV_PLAYER_CLICKABLE_MENU_H
 #define QTAV_PLAYER_CLICKABLE_MENU_H
 
 #include <QMenu>
 
+namespace QtAVPlayer
+{
+
 class ClickableMenu : public QMenu
 {
-	Q_OBJECT
+    Q_OBJECT
+
 public:
+
     explicit ClickableMenu(QWidget *parent = 0);
     explicit ClickableMenu(const QString& title, QWidget *parent = 0);
 
 protected:
-	virtual void mouseReleaseEvent(QMouseEvent *);
-	
+
+    virtual void mouseReleaseEvent(QMouseEvent *);
 };
+
+} // namespace QtAVPlayer
 
 #endif // QTAV_PLAYER_CLICKABLE_MENU_H

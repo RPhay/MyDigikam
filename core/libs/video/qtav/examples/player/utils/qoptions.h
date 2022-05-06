@@ -47,6 +47,9 @@
  int v1 = options.value("short1").toInt();
  */
 
+namespace QtAVPlayer
+{
+
 class QOption {
 public:
     // TODO: MultiToken -name value1 -name value2 ...
@@ -126,5 +129,7 @@ private:
     QList<QOption> mOptions;
     QMap<QOption, QString/*group*/> mOptionGroupMap;
 };
+
+} // namespace QtAVPlayer
 
 #endif // QTAV_PLAYER_QOPTIONS_H

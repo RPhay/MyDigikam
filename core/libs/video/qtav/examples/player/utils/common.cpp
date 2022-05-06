@@ -93,6 +93,9 @@ QString UrlFromFileArgs(IInspectable *args)
 
 #endif // Q_OS_WINRT
 
+namespace QtAVPlayer
+{
+
 QOptions get_common_options()
 {
     static QOptions ops = QOptions().addDescription(QString::fromLatin1("Options for QtAV players"))
@@ -293,6 +296,8 @@ bool AppEventFilter::eventFilter(QObject *obj, QEvent *ev)
 
     return true;
 }
+
+} // namespace QtAVPlayer
 
 static void initResources()
 {

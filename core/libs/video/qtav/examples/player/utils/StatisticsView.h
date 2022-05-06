@@ -33,6 +33,10 @@ QT_BEGIN_NAMESPACE
 class QTreeWidget;
 class QTreeWidgetItem;
 QT_END_NAMESPACE
+
+namespace QtAVPlayer
+{
+
 class StatisticsView : public QDialog
 {
     Q_OBJECT
@@ -64,5 +68,7 @@ private:
     QTreeWidgetItem *mpFPS, *mpAudioBitRate, *mpVideoBitRate;
     QTreeWidgetItem *mpMetadata, *mpAudioMetadata, *mpVideoMetadata;
 };
+
+} // namespace QtAVPlayer
 
 #endif // QTAV_PLAYER_STATISTICSVIEW_H

@@ -44,7 +44,11 @@
 
 using namespace QtAV;
 
+namespace QtAVPlayer
+{
+
 // TODO: watch main window
+
 EventFilter::EventFilter(AVPlayer *player) :
     QObject(player),
     menu(0)
@@ -396,3 +400,5 @@ bool WindowEventFilter::eventFilter(QObject *watched, QEvent *event)
     }
     return false;
 }
+
+} // namespace QtAVPlayer

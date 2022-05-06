@@ -38,6 +38,7 @@
 #include "common.h"
 
 using namespace QtAV;
+using namespace QtAVPlayer;
 
 static const struct
 {

@@ -22,9 +22,9 @@
  * ============================================================ */
 
 #include "OSD.h"
-#include "QtAV_Statistics.h"
 
-namespace QtAV {
+namespace QtAVPlayer
+{
 
 OSD::OSD():
     mShowType(ShowNone)
@@ -101,6 +101,5 @@ QString OSD::text(Statistics *statistics)
     return text;
 }
 
-
-} //namespace QtAV
+} // namespace QtAVPlayer
 

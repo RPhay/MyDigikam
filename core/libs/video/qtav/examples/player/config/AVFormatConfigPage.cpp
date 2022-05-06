@@ -31,6 +31,9 @@
 
 #include "Config.h"
 
+namespace QtAVPlayer
+{
+
 AVFormatConfigPage::AVFormatConfigPage(QWidget *parent) :
     ConfigPageBase(parent)
 {
@@ -84,3 +87,5 @@ void AVFormatConfigPage::applyToUi()
     m_analyzeDuration->setValue(Config::instance().analyzeDuration());
     m_extra->setText(Config::instance().avformatExtra());
 }
+
+} // namespace QtAVPlayer

@@ -33,6 +33,10 @@ class QCheckBox;
 class QSpinBox;
 class QLineEdit;
 QT_END_NAMESPACE
+
+namespace QtAVPlayer
+{
+
 class AVFormatConfigPage : public ConfigPageBase
 {
     Q_OBJECT
@@ -49,5 +53,7 @@ private:
     QSpinBox *m_analyzeDuration;
     QLineEdit *m_extra;
 };
+
+} // namespace QtAVPlayer
 
 #endif // QTAV_PLAYER_AVFORMATCONFIGPAGE_H

@@ -25,8 +25,12 @@
 #include <QStringList>
 #include <QtDebug>
 
+namespace QtAVPlayer
+{
+
 QOption::QOption()
-{}
+{
+}
 
 QOption::QOption(const char *name, const QVariant &defaultValue, Type type, const QString &description)
 :mType(type),mDescription(description),mDefaultValue(defaultValue)
@@ -45,18 +49,18 @@ QOption::QOption(const char *name, Type type, const QString &description)
 QOption::QOption(const char *name, const QVariant& value, Type type, const QString &description)
 :mType(type),mDescription(description),mDefaultValue(*value),mValue(value)
 {qDebug("%s %s %d", __FILE__, __FUNCTION__, __LINE__);
-	setName(name);
+    setName(name);
 }
 */
 
 QString QOption::shortName() const
 {
-	return mShortName;
+    return mShortName;
 }
 
 QString QOption::longName() const
 {
-	return mLongName;
+    return mLongName;
 }
 
 QString QOption::formatName() const
@@ -70,7 +74,7 @@ QString QOption::formatName() const
 
 QString QOption::description() const
 {
-	return mDescription;
+    return mDescription;
 }
 
 QVariant QOption::value() const
@@ -97,26 +101,26 @@ bool QOption::isValid() const
 
 void QOption::setType(QOption::Type type)
 {
-	mType = type;
-	if (mType==NoToken)
+    mType = type;
+    if (mType==NoToken)
         mValue = false;
 }
 
 QOption::Type QOption::type() const
 {
-	return mType;
+    return mType;
 }
 
 QString QOption::help() const
 {
-	QString message = formatName();
-	if (type()==QOption::SingleToken)
+    QString message = formatName();
+    if (type()==QOption::SingleToken)
         message.append(QLatin1String(" value"));
-	else if (type()==QOption::MultiToken)
+    else if (type()==QOption::MultiToken)
         message.append(QLatin1String(" value1 ... valueN"));
 
     message = QString::fromLatin1("%1").arg(message, -33);
-	message.append(mDescription);
+    message.append(mDescription);
     if (mDefaultValue.isValid() && !mDefaultValue.toString().isEmpty())
         message.append(QLatin1String(" (default: ") + mDefaultValue.toString() + QLatin1String(")"));
     return message;
@@ -148,7 +152,7 @@ static QString get_long(const QString& name)
 void QOption::setName(const QString &name)
 {
     int comma = name.indexOf(QLatin1Char(','));
-	if (comma>0) {
+    if (comma>0) {
         QString name1 = name.left(comma);
         QString name2 = name.mid(comma+1);
         if (name1.startsWith(QLatin1String("--"))) {
@@ -169,14 +173,14 @@ void QOption::setName(const QString &name)
                 mLongName = name1;
             }
         }
-	} else {
+    } else {
         if (name.startsWith(QLatin1String("--")))
             mLongName = name.mid(2);
         else if (name.startsWith(QLatin1String("-")))
             mShortName = name.mid(1);
         else
             mShortName = name;
-	}
+    }
 }
 
 
@@ -380,3 +384,5 @@ void QOptions::print() const
 {
     qDebug("%s", help().toUtf8().constData());
 }
+
+} // namespace QtAVPlayer

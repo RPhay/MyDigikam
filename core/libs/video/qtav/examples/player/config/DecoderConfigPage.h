@@ -21,7 +21,6 @@
  *
  * ============================================================ */
 
-
 #ifndef QTAV_PLAYER_DECODERCONFIGPAGE_H
 #define QTAV_PLAYER_DECODERCONFIGPAGE_H
 
@@ -36,6 +35,10 @@ class QToolButton;
 class QSpinBox;
 class QVBoxLayout;
 QT_END_NAMESPACE
+
+namespace QtAVPlayer
+{
+
 class DecoderConfigPage : public ConfigPageBase
 {
     Q_OBJECT
@@ -65,5 +68,7 @@ private:
     DecoderItemWidget *mpSelectedDec;
     QVBoxLayout *mpDecLayout;
 };
+
+} // namespace QtAVPlayer
 
 #endif // QTAV_PLAYER_DECODERCONFIGPAGE_H

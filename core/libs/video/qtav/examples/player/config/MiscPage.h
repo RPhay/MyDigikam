@@ -29,6 +29,9 @@
 #include <QDoubleSpinBox>
 #include <QComboBox>
 
+namespace QtAVPlayer
+{
+
 class MiscPage : public ConfigPageBase
 {
     Q_OBJECT
@@ -52,5 +55,7 @@ private:
     QCheckBox *m_egl;
     QComboBox *m_log;
 };
+
+} // namespace QtAVPlayer
 
 #endif // QTAV_PLAYER_MISCPAGE_H

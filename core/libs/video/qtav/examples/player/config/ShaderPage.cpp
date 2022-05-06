@@ -26,6 +26,9 @@
 #include <QLayout>
 #include "Config.h"
 
+namespace QtAVPlayer
+{
+
 ShaderPage::ShaderPage(QWidget *parent)
     : ConfigPageBase(parent)
 {
@@ -79,5 +82,7 @@ void ShaderPage::applyFromUi()
             .setFragHeader(m_header->toPlainText())
             .setFragSample(m_sample->toPlainText())
             .setFragPostProcess(m_pp->toPlainText())
-            ;
+    ;
 }
+
+} // namespace QtAVPlayer

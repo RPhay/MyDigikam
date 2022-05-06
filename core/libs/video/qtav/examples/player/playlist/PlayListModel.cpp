@@ -25,6 +25,9 @@
 #include "PlayListItem.h"
 #include <QVector>
 
+namespace QtAVPlayer
+{
+
 PlayListModel::PlayListModel(QObject *parent) :
     QAbstractListModel(parent)
 {
@@ -106,3 +109,5 @@ void PlayListModel::updateLayout()
 {
     emit layoutChanged();
 }
+
+} // namespace QtAVPlayer

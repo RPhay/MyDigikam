@@ -26,6 +26,9 @@
 
 #include <QStyledItemDelegate>
 
+namespace QtAVPlayer
+{
+
 class PlayListDelegate : public QStyledItemDelegate
 {
     Q_OBJECT
@@ -39,5 +42,7 @@ private:
     mutable int mHighlightRow;
     mutable QList<int> mSelectedRows;
 };
+
+} // namespace QtAVPlayer
 
 #endif // QTAV_PLAYER_PLAYLISTDELEGATE_H

@@ -34,6 +34,9 @@
 
 #include "ConfigPageBase.h"
 
+namespace QtAVPlayer
+{
+
 /*
  * TODO: ConfigPageBase: auto save(true for menu ui, false for dialog ui)
  * virtual public slot: apply()
@@ -68,5 +71,7 @@ private:
     QComboBox* mpFormat;
     Slider*    mpQuality;
 };
+
+} // namespace QtAVPlayer
 
 #endif // QTAV_PLAYER_CAPTURECONFIGPAGE_H

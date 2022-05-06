@@ -38,6 +38,9 @@
 #include "Config.h"
 #include "Slider.h"
 
+namespace QtAVPlayer
+{
+
 CaptureConfigPage::CaptureConfigPage(QWidget *parent) :
     ConfigPageBase(parent)
 {
@@ -129,3 +132,5 @@ void CaptureConfigPage::browseCaptureDir()
     qDebug("browse capture dir");
     QDesktopServices::openUrl(QUrl(QString::fromLatin1("file:///") + mpDir->text()));
 }
+
+} // namespace QtAVPlayer

@@ -21,7 +21,6 @@
  *
  * ============================================================ */
 
-
 #include "VideoEQConfigPage.h"
 
 #include <algorithm>
@@ -33,8 +32,10 @@
 #include <QLayout>
 #include <QVector>
 
-#include "../Slider.h"
+#include "Slider.h"
 
+namespace QtAVPlayer
+{
 
 VideoEQConfigPage::VideoEQConfigPage(QWidget *parent) :
     QWidget(parent)
@@ -168,3 +169,5 @@ void VideoEQConfigPage::onEngineChangedByUI()
     mEngine = mEngines.at(mpEngine->currentIndex());
     emit engineChanged();
 }
+
+} // namespace QtAVPlayer

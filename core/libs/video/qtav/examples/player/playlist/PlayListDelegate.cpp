@@ -28,6 +28,9 @@
 #include <QApplication>
 #include "PlayListModel.h"
 
+namespace QtAVPlayer
+{
+
 static const int kMarginLeft = 4;
 static const int kMarginTop = 2;
 static const int kWidth = 320;
@@ -107,3 +110,5 @@ QSize PlayListDelegate::sizeHint(const QStyleOptionViewItem &option,
     }
     return QSize(kWidth, kHeightMin);
 }
+
+} // namespace QtAVPlayer

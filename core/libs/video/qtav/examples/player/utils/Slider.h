@@ -29,29 +29,38 @@
 
 #include <QSlider>
 
+namespace QtAVPlayer
+{
+
 class Slider : public QSlider
 {
-	Q_OBJECT
+    Q_OBJECT
+
 public:
+
     Slider(QWidget *parent = 0);
     ~Slider();
 
 Q_SIGNALS:
+
     void onEnter();
     void onLeave();
     void onHover(int pos, int value);
 
 protected:
+
     virtual void enterEvent(QEvent* event);
     virtual void leaveEvent(QEvent *e);
     virtual void mouseMoveEvent(QMouseEvent* event);
     virtual void mousePressEvent(QMouseEvent *event);
+
 //#if CODE_FOR_CLICK == 1
-	inline int pick(const QPoint &pt) const;
-	int pixelPosToRangeValue(int pos) const;
+    inline int pick(const QPoint &pt) const;
+    int pixelPosToRangeValue(int pos) const;
     void initStyleOption_Qt430(QStyleOptionSlider *option) const;
 //#endif
 };
 
-#endif // QTAV_PLAYER_SLIDER_H
+} // namespace QtAVPlayer
 
+#endif // QTAV_PLAYER_SLIDER_H

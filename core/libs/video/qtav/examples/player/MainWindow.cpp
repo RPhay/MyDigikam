@@ -80,6 +80,10 @@
     qDebug("%s %s @%d", __FILE__, __FUNCTION__, __LINE__);
 
 using namespace QtAV;
+
+namespace QtAVPlayer
+{
+
 const qreal kVolumeInterval = 0.04;
 
 extern QStringList idsToNames(QVector<VideoDecoderId> ids);
@@ -1614,3 +1618,5 @@ void MainWindow::workaroundRendererSize()
     mpRenderer->widget()->resize(QSize(s.width()+1, s.height()+1));
     mpRenderer->widget()->resize(s);
 }
+
+} // namespace QtAVPlayer

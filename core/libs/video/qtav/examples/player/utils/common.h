@@ -36,6 +36,9 @@
 #include "Config.h"
 #include "ScreenSaver.h"
 
+namespace QtAVPlayer
+{
+
 QOptions get_common_options();
 void do_common_options_before_qapp(const QOptions& options);
 
@@ -62,7 +65,9 @@ public:
 
 private:
 
-    QObject *m_player;
+    QObject* m_player;
 };
+
+} // namespace QtAVPlayer
 
 #endif // QTAV_PLAYER_COMMON_H

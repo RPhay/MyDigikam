@@ -32,6 +32,10 @@ class QComboBox;
 class QPushButton;
 class QSlider;
 QT_END_NAMESPACE
+
+namespace QtAVPlayer
+{
+
 class VideoEQConfigPage : public QWidget
 {
     Q_OBJECT
@@ -72,5 +76,7 @@ private:
     Engine mEngine;
     QVector<Engine> mEngines;
 };
+
+} // namespace QtAVPlayer
 
 #endif // QTAV_PLAYER_VIDEOEQCONFIGPAGE_H

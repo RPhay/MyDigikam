@@ -29,6 +29,10 @@
 #include "OSD.h"
 
 using namespace QtAV;
+
+namespace QtAVPlayer
+{
+
 class OSDFilter : public VideoFilter, public OSD
 {
 public:
@@ -39,5 +43,7 @@ public:
 protected:
     void process(Statistics* statistics, VideoFrame* frame);
 };
+
+} // namespace QtAVPlayer
 
 #endif // QTAV_PLAYER_OSDFILTER_H

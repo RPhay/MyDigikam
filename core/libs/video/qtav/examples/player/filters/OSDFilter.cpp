@@ -25,10 +25,14 @@
 #include "QtAV_Statistics.h"
 #include <QPainter>
 
+namespace QtAVPlayer
+{
+
 OSDFilter::OSDFilter(QObject *parent)
     : VideoFilter(parent)
     , OSD()
-{}
+{
+}
 
 void OSDFilter::process(Statistics *statistics, VideoFrame *frame)
 {
@@ -38,3 +42,5 @@ void OSDFilter::process(Statistics *statistics, VideoFrame *frame)
     //qDebug("ctx=%p tid=%p main tid=%p", ctx, QThread::currentThread(), qApp->thread());
     context()->drawPlainText(context()->rect, Qt::AlignCenter, text(statistics));
 }
+
+} // namespace QtAVPlayer

@@ -23,6 +23,9 @@
 
 #include "ConfigPageBase.h"
 
+namespace QtAVPlayer
+{
+
 ConfigPageBase::ConfigPageBase(QWidget *parent) :
     QWidget(parent)
   , mApplyOnUiChange(true)
@@ -54,3 +57,5 @@ void ConfigPageBase::reset()
     // NOTE: make sure Config::instance().reset() is called before it. It is called i ConfigDialog.reset()
     applyToUi();
 }
+
+} // namespace QtAVPlayer

@@ -21,12 +21,14 @@
  *
  * ============================================================ */
 
-
 #ifndef QTAV_PLAYER_PLAYLISTITEM_H
 #define QTAV_PLAYER_PLAYLISTITEM_H
 
 #include <QString>
 #include <QVariant>
+
+namespace QtAVPlayer
+{
 
 class PlayListItem
 {
@@ -54,9 +56,11 @@ private:
     QString mLastTimeS, mDurationS;
 };
 
-Q_DECLARE_METATYPE(PlayListItem);
-
 QDataStream& operator>> (QDataStream& s, PlayListItem& p);
 QDataStream& operator<< (QDataStream& s, const PlayListItem& p);
+
+} // namespace QtAVPlayer
+
+Q_DECLARE_METATYPE(QtAVPlayer::PlayListItem);
 
 #endif // QTAV_PLAYER_PLAYLISTITEM_H

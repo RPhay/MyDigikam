@@ -37,6 +37,9 @@
 #include <QtDebug>
 #include "common.h"
 
+namespace QtAVPlayer
+{
+
 class Config::Data
 {
 public:
@@ -1132,3 +1135,5 @@ void Config::save()
 {
     mpData->save();
 }
+
+} // namespace QtAVPlayer

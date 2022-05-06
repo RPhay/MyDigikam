@@ -26,6 +26,9 @@
 #include <QLayout>
 #include "Config.h"
 
+namespace QtAVPlayer
+{
+
 MiscPage::MiscPage()
 {
     QGridLayout *gl = new QGridLayout();
@@ -142,3 +145,5 @@ void MiscPage::applyToUi()
     m_timeout_abort->setChecked(Config::instance().abortOnTimeout());
     m_log->setCurrentIndex(m_log->findText(Config::instance().logLevel().toLower()));
 }
+
+} // namespace QtAVPlayer

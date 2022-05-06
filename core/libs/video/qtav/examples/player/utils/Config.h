@@ -21,7 +21,6 @@
  *
  * ============================================================ */
 
-
 #ifndef QTAV_PLAYER_CONFIG_H
 #define QTAV_PLAYER_CONFIG_H
 
@@ -30,6 +29,9 @@
 #include <QVariant>
 #include <QColor>
 #include <QFont>
+
+namespace QtAVPlayer
+{
 
 //TODO: use hash to simplify api
 /*
@@ -291,5 +293,7 @@ private:
     class Data;
     Data *mpData;
 };
+
+} // namespace QtAVPlayer
 
 #endif // QTAV_PLAYER_CONFIG_H

@@ -21,7 +21,6 @@
  *
  * ============================================================ */
 
-
 #ifndef QTAV_PLAYER_EVENT_FILTER_H
 #define QTAV_PLAYER_EVENT_FILTER_H
 
@@ -35,10 +34,17 @@ QT_BEGIN_NAMESPACE
 class QMenu;
 class QPoint;
 QT_END_NAMESPACE
-namespace QtAV {
+
+namespace QtAV
+{
 class AVPlayer;
 }
-//for internal use
+
+namespace QtAVPlayer
+{
+
+// for internal use
+
 class EventFilter : public QObject
 {
     Q_OBJECT
@@ -82,5 +88,7 @@ private:
     QWidget *mpWindow;
     QPoint gMousePos, iMousePos;
 };
+
+} // namespace QtAVPlayer
 
 #endif // QTAV_PLAYER_EVENT_FILTER_H

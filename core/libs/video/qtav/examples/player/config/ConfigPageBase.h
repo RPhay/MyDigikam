@@ -26,6 +26,9 @@
 
 #include <QWidget>
 
+namespace QtAVPlayer
+{
+
 class ConfigPageBase : public QWidget
 {
     Q_OBJECT
@@ -57,5 +60,7 @@ protected:
 private:
     bool mApplyOnUiChange;
 };
+
+} // namespace QtAVPlayer
 
 #endif // QTAV_PLAYER_CONFIGPAGEBASE_H

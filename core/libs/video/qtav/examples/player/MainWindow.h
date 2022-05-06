@@ -56,6 +56,9 @@ class DynamicShaderObject;
 class GLSLFilter;
 }
 
+namespace QtAVPlayer
+{
+
 class Button;
 class Slider;
 class PlayList;
@@ -230,5 +233,7 @@ private:
     QtAV::DynamicShaderObject *m_shader;
     QtAV::GLSLFilter *m_glsl;
 };
+
+} // namespace QtAVPlayer
 
 #endif // QTAV_PLAYER_MAINWINDOW_H

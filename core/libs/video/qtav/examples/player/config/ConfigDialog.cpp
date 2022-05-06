@@ -32,6 +32,10 @@
 #include "MiscPage.h"
 #include "ShaderPage.h"
 #include "Config.h"
+
+namespace QtAVPlayer
+{
+
 void ConfigDialog::display()
 {
     static ConfigDialog *dialog = new ConfigDialog();
@@ -124,3 +128,4 @@ void ConfigDialog::onCancel()
     }
 }
 
+} // namespace QtAVPlayer

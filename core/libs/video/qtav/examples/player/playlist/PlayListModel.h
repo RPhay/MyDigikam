@@ -21,13 +21,15 @@
  *
  * ============================================================ */
 
-
 #ifndef QTAV_PLAYER_PLAYLISTMODEL_H
 #define QTAV_PLAYER_PLAYLISTMODEL_H
 
 #include <QAbstractListModel>
 
 #include "PlayListItem.h"
+
+namespace QtAVPlayer
+{
 
 class PlayListModel : public QAbstractListModel
 {
@@ -50,5 +52,7 @@ public:
 private:
     QList<PlayListItem> mItems;
 };
+
+} // namespace QtAVPlayer
 
 #endif // QTAV_PLAYER_PLAYLISTMODEL_H

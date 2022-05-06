@@ -22,13 +22,18 @@
  * ============================================================ */
 
 #include "ScreenSaver.h"
+
 #include <QTimerEvent>
 #include <QLibrary>
+
 #ifdef Q_OS_LINUX
-//#include <X11/Xlib.h>
-#ifndef Success
-#define Success 0
-#endif
+/*
+#   include <X11/Xlib.h>
+*/
+#   ifndef Success
+#       define Success 0
+#   endif
+
 struct _XDisplay;
 typedef struct _XDisplay Display;
 typedef Display* (*fXOpenDisplay)(const char*/* display_name */);
@@ -42,36 +47,40 @@ static fXSetScreenSaver XSetScreenSaver = 0;
 static fXGetScreenSaver XGetScreenSaver = 0;
 static fXResetScreenSaver XResetScreenSaver = 0;
 static QLibrary xlib;
-#endif //Q_OS_LINUX
-#if defined(Q_OS_MAC) && !defined(Q_OS_IOS)
-#include <Availability.h>
-#  if MAC_OS_X_VERSION_MIN_REQUIRED < MAC_OS_X_VERSION_10_8
-//http://www.cocoachina.com/macdev/cocoa/2010/0201/453.html
-#include <CoreServices/CoreServices.h>
-#  else
-/* MAC OSX 10.8+ has deprecated the UpdateSystemActivity stuff in favor of a new API.. */
-#    include <IOKit/pwr_mgt/IOPMLib.h>
-#  endif
-#endif //Q_OS_MAC
-#ifdef Q_OS_WIN
-#include <QAbstractEventDispatcher>
-#if QT_VERSION >= QT_VERSION_CHECK(5, 0, 0)
-#include <QAbstractNativeEventFilter>
-#endif
-//mingw gcc4.4 EXECUTION_STATE
-#ifdef __MINGW32__
-#ifndef _WIN32_WINDOWS
-#define _WIN32_WINDOWS 0x0410
-#endif //_WIN32_WINDOWS
-#endif //__MINGW32__
-#include <windows.h>
-#define USE_NATIVE_EVENT 0
 
-#if USE_NATIVE_EVENT
+#endif //Q_OS_LINUX
+
+#if defined(Q_OS_MAC) && !defined(Q_OS_IOS)
+#   include <Availability.h>
+#   if MAC_OS_X_VERSION_MIN_REQUIRED < MAC_OS_X_VERSION_10_8
+//http://www.cocoachina.com/macdev/cocoa/2010/0201/453.html
+#       include <CoreServices/CoreServices.h>
+#   else
+/* MAC OSX 10.8+ has deprecated the UpdateSystemActivity stuff in favor of a new API.. */
+#       include <IOKit/pwr_mgt/IOPMLib.h>
+#   endif
+#endif //Q_OS_MAC
+
+#ifdef Q_OS_WIN
+#   include <QAbstractEventDispatcher>
+#   if QT_VERSION >= QT_VERSION_CHECK(5, 0, 0)
+#       include <QAbstractNativeEventFilter>
+#   endif
+//mingw gcc4.4 EXECUTION_STATE
+#   ifdef __MINGW32__
+#       ifndef _WIN32_WINDOWS
+#           define _WIN32_WINDOWS 0x0410
+#       endif //_WIN32_WINDOWS
+#   endif //__MINGW32__
+#   include <windows.h>
+#   define USE_NATIVE_EVENT 0
+
+
+#   if USE_NATIVE_EVENT
 class ScreenSaverEventFilter
-#if QT_VERSION >= QT_VERSION_CHECK(5, 0, 0)
+#       if QT_VERSION >= QT_VERSION_CHECK(5, 0, 0)
         : public QAbstractNativeEventFilter
-#endif
+#       endif
 {
 public:
     //screensaver is global
@@ -81,19 +90,19 @@ public:
     }
     void enable(bool yes = true) {
         if (!yes) {
-#if QT_VERSION < QT_VERSION_CHECK(5, 0, 0)
+#       if QT_VERSION < QT_VERSION_CHECK(5, 0, 0)
             mLastEventFilter = QAbstractEventDispatcher::instance()->setEventFilter(eventFilter);
-#else
+#       else
             QAbstractEventDispatcher::instance()->installNativeEventFilter(this);
-#endif
+#       endif
         } else {
             if (!QAbstractEventDispatcher::instance())
                 return;
-#if QT_VERSION < QT_VERSION_CHECK(5, 0, 0)
+#       if QT_VERSION < QT_VERSION_CHECK(5, 0, 0)
             mLastEventFilter = QAbstractEventDispatcher::instance()->setEventFilter(mLastEventFilter);
-#else
+#       else
             QAbstractEventDispatcher::instance()->removeNativeEventFilter(this);
-#endif
+#       endif
         }
     }
     void disable(bool yes = true) {
@@ -126,19 +135,23 @@ public:
 private:
     ScreenSaverEventFilter() {}
     ~ScreenSaverEventFilter() {}
-#if QT_VERSION < QT_VERSION_CHECK(5, 0, 0)
+#       if QT_VERSION < QT_VERSION_CHECK(5, 0, 0)
     static QAbstractEventDispatcher::EventFilter mLastEventFilter;
     static bool eventFilter(void* message) {
         return ScreenSaverEventFilter::instance().nativeEventFilter("windows_MSG", message, 0);
     }
-#endif
+#       endif
+
 };
-#if QT_VERSION < QT_VERSION_CHECK(5, 0, 0)
+
+#       if QT_VERSION < QT_VERSION_CHECK(5, 0, 0)
 QAbstractEventDispatcher::EventFilter ScreenSaverEventFilter::mLastEventFilter = 0;
-#endif
-#endif //USE_NATIVE_EVENT
+#       endif
+#   endif //USE_NATIVE_EVENT
 #endif //Q_OS_WIN
 
+namespace QtAVPlayer
+{
 
 ScreenSaver& ScreenSaver::instance()
 {
@@ -366,3 +379,5 @@ void ScreenSaver::timerEvent(QTimerEvent *e)
     XCloseDisplay(display);
 #endif //Q_OS_LINUX
 }
+
+} // namespace QtAVPlayer

@@ -39,7 +39,12 @@
 #include "VideoDecoder.h"
 #include <QPainter>
 #include <QtDebug>
+
 using namespace QtAV;
+
+namespace QtAVPlayer
+{
+
 // shared
 static QVector<QtAV::VideoDecoderId> sDecodersUi;
 static QVector<QtAV::VideoDecoderId> sPriorityUi;
@@ -400,5 +405,7 @@ void DecoderConfigPage::onConfigChanged()
     sDecodersUi = VideoDecoder::registered();
     updateDecodersUi();
 }
+
+} // namespace QtAVPlayer
 
 #include "DecoderConfigPage.moc"

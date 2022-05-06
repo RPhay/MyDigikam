@@ -24,13 +24,18 @@
 #ifndef QTAV_PLAYER_OSD_H
 #define QTAV_PLAYER_OSD_H
 
-#include "QtAV_Global.h"
 #include <QPoint>
 #include <QFont>
 
-namespace QtAV {
+#include "QtAV_Global.h"
+#include "QtAV_Statistics.h"
 
-class Statistics;
+using namespace QtAV;
+
+namespace QtAVPlayer
+{
+
+
 class OSD
 {
 public:
@@ -54,6 +59,6 @@ protected:
     int mSecsTotal;
 };
 
-} // namespace QtAV
+} // namespace QtAVPlayer
 
 #endif // QTAV_PLAYER_OSD_H

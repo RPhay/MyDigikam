@@ -27,6 +27,9 @@
 #include <QFileInfo>
 #include <QTextStream>
 
+namespace QtAVPlayer
+{
+
 AVFilterSubtitle::AVFilterSubtitle(QObject *parent)
     :  LibAVFilterVideo(parent)
     , m_auto(true)
@@ -161,3 +164,5 @@ void AVFilterSubtitle::onStatusChanged()
         emit loadError();
     }
 }
+
+} // namespace QtAVPlayer

@@ -39,6 +39,8 @@
 #define initStyleOption initStyleOption_Qt430
 #endif //QT_VERSION
 
+namespace QtAVPlayer
+{
 
 Slider::Slider(QWidget *parent):
     QSlider(parent)
@@ -205,4 +207,7 @@ void Slider::mousePressEvent(QMouseEvent *e)
 		QSlider::mousePressEvent(e);
 	}
 }
+
 #endif
+
+} // namespace QtAVPlayer

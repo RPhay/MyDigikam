@@ -32,6 +32,9 @@
 #include <QFile>
 #include <QDataStream>
 
+namespace QtAVPlayer
+{
+
 PlayList::PlayList(QWidget *parent) :
     QWidget(parent)
 {
@@ -219,4 +222,4 @@ void PlayList::onAboutToPlay(const QModelIndex &index)
     save();
 }
 
-
+} // namespace QtAVPlayer

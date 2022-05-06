@@ -28,7 +28,12 @@
 #include <QHash>
 #include "LibAVFilter.h"
 #include "AVPlayer.h"
+
 using namespace QtAV;
+
+namespace QtAVPlayer
+{
+
 class AVFilterSubtitle : public LibAVFilterVideo
 {
     Q_OBJECT
@@ -61,5 +66,7 @@ private:
     // convert to utf8 to ensure ffmpeg can open it.
     QHash<QString,QString> m_u8_files;
 };
+
+} // namespace QtAVPlayer
 
 #endif // QTAV_PLAYER_AVFilterSubtitle_H

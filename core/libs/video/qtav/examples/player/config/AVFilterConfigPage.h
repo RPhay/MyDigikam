@@ -32,6 +32,10 @@ class QComboBox;
 class QLabel;
 class QTextEdit;
 QT_END_NAMESPACE
+
+namespace QtAVPlayer
+{
+
 class AVFilterConfigPage : public ConfigPageBase
 {
     Q_OBJECT
@@ -53,5 +57,7 @@ private:
         QTextEdit *options;
     } m_ui[2]; //0: video, 1: audio
 };
+
+} // namespace QtAVPlayer
 
 #endif // QTAV_PLAYER_AVFILTERCONFIGPAGE_H

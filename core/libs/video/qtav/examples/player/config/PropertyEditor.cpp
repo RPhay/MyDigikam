@@ -32,7 +32,10 @@
 #include <QToolButton>
 #include <QtDebug>
 
-#include "../ClickableMenu.h"
+#include "ClickableMenu.h"
+
+namespace QtAVPlayer
+{
 
 PropertyEditor::PropertyEditor(QObject *parent) :
     QObject(parent)
@@ -312,3 +315,5 @@ void PropertyEditor::onBoolChange(bool value)
 {
     updatePropertyValue(sender()->objectName(), value);
 }
+
+} // namespace QtAVPlayer
