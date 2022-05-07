@@ -40,6 +40,7 @@ namespace QtAVPlayer
 {
 
 QOptions get_common_options();
+
 void do_common_options_before_qapp(const QOptions& options);
 
 /// help, log file, ffmpeg log level
@@ -58,10 +59,10 @@ class AppEventFilter : public QObject
 {
 public:
 
-    AppEventFilter(QObject* player = 0, QObject* parent = 0);
+    AppEventFilter(QObject* player = nullptr, QObject* parent = nullptr);
 
     QUrl url() const;
-    virtual bool eventFilter(QObject *obj, QEvent *ev);
+    virtual bool eventFilter(QObject* obj, QEvent* ev);
 
 private:
 

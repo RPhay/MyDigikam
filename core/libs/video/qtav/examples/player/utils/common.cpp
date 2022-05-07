@@ -75,7 +75,7 @@ using namespace ABI::Windows::Storage::Pickers;
         } \
     } while (0)
 
-QString UrlFromFileArgs(IInspectable *args)
+QString UrlFromFileArgs(IInspectable* args)
 {
     ComPtr<IFileActivatedEventArgs> fileArgs;
     COM_ENSURE(args->QueryInterface(fileArgs.GetAddressOf()), QString());
@@ -87,12 +87,14 @@ QString UrlFromFileArgs(IInspectable *args)
     COM_ENSURE(item->get_Path(path.GetAddressOf()), QString());
 
     quint32 pathLen;
-    const wchar_t *pathStr = path.GetRawBuffer(&pathLen);
+    const wchar_t* pathStr = path.GetRawBuffer(&pathLen);
     const QString filePath = QString::fromWCharArray(pathStr, pathLen);
+
     qCDebug(DIGIKAM_QTAVPLAYER_LOG) << "file path: " << filePath;
+
     item->AddRef(); // ensure we can access it later. TODO: how to release?
 
-    return QString::fromLatin1("winrt:@%1:%2").arg((qint64)(qptrdiff)item.Get()).arg(filePath);
+    return (QString::fromLatin1("winrt:@%1:%2").arg((qint64)(qptrdiff)item.Get()).arg(filePath));
 }
 
 #endif // Q_OS_WINRT
@@ -151,7 +153,7 @@ void do_common_options_before_qapp(const QOptions& options)
 
 }
 
-void do_common_options(const QOptions &options, const QString& /*appName*/)
+void do_common_options(const QOptions& options, const QString& /*appName*/)
 {
     if (options.value(QString::fromLatin1("help")).toBool())
     {
@@ -175,9 +177,9 @@ void set_opengl_backend(const QString& glopt, const QString &appname)
 
     if      (gl.indexOf(QLatin1String("-desktop")) > 0)
         gl = QLatin1String("desktop");
-    else if (gl.indexOf(QLatin1String("-es")) > 0 || gl.indexOf(QLatin1String("-angle")) > 0)
+    else if ((gl.indexOf(QLatin1String("-es")) > 0) || (gl.indexOf(QLatin1String("-angle")) > 0))
         gl = gl.mid(gl.indexOf(QLatin1String("-es")) + 1);
-    else if (gl.indexOf(QLatin1String("-sw")) > 0 || gl.indexOf(QLatin1String("-software")) > 0)
+    else if ((gl.indexOf(QLatin1String("-sw")) > 0) || (gl.indexOf(QLatin1String("-software")) > 0))
         gl = QLatin1String("software");
     else
         gl = glopt.toLower();
@@ -189,12 +191,15 @@ void set_opengl_backend(const QString& glopt, const QString &appname)
             case Config::Desktop:
                 gl = QLatin1String("desktop");
                 break;
+
             case Config::OpenGLES:
                 gl = QLatin1String("es");
                 break;
+
             case Config::Software:
                 gl = QLatin1String("software");
                 break;
+
             default:
                 break;
         }
@@ -247,13 +252,13 @@ QString appDataDir()
     return QStandardPaths::writableLocation(QStandardPaths::AppDataLocation);
 }
 
-AppEventFilter::AppEventFilter(QObject *player, QObject *parent)
+AppEventFilter::AppEventFilter(QObject* player, QObject* parent)
     : QObject(parent),
       m_player(player)
 {
 }
 
-bool AppEventFilter::eventFilter(QObject *obj, QEvent *ev)
+bool AppEventFilter::eventFilter(QObject* obj, QEvent* ev)
 {
     //qCDebug(DIGIKAM_QTAVPLAYER_LOG) << __FUNCTION__ << " watcher: " << obj << ev;
 
@@ -271,10 +276,16 @@ bool AppEventFilter::eventFilter(QObject *obj, QEvent *ev)
         class QActivationEvent : public QEvent
         {
         public:
-            void* args() const {return d;} //IInspectable*
+
+            void* args() const
+            {
+                // IInspectable*
+
+                return d;
+            }
         };
 
-        QActivationEvent *ae = static_cast<QActivationEvent*>(ev);
+        QActivationEvent* ae = static_cast<QActivationEvent*>(ev);
         const QString url(UrlFromFileArgs((IInspectable*)ae->args()));
 
         if (!url.isEmpty())
@@ -293,7 +304,7 @@ bool AppEventFilter::eventFilter(QObject *obj, QEvent *ev)
     if (ev->type() != QEvent::FileOpen)
         return false;
 
-    QFileOpenEvent *foe = static_cast<QFileOpenEvent*>(ev);
+    QFileOpenEvent* foe = static_cast<QFileOpenEvent*>(ev);
 
     if (m_player)
         QMetaObject::invokeMethod(m_player, "play", Q_ARG(QUrl, QUrl(foe->url())));
@@ -313,6 +324,10 @@ namespace
     struct ResourceLoader
     {
     public:
-        ResourceLoader() { initResources(); }
+
+        ResourceLoader()
+        {
+            initResources();
+        }
     } qrc;
 }
