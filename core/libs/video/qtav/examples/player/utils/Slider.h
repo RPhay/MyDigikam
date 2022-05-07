@@ -22,10 +22,12 @@
  *
  * ============================================================ */
 
-//TODO: hover support(like youtube and ExMplayer timeline preview)
+// TODO: hover support(like youtube and ExMplayer timeline preview)
 
 #ifndef QTAV_PLAYER_SLIDER_H
 #define QTAV_PLAYER_SLIDER_H
+
+// Qt includes
 
 #include <QSlider>
 
@@ -38,7 +40,7 @@ class Slider : public QSlider
 
 public:
 
-    Slider(QWidget *parent = 0);
+    Slider(QWidget* const parent = nullptr);
     ~Slider();
 
 Q_SIGNALS:
@@ -50,15 +52,18 @@ Q_SIGNALS:
 protected:
 
     virtual void enterEvent(QEvent* event);
-    virtual void leaveEvent(QEvent *e);
+    virtual void leaveEvent(QEvent* e);
     virtual void mouseMoveEvent(QMouseEvent* event);
-    virtual void mousePressEvent(QMouseEvent *event);
-
-//#if CODE_FOR_CLICK == 1
-    inline int pick(const QPoint &pt) const;
-    int pixelPosToRangeValue(int pos) const;
-    void initStyleOption_Qt430(QStyleOptionSlider *option) const;
-//#endif
+    virtual void mousePressEvent(QMouseEvent* event);
+/*
+#if CODE_FOR_CLICK == 1
+*/
+    inline int pick(const QPoint& pt)                       const;
+    int pixelPosToRangeValue(int pos)                       const;
+    void initStyleOption_Qt430(QStyleOptionSlider* option)  const;
+/*
+#endif
+*/
 };
 
 } // namespace QtAVPlayer

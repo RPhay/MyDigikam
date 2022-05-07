@@ -55,9 +55,9 @@ namespace QtAVPlayer
 
 // TODO: watch main window
 
-EventFilter::EventFilter(AVPlayer* player)
+EventFilter::EventFilter(AVPlayer* const player)
     : QObject(player),
-      menu(0)
+      menu(nullptr)
 {
 }
 
@@ -66,7 +66,7 @@ EventFilter::~EventFilter()
     if (menu)
     {
         delete menu;
-        menu = 0;
+        menu = nullptr;
     }
 }
 
@@ -131,6 +131,7 @@ void EventFilter::help()
 bool EventFilter::eventFilter(QObject *watched, QEvent *event)
 {
     Q_UNUSED(watched);
+
     AVPlayer* const player = static_cast<AVPlayer*>(parent());
 
     if (!player || !player->renderer() || !player->renderer()->widget())
@@ -156,76 +157,106 @@ bool EventFilter::eventFilter(QObject *watched, QEvent *event)
     {
         case QEvent::KeyPress:
         {
-            QKeyEvent* key_event            = static_cast<QKeyEvent*>(event);
+            QKeyEvent* const key_event      = static_cast<QKeyEvent*>(event);
             int key                         = key_event->key();
             Qt::KeyboardModifiers modifiers = key_event->modifiers();
 
             switch (key)
             {
                 case Qt::Key_0:
+                {
                     player->seek(0LL);
-                    break;
 
-                case Qt::Key_C: // capture
-                    player->videoCapture()->capture();
                     break;
+                }
+
+                case Qt::Key_C:     // capture
+                {
+                    player->videoCapture()->capture();
+
+                    break;
+                }
 
                 case Qt::Key_N:     // check playing?
+                {
                     player->stepForward();
+
                     break;
+                }
 
                 case Qt::Key_B:
+                {
                     player->stepBackward();
+
                     break;
+                }
 
                 case Qt::Key_P:
+                {
                     player->stop();
                     player->play();
+
                     break;
+                }
 
                 case Qt::Key_Q:
                 case Qt::Key_Escape:
+                {
                     qApp->quit();
+
                     break;
+                }
 
                 case Qt::Key_S:
+                {
                     player->stop(); // check playing?
+
                     break;
+                }
 
                 case Qt::Key_Space:
-
+                {
                     // check playing?
 
                     qCDebug(DIGIKAM_QTAVPLAYER_LOG).noquote()
                         << QString::asprintf("isPaused = %d", player->isPaused());
 
                     player->pause(!player->isPaused());
+
                     break;
+                }
 
                 case Qt::Key_F:
                 {
                     // TODO: move to gui
 
-                    QWidget *w = qApp->activeWindow();
+                    QWidget* const w = qApp->activeWindow();
 
                     if (!w)
                         return false;
 
                     w->setWindowState(w->windowState() ^ Qt::WindowFullScreen);
+
                     break;
                 }
 
                 case Qt::Key_U:
+                {
                     player->setNotifyInterval(player->notifyInterval() + 100);
+
                     break;
+                }
 
                 case Qt::Key_D:
+                {
                     player->setNotifyInterval(player->notifyInterval() - 100);
+
                     break;
+                }
 
                 case Qt::Key_Up:
                 {
-                    AudioOutput *ao = player->audio();
+                    AudioOutput* const ao = player->audio();
 
                     if (modifiers == Qt::ControlModifier)
                     {
@@ -248,7 +279,7 @@ bool EventFilter::eventFilter(QObject *watched, QEvent *event)
                     {
                         qreal v = player->audio()->volume();
 
-                        if (v > 0.5)
+                        if      (v > 0.5)
                             v += 0.1;
                         else if (v > 0.1)
                             v += 0.05;
@@ -256,7 +287,9 @@ bool EventFilter::eventFilter(QObject *watched, QEvent *event)
                             v += 0.025;
 
                         player->audio()->setVolume(v);
-                        qCDebug(DIGIKAM_QTAVPLAYER_LOG).noquote() << QString::asprintf("vol = %.3f", player->audio()->volume());
+
+                        qCDebug(DIGIKAM_QTAVPLAYER_LOG).noquote()
+                            << QString::asprintf("vol = %.3f", player->audio()->volume());
                     }
 
                     break;
@@ -264,7 +297,7 @@ bool EventFilter::eventFilter(QObject *watched, QEvent *event)
 
                 case Qt::Key_Down:
                 {
-                    AudioOutput *ao = player->audio();
+                    AudioOutput* const ao = player->audio();
 
                     if (modifiers == Qt::ControlModifier)
                     {
@@ -296,6 +329,7 @@ bool EventFilter::eventFilter(QObject *watched, QEvent *event)
                             v -= 0.025;
 
                         player->audio()->setVolume(v);
+
                         qCDebug(DIGIKAM_QTAVPLAYER_LOG).noquote()
                             << QString::asprintf("vol = %.3f", player->audio()->volume());
                     }
@@ -311,7 +345,7 @@ bool EventFilter::eventFilter(QObject *watched, QEvent *event)
 
                         openLocalFile();
                     }
-                    else/* if (m == Qt::NoModifier) */
+                    else /* if (m == Qt::NoModifier) */
                     {
                         emit showNextOSD();
                     }
@@ -320,38 +354,49 @@ bool EventFilter::eventFilter(QObject *watched, QEvent *event)
                 }
 
                 case Qt::Key_Left:
+                {
                     qCDebug(DIGIKAM_QTAVPLAYER_LOG).noquote() << QString::asprintf("<-");
+
                     player->setSeekType(key_event->isAutoRepeat() ? KeyFrameSeek : AccurateSeek);
                     player->seekBackward();
+
                     break;
+                }
 
                 case Qt::Key_Right:
+                {
                     qCDebug(DIGIKAM_QTAVPLAYER_LOG).noquote() << QString::asprintf("->");
+
                     player->setSeekType(key_event->isAutoRepeat() ? KeyFrameSeek : AccurateSeek);
                     player->seekForward();
+
                     break;
+                }
 
                 case Qt::Key_M:
-
+                {
                     if (player->audio())
                     {
                         player->audio()->setMute(!player->audio()->isMute());
                     }
 
                     break;
+                }
 
                 case Qt::Key_A:
                 {
-                    VideoRenderer* renderer = player->renderer();
+                    VideoRenderer* const renderer       = player->renderer();
                     VideoRenderer::OutAspectRatioMode r = renderer->outAspectRatioMode();
                     renderer->setOutAspectRatioMode(VideoRenderer::OutAspectRatioMode(((int)r+1)%2));
+
                     break;
                 }
 
                 case Qt::Key_R:
                 {
-                    VideoRenderer* renderer = player->renderer();
+                    VideoRenderer* const renderer = player->renderer();
                     renderer->setOrientation(renderer->orientation() + 90);
+
                     qCDebug(DIGIKAM_QTAVPLAYER_LOG).noquote()
                         << QString::asprintf("orientation: %d", renderer->orientation());
 
@@ -360,33 +405,40 @@ bool EventFilter::eventFilter(QObject *watched, QEvent *event)
 
                 case Qt::Key_T:
                 {
-                    QWidget *w = qApp->activeWindow();
+                    QWidget* const w = qApp->activeWindow();
 
                     if (!w)
                         return false;
 
                     w->setWindowFlags(w->window()->windowFlags() ^ Qt::WindowStaysOnTopHint);
+
                     // call setParent() when changing the flags, causing the widget to be hidden
+
                     w->show();
 
                     break;
                 }
 
                 case Qt::Key_F1:
+                {
                     help();
+
                     break;
+                }
 
                 default:
+                {
                     return false;
-
-                break;
+                }
             }
+
+            break;
         }
 
         case QEvent::DragEnter:
         case QEvent::DragMove:
         {
-            QDropEvent *e = static_cast<QDropEvent*>(event);
+            QDropEvent* const e = static_cast<QDropEvent*>(event);
 
             if (e->mimeData()->hasUrls())
                 e->acceptProposedAction();
@@ -398,7 +450,8 @@ bool EventFilter::eventFilter(QObject *watched, QEvent *event)
 
         case QEvent::Drop:
         {
-            QDropEvent *e = static_cast<QDropEvent*>(event);
+            QDropEvent* const e = static_cast<QDropEvent*>(event);
+
             if (e->mimeData()->hasUrls())
             {
                 QString path = e->mimeData()->urls().first().toLocalFile();
@@ -416,9 +469,9 @@ bool EventFilter::eventFilter(QObject *watched, QEvent *event)
 
         case QEvent::MouseButtonDblClick:
         {
-            QMouseEvent *me     = static_cast<QMouseEvent*>(event);
-            Qt::MouseButton mbt = me->button();
-            QWidget *mpWindow   =  static_cast<QWidget*>(player->parent());
+            QMouseEvent* const me   = static_cast<QMouseEvent*>(event);
+            Qt::MouseButton mbt     = me->button();
+            QWidget* const mpWindow = static_cast<QWidget*>(player->parent());
 
             if (mbt == Qt::LeftButton)
             {
@@ -431,32 +484,36 @@ bool EventFilter::eventFilter(QObject *watched, QEvent *event)
                     mpWindow->showFullScreen();
                 }
             }
-            
+
             break;
         }
 
         case QEvent::GraphicsSceneContextMenu:
         {
-            QGraphicsSceneContextMenuEvent *e = static_cast<QGraphicsSceneContextMenuEvent*>(event);
+            QGraphicsSceneContextMenuEvent* const e = static_cast<QGraphicsSceneContextMenuEvent*>(event);
             showMenu(e->screenPos());
+
             break;
         }
 
         case QEvent::ContextMenu:
         {
-            QContextMenuEvent *e = static_cast<QContextMenuEvent*>(event);
+            QContextMenuEvent* const e = static_cast<QContextMenuEvent*>(event);
             showMenu(e->globalPos());
+
             break;
         }
 
         default:
+        {
             return false;
+        }
     }
 
     return true; // false: for text input
 }
 
-void EventFilter::showMenu(const QPoint &p)
+void EventFilter::showMenu(const QPoint& p)
 {
     if (!menu)
     {
@@ -472,23 +529,24 @@ void EventFilter::showMenu(const QPoint &p)
     menu->exec(p);
 }
 
-WindowEventFilter::WindowEventFilter(QWidget *window)
+WindowEventFilter::WindowEventFilter(QWidget* window)
     : QObject(window),
       mpWindow(window)
 {
 }
 
-bool WindowEventFilter::eventFilter(QObject *watched, QEvent *event)
+bool WindowEventFilter::eventFilter(QObject* watched, QEvent* event)
 {
     if (watched != mpWindow)
         return false;
-    
+
     if (event->type() == QEvent::WindowStateChange)
     {
-        QWindowStateChangeEvent *e = static_cast<QWindowStateChangeEvent*>(event);
+        QWindowStateChangeEvent* const e = static_cast<QWindowStateChangeEvent*>(event);
         mpWindow->updateGeometry();
 
-        if (mpWindow->windowState().testFlag(Qt::WindowFullScreen) || e->oldState().testFlag(Qt::WindowFullScreen)) {
+        if (mpWindow->windowState().testFlag(Qt::WindowFullScreen) || e->oldState().testFlag(Qt::WindowFullScreen))
+        {
             emit fullscreenChanged();
         }
 
@@ -497,8 +555,8 @@ bool WindowEventFilter::eventFilter(QObject *watched, QEvent *event)
 
     if (event->type() ==  QEvent::MouseButtonPress)
     {
-        QMouseEvent *me     = static_cast<QMouseEvent*>(event);
-        Qt::MouseButton mbt = me->button();
+        QMouseEvent* const me = static_cast<QMouseEvent*>(event);
+        Qt::MouseButton mbt   = me->button();
 
         if (mbt == Qt::LeftButton)
         {
@@ -508,11 +566,11 @@ bool WindowEventFilter::eventFilter(QObject *watched, QEvent *event)
 
         return false;
     }
-    
+
     if (event->type() == QEvent::MouseButtonRelease)
     {
-        QMouseEvent *me = static_cast<QMouseEvent*>(event);
-        Qt::MouseButton mbt = me->button();
+        QMouseEvent* const me = static_cast<QMouseEvent*>(event);
+        Qt::MouseButton mbt   = me->button();
 
         if (mbt != Qt::LeftButton)
             return false;
@@ -528,12 +586,12 @@ bool WindowEventFilter::eventFilter(QObject *watched, QEvent *event)
         if (iMousePos.isNull() || gMousePos.isNull())
             return false;
 
-        QMouseEvent *me = static_cast<QMouseEvent*>(event);
-        int x = mpWindow->pos().x();
-        int y = mpWindow->pos().y();
-        int dx = me->globalPos().x() - gMousePos.x();
-        int dy = me->globalPos().y() - gMousePos.y();
-        gMousePos = me->globalPos();
+        QMouseEvent* const me = static_cast<QMouseEvent*>(event);
+        int x                 = mpWindow->pos().x();
+        int y                 = mpWindow->pos().y();
+        int dx                = me->globalPos().x() - gMousePos.x();
+        int dy                = me->globalPos().y() - gMousePos.y();
+        gMousePos             = me->globalPos();
         mpWindow->move(x + dx, y + dy);
 
         return false;

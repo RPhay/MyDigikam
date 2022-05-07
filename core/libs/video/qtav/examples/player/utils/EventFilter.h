@@ -27,6 +27,7 @@
 /*
  * This class is used interally as QtAV's default event filter. It is suite for single player object
  */
+
 #include <QObject>
 #include <QPoint>
 
@@ -48,15 +49,19 @@ namespace QtAVPlayer
 class EventFilter : public QObject
 {
     Q_OBJECT
+
 public:
-    explicit EventFilter(QtAV::AVPlayer *player);
+
+    explicit EventFilter(QtAV::AVPlayer* const player);
     virtual ~EventFilter();
 
 Q_SIGNALS:
+
     void helpRequested();
     void showNextOSD();
 
 public Q_SLOTS:
+
     void openLocalFile();
     void openUrl();
     void about();
@@ -64,29 +69,35 @@ public Q_SLOTS:
     void help();
 
 protected:
-    virtual bool eventFilter(QObject *, QEvent *);
+
+    virtual bool eventFilter(QObject*, QEvent*);
     void showMenu(const QPoint& p);
 
 private:
-    QMenu *menu;
-};
 
+    QMenu* menu;
+};
 
 class WindowEventFilter : public QObject
 {
     Q_OBJECT
+
 public:
-    WindowEventFilter(QWidget *window);
+
+    WindowEventFilter(QWidget* const window);
 
 Q_SIGNALS:
+
     void fullscreenChanged();
 
 protected:
-    virtual bool eventFilter(QObject *watched, QEvent *event);
+
+    virtual bool eventFilter(QObject* const watched, QEvent* const event);
 
 private:
-    QWidget *mpWindow;
-    QPoint gMousePos, iMousePos;
+
+    QWidget* mpWindow;
+    QPoint   gMousePos, iMousePos;
 };
 
 } // namespace QtAVPlayer
