@@ -24,6 +24,8 @@
 #ifndef QTAV_PLAYER_PLAYLISTDELEGATE_H
 #define QTAV_PLAYER_PLAYLISTDELEGATE_H
 
+// Qt includes
+
 #include <QStyledItemDelegate>
 
 namespace QtAVPlayer
@@ -32,14 +34,17 @@ namespace QtAVPlayer
 class PlayListDelegate : public QStyledItemDelegate
 {
     Q_OBJECT
+
 public:
-    explicit PlayListDelegate(QObject *parent = 0);
+
+    explicit PlayListDelegate(QObject* parent = nullptr);
 
     virtual void paint(QPainter* painter, const QStyleOptionViewItem& option, const QModelIndex & index) const;
     virtual QSize sizeHint(const QStyleOptionViewItem& option, const QModelIndex& index) const;
 
 private:
-    mutable int mHighlightRow;
+
+    mutable int        mHighlightRow;
     mutable QList<int> mSelectedRows;
 };
 

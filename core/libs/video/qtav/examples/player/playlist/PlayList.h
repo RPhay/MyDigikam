@@ -24,8 +24,12 @@
 #ifndef QTAV_PLAYER_PLAYLIST_H
 #define QTAV_PLAYER_PLAYLIST_H
 
+// Qt includes
+
 #include <QWidget>
 #include <QModelIndex>
+
+// Local includes
 
 #include "PlayListItem.h"
 
@@ -38,13 +42,15 @@ namespace QtAVPlayer
 {
 
 class PlayListDelegate;
-
 class PlayListModel;
+
 class PlayList : public QWidget
 {
     Q_OBJECT
+
 public:
-    explicit PlayList(QWidget *parent = 0);
+
+    explicit PlayList(QWidget* parent = nullptr);
     ~PlayList();
 
     void setSaveFile(const QString& file);
@@ -61,24 +67,28 @@ public:
     int maxRows() const;
 
 Q_SIGNALS:
+
     void aboutToPlay(const QString& url);
 
 private Q_SLOTS:
+
     void removeSelectedItems();
     void clearItems();
-    //
+
     void addItems();
 
     void onAboutToPlay(const QModelIndex& index);
     //void highlight(const QModelIndex& index);
+
 private:
-    QListView *mpListView;
-    QToolButton *mpClear, *mpRemove, *mpAdd;
-    PlayListDelegate *mpDelegate;
-    PlayListModel *mpModel;
-    int mMaxRows;
-    QString mFile;
-    bool mFirstShow;
+
+    QListView*          mpListView;
+    QToolButton*        mpClear, *mpRemove, *mpAdd;
+    PlayListDelegate*   mpDelegate;
+    PlayListModel*      mpModel;
+    int                 mMaxRows;
+    QString             mFile;
+    bool                mFirstShow;
 };
 
 } // namespace QtAVPlayer

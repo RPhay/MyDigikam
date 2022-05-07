@@ -22,14 +22,20 @@
  * ============================================================ */
 
 #include "PlayListModel.h"
-#include "PlayListItem.h"
+
+// Qt includes
+
 #include <QVector>
+
+// Local includes
+
+#include "PlayListItem.h"
 
 namespace QtAVPlayer
 {
 
-PlayListModel::PlayListModel(QObject *parent) :
-    QAbstractListModel(parent)
+PlayListModel::PlayListModel(QObject* parent)
+    : QAbstractListModel(parent)
 {
 }
 
@@ -38,14 +44,15 @@ QList<PlayListItem> PlayListModel::items() const
     return mItems;
 }
 
-Qt::ItemFlags PlayListModel::flags(const QModelIndex &index) const
+Qt::ItemFlags PlayListModel::flags(const QModelIndex& index) const
 {
     if (!index.isValid())
-        return QAbstractListModel::flags(index) | Qt::ItemIsDropEnabled;;
-    return  QAbstractListModel::flags(index) | Qt::ItemIsSelectable;
+        return (QAbstractListModel::flags(index) | Qt::ItemIsDropEnabled);
+
+    return (QAbstractListModel::flags(index) | Qt::ItemIsSelectable);
 }
 
-int PlayListModel::rowCount(const QModelIndex &parent) const
+int PlayListModel::rowCount(const QModelIndex& parent) const
 {
     if (parent.isValid())
         return 0;
@@ -53,55 +60,63 @@ int PlayListModel::rowCount(const QModelIndex &parent) const
     return mItems.size();
 }
 
-QVariant PlayListModel::data(const QModelIndex &index, int role) const
+QVariant PlayListModel::data(const QModelIndex& index, int role) const
 {
     QVariant v;
-    if (index.row() < 0 || index.row() >= mItems.size())
+
+    if ((index.row() < 0) || (index.row() >= mItems.size()))
         return v;
 
-    if (role == Qt::DisplayRole || role == Qt::EditRole)
+    if ((role == Qt::DisplayRole) || (role == Qt::EditRole))
         v.setValue(mItems.at(index.row()));
 
     return v;
 }
 
-bool PlayListModel::setData(const QModelIndex &index, const QVariant &value, int role)
+bool PlayListModel::setData(const QModelIndex& index, const QVariant& value, int role)
 {
-    if (index.row() >= 0 && index.row() < mItems.size()
-            && (role == Qt::EditRole || role == Qt::DisplayRole)) {
+    if (   (index.row() >= 0) && (index.row() < mItems.size())
+        && ((role == Qt::EditRole) || (role == Qt::DisplayRole)))
+    {
         // TODO: compare value?
+
         mItems.replace(index.row(), value.value<PlayListItem>());
-#if QT_VERSION >= QT_VERSION_CHECK(5, 0, 0)
+
         emit dataChanged(index, index, QVector<int>() << role);
-#else
-        emit dataChanged(index, index);
-#endif
+
         return true;
     }
+
     return false;
 }
 
-
-bool PlayListModel::insertRows(int row, int count, const QModelIndex &parent)
+bool PlayListModel::insertRows(int row, int count, const QModelIndex& parent)
 {
-    if (count < 1 || row < 0 || row > rowCount(parent))
+    if ((count < 1) || (row < 0) || (row > rowCount(parent)))
         return false;
+
     beginInsertRows(QModelIndex(), row, row + count - 1);
-    for (int r = 0; r < count; ++r)
+
+    for (int r = 0 ; r < count ; ++r)
         mItems.insert(row, PlayListItem());
+
     endInsertRows();
+
     return true;
 }
 
-
-bool PlayListModel::removeRows(int row, int count, const QModelIndex &parent)
+bool PlayListModel::removeRows(int row, int count, const QModelIndex& parent)
 {
-    if (count <= 0 || row < 0 || (row + count) > rowCount(parent))
+    if ((count <= 0) || (row < 0) || ((row + count) > rowCount(parent)))
         return false;
+
     beginRemoveRows(QModelIndex(), row, row + count - 1);
-    for (int r = 0; r < count; ++r)
+
+    for (int r = 0 ; r < count ; ++r)
         mItems.removeAt(row);
+
     endRemoveRows();
+
     return true;
 }
 

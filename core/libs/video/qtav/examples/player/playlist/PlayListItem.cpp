@@ -22,6 +22,9 @@
  * ============================================================ */
 
 #include "PlayListItem.h"
+
+// Qt includes
+
 #include <QTime>
 #include <QDataStream>
 
@@ -39,19 +42,21 @@ QDataStream& operator>> (QDataStream& s, PlayListItem& p)
     p.setStars(stars);
     p.setDuration(duration);
     p.setLastTime(last_time);
+
     return s;
 }
 
 QDataStream& operator<< (QDataStream& s, const PlayListItem& p)
 {
     s << p.url() << p.title() << p.duration() << p.lastTime() << p.stars();
+
     return s;
 }
 
 PlayListItem::PlayListItem()
-    : mStars(0)
-    , mLastTime(0)
-    , mDuration(0)
+    : mStars(0),
+      mLastTime(0),
+      mDuration(0)
 {
 }
 
@@ -87,7 +92,7 @@ int PlayListItem::stars() const
 
 void PlayListItem::setLastTime(qint64 ms)
 {
-    mLastTime = ms;
+    mLastTime  = ms;
     mLastTimeS = QTime(0, 0, 0, 0).addMSecs(ms).toString(QString::fromLatin1("HH:mm:ss"));
 }
 
@@ -103,7 +108,7 @@ QString PlayListItem::lastTimeString() const
 
 void PlayListItem::setDuration(qint64 ms)
 {
-    mDuration = ms;
+    mDuration  = ms;
     mDurationS = QTime(0, 0, 0, 0).addMSecs(ms).toString(QString::fromLatin1("HH:mm:ss"));
 }
 
@@ -119,7 +124,7 @@ QString PlayListItem::durationString() const
 
 bool PlayListItem::operator ==(const PlayListItem& other) const
 {
-    return url() == other.url();
+    return (url() == other.url());
 }
 
 } // namespace QtAVPlayer
