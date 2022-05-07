@@ -23,7 +23,11 @@
 
 #include "OSDFilter.h"
 
+// Qt includes
+
 #include <QPainter>
+
+// Local includes
 
 #include "QtAV_Statistics.h"
 #include "digikam_debug.h"
@@ -31,18 +35,25 @@
 namespace QtAVPlayer
 {
 
-OSDFilter::OSDFilter(QObject *parent)
-    : VideoFilter(parent)
-    , OSD()
+OSDFilter::OSDFilter(QObject* parent)
+    : VideoFilter(parent),
+      OSD()
 {
 }
 
-void OSDFilter::process(Statistics *statistics, VideoFrame *frame)
+void OSDFilter::process(Statistics* statistics, VideoFrame* frame)
 {
     Q_UNUSED(frame);
+
     if (mShowType == ShowNone)
         return;
-    //qCDebug(DIGIKAM_QTAVPLAYER_LOG).noquote() << QString::asprintf("ctx=%p tid=%p main tid=%p", ctx, QThread::currentThread(), qApp->thread());
+
+/*
+    /qCDebug(DIGIKAM_QTAVPLAYER_LOG).noquote()
+        << QString::asprintf("ctx=%p tid=%p main tid=%p",
+            ctx, QThread::currentThread(), qApp->thread());
+*/
+
     context()->drawPlainText(context()->rect, Qt::AlignCenter, text(statistics));
 }
 

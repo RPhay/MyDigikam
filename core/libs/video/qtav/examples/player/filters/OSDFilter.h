@@ -24,6 +24,8 @@
 #ifndef QTAV_PLAYER_OSDFILTER_H
 #define QTAV_PLAYER_OSDFILTER_H
 
+// Local includes
+
 #include "Filter.h"
 #include "FilterContext.h"
 #include "OSD.h"
@@ -33,14 +35,20 @@ using namespace QtAV;
 namespace QtAVPlayer
 {
 
-class OSDFilter : public VideoFilter, public OSD
+class OSDFilter : public VideoFilter,
+                  public OSD
 {
 public:
-    OSDFilter(QObject *parent = 0);
-    bool isSupported(VideoFilterContext::Type ct) const {
-        return ct == VideoFilterContext::QtPainter || ct == VideoFilterContext::X11;
+
+    OSDFilter(QObject* parent = nullptr);
+
+    bool isSupported(VideoFilterContext::Type ct) const
+    {
+        return ct == (VideoFilterContext::QtPainter || ct == VideoFilterContext::X11);
     }
+
 protected:
+
     void process(Statistics* statistics, VideoFrame* frame);
 };
 

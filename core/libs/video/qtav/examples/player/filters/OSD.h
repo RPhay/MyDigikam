@@ -24,8 +24,12 @@
 #ifndef QTAV_PLAYER_OSD_H
 #define QTAV_PLAYER_OSD_H
 
+// Qt includes
+
 #include <QPoint>
 #include <QFont>
+
+// Local includes
 
 #include "QtAV_Global.h"
 #include "QtAV_Statistics.h"
@@ -39,24 +43,31 @@ namespace QtAVPlayer
 class OSD
 {
 public:
-    enum ShowType {
-        ShowCurrentTime = 1,
-        ShowCurrentAndTotalTime = 1<<1,
-        ShowRemainTime = 1<<2,
-        ShowPercent = 1<<3,
+
+    enum ShowType
+    {
+        ShowCurrentTime         = 1,
+        ShowCurrentAndTotalTime = 1 << 1,
+        ShowRemainTime          = 1 << 2,
+        ShowPercent             = 1 << 3,
         ShowNone
     };
 
+public:
+
     OSD();
     virtual ~OSD();
+
     void setShowType(ShowType type);
     ShowType showType() const;
     void useNextShowType();
     bool hasShowType(ShowType t) const;
     QString text(Statistics* statistics);
+
 protected:
+
     ShowType mShowType;
-    int mSecsTotal;
+    int      mSecsTotal;
 };
 
 } // namespace QtAVPlayer

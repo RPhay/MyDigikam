@@ -24,8 +24,13 @@
 #ifndef QTAV_PLAYER_AVFilterSubtitle_H
 #define QTAV_PLAYER_AVFilterSubtitle_H
 
+// Qt includes
+
 #include <QObject>
 #include <QHash>
+
+// Local includes
+
 #include "LibAVFilter.h"
 #include "AVPlayer.h"
 
@@ -39,8 +44,11 @@ class AVFilterSubtitle : public LibAVFilterVideo
     Q_OBJECT
     Q_PROPERTY(bool autoLoad READ autoLoad WRITE setAutoLoad NOTIFY autoLoadChanged)
     Q_PROPERTY(QString file READ file WRITE setFile NOTIFY fileChanged)
+
 public:
-    explicit AVFilterSubtitle(QObject *parent = 0);
+
+    explicit AVFilterSubtitle(QObject* parent = nullptr);
+
     void setPlayer(AVPlayer* player);
     QString setContent(const QString& doc); // return utf8 subtitle path
     bool setFile(const QString& filePath);
@@ -48,22 +56,32 @@ public:
     bool autoLoad() const;
 
 Q_SIGNALS:
+
     void loaded();
     void loadError();
     void fileChanged(const QString& path);
     void autoLoadChanged(bool value);
+
 public Q_SLOTS:
+
     // TODO: enable changed & autoload=> load
+
     void setAutoLoad(bool value);
     void findAndSetFile(const QString& path);
     void onPlayerStart();
+
 private Q_SLOTS:
+
     void onStatusChanged();
+
 private:
-    bool m_auto;
-    AVPlayer *m_player;
-    QString m_file;
+
+    bool                   m_auto;
+    AVPlayer*              m_player;
+    QString                m_file;
+
     // convert to utf8 to ensure ffmpeg can open it.
+
     QHash<QString,QString> m_u8_files;
 };
 
