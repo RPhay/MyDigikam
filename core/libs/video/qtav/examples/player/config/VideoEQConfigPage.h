@@ -24,6 +24,8 @@
 #ifndef QTAV_PLAYER_VIDEOEQCONFIGPAGE_H
 #define QTAV_PLAYER_VIDEOEQCONFIGPAGE_H
 
+// Qt includes
+
 #include <QWidget>
 
 QT_BEGIN_NAMESPACE
@@ -39,23 +41,29 @@ namespace QtAVPlayer
 class VideoEQConfigPage : public QWidget
 {
     Q_OBJECT
+
 public:
-    enum Engine {
+
+    enum Engine
+    {
         SWScale,
         GLSL,
         XV,
     };
-    explicit VideoEQConfigPage(QWidget *parent = 0);
+
+    explicit VideoEQConfigPage(QWidget* parent = nullptr);
+
     void setEngines(const QVector<Engine>& engines);
     void setEngine(Engine engine);
-    Engine engine() const;
+    Engine engine()     const;
 
-    qreal brightness() const;
-    qreal contrast() const;
-    qreal hue() const;
-    qreal saturation() const;
+    qreal brightness()  const;
+    qreal contrast()    const;
+    qreal hue()         const;
+    qreal saturation()  const;
 
 Q_SIGNALS:
+
     void engineChanged();
     void brightnessChanged(int);
     void contrastChanged(int);
@@ -63,17 +71,19 @@ Q_SIGNALS:
     void saturationChanged(int);
 
 private Q_SLOTS:
+
     void onGlobalSet(bool);
     void onReset();
     void onEngineChangedByUI();
 
 private:
-    QCheckBox *mpGlobal;
-    QComboBox *mpEngine;
-    QSlider *mpBSlider, *mpCSlider, *mpSSlider;
-    QSlider *mpHSlider;
-    QPushButton *mpResetButton;
-    Engine mEngine;
+
+    QCheckBox*      mpGlobal;
+    QComboBox*      mpEngine;
+    QSlider*        mpBSlider, *mpCSlider, *mpSSlider;
+    QSlider*        mpHSlider;
+    QPushButton*    mpResetButton;
+    Engine          mEngine;
     QVector<Engine> mEngines;
 };
 

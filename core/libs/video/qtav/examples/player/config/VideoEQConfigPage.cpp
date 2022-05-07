@@ -23,7 +23,11 @@
 
 #include "VideoEQConfigPage.h"
 
+// C++ includes
+
 #include <algorithm>
+
+// Qt includes
 
 #include <QComboBox>
 #include <QCheckBox>
@@ -32,44 +36,51 @@
 #include <QLayout>
 #include <QVector>
 
+// Local includes
+
 #include "Slider.h"
 
 namespace QtAVPlayer
 {
 
-VideoEQConfigPage::VideoEQConfigPage(QWidget *parent) :
-    QWidget(parent)
+VideoEQConfigPage::VideoEQConfigPage(QWidget* parent)
+    : QWidget(parent)
 {
-    mEngine = SWScale;
-    QGridLayout *gl = new QGridLayout();
+    mEngine         = SWScale;
+    QGridLayout* gl = new QGridLayout();
     setLayout(gl);
 
-    QLabel *label = new QLabel();
+    QLabel* label   = new QLabel();
     label->setText(tr("Engine"));
-    mpEngine = new QComboBox();
+    mpEngine        = new QComboBox();
     setEngines(QVector<Engine>(1, SWScale));
-    connect(mpEngine, SIGNAL(currentIndexChanged(int)), SLOT(onEngineChangedByUI()));
+
+    connect(mpEngine, SIGNAL(currentIndexChanged(int)),
+            this, SLOT(onEngineChangedByUI()));
 
     int r = 0, c = 0;
     gl->addWidget(label, r, c);
     gl->addWidget(mpEngine, r, c+1);
     r++;
 
-
-    struct {
-        QSlider **slider;
-        QString text;
-    } sliders[] = {
-        { &mpBSlider, tr("Brightness") },
-        { &mpCSlider, tr("Constrast") },
-        { &mpHSlider, tr("Hue") },
-        { &mpSSlider, tr("Saturation") },
-        { 0, QString() }
+    struct
+    {
+        QSlider** slider;
+        QString   text;
+    } sliders[] =
+    {
+        { &mpBSlider, tr("Brightness")  },
+        { &mpCSlider, tr("Constrast")   },
+        { &mpHSlider, tr("Hue")         },
+        { &mpSSlider, tr("Saturation")  },
+        { 0,          QString()         }
     };
-    for (int i = 0; sliders[i].slider; ++i) {
-        QLabel *label = new QLabel(sliders[i].text);
-        *sliders[i].slider = new Slider();
-        QSlider *slider = *sliders[i].slider;
+
+    for (int i = 0 ; sliders[i].slider ; ++i)
+    {
+        QLabel* label       = new QLabel(sliders[i].text);
+        *sliders[i].slider  = new Slider();
+        QSlider* slider     = *sliders[i].slider;
         slider->setOrientation(Qt::Horizontal);
         slider->setTickInterval(2);
         slider->setRange(-100, 100);
@@ -79,6 +90,7 @@ VideoEQConfigPage::VideoEQConfigPage(QWidget *parent) :
         gl->addWidget(slider, r, c+1);
         r++;
     }
+
     mpGlobal = new QCheckBox(tr("Global"));
     mpGlobal->setEnabled(false);
     mpGlobal->setChecked(false);
@@ -88,12 +100,23 @@ VideoEQConfigPage::VideoEQConfigPage(QWidget *parent) :
     gl->addWidget(mpResetButton, r, c+1, Qt::AlignRight);
     r++;
 
-    connect(mpBSlider, SIGNAL(valueChanged(int)), SIGNAL(brightnessChanged(int)));
-    connect(mpCSlider, SIGNAL(valueChanged(int)), SIGNAL(contrastChanged(int)));
-    connect(mpHSlider, SIGNAL(valueChanged(int)), SIGNAL(hueChanegd(int)));
-    connect(mpSSlider, SIGNAL(valueChanged(int)), SIGNAL(saturationChanged(int)));
-    connect(mpGlobal, SIGNAL(toggled(bool)), SLOT(onGlobalSet(bool)));
-    connect(mpResetButton, SIGNAL(clicked()), SLOT(onReset()));
+    connect(mpBSlider, SIGNAL(valueChanged(int)),
+            this, SIGNAL(brightnessChanged(int)));
+
+    connect(mpCSlider, SIGNAL(valueChanged(int)),
+            this, SIGNAL(contrastChanged(int)));
+
+    connect(mpHSlider, SIGNAL(valueChanged(int)),
+            this, SIGNAL(hueChanegd(int)));
+
+    connect(mpSSlider, SIGNAL(valueChanged(int)),
+            this, SIGNAL(saturationChanged(int)));
+
+    connect(mpGlobal, SIGNAL(toggled(bool)),
+            this, SLOT(onGlobalSet(bool)));
+
+    connect(mpResetButton, SIGNAL(clicked()),
+            this, SLOT(onReset()));
 }
 
 void VideoEQConfigPage::onGlobalSet(bool g)
@@ -107,12 +130,19 @@ void VideoEQConfigPage::setEngines(const QVector<Engine> &engines)
     QVector<Engine> es(engines);
     std::sort(es.begin(), es.end());
     mEngines = es;
-    foreach (Engine e, es) {
-        if (e == SWScale) {
+
+    foreach (Engine e, es)
+    {
+        if      (e == SWScale)
+        {
             mpEngine->addItem(QString::fromLatin1("libswscale"));
-        } else if (e == GLSL) {
+        }
+        else if (e == GLSL)
+        {
             mpEngine->addItem(QString::fromLatin1("GLSL"));
-        } else if (e == XV) {
+        }
+        else if (e == XV)
+        {
             mpEngine->addItem(QString::fromLatin1("XV"));
         }
     }
@@ -122,10 +152,14 @@ void VideoEQConfigPage::setEngine(Engine engine)
 {
     if (engine == mEngine)
         return;
+
     mEngine = engine;
-    if (!mEngines.isEmpty()) {
+
+    if (!mEngines.isEmpty())
+    {
         mpEngine->setCurrentIndex(mEngines.indexOf(engine));
     }
+
     emit engineChanged();
 }
 
@@ -136,22 +170,22 @@ VideoEQConfigPage::Engine VideoEQConfigPage::engine() const
 
 qreal VideoEQConfigPage::brightness() const
 {
-    return (qreal)mpBSlider->value()/100.0;
+    return (qreal)mpBSlider->value() / 100.0;
 }
 
 qreal VideoEQConfigPage::contrast() const
 {
-    return (qreal)mpCSlider->value()/100.0;
+    return (qreal)mpCSlider->value() / 100.0;
 }
 
 qreal VideoEQConfigPage::hue() const
 {
-    return (qreal)mpHSlider->value()/100.0;
+    return (qreal)mpHSlider->value() / 100.0;
 }
 
 qreal VideoEQConfigPage::saturation() const
 {
-    return (qreal)mpSSlider->value()/100.0;
+    return (qreal)mpSSlider->value() / 100.0;
 }
 
 void VideoEQConfigPage::onReset()
@@ -164,9 +198,11 @@ void VideoEQConfigPage::onReset()
 
 void VideoEQConfigPage::onEngineChangedByUI()
 {
-    if (mpEngine->currentIndex() >= mEngines.size() || mpEngine->currentIndex() < 0)
+    if ((mpEngine->currentIndex() >= mEngines.size()) || (mpEngine->currentIndex() < 0))
         return;
+
     mEngine = mEngines.at(mpEngine->currentIndex());
+
     emit engineChanged();
 }
 

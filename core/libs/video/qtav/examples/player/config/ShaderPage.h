@@ -24,10 +24,14 @@
 #ifndef QTAV_PLAYER_SHADER_PAGE_H
 #define QTAV_PLAYER_SHADER_PAGE_H
 
-#include "ConfigPageBase.h"
+// Qt includes
 
 #include <QTextEdit>
 #include <QCheckBox>
+
+// Local includes
+
+#include "ConfigPageBase.h"
 
 namespace QtAVPlayer
 {
@@ -35,17 +39,23 @@ namespace QtAVPlayer
 class ShaderPage : public ConfigPageBase
 {
 public:
-    ShaderPage(QWidget* parent = 0);
+
+    ShaderPage(QWidget* parent = nullptr);
+
     virtual QString name() const;
+
 protected:
+
     virtual void applyToUi();
     virtual void applyFromUi();
+
 private:
-    QCheckBox *m_enable;
-    QCheckBox *m_fbo;
-    QTextEdit *m_header;
-    QTextEdit *m_sample;
-    QTextEdit *m_pp;
+
+    QCheckBox* m_enable;
+    QCheckBox* m_fbo;
+    QTextEdit* m_header;
+    QTextEdit* m_sample;
+    QTextEdit* m_pp;
 };
 
 } // namespace QtAVPlayer

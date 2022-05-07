@@ -22,8 +22,14 @@
  * ============================================================ */
 
 #include "MiscPage.h"
+
+// Qt includes
+
 #include <QLabel>
 #include <QLayout>
+
+// Local includes
+
 #include "Config.h"
 
 namespace QtAVPlayer
@@ -31,25 +37,26 @@ namespace QtAVPlayer
 
 MiscPage::MiscPage()
 {
-    QGridLayout *gl = new QGridLayout();
+    QGridLayout* gl = new QGridLayout();
     setLayout(gl);
     gl->setSizeConstraint(QLayout::SetFixedSize);
-    int r = 0;
-    m_preview_on = new QCheckBox(tr("Preview"));
+    int r           = 0;
+    m_preview_on    = new QCheckBox(tr("Preview"));
     gl->addWidget(m_preview_on, r++, 0);
-    m_preview_w = new QSpinBox();
+    m_preview_w     = new QSpinBox();
     m_preview_w->setRange(1, 1920);
-    m_preview_h = new QSpinBox();
+    m_preview_h     = new QSpinBox();
     m_preview_h->setRange(1, 1080);
     gl->addWidget(new QLabel(QString::fromLatin1("%1 %2: ").arg(tr("Preview")).arg(tr("size"))), r, 0);
-    QHBoxLayout *hb = new QHBoxLayout();
+    QHBoxLayout* hb = new QHBoxLayout();
     hb->addWidget(m_preview_w);
     hb->addWidget(new QLabel(QString::fromLatin1("x")));
     hb->addWidget(m_preview_h);
     gl->addLayout(hb, r, 1);
+
     r++;
     gl->addWidget(new QLabel(tr("Force fps")), r, 0);
-    m_fps = new QDoubleSpinBox();
+    m_fps           = new QDoubleSpinBox();
     m_fps->setMinimum(-m_fps->maximum());
     m_fps->setToolTip(QString::fromLatin1("<= 0: ") + tr("Ignore"));
     gl->addWidget(m_fps, r++, 1);
@@ -60,13 +67,13 @@ MiscPage::MiscPage()
     gl->addWidget(m_notify_interval, r++, 1);
 
     gl->addWidget(new QLabel(tr("Buffer frames")), r, 0);
-    m_buffer_value = new QSpinBox();
+    m_buffer_value  = new QSpinBox();
     m_buffer_value->setRange(-1, 32767);
     m_buffer_value->setToolTip(QString::fromLatin1("-1: auto"));
     gl->addWidget(m_buffer_value, r++, 1);
 
     gl->addWidget(new QLabel(QString::fromLatin1("%1(%2)").arg(tr("Timeout")).arg(tr("s"))), r, 0);
-    m_timeout = new QDoubleSpinBox();
+    m_timeout       = new QDoubleSpinBox();
     m_timeout->setDecimals(3);
     m_timeout->setSingleStep(1.0);
     m_timeout->setMinimum(-0.5);
@@ -78,7 +85,7 @@ MiscPage::MiscPage()
     gl->addLayout(hb, r++, 1);
 
     gl->addWidget(new QLabel(tr("OpenGL type")), r, 0);
-    m_opengl = new QComboBox();
+    m_opengl        = new QComboBox();
     m_opengl->addItem(QString::fromLatin1("Auto"), Config::Auto);
     m_opengl->addItem(QString::fromLatin1("Desktop"), Config::Desktop);
     m_opengl->addItem(QString::fromLatin1("OpenGLES"), Config::OpenGLES);
@@ -88,23 +95,34 @@ MiscPage::MiscPage()
     m_angle_platform = new QComboBox();
     m_angle_platform->setToolTip(tr("D3D9 has performance if ZeroCopy is disabled or for software decoders") + QString::fromLatin1("\n") + tr("RESTART REQUIRED"));
     m_angle_platform->addItems(QStringList() << QString::fromLatin1("D3D9") << QString::fromLatin1("D3D11") << QString::fromLatin1("AUTO") << QString::fromLatin1("WARP"));
+
 #ifndef QT_OPENGL_DYNAMIC
+
     m_opengl->setEnabled(false);
     m_angle_platform->setEnabled(false);
+
 #endif
+
     gl->addWidget(m_angle_platform, r++, 2);
 
     gl->addWidget(new QLabel(QLatin1String("EGL")), r, 0);
     m_egl = new QCheckBox();
     m_egl->setToolTip(tr("Currently only works for Qt>=5.5 XCB build"));
+
 #if QT_VERSION < QT_VERSION_CHECK(5, 5, 0) || !defined(Q_OS_LINUX)
+
     m_egl->setEnabled(false);
+
 #endif
+
     gl->addWidget(m_egl, r++, 1);
 
     gl->addWidget(new QLabel(QLatin1String("Log")), r, 0);
     m_log = new QComboBox();
-    m_log->addItems(QStringList() << QString::fromLatin1("off") << QString::fromLatin1("warning") << QString::fromLatin1("debug") << QString::fromLatin1("all"));
+    m_log->addItems(QStringList() << QString::fromLatin1("off")
+                                  << QString::fromLatin1("warning")
+                                  << QString::fromLatin1("debug")
+                                  << QString::fromLatin1("all"));
     gl->addWidget(m_log, r++, 1);
 }
 
@@ -112,7 +130,6 @@ QString MiscPage::name() const
 {
     return tr("Misc");
 }
-
 
 void MiscPage::applyFromUi()
 {
@@ -127,7 +144,7 @@ void MiscPage::applyFromUi()
             .setTimeout(m_timeout->value())
             .setAbortOnTimeout(m_timeout_abort->isChecked())
             .setLogLevel(m_log->currentText().toLower())
-            ;
+    ;
 }
 
 void MiscPage::applyToUi()
@@ -139,7 +156,9 @@ void MiscPage::applyToUi()
     m_angle_platform->setCurrentIndex(m_angle_platform->findText(Config::instance().getANGLEPlatform().toUpper()));
     m_egl->setChecked(Config::instance().isEGL());
     m_fps->setValue(Config::instance().forceFrameRate());
+
     //m_notify_interval->setValue(Config::instance().avfilterOptions());
+
     m_buffer_value->setValue(Config::instance().bufferValue());
     m_timeout->setValue(Config::instance().timeout());
     m_timeout_abort->setChecked(Config::instance().abortOnTimeout());

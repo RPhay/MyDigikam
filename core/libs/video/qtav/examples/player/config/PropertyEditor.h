@@ -24,6 +24,8 @@
 #ifndef QTAV_PLAYER_PROPERTYEDITOR_H
 #define QTAV_PLAYER_PROPERTYEDITOR_H
 
+// Qt includes
+
 #include <QObject>
 #include <QMetaProperty>
 #include <QMetaEnum>
@@ -39,24 +41,31 @@ namespace QtAVPlayer
 class PropertyEditor : public QObject
 {
     Q_OBJECT
+
 public:
+
     explicit PropertyEditor(QObject *parent = 0);
+
     // call it before others
+
     void getProperties(QObject *obj);
 
     // from config file etc to init properties. call it before buildXXX
+
     void set(const QVariantHash& hash);
     void set(const QString& conf);
+
     /*!
      * \brief buildOptions
      * \return command line options
      */
     QString buildOptions();
-    QWidget* buildUi(QObject* obj = 0); //obj: read dynamic properties("detail_property")
+    QWidget* buildUi(QObject* obj = 0); // obj: read dynamic properties("detail_property")
     QVariantHash exportAsHash();
-    QString exportAsConfig(); //json like
+    QString exportAsConfig();           // json like
 
 private:
+
     /*!
      * name is property name.
      * 1. add property and value in hash
@@ -71,10 +80,14 @@ private:
     QWidget* createWidgetForBool(const QString& name, bool value, const QString& detail = QString(), QWidget* parent = 0);
 
     // called if value changed by ui (in onXXXChange)
+
     void updatePropertyValue(const QString& name, const QVariant& value);
+
 private Q_SLOTS:
+
     // updatePropertyValue
-    void onFlagChange(QAction *action);
+
+    void onFlagChange(QAction* action);
     void onEnumChange(int value);
     void onIntChange(int value);
     void onRealChange(qreal value);
@@ -82,9 +95,10 @@ private Q_SLOTS:
     void onBoolChange(bool value);
 
 private:
+
     QList<QMetaProperty> mMetaProperties;
-    QVariantHash mProperties;
-    QVariantHash mPropertyDetails;
+    QVariantHash         mProperties;
+    QVariantHash         mPropertyDetails;
 };
 
 } // namespace QtAVPlayer
