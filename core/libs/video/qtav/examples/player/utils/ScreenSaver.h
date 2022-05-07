@@ -24,6 +24,8 @@
 #ifndef QTAV_PLAYER_SCREENSAVER_H
 #define QTAV_PLAYER_SCREENSAVER_H
 
+// Qt includes
+
 #include <QObject>
 
 namespace QtAVPlayer
@@ -34,31 +36,50 @@ namespace QtAVPlayer
 class ScreenSaver : QObject
 {
     Q_OBJECT
+
 public:
+
     static ScreenSaver& instance();
+
     ScreenSaver();
     ~ScreenSaver();
+
     // enable: just restore the previous settings. settings changed during the object life will ignored
+
     bool enable(bool yes);
+
 public Q_SLOTS:
+
     void enable();
     void disable();
+
 protected:
-    virtual void timerEvent(QTimerEvent *);
+
+    virtual void timerEvent(QTimerEvent*);
+
 private:
-    //return false if already called
+
+    // return false if already called
+
     bool retrieveState();
     bool restoreState();
-    bool state_saved, modified;
+
+private:
+
+    bool    state_saved, modified;
+
 #ifdef Q_OS_LINUX
-    bool isX11;
-    int timeout;
-    int interval;
-    int preferBlanking;
-    int allowExposures;
-#endif //Q_OS_LINUX
-    int ssTimerId; //for mac
-    quint32 osxIOPMAssertionId; // for mac OSX >= 10.8
+
+    bool    isX11;
+    int     timeout;
+    int     interval;
+    int     preferBlanking;
+    int     allowExposures;
+
+#endif // Q_OS_LINUX
+
+    int     ssTimerId;          ///< for mac
+    quint32 osxIOPMAssertionId; ///< for mac OSX >= 10.8
 };
 
 } // namespace QtAVPlayer
