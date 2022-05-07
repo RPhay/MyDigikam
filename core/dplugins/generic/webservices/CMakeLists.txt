@@ -41,11 +41,9 @@ endif()
 
 add_subdirectory(smugmug)
 add_subdirectory(twitter)
-#add_subdirectory(yandexfotki)
 
 if(KF5KIO_FOUND)
 
-#    add_subdirectory(vkontakte)
     add_subdirectory(filetransfer)
 
 endif()

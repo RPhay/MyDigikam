@@ -170,7 +170,3 @@ endif()
 if(ENABLE_MEDIAPLAYER)
     add_subdirectory(video)
 endif()
-
-if(KF5KIO_FOUND)
-#    add_subdirectory(vkontakte)
-endif()
