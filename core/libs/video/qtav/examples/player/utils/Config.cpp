@@ -246,7 +246,7 @@ QString Config::getName()
 
 QString Config::defaultConfigFile()
 {
-    return appDataDir() + QString::fromLatin1("/") + Data::name + QString::fromLatin1(".ini");;
+    return appDataDir() + QString::fromLatin1("/") + Data::name + QString::fromLatin1(".ini");
 }
 
 Config::Config(QObject *parent)
