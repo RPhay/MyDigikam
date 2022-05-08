@@ -21,38 +21,42 @@
  *
  * ============================================================ */
 
+#ifndef QTAV_EXAMPLE_WIDGET_H
+#define QTAV_EXAMPLE_WIDGET_H
 
-
-#ifndef WIDGET_H
-#define WIDGET_H
+// Qt includes
 
 #include <QWidget>
 #include <QPushButton>
 
-namespace QtAV {
+namespace QtAV
+{
 class GLWidgetRenderer2;
 class AVPlayer;
 class VideoOutput;
 }
+
 class Widget : public QWidget
 {
     Q_OBJECT
-    
+
 public:
-    explicit Widget(QWidget *parent = 0);
+
+    explicit Widget(QWidget* const parent = nullptr);
     ~Widget();
-    
+
 public Q_SLOTS:
+
     void setVideo();
     void playVideo();
     void testRTSP();
 
 private:
-    class
-    QtAV::VideoOutput *renderer;
-    QtAV::AVPlayer *player[2];
-    QPushButton *play_btn[2];
-    QPushButton *file_btn[2];
+
+    QtAV::VideoOutput*  renderer;
+    QtAV::AVPlayer*     player[2];
+    QPushButton*        play_btn[2];
+    QPushButton*        file_btn[2];
 };
 
-#endif // WIDGET_H
+#endif // QTAV_EXAMPLE_WIDGET_H

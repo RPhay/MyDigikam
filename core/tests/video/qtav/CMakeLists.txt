@@ -133,6 +133,16 @@ target_compile_definitions(qtav-filters_gui PRIVATE ${MEDIAPLAYER_DEFINITIONS})
 
 # -------------------------------------------------
 
+set(qtavsharedoutput_SRCS ${CMAKE_SOURCE_DIR}/core/libs/video/qtav/examples/sharedoutput/main.cpp
+                          ${CMAKE_SOURCE_DIR}/core/libs/video/qtav/examples/sharedoutput/widget.cpp
+)
+
+add_executable(qtav-sharedoutput_gui ${qtavfilters_SRCS})
+target_link_libraries(qtav-sharedoutput_gui digikamcore ${COMMON_TEST_LINK})
+target_compile_definitions(qtav-sharedoutput_gui PRIVATE ${MEDIAPLAYER_DEFINITIONS})
+
+# -------------------------------------------------
+
 add_executable(qtav-glslfilter_gui ${CMAKE_SOURCE_DIR}/core/libs/video/qtav/examples/glslfilter/main.cpp)
 target_link_libraries(qtav-glslfilter_gui digikamcore ${COMMON_TEST_LINK})
 target_compile_definitions(qtav-glslfilter_gui PRIVATE ${MEDIAPLAYER_DEFINITIONS})
