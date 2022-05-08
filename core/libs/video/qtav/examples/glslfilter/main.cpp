@@ -29,7 +29,7 @@
 #include <QScopedPointer>
 #include <qmath.h>
 #include <QWidget>
-#include <QtDebug>
+#include "digikam_debug.h"
 
 using namespace QtAV;
 #define GLSL(x) #x ""
@@ -77,7 +77,7 @@ int main(int argc, char** argv)
 {
     QApplication a(argc, argv);
     if (a.arguments().size() < 2) {
-        qDebug() << a.arguments().at(0) << " file";
+        qCDebug(DIGIKAM_TESTS_LOG) << a.arguments().at(0) << " file";
         return 0;
     }
     VideoOutput vo;

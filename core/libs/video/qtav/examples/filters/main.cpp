@@ -26,7 +26,7 @@
 #include <cstdlib>
 #include <QApplication>
 
-#include <QtDebug>
+#include "digikam_debug.h"
 #include <QDir>
 #include <QLocale>
 #include <QTranslator>

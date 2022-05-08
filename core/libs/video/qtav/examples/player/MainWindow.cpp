@@ -25,7 +25,7 @@
 
 // Qt includes
 
-#include <QtDebug>
+#include "digikam_debug.h"
 #include <QLocale>
 #include <QTimer>
 #include <QTimeEdit>

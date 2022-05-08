@@ -39,7 +39,7 @@
 #include <QFile>
 #include <QTextStream>
 #include <QStandardPaths>
-#include <QtDebug>
+#include "digikam_debug.h"
 #include <QMutex>
 
 // Local includes
