@@ -45,21 +45,26 @@ void do_common_options_before_qapp(const QOptions& options);
 
 /// help, log file, ffmpeg log level
 
-void do_common_options(const QOptions& options, const QString& appName = QString());
+void do_common_options(const QOptions& options,
+                       const QString& appName = QString());
 
-// if appname ends with 'desktop', 'es', 'angle', software', 'sw', set by appname. otherwise set by command line option glopt, or Config file
+// if appname ends with 'desktop', 'es', 'angle', software', 'sw', set by appname.
+// otherwise set by command line option glopt, or Config file
 
 // TODO: move to do_common_options_before_qapp
 
-void set_opengl_backend(const QString& glopt = QString::fromLatin1("auto"), const QString& appname = QString());
+void set_opengl_backend(const QString& glopt = QString::fromLatin1("auto"),
+                        const QString& appname = QString());
 
 QString appDataDir();
 
 class AppEventFilter : public QObject
 {
+    Q_OBJECT
+
 public:
 
-    AppEventFilter(QObject* player = nullptr, QObject* parent = nullptr);
+    AppEventFilter(QObject* const player = nullptr, QObject* const parent = nullptr);
 
     QUrl url() const;
     virtual bool eventFilter(QObject* obj, QEvent* ev);

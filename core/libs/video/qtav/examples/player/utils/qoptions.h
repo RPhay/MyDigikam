@@ -70,6 +70,7 @@ public:
     QOption();
     explicit QOption(const char* name, const QVariant& defaultValue, Type type, const QString& description);
     explicit QOption(const char* name, Type type, const QString& description);
+
     //explicit QOption(const char* name, const QVariant& value, Type type, const QString& description);
 
     QString shortName()                 const;
@@ -106,7 +107,6 @@ private:
     QVariant      mValue;
 };
 
-
 class QOptions
 {
 public:
@@ -127,29 +127,30 @@ public:
      * \param argv
      * \return false if invalid option found
      */
-    bool parse(int argc, const char*const* argv);
+    bool parse(int argc, const char* const* argv);
     QOptions& add(const QString& group_description);
     QOptions& addDescription(const QString& description);
 
-    QOptions& operator ()(const char* name, const QString& description = QString());
-    QOptions& operator ()(const char* name, QOption::Type type, const QString& description = QString());
-    QOptions& operator ()(const char* name, const QVariant& defaultValue, const QString& description);
-    QOptions& operator ()(const char* name, const QVariant& defaultValue, QOption::Type type, const QString& description = QString());
+    QOptions& operator()(const char* name, const QString& description = QString());
+    QOptions& operator()(const char* name, QOption::Type type, const QString& description = QString());
+    QOptions& operator()(const char* name, const QVariant& defaultValue, const QString& description);
+    QOptions& operator()(const char* name, const QVariant& defaultValue,
+                         QOption::Type type, const QString& description = QString());
 
     //QOptions& operator ()(const char* name, QVariant* value, QOption::Type type, const QString& description = QString());
 
-    QOption option(const QString& name) const;
-    QVariant value(const QString& name) const;
-    QVariant operator [](const QString& name) const;
+    QOption option(const QString& name)         const;
+    QVariant value(const QString& name)         const;
+    QVariant operator [](const QString& name)   const;
 
-    QString help() const;
-    void print() const;
+    QString help()                              const;
+    void print()                                const;
 
 private:
 
-    QString mDescription, mCurrentDescription;
-    QList<QOption> mOptions;
-    QMap<QOption, QString/*group*/> mOptionGroupMap;
+    QString mDescription,               mCurrentDescription;
+    QList<QOption>                      mOptions;
+    QMap<QOption, QString /* group */ > mOptionGroupMap;
 };
 
 } // namespace QtAVPlayer

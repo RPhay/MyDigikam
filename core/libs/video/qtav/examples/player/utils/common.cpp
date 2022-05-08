@@ -160,7 +160,7 @@ void do_common_options(const QOptions& options, const QString& /*appName*/)
     }
 }
 
-void set_opengl_backend(const QString& glopt, const QString &appname)
+void set_opengl_backend(const QString& glopt, const QString& appname)
 {
     QString gl = appname.toLower().replace(QLatin1String("\\"), QLatin1String("/"));
     int idx    = gl.lastIndexOf(QLatin1String("/"));
@@ -203,7 +203,7 @@ void set_opengl_backend(const QString& glopt, const QString &appname)
         }
     }
 
-    if (gl == QLatin1String("es") || gl == QLatin1String("angle") || gl == QLatin1String("opengles"))
+    if ((gl == QLatin1String("es")) || (gl == QLatin1String("angle")) || (gl == QLatin1String("opengles")))
     {
         gl = QLatin1String("es_");
         gl.append(Config::instance().getANGLEPlatform().toLower());
@@ -250,7 +250,7 @@ QString appDataDir()
     return QStandardPaths::writableLocation(QStandardPaths::AppDataLocation);
 }
 
-AppEventFilter::AppEventFilter(QObject* player, QObject* parent)
+AppEventFilter::AppEventFilter(QObject* const player, QObject* const parent)
     : QObject(parent),
       m_player(player)
 {
@@ -283,7 +283,7 @@ bool AppEventFilter::eventFilter(QObject* obj, QEvent* ev)
             }
         };
 
-        QActivationEvent* ae = static_cast<QActivationEvent*>(ev);
+        QActivationEvent* const ae = static_cast<QActivationEvent*>(ev);
         const QString url(UrlFromFileArgs((IInspectable*)ae->args()));
 
         if (!url.isEmpty())
@@ -302,7 +302,7 @@ bool AppEventFilter::eventFilter(QObject* obj, QEvent* ev)
     if (ev->type() != QEvent::FileOpen)
         return false;
 
-    QFileOpenEvent* foe = static_cast<QFileOpenEvent*>(ev);
+    QFileOpenEvent* const foe = static_cast<QFileOpenEvent*>(ev);
 
     if (m_player)
         QMetaObject::invokeMethod(m_player, "play", Q_ARG(QUrl, QUrl(foe->url())));

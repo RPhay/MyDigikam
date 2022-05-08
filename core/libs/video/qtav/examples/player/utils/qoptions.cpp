@@ -104,7 +104,7 @@ QVariant QOption::value() const
     return mDefaultValue;
 }
 
-void QOption::setValue(const QVariant &value)
+void QOption::setValue(const QVariant& value)
 {
     mValue = value;
 }
@@ -182,7 +182,7 @@ static QString get_long(const QString& name)
     return name;
 }
 
-void QOption::setName(const QString &name)
+void QOption::setName(const QString& name)
 {
     int comma = name.indexOf(QLatin1Char(','));
 
@@ -241,7 +241,7 @@ QOptions::~QOptions()
     mOptions.clear();
 }
 
-bool QOptions::parse(int argc, const char *const*argv)
+bool QOptions::parse(int argc, const char* const* argv)
 {
     if (mOptionGroupMap.isEmpty())
         return false;
@@ -282,7 +282,7 @@ bool QOptions::parse(int argc, const char *const*argv)
                         break;
                     }
 
-                    if (e>0)
+                    if (e > 0)
                     {
                         it_list->setValue(it->mid(e+1));
 
@@ -320,7 +320,7 @@ bool QOptions::parse(int argc, const char *const*argv)
             for (it_list = mOptions.begin() ; it_list != mOptions.end() ; ++it_list)
             {
                 QString sname = it_list->shortName();
-                int sname_len = sname.length(); // usally is 1
+                int sname_len = sname.length(); // usually is 1
 
                 // TODO: startsWith(-height,-h) Not endsWith, -oabco
 
@@ -337,6 +337,7 @@ bool QOptions::parse(int argc, const char *const*argv)
                     if (it->length() == sname_len+1)
                     {
                         // -o abco
+
                         it = args.erase(it);
 
                         if (it == args.end())
@@ -359,7 +360,7 @@ bool QOptions::parse(int argc, const char *const*argv)
                 }
             }
 
-            if (it_list==mOptions.end())
+            if (it_list == mOptions.end())
             {
                 qCWarning(DIGIKAM_QTAVPLAYER_LOG) << "unknown option: " << *it;
                 result = false;
@@ -397,7 +398,7 @@ QOptions& QOptions::addDescription(const QString& description)
     return *this;
 }
 
-QOptions& QOptions::operator ()(const char* name, const QString& description)
+QOptions& QOptions::operator()(const char* name, const QString& description)
 {
     QOption op(name, QOption::NoToken, description);
     mOptions.append(op);
@@ -406,7 +407,7 @@ QOptions& QOptions::operator ()(const char* name, const QString& description)
     return *this;
 }
 
-QOptions& QOptions::operator ()(const char* name, QOption::Type type, const QString& description)
+QOptions& QOptions::operator()(const char* name, QOption::Type type, const QString& description)
 {
     QOption op(name, type, description);
     mOptions.append(op);
@@ -415,7 +416,7 @@ QOptions& QOptions::operator ()(const char* name, QOption::Type type, const QStr
     return *this;
 }
 
-QOptions& QOptions::operator ()(const char* name, const QVariant& defaultValue, const QString& description)
+QOptions& QOptions::operator()(const char* name, const QVariant& defaultValue, const QString& description)
 {
     QOption op(name, defaultValue, QOption::SingleToken, description);
     mOptions.append(op);
@@ -424,7 +425,8 @@ QOptions& QOptions::operator ()(const char* name, const QVariant& defaultValue, 
     return *this;
 }
 
-QOptions& QOptions::operator ()(const char* name, const QVariant& defaultValue, QOption::Type type, const QString& description)
+QOptions& QOptions::operator()(const char* name, const QVariant& defaultValue,
+                               QOption::Type type, const QString& description)
 {
     QOption op(name, defaultValue, type, description);
     mOptions.append(op);
