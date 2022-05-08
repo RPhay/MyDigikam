@@ -117,6 +117,11 @@ QString ExifToolParser::Private::actionString(int cmdAction) const
             return QLatin1String("Apply Changes");
         }
 
+        case ExifToolProcess::APPLY_CHANGES_EXV:
+        {
+            return QLatin1String("Apply Changes EXV");
+        }
+
         case ExifToolProcess::READ_FORMATS:
         {
             return QLatin1String("Readable Formats");
