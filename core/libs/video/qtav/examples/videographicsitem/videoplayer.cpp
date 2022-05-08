@@ -38,6 +38,10 @@
 #include <QFileDialog>
 #include <QDial>
 
+// Local includes
+
+#include "digikam_debug.h"
+
 using namespace QtAV;
 
 VideoPlayer::VideoPlayer(QWidget* const parent)

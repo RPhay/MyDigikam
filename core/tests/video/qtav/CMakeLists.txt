@@ -184,6 +184,16 @@ target_compile_definitions(qtav-videocapture_gui PRIVATE ${MEDIAPLAYER_DEFINITIO
 
 # -------------------------------------------------
 
+set(qtavvideogroup_SRCS ${CMAKE_SOURCE_DIR}/core/libs/video/qtav/examples/videogroup/main.cpp
+                        ${CMAKE_SOURCE_DIR}/core/libs/video/qtav/examples/videogroup/videogroup.cpp
+)
+
+add_executable(qtav-videogroup_gui ${qtavvideogroup_SRCS})
+target_link_libraries(qtav-videogroup_gui digikamcore ${COMMON_TEST_LINK} ${MEDIAPLAYER_LIBRARIES})
+target_compile_definitions(qtav-videogroup_gui PRIVATE ${MEDIAPLAYER_DEFINITIONS})
+
+# -------------------------------------------------
+
 set(qtavvideographicsitem_SRCS ${CMAKE_SOURCE_DIR}/core/libs/video/qtav/examples/videographicsitem/main.cpp
                                ${CMAKE_SOURCE_DIR}/core/libs/video/qtav/examples/videographicsitem/videoplayer.cpp
 )
@@ -197,5 +207,3 @@ target_compile_definitions(qtav-videographicsitem_gui PRIVATE ${MEDIAPLAYER_DEFI
 add_executable(qtav-window_cli ${CMAKE_SOURCE_DIR}/core/libs/video/qtav/examples/window/main.cpp)
 target_link_libraries(qtav-window_cli digikamcore ${COMMON_TEST_LINK} ${MEDIAPLAYER_LIBRARIES})
 target_compile_definitions(qtav-window_cli PRIVATE ${MEDIAPLAYER_DEFINITIONS})
-
-# -------------------------------------------------

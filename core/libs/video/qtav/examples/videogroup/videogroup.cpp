@@ -21,62 +21,89 @@
  *
  * ============================================================ */
 
-
-
 #include "videogroup.h"
+
+// Qt includes
+
 #include <QApplication>
 #include <QDesktopWidget>
 #include <QEvent>
 #include <QFileDialog>
 #include <QGridLayout>
 #include <QUrl>
-#include <QtAV/AudioOutput.h>
-#include <QtAVWidgets>
+
+// Local includes
+
+#include "AudioOutput.h"
+#include "QtAVWidgets.h"
+
 #if QT_VERSION < QT_VERSION_CHECK(6,0,0)
-#define DESKTOP_RECT() qApp->desktop()->rect()
+#   define DESKTOP_RECT() qApp->desktop()->rect()
 #else
-#define DESKTOP_RECT() qApp->primaryScreen()->availableGeometry()
+#   define DESKTOP_RECT() qApp->primaryScreen()->availableGeometry()
 #endif
+
 using namespace QtAV;
 
-VideoGroup::VideoGroup(QObject *parent) :
-    QObject(parent)
-  , m1Window(false)
-  , m1Frame(true)
-  , mFrameless(false)
-  , r(3),c(3),view(0)
-  , vid(QString::fromLatin1("qpainter"))
+VideoGroup::VideoGroup(QObject* const parent)
+    : QObject(parent),
+      m1Window(false),
+      m1Frame(true),
+      mFrameless(false),
+      r(3),
+      c(3),
+      view(0),
+      vid(QString::fromLatin1("qpainter"))
 {
-    mpPlayer = new AVPlayer(this);
+    mpPlayer    = new AVPlayer(this);
+
     //mpPlayer->setPlayerEventFilter(0);
 
-    mpBar = new QWidget(0, Qt::WindowStaysOnTopHint);
+    mpBar       = new QWidget(0, Qt::WindowStaysOnTopHint);
     mpBar->setMaximumSize(400, 60);
     mpBar->show();
     mpBar->setLayout(new QHBoxLayout);
-    mpOpen = new QPushButton(tr("Open"));
-    mpPlay = new QPushButton(tr("Play"));
-    mpStop = new QPushButton(tr("Stop"));
-    mpPause = new QPushButton(tr("Pause"));
+    mpOpen      = new QPushButton(tr("Open"));
+    mpPlay      = new QPushButton(tr("Play"));
+    mpStop      = new QPushButton(tr("Stop"));
+    mpPause     = new QPushButton(tr("Pause"));
     mpPause->setCheckable(true);
-    mpAdd = new QPushButton(QString::fromLatin1("+"));
-    mpRemove = new QPushButton(QString::fromLatin1("-"));
-    mp1Window = new QPushButton(tr("Single Window"));
+    mpAdd       = new QPushButton(QString::fromLatin1("+"));
+    mpRemove    = new QPushButton(QString::fromLatin1("-"));
+    mp1Window   = new QPushButton(tr("Single Window"));
     mp1Window->setCheckable(true);
-    mp1Frame = new QPushButton(tr("Single Frame"));
+    mp1Frame    = new QPushButton(tr("Single Frame"));
     mp1Frame->setCheckable(true);
     mp1Frame->setChecked(true);
     mpFrameless = new QPushButton(tr("no window frame"));
     mpFrameless->setCheckable(true);
-    connect(mpOpen, SIGNAL(clicked()), SLOT(openLocalFile()));
-    connect(mpPlay, SIGNAL(clicked()), mpPlayer, SLOT(play()));
-    connect(mpStop, SIGNAL(clicked()), mpPlayer, SLOT(stop()));
-    connect(mpPause, SIGNAL(toggled(bool)), mpPlayer, SLOT(pause(bool)));
-    connect(mpAdd, SIGNAL(clicked()), SLOT(addRenderer()));
-    connect(mpRemove, SIGNAL(clicked()), SLOT(removeRenderer()));
-    connect(mp1Window, SIGNAL(toggled(bool)), SLOT(setSingleWindow(bool)));
-    connect(mp1Frame, SIGNAL(toggled(bool)), SLOT(toggleSingleFrame(bool)));
-    connect(mpFrameless, SIGNAL(toggled(bool)), SLOT(toggleFrameless(bool)));
+
+    connect(mpOpen, SIGNAL(clicked()),
+            this, SLOT(openLocalFile()));
+
+    connect(mpPlay, SIGNAL(clicked()),
+            mpPlayer, SLOT(play()));
+
+    connect(mpStop, SIGNAL(clicked()),
+            mpPlayer, SLOT(stop()));
+
+    connect(mpPause, SIGNAL(toggled(bool)),
+            mpPlayer, SLOT(pause(bool)));
+
+    connect(mpAdd, SIGNAL(clicked()),
+            this, SLOT(addRenderer()));
+
+    connect(mpRemove, SIGNAL(clicked()),
+            this, SLOT(removeRenderer()));
+
+    connect(mp1Window, SIGNAL(toggled(bool)),
+            this, SLOT(setSingleWindow(bool)));
+
+    connect(mp1Frame, SIGNAL(toggled(bool)),
+            this, SLOT(toggleSingleFrame(bool)));
+
+    connect(mpFrameless, SIGNAL(toggled(bool)),
+            this, SLOT(toggleFrameless(bool)));
 
     mpBar->layout()->addWidget(mpOpen);
     mpBar->layout()->addWidget(mpPlay);
@@ -86,7 +113,9 @@ VideoGroup::VideoGroup(QObject *parent) :
     mpBar->layout()->addWidget(mpRemove);
     mpBar->layout()->addWidget(mp1Window);
     mpBar->layout()->addWidget(mp1Frame);
+
     //mpBar->layout()->addWidget(mpFrameless);
+
     mpBar->resize(200, 25);
 }
 
@@ -98,44 +127,59 @@ VideoGroup::~VideoGroup()
 
 void VideoGroup::setSingleWindow(bool s)
 {
-    m1Window = s;
+    m1Window   = s;
     mRenderers = mpPlayer->videoOutputs();
+
     if (mRenderers.isEmpty())
         return;
-    if (!s) {
+
+    if (!s)
+    {
         if (!view)
             return;
-        foreach(VideoRenderer *vo, mRenderers) {
+
+        foreach(VideoRenderer* const vo, mRenderers)
+        {
             view->layout()->removeWidget(vo->widget());
             vo->widget()->setParent(0);
             Qt::WindowFlags wf = vo->widget()->windowFlags();
-            if (mFrameless) {
+
+            if (mFrameless)
+            {
                 wf &= ~Qt::FramelessWindowHint;
-            } else {
+            }
+            else
+            {
                 wf |= Qt::FramelessWindowHint;
             }
+
             vo->widget()->setWindowFlags(wf);
             vo->widget()->show();
         }
+
         delete view;
         view = 0;
-    } else {
+    }
+    else
+    {
         if (view)
             return;
-        view = new QWidget;
+
+        view                = new QWidget;
         view->resize(DESKTOP_RECT().size());
-        QGridLayout *layout = new QGridLayout;
+        QGridLayout* layout = new QGridLayout;
         layout->setSizeConstraint(QLayout::SetMaximumSize);
         layout->setSpacing(1);
-        layout->setMargin(0);
         layout->setContentsMargins(0, 0, 0, 0);
         view->setLayout(layout);
 
-        for (int i = 0; i < mRenderers.size(); ++i) {
-            int x = i/cols();
-            int y = i%cols();
+        for (int i = 0 ; i < mRenderers.size() ; ++i)
+        {
+            int x = i / cols();
+            int y = i % cols();
             ((QGridLayout*)view->layout())->addWidget(mRenderers.at(i)->widget(), x, y);
         }
+
         view->show();
         mRenderers.last()->widget()->showFullScreen();
     }
@@ -145,6 +189,7 @@ void VideoGroup::toggleSingleFrame(bool s)
 {
     if (m1Frame == s)
         return;
+
     m1Frame = s;
     updateROI();
 }
@@ -152,16 +197,24 @@ void VideoGroup::toggleSingleFrame(bool s)
 void VideoGroup::toggleFrameless(bool f)
 {
     mFrameless = f;
+
     if (mRenderers.isEmpty())
         return;
-    VideoRenderer *renderer = mRenderers.first();
-    Qt::WindowFlags wf = renderer->widget()->windowFlags();
-    if (f) {
+
+    VideoRenderer* renderer = mRenderers.first();
+    Qt::WindowFlags wf      = renderer->widget()->windowFlags();
+
+    if (f)
+    {
         wf &= ~Qt::FramelessWindowHint;
-    } else {
+    }
+    else
+    {
         wf |= Qt::FramelessWindowHint;
     }
-    foreach (VideoRenderer *rd, mRenderers) {
+
+    foreach (VideoRenderer* const rd, mRenderers)
+    {
         rd->widget()->setWindowFlags(wf);
     }
 }
@@ -193,8 +246,10 @@ int VideoGroup::cols() const
 
 void VideoGroup::show()
 {
-    for (int i = 0; i < r; ++i) {
-        for (int j = 0; j < c; ++j) {
+    for (int i = 0 ; i < r ; ++i)
+    {
+        for (int j = 0 ; j < c ; ++j)
+        {
             addRenderer();
         }
     }
@@ -208,8 +263,10 @@ void VideoGroup::play(const QString &file)
 void VideoGroup::openLocalFile()
 {
     QString file = QFileDialog::getOpenFileName(0, tr("Open a video"));
+
     if (file.isEmpty())
         return;
+
     mpPlayer->stop();
     mpPlayer->play(file);
 }
@@ -217,7 +274,8 @@ void VideoGroup::openLocalFile()
 void VideoGroup::addRenderer()
 {
     VideoRendererId v = VideoRendererId_Widget;
-    if (vid == QLatin1String("gl"))
+
+    if      (vid == QLatin1String("gl"))
         v = VideoRendererId_GLWidget2;
     else if (vid == QLatin1String("d2d"))
         v = VideoRendererId_Direct2D;
@@ -225,44 +283,60 @@ void VideoGroup::addRenderer()
         v = VideoRendererId_GDI;
     else if (vid == QLatin1String("xv"))
         v = VideoRendererId_XV;
+
     VideoRenderer* renderer = VideoRenderer::create(v);
-    mRenderers = mpPlayer->videoOutputs();
+    mRenderers              = mpPlayer->videoOutputs();
     mRenderers.append(renderer);
     renderer->widget()->setAttribute(Qt::WA_DeleteOnClose);
     Qt::WindowFlags wf = renderer->widget()->windowFlags();
-    if (mFrameless) {
+
+    if (mFrameless)
+    {
         wf &= ~Qt::FramelessWindowHint;
-    } else {
+    }
+    else
+    {
         wf |= Qt::FramelessWindowHint;
     }
+
     renderer->widget()->setWindowFlags(wf);
-    int w = view ? view->frameGeometry().width()/c : DESKTOP_RECT().width()/c;
-    int h = view ? view->frameGeometry().height()/r : DESKTOP_RECT().height()/r;
+    int w = view ? view->frameGeometry().width()  / c : DESKTOP_RECT().width()  / c;
+    int h = view ? view->frameGeometry().height() / r : DESKTOP_RECT().height() / r;
     renderer->widget()->resize(w, h);
     mpPlayer->addVideoRenderer(renderer);
-    int i = (mRenderers.size()-1)/cols();
-    int j = (mRenderers.size()-1)%cols();
-    if (view) {
+    int i = (mRenderers.size()-1) / cols();
+    int j = (mRenderers.size()-1) % cols();
+
+    if (view)
+    {
         view->resize(DESKTOP_RECT().size());
         ((QGridLayout*)view->layout())->addWidget(renderer->widget(), i, j);
         view->show();
-    } else {
+    }
+    else
+    {
         renderer->widget()->move(j*w, i*h);
         renderer->widget()->show();
     }
+
     updateROI();
 }
 
 void VideoGroup::removeRenderer()
 {
     mRenderers = mpPlayer->videoOutputs();
+
     if (mRenderers.isEmpty())
         return;
-    VideoRenderer *r = mRenderers.takeLast();
+
+    VideoRenderer* r = mRenderers.takeLast();
     mpPlayer->removeVideoRenderer(r);
-    if (view) {
+
+    if (view)
+    {
         view->layout()->removeWidget(r->widget());
     }
+
     delete r;
     updateROI();
 }
@@ -271,18 +345,25 @@ void VideoGroup::updateROI()
 {
     if (mRenderers.isEmpty())
         return;
-    if (!m1Frame) {
-        foreach (VideoRenderer *renderer, mRenderers) {
+
+    if (!m1Frame)
+    {
+        foreach (VideoRenderer* const renderer, mRenderers)
+        {
             renderer->setRegionOfInterest(0, 0, 0, 0);
         }
+
         return;
     }
+
     int W = view ? view->frameGeometry().width() : DESKTOP_RECT().width();
     int H = view ? view->frameGeometry().height() : DESKTOP_RECT().height();
     int w = W / c;
     int h = H / r;
-    for (int i = 0; i < mRenderers.size(); ++i) {
-        VideoRenderer *renderer = mRenderers.at(i);
+
+    for (int i = 0 ; i < mRenderers.size() ; ++i)
+    {
+        VideoRenderer* renderer = mRenderers.at(i);
         renderer->setRegionOfInterest(qreal((i%c)*w)/qreal(W), qreal((i/c)*h)/qreal(H), qreal(w)/qreal(W), qreal(h)/qreal(H));
     }
 }

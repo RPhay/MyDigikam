@@ -21,22 +21,28 @@
  *
  * ============================================================ */
 
+#ifndef QTAV_EXAMPLE_VIDEOWALL_H
+#define QTAV_EXAMPLE_VIDEOWALL_H
 
-
-#ifndef QTAV_VIDEOWALL_H
-#define QTAV_VIDEOWALL_H
+// Qt includes
 
 #include <QList>
-#include <QtAV>
-#include <QtAVWidgets>
 #include <QPushButton>
+
+// Local includes
+
+#include "QtAV.h"
+#include "QtAVWidgets.h"
 
 class VideoGroup : public QObject
 {
     Q_OBJECT
+
 public:
-    explicit VideoGroup(QObject *parent = 0);
+
+    explicit VideoGroup(QObject* const parent = nullptr);
     ~VideoGroup();
+
     void setVideoRendererTypeString(const QString& vt);
     void setRows(int n);
     void setCols(int n);
@@ -47,6 +53,7 @@ public:
     void updateROI();
 
 public Q_SLOTS:
+
     void setSingleWindow(bool s);
     void toggleSingleFrame(bool s);
     void toggleFrameless(bool f);
@@ -55,19 +62,20 @@ public Q_SLOTS:
     void removeRenderer();
 
 private:
-    bool m1Window;
-    bool m1Frame;
-    bool mFrameless;
-    int r, c;
-    int timer_id;
-    QtAV::AVPlayer *mpPlayer;
-    QWidget *view;
-    QWidget *mpBar;
-    QPushButton *mpAdd, *mpRemove, *mpOpen, *mpPlay, *mpStop, *mpPause, *mp1Window;
-    QPushButton *mp1Frame;
-    QPushButton *mpFrameless;
-    QString vid;
+
+    bool                        m1Window;
+    bool                        m1Frame;
+    bool                        mFrameless;
+    int                         r, c;
+    int                         timer_id;
+    QtAV::AVPlayer*             mpPlayer;
+    QWidget*                    view;
+    QWidget*                    mpBar;
+    QPushButton*                mpAdd, *mpRemove, *mpOpen, *mpPlay, *mpStop, *mpPause, *mp1Window;
+    QPushButton*                mp1Frame;
+    QPushButton*                mpFrameless;
+    QString                     vid;
     QList<QtAV::VideoRenderer*> mRenderers;
 };
 
-#endif // QTAV_VIDEOWALL_H
+#endif // QTAV_EXAMPLE_VIDEOWALL_H
