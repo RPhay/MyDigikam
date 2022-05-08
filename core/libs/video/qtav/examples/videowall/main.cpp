@@ -21,49 +21,73 @@
  *
  * ============================================================ */
 
-
+// C++ includes
 
 #include <cstdio>
 #include <cstdlib>
+
+// Qt includes
+
 #include <QApplication>
 #include <QFile>
 #include <QMessageBox>
-#include "VideoWall.h"
 
-int main(int argc, char *argv[])
+// Local includes
+
+#include "VideoWall.h"
+#include "digikam_debug.h"
+
+int main(int argc, char* argv[])
 {
     QApplication a(argc, argv);
-    int r = 3, c = 3;
+    int r   = 3, c = 3;
     int idx = 0;
+
     if ((idx = a.arguments().indexOf(QLatin1String("-r"))) > 0)
         r = a.arguments().at(idx + 1).toInt();
+
     if ((idx = a.arguments().indexOf(QLatin1String("-c"))) > 0)
         c = a.arguments().at(idx + 1).toInt();
+
     QString vo;
     idx = a.arguments().indexOf(QLatin1String("-vo"));
-    if (idx > 0) {
+
+    if (idx > 0)
+    {
         vo = a.arguments().at(idx+1);
-    } else {
+    }
+    else
+    {
         QString exe(a.arguments().at(0));
         qCDebug(DIGIKAM_TESTS_LOG).noquote() << QString::asprintf("exe: %s", exe.toUtf8().constData());
         int i = exe.lastIndexOf(QLatin1Char('-'));
-        if (i > 0) {
+
+        if (i > 0)
+        {
             vo = exe.mid(i+1, exe.indexOf(QLatin1Char('.')) - i - 1);
         }
     }
+
     qCDebug(DIGIKAM_TESTS_LOG).noquote() << QString::asprintf("vo: %s", vo.toUtf8().constData());
+
     VideoWall wall;
     wall.setVideoRendererTypeString(vo.toLower());
     wall.setRows(r);
     wall.setCols(c);
     wall.show();
     QString file;
+
     if (a.arguments().size() > 1)
         file = a.arguments().last();
-    if (QFile(file).exists()) {
+
+    if (QFile(file).exists())
+    {
         wall.play(file);
-    } else {
+    }
+    else
+    {
         wall.help();
     }
+
     return a.exec();
 }

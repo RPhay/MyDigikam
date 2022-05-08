@@ -21,9 +21,10 @@
  *
  * ============================================================ */
 
-
-
 #include "VideoWall.h"
+
+// Qt includes
+
 #include <QApplication>
 #include <QDesktopWidget>
 #include <QEvent>
@@ -35,48 +36,70 @@
 #include <QMessageBox>
 #include <QMimeData>
 #include <QUrl>
-#include <QtAV/AudioOutput.h>
-#include <QtAVWidgets>
+
+// Local includes
+
+#include "AudioOutput.h"
+#include "QtAVWidgets.h"
+#include "digikam_debug.h"
 
 using namespace QtAV;
+
 const int kSyncInterval = 2000;
 
-VideoWall::VideoWall(QObject *parent) :
-    QObject(parent),r(3),c(3),view(0),menu(0)
-  , vid(QString::fromLatin1("qpainter"))
+VideoWall::VideoWall(QObject* const parent)
+    : QObject(parent),
+      r(3),
+      c(3),
+      view(0),
+      menu(0),
+      vid(QString::fromLatin1("qpainter"))
 {
     QtAV::Widgets::registerRenderers();
     clock = new AVClock(this);
     clock->setClockType(AVClock::ExternalClock);
-    view = new QWidget;
-    if (view) {
+    view  = new QWidget;
+
+    if (view)
+    {
         qCDebug(DIGIKAM_TESTS_LOG).noquote() << QString::asprintf("WA_OpaquePaintEvent=%d", view->testAttribute(Qt::WA_OpaquePaintEvent));
         view->resize(qApp->desktop()->size());
         view->move(QPoint(0, 0));
         view->show();
     }
+
     view->installEventFilter(this);
 }
 
 VideoWall::~VideoWall()
 {
-    if (menu) {
+    if (menu)
+    {
         delete menu;
         menu = 0;
     }
-    if (!players.isEmpty()) {
-        foreach (AVPlayer *player, players) {
+
+    if (!players.isEmpty())
+    {
+        foreach (AVPlayer* player, players)
+        {
             player->stop();
             VideoRenderer* renderer = player->renderer();
-            if (renderer->widget()) {
-                renderer->widget()->close(); //TODO: rename
+
+            if (renderer->widget())
+            {
+                renderer->widget()->close(); // TODO: rename
+
                 if (!renderer->widget()->testAttribute(Qt::WA_DeleteOnClose) && !renderer->widget()->parent())
                     delete renderer;
+
                 delete player;
             }
         }
+
         players.clear();
     }
+
     delete view;
 }
 
@@ -107,34 +130,44 @@ int VideoWall::cols() const
 
 void VideoWall::show()
 {
-    if (!players.isEmpty()) {
-        foreach (AVPlayer *player, players) {
+    if (!players.isEmpty())
+    {
+        foreach (AVPlayer* const player, players)
+        {
             player->stop();
             VideoRenderer* renderer = player->renderer();
-            if (renderer->widget()) {
+
+            if (renderer->widget())
+            {
                 renderer->widget()->close();
+
                 if (!renderer->widget()->testAttribute(Qt::WA_DeleteOnClose) && !renderer->widget()->parent())
                     delete renderer;
+
                 delete player;
             }
         }
+
         players.clear();
     }
+
     qCDebug(DIGIKAM_TESTS_LOG).noquote() << QString::asprintf("show wall: %d x %d", r, c);
 
-    int w = view ? view->frameGeometry().width()/c : qApp->desktop()->width()/c;
-    int h = view ? view->frameGeometry().height()/r : qApp->desktop()->height()/r;
-    if (view) {
-        QGridLayout *layout = new QGridLayout;
+    int w = view ? view->frameGeometry().width()  / c : qApp->desktop()->width()  / c;
+    int h = view ? view->frameGeometry().height() / r : qApp->desktop()->height() / r;
+
+    if (view)
+    {
+        QGridLayout* layout = new QGridLayout;
         layout->setSizeConstraint(QLayout::SetMaximumSize);
         layout->setSpacing(1);
-        layout->setMargin(0);
         layout->setContentsMargins(0, 0, 0, 0);
         view->setLayout(layout);
     }
 
     VideoRendererId v = VideoRendererId_Widget;
-    if (vid == QLatin1String("gl"))
+
+    if      (vid == QLatin1String("gl"))
         v = VideoRendererId_GLWidget2;
     else if (vid == QLatin1String("opengl"))
         v = VideoRendererId_OpenGLWidget;
@@ -146,8 +179,11 @@ void VideoWall::show()
         v = VideoRendererId_X11;
     else if (vid == QLatin1String("xv"))
         v = VideoRendererId_XV;
-    for (int i = 0; i < r; ++i) {
-        for (int j = 0; j < c; ++j) {
+
+    for (int i = 0 ; i < r ; ++i)
+    {
+        for (int j = 0 ; j < c ; ++j)
+        {
             VideoRenderer* renderer = VideoRenderer::create(v);
             renderer->widget()->setWindowFlags(renderer->widget()->windowFlags()| Qt::FramelessWindowHint);
             renderer->widget()->setAttribute(Qt::WA_DeleteOnClose);
@@ -155,8 +191,12 @@ void VideoWall::show()
             renderer->widget()->move(j*w, i*h);
             AVPlayer *player = new AVPlayer;
             player->setRenderer(renderer);
-            connect(player, SIGNAL(started()), SLOT(changeClockType()));
+
+            connect(player, SIGNAL(started()),
+                    this, SLOT(changeClockType()));
+
             players.append(player);
+
             if (view)
                 ((QGridLayout*)view->layout())->addWidget(renderer->widget(), i, j);
         }
@@ -167,11 +207,15 @@ void VideoWall::play(const QString &file)
 {
     if (players.isEmpty())
         return;
+
     clock->reset();
     clock->start();
-    foreach (AVPlayer *player, players) {
+
+    foreach (AVPlayer* const player, players)
+    {
         player->play(file);
     }
+
     timer_id = startTimer(kSyncInterval);
 }
 
@@ -179,22 +223,28 @@ void VideoWall::stop()
 {
     clock->reset();
     killTimer(timer_id);
-    foreach (AVPlayer* player, players) {
-        player->stop(); //check playing?
+
+    foreach (AVPlayer* const player, players)
+    {
+        player->stop();         // check playing?
     }
 }
 
 void VideoWall::openLocalFile()
 {
     QString file = QFileDialog::getOpenFileName(0, tr("Open a video"));
+
     if (file.isEmpty())
         return;
+
     stop();
     clock->reset();
     clock->start();
     timer_id = startTimer(kSyncInterval);
-    foreach (AVPlayer* player, players) {
-        player->setFile(file); //TODO: load all players before play
+
+    foreach (AVPlayer* const player, players)
+    {
+        player->setFile(file);  // TODO: load all players before play
         player->play();
     }
 }
@@ -202,15 +252,19 @@ void VideoWall::openLocalFile()
 void VideoWall::openUrl()
 {
     QString url = QInputDialog::getText(0, tr("Open an url"), tr("Url"));
+
     if (url.isEmpty())
         return;
+
     stop();
     clock->reset();
     clock->start();
     timer_id = startTimer(kSyncInterval);
-    foreach (AVPlayer* player, players) {
+
+    foreach (AVPlayer* const player, players)
+    {
         player->setFile(url);
-        player->play(); //TODO: load all players before play
+        player->play();         // TODO: load all players before play
     }
 }
 
@@ -241,121 +295,190 @@ void VideoWall::help()
 bool VideoWall::eventFilter(QObject *watched, QEvent *event)
 {
     //qCDebug(DIGIKAM_TESTS_LOG).noquote() << QString::asprintf("EventFilter::eventFilter to %p", watched);
+
     Q_UNUSED(watched);
+
     if (players.isEmpty())
         return false;
+
     QEvent::Type type = event->type();
-    switch (type) {
-    case QEvent::KeyPress: {
+
+    switch (type)
+    {
+    case QEvent::KeyPress:
+    {
         //qCDebug(DIGIKAM_TESTS_LOG).noquote() << QString::asprintf("Event target = %p %p", watched, player->renderer);
-        //avoid receive an event multiple times
-        QKeyEvent *key_event = static_cast<QKeyEvent*>(event);
-        int key = key_event->key();
+
+        // avoid receive an event multiple times
+
+        QKeyEvent* key_event = static_cast<QKeyEvent*>(event);
+        int key              = key_event->key();
         Qt::KeyboardModifiers modifiers = key_event->modifiers();
-        switch (key) {
-        case Qt::Key_F: {
+
+        switch (key)
+        {
+        case Qt::Key_F:
+        {
             QWidget *w = qApp->activeWindow();
+
             if (!w)
                 return false;
+
             if (w->isFullScreen())
                 w->showNormal();
             else
                 w->showFullScreen();
         }
             break;
+
         case Qt::Key_N: //check playing?
-            foreach (AVPlayer* player, players) {
+
+            foreach (AVPlayer* player, players)
+            {
                 player->stepForward();
             }
+
             break;
 
-        case Qt::Key_O: {
-            if (modifiers == Qt::ControlModifier) {
+        case Qt::Key_O:
+        {
+            if (modifiers == Qt::ControlModifier)
+            {
                 openLocalFile();
+
                 return true;
-            } else/* if (m == Qt::NoModifier) */{
+            }
+            else/* if (m == Qt::NoModifier) */
+            {
                 return false;
             }
         }
             break;
+
         case Qt::Key_P:
+
             clock->reset();
             clock->start();
-            foreach (AVPlayer* player, players) {
+
+            foreach (AVPlayer* player, players)
+            {
                 player->play();
             }
+
             timer_id = startTimer(kSyncInterval);
+
             break;
+
         case Qt::Key_S:
+
             stop();
+
             break;
-        case Qt::Key_Space: //check playing?
+
+        case Qt::Key_Space: // check playing?
+
             clock->pause(!clock->isPaused());
-            foreach (AVPlayer* player, players) {
+
+            foreach (AVPlayer* player, players)
+            {
                 player->pause(!player->isPaused());
             }
+
             break;
+
         case Qt::Key_Up:
-            foreach (AVPlayer* player, players) {
-                if (player->audio()) {
+
+            foreach (AVPlayer* player, players)
+            {
+                if (player->audio())
+                {
                     qreal v = player->audio()->volume();
-                    if (v > 0.5)
+
+                    if      (v > 0.5)
                         v += 0.1;
                     else if (v > 0.1)
                         v += 0.05;
                     else
                         v += 0.025;
+
                     player->audio()->setVolume(v);
                 }
             }
+
             break;
+
         case Qt::Key_Down:
-            foreach (AVPlayer* player, players) {
-                if (player->audio()) {
+
+            foreach (AVPlayer* player, players)
+            {
+                if (player->audio())
+                {
                     qreal v = player->audio()->volume();
-                    if (v > 0.5)
+
+                    if      (v > 0.5)
                         v -= 0.1;
                     else if (v > 0.1)
                         v -= 0.05;
                     else
                         v -= 0.025;
+
                     player->audio()->setVolume(v);
                 }
             }
+
             break;
-        case Qt::Key_Left: {
+
+        case Qt::Key_Left:
+        {
             qCDebug(DIGIKAM_TESTS_LOG).noquote() << QString::asprintf("<-");
             const qint64 newPos = clock->value()*1000.0 - 2000.0;
             clock->updateExternalClock(newPos);
-            foreach (AVPlayer* player, players) {
+
+            foreach (AVPlayer* player, players)
+            {
                 player->setPosition(newPos);
             }
         }
             break;
-        case Qt::Key_Right: {
+
+        case Qt::Key_Right:
+        {
             qCDebug(DIGIKAM_TESTS_LOG).noquote() << QString::asprintf("->");
             const qint64 newPos = clock->value()*1000.0 + 2000.0;
             clock->updateExternalClock(newPos);
-            foreach (AVPlayer* player, players) {
+
+            foreach (AVPlayer* player, players)
+            {
                 player->setPosition(newPos);
             }
         }
             break;
+
         case Qt::Key_M:
-            foreach (AVPlayer* player, players) {
-                if (player->audio()) {
+            foreach (AVPlayer* player, players)
+            {
+                if (player->audio())
+                {
                     player->audio()->setMute(!player->audio()->isMute());
                 }
             }
+
             break;
+
         default:
+
             return false;
         }
+
         break;
     }
-    case QEvent::ContextMenu: {
+
+    case QEvent::ContextMenu:
+    {
         QContextMenuEvent *e = static_cast<QContextMenuEvent*>(event);
-        if (!menu) {
+
+        if (!menu)
+        {
             menu = new QMenu();
             menu->addAction(tr("Open"), this, SLOT(openLocalFile()));
             menu->addAction(tr("Open Url"), this, SLOT(openUrl()));
@@ -365,16 +488,21 @@ bool VideoWall::eventFilter(QObject *watched, QEvent *event)
             menu->addSeparator();
             menu->addAction(tr("About Qt"), qApp, SLOT(aboutQt()));
         }
+
         menu->popup(e->globalPos());
         menu->exec();
     }
+
     case QEvent::DragEnter:
-    case QEvent::DragMove: {
+    case QEvent::DragMove:
+    {
         QDropEvent *e = static_cast<QDropEvent*>(event);
         e->acceptProposedAction();
     }
         break;
-    case QEvent::Drop: {
+
+    case QEvent::Drop:
+    {
         QDropEvent *e = static_cast<QDropEvent*>(event);
         QString path = e->mimeData()->urls().first().toLocalFile();
         stop();
@@ -382,23 +510,33 @@ bool VideoWall::eventFilter(QObject *watched, QEvent *event)
         e->acceptProposedAction();
     }
         break;
+
     default:
+
         return false;
     }
-    return true; //false: for text input
+
+    return true; // false: for text input
 }
 
 void VideoWall::timerEvent(QTimerEvent *e)
 {
-    if (e->timerId() != timer_id) {
+    if (e->timerId() != timer_id)
+    {
         qCDebug(DIGIKAM_TESTS_LOG).noquote() << QString::asprintf("Not clock id");
+
         return;
     }
-    if (!clock->isActive()) {
+
+    if (!clock->isActive())
+    {
         qCDebug(DIGIKAM_TESTS_LOG).noquote() << QString::asprintf("clock not running");
+
         return;
     }
-    foreach (AVPlayer *player, players) {
+
+    foreach (AVPlayer *player, players)
+    {
         player->masterClock()->updateExternalClock(*clock);
     }
 }

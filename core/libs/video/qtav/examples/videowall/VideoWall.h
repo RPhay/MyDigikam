@@ -21,24 +21,31 @@
  *
  * ============================================================ */
 
+#ifndef QTAV_EXAMPLE_VIDEOWALL_H
+#define QTAV_EXAMPLE_VIDEOWALL_H
 
-
-#ifndef QTAV_VIDEOWALL_H
-#define QTAV_VIDEOWALL_H
+// Qt includes
 
 #include <QList>
-#include <QtAV/AVPlayer.h>
-#include <QtAVWidgets/WidgetRenderer.h>
+
+// Local includes
+
+#include "AVPlayer.h"
+#include "WidgetRenderer.h"
 
 QT_BEGIN_NAMESPACE
 class QMenu;
 QT_END_NAMESPACE
+
 class VideoWall : public QObject
 {
     Q_OBJECT
+
 public:
-    explicit VideoWall(QObject *parent = 0);
+
+    explicit VideoWall(QObject* const parent = nullptr);
     ~VideoWall();
+
     void setVideoRendererTypeString(const QString& vt);
     void setRows(int n);
     void setCols(int n);
@@ -48,6 +55,7 @@ public:
     void play(const QString& file);
 
 public Q_SLOTS:
+
     void stop();
     void openLocalFile();
     void openUrl();
@@ -55,20 +63,23 @@ public Q_SLOTS:
     void help();
 
 protected:
-    virtual bool eventFilter(QObject *, QEvent *);
-    virtual void timerEvent(QTimerEvent *e);
+
+    virtual bool eventFilter(QObject*, QEvent*);
+    virtual void timerEvent(QTimerEvent* e);
 
 private Q_SLOTS:
+
     void changeClockType();
 
 private:
-    int r, c;
-    int timer_id;
-    QtAV::AVClock *clock;
+
+    int                    r, c;
+    int                    timer_id;
+    QtAV::AVClock*         clock;
     QList<QtAV::AVPlayer*> players;
-    QWidget *view;
-    QMenu *menu;
-    QString vid;
+    QWidget*               view;
+    QMenu*                 menu;
+    QString                vid;
 };
 
-#endif // QTAV_VIDEOWALL_H
+#endif // QTAV_EXAMPLE_VIDEOWALL_H
