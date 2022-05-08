@@ -21,48 +21,64 @@
  *
  * ============================================================ */
 
-
-
 #ifndef QTAV_EXAMPLE_SIMPLEFILTER_H
 #define QTAV_EXAMPLE_SIMPLEFILTER_H
 
-#include <QtAV/Filter.h>
+// Qt includes
+
 #include <QElapsedTimer>
 #include <QMatrix4x4>
+#include <QImage>
+#include <QString>
 
-namespace QtAV {
+// Local includes
+
+#include "Filter.h"
+#include "VideoFrame.h"
+#include "QtAV_Statistics.h"
+
+using namespace QtAV;
 
 class SimpleFilter : public VideoFilter
 {
     Q_OBJECT
+
 public:
-    SimpleFilter(QObject *parent = 0);
+
+    SimpleFilter(QObject* const parent = nullptr);
     virtual ~SimpleFilter();
+
     void enableRotate(bool r);
     void enableWaveEffect(bool w);
-    bool isSupported(VideoFilterContext::Type ct) const {
-        return ct == VideoFilterContext::QtPainter || ct == VideoFilterContext::X11;
+
+    bool isSupported(VideoFilterContext::Type ct) const
+    {
+        return ((ct == VideoFilterContext::QtPainter) || (ct == VideoFilterContext::X11));
     }
+
     void setText(const QString& text);
     QString text() const;
+
     //show image if text is null
+
     void setImage(const QImage& img);
 
     void prepare();
 
 protected:
-    virtual void process(Statistics* statistics, VideoFrame* frame);
-    virtual void timerEvent(QTimerEvent *);
-private:
-    bool mCanRot;
-    bool mWave;
-    QElapsedTimer mTime;
-    qreal mStartValue;
-    QString mText;
-    QMatrix4x4 mMat;
-    QImage mImage;
-};
 
-} //namespace QtAV
+    virtual void process(Statistics* statistics, VideoFrame* frame);
+    virtual void timerEvent(QTimerEvent*);
+
+private:
+
+    bool            mCanRot;
+    bool            mWave;
+    QElapsedTimer   mTime;
+    qreal           mStartValue;
+    QString         mText;
+    QMatrix4x4      mMat;
+    QImage          mImage;
+};
 
 #endif // QTAV_EXAMPLE_SIMPLEFILTER_H

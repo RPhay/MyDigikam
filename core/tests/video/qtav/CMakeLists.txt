@@ -113,6 +113,26 @@ target_compile_definitions(qtav-framereader_cli PRIVATE ${MEDIAPLAYER_DEFINITION
 
 # -------------------------------------------------
 
+set(qtavfilters_SRCS ${CMAKE_SOURCE_DIR}/core/libs/video/qtav/examples/filters/main.cpp
+                     ${CMAKE_SOURCE_DIR}/core/libs/video/qtav/examples/filters/SimpleFilter.cpp
+)
+
+if(Qt6_FOUND)
+
+    qt6_add_resources(qtavfilters_SRCS ${CMAKE_SOURCE_DIR}/core/libs/video/qtav/examples/filters/res.qrc)
+
+else()
+
+    qt5_add_resources(qtavfilters_SRCS ${CMAKE_SOURCE_DIR}/core/libs/video/qtav/examples/filters/res.qrc)
+
+endif()
+
+add_executable(qtav-filters_gui ${qtavfilters_SRCS})
+target_link_libraries(qtav-filters_gui digikamcore ${COMMON_TEST_LINK})
+target_compile_definitions(qtav-filters_gui PRIVATE ${MEDIAPLAYER_DEFINITIONS})
+
+# -------------------------------------------------
+
 add_executable(qtav-glslfilter_gui ${CMAKE_SOURCE_DIR}/core/libs/video/qtav/examples/glslfilter/main.cpp)
 target_link_libraries(qtav-glslfilter_gui digikamcore ${COMMON_TEST_LINK})
 target_compile_definitions(qtav-glslfilter_gui PRIVATE ${MEDIAPLAYER_DEFINITIONS})
