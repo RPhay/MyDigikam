@@ -21,15 +21,25 @@
  *
  * ============================================================ */
 
+// C++ includes
 
 #include <cstdio>
 #include <cstdlib>
+
+// Qt includes
+
 #include <QCoreApplication>
 #include <QDateTime>
 #include <QQueue>
 #include <QStringList>
-#include <QtAV/FrameReader.h>
+
+// Local includes
+
+#include "FrameReader.h"
+#include "digikam_debug.h"
+
 using namespace QtAV;
+
 int main(int argc, char *argv[])
 {
     QCoreApplication a(argc, argv);
@@ -39,26 +49,41 @@ int main(int argc, char *argv[])
     QQueue<qint64> t;
     int count = 0;
     qint64 t0 = QDateTime::currentMSecsSinceEpoch();
-    while (r.readMore()) {
-        while (r.hasEnoughVideoFrames()) {
-            const VideoFrame f = r.getVideoFrame(); //TODO: if eof
+
+    while (r.readMore())
+    {
+        while (r.hasEnoughVideoFrames())
+        {
+            const VideoFrame f = r.getVideoFrame(); // TODO: if eof
+
             if (!f)
                 continue;
+
             count++;
+
             //r.readMore();
+
             const qint64 now = QDateTime::currentMSecsSinceEpoch();
-            const qint64 dt = now - t0;
+            const qint64 dt  = now - t0;
             t.enqueue(now);
-            printf("decode @%.3f count: %d, elapsed: %lld, fps: %.1f/%.1f\r", f.timestamp(), count, dt, count*1000.0/dt, t.size()*1000.0/(now - t.first()));fflush(0);
+
+           qCDebug(DIGIKAM_TESTS_LOG).noquote()
+                << QString::asprintf("decode @%.3f count: %d, elapsed: %lld, fps: %.1f/%.1f\r",
+                    f.timestamp(), count, dt, count*1000.0/dt, t.size()*1000.0/(now - t.first()));fflush(0);
+
             if (t.size() > 10)
                 t.dequeue();
         }
     }
-    while (r.hasVideoFrame()) {
+
+    while (r.hasVideoFrame())
+    {
         const VideoFrame f = r.getVideoFrame();
-        qDebug("pts: %.3f", f.timestamp());
+
+        qCDebug(DIGIKAM_TESTS_LOG).noquote() << QString::asprintf("pts: %.3f", f.timestamp());
     }
-    qDebug("read done");
+
+    qCDebug(DIGIKAM_TESTS_LOG).noquote() << QString::asprintf("read done");
+
     return 0;
 }
-

@@ -105,3 +105,10 @@ target_link_libraries(qtav-audiopipeline_cli digikamcore ${COMMON_TEST_LINK})
 target_compile_definitions(qtav-audiopipeline_cli PRIVATE ${MEDIAPLAYER_DEFINITIONS})
 
 # -------------------------------------------------
+
+add_executable(qtav-framereader_cli ${CMAKE_SOURCE_DIR}/core/libs/video/qtav/examples/framereader/main.cpp)
+ecm_mark_nongui_executable(qtav-framereader_cli)
+target_link_libraries(qtav-framereader_cli digikamcore ${COMMON_TEST_LINK})
+target_compile_definitions(qtav-framereader_cli PRIVATE ${MEDIAPLAYER_DEFINITIONS})
+
+# -------------------------------------------------

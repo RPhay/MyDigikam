@@ -125,7 +125,7 @@ int main(int argc, char *argv[])
             qCDebug(DIGIKAM_TESTS_LOG) << "Output: " << af;
         }
 
-        printf("playing: %.3f...\r", frame.timestamp());
+       qCDebug(DIGIKAM_TESTS_LOG).noquote() << QString::asprintf("playing: %.3f...\r", frame.timestamp());
         fflush(0);
 
         // always resample ONCE. otherwise data are all 0x0. QtAV bug

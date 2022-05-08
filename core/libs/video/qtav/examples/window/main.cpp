@@ -58,7 +58,7 @@ int main(int argc, char *argv[])
 {
     QGuiApplication a(argc, argv);
     if (a.arguments().size() < 2) {
-        qDebug("./window file");
+        qCDebug(DIGIKAM_TESTS_LOG).noquote() << QString::asprintf("./window file");
         return 0;
     }
     PlayerWindow win;

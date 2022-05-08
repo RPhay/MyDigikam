@@ -34,9 +34,9 @@ using namespace QtAV;
 int main(int argc, char *argv[])
 {
     QCoreApplication a(argc, argv);
-    qDebug("QtAV simpletranscode");
-    qDebug("./simpletranscode -i infile -o outfile [-async] [-c:v video_codec (default: libx264)] [-hwdev dev] [-f format] [-an] [-ss HH:mm:ss.z]");
-    qDebug("-an: disable audio");
+    qCDebug(DIGIKAM_TESTS_LOG).noquote() << QString::asprintf("QtAV simpletranscode");
+    qCDebug(DIGIKAM_TESTS_LOG).noquote() << QString::asprintf("./simpletranscode -i infile -o outfile [-async] [-c:v video_codec (default: libx264)] [-hwdev dev] [-f format] [-an] [-ss HH:mm:ss.z]");
+    qCDebug(DIGIKAM_TESTS_LOG).noquote() << QString::asprintf("-an: disable audio");
     qCDebug(DIGIKAM_TESTS_LOG) << "examples:\n"
              << "./simpletranscode -i test.mp4 -o /tmp/test-%05d.png -f image2 -c:v png\n"
              << "./simpletranscode -i test.mp4 -o /tmp/bbb%04d.ts -f segment\n"

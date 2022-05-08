@@ -42,8 +42,8 @@ int main(int argc, char *argv[])
 {
     QApplication a(argc, argv);
     if (a.arguments().contains(QString::fromLatin1("-h")) || a.arguments().contains(QString::fromLatin1("--help"))) {
-        qDebug("Usage: %s [-vo qt/gl/d2d/gdi] [url/path]filename", a.applicationFilePath().section(QDir::separator(), -1).toUtf8().constData());
-        qDebug("\n%s", aboutQtAV_PlainText().toUtf8().constData());
+        qCDebug(DIGIKAM_TESTS_LOG).noquote() << QString::asprintf("Usage: %s [-vo qt/gl/d2d/gdi] [url/path]filename", a.applicationFilePath().section(QDir::separator(), -1).toUtf8().constData());
+        qCDebug(DIGIKAM_TESTS_LOG).noquote() << QString::asprintf("\n%s", aboutQtAV_PlainText().toUtf8().constData());
         return 0;
     }
 
@@ -53,13 +53,13 @@ int main(int argc, char *argv[])
         vo = a.arguments().at(idx+1);
     } else {
         QString exe(a.arguments().at(0));
-        qDebug("exe: %s", exe.toUtf8().constData());
+        qCDebug(DIGIKAM_TESTS_LOG).noquote() << QString::asprintf("exe: %s", exe.toUtf8().constData());
         int i = exe.lastIndexOf(QLatin1Char('-'));
         if (i > 0) {
             vo = exe.mid(i+1, exe.indexOf(QLatin1Char('.')) - i - 1);
         }
     }
-    qDebug("vo: %s", vo.toUtf8().constData());
+    qCDebug(DIGIKAM_TESTS_LOG).noquote() << QString::asprintf("vo: %s", vo.toUtf8().constData());
     bool opt_has_file = argc > idx + 2;
     vo = vo.toLower();
     if (vo != QLatin1String("gl") && vo != QLatin1String("d2d") && vo != QLatin1String("gdi") && vo != QLatin1String("xv") && vo != QLatin1String("x11"))

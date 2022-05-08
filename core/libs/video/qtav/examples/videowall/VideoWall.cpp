@@ -50,7 +50,7 @@ VideoWall::VideoWall(QObject *parent) :
     clock->setClockType(AVClock::ExternalClock);
     view = new QWidget;
     if (view) {
-        qDebug("WA_OpaquePaintEvent=%d", view->testAttribute(Qt::WA_OpaquePaintEvent));
+        qCDebug(DIGIKAM_TESTS_LOG).noquote() << QString::asprintf("WA_OpaquePaintEvent=%d", view->testAttribute(Qt::WA_OpaquePaintEvent));
         view->resize(qApp->desktop()->size());
         view->move(QPoint(0, 0));
         view->show();
@@ -120,7 +120,7 @@ void VideoWall::show()
         }
         players.clear();
     }
-    qDebug("show wall: %d x %d", r, c);
+    qCDebug(DIGIKAM_TESTS_LOG).noquote() << QString::asprintf("show wall: %d x %d", r, c);
 
     int w = view ? view->frameGeometry().width()/c : qApp->desktop()->width()/c;
     int h = view ? view->frameGeometry().height()/r : qApp->desktop()->height()/r;
@@ -240,14 +240,14 @@ void VideoWall::help()
 
 bool VideoWall::eventFilter(QObject *watched, QEvent *event)
 {
-    //qDebug("EventFilter::eventFilter to %p", watched);
+    //qCDebug(DIGIKAM_TESTS_LOG).noquote() << QString::asprintf("EventFilter::eventFilter to %p", watched);
     Q_UNUSED(watched);
     if (players.isEmpty())
         return false;
     QEvent::Type type = event->type();
     switch (type) {
     case QEvent::KeyPress: {
-        //qDebug("Event target = %p %p", watched, player->renderer);
+        //qCDebug(DIGIKAM_TESTS_LOG).noquote() << QString::asprintf("Event target = %p %p", watched, player->renderer);
         //avoid receive an event multiple times
         QKeyEvent *key_event = static_cast<QKeyEvent*>(event);
         int key = key_event->key();
@@ -324,7 +324,7 @@ bool VideoWall::eventFilter(QObject *watched, QEvent *event)
             }
             break;
         case Qt::Key_Left: {
-            qDebug("<-");
+            qCDebug(DIGIKAM_TESTS_LOG).noquote() << QString::asprintf("<-");
             const qint64 newPos = clock->value()*1000.0 - 2000.0;
             clock->updateExternalClock(newPos);
             foreach (AVPlayer* player, players) {
@@ -333,7 +333,7 @@ bool VideoWall::eventFilter(QObject *watched, QEvent *event)
         }
             break;
         case Qt::Key_Right: {
-            qDebug("->");
+            qCDebug(DIGIKAM_TESTS_LOG).noquote() << QString::asprintf("->");
             const qint64 newPos = clock->value()*1000.0 + 2000.0;
             clock->updateExternalClock(newPos);
             foreach (AVPlayer* player, players) {
@@ -391,11 +391,11 @@ bool VideoWall::eventFilter(QObject *watched, QEvent *event)
 void VideoWall::timerEvent(QTimerEvent *e)
 {
     if (e->timerId() != timer_id) {
-        qDebug("Not clock id");
+        qCDebug(DIGIKAM_TESTS_LOG).noquote() << QString::asprintf("Not clock id");
         return;
     }
     if (!clock->isActive()) {
-        qDebug("clock not running");
+        qCDebug(DIGIKAM_TESTS_LOG).noquote() << QString::asprintf("clock not running");
         return;
     }
     foreach (AVPlayer *player, players) {

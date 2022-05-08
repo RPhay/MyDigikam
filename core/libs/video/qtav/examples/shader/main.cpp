@@ -143,7 +143,7 @@ int main(int argc, char *argv[])
 {
     QApplication a(argc, argv);
     if (a.arguments().size() < 2) {
-        qDebug("./shader file");
+        qCDebug(DIGIKAM_TESTS_LOG).noquote() << QString::asprintf("./shader file");
         return 0;
     }
     VideoOutput vo[4];
