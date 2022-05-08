@@ -131,3 +131,9 @@ target_link_libraries(qtav-simpletranscode_cli digikamcore ${COMMON_TEST_LINK})
 target_compile_definitions(qtav-simpletranscode_cli PRIVATE ${MEDIAPLAYER_DEFINITIONS})
 
 # -------------------------------------------------
+
+add_executable(qtav-window_cli ${CMAKE_SOURCE_DIR}/core/libs/video/qtav/examples/window/main.cpp)
+target_link_libraries(qtav-window_cli digikamcore ${COMMON_TEST_LINK})
+target_compile_definitions(qtav-window_cli PRIVATE ${MEDIAPLAYER_DEFINITIONS})
+
+# -------------------------------------------------

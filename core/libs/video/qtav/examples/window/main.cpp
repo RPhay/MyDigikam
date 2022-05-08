@@ -21,49 +21,74 @@
  *
  * ============================================================ */
 
+// Qt includes
 
 #include <QtGui>
-#include <QtAV>
+
+// Local includes
+
+#include "QtAV.h"
+#include "digikam_debug.h"
 
 using namespace QtAV;
+
 class PlayerWindow : public OpenGLWindowRenderer
 {
 public:
-    PlayerWindow(QWindow* parent = 0)
+
+    PlayerWindow(QWindow* const parent = nullptr)
         : OpenGLWindowRenderer(NoPartialUpdate, parent)
     {
         player.setRenderer(this);
     }
-    void play(const QString& file) {
+
+    void play(const QString& file)
+    {
         setTitle(file);
         player.setFile(file);
         player.play();
     }
+
 protected:
-    virtual void keyPressEvent(QKeyEvent *e) {
+
+    virtual void keyPressEvent(QKeyEvent* e)
+    {
         int key = e->key();
-        if (key == Qt::Key_Space) {
+
+        if      (key == Qt::Key_Space)
+        {
             player.togglePause();
-        } else if (key == Qt::Key_Left) {
+        }
+        else if (key == Qt::Key_Left)
+        {
             player.seekBackward();
-        } else if (key == Qt::Key_Right) {
+        }
+        else if (key == Qt::Key_Right)
+        {
             player.seekForward();
         }
     }
+
 private:
+
     AVPlayer player;
 };
 
 int main(int argc, char *argv[])
 {
     QGuiApplication a(argc, argv);
-    if (a.arguments().size() < 2) {
+
+    if (a.arguments().size() < 2)
+    {
         qCDebug(DIGIKAM_TESTS_LOG).noquote() << QString::asprintf("./window file");
+
         return 0;
     }
+
     PlayerWindow win;
     win.resize(600, 400);
     win.show();
     win.play(a.arguments().at(1));
+
     return a.exec();
 }
