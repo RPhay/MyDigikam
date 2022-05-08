@@ -60,13 +60,13 @@ private Q_SLOTS:
 
 private:
 
-    QtAV::VideoOutput *m_vo;
-    QtAV::AVPlayer *m_player;
-    QSlider *m_slider;
-    QPushButton *m_openBtn;
-    QPushButton *m_playBtn;
-    QPushButton *m_stopBtn;
-    int m_unit;
+    QtAV::VideoOutput*  m_vo;
+    QtAV::AVPlayer*     m_player;
+    QSlider*            m_slider;
+    QPushButton*        m_openBtn;
+    QPushButton*        m_playBtn;
+    QPushButton*        m_stopBtn;
+    int                 m_unit;
 };
 
 #endif // QTAV_EXAMPLE_PLAYERWINDOW_H

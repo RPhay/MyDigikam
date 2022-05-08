@@ -21,13 +21,16 @@
  *
  * ============================================================ */
 
+#ifndef QTAV_EXAMPLE_PLAYERWINDOW_H
+#define QTAV_EXAMPLE_PLAYERWINDOW_H
 
-
-#ifndef PLAYERWINDOW_H
-#define PLAYERWINDOW_H
+// Qt includes
 
 #include <QWidget>
-#include <QtAV>
+
+// Local includes
+
+#include "QtAV.h"
 
 QT_BEGIN_NAMESPACE
 class QSlider;
@@ -35,27 +38,36 @@ class QPushButton;
 class QLabel;
 class QCheckBox;
 QT_END_NAMESPACE
+
 class PlayerWindow : public QWidget
 {
     Q_OBJECT
+
 public:
-    explicit PlayerWindow(QWidget *parent = 0);
+
+    explicit PlayerWindow(QWidget* const parent = nullptr);
+
 public Q_SLOTS:
+
     void openMedia();
     void seek(int);
     void capture();
+
 private Q_SLOTS:
+
     void updateSlider();
     void updatePreview(const QImage& image);
     void onCaptureSaved(const QString& path);
     void onCaptureError();
+
 private:
-    QtAV::VideoOutput *m_vo;
-    QtAV::AVPlayer *m_player;
-    QSlider *m_slider;
-    QPushButton *m_openBtn;
-    QPushButton *m_captureBtn;
-    QLabel *m_preview;
+
+    QtAV::VideoOutput*  m_vo;
+    QtAV::AVPlayer*     m_player;
+    QSlider*            m_slider;
+    QPushButton*        m_openBtn;
+    QPushButton*        m_captureBtn;
+    QLabel*             m_preview;
 };
 
-#endif // PLAYERWINDOW_H
+#endif // QTAV_EXAMPLE_PLAYERWINDOW_H

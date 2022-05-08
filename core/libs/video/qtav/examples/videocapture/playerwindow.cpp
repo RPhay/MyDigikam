@@ -21,61 +21,89 @@
  *
  * ============================================================ */
 
-
-
 #include "playerwindow.h"
+
+// Qt includes
+
 #include <QPushButton>
 #include <QSlider>
 #include <QLabel>
 #include <QLayout>
 #include <QMessageBox>
 #include <QFileDialog>
-#include <QtAVWidgets>
+
+// Local includes
+
+#include "QtAVWidgets.h"
+
 using namespace QtAV;
 
-PlayerWindow::PlayerWindow(QWidget *parent) : QWidget(parent)
+PlayerWindow::PlayerWindow(QWidget* const parent)
+    : QWidget(parent)
 {
     QtAV::Widgets::registerRenderers();
     setWindowTitle(QString::fromLatin1("QtAV simple player example"));
-    m_player = new AVPlayer(this);
-    QVBoxLayout *vl = new QVBoxLayout();
+    m_player        = new AVPlayer(this);
+    QVBoxLayout* vl = new QVBoxLayout();
     setLayout(vl);
     m_vo = new VideoOutput(this);
-    if (!m_vo->widget()) {
+
+    if (!m_vo->widget())
+    {
         QMessageBox::warning(0, QString::fromLatin1("QtAV error"), QString::fromLatin1("Can not create video renderer"));
+
         return;
     }
+
     m_player->setRenderer(m_vo);
     vl->addWidget(m_vo->widget());
     m_slider = new QSlider();
     m_slider->setOrientation(Qt::Horizontal);
-    connect(m_slider, SIGNAL(sliderMoved(int)), SLOT(seek(int)));
-    connect(m_player, SIGNAL(positionChanged(qint64)), SLOT(updateSlider()));
-    connect(m_player, SIGNAL(started()), SLOT(updateSlider()));
+
+    connect(m_slider, SIGNAL(sliderMoved(int)),
+            this, SLOT(seek(int)));
+
+    connect(m_player, SIGNAL(positionChanged(qint64)),
+            this, SLOT(updateSlider()));
+
+    connect(m_player, SIGNAL(started()),
+            this, SLOT(updateSlider()));
 
     vl->addWidget(m_slider);
-    QHBoxLayout *hb = new QHBoxLayout();
+    QHBoxLayout* hb = new QHBoxLayout();
     vl->addLayout(hb);
-    m_openBtn = new QPushButton(tr("Open"));
-    m_captureBtn = new QPushButton(tr("Capture video frame"));
+    m_openBtn       = new QPushButton(tr("Open"));
+    m_captureBtn    = new QPushButton(tr("Capture video frame"));
     hb->addWidget(m_openBtn);
     hb->addWidget(m_captureBtn);
 
-    m_preview = new QLabel(tr("Capture preview"));
+    m_preview       = new QLabel(tr("Capture preview"));
     m_preview->setFixedSize(200, 150);
     hb->addWidget(m_preview);
-    connect(m_openBtn, SIGNAL(clicked()), SLOT(openMedia()));
-    connect(m_captureBtn, SIGNAL(clicked()), SLOT(capture()));
-    connect(m_player->videoCapture(), SIGNAL(imageCaptured(QImage)), SLOT(updatePreview(QImage)));
-    connect(m_player->videoCapture(), SIGNAL(saved(QString)), SLOT(onCaptureSaved(QString)));
-    connect(m_player->videoCapture(), SIGNAL(failed()), SLOT(onCaptureError()));
+
+    connect(m_openBtn, SIGNAL(clicked()),
+            this, SLOT(openMedia()));
+
+    connect(m_captureBtn, SIGNAL(clicked()),
+            this, SLOT(capture()));
+
+    connect(m_player->videoCapture(), SIGNAL(imageCaptured(QImage)),
+            this, SLOT(updatePreview(QImage)));
+
+    connect(m_player->videoCapture(), SIGNAL(saved(QString)),
+            this, SLOT(onCaptureSaved(QString)));
+
+    connect(m_player->videoCapture(), SIGNAL(failed()),
+            this, SLOT(onCaptureError()));
 }
 
 void PlayerWindow::openMedia()
 {
     QString file = QFileDialog::getOpenFileName(0, tr( "Open a video"));
+
     if (file.isEmpty())
         return;
+
     m_player->play(file);
 }
 
@@ -83,6 +111,7 @@ void PlayerWindow::seek(int pos)
 {
     if (!m_player->isPlaying())
         return;
+
     m_player->seek(pos*1000LL); // to msecs
 }
 
@@ -100,6 +129,7 @@ void PlayerWindow::updatePreview(const QImage &image)
 void PlayerWindow::capture()
 {
     //m_player->captureVideo();
+
     m_player->videoCapture()->capture();
 }
 

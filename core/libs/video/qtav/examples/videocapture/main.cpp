@@ -21,15 +21,20 @@
  *
  * ============================================================ */
 
+// Qt includes
 
 #include <QApplication>
+
+// Local includes
+
 #include "playerwindow.h"
 
-int main(int argc, char *argv[])
+int main(int argc, char* argv[])
 {
     QApplication a(argc, argv);
     PlayerWindow player;
     player.show();
     player.resize(800, 600);
+
     return a.exec();
 }
