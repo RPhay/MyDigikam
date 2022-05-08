@@ -305,215 +305,235 @@ bool VideoWall::eventFilter(QObject *watched, QEvent *event)
 
     switch (type)
     {
-    case QEvent::KeyPress:
-    {
-        //qCDebug(DIGIKAM_TESTS_LOG).noquote() << QString::asprintf("Event target = %p %p", watched, player->renderer);
-
-        // avoid receive an event multiple times
-
-        QKeyEvent* key_event = static_cast<QKeyEvent*>(event);
-        int key              = key_event->key();
-        Qt::KeyboardModifiers modifiers = key_event->modifiers();
-
-        switch (key)
+        case QEvent::KeyPress:
         {
-        case Qt::Key_F:
-        {
-            QWidget *w = qApp->activeWindow();
+            //qCDebug(DIGIKAM_TESTS_LOG).noquote() << QString::asprintf("Event target = %p %p", watched, player->renderer);
 
-            if (!w)
-                return false;
+            // avoid receive an event multiple times
 
-            if (w->isFullScreen())
-                w->showNormal();
-            else
-                w->showFullScreen();
+            QKeyEvent* key_event = static_cast<QKeyEvent*>(event);
+            int key              = key_event->key();
+            Qt::KeyboardModifiers modifiers = key_event->modifiers();
+
+            switch (key)
+            {
+                case Qt::Key_F:
+                {
+                    QWidget* const w = qApp->activeWindow();
+
+                    if (!w)
+                        return false;
+
+                    if (w->isFullScreen())
+                        w->showNormal();
+                    else
+                        w->showFullScreen();
+
+                    break;
+                }
+
+                case Qt::Key_N: //check playing?
+                {
+                    foreach (AVPlayer* const player, players)
+                    {
+                        player->stepForward();
+                    }
+
+                    break;
+                }
+
+                case Qt::Key_O:
+                {
+                    if (modifiers == Qt::ControlModifier)
+                    {
+                        openLocalFile();
+
+                        return true;
+                    }
+                    else /* if (m == Qt::NoModifier) */
+                    {
+                        return false;
+                    }
+
+                    break;
+                }
+
+                case Qt::Key_P:
+                {
+                    clock->reset();
+                    clock->start();
+
+                    foreach (AVPlayer* const player, players)
+                    {
+                        player->play();
+                    }
+
+                    timer_id = startTimer(kSyncInterval);
+
+                    break;
+                }
+
+                case Qt::Key_S:
+                {
+                    stop();
+
+                    break;
+                }
+
+                case Qt::Key_Space: // check playing?
+                {
+                    clock->pause(!clock->isPaused());
+
+                    foreach (AVPlayer* const player, players)
+                    {
+                        player->pause(!player->isPaused());
+                    }
+
+                    break;
+                }
+
+                case Qt::Key_Up:
+                {
+                    foreach (AVPlayer* const player, players)
+                    {
+                        if (player->audio())
+                        {
+                            qreal v = player->audio()->volume();
+
+                            if      (v > 0.5)
+                                v += 0.1;
+                            else if (v > 0.1)
+                                v += 0.05;
+                            else
+                                v += 0.025;
+
+                            player->audio()->setVolume(v);
+                        }
+                    }
+
+                    break;
+                }
+
+                case Qt::Key_Down:
+                {
+                    foreach (AVPlayer* const player, players)
+                    {
+                        if (player->audio())
+                        {
+                            qreal v = player->audio()->volume();
+
+                            if      (v > 0.5)
+                                v -= 0.1;
+                            else if (v > 0.1)
+                                v -= 0.05;
+                            else
+                                v -= 0.025;
+
+                            player->audio()->setVolume(v);
+                        }
+                    }
+
+                    break;
+                }
+
+                case Qt::Key_Left:
+                {
+                    qCDebug(DIGIKAM_TESTS_LOG).noquote() << QString::asprintf("<-");
+
+                    const qint64 newPos = clock->value()*1000.0 - 2000.0;
+                    clock->updateExternalClock(newPos);
+
+                    foreach (AVPlayer* const player, players)
+                    {
+                        player->setPosition(newPos);
+                    }
+
+                    break;
+                }
+
+                case Qt::Key_Right:
+                {
+                    qCDebug(DIGIKAM_TESTS_LOG).noquote() << QString::asprintf("->");
+
+                    const qint64 newPos = clock->value()*1000.0 + 2000.0;
+                    clock->updateExternalClock(newPos);
+
+                    foreach (AVPlayer* const player, players)
+                    {
+                        player->setPosition(newPos);
+                    }
+
+                    break;
+                }
+
+                case Qt::Key_M:
+                {
+                    foreach (AVPlayer* const player, players)
+                    {
+                        if (player->audio())
+                        {
+                            player->audio()->setMute(!player->audio()->isMute());
+                        }
+                    }
+
+                    break;
+                }
+
+                default:
+                {
+                    return false;
+                }
+            }
+
+            break;
         }
-            break;
 
-        case Qt::Key_N: //check playing?
-
-            foreach (AVPlayer* player, players)
-            {
-                player->stepForward();
-            }
-
-            break;
-
-        case Qt::Key_O:
+        case QEvent::ContextMenu:
         {
-            if (modifiers == Qt::ControlModifier)
-            {
-                openLocalFile();
+            QContextMenuEvent *e = static_cast<QContextMenuEvent*>(event);
 
-                return true;
-            }
-            else/* if (m == Qt::NoModifier) */
+            if (!menu)
             {
-                return false;
+                menu = new QMenu();
+                menu->addAction(tr("Open"),     this, SLOT(openLocalFile()));
+                menu->addAction(tr("Open Url"), this, SLOT(openUrl()));
+                menu->addSeparator();
+                menu->addAction(tr("About"),    this, SLOT(about()));
+                menu->addAction(tr("Help"),     this, SLOT(help()));
+                menu->addSeparator();
+                menu->addAction(tr("About Qt"), qApp, SLOT(aboutQt()));
             }
+
+            menu->popup(e->globalPos());
+            menu->exec();
+
+            break;
         }
-            break;
 
-        case Qt::Key_P:
-
-            clock->reset();
-            clock->start();
-
-            foreach (AVPlayer* player, players)
-            {
-                player->play();
-            }
-
-            timer_id = startTimer(kSyncInterval);
+        case QEvent::DragEnter:
+        case QEvent::DragMove:
+        {
+            QDropEvent* const e = static_cast<QDropEvent*>(event);
+            e->acceptProposedAction();
 
             break;
+        }
 
-        case Qt::Key_S:
-
+        case QEvent::Drop:
+        {
+            QDropEvent* const e = static_cast<QDropEvent*>(event);
+            QString path        = e->mimeData()->urls().first().toLocalFile();
             stop();
+            play(path);
+            e->acceptProposedAction();
 
             break;
-
-        case Qt::Key_Space: // check playing?
-
-            clock->pause(!clock->isPaused());
-
-            foreach (AVPlayer* player, players)
-            {
-                player->pause(!player->isPaused());
-            }
-
-            break;
-
-        case Qt::Key_Up:
-
-            foreach (AVPlayer* player, players)
-            {
-                if (player->audio())
-                {
-                    qreal v = player->audio()->volume();
-
-                    if      (v > 0.5)
-                        v += 0.1;
-                    else if (v > 0.1)
-                        v += 0.05;
-                    else
-                        v += 0.025;
-
-                    player->audio()->setVolume(v);
-                }
-            }
-
-            break;
-
-        case Qt::Key_Down:
-
-            foreach (AVPlayer* player, players)
-            {
-                if (player->audio())
-                {
-                    qreal v = player->audio()->volume();
-
-                    if      (v > 0.5)
-                        v -= 0.1;
-                    else if (v > 0.1)
-                        v -= 0.05;
-                    else
-                        v -= 0.025;
-
-                    player->audio()->setVolume(v);
-                }
-            }
-
-            break;
-
-        case Qt::Key_Left:
-        {
-            qCDebug(DIGIKAM_TESTS_LOG).noquote() << QString::asprintf("<-");
-            const qint64 newPos = clock->value()*1000.0 - 2000.0;
-            clock->updateExternalClock(newPos);
-
-            foreach (AVPlayer* player, players)
-            {
-                player->setPosition(newPos);
-            }
         }
-            break;
-
-        case Qt::Key_Right:
-        {
-            qCDebug(DIGIKAM_TESTS_LOG).noquote() << QString::asprintf("->");
-            const qint64 newPos = clock->value()*1000.0 + 2000.0;
-            clock->updateExternalClock(newPos);
-
-            foreach (AVPlayer* player, players)
-            {
-                player->setPosition(newPos);
-            }
-        }
-            break;
-
-        case Qt::Key_M:
-            foreach (AVPlayer* player, players)
-            {
-                if (player->audio())
-                {
-                    player->audio()->setMute(!player->audio()->isMute());
-                }
-            }
-
-            break;
 
         default:
-
+        {
             return false;
         }
-
-        break;
-    }
-
-    case QEvent::ContextMenu:
-    {
-        QContextMenuEvent *e = static_cast<QContextMenuEvent*>(event);
-
-        if (!menu)
-        {
-            menu = new QMenu();
-            menu->addAction(tr("Open"), this, SLOT(openLocalFile()));
-            menu->addAction(tr("Open Url"), this, SLOT(openUrl()));
-            menu->addSeparator();
-            menu->addAction(tr("About"), this, SLOT(about()));
-            menu->addAction(tr("Help"), this, SLOT(help()));
-            menu->addSeparator();
-            menu->addAction(tr("About Qt"), qApp, SLOT(aboutQt()));
-        }
-
-        menu->popup(e->globalPos());
-        menu->exec();
-    }
-
-    case QEvent::DragEnter:
-    case QEvent::DragMove:
-    {
-        QDropEvent *e = static_cast<QDropEvent*>(event);
-        e->acceptProposedAction();
-    }
-        break;
-
-    case QEvent::Drop:
-    {
-        QDropEvent *e = static_cast<QDropEvent*>(event);
-        QString path = e->mimeData()->urls().first().toLocalFile();
-        stop();
-        play(path);
-        e->acceptProposedAction();
-    }
-        break;
-
-    default:
-
-        return false;
     }
 
     return true; // false: for text input
