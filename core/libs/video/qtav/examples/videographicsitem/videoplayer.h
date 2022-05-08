@@ -21,42 +21,54 @@
  *
  * ============================================================ */
 
+#ifndef QTAV_EXAMPLE_VIDEOPLAYER_H
+#define QTAV_EXAMPLE_VIDEOPLAYER_H
 
+// Qt includes
 
-#ifndef QTAV_VIDEOPLAYER_H
-#define QTAV_VIDEOPLAYER_H
-
-#include <QtAV/AVPlayer.h>
-#include <QtAVWidgets/GraphicsItemRenderer.h>
 #include <QWidget>
+
+// Local includes
+
+#include "AVPlayer.h"
+#include "GraphicsItemRenderer.h"
 
 QT_BEGIN_NAMESPACE
 class QGraphicsView;
 QT_END_NAMESPACE
+
 class VideoPlayer : public QWidget
 {
     Q_OBJECT
 
 public:
-    VideoPlayer(QWidget *parent = 0);
+
+    VideoPlayer(QWidget* const parent = nullptr);
     ~VideoPlayer();
 
-    QSize sizeHint() const { return QSize(720, 640); }
+    QSize sizeHint() const
+    {
+        return QSize(720, 640);
+    }
+
     void play(const QString& file);
 
 public Q_SLOTS:
+
     void setOpenGL(bool o = true);
 
 private Q_SLOTS:
+
     void setOrientation(int value);
     void rotateVideo(int angle);
     void scaleVideo(int value);
     void open();
 
 private:
-    QtAV::AVPlayer mediaPlayer;
-    QtAV::GraphicsItemRenderer *videoItem;
-    QGraphicsView *view;
+
+    QtAV::AVPlayer              mediaPlayer;
+    QtAV::GraphicsItemRenderer* videoItem;
+    QGraphicsView*              view;
 };
 
-#endif //QTAV_VIDEOPLAYER_H
+#endif // QTAV_EXAMPLE_VIDEOPLAYER_H

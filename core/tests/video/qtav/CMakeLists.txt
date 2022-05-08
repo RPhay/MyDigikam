@@ -24,6 +24,7 @@ macro(QTAV_TESTS_BUILD)
                           digikamcore
 
                           ${COMMON_TEST_LINK}
+                          ${MEDIAPLAYER_LIBRARIES}
     )
 
     target_compile_definitions(${_targetname}
@@ -90,6 +91,7 @@ add_executable(qtav-player_gui ${qtavplayer_SRCS})
 target_link_libraries(qtav-player_gui
                       digikamcore
                       ${COMMON_TEST_LINK}
+                      ${MEDIAPLAYER_LIBRARIES}
 )
 
 target_compile_definitions(qtav-player_gui
@@ -101,14 +103,14 @@ target_compile_definitions(qtav-player_gui
 
 add_executable(qtav-audiopipeline_cli ${CMAKE_SOURCE_DIR}/core/libs/video/qtav/examples/audiopipeline/main.cpp)
 ecm_mark_nongui_executable(qtav-audiopipeline_cli)
-target_link_libraries(qtav-audiopipeline_cli digikamcore ${COMMON_TEST_LINK})
+target_link_libraries(qtav-audiopipeline_cli digikamcore ${COMMON_TEST_LINK} ${MEDIAPLAYER_LIBRARIES})
 target_compile_definitions(qtav-audiopipeline_cli PRIVATE ${MEDIAPLAYER_DEFINITIONS})
 
 # -------------------------------------------------
 
 add_executable(qtav-framereader_cli ${CMAKE_SOURCE_DIR}/core/libs/video/qtav/examples/framereader/main.cpp)
 ecm_mark_nongui_executable(qtav-framereader_cli)
-target_link_libraries(qtav-framereader_cli digikamcore ${COMMON_TEST_LINK})
+target_link_libraries(qtav-framereader_cli digikamcore ${COMMON_TEST_LINK} ${MEDIAPLAYER_LIBRARIES})
 target_compile_definitions(qtav-framereader_cli PRIVATE ${MEDIAPLAYER_DEFINITIONS})
 
 # -------------------------------------------------
@@ -128,7 +130,7 @@ else()
 endif()
 
 add_executable(qtav-filters_gui ${qtavfilters_SRCS})
-target_link_libraries(qtav-filters_gui digikamcore ${COMMON_TEST_LINK})
+target_link_libraries(qtav-filters_gui digikamcore ${COMMON_TEST_LINK} ${MEDIAPLAYER_LIBRARIES})
 target_compile_definitions(qtav-filters_gui PRIVATE ${MEDIAPLAYER_DEFINITIONS})
 
 # -------------------------------------------------
@@ -138,7 +140,7 @@ set(qtavsharedoutput_SRCS ${CMAKE_SOURCE_DIR}/core/libs/video/qtav/examples/shar
 )
 
 add_executable(qtav-sharedoutput_gui ${qtavsharedoutput_SRCS})
-target_link_libraries(qtav-sharedoutput_gui digikamcore ${COMMON_TEST_LINK})
+target_link_libraries(qtav-sharedoutput_gui digikamcore ${COMMON_TEST_LINK} ${MEDIAPLAYER_LIBRARIES})
 target_compile_definitions(qtav-sharedoutput_gui PRIVATE ${MEDIAPLAYER_DEFINITIONS})
 
 # -------------------------------------------------
@@ -148,26 +150,26 @@ set(qtavsimpleplayer_SRCS ${CMAKE_SOURCE_DIR}/core/libs/video/qtav/examples/simp
 )
 
 add_executable(qtav-simpleplayer_gui ${qtavsimpleplayer_SRCS})
-target_link_libraries(qtav-simpleplayer_gui digikamcore ${COMMON_TEST_LINK})
+target_link_libraries(qtav-simpleplayer_gui digikamcore ${COMMON_TEST_LINK} ${MEDIAPLAYER_LIBRARIES})
 target_compile_definitions(qtav-simpleplayer_gui PRIVATE ${MEDIAPLAYER_DEFINITIONS})
 
 # -------------------------------------------------
 
 add_executable(qtav-glslfilter_gui ${CMAKE_SOURCE_DIR}/core/libs/video/qtav/examples/glslfilter/main.cpp)
-target_link_libraries(qtav-glslfilter_gui digikamcore ${COMMON_TEST_LINK})
+target_link_libraries(qtav-glslfilter_gui digikamcore ${COMMON_TEST_LINK} ${MEDIAPLAYER_LIBRARIES})
 target_compile_definitions(qtav-glslfilter_gui PRIVATE ${MEDIAPLAYER_DEFINITIONS})
 
 # -------------------------------------------------
 
 add_executable(qtav-shader_gui ${CMAKE_SOURCE_DIR}/core/libs/video/qtav/examples/shader/main.cpp)
-target_link_libraries(qtav-shader_gui digikamcore ${COMMON_TEST_LINK})
+target_link_libraries(qtav-shader_gui digikamcore ${COMMON_TEST_LINK} ${MEDIAPLAYER_LIBRARIES})
 target_compile_definitions(qtav-shader_gui PRIVATE ${MEDIAPLAYER_DEFINITIONS})
 
 # -------------------------------------------------
 
 add_executable(qtav-simpletranscode_cli ${CMAKE_SOURCE_DIR}/core/libs/video/qtav/examples/simpletranscode/main.cpp)
 ecm_mark_nongui_executable(qtav-simpletranscode_cli)
-target_link_libraries(qtav-simpletranscode_cli digikamcore ${COMMON_TEST_LINK})
+target_link_libraries(qtav-simpletranscode_cli digikamcore ${COMMON_TEST_LINK} ${MEDIAPLAYER_LIBRARIES})
 target_compile_definitions(qtav-simpletranscode_cli PRIVATE ${MEDIAPLAYER_DEFINITIONS})
 
 # -------------------------------------------------
@@ -177,13 +179,23 @@ set(qtavvideocapture_SRCS ${CMAKE_SOURCE_DIR}/core/libs/video/qtav/examples/vide
 )
 
 add_executable(qtav-videocapture_gui ${qtavvideocapture_SRCS})
-target_link_libraries(qtav-videocapture_gui digikamcore ${COMMON_TEST_LINK})
+target_link_libraries(qtav-videocapture_gui digikamcore ${COMMON_TEST_LINK} ${MEDIAPLAYER_LIBRARIES})
 target_compile_definitions(qtav-videocapture_gui PRIVATE ${MEDIAPLAYER_DEFINITIONS})
 
 # -------------------------------------------------
 
+set(qtavvideographicsitem_SRCS ${CMAKE_SOURCE_DIR}/core/libs/video/qtav/examples/videographicsitem/main.cpp
+                               ${CMAKE_SOURCE_DIR}/core/libs/video/qtav/examples/videographicsitem/videoplayer.cpp
+)
+
+add_executable(qtav-videographicsitem_gui ${qtavvideographicsitem_SRCS})
+target_link_libraries(qtav-videographicsitem_gui digikamcore ${COMMON_TEST_LINK} ${MEDIAPLAYER_LIBRARIES})
+target_compile_definitions(qtav-videographicsitem_gui PRIVATE ${MEDIAPLAYER_DEFINITIONS})
+
+# -------------------------------------------------
+
 add_executable(qtav-window_cli ${CMAKE_SOURCE_DIR}/core/libs/video/qtav/examples/window/main.cpp)
-target_link_libraries(qtav-window_cli digikamcore ${COMMON_TEST_LINK})
+target_link_libraries(qtav-window_cli digikamcore ${COMMON_TEST_LINK} ${MEDIAPLAYER_LIBRARIES})
 target_compile_definitions(qtav-window_cli PRIVATE ${MEDIAPLAYER_DEFINITIONS})
 
 # -------------------------------------------------
