@@ -24,6 +24,8 @@
 #ifndef QTAV_PLAYER_CONFIG_H
 #define QTAV_PLAYER_CONFIG_H
 
+// Qt includes
+
 #include <QObject>
 #include <QStringList>
 #include <QVariant>
@@ -34,7 +36,8 @@ namespace QtAVPlayer
 {
 
 //TODO: use hash to simplify api
-/*
+
+/**
  * MVC model. Q_SIGNALS from Config notify ui update. Q_SIGNALS from ui does not change Config unless ui changes applyed by XXXPage.apply()
  * Q_SIGNALS from ui will emit Config::xxxChanged() with the value in ui. ui cancel the change also emit it with the value stores in Config.
  * apply() will change the value in Config
@@ -44,7 +47,9 @@ class Config : public QObject
 {
     Q_OBJECT
     Q_PROPERTY(QVariantList history READ history NOTIFY historyChanged)
+
     // last file opened by file dialog
+
     Q_PROPERTY(QString lastFile READ lastFile WRITE setLastFile NOTIFY lastFileChanged)
     Q_PROPERTY(qreal forceFrameRate READ forceFrameRate WRITE setForceFrameRate NOTIFY forceFrameRateChanged)
     Q_PROPERTY(QStringList decoderPriorityNames READ decoderPriorityNames WRITE setDecoderPriorityNames NOTIFY decoderPriorityNamesChanged)
@@ -61,7 +66,9 @@ class Config : public QObject
     Q_PROPERTY(bool subtitleOutline READ subtitleOutline WRITE setSubtitleOutline NOTIFY subtitleOutlineChanged)
     Q_PROPERTY(int subtitleBottomMargin READ subtitleBottomMargin WRITE setSubtitleBottomMargin NOTIFY subtitleBottomMarginChanged)
     Q_PROPERTY(qreal subtitleDelay READ subtitleDelay WRITE setSubtitleDelay NOTIFY subtitleDelayChanged)
+
     // font properties for libass engine
+
     Q_PROPERTY(QString assFontFile READ assFontFile WRITE setAssFontFile NOTIFY assFontFileChanged)
     Q_PROPERTY(QString assFontsDir READ assFontsDir WRITE setAssFontsDir NOTIFY assFontsDirChanged)
     Q_PROPERTY(bool assFontFileForced READ isAssFontFileForced WRITE setAssFontFileForced NOTIFY assFontFileForcedChanged)
@@ -84,25 +91,37 @@ class Config : public QObject
     Q_PROPERTY(QString fragHeader READ fragHeader WRITE setFragHeader NOTIFY fragHeaderChanged)
     Q_PROPERTY(QString fragSample READ fragSample WRITE setFragSample NOTIFY fragSampleChanged)
     Q_PROPERTY(QString fragPostProcess READ fragPostProcess WRITE setFragPostProcess NOTIFY fragPostProcessChanged)
+
 public:
-    enum OpenGLType { // currently only for windows
+
+    enum OpenGLType
+    {
+        // currently only for windows
+
         Auto,
         Desktop,
         OpenGLES,
         Software
     };
 
+public:
+
     static Config& instance();
+
     static void setName(const QString& name); // config file base name
     static QString getName();
+
     /*!
      * \brief defaultConfigFile
      * Config file name is $appname.ini. Must call Config::setName() first
      */
     static QString defaultConfigFile();
     static QString defaultDir();
+
     Q_INVOKABLE bool reset();
+
     void reload();
+
     //void loadFromFile(const QString& file);
 
     QString lastFile() const;
@@ -110,7 +129,9 @@ public:
 
     qreal forceFrameRate() const;
     Config& setForceFrameRate(qreal value);
+
     // in priority order. the same order as displayed in ui
+
     QStringList decoderPriorityNames() const;
     Config& setDecoderPriorityNames(const QStringList& names);
 
@@ -128,25 +149,33 @@ public:
      */
     QString captureFormat() const;
     Config& setCaptureFormat(const QString& format);
+
     // only works for non-yuv capture. value: -1~100, -1: default
+
     int captureQuality() const;
     Config& setCaptureQuality(int quality);
 
     QStringList subtitleEngines() const;
     Config& setSubtitleEngines(const QStringList& value);
+
     bool subtitleAutoLoad() const;
     Config& setSubtitleAutoLoad(bool value);
+
     bool subtitleEnabled() const;
     Config& setSubtitleEnabled(bool value);
 
     QFont subtitleFont() const;
     Config& setSubtitleFont(const QFont& value);
+
     bool subtitleOutline() const;
     Config& setSubtitleOutline(bool value);
+
     QColor subtitleColor() const;
     Config& setSubtitleColor(const QColor& value);
+
     QColor subtitleOutlineColor() const;
     Config& setSubtitleOutlineColor(const QColor& value);
+
     int subtitleBottomMargin() const;
     Config& setSubtitleBottomMargin(int value);
 
@@ -155,44 +184,57 @@ public:
 
     QString assFontFile() const;
     Config& setAssFontFile(const QString& value);
+
     QString assFontsDir() const;
     Config& setAssFontsDir(const QString& value);
+
     bool isAssFontFileForced() const;
     Config& setAssFontFileForced(bool value);
 
     bool previewEnabled() const;
     Config& setPreviewEnabled(bool value);
+
     int previewWidth() const;
     Config& setPreviewWidth(int value);
+
     int previewHeight() const;
     Config& setPreviewHeight(int value);
 
     QVariantHash avformatOptions() const;
     bool avformatOptionsEnabled() const;
     Config& setAvformatOptionsEnabled(bool value);
+
     int analyzeDuration() const;
     Config& analyzeDuration(int ad);
+
     unsigned int probeSize() const;
     Config& probeSize(unsigned int ps);
+
     bool reduceBuffering() const;
     Config& reduceBuffering(bool y);
+
     QString avformatExtra() const;
     Config& avformatExtra(const QString& text);
 
     QString avfilterVideoOptions() const;
     Config& avfilterVideoOptions(const QString& options);
+
     bool avfilterVideoEnable() const;
     Config& avfilterVideoEnable(bool e);
 
     QString avfilterAudioOptions() const;
     Config& avfilterAudioOptions(const QString& options);
+
     bool avfilterAudioEnable() const;
     Config& avfilterAudioEnable(bool e);
 
     // currently only for xcb
+
     bool isEGL() const;
     Config& setEGL(bool value);
+
     // can be "Desktop", "OpenGLES", "Software"
+
     OpenGLType openGLType() const;
     Config& setOpenGLType(OpenGLType value);
 
@@ -207,10 +249,12 @@ public:
     Config& setAbortOnTimeout(bool value);
 
     // <0: auto
+
     int bufferValue() const;
     Config& setBufferValue(int value);
 
     // can be: "", "off", "debug", "warning", "critical", "fatal", "all"
+
     QString logLevel() const;
     Config& setLogLevel(const QString& value);
 
@@ -221,23 +265,32 @@ public:
     Q_INVOKABLE Config& operator ()(const QString& key, const QVariant& value);
 
     /// history will not be clear in reset()
+
     QVariantList history() const;
+
     // {url: urlString, start: ms, duration: ms}
+
     Q_INVOKABLE void addHistory(const QVariantMap& value);
     Q_INVOKABLE void removeHistory(const QString& url);
     Q_INVOKABLE void clearHistory();
 
     Config& setUserShaderEnabled(bool value);
     bool userShaderEnabled() const;
+
     Config& setIntermediateFBO(bool value);
     bool intermediateFBO() const;
+
     Config& setFragHeader(const QString& text);
     QString fragHeader() const;
+
     Config& setFragSample(const QString& text);
     QString fragSample() const;
+
     Config& setFragPostProcess(const QString& text);
     QString fragPostProcess() const;
+
 public:
+
     Q_SIGNAL void changed();
     Q_SIGNAL void userShaderEnabledChanged();
     Q_SIGNAL void intermediateFBOChanged();
@@ -246,7 +299,9 @@ public:
     Q_SIGNAL void fragPostProcessChanged();
 
     Q_SIGNAL void lastFileChanged();
-    //keyword 'Q_SIGNALS' maybe protected. we need call the Q_SIGNALS in other classes. Q_SIGNAL is empty
+
+    // keyword 'Q_SIGNALS' maybe protected. we need call the Q_SIGNALS in other classes. Q_SIGNAL is empty
+
     Q_SIGNAL void forceFrameRateChanged();
     Q_SIGNAL void decodingThreadsChanged(int n);
     Q_SIGNAL void decoderPriorityNamesChanged();
@@ -282,16 +337,20 @@ public:
     Q_SIGNAL void logLevelChanged();
     Q_SIGNAL void languageChanged();
     Q_SIGNAL void historyChanged();
+
 protected:
-    explicit Config(QObject *parent = 0);
+
+    explicit Config(QObject* parent = nullptr);
     ~Config();
 
 public Q_SLOTS:
+
     void save();
 
 private:
+
     class Data;
-    Data *mpData;
+    Data* mpData;
 };
 
 } // namespace QtAVPlayer
