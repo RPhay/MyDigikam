@@ -118,3 +118,9 @@ target_link_libraries(qtav-glslfilter_gui digikamcore ${COMMON_TEST_LINK})
 target_compile_definitions(qtav-glslfilter_gui PRIVATE ${MEDIAPLAYER_DEFINITIONS})
 
 # -------------------------------------------------
+
+add_executable(qtav-shader_gui ${CMAKE_SOURCE_DIR}/core/libs/video/qtav/examples/shader/main.cpp)
+target_link_libraries(qtav-shader_gui digikamcore ${COMMON_TEST_LINK})
+target_compile_definitions(qtav-shader_gui PRIVATE ${MEDIAPLAYER_DEFINITIONS})
+
+# -------------------------------------------------
