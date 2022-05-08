@@ -278,7 +278,7 @@ Config& Config::instance()
     return cfg;
 }
 
-void Config::setName(const QString &name)
+void Config::setName(const QString& name)
 {
     Config::Data::name = name;
 }
@@ -293,13 +293,13 @@ QString Config::defaultConfigFile()
     return (appDataDir() + QString::fromLatin1("/") + Data::name + QString::fromLatin1(".ini"));
 }
 
-Config::Config(QObject *parent)
+Config::Config(QObject* const parent)
     : QObject(parent),
       mpData(new Data())
 {
     // DO NOT call save() in dtor because it's a singleton and may be deleted later than qApp, QFont is not valid
 
-    connect(qApp, SIGNAL(aboutToQuit()), 
+    connect(qApp, SIGNAL(aboutToQuit()),
             this, SLOT(save()));            // FIXME: what if qapp not ready
 
     reload();
@@ -493,7 +493,7 @@ QStringList Config::decoderPriorityNames() const
     return mpData->video_decoders;
 }
 
-Config& Config::setDecoderPriorityNames(const QStringList &value)
+Config& Config::setDecoderPriorityNames(const QStringList& value)
 {
     if (mpData->video_decoders == value)
     {
@@ -593,7 +593,7 @@ QStringList Config::subtitleEngines() const
     return mpData->subtitle_engines;
 }
 
-Config& Config::setSubtitleEngines(const QStringList &value)
+Config& Config::setSubtitleEngines(const QStringList& value)
 {
     if (mpData->subtitle_engines == value)
         return *this;
@@ -755,7 +755,7 @@ QString Config::assFontFile() const
     return mpData->ass_font_file;
 }
 
-Config& Config::setAssFontFile(const QString &value)
+Config& Config::setAssFontFile(const QString& value)
 {
     if (mpData->ass_font_file == value)
         return *this;
@@ -774,7 +774,7 @@ QString Config::assFontsDir() const
     return mpData->ass_fonts_dir;
 }
 
-Config& Config::setAssFontsDir(const QString &value)
+Config& Config::setAssFontsDir(const QString& value)
 {
     if (mpData->ass_fonts_dir == value)
         return *this;
@@ -959,9 +959,10 @@ QString Config::avformatExtra() const
     return mpData->avformat_extra;
 }
 
-Config& Config::avformatExtra(const QString &text)
+Config& Config::avformatExtra(const QString& text)
 {
     mpData->avformat_extra = text;
+
     return *this;
 }
 
@@ -1132,7 +1133,7 @@ QString Config::fragHeader() const
     return mpData->frag_header;
 }
 
-Config& Config::setFragHeader(const QString &text)
+Config& Config::setFragHeader(const QString& text)
 {
     if (mpData->frag_header == text)
         return *this;
@@ -1150,7 +1151,7 @@ QString Config::fragSample() const
     return mpData->frag_sample;
 }
 
-Config& Config::setFragSample(const QString &text)
+Config& Config::setFragSample(const QString& text)
 {
     if (mpData->frag_sample == text)
         return *this;
@@ -1168,7 +1169,7 @@ QString Config::fragPostProcess() const
     return mpData->frag_pp;
 }
 
-Config& Config::setFragPostProcess(const QString &text)
+Config& Config::setFragPostProcess(const QString& text)
 {
     if (mpData->frag_pp == text)
         return *this;
@@ -1258,7 +1259,7 @@ QVariantList Config::history() const
     return mpData->history;
 }
 
-void Config::addHistory(const QVariantMap &value)
+void Config::addHistory(const QVariantMap& value)
 {
     mpData->history.prepend(value);
 
@@ -1270,7 +1271,7 @@ void Config::addHistory(const QVariantMap &value)
     if (!query.prepare(QString::fromUtf8("INSERT INTO history (url, start, duration) "
                                          "VALUES (:url, :start, :duration)")))
     {
-            qCWarning(DIGIKAM_QTAVPLAYER_LOG).noquote() << QString::asprintf("error prepare sql query");
+        qCWarning(DIGIKAM_QTAVPLAYER_LOG).noquote() << QString::asprintf("error prepare sql query");
     }
 
     query.bindValue(QString::fromUtf8(":url"),      value.value(QLatin1String("url")).toString());

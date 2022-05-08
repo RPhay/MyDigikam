@@ -35,7 +35,7 @@
 namespace QtAVPlayer
 {
 
-//TODO: use hash to simplify api
+// TODO: use hash to simplify api
 
 /**
  * MVC model. Q_SIGNALS from Config notify ui update. Q_SIGNALS from ui does not change Config unless ui changes applyed by XXXPage.apply()
@@ -340,7 +340,7 @@ public:
 
 protected:
 
-    explicit Config(QObject* parent = nullptr);
+    explicit Config(QObject* const parent = nullptr);
     ~Config();
 
 public Q_SLOTS:
