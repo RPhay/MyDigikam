@@ -21,34 +21,45 @@
  *
  * ============================================================ */
 
+#ifndef QTAV_EXAMPLE_PLAYERWINDOW_H
+#define QTAV_EXAMPLE_PLAYERWINDOW_H
 
-
-#ifndef PLAYERWINDOW_H
-#define PLAYERWINDOW_H
+// Qt includes
 
 #include <QWidget>
-#include <QtAV>
+
+// Local includes
+
+#include "QtAV.h"
 
 QT_BEGIN_NAMESPACE
 class QSlider;
 class QPushButton;
 QT_END_NAMESPACE
+
 class PlayerWindow : public QWidget
 {
     Q_OBJECT
+
 public:
-    explicit PlayerWindow(QWidget *parent = 0);
+
+    explicit PlayerWindow(QWidget* const parent = nullptr);
+
 public Q_SLOTS:
+
     void openMedia();
     void seekBySlider(int value);
     void seekBySlider();
     void playPause();
+
 private Q_SLOTS:
+
     void updateSlider(qint64 value);
     void updateSlider();
     void updateSliderUnit();
 
 private:
+
     QtAV::VideoOutput *m_vo;
     QtAV::AVPlayer *m_player;
     QSlider *m_slider;
@@ -58,4 +69,4 @@ private:
     int m_unit;
 };
 
-#endif // PLAYERWINDOW_H
+#endif // QTAV_EXAMPLE_PLAYERWINDOW_H

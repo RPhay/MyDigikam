@@ -21,10 +21,14 @@
  *
  * ============================================================ */
 
+// Qt includes
 
 #include <QApplication>
+
+// Local includes
+
 #include "playerwindow.h"
-#include <QtAVWidgets>
+#include "QtAVWidgets.h"
 
 int main(int argc, char *argv[])
 {

@@ -137,9 +137,19 @@ set(qtavsharedoutput_SRCS ${CMAKE_SOURCE_DIR}/core/libs/video/qtav/examples/shar
                           ${CMAKE_SOURCE_DIR}/core/libs/video/qtav/examples/sharedoutput/widget.cpp
 )
 
-add_executable(qtav-sharedoutput_gui ${qtavfilters_SRCS})
+add_executable(qtav-sharedoutput_gui ${qtavsharedoutput_SRCS})
 target_link_libraries(qtav-sharedoutput_gui digikamcore ${COMMON_TEST_LINK})
 target_compile_definitions(qtav-sharedoutput_gui PRIVATE ${MEDIAPLAYER_DEFINITIONS})
+
+# -------------------------------------------------
+
+set(qtavsimpleplayer_SRCS ${CMAKE_SOURCE_DIR}/core/libs/video/qtav/examples/simpleplayer/main.cpp
+                          ${CMAKE_SOURCE_DIR}/core/libs/video/qtav/examples/simpleplayer/playerwindow.cpp
+)
+
+add_executable(qtav-simpleplayer_gui ${qtavsimpleplayer_SRCS})
+target_link_libraries(qtav-simpleplayer_gui digikamcore ${COMMON_TEST_LINK})
+target_compile_definitions(qtav-simpleplayer_gui PRIVATE ${MEDIAPLAYER_DEFINITIONS})
 
 # -------------------------------------------------
 

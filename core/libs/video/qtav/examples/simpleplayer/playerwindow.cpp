@@ -21,9 +21,10 @@
  *
  * ============================================================ */
 
-
-
 #include "playerwindow.h"
+
+// Qt includes
+
 #include <QPushButton>
 #include <QSlider>
 #include <QLayout>
@@ -32,7 +33,8 @@
 
 using namespace QtAV;
 
-PlayerWindow::PlayerWindow(QWidget *parent) : QWidget(parent)
+PlayerWindow::PlayerWindow(QWidget *parent)
+    : QWidget(parent)
 {
     m_unit = 1000;
     setWindowTitle(QString::fromLatin1("QtAV simple player example"));

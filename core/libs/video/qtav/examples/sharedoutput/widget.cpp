@@ -32,7 +32,7 @@
 
 // Local includes
 
-#include "QtAV.h
+#include "QtAV.h"
 #include "QtAVWidgets.h"
 
 using namespace QtAV;
@@ -41,7 +41,7 @@ Widget::Widget(QWidget* const parent)
     : QWidget(parent)
 {
     QtAV::Widgets::registerRenderers();
-    setWindowTitle(QString::fromLatin1("A test for shared video renderer. QtAV%1 wbsecg1@gmail.com").arg(QtAV_Version_String_Long()));
+    setWindowTitle(QString::fromLatin1("A test for shared video renderer. QtAV %1").arg(QtAV_Version_String_Long()));
     QVBoxLayout* main_layout = new QVBoxLayout;
     QHBoxLayout* btn_layout  = new QHBoxLayout;
     renderer                 = new VideoOutput();
