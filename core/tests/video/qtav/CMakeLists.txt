@@ -124,3 +124,10 @@ target_link_libraries(qtav-shader_gui digikamcore ${COMMON_TEST_LINK})
 target_compile_definitions(qtav-shader_gui PRIVATE ${MEDIAPLAYER_DEFINITIONS})
 
 # -------------------------------------------------
+
+add_executable(qtav-simpletranscode_cli ${CMAKE_SOURCE_DIR}/core/libs/video/qtav/examples/simpletranscode/main.cpp)
+ecm_mark_nongui_executable(qtav-simpletranscode_cli)
+target_link_libraries(qtav-simpletranscode_cli digikamcore ${COMMON_TEST_LINK})
+target_compile_definitions(qtav-simpletranscode_cli PRIVATE ${MEDIAPLAYER_DEFINITIONS})
+
+# -------------------------------------------------
