@@ -131,11 +131,11 @@ set(qtavplayer_SRCS ${CMAKE_SOURCE_DIR}/core/libs/video/qtav/examples/player/uti
 
 if(Qt6_FOUND)
 
-    qt6_add_resources(qtavplayer_SRCS ${CMAKE_SOURCE_DIR}/core/libs/video/qtav/examples/player/utils/theme/theme.qrc)
+    qt6_add_resources(qtavplayer_SRCS ${CMAKE_SOURCE_DIR}/core/libs/video/qtav/examples/player/theme/theme.qrc)
 
 else()
 
-    qt5_add_resources(qtavplayer_SRCS ${CMAKE_SOURCE_DIR}/core/libs/video/qtav/examples/player/utils/theme/theme.qrc)
+    qt5_add_resources(qtavplayer_SRCS ${CMAKE_SOURCE_DIR}/core/libs/video/qtav/examples/player/theme/theme.qrc)
 
 endif()
 
