@@ -33,13 +33,11 @@
 #include <QSettings>
 #include <QFileOpenEvent>
 #include <QLocale>
-#include <QTranslator>
 #include <QCoreApplication>
 #include <QDir>
 #include <QFile>
 #include <QTextStream>
 #include <QStandardPaths>
-#include "digikam_debug.h"
 #include <QMutex>
 
 // Local includes

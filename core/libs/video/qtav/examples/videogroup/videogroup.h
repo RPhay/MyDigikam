@@ -21,8 +21,8 @@
  *
  * ============================================================ */
 
-#ifndef QTAV_EXAMPLE_VIDEOWALL_H
-#define QTAV_EXAMPLE_VIDEOWALL_H
+#ifndef QTAV_EXAMPLE_VIDEOGROUP_H
+#define QTAV_EXAMPLE_VIDEOGROUP_H
 
 // Qt includes
 
@@ -78,4 +78,4 @@ private:
     QList<QtAV::VideoRenderer*> mRenderers;
 };
 
-#endif // QTAV_EXAMPLE_VIDEOWALL_H
+#endif // QTAV_EXAMPLE_VIDEOGROUP_H

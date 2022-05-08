@@ -25,7 +25,6 @@
 
 // Qt includes
 
-#include "digikam_debug.h"
 #include <QLocale>
 #include <QTimer>
 #include <QTimeEdit>
@@ -68,7 +67,9 @@
 #include "VideoEQConfigPage.h"
 #include "ConfigDialog.h"
 #include "OSDFilter.h"
+
 //#include "AVFilterSubtitle.h"
+
 #include "PlayList.h"
 #include "common.h"
 #include "digikam_debug.h"

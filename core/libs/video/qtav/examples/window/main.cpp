@@ -23,7 +23,9 @@
 
 // Qt includes
 
-#include <QtGui>
+#include <QGuiApplication>
+#include <QWindow>
+#include <QKeyEvent>
 
 // Local includes
 
