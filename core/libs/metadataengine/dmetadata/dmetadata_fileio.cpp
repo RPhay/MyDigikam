@@ -51,12 +51,14 @@ bool DMetadata::load(const QString& filePath, Backend* backend)
 
     Backend usedBackend = NoBackend;
     bool hasLoaded      = false;
+    QFileInfo info(filePath);
     QMimeDatabase mimeDB;
 
     if (
         !mimeDB.mimeTypeForFile(filePath).name().startsWith(QLatin1String("video/")) &&
         !mimeDB.mimeTypeForFile(filePath).name().startsWith(QLatin1String("audio/")) &&
-        (QFileInfo(filePath).suffix().toUpper() != QLatin1String("INSV"))
+        (info.suffix().toUpper() != QLatin1String("INSV"))                           &&
+        (info.suffix().toUpper() != QLatin1String("H264"))
        )
     {
         // Process images only with Exiv2 backend first, or Exiftool in 2nd, or libraw for RAW files,
