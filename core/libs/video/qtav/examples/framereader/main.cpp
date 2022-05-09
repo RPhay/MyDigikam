@@ -67,9 +67,16 @@ int main(int argc, char *argv[])
             const qint64 dt  = now - t0;
             t.enqueue(now);
 
-           qCDebug(DIGIKAM_TESTS_LOG).noquote()
-                << QString::asprintf("decode @%.3f count: %d, elapsed: %lld, fps: %.1f/%.1f\r",
-                    f.timestamp(), count, dt, count*1000.0/dt, t.size()*1000.0/(now - t.first()));fflush(0);
+            qCDebug(DIGIKAM_TESTS_LOG) << "decode @"
+                                       << f.timestamp()
+                                       << "count:"
+                                       << count
+                                       << ", elapsed:"
+                                       << dt
+                                       << ", fps:"
+                                       << count*1000.0/dt
+                                       << "/"
+                                       << t.size()*1000.0/(now - t.first());
 
             if (t.size() > 10)
                 t.dequeue();

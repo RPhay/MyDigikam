@@ -118,24 +118,25 @@ void QLabelSetElideText(QLabel* const label, const QString& text, int W = 0)
 }
 
 MainWindow::MainWindow(QWidget* const parent)
-    : QWidget(parent)
-    , mIsReady(false)
-    , mHasPendingPlay(false)
-    , mControlOn(false)
-    , mShowControl(2)
-    , mRepeateMax(0)
-    , mpVOAction(0)
-    , mpPlayer(0)
-    , mpRenderer(0)
-    , mpVideoFilter(0)
-    , mpAudioFilter(0)
-    , mpStatisticsView(0)
-    , mpOSD(0)
-    , mpSubtitle(0)
-    , m_preview(0)
-    , m_shader(nullptr)
-    , m_glsl(nullptr)
+    : QWidget(parent),
+      mIsReady(false),
+      mHasPendingPlay(false),
+      mControlOn(false),
+      mShowControl(2),
+      mRepeateMax(0),
+      mpVOAction(0),
+      mpPlayer(0),
+      mpRenderer(0),
+      mpVideoFilter(0),
+      mpAudioFilter(0),
+      mpStatisticsView(0),
+      mpOSD(0),
+      mpSubtitle(0),
+      m_preview(0),
+      m_shader(nullptr),
+      m_glsl(nullptr)
 {
+
 #if defined(Q_OS_MACX) && QT_VERSION >= QT_VERSION_CHECK(5, 0, 0)
 
     QApplication::setStyle(QStyleFactory::create(QLatin1String("Fusion")));
@@ -312,8 +313,10 @@ void MainWindow::initPlayer()
 
 void MainWindow::onSeekFinished(qint64 pos)
 {
-    qCDebug(DIGIKAM_QTAVPLAYER_LOG).noquote()
-        << QString::asprintf("seek finished at %lld/%lld", pos, mpPlayer->position());
+    qCDebug(DIGIKAM_QTAVPLAYER_LOG) << "seek finished at"
+                                    << pos
+                                    << "/"
+                                    << mpPlayer->position();
 }
 
 void MainWindow::stopUnload()
