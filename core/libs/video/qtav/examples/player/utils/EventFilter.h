@@ -84,7 +84,7 @@ class WindowEventFilter : public QObject
 
 public:
 
-    WindowEventFilter(QWidget* const window);
+    explicit WindowEventFilter(QWidget* const window);
 
 Q_SIGNALS:
 

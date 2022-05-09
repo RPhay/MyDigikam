@@ -22,14 +22,20 @@
  * ============================================================ */
 
 #include "ShaderPage.h"
+
+// Qt includes
+
 #include <QLabel>
 #include <QLayout>
+
+// Local includes
+
 #include "Config.h"
 
 namespace QtAVPlayer
 {
 
-ShaderPage::ShaderPage(QWidget *parent)
+ShaderPage::ShaderPage(QWidget* const parent)
     : ConfigPageBase(parent)
 {
     QVBoxLayout* gl = new QVBoxLayout();
@@ -58,7 +64,7 @@ ShaderPage::ShaderPage(QWidget *parent)
     m_sample->setToolTip(QLatin1String("vec4 sample2d(sampler2D tex, vec2 pos, int p)"));
     gl->addWidget(m_sample);
     gl->addWidget(new QLabel(QLatin1String("Fragment shader RGB post process code")));
-    m_pp        = new QTextEdit();
+    m_pp            = new QTextEdit();
 
     //m_pp->setMaximumWidth(mw);
 

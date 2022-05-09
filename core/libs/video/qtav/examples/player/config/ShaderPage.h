@@ -40,7 +40,7 @@ class ShaderPage : public ConfigPageBase
 {
 public:
 
-    ShaderPage(QWidget* parent = nullptr);
+    explicit ShaderPage(QWidget* const parent = nullptr);
 
     virtual QString name() const;
 

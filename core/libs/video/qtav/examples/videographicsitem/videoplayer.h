@@ -43,7 +43,7 @@ class VideoPlayer : public QWidget
 
 public:
 
-    VideoPlayer(QWidget* const parent = nullptr);
+    explicit VideoPlayer(QWidget* const parent = nullptr);
     ~VideoPlayer();
 
     QSize sizeHint() const

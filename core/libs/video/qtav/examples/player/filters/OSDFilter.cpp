@@ -35,7 +35,7 @@
 namespace QtAVPlayer
 {
 
-OSDFilter::OSDFilter(QObject* parent)
+OSDFilter::OSDFilter(QObject* const parent)
     : VideoFilter(parent),
       OSD()
 {

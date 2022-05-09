@@ -40,11 +40,11 @@ class OSDFilter : public VideoFilter,
 {
 public:
 
-    OSDFilter(QObject* parent = nullptr);
+    explicit OSDFilter(QObject* const parent = nullptr);
 
     bool isSupported(VideoFilterContext::Type ct) const
     {
-        return ct == (VideoFilterContext::QtPainter || ct == VideoFilterContext::X11);
+        return (ct == (VideoFilterContext::QtPainter || ct == VideoFilterContext::X11));
     }
 
 protected:

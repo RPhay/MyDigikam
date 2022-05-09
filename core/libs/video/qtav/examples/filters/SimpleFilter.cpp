@@ -71,7 +71,7 @@ void SimpleFilter::setImage(const QImage& img)
 
 void SimpleFilter::prepare()
 {
-    VideoFilterContext* ctx = static_cast<VideoFilterContext*>(context());
+    VideoFilterContext* const ctx = static_cast<VideoFilterContext*>(context());
 
     if      (!mText.isEmpty())
     {
@@ -111,8 +111,8 @@ void SimpleFilter::process(Statistics* statistics, VideoFrame* frame)
     if (!isEnabled())
         return;
 
-    int t                   = mTime.elapsed()/100;
-    VideoFilterContext* ctx = static_cast<VideoFilterContext*>(context());
+    int t                         = mTime.elapsed()/100;
+    VideoFilterContext* const ctx = static_cast<VideoFilterContext*>(context());
 
     if (mCanRot)
     {
@@ -166,7 +166,7 @@ void SimpleFilter::process(Statistics* statistics, VideoFrame* frame)
         QLinearGradient g(0, 0, 100, 32);
         g.setSpread(QGradient::ReflectSpread);
         g.setColorAt(0, QColor::fromHsvF(c, 1, 1, 1));
-        g.setColorAt(1, QColor::fromHsvF(c > 0.5?c-0.5:c+0.5, 1, 1, 1));
+        g.setColorAt(1, QColor::fromHsvF((c > 0.5) ? c-0.5 : c + 0.5, 1, 1, 1));
         ctx->pen.setBrush(QBrush(g));
         ctx->drawRichText(ctx->rect, mText);
 

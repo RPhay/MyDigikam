@@ -44,7 +44,7 @@ class AVFilterConfigPage : public ConfigPageBase
 
 public:
 
-    AVFilterConfigPage(QWidget* parent = 0);
+    explicit AVFilterConfigPage(QWidget* const parent = nullptr);
     virtual QString name() const;
 
 protected:

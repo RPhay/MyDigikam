@@ -45,7 +45,7 @@ class SimpleFilter : public VideoFilter
 
 public:
 
-    SimpleFilter(QObject* const parent = nullptr);
+    explicit SimpleFilter(QObject* const parent = nullptr);
     virtual ~SimpleFilter();
 
     void enableRotate(bool r);

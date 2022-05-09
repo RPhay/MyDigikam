@@ -42,19 +42,20 @@ static const int kWidth      = 320;
 static const int kHeightMax  = 30;
 static const int kHeightMin  = 20;
 
-PlayListDelegate::PlayListDelegate(QObject* parent)
+PlayListDelegate::PlayListDelegate(QObject* const parent)
     : QStyledItemDelegate(parent)
 {
     mHighlightRow = -1;
 }
 
-// dynamic height:http://www.qtcentre.org/threads/18879-solved-QListView-dynamic-item-height
+// dynamic height: http://www.qtcentre.org/threads/18879-solved-QListView-dynamic-item-height     // krazy:exclude=insecurenet
 
 void PlayListDelegate::paint(QPainter *painter, const QStyleOptionViewItem &option, const QModelIndex &index) const
 {
     if (!index.data().canConvert<PlayListItem>())
     {
         QStyledItemDelegate::paint(painter, option, index);
+
         return;
     }
 
@@ -67,18 +68,20 @@ void PlayListDelegate::paint(QPainter *painter, const QStyleOptionViewItem &opti
 
     bool detail = false;
 
-    // TODO: draw border. wrong rect. http://stackoverflow.com/questions/18568594/correct-highlighting-with-qt-custom-delegates
-
-    //const QWidget *widget = option.widget;
-    //QStyle *style = widget ? widget->style() : QApplication::style();
-
+    // TODO: draw border. wrong rect. 
+    // http://stackoverflow.com/questions/18568594/correct-highlighting-with-qt-custom-delegates     // krazy:exclude=insecurenet
+/*
+    const QWidget *widget = option.widget;
+    QStyle *style = widget ? widget->style() : QApplication::style();
+*/
     if (option.state & QStyle::State_Selected)
     {
         detail = true;
         mSelectedRows.append(index.row());
         painter->fillRect(QRect(0, 0, kWidth, kHeightMax), QColor(0, 100, 200, 100));
-
-        //style->drawControl(QStyle::CE_ItemViewItem, &option, painter, widget);
+/*
+        style->drawControl(QStyle::CE_ItemViewItem, &option, painter, widget);
+*/
     }
     else
     {
@@ -103,7 +106,7 @@ void PlayListDelegate::paint(QPainter *painter, const QStyleOptionViewItem &opti
 
     QFont ft;
     ft.setBold(detail);
-    ft.setPixelSize(12);    // kHeightMin - 2*kMarginTop);
+    ft.setPixelSize(12);        // kHeightMin - 2*kMarginTop);
     painter->setFont(ft);
     painter->translate(kMarginLeft, kMarginTop);
     painter->drawText(QRect(0, 0, kWidth - 2*kMarginLeft, kHeightMin - 2*kMarginTop), pli.title());
@@ -122,10 +125,10 @@ void PlayListDelegate::paint(QPainter *painter, const QStyleOptionViewItem &opti
     painter->restore();
 }
 
-// http://qt-project.org/forums/viewthread/5741
+// http://qt-project.org/forums/viewthread/5741      // krazy:exclude=insecurenet
 
-QSize PlayListDelegate::sizeHint(const QStyleOptionViewItem &option,
-                                 const QModelIndex &index) const
+QSize PlayListDelegate::sizeHint(const QStyleOptionViewItem& option,
+                                 const QModelIndex& index) const
 {
     if (!index.data().canConvert<PlayListItem>())
     {

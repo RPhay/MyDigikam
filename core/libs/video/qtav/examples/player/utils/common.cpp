@@ -203,7 +203,9 @@ void set_opengl_backend(const QString& glopt, const QString& appname)
         }
     }
 
-    if ((gl == QLatin1String("es")) || (gl == QLatin1String("angle")) || (gl == QLatin1String("opengles")))
+    if ((gl == QLatin1String("es"))     ||
+        (gl == QLatin1String("angle"))  ||
+        (gl == QLatin1String("opengles")))
     {
         gl = QLatin1String("es_");
         gl.append(Config::instance().getANGLEPlatform().toLower());

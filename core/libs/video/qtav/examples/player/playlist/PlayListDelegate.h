@@ -37,10 +37,10 @@ class PlayListDelegate : public QStyledItemDelegate
 
 public:
 
-    explicit PlayListDelegate(QObject* parent = nullptr);
+    explicit PlayListDelegate(QObject* const parent = nullptr);
 
-    virtual void paint(QPainter* painter, const QStyleOptionViewItem& option, const QModelIndex & index) const;
-    virtual QSize sizeHint(const QStyleOptionViewItem& option, const QModelIndex& index) const;
+    virtual void paint(QPainter* painter, const QStyleOptionViewItem& option, const QModelIndex& index) const;
+    virtual QSize sizeHint(const QStyleOptionViewItem& option, const QModelIndex& index)                const;
 
 private:
 

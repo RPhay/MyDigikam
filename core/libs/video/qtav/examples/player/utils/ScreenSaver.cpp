@@ -41,54 +41,72 @@
 #   endif
 
 struct _XDisplay;
-
 typedef struct _XDisplay Display;
-typedef Display* (*fXOpenDisplay)(const char*/* display_name */);
-typedef int (*fXCloseDisplay)(Display*/* display */);
-typedef int (*fXSetScreenSaver)(Display*, int /* timeout */, int /* interval */,int /* prefer_blanking */, int /* allow_exposures */);
-typedef int (*fXGetScreenSaver)(Display*, int* /* timeout_return */, int* /* interval_return */, int* /* prefer_blanking_return */, int* /* allow_exposures_return */);
-typedef int (*fXResetScreenSaver)(Display*/* display */);
 
-static fXOpenDisplay XOpenDisplay           = 0;
-static fXCloseDisplay XCloseDisplay         = 0;
-static fXSetScreenSaver XSetScreenSaver     = 0;
-static fXGetScreenSaver XGetScreenSaver     = 0;
+typedef Display*(*fXOpenDisplay) (const char* /* display_name */);
+
+typedef int (*fXCloseDisplay)    (Display* /* display */);
+typedef int (*fXSetScreenSaver)  (Display*, int  /* timeout */,
+                                            int  /* interval */,
+                                            int  /* prefer_blanking */,
+                                            int  /* allow_exposures */);
+typedef int (*fXGetScreenSaver)  (Display*, int* /* timeout_return */,
+                                            int* /* interval_return */,
+                                            int* /* prefer_blanking_return */,
+                                            int* /* allow_exposures_return */);
+typedef int (*fXResetScreenSaver)(Display* /* display */);
+
+static fXOpenDisplay      XOpenDisplay      = 0;
+static fXCloseDisplay     XCloseDisplay     = 0;
+static fXSetScreenSaver   XSetScreenSaver   = 0;
+static fXGetScreenSaver   XGetScreenSaver   = 0;
 static fXResetScreenSaver XResetScreenSaver = 0;
 
 static QLibrary xlib;
 
-#endif //Q_OS_LINUX
+#endif // Q_OS_LINUX
 
 #if defined(Q_OS_MAC) && !defined(Q_OS_IOS)
 #   include <Availability.h>
 #   if MAC_OS_X_VERSION_MIN_REQUIRED < MAC_OS_X_VERSION_10_8
-// http://www.cocoachina.com/macdev/cocoa/2010/0201/453.html
+
+// http://www.cocoachina.com/macdev/cocoa/2010/0201/453.html         // krazy:exclude=insecurenet
+
 #       include <CoreServices/CoreServices.h>
 #   else
+
 // MAC OSX 10.8+ has deprecated the UpdateSystemActivity stuff in favor of a new API.
+
 #       include <IOKit/pwr_mgt/IOPMLib.h>
 #   endif
-#endif //Q_OS_MAC
+#endif // Q_OS_MAC
 
 #ifdef Q_OS_WIN
 #   include <QAbstractEventDispatcher>
 #   if QT_VERSION >= QT_VERSION_CHECK(5, 0, 0)
 #       include <QAbstractNativeEventFilter>
 #   endif
+
 // mingw gcc4.4 EXECUTION_STATE
-#   ifdef __MINGW32__
+
+#   ifdef __MINGW32__                            // krazy:exclude=cpp
 #       ifndef _WIN32_WINDOWS
 #           define _WIN32_WINDOWS 0x0410
 #       endif //_WIN32_WINDOWS
-#   endif //__MINGW32__
+#   endif     //__MINGW32__
 #   include <windows.h>
 #   define USE_NATIVE_EVENT 0
 
 #   if USE_NATIVE_EVENT
+
 class ScreenSaverEventFilter
+
 #       if QT_VERSION >= QT_VERSION_CHECK(5, 0, 0)
+
     : public QAbstractNativeEventFilter
+
 #       endif
+
 {
 public:
 
@@ -144,9 +162,10 @@ public:
         Q_UNUSED(eventType);
 
         MSG* msg = static_cast<MSG*>(message);
-
-        //qCDebug(DIGIKAM_QTAVPLAYER_LOG).noquote() << QString::asprintf("ScreenSaverEventFilter: %p", msg->message);
-
+/*
+        qCDebug(DIGIKAM_QTAVPLAYER_LOG).noquote()
+            << QString::asprintf("ScreenSaverEventFilter: %p", msg->message);
+*/
         if (WM_DEVICECHANGE == msg->message)
         {
             qCDebug(DIGIKAM_QTAVPLAYER_LOG).noquote() << QString::asprintf("~~~~~~~~~~device event");
@@ -163,8 +182,10 @@ public:
                  || (msg->wParam & 0xFFF0) == SC_MONITORPOWER)
            )
          {
-            //qCDebug(DIGIKAM_QTAVPLAYER_LOG).noquote() << QString::asprintf("WM_SYSCOMMAND SC_SCREENSAVE SC_MONITORPOWER");
-
+/*
+            qCDebug(DIGIKAM_QTAVPLAYER_LOG).noquote()
+                << QString::asprintf("WM_SYSCOMMAND SC_SCREENSAVE SC_MONITORPOWER");
+*/
             if (result)
             {
                 // *result = 0; // why crash?
@@ -261,7 +282,7 @@ ScreenSaver::ScreenSaver()
 #endif // Q_OS_LINUX
 
     ssTimerId          = 0;
-    osxIOPMAssertionId = 0U; // mac >=10.8 only
+    osxIOPMAssertionId = 0U; // mac >= 10.8 only
     retrieveState();
 }
 
@@ -275,6 +296,7 @@ ScreenSaver::~ScreenSaver()
         xlib.unload();
 
 #elif defined(Q_OS_MAC) && !defined(Q_OS_IOS)
+
 #   if MAC_OS_X_VERSION_MIN_REQUIRED >= MAC_OS_X_VERSION_10_8
 
     if (osxIOPMAssertionId)
@@ -289,8 +311,8 @@ ScreenSaver::~ScreenSaver()
 
 }
 
-// http://msdn.microsoft.com/en-us/library/windows/desktop/ms724947%28v=vs.85%29.aspx
-// http://msdn.microsoft.com/en-us/library/windows/desktop/aa373208%28v=vs.85%29.aspx
+// http://msdn.microsoft.com/en-us/library/windows/desktop/ms724947%28v=vs.85%29.aspx       // krazy:exclude=insecurenet
+// http://msdn.microsoft.com/en-us/library/windows/desktop/aa373208%28v=vs.85%29.aspx       // krazy:exclude=insecurenet
 
 /* TODO:
  * SystemParametersInfo will change system wild settings. An application level solution is better. Use native event
@@ -303,6 +325,7 @@ bool ScreenSaver::enable(bool yes)
     bool rv = false;
 
 #if defined(Q_OS_WIN) && !defined(Q_OS_WINRT)
+
 #   if USE_NATIVE_EVENT
 
     ScreenSaverEventFilter::instance().enable(yes);
@@ -313,14 +336,14 @@ bool ScreenSaver::enable(bool yes)
 
 #else
 
-    /*
+/*
         int val; //SPI_SETLOWPOWERTIMEOUT, SPI_SETPOWEROFFTIMEOUT. SPI_SETSCREENSAVETIMEOUT
 
         if (SystemParametersInfo(SPI_GETSCREENSAVETIMEOUT, 0, &val, 0))
         {
             SystemParametersInfo(SPI_SETSCREENSAVETIMEOUT, val, nullptr, 0);
         }
-     */
+*/
 
     // http://msdn.microsoft.com/en-us/library/aa373208%28VS.85%29.aspx
 
@@ -328,8 +351,10 @@ bool ScreenSaver::enable(bool yes)
 
     if (!yes)
     {
-        // Calling SetThreadExecutionState without ES_CONTINUOUS simply resets the idle timer; to keep the display or system in the working state, the thread must call SetThreadExecutionState periodically
-        // ES_CONTINUOUS: Informs the system that the state being set should remain in effect until the next call that uses ES_CONTINUOUS and one of the other state flags is cleared.
+        // Calling SetThreadExecutionState without ES_CONTINUOUS simply resets the idle timer;
+        // to keep the display or system in the working state, the thread must call SetThreadExecutionState periodically
+        // ES_CONTINUOUS: Informs the system that the state being set should remain in effect until the next call
+        // that uses ES_CONTINUOUS and one of the other state flags is cleared.
 
         sLastState = SetThreadExecutionState(ES_DISPLAY_REQUIRED | ES_SYSTEM_REQUIRED | ES_CONTINUOUS);
     }
@@ -358,7 +383,7 @@ bool ScreenSaver::enable(bool yes)
         if (yes)
             ret = XSetScreenSaver(display, -1, interval, preferBlanking, allowExposures);
         else
-            ret = XSetScreenSaver(display, 0, interval, preferBlanking/*DontPreferBlanking*/, allowExposures);
+            ret = XSetScreenSaver(display, 0, interval, preferBlanking /*DontPreferBlanking*/, allowExposures);
 
         // TODO: why XSetScreenSaver return 1? now use XResetScreenSaver to workaround
 
@@ -523,7 +548,7 @@ bool ScreenSaver::restoreState()
     return rv;
 }
 
-void ScreenSaver::timerEvent(QTimerEvent *e)
+void ScreenSaver::timerEvent(QTimerEvent* e)
 {
     if (e->timerId() != ssTimerId)
         return;
@@ -551,6 +576,7 @@ void ScreenSaver::timerEvent(QTimerEvent *e)
 #endif // Q_OS_MAC
 
 #ifdef Q_OS_LINUX
+
     if (!isX11)
         return;
 
@@ -559,6 +585,7 @@ void ScreenSaver::timerEvent(QTimerEvent *e)
     XCloseDisplay(display);
 
 #endif // Q_OS_LINUX
+
 }
 
 } // namespace QtAVPlayer

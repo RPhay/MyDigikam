@@ -39,7 +39,7 @@
 namespace QtAVPlayer
 {
 
-AVFilterConfigPage::AVFilterConfigPage(QWidget* parent)
+AVFilterConfigPage::AVFilterConfigPage(QWidget* const parent)
     : ConfigPageBase(parent)
 {
     setObjectName(QString::fromLatin1("avfilter"));

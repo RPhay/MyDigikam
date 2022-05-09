@@ -48,24 +48,24 @@ VideoPlayer::VideoPlayer(QWidget* const parent)
     : QWidget(parent),
       videoItem(nullptr)
 {
-    videoItem             = new GraphicsItemRenderer;
+    videoItem                   = new GraphicsItemRenderer;
     videoItem->resizeRenderer(640, 360);
     videoItem->setOutAspectRatioMode(VideoRenderer::VideoAspectRatio);
 
-    QGraphicsScene* scene = new QGraphicsScene(this);
+    QGraphicsScene* const scene = new QGraphicsScene(this);
     scene->addItem(videoItem);
 
-    view                  = new QGraphicsView(scene);
+    view                        = new QGraphicsView(scene);
 
-    QSlider* rotateSlider = new QSlider(Qt::Horizontal);
+    QSlider* const rotateSlider = new QSlider(Qt::Horizontal);
     rotateSlider->setRange(-180,  180);
     rotateSlider->setValue(0);
 
-    QSlider* scaleSlider  = new QSlider(Qt::Horizontal);
+    QSlider* const scaleSlider  = new QSlider(Qt::Horizontal);
     scaleSlider->setRange(0, 200);
     scaleSlider->setValue(100);
 
-    QDial* orientation    = new QDial();
+    QDial* const orientation    = new QDial();
     orientation->setRange(0, 3);
     orientation->setValue(0);
 
@@ -78,24 +78,24 @@ VideoPlayer::VideoPlayer(QWidget* const parent)
     connect(scaleSlider, SIGNAL(valueChanged(int)),
             this, SLOT(scaleVideo(int)));
 
-    QPushButton* openBtn = new QPushButton;
+    QPushButton* const openBtn = new QPushButton;
     openBtn->setText(tr("Open"));
 
     connect(openBtn, SIGNAL(clicked()),
             this, SLOT(open()));
 
-    QCheckBox* glBox = new QCheckBox();
+    QCheckBox* const glBox   = new QCheckBox();
     glBox->setText(QString::fromLatin1("OpenGL"));
     glBox->setChecked(false);
 
     connect(glBox, SIGNAL(toggled(bool)),
             this, SLOT(setOpenGL(bool)));
 
-    QHBoxLayout* hb = new QHBoxLayout;
+    QHBoxLayout* const hb    = new QHBoxLayout;
     hb->addWidget(glBox);
     hb->addWidget(openBtn);
     hb->addWidget(orientation);
-    QBoxLayout* layout = new QVBoxLayout;
+    QBoxLayout* const layout = new QVBoxLayout;
     layout->addWidget(view);
     layout->addWidget(rotateSlider);
     layout->addWidget(scaleSlider);

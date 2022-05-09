@@ -40,7 +40,7 @@ class Slider : public QSlider
 
 public:
 
-    Slider(QWidget* const parent = nullptr);
+    explicit Slider(QWidget* const parent = nullptr);
     ~Slider();
 
 Q_SIGNALS:

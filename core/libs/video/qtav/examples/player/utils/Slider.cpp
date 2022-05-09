@@ -197,12 +197,14 @@ void Slider::mousePressEvent(QMouseEvent* e)
 
     if      (e->button() == Qt::LeftButton)
     {
-        QMouseEvent ev2(QEvent::MouseButtonRelease, e->pos(), e->globalPos(), Qt::MidButton, Qt::MidButton, e->modifiers());
+        QMouseEvent ev2(QEvent::MouseButtonRelease, e->pos(), e->globalPos(),
+                        Qt::MidButton, Qt::MidButton, e->modifiers());
         QSlider::mousePressEvent(&ev2);
     }
     else if (e->button() == Qt::MidButton)
     {
-        QMouseEvent ev2(QEvent::MouseButtonRelease, e->pos(), e->globalPos(), Qt::LeftButton, Qt::LeftButton, e->modifiers());
+        QMouseEvent ev2(QEvent::MouseButtonRelease, e->pos(), e->globalPos(),
+                        Qt::LeftButton, Qt::LeftButton, e->modifiers());
         QSlider::mousePressEvent(&ev2);
     }
     else

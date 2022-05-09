@@ -128,7 +128,7 @@ void EventFilter::help()
     QMessageBox::about(0, tr("Help"), help);
 }
 
-bool EventFilter::eventFilter(QObject *watched, QEvent *event)
+bool EventFilter::eventFilter(QObject* watched, QEvent* event)
 {
     Q_UNUSED(watched);
 
@@ -529,7 +529,7 @@ void EventFilter::showMenu(const QPoint& p)
     menu->exec(p);
 }
 
-WindowEventFilter::WindowEventFilter(QWidget* window)
+WindowEventFilter::WindowEventFilter(QWidget* const window)
     : QObject(window),
       mpWindow(window)
 {
