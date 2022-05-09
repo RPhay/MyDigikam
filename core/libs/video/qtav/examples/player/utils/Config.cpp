@@ -211,57 +211,58 @@ public:
 public:
 
     QString             file;
-    bool                is_loading;
+    bool                is_loading              = false;
 
-    qreal               force_fps;
+    qreal               force_fps               = 0.0;
     QStringList         video_decoders;
-    bool                zero_copy;
+    bool                zero_copy               = false;
 
     QString             last_file;
 
     QString             capture_dir;
     QString             capture_fmt;
-    int                 capture_quality;
+    int                 capture_quality         = 0;
 
-    bool                avformat_on;
-    bool                direct;
-    unsigned int        probe_size;
-    int                 analyze_duration;
+    bool                avformat_on             = false;
+    bool                direct                  = false;
+    unsigned int        probe_size              = 0;
+    int                 analyze_duration        = 0;
     QString             avformat_extra;
-    bool                avfilterVideo_on;
+    bool                avfilterVideo_on        = false;
     QString             avfilterVideo;
-    bool                avfilterAudio_on;
+    bool                avfilterAudio_on        = false;
     QString             avfilterAudio;
 
     QStringList         subtitle_engines;
-    bool                subtitle_autoload;
-    bool                subtitle_enabled;
+    bool                subtitle_autoload       = false;
+    bool                subtitle_enabled        = false;
     QFont               subtitle_font;
     QColor              subtitle_color, subtitle_outline_color;
-    bool                subtitle_outline;
-    int                 subtilte_bottom_margin;
-    qreal               subtitle_delay;
+    bool                subtitle_outline        = false;
+    int                 subtilte_bottom_margin  = 0;
+    qreal               subtitle_delay          = 0.0;
 
-    bool                ass_force_font_file;
+    bool                ass_force_font_file     = false;
     QString             ass_font_file;
     QString             ass_fonts_dir;
 
-    bool                preview_enabled;
-    int                 preview_w, preview_h;
+    bool                preview_enabled         = false;
+    int                 preview_w               = 0;
+    int                 preview_h               = 0;
 
-    bool                egl;
+    bool                egl                     = false;
     Config::OpenGLType  opengl;
     QString             angle_dx;
-    bool                abort_timeout;
+    bool                abort_timeout           = false;
     qreal               timeout;
-    int                 buffer_value;
+    int                 buffer_value            = 0;
     QString             log;
     QString             lang;
 
     QVariantList        history;
 
-    bool                user_shader;
-    bool                fbo;
+    bool                user_shader             = false;
+    bool                fbo                     = false;
     QString             frag_header;
     QString             frag_sample;
     QString             frag_pp;
