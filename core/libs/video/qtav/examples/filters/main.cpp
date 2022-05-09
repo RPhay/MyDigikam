@@ -78,7 +78,7 @@ int main(int argc, char *argv[])
     }
 
     qCDebug(DIGIKAM_TESTS_LOG).noquote() << QString::asprintf("vo: %s", vo.toUtf8().constData());
-    bool opt_has_file = argc > idx + 2;
+    bool opt_has_file = (argc > idx + 2);
     vo                = vo.toLower();
 
     if ((vo != QLatin1String("gl"))  &&
@@ -151,38 +151,38 @@ int main(int argc, char *argv[])
         filter->prepare();
         renderer->installFilter(filter);
 
-        filter       = new SimpleFilter(renderer->widget());
+        filter                  = new SimpleFilter(renderer->widget());
         filter->setText(QString());
         filter->setImage(QImage(QString::fromLatin1(":/images/qt-logo.png")));
-        ctx          = static_cast<VideoFilterContext*>(filter->context());
-        ctx->rect    = QRect(400, 80, 200, 200);
-        ctx->opacity = 0.618;
+        ctx                     = static_cast<VideoFilterContext*>(filter->context());
+        ctx->rect               = QRect(400, 80, 200, 200);
+        ctx->opacity            = 0.618;
         filter->enableRotate(true);
         filter->enableWaveEffect(false);
         filter->prepare();
         renderer->installFilter(filter);
 
-        filter    = new SimpleFilter(&player);
+        filter                  = new SimpleFilter(&player);
         filter->setText(QString::fromLatin1("<h1 style='color:#ffff00'>HTML Filter on<span style='color:#ff0000'>Video Frame</span></h2>"));
         filter->enableWaveEffect(false);
         filter->enableRotate(true);
-        ctx       = static_cast<VideoFilterContext*>(filter->context());
-        ctx->rect = QRect(200, 100, 400, 60);
+        ctx                     = static_cast<VideoFilterContext*>(filter->context());
+        ctx->rect               = QRect(200, 100, 400, 60);
         filter->prepare();
         player.installFilter(filter);
     }
 
-    SubtitleFilter* sub = new SubtitleFilter(&player);
+    SubtitleFilter* const sub = new SubtitleFilter(&player);
     sub->setPlayer(&player);
     player.installFilter(sub);
-    opt_has_file       &= argc > idx + 2;
+    opt_has_file             &= (argc > idx + 2);
 
     if (opt_has_file)
     {
         player.play(a.arguments().last());
     }
 
-    int ret = a.exec();
+    int ret = a.exec();      // krazy:exclude=crashy
 
     return ret;
 }

@@ -481,7 +481,7 @@ bool EventFilter::eventFilter(QObject* watched, QEvent* event)
                 }
                 else
                 {
-                    mpWindow->showFullScreen();
+                    mpWindow->showFullScreen();     // krazy:exclude=qmethods
                 }
             }
 

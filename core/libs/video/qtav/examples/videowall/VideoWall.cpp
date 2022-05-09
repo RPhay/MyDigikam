@@ -325,9 +325,9 @@ bool VideoWall::eventFilter(QObject *watched, QEvent *event)
                         return false;
 
                     if (w->isFullScreen())
-                        w->showNormal();
+                        w->showNormal();        // krazy:exclude=qmethods
                     else
-                        w->showFullScreen();
+                        w->showFullScreen();    // krazy:exclude=qmethods
 
                     break;
                 }

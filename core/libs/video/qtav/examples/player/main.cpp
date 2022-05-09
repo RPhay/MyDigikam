@@ -78,7 +78,7 @@ VideoRendererId rendererId_from_opt_name(const QString& name)
     return VideoRendererId_Widget;
 }
 
-int main(int argc, char *argv[])
+int main(int argc, char* argv[])
 {
     qCDebug(DIGIKAM_QTAVPLAYER_LOG) << aboutQtAV_PlainText();
 
@@ -118,7 +118,7 @@ int main(int argc, char *argv[])
 
         while ((vid = VideoDecoder::next(vid)) != nullptr)
         {
-            VideoDecoder* vd = VideoDecoder::create(*vid);
+            VideoDecoder* const vd = VideoDecoder::create(*vid);
             pe.getProperties(vd);
 
             qCDebug(DIGIKAM_QTAVPLAYER_LOG).noquote() << QString::asprintf("- %s:", vd->name().toUtf8().constData());
@@ -130,7 +130,7 @@ int main(int argc, char *argv[])
 
     QApplication a(argc, argv);
     a.setAttribute(Qt::AA_DontCreateNativeWidgetSiblings);
-    qCDebug(DIGIKAM_QTAVPLAYER_LOG) <<a.arguments();
+    qCDebug(DIGIKAM_QTAVPLAYER_LOG) << a.arguments();
 
     a.setApplicationDisplayName(QString::fromLatin1("QtAV Player"));
     QDir::setCurrent(qApp->applicationDirPath());
@@ -154,6 +154,7 @@ int main(int argc, char *argv[])
     }
 
     qCDebug(DIGIKAM_QTAVPLAYER_LOG).noquote() << QString::asprintf("vo: %s", vo.toUtf8().constData());
+
     MainWindow window;
     window.setProperty("rendererId", rendererId_from_opt_name(vo.toLower()));
     window.show();
@@ -163,11 +164,11 @@ int main(int argc, char *argv[])
 
     int x = window.x();
     int y = window.y();
-    op = options.option(QString::fromLatin1("width"));
+    op    = options.option(QString::fromLatin1("width"));
     int w = op.value().toInt();
-    op = options.option(QString::fromLatin1("height"));
+    op    = options.option(QString::fromLatin1("height"));
     int h = op.value().toInt();
-    op = options.option(QString::fromLatin1("x"));
+    op    = options.option(QString::fromLatin1("x"));
 
     if (op.isSet())
         x = op.value().toInt();
@@ -181,7 +182,7 @@ int main(int argc, char *argv[])
     window.move(x, y);
 
     if (options.value(QString::fromLatin1("fullscreen")).toBool())
-        window.showFullScreen();
+        window.showFullScreen();        // krazy:exclude=qmethods
 
     op = options.option(QString::fromLatin1("ao"));
 
@@ -218,6 +219,7 @@ int main(int argc, char *argv[])
 #endif
 
             );
+
         window.setAudioBackends(ao);
     }
 
@@ -260,7 +262,7 @@ int main(int argc, char *argv[])
         }
     }
 
-    int ret = a.exec();
+    int ret = a.exec();         // krazy:exclude=crashy
 
     return ret;
 }

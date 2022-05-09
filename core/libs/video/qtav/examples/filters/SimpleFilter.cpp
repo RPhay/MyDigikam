@@ -23,19 +23,23 @@
 
 #include "SimpleFilter.h"
 
+// C++ includes
+
+#include <cmath>
+
 // Qt includes
 
 #include <QWidget>
-#include <math.h>
 #include <QTime>
+#include <QRandomGenerator>
 
 SimpleFilter::SimpleFilter(QObject* const parent)
     : VideoFilter(parent),
       mCanRot(true),
       mWave(true)
 {
-    srand(QTime::currentTime().msec());
-    mStartValue = (qreal)(rand()%1000) / qreal(1000.0);
+    srand(QTime::currentTime().msec());                      // krazy:exclude=syscalls
+    mStartValue = (qreal)(rand() % 1000) / qreal(1000.0);    // krazy:exclude=syscalls
     mTime.start();
     startTimer(100);
 }

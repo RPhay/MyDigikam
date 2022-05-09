@@ -77,7 +77,7 @@ private:
                     float lg  = 0.6094;
                     float lb  = 0.0820;
                     float s   = bs.g + 1.0;
-                    float is  = 1.0-s;
+                    float is  = 1.0 - s;
                     float ilr = is * lr;
                     float ilg = is * lg;
                     float ilb = is * lb;
@@ -87,7 +87,8 @@ private:
                         ilr  , ilg+s, ilb  , 0.0,
                         ilr  , ilg  , ilb+s, 0.0,
                         0.0  , 0.0  , 0.0  , 1.0);
-                    gl_FragColor = m*gl_FragColor+bs.r;
+
+                    gl_FragColor = m * gl_FragColor + bs.r;
                    );
     }
 };
@@ -166,9 +167,9 @@ private:
     {
         // return false; // enable this line to call setUserUniformValue(Uniform&)
 
-        program()->setUniformValue("u_A", A);
+        program()->setUniformValue("u_A",     A);
         program()->setUniformValue("u_omega", omega);
-        program()->setUniformValue("u_t", t);
+        program()->setUniformValue("u_t",     t);
 
         return true;
     }
@@ -198,7 +199,7 @@ private:
     float omega;
 };
 
-int main(int argc, char *argv[])
+int main(int argc, char* argv[])
 {
     QApplication a(argc, argv);
 

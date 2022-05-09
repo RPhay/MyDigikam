@@ -165,9 +165,9 @@ void VideoGroup::setSingleWindow(bool s)
         if (view)
             return;
 
-        view                = new QWidget;
+        view                      = new QWidget;
         view->resize(DESKTOP_RECT().size());
-        QGridLayout* layout = new QGridLayout;
+        QGridLayout* const layout = new QGridLayout;
         layout->setSizeConstraint(QLayout::SetMaximumSize);
         layout->setSpacing(1);
         layout->setContentsMargins(0, 0, 0, 0);
@@ -181,7 +181,7 @@ void VideoGroup::setSingleWindow(bool s)
         }
 
         view->show();
-        mRenderers.last()->widget()->showFullScreen();
+        mRenderers.last()->widget()->showFullScreen();      // krazy:exclude=qmethods
     }
 }
 
@@ -201,8 +201,8 @@ void VideoGroup::toggleFrameless(bool f)
     if (mRenderers.isEmpty())
         return;
 
-    VideoRenderer* renderer = mRenderers.first();
-    Qt::WindowFlags wf      = renderer->widget()->windowFlags();
+    VideoRenderer* const renderer = mRenderers.first();
+    Qt::WindowFlags wf            = renderer->widget()->windowFlags();
 
     if (f)
     {
@@ -284,11 +284,11 @@ void VideoGroup::addRenderer()
     else if (vid == QLatin1String("xv"))
         v = VideoRendererId_XV;
 
-    VideoRenderer* renderer = VideoRenderer::create(v);
-    mRenderers              = mpPlayer->videoOutputs();
+    VideoRenderer* const renderer = VideoRenderer::create(v);
+    mRenderers                    = mpPlayer->videoOutputs();
     mRenderers.append(renderer);
     renderer->widget()->setAttribute(Qt::WA_DeleteOnClose);
-    Qt::WindowFlags wf = renderer->widget()->windowFlags();
+    Qt::WindowFlags wf            = renderer->widget()->windowFlags();
 
     if (mFrameless)
     {
@@ -329,7 +329,7 @@ void VideoGroup::removeRenderer()
     if (mRenderers.isEmpty())
         return;
 
-    VideoRenderer* r = mRenderers.takeLast();
+    VideoRenderer* const r = mRenderers.takeLast();
     mpPlayer->removeVideoRenderer(r);
 
     if (view)
@@ -363,7 +363,7 @@ void VideoGroup::updateROI()
 
     for (int i = 0 ; i < mRenderers.size() ; ++i)
     {
-        VideoRenderer* renderer = mRenderers.at(i);
+        VideoRenderer* const renderer = mRenderers.at(i);
         renderer->setRegionOfInterest(qreal((i%c)*w)/qreal(W), qreal((i/c)*h)/qreal(H), qreal(w)/qreal(W), qreal(h)/qreal(H));
     }
 }
