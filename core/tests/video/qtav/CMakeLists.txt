@@ -94,6 +94,16 @@ target_link_libraries(qtav-player_gui
                       ${MEDIAPLAYER_LIBRARIES}
 )
 
+if (APPLE)
+
+    target_link_libraries(qtav-player_gui
+                          "-framework CoreServices"
+                          "-framework ScreenSaver"
+                          "-framework IOKit"
+    )
+
+endif()
+
 target_compile_definitions(qtav-player_gui
                            PRIVATE
                            ${MEDIAPLAYER_DEFINITIONS}

@@ -562,7 +562,7 @@ void ScreenSaver::timerEvent(QTimerEvent* e)
 #   else // OSX >= 10.8, use new API
 
     IOPMAssertionID assertionId = osxIOPMAssertionId;
-    IOReturn r                  = IOPMAssertionDeclareUserActivity(CFSTR("QtAVScreenSaver"),kIOPMUserActiveLocal,&assertionId);
+    IOReturn r                  = IOPMAssertionDeclareUserActivity(CFSTR("QtAVScreenSaver"), kIOPMUserActiveLocal, &assertionId);
 
     if (r == kIOReturnSuccess)
     {
