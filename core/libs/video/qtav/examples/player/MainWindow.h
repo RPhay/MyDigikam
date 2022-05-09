@@ -75,11 +75,11 @@ class MainWindow : public QWidget
 
 public:
 
-    explicit MainWindow(QWidget* parent = nullptr);
+    explicit MainWindow(QWidget* const parent = nullptr);
     ~MainWindow();
 
     void setAudioBackends(const QStringList& backends);
-    bool setRenderer(QtAV::VideoRenderer* renderer);
+    bool setRenderer(QtAV::VideoRenderer* const renderer);
     void setVideoDecoderNames(const QStringList& vd);
 
 public Q_SLOTS:
