@@ -50,7 +50,7 @@ PlayListDelegate::PlayListDelegate(QObject* const parent)
 
 // dynamic height: http://www.qtcentre.org/threads/18879-solved-QListView-dynamic-item-height     // krazy:exclude=insecurenet
 
-void PlayListDelegate::paint(QPainter *painter, const QStyleOptionViewItem &option, const QModelIndex &index) const
+void PlayListDelegate::paint(QPainter* painter, const QStyleOptionViewItem& option, const QModelIndex& index) const
 {
     if (!index.data().canConvert<PlayListItem>())
     {
@@ -68,11 +68,12 @@ void PlayListDelegate::paint(QPainter *painter, const QStyleOptionViewItem &opti
 
     bool detail = false;
 
-    // TODO: draw border. wrong rect. 
+    // TODO: draw border. wrong rect.
+
     // http://stackoverflow.com/questions/18568594/correct-highlighting-with-qt-custom-delegates     // krazy:exclude=insecurenet
 /*
-    const QWidget *widget = option.widget;
-    QStyle *style = widget ? widget->style() : QApplication::style();
+    const QWidget* widget = option.widget;
+    QStyle *style         = widget ? widget->style() : QApplication::style();
 */
     if (option.state & QStyle::State_Selected)
     {
@@ -92,8 +93,8 @@ void PlayListDelegate::paint(QPainter *painter, const QStyleOptionViewItem &opti
 
     if (option.state & (QStyle::State_MouseOver))
     {
-        detail           = true;
-        PlayListModel* m = (PlayListModel*)index.model();
+        detail                 = true;
+        PlayListModel* const m = dynamic_cast<PlayListModel*>(index.model());
 
         if (m && mHighlightRow != index.row())
         {

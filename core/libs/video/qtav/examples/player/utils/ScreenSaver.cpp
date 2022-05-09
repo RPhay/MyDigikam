@@ -387,6 +387,7 @@ bool ScreenSaver::enable(bool yes)
 
         // TODO: why XSetScreenSaver return 1? now use XResetScreenSaver to workaround
 
+        Q_UNUSED(ret);
         ret = XResetScreenSaver(display);
         XCloseDisplay(display);
         rv  = (ret == Success);
@@ -410,6 +411,7 @@ bool ScreenSaver::enable(bool yes)
             killTimer(ssTimerId);
     }
 
+    Q_UNUSED(rv);
     rv       = true;
     modified = true;
 

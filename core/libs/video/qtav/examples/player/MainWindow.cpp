@@ -108,7 +108,12 @@ void QLabelSetElideText(QLabel* const label, const QString& text, int W = 0)
         int w = W;
 
         if (!w)
-            w = ((QWidget*)label->parent())->width();
+        {
+            QWidget* const p = dynamic_cast<QWidget*>(label->parent());
+
+            if (p)
+                w = p->width();
+        }
 
         width = qMax(w - label->indent() - label->margin() - 13*(30), 0); // TODO: why 30?
     }
