@@ -26,7 +26,7 @@ Name[x-test]=xxHTML5 Responsivexx
 Name[zh_CN]=响应式 HTML5
 Comment=Generates a gallery using responsive HTML5 and CSS3 and UTF-8 encoding. Optionally uses PhotoSwipe by Dmitry Semenov to display the images.
 Comment[ca]=Genera una galeria usant HTML5 responsiu i CSS3 i codificació UTF-8. Opcionalment usa el PhotoSwipe del Dmitry Semenov per mostrar les imatges.
-Comment[ca@valencia]=Genera una galeria usant HTML5 responsiu i CSS3 i codificació UTF-8. Opcionalment usa el PhotoSwipe del Dmitry Semenov per mostrar les imatges.
+Comment[ca@valencia]=Genera una galeria usant HTML5 responsiu i CSS3 i codificació UTF-8. De manera opcional usa PhotoSwipe del Dmitry Semenov per a mostrar les imatges.
 Comment[de]=Erzeugt eine Responsive Galerie auf Basis HTML5 und CSS3. Sie verwendet optional PhotoSwipe von Dmitry Semenov zur Anzeige der Bilder.
 Comment[en_GB]=Generates a gallery using responsive HTML5 and CSS3 and UTF-8 encoding. Optionally uses PhotoSwipe by Dmitry Semenov to display the images.
 Comment[es]=Genera una galería usando HTML5 adaptable con CSS3 y codificación UTF-8. Opcionalmente usa PhotoSwipe, por Dmitry Semenov, para mostrar las imágenes.
@@ -322,7 +322,7 @@ Caption-1=List all
 [X-HTMLGallery Parameter usePhotoSwipe]
 Name=Use PhotoSwipe
 Name[ca]=Usa el PhotoSwipe
-Name[ca@valencia]=Utilitza el PhotoSwipe
+Name[ca@valencia]=Utilitza PhotoSwipe
 Name[de]=PhotoSwipe verwenden
 Name[en_GB]=Use PhotoSwipe
 Name[es]=Usar PhotoSwipe
@@ -354,7 +354,7 @@ Caption-1=No
 [X-HTMLGallery Parameter photoSwipeBackgroundOpacity]
 Name=PhotoSwipe Background Opacity
 Name[ca]=Opacitat del fons del PhotoSwipe
-Name[ca@valencia]=Opacitat del fons del PhotoSwipe
+Name[ca@valencia]=Opacitat del fons de PhotoSwipe
 Name[de]=PhotoSwipe Deckkraft
 Name[en_GB]=PhotoSwipe Background Opacity
 Name[es]=Opacidad de fondo de PhotoSwipe
@@ -384,7 +384,7 @@ Max=10
 [X-HTMLGallery Parameter photoSwipeShowSharingButton]
 Name=PhotoSwipe sharing button
 Name[ca]=Botó de compartició del PhotoSwipe
-Name[ca@valencia]=Botó de compartició del PhotoSwipe
+Name[ca@valencia]=Botó de compartició de PhotoSwipe
 Name[de]=Knopf für Bilder-Teilen
 Name[en_GB]=PhotoSwipe sharing button
 Name[es]=Botón para compartir en PhotoSwipe
