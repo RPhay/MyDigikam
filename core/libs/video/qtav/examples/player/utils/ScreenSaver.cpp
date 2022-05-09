@@ -437,7 +437,7 @@ bool ScreenSaver::enable(bool yes)
 
 #endif // Q_OS_MAC
 
-    if (!rv)
+    if (!rv)         // cppcheck-suppress knownConditionTrueFalse
     {
         qCWarning(DIGIKAM_QTAVPLAYER_LOG).noquote() << QString::asprintf("Failed to enable screen saver (%d)", yes);
     }
