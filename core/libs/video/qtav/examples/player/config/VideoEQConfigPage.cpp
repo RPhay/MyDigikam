@@ -43,16 +43,16 @@
 namespace QtAVPlayer
 {
 
-VideoEQConfigPage::VideoEQConfigPage(QWidget* parent)
+VideoEQConfigPage::VideoEQConfigPage(QWidget* const parent)
     : QWidget(parent)
 {
-    mEngine         = SWScale;
-    QGridLayout* gl = new QGridLayout();
+    mEngine               = SWScale;
+    QGridLayout* const gl = new QGridLayout();
     setLayout(gl);
 
-    QLabel* label   = new QLabel();
+    QLabel* const label   = new QLabel();
     label->setText(tr("Engine"));
-    mpEngine        = new QComboBox();
+    mpEngine              = new QComboBox();
     setEngines(QVector<Engine>(1, SWScale));
 
     connect(mpEngine, SIGNAL(currentIndexChanged(int)),
@@ -78,26 +78,26 @@ VideoEQConfigPage::VideoEQConfigPage(QWidget* parent)
 
     for (int i = 0 ; sliders[i].slider ; ++i)
     {
-        QLabel* label       = new QLabel(sliders[i].text);
-        *sliders[i].slider  = new Slider();
-        QSlider* slider     = *sliders[i].slider;
+        QLabel* const slabel  = new QLabel(sliders[i].text);
+        *sliders[i].slider    = new Slider();
+        QSlider* const slider = *sliders[i].slider;
         slider->setOrientation(Qt::Horizontal);
         slider->setTickInterval(2);
         slider->setRange(-100, 100);
         slider->setValue(0);
 
-        gl->addWidget(label, r, c);
-        gl->addWidget(slider, r, c+1);
+        gl->addWidget(slabel, r, c);
+        gl->addWidget(slider, r, c + 1);
         r++;
     }
 
-    mpGlobal = new QCheckBox(tr("Global"));
+    mpGlobal      = new QCheckBox(tr("Global"));
     mpGlobal->setEnabled(false);
     mpGlobal->setChecked(false);
     mpResetButton = new QPushButton(tr("Reset"));
 
-    gl->addWidget(mpGlobal, r, c, Qt::AlignLeft);
-    gl->addWidget(mpResetButton, r, c+1, Qt::AlignRight);
+    gl->addWidget(mpGlobal,      r, c,     Qt::AlignLeft);
+    gl->addWidget(mpResetButton, r, c + 1, Qt::AlignRight);
     r++;
 
     connect(mpBSlider, SIGNAL(valueChanged(int)),
@@ -124,7 +124,7 @@ void VideoEQConfigPage::onGlobalSet(bool g)
     Q_UNUSED(g);
 }
 
-void VideoEQConfigPage::setEngines(const QVector<Engine> &engines)
+void VideoEQConfigPage::setEngines(const QVector<Engine>& engines)
 {
     mpEngine->clear();
     QVector<Engine> es(engines);
