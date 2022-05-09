@@ -27,6 +27,7 @@
 
 #include <QPainter>
 #include <QApplication>
+#include <QAbstractItemModel>
 
 // Local includes
 
@@ -94,7 +95,7 @@ void PlayListDelegate::paint(QPainter* painter, const QStyleOptionViewItem& opti
     if (option.state & (QStyle::State_MouseOver))
     {
         detail                 = true;
-        PlayListModel* const m = dynamic_cast<PlayListModel*>(index.model());
+        PlayListModel* const m = (PlayListModel*)(index.model());        // cppcheck-suppress cstyleCast
 
         if (m && mHighlightRow != index.row())
         {
