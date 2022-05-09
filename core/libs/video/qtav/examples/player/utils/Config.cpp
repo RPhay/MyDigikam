@@ -1306,7 +1306,7 @@ void Config::removeHistory(const QString& url)
 
     QSqlDatabase db = QSqlDatabase::database();
     QSqlQuery query(db);
-    query.prepare(QString::fromUtf8("DELETE FROM history WHERE url = :url"));
+    (void)query.prepare(QString::fromUtf8("DELETE FROM history WHERE url = :url"));
     query.bindValue(QString::fromUtf8(":url"), url);
 
     if (!query.exec())
@@ -1324,7 +1324,7 @@ void Config::clearHistory()
 
     QSqlDatabase db = QSqlDatabase::database();
     QSqlQuery query(db);
-    query.prepare(QString::fromUtf8("DELETE FROM history"));
+    (void)query.prepare(QString::fromUtf8("DELETE FROM history"));
 
     // 'TRUNCATE table history' is faster
 
