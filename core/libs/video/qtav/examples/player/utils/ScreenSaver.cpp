@@ -115,6 +115,7 @@ public:
     static ScreenSaverEventFilter& instance()
     {
         static ScreenSaverEventFilter sSSEF;
+
         return sSSEF;
     }
 
@@ -161,7 +162,7 @@ public:
     {
         Q_UNUSED(eventType);
 
-        MSG* msg = static_cast<MSG*>(message);
+        MSG* const msg = static_cast<MSG*>(message);
 /*
         qCDebug(DIGIKAM_QTAVPLAYER_LOG).noquote()
             << QString::asprintf("ScreenSaverEventFilter: %p", msg->message);
@@ -265,14 +266,15 @@ ScreenSaver::ScreenSaver()
         if (!isX11)
         {
             qCDebug(DIGIKAM_QTAVPLAYER_LOG).noquote()
-                << QString::asprintf("open X11 so failed: %s", xlib.errorString().toUtf8().constData());
+                << QString::asprintf("open X11 so failed: %s",
+                    xlib.errorString().toUtf8().constData());
         }
         else
         {
-            XOpenDisplay      = (fXOpenDisplay)xlib.resolve("XOpenDisplay");
-            XCloseDisplay     = (fXCloseDisplay)xlib.resolve("XCloseDisplay");
-            XSetScreenSaver   = (fXSetScreenSaver)xlib.resolve("XSetScreenSaver");
-            XGetScreenSaver   = (fXGetScreenSaver)xlib.resolve("XGetScreenSaver");
+            XOpenDisplay      = (fXOpenDisplay)     xlib.resolve("XOpenDisplay");
+            XCloseDisplay     = (fXCloseDisplay)    xlib.resolve("XCloseDisplay");
+            XSetScreenSaver   = (fXSetScreenSaver)  xlib.resolve("XSetScreenSaver");
+            XGetScreenSaver   = (fXGetScreenSaver)  xlib.resolve("XGetScreenSaver");
             XResetScreenSaver = (fXResetScreenSaver)xlib.resolve("XResetScreenSaver");
         }
 
@@ -337,7 +339,7 @@ bool ScreenSaver::enable(bool yes)
 #else
 
 /*
-        int val; //SPI_SETLOWPOWERTIMEOUT, SPI_SETPOWEROFFTIMEOUT. SPI_SETSCREENSAVETIMEOUT
+        int val; // SPI_SETLOWPOWERTIMEOUT, SPI_SETPOWEROFFTIMEOUT. SPI_SETSCREENSAVETIMEOUT
 
         if (SystemParametersInfo(SPI_GETSCREENSAVETIMEOUT, 0, &val, 0))
         {
@@ -345,7 +347,7 @@ bool ScreenSaver::enable(bool yes)
         }
 */
 
-    // http://msdn.microsoft.com/en-us/library/aa373208%28VS.85%29.aspx
+    // http://msdn.microsoft.com/en-us/library/aa373208%28VS.85%29.aspx     // cppcheck-suppress insecurenet
 
     static EXECUTION_STATE sLastState = 0;
 
@@ -374,7 +376,7 @@ bool ScreenSaver::enable(bool yes)
 
     if (isX11)
     {
-        Display *display = XOpenDisplay(0);
+        Display* const display = XOpenDisplay(0);
 
         // -1: restore default. 0: disable
 
@@ -393,7 +395,8 @@ bool ScreenSaver::enable(bool yes)
         rv  = (ret == Success);
 
         qCDebug(DIGIKAM_QTAVPLAYER_LOG).noquote()
-            << QString::asprintf("ScreenSaver::enable %d, ret %d timeout origin: %d", yes, ret, timeout);
+            << QString::asprintf("ScreenSaver::enable %d, ret %d timeout origin: %d",
+                yes, ret, timeout);
     }
 
     modified = true;
@@ -439,11 +442,13 @@ bool ScreenSaver::enable(bool yes)
 
     if (!rv)         // cppcheck-suppress knownConditionTrueFalse
     {
-        qCWarning(DIGIKAM_QTAVPLAYER_LOG).noquote() << QString::asprintf("Failed to enable screen saver (%d)", yes);
+        qCWarning(DIGIKAM_QTAVPLAYER_LOG).noquote()
+            << QString::asprintf("Failed to enable screen saver (%d)", yes);
     }
     else
     {
-        qCDebug(DIGIKAM_QTAVPLAYER_LOG).noquote() << QString::asprintf("Succeed to enable screen saver (%d)", yes);
+        qCDebug(DIGIKAM_QTAVPLAYER_LOG).noquote()
+            << QString::asprintf("Succeed to enable screen saver (%d)", yes);
     }
 
     return rv;
@@ -471,7 +476,7 @@ bool ScreenSaver::retrieveState()
 
         if (isX11)
         {
-            Display* display = XOpenDisplay(0);
+            Display* const display = XOpenDisplay(0);
             XGetScreenSaver(display, &timeout, &interval, &preferBlanking, &allowExposures);
             XCloseDisplay(display);
 
@@ -529,7 +534,7 @@ bool ScreenSaver::restoreState()
 
         if (isX11)
         {
-            Display* display = XOpenDisplay(0);
+            Display* const display = XOpenDisplay(0);
 
             // -1: restore default. 0: disable
 
@@ -582,7 +587,7 @@ void ScreenSaver::timerEvent(QTimerEvent* e)
     if (!isX11)
         return;
 
-    Display* display = XOpenDisplay(0);
+    Display* const display = XOpenDisplay(0);
     XResetScreenSaver(display);
     XCloseDisplay(display);
 
