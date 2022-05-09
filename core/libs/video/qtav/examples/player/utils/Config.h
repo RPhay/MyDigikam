@@ -82,7 +82,6 @@ class Config : public QObject
     Q_PROPERTY(bool avformatOptionsEnabled READ avformatOptionsEnabled WRITE setAvformatOptionsEnabled NOTIFY avformatOptionsEnabledChanged)
     Q_PROPERTY(qreal timeout READ timeout WRITE setTimeout NOTIFY timeoutChanged)
     Q_PROPERTY(int bufferValue READ bufferValue WRITE setBufferValue NOTIFY bufferValueChanged)
-    Q_PROPERTY(QString logLevel READ logLevel WRITE setLogLevel NOTIFY logLevelChanged)
     Q_ENUMS(OpenGLType)
     Q_PROPERTY(QString language READ language WRITE setLanguage NOTIFY languageChanged)
 
@@ -253,11 +252,6 @@ public:
     int bufferValue() const;
     Config& setBufferValue(int value);
 
-    // can be: "", "off", "debug", "warning", "critical", "fatal", "all"
-
-    QString logLevel() const;
-    Config& setLogLevel(const QString& value);
-
     QString language() const;
     Config& setLanguage(const QString& value);
 
@@ -334,7 +328,6 @@ public:
     Q_SIGNAL void bufferValueChanged();
     Q_SIGNAL void timeoutChanged();
     Q_SIGNAL void abortOnTimeoutChanged();
-    Q_SIGNAL void logLevelChanged();
     Q_SIGNAL void languageChanged();
     Q_SIGNAL void historyChanged();
 

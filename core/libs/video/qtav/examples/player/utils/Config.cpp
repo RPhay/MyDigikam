@@ -363,7 +363,6 @@ void Config::reload()
 
     QSettings settings(mpData->file, QSettings::IniFormat);
 
-    setLogLevel(settings.value(QString::fromLatin1("log"),                          QString()).toString());
     setLanguage(settings.value(QString::fromLatin1("language"),                     QString::fromLatin1("system")).toString());
     setLastFile(settings.value(QString::fromLatin1("last_file"),                    QString()).toString());
     setTimeout(settings.value(QString::fromLatin1("timeout"),                       30.0).toReal());
@@ -1214,24 +1213,6 @@ Config& Config::setTimeout(qreal value)
     mpData->timeout = value;
 
     Q_EMIT timeoutChanged();
-    Q_EMIT changed();
-
-    return *this;
-}
-
-QString Config::logLevel() const
-{
-    return mpData->log;
-}
-
-Config& Config::setLogLevel(const QString& value)
-{
-    if (mpData->log == value.toLower())
-        return *this;
-
-    mpData->log = value.toLower();
-
-    Q_EMIT logLevelChanged();
     Q_EMIT changed();
 
     return *this;

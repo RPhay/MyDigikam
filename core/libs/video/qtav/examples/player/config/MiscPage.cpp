@@ -116,14 +116,6 @@ MiscPage::MiscPage()
 #endif
 
     gl->addWidget(m_egl, r++, 1);
-
-    gl->addWidget(new QLabel(QLatin1String("Log")), r, 0);
-    m_log                 = new QComboBox();
-    m_log->addItems(QStringList() << QString::fromLatin1("off")
-                                  << QString::fromLatin1("warning")
-                                  << QString::fromLatin1("debug")
-                                  << QString::fromLatin1("all"));
-    gl->addWidget(m_log, r++, 1);
 }
 
 QString MiscPage::name() const
@@ -143,7 +135,6 @@ void MiscPage::applyFromUi()
             .setBufferValue(m_buffer_value->value())
             .setTimeout(m_timeout->value())
             .setAbortOnTimeout(m_timeout_abort->isChecked())
-            .setLogLevel(m_log->currentText().toLower())
     ;
 }
 
@@ -162,7 +153,6 @@ void MiscPage::applyToUi()
     m_buffer_value->setValue(Config::instance().bufferValue());
     m_timeout->setValue(Config::instance().timeout());
     m_timeout_abort->setChecked(Config::instance().abortOnTimeout());
-    m_log->setCurrentIndex(m_log->findText(Config::instance().logLevel().toLower()));
 }
 
 } // namespace QtAVPlayer
