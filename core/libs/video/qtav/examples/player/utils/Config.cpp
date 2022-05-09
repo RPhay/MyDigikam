@@ -251,10 +251,10 @@ public:
     int                 preview_h               = 0;
 
     bool                egl                     = false;
-    Config::OpenGLType  opengl;
+    Config::OpenGLType  opengl                  = OpenGLType::Auto;
     QString             angle_dx;
     bool                abort_timeout           = false;
-    qreal               timeout;
+    qreal               timeout                 = 0.0;
     int                 buffer_value            = 0;
     QString             log;
     QString             lang;
