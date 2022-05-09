@@ -51,15 +51,16 @@ class DecoderConfigPage : public ConfigPageBase
 
 public:
 
-    explicit DecoderConfigPage(QWidget* parent = nullptr);
-    virtual QString name()             const;
+    explicit DecoderConfigPage(QWidget* const parent = nullptr);
+    virtual QString name()             const override;
+
     QVariantHash audioDecoderOptions() const;
     QVariantHash videoDecoderOptions() const;
 
 protected:
 
-    virtual void applyToUi();
-    virtual void applyFromUi();
+    virtual void applyToUi()                 override;
+    virtual void applyFromUi()               override;
 
 private Q_SLOTS:
 

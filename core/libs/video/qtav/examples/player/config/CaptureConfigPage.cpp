@@ -42,16 +42,16 @@
 namespace QtAVPlayer
 {
 
-CaptureConfigPage::CaptureConfigPage(QWidget* parent)
+CaptureConfigPage::CaptureConfigPage(QWidget* const parent)
     : ConfigPageBase(parent)
 {
-    QFormLayout* formLayout = new QFormLayout();
+    QFormLayout* const formLayout = new QFormLayout();
     setLayout(formLayout);
 
-    QHBoxLayout* hb = new QHBoxLayout();
-    mpDir           = new QLineEdit();
+    QHBoxLayout* const hb         = new QHBoxLayout();
+    mpDir                         = new QLineEdit();
     hb->addWidget(mpDir);
-    QToolButton* bt = new QToolButton();
+    QToolButton* bt               = new QToolButton();
     bt->setText(QString::fromLatin1("..."));
     hb->addWidget(bt);
 

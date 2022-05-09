@@ -45,12 +45,12 @@ class AVFilterConfigPage : public ConfigPageBase
 public:
 
     explicit AVFilterConfigPage(QWidget* const parent = nullptr);
-    virtual QString name() const;
+    virtual QString name() const override;
 
 protected:
 
-    virtual void applyToUi();
-    virtual void applyFromUi();
+    virtual void applyToUi()     override;
+    virtual void applyFromUi()   override;
 
 private Q_SLOTS:
 

@@ -42,11 +42,11 @@
 namespace QtAVPlayer
 {
 
-AVFormatConfigPage::AVFormatConfigPage(QWidget* parent)
+AVFormatConfigPage::AVFormatConfigPage(QWidget* const parent)
     : ConfigPageBase(parent)
 {
     setObjectName(QString::fromLatin1("avformat"));
-    QGridLayout* gl   = new QGridLayout();
+    QGridLayout* const gl   = new QGridLayout();
     setLayout(gl);
     gl->setSizeConstraint(QLayout::SetFixedSize);
     int r             = 0;

@@ -42,14 +42,14 @@ public:
 
     explicit OSDFilter(QObject* const parent = nullptr);
 
-    bool isSupported(VideoFilterContext::Type ct) const
+    bool isSupported(VideoFilterContext::Type ct)     const override
     {
-        return (ct == (VideoFilterContext::QtPainter || ct == VideoFilterContext::X11));
+        return ((ct == VideoFilterContext::QtPainter) || (ct == VideoFilterContext::X11));
     }
 
 protected:
 
-    void process(Statistics* statistics, VideoFrame* frame);
+    void process(Statistics* statistics, VideoFrame* frame) override;
 };
 
 } // namespace QtAVPlayer

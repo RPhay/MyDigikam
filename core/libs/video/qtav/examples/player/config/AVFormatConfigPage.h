@@ -47,13 +47,13 @@ class AVFormatConfigPage : public ConfigPageBase
 
 public:
 
-    explicit AVFormatConfigPage(QWidget* parent = 0);
-    virtual QString name() const;
+    explicit AVFormatConfigPage(QWidget* const parent = nullptr);
+    virtual QString name() const override;
 
 protected:
 
-    virtual void applyToUi();
-    virtual void applyFromUi();
+    virtual void applyToUi()     override;
+    virtual void applyFromUi()   override;
 
 private:
 

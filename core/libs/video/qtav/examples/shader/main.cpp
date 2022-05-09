@@ -62,7 +62,7 @@ protected:
 
 private:
 
-    const char* userShaderHeader(QOpenGLShader::ShaderType type) const
+    const char* userShaderHeader(QOpenGLShader::ShaderType type) const override
     {
         if (type == QOpenGLShader::Vertex)
             return 0;
@@ -70,19 +70,19 @@ private:
         return GLSL(uniform vec2 bs;);
     }
 
-    const char* userPostProcess() const
+    const char* userPostProcess()                                const override
     {
         return GLSL(
-                    float lr  = 0.3086;
-                    float lg  = 0.6094;
-                    float lb  = 0.0820;
-                    float s   = bs.g + 1.0;
-                    float is  = 1.0 - s;
-                    float ilr = is * lr;
-                    float ilg = is * lg;
-                    float ilb = is * lb;
+                    float lr     = 0.3086;
+                    float lg     = 0.6094;
+                    float lb     = 0.0820;
+                    float s      = bs.g + 1.0;
+                    float is     = 1.0 - s;
+                    float ilr    = is * lr;
+                    float ilg    = is * lg;
+                    float ilb    = is * lb;
 
-                    mat4 m = mat4(
+                    mat4 m       = mat4(
                         ilr+s, ilg  , ilb  , 0.0,
                         ilr  , ilg+s, ilb  , 0.0,
                         ilr  , ilg  , ilb+s, 0.0,
@@ -104,7 +104,7 @@ public:
 
 protected:
 
-    virtual const float* kernel() const
+    virtual const float* kernel() const override
     {
         const float v = 1.0/(float)kernelSize(); //radius 1
         static QVector<float> k;
@@ -138,7 +138,7 @@ protected:
 
 private:
 
-    const char* userShaderHeader(QOpenGLShader::ShaderType type) const
+    const char* userShaderHeader(QOpenGLShader::ShaderType type) const override
     {
         if (type == QOpenGLShader::Vertex)
             return 0;
@@ -150,7 +150,7 @@ private:
         );
     }
 
-    const char* userSample() const
+    const char* userSample()                                     const override
     {
         return GLSL(
                     vec4 sample2d(sampler2D tex, vec2 pos, int p)
@@ -163,7 +163,7 @@ private:
         );
     }
 
-    bool setUserUniformValues()
+    bool setUserUniformValues()                                        override
     {
         // return false; // enable this line to call setUserUniformValue(Uniform&)
 
@@ -176,7 +176,7 @@ private:
 
     // setUserUniformValues() must return false to call setUserUniformValue(Uniform&)
 
-    void setUserUniformValue(Uniform& u)
+    void setUserUniformValue(Uniform& u)                               override
     {
         if      (u.name == "u_A")
         {

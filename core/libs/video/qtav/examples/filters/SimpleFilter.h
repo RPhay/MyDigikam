@@ -51,7 +51,7 @@ public:
     void enableRotate(bool r);
     void enableWaveEffect(bool w);
 
-    bool isSupported(VideoFilterContext::Type ct) const
+    bool isSupported(VideoFilterContext::Type ct) const override
     {
         return ((ct == VideoFilterContext::QtPainter) || (ct == VideoFilterContext::X11));
     }
@@ -59,7 +59,7 @@ public:
     void setText(const QString& text);
     QString text() const;
 
-    //show image if text is null
+    // show image if text is null
 
     void setImage(const QImage& img);
 
@@ -67,7 +67,7 @@ public:
 
 protected:
 
-    virtual void process(Statistics* statistics, VideoFrame* frame);
+    virtual void process(Statistics* statistics, VideoFrame* frame) override;
     virtual void timerEvent(QTimerEvent*);
 
 private:

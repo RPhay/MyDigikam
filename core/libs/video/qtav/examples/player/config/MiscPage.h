@@ -43,12 +43,12 @@ public:
 
     MiscPage();
 
-    virtual QString name() const;
+    virtual QString name() const override;
 
 protected:
 
-    virtual void applyToUi();
-    virtual void applyFromUi();
+    virtual void applyToUi()     override;
+    virtual void applyFromUi()   override;
 
 private:
 

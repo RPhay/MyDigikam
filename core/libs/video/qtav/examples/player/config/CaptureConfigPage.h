@@ -50,13 +50,13 @@ class CaptureConfigPage : public ConfigPageBase
 
 public:
 
-    explicit CaptureConfigPage(QWidget* parent = 0);
-    virtual QString name() const;
+    explicit CaptureConfigPage(QWidget* const parent = nullptr);
+    virtual QString name() const override;
 
 protected:
 
-    virtual void applyToUi();
-    virtual void applyFromUi();
+    virtual void applyToUi()     override;
+    virtual void applyFromUi()   override;
 
 private Q_SLOTS:
 
