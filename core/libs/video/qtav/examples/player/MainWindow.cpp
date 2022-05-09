@@ -955,7 +955,11 @@ bool MainWindow::setRenderer(QtAV::VideoRenderer* const renderer)
         }
     }
 
-    mpVOAction->setChecked(true);
+    if (mpVOAction)
+    {
+        mpVOAction->setChecked(true);
+    }
+
     mpTitle->setText(mpVOAction->text());
     const VideoRendererId vid = mpPlayer->renderer()->id();
 
@@ -964,7 +968,8 @@ bool MainWindow::setRenderer(QtAV::VideoRenderer* const renderer)
              || vid == VideoRendererId_OpenGLWidget
        )
     {
-        mpVideoEQ->setEngines(QVector<VideoEQConfigPage::Engine>() << VideoEQConfigPage::SWScale << VideoEQConfigPage::GLSL);
+        mpVideoEQ->setEngines(QVector<VideoEQConfigPage::Engine>() << VideoEQConfigPage::SWScale
+                                                                   << VideoEQConfigPage::GLSL);
         mpVideoEQ->setEngine(VideoEQConfigPage::GLSL);
         mpPlayer->renderer()->forcePreferredPixelFormat(true);
     }
@@ -989,7 +994,7 @@ bool MainWindow::setRenderer(QtAV::VideoRenderer* const renderer)
 #define GL_ASS 0
 #if GL_ASS
 
-    GLSLFilter* glsl = new GLSLFilter(this);
+    GLSLFilter* const glsl = new GLSLFilter(this);
     glsl->setOutputSize(QSize(4096, 2160));
 
     //mpRenderer->installFilter(glsl);
@@ -1279,8 +1284,8 @@ void MainWindow::showHideVolumeBar()
 
 void MainWindow::setVolume()
 {
-    AudioOutput* ao = mpPlayer ? mpPlayer->audio() : 0;
-    qreal v         = qreal(mpVolumeSlider->value())*kVolumeInterval;
+    AudioOutput* const ao = mpPlayer ? mpPlayer->audio() : 0;
+    qreal v               = qreal(mpVolumeSlider->value())*kVolumeInterval;
 
     if (ao)
     {
@@ -1518,7 +1523,7 @@ void MainWindow::updateChannelMenu()
     if (mpChannelAction)
         mpChannelAction->setChecked(false);
 
-    AudioOutput* ao = mpPlayer ? mpPlayer->audio() : 0; // getAO() ?
+    AudioOutput* const ao = mpPlayer ? mpPlayer->audio() : 0; // getAO() ?
 
     if (!ao)
     {
