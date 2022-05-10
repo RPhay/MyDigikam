@@ -211,17 +211,17 @@ public:
 
     QString                    file;
     bool                       is_loading              = false;
-                               
+
     qreal                      force_fps               = 0.0;
     QStringList                video_decoders;
     bool                       zero_copy               = false;
-                               
+
     QString                    last_file;
-                               
+
     QString                    capture_dir;
     QString                    capture_fmt;
     int                        capture_quality         = 0;
-                               
+
     bool                       avformat_on             = false;
     bool                       direct                  = false;
     unsigned int               probe_size              = 0;
@@ -231,7 +231,7 @@ public:
     QString                    avfilterVideo;
     bool                       avfilterAudio_on        = false;
     QString                    avfilterAudio;
-                               
+
     QStringList                subtitle_engines;
     bool                       subtitle_autoload       = false;
     bool                       subtitle_enabled        = false;
@@ -240,15 +240,15 @@ public:
     bool                       subtitle_outline        = false;
     int                        subtilte_bottom_margin  = 0;
     qreal                      subtitle_delay          = 0.0;
-                               
+
     bool                       ass_force_font_file     = false;
     QString                    ass_font_file;
     QString                    ass_fonts_dir;
-                               
+
     bool                       preview_enabled         = false;
     int                        preview_w               = 0;
     int                        preview_h               = 0;
-                               
+
     bool                       egl                     = false;
     ConfigManager::OpenGLType  opengl                  = OpenGLType::Auto;
     QString                    angle_dx;
@@ -257,15 +257,15 @@ public:
     int                        buffer_value            = 0;
     QString                    log;
     QString                    lang;
-                               
+
     QVariantList               history;
-                               
+
     bool                       user_shader             = false;
     bool                       fbo                     = false;
     QString                    frag_header;
     QString                    frag_sample;
     QString                    frag_pp;
-                               
+
     static QString             name;
 };
 
