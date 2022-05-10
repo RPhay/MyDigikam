@@ -135,6 +135,6 @@ target_compile_definitions(avplayer
                            ${MEDIAPLAYER_DEFINITIONS}
 )
 
-install(TARGETS  avplayer                                                      ${INSTALL_TARGETS_DEFAULT_ARGS})
-install(PROGRAMS ${CMAKE_CURRENT_SOURCE_DIR}/main/org.kde.avplayer.desktop     DESTINATION ${KDE_INSTALL_FULL_APPDIR})
-install(FILES    ${CMAKE_CURRENT_SOURCE_DIR}/main/org.kde.avplayer.appdata.xml DESTINATION ${KDE_INSTALL_FULL_METAINFODIR})
+install(TARGETS  avplayer                                                 ${INSTALL_TARGETS_DEFAULT_ARGS})
+install(PROGRAMS ${CMAKE_CURRENT_SOURCE_DIR}/org.kde.avplayer.desktop     DESTINATION ${KDE_INSTALL_FULL_APPDIR})
+install(FILES    ${CMAKE_CURRENT_SOURCE_DIR}/org.kde.avplayer.appdata.xml DESTINATION ${KDE_INSTALL_FULL_METAINFODIR})
