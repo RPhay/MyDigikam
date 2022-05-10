@@ -42,48 +42,48 @@ namespace QtAVPlayer
 QStringList getBaseInfoKeys()
 {
     return QStringList()
-            << QObject::i18n("Url")
-            << QObject::i18n("Format")
-            << QObject::i18n("Bit rate")
-            << QObject::i18n("Start time")
-            << QObject::i18n("Duration")
+            << i18n("Url")
+            << i18n("Format")
+            << i18n("Bit rate")
+            << i18n("Start time")
+            << i18n("Duration")
            ;
 }
 
 QStringList getCommonInfoKeys()
 {
     return QStringList()
-            << QObject::i18n("Available")
-            << QObject::i18n("Codec")
-            << QObject::i18n("Decoder")
-            << QObject::i18n("Decoder detail")
-            << QObject::i18n("Total time")
-            << QObject::i18n("Start time")
-            << QObject::i18n("Bit rate")
-            << QObject::i18n("Frames")
-            << QObject::i18n("FPS")           // avg_frame_rate. guessed by FFmpeg
+            << i18n("Available")
+            << i18n("Codec")
+            << i18n("Decoder")
+            << i18n("Decoder detail")
+            << i18n("Total time")
+            << i18n("Start time")
+            << i18n("Bit rate")
+            << i18n("Frames")
+            << i18n("FPS")           // avg_frame_rate. guessed by FFmpeg
            ;
 }
 
 QStringList getVideoInfoKeys()
 {
     return getCommonInfoKeys()
-            << QObject::i18n("FPS Now")       // current display fps
-            << QObject::i18n("Pixel format")
-            << QObject::i18n("Size")          // w x h
-            << QObject::i18n("Coded size")    // w x h
-            << QObject::i18n("GOP size")
+            << i18n("FPS Now")       // current display fps
+            << i18n("Pixel format")
+            << i18n("Size")          // w x h
+            << i18n("Coded size")    // w x h
+            << i18n("GOP size")
            ;
 }
 
 QStringList getAudioInfoKeys()
 {
     return getCommonInfoKeys()
-            << QObject::i18n("Sample format")
-            << QObject::i18n("Sample rate")
-            << QObject::i18n("Channels")
-            << QObject::i18n("Channel layout")
-            << QObject::i18n("Frame size")
+            << i18n("Sample format")
+            << i18n("Sample rate")
+            << i18n("Channels")
+            << i18n("Channel layout")
+            << i18n("Frame size")
            ;
 }
 
@@ -157,26 +157,26 @@ StatisticsView::StatisticsView(QWidget* const parent)
     initBaseItems(&mBaseItems);
     mpView->addTopLevelItems(mBaseItems);
     mpMetadata            = new QTreeWidgetItem();
-    mpMetadata->setText(0, QObject::i18n("Metadata"));
+    mpMetadata->setText(0, i18n("Metadata"));
     mpView->addTopLevelItem(mpMetadata);
-    QTreeWidgetItem* item = createNodeWithItems(mpView, QObject::i18n("Video"), getVideoInfoKeys(), &mVideoItems);
+    QTreeWidgetItem* item = createNodeWithItems(mpView, i18n("Video"), getVideoInfoKeys(), &mVideoItems);
     mpFPS                 = item->child(9);
 
     //mpVideoBitRate =
 
     mpVideoMetadata = new QTreeWidgetItem(item);
-    mpVideoMetadata->setText(0, QObject::i18n("Metadata"));
+    mpVideoMetadata->setText(0, i18n("Metadata"));
     mpView->addTopLevelItem(item);
-    item = createNodeWithItems(mpView, QObject::i18n("Audio"), getAudioInfoKeys(), &mAudioItems);
+    item = createNodeWithItems(mpView, i18n("Audio"), getAudioInfoKeys(), &mAudioItems);
 
     //mpAudioBitRate =
 
     mpAudioMetadata = new QTreeWidgetItem(item);
-    mpAudioMetadata->setText(0, QObject::i18n("Metadata"));
+    mpAudioMetadata->setText(0, i18n("Metadata"));
     mpView->addTopLevelItem(item);
     mpView->resizeColumnToContents(0); // call this after content is done
 
-    QPushButton* btn = new QPushButton(QObject::i18n("Ok"));
+    QPushButton* btn = new QPushButton(i18n("Ok"));
     QHBoxLayout* btnLayout = new QHBoxLayout;
     btnLayout->addStretch();
     btnLayout->addWidget(btn);
