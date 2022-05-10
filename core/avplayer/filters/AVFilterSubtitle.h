@@ -50,7 +50,7 @@ public:
     explicit AVFilterSubtitle(QObject* const parent = nullptr);
 
     void setPlayer(QtAV::AVPlayer* const player);
-    QString setContent(const QString& doc); // return utf8 subtitle path
+    QString setContent(const QString& doc);         ///< return utf8 subtitle path
     bool setFile(const QString& filePath);
     QString file() const;
     bool autoLoad() const;
@@ -76,13 +76,13 @@ private Q_SLOTS:
 
 private:
 
-    bool                   m_auto;
-    QtAV::AVPlayer*        m_player;
-    QString                m_file;
+    bool                    m_auto;
+    QtAV::AVPlayer*         m_player;
+    QString                 m_file;
 
     // convert to utf8 to ensure ffmpeg can open it.
 
-    QHash<QString,QString> m_u8_files;
+    QHash<QString, QString> m_u8_files;
 };
 
 } // namespace AVPlayer
