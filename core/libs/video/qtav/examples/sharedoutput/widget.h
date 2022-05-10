@@ -32,7 +32,7 @@
 namespace QtAV
 {
 class GLWidgetRenderer2;
-class AVPlayer;
+class AVPlayerCore;
 class VideoOutput;
 }
 
@@ -54,7 +54,7 @@ public Q_SLOTS:
 private:
 
     QtAV::VideoOutput*  renderer;
-    QtAV::AVPlayer*     player[2];
+    QtAV::AVPlayerCore*     player[2];
     QPushButton*        play_btn[2];
     QPushButton*        file_btn[2];
 };

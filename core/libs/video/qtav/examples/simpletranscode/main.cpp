@@ -105,7 +105,7 @@ int main(int argc, char* argv[])
     avfopt[QString::fromLatin1("segment_format")]    = QString::fromLatin1("mpegts");
     muxopt[QString::fromLatin1("avformat")]          = avfopt;
 
-    AVPlayer player;
+    AVPlayerCore player;
     player.setFile(file);
     player.setFrameRate(10000.0);   // as fast as possible. FIXME: why 1000 may block source player?
     player.audio()->setBackends(QStringList() << QString::fromLatin1("null"));

@@ -30,7 +30,7 @@
 
 // Local includes
 
-#include "AVPlayer.h"
+#include "AVPlayerCore.h"
 #include "GraphicsItemRenderer.h"
 
 QT_BEGIN_NAMESPACE
@@ -66,7 +66,7 @@ private Q_SLOTS:
 
 private:
 
-    QtAV::AVPlayer              mediaPlayer;
+    QtAV::AVPlayerCore              mediaPlayer;
     QtAV::GraphicsItemRenderer* videoItem;
     QGraphicsView*              view;
 };

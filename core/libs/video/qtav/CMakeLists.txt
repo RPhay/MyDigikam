@@ -39,8 +39,8 @@ set(libqtav_SRCS
     ${CMAKE_CURRENT_SOURCE_DIR}/src/ffmpeg/AVMuxer.cpp
     ${CMAKE_CURRENT_SOURCE_DIR}/src/ffmpeg/AVDemuxer.cpp
     ${CMAKE_CURRENT_SOURCE_DIR}/src/ffmpeg/AVError.cpp
-    ${CMAKE_CURRENT_SOURCE_DIR}/src/ffmpeg/AVPlayer.cpp
-    ${CMAKE_CURRENT_SOURCE_DIR}/src/ffmpeg/AVPlayer_p.cpp
+    ${CMAKE_CURRENT_SOURCE_DIR}/src/ffmpeg/AVPlayerCore.cpp
+    ${CMAKE_CURRENT_SOURCE_DIR}/src/ffmpeg/AVPlayerCore_p.cpp
     ${CMAKE_CURRENT_SOURCE_DIR}/src/ffmpeg/AudioFormat.cpp
     ${CMAKE_CURRENT_SOURCE_DIR}/src/ffmpeg/AudioFrame.cpp
     ${CMAKE_CURRENT_SOURCE_DIR}/src/ffmpeg/AudioResampler.cpp

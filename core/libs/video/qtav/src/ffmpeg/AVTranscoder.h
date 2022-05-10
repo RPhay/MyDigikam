@@ -33,7 +33,7 @@
 namespace QtAV
 {
 
-class AVPlayer;
+class AVPlayerCore;
 
 class QTAV_EXPORT AVTranscoder : public QObject
 {
@@ -46,8 +46,8 @@ public:
 
     // TODO: other source (more operations needed, e.g. seek)?
 
-    void setMediaSource(AVPlayer* player);
-    AVPlayer* sourcePlayer() const;
+    void setMediaSource(AVPlayerCore* player);
+    AVPlayerCore* sourcePlayer() const;
 
     QString outputFile() const;
     QIODevice* outputDevice() const;

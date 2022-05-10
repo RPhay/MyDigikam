@@ -25,13 +25,13 @@
 
 // Local includes
 
-#include "AVPlayer.h"
+#include "AVPlayerCore.h"
 #include "VideoRenderer.h"
 
 namespace QtAV
 {
 
-OutputSet::OutputSet(AVPlayer *player)
+OutputSet::OutputSet(AVPlayerCore *player)
     : QObject(player)
     , mCanPauseThread(false)
     , mpPlayer(player)

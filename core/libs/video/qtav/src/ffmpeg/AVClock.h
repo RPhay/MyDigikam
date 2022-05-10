@@ -36,7 +36,7 @@
 #include "QtAV_Global.h"
 
 /**
- * AVClock is created by AVPlayer. The only way to access AVClock is through AVPlayer::masterClock()
+ * AVClock is created by AVPlayerCore. The only way to access AVClock is through AVPlayerCore::masterClock()
  * The default clock type is Audio's clock, i.e. vedio synchronizes to audio. If audio stream is not
  * detected, then the clock will set to External clock automatically.
  * I name it ExternalClock because the clock can be corrected outside, though it is a clock inside AVClock

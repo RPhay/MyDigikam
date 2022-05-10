@@ -38,7 +38,7 @@ namespace QtAV
 
 class AudioFormat;
 class AVOutput;
-class AVPlayer;
+class AVPlayerCore;
 class FilterPrivate;
 class Statistics;
 class Frame;
@@ -74,7 +74,7 @@ public:
      * Install filter to player can process every frame before rendering.
      * Equals to player->installFilter(this)
      */
-    virtual bool installTo(AVPlayer* player) = 0;
+    virtual bool installTo(AVPlayerCore* player) = 0;
 
     // called in destructor automatically
 
@@ -113,7 +113,7 @@ public:
 
     VideoFilterContext* context();
     virtual bool isSupported(VideoFilterContext::Type ct) const;
-    bool installTo(AVPlayer* player) override;
+    bool installTo(AVPlayerCore* player) override;
 
     /*!
      * \brief installTo
@@ -146,7 +146,7 @@ class QTAV_EXPORT AudioFilter : public Filter
 public:
 
     explicit AudioFilter(QObject* parent = nullptr);
-    bool installTo(AVPlayer* player) override;
+    bool installTo(AVPlayerCore* player) override;
     void apply(Statistics* statistics, AudioFrame* frame = nullptr);
 
 protected:

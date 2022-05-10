@@ -212,7 +212,7 @@ int main(int argc, char* argv[])
 
     VideoOutput vo[4];
     QScopedPointer<VideoShader> shaders[4];
-    AVPlayer player;
+    AVPlayerCore player;
 
     struct
     {

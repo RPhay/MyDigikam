@@ -38,7 +38,7 @@ int main(int argc, char *argv[])
     renderer.widget()->show();
     renderer.widget()->setWindowTitle(QString::fromLatin1("Play video from qrc--QtAV %1")
                                       .arg(QtAV_Version_String_Long()));
-    QtAV::AVPlayer player;
+    QtAV::AVPlayerCore player;
     player.setRenderer(&renderer);
 
     player.play(QString::fromLatin1("qrc:/test.mp4"));

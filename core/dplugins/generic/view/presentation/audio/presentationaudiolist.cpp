@@ -42,7 +42,7 @@
 
 // QtAV includes
 
-#include "AVPlayer.h"
+#include "AVPlayerCore.h"
 #include "QtAV_Statistics.h"
 
 // KDE includes
@@ -72,7 +72,7 @@ public:
     QString       artist;
     QString       title;
     QTime         totalTime;
-    AVPlayer*     mediaObject;
+    AVPlayerCore*     mediaObject;
 };
 
 PresentationAudioListItem::PresentationAudioListItem(QListWidget* const parent, const QUrl& url)
@@ -83,7 +83,7 @@ PresentationAudioListItem::PresentationAudioListItem(QListWidget* const parent, 
     setIcon(QIcon::fromTheme(QLatin1String("audio-x-generic")).pixmap(48, QIcon::Disabled));
 
     d->totalTime   = QTime(0, 0, 0);
-    d->mediaObject = new AVPlayer(this);
+    d->mediaObject = new AVPlayerCore(this);
 
     connect(d->mediaObject, SIGNAL(mediaStatusChanged(QtAV::MediaStatus)),
             this, SLOT(slotMediaStateChanged(QtAV::MediaStatus)));

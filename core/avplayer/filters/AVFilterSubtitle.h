@@ -32,7 +32,7 @@
 // Local includes
 
 #include "LibAVFilter.h"
-#include "AVPlayer.h"
+#include "AVPlayerCore.h"
 
 using namespace QtAV;
 
@@ -49,7 +49,7 @@ public:
 
     explicit AVFilterSubtitle(QObject* const parent = nullptr);
 
-    void setPlayer(QtAV::AVPlayer* const player);
+    void setPlayer(QtAV::AVPlayerCore* const player);
     QString setContent(const QString& doc);         ///< return utf8 subtitle path
     bool setFile(const QString& filePath);
     QString file() const;
@@ -77,7 +77,7 @@ private Q_SLOTS:
 private:
 
     bool                    m_auto;
-    QtAV::AVPlayer*         m_player;
+    QtAV::AVPlayerCore*     m_player;
     QString                 m_file;
 
     // convert to utf8 to ensure ffmpeg can open it.

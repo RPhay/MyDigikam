@@ -137,7 +137,7 @@ int main(int argc, char *argv[])
 
     renderer->widget()->resize(renderer->widget()->width(), renderer->widget()->width()*9/16);
     renderer->widget()->show();
-    AVPlayer player;
+    AVPlayerCore player;
     player.addVideoRenderer(renderer);
 
     if (textfilter)

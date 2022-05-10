@@ -48,7 +48,7 @@ AVFilterSubtitle::AVFilterSubtitle(QObject* const parent)
 */
 }
 
-void AVFilterSubtitle::setPlayer(QtAV::AVPlayer* const player)
+void AVFilterSubtitle::setPlayer(QtAV::AVPlayerCore* const player)
 {
     if (m_player == player)
         return;

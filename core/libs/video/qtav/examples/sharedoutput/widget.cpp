@@ -50,7 +50,7 @@ Widget::Widget(QWidget* const parent)
 
     for (int i = 0 ; i < 2 ; ++i)
     {
-        player[i]       = new AVPlayer(this);
+        player[i]       = new AVPlayerCore(this);
         player[i]->setRenderer(renderer);
         QVBoxLayout* vb = new QVBoxLayout;
         play_btn[i]     = new QPushButton(this);

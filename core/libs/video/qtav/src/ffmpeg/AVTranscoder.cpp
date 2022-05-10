@@ -25,7 +25,7 @@
 
 // Local includes
 
-#include "AVPlayer.h"
+#include "AVPlayerCore.h"
 #include "AVMuxer.h"
 #include "EncodeFilter.h"
 #include "QtAV_Statistics.h"
@@ -71,7 +71,7 @@ public:
     bool                  async;
     int                   encoded_frames;
     qint64                start_time;
-    AVPlayer*             source_player;
+    AVPlayerCore*             source_player;
     AudioEncodeFilter*    afilter;
     VideoEncodeFilter*    vfilter;
 /*
@@ -120,7 +120,7 @@ bool AVTranscoder::isAsync() const
     return d->async;
 }
 
-void AVTranscoder::setMediaSource(AVPlayer *player)
+void AVTranscoder::setMediaSource(AVPlayerCore *player)
 {
     if (d->source_player)
     {
@@ -144,7 +144,7 @@ void AVTranscoder::setMediaSource(AVPlayer *player)
             this, SLOT(onSourceStarted()), Qt::DirectConnection);
 }
 
-AVPlayer* AVTranscoder::sourcePlayer() const
+AVPlayerCore* AVTranscoder::sourcePlayer() const
 {
     return d->source_player;
 }

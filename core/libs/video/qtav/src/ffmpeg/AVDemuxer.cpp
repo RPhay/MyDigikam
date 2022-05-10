@@ -399,7 +399,7 @@ public:
 
     bool setStream(AVDemuxer::StreamType st, int streamValue);
 
-    //called by loadFile(). if change to a new stream, call it(e.g. in AVPlayer)
+    //called by loadFile(). if change to a new stream, call it(e.g. in AVPlayerCore)
 
     bool prepareStreams();
 

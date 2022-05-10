@@ -63,7 +63,7 @@ private Q_SLOTS:
 private:
 
     QtAV::VideoOutput*  m_vo;
-    QtAV::AVPlayer*     m_player;
+    QtAV::AVPlayerCore*     m_player;
     QSlider*            m_slider;
     QPushButton*        m_openBtn;
     QPushButton*        m_captureBtn;

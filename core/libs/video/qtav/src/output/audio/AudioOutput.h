@@ -180,7 +180,7 @@ public:
      * Currently only store the value and does nothing else in audio output. You may change sample rate to get the same effect.
      * The speed affects the playing only if audio is available and clock type is
      * audio clock. For example, play a video contains audio without special configurations.
-     * To change the playing speed in other cases, use AVPlayer::setSpeed(qreal)
+     * To change the playing speed in other cases, use AVPlayerCore::setSpeed(qreal)
      * \param speed linear. > 0
      * TODO: resample internally
      */

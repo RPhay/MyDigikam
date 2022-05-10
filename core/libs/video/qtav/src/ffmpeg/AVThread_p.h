@@ -92,7 +92,7 @@ public:
     QWaitCondition cond; // pause
     qreal delay;
     QList<Filter*> filters;
-    Statistics *statistics; // not obj. Statistics is unique for the player, which is in AVPlayer
+    Statistics *statistics; // not obj. Statistics is unique for the player, which is in AVPlayerCore
     BlockingQueue<QRunnable*> tasks;
     QSemaphore sem;
     bool seek_requested;

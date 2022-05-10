@@ -45,7 +45,7 @@ int main(int argc, char *argv[])
     if (!vidfile.open(QIODevice::ReadOnly))
         return 1;
 
-    AVPlayer player[2];
+    AVPlayerCore player[2];
     WidgetRenderer renderer[2];
     renderer[0].show();
     renderer[0].widget()->setWindowTitle(QString::fromLatin1("Test QFile"));

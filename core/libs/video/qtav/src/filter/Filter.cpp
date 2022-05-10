@@ -27,7 +27,7 @@
 
 #include "QtAV_Statistics.h"
 #include "AVOutput.h"
-#include "AVPlayer.h"
+#include "AVPlayerCore.h"
 #include "FilterManager.h"
 #include "digikam_debug.h"
 
@@ -102,10 +102,10 @@ AudioFilter::AudioFilter(AudioFilterPrivate& d, QObject *parent)
 }
 
 /*
- * TODO: move to AVPlayer.cpp to reduce dependency?
+ * TODO: move to AVPlayerCore.cpp to reduce dependency?
  */
 
-bool AudioFilter::installTo(AVPlayer *player)
+bool AudioFilter::installTo(AVPlayerCore *player)
 {
     return player->installFilter(this);
 }
@@ -147,7 +147,7 @@ bool VideoFilter::isSupported(VideoFilterContext::Type ct) const
     return VideoFilterContext::None == ct;
 }
 
-bool VideoFilter::installTo(AVPlayer* player)
+bool VideoFilter::installTo(AVPlayerCore* player)
 {
     return player->installFilter(this);
 }

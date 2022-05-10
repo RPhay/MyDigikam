@@ -73,7 +73,7 @@ protected:
 
 private:
 
-    AVPlayer player;
+    AVPlayerCore player;
 };
 
 int main(int argc, char *argv[])

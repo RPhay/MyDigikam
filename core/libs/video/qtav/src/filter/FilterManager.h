@@ -37,7 +37,7 @@ namespace QtAV
 {
 
 class AVOutput;
-class AVPlayer;
+class AVPlayerCore;
 class FilterManagerPrivate;
 
 class FilterManager
@@ -56,24 +56,24 @@ public:
      */
     bool registerFilter(Filter *filter, AVOutput *output, int pos = 0x7FFFFFFF);
     QList<Filter*> outputFilters(AVOutput* output) const;
-    bool registerAudioFilter(Filter *filter, AVPlayer *player, int pos = 0x7FFFFFFF);
-    QList<Filter *> audioFilters(AVPlayer* player) const;
-    bool registerVideoFilter(Filter *filter, AVPlayer *player, int pos = 0x7FFFFFFF);
-    QList<Filter*> videoFilters(AVPlayer* player) const;
-    bool unregisterAudioFilter(Filter *filter, AVPlayer *player);
-    bool unregisterVideoFilter(Filter *filter, AVPlayer *player);
+    bool registerAudioFilter(Filter *filter, AVPlayerCore *player, int pos = 0x7FFFFFFF);
+    QList<Filter *> audioFilters(AVPlayerCore* player) const;
+    bool registerVideoFilter(Filter *filter, AVPlayerCore *player, int pos = 0x7FFFFFFF);
+    QList<Filter*> videoFilters(AVPlayerCore* player) const;
+    bool unregisterAudioFilter(Filter *filter, AVPlayerCore *player);
+    bool unregisterVideoFilter(Filter *filter, AVPlayerCore *player);
     bool unregisterFilter(Filter *filter, AVOutput *output);
 
     // unregister and call target.uninstall
 
     bool uninstallFilter(Filter *filter);                           // called by filter.uninstall
-    bool uninstallAudioFilter(Filter *filter, AVPlayer* player);
-    bool uninstallVideoFilter(Filter *filter, AVPlayer* player);
+    bool uninstallAudioFilter(Filter *filter, AVPlayerCore* player);
+    bool uninstallVideoFilter(Filter *filter, AVPlayerCore* player);
     bool uninstallFilter(Filter *filter, AVOutput* output);
 
 private:
 
-    // return bool is for AVPlayer.installAudio/VideoFilter compatibility
+    // return bool is for AVPlayerCore.installAudio/VideoFilter compatibility
 
     bool insert(Filter* filter, QList<Filter*>& filters, int pos);
 

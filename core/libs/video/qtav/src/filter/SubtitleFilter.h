@@ -34,7 +34,7 @@
 namespace QtAV
 {
 
-class AVPlayer;
+class AVPlayerCore;
 class SubtitleFilterPrivate;
 
 /*!
@@ -76,7 +76,7 @@ public:
 
     explicit SubtitleFilter(QObject* parent = nullptr);
 
-    void setPlayer(AVPlayer* player);
+    void setPlayer(AVPlayerCore* player);
 
     bool isSupported(VideoFilterContext::Type ct) const override
     {

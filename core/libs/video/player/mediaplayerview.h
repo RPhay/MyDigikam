@@ -33,7 +33,7 @@
 // QtAV includes
 
 #include "AVError.h"
-#include "AVPlayer.h"
+#include "AVPlayerCore.h"
 
 // Local includes
 
@@ -74,7 +74,7 @@ public Q_SLOTS:
 private Q_SLOTS:
 
     void slotThemeChanged();
-    void slotPlayerStateChanged(QtAV::AVPlayer::State state);
+    void slotPlayerStateChanged(QtAV::AVPlayerCore::State state);
     void slotMediaStatusChanged(QtAV::MediaStatus status);
     void slotHandlePlayerError(const QtAV::AVError& err);
     void slotImageCaptured(const QImage& image);

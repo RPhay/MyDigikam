@@ -56,8 +56,8 @@ public:
 
     bool isAvailable() const;
 
-    //void addSource(AVPlayer* player); //call player.addVideoRenderer(this)
-    //void removeSource(AVPlayer* player);
+    //void addSource(AVPlayerCore* player); //call player.addVideoRenderer(this)
+    //void removeSource(AVPlayerCore* player);
 
     // Demuxer thread automatically paused because packets will be full
     // only pause the renderering, the thread going on. If all outputs are paused, then pause the thread(OutputSet.tryPause)
@@ -105,7 +105,7 @@ private:
 
     // for proxy VideoOutput
 
-    virtual void setStatistics(Statistics* statistics); // called by friend AVPlayer
+    virtual void setStatistics(Statistics* statistics); // called by friend AVPlayerCore
     virtual bool onInstallFilter(Filter *filter, int index);
     virtual bool onUninstallFilter(Filter *filter);
 
@@ -113,7 +113,7 @@ private:
 
     virtual bool onHanlePendingTasks(); // return true: proxy update filters
 
-    friend class AVPlayer;
+    friend class AVPlayerCore;
     friend class OutputSet;
     friend class VideoOutput;
 };

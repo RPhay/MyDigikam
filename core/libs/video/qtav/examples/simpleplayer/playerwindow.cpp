@@ -38,7 +38,7 @@ PlayerWindow::PlayerWindow(QWidget *parent)
 {
     m_unit          = 1000;
     setWindowTitle(QString::fromLatin1("QtAV simple player example"));
-    m_player        = new AVPlayer(this);
+    m_player        = new AVPlayerCore(this);
     QVBoxLayout* vl = new QVBoxLayout();
     setLayout(vl);
     m_vo            = new VideoOutput(this);

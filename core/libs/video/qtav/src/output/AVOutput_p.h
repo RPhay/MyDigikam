@@ -66,9 +66,9 @@ public:
     QWaitCondition      cond;               // pause
 
     // paintEvent is in main thread, copy it(only dynamic information) is better.
-    // the static data are copied from AVPlayer when open
+    // the static data are copied from AVPlayerCore when open
 
-    Statistics*         statistics;         // do not own the ptr. just use AVPlayer's statistics ptr
+    Statistics*         statistics;         // do not own the ptr. just use AVPlayerCore's statistics ptr
     VideoFilterContext* filter_context;     // create internally by the renderer with correct type
     QList<Filter*>      filters;
     QList<Filter*>      pending_uninstall_filters;

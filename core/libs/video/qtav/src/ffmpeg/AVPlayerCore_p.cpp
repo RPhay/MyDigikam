@@ -21,7 +21,7 @@
  *
  * ============================================================ */
 
-#include "AVPlayer_p.h"
+#include "AVPlayerCore_p.h"
 
 // Qt includes
 
@@ -100,7 +100,7 @@ static bool correct_audio_channels(AVCodecContext *ctx)
     return ((ctx->channel_layout > 0) && (ctx->channels > 0));
 }
 
-AVPlayer::Private::Private()
+AVPlayerCore::Private::Private()
     : auto_load(false)
     , async_load(true)
     , loaded(false)
@@ -143,7 +143,7 @@ AVPlayer::Private::Private()
     , force_fps(0)
     , notify_interval(-500)
     , status(NoMedia)
-    , state(AVPlayer::StoppedState)
+    , state(AVPlayerCore::StoppedState)
     , end_action(MediaEndAction_Default)
 {
     demuxer.setInterruptTimeout(interrupt_timeout);
@@ -171,7 +171,7 @@ AVPlayer::Private::Private()
             << VideoDecoderId_FFmpeg;
 }
 
-AVPlayer::Private::~Private()
+AVPlayerCore::Private::~Private()
 {
     // TODO: scoped ptr
 
@@ -226,7 +226,7 @@ AVPlayer::Private::~Private()
     }
 }
 
-bool AVPlayer::Private::checkSourceChange()
+bool AVPlayerCore::Private::checkSourceChange()
 {
     if (current_source.type() == QVariant::String)
         return (demuxer.fileName() != current_source.toString());
@@ -237,7 +237,7 @@ bool AVPlayer::Private::checkSourceChange()
     return (demuxer.mediaIO() != current_source.value<QtAV::MediaIO*>());
 }
 
-void AVPlayer::Private::updateNotifyInterval()
+void AVPlayerCore::Private::updateNotifyInterval()
 {
     if (notify_interval <= 0)
     {
@@ -247,7 +247,7 @@ void AVPlayer::Private::updateNotifyInterval()
     qCDebug(DIGIKAM_QTAV_LOG).noquote() << QString::asprintf("notify_interval: %d", qAbs(notify_interval));
 }
 
-void AVPlayer::Private::applyFrameRate()
+void AVPlayerCore::Private::applyFrameRate()
 {
     qreal vfps         = force_fps;
     bool force         = (vfps > 0);
@@ -305,7 +305,7 @@ void AVPlayer::Private::applyFrameRate()
     clock->setSpeed(r);
 }
 
-void AVPlayer::Private::initStatistics()
+void AVPlayerCore::Private::initStatistics()
 {
     initBaseStatistics();
     initAudioStatistics(demuxer.audioStream());
@@ -316,7 +316,7 @@ void AVPlayer::Private::initStatistics()
 
 // TODO: av_guess_frame_rate in latest ffmpeg
 
-void AVPlayer::Private::initBaseStatistics()
+void AVPlayerCore::Private::initBaseStatistics()
 {
     statistics.reset();
     statistics.url           = (current_source.type() == QVariant::String) ? current_source.toString() : QString();
@@ -349,7 +349,7 @@ void AVPlayer::Private::initBaseStatistics()
     updateNotifyInterval();
 }
 
-void AVPlayer::Private::initCommonStatistics(int s, Statistics::Common *st, AVCodecContext *avctx)
+void AVPlayerCore::Private::initCommonStatistics(int s, Statistics::Common *st, AVCodecContext *avctx)
 {
     AVFormatContext* fmt_ctx = demuxer.formatContext();
 
@@ -418,7 +418,7 @@ void AVPlayer::Private::initCommonStatistics(int s, Statistics::Common *st, AVCo
     }
 }
 
-void AVPlayer::Private::initAudioStatistics(int s)
+void AVPlayerCore::Private::initAudioStatistics(int s)
 {
     AVCodecContext* avctx = demuxer.audioCodecContext();
     statistics.audio      = Statistics::Common();
@@ -450,7 +450,7 @@ void AVPlayer::Private::initAudioStatistics(int s)
     statistics.audio_only.sample_rate    = avctx->sample_rate;
 }
 
-void AVPlayer::Private::initVideoStatistics(int s)
+void AVPlayerCore::Private::initVideoStatistics(int s)
 {
     AVCodecContext* avctx = demuxer.videoCodecContext();
     statistics.video      = Statistics::Common();
@@ -496,7 +496,7 @@ void AVPlayer::Private::initVideoStatistics(int s)
 
 // notify statistics change after audio/video thread is set
 
-bool AVPlayer::Private::setupAudioThread(AVPlayer *player)
+bool AVPlayerCore::Private::setupAudioThread(AVPlayerCore *player)
 {
     AVDemuxer* ademuxer = &demuxer;
 
@@ -650,7 +650,7 @@ bool AVPlayer::Private::setupAudioThread(AVPlayer *player)
     return true;
 }
 
-QVariantList AVPlayer::Private::getTracksInfo(AVDemuxer *demuxer, AVDemuxer::StreamType st)
+QVariantList AVPlayerCore::Private::getTracksInfo(AVDemuxer *demuxer, AVDemuxer::StreamType st)
 {
     QVariantList info;
 
@@ -730,7 +730,7 @@ QVariantList AVPlayer::Private::getTracksInfo(AVDemuxer *demuxer, AVDemuxer::Str
     return info;
 }
 
-bool AVPlayer::Private::applySubtitleStream(int n, AVPlayer *player)
+bool AVPlayerCore::Private::applySubtitleStream(int n, AVPlayerCore *player)
 {
     if (!demuxer.setStreamIndex(AVDemuxer::SubtitleStream, n))
         return false;
@@ -757,7 +757,7 @@ bool AVPlayer::Private::applySubtitleStream(int n, AVPlayer *player)
     return true;
 }
 
-bool AVPlayer::Private::tryApplyDecoderPriority(AVPlayer *player)
+bool AVPlayerCore::Private::tryApplyDecoderPriority(AVPlayerCore *player)
 {
     // TODO: add an option to apply the new decoder even if not available
 
@@ -831,7 +831,7 @@ bool AVPlayer::Private::tryApplyDecoderPriority(AVPlayer *player)
     return true;
 }
 
-bool AVPlayer::Private::setupVideoThread(AVPlayer* player)
+bool AVPlayerCore::Private::setupVideoThread(AVPlayerCore* player)
 {
     demuxer.setStreamIndex(AVDemuxer::VideoStream, video_track);
 
@@ -944,7 +944,7 @@ bool AVPlayer::Private::setupVideoThread(AVPlayer* player)
 
 // TODO: set to a lower value when buffering
 
-void AVPlayer::Private::updateBufferValue(PacketBuffer* buf)
+void AVPlayerCore::Private::updateBufferValue(PacketBuffer* buf)
 {
     const bool video = vthread && (buf == vthread->packetQueue());
     const qreal fps  = qMax<qreal>(24.0, statistics.video.frame_rate);
@@ -975,7 +975,7 @@ void AVPlayer::Private::updateBufferValue(PacketBuffer* buf)
     buf->setBufferValue((buffer_value < 0LL) ? bv : buffer_value);
 }
 
-void AVPlayer::Private::updateBufferValue()
+void AVPlayerCore::Private::updateBufferValue()
 {
     if (athread)
         updateBufferValue(athread->packetQueue());

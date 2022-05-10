@@ -134,7 +134,7 @@ private:
 
     // from AVOutput
 
-    virtual void setStatistics(Statistics* statistics)                      override; // called by friend AVPlayer
+    virtual void setStatistics(Statistics* statistics)                      override; // called by friend AVPlayerCore
     virtual bool onInstallFilter(Filter *filter, int index)                 override;
     virtual bool onUninstallFilter(Filter *filter)                          override;
     virtual bool onHanlePendingTasks()                                      override;

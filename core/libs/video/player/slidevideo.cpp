@@ -98,7 +98,7 @@ public:
     DInfoInterface*      iface;
 
     WidgetRenderer*      videoWidget;
-    AVPlayer*            player;
+    AVPlayerCore*            player;
 
     QSlider*             slider;
     QSlider*             volume;
@@ -121,7 +121,7 @@ SlideVideo::SlideVideo(QWidget* const parent)
     d->videoWidget->setOutAspectRatioMode(VideoRenderer::VideoAspectRatio);
     d->videoWidget->setMouseTracking(true);
 
-    d->player         = new AVPlayer(this);
+    d->player         = new AVPlayerCore(this);
     d->player->setRenderer(d->videoWidget);
 
     d->indicator      = new DHBox(this);
@@ -167,8 +167,8 @@ SlideVideo::SlideVideo(QWidget* const parent)
     connect(d->volume, SIGNAL(valueChanged(int)),
             this, SLOT(slotVolumeChanged(int)));
 
-    connect(d->player, SIGNAL(stateChanged(QtAV::AVPlayer::State)),
-            this, SLOT(slotPlayerStateChanged(QtAV::AVPlayer::State)));
+    connect(d->player, SIGNAL(stateChanged(QtAV::AVPlayerCore::State)),
+            this, SLOT(slotPlayerStateChanged(QtAV::AVPlayerCore::State)));
 
     connect(d->player, SIGNAL(mediaStatusChanged(QtAV::MediaStatus)),
             this, SLOT(slotMediaStatusChanged(QtAV::MediaStatus)));
@@ -259,9 +259,9 @@ void SlideVideo::showIndicator(bool b)
     d->indicator->setVisible(b);
 }
 
-void SlideVideo::slotPlayerStateChanged(QtAV::AVPlayer::State state)
+void SlideVideo::slotPlayerStateChanged(QtAV::AVPlayerCore::State state)
 {
-    if (state == QtAV::AVPlayer::PlayingState)
+    if (state == QtAV::AVPlayerCore::PlayingState)
     {
         int rotate = 0;
 

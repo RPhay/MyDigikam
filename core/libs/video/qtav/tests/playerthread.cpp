@@ -38,7 +38,7 @@ class Q_DECL_HIDDEN Thread : public QThread
 {
 public:
 
-    explicit Thread(AVPlayer* player)
+    explicit Thread(AVPlayerCore* player)
       : QThread(nullptr)
       , mpPlayer(player)
     {
@@ -53,14 +53,14 @@ protected:
         exec();
     }
 
-    AVPlayer *mpPlayer;
+    AVPlayerCore *mpPlayer;
 };
 
 int main(int argc, char *argv[])
 {
     QApplication a(argc, argv);
 
-    AVPlayer player;
+    AVPlayerCore player;
     WidgetRenderer renderer;
     renderer.show();
     player.addVideoRenderer(&renderer);

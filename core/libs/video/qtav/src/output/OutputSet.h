@@ -42,7 +42,7 @@
 namespace QtAV
 {
 
-class AVPlayer;
+class AVPlayerCore;
 class VideoFrame;
 
 class OutputSet : public QObject
@@ -51,7 +51,7 @@ class OutputSet : public QObject
 
 public:
 
-    explicit OutputSet(AVPlayer *player);
+    explicit OutputSet(AVPlayerCore *player);
     virtual ~OutputSet();
 
     // required when accessing renderers
@@ -82,7 +82,7 @@ public:
 
     /*
      * in user thread when pause count < set size.
-     * 1. AVPlayer.pause(false) in player thread then call each output pause(false)
+     * 1. AVPlayerCore.pause(false) in player thread then call each output pause(false)
      * 2. shortcut for AVOutput.pause(false)
      */
     void resumeThread();
@@ -96,7 +96,7 @@ public Q_SLOTS:
 private:
 
     volatile bool    mCanPauseThread;
-    AVPlayer*        mpPlayer;
+    AVPlayerCore*        mpPlayer;
     int              mPauseCount;   // pause AVThread if equals to mOutputs.size()
     QList<AVOutput*> mOutputs;
     QMutex           mMutex;

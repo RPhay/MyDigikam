@@ -81,7 +81,7 @@ VideoWall::~VideoWall()
 
     if (!players.isEmpty())
     {
-        foreach (AVPlayer* player, players)
+        foreach (AVPlayerCore* player, players)
         {
             player->stop();
             VideoRenderer* renderer = player->renderer();
@@ -132,7 +132,7 @@ void VideoWall::show()
 {
     if (!players.isEmpty())
     {
-        foreach (AVPlayer* const player, players)
+        foreach (AVPlayerCore* const player, players)
         {
             player->stop();
             VideoRenderer* renderer = player->renderer();
@@ -189,7 +189,7 @@ void VideoWall::show()
             renderer->widget()->setAttribute(Qt::WA_DeleteOnClose);
             renderer->widget()->resize(w, h);
             renderer->widget()->move(j*w, i*h);
-            AVPlayer *player = new AVPlayer;
+            AVPlayerCore *player = new AVPlayerCore;
             player->setRenderer(renderer);
 
             connect(player, SIGNAL(started()),
@@ -211,7 +211,7 @@ void VideoWall::play(const QString &file)
     clock->reset();
     clock->start();
 
-    foreach (AVPlayer* const player, players)
+    foreach (AVPlayerCore* const player, players)
     {
         player->play(file);
     }
@@ -224,7 +224,7 @@ void VideoWall::stop()
     clock->reset();
     killTimer(timer_id);
 
-    foreach (AVPlayer* const player, players)
+    foreach (AVPlayerCore* const player, players)
     {
         player->stop();         // check playing?
     }
@@ -242,7 +242,7 @@ void VideoWall::openLocalFile()
     clock->start();
     timer_id = startTimer(kSyncInterval);
 
-    foreach (AVPlayer* const player, players)
+    foreach (AVPlayerCore* const player, players)
     {
         player->setFile(file);  // TODO: load all players before play
         player->play();
@@ -261,7 +261,7 @@ void VideoWall::openUrl()
     clock->start();
     timer_id = startTimer(kSyncInterval);
 
-    foreach (AVPlayer* const player, players)
+    foreach (AVPlayerCore* const player, players)
     {
         player->setFile(url);
         player->play();         // TODO: load all players before play
@@ -334,7 +334,7 @@ bool VideoWall::eventFilter(QObject *watched, QEvent *event)
 
                 case Qt::Key_N: //check playing?
                 {
-                    foreach (AVPlayer* const player, players)
+                    foreach (AVPlayerCore* const player, players)
                     {
                         player->stepForward();
                     }
@@ -363,7 +363,7 @@ bool VideoWall::eventFilter(QObject *watched, QEvent *event)
                     clock->reset();
                     clock->start();
 
-                    foreach (AVPlayer* const player, players)
+                    foreach (AVPlayerCore* const player, players)
                     {
                         player->play();
                     }
@@ -384,7 +384,7 @@ bool VideoWall::eventFilter(QObject *watched, QEvent *event)
                 {
                     clock->pause(!clock->isPaused());
 
-                    foreach (AVPlayer* const player, players)
+                    foreach (AVPlayerCore* const player, players)
                     {
                         player->pause(!player->isPaused());
                     }
@@ -394,7 +394,7 @@ bool VideoWall::eventFilter(QObject *watched, QEvent *event)
 
                 case Qt::Key_Up:
                 {
-                    foreach (AVPlayer* const player, players)
+                    foreach (AVPlayerCore* const player, players)
                     {
                         if (player->audio())
                         {
@@ -416,7 +416,7 @@ bool VideoWall::eventFilter(QObject *watched, QEvent *event)
 
                 case Qt::Key_Down:
                 {
-                    foreach (AVPlayer* const player, players)
+                    foreach (AVPlayerCore* const player, players)
                     {
                         if (player->audio())
                         {
@@ -443,7 +443,7 @@ bool VideoWall::eventFilter(QObject *watched, QEvent *event)
                     const qint64 newPos = clock->value()*1000.0 - 2000.0;
                     clock->updateExternalClock(newPos);
 
-                    foreach (AVPlayer* const player, players)
+                    foreach (AVPlayerCore* const player, players)
                     {
                         player->setPosition(newPos);
                     }
@@ -458,7 +458,7 @@ bool VideoWall::eventFilter(QObject *watched, QEvent *event)
                     const qint64 newPos = clock->value()*1000.0 + 2000.0;
                     clock->updateExternalClock(newPos);
 
-                    foreach (AVPlayer* const player, players)
+                    foreach (AVPlayerCore* const player, players)
                     {
                         player->setPosition(newPos);
                     }
@@ -468,7 +468,7 @@ bool VideoWall::eventFilter(QObject *watched, QEvent *event)
 
                 case Qt::Key_M:
                 {
-                    foreach (AVPlayer* const player, players)
+                    foreach (AVPlayerCore* const player, players)
                     {
                         if (player->audio())
                         {
@@ -555,7 +555,7 @@ void VideoWall::timerEvent(QTimerEvent *e)
         return;
     }
 
-    foreach (AVPlayer *player, players)
+    foreach (AVPlayerCore *player, players)
     {
         player->masterClock()->updateExternalClock(*clock);
     }
@@ -563,7 +563,7 @@ void VideoWall::timerEvent(QTimerEvent *e)
 
 void VideoWall::changeClockType()
 {
-    AVPlayer* player = qobject_cast<AVPlayer*>(sender());
+    AVPlayerCore* player = qobject_cast<AVPlayerCore*>(sender());
     player->masterClock()->setClockAuto(false);
     player->masterClock()->setClockType(AVClock::ExternalClock);
 }

@@ -38,12 +38,12 @@
 namespace QtAV
 {
 
-class AVPlayer;
+class AVPlayerCore;
 class Subtitle;
 
 /*!
  * \brief The PlayerSubtitle class
- * Bind Subtitle to AVPlayer. Used by SubtitleFilter and QuickSubtitle.
+ * Bind Subtitle to AVPlayerCore. Used by SubtitleFilter and QuickSubtitle.
  * Subtitle load priority: user specified file (setFile(...)) > auto load external (autoLoad() must be true) > embedded subtitle
  */
 class QTAV_PRIVATE_EXPORT PlayerSubtitle : public QObject
@@ -54,7 +54,7 @@ public:
 
     explicit PlayerSubtitle(QObject* parent = nullptr);
 
-    void setPlayer(AVPlayer* player);
+    void setPlayer(AVPlayerCore* player);
     Subtitle* subtitle();
 
     /*!
@@ -101,7 +101,7 @@ private:
 
     bool            m_auto;
     bool            m_enabled;  // TODO: m_enable_external
-    AVPlayer*       m_player;
+    AVPlayerCore*       m_player;
     Subtitle*       m_sub;
     QString         m_file;
     QVariantList    m_tracks;

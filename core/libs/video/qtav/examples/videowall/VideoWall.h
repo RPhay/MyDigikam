@@ -30,7 +30,7 @@
 
 // Local includes
 
-#include "AVPlayer.h"
+#include "AVPlayerCore.h"
 #include "WidgetRenderer.h"
 
 QT_BEGIN_NAMESPACE
@@ -76,7 +76,7 @@ private:
     int                    r, c;
     int                    timer_id;
     QtAV::AVClock*         clock;
-    QList<QtAV::AVPlayer*> players;
+    QList<QtAV::AVPlayerCore*> players;
     QWidget*               view;
     QMenu*                 menu;
     QString                vid;

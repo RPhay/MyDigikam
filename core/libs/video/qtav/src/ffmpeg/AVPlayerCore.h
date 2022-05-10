@@ -21,8 +21,8 @@
  *
  * ============================================================ */
 
-#ifndef QTAV_AV_PLAYER_H
-#define QTAV_AV_PLAYER_H
+#ifndef QTAV_AV_PLAYER_CORE_H
+#define QTAV_AV_PLAYER_CORE_H
 
 // C++ includes
 
@@ -57,7 +57,7 @@ class VideoFilter;
 class VideoCapture;
 
 /*!
- * \brief The AVPlayer class
+ * \brief The AVPlayerCore class
  * Preload:
  * \code
  *  player->setFile(...);
@@ -72,7 +72,7 @@ class VideoCapture;
  * \endcode
  */
 
-class QTAV_EXPORT AVPlayer : public QObject
+class QTAV_EXPORT AVPlayerCore : public QObject
 {
     Q_OBJECT
     Q_PROPERTY(bool relativeTimeMode READ relativeTimeMode WRITE setRelativeTimeMode NOTIFY relativeTimeModeChanged)
@@ -115,8 +115,8 @@ public:
 
     static const QStringList& supportedProtocols();
 
-    explicit AVPlayer(QObject* parent = nullptr);
-    ~AVPlayer();
+    explicit AVPlayerCore(QObject* parent = nullptr);
+    ~AVPlayerCore();
 
     /*!
      * \brief masterClock
@@ -139,13 +139,13 @@ public:
 
     /*!
      * \brief setIODevice
-     * Play media stream from QIODevice. AVPlayer does not take the ownership. You have to manage device lifetime.
+     * Play media stream from QIODevice. AVPlayerCore does not take the ownership. You have to manage device lifetime.
      */
     void setIODevice(QIODevice* device);
 
     /*!
      * \brief setInput
-     * Play media stream from custom MediaIO. AVPlayer's demuxer takes the ownership. Call it when player is stopped.
+     * Play media stream from custom MediaIO. AVPlayerCore's demuxer takes the ownership. Call it when player is stopped.
      */
     void setInput(MediaIO* in);
     MediaIO* input() const;
@@ -350,7 +350,7 @@ public:
 
     /*!
      * \brief audio
-     * AVPlayer always has an AudioOutput instance. You can access or control audio output properties through audio().
+     * AVPlayerCore always has an AudioOutput instance. You can access or control audio output properties through audio().
      * To disable audio output, set audio()->setBackends(QStringList() << "null") before starting playback
      * \return
      */
@@ -655,7 +655,7 @@ Q_SIGNALS:
     void started();
     void stopped();
     void stoppedAt(qint64 position);
-    void stateChanged(QtAV::AVPlayer::State state);
+    void stateChanged(QtAV::AVPlayerCore::State state);
     void speedChanged(qreal speed);
     void repeatChanged(int r);
     void currentRepeatChanged(int r);
@@ -745,6 +745,6 @@ private:
 
 } // namespace QtAV
 
-Q_DECLARE_METATYPE(QtAV::AVPlayer::State)
+Q_DECLARE_METATYPE(QtAV::AVPlayerCore::State)
 
-#endif // QTAV_AV_PLAYER_H
+#endif // QTAV_AV_PLAYER_CORE_H

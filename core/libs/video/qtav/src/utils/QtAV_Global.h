@@ -65,7 +65,7 @@ QTAV_EXPORT void setFFmpegLogHandler(void(*)(void *, int, const char *, va_list)
 QTAV_EXPORT void setFFmpegLogLevel(const QByteArray& level);
 
 /**
- * query the common options of avformat/avcodec that can be used by AVPlayer::setOptionsForXXX.
+ * query the common options of avformat/avcodec that can be used by AVPlayerCore::setOptionsForXXX.
  * Format/codec specified options are also included
  */
 QTAV_EXPORT QString avformatOptions();
@@ -102,7 +102,7 @@ enum MediaEndActionFlag
 {
     MediaEndAction_Default,               ///< stop playback (if loop end) and clear video renderer
     MediaEndAction_KeepDisplay = 1,       ///< stop playback but video renderer keeps the last frame
-    MediaEndAction_Pause       = 1 << 1   ///< pause playback. Currently AVPlayer repeat mode will not work if this flag is set
+    MediaEndAction_Pause       = 1 << 1   ///< pause playback. Currently AVPlayerCore repeat mode will not work if this flag is set
 };
 Q_DECLARE_FLAGS(MediaEndAction, MediaEndActionFlag)
 

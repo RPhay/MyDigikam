@@ -21,7 +21,7 @@
  *
  * ============================================================ */
 
-#include "AVPlayer_p.h"
+#include "AVPlayerCore_p.h"
 
 // C++ includes
 
@@ -73,7 +73,7 @@ static const struct RegisterMetaTypes
 {
     inline RegisterMetaTypes()
     {
-        qRegisterMetaType<QtAV::AVPlayer::State>(); // required by invoke() parameters
+        qRegisterMetaType<QtAV::AVPlayerCore::State>(); // required by invoke() parameters
     }
 } _registerMetaTypes;
 
@@ -85,12 +85,12 @@ Q_GLOBAL_STATIC(QThreadPool, loaderThreadPool)
 
 /// Supported input protocols. A static string list
 
-const QStringList& AVPlayer::supportedProtocols()
+const QStringList& AVPlayerCore::supportedProtocols()
 {
     return AVDemuxer::supportedProtocols();
 }
 
-AVPlayer::AVPlayer(QObject* parent)
+AVPlayerCore::AVPlayerCore(QObject* parent)
     : QObject(parent),
       d(new Private())
 {
@@ -160,7 +160,7 @@ AVPlayer::AVPlayer(QObject* parent)
     d->vcapture = new VideoCapture(this);
 }
 
-AVPlayer::~AVPlayer()
+AVPlayerCore::~AVPlayerCore()
 {
     stop();
 
@@ -184,12 +184,12 @@ AVPlayer::~AVPlayer()
     }
 }
 
-AVClock* AVPlayer::masterClock()
+AVClock* AVPlayerCore::masterClock()
 {
     return d->clock;
 }
 
-void AVPlayer::addVideoRenderer(VideoRenderer* renderer)
+void AVPlayerCore::addVideoRenderer(VideoRenderer* renderer)
 {
     if (!renderer)
     {
@@ -202,17 +202,17 @@ void AVPlayer::addVideoRenderer(VideoRenderer* renderer)
     d->vos->addOutput(renderer);
 }
 
-void AVPlayer::removeVideoRenderer(VideoRenderer* renderer)
+void AVPlayerCore::removeVideoRenderer(VideoRenderer* renderer)
 {
     d->vos->removeOutput(renderer);
 }
 
-void AVPlayer::clearVideoRenderers()
+void AVPlayerCore::clearVideoRenderers()
 {
     d->vos->clearOutputs();
 }
 
-void AVPlayer::setRenderer(VideoRenderer* r)
+void AVPlayerCore::setRenderer(VideoRenderer* r)
 {
     VideoRenderer* vo = renderer();
 
@@ -240,7 +240,7 @@ void AVPlayer::setRenderer(VideoRenderer* r)
     addVideoRenderer(r);
 }
 
-VideoRenderer* AVPlayer::renderer()
+VideoRenderer* AVPlayerCore::renderer()
 {
     // QList assert empty in debug mode
 
@@ -250,7 +250,7 @@ VideoRenderer* AVPlayer::renderer()
     return static_cast<VideoRenderer*>(d->vos->outputs().last());
 }
 
-QList<VideoRenderer*> AVPlayer::videoOutputs()
+QList<VideoRenderer*> AVPlayerCore::videoOutputs()
 {
     if (!d->vos)
         return QList<VideoRenderer*>();
@@ -266,12 +266,12 @@ QList<VideoRenderer*> AVPlayer::videoOutputs()
     return vos;
 }
 
-AudioOutput* AVPlayer::audio()
+AudioOutput* AVPlayerCore::audio()
 {
     return d->ao;
 }
 
-void AVPlayer::setSpeed(qreal speed)
+void AVPlayerCore::setSpeed(qreal speed)
 {
     if (speed == d->speed)
         return;
@@ -292,12 +292,12 @@ void AVPlayer::setSpeed(qreal speed)
     Q_EMIT speedChanged(d->speed);
 }
 
-qreal AVPlayer::speed() const
+qreal AVPlayerCore::speed() const
 {
     return d->speed;
 }
 
-void AVPlayer::setInterruptTimeout(qint64 ms)
+void AVPlayerCore::setInterruptTimeout(qint64 ms)
 {
     if (ms < 0LL)
         ms = -1LL;
@@ -312,12 +312,12 @@ void AVPlayer::setInterruptTimeout(qint64 ms)
     d->demuxer.setInterruptTimeout(ms);
 }
 
-qint64 AVPlayer::interruptTimeout() const
+qint64 AVPlayerCore::interruptTimeout() const
 {
     return d->interrupt_timeout;
 }
 
-void AVPlayer::setInterruptOnTimeout(bool value)
+void AVPlayerCore::setInterruptOnTimeout(bool value)
 {
     if (isInterruptOnTimeout() == value)
         return;
@@ -327,12 +327,12 @@ void AVPlayer::setInterruptOnTimeout(bool value)
     Q_EMIT interruptOnTimeoutChanged();
 }
 
-bool AVPlayer::isInterruptOnTimeout() const
+bool AVPlayerCore::isInterruptOnTimeout() const
 {
     return d->demuxer.isInterruptOnTimeout();
 }
 
-void AVPlayer::setFrameRate(qreal value)
+void AVPlayerCore::setFrameRate(qreal value)
 {
     d->force_fps = value;
 
@@ -345,17 +345,17 @@ void AVPlayer::setFrameRate(qreal value)
     d->applyFrameRate();
 }
 
-qreal AVPlayer::forcedFrameRate() const
+qreal AVPlayerCore::forcedFrameRate() const
 {
     return d->force_fps;
 }
 
-const Statistics& AVPlayer::statistics() const
+const Statistics& AVPlayerCore::statistics() const
 {
     return d->statistics;
 }
 
-bool AVPlayer::installFilter(AudioFilter* filter, int index)
+bool AVPlayerCore::installFilter(AudioFilter* filter, int index)
 {
     if (!FilterManager::instance().registerAudioFilter((Filter*)filter, this, index))
         return false;
@@ -366,7 +366,7 @@ bool AVPlayer::installFilter(AudioFilter* filter, int index)
     return d->athread->installFilter((Filter*)filter, index);
 }
 
-bool AVPlayer::installFilter(VideoFilter* filter, int index)
+bool AVPlayerCore::installFilter(VideoFilter* filter, int index)
 {
     if (!FilterManager::instance().registerVideoFilter((Filter*)filter, this, index))
         return false;
@@ -377,7 +377,7 @@ bool AVPlayer::installFilter(VideoFilter* filter, int index)
     return d->vthread->installFilter((Filter*)filter, index);
 }
 
-bool AVPlayer::uninstallFilter(AudioFilter* filter)
+bool AVPlayerCore::uninstallFilter(AudioFilter* filter)
 {
     FilterManager::instance().unregisterAudioFilter(filter, this);
     AVThread* avthread = d->athread;
@@ -391,7 +391,7 @@ bool AVPlayer::uninstallFilter(AudioFilter* filter)
     return avthread->uninstallFilter(filter, true);
 }
 
-bool AVPlayer::uninstallFilter(VideoFilter *filter)
+bool AVPlayerCore::uninstallFilter(VideoFilter *filter)
 {
     FilterManager::instance().unregisterVideoFilter(filter, this);
     AVThread* avthread = d->vthread;
@@ -405,17 +405,17 @@ bool AVPlayer::uninstallFilter(VideoFilter *filter)
     return avthread->uninstallFilter(filter, true);
 }
 
-QList<Filter*> AVPlayer::audioFilters() const
+QList<Filter*> AVPlayerCore::audioFilters() const
 {
-    return FilterManager::instance().audioFilters((AVPlayer*)this);
+    return FilterManager::instance().audioFilters((AVPlayerCore*)this);
 }
 
-QList<Filter*> AVPlayer::videoFilters() const
+QList<Filter*> AVPlayerCore::videoFilters() const
 {
-    return FilterManager::instance().videoFilters((AVPlayer*)this);
+    return FilterManager::instance().videoFilters((AVPlayerCore*)this);
 }
 
-void AVPlayer::setPriority(const QVector<VideoDecoderId> &ids)
+void AVPlayerCore::setPriority(const QVector<VideoDecoderId> &ids)
 {
     d->vc_ids = ids;
 
@@ -442,11 +442,11 @@ void AVPlayer::setPriority(const QVector<VideoDecoderId> &ids)
 
     class Q_DECL_HIDDEN ChangeDecoderTask : public QRunnable
     {
-        AVPlayer* player;
+        AVPlayerCore* player;
 
     public:
 
-        ChangeDecoderTask(AVPlayer* p)
+        ChangeDecoderTask(AVPlayerCore* p)
             : player(p)
         {
         }
@@ -465,11 +465,11 @@ void AVPlayer::setPriority(const QVector<VideoDecoderId> &ids)
 
     class Q_DECL_HIDDEN NewDecoderTask : public QRunnable
     {
-        AVPlayer* player;
+        AVPlayerCore* player;
 
     public:
 
-        NewDecoderTask(AVPlayer* p)
+        NewDecoderTask(AVPlayerCore* p)
             : player(p)
         {
         }
@@ -521,12 +521,12 @@ void AVPlayer::setPriority(const QVector<VideoDecoderId> &ids)
 
             class Q_DECL_HIDDEN ApplyNewDecoderTask : public QRunnable 
             {
-                AVPlayer*     player;
+                AVPlayerCore*     player;
                 VideoDecoder* dec;
 
             public:
 
-                ApplyNewDecoderTask(AVPlayer* p, VideoDecoder* d)
+                ApplyNewDecoderTask(AVPlayerCore* p, VideoDecoder* d)
                     : player(p),
                       dec(d)
                 {
@@ -592,7 +592,7 @@ static QVector<ID> idsFromNames(const QStringList& names)
     return decs;
 }
 
-void AVPlayer::setVideoDecoderPriority(const QStringList &names)
+void AVPlayerCore::setVideoDecoderPriority(const QStringList &names)
 {
     setPriority(idsFromNames<VideoDecoderId, VideoDecoder>(names));
 }
@@ -615,32 +615,32 @@ static QStringList idsToNames(QVector<ID> ids)
     return decs;
 }
 
-QStringList AVPlayer::videoDecoderPriority() const
+QStringList AVPlayerCore::videoDecoderPriority() const
 {
     return idsToNames<VideoDecoderId, VideoDecoder>(d->vc_ids);
 }
 
-void AVPlayer::setOptionsForFormat(const QVariantHash &dict)
+void AVPlayerCore::setOptionsForFormat(const QVariantHash &dict)
 {
     d->demuxer.setOptions(dict);
 }
 
-QVariantHash AVPlayer::optionsForFormat() const
+QVariantHash AVPlayerCore::optionsForFormat() const
 {
     return d->demuxer.options();
 }
 
-void AVPlayer::setOptionsForAudioCodec(const QVariantHash &dict)
+void AVPlayerCore::setOptionsForAudioCodec(const QVariantHash &dict)
 {
     d->ac_opt = dict;
 }
 
-QVariantHash AVPlayer::optionsForAudioCodec() const
+QVariantHash AVPlayerCore::optionsForAudioCodec() const
 {
     return d->ac_opt;
 }
 
-void AVPlayer::setOptionsForVideoCodec(const QVariantHash &dict)
+void AVPlayerCore::setOptionsForVideoCodec(const QVariantHash &dict)
 {
     d->vc_opt = dict;
     const QVariant p(dict.contains(QStringLiteral("priority")));
@@ -652,12 +652,12 @@ void AVPlayer::setOptionsForVideoCodec(const QVariantHash &dict)
     }
 }
 
-QVariantHash AVPlayer::optionsForVideoCodec() const
+QVariantHash AVPlayerCore::optionsForVideoCodec() const
 {
     return d->vc_opt;
 }
 
-void AVPlayer::setMediaEndAction(MediaEndAction value)
+void AVPlayerCore::setMediaEndAction(MediaEndAction value)
 {
     if (d->end_action == value)
         return;
@@ -669,7 +669,7 @@ void AVPlayer::setMediaEndAction(MediaEndAction value)
     d->read_thread->setMediaEndAction(value);
 }
 
-MediaEndAction AVPlayer::mediaEndAction() const
+MediaEndAction AVPlayerCore::mediaEndAction() const
 {
     return d->end_action;
 }
@@ -679,7 +679,7 @@ MediaEndAction AVPlayer::mediaEndAction() const
  * For replaying, we can avoid load a seekable file again.
  * For playing a new file, load() is required.
  */
-void AVPlayer::setFile(const QString &path)
+void AVPlayerCore::setFile(const QString &path)
 {
     // file() is used somewhere else. ensure it is correct
 
@@ -709,7 +709,7 @@ void AVPlayer::setFile(const QString &path)
     d->loaded = false;
 }
 
-QString AVPlayer::file() const
+QString AVPlayerCore::file() const
 {
     if (d->current_source.type() == QVariant::String)
         return d->current_source.toString();
@@ -717,7 +717,7 @@ QString AVPlayer::file() const
     return QString();
 }
 
-void AVPlayer::setIODevice(QIODevice* device)
+void AVPlayerCore::setIODevice(QIODevice* device)
 {
     // TODO: d->reset_state = d->demuxer2.setMedia(device);
 
@@ -750,7 +750,7 @@ void AVPlayer::setIODevice(QIODevice* device)
     }
 }
 
-void AVPlayer::setInput(MediaIO *in)
+void AVPlayerCore::setInput(MediaIO *in)
 {
     // TODO: d->reset_state = d->demuxer2.setMedia(in);
 
@@ -783,7 +783,7 @@ void AVPlayer::setInput(MediaIO *in)
     }
 }
 
-MediaIO* AVPlayer::input() const
+MediaIO* AVPlayerCore::input() const
 {
     if (d->current_source.type() == QVariant::String)
         return nullptr;
@@ -794,18 +794,18 @@ MediaIO* AVPlayer::input() const
     return d->current_source.value<QtAV::MediaIO*>();
 }
 
-VideoCapture* AVPlayer::videoCapture() const
+VideoCapture* AVPlayerCore::videoCapture() const
 {
     return d->vcapture;
 }
 
-void AVPlayer::play(const QString& path)
+void AVPlayerCore::play(const QString& path)
 {
     setFile(path);
     play();
 }
 
-bool AVPlayer::isPlaying() const
+bool AVPlayerCore::isPlaying() const
 {
     return (   d->read_thread && d->read_thread->isRunning())
             || (d->athread && d->athread->isRunning())
@@ -813,12 +813,12 @@ bool AVPlayer::isPlaying() const
            );
 }
 
-void AVPlayer::togglePause()
+void AVPlayerCore::togglePause()
 {
     pause(!isPaused());
 }
 
-void AVPlayer::pause(bool p)
+void AVPlayerCore::pause(bool p)
 {
     if (!isPlaying())
         return;
@@ -860,7 +860,7 @@ void AVPlayer::pause(bool p)
     Q_EMIT paused(p);
 }
 
-bool AVPlayer::isPaused() const
+bool AVPlayerCore::isPaused() const
 {
     return (   d->read_thread && d->read_thread->isPaused())
             || (d->athread && d->athread->isPaused())
@@ -868,12 +868,12 @@ bool AVPlayer::isPaused() const
            );
 }
 
-MediaStatus AVPlayer::mediaStatus() const
+MediaStatus AVPlayerCore::mediaStatus() const
 {
     return d->status;
 }
 
-void AVPlayer::setAutoLoad(bool value)
+void AVPlayerCore::setAutoLoad(bool value)
 {
     if (d->auto_load == value)
         return;
@@ -883,12 +883,12 @@ void AVPlayer::setAutoLoad(bool value)
     Q_EMIT autoLoadChanged();
 }
 
-bool AVPlayer::isAutoLoad() const
+bool AVPlayerCore::isAutoLoad() const
 {
     return d->auto_load;
 }
 
-void AVPlayer::setAsyncLoad(bool value)
+void AVPlayerCore::setAsyncLoad(bool value)
 {
     if (d->async_load == value)
         return;
@@ -898,17 +898,17 @@ void AVPlayer::setAsyncLoad(bool value)
     Q_EMIT asyncLoadChanged();
 }
 
-bool AVPlayer::isAsyncLoad() const
+bool AVPlayerCore::isAsyncLoad() const
 {
     return d->async_load;
 }
 
-bool AVPlayer::isLoaded() const
+bool AVPlayerCore::isLoaded() const
 {
     return d->loaded;
 }
 
-void AVPlayer::loadInternal()
+void AVPlayerCore::loadInternal()
 {
     QMutexLocker lock(&d->load_mutex);
 
@@ -1005,7 +1005,7 @@ void AVPlayer::loadInternal()
         Q_EMIT notifyIntervalChanged();
 }
 
-void AVPlayer::unload()
+void AVPlayerCore::unload()
 {
     if (!isLoaded())
         return;
@@ -1049,7 +1049,7 @@ void AVPlayer::unload()
     Q_EMIT internalVideoTracksChanged(d->video_tracks);
 }
 
-void AVPlayer::setRelativeTimeMode(bool value)
+void AVPlayerCore::setRelativeTimeMode(bool value)
 {
     if (d->relative_time_mode == value)
         return;
@@ -1059,27 +1059,27 @@ void AVPlayer::setRelativeTimeMode(bool value)
     Q_EMIT relativeTimeModeChanged();
 }
 
-bool AVPlayer::relativeTimeMode() const
+bool AVPlayerCore::relativeTimeMode() const
 {
     return d->relative_time_mode;
 }
 
-qint64 AVPlayer::absoluteMediaStartPosition() const
+qint64 AVPlayerCore::absoluteMediaStartPosition() const
 {
     return d->media_start_pts;
 }
 
-qreal AVPlayer::durationF() const
+qreal AVPlayerCore::durationF() const
 {
     return double(d->demuxer.durationUs()) / double(AV_TIME_BASE); //AVFrameContext.duration time base: AV_TIME_BASE
 }
 
-qint64 AVPlayer::duration() const
+qint64 AVPlayerCore::duration() const
 {
     return d->demuxer.duration();
 }
 
-qint64 AVPlayer::mediaStartPosition() const
+qint64 AVPlayerCore::mediaStartPosition() const
 {
     if (relativeTimeMode())
         return 0.0;
@@ -1087,7 +1087,7 @@ qint64 AVPlayer::mediaStartPosition() const
     return d->demuxer.startTime();
 }
 
-qint64 AVPlayer::mediaStopPosition() const
+qint64 AVPlayerCore::mediaStopPosition() const
 {
     if ((d->media_end == kInvalidPosition) && (duration() > 0))
     {
@@ -1099,7 +1099,7 @@ qint64 AVPlayer::mediaStopPosition() const
     return d->media_end;
 }
 
-qreal AVPlayer::mediaStartPositionF() const
+qreal AVPlayerCore::mediaStartPositionF() const
 {
     if (relativeTimeMode())
         return 0.0;
@@ -1107,7 +1107,7 @@ qreal AVPlayer::mediaStartPositionF() const
     return double(d->demuxer.startTimeUs()) / double(AV_TIME_BASE);
 }
 
-qint64 AVPlayer::normalizedPosition(qint64 pos)
+qint64 AVPlayerCore::normalizedPosition(qint64 pos)
 {
     if (!isLoaded())
         return pos;
@@ -1134,12 +1134,12 @@ qint64 AVPlayer::normalizedPosition(qint64 pos)
     return qMax(qMin(pos, p1), p0);
 }
 
-qint64 AVPlayer::startPosition() const
+qint64 AVPlayerCore::startPosition() const
 {
     return d->start_position;
 }
 
-void AVPlayer::setStartPosition(qint64 pos)
+void AVPlayerCore::setStartPosition(qint64 pos)
 {
     d->start_position      = pos;
     d->start_position_norm = normalizedPosition(pos);
@@ -1147,12 +1147,12 @@ void AVPlayer::setStartPosition(qint64 pos)
     Q_EMIT startPositionChanged(d->start_position);
 }
 
-qint64 AVPlayer::stopPosition() const
+qint64 AVPlayerCore::stopPosition() const
 {
     return d->stop_position;
 }
 
-void AVPlayer::setStopPosition(qint64 pos)
+void AVPlayerCore::setStopPosition(qint64 pos)
 {
     d->stop_position      = pos;
     d->stop_position_norm = normalizedPosition(pos);
@@ -1160,7 +1160,7 @@ void AVPlayer::setStopPosition(qint64 pos)
     Q_EMIT stopPositionChanged(d->stop_position);
 }
 
-void AVPlayer::setTimeRange(qint64 start, qint64 stop)
+void AVPlayerCore::setTimeRange(qint64 start, qint64 stop)
 {
     if (start > stop)
     {
@@ -1173,12 +1173,12 @@ void AVPlayer::setTimeRange(qint64 start, qint64 stop)
     setStartPosition(start);
 }
 
-bool AVPlayer::isSeekable() const
+bool AVPlayerCore::isSeekable() const
 {
     return d->demuxer.isSeekable();
 }
 
-qint64 AVPlayer::position() const
+qint64 AVPlayerCore::position() const
 {
     // TODO: videoTime()?
 
@@ -1190,7 +1190,7 @@ qint64 AVPlayer::position() const
     return pts;
 }
 
-qint64 AVPlayer::displayPosition() const
+qint64 AVPlayerCore::displayPosition() const
 {
     // Return a cached value if there are seek tasks
 
@@ -1222,7 +1222,7 @@ qint64 AVPlayer::displayPosition() const
     return pts;
 }
 
-void AVPlayer::setPosition(qint64 position)
+void AVPlayerCore::setPosition(qint64 position)
 {
     // FIXME: strange things happen if seek out of eof
 
@@ -1248,19 +1248,19 @@ void AVPlayer::setPosition(qint64 position)
     Q_EMIT positionChanged(position); // emit relative position
 }
 
-int AVPlayer::repeat() const
+int AVPlayerCore::repeat() const
 {
     return d->repeat_max;
 }
 
-int AVPlayer::currentRepeat() const
+int AVPlayerCore::currentRepeat() const
 {
     return d->repeat_current;
 }
 
 // TODO: reset current_repeat?
 
-void AVPlayer::setRepeat(int max)
+void AVPlayerCore::setRepeat(int max)
 {
     d->repeat_max = max;
 
@@ -1270,7 +1270,7 @@ void AVPlayer::setRepeat(int max)
     Q_EMIT repeatChanged(d->repeat_max);
 }
 
-bool AVPlayer::setExternalAudio(const QString &file)
+bool AVPlayerCore::setExternalAudio(const QString &file)
 {
     // TODO: update statistics
 
@@ -1282,27 +1282,27 @@ bool AVPlayer::setExternalAudio(const QString &file)
     return setAudioStream(file, stream);
 }
 
-QString AVPlayer::externalAudio() const
+QString AVPlayerCore::externalAudio() const
 {
     return d->external_audio;
 }
 
-const QVariantList& AVPlayer::externalAudioTracks() const
+const QVariantList& AVPlayerCore::externalAudioTracks() const
 {
     return d->external_audio_tracks;
 }
 
-const QVariantList &AVPlayer::internalAudioTracks() const
+const QVariantList &AVPlayerCore::internalAudioTracks() const
 {
     return d->audio_tracks;
 }
 
-const QVariantList &AVPlayer::internalVideoTracks() const
+const QVariantList &AVPlayerCore::internalVideoTracks() const
 {
     return d->video_tracks;
 }
 
-bool AVPlayer::setAudioStream(const QString &file, int n)
+bool AVPlayerCore::setAudioStream(const QString &file, int n)
 {
     QString path(file);
 
@@ -1360,7 +1360,7 @@ bool AVPlayer::setAudioStream(const QString &file, int n)
         {
         }
 
-        void set(bool old, AVPlayer* p)
+        void set(bool old, AVPlayerCore* p)
         {
             was_paused = old;
             player     = p;
@@ -1378,7 +1378,7 @@ bool AVPlayer::setAudioStream(const QString &file, int n)
         }
 
         bool      was_paused;
-        AVPlayer* player;
+        AVPlayerCore* player;
     };
 
     scoped_pause sp;
@@ -1463,12 +1463,12 @@ update_demuxer:
     return true;
 }
 
-bool AVPlayer::setAudioStream(int n)
+bool AVPlayerCore::setAudioStream(int n)
 {
     return setAudioStream(externalAudio(), n);
 }
 
-bool AVPlayer::setVideoStream(int n)
+bool AVPlayerCore::setVideoStream(int n)
 {
     if (n < 0)
         return false;
@@ -1502,12 +1502,12 @@ bool AVPlayer::setVideoStream(int n)
     return true;
 }
 
-const QVariantList& AVPlayer::internalSubtitleTracks() const
+const QVariantList& AVPlayerCore::internalSubtitleTracks() const
 {
     return d->subtitle_tracks;
 }
 
-bool AVPlayer::setSubtitleStream(int n)
+bool AVPlayerCore::setSubtitleStream(int n)
 {
     if (d->subtitle_track == n)
         return true;
@@ -1522,42 +1522,42 @@ bool AVPlayer::setSubtitleStream(int n)
     return d->applySubtitleStream(n, this);
 }
 
-int AVPlayer::currentAudioStream() const
+int AVPlayerCore::currentAudioStream() const
 {
     return d->demuxer.audioStreams().indexOf(d->demuxer.audioStream());
 }
 
-int AVPlayer::currentVideoStream() const
+int AVPlayerCore::currentVideoStream() const
 {
     return d->demuxer.videoStreams().indexOf(d->demuxer.videoStream());
 }
 
-int AVPlayer::currentSubtitleStream() const
+int AVPlayerCore::currentSubtitleStream() const
 {
     return d->demuxer.subtitleStreams().indexOf(d->demuxer.subtitleStream());
 }
 
-int AVPlayer::audioStreamCount() const
+int AVPlayerCore::audioStreamCount() const
 {
     return d->demuxer.audioStreams().size();
 }
 
-int AVPlayer::videoStreamCount() const
+int AVPlayerCore::videoStreamCount() const
 {
     return d->demuxer.videoStreams().size();
 }
 
-int AVPlayer::subtitleStreamCount() const
+int AVPlayerCore::subtitleStreamCount() const
 {
     return d->demuxer.subtitleStreams().size();
 }
 
-AVPlayer::State AVPlayer::state() const
+AVPlayerCore::State AVPlayerCore::state() const
 {
     return d->state;
 }
 
-void AVPlayer::setState(State value)
+void AVPlayerCore::setState(State value)
 {
     if (d->state == value)
         return;
@@ -1593,7 +1593,7 @@ void AVPlayer::setState(State value)
     }
 }
 
-bool AVPlayer::load()
+bool AVPlayerCore::load()
 {
     if (!d->current_source.isValid())
     {
@@ -1631,7 +1631,7 @@ bool AVPlayer::load()
     {
     public:
 
-        LoadWorker(AVPlayer* player)
+        LoadWorker(AVPlayerCore* player)
             : m_player(player)
         {
         }
@@ -1646,7 +1646,7 @@ bool AVPlayer::load()
 
     private:
 
-        AVPlayer* m_player;
+        AVPlayerCore* m_player;
     };
 
     // TODO: thread pool has a max thread limit
@@ -1656,7 +1656,7 @@ bool AVPlayer::load()
     return true;
 }
 
-void AVPlayer::play()
+void AVPlayerCore::play()
 {
     // FIXME: bad delay after play from here
 
@@ -1689,7 +1689,7 @@ void AVPlayer::play()
             this, SLOT(playInternal()));
 }
 
-void AVPlayer::playInternal()
+void AVPlayerCore::playInternal()
 {
     {
         QMutexLocker lock(&d->load_mutex);
@@ -1820,7 +1820,7 @@ void AVPlayer::playInternal()
     Q_EMIT started(); // we called stop(), so must emit started()
 }
 
-void AVPlayer::stopFromDemuxerThread()
+void AVPlayerCore::stopFromDemuxerThread()
 {
     qCDebug(DIGIKAM_QTAV_LOG).noquote()
         << QString::asprintf("demuxer thread emit finished. repeat: %d/%d",
@@ -1849,7 +1849,7 @@ void AVPlayer::stopFromDemuxerThread()
 
         d->state               = StoppedState;
 
-        QMetaObject::invokeMethod(this, "stateChanged", Q_ARG(QtAV::AVPlayer::State, d->state));
+        QMetaObject::invokeMethod(this, "stateChanged", Q_ARG(QtAV::AVPlayerCore::State, d->state));
         QMetaObject::invokeMethod(this, "stopped");
         QMetaObject::invokeMethod(this, "stoppedAt",    Q_ARG(qint64, qint64(stop_pts*1000.0)));
 /*
@@ -1870,7 +1870,7 @@ void AVPlayer::stopFromDemuxerThread()
     }
 }
 
-void AVPlayer::aboutToQuitApp()
+void AVPlayerCore::aboutToQuitApp()
 {
     d->reset_state = true;
     stop();
@@ -1889,7 +1889,7 @@ void AVPlayer::aboutToQuitApp()
     loaderThreadPool()->waitForDone();
 }
 
-void AVPlayer::setNotifyInterval(int msec)
+void AVPlayerCore::setNotifyInterval(int msec)
 {
     if (d->notify_interval == msec)
         return;
@@ -1913,17 +1913,17 @@ void AVPlayer::setNotifyInterval(int msec)
     }
 }
 
-int AVPlayer::notifyInterval() const
+int AVPlayerCore::notifyInterval() const
 {
     return qAbs(d->notify_interval);
 }
 
-void AVPlayer::startNotifyTimer()
+void AVPlayerCore::startNotifyTimer()
 {
     d->timer_id = startTimer(qAbs(d->notify_interval));
 }
 
-void AVPlayer::stopNotifyTimer()
+void AVPlayerCore::stopNotifyTimer()
 {
     if (d->timer_id < 0)
         return;
@@ -1932,7 +1932,7 @@ void AVPlayer::stopNotifyTimer()
     d->timer_id = -1;
 }
 
-void AVPlayer::onStarted()
+void AVPlayerCore::onStarted()
 {
     if (d->speed != 1.0)
     {
@@ -1951,7 +1951,7 @@ void AVPlayer::onStarted()
     }
 }
 
-void AVPlayer::updateMediaStatus(QtAV::MediaStatus status)
+void AVPlayerCore::updateMediaStatus(QtAV::MediaStatus status)
 {
     if (status == d->status)
         return;
@@ -1961,7 +1961,7 @@ void AVPlayer::updateMediaStatus(QtAV::MediaStatus status)
     Q_EMIT mediaStatusChanged(d->status);
 }
 
-void AVPlayer::onMediaEndActionPauseTriggered()
+void AVPlayerCore::onMediaEndActionPauseTriggered()
 {
     if (d->state == PausedState)
         return;
@@ -1973,7 +1973,7 @@ void AVPlayer::onMediaEndActionPauseTriggered()
     Q_EMIT paused(true);
 }
 
-void AVPlayer::onSeekFinished(qint64 value)
+void AVPlayerCore::onSeekFinished(qint64 value)
 {
     d->seeking = false;
 
@@ -1987,12 +1987,12 @@ void AVPlayer::onSeekFinished(qint64 value)
         Q_EMIT positionChanged(value);
 }
 
-void AVPlayer::onStepFinished()
+void AVPlayerCore::onStepFinished()
 {
     Q_EMIT stepFinished();
 }
 
-void AVPlayer::tryClearVideoRenderers()
+void AVPlayerCore::tryClearVideoRenderers()
 {
     if (!d->vthread)
     {
@@ -2007,7 +2007,7 @@ void AVPlayer::tryClearVideoRenderers()
     }
 }
 
-void AVPlayer::seekChapter(int incr)
+void AVPlayerCore::seekChapter(int incr)
 {
     if (!chapters())
         return;
@@ -2052,7 +2052,7 @@ void AVPlayer::seekChapter(int incr)
                              av_time_base_q) / 1000);
 }
 
-void AVPlayer::stop()
+void AVPlayerCore::stop()
 {
     // check d->timer_id, <0 return?
 
@@ -2063,7 +2063,7 @@ void AVPlayer::stop()
          * then timer goes on, and player find that d->stop_position reached(d->stop_position is already
          * 0 after user call stop),
          * stop() is called again by player and reset state. but this call is later than demuxer stop.
-         * so if user call play() immediately, may be stopped by AVPlayer
+         * so if user call play() immediately, may be stopped by AVPlayerCore
          */
 
         // TODO: invokeMethod "stopNotifyTimer"
@@ -2134,7 +2134,7 @@ void AVPlayer::stop()
         << QString::asprintf("all audio/video threads stopped... state: %d", d->state);
 }
 
-void AVPlayer::timerEvent(QTimerEvent *te)
+void AVPlayerCore::timerEvent(QTimerEvent *te)
 {
     if (te->timerId() == d->timer_id)
     {
@@ -2250,7 +2250,7 @@ void AVPlayer::timerEvent(QTimerEvent *te)
 
 // FIXME: If not playing, it will just play but not play one frame.
 
-void AVPlayer::stepForward()
+void AVPlayerCore::stepForward()
 {
     // pause clock
 
@@ -2259,34 +2259,34 @@ void AVPlayer::stepForward()
     d->read_thread->stepForward();
 }
 
-void AVPlayer::stepBackward()
+void AVPlayerCore::stepBackward()
 {
     pause(true);
     d->was_stepping = true;
     d->read_thread->stepBackward();
 }
 
-void AVPlayer::seek(qreal r)
+void AVPlayerCore::seek(qreal r)
 {
     seek(qint64(r*double(duration())));
 }
 
-void AVPlayer::seek(qint64 pos)
+void AVPlayerCore::seek(qint64 pos)
 {
     setPosition(pos);
 }
 
-void AVPlayer::seekForward()
+void AVPlayerCore::seekForward()
 {
     seek(position() + kSeekMS);
 }
 
-void AVPlayer::seekBackward()
+void AVPlayerCore::seekBackward()
 {
     seek(position() - kSeekMS);
 }
 
-void AVPlayer::seekNextChapter()
+void AVPlayerCore::seekNextChapter()
 {
     if (chapters() <= 1)
         return;
@@ -2294,7 +2294,7 @@ void AVPlayer::seekNextChapter()
     seekChapter(1);
 }
 
-void AVPlayer::seekPreviousChapter()
+void AVPlayerCore::seekPreviousChapter()
 {
     if (chapters() <= 1)
         return;
@@ -2302,48 +2302,48 @@ void AVPlayer::seekPreviousChapter()
     seekChapter(-1);
 }
 
-void AVPlayer::setSeekType(SeekType type)
+void AVPlayerCore::setSeekType(SeekType type)
 {
     d->seek_type = type;
 }
 
-SeekType AVPlayer::seekType() const
+SeekType AVPlayerCore::seekType() const
 {
     return d->seek_type;
 }
 
-qreal AVPlayer::bufferProgress() const
+qreal AVPlayerCore::bufferProgress() const
 {
     const PacketBuffer* buf = d->read_thread->buffer();
 
     return (buf ? buf->bufferProgress() : 0);
 }
 
-qreal AVPlayer::bufferSpeed() const
+qreal AVPlayerCore::bufferSpeed() const
 {
     const PacketBuffer* buf = d->read_thread->buffer();
 
     return (buf ? buf->bufferSpeedInBytes() : 0);
 }
 
-qint64 AVPlayer::buffered() const
+qint64 AVPlayerCore::buffered() const
 {
     const PacketBuffer* buf = d->read_thread->buffer();
 
     return (buf ? buf->buffered() : 0LL);
 }
 
-void AVPlayer::setBufferMode(BufferMode mode)
+void AVPlayerCore::setBufferMode(BufferMode mode)
 {
     d->buffer_mode = mode;
 }
 
-BufferMode AVPlayer::bufferMode() const
+BufferMode AVPlayerCore::bufferMode() const
 {
     return d->buffer_mode;
 }
 
-void AVPlayer::setBufferValue(qint64 value)
+void AVPlayerCore::setBufferValue(qint64 value)
 {
     if (d->buffer_value == value)
         return;
@@ -2352,22 +2352,22 @@ void AVPlayer::setBufferValue(qint64 value)
     d->updateBufferValue();
 }
 
-int AVPlayer::bufferValue() const
+int AVPlayerCore::bufferValue() const
 {
     return d->buffer_value;
 }
 
-void AVPlayer::updateClock(qint64 msecs)
+void AVPlayerCore::updateClock(qint64 msecs)
 {
     d->clock->updateExternalClock(msecs);
 }
 
-int AVPlayer::brightness() const
+int AVPlayerCore::brightness() const
 {
     return d->brightness;
 }
 
-void AVPlayer::setBrightness(int val)
+void AVPlayerCore::setBrightness(int val)
 {
     if (d->brightness == val)
         return;
@@ -2382,12 +2382,12 @@ void AVPlayer::setBrightness(int val)
     }
 }
 
-int AVPlayer::contrast() const
+int AVPlayerCore::contrast() const
 {
     return d->contrast;
 }
 
-void AVPlayer::setContrast(int val)
+void AVPlayerCore::setContrast(int val)
 {
     if (d->contrast == val)
         return;
@@ -2402,27 +2402,27 @@ void AVPlayer::setContrast(int val)
     }
 }
 
-int AVPlayer::hue() const
+int AVPlayerCore::hue() const
 {
     return 0;
 }
 
-void AVPlayer::setHue(int val)
+void AVPlayerCore::setHue(int val)
 {
     Q_UNUSED(val);
 }
 
-int AVPlayer::saturation() const
+int AVPlayerCore::saturation() const
 {
     return d->saturation;
 }
 
-unsigned int AVPlayer::chapters() const
+unsigned int AVPlayerCore::chapters() const
 {
     return d->demuxer.formatContext()->nb_chapters;
 }
 
-void AVPlayer::setSaturation(int val)
+void AVPlayerCore::setSaturation(int val)
 {
     if (d->saturation == val)
         return;

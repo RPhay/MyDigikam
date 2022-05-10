@@ -21,10 +21,10 @@
  *
  * ============================================================ */
 
-#ifndef QTAV_AVPLAYER_P_H
-#define QTAV_AVPLAYER_P_H
+#ifndef QTAV_AVPLAYER_CORE_P_H
+#define QTAV_AVPLAYER_CORE_P_H
 
-#include "AVPlayer.h"
+#include "AVPlayerCore.h"
 
 // Local includes
 
@@ -39,7 +39,7 @@ namespace QtAV
 
 static const qint64 kInvalidPosition = std::numeric_limits<qint64>::max();
 
-class AVPlayer::Private
+class AVPlayerCore::Private
 {
 public:
 
@@ -59,10 +59,10 @@ public:
     void initSubtitleStatistics(int s);
     QVariantList getTracksInfo(AVDemuxer* demuxer, AVDemuxer::StreamType st);
 
-    bool applySubtitleStream(int n, AVPlayer* player);
-    bool setupAudioThread(AVPlayer* player);
-    bool setupVideoThread(AVPlayer* player);
-    bool tryApplyDecoderPriority(AVPlayer* player);
+    bool applySubtitleStream(int n, AVPlayerCore* player);
+    bool setupAudioThread(AVPlayerCore* player);
+    bool setupVideoThread(AVPlayerCore* player);
+    bool tryApplyDecoderPriority(AVPlayerCore* player);
 
     // TODO: what if buffer mode changed during playback?
 
@@ -209,11 +209,11 @@ public:
     int                     notify_interval;
 
     MediaStatus             status;                       ///< status changes can be from demuxer or demux thread
-    AVPlayer::State         state;
+    AVPlayerCore::State         state;
     MediaEndAction          end_action;
     QMutex                  load_mutex;
 };
 
 } // namespace QtAV
 
-#endif // QTAV_AVPLAYER_P_H
+#endif // QTAV_AVPLAYER_CORE_P_H

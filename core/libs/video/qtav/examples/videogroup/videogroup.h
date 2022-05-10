@@ -68,7 +68,7 @@ private:
     bool                        mFrameless;
     int                         r, c;
     int                         timer_id;
-    QtAV::AVPlayer*             mpPlayer;
+    QtAV::AVPlayerCore*             mpPlayer;
     QWidget*                    view;
     QWidget*                    mpBar;
     QPushButton*                mpAdd, *mpRemove, *mpOpen, *mpPlay, *mpStop, *mpPause, *mp1Window;

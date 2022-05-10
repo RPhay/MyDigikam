@@ -905,7 +905,7 @@ void AVDemuxThread::run()
     {
         processNextSeekTask();
 
-        // vthread maybe changed by AVPlayer.setPriority() from no dec case
+        // vthread maybe changed by AVPlayerCore.setPriority() from no dec case
 
         vqueue = video_thread ? video_thread->packetQueue() : nullptr;
 

@@ -46,7 +46,7 @@
 // Local includes
 
 #include "QtAVWidgets.h"
-#include "AVPlayer.h"
+#include "AVPlayerCore.h"
 #include "AudioOutput.h"
 #include "VideoCapture.h"
 #include "VideoRenderer.h"
@@ -59,7 +59,7 @@ namespace AVPlayer
 
 // TODO: watch main window
 
-EventFilter::EventFilter(QtAV::AVPlayer* const player)
+EventFilter::EventFilter(QtAV::AVPlayerCore* const player)
     : QObject(player),
       menu(nullptr)
 {
@@ -81,7 +81,7 @@ void EventFilter::openLocalFile()
     if (file.isEmpty())
         return;
 
-    QtAV::AVPlayer* const player = static_cast<QtAV::AVPlayer*>(parent());
+    QtAV::AVPlayerCore* const player = static_cast<QtAV::AVPlayerCore*>(parent());
     player->play(file);
 }
 
@@ -92,7 +92,7 @@ void EventFilter::openUrl()
     if (url.isEmpty())
         return;
 
-    QtAV::AVPlayer* const player = static_cast<QtAV::AVPlayer*>(parent());
+    QtAV::AVPlayerCore* const player = static_cast<QtAV::AVPlayerCore*>(parent());
     player->play(url);
 }
 
@@ -136,7 +136,7 @@ bool EventFilter::eventFilter(QObject* watched, QEvent* event)
 {
     Q_UNUSED(watched);
 
-    QtAV::AVPlayer* const player = static_cast<QtAV::AVPlayer*>(parent());
+    QtAV::AVPlayerCore* const player = static_cast<QtAV::AVPlayerCore*>(parent());
 
     if (!player || !player->renderer() || !player->renderer()->widget())
         return false;

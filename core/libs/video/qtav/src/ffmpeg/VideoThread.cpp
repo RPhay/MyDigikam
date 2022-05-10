@@ -111,7 +111,7 @@ VideoCapture* VideoThread::setVideoCapture(VideoCapture *cap)
 
     if (cap && cap->autoSave() && cap->name.isEmpty())
     {
-        // statistics is already set by AVPlayer
+        // statistics is already set by AVPlayerCore
 
         cap->setCaptureName(QFileInfo(d.statistics->url).completeBaseName());
     }

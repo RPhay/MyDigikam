@@ -194,7 +194,7 @@ public:
     DInfoInterface*      iface;
 
     WidgetRenderer*      videoWidget;
-    AVPlayer*            player;
+    AVPlayerCore*            player;
 
     QSlider*             slider;
     QSlider*             volume;
@@ -244,7 +244,7 @@ MediaPlayerView::MediaPlayerView(QWidget* const parent)
 
     d->playerView     = new QFrame(this);
     d->videoWidget    = new WidgetRenderer(this);
-    d->player         = new AVPlayer(this);
+    d->player         = new AVPlayerCore(this);
 
     DHBox* const hbox = new DHBox(this);
     d->slider         = new QSlider(Qt::Horizontal, hbox);
@@ -331,8 +331,8 @@ MediaPlayerView::MediaPlayerView(QWidget* const parent)
     connect(d->loopPlay, SIGNAL(toggled(bool)),
             this, SLOT(slotLoopToggled(bool)));
 
-    connect(d->player, SIGNAL(stateChanged(QtAV::AVPlayer::State)),
-            this, SLOT(slotPlayerStateChanged(QtAV::AVPlayer::State)));
+    connect(d->player, SIGNAL(stateChanged(QtAV::AVPlayerCore::State)),
+            this, SLOT(slotPlayerStateChanged(QtAV::AVPlayerCore::State)));
 
     connect(d->player, SIGNAL(mediaStatusChanged(QtAV::MediaStatus)),
             this, SLOT(slotMediaStatusChanged(QtAV::MediaStatus)));
@@ -379,9 +379,9 @@ void MediaPlayerView::reload()
     d->player->play();
 }
 
-void MediaPlayerView::slotPlayerStateChanged(QtAV::AVPlayer::State state)
+void MediaPlayerView::slotPlayerStateChanged(QtAV::AVPlayerCore::State state)
 {
-    if      (state == QtAV::AVPlayer::PlayingState)
+    if      (state == QtAV::AVPlayerCore::PlayingState)
     {
         int rotate = 0;
 
@@ -399,8 +399,8 @@ void MediaPlayerView::slotPlayerStateChanged(QtAV::AVPlayer::State state)
 
         d->playAction->setIcon(QIcon::fromTheme(QLatin1String("media-playback-pause")));
     }
-    else if ((state == QtAV::AVPlayer::PausedState) ||
-             (state == QtAV::AVPlayer::StoppedState))
+    else if ((state == QtAV::AVPlayerCore::PausedState) ||
+             (state == QtAV::AVPlayerCore::StoppedState))
     {
         d->playAction->setIcon(QIcon::fromTheme(QLatin1String("media-playback-start")));
     }

@@ -38,7 +38,7 @@ QT_END_NAMESPACE
 
 namespace QtAV
 {
-class AVPlayer;
+class AVPlayerCore;
 }
 
 namespace AVPlayer
@@ -52,7 +52,7 @@ class EventFilter : public QObject
 
 public:
 
-    explicit EventFilter(QtAV::AVPlayer* const player);
+    explicit EventFilter(QtAV::AVPlayerCore* const player);
     virtual ~EventFilter();
 
 Q_SIGNALS:

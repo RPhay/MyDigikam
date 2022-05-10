@@ -34,7 +34,7 @@
 // QtAV includes
 
 #include "AVError.h"
-#include "AVPlayer.h"
+#include "AVPlayerCore.h"
 
 // Local includes
 
@@ -69,7 +69,7 @@ public:
     bool                   isZeroTime;
     bool                   playingNext;
 
-    AVPlayer*              mediaObject;
+    AVPlayerCore*              mediaObject;
 };
 
 PresentationAudioWidget::PresentationAudioWidget(QWidget* const parent, const QList<QUrl>& urls, PresentationContainer* const sharedData)
@@ -116,13 +116,13 @@ PresentationAudioWidget::PresentationAudioWidget(QWidget* const parent, const QL
     m_playButton->setEnabled(false);
     m_prevButton->setEnabled(false);
 
-    d->mediaObject = new AVPlayer(this);
+    d->mediaObject = new AVPlayerCore(this);
 
     connect(d->mediaObject, SIGNAL(mediaStatusChanged(QtAV::MediaStatus)),
             this, SLOT(slotMediaStateChanged(QtAV::MediaStatus)));
 
-    connect(d->mediaObject, SIGNAL(stateChanged(QtAV::AVPlayer::State)),
-            this, SLOT(slotPlayerStateChanged(QtAV::AVPlayer::State)));
+    connect(d->mediaObject, SIGNAL(stateChanged(QtAV::AVPlayerCore::State)),
+            this, SLOT(slotPlayerStateChanged(QtAV::AVPlayerCore::State)));
 
     connect(d->mediaObject, SIGNAL(error(QtAV::AVError)),
             this, SLOT(slotPlayerError(QtAV::AVError)));
@@ -395,17 +395,17 @@ void PresentationAudioWidget::slotPlayerError(const QtAV::AVError& err)
     }
 }
 
-void PresentationAudioWidget::slotPlayerStateChanged(QtAV::AVPlayer::State state)
+void PresentationAudioWidget::slotPlayerStateChanged(QtAV::AVPlayerCore::State state)
 {
     switch (state)
     {
-        case QtAV::AVPlayer::PausedState:
-        case QtAV::AVPlayer::StoppedState:
+        case QtAV::AVPlayerCore::PausedState:
+        case QtAV::AVPlayerCore::StoppedState:
             m_playButton->setIcon(QIcon::fromTheme(QLatin1String("media-playback-start")));
             checkSkip();
             break;
 
-        case QtAV::AVPlayer::PlayingState:
+        case QtAV::AVPlayerCore::PlayingState:
             m_playButton->setIcon(QIcon::fromTheme(QLatin1String("media-playback-pause")));
             d->playingNext = true;
             checkSkip();

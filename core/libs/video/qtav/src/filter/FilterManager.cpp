@@ -29,7 +29,7 @@
 
 // Local includes
 
-#include "AVPlayer.h"
+#include "AVPlayerCore.h"
 #include "Filter.h"
 #include "AVOutput.h"
 #include "digikam_debug.h"
@@ -51,8 +51,8 @@ public:
 
     QList<Filter*>                    pending_release_filters;
     QHash<AVOutput*, QList<Filter*> > filter_out_map;
-    QHash<AVPlayer*, QList<Filter*> > afilter_player_map;
-    QHash<AVPlayer*, QList<Filter*> > vfilter_player_map;
+    QHash<AVPlayerCore*, QList<Filter*> > afilter_player_map;
+    QHash<AVPlayerCore*, QList<Filter*> > vfilter_player_map;
 };
 
 FilterManager::FilterManager()
@@ -114,7 +114,7 @@ QList<Filter*> FilterManager::outputFilters(AVOutput *output) const
     return d.filter_out_map.value(output);
 }
 
-bool FilterManager::registerAudioFilter(Filter *filter, AVPlayer *player, int pos)
+bool FilterManager::registerAudioFilter(Filter *filter, AVPlayerCore *player, int pos)
 {
     DPTR_D(FilterManager);
 
@@ -124,14 +124,14 @@ bool FilterManager::registerAudioFilter(Filter *filter, AVPlayer *player, int po
     return insert(filter, fs, pos);
 }
 
-QList<Filter*> FilterManager::audioFilters(AVPlayer *player) const
+QList<Filter*> FilterManager::audioFilters(AVPlayerCore *player) const
 {
     DPTR_D(const FilterManager);
 
     return d.afilter_player_map.value(player);
 }
 
-bool FilterManager::registerVideoFilter(Filter *filter, AVPlayer *player, int pos)
+bool FilterManager::registerVideoFilter(Filter *filter, AVPlayerCore *player, int pos)
 {
     DPTR_D(FilterManager);
 
@@ -141,16 +141,16 @@ bool FilterManager::registerVideoFilter(Filter *filter, AVPlayer *player, int po
     return insert(filter, fs, pos);
 }
 
-QList<Filter *> FilterManager::videoFilters(AVPlayer *player) const
+QList<Filter *> FilterManager::videoFilters(AVPlayerCore *player) const
 {
     DPTR_D(const FilterManager);
 
     return d.vfilter_player_map.value(player);
 }
 
-// called by AVOutput/AVPlayer.uninstall imediatly
+// called by AVOutput/AVPlayerCore.uninstall imediatly
 
-bool FilterManager::unregisterAudioFilter(Filter *filter, AVPlayer *player)
+bool FilterManager::unregisterAudioFilter(Filter *filter, AVPlayerCore *player)
 {
     DPTR_D(FilterManager);
 
@@ -168,7 +168,7 @@ bool FilterManager::unregisterAudioFilter(Filter *filter, AVPlayer *player)
     return ret;
 }
 
-bool FilterManager::unregisterVideoFilter(Filter *filter, AVPlayer *player)
+bool FilterManager::unregisterVideoFilter(Filter *filter, AVPlayerCore *player)
 {
     DPTR_D(FilterManager);
 
@@ -202,8 +202,8 @@ bool FilterManager::unregisterFilter(Filter *filter, AVOutput *output)
 bool FilterManager::uninstallFilter(Filter *filter)
 {
     DPTR_D(FilterManager);
-    QHash<AVPlayer*, QList<Filter*> > map1(d.vfilter_player_map); // NB: copy it for iteration because called code may modify map -- which caused crashes
-    QHash<AVPlayer*, QList<Filter*> >::iterator it = map1.begin();
+    QHash<AVPlayerCore*, QList<Filter*> > map1(d.vfilter_player_map); // NB: copy it for iteration because called code may modify map -- which caused crashes
+    QHash<AVPlayerCore*, QList<Filter*> >::iterator it = map1.begin();
 
     while (it != map1.end())
     {
@@ -213,7 +213,7 @@ bool FilterManager::uninstallFilter(Filter *filter)
         ++it;
     }
 
-    QHash<AVPlayer*, QList<Filter*> > map2(d.afilter_player_map); // copy to avoid crashes when called-code modifies map
+    QHash<AVPlayerCore*, QList<Filter*> > map2(d.afilter_player_map); // copy to avoid crashes when called-code modifies map
     it = map2.begin();
 
     while (it != map2.end())
@@ -238,7 +238,7 @@ bool FilterManager::uninstallFilter(Filter *filter)
     return false;
 }
 
-bool FilterManager::uninstallAudioFilter(Filter *filter, AVPlayer *player)
+bool FilterManager::uninstallAudioFilter(Filter *filter, AVPlayerCore *player)
 {
     if (unregisterAudioFilter(filter, player))
         return player->uninstallFilter(reinterpret_cast<AudioFilter*>(filter));
@@ -246,7 +246,7 @@ bool FilterManager::uninstallAudioFilter(Filter *filter, AVPlayer *player)
     return false;
 }
 
-bool FilterManager::uninstallVideoFilter(Filter *filter, AVPlayer *player)
+bool FilterManager::uninstallVideoFilter(Filter *filter, AVPlayerCore *player)
 {
     if (unregisterVideoFilter(filter, player))
         return player->uninstallFilter(reinterpret_cast<VideoFilter*>(filter));

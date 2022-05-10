@@ -120,14 +120,14 @@ SubtitleFilter::SubtitleFilter(QObject *parent)
     connect(d.player_sub.data(), SIGNAL(fileChanged()),
             this, SIGNAL(fileChanged()));
 
-    if (parent && !qstrcmp(parent->metaObject()->className(), "AVPlayer"))
+    if (parent && !qstrcmp(parent->metaObject()->className(), "AVPlayerCore"))
     {
-        AVPlayer* p = reinterpret_cast<AVPlayer*>(parent);
+        AVPlayerCore* p = reinterpret_cast<AVPlayerCore*>(parent);
         setPlayer(p);
     }
 }
 
-void SubtitleFilter::setPlayer(AVPlayer *player)
+void SubtitleFilter::setPlayer(AVPlayerCore *player)
 {
     d_func().player_sub->setPlayer(player);
 }

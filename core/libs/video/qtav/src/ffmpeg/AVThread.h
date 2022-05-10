@@ -147,7 +147,7 @@ protected:
 private:
 
     void setStatistics(Statistics* statistics);
-    friend class AVPlayer;
+    friend class AVPlayerCore;
 };
 
 } // namespace QtAV

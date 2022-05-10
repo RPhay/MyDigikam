@@ -55,7 +55,7 @@ VideoGroup::VideoGroup(QObject* const parent)
       view(0),
       vid(QString::fromLatin1("qpainter"))
 {
-    mpPlayer    = new AVPlayer(this);
+    mpPlayer    = new AVPlayerCore(this);
 
     //mpPlayer->setPlayerEventFilter(0);
 

@@ -34,7 +34,7 @@
 
 // Local includes
 
-#include "AVPlayer.h"
+#include "AVPlayerCore.h"
 #include "VideoOutput.h"
 #include "QtAVWidgets.h"
 #include "PropertyEditor.h"

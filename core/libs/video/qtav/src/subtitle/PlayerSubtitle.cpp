@@ -30,7 +30,7 @@
 
 // Local includes
 
-#include "AVPlayer.h"
+#include "AVPlayerCore.h"
 #include "Subtitle.h"
 #include "QtAV_internal.h"
 #include "digikam_debug.h"
@@ -90,7 +90,7 @@ Subtitle* PlayerSubtitle::subtitle()
     return m_sub;
 }
 
-void PlayerSubtitle::setPlayer(AVPlayer *player)
+void PlayerSubtitle::setPlayer(AVPlayerCore *player)
 {
     if (m_player == player)
         return;
@@ -156,7 +156,7 @@ void PlayerSubtitle::onPlayerSourceChanged()
     if (!m_enabled)
         return;
 
-    AVPlayer *p = qobject_cast<AVPlayer*>(sender());
+    AVPlayerCore *p = qobject_cast<AVPlayerCore*>(sender());
 
     if (!p)
         return;
@@ -168,7 +168,7 @@ void PlayerSubtitle::onPlayerSourceChanged()
 
 void PlayerSubtitle::onPlayerPositionChanged()
 {
-    AVPlayer *p = qobject_cast<AVPlayer*>(sender());
+    AVPlayerCore *p = qobject_cast<AVPlayerCore*>(sender());
 
     if (!p)
         return;

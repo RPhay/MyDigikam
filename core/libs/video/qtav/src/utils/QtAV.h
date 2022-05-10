@@ -35,7 +35,7 @@
 #include "AVDemuxer.h"
 #include "AVMuxer.h"
 #include "AVOutput.h"
-#include "AVPlayer.h"
+#include "AVPlayerCore.h"
 #include "Packet.h"
 #include "QtAV_Statistics.h"
 

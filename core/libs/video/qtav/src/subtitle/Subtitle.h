@@ -236,7 +236,7 @@ public Q_SLOTS:
 
 Q_SIGNALS:
 
-    // TODO: also add to AVPlayer?
+    // TODO: also add to AVPlayerCore?
 
     /// empty path if load from raw data
     void loaded(const QString& path = QString());

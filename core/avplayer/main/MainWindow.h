@@ -45,7 +45,7 @@ namespace QtAV
 {
 class AudioOutput;
 class AVError;
-class AVPlayer;
+class AVPlayerCore;
 class AVClock;
 class VideoRenderer;
 class LibAVFilterAudio;
@@ -211,7 +211,7 @@ private:
     QList<QAction*>                 mVOActions;
 
     QtAV::AVClock*                  mpClock;
-    QtAV::AVPlayer*                 mpPlayer;
+    QtAV::AVPlayerCore*             mpPlayer;
     QtAV::VideoRenderer*            mpRenderer;
     QtAV::LibAVFilterVideo*         mpVideoFilter;
     QtAV::LibAVFilterAudio*         mpAudioFilter;
