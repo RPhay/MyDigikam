@@ -83,7 +83,7 @@ bool ExifToolParser::load(const QString& path, bool async)
 
     if (async)
     {
-        d->asyncLoading = ExifToolProcess::LOAD_METADATA;
+//        d->asyncLoading = ExifToolProcess::LOAD_METADATA;
     }
 
     return (d->startProcess(cmdArgs, ExifToolProcess::LOAD_METADATA));

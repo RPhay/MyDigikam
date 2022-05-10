@@ -26,8 +26,9 @@
 namespace Digikam
 {
 
-ExifToolParser::Private::Private()
-    : proc        (nullptr),
+ExifToolParser::Private::Private(quintptr pid)
+    : ppid        (pid),
+      proc        (nullptr),
       asyncLoading(ExifToolProcess::NO_ACTION)
 {
     argsFile.setAutoRemove(false);
@@ -48,9 +49,9 @@ bool ExifToolParser::Private::prepareProcess()
 
     // Start ExifToolProcess if necessary
 
-    if (!proc->start())
+    if (!proc->startExifTool())
     {
-        proc->kill();
+        proc->killExifTool();
         qCWarning(DIGIKAM_METAENGINE_LOG) << "ExifTool process cannot be started ("
                                           << proc->program()
                                           << ")";
@@ -65,7 +66,7 @@ bool ExifToolParser::Private::startProcess(const QByteArrayList& cmdArgs, ExifTo
 {
     // Send command to ExifToolProcess
 
-    int ret = proc->command(cmdArgs, cmdAction);
+    int ret = proc->command(ppid, cmdArgs, cmdAction);
 
     if (ret == 0)
     {

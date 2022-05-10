@@ -58,7 +58,7 @@ class Q_DECL_HIDDEN ExifToolParser::Private
 {
 public:
 
-    explicit Private();
+    explicit Private(quintptr pid);
     ~Private();
 
     bool       prepareProcess();
@@ -73,6 +73,7 @@ public:
 
 public:
 
+    quintptr                       ppid;
     ExifToolProcess*               proc;            ///< ExifTool process instance.
     QList<QEventLoop*>             evLoops;         ///< Event loops for the ExifTool process actions.
     QString                        currentPath;     ///< Current file path processed by ExifTool.

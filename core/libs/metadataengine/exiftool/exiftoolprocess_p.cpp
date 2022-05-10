@@ -34,8 +34,8 @@ int    ExifToolProcess::Private::s_nextCmdId = ExifToolProcess::Private::CMD_ID_
 
 ExifToolProcess::Private::Private(ExifToolProcess* const q)
     : pp                  (q),
-      process             (nullptr),
       cmdRunning          (0),
+      cmdSender           (0),
       cmdAction           (ExifToolProcess::LOAD_METADATA),
       writeChannelIsClosed(true),
       processError        (QProcess::UnknownError)
@@ -48,7 +48,7 @@ ExifToolProcess::Private::Private(ExifToolProcess* const q)
 
 void ExifToolProcess::Private::execNextCmd()
 {
-    if ((process->state() != QProcess::Running) ||
+    if ((pp->state() != QProcess::Running) ||
         writeChannelIsClosed)
     {
         qCWarning(DIGIKAM_METAENGINE_LOG) << "ExifToolProcess::execNextCmd(): ExifTool is not running";
@@ -62,8 +62,8 @@ void ExifToolProcess::Private::execNextCmd()
 
     // Clear QProcess buffers
 
-    process->readAllStandardOutput();
-    process->readAllStandardError();
+    pp->readAllStandardOutput();
+    pp->readAllStandardError();
 
     // Clear internal buffers
 
@@ -81,17 +81,18 @@ void ExifToolProcess::Private::execNextCmd()
     Command command = cmdQueue.takeFirst();
     cmdRunning      = command.id;
     cmdAction       = command.ac;
+    cmdSender       = command.pid;
 
-    process->write(command.argsStr);
+    pp->write(command.argsStr);
 }
 
 void ExifToolProcess::Private::readOutput(const QProcess::ProcessChannel channel)
 {
-    process->setReadChannel(channel);
+    pp->setReadChannel(channel);
 
-    while (process->canReadLine() && !outReady[channel])
+    while (pp->canReadLine() && !outReady[channel])
     {
-        QByteArray line = process->readLine();
+        QByteArray line = pp->readLine();
 
         if (line.endsWith(QByteArray("\r\n")))
         {
@@ -149,7 +150,8 @@ void ExifToolProcess::Private::readOutput(const QProcess::ProcessChannel channel
     {
         qCDebug(DIGIKAM_METAENGINE_LOG) << "ExifToolProcess::readOutput(): ExifTool command completed";
 
-        Q_EMIT pp->signalCmdCompleted(cmdAction,
+        Q_EMIT pp->signalCmdCompleted(cmdSender,
+                                      cmdAction,
                                       execTimer.elapsed(),
                                       outBuff[QProcess::StandardOutput],
                                       outBuff[QProcess::StandardError]);
@@ -165,7 +167,7 @@ void ExifToolProcess::Private::setProcessErrorAndEmit(QProcess::ProcessError err
     processError = error;
     errorString  = description;
 
-    Q_EMIT pp->signalErrorOccurred(cmdAction, error);
+    Q_EMIT pp->signalErrorOccurred(cmdSender, cmdAction, error);
 }
 
 } // namespace Digikam

@@ -28,11 +28,11 @@ namespace Digikam
 
 ExifToolParser::ExifToolParser(QObject* const parent)
     : QObject(parent),
-      d      (new Private)
+      d      (new Private(reinterpret_cast<quintptr>(this)))
 {
     // Create ExifTool parser instance.
 
-    d->proc = new ExifToolProcess(this);
+    d->proc = ExifToolProcess::instance();
 
     for (int i = ExifToolProcess::LOAD_METADATA ; i < ExifToolProcess::NO_ACTION ; ++i)
     {

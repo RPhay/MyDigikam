@@ -29,53 +29,75 @@
 namespace Digikam
 {
 
-ExifToolProcess::ExifToolProcess(QObject* const parent)
-    : QObject(parent),
-      d      (new Private(this))
+QPointer<ExifToolProcess> ExifToolProcess::internalPtr = QPointer<ExifToolProcess>();
+
+ExifToolProcess::ExifToolProcess()
+    : QProcess(nullptr),
+      d       (new Private(this))
 {
-    d->process = new QProcess(this);
-    d->process->setProcessEnvironment(adjustedEnvironmentForAppImage());
+    qRegisterMetaType<quintptr>("quintptr");
 
-    connect(d->process, &QProcess::started,
-            this, &ExifToolProcess::slotStarted);
-
-#if QT_VERSION >= 0x060000
-
-    connect(d->process, &QProcess::finished,
-            this, &ExifToolProcess::slotFinished);
-
-#else
-
-    connect(d->process, QOverload<int, QProcess::ExitStatus>::of(&QProcess::finished),
-            this, &ExifToolProcess::slotFinished);
-
-#endif
-
-    connect(d->process, &QProcess::stateChanged,
-            this, &ExifToolProcess::slotStateChanged);
-
-    connect(d->process, &QProcess::errorOccurred,
-            this, &ExifToolProcess::slotErrorOccurred);
-
-    connect(d->process, &QProcess::readyReadStandardOutput,
-            this, &ExifToolProcess::slotReadyReadStandardOutput);
-
-    connect(d->process, &QProcess::readyReadStandardError,
-            this, &ExifToolProcess::slotReadyReadStandardError);
+    setProcessEnvironment(adjustedEnvironmentForAppImage());
 }
 
 ExifToolProcess::~ExifToolProcess()
 {
-    terminate();
+    terminateExifTool();
 
     delete d;
+}
+
+bool ExifToolProcess::isCreated()
+{
+    return (!internalPtr.isNull());
+}
+
+ExifToolProcess* ExifToolProcess::instance()
+{
+    if (ExifToolProcess::internalPtr.isNull())
+    {
+        ExifToolProcess::internalPtr = new ExifToolProcess();
+
+        connect(ExifToolProcess::internalPtr, &QProcess::started,
+                ExifToolProcess::internalPtr, &ExifToolProcess::slotStarted);
+
+#if QT_VERSION >= 0x060000
+
+        connect(ExifToolProcess::internalPtr, &QProcess::finished,
+                ExifToolProcess::internalPtr, &ExifToolProcess::slotFinished);
+
+#else
+
+        connect(ExifToolProcess::internalPtr, QOverload<int, QProcess::ExitStatus>::of(&QProcess::finished),
+                ExifToolProcess::internalPtr, &ExifToolProcess::slotFinished);
+
+#endif
+
+        connect(ExifToolProcess::internalPtr, &QProcess::stateChanged,
+                ExifToolProcess::internalPtr, &ExifToolProcess::slotStateChanged);
+
+        connect(ExifToolProcess::internalPtr, &QProcess::errorOccurred,
+                ExifToolProcess::internalPtr, &ExifToolProcess::slotErrorOccurred);
+
+        connect(ExifToolProcess::internalPtr, &QProcess::readyReadStandardOutput,
+                ExifToolProcess::internalPtr, &ExifToolProcess::slotReadyReadStandardOutput);
+
+        connect(ExifToolProcess::internalPtr, &QProcess::readyReadStandardError,
+                ExifToolProcess::internalPtr, &ExifToolProcess::slotReadyReadStandardError);
+
+        connect(ExifToolProcess::internalPtr, &ExifToolProcess::signalExecNextCmd,
+                ExifToolProcess::internalPtr, &ExifToolProcess::slotExecNextCmd,
+                Qt::QueuedConnection);
+    }
+
+    return ExifToolProcess::internalPtr;
 }
 
 void ExifToolProcess::setProgram(const QString& etExePath, const QString& perlExePath)
 {
     // Check if ExifTool is starting or running
 
-    if (d->process->state() != QProcess::NotRunning)
+    if (state() != QProcess::NotRunning)
     {
         qCWarning(DIGIKAM_METAENGINE_LOG) << "ExifToolProcess::setProgram(): ExifTool is already running";
 
@@ -101,11 +123,11 @@ QString ExifToolProcess::program() const
     return d->etExePath;
 }
 
-bool ExifToolProcess::start()
+bool ExifToolProcess::startExifTool()
 {
     // Check if ExifTool is starting or running
 
-    if (d->process->state() != QProcess::NotRunning)
+    if (state() != QProcess::NotRunning)
     {
         return true;
     }
@@ -152,6 +174,7 @@ bool ExifToolProcess::start()
 
     d->cmdQueue.clear();
     d->cmdRunning           = 0;
+    d->cmdSender            = 0;
     d->cmdAction            = NO_ACTION;
 
     // Clear errors
@@ -165,25 +188,25 @@ bool ExifToolProcess::start()
 
     qCDebug(DIGIKAM_METAENGINE_LOG) << "ExifToolProcess::start(): create new ExifTool instance:" << program << args;
 
-    d->process->start(program, args, QProcess::ReadWrite);
+    start(program, args, QProcess::ReadWrite);
 
-    return d->process->waitForStarted(1000);
+    return waitForStarted(1000);
 }
 
-void ExifToolProcess::terminate()
+void ExifToolProcess::terminateExifTool()
 {
-    if (d->process->state() == QProcess::Running)
+    if (state() == QProcess::Running)
     {
         // If process is in running state, close ExifTool normally
 
         qCDebug(DIGIKAM_METAENGINE_LOG) << "ExifToolProcess::terminate(): send ExifTool shutdown command...";
 
         d->cmdQueue.clear();
-        d->process->write(QByteArray("-stay_open\nfalse\n"));
-        d->process->closeWriteChannel();
+        write(QByteArray("-stay_open\nfalse\n"));
+        closeWriteChannel();
         d->writeChannelIsClosed = true;
 
-        if (!d->process->waitForFinished(5000))
+        if (!waitForFinished(5000))
         {
             // Otherwise, close ExifTool using OS system call
             // (WM_CLOSE [Windows] or SIGTERM [Unix])
@@ -194,13 +217,13 @@ void ExifToolProcess::terminate()
 
 #ifdef Q_OS_WIN
 
-            kill();
+            killExifTool();
 
 #else
 
             qCDebug(DIGIKAM_METAENGINE_LOG) << "ExifToolProcess::terminate(): closing ExifTool instance...";
 
-            d->process->terminate();
+            terminate();
 
 #endif
 
@@ -208,31 +231,21 @@ void ExifToolProcess::terminate()
     }
 }
 
-void ExifToolProcess::kill()
+void ExifToolProcess::killExifTool()
 {
     qCDebug(DIGIKAM_METAENGINE_LOG) << "ExifToolProcess::kill(): shutdown ExifTool instance...";
 
-    d->process->kill();
+    kill();
 }
 
 bool ExifToolProcess::isRunning() const
 {
-    return (d->process->state() == QProcess::Running);
+    return (state() == QProcess::Running);
 }
 
 bool ExifToolProcess::isBusy() const
 {
     return (d->cmdRunning ? true : false);
-}
-
-qint64 ExifToolProcess::processId() const
-{
-    return d->process->processId();
-}
-
-QProcess::ProcessState ExifToolProcess::state() const
-{
-    return d->process->state();
 }
 
 QProcess::ProcessError ExifToolProcess::error() const
@@ -245,26 +258,11 @@ QString ExifToolProcess::errorString() const
     return d->errorString;
 }
 
-QProcess::ExitStatus ExifToolProcess::exitStatus() const
-{
-    return d->process->exitStatus();
-}
-
-bool ExifToolProcess::waitForStarted(int msecs) const
-{
-    return d->process->waitForStarted(msecs);
-}
-
-bool ExifToolProcess::waitForFinished(int msecs) const
-{
-    return d->process->waitForFinished(msecs);
-}
-
-int ExifToolProcess::command(const QByteArrayList& args, Action ac)
+int ExifToolProcess::command(quintptr pid, const QByteArrayList& args, Action ac)
 {
     if (
-        (d->process->state() != QProcess::Running) ||
-        d->writeChannelIsClosed                    ||
+        (state() != QProcess::Running) ||
+        d->writeChannelIsClosed        ||
         args.isEmpty()
        )
     {
@@ -323,41 +321,48 @@ int ExifToolProcess::command(const QByteArrayList& args, Action ac)
     Private::Command command;
     command.id      = cmdId;
     command.argsStr = cmdStr;
+    command.pid     = pid;
     command.ac      = ac;
     d->cmdQueue.append(command);
 
     // Exec cmd queue
 
-    d->execNextCmd();
+    Q_EMIT signalExecNextCmd();
 
     return cmdId;
+}
+
+void ExifToolProcess::slotExecNextCmd()
+{
+    d->execNextCmd();
 }
 
 void ExifToolProcess::slotStarted()
 {
     qCDebug(DIGIKAM_METAENGINE_LOG) << "ExifTool process started";
 
-    emit signalStarted(d->cmdAction);
+    emit signalStarted(d->cmdSender, d->cmdAction);
 }
 
 void ExifToolProcess::slotFinished(int exitCode, QProcess::ExitStatus exitStatus)
 {
     qCDebug(DIGIKAM_METAENGINE_LOG) << "ExifTool process finished" << exitCode << exitStatus;
 
-    emit signalFinished(d->cmdAction, exitCode, exitStatus);
+    emit signalFinished(d->cmdSender, d->cmdAction, exitCode, exitStatus);
 
     d->cmdRunning = 0;
+    d->cmdSender  = 0;
     d->cmdAction  = NO_ACTION;
 }
 
 void ExifToolProcess::slotStateChanged(QProcess::ProcessState newState)
 {
-    emit signalStateChanged(d->cmdAction, newState);
+    emit signalStateChanged(d->cmdSender, d->cmdAction, newState);
 }
 
 void ExifToolProcess::slotErrorOccurred(QProcess::ProcessError error)
 {
-    d->setProcessErrorAndEmit(error, d->process->errorString());
+    d->setProcessErrorAndEmit(error, errorString());
 }
 
 void ExifToolProcess::slotReadyReadStandardOutput()

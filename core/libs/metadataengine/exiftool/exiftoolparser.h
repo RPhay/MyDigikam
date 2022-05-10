@@ -214,14 +214,20 @@ private Q_SLOTS:
     /// ExifTool Output Management Methods. See exiftoolparser_output.cpp for details
     //@{
 
-    void slotCmdCompleted(int cmdAction,
+    void slotCmdCompleted(quintptr pid,
+                          int cmdAction,
                           int execTime,
                           const QByteArray& cmdOutputChannel,
                           const QByteArray& cmdErrorChannel);
 
-    void slotErrorOccurred(int cmdAction, QProcess::ProcessError error);
+    void slotErrorOccurred(quintptr pid,
+                           int cmdAction,
+                           QProcess::ProcessError error);
 
-    void slotFinished(int cmdAction, int exitCode, QProcess::ExitStatus exitStatus);
+    void slotFinished(quintptr pid,
+                      int cmdAction,
+                      int exitCode,
+                      QProcess::ExitStatus exitStatus);
 
 public:
 

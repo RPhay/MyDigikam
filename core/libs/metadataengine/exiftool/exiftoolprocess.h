@@ -29,9 +29,9 @@
 
 // Qt Core
 
-#include <QObject>
-#include <QString>
 #include <QProcess>
+#include <QPointer>
+#include <QString>
 #include <QMutex>
 
 // Local includes
@@ -41,7 +41,7 @@
 namespace Digikam
 {
 
-class DIGIKAM_EXPORT ExifToolProcess : public QObject
+class DIGIKAM_EXPORT ExifToolProcess : public QProcess
 {
     Q_OBJECT
 
@@ -106,15 +106,22 @@ public:
 public:
 
     /**
-     * Constructs a ExifToolProcess object with the given parent.
+     * Constructs a ExifToolProcess.
      */
-    explicit ExifToolProcess(QObject* const parent);
+    explicit ExifToolProcess();
 
     /**
      * Destructs the ExifToolProcess object, i.e., killing the process.
      * Note that this function will not return until the process is terminated.
      */
     ~ExifToolProcess();
+
+    /**
+     * @brief internalPtr - singleton implementation
+     */
+    static QPointer<ExifToolProcess> internalPtr;
+    static ExifToolProcess*          instance();
+    static bool                      isCreated();
 
 public:
 
@@ -131,19 +138,19 @@ public:
     /**
      * Starts exiftool in a new process.
      */
-    bool start();
+    bool startExifTool();
 
     /**
      * Attempts to terminate the process.
      */
-    void terminate();
+    void terminateExifTool();
 
     /**
      * Kills the current process, causing it to exit immediately.
      * On Windows, kill() uses TerminateProcess, and on Unix and macOS,
      * the SIGKILL signal is sent to the process.
      */
-    void kill();
+    void killExifTool();
 
 public:
 
@@ -158,17 +165,6 @@ public:
     bool                   isBusy()                     const;
 
     /**
-     * Returns the native process identifier for the running process, if available.
-     * If no process is currently running, 0 is returned.
-     */
-    qint64                 processId()                  const;
-
-    /**
-     * Returns the current state of the process.
-     */
-    QProcess::ProcessState state()                      const;
-
-    /**
      * Returns the type of error that occurred last.
      */
     QProcess::ProcessError error()                      const;
@@ -179,45 +175,33 @@ public:
     QString                errorString()                const;
 
     /**
-     * Returns the exit status of the last process that finished.
-     */
-    QProcess::ExitStatus   exitStatus()                 const;
-
-    int                    exitCode()                   const;
-
-    /**
-     * Blocks until the process has started and the started() signal has been emitted,
-     * or until msecs milliseconds have passed.
-     */
-    bool waitForStarted(int msecs = 30000)              const;
-
-    /**
-     * Blocks until the process has finished and the finished() signal has been emitted,
-     * or until msecs milliseconds have passed.
-     */
-    bool waitForFinished(int msecs = 30000)             const;
-
-    /**
      * Send a command to exiftool process
      * Return 0: ExitTool not running, write channel is closed or args is empty
      */
-    int command(const QByteArrayList& args, Action ac);
+    int command(quintptr pid, const QByteArrayList& args, Action ac);
 
 Q_SIGNALS:
 
-    void signalStarted(int cmdAction);
+    void signalExecNextCmd();
 
-    void signalStateChanged(int cmdAction,
+    void signalStarted(quintptr pid,
+                       int cmdAction);
+
+    void signalStateChanged(quintptr pid,
+                            int cmdAction,
                             QProcess::ProcessState newState);
 
-    void signalErrorOccurred(int cmdAction,
+    void signalErrorOccurred(quintptr pid,
+                             int cmdAction,
                              QProcess::ProcessError error);
 
-    void signalFinished(int cmdAction,
+    void signalFinished(quintptr pid,
+                        int cmdAction,
                         int exitCode,
                         QProcess::ExitStatus exitStatus);
 
-    void signalCmdCompleted(int cmdAction,
+    void signalCmdCompleted(quintptr pid,
+                            int cmdAction,
                             int execTime,
                             const QByteArray& cmdOutputChannel,
                             const QByteArray& cmdErrorChannel);
@@ -225,6 +209,7 @@ Q_SIGNALS:
 private Q_SLOTS:
 
     void slotStarted();
+    void slotExecNextCmd();
     void slotStateChanged(QProcess::ProcessState newState);
     void slotErrorOccurred(QProcess::ProcessError error);
     void slotReadyReadStandardOutput();
@@ -235,6 +220,11 @@ private Q_SLOTS:
 private:
 
     QString exifToolBin()                               const;
+
+private:
+
+    // Disable
+    explicit ExifToolProcess(QObject*) = delete;
 
 private:
 

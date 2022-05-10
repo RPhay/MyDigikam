@@ -55,11 +55,13 @@ public:
 
         Command()
           : id (0),
+            pid(0),
             ac (ExifToolProcess::NO_ACTION)
         {
         }
 
         int                     id;
+        quintptr                pid;
         QByteArray              argsStr;
         ExifToolProcess::Action ac;
     };
@@ -78,11 +80,11 @@ public:
     ExifToolProcess*        pp;
     QString                 etExePath;
     QString                 perlExePath;
-    QProcess*               process;
 
     QElapsedTimer           execTimer;
     QList<Command>          cmdQueue;
     int                     cmdRunning;
+    quintptr                cmdSender;
     ExifToolProcess::Action cmdAction;
 
     int                     outAwait[2];             ///< [0] StandardOutput | [1] ErrorOutput
