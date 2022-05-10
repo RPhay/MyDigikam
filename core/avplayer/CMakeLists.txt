@@ -112,6 +112,11 @@ target_link_libraries(avplayer
                       Qt${QT_VERSION_MAJOR}::Widgets
                       Qt${QT_VERSION_MAJOR}::Sql
 
+                      KF5::XmlGui
+                      KF5::I18n
+                      KF5::ConfigCore
+                      KF5::Service
+
                       ${MEDIAPLAYER_LIBRARIES}
 )
 
