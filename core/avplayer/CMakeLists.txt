@@ -63,8 +63,8 @@ set(avplayer_SRCS ${CMAKE_SOURCE_DIR}/core/avplayer/utils/ClickableMenu.cpp
                   ${CMAKE_SOURCE_DIR}/core/avplayer/playlist/PlayListItem.cpp
                   ${CMAKE_SOURCE_DIR}/core/avplayer/playlist/PlayListDelegate.cpp
                   ${CMAKE_SOURCE_DIR}/core/avplayer/playlist/PlayList.cpp
-                  ${CMAKE_SOURCE_DIR}/core/avplayer/main.cpp
-                  ${CMAKE_SOURCE_DIR}/core/avplayer/MainWindow.cpp
+                  ${CMAKE_SOURCE_DIR}/core/avplayer/main/main.cpp
+                  ${CMAKE_SOURCE_DIR}/core/avplayer/main/MainWindow.cpp
 )
 
 if(Qt6_FOUND)
@@ -135,6 +135,6 @@ target_compile_definitions(avplayer
                            ${MEDIAPLAYER_DEFINITIONS}
 )
 
-install(TARGETS  avplayer                                                 ${INSTALL_TARGETS_DEFAULT_ARGS})
-install(PROGRAMS ${CMAKE_CURRENT_SOURCE_DIR}/org.kde.avplayer.desktop     DESTINATION ${KDE_INSTALL_FULL_APPDIR})
-install(FILES    ${CMAKE_CURRENT_SOURCE_DIR}/org.kde.avplayer.appdata.xml DESTINATION ${KDE_INSTALL_FULL_METAINFODIR})
+install(TARGETS  avplayer                                                      ${INSTALL_TARGETS_DEFAULT_ARGS})
+install(PROGRAMS ${CMAKE_CURRENT_SOURCE_DIR}/main/org.kde.avplayer.desktop     DESTINATION ${KDE_INSTALL_FULL_APPDIR})
+install(FILES    ${CMAKE_CURRENT_SOURCE_DIR}/main/org.kde.avplayer.appdata.xml DESTINATION ${KDE_INSTALL_FULL_METAINFODIR})
