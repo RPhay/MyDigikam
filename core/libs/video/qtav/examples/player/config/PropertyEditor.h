@@ -44,11 +44,11 @@ class PropertyEditor : public QObject
 
 public:
 
-    explicit PropertyEditor(QObject *parent = 0);
+    explicit PropertyEditor(QObject* const parent = nullptr);
 
     // call it before others
 
-    void getProperties(QObject *obj);
+    void getProperties(QObject* const obj);
 
     // from config file etc to init properties. call it before buildXXX
 
@@ -60,7 +60,7 @@ public:
      * \return command line options
      */
     QString buildOptions();
-    QWidget* buildUi(QObject* obj = 0); // obj: read dynamic properties("detail_property")
+    QWidget* buildUi(QObject* const obj = nullptr); // obj: read dynamic properties("detail_property")
     QVariantHash exportAsHash();
     QString exportAsConfig();           // json like
 
@@ -72,12 +72,23 @@ private:
      * 2. add a widget and set value
      * 3. connect widget value change signal to a slot
      */
-    QWidget* createWidgetForFlags(const QString& name, const QVariant& value, QMetaEnum me, const QString& detail = QString(), QWidget* parent = 0);
-    QWidget* createWidgetForEnum(const QString& name, const QVariant& value, QMetaEnum me, const QString& detail = QString(), QWidget* parent = 0);
-    QWidget* createWidgetForInt(const QString& name, int value, const QString& detail = QString(), QWidget* parent = 0);
-    QWidget* createWidgetForReal(const QString& name, qreal value, const QString& detail = QString(), QWidget* parent = 0);
-    QWidget* createWidgetForText(const QString& name, const QString& value, bool readOnly, const QString& detail = QString(), QWidget* parent = 0);
-    QWidget* createWidgetForBool(const QString& name, bool value, const QString& detail = QString(), QWidget* parent = 0);
+    QWidget* createWidgetForFlags(const QString& name, const QVariant& value, QMetaEnum me,
+                                  const QString& detail = QString(), QWidget* const parent = nullptr);
+
+    QWidget* createWidgetForEnum(const QString& name, const QVariant& value, QMetaEnum me,
+                                 const QString& detail = QString(), QWidget* const parent = nullptr);
+
+    QWidget* createWidgetForInt(const QString& name, int value, const QString& detail = QString(),
+                                QWidget* const parent = nullptr);
+
+    QWidget* createWidgetForReal(const QString& name, qreal value, const QString& detail = QString(),
+                                 QWidget* const parent = nullptr);
+
+    QWidget* createWidgetForText(const QString& name, const QString& value, bool readOnly,
+                                 const QString& detail = QString(), QWidget* const parent = nullptr);
+
+    QWidget* createWidgetForBool(const QString& name, bool value, const QString& detail = QString(),
+                                 QWidget* const parent = nullptr);
 
     // called if value changed by ui (in onXXXChange)
 
