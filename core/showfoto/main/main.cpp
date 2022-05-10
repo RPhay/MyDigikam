@@ -125,7 +125,7 @@ int main(int argc, char* argv[])
 
     KAboutData aboutData(QLatin1String("showfoto"),     // component name
                          i18nc("@title", "Showfoto"),   // display name
-                         digiKamVersion());             // NOTE: showFoto version = digiKam version
+                                             digiKamVersion());             // NOTE: showFoto version = digiKam version
 
     aboutData.setShortDescription(QString::fromUtf8("%1 - %2").arg(DAboutData::digiKamSlogan()).arg(DAboutData::digiKamFamily()));
     aboutData.setLicense(KAboutLicense::GPL);

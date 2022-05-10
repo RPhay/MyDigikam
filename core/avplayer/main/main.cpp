@@ -41,9 +41,11 @@
 #include "MainWindow.h"
 #include "common.h"
 #include "digikam_debug.h"
+#include "digikam_globals.h"
 
 using namespace QtAV;
 using namespace AVPlayer;
+using namespace Digikam;
 
 static const struct
 {
@@ -135,19 +137,21 @@ int main(int argc, char* argv[])
         exit(0);
     }
 
-    QApplication a(argc, argv);
-    a.setAttribute(Qt::AA_DontCreateNativeWidgetSiblings);
-    qCDebug(DIGIKAM_QTAVPLAYER_LOG) << a.arguments();
+    QApplication app(argc, argv);
+    app.setAttribute(Qt::AA_DontCreateNativeWidgetSiblings);
+    qCDebug(DIGIKAM_QTAVPLAYER_LOG) << app.arguments();
+
+    tryInitDrMingw();
 
     // Force to use application icon for non plasma desktop as Unity for ex.
 
-    QApplication::setWindowIcon(QIcon::fromTheme(QLatin1String("avplayer"), a.windowIcon()));
+    QApplication::setWindowIcon(QIcon::fromTheme(QLatin1String("avplayer"), app.windowIcon()));
 
-    a.setApplicationDisplayName(QString::fromLatin1("AVPlayer"));
+    app.setApplicationDisplayName(QString::fromLatin1("AVPlayer"));
     QDir::setCurrent(qApp->applicationDirPath());
 
     do_common_options(options);
-    set_opengl_backend(options.option(QString::fromLatin1("gl")).value().toString(), a.arguments().first());
+    set_opengl_backend(options.option(QString::fromLatin1("gl")).value().toString(), app.arguments().first());
     QtAV::setFFmpegLogLevel(options.value(QString::fromLatin1("ffmpeg-log")).toByteArray());
 
     QOption op = options.option(QString::fromLatin1("vo"));
@@ -155,7 +159,7 @@ int main(int argc, char* argv[])
 
     if (!op.isSet())
     {
-        QString exe(a.arguments().at(0));
+        QString exe(app.arguments().at(0));
         int i = exe.lastIndexOf(QLatin1Char('-'));
 
         if (i > 0)
@@ -265,15 +269,15 @@ int main(int argc, char* argv[])
     }
     else
     {
-        if ((argc > 1)                                          &&
-            !a.arguments().last().startsWith(QLatin1Char('-'))  &&
-            !a.arguments().at(argc-2).startsWith(QLatin1Char('-')))
+        if ((argc > 1)                                            &&
+            !app.arguments().last().startsWith(QLatin1Char('-'))  &&
+            !app.arguments().at(argc-2).startsWith(QLatin1Char('-')))
         {
-            window.play(a.arguments().last());
+            window.play(app.arguments().last());
         }
     }
 
-    int ret = a.exec();         // krazy:exclude=crashy
+    int ret = app.exec();         // krazy:exclude=crashy
 
     return ret;
 }
