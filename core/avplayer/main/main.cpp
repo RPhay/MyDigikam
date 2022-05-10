@@ -43,6 +43,12 @@
 #include "digikam_debug.h"
 #include "digikam_globals.h"
 
+#ifdef Q_OS_WIN
+#   include <windows.h>
+#   include <shellapi.h>
+#   include <objbase.h>
+#endif
+
 using namespace QtAV;
 using namespace AVPlayer;
 using namespace Digikam;
@@ -173,6 +179,14 @@ int main(int argc, char* argv[])
 
     qCDebug(DIGIKAM_QTAVPLAYER_LOG).noquote() << QString::asprintf("vo: %s", vo.toUtf8().constData());
 
+#ifdef Q_OS_WIN
+
+    // Necessary to open native open with dialog on windows
+
+    CoInitializeEx(NULL, COINIT_APARTMENTTHREADED | COINIT_DISABLE_OLE1DDE);
+
+#endif
+
     MainWindow window;
     window.setProperty("rendererId", rendererId_from_opt_name(vo.toLower()));
     window.show();
@@ -281,6 +295,14 @@ int main(int argc, char* argv[])
     }
 
     int ret = app.exec();         // krazy:exclude=crashy
+
+#ifdef Q_OS_WIN
+
+    // Necessary to open native open with dialog on windows
+
+    CoUninitialize();
+
+#endif
 
     return ret;
 }
