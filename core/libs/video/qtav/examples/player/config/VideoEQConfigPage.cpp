@@ -36,6 +36,10 @@
 #include <QLayout>
 #include <QVector>
 
+// KDE includes
+
+#include <klocalizedstring.h>
+
 // Local includes
 
 #include "Slider.h"

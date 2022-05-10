@@ -34,6 +34,10 @@
 #include <QScrollArea>
 #include <QToolButton>
 
+// KDE includes
+
+#include <klocalizedstring.h>
+
 // Local includes
 
 #include "ClickableMenu.h"

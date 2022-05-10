@@ -28,6 +28,10 @@
 #include <QLabel>
 #include <QLayout>
 
+// KDE includes
+
+#include <klocalizedstring.h>
+
 // Local includes
 
 #include "ConfigManager.h"

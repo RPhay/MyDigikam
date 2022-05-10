@@ -32,6 +32,10 @@
 #include <QHeaderView>
 #include <QPushButton>
 
+// KDE includes
+
+#include <klocalizedstring.h>
+
 namespace QtAVPlayer
 {
 

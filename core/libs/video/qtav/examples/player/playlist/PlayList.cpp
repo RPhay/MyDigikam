@@ -32,6 +32,10 @@
 #include <QFile>
 #include <QDataStream>
 
+// KDE includes
+
+#include <klocalizedstring.h>
+
 // Local includes
 
 #include "PlayListModel.h"
