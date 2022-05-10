@@ -67,18 +67,6 @@ set(avplayer_SRCS ${CMAKE_SOURCE_DIR}/core/avplayer/utils/ClickableMenu.cpp
                   ${CMAKE_SOURCE_DIR}/core/avplayer/main/MainWindow.cpp
 )
 
-if(Qt6_FOUND)
-
-    qt6_add_resources(avplayer_SRCS ${CMAKE_SOURCE_DIR}/core/avplayer/theme/theme.qrc)
-
-else()
-
-    qt5_add_resources(avplayer_SRCS ${CMAKE_SOURCE_DIR}/core/avplayer/theme/theme.qrc)
-
-endif()
-
-
-
 # Set the application icon on the application
 
 file(GLOB ICONS_SRCS "${CMAKE_SOURCE_DIR}/core/data/icons/apps/*-apps-avplayer.png")

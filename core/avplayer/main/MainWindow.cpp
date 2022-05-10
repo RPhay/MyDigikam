@@ -368,25 +368,26 @@ void MainWindow::setupUi()
     mpSpeed->setToolTip(i18n("Speed. Ctrl+Up/Down"));
 
     mpPlayPauseBtn                  = new QToolButton(mpControl);
-    mpPlayPauseBtn->setIcon(QIcon(QString::fromLatin1(":/theme/dark/play.svg")));
+    mpPlayPauseBtn->setIcon(QIcon::fromTheme(QLatin1String("media-playback-start")));
     mpStopBtn                       = new QToolButton(mpControl);
-    mpStopBtn->setIcon(QIcon(QString::fromLatin1(":/theme/dark/stop.svg")));
+    mpStopBtn->setIcon(QIcon::fromTheme(QLatin1String("media-playback-stop")));
     mpBackwardBtn                   = new QToolButton(mpControl);
-    mpBackwardBtn->setIcon(QIcon(QString::fromLatin1(":/theme/dark/backward.svg")));
+    mpBackwardBtn->setIcon(QIcon::fromTheme(QLatin1String("media-skip-backward")));
     mpForwardBtn                    = new QToolButton(mpControl);
-    mpForwardBtn->setIcon(QIcon(QString::fromLatin1(":/theme/dark/forward.svg")));
+    mpForwardBtn->setIcon(QIcon::fromTheme(QLatin1String("media-skip-forward")));
     mpOpenBtn                       = new QToolButton(mpControl);
     mpOpenBtn->setToolTip(i18n("Open"));
-    mpOpenBtn->setIcon(QIcon(QString::fromLatin1(":/theme/dark/open.svg")));
+    mpOpenBtn->setIcon(QIcon::fromTheme(QLatin1String("media-eject")));
 
     mpInfoBtn                       = new QToolButton();
     mpInfoBtn->setToolTip(QString::fromLatin1("Media information"));
-    mpInfoBtn->setIcon(QIcon(QString::fromLatin1(":/theme/dark/info.svg")));
+    mpInfoBtn->setIcon(QIcon::fromTheme(QLatin1String("dialog-information")));
     mpCaptureBtn                    = new QToolButton();
     mpCaptureBtn->setToolTip(i18n("Capture"));
-    mpCaptureBtn->setIcon(QIcon(QString::fromLatin1(":/theme/dark/capture.svg")));
+    mpCaptureBtn->setIcon(QIcon::fromTheme(QLatin1String("media-record")));
     mpVolumeBtn                     = new QToolButton();
-    mpVolumeBtn->setIcon(QIcon(QString::fromLatin1(":/theme/dark/sound.svg")));
+    mpVolumeBtn->setToolTip(i18n("Volume"));
+    mpVolumeBtn->setIcon(QIcon::fromTheme(QLatin1String("player-volume")));
 
     mpVolumeSlider                  = new Slider();
     mpVolumeSlider->hide();
@@ -402,7 +403,7 @@ void MainWindow::setupUi()
     setVolume();
 
     mpMenuBtn = new QToolButton();
-    mpMenuBtn->setIcon(QIcon(QString::fromLatin1(":/theme/dark/menu.svg")));
+    mpMenuBtn->setIcon(QIcon::fromTheme(QLatin1String("application-menu")));
     mpMenuBtn->setAutoRaise(true);
     mpMenuBtn->setPopupMode(QToolButton::InstantPopup);
 
@@ -1126,7 +1127,7 @@ void MainWindow::togglePlayPause()
         else
             mpPlayer->play();
 
-        mpPlayPauseBtn->setIcon(QIcon(QString::fromLatin1(":/theme/dark/pause.svg")));
+        mpPlayPauseBtn->setIcon(QIcon::fromTheme(QLatin1String("player-volume")));
     }
 }
 
@@ -1151,12 +1152,12 @@ void MainWindow::onPaused(bool p)
     if (p)
     {
         qCDebug(DIGIKAM_QTAVPLAYER_LOG).noquote() << QString::asprintf("start pausing...");
-        mpPlayPauseBtn->setIcon(QIcon(QString::fromLatin1(":/theme/dark/play.svg")));
+        mpPlayPauseBtn->setIcon(QIcon::fromTheme(QLatin1String("media-playback-start")));
     }
     else
     {
         qCDebug(DIGIKAM_QTAVPLAYER_LOG).noquote() << QString::asprintf("stop pausing...");
-        mpPlayPauseBtn->setIcon(QIcon(QString::fromLatin1(":/theme/dark/pause.svg")));
+        mpPlayPauseBtn->setIcon(QIcon::fromTheme(QLatin1String("media-playback-pause")));
     }
 }
 
@@ -1171,7 +1172,7 @@ void MainWindow::onStartPlay()
 
     setWindowTitle(mTitle);
 
-    mpPlayPauseBtn->setIcon(QIcon(QString::fromLatin1(":/theme/dark/pause.svg")));
+    mpPlayPauseBtn->setIcon(QIcon::fromTheme(QLatin1String("media-playback-pause")));
     mpTimeSlider->setMinimum(mpPlayer->mediaStartPosition());
     mpTimeSlider->setMaximum(mpPlayer->mediaStopPosition());
     mpTimeSlider->setValue(0);
@@ -1218,7 +1219,7 @@ void MainWindow::onStopPlay()
     if (ConfigManager::instance().avformatOptionsEnabled())
         mpPlayer->setOptionsForFormat(ConfigManager::instance().avformatOptions());
 
-    mpPlayPauseBtn->setIcon(QIcon(QString::fromLatin1(":/theme/dark/play.svg")));
+    mpPlayPauseBtn->setIcon(QIcon::fromTheme(QLatin1String("media-playback-start")));
     mpTimeSlider->setValue(0);
 
     qCDebug(DIGIKAM_QTAVPLAYER_LOG).noquote() << QString::asprintf(">>>>>>>>>>>>>>disable slider");
