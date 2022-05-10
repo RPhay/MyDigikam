@@ -42,10 +42,6 @@
 
 #include "digikam_debug.h"
 
-#if QT_VERSION < 0x040300
-#   define initStyleOption initStyleOption_Qt430
-#endif // QT_VERSION
-
 namespace AVPlayer
 {
 
@@ -67,33 +63,6 @@ Slider::~Slider()
 inline int Slider::pick(const QPoint& pt) const
 {
     return (orientation() == Qt::Horizontal ? pt.x() : pt.y());
-}
-
-// Function copied from qslider.cpp and modified to make it compile
-
-void Slider::initStyleOption_Qt430(QStyleOptionSlider* option) const
-{
-    if (!option)
-        return;
-
-    option->initFrom(this);
-    option->subControls       = QStyle::SC_None;
-    option->activeSubControls = QStyle::SC_None;
-    option->orientation       = orientation();
-    option->maximum           = maximum();
-    option->minimum           = minimum();
-    option->tickPosition      = (QSlider::TickPosition) tickPosition();
-    option->tickInterval      = tickInterval();
-    option->upsideDown        = (orientation() == Qt::Horizontal) ? (invertedAppearance() != (option->direction == Qt::RightToLeft))
-                                                                  : (!invertedAppearance());
-    option->direction         = Qt::LeftToRight; // we use the upsideDown option instead
-    option->sliderPosition    = sliderPosition();
-    option->sliderValue       = value();
-    option->singleStep        = singleStep();
-    option->pageStep          = pageStep();
-
-    if (orientation() == Qt::Horizontal)
-        option->state |= QStyle::State_Horizontal;
 }
 
 // Function copied from qslider.cpp and modified to make it compile
@@ -140,7 +109,7 @@ void Slider::leaveEvent(QEvent* e)
 void Slider::mouseMoveEvent(QMouseEvent* e)
 {
     const int o = style()->pixelMetric(QStyle::PM_SliderLength ) - 1;
-    int v       = QStyle::sliderValueFromPosition(minimum(), maximum(), e->pos().x()-o/2, width()-o, false);
+    int v       = QStyle::sliderValueFromPosition(minimum(), maximum(), e->pos().x() - o / 2, width() - o, false);
 
     emit onHover(e->x(), v);
 

@@ -22,7 +22,7 @@
  *
  * ============================================================ */
 
-// TODO: hover support(like youtube and ExMplayer timeline preview)
+// TODO: hover support (like youtube and ExMplayer timeline preview)
 
 #ifndef AV_PLAYER_SLIDER_H
 #define AV_PLAYER_SLIDER_H
@@ -51,16 +51,15 @@ Q_SIGNALS:
 
 protected:
 
-    virtual void enterEvent(QEvent* event);
+    virtual void enterEvent(QEvent* e);
     virtual void leaveEvent(QEvent* e);
-    virtual void mouseMoveEvent(QMouseEvent* event);
-    virtual void mousePressEvent(QMouseEvent* event);
+    virtual void mouseMoveEvent(QMouseEvent* e);
+    virtual void mousePressEvent(QMouseEvent* e);
 /*
 #if CODE_FOR_CLICK == 1
 */
     inline int pick(const QPoint& pt)                       const;
     int pixelPosToRangeValue(int pos)                       const;
-    void initStyleOption_Qt430(QStyleOptionSlider* option)  const;
 /*
 #endif
 */
