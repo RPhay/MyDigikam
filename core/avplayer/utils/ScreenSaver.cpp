@@ -90,7 +90,7 @@ static QLibrary xlib;
 // mingw gcc4.4 EXECUTION_STATE
 
 #   ifdef __MINGW32__                            // krazy:exclude=cpp
-#       ifndef _WIN32_WINDOWS
+#       ifndef _WIN32_WINDOWS                    // krazy:exclude=cpp
 #           define _WIN32_WINDOWS 0x0410
 #       endif //_WIN32_WINDOWS
 #   endif     //__MINGW32__
@@ -99,14 +99,7 @@ static QLibrary xlib;
 
 #   if USE_NATIVE_EVENT
 
-class ScreenSaverEventFilter
-
-#       if QT_VERSION >= QT_VERSION_CHECK(5, 0, 0)
-
-    : public QAbstractNativeEventFilter
-
-#       endif
-
+class ScreenSaverEventFilter : public QAbstractNativeEventFilter
 {
 public:
 
@@ -123,33 +116,14 @@ public:
     {
         if (!yes)
         {
-
-#       if QT_VERSION < QT_VERSION_CHECK(5, 0, 0)
-
-            mLastEventFilter = QAbstractEventDispatcher::instance()->setEventFilter(eventFilter);
-
-#       else
-
             QAbstractEventDispatcher::instance()->installNativeEventFilter(this);
-
-#       endif
-
         }
         else
         {
             if (!QAbstractEventDispatcher::instance())
                 return;
 
-#       if QT_VERSION < QT_VERSION_CHECK(5, 0, 0)
-
-            mLastEventFilter = QAbstractEventDispatcher::instance()->setEventFilter(mLastEventFilter);
-
-#       else
-
             QAbstractEventDispatcher::instance()->removeNativeEventFilter(this);
-
-#       endif
-
         }
     }
 
@@ -202,25 +176,8 @@ private:
 
     ScreenSaverEventFilter()  {}
     ~ScreenSaverEventFilter() {}
-
-#       if QT_VERSION < QT_VERSION_CHECK(5, 0, 0)
-
-    static QAbstractEventDispatcher::EventFilter mLastEventFilter;
-
-    static bool eventFilter(void* message)
-    {
-        return ScreenSaverEventFilter::instance().nativeEventFilter("windows_MSG", message, 0);
-    }
-
-#       endif
-
 };
 
-#       if QT_VERSION < QT_VERSION_CHECK(5, 0, 0)
-
-QAbstractEventDispatcher::EventFilter ScreenSaverEventFilter::mLastEventFilter = 0;
-
-#       endif
 #   endif // USE_NATIVE_EVENT
 #endif    // Q_OS_WIN
 
