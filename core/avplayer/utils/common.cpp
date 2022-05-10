@@ -312,21 +312,3 @@ bool AppEventFilter::eventFilter(QObject* obj, QEvent* ev)
 }
 
 } // namespace AVPlayer
-
-static void initResources()
-{
-    Q_INIT_RESOURCE(theme);
-}
-
-namespace
-{
-    struct ResourceLoader
-    {
-    public:
-
-        ResourceLoader()
-        {
-            initResources();
-        }
-    } qrc;
-}
