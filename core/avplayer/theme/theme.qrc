@@ -1,7 +1,4 @@
 <RCC>
-    <qresource prefix="/">
-        <file>QtAV.svg</file>
-    </qresource>
     <qresource prefix="/theme">
         <file>default/backward.svg</file>
         <file>default/forward.svg</file>

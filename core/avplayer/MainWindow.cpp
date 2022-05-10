@@ -145,7 +145,6 @@ MainWindow::MainWindow(QWidget* const parent)
       m_shader(nullptr),
       m_glsl(nullptr)
 {
-    setWindowIcon(QIcon(QString::fromLatin1(":/QtAV.svg")));
 
 #if defined(Q_OS_MACX) && QT_VERSION >= QT_VERSION_CHECK(5, 0, 0)
 
