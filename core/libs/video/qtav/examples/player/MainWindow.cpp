@@ -53,6 +53,10 @@
 #include <QWheelEvent>
 #include <QStyleFactory>
 
+// KDE includes
+
+#include <klocalizedstring.h>
+
 // Local includes
 
 #include "EventFilter.h"
@@ -163,7 +167,7 @@ MainWindow::MainWindow(QWidget* const parent)
 
     setupUi();
 
-    //setToolTip(tr("Click black area to use shortcut(see right click menu)"));
+    //setToolTip(i18n("Click black area to use shortcut(see right click menu)"));
 
     WindowEventFilter* const we = new WindowEventFilter(this);
     installEventFilter(we);
@@ -206,7 +210,7 @@ void MainWindow::initPlayer()
     if (!vo || !vo->isAvailable() || !vo->widget())
     {
         QMessageBox::critical(nullptr, QString::fromLatin1("QtAV"),
-                              tr("Video renderer is ") + tr("not availabe on your platform!"));
+                              i18n("Video renderer is ") + i18n("not availabe on your platform!"));
     }
 
     setRenderer(vo);
@@ -349,20 +353,20 @@ void MainWindow::setupUi()
     mpTimeSlider->setOrientation(Qt::Horizontal);
     mpTimeSlider->setMinimum(0);
     mpCurrent                       = new QLabel(mpControl);
-    mpCurrent->setToolTip(tr("Current time"));
+    mpCurrent->setToolTip(i18n("Current time"));
     mpCurrent->setContentsMargins(QMargins(2, 2, 2, 2));
     mpCurrent->setText(QString::fromLatin1("00:00:00"));
     mpEnd                           = new QLabel(mpControl);
-    mpEnd->setToolTip(tr("Duration"));
+    mpEnd->setToolTip(i18n("Duration"));
     mpEnd->setContentsMargins(QMargins(2, 2, 2, 2));
     mpEnd->setText(QString::fromLatin1("00:00:00"));
     mpTitle                         = new QLabel(mpControl);
-    mpTitle->setToolTip(tr("Render engine"));
+    mpTitle->setToolTip(i18n("Render engine"));
     mpTitle->setText(QString::fromLatin1("QPainter"));
     mpTitle->setIndent(8);
     mpSpeed                         = new QLabel(QString::fromLatin1("1.00"));
     mpSpeed->setContentsMargins(QMargins(1, 1, 1, 1));
-    mpSpeed->setToolTip(tr("Speed. Ctrl+Up/Down"));
+    mpSpeed->setToolTip(i18n("Speed. Ctrl+Up/Down"));
 
     mpPlayPauseBtn                  = new QToolButton(mpControl);
     mpPlayPauseBtn->setIcon(QIcon(QString::fromLatin1(":/theme/dark/play.svg")));
@@ -373,14 +377,14 @@ void MainWindow::setupUi()
     mpForwardBtn                    = new QToolButton(mpControl);
     mpForwardBtn->setIcon(QIcon(QString::fromLatin1(":/theme/dark/forward.svg")));
     mpOpenBtn                       = new QToolButton(mpControl);
-    mpOpenBtn->setToolTip(tr("Open"));
+    mpOpenBtn->setToolTip(i18n("Open"));
     mpOpenBtn->setIcon(QIcon(QString::fromLatin1(":/theme/dark/open.svg")));
 
     mpInfoBtn                       = new QToolButton();
     mpInfoBtn->setToolTip(QString::fromLatin1("Media information"));
     mpInfoBtn->setIcon(QIcon(QString::fromLatin1(":/theme/dark/info.svg")));
     mpCaptureBtn                    = new QToolButton();
-    mpCaptureBtn->setToolTip(tr("Capture"));
+    mpCaptureBtn->setToolTip(i18n("Capture"));
     mpCaptureBtn->setIcon(QIcon(QString::fromLatin1(":/theme/dark/capture.svg")));
     mpVolumeBtn                     = new QToolButton();
     mpVolumeBtn->setIcon(QIcon(QString::fromLatin1(":/theme/dark/sound.svg")));
@@ -406,10 +410,10 @@ void MainWindow::setupUi()
     QMenu* subMenu                  = nullptr;
     QWidgetAction* pWA              = nullptr;
     mpMenu                          = new QMenu(mpMenuBtn);
-    mpMenu->addAction(tr("Open Url"), this, SLOT(openUrl()));
+    mpMenu->addAction(i18n("Open Url"), this, SLOT(openUrl()));
     mpMenu->addSeparator();
 
-    subMenu                         = new QMenu(tr("Play list"));
+    subMenu                         = new QMenu(i18n("Play list"));
     mpMenu->addMenu(subMenu);
     mpPlayList                      = new PlayList(this);
     mpPlayList->setSaveFile(ConfigManager::instance().defaultDir() + QString::fromLatin1("/playlist.qds"));
@@ -422,7 +426,7 @@ void MainWindow::setupUi()
     pWA->setDefaultWidget(mpPlayList);
     subMenu->addAction(pWA); // must add action after the widget action is ready. is it a Qt bug?
 
-    subMenu                         = new QMenu(tr("History"));
+    subMenu                         = new QMenu(i18n("History"));
     mpMenu->addMenu(subMenu);
     mpHistory                       = new PlayList(this);
     mpHistory->setMaxRows(20);
@@ -438,15 +442,15 @@ void MainWindow::setupUi()
 
     mpMenu->addSeparator();
 
-    //mpMenu->addAction(tr("Report"))->setEnabled(false); //report bug, suggestions etc. using maillist?
+    //mpMenu->addAction(i18n("Report"))->setEnabled(false); //report bug, suggestions etc. using maillist?
 
-    mpMenu->addAction(tr("About"), this, SLOT(about()));
-    mpMenu->addAction(tr("Setup"), this, SLOT(setup()));
+    mpMenu->addAction(i18n("About"), this, SLOT(about()));
+    mpMenu->addAction(i18n("Setup"), this, SLOT(setup()));
     mpMenu->addSeparator();
     mpMenuBtn->setMenu(mpMenu);
     mpMenu->addSeparator();
 
-    subMenu                         = new QMenu(tr("Speed"));
+    subMenu                         = new QMenu(i18n("Speed"));
     mpMenu->addMenu(subMenu);
     QDoubleSpinBox* const pSpeedBox = new QDoubleSpinBox(0);
     pSpeedBox->setRange(0.01, 20);
@@ -457,12 +461,12 @@ void MainWindow::setupUi()
     pWA->setDefaultWidget(pSpeedBox);
     subMenu->addAction(pWA); // must add action after the widget action is ready. is it a Qt bug?
 
-    subMenu                         = new ClickableMenu(tr("Repeat"));
+    subMenu                         = new ClickableMenu(i18n("Repeat"));
     mpMenu->addMenu(subMenu);
 
     //subMenu->setEnabled(false);
 
-    mpRepeatEnableAction            = subMenu->addAction(tr("Enable"));
+    mpRepeatEnableAction            = subMenu->addAction(i18n("Enable"));
     mpRepeatEnableAction->setCheckable(true);
 
     connect(mpRepeatEnableAction, SIGNAL(toggled(bool)),
@@ -473,18 +477,18 @@ void MainWindow::setupUi()
     mpRepeatBox                     = new QSpinBox(0);
     mpRepeatBox->setMinimum(-1);
     mpRepeatBox->setValue(-1);
-    mpRepeatBox->setToolTip(QString::fromLatin1("-1: ") + tr("infinity"));
+    mpRepeatBox->setToolTip(QString::fromLatin1("-1: ") + i18n("infinity"));
     connect(mpRepeatBox, SIGNAL(valueChanged(int)), SLOT(setRepeateMax(int)));
-    QLabel* pRepeatLabel            = new QLabel(tr("Times"));
+    QLabel* pRepeatLabel            = new QLabel(i18n("Times"));
     QHBoxLayout* hb                 = new QHBoxLayout;
     hb->addWidget(pRepeatLabel);
     hb->addWidget(mpRepeatBox);
     QVBoxLayout* const vb           = new QVBoxLayout;
     vb->addLayout(hb);
-    pRepeatLabel                    = new QLabel(tr("From"));
+    pRepeatLabel                    = new QLabel(i18n("From"));
     mpRepeatA                       = new QTimeEdit();
     mpRepeatA->setDisplayFormat(QString::fromLatin1("HH:mm:ss"));
-    mpRepeatA->setToolTip(tr("negative value means from the end"));
+    mpRepeatA->setToolTip(i18n("negative value means from the end"));
 
     connect(mpRepeatA, SIGNAL(timeChanged(QTime)),
             this, SLOT(repeatAChanged(QTime)));
@@ -493,10 +497,10 @@ void MainWindow::setupUi()
     hb->addWidget(pRepeatLabel);
     hb->addWidget(mpRepeatA);
     vb->addLayout(hb);
-    pRepeatLabel                    = new QLabel(tr("To"));
+    pRepeatLabel                    = new QLabel(i18n("To"));
     mpRepeatB                       = new QTimeEdit();
     mpRepeatB->setDisplayFormat(QString::fromLatin1("HH:mm:ss"));
-    mpRepeatB->setToolTip(tr("negative value means from the end"));
+    mpRepeatB->setToolTip(i18n("negative value means from the end"));
 
     connect(mpRepeatB, SIGNAL(timeChanged(QTime)),
             this, SLOT(repeatBChanged(QTime)));
@@ -516,7 +520,7 @@ void MainWindow::setupUi()
 
     mpMenu->addSeparator();
 
-    subMenu                         = new ClickableMenu(tr("Clock"));
+    subMenu                         = new ClickableMenu(i18n("Clock"));
     mpMenu->addMenu(subMenu);
     QActionGroup* ag                = new QActionGroup(subMenu);
     ag->setExclusive(true);
@@ -524,9 +528,9 @@ void MainWindow::setupUi()
     connect(subMenu, SIGNAL(triggered(QAction*)),
             this, SLOT(changeClockType(QAction*)));
 
-    subMenu->addAction(tr("Auto"))->setData(-1);
-    subMenu->addAction(tr("Audio"))->setData(AVClock::AudioClock);
-    subMenu->addAction(tr("Video"))->setData(AVClock::VideoClock);
+    subMenu->addAction(i18n("Auto"))->setData(-1);
+    subMenu->addAction(i18n("Audio"))->setData(AVClock::AudioClock);
+    subMenu->addAction(i18n("Video"))->setData(AVClock::VideoClock);
 
     foreach (QAction* const action, subMenu->actions())
     {
@@ -536,30 +540,30 @@ void MainWindow::setupUi()
 
     QAction* const autoClockAction  = subMenu->actions().at(0);
     autoClockAction->setChecked(true);
-    autoClockAction->setToolTip(tr("Take effect in next playback"));
+    autoClockAction->setToolTip(i18n("Take effect in next playback"));
 
-    subMenu                         = new ClickableMenu(tr("Subtitle"));
+    subMenu                         = new ClickableMenu(i18n("Subtitle"));
     mpMenu->addMenu(subMenu);
-    QAction* act                    = subMenu->addAction(tr("Enable"));
+    QAction* act                    = subMenu->addAction(i18n("Enable"));
     act->setCheckable(true);
     act->setChecked(mpSubtitle->isEnabled());
 
     connect(act, SIGNAL(toggled(bool)),
             this, SLOT(toggoleSubtitleEnabled(bool)));
 
-    act                             = subMenu->addAction(tr("Auto load"));
+    act                             = subMenu->addAction(i18n("Auto load"));
     act->setCheckable(true);
     act->setChecked(mpSubtitle->autoLoad());
 
     connect(act, SIGNAL(toggled(bool)),
             this, SLOT(toggleSubtitleAutoLoad(bool)));
 
-    subMenu->addAction(tr("Open"), this, SLOT(openSubtitle()));
+    subMenu->addAction(i18n("Open"), this, SLOT(openSubtitle()));
 
     wgt                             = new QWidget();
     hb                              = new QHBoxLayout();
     wgt->setLayout(hb);
-    hb->addWidget(new QLabel(tr("Engine")));
+    hb->addWidget(new QLabel(i18n("Engine")));
     QComboBox* box                  = new QComboBox();
     hb->addWidget(box);
     pWA                             = new QWidgetAction(0);
@@ -572,19 +576,19 @@ void MainWindow::setupUi()
             this, SLOT(setSubtitleEngine(QString)));
 
     mpSubtitle->setEngines(QStringList() << box->itemData(box->currentIndex()).toString());
-    box->setToolTip(tr("FFmpeg supports more subtitles but only render plain text") + QString::fromLatin1("\n") + tr("LibASS supports ass styles"));
+    box->setToolTip(i18n("FFmpeg supports more subtitles but only render plain text") + QString::fromLatin1("\n") + i18n("LibASS supports ass styles"));
 
     wgt                             = new QWidget();
     hb                              = new QHBoxLayout();
     wgt->setLayout(hb);
-    hb->addWidget(new QLabel(tr("Charset")));
+    hb->addWidget(new QLabel(i18n("Charset")));
     box                             = new QComboBox();
     hb->addWidget(box);
     pWA                             = new QWidgetAction(0);
     pWA->setDefaultWidget(wgt);
     subMenu->addAction(pWA);                    // must add action after the widget action is ready. is it a Qt bug?
-    box->addItem(tr("Auto detect"), QString::fromLatin1("AutoDetect"));
-    box->addItem(tr("System"), QString::fromLatin1("System"));
+    box->addItem(i18n("Auto detect"), QString::fromLatin1("AutoDetect"));
+    box->addItem(i18n("System"), QString::fromLatin1("System"));
 
     foreach (const QByteArray& cs, QTextCodec::availableCodecs())
     {
@@ -595,9 +599,9 @@ void MainWindow::setupUi()
             this, SLOT(setSubtitleCharset(QString)));
 
     mpSubtitle->setCodec(box->itemData(box->currentIndex()).toByteArray());
-    box->setToolTip(tr("Auto detect requires libchardet"));
+    box->setToolTip(i18n("Auto detect requires libchardet"));
 
-    subMenu                         = new ClickableMenu(tr("Audio track"));
+    subMenu                         = new ClickableMenu(i18n("Audio track"));
     mpMenu->addMenu(subMenu);
     mpAudioTrackMenu                = subMenu;
 
@@ -606,18 +610,18 @@ void MainWindow::setupUi()
 
     initAudioTrackMenu();
 
-    subMenu = new ClickableMenu(tr("Channel"));
+    subMenu = new ClickableMenu(i18n("Channel"));
     mpMenu->addMenu(subMenu);
     mpChannelMenu = subMenu;
 
     connect(subMenu, SIGNAL(triggered(QAction*)),
             this, SLOT(changeChannel(QAction*)));
 
-    subMenu->addAction(tr("As input"))->setData(AudioFormat::ChannelLayout_Unsupported); //will set to input in resampler if not supported.
-    subMenu->addAction(tr("Stereo"))->setData(AudioFormat::ChannelLayout_Stereo);
-    subMenu->addAction(tr("Mono (center)"))->setData(AudioFormat::ChannelLayout_Center);
-    subMenu->addAction(tr("Left"))->setData(AudioFormat::ChannelLayout_Left);
-    subMenu->addAction(tr("Right"))->setData(AudioFormat::ChannelLayout_Right);
+    subMenu->addAction(i18n("As input"))->setData(AudioFormat::ChannelLayout_Unsupported); //will set to input in resampler if not supported.
+    subMenu->addAction(i18n("Stereo"))->setData(AudioFormat::ChannelLayout_Stereo);
+    subMenu->addAction(i18n("Mono (center)"))->setData(AudioFormat::ChannelLayout_Center);
+    subMenu->addAction(i18n("Left"))->setData(AudioFormat::ChannelLayout_Left);
+    subMenu->addAction(i18n("Right"))->setData(AudioFormat::ChannelLayout_Right);
     ag                              = new QActionGroup(subMenu);
     ag->setExclusive(true);
 
@@ -627,18 +631,18 @@ void MainWindow::setupUi()
         action->setCheckable(true);
     }
 
-    subMenu                         = new QMenu(tr("Aspect ratio"), mpMenu);
+    subMenu                         = new QMenu(i18n("Aspect ratio"), mpMenu);
     mpMenu->addMenu(subMenu);
 
     connect(subMenu, SIGNAL(triggered(QAction*)),
             this, SLOT(switchAspectRatio(QAction*)));
 
-    mpARAction                      = subMenu->addAction(tr("Video"));
+    mpARAction                      = subMenu->addAction(i18n("Video"));
     mpARAction->setData(0);
-    subMenu->addAction(tr("Window"))->setData(-1);
+    subMenu->addAction(i18n("Window"))->setData(-1);
     subMenu->addAction(QString::fromLatin1("4:3"))->setData(4.0/3.0);
     subMenu->addAction(QString::fromLatin1("16:9"))->setData(16.0/9.0);
-    subMenu->addAction(tr("Custom"))->setData(-2);
+    subMenu->addAction(i18n("Custom"))->setData(-2);
 
     foreach (QAction* const action, subMenu->actions())
     {
@@ -647,7 +651,7 @@ void MainWindow::setupUi()
 
     mpARAction->setChecked(true);
 
-    subMenu                         = new ClickableMenu(tr("Color space"));
+    subMenu                         = new ClickableMenu(i18n("Color space"));
     mpMenu->addMenu(subMenu);
     mpVideoEQ                       = new VideoEQConfigPage();
 
@@ -658,14 +662,14 @@ void MainWindow::setupUi()
     pWA->setDefaultWidget(mpVideoEQ);
     subMenu->addAction(pWA);
 
-    subMenu                         = new ClickableMenu(tr("Decoder"));
+    subMenu                         = new ClickableMenu(i18n("Decoder"));
     mpMenu->addMenu(subMenu);
     mpDecoderConfigPage             = new DecoderConfigPage();
     pWA                             = new QWidgetAction(0);
     pWA->setDefaultWidget(mpDecoderConfigPage);
     subMenu->addAction(pWA);
 
-    subMenu                         = new ClickableMenu(tr("Renderer"));
+    subMenu                         = new ClickableMenu(i18n("Renderer"));
     mpMenu->addMenu(subMenu);
 
     connect(subMenu, SIGNAL(triggered(QAction*)),
@@ -822,7 +826,7 @@ void MainWindow::changeAudioTrack(QAction* action)
 
     if (track < 0)
     {
-        QString f = QFileDialog::getOpenFileName(0, tr("Open an external audio track"));
+        QString f = QFileDialog::getOpenFileName(0, i18n("Open an external audio track"));
 
         if (f.isEmpty())
         {
@@ -875,7 +879,7 @@ void MainWindow::changeVO(QAction* action)
     else
     {
         action->toggle(); // check state changes if clicked
-        QMessageBox::critical(nullptr, QString::fromLatin1("QtAV"), tr("not availabe on your platform!"));
+        QMessageBox::critical(nullptr, QString::fromLatin1("QtAV"), i18n("not availabe on your platform!"));
 
         return;
     }
@@ -902,7 +906,7 @@ bool MainWindow::setRenderer(QtAV::VideoRenderer* const renderer)
 
     if (!renderer->widget())
     {
-        QMessageBox::warning(nullptr, QString::fromLatin1("QtAV"), tr("Can not use this renderer"));
+        QMessageBox::warning(nullptr, QString::fromLatin1("QtAV"), i18n("Can not use this renderer"));
 
         return false;
     }
@@ -1097,7 +1101,7 @@ void MainWindow::setVideoDecoderNames(const QStringList& vd)
 
 void MainWindow::openFile()
 {
-    QString file = QFileDialog::getOpenFileName(0, tr("Open a media file"), ConfigManager::instance().lastFile());
+    QString file = QFileDialog::getOpenFileName(0, i18n("Open a media file"), ConfigManager::instance().lastFile());
 
     if (file.isEmpty())
         return;
@@ -1511,7 +1515,7 @@ void MainWindow::about()
 
 void MainWindow::openUrl()
 {
-    QString url = QInputDialog::getText(0, tr("Open an url"), tr("Url"));
+    QString url = QInputDialog::getText(0, i18n("Open an url"), i18n("Url"));
 
     if (url.isEmpty())
         return;
@@ -1555,7 +1559,7 @@ void MainWindow::initAudioTrackMenu()
 
     if (!mpPlayer)
     {
-        a = mpAudioTrackMenu->addAction(tr("External"));
+        a = mpAudioTrackMenu->addAction(i18n("External"));
         a->setData(-1);
         a->setCheckable(true);
         a->setChecked(false);
@@ -1581,7 +1585,7 @@ void MainWindow::initAudioTrackMenu()
 
     if (as.isEmpty())
     {
-        a = mpAudioTrackMenu->addAction(tr("External"));
+        a = mpAudioTrackMenu->addAction(i18n("External"));
         a->setData(-1);
         a->setCheckable(true);
         a->setChecked(false);
@@ -1648,7 +1652,7 @@ void MainWindow::switchAspectRatio(QAction *action)
     else
     {
         if (r == -2)
-            r = QInputDialog::getDouble(0, tr("Aspect ratio"), QString(), 1.0);
+            r = QInputDialog::getDouble(0, i18n("Aspect ratio"), QString(), 1.0);
 
         mpPlayer->renderer()->setOutAspectRatioMode(VideoRenderer::CustomAspectRation);
         mpPlayer->renderer()->setOutAspectRatio(r);
@@ -1792,7 +1796,7 @@ void MainWindow::onTimeSliderLeave()
 
 void MainWindow::handleError(const AVError& e)
 {
-    QMessageBox::warning(0, tr("Player error"), e.string());
+    QMessageBox::warning(0, i18n("Player error"), e.string());
 }
 
 void MainWindow::onMediaStatusChanged()
@@ -1812,31 +1816,31 @@ void MainWindow::onMediaStatusChanged()
     switch (player->mediaStatus())
     {
         case NoMedia:
-            status = tr("No media");
+            status = i18n("No media");
             break;
 
         case InvalidMedia:
-            status = tr("Invalid meida");
+            status = i18n("Invalid meida");
             break;
 
         case BufferingMedia:
-            status = tr("Buffering...");
+            status = i18n("Buffering...");
             break;
 
         case BufferedMedia:
-            status = tr("Buffered");
+            status = i18n("Buffered");
             break;
 
         case LoadingMedia:
-            status = tr("Loading...");
+            status = i18n("Loading...");
             break;
 
         case LoadedMedia:
-            status = tr("Loaded");
+            status = i18n("Loaded");
             break;
 
         case StalledMedia:
-            status = tr("Stalled");
+            status = i18n("Stalled");
             break;
 
         default:
@@ -1970,10 +1974,10 @@ void MainWindow::onCaptureConfigChanged()
     }
 
     mpCaptureBtn->setToolTip(QString::fromLatin1("%1\n%2: %3\n%4: %5")
-                             .arg(tr("Capture video frame"))
-                             .arg(tr("Save to"))
+                             .arg(i18n("Capture video frame"))
+                             .arg(i18n("Save to"))
                              .arg(mpPlayer->videoCapture()->captureDir())
-                             .arg(tr("Format"))
+                             .arg(i18n("Format"))
                              .arg(ConfigManager::instance().captureFormat()));
 }
 
@@ -2090,7 +2094,7 @@ void MainWindow::toggleSubtitleAutoLoad(bool value)
 
 void MainWindow::openSubtitle()
 {
-    QString file = QFileDialog::getOpenFileName(0, tr("Open a subtitle file"));
+    QString file = QFileDialog::getOpenFileName(0, i18n("Open a subtitle file"));
 
     if (file.isEmpty())
         return;

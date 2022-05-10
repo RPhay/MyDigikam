@@ -37,6 +37,10 @@
 #include <QSpacerItem>
 #include <QPainter>
 
+// KDE includes
+
+#include <klocalizedstring.h>
+
 // Local includes
 
 #include "ConfigManager.h"
@@ -229,7 +233,7 @@ DecoderConfigPage::DecoderConfigPage(QWidget* const parent)
     : ConfigPageBase(parent)
 {
     mpSelectedDec                           = nullptr;
-    setWindowTitle(tr("Video decoder config page"));
+    setWindowTitle(i18n("Video decoder config page"));
     QVBoxLayout* const vbs                  = new QVBoxLayout(this);
     QSpacerItem* const horizontalSpacer     = new QSpacerItem(320, 0, QSizePolicy::Minimum, QSizePolicy::Minimum);
     vbs->addItem(horizontalSpacer);
@@ -241,7 +245,7 @@ DecoderConfigPage::DecoderConfigPage(QWidget* const parent)
     QVBoxLayout* const vb                   = new QVBoxLayout;
     vb->setSpacing(0);
 
-    vb->addWidget(new QLabel(QString::fromLatin1("%1 %2 (%3)").arg(tr("Decoder")).arg(tr("Priorities")).arg(tr("reopen is required"))));
+    vb->addWidget(new QLabel(QString::fromLatin1("%1 %2 (%3)").arg(i18n("Decoder")).arg(i18n("Priorities")).arg(i18n("reopen is required"))));
 
     sPriorityUi                             = idsFromNames(ConfigManager::instance().decoderPriorityNames());
     QStringList vds                         = ConfigManager::instance().decoderPriorityNames();
@@ -302,13 +306,13 @@ DecoderConfigPage::DecoderConfigPage(QWidget* const parent)
     vb->addSpacerItem(new QSpacerItem(width(), 10, QSizePolicy::Ignored, QSizePolicy::Expanding));
 
     mpUp = new QToolButton(scrollAreaWidgetContents);
-    mpUp->setText(tr("Up"));
+    mpUp->setText(i18n("Up"));
 
     connect(mpUp, SIGNAL(clicked()),
             this, SLOT(priorityUp()));
 
     mpDown = new QToolButton(scrollAreaWidgetContents);
-    mpDown->setText(tr("Down"));
+    mpDown->setText(i18n("Down"));
 
     connect(mpDown, SIGNAL(clicked()),
             this, SLOT(priorityDown()));
@@ -328,7 +332,7 @@ DecoderConfigPage::DecoderConfigPage(QWidget* const parent)
 
 QString DecoderConfigPage::name() const
 {
-    return tr("Decoder");
+    return i18n("Decoder");
 }
 
 QVariantHash DecoderConfigPage::audioDecoderOptions() const

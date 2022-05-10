@@ -72,7 +72,7 @@ EventFilter::~EventFilter()
 
 void EventFilter::openLocalFile()
 {
-    QString file = QFileDialog::getOpenFileName(0, tr("Open a video"));
+    QString file = QFileDialog::getOpenFileName(0, i18n("Open a video"));
 
     if (file.isEmpty())
         return;
@@ -83,7 +83,7 @@ void EventFilter::openLocalFile()
 
 void EventFilter::openUrl()
 {
-    QString url = QInputDialog::getText(0, tr("Open an url"), tr("Url"));
+    QString url = QInputDialog::getText(0, i18n("Open an url"), i18n("Url"));
 
     if (url.isEmpty())
         return;
@@ -105,27 +105,27 @@ void EventFilter::aboutFFmpeg()
 void EventFilter::help()
 {
     static QString help = QString::fromLatin1("<h4>")                                                                           +
-                          tr("Drag and drop a file to player\n") + QString::fromLatin1("</h4><p>")                              +
-                          tr("A: switch aspect ratio") + QString::fromLatin1("</p><p>")                                         +
-                          tr("Double click to switch fullscreen") + QString::fromLatin1("</p><p>")                              +
-                          tr("Shortcut:\n") + QString::fromLatin1("</p><p>")                                                    +
-                          tr("Space: pause/continue\n") + QString::fromLatin1("</p><p>")                                        +
-                          tr("F: fullscreen on/off\n") + QString::fromLatin1("</p><p>")                                         +
-                          tr("T: stays on top on/off\n") + QString::fromLatin1("</p><p>")                                       +
-                          tr("N: show next frame. Continue the playing by pressing 'Space'\n") + QString::fromLatin1("</p><p>") +
-                          tr("Ctrl+O: open a file\n") + QString::fromLatin1("</p><p>")                                          +
-                          tr("O: OSD\n") + QString::fromLatin1("</p><p>")                                                       +
-                          tr("P: replay\n") + QString::fromLatin1("</p><p>")                                                    +
-                          tr("Q/ESC: quit\n") + QString::fromLatin1("</p><p>")                                                  +
-                          tr("S: stop\n") + QString::fromLatin1("</p><p>")                                                      +
-                          tr("R: rotate 90") + QString::fromLatin1("</p><p>")                                                   +
-                          tr("M: mute on/off\n") + QString::fromLatin1("</p><p>")                                               +
-                          tr("C: capture video") + QString::fromLatin1("</p><p>")                                               +
-                          tr("Up/Down: volume +/-\n") + QString::fromLatin1("</p><p>")                                          +
-                          tr("Ctrl+Up/Down: speed +/-\n") + QString::fromLatin1("</p><p>")                                      +
-                          tr("-&gt;/&lt;-: seek forward/backward\n");
+                          i18n("Drag and drop a file to player\n") + QString::fromLatin1("</h4><p>")                              +
+                          i18n("A: switch aspect ratio") + QString::fromLatin1("</p><p>")                                         +
+                          i18n("Double click to switch fullscreen") + QString::fromLatin1("</p><p>")                              +
+                          i18n("Shortcut:\n") + QString::fromLatin1("</p><p>")                                                    +
+                          i18n("Space: pause/continue\n") + QString::fromLatin1("</p><p>")                                        +
+                          i18n("F: fullscreen on/off\n") + QString::fromLatin1("</p><p>")                                         +
+                          i18n("T: stays on top on/off\n") + QString::fromLatin1("</p><p>")                                       +
+                          i18n("N: show next frame. Continue the playing by pressing 'Space'\n") + QString::fromLatin1("</p><p>") +
+                          i18n("Ctrl+O: open a file\n") + QString::fromLatin1("</p><p>")                                          +
+                          i18n("O: OSD\n") + QString::fromLatin1("</p><p>")                                                       +
+                          i18n("P: replay\n") + QString::fromLatin1("</p><p>")                                                    +
+                          i18n("Q/ESC: quit\n") + QString::fromLatin1("</p><p>")                                                  +
+                          i18n("S: stop\n") + QString::fromLatin1("</p><p>")                                                      +
+                          i18n("R: rotate 90") + QString::fromLatin1("</p><p>")                                                   +
+                          i18n("M: mute on/off\n") + QString::fromLatin1("</p><p>")                                               +
+                          i18n("C: capture video") + QString::fromLatin1("</p><p>")                                               +
+                          i18n("Up/Down: volume +/-\n") + QString::fromLatin1("</p><p>")                                          +
+                          i18n("Ctrl+Up/Down: speed +/-\n") + QString::fromLatin1("</p><p>")                                      +
+                          i18n("-&gt;/&lt;-: seek forward/backward\n");
 
-    QMessageBox::about(0, tr("Help"), help);
+    QMessageBox::about(0, i18n("Help"), help);
 }
 
 bool EventFilter::eventFilter(QObject* watched, QEvent* event)
@@ -518,11 +518,11 @@ void EventFilter::showMenu(const QPoint& p)
     if (!menu)
     {
         menu = new QMenu();
-        menu->addAction(tr("Open"),     this, SLOT(openLocalFile()));
-        menu->addAction(tr("Open Url"), this, SLOT(openUrl()));
+        menu->addAction(i18n("Open"),     this, SLOT(openLocalFile()));
+        menu->addAction(i18n("Open Url"), this, SLOT(openUrl()));
         menu->addSeparator();
-        menu->addAction(tr("About"),    this, SLOT(about()));
-        menu->addAction(tr("Help"),     this, SLOT(help()));
+        menu->addAction(i18n("About"),    this, SLOT(about()));
+        menu->addAction(i18n("Help"),     this, SLOT(help()));
         menu->addSeparator();
     }
 

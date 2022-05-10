@@ -27,6 +27,10 @@
 #include <QDir>
 #include <QMessageBox>
 
+// KDE includes
+
+#include <klocalizedstring.h>
+
 // Local includes
 
 #include "AVPlayer.h"
@@ -132,7 +136,7 @@ int main(int argc, char* argv[])
     a.setAttribute(Qt::AA_DontCreateNativeWidgetSiblings);
     qCDebug(DIGIKAM_QTAVPLAYER_LOG) << a.arguments();
 
-    a.setApplicationDisplayName(QString::fromLatin1("QtAV Player"));
+    a.setApplicationDisplayName(QString::fromLatin1("AVPlayer"));
     QDir::setCurrent(qApp->applicationDirPath());
 
     do_common_options(options);
@@ -158,7 +162,7 @@ int main(int argc, char* argv[])
     MainWindow window;
     window.setProperty("rendererId", rendererId_from_opt_name(vo.toLower()));
     window.show();
-    window.setWindowTitle(QString::fromLatin1("QtAV Player %1").arg(QtAV_Version_String_Long()));
+    window.setWindowTitle(QString::fromLatin1("AVPlayer %1").arg(QtAV_Version_String_Long()));
     AppEventFilter ae(&window);
     qApp->installEventFilter(&ae);
 

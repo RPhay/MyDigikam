@@ -57,17 +57,17 @@ PlayList::PlayList(QWidget* parent)
     mpListView->setItemDelegate(mpDelegate);
     mpListView->setSelectionMode(QAbstractItemView::ExtendedSelection); //ctrl,shift
     mpListView->setEditTriggers(QAbstractItemView::NoEditTriggers);
-    mpListView->setToolTip(QString::fromLatin1("Ctrl/Shift + ") + tr("Click to select multiple"));
+    mpListView->setToolTip(QString::fromLatin1("Ctrl/Shift + ") + i18n("Click to select multiple"));
     QVBoxLayout* vbl = new QVBoxLayout;
     setLayout(vbl);
     vbl->addWidget(mpListView);
     QHBoxLayout* hbl = new QHBoxLayout;
 
     mpClear          = new QToolButton(0);
-    mpClear->setText(tr("Clear"));
+    mpClear->setText(i18n("Clear"));
     mpRemove         = new QToolButton(0);
     mpRemove->setText(QString::fromLatin1("-"));
-    mpRemove->setToolTip(tr("Remove selected items"));
+    mpRemove->setToolTip(i18n("Remove selected items"));
     mpAdd            = new QToolButton(0);
     mpAdd->setText(QString::fromLatin1("+"));
 
@@ -259,7 +259,7 @@ void PlayList::addItems()
 {
     // TODO: add url;
 
-    QStringList files = QFileDialog::getOpenFileNames(0, tr("Select files"));
+    QStringList files = QFileDialog::getOpenFileNames(0, i18n("Select files"));
 
     if (files.isEmpty())
         return;

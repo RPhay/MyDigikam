@@ -29,6 +29,10 @@
 #include <QLayout>
 #include <QPushButton>
 
+// KDE includes
+
+#include <klocalizedstring.h>
+
 // Local includes
 
 #include "CaptureConfigPage.h"
@@ -60,10 +64,10 @@ ConfigDialog::ConfigDialog(QWidget* parent)
     mpContent->setTabPosition(QTabWidget::West);
 
     mpButtonBox = new QDialogButtonBox(Qt::Horizontal);
-    mpButtonBox->addButton(tr("Reset"),  QDialogButtonBox::ResetRole);      // QDialogButtonBox::Reset;
-    mpButtonBox->addButton(tr("Ok"),     QDialogButtonBox::AcceptRole);     // QDialogButtonBox::Ok
-    mpButtonBox->addButton(tr("Cancel"), QDialogButtonBox::RejectRole);
-    mpButtonBox->addButton(tr("Apply"),  QDialogButtonBox::ApplyRole);
+    mpButtonBox->addButton(i18n("Reset"),  QDialogButtonBox::ResetRole);      // QDialogButtonBox::Reset;
+    mpButtonBox->addButton(i18n("Ok"),     QDialogButtonBox::AcceptRole);     // QDialogButtonBox::Ok
+    mpButtonBox->addButton(i18n("Cancel"), QDialogButtonBox::RejectRole);
+    mpButtonBox->addButton(i18n("Apply"),  QDialogButtonBox::ApplyRole);
 
     connect(mpButtonBox, SIGNAL(accepted()),
             this, SLOT(accept()));

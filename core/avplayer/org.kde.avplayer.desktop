@@ -1,0 +1,14 @@
+[Desktop Entry]
+Name=AVPlayer
+Name[x-test]=xxAVPlayerxx
+GenericName=Audio and Video Player
+GenericName[x-test]=xxAudio and Video Playerxx
+Comment=Manage your photographs like a professional with the power of open source
+Comment[x-test]=xxManage your photographs like a professional with the power of open sourcexx
+Exec=avplayer -qwindowtitle %c %U
+Icon=avplayer
+Type=Application
+MimeType=video/mp4;video/mov;
+Terminal=false
+Categories=Qt;Graphics;Photography;
+StartupWMClass=avplayer

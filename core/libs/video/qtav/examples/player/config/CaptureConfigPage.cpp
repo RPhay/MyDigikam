@@ -33,6 +33,10 @@
 #include <QFileDialog>
 #include <QUrl>
 
+// KDE includes
+
+#include <klocalizedstring.h>
+
 // Local includes
 
 #include "ConfigManager.h"
@@ -59,16 +63,16 @@ CaptureConfigPage::CaptureConfigPage(QWidget* const parent)
             this,  SLOT(selectSaveDir()));
 
     bt              = new QToolButton();
-    bt->setText(tr("Browse"));
+    bt->setText(i18n("Browse"));
     hb->addWidget(bt);
 
     connect(bt, SIGNAL(clicked()),
             this, SLOT(browseCaptureDir()));
 
-    formLayout->addRow(tr("Save dir"), hb);
+    formLayout->addRow(i18n("Save dir"), hb);
     mpDir->setEnabled(false);
     mpFormat        = new QComboBox();
-    formLayout->addRow(tr("Save format"), mpFormat);
+    formLayout->addRow(i18n("Save format"), mpFormat);
     QList<QByteArray> formats;
     formats << "Original" << QImageWriter::supportedImageFormats();
 
@@ -78,7 +82,7 @@ CaptureConfigPage::CaptureConfigPage(QWidget* const parent)
     }
 
     mpQuality       = new Slider();
-    formLayout->addRow(tr("Quality"), mpQuality);
+    formLayout->addRow(i18n("Quality"), mpQuality);
     mpQuality->setRange(0, 100);
     mpQuality->setOrientation(Qt::Horizontal);
     mpQuality->setSingleStep(1);
@@ -104,7 +108,7 @@ CaptureConfigPage::CaptureConfigPage(QWidget* const parent)
 
 QString CaptureConfigPage::name() const
 {
-    return tr("Capture");
+    return i18n("Capture");
 }
 
 void CaptureConfigPage::applyFromUi()
@@ -127,7 +131,7 @@ void CaptureConfigPage::applyToUi()
 
 void CaptureConfigPage::selectSaveDir()
 {
-    QString dir = QFileDialog::getExistingDirectory(0, tr("Save dir"), mpDir->text());
+    QString dir = QFileDialog::getExistingDirectory(0, i18n("Save dir"), mpDir->text());
 
     if (dir.isEmpty())
         return;

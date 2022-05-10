@@ -43,19 +43,19 @@ ShaderPage::ShaderPage(QWidget* const parent)
     gl->setSizeConstraint(QLayout::SetMaximumSize);
 
     const int mw          = 600;
-    m_enable              = new QCheckBox(tr("Enable"));
+    m_enable              = new QCheckBox(i18n("Enable"));
     gl->addWidget(m_enable);
-    m_fbo                 = new QCheckBox(tr("Intermediate FBO"));
+    m_fbo                 = new QCheckBox(i18n("Intermediate FBO"));
     gl->addWidget(m_fbo);
-    gl->addWidget(new QLabel(tr("Fragment shader header")));
+    gl->addWidget(new QLabel(i18n("Fragment shader header")));
     m_header              = new QTextEdit();
 
     //m_header->setMaximumWidth(mw);
 
     m_header->setMaximumHeight(mw / 6);
-    m_header->setToolTip(tr("Additional header code"));
+    m_header->setToolTip(i18n("Additional header code"));
     gl->addWidget(m_header);
-    gl->addWidget(new QLabel(tr("Fragment shader texel sample function")));
+    gl->addWidget(new QLabel(i18n("Fragment shader texel sample function")));
     m_sample              = new QTextEdit();
 
     //m_sample->setMaximumWidth(mw);
@@ -75,7 +75,7 @@ ShaderPage::ShaderPage(QWidget* const parent)
 
 QString ShaderPage::name() const
 {
-    return tr("Shader");
+    return i18n("Shader");
 }
 
 void ShaderPage::applyToUi()
