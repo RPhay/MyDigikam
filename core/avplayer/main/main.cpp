@@ -155,8 +155,22 @@ int main(int argc, char* argv[])
     // Force to use application icon for non plasma desktop as Unity for ex.
 
     QApplication::setWindowIcon(QIcon::fromTheme(QLatin1String("avplayer"), app.windowIcon()));
-
     app.setApplicationDisplayName(QString::fromLatin1("AVPlayer"));
+
+#ifdef Q_OS_WIN
+
+    if (QSysInfo::currentCpuArchitecture().contains(QLatin1String("64")) &&
+        !QSysInfo::buildCpuArchitecture().contains(QLatin1String("64")))
+    {
+        QMessageBox::critical(qApp->activeWindow(),
+                              qApp->applicationName(),
+                              i18nc("#info", "<p>You are running AVPlayer as a 32-bit version on a 64-bit Windows.</p>"
+                                    "<p>Please install the 64-bit version of AVPlayer to get "
+                                    "a better experience with AVPlayer.</p>"));
+    }
+
+#endif
+
     QDir::setCurrent(qApp->applicationDirPath());
 
     do_common_options(options);
