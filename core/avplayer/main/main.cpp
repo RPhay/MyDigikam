@@ -90,7 +90,6 @@ int main(int argc, char* argv[])
     qCDebug(DIGIKAM_QTAVPLAYER_LOG) << aboutQtAV_PlainText();
 
     KLocalizedString::setApplicationDomain("digikam");
-
     ConfigManager::setName(QString::fromLatin1("Player"));
     QOptions options = get_common_options();
     options.add(QString::fromLatin1("player options"))
@@ -140,6 +139,10 @@ int main(int argc, char* argv[])
     QApplication app(argc, argv);
     app.setAttribute(Qt::AA_DontCreateNativeWidgetSiblings);
     qCDebug(DIGIKAM_QTAVPLAYER_LOG) << app.arguments();
+
+    // See bug #438701
+
+    installQtTranslationFiles(app);
 
     tryInitDrMingw();
 
