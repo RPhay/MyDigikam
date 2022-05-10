@@ -38,42 +38,42 @@ if(HAVE_OPENGL)
 
 endif()
 
-set(avplayer_SRCS ${CMAKE_SOURCE_DIR}/core/libs/video/qtav/examples/player/utils/ClickableMenu.cpp
-                  ${CMAKE_SOURCE_DIR}/core/libs/video/qtav/examples/player/utils/EventFilter.cpp
-                  ${CMAKE_SOURCE_DIR}/core/libs/video/qtav/examples/player/utils/Slider.cpp
-                  ${CMAKE_SOURCE_DIR}/core/libs/video/qtav/examples/player/utils/StatisticsView.cpp
-                  ${CMAKE_SOURCE_DIR}/core/libs/video/qtav/examples/player/utils/ScreenSaver.cpp
-                  ${CMAKE_SOURCE_DIR}/core/libs/video/qtav/examples/player/utils/qoptions.cpp
-                  ${CMAKE_SOURCE_DIR}/core/libs/video/qtav/examples/player/utils/common.cpp
-                  ${CMAKE_SOURCE_DIR}/core/libs/video/qtav/examples/player/config/VideoEQConfigPage.cpp
-                  ${CMAKE_SOURCE_DIR}/core/libs/video/qtav/examples/player/config/PropertyEditor.cpp
-                  ${CMAKE_SOURCE_DIR}/core/libs/video/qtav/examples/player/config/DecoderConfigPage.cpp
-                  ${CMAKE_SOURCE_DIR}/core/libs/video/qtav/examples/player/config/AVFormatConfigPage.cpp
-                  ${CMAKE_SOURCE_DIR}/core/libs/video/qtav/examples/player/config/ShaderPage.cpp
-                  ${CMAKE_SOURCE_DIR}/core/libs/video/qtav/examples/player/config/MiscPage.cpp
-                  ${CMAKE_SOURCE_DIR}/core/libs/video/qtav/examples/player/config/ConfigManager.cpp
-                  ${CMAKE_SOURCE_DIR}/core/libs/video/qtav/examples/player/config/ConfigDialog.cpp
-                  ${CMAKE_SOURCE_DIR}/core/libs/video/qtav/examples/player/config/ConfigPageBase.cpp
-                  ${CMAKE_SOURCE_DIR}/core/libs/video/qtav/examples/player/config/CaptureConfigPage.cpp
-                  ${CMAKE_SOURCE_DIR}/core/libs/video/qtav/examples/player/config/AVFilterConfigPage.cpp
-                  ${CMAKE_SOURCE_DIR}/core/libs/video/qtav/examples/player/filters/OSDFilter.cpp
-                  ${CMAKE_SOURCE_DIR}/core/libs/video/qtav/examples/player/filters/OSD.cpp
-                  ${CMAKE_SOURCE_DIR}/core/libs/video/qtav/examples/player/filters/AVFilterSubtitle.cpp
-                  ${CMAKE_SOURCE_DIR}/core/libs/video/qtav/examples/player/playlist/PlayListModel.cpp
-                  ${CMAKE_SOURCE_DIR}/core/libs/video/qtav/examples/player/playlist/PlayListItem.cpp
-                  ${CMAKE_SOURCE_DIR}/core/libs/video/qtav/examples/player/playlist/PlayListDelegate.cpp
-                  ${CMAKE_SOURCE_DIR}/core/libs/video/qtav/examples/player/playlist/PlayList.cpp
-                  ${CMAKE_SOURCE_DIR}/core/libs/video/qtav/examples/player/main.cpp
-                  ${CMAKE_SOURCE_DIR}/core/libs/video/qtav/examples/player/MainWindow.cpp
+set(avplayer_SRCS ${CMAKE_SOURCE_DIR}/core/avplayer/utils/ClickableMenu.cpp
+                  ${CMAKE_SOURCE_DIR}/core/avplayer/utils/EventFilter.cpp
+                  ${CMAKE_SOURCE_DIR}/core/avplayer/utils/Slider.cpp
+                  ${CMAKE_SOURCE_DIR}/core/avplayer/utils/StatisticsView.cpp
+                  ${CMAKE_SOURCE_DIR}/core/avplayer/utils/ScreenSaver.cpp
+                  ${CMAKE_SOURCE_DIR}/core/avplayer/utils/qoptions.cpp
+                  ${CMAKE_SOURCE_DIR}/core/avplayer/utils/common.cpp
+                  ${CMAKE_SOURCE_DIR}/core/avplayer/config/VideoEQConfigPage.cpp
+                  ${CMAKE_SOURCE_DIR}/core/avplayer/config/PropertyEditor.cpp
+                  ${CMAKE_SOURCE_DIR}/core/avplayer/config/DecoderConfigPage.cpp
+                  ${CMAKE_SOURCE_DIR}/core/avplayer/config/AVFormatConfigPage.cpp
+                  ${CMAKE_SOURCE_DIR}/core/avplayer/config/ShaderPage.cpp
+                  ${CMAKE_SOURCE_DIR}/core/avplayer/config/MiscPage.cpp
+                  ${CMAKE_SOURCE_DIR}/core/avplayer/config/ConfigManager.cpp
+                  ${CMAKE_SOURCE_DIR}/core/avplayer/config/ConfigDialog.cpp
+                  ${CMAKE_SOURCE_DIR}/core/avplayer/config/ConfigPageBase.cpp
+                  ${CMAKE_SOURCE_DIR}/core/avplayer/config/CaptureConfigPage.cpp
+                  ${CMAKE_SOURCE_DIR}/core/avplayer/config/AVFilterConfigPage.cpp
+                  ${CMAKE_SOURCE_DIR}/core/avplayer/filters/OSDFilter.cpp
+                  ${CMAKE_SOURCE_DIR}/core/avplayer/filters/OSD.cpp
+                  ${CMAKE_SOURCE_DIR}/core/avplayer/filters/AVFilterSubtitle.cpp
+                  ${CMAKE_SOURCE_DIR}/core/avplayer/playlist/PlayListModel.cpp
+                  ${CMAKE_SOURCE_DIR}/core/avplayer/playlist/PlayListItem.cpp
+                  ${CMAKE_SOURCE_DIR}/core/avplayer/playlist/PlayListDelegate.cpp
+                  ${CMAKE_SOURCE_DIR}/core/avplayer/playlist/PlayList.cpp
+                  ${CMAKE_SOURCE_DIR}/core/avplayer/main.cpp
+                  ${CMAKE_SOURCE_DIR}/core/avplayer/MainWindow.cpp
 )
 
 if(Qt6_FOUND)
 
-    qt6_add_resources(avplayer_SRCS ${CMAKE_SOURCE_DIR}/core/libs/video/qtav/examples/player/theme/theme.qrc)
+    qt6_add_resources(avplayer_SRCS ${CMAKE_SOURCE_DIR}/core/avplayer/theme/theme.qrc)
 
 else()
 
-    qt5_add_resources(avplayer_SRCS ${CMAKE_SOURCE_DIR}/core/libs/video/qtav/examples/player/theme/theme.qrc)
+    qt5_add_resources(avplayer_SRCS ${CMAKE_SOURCE_DIR}/core/avplayer/theme/theme.qrc)
 
 endif()
 
@@ -81,7 +81,7 @@ endif()
 
 # Set the application icon on the application
 
-file(GLOB ICONS_SRCS "${CMAKE_SOURCE_DIR}/core/libs/video/qtav/examples/player/theme/QtAV.svg")
+file(GLOB ICONS_SRCS "${CMAKE_SOURCE_DIR}/core/data/icons/apps/*-apps-avplayer.png")
 ecm_add_app_icon(avplayer_SRCS ICONS ${ICONS_SRCS})
 
 if (WIN32)
