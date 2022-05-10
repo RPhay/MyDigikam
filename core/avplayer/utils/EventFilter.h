@@ -78,6 +78,8 @@ private:
     QMenu* menu;
 };
 
+// ---------------------------------------------------------------------------
+
 class WindowEventFilter : public QObject
 {
     Q_OBJECT

@@ -25,6 +25,7 @@
 
 #include <QApplication>
 #include <QDir>
+#include <QIcon>
 #include <QMessageBox>
 
 // KDE includes
@@ -140,7 +141,7 @@ int main(int argc, char* argv[])
 
     // Force to use application icon for non plasma desktop as Unity for ex.
 
-    QApplication::setWindowIcon(QIcon::fromTheme(QLatin1String("avplayer"), app.windowIcon()));
+    QApplication::setWindowIcon(QIcon::fromTheme(QLatin1String("avplayer"), a.windowIcon()));
 
     a.setApplicationDisplayName(QString::fromLatin1("AVPlayer"));
     QDir::setCurrent(qApp->applicationDirPath());

@@ -73,6 +73,6 @@ QDataStream& operator<< (QDataStream& s, const PlayListItem& p);
 
 } // namespace AVPlayer
 
-Q_DECLARE_METATYPE(QtAVPlayer::PlayListItem);
+Q_DECLARE_METATYPE(AVPlayer::PlayListItem);
 
 #endif // QTAV_PLAYER_PLAYLISTITEM_H

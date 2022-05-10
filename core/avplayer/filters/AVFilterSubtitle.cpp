@@ -37,7 +37,7 @@
 namespace AVPlayer
 {
 
-AVFilterSubtitle::AVFilterSubtitle(QObject* parent)
+AVFilterSubtitle::AVFilterSubtitle(QObject* const parent)
     : LibAVFilterVideo(parent),
       m_auto(true),
       m_player(0)
@@ -48,7 +48,7 @@ AVFilterSubtitle::AVFilterSubtitle(QObject* parent)
 */
 }
 
-void AVFilterSubtitle::setPlayer(AVPlayer *player)
+void AVFilterSubtitle::setPlayer(QtAV::AVPlayer* const player)
 {
     if (m_player == player)
         return;
@@ -78,7 +78,7 @@ void AVFilterSubtitle::setPlayer(AVPlayer *player)
     }
 }
 
-bool AVFilterSubtitle::setFile(const QString &filePath)
+bool AVFilterSubtitle::setFile(const QString& filePath)
 {
     setOptions(QString());
 
@@ -147,7 +147,7 @@ QString AVFilterSubtitle::file() const
     return m_file;
 }
 
-QString AVFilterSubtitle::setContent(const QString &doc)
+QString AVFilterSubtitle::setContent(const QString& doc)
 {
     QString name = QFileInfo(m_file).fileName();
 
@@ -190,7 +190,7 @@ bool AVFilterSubtitle::autoLoad() const
     return m_auto;
 }
 
-void AVFilterSubtitle::findAndSetFile(const QString &path)
+void AVFilterSubtitle::findAndSetFile(const QString& path)
 {
     QFileInfo fi(path);
     QDir dir(fi.dir());

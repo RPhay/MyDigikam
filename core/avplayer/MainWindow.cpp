@@ -202,7 +202,7 @@ MainWindow::~MainWindow()
 
 void MainWindow::initPlayer()
 {
-    mpPlayer                = new AVPlayer(this);
+    mpPlayer                = new QtAV::AVPlayer(this);
     mIsReady                = true;
     VideoRenderer* const vo = VideoRenderer::create((VideoRendererId)property("rendererId").toInt());
 
@@ -1801,7 +1801,7 @@ void MainWindow::handleError(const AVError& e)
 void MainWindow::onMediaStatusChanged()
 {
     QString status;
-    AVPlayer* const player = reinterpret_cast<AVPlayer*>(sender());
+    QtAV::AVPlayer* const player = reinterpret_cast<QtAV::AVPlayer*>(sender());
 
     if (!player)
     {

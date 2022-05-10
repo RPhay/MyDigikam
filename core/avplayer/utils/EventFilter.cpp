@@ -59,7 +59,7 @@ namespace AVPlayer
 
 // TODO: watch main window
 
-EventFilter::EventFilter(AVPlayer* const player)
+EventFilter::EventFilter(QtAV::AVPlayer* const player)
     : QObject(player),
       menu(nullptr)
 {
@@ -81,7 +81,7 @@ void EventFilter::openLocalFile()
     if (file.isEmpty())
         return;
 
-    AVPlayer* const player = static_cast<AVPlayer*>(parent());
+    QtAV::AVPlayer* const player = static_cast<QtAV::AVPlayer*>(parent());
     player->play(file);
 }
 
@@ -92,7 +92,7 @@ void EventFilter::openUrl()
     if (url.isEmpty())
         return;
 
-    AVPlayer* const player = static_cast<AVPlayer*>(parent());
+    QtAV::AVPlayer* const player = static_cast<QtAV::AVPlayer*>(parent());
     player->play(url);
 }
 
@@ -136,7 +136,7 @@ bool EventFilter::eventFilter(QObject* watched, QEvent* event)
 {
     Q_UNUSED(watched);
 
-    AVPlayer* const player = static_cast<AVPlayer*>(parent());
+    QtAV::AVPlayer* const player = static_cast<QtAV::AVPlayer*>(parent());
 
     if (!player || !player->renderer() || !player->renderer()->widget())
         return false;
@@ -532,6 +532,8 @@ void EventFilter::showMenu(const QPoint& p)
 
     menu->exec(p);
 }
+
+// -----------------------------------------------------------------------------
 
 WindowEventFilter::WindowEventFilter(QWidget* const window)
     : QObject(window),

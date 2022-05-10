@@ -21,8 +21,8 @@
  *
  * ============================================================ */
 
-#ifndef QTAV_PLAYER_AVFilterSubtitle_H
-#define QTAV_PLAYER_AVFilterSubtitle_H
+#ifndef QTAV_PLAYER_AVFILTER_SUBTITLE_H
+#define QTAV_PLAYER_AVFILTER_SUBTITLE_H
 
 // Qt includes
 
@@ -47,9 +47,9 @@ class AVFilterSubtitle : public LibAVFilterVideo
 
 public:
 
-    explicit AVFilterSubtitle(QObject* parent = nullptr);
+    explicit AVFilterSubtitle(QObject* const parent = nullptr);
 
-    void setPlayer(AVPlayer* player);
+    void setPlayer(QtAV::AVPlayer* const player);
     QString setContent(const QString& doc); // return utf8 subtitle path
     bool setFile(const QString& filePath);
     QString file() const;
@@ -77,7 +77,7 @@ private Q_SLOTS:
 private:
 
     bool                   m_auto;
-    AVPlayer*              m_player;
+    QtAV::AVPlayer*        m_player;
     QString                m_file;
 
     // convert to utf8 to ensure ffmpeg can open it.
@@ -87,4 +87,4 @@ private:
 
 } // namespace AVPlayer
 
-#endif // QTAV_PLAYER_AVFilterSubtitle_H
+#endif // QTAV_PLAYER_AVFILTER_SUBTITLE_H
