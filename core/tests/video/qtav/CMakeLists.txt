@@ -53,15 +53,15 @@ set(qtavplayer_SRCS ${CMAKE_SOURCE_DIR}/core/libs/video/qtav/examples/player/uti
                     ${CMAKE_SOURCE_DIR}/core/libs/video/qtav/examples/player/utils/StatisticsView.cpp
                     ${CMAKE_SOURCE_DIR}/core/libs/video/qtav/examples/player/utils/ScreenSaver.cpp
                     ${CMAKE_SOURCE_DIR}/core/libs/video/qtav/examples/player/utils/qoptions.cpp
-                    ${CMAKE_SOURCE_DIR}/core/libs/video/qtav/examples/player/utils/Config.cpp
                     ${CMAKE_SOURCE_DIR}/core/libs/video/qtav/examples/player/utils/common.cpp
                     ${CMAKE_SOURCE_DIR}/core/libs/video/qtav/examples/player/config/VideoEQConfigPage.cpp
                     ${CMAKE_SOURCE_DIR}/core/libs/video/qtav/examples/player/config/PropertyEditor.cpp
                     ${CMAKE_SOURCE_DIR}/core/libs/video/qtav/examples/player/config/DecoderConfigPage.cpp
-                    ${CMAKE_SOURCE_DIR}/core/libs/video/qtav/examples/player/config/ConfigDialog.cpp
                     ${CMAKE_SOURCE_DIR}/core/libs/video/qtav/examples/player/config/AVFormatConfigPage.cpp
                     ${CMAKE_SOURCE_DIR}/core/libs/video/qtav/examples/player/config/ShaderPage.cpp
                     ${CMAKE_SOURCE_DIR}/core/libs/video/qtav/examples/player/config/MiscPage.cpp
+                    ${CMAKE_SOURCE_DIR}/core/libs/video/qtav/examples/player/config/ConfigManager.cpp
+                    ${CMAKE_SOURCE_DIR}/core/libs/video/qtav/examples/player/config/ConfigDialog.cpp
                     ${CMAKE_SOURCE_DIR}/core/libs/video/qtav/examples/player/config/ConfigPageBase.cpp
                     ${CMAKE_SOURCE_DIR}/core/libs/video/qtav/examples/player/config/CaptureConfigPage.cpp
                     ${CMAKE_SOURCE_DIR}/core/libs/video/qtav/examples/player/config/AVFilterConfigPage.cpp

@@ -30,7 +30,7 @@
 
 // Local includes
 
-#include "Config.h"
+#include "ConfigManager.h"
 
 namespace QtAVPlayer
 {
@@ -80,16 +80,16 @@ QString ShaderPage::name() const
 
 void ShaderPage::applyToUi()
 {
-    m_enable->setChecked(Config::instance().userShaderEnabled());
-    m_fbo->setChecked(Config::instance().intermediateFBO());
-    m_header->setText(Config::instance().fragHeader());
-    m_sample->setText(Config::instance().fragSample());
-    m_pp->setText(Config::instance().fragPostProcess());
+    m_enable->setChecked(ConfigManager::instance().userShaderEnabled());
+    m_fbo->setChecked(ConfigManager::instance().intermediateFBO());
+    m_header->setText(ConfigManager::instance().fragHeader());
+    m_sample->setText(ConfigManager::instance().fragSample());
+    m_pp->setText(ConfigManager::instance().fragPostProcess());
 }
 
 void ShaderPage::applyFromUi()
 {
-    Config::instance()
+    ConfigManager::instance()
             .setUserShaderEnabled(m_enable->isChecked())
             .setIntermediateFBO(m_fbo->isChecked())
             .setFragHeader(m_header->toPlainText())

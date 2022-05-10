@@ -116,7 +116,6 @@ QOptions get_common_options()
             ("decoder",                 QLatin1String("FFmpeg"), QLatin1String("use a given decoder"))
             ("decoders,-vd",            QLatin1String("cuda;vaapi;vda;dxva;cedarv;ffmpeg"), QLatin1String("decoder name list in priority order separated by ';'"))
             ("file,f",       QString(), QLatin1String("file or url to play"))
-            ("language",     QString(), QLatin1String("language on UI. can be 'system' and locale name e.g. zh_CN"))
     ;
 
     return ops;
@@ -127,7 +126,7 @@ void do_common_options_before_qapp(const QOptions& options)
 
 #ifdef Q_OS_LINUX
 
-    QSettings cfg(Config::defaultConfigFile(), QSettings::IniFormat);
+    QSettings cfg(ConfigManager::defaultConfigFile(), QSettings::IniFormat);
     const bool set_egl = cfg.value(QLatin1String("opengl/egl")).toBool();
 
     // https://bugreports.qt.io/browse/QTBUG-49529
@@ -184,17 +183,17 @@ void set_opengl_backend(const QString& glopt, const QString& appname)
 
     if (gl.isEmpty())
     {
-        switch (Config::instance().openGLType())
+        switch (ConfigManager::instance().openGLType())
         {
-            case Config::Desktop:
+            case ConfigManager::Desktop:
                 gl = QLatin1String("desktop");
                 break;
 
-            case Config::OpenGLES:
+            case ConfigManager::OpenGLES:
                 gl = QLatin1String("es");
                 break;
 
-            case Config::Software:
+            case ConfigManager::Software:
                 gl = QLatin1String("software");
                 break;
 
@@ -208,7 +207,7 @@ void set_opengl_backend(const QString& glopt, const QString& appname)
         (gl == QLatin1String("opengles")))
     {
         gl = QLatin1String("es_");
-        gl.append(Config::instance().getANGLEPlatform().toLower());
+        gl.append(ConfigManager::instance().getANGLEPlatform().toLower());
     }
 
 #if QT_VERSION >= QT_VERSION_CHECK(5, 4, 0)

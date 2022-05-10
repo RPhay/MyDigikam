@@ -37,7 +37,7 @@
 
 // Local includes
 
-#include "Config.h"
+#include "ConfigManager.h"
 
 namespace QtAVPlayer
 {
@@ -80,7 +80,7 @@ QString AVFormatConfigPage::name() const
 
 void AVFormatConfigPage::applyFromUi()
 {
-    Config::instance()
+    ConfigManager::instance()
             .setAvformatOptionsEnabled(m_on->isChecked())
             .probeSize(m_probeSize->value())
             .analyzeDuration(m_analyzeDuration->value())
@@ -90,11 +90,11 @@ void AVFormatConfigPage::applyFromUi()
 
 void AVFormatConfigPage::applyToUi()
 {
-    m_on->setChecked(Config::instance().avformatOptionsEnabled());
-    m_direct->setChecked(Config::instance().reduceBuffering());
-    m_probeSize->setValue(Config::instance().probeSize());
-    m_analyzeDuration->setValue(Config::instance().analyzeDuration());
-    m_extra->setText(Config::instance().avformatExtra());
+    m_on->setChecked(ConfigManager::instance().avformatOptionsEnabled());
+    m_direct->setChecked(ConfigManager::instance().reduceBuffering());
+    m_probeSize->setValue(ConfigManager::instance().probeSize());
+    m_analyzeDuration->setValue(ConfigManager::instance().analyzeDuration());
+    m_extra->setText(ConfigManager::instance().avformatExtra());
 }
 
 } // namespace QtAVPlayer

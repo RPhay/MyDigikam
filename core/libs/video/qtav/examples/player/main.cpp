@@ -82,7 +82,7 @@ int main(int argc, char* argv[])
 {
     qCDebug(DIGIKAM_QTAVPLAYER_LOG) << aboutQtAV_PlainText();
 
-    Config::setName(QString::fromLatin1("Player"));
+    ConfigManager::setName(QString::fromLatin1("Player"));
     QOptions options = get_common_options();
     options.add(QString::fromLatin1("player options"))
             ("ffmpeg-log",  QString(), QString::fromLatin1("ffmpeg log level. can be: quiet, panic, fatal, error, warn, info, verbose, debug. this can override env 'QTAV_FFMPEG_LOG'"))

@@ -226,28 +226,28 @@ void MainWindow::initPlayer()
     onAVFilterVideoConfigChanged();
     onAVFilterAudioConfigChanged();
 
-    connect(&Config::instance(), SIGNAL(forceFrameRateChanged()),
+    connect(&ConfigManager::instance(), SIGNAL(forceFrameRateChanged()),
             this, SLOT(setFrameRate()));
 
-    connect(&Config::instance(), SIGNAL(captureDirChanged(QString)),
+    connect(&ConfigManager::instance(), SIGNAL(captureDirChanged(QString)),
             this, SLOT(onCaptureConfigChanged()));
 
-    connect(&Config::instance(), SIGNAL(captureFormatChanged(QString)),
+    connect(&ConfigManager::instance(), SIGNAL(captureFormatChanged(QString)),
             this, SLOT(onCaptureConfigChanged()));
 
-    connect(&Config::instance(), SIGNAL(captureQualityChanged(int)),
+    connect(&ConfigManager::instance(), SIGNAL(captureQualityChanged(int)),
             this, SLOT(onCaptureConfigChanged()));
 
-    connect(&Config::instance(), SIGNAL(avfilterVideoChanged()),
+    connect(&ConfigManager::instance(), SIGNAL(avfilterVideoChanged()),
             this, SLOT(onAVFilterVideoConfigChanged()));
 
-    connect(&Config::instance(), SIGNAL(avfilterAudioChanged()),
+    connect(&ConfigManager::instance(), SIGNAL(avfilterAudioChanged()),
             this, SLOT(onAVFilterAudioConfigChanged()));
 
-    connect(&Config::instance(), SIGNAL(bufferValueChanged()),
+    connect(&ConfigManager::instance(), SIGNAL(bufferValueChanged()),
             this, SLOT(onBufferValueChanged()));
 
-    connect(&Config::instance(), SIGNAL(abortOnTimeoutChanged()),
+    connect(&ConfigManager::instance(), SIGNAL(abortOnTimeoutChanged()),
             this, SLOT(onAbortOnTimeoutChanged()));
 
     connect(mpStopBtn, SIGNAL(clicked()),
@@ -411,7 +411,7 @@ void MainWindow::setupUi()
     subMenu                         = new QMenu(tr("Play list"));
     mpMenu->addMenu(subMenu);
     mpPlayList                      = new PlayList(this);
-    mpPlayList->setSaveFile(Config::instance().defaultDir() + QString::fromLatin1("/playlist.qds"));
+    mpPlayList->setSaveFile(ConfigManager::instance().defaultDir() + QString::fromLatin1("/playlist.qds"));
     mpPlayList->load();
 
     connect(mpPlayList, SIGNAL(aboutToPlay(QString)),
@@ -425,7 +425,7 @@ void MainWindow::setupUi()
     mpMenu->addMenu(subMenu);
     mpHistory                       = new PlayList(this);
     mpHistory->setMaxRows(20);
-    mpHistory->setSaveFile(Config::instance().defaultDir() + QString::fromLatin1("/history.qds"));
+    mpHistory->setSaveFile(ConfigManager::instance().defaultDir() + QString::fromLatin1("/history.qds"));
     mpHistory->load();
 
     connect(mpHistory, SIGNAL(aboutToPlay(QString)),
@@ -746,19 +746,19 @@ void MainWindow::setupUi()
     connect(mpTimeSlider, SIGNAL(onHover(int,int)),
             this, SLOT(onTimeSliderHover(int,int)));
 
-    connect(&Config::instance(), SIGNAL(userShaderEnabledChanged()),
+    connect(&ConfigManager::instance(), SIGNAL(userShaderEnabledChanged()),
             this, SLOT(onUserShaderChanged()));
 
-    connect(&Config::instance(), SIGNAL(intermediateFBOChanged()),
+    connect(&ConfigManager::instance(), SIGNAL(intermediateFBOChanged()),
             this, SLOT(onUserShaderChanged()));
 
-    connect(&Config::instance(), SIGNAL(fragHeaderChanged()),
+    connect(&ConfigManager::instance(), SIGNAL(fragHeaderChanged()),
             this, SLOT(onUserShaderChanged()));
 
-    connect(&Config::instance(), SIGNAL(fragSampleChanged()),
+    connect(&ConfigManager::instance(), SIGNAL(fragSampleChanged()),
             this, SLOT(onUserShaderChanged()));
 
-    connect(&Config::instance(), SIGNAL(fragPostProcessChanged()),
+    connect(&ConfigManager::instance(), SIGNAL(fragPostProcessChanged()),
             this, SLOT(onUserShaderChanged()));
 
     QTimer::singleShot(0, this, SLOT(initPlayer()));
@@ -1035,7 +1035,7 @@ void MainWindow::play(const QString& name)
 
     setWindowTitle(mTitle);
     mpPlayer->stop();       // if no stop, in setPriority decoder will reopen
-    mpPlayer->setFrameRate(Config::instance().forceFrameRate());
+    mpPlayer->setFrameRate(ConfigManager::instance().forceFrameRate());
 
     if (!mAudioBackends.isEmpty())
         mpPlayer->audio()->setBackends(mAudioBackends);
@@ -1043,19 +1043,19 @@ void MainWindow::play(const QString& name)
     if (!mpRepeatEnableAction->isChecked())
         mRepeateMax = 0;
 
-    mpPlayer->setInterruptOnTimeout(Config::instance().abortOnTimeout());
-    mpPlayer->setInterruptTimeout(Config::instance().timeout()*1000.0);
+    mpPlayer->setInterruptOnTimeout(ConfigManager::instance().abortOnTimeout());
+    mpPlayer->setInterruptTimeout(ConfigManager::instance().timeout()*1000.0);
     mpPlayer->setBufferMode(QtAV::BufferPackets);
-    mpPlayer->setBufferValue(Config::instance().bufferValue());
+    mpPlayer->setBufferValue(ConfigManager::instance().bufferValue());
     mpPlayer->setRepeat(mRepeateMax);
-    mpPlayer->setPriority(idsFromNames(Config::instance().decoderPriorityNames()));
+    mpPlayer->setPriority(idsFromNames(ConfigManager::instance().decoderPriorityNames()));
     mpPlayer->setOptionsForAudioCodec(mpDecoderConfigPage->audioDecoderOptions());
     mpPlayer->setOptionsForVideoCodec(mpDecoderConfigPage->videoDecoderOptions());
 
-    if (Config::instance().avformatOptionsEnabled())
-        mpPlayer->setOptionsForFormat(Config::instance().avformatOptions());
+    if (ConfigManager::instance().avformatOptionsEnabled())
+        mpPlayer->setOptionsForFormat(ConfigManager::instance().avformatOptions());
 
-    qCDebug(DIGIKAM_QTAVPLAYER_LOG) << Config::instance().avformatOptions();
+    qCDebug(DIGIKAM_QTAVPLAYER_LOG) << ConfigManager::instance().avformatOptions();
 
     PlayListItem item;
     item.setUrl(mFile);
@@ -1091,17 +1091,17 @@ void MainWindow::setVideoDecoderNames(const QStringList& vd)
         }
     }
 
-    Config::instance().setDecoderPriorityNames(vidp);
+    ConfigManager::instance().setDecoderPriorityNames(vidp);
 }
 
 void MainWindow::openFile()
 {
-    QString file = QFileDialog::getOpenFileName(0, tr("Open a media file"), Config::instance().lastFile());
+    QString file = QFileDialog::getOpenFileName(0, tr("Open a media file"), ConfigManager::instance().lastFile());
 
     if (file.isEmpty())
         return;
 
-    Config::instance().setLastFile(file);
+    ConfigManager::instance().setLastFile(file);
     play(file);
 }
 
@@ -1200,19 +1200,19 @@ void MainWindow::onStartPlay()
 
 void MainWindow::onStopPlay()
 {
-    mpPlayer->setPriority(idsFromNames(Config::instance().decoderPriorityNames()));
+    mpPlayer->setPriority(idsFromNames(ConfigManager::instance().decoderPriorityNames()));
 
     if ((mpPlayer->currentRepeat() >= 0) && (mpPlayer->currentRepeat() < mpPlayer->repeat()))
         return;
 
     // use shortcut to replay in EventFilter, the options will not be set, so set here
 
-    mpPlayer->setFrameRate(Config::instance().forceFrameRate());
+    mpPlayer->setFrameRate(ConfigManager::instance().forceFrameRate());
     mpPlayer->setOptionsForAudioCodec(mpDecoderConfigPage->audioDecoderOptions());
     mpPlayer->setOptionsForVideoCodec(mpDecoderConfigPage->videoDecoderOptions());
 
-    if (Config::instance().avformatOptionsEnabled())
-        mpPlayer->setOptionsForFormat(Config::instance().avformatOptions());
+    if (ConfigManager::instance().avformatOptionsEnabled())
+        mpPlayer->setOptionsForFormat(ConfigManager::instance().avformatOptions());
 
     mpPlayPauseBtn->setIcon(QIcon(QString::fromLatin1(":/theme/dark/play.svg")));
     mpTimeSlider->setValue(0);
@@ -1247,7 +1247,7 @@ void MainWindow::setFrameRate()
     if (!mpPlayer)
         return;
 
-    mpPlayer->setFrameRate(Config::instance().forceFrameRate());
+    mpPlayer->setFrameRate(ConfigManager::instance().forceFrameRate());
 }
 
 void MainWindow::seek(int value)
@@ -1255,13 +1255,13 @@ void MainWindow::seek(int value)
     mpPlayer->setSeekType(AccurateSeek);
     mpPlayer->seek((qint64)value);
 
-    if (!m_preview || !Config::instance().previewEnabled())
+    if (!m_preview || !ConfigManager::instance().previewEnabled())
         return;
 
     m_preview->setTimestamp(value);
     m_preview->preview();
     m_preview->setWindowFlags(m_preview->windowFlags() |Qt::FramelessWindowHint|Qt::WindowStaysOnTopHint);
-    m_preview->resize(Config::instance().previewWidth(), Config::instance().previewHeight());
+    m_preview->resize(ConfigManager::instance().previewWidth(), ConfigManager::instance().previewHeight());
     m_preview->show();
 }
 
@@ -1752,7 +1752,7 @@ void MainWindow::onTimeSliderHover(int pos, int value)
     QPoint gpos = mapToGlobal(mpTimeSlider->pos() + QPoint(pos, 0));
     QToolTip::showText(gpos, QTime(0, 0, 0).addMSecs(value).toString(QString::fromLatin1("HH:mm:ss")));
 
-    if (!Config::instance().previewEnabled())
+    if (!ConfigManager::instance().previewEnabled())
         return;
 
     if (!m_preview)
@@ -1761,8 +1761,8 @@ void MainWindow::onTimeSliderHover(int pos, int value)
     m_preview->setFile(mpPlayer->file());
     m_preview->setTimestamp(value);
     m_preview->preview();
-    const int w = Config::instance().previewWidth();
-    const int h = Config::instance().previewHeight();
+    const int w = ConfigManager::instance().previewWidth();
+    const int h = ConfigManager::instance().previewHeight();
     m_preview->setWindowFlags(Qt::Tool | Qt::FramelessWindowHint | Qt::WindowStaysOnTopHint);
     m_preview->resize(w, h);
     m_preview->move(gpos - QPoint(w / 2, h));
@@ -1955,17 +1955,17 @@ void MainWindow::onSaturationChanged(int s)
 
 void MainWindow::onCaptureConfigChanged()
 {
-    mpPlayer->videoCapture()->setCaptureDir(Config::instance().captureDir());
-    mpPlayer->videoCapture()->setQuality(Config::instance().captureQuality());
+    mpPlayer->videoCapture()->setCaptureDir(ConfigManager::instance().captureDir());
+    mpPlayer->videoCapture()->setQuality(ConfigManager::instance().captureQuality());
 
-    if (Config::instance().captureFormat().toLower() == QLatin1String("original"))
+    if (ConfigManager::instance().captureFormat().toLower() == QLatin1String("original"))
     {
         mpPlayer->videoCapture()->setOriginalFormat(true);
     }
     else
     {
         mpPlayer->videoCapture()->setOriginalFormat(false);
-        mpPlayer->videoCapture()->setSaveFormat(Config::instance().captureFormat());
+        mpPlayer->videoCapture()->setSaveFormat(ConfigManager::instance().captureFormat());
     }
 
     mpCaptureBtn->setToolTip(QString::fromLatin1("%1\n%2: %3\n%4: %5")
@@ -1973,7 +1973,7 @@ void MainWindow::onCaptureConfigChanged()
                              .arg(tr("Save to"))
                              .arg(mpPlayer->videoCapture()->captureDir())
                              .arg(tr("Format"))
-                             .arg(Config::instance().captureFormat()));
+                             .arg(ConfigManager::instance().captureFormat()));
 }
 
 void MainWindow::onAVFilterVideoConfigChanged()
@@ -1986,9 +1986,9 @@ void MainWindow::onAVFilterVideoConfigChanged()
     }
 
     mpVideoFilter = new LibAVFilterVideo(this);
-    mpVideoFilter->setEnabled(Config::instance().avfilterVideoEnable());
+    mpVideoFilter->setEnabled(ConfigManager::instance().avfilterVideoEnable());
     mpPlayer->installFilter(mpVideoFilter);
-    mpVideoFilter->setOptions(Config::instance().avfilterVideoOptions());
+    mpVideoFilter->setOptions(ConfigManager::instance().avfilterVideoOptions());
 }
 
 void MainWindow::onAVFilterAudioConfigChanged()
@@ -2001,9 +2001,9 @@ void MainWindow::onAVFilterAudioConfigChanged()
     }
 
     mpAudioFilter = new LibAVFilterAudio(this);
-    mpAudioFilter->setEnabled(Config::instance().avfilterAudioEnable());
+    mpAudioFilter->setEnabled(ConfigManager::instance().avfilterAudioEnable());
     mpAudioFilter->installTo(mpPlayer);
-    mpAudioFilter->setOptions(Config::instance().avfilterAudioOptions());
+    mpAudioFilter->setOptions(ConfigManager::instance().avfilterAudioOptions());
 }
 
 void MainWindow::onBufferValueChanged()
@@ -2011,7 +2011,7 @@ void MainWindow::onBufferValueChanged()
     if (!mpPlayer)
         return;
 
-    mpPlayer->setBufferValue(Config::instance().bufferValue());
+    mpPlayer->setBufferValue(ConfigManager::instance().bufferValue());
 }
 
 void MainWindow::onAbortOnTimeoutChanged()
@@ -2019,7 +2019,7 @@ void MainWindow::onAbortOnTimeoutChanged()
     if (!mpPlayer)
         return;
 
-    mpPlayer->setInterruptOnTimeout(Config::instance().abortOnTimeout());
+    mpPlayer->setInterruptOnTimeout(ConfigManager::instance().abortOnTimeout());
 }
 
 void MainWindow::onUserShaderChanged()
@@ -2029,9 +2029,9 @@ void MainWindow::onUserShaderChanged()
 
 #ifndef QT_NO_OPENGL
 
-    if (Config::instance().userShaderEnabled())
+    if (ConfigManager::instance().userShaderEnabled())
     {
-        if (Config::instance().intermediateFBO())
+        if (ConfigManager::instance().intermediateFBO())
         {
             if (!m_glsl)
                 m_glsl = new GLSLFilter(this);
@@ -2047,9 +2047,9 @@ void MainWindow::onUserShaderChanged()
         if (!m_shader)
             m_shader = new DynamicShaderObject(this);
 
-        m_shader->setHeader(Config::instance().fragHeader());
-        m_shader->setSample(Config::instance().fragSample());
-        m_shader->setPostProcess(Config::instance().fragPostProcess());
+        m_shader->setHeader(ConfigManager::instance().fragHeader());
+        m_shader->setSample(ConfigManager::instance().fragSample());
+        m_shader->setPostProcess(ConfigManager::instance().fragPostProcess());
         mpRenderer->opengl()->setUserShader(m_shader);
     }
     else

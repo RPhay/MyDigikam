@@ -37,7 +37,7 @@
 #include "AVFilterConfigPage.h"
 #include "MiscPage.h"
 #include "ShaderPage.h"
-#include "Config.h"
+#include "ConfigManager.h"
 #include "digikam_debug.h"
 
 namespace QtAVPlayer
@@ -122,7 +122,7 @@ void ConfigDialog::onButtonClicked(QAbstractButton *btn)
 
 void ConfigDialog::onReset()
 {
-    Config::instance().reset();
+    ConfigManager::instance().reset();
 
     // TODO: check change
 
@@ -141,7 +141,7 @@ void ConfigDialog::onApply()
         page->apply();
     }
 
-    Config::instance().save();
+    ConfigManager::instance().save();
 }
 
 void ConfigDialog::onCancel()

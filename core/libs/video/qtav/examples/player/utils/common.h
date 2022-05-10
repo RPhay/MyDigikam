@@ -33,7 +33,7 @@
 // Local includes
 
 #include "qoptions.h"
-#include "Config.h"
+#include "ConfigManager.h"
 #include "ScreenSaver.h"
 
 namespace QtAVPlayer

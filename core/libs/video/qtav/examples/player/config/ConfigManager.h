@@ -21,8 +21,8 @@
  *
  * ============================================================ */
 
-#ifndef QTAV_PLAYER_CONFIG_H
-#define QTAV_PLAYER_CONFIG_H
+#ifndef QTAV_PLAYER_CONFIGMANAGER_H
+#define QTAV_PLAYER_CONFIGMANAGER_H
 
 // Qt includes
 
@@ -38,12 +38,12 @@ namespace QtAVPlayer
 // TODO: use hash to simplify api
 
 /**
- * MVC model. Q_SIGNALS from Config notify ui update. Q_SIGNALS from ui does not change Config unless ui changes applyed by XXXPage.apply()
- * Q_SIGNALS from ui will emit Config::xxxChanged() with the value in ui. ui cancel the change also emit it with the value stores in Config.
- * apply() will change the value in Config
+ * MVC model. Q_SIGNALS from ConfigManager notify ui update. Q_SIGNALS from ui does not change ConfigManager unless ui changes applyed by XXXPage.apply()
+ * Q_SIGNALS from ui will emit ConfigManager::xxxChanged() with the value in ui. ui cancel the change also emit it with the value stores in ConfigManager.
+ * apply() will change the value in ConfigManager
  */
 
-class Config : public QObject
+class ConfigManager : public QObject
 {
     Q_OBJECT
     Q_PROPERTY(QVariantList history READ history NOTIFY historyChanged)
@@ -83,7 +83,6 @@ class Config : public QObject
     Q_PROPERTY(qreal timeout READ timeout WRITE setTimeout NOTIFY timeoutChanged)
     Q_PROPERTY(int bufferValue READ bufferValue WRITE setBufferValue NOTIFY bufferValueChanged)
     Q_ENUMS(OpenGLType)
-    Q_PROPERTY(QString language READ language WRITE setLanguage NOTIFY languageChanged)
 
     Q_PROPERTY(bool userShaderEnabled READ userShaderEnabled WRITE setUserShaderEnabled NOTIFY userShaderEnabledChanged)
     Q_PROPERTY(bool intermediateFBO READ intermediateFBO WRITE setIntermediateFBO NOTIFY intermediateFBOChanged)
@@ -105,14 +104,14 @@ public:
 
 public:
 
-    static Config& instance();
+    static ConfigManager& instance();
 
     static void setName(const QString& name); // config file base name
     static QString getName();
 
     /*!
-     * \brief defaultConfigFile
-     * Config file name is $appname.ini. Must call Config::setName() first
+     * \brief defaultConfigManagerFile
+     * ConfigManager file name is $appname.ini. Must call ConfigManager::setName() first
      */
     static QString defaultConfigFile();
     static QString defaultDir();
@@ -124,21 +123,21 @@ public:
     //void loadFromFile(const QString& file);
 
     QString lastFile() const;
-    Config& setLastFile(const QString& value);
+    ConfigManager& setLastFile(const QString& value);
 
     qreal forceFrameRate() const;
-    Config& setForceFrameRate(qreal value);
+    ConfigManager& setForceFrameRate(qreal value);
 
     // in priority order. the same order as displayed in ui
 
     QStringList decoderPriorityNames() const;
-    Config& setDecoderPriorityNames(const QStringList& names);
+    ConfigManager& setDecoderPriorityNames(const QStringList& names);
 
     bool zeroCopy() const;
-    Config& setZeroCopy(bool value);
+    ConfigManager& setZeroCopy(bool value);
 
     QString captureDir() const;
-    Config& setCaptureDir(const QString& dir);
+    ConfigManager& setCaptureDir(const QString& dir);
 
     /*!
      * \brief captureFormat
@@ -147,116 +146,113 @@ public:
      * \return
      */
     QString captureFormat() const;
-    Config& setCaptureFormat(const QString& format);
+    ConfigManager& setCaptureFormat(const QString& format);
 
     // only works for non-yuv capture. value: -1~100, -1: default
 
     int captureQuality() const;
-    Config& setCaptureQuality(int quality);
+    ConfigManager& setCaptureQuality(int quality);
 
     QStringList subtitleEngines() const;
-    Config& setSubtitleEngines(const QStringList& value);
+    ConfigManager& setSubtitleEngines(const QStringList& value);
 
     bool subtitleAutoLoad() const;
-    Config& setSubtitleAutoLoad(bool value);
+    ConfigManager& setSubtitleAutoLoad(bool value);
 
     bool subtitleEnabled() const;
-    Config& setSubtitleEnabled(bool value);
+    ConfigManager& setSubtitleEnabled(bool value);
 
     QFont subtitleFont() const;
-    Config& setSubtitleFont(const QFont& value);
+    ConfigManager& setSubtitleFont(const QFont& value);
 
     bool subtitleOutline() const;
-    Config& setSubtitleOutline(bool value);
+    ConfigManager& setSubtitleOutline(bool value);
 
     QColor subtitleColor() const;
-    Config& setSubtitleColor(const QColor& value);
+    ConfigManager& setSubtitleColor(const QColor& value);
 
     QColor subtitleOutlineColor() const;
-    Config& setSubtitleOutlineColor(const QColor& value);
+    ConfigManager& setSubtitleOutlineColor(const QColor& value);
 
     int subtitleBottomMargin() const;
-    Config& setSubtitleBottomMargin(int value);
+    ConfigManager& setSubtitleBottomMargin(int value);
 
     qreal subtitleDelay() const;
-    Config& setSubtitleDelay(qreal value);
+    ConfigManager& setSubtitleDelay(qreal value);
 
     QString assFontFile() const;
-    Config& setAssFontFile(const QString& value);
+    ConfigManager& setAssFontFile(const QString& value);
 
     QString assFontsDir() const;
-    Config& setAssFontsDir(const QString& value);
+    ConfigManager& setAssFontsDir(const QString& value);
 
     bool isAssFontFileForced() const;
-    Config& setAssFontFileForced(bool value);
+    ConfigManager& setAssFontFileForced(bool value);
 
     bool previewEnabled() const;
-    Config& setPreviewEnabled(bool value);
+    ConfigManager& setPreviewEnabled(bool value);
 
     int previewWidth() const;
-    Config& setPreviewWidth(int value);
+    ConfigManager& setPreviewWidth(int value);
 
     int previewHeight() const;
-    Config& setPreviewHeight(int value);
+    ConfigManager& setPreviewHeight(int value);
 
     QVariantHash avformatOptions() const;
     bool avformatOptionsEnabled() const;
-    Config& setAvformatOptionsEnabled(bool value);
+    ConfigManager& setAvformatOptionsEnabled(bool value);
 
     int analyzeDuration() const;
-    Config& analyzeDuration(int ad);
+    ConfigManager& analyzeDuration(int ad);
 
     unsigned int probeSize() const;
-    Config& probeSize(unsigned int ps);
+    ConfigManager& probeSize(unsigned int ps);
 
     bool reduceBuffering() const;
-    Config& reduceBuffering(bool y);
+    ConfigManager& reduceBuffering(bool y);
 
     QString avformatExtra() const;
-    Config& avformatExtra(const QString& text);
+    ConfigManager& avformatExtra(const QString& text);
 
     QString avfilterVideoOptions() const;
-    Config& avfilterVideoOptions(const QString& options);
+    ConfigManager& avfilterVideoOptions(const QString& options);
 
     bool avfilterVideoEnable() const;
-    Config& avfilterVideoEnable(bool e);
+    ConfigManager& avfilterVideoEnable(bool e);
 
     QString avfilterAudioOptions() const;
-    Config& avfilterAudioOptions(const QString& options);
+    ConfigManager& avfilterAudioOptions(const QString& options);
 
     bool avfilterAudioEnable() const;
-    Config& avfilterAudioEnable(bool e);
+    ConfigManager& avfilterAudioEnable(bool e);
 
     // currently only for xcb
 
     bool isEGL() const;
-    Config& setEGL(bool value);
+    ConfigManager& setEGL(bool value);
 
     // can be "Desktop", "OpenGLES", "Software"
 
     OpenGLType openGLType() const;
-    Config& setOpenGLType(OpenGLType value);
+    ConfigManager& setOpenGLType(OpenGLType value);
 
     QString getANGLEPlatform() const;
-    Config& setANGLEPlatform(const QString &value);
+    ConfigManager& setANGLEPlatform(const QString &value);
 
     // ms >0. default 30000ms
     qreal timeout() const;
-    Config& setTimeout(qreal value);
+    ConfigManager& setTimeout(qreal value);
 
     bool abortOnTimeout() const;
-    Config& setAbortOnTimeout(bool value);
+    ConfigManager& setAbortOnTimeout(bool value);
 
     // <0: auto
 
     int bufferValue() const;
-    Config& setBufferValue(int value);
-
-    QString language() const;
-    Config& setLanguage(const QString& value);
+    ConfigManager& setBufferValue(int value);
 
     Q_INVOKABLE QVariant operator ()(const QString& key) const;
-    Q_INVOKABLE Config& operator ()(const QString& key, const QVariant& value);
+    Q_INVOKABLE ConfigManager& operator ()(const QString& key, const QVariant& value);
 
     /// history will not be clear in reset()
 
@@ -268,19 +264,19 @@ public:
     Q_INVOKABLE void removeHistory(const QString& url);
     Q_INVOKABLE void clearHistory();
 
-    Config& setUserShaderEnabled(bool value);
+    ConfigManager& setUserShaderEnabled(bool value);
     bool userShaderEnabled() const;
 
-    Config& setIntermediateFBO(bool value);
+    ConfigManager& setIntermediateFBO(bool value);
     bool intermediateFBO() const;
 
-    Config& setFragHeader(const QString& text);
+    ConfigManager& setFragHeader(const QString& text);
     QString fragHeader() const;
 
-    Config& setFragSample(const QString& text);
+    ConfigManager& setFragSample(const QString& text);
     QString fragSample() const;
 
-    Config& setFragPostProcess(const QString& text);
+    ConfigManager& setFragPostProcess(const QString& text);
     QString fragPostProcess() const;
 
 public:
@@ -328,13 +324,12 @@ public:
     Q_SIGNAL void bufferValueChanged();
     Q_SIGNAL void timeoutChanged();
     Q_SIGNAL void abortOnTimeoutChanged();
-    Q_SIGNAL void languageChanged();
     Q_SIGNAL void historyChanged();
 
 protected:
 
-    explicit Config(QObject* const parent = nullptr);
-    ~Config();
+    explicit ConfigManager(QObject* const parent = nullptr);
+    ~ConfigManager();
 
 public Q_SLOTS:
 
@@ -348,4 +343,4 @@ private:
 
 } // namespace QtAVPlayer
 
-#endif // QTAV_PLAYER_CONFIG_H
+#endif // QTAV_PLAYER_CONFIGMANAGER_H

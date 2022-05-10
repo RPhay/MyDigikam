@@ -21,7 +21,7 @@
  *
  * ============================================================ */
 
-#include "Config.h"
+#include "ConfigManager.h"
 
 // Qt includes
 
@@ -42,7 +42,7 @@
 namespace QtAVPlayer
 {
 
-class Config::Data
+class ConfigManager::Data
 {
 public:
 
@@ -124,7 +124,6 @@ public:
         // TODO: why crash on mac qt5.4 if call on aboutToQuit()
 
         settings.setValue(QString::fromLatin1("log"),               log);
-        settings.setValue(QString::fromLatin1("language"),          lang);
         settings.setValue(QString::fromLatin1("last_file"),         last_file);
         settings.setValue(QString::fromLatin1("timeout"),           timeout);
         settings.setValue(QString::fromLatin1("abort_timeout"),     abort_timeout);
@@ -188,7 +187,7 @@ public:
 
         settings.beginGroup(QString::fromLatin1("opengl"));
         settings.setValue(QString::fromLatin1("egl"),               egl);
-        const char* glname = Config::staticMetaObject.enumerator(Config::staticMetaObject.indexOfEnumerator("OpenGLType")).valueToKey(opengl);
+        const char* glname = ConfigManager::staticMetaObject.enumerator(ConfigManager::staticMetaObject.indexOfEnumerator("OpenGLType")).valueToKey(opengl);
         settings.setValue(QString::fromLatin1("type"),              QString::fromLatin1(glname));
         settings.setValue(QString::fromLatin1("angle_platform"),    angle_dx);
         settings.endGroup();
@@ -210,91 +209,91 @@ public:
 
 public:
 
-    QString             file;
-    bool                is_loading              = false;
-
-    qreal               force_fps               = 0.0;
-    QStringList         video_decoders;
-    bool                zero_copy               = false;
-
-    QString             last_file;
-
-    QString             capture_dir;
-    QString             capture_fmt;
-    int                 capture_quality         = 0;
-
-    bool                avformat_on             = false;
-    bool                direct                  = false;
-    unsigned int        probe_size              = 0;
-    int                 analyze_duration        = 0;
-    QString             avformat_extra;
-    bool                avfilterVideo_on        = false;
-    QString             avfilterVideo;
-    bool                avfilterAudio_on        = false;
-    QString             avfilterAudio;
-
-    QStringList         subtitle_engines;
-    bool                subtitle_autoload       = false;
-    bool                subtitle_enabled        = false;
-    QFont               subtitle_font;
-    QColor              subtitle_color, subtitle_outline_color;
-    bool                subtitle_outline        = false;
-    int                 subtilte_bottom_margin  = 0;
-    qreal               subtitle_delay          = 0.0;
-
-    bool                ass_force_font_file     = false;
-    QString             ass_font_file;
-    QString             ass_fonts_dir;
-
-    bool                preview_enabled         = false;
-    int                 preview_w               = 0;
-    int                 preview_h               = 0;
-
-    bool                egl                     = false;
-    Config::OpenGLType  opengl                  = OpenGLType::Auto;
-    QString             angle_dx;
-    bool                abort_timeout           = false;
-    qreal               timeout                 = 0.0;
-    int                 buffer_value            = 0;
-    QString             log;
-    QString             lang;
-
-    QVariantList        history;
-
-    bool                user_shader             = false;
-    bool                fbo                     = false;
-    QString             frag_header;
-    QString             frag_sample;
-    QString             frag_pp;
-
-    static QString      name;
+    QString                    file;
+    bool                       is_loading              = false;
+                               
+    qreal                      force_fps               = 0.0;
+    QStringList                video_decoders;
+    bool                       zero_copy               = false;
+                               
+    QString                    last_file;
+                               
+    QString                    capture_dir;
+    QString                    capture_fmt;
+    int                        capture_quality         = 0;
+                               
+    bool                       avformat_on             = false;
+    bool                       direct                  = false;
+    unsigned int               probe_size              = 0;
+    int                        analyze_duration        = 0;
+    QString                    avformat_extra;
+    bool                       avfilterVideo_on        = false;
+    QString                    avfilterVideo;
+    bool                       avfilterAudio_on        = false;
+    QString                    avfilterAudio;
+                               
+    QStringList                subtitle_engines;
+    bool                       subtitle_autoload       = false;
+    bool                       subtitle_enabled        = false;
+    QFont                      subtitle_font;
+    QColor                     subtitle_color, subtitle_outline_color;
+    bool                       subtitle_outline        = false;
+    int                        subtilte_bottom_margin  = 0;
+    qreal                      subtitle_delay          = 0.0;
+                               
+    bool                       ass_force_font_file     = false;
+    QString                    ass_font_file;
+    QString                    ass_fonts_dir;
+                               
+    bool                       preview_enabled         = false;
+    int                        preview_w               = 0;
+    int                        preview_h               = 0;
+                               
+    bool                       egl                     = false;
+    ConfigManager::OpenGLType  opengl                  = OpenGLType::Auto;
+    QString                    angle_dx;
+    bool                       abort_timeout           = false;
+    qreal                      timeout                 = 0.0;
+    int                        buffer_value            = 0;
+    QString                    log;
+    QString                    lang;
+                               
+    QVariantList               history;
+                               
+    bool                       user_shader             = false;
+    bool                       fbo                     = false;
+    QString                    frag_header;
+    QString                    frag_sample;
+    QString                    frag_pp;
+                               
+    static QString             name;
 };
 
-QString Config::Data::name;
+QString ConfigManager::Data::name;
 
-Config& Config::instance()
+ConfigManager& ConfigManager::instance()
 {
-    static Config cfg;
+    static ConfigManager cfg;
 
     return cfg;
 }
 
-void Config::setName(const QString& name)
+void ConfigManager::setName(const QString& name)
 {
-    Config::Data::name = name;
+    ConfigManager::Data::name = name;
 }
 
-QString Config::getName()
+QString ConfigManager::getName()
 {
-    return Config::Data::name;
+    return ConfigManager::Data::name;
 }
 
-QString Config::defaultConfigFile()
+QString ConfigManager::defaultConfigFile()
 {
     return (appDataDir() + QString::fromLatin1("/") + Data::name + QString::fromLatin1(".ini"));
 }
 
-Config::Config(QObject* const parent)
+ConfigManager::ConfigManager(QObject* const parent)
     : QObject(parent),
       mpData(new Data())
 {
@@ -306,17 +305,17 @@ Config::Config(QObject* const parent)
     reload();
 }
 
-Config::~Config()
+ConfigManager::~ConfigManager()
 {
     delete mpData;
 }
 
-QString Config::defaultDir()
+QString ConfigManager::defaultDir()
 {
     return appDataDir();
 }
 
-bool Config::reset()
+bool ConfigManager::reset()
 {
     QFile cf(mpData->file);
 
@@ -333,7 +332,7 @@ bool Config::reset()
     return true;
 }
 
-void Config::reload()
+void ConfigManager::reload()
 {
     QSqlDatabase db(QSqlDatabase::database());
 
@@ -363,7 +362,6 @@ void Config::reload()
 
     QSettings settings(mpData->file, QSettings::IniFormat);
 
-    setLanguage(settings.value(QString::fromLatin1("language"),                     QString::fromLatin1("system")).toString());
     setLastFile(settings.value(QString::fromLatin1("last_file"),                    QString()).toString());
     setTimeout(settings.value(QString::fromLatin1("timeout"),                       30.0).toReal());
     setAbortOnTimeout(settings.value(QString::fromLatin1("abort_timeout"),          true).toBool());
@@ -444,7 +442,7 @@ void Config::reload()
     settings.beginGroup(QString::fromLatin1("opengl"));
     setEGL(settings.value(QString::fromLatin1("egl"),                               false).toBool());
     const QString glname = settings.value(QString::fromLatin1("type"),              QString::fromLatin1("OpenGLES")).toString();
-    setOpenGLType((Config::OpenGLType)Config::staticMetaObject.enumerator(Config::staticMetaObject.indexOfEnumerator("OpenGLType")).keysToValue(glname.toLatin1().constData()));
+    setOpenGLType((ConfigManager::OpenGLType)ConfigManager::staticMetaObject.enumerator(ConfigManager::staticMetaObject.indexOfEnumerator("OpenGLType")).keysToValue(glname.toLatin1().constData()));
 
     // d3d11 bad performance (gltexsubimage2d)
 
@@ -470,12 +468,12 @@ void Config::reload()
     mpData->is_loading = false;
 }
 
-qreal Config::forceFrameRate() const
+qreal ConfigManager::forceFrameRate() const
 {
     return mpData->force_fps;
 }
 
-Config& Config::setForceFrameRate(qreal value)
+ConfigManager& ConfigManager::setForceFrameRate(qreal value)
 {
     if (mpData->force_fps == value)
         return *this;
@@ -488,12 +486,12 @@ Config& Config::setForceFrameRate(qreal value)
     return *this;
 }
 
-QStringList Config::decoderPriorityNames() const
+QStringList ConfigManager::decoderPriorityNames() const
 {
     return mpData->video_decoders;
 }
 
-Config& Config::setDecoderPriorityNames(const QStringList& value)
+ConfigManager& ConfigManager::setDecoderPriorityNames(const QStringList& value)
 {
     if (mpData->video_decoders == value)
     {
@@ -512,12 +510,12 @@ Config& Config::setDecoderPriorityNames(const QStringList& value)
     return *this;
 }
 
-bool Config::zeroCopy() const
+bool ConfigManager::zeroCopy() const
 {
     return mpData->zero_copy;
 }
 
-Config& Config::setZeroCopy(bool value)
+ConfigManager& ConfigManager::setZeroCopy(bool value)
 {
     if (mpData->zero_copy == value)
         return *this;
@@ -532,12 +530,12 @@ Config& Config::setZeroCopy(bool value)
     return *this;
 }
 
-QString Config::captureDir() const
+QString ConfigManager::captureDir() const
 {
     return mpData->capture_dir;
 }
 
-Config& Config::setCaptureDir(const QString& dir)
+ConfigManager& ConfigManager::setCaptureDir(const QString& dir)
 {
     if (mpData->capture_dir == dir)
         return *this;
@@ -550,12 +548,12 @@ Config& Config::setCaptureDir(const QString& dir)
     return *this;
 }
 
-QString Config::captureFormat() const
+QString ConfigManager::captureFormat() const
 {
     return mpData->capture_fmt;
 }
 
-Config& Config::setCaptureFormat(const QString& format)
+ConfigManager& ConfigManager::setCaptureFormat(const QString& format)
 {
     if (mpData->capture_fmt == format)
         return *this;
@@ -570,12 +568,12 @@ Config& Config::setCaptureFormat(const QString& format)
 
 // only works for non-yuv capture
 
-int Config::captureQuality() const
+int ConfigManager::captureQuality() const
 {
     return mpData->capture_quality;
 }
 
-Config& Config::setCaptureQuality(int quality)
+ConfigManager& ConfigManager::setCaptureQuality(int quality)
 {
     if (mpData->capture_quality == quality)
         return *this;
@@ -588,12 +586,12 @@ Config& Config::setCaptureQuality(int quality)
     return *this;
 }
 
-QStringList Config::subtitleEngines() const
+QStringList ConfigManager::subtitleEngines() const
 {
     return mpData->subtitle_engines;
 }
 
-Config& Config::setSubtitleEngines(const QStringList& value)
+ConfigManager& ConfigManager::setSubtitleEngines(const QStringList& value)
 {
     if (mpData->subtitle_engines == value)
         return *this;
@@ -606,12 +604,12 @@ Config& Config::setSubtitleEngines(const QStringList& value)
     return *this;
 }
 
-bool Config::subtitleAutoLoad() const
+bool ConfigManager::subtitleAutoLoad() const
 {
     return mpData->subtitle_autoload;
 }
 
-Config& Config::setSubtitleAutoLoad(bool value)
+ConfigManager& ConfigManager::setSubtitleAutoLoad(bool value)
 {
     if (mpData->subtitle_autoload == value)
         return *this;
@@ -624,12 +622,12 @@ Config& Config::setSubtitleAutoLoad(bool value)
     return *this;
 }
 
-bool Config::subtitleEnabled() const
+bool ConfigManager::subtitleEnabled() const
 {
     return mpData->subtitle_enabled;
 }
 
-Config& Config::setSubtitleEnabled(bool value)
+ConfigManager& ConfigManager::setSubtitleEnabled(bool value)
 {
     if (mpData->subtitle_enabled == value)
         return *this;
@@ -642,12 +640,12 @@ Config& Config::setSubtitleEnabled(bool value)
     return *this;
 }
 
-QFont Config::subtitleFont() const
+QFont ConfigManager::subtitleFont() const
 {
     return mpData->subtitle_font;
 }
 
-Config& Config::setSubtitleFont(const QFont& value)
+ConfigManager& ConfigManager::setSubtitleFont(const QFont& value)
 {
     if (mpData->subtitle_font == value)
         return *this;
@@ -660,12 +658,12 @@ Config& Config::setSubtitleFont(const QFont& value)
     return *this;
 }
 
-bool Config::subtitleOutline() const
+bool ConfigManager::subtitleOutline() const
 {
     return mpData->subtitle_outline;
 }
 
-Config& Config::setSubtitleOutline(bool value)
+ConfigManager& ConfigManager::setSubtitleOutline(bool value)
 {
     if (mpData->subtitle_outline == value)
         return *this;
@@ -678,12 +676,12 @@ Config& Config::setSubtitleOutline(bool value)
     return *this;
 }
 
-QColor Config::subtitleColor() const
+QColor ConfigManager::subtitleColor() const
 {
     return mpData->subtitle_color;
 }
 
-Config& Config::setSubtitleColor(const QColor& value)
+ConfigManager& ConfigManager::setSubtitleColor(const QColor& value)
 {
     if (mpData->subtitle_color == value)
         return *this;
@@ -696,12 +694,12 @@ Config& Config::setSubtitleColor(const QColor& value)
     return *this;
 }
 
-QColor Config::subtitleOutlineColor() const
+QColor ConfigManager::subtitleOutlineColor() const
 {
     return mpData->subtitle_outline_color;
 }
 
-Config& Config::setSubtitleOutlineColor(const QColor& value)
+ConfigManager& ConfigManager::setSubtitleOutlineColor(const QColor& value)
 {
     if (mpData->subtitle_outline_color == value)
         return *this;
@@ -714,12 +712,12 @@ Config& Config::setSubtitleOutlineColor(const QColor& value)
     return *this;
 }
 
-int Config::subtitleBottomMargin() const
+int ConfigManager::subtitleBottomMargin() const
 {
     return mpData->subtilte_bottom_margin;
 }
 
-Config& Config::setSubtitleBottomMargin(int value)
+ConfigManager& ConfigManager::setSubtitleBottomMargin(int value)
 {
     if (mpData->subtilte_bottom_margin == value)
         return *this;
@@ -732,12 +730,12 @@ Config& Config::setSubtitleBottomMargin(int value)
     return *this;
 }
 
-qreal Config::subtitleDelay() const
+qreal ConfigManager::subtitleDelay() const
 {
     return mpData->subtitle_delay;
 }
 
-Config& Config::setSubtitleDelay(qreal value)
+ConfigManager& ConfigManager::setSubtitleDelay(qreal value)
 {
     if (mpData->subtitle_delay == value)
         return *this;
@@ -750,12 +748,12 @@ Config& Config::setSubtitleDelay(qreal value)
     return *this;
 }
 
-QString Config::assFontFile() const
+QString ConfigManager::assFontFile() const
 {
     return mpData->ass_font_file;
 }
 
-Config& Config::setAssFontFile(const QString& value)
+ConfigManager& ConfigManager::setAssFontFile(const QString& value)
 {
     if (mpData->ass_font_file == value)
         return *this;
@@ -769,12 +767,12 @@ Config& Config::setAssFontFile(const QString& value)
 }
 
 
-QString Config::assFontsDir() const
+QString ConfigManager::assFontsDir() const
 {
     return mpData->ass_fonts_dir;
 }
 
-Config& Config::setAssFontsDir(const QString& value)
+ConfigManager& ConfigManager::setAssFontsDir(const QString& value)
 {
     if (mpData->ass_fonts_dir == value)
         return *this;
@@ -787,12 +785,12 @@ Config& Config::setAssFontsDir(const QString& value)
     return *this;
 }
 
-bool Config::isAssFontFileForced() const
+bool ConfigManager::isAssFontFileForced() const
 {
     return mpData->ass_force_font_file;
 }
 
-Config& Config::setAssFontFileForced(bool value)
+ConfigManager& ConfigManager::setAssFontFileForced(bool value)
 {
     if (mpData->ass_force_font_file == value)
         return *this;
@@ -805,12 +803,12 @@ Config& Config::setAssFontFileForced(bool value)
     return *this;
 }
 
-bool Config::previewEnabled() const
+bool ConfigManager::previewEnabled() const
 {
     return mpData->preview_enabled;
 }
 
-Config& Config::setPreviewEnabled(bool value)
+ConfigManager& ConfigManager::setPreviewEnabled(bool value)
 {
     if (mpData->preview_enabled == value)
         return *this;
@@ -823,12 +821,12 @@ Config& Config::setPreviewEnabled(bool value)
     return *this;
 }
 
-int Config::previewWidth() const
+int ConfigManager::previewWidth() const
 {
     return mpData->preview_w;
 }
 
-Config& Config::setPreviewWidth(int value)
+ConfigManager& ConfigManager::setPreviewWidth(int value)
 {
     if (mpData->preview_w == value)
         return *this;
@@ -841,12 +839,12 @@ Config& Config::setPreviewWidth(int value)
     return *this;
 }
 
-int Config::previewHeight() const
+int ConfigManager::previewHeight() const
 {
     return mpData->preview_h;
 }
 
-Config& Config::setPreviewHeight(int value)
+ConfigManager& ConfigManager::setPreviewHeight(int value)
 {
     if (mpData->preview_h == value)
         return *this;
@@ -859,7 +857,7 @@ Config& Config::setPreviewHeight(int value)
     return *this;
 }
 
-QVariantHash Config::avformatOptions() const
+QVariantHash ConfigManager::avformatOptions() const
 {
     QVariantHash vh;
 
@@ -900,12 +898,12 @@ QVariantHash Config::avformatOptions() const
     return vh;
 }
 
-bool Config::avformatOptionsEnabled() const
+bool ConfigManager::avformatOptionsEnabled() const
 {
     return mpData->avformat_on;
 }
 
-Config& Config::setAvformatOptionsEnabled(bool value)
+ConfigManager& ConfigManager::setAvformatOptionsEnabled(bool value)
 {
     if (mpData->avformat_on == value)
         return *this;
@@ -918,60 +916,60 @@ Config& Config::setAvformatOptionsEnabled(bool value)
     return *this;
 }
 
-unsigned int Config::probeSize() const
+unsigned int ConfigManager::probeSize() const
 {
     return mpData->probe_size;
 }
 
-Config& Config::probeSize(unsigned int ps)
+ConfigManager& ConfigManager::probeSize(unsigned int ps)
 {
     mpData->probe_size = ps;
 
     return *this;
 }
 
-int Config::analyzeDuration() const
+int ConfigManager::analyzeDuration() const
 {
     return mpData->analyze_duration;
 }
 
-Config& Config::analyzeDuration(int ad)
+ConfigManager& ConfigManager::analyzeDuration(int ad)
 {
     mpData->analyze_duration = ad;
 
     return *this;
 }
 
-bool Config::reduceBuffering() const
+bool ConfigManager::reduceBuffering() const
 {
     return mpData->direct;
 }
 
-Config& Config::reduceBuffering(bool y)
+ConfigManager& ConfigManager::reduceBuffering(bool y)
 {
     mpData->direct = y;
 
     return *this;
 }
 
-QString Config::avformatExtra() const
+QString ConfigManager::avformatExtra() const
 {
     return mpData->avformat_extra;
 }
 
-Config& Config::avformatExtra(const QString& text)
+ConfigManager& ConfigManager::avformatExtra(const QString& text)
 {
     mpData->avformat_extra = text;
 
     return *this;
 }
 
-QString Config::avfilterVideoOptions() const
+QString ConfigManager::avfilterVideoOptions() const
 {
     return mpData->avfilterVideo;
 }
 
-Config& Config::avfilterVideoOptions(const QString& options)
+ConfigManager& ConfigManager::avfilterVideoOptions(const QString& options)
 {
     if (mpData->avfilterVideo == options)
         return *this;
@@ -984,12 +982,12 @@ Config& Config::avfilterVideoOptions(const QString& options)
     return *this;
 }
 
-bool Config::avfilterVideoEnable() const
+bool ConfigManager::avfilterVideoEnable() const
 {
     return mpData->avfilterVideo_on;
 }
 
-Config& Config::avfilterVideoEnable(bool e)
+ConfigManager& ConfigManager::avfilterVideoEnable(bool e)
 {
     if (mpData->avfilterVideo_on == e)
         return *this;
@@ -1002,12 +1000,12 @@ Config& Config::avfilterVideoEnable(bool e)
     return *this;
 }
 
-QString Config::avfilterAudioOptions() const
+QString ConfigManager::avfilterAudioOptions() const
 {
     return mpData->avfilterAudio;
 }
 
-Config& Config::avfilterAudioOptions(const QString& options)
+ConfigManager& ConfigManager::avfilterAudioOptions(const QString& options)
 {
     if (mpData->avfilterAudio == options)
         return *this;
@@ -1020,12 +1018,12 @@ Config& Config::avfilterAudioOptions(const QString& options)
     return *this;
 }
 
-bool Config::avfilterAudioEnable() const
+bool ConfigManager::avfilterAudioEnable() const
 {
     return mpData->avfilterAudio_on;
 }
 
-Config& Config::avfilterAudioEnable(bool e)
+ConfigManager& ConfigManager::avfilterAudioEnable(bool e)
 {
     if (mpData->avfilterAudio_on == e)
         return *this;
@@ -1038,12 +1036,12 @@ Config& Config::avfilterAudioEnable(bool e)
     return *this;
 }
 
-bool Config::isEGL() const
+bool ConfigManager::isEGL() const
 {
     return mpData->egl;
 }
 
-Config& Config::setEGL(bool value)
+ConfigManager& ConfigManager::setEGL(bool value)
 {
     if (mpData->egl == value)
         return *this;
@@ -1056,12 +1054,12 @@ Config& Config::setEGL(bool value)
     return *this;
 }
 
-Config::OpenGLType Config::openGLType() const
+ConfigManager::OpenGLType ConfigManager::openGLType() const
 {
     return mpData->opengl;
 }
 
-Config& Config::setOpenGLType(OpenGLType value)
+ConfigManager& ConfigManager::setOpenGLType(OpenGLType value)
 {
     if (mpData->opengl == value)
         return *this;
@@ -1074,12 +1072,12 @@ Config& Config::setOpenGLType(OpenGLType value)
     return *this;
 }
 
-QString Config::getANGLEPlatform() const
+QString ConfigManager::getANGLEPlatform() const
 {
     return mpData->angle_dx;
 }
 
-Config& Config::setANGLEPlatform(const QString& value)
+ConfigManager& ConfigManager::setANGLEPlatform(const QString& value)
 {
     if (mpData->angle_dx == value)
         return *this;
@@ -1092,12 +1090,12 @@ Config& Config::setANGLEPlatform(const QString& value)
     return *this;
 }
 
-bool Config::userShaderEnabled() const
+bool ConfigManager::userShaderEnabled() const
 {
     return mpData->user_shader;
 }
 
-Config& Config::setUserShaderEnabled(bool value)
+ConfigManager& ConfigManager::setUserShaderEnabled(bool value)
 {
     if (mpData->user_shader == value)
         return *this;
@@ -1110,12 +1108,12 @@ Config& Config::setUserShaderEnabled(bool value)
     return *this;
 }
 
-bool Config::intermediateFBO() const
+bool ConfigManager::intermediateFBO() const
 {
     return mpData->fbo;
 }
 
-Config& Config::setIntermediateFBO(bool value)
+ConfigManager& ConfigManager::setIntermediateFBO(bool value)
 {
     if (mpData->fbo == value)
         return *this;
@@ -1128,12 +1126,12 @@ Config& Config::setIntermediateFBO(bool value)
     return *this;
 }
 
-QString Config::fragHeader() const
+QString ConfigManager::fragHeader() const
 {
     return mpData->frag_header;
 }
 
-Config& Config::setFragHeader(const QString& text)
+ConfigManager& ConfigManager::setFragHeader(const QString& text)
 {
     if (mpData->frag_header == text)
         return *this;
@@ -1146,12 +1144,12 @@ Config& Config::setFragHeader(const QString& text)
     return *this;
 }
 
-QString Config::fragSample() const
+QString ConfigManager::fragSample() const
 {
     return mpData->frag_sample;
 }
 
-Config& Config::setFragSample(const QString& text)
+ConfigManager& ConfigManager::setFragSample(const QString& text)
 {
     if (mpData->frag_sample == text)
         return *this;
@@ -1164,12 +1162,12 @@ Config& Config::setFragSample(const QString& text)
     return *this;
 }
 
-QString Config::fragPostProcess() const
+QString ConfigManager::fragPostProcess() const
 {
     return mpData->frag_pp;
 }
 
-Config& Config::setFragPostProcess(const QString& text)
+ConfigManager& ConfigManager::setFragPostProcess(const QString& text)
 {
     if (mpData->frag_pp == text)
         return *this;
@@ -1182,12 +1180,12 @@ Config& Config::setFragPostProcess(const QString& text)
     return *this;
 }
 
-int Config::bufferValue() const
+int ConfigManager::bufferValue() const
 {
     return mpData->buffer_value;
 }
 
-Config& Config::setBufferValue(int value)
+ConfigManager& ConfigManager::setBufferValue(int value)
 {
     if (mpData->buffer_value == value)
         return *this;
@@ -1200,12 +1198,12 @@ Config& Config::setBufferValue(int value)
     return *this;
 }
 
-qreal Config::timeout() const
+qreal ConfigManager::timeout() const
 {
     return mpData->timeout;
 }
 
-Config& Config::setTimeout(qreal value)
+ConfigManager& ConfigManager::setTimeout(qreal value)
 {
     if (mpData->timeout == value)
         return *this;
@@ -1218,30 +1216,12 @@ Config& Config::setTimeout(qreal value)
     return *this;
 }
 
-QString Config::language() const
-{
-    return mpData->lang;
-}
-
-Config& Config::setLanguage(const QString& value)
-{
-    if (mpData->lang == value)
-        return *this;
-
-    mpData->lang = value;
-
-    Q_EMIT languageChanged();
-    Q_EMIT changed();
-
-    return *this;
-}
-
-QVariantList Config::history() const
+QVariantList ConfigManager::history() const
 {
     return mpData->history;
 }
 
-void Config::addHistory(const QVariantMap& value)
+void ConfigManager::addHistory(const QVariantMap& value)
 {
     mpData->history.prepend(value);
 
@@ -1264,7 +1244,7 @@ void Config::addHistory(const QVariantMap& value)
         qCWarning(DIGIKAM_QTAVPLAYER_LOG).noquote() << QString::asprintf("failed to add history: %d", db.isOpen());
 }
 
-void Config::removeHistory(const QString& url)
+void ConfigManager::removeHistory(const QString& url)
 {
     QVariantList::Iterator it = mpData->history.begin();
     bool change               = false;
@@ -1295,7 +1275,7 @@ void Config::removeHistory(const QString& url)
         qCWarning(DIGIKAM_QTAVPLAYER_LOG).noquote() << QString::asprintf("failed to remove history");
 }
 
-void Config::clearHistory()
+void ConfigManager::clearHistory()
 {
     if (mpData->history.isEmpty())
         return;
@@ -1314,12 +1294,12 @@ void Config::clearHistory()
         qCWarning(DIGIKAM_QTAVPLAYER_LOG).noquote() << QString::asprintf("failed to clear history");
 }
 
-bool Config::abortOnTimeout() const
+bool ConfigManager::abortOnTimeout() const
 {
     return mpData->abort_timeout;
 }
 
-Config& Config::setAbortOnTimeout(bool value)
+ConfigManager& ConfigManager::setAbortOnTimeout(bool value)
 {
     if (mpData->abort_timeout == value)
         return *this;
@@ -1332,12 +1312,12 @@ Config& Config::setAbortOnTimeout(bool value)
     return *this;
 }
 
-QString Config::lastFile() const
+QString ConfigManager::lastFile() const
 {
     return mpData->last_file;
 }
 
-Config& Config::setLastFile(const QString &value)
+ConfigManager& ConfigManager::setLastFile(const QString &value)
 {
     if (mpData->last_file == value)
         return *this;
@@ -1350,7 +1330,7 @@ Config& Config::setLastFile(const QString &value)
     return *this;
 }
 
-void Config::save()
+void ConfigManager::save()
 {
     mpData->save();
 }
