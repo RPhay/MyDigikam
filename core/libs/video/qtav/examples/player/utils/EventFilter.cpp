@@ -39,6 +39,10 @@
 #include <QMouseEvent>
 #include <QWindowStateChangeEvent>
 
+// KDE includes
+
+#include <klocalizedstring.h>
+
 // Local includes
 
 #include "QtAVWidgets.h"
