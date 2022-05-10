@@ -21,8 +21,8 @@
  *
  * ============================================================ */
 
-#ifndef AV_PLAYER_SCREENSAVER_H
-#define AV_PLAYER_SCREENSAVER_H
+#ifndef AV_PLAYER_SCREEN_SAVER_H
+#define AV_PLAYER_SCREEN_SAVER_H
 
 // Qt includes
 
@@ -66,7 +66,8 @@ private:
 
 private:
 
-    bool    state_saved, modified;
+    bool    state_saved;
+    bool    modified;
 
 #ifdef Q_OS_LINUX
 
@@ -84,4 +85,4 @@ private:
 
 } // namespace AVPlayer
 
-#endif // AV_PLAYER_SCREENSAVER_H
+#endif // AV_PLAYER_SCREEN_SAVER_H

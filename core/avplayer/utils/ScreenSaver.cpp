@@ -152,9 +152,9 @@ public:
 */
         }
 
-        if (   msg->message == WM_SYSCOMMAND
-            && ((msg->wParam & 0xFFF0) == SC_SCREENSAVE
-                 || (msg->wParam & 0xFFF0) == SC_MONITORPOWER)
+        if (     (msg->message == WM_SYSCOMMAND)
+            && (((msg->wParam & 0xFFF0) == SC_SCREENSAVE)
+             || ((msg->wParam & 0xFFF0) == SC_MONITORPOWER))
            )
          {
 /*
@@ -235,7 +235,7 @@ ScreenSaver::ScreenSaver()
             XResetScreenSaver = (fXResetScreenSaver)xlib.resolve("XResetScreenSaver");
         }
 
-        isX11 = XOpenDisplay && XCloseDisplay && XSetScreenSaver && XGetScreenSaver && XResetScreenSaver;
+        isX11 = (XOpenDisplay && XCloseDisplay && XSetScreenSaver && XGetScreenSaver && XResetScreenSaver);
     }
 
 #endif // Q_OS_LINUX
@@ -342,7 +342,7 @@ bool ScreenSaver::enable(bool yes)
         if (yes)
             ret = XSetScreenSaver(display, -1, interval, preferBlanking, allowExposures);
         else
-            ret = XSetScreenSaver(display, 0, interval, preferBlanking /*DontPreferBlanking*/, allowExposures);
+            ret = XSetScreenSaver(display,  0, interval, preferBlanking /*DontPreferBlanking*/, allowExposures);
 
         // TODO: why XSetScreenSaver return 1? now use XResetScreenSaver to workaround
 
@@ -526,7 +526,9 @@ void ScreenSaver::timerEvent(QTimerEvent* e)
 #   else // OSX >= 10.8, use new API
 
     IOPMAssertionID assertionId = osxIOPMAssertionId;
-    IOReturn r                  = IOPMAssertionDeclareUserActivity(CFSTR("QtAVScreenSaver"), kIOPMUserActiveLocal, &assertionId);
+    IOReturn r                  = IOPMAssertionDeclareUserActivity(CFSTR("QtAVScreenSaver"),
+                                                                   kIOPMUserActiveLocal,
+                                                                   &assertionId);
 
     if (r == kIOReturnSuccess)
     {
