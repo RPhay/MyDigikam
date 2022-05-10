@@ -21,8 +21,8 @@
  *
  * ============================================================ */
 
-#ifndef QTAV_PLAYER_STATISTICSVIEW_H
-#define QTAV_PLAYER_STATISTICSVIEW_H
+#ifndef AV_PLAYER_STATISTICSVIEW_H
+#define AV_PLAYER_STATISTICSVIEW_H
 
 // Qt includes
 
@@ -89,4 +89,4 @@ private:
 
 } // namespace AVPlayer
 
-#endif // QTAV_PLAYER_STATISTICSVIEW_H
+#endif // AV_PLAYER_STATISTICSVIEW_H

@@ -21,8 +21,8 @@
  *
  * ============================================================ */
 
-#ifndef QTAV_PLAYER_CONFIGDIALOG_H
-#define QTAV_PLAYER_CONFIGDIALOG_H
+#ifndef AV_PLAYER_CONFIG_DIALOG_H
+#define AV_PLAYER_CONFIG_DIALOG_H
 
 // Qt includes
 
@@ -53,7 +53,7 @@ private Q_SLOTS:
 
 private:
 
-    explicit ConfigDialog(QWidget* parent = 0);
+    explicit ConfigDialog(QWidget* const parent = nullptr);
 
 private:
 
@@ -64,4 +64,4 @@ private:
 
 } // namespace AVPlayer
 
-#endif // QTAV_PLAYER_CONFIGDIALOG_H
+#endif // AV_PLAYER_CONFIG_DIALOG_H

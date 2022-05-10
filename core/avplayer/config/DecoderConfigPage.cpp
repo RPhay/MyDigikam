@@ -92,6 +92,8 @@ QVector<VideoDecoderId> idsFromNames(const QStringList& names)
 
 using namespace QtAV;
 
+// -------------------------------------------------------------------------
+
 class DecoderConfigPage::DecoderItemWidget : public QFrame
 {
     Q_OBJECT
@@ -137,7 +139,7 @@ public:
                 this, SIGNAL(enableChanged()));
     }
 
-    void buildUiFor(QObject* obj)
+    void buildUiFor(QObject* const obj)
     {
         mpEditor->getProperties(obj);
 
@@ -182,6 +184,7 @@ private Q_SLOTS:
     void checkPressed()
     {
         select(true);
+
         emit selected(this);
     }
 
@@ -206,6 +209,7 @@ protected:
     virtual void mousePressEvent(QMouseEvent*)
     {
         select(true);
+
         emit selected(this);
     }
 
@@ -228,6 +232,8 @@ private:
     PropertyEditor* mpEditor;
     QWidget*        mpEditorWidget;
 };
+
+// -------------------------------------------------------------------------
 
 DecoderConfigPage::DecoderConfigPage(QWidget* const parent)
     : ConfigPageBase(parent)

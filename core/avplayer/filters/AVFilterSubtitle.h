@@ -21,8 +21,8 @@
  *
  * ============================================================ */
 
-#ifndef QTAV_PLAYER_AVFILTER_SUBTITLE_H
-#define QTAV_PLAYER_AVFILTER_SUBTITLE_H
+#ifndef AV_PLAYER_AVFILTER_SUBTITLE_H
+#define AV_PLAYER_AVFILTER_SUBTITLE_H
 
 // Qt includes
 
@@ -87,4 +87,4 @@ private:
 
 } // namespace AVPlayer
 
-#endif // QTAV_PLAYER_AVFILTER_SUBTITLE_H
+#endif // AV_PLAYER_AVFILTER_SUBTITLE_H

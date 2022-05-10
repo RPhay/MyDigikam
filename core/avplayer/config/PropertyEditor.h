@@ -21,8 +21,8 @@
  *
  * ============================================================ */
 
-#ifndef QTAV_PLAYER_PROPERTY_EDITOR_H
-#define QTAV_PLAYER_PROPERTY_EDITOR_H
+#ifndef AV_PLAYER_PROPERTY_EDITOR_H
+#define AV_PLAYER_PROPERTY_EDITOR_H
 
 // Qt includes
 
@@ -114,4 +114,4 @@ private:
 
 } // namespace AVPlayer
 
-#endif // QTAV_PLAYER_PROPERTY_EDITOR_H
+#endif // AV_PLAYER_PROPERTY_EDITOR_H

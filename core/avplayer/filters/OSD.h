@@ -21,8 +21,8 @@
  *
  * ============================================================ */
 
-#ifndef QTAV_PLAYER_OSD_H
-#define QTAV_PLAYER_OSD_H
+#ifndef AV_PLAYER_OSD_H
+#define AV_PLAYER_OSD_H
 
 // Qt includes
 
@@ -72,4 +72,4 @@ protected:
 
 } // namespace AVPlayer
 
-#endif // QTAV_PLAYER_OSD_H
+#endif // AV_PLAYER_OSD_H

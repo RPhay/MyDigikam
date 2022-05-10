@@ -21,8 +21,8 @@
  *
  * ============================================================ */
 
-#ifndef QTAV_PLAYER_CLICKABLE_MENU_H
-#define QTAV_PLAYER_CLICKABLE_MENU_H
+#ifndef AV_PLAYER_CLICKABLE_MENU_H
+#define AV_PLAYER_CLICKABLE_MENU_H
 
 // Qt includes
 
@@ -47,4 +47,4 @@ protected:
 
 } // namespace AVPlayer
 
-#endif // QTAV_PLAYER_CLICKABLE_MENU_H
+#endif // AV_PLAYER_CLICKABLE_MENU_H

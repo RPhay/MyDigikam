@@ -21,8 +21,8 @@
  *
  * ============================================================ */
 
-#ifndef QTAV_PLAYER_COMMON_H
-#define QTAV_PLAYER_COMMON_H
+#ifndef AV_PLAYER_COMMON_H
+#define AV_PLAYER_COMMON_H
 
 // Qt includes
 
@@ -76,4 +76,4 @@ private:
 
 } // namespace AVPlayer
 
-#endif // QTAV_PLAYER_COMMON_H
+#endif // AV_PLAYER_COMMON_H

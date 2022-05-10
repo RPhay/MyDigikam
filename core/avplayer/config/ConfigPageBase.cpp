@@ -26,7 +26,7 @@
 namespace AVPlayer
 {
 
-ConfigPageBase::ConfigPageBase(QWidget* parent)
+ConfigPageBase::ConfigPageBase(QWidget* const parent)
     : QWidget(parent),
       mApplyOnUiChange(true)
 {

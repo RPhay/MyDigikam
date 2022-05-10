@@ -49,21 +49,21 @@ namespace AVPlayer
 
 void ConfigDialog::display()
 {
-    static ConfigDialog* dialog = new ConfigDialog();
+    static ConfigDialog* const dialog = new ConfigDialog();
     dialog->show();
 }
 
-ConfigDialog::ConfigDialog(QWidget* parent)
+ConfigDialog::ConfigDialog(QWidget* const parent)
     : QDialog(parent)
 {
-    QVBoxLayout* vbl = new QVBoxLayout();
+    QVBoxLayout* const vbl = new QVBoxLayout();
     setLayout(vbl);
     vbl->setSizeConstraint(QLayout::SetFixedSize);
 
-    mpContent   = new QTabWidget();
+    mpContent              = new QTabWidget();
     mpContent->setTabPosition(QTabWidget::West);
 
-    mpButtonBox = new QDialogButtonBox(Qt::Horizontal);
+    mpButtonBox            = new QDialogButtonBox(Qt::Horizontal);
     mpButtonBox->addButton(i18n("Reset"),  QDialogButtonBox::ResetRole);      // QDialogButtonBox::Reset;
     mpButtonBox->addButton(i18n("Ok"),     QDialogButtonBox::AcceptRole);     // QDialogButtonBox::Ok
     mpButtonBox->addButton(i18n("Cancel"), QDialogButtonBox::RejectRole);
@@ -89,7 +89,7 @@ ConfigDialog::ConfigDialog(QWidget* parent)
            << new ShaderPage()
     ;
 
-    foreach (ConfigPageBase* page, mPages)
+    foreach (ConfigPageBase* const page, mPages)
     {
         page->applyToUi();
         page->applyOnUiChange(false);
@@ -97,30 +97,38 @@ ConfigDialog::ConfigDialog(QWidget* parent)
     }
 }
 
-void ConfigDialog::onButtonClicked(QAbstractButton *btn)
+void ConfigDialog::onButtonClicked(QAbstractButton* btn)
 {
     qCDebug(DIGIKAM_QTAVPLAYER_LOG).noquote() << QString::asprintf("QDialogButtonBox clicked role=%d", mpButtonBox->buttonRole(btn));
 
     switch (mpButtonBox->buttonRole(btn))
     {
         case QDialogButtonBox::ResetRole:
+        {
             qCDebug(DIGIKAM_QTAVPLAYER_LOG).noquote() << QString::asprintf("QDialogButtonBox ResetRole clicked");
             onReset();
             break;
+        }
 
         case QDialogButtonBox::AcceptRole:
         case QDialogButtonBox::ApplyRole:
+        {
             qCDebug(DIGIKAM_QTAVPLAYER_LOG).noquote() << QString::asprintf("QDialogButtonBox ApplyRole clicked");
             onApply();
             break;
+        }
 
         case QDialogButtonBox::DestructiveRole:
         case QDialogButtonBox::RejectRole:
+        {
             onCancel();
             break;
+        }
 
         default:
+        {
             break;
+        }
     }
 }
 
@@ -130,7 +138,7 @@ void ConfigDialog::onReset()
 
     // TODO: check change
 
-    foreach (ConfigPageBase* page, mPages)
+    foreach (ConfigPageBase* const page, mPages)
     {
         page->reset();
     }
@@ -140,7 +148,7 @@ void ConfigDialog::onApply()
 {
     // TODO: check change
 
-    foreach (ConfigPageBase* page, mPages)
+    foreach (ConfigPageBase* const page, mPages)
     {
         page->apply();
     }
@@ -152,7 +160,7 @@ void ConfigDialog::onCancel()
 {
     // TODO: check change
 
-    foreach (ConfigPageBase* page, mPages)
+    foreach (ConfigPageBase* const page, mPages)
     {
         page->cancel();
     }

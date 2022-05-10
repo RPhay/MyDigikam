@@ -21,8 +21,8 @@
  *
  * ============================================================ */
 
-#ifndef QTAV_PLAYER_SHADER_PAGE_H
-#define QTAV_PLAYER_SHADER_PAGE_H
+#ifndef AV_PLAYER_SHADER_PAGE_H
+#define AV_PLAYER_SHADER_PAGE_H
 
 // Qt includes
 
@@ -60,4 +60,4 @@ private:
 
 } // namespace AVPlayer
 
-#endif // QTAV_PLAYER_SHADER_PAGE_H
+#endif // AV_PLAYER_SHADER_PAGE_H

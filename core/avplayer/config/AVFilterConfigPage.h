@@ -21,8 +21,8 @@
  *
  * ============================================================ */
 
-#ifndef QTAV_PLAYER_AVFILTERCONFIGPAGE_H
-#define QTAV_PLAYER_AVFILTERCONFIGPAGE_H
+#ifndef AV_PLAYER_AVFILTER_CONFIG_PAGE_H
+#define AV_PLAYER_AVFILTER_CONFIG_PAGE_H
 
 // Local includes
 
@@ -71,4 +71,4 @@ private:
 
 } // namespace AVPlayer
 
-#endif // QTAV_PLAYER_AVFILTERCONFIGPAGE_H
+#endif // AV_PLAYER_AVFILTER_CONFIG_PAGE_H

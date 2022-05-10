@@ -21,8 +21,8 @@
  *
  * ============================================================ */
 
-#ifndef QTAV_PLAYER_VIDEOEQCONFIGPAGE_H
-#define QTAV_PLAYER_VIDEOEQCONFIGPAGE_H
+#ifndef AV_PLAYER_VIDEOEQ_CONFIG_PAGE_H
+#define AV_PLAYER_VIDEOEQ_CONFIG_PAGE_H
 
 // Qt includes
 
@@ -80,7 +80,9 @@ private:
 
     QCheckBox*      mpGlobal;
     QComboBox*      mpEngine;
-    QSlider*        mpBSlider, *mpCSlider, *mpSSlider;
+    QSlider*        mpBSlider;
+    QSlider*        mpCSlider;
+    QSlider*        mpSSlider;
     QSlider*        mpHSlider;
     QPushButton*    mpResetButton;
     Engine          mEngine;
@@ -89,4 +91,4 @@ private:
 
 } // namespace AVPlayer
 
-#endif // QTAV_PLAYER_VIDEOEQCONFIGPAGE_H
+#endif // AV_PLAYER_VIDEOEQ_CONFIG_PAGE_H

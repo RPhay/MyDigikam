@@ -21,8 +21,8 @@
  *
  * ============================================================ */
 
-#ifndef QTAV_PLAYER_OSDFILTER_H
-#define QTAV_PLAYER_OSDFILTER_H
+#ifndef AV_PLAYER_OSDFILTER_H
+#define AV_PLAYER_OSDFILTER_H
 
 // Local includes
 
@@ -54,4 +54,4 @@ protected:
 
 } // namespace AVPlayer
 
-#endif // QTAV_PLAYER_OSDFILTER_H
+#endif // AV_PLAYER_OSDFILTER_H

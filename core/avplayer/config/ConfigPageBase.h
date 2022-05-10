@@ -21,8 +21,8 @@
  *
  * ============================================================ */
 
-#ifndef QTAV_PLAYER_CONFIGPAGEBASE_H
-#define QTAV_PLAYER_CONFIGPAGEBASE_H
+#ifndef AV_PLAYER_CONFIG_PAGE_BASE_H
+#define AV_PLAYER_CONFIG_PAGE_BASE_H
 
 // Qt includes
 
@@ -37,7 +37,7 @@ class ConfigPageBase : public QWidget
 
 public:
 
-    explicit ConfigPageBase(QWidget* parent = nullptr);
+    explicit ConfigPageBase(QWidget* const parent = nullptr);
 
     virtual QString name() const = 0;
 
@@ -82,4 +82,4 @@ private:
 
 } // namespace AVPlayer
 
-#endif // QTAV_PLAYER_CONFIGPAGEBASE_H
+#endif // AV_PLAYER_CONFIG_PAGE_BASE_H

@@ -21,8 +21,8 @@
  *
  * ============================================================ */
 
-#ifndef QTAV_PLAYER_CAPTURECONFIGPAGE_H
-#define QTAV_PLAYER_CAPTURECONFIGPAGE_H
+#ifndef AV_PLAYER_CAPTURE_CONFIG_PAGE_H
+#define AV_PLAYER_CAPTURE_CONFIG_PAGE_H
 
 // Qt includes
 
@@ -74,4 +74,4 @@ private:
 
 } // namespace AVPlayer
 
-#endif // QTAV_PLAYER_CAPTURECONFIGPAGE_H
+#endif // AV_PLAYER_CAPTURE_CONFIG_PAGE_H

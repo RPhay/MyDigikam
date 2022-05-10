@@ -21,8 +21,8 @@
  *
  * ============================================================ */
 
-#ifndef QTAV_PLAYER_MAINWINDOW_H
-#define QTAV_PLAYER_MAINWINDOW_H
+#ifndef AV_PLAYER_MAINWINDOW_H
+#define AV_PLAYER_MAINWINDOW_H
 
 // Qt includes
 
@@ -237,4 +237,4 @@ private:
 
 } // namespace AVPlayer
 
-#endif // QTAV_PLAYER_MAINWINDOW_H
+#endif // AV_PLAYER_MAINWINDOW_H

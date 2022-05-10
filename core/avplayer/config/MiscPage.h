@@ -21,8 +21,8 @@
  *
  * ============================================================ */
 
-#ifndef QTAV_PLAYER_MISCPAGE_H
-#define QTAV_PLAYER_MISCPAGE_H
+#ifndef AV_PLAYER_MISC_PAGE_H
+#define AV_PLAYER_MISC_PAGE_H
 
 #include "ConfigPageBase.h"
 
@@ -67,4 +67,4 @@ private:
 
 } // namespace AVPlayer
 
-#endif // QTAV_PLAYER_MISCPAGE_H
+#endif // AV_PLAYER_MISC_PAGE_H

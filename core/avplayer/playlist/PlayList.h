@@ -21,8 +21,8 @@
  *
  * ============================================================ */
 
-#ifndef QTAV_PLAYER_PLAYLIST_H
-#define QTAV_PLAYER_PLAYLIST_H
+#ifndef AV_PLAYER_PLAYLIST_H
+#define AV_PLAYER_PLAYLIST_H
 
 // Qt includes
 
@@ -93,4 +93,4 @@ private:
 
 } // namespace AVPlayer
 
-#endif // QTAV_PLAYER_PLAYLIST_H
+#endif // AV_PLAYER_PLAYLIST_H

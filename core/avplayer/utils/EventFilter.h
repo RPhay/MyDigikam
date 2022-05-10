@@ -21,8 +21,8 @@
  *
  * ============================================================ */
 
-#ifndef QTAV_PLAYER_EVENT_FILTER_H
-#define QTAV_PLAYER_EVENT_FILTER_H
+#ifndef AV_PLAYER_EVENT_FILTER_H
+#define AV_PLAYER_EVENT_FILTER_H
 
 /*
  * This class is used interally as QtAV's default event filter. It is suite for single player object
@@ -104,4 +104,4 @@ private:
 
 } // namespace AVPlayer
 
-#endif // QTAV_PLAYER_EVENT_FILTER_H
+#endif // AV_PLAYER_EVENT_FILTER_H

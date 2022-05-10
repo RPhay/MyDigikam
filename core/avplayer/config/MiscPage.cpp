@@ -94,11 +94,16 @@ MiscPage::MiscPage()
     m_opengl->addItem(QString::fromLatin1("Desktop"), ConfigManager::Desktop);
     m_opengl->addItem(QString::fromLatin1("OpenGLES"), ConfigManager::OpenGLES);
     m_opengl->addItem(QString::fromLatin1("Software"), ConfigManager::Software);
-    m_opengl->setToolTip(i18n("Windows only") + QLatin1String(" Qt>=5.4 + dynamicgl") + QString::fromLatin1("\n") + i18n("OpenGLES is Used by DXVA Zero Copy"));
+    m_opengl->setToolTip(i18n("Windows only") + QLatin1String(" Qt>=5.4 + dynamicgl") +
+                         QString::fromLatin1("\n") + i18n("OpenGLES is Used by DXVA Zero Copy"));
     gl->addWidget(m_opengl, r, 1);
     m_angle_platform      = new QComboBox();
-    m_angle_platform->setToolTip(i18n("D3D9 has performance if ZeroCopy is disabled or for software decoders") + QString::fromLatin1("\n") + i18n("RESTART REQUIRED"));
-    m_angle_platform->addItems(QStringList() << QString::fromLatin1("D3D9") << QString::fromLatin1("D3D11") << QString::fromLatin1("AUTO") << QString::fromLatin1("WARP"));
+    m_angle_platform->setToolTip(i18n("D3D9 has performance if ZeroCopy is disabled or for software decoders") +
+                                QString::fromLatin1("\n") + i18n("RESTART REQUIRED"));
+    m_angle_platform->addItems(QStringList() << QString::fromLatin1("D3D9")
+                                             << QString::fromLatin1("D3D11")
+                                             << QString::fromLatin1("AUTO")
+                                             << QString::fromLatin1("WARP"));
 
 #ifndef QT_OPENGL_DYNAMIC
 

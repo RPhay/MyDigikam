@@ -21,8 +21,8 @@
  *
  * ============================================================ */
 
-#ifndef QTAV_PLAYER_CONFIG_MANAGER_H
-#define QTAV_PLAYER_CONFIG_MANAGER_H
+#ifndef AV_PLAYER_CONFIG_MANAGER_H
+#define AV_PLAYER_CONFIG_MANAGER_H
 
 // Qt includes
 
@@ -344,4 +344,4 @@ private:
 
 } // namespace AVPlayer
 
-#endif // QTAV_PLAYER_CONFIG_MANAGER_H
+#endif // AV_PLAYER_CONFIG_MANAGER_H

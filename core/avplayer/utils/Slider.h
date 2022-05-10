@@ -24,8 +24,8 @@
 
 // TODO: hover support(like youtube and ExMplayer timeline preview)
 
-#ifndef QTAV_PLAYER_SLIDER_H
-#define QTAV_PLAYER_SLIDER_H
+#ifndef AV_PLAYER_SLIDER_H
+#define AV_PLAYER_SLIDER_H
 
 // Qt includes
 
@@ -68,4 +68,4 @@ protected:
 
 } // namespace AVPlayer
 
-#endif // QTAV_PLAYER_SLIDER_H
+#endif // AV_PLAYER_SLIDER_H

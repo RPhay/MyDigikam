@@ -21,8 +21,8 @@
  *
  * ============================================================ */
 
-#ifndef QTAV_PLAYER_DECODERCONFIGPAGE_H
-#define QTAV_PLAYER_DECODERCONFIGPAGE_H
+#ifndef AV_PLAYER_DECODER_CONFIG_PAGE_H
+#define AV_PLAYER_DECODER_CONFIG_PAGE_H
 
 // Qt includes
 
@@ -74,7 +74,8 @@ private Q_SLOTS:
 private:
 
     QSpinBox*                   mpThreads;
-    QToolButton*                mpUp, *mpDown;
+    QToolButton*                mpUp;
+    QToolButton*                mpDown;
     QList<DecoderItemWidget*>   mDecItems;
     DecoderItemWidget*          mpSelectedDec;
     QVBoxLayout*                mpDecLayout;
@@ -82,4 +83,4 @@ private:
 
 } // namespace AVPlayer
 
-#endif // QTAV_PLAYER_DECODERCONFIGPAGE_H
+#endif // AV_PLAYER_DECODER_CONFIG_PAGE_H

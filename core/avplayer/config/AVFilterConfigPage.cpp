@@ -56,7 +56,7 @@ AVFilterConfigPage::AVFilterConfigPage(QWidget* const parent)
     m_ui[1].type = i18n("Audio");
     const int mw = 300;
 
-    for (size_t i = 0 ; i < sizeof(m_ui)/sizeof(m_ui[0]) ; ++i)
+    for (size_t i = 0 ; i < sizeof(m_ui) / sizeof(m_ui[0]) ; ++i)
     {
         m_ui[i].enable      = new QCheckBox(i18n("Enable") + QString::fromLatin1(" ") + m_ui[i].type);
         gl->addWidget(m_ui[i].enable, r++, 0);
@@ -110,12 +110,12 @@ void AVFilterConfigPage::applyToUi()
     m_ui[1].options->setText(ConfigManager::instance().avfilterAudioOptions());
 }
 
-void AVFilterConfigPage::videoFilterChanged(const QString &name)
+void AVFilterConfigPage::videoFilterChanged(const QString& name)
 {
     m_ui[0].description->setText(QtAV::LibAVFilter::filterDescription(name));
 }
 
-void AVFilterConfigPage::audioFilterChanged(const QString &name)
+void AVFilterConfigPage::audioFilterChanged(const QString& name)
 {
     m_ui[1].description->setText(QtAV::LibAVFilter::filterDescription(name));
 }

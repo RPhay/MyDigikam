@@ -21,8 +21,8 @@
  *
  * ============================================================ */
 
-#ifndef QTAV_PLAYER_PLAYLISTITEM_H
-#define QTAV_PLAYER_PLAYLISTITEM_H
+#ifndef AV_PLAYER_PLAYLISTITEM_H
+#define AV_PLAYER_PLAYLISTITEM_H
 
 // Qt includes
 
@@ -75,4 +75,4 @@ QDataStream& operator<< (QDataStream& s, const PlayListItem& p);
 
 Q_DECLARE_METATYPE(AVPlayer::PlayListItem);
 
-#endif // QTAV_PLAYER_PLAYLISTITEM_H
+#endif // AV_PLAYER_PLAYLISTITEM_H
