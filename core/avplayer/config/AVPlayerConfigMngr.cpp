@@ -50,7 +50,7 @@ public:
     {
         is_loading = false;
 
-        file = appDataDir() + QString::fromLatin1("/") + qApp->applicationName() + QString::fromLatin1(".ini");
+        file = AVPlayerConfigMngr::defaultConfigFile();
 
         if (!QDir(appDataDir()).exists())
         {
@@ -72,7 +72,6 @@ public:
 
         // TODO: why crash on mac qt5.4 if call on aboutToQuit()
 
-        settings.setValue(QString::fromLatin1("log"),               log);
         settings.setValue(QString::fromLatin1("last_file"),         last_file);
         settings.setValue(QString::fromLatin1("timeout"),           timeout);
         settings.setValue(QString::fromLatin1("abort_timeout"),     abort_timeout);
@@ -135,8 +134,8 @@ public:
         settings.endGroup();
 
         settings.beginGroup(QString::fromLatin1("opengl"));
-        settings.setValue(QString::fromLatin1("egl"),               egl);
         const char* glname = AVPlayerConfigMngr::staticMetaObject.enumerator(AVPlayerConfigMngr::staticMetaObject.indexOfEnumerator("OpenGLType")).valueToKey(opengl);
+        settings.setValue(QString::fromLatin1("egl"),               egl);
         settings.setValue(QString::fromLatin1("type"),              QString::fromLatin1(glname));
         settings.setValue(QString::fromLatin1("angle_platform"),    angle_dx);
         settings.endGroup();
@@ -158,63 +157,61 @@ public:
 
 public:
 
-    QString                    file;
-    bool                       is_loading              = false;
+    QString                         file;
+    bool                            is_loading              = false;
 
-    qreal                      force_fps               = 0.0;
-    QStringList                video_decoders;
-    bool                       zero_copy               = false;
+    qreal                           force_fps               = 0.0;
+    QStringList                     video_decoders;
+    bool                            zero_copy               = false;
 
-    QString                    last_file;
+    QString                         last_file;
 
-    QString                    capture_dir;
-    QString                    capture_fmt;
-    int                        capture_quality         = 0;
+    QString                         capture_dir;
+    QString                         capture_fmt;
+    int                             capture_quality         = 0;
 
-    bool                       avformat_on             = false;
-    bool                       direct                  = false;
-    unsigned int               probe_size              = 0;
-    int                        analyze_duration        = 0;
-    QString                    avformat_extra;
-    bool                       avfilterVideo_on        = false;
-    QString                    avfilterVideo;
-    bool                       avfilterAudio_on        = false;
-    QString                    avfilterAudio;
+    bool                            avformat_on             = false;
+    bool                            direct                  = false;
+    unsigned int                    probe_size              = 0;
+    int                             analyze_duration        = 0;
+    QString                         avformat_extra;
+    bool                            avfilterVideo_on        = false;
+    QString                         avfilterVideo;
+    bool                            avfilterAudio_on        = false;
+    QString                         avfilterAudio;
 
-    QStringList                subtitle_engines;
-    bool                       subtitle_autoload       = false;
-    bool                       subtitle_enabled        = false;
-    QFont                      subtitle_font;
-    QColor                     subtitle_color;
-    QColor                     subtitle_outline_color;
-    bool                       subtitle_outline        = false;
-    int                        subtilte_bottom_margin  = 0;
-    qreal                      subtitle_delay          = 0.0;
+    QStringList                     subtitle_engines;
+    bool                            subtitle_autoload       = false;
+    bool                            subtitle_enabled        = false;
+    QFont                           subtitle_font;
+    QColor                          subtitle_color;
+    QColor                          subtitle_outline_color;
+    bool                            subtitle_outline        = false;
+    int                             subtilte_bottom_margin  = 0;
+    qreal                           subtitle_delay          = 0.0;
 
-    bool                       ass_force_font_file     = false;
-    QString                    ass_font_file;
-    QString                    ass_fonts_dir;
+    bool                            ass_force_font_file     = false;
+    QString                         ass_font_file;
+    QString                         ass_fonts_dir;
 
-    bool                       preview_enabled         = false;
-    int                        preview_w               = 0;
-    int                        preview_h               = 0;
+    bool                            preview_enabled         = false;
+    int                             preview_w               = 0;
+    int                             preview_h               = 0;
 
-    bool                       egl                     = false;
+    bool                            egl                     = false;
     AVPlayerConfigMngr::OpenGLType  opengl                  = OpenGLType::Auto;
-    QString                    angle_dx;
-    bool                       abort_timeout           = false;
-    qreal                      timeout                 = 0.0;
-    int                        buffer_value            = 0;
-    QString                    log;
-    QString                    lang;
+    QString                         angle_dx;
+    bool                            abort_timeout           = false;
+    qreal                           timeout                 = 0.0;
+    int                             buffer_value            = 0;
 
-    QVariantList               history;
+    QVariantList                    history;
 
-    bool                       user_shader             = false;
-    bool                       fbo                     = false;
-    QString                    frag_header;
-    QString                    frag_sample;
-    QString                    frag_pp;
+    bool                            user_shader             = false;
+    bool                            fbo                     = false;
+    QString                         frag_header;
+    QString                         frag_sample;
+    QString                         frag_pp;
 };
 
 AVPlayerConfigMngr& AVPlayerConfigMngr::instance()

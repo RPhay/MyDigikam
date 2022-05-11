@@ -119,8 +119,6 @@ public:
 
     void reload();
 
-    //void loadFromFile(const QString& file);
-
     QString lastFile()                                  const;
     AVPlayerConfigMngr& setLastFile(const QString& value);
 
