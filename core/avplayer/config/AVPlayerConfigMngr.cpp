@@ -241,15 +241,14 @@ void AVPlayerConfigMngr::reload()
 {
     KSharedConfig::Ptr config = KSharedConfig::openConfig();
     KConfigGroup group        = config->group(QLatin1String("MediaPlayer History"));
-    group.writeEntry(QLatin1String("HistoryPropertiesList"), mpData->history);
 
     mpData->history = group.readEntry(QLatin1String("MediaList"),              QVariantList());
 
     // ---
 
-    mpData->is_loading = true;
+    mpData->is_loading        = true;
 
-    KConfigGroup group1        = config->group(QLatin1String("MediaPlayer General"));
+    KConfigGroup group1       = config->group(QLatin1String("MediaPlayer General"));
     setLastFile(group1.readEntry(QLatin1String("last_file"),                   QString()));
     setTimeout(group1.readEntry(QLatin1String("timeout"),                      30.0));
     setAbortOnTimeout(group1.readEntry(QLatin1String("abort_timeout"),         true));
@@ -358,7 +357,7 @@ void AVPlayerConfigMngr::reload()
     KConfigGroup group12      = config->group(QLatin1String("MediaPlayer Buffer"));
     setBufferValue(group11.readEntry(QLatin1String("value"),                   -1));
 
-    mpData->is_loading = false;
+    mpData->is_loading        = false;
 }
 
 AVPlayerConfigMngr& AVPlayerConfigMngr::instance()

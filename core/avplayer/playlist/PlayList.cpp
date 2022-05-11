@@ -164,7 +164,7 @@ PlayListItem PlayList::itemAt(int row)
     return mpModel->data(mpModel->index(row), Qt::DisplayRole).value<PlayListItem>();
 }
 
-void PlayList::insertItemAt(const PlayListItem &item, int row)
+void PlayList::insertItemAt(const PlayListItem& item, int row)
 {
     if ((mMaxRows > 0) && (mpModel->rowCount() >= mMaxRows))
     {
@@ -194,12 +194,12 @@ void PlayList::insertItemAt(const PlayListItem &item, int row)
     setItemAt(item, row);
 }
 
-void PlayList::setItemAt(const PlayListItem &item, int row)
+void PlayList::setItemAt(const PlayListItem& item, int row)
 {
     mpModel->setData(mpModel->index(row), QVariant::fromValue(item), Qt::DisplayRole);
 }
 
-void PlayList::insert(const QString &url, int row)
+void PlayList::insert(const QString& url, int row)
 {
     PlayListItem item;
     item.setUrl(url);
@@ -216,7 +216,7 @@ void PlayList::insert(const QString &url, int row)
     insertItemAt(item, row);
 }
 
-void PlayList::remove(const QString &url)
+void PlayList::remove(const QString& url)
 {
     for (int i = mpModel->rowCount() - 1 ; i >= 0 ; --i)
     {
@@ -281,7 +281,7 @@ void PlayList::addItems()
     }
 }
 
-void PlayList::onAboutToPlay(const QModelIndex &index)
+void PlayList::onAboutToPlay(const QModelIndex& index)
 {
     emit aboutToPlay(index.data(Qt::DisplayRole).value<PlayListItem>().url());
 
