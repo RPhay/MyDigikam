@@ -382,10 +382,10 @@ void MainWindow::setupUi()
     mpInfoBtn->setToolTip(QString::fromLatin1("Media information"));
     mpInfoBtn->setIcon(QIcon::fromTheme(QLatin1String("dialog-information")));
     mpCaptureBtn                    = new QToolButton();
-    mpCaptureBtn->setToolTip(i18nc("@info", "Capture"));
+    mpCaptureBtn->setToolTip(i18nc("@info: button", "Capture"));
     mpCaptureBtn->setIcon(QIcon::fromTheme(QLatin1String("media-record")));
     mpVolumeBtn                     = new QToolButton();
-    mpVolumeBtn->setToolTip(i18nc("@info", "Volume"));
+    mpVolumeBtn->setToolTip(i18nc("@info: button", "Volume"));
     mpVolumeBtn->setIcon(QIcon::fromTheme(QLatin1String("player-volume")));
 
     mpVolumeSlider                  = new Slider();
@@ -484,7 +484,7 @@ void MainWindow::setupUi()
     hb->addWidget(mpRepeatBox);
     QVBoxLayout* const vb           = new QVBoxLayout;
     vb->addLayout(hb);
-    pRepeatLabel                    = new QLabel(i18nc("@label", "From"));
+    pRepeatLabel                    = new QLabel(i18nc("@label: from time-stamp", "From"));
     mpRepeatA                       = new QTimeEdit();
     mpRepeatA->setDisplayFormat(QString::fromLatin1("HH:mm:ss"));
     mpRepeatA->setToolTip(i18nc("@info", "negative value means from the end"));
@@ -496,7 +496,7 @@ void MainWindow::setupUi()
     hb->addWidget(pRepeatLabel);
     hb->addWidget(mpRepeatA);
     vb->addLayout(hb);
-    pRepeatLabel                    = new QLabel(i18nc("@label", "To"));
+    pRepeatLabel                    = new QLabel(i18nc("@label: to time-stamp", "To"));
     mpRepeatB                       = new QTimeEdit();
     mpRepeatB->setDisplayFormat(QString::fromLatin1("HH:mm:ss"));
     mpRepeatB->setToolTip(i18nc("@info", "negative value means from the end"));
@@ -527,9 +527,9 @@ void MainWindow::setupUi()
     connect(subMenu, SIGNAL(triggered(QAction*)),
             this, SLOT(changeClockType(QAction*)));
 
-    subMenu->addAction(i18nc("@option", "Auto"))->setData(-1);
-    subMenu->addAction(i18nc("@option", "Audio"))->setData(AVClock::AudioClock);
-    subMenu->addAction(i18nc("@option", "Video"))->setData(AVClock::VideoClock);
+    subMenu->addAction(i18nc("@option: clock sync", "Auto"))->setData(-1);
+    subMenu->addAction(i18nc("@option: clock sync", "Audio"))->setData(AVClock::AudioClock);
+    subMenu->addAction(i18nc("@option: clock sync", "Video"))->setData(AVClock::VideoClock);
 
     foreach (QAction* const action, subMenu->actions())
     {
@@ -557,7 +557,7 @@ void MainWindow::setupUi()
     connect(act, SIGNAL(toggled(bool)),
             this, SLOT(toggleSubtitleAutoLoad(bool)));
 
-    subMenu->addAction(i18nc("@action", "Open"), this, SLOT(openSubtitle()));
+    subMenu->addAction(i18nc("@action: open subtitle file", "Open"), this, SLOT(openSubtitle()));
 
     wgt                             = new QWidget();
     hb                              = new QHBoxLayout();
@@ -575,7 +575,7 @@ void MainWindow::setupUi()
             this, SLOT(setSubtitleEngine(QString)));
 
     mpSubtitle->setEngines(QStringList() << box->itemData(box->currentIndex()).toString());
-    box->setToolTip(i18nc("@info", "FFmpeg supports more subtitles but only render plain text") + QString::fromLatin1("\n") + i18n("LibASS supports ass styles"));
+    box->setToolTip(i18nc("@info", "FFmpeg supports more subtitles but only render plain text\nLibASS supports 'ass' styles"));
 
     wgt                             = new QWidget();
     hb                              = new QHBoxLayout();
@@ -616,11 +616,11 @@ void MainWindow::setupUi()
     connect(subMenu, SIGNAL(triggered(QAction*)),
             this, SLOT(changeChannel(QAction*)));
 
-    subMenu->addAction(i18nc("@action", "As input"))->setData(AudioFormat::ChannelLayout_Unsupported); //will set to input in resampler if not supported.
-    subMenu->addAction(i18nc("@action", "Stereo"))->setData(AudioFormat::ChannelLayout_Stereo);
-    subMenu->addAction(i18nc("@action", "Mono (center)"))->setData(AudioFormat::ChannelLayout_Center);
-    subMenu->addAction(i18nc("@action", "Left"))->setData(AudioFormat::ChannelLayout_Left);
-    subMenu->addAction(i18nc("@action", "Right"))->setData(AudioFormat::ChannelLayout_Right);
+    subMenu->addAction(i18nc("@action: channel option", "As input"))->setData(AudioFormat::ChannelLayout_Unsupported); // will set to input in resampler if not supported.
+    subMenu->addAction(i18nc("@action: channel option", "Stereo"))->setData(AudioFormat::ChannelLayout_Stereo);
+    subMenu->addAction(i18nc("@action: channel option", "Mono (center)"))->setData(AudioFormat::ChannelLayout_Center);
+    subMenu->addAction(i18nc("@action: channel option", "Left"))->setData(AudioFormat::ChannelLayout_Left);
+    subMenu->addAction(i18nc("@action: channel option", "Right"))->setData(AudioFormat::ChannelLayout_Right);
     ag                              = new QActionGroup(subMenu);
     ag->setExclusive(true);
 
@@ -636,12 +636,12 @@ void MainWindow::setupUi()
     connect(subMenu, SIGNAL(triggered(QAction*)),
             this, SLOT(switchAspectRatio(QAction*)));
 
-    mpARAction                      = subMenu->addAction(i18nc("@action", "Video"));
+    mpARAction                      = subMenu->addAction(i18nc("@action: aspect ratio", "Video"));
     mpARAction->setData(0);
-    subMenu->addAction(i18nc("@action", "Window"))->setData(-1);
+    subMenu->addAction(i18nc("@action: video ratio", "Window"))->setData(-1);
     subMenu->addAction(QString::fromLatin1("4:3"))->setData(4.0   / 3.0);
     subMenu->addAction(QString::fromLatin1("16:9"))->setData(16.0 / 9.0);
-    subMenu->addAction(i18nc("@action", "Custom"))->setData(-2);
+    subMenu->addAction(i18nc("@action: video ratio", "Custom"))->setData(-2);
 
     foreach (QAction* const action, subMenu->actions())
     {
@@ -1561,7 +1561,7 @@ void MainWindow::initAudioTrackMenu()
 
     if (!mpPlayer)
     {
-        a = mpAudioTrackMenu->addAction(i18n("External"));
+        a = mpAudioTrackMenu->addAction(i18nc("@action: audio track", "External"));
         a->setData(-1);
         a->setCheckable(true);
         a->setChecked(false);
@@ -1575,10 +1575,10 @@ void MainWindow::initAudioTrackMenu()
     as     = mpAudioTrackMenu->actions();
     tracks = mpPlayer->audioStreamCount();
 
-    if (mpAudioTrackAction && (tracks == as.size()-1) && (mpAudioTrackAction->data().toInt() == track))
+    if (mpAudioTrackAction && ((tracks == as.size() - 1)) && (mpAudioTrackAction->data().toInt() == track))
         return;
 
-    while (tracks + 1 < as.size())
+    while ((tracks + 1) < as.size())
     {
         a = as.takeLast();
         mpAudioTrackMenu->removeAction(a);
@@ -1587,7 +1587,7 @@ void MainWindow::initAudioTrackMenu()
 
     if (as.isEmpty())
     {
-        a = mpAudioTrackMenu->addAction(i18nc("@action", "External"));
+        a = mpAudioTrackMenu->addAction(i18nc("@action: audio track", "External"));
         a->setData(-1);
         a->setCheckable(true);
         a->setChecked(false);
@@ -1818,31 +1818,31 @@ void MainWindow::onMediaStatusChanged()
     switch (player->mediaStatus())
     {
         case NoMedia:
-            status = i18n("No media");
+            status = i18nc("@info: media loading", "No media");
             break;
 
         case InvalidMedia:
-            status = i18n("Invalid meida");
+            status = i18nc("@info: media loading", "Invalid meida");
             break;
 
         case BufferingMedia:
-            status = i18n("Buffering...");
+            status = i18nc("@info: media loading", "Buffering...");
             break;
 
         case BufferedMedia:
-            status = i18n("Buffered");
+            status = i18nc("@info: media loading", "Buffered");
             break;
 
         case LoadingMedia:
-            status = i18n("Loading...");
+            status = i18nc("@info: media loading", "Loading...");
             break;
 
         case LoadedMedia:
-            status = i18n("Loaded");
+            status = i18nc("@info: media loading", "Loaded");
             break;
 
         case StalledMedia:
-            status = i18n("Stalled");
+            status = i18nc("@info: media loading", "Stalled");
             break;
 
         default:
@@ -1869,7 +1869,8 @@ void MainWindow::onBufferProgress(qreal percent)
     else
         s = QString::fromLatin1("%1B/s").arg(bs, 6, 'f', 1);
 
-    setWindowTitle(QString::fromLatin1("Buffering... %1% @%2 ").arg(percent*100.0, 5, 'f', 1).arg(s) + mTitle);
+    setWindowTitle(i18nc("@title: media loading state", "Buffering... %1% @%2 %3",
+                   QString::fromLatin1("%1").arg(percent*100.0, 5, 'f', 1), s, mTitle));
 }
 
 void MainWindow::onVideoEQEngineChanged()
@@ -1878,8 +1879,8 @@ void MainWindow::onVideoEQEngineChanged()
     VideoEQConfigPage::Engine e = mpVideoEQ->engine();
 
     if (
-           e == VideoEQConfigPage::SWScale
-        && vo->id() != VideoRendererId_X11 // X11 scales in the renderer
+        (e == VideoEQConfigPage::SWScale) &&
+        (vo->id() != VideoRendererId_X11) // X11 scales in the renderer
        )
     {
         vo->forcePreferredPixelFormat(true);
@@ -1975,12 +1976,9 @@ void MainWindow::onCaptureConfigChanged()
         mpPlayer->videoCapture()->setSaveFormat(ConfigManager::instance().captureFormat());
     }
 
-    mpCaptureBtn->setToolTip(QString::fromLatin1("%1\n%2: %3\n%4: %5")
-                             .arg(i18n("Capture video frame"))
-                             .arg(i18n("Save to"))
-                             .arg(mpPlayer->videoCapture()->captureDir())
-                             .arg(i18n("Format"))
-                             .arg(ConfigManager::instance().captureFormat()));
+    mpCaptureBtn->setToolTip(i18nc("@info", "Capture video frame\nSave to: %1\nFormat: %2",
+                             mpPlayer->videoCapture()->captureDir(),
+                             ConfigManager::instance().captureFormat()));
 }
 
 void MainWindow::onAVFilterVideoConfigChanged()
@@ -2096,7 +2094,7 @@ void MainWindow::toggleSubtitleAutoLoad(bool value)
 
 void MainWindow::openSubtitle()
 {
-    QString file = QFileDialog::getOpenFileName(0, i18n("Open a subtitle file"));
+    QString file = QFileDialog::getOpenFileName(nullptr, i18nc("@title", "Open a subtitle file"));
 
     if (file.isEmpty())
         return;
