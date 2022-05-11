@@ -74,7 +74,7 @@ VideoEQConfigPage::VideoEQConfigPage(QWidget* const parent)
     } sliders[] =
     {
         { &mpBSlider, i18nc("@option", "Brightness")  },
-        { &mpCSlider, i18nc("@option", "Constrast")   },
+        { &mpCSlider, i18nc("@option", "Contrast")   },
         { &mpHSlider, i18nc("@option", "Hue")         },
         { &mpSSlider, i18nc("@option", "Saturation")  },
         { 0,          QString()         }

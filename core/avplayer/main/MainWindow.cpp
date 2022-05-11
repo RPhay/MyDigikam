@@ -208,7 +208,7 @@ void MainWindow::initPlayer()
     if (!vo || !vo->isAvailable() || !vo->widget())
     {
         QMessageBox::critical(nullptr, QString::fromLatin1("AVPlayer"),
-                              i18nc("@info", "Video renderer is not availabe on your platform!"));
+                              i18nc("@info", "Video renderer is not available on your platform!"));
     }
 
     setRenderer(vo);
@@ -879,7 +879,7 @@ void MainWindow::changeVO(QAction* action)
     {
         action->toggle(); // check state changes if clicked
         QMessageBox::critical(nullptr, QString::fromLatin1("AVPlayer"),
-                              i18nc("@info", "not availabe on your platform!"));
+                              i18nc("@info", "not available on your platform!"));
 
         return;
     }
@@ -1822,7 +1822,7 @@ void MainWindow::onMediaStatusChanged()
             break;
 
         case InvalidMedia:
-            status = i18nc("@info: media loading", "Invalid meida");
+            status = i18nc("@info: media loading", "Invalid media");
             break;
 
         case BufferingMedia:
