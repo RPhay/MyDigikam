@@ -278,6 +278,8 @@ int ExifToolProcess::command(const QByteArrayList& args, Action ac)
         Private::s_nextCmdId = Private::CMD_ID_MIN;
     }
 
+    Private::s_cmdIdMutex.unlock();
+
     // String representation of d->cmdId with leading zero -> constant size: 10 char
 
     const QByteArray cmdIdStr = QByteArray::number(cmdId).rightJustified(10, '0');
@@ -318,8 +320,6 @@ int ExifToolProcess::command(const QByteArrayList& args, Action ac)
     command.argsStr = cmdStr;
     command.ac      = ac;
     d->cmdQueue.append(command);
-
-    Private::s_cmdIdMutex.unlock();
 
     // Exec cmd queue
 
