@@ -47,19 +47,19 @@ ShaderPage::ShaderPage(QWidget* const parent)
     gl->setSizeConstraint(QLayout::SetMaximumSize);
 
     const int mw          = 600;
-    m_enable              = new QCheckBox(i18n("Enable"));
+    m_enable              = new QCheckBox(i18nc("@option: enable shader", "Enable"));
     gl->addWidget(m_enable);
-    m_fbo                 = new QCheckBox(i18n("Intermediate FBO"));
+    m_fbo                 = new QCheckBox(i18nc("@option", "Intermediate FBO"));
     gl->addWidget(m_fbo);
-    gl->addWidget(new QLabel(i18n("Fragment shader header")));
+    gl->addWidget(new QLabel(i18nc("@label", "Fragment shader header")));
     m_header              = new QTextEdit();
 
     //m_header->setMaximumWidth(mw);
 
     m_header->setMaximumHeight(mw / 6);
-    m_header->setToolTip(i18n("Additional header code"));
+    m_header->setToolTip(i18nc("@info", "Additional header code"));
     gl->addWidget(m_header);
-    gl->addWidget(new QLabel(i18n("Fragment shader texel sample function")));
+    gl->addWidget(new QLabel(i18nc("@label", "Fragment shader texel sample function")));
     m_sample              = new QTextEdit();
 
     //m_sample->setMaximumWidth(mw);
@@ -67,19 +67,19 @@ ShaderPage::ShaderPage(QWidget* const parent)
     m_sample->setMaximumHeight(mw / 6);
     m_sample->setToolTip(QLatin1String("vec4 sample2d(sampler2D tex, vec2 pos, int p)"));
     gl->addWidget(m_sample);
-    gl->addWidget(new QLabel(QLatin1String("Fragment shader RGB post process code")));
+    gl->addWidget(new QLabel(i18nc("@label", "Fragment shader RGB post process code")));
     m_pp                  = new QTextEdit();
 
     //m_pp->setMaximumWidth(mw);
 
-    m_pp->setMaximumHeight(mw/6);
+    m_pp->setMaximumHeight(mw / 6);
     gl->addWidget(m_pp);
     gl->addStretch();
 }
 
 QString ShaderPage::name() const
 {
-    return i18n("Shader");
+    return i18nc("@title", "Shader");
 }
 
 void ShaderPage::applyToUi()
