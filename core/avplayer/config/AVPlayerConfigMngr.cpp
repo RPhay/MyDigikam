@@ -212,56 +212,7 @@ public:
     QString                         frag_pp;
 };
 
-AVPlayerConfigMngr& AVPlayerConfigMngr::instance()
-{
-    static AVPlayerConfigMngr cfg;
-
-    return cfg;
-}
-
-QString AVPlayerConfigMngr::defaultConfigFile()
-{
-    return (appDataDir() + QString::fromLatin1("/") + qApp->applicationName() + QString::fromLatin1(".ini"));
-}
-
-AVPlayerConfigMngr::AVPlayerConfigMngr(QObject* const parent)
-    : QObject(parent),
-      mpData(new Data())
-{
-    // DO NOT call save() in dtor because it's a singleton and may be deleted later than qApp, QFont is not valid
-
-    connect(qApp, SIGNAL(aboutToQuit()),
-            this, SLOT(save()));            // FIXME: what if qapp not ready
-
-    reload();
-}
-
-AVPlayerConfigMngr::~AVPlayerConfigMngr()
-{
-    delete mpData;
-}
-
-QString AVPlayerConfigMngr::defaultDir()
-{
-    return appDataDir();
-}
-
-bool AVPlayerConfigMngr::reset()
-{
-    QFile cf(mpData->file);
-
-    if (!cf.remove())
-    {
-        qCWarning(DIGIKAM_AVPLAYER_LOG) << "Failed to remove config file: " << cf.errorString();
-
-        return false;
-    }
-
-    reload();
-    save();
-
-    return true;
-}
+// -----------------------------------------------------------------------------------
 
 void AVPlayerConfigMngr::reload()
 {
@@ -397,6 +348,57 @@ void AVPlayerConfigMngr::reload()
     settings.endGroup();
 
     mpData->is_loading = false;
+}
+
+AVPlayerConfigMngr& AVPlayerConfigMngr::instance()
+{
+    static AVPlayerConfigMngr cfg;
+
+    return cfg;
+}
+
+QString AVPlayerConfigMngr::defaultConfigFile()
+{
+    return (appDataDir() + QString::fromLatin1("/") + qApp->applicationName() + QString::fromLatin1(".ini"));
+}
+
+AVPlayerConfigMngr::AVPlayerConfigMngr(QObject* const parent)
+    : QObject(parent),
+      mpData(new Data())
+{
+    // DO NOT call save() in dtor because it's a singleton and may be deleted later than qApp, QFont is not valid
+
+    connect(qApp, SIGNAL(aboutToQuit()),
+            this, SLOT(save()));            // FIXME: what if qapp not ready
+
+    reload();
+}
+
+AVPlayerConfigMngr::~AVPlayerConfigMngr()
+{
+    delete mpData;
+}
+
+QString AVPlayerConfigMngr::defaultDir()
+{
+    return appDataDir();
+}
+
+bool AVPlayerConfigMngr::reset()
+{
+    QFile cf(mpData->file);
+
+    if (!cf.remove())
+    {
+        qCWarning(DIGIKAM_AVPLAYER_LOG) << "Failed to remove config file: " << cf.errorString();
+
+        return false;
+    }
+
+    reload();
+    save();
+
+    return true;
 }
 
 qreal AVPlayerConfigMngr::forceFrameRate() const
