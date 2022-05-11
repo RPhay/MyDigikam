@@ -50,10 +50,7 @@ public:
     {
         is_loading = false;
 
-        if (!Data::name.isEmpty())
-            file = appDataDir() + QString::fromLatin1("/") + Data::name + QString::fromLatin1(".ini");
-        else
-            file = appDataDir() + QString::fromLatin1("/") + qApp->applicationName() + QString::fromLatin1(".ini");
+        file = appDataDir() + QString::fromLatin1("/") + qApp->applicationName() + QString::fromLatin1(".ini");
 
         if (!QDir(appDataDir()).exists())
         {
@@ -218,11 +215,7 @@ public:
     QString                    frag_header;
     QString                    frag_sample;
     QString                    frag_pp;
-
-    static QString             name;
 };
-
-QString AVPlayerConfigMngr::Data::name;
 
 AVPlayerConfigMngr& AVPlayerConfigMngr::instance()
 {
@@ -231,19 +224,9 @@ AVPlayerConfigMngr& AVPlayerConfigMngr::instance()
     return cfg;
 }
 
-void AVPlayerConfigMngr::setName(const QString& name)
-{
-    AVPlayerConfigMngr::Data::name = name;
-}
-
-QString AVPlayerConfigMngr::getName()
-{
-    return AVPlayerConfigMngr::Data::name;
-}
-
 QString AVPlayerConfigMngr::defaultConfigFile()
 {
-    return (appDataDir() + QString::fromLatin1("/") + Data::name + QString::fromLatin1(".ini"));
+    return (appDataDir() + QString::fromLatin1("/") + qApp->applicationName() + QString::fromLatin1(".ini"));
 }
 
 AVPlayerConfigMngr::AVPlayerConfigMngr(QObject* const parent)
@@ -292,7 +275,7 @@ void AVPlayerConfigMngr::reload()
     if (!db.isOpen())
     {
         db = QSqlDatabase::addDatabase(QString::fromUtf8("QSQLITE"));
-        db.setDatabaseName(appDataDir().append(QString::fromLatin1("/%1.db").arg(mpData->name)));
+        db.setDatabaseName(appDataDir().append(QString::fromLatin1("/%1.db").arg(qApp->applicationName())));
 
         if (!db.open())
             qCWarning(DIGIKAM_AVPLAYER_LOG).noquote() << QString::asprintf("error open db");
