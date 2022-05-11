@@ -38,13 +38,13 @@ void ExifToolParser::printExifToolOutput(const QByteArray& stdOut)
     qCDebug(DIGIKAM_METAENGINE_LOG) << "---";
 }
 
-void ExifToolParser::slotCmdCompleted(quintptr pid,
+void ExifToolParser::slotCmdCompleted(int cmdId,
                                       int cmdAction,
                                       int execTime,
                                       const QByteArray& stdOut,
                                       const QByteArray& /*stdErr*/)
 {
-    if (pid != reinterpret_cast<quintptr>(this))
+    if (cmdId != d->cmdRunning)
     {
         return;
     }
@@ -391,11 +391,11 @@ void ExifToolParser::slotCmdCompleted(quintptr pid,
     qCDebug(DIGIKAM_METAENGINE_LOG) << d->exifToolData.count() << "properties decoded";
 }
 
-void ExifToolParser::slotErrorOccurred(quintptr pid,
+void ExifToolParser::slotErrorOccurred(int cmdId,
                                        int cmdAction,
                                        QProcess::ProcessError error)
 {
-    if (pid != reinterpret_cast<quintptr>(this))
+    if (cmdId != d->cmdRunning)
     {
         return;
     }
@@ -408,12 +408,12 @@ void ExifToolParser::slotErrorOccurred(quintptr pid,
     emit signalExifToolDataAvailable();
 }
 
-void ExifToolParser::slotFinished(quintptr pid,
+void ExifToolParser::slotFinished(int cmdId,
                                   int cmdAction,
                                   int exitCode,
                                   QProcess::ExitStatus exitStatus)
 {
-    if (pid != reinterpret_cast<quintptr>(this))
+    if (cmdId != d->cmdRunning)
     {
         return;
     }
@@ -431,7 +431,7 @@ void ExifToolParser::setOutputStream(int cmdAction,
                                      const QByteArray& cmdOutputChannel,
                                      const QByteArray& cmdErrorChannel)
 {
-    slotCmdCompleted(reinterpret_cast<quintptr>(this), cmdAction, 0, cmdOutputChannel, cmdErrorChannel);
+    slotCmdCompleted(d->cmdRunning, cmdAction, 0, cmdOutputChannel, cmdErrorChannel);
 }
 
 } // namespace Digikam

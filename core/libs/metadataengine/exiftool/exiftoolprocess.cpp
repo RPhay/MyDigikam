@@ -35,8 +35,6 @@ ExifToolProcess::ExifToolProcess()
     : QProcess(nullptr),
       d       (new Private(this))
 {
-    qRegisterMetaType<quintptr>("quintptr");
-
     setProcessEnvironment(adjustedEnvironmentForAppImage());
 }
 
@@ -174,7 +172,6 @@ bool ExifToolProcess::startExifTool()
 
     d->cmdQueue.clear();
     d->cmdRunning           = 0;
-    d->cmdSender            = 0;
     d->cmdAction            = NO_ACTION;
 
     // Clear errors
@@ -258,7 +255,7 @@ QString ExifToolProcess::errorString() const
     return d->errorString;
 }
 
-int ExifToolProcess::command(quintptr pid, const QByteArrayList& args, Action ac)
+int ExifToolProcess::command(const QByteArrayList& args, Action ac)
 {
     if (
         (state() != QProcess::Running) ||
@@ -321,7 +318,6 @@ int ExifToolProcess::command(quintptr pid, const QByteArrayList& args, Action ac
     Private::Command command;
     command.id      = cmdId;
     command.argsStr = cmdStr;
-    command.pid     = pid;
     command.ac      = ac;
     d->cmdQueue.append(command);
 
@@ -341,23 +337,22 @@ void ExifToolProcess::slotStarted()
 {
     qCDebug(DIGIKAM_METAENGINE_LOG) << "ExifTool process started";
 
-    emit signalStarted(d->cmdSender, d->cmdAction);
+    emit signalStarted(d->cmdRunning, d->cmdAction);
 }
 
 void ExifToolProcess::slotFinished(int exitCode, QProcess::ExitStatus exitStatus)
 {
     qCDebug(DIGIKAM_METAENGINE_LOG) << "ExifTool process finished" << exitCode << exitStatus;
 
-    emit signalFinished(d->cmdSender, d->cmdAction, exitCode, exitStatus);
+    emit signalFinished(d->cmdRunning, d->cmdAction, exitCode, exitStatus);
 
     d->cmdRunning = 0;
-    d->cmdSender  = 0;
     d->cmdAction  = NO_ACTION;
 }
 
 void ExifToolProcess::slotStateChanged(QProcess::ProcessState newState)
 {
-    emit signalStateChanged(d->cmdSender, d->cmdAction, newState);
+    emit signalStateChanged(d->cmdRunning, d->cmdAction, newState);
 }
 
 void ExifToolProcess::slotErrorOccurred(QProcess::ProcessError error)

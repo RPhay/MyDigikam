@@ -28,7 +28,7 @@ namespace Digikam
 
 ExifToolParser::ExifToolParser(QObject* const parent)
     : QObject(parent),
-      d      (new Private(reinterpret_cast<quintptr>(this)))
+      d      (new Private())
 {
     // Create ExifTool parser instance.
 

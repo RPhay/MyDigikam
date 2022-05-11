@@ -58,7 +58,7 @@ class Q_DECL_HIDDEN ExifToolParser::Private
 {
 public:
 
-    explicit Private(quintptr pid);
+    explicit Private();
     ~Private();
 
     bool       prepareProcess();
@@ -73,13 +73,13 @@ public:
 
 public:
 
-    quintptr                       ppid;
     ExifToolProcess*               proc;            ///< ExifTool process instance.
     QList<QEventLoop*>             evLoops;         ///< Event loops for the ExifTool process actions.
     QString                        currentPath;     ///< Current file path processed by ExifTool.
     ExifToolData                   exifToolData;    ///< Current ExifTool data (input or output depending of the called method.
     QTemporaryFile                 argsFile;        ///< Temporary file to store Exiftool arg config file.
 
+    int                            cmdRunning;
     int                            asyncLoading;
 
     QList<QMetaObject::Connection> hdls;            ///< Handles of signals/slots connections used to control streams with ExifTool process.

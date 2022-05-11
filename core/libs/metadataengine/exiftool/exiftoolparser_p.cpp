@@ -26,9 +26,9 @@
 namespace Digikam
 {
 
-ExifToolParser::Private::Private(quintptr pid)
-    : ppid        (pid),
-      proc        (nullptr),
+ExifToolParser::Private::Private()
+    : proc        (nullptr),
+      cmdRunning  (0),
       asyncLoading(ExifToolProcess::NO_ACTION)
 {
     argsFile.setAutoRemove(false);
@@ -66,9 +66,9 @@ bool ExifToolParser::Private::startProcess(const QByteArrayList& cmdArgs, ExifTo
 {
     // Send command to ExifToolProcess
 
-    int ret = proc->command(ppid, cmdArgs, cmdAction);
+    cmdRunning = proc->command(cmdArgs, cmdAction);
 
-    if (ret == 0)
+    if (cmdRunning == 0)
     {
         qCWarning(DIGIKAM_METAENGINE_LOG) << "ExifTool cannot be sent:" << actionString(cmdAction);
 

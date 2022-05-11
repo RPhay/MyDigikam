@@ -178,29 +178,29 @@ public:
      * Send a command to exiftool process
      * Return 0: ExitTool not running, write channel is closed or args is empty
      */
-    int command(quintptr pid, const QByteArrayList& args, Action ac);
+    int command(const QByteArrayList& args, Action ac);
 
 Q_SIGNALS:
 
     void signalExecNextCmd();
 
-    void signalStarted(quintptr pid,
+    void signalStarted(int cmdId,
                        int cmdAction);
 
-    void signalStateChanged(quintptr pid,
+    void signalStateChanged(int cmdId,
                             int cmdAction,
                             QProcess::ProcessState newState);
 
-    void signalErrorOccurred(quintptr pid,
+    void signalErrorOccurred(int cmdId,
                              int cmdAction,
                              QProcess::ProcessError error);
 
-    void signalFinished(quintptr pid,
+    void signalFinished(int cmdId,
                         int cmdAction,
                         int exitCode,
                         QProcess::ExitStatus exitStatus);
 
-    void signalCmdCompleted(quintptr pid,
+    void signalCmdCompleted(int cmdId,
                             int cmdAction,
                             int execTime,
                             const QByteArray& cmdOutputChannel,

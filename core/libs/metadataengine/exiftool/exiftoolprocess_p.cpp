@@ -35,7 +35,6 @@ int    ExifToolProcess::Private::s_nextCmdId = ExifToolProcess::Private::CMD_ID_
 ExifToolProcess::Private::Private(ExifToolProcess* const q)
     : pp                  (q),
       cmdRunning          (0),
-      cmdSender           (0),
       cmdAction           (ExifToolProcess::LOAD_METADATA),
       writeChannelIsClosed(true),
       processError        (QProcess::UnknownError)
@@ -81,7 +80,6 @@ void ExifToolProcess::Private::execNextCmd()
     Command command = cmdQueue.takeFirst();
     cmdRunning      = command.id;
     cmdAction       = command.ac;
-    cmdSender       = command.pid;
 
     pp->write(command.argsStr);
 }
@@ -150,7 +148,7 @@ void ExifToolProcess::Private::readOutput(const QProcess::ProcessChannel channel
     {
         qCDebug(DIGIKAM_METAENGINE_LOG) << "ExifToolProcess::readOutput(): ExifTool command completed";
 
-        Q_EMIT pp->signalCmdCompleted(cmdSender,
+        Q_EMIT pp->signalCmdCompleted(cmdRunning,
                                       cmdAction,
                                       execTimer.elapsed(),
                                       outBuff[QProcess::StandardOutput],
@@ -167,7 +165,7 @@ void ExifToolProcess::Private::setProcessErrorAndEmit(QProcess::ProcessError err
     processError = error;
     errorString  = description;
 
-    Q_EMIT pp->signalErrorOccurred(cmdSender, cmdAction, error);
+    Q_EMIT pp->signalErrorOccurred(cmdRunning, cmdAction, error);
 }
 
 } // namespace Digikam
