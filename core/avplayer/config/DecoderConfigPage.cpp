@@ -312,13 +312,13 @@ DecoderConfigPage::DecoderConfigPage(QWidget* const parent)
     vb->addSpacerItem(new QSpacerItem(width(), 10, QSizePolicy::Ignored, QSizePolicy::Expanding));
 
     mpUp = new QToolButton(scrollAreaWidgetContents);
-    mpUp->setText(i18nc("@action", "Up"));
+    mpUp->setText(i18nc("@action: go up in the list", "Up"));
 
     connect(mpUp, SIGNAL(clicked()),
             this, SLOT(priorityUp()));
 
     mpDown = new QToolButton(scrollAreaWidgetContents);
-    mpDown->setText(i18nc("@action", "Down"));
+    mpDown->setText(i18nc("@action: go down in the list", "Down"));
 
     connect(mpDown, SIGNAL(clicked()),
             this, SLOT(priorityDown()));
