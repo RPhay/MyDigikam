@@ -62,54 +62,6 @@ public:
                 qCWarning(DIGIKAM_AVPLAYER_LOG) << "Failed to create appDataDir: " << appDataDir();
             }
         }
-
-        moveOldCfg();
-    }
-
-    void moveOldCfg()
-    {
-        // for old config data migration
-
-        QString dir_old = qApp->applicationDirPath() + QString::fromLatin1("/data");
-
-        if (!QDir(dir_old).exists())
-        {
-            dir_old = QDir::homePath() + QString::fromLatin1("/.QtAV");
-        }
-
-        if (QDir(dir_old).exists())
-        {
-            if (!QFile(file).exists())
-            {
-                QString old = dir_old + QString::fromLatin1("/") + qApp->applicationName() + QString::fromLatin1(".ini");
-
-                if (QFile(old).exists())
-                {
-                    QFile::copy(old, file);
-                    QFile::remove(old);
-                }
-
-                old = dir_old + QString::fromLatin1("/playlist.qds");
-
-                if (QFile(old).exists())
-                {
-                    if (!QFile::copy(old, appDataDir() + QString::fromLatin1("/playlist.qds")))
-                        qCWarning(DIGIKAM_AVPLAYER_LOG).noquote() << QString::asprintf("error to move old playlist data");
-
-                    QFile::remove(old);
-                }
-
-                old = dir_old + QString::fromLatin1("/history.qds");
-
-                if (QFile(old).exists())
-                {
-                    if (!QFile::copy(old, appDataDir() + QString::fromLatin1("/history.qds")))
-                        qCWarning(DIGIKAM_AVPLAYER_LOG).noquote() << QString::asprintf("error to move old history data");
-
-                    QFile::remove(old);
-                }
-            }
-        }
     }
 
     void save()
