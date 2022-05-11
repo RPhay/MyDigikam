@@ -55,7 +55,7 @@ VideoEQConfigPage::VideoEQConfigPage(QWidget* const parent)
     setLayout(gl);
 
     QLabel* const label   = new QLabel();
-    label->setText(i18n("Engine"));
+    label->setText(i18nc("@label", "Engine"));
     mpEngine              = new QComboBox();
     setEngines(QVector<Engine>(1, SWScale));
 
@@ -73,10 +73,10 @@ VideoEQConfigPage::VideoEQConfigPage(QWidget* const parent)
         QString   text;
     } sliders[] =
     {
-        { &mpBSlider, i18n("Brightness")  },
-        { &mpCSlider, i18n("Constrast")   },
-        { &mpHSlider, i18n("Hue")         },
-        { &mpSSlider, i18n("Saturation")  },
+        { &mpBSlider, i18nc("@option", "Brightness")  },
+        { &mpCSlider, i18nc("@option", "Constrast")   },
+        { &mpHSlider, i18nc("@option", "Hue")         },
+        { &mpSSlider, i18nc("@option", "Saturation")  },
         { 0,          QString()         }
     };
 
@@ -95,10 +95,10 @@ VideoEQConfigPage::VideoEQConfigPage(QWidget* const parent)
         r++;
     }
 
-    mpGlobal      = new QCheckBox(i18n("Global"));
+    mpGlobal      = new QCheckBox(i18nc("@option: global settings", "Global"));
     mpGlobal->setEnabled(false);
     mpGlobal->setChecked(false);
-    mpResetButton = new QPushButton(i18n("Reset"));
+    mpResetButton = new QPushButton(i18nc("@action", "Reset"));
 
     gl->addWidget(mpGlobal,      r, c,     Qt::AlignLeft);
     gl->addWidget(mpResetButton, r, c + 1, Qt::AlignRight);

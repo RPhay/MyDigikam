@@ -52,24 +52,24 @@ AVFilterConfigPage::AVFilterConfigPage(QWidget* const parent)
     gl->setSizeConstraint(QLayout::SetFixedSize);
 
     int r        = 0;
-    m_ui[0].type = i18n("Video");
-    m_ui[1].type = i18n("Audio");
+    m_ui[0].type = i18nc("@option: video filter", "Video");
+    m_ui[1].type = i18nc("@option: audio filter", "Audio");
     const int mw = 300;
 
     for (size_t i = 0 ; i < sizeof(m_ui) / sizeof(m_ui[0]) ; ++i)
     {
-        m_ui[i].enable      = new QCheckBox(i18n("Enable") + QString::fromLatin1(" ") + m_ui[i].type);
+        m_ui[i].enable      = new QCheckBox(i18nc("@option: enable filter", "Enable %1", m_ui[i].type));
         gl->addWidget(m_ui[i].enable, r++, 0);
         m_ui[i].name        = new QComboBox();
-        m_ui[i].name->setToolTip(QString::fromLatin1("%1 %2 %3").arg(i18n("Registered")).arg(m_ui[i].type).arg(i18n("filters")));
+        m_ui[i].name->setToolTip(i18nc("@info", "Registered %1 filters", m_ui[i].type));
         gl->addWidget(m_ui[i].name, r++, 0);
         m_ui[i].description = new QLabel();
         m_ui[i].description->setMaximumWidth(mw);
         gl->addWidget(m_ui[i].description, r++, 0);
-        gl->addWidget(new QLabel(i18n("Parameters")), r++, 0);
+        gl->addWidget(new QLabel(i18nc("@label", "Parameters")), r++, 0);
         m_ui[i].options     = new QTextEdit();
         m_ui[i].options->setMaximumWidth(mw);
-        m_ui[i].options->setMaximumHeight(mw/6);
+        m_ui[i].options->setMaximumHeight(mw / 6);
         gl->addWidget(m_ui[i].options, r++, 0);
     }
 

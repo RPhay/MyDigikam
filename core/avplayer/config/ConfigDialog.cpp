@@ -107,6 +107,7 @@ void ConfigDialog::onButtonClicked(QAbstractButton* btn)
         {
             qCDebug(DIGIKAM_AVPLAYER_LOG).noquote() << QString::asprintf("QDialogButtonBox ResetRole clicked");
             onReset();
+
             break;
         }
 
@@ -115,6 +116,7 @@ void ConfigDialog::onButtonClicked(QAbstractButton* btn)
         {
             qCDebug(DIGIKAM_AVPLAYER_LOG).noquote() << QString::asprintf("QDialogButtonBox ApplyRole clicked");
             onApply();
+
             break;
         }
 
@@ -122,6 +124,7 @@ void ConfigDialog::onButtonClicked(QAbstractButton* btn)
         case QDialogButtonBox::RejectRole:
         {
             onCancel();
+
             break;
         }
 
