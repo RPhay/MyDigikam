@@ -29,7 +29,6 @@
 namespace Digikam
 {
 
-QMutex ExifToolProcess::Private::s_cmdIdMutex;
 int    ExifToolProcess::Private::s_nextCmdId = ExifToolProcess::Private::CMD_ID_MIN;
 
 ExifToolProcess::Private::Private(ExifToolProcess* const q)
@@ -53,6 +52,8 @@ void ExifToolProcess::Private::execNextCmd()
         qCWarning(DIGIKAM_METAENGINE_LOG) << "ExifToolProcess::execNextCmd(): ExifTool is not running";
         return;
     }
+
+    QMutexLocker locker(&mutex);
 
     if (cmdRunning || cmdQueue.isEmpty())
     {

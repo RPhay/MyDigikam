@@ -83,6 +83,10 @@ ExifToolProcess* ExifToolProcess::instance()
         connect(ExifToolProcess::internalPtr, &QProcess::readyReadStandardError,
                 ExifToolProcess::internalPtr, &ExifToolProcess::slotReadyReadStandardError);
 
+        connect(ExifToolProcess::internalPtr, &ExifToolProcess::signalStartExifTool,
+                ExifToolProcess::internalPtr, &ExifToolProcess::slotStartExifTool,
+                Qt::QueuedConnection);
+
         connect(ExifToolProcess::internalPtr, &ExifToolProcess::signalExecNextCmd,
                 ExifToolProcess::internalPtr, &ExifToolProcess::slotExecNextCmd,
                 Qt::QueuedConnection);
@@ -130,11 +134,27 @@ bool ExifToolProcess::startExifTool()
         return true;
     }
 
+    QMutexLocker locker(&d->mutex);
+
+    if (state() != QProcess::NotRunning)
+    {
+        return true;
+    }
+
     if (!checkExifToolProgram())
     {
         return false;
     }
 
+    Q_EMIT signalStartExifTool();
+
+    qApp->processEvents();
+
+    return waitForStarted(2000);
+}
+
+void ExifToolProcess::slotStartExifTool()
+{
     // Prepare command for ExifTool
 
     QString program = d->etExePath;
@@ -186,8 +206,6 @@ bool ExifToolProcess::startExifTool()
     qCDebug(DIGIKAM_METAENGINE_LOG) << "ExifToolProcess::start(): create new ExifTool instance:" << program << args;
 
     start(program, args, QProcess::ReadWrite);
-
-    return waitForStarted(1000);
 }
 
 void ExifToolProcess::terminateExifTool()
@@ -270,15 +288,14 @@ int ExifToolProcess::command(const QByteArrayList& args, Action ac)
 
     // ThreadSafe incrementation of d->nextCmdId
 
-    Private::s_cmdIdMutex.lock();
+    QMutexLocker locker(&d->mutex);
+
     const int cmdId = Private::s_nextCmdId;
 
     if (Private::s_nextCmdId++ >= Private::CMD_ID_MAX)
     {
         Private::s_nextCmdId = Private::CMD_ID_MIN;
     }
-
-    Private::s_cmdIdMutex.unlock();
 
     // String representation of d->cmdId with leading zero -> constant size: 10 char
 
@@ -344,7 +361,10 @@ void ExifToolProcess::slotFinished(int exitCode, QProcess::ExitStatus exitStatus
 {
     qCDebug(DIGIKAM_METAENGINE_LOG) << "ExifTool process finished" << exitCode << exitStatus;
 
-    emit signalFinished(d->cmdRunning, d->cmdAction, exitCode, exitStatus);
+    if (d->cmdRunning)
+    {
+        emit signalFinished(d->cmdRunning, d->cmdAction, exitCode, exitStatus);
+    }
 
     d->cmdRunning = 0;
     d->cmdAction  = NO_ACTION;

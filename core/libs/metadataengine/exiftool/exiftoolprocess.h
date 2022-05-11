@@ -184,6 +184,8 @@ Q_SIGNALS:
 
     void signalExecNextCmd();
 
+    void signalStartExifTool();
+
     void signalStarted(int cmdId,
                        int cmdAction);
 
@@ -210,6 +212,7 @@ private Q_SLOTS:
 
     void slotStarted();
     void slotExecNextCmd();
+    void slotStartExifTool();
     void slotStateChanged(QProcess::ProcessState newState);
     void slotErrorOccurred(QProcess::ProcessError error);
     void slotReadyReadStandardOutput();
