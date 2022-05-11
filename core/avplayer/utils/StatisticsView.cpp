@@ -42,49 +42,49 @@ namespace AVPlayer
 QStringList getBaseInfoKeys()
 {
     return QStringList()
-            << i18n("Url")
-            << i18n("Format")
-            << i18n("Bit rate")
-            << i18n("Start time")
-            << i18n("Duration")
-           ;
+            << i18nc("@option: base", "Url")
+            << i18nc("@option: base", "Format")
+            << i18nc("@option: base", "Bit rate")
+            << i18nc("@option: base", "Start time")
+            << i18nc("@option: base", "Duration")
+    ;
 }
 
 QStringList getCommonInfoKeys()
 {
     return QStringList()
-            << i18n("Available")
-            << i18n("Codec")
-            << i18n("Decoder")
-            << i18n("Decoder detail")
-            << i18n("Total time")
-            << i18n("Start time")
-            << i18n("Bit rate")
-            << i18n("Frames")
-            << i18n("FPS")           // avg_frame_rate. guessed by FFmpeg
-           ;
+            << i18nc("@option: common", "Available")
+            << i18nc("@option: common", "Codec")
+            << i18nc("@option: common", "Decoder")
+            << i18nc("@option: common", "Decoder detail")
+            << i18nc("@option: common", "Total time")
+            << i18nc("@option: common", "Start time")
+            << i18nc("@option: common", "Bit rate")
+            << i18nc("@option: common", "Frames")
+            << i18nc("@option: common", "FPS")           // avg_frame_rate. guessed by FFmpeg
+    ;
 }
 
 QStringList getVideoInfoKeys()
 {
     return getCommonInfoKeys()
-            << i18n("FPS Now")       // current display fps
-            << i18n("Pixel format")
-            << i18n("Size")          // w x h
-            << i18n("Coded size")    // w x h
-            << i18n("GOP size")
-           ;
+            << i18nc("@option: video", "FPS Now")       // current display fps
+            << i18nc("@option: video", "Pixel format")
+            << i18nc("@option: video", "Size")          // w x h
+            << i18nc("@option: video", "Coded size")    // w x h
+            << i18nc("@option: video", "GOP size")
+    ;
 }
 
 QStringList getAudioInfoKeys()
 {
     return getCommonInfoKeys()
-            << i18n("Sample format")
-            << i18n("Sample rate")
-            << i18n("Channels")
-            << i18n("Channel layout")
-            << i18n("Frame size")
-           ;
+            << i18nc("@option: audio", "Sample format")
+            << i18nc("@option: audio", "Sample rate")
+            << i18nc("@option: audio", "Channels")
+            << i18nc("@option: audio", "Channel layout")
+            << i18nc("@option: audio", "Frame size")
+    ;
 }
 
 QVariantList getBaseInfoValues(const Statistics& s)
@@ -95,7 +95,7 @@ QVariantList getBaseInfoValues(const Statistics& s)
             << QString::number(s.bit_rate / 1000).append(QString::fromLatin1(" Kb/s"))
             << s.start_time.toString(QString::fromLatin1("HH:mm:ss"))
             << s.duration.toString(QString::fromLatin1("HH:mm:ss"))
-           ;
+    ;
 }
 
 QList<QVariant> getVideoInfoValues(const Statistics& s)
@@ -115,7 +115,7 @@ QList<QVariant> getVideoInfoValues(const Statistics& s)
             << QString::fromLatin1("%1x%2").arg(s.video_only.width).arg(s.video_only.height)
             << QString::fromLatin1("%1x%2").arg(s.video_only.coded_width).arg(s.video_only.coded_height)
             << s.video_only.gop_size
-           ;
+    ;
 }
 
 QList<QVariant> getAudioInfoValues(const Statistics& s)
@@ -135,7 +135,7 @@ QList<QVariant> getAudioInfoValues(const Statistics& s)
             << s.audio_only.channels
             << s.audio_only.channel_layout
             << s.audio_only.frame_size
-           ;
+    ;
 }
 
 StatisticsView::StatisticsView(QWidget* const parent)
@@ -145,44 +145,46 @@ StatisticsView::StatisticsView(QWidget* const parent)
       mpAudioBitRate(0),
       mpVideoBitRate(0)
 {
-    setWindowTitle(i18n("Media info"));
+    setWindowTitle(i18nc("@title", "Media info"));
     setModal(false);
     setWindowFlags(windowFlags() | Qt::WindowStaysOnTopHint);
     mpView                = new QTreeWidget();
     mpView->setAnimated(true);
     mpView->setHeaderHidden(false);
     mpView->setColumnCount(2);
-    mpView->headerItem()->setText(0, i18n("Key"));
-    mpView->headerItem()->setText(1, i18n("Value"));
+    mpView->headerItem()->setText(0, i18nc("@title", "Key"));
+    mpView->headerItem()->setText(1, i18nc("@title", "Value"));
     initBaseItems(&mBaseItems);
     mpView->addTopLevelItems(mBaseItems);
     mpMetadata            = new QTreeWidgetItem();
-    mpMetadata->setText(0, i18n("Metadata"));
+    mpMetadata->setText(0, i18nc("@item: video info", "Metadata"));
     mpView->addTopLevelItem(mpMetadata);
-    QTreeWidgetItem* item = createNodeWithItems(mpView, i18n("Video"), getVideoInfoKeys(), &mVideoItems);
+    QTreeWidgetItem* item = createNodeWithItems(mpView, i18nc("@item: video stats", "Video"), getVideoInfoKeys(), &mVideoItems);
     mpFPS                 = item->child(9);
 
     //mpVideoBitRate =
 
     mpVideoMetadata = new QTreeWidgetItem(item);
-    mpVideoMetadata->setText(0, i18n("Metadata"));
+    mpVideoMetadata->setText(0, i18nc("@option", "Metadata"));
     mpView->addTopLevelItem(item);
-    item = createNodeWithItems(mpView, i18n("Audio"), getAudioInfoKeys(), &mAudioItems);
+    item = createNodeWithItems(mpView, i18nc("@option", "Audio"), getAudioInfoKeys(), &mAudioItems);
 
     //mpAudioBitRate =
 
     mpAudioMetadata = new QTreeWidgetItem(item);
-    mpAudioMetadata->setText(0, i18n("Metadata"));
+    mpAudioMetadata->setText(0, i18nc("@option", "Metadata"));
     mpView->addTopLevelItem(item);
     mpView->resizeColumnToContents(0); // call this after content is done
 
-    QPushButton* btn = new QPushButton(i18n("Ok"));
-    QHBoxLayout* btnLayout = new QHBoxLayout;
+    QPushButton* const btn       = new QPushButton(i18nc("@action", "Ok"));
+    QHBoxLayout* const btnLayout = new QHBoxLayout;
     btnLayout->addStretch();
     btnLayout->addWidget(btn);
-    QObject::connect(btn, SIGNAL(clicked()), SLOT(accept()));
 
-    QVBoxLayout* vl = new QVBoxLayout();
+    QObject::connect(btn, SIGNAL(clicked()),
+                     this, SLOT(accept()));
+
+    QVBoxLayout* const vl = new QVBoxLayout();
     vl->addWidget(mpView);
     vl->addLayout(btnLayout);
     setLayout(vl);

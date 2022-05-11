@@ -61,18 +61,18 @@ PlayList::PlayList(QWidget* const parent)
     mpListView->setItemDelegate(mpDelegate);
     mpListView->setSelectionMode(QAbstractItemView::ExtendedSelection); // ctrl,shift
     mpListView->setEditTriggers(QAbstractItemView::NoEditTriggers);
-    mpListView->setToolTip(QString::fromLatin1("Ctrl/Shift + ") + i18n("Click to select multiple"));
+    mpListView->setToolTip(i18nc("@info", "Use Ctrl/Shift + Click to select multiple items"));
     QVBoxLayout* const vbl = new QVBoxLayout;
     setLayout(vbl);
     vbl->addWidget(mpListView);
     QHBoxLayout* const hbl = new QHBoxLayout;
 
-    mpClear                = new QToolButton(0);
-    mpClear->setText(i18n("Clear"));
-    mpRemove               = new QToolButton(0);
+    mpClear                = new QToolButton(nullptr);
+    mpClear->setText(i18nc("@action: clear playlist", "Clear"));
+    mpRemove               = new QToolButton(nullptr);
     mpRemove->setText(QString::fromLatin1("-"));
-    mpRemove->setToolTip(i18n("Remove selected items"));
-    mpAdd                  = new QToolButton(0);
+    mpRemove->setToolTip(i18nc("@info", "Remove selected items"));
+    mpAdd                  = new QToolButton(nullptr);
     mpAdd->setText(QString::fromLatin1("+"));
 
     hbl->addWidget(mpClear);
@@ -263,7 +263,7 @@ void PlayList::addItems()
 {
     // TODO: add url;
 
-    QStringList files = QFileDialog::getOpenFileNames(0, i18n("Select files"));
+    QStringList files = QFileDialog::getOpenFileNames(nullptr, i18nc("@title", "Select files"));
 
     if (files.isEmpty())
         return;
