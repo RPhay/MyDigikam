@@ -243,7 +243,7 @@ void AVPlayerConfigMngr::reload()
     KConfigGroup group        = config->group(QLatin1String("MediaPlayer History"));
     group.writeEntry(QLatin1String("HistoryPropertiesList"), mpData->history);
 
-    mpData->history = group.readEntry(QLatin1String("HistoryPropertiesList"),  QVariantList());
+    mpData->history = group.readEntry(QLatin1String("MediaList"),              QVariantList());
 
     // ---
 
@@ -1180,7 +1180,7 @@ void AVPlayerConfigMngr::writeHistory()
     config->deleteGroup(QLatin1String("MediaPlayer History"));
     KConfigGroup group        = config->group(QLatin1String("MediaPlayer History"));
 
-    group.writeEntry(QLatin1String("HistoryPropertiesList"), mpData->history);
+    group.writeEntry(QLatin1String("MediaList"), mpData->history);
 
     config->sync();
 }
