@@ -111,7 +111,7 @@ bool ExifToolParser::loadChunk(const QString& path, bool fromVideo)
     cmdArgs << QByteArray("-TagsFromFile");
     cmdArgs << d->filePathEncoding(fileInfo);
 
-    QByteArray cpyOpt("-all:all>all");
+    QByteArray cpyOpt("-all");
 
     if (!fromVideo)
     {

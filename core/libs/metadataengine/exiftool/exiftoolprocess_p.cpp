@@ -165,7 +165,6 @@ void ExifToolProcess::Private::setProcessErrorAndEmit(QProcess::ProcessError err
 {
     processError = error;
     errorString  = description;
-    cmdRunning   = 0;
 
     Q_EMIT pp->signalErrorOccurred(cmdRunning, cmdAction, error);
 }
