@@ -132,7 +132,7 @@ int main(int argc, char* argv[])
     aboutData.setCopyrightStatement(DAboutData::copyright());
     aboutData.setOtherText(additionalInformation());
     aboutData.setHomepage(DAboutData::webProjectUrl().url());
-    aboutData.setProductName(QByteArray("digikam/showfoto"));   // For bugzilla
+    aboutData.setProductName(QByteArray("digikam/showfoto-core"));   // For bugzilla
     aboutData.setTranslator(i18nc("NAME OF TRANSLATORS", "Your names"),
                             i18nc("EMAIL OF TRANSLATORS", "Your emails"));
 
