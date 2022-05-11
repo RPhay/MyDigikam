@@ -351,20 +351,20 @@ void MainWindow::setupUi()
     mpTimeSlider->setOrientation(Qt::Horizontal);
     mpTimeSlider->setMinimum(0);
     mpCurrent                       = new QLabel(mpControl);
-    mpCurrent->setToolTip(i18n("Current time"));
+    mpCurrent->setToolTip(i18nc("@info", "Current time"));
     mpCurrent->setContentsMargins(QMargins(2, 2, 2, 2));
     mpCurrent->setText(QString::fromLatin1("00:00:00"));
     mpEnd                           = new QLabel(mpControl);
-    mpEnd->setToolTip(i18n("Duration"));
+    mpEnd->setToolTip(i18nc("@info", "Duration"));
     mpEnd->setContentsMargins(QMargins(2, 2, 2, 2));
     mpEnd->setText(QString::fromLatin1("00:00:00"));
     mpTitle                         = new QLabel(mpControl);
-    mpTitle->setToolTip(i18n("Render engine"));
+    mpTitle->setToolTip(i18nc("@info", "Render engine"));
     mpTitle->setText(QString::fromLatin1("QPainter"));
     mpTitle->setIndent(8);
     mpSpeed                         = new QLabel(QString::fromLatin1("1.00"));
     mpSpeed->setContentsMargins(QMargins(1, 1, 1, 1));
-    mpSpeed->setToolTip(i18n("Speed. Ctrl+Up/Down"));
+    mpSpeed->setToolTip(i18nc("@info", "Speed. Ctrl+Up/Down"));
 
     mpPlayPauseBtn                  = new QToolButton(mpControl);
     mpPlayPauseBtn->setIcon(QIcon::fromTheme(QLatin1String("media-playback-start")));
@@ -375,17 +375,17 @@ void MainWindow::setupUi()
     mpForwardBtn                    = new QToolButton(mpControl);
     mpForwardBtn->setIcon(QIcon::fromTheme(QLatin1String("media-skip-forward")));
     mpOpenBtn                       = new QToolButton(mpControl);
-    mpOpenBtn->setToolTip(i18n("Open"));
+    mpOpenBtn->setToolTip(i18nc("@info: open new media", "Open"));
     mpOpenBtn->setIcon(QIcon::fromTheme(QLatin1String("media-eject")));
 
     mpInfoBtn                       = new QToolButton();
     mpInfoBtn->setToolTip(QString::fromLatin1("Media information"));
     mpInfoBtn->setIcon(QIcon::fromTheme(QLatin1String("dialog-information")));
     mpCaptureBtn                    = new QToolButton();
-    mpCaptureBtn->setToolTip(i18n("Capture"));
+    mpCaptureBtn->setToolTip(i18nc("@info", "Capture"));
     mpCaptureBtn->setIcon(QIcon::fromTheme(QLatin1String("media-record")));
     mpVolumeBtn                     = new QToolButton();
-    mpVolumeBtn->setToolTip(i18n("Volume"));
+    mpVolumeBtn->setToolTip(i18nc("@info", "Volume"));
     mpVolumeBtn->setIcon(QIcon::fromTheme(QLatin1String("player-volume")));
 
     mpVolumeSlider                  = new Slider();
@@ -496,10 +496,10 @@ void MainWindow::setupUi()
     hb->addWidget(pRepeatLabel);
     hb->addWidget(mpRepeatA);
     vb->addLayout(hb);
-    pRepeatLabel                    = new QLabel(i18n("To"));
+    pRepeatLabel                    = new QLabel(i18nc("@label", "To"));
     mpRepeatB                       = new QTimeEdit();
     mpRepeatB->setDisplayFormat(QString::fromLatin1("HH:mm:ss"));
-    mpRepeatB->setToolTip(i18n("negative value means from the end"));
+    mpRepeatB->setToolTip(i18nc("@info", "negative value means from the end"));
 
     connect(mpRepeatB, SIGNAL(timeChanged(QTime)),
             this, SLOT(repeatBChanged(QTime)));
@@ -519,7 +519,7 @@ void MainWindow::setupUi()
 
     mpMenu->addSeparator();
 
-    subMenu                         = new ClickableMenu(i18n("Clock"));
+    subMenu                         = new ClickableMenu(i18nc("@action", "Clock"));
     mpMenu->addMenu(subMenu);
     QActionGroup* ag                = new QActionGroup(subMenu);
     ag->setExclusive(true);
@@ -527,9 +527,9 @@ void MainWindow::setupUi()
     connect(subMenu, SIGNAL(triggered(QAction*)),
             this, SLOT(changeClockType(QAction*)));
 
-    subMenu->addAction(i18n("Auto"))->setData(-1);
-    subMenu->addAction(i18n("Audio"))->setData(AVClock::AudioClock);
-    subMenu->addAction(i18n("Video"))->setData(AVClock::VideoClock);
+    subMenu->addAction(i18nc("@option", "Auto"))->setData(-1);
+    subMenu->addAction(i18nc("@option", "Audio"))->setData(AVClock::AudioClock);
+    subMenu->addAction(i18nc("@option", "Video"))->setData(AVClock::VideoClock);
 
     foreach (QAction* const action, subMenu->actions())
     {
