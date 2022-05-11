@@ -43,7 +43,7 @@
 
 // Local includes
 
-#include "ConfigManager.h"
+#include "AVPlayerConfigMngr.h"
 #include "PropertyEditor.h"
 #include "VideoDecoder.h"
 #include "digikam_debug.h"
@@ -253,8 +253,8 @@ DecoderConfigPage::DecoderConfigPage(QWidget* const parent)
 
     vb->addWidget(new QLabel(i18nc("@label", "Decoder Priorities (reopen is required)")));
 
-    sPriorityUi                             = idsFromNames(ConfigManager::instance().decoderPriorityNames());
-    QStringList vds                         = ConfigManager::instance().decoderPriorityNames();
+    sPriorityUi                             = idsFromNames(AVPlayerConfigMngr::instance().decoderPriorityNames());
+    QStringList vds                         = AVPlayerConfigMngr::instance().decoderPriorityNames();
     vds.removeDuplicates();
     QVector<VideoDecoderId> vids            = idsFromNames(vds);
     QVector<QtAV::VideoDecoderId> vds_all   = VideoDecoder::registered();
@@ -332,7 +332,7 @@ DecoderConfigPage::DecoderConfigPage(QWidget* const parent)
     scrollArea->setWidget(scrollAreaWidgetContents);
     vbs->addWidget(scrollArea);
 
-    connect(&ConfigManager::instance(), SIGNAL(decoderPriorityNamesChanged()),
+    connect(&AVPlayerConfigMngr::instance(), SIGNAL(decoderPriorityNamesChanged()),
             this, SLOT(onConfigChanged()));
 }
 
@@ -372,7 +372,7 @@ void DecoderConfigPage::applyFromUi()
     }
 
     sPriorityUi = idsFromNames(decs);
-    ConfigManager::instance().setDecoderPriorityNames(decs);
+    AVPlayerConfigMngr::instance().setDecoderPriorityNames(decs);
 }
 
 void DecoderConfigPage::applyToUi()
@@ -394,11 +394,11 @@ void DecoderConfigPage::videoDecoderEnableChanged()
 
     if (applyOnUiChange())
     {
-        ConfigManager::instance().setDecoderPriorityNames(names);
+        AVPlayerConfigMngr::instance().setDecoderPriorityNames(names);
     }
     else
     {
-//        emit ConfigManager::instance().decoderPriorityChanged(sPriorityUi);
+//        emit AVPlayerConfigMngr::instance().decoderPriorityChanged(sPriorityUi);
     }
 }
 
@@ -417,7 +417,7 @@ void DecoderConfigPage::priorityUp()
     mpDecLayout->removeWidget(iw);
     mpDecLayout->insertWidget(i, iw);
     QStringList decs_all;
-    QStringList decs_p          = ConfigManager::instance().decoderPriorityNames();
+    QStringList decs_p          = AVPlayerConfigMngr::instance().decoderPriorityNames();
     QStringList decs;
 
     foreach (DecoderItemWidget* const w, mDecItems)
@@ -433,11 +433,11 @@ void DecoderConfigPage::priorityUp()
 
     if (applyOnUiChange())
     {
-        ConfigManager::instance().setDecoderPriorityNames(decs);
+        AVPlayerConfigMngr::instance().setDecoderPriorityNames(decs);
     }
     else
     {
-        //emit ConfigManager::instance().decoderPriorityChanged(idsFromNames(decs));
+        //emit AVPlayerConfigMngr::instance().decoderPriorityChanged(idsFromNames(decs));
     }
 }
 
@@ -460,7 +460,7 @@ void DecoderConfigPage::priorityDown()
     mpDecLayout->insertWidget(i, iw);
 
     QStringList decs_all;
-    QStringList decs_p          = ConfigManager::instance().decoderPriorityNames();
+    QStringList decs_p          = AVPlayerConfigMngr::instance().decoderPriorityNames();
     QStringList decs;
 
     foreach (DecoderItemWidget* const w, mDecItems)
@@ -476,12 +476,12 @@ void DecoderConfigPage::priorityDown()
 
     if (applyOnUiChange())
     {
-        ConfigManager::instance().setDecoderPriorityNames(decs);
+        AVPlayerConfigMngr::instance().setDecoderPriorityNames(decs);
     }
     else
     {
-        //emit ConfigManager::instance().decoderPriorityChanged(idsFromNames(decs));
-        //emit ConfigManager::instance().registeredDecodersChanged(idsFromNames(decs));
+        //emit AVPlayerConfigMngr::instance().decoderPriorityChanged(idsFromNames(decs));
+        //emit AVPlayerConfigMngr::instance().registeredDecodersChanged(idsFromNames(decs));
     }
 }
 
@@ -547,7 +547,7 @@ void DecoderConfigPage::updateDecodersUi()
 
 void DecoderConfigPage::onConfigChanged()
 {
-    sPriorityUi = idsFromNames(ConfigManager::instance().decoderPriorityNames());
+    sPriorityUi = idsFromNames(AVPlayerConfigMngr::instance().decoderPriorityNames());
     sDecodersUi = VideoDecoder::registered();
     updateDecodersUi();
 }

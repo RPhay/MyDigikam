@@ -126,7 +126,7 @@ void do_common_options_before_qapp(const QOptions& options)
 
 #ifdef Q_OS_LINUX
 
-    QSettings cfg(ConfigManager::defaultConfigFile(), QSettings::IniFormat);
+    QSettings cfg(AVPlayerConfigMngr::defaultConfigFile(), QSettings::IniFormat);
     const bool set_egl = cfg.value(QLatin1String("opengl/egl")).toBool();
 
     // https://bugreports.qt.io/browse/QTBUG-49529
@@ -183,17 +183,17 @@ void set_opengl_backend(const QString& glopt, const QString& appname)
 
     if (gl.isEmpty())
     {
-        switch (ConfigManager::instance().openGLType())
+        switch (AVPlayerConfigMngr::instance().openGLType())
         {
-            case ConfigManager::Desktop:
+            case AVPlayerConfigMngr::Desktop:
                 gl = QLatin1String("desktop");
                 break;
 
-            case ConfigManager::OpenGLES:
+            case AVPlayerConfigMngr::OpenGLES:
                 gl = QLatin1String("es");
                 break;
 
-            case ConfigManager::Software:
+            case AVPlayerConfigMngr::Software:
                 gl = QLatin1String("software");
                 break;
 
@@ -207,7 +207,7 @@ void set_opengl_backend(const QString& glopt, const QString& appname)
         (gl == QLatin1String("opengles")))
     {
         gl = QLatin1String("es_");
-        gl.append(ConfigManager::instance().getANGLEPlatform().toLower());
+        gl.append(AVPlayerConfigMngr::instance().getANGLEPlatform().toLower());
     }
 
 #if QT_VERSION >= QT_VERSION_CHECK(5, 4, 0)

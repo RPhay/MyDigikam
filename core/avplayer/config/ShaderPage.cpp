@@ -34,7 +34,7 @@
 
 // Local includes
 
-#include "ConfigManager.h"
+#include "AVPlayerConfigMngr.h"
 
 namespace AVPlayer
 {
@@ -84,16 +84,16 @@ QString ShaderPage::name() const
 
 void ShaderPage::applyToUi()
 {
-    m_enable->setChecked(ConfigManager::instance().userShaderEnabled());
-    m_fbo->setChecked(ConfigManager::instance().intermediateFBO());
-    m_header->setText(ConfigManager::instance().fragHeader());
-    m_sample->setText(ConfigManager::instance().fragSample());
-    m_pp->setText(ConfigManager::instance().fragPostProcess());
+    m_enable->setChecked(AVPlayerConfigMngr::instance().userShaderEnabled());
+    m_fbo->setChecked(AVPlayerConfigMngr::instance().intermediateFBO());
+    m_header->setText(AVPlayerConfigMngr::instance().fragHeader());
+    m_sample->setText(AVPlayerConfigMngr::instance().fragSample());
+    m_pp->setText(AVPlayerConfigMngr::instance().fragPostProcess());
 }
 
 void ShaderPage::applyFromUi()
 {
-    ConfigManager::instance()
+    AVPlayerConfigMngr::instance()
             .setUserShaderEnabled(m_enable->isChecked())
             .setIntermediateFBO(m_fbo->isChecked())
             .setFragHeader(m_header->toPlainText())

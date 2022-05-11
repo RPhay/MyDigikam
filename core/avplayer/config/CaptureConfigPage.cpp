@@ -39,7 +39,7 @@
 
 // Local includes
 
-#include "ConfigManager.h"
+#include "AVPlayerConfigMngr.h"
 #include "Slider.h"
 #include "digikam_debug.h"
 
@@ -89,10 +89,10 @@ CaptureConfigPage::CaptureConfigPage(QWidget* const parent)
     mpQuality->setTickInterval(10);
     mpQuality->setTickPosition(QSlider::TicksBelow);
 
-    connect(&ConfigManager::instance(), SIGNAL(captureDirChanged(QString)),
+    connect(&AVPlayerConfigMngr::instance(), SIGNAL(captureDirChanged(QString)),
             mpDir, SLOT(setText(QString)));
 
-    connect(&ConfigManager::instance(), SIGNAL(captureQualityChanged(int)),
+    connect(&AVPlayerConfigMngr::instance(), SIGNAL(captureQualityChanged(int)),
             mpQuality, SLOT(setValue(int)));
 /*
     connect(mpDir, SIGNAL(textChanged(QString)),
@@ -113,20 +113,20 @@ QString CaptureConfigPage::name() const
 
 void CaptureConfigPage::applyFromUi()
 {
-    ConfigManager::instance().setCaptureDir(mpDir->text())
+    AVPlayerConfigMngr::instance().setCaptureDir(mpDir->text())
             .setCaptureFormat(mpFormat->currentText())
             .setCaptureQuality(mpQuality->value());
 }
 
 void CaptureConfigPage::applyToUi()
 {
-    mpDir->setText(ConfigManager::instance().captureDir());
-    int idx = mpFormat->findText(ConfigManager::instance().captureFormat());
+    mpDir->setText(AVPlayerConfigMngr::instance().captureDir());
+    int idx = mpFormat->findText(AVPlayerConfigMngr::instance().captureFormat());
 
     if (idx >= 0)
         mpFormat->setCurrentIndex(idx);
 
-    mpQuality->setValue(ConfigManager::instance().captureQuality());
+    mpQuality->setValue(AVPlayerConfigMngr::instance().captureQuality());
 }
 
 void CaptureConfigPage::selectSaveDir()

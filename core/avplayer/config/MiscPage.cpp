@@ -34,7 +34,7 @@
 
 // Local includes
 
-#include "ConfigManager.h"
+#include "AVPlayerConfigMngr.h"
 
 namespace AVPlayer
 {
@@ -90,10 +90,10 @@ MiscPage::MiscPage()
 
     gl->addWidget(new QLabel(i18n("OpenGL type")), r, 0);
     m_opengl              = new QComboBox();
-    m_opengl->addItem(QString::fromLatin1("Auto"), ConfigManager::Auto);
-    m_opengl->addItem(QString::fromLatin1("Desktop"), ConfigManager::Desktop);
-    m_opengl->addItem(QString::fromLatin1("OpenGLES"), ConfigManager::OpenGLES);
-    m_opengl->addItem(QString::fromLatin1("Software"), ConfigManager::Software);
+    m_opengl->addItem(QString::fromLatin1("Auto"), AVPlayerConfigMngr::Auto);
+    m_opengl->addItem(QString::fromLatin1("Desktop"), AVPlayerConfigMngr::Desktop);
+    m_opengl->addItem(QString::fromLatin1("OpenGLES"), AVPlayerConfigMngr::OpenGLES);
+    m_opengl->addItem(QString::fromLatin1("Software"), AVPlayerConfigMngr::Software);
     m_opengl->setToolTip(i18n("Windows only") + QLatin1String(" Qt>=5.4 + dynamicgl") +
                          QString::fromLatin1("\n") + i18n("OpenGLES is Used by DXVA Zero Copy"));
     gl->addWidget(m_opengl, r, 1);
@@ -134,11 +134,11 @@ QString MiscPage::name() const
 
 void MiscPage::applyFromUi()
 {
-    ConfigManager::instance().setPreviewEnabled(m_preview_on->isChecked())
+    AVPlayerConfigMngr::instance().setPreviewEnabled(m_preview_on->isChecked())
             .setPreviewWidth(m_preview_w->value())
             .setPreviewHeight(m_preview_h->value())
             .setEGL(m_egl->isChecked())
-            .setOpenGLType((ConfigManager::OpenGLType)m_opengl->itemData(m_opengl->currentIndex()).toInt())
+            .setOpenGLType((AVPlayerConfigMngr::OpenGLType)m_opengl->itemData(m_opengl->currentIndex()).toInt())
             .setANGLEPlatform(m_angle_platform->currentText().toLower())
             .setForceFrameRate(m_fps->value())
             .setBufferValue(m_buffer_value->value())
@@ -149,19 +149,19 @@ void MiscPage::applyFromUi()
 
 void MiscPage::applyToUi()
 {
-    m_preview_on->setChecked(ConfigManager::instance().previewEnabled());
-    m_preview_w->setValue(ConfigManager::instance().previewWidth());
-    m_preview_h->setValue(ConfigManager::instance().previewHeight());
-    m_opengl->setCurrentIndex(m_opengl->findData(ConfigManager::instance().openGLType()));
-    m_angle_platform->setCurrentIndex(m_angle_platform->findText(ConfigManager::instance().getANGLEPlatform().toUpper()));
-    m_egl->setChecked(ConfigManager::instance().isEGL());
-    m_fps->setValue(ConfigManager::instance().forceFrameRate());
+    m_preview_on->setChecked(AVPlayerConfigMngr::instance().previewEnabled());
+    m_preview_w->setValue(AVPlayerConfigMngr::instance().previewWidth());
+    m_preview_h->setValue(AVPlayerConfigMngr::instance().previewHeight());
+    m_opengl->setCurrentIndex(m_opengl->findData(AVPlayerConfigMngr::instance().openGLType()));
+    m_angle_platform->setCurrentIndex(m_angle_platform->findText(AVPlayerConfigMngr::instance().getANGLEPlatform().toUpper()));
+    m_egl->setChecked(AVPlayerConfigMngr::instance().isEGL());
+    m_fps->setValue(AVPlayerConfigMngr::instance().forceFrameRate());
 
-    //m_notify_interval->setValue(ConfigManager::instance().avfilterOptions());
+    //m_notify_interval->setValue(AVPlayerConfigMngr::instance().avfilterOptions());
 
-    m_buffer_value->setValue(ConfigManager::instance().bufferValue());
-    m_timeout->setValue(ConfigManager::instance().timeout());
-    m_timeout_abort->setChecked(ConfigManager::instance().abortOnTimeout());
+    m_buffer_value->setValue(AVPlayerConfigMngr::instance().bufferValue());
+    m_timeout->setValue(AVPlayerConfigMngr::instance().timeout());
+    m_timeout_abort->setChecked(AVPlayerConfigMngr::instance().abortOnTimeout());
 }
 
 } // namespace AVPlayer

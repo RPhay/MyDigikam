@@ -38,7 +38,7 @@
 // Local includes
 
 #include "LibAVFilter.h"
-#include "ConfigManager.h"
+#include "AVPlayerConfigMngr.h"
 
 namespace AVPlayer
 {
@@ -94,7 +94,7 @@ QString AVFilterConfigPage::name() const
 
 void AVFilterConfigPage::applyFromUi()
 {
-    ConfigManager::instance()
+    AVPlayerConfigMngr::instance()
             .avfilterVideoOptions(m_ui[0].options->toPlainText())
             .avfilterVideoEnable(m_ui[0].enable->isChecked())
             .avfilterAudioOptions(m_ui[1].options->toPlainText())
@@ -104,10 +104,10 @@ void AVFilterConfigPage::applyFromUi()
 
 void AVFilterConfigPage::applyToUi()
 {
-    m_ui[0].enable->setChecked(ConfigManager::instance().avfilterVideoEnable());
-    m_ui[0].options->setText(ConfigManager::instance().avfilterVideoOptions());
-    m_ui[1].enable->setChecked(ConfigManager::instance().avfilterAudioEnable());
-    m_ui[1].options->setText(ConfigManager::instance().avfilterAudioOptions());
+    m_ui[0].enable->setChecked(AVPlayerConfigMngr::instance().avfilterVideoEnable());
+    m_ui[0].options->setText(AVPlayerConfigMngr::instance().avfilterVideoOptions());
+    m_ui[1].enable->setChecked(AVPlayerConfigMngr::instance().avfilterAudioEnable());
+    m_ui[1].options->setText(AVPlayerConfigMngr::instance().avfilterAudioOptions());
 }
 
 void AVFilterConfigPage::videoFilterChanged(const QString& name)

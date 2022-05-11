@@ -41,7 +41,7 @@
 
 // Local includes
 
-#include "ConfigManager.h"
+#include "AVPlayerConfigMngr.h"
 
 namespace AVPlayer
 {
@@ -84,7 +84,7 @@ QString AVFormatConfigPage::name() const
 
 void AVFormatConfigPage::applyFromUi()
 {
-    ConfigManager::instance()
+    AVPlayerConfigMngr::instance()
             .setAvformatOptionsEnabled(m_on->isChecked())
             .probeSize(m_probeSize->value())
             .analyzeDuration(m_analyzeDuration->value())
@@ -94,11 +94,11 @@ void AVFormatConfigPage::applyFromUi()
 
 void AVFormatConfigPage::applyToUi()
 {
-    m_on->setChecked(ConfigManager::instance().avformatOptionsEnabled());
-    m_direct->setChecked(ConfigManager::instance().reduceBuffering());
-    m_probeSize->setValue(ConfigManager::instance().probeSize());
-    m_analyzeDuration->setValue(ConfigManager::instance().analyzeDuration());
-    m_extra->setText(ConfigManager::instance().avformatExtra());
+    m_on->setChecked(AVPlayerConfigMngr::instance().avformatOptionsEnabled());
+    m_direct->setChecked(AVPlayerConfigMngr::instance().reduceBuffering());
+    m_probeSize->setValue(AVPlayerConfigMngr::instance().probeSize());
+    m_analyzeDuration->setValue(AVPlayerConfigMngr::instance().analyzeDuration());
+    m_extra->setText(AVPlayerConfigMngr::instance().avformatExtra());
 }
 
 } // namespace AVPlayer

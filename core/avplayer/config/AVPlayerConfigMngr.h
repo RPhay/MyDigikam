@@ -38,12 +38,12 @@ namespace AVPlayer
 // TODO: use hash to simplify api
 
 /**
- * MVC model. Q_SIGNALS from ConfigManager notify ui update. Q_SIGNALS from ui does not change ConfigManager unless ui changes applyed by XXXPage.apply()
- * Q_SIGNALS from ui will emit ConfigManager::xxxChanged() with the value in ui. ui cancel the change also emit it with the value stores in ConfigManager.
- * apply() will change the value in ConfigManager
+ * MVC model. Q_SIGNALS from AVPlayerConfigMngr notify ui update. Q_SIGNALS from ui does not change AVPlayerConfigMngr unless ui changes applyed by XXXPage.apply()
+ * Q_SIGNALS from ui will emit AVPlayerConfigMngr::xxxChanged() with the value in ui. ui cancel the change also emit it with the value stores in AVPlayerConfigMngr.
+ * apply() will change the value in AVPlayerConfigMngr
  */
 
-class ConfigManager : public QObject
+class AVPlayerConfigMngr : public QObject
 {
     Q_OBJECT
     Q_PROPERTY(QVariantList history READ history NOTIFY historyChanged)
@@ -104,14 +104,14 @@ public:
 
 public:
 
-    static ConfigManager& instance();
+    static AVPlayerConfigMngr& instance();
 
     static void setName(const QString& name); // config file base name
     static QString getName();
 
     /*!
-     * \brief defaultConfigManagerFile
-     * ConfigManager file name is $appname.ini. Must call ConfigManager::setName() first
+     * \brief defaultAVPlayerConfigMngrFile
+     * AVPlayerConfigMngr file name is $appname.ini. Must call AVPlayerConfigMngr::setName() first
      */
     static QString defaultConfigFile();
     static QString defaultDir();
@@ -125,21 +125,21 @@ public:
     //void loadFromFile(const QString& file);
 
     QString lastFile()                                  const;
-    ConfigManager& setLastFile(const QString& value);
+    AVPlayerConfigMngr& setLastFile(const QString& value);
 
     qreal forceFrameRate()                              const;
-    ConfigManager& setForceFrameRate(qreal value);
+    AVPlayerConfigMngr& setForceFrameRate(qreal value);
 
     // in priority order. the same order as displayed in ui
 
     QStringList decoderPriorityNames()                  const;
-    ConfigManager& setDecoderPriorityNames(const QStringList& names);
+    AVPlayerConfigMngr& setDecoderPriorityNames(const QStringList& names);
 
     bool zeroCopy()                                     const;
-    ConfigManager& setZeroCopy(bool value);
+    AVPlayerConfigMngr& setZeroCopy(bool value);
 
     QString captureDir()                                const;
-    ConfigManager& setCaptureDir(const QString& dir);
+    AVPlayerConfigMngr& setCaptureDir(const QString& dir);
 
     /*!
      * \brief captureFormat
@@ -148,114 +148,114 @@ public:
      * \return
      */
     QString captureFormat()                             const;
-    ConfigManager& setCaptureFormat(const QString& format);
+    AVPlayerConfigMngr& setCaptureFormat(const QString& format);
 
     // only works for non-yuv capture. value: -1~100, -1: default
 
     int captureQuality()                                const;
-    ConfigManager& setCaptureQuality(int quality);
+    AVPlayerConfigMngr& setCaptureQuality(int quality);
 
     QStringList subtitleEngines()                       const;
-    ConfigManager& setSubtitleEngines(const QStringList& value);
+    AVPlayerConfigMngr& setSubtitleEngines(const QStringList& value);
 
     bool subtitleAutoLoad()                             const;
-    ConfigManager& setSubtitleAutoLoad(bool value);
+    AVPlayerConfigMngr& setSubtitleAutoLoad(bool value);
 
     bool subtitleEnabled()                              const;
-    ConfigManager& setSubtitleEnabled(bool value);
+    AVPlayerConfigMngr& setSubtitleEnabled(bool value);
 
     QFont subtitleFont()                                const;
-    ConfigManager& setSubtitleFont(const QFont& value);
+    AVPlayerConfigMngr& setSubtitleFont(const QFont& value);
 
     bool subtitleOutline()                              const;
-    ConfigManager& setSubtitleOutline(bool value);
+    AVPlayerConfigMngr& setSubtitleOutline(bool value);
 
     QColor subtitleColor()                              const;
-    ConfigManager& setSubtitleColor(const QColor& value);
+    AVPlayerConfigMngr& setSubtitleColor(const QColor& value);
 
     QColor subtitleOutlineColor()                       const;
-    ConfigManager& setSubtitleOutlineColor(const QColor& value);
+    AVPlayerConfigMngr& setSubtitleOutlineColor(const QColor& value);
 
     int subtitleBottomMargin()                          const;
-    ConfigManager& setSubtitleBottomMargin(int value);
+    AVPlayerConfigMngr& setSubtitleBottomMargin(int value);
 
     qreal subtitleDelay()                               const;
-    ConfigManager& setSubtitleDelay(qreal value);
+    AVPlayerConfigMngr& setSubtitleDelay(qreal value);
 
     QString assFontFile()                               const;
-    ConfigManager& setAssFontFile(const QString& value);
+    AVPlayerConfigMngr& setAssFontFile(const QString& value);
 
     QString assFontsDir()                               const;
-    ConfigManager& setAssFontsDir(const QString& value);
+    AVPlayerConfigMngr& setAssFontsDir(const QString& value);
 
     bool isAssFontFileForced()                          const;
-    ConfigManager& setAssFontFileForced(bool value);
+    AVPlayerConfigMngr& setAssFontFileForced(bool value);
 
     bool previewEnabled()                               const;
-    ConfigManager& setPreviewEnabled(bool value);
+    AVPlayerConfigMngr& setPreviewEnabled(bool value);
 
     int previewWidth()                                  const;
-    ConfigManager& setPreviewWidth(int value);
+    AVPlayerConfigMngr& setPreviewWidth(int value);
 
     int previewHeight()                                 const;
-    ConfigManager& setPreviewHeight(int value);
+    AVPlayerConfigMngr& setPreviewHeight(int value);
 
     QVariantHash avformatOptions()                      const;
     bool avformatOptionsEnabled()                       const;
-    ConfigManager& setAvformatOptionsEnabled(bool value);
+    AVPlayerConfigMngr& setAvformatOptionsEnabled(bool value);
 
     int analyzeDuration()                               const;
-    ConfigManager& analyzeDuration(int ad);
+    AVPlayerConfigMngr& analyzeDuration(int ad);
 
     unsigned int probeSize()                            const;
-    ConfigManager& probeSize(unsigned int ps);
+    AVPlayerConfigMngr& probeSize(unsigned int ps);
 
     bool reduceBuffering()                              const;
-    ConfigManager& reduceBuffering(bool y);
+    AVPlayerConfigMngr& reduceBuffering(bool y);
 
     QString avformatExtra()                             const;
-    ConfigManager& avformatExtra(const QString& text);
+    AVPlayerConfigMngr& avformatExtra(const QString& text);
 
     QString avfilterVideoOptions()                      const;
-    ConfigManager& avfilterVideoOptions(const QString& options);
+    AVPlayerConfigMngr& avfilterVideoOptions(const QString& options);
 
     bool avfilterVideoEnable()                          const;
-    ConfigManager& avfilterVideoEnable(bool e);
+    AVPlayerConfigMngr& avfilterVideoEnable(bool e);
 
     QString avfilterAudioOptions()                      const;
-    ConfigManager& avfilterAudioOptions(const QString& options);
+    AVPlayerConfigMngr& avfilterAudioOptions(const QString& options);
 
     bool avfilterAudioEnable()                          const;
-    ConfigManager& avfilterAudioEnable(bool e);
+    AVPlayerConfigMngr& avfilterAudioEnable(bool e);
 
     // currently only for xcb
 
     bool isEGL()                                        const;
-    ConfigManager& setEGL(bool value);
+    AVPlayerConfigMngr& setEGL(bool value);
 
     // can be "Desktop", "OpenGLES", "Software"
 
     OpenGLType openGLType()                             const;
-    ConfigManager& setOpenGLType(OpenGLType value);
+    AVPlayerConfigMngr& setOpenGLType(OpenGLType value);
 
     QString getANGLEPlatform()                          const;
-    ConfigManager& setANGLEPlatform(const QString &value);
+    AVPlayerConfigMngr& setANGLEPlatform(const QString &value);
 
     // ms >0. default 30000ms
     qreal timeout()                                     const;
 
-    ConfigManager& setTimeout(qreal value);
+    AVPlayerConfigMngr& setTimeout(qreal value);
 
     bool abortOnTimeout()                               const;
-    ConfigManager& setAbortOnTimeout(bool value);
+    AVPlayerConfigMngr& setAbortOnTimeout(bool value);
 
     // < 0: auto
 
     int bufferValue()                                   const;
-    ConfigManager& setBufferValue(int value);
+    AVPlayerConfigMngr& setBufferValue(int value);
 
     Q_INVOKABLE QVariant operator()(const QString& key) const;
-    Q_INVOKABLE ConfigManager& operator()(const QString& key, const QVariant& value);
+    Q_INVOKABLE AVPlayerConfigMngr& operator()(const QString& key, const QVariant& value);
 
     /// history will not be clear in reset()
 
@@ -267,19 +267,19 @@ public:
     Q_INVOKABLE void removeHistory(const QString& url);
     Q_INVOKABLE void clearHistory();
 
-    ConfigManager& setUserShaderEnabled(bool value);
+    AVPlayerConfigMngr& setUserShaderEnabled(bool value);
     bool userShaderEnabled()                            const;
 
-    ConfigManager& setIntermediateFBO(bool value);
+    AVPlayerConfigMngr& setIntermediateFBO(bool value);
     bool intermediateFBO()                              const;
 
-    ConfigManager& setFragHeader(const QString& text);
+    AVPlayerConfigMngr& setFragHeader(const QString& text);
     QString fragHeader()                                const;
 
-    ConfigManager& setFragSample(const QString& text);
+    AVPlayerConfigMngr& setFragSample(const QString& text);
     QString fragSample()                                const;
 
-    ConfigManager& setFragPostProcess(const QString& text);
+    AVPlayerConfigMngr& setFragPostProcess(const QString& text);
     QString fragPostProcess()                           const;
 
 public:
@@ -329,8 +329,8 @@ public:
 
 protected:
 
-    explicit ConfigManager(QObject* const parent = nullptr);
-    ~ConfigManager();
+    explicit AVPlayerConfigMngr(QObject* const parent = nullptr);
+    ~AVPlayerConfigMngr();
 
 public Q_SLOTS:
 

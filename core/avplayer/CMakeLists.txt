@@ -49,13 +49,13 @@ set(avplayer_SRCS ${CMAKE_SOURCE_DIR}/core/avplayer/utils/ClickableMenu.cpp
                   ${CMAKE_SOURCE_DIR}/core/avplayer/config/PropertyEditor.cpp
                   ${CMAKE_SOURCE_DIR}/core/avplayer/config/DecoderConfigPage.cpp
                   ${CMAKE_SOURCE_DIR}/core/avplayer/config/AVFormatConfigPage.cpp
+                  ${CMAKE_SOURCE_DIR}/core/avplayer/config/AVPlayerConfigMngr.cpp
+                  ${CMAKE_SOURCE_DIR}/core/avplayer/config/AVFilterConfigPage.cpp
                   ${CMAKE_SOURCE_DIR}/core/avplayer/config/ShaderPage.cpp
                   ${CMAKE_SOURCE_DIR}/core/avplayer/config/MiscPage.cpp
-                  ${CMAKE_SOURCE_DIR}/core/avplayer/config/ConfigManager.cpp
                   ${CMAKE_SOURCE_DIR}/core/avplayer/config/ConfigDialog.cpp
                   ${CMAKE_SOURCE_DIR}/core/avplayer/config/ConfigPageBase.cpp
                   ${CMAKE_SOURCE_DIR}/core/avplayer/config/CaptureConfigPage.cpp
-                  ${CMAKE_SOURCE_DIR}/core/avplayer/config/AVFilterConfigPage.cpp
                   ${CMAKE_SOURCE_DIR}/core/avplayer/filters/OSDFilter.cpp
                   ${CMAKE_SOURCE_DIR}/core/avplayer/filters/OSD.cpp
                   ${CMAKE_SOURCE_DIR}/core/avplayer/filters/AVFilterSubtitle.cpp

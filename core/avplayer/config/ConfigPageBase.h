@@ -57,7 +57,7 @@ public Q_SLOTS:
 
     void cancel();
 
-    // call applyToUi() after ConfigManager::instance().reset();
+    // call applyToUi() after AVPlayerConfigMngr::instance().reset();
 
     void reset();
 
@@ -71,7 +71,7 @@ protected:
 
     /*!
      * \brief applyFromUi
-     * Save configuration values from UI. Call ConfigManager::xxx(value) in your implementation
+     * Save configuration values from UI. Call AVPlayerConfigMngr::xxx(value) in your implementation
      */
     virtual void applyFromUi() = 0;
 
