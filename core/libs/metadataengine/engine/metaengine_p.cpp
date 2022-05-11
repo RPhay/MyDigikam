@@ -509,7 +509,6 @@ bool MetaEngine::Private::saveUsingExiv2(const QFileInfo& finfo, Exiv2::Image::A
 
 bool MetaEngine::Private::saveUsingExifTool(const QFileInfo& finfo) const
 {
-    QString dir = finfo.path();
     QString ext = finfo.suffix().toLower();
 
     if (!writeDngFiles && (ext == QLatin1String("dng")))
@@ -532,9 +531,10 @@ bool MetaEngine::Private::saveUsingExifTool(const QFileInfo& finfo) const
 
     if (parser->exifToolAvailable())
     {
+        QString dir                   = QDir::temp().path();
         QString random                = QUuid::createUuid().toString().mid(1, 8);
-        SafeTemporaryFile* const temp = new SafeTemporaryFile(dir + QLatin1String("/metaengine-XXXXXX-") +
-                                                              random + QLatin1String(".digikamtempfile.exv"));
+        SafeTemporaryFile* const temp = new SafeTemporaryFile(dir + QLatin1String("/digikam-XXXXXX-") +
+                                                              random + QLatin1String("-metaengine.exv"));
         temp->setAutoRemove(false);
         temp->open();
         QString exvPath = temp->safeFilePath();
