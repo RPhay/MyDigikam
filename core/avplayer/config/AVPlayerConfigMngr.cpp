@@ -25,14 +25,11 @@
 
 // Qt includes
 
-#include <QSettings>
 #include <QCoreApplication>
 #include <QDir>
 #include <QFile>
 #include <QMetaEnum>
 #include <QStandardPaths>
-#include <QSqlDatabase>
-#include <QSqlQuery>
 
 // KDE includes
 
@@ -74,11 +71,11 @@ public:
 
         // ---
 
-        KConfigGroup group        = config->group(QLatin1String("MediaPlayer General"));
-        group.writeEntry(QLatin1String("last_file"),          last_file);
-        group.writeEntry(QLatin1String("timeout"),            timeout);
-        group.writeEntry(QLatin1String("abort_timeout"),      abort_timeout);
-        group.writeEntry(QLatin1String("force_fps"),          force_fps);
+        KConfigGroup group1       = config->group(QLatin1String("MediaPlayer General"));
+        group1.writeEntry(QLatin1String("last_file"),         last_file);
+        group1.writeEntry(QLatin1String("timeout"),           timeout);
+        group1.writeEntry(QLatin1String("abort_timeout"),     abort_timeout);
+        group1.writeEntry(QLatin1String("force_fps"),         force_fps);
 
         // ---
 
@@ -242,41 +239,21 @@ public:
 
 void AVPlayerConfigMngr::reload()
 {
-    QSqlDatabase db(QSqlDatabase::database());
+    KSharedConfig::Ptr config = KSharedConfig::openConfig();
+    KConfigGroup group        = config->group(QLatin1String("MediaPlayer History"));
+    group.writeEntry(QLatin1String("HistoryPropertiesList"), mpData->history);
 
-    if (!db.isOpen())
-    {
-        db = QSqlDatabase::addDatabase(QString::fromUtf8("QSQLITE"));
-        db.setDatabaseName(appDataDir().append(QString::fromLatin1("/%1.db").arg(qApp->applicationName())));
-
-        if (!db.open())
-            qCWarning(DIGIKAM_AVPLAYER_LOG).noquote() << QString::asprintf("error open db");
-
-        db.exec(QString::fromUtf8("CREATE TABLE IF NOT EXISTS history (url TEXT primary key, start BIGINT, duration BIGINT)"));
-    }
-
-    QSqlQuery query(db.exec(QString::fromUtf8("SELECT * FROM history")));
-
-    while (query.next())
-    {
-        QVariantMap var;
-        var[QString::fromUtf8("url")]       = query.value(0).toString();
-        var[QString::fromUtf8("start")]     = query.value(1).toLongLong();
-        var[QString::fromUtf8("duration")]  = query.value(2).toLongLong();
-        mpData->history.append(var);
-    }
+    mpData->history = group.readEntry(QLatin1String("HistoryPropertiesList"),  QVariantList());
 
     // ---
 
     mpData->is_loading = true;
 
-    KSharedConfig::Ptr config = KSharedConfig::openConfig();
-
-    KConfigGroup group        = config->group(QLatin1String("MediaPlayer General"));
-    setLastFile(group.readEntry(QLatin1String("last_file"),                    QString()));
-    setTimeout(group.readEntry(QLatin1String("timeout"),                       30.0));
-    setAbortOnTimeout(group.readEntry(QLatin1String("abort_timeout"),          true));
-    setForceFrameRate(group.readEntry(QLatin1String("force_fps"),              0.0));
+    KConfigGroup group1        = config->group(QLatin1String("MediaPlayer General"));
+    setLastFile(group1.readEntry(QLatin1String("last_file"),                   QString()));
+    setTimeout(group1.readEntry(QLatin1String("timeout"),                      30.0));
+    setAbortOnTimeout(group1.readEntry(QLatin1String("abort_timeout"),         true));
+    setForceFrameRate(group1.readEntry(QLatin1String("force_fps"),             0.0));
 
     // ---
 
@@ -1194,21 +1171,18 @@ void AVPlayerConfigMngr::addHistory(const QVariantMap& value)
 
     Q_EMIT historyChanged();
 
-    QSqlDatabase db = QSqlDatabase::database();
-    QSqlQuery query(db);
+    writeHistory();
+}
 
-    if (!query.prepare(QString::fromUtf8("INSERT INTO history (url, start, duration) "
-                                         "VALUES (:url, :start, :duration)")))
-    {
-        qCWarning(DIGIKAM_AVPLAYER_LOG).noquote() << QString::asprintf("error prepare sql query");
-    }
+void AVPlayerConfigMngr::writeHistory()
+{
+    KSharedConfig::Ptr config = KSharedConfig::openConfig();
+    config->deleteGroup(QLatin1String("MediaPlayer History"));
+    KConfigGroup group        = config->group(QLatin1String("MediaPlayer History"));
 
-    query.bindValue(QString::fromUtf8(":url"),      value.value(QLatin1String("url")).toString());
-    query.bindValue(QString::fromUtf8(":start"),    value.value(QLatin1String("start")).toLongLong());
-    query.bindValue(QString::fromUtf8(":duration"), value.value(QLatin1String("duration")).toLongLong());
+    group.writeEntry(QLatin1String("HistoryPropertiesList"), mpData->history);
 
-    if (!query.exec())
-        qCWarning(DIGIKAM_AVPLAYER_LOG).noquote() << QString::asprintf("failed to add history: %d", db.isOpen());
+    config->sync();
 }
 
 void AVPlayerConfigMngr::removeHistory(const QString& url)
@@ -1233,13 +1207,7 @@ void AVPlayerConfigMngr::removeHistory(const QString& url)
 
     Q_EMIT historyChanged();
 
-    QSqlDatabase db = QSqlDatabase::database();
-    QSqlQuery query(db);
-    (void)query.prepare(QString::fromUtf8("DELETE FROM history WHERE url = :url"));
-    query.bindValue(QString::fromUtf8(":url"), url);
-
-    if (!query.exec())
-        qCWarning(DIGIKAM_AVPLAYER_LOG).noquote() << QString::asprintf("failed to remove history");
+    writeHistory();
 }
 
 void AVPlayerConfigMngr::clearHistory()
@@ -1251,14 +1219,9 @@ void AVPlayerConfigMngr::clearHistory()
 
     Q_EMIT historyChanged();
 
-    QSqlDatabase db = QSqlDatabase::database();
-    QSqlQuery query(db);
-    (void)query.prepare(QString::fromUtf8("DELETE FROM history"));
-
-    // 'TRUNCATE table history' is faster
-
-    if (!query.exec())
-        qCWarning(DIGIKAM_AVPLAYER_LOG).noquote() << QString::asprintf("failed to clear history");
+    KSharedConfig::Ptr config = KSharedConfig::openConfig();
+    config->deleteGroup(QLatin1String("MediaPlayer History"));
+    config->sync();
 }
 
 bool AVPlayerConfigMngr::abortOnTimeout() const

@@ -333,6 +333,10 @@ public Q_SLOTS:
 
 private:
 
+    void writeHistory();
+
+private:
+
     class Data;
     Data* mpData;
 };
