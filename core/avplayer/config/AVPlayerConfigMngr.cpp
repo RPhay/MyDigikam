@@ -34,6 +34,11 @@
 #include <QSqlDatabase>
 #include <QSqlQuery>
 
+// KDE includes
+
+#include <kconfiggroup.h>
+#include <ksharedconfig.h>
+
 // Local includes
 
 #include "common.h"

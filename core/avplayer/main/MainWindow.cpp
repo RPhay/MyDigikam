@@ -657,14 +657,14 @@ void MainWindow::setupUi()
     connect(mpVideoEQ, SIGNAL(engineChanged()),
             this, SLOT(onVideoEQEngineChanged()));
 
-    pWA                             = new QWidgetAction(0);
+    pWA                             = new QWidgetAction(nullptr);
     pWA->setDefaultWidget(mpVideoEQ);
     subMenu->addAction(pWA);
 
     subMenu                         = new ClickableMenu(i18nc("@option", "Decoder"));
     mpMenu->addMenu(subMenu);
     mpDecoderConfigPage             = new DecoderConfigPage();
-    pWA                             = new QWidgetAction(0);
+    pWA                             = new QWidgetAction(nullptr);
     pWA->setDefaultWidget(mpDecoderConfigPage);
     subMenu->addAction(pWA);
 
@@ -969,9 +969,9 @@ bool MainWindow::setRenderer(QtAV::VideoRenderer* const renderer)
     mpTitle->setText(mpVOAction->text());
     const VideoRendererId vid = mpPlayer->renderer()->id();
 
-    if      (   vid == VideoRendererId_GLWidget
-             || vid == VideoRendererId_GLWidget2
-             || vid == VideoRendererId_OpenGLWidget
+    if      ((vid == VideoRendererId_GLWidget)    ||
+             (vid == VideoRendererId_GLWidget2)   ||
+             (vid == VideoRendererId_OpenGLWidget)
        )
     {
         mpVideoEQ->setEngines(QVector<VideoEQConfigPage::Engine>() << VideoEQConfigPage::SWScale
@@ -1050,7 +1050,7 @@ void MainWindow::play(const QString& name)
         mRepeateMax = 0;
 
     mpPlayer->setInterruptOnTimeout(AVPlayerConfigMngr::instance().abortOnTimeout());
-    mpPlayer->setInterruptTimeout(AVPlayerConfigMngr::instance().timeout()*1000.0);
+    mpPlayer->setInterruptTimeout(AVPlayerConfigMngr::instance().timeout() * 1000.0);
     mpPlayer->setBufferMode(QtAV::BufferPackets);
     mpPlayer->setBufferValue(AVPlayerConfigMngr::instance().bufferValue());
     mpPlayer->setRepeat(mRepeateMax);
@@ -1530,7 +1530,7 @@ void MainWindow::updateChannelMenu()
     if (mpChannelAction)
         mpChannelAction->setChecked(false);
 
-    AudioOutput* const ao = mpPlayer ? mpPlayer->audio() : 0; // getAO() ?
+    AudioOutput* const ao = mpPlayer ? mpPlayer->audio() : nullptr; // getAO() ?
 
     if (!ao)
     {
@@ -1987,7 +1987,7 @@ void MainWindow::onAVFilterVideoConfigChanged()
     {
         mpVideoFilter->uninstall();
         delete mpVideoFilter;
-        mpVideoFilter = 0;
+        mpVideoFilter = nullptr;
     }
 
     mpVideoFilter = new LibAVFilterVideo(this);
@@ -2002,7 +2002,7 @@ void MainWindow::onAVFilterAudioConfigChanged()
     {
         mpAudioFilter->uninstall();
         delete mpAudioFilter;
-        mpAudioFilter = 0;
+        mpAudioFilter = nullptr;
     }
 
     mpAudioFilter = new LibAVFilterAudio(this);
