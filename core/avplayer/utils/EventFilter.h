@@ -99,7 +99,8 @@ protected:
 private:
 
     QWidget* mpWindow;
-    QPoint   gMousePos, iMousePos;
+    QPoint   gMousePos;
+    QPoint   iMousePos;
 };
 
 } // namespace AVPlayer

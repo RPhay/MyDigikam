@@ -21,8 +21,8 @@
  *
  * ============================================================ */
 
-#ifndef AV_PLAYER_PLAYLISTMODEL_H
-#define AV_PLAYER_PLAYLISTMODEL_H
+#ifndef AV_PLAYER_PLAYLIST_MODEL_H
+#define AV_PLAYER_PLAYLIST_MODEL_H
 
 // Qt includes
 
@@ -42,7 +42,7 @@ class PlayListModel : public QAbstractListModel
 
 public:
 
-    explicit PlayListModel(QObject* parent = nullptr);
+    explicit PlayListModel(QObject* const parent = nullptr);
 
     QList<PlayListItem> items() const;
 
@@ -63,4 +63,4 @@ private:
 
 } // namespace AVPlayer
 
-#endif // AV_PLAYER_PLAYLISTMODEL_H
+#endif // AV_PLAYER_PLAYLIST_MODEL_H

@@ -65,7 +65,7 @@ QOption::QOption(const char *name, const QVariant& value, Type type, const QStri
       mDefaultValue(*value),
       mValue(value)
 {
-    qCDebug(DIGIKAM_QTAVPLAYER_LOG).noquote() << QString::asprintf("%s %s %d", __FILE__, __FUNCTION__, __LINE__);
+    qCDebug(DIGIKAM_AVPLAYER_LOG).noquote() << QString::asprintf("%s %s %d", __FILE__, __FUNCTION__, __LINE__);
     setName(name);
 }
 */
@@ -275,7 +275,7 @@ bool QOptions::parse(int argc, const char* const* argv)
                     {
                         it_list->setValue(true);
 
-                        //qCDebug(DIGIKAM_QTAVPLAYER_LOG).noquote() << QString::asprintf("%d %s", __LINE__, qPrintable(it_list->value().toString()));
+                        //qCDebug(DIGIKAM_AVPLAYER_LOG).noquote() << QString::asprintf("%d %s", __LINE__, qPrintable(it_list->value().toString()));
 
                         it = args.erase(it);
 
@@ -286,7 +286,7 @@ bool QOptions::parse(int argc, const char* const* argv)
                     {
                         it_list->setValue(it->mid(e+1));
 
-                        //qCDebug(DIGIKAM_QTAVPLAYER_LOG).noquote() << QString::asprintf("%d %s", __LINE__, qPrintable(it_list->value().toString()));
+                        //qCDebug(DIGIKAM_AVPLAYER_LOG).noquote() << QString::asprintf("%d %s", __LINE__, qPrintable(it_list->value().toString()));
                     }
                     else
                     {
@@ -297,7 +297,7 @@ bool QOptions::parse(int argc, const char* const* argv)
 
                         it_list->setValue(*it);
 
-                        //qCDebug(DIGIKAM_QTAVPLAYER_LOG).noquote() << QString::asprintf("%d %s", __LINE__, qPrintable(it_list->value().toString()));
+                        //qCDebug(DIGIKAM_AVPLAYER_LOG).noquote() << QString::asprintf("%d %s", __LINE__, qPrintable(it_list->value().toString()));
                     }
 
                     it = args.erase(it);
@@ -308,7 +308,7 @@ bool QOptions::parse(int argc, const char* const* argv)
 
             if (it_list == mOptions.end())
             {
-                qCWarning(DIGIKAM_QTAVPLAYER_LOG) << "unknown option: " << *it;
+                qCWarning(DIGIKAM_AVPLAYER_LOG) << "unknown option: " << *it;
                 result = false;
                 ++it;
             }
@@ -345,13 +345,13 @@ bool QOptions::parse(int argc, const char* const* argv)
 
                         it_list->setValue(*it);
 
-                        //qCDebug(DIGIKAM_QTAVPLAYER_LOG).noquote() << QString::asprintf("%d %s", __LINE__, qPrintable(it_list->value().toString()));
+                        //qCDebug(DIGIKAM_AVPLAYER_LOG).noquote() << QString::asprintf("%d %s", __LINE__, qPrintable(it_list->value().toString()));
                     }
                     else
                     {
                         it_list->setValue(it->mid(sname_len+1));
 
-                        //qCDebug(DIGIKAM_QTAVPLAYER_LOG).noquote() << QString::asprintf("%d %s", __LINE__, qPrintable(it_list->value().toString()));
+                        //qCDebug(DIGIKAM_AVPLAYER_LOG).noquote() << QString::asprintf("%d %s", __LINE__, qPrintable(it_list->value().toString()));
                     }
 
                     it = args.erase(it);
@@ -362,7 +362,7 @@ bool QOptions::parse(int argc, const char* const* argv)
 
             if (it_list == mOptions.end())
             {
-                qCWarning(DIGIKAM_QTAVPLAYER_LOG) << "unknown option: " << *it;
+                qCWarning(DIGIKAM_AVPLAYER_LOG) << "unknown option: " << *it;
                 result = false;
                 ++it;
             }
@@ -371,7 +371,7 @@ bool QOptions::parse(int argc, const char* const* argv)
         }
         else
         {
-            qCWarning(DIGIKAM_QTAVPLAYER_LOG) << "unknown option: " << *it;
+            qCWarning(DIGIKAM_AVPLAYER_LOG) << "unknown option: " << *it;
             ++it;
         }
     }
@@ -496,7 +496,7 @@ QString QOptions::help() const
 
 void QOptions::print() const
 {
-    qCDebug(DIGIKAM_QTAVPLAYER_LOG).noquote() << QString::asprintf("%s", help().toUtf8().constData());
+    qCDebug(DIGIKAM_AVPLAYER_LOG).noquote() << QString::asprintf("%s", help().toUtf8().constData());
 }
 
 } // namespace AVPlayer

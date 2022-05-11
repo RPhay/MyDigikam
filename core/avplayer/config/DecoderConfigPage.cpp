@@ -503,7 +503,7 @@ void DecoderConfigPage::updateDecodersUi()
     QStringList names     = idsToNames(sPriorityUi);
     QStringList all_names = idsToNames(sDecodersUi);
 
-    //qCDebug(DIGIKAM_QTAVPLAYER_LOG) << "updateDecodersUi " << this << " " << names << " all: " << all_names;
+    //qCDebug(DIGIKAM_AVPLAYER_LOG) << "updateDecodersUi " << this << " " << names << " all: " << all_names;
 
     int idx = 0;
 

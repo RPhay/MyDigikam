@@ -68,7 +68,7 @@ using namespace ABI::Windows::Storage::Pickers;
     do { \
         HRESULT hr = f; \
         if (FAILED(hr)) { \
-            qCWarning(DIGIKAM_QTAVPLAYER_LOG) << QString::fromLatin1(COM_LOG_COMPONENT " error@%1. " #f ": (0x%2) %3").arg(__LINE__).arg(hr, 0, 16).arg(qt_error_string(hr)); \
+            qCWarning(DIGIKAM_AVPLAYER_LOG) << QString::fromLatin1(COM_LOG_COMPONENT " error@%1. " #f ": (0x%2) %3").arg(__LINE__).arg(hr, 0, 16).arg(qt_error_string(hr)); \
             __VA_ARGS__ \
         } \
     } while (0)
@@ -88,7 +88,7 @@ QString UrlFromFileArgs(IInspectable* args)
     const wchar_t* pathStr = path.GetRawBuffer(&pathLen);
     const QString filePath = QString::fromWCharArray(pathStr, pathLen);
 
-    qCDebug(DIGIKAM_QTAVPLAYER_LOG) << "file path: " << filePath;
+    qCDebug(DIGIKAM_AVPLAYER_LOG) << "file path: " << filePath;
 
     item->AddRef(); // ensure we can access it later. TODO: how to release?
 
@@ -144,7 +144,7 @@ void do_common_options_before_qapp(const QOptions& options)
         qputenv("QT_XCB_GL_INTEGRATION", "xcb_glx");
     }
 
-    qCDebug(DIGIKAM_QTAVPLAYER_LOG) << "QT_XCB_GL_INTEGRATION: " << qgetenv("QT_XCB_GL_INTEGRATION");
+    qCDebug(DIGIKAM_AVPLAYER_LOG) << "QT_XCB_GL_INTEGRATION: " << qgetenv("QT_XCB_GL_INTEGRATION");
 
 #endif //Q_OS_LINUX
 
@@ -259,7 +259,7 @@ AppEventFilter::AppEventFilter(QObject* const player, QObject* const parent)
 
 bool AppEventFilter::eventFilter(QObject* obj, QEvent* ev)
 {
-    //qCDebug(DIGIKAM_QTAVPLAYER_LOG) << __FUNCTION__ << " watcher: " << obj << ev;
+    //qCDebug(DIGIKAM_AVPLAYER_LOG) << __FUNCTION__ << " watcher: " << obj << ev;
 
     if (obj != qApp)
         return false;
@@ -268,7 +268,7 @@ bool AppEventFilter::eventFilter(QObject* obj, QEvent* ev)
     {
         // winrt file open/pick. since qt5.6.1
 
-        qCDebug(DIGIKAM_QTAVPLAYER_LOG).noquote() << QString::asprintf("QEvent::WinEventAct");
+        qCDebug(DIGIKAM_AVPLAYER_LOG).noquote() << QString::asprintf("QEvent::WinEventAct");
 
 #ifdef Q_OS_WINRT
 
@@ -289,7 +289,7 @@ bool AppEventFilter::eventFilter(QObject* obj, QEvent* ev)
 
         if (!url.isEmpty())
         {
-            qCDebug(DIGIKAM_QTAVPLAYER_LOG) << "winrt url: " << url;
+            qCDebug(DIGIKAM_AVPLAYER_LOG) << "winrt url: " << url;
 
             if (m_player)
                 QMetaObject::invokeMethod(m_player, "play", Q_ARG(QUrl, QUrl(url)));

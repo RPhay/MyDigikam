@@ -99,13 +99,13 @@ ConfigDialog::ConfigDialog(QWidget* const parent)
 
 void ConfigDialog::onButtonClicked(QAbstractButton* btn)
 {
-    qCDebug(DIGIKAM_QTAVPLAYER_LOG).noquote() << QString::asprintf("QDialogButtonBox clicked role=%d", mpButtonBox->buttonRole(btn));
+    qCDebug(DIGIKAM_AVPLAYER_LOG).noquote() << QString::asprintf("QDialogButtonBox clicked role=%d", mpButtonBox->buttonRole(btn));
 
     switch (mpButtonBox->buttonRole(btn))
     {
         case QDialogButtonBox::ResetRole:
         {
-            qCDebug(DIGIKAM_QTAVPLAYER_LOG).noquote() << QString::asprintf("QDialogButtonBox ResetRole clicked");
+            qCDebug(DIGIKAM_AVPLAYER_LOG).noquote() << QString::asprintf("QDialogButtonBox ResetRole clicked");
             onReset();
             break;
         }
@@ -113,7 +113,7 @@ void ConfigDialog::onButtonClicked(QAbstractButton* btn)
         case QDialogButtonBox::AcceptRole:
         case QDialogButtonBox::ApplyRole:
         {
-            qCDebug(DIGIKAM_QTAVPLAYER_LOG).noquote() << QString::asprintf("QDialogButtonBox ApplyRole clicked");
+            qCDebug(DIGIKAM_AVPLAYER_LOG).noquote() << QString::asprintf("QDialogButtonBox ApplyRole clicked");
             onApply();
             break;
         }

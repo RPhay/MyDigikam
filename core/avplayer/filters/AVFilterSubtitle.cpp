@@ -101,7 +101,7 @@ bool AVFilterSubtitle::setFile(const QString& filePath)
 
         if (!f.open(QIODevice::ReadOnly))
         {
-            qCWarning(DIGIKAM_QTAVPLAYER_LOG).noquote()
+            qCWarning(DIGIKAM_AVPLAYER_LOG).noquote()
                 << QString::asprintf("open '%s' error: %s",
                     filePath.toUtf8().constData(), f.errorString().toUtf8().constData());
 
@@ -122,7 +122,7 @@ bool AVFilterSubtitle::setFile(const QString& filePath)
         {
             // read the origin file
 
-            qCWarning(DIGIKAM_QTAVPLAYER_LOG).noquote()
+            qCWarning(DIGIKAM_AVPLAYER_LOG).noquote()
                 << QString::asprintf("open cache file '%s' error, originanl subtitle file will be used",
                     filePath.toUtf8().constData());
         }
@@ -136,7 +136,7 @@ bool AVFilterSubtitle::setFile(const QString& filePath)
     u.replace(QLatin1String(":"), QLatin1String("\\:"));
     setOptions(QString::fromLatin1("subtitles='%1'").arg(u));
 
-    qCDebug(DIGIKAM_QTAVPLAYER_LOG).noquote()
+    qCDebug(DIGIKAM_AVPLAYER_LOG).noquote()
         << QString::asprintf("subtitle loaded: %s", filePath.toUtf8().constData());
 
     return true;

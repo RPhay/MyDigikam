@@ -46,33 +46,33 @@
 namespace AVPlayer
 {
 
-PlayList::PlayList(QWidget* parent)
+PlayList::PlayList(QWidget* const parent)
     : QWidget(parent)
 {
-    mFirstShow = true;
-    mMaxRows   = -1;
-    mpModel    = new PlayListModel(this);
-    mpDelegate = new PlayListDelegate(this);
-    mpListView = new QListView;
+    mFirstShow             = true;
+    mMaxRows               = -1;
+    mpModel                = new PlayListModel(this);
+    mpDelegate             = new PlayListDelegate(this);
+    mpListView             = new QListView;
 
     //mpListView->setResizeMode(QListView::Adjust);
 
     mpListView->setModel(mpModel);
     mpListView->setItemDelegate(mpDelegate);
-    mpListView->setSelectionMode(QAbstractItemView::ExtendedSelection); //ctrl,shift
+    mpListView->setSelectionMode(QAbstractItemView::ExtendedSelection); // ctrl,shift
     mpListView->setEditTriggers(QAbstractItemView::NoEditTriggers);
     mpListView->setToolTip(QString::fromLatin1("Ctrl/Shift + ") + i18n("Click to select multiple"));
-    QVBoxLayout* vbl = new QVBoxLayout;
+    QVBoxLayout* const vbl = new QVBoxLayout;
     setLayout(vbl);
     vbl->addWidget(mpListView);
-    QHBoxLayout* hbl = new QHBoxLayout;
+    QHBoxLayout* const hbl = new QHBoxLayout;
 
-    mpClear          = new QToolButton(0);
+    mpClear                = new QToolButton(0);
     mpClear->setText(i18n("Clear"));
-    mpRemove         = new QToolButton(0);
+    mpRemove               = new QToolButton(0);
     mpRemove->setText(QString::fromLatin1("-"));
     mpRemove->setToolTip(i18n("Remove selected items"));
-    mpAdd            = new QToolButton(0);
+    mpAdd                  = new QToolButton(0);
     mpAdd->setText(QString::fromLatin1("+"));
 
     hbl->addWidget(mpClear);
@@ -102,7 +102,7 @@ PlayList::PlayList(QWidget* parent)
 
 PlayList::~PlayList()
 {
-    qCDebug(DIGIKAM_QTAVPLAYER_LOG).noquote() << QString::asprintf("+++++++++++++~PlayList()");
+    qCDebug(DIGIKAM_AVPLAYER_LOG).noquote() << QString::asprintf("~PlayList()");
     save();
 }
 
@@ -142,7 +142,7 @@ void PlayList::save()
 
     if (!f.open(QIODevice::WriteOnly))
     {
-        qCWarning(DIGIKAM_QTAVPLAYER_LOG).noquote()
+        qCWarning(DIGIKAM_AVPLAYER_LOG).noquote()
             << QString::asprintf("File open error: %s", qPrintable(f.errorString()));
 
         return;
@@ -156,7 +156,7 @@ PlayListItem PlayList::itemAt(int row)
 {
     if (mpModel->rowCount() < 0)
     {
-        qCWarning(DIGIKAM_QTAVPLAYER_LOG).noquote() << QString::asprintf("Invalid rowCount");
+        qCWarning(DIGIKAM_AVPLAYER_LOG).noquote() << QString::asprintf("Invalid rowCount");
 
         return PlayListItem();
     }
@@ -166,7 +166,7 @@ PlayListItem PlayList::itemAt(int row)
 
 void PlayList::insertItemAt(const PlayListItem &item, int row)
 {
-    if (mMaxRows > 0 && mpModel->rowCount() >= mMaxRows)
+    if ((mMaxRows > 0) && (mpModel->rowCount() >= mMaxRows))
     {
         // +1 because new row is to be inserted
 
@@ -284,6 +284,7 @@ void PlayList::addItems()
 void PlayList::onAboutToPlay(const QModelIndex &index)
 {
     emit aboutToPlay(index.data(Qt::DisplayRole).value<PlayListItem>().url());
+
     save();
 }
 

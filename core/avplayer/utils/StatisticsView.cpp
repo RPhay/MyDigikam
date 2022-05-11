@@ -194,7 +194,7 @@ void StatisticsView::setStatistics(const Statistics& s)
     QVariantList v = getBaseInfoValues(s);
     int i          = 0;
 
-    foreach(QTreeWidgetItem* const item, mBaseItems)
+    foreach (QTreeWidgetItem* const item, mBaseItems)
     {
         if (item->data(1, Qt::DisplayRole) != v.at(i))
         {
@@ -207,7 +207,7 @@ void StatisticsView::setStatistics(const Statistics& s)
     v = getVideoInfoValues(s);
     i = 0;
 
-    foreach(QTreeWidgetItem* const item, mVideoItems)
+    foreach (QTreeWidgetItem* const item, mVideoItems)
     {
         if (item->data(1, Qt::DisplayRole) != v.at(i))
         {
@@ -220,7 +220,7 @@ void StatisticsView::setStatistics(const Statistics& s)
     v = getAudioInfoValues(s);
     i = 0;
 
-    foreach(QTreeWidgetItem* const item, mAudioItems)
+    foreach (QTreeWidgetItem* const item, mAudioItems)
     {
         if (item->data(1, Qt::DisplayRole) != v.at(i))
         {
@@ -262,7 +262,7 @@ void StatisticsView::initBaseItems(QList<QTreeWidgetItem*>* items)
 {
     QTreeWidgetItem* item = nullptr;
 
-    foreach(const QString& key, getBaseInfoKeys())
+    foreach (const QString& key, getBaseInfoKeys())
     {
         item = new QTreeWidgetItem(0);
         item->setData(0, Qt::DisplayRole, key);
@@ -273,11 +273,11 @@ void StatisticsView::initBaseItems(QList<QTreeWidgetItem*>* items)
 QTreeWidgetItem* StatisticsView::createNodeWithItems(QTreeWidget* view, const QString& name,
                                                      const QStringList& itemNames, QList<QTreeWidgetItem*>* items)
 {
-    QTreeWidgetItem* nodeItem = new QTreeWidgetItem(view);
+    QTreeWidgetItem* const nodeItem = new QTreeWidgetItem(view);
     nodeItem->setData(0, Qt::DisplayRole, name);
-    QTreeWidgetItem* item = nullptr;
+    QTreeWidgetItem* item           = nullptr;
 
-    foreach(const QString& key, itemNames)
+    foreach (const QString& key, itemNames)
     {
         item = new QTreeWidgetItem(nodeItem);
         item->setData(0, Qt::DisplayRole, key);
@@ -304,7 +304,7 @@ void StatisticsView::setMetadataItem(QTreeWidgetItem* parent, const QHash<QStrin
 
     for ( ; it != metadata.constEnd() ; ++it)
     {
-        QTreeWidgetItem* item = new QTreeWidgetItem(parent);
+        QTreeWidgetItem* const item = new QTreeWidgetItem(parent);
         item->setText(0, it.key());
         item->setText(1, it.value());
     }

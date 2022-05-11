@@ -49,7 +49,7 @@ void OSDFilter::process(Statistics* statistics, VideoFrame* frame)
         return;
 
 /*
-    /qCDebug(DIGIKAM_QTAVPLAYER_LOG).noquote()
+    /qCDebug(DIGIKAM_AVPLAYER_LOG).noquote()
         << QString::asprintf("ctx=%p tid=%p main tid=%p",
             ctx, QThread::currentThread(), qApp->thread());
 */

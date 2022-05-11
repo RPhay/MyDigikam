@@ -44,8 +44,10 @@ public:
     ScreenSaver();
     ~ScreenSaver();
 
-    // enable: just restore the previous settings. settings changed during the object life will ignored
-
+    /**
+     * When true, just restore the previous settings.
+     * Settings changed during the object life will ignored.
+     */
     bool enable(bool yes);
 
 public Q_SLOTS:

@@ -59,7 +59,7 @@ public:
         {
             if (!QDir().mkpath(appDataDir()))
             {
-                qCWarning(DIGIKAM_QTAVPLAYER_LOG) << "Failed to create appDataDir: " << appDataDir();
+                qCWarning(DIGIKAM_AVPLAYER_LOG) << "Failed to create appDataDir: " << appDataDir();
             }
         }
 
@@ -94,7 +94,7 @@ public:
                 if (QFile(old).exists())
                 {
                     if (!QFile::copy(old, appDataDir() + QString::fromLatin1("/playlist.qds")))
-                        qCWarning(DIGIKAM_QTAVPLAYER_LOG).noquote() << QString::asprintf("error to move old playlist data");
+                        qCWarning(DIGIKAM_AVPLAYER_LOG).noquote() << QString::asprintf("error to move old playlist data");
 
                     QFile::remove(old);
                 }
@@ -104,7 +104,7 @@ public:
                 if (QFile(old).exists())
                 {
                     if (!QFile::copy(old, appDataDir() + QString::fromLatin1("/history.qds")))
-                        qCWarning(DIGIKAM_QTAVPLAYER_LOG).noquote() << QString::asprintf("error to move old history data");
+                        qCWarning(DIGIKAM_AVPLAYER_LOG).noquote() << QString::asprintf("error to move old history data");
 
                     QFile::remove(old);
                 }
@@ -117,7 +117,7 @@ public:
         if (is_loading)
             return;
 
-        qCDebug(DIGIKAM_QTAVPLAYER_LOG) << "sync config to " << file;
+        qCDebug(DIGIKAM_AVPLAYER_LOG) << "sync config to " << file;
 
         QSettings settings(file, QSettings::IniFormat);
 
@@ -204,7 +204,7 @@ public:
         settings.setValue(QString::fromLatin1("value"),             buffer_value);
         settings.endGroup();
 
-        qCDebug(DIGIKAM_QTAVPLAYER_LOG) << "sync end";
+        qCDebug(DIGIKAM_AVPLAYER_LOG) << "sync end";
     }
 
 public:
@@ -236,7 +236,8 @@ public:
     bool                       subtitle_autoload       = false;
     bool                       subtitle_enabled        = false;
     QFont                      subtitle_font;
-    QColor                     subtitle_color, subtitle_outline_color;
+    QColor                     subtitle_color;
+    QColor                     subtitle_outline_color;
     bool                       subtitle_outline        = false;
     int                        subtilte_bottom_margin  = 0;
     qreal                      subtitle_delay          = 0.0;
@@ -321,7 +322,7 @@ bool ConfigManager::reset()
 
     if (!cf.remove())
     {
-        qCWarning(DIGIKAM_QTAVPLAYER_LOG) << "Failed to remove config file: " << cf.errorString();
+        qCWarning(DIGIKAM_AVPLAYER_LOG) << "Failed to remove config file: " << cf.errorString();
 
         return false;
     }
@@ -342,7 +343,7 @@ void ConfigManager::reload()
         db.setDatabaseName(appDataDir().append(QString::fromLatin1("/%1.db").arg(mpData->name)));
 
         if (!db.open())
-            qCWarning(DIGIKAM_QTAVPLAYER_LOG).noquote() << QString::asprintf("error open db");
+            qCWarning(DIGIKAM_AVPLAYER_LOG).noquote() << QString::asprintf("error open db");
 
         db.exec(QString::fromUtf8("CREATE TABLE IF NOT EXISTS history (url TEXT primary key, start BIGINT, duration BIGINT)"));
     }
@@ -495,7 +496,7 @@ ConfigManager& ConfigManager::setDecoderPriorityNames(const QStringList& value)
 {
     if (mpData->video_decoders == value)
     {
-        qCDebug(DIGIKAM_QTAVPLAYER_LOG).noquote() << QString::asprintf("decoderPriority not changed");
+        qCDebug(DIGIKAM_AVPLAYER_LOG).noquote() << QString::asprintf("decoderPriority not changed");
 
         return *this;
     }
@@ -1233,7 +1234,7 @@ void ConfigManager::addHistory(const QVariantMap& value)
     if (!query.prepare(QString::fromUtf8("INSERT INTO history (url, start, duration) "
                                          "VALUES (:url, :start, :duration)")))
     {
-        qCWarning(DIGIKAM_QTAVPLAYER_LOG).noquote() << QString::asprintf("error prepare sql query");
+        qCWarning(DIGIKAM_AVPLAYER_LOG).noquote() << QString::asprintf("error prepare sql query");
     }
 
     query.bindValue(QString::fromUtf8(":url"),      value.value(QLatin1String("url")).toString());
@@ -1241,7 +1242,7 @@ void ConfigManager::addHistory(const QVariantMap& value)
     query.bindValue(QString::fromUtf8(":duration"), value.value(QLatin1String("duration")).toLongLong());
 
     if (!query.exec())
-        qCWarning(DIGIKAM_QTAVPLAYER_LOG).noquote() << QString::asprintf("failed to add history: %d", db.isOpen());
+        qCWarning(DIGIKAM_AVPLAYER_LOG).noquote() << QString::asprintf("failed to add history: %d", db.isOpen());
 }
 
 void ConfigManager::removeHistory(const QString& url)
@@ -1272,7 +1273,7 @@ void ConfigManager::removeHistory(const QString& url)
     query.bindValue(QString::fromUtf8(":url"), url);
 
     if (!query.exec())
-        qCWarning(DIGIKAM_QTAVPLAYER_LOG).noquote() << QString::asprintf("failed to remove history");
+        qCWarning(DIGIKAM_AVPLAYER_LOG).noquote() << QString::asprintf("failed to remove history");
 }
 
 void ConfigManager::clearHistory()
@@ -1291,7 +1292,7 @@ void ConfigManager::clearHistory()
     // 'TRUNCATE table history' is faster
 
     if (!query.exec())
-        qCWarning(DIGIKAM_QTAVPLAYER_LOG).noquote() << QString::asprintf("failed to clear history");
+        qCWarning(DIGIKAM_AVPLAYER_LOG).noquote() << QString::asprintf("failed to clear history");
 }
 
 bool ConfigManager::abortOnTimeout() const

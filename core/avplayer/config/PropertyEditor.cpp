@@ -395,7 +395,7 @@ void PropertyEditor::updatePropertyValue(const QString& name, const QVariant& va
     if (!mProperties.contains(name))
         return;
 
-    qCDebug(DIGIKAM_QTAVPLAYER_LOG) << name << " >>> " << value;
+    qCDebug(DIGIKAM_AVPLAYER_LOG) << name << " >>> " << value;
 
     mProperties[name] = value;
 }

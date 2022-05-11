@@ -34,7 +34,7 @@
 namespace AVPlayer
 {
 
-PlayListModel::PlayListModel(QObject* parent)
+PlayListModel::PlayListModel(QObject* const parent)
     : QAbstractListModel(parent)
 {
 }
@@ -75,8 +75,8 @@ QVariant PlayListModel::data(const QModelIndex& index, int role) const
 
 bool PlayListModel::setData(const QModelIndex& index, const QVariant& value, int role)
 {
-    if (   (index.row() >= 0) && (index.row() < mItems.size())
-        && ((role == Qt::EditRole) || (role == Qt::DisplayRole)))
+    if ((index.row() >= 0) && (index.row() < mItems.size()) &&
+        ((role == Qt::EditRole) || (role == Qt::DisplayRole)))
     {
         // TODO: compare value?
 

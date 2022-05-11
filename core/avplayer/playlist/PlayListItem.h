@@ -21,8 +21,8 @@
  *
  * ============================================================ */
 
-#ifndef AV_PLAYER_PLAYLISTITEM_H
-#define AV_PLAYER_PLAYLISTITEM_H
+#ifndef AV_PLAYER_PLAYLIST_ITEM_H
+#define AV_PLAYER_PLAYLIST_ITEM_H
 
 // Qt includes
 
@@ -64,8 +64,10 @@ private:
     QString mTitle;
     QString mUrl;
     int     mStars;
-    qint64  mLastTime, mDuration;
-    QString mLastTimeS, mDurationS;
+    qint64  mLastTime;
+    qint64  mDuration;
+    QString mLastTimeS;
+    QString mDurationS;
 };
 
 QDataStream& operator>> (QDataStream& s, PlayListItem& p);
@@ -75,4 +77,4 @@ QDataStream& operator<< (QDataStream& s, const PlayListItem& p);
 
 Q_DECLARE_METATYPE(AVPlayer::PlayListItem);
 
-#endif // AV_PLAYER_PLAYLISTITEM_H
+#endif // AV_PLAYER_PLAYLIST_ITEM_H

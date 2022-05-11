@@ -88,9 +88,8 @@
  * use action's value to set player's parameters when start to play a new file
  */
 
-
 #define AVDEBUG() \
-    qCDebug(DIGIKAM_QTAVPLAYER_LOG).noquote() << QString::asprintf("%s %s @%d", __FILE__, __FUNCTION__, __LINE__);
+    qCDebug(DIGIKAM_AVPLAYER_LOG).noquote() << QString::asprintf("%s %s @%d", __FILE__, __FUNCTION__, __LINE__);
 
 using namespace QtAV;
 
@@ -322,10 +321,10 @@ void MainWindow::initPlayer()
 
 void MainWindow::onSeekFinished(qint64 pos)
 {
-    qCDebug(DIGIKAM_QTAVPLAYER_LOG) << "seek finished at"
-                                    << pos
-                                    << "/"
-                                    << mpPlayer->position();
+    qCDebug(DIGIKAM_AVPLAYER_LOG) << "seek finished at"
+                                  << pos
+                                  << "/"
+                                  << mpPlayer->position();
 }
 
 void MainWindow::stopUnload()
@@ -783,7 +782,7 @@ void MainWindow::changeChannel(QAction* action)
 
     if (!ao)
     {
-        qCWarning(DIGIKAM_QTAVPLAYER_LOG).noquote() << QString::asprintf("No audio output!");
+        qCWarning(DIGIKAM_AVPLAYER_LOG).noquote() << QString::asprintf("No audio output!");
 
         return;
     }
@@ -794,7 +793,7 @@ void MainWindow::changeChannel(QAction* action)
 
     if (!ao->close())
     {
-        qCWarning(DIGIKAM_QTAVPLAYER_LOG).noquote() << QString::asprintf("close audio failed");
+        qCWarning(DIGIKAM_AVPLAYER_LOG).noquote() << QString::asprintf("close audio failed");
 
         return;
     }
@@ -805,7 +804,7 @@ void MainWindow::changeChannel(QAction* action)
 
     if (!ao->open())
     {
-        qCWarning(DIGIKAM_QTAVPLAYER_LOG).noquote() << QString::asprintf("open audio failed");
+        qCWarning(DIGIKAM_AVPLAYER_LOG).noquote() << QString::asprintf("open audio failed");
 
         return;
     }
@@ -1060,7 +1059,7 @@ void MainWindow::play(const QString& name)
     if (ConfigManager::instance().avformatOptionsEnabled())
         mpPlayer->setOptionsForFormat(ConfigManager::instance().avformatOptions());
 
-    qCDebug(DIGIKAM_QTAVPLAYER_LOG) << ConfigManager::instance().avformatOptions();
+    qCDebug(DIGIKAM_AVPLAYER_LOG) << ConfigManager::instance().avformatOptions();
 
     PlayListItem item;
     item.setUrl(mFile);
@@ -1114,7 +1113,7 @@ void MainWindow::togglePlayPause()
 {
     if (mpPlayer->isPlaying())
     {
-        qCDebug(DIGIKAM_QTAVPLAYER_LOG).noquote() << QString::asprintf("isPaused = %d", mpPlayer->isPaused());
+        qCDebug(DIGIKAM_AVPLAYER_LOG).noquote() << QString::asprintf("isPaused = %d", mpPlayer->isPaused());
         mpPlayer->pause(!mpPlayer->isPaused());
     }
     else
@@ -1151,12 +1150,12 @@ void MainWindow::onPaused(bool p)
 {
     if (p)
     {
-        qCDebug(DIGIKAM_QTAVPLAYER_LOG).noquote() << QString::asprintf("start pausing...");
+        qCDebug(DIGIKAM_AVPLAYER_LOG).noquote() << QString::asprintf("start pausing...");
         mpPlayPauseBtn->setIcon(QIcon::fromTheme(QLatin1String("media-playback-start")));
     }
     else
     {
-        qCDebug(DIGIKAM_QTAVPLAYER_LOG).noquote() << QString::asprintf("stop pausing...");
+        qCDebug(DIGIKAM_AVPLAYER_LOG).noquote() << QString::asprintf("stop pausing...");
         mpPlayPauseBtn->setIcon(QIcon::fromTheme(QLatin1String("media-playback-pause")));
     }
 }
@@ -1222,7 +1221,7 @@ void MainWindow::onStopPlay()
     mpPlayPauseBtn->setIcon(QIcon::fromTheme(QLatin1String("media-playback-start")));
     mpTimeSlider->setValue(0);
 
-    qCDebug(DIGIKAM_QTAVPLAYER_LOG).noquote() << QString::asprintf(">>>>>>>>>>>>>>disable slider");
+    qCDebug(DIGIKAM_AVPLAYER_LOG).noquote() << QString::asprintf("disable slider");
 
     mpTimeSlider->setDisabled(true);
     mpTimeSlider->setMinimum(0);
@@ -1294,7 +1293,7 @@ void MainWindow::setVolume()
 
     if (ao)
     {
-        if (qAbs(int(ao->volume()/kVolumeInterval) - mpVolumeSlider->value()) >= int(0.1/kVolumeInterval))
+        if (qAbs(int(ao->volume()/kVolumeInterval) - mpVolumeSlider->value()) >= int(0.1 / kVolumeInterval))
         {
             ao->setVolume(v);
         }
@@ -1389,7 +1388,7 @@ void MainWindow::mouseMoveEvent(QMouseEvent *e)
 {
     unsetCursor();
 
-    if (e->pos().y() > height() - mpTimeSlider->height() - mpControl->height())
+    if (e->pos().y() > (height() - mpTimeSlider->height() - mpControl->height()))
     {
         if (mShowControl == 0)
         {
@@ -1454,7 +1453,7 @@ void MainWindow::wheelEvent(QWheelEvent* e)
     QPointF p  = mpRenderer->widget()->mapFrom(this, e->position().toPoint());
     QPointF fp = mpRenderer->mapToFrame(p);
 
-    //qCDebug(DIGIKAM_QTAVPLAYER_LOG) <<  p << fp;
+    //qCDebug(DIGIKAM_AVPLAYER_LOG) <<  p << fp;
 
     if (fp.x() < 0)
         fp.setX(0);
@@ -1474,7 +1473,7 @@ void MainWindow::wheelEvent(QWheelEvent* e)
 
     Q_UNUSED(viewport);
 
-    //qCDebug(DIGIKAM_QTAVPLAYER_LOG).noquote() << QString::asprintf("vo: (%.1f, %.1f)=> frame: (%.1f, %.1f)", p.x(), p.y(), fp.x(), fp.y());
+    //qCDebug(DIGIKAM_AVPLAYER_LOG).noquote() << QString::asprintf("vo: (%.1f, %.1f)=> frame: (%.1f, %.1f)", p.x(), p.y(), fp.x(), fp.y());
 
     qreal zoom = 1.0 + deg*3.14 / 180.0;
 
@@ -1492,7 +1491,7 @@ void MainWindow::wheelEvent(QWheelEvent* e)
     qreal x0 = fp.x() - fp.x() / z;
     qreal y0 = fp.y() - fp.y() / z;
 
-    //qCDebug(DIGIKAM_QTAVPLAYER_LOG) << "fr: " << QRectF(x0, y0, qreal(mpRenderer->videoFrameSize().width())/z, qreal(mpRenderer->videoFrameSize().height())/z) << fp << z;
+    //qCDebug(DIGIKAM_AVPLAYER_LOG) << "fr: " << QRectF(x0, y0, qreal(mpRenderer->videoFrameSize().width())/z, qreal(mpRenderer->videoFrameSize().height())/z) << fp << z;
 
     mpRenderer->setRegionOfInterest(QRectF(x0, y0,
                                            qreal(mpRenderer->videoFrameSize().width())  / z,
@@ -1610,7 +1609,7 @@ end:
         {
             if (mpPlayer && mpPlayer->externalAudio().isEmpty())
             {
-                qCDebug(DIGIKAM_QTAVPLAYER_LOG).noquote() << QString::asprintf("track found!!!!!");
+                qCDebug(DIGIKAM_AVPLAYER_LOG).noquote() << QString::asprintf("track found!");
                 mpAudioTrackAction = ac;
                 ac->setChecked(true);
             }
@@ -1808,7 +1807,7 @@ void MainWindow::onMediaStatusChanged()
     {
         // why it happens? reinterpret_cast  works.
 
-        qCWarning(DIGIKAM_QTAVPLAYER_LOG) << "invalid sender() " << sender() << player;
+        qCWarning(DIGIKAM_AVPLAYER_LOG) << "invalid sender() " << sender() << player;
 
         return;
     }
@@ -1849,7 +1848,7 @@ void MainWindow::onMediaStatusChanged()
             break;
     }
 
-    qCDebug(DIGIKAM_QTAVPLAYER_LOG) << "status changed " << status;
+    qCDebug(DIGIKAM_AVPLAYER_LOG) << "status changed " << status;
     setWindowTitle(status + QString::fromLatin1(" ") + mTitle);
 }
 
@@ -1859,11 +1858,11 @@ void MainWindow::onBufferProgress(qreal percent)
     QString s;
 
     if      (bs > 1024 * 1024 * 1024)
-        s = QString::fromLatin1("%1G/s").arg(bs/1024.0/1024.0/1024.0, 6, 'f', 1);
+        s = QString::fromLatin1("%1G/s").arg(bs / 1024.0 / 1024.0 / 1024.0, 6, 'f', 1);
     else if (bs > 1024*1024)
-        s = QString::fromLatin1("%1M/s").arg(bs/1024.0/1024.0, 6, 'f', 1);
+        s = QString::fromLatin1("%1M/s").arg(bs / 1024.0 / 1024.0, 6, 'f', 1);
     else if (bs > 1024)
-        s = QString::fromLatin1("%1K/s").arg(bs/1024.0, 6, 'f', 1);
+        s = QString::fromLatin1("%1K/s").arg(bs / 1024.0, 6, 'f', 1);
     else
         s = QString::fromLatin1("%1B/s").arg(bs, 6, 'f', 1);
 
@@ -1898,8 +1897,8 @@ void MainWindow::onBrightnessChanged(int b)
 {
     VideoRenderer* const vo = mpPlayer->renderer();
 
-    if (   mpVideoEQ->engine() != VideoEQConfigPage::SWScale
-        && vo->setBrightness(mpVideoEQ->brightness()))
+    if ((mpVideoEQ->engine() != VideoEQConfigPage::SWScale) &&
+        vo->setBrightness(mpVideoEQ->brightness()))
     {
         mpPlayer->setBrightness(0);
     }
@@ -1914,8 +1913,8 @@ void MainWindow::onContrastChanged(int c)
 {
     VideoRenderer* const vo = mpPlayer->renderer();
 
-    if (   mpVideoEQ->engine() != VideoEQConfigPage::SWScale
-        && vo->setContrast(mpVideoEQ->contrast()))
+    if ((mpVideoEQ->engine() != VideoEQConfigPage::SWScale) &&
+        vo->setContrast(mpVideoEQ->contrast()))
     {
         mpPlayer->setContrast(0);
     }
@@ -1930,8 +1929,8 @@ void MainWindow::onHueChanged(int h)
 {
     VideoRenderer* const vo = mpPlayer->renderer();
 
-    if (   mpVideoEQ->engine() != VideoEQConfigPage::SWScale
-        && vo->setHue(mpVideoEQ->hue()))
+    if ((mpVideoEQ->engine() != VideoEQConfigPage::SWScale) &&
+        vo->setHue(mpVideoEQ->hue()))
     {
         mpPlayer->setHue(0);
     }
@@ -1946,8 +1945,8 @@ void MainWindow::onSaturationChanged(int s)
 {
     VideoRenderer* const vo = mpPlayer->renderer();
 
-    if (   mpVideoEQ->engine() != VideoEQConfigPage::SWScale
-        && vo->setSaturation(mpVideoEQ->saturation()))
+    if ((mpVideoEQ->engine() != VideoEQConfigPage::SWScale) &&
+        vo->setSaturation(mpVideoEQ->saturation()))
     {
         mpPlayer->setSaturation(0);
     }

@@ -222,7 +222,7 @@ bool EventFilter::eventFilter(QObject* watched, QEvent* event)
                 {
                     // check playing?
 
-                    qCDebug(DIGIKAM_QTAVPLAYER_LOG).noquote()
+                    qCDebug(DIGIKAM_AVPLAYER_LOG).noquote()
                         << QString::asprintf("isPaused = %d", player->isPaused());
 
                     player->pause(!player->isPaused());
@@ -292,7 +292,7 @@ bool EventFilter::eventFilter(QObject* watched, QEvent* event)
 
                         player->audio()->setVolume(v);
 
-                        qCDebug(DIGIKAM_QTAVPLAYER_LOG).noquote()
+                        qCDebug(DIGIKAM_AVPLAYER_LOG).noquote()
                             << QString::asprintf("vol = %.3f", player->audio()->volume());
                     }
 
@@ -334,7 +334,7 @@ bool EventFilter::eventFilter(QObject* watched, QEvent* event)
 
                         player->audio()->setVolume(v);
 
-                        qCDebug(DIGIKAM_QTAVPLAYER_LOG).noquote()
+                        qCDebug(DIGIKAM_AVPLAYER_LOG).noquote()
                             << QString::asprintf("vol = %.3f", player->audio()->volume());
                     }
 
@@ -359,7 +359,7 @@ bool EventFilter::eventFilter(QObject* watched, QEvent* event)
 
                 case Qt::Key_Left:
                 {
-                    qCDebug(DIGIKAM_QTAVPLAYER_LOG).noquote() << QString::asprintf("<-");
+                    qCDebug(DIGIKAM_AVPLAYER_LOG).noquote() << QString::asprintf("<-");
 
                     player->setSeekType(key_event->isAutoRepeat() ? KeyFrameSeek : AccurateSeek);
                     player->seekBackward();
@@ -369,7 +369,7 @@ bool EventFilter::eventFilter(QObject* watched, QEvent* event)
 
                 case Qt::Key_Right:
                 {
-                    qCDebug(DIGIKAM_QTAVPLAYER_LOG).noquote() << QString::asprintf("->");
+                    qCDebug(DIGIKAM_AVPLAYER_LOG).noquote() << QString::asprintf("->");
 
                     player->setSeekType(key_event->isAutoRepeat() ? KeyFrameSeek : AccurateSeek);
                     player->seekForward();
@@ -401,7 +401,7 @@ bool EventFilter::eventFilter(QObject* watched, QEvent* event)
                     VideoRenderer* const renderer = player->renderer();
                     renderer->setOrientation(renderer->orientation() + 90);
 
-                    qCDebug(DIGIKAM_QTAVPLAYER_LOG).noquote()
+                    qCDebug(DIGIKAM_AVPLAYER_LOG).noquote()
                         << QString::asprintf("orientation: %d", renderer->orientation());
 
                     break;

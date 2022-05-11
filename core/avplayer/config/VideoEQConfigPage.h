@@ -51,6 +51,8 @@ public:
         XV,
     };
 
+public:
+
     explicit VideoEQConfigPage(QWidget* const parent = nullptr);
 
     void setEngines(const QVector<Engine>& engines);

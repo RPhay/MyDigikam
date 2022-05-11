@@ -88,7 +88,8 @@ Q_LOGGING_CATEGORY(DIGIKAM_QTAVWIDGETS_LOG_DEBUG,       "digikam.qtavwidgets.deb
 Q_LOGGING_CATEGORY(DIGIKAM_QTAVWIDGETS_LOG_WARN,        "digikam.qtavwidgets.warn",         QtWarningMsg)
 Q_LOGGING_CATEGORY(DIGIKAM_QTAVWIDGETS_LOG_CRITICAL,    "digikam.qtavwidgets.critical",     QtWarningMsg)
 Q_LOGGING_CATEGORY(DIGIKAM_QTAVWIDGETS_LOG_FATAL,       "digikam.qtavwidgets.fatal",        QtCriticalMsg)
-Q_LOGGING_CATEGORY(DIGIKAM_QTAVPLAYER_LOG,              "digikam.qtavplayer",               QtInfoMsg)
+
+Q_LOGGING_CATEGORY(DIGIKAM_AVPLAYER_LOG,              "digikam.avplayer",                 QtInfoMsg)
 
 void digikamSetDebugFilterRules(bool on)
 {

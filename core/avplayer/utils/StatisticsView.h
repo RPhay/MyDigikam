@@ -21,8 +21,8 @@
  *
  * ============================================================ */
 
-#ifndef AV_PLAYER_STATISTICSVIEW_H
-#define AV_PLAYER_STATISTICSVIEW_H
+#ifndef AV_PLAYER_STATISTICS_VIEW_H
+#define AV_PLAYER_STATISTICS_VIEW_H
 
 // Qt includes
 
@@ -48,7 +48,7 @@ class StatisticsView : public QDialog
 
 public:
 
-    explicit StatisticsView(QWidget* parent = nullptr);
+    explicit StatisticsView(QWidget* const parent = nullptr);
 
     void setStatistics(const Statistics& s);
 
@@ -69,7 +69,7 @@ private:
                                          const QStringList& itemNames,
                                          QList<QTreeWidgetItem*>* items = 0);
 
-    void setMetadataItem(QTreeWidgetItem* parent, const QHash<QString,QString>& metadata);
+    void setMetadataItem(QTreeWidgetItem* parent, const QHash<QString, QString>& metadata);
 
 private:
 
@@ -83,10 +83,14 @@ private:
     Statistics              mStatistics;
     int                     mTimer;
 
-    QTreeWidgetItem*        mpFPS, *mpAudioBitRate, *mpVideoBitRate;
-    QTreeWidgetItem*        mpMetadata, *mpAudioMetadata, *mpVideoMetadata;
+    QTreeWidgetItem*        mpFPS;
+    QTreeWidgetItem*        mpAudioBitRate;
+    QTreeWidgetItem*        mpVideoBitRate;
+    QTreeWidgetItem*        mpMetadata;
+    QTreeWidgetItem*        mpAudioMetadata;
+    QTreeWidgetItem*        mpVideoMetadata;
 };
 
 } // namespace AVPlayer
 
-#endif // AV_PLAYER_STATISTICSVIEW_H
+#endif // AV_PLAYER_STATISTICS_VIEW_H

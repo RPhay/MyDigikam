@@ -21,8 +21,8 @@
  *
  * ============================================================ */
 
-#ifndef AV_PLAYER_MAINWINDOW_H
-#define AV_PLAYER_MAINWINDOW_H
+#ifndef AV_PLAYER_MAIN_WINDOW_H
+#define AV_PLAYER_MAIN_WINDOW_H
 
 // Qt includes
 
@@ -180,7 +180,8 @@ private:
 
 private:
 
-    bool                            mIsReady, mHasPendingPlay;
+    bool                            mIsReady;
+    bool                            mHasPendingPlay;
     bool                            mControlOn;
     int                             mCursorTimer;
     int                             mShowControl;           ///< 0: can hide, 1: show and playing, 2: always show(not playing)
@@ -189,21 +190,30 @@ private:
     QVBoxLayout*                    mpPlayerLayout;
 
     QWidget*                        mpControl;
-    QLabel*                         mpCurrent, *mpEnd;
+    QLabel*                         mpCurrent;
+    QLabel*                         mpEnd;
     QLabel*                         mpTitle;
     QLabel*                         mpSpeed;
-    Slider*                         mpTimeSlider, *mpVolumeSlider;
+    Slider*                         mpTimeSlider;
+    Slider*                         mpVolumeSlider;
     QToolButton*                    mpVolumeBtn;
     QToolButton*                    mpPlayPauseBtn;
-    QToolButton*                    mpStopBtn, *mpForwardBtn, *mpBackwardBtn;
+    QToolButton*                    mpStopBtn;
+    QToolButton*                    mpForwardBtn;
+    QToolButton*                    mpBackwardBtn;
     QToolButton*                    mpOpenBtn;
-    QToolButton*                    mpInfoBtn, *mpMenuBtn, *mpSetupBtn, *mpCaptureBtn;
+    QToolButton*                    mpInfoBtn;
+    QToolButton*                    mpMenuBtn;
+    QToolButton*                    mpSetupBtn;
+    QToolButton*                    mpCaptureBtn;
     QMenu*                          mpMenu;
-    QAction*                        mpVOAction, *mpARAction; // remove mpVOAction if vo.id() is supported
+    QAction*                        mpVOAction; // remove mpVOAction if vo.id() is supported
+    QAction*                        mpARAction;
     QAction*                        mpRepeatEnableAction;
     QWidgetAction*                  mpRepeatAction;
     QSpinBox*                       mpRepeatBox;
-    QTimeEdit*                      mpRepeatA, *mpRepeatB;
+    QTimeEdit*                      mpRepeatA;
+    QTimeEdit*                      mpRepeatB;
     QAction*                        mpAudioTrackAction;
     QMenu*                          mpAudioTrackMenu;
     QMenu*                          mpChannelMenu;
@@ -223,7 +233,8 @@ private:
     DecoderConfigPage*              mpDecoderConfigPage;
     VideoEQConfigPage*              mpVideoEQ;
 
-    PlayList*                       mpPlayList, *mpHistory;
+    PlayList*                       mpPlayList;
+    PlayList*                       mpHistory;
 
     QPointF                         mGlobalMouse;
     StatisticsView*                 mpStatisticsView;
@@ -237,4 +248,4 @@ private:
 
 } // namespace AVPlayer
 
-#endif // AV_PLAYER_MAINWINDOW_H
+#endif // AV_PLAYER_MAIN_WINDOW_H

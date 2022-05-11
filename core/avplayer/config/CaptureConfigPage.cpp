@@ -141,7 +141,7 @@ void CaptureConfigPage::selectSaveDir()
 
 void CaptureConfigPage::browseCaptureDir()
 {
-    qCDebug(DIGIKAM_QTAVPLAYER_LOG).noquote() << QString::asprintf("browse capture dir");
+    qCDebug(DIGIKAM_AVPLAYER_LOG).noquote() << QString::asprintf("browse capture dir");
     QDesktopServices::openUrl(QUrl(QString::fromLatin1("file:///") + mpDir->text()));
 }
 

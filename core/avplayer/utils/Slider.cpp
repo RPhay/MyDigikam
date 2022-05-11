@@ -120,7 +120,7 @@ void Slider::mouseMoveEvent(QMouseEvent* e)
 
 void Slider::mousePressEvent(QMouseEvent* e)
 {
-    qCDebug(DIGIKAM_QTAVPLAYER_LOG).noquote()
+    qCDebug(DIGIKAM_AVPLAYER_LOG).noquote()
         << QString::asprintf("pressed (%d, %d)", e->pos().x(), e->pos().y());
 
     if (e->button() == Qt::LeftButton)
@@ -134,7 +134,7 @@ void Slider::mousePressEvent(QMouseEvent* e)
 
         if (!sliderRect.contains(e->pos()))
         {
-            qCDebug(DIGIKAM_QTAVPLAYER_LOG).noquote() << QString::asprintf("accept");
+            qCDebug(DIGIKAM_AVPLAYER_LOG).noquote() << QString::asprintf("accept");
             e->accept();
 
             int v = pixelPosToRangeValue(pick(e->pos() - center));
@@ -202,8 +202,8 @@ void Slider::mousePressEvent(QMouseEvent* e)
     int range = maximum()-minimum();
     int pos   = (e->x() * range) / width();
 /*
-    qCDebug(DIGIKAM_QTAVPLAYER_LOG).noquote() << QString::asprintf( "width: %d x: %d", width(), e->x());
-    qCDebug(DIGIKAM_QTAVPLAYER_LOG).noquote() << QString::asprintf( "range: %d pos: %d value: %d", range, pos, value());
+    qCDebug(DIGIKAM_AVPLAYER_LOG).noquote() << QString::asprintf( "width: %d x: %d", width(), e->x());
+    qCDebug(DIGIKAM_AVPLAYER_LOG).noquote() << QString::asprintf( "range: %d pos: %d value: %d", range, pos, value());
 */
     // Calculate how many positions takes the slider handle
 
@@ -212,10 +212,10 @@ void Slider::mousePressEvent(QMouseEvent* e)
     int slider_handle_positions = (int)(metric / one_tick_pixels);
 
 /*
-    qCDebug(DIGIKAM_QTAVPLAYER_LOG).noquote() << QString::asprintf("metric: %d", metric );
-    qCDebug(DIGIKAM_QTAVPLAYER_LOG).noquote() << QString::asprintf("one_tick_pixels :%f", one_tick_pixels);
-    qCDebug(DIGIKAM_QTAVPLAYER_LOG).noquote() << QString::asprintf("width() :%d", width());
-    qCDebug(DIGIKAM_QTAVPLAYER_LOG).noquote() << QString::asprintf("slider_handle_positions: %d", slider_handle_positions);
+    qCDebug(DIGIKAM_AVPLAYER_LOG).noquote() << QString::asprintf("metric: %d", metric );
+    qCDebug(DIGIKAM_AVPLAYER_LOG).noquote() << QString::asprintf("one_tick_pixels :%f", one_tick_pixels);
+    qCDebug(DIGIKAM_AVPLAYER_LOG).noquote() << QString::asprintf("width() :%d", width());
+    qCDebug(DIGIKAM_AVPLAYER_LOG).noquote() << QString::asprintf("slider_handle_positions: %d", slider_handle_positions);
 */
 
     if (abs(pos - value()) > slider_handle_positions)

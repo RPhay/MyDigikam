@@ -37,8 +37,8 @@ class ClickableMenu : public QMenu
 
 public:
 
-    explicit ClickableMenu(QWidget* parent = nullptr);
-    explicit ClickableMenu(const QString& title, QWidget* parent = nullptr);
+    explicit ClickableMenu(QWidget* const parent = nullptr);
+    explicit ClickableMenu(const QString& title, QWidget* const parent = nullptr);
 
 protected:
 

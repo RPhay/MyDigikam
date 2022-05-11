@@ -102,7 +102,9 @@ private:
     void setName(const QString& name);
 
     QOption::Type mType;
-    QString       mShortName, mLongName, mDescription;
+    QString       mShortName;
+    QString       mLongName;
+    QString       mDescription;
     QVariant      mDefaultValue;
     QVariant      mValue;
 };

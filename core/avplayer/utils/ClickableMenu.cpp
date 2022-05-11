@@ -30,12 +30,12 @@
 namespace AVPlayer
 {
 
-ClickableMenu::ClickableMenu(QWidget* parent)
+ClickableMenu::ClickableMenu(QWidget* const parent)
     : QMenu(parent)
 {
 }
 
-ClickableMenu::ClickableMenu(const QString& title, QWidget* parent)
+ClickableMenu::ClickableMenu(const QString& title, QWidget* const parent)
     : QMenu(title, parent)
 {
 }

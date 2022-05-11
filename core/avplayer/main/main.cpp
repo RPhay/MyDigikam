@@ -93,7 +93,7 @@ VideoRendererId rendererId_from_opt_name(const QString& name)
 
 int main(int argc, char* argv[])
 {
-    qCDebug(DIGIKAM_QTAVPLAYER_LOG) << aboutQtAV_PlainText();
+    qCDebug(DIGIKAM_AVPLAYER_LOG) << aboutQtAV_PlainText();
 
     KLocalizedString::setApplicationDomain("digikam");
     ConfigManager::setName(QString::fromLatin1("Player"));
@@ -135,8 +135,8 @@ int main(int argc, char* argv[])
             VideoDecoder* const vd = VideoDecoder::create(*vid);
             pe.getProperties(vd);
 
-            qCDebug(DIGIKAM_QTAVPLAYER_LOG).noquote() << QString::asprintf("- %s:", vd->name().toUtf8().constData());
-            qCDebug(DIGIKAM_QTAVPLAYER_LOG) << pe.buildOptions().toUtf8().constData();
+            qCDebug(DIGIKAM_AVPLAYER_LOG).noquote() << QString::asprintf("- %s:", vd->name().toUtf8().constData());
+            qCDebug(DIGIKAM_AVPLAYER_LOG) << pe.buildOptions().toUtf8().constData();
         }
 
         exit(0);
@@ -144,7 +144,7 @@ int main(int argc, char* argv[])
 
     QApplication app(argc, argv);
     app.setAttribute(Qt::AA_DontCreateNativeWidgetSiblings);
-    qCDebug(DIGIKAM_QTAVPLAYER_LOG) << app.arguments();
+    qCDebug(DIGIKAM_AVPLAYER_LOG) << app.arguments();
 
     // See bug #438701
 
@@ -191,7 +191,7 @@ int main(int argc, char* argv[])
         }
     }
 
-    qCDebug(DIGIKAM_QTAVPLAYER_LOG).noquote() << QString::asprintf("vo: %s", vo.toUtf8().constData());
+    qCDebug(DIGIKAM_AVPLAYER_LOG).noquote() << QString::asprintf("vo: %s", vo.toUtf8().constData());
 
 #ifdef Q_OS_WIN
 
@@ -295,7 +295,7 @@ int main(int argc, char* argv[])
 
     if (op.isSet())
     {
-        qCDebug(DIGIKAM_QTAVPLAYER_LOG) << "-f set: " << op.value().toString();
+        qCDebug(DIGIKAM_AVPLAYER_LOG) << "-f set: " << op.value().toString();
         window.play(op.value().toString());
     }
     else

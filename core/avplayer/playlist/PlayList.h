@@ -50,7 +50,7 @@ class PlayList : public QWidget
 
 public:
 
-    explicit PlayList(QWidget* parent = nullptr);
+    explicit PlayList(QWidget* const parent = nullptr);
     ~PlayList();
 
     void setSaveFile(const QString& file);
@@ -78,12 +78,15 @@ private Q_SLOTS:
     void addItems();
 
     void onAboutToPlay(const QModelIndex& index);
+
     //void highlight(const QModelIndex& index);
 
 private:
 
     QListView*          mpListView;
-    QToolButton*        mpClear, *mpRemove, *mpAdd;
+    QToolButton*        mpClear;
+    QToolButton*        mpRemove;
+    QToolButton*        mpAdd;
     PlayListDelegate*   mpDelegate;
     PlayListModel*      mpModel;
     int                 mMaxRows;

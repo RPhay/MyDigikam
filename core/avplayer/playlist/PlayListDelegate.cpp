@@ -67,7 +67,7 @@ void PlayListDelegate::paint(QPainter* painter, const QStyleOptionViewItem& opti
 
     // selected state has different background
 
-    bool detail = false;
+    bool detail      = false;
 
     // TODO: draw border. wrong rect.
 
