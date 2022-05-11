@@ -71,21 +71,29 @@ public:
             return;
 
         KSharedConfig::Ptr config = KSharedConfig::openConfig();
-        KConfigGroup group        = config->group(QLatin1String("MediaPlayer General"));
 
+        // ---
+
+        KConfigGroup group        = config->group(QLatin1String("MediaPlayer General"));
         group.writeEntry(QLatin1String("last_file"),          last_file);
         group.writeEntry(QLatin1String("timeout"),            timeout);
         group.writeEntry(QLatin1String("abort_timeout"),      abort_timeout);
         group.writeEntry(QLatin1String("force_fps"),          force_fps);
 
+        // ---
+
         KConfigGroup group2       = config->group(QLatin1String("MediaPlayer Decoder Video"));
-        group2.writeEntry(QLatin1String("priority"),          video_decoders.join(QLatin1String(" ")));
+        group2.writeEntry(QLatin1String("priority"),          video_decoders);
+        group2.writeEntry(QLatin1String("zeroCopy"),          zero_copy);
+
+        // ---
 
         KConfigGroup group3       = config->group(QLatin1String("MediaPlayer Capture"));
-        group3.writeEntry(QLatin1String("zeroCopy"),          zero_copy);
         group3.writeEntry(QLatin1String("dir"),               capture_dir);
         group3.writeEntry(QLatin1String("format"),            capture_fmt);
         group3.writeEntry(QLatin1String("quality"),           capture_quality);
+
+        // ---
 
         KConfigGroup group4       = config->group(QLatin1String("MediaPlayer Subtitle"));
         group4.writeEntry(QLatin1String("enabled"),           subtitle_enabled);
@@ -98,15 +106,21 @@ public:
         group4.writeEntry(QLatin1String("outline"),           subtitle_outline);
         group4.writeEntry(QLatin1String("bottom margin"),     subtilte_bottom_margin);
 
+        // ---
+
         KConfigGroup group5       = config->group(QLatin1String("MediaPlayer Ass"));
         group5.writeEntry(QLatin1String("font_file"),         ass_font_file);
         group5.writeEntry(QLatin1String("force_font_file"),   ass_force_font_file);
         group5.writeEntry(QLatin1String("fonts_dir"),         ass_fonts_dir);
 
+        // ---
+
         KConfigGroup group6       = config->group(QLatin1String("MediaPlayer Preview"));
         group6.writeEntry(QLatin1String("enabled"),           preview_enabled);
         group6.writeEntry(QLatin1String("width"),             preview_w);
         group6.writeEntry(QLatin1String("height"),            preview_h);
+
+        // ---
 
         KConfigGroup group7       = config->group(QLatin1String("MediaPlayer AVFormat"));
         group7.writeEntry(QLatin1String("enable"),            avformat_on);
@@ -121,9 +135,13 @@ public:
         group7.writeEntry(QLatin1String("analyzeduration"),   analyze_duration);
         group7.writeEntry(QLatin1String("extra"),             avformat_extra);
 
+        // ---
+
         KConfigGroup group8       = config->group(QLatin1String("MediaPlayer AVFilterVideo"));
         group8.writeEntry(QLatin1String("enable"),            avfilterVideo_on);
         group8.writeEntry(QLatin1String("options"),           avfilterVideo);
+
+        // ---
 
         KConfigGroup group9       = config->group(QLatin1String("MediaPlayer AVFilterAudio"));
         group9.writeEntry(QLatin1String("enable"),            avfilterAudio_on);
@@ -133,10 +151,14 @@ public:
             AVPlayerConfigMngr::staticMetaObject.indexOfEnumerator("OpenGLType"))
             .valueToKey(opengl);
 
+        // ---
+
         KConfigGroup group10      = config->group(QLatin1String("MediaPlayer OpenGL"));
         group10.writeEntry(QLatin1String("egl"),               egl);
         group10.writeEntry(QLatin1String("type"),              QString::fromLatin1(glname));
         group10.writeEntry(QLatin1String("angle_platform"),    angle_dx);
+
+        // ---
 
         KConfigGroup group11      = config->group(QLatin1String("MediaPlayer Shader"));
         group11.writeEntry(QLatin1String("enable"),            user_shader);
@@ -145,8 +167,12 @@ public:
         group11.writeEntry(QLatin1String("fragSample"),        frag_sample);
         group11.writeEntry(QLatin1String("fragPostProcess"),   frag_pp);
 
+        // ---
+
         KConfigGroup group12      = config->group(QLatin1String("MediaPlayer Buffer"));
         group12.writeEntry(QLatin1String("value"),             buffer_value);
+
+        // ---
 
         config->sync();
 
@@ -240,112 +266,120 @@ void AVPlayerConfigMngr::reload()
         mpData->history.append(var);
     }
 
+    // ---
+
     mpData->is_loading = true;
 
-    QSettings settings(mpData->file, QSettings::IniFormat);
+    KSharedConfig::Ptr config = KSharedConfig::openConfig();
 
-    setLastFile(settings.value(QString::fromLatin1("last_file"),                    QString()).toString());
-    setTimeout(settings.value(QString::fromLatin1("timeout"),                       30.0).toReal());
-    setAbortOnTimeout(settings.value(QString::fromLatin1("abort_timeout"),          true).toBool());
-    setForceFrameRate(settings.value(QString::fromLatin1("force_fps"),              0.0).toReal());
+    KConfigGroup group        = config->group(QLatin1String("MediaPlayer General"));
+    setLastFile(group.readEntry(QLatin1String("last_file"),                    QString()));
+    setTimeout(group.readEntry(QLatin1String("timeout"),                       30.0));
+    setAbortOnTimeout(group.readEntry(QLatin1String("abort_timeout"),          true));
+    setForceFrameRate(group.readEntry(QLatin1String("force_fps"),              0.0));
 
-    settings.beginGroup(QString::fromLatin1("decoder"));
-    settings.beginGroup(QString::fromLatin1("video"));
-    QString decs_default(QString::fromLatin1("HW FFmpeg")); // HW is ignored
+    // ---
 
-#if QT_VERSION >= QT_VERSION_CHECK(5, 14, 0)
+    KConfigGroup group2       = config->group(QLatin1String("MediaPlayer Decoder Video"));
+    setDecoderPriorityNames(group.readEntry(QLatin1String("priority"),         QStringList() << QLatin1String("HW FFmpeg")));  // HW is ignored
+    setZeroCopy(group2.readEntry(QLatin1String("zeroCopy"),                    true));
 
-    setDecoderPriorityNames(settings.value(QString::fromLatin1("priority"),         decs_default).toString().split(QString::fromLatin1(" "), Qt::SkipEmptyParts));
+    // ---
 
-#else
-
-    setDecoderPriorityNames(settings.value(QString::fromLatin1("priority"),         decs_default).toString().split(QString::fromLatin1(" "), QString::SkipEmptyParts));
-
-#endif
-
-    setZeroCopy(settings.value(QString::fromLatin1("zeroCopy"),                     true).toBool());
-    settings.endGroup(); // video
-    settings.endGroup(); // decoder
-
-    settings.beginGroup(QString::fromLatin1("capture"));
-    setCaptureDir(settings.value(QString::fromLatin1("dir"),                        QString()).toString());
+    KConfigGroup group3       = config->group(QLatin1String("MediaPlayer Capture"));
+    setCaptureDir(group3.readEntry(QLatin1String("dir"),                       QString()));
 
     if (captureDir().isEmpty())
     {
         setCaptureDir(QStandardPaths::writableLocation(QStandardPaths::PicturesLocation));
     }
 
-    setCaptureFormat(settings.value(QString::fromLatin1("format"),                  QString::fromLatin1("png")).toString());
-    setCaptureQuality(settings.value(QString::fromLatin1("quality"),                100).toInt());
-    settings.endGroup();
+    setCaptureFormat(group3.readEntry(QLatin1String("format"),                 QString::fromLatin1("png")));
+    setCaptureQuality(group3.readEntry(QLatin1String("quality"),               100));
 
-    settings.beginGroup(QString::fromLatin1("subtitle"));
-    setSubtitleAutoLoad(settings.value(QString::fromLatin1("autoLoad"),             true).toBool());
-    setSubtitleEnabled(settings.value(QString::fromLatin1("enabled"),               true).toBool());
-    setSubtitleEngines(settings.value(QString::fromLatin1("engines"),               QStringList() << QString::fromLatin1("FFmpeg") << QString::fromLatin1("LibASS")).toStringList());
-    setSubtitleDelay(settings.value(QString::fromLatin1("delay"),                   0.0).toInt());
+    // ---
+
+    KConfigGroup group4       = config->group(QLatin1String("MediaPlayer Subtitle"));
+    setSubtitleAutoLoad(group4.readEntry(QLatin1String("autoLoad"),            true));
+    setSubtitleEnabled(group4.readEntry(QLatin1String("enabled"),              true));
+    setSubtitleEngines(group4.readEntry(QLatin1String("engines"),              QStringList() << QLatin1String("FFmpeg") << QLatin1String("LibASS")));
+    setSubtitleDelay(group4.readEntry(QLatin1String("delay"),                  0.0));
     QFont f;
     f.setPointSize(20);
     f.setBold(true);
-    setSubtitleFont(settings.value(QString::fromLatin1("font"),                     f).value<QFont>());
-    setSubtitleColor(settings.value(QString::fromLatin1("color"),                   QColor("white")).value<QColor>());
-    setSubtitleOutlineColor(settings.value(QString::fromLatin1("outline_color"),    QColor("blue")).value<QColor>());
-    setSubtitleOutline(settings.value(QString::fromLatin1("outline"),               true).toBool());
-    setSubtitleBottomMargin(settings.value(QString::fromLatin1("bottom margin"),    8).toInt());
-    settings.beginGroup(QString::fromLatin1("ass"));
-    setAssFontFile(settings.value(QString::fromLatin1("font_file"),                 QString()).toString());
-    setAssFontFileForced(settings.value(QString::fromLatin1("force_font_file"),     false).toBool());
-    setAssFontsDir(settings.value(QString::fromLatin1("fonts_dir"),                 QString()).toString());
-    settings.endGroup();
-    settings.endGroup();
+    setSubtitleFont(group4.readEntry(QLatin1String("font"),                    f));
+    setSubtitleColor(group4.readEntry(QLatin1String("color"),                  QColor("white")));
+    setSubtitleOutlineColor(group4.readEntry(QLatin1String("outline_color"),   QColor("blue")));
+    setSubtitleOutline(group4.readEntry(QLatin1String("outline"),              true));
+    setSubtitleBottomMargin(group4.readEntry(QLatin1String("bottom margin"),   8));
 
-    settings.beginGroup(QString::fromLatin1("preview"));
-    setPreviewEnabled(settings.value(QString::fromLatin1("enabled"),                true).toBool());
-    setPreviewWidth(settings.value(QString::fromLatin1("width"),                    160).toInt());
-    setPreviewHeight(settings.value(QString::fromLatin1("height"),                  90).toInt());
-    settings.endGroup();
-    settings.beginGroup(QString::fromLatin1("avformat"));
-    setAvformatOptionsEnabled(settings.value(QString::fromLatin1("enable"),         false).toBool());
-    reduceBuffering(settings.value(QString::fromLatin1("avioflags"),                0).toString() == QLatin1String("direct"));
-    probeSize(settings.value(QString::fromLatin1("probesize"),                      5000000).toUInt());
-    analyzeDuration(settings.value(QString::fromLatin1("analyzeduration"),          5000000).toInt());
-    avformatExtra(settings.value(QString::fromLatin1("extra"),                      QString()).toString());
-    settings.endGroup();
+    // ---
 
-    settings.beginGroup(QString::fromLatin1("avfilterVideo"));
-    avfilterVideoEnable(settings.value(QString::fromLatin1("enable"),               true).toBool());
-    avfilterVideoOptions(settings.value(QString::fromLatin1("options"),             QString()).toString());
-    settings.endGroup();
-    settings.beginGroup(QString::fromLatin1("avfilterAudio"));
-    avfilterAudioEnable(settings.value(QString::fromLatin1("enable"),               true).toBool());
-    avfilterAudioOptions(settings.value(QString::fromLatin1("options"),             QString()).toString());
-    settings.endGroup();
+    KConfigGroup group5       = config->group(QLatin1String("MediaPlayer Ass"));
+    setAssFontFile(group5.readEntry(QLatin1String("font_file"),                QString()));
+    setAssFontFileForced(group5.readEntry(QLatin1String("force_font_file"),    false));
+    setAssFontsDir(group5.readEntry(QLatin1String("fonts_dir"),                QString()));
 
-    settings.beginGroup(QString::fromLatin1("opengl"));
-    setEGL(settings.value(QString::fromLatin1("egl"),                               false).toBool());
-    const QString glname = settings.value(QString::fromLatin1("type"),              QString::fromLatin1("OpenGLES")).toString();
-    setOpenGLType((AVPlayerConfigMngr::OpenGLType)AVPlayerConfigMngr::staticMetaObject.enumerator(AVPlayerConfigMngr::staticMetaObject.indexOfEnumerator("OpenGLType")).keysToValue(glname.toLatin1().constData()));
+    // ---
 
-    // d3d11 bad performance (gltexsubimage2d)
+    KConfigGroup group6       = config->group(QLatin1String("MediaPlayer Preview"));
+    setPreviewEnabled(group6.readEntry(QLatin1String("enabled"),               true));
+    setPreviewWidth(group6.readEntry(QLatin1String("width"),                   160));
+    setPreviewHeight(group6.readEntry(QLatin1String("height"),                 90));
 
-    setANGLEPlatform(settings.value(QString::fromLatin1("angle_platform"),          QString::fromLatin1("d3d9")).toString());
-    settings.endGroup();
+    // ---
 
-    settings.beginGroup(QString::fromLatin1("shader"));
-    setUserShaderEnabled(settings.value(QString::fromLatin1("enable"),              false).toBool());
-    setIntermediateFBO(settings.value(QString::fromLatin1("fbo"),                   false).toBool());
-    setFragHeader(settings.value(QString::fromLatin1("fragHeader"),                 QString()).toString());
-    setFragSample(settings.value(QString::fromLatin1("fragSample"),                 QString::fromLatin1("// horizontal mirror effect\n"
-                                                                                                        "vec4 sample2d(sampler2D tex, vec2 pos, int p) {\n"
-                                                                                                        "    return texture(tex, vec2(1.0-pos.x, pos.y));\n"
-                                                                                                        "}")).toString());
-    setFragPostProcess(settings.value(QString::fromLatin1("fragPostProcess"),       QString::fromLatin1("//negate color effect\n"
-                                                                                                        "gl_FragColor.rgb = vec3(1.0-gl_FragColor.r, 1.0-gl_FragColor.g, 1.0-gl_FragColor.b);")).toString());
-    settings.endGroup();
+    KConfigGroup group7       = config->group(QLatin1String("MediaPlayer AVFormat"));
+    setAvformatOptionsEnabled(group7.readEntry(QLatin1String("enable"),        false));
+    const QString avioFlags   = group7.readEntry(QLatin1String("avioflags"),   QString::fromLatin1("0"));
+    reduceBuffering(avioFlags == QLatin1String("direct"));
+    probeSize(group7.readEntry(QLatin1String("probesize"),                     5000000));
+    analyzeDuration(group7.readEntry(QLatin1String("analyzeduration"),         5000000));
+    avformatExtra(group7.readEntry(QLatin1String("extra"),                     QString()));
 
-    settings.beginGroup(QString::fromLatin1("buffer"));
-    setBufferValue(settings.value(QString::fromLatin1("value"),                     -1).toInt());
-    settings.endGroup();
+    // ---
+
+    KConfigGroup group8       = config->group(QLatin1String("MediaPlayer AVFilterVideo"));
+    avfilterVideoEnable(group8.readEntry(QLatin1String("enable"),              true));
+    avfilterVideoOptions(group8.readEntry(QLatin1String("options"),            QString()));
+
+    // ---
+
+    KConfigGroup group9       = config->group(QLatin1String("MediaPlayer AVFilterAudio"));
+    avfilterAudioEnable(group9.readEntry(QLatin1String("enable"),              true));
+    avfilterAudioOptions(group9.readEntry(QLatin1String("options"),            QString()));
+
+    // ---
+
+    KConfigGroup group10      = config->group(QLatin1String("MediaPlayer OpenGL"));
+    setEGL(group10.readEntry(QLatin1String("egl"),                             false));
+    const QString glname = group10.readEntry(QLatin1String("type"),            QString::fromLatin1("OpenGLES"));
+
+    setOpenGLType((AVPlayerConfigMngr::OpenGLType)AVPlayerConfigMngr::staticMetaObject.enumerator(
+        AVPlayerConfigMngr::staticMetaObject.indexOfEnumerator("OpenGLType"))
+            .keysToValue(glname.toLatin1().constData()));
+
+    // NOTE: d3d11 bad performance (gltexsubimage2d)
+
+    setANGLEPlatform(group10.readEntry(QLatin1String("angle_platform"),        QString::fromLatin1("d3d9")));
+
+    // ---
+
+    KConfigGroup group11      = config->group(QLatin1String("MediaPlayer Shader"));
+    setUserShaderEnabled(group11.readEntry(QLatin1String("enable"),            false));
+    setIntermediateFBO(group11.readEntry(QLatin1String("fbo"),                 false));
+    setFragHeader(group11.readEntry(QLatin1String("fragHeader"),               QString()));
+    setFragSample(group11.readEntry(QLatin1String("fragSample"),               QString::fromLatin1("// horizontal mirror effect\n"
+                                                                                                   "vec4 sample2d(sampler2D tex, vec2 pos, int p) {\n"
+                                                                                                   "    return texture(tex, vec2(1.0-pos.x, pos.y));\n"
+                                                                                                   "}")));
+    setFragPostProcess(group11.readEntry(QLatin1String("fragPostProcess"),     QString::fromLatin1("//negate color effect\n"
+                                                                                                   "gl_FragColor.rgb = vec3(1.0-gl_FragColor.r, 1.0-gl_FragColor.g, 1.0-gl_FragColor.b);")));
+
+    // ---
+
+    KConfigGroup group12      = config->group(QLatin1String("MediaPlayer Buffer"));
+    setBufferValue(group11.readEntry(QLatin1String("value"),                   -1));
 
     mpData->is_loading = false;
 }
