@@ -32,10 +32,11 @@
 // Qt includes
 
 #include <QFile>
-#include <QFileInfo>
-#include <QElapsedTimer>
 #include <QList>
+#include <QFileInfo>
 #include <QByteArray>
+#include <QApplication>
+#include <QElapsedTimer>
 
 // Local includes
 
@@ -93,13 +94,14 @@ public:
     QProcess::ProcessError  processError;
     QString                 errorString;
 
+    QMutex                  mutex;
+
 public:
 
     static const int        CMD_ID_MIN  = 1;
     static const int        CMD_ID_MAX  = 2000000000;
 
     static int              s_nextCmdId;             ///< Unique identifier, even in a multi-instances or multi-thread environment
-    static QMutex           s_cmdIdMutex;
 };
 
 } // namespace Digikam
