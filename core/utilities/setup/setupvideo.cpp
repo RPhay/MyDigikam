@@ -25,10 +25,12 @@
 
 // Qt includes
 
+#include <QApplication>
 #include <QLayout>
 #include <QPushButton>
 #include <QTabWidget>
 #include <QList>
+#include <QMessageBox>
 
 // KDE includes
 
@@ -52,11 +54,13 @@ class Q_DECL_HIDDEN SetupVideo::Private
 public:
 
     explicit Private()
-      : tabContent(nullptr)
+      : tabContent(nullptr),
+        resetBtn  (nullptr)
     {
     }
 
     QTabWidget*                  tabContent;
+    QPushButton*                 resetBtn;
     QList<QtAV::ConfigPageBase*> pages;
 };
 
@@ -73,18 +77,16 @@ SetupVideo::SetupVideo(QWidget* const parent)
 
     d->tabContent          = new QTabWidget(this);
     d->tabContent->setTabPosition(QTabWidget::North);
-/*
-    mpButtonBox            = new QDialogButtonBox(Qt::Horizontal);
-    mpButtonBox->addButton(i18n("Reset"),  QDialogButtonBox::ResetRole);      // QDialogButtonBox::Reset;
-    mpButtonBox->addButton(i18n("Ok"),     QDialogButtonBox::AcceptRole);     // QDialogButtonBox::Ok
-    mpButtonBox->addButton(i18n("Cancel"), QDialogButtonBox::RejectRole);
-    mpButtonBox->addButton(i18n("Apply"),  QDialogButtonBox::ApplyRole);
 
-    connect(mpButtonBox, SIGNAL(clicked(QAbstractButton*)),
-            this, SLOT(onButtonClicked(QAbstractButton*)));
-*/
+    d->resetBtn            = new QPushButton(this);
+    d->resetBtn->setText(i18n("Reset"));
+    d->resetBtn->setToolTip(i18n("Press this button to reset all video settings to the default values."));
+
+    connect(d->resetBtn, SIGNAL(clicked()),
+            this, SLOT(slotReset()));
+
     vbl->addWidget(d->tabContent);
-    //vbl->addWidget(mpButtonBox);
+    vbl->addWidget(d->resetBtn);
 
     d->pages << new DecoderConfigPage(nullptr, false)
              << new AVFormatConfigPage()
@@ -121,11 +123,19 @@ void SetupVideo::readSettings()
 
 void SetupVideo::slotReset()
 {
-    AVPlayerConfigMngr::instance().reset();
+    int result = QMessageBox::warning(this, qApp->applicationName(),
+                                      i18nc("@info",
+                                            "Do you want to reset all video settings the the default value?"),
+                                            QMessageBox::Yes | QMessageBox::No);
 
-    foreach (ConfigPageBase* const page, d->pages)
+    if (result == QMessageBox::Yes)
     {
-        page->reset();
+        AVPlayerConfigMngr::instance().reset();
+
+        foreach (ConfigPageBase* const page, d->pages)
+        {
+            page->reset();
+        }
     }
 }
 
