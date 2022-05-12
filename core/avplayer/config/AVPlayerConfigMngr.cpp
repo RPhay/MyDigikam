@@ -226,8 +226,6 @@ public:
     qreal                           timeout                 = 0.0;
     int                             buffer_value            = 0;
 
-    QVariantList                    history;
-
     bool                            user_shader             = false;
     bool                            fbo                     = false;
     QString                         frag_header;
@@ -240,12 +238,6 @@ public:
 void AVPlayerConfigMngr::reload()
 {
     KSharedConfig::Ptr config = KSharedConfig::openConfig();
-    KConfigGroup group        = config->group(QLatin1String("MediaPlayer History"));
-
-    mpData->history = group.readEntry(QLatin1String("MediaList"),              QVariantList());
-
-    // ---
-
     mpData->is_loading        = true;
 
     KConfigGroup group1       = config->group(QLatin1String("MediaPlayer General"));
@@ -257,7 +249,7 @@ void AVPlayerConfigMngr::reload()
     // ---
 
     KConfigGroup group2       = config->group(QLatin1String("MediaPlayer Decoder Video"));
-    setDecoderPriorityNames(group.readEntry(QLatin1String("priority"),         QStringList() << QLatin1String("HW FFmpeg")));  // HW is ignored
+    setDecoderPriorityNames(group2.readEntry(QLatin1String("priority"),        QStringList() << QLatin1String("HW FFmpeg")));  // HW is ignored);
     setZeroCopy(group2.readEntry(QLatin1String("zeroCopy"),                    true));
 
     // ---
@@ -1157,70 +1149,6 @@ AVPlayerConfigMngr& AVPlayerConfigMngr::setTimeout(qreal value)
     Q_EMIT changed();
 
     return *this;
-}
-
-QVariantList AVPlayerConfigMngr::history() const
-{
-    return mpData->history;
-}
-
-void AVPlayerConfigMngr::addHistory(const QVariantMap& value)
-{
-    mpData->history.prepend(value);
-
-    Q_EMIT historyChanged();
-
-    writeHistory();
-}
-
-void AVPlayerConfigMngr::writeHistory()
-{
-    KSharedConfig::Ptr config = KSharedConfig::openConfig();
-    config->deleteGroup(QLatin1String("MediaPlayer History"));
-    KConfigGroup group        = config->group(QLatin1String("MediaPlayer History"));
-
-    group.writeEntry(QLatin1String("MediaList"), mpData->history);
-
-    config->sync();
-}
-
-void AVPlayerConfigMngr::removeHistory(const QString& url)
-{
-    QVariantList::Iterator it = mpData->history.begin();
-    bool change               = false;
-
-    while (it != mpData->history.end())
-    {
-        if (it->toMap().value(QLatin1String("url")) != url)
-        {
-            ++it;
-            continue;
-        }
-
-        it     = mpData->history.erase(it);
-        change = true;
-    }
-
-    if (!change)
-        return;
-
-    Q_EMIT historyChanged();
-
-    writeHistory();
-}
-
-void AVPlayerConfigMngr::clearHistory()
-{
-    if (mpData->history.isEmpty())
-        return;
-
-    mpData->history.clear();
-
-    Q_EMIT historyChanged();
-
-    KSharedConfig::Ptr config = KSharedConfig::openConfig();
-    config->deleteGroup(QLatin1String("MediaPlayer History"));
-    config->sync();
 }
 
 bool AVPlayerConfigMngr::abortOnTimeout() const

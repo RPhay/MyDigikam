@@ -46,7 +46,6 @@ namespace AVPlayer
 class AVPlayerConfigMngr : public QObject
 {
     Q_OBJECT
-    Q_PROPERTY(QVariantList history READ history NOTIFY historyChanged)
 
     // last file opened by file dialog
 
@@ -252,16 +251,6 @@ public:
     Q_INVOKABLE QVariant operator()(const QString& key) const;
     Q_INVOKABLE AVPlayerConfigMngr& operator()(const QString& key, const QVariant& value);
 
-    /// history will not be clear in reset()
-
-    QVariantList history()                              const;
-
-    // {url: urlString, start: ms, duration: ms}
-
-    Q_INVOKABLE void addHistory(const QVariantMap& value);
-    Q_INVOKABLE void removeHistory(const QString& url);
-    Q_INVOKABLE void clearHistory();
-
     AVPlayerConfigMngr& setUserShaderEnabled(bool value);
     bool userShaderEnabled()                            const;
 
@@ -320,7 +309,6 @@ public:
     Q_SIGNAL void bufferValueChanged();
     Q_SIGNAL void timeoutChanged();
     Q_SIGNAL void abortOnTimeoutChanged();
-    Q_SIGNAL void historyChanged();
 
 protected:
 
@@ -330,10 +318,6 @@ protected:
 public Q_SLOTS:
 
     void save();
-
-private:
-
-    void writeHistory();
 
 private:
 
