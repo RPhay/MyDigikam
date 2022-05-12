@@ -231,6 +231,8 @@ void QOption::setName(const QString& name)
     }
 }
 
+// ------------------------------------------------------------
+
 QOptions::QOptions()
 {
 }
@@ -246,7 +248,7 @@ bool QOptions::parse(int argc, const char* const* argv)
     if (mOptionGroupMap.isEmpty())
         return false;
 
-    if (argc==1)
+    if (argc == 1)
         return true;
 
     bool result = true;
@@ -367,7 +369,7 @@ bool QOptions::parse(int argc, const char* const* argv)
                 ++it;
             }
 
-            //handle unknown option
+            // handle unknown option
         }
         else
         {
