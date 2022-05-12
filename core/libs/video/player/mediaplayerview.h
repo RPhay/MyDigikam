@@ -90,6 +90,7 @@ private Q_SLOTS:
 
 private:
 
+    void play();
     int  previewMode();
     void setPreviewMode(int mode);
 

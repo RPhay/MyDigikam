@@ -42,6 +42,7 @@ target_compile_definitions(core_setupcommon_obj
 set(libsetup_SRCS
     ${CMAKE_CURRENT_SOURCE_DIR}/setup.cpp
     ${CMAKE_CURRENT_SOURCE_DIR}/setuptooltip.cpp
+    ${CMAKE_CURRENT_SOURCE_DIR}/setupvideo.cpp
     ${CMAKE_CURRENT_SOURCE_DIR}/setuptemplate.cpp
     ${CMAKE_CURRENT_SOURCE_DIR}/setupmisc.cpp
     ${CMAKE_CURRENT_SOURCE_DIR}/setupplugins.cpp

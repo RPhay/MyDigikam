@@ -51,7 +51,7 @@ public:
     Data()
     {
         is_loading = false;
-        
+
         QString appDataDir = QStandardPaths::writableLocation(QStandardPaths::AppDataLocation);
 
         if (!QDir(appDataDir).exists())
@@ -362,7 +362,7 @@ AVPlayerConfigMngr& AVPlayerConfigMngr::instance()
 
 AVPlayerConfigMngr::AVPlayerConfigMngr(QObject* const parent)
     : QObject(parent),
-      mpData(new Data())
+      mpData (new Data())
 {
     // DO NOT call save() in dtor because it's a singleton and may be deleted later than qApp, QFont is not valid
 

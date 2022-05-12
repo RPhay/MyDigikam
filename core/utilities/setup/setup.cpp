@@ -46,6 +46,7 @@
 #include "setupcollections.h"
 #include "setupeditor.h"
 #include "setupicc.h"
+#include "setupvideo.h"
 #include "setuplighttable.h"
 #include "setupmetadata.h"
 #include "setupmisc.h"
@@ -69,6 +70,7 @@ public:
         page_collections        (nullptr),
         page_albumView          (nullptr),
         page_tooltip            (nullptr),
+        page_video              (nullptr),
         page_metadata           (nullptr),
         page_template           (nullptr),
         page_lighttable         (nullptr),
@@ -82,6 +84,7 @@ public:
         collectionsPage         (nullptr),
         albumViewPage           (nullptr),
         tooltipPage             (nullptr),
+        videoPage               (nullptr),
         metadataPage            (nullptr),
         templatePage            (nullptr),
         lighttablePage          (nullptr),
@@ -98,6 +101,7 @@ public:
     DConfigDlgWdgItem*       page_collections;
     DConfigDlgWdgItem*       page_albumView;
     DConfigDlgWdgItem*       page_tooltip;
+    DConfigDlgWdgItem*       page_video;
     DConfigDlgWdgItem*       page_metadata;
     DConfigDlgWdgItem*       page_template;
     DConfigDlgWdgItem*       page_lighttable;
@@ -112,6 +116,7 @@ public:
     SetupCollections*        collectionsPage;
     SetupAlbumView*          albumViewPage;
     SetupToolTip*            tooltipPage;
+    SetupVideo*              videoPage;
     SetupMetadata*           metadataPage;
     SetupTemplate*           templatePage;
     SetupLightTable*         lighttablePage;
@@ -165,6 +170,12 @@ Setup::Setup(QWidget* const parent)
     d->page_tooltip->setHeader(i18n("<qt>Items Tool-Tip Settings<br/>"
                                     "<i>Customize information in item tool-tips</i></qt>"));
     d->page_tooltip->setIcon(QIcon::fromTheme(QLatin1String("dialog-information")));
+
+    d->videoPage  = new SetupVideo();
+    d->page_video = addPage(d->videoPage, i18n("Video"));
+    d->page_video->setHeader(i18n("<qt>Video Preview Settings<br/>"
+                                  "<i>Customize settings to play video media</i></qt>"));
+    d->page_video->setIcon(QIcon::fromTheme(QLatin1String("video-x-generic")));
 
     d->metadataPage  = new SetupMetadata();
     d->page_metadata = addPage(d->metadataPage, i18n("Metadata"));
@@ -246,6 +257,9 @@ Setup::Setup(QWidget* const parent)
     connect(buttonBox()->button(QDialogButtonBox::Ok), &QPushButton::clicked,
             this, &Setup::slotOkClicked);
 
+    connect(buttonBox()->button(QDialogButtonBox::Cancel), &QPushButton::clicked,
+            this, &Setup::slotCancelClicked);
+
     KSharedConfig::Ptr config = KSharedConfig::openConfig();
     KConfigGroup group        = config->group(QLatin1String("Setup Dialog"));
 
@@ -262,6 +276,7 @@ Setup::~Setup()
     group.writeEntry(QLatin1String("Setup Page"), (int)activePageIndex());
     DXmlGuiWindow::saveWindowSize(windowHandle(), group);
     config->sync();
+
     delete d;
 }
 
@@ -453,6 +468,7 @@ void Setup::slotOkClicked()
     d->collectionsPage->applySettings();
     d->albumViewPage->applySettings();
     d->tooltipPage->applySettings();
+    d->videoPage->applySettings();
     d->metadataPage->applySettings();
     d->templatePage->applySettings();
     d->lighttablePage->applySettings();
@@ -473,6 +489,11 @@ void Setup::slotOkClicked()
     }
 
     accept();
+}
+
+void Setup::slotCancelClicked()
+{
+    d->videoPage->cancel();
 }
 
 void Setup::showPage(Setup::Page page)
@@ -516,6 +537,11 @@ Setup::Page Setup::activePageIndex() const
     if (cur == d->page_tooltip)
     {
         return ToolTipPage;
+    }
+
+    if (cur == d->page_video)
+    {
+        return VideoPage;
     }
 
     if (cur == d->page_metadata)
@@ -581,6 +607,9 @@ DConfigDlgWdgItem* Setup::Private::pageItem(Setup::Page page) const
 
         case Setup::ToolTipPage:
             return page_tooltip;
+
+        case Setup::VideoPage:
+            return page_video;
 
         case Setup::MetadataPage:
             return page_metadata;

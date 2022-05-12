@@ -72,7 +72,7 @@ public:
 
         // why no frame?
 
-        setFrameStyle(QFrame::Panel|QFrame::Raised);
+        setFrameStyle(QFrame::Panel | QFrame::Raised);
         setLineWidth(2);
 
         mpEditor                     = new PropertyEditor(this);

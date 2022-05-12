@@ -84,7 +84,7 @@ SetupTemplate::SetupTemplate(QWidget* const parent)
     setWidgetResizable(true);
 
     const int spacing    = qMin(QApplication::style()->pixelMetric(QStyle::PM_LayoutHorizontalSpacing),
-                             QApplication::style()->pixelMetric(QStyle::PM_LayoutVerticalSpacing));
+                                QApplication::style()->pixelMetric(QStyle::PM_LayoutVerticalSpacing));
 
     d->listView          = new TemplateList(panel);
     d->listView->setFixedHeight(100);

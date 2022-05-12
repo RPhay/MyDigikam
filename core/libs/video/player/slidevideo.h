@@ -79,6 +79,10 @@ private Q_SLOTS:
 
 private:
 
+    void play();
+
+private:
+
     class Private;
     Private* const d;
 };

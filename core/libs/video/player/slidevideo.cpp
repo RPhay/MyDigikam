@@ -40,16 +40,16 @@
 #include <ksharedconfig.h>
 #include <kconfiggroup.h>
 
-// QtAV includes
-
-#include "WidgetRenderer.h"
-#include "QtAV_Version.h"
-
 // Local includes
 
 #include "digikam_debug.h"
 #include "dlayoutbox.h"
 #include "metaengine.h"
+#include "WidgetRenderer.h"
+#include "QtAV.h"
+#include "QtAV_Version.h"
+#include "AVPlayerConfigMngr.h"
+#include "DecoderConfigPage.h"
 
 using namespace QtAV;
 
@@ -98,7 +98,7 @@ public:
     DInfoInterface*      iface;
 
     WidgetRenderer*      videoWidget;
-    AVPlayerCore*            player;
+    AVPlayerCore*        player;
 
     QSlider*             slider;
     QSlider*             volume;
@@ -150,8 +150,8 @@ SlideVideo::SlideVideo(QWidget* const parent)
     grid->setContentsMargins(QMargins());
 
     KSharedConfig::Ptr config = KSharedConfig::openConfig();
-    KConfigGroup group = config->group("Media Player Settings");
-    int volume         = group.readEntry("Volume", 50);
+    KConfigGroup group        = config->group("Media Player Settings");
+    int volume                = group.readEntry("Volume", 50);
 
     d->volume->setValue(volume);
     d->player->audio()->setVolume((qreal)volume / 100.0);
@@ -243,7 +243,7 @@ void SlideVideo::setCurrentUrl(const QUrl& url)
     if (supportedCodec)
     {
         d->player->setFile(url.toLocalFile());
-        d->player->play();
+        play();
     }
     else
     {
@@ -303,7 +303,7 @@ void SlideVideo::pause(bool b)
 {
     if (!b && !d->player->isPlaying())
     {
-        d->player->play();
+        play();
         return;
     }
 
@@ -356,6 +356,18 @@ void SlideVideo::slotPosition(int position)
 void SlideVideo::slotHandlePlayerError(const QtAV::AVError& err)
 {
     qCDebug(DIGIKAM_GENERAL_LOG) << "Error: " << err.string();
+}
+
+void SlideVideo::play()
+{
+    d->player->setFrameRate(AVPlayerConfigMngr::instance().forceFrameRate());
+    d->player->setInterruptOnTimeout(AVPlayerConfigMngr::instance().abortOnTimeout());
+    d->player->setInterruptTimeout(AVPlayerConfigMngr::instance().timeout() * 1000.0);
+    d->player->setBufferMode(QtAV::BufferPackets);
+    d->player->setBufferValue(AVPlayerConfigMngr::instance().bufferValue());
+    d->player->setPriority(DecoderConfigPage::idsFromNames(AVPlayerConfigMngr::instance().decoderPriorityNames()));
+
+    d->player->play();
 }
 
 } // namespace Digikam

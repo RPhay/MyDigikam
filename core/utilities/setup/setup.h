@@ -50,6 +50,7 @@ public:
         CollectionsPage,
         AlbumViewPage,
         ToolTipPage,
+        VideoPage,
         MetadataPage,
         TemplatePage,
         EditorPage,
@@ -92,6 +93,7 @@ private Q_SLOTS:
 
     void slotHelp();
     void slotOkClicked();
+    void slotCancelClicked();
 
 private:
 
