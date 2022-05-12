@@ -61,7 +61,7 @@ ConfigDialog::ConfigDialog(QWidget* const parent)
     vbl->setSizeConstraint(QLayout::SetFixedSize);
 
     mpContent              = new QTabWidget();
-    mpContent->setTabPosition(QTabWidget::West);
+    mpContent->setTabPosition(QTabWidget::North);
 
     mpButtonBox            = new QDialogButtonBox(Qt::Horizontal);
     mpButtonBox->addButton(i18n("Reset"),  QDialogButtonBox::ResetRole);      // QDialogButtonBox::Reset;
@@ -99,7 +99,9 @@ ConfigDialog::ConfigDialog(QWidget* const parent)
 
 void ConfigDialog::onButtonClicked(QAbstractButton* btn)
 {
-    qCDebug(DIGIKAM_AVPLAYER_LOG).noquote() << QString::asprintf("QDialogButtonBox clicked role=%d", mpButtonBox->buttonRole(btn));
+    qCDebug(DIGIKAM_AVPLAYER_LOG).noquote()
+        << QString::asprintf("QDialogButtonBox clicked role=%d",
+            mpButtonBox->buttonRole(btn));
 
     switch (mpButtonBox->buttonRole(btn))
     {
