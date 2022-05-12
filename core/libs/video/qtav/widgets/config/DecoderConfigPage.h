@@ -53,7 +53,7 @@ class QTAV_WIDGETS_EXPORT DecoderConfigPage : public ConfigPageBase
 
 public:
 
-    explicit DecoderConfigPage(QWidget* const parent = nullptr);
+    explicit DecoderConfigPage(QWidget* const parent = nullptr, bool advOptVisible = true);
     virtual QString name()             const override;
 
     QVariantHash audioDecoderOptions() const;

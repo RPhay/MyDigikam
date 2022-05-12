@@ -65,7 +65,7 @@ class DecoderConfigPage::DecoderItemWidget : public QFrame
 
 public:
 
-    DecoderItemWidget(QWidget* const parent = nullptr)
+    DecoderItemWidget(QWidget* const parent = nullptr, bool advOptVisible = true)
         : QFrame(parent)
     {
         mpEditorWidget = 0;
@@ -88,6 +88,7 @@ public:
         hb->addWidget(mpCheck);
         QToolButton* const expandBtn = new QToolButton();
         expandBtn->setText(QString::fromLatin1("+"));
+        expandBtn->setVisible(advOptVisible);
         hb->addWidget(expandBtn);
 
         connect(expandBtn, SIGNAL(clicked()),
@@ -163,7 +164,8 @@ private Q_SLOTS:
 
         if (b)
         {
-            b->setText(mpEditorWidget->isVisible()?QString::fromLatin1("-"):QString::fromLatin1("+"));
+            b->setText(mpEditorWidget->isVisible() ? QString::fromLatin1("-")
+                                                   : QString::fromLatin1("+"));
         }
 
         parentWidget()->adjustSize();
@@ -200,7 +202,7 @@ private:
 
 // -------------------------------------------------------------------------
 
-DecoderConfigPage::DecoderConfigPage(QWidget* const parent)
+DecoderConfigPage::DecoderConfigPage(QWidget* const parent, bool advOptVisible)
     : ConfigPageBase(parent)
 {
     mpSelectedDec                           = nullptr;
@@ -236,7 +238,7 @@ DecoderConfigPage::DecoderConfigPage(QWidget* const parent)
     foreach (QtAV::VideoDecoderId vid, all)
     {
         VideoDecoder* const vd      = VideoDecoder::create(vid);
-        DecoderItemWidget* const iw = new DecoderItemWidget(scrollAreaWidgetContents);
+        DecoderItemWidget* const iw = new DecoderItemWidget(scrollAreaWidgetContents, advOptVisible);
         iw->buildUiFor(vd);
         mDecItems.append(iw);
         iw->setName(vd->name());

@@ -72,7 +72,7 @@ SetupVideo::SetupVideo(QWidget* const parent)
     vbl->addWidget(mpContent);
     //vbl->addWidget(mpButtonBox);
 
-    mPages << new DecoderConfigPage()
+    mPages << new DecoderConfigPage(nullptr, false)
            << new AVFormatConfigPage()
            << new MiscPage()
     ;
