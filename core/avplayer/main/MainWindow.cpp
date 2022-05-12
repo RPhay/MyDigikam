@@ -71,9 +71,8 @@
 #include "VideoEQConfigPage.h"
 #include "ConfigDialog.h"
 #include "OSDFilter.h"
-
-//#include "AVFilterSubtitle.h"
-
+#include "AVPlayerConfigMngr.h"
+#include "ScreenSaver.h"
 #include "PlayList.h"
 #include "common.h"
 #include "digikam_debug.h"

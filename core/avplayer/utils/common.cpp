@@ -30,7 +30,6 @@
 
 // Qt includes
 
-#include <QSettings>
 #include <QFileOpenEvent>
 #include <QLocale>
 #include <QCoreApplication>
@@ -40,9 +39,15 @@
 #include <QStandardPaths>
 #include <QMutex>
 
+// KDE includes
+
+#include <kconfiggroup.h>
+#include <ksharedconfig.h>
+
 // Local includes
 
 #include "digikam_debug.h"
+#include "AVPlayerConfigMngr.h"
 
 // Windows includes
 
@@ -126,8 +131,9 @@ void do_common_options_before_qapp(const QOptions& options)
 
 #ifdef Q_OS_LINUX
 
-    QSettings cfg(AVPlayerConfigMngr::defaultConfigFile(), QSettings::IniFormat);
-    const bool set_egl = cfg.value(QLatin1String("opengl/egl")).toBool();
+    KSharedConfig::Ptr config = KSharedConfig::openConfig();
+    KConfigGroup group        = config->group(QLatin1String("MediaPlayer OpenGL"));
+    const bool set_egl        = group.readEntry(QLatin1String("egl"), false);
 
     // https://bugreports.qt.io/browse/QTBUG-49529
     // it's too late if qApp is created. but why ANGLE is not?
@@ -146,7 +152,7 @@ void do_common_options_before_qapp(const QOptions& options)
 
     qCDebug(DIGIKAM_AVPLAYER_LOG) << "QT_XCB_GL_INTEGRATION: " << qgetenv("QT_XCB_GL_INTEGRATION");
 
-#endif //Q_OS_LINUX
+#endif // Q_OS_LINUX
 
 }
 
@@ -216,13 +222,13 @@ void set_opengl_backend(const QString& glopt, const QString& appname)
     {
         qApp->setAttribute(Qt::AA_UseOpenGLES);
 
-#ifdef QT_OPENGL_DYNAMIC
+#   ifdef QT_OPENGL_DYNAMIC
 
         qputenv("QT_OPENGL", "angle");
 
-#endif
+#   endif
 
-#ifdef Q_OS_WIN
+#   ifdef Q_OS_WIN
 
         if      (gl.endsWith(QLatin1String("d3d11")))
             qputenv("QT_ANGLE_PLATFORM", "d3d11");
@@ -231,7 +237,7 @@ void set_opengl_backend(const QString& glopt, const QString& appname)
         else if (gl.endsWith(QLatin1String("warp")))
             qputenv("QT_ANGLE_PLATFORM", "warp");
 
-#endif
+#   endif
 
     }
     else if (gl == QLatin1String("desktop"))
@@ -244,6 +250,7 @@ void set_opengl_backend(const QString& glopt, const QString& appname)
     }
 
 #endif
+
 }
 
 QString appDataDir()

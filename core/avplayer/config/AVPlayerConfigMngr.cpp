@@ -51,7 +51,6 @@ public:
     Data()
     {
         is_loading = false;
-        file       = AVPlayerConfigMngr::defaultConfigFile();
 
         if (!QDir(appDataDir()).exists())
         {
@@ -357,11 +356,6 @@ AVPlayerConfigMngr& AVPlayerConfigMngr::instance()
     static AVPlayerConfigMngr cfg;
 
     return cfg;
-}
-
-QString AVPlayerConfigMngr::defaultConfigFile()
-{
-    return (appDataDir() + QString::fromLatin1("/") + qApp->applicationName() + QString::fromLatin1(".ini"));
 }
 
 AVPlayerConfigMngr::AVPlayerConfigMngr(QObject* const parent)

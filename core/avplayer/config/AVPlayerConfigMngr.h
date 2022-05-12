@@ -104,12 +104,6 @@ public:
 public:
 
     static AVPlayerConfigMngr& instance();
-
-    /*!
-     * \brief defaultAVPlayerConfigMngrFile
-     * AVPlayerConfigMngr file name is $appname.ini. Must call AVPlayerConfigMngr::setName() first
-     */
-    static QString defaultConfigFile();
     static QString defaultDir();
 
 public:

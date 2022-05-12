@@ -33,8 +33,6 @@
 // Local includes
 
 #include "qoptions.h"
-#include "AVPlayerConfigMngr.h"
-#include "ScreenSaver.h"
 
 namespace AVPlayer
 {
