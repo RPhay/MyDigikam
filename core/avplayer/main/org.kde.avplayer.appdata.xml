@@ -4,13 +4,29 @@
   <metadata_license>CC0-1.0</metadata_license>
   <project_license>GPL-2.0+</project_license>
   <name>AVPlayer</name>
+  <name xml:lang="ca">AVPlayer</name>
+  <name xml:lang="es">AVPlayer</name>
+  <name xml:lang="nl">AVPlayer</name>
+  <name xml:lang="ru">AVPlayer</name>
+  <name xml:lang="sv">AVPlayer</name>
+  <name xml:lang="uk">AVPlayer</name>
   <name xml:lang="x-test">xxAVPlayerxx</name>
   <summary>Audio and Video Player</summary>
+  <summary xml:lang="ca">Reproductor d'àudio i vídeo</summary>
+  <summary xml:lang="es">Reproductor de sonido y vídeo</summary>
+  <summary xml:lang="nl">Audio- en videospeler</summary>
+  <summary xml:lang="sv">Ljud- och videospelare</summary>
+  <summary xml:lang="uk">Програвач аудіо/відео</summary>
   <summary xml:lang="x-test">xxAudio and Video Playerxx</summary>
   <description>
     <p>
       AVPlayer is the standalone and powerful audio and video player of the digiKam project.
     </p>
+    <p xml:lang="ca">L'AVPlayer és el reproductor d'àudio i vídeo autònom i potent del projecte digiKam.</p>
+    <p xml:lang="es">AVPlayer es el potente e independiente reproductor de sonido y vídeo del proyecto digiKam.</p>
+    <p xml:lang="nl">AVPlayer is de alleenstaande en krachtige audio- en videospeler van het project digiKam.</p>
+    <p xml:lang="sv">AVPlayer är den fristående och kraftfulla ljud- och videospelaren i Digikam-projektet.</p>
+    <p xml:lang="uk">AVPlayer — окремий і потужний програвач звукових і відеоданих проєкту digiKam.</p>
     <p xml:lang="x-test">xxAVPlayer is the standalone and powerful audio and video player of the digiKam project.xx</p>
   </description>
   <url type="homepage">https://www.digikam.org/</url>
@@ -98,42 +114,13 @@
   </releases>
   <project_group>KDE</project_group>
   <developer_name>digiKam Project</developer_name>
-  <developer_name xml:lang="ar">مشروع دجيكام</developer_name>
-  <developer_name xml:lang="bg">Проект digiKam</developer_name>
-  <developer_name xml:lang="bs">digiKam Projekt</developer_name>
   <developer_name xml:lang="ca">Projecte digiKam</developer_name>
-  <developer_name xml:lang="ca-valencia">Projecte digiKam</developer_name>
-  <developer_name xml:lang="cs">Projekt digiKam</developer_name>
-  <developer_name xml:lang="da">digiKam-projektet</developer_name>
-  <developer_name xml:lang="de">digiKam-Projekt</developer_name>
-  <developer_name xml:lang="en-GB">digiKam Project</developer_name>
   <developer_name xml:lang="es">Proyecto digiKam</developer_name>
-  <developer_name xml:lang="et">digiKami projekt</developer_name>
-  <developer_name xml:lang="eu">digiKam proiektua</developer_name>
-  <developer_name xml:lang="fi">digiKam-projekti</developer_name>
-  <developer_name xml:lang="fr">projet digiKam</developer_name>
-  <developer_name xml:lang="gl">Proxecto digiKam</developer_name>
-  <developer_name xml:lang="hi">डिज़ीकैम परियोजना</developer_name>
-  <developer_name xml:lang="hu">digiKam projekt</developer_name>
-  <developer_name xml:lang="id">Proyek digiKam</developer_name>
-  <developer_name xml:lang="is">digiKam verkefnið</developer_name>
-  <developer_name xml:lang="it">Progetto digiKam</developer_name>
-  <developer_name xml:lang="ja">digiKam プロジェクト</developer_name>
-  <developer_name xml:lang="ko">digiKam 프로젝트</developer_name>
   <developer_name xml:lang="nl">digiKam-project</developer_name>
-  <developer_name xml:lang="nn">digiKam-prosjektet</developer_name>
-  <developer_name xml:lang="pl">Projekt digiKam</developer_name>
-  <developer_name xml:lang="pt">Projecto digiKam</developer_name>
-  <developer_name xml:lang="pt-BR">Projeto digiKam</developer_name>
   <developer_name xml:lang="ru">Проект digiKam</developer_name>
-  <developer_name xml:lang="sk">Projekt digiKamu</developer_name>
-  <developer_name xml:lang="sl">Projekt digiKam</developer_name>
-  <developer_name xml:lang="sv">Digikam-projekt</developer_name>
-  <developer_name xml:lang="tr">digiKam Projesi</developer_name>
+  <developer_name xml:lang="sv">Digikam-projektet</developer_name>
   <developer_name xml:lang="uk">Проєкт digiKam</developer_name>
   <developer_name xml:lang="x-test">xxdigiKam Projectxx</developer_name>
-  <developer_name xml:lang="zh-CN">digiKam 项目</developer_name>
-  <developer_name xml:lang="zh-TW">digiKam 專案</developer_name>
   <provides>
     <binary>avplayer</binary>
   </provides>
