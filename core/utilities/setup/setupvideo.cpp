@@ -27,8 +27,8 @@
 
 #include <QLayout>
 #include <QPushButton>
-#include <QApplication>
-#include <QStyle>
+#include <QTabWidget>
+#include <QList>
 
 // KDE includes
 
@@ -47,8 +47,22 @@ using namespace QtAV;
 namespace Digikam
 {
 
+class Q_DECL_HIDDEN SetupVideo::Private
+{
+public:
+
+    explicit Private()
+      : tabContent(nullptr)
+    {
+    }
+
+    QTabWidget*                  tabContent;
+    QList<QtAV::ConfigPageBase*> pages;
+};
+
 SetupVideo::SetupVideo(QWidget* const parent)
-    : QScrollArea(parent)
+    : QScrollArea(parent),
+      d          (new Private)
 {
     QWidget* const panel   = new QWidget(viewport());
     setWidget(panel);
@@ -57,8 +71,8 @@ SetupVideo::SetupVideo(QWidget* const parent)
     QVBoxLayout* const vbl = new QVBoxLayout();
     panel->setLayout(vbl);
 
-    mpContent              = new QTabWidget(this);
-    mpContent->setTabPosition(QTabWidget::North);
+    d->tabContent          = new QTabWidget(this);
+    d->tabContent->setTabPosition(QTabWidget::North);
 /*
     mpButtonBox            = new QDialogButtonBox(Qt::Horizontal);
     mpButtonBox->addButton(i18n("Reset"),  QDialogButtonBox::ResetRole);      // QDialogButtonBox::Reset;
@@ -69,12 +83,12 @@ SetupVideo::SetupVideo(QWidget* const parent)
     connect(mpButtonBox, SIGNAL(clicked(QAbstractButton*)),
             this, SLOT(onButtonClicked(QAbstractButton*)));
 */
-    vbl->addWidget(mpContent);
+    vbl->addWidget(d->tabContent);
     //vbl->addWidget(mpButtonBox);
 
-    mPages << new DecoderConfigPage(nullptr, false)
-           << new AVFormatConfigPage()
-           << new MiscPage()
+    d->pages << new DecoderConfigPage(nullptr, false)
+             << new AVFormatConfigPage()
+             << new MiscPage()
     ;
 
     readSettings();
@@ -82,12 +96,12 @@ SetupVideo::SetupVideo(QWidget* const parent)
 
 SetupVideo::~SetupVideo()
 {
-//    delete d;
+    delete d;
 }
 
 void SetupVideo::applySettings()
 {
-    foreach (ConfigPageBase* const page, mPages)
+    foreach (ConfigPageBase* const page, d->pages)
     {
         page->apply();
     }
@@ -97,11 +111,11 @@ void SetupVideo::applySettings()
 
 void SetupVideo::readSettings()
 {
-    foreach (ConfigPageBase* const page, mPages)
+    foreach (ConfigPageBase* const page, d->pages)
     {
         page->applyToUi();
         page->applyOnUiChange(false);
-        mpContent->addTab(page, page->name());
+        d->tabContent->addTab(page, page->name());
     }
 }
 
@@ -109,7 +123,7 @@ void SetupVideo::slotReset()
 {
     AVPlayerConfigMngr::instance().reset();
 
-    foreach (ConfigPageBase* const page, mPages)
+    foreach (ConfigPageBase* const page, d->pages)
     {
         page->reset();
     }
@@ -117,7 +131,7 @@ void SetupVideo::slotReset()
 
 void SetupVideo::cancel()
 {
-    foreach (ConfigPageBase* const page, mPages)
+    foreach (ConfigPageBase* const page, d->pages)
     {
         page->cancel();
     }

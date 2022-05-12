@@ -27,13 +27,6 @@
 // Qt includes
 
 #include <QScrollArea>
-#include <QTabWidget>
-#include <QList>
-
-namespace QtAV
-{
-class ConfigPageBase;
-};
 
 namespace Digikam
 {
@@ -60,8 +53,8 @@ private:
 
 private:
 
-    QTabWidget*                  mpContent;
-    QList<QtAV::ConfigPageBase*> mPages;
+    class Private;
+    Private* const d;
 };
 
 } // namespace Digikam
