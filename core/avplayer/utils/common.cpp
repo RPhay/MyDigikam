@@ -36,7 +36,6 @@
 #include <QDir>
 #include <QFile>
 #include <QTextStream>
-#include <QStandardPaths>
 #include <QMutex>
 
 // KDE includes
@@ -171,40 +170,63 @@ void set_opengl_backend(const QString& glopt, const QString& appname)
     int idx    = gl.lastIndexOf(QLatin1String("/"));
 
     if (idx >= 0)
+    {
         gl = gl.mid(idx + 1);
+    }
 
     idx = gl.lastIndexOf(QLatin1String("."));
 
     if (idx > 0)
+    {
         gl = gl.left(idx);
+    }
 
     if      (gl.indexOf(QLatin1String("-desktop")) > 0)
+    {
         gl = QLatin1String("desktop");
+    }
     else if ((gl.indexOf(QLatin1String("-es")) > 0) || (gl.indexOf(QLatin1String("-angle")) > 0))
+    {
         gl = gl.mid(gl.indexOf(QLatin1String("-es")) + 1);
+    }
     else if ((gl.indexOf(QLatin1String("-sw")) > 0) || (gl.indexOf(QLatin1String("-software")) > 0))
+    {
         gl = QLatin1String("software");
+    }
     else
+    {
         gl = glopt.toLower();
+    }
 
     if (gl.isEmpty())
     {
         switch (AVPlayerConfigMngr::instance().openGLType())
         {
             case AVPlayerConfigMngr::Desktop:
+            {
                 gl = QLatin1String("desktop");
+
                 break;
+            }
 
             case AVPlayerConfigMngr::OpenGLES:
+            {
                 gl = QLatin1String("es");
+
                 break;
+            }
 
             case AVPlayerConfigMngr::Software:
+            {
                 gl = QLatin1String("software");
+
                 break;
+            }
 
             default:
+            {
                 break;
+            }
         }
     }
 
@@ -231,11 +253,17 @@ void set_opengl_backend(const QString& glopt, const QString& appname)
 #   ifdef Q_OS_WIN
 
         if      (gl.endsWith(QLatin1String("d3d11")))
+        {
             qputenv("QT_ANGLE_PLATFORM", "d3d11");
+        }
         else if (gl.endsWith(QLatin1String("d3d9")))
+        {
             qputenv("QT_ANGLE_PLATFORM", "d3d9");
+        }
         else if (gl.endsWith(QLatin1String("warp")))
+        {
             qputenv("QT_ANGLE_PLATFORM", "warp");
+        }
 
 #   endif
 
@@ -251,11 +279,6 @@ void set_opengl_backend(const QString& glopt, const QString& appname)
 
 #endif
 
-}
-
-QString appDataDir()
-{
-    return QStandardPaths::writableLocation(QStandardPaths::AppDataLocation);
 }
 
 AppEventFilter::AppEventFilter(QObject* const player, QObject* const parent)
@@ -299,7 +322,9 @@ bool AppEventFilter::eventFilter(QObject* obj, QEvent* ev)
             qCDebug(DIGIKAM_AVPLAYER_LOG) << "winrt url: " << url;
 
             if (m_player)
+            {
                 QMetaObject::invokeMethod(m_player, "play", Q_ARG(QUrl, QUrl(url)));
+            }
         }
 
         return true;
@@ -308,12 +333,16 @@ bool AppEventFilter::eventFilter(QObject* obj, QEvent* ev)
     }
 
     if (ev->type() != QEvent::FileOpen)
+    {
         return false;
+    }
 
     QFileOpenEvent* const foe = static_cast<QFileOpenEvent*>(ev);
 
     if (m_player)
+    {
         QMetaObject::invokeMethod(m_player, "play", Q_ARG(QUrl, QUrl(foe->url())));
+    }
 
     return true;
 }

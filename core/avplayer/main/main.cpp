@@ -93,8 +93,6 @@ VideoRendererId rendererId_from_opt_name(const QString& name)
 
 int main(int argc, char* argv[])
 {
-    qCDebug(DIGIKAM_AVPLAYER_LOG) << aboutQtAV_PlainText();
-
     KLocalizedString::setApplicationDomain("digikam");
 
     QOptions options = get_common_options();

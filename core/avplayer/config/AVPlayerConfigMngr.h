@@ -104,7 +104,6 @@ public:
 public:
 
     static AVPlayerConfigMngr& instance();
-    static QString defaultDir();
 
 public:
 

@@ -30,6 +30,7 @@
 #include <QTimeEdit>
 #include <QLabel>
 #include <QApplication>
+#include <QStandardPaths>
 #include <QDesktopWidget>
 #include <QDesktopServices>
 #include <QFileInfo>
@@ -411,10 +412,12 @@ void MainWindow::setupUi()
     mpMenu->addAction(i18nc("@action", "Open Url"), this, SLOT(openUrl()));
     mpMenu->addSeparator();
 
+    QString appDataDir              = QStandardPaths::writableLocation(QStandardPaths::AppDataLocation);
+
     subMenu                         = new QMenu(i18nc("@option", "Play list"));
     mpMenu->addMenu(subMenu);
     mpPlayList                      = new PlayList(this);
-    mpPlayList->setSaveFile(AVPlayerConfigMngr::instance().defaultDir() + QString::fromLatin1("/playlist.qds"));
+    mpPlayList->setSaveFile(appDataDir + QString::fromLatin1("/playlist.qds"));
     mpPlayList->load();
 
     connect(mpPlayList, SIGNAL(aboutToPlay(QString)),
@@ -428,7 +431,7 @@ void MainWindow::setupUi()
     mpMenu->addMenu(subMenu);
     mpHistory                       = new PlayList(this);
     mpHistory->setMaxRows(20);
-    mpHistory->setSaveFile(AVPlayerConfigMngr::instance().defaultDir() + QString::fromLatin1("/history.qds"));
+    mpHistory->setSaveFile(appDataDir + QString::fromLatin1("/history.qds"));
     mpHistory->load();
 
     connect(mpHistory, SIGNAL(aboutToPlay(QString)),

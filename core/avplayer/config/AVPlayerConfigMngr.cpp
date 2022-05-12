@@ -51,12 +51,14 @@ public:
     Data()
     {
         is_loading = false;
+        
+        QString appDataDir = QStandardPaths::writableLocation(QStandardPaths::AppDataLocation);
 
-        if (!QDir(appDataDir()).exists())
+        if (!QDir(appDataDir).exists())
         {
-            if (!QDir().mkpath(appDataDir()))
+            if (!QDir().mkpath(appDataDir))
             {
-                qCWarning(DIGIKAM_AVPLAYER_LOG) << "Failed to create appDataDir: " << appDataDir();
+                qCWarning(DIGIKAM_AVPLAYER_LOG) << "Failed to create appDataDir: " << appDataDir;
             }
         }
     }
@@ -373,11 +375,6 @@ AVPlayerConfigMngr::AVPlayerConfigMngr(QObject* const parent)
 AVPlayerConfigMngr::~AVPlayerConfigMngr()
 {
     delete mpData;
-}
-
-QString AVPlayerConfigMngr::defaultDir()
-{
-    return appDataDir();
 }
 
 bool AVPlayerConfigMngr::reset()

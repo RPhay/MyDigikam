@@ -54,7 +54,7 @@ void do_common_options(const QOptions& options,
 void set_opengl_backend(const QString& glopt = QString::fromLatin1("auto"),
                         const QString& appname = QString());
 
-QString appDataDir();
+// -----------------------------------------------------------------------------------
 
 class AppEventFilter : public QObject
 {
