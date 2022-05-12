@@ -1,6 +1,18 @@
 [Desktop Entry]
 Name=AVPlayer
+Name[ca]=AVPlayer
+Name[es]=AVPlayer
+Name[nl]=AVPlayer
+Name[sv]=AVPlayer
+Name[uk]=AVPlayer
+Name[x-test]=xxAVPlayerxx
 GenericName=Audio and Video Player
+GenericName[ca]=Reproductor d'àudio i vídeo
+GenericName[es]=Reproductor de sonido y vídeo
+GenericName[nl]=Audio- en videospeler
+GenericName[sv]=Ljud- och videospelare
+GenericName[uk]=Програвач аудіо/відео
+GenericName[x-test]=xxAudio and Video Playerxx
 Comment=Manage your photographs like a professional with the power of open source
 Comment[ar]=أدِر صورك الفوتوغرافية كمحترف مستخدمًا قوة المصادر المفتوحة
 Comment[bg]=Обработвайте снимките си професионално с помощта на свободния софтуер
