@@ -44,7 +44,7 @@
 
 #include "Slider.h"
 
-namespace AVPlayer
+namespace QtAV
 {
 
 VideoEQConfigPage::VideoEQConfigPage(QWidget* const parent)
@@ -210,4 +210,4 @@ void VideoEQConfigPage::onEngineChangedByUI()
     emit engineChanged();
 }
 
-} // namespace AVPlayer
+} // namespace QtAV

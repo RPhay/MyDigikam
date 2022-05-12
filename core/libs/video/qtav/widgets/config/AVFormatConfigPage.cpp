@@ -43,7 +43,7 @@
 
 #include "AVPlayerConfigMngr.h"
 
-namespace AVPlayer
+namespace QtAV
 {
 
 AVFormatConfigPage::AVFormatConfigPage(QWidget* const parent)
@@ -101,4 +101,4 @@ void AVFormatConfigPage::applyToUi()
     m_extra->setText(AVPlayerConfigMngr::instance().avformatExtra());
 }
 
-} // namespace AVPlayer
+} // namespace QtAV

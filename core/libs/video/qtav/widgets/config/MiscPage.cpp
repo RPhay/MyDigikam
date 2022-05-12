@@ -36,7 +36,7 @@
 
 #include "AVPlayerConfigMngr.h"
 
-namespace AVPlayer
+namespace QtAV
 {
 
 MiscPage::MiscPage()
@@ -164,4 +164,4 @@ void MiscPage::applyToUi()
     m_timeout_abort->setChecked(AVPlayerConfigMngr::instance().abortOnTimeout());
 }
 
-} // namespace AVPlayer
+} // namespace QtAV

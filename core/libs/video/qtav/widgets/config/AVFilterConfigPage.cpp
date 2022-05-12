@@ -40,7 +40,7 @@
 #include "LibAVFilter.h"
 #include "AVPlayerConfigMngr.h"
 
-namespace AVPlayer
+namespace QtAV
 {
 
 AVFilterConfigPage::AVFilterConfigPage(QWidget* const parent)
@@ -120,4 +120,4 @@ void AVFilterConfigPage::audioFilterChanged(const QString& name)
     m_ui[1].description->setText(QtAV::LibAVFilter::filterDescription(name));
 }
 
-} // namespace AVPlayer
+} // namespace QtAV

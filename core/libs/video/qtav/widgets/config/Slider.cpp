@@ -42,7 +42,7 @@
 
 #include "digikam_debug.h"
 
-namespace AVPlayer
+namespace QtAV
 {
 
 Slider::Slider(QWidget* const parent)
@@ -232,4 +232,4 @@ void Slider::mousePressEvent(QMouseEvent* e)
 
 #endif
 
-} // namespace AVPlayer
+} // namespace QtAV

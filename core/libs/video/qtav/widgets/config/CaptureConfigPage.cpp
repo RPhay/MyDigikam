@@ -43,7 +43,7 @@
 #include "Slider.h"
 #include "digikam_debug.h"
 
-namespace AVPlayer
+namespace QtAV
 {
 
 CaptureConfigPage::CaptureConfigPage(QWidget* const parent)
@@ -145,4 +145,4 @@ void CaptureConfigPage::browseCaptureDir()
     QDesktopServices::openUrl(QUrl(QString::fromLatin1("file:///") + mpDir->text()));
 }
 
-} // namespace AVPlayer
+} // namespace QtAV

@@ -41,7 +41,7 @@
 #include "common.h"
 #include "digikam_debug.h"
 
-namespace AVPlayer
+namespace QtAV
 {
 
 class AVPlayerConfigMngr::Data
@@ -1183,4 +1183,4 @@ void AVPlayerConfigMngr::save()
     mpData->save();
 }
 
-} // namespace AVPlayer
+} // namespace QtAV

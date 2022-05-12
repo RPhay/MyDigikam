@@ -101,6 +101,8 @@ QString UrlFromFileArgs(IInspectable* args)
 
 #endif // Q_OS_WINRT
 
+using namespace QtAV;
+
 namespace AVPlayer
 {
 

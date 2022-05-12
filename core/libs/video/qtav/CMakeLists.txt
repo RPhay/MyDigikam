@@ -113,6 +113,18 @@ set(libqtav_SRCS
     ${CMAKE_CURRENT_SOURCE_DIR}/widgets/common/WidgetRenderer.cpp
     ${CMAKE_CURRENT_SOURCE_DIR}/widgets/utils/QtAVWidgets_Global.cpp
     ${CMAKE_CURRENT_SOURCE_DIR}/widgets/opengl/OpenGLWidgetRenderer.cpp
+    ${CMAKE_CURRENT_SOURCE_DIR}/widgets/config/VideoEQConfigPage.cpp
+    ${CMAKE_CURRENT_SOURCE_DIR}/widgets/config/Slider.cpp
+    ${CMAKE_CURRENT_SOURCE_DIR}/widgets/config/ClickableMenu.cpp
+    ${CMAKE_CURRENT_SOURCE_DIR}/widgets/config/PropertyEditor.cpp
+    ${CMAKE_CURRENT_SOURCE_DIR}/widgets/config/DecoderConfigPage.cpp
+    ${CMAKE_CURRENT_SOURCE_DIR}/widgets/config/AVFormatConfigPage.cpp
+    ${CMAKE_CURRENT_SOURCE_DIR}/widgets/config/AVPlayerConfigMngr.cpp
+    ${CMAKE_CURRENT_SOURCE_DIR}/widgets/config/AVFilterConfigPage.cpp
+    ${CMAKE_CURRENT_SOURCE_DIR}/widgets/config/ShaderPage.cpp
+    ${CMAKE_CURRENT_SOURCE_DIR}/widgets/config/MiscPage.cpp
+    ${CMAKE_CURRENT_SOURCE_DIR}/widgets/config/ConfigPageBase.cpp
+    ${CMAKE_CURRENT_SOURCE_DIR}/widgets/config/CaptureConfigPage.cpp
 )
 
 if(SSE4_1_FOUND)

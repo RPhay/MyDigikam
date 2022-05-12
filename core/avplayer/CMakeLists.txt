@@ -38,24 +38,12 @@ if(HAVE_OPENGL)
 
 endif()
 
-set(avplayer_SRCS ${CMAKE_SOURCE_DIR}/core/avplayer/utils/ClickableMenu.cpp
-                  ${CMAKE_SOURCE_DIR}/core/avplayer/utils/EventFilter.cpp
-                  ${CMAKE_SOURCE_DIR}/core/avplayer/utils/Slider.cpp
+set(avplayer_SRCS ${CMAKE_SOURCE_DIR}/core/avplayer/utils/EventFilter.cpp
+                  ${CMAKE_SOURCE_DIR}/core/avplayer/utils/ConfigDialog.cpp
                   ${CMAKE_SOURCE_DIR}/core/avplayer/utils/StatisticsView.cpp
                   ${CMAKE_SOURCE_DIR}/core/avplayer/utils/ScreenSaver.cpp
                   ${CMAKE_SOURCE_DIR}/core/avplayer/utils/qoptions.cpp
                   ${CMAKE_SOURCE_DIR}/core/avplayer/utils/common.cpp
-                  ${CMAKE_SOURCE_DIR}/core/avplayer/config/VideoEQConfigPage.cpp
-                  ${CMAKE_SOURCE_DIR}/core/avplayer/config/PropertyEditor.cpp
-                  ${CMAKE_SOURCE_DIR}/core/avplayer/config/DecoderConfigPage.cpp
-                  ${CMAKE_SOURCE_DIR}/core/avplayer/config/AVFormatConfigPage.cpp
-                  ${CMAKE_SOURCE_DIR}/core/avplayer/config/AVPlayerConfigMngr.cpp
-                  ${CMAKE_SOURCE_DIR}/core/avplayer/config/AVFilterConfigPage.cpp
-                  ${CMAKE_SOURCE_DIR}/core/avplayer/config/ShaderPage.cpp
-                  ${CMAKE_SOURCE_DIR}/core/avplayer/config/MiscPage.cpp
-                  ${CMAKE_SOURCE_DIR}/core/avplayer/config/ConfigDialog.cpp
-                  ${CMAKE_SOURCE_DIR}/core/avplayer/config/ConfigPageBase.cpp
-                  ${CMAKE_SOURCE_DIR}/core/avplayer/config/CaptureConfigPage.cpp
                   ${CMAKE_SOURCE_DIR}/core/avplayer/filters/OSDFilter.cpp
                   ${CMAKE_SOURCE_DIR}/core/avplayer/filters/OSD.cpp
                   ${CMAKE_SOURCE_DIR}/core/avplayer/filters/AVFilterSubtitle.cpp

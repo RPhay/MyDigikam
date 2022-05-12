@@ -44,6 +44,8 @@
 #include "AVPlayerConfigMngr.h"
 #include "digikam_debug.h"
 
+using namespace QtAV;
+
 namespace AVPlayer
 {
 

@@ -21,47 +21,44 @@
  *
  * ============================================================ */
 
-#ifndef AV_PLAYER_CONFIG_DIALOG_H
-#define AV_PLAYER_CONFIG_DIALOG_H
+#ifndef QTAV_WIDGETS_SHADER_PAGE_H
+#define QTAV_WIDGETS_SHADER_PAGE_H
 
 // Qt includes
 
-#include <QDialog>
-#include <QDialogButtonBox>
-#include <QTabWidget>
-#include <QList>
+#include <QTextEdit>
+#include <QCheckBox>
 
-namespace AVPlayer
+// Local includes
+
+#include "QtAVWidgets_Global.h"
+#include "ConfigPageBase.h"
+
+namespace QtAV
 {
 
-class ConfigPageBase;
-
-class ConfigDialog : public QDialog
+class QTAV_WIDGETS_EXPORT ShaderPage : public ConfigPageBase
 {
-    Q_OBJECT
-
 public:
 
-    static void display();
+    explicit ShaderPage(QWidget* const parent = nullptr);
 
-private Q_SLOTS:
+    virtual QString name() const    override;
 
-    void onButtonClicked(QAbstractButton* btn);
-    void onApply();
-    void onCancel();
-    void onReset();
+protected:
 
-private:
-
-    explicit ConfigDialog(QWidget* const parent = nullptr);
+    virtual void applyToUi()        override;
+    virtual void applyFromUi()      override;
 
 private:
 
-    QTabWidget*            mpContent;
-    QDialogButtonBox*      mpButtonBox;
-    QList<ConfigPageBase*> mPages;
+    QCheckBox* m_enable;
+    QCheckBox* m_fbo;
+    QTextEdit* m_header;
+    QTextEdit* m_sample;
+    QTextEdit* m_pp;
 };
 
-} // namespace AVPlayer
+} // namespace QtAV
 
-#endif // AV_PLAYER_CONFIG_DIALOG_H
+#endif // QTAV_WIDGETS_SHADER_PAGE_H

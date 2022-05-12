@@ -36,7 +36,7 @@
 
 #include "AVPlayerConfigMngr.h"
 
-namespace AVPlayer
+namespace QtAV
 {
 
 ShaderPage::ShaderPage(QWidget* const parent)
@@ -102,4 +102,4 @@ void ShaderPage::applyFromUi()
     ;
 }
 
-} // namespace AVPlayer
+} // namespace QtAV

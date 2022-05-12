@@ -21,8 +21,8 @@
  *
  * ============================================================ */
 
-#ifndef AV_PLAYER_PROPERTY_EDITOR_H
-#define AV_PLAYER_PROPERTY_EDITOR_H
+#ifndef QTAV_WIDGETS_PROPERTY_EDITOR_H
+#define QTAV_WIDGETS_PROPERTY_EDITOR_H
 
 // Qt includes
 
@@ -30,15 +30,19 @@
 #include <QMetaProperty>
 #include <QMetaEnum>
 
+// Local includes
+
+#include "QtAVWidgets_Global.h"
+
 QT_BEGIN_NAMESPACE
 class QAction;
 class QWidget;
 QT_END_NAMESPACE
 
-namespace AVPlayer
+namespace QtAV
 {
 
-class PropertyEditor : public QObject
+class QTAV_WIDGETS_EXPORT PropertyEditor : public QObject
 {
     Q_OBJECT
 
@@ -112,6 +116,6 @@ private:
     QVariantHash         mPropertyDetails;
 };
 
-} // namespace AVPlayer
+} // namespace QtAV
 
-#endif // AV_PLAYER_PROPERTY_EDITOR_H
+#endif // QTAV_WIDGETS_PROPERTY_EDITOR_H

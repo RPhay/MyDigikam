@@ -6,6 +6,7 @@
  * Date        : 2012-10-31
  * Description : QtAV: Multimedia framework based on Qt and FFmpeg
  *
+ * Copyright (C) 2006-2010 Ricardo Villalba <rvm at escomposlinux dot org>
  * Copyright (C) 2012-2022 Wang Bin <wbsecg1 at gmail dot com>
  * Copyright (C)      2022 by Gilles Caulier, <caulier dot gilles at gmail dot com>
  *
@@ -21,37 +22,53 @@
  *
  * ============================================================ */
 
-#include "ClickableMenu.h"
+// TODO: hover support (like youtube and ExMplayer timeline preview)
+
+#ifndef QTAV_WIDGETS_SLIDER_H
+#define QTAV_WIDGETS_SLIDER_H
 
 // Qt includes
 
-#include <QMouseEvent>
+#include <QSlider>
 
-namespace AVPlayer
+// Local includes
+
+#include "QtAVWidgets_Global.h"
+
+namespace QtAV
 {
 
-ClickableMenu::ClickableMenu(QWidget* const parent)
-    : QMenu(parent)
+class QTAV_WIDGETS_EXPORT Slider : public QSlider
 {
-}
+    Q_OBJECT
 
-ClickableMenu::ClickableMenu(const QString& title, QWidget* const parent)
-    : QMenu(title, parent)
-{
-}
+public:
 
-void ClickableMenu::mouseReleaseEvent(QMouseEvent* e)
-{
-    QAction* const action = actionAt(e->pos());
+    explicit Slider(QWidget* const parent = nullptr);
+    ~Slider();
 
-    if (action)
-    {
-        action->activate(QAction::Trigger);
+Q_SIGNALS:
 
-        return;
-    }
+    void onEnter();
+    void onLeave();
+    void onHover(int pos, int value);
 
-    QMenu::mouseReleaseEvent(e);
-}
+protected:
 
-} // namespace AVPlayer
+    virtual void enterEvent(QEvent* e);
+    virtual void leaveEvent(QEvent* e);
+    virtual void mouseMoveEvent(QMouseEvent* e);
+    virtual void mousePressEvent(QMouseEvent* e);
+/*
+#if CODE_FOR_CLICK == 1
+*/
+    inline int pick(const QPoint& pt)                       const;
+    int pixelPosToRangeValue(int pos)                       const;
+/*
+#endif
+*/
+};
+
+} // namespace QtAV
+
+#endif // QTAV_WIDGETS_SLIDER_H

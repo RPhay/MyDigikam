@@ -21,8 +21,8 @@
  *
  * ============================================================ */
 
-#ifndef AV_PLAYER_AVFORMAT_CONFIG_PAGE_H
-#define AV_PLAYER_AVFORMAT_CONFIG_PAGE_H
+#ifndef QTAV_WIDGETS_AVFORMAT_CONFIG_PAGE_H
+#define QTAV_WIDGETS_AVFORMAT_CONFIG_PAGE_H
 
 // Qt includes
 
@@ -30,6 +30,7 @@
 
 // Local includes
 
+#include "QtAVWidgets_Global.h"
 #include "ConfigPageBase.h"
 
 QT_BEGIN_NAMESPACE
@@ -38,10 +39,10 @@ class QSpinBox;
 class QLineEdit;
 QT_END_NAMESPACE
 
-namespace AVPlayer
+namespace QtAV
 {
 
-class AVFormatConfigPage : public ConfigPageBase
+class QTAV_WIDGETS_EXPORT AVFormatConfigPage : public ConfigPageBase
 {
     Q_OBJECT
 
@@ -64,6 +65,6 @@ private:
     QLineEdit* m_extra;
 };
 
-} // namespace AVPlayer
+} // namespace QtAV
 
-#endif // AV_PLAYER_AVFORMAT_CONFIG_PAGE_H
+#endif // QTAV_WIDGETS_AVFORMAT_CONFIG_PAGE_H

@@ -43,6 +43,7 @@ QT_END_NAMESPACE
 
 namespace QtAV
 {
+class Slider;
 class AudioOutput;
 class AVError;
 class AVPlayerCore;
@@ -54,16 +55,15 @@ class SubtitleFilter;
 class VideoPreviewWidget;
 class DynamicShaderObject;
 class GLSLFilter;
+class DecoderConfigPage;
+class VideoEQConfigPage;
 }
 
 namespace AVPlayer
 {
 
 class Button;
-class Slider;
 class PlayList;
-class DecoderConfigPage;
-class VideoEQConfigPage;
 class StatisticsView;
 class OSDFilter;
 class AVFilterSubtitle;
@@ -194,8 +194,8 @@ private:
     QLabel*                         mpEnd;
     QLabel*                         mpTitle;
     QLabel*                         mpSpeed;
-    Slider*                         mpTimeSlider;
-    Slider*                         mpVolumeSlider;
+    QtAV::Slider*                   mpTimeSlider;
+    QtAV::Slider*                   mpVolumeSlider;
     QToolButton*                    mpVolumeBtn;
     QToolButton*                    mpPlayPauseBtn;
     QToolButton*                    mpStopBtn;
@@ -230,8 +230,8 @@ private:
 
     QLabel*                         mpPreview;
 
-    DecoderConfigPage*              mpDecoderConfigPage;
-    VideoEQConfigPage*              mpVideoEQ;
+    QtAV::DecoderConfigPage*        mpDecoderConfigPage;
+    QtAV::VideoEQConfigPage*        mpVideoEQ;
 
     PlayList*                       mpPlayList;
     PlayList*                       mpHistory;

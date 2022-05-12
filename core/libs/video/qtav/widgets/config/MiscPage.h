@@ -21,43 +21,54 @@
  *
  * ============================================================ */
 
-#ifndef AV_PLAYER_SHADER_PAGE_H
-#define AV_PLAYER_SHADER_PAGE_H
-
-// Qt includes
-
-#include <QTextEdit>
-#include <QCheckBox>
-
-// Local includes
+#ifndef QTAV_WIDGETS_MISC_PAGE_H
+#define QTAV_WIDGETS_MISC_PAGE_H
 
 #include "ConfigPageBase.h"
 
-namespace AVPlayer
+// Qt includes
+
+#include <QCheckBox>
+#include <QDoubleSpinBox>
+#include <QComboBox>
+
+// Local includes
+
+#include "QtAVWidgets_Global.h"
+
+namespace QtAV
 {
 
-class ShaderPage : public ConfigPageBase
+class QTAV_WIDGETS_EXPORT MiscPage : public ConfigPageBase
 {
+    Q_OBJECT
+
 public:
 
-    explicit ShaderPage(QWidget* const parent = nullptr);
+    MiscPage();
 
-    virtual QString name() const    override;
+    virtual QString name() const override;
 
 protected:
 
-    virtual void applyToUi()        override;
-    virtual void applyFromUi()      override;
+    virtual void applyToUi()     override;
+    virtual void applyFromUi()   override;
 
 private:
 
-    QCheckBox* m_enable;
-    QCheckBox* m_fbo;
-    QTextEdit* m_header;
-    QTextEdit* m_sample;
-    QTextEdit* m_pp;
+    QCheckBox*      m_preview_on;
+    QSpinBox*       m_preview_w;
+    QSpinBox*       m_preview_h;
+    QSpinBox*       m_notify_interval;
+    QDoubleSpinBox* m_fps;
+    QSpinBox*       m_buffer_value;
+    QDoubleSpinBox* m_timeout;
+    QCheckBox*      m_timeout_abort;
+    QComboBox*      m_opengl;
+    QComboBox*      m_angle_platform;
+    QCheckBox*      m_egl;
 };
 
-} // namespace AVPlayer
+} // namespace QtAV
 
-#endif // AV_PLAYER_SHADER_PAGE_H
+#endif // QTAV_WIDGETS_MISC_PAGE_H

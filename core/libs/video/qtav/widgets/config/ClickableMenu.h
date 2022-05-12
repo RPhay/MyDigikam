@@ -21,17 +21,21 @@
  *
  * ============================================================ */
 
-#ifndef AV_PLAYER_CLICKABLE_MENU_H
-#define AV_PLAYER_CLICKABLE_MENU_H
+#ifndef QTAV_WIDGETS_CLICKABLE_MENU_H
+#define QTAV_WIDGETS_CLICKABLE_MENU_H
 
 // Qt includes
 
 #include <QMenu>
 
-namespace AVPlayer
+// Local includes
+
+#include "QtAVWidgets_Global.h"
+
+namespace QtAV
 {
 
-class ClickableMenu : public QMenu
+class QTAV_WIDGETS_EXPORT ClickableMenu : public QMenu
 {
     Q_OBJECT
 
@@ -45,6 +49,6 @@ protected:
     virtual void mouseReleaseEvent(QMouseEvent*);
 };
 
-} // namespace AVPlayer
+} // namespace QtAV
 
-#endif // AV_PLAYER_CLICKABLE_MENU_H
+#endif // QTAV_WIDGETS_CLICKABLE_MENU_H

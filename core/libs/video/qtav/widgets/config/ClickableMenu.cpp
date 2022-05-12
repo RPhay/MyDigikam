@@ -21,50 +21,37 @@
  *
  * ============================================================ */
 
-#ifndef AV_PLAYER_MISC_PAGE_H
-#define AV_PLAYER_MISC_PAGE_H
-
-#include "ConfigPageBase.h"
+#include "ClickableMenu.h"
 
 // Qt includes
 
-#include <QCheckBox>
-#include <QDoubleSpinBox>
-#include <QComboBox>
+#include <QMouseEvent>
 
-namespace AVPlayer
+namespace QtAV
 {
 
-class MiscPage : public ConfigPageBase
+ClickableMenu::ClickableMenu(QWidget* const parent)
+    : QMenu(parent)
 {
-    Q_OBJECT
+}
 
-public:
+ClickableMenu::ClickableMenu(const QString& title, QWidget* const parent)
+    : QMenu(title, parent)
+{
+}
 
-    MiscPage();
+void ClickableMenu::mouseReleaseEvent(QMouseEvent* e)
+{
+    QAction* const action = actionAt(e->pos());
 
-    virtual QString name() const override;
+    if (action)
+    {
+        action->activate(QAction::Trigger);
 
-protected:
+        return;
+    }
 
-    virtual void applyToUi()     override;
-    virtual void applyFromUi()   override;
+    QMenu::mouseReleaseEvent(e);
+}
 
-private:
-
-    QCheckBox*      m_preview_on;
-    QSpinBox*       m_preview_w;
-    QSpinBox*       m_preview_h;
-    QSpinBox*       m_notify_interval;
-    QDoubleSpinBox* m_fps;
-    QSpinBox*       m_buffer_value;
-    QDoubleSpinBox* m_timeout;
-    QCheckBox*      m_timeout_abort;
-    QComboBox*      m_opengl;
-    QComboBox*      m_angle_platform;
-    QCheckBox*      m_egl;
-};
-
-} // namespace AVPlayer
-
-#endif // AV_PLAYER_MISC_PAGE_H
+} // namespace QtAV

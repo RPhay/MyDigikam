@@ -98,9 +98,6 @@ namespace AVPlayer
 
 const qreal kVolumeInterval = 0.04;
 
-extern QStringList             idsToNames(QVector<VideoDecoderId> ids);
-extern QVector<VideoDecoderId> idsFromNames(const QStringList& names);
-
 void QLabelSetElideText(QLabel* const label, const QString& text, int W = 0)
 {
     QFontMetrics metrix(label->font());
@@ -1056,7 +1053,7 @@ void MainWindow::play(const QString& name)
     mpPlayer->setBufferMode(QtAV::BufferPackets);
     mpPlayer->setBufferValue(AVPlayerConfigMngr::instance().bufferValue());
     mpPlayer->setRepeat(mRepeateMax);
-    mpPlayer->setPriority(idsFromNames(AVPlayerConfigMngr::instance().decoderPriorityNames()));
+    mpPlayer->setPriority(DecoderConfigPage::idsFromNames(AVPlayerConfigMngr::instance().decoderPriorityNames()));
     mpPlayer->setOptionsForAudioCodec(mpDecoderConfigPage->audioDecoderOptions());
     mpPlayer->setOptionsForVideoCodec(mpDecoderConfigPage->videoDecoderOptions());
 
@@ -1089,7 +1086,7 @@ void MainWindow::setVideoDecoderNames(const QStringList& vd)
     }
 
     QStringList vidp;
-    QStringList vids = idsToNames(VideoDecoder::registered());
+    QStringList vids = DecoderConfigPage::idsToNames(VideoDecoder::registered());
 
     foreach (const QString& v, vids)
     {
@@ -1209,7 +1206,7 @@ void MainWindow::onStartPlay()
 
 void MainWindow::onStopPlay()
 {
-    mpPlayer->setPriority(idsFromNames(AVPlayerConfigMngr::instance().decoderPriorityNames()));
+    mpPlayer->setPriority(DecoderConfigPage::idsFromNames(AVPlayerConfigMngr::instance().decoderPriorityNames()));
 
     if ((mpPlayer->currentRepeat() >= 0) && (mpPlayer->currentRepeat() < mpPlayer->repeat()))
         return;

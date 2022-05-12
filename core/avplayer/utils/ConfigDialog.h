@@ -6,7 +6,6 @@
  * Date        : 2012-10-31
  * Description : QtAV: Multimedia framework based on Qt and FFmpeg
  *
- * Copyright (C) 2006-2010 Ricardo Villalba <rvm at escomposlinux dot org>
  * Copyright (C) 2012-2022 Wang Bin <wbsecg1 at gmail dot com>
  * Copyright (C)      2022 by Gilles Caulier, <caulier dot gilles at gmail dot com>
  *
@@ -22,49 +21,50 @@
  *
  * ============================================================ */
 
-// TODO: hover support (like youtube and ExMplayer timeline preview)
-
-#ifndef AV_PLAYER_SLIDER_H
-#define AV_PLAYER_SLIDER_H
+#ifndef AV_PLAYER_CONFIG_DIALOG_H
+#define AV_PLAYER_CONFIG_DIALOG_H
 
 // Qt includes
 
-#include <QSlider>
+#include <QDialog>
+#include <QDialogButtonBox>
+#include <QTabWidget>
+#include <QList>
+
+namespace QtAV
+{
+class ConfigPageBase;
+};
 
 namespace AVPlayer
 {
 
-class Slider : public QSlider
+class ConfigDialog : public QDialog
 {
     Q_OBJECT
 
 public:
 
-    explicit Slider(QWidget* const parent = nullptr);
-    ~Slider();
+    static void display();
 
-Q_SIGNALS:
+private Q_SLOTS:
 
-    void onEnter();
-    void onLeave();
-    void onHover(int pos, int value);
+    void onButtonClicked(QAbstractButton* btn);
+    void onApply();
+    void onCancel();
+    void onReset();
 
-protected:
+private:
 
-    virtual void enterEvent(QEvent* e);
-    virtual void leaveEvent(QEvent* e);
-    virtual void mouseMoveEvent(QMouseEvent* e);
-    virtual void mousePressEvent(QMouseEvent* e);
-/*
-#if CODE_FOR_CLICK == 1
-*/
-    inline int pick(const QPoint& pt)                       const;
-    int pixelPosToRangeValue(int pos)                       const;
-/*
-#endif
-*/
+    explicit ConfigDialog(QWidget* const parent = nullptr);
+
+private:
+
+    QTabWidget*                  mpContent;
+    QDialogButtonBox*            mpButtonBox;
+    QList<QtAV::ConfigPageBase*> mPages;
 };
 
 } // namespace AVPlayer
 
-#endif // AV_PLAYER_SLIDER_H
+#endif // AV_PLAYER_CONFIG_DIALOG_H

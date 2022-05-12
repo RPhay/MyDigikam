@@ -45,52 +45,17 @@
 
 #include "AVPlayerConfigMngr.h"
 #include "PropertyEditor.h"
-#include "VideoDecoder.h"
 #include "digikam_debug.h"
 
 using namespace QtAV;
 
-namespace AVPlayer
+namespace QtAV
 {
 
 // shared
 
 static QVector<QtAV::VideoDecoderId> sDecodersUi;
 static QVector<QtAV::VideoDecoderId> sPriorityUi;
-
-QStringList idsToNames(QVector<VideoDecoderId> ids)
-{
-    QStringList decs;
-
-    foreach (int id, ids)
-    {
-        decs.append(QString::fromLatin1(VideoDecoder::name(id)));
-    }
-
-    return decs;
-}
-
-QVector<VideoDecoderId> idsFromNames(const QStringList& names)
-{
-    QVector<VideoDecoderId> decs;
-
-    foreach (const QString& name, names)
-    {
-        if (name.isEmpty())
-            continue;
-
-        VideoDecoderId id = VideoDecoder::id(name.toLatin1().constData());
-
-        if (id == 0)
-            continue;
-
-        decs.append(id);
-    }
-
-    return decs;
-}
-
-using namespace QtAV;
 
 // -------------------------------------------------------------------------
 
@@ -552,6 +517,38 @@ void DecoderConfigPage::onConfigChanged()
     updateDecodersUi();
 }
 
-} // namespace AVPlayer
+QStringList DecoderConfigPage::idsToNames(QVector<VideoDecoderId> ids)
+{
+    QStringList decs;
+
+    foreach (int id, ids)
+    {
+        decs.append(QString::fromLatin1(VideoDecoder::name(id)));
+    }
+
+    return decs;
+}
+
+QVector<VideoDecoderId> DecoderConfigPage::idsFromNames(const QStringList& names)
+{
+    QVector<VideoDecoderId> decs;
+
+    foreach (const QString& name, names)
+    {
+        if (name.isEmpty())
+            continue;
+
+        VideoDecoderId id = VideoDecoder::id(name.toLatin1().constData());
+
+        if (id == 0)
+            continue;
+
+        decs.append(id);
+    }
+
+    return decs;
+}
+
+} // namespace QtAV
 
 #include "DecoderConfigPage.moc"

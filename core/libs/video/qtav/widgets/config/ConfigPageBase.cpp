@@ -21,54 +21,42 @@
  *
  * ============================================================ */
 
-#ifndef AV_PLAYER_AVFILTER_CONFIG_PAGE_H
-#define AV_PLAYER_AVFILTER_CONFIG_PAGE_H
-
-// Local includes
-
 #include "ConfigPageBase.h"
 
-QT_BEGIN_NAMESPACE
-class QCheckBox;
-class QComboBox;
-class QLabel;
-class QTextEdit;
-QT_END_NAMESPACE
-
-namespace AVPlayer
+namespace QtAV
 {
 
-class AVFilterConfigPage : public ConfigPageBase
+ConfigPageBase::ConfigPageBase(QWidget* const parent)
+    : QWidget(parent),
+      mApplyOnUiChange(true)
 {
-    Q_OBJECT
+}
 
-public:
+void ConfigPageBase::applyOnUiChange(bool a)
+{
+    mApplyOnUiChange = a;
+}
 
-    explicit AVFilterConfigPage(QWidget* const parent = nullptr);
-    virtual QString name() const override;
+bool ConfigPageBase::applyOnUiChange() const
+{
+    return mApplyOnUiChange;
+}
 
-protected:
+void ConfigPageBase::apply()
+{
+    applyFromUi();
+}
 
-    virtual void applyToUi()     override;
-    virtual void applyFromUi()   override;
+void ConfigPageBase::cancel()
+{
+    applyToUi();
+}
 
-private Q_SLOTS:
+void ConfigPageBase::reset()
+{
+    // NOTE: make sure AVPlayerConfigMngr::instance().reset() is called before it. It is called i ConfigDialog.reset()
 
-    void audioFilterChanged(const QString& name);
-    void videoFilterChanged(const QString& name);
+    applyToUi();
+}
 
-private:
-
-    struct
-    {
-        QString    type;
-        QCheckBox* enable;
-        QComboBox* name;
-        QLabel*    description;
-        QTextEdit* options;
-    } m_ui[2];                  ///< 0: video, 1: audio
-};
-
-} // namespace AVPlayer
-
-#endif // AV_PLAYER_AVFILTER_CONFIG_PAGE_H
+} // namespace QtAV

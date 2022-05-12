@@ -43,7 +43,7 @@
 #include "ClickableMenu.h"
 #include "digikam_debug.h"
 
-namespace AVPlayer
+namespace QtAV
 {
 
 PropertyEditor::PropertyEditor(QObject* const parent)
@@ -443,4 +443,4 @@ void PropertyEditor::onBoolChange(bool value)
     updatePropertyValue(sender()->objectName(), value);
 }
 
-} // namespace AVPlayer
+} // namespace QtAV

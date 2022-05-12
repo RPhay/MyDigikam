@@ -21,8 +21,8 @@
  *
  * ============================================================ */
 
-#ifndef AV_PLAYER_DECODER_CONFIG_PAGE_H
-#define AV_PLAYER_DECODER_CONFIG_PAGE_H
+#ifndef QTAV_WIDGETS_DECODER_CONFIG_PAGE_H
+#define QTAV_WIDGETS_DECODER_CONFIG_PAGE_H
 
 // Qt includes
 
@@ -31,7 +31,9 @@
 
 // Local includes
 
+#include "QtAVWidgets_Global.h"
 #include "ConfigPageBase.h"
+#include "VideoDecoder.h"
 
 QT_BEGIN_NAMESPACE
 class QListWidget;
@@ -40,10 +42,10 @@ class QSpinBox;
 class QVBoxLayout;
 QT_END_NAMESPACE
 
-namespace AVPlayer
+namespace QtAV
 {
 
-class DecoderConfigPage : public ConfigPageBase
+class QTAV_WIDGETS_EXPORT DecoderConfigPage : public ConfigPageBase
 {
     Q_OBJECT
 
@@ -56,6 +58,9 @@ public:
 
     QVariantHash audioDecoderOptions() const;
     QVariantHash videoDecoderOptions() const;
+
+    static QStringList idsToNames(QVector<VideoDecoderId> ids);
+    static QVector<VideoDecoderId> idsFromNames(const QStringList& names);
 
 protected:
 
@@ -81,6 +86,6 @@ private:
     QVBoxLayout*                mpDecLayout;
 };
 
-} // namespace AVPlayer
+} // namespace QtAV
 
-#endif // AV_PLAYER_DECODER_CONFIG_PAGE_H
+#endif // QTAV_WIDGETS_DECODER_CONFIG_PAGE_H

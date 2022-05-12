@@ -21,8 +21,8 @@
  *
  * ============================================================ */
 
-#ifndef AV_PLAYER_CONFIG_MNGR_H
-#define AV_PLAYER_CONFIG_MNGR_H
+#ifndef QTAV_WIDGETS_CONFIG_MNGR_H
+#define QTAV_WIDGETS_CONFIG_MNGR_H
 
 // Qt includes
 
@@ -32,7 +32,11 @@
 #include <QColor>
 #include <QFont>
 
-namespace AVPlayer
+// Local includes
+
+#include "QtAVWidgets_Global.h"
+
+namespace QtAV
 {
 
 // TODO: use hash to simplify api
@@ -43,7 +47,7 @@ namespace AVPlayer
  * apply() will change the value in AVPlayerConfigMngr
  */
 
-class AVPlayerConfigMngr : public QObject
+class QTAV_WIDGETS_EXPORT AVPlayerConfigMngr : public QObject
 {
     Q_OBJECT
 
@@ -318,6 +322,6 @@ private:
     Data* mpData;
 };
 
-} // namespace AVPlayer
+} // namespace QtAV
 
-#endif // AV_PLAYER_CONFIG_MNGR_H
+#endif // QTAV_WIDGETS_CONFIG_MNGR_H

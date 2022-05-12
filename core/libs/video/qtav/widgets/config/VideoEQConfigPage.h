@@ -21,12 +21,16 @@
  *
  * ============================================================ */
 
-#ifndef AV_PLAYER_VIDEOEQ_CONFIG_PAGE_H
-#define AV_PLAYER_VIDEOEQ_CONFIG_PAGE_H
+#ifndef QTAV_WIDGETS_VIDEOEQ_CONFIG_PAGE_H
+#define QTAV_WIDGETS_VIDEOEQ_CONFIG_PAGE_H
 
 // Qt includes
 
 #include <QWidget>
+
+// Local includes
+
+#include "QtAVWidgets_Global.h"
 
 QT_BEGIN_NAMESPACE
 class QCheckBox;
@@ -35,10 +39,10 @@ class QPushButton;
 class QSlider;
 QT_END_NAMESPACE
 
-namespace AVPlayer
+namespace QtAV
 {
 
-class VideoEQConfigPage : public QWidget
+class QTAV_WIDGETS_EXPORT VideoEQConfigPage : public QWidget
 {
     Q_OBJECT
 
@@ -91,6 +95,6 @@ private:
     QVector<Engine> mEngines;
 };
 
-} // namespace AVPlayer
+} // namespace QtAV
 
-#endif // AV_PLAYER_VIDEOEQ_CONFIG_PAGE_H
+#endif // QTAV_WIDGETS_VIDEOEQ_CONFIG_PAGE_H

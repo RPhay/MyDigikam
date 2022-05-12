@@ -21,8 +21,8 @@
  *
  * ============================================================ */
 
-#ifndef AV_PLAYER_CAPTURE_CONFIG_PAGE_H
-#define AV_PLAYER_CAPTURE_CONFIG_PAGE_H
+#ifndef QTAV_WIDGETS_CAPTURE_CONFIG_PAGE_H
+#define QTAV_WIDGETS_CAPTURE_CONFIG_PAGE_H
 
 // Qt includes
 
@@ -32,9 +32,10 @@
 
 // Local includes
 
+#include "QtAVWidgets_Global.h"
 #include "ConfigPageBase.h"
 
-namespace AVPlayer
+namespace QtAV
 {
 
 /*
@@ -44,7 +45,7 @@ namespace AVPlayer
 
 class Slider;
 
-class CaptureConfigPage : public ConfigPageBase
+class QTAV_WIDGETS_EXPORT CaptureConfigPage : public ConfigPageBase
 {
     Q_OBJECT
 
@@ -72,6 +73,6 @@ private:
     Slider*    mpQuality;
 };
 
-} // namespace AVPlayer
+} // namespace QtAV
 
-#endif // AV_PLAYER_CAPTURE_CONFIG_PAGE_H
+#endif // QTAV_WIDGETS_CAPTURE_CONFIG_PAGE_H

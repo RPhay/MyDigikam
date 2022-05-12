@@ -21,17 +21,21 @@
  *
  * ============================================================ */
 
-#ifndef AV_PLAYER_CONFIG_PAGE_BASE_H
-#define AV_PLAYER_CONFIG_PAGE_BASE_H
+#ifndef QTAV_WIDGETS_CONFIG_PAGE_BASE_H
+#define QTAV_WIDGETS_CONFIG_PAGE_BASE_H
 
 // Qt includes
 
 #include <QWidget>
 
-namespace AVPlayer
+// Local includes
+
+#include "QtAVWidgets_Global.h"
+
+namespace QtAV
 {
 
-class ConfigPageBase : public QWidget
+class QTAV_WIDGETS_EXPORT ConfigPageBase : public QWidget
 {
     Q_OBJECT
 
@@ -80,6 +84,6 @@ private:
     bool mApplyOnUiChange;
 };
 
-} // namespace AVPlayer
+} // namespace QtAV
 
-#endif // AV_PLAYER_CONFIG_PAGE_BASE_H
+#endif // QTAV_WIDGETS_CONFIG_PAGE_BASE_H
