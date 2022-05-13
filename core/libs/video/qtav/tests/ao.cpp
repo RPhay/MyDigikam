@@ -58,7 +58,8 @@ int main(int argc, char** argv)
 
     for (int i = 0 ; i < kTableSize ; i++)
     {
-        sin_table[i] = (qint16)((double)std::numeric_limits<qint16>::max() * sin(((double)i/(double)kTableSize)*3.1415926*2.0));
+        sin_table[i] = (qint16)((double)std::numeric_limits<qint16>::max() * 
+                        sin(((double)i / (double)kTableSize) * M_PI * 2.0));
     }
 
     QCoreApplication app(argc, argv); //only used qapp to get parameter easily
@@ -73,6 +74,7 @@ int main(int argc, char** argv)
     if (ao.backend().isEmpty())
     {
         qCCritical(DIGIKAM_TESTS_LOG) << QString::asprintf("unknow backend");
+
         return -1;
     }
 
@@ -84,6 +86,7 @@ int main(int argc, char** argv)
     if (!ao.isSupported(af))
     {
         qCDebug(DIGIKAM_TESTS_LOG) << "does not support format: " << af;
+
         return -1;
     }
 
@@ -94,16 +97,18 @@ int main(int argc, char** argv)
     if (!ao.open())
     {
         qCCritical(DIGIKAM_TESTS_LOG) << QString::asprintf("open audio error");
+
         return -1;
     }
 
-    int left = 0, right = 0;
+    int left  = 0;
+    int right = 0;
     QElapsedTimer timer;
     timer.start();
 
     while (timer.elapsed() < 3000)
     {
-        qint16* d = (qint16*)data.data();
+        qint16* d = reinterpret_cast<qint16*>(data.data());
 
         for (int k = 0 ; k < kFrames ; k++)
         {
