@@ -53,7 +53,7 @@ int main(int argc, char** argv)
     if (!input.open(QIODevice::ReadOnly))
     {
         qCDebug(DIGIKAM_TESTS_LOG) << "Cannot open ExifTool input stream to read...";
-        return false;
+        return -1;
     }
 
     QByteArray stdOut            = input.readAll();
