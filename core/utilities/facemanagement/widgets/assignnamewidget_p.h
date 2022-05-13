@@ -71,12 +71,12 @@ public:
     void         updateContents();
 
     /**
-     * Reject button shows different Tooltips for
+     * Reject button shows different Tooltips and icons for
      * Unconfirmed and Unknown faces, however both
      * are of type UnconfirmedEditMode.
      * This method is responsible for the Tooltip updates.
      */
-    void         updateRejectButtonTooltip();
+    void         updateRejectButton();
 
     void         updateIgnoreButton();
 

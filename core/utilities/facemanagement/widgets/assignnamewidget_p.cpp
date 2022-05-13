@@ -582,7 +582,7 @@ void AssignNameWidget::Private::updateIgnoreButton()
 {
     if (!ignoreButton)
     {
-        ignoreButton = createToolButton(QIcon::fromTheme(QLatin1String("edit-undo")),
+        ignoreButton = createToolButton(QIcon::fromTheme(QLatin1String("dialog-cancel")),
                                         i18nc("@action", "Ignore"));
         ignoreButton->setToolTip(i18nc("@info:tooltip", "Ignore this face"));
 
@@ -605,7 +605,7 @@ void AssignNameWidget::Private::updateIgnoreButton()
     }
 }
 
-void AssignNameWidget::Private::updateRejectButtonTooltip()
+void AssignNameWidget::Private::updateRejectButton()
 {
     if (!rejectButton)
     {
@@ -617,10 +617,12 @@ void AssignNameWidget::Private::updateRejectButtonTooltip()
     if      (face.type() == FaceTagsIface::UnknownName)
     {
         rejectButton->setToolTip(i18nc("@info:tooltip", "Mark this face as Ignored"));
+        rejectButton->setIcon(QIcon::fromTheme(QLatin1String("dialog-cancel")));
     }
     else if (face.type() == FaceTagsIface::UnconfirmedName)
     {
         rejectButton->setToolTip(i18nc("@info:tooltip", "Reject this suggestion"));
+        rejectButton->setIcon(QIcon::fromTheme(QLatin1String("list-remove")));
     }
 
     updateIgnoreButton();
