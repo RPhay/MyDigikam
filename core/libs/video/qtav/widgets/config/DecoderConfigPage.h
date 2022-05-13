@@ -59,6 +59,8 @@ public:
     QVariantHash audioDecoderOptions() const;
     QVariantHash videoDecoderOptions() const;
 
+public:
+
     static QStringList idsToNames(QVector<VideoDecoderId> ids);
     static QVector<VideoDecoderId> idsFromNames(const QStringList& names);
 

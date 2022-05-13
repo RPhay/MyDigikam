@@ -54,7 +54,7 @@ void ConfigPageBase::cancel()
 
 void ConfigPageBase::reset()
 {
-    // NOTE: make sure AVPlayerConfigMngr::instance().reset() is called before it. It is called i ConfigDialog.reset()
+    // NOTE: make sure AVPlayerConfigMngr::instance().reset() is called before it. It is called by ConfigDialog.reset()
 
     applyToUi();
 }

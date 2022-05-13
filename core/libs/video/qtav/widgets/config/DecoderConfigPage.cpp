@@ -68,7 +68,7 @@ public:
     DecoderItemWidget(QWidget* const parent = nullptr, bool advOptVisible = true)
         : QFrame(parent)
     {
-        mpEditorWidget = 0;
+        mpEditorWidget = nullptr;
 
         // why no frame?
 
@@ -108,15 +108,17 @@ public:
     void buildUiFor(QObject* const obj)
     {
         mpEditor->getProperties(obj);
-
-        //mpEditor->set()
-
+/*
+        mpEditor->set()
+*/
         QWidget* const w = mpEditor->buildUi(obj);
 
         if (!w)
+        {
             return;
+        }
 
-        mpEditorWidget = w;
+        mpEditorWidget   = w;
         w->setEnabled(true);
         layout()->addWidget(w);
         w->setVisible(false);
@@ -134,11 +136,11 @@ public:
     }
 
     void setChecked(bool c)                     { mpCheck->setChecked(c);       }
-    bool isChecked() const                      { return mpCheck->isChecked();  }
+    bool isChecked()        const               { return mpCheck->isChecked();  }
     void setName(const QString& name)           { mpCheck->setText(name);       }
-    QString name() const                        { return mpCheck->text();       }
+    QString name()          const               { return mpCheck->text();       }
     void setDescription(const QString& desc)    { mpDesc->setText(desc);        }
-    QString description() const                 { return mpDesc->text();        }
+    QString description()   const               { return mpDesc->text();        }
 
 Q_SIGNALS:
 
@@ -157,7 +159,9 @@ private Q_SLOTS:
     void toggleEditorVisible()
     {
         if (!mpEditorWidget)
+        {
             return;
+        }
 
         mpEditorWidget->setVisible(!mpEditorWidget->isVisible());
         QToolButton* const b = qobject_cast<QToolButton*>(sender());
@@ -230,7 +234,9 @@ DecoderConfigPage::DecoderConfigPage(QWidget* const parent, bool advOptVisible)
     foreach (QtAV::VideoDecoderId vid, vds_all)
     {
         if (!vids.contains(vid))
+        {
             all.push_back(vid);
+        }
     }
 
     mpDecLayout                             = new QVBoxLayout;
@@ -354,7 +360,9 @@ void DecoderConfigPage::videoDecoderEnableChanged()
     foreach (DecoderItemWidget* const iw, mDecItems)
     {
         if (iw->isChecked())
+        {
             names.append(iw->name());
+        }
     }
 
     sPriorityUi = idsFromNames(names);
@@ -365,21 +373,27 @@ void DecoderConfigPage::videoDecoderEnableChanged()
     }
     else
     {
-//        emit AVPlayerConfigMngr::instance().decoderPriorityChanged(sPriorityUi);
+/*
+        emit AVPlayerConfigMngr::instance().decoderPriorityChanged(sPriorityUi);
+*/
     }
 }
 
 void DecoderConfigPage::priorityUp()
 {
     if (!mpSelectedDec)
+    {
         return;
+    }
 
     int i = mDecItems.indexOf(mpSelectedDec);
 
     if (i == 0)
+    {
         return;
+    }
 
-    DecoderItemWidget* const iw = mDecItems.takeAt(i-1);
+    DecoderItemWidget* const iw = mDecItems.takeAt(i - 1);
     mDecItems.insert(i, iw);
     mpDecLayout->removeWidget(iw);
     mpDecLayout->insertWidget(i, iw);
@@ -392,7 +406,9 @@ void DecoderConfigPage::priorityUp()
         decs_all.append(w->name());
 
         if (decs_p.contains(w->name()))
+        {
             decs.append(w->name());
+        }
     }
 
     sDecodersUi = idsFromNames(decs_all);
@@ -404,19 +420,25 @@ void DecoderConfigPage::priorityUp()
     }
     else
     {
-        //emit AVPlayerConfigMngr::instance().decoderPriorityChanged(idsFromNames(decs));
+/*
+        emit AVPlayerConfigMngr::instance().decoderPriorityChanged(idsFromNames(decs));
+*/
     }
 }
 
 void DecoderConfigPage::priorityDown()
 {
     if (!mpSelectedDec)
+    {
         return;
+    }
 
     int i = mDecItems.indexOf(mpSelectedDec);
 
     if (i == mDecItems.size()-1)
+    {
         return;
+    }
 
     DecoderItemWidget* const iw = mDecItems.takeAt(i + 1);
     mDecItems.insert(i, iw);
@@ -435,7 +457,9 @@ void DecoderConfigPage::priorityDown()
         decs_all.append(w->name());
 
         if (decs_p.contains(w->name()))
+        {
             decs.append(w->name());
+        }
     }
 
     sDecodersUi = idsFromNames(decs_all);
@@ -447,15 +471,19 @@ void DecoderConfigPage::priorityDown()
     }
     else
     {
-        //emit AVPlayerConfigMngr::instance().decoderPriorityChanged(idsFromNames(decs));
-        //emit AVPlayerConfigMngr::instance().registeredDecodersChanged(idsFromNames(decs));
+/*
+        emit AVPlayerConfigMngr::instance().decoderPriorityChanged(idsFromNames(decs));
+        emit AVPlayerConfigMngr::instance().registeredDecodersChanged(idsFromNames(decs));
+*/
     }
 }
 
 void DecoderConfigPage::onDecSelected(DecoderItemWidget *iw)
 {
     if (mpSelectedDec == iw)
+    {
         return;
+    }
 
     if (mpSelectedDec) 
     {
@@ -469,9 +497,9 @@ void DecoderConfigPage::updateDecodersUi()
 {
     QStringList names     = idsToNames(sPriorityUi);
     QStringList all_names = idsToNames(sDecodersUi);
-
-    //qCDebug(DIGIKAM_AVPLAYER_LOG) << "updateDecodersUi " << this << " " << names << " all: " << all_names;
-
+/*
+    qCDebug(DIGIKAM_AVPLAYER_LOG) << "updateDecodersUi " << this << " " << names << " all: " << all_names;
+*/
     int idx = 0;
 
     foreach (const QString& name, all_names)
@@ -480,16 +508,20 @@ void DecoderConfigPage::updateDecodersUi()
 
         for (int i = idx ; i < mDecItems.size() ; ++i)
         {
-           if (mDecItems.at(i)->name() != name)
+            if (mDecItems.at(i)->name() != name)
+            {
                continue;
+            }
 
-           iw = mDecItems.at(i);
+            iw = mDecItems.at(i);
 
-           break;
+            break;
         }
 
         if (!iw)
+        {
             break;
+        }
 
         iw->setChecked(names.contains(iw->name()));
         int i = mDecItems.indexOf(iw);
@@ -538,12 +570,16 @@ QVector<VideoDecoderId> DecoderConfigPage::idsFromNames(const QStringList& names
     foreach (const QString& name, names)
     {
         if (name.isEmpty())
+        {
             continue;
+        }
 
         VideoDecoderId id = VideoDecoder::id(name.toLatin1().constData());
 
         if (id == 0)
+        {
             continue;
+        }
 
         decs.append(id);
     }
