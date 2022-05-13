@@ -79,8 +79,8 @@ SetupVideo::SetupVideo(QWidget* const parent)
     d->tabContent->setTabPosition(QTabWidget::North);
 
     d->resetBtn            = new QPushButton(this);
-    d->resetBtn->setText(i18n("Reset"));
-    d->resetBtn->setToolTip(i18n("Press this button to reset all video settings to the default values."));
+    d->resetBtn->setText(i18nc("@action", "Reset"));
+    d->resetBtn->setToolTip(i18nc("@info", "Press this button to reset all video settings to the default values."));
 
     connect(d->resetBtn, SIGNAL(clicked()),
             this, SLOT(slotReset()));
