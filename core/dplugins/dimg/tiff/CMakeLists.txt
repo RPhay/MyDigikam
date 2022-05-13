@@ -7,8 +7,10 @@
 APPLY_COMMON_POLICIES()
 
 # Libtiff generate warnings about deprecated legacy uint32, uint16, uint8 types.
-# Remove this line when Tiff loader will used modern types instead.
+# Remove these lines when Tiff loader will uses modern types instead.
 REMOVE_COMPILER_WARNINGS("-Wdeprecated-declarations")
+DISABLE_CLANG_COMPILER_WARNINGS("4.99.99" "-Wdeprecated-declarations")
+
 
 include(MacroDPlugins)
 
