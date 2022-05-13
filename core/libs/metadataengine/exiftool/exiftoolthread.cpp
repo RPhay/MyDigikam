@@ -51,7 +51,7 @@ void ExifToolThread::run()
 
     // apply settings and start ExifTool process
 
-    proc->slotMetaEngineSettingsChanged();
+    proc->slotApplySettingsAndStart();
 
     exec();
 

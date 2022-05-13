@@ -35,6 +35,7 @@
 #include <QList>
 #include <QFileInfo>
 #include <QByteArray>
+#include <QApplication>
 #include <QElapsedTimer>
 
 // Local includes

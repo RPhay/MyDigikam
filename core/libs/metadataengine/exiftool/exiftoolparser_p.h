@@ -40,7 +40,6 @@
 #include <QTemporaryFile>
 #include <QDomDocument>
 #include <QDomElement>
-#include <QApplication>
 
 // KDE includes
 

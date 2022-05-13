@@ -68,9 +68,9 @@ ExifToolParser::~ExifToolParser()
     delete d;
 }
 
-void ExifToolParser::setExifToolProgram(const QString& /*path*/)
+void ExifToolParser::setExifToolProgram(const QString& path)
 {
-//    d->proc->setProgram(path);
+    d->proc->changeProgram(path);
 }
 
 QString ExifToolParser::currentPath() const

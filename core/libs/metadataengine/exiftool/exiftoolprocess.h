@@ -130,8 +130,7 @@ public:
     /**
      * Setup the ExifTool configuration. This function must be called before start().
      */
-    void setProgram(const QString& etExePath,
-                    const QString& perlExePath = QString());
+    void changeProgram(const QString& etExePath);
 
     QString program() const;
 
@@ -193,11 +192,15 @@ Q_SIGNALS:
                             const QByteArray& cmdOutputChannel,
                             const QByteArray& cmdErrorChannel);
 
+    void signalChangeProgram(const QString& etExePath);
+
 public Q_SLOTS:
 
-    void slotMetaEngineSettingsChanged();
+    void slotApplySettingsAndStart();
 
 private:
+
+    void setProgram(const QString& etExePath);
 
     /**
      * Starts exiftool in a new process.
@@ -222,6 +225,7 @@ private Q_SLOTS:
 
     void slotStarted();
     void slotExecNextCmd();
+    void slotChangeProgram(const QString& etExePath);
     void slotStateChanged(QProcess::ProcessState newState);
     void slotErrorOccurred(QProcess::ProcessError error);
     void slotReadyReadStandardOutput();
