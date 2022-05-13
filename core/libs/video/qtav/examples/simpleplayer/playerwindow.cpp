@@ -33,26 +33,27 @@
 
 using namespace QtAV;
 
-PlayerWindow::PlayerWindow(QWidget *parent)
+PlayerWindow::PlayerWindow(QWidget* const parent)
     : QWidget(parent)
 {
-    m_unit          = 1000;
+    m_unit                = 1000;
     setWindowTitle(QString::fromLatin1("QtAV simple player example"));
-    m_player        = new AVPlayerCore(this);
-    QVBoxLayout* vl = new QVBoxLayout();
+    m_player              = new AVPlayerCore(this);
+    QVBoxLayout* const vl = new QVBoxLayout();
     setLayout(vl);
-    m_vo            = new VideoOutput(this);
+    m_vo                  = new VideoOutput(this);
 
     if (!m_vo->widget())
     {
-        QMessageBox::warning(0, QString::fromLatin1("QtAV error"), QLatin1String("Can not create video renderer"));
+        QMessageBox::warning(nullptr, QString::fromLatin1("QtAV error"),
+                             QLatin1String("Can not create video renderer"));
 
         return;
     }
 
     m_player->setRenderer(m_vo);
     vl->addWidget(m_vo->widget());
-    m_slider = new QSlider();
+    m_slider              = new QSlider();
     m_slider->setOrientation(Qt::Horizontal);
 
     connect(m_slider, SIGNAL(sliderMoved(int)),
@@ -71,11 +72,11 @@ PlayerWindow::PlayerWindow(QWidget *parent)
             this, SLOT(updateSliderUnit()));
 
     vl->addWidget(m_slider);
-    QHBoxLayout* hb = new QHBoxLayout();
+    QHBoxLayout* const hb = new QHBoxLayout();
     vl->addLayout(hb);
-    m_openBtn       = new QPushButton(QLatin1String("Open"));
-    m_playBtn       = new QPushButton(QLatin1String("Play/Pause"));
-    m_stopBtn       = new QPushButton(QLatin1String("Stop"));
+    m_openBtn             = new QPushButton(QLatin1String("Open"));
+    m_playBtn             = new QPushButton(QLatin1String("Play/Pause"));
+    m_stopBtn             = new QPushButton(QLatin1String("Stop"));
     hb->addWidget(m_openBtn);
     hb->addWidget(m_playBtn);
     hb->addWidget(m_stopBtn);
@@ -92,7 +93,7 @@ PlayerWindow::PlayerWindow(QWidget *parent)
 
 void PlayerWindow::openMedia()
 {
-    QString file = QFileDialog::getOpenFileName(0, QLatin1String("Open a video"));
+    QString file = QFileDialog::getOpenFileName(nullptr, QLatin1String("Open a video"));
 
     if (file.isEmpty())
         return;
@@ -105,7 +106,7 @@ void PlayerWindow::seekBySlider(int value)
     if (!m_player->isPlaying())
         return;
 
-    m_player->seek(qint64(value*m_unit));
+    m_player->seek(value * (qint64)m_unit);
 }
 
 void PlayerWindow::seekBySlider()
