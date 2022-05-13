@@ -436,12 +436,12 @@ void ExifToolProcess::setProgram(const QString& etExePath)
 
 void ExifToolProcess::slotChangeProgram(const QString& etExePath)
 {
-    QString old(program());
+    QString et(program());
 
     setProgram(etExePath);
 
-    if (isRunning()      &&
-        (old == program()))
+    if (isRunning()     &&
+        (et == program()))
     {
         return;
     }

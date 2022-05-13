@@ -123,12 +123,15 @@ public:
     static ExifToolProcess*          instance();
     static bool                      isCreated();
 
+    /**
+     * Setup the connections after call moveToThread().
+    */
     void setupConnections();
 
 public:
 
     /**
-     * Setup the ExifTool configuration. This function must be called before start().
+     * Change the ExifTool path configuration.
      */
     void changeProgram(const QString& etExePath);
 
@@ -166,10 +169,6 @@ public:
 
 Q_SIGNALS:
 
-    void signalExecNextCmd();
-
-    void signalStartExifTool();
-
     void signalStarted(int cmdId,
                        int cmdAction);
 
@@ -192,10 +191,12 @@ Q_SIGNALS:
                             const QByteArray& cmdOutputChannel,
                             const QByteArray& cmdErrorChannel);
 
-    void signalChangeProgram(const QString& etExePath);
-
 public Q_SLOTS:
 
+    /**
+     * Apply settings and start ExifTool process.
+     * This function can only be called from the ExifTool thread.
+     */
     void slotApplySettingsAndStart();
 
 private:
@@ -220,6 +221,14 @@ private:
     void killExifTool();
 
     QString exifToolBin()                               const;
+
+Q_SIGNALS:
+
+    void signalExecNextCmd();
+
+    void signalStartExifTool();
+
+    void signalChangeProgram(const QString& etExePath);
 
 private Q_SLOTS:
 
