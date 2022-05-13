@@ -29,14 +29,13 @@
 namespace Digikam
 {
 
-int    ExifToolProcess::Private::s_nextCmdId = ExifToolProcess::Private::CMD_ID_MIN;
-
 ExifToolProcess::Private::Private(ExifToolProcess* const q)
     : pp                  (q),
       cmdRunning          (0),
       cmdAction           (ExifToolProcess::LOAD_METADATA),
       writeChannelIsClosed(true),
-      processError        (QProcess::UnknownError)
+      processError        (QProcess::UnknownError),
+      nextCmdId           (CMD_ID_MIN)
 {
     outAwait[0] = false;
     outAwait[1] = false;

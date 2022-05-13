@@ -225,11 +225,11 @@ int ExifToolProcess::command(const QByteArrayList& args, Action ac)
 
     QMutexLocker locker(&d->mutex);
 
-    const int cmdId = Private::s_nextCmdId;
+    const int cmdId = d->nextCmdId;
 
-    if (Private::s_nextCmdId++ >= Private::CMD_ID_MAX)
+    if (d->nextCmdId++ >= CMD_ID_MAX)
     {
-        Private::s_nextCmdId = Private::CMD_ID_MIN;
+        d->nextCmdId = CMD_ID_MIN;
     }
 
     // String representation of d->cmdId with leading zero -> constant size: 10 char

@@ -44,6 +44,9 @@
 #include "digikam_globals.h"
 #include "metaenginesettings.h"
 
+#define CMD_ID_MIN 1
+#define CMD_ID_MAX 2000000000
+
 namespace Digikam
 {
 
@@ -95,14 +98,9 @@ public:
     QProcess::ProcessError  processError;
     QString                 errorString;
 
+    int                     nextCmdId;               ///< Unique identifier, even in a multi-instances or multi-thread environment
+
     QMutex                  mutex;
-
-public:
-
-    static const int        CMD_ID_MIN  = 1;
-    static const int        CMD_ID_MAX  = 2000000000;
-
-    static int              s_nextCmdId;             ///< Unique identifier, even in a multi-instances or multi-thread environment
 };
 
 } // namespace Digikam
