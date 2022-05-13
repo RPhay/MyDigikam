@@ -1431,12 +1431,12 @@ void MainWindow::wheelEvent(QWheelEvent* e)
 
 #if QT_VERSION >= QT_VERSION_CHECK(5, 0, 0)
 
-    qreal deg = e->angleDelta().y() / 8;
+    qreal deg = e->angleDelta().y() / 8.0;
     dp        = e->pixelDelta();
 
 #else
 
-    qreal deg = e->delta() / 8;
+    qreal deg = e->delta() / 8.0;
 
 #endif // QT_VERSION
 
@@ -1458,16 +1458,24 @@ void MainWindow::wheelEvent(QWheelEvent* e)
     //qCDebug(DIGIKAM_AVPLAYER_LOG) <<  p << fp;
 
     if (fp.x() < 0)
+    {
         fp.setX(0);
+    }
 
     if (fp.y() < 0)
+    {
         fp.setY(0);
+    }
 
     if (fp.x() > mpRenderer->videoFrameSize().width())
+    {
         fp.setX(mpRenderer->videoFrameSize().width());
+    }
 
     if (fp.y() > mpRenderer->videoFrameSize().height())
+    {
         fp.setY(mpRenderer->videoFrameSize().height());
+    }
 
     QRectF viewport = QRectF(mpRenderer->mapToFrame(QPointF(0, 0)),
                              mpRenderer->mapToFrame(QPointF(mpRenderer->rendererWidth(),
@@ -1488,7 +1496,9 @@ void MainWindow::wheelEvent(QWheelEvent* e)
     z             *= zoom;
 
     if (z < 1.0)
+    {
         z = 1.0;
+    }
 
     qreal x0 = fp.x() - fp.x() / z;
     qreal y0 = fp.y() - fp.y() / z;
