@@ -43,6 +43,14 @@ endif()
 
 set_property(SOURCE panoParser.h PROPERTY SKIP_AUTOMOC ON)
 
+# Don't process automoc on panoparser headers
+
+file(GLOB_RECURSE panoparser_headers ${CMAKE_CURRENT_SOURCE_DIR}/panoparser/*.h)
+
+foreach(_file ${panoparser_headers})
+    set_property(SOURCE ${_file} PROPERTY SKIP_AUTOMOC ON)
+endforeach()
+
 set(libpanoparser_SRCS
     ${CMAKE_CURRENT_SOURCE_DIR}/panoparser/ptotype/ptotype.cpp
     ${FLEX_PTOScanner_OUTPUTS}

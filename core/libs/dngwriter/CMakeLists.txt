@@ -25,6 +25,14 @@ include_directories(
     ${CMAKE_CURRENT_SOURCE_DIR}/extra/xmp_sdk/XMPCore/source
 )
 
+# Don't process automoc on DNG extra headers
+
+file(GLOB_RECURSE dng_extra_headers ${CMAKE_CURRENT_SOURCE_DIR}/extra/*.h*)
+
+foreach(_file ${dng_extra_headers})
+    set_property(SOURCE ${_file} PROPERTY SKIP_AUTOMOC ON)
+endforeach()
+
 #------------------------------------------------------------------------------------
 
 set(libmd5_SRCS ${CMAKE_CURRENT_SOURCE_DIR}/extra/md5/XMP_MD5.cpp)
