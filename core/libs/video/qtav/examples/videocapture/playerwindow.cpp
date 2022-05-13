@@ -39,25 +39,28 @@
 using namespace QtAV;
 
 PlayerWindow::PlayerWindow(QWidget* const parent)
-    : QWidget(parent)
+    : QWidget  (parent),
+      m_preview(nullptr)
 {
     QtAV::Widgets::registerRenderers();
     setWindowTitle(QString::fromLatin1("QtAV simple player example"));
-    m_player        = new AVPlayerCore(this);
-    QVBoxLayout* vl = new QVBoxLayout();
+    m_player              = new AVPlayerCore(this);
+    QVBoxLayout* const vl = new QVBoxLayout();
     setLayout(vl);
-    m_vo = new VideoOutput(this);
+    m_vo                  = new VideoOutput(this);
 
     if (!m_vo->widget())
     {
-        QMessageBox::warning(0, QString::fromLatin1("QtAV error"), QString::fromLatin1("Can not create video renderer"));
+        QMessageBox::warning(nullptr,
+                             QString::fromLatin1("QtAV error"),
+                             QString::fromLatin1("Can not create video renderer"));
 
         return;
     }
 
     m_player->setRenderer(m_vo);
     vl->addWidget(m_vo->widget());
-    m_slider = new QSlider();
+    m_slider              = new QSlider();
     m_slider->setOrientation(Qt::Horizontal);
 
     connect(m_slider, SIGNAL(sliderMoved(int)),
@@ -70,14 +73,14 @@ PlayerWindow::PlayerWindow(QWidget* const parent)
             this, SLOT(updateSlider()));
 
     vl->addWidget(m_slider);
-    QHBoxLayout* hb = new QHBoxLayout();
+    QHBoxLayout* const hb = new QHBoxLayout();
     vl->addLayout(hb);
-    m_openBtn       = new QPushButton(tr("Open"));
-    m_captureBtn    = new QPushButton(tr("Capture video frame"));
+    m_openBtn             = new QPushButton(QLatin1String("Open"));
+    m_captureBtn          = new QPushButton(QLatin1String("Capture video frame"));
     hb->addWidget(m_openBtn);
     hb->addWidget(m_captureBtn);
 
-    m_preview       = new QLabel(tr("Capture preview"));
+    m_preview             = new QLabel(QLatin1String("Capture preview"));
     m_preview->setFixedSize(200, 150);
     hb->addWidget(m_preview);
 
@@ -99,7 +102,7 @@ PlayerWindow::PlayerWindow(QWidget* const parent)
 
 void PlayerWindow::openMedia()
 {
-    QString file = QFileDialog::getOpenFileName(0, tr( "Open a video"));
+    QString file = QFileDialog::getOpenFileName(nullptr, QLatin1String("Open a video"));
 
     if (file.isEmpty())
         return;
@@ -112,13 +115,13 @@ void PlayerWindow::seek(int pos)
     if (!m_player->isPlaying())
         return;
 
-    m_player->seek(pos*1000LL); // to msecs
+    m_player->seek(pos * 1000LL); // to msecs
 }
 
 void PlayerWindow::updateSlider()
 {
-    m_slider->setRange(0, int(m_player->duration()/1000LL));
-    m_slider->setValue(int(m_player->position()/1000LL));
+    m_slider->setRange(0, int(m_player->duration() / 1000LL));
+    m_slider->setValue(int(m_player->position() / 1000LL));
 }
 
 void PlayerWindow::updatePreview(const QImage &image)
@@ -135,10 +138,11 @@ void PlayerWindow::capture()
 
 void PlayerWindow::onCaptureSaved(const QString &path)
 {
-    setWindowTitle(tr("saved to: ") + path);
+    setWindowTitle(QLatin1String("saved to: ") + path);
 }
 
 void PlayerWindow::onCaptureError()
 {
-    QMessageBox::warning(0, QString::fromLatin1("QtAV video capture"), tr("Failed to capture video frame"));
+    QMessageBox::warning(nullptr, QString::fromLatin1("QtAV video capture"),
+                         QLatin1String("Failed to capture video frame"));
 }

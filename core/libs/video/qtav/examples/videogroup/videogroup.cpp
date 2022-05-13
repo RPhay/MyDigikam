@@ -63,19 +63,19 @@ VideoGroup::VideoGroup(QObject* const parent)
     mpBar->setMaximumSize(400, 60);
     mpBar->show();
     mpBar->setLayout(new QHBoxLayout);
-    mpOpen      = new QPushButton(tr("Open"));
-    mpPlay      = new QPushButton(tr("Play"));
-    mpStop      = new QPushButton(tr("Stop"));
-    mpPause     = new QPushButton(tr("Pause"));
+    mpOpen      = new QPushButton(QLatin1String("Open"));
+    mpPlay      = new QPushButton(QLatin1String("Play"));
+    mpStop      = new QPushButton(QLatin1String("Stop"));
+    mpPause     = new QPushButton(QLatin1String("Pause"));
     mpPause->setCheckable(true);
     mpAdd       = new QPushButton(QString::fromLatin1("+"));
     mpRemove    = new QPushButton(QString::fromLatin1("-"));
-    mp1Window   = new QPushButton(tr("Single Window"));
+    mp1Window   = new QPushButton(QLatin1String("Single Window"));
     mp1Window->setCheckable(true);
-    mp1Frame    = new QPushButton(tr("Single Frame"));
+    mp1Frame    = new QPushButton(QLatin1String("Single Frame"));
     mp1Frame->setCheckable(true);
     mp1Frame->setChecked(true);
-    mpFrameless = new QPushButton(tr("no window frame"));
+    mpFrameless = new QPushButton(QLatin1String("no window frame"));
     mpFrameless->setCheckable(true);
 
     connect(mpOpen, SIGNAL(clicked()),
@@ -262,7 +262,7 @@ void VideoGroup::play(const QString &file)
 
 void VideoGroup::openLocalFile()
 {
-    QString file = QFileDialog::getOpenFileName(0, tr("Open a video"));
+    QString file = QFileDialog::getOpenFileName(0, QLatin1String("Open a video"));
 
     if (file.isEmpty())
         return;

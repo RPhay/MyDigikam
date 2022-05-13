@@ -69,7 +69,7 @@ Widget::Widget(QWidget* const parent)
         btn_layout->addLayout(vb);
     }
 
-    QPushButton* net_btn = new QPushButton(tr("Test online video(rtsp)"));
+    QPushButton* net_btn = new QPushButton(QLatin1String("Test online video(rtsp)"));
 
     connect(net_btn, SIGNAL(clicked()),
             this, SLOT(testRTSP()));

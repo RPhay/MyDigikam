@@ -232,7 +232,7 @@ void VideoWall::stop()
 
 void VideoWall::openLocalFile()
 {
-    QString file = QFileDialog::getOpenFileName(0, tr("Open a video"));
+    QString file = QFileDialog::getOpenFileName(0, QLatin1String("Open a video"));
 
     if (file.isEmpty())
         return;
@@ -251,7 +251,7 @@ void VideoWall::openLocalFile()
 
 void VideoWall::openUrl()
 {
-    QString url = QInputDialog::getText(0, tr("Open an url"), tr("Url"));
+    QString url = QInputDialog::getText(0, QLatin1String("Open an url"), QLatin1String("Url"));
 
     if (url.isEmpty())
         return;
@@ -270,26 +270,26 @@ void VideoWall::openUrl()
 
 void VideoWall::about()
 {
-    QMessageBox::about(0, tr("About QtAV"), QString::fromLatin1("<h3>%1</h3>\n\n%2")
-                       .arg(tr("This is a demo for playing and synchronising multiple players"))
+    QMessageBox::about(0, QLatin1String("About QtAV"), QString::fromLatin1("<h3>%1</h3>\n\n%2")
+                       .arg(QLatin1String("This is a demo for playing and synchronising multiple players"))
                        .arg(aboutQtAV_HTML()));
 }
 
 void VideoWall::help()
 {
-    QMessageBox::about(0, tr("Help"),
-                        tr("Command line: %1 [-r rows=3] [-c cols=3] path/of/video\n").arg(qApp->applicationFilePath())
-                       + tr("Drag and drop a file to player\n")
-                       + tr("Shortcut:\n")
-                       + tr("Space: pause/continue\n")
-                       + tr("N: show next frame. Continue the playing by pressing 'Space'\n")
-                       + tr("O: open a file\n")
-                       + tr("P: replay\n")
-                       + tr("S: stop\n")
-                       + tr("M: mute on/off\n")
-                       + tr("C: capture video")
-                       + tr("Up/Down: volume +/-\n")
-                       + tr("->/<-: seek forward/backward\n"));
+    QMessageBox::about(0, QLatin1String("Help"),
+                        QLatin1String("Command line: %1 [-r rows=3] [-c cols=3] path/of/video\n").arg(qApp->applicationFilePath())
+                       + QLatin1String("Drag and drop a file to player\n")
+                       + QLatin1String("Shortcut:\n")
+                       + QLatin1String("Space: pause/continue\n")
+                       + QLatin1String("N: show next frame. Continue the playing by pressing 'Space'\n")
+                       + QLatin1String("O: open a file\n")
+                       + QLatin1String("P: replay\n")
+                       + QLatin1String("S: stop\n")
+                       + QLatin1String("M: mute on/off\n")
+                       + QLatin1String("C: capture video")
+                       + QLatin1String("Up/Down: volume +/-\n")
+                       + QLatin1String("->/<-: seek forward/backward\n"));
 }
 
 bool VideoWall::eventFilter(QObject *watched, QEvent *event)
@@ -495,13 +495,13 @@ bool VideoWall::eventFilter(QObject *watched, QEvent *event)
             if (!menu)
             {
                 menu = new QMenu();
-                menu->addAction(tr("Open"),     this, SLOT(openLocalFile()));
-                menu->addAction(tr("Open Url"), this, SLOT(openUrl()));
+                menu->addAction(QLatin1String("Open"),     this, SLOT(openLocalFile()));
+                menu->addAction(QLatin1String("Open Url"), this, SLOT(openUrl()));
                 menu->addSeparator();
-                menu->addAction(tr("About"),    this, SLOT(about()));
-                menu->addAction(tr("Help"),     this, SLOT(help()));
+                menu->addAction(QLatin1String("About"),    this, SLOT(about()));
+                menu->addAction(QLatin1String("Help"),     this, SLOT(help()));
                 menu->addSeparator();
-                menu->addAction(tr("About Qt"), qApp, SLOT(aboutQt()));
+                menu->addAction(QLatin1String("About Qt"), qApp, SLOT(aboutQt()));
             }
 
             menu->popup(e->globalPos());

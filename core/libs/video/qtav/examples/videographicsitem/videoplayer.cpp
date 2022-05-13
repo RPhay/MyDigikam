@@ -79,7 +79,7 @@ VideoPlayer::VideoPlayer(QWidget* const parent)
             this, SLOT(scaleVideo(int)));
 
     QPushButton* const openBtn = new QPushButton;
-    openBtn->setText(tr("Open"));
+    openBtn->setText(QLatin1String("Open"));
 
     connect(openBtn, SIGNAL(clicked()),
             this, SLOT(open()));
@@ -158,7 +158,7 @@ void VideoPlayer::scaleVideo(int value)
 
 void VideoPlayer::open()
 {
-    QString f = QFileDialog::getOpenFileName(0, tr("Open a video"));
+    QString f = QFileDialog::getOpenFileName(0, QLatin1String("Open a video"));
 
     if (f.isEmpty())
         return;

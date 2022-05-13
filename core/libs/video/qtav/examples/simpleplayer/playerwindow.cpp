@@ -45,7 +45,7 @@ PlayerWindow::PlayerWindow(QWidget *parent)
 
     if (!m_vo->widget())
     {
-        QMessageBox::warning(0, QString::fromLatin1("QtAV error"), tr("Can not create video renderer"));
+        QMessageBox::warning(0, QString::fromLatin1("QtAV error"), QLatin1String("Can not create video renderer"));
 
         return;
     }
@@ -73,9 +73,9 @@ PlayerWindow::PlayerWindow(QWidget *parent)
     vl->addWidget(m_slider);
     QHBoxLayout* hb = new QHBoxLayout();
     vl->addLayout(hb);
-    m_openBtn       = new QPushButton(tr("Open"));
-    m_playBtn       = new QPushButton(tr("Play/Pause"));
-    m_stopBtn       = new QPushButton(tr("Stop"));
+    m_openBtn       = new QPushButton(QLatin1String("Open"));
+    m_playBtn       = new QPushButton(QLatin1String("Play/Pause"));
+    m_stopBtn       = new QPushButton(QLatin1String("Stop"));
     hb->addWidget(m_openBtn);
     hb->addWidget(m_playBtn);
     hb->addWidget(m_stopBtn);
@@ -92,7 +92,7 @@ PlayerWindow::PlayerWindow(QWidget *parent)
 
 void PlayerWindow::openMedia()
 {
-    QString file = QFileDialog::getOpenFileName(0, tr("Open a video"));
+    QString file = QFileDialog::getOpenFileName(0, QLatin1String("Open a video"));
 
     if (file.isEmpty())
         return;
