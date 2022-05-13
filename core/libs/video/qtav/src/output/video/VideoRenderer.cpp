@@ -51,7 +51,7 @@ VideoRenderer::VideoRenderer()
     // can not do 'if (widget()) connect to update()' because widget() is virtual
 }
 
-VideoRenderer::VideoRenderer(VideoRendererPrivate &d)
+VideoRenderer::VideoRenderer(VideoRendererPrivate& d)
     : AVOutput(d)
 {
 }
@@ -60,11 +60,11 @@ VideoRenderer::~VideoRenderer()
 {
 }
 
-bool VideoRenderer::receive(const VideoFrame &frame)
+bool VideoRenderer::receive(const VideoFrame& frame)
 {
     DPTR_D(VideoRenderer);
 
-    const qreal dar_old = d.source_aspect_ratio;
+    const qreal dar_old   = d.source_aspect_ratio;
     d.source_aspect_ratio = frame.displayAspectRatio();
 
     if (dar_old != d.source_aspect_ratio)
@@ -87,12 +87,15 @@ bool VideoRenderer::setPreferredPixelFormat(VideoFormat::PixelFormat pixfmt)
 
     if (!isSupported(pixfmt))
     {
-        qCWarning(DIGIKAM_QTAV_LOG_WARN).noquote() << QString::asprintf("pixel format '%s' is not supported", VideoFormat(pixfmt).name().toUtf8().constData());
+        qCWarning(DIGIKAM_QTAV_LOG_WARN).noquote()
+            << QString::asprintf("pixel format '%s' is not supported",
+                VideoFormat(pixfmt).name().toUtf8().constData());
+
         return false;
     }
 
     VideoFormat::PixelFormat old = d.preferred_format;
-    d.preferred_format = pixfmt;
+    d.preferred_format           = pixfmt;
 
     if (!onSetPreferredPixelFormat(pixfmt))
     {
@@ -124,12 +127,13 @@ void VideoRenderer::forcePreferredPixelFormat(bool force)
     if (d.force_preferred == force)
         return;
 
-    bool old = d.force_preferred;
+    bool old          = d.force_preferred;
     d.force_preferred = force;
 
     if (!onForcePreferredPixelFormat(force))
     {
         qCWarning(DIGIKAM_QTAV_LOG_WARN).noquote() << QString::asprintf("onForcePreferredPixelFormat failed");
+
         d.force_preferred = old;
     }
 }
@@ -158,7 +162,7 @@ void VideoRenderer::setOutAspectRatioMode(OutAspectRatioMode mode)
     if (mode == d.out_aspect_ratio_mode)
         return;
 
-    d.aspect_ratio_changed = true;
+    d.aspect_ratio_changed  = true;
     d.out_aspect_ratio_mode = mode;
 
     if      (mode == RendererAspectRatio)
@@ -168,7 +172,7 @@ void VideoRenderer::setOutAspectRatioMode(OutAspectRatioMode mode)
         // compute out_rect
 
         d.out_rect = QRect(0, 0, d.renderer_width, d.renderer_height);          // remove? already in computeOutParameters()
-        setOutAspectRatio(qreal(d.renderer_width)/qreal(d.renderer_height));
+        setOutAspectRatio(qreal(d.renderer_width) / qreal(d.renderer_height));
 
         if (out_rect0 != d.out_rect)
         {
@@ -201,7 +205,8 @@ VideoRenderer::OutAspectRatioMode VideoRenderer::outAspectRatioMode() const
 void VideoRenderer::setOutAspectRatio(qreal ratio)
 {
     DPTR_D(VideoRenderer);
-    bool ratio_changed = d.out_aspect_ratio != ratio;
+
+    bool ratio_changed = (d.out_aspect_ratio != ratio);
     d.out_aspect_ratio = ratio;
 
     // indicate that this function is called by user. otherwise, called in VideoRenderer
@@ -259,7 +264,7 @@ void VideoRenderer::setQuality(Quality q)
         return;
 
     Quality old = quality();
-    d.quality = q;
+    d.quality   = q;
 
     if (!onSetQuality(q))
     {
@@ -292,11 +297,11 @@ void VideoRenderer::setInSize(int width, int height)
 {
     DPTR_D(VideoRenderer);
 
-    if (d.src_width != width || d.src_height != height)
+    if ((d.src_width != width) || (d.src_height != height))
     {
         d.aspect_ratio_changed = true; // ?? for VideoAspectRatio mode
-        d.src_width = width;
-        d.src_height = height;
+        d.src_width            = width;
+        d.src_height           = height;
 
         Q_EMIT videoFrameSizeChanged();
     }
@@ -306,7 +311,9 @@ void VideoRenderer::setInSize(int width, int height)
 
     //d.source_aspect_ratio = qreal(d.src_width)/qreal(d.src_height);
 
-    qCDebug(DIGIKAM_QTAV_LOG).noquote() << QString::asprintf("%s => calculating aspect ratio from converted input data(%f)", __FUNCTION__, d.source_aspect_ratio);
+    qCDebug(DIGIKAM_QTAV_LOG).noquote()
+        << QString::asprintf("%s => calculating aspect ratio from converted input data(%f)",
+             __FUNCTION__, d.source_aspect_ratio);
 
     // see setOutAspectRatioMode
 
@@ -329,10 +336,10 @@ void VideoRenderer::resizeRenderer(int width, int height)
 {
     DPTR_D(VideoRenderer);
 
-    if (width == 0 || height == 0 || (d.renderer_width == width && d.renderer_height == height))
+    if ((width == 0) || (height == 0) || ((d.renderer_width == width) && (d.renderer_height == height)))
         return;
 
-    d.renderer_width = width;
+    d.renderer_width  = width;
     d.renderer_height = height;
 
     if (d.out_aspect_ratio_mode == RendererAspectRatio)
@@ -384,7 +391,7 @@ void VideoRenderer::setOrientation(int value)
     if (d.orientation == value)
         return;
 
-    int old = orientation();
+    int old       = orientation();
     d.orientation = value;
 
     if (!onSetOrientation(value))
@@ -452,7 +459,7 @@ void VideoRenderer::setRegionOfInterest(const QRectF &roi)
         return;
 
     QRectF old = regionOfInterest();
-    d.roi = roi;
+    d.roi      = roi;
 
     if (!onSetRegionOfInterest(roi))
     {
@@ -461,6 +468,7 @@ void VideoRenderer::setRegionOfInterest(const QRectF &roi)
     else
     {
         Q_EMIT regionOfInterestChanged();
+
         updateUi();
     }
 
@@ -510,12 +518,12 @@ QRect VideoRenderer::realROI() const
     if (qAbs(d.roi.height()) < 1)
         r.setHeight(d.roi.height()*qreal(d.src_height));
 
-    if (d.roi.width() == 1.0 && normalized)
+    if ((d.roi.width() == 1.0) && normalized)
     {
         r.setWidth(d.src_width);
     }
 
-    if (d.roi.height() == 1.0 && normalized)
+    if ((d.roi.height() == 1.0) && normalized)
     {
         r.setHeight(d.src_height);
     }
@@ -534,25 +542,35 @@ QRectF VideoRenderer::normalizedROI() const
         return QRectF(0, 0, 1, 1);
     }
 
-    QRectF r = d.roi;
+    QRectF r        = d.roi;
     bool normalized = false;
 
     if (qAbs(r.x()) >= 1)
-        r.setX(r.x()/qreal(d.src_width));
+    {
+        r.setX(r.x() / qreal(d.src_width));
+    }
     else
+    {
         normalized = true;
+    }
 
     if (qAbs(r.y()) >= 1)
-        r.setY(r.y()/qreal(d.src_height));
-    else
-        normalized = true;
-
-    if (r.width() > 1 || (!normalized && r.width() == 1))
-        r.setWidth(r.width()/qreal(d.src_width));
-
-    if (r.height() > 1 || (!normalized && r.width() == 1))
     {
-        r.setHeight(r.height()/qreal(d.src_height));
+        r.setY(r.y() / qreal(d.src_height));
+    }
+    else
+    {
+        normalized = true;
+    }
+
+    if ((r.width() > 1) || (!normalized && r.width() == 1))
+    {
+        r.setWidth(r.width() / qreal(d.src_width));
+    }
+
+    if ((r.height() > 1) || (!normalized && r.width() == 1))
+    {
+        r.setHeight(r.height() / qreal(d.src_height));
     }
 
     return r;
@@ -571,30 +589,30 @@ QPointF VideoRenderer::onMapToFrame(const QPointF &p) const
 
     // zoom=roi.w/roi.h>vo.w/vo.h?roi.w/vo.w:roi.h/vo.h
 
-    qreal zoom    = qMax(roi.width()/rendererWidth(), roi.height()/rendererHeight());
-    QPointF delta = p - QPointF(rendererWidth()/2, rendererHeight()/2);
+    qreal zoom    = qMax(roi.width() / rendererWidth(), roi.height() / rendererHeight());
+    QPointF delta = p - QPointF(rendererWidth() / 2, rendererHeight() / 2);
 
-    return roi.center() + delta * zoom;
+    return (roi.center() + delta * zoom);
 }
 
-QPointF VideoRenderer::mapFromFrame(const QPointF &p) const
+QPointF VideoRenderer::mapFromFrame(const QPointF& p) const
 {
     return onMapFromFrame(p);
 }
 
-QPointF VideoRenderer::onMapFromFrame(const QPointF &p) const
+QPointF VideoRenderer::onMapFromFrame(const QPointF& p) const
 {
-    QRectF roi = realROI();
+    QRectF roi    = realROI();
 
     // zoom=roi.w/roi.h>vo.w/vo.h?roi.w/vo.w:roi.h/vo.h
 
-    qreal zoom = qMax(roi.width()/rendererWidth(), roi.height()/rendererHeight());
+    qreal zoom    = qMax(roi.width() / rendererWidth(), roi.height() / rendererHeight());
 
     // (p-roi.c)/zoom + c
 
     QPointF delta = p - roi.center();
 
-    return QPointF(rendererWidth()/2, rendererHeight()/2) + delta / zoom;
+    return QPointF(rendererWidth() / 2, rendererHeight() / 2) + delta / zoom;
 }
 
 QRegion VideoRenderer::backgroundRegion() const
@@ -626,9 +644,9 @@ void VideoRenderer::handlePaintEvent()
         {
             // vo filter will not modify video frame, no lock required
 
-            foreach(Filter* filter, d.filters)
+            foreach(Filter* const filter, d.filters)
             {
-                VideoFilter *vf = static_cast<VideoFilter*>(filter);
+                VideoFilter* const vf = static_cast<VideoFilter*>(filter);
 
                 if (!vf)
                 {
@@ -645,7 +663,7 @@ void VideoRenderer::handlePaintEvent()
                 // Here apply filters on frame on video thread, for example, GPU filters
 
                 //vf->prepareContext(d.filter_context, d.statistics, 0);
-                //if (!vf->context() || vf->context()->type() != VideoFilterContext::OpenGL)
+                //if (!vf->context() || (vf->context()->type() != VideoFilterContext::OpenGL))
 
                 if (!vf->isSupported(VideoFilterContext::OpenGL))
                     continue;
@@ -671,6 +689,7 @@ void VideoRenderer::handlePaintEvent()
         if (d.video_frame.isValid())
         {
             drawFrame();
+
             //qCDebug(DIGIKAM_QTAV_LOG).noquote() << QString::asprintf("render elapsed: %lld", et.elapsed());
 
             if (d.statistics)
@@ -689,9 +708,9 @@ void VideoRenderer::handlePaintEvent()
     {
         // vo filter will not modify video frame, no lock required
 
-        foreach(Filter* filter, d.filters)
+        foreach(Filter* const filter, d.filters)
         {
-            VideoFilter *vf = static_cast<VideoFilter*>(filter);
+            VideoFilter* const vf = static_cast<VideoFilter*>(filter);
 
             if (!vf)
             {
@@ -707,7 +726,7 @@ void VideoRenderer::handlePaintEvent()
 
             // qpainter rendering on renderer's paint device. only supported by none-null paint engine
 
-            if (!vf->context() || vf->context()->type()  == VideoFilterContext::OpenGL)
+            if (!vf->context() || (vf->context()->type() == VideoFilterContext::OpenGL))
                 continue;
 
             if (vf->prepareContext(d.filter_context, d.statistics, nullptr))
@@ -886,7 +905,8 @@ void VideoRenderer::updateUi()
         public:
 
             explicit QUpdateLaterEvent(const QRegion& paintRegion)
-                : QEvent(UpdateLater), m_region(paintRegion)
+                : QEvent(UpdateLater),
+                  m_region(paintRegion)
             {
             }
 
@@ -904,7 +924,9 @@ void VideoRenderer::updateUi()
             QRegion m_region;
         };
 
-        QCoreApplication::instance()->postEvent(obj, new QUpdateLaterEvent(QRegion(0, 0, rendererWidth(), rendererHeight())));
+        QCoreApplication::instance()->postEvent(obj,
+                                                new QUpdateLaterEvent(QRegion(0, 0,
+                                                    rendererWidth(), rendererHeight())));
     }
     else
     {

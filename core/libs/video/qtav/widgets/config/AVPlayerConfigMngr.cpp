@@ -44,7 +44,7 @@
 namespace QtAV
 {
 
-class AVPlayerConfigMngr::Data
+class Q_DECL_HIDDEN AVPlayerConfigMngr::Data
 {
 public:
 

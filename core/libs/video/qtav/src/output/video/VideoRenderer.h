@@ -73,18 +73,20 @@ public:
 
     enum OutAspectRatioMode
     {
-        RendererAspectRatio ///< Use renderer's aspect ratio, i.e. stretch to fit the renderer rect
-      , VideoAspectRatio    ///< Use video's aspect ratio and align center in renderer.
-      , CustomAspectRation  ///< Use the ratio set by setOutAspectRatio(qreal). Mode will be set to this if that function is called
-
-      //, AspectRatio4_3, AspectRatio16_9
+        RendererAspectRatio, ///< Use renderer's aspect ratio, i.e. stretch to fit the renderer rect
+        VideoAspectRatio,    ///< Use video's aspect ratio and align center in renderer.
+        CustomAspectRation   ///< Use the ratio set by setOutAspectRatio(qreal). Mode will be set to this if that function is called
+/*
+        AspectRatio4_3,
+        AspectRatio16_9
+*/
     };
 
     enum Quality
     {
          // TODO: deprecated. simpily use int 0~100
 
-        QualityDefault, ///< good
+        QualityDefault,      ///< good
         QualityBest,
         QualityFastest
     };
@@ -107,8 +109,12 @@ public:
     static const char* name(VideoRendererId id);
     static VideoRendererId id(const char* name);
 
+public:
+
     VideoRenderer();
     virtual ~VideoRenderer();
+
+public:
 
     virtual VideoRendererId id() const = 0;
 
@@ -126,7 +132,7 @@ public:
      * \brief preferredPixelFormat
      * \return preferred pixel format. e.g. WidgetRenderer is rgb formats.
      */
-    virtual VideoFormat::PixelFormat preferredPixelFormat() const; //virtual?
+    virtual VideoFormat::PixelFormat preferredPixelFormat() const; // virtual?
 
     /*!
      * \brief forcePreferredPixelFormat
@@ -150,7 +156,7 @@ public:
     // If setOutAspectRatio(qreal) is used, then OutAspectRatioMode is CustomAspectRation
 
     void setOutAspectRatio(qreal ratio);
-    qreal outAspectRatio() const;//
+    qreal outAspectRatio() const;
 
     void setQuality(Quality q);
     Quality quality() const;
@@ -174,6 +180,7 @@ public:
     void setOrientation(int value);
 
     // The video frame rect in renderer youshouldpaint to. e.g. in RendererAspectRatio mode, the rect equals to renderer's
+
     QRect videoRect() const;
 
     /*
@@ -217,7 +224,7 @@ public:
 
     // to avoid conflicting width QWidget::window()
 
-    virtual QWindow* qwindow()              { return nullptr;}
+    virtual QWindow* qwindow()              { return nullptr; }
 
     /*!
      * \brief widget
@@ -238,15 +245,19 @@ public:
      *  video widget/item will update after if onChangingXXX/setXXX returns true
      * \return \a false if failed to set (may be onChangingXXX not implemented or return false)
      */
-    qreal brightness() const;
+    qreal brightness()              const;
     bool setBrightness(qreal brightness);
-    qreal contrast() const;
+
+    qreal contrast()                const;
     bool setContrast(qreal contrast);
-    qreal hue() const;
+
+    qreal hue()                     const;
     bool setHue(qreal hue);
-    qreal saturation() const;
+
+    qreal saturation()              const;
     bool setSaturation(qreal saturation);
-    QColor backgroundColor() const;
+
+    QColor backgroundColor()        const;
     void setBackgroundColor(const QColor& c);
 
     /*!
@@ -260,7 +271,7 @@ public:
 
 protected:
 
-    VideoRenderer(VideoRendererPrivate &d);
+    VideoRenderer(VideoRendererPrivate& d);
 
     //TODO: batch drawBackground(color, region)=>loop drawBackground(color,rect)
 
@@ -329,8 +340,9 @@ private:
         return new C();
     }
 
-    typedef VideoRenderer* (*VideoRendererCreator)();
-    static bool Register(VideoRendererId id, VideoRendererCreator, const char *name);
+    typedef VideoRenderer*(*VideoRendererCreator)();
+
+    static bool Register(VideoRendererId id, VideoRendererCreator, const char* name);
 
     friend class VideoOutput;
 
@@ -342,4 +354,4 @@ private:
 
 } // namespace QtAV
 
-#endif // QAV_VIDEO_RENDERER_H
+#endif // QTAV_VIDEO_RENDERER_H
