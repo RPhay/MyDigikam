@@ -963,9 +963,9 @@ bool MainWindow::setRenderer(QtAV::VideoRenderer* const renderer)
     if (mpVOAction)
     {
         mpVOAction->setChecked(true);
+        mpTitle->setText(mpVOAction->text());
     }
 
-    mpTitle->setText(mpVOAction->text());
     const VideoRendererId vid = mpPlayer->renderer()->id();
 
     if      ((vid == VideoRendererId_GLWidget)    ||
