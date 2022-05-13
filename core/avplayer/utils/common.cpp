@@ -153,6 +153,10 @@ void do_common_options_before_qapp(const QOptions& options)
 
     qCDebug(DIGIKAM_AVPLAYER_LOG) << "QT_XCB_GL_INTEGRATION: " << qgetenv("QT_XCB_GL_INTEGRATION");
 
+#else
+
+    Q_UNUSED(options);
+
 #endif // Q_OS_LINUX
 
 }
@@ -284,17 +288,20 @@ void set_opengl_backend(const QString& glopt, const QString& appname)
 }
 
 AppEventFilter::AppEventFilter(QObject* const player, QObject* const parent)
-    : QObject(parent),
+    : QObject (parent),
       m_player(player)
 {
 }
 
 bool AppEventFilter::eventFilter(QObject* obj, QEvent* ev)
 {
-    //qCDebug(DIGIKAM_AVPLAYER_LOG) << __FUNCTION__ << " watcher: " << obj << ev;
-
+/*
+    qCDebug(DIGIKAM_AVPLAYER_LOG) << __FUNCTION__ << " watcher: " << obj << ev;
+*/
     if (obj != qApp)
+    {
         return false;
+    }
 
     if (ev->type() == QEvent::WinEventAct)
     {
