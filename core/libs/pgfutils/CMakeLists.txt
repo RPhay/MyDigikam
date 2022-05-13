@@ -7,15 +7,11 @@
 
 APPLY_COMMON_POLICIES()
 
-if(NOT MSVC)
+REMOVE_COMPILER_WARNINGS("-Wcast-align")
+REMOVE_COMPILER_WARNINGS("-Wzero-as-null-pointer-constant")
 
-    REMOVE_COMPILER_WARNINGS("-Wcast-align")
-    REMOVE_COMPILER_WARNINGS("-Wzero-as-null-pointer-constant")
-
-    DISABLE_CLANG_COMPILER_WARNINGS("4.99.99" "-Wno-keyword-macro")
-    DISABLE_CLANG_COMPILER_WARNINGS("4.99.99" "-Wreorder-ctor")
-
-endif()
+DISABLE_CLANG_COMPILER_WARNINGS("4.99.99" "-Wno-keyword-macro")
+DISABLE_CLANG_COMPILER_WARNINGS("4.99.99" "-Wno-reorder-ctor")
 
 include_directories(
     $<TARGET_PROPERTY:Qt${QT_VERSION_MAJOR}::Gui,INTERFACE_INCLUDE_DIRECTORIES>
