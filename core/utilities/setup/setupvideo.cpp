@@ -125,7 +125,7 @@ void SetupVideo::slotReset()
 {
     int result = QMessageBox::warning(this, qApp->applicationName(),
                                       i18nc("@info",
-                                            "Do you want to reset all video settings the the default value?"),
+                                            "Do you want to reset all video settings the default value?"),
                                             QMessageBox::Yes | QMessageBox::No);
 
     if (result == QMessageBox::Yes)
