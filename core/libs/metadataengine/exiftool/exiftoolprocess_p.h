@@ -35,13 +35,13 @@
 #include <QList>
 #include <QFileInfo>
 #include <QByteArray>
-#include <QApplication>
 #include <QElapsedTimer>
 
 // Local includes
 
 #include "digikam_debug.h"
 #include "digikam_globals.h"
+#include "metaenginesettings.h"
 
 namespace Digikam
 {

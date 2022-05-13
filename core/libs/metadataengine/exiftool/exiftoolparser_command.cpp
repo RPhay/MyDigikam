@@ -40,11 +40,7 @@ bool ExifToolParser::load(const QString& path, bool async)
         return false;
     }
 
-    if (!d->prepareProcess())
-    {
-        qCCritical(DIGIKAM_GENERAL_LOG) << "Cannot prepare ExifTool process...";
-        return false;
-    }
+    d->prepareProcess();
 
     // Build command (get metadata as JSON array)
 
@@ -83,7 +79,7 @@ bool ExifToolParser::load(const QString& path, bool async)
 
     if (async)
     {
-//        d->asyncLoading = ExifToolProcess::LOAD_METADATA;
+        d->asyncLoading = ExifToolProcess::LOAD_METADATA;
     }
 
     return (d->startProcess(cmdArgs, ExifToolProcess::LOAD_METADATA));
@@ -99,11 +95,7 @@ bool ExifToolParser::loadChunk(const QString& path, bool fromVideo)
         return false;
     }
 
-    if (!d->prepareProcess())
-    {
-        qCCritical(DIGIKAM_GENERAL_LOG) << "Cannot prepare ExifTool process...";
-        return false;
-    }
+    d->prepareProcess();
 
     // Build command (get metadata as EXV container for Exiv2)
 
@@ -143,11 +135,7 @@ bool ExifToolParser::applyChanges(const QString& path, const ExifToolData& newTa
         return false;
     }
 
-    if (!d->prepareProcess())
-    {
-        qCCritical(DIGIKAM_GENERAL_LOG) << "Cannot prepare ExifTool process...";
-        return false;
-    }
+    d->prepareProcess();
 
     // Build command (set metadata)
 
@@ -184,11 +172,7 @@ bool ExifToolParser::applyChanges(const QString& path, const QString& exvTempFil
         return false;
     }
 
-    if (!d->prepareProcess())
-    {
-        qCCritical(DIGIKAM_GENERAL_LOG) << "Cannot prepare ExifTool process...";
-        return false;
-    }
+    d->prepareProcess();
 
     QByteArrayList cmdArgs;
     cmdArgs << QByteArray("-all:all-<all:all");
@@ -204,11 +188,7 @@ bool ExifToolParser::applyChanges(const QString& path, const QString& exvTempFil
 
 bool ExifToolParser::readableFormats()
 {
-    if (!d->prepareProcess())
-    {
-        qCCritical(DIGIKAM_GENERAL_LOG) << "Cannot prepare ExifTool process...";
-        return false;
-    }
+    d->prepareProcess();
 
     // Build command
 
@@ -223,11 +203,7 @@ bool ExifToolParser::readableFormats()
 
 bool ExifToolParser::writableFormats()
 {
-    if (!d->prepareProcess())
-    {
-        qCCritical(DIGIKAM_GENERAL_LOG) << "Cannot prepare ExifTool process...";
-        return false;
-    }
+    d->prepareProcess();
 
     // Build command
 
@@ -242,11 +218,7 @@ bool ExifToolParser::writableFormats()
 
 bool ExifToolParser::translationsList()
 {
-    if (!d->prepareProcess())
-    {
-        qCCritical(DIGIKAM_GENERAL_LOG) << "Cannot prepare ExifTool process...";
-        return false;
-    }
+    d->prepareProcess();
 
     // Build command
 
@@ -260,11 +232,7 @@ bool ExifToolParser::translationsList()
 
 bool ExifToolParser::tagsDatabase()
 {
-    if (!d->prepareProcess())
-    {
-        qCCritical(DIGIKAM_GENERAL_LOG) << "Cannot prepare ExifTool process...";
-        return false;
-    }
+    d->prepareProcess();
 
     // Build command
 
@@ -278,11 +246,7 @@ bool ExifToolParser::tagsDatabase()
 
 bool ExifToolParser::version()
 {
-    if (!d->prepareProcess())
-    {
-        qCCritical(DIGIKAM_GENERAL_LOG) << "Cannot prepare ExifTool process...";
-        return false;
-    }
+    d->prepareProcess();
 
     // Build command
 
@@ -412,11 +376,7 @@ bool ExifToolParser::copyTags(const QString& src, const QString& dst,
 
     // ---
 
-    if (!d->prepareProcess())
-    {
-        qCCritical(DIGIKAM_GENERAL_LOG) << "Cannot prepare ExifTool process...";
-        return false;
-    }
+    d->prepareProcess();
 
     QByteArrayList cmdArgs;
 
@@ -489,11 +449,7 @@ bool ExifToolParser::translateTags(const QString& path, unsigned char transOps)
 
     // ---
 
-    if (!d->prepareProcess())
-    {
-        qCCritical(DIGIKAM_GENERAL_LOG) << "Cannot prepare ExifTool process...";
-        return false;
-    }
+    d->prepareProcess();
 
     QByteArrayList cmdArgs;
 

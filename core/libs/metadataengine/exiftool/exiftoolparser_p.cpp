@@ -42,24 +42,10 @@ ExifToolParser::Private::~Private()
     }
 }
 
-bool ExifToolParser::Private::prepareProcess()
+void ExifToolParser::Private::prepareProcess()
 {
     currentPath.clear();
     exifToolData.clear();
-
-    // Start ExifToolProcess if necessary
-
-    if (!proc->startExifTool())
-    {
-        proc->killExifTool();
-        qCWarning(DIGIKAM_METAENGINE_LOG) << "ExifTool process cannot be started ("
-                                          << proc->program()
-                                          << ")";
-
-        return false;
-    }
-
-    return true;
 }
 
 bool ExifToolParser::Private::startProcess(const QByteArrayList& cmdArgs, ExifToolProcess::Action cmdAction)

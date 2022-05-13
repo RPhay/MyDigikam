@@ -27,7 +27,7 @@
 #ifndef DIGIKAM_EXIFTOOL_PROCESS_H
 #define DIGIKAM_EXIFTOOL_PROCESS_H
 
-// Qt Core
+// Qt includes
 
 #include <QProcess>
 #include <QPointer>
@@ -123,6 +123,8 @@ public:
     static ExifToolProcess*          instance();
     static bool                      isCreated();
 
+    void setupConnections();
+
 public:
 
     /**
@@ -134,23 +136,6 @@ public:
     QString program() const;
 
     bool checkExifToolProgram();
-
-    /**
-     * Starts exiftool in a new process.
-     */
-    bool startExifTool();
-
-    /**
-     * Attempts to terminate the process.
-     */
-    void terminateExifTool();
-
-    /**
-     * Kills the current process, causing it to exit immediately.
-     * On Windows, kill() uses TerminateProcess, and on Unix and macOS,
-     * the SIGKILL signal is sent to the process.
-     */
-    void killExifTool();
 
 public:
 
@@ -208,21 +193,41 @@ Q_SIGNALS:
                             const QByteArray& cmdOutputChannel,
                             const QByteArray& cmdErrorChannel);
 
+public Q_SLOTS:
+
+    void slotMetaEngineSettingsChanged();
+
+private:
+
+    /**
+     * Starts exiftool in a new process.
+     */
+    bool startExifTool();
+
+    /**
+     * Attempts to terminate the process.
+     */
+    void terminateExifTool();
+
+    /**
+     * Kills the current process, causing it to exit immediately.
+     * On Windows, kill() uses TerminateProcess, and on Unix and macOS,
+     * the SIGKILL signal is sent to the process.
+     */
+    void killExifTool();
+
+    QString exifToolBin()                               const;
+
 private Q_SLOTS:
 
     void slotStarted();
     void slotExecNextCmd();
-    void slotStartExifTool();
     void slotStateChanged(QProcess::ProcessState newState);
     void slotErrorOccurred(QProcess::ProcessError error);
     void slotReadyReadStandardOutput();
     void slotReadyReadStandardError();
     void slotFinished(int exitCode,
                       QProcess::ExitStatus exitStatus);
-
-private:
-
-    QString exifToolBin()                               const;
 
 private:
 

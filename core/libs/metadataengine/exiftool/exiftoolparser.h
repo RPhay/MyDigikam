@@ -249,10 +249,6 @@ private:
 
     //@}
 
-private Q_SLOTS:
-
-    void slotMetaEngineSettingsChanged();
-
 private:
 
     class Private;

@@ -40,6 +40,7 @@
 #include <QTemporaryFile>
 #include <QDomDocument>
 #include <QDomElement>
+#include <QApplication>
 
 // KDE includes
 
@@ -47,7 +48,6 @@
 
 // Local includes
 
-#include "metaenginesettings.h"
 #include "digikam_config.h"
 #include "digikam_debug.h"
 
@@ -61,7 +61,7 @@ public:
     explicit Private();
     ~Private();
 
-    bool       prepareProcess();
+    void       prepareProcess();
     bool       startProcess(const QByteArrayList& cmdArgs, ExifToolProcess::Action cmdAction);
     QByteArray filePathEncoding(const QFileInfo& fi) const;
     void       manageEventLoop(int cmdAction);

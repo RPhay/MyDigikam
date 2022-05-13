@@ -89,7 +89,9 @@ DigikamApp::DigikamApp()
     ProgressManager::instance();
     ThumbnailLoadThread::setDisplayingWidget(this);
     DIO::instance();
-    ExifToolProcess::instance();
+
+    ExifToolThread* const exifToolThread = new ExifToolThread(this);
+    exifToolThread->start();
 
     // creation of the engine on first use - when drawing -
     // can take considerable time and cause a noticeable hang in the UI thread.
@@ -268,11 +270,6 @@ DigikamApp::~DigikamApp()
     ThumbnailLoadThread::cleanUp();
     LoadingCacheInterface::cleanUp();
     DIO::cleanUp();
-
-    if (ExifToolProcess::isCreated())
-    {
-        delete ExifToolProcess::internalPtr;
-    }
 
     // close database server
 

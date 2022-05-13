@@ -150,6 +150,7 @@
 #include "dfiledialog.h"
 #include "dpluginloader.h"
 #include "exiftoolparser.h"
+#include "exiftoolthread.h"
 #include "facesdetector.h"
 
 #ifdef HAVE_MARBLE

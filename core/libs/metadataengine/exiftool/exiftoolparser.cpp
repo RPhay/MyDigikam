@@ -39,9 +39,6 @@ ExifToolParser::ExifToolParser(QObject* const parent)
         d->evLoops << new QEventLoop(this);
     }
 
-    connect(MetaEngineSettings::instance(), SIGNAL(signalSettingsChanged()),
-            this, SLOT(slotMetaEngineSettingsChanged()));
-
     d->hdls << connect(d->proc, &ExifToolProcess::signalCmdCompleted,
                        this, &ExifToolParser::slotCmdCompleted);
 
@@ -50,8 +47,6 @@ ExifToolParser::ExifToolParser(QObject* const parent)
 
     d->hdls << connect(d->proc, &ExifToolProcess::signalFinished,
                        this, &ExifToolParser::slotFinished);
-
-    slotMetaEngineSettingsChanged();
 }
 
 ExifToolParser::~ExifToolParser()
@@ -73,9 +68,9 @@ ExifToolParser::~ExifToolParser()
     delete d;
 }
 
-void ExifToolParser::setExifToolProgram(const QString& path)
+void ExifToolParser::setExifToolProgram(const QString& /*path*/)
 {
-    d->proc->setProgram(path);
+//    d->proc->setProgram(path);
 }
 
 QString ExifToolParser::currentPath() const
@@ -91,13 +86,6 @@ ExifToolParser::ExifToolData ExifToolParser::currentData() const
 QString ExifToolParser::currentErrorString() const
 {
     return d->proc->errorString();
-}
-
-void ExifToolParser::slotMetaEngineSettingsChanged()
-{
-    d->proc->setProgram(MetaEngineSettings::instance()->settings().exifToolPath);
-
-    qCDebug(DIGIKAM_METAENGINE_LOG) << "ExifTool path:" << d->proc->program();
 }
 
 bool ExifToolParser::exifToolAvailable() const
