@@ -326,14 +326,14 @@ void FaceScanWidget::setupConnections()
             this, SLOT(slotPrepareForRecognize(bool)));
 
     connect(d->accuracyInput, &DIntNumInput::valueChanged,
-            this, [this](int value)
+            this, [=](int value)
         {
             ApplicationSettings::instance()->setFaceDetectionAccuracy(double(value) / 100);
         }
     );
 
     connect(d->useYoloV3Button, &QCheckBox::toggled,
-            this, [this](bool yolo)
+            this, [=](bool yolo)
         {
             ApplicationSettings::instance()->setFaceDetectionYoloV3(yolo);
         }
