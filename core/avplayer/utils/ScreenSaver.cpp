@@ -309,7 +309,7 @@ bool ScreenSaver::enable(bool yes)
         }
 */
 
-    // http://msdn.microsoft.com/en-us/library/aa373208%28VS.85%29.aspx     // cppcheck-suppress insecurenet
+    // http://msdn.microsoft.com/en-us/library/aa373208%28VS.85%29.aspx     // krazy:exclude=insecurenet
 
     static EXECUTION_STATE sLastState = 0;
 
