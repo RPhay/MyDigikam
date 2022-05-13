@@ -13,6 +13,7 @@ if(NOT MSVC)
     REMOVE_COMPILER_WARNINGS("-Wzero-as-null-pointer-constant")
 
     DISABLE_CLANG_COMPILER_WARNINGS("4.99.99" "-Wno-keyword-macro")
+    DISABLE_CLANG_COMPILER_WARNINGS("4.99.99" "-Wreorder-ctor")
 
 endif()
 
