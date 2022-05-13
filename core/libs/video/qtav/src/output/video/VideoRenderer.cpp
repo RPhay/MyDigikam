@@ -568,7 +568,7 @@ QRectF VideoRenderer::normalizedROI() const
         r.setWidth(r.width() / qreal(d.src_width));
     }
 
-    if ((r.height() > 1) || (!normalized && r.width() == 1))
+    if ((r.height() > 1) || (!normalized && r.height() == 1))
     {
         r.setHeight(r.height() / qreal(d.src_height));
     }
