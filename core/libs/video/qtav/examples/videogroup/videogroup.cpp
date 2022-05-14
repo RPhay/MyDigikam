@@ -46,14 +46,7 @@
 using namespace QtAV;
 
 VideoGroup::VideoGroup(QObject* const parent)
-    : QObject(parent),
-      m1Window(false),
-      m1Frame(true),
-      mFrameless(false),
-      r(3),
-      c(3),
-      view(0),
-      vid(QString::fromLatin1("qpainter"))
+    : QObject(parent)
 {
     mpPlayer    = new AVPlayerCore(this);
 
@@ -138,7 +131,7 @@ void VideoGroup::setSingleWindow(bool s)
         if (!view)
             return;
 
-        foreach(VideoRenderer* const vo, mRenderers)
+        foreach (VideoRenderer* const vo, mRenderers)
         {
             view->layout()->removeWidget(vo->widget());
             vo->widget()->setParent(0);

@@ -63,18 +63,25 @@ public Q_SLOTS:
 
 private:
 
-    bool                        m1Window;
-    bool                        m1Frame;
-    bool                        mFrameless;
-    int                         r, c;
-    int                         timer_id;
-    QtAV::AVPlayerCore*             mpPlayer;
-    QWidget*                    view;
-    QWidget*                    mpBar;
-    QPushButton*                mpAdd, *mpRemove, *mpOpen, *mpPlay, *mpStop, *mpPause, *mp1Window;
-    QPushButton*                mp1Frame;
-    QPushButton*                mpFrameless;
-    QString                     vid;
+    bool                        m1Window    = false;
+    bool                        m1Frame     = true;
+    bool                        mFrameless  = false;
+    int                         r           = 3;
+    int                         c           = 3;
+    int                         timer_id    = 0;
+    QtAV::AVPlayerCore*         mpPlayer    = nullptr;
+    QWidget*                    view        = nullptr;
+    QWidget*                    mpBar       = nullptr;
+    QPushButton*                mpAdd       = nullptr;
+    QPushButton*                mpRemove    = nullptr;
+    QPushButton*                mpOpen      = nullptr;
+    QPushButton*                mpPlay      = nullptr;
+    QPushButton*                mpStop      = nullptr;
+    QPushButton*                mpPause     = nullptr;
+    QPushButton*                mp1Window   = nullptr;
+    QPushButton*                mp1Frame    = nullptr;
+    QPushButton*                mpFrameless = nullptr;
+    QString                     vid         = QString::fromLatin1("qpainter");
     QList<QtAV::VideoRenderer*> mRenderers;
 };
 
