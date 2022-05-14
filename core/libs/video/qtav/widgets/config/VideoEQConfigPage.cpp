@@ -42,7 +42,7 @@
 
 // Local includes
 
-#include "Slider.h"
+#include "AVPlayerSlider.h"
 
 namespace QtAV
 {
@@ -83,7 +83,7 @@ VideoEQConfigPage::VideoEQConfigPage(QWidget* const parent)
     for (int i = 0 ; sliders[i].slider ; ++i)
     {
         QLabel* const slabel  = new QLabel(sliders[i].text);
-        *sliders[i].slider    = new Slider();
+        *sliders[i].slider    = new AVPlayerSlider();
         QSlider* const slider = *sliders[i].slider;
         slider->setOrientation(Qt::Horizontal);
         slider->setTickInterval(2);

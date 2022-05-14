@@ -43,7 +43,7 @@ QT_END_NAMESPACE
 
 namespace QtAV
 {
-class Slider;
+class AVPlayerSlider;
 class AudioOutput;
 class AVError;
 class AVPlayerCore;
@@ -194,8 +194,8 @@ private:
     QLabel*                         mpEnd;
     QLabel*                         mpTitle;
     QLabel*                         mpSpeed;
-    QtAV::Slider*                   mpTimeSlider;
-    QtAV::Slider*                   mpVolumeSlider;
+    QtAV::AVPlayerSlider*           mpTimeSlider;
+    QtAV::AVPlayerSlider*           mpVolumeSlider;
     QToolButton*                    mpVolumeBtn;
     QToolButton*                    mpPlayPauseBtn;
     QToolButton*                    mpStopBtn;

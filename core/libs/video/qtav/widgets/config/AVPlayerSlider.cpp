@@ -22,9 +22,9 @@
  *
  * ============================================================ */
 
-#define CODE_FOR_CLICK 1 // 0 = old code, 1 = code copied from QSlider, 2 = button swap
+#define CODE_FOR_CLICK 1 // 0 = old code, 1 = code copied from QAVPlayerSlider, 2 = button swap
 
-#include "Slider.h"
+#include "AVPlayerSlider.h"
 
 // Qt includes
 
@@ -45,14 +45,14 @@
 namespace QtAV
 {
 
-Slider::Slider(QWidget* const parent)
+AVPlayerSlider::AVPlayerSlider(QWidget* const parent)
     : QSlider(parent)
 {
     setOrientation(Qt::Horizontal);
     setMouseTracking(true); // mouseMoveEvent without press.
 }
 
-Slider::~Slider()
+AVPlayerSlider::~AVPlayerSlider()
 {
 }
 
@@ -60,14 +60,14 @@ Slider::~Slider()
 
 // Function copied from qslider.cpp
 
-inline int Slider::pick(const QPoint& pt) const
+inline int AVPlayerSlider::pick(const QPoint& pt) const
 {
     return (orientation() == Qt::Horizontal ? pt.x() : pt.y());
 }
 
 // Function copied from qslider.cpp and modified to make it compile
 
-int Slider::pixelPosToRangeValue(int pos) const
+int AVPlayerSlider::pixelPosToRangeValue(int pos) const
 {
     QStyleOptionSlider opt;
     initStyleOption(&opt);
@@ -92,21 +92,21 @@ int Slider::pixelPosToRangeValue(int pos) const
                                            sliderMax - sliderMin, opt.upsideDown);
 }
 
-void Slider::enterEvent(QEvent* e)
+void AVPlayerSlider::enterEvent(QEvent* e)
 {
     Q_EMIT onEnter();
 
     QSlider::enterEvent(e);
 }
 
-void Slider::leaveEvent(QEvent* e)
+void AVPlayerSlider::leaveEvent(QEvent* e)
 {
     Q_EMIT onLeave();
 
     QSlider::leaveEvent(e);
 }
 
-void Slider::mouseMoveEvent(QMouseEvent* e)
+void AVPlayerSlider::mouseMoveEvent(QMouseEvent* e)
 {
     const int o = style()->pixelMetric(QStyle::PM_SliderLength ) - 1;
     int v       = QStyle::sliderValueFromPosition(minimum(), maximum(), e->pos().x() - o / 2, width() - o, false);
@@ -118,7 +118,7 @@ void Slider::mouseMoveEvent(QMouseEvent* e)
 
 // Based on code from qslider.cpp
 
-void Slider::mousePressEvent(QMouseEvent* e)
+void AVPlayerSlider::mousePressEvent(QMouseEvent* e)
 {
     qCDebug(DIGIKAM_AVPLAYER_LOG).noquote()
         << QString::asprintf("pressed (%d, %d)", e->pos().x(), e->pos().y());
@@ -160,7 +160,7 @@ void Slider::mousePressEvent(QMouseEvent* e)
 
 #if CODE_FOR_CLICK == 2
 
-void Slider::mousePressEvent(QMouseEvent* e)
+void AVPlayerSlider::mousePressEvent(QMouseEvent* e)
 {
     // Swaps middle button click with left click
 
@@ -186,7 +186,7 @@ void Slider::mousePressEvent(QMouseEvent* e)
 
 #if CODE_FOR_CLICK == 0
 
-void Slider::mousePressEvent(QMouseEvent* e)
+void AVPlayerSlider::mousePressEvent(QMouseEvent* e)
 {
     // FIXME:
     // The code doesn't work well with right to left layout,

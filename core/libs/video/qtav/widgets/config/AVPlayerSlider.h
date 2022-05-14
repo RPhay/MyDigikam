@@ -24,8 +24,8 @@
 
 // TODO: hover support (like youtube and ExMplayer timeline preview)
 
-#ifndef QTAV_WIDGETS_SLIDER_H
-#define QTAV_WIDGETS_SLIDER_H
+#ifndef QTAV_WIDGETS_AVPLAYER_SLIDER_H
+#define QTAV_WIDGETS_AVPLAYER_SLIDER_H
 
 // Qt includes
 
@@ -38,14 +38,14 @@
 namespace QtAV
 {
 
-class QTAV_WIDGETS_EXPORT Slider : public QSlider
+class QTAV_WIDGETS_EXPORT AVPlayerSlider : public QSlider
 {
     Q_OBJECT
 
 public:
 
-    explicit Slider(QWidget* const parent = nullptr);
-    ~Slider();
+    explicit AVPlayerSlider(QWidget* const parent = nullptr);
+    ~AVPlayerSlider();
 
 Q_SIGNALS:
 
@@ -59,16 +59,11 @@ protected:
     virtual void leaveEvent(QEvent* e);
     virtual void mouseMoveEvent(QMouseEvent* e);
     virtual void mousePressEvent(QMouseEvent* e);
-/*
-#if CODE_FOR_CLICK == 1
-*/
+
     inline int pick(const QPoint& pt)                       const;
     int pixelPosToRangeValue(int pos)                       const;
-/*
-#endif
-*/
 };
 
 } // namespace QtAV
 
-#endif // QTAV_WIDGETS_SLIDER_H
+#endif // QTAV_WIDGETS_AVPLAYER_SLIDER_H

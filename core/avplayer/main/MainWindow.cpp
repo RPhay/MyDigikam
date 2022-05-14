@@ -66,7 +66,7 @@
 #include "VideoShaderObject.h"
 #include "QtAVWidgets.h"
 #include "ClickableMenu.h"
-#include "Slider.h"
+#include "AVPlayerSlider.h"
 #include "StatisticsView.h"
 #include "DecoderConfigPage.h"
 #include "VideoEQConfigPage.h"
@@ -342,7 +342,7 @@ void MainWindow::setupUi()
 
     //mpPreview = new QLable(this);
 
-    mpTimeSlider                    = new Slider(mpControl);
+    mpTimeSlider                    = new AVPlayerSlider(mpControl);
     mpTimeSlider->setDisabled(true);
     mpTimeSlider->setTracking(true);
     mpTimeSlider->setOrientation(Qt::Horizontal);
@@ -385,7 +385,7 @@ void MainWindow::setupUi()
     mpVolumeBtn->setToolTip(i18nc("@info: button", "Volume"));
     mpVolumeBtn->setIcon(QIcon::fromTheme(QLatin1String("player-volume")));
 
-    mpVolumeSlider                  = new Slider();
+    mpVolumeSlider                  = new AVPlayerSlider();
     mpVolumeSlider->hide();
     mpVolumeSlider->setOrientation(Qt::Horizontal);
     mpVolumeSlider->setMinimum(0);

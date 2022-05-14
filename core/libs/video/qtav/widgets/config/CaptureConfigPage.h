@@ -43,7 +43,7 @@ namespace QtAV
  * virtual public slot: apply()
  */
 
-class Slider;
+class AVPlayerSlider;
 
 class QTAV_WIDGETS_EXPORT CaptureConfigPage : public ConfigPageBase
 {
@@ -68,9 +68,9 @@ private Q_SLOTS:
 
 private:
 
-    QLineEdit* mpDir;
-    QComboBox* mpFormat;
-    Slider*    mpQuality;
+    QLineEdit*      mpDir;
+    QComboBox*      mpFormat;
+    AVPlayerSlider* mpQuality;
 };
 
 } // namespace QtAV

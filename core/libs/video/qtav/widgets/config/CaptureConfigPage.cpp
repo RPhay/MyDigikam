@@ -40,7 +40,7 @@
 // Local includes
 
 #include "AVPlayerConfigMngr.h"
-#include "Slider.h"
+#include "AVPlayerSlider.h"
 #include "digikam_debug.h"
 
 namespace QtAV
@@ -81,7 +81,7 @@ CaptureConfigPage::CaptureConfigPage(QWidget* const parent)
         mpFormat->addItem(QString::fromLatin1(fmt));
     }
 
-    mpQuality       = new Slider();
+    mpQuality       = new AVPlayerSlider();
     formLayout->addRow(i18n("Quality"), mpQuality);
     mpQuality->setRange(0, 100);
     mpQuality->setOrientation(Qt::Horizontal);
