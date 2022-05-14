@@ -127,12 +127,6 @@ MiscPage::MiscPage(bool previewOpt)
     m_egl                 = new QCheckBox();
     m_egl->setToolTip(i18n("Currently only works for Qt>=5.5 XCB build"));
 
-#if QT_VERSION < QT_VERSION_CHECK(5, 5, 0) || !defined(Q_OS_LINUX)
-
-    m_egl->setEnabled(false);
-
-#endif
-
     gl->addWidget(m_egl, r++, 1);
 }
 
@@ -165,9 +159,9 @@ void MiscPage::applyToUi()
     m_angle_platform->setCurrentIndex(m_angle_platform->findText(AVPlayerConfigMngr::instance().getANGLEPlatform().toUpper()));
     m_egl->setChecked(AVPlayerConfigMngr::instance().isEGL());
     m_fps->setValue(AVPlayerConfigMngr::instance().forceFrameRate());
-
-    //m_notify_interval->setValue(AVPlayerConfigMngr::instance().avfilterOptions());
-
+/*
+    m_notify_interval->setValue(AVPlayerConfigMngr::instance().avfilterOptions());
+*/
     m_buffer_value->setValue(AVPlayerConfigMngr::instance().bufferValue());
     m_timeout->setValue(AVPlayerConfigMngr::instance().timeout());
     m_timeout_abort->setChecked(AVPlayerConfigMngr::instance().abortOnTimeout());

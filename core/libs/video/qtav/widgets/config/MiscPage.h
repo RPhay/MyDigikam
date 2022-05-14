@@ -56,17 +56,17 @@ protected:
 
 private:
 
-    QCheckBox*      m_preview_on;
-    QSpinBox*       m_preview_w;
-    QSpinBox*       m_preview_h;
-    QSpinBox*       m_notify_interval;
-    QDoubleSpinBox* m_fps;
-    QSpinBox*       m_buffer_value;
-    QDoubleSpinBox* m_timeout;
-    QCheckBox*      m_timeout_abort;
-    QComboBox*      m_opengl;
-    QComboBox*      m_angle_platform;
-    QCheckBox*      m_egl;
+    QCheckBox*      m_preview_on      = nullptr;
+    QSpinBox*       m_preview_w       = nullptr;
+    QSpinBox*       m_preview_h       = nullptr;
+    QSpinBox*       m_notify_interval = nullptr;
+    QDoubleSpinBox* m_fps             = nullptr;
+    QSpinBox*       m_buffer_value    = nullptr;
+    QDoubleSpinBox* m_timeout         = nullptr;
+    QCheckBox*      m_timeout_abort   = nullptr;
+    QComboBox*      m_opengl          = nullptr;
+    QComboBox*      m_angle_platform  = nullptr;
+    QCheckBox*      m_egl             = nullptr;
 };
 
 } // namespace QtAV

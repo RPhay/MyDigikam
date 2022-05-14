@@ -338,7 +338,9 @@ void DecoderConfigPage::applyFromUi()
         decs_all.append(w->name());
 
         if (w->isChecked())
+        {
             decs.append(w->name());
+        }
     }
 
     sPriorityUi = idsFromNames(decs);
@@ -432,7 +434,7 @@ void DecoderConfigPage::priorityDown()
 
     int i = mDecItems.indexOf(mpSelectedDec);
 
-    if (i == mDecItems.size()-1)
+    if (i == (mDecItems.size() - 1))
     {
         return;
     }
@@ -499,13 +501,13 @@ void DecoderConfigPage::updateDecodersUi()
 */
     int idx = 0;
 
-    foreach (const QString& name, all_names)
+    foreach (const QString& nm, all_names)
     {
         DecoderItemWidget* iw = nullptr;
 
         for (int i = idx ; i < mDecItems.size() ; ++i)
         {
-            if (mDecItems.at(i)->name() != name)
+            if (mDecItems.at(i)->name() != nm)
             {
                continue;
             }
@@ -564,14 +566,14 @@ QVector<VideoDecoderId> DecoderConfigPage::idsFromNames(const QStringList& names
 {
     QVector<VideoDecoderId> decs;
 
-    foreach (const QString& name, names)
+    foreach (const QString& nm, names)
     {
-        if (name.isEmpty())
+        if (nm.isEmpty())
         {
             continue;
         }
 
-        VideoDecoderId id = VideoDecoder::id(name.toLatin1().constData());
+        VideoDecoderId id = VideoDecoder::id(nm.toLatin1().constData());
 
         if (id == 0)
         {
