@@ -59,7 +59,7 @@ static QVector<QtAV::VideoDecoderId> sPriorityUi;
 
 // -------------------------------------------------------------------------
 
-class DecoderConfigPage::DecoderItemWidget : public QFrame
+class Q_DECL_HIDDEN DecoderConfigPage::DecoderItemWidget : public QFrame
 {
     Q_OBJECT
 
@@ -68,8 +68,6 @@ public:
     DecoderItemWidget(QWidget* const parent = nullptr, bool advOptVisible = true)
         : QFrame(parent)
     {
-        mpEditorWidget = nullptr;
-
         // why no frame?
 
         setFrameStyle(QFrame::Panel | QFrame::Raised);
@@ -197,11 +195,11 @@ protected:
 
 private:
 
-    bool            mSelected;
-    QCheckBox*      mpCheck;
-    QLabel*         mpDesc;
-    PropertyEditor* mpEditor;
-    QWidget*        mpEditorWidget;
+    bool            mSelected      = false;
+    QCheckBox*      mpCheck        = nullptr;
+    QLabel*         mpDesc         = nullptr;
+    PropertyEditor* mpEditor       = nullptr;
+    QWidget*        mpEditorWidget = nullptr;
 };
 
 // -------------------------------------------------------------------------
@@ -209,7 +207,6 @@ private:
 DecoderConfigPage::DecoderConfigPage(QWidget* const parent, bool advOptVisible)
     : ConfigPageBase(parent)
 {
-    mpSelectedDec                           = nullptr;
     setWindowTitle(i18nc("@title", "Video decoder config page"));
     QVBoxLayout* const vbs                  = new QVBoxLayout(this);
     QSpacerItem* const horizontalSpacer     = new QSpacerItem(320, 0, QSizePolicy::Minimum, QSizePolicy::Minimum);
@@ -462,8 +459,8 @@ void DecoderConfigPage::priorityDown()
         }
     }
 
-    sDecodersUi = idsFromNames(decs_all);
-    sPriorityUi = idsFromNames(decs);
+    sDecodersUi                 = idsFromNames(decs_all);
+    sPriorityUi                 = idsFromNames(decs);
 
     if (applyOnUiChange())
     {
@@ -478,7 +475,7 @@ void DecoderConfigPage::priorityDown()
     }
 }
 
-void DecoderConfigPage::onDecSelected(DecoderItemWidget *iw)
+void DecoderConfigPage::onDecSelected(DecoderItemWidget* iw)
 {
     if (mpSelectedDec == iw)
     {

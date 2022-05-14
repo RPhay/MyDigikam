@@ -80,12 +80,12 @@ private Q_SLOTS:
 
 private:
 
-    QSpinBox*                   mpThreads;
-    QToolButton*                mpUp;
-    QToolButton*                mpDown;
+    QSpinBox*                   mpThreads       = nullptr;
+    QToolButton*                mpUp            = nullptr;
+    QToolButton*                mpDown          = nullptr;
     QList<DecoderItemWidget*>   mDecItems;
-    DecoderItemWidget*          mpSelectedDec;
-    QVBoxLayout*                mpDecLayout;
+    DecoderItemWidget*          mpSelectedDec   = nullptr;
+    QVBoxLayout*                mpDecLayout     = nullptr;
 };
 
 } // namespace QtAV
