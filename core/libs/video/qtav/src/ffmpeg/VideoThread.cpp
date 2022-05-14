@@ -51,10 +51,6 @@ public:
 
     VideoThreadPrivate():
         AVThreadPrivate()
-      , force_fps(0)
-      , force_dt(0)
-      , capture(nullptr)
-      , filter_context(nullptr)
     {
     }
 
@@ -69,26 +65,28 @@ public:
         }
     }
 
+public:
+
     VideoFrameConverter conv;
-    qreal               force_fps;      // <=0: try to use pts. if no pts in stream(guessed by 5 packets), use |force_fps|
+    qreal               force_fps       = 0;        ///< <=0: try to use pts. if no pts in stream(guessed by 5 packets), use |force_fps|
 
     // not const.
-    int                 force_dt;       // unit: ms. force_fps = 1/force_dt.
+    int                 force_dt        = 0;        ///< unit: ms. force_fps = 1/force_dt.
 
-    double              pts;            // current decoded pts. for capture. TODO: remove
-    VideoCapture*       capture;
-    VideoFilterContext* filter_context; // TODO: use own smart ptr. QSharedPointer "=" is ugly
+    double              pts             = 0.0;      ///< current decoded pts. for capture. TODO: remove
+    VideoCapture*       capture         = nullptr;
+    VideoFilterContext* filter_context  = nullptr;  ///< TODO: use own smart ptr. QSharedPointer "=" is ugly
     VideoFrame          displayed_frame;
 };
 
-VideoThread::VideoThread(QObject *parent) :
-    AVThread(*new VideoThreadPrivate(), parent)
+VideoThread::VideoThread(QObject* parent)
+    : AVThread(*new VideoThreadPrivate(), parent)
 {
 }
 
 // it is called in main thread usually, but is being used in video thread,
 
-VideoCapture* VideoThread::setVideoCapture(VideoCapture *cap)
+VideoCapture* VideoThread::setVideoCapture(VideoCapture* const cap)
 {
     qCDebug(DIGIKAM_QTAV_LOG).noquote() << QString::asprintf("setCapture %p", cap);
     DPTR_D(VideoThread);
@@ -133,14 +131,14 @@ void VideoThread::addCaptureTask()
     {
     public:
 
-        CaptureTask(VideoThread *vt)
+        CaptureTask(VideoThread* const vt)
             : vthread(vt)
         {
         }
 
         void run()
         {
-            VideoCapture *vc = vthread->videoCapture();
+            VideoCapture* const vc = vthread->videoCapture();
 
             if (!vc)
                 return;
@@ -155,7 +153,7 @@ void VideoThread::addCaptureTask()
 
     private:
 
-        VideoThread *vthread;
+        VideoThread* vthread = nullptr;
     };
 
     scheduleTask(new CaptureTask(this));
@@ -208,7 +206,7 @@ void VideoThread::setEQ(int b, int c, int s)
     {
     public:
 
-        EQTask(VideoFrameConverter *c)
+        EQTask(VideoFrameConverter* const c)
             : brightness(0)
             , contrast(0)
             , saturation(0)
@@ -222,11 +220,15 @@ void VideoThread::setEQ(int b, int c, int s)
             conv->setEq(brightness, contrast, saturation);
         }
 
-        int brightness, contrast, saturation;
+    public:
+
+        int brightness            = 0;
+        int contrast              = 0;
+        int saturation            = 0;
 
     private:
 
-        VideoFrameConverter *conv;
+        VideoFrameConverter* conv = nullptr;
     };
 
     DPTR_D(VideoThread);
@@ -248,7 +250,7 @@ void VideoThread::setEQ(int b, int c, int s)
     }
 }
 
-void VideoThread::applyFilters(VideoFrame &frame)
+void VideoThread::applyFilters(VideoFrame& frame)
 {
     DPTR_D(VideoThread);
 
@@ -259,9 +261,9 @@ void VideoThread::applyFilters(VideoFrame &frame)
     {
         // sort filters by format. vo->defaultFormat() is the last
 
-        foreach (Filter *filter, d.filters)
+        foreach (Filter* const filter, d.filters)
         {
-            VideoFilter *vf = static_cast<VideoFilter*>(filter);
+            VideoFilter* const vf = static_cast<VideoFilter*>(filter);
 
             if (!vf->isEnabled())
                 continue;
@@ -284,8 +286,8 @@ bool VideoThread::deliverVideoFrame(VideoFrame &frame)
      */
 
     d.outputSet->lock();
-    QList<AVOutput *> outputs = d.outputSet->outputs();
-    VideoRenderer *vo         = nullptr;
+    QList<AVOutput*> outputs = d.outputSet->outputs();
+    VideoRenderer* vo        = nullptr;
 
     if (!outputs.isEmpty())
         vo = static_cast<VideoRenderer*>(outputs.first());
@@ -340,9 +342,9 @@ void VideoThread::run()
     // not necessary context is managed by filters.
 
     d.filter_context           = VideoFilterContext::create(VideoFilterContext::QtPainter);
-    VideoDecoder *dec          = static_cast<VideoDecoder*>(d.dec);
+    VideoDecoder* dec          = static_cast<VideoDecoder*>(d.dec);
     Packet pkt;
-    QVariantHash *dec_opt      = &d.dec_opt_normal; // TODO: restore old framedrop option after seek
+    QVariantHash* dec_opt      = &d.dec_opt_normal; // TODO: restore old framedrop option after seek
 
     /*!
      * if we skip some frames(e.g. seek, drop frames to speed up), then first frame to decode must
@@ -420,7 +422,7 @@ void VideoThread::run()
             {
                 qCDebug(DIGIKAM_QTAV_LOG).noquote() << QString::asprintf("video thread wait to sync end for sync id: %d", d.clock->syncId());
 
-                if (d.render_pts0 < 0 && sync_id > 0)
+                if ((d.render_pts0 < 0) && (sync_id > 0))
                 {
                     msleep(10);
                     v_a = 0;
@@ -438,7 +440,7 @@ void VideoThread::run()
         {
             // can't seek back if eof packet is read
 
-            pkt = d.packets.take(); //wait to dequeue
+            pkt = d.packets.take(); // wait to dequeue
 
             // TODO: push pts history here and reorder
         }
@@ -479,7 +481,7 @@ void VideoThread::run()
             }
         }
 
-        if (pkt.pts <= 0 && !pkt.isEOF() && pkt.data.size() > 0)
+        if ((pkt.pts <= 0) && !pkt.isEOF() && (pkt.data.size() > 0))
         {
             nb_no_pts++;
         }
@@ -490,7 +492,10 @@ void VideoThread::run()
 
         if (nb_no_pts > 5)
         {
-            qCDebug(DIGIKAM_QTAV_LOG).noquote() << QString::asprintf("the stream may have no pts. force fps to: %f/%f", d.force_fps < 0 ? -d.force_fps : 24, d.force_fps);
+            qCDebug(DIGIKAM_QTAV_LOG).noquote()
+                << QString::asprintf("the stream may have no pts. force fps to: %f/%f",
+                    d.force_fps < 0 ? -d.force_fps : 24, d.force_fps);
+
             d.clock->setClockAuto(false);
             d.clock->setClockType(AVClock::VideoClock);
 
@@ -521,12 +526,12 @@ void VideoThread::run()
         // TODO: delta ref time
         // if dts is invalid, diff can be very small (<0) and video will be decoded and rendered(display_wait is disabled for now) immediately
 
-        qreal diff = dts > 0 ? dts - d.clock->value() + v_a : v_a;
+        qreal diff = (dts > 0) ? dts - d.clock->value() + v_a : v_a;
 
         if (pkt.isEOF())
             diff = qMin<qreal>(1.0, qMax<qreal>(d.delay, 1.0 / d.statistics->video_only.currentDisplayFPS()));
 
-        if (diff < 0 && sync_video)
+        if ((diff < 0) && sync_video)
             diff = 0; // this ensures no frame drop
 
         if (diff > kSyncThreshold)
@@ -548,13 +553,13 @@ void VideoThread::run()
 
         //qCDebug(DIGIKAM_QTAV_LOG).noquote() << QString::asprintf("nb_fast/slow: %d/%d. diff: %f, delay: %f, dts: %f, clock: %f", nb_dec_fast, nb_dec_slow, diff, d.delay, dts, clock()->value());
 
-        if (d.delay < -0.5 && d.delay > diff)
+        if ((d.delay < -0.5) && (d.delay > diff))
         {
             if (!seeking)
             {
                 // ensure video will not later than 2s
 
-                if (diff < -2 || (nb_dec_slow > kNbSlowSkip && diff < -1.0 && !pkt.hasKeyFrame))
+                if ((diff < -2) || ((nb_dec_slow > kNbSlowSkip) && (diff < -1.0) && !pkt.hasKeyFrame))
                 {
                     qCDebug(DIGIKAM_QTAV_LOG).noquote() << QString::asprintf("video is too slow. skip decoding until next key frame.");
 
@@ -572,7 +577,9 @@ void VideoThread::run()
                 else
                 {
                     nb_dec_slow++;
-                    qCDebug(DIGIKAM_QTAV_LOG).noquote() << QString::asprintf("frame slow count: %d. v-a: %.3f", nb_dec_slow, diff);
+
+                    qCDebug(DIGIKAM_QTAV_LOG).noquote()
+                        << QString::asprintf("frame slow count: %d. v-a: %.3f", nb_dec_slow, diff);
                 }
             }
         }
@@ -580,7 +587,9 @@ void VideoThread::run()
         {
             if (nb_dec_slow >= kNbSlowFrameDrop)
             {
-                qCDebug(DIGIKAM_QTAV_LOG).noquote() << QString::asprintf("decrease 1 slow frame: %d", nb_dec_slow);
+                qCDebug(DIGIKAM_QTAV_LOG).noquote()
+                    << QString::asprintf("decrease 1 slow frame: %d", nb_dec_slow);
+
                 nb_dec_slow = qMax(0, nb_dec_slow-1); // nb_dec_slow < kNbSlowFrameDrop will reset decoder frame drop flag
             }
         }
@@ -596,13 +605,13 @@ void VideoThread::run()
         if (seeking)
             diff = 0; // TODO: here?
 
-        if (!sync_audio && diff > 0)
+        if (!sync_audio && (diff > 0))
         {
             // wait to dts reaches
             // d.force_fps>0: wait after decoded before deliver
 
             if (d.force_fps <= 0)// || !qFuzzyCompare(d.clock->speed(), 1.0))
-                waitAndCheck(diff*1000UL, dts); // TODO: count decoding and filter time, or decode immediately but wait for display
+                waitAndCheck(diff * 1000UL, dts); // TODO: count decoding and filter time, or decode immediately but wait for display
 
             diff = 0; // TODO: can not change delay!
         }
@@ -624,19 +633,24 @@ void VideoThread::run()
         {
             // when to drop off?
 
-            qCDebug(DIGIKAM_QTAV_LOG).noquote() << QString::asprintf("delay %fs @%.3fs pts:%.3f", diff, d.clock->value(), pkt.pts);
+            qCDebug(DIGIKAM_QTAV_LOG).noquote()
+                << QString::asprintf("delay %fs @%.3fs pts:%.3f", diff, d.clock->value(), pkt.pts);
 
             if (diff < 0)
             {
                 if (nb_dec_slow > kNbSlowSkip)
                 {
-                    skip_render = !pkt.hasKeyFrame && (nb_dec_slow %2);
+                    skip_render = !pkt.hasKeyFrame && (nb_dec_slow % 2);
                 }
             }
             else
             {
-                const double s = qMin<qreal>(0.01*(nb_dec_fast>>1), diff);
-                qCWarning(DIGIKAM_QTAV_LOG_WARN).noquote() << QString::asprintf("video too fast!!! sleep %.2f s, nb fast: %d, v_a: %.4f", s, nb_dec_fast, v_a);
+                const double s = qMin<qreal>(0.01 * (nb_dec_fast >> 1), diff);
+
+                qCWarning(DIGIKAM_QTAV_LOG_WARN).noquote()
+                    << QString::asprintf("video too fast!!! sleep %.2f s, nb fast: %d, v_a: %.4f",
+                        s, nb_dec_fast, v_a);
+
                 waitAndCheck(s*1000UL, dts);
                 diff           = 0;
                 skip_render    = false;
@@ -645,7 +659,7 @@ void VideoThread::run()
 
         // audio packet not cleaned up?
 
-        if (diff > 0 && diff < 1.0 && !seeking)
+        if ((diff > 0) && (diff < 1.0) && !seeking)
         {
             // can not change d.delay here! we need it to comapre to next loop
 
@@ -656,7 +670,10 @@ void VideoThread::run()
         {
             if (!pkt.hasKeyFrame)
             {
-                qCDebug(DIGIKAM_QTAV_LOG).noquote() << QString::asprintf("waiting for key frame. queue size: %d. pkt.size: %d", d.packets.size(), pkt.data.size());
+                qCDebug(DIGIKAM_QTAV_LOG).noquote()
+                    << QString::asprintf("waiting for key frame. queue size: %d. pkt.size: %d",
+                        d.packets.size(), pkt.data.size());
+
                 pkt = Packet();
                 v_a = 0;
 
@@ -666,20 +683,26 @@ void VideoThread::run()
             wait_key_frame = false;
         }
 
-        QVariantHash *dec_opt_old = dec_opt;
+        QVariantHash* dec_opt_old = dec_opt;
 
         if (!seeking || pkt.pts - d.render_pts0 >= -0.05)
         {
             // MAYBE not seeking. We should not drop the frames near the seek target. FIXME: use packet pts distance instead of -0.05 (20fps)
 
             if (seeking)
-                qCDebug(DIGIKAM_QTAV_LOG).noquote() << QString::asprintf("seeking... pkt.pts - d.render_pts0: %.3f", pkt.pts - d.render_pts0);
+            {
+                qCDebug(DIGIKAM_QTAV_LOG).noquote()
+                    << QString::asprintf("seeking... pkt.pts - d.render_pts0: %.3f",
+                        pkt.pts - d.render_pts0);
+            }
 
             if (nb_dec_slow < kNbSlowFrameDrop)
             {
                 if (dec_opt == &d.dec_opt_framedrop)
                 {
-                    qCDebug(DIGIKAM_QTAV_LOG).noquote() << QString::asprintf("frame drop=>normal. nb_dec_slow: %d", nb_dec_slow);
+                    qCDebug(DIGIKAM_QTAV_LOG).noquote()
+                        << QString::asprintf("frame drop=>normal. nb_dec_slow: %d", nb_dec_slow);
+
                     dec_opt = &d.dec_opt_normal;
                 }
             }
@@ -687,7 +710,9 @@ void VideoThread::run()
             {
                 if (dec_opt == &d.dec_opt_normal)
                 {
-                    qCDebug(DIGIKAM_QTAV_LOG).noquote() << QString::asprintf("frame drop=>noref. nb_dec_slow: %d too slow", nb_dec_slow);
+                    qCDebug(DIGIKAM_QTAV_LOG).noquote()
+                        << QString::asprintf("frame drop=>noref. nb_dec_slow: %d too slow", nb_dec_slow);
+
                     dec_opt = &d.dec_opt_framedrop;
                 }
             }
@@ -696,11 +721,14 @@ void VideoThread::run()
         {
             // seeking
 
-            if (seek_count > 0 && d.drop_frame_seek)
+            if ((seek_count > 0) && d.drop_frame_seek)
             {
                 if (dec_opt == &d.dec_opt_normal)
                 {
-                    qCDebug(DIGIKAM_QTAV_LOG).noquote() << QString::asprintf("seeking... pkt.pts - d.render_pts0: %.3f, frame drop=>noref. nb_dec_slow: %d", pkt.pts - d.render_pts0, nb_dec_slow);
+                    qCDebug(DIGIKAM_QTAV_LOG).noquote() <<
+                        QString::asprintf("seeking... pkt.pts - d.render_pts0: %.3f, frame drop=>noref. nb_dec_slow: %d",
+                            pkt.pts - d.render_pts0, nb_dec_slow);
+
                     dec_opt = &d.dec_opt_framedrop;
                 }
             }
@@ -740,11 +768,14 @@ void VideoThread::run()
             {
                 Q_EMIT eofDecoded();
 
-                qCDebug(DIGIKAM_QTAV_LOG).noquote() << QString::asprintf("video decode eof done. d.render_pts0: %.3f", d.render_pts0);
+                qCDebug(DIGIKAM_QTAV_LOG).noquote()
+                    << QString::asprintf("video decode eof done. d.render_pts0: %.3f", d.render_pts0);
 
                 if (d.render_pts0 >= 0)
                 {
-                    qCDebug(DIGIKAM_QTAV_LOG).noquote() << QString::asprintf("video seek done at eof pts: %.3f. id: %d", d.pts_history.back(), sync_id);
+                    qCDebug(DIGIKAM_QTAV_LOG).noquote()
+                        << QString::asprintf("video seek done at eof pts: %.3f. id: %d", d.pts_history.back(), sync_id);
+
                     d.render_pts0 = -1;
                     d.clock->syncEndOnce(sync_id);
 
@@ -774,7 +805,9 @@ void VideoThread::run()
 
         if (!frame.isValid())
         {
-            qCWarning(DIGIKAM_QTAV_LOG_WARN).noquote() << QString::asprintf("invalid video frame from decoder. undecoded data size: %d", pkt.data.size());
+            qCWarning(DIGIKAM_QTAV_LOG_WARN).noquote()
+                << QString::asprintf("invalid video frame from decoder. undecoded data size: %d",
+                    pkt.data.size());
 
             if (pkt_data == pkt.data.constData()) // FIXME: for libav9. what about other versions?
                 pkt = Packet();
@@ -878,7 +911,7 @@ void VideoThread::run()
 
             const qreal display_wait = pts - clock()->value();
 
-            if (!seeking && display_wait > 0.0)
+            if (!seeking && (display_wait > 0.0))
             {
                 // wait to pts reaches. TODO: count rendering time
 
@@ -935,7 +968,7 @@ void VideoThread::run()
                         v_a = (v_a_ +v_a)*0.5;
                 }
 
-                if (v_a < -2 || v_a > 2)
+                if ((v_a < -2) || (v_a > 2))
                    v_a /= 2.0;
             }
 
