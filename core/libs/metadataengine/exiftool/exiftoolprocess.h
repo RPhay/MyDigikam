@@ -135,7 +135,7 @@ public:
      */
     void changeProgram(const QString& etExePath);
 
-    QString program() const;
+    QString exifToolProgram() const;
 
     bool checkExifToolProgram();
 
@@ -147,7 +147,7 @@ public:
     bool                   isRunning()                  const;
 
     /**
-     * Returns true if a command is running
+     * Returns true if a command is running.
      */
     bool                   isBusy()                     const;
 
@@ -162,8 +162,9 @@ public:
     QString                errorString()                const;
 
     /**
-     * Send a command to exiftool process
-     * Return 0: ExitTool not running, write channel is closed or args is empty
+     * Send a command to exiftool process.
+     * This function can be called from another thread.
+     * Return 0: ExitTool not running, write channel is closed or args is empty.
      */
     int command(const QByteArrayList& args, Action ac);
 
@@ -195,13 +196,11 @@ public Q_SLOTS:
 
     /**
      * Apply settings and start ExifTool process.
-     * This function can only be called from the ExifTool thread.
+     * This function cannot be called from another thread.
      */
     void slotApplySettingsAndStart();
 
 private:
-
-    void setProgram(const QString& etExePath);
 
     /**
      * Starts exiftool in a new process.
@@ -221,6 +220,8 @@ private:
     void killExifTool();
 
     QString exifToolBin()                               const;
+
+    void setExifToolProgram(const QString& etExePath);
 
 Q_SIGNALS:
 

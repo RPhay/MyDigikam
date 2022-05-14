@@ -86,6 +86,11 @@ void ExifToolProcess::Private::execNextCmd()
 
 void ExifToolProcess::Private::readOutput(const QProcess::ProcessChannel channel)
 {
+    if (cmdRunning == 0)
+    {
+        return;
+    }
+
     pp->setReadChannel(channel);
 
     while (pp->canReadLine() && !outReady[channel])
