@@ -418,7 +418,7 @@ void FaceGroup::slotAssigned(const TaggingAction& action, const ItemInfo&, const
 
     FaceItem* const item    = d->items[faceList[4].toInt()];
     FaceTagsIface face      = item->face();
-    TagRegion currentRegion = TagRegion(item->originalRect());
+    TagRegion currentRegion(item->originalRect());
 
     if (
             !face.isConfirmedName()          ||
@@ -500,9 +500,33 @@ void FaceGroup::slotIgnored(const ItemInfo&, const QVariant& faceIdentifier)
     if (faceList.size() == 5)
     {
         FaceItem* const item = d->items[faceList[4].toInt()];
-        FaceTagsIface face   = d->editPipeline.editTag(d->info,
-                                                       item->face(),
-                                                       FaceTags::ignoredPersonTagId());
+        QRect faceRect       = item->originalRect();
+        FaceTagsIface face(item->face());
+
+        if (!d->exifRotate)
+        {
+            TagRegion::adjustToOrientation(faceRect,
+                                           d->info.orientation(),
+                                           d->info.dimensions());
+        }
+
+        TagRegion currentRegion(faceRect);
+
+        if (face.region() != currentRegion)
+        {
+            DImg preview(d->view->previewItem()->image().copy());
+
+            if (!d->exifRotate)
+            {
+                preview.rotateAndFlip(d->info.orientation());
+            }
+
+            face = d->editPipeline.editRegion(d->info, preview,
+                                              face, currentRegion);
+        }
+
+        face = d->editPipeline.editTag(d->info, face,
+                                       FaceTags::ignoredPersonTagId());
 
         item->setFace(face);
         item->switchMode(AssignNameWidget::IgnoredMode);
@@ -658,7 +682,10 @@ void FaceGroup::applyItemGeometryChanges()
 
         if (item->face().region() != currentRegion)
         {
-            d->editPipeline.editRegion(d->info, preview, item->face(), currentRegion);
+            d->editPipeline.editRegion(d->info,
+                                       preview,
+                                       item->face(),
+                                       currentRegion);
         }
     }
 }
