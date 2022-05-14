@@ -48,12 +48,7 @@ using namespace QtAV;
 const int kSyncInterval = 2000;
 
 VideoWall::VideoWall(QObject* const parent)
-    : QObject(parent),
-      r(3),
-      c(3),
-      view(0),
-      menu(0),
-      vid(QString::fromLatin1("qpainter"))
+    : QObject(parent)
 {
     QtAV::Widgets::registerRenderers();
     clock = new AVClock(this);
@@ -62,7 +57,9 @@ VideoWall::VideoWall(QObject* const parent)
 
     if (view)
     {
-        qCDebug(DIGIKAM_TESTS_LOG).noquote() << QString::asprintf("WA_OpaquePaintEvent=%d", view->testAttribute(Qt::WA_OpaquePaintEvent));
+        qCDebug(DIGIKAM_TESTS_LOG).noquote()
+            << QString::asprintf("WA_OpaquePaintEvent=%d", view->testAttribute(Qt::WA_OpaquePaintEvent));
+
         view->resize(qApp->desktop()->size());
         view->move(QPoint(0, 0));
         view->show();
@@ -81,7 +78,7 @@ VideoWall::~VideoWall()
 
     if (!players.isEmpty())
     {
-        foreach (AVPlayerCore* player, players)
+        foreach (AVPlayerCore* const player, players)
         {
             player->stop();
             VideoRenderer* renderer = player->renderer();
@@ -158,7 +155,7 @@ void VideoWall::show()
 
     if (view)
     {
-        QGridLayout* layout = new QGridLayout;
+        QGridLayout* const layout = new QGridLayout;
         layout->setSizeConstraint(QLayout::SetMaximumSize);
         layout->setSpacing(1);
         layout->setContentsMargins(0, 0, 0, 0);
@@ -184,7 +181,7 @@ void VideoWall::show()
     {
         for (int j = 0 ; j < c ; ++j)
         {
-            VideoRenderer* renderer = VideoRenderer::create(v);
+            VideoRenderer* const renderer = VideoRenderer::create(v);
             renderer->widget()->setWindowFlags(renderer->widget()->windowFlags()| Qt::FramelessWindowHint);
             renderer->widget()->setAttribute(Qt::WA_DeleteOnClose);
             renderer->widget()->resize(w, h);
@@ -203,7 +200,7 @@ void VideoWall::show()
     }
 }
 
-void VideoWall::play(const QString &file)
+void VideoWall::play(const QString& file)
 {
     if (players.isEmpty())
         return;
@@ -270,15 +267,15 @@ void VideoWall::openUrl()
 
 void VideoWall::about()
 {
-    QMessageBox::about(0, QLatin1String("About QtAV"), QString::fromLatin1("<h3>%1</h3>\n\n%2")
+    QMessageBox::about(nullptr, QLatin1String("About QtAV"), QString::fromLatin1("<h3>%1</h3>\n\n%2")
                        .arg(QLatin1String("This is a demo for playing and synchronising multiple players"))
                        .arg(aboutQtAV_HTML()));
 }
 
 void VideoWall::help()
 {
-    QMessageBox::about(0, QLatin1String("Help"),
-                        QLatin1String("Command line: %1 [-r rows=3] [-c cols=3] path/of/video\n").arg(qApp->applicationFilePath())
+    QMessageBox::about(nullptr, QLatin1String("Help"),
+                       QLatin1String("Command line: %1 [-r rows=3] [-c cols=3] path/of/video\n").arg(qApp->applicationFilePath())
                        + QLatin1String("Drag and drop a file to player\n")
                        + QLatin1String("Shortcut:\n")
                        + QLatin1String("Space: pause/continue\n")
@@ -311,8 +308,8 @@ bool VideoWall::eventFilter(QObject *watched, QEvent *event)
 
             // avoid receive an event multiple times
 
-            QKeyEvent* key_event = static_cast<QKeyEvent*>(event);
-            int key              = key_event->key();
+            QKeyEvent* const key_event      = static_cast<QKeyEvent*>(event);
+            int key                         = key_event->key();
             Qt::KeyboardModifiers modifiers = key_event->modifiers();
 
             switch (key)
@@ -490,7 +487,7 @@ bool VideoWall::eventFilter(QObject *watched, QEvent *event)
 
         case QEvent::ContextMenu:
         {
-            QContextMenuEvent *e = static_cast<QContextMenuEvent*>(event);
+            QContextMenuEvent* const e = static_cast<QContextMenuEvent*>(event);
 
             if (!menu)
             {
@@ -555,7 +552,7 @@ void VideoWall::timerEvent(QTimerEvent *e)
         return;
     }
 
-    foreach (AVPlayerCore *player, players)
+    foreach (AVPlayerCore* const player, players)
     {
         player->masterClock()->updateExternalClock(*clock);
     }
@@ -563,7 +560,7 @@ void VideoWall::timerEvent(QTimerEvent *e)
 
 void VideoWall::changeClockType()
 {
-    AVPlayerCore* player = qobject_cast<AVPlayerCore*>(sender());
+    AVPlayerCore* const player = qobject_cast<AVPlayerCore*>(sender());
     player->masterClock()->setClockAuto(false);
     player->masterClock()->setClockType(AVClock::ExternalClock);
 }

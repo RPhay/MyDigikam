@@ -49,8 +49,8 @@ public:
     void setVideoRendererTypeString(const QString& vt);
     void setRows(int n);
     void setCols(int n);
-    int rows() const;
-    int cols() const;
+    int  rows() const;
+    int  cols() const;
     void show();
     void play(const QString& file);
 
@@ -73,13 +73,14 @@ private Q_SLOTS:
 
 private:
 
-    int                    r, c;
-    int                    timer_id;
-    QtAV::AVClock*         clock;
-    QList<QtAV::AVPlayerCore*> players;
-    QWidget*               view;
-    QMenu*                 menu;
-    QString                vid;
+    int                         r           = 3;
+    int                         c           = 3;
+    int                         timer_id    = 0;
+    QtAV::AVClock*              clock       = nullptr;
+    QList<QtAV::AVPlayerCore*>  players;
+    QWidget*                    view        = nullptr;
+    QMenu*                      menu        = nullptr;
+    QString                     vid         = QString::fromLatin1("qpainter");
 };
 
 #endif // QTAV_EXAMPLE_VIDEOWALL_H
