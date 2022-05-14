@@ -124,9 +124,10 @@ public:
     static bool                      isCreated();
 
     /**
-     * Setup the connections after call moveToThread().
-    */
-    void setupConnections();
+     * Setup connections, apply Settings and start ExifTool process.
+     * This function cannot be called from another thread.
+     */
+    void initExifTool();
 
 public:
 
@@ -134,9 +135,9 @@ public:
      * Change the ExifTool path configuration.
      * This function can be called from another thread.
      */
-    void changeProgram(const QString& etExePath);
+    void setExifToolProgram(const QString& etExePath);
 
-    QString exifToolProgram() const;
+    QString getExifToolProgram() const;
 
     bool checkExifToolProgram();
 
@@ -193,14 +194,6 @@ Q_SIGNALS:
                             const QByteArray& cmdOutputChannel,
                             const QByteArray& cmdErrorChannel);
 
-public Q_SLOTS:
-
-    /**
-     * Apply settings and start ExifTool process.
-     * This function cannot be called from another thread.
-     */
-    void slotApplySettingsAndStart();
-
 private:
 
     /**
@@ -222,7 +215,7 @@ private:
 
     QString exifToolBin()                               const;
 
-    void setExifToolProgram(const QString& etExePath);
+    void changeExifToolProgram(const QString& etExePath);
 
 Q_SIGNALS:
 
@@ -233,13 +226,13 @@ private Q_SLOTS:
 
     void slotStarted();
     void slotExecNextCmd();
-    void slotChangeProgram(const QString& etExePath);
-    void slotStateChanged(QProcess::ProcessState newState);
-    void slotErrorOccurred(QProcess::ProcessError error);
-    void slotReadyReadStandardOutput();
+    void slotApplySettingsAndStart();
     void slotReadyReadStandardError();
-    void slotFinished(int exitCode,
-                      QProcess::ExitStatus exitStatus);
+    void slotReadyReadStandardOutput();
+    void slotChangeProgram(const QString& etExePath);
+    void slotErrorOccurred(QProcess::ProcessError error);
+    void slotStateChanged(QProcess::ProcessState newState);
+    void slotFinished(int exitCode, QProcess::ExitStatus exitStatus);
 
 private:
 

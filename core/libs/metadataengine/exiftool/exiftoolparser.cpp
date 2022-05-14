@@ -34,6 +34,13 @@ ExifToolParser::ExifToolParser(QObject* const parent)
 
     d->proc = ExifToolProcess::instance();
 
+    // For handling the unit-test tools.
+
+    if (d->proc->thread() == thread())
+    {
+        d->proc->initExifTool();
+    }
+
     for (int i = ExifToolProcess::LOAD_METADATA ; i < ExifToolProcess::NO_ACTION ; ++i)
     {
         d->evLoops << new QEventLoop(this);
@@ -65,12 +72,22 @@ ExifToolParser::~ExifToolParser()
         disconnect(hdl);
     }
 
+    // For handling the unit-test tools.
+
+    if (ExifToolProcess::isCreated())
+    {
+        if (d->proc->thread() == thread())
+        {
+            delete ExifToolProcess::internalPtr;
+        }
+    }
+
     delete d;
 }
 
 void ExifToolParser::setExifToolProgram(const QString& path)
 {
-    d->proc->changeProgram(path);
+    d->proc->setExifToolProgram(path);
 }
 
 QString ExifToolParser::currentPath() const

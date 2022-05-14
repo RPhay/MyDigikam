@@ -40,6 +40,8 @@ ExifToolProcess::ExifToolProcess()
 
 ExifToolProcess::~ExifToolProcess()
 {
+    internalPtr = nullptr;
+
     terminateExifTool();
 
     delete d;
@@ -52,15 +54,15 @@ bool ExifToolProcess::isCreated()
 
 ExifToolProcess* ExifToolProcess::instance()
 {
-    if (ExifToolProcess::internalPtr.isNull())
+    if (internalPtr.isNull())
     {
-        ExifToolProcess::internalPtr = new ExifToolProcess();
+        internalPtr = new ExifToolProcess();
     }
 
-    return ExifToolProcess::internalPtr;
+    return internalPtr;
 }
 
-void ExifToolProcess::changeProgram(const QString& etExePath)
+void ExifToolProcess::setExifToolProgram(const QString& etExePath)
 {
     Q_EMIT signalChangeProgram(etExePath);
 
@@ -69,7 +71,7 @@ void ExifToolProcess::changeProgram(const QString& etExePath)
     waitForStarted(1000);
 }
 
-QString ExifToolProcess::exifToolProgram() const
+QString ExifToolProcess::getExifToolProgram() const
 {
     return d->etExePath;
 }
@@ -373,7 +375,7 @@ bool ExifToolProcess::checkExifToolProgram()
     return true;
 }
 
-void ExifToolProcess::setupConnections()
+void ExifToolProcess::initExifTool()
 {
     connect(this, &QProcess::started,
             this, &ExifToolProcess::slotStarted);
@@ -413,9 +415,11 @@ void ExifToolProcess::setupConnections()
     connect(MetaEngineSettings::instance(), SIGNAL(signalSettingsChanged()),
             this, SLOT(slotApplySettingsAndStart()),
             Qt::QueuedConnection);
+
+    slotApplySettingsAndStart();
 }
 
-void ExifToolProcess::setExifToolProgram(const QString& etExePath)
+void ExifToolProcess::changeExifToolProgram(const QString& etExePath)
 {
     d->etExePath = etExePath;
 
@@ -436,12 +440,12 @@ void ExifToolProcess::setExifToolProgram(const QString& etExePath)
 
 void ExifToolProcess::slotChangeProgram(const QString& etExePath)
 {
-    QString et(exifToolProgram());
+    QString et(getExifToolProgram());
 
-    setExifToolProgram(etExePath);
+    changeExifToolProgram(etExePath);
 
-    if (isRunning()             &&
-        (et == exifToolProgram()))
+    if (isRunning()                &&
+        (et == getExifToolProgram()))
     {
         return;
     }
@@ -453,15 +457,15 @@ void ExifToolProcess::slotChangeProgram(const QString& etExePath)
         killExifTool();
 
         qCWarning(DIGIKAM_METAENGINE_LOG) << "ExifTool process cannot be started ("
-                                          << exifToolProgram() << ")";
+                                          << getExifToolProgram() << ")";
     }
 }
 
 void ExifToolProcess::slotApplySettingsAndStart()
 {
-    setExifToolProgram(MetaEngineSettings::instance()->settings().exifToolPath);
+    changeExifToolProgram(MetaEngineSettings::instance()->settings().exifToolPath);
 
-    qCDebug(DIGIKAM_METAENGINE_LOG) << "ExifTool path:" << exifToolProgram();
+    qCDebug(DIGIKAM_METAENGINE_LOG) << "ExifTool path:" << getExifToolProgram();
 
     if (state() != QProcess::NotRunning)
     {
@@ -475,7 +479,7 @@ void ExifToolProcess::slotApplySettingsAndStart()
         killExifTool();
 
         qCWarning(DIGIKAM_METAENGINE_LOG) << "ExifTool process cannot be started ("
-                                          << exifToolProgram() << ")";
+                                          << getExifToolProgram() << ")";
     }
 }
 

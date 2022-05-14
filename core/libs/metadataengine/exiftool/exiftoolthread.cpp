@@ -47,11 +47,7 @@ void ExifToolThread::run()
 {
     ExifToolProcess* const proc = ExifToolProcess::instance();
     proc->moveToThread(this);
-    proc->setupConnections();
-
-    // apply settings and start ExifTool process
-
-    proc->slotApplySettingsAndStart();
+    proc->initExifTool();
 
     exec();
 
