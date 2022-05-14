@@ -100,12 +100,12 @@ protected:
     virtual bool receiveFrame(const VideoFrame& frame)              override;
     virtual void drawBackground()                                   override;
     virtual void drawFrame()                                        override;
-    virtual void paintEvent(QPaintEvent *)                          override;
-    virtual void resizeEvent(QResizeEvent *)                        override;
+    virtual void paintEvent(QPaintEvent*)                           override;
+    virtual void resizeEvent(QResizeEvent*)                         override;
 
     // stay on top will change parent, hide then show(windows)
 
-    virtual void showEvent(QShowEvent *)                            override;
+    virtual void showEvent(QShowEvent*)                             override;
 
 private:
 
@@ -160,7 +160,7 @@ static const struct xv_format_entry_t
 
 int pixelFormatToXv(VideoFormat::PixelFormat fmt)
 {
-    for (size_t i = 0 ; i < sizeof(xv_fmt)/sizeof(xv_fmt[0]) ; ++i)
+    for (size_t i = 0 ; i < sizeof(xv_fmt) / sizeof(xv_fmt[0]) ; ++i)
     {
         if (xv_fmt[i].format == fmt)
             return xv_fmt[i].fourcc;
@@ -176,24 +176,25 @@ int xvFormatInPort(Display* disp, XvPortID port, VideoFormat::PixelFormat fmt)
     if (!xv_id)
         return 0;
 
-    const int xv_type            = VideoFormat::isRGB(fmt) ? XvRGB : XvYUV;
+    const int xv_type            = VideoFormat::isRGB(fmt)    ? XvRGB    : XvYUV;
     const int xv_plane           = VideoFormat::isPlanar(fmt) ? XvPlanar : XvPacked;
     int count                    = 0;
-    XvImageFormatValues *xvifmts = XvListImageFormats(disp, port, &count);
+    XvImageFormatValues* xvifmts = XvListImageFormats(disp, port, &count);
 
-    for (const XvImageFormatValues *xvifmt = xvifmts; xvifmt <  xvifmts+count; ++xvifmt)
+    for (const XvImageFormatValues* xvifmt = xvifmts; xvifmt <  xvifmts+count; ++xvifmt)
     {
         qCDebug(DIGIKAM_QTAVWIDGETS_LOG).noquote() << QString::asprintf("XvImageFormatValues: %s", xvifmt->guid);
 
         if (
-               xvifmt->type == xv_type
-            && xvifmt->format == xv_plane
-            && xvifmt->id == xv_id
+               (xvifmt->type   == xv_type)  &&
+               (xvifmt->format == xv_plane) &&
+               (xvifmt->id     == xv_id)
            )
         {
             if (XvGrabPort(disp, port, 0) == Success)
             {
                 XFree(xvifmts);
+
                 return xv_id;
             }
         }
@@ -211,15 +212,6 @@ public:
     DPTR_DECLARE_PUBLIC(XVRenderer)
 
     XVRendererPrivate()
-      : use_shm(true)
-      , num_adaptors(0)
-      , xv_image(nullptr)
-      , format_id(0x32315659) /*YV12*/
-      , xv_image_width(0)
-      , xv_image_height(0)
-      , xv_port(0)
-      , gc(nullptr)
-      , format(VideoFormat::Format_Invalid)
     {
         XInitThreads();
 
@@ -327,14 +319,15 @@ public:
         XSetBackground(display, gc, BlackPixel(display, DefaultScreen(display)));
 
         if (filter_context)
-            ((X11FilterContext*)filter_context)->resetX11((X11FilterContext::Display*)display, (X11FilterContext::GC)gc, (X11FilterContext::Drawable)q_func().winId());
+            ((X11FilterContext*)filter_context)->resetX11((X11FilterContext::Display*)display,
+                                                          (X11FilterContext::GC)gc, (X11FilterContext::Drawable)q_func().winId());
 
         return true;
     }
 
     bool ensureImage(int w, int h, VideoFormat::PixelFormat pixfmt)
     {
-        if (xv_image_width == w && xv_image_height == h && xv_image && format == pixfmt)
+        if ((xv_image_width == w) && (xv_image_height == h) && (xv_image && format == pixfmt))
             return true;
 
         destroyXVImage();
@@ -387,11 +380,14 @@ public:
 
         shm.shmid = shmget(IPC_PRIVATE, xv_image->data_size, IPC_CREAT | 0777);
 
-        qCDebug(DIGIKAM_QTAVWIDGETS_LOG).noquote() << QString::asprintf("shmid: %d xv_image->data_size: %d, %dx%d", shm.shmid, xv_image->data_size, xv_image_width, xv_image_height);
+        qCDebug(DIGIKAM_QTAVWIDGETS_LOG).noquote()
+            << QString::asprintf("shmid: %d xv_image->data_size: %d, %dx%d",
+                shm.shmid, xv_image->data_size, xv_image_width, xv_image_height);
 
         if (shm.shmid < 0)
         {
-            qCWarning(DIGIKAM_QTAVWIDGETS_LOG_WARN).noquote() << QString::asprintf("get shm failed. try to use none shm");
+            qCWarning(DIGIKAM_QTAVWIDGETS_LOG_WARN).noquote()
+                << QString::asprintf("get shm failed. try to use none shm");
 
             goto no_shm;
         }
@@ -401,7 +397,8 @@ public:
         if (shm.shmaddr == (char*)-1)
         {
             XFree(xv_image);
-            qCWarning(DIGIKAM_QTAVWIDGETS_LOG_WARN).noquote() << QString::asprintf("Shared memory error,disabling ( seg id error )");
+            qCWarning(DIGIKAM_QTAVWIDGETS_LOG_WARN).noquote()
+                << QString::asprintf("Shared memory error,disabling ( seg id error )");
 
             goto no_shm;
         }
@@ -411,7 +408,8 @@ public:
 
         if (!XShmAttach(display, &shm))
         {
-            qCWarning(DIGIKAM_QTAVWIDGETS_LOG_WARN).noquote() << QString::asprintf("Attach to shm failed! try to use none shm");
+            qCWarning(DIGIKAM_QTAVWIDGETS_LOG_WARN).noquote()
+                << QString::asprintf("Attach to shm failed! try to use none shm");
 
             goto no_shm;
         }
@@ -442,28 +440,31 @@ no_shm:
         return true;
     }
 
-    bool XvSetPortAttributeIfExists(const char *key, int value);
+    bool XvSetPortAttributeIfExists(const char* key, int value);
 
-    bool            use_shm; // TODO: set by user
-    unsigned int    num_adaptors;
-    XvAdaptorInfo*  xv_adaptor_info;
-    Display*        display;
-    XvImage*        xv_image;
-    int             format_id;
-    int             xv_image_width, xv_image_height;
-    XvPortID        xv_port;
-    GC              gc;
+public:
+
+    bool                        use_shm         = true;         // TODO: set by user
+    unsigned int                num_adaptors    = 0;
+    XvAdaptorInfo*              xv_adaptor_info = nullptr;
+    Display*                    display         = nullptr;
+    XvImage*                    xv_image        = nullptr;
+    int                         format_id       = 0x32315659;   // YV12
+    int                         xv_image_width  = 0;
+    int                         xv_image_height = 0;
+    XvPortID                    xv_port         = 0;
+    GC                          gc;
 
 #ifdef _XSHM_H_
 
-    XShmSegmentInfo shm;
+    XShmSegmentInfo             shm;
 
 #endif
 
-    VideoFormat::PixelFormat format;
+    VideoFormat::PixelFormat    format          = VideoFormat::Format_Invalid;
 };
 
-bool XVRendererPrivate::XvSetPortAttributeIfExists(const char *key, int value)
+bool XVRendererPrivate::XvSetPortAttributeIfExists(const char* key, int value)
 {
     int nb_attributes;
     XvAttribute* attributes = XvQueryPortAttributes(display, xv_port, &nb_attributes);
@@ -487,14 +488,15 @@ bool XVRendererPrivate::XvSetPortAttributeIfExists(const char *key, int value)
         }
     }
 
-    qCWarning(DIGIKAM_QTAVWIDGETS_LOG_WARN).noquote() << QString::asprintf("Can not set Xv attribute at key '%s'", key);
+    qCWarning(DIGIKAM_QTAVWIDGETS_LOG_WARN).noquote()
+        << QString::asprintf("Can not set Xv attribute at key '%s'", key);
 
     return false;
 }
 
-XVRenderer::XVRenderer(QWidget *parent, Qt::WindowFlags f)
-    : QWidget(parent, f)
-    , VideoRenderer(*new XVRendererPrivate())
+XVRenderer::XVRenderer(QWidget* parent, Qt::WindowFlags f)
+    : QWidget(parent, f),
+      VideoRenderer(*new XVRendererPrivate())
 {
     setPreferredPixelFormat(VideoFormat::Format_YUV420P);
 
@@ -509,10 +511,10 @@ XVRenderer::XVRenderer(QWidget *parent, Qt::WindowFlags f)
      * widget's background
      */
     setAttribute(Qt::WA_OpaquePaintEvent);
-
-    //setAttribute(Qt::WA_NoSystemBackground);
-    //setAutoFillBackground(false);
-
+/*
+    setAttribute(Qt::WA_NoSystemBackground);
+    setAutoFillBackground(false);
+*/
     setAttribute(Qt::WA_PaintOnScreen, true);
     d_func().filter_context = VideoFilterContext::create(VideoFilterContext::X11);
 
@@ -530,15 +532,19 @@ bool XVRenderer::isSupported(VideoFormat::PixelFormat pixfmt) const
 {
     // TODO: rgb use copyplane
 
-    return     pixfmt == VideoFormat::Format_YUV420P || pixfmt == VideoFormat::Format_YV12
-            || pixfmt == VideoFormat::Format_NV12    || pixfmt == VideoFormat::Format_NV21
-            || pixfmt == VideoFormat::Format_UYVY    || pixfmt == VideoFormat::Format_YUYV
-    ;
+    return (
+            (pixfmt == VideoFormat::Format_YUV420P) ||
+            (pixfmt == VideoFormat::Format_YV12)    ||
+            (pixfmt == VideoFormat::Format_NV12)    ||
+            (pixfmt == VideoFormat::Format_NV21)    ||
+            (pixfmt == VideoFormat::Format_UYVY)    ||
+            (pixfmt == VideoFormat::Format_YUYV)
+           );
 }
 
-static void SplitPlanes(quint8 *dstu, size_t dstu_pitch,
-                        quint8 *dstv, size_t dstv_pitch,
-                        const quint8 *src, size_t src_pitch,
+static void SplitPlanes(quint8* dstu, size_t dstu_pitch,
+                        quint8* dstv, size_t dstv_pitch,
+                        const quint8* src, size_t src_pitch,
                         unsigned width, unsigned height)
 {
     for (unsigned y = 0 ; y < height ; ++y)
@@ -555,16 +561,16 @@ static void SplitPlanes(quint8 *dstu, size_t dstu_pitch,
     }
 }
 
-void CopyFromNv12(quint8 *dst[], size_t dst_pitch[],
-                  const quint8 *src[2], size_t src_pitch[2],
+void CopyFromNv12(quint8* dst[], size_t dst_pitch[],
+                  const quint8* src[2], size_t src_pitch[2],
                   unsigned width, unsigned height)
 {
     VideoFrame::copyPlane(dst[0], dst_pitch[0], src[0], src_pitch[0], width, height);
     SplitPlanes(dst[2], dst_pitch[2], dst[1], dst_pitch[1], src[1], src_pitch[1], width/2, height/2);
 }
 
-void CopyFromYv12(quint8 *dst[], size_t dst_pitch[],
-                  const quint8 *src[3], size_t src_pitch[3],
+void CopyFromYv12(quint8* dst[], size_t dst_pitch[],
+                  const quint8* src[3], size_t src_pitch[3],
                   unsigned width, unsigned height)
 {
      VideoFrame::copyPlane(dst[0], dst_pitch[0], src[0], src_pitch[0], width, height);
@@ -572,15 +578,15 @@ void CopyFromYv12(quint8 *dst[], size_t dst_pitch[],
      VideoFrame::copyPlane(dst[2], dst_pitch[2], src[2], src_pitch[2], width/2, height/2);
 }
 
-void CopyFromYv12_2(quint8 *dst[], size_t dst_pitch[],
-                    const quint8 *src[3], size_t src_pitch[3],
+void CopyFromYv12_2(quint8* dst[], size_t dst_pitch[],
+                    const quint8* src[3], size_t src_pitch[3],
                     unsigned width, unsigned height)
 {
      VideoFrame::copyPlane(dst[0], dst_pitch[0], src[0], src_pitch[0], width, height);
      width  /= 2;
      height /= 2;
 
-     if (width == dst_pitch[1] && dst_pitch[1] == src_pitch[1])
+     if ((width == dst_pitch[1]) && (dst_pitch[1] == src_pitch[1]))
      {
          VideoFrame::copyPlane(dst[1], dst_pitch[1], src[1], src_pitch[1], width, height);
          VideoFrame::copyPlane(dst[2], dst_pitch[2], src[2], src_pitch[2], width, height);

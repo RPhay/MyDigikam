@@ -148,10 +148,10 @@ VideoRendererId X11Renderer::id() const
 static const struct fmt2Xfmtentry
 {
     VideoFormat::PixelFormat fmt;
-    int byte_order;
-    unsigned red_mask;
-    unsigned green_mask;
-    unsigned blue_mask;
+    int                      byte_order;
+    unsigned                 red_mask;
+    unsigned                 green_mask;
+    unsigned                 blue_mask;
 } fmt2Xfmt[] =
 {
     { VideoFormat::Format_BGR555,  BO_NATIVE,    0x0000001F, 0x000003E0, 0x00007C00 },
@@ -187,10 +187,12 @@ VideoFormat::PixelFormat pixelFormat(XImage* xi)
 
         // 15->16? mpv
 
-        if (   depth == xi->bits_per_pixel && fmte->byte_order == xi->byte_order
-            && fmte->red_mask == xi->red_mask
-            && fmte->green_mask == xi->green_mask
-            && fmte->blue_mask == xi->blue_mask
+        if (
+            (depth            == xi->bits_per_pixel) &&
+            (fmte->byte_order == xi->byte_order)     &&
+            (fmte->red_mask   == xi->red_mask)       &&
+            (fmte->green_mask == xi->green_mask)     &&
+            (fmte->blue_mask  == xi->blue_mask)
            )
         {
             break;
@@ -211,19 +213,8 @@ public:
     DPTR_DECLARE_PUBLIC(X11Renderer)
 
     X11RendererPrivate()
-      : use_shm(true)
-      , warn_bad_pitch(true)
-      , num_adaptors(0)
-      , ShmCompletionEvent(0)
-      , ShmCompletionWaitCount(0)
-      , current_index(0)
-      , next_index(0)
-      , gc(nullptr)
-      , pixfmt(VideoFormat::Format_Invalid)
-      , frame_changed(false)
     {
         XInitThreads();
-        memset(ximage_pool, 0, sizeof(ximage_pool));
 
 #ifndef _XSHM_H_
 
@@ -259,7 +250,7 @@ public:
 
         XImage *ximg = nullptr;
 
-        if (depth != 15 && depth != 16 && depth != 24 && depth != 32)
+        if ((depth != 15) && (depth != 16) && (depth != 24) && (depth != 32))
         {
 /*
             Visual *vs;
@@ -279,7 +270,7 @@ public:
         {
             bpp = ximg->bits_per_pixel;
 
-            if ((ximage_depth+7) / 8 != (bpp+7) / 8) // 24bpp use 32 depth
+            if ((ximage_depth + 7) / 8 != (bpp + 7) / 8) // 24bpp use 32 depth
                 ximage_depth = bpp;
 
             mask = ximg->red_mask | ximg->green_mask | ximg->blue_mask;
@@ -381,7 +372,7 @@ public:
     {
         XImage* &ximage = ximage_pool[index];
 
-        if (ximage && ximage->width == w && ximage->height == h)
+        if (ximage && (ximage->width == w) && (ximage->height == h))
             return true;
 
         warn_bad_pitch       = true;
@@ -467,32 +458,34 @@ no_shm:
 
     int resizeXImage(int index);
 
-    bool                        use_shm;                // TODO: set by user
-    bool                        warn_bad_pitch;
-    unsigned int                num_adaptors;
-    int                         bpp;
-    int                         depth;
-    int                         ShmCompletionEvent;
-    int                         ShmCompletionWaitCount;
+public:
+
+    bool                        use_shm                 = true;             // TODO: set by user
+    bool                        warn_bad_pitch          = true;
+    unsigned int                num_adaptors            = 0;
+    int                         bpp                     = 0;
+    int                         depth                   = 0;
+    int                         ShmCompletionEvent      = 0;
+    int                         ShmCompletionWaitCount  = 0;
     XVisualInfo                 vinfo;
-    Display*                    display;
-    int                         current_index;
-    int                         next_index;
-    XImage*                     ximage_pool[kPoolSize];
-    GC                          gc;
+    Display*                    display                 = nullptr;
+    int                         current_index           = 0;
+    int                         next_index              = 0;
+    XImage*                     ximage_pool[kPoolSize]  = { nullptr };
+    GC                          gc                      = nullptr;
     XShmSegmentInfo             shm_pool[kPoolSize];
-    VideoFormat::PixelFormat    pixfmt;
+    VideoFormat::PixelFormat    pixfmt                  = VideoFormat::Format_Invalid;
 
     // if the incoming image pitchs are different from ximage ones, use ximage pitchs and copy data in ximage_data
 
     QByteArray                  ximage_data[kPoolSize];
-    VideoFrame                  frame_orig;             // if renderer is resized, scale the original frame
-    bool                        frame_changed;
+    VideoFrame                  frame_orig;                                 // if renderer is resized, scale the original frame
+    bool                        frame_changed           = false;
 };
 
-X11Renderer::X11Renderer(QWidget *parent, Qt::WindowFlags f)
-    : QWidget(parent, f)
-    , VideoRenderer(*new X11RendererPrivate())
+X11Renderer::X11Renderer(QWidget* parent, Qt::WindowFlags f)
+    : QWidget      (parent, f),
+      VideoRenderer(*new X11RendererPrivate())
 {
     DPTR_INIT_PRIVATE(X11Renderer);
 
@@ -545,7 +538,7 @@ bool X11Renderer::receiveFrame(const VideoFrame& frame)
         return true;
     }
 
-    d.frame_orig = frame;
+    d.frame_orig  = frame;
     d.video_frame = frame; // must be set because it will be check isValid() somewhere else
     updateUi();
 
@@ -583,7 +576,7 @@ int X11RendererPrivate::resizeXImage(int index)
        )
     {
         if (   !frame_orig.constBits(0) // always convert hw frames
-            || frame_orig.pixelFormat() != pixfmt || frame_orig.width() != ximage->width || frame_orig.height() != ximage->height
+            || (frame_orig.pixelFormat() != pixfmt) || (frame_orig.width() != ximage->width) || (frame_orig.height() != ximage->height)
            )
             video_frame = frame_orig.to(pixfmt, QSize(ximage->width, ximage->height));
         else
@@ -624,7 +617,9 @@ int X11RendererPrivate::resizeXImage(int index)
                 ximage->data = (char*)ximage_data[index].constData();
             }
 
-            VideoFrame::copyPlane(dst, ximage->bytes_per_line, (const quint8*)video_frame.constBits(0), video_frame.bytesPerLine(0), ximage->bytes_per_line, ximage->height);
+            VideoFrame::copyPlane(dst, ximage->bytes_per_line,
+                                  (const quint8*)video_frame.constBits(0), video_frame.bytesPerLine(0),
+                                  ximage->bytes_per_line, ximage->height);
         }
     }
     else
@@ -690,6 +685,7 @@ void X11Renderer::drawFrame()
             {
                 qCDebug(DIGIKAM_QTAVWIDGETS_LOG).noquote() << QString::asprintf("reset ShmCompletionWaitCount");
                 d.ShmCompletionWaitCount = 0;
+
                 break;
             }
 
@@ -738,12 +734,12 @@ void X11Renderer::drawFrame()
     }
 }
 
-void X11Renderer::paintEvent(QPaintEvent *)
+void X11Renderer::paintEvent(QPaintEvent*)
 {
     handlePaintEvent();
 }
 
-void X11Renderer::resizeEvent(QResizeEvent *e)
+void X11Renderer::resizeEvent(QResizeEvent* e)
 {
     DPTR_D(X11Renderer);
 
@@ -752,7 +748,7 @@ void X11Renderer::resizeEvent(QResizeEvent *e)
     update(); // update background
 }
 
-void X11Renderer::showEvent(QShowEvent *event)
+void X11Renderer::showEvent(QShowEvent* event)
 {
     Q_UNUSED(event);
     DPTR_D(X11Renderer);
