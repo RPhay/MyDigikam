@@ -132,6 +132,7 @@ public:
 
     /**
      * Change the ExifTool path configuration.
+     * This function can be called from another thread.
      */
     void changeProgram(const QString& etExePath);
 
@@ -226,9 +227,6 @@ private:
 Q_SIGNALS:
 
     void signalExecNextCmd();
-
-    void signalStartExifTool();
-
     void signalChangeProgram(const QString& etExePath);
 
 private Q_SLOTS:
