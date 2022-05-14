@@ -45,7 +45,7 @@ MiscPage::MiscPage()
     setLayout(gl);
     gl->setSizeConstraint(QLayout::SetFixedSize);
     int r                 = 0;
-    m_preview_on          = new QCheckBox(i18n("Preview"));
+    m_preview_on          = new QCheckBox(i18n("Preview Over Time-Slider"));
     gl->addWidget(m_preview_on, r++, 0);
     m_preview_w           = new QSpinBox();
     m_preview_w->setRange(1, 1920);
