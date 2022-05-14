@@ -346,13 +346,13 @@ bool EventFilter::eventFilter(QObject* watched, QEvent* event)
                 {
                     if (modifiers == Qt::ControlModifier)
                     {
-                        // TODO: emit a signal so we can use custome dialogs?
+                        // TODO: Q_EMIT a signal so we can use custome dialogs?
 
                         openLocalFile();
                     }
                     else /* if (m == Qt::NoModifier) */
                     {
-                        emit showNextOSD();
+                        Q_EMIT showNextOSD();
                     }
 
                     break;
@@ -554,7 +554,7 @@ bool WindowEventFilter::eventFilter(QObject* watched, QEvent* event)
 
         if (mpWindow->windowState().testFlag(Qt::WindowFullScreen) || e->oldState().testFlag(Qt::WindowFullScreen))
         {
-            emit fullscreenChanged();
+            Q_EMIT fullscreenChanged();
         }
 
         return false;

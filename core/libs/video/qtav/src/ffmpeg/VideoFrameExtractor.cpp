@@ -764,7 +764,7 @@ void VideoFrameExtractor::extract()
     // So, abort_seek is a 'previous frame extract abort mechanism'
     // -- this flag is repeatedly checked by extractInPrecision()
     // (called by extractInternal()) and if true, method returns early.
-    // Note if seek/decode is aborted, aborted() signal will be emitted.
+    // Note if seek/decode is aborted, aborted() signal will be Q_EMITted.
 
     d.abort_seek = true;
     d.thread.addTask(new ExtractTask(this, position()));

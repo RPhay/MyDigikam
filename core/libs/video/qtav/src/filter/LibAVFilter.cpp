@@ -529,7 +529,7 @@ void LibAVFilterVideo::process(Statistics *statistics, VideoFrame *frame)
     bool ok = pushVideoFrame(frame, changed);
 
     //if (old != status())
-      //  emit statusChanged();
+      //  Q_EMIT statusChanged();
 
     if (!ok)
         return;
@@ -652,7 +652,7 @@ void LibAVFilterAudio::process(Statistics *statistics, AudioFrame *frame)
     bool ok = pushAudioFrame(frame, changed);
 
     //if (old != status())
-      //  emit statusChanged();
+      //  Q_EMIT statusChanged();
 
     if (!ok)
         return;

@@ -261,7 +261,7 @@ public:
         if (handler->mTimeoutAbort)
             return 1;
 
-        // emit demuxer error, handleerror
+        // Q_EMIT demuxer error, handleerror
 
         if (handler->mEmitError)
         {
@@ -715,7 +715,7 @@ bool AVDemuxer::readFrame()
 
     d->stream = packet.stream_index;
 
-    // check whether the 1st frame is already got. emit only once
+    // check whether the 1st frame is already got. Q_EMIT only once
 
     if (!d->started)
     {
@@ -1249,7 +1249,7 @@ bool AVDemuxer::load()
         if (mediaStatus() == LoadingMedia) // workaround for timeout but not interrupted
             setMediaStatus(InvalidMedia);
 
-        Q_EMIT unloaded(); // context not ready. so will not emit in unload()
+        Q_EMIT unloaded(); // context not ready. so will not Q_EMIT in unload()
 
         return false;
     }
@@ -1272,7 +1272,7 @@ bool AVDemuxer::load()
         handleError(ret, &ec, msg);
         qCWarning(DIGIKAM_QTAV_LOG_WARN) << "Can't find stream info: " << msg;
 
-        // context is ready. unloaded() will be emitted in unload()
+        // context is ready. unloaded() will be Q_EMITted in unload()
 
         if (mediaStatus() == LoadingMedia) // workaround for timeout but not interrupted
             setMediaStatus(InvalidMedia);

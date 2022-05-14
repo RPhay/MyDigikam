@@ -151,7 +151,7 @@ private Q_SLOTS:
     {
         select(true);
 
-        emit selected(this);
+        Q_EMIT selected(this);
     }
 
     void toggleEditorVisible()
@@ -179,7 +179,7 @@ protected:
     {
         select(true);
 
-        emit selected(this);
+        Q_EMIT selected(this);
     }
 
     virtual void paintEvent(QPaintEvent* e)
@@ -371,7 +371,7 @@ void DecoderConfigPage::videoDecoderEnableChanged()
     else
     {
 /*
-        emit AVPlayerConfigMngr::instance().decoderPriorityChanged(sPriorityUi);
+        Q_EMIT AVPlayerConfigMngr::instance().decoderPriorityChanged(sPriorityUi);
 */
     }
 }
@@ -418,7 +418,7 @@ void DecoderConfigPage::priorityUp()
     else
     {
 /*
-        emit AVPlayerConfigMngr::instance().decoderPriorityChanged(idsFromNames(decs));
+        Q_EMIT AVPlayerConfigMngr::instance().decoderPriorityChanged(idsFromNames(decs));
 */
     }
 }
@@ -469,8 +469,8 @@ void DecoderConfigPage::priorityDown()
     else
     {
 /*
-        emit AVPlayerConfigMngr::instance().decoderPriorityChanged(idsFromNames(decs));
-        emit AVPlayerConfigMngr::instance().registeredDecodersChanged(idsFromNames(decs));
+        Q_EMIT AVPlayerConfigMngr::instance().decoderPriorityChanged(idsFromNames(decs));
+        Q_EMIT AVPlayerConfigMngr::instance().registeredDecodersChanged(idsFromNames(decs));
 */
     }
 }

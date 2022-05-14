@@ -82,7 +82,7 @@ bool PlayListModel::setData(const QModelIndex& index, const QVariant& value, int
 
         mItems.replace(index.row(), value.value<PlayListItem>());
 
-        emit dataChanged(index, index, QVector<int>() << role);
+        Q_EMIT dataChanged(index, index, QVector<int>() << role);
 
         return true;
     }
@@ -122,7 +122,7 @@ bool PlayListModel::removeRows(int row, int count, const QModelIndex& parent)
 
 void PlayListModel::updateLayout()
 {
-    emit layoutChanged();
+    Q_EMIT layoutChanged();
 }
 
 } // namespace AVPlayer

@@ -1245,7 +1245,7 @@ void AVPlayerCore::setPosition(qint64 position)
     d->seeking = true;
     d->read_thread->seek(position,pos_pts, seekType());
 
-    Q_EMIT positionChanged(position); // emit relative position
+    Q_EMIT positionChanged(position); // Q_EMIT relative position
 }
 
 int AVPlayerCore::repeat() const
@@ -1817,13 +1817,13 @@ void AVPlayerCore::playInternal()
 
     Q_EMIT stateChanged(PlayingState);
 
-    Q_EMIT started(); // we called stop(), so must emit started()
+    Q_EMIT started(); // we called stop(), so must Q_EMIT started()
 }
 
 void AVPlayerCore::stopFromDemuxerThread()
 {
     qCDebug(DIGIKAM_QTAV_LOG).noquote()
-        << QString::asprintf("demuxer thread emit finished. repeat: %d/%d",
+        << QString::asprintf("demuxer thread Q_EMIT finished. repeat: %d/%d",
              currentRepeat(), repeat());
 
     d->seeking = false;
@@ -1845,7 +1845,7 @@ void AVPlayerCore::stopFromDemuxerThread()
         d->stop_position_norm  = kInvalidPosition; // already stopped. so not 0 but invalid. 0 can stop the playback in timerEvent
         d->media_end           = kInvalidPosition;
 
-        qCDebug(DIGIKAM_QTAV_LOG).noquote() << QString::asprintf("avplayer emit stopped()");
+        qCDebug(DIGIKAM_QTAV_LOG).noquote() << QString::asprintf("avplayer Q_EMIT stopped()");
 
         d->state               = StoppedState;
 
@@ -2144,7 +2144,7 @@ void AVPlayerCore::timerEvent(QTimerEvent *te)
         {
             d->clock->pause(true);
 
-            //return; // ensure positionChanged emitted for stepForward()
+            //return; // ensure positionChanged Q_EMITted for stepForward()
         }
 
         // active only when playing

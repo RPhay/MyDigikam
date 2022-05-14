@@ -313,7 +313,7 @@ void MainWindow::initPlayer()
     connect(mpCaptureBtn, SIGNAL(clicked()),
             mpPlayer->videoCapture(), SLOT(capture()));
 
-    emit ready(); // emit this signal after connection. otherwise the Q_SLOTS may not be called for the first time
+    Q_EMIT ready(); // Q_EMIT this signal after connection. otherwise the Q_SLOTS may not be called for the first time
 }
 
 void MainWindow::onSeekFinished(qint64 pos)

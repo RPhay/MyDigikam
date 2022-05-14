@@ -94,14 +94,14 @@ int Slider::pixelPosToRangeValue(int pos) const
 
 void Slider::enterEvent(QEvent* e)
 {
-    emit onEnter();
+    Q_EMIT onEnter();
 
     QSlider::enterEvent(e);
 }
 
 void Slider::leaveEvent(QEvent* e)
 {
-    emit onLeave();
+    Q_EMIT onLeave();
 
     QSlider::leaveEvent(e);
 }
@@ -111,7 +111,7 @@ void Slider::mouseMoveEvent(QMouseEvent* e)
     const int o = style()->pixelMetric(QStyle::PM_SliderLength ) - 1;
     int v       = QStyle::sliderValueFromPosition(minimum(), maximum(), e->pos().x() - o / 2, width() - o, false);
 
-    emit onHover(e->x(), v);
+    Q_EMIT onHover(e->x(), v);
 
     QSlider::mouseMoveEvent(e);
 }
@@ -142,8 +142,8 @@ void Slider::mousePressEvent(QMouseEvent* e)
             triggerAction(SliderMove);
             setRepeatAction(SliderNoAction);
 
-            emit sliderMoved(v);    // TODO: ok?
-            emit sliderPressed();   // TODO: ok?
+            Q_EMIT sliderMoved(v);    // TODO: ok?
+            Q_EMIT sliderPressed();   // TODO: ok?
         }
         else
         {
@@ -222,7 +222,7 @@ void Slider::mousePressEvent(QMouseEvent* e)
     {
         setValue(pos);
 
-        emit sliderMoved(pos);
+        Q_EMIT sliderMoved(pos);
     }
     else
     {

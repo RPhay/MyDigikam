@@ -164,7 +164,7 @@ void VideoEQConfigPage::setEngine(Engine engine)
         mpEngine->setCurrentIndex(mEngines.indexOf(engine));
     }
 
-    emit engineChanged();
+    Q_EMIT engineChanged();
 }
 
 VideoEQConfigPage::Engine VideoEQConfigPage::engine() const
@@ -207,7 +207,7 @@ void VideoEQConfigPage::onEngineChangedByUI()
 
     mEngine = mEngines.at(mpEngine->currentIndex());
 
-    emit engineChanged();
+    Q_EMIT engineChanged();
 }
 
 } // namespace QtAV

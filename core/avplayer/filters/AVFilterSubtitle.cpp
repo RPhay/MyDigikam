@@ -84,7 +84,7 @@ bool AVFilterSubtitle::setFile(const QString& filePath)
 
     if (m_file != filePath)
     {
-        emit fileChanged(filePath);
+        Q_EMIT fileChanged(filePath);
 
         // DO NOT return here because option is null now
     }
@@ -176,7 +176,7 @@ void AVFilterSubtitle::setAutoLoad(bool value)
 
     m_auto = value;
 
-    emit autoLoadChanged(value);
+    Q_EMIT autoLoadChanged(value);
 
     if (!m_player || !m_auto)
         return;
@@ -224,14 +224,14 @@ void AVFilterSubtitle::onStatusChanged()
 {
     if      (status() == ConfigureOk)
     {
-        emit loaded();
+        Q_EMIT loaded();
     }
     else if (status() == ConfigureFailed)
     {
         if (options().isEmpty())
             return;
 
-        emit loadError();
+        Q_EMIT loadError();
     }
 }
 

@@ -462,7 +462,7 @@ bool AudioOutput::open()
     d.backend->buffer_count = bufferCount();
     d.backend->format = audioFormat();
 
-    // TODO: open next backend if fail and emit backendChanged()
+    // TODO: open next backend if fail and Q_EMIT backendChanged()
 
     if (!d.backend->open())
         return false;

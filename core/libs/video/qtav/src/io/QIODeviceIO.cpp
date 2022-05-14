@@ -65,7 +65,7 @@ void QIODeviceIO::setDevice(QIODevice *dev)
 
     d.dev = dev;
 
-    emit deviceChanged();
+    Q_EMIT deviceChanged();
 }
 
 QIODevice* QIODeviceIO::device() const

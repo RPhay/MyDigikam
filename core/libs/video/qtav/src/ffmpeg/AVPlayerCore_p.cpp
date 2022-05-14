@@ -890,7 +890,7 @@ bool AVPlayerCore::Private::setupVideoThread(AVPlayerCore* player)
 
     if (!vdec)
     {
-        // DO NOT emit error signals in VideoDecoder::open(). 1 signal is enough
+        // DO NOT Q_EMIT error signals in VideoDecoder::open(). 1 signal is enough
 
         AVError e(AVError::VideoCodecNotFound);
         qCWarning(DIGIKAM_QTAV_LOG_WARN) << e.string();
