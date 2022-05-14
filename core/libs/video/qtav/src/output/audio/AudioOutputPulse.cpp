@@ -53,9 +53,11 @@ static const char kName[] = "Pulse";
 
 class Q_DECL_HIDDEN AudioOutputPulse final : public AudioOutputBackend
 {
+    Q_OBJECT
+
 public:
 
-    AudioOutputPulse(QObject* parent = nullptr);
+    AudioOutputPulse(QObject* const parent = nullptr);
 
     QString name()                const final
     {
@@ -111,9 +113,9 @@ private:
 
 private:
 
-    pa_threaded_mainloop*   loop;
-    pa_context*             ctx;
-    pa_stream*              stream;
+    pa_threaded_mainloop*   loop    = nullptr;
+    pa_context*             ctx     = nullptr;
+    pa_stream*              stream  = nullptr;
     pa_sink_input_info      info;
     size_t                  writable_size; // has the same effect as pa_stream_writable_size
 };
@@ -633,7 +635,7 @@ bool AudioOutputPulse::setMute(bool value)
     Q_UNUSED(palock);
 
     uint32_t stream_idx = pa_stream_get_index(stream);
-    pa_operation *o     = nullptr;
+    pa_operation* o     = nullptr;
     PA_ENSURE_TRUE((o = pa_context_set_sink_input_mute(ctx, stream_idx, value, nullptr, nullptr)) != nullptr, false);
     pa_operation_unref(o);
 
@@ -641,3 +643,5 @@ bool AudioOutputPulse::setMute(bool value)
 }
 
 } // namespace QtAV
+
+#include "AudioOutputPulse.moc"

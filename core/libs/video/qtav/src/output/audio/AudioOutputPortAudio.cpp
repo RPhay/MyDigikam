@@ -40,9 +40,11 @@ static const char kName[] = "PortAudio";
 
 class Q_DECL_HIDDEN AudioOutputPortAudio final : public AudioOutputBackend
 {
+    Q_OBJECT
+
 public:
 
-    AudioOutputPortAudio(QObject* parent = nullptr);
+    AudioOutputPortAudio(QObject* const parent = nullptr);
     ~AudioOutputPortAudio();
 
     QString name() const                        final
@@ -62,10 +64,10 @@ public:
 
 private:
 
-    bool                initialized;
-    PaStreamParameters* outputParameters;
-    PaStream*           stream;
-    double              outputLatency;
+    bool                initialized      = false;
+    PaStreamParameters* outputParameters = nullptr;
+    PaStream*           stream           = nullptr;
+    double              outputLatency    = 0.0;
 };
 
 typedef AudioOutputPortAudio AudioOutputBackendPortAudio;
@@ -86,7 +88,8 @@ AudioOutputPortAudio::AudioOutputPortAudio(QObject* parent)
     if ((err = Pa_Initialize()) != paNoError)
     {
         qCWarning(DIGIKAM_QTAV_LOG_WARN).noquote()
-            << QString::asprintf("Error when init portaudio: %s", Pa_GetErrorText(err));
+            << QString::asprintf("Error when init portaudio: %s",
+                Pa_GetErrorText(err));
 
         return;
     }
@@ -118,7 +121,8 @@ AudioOutputPortAudio::AudioOutputPortAudio(QObject* parent)
 
     if (outputParameters->device == paNoDevice)
     {
-        qCWarning(DIGIKAM_QTAV_LOG_WARN).noquote() << QString::asprintf("PortAudio get device error!");
+        qCWarning(DIGIKAM_QTAV_LOG_WARN).noquote()
+            << QString::asprintf("PortAudio get device error!");
 
         return;
     }
@@ -161,7 +165,8 @@ bool AudioOutputPortAudio::write(const QByteArray& data)
     if (err == paUnanticipatedHostError)
     {
         qCWarning(DIGIKAM_QTAV_LOG_WARN).noquote()
-            << QString::asprintf("Write portaudio stream error: %s", Pa_GetErrorText(err));
+            << QString::asprintf("Write portaudio stream error: %s",
+                Pa_GetErrorText(err));
 
         return false;
     }
@@ -202,7 +207,9 @@ bool AudioOutputPortAudio::open()
 
     if (err != paNoError)
     {
-        qCWarning(DIGIKAM_QTAV_LOG_WARN).noquote() << QString::asprintf("Open portaudio stream error: %s", Pa_GetErrorText(err));
+        qCWarning(DIGIKAM_QTAV_LOG_WARN).noquote()
+            << QString::asprintf("Open portaudio stream error: %s",
+                Pa_GetErrorText(err));
 
         return false;
     }
@@ -223,7 +230,9 @@ bool AudioOutputPortAudio::close()
 
     if (err != paNoError)
     {
-        qCWarning(DIGIKAM_QTAV_LOG_WARN).noquote() << QString::asprintf("Stop portaudio stream error: %s", Pa_GetErrorText(err));
+        qCWarning(DIGIKAM_QTAV_LOG_WARN).noquote()
+            << QString::asprintf("Stop portaudio stream error: %s",
+                Pa_GetErrorText(err));
 
         //return err == paStreamIsStopped;
     }
@@ -232,7 +241,9 @@ bool AudioOutputPortAudio::close()
 
     if (err != paNoError)
     {
-        qCWarning(DIGIKAM_QTAV_LOG_WARN).noquote() << QString::asprintf("Close portaudio stream error: %s", Pa_GetErrorText(err));
+        qCWarning(DIGIKAM_QTAV_LOG_WARN).noquote()
+            << QString::asprintf("Close portaudio stream error: %s",
+                Pa_GetErrorText(err));
 
         return false;
     }
@@ -246,3 +257,5 @@ bool AudioOutputPortAudio::close()
 }
 
 } // namespace QtAV
+
+#include "AudioOutputPortAudio.moc"

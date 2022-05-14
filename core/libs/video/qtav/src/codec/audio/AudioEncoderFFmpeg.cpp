@@ -43,8 +43,10 @@ namespace QtAV
 
 class AudioEncoderFFmpegPrivate;
 
-class Q_DECL_HIDDEN AudioEncoderFFmpeg final: public AudioEncoder
+class Q_DECL_HIDDEN AudioEncoderFFmpeg final : public AudioEncoder
 {
+    Q_OBJECT
+
     DPTR_DECLARE_PRIVATE(AudioEncoderFFmpeg)
 
 public:
@@ -84,7 +86,7 @@ bool AudioEncoderFFmpegPrivate::open()
     {
         // copy ctx from muxer by copyAVCodecContext
 
-        AVCodec* codec = avcodec_find_encoder(avctx->codec_id);
+        AVCodec* const codec = avcodec_find_encoder(avctx->codec_id);
         AV_ENSURE_OK(avcodec_open2(avctx, codec, &dict), false);
 
         return true;
@@ -125,12 +127,17 @@ bool AudioEncoderFFmpegPrivate::open()
     {
         if (codec->supported_samplerates)
         {
-            qCDebug(DIGIKAM_QTAV_LOG).noquote() << QString::asprintf("use first supported sample rate: %d", codec->supported_samplerates[0]);
+            qCDebug(DIGIKAM_QTAV_LOG).noquote()
+                << QString::asprintf("use first supported sample rate: %d",
+                    codec->supported_samplerates[0]);
+
             format_used.setSampleRate(codec->supported_samplerates[0]);
         }
         else
         {
-            qCWarning(DIGIKAM_QTAV_LOG_WARN).noquote() << QString::asprintf("sample rate and supported sample rate are not set. use 44100");
+            qCWarning(DIGIKAM_QTAV_LOG_WARN).noquote()
+                << QString::asprintf("sample rate and supported sample rate are not set. use 44100");
+
             format_used.setSampleRate(44100);
         }
     }
@@ -139,7 +146,9 @@ bool AudioEncoderFFmpegPrivate::open()
     {
         if (codec->sample_fmts)
         {
-            qCDebug(DIGIKAM_QTAV_LOG).noquote() << QString::asprintf("use first supported sample format: %d", codec->sample_fmts[0]);
+            qCDebug(DIGIKAM_QTAV_LOG).noquote()
+                << QString::asprintf("use first supported sample format: %d", codec->sample_fmts[0]);
+
             format_used.setSampleFormatFFmpeg((int)codec->sample_fmts[0]);
         }
         else
@@ -171,17 +180,17 @@ bool AudioEncoderFFmpegPrivate::open()
         }
     }
 
-    avctx->sample_fmt          = (AVSampleFormat)format_used.sampleFormatFFmpeg();
-    avctx->channel_layout      = format_used.channelLayoutFFmpeg();
-    avctx->channels            = format_used.channels();
-    avctx->sample_rate         = format_used.sampleRate();
-    avctx->bits_per_raw_sample = format_used.bytesPerSample()*8;
+    avctx->sample_fmt            = (AVSampleFormat)format_used.sampleFormatFFmpeg();
+    avctx->channel_layout        = format_used.channelLayoutFFmpeg();
+    avctx->channels              = format_used.channels();
+    avctx->sample_rate           = format_used.sampleRate();
+    avctx->bits_per_raw_sample   = format_used.bytesPerSample()*8;
 
     /// set the time base. TODO
 
-    avctx->time_base.num       = 1;
-    avctx->time_base.den       = format_used.sampleRate();
-    avctx->bit_rate            = bit_rate;
+    avctx->time_base.num         = 1;
+    avctx->time_base.den         = format_used.sampleRate();
+    avctx->bit_rate              = bit_rate;
 
     qCDebug(DIGIKAM_QTAV_LOG) << format_used;
 
@@ -202,16 +211,16 @@ bool AudioEncoderFFmpegPrivate::open()
     frame_size      = avctx->frame_size;
 
     if (frame_size <= 1)
-        pcm_hack = av_get_bits_per_sample(avctx->codec_id)/8;
+        pcm_hack = av_get_bits_per_sample(avctx->codec_id) / 8;
 
     if (pcm_hack)
     {
         frame_size  = 16384; // "enough"
-        buffer_size = frame_size*pcm_hack*format_used.channels()*2+200;
+        buffer_size = frame_size * pcm_hack * format_used.channels() * 2 + 200;
     }
     else
     {
-        buffer_size = frame_size*format_used.bytesPerSample()*format_used.channels()*2+200;
+        buffer_size = frame_size * format_used.bytesPerSample() * format_used.channels() * 2 + 200;
     }
 
     if (buffer_size < AV_INPUT_BUFFER_MIN_SIZE)
@@ -246,10 +255,10 @@ bool AudioEncoderFFmpeg::encode(const AudioFrame &frame)
 
     if (frame.isValid())
     {
-        f                 = av_frame_alloc();
+        f                       = av_frame_alloc();
         const AudioFormat fmt(frame.format());
-        f->format         = fmt.sampleFormatFFmpeg();
-        f->channel_layout = fmt.channelLayoutFFmpeg();
+        f->format               = fmt.sampleFormatFFmpeg();
+        f->channel_layout       = fmt.channelLayoutFFmpeg();
 
         // f->channels = fmt.channels(); //remove? not availale in libav9
         // must be (not the last frame) exactly frame_size unless CODEC_CAP_VARIABLE_FRAME_SIZE is set (frame_size==0)
@@ -268,7 +277,8 @@ bool AudioEncoderFFmpeg::encode(const AudioFrame &frame)
 
         // bytes between 2 samples on a plane. TODO: add to AudioFormat? what about bytesPerFrame?
 
-        const int sample_stride = fmt.isPlanar() ? fmt.bytesPerSample() : fmt.bytesPerSample()*fmt.channels();
+        const int sample_stride = fmt.isPlanar() ? fmt.bytesPerSample()
+                                                 : fmt.bytesPerSample()*fmt.channels();
 
         for (int i = 0 ; i < nb_planes ; ++i)
         {
@@ -316,3 +326,5 @@ bool AudioEncoderFFmpeg::encode(const AudioFrame &frame)
 }
 
 } // namespace QtAV
+
+#include "AudioEncoderFFmpeg.moc"

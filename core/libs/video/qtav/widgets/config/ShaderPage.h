@@ -39,6 +39,8 @@ namespace QtAV
 
 class QTAV_WIDGETS_EXPORT ShaderPage : public ConfigPageBase
 {
+    Q_OBJECT
+
 public:
 
     explicit ShaderPage(QWidget* const parent = nullptr);
@@ -52,11 +54,11 @@ protected:
 
 private:
 
-    QCheckBox* m_enable;
-    QCheckBox* m_fbo;
-    QTextEdit* m_header;
-    QTextEdit* m_sample;
-    QTextEdit* m_pp;
+    QCheckBox* m_enable = nullptr;
+    QCheckBox* m_fbo    = nullptr;
+    QTextEdit* m_header = nullptr;
+    QTextEdit* m_sample = nullptr;
+    QTextEdit* m_pp     = nullptr;
 };
 
 } // namespace QtAV

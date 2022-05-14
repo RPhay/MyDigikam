@@ -709,7 +709,10 @@ void SubtitleProcessorLibASS::updateFontCache()
                )
             {
                 conf = QStringLiteral("%1/%2").arg(Internal::Path::appFontsDir()).arg(kFontCfg);
-                qCDebug(DIGIKAM_QTAV_LOG) << "Fonts dir (for config) is not supported by libass. Copy fonts to app fonts dir: " << fdir;
+
+                qCDebug(DIGIKAM_QTAV_LOG)
+                    << "Fonts dir (for config) is not supported by libass. Copy fonts to app fonts dir: "
+                        << fdir;
 
                 if (!QDir(Internal::Path::appFontsDir()).exists())
                 {
@@ -919,27 +922,35 @@ void SubtitleProcessorLibASS::updateFontCache()
     m_update_cache = false; //TODO: set true if user set a new font or fonts dir
 }
 
+class Q_DECL_HIDDEN FontCacheUpdater : public QThread
+{
+    Q_OBJECT
+
+
+public:
+
+    explicit FontCacheUpdater(SubtitleProcessorLibASS* const p)
+        : sp(p)
+    {
+    }
+
+    void run()
+    {
+        if (!sp)
+        {
+            return;
+        }
+
+        sp->updateFontCache();
+    }
+
+private:
+
+    SubtitleProcessorLibASS* sp = nullptr;
+};
+
 void SubtitleProcessorLibASS::updateFontCacheAsync()
 {
-    class Q_DECL_HIDDEN FontCacheUpdater : public QThread
-    {
-        SubtitleProcessorLibASS* sp;
-
-    public:
-
-        explicit FontCacheUpdater(SubtitleProcessorLibASS* p)
-            : sp(p)
-        {
-        }
-
-        void run()
-        {
-            if (!sp)
-                return;
-
-            sp->updateFontCache();
-        }
-    };
 
     FontCacheUpdater updater(this);
     QEventLoop loop;
@@ -970,10 +981,12 @@ void SubtitleProcessorLibASS::processTrack(ASS_Track *track)
         SubtitleFrame frame;
         const ASS_Event& ae = track->events[i];
         frame.text          = PlainText::fromAss(ae.Text);
-        frame.begin         = qreal(ae.Start)/1000.0;
-        frame.end           = frame.begin + qreal(ae.Duration)/1000.0;
+        frame.begin         = qreal(ae.Start) / 1000.0;
+        frame.end           = frame.begin + qreal(ae.Duration) / 1000.0;
         m_frames.append(frame);
     }
 }
 
 } // namespace QtAV
+
+#include "SubtitleProcessorLibASS.moc"

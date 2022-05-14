@@ -59,9 +59,11 @@ static const char kName[] = "OpenAL";
 
 class Q_DECL_HIDDEN AudioOutputOpenAL final : public AudioOutputBackend
 {
+    Q_OBJECT
+
 public:
 
-    AudioOutputOpenAL(QObject* parent = nullptr);
+    AudioOutputOpenAL(QObject* const parent = nullptr);
 
     QString name()                                              const final
     {
@@ -108,7 +110,7 @@ protected:
         }
 
         qCDebug(DIGIKAM_QTAV_LOG).noquote() << QString::asprintf("AudioOutputOpenAL creating context...");
-        context = alcCreateContext(device, nullptr);
+        context                       = alcCreateContext(device, nullptr);
         alcMakeContextCurrent(context);
 
         return true;
@@ -116,8 +118,8 @@ protected:
 
 protected:
 
-    ALCdevice*      device;
-    ALCcontext*     context;
+    ALCdevice*      device      = nullptr;
+    ALCcontext*     context     = nullptr;
     ALenum          format_al;
     QVector<ALuint> buffer;
     ALuint          source;
@@ -285,7 +287,7 @@ static ALenum audioFormatToAL(const AudioFormat& fmt)
 
 QMutex AudioOutputOpenAL::global_mutex;
 
-AudioOutputOpenAL::AudioOutputOpenAL(QObject* parent)
+AudioOutputOpenAL::AudioOutputOpenAL(QObject* const parent)
     : AudioOutputBackend(AudioOutput::SetVolume, parent),
       device(nullptr),
       context(nullptr),
@@ -494,7 +496,7 @@ bool AudioOutputOpenAL::isSupported(const AudioFormat& format) const
 
 bool AudioOutputOpenAL::isSupported(AudioFormat::SampleFormat sampleFormat) const
 {
-    if (sampleFormat == AudioFormat::SampleFormat_Unsigned8 || sampleFormat == AudioFormat::SampleFormat_Signed16)
+    if ((sampleFormat == AudioFormat::SampleFormat_Unsigned8) || (sampleFormat == AudioFormat::SampleFormat_Signed16))
         return true;
 
     if (IsPlanar(sampleFormat))
@@ -619,3 +621,5 @@ int AudioOutputOpenAL::getQueued()
 }
 
 } // namespace QtAV
+
+#include "AudioOutputOpenAL.moc"

@@ -37,9 +37,11 @@ static const char kName[] = "null";
 
 class Q_DECL_HIDDEN AudioOutputNull : public AudioOutputBackend
 {
+    Q_OBJECT
+
 public:
 
-    AudioOutputNull(QObject *parent = nullptr);
+    AudioOutputNull(QObject* const parent = nullptr);
 
     QString name() const                override
     {
@@ -80,9 +82,11 @@ static const AudioOutputBackendId AudioOutputBackendId_Null = mkid::id32base36_4
 
 FACTORY_REGISTER(AudioOutputBackend, Null, kName)
 
-AudioOutputNull::AudioOutputNull(QObject *parent)
+AudioOutputNull::AudioOutputNull(QObject* const parent)
     : AudioOutputBackend(AudioOutput::DeviceFeatures(), parent)
 {
 }
 
 } // namespace QtAV
+
+#include "AudioOutputNull.moc"
