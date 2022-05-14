@@ -48,10 +48,10 @@ class Q_DECL_HIDDEN AudioEncodeFilterPrivate final : public AudioFilterPrivate
 public:
 
     AudioEncodeFilterPrivate()
-        : enc(nullptr),
-          start_time(0),
-          async(false),
-          finishing(0),
+        : enc          (nullptr),
+          start_time   (0),
+          async        (false),
+          finishing    (0),
           leftOverAudio()
     {
     }
@@ -73,22 +73,14 @@ public:
     AudioFrame      leftOverAudio;
 };
 
-AudioEncodeFilter::AudioEncodeFilter(QObject *parent)
+AudioEncodeFilter::AudioEncodeFilter(QObject* const parent)
     : AudioFilter(*new AudioEncodeFilterPrivate(), parent)
 {
-
-#if QT_VERSION < QT_VERSION_CHECK(5, 0, 0)
-
-    connect(this, SIGNAL(requestToEncode(QtAV::AudioFrame)),
-            this, SLOT(encode(QtAV::AudioFrame)));
-
-#else
-
     connect(this, &AudioEncodeFilter::requestToEncode,
             this, &AudioEncodeFilter::encode);
 
-#endif
-    connect(this, SIGNAL(finished()), &d_func().enc_thread, SLOT(quit()));
+    connect(this, SIGNAL(finished()),
+            &d_func().enc_thread, SLOT(quit()));
 }
 
 void AudioEncodeFilter::setAsync(bool value)
@@ -172,7 +164,7 @@ void AudioEncodeFilter::finish()
     }
 }
 
-void AudioEncodeFilter::process(Statistics *statistics, AudioFrame *frame)
+void AudioEncodeFilter::process(Statistics* statistics, AudioFrame* frame)
 {
     Q_UNUSED(statistics);
 
@@ -229,7 +221,7 @@ void AudioEncodeFilter::encode(const AudioFrame& frame)
         Q_EMIT readyToEncode();
     }
 
-    if (!frame.isValid() && frame.timestamp() == std::numeric_limits<qreal>::max())
+    if (!frame.isValid() && (frame.timestamp() == std::numeric_limits<qreal>::max()))
     {
         while (d.enc->encode())
         {
@@ -247,7 +239,7 @@ void AudioEncodeFilter::encode(const AudioFrame& frame)
         return;
     }
 
-    if (frame.timestamp()*1000.0 < startTime())
+    if ((frame.timestamp()*1000.0) < startTime())
         return;
 
     AudioFrame f(frame);
@@ -268,7 +260,7 @@ void AudioEncodeFilter::encode(const AudioFrame& frame)
 
     for (int i = 0 ; i < frameSize ; i += frameSizeEncoder)
     {
-        if (frameSize - i >= frameSizeEncoder)
+        if ((frameSize - i) >= frameSizeEncoder)
         {
             audioFrames.append(f.mid(i, frameSizeEncoder));
         }
@@ -304,10 +296,10 @@ class Q_DECL_HIDDEN VideoEncodeFilterPrivate final : public VideoFilterPrivate
 public:
 
     VideoEncodeFilterPrivate()
-        : enc(nullptr),
+        : enc       (nullptr),
           start_time(0),
-          async(false),
-          finishing(0)
+          async     (false),
+          finishing (0)
     {
     }
 
@@ -327,21 +319,11 @@ public:
     QThread         enc_thread;
 };
 
-VideoEncodeFilter::VideoEncodeFilter(QObject *parent)
+VideoEncodeFilter::VideoEncodeFilter(QObject* const parent)
     : VideoFilter(*new VideoEncodeFilterPrivate(), parent)
 {
-
-#if QT_VERSION < QT_VERSION_CHECK(5, 0, 0)
-
-    connect(this, SIGNAL(requestToEncode(QtAV::VideoFrame)),
-            this, SLOT(encode(QtAV::VideoFrame)));
-
-#else
-
     connect(this, &VideoEncodeFilter::requestToEncode,
             this, &VideoEncodeFilter::encode);
-
-#endif
 
     connect(this, SIGNAL(finished()),
             &d_func().enc_thread, SLOT(quit()));
@@ -367,7 +349,7 @@ bool VideoEncodeFilter::isAsync() const
     return d_func().async;
 }
 
-VideoEncoder* VideoEncodeFilter::createEncoder(const QString &name)
+VideoEncoder* VideoEncodeFilter::createEncoder(const QString& name)
 {
     DPTR_D(VideoEncodeFilter);
 
@@ -428,7 +410,7 @@ void VideoEncodeFilter::finish()
     }
 }
 
-void VideoEncodeFilter::process(Statistics *statistics, VideoFrame *frame)
+void VideoEncodeFilter::process(Statistics* statistics, VideoFrame* frame)
 {
     Q_UNUSED(statistics);
 
@@ -444,7 +426,7 @@ void VideoEncodeFilter::process(Statistics *statistics, VideoFrame *frame)
     if (!d.enc_thread.isRunning())
         d.enc_thread.start();
 
-    requestToEncode(*frame);
+    Q_EMIT requestToEncode(*frame);
 }
 
 void VideoEncodeFilter::encode(const VideoFrame& frame)
@@ -480,7 +462,7 @@ void VideoEncodeFilter::encode(const VideoFrame& frame)
         Q_EMIT readyToEncode();
     }
 
-    if (!frame.isValid() && frame.timestamp() == std::numeric_limits<qreal>::max())
+    if (!frame.isValid() && (frame.timestamp() == std::numeric_limits<qreal>::max()))
     {
         while (d.enc->encode())
         {
@@ -498,14 +480,18 @@ void VideoEncodeFilter::encode(const VideoFrame& frame)
         return;
     }
 
-    if (frame.timestamp()*1000.0 < startTime())
+    if ((frame.timestamp()*1000.0) < startTime())
         return;
 
     // TODO: async
 
     VideoFrame f(frame);
 
-    if (f.pixelFormat() != d.enc->pixelFormat() || d.enc->width() != f.width() || d.enc->height() != f.height())
+    if (
+        (f.pixelFormat() != d.enc->pixelFormat()) ||
+        (d.enc->width()  != f.width())            ||
+        (d.enc->height() != f.height())
+       )
         f = f.to(d.enc->pixelFormat(), QSize(d.enc->width(), d.enc->height()));
 
     if (!d.enc->encode(f))
