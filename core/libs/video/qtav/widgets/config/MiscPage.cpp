@@ -39,24 +39,33 @@
 namespace QtAV
 {
 
-MiscPage::MiscPage()
+MiscPage::MiscPage(bool previewOpt)
 {
     QGridLayout* const gl = new QGridLayout();
     setLayout(gl);
     gl->setSizeConstraint(QLayout::SetFixedSize);
     int r                 = 0;
+
     m_preview_on          = new QCheckBox(i18n("Preview Over Time-Slider"));
     gl->addWidget(m_preview_on, r++, 0);
     m_preview_w           = new QSpinBox();
     m_preview_w->setRange(1, 1920);
     m_preview_h           = new QSpinBox();
     m_preview_h->setRange(1, 1080);
-    gl->addWidget(new QLabel(QString::fromLatin1("%1 %2: ").arg(i18n("Preview")).arg(i18n("size"))), r, 0);
+    QLabel* const slbl    =  new QLabel(QString::fromLatin1("%1 %2: ").arg(i18n("Preview")).arg(i18n("size")));
+    gl->addWidget(slbl, r, 0);
     QHBoxLayout* hb       = new QHBoxLayout();
     hb->addWidget(m_preview_w);
-    hb->addWidget(new QLabel(QString::fromLatin1("x")));
+    QLabel* const xlbl    = new QLabel(QString::fromLatin1("x"));
+    hb->addWidget(xlbl);
     hb->addWidget(m_preview_h);
     gl->addLayout(hb, r, 1);
+
+    m_preview_on->setVisible(previewOpt);
+    m_preview_w->setVisible(previewOpt);
+    m_preview_h->setVisible(previewOpt);
+    slbl->setVisible(previewOpt);
+    xlbl->setVisible(previewOpt);
 
     r++;
     gl->addWidget(new QLabel(i18n("Force fps")), r, 0);
