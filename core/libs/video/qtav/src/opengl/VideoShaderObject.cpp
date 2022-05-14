@@ -52,15 +52,15 @@ public:
     QVector<QSignalMapper*> sigMap[ShaderTypeCount];
 };
 
-VideoShaderObject::VideoShaderObject(QObject *parent)
-    : QObject(parent)
-    , VideoShader(*new VideoShaderObjectPrivate())
+VideoShaderObject::VideoShaderObject(QObject* const parent)
+    : QObject    (parent),
+      VideoShader(*new VideoShaderObjectPrivate())
 {
 }
 
-VideoShaderObject::VideoShaderObject(VideoShaderObjectPrivate &d, QObject *parent)
-    : QObject(parent)
-    , VideoShader(d)
+VideoShaderObject::VideoShaderObject(VideoShaderObjectPrivate& d, QObject* const parent)
+    : QObject    (parent),
+      VideoShader(d)
 {
 }
 
@@ -81,7 +81,7 @@ bool VideoShaderObject::event(QEvent *event)
         {
             if (uniforms.at(i).name == e->propertyName())
             {
-                propertyChanged(i|(shaderType<<16));
+                propertyChanged(i|(shaderType << 16));
             }
         }
     }
@@ -94,7 +94,7 @@ void VideoShaderObject::propertyChanged(int id)
     DPTR_D(VideoShaderObject);
 
     const int st     = id >> 16;
-    const int idx    = id&0xffff;
+    const int idx    = id & 0xffff;
     Uniform &u       = d.user_uniforms[st][idx];
     const QVariant v = property(u.name.constData());
     u.set(v);
@@ -112,7 +112,7 @@ void VideoShaderObject::programReady()
     {
         qDeleteAll(d.sigMap[st]);
         d.sigMap[st].clear();
-        const QVector<Uniform> &uniforms = d.user_uniforms[st];
+        const QVector<Uniform>& uniforms = d.user_uniforms[st];
 
         for (int i = 0 ; i < uniforms.size() ; ++i)
         {
@@ -142,32 +142,27 @@ void VideoShaderObject::programReady()
                 continue;
             }
 
-            QMetaMethod mm        = mp.notifySignal();
-            QSignalMapper *mapper = new QSignalMapper();
+            QMetaMethod mm              = mp.notifySignal();
+            QSignalMapper* const mapper = new QSignalMapper();
             mapper->setMapping(this, i|(st << 16));
-
-#if QT_VERSION >= QT_VERSION_CHECK(4, 8, 0)
 
             connect(this, mm,
                     mapper, mapper->metaObject()->method(mapper->metaObject()->indexOfSlot("map()")));
 
-#else
-
-            // NONE
-
-#endif
             connect(mapper, SIGNAL(mapped(int)),
                     this, SLOT(propertyChanged(int)));
 
             d.sigMap[st].append(mapper);
 
-            qCDebug(DIGIKAM_QTAV_LOG) << "set uniform property: " << u.name << property(u.name.constData());
+            qCDebug(DIGIKAM_QTAV_LOG)
+                << "set uniform property: " << u.name << property(u.name.constData());
 
             propertyChanged(i | (st << 16)); // set the initial value
         }
     }
-
-    //ready();
+/*
+    ready();
+*/
 }
 
 class Q_DECL_HIDDEN DynamicShaderObjectPrivate : public VideoShaderObjectPrivate
@@ -179,12 +174,12 @@ public:
     QString pp;
 };
 
-DynamicShaderObject::DynamicShaderObject(QObject* parent)
+DynamicShaderObject::DynamicShaderObject(QObject* const parent)
     : VideoShaderObject(*new DynamicShaderObjectPrivate(), parent)
 {
 }
 
-DynamicShaderObject::DynamicShaderObject(DynamicShaderObjectPrivate& d, QObject* parent)
+DynamicShaderObject::DynamicShaderObject(DynamicShaderObjectPrivate& d, QObject* const parent)
     : VideoShaderObject(d, parent)
 {
 }

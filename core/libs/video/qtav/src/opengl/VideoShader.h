@@ -77,7 +77,7 @@ public:
      * Array must end with null. { position, texcoord, ..., 0}, location is bound to 0, 1, ...
      * \return
      */
-    virtual char const *const *attributeNames() const;
+    virtual char const *const* attributeNames() const;
 
     /*!
      * \brief vertexShader
@@ -121,7 +121,7 @@ public:
      * Upload textures, setup uniforms before rendering.
      * If material type changed, build a new shader program.
      */
-    bool update(VideoMaterial* material);
+    bool update(VideoMaterial* const material);
 
 protected:
 
@@ -209,7 +209,7 @@ private:
     /// User configurable shader APIs END
 
     QByteArray shaderSourceFromFile(const QString& fileName) const;
-    bool build(QOpenGLShaderProgram* shaderProgram);
+    bool build(QOpenGLShaderProgram* const shaderProgram);
     void setVideoFormat(const VideoFormat& format);
     void setTextureTarget(int type);
     void setMaterialType(qint32 value);
@@ -218,7 +218,7 @@ private:
 
 protected:
 
-    explicit VideoShader(VideoShaderPrivate &d);
+    explicit VideoShader(VideoShaderPrivate& d);
 
     DPTR_DECLARE(VideoShader)
 };
@@ -266,7 +266,7 @@ public:
      * Call it after frame is rendered, i.e. after VideoShader::update(VideoMaterial*)
      */
     void setDirty(bool value);
-    const QMatrix4x4 &colorMatrix() const;
+    const QMatrix4x4& colorMatrix() const;
     const QMatrix4x4& channelMap() const;
     int bitsPerComponent() const; // 0 if the value of components are different
     QVector2D vectorTo8bit() const;
@@ -341,7 +341,7 @@ public:
 
 protected:
 
-    explicit VideoMaterial(VideoMaterialPrivate &d);
+    explicit VideoMaterial(VideoMaterialPrivate& d);
 
     DPTR_DECLARE(VideoMaterial)
 };

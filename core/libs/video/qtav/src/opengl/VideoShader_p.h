@@ -105,6 +105,8 @@ public:
         program = nullptr;
     }
 
+public:
+
     bool                    owns_program; // shader program is not created by this. e.g. scene graph create it's own program and we store it here
     bool                    rebuild_program;
     bool                    update_builtin_uniforms; // builtin uniforms are static, set the values once is enough if no change
@@ -210,7 +212,7 @@ public:
     ColorTransform          colorTransform;
     bool                    try_pbo;
     QVector<QOpenGLBuffer>  pbo;
-    QVector2D               vec_to8;                             // TODO: vec3 to support both RG and LA (.rga, vec_to8)
+    QVector2D               vec_to8;                                     // TODO: vec3 to support both RG and LA (.rga, vec_to8)
     QMatrix4x4              channel_map;
     QVector<QVector2D>      v_texel_size;
     QVector<QVector2D>      v_texture_size;
