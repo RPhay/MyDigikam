@@ -36,11 +36,12 @@ using namespace QtAV;
 
 class Q_DECL_HIDDEN Thread : public QThread
 {
+    Q_OBJECT
+
 public:
 
-    explicit Thread(AVPlayerCore* player)
+    explicit Thread(AVPlayerCore* const player)
       : QThread(nullptr)
-      , mpPlayer(player)
     {
     }
 
@@ -48,15 +49,13 @@ protected:
 
     virtual void run()
     {
-        //mpPlayer->play();
-
         exec();
     }
 
-    AVPlayerCore *mpPlayer;
+    AVPlayerCore* mpPlayer = nullptr;
 };
 
-int main(int argc, char *argv[])
+int main(int argc, char* argv[])
 {
     QApplication a(argc, argv);
 
@@ -72,3 +71,5 @@ int main(int argc, char *argv[])
 
     return a.exec();
 }
+
+#include "playerthread.moc"

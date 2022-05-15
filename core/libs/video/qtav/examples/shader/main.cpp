@@ -42,6 +42,8 @@ using namespace QtAV;
 
 class MyShader : public VideoShaderObject
 {
+    Q_OBJECT
+
 public:
 
     MyShader()
@@ -82,11 +84,13 @@ private:
                     float ilg    = is * lg;
                     float ilb    = is * lb;
 
-                    mat4 m       = mat4(
+                    mat4 m       = mat4
+                    (
                         ilr+s, ilg  , ilb  , 0.0,
                         ilr  , ilg+s, ilb  , 0.0,
                         ilr  , ilg  , ilb+s, 0.0,
-                        0.0  , 0.0  , 0.0  , 1.0);
+                        0.0  , 0.0  , 0.0  , 1.0
+                    );
 
                     gl_FragColor = m * gl_FragColor + bs.r;
                    );
@@ -106,7 +110,7 @@ protected:
 
     virtual const float* kernel() const override
     {
-        const float v = 1.0/(float)kernelSize(); //radius 1
+        const float v = 1.0 / (float)kernelSize(); // radius 1
         static QVector<float> k;
         k.resize(kernelSize());
         k.fill(v);
@@ -118,13 +122,15 @@ protected:
 class WaveShader : public QObject,
                    public VideoShader
 {
+    Q_OBJECT
+
 public:
 
     WaveShader(QObject* const parent = nullptr)
         : QObject(parent),
-          t(0),
-          A(0.06),
-          omega(5)
+          t      (0.0),
+          A      (0.06),
+          omega  (5.0)
     {
         startTimer(20);
     }
@@ -133,7 +139,7 @@ protected:
 
     void timerEvent(QTimerEvent*)
     {
-        t += 2.0*M_PI / 50.0;
+        t += 2.0 * M_PI / 50.0;
     }
 
 private:
@@ -141,7 +147,7 @@ private:
     const char* userShaderHeader(QOpenGLShader::ShaderType type) const override
     {
         if (type == QOpenGLShader::Vertex)
-            return 0;
+            return nullptr;
 
         return GLSL(
                     uniform float u_omega;
@@ -237,7 +243,8 @@ int main(int argc, char* argv[])
         vo[i].widget()->setWindowTitle(QString::fromLatin1(shader_list[i].title));
         vo[i].widget()->show();
         vo[i].widget()->resize(500, 300);
-        vo[i].widget()->move(vo[0].widget()->x() + (i%2)*vo[0].widget()->width(), vo[0].widget()->y() + (i/2)*vo[0].widget()->height());
+        vo[i].widget()->move(vo[0].widget()->x() + (i % 2) * vo[0].widget()->width(),
+                             vo[0].widget()->y() + (i / 2) * vo[0].widget()->height());
         vo[i].opengl()->setUserShader(shader_list[i].shader);
         shaders[i].reset(shader_list[i].shader);
     }
@@ -246,3 +253,5 @@ int main(int argc, char* argv[])
 
     return a.exec();
 }
+
+#include "main.moc"

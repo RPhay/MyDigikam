@@ -121,7 +121,9 @@ public:
         else
         {
             if (!QAbstractEventDispatcher::instance())
+            {
                 return;
+            }
 
             QAbstractEventDispatcher::instance()->removeNativeEventFilter(this);
         }
@@ -152,9 +154,12 @@ public:
 */
         }
 
-        if (     (msg->message          == WM_SYSCOMMAND)
-            && (((msg->wParam & 0xFFF0) == SC_SCREENSAVE)
-             || ((msg->wParam & 0xFFF0) == SC_MONITORPOWER))
+        if (
+            (msg->message            == WM_SYSCOMMAND) &&
+            (
+             ((msg->wParam & 0xFFF0) == SC_SCREENSAVE) ||
+             ((msg->wParam & 0xFFF0) == SC_MONITORPOWER)
+            )
            )
          {
 /*
@@ -208,7 +213,7 @@ ScreenSaver::ScreenSaver()
     preferBlanking = 0;
     allowExposures = 0;
 
-    if (qgetenv("DISPLAY").isEmpty())
+    if (qEnvironmentVariableIsEmpty("DISPLAY"))
     {
         isX11 = false;
     }
@@ -257,7 +262,9 @@ ScreenSaver::~ScreenSaver()
 #ifdef Q_OS_LINUX
 
     if (xlib.isLoaded())
+    {
         xlib.unload();
+    }
 
 #elif defined(Q_OS_MAC) && !defined(Q_OS_IOS)
 
@@ -286,7 +293,7 @@ ScreenSaver::~ScreenSaver()
 
 bool ScreenSaver::enable(bool yes)
 {
-    bool rv = false;
+    bool rv  = false;
 
 #if defined(Q_OS_WIN) && !defined(Q_OS_WINRT)
 
@@ -345,9 +352,13 @@ bool ScreenSaver::enable(bool yes)
         int ret = 0;
 
         if (yes)
+        {
             ret = XSetScreenSaver(display, -1, interval, preferBlanking, allowExposures);
+        }
         else
+        {
             ret = XSetScreenSaver(display,  0, interval, preferBlanking /*DontPreferBlanking*/, allowExposures);
+        }
 
         // TODO: why XSetScreenSaver return 1? now use XResetScreenSaver to workaround
 
@@ -373,7 +384,9 @@ bool ScreenSaver::enable(bool yes)
     else
     {
         if (ssTimerId)
+        {
             killTimer(ssTimerId);
+        }
     }
 
     Q_UNUSED(rv);
@@ -394,7 +407,9 @@ bool ScreenSaver::enable(bool yes)
     else
     {
         if (ssTimerId)
+        {
             killTimer(ssTimerId);
+        }
     }
 
     rv       = true;
@@ -502,7 +517,7 @@ bool ScreenSaver::restoreState()
 
             XSetScreenSaver(display, timeout, interval, preferBlanking, allowExposures);
             XCloseDisplay(display);
-            rv = true;
+            rv                     = true;
         }
 
 #endif // Q_OS_LINUX
@@ -520,7 +535,9 @@ bool ScreenSaver::restoreState()
 void ScreenSaver::timerEvent(QTimerEvent* e)
 {
     if (e->timerId() != ssTimerId)
+    {
         return;
+    }
 
 #if defined(Q_OS_MAC) && !defined(Q_OS_IOS)
 
@@ -549,7 +566,9 @@ void ScreenSaver::timerEvent(QTimerEvent* e)
 #ifdef Q_OS_LINUX
 
     if (!isX11)
+    {
         return;
+    }
 
     Display* const display = XOpenDisplay(0);
     XResetScreenSaver(display);

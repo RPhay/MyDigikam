@@ -38,6 +38,8 @@ namespace AVPlayer
 class OSDFilter : public VideoFilter,
                   public OSD
 {
+    Q_OBJECT
+
 public:
 
     explicit OSDFilter(QObject* const parent = nullptr);

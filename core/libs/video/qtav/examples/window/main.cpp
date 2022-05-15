@@ -36,6 +36,8 @@ using namespace QtAV;
 
 class PlayerWindow : public OpenGLWindowRenderer
 {
+    Q_OBJECT
+
 public:
 
     PlayerWindow(QWindow* const parent = nullptr)
@@ -94,3 +96,5 @@ int main(int argc, char *argv[])
 
     return a.exec();
 }
+
+#include "main.moc"
