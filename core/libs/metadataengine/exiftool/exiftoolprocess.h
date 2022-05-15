@@ -202,6 +202,11 @@ private:
     bool startExifTool();
 
     /**
+     * Restart exiftool in a new process.
+     */
+    void restartExifTool();
+
+    /**
      * Attempts to terminate the process.
      */
     void terminateExifTool();

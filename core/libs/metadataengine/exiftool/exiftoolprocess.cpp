@@ -145,6 +145,19 @@ bool ExifToolProcess::startExifTool()
     return waitForStarted(1000);
 }
 
+void ExifToolProcess::restartExifTool()
+{
+    terminateExifTool();
+
+    if (!startExifTool())
+    {
+        killExifTool();
+
+        qCWarning(DIGIKAM_METAENGINE_LOG) << "ExifTool process cannot be started ("
+                                          << getExifToolProgram() << ")";
+    }
+}
+
 void ExifToolProcess::terminateExifTool()
 {
     if (state() == QProcess::Running)
@@ -445,15 +458,7 @@ void ExifToolProcess::slotChangeProgram(const QString& etExePath)
         return;
     }
 
-    terminateExifTool();
-
-    if (!startExifTool())
-    {
-        killExifTool();
-
-        qCWarning(DIGIKAM_METAENGINE_LOG) << "ExifTool process cannot be started ("
-                                          << getExifToolProgram() << ")";
-    }
+    restartExifTool();
 }
 
 void ExifToolProcess::slotApplySettingsAndStart()
@@ -467,15 +472,7 @@ void ExifToolProcess::slotApplySettingsAndStart()
         return;
     }
 
-    terminateExifTool();
-
-    if (!startExifTool())
-    {
-        killExifTool();
-
-        qCWarning(DIGIKAM_METAENGINE_LOG) << "ExifTool process cannot be started ("
-                                          << getExifToolProgram() << ")";
-    }
+    restartExifTool();
 }
 
 } // namespace Digikam
