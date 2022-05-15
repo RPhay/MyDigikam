@@ -43,27 +43,29 @@ class VideoDecoderFFmpegBase : public VideoDecoder
 
 public:
 
-    virtual bool decode(const Packet& packet) override;
-    virtual VideoFrame frame() override;
+    virtual bool decode(const Packet& packet)   override;
+    virtual VideoFrame frame()                  override;
 
 protected:
 
-    explicit VideoDecoderFFmpegBase(VideoDecoderFFmpegBasePrivate &d);
+    explicit VideoDecoderFFmpegBase(VideoDecoderFFmpegBasePrivate& d);
 
 private:
 
     VideoDecoderFFmpegBase(); // it's a base class
 };
 
+// -----------------------------------------------------------------
+
 class VideoDecoderFFmpegBasePrivate : public VideoDecoderPrivate
 {
 public:
 
     VideoDecoderFFmpegBasePrivate()
-        : VideoDecoderPrivate()
-        , frame(nullptr)
-        , width(0)
-        , height(0)
+        : VideoDecoderPrivate(),
+          frame(nullptr),
+          width(0),
+          height(0)
     {
 
 #if !AVCODEC_STATIC_REGISTER
@@ -85,10 +87,17 @@ public:
     }
 
     void updateColorDetails(VideoFrame* f);
-    qreal getDAR(AVFrame *f);
+    qreal getDAR(AVFrame* f);
 
-    AVFrame* frame;          // set once and not change
-    int      width, height;  // The current decoded frame size
+public:
+
+    AVFrame* frame  = nullptr;          // set once and not change
+    int      width  = 0;
+    int      height = 0;  // The current decoded frame size
+
+private:
+
+    Q_DISABLE_COPY(VideoDecoderFFmpegBasePrivate);
 };
 
 } // namespace QtAV
