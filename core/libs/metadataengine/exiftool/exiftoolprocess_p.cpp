@@ -30,7 +30,8 @@ namespace Digikam
 {
 
 ExifToolProcess::Private::Private(ExifToolProcess* const q)
-    : pp                  (q),
+    : QObject             (q),
+      pp                  (q),
       cmdRunning          (0),
       cmdAction           (ExifToolProcess::LOAD_METADATA),
       writeChannelIsClosed(true),
@@ -43,7 +44,7 @@ ExifToolProcess::Private::Private(ExifToolProcess* const q)
     outReady[1] = false;
 }
 
-void ExifToolProcess::Private::execNextCmd()
+void ExifToolProcess::Private::slotExecNextCmd()
 {
     if ((pp->state() != QProcess::Running) ||
         writeChannelIsClosed)
@@ -160,9 +161,9 @@ void ExifToolProcess::Private::readOutput(const QProcess::ProcessChannel channel
                                       outBuff[QProcess::StandardError]);
     }
 
-    cmdRunning = 0; // No command is running
+    cmdRunning = 0;    // No command is running
 
-    execNextCmd();  // Exec next command
+    slotExecNextCmd(); // Exec next command
 }
 
 void ExifToolProcess::Private::setProcessErrorAndEmit(QProcess::ProcessError error, const QString& description)

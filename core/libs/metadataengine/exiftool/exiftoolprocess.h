@@ -202,6 +202,11 @@ private:
     bool startExifTool();
 
     /**
+     * Restart exiftool in a new process.
+     */
+    void restartExifTool();
+
+    /**
      * Attempts to terminate the process.
      */
     void terminateExifTool();
@@ -225,7 +230,6 @@ Q_SIGNALS:
 private Q_SLOTS:
 
     void slotStarted();
-    void slotExecNextCmd();
     void slotApplySettingsAndStart();
     void slotReadyReadStandardError();
     void slotReadyReadStandardOutput();
