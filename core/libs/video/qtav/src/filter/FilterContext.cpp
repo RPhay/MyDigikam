@@ -38,9 +38,9 @@
 namespace QtAV
 {
 
-VideoFilterContext *VideoFilterContext::create(Type t)
+VideoFilterContext* VideoFilterContext::create(Type t)
 {
-    VideoFilterContext *ctx = nullptr;
+    VideoFilterContext* ctx = nullptr;
 
     switch (t)
     {
@@ -63,7 +63,7 @@ VideoFilterContext *VideoFilterContext::create(Type t)
     return ctx;
 }
 
-void VideoFilterContext::initializeOnFrame(VideoFrame *frame)
+void VideoFilterContext::initializeOnFrame(VideoFrame* frame)
 {
     Q_UNUSED(frame);
 }
@@ -113,7 +113,7 @@ VideoFilterContext::~VideoFilterContext()
     }
 }
 
-void VideoFilterContext::drawImage(const QPointF &pos, const QImage &image, const QRectF& source, Qt::ImageConversionFlags flags)
+void VideoFilterContext::drawImage(const QPointF& pos, const QImage& image, const QRectF& source, Qt::ImageConversionFlags flags)
 {
     Q_UNUSED(pos);
     Q_UNUSED(image);
@@ -121,7 +121,7 @@ void VideoFilterContext::drawImage(const QPointF &pos, const QImage &image, cons
     Q_UNUSED(flags);
 }
 
-void VideoFilterContext::drawImage(const QRectF &target, const QImage &image, const QRectF &source, Qt::ImageConversionFlags flags)
+void VideoFilterContext::drawImage(const QRectF& target, const QImage& image, const QRectF &source, Qt::ImageConversionFlags flags)
 {
     Q_UNUSED(target);
     Q_UNUSED(image);
@@ -129,27 +129,27 @@ void VideoFilterContext::drawImage(const QRectF &target, const QImage &image, co
     Q_UNUSED(flags);
 }
 
-void VideoFilterContext::drawPlainText(const QPointF &pos, const QString &text)
+void VideoFilterContext::drawPlainText(const QPointF& pos, const QString& text)
 {
     Q_UNUSED(pos);
     Q_UNUSED(text);
 }
 
-void VideoFilterContext::drawPlainText(const QRectF &rect, int flags, const QString &text)
+void VideoFilterContext::drawPlainText(const QRectF& rect, int flags, const QString& text)
 {
     Q_UNUSED(rect);
     Q_UNUSED(flags);
     Q_UNUSED(text);
 }
 
-void VideoFilterContext::drawRichText(const QRectF &rect, const QString &text, bool wordWrap)
+void VideoFilterContext::drawRichText(const QRectF& rect, const QString& text, bool wordWrap)
 {
     Q_UNUSED(rect);
     Q_UNUSED(text);
     Q_UNUSED(wordWrap);
 }
 
-void VideoFilterContext::shareFrom(VideoFilterContext *vctx)
+void VideoFilterContext::shareFrom(VideoFilterContext* vctx)
 {
     if (!vctx)
     {
@@ -166,9 +166,10 @@ void VideoFilterContext::shareFrom(VideoFilterContext *vctx)
     video_height     = vctx->video_height;
 }
 
-QPainterFilterContext::QPainterFilterContext() : VideoFilterContext()
-    , doc(nullptr)
-    , cvt(nullptr)
+QPainterFilterContext::QPainterFilterContext()
+    : VideoFilterContext(),
+      doc(nullptr),
+      cvt(nullptr)
 {
 }
 
@@ -189,7 +190,7 @@ QPainterFilterContext::~QPainterFilterContext()
 
 // TODO: use drawPixmap?
 
-void QPainterFilterContext::drawImage(const QPointF &pos, const QImage &image, const QRectF& source, Qt::ImageConversionFlags flags)
+void QPainterFilterContext::drawImage(const QPointF& pos, const QImage& image, const QRectF& source, Qt::ImageConversionFlags flags)
 {
     if (!prepare())
         return;
@@ -202,7 +203,7 @@ void QPainterFilterContext::drawImage(const QPointF &pos, const QImage &image, c
     painter->restore();
 }
 
-void QPainterFilterContext::drawImage(const QRectF &target, const QImage &image, const QRectF &source, Qt::ImageConversionFlags flags)
+void QPainterFilterContext::drawImage(const QRectF& target, const QImage& image, const QRectF& source, Qt::ImageConversionFlags flags)
 {
     if (!prepare())
         return;
@@ -215,7 +216,7 @@ void QPainterFilterContext::drawImage(const QRectF &target, const QImage &image,
     painter->restore();
 }
 
-void QPainterFilterContext::drawPlainText(const QPointF &pos, const QString &text)
+void QPainterFilterContext::drawPlainText(const QPointF& pos, const QString& text)
 {
     if (!prepare())
         return;
@@ -238,7 +239,7 @@ void QPainterFilterContext::drawPlainText(const QRectF &rect, int flags, const Q
     painter->restore();
 }
 
-void QPainterFilterContext::drawRichText(const QRectF &rect, const QString &text, bool wordWrap)
+void QPainterFilterContext::drawRichText(const QRectF& rect, const QString& text, bool wordWrap)
 {
     Q_UNUSED(rect);
     Q_UNUSED(text);
@@ -287,7 +288,7 @@ bool QPainterFilterContext::prepare()
     return true;
 }
 
-void QPainterFilterContext::initializeOnFrame(VideoFrame *vframe)
+void QPainterFilterContext::initializeOnFrame(VideoFrame* vframe)
 {
     if (!vframe)
     {
@@ -303,7 +304,8 @@ void QPainterFilterContext::initializeOnFrame(VideoFrame *vframe)
 
         if (!paint_device && !painter->isActive())
         {
-            qCWarning(DIGIKAM_QTAV_LOG_WARN).noquote() << QString::asprintf("No paint device and painter is not active. No painting!");
+            qCWarning(DIGIKAM_QTAV_LOG_WARN).noquote()
+                << QString::asprintf("No paint device and painter is not active. No painting!");
 
             return;
         }
@@ -345,11 +347,14 @@ void QPainterFilterContext::initializeOnFrame(VideoFrame *vframe)
         paint_device = nullptr;
     }
 
-    Q_ASSERT(video_width > 0 && video_height > 0);
+    Q_ASSERT((video_width > 0) && (video_height > 0));
 
     // direct draw on frame data, so use VideoFrame::constBits()
 
-    paint_device = new QImage((uchar*)vframe->constBits(0), video_width, video_height, vframe->bytesPerLine(0), format.imageFormat());
+    paint_device = new QImage((uchar*)vframe->constBits(0),
+                              video_width, video_height,
+                              vframe->bytesPerLine(0),
+                              format.imageFormat());
 
     if (!painter)
         painter = new QPainter();

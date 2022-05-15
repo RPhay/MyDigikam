@@ -87,6 +87,8 @@ public:
     virtual void drawPlainText(const QRectF& rect, int flags, const QString& text);
     virtual void drawRichText(const QRectF& rect, const QString& text, bool wordWrap = true);
 
+public:
+
     /**
      * TODO: x, y, width, height: |?|>=1 is in pixel unit, otherwise is ratio of video context rect
      * filter.x(a).y(b).width(c).height(d)
@@ -95,7 +97,7 @@ public:
 
     // Fallback to QPainter if no other paint engine implemented
 
-    QPainter*       painter;                    // TODO: shared_ptr?
+    QPainter*       painter                     = nullptr;      // TODO: shared_ptr?
     qreal           opacity;
     QTransform      transform;
     QPainterPath    clip_path;
@@ -107,13 +109,14 @@ public:
      * for the filters apply on decoded data, paint_device must be initialized once the data changes
      * can we allocate memory on stack?
      */
-    QPaintDevice*   paint_device;
-    int             video_width, video_height;  // original size
+    QPaintDevice*   paint_device                = nullptr;
+    int             video_width                 = 0;            ///< original size
+    int             video_height                = 0;            ///< original size
 
 protected:
 
-    bool            own_painter;
-    bool            own_paint_device;
+    bool            own_painter                 = false;
+    bool            own_paint_device            = false;
 
 protected:
 
@@ -129,13 +132,17 @@ protected:
 
     virtual void shareFrom(VideoFilterContext* vctx);
     friend class VideoFilter;
+
+private:
+
+    Q_DISABLE_COPY(VideoFilterContext);
 };
 
 class VideoFrameConverter;
 
 // TODO: font, pen, brush etc?
 
-class QTAV_EXPORT QPainterFilterContext final: public VideoFilterContext
+class QTAV_EXPORT QPainterFilterContext final : public VideoFilterContext
 {
 public:
 
@@ -162,12 +169,12 @@ protected:
 
     bool isReady() const                        override;
     bool prepare()                              override;
-    void initializeOnFrame(VideoFrame *vframe)  override;
+    void initializeOnFrame(VideoFrame* vframe)  override;
 
 protected:
 
-    QTextDocument*       doc;
-    VideoFrameConverter* cvt;
+    QTextDocument*       doc = nullptr;
+    VideoFrameConverter* cvt = nullptr;
 };
 
 #if QTAV_HAVE(X11)
@@ -217,21 +224,25 @@ protected:
 
 protected:
 
-    QTextDocument*          doc;
-    VideoFrameConverter*    cvt;
+    QTextDocument*          doc             = nullptr;
+    VideoFrameConverter*    cvt             = nullptr;
 
-    Display*                display;
+    Display*                display         = nullptr;
     GC                      gc;
     Drawable                drawable;
-    XImage*                 text_img;
-    XImage*                 mask_img;
+    XImage*                 text_img        = nullptr;
+    XImage*                 mask_img        = nullptr;
     Pixmap                  mask_pix;
     QImage                  text_q;
     QImage                  mask_q;
 
-    bool                    plain;
+    bool                    plain           = false;
     QString                 text;
-    QImage                  test_img; ///< for computing bounding rect
+    QImage                  test_img;                   ///< for computing bounding rect
+
+private:
+
+    Q_DISABLE_COPY(X11FilterContext);
 };
 
 #endif // QTAV_HAVE(X11)

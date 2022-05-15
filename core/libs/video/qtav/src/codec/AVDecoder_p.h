@@ -54,7 +54,7 @@ class AVFrameBuffers
 
 public:
 
-    explicit AVFrameBuffers(AVFrame* frame)
+    explicit AVFrameBuffers(AVFrame* const frame)
     {
         Q_UNUSED(frame);
 
@@ -122,6 +122,8 @@ public:
     }
 };
 
+// ------------------------------------------------------------------------
+
 typedef QSharedPointer<AVFrameBuffers> AVFrameBuffersRef;
 
 class QTAV_PRIVATE_EXPORT AVDecoderPrivate : public DPtrPrivate<AVDecoder>
@@ -130,7 +132,7 @@ public:
 
     static const char* getProfileName(AVCodecID id, int profile)
     {
-        AVCodec *c = avcodec_find_decoder(id);
+        AVCodec* const c = avcodec_find_decoder(id);
 
         if (!c)
         {
@@ -140,7 +142,7 @@ public:
         return av_get_profile_name(c, profile);
     }
 
-    static const char* getProfileName(const AVCodecContext* ctx)
+    static const char* getProfileName(const AVCodecContext* const ctx)
     {
         if (ctx->codec)
         {
@@ -151,11 +153,11 @@ public:
     }
 
     AVDecoderPrivate()
-      : codec_ctx(nullptr)
-      , available(true)
-      , is_open(false)
-      , undecoded_size(0)
-      , dict(nullptr)
+      : codec_ctx(nullptr),
+        available(true),
+        is_open(false),
+        undecoded_size(0),
+        dict(nullptr)
     {
         codec_ctx = avcodec_alloc_context3(nullptr);
     }
@@ -181,14 +183,20 @@ public:
 
 public:
 
-    AVCodecContext* codec_ctx;              // set once and not change
-    bool            available;              // TODO: true only when context(and hw ctx) is ready
-    bool            is_open;
-    int             undecoded_size;
+    AVCodecContext* codec_ctx       = nullptr;    // set once and not change
+    bool            available       = false;      // TODO: true only when context(and hw ctx) is ready
+    bool            is_open         = false;
+    int             undecoded_size  = 0;
     QString         codec_name;
     QVariantHash    options;
-    AVDictionary*   dict;
+    AVDictionary*   dict            = nullptr;
+
+private:
+
+    Q_DISABLE_COPY(AVDecoderPrivate);
 };
+
+// ------------------------------------------------------------------------
 
 class AudioResampler;
 
@@ -201,9 +209,15 @@ public:
 
 public:
 
-    AudioResampler* resampler;
+    AudioResampler* resampler = nullptr;
     QByteArray      decoded;
+
+private:
+
+    Q_DISABLE_COPY(AudioDecoderPrivate);
 };
+
+// ------------------------------------------------------------------------
 
 class QTAV_PRIVATE_EXPORT VideoDecoderPrivate : public AVDecoderPrivate
 {
@@ -217,6 +231,10 @@ public:
     virtual ~VideoDecoderPrivate()
     {
     }
+
+private:
+
+    Q_DISABLE_COPY(VideoDecoderPrivate);
 };
 
 } // namespace QtAV
