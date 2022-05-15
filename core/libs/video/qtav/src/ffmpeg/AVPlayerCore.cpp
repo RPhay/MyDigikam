@@ -442,11 +442,11 @@ void AVPlayerCore::setPriority(const QVector<VideoDecoderId> &ids)
 
     class Q_DECL_HIDDEN ChangeDecoderTask : public QRunnable
     {
-        AVPlayerCore* player;
+        AVPlayerCore* player = nullptr;
 
     public:
 
-        ChangeDecoderTask(AVPlayerCore* p)
+        ChangeDecoderTask(AVPlayerCore* const p)
             : player(p)
         {
         }
@@ -455,6 +455,10 @@ void AVPlayerCore::setPriority(const QVector<VideoDecoderId> &ids)
         {
             player->d->tryApplyDecoderPriority(player);
         }
+
+    private:
+
+        Q_DISABLE_COPY(ChangeDecoderTask);
     };
 
     d->vthread->scheduleTask(new ChangeDecoderTask(this));
@@ -1631,7 +1635,7 @@ bool AVPlayerCore::load()
     {
     public:
 
-        LoadWorker(AVPlayerCore* player)
+        LoadWorker(AVPlayerCore* const player)
             : m_player(player)
         {
         }
@@ -1646,7 +1650,11 @@ bool AVPlayerCore::load()
 
     private:
 
-        AVPlayerCore* m_player;
+        AVPlayerCore* m_player = nullptr;
+
+    private:
+
+        Q_DISABLE_COPY(LoadWorker);
     };
 
     // TODO: thread pool has a max thread limit
