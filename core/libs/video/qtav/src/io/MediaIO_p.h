@@ -46,9 +46,9 @@ class QTAV_PRIVATE_EXPORT MediaIOPrivate : public DPtrPrivate<MediaIO>
 public:
 
     MediaIOPrivate()
-        : ctx(nullptr)
-        , buffer_size(-1)
-        , mode(MediaIO::Read)
+        : ctx(nullptr),
+          buffer_size(-1),
+          mode(MediaIO::Read)
     {
     }
 
@@ -75,13 +75,13 @@ public:
 
     // MUST open/close outside
 
-    void setDevice(QIODevice *dev); // set private in QFileIO etc
+    void setDevice(QIODevice* dev); // set private in QFileIO etc
     QIODevice* device()                                     const;
 
     virtual bool isSeekable()                               const override;
     virtual bool isWritable()                               const override;
-    virtual qint64 read(char *data, qint64 maxSize)               override;
-    virtual qint64 write(const char *data, qint64 maxSize)        override;
+    virtual qint64 read(char* data, qint64 maxSize)               override;
+    virtual qint64 write(const char* data, qint64 maxSize)        override;
     virtual bool seek(qint64 offset, int from)                    override;
     virtual qint64 position()                               const override;
 
@@ -97,7 +97,7 @@ Q_SIGNALS:
 
 protected:
 
-    explicit QIODeviceIO(QIODeviceIOPrivate &d);
+    explicit QIODeviceIO(QIODeviceIOPrivate& d);
 };
 
 // -------------------------------------------------------------------

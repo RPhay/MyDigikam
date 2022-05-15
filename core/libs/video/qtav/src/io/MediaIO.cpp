@@ -86,7 +86,7 @@ MediaIO* MediaIO::createForProtocol(const QString& protocol)
 
     foreach (MediaIOId id, ids)
     {
-        MediaIO* in = MediaIO::create(id);
+        MediaIO* const in = MediaIO::create(id);
 
         if (in->protocols().contains(protocol))
             return in;
@@ -104,7 +104,7 @@ MediaIO* MediaIO::createForUrl(const QString& url)
     if (p < 0)
         return nullptr;
 
-    MediaIO* io = MediaIO::createForProtocol(url.left(p));
+    MediaIO* const io = MediaIO::createForProtocol(url.left(p));
 
     if (!io)
         return nullptr;
@@ -116,16 +116,16 @@ MediaIO* MediaIO::createForUrl(const QString& url)
 
 static int av_read(void* opaque, unsigned char* buf, int buf_size)
 {
-    MediaIO* io = static_cast<MediaIO*>(opaque);
+    MediaIO* const io = static_cast<MediaIO*>(opaque);
 
-    return io->read((char*)buf, buf_size);
+    return (io->read((char*)buf, buf_size));
 }
 
 static int av_write(void* opaque, unsigned char* buf, int buf_size)
 {
-    MediaIO* io = static_cast<MediaIO*>(opaque);
+    MediaIO* const io = static_cast<MediaIO*>(opaque);
 
-    return io->write((const char*)buf, buf_size);
+    return (io->write((const char*)buf, buf_size));
 }
 
 static int64_t av_seek(void* opaque, int64_t offset, int whence)    // krazy:exclude=typedefs
@@ -133,7 +133,7 @@ static int64_t av_seek(void* opaque, int64_t offset, int whence)    // krazy:exc
     if (whence == SEEK_SET && offset < 0)
         return -1;
 
-    MediaIO* io = static_cast<MediaIO*>(opaque);
+    MediaIO* const io = static_cast<MediaIO*>(opaque);
 
     if (!io->isSeekable())
     {
@@ -146,7 +146,7 @@ static int64_t av_seek(void* opaque, int64_t offset, int whence)    // krazy:exc
     {
         // return the filesize without seeking anywhere. Supporting this is optional.
 
-        return io->size() > 0 ? io->size() : 0;
+        return (io->size() > 0 ? io->size() : 0);
     }
 
     if (!io->seek(offset, whence))
@@ -155,12 +155,12 @@ static int64_t av_seek(void* opaque, int64_t offset, int whence)    // krazy:exc
     return io->position();
 }
 
-MediaIO::MediaIO(QObject *parent)
+MediaIO::MediaIO(QObject* const parent)
     : QObject(parent)
 {
 }
 
-MediaIO::MediaIO(MediaIOPrivate &d, QObject *parent)
+MediaIO::MediaIO(MediaIOPrivate &d, QObject* const parent)
     : QObject(parent),
       DPTR_INIT(&d)
 {
@@ -171,7 +171,7 @@ MediaIO::~MediaIO()
     release();
 }
 
-void MediaIO::setUrl(const QString &url)
+void MediaIO::setUrl(const QString& url)
 {
     DPTR_D(MediaIO);
 
@@ -201,9 +201,10 @@ bool MediaIO::setAccessMode(AccessMode value)
     if (d.mode == value)
         return true;
 
-    if (value == Write && !isWritable())
+    if ((value == Write) && !isWritable())
     {
-        qCWarning(DIGIKAM_QTAV_LOG_WARN).noquote() << QString::asprintf("Can not set Write access mode to this MediaIO");
+        qCWarning(DIGIKAM_QTAV_LOG_WARN).noquote()
+            << QString::asprintf("Can not set Write access mode to this MediaIO");
 
         return false;
     }

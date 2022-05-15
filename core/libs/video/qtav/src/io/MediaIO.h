@@ -60,7 +60,6 @@ class QTAV_EXPORT MediaIO : public QObject
     Q_OBJECT
     DPTR_DECLARE_PRIVATE(MediaIO)
     Q_DISABLE_COPY(MediaIO)
-    Q_ENUMS(AccessMode)
 
 public:
 
@@ -69,6 +68,7 @@ public:
         Read, ///< default
         Write
     };
+    Q_ENUM(AccessMode)
 
     /// Registered MediaIO::name(): "QIODevice", "QFile"
 
@@ -124,7 +124,7 @@ public:
      * \brief read
      * read at most maxSize bytes to data, and return the bytes were actually read
      */
-    virtual qint64 read(char *data, qint64 maxSize) = 0;
+    virtual qint64 read(char* data, qint64 maxSize) = 0;
 
     /*!
      * \brief write
@@ -181,8 +181,8 @@ public:
 
     //struct AVIOContext; // anonymous struct in FFmpeg1.0.x
 
-    void* avioContext(); // const?
-    void release(); // TODO: how to remove it?
+    void* avioContext();  // const?
+    void release();       // TODO: how to remove it?
 
 public:
 
@@ -216,11 +216,11 @@ private:
 
     typedef MediaIO* (*MediaIOCreator)();
 
-    static bool Register(MediaIOId id, MediaIOCreator, const char *name);
+    static bool Register(MediaIOId id, MediaIOCreator, const char* name);
 
 protected:
 
-    MediaIO(MediaIOPrivate& d, QObject* parent = nullptr);
+    MediaIO(MediaIOPrivate& d, QObject* const parent = nullptr);
 
     /*!
      * \brief onUrlChanged
@@ -229,25 +229,14 @@ protected:
     virtual void onUrlChanged();
     DPTR_DECLARE(MediaIO)
 
-//private: // must add QT+=av-private if default ctor is private
-
     // base class, not direct create. only final class has public ctor is enough
     // FIXME: it's required by Q_DECLARE_METATYPE (also copy ctor)
 
-    MediaIO(QObject* parent = nullptr);
+    MediaIO(QObject* const parent = nullptr);
 };
 
 Q_DECL_DEPRECATED typedef MediaIO AVInput; // for source compatibility
 
 } // namespace QtAV
-
-#if QT_VERSION < QT_VERSION_CHECK(5, 0, 0)
-
-#   include <QtCore/QMetaType>
-
-Q_DECLARE_METATYPE(QtAV::MediaIO*)
-Q_DECLARE_METATYPE(QIODevice*)
-
-#endif
 
 #endif // QTAV_MEDIA_IO_H
