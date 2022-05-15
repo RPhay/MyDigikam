@@ -56,7 +56,7 @@ public:
     AVFormatContext*   pFormatContext;
     AVCodecContext*    pVideoCodecContext;
     AVCodecParameters* pVideoCodecParameters;
-    AVCodec*           pVideoCodec;
+    const AVCodec*     pVideoCodec;
     AVStream*          pVideoStream;
     AVFrame*           pFrame;
     quint8*            pFrameBuffer;
