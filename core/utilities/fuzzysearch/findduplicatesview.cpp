@@ -358,7 +358,7 @@ QList<SAlbum*> FindDuplicatesView::currentFindDuplicatesAlbums() const
 
     QList<SAlbum*> albumList;
 
-    foreach (QTreeWidgetItem* const item, selectedItems)
+    Q_FOREACH (QTreeWidgetItem* const item, selectedItems)
     {
         FindDuplicatesAlbumItem* const albumItem = dynamic_cast<FindDuplicatesAlbumItem*>(item);
 
@@ -551,7 +551,7 @@ void FindDuplicatesView::slotDuplicatesAlbumActived()
 
     QList<Album*> albums;
 
-    foreach (QTreeWidgetItem* const item, d->listView->selectedItems())
+    Q_FOREACH (QTreeWidgetItem* const item, d->listView->selectedItems())
     {
         FindDuplicatesAlbumItem* const albumItem = dynamic_cast<FindDuplicatesAlbumItem*>(item);
 
@@ -588,7 +588,7 @@ void FindDuplicatesView::slotSetSelectedAlbums(const QList<PAlbum*>& albums)
     const AlbumSelectors::SelectionType type = albums.size() == 1 ? AlbumSelectors::SingleSelection
                                                                   : AlbumSelectors::MultipleSelection;
 
-    foreach (PAlbum* const album, albums)
+    Q_FOREACH (PAlbum* const album, albums)
     {
         d->albumSelectors->setAlbumSelected(album, type);
     }
@@ -611,7 +611,7 @@ void FindDuplicatesView::slotSetSelectedAlbums(const QList<TAlbum*>& albums)
     const AlbumSelectors::SelectionType type = albums.size() == 1 ? AlbumSelectors::SingleSelection
                                                                   : AlbumSelectors::MultipleSelection;
 
-    foreach (TAlbum* const album, albums)
+    Q_FOREACH (TAlbum* const album, albums)
     {
         d->albumSelectors->setTagSelected(album, type);
     }

@@ -130,7 +130,7 @@ void VersionsDelegate::setAnimationState(int animationState)
     }
 
     d->animationState = animationState;
-    emit animationStateChanged();
+    Q_EMIT animationStateChanged();
 }
 
 void VersionsDelegate::setThumbnailSize(int size) const

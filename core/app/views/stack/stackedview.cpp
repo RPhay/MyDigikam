@@ -478,7 +478,7 @@ void StackedView::setViewMode(const StackedViewMode mode)
         d->tableView->setFocus();
     }
 
-    emit signalViewModeChanged();
+    Q_EMIT signalViewModeChanged();
 }
 
 void StackedView::syncSelection(ItemCategorizedView* const from, ItemCategorizedView* const to)
@@ -491,7 +491,7 @@ void StackedView::syncSelection(ItemCategorizedView* const from, ItemCategorized
     QItemSelection selection              = from->selectionModel()->selection();
     QItemSelection newSelection;
 
-    foreach (const QItemSelectionRange& range, selection)
+    Q_FOREACH (const QItemSelectionRange& range, selection)
     {
         QModelIndex topLeft     = toModel->indexForItemInfo(fromModel->imageInfo(range.topLeft()));
         QModelIndex bottomRight = toModel->indexForItemInfo(fromModel->imageInfo(range.bottomRight()));
@@ -542,14 +542,14 @@ void StackedView::slotIconViewSelectionChanged()
 
 void StackedView::previewLoaded()
 {
-    emit signalViewModeChanged();
+    Q_EMIT signalViewModeChanged();
 }
 
 void StackedView::slotZoomFactorChanged(double z)
 {
     if (viewMode() == PreviewImageMode)
     {
-        emit signalZoomFactorChanged(z);
+        Q_EMIT signalZoomFactorChanged(z);
     }
 }
 

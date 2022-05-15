@@ -460,7 +460,7 @@ void LightTableWindow::setupUserArea()
     viewContainer->addDockWidget(Qt::TopDockWidgetArea, d->barViewDock);
     d->barViewDock->setFloating(false);
 
-    // Restore the previous state. This doesn't emit the proper signals to the
+    // Restore the previous state. This doesn't Q_EMIT the proper signals to the
     // dock widget, so it has to be manually reinitialized.
 
     viewContainer->setAutoSaveSettings(QLatin1String("LightTable Thumbbar"), true);

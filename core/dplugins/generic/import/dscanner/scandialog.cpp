@@ -145,7 +145,7 @@ void ScanDialog::slotSaveImage(const QImage& image_data)
     QStringList writableMimetypes;
     QList<QByteArray> supported = QImageWriter::supportedMimeTypes();
 
-    foreach (const QByteArray& mimeType, supported)
+    Q_FOREACH (const QByteArray& mimeType, supported)
     {
         writableMimetypes.append(QLatin1String(mimeType));
     }

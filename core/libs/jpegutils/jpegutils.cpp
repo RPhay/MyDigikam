@@ -534,7 +534,7 @@ bool JpegRotator::exifTransform(const MetaEngineRotation& matrix)
         }
     }
 
-    foreach (const QString& tempFile, removeLater)
+    Q_FOREACH (const QString& tempFile, removeLater)
     {
         QFile::remove(tempFile);
     }

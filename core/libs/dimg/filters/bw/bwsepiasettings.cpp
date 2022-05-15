@@ -439,7 +439,7 @@ void BWSepiaSettings::slotFilterSelected()
         d->strengthInput->setEnabled(true);
     }
 
-    emit signalSettingsChanged();
+    Q_EMIT signalSettingsChanged();
 }
 
 BWSepiaContainer BWSepiaSettings::settings() const

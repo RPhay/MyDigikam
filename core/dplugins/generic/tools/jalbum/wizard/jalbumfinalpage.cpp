@@ -95,7 +95,7 @@ JAlbumFinalPage::~JAlbumFinalPage()
 void JAlbumFinalPage::initializePage()
 {
     d->complete = false;
-    emit completeChanged();
+    Q_EMIT completeChanged();
     QTimer::singleShot(0, this, SLOT(slotProcess()));
 }
 
@@ -130,7 +130,7 @@ void JAlbumFinalPage::slotProcess()
         d->progressView->addEntry(i18n("%1 albums to process:", info->m_albumList.count()),
                                   DHistoryView::ProgressEntry);
 
-        foreach (const QUrl& url, info->m_iface->albumsItems(info->m_albumList))
+        Q_FOREACH (const QUrl& url, info->m_iface->albumsItems(info->m_albumList))
         {
             d->progressView->addEntry(QDir::toNativeSeparators(url.toLocalFile()),
                                       DHistoryView::ProgressEntry);
@@ -166,7 +166,7 @@ void JAlbumFinalPage::slotProcess()
     }
 
     d->complete = true;
-    emit completeChanged();
+    Q_EMIT completeChanged();
 }
 
 bool JAlbumFinalPage::isComplete() const

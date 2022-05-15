@@ -424,9 +424,9 @@ void DItemsList::slotAddImages(const QList<QUrl>& list)
         }
     }
 
-    emit signalAddItems(urls);
-    emit signalImageListChanged();
-    emit signalFoundRAWImages(raw);
+    Q_EMIT signalAddItems(urls);
+    Q_EMIT signalImageListChanged();
+    Q_EMIT signalFoundRAWImages(raw);
 }
 
 void DItemsList::slotAddItems()
@@ -470,8 +470,8 @@ void DItemsList::slotRemoveItems()
         }
     }
 
-    emit signalRemovedItems(itemsIndex);
-    emit signalImageListChanged();
+    Q_EMIT signalRemovedItems(itemsIndex);
+    Q_EMIT signalImageListChanged();
 }
 
 void DItemsList::slotMoveUpItems()
@@ -504,8 +504,8 @@ void DItemsList::slotMoveUpItems()
         uw->updateItemWidgets();
     }
 
-    emit signalImageListChanged();
-    emit signalMoveUpItem();
+    Q_EMIT signalImageListChanged();
+    Q_EMIT signalMoveUpItem();
 }
 
 void DItemsList::slotMoveDownItems()
@@ -538,8 +538,8 @@ void DItemsList::slotMoveDownItems()
         uw->updateItemWidgets();
     }
 
-    emit signalImageListChanged();
-    emit signalMoveDownItem();
+    Q_EMIT signalImageListChanged();
+    Q_EMIT signalMoveDownItem();
 }
 
 void DItemsList::slotClearItems()
@@ -606,13 +606,13 @@ void DItemsList::slotLoadItems()
 
             // read tool Image custom attributes and children element
 
-            emit signalXMLLoadImageElement(xmlReader);
+            Q_EMIT signalXMLLoadImageElement(xmlReader);
         }
         else if (xmlReader.isStartElement() && (xmlReader.name() != QLatin1String("Images")))
         {
             // unmanaged start element (it should be tools one)
 
-            emit signalXMLCustomElements(xmlReader);
+            Q_EMIT signalXMLCustomElements(xmlReader);
         }
         else if (xmlReader.isEndElement() && (xmlReader.name() == QLatin1String("Images")))
         {
@@ -678,7 +678,7 @@ void DItemsList::slotSaveItems()
 
             xmlWriter.writeAttribute(QLatin1String("url"), lvItem->url().toDisplayString());
 
-            emit signalXMLSaveItem(xmlWriter, listView()->indexFromItem(lvItem).row());
+            Q_EMIT signalXMLSaveItem(xmlWriter, listView()->indexFromItem(lvItem).row());
 
             xmlWriter.writeEndElement(); // Image
         }
@@ -686,7 +686,7 @@ void DItemsList::slotSaveItems()
         ++it;
     }
 
-    emit signalXMLCustomElements(xmlWriter);
+    Q_EMIT signalXMLCustomElements(xmlWriter);
 
     xmlWriter.writeEndElement();  // Images
 
@@ -730,8 +730,8 @@ void DItemsList::removeItemByUrl(const QUrl& url)
     }
     while (found);
 
-    emit signalRemovedItems(itemsIndex);
-    emit signalImageListChanged();
+    Q_EMIT signalRemovedItems(itemsIndex);
+    Q_EMIT signalImageListChanged();
 }
 
 QList<QUrl> DItemsList::imageUrls(bool onlyUnprocessed) const
@@ -761,7 +761,7 @@ void DItemsList::slotProgressTimerDone()
 {
     if (!d->processItems.isEmpty())
     {
-        foreach (const QUrl& url, d->processItems)
+        Q_FOREACH (const QUrl& url, d->processItems)
         {
             DItemsListViewItem* const item = listView()->findItem(url);
 
@@ -816,7 +816,7 @@ void DItemsList::processed(const QUrl& url, bool success)
 
 void DItemsList::cancelProcess()
 {
-    foreach (const QUrl& url, d->processItems)
+    Q_FOREACH (const QUrl& url, d->processItems)
     {
         processed(url, false);
     }

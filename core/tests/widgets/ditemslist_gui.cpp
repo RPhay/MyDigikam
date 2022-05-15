@@ -58,7 +58,7 @@ protected:
 
     void run() override
     {
-        emit signalStarted();
+        Q_EMIT signalStarted();
 
         QImage src;
         QImage dst;
@@ -66,7 +66,7 @@ protected:
         if (m_cancel)
             return;
 
-        emit signalProgress(20);
+        Q_EMIT signalProgress(20);
 
         if (!src.load(fileUrl.toLocalFile()))
         {
@@ -77,7 +77,7 @@ protected:
         if (m_cancel)
             return;
 
-        emit signalProgress(40);
+        Q_EMIT signalProgress(40);
 
         QTransform transform;
         transform.rotate(90);
@@ -85,14 +85,14 @@ protected:
         if (m_cancel)
             return;
 
-        emit signalProgress(60);
+        Q_EMIT signalProgress(60);
 
         dst = src.transformed(transform);
 
         if (m_cancel)
             return;
 
-        emit signalProgress(80);
+        Q_EMIT signalProgress(80);
 
         if (!dst.save(fileUrl.toLocalFile()))
         {
@@ -100,7 +100,7 @@ protected:
             return;
         }
 
-        emit signalDone();
+        Q_EMIT signalDone();
     }
 };
 
@@ -120,7 +120,7 @@ void ActionThread::rotate(const QList<QUrl>& list)
 {
     ActionJobCollection collection;
 
-    foreach (const QUrl& url, list)
+    Q_FOREACH (const QUrl& url, list)
     {
         Task* const job = new Task();
         job->fileUrl    = url;
@@ -149,11 +149,11 @@ void ActionThread::slotJobDone()
 
     if (task->errString.isEmpty())
     {
-        emit finished(task->fileUrl);
+        Q_EMIT finished(task->fileUrl);
     }
     else
     {
-        emit failed(task->fileUrl, task->errString);
+        Q_EMIT failed(task->fileUrl, task->errString);
     }
 }
 
@@ -162,7 +162,7 @@ void ActionThread::slotJobProgress(int p)
     Task* const task = dynamic_cast<Task*>(sender());
     if (!task) return;
 
-    emit progress(task->fileUrl, p);
+    Q_EMIT progress(task->fileUrl, p);
 }
 
 void ActionThread::slotJobStarted()
@@ -170,7 +170,7 @@ void ActionThread::slotJobStarted()
     Task* const task = dynamic_cast<Task*>(sender());
     if (!task) return;
 
-    emit starting(task->fileUrl);
+    Q_EMIT starting(task->fileUrl);
 }
 
 // ----------------------------------------------------------

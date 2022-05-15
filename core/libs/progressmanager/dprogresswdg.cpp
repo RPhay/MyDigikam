@@ -127,7 +127,7 @@ void DProgressWdg::slotProgressCanceled(const QString& id)
 {
     if (d->progressId == id)
     {
-        emit signalProgressCanceled();
+        Q_EMIT signalProgressCanceled();
     }
 }
 

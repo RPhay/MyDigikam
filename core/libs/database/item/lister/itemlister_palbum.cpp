@@ -52,7 +52,7 @@ void ItemLister::listPAlbum(ItemListerReceiver* const receiver,
             return;
         }
 
-        foreach (int id, intAlbumIds)
+        Q_FOREACH (int id, intAlbumIds)
         {
             albumIds << id;
         }
@@ -155,7 +155,7 @@ QSet<int> ItemLister::albumRootsToList() const
     QList<CollectionLocation> locations = CollectionManager::instance()->allAvailableLocations();
     QSet<int>                 ids;
 
-    foreach (const CollectionLocation& location, locations)
+    Q_FOREACH (const CollectionLocation& location, locations)
     {
         ids << location.id();
     }

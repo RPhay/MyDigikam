@@ -100,7 +100,7 @@ void FuzzySearchSideBarWidget::setActive(bool active)
         AlbumManager::instance()->setCurrentAlbums(QList<Album*>() << d->fuzzySearchView->currentAlbum());
     }
 
-    emit signalActive(active);
+    Q_EMIT signalActive(active);
 }
 
 void FuzzySearchSideBarWidget::doLoadState()

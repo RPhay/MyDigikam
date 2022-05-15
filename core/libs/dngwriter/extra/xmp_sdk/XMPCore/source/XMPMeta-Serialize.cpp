@@ -946,7 +946,7 @@ SerializeCompactRDFElemProps ( const XMP_Node *	parentNode,
 
 				if ( propNode->children.size() == 0 ) {
 
-					// Catch an empty struct as a special case. The case below would emit an empty
+					// Catch an empty struct as a special case. The case below would Q_EMIT an empty
 					// XML element, which gets reparsed as a simple property with an empty value.
 					outputStr += " rdf:parseType=\"Resource\"/>";
 					outputStr += newline;

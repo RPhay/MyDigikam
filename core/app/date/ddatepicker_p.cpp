@@ -115,7 +115,7 @@ void DatePickerYearSelector::yearEnteredSlot()
     if (QDate(newYear, oldDate.month(), oldDate.day()).isValid())
     {
         result = newYear;
-        emit closeMe(1);
+        Q_EMIT closeMe(1);
     }
     else
     {

@@ -53,7 +53,7 @@ QMap<QString, QStringList> DPluginDImg::extraAboutData() const
     QMap<QString, QStringList> map;
     QMimeDatabase mimeDb;
 
-    foreach (const QString& ext, typeMimes().split(QLatin1Char(' ')))
+    Q_FOREACH (const QString& ext, typeMimes().split(QLatin1Char(' ')))
     {
         if (!ext.isEmpty())
         {

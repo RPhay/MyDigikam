@@ -542,7 +542,7 @@ SubImageSet SubtitleProcessorLibASS::getSubImages(qreal pts, QRect *boundingRect
     *qimg = QImage(rect.size(), QImage::Format_ARGB32);
     qimg->fill(Qt::transparent);
 
-    foreach (const SubImage& subimg, m_assimages.images)
+    Q_FOREACH (const SubImage& subimg, m_assimages.images)
     {
         RenderASS(qimg, subimg, subimg.x - rect.x(), subimg.y - rect.y());
     }
@@ -692,7 +692,7 @@ void SubtitleProcessorLibASS::updateFontCache()
     {
         static const QString kFontCfg(QStringLiteral("fonts.conf"));
 
-        foreach (const QString& fdir, kFontsDirs)
+        Q_FOREACH (const QString& fdir, kFontsDirs)
         {
             qCDebug(DIGIKAM_QTAV_LOG) << "looking up " << kFontCfg << " in: " << fdir;
             QFile cfg(QStringLiteral("%1/%2").arg(fdir).arg(kFontCfg));
@@ -772,7 +772,7 @@ void SubtitleProcessorLibASS::updateFontCache()
         static const QStringList ft_filters = QStringList() << QStringLiteral("*.ttf") << QStringLiteral("*.otf") << QStringLiteral("*.ttc");
         QStringList fonts;
 
-        foreach (const QString& fdir, kFontsDirs)
+        Q_FOREACH (const QString& fdir, kFontsDirs)
         {
             qCDebug(DIGIKAM_QTAV_LOG) << "looking up fonts in: " << fdir;
             QDir d(fdir);
@@ -830,7 +830,7 @@ void SubtitleProcessorLibASS::updateFontCache()
                     }
                 }
 
-                foreach (const QString& f, fonts)
+                Q_FOREACH (const QString& f, fonts)
                 {
                     QFile ff(QStringLiteral("%1/%2").arg(fontsdir_in).arg(f));
                     const QString kOut(QStringLiteral("%1/%2").arg(sFontsDir).arg(f));

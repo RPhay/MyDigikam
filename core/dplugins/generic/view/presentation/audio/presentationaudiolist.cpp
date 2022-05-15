@@ -161,7 +161,7 @@ void PresentationAudioListItem::slotMediaStateChanged(QtAV::MediaStatus status)
         setText(i18nc("artist - title", "%1 - %2", artist(), title()));
     }
 
-    emit signalTotalTimeReady(d->url, d->totalTime);
+    Q_EMIT signalTotalTimeReady(d->url, d->totalTime);
 }
 
 void PresentationAudioListItem::showErrorDialog(const QString& err)
@@ -219,7 +219,7 @@ void PresentationAudioList::dropEvent(QDropEvent* e)
     QList<QUrl> list = e->mimeData()->urls();
     QList<QUrl> urls;
 
-    foreach (const QUrl& url, list)
+    Q_FOREACH (const QUrl& url, list)
     {
         QFileInfo fi(url.toLocalFile());
 
@@ -233,7 +233,7 @@ void PresentationAudioList::dropEvent(QDropEvent* e)
 
     if (!urls.isEmpty())
     {
-        emit signalAddedDropItems(urls);
+        Q_EMIT signalAddedDropItems(urls);
     }
 }
 

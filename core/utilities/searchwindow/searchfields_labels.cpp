@@ -66,7 +66,7 @@ void SearchFieldLabels::read(SearchXmlCachingReader& reader)
     QList<ColorLabel> clabels;
     QList<PickLabel>  plabels;
 
-    foreach (int id, ids)
+    Q_FOREACH (int id, ids)
     {
         a = AlbumManager::instance()->findTAlbum(id);
 
@@ -105,7 +105,7 @@ void SearchFieldLabels::write(SearchXmlWriter& writer)
 
     if (!clAlbums.isEmpty())
     {
-        foreach (TAlbum* const album, clAlbums)
+        Q_FOREACH (TAlbum* const album, clAlbums)
         {
             albumIds << album->id();
         }
@@ -115,7 +115,7 @@ void SearchFieldLabels::write(SearchXmlWriter& writer)
 
     if (!plAlbums.isEmpty())
     {
-        foreach (TAlbum* const album, plAlbums)
+        Q_FOREACH (TAlbum* const album, plAlbums)
         {
             albumIds << album->id();
         }

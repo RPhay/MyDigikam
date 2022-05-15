@@ -572,13 +572,13 @@ void DigikamApp::slotImageSelected(const ItemInfoList& selection, const ItemInfo
 
     ItemInfoList selectionWithoutGrouped = d->view->selectedInfoList(true, false);
 
-    foreach (const ItemInfo& info, selection)
+    Q_FOREACH (const ItemInfo& info, selection)
     {
         // cppcheck-suppress useStlAlgorithm
         selectionFileSize += info.fileSize();
     }
 
-    foreach (const ItemInfo& info, listAll)
+    Q_FOREACH (const ItemInfo& info, listAll)
     {
         // cppcheck-suppress useStlAlgorithm
         listAllFileSize += info.fileSize();
@@ -763,7 +763,7 @@ void DigikamApp::slotSelectionChanged(int selectionCount)
     d->openWithAction->setEnabled(selectionCount > 0);
     d->imageAutoExifActionMenu->setEnabled(selectionCount > 0);
 
-    foreach (DPluginAction* const ac, DPluginLoader::instance()->pluginsActions(DPluginAction::GenericMetadata, this))
+    Q_FOREACH (DPluginAction* const ac, DPluginLoader::instance()->pluginsActions(DPluginAction::GenericMetadata, this))
     {
         ac->setEnabled(selectionCount > 0);
     }
@@ -838,7 +838,7 @@ void DigikamApp::slotToggleShowBar()
 
 void DigikamApp::moveEvent(QMoveEvent*)
 {
-    emit signalWindowHasMoved();
+    Q_EMIT signalWindowHasMoved();
 }
 
 void DigikamApp::slotTransformAction()
@@ -1059,7 +1059,7 @@ void DigikamApp::customizedTrashView(bool set)
     d->recurseTagsAction->setEnabled(set);
     d->refreshAction->setEnabled(set);
 
-    foreach (DPluginAction* const ac, DPluginLoader::instance()->pluginsActions(DPluginAction::GenericView, this))
+    Q_FOREACH (DPluginAction* const ac, DPluginLoader::instance()->pluginsActions(DPluginAction::GenericView, this))
     {
         ac->setEnabled(set);
     }

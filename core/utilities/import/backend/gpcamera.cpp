@@ -767,7 +767,7 @@ bool GPCamera::getFolders(const QString& folder)
 
     gp_list_unref(clist);
 
-    emit signalFolderList(subFolderList);
+    Q_EMIT signalFolderList(subFolderList);
 
     return true;
 

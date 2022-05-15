@@ -121,7 +121,7 @@ void GPSBookmarkOwner::slotOpenBookmark(const QUrl& url)
     {
         GPSDataContainer position;
         position.setCoordinates(coordinate);
-        emit positionSelected(position);
+        Q_EMIT positionSelected(position);
     }
 }
 

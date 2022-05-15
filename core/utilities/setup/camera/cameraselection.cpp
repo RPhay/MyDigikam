@@ -673,7 +673,7 @@ QString CameraSelection::currentCameraPath() const
 
 void CameraSelection::slotOkClicked()
 {
-    emit signalOkClicked(currentTitle(),    currentModel(),
+    Q_EMIT signalOkClicked(currentTitle(),    currentModel(),
                          currentPortPath(), currentCameraPath());
     accept();
 }

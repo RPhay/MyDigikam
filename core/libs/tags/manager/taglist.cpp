@@ -113,7 +113,7 @@ void TagList::saveSettings()
     KConfigGroup group      = config->group(QLatin1String("Tags Manager List"));
     QStringList itemList;
 
-    foreach (ListItem* const listItem, d->tagListModel->allItems())
+    Q_FOREACH (ListItem* const listItem, d->tagListModel->allItems())
     {
         QList<int> ids = listItem->getTagIds();
 
@@ -142,7 +142,7 @@ void TagList::restoreSettings()
         return;
     }
 
-    foreach (const QString& item, itemList)
+    Q_FOREACH (const QString& item, itemList)
     {
         QList<QVariant> itemData;
         itemData << QBrush(Qt::cyan, Qt::Dense2Pattern);
@@ -160,7 +160,7 @@ void TagList::restoreSettings()
          * Use this map to find all List Items that contain specific tag
          * usually to remove deleted tag
          */
-        foreach (int tagId, listItem->getTagIds())
+        Q_FOREACH (int tagId, listItem->getTagIds())
         {
             d->tagMap[tagId].append(listItem);
         }
@@ -185,7 +185,7 @@ void TagList::slotAddPressed()
     QList<QVariant> itemData;
     itemData << QBrush(Qt::cyan, Qt::Dense2Pattern);
 
-    foreach (const QModelIndex& index, selected)
+    Q_FOREACH (const QModelIndex& index, selected)
     {
         TAlbum* const album = static_cast<TAlbum*>(d->treeView->albumForIndex(index));
         itemData << album->id();
@@ -197,7 +197,7 @@ void TagList::slotAddPressed()
      * Use this map to find all List Items that contain specific tag
      * usually to remove deleted tag
      */
-    foreach (int tagId, listItem->getTagIds())
+    Q_FOREACH (int tagId, listItem->getTagIds())
     {
         d->tagMap[tagId].append(listItem);
     }
@@ -208,7 +208,7 @@ void TagList::slotSelectionChanged()
     QModelIndexList indexList = d->tagList->mySelectedIndexes();
     QSet<int> mySet;
 
-    foreach (const QModelIndex& index, indexList)
+    Q_FOREACH (const QModelIndex& index, indexList)
     {
         ListItem* const item = static_cast<ListItem*>(index.internalPointer());
 
@@ -218,7 +218,7 @@ void TagList::slotSelectionChanged()
             break;
         }
 
-        foreach (int tagId, item->getTagIds())
+        Q_FOREACH (int tagId, item->getTagIds())
         {
             mySet.insert(tagId);
         }
@@ -242,7 +242,7 @@ void TagList::slotTagDeleted(Album* album)
 
     QList<ListItem*> items = d->tagMap[delId];
 
-    foreach (ListItem* const item, items)
+    Q_FOREACH (ListItem* const item, items)
     {
         item->removeTagId(delId);
 
@@ -264,7 +264,7 @@ void TagList::slotDeleteSelected()
         return;
     }
 
-    foreach (const QModelIndex& index, sel)
+    Q_FOREACH (const QModelIndex& index, sel)
     {
         ListItem* const item = static_cast<ListItem*>(index.internalPointer());
         d->tagListModel->deleteItem(item);

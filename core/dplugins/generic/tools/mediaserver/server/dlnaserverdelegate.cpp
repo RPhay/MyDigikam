@@ -219,7 +219,7 @@ NPT_Result DLNAMediaServerDelegate::OnBrowseDirectChildren(PLT_ActionReference& 
 
         if (dir == "/")
         {
-            foreach (const QString& s, d->map.keys())
+            Q_FOREACH (const QString& s, d->map.keys())
             {
                 list << s + QLatin1Char('/');
             }
@@ -229,7 +229,7 @@ NPT_Result DLNAMediaServerDelegate::OnBrowseDirectChildren(PLT_ActionReference& 
             QString container = QString::fromUtf8(dir.GetChars());
             QList<QUrl> urls  = d->map.value(container.remove(QLatin1Char('/')));
 
-            foreach (const QUrl& u, urls)
+            Q_FOREACH (const QUrl& u, urls)
             {
                 // Internal URL separator between container path and local file path.
                 // Ex: Linux => "/country/town/Paris/?file:/mnt/data/travel/Paris/eiffeltower.jpg
@@ -245,7 +245,7 @@ NPT_Result DLNAMediaServerDelegate::OnBrowseDirectChildren(PLT_ActionReference& 
 
         entries = new NPT_List<NPT_String>();
 
-        foreach (const QString& path, list)
+        Q_FOREACH (const QString& path, list)
         {
             qCDebug(DIGIKAM_MEDIASRV_LOG) << "=>" << path;
             entries->Add(NPT_String(path.toUtf8().data(), path.toUtf8().size()));

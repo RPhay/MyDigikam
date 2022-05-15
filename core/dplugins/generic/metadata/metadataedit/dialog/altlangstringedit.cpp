@@ -142,7 +142,7 @@ bool AltLangStringsEdit::asDefaultAltLang() const
 
 void AltLangStringsEdit::slotSelectionChanged(const QString& lang)
 {
-    emit signalDefaultLanguageEnabled(lang == QLatin1String("x-default"));
+    Q_EMIT signalDefaultLanguageEnabled(lang == QLatin1String("x-default"));
 }
 
 } // namespace DigikamGenericMetadataEditPlugin

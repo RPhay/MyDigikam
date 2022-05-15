@@ -124,7 +124,7 @@ void CameraHistoryUpdater::run()
 
 void CameraHistoryUpdater::sendBusy(bool val)
 {
-    emit signalBusy(val);
+    Q_EMIT signalBusy(val);
 }
 
 void CameraHistoryUpdater::addItems(const QByteArray& id, CHUpdateItemMap& map)
@@ -176,7 +176,7 @@ void CameraHistoryUpdater::proccessMap(const QByteArray& id, CHUpdateItemMap& ma
     }
     while (it != map.end() && !d->canceled);
 
-    emit signalHistoryMap(map);
+    Q_EMIT signalHistoryMap(map);
 }
 
 } // namespace Digikam

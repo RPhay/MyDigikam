@@ -91,7 +91,7 @@ void DNGConverterList::slotAddImages(const QList<QUrl>& list)
 
     // Duplicate the signalImageListChanged of the ImageWindow, to enable the upload button again.
 
-    emit signalImageListChanged();
+    Q_EMIT signalImageListChanged();
 }
 
 void DNGConverterList::slotRemoveItems()

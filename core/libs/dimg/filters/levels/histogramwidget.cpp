@@ -189,7 +189,7 @@ void HistogramWidget::updateData(const DImg& img, const DImg& sel, bool showProg
 
     d->range = d->sixteenBits ? MAX_SEGMENT_16BIT : MAX_SEGMENT_8BIT;
 
-    emit signalMaximumValueChanged(d->range);
+    Q_EMIT signalMaximumValueChanged(d->range);
 
     if (!img.isNull() || sel.isNull())
     {
@@ -359,7 +359,7 @@ void HistogramWidget::setState(int state)
         case HistogramWidget::Private::HistogramCompleted:
         {
             notifyValuesChanged();
-            emit signalHistogramComputationDone(d->sixteenBits);
+            Q_EMIT signalHistogramComputationDone(d->sixteenBits);
 
             stopWaitingAnimation();
             update();
@@ -368,7 +368,7 @@ void HistogramWidget::setState(int state)
 
         case HistogramWidget::Private::HistogramFailed:
         {
-            emit signalHistogramComputationFailed();
+            Q_EMIT signalHistogramComputationFailed();
 
             // Remove old histogram data from memory.
 
@@ -679,7 +679,7 @@ void HistogramWidget::mouseMoveEvent(QMouseEvent* e)
 
 void HistogramWidget::notifyValuesChanged()
 {
-    emit signalIntervalChanged((int)(d->xmin * d->range), d->xmax == 0.0 ? d->range : (int)(d->xmax * d->range));
+    Q_EMIT signalIntervalChanged((int)(d->xmin * d->range), d->xmax == 0.0 ? d->range : (int)(d->xmax * d->range));
 }
 
 void HistogramWidget::slotMinValueChanged(int min)

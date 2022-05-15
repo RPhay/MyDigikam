@@ -60,7 +60,7 @@ ListItem::ListItem(QList<QVariant>& data, ListItem* const parent)
 
     data.removeFirst();
 
-    foreach (const QVariant& val, data)
+    Q_FOREACH (const QVariant& val, data)
     {
         d->tagIds.append(val.toInt());
     }
@@ -144,7 +144,7 @@ QVariant ListItem::data(int role) const
         {
             QString display;
 
-            foreach (int tagId, d->tagIds)
+            Q_FOREACH (int tagId, d->tagIds)
             {
                 TAlbum* const album = AlbumManager::instance()->findTAlbum(tagId);
 

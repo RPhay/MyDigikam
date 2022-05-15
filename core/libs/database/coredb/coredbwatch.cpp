@@ -289,7 +289,7 @@ void CoreDbWatch::sendDatabaseChanged()
 
 #endif
 
-    emit databaseChanged();
+    Q_EMIT databaseChanged();
 }
 
 // --- methods to dispatch changes from database to listeners (local and remote) ---
@@ -298,13 +298,13 @@ void CoreDbWatch::sendImageChange(const ImageChangeset& cset)
 {
     // send local signal
 
-    emit imageChange(cset);
+    Q_EMIT imageChange(cset);
 
 #ifdef HAVE_DBUS
 
     // send DBUS signal
 
-    emit signalImageChangeDBus(d->databaseId, d->applicationId, cset);
+    Q_EMIT signalImageChangeDBus(d->databaseId, d->applicationId, cset);
 
 #endif
 
@@ -312,11 +312,11 @@ void CoreDbWatch::sendImageChange(const ImageChangeset& cset)
 
 void CoreDbWatch::sendImageTagChange(const ImageTagChangeset& cset)
 {
-    emit imageTagChange(cset);
+    Q_EMIT imageTagChange(cset);
 
 #ifdef HAVE_DBUS
 
-    emit signalImageTagChangeDBus(d->databaseId, d->applicationId, cset);
+    Q_EMIT signalImageTagChangeDBus(d->databaseId, d->applicationId, cset);
 
 #endif
 
@@ -324,11 +324,11 @@ void CoreDbWatch::sendImageTagChange(const ImageTagChangeset& cset)
 
 void CoreDbWatch::sendCollectionImageChange(const CollectionImageChangeset& cset)
 {
-    emit collectionImageChange(cset);
+    Q_EMIT collectionImageChange(cset);
 
 #ifdef HAVE_DBUS
 
-    emit signalCollectionImageChangeDBus(d->databaseId, d->applicationId, cset);
+    Q_EMIT signalCollectionImageChangeDBus(d->databaseId, d->applicationId, cset);
 
 #endif
 
@@ -336,11 +336,11 @@ void CoreDbWatch::sendCollectionImageChange(const CollectionImageChangeset& cset
 
 void CoreDbWatch::sendAlbumChange(const AlbumChangeset& cset)
 {
-    emit albumChange(cset);
+    Q_EMIT albumChange(cset);
 
 #ifdef HAVE_DBUS
 
-    emit signalAlbumChangeDBus(d->databaseId, d->applicationId, cset);
+    Q_EMIT signalAlbumChangeDBus(d->databaseId, d->applicationId, cset);
 
 #endif
 
@@ -348,11 +348,11 @@ void CoreDbWatch::sendAlbumChange(const AlbumChangeset& cset)
 
 void CoreDbWatch::sendTagChange(const TagChangeset& cset)
 {
-    emit tagChange(cset);
+    Q_EMIT tagChange(cset);
 
 #ifdef HAVE_DBUS
 
-    emit signalTagChangeDBus(d->databaseId, d->applicationId, cset);
+    Q_EMIT signalTagChangeDBus(d->databaseId, d->applicationId, cset);
 
 #endif
 
@@ -360,11 +360,11 @@ void CoreDbWatch::sendTagChange(const TagChangeset& cset)
 
 void CoreDbWatch::sendAlbumRootChange(const AlbumRootChangeset& cset)
 {
-    emit albumRootChange(cset);
+    Q_EMIT albumRootChange(cset);
 
 #ifdef HAVE_DBUS
 
-    emit signalAlbumRootChangeDBus(d->databaseId, d->applicationId, cset);
+    Q_EMIT signalAlbumRootChangeDBus(d->databaseId, d->applicationId, cset);
 
 #endif
 
@@ -372,11 +372,11 @@ void CoreDbWatch::sendAlbumRootChange(const AlbumRootChangeset& cset)
 
 void CoreDbWatch::sendSearchChange(const SearchChangeset& cset)
 {
-    emit searchChange(cset);
+    Q_EMIT searchChange(cset);
 
 #ifdef HAVE_DBUS
 
-    emit signalSearchChangeDBus(d->databaseId, d->applicationId, cset);
+    Q_EMIT signalSearchChangeDBus(d->databaseId, d->applicationId, cset);
 
 #endif
 
@@ -393,7 +393,7 @@ void CoreDbWatch::slotImageChangeDBus(const QString& databaseIdentifier,
     if ((applicationIdentifier != d->applicationId) &&
         (databaseIdentifier    == d->databaseId))
     {
-        emit imageChange(changeset);
+        Q_EMIT imageChange(changeset);
     }
 }
 
@@ -404,7 +404,7 @@ void CoreDbWatch::slotImageTagChangeDBus(const QString& databaseIdentifier,
     if ((applicationIdentifier != d->applicationId) &&
         (databaseIdentifier    == d->databaseId))
     {
-        emit imageTagChange(changeset);
+        Q_EMIT imageTagChange(changeset);
     }
 }
 
@@ -415,7 +415,7 @@ void CoreDbWatch::slotCollectionImageChangeDBus(const QString& databaseIdentifie
     if ((applicationIdentifier != d->applicationId) &&
         (databaseIdentifier    == d->databaseId))
     {
-        emit collectionImageChange(changeset);
+        Q_EMIT collectionImageChange(changeset);
     }
 }
 
@@ -426,7 +426,7 @@ void CoreDbWatch::slotAlbumChangeDBus(const QString& databaseIdentifier,
     if ((applicationIdentifier != d->applicationId) &&
         (databaseIdentifier    == d->databaseId))
     {
-        emit albumChange(changeset);
+        Q_EMIT albumChange(changeset);
     }
 }
 
@@ -437,7 +437,7 @@ void CoreDbWatch::slotTagChangeDBus(const QString& databaseIdentifier,
     if ((applicationIdentifier != d->applicationId) &&
         (databaseIdentifier    == d->databaseId))
     {
-        emit tagChange(changeset);
+        Q_EMIT tagChange(changeset);
     }
 }
 
@@ -448,7 +448,7 @@ void CoreDbWatch::slotAlbumRootChangeDBus(const QString& databaseIdentifier,
     if ((applicationIdentifier != d->applicationId) &&
         (databaseIdentifier    == d->databaseId))
     {
-        emit albumRootChange(changeset);
+        Q_EMIT albumRootChange(changeset);
     }
 }
 
@@ -459,7 +459,7 @@ void CoreDbWatch::slotSearchChangeDBus(const QString& databaseIdentifier,
     if ((applicationIdentifier != d->applicationId) &&
         (databaseIdentifier    == d->databaseId))
     {
-        emit searchChange(changeset);
+        Q_EMIT searchChange(changeset);
     }
 }
 

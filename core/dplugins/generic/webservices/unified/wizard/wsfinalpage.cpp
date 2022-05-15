@@ -119,14 +119,14 @@ WSFinalPage::~WSFinalPage()
 void WSFinalPage::initializePage()
 {
     d->complete = false;
-    emit completeChanged();
+    Q_EMIT completeChanged();
     QTimer::singleShot(0, this, SLOT(slotProcess()));
 }
 
 void WSFinalPage::slotDone()
 {
     d->complete = true;
-    emit completeChanged();
+    Q_EMIT completeChanged();
 }
 
 void WSFinalPage::slotProcess()

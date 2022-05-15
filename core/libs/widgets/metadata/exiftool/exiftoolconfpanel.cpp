@@ -131,7 +131,7 @@ ExifToolConfPanel::ExifToolConfPanel(QWidget* const parent)
     connect(d->exifToolBinWidget, SIGNAL(signalBinariesFound(bool)),
             this, SLOT(slotExifToolBinaryFound(bool)));
 
-    foreach (const QString& path, MetaEngineSettings::instance()->settings().defaultExifToolSearchPaths())
+    Q_FOREACH (const QString& path, MetaEngineSettings::instance()->settings().defaultExifToolSearchPaths())
     {
         d->exifToolBinWidget->addDirectory(path);
     }
@@ -196,7 +196,7 @@ void ExifToolConfPanel::slotExifToolBinaryFound(bool found)
         }
     }
 
-    emit signalExifToolSettingsChanged(found);
+    Q_EMIT signalExifToolSettingsChanged(found);
 }
 
 void ExifToolConfPanel::slotSearchTextChanged(const SearchTextSettings& settings)

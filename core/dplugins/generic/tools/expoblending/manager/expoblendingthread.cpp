@@ -193,7 +193,7 @@ void ExpoBlendingThread::cleanUpResultFiles()
 
     QMutexLocker(&d->enfuseTmpUrlsMutex);
 
-    foreach (const QUrl& url, d->enfuseTmpUrls)
+    Q_FOREACH (const QUrl& url, d->enfuseTmpUrls)
     {
         qCDebug(DIGIKAM_DPLUGIN_GENERIC_LOG) << "Removing temp file" << url.toLocalFile();
         QFile(url.toLocalFile()).remove();
@@ -209,7 +209,7 @@ void ExpoBlendingThread::setPreProcessingSettings(bool align)
 
 void ExpoBlendingThread::identifyFiles(const QList<QUrl>& urlList)
 {
-    foreach (const QUrl& url, urlList)
+    Q_FOREACH (const QUrl& url, urlList)
     {
         Private::Task* const t = new Private::Task;
         t->action              = EXPOBLENDING_IDENTIFY;
@@ -335,7 +335,7 @@ void ExpoBlendingThread::run()
                     ad.inUrls  = t->urls;
                     ad.message = avLum.isEmpty() ? i18nc("average scene luminance value unknown", "unknown") : avLum;
                     ad.success = avLum.isEmpty();
-                    emit finished(ad);
+                    Q_EMIT finished(ad);
                     break;
                 }
 
@@ -345,7 +345,7 @@ void ExpoBlendingThread::run()
                     ad1.action   = EXPOBLENDING_PREPROCESSING;
                     ad1.inUrls   = t->urls;
                     ad1.starting = true;
-                    emit starting(ad1);
+                    Q_EMIT starting(ad1);
 
                     QString errors;
 
@@ -357,7 +357,7 @@ void ExpoBlendingThread::run()
                     ad2.preProcessedUrlsMap = d->preProcessedUrlsMap;
                     ad2.success             = result;
                     ad2.message             = errors;
-                    emit finished(ad2);
+                    Q_EMIT finished(ad2);
                     break;
                 }
 
@@ -367,7 +367,7 @@ void ExpoBlendingThread::run()
                     ad1.action   = EXPOBLENDING_LOAD;
                     ad1.inUrls   = t->urls;
                     ad1.starting = true;
-                    emit starting(ad1);
+                    Q_EMIT starting(ad1);
 
                     QImage image;
                     bool result  = image.load(t->urls[0].toLocalFile());
@@ -385,7 +385,7 @@ void ExpoBlendingThread::run()
                     ad2.inUrls         = t->urls;
                     ad2.success        = result;
                     ad2.image          = image;
-                    emit finished(ad2);
+                    Q_EMIT finished(ad2);
                     break;
                 }
 
@@ -396,7 +396,7 @@ void ExpoBlendingThread::run()
                     ad1.inUrls         = t->urls;
                     ad1.starting       = true;
                     ad1.enfuseSettings = t->enfuseSettings;
-                    emit starting(ad1);
+                    Q_EMIT starting(ad1);
 
                     QString errors;
                     QUrl    destUrl         = t->outputUrl;
@@ -434,7 +434,7 @@ void ExpoBlendingThread::run()
                     ad2.success        = result;
                     ad2.message        = errors;
                     ad2.enfuseSettings = t->enfuseSettings;
-                    emit finished(ad2);
+                    Q_EMIT finished(ad2);
                     break;
                 }
 
@@ -445,7 +445,7 @@ void ExpoBlendingThread::run()
                     ad1.inUrls         = t->urls;
                     ad1.starting       = true;
                     ad1.enfuseSettings = t->enfuseSettings;
-                    emit starting(ad1);
+                    Q_EMIT starting(ad1);
 
                     QString errors;
                     QUrl destUrl = t->outputUrl;
@@ -490,7 +490,7 @@ void ExpoBlendingThread::run()
                     ad2.success        = result;
                     ad2.message        = errors;
                     ad2.enfuseSettings = t->enfuseSettings;
-                    emit finished(ad2);
+                    Q_EMIT finished(ad2);
                     break;
                 }
 
@@ -632,7 +632,7 @@ bool ExpoBlendingThread::startPreProcessing(const QList<QUrl>& inUrls,
         args << QLatin1String("-a");
         args << QLatin1String("aligned");
 
-        foreach (const QUrl& url, d->mixedUrls)
+        Q_FOREACH (const QUrl& url, d->mixedUrls)
         {
             args << url.toLocalFile();
         }
@@ -669,7 +669,7 @@ bool ExpoBlendingThread::startPreProcessing(const QList<QUrl>& inUrls,
         QString temp;
         d->preProcessedUrlsMap.clear();
 
-        foreach (const QUrl& url, inUrls)
+        Q_FOREACH (const QUrl& url, inUrls)
         {
             QUrl previewUrl;
             QUrl alignedUrl = QUrl::fromLocalFile(d->preprocessingTmpDir->path()                         +
@@ -687,7 +687,7 @@ bool ExpoBlendingThread::startPreProcessing(const QList<QUrl>& inUrls,
             ++i;
         }
 
-        foreach (const QUrl& inputUrl, d->preProcessedUrlsMap.keys())
+        Q_FOREACH (const QUrl& inputUrl, d->preProcessedUrlsMap.keys())
         {
             qCDebug(DIGIKAM_DPLUGIN_GENERIC_LOG) << "Pre-processed output urls map:"
                                                  << inputUrl << "=>"
@@ -699,7 +699,7 @@ bool ExpoBlendingThread::startPreProcessing(const QList<QUrl>& inUrls,
     }
     else
     {
-        foreach (const QUrl& inputUrl, d->preProcessedUrlsMap.keys())
+        Q_FOREACH (const QUrl& inputUrl, d->preProcessedUrlsMap.keys())
         {
             qCDebug(DIGIKAM_DPLUGIN_GENERIC_LOG) << "Pre-processed output urls map:"
                                                  << inputUrl << "=>"
@@ -868,7 +868,7 @@ bool ExpoBlendingThread::startEnfuse(const QList<QUrl>& inUrls, QUrl& outUrl,
     args << QLatin1String("-o");
     args << outUrl.toLocalFile();
 
-    foreach (const QUrl& url, inUrls)
+    Q_FOREACH (const QUrl& url, inUrls)
     {
         args << url.toLocalFile();
     }

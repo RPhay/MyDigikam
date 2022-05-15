@@ -602,7 +602,7 @@ int VideoDecoderD3DPrivate::aligned(int x)
 
 const d3d_format_t* VideoDecoderD3DPrivate::getFormat(const AVCodecContext *avctx, const QVector<GUID> &guids, GUID* selected) const
 {
-    foreach (const GUID& g, guids)
+    Q_FOREACH (const GUID& g, guids)
     {
         const dxva2_mode_t* mode = Dxva2FindMode(&g);
 
@@ -642,7 +642,7 @@ const d3d_format_t* VideoDecoderD3DPrivate::getFormat(const AVCodecContext *avct
 
         // TODO: find_if
 
-        foreach (const GUID& g, guids)
+        Q_FOREACH (const GUID& g, guids)
         {
             if (IsEqualGUID(*mode->guid, g))
             {

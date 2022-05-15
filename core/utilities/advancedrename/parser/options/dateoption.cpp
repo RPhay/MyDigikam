@@ -97,7 +97,7 @@ QVariant DateFormat::format(const QString& identifier)
         return m_map.at(Standard).second;
     }
 
-    foreach (const DateFormatDescriptor& desc, m_map)
+    Q_FOREACH (const DateFormatDescriptor& desc, m_map)
     {
         if (desc.first == identifier)
         {   // cppcheck-suppress useStlAlgorithm
@@ -133,7 +133,7 @@ DateOptionDialog::DateOptionDialog(Rule* parent)
 
     DateFormat df;
 
-    foreach (const DateFormat::DateFormatDescriptor& desc, df.map())
+    Q_FOREACH (const DateFormat::DateFormatDescriptor& desc, df.map())
     {
         ui->dateFormatPicker->addItem(desc.first);
     }
@@ -460,7 +460,7 @@ void DateOption::slotTokenTriggered(const QString& token)
 
     delete dlg;
 
-    emit signalTokenTriggered(dateString);
+    Q_EMIT signalTokenTriggered(dateString);
 }
 
 } // namespace Digikam

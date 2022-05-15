@@ -146,7 +146,7 @@ void ItemVersionsModel::clearModelData()
 
 void ItemVersionsModel::slotAnimationStep()
 {
-    emit dataChanged(createIndex(0, 0), createIndex(rowCount()-1, 1));
+    Q_EMIT dataChanged(createIndex(0, 0), createIndex(rowCount()-1, 1));
 }
 
 QString ItemVersionsModel::currentSelectedImage() const

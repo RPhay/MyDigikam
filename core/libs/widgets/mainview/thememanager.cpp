@@ -79,7 +79,7 @@ void ThemeManager::setCurrentTheme(const QString& name)
 
     QList<QAction*> list = d->themeMenuActionGroup->actions();
 
-    foreach (QAction* const action, list)
+    Q_FOREACH (QAction* const action, list)
     {
         if (action->text().remove(QLatin1Char('&')) == name)
         {
@@ -113,7 +113,7 @@ void ThemeManager::slotChangePalette()
 
     qCDebug(DIGIKAM_WIDGETS_LOG) << theme << " :: " << filePath;
 
-    emit signalThemeChanged();
+    Q_EMIT signalThemeChanged();
 }
 
 void ThemeManager::setThemeMenuAction(QMenu* const action)
@@ -171,7 +171,7 @@ void ThemeManager::populateThemeMenu()
 
         qCDebug(DIGIKAM_WIDGETS_LOG) << "Paths to color scheme : " << dirs;
 
-        foreach (const QString& dir, dirs)
+        Q_FOREACH (const QString& dir, dirs)
         {
             QDirIterator it(dir, QStringList() << QLatin1String("*.colors"));
 
@@ -191,7 +191,7 @@ void ThemeManager::populateThemeMenu()
             }
         }
 
-        foreach (QAction* const menuAction, actionMap.values())
+        Q_FOREACH (QAction* const menuAction, actionMap.values())
         {
             d->themeMenuAction->addAction(menuAction);
         }
@@ -208,7 +208,7 @@ void ThemeManager::updateCurrentDesktopDefaultThemePreview()
 {
     QList<QAction*> list = d->themeMenuActionGroup->actions();
 
-    foreach (QAction* const action, list)
+    Q_FOREACH (QAction* const action, list)
     {
         if (action->text().remove(QLatin1Char('&')) == defaultThemeName())
         {

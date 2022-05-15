@@ -333,7 +333,7 @@ void ItemPreviewView::reload()
 
 void ItemPreviewView::imageLoaded()
 {
-    emit signalPreviewLoaded(true);
+    Q_EMIT signalPreviewLoaded(true);
     d->rotLeftAction->setEnabled(true);
     d->rotRightAction->setEnabled(true);
 
@@ -356,7 +356,7 @@ void ItemPreviewView::imageLoaded()
 
 void ItemPreviewView::imageLoadingFailed()
 {
-    emit signalPreviewLoaded(false);
+    Q_EMIT signalPreviewLoaded(false);
     d->rotLeftAction->setEnabled(false);
     d->rotRightAction->setEnabled(false);
     d->addFocusPointAction->setEnabled(false);
@@ -645,7 +645,7 @@ void ItemPreviewView::slotRotateRight()
 
 void ItemPreviewView::slotDeleteItem()
 {
-    emit signalDeleteItem();
+    Q_EMIT signalDeleteItem();
 }
 
 void Digikam::ItemPreviewView::slotUpdateFaces()

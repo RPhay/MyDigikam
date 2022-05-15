@@ -672,7 +672,7 @@ QSet<qlonglong> HaarIface::imagesFromAlbumsAndTags(const QList<int>& albums2Scan
 
     // Get all items DB id from all albums and all collections
 
-    foreach (int albumId, albums2Scan)
+    Q_FOREACH (int albumId, albums2Scan)
     {
         const auto list = CoreDbAccess().db()->getItemIDsInAlbum(albumId);
         imagesFromAlbums.unite(QSet<qlonglong>(list.begin(), list.end()));
@@ -680,7 +680,7 @@ QSet<qlonglong> HaarIface::imagesFromAlbumsAndTags(const QList<int>& albums2Scan
 
     // Get all items DB id from all tags
 
-    foreach (int albumId, tags2Scan)
+    Q_FOREACH (int albumId, tags2Scan)
     {
         const auto list = CoreDbAccess().db()->getItemIDsInTag(albumId);
         imagesFromTags.unite(QSet<qlonglong>(list.begin(), list.end()));
@@ -815,7 +815,7 @@ HaarIface::DuplicatesResultsMap HaarIface::findDuplicates(const QSet<qlonglong>&
                 qlonglong refFileSize   = 0;
                 qlonglong reference     = *images2ScanIterator;
 
-                foreach (const qlonglong& refId, duplicates)
+                Q_FOREACH (const qlonglong& refId, duplicates)
                 {
                     ItemInfo info(refId);
                     quint64 infoPixelSize = (quint64)info.dimensions().width() *

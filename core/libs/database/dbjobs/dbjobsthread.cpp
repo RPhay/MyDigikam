@@ -283,7 +283,7 @@ void SearchesDBJobsThread::searchesListing(const SearchesDBJobInfo& info)
 
 void SearchesDBJobsThread::slotImageProcessed()
 {
-    emit signalProgress((++m_processedImages * 100) / m_totalImages2Scan);
+    Q_EMIT signalProgress((++m_processedImages * 100) / m_totalImages2Scan);
 }
 
 void SearchesDBJobsThread::slotDuplicatesResults(const HaarIface::DuplicatesResultsMap& incoming)
@@ -315,7 +315,7 @@ void SearchesDBJobsThread::slotDuplicatesResults(const HaarIface::DuplicatesResu
 
     HaarIface::rebuildDuplicatesAlbums(m_results, m_isAlbumUpdate);
 
-    emit finished();
+    Q_EMIT finished();
 }
 
 } // namespace Digikam

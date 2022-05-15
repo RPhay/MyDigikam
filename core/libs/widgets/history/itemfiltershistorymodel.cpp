@@ -330,7 +330,7 @@ bool ItemFiltersHistoryModel::removeRows(int row, int /*count*/, const QModelInd
         d->filterStack.removeAt(row);
         endResetModel();
 
-        //TODO: emit signal starting FilterManager
+        //TODO: Q_EMIT signal starting FilterManager
 
         return true;
     }
@@ -347,7 +347,7 @@ void ItemFiltersHistoryModel::setEnabledEntries(int count)
 
     d->disabledEntries = qMax(rowCount() - count, 0);
 
-    emit dataChanged(index(0, 0), index(rowCount() - 1, 0));
+    Q_EMIT dataChanged(index(0, 0), index(rowCount() - 1, 0));
 }
 
 void ItemFiltersHistoryModel::disableEntries(int count)
@@ -365,7 +365,7 @@ void ItemFiltersHistoryModel::disableEntries(int count)
         --count;
     }
 
-    emit dataChanged(index(0, 0), index(rowCount() - 1, 0));
+    Q_EMIT dataChanged(index(0, 0), index(rowCount() - 1, 0));
 }
 
 void ItemFiltersHistoryModel::enableEntries(int count)
@@ -385,7 +385,7 @@ void ItemFiltersHistoryModel::enableEntries(int count)
 
     d->disabledEntries -= tmp;
 
-    emit dataChanged(index(0, 0), index(rowCount() - 1, 0));
+    Q_EMIT dataChanged(index(0, 0), index(rowCount() - 1, 0));
 }
 
 } // namespace Digikam

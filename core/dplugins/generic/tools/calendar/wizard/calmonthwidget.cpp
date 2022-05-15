@@ -165,7 +165,7 @@ void CalMonthWidget::dropEvent(QDropEvent* e)
 
 void CalMonthWidget::slotMonthSelected()
 {
-    emit monthSelected(d->month);
+    Q_EMIT monthSelected(d->month);
 }
 
 void CalMonthWidget::slotThumbnail(const LoadingDescription& desc, const QPixmap& pix)

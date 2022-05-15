@@ -56,7 +56,7 @@ void AlbumManager::scanPAlbums()
 
     // go through all the Albums and see which ones are already present
 
-    foreach (const AlbumInfo& info, currentAlbums)
+    Q_FOREACH (const AlbumInfo& info, currentAlbums)
     {
         // check that location of album is available
 
@@ -87,7 +87,7 @@ void AlbumManager::scanPAlbums()
 
     QSet<PAlbum*> topMostOldAlbums;
 
-    foreach (PAlbum* const album, oldAlbums)
+    Q_FOREACH (PAlbum* const album, oldAlbums)
     {
         if (album->isTrashAlbum())
         {
@@ -100,7 +100,7 @@ void AlbumManager::scanPAlbums()
         }
     }
 
-    foreach (PAlbum* const album, topMostOldAlbums)
+    Q_FOREACH (PAlbum* const album, topMostOldAlbums)
     {
         // recursively removes all children and the album
 
@@ -113,7 +113,7 @@ void AlbumManager::scanPAlbums()
 
     // create all new albums
 
-    foreach (const AlbumInfo& info, newAlbums)
+    Q_FOREACH (const AlbumInfo& info, newAlbums)
     {
         if (info.relativePath.isEmpty())
         {
@@ -192,7 +192,7 @@ void AlbumManager::scanPAlbums()
 
     if (!topMostOldAlbums.isEmpty() || !newAlbums.isEmpty())
     {
-        emit signalAlbumsUpdated(Album::PHYSICAL);
+        Q_EMIT signalAlbumsUpdated(Album::PHYSICAL);
     }
 
     getAlbumItemsCount();
@@ -209,9 +209,9 @@ void AlbumManager::updateChangedPAlbums()
 
     // Find the AlbumInfo for each id in changedPAlbums
 
-    foreach (int id, d->changedPAlbums)
+    Q_FOREACH (int id, d->changedPAlbums)
     {
-        foreach (const AlbumInfo& info, currentAlbums)
+        Q_FOREACH (const AlbumInfo& info, currentAlbums)
         {
             if (info.id == id)
             {
@@ -244,7 +244,7 @@ void AlbumManager::updateChangedPAlbums()
                         {
                             album->setTitle(name);
                             updateAlbumPathHash();
-                            emit signalAlbumRenamed(album);
+                            Q_EMIT signalAlbumRenamed(album);
                         }
                     }
 
@@ -259,7 +259,7 @@ void AlbumManager::updateChangedPAlbums()
                     if (album->m_iconId != info.iconId)
                     {
                         album->m_iconId = info.iconId;
-                        emit signalAlbumIconChanged(album);
+                        Q_EMIT signalAlbumIconChanged(album);
                     }
                 }
             }
@@ -451,7 +451,7 @@ PAlbum* AlbumManager::createPAlbum(PAlbum*        parent,
     album->m_date       = date;
 
     insertPAlbum(album, parent);
-    emit signalAlbumsUpdated(Album::PHYSICAL);
+    Q_EMIT signalAlbumsUpdated(Album::PHYSICAL);
 
     return album;
 }
@@ -528,13 +528,13 @@ bool AlbumManager::renamePAlbum(PAlbum* album, const QString& newName,
         {
             subAlbum->m_parentPath = newAlbumPath + subAlbum->m_parentPath.mid(oldAlbumPath.length());
             access.db()->renameAlbum(subAlbum->id(), album->albumRootId(), subAlbum->albumPath());
-            emit signalAlbumNewPath(subAlbum);
+            Q_EMIT signalAlbumNewPath(subAlbum);
             ++it;
         }
     }
 
     updateAlbumPathHash();
-    emit signalAlbumRenamed(album);
+    Q_EMIT signalAlbumRenamed(album);
 
     ScanController::instance()->resumeCollectionScan();
 
@@ -562,7 +562,7 @@ bool AlbumManager::updatePAlbumIcon(PAlbum* album, qlonglong iconID, QString& er
         album->m_iconId = iconID;
     }
 
-    emit signalAlbumIconChanged(album);
+    Q_EMIT signalAlbumIconChanged(album);
 
     return true;
 }
@@ -579,7 +579,7 @@ void AlbumManager::insertPAlbum(PAlbum* album, PAlbum* parent)
         return;
     }
 
-    emit signalAlbumAboutToBeAdded(album, parent, parent ? parent->lastChild() : nullptr);
+    Q_EMIT signalAlbumAboutToBeAdded(album, parent, parent ? parent->lastChild() : nullptr);
 
     if (parent)
     {
@@ -589,7 +589,7 @@ void AlbumManager::insertPAlbum(PAlbum* album, PAlbum* parent)
     d->albumPathHash[PAlbumPath(album)]   = album;
     d->allAlbumsIdHash[album->globalID()] = album;
 
-    emit signalAlbumAdded(album);
+    Q_EMIT signalAlbumAdded(album);
 }
 
 void AlbumManager::removePAlbum(PAlbum* album)
@@ -618,7 +618,7 @@ void AlbumManager::removePAlbum(PAlbum* album)
         child             = next;
     }
 
-    emit signalAlbumAboutToBeDeleted(album);
+    Q_EMIT signalAlbumAboutToBeDeleted(album);
     d->albumPathHash.remove(PAlbumPath(album));
     d->allAlbumsIdHash.remove(album->globalID());
 
@@ -629,7 +629,7 @@ void AlbumManager::removePAlbum(PAlbum* album)
         if (album == d->currentAlbums.first())
         {
             d->currentAlbums.clear();
-            emit signalAlbumCurrentChanged(d->currentAlbums);
+            Q_EMIT signalAlbumCurrentChanged(d->currentAlbums);
         }
     }
 
@@ -638,11 +638,11 @@ void AlbumManager::removePAlbum(PAlbum* album)
         d->albumRootAlbumHash.remove(album->albumRootId());
     }
 
-    emit signalAlbumDeleted(album);
+    Q_EMIT signalAlbumDeleted(album);
     quintptr deletedAlbum = reinterpret_cast<quintptr>(album);
     delete album;
 
-    emit signalAlbumHasBeenDeleted(deletedAlbum);
+    Q_EMIT signalAlbumHasBeenDeleted(deletedAlbum);
 }
 
 void AlbumManager::removeWatchedPAlbums(const PAlbum* const album)

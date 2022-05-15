@@ -67,7 +67,7 @@ QString TooltipCreator::additionalInformation()
                                                                                          QString::fromUtf8("' /></td>");
     information += QString::fromUtf8("<td><ol>");
 
-    foreach (const QString& infoItem, infoItems)
+    Q_FOREACH (const QString& infoItem, infoItems)
     {
         // cppcheck-suppress useStlAlgorithm
         information += QString::fromUtf8("<li>") + infoItem + QString::fromUtf8("</li>");
@@ -166,9 +166,9 @@ QString TooltipCreator::createEntries(const RulesList& data)
 {
     QString result;
 
-    foreach (Rule* const t, data)
+    Q_FOREACH (Rule* const t, data)
     {
-        foreach (Token* const token, t->tokens())
+        Q_FOREACH (Token* const token, t->tokens())
         {
             // cppcheck-suppress useStlAlgorithm
             result += QString::fromUtf8("<tr>"

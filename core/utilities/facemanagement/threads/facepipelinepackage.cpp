@@ -75,7 +75,7 @@ FacePipelineFaceTagsIfaceList::FacePipelineFaceTagsIfaceList(const QList<FaceTag
 
 FacePipelineFaceTagsIfaceList& FacePipelineFaceTagsIfaceList::operator=(const QList<FaceTagsIface>& faces)
 {
-    foreach (const FaceTagsIface& face, faces)
+    Q_FOREACH (const FaceTagsIface& face, faces)
     {
         operator<<(FacePipelineFaceTagsIface(face));
     }

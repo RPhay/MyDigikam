@@ -112,7 +112,7 @@ void AkonadiIface::slotABCSearchResult(KJob* job)
 
     QStringList names;
 
-    foreach (const KContacts::Addressee& addr, contacts)
+    Q_FOREACH (const KContacts::Addressee& addr, contacts)
     {
         if (!addr.realName().isNull())
         {
@@ -131,7 +131,7 @@ void AkonadiIface::slotABCSearchResult(KJob* job)
 
     m_ABCmenu->clear();
 
-    foreach (const QString& name, names)
+    Q_FOREACH (const QString& name, names)
     {
         m_ABCmenu->addAction(QIcon::fromTheme(QLatin1String("im-user")), name);
     }
@@ -144,7 +144,7 @@ void AkonadiIface::slotABCMenuTriggered(QAction* action)
 {
     QString name = action->iconText();
 
-    emit signalContactTriggered(name);
+    Q_EMIT signalContactTriggered(name);
 }
 
 } // namespace Digikam

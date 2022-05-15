@@ -95,7 +95,7 @@ void ExifToolListView::loadFromUrl(const QUrl& url)
 
     if (!url.isValid())
     {
-        emit signalLoadingResult(true);
+        Q_EMIT signalLoadingResult(true);
 
         return;
     }
@@ -104,7 +104,7 @@ void ExifToolListView::loadFromUrl(const QUrl& url)
     {
         d->lastError = d->parser->currentErrorString();
 
-        emit signalLoadingResult(false);
+        Q_EMIT signalLoadingResult(false);
 
         return;
     }
@@ -123,7 +123,7 @@ void ExifToolListView::slotExifToolDataAvailable()
 
     setMetadata(d->parser->currentData());
 
-    emit signalLoadingResult(d->lastError.isEmpty());
+    Q_EMIT signalLoadingResult(d->lastError.isEmpty());
 }
 
 ExifToolListViewGroup* ExifToolListView::findGroup(const QString& group)
@@ -189,7 +189,7 @@ void ExifToolListView::slotSearchTextChanged(const SearchTextSettings& settings)
         ++it;
     }
 
-    emit signalTextFilterMatch(query);
+    Q_EMIT signalTextFilterMatch(query);
 }
 
 QString ExifToolListView::getCurrentItemKey() const
@@ -363,7 +363,7 @@ void ExifToolListView::setGroupList(const QStringList& tagsFilter, const QString
         (filters.at(0) != QLatin1String("FULL")) &&
         filters.at(0).contains(QLatin1Char('.')))
     {
-        foreach (const QString& key, filters)
+        Q_FOREACH (const QString& key, filters)
         {
             QString grp                  = key.section(QLatin1Char('.'), 0, 0)
                                               .replace(QLatin1Char('_'), QLatin1Char(' '));

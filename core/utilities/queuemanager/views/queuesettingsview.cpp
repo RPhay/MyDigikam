@@ -779,7 +779,7 @@ void QueueSettingsView::slotSettingsChanged()
         settings.ioFileSettings.AVIFLossLess    = d->avifSettings->settings()[QLatin1String("lossless")].toBool();
     }
 
-    emit signalSettingsChanged(settings);
+    Q_EMIT signalSettingsChanged(settings);
 }
 
 } // namespace Digikam

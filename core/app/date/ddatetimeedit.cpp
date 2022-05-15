@@ -91,7 +91,7 @@ void DDateTimeEdit::setDateTime(const QDateTime& dateTime)
 
 void DDateTimeEdit::slotDateTimeChanged()
 {
-    emit dateTimeChanged(dateTime());
+    Q_EMIT dateTimeChanged(dateTime());
 }
 
 } // namespace Digikam

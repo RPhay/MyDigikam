@@ -80,7 +80,7 @@ void ItemLister::listFromIdList(ItemListerReceiver* const receiver,
         // Unfortunately, we need to convert to QVariant
         QList<QVariant> variantIdList;
 
-        foreach (const qlonglong& id, imageIds)
+        Q_FOREACH (const qlonglong& id, imageIds)
         {
             variantIdList << id;
         }
@@ -111,7 +111,7 @@ void ItemLister::listFromIdList(ItemListerReceiver* const receiver,
                              "       LEFT JOIN Albums ON Albums.id=Images.album "
                              " WHERE Images.status=1 AND Images.id = ?;"));
 
-        foreach (const qlonglong& id, imageIds)
+        Q_FOREACH (const qlonglong& id, imageIds)
         {
             query.bindValue(0, id);
             executionSuccess = access.backend()->exec(query);

@@ -571,7 +571,7 @@ void INatWindow::slotLinkingSucceeded(const QString& username,
     d->widget->updateLabels(username);
     KSharedConfigPtr config = KSharedConfig::openConfig();
 
-    foreach (const QString& group, config->groupList())
+    Q_FOREACH (const QString& group, config->groupList())
     {
         if (!(group.contains(d->serviceName)))
         {

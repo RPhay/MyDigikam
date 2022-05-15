@@ -159,7 +159,7 @@ void QuerySiteInfoGeneral::doWorkProcessReply()
     }
     else
     {
-        emit result(generalinfo);
+        Q_EMIT result(generalinfo);
         this->setError(Job::NoError);
     }
 

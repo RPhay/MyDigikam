@@ -111,7 +111,7 @@ WorkflowList::WorkflowList(QWidget* const parent)
     QStringList failed;
     mngr->load(failed);
 
-    foreach (const Workflow& q, mngr->queueSettingsList())
+    Q_FOREACH (const Workflow& q, mngr->queueSettingsList())
     {
         slotsAddQueueSettings(q.title);
     }
@@ -332,7 +332,7 @@ void WorkflowList::slotAssignQueueSettings()
 
         if (item)
         {
-            emit signalAssignQueueSettings(item->title());
+            Q_EMIT signalAssignQueueSettings(item->title());
         }
     }
 }

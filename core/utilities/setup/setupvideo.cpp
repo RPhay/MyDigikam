@@ -103,7 +103,7 @@ SetupVideo::~SetupVideo()
 
 void SetupVideo::applySettings()
 {
-    foreach (ConfigPageBase* const page, d->pages)
+    Q_FOREACH (ConfigPageBase* const page, d->pages)
     {
         page->apply();
     }
@@ -113,7 +113,7 @@ void SetupVideo::applySettings()
 
 void SetupVideo::readSettings()
 {
-    foreach (ConfigPageBase* const page, d->pages)
+    Q_FOREACH (ConfigPageBase* const page, d->pages)
     {
         page->applyToUi();
         page->applyOnUiChange(false);
@@ -132,7 +132,7 @@ void SetupVideo::slotReset()
     {
         AVPlayerConfigMngr::instance().reset();
 
-        foreach (ConfigPageBase* const page, d->pages)
+        Q_FOREACH (ConfigPageBase* const page, d->pages)
         {
             page->reset();
         }
@@ -141,7 +141,7 @@ void SetupVideo::slotReset()
 
 void SetupVideo::cancel()
 {
-    foreach (ConfigPageBase* const page, d->pages)
+    Q_FOREACH (ConfigPageBase* const page, d->pages)
     {
         page->cancel();
     }

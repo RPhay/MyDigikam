@@ -183,7 +183,7 @@ bool UMSCamera::getFolders(const QString& folder)
         return true;
     }
 
-    emit signalFolderList(subFolderList);
+    Q_EMIT signalFolderList(subFolderList);
 
     return true;
 }
@@ -628,7 +628,7 @@ void UMSCamera::getUUIDFromSolid()
 {
     QList<Solid::Device> devices = Solid::Device::listFromType(Solid::DeviceInterface::StorageAccess);
 
-    foreach (const Solid::Device& accessDevice, devices)
+    Q_FOREACH (const Solid::Device& accessDevice, devices)
     {
         // check for StorageAccess
 

@@ -76,7 +76,7 @@ CaptureConfigPage::CaptureConfigPage(QWidget* const parent)
     QList<QByteArray> formats;
     formats << "Original" << QImageWriter::supportedImageFormats();
 
-    foreach (const QByteArray& fmt, formats)
+    Q_FOREACH (const QByteArray& fmt, formats)
     {
         mpFormat->addItem(QString::fromLatin1(fmt));
     }

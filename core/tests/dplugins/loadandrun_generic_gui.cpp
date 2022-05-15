@@ -87,7 +87,7 @@ int main(int argc, char* argv[])
 
     if      (parser.isSet(QString::fromLatin1("list")))
     {
-        foreach (DPlugin* const p, dpl->allPlugins())
+        Q_FOREACH (DPlugin* const p, dpl->allPlugins())
         {
             DPluginGeneric* const gene = dynamic_cast<DPluginGeneric*>(p);
 
@@ -101,7 +101,7 @@ int main(int argc, char* argv[])
 
                 QString authors;
 
-                foreach (const DPluginAuthor& au, p->authors())
+                Q_FOREACH (const DPluginAuthor& au, p->authors())
                 {
                     authors.append(au.toString());
                     authors.append(QLatin1String(" ; "));
@@ -111,7 +111,7 @@ int main(int argc, char* argv[])
 
                 QString actions;
 
-                foreach (DPluginAction* const ac, gene->actions(&iface))
+                Q_FOREACH (DPluginAction* const ac, gene->actions(&iface))
                 {
                     actions.append(ac->toString());
                     actions.append(QLatin1String(" ; "));
@@ -141,7 +141,7 @@ int main(int argc, char* argv[])
 
         MetaEngine::initializeExiv2();
 
-        foreach (DPlugin* const p, dpl->allPlugins())
+        Q_FOREACH (DPlugin* const p, dpl->allPlugins())
         {
             if (p->iid() == name)
             {
@@ -167,7 +167,7 @@ int main(int argc, char* argv[])
 
                         QString actions;
 
-                        foreach (DPluginAction* const gac, gene->actions(&iface))
+                        Q_FOREACH (DPluginAction* const gac, gene->actions(&iface))
                         {
                             actions.append(gac->toString());
                             actions.append(QLatin1String(" ; "));

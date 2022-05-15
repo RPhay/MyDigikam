@@ -118,7 +118,7 @@ QList<ItemInfo> FindDuplicatesAlbumItem::duplicatedItems()
     const QList<qlonglong>& list = reader.valueToLongLongList();
     const qlonglong refImage     = d->album->title().toLongLong();
 
-    foreach (const qlonglong& imageId, list)
+    Q_FOREACH (const qlonglong& imageId, list)
     {
         if (imageId == refImage)
         {
@@ -154,7 +154,7 @@ void FindDuplicatesAlbumItem::calculateInfos(const QList<qlonglong>& deletedImag
     QList<qlonglong> filteredList;
     double avgSim = 0.0;
 
-    foreach (const qlonglong& imageId, list)
+    Q_FOREACH (const qlonglong& imageId, list)
     {
         ItemInfo info(imageId);
 

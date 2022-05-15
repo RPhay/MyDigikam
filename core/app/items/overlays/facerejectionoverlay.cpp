@@ -104,7 +104,7 @@ void FaceRejectionOverlay::slotClicked()
 
     if (index.isValid())
     {
-        emit rejectFaces(affectedIndexes(index));
+        Q_EMIT rejectFaces(affectedIndexes(index));
     }
 }
 

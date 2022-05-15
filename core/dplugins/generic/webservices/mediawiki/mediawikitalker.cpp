@@ -105,7 +105,7 @@ void MediaWikiTalker::slotUploadHandle(KJob* j)
     if (j != nullptr)
     {
         qCDebug(DIGIKAM_WEBSERVICES_LOG) << "Upload error" << j->error() << j->errorString() << j->errorText();
-        emit signalUploadProgress(100);
+        Q_EMIT signalUploadProgress(100);
 
         disconnect(j, SIGNAL(result(KJob*)),
                    this, SLOT(slotUploadHandle(KJob*)));
@@ -148,7 +148,7 @@ void MediaWikiTalker::slotUploadHandle(KJob* j)
             return;
         }
 
-        //emit fileUploadProgress(done = 0, total file.size());
+        //Q_EMIT fileUploadProgress(done = 0, total file.size());
 
         Upload* const e1 = new Upload(*d->MediaWiki, this);
         e1->setFile(file);
@@ -175,7 +175,7 @@ void MediaWikiTalker::slotUploadHandle(KJob* j)
         connect(e1, SIGNAL(percent(KJob*,ulong)),
                 this, SLOT(slotUploadProgress(KJob*,ulong)));
 
-        emit signalUploadProgress(0);
+        Q_EMIT signalUploadProgress(0);
         e1->start();
     }
     else
@@ -188,7 +188,7 @@ void MediaWikiTalker::slotUploadHandle(KJob* j)
         }
         else
         {
-            emit signalEndUpload();
+            Q_EMIT signalEndUpload();
         }
 
         d->error.clear();
@@ -267,7 +267,7 @@ QString MediaWikiTalker::buildWikiText(const QMap<QString, QString>& info) const
 void MediaWikiTalker::slotUploadProgress(KJob* job, unsigned long percent)
 {
     Q_UNUSED(job)
-    emit signalUploadProgress((int)percent);
+    Q_EMIT signalUploadProgress((int)percent);
 }
 
 } // namespace DigikamGenericMediaWikiPlugin

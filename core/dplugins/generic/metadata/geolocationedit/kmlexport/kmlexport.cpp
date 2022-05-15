@@ -496,7 +496,7 @@ void KmlExport::generate()
             logWarning(i18n("No position data for '%1'", info.name()));
         }
 
-        emit signalProgressChanged(pos);
+        Q_EMIT signalProgressChanged(pos);
         QApplication::processEvents();
     }
 
@@ -554,7 +554,7 @@ bool KmlExport::copyDir(const QString& srcFilePath, const QString& dstFilePath)
 
         QStringList files = srcDir.entryList(QDir::Files | QDir::Dirs | QDir::NoDotAndDotDot);
 
-        foreach (const QString& file, files)
+        Q_FOREACH (const QString& file, files)
         {
             const QString newSrcFilePath = srcDir.absolutePath() + QLatin1Char('/') + file;
             const QString newDstFilePath = dstDir.absolutePath() + QLatin1Char('/') + file;

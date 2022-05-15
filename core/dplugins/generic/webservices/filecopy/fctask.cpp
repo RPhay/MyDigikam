@@ -168,10 +168,10 @@ void FCTask::run()
 
     if (ok)
     {
-        emit signalUrlProcessed(d->srcUrl, dest);
+        Q_EMIT signalUrlProcessed(d->srcUrl, dest);
     }
 
-    emit signalDone();
+    Q_EMIT signalDone();
 }
 
 bool FCTask::imageResize(const QString& orgPath, const QString& destPath)

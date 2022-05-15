@@ -106,7 +106,7 @@ void ItemFullScreenOverlay::slotClicked()
 
     if (index.isValid())
     {
-        emit signalFullscreen(affectedIndexes(index));
+        Q_EMIT signalFullscreen(affectedIndexes(index));
     }
 }
 

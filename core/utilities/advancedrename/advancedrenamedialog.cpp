@@ -343,7 +343,7 @@ void AdvancedRenameDialog::initDialog()
 
     d->singleFileMode = (count == 1);
 
-    foreach (const QString& file, fileList)
+    Q_FOREACH (const QString& file, fileList)
     {
         QUrl url = QUrl::fromLocalFile(file);
         new AdvancedRenameListItem(d->listView, url);
@@ -511,7 +511,7 @@ void AdvancedRenameDialog::slotAddImages(const QList<QUrl>& urls)
     d->advancedRenameManager->reset();
     QList<ParseSettings> files;
 
-    foreach (const QUrl& url, urls)
+    Q_FOREACH (const QUrl& url, urls)
     {
         ParseSettings ps;
         ps.fileUrl = url;

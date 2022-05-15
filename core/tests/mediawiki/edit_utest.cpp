@@ -73,7 +73,7 @@ public Q_SLOTS:
     {
         editCount++;
         this->CaptchaQuestion = captcha;
-        emit captchaSignal(this->CaptchaAnswer);
+        Q_EMIT captchaSignal(this->CaptchaAnswer);
     }
 
 private Q_SLOTS:

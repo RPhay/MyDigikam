@@ -151,7 +151,7 @@ void CameraAutoDetectThread::run()
 {
     d->result = GPCamera::autoDetect(d->model, d->port);
 
-    emit signalComplete();
+    Q_EMIT signalComplete();
 }
 
 int CameraAutoDetectThread::result() const
@@ -648,7 +648,7 @@ void SetupCamera::readSettings()
     {
         QList<CameraType*>* const cl = clist->cameraList();
 
-        foreach (CameraType* const ctype, *cl)
+        Q_FOREACH (CameraType* const ctype, *cl)
         {
             new SetupCameraItem(d->listView, ctype);
         }
@@ -689,7 +689,7 @@ void SetupCamera::readSettings()
 
     ImportFilterComboBox::defaultFilters(&d->filters);
 
-    foreach (Filter* const f, d->filters)
+    Q_FOREACH (Filter* const f, d->filters)
     {
         new QListWidgetItem(f->name, d->importListView);
     }

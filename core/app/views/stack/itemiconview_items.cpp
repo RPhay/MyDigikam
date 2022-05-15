@@ -131,15 +131,15 @@ void ItemIconView::slotImageSelected()
     switch (viewMode())
     {
         case StackedView::TrashViewMode:
-            emit signalTrashSelectionChanged(d->trashView->statusBarText());
+            Q_EMIT signalTrashSelectionChanged(d->trashView->statusBarText());
             break;
 
         case StackedView::TableViewMode:
-            emit signalSelectionChanged(d->tableView->numberOfSelectedItems());
+            Q_EMIT signalSelectionChanged(d->tableView->numberOfSelectedItems());
             break;
 
         default:
-            emit signalSelectionChanged(d->iconView->numberOfSelectedIndexes());
+            Q_EMIT signalSelectionChanged(d->iconView->numberOfSelectedIndexes());
             break;
     }
 }
@@ -163,8 +163,8 @@ void ItemIconView::slotDispatchImageSelected()
         if (list.isEmpty())
         {
             d->stackedview->setPreviewItem();
-            emit signalImageSelected(list, allImages);
-            emit signalNoCurrentItem();
+            Q_EMIT signalImageSelected(list, allImages);
+            Q_EMIT signalNoCurrentItem();
         }
         else
         {
@@ -193,7 +193,7 @@ void ItemIconView::slotDispatchImageSelected()
                 d->stackedview->setPreviewItem(list.first(), previousInfo, nextInfo);
             }
 
-            emit signalImageSelected(list, allImages);
+            Q_EMIT signalImageSelected(list, allImages);
         }
 
         d->needDispatchSelection = false;

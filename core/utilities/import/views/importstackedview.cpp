@@ -429,7 +429,7 @@ void ImportStackedView::setViewMode(const StackedViewMode mode)
 
 #endif // HAVE_MARBLE
 
-    emit signalViewModeChanged();
+    Q_EMIT signalViewModeChanged();
 }
 
 void ImportStackedView::syncSelection(ImportCategorizedView* const from, ImportCategorizedView* const to)
@@ -443,7 +443,7 @@ void ImportStackedView::syncSelection(ImportCategorizedView* const from, ImportC
     QItemSelection selection               = from->selectionModel()->selection();
     QItemSelection newSelection;
 
-    foreach (const QItemSelectionRange& range, selection)
+    Q_FOREACH (const QItemSelectionRange& range, selection)
     {
         QModelIndex topLeft     = toModel->indexForCamItemInfo(fromModel->camItemInfo(range.topLeft()));
         QModelIndex bottomRight = toModel->indexForCamItemInfo(fromModel->camItemInfo(range.bottomRight()));
@@ -495,14 +495,14 @@ void ImportStackedView::slotIconViewSelectionChanged()
 
 void ImportStackedView::previewLoaded()
 {
-    emit signalViewModeChanged();
+    Q_EMIT signalViewModeChanged();
 }
 
 void ImportStackedView::slotZoomFactorChanged(double z)
 {
     if (viewMode() == PreviewImageMode)
     {
-        emit signalZoomFactorChanged(z);
+        Q_EMIT signalZoomFactorChanged(z);
     }
 }
 

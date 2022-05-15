@@ -67,7 +67,7 @@ ExifToolParser::~ExifToolParser()
         }
     }
 
-    foreach (QMetaObject::Connection hdl, d->hdls)
+    Q_FOREACH (QMetaObject::Connection hdl, d->hdls)
     {
         disconnect(hdl);
     }
@@ -122,7 +122,7 @@ MetaEngine::TagsMap ExifToolParser::tagsDbToOrderedMap(const ExifToolData& tagsD
     QStringList keys = tagsDb.keys();
     keys.sort();
 
-    foreach (const QString& tag, keys)
+    Q_FOREACH (const QString& tag, keys)
     {
         /**
          * Tag are formatted like this:

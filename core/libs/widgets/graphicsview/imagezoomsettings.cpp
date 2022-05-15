@@ -194,7 +194,7 @@ double ImageZoomSettings::snappedZoomStep(double nextZoom, const QSizeF& frameSi
 
     if (currentZoom < nextZoom)
     {
-        foreach (double z, snapValues)
+        Q_FOREACH (double z, snapValues)
         {
             if (lessThanLimitedPrecision(currentZoom, z) && lessThanLimitedPrecision(z, nextZoom))
             {    // cppcheck-suppress useStlAlgorithm
@@ -204,7 +204,7 @@ double ImageZoomSettings::snappedZoomStep(double nextZoom, const QSizeF& frameSi
     }
     else
     {
-        foreach (double z, snapValues)
+        Q_FOREACH (double z, snapValues)
         {
             if (lessThanLimitedPrecision(z, currentZoom) && lessThanLimitedPrecision(nextZoom, z))
             {   // cppcheck-suppress useStlAlgorithm
@@ -227,7 +227,7 @@ double ImageZoomSettings::snappedZoomFactor(double zoom, const QSizeF& frameSize
         snapValues << fitToSizeZoomFactor(frameSize);
     }
 
-    foreach (double z, snapValues)
+    Q_FOREACH (double z, snapValues)
     {
         if (fabs(zoom - z) < 0.05)
         {   // cppcheck-suppress useStlAlgorithm

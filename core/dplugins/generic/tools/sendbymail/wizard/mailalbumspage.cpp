@@ -99,7 +99,7 @@ bool MailAlbumsPage::validatePage()
 
     // update image list with album contents.
 
-    foreach (const QUrl& url, d->iface->albumsItems(d->iface->albumChooserItems()))
+    Q_FOREACH (const QUrl& url, d->iface->albumsItems(d->iface->albumChooserItems()))
     {
         d->wizard->settings()->inputImages << url;
     }

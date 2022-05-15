@@ -105,7 +105,7 @@ LensFunIface::LensFunIface()
 
     qCDebug(DIGIKAM_DIMG_LOG) << "Using root lens database dir: " << lensPath;
 
-    foreach (const QString& lens, lensDir.entryList())
+    Q_FOREACH (const QString& lens, lensDir.entryList())
     {
         qCDebug(DIGIKAM_DIMG_LOG) << "Load lens database file: " << lens;
         d->lfDb->Load(QFile::encodeName(lensDir.absoluteFilePath(lens)).constData());
@@ -425,7 +425,7 @@ LensFunIface::MetadataMatch LensFunIface::findFromMetadata(DMetadata* const meta
                 const lfLens* similar = nullptr;
                 double percent        = 0.0;
 
-                foreach (const lfLens* const l, lensMatches)
+                Q_FOREACH (const lfLens* const l, lensMatches)
                 {
                     double result = checkSimilarity(d->lensDescription, QLatin1String(l->Model));
 

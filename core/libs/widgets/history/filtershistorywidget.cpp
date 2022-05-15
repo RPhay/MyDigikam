@@ -62,7 +62,7 @@ void RemoveFilterAction::setIndex(const QModelIndex& index)
 
 void RemoveFilterAction::triggerSlot()
 {
-    emit actionTriggered(m_index);
+    Q_EMIT actionTriggered(m_index);
 }
 
 // -------------------------------------------------------------------------------------------------------

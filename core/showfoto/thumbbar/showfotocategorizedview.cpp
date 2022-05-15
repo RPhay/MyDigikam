@@ -144,7 +144,7 @@ void ShowfotoCategorizedView::setModels(ShowfotoItemModel* model, ShowfotoSortFi
     connect(d->filterModel, &ShowfotoSortFilterModel::layoutChanged,
             this, &ShowfotoCategorizedView::layoutWasChanged, Qt::QueuedConnection);
 
-    emit modelChanged();
+    Q_EMIT modelChanged();
 
     if (d->delegate)
     {
@@ -244,7 +244,7 @@ QList<ShowfotoItemInfo> ShowfotoCategorizedView::selectedShowfotoItemInfosCurren
     QModelIndex        current = currentIndex();
     QList<ShowfotoItemInfo> infos;
 
-    foreach (const QModelIndex& index, indexes)
+    Q_FOREACH (const QModelIndex& index, indexes)
     {
         ShowfotoItemInfo info = d->filterModel->showfotoItemInfo(index);
 
@@ -271,7 +271,7 @@ QList<QUrl> ShowfotoCategorizedView::urls() const
     QList<ShowfotoItemInfo> infos = showfotoItemInfos();
     QList<QUrl>             urls;
 
-    foreach (const ShowfotoItemInfo& info, infos)
+    Q_FOREACH (const ShowfotoItemInfo& info, infos)
     {
         urls << info.url;
     }
@@ -284,7 +284,7 @@ QList<QUrl> ShowfotoCategorizedView::selectedUrls() const
     QList<ShowfotoItemInfo> infos = selectedShowfotoItemInfos();
     QList<QUrl>             urls;
 
-    foreach (const ShowfotoItemInfo& info, infos)
+    Q_FOREACH (const ShowfotoItemInfo& info, infos)
     {
         urls << info.url;
     }
@@ -328,7 +328,7 @@ QModelIndex ShowfotoCategorizedView::nextIndexHint(const QModelIndex& anchor, co
             int minDiff                                   = d->filterModel->rowCount();
             QList<QModelIndex> indexesForShowfotoItemInfo = d->filterModel->mapListFromSource(d->model->indexesForShowfotoItemInfo(info));
 
-            foreach (const QModelIndex& index, indexesForShowfotoItemInfo)
+            Q_FOREACH (const QModelIndex& index, indexesForShowfotoItemInfo)
             {
                 if ((index == anchor) || !index.isValid() || removed.contains(index))
                 {
@@ -444,7 +444,7 @@ void ShowfotoCategorizedView::setSelectedShowfotoItemInfos(const QList<ShowfotoI
 {
     QItemSelection mySelection;
 
-    foreach (const ShowfotoItemInfo& info, infos)
+    Q_FOREACH (const ShowfotoItemInfo& info, infos)
     {
         QModelIndex index = d->filterModel->indexForShowfotoItemInfo(info);
         mySelection.select(index, index);
@@ -507,13 +507,13 @@ void ShowfotoCategorizedView::updateGeometries()
 
 void ShowfotoCategorizedView::slotDelayedEnter()
 {
-    // re-emit entered() for index under mouse (after layout).
+    // re-Q_EMIT entered() for index under mouse (after layout).
 
     QModelIndex mouseIndex = indexAt(mapFromGlobal(QCursor::pos()));
 
     if (mouseIndex.isValid())
     {
-        emit DCategorizedView::entered(mouseIndex);
+        Q_EMIT DCategorizedView::entered(mouseIndex);
     }
 }
 
@@ -534,7 +534,7 @@ void ShowfotoCategorizedView::indexActivated(const QModelIndex& index, Qt::Keybo
     if (!info.isNull())
     {
         activated(info, modifiers);
-        emit showfotoItemInfoActivated(info);
+        Q_EMIT showfotoItemInfoActivated(info);
     }
 }
 
@@ -542,7 +542,7 @@ void ShowfotoCategorizedView::currentChanged(const QModelIndex& index, const QMo
 {
     ItemViewCategorized::currentChanged(index, previous);
 
-    emit currentChanged(d->filterModel->showfotoItemInfo(index));
+    Q_EMIT currentChanged(d->filterModel->showfotoItemInfo(index));
 }
 
 void ShowfotoCategorizedView::selectionChanged(const QItemSelection& selectedItems, const QItemSelection& deselectedItems)
@@ -551,12 +551,12 @@ void ShowfotoCategorizedView::selectionChanged(const QItemSelection& selectedIte
 
     if (!selectedItems.isEmpty())
     {
-        emit selected(d->filterModel->showfotoItemInfos(selectedItems.indexes()));
+        Q_EMIT selected(d->filterModel->showfotoItemInfos(selectedItems.indexes()));
     }
 
     if (!deselectedItems.isEmpty())
     {
-        emit deselected(d->filterModel->showfotoItemInfos(deselectedItems.indexes()));
+        Q_EMIT deselected(d->filterModel->showfotoItemInfos(deselectedItems.indexes()));
     }
 }
 

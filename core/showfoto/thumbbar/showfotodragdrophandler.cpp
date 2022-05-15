@@ -70,7 +70,7 @@ bool ShowfotoDragDropHandler::dropEvent(QAbstractItemView* abstractview, const Q
 
     QList<QUrl> urls = e->mimeData()->urls();
 
-    emit signalDroppedUrls(urls, true, (!urls.isEmpty() ? urls.first() : QUrl()));
+    Q_EMIT signalDroppedUrls(urls, true, (!urls.isEmpty() ? urls.first() : QUrl()));
 
     return true;
 }
@@ -98,7 +98,7 @@ QMimeData* ShowfotoDragDropHandler::createMimeData(const QList<QModelIndex>& ind
     QList<ShowfotoItemInfo> infos = model()->showfotoItemInfos(indexes);
     QList<QUrl> urls;
 
-    foreach (const ShowfotoItemInfo& info, infos)
+    Q_FOREACH (const ShowfotoItemInfo& info, infos)
     {
         qCDebug(DIGIKAM_SHOWFOTO_LOG) << info.url.toLocalFile();
         urls.append(info.url);

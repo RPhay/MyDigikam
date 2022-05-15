@@ -49,7 +49,7 @@ void FCThread::createCopyJobs(const QList<QUrl>& itemsList,
 {
     ActionJobCollection collection;
 
-    foreach (const QUrl& srcUrl, itemsList)
+    Q_FOREACH (const QUrl& srcUrl, itemsList)
     {
         FCTask* const t = new FCTask(srcUrl, settings);
 
@@ -69,7 +69,7 @@ void FCThread::cancel()
 {
     if (isRunning())
     {
-        emit signalCancelTask();
+        Q_EMIT signalCancelTask();
     }
 
     ActionThreadBase::cancel();

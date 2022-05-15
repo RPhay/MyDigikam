@@ -107,7 +107,7 @@ void DefaultValueModifier::slotTokenTriggered(const QString& token)
 
     delete dlg;
 
-    emit signalTokenTriggered(result);
+    Q_EMIT signalTokenTriggered(result);
 }
 
 QString DefaultValueModifier::parseOperation(ParseSettings& settings, const QRegularExpressionMatch& match)

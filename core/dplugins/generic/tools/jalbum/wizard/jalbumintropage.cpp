@@ -167,7 +167,7 @@ void JAlbumIntroPage::slotBinariesFound()
     d->settings->m_jalbumPath = d->jalbumBin.path();
     d->settings->m_javaPath   = d->jalbumJava.path();
 
-    emit completeChanged();
+    Q_EMIT completeChanged();
 }
 
 bool JAlbumIntroPage::isComplete() const

@@ -222,14 +222,14 @@ void WebBrowserDlg::closeEvent(QCloseEvent* e)
     KConfigGroup group = KSharedConfig::openConfig()->group(QLatin1String("WebBrowserDlg"));
     DXmlGuiWindow::saveWindowSize(windowHandle(), group);
 
-    emit closeView(false);
+    Q_EMIT closeView(false);
     e->accept();
 }
 
 void WebBrowserDlg::slotUrlChanged(const QUrl& url)
 {
     d->progressbar->setText(url.toString());
-    emit urlChanged(url);
+    Q_EMIT urlChanged(url);
 }
 
 void WebBrowserDlg::slotTitleChanged(const QString& title)

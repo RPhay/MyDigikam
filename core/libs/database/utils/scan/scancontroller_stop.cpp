@@ -46,7 +46,7 @@ void ScanController::cancelCompleteScan()
     QMutexLocker lock(&d->mutex);
     d->needsCompleteScan = false;
     d->continueScan      = false;
-    emit completeScanCanceled();
+    Q_EMIT completeScanCanceled();
 }
 
 void ScanController::cancelAllAndSuspendCollectionScan()

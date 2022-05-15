@@ -220,7 +220,7 @@ bool DMetadata::loadUsingImageMagick(const QString& filePath)
             QString key;
             QString val;
 
-            foreach (const QString& tupple, lines)
+            Q_FOREACH (const QString& tupple, lines)
             {
                 key = tupple.section(QLatin1Char('='), 0, 0);
                 val = tupple.section(QLatin1Char('='), 1, 1);

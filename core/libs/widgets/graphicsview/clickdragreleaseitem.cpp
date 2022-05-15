@@ -113,7 +113,7 @@ void ClickDragReleaseItem::mousePressEvent(QGraphicsSceneMouseEvent* e)
 {
     if (e->button() != Qt::LeftButton)
     {
-        emit cancelled();
+        Q_EMIT cancelled();
         return;
     }
 
@@ -121,7 +121,7 @@ void ClickDragReleaseItem::mousePressEvent(QGraphicsSceneMouseEvent* e)
     {
         d->pressPos = e->scenePos();
         d->state    = PressedState;
-        emit started(e->scenePos());
+        Q_EMIT started(e->scenePos());
     }
 }
 
@@ -135,7 +135,7 @@ void ClickDragReleaseItem::mouseMoveEvent(QGraphicsSceneMouseEvent* e)
 
     if (d->state == PressDragState)
     {
-        emit moving(d->rect(e));
+        Q_EMIT moving(d->rect(e));
     }
 }
 
@@ -143,7 +143,7 @@ void ClickDragReleaseItem::hoverMoveEvent(QGraphicsSceneHoverEvent* e)
 {
     if (d->state == ClickedMoveState)
     {
-        emit moving(d->rect(e));
+        Q_EMIT moving(d->rect(e));
     }
 }
 
@@ -165,17 +165,17 @@ void ClickDragReleaseItem::mouseReleaseEvent(QGraphicsSceneMouseEvent* e)
         d->state = HoverState;
         setCursor(Qt::CrossCursor);
         setAcceptHoverEvents(false);
-        emit finished(d->rect(e));
+        Q_EMIT finished(d->rect(e));
     }
     else if (d->state == PressDragState)
     {
         if (d->isDrag(e))
         {
-            emit finished(d->rect(e));
+            Q_EMIT finished(d->rect(e));
         }
         else
         {
-            emit cancelled();
+            Q_EMIT cancelled();
         }
 
         d->state = HoverState;
@@ -197,7 +197,7 @@ void ClickDragReleaseItem::keyPressEvent(QKeyEvent* e)
     {
         case Qt::Key_Backspace:
         case Qt::Key_Escape:
-            emit cancelled();
+            Q_EMIT cancelled();
             break;
 
         default:

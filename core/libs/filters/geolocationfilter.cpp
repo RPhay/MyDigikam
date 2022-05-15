@@ -62,7 +62,7 @@ void GeolocationFilter::setGeolocationFilter(const ItemFilterSettings::Geolocati
         if (currentdata == condition)
         {
             setCurrentIndex(i);
-            emit signalFilterChanged(condition);
+            Q_EMIT signalFilterChanged(condition);
             break;
         }
     }
@@ -75,7 +75,7 @@ ItemFilterSettings::GeolocationCondition GeolocationFilter::geolocationFilter() 
 
 void GeolocationFilter::slotFilterChanged()
 {
-    emit signalFilterChanged(geolocationFilter());
+    Q_EMIT signalFilterChanged(geolocationFilter());
 }
 
 } // namespace Digikam

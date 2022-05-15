@@ -207,7 +207,7 @@ void MaintenanceMngr::stage1()
         {
             QStringList paths;
 
-            foreach (Album* const a, d->settings.albums)
+            Q_FOREACH (Album* const a, d->settings.albums)
             {
                 PAlbum* const palbum = dynamic_cast<PAlbum*>(a);
 
@@ -381,13 +381,13 @@ void MaintenanceMngr::done()
                          i18n("All operations are done.\nDuration: %1", t.toString()),
                          qApp->activeWindow(), i18n("digiKam Maintenance"));
 
-    emit signalComplete();
+    Q_EMIT signalComplete();
 }
 
 void MaintenanceMngr::cancel()
 {
     d->running = false;
-    emit signalComplete();
+    Q_EMIT signalComplete();
 }
 
 } // namespace Digikam

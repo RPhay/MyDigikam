@@ -103,7 +103,7 @@ int ParseResults::offset(const ResultsKey& key) const
 
 ParseResults::ResultsKey ParseResults::keyAtPosition(int pos) const
 {
-    foreach (const ResultsKey& key, m_results.keys())
+    Q_FOREACH (const ResultsKey& key, m_results.keys())
     {
         if (pos == key.first)
         {   // cppcheck-suppress useStlAlgorithm
@@ -122,7 +122,7 @@ bool ParseResults::hasKeyAtPosition(int pos) const
 
 ParseResults::ResultsKey ParseResults::keyAtApproximatePosition(int pos) const
 {
-    foreach (const ResultsKey& key, m_results.keys())
+    Q_FOREACH (const ResultsKey& key, m_results.keys())
     {
         int start  = key.first;
         int length = key.second;
@@ -192,7 +192,7 @@ QString ParseResults::replaceTokens(const QString& markedString) const
 
 void ParseResults::debug() const
 {
-    foreach (const ResultsKey& key, m_results.keys())
+    Q_FOREACH (const ResultsKey& key, m_results.keys())
     {
         QString _token  = token(key);
         QString _result = result(key);

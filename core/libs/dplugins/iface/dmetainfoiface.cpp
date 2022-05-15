@@ -75,17 +75,17 @@ DMetaInfoIface::~DMetaInfoIface()
 
 void DMetaInfoIface::slotDateTimeForUrl(const QUrl& url, const QDateTime& /*dt*/, bool /*updModDate*/)
 {
-    emit signalItemChanged(url);
+    Q_EMIT signalItemChanged(url);
 }
 
 void DMetaInfoIface::slotMetadataChangedForUrl(const QUrl& url)
 {
-    emit signalItemChanged(url);
+    Q_EMIT signalItemChanged(url);
 }
 
 void DMetaInfoIface::parseAlbumItemsRecursive()
 {
-    emit signalAlbumItemsRecursiveCompleted(d->urls);
+    Q_EMIT signalAlbumItemsRecursiveCompleted(d->urls);
 }
 
 QList<QUrl> DMetaInfoIface::currentAlbumItems() const
@@ -288,7 +288,7 @@ void DMetaInfoIface::deleteImage(const QUrl& url)
 
 #endif
 
-    emit signalRemoveImageFromAlbum(url);
+    Q_EMIT signalRemoveImageFromAlbum(url);
 }
 
 #ifdef HAVE_MARBLE
@@ -297,7 +297,7 @@ QList<GPSItemContainer*> DMetaInfoIface::currentGPSItems() const
 {
     QList<GPSItemContainer*> items;
 
-    foreach (const QUrl& url, currentSelectedItems())
+    Q_FOREACH (const QUrl& url, currentSelectedItems())
     {
         items << new GPSItemContainer(url);
     }

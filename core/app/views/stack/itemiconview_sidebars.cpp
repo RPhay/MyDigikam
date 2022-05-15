@@ -132,7 +132,7 @@ void ItemIconView::slotLeftSidebarChangedTab(QWidget* w)
 
     SidebarWidget* const widget = dynamic_cast<SidebarWidget*>(w);
 
-    foreach (SidebarWidget* const sideBarWidget, d->leftSideBarWidgets)
+    Q_FOREACH (SidebarWidget* const sideBarWidget, d->leftSideBarWidgets)
     {
         bool active = (widget && (widget == sideBarWidget));
         sideBarWidget->setActive(active);

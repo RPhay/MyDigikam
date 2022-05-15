@@ -151,7 +151,7 @@ void TagCheckView::slotCheckStateChange(Album* album, Qt::CheckState state)
     connect(albumModel(), SIGNAL(checkStateChanged(Album*,Qt::CheckState)),
             this, SLOT(slotCheckStateChange(Album*,Qt::CheckState)));
 
-    emit checkedTagsChanged(getCheckedTags(), getPartiallyCheckedTags());
+    Q_EMIT checkedTagsChanged(getCheckedTags(), getPartiallyCheckedTags());
 }
 
 void TagCheckView::doLoadState()
@@ -176,7 +176,7 @@ QList<TAlbum*> TagCheckView::getCheckedTags() const
 {
     QList<TAlbum*> tags;
 
-    foreach (Album* const album, albumModel()->checkedAlbums())
+    Q_FOREACH (Album* const album, albumModel()->checkedAlbums())
     {
         TAlbum* const tag = dynamic_cast<TAlbum*> (album);
 
@@ -193,7 +193,7 @@ QList<TAlbum*> TagCheckView::getPartiallyCheckedTags() const
 {
     QList<TAlbum*> tags;
 
-    foreach (Album* const album, albumModel()->partiallyCheckedAlbums())
+    Q_FOREACH (Album* const album, albumModel()->partiallyCheckedAlbums())
     {
         TAlbum* const tag = dynamic_cast<TAlbum*> (album);
 
@@ -268,7 +268,7 @@ void TagCheckView::addCustomContextMenuActions(ContextMenuHelper& cmh, Album* al
 
     cmh.addAction(d->toggleAutoAction);
 
-    foreach (QAction* const action, d->toggleAutoAction->actions())
+    Q_FOREACH (QAction* const action, d->toggleAutoAction->actions())
     {
         if (action->data().toInt() == d->toggleAutoTags)
         {

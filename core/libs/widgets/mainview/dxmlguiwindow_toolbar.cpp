@@ -50,7 +50,7 @@ KToolBar* DXmlGuiWindow::mainToolBar() const
     QList<KToolBar*> toolbars = toolBars();
     KToolBar* mainToolbar     = nullptr;
 
-    foreach (KToolBar* const toolbar, toolbars)
+    Q_FOREACH (KToolBar* const toolbar, toolbars)
     {
         if (toolbar && (toolbar->objectName() == QLatin1String("mainToolBar")))
         {
@@ -70,7 +70,7 @@ void DXmlGuiWindow::showToolBars(bool visible)
     {
         d->toolbarsVisibility.clear();
 
-        foreach (KToolBar* const toolbar, toolBars())
+        Q_FOREACH (KToolBar* const toolbar, toolBars())
         {
             if (toolbar)
             {

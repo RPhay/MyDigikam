@@ -122,7 +122,7 @@ void ItemRotateOverlay::slotClicked()
         selModel->select(index, QItemSelectionModel::Select);
         selModel->setCurrentIndex(index, QItemSelectionModel::Current);
 */
-        emit signalRotate(affectedIndexes(index));
+        Q_EMIT signalRotate(affectedIndexes(index));
     }
 }
 

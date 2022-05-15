@@ -230,7 +230,7 @@ void ExpoBlendingPreProcessPage::slotExpoBlendingAction(const DigikamGenericExpo
                     d->detailsText->show();
                     d->progressLabel->clear();
                     d->detailsText->setText(ad.message);
-                    emit signalPreProcessed(ExpoBlendingItemUrlsMap());
+                    Q_EMIT signalPreProcessed(ExpoBlendingItemUrlsMap());
                     break;
                 }
 
@@ -249,7 +249,7 @@ void ExpoBlendingPreProcessPage::slotExpoBlendingAction(const DigikamGenericExpo
                 {
                     d->progressTimer->stop();
                     d->progressLabel->clear();
-                    emit signalPreProcessed(ad.preProcessedUrlsMap);
+                    Q_EMIT signalPreProcessed(ad.preProcessedUrlsMap);
                     break;
                 }
 

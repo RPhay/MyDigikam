@@ -160,7 +160,7 @@ void ImportCategorizedView::setModels(ImportItemModel* model, ImportSortFilterMo
     connect(d->model, SIGNAL(itemInfosAdded(QList<CamItemInfo>)),
             this, SLOT(slotCamItemInfosAdded()));
 
-    emit modelChanged();
+    Q_EMIT modelChanged();
 
     if (d->delegate)
     {
@@ -261,7 +261,7 @@ QList<CamItemInfo> ImportCategorizedView::selectedCamItemInfosCurrentFirst() con
     QModelIndex        current = currentIndex();
     QList<CamItemInfo> infos;
 
-    foreach (const QModelIndex& index, indexes)
+    Q_FOREACH (const QModelIndex& index, indexes)
     {
         CamItemInfo info = d->filterModel->camItemInfo(index);
 
@@ -288,7 +288,7 @@ QList<QUrl> ImportCategorizedView::urls() const
     QList<CamItemInfo> infos = camItemInfos();
     QList<QUrl>        urls;
 
-    foreach (const CamItemInfo& info, infos)
+    Q_FOREACH (const CamItemInfo& info, infos)
     {
         urls << info.url();
     }
@@ -301,7 +301,7 @@ QList<QUrl> ImportCategorizedView::selectedUrls() const
     QList<CamItemInfo> infos = selectedCamItemInfos();
     QList<QUrl>        urls;
 
-    foreach (const CamItemInfo& info, infos)
+    Q_FOREACH (const CamItemInfo& info, infos)
     {
         urls << info.url();
     }
@@ -345,7 +345,7 @@ QModelIndex ImportCategorizedView::nextIndexHint(const QModelIndex& anchor, cons
             int minDiff                              = d->filterModel->rowCount();
             QList<QModelIndex> indexesForCamItemInfo = d->filterModel->mapListFromSource(d->model->indexesForCamItemInfo(info));
 
-            foreach (const QModelIndex& index, indexesForCamItemInfo)
+            Q_FOREACH (const QModelIndex& index, indexesForCamItemInfo)
             {
                 if ((index == anchor) || !index.isValid() || removed.contains(index))
                 {
@@ -464,7 +464,7 @@ void ImportCategorizedView::setSelectedCamItemInfos(const QList<CamItemInfo>& in
 {
     QItemSelection mySelection;
 
-    foreach (const CamItemInfo& info, infos)
+    Q_FOREACH (const CamItemInfo& info, infos)
     {
         QModelIndex index = d->filterModel->indexForCamItemInfo(info);
         mySelection.select(index, index);
@@ -527,13 +527,13 @@ void ImportCategorizedView::updateGeometries()
 
 void ImportCategorizedView::slotDelayedEnter()
 {
-    // re-emit entered() for index under mouse (after layout).
+    // re-Q_EMIT entered() for index under mouse (after layout).
 
     QModelIndex mouseIndex = indexAt(mapFromGlobal(QCursor::pos()));
 
     if (mouseIndex.isValid())
     {
-        emit DCategorizedView::entered(mouseIndex);
+        Q_EMIT DCategorizedView::entered(mouseIndex);
     }
 }
 
@@ -581,7 +581,7 @@ void ImportCategorizedView::indexActivated(const QModelIndex& index, Qt::Keyboar
     if (!info.isNull())
     {
         activated(info, modifiers);
-        emit camItemInfoActivated(info);
+        Q_EMIT camItemInfoActivated(info);
     }
 }
 
@@ -589,7 +589,7 @@ void ImportCategorizedView::currentChanged(const QModelIndex& index, const QMode
 {
     ItemViewCategorized::currentChanged(index, previous);
 
-    emit currentChanged(d->filterModel->camItemInfo(index));
+    Q_EMIT currentChanged(d->filterModel->camItemInfo(index));
 }
 
 void ImportCategorizedView::selectionChanged(const QItemSelection& selectedItems, const QItemSelection& deselectedItems)
@@ -598,12 +598,12 @@ void ImportCategorizedView::selectionChanged(const QItemSelection& selectedItems
 
     if (!selectedItems.isEmpty())
     {
-        emit selected(d->filterModel->camItemInfos(selectedItems.indexes()));
+        Q_EMIT selected(d->filterModel->camItemInfos(selectedItems.indexes()));
     }
 
     if (!deselectedItems.isEmpty())
     {
-        emit deselected(d->filterModel->camItemInfos(deselectedItems.indexes()));
+        Q_EMIT deselected(d->filterModel->camItemInfos(deselectedItems.indexes()));
     }
 }
 

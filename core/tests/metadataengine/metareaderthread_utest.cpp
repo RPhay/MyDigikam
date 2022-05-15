@@ -110,11 +110,11 @@ void Mytask::run()
         processed = !previews.isEmpty();
     }
 
-    emit signalStats(url, processed);
+    Q_EMIT signalStats(url, processed);
 
     qCDebug(DIGIKAM_TESTS_LOG) << "Processed:" << url.path();
 
-    emit signalDone();
+    Q_EMIT signalDone();
 }
 
 // ----------------------------------------------------------------------------------------------------
@@ -158,7 +158,7 @@ void MetaReaderThread::readMetadata(const QList<QUrl>& list,
 {
     ActionJobCollection collection;
 
-    foreach (const QUrl& url, list)
+    Q_FOREACH (const QUrl& url, list)
     {
         Mytask* const job = new Mytask();
         job->url          = url;
@@ -189,7 +189,7 @@ void MetaReaderThread::slotJobFinished()
 
     if (isEmpty())
     {
-        emit done();
+        Q_EMIT done();
     }
 }
 
@@ -199,12 +199,12 @@ QString MetaReaderThread::stats(const QStringList& mimeTypes)
     QStringList list;
     int count = 0;
 
-    foreach (const QUrl& url, m_stats.keys())
+    Q_FOREACH (const QUrl& url, m_stats.keys())
     {
         list << QFileInfo(url.path()).suffix();
     }
 
-    foreach (QString mt, mimeTypes)
+    Q_FOREACH (QString mt, mimeTypes)
     {
         mt.remove(QLatin1String("*."));
         count  = list.count(mt);

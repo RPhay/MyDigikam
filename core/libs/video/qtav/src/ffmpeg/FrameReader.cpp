@@ -142,7 +142,7 @@ bool FrameReader::Private::tryLoad()
     }
     else
     {
-        foreach (const QString& c, vdecs)
+        Q_FOREACH (const QString& c, vdecs)
         {
             VideoDecoder* vd = VideoDecoder::create(c.toLatin1().constData());
 

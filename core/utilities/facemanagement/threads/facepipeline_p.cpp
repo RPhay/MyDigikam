@@ -68,7 +68,7 @@ void FacePipeline::Private::processBatch(const QList<ItemInfo>& infos)
     }
     else
     {
-        foreach (const ItemInfo& info, infos)
+        Q_FOREACH (const ItemInfo& info, infos)
         {
             send(buildPackage(info));
         }
@@ -80,7 +80,7 @@ void FacePipeline::Private::sendFromFilter(const QList<FacePipelineExtendedPacka
 {
     infosForFiltering -= packages.size();
 
-    foreach (const FacePipelineExtendedPackage::Ptr& package, packages)
+    Q_FOREACH (const FacePipelineExtendedPackage::Ptr& package, packages)
     {
         send(package);
     }
@@ -91,7 +91,7 @@ void FacePipeline::Private::skipFromFilter(const QList<ItemInfo>& infosForSkippi
 {
     infosForFiltering -= infosForSkipping.size();
 
-    emit q->skipped(infosForSkipping);
+    Q_EMIT q->skipped(infosForSkipping);
 
     // everything skipped?
 
@@ -144,12 +144,12 @@ void FacePipeline::Private::send(const FacePipelineExtendedPackage::Ptr& package
 {
     start();
     ++totalPackagesAdded;
-    emit q->processing(*package);
+    Q_EMIT q->processing(*package);
 
     if (senderFlowControl(package))
     {
         ++packagesOnTheRoad;
-        emit startProcess(package);
+        Q_EMIT startProcess(package);
     }
 }
 
@@ -157,8 +157,8 @@ void FacePipeline::Private::finishProcess(FacePipelineExtendedPackage::Ptr packa
 {
     --packagesOnTheRoad;
 
-    emit q->processed(*package);
-    emit q->progressValueChanged(float(packagesOnTheRoad + delayedPackages.size()) / totalPackagesAdded);
+    Q_EMIT q->processed(*package);
+    Q_EMIT q->progressValueChanged(float(packagesOnTheRoad + delayedPackages.size()) / totalPackagesAdded);
 
     package = nullptr;
 
@@ -206,7 +206,7 @@ void FacePipeline::Private::checkFinished()
     if (hasFinished())
     {
         totalPackagesAdded = 0;
-        emit q->finished();
+        Q_EMIT q->finished();
 
         // stop threads
 
@@ -221,12 +221,12 @@ void FacePipeline::Private::start()
         return;
     }
 
-    emit q->scheduled();
+    Q_EMIT q->scheduled();
 
     WorkerObject*  workerObject = nullptr;
     ParallelPipes* pipes        = nullptr;
 
-    foreach (QObject* const element, pipeline)
+    Q_FOREACH (QObject* const element, pipeline)
     {
         if      ((workerObject = qobject_cast<WorkerObject*>(element)))
         {
@@ -240,7 +240,7 @@ void FacePipeline::Private::start()
 
     started = true;
     waiting = false;
-    emit q->started(i18n("Applying face changes"));
+    Q_EMIT q->started(i18n("Applying face changes"));
 }
 
 void FacePipeline::Private::stop()
@@ -255,7 +255,7 @@ void FacePipeline::Private::stop()
         previewThread->cancel();
     }
 
-    foreach (ThumbnailLoadThread* const thread, thumbnailLoadThreads)
+    Q_FOREACH (ThumbnailLoadThread* const thread, thumbnailLoadThreads)
     {
         thread->stopAllTasks();
     }
@@ -264,7 +264,7 @@ void FacePipeline::Private::stop()
     ParallelPipes* pipes       = nullptr;
     DynamicThread* thread      = nullptr;
 
-    foreach (QObject* const element, pipeline)
+    Q_FOREACH (QObject* const element, pipeline)
     {
         if      ((workerObject = qobject_cast<WorkerObject*>(element)))
         {
@@ -296,7 +296,7 @@ void FacePipeline::Private::wait()
         previewThread->wait();
     }
 
-    foreach (ThumbnailLoadThread* const thread, thumbnailLoadThreads)
+    Q_FOREACH (ThumbnailLoadThread* const thread, thumbnailLoadThreads)
     {
         thread->wait();
     }
@@ -305,7 +305,7 @@ void FacePipeline::Private::wait()
     ParallelPipes* pipes       = nullptr;
     DynamicThread* thread      = nullptr;
 
-    foreach (QObject* const element, pipeline)
+    Q_FOREACH (QObject* const element, pipeline)
     {
         if      ((workerObject = qobject_cast<WorkerObject*>(element)))
         {
@@ -329,7 +329,7 @@ void FacePipeline::Private::applyPriority()
     WorkerObject*  workerObject = nullptr;
     ParallelPipes* pipes        = nullptr;
 
-    foreach (QObject* const element, pipeline)
+    Q_FOREACH (QObject* const element, pipeline)
     {
         if      ((workerObject = qobject_cast<WorkerObject*>(element)))
         {
@@ -341,7 +341,7 @@ void FacePipeline::Private::applyPriority()
         }
     }
 
-    foreach (ThumbnailLoadThread* const thread, thumbnailLoadThreads)
+    Q_FOREACH (ThumbnailLoadThread* const thread, thumbnailLoadThreads)
     {
         thread->setPriority(priority);
     }

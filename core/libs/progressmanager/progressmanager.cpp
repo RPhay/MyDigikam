@@ -126,7 +126,7 @@ void ProgressItem::setComplete()
             setProgress(100);
         }
 
-        emit progressItemCompleted(this);
+        Q_EMIT progressItemCompleted(this);
     }
     else
     {
@@ -147,7 +147,7 @@ void ProgressItem::removeChild(ProgressItem* const kiddo)
 
     if (d->children.count() == 0 && d->waitingForKids)
     {
-        emit progressItemCompleted(this);
+        Q_EMIT progressItemCompleted(this);
     }
 }
 
@@ -178,26 +178,26 @@ void ProgressItem::cancel()
 
     setStatus(i18n("Aborting..."));
 
-    emit progressItemCanceled(this);
-    emit progressItemCanceledById(this->id());
+    Q_EMIT progressItemCanceled(this);
+    Q_EMIT progressItemCanceledById(this->id());
 }
 
 void ProgressItem::setLabel(const QString& v)
 {
     d->label = v;
-    emit progressItemLabel(this, d->label);
+    Q_EMIT progressItemLabel(this, d->label);
 }
 
 void ProgressItem::setStatus(const QString& v)
 {
     d->status = v;
-    emit progressItemStatus(this, d->status);
+    Q_EMIT progressItemStatus(this, d->status);
 }
 
 void ProgressItem::setUsesBusyIndicator(bool useBusyIndicator)
 {
     d->usesBusyIndicator = useBusyIndicator;
-    emit progressItemUsesBusyIndicator(this, useBusyIndicator);
+    Q_EMIT progressItemUsesBusyIndicator(this, useBusyIndicator);
 }
 
 void ProgressItem::setThumbnail(const QIcon& icon)
@@ -211,13 +211,13 @@ void ProgressItem::setThumbnail(const QIcon& icon)
 
     if (icon.isNull())
     {
-        emit progressItemThumbnail(this, QIcon::fromTheme(QLatin1String("image-missing")).pixmap(iconSize));
+        Q_EMIT progressItemThumbnail(this, QIcon::fromTheme(QLatin1String("image-missing")).pixmap(iconSize));
         return;
     }
 
     QPixmap pix = icon.pixmap(iconSize);
 
-    emit progressItemThumbnail(this, pix);
+    Q_EMIT progressItemThumbnail(this, pix);
 }
 
 void ProgressItem::reset()
@@ -230,7 +230,7 @@ void ProgressItem::reset()
 void ProgressItem::setProgress(unsigned int v)
 {
     d->progress.fetchAndStoreOrdered(v);
-    emit progressItemProgress(this, v);
+    Q_EMIT progressItemProgress(this, v);
 }
 
 void ProgressItem::updateProgress()
@@ -535,12 +535,12 @@ void ProgressManager::addProgressItemImpl(ProgressItem* const t, ProgressItem* c
 
     d->addItem(t, parent);
 
-    emit progressItemAdded(t);
+    Q_EMIT progressItemAdded(t);
 }
 
 void ProgressManager::emitShowProgressViewImpl()
 {
-    emit showProgressView();
+    Q_EMIT showProgressView();
 }
 
 void ProgressManager::slotTransactionCompleted(ProgressItem* item)
@@ -554,12 +554,12 @@ void ProgressManager::slotTransactionCompleted(ProgressItem* item)
 
     // move to UI thread
 
-    emit completeTransactionDeferred(item);
+    Q_EMIT completeTransactionDeferred(item);
 }
 
 void ProgressManager::slotTransactionCompletedDeferred(ProgressItem* item)
 {
-    emit progressItemCompleted(item);
+    Q_EMIT progressItemCompleted(item);
     item->deleteLater();
 }
 

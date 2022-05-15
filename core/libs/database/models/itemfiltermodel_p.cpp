@@ -183,11 +183,11 @@ void ItemFilterModel::ItemFilterModelPrivate::infosToProcess(const QList<ItemInf
 
         if (needPrepare)
         {
-            emit packageToPrepare(ItemFilterModelTodoPackage(infoVector, extraValueVector, version, forReAdd));
+            Q_EMIT packageToPrepare(ItemFilterModelTodoPackage(infoVector, extraValueVector, version, forReAdd));
         }
         else
         {
-            emit packageToFilter(ItemFilterModelTodoPackage(infoVector, extraValueVector, version, forReAdd));
+            Q_EMIT packageToFilter(ItemFilterModelTodoPackage(infoVector, extraValueVector, version, forReAdd));
         }
     }
 }
@@ -215,11 +215,11 @@ void ItemFilterModel::ItemFilterModelPrivate::packageFinished(const ItemFilterMo
 
     if (package.isForReAdd)
     {
-        emit reAddItemInfos(package.infos.toList(), package.extraValues.toList());
+        Q_EMIT reAddItemInfos(package.infos.toList(), package.extraValues.toList());
 
         if (sentOutForReAdd == 1) // last package
         {
-            emit reAddingFinished();
+            Q_EMIT reAddingFinished();
         }
     }
 
@@ -239,8 +239,8 @@ void ItemFilterModel::ItemFilterModelPrivate::packageFinished(const ItemFilterMo
     {
         q->invalidate(); // use invalidate, not invalidateFilter only. Sorting may have changed as well.
 
-        emit q->filterMatches(hasOneMatch);
-        emit q->filterMatchesForText(hasOneMatchForText);
+        Q_EMIT q->filterMatches(hasOneMatch);
+        Q_EMIT q->filterMatchesForText(hasOneMatchForText);
 
         filterer->deactivate();
         preparer->deactivate();
@@ -259,11 +259,11 @@ void ItemFilterModel::ItemFilterModelPrivate::packageDiscarded(const ItemFilterM
 
         if (needPrepare)
         {
-            emit packageToPrepare(ItemFilterModelTodoPackage(package.infos, package.extraValues, version, package.isForReAdd));
+            Q_EMIT packageToPrepare(ItemFilterModelTodoPackage(package.infos, package.extraValues, version, package.isForReAdd));
         }
         else
         {
-            emit packageToFilter(ItemFilterModelTodoPackage(package.infos, package.extraValues, version, package.isForReAdd));
+            Q_EMIT packageToFilter(ItemFilterModelTodoPackage(package.infos, package.extraValues, version, package.isForReAdd));
         }
     }
 }

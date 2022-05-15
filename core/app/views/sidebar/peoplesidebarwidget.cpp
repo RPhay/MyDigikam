@@ -148,7 +148,7 @@ void PeopleSideBarWidget::slotInit()
 
 void PeopleSideBarWidget::setActive(bool active)
 {
-    emit requestFaceMode(active);
+    Q_EMIT requestFaceMode(active);
 
     if (active)
     {
@@ -159,7 +159,7 @@ void PeopleSideBarWidget::setActive(bool active)
             QString msg = i18n("Welcome to Face Management in digiKam. "
                                "If this is your first time using this feature, please consider "
                                "using the Help Box in the Bottom Left Side Panel.");
-            emit signalNotificationError(msg, DNotificationWidget::Information);
+            Q_EMIT signalNotificationError(msg, DNotificationWidget::Information);
             ApplicationSettings::instance()->setHelpBoxNotificationSeen(true);
         }
     }
@@ -208,7 +208,7 @@ void PeopleSideBarWidget::slotScanForFaces()
     }
     else
     {
-        emit signalNotificationError(i18n("Face recognition is aborted, because "
+        Q_EMIT signalNotificationError(i18n("Face recognition is aborted, because "
                                           "there are no identities to recognize. "
                                           "Please add new identities."),
                                      DNotificationWidget::Information);

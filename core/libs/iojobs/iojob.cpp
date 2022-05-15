@@ -76,13 +76,13 @@ void CopyOrMoveJob::run()
 
         if (!srcInfo.exists())
         {
-            emit signalError(i18n("File/Folder %1 does not exist anymore", srcName));
+            Q_EMIT signalError(i18n("File/Folder %1 does not exist anymore", srcName));
             continue;
         }
 
         if (!dstDir.exists())
         {
-            emit signalError(i18n("Album %1 does not exist anymore", dstDir.dirName()));
+            Q_EMIT signalError(i18n("Album %1 does not exist anymore", dstDir.dirName()));
             continue;
         }
 
@@ -109,7 +109,7 @@ void CopyOrMoveJob::run()
                     {
                         if (!QFile::remove(destenation))
                         {
-                            emit signalError(i18n("Could not overwrite image %1",
+                            Q_EMIT signalError(i18n("Could not overwrite image %1",
                                              srcName));
 
                             continue;
@@ -117,7 +117,7 @@ void CopyOrMoveJob::run()
                     }
                     else if (!DTrash::deleteImage(destenation, m_data->jobTime()))
                     {
-                        emit signalError(i18n("Could not move image %1 to collection trash.\n"
+                        Q_EMIT signalError(i18n("Could not move image %1 to collection trash.\n"
                                               "Check the file permission on the trash folder "
                                               "\".dtrash\" in the image collection.",
                                               srcName));
@@ -143,7 +143,7 @@ void CopyOrMoveJob::run()
             }
             else
             {
-                emit signalError(i18n("A file or folder named %1 already exists in %2",
+                Q_EMIT signalError(i18n("A file or folder named %1 already exists in %2",
                                       srcName, QDir::toNativeSeparators(dstDir.path())));
 
                 continue;
@@ -165,21 +165,21 @@ void CopyOrMoveJob::run()
                     if      (!DFileOperations::copyFolderRecursively(srcDir.path(), dstDir.path(),
                                                                      m_data->getProgressId(), &m_cancel))
                     {
-                        emit signalOneProccessed(srcUrl);
+                        Q_EMIT signalOneProccessed(srcUrl);
 
                         if (m_cancel)
                         {
                             break;
                         }
 
-                        emit signalError(i18n("Could not move folder %1 to album %2",
+                        Q_EMIT signalError(i18n("Could not move folder %1 to album %2",
                                               srcName, QDir::toNativeSeparators(dstDir.path())));
 
                         continue;
                     }
                     else if (!srcDir.removeRecursively())
                     {
-                        emit signalError(i18n("Could not move folder %1 to album %2. "
+                        Q_EMIT signalError(i18n("Could not move folder %1 to album %2. "
                                               "The folder %1 was copied as well to album %2",
                                               srcName, QDir::toNativeSeparators(dstDir.path())));
                     }
@@ -189,7 +189,7 @@ void CopyOrMoveJob::run()
             {
                 if (!DFileOperations::renameFile(srcInfo.filePath(), destenation))
                 {
-                    emit signalError(i18n("Could not move file %1 to album %2",
+                    Q_EMIT signalError(i18n("Could not move file %1 to album %2",
                                           srcName, QDir::toNativeSeparators(dstDir.path())));
 
                     continue;
@@ -205,14 +205,14 @@ void CopyOrMoveJob::run()
                 if (!DFileOperations::copyFolderRecursively(srcDir.path(), dstDir.path(),
                                                             m_data->getProgressId(), &m_cancel))
                 {
-                    emit signalOneProccessed(srcUrl);
+                    Q_EMIT signalOneProccessed(srcUrl);
 
                     if (m_cancel)
                     {
                         break;
                     }
 
-                    emit signalError(i18n("Could not copy folder %1 to album %2",
+                    Q_EMIT signalError(i18n("Could not copy folder %1 to album %2",
                                           srcName, QDir::toNativeSeparators(dstDir.path())));
 
                     continue;
@@ -224,12 +224,12 @@ void CopyOrMoveJob::run()
                 {
                     if (m_data->operation() == IOJobData::CopyToExt)
                     {
-                        emit signalError(i18n("Could not copy file %1 to folder %2",
+                        Q_EMIT signalError(i18n("Could not copy file %1 to folder %2",
                                          srcName, QDir::toNativeSeparators(dstDir.path())));
                     }
                     else
                     {
-                        emit signalError(i18n("Could not copy file %1 to album %2",
+                        Q_EMIT signalError(i18n("Could not copy file %1 to album %2",
                                          srcName, QDir::toNativeSeparators(dstDir.path())));
                     }
 
@@ -238,10 +238,10 @@ void CopyOrMoveJob::run()
             }
         }
 
-        emit signalOneProccessed(srcUrl);
+        Q_EMIT signalOneProccessed(srcUrl);
     }
 
-    emit signalDone();
+    Q_EMIT signalDone();
 }
 
 // --------------------------------------------
@@ -271,7 +271,7 @@ void DeleteJob::run()
 
         if (!fileInfo.exists())
         {
-            emit signalError(i18n("File/Folder %1 does not exist",
+            Q_EMIT signalError(i18n("File/Folder %1 does not exist",
                                   QDir::toNativeSeparators(fileInfo.filePath())));
 
             continue;
@@ -283,7 +283,7 @@ void DeleteJob::run()
             {
                 if (!DTrash::deleteDirRecursivley(deleteUrl.toLocalFile(), m_data->jobTime()))
                 {
-                    emit signalError(i18n("Could not move folder %1 to collection trash.\n"
+                    Q_EMIT signalError(i18n("Could not move folder %1 to collection trash.\n"
                                           "Check the file permission on the trash folder "
                                           "\".dtrash\" in the image collection.",
                                           QDir::toNativeSeparators(fileInfo.path())));
@@ -295,7 +295,7 @@ void DeleteJob::run()
             {
                 if (!DTrash::deleteImage(deleteUrl.toLocalFile(), m_data->jobTime()))
                 {
-                    emit signalError(i18n("Could not move image %1 to collection trash.\n"
+                    Q_EMIT signalError(i18n("Could not move image %1 to collection trash.\n"
                                           "Check the file permission on the trash folder "
                                           "\".dtrash\" in the image collection.",
                                           QDir::toNativeSeparators(fileInfo.filePath())));
@@ -312,7 +312,7 @@ void DeleteJob::run()
 
                 if (!dir.removeRecursively())
                 {
-                    emit signalError(i18n("Album %1 could not be removed",
+                    Q_EMIT signalError(i18n("Album %1 could not be removed",
                                           QDir::toNativeSeparators(fileInfo.path())));
 
                     continue;
@@ -324,7 +324,7 @@ void DeleteJob::run()
 
                 if (!file.remove())
                 {
-                    emit signalError(i18n("Image %1 could not be removed",
+                    Q_EMIT signalError(i18n("Image %1 could not be removed",
                                           QDir::toNativeSeparators(fileInfo.filePath())));
 
                     continue;
@@ -332,10 +332,10 @@ void DeleteJob::run()
             }
         }
 
-        emit signalOneProccessed(deleteUrl);
+        Q_EMIT signalOneProccessed(deleteUrl);
     }
 
-    emit signalDone();
+    Q_EMIT signalDone();
 }
 
 // --------------------------------------------
@@ -370,20 +370,20 @@ void RenameFileJob::run()
             {
                 if (!DTrash::deleteImage(destUrl.toLocalFile(), m_data->jobTime()))
                 {
-                    emit signalError(i18n("Could not move image %1 to collection trash",
+                    Q_EMIT signalError(i18n("Could not move image %1 to collection trash",
                                           QDir::toNativeSeparators(destUrl.toLocalFile())));
 
-                    emit signalRenameFailed(renameUrl);
+                    Q_EMIT signalRenameFailed(renameUrl);
                     continue;
                 }
             }
             else
             {
                 qCDebug(DIGIKAM_IOJOB_LOG) << "File with the same name exists!";
-                emit signalError(i18n("Image with the same name %1 already there",
+                Q_EMIT signalError(i18n("Image with the same name %1 already there",
                                       QDir::toNativeSeparators(destUrl.toLocalFile())));
 
-                emit signalRenameFailed(renameUrl);
+                Q_EMIT signalRenameFailed(renameUrl);
                 continue;
             }
         }
@@ -395,17 +395,17 @@ void RenameFileJob::run()
         if (!DFileOperations::renameFile(renameUrl.toLocalFile(), destUrl.toLocalFile()))
         {
             qCDebug(DIGIKAM_IOJOB_LOG) << "File could not be renamed!";
-            emit signalError(i18n("Image %1 could not be renamed",
+            Q_EMIT signalError(i18n("Image %1 could not be renamed",
                                   QDir::toNativeSeparators(renameUrl.toLocalFile())));
 
-            emit signalRenameFailed(renameUrl);
+            Q_EMIT signalRenameFailed(renameUrl);
             continue;
         }
 
-        emit signalOneProccessed(renameUrl);
+        Q_EMIT signalOneProccessed(renameUrl);
     }
 
-    emit signalDone();
+    Q_EMIT signalDone();
 }
 
 // ----------------------------------------------
@@ -426,17 +426,17 @@ void DTrashItemsListingJob::run()
 
     QDir filesDir(collectionTrashFilesPath);
 
-    foreach (const QFileInfo& fileInfo, filesDir.entryInfoList(QDir::Files))
+    Q_FOREACH (const QFileInfo& fileInfo, filesDir.entryInfoList(QDir::Files))
     {
         qCDebug(DIGIKAM_IOJOB_LOG) << "File in trash:" << fileInfo.filePath();
         itemInfo.trashPath = fileInfo.filePath();
 
         DTrash::extractJsonForItem(m_collectionPath, fileInfo.baseName(), itemInfo);
 
-        emit trashItemInfo(itemInfo);
+        Q_EMIT trashItemInfo(itemInfo);
     }
 
-    emit signalDone();
+    Q_EMIT signalDone();
 }
 
 // ----------------------------------------------
@@ -453,7 +453,7 @@ void RestoreDTrashItemsJob::run()
         return;
     }
 
-    foreach (const DTrashItemInfo& item, m_data->trashItems())
+    Q_FOREACH (const DTrashItemInfo& item, m_data->trashItems())
     {
         QUrl srcToRename = QUrl::fromLocalFile(item.collectionPath);
         QUrl newName     = DFileOperations::getUniqueFileUrl(srcToRename);
@@ -467,7 +467,7 @@ void RestoreDTrashItemsJob::run()
 
         if (!QFile::rename(item.trashPath, newName.toLocalFile()))
         {
-            emit signalError(i18n("Could not restore file %1 from trash",
+            Q_EMIT signalError(i18n("Could not restore file %1 from trash",
                                   QDir::toNativeSeparators(newName.toLocalFile())));
         }
         else
@@ -475,10 +475,10 @@ void RestoreDTrashItemsJob::run()
             QFile::remove(item.jsonFilePath);
         }
 
-        emit signalOneProccessed(newName);
+        Q_EMIT signalOneProccessed(newName);
     }
 
-    emit signalDone();
+    Q_EMIT signalDone();
 }
 
 // ----------------------------------------------
@@ -498,7 +498,7 @@ void EmptyDTrashItemsJob::run()
     QList<int> albumsFromImages;
     QList<qlonglong> imagesToRemove;
 
-    foreach (const DTrashItemInfo& item, m_data->trashItems())
+    Q_FOREACH (const DTrashItemInfo& item, m_data->trashItems())
     {
         QFile::remove(item.trashPath);
         QFile::remove(item.jsonFilePath);
@@ -506,7 +506,7 @@ void EmptyDTrashItemsJob::run()
         imagesToRemove   << item.imageId;
         albumsFromImages << ItemInfo(item.imageId).albumId();
 
-        emit signalOneProccessed(QUrl());
+        Q_EMIT signalOneProccessed(QUrl());
     }
 
     {
@@ -516,7 +516,7 @@ void EmptyDTrashItemsJob::run()
         CoreDbAccess().db()->removeItemsPermanently(imagesToRemove, albumsFromImages);
     }
 
-    emit signalDone();
+    Q_EMIT signalDone();
 }
 
 } // namespace Digikam

@@ -205,7 +205,7 @@ void DHistoryView::slotItemDoubleClicked(QTreeWidgetItem* item)
     {
         if (!lvi->metadata().isNull())
         {
-            emit signalEntryClicked(lvi->metadata());
+            Q_EMIT signalEntryClicked(lvi->metadata());
         }
     }
 }

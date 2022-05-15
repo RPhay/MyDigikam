@@ -205,7 +205,7 @@ void ToolsView::slotHistoryEntryClicked(const QVariant& metadata)
         int queueId      = list.at(0).toInt();
         qlonglong itemId = list.at(1).toLongLong();
 
-        emit signalHistoryEntryClicked(queueId, itemId);
+        Q_EMIT signalHistoryEntryClicked(queueId, itemId);
     }
 }
 

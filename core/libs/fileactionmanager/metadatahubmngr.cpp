@@ -91,7 +91,7 @@ void MetadataHubMngr::addPending(const ItemInfo& info)
         d->pendingItemIds.append(info.id());
     }
 
-    emit signalPendingMetadata(d->pendingItemIds.size());
+    Q_EMIT signalPendingMetadata(d->pendingItemIds.size());
 }
 
 void MetadataHubMngr::slotApplyPending()
@@ -105,7 +105,7 @@ void MetadataHubMngr::slotApplyPending()
 
     ItemInfoList infos;
 
-    foreach (const qlonglong& id, d->pendingItemIds)
+    Q_FOREACH (const qlonglong& id, d->pendingItemIds)
     {
         ItemInfo info(id);
 
@@ -117,7 +117,7 @@ void MetadataHubMngr::slotApplyPending()
 
     d->pendingItemIds.clear();
 
-    emit signalPendingMetadata(0);
+    Q_EMIT signalPendingMetadata(0);
 
     if (infos.isEmpty())
     {
@@ -140,7 +140,7 @@ void MetadataHubMngr::requestShutDown()
 
     ItemInfoList infos;
 
-    foreach (const qlonglong& id, d->pendingItemIds)
+    Q_FOREACH (const qlonglong& id, d->pendingItemIds)
     {
         ItemInfo info(id);
 
@@ -152,7 +152,7 @@ void MetadataHubMngr::requestShutDown()
 
     d->pendingItemIds.clear();
 
-    emit signalPendingMetadata(0);
+    Q_EMIT signalPendingMetadata(0);
 
     if (infos.isEmpty())
     {

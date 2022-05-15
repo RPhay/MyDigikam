@@ -198,7 +198,7 @@ ShowfotoFolderViewBookmarks::~ShowfotoFolderViewBookmarks()
 
 QAction* ShowfotoFolderViewBookmarks::toolBarAction(const QString& name) const
 {
-    foreach (QAction* const act, d->actionsList)
+    Q_FOREACH (QAction* const act, d->actionsList)
     {
         if (act && (act->objectName() == name))
         {
@@ -326,7 +326,7 @@ void ShowfotoFolderViewBookmarks::slotBookmarkDoubleClicked(QTreeWidgetItem* ite
 void ShowfotoFolderViewBookmarks::slotLoadContents(const QString& path)
 {
     d->sidebar->setCurrentPath(path);
-    emit signalLoadContents();
+    Q_EMIT signalLoadContents();
 }
 
 void ShowfotoFolderViewBookmarks::saveSettings(KConfigGroup& group)

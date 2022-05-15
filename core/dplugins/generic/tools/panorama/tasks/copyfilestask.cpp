@@ -226,7 +226,7 @@ void CopyFilesTask::run(ThreadWeaver::JobPointer, ThreadWeaver::Thread*)
         }
     }
 
-    emit PanoManager::instance()->updateHostApp(finalPanoUrl);
+    Q_EMIT PanoManager::instance()->updateHostApp(finalPanoUrl);
 
     successFlag = true;
 }

@@ -550,7 +550,7 @@ void ItemDescEditTab::slotChangingItems()
         DisjointMetadata* const hub2 = new DisjointMetadata();
         hub2->setDataFields(d->hub.dataFields());
 
-        emit askToApplyChanges(d->currInfos, hub2);
+        Q_EMIT askToApplyChanges(d->currInfos, hub2);
 
         reset();
     }
@@ -828,7 +828,7 @@ void ItemDescEditTab::setInfos(const ItemInfoList& infos)
 
     d->currInfos.loadTagIds();
 
-    foreach (const ItemInfo& info, d->currInfos)
+    Q_FOREACH (const ItemInfo& info, d->currInfos)
     {
         d->hub.load(info);
     }
@@ -853,7 +853,7 @@ void ItemDescEditTab::slotReadFromFileMetadataToDatabase()
 {
     initProgressIndicator();
 
-    emit signalProgressMessageChanged(i18n("Reading metadata from files. Please wait..."));
+    Q_EMIT signalProgressMessageChanged(i18n("Reading metadata from files. Please wait..."));
 
     d->ignoreItemAttributesWatch = true;
     int i                        = 0;
@@ -862,11 +862,11 @@ void ItemDescEditTab::slotReadFromFileMetadataToDatabase()
 
     CollectionScanner scanner;
 
-    foreach (const ItemInfo& info, d->currInfos)
+    Q_FOREACH (const ItemInfo& info, d->currInfos)
     {
         scanner.scanFile(info, CollectionScanner::Rescan);
 
-        emit signalProgressValueChanged(i++/(float)d->currInfos.count());
+        Q_EMIT signalProgressValueChanged(i++/(float)d->currInfos.count());
 
         qApp->processEvents();
     }
@@ -874,7 +874,7 @@ void ItemDescEditTab::slotReadFromFileMetadataToDatabase()
     ScanController::instance()->resumeCollectionScan();
     d->ignoreItemAttributesWatch = false;
 
-    emit signalProgressFinished();
+    Q_EMIT signalProgressFinished();
 
     // reload everything
 
@@ -885,11 +885,11 @@ void ItemDescEditTab::slotWriteToFileMetadataFromDatabase()
 {
     initProgressIndicator();
 
-    emit signalProgressMessageChanged(i18n("Writing metadata to files. Please wait..."));
+    Q_EMIT signalProgressMessageChanged(i18n("Writing metadata to files. Please wait..."));
 
     int i = 0;
 
-    foreach (const ItemInfo& info, d->currInfos)
+    Q_FOREACH (const ItemInfo& info, d->currInfos)
     {
         MetadataHub fileHub;
 
@@ -901,16 +901,16 @@ void ItemDescEditTab::slotWriteToFileMetadataFromDatabase()
 
         fileHub.write(info.filePath());
 
-        emit signalProgressValueChanged(i++ / (float)d->currInfos.count());
+        Q_EMIT signalProgressValueChanged(i++ / (float)d->currInfos.count());
         qApp->processEvents();
     }
 
-    emit signalProgressFinished();
+    Q_EMIT signalProgressFinished();
 }
 
 void ItemDescEditTab::slotUnifyPartiallyTags()
 {
-    foreach (Album* const album, d->tagModel->partiallyCheckedAlbums())
+    Q_FOREACH (Album* const album, d->tagModel->partiallyCheckedAlbums())
     {
         d->tagModel->setChecked(album, true);
     }
@@ -927,13 +927,13 @@ bool ItemDescEditTab::eventFilter(QObject* o, QEvent* e)
             if      (k->modifiers() == Qt::ControlModifier)
             {
                 d->lastSelectedWidget = qobject_cast<QWidget*>(o);
-                emit signalNextItem();
+                Q_EMIT signalNextItem();
                 return true;
             }
             else if (k->modifiers() == Qt::ShiftModifier)
             {
                 d->lastSelectedWidget = qobject_cast<QWidget*>(o);
-                emit signalPrevItem();
+                Q_EMIT signalPrevItem();
                 return true;
             }
         }
@@ -941,14 +941,14 @@ bool ItemDescEditTab::eventFilter(QObject* o, QEvent* e)
         if (k->key() == Qt::Key_PageUp)
         {
             d->lastSelectedWidget = qobject_cast<QWidget*>(o);
-            emit signalPrevItem();
+            Q_EMIT signalPrevItem();
             return true;
         }
 
         if (k->key() == Qt::Key_PageDown)
         {
             d->lastSelectedWidget = qobject_cast<QWidget*>(o);
-            emit signalNextItem();
+            Q_EMIT signalNextItem();
             return true;
         }
 
@@ -958,14 +958,14 @@ bool ItemDescEditTab::eventFilter(QObject* o, QEvent* e)
             if (k->key() == Qt::Key_Up)
             {
                 d->lastSelectedWidget = qobject_cast<QWidget*>(o);
-                emit signalPrevItem();
+                Q_EMIT signalPrevItem();
                 return true;
             }
 
             if (k->key() == Qt::Key_Down)
             {
                 d->lastSelectedWidget = qobject_cast<QWidget*>(o);
-                emit signalNextItem();
+                Q_EMIT signalNextItem();
                 return true;
             }
         }
@@ -1419,7 +1419,7 @@ void ItemDescEditTab::slotReloadForMetadataChange()
     {
         // if image id is in our list, update
 
-        foreach (const ItemInfo& info, d->currInfos)
+        Q_FOREACH (const ItemInfo& info, d->currInfos)
         {
             if (d->metadataChangeIds.contains(info.id()))
             {   // cppcheck-suppress useStlAlgorithm
@@ -1558,7 +1558,7 @@ void ItemDescEditTab::slotApplyChangesToAllVersions()
     QSet<qlonglong>                     tmpSet;
     QList<QPair<qlonglong, qlonglong> > relations;
 
-    foreach (const ItemInfo& info, d->currInfos)
+    Q_FOREACH (const ItemInfo& info, d->currInfos)
     {
         // Collect all ids in all image's relations.
 

@@ -79,7 +79,7 @@ QStringList DPlugin::pluginAuthors() const
 {
     QStringList list;
 
-    foreach (const DPluginAuthor& au, authors())
+    Q_FOREACH (const DPluginAuthor& au, authors())
     {
         if (!list.contains(au.name))
         {

@@ -129,7 +129,7 @@ public:
                 }
             }
 
-            foreach (const TodoPair& pair, copyTodo)
+            Q_FOREACH (const TodoPair& pair, copyTodo)
             {
                 pair.first->moveToThread(pair.second);
             }
@@ -192,7 +192,7 @@ void WorkerObjectRunnable::run()
 
     object->addRunnable(this);
 
-    emit object->started();
+    Q_EMIT object->started();
 
     if (object->transitionToRunning())
     {
@@ -216,7 +216,7 @@ void WorkerObjectRunnable::run()
 
     object->transitionToInactive();
 
-    emit object->finished();
+    Q_EMIT object->finished();
 
     // if this is rescheduled, it will wait in the other thread at moveToCurrentThread() above until we park
 

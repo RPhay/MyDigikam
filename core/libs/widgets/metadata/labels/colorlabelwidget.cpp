@@ -230,7 +230,7 @@ void ColorLabelWidget::setDescriptionBoxVisible(bool b)
 
     if (!b)
     {
-        foreach (QAbstractButton* const btn, d->colorBtns->buttons())
+        Q_FOREACH (QAbstractButton* const btn, d->colorBtns->buttons())
         {
             ColorLabel id = (ColorLabel)(d->colorBtns->id(btn));
             btn->setToolTip(labelColorName(id));
@@ -359,7 +359,7 @@ bool ColorLabelWidget::eventFilter(QObject* obj, QEvent* ev)
 
 void ColorLabelWidget::setColorLabels(const QList<ColorLabel>& list)
 {
-    foreach (QAbstractButton* const btn, d->colorBtns->buttons())
+    Q_FOREACH (QAbstractButton* const btn, d->colorBtns->buttons())
     {
         ColorLabel id = (ColorLabel)(d->colorBtns->id(btn));
         btn->setChecked(list.contains(id));
@@ -371,7 +371,7 @@ QList<ColorLabel> ColorLabelWidget::colorLabels() const
 {
     QList<ColorLabel> list;
 
-    foreach (QAbstractButton* const btn, d->colorBtns->buttons())
+    Q_FOREACH (QAbstractButton* const btn, d->colorBtns->buttons())
     {
         if (btn && btn->isChecked())
         {
@@ -564,7 +564,7 @@ void ColorLabelSelector::slotColorLabelChanged(int id)
     setToolTip(i18nc("@info: color label selector", "Color Label: %1", d->clw->labelColorName((ColorLabel)id)));
     menu()->close();
 
-    emit signalColorLabelChanged(id);
+    Q_EMIT signalColorLabelChanged(id);
 }
 
 // -----------------------------------------------------------------------------

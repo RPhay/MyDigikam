@@ -40,7 +40,7 @@ void Showfoto::slotOpenFile()
         slotClearThumbBar();
 
         openUrls(urls);
-        emit signalInfoList(d->infoList);
+        Q_EMIT signalInfoList(d->infoList);
 
         slotOpenUrl(d->thumbBar->currentInfo());
         toggleNavigation(1);
@@ -50,7 +50,7 @@ void Showfoto::slotOpenFile()
         slotClearThumbBar();
 
         openFolder(urls.first().adjusted(QUrl::RemoveFilename));
-        emit signalInfoList(d->infoList);
+        Q_EMIT signalInfoList(d->infoList);
 
         slotOpenUrl(d->thumbBar->findItemByUrl(urls.first()));
         d->thumbBar->setCurrentUrl(urls.first());
@@ -71,7 +71,7 @@ void Showfoto::slotOpenFolder()
         slotClearThumbBar();
 
         openFolder(url);
-        emit signalInfoList(d->infoList);
+        Q_EMIT signalInfoList(d->infoList);
 
         slotOpenUrl(d->thumbBar->currentInfo());
         toggleNavigation(1);
@@ -199,7 +199,7 @@ void Showfoto::slotOpenFilesfromPath(const QStringList& files, const QString& cu
     slotClearThumbBar();
     QList<QUrl> urls;
 
-    foreach (const QString& path, files)
+    Q_FOREACH (const QString& path, files)
     {
         urls << QUrl::fromLocalFile(path);
     }
@@ -208,7 +208,7 @@ void Showfoto::slotOpenFilesfromPath(const QStringList& files, const QString& cu
 
     openUrls(urls);
 
-    emit signalInfoList(d->infoList);
+    Q_EMIT signalInfoList(d->infoList);
 
     QUrl curl = QUrl::fromLocalFile(current);
     slotOpenUrl(d->thumbBar->showfotoItemModel()->showfotoItemInfo(curl));
@@ -231,7 +231,7 @@ void Showfoto::slotAppendFilesfromPath(const QStringList& files, const QString& 
 
     QList<QUrl> urls;
 
-    foreach (const QString& file, files)
+    Q_FOREACH (const QString& file, files)
     {
         urls << QUrl::fromLocalFile(file);
     }
@@ -250,7 +250,7 @@ void Showfoto::slotDroppedUrls(const QList<QUrl>& droppedUrls, bool dropped, con
     QList<QUrl> imagesUrls;
     QList<QUrl> foldersUrls;
 
-    foreach (const QUrl& drop, droppedUrls)
+    Q_FOREACH (const QUrl& drop, droppedUrls)
     {
         if (drop.isValid())
         {
@@ -276,7 +276,7 @@ void Showfoto::slotDroppedUrls(const QList<QUrl>& droppedUrls, bool dropped, con
 
     if (!foldersUrls.isEmpty())
     {
-        foreach (const QUrl& fUrl, foldersUrls)
+        Q_FOREACH (const QUrl& fUrl, foldersUrls)
         {
             openFolder(fUrl);
         }
@@ -288,7 +288,7 @@ void Showfoto::slotDroppedUrls(const QList<QUrl>& droppedUrls, bool dropped, con
         {
             openFolder(imagesUrls.first().adjusted(QUrl::RemoveFilename));
             d->model->clearShowfotoItemInfos();
-            emit signalInfoList(d->infoList);
+            Q_EMIT signalInfoList(d->infoList);
 
             slotOpenUrl(d->thumbBar->findItemByUrl(current.isValid() ? current : imagesUrls.first()));
             d->thumbBar->setCurrentUrl(current.isValid() ? current : imagesUrls.first());
@@ -298,7 +298,7 @@ void Showfoto::slotDroppedUrls(const QList<QUrl>& droppedUrls, bool dropped, con
 
         d->model->clearShowfotoItemInfos();
 
-        emit signalInfoList(d->infoList);
+        Q_EMIT signalInfoList(d->infoList);
 
         slotOpenUrl(d->thumbBar->currentInfo());
     }
@@ -346,7 +346,7 @@ void Showfoto::slotAddedDropedItems(QDropEvent* e)
     QList<QUrl> list = e->mimeData()->urls();
     QList<QUrl> urls;
 
-    foreach (const QUrl& url, list)
+    Q_FOREACH (const QUrl& url, list)
     {
         QFileInfo fi(url.toLocalFile());
 

@@ -68,7 +68,7 @@ void ItemInfoList::loadGroupImageIds() const
 {
     ItemInfoList infoList;
 
-    foreach (const ItemInfo& info, *this)
+    Q_FOREACH (const ItemInfo& info, *this)
     {
         if (info.m_data && !info.m_data->groupImageCached)
         {
@@ -180,7 +180,7 @@ void ItemInfo::addToGroup(const ItemInfo& givenLeader)
 
     idsToBeGrouped << m_data->id;
 
-    foreach (const qlonglong& ids, idsToBeGrouped)
+    Q_FOREACH (const qlonglong& ids, idsToBeGrouped)
     {
         // remove current grouping
 

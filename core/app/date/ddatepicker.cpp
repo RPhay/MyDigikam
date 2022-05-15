@@ -258,13 +258,13 @@ void DDatePicker::dateChangedSlot(const QDate& dt)
     d->selectWeek->setCurrentIndex((dt.dayOfYear() + firstDay.dayOfWeek() - 2) / 7);
     d->selectYear->setText(QString::number(dt.year()).rightJustified(4, QLatin1Char('0')));
 
-    emit dateChanged(dt);
+    Q_EMIT dateChanged(dt);
 }
 
 void DDatePicker::tableClickedSlot()
 {
-    emit dateSelected(date());
-    emit tableClicked();
+    Q_EMIT dateSelected(date());
+    Q_EMIT tableClicked();
 }
 
 const QDate &DDatePicker::date() const
@@ -465,7 +465,7 @@ void DDatePicker::lineEnterPressed()
 
     if (newDate.isValid())
     {
-        emit dateEntered(newDate);
+        Q_EMIT dateEntered(newDate);
         setDate(newDate);
         d->table->setFocus();
     }

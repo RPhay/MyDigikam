@@ -144,13 +144,13 @@ void PresentationCtrlWidget::slotPlayButtonToggled()
     {
         m_canHide = false;
         m_playButton->setIcon(QIcon::fromTheme(QLatin1String("media-playback-start")).pixmap(22));
-        emit signalPause();
+        Q_EMIT signalPause();
     }
     else
     {
         m_canHide = true;
         m_playButton->setIcon(QIcon::fromTheme(QLatin1String("media-playback-pause")).pixmap(22));
-        emit signalPlay();
+        Q_EMIT signalPlay();
     }
 }
 
@@ -161,7 +161,7 @@ void PresentationCtrlWidget::slotNexPrevClicked()
         m_playButton->setChecked(true);
         m_canHide = false;
         m_playButton->setIcon(QIcon::fromTheme(QLatin1String("media-playback-start")).pixmap(22));
-        emit signalPause();
+        Q_EMIT signalPause();
     }
 }
 
@@ -269,7 +269,7 @@ void PresentationCtrlWidget::slotMoveToTrash()
 
     if (ret == QMessageBox::Yes)
     {
-        emit signalRemoveImageFromList();
+        Q_EMIT signalRemoveImageFromList();
     }
 
     if (running)

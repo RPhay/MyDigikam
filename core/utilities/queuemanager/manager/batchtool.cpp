@@ -266,13 +266,13 @@ void BatchTool::slotResetSettingsToDefault()
 void BatchTool::slotSettingsChanged(const BatchToolSettings& settings)
 {
     setSettings(settings);
-    emit signalSettingsChanged(d->settings);
+    Q_EMIT signalSettingsChanged(d->settings);
 }
 
 void BatchTool::setSettings(const BatchToolSettings& settings)
 {
     d->settings = settings;
-    emit signalAssignSettings2Widget();
+    Q_EMIT signalAssignSettings2Widget();
 }
 
 void BatchTool::setInputUrl(const QUrl& inputUrl)

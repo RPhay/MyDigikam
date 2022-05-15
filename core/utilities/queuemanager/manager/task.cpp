@@ -100,7 +100,7 @@ void Task::slotCancel()
 
 void Task::removeTempFiles(const QList<QUrl>& tmpList)
 {
-    foreach (const QUrl& url, tmpList)
+    Q_FOREACH (const QUrl& url, tmpList)
     {
         QString tmpPath(url.toLocalFile());
         QFile::remove(tmpPath);
@@ -126,7 +126,7 @@ void Task::emitActionData(ActionData::ActionStatus st,
     ad.destUrl = dest;
     ad.noWrite = noWrite;
 
-    emit signalFinished(ad);
+    Q_EMIT signalFinished(ad);
 }
 
 void Task::run()
@@ -157,7 +157,7 @@ void Task::run()
     bool timeAdjust = false;
     bool rmMetadata = false;
 
-    foreach (const BatchToolSet& set, d->tools.m_toolsList)
+    Q_FOREACH (const BatchToolSet& set, d->tools.m_toolsList)
     {
         BatchTool* const tool = BatchToolsFactory::instance()->findTool(set.name, set.group);
 
@@ -165,7 +165,7 @@ void Task::run()
         {
             emitActionData(ActionData::BatchFailed, i18n("Failed to find tool..."));
             removeTempFiles(tmp2del);
-            emit signalDone();
+            Q_EMIT signalDone();
             return;
         }
 
@@ -229,7 +229,7 @@ void Task::run()
         {
             emitActionData(ActionData::BatchCanceled);
             removeTempFiles(tmp2del);
-            emit signalDone();
+            Q_EMIT signalDone();
             return;
         }
         else if (!success)
@@ -270,7 +270,7 @@ void Task::run()
 
             removeTempFiles(QList<QUrl>() << outUrl);
 
-            emit signalDone();
+            Q_EMIT signalDone();
 
             return;
         }
@@ -313,7 +313,7 @@ void Task::run()
         emitActionData(ActionData::BatchFailed, i18n("Failed to create file..."), dest);
     }
 
-    emit signalDone();
+    Q_EMIT signalDone();
 }
 
 } // namespace Digikam

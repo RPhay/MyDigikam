@@ -144,7 +144,7 @@ void ItemRatingOverlay::slotRatingChanged(int rating)
         m_widget->isVisible() &&
         m_index.isValid())
     {
-        emit ratingEdited(affectedIndexes(m_index), rating);
+        Q_EMIT ratingEdited(affectedIndexes(m_index), rating);
     }
 }
 

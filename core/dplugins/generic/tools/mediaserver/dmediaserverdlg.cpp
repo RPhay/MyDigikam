@@ -298,7 +298,7 @@ bool DMediaServerDlg::setMediaServerContents()
         DInfoInterface::DAlbumIDs albums = d->iface->albumChooserItems();
         MediaServerMap map;
 
-        foreach (int id, albums)
+        Q_FOREACH (int id, albums)
         {
             DAlbumInfo anf(d->iface->albumInfo(id));
             map.insert(anf.title(), d->iface->albumItems(id));

@@ -301,7 +301,7 @@ void ImportPreviewView::reload()
 
 void ImportPreviewView::camItemLoaded()
 {
-    emit signalPreviewLoaded(true);
+    Q_EMIT signalPreviewLoaded(true);
     d->rotLeftAction->setEnabled(true);
     d->rotRightAction->setEnabled(true);
 /*
@@ -312,7 +312,7 @@ void ImportPreviewView::camItemLoaded()
 
 void ImportPreviewView::camItemLoadingFailed()
 {
-    emit signalPreviewLoaded(false);
+    Q_EMIT signalPreviewLoaded(false);
     d->rotLeftAction->setEnabled(false);
     d->rotRightAction->setEnabled(false);
 /*
@@ -561,7 +561,7 @@ void ImportPreviewView::slotRotateRight()
 
 void ImportPreviewView::slotDeleteItem()
 {
-    emit signalDeleteItem();
+    Q_EMIT signalDeleteItem();
 }
 
 } // namespace Digikam

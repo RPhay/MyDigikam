@@ -291,7 +291,7 @@ void FieldQueryBuilder::addChoiceIntField(const QString& name)
             sql += QLatin1String(") ");
         }
 
-        foreach (int v, values)
+        Q_FOREACH (int v, values)
         {
             *boundValues << v;
         }
@@ -313,7 +313,7 @@ void FieldQueryBuilder::addLongListField(const QString& name)
         CoreDB::addBoundValuePlaceholders(sql, values.size());
         sql += QLatin1String(") ");
 
-        foreach (const qlonglong& v, values)
+        Q_FOREACH (const qlonglong& v, values)
         {
             *boundValues << v;
         }
@@ -351,7 +351,7 @@ void FieldQueryBuilder::addIntBitmaskField(const QString& name)
             sql += QLatin1String("OR ") + name + QLatin1String(" IS NULL ");
         }
 
-        foreach (int v, values)
+        Q_FOREACH (int v, values)
         {
             *boundValues << v;
         }
@@ -387,7 +387,7 @@ void FieldQueryBuilder::addChoiceStringField(const QString& name)
 
         QStringList simpleValues, wildcards;
 
-        foreach (const QString& value, values)
+        Q_FOREACH (const QString& value, values)
         {
             if (value.contains(QLatin1Char('*')))
             {
@@ -408,7 +408,7 @@ void FieldQueryBuilder::addChoiceStringField(const QString& name)
             sql           += name + QLatin1String(" IN (");
             CoreDB::addBoundValuePlaceholders(sql, simpleValues.size());
 
-            foreach (const QString& value, simpleValues)
+            Q_FOREACH (const QString& value, simpleValues)
             {
                 *boundValues << value;
             }
@@ -418,7 +418,7 @@ void FieldQueryBuilder::addChoiceStringField(const QString& name)
 
         if (!wildcards.isEmpty())
         {
-            foreach (QString wildcard, wildcards) // krazy:exclude=foreach
+            Q_FOREACH (QString wildcard, wildcards) // krazy:exclude=foreach
             {
                 ItemQueryBuilder::addSqlOperator(sql, SearchXml::Or, firstCondition);
                 firstCondition = false;

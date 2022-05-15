@@ -93,11 +93,11 @@ void NormalSearchTreeView::handleCustomContextMenuAction(QAction* action, const 
 
     if      ((action == d->newAction) && salbum)
     {
-        emit newSearch();
+        Q_EMIT newSearch();
     }
     else if ((action == d->editAction) && salbum)
     {
-        emit editSearch(salbum);
+        Q_EMIT editSearch(salbum);
     }
     else
     {

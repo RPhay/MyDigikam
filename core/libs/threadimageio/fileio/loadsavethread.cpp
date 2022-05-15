@@ -177,50 +177,50 @@ void LoadSaveThread::taskHasFinished()
 void LoadSaveThread::imageStartedLoading(const LoadingDescription& loadingDescription)
 {
     notificationReceived();
-    emit signalImageStartedLoading(loadingDescription);
+    Q_EMIT signalImageStartedLoading(loadingDescription);
 }
 
 void LoadSaveThread::loadingProgress(const LoadingDescription& loadingDescription, float progress)
 {
     notificationReceived();
-    emit signalLoadingProgress(loadingDescription, progress);
+    Q_EMIT signalLoadingProgress(loadingDescription, progress);
 }
 
 void LoadSaveThread::imageLoaded(const LoadingDescription& loadingDescription, const DImg& img)
 {
     notificationReceived();
-    emit signalImageLoaded(loadingDescription, img);
+    Q_EMIT signalImageLoaded(loadingDescription, img);
 }
 
 void LoadSaveThread::moreCompleteLoadingAvailable(const LoadingDescription& oldLoadingDescription,
                                                   const LoadingDescription& newLoadingDescription)
 {
     notificationReceived();
-    emit signalMoreCompleteLoadingAvailable(oldLoadingDescription, newLoadingDescription);
+    Q_EMIT signalMoreCompleteLoadingAvailable(oldLoadingDescription, newLoadingDescription);
 }
 
 void LoadSaveThread::imageStartedSaving(const QString& filePath)
 {
     notificationReceived();
-    emit signalImageStartedSaving(filePath);
+    Q_EMIT signalImageStartedSaving(filePath);
 }
 
 void LoadSaveThread::savingProgress(const QString& filePath, float progress)
 {
     notificationReceived();
-    emit signalSavingProgress(filePath, progress);
+    Q_EMIT signalSavingProgress(filePath, progress);
 }
 
 void LoadSaveThread::imageSaved(const QString& filePath, bool success)
 {
     notificationReceived();
-    emit signalImageSaved(filePath, success);
+    Q_EMIT signalImageSaved(filePath, success);
 }
 
 void LoadSaveThread::thumbnailLoaded(const LoadingDescription& loadingDescription, const QImage& img)
 {
     notificationReceived();
-    emit signalThumbnailLoaded(loadingDescription, img);
+    Q_EMIT signalThumbnailLoaded(loadingDescription, img);
 }
 
 void LoadSaveThread::notificationReceived()

@@ -236,7 +236,7 @@ public:
 
     bool isRunning() const
     {
-        foreach (GreycstorationWorkingThread* thread, threads)
+        Q_FOREACH (GreycstorationWorkingThread* thread, threads)
         {
             if (thread->isRunning())
             {
@@ -248,7 +248,7 @@ public:
 
     void wait()
     {
-        foreach (GreycstorationWorkingThread* thread, threads)
+        Q_FOREACH (GreycstorationWorkingThread* thread, threads)
         {
             thread->wait();
         }
@@ -268,7 +268,7 @@ public:
 
     void stop()
     {
-        foreach (GreycstorationWorkingThread* thread, threads)
+        Q_FOREACH (GreycstorationWorkingThread* thread, threads)
         {
             thread->stop();
         }

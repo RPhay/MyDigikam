@@ -76,7 +76,7 @@ void QueuePoolBar::dragEnterEvent(QDragEnterEvent* e)
 
         // The receivers of the testCanDecode() signal has to adjust 'accept' accordingly.
 
-        emit signalTestCanDecode(e, accept);
+        Q_EMIT signalTestCanDecode(e, accept);
 
         e->setAccepted(accept);
 
@@ -101,7 +101,7 @@ void QueuePoolBar::dragMoveEvent(QDragMoveEvent* e)
 
         // The receivers of the testCanDecode() signal has to adjust 'accept' accordingly.
 
-        emit signalTestCanDecode(e, accept);
+        Q_EMIT signalTestCanDecode(e, accept);
 
         e->setAccepted(accept);
 
@@ -243,7 +243,7 @@ void QueuePool::slotAddQueue()
     connect(queue, SIGNAL(itemSelectionChanged()),
             this, SIGNAL(signalItemSelectionChanged()));
 
-    emit signalQueuePoolChanged();
+    Q_EMIT signalQueuePoolChanged();
 
     setCurrentIndex(index);
 }
@@ -326,7 +326,7 @@ void QueuePool::slotRemoveCurrentQueue()
         }
     }
 
-    emit signalQueuePoolChanged();
+    Q_EMIT signalQueuePoolChanged();
 }
 
 bool QueuePool::saveWorkflow() const
@@ -408,8 +408,8 @@ void QueuePool::slotQueueSelected(int index)
 
     if (queue)
     {
-        emit signalItemSelectionChanged();
-        emit signalQueueSelected(index, queue->settings(), queue->assignedTools());
+        Q_EMIT signalItemSelectionChanged();
+        Q_EMIT signalQueueSelected(index, queue->settings(), queue->assignedTools());
     }
 }
 
@@ -422,7 +422,7 @@ void QueuePool::slotCloseQueueRequest(int index)
         slotAddQueue();
     }
 
-    emit signalQueuePoolChanged();
+    Q_EMIT signalQueuePoolChanged();
 }
 
 void QueuePool::removeTab(int index)

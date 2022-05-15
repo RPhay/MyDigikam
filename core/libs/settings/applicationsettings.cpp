@@ -77,7 +77,7 @@ KConfigGroup ApplicationSettings::generalConfigGroup() const
 
 void ApplicationSettings::emitSetupChanged()
 {
-    emit setupChanged();
+    Q_EMIT setupChanged();
 }
 
 void ApplicationSettings::applyBalooSettings()
@@ -283,7 +283,7 @@ void ApplicationSettings::readSettings()
     d->syncToDigikam                     = group.readEntry(d->configSyncBalootoDigikamEntry, false);
     d->syncToBaloo                       = group.readEntry(d->configSyncDigikamtoBalooEntry, false);
 
-    emit balooSettingsChanged();
+    Q_EMIT balooSettingsChanged();
 
 #endif // HAVE_KFILEMETADATA
 
@@ -319,9 +319,9 @@ void ApplicationSettings::readSettings()
                                              d->configGroupingOperateOnAll.value(*it), (int)ApplicationSettings::Ask));
     }
 
-    emit setupChanged();
-    emit recurseSettingsChanged();
-    emit balooSettingsChanged();
+    Q_EMIT setupChanged();
+    Q_EMIT recurseSettingsChanged();
+    Q_EMIT balooSettingsChanged();
 }
 
 void ApplicationSettings::saveSettings()

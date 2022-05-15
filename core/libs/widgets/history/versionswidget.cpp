@@ -224,7 +224,7 @@ void VersionsWidget::slotViewCurrentChanged(const QModelIndex& current, const QM
 
     if (!info.isNull())
     {
-        emit imageSelected(info);
+        Q_EMIT imageSelected(info);
     }
 
     switch (d->model->mode())

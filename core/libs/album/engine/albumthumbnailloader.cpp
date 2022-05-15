@@ -376,7 +376,7 @@ void AlbumThumbnailLoader::addUrl(Album* const album, qlonglong id)
         // returned by getTagThumbnail already - but this would make the API
         // less elegant, it feels much better this way.
 
-        emit signalDispatchThumbnailInternal(album->globalID(), *ttit);
+        Q_EMIT signalDispatchThumbnailInternal(album->globalID(), *ttit);
 
         return;
     }
@@ -389,7 +389,7 @@ void AlbumThumbnailLoader::addUrl(Album* const album, qlonglong id)
     {
         QList<FaceTagsIface> faces = FaceTagsEditor().databaseFaces(id);
 
-        foreach (const FaceTagsIface& face, faces)
+        Q_FOREACH (const FaceTagsIface& face, faces)
         {
             if (face.tagId() == album->id())
             {
@@ -516,7 +516,7 @@ void AlbumThumbnailLoader::setThumbnailSize(int size, int face)
         d->iconTagThumbThread->setThumbnailSize(size);
     }
 
-    emit signalReloadThumbnails();
+    Q_EMIT signalReloadThumbnails();
 }
 
 int AlbumThumbnailLoader::thumbnailSize() const
@@ -527,7 +527,7 @@ int AlbumThumbnailLoader::thumbnailSize() const
 void AlbumThumbnailLoader::slotGotThumbnailFromIcon(const LoadingDescription& loadingDescription, const QPixmap& thumbnail)
 {
     // We need to find all albums for which the given url has been requested,
-    // and emit a signal for each album.
+    // and Q_EMIT a signal for each album.
 
     QRect faceRect = QRect();
 
@@ -562,7 +562,7 @@ void AlbumThumbnailLoader::slotGotThumbnailFromIcon(const LoadingDescription& lo
 
                 if (album)
                 {
-                    emit signalFailed(album);
+                    Q_EMIT signalFailed(album);
                 }
             }
         }
@@ -579,7 +579,7 @@ void AlbumThumbnailLoader::slotGotThumbnailFromIcon(const LoadingDescription& lo
                 if (album)
                 {
                     d->thumbnailMap.insert(album->globalID(), thumbnail);
-                    emit signalThumbnail(album, thumbnail);
+                    Q_EMIT signalThumbnail(album, thumbnail);
                 }
             }
         }
@@ -599,11 +599,11 @@ void AlbumThumbnailLoader::slotDispatchThumbnailInternal(int albumID, const QPix
     {
         if (thumbnail.isNull())
         {
-            emit signalFailed(album);
+            Q_EMIT signalFailed(album);
         }
         else
         {
-            emit signalThumbnail(album, thumbnail);
+            Q_EMIT signalThumbnail(album, thumbnail);
         }
     }
 }

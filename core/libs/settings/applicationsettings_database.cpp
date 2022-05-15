@@ -34,7 +34,7 @@ void ApplicationSettings::setSyncBalooToDigikam(bool val)
 {
     d->syncToDigikam = val;
 
-    emit balooSettingsChanged();
+    Q_EMIT balooSettingsChanged();
 }
 
 bool ApplicationSettings::getSyncBalooToDigikam() const
@@ -46,7 +46,7 @@ void ApplicationSettings::setSyncDigikamToBaloo(bool val)
 {
     d->syncToBaloo = val;
 
-    emit balooSettingsChanged();
+    Q_EMIT balooSettingsChanged();
 }
 
 bool ApplicationSettings::getSyncDigikamToBaloo() const

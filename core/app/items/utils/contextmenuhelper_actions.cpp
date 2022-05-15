@@ -39,15 +39,15 @@ QAction* ContextMenuHelper::exec(const QPoint& pos, QAction* const at)
 
             if      (choice == d->gotoAlbumAction)
             {
-                emit signalGotoAlbum(selectedItem);
+                Q_EMIT signalGotoAlbum(selectedItem);
             }
             else if (choice == d->gotoDateAction)
             {
-                emit signalGotoDate(selectedItem);
+                Q_EMIT signalGotoDate(selectedItem);
             }
             else if (choice == d->setThumbnailAction)
             {
-                emit signalSetThumbnail(selectedItem);
+                Q_EMIT signalSetThumbnail(selectedItem);
             }
         }
 
@@ -58,7 +58,7 @@ QAction* ContextMenuHelper::exec(const QPoint& pos, QAction* const at)
         {
             if (choice == it.value())
             {
-                emit signalAddToExistingQueue(it.key());
+                Q_EMIT signalAddToExistingQueue(it.key());
 
                 return choice;
             }

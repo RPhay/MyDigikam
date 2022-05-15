@@ -167,11 +167,11 @@ void CameraFolderView::slotCurrentChanged(QTreeWidgetItem* item, int)
 {
     if (!item)
     {
-        emit signalFolderChanged(nullptr);
+        Q_EMIT signalFolderChanged(nullptr);
     }
     else
     {
-        emit signalFolderChanged(dynamic_cast<CameraFolderItem*>(item));
+        Q_EMIT signalFolderChanged(dynamic_cast<CameraFolderItem*>(item));
     }
 }
 
@@ -191,7 +191,7 @@ void CameraFolderView::clear()
     d->virtualFolder = nullptr;
     d->rootFolder    = nullptr;
 
-    emit signalCleared();
+    Q_EMIT signalCleared();
 }
 
 } // namespace Digikam

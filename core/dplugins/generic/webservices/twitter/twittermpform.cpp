@@ -162,7 +162,7 @@ void TwMPForm::formChunks(const QByteArray& data)
 
     qCDebug(DIGIKAM_WEBSERVICES_LOG) << "number of chunks: " << m_chunks.size();
 
-    foreach (const QByteArray& chunk, m_chunks)
+    Q_FOREACH (const QByteArray& chunk, m_chunks)
     {
         qCDebug(DIGIKAM_WEBSERVICES_LOG) << "size of chunks: " << chunk.size();
     }

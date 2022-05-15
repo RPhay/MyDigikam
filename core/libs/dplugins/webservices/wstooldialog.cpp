@@ -144,7 +144,7 @@ void WSToolDialog::slotCloseClicked()
     }
     else
     {
-        emit cancelClicked();
+        Q_EMIT cancelClicked();
     }
 }
 

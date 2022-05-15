@@ -87,7 +87,7 @@ void DImgHistoryGraphTest::initTestCase()
     QList<AlbumShortInfo> albums = CoreDbAccess().db()->getAlbumShortInfos();
     QVERIFY(albums.size() >= 2);
 
-    foreach (const AlbumShortInfo& album, albums)
+    Q_FOREACH (const AlbumShortInfo& album, albums)
     {
         //qCDebug(DIGIKAM_TESTS_LOG) << album.relativePath << album.id;
         //qCDebug(DIGIKAM_TESTS_LOG) << CollectionManager::instance()->albumRootPath(album.albumRootId);
@@ -96,7 +96,7 @@ void DImgHistoryGraphTest::initTestCase()
         readOnlyImages << CoreDbAccess().db()->getItemURLsInAlbum(album.id);
     }
 
-    foreach (const QString& file, readOnlyImages)
+    Q_FOREACH (const QString& file, readOnlyImages)
     {
         ids << ItemInfo::fromLocalFile(file).id();
     }
@@ -127,7 +127,7 @@ QList<to> mapList(const QList<from>& l, const QMap<from,to> map)
 {
     QList<to> r;
 
-    foreach (const from& f, l)
+    Q_FOREACH (const from& f, l)
     {
         r << map.value(f);
     }
@@ -430,7 +430,7 @@ void DImgHistoryGraphTest::testGraph()
     QMap<qlonglong,HistoryGraph::Vertex> idToVertex;
     QMap<HistoryGraph::Vertex, qlonglong> vertexToId;
 
-    foreach (const HistoryGraph::Vertex& v, graph.data().vertices())
+    Q_FOREACH (const HistoryGraph::Vertex& v, graph.data().vertices())
     {
         HistoryVertexProperties props        = graph.data().properties(v);
         idToVertex[props.infos.first().id()] = v;

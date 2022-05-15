@@ -201,11 +201,11 @@ const GalleryTheme::List& GalleryTheme::getList()
                                                                  QLatin1String("digikam/themes"),
                                                                  QStandardPaths::LocateDirectory);
 
-        foreach (const QString& themeDir, themesDirs)
+        Q_FOREACH (const QString& themeDir, themesDirs)
         {
-            foreach (const QFileInfo& themeInfo, QDir(themeDir).entryInfoList(QDir::Dirs | QDir::NoDotAndDotDot))
+            Q_FOREACH (const QFileInfo& themeInfo, QDir(themeDir).entryInfoList(QDir::Dirs | QDir::NoDotAndDotDot))
             {
-                foreach (const QFileInfo& deskFile, QDir(themeInfo.absoluteFilePath()).entryInfoList(filter))
+                Q_FOREACH (const QFileInfo& deskFile, QDir(themeInfo.absoluteFilePath()).entryInfoList(filter))
                 {
                     list << deskFile.absoluteFilePath();
                 }

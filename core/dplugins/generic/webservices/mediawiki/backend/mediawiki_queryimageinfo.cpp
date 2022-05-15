@@ -295,7 +295,7 @@ void QueryImageinfo::doWorkProcessReply()
 
         if (!reader.hasError())
         {
-            emit result(imageinfos);
+            Q_EMIT result(imageinfos);
 
             if (d->begin.isNull() || d->onlyOneSignal)
             {

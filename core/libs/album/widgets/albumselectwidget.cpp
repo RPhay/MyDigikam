@@ -281,7 +281,7 @@ void AlbumSelectWidget::slotAlbumRenamed(Album* album)
 
     if (index.isValid())
     {
-        emit itemSelectionChanged();
+        Q_EMIT itemSelectionChanged();
     }
 }
 

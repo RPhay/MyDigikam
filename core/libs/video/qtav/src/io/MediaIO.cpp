@@ -69,7 +69,7 @@ QStringList MediaIO::builtInNames()
 
     std::vector<const char*> ns(MediaIOFactory::Instance().registeredNames());
 
-    foreach (const char* n, ns)
+    Q_FOREACH (const char* n, ns)
     {
         names.append(QLatin1String(n));
     }
@@ -84,7 +84,7 @@ MediaIO* MediaIO::createForProtocol(const QString& protocol)
 {
     std::vector<MediaIOId> ids(MediaIOFactory::Instance().registeredIds());
 
-    foreach (MediaIOId id, ids)
+    Q_FOREACH (MediaIOId id, ids)
     {
         MediaIO* const in = MediaIO::create(id);
 

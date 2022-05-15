@@ -557,7 +557,7 @@ QStringList UndoManager::getUndoHistory() const
 {
     QStringList titles;
 
-    foreach (UndoAction* const action, d->undoActions)
+    Q_FOREACH (UndoAction* const action, d->undoActions)
     {
         titles.prepend(action->getTitle());
     }
@@ -569,7 +569,7 @@ QStringList UndoManager::getRedoHistory() const
 {
     QStringList titles;
 
-    foreach (UndoAction* const action, d->redoActions)
+    Q_FOREACH (UndoAction* const action, d->redoActions)
     {
         titles.prepend(action->getTitle());
     }

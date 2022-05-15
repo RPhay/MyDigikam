@@ -169,18 +169,18 @@ void AlbumManager::startScan()
     insertTAlbum(d->rootTAlbum, nullptr);
 
     d->rootSAlbum = new SAlbum(i18n("Searches"), 0, true);
-    emit signalAlbumAboutToBeAdded(d->rootSAlbum, nullptr, nullptr);
+    Q_EMIT signalAlbumAboutToBeAdded(d->rootSAlbum, nullptr, nullptr);
     d->allAlbumsIdHash[d->rootSAlbum->globalID()] = d->rootSAlbum;
-    emit signalAlbumAdded(d->rootSAlbum);
+    Q_EMIT signalAlbumAdded(d->rootSAlbum);
 
     d->rootDAlbum = new DAlbum(QDate(), true);
-    emit signalAlbumAboutToBeAdded(d->rootDAlbum, nullptr, nullptr);
+    Q_EMIT signalAlbumAboutToBeAdded(d->rootDAlbum, nullptr, nullptr);
     d->allAlbumsIdHash[d->rootDAlbum->globalID()] = d->rootDAlbum;
-    emit signalAlbumAdded(d->rootDAlbum);
+    Q_EMIT signalAlbumAdded(d->rootDAlbum);
 
     // Create albums for album roots. Reuse logic implemented in the method
 
-    foreach (const CollectionLocation& location, CollectionManager::instance()->allLocations())
+    Q_FOREACH (const CollectionLocation& location, CollectionManager::instance()->allLocations())
     {
         handleCollectionStatusChange(location, CollectionLocation::LocationNull);
     }
@@ -221,7 +221,7 @@ void AlbumManager::startScan()
     connect(ItemAttributesWatch::instance(), SIGNAL(signalImageDateChanged(qlonglong)),
             d->scanDAlbumsTimer, SLOT(start()));
 
-    emit signalAllAlbumsLoaded();
+    Q_EMIT signalAllAlbumsLoaded();
 }
 
 bool AlbumManager::isShowingOnlyAvailableAlbums() const
@@ -238,12 +238,12 @@ void AlbumManager::setShowOnlyAvailableAlbums(bool onlyAvailable)
 
     d->showOnlyAvailableAlbums = onlyAvailable;
 
-    emit signalShowOnlyAvailableAlbumsChanged(d->showOnlyAvailableAlbums);
+    Q_EMIT signalShowOnlyAvailableAlbumsChanged(d->showOnlyAvailableAlbums);
 
     // We need to update the unavailable locations.
     // We assume the handleCollectionStatusChange does the right thing (even though old status == current status)
 
-    foreach (const CollectionLocation& location, CollectionManager::instance()->allLocations())
+    Q_FOREACH (const CollectionLocation& location, CollectionManager::instance()->allLocations())
     {
         if (location.status() == CollectionLocation::LocationUnavailable)
         {
@@ -279,7 +279,7 @@ void AlbumManager::slotImagesDeleted(const QList<qlonglong>& imageIds)
 
     QList<SAlbum*> sAlbums = findSAlbumsBySearchType(DatabaseSearch::DuplicatesSearch);
 
-    foreach (SAlbum* const sAlbum, sAlbums)
+    Q_FOREACH (SAlbum* const sAlbum, sAlbums)
     {
         // Read the search query XML and save the image ids
 
@@ -307,7 +307,7 @@ void AlbumManager::slotImagesDeleted(const QList<qlonglong>& imageIds)
 
     if (!sAlbumsToUpdate.isEmpty())
     {
-        emit signalUpdateDuplicatesAlbums(sAlbumsToUpdate.values(), deletedImages.values());
+        Q_EMIT signalUpdateDuplicatesAlbums(sAlbumsToUpdate.values(), deletedImages.values());
     }
 }
 

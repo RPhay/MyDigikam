@@ -136,7 +136,7 @@ void FaceUtils::storeThumbnails(ThumbnailLoadThread* const thread,
                                 const QList<FaceTagsIface>& databaseFaces,
                                 const DImg& image)
 {
-    foreach (const FaceTagsIface& face, databaseFaces)
+    Q_FOREACH (const FaceTagsIface& face, databaseFaces)
     {
         QList<QRect> rects;
         QRect orgRect    = face.region().toRect();
@@ -145,7 +145,7 @@ void FaceUtils::storeThumbnails(ThumbnailLoadThread* const thread,
         rects << orgRect;
         rects << orgRect.adjusted(-margin, -margin, margin, margin);
 
-        foreach (const QRect& rect, rects)
+        Q_FOREACH (const QRect& rect, rects)
         {
             QRect mapped  = TagRegion::mapFromOriginalSize(image, rect);
             QImage detail = image.copyQImage(mapped);
@@ -181,7 +181,7 @@ QList<FaceTagsIface> FaceUtils::writeUnconfirmedResults(qlonglong imageid,
         FaceTagsIface& newFace = newFaces[i];
         QList<FaceTagsIface> overlappingEntries;
 
-        foreach (const FaceTagsIface& oldFace, currentFaces)
+        Q_FOREACH (const FaceTagsIface& oldFace, currentFaces)
         {
             double minOverlap = oldFace.isConfirmedName() ? 0.25 : 0.5;
 
@@ -409,7 +409,7 @@ QSize FaceUtils::rotateFaces(const ItemInfo& info,
 
     QSize newSize = info.dimensions();
 
-    foreach (const FaceTagsIface& dface, facesList)
+    Q_FOREACH (const FaceTagsIface& dface, facesList)
     {
         QRect faceRect = dface.region().toRect();
 

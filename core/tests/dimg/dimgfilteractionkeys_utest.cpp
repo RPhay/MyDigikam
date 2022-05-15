@@ -49,11 +49,11 @@ void DImgFilterActionKeysTest::testAllFilters()
     DImgFilterManager* const filterManager = DImgFilterManager::instance();
     QStringList identifiers                = filterManager->supportedFilters();
 
-    foreach (const QString& identifier, identifiers)
+    Q_FOREACH (const QString& identifier, identifiers)
     {
         QList<int> versions = filterManager->supportedVersions(identifier);
 
-        foreach (int version, versions)
+        Q_FOREACH (int version, versions)
         {
             auto filter = filterManager->createFilter(identifier, version);
 

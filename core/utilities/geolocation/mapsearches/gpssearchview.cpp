@@ -372,7 +372,7 @@ void GPSSearchView::setActive(bool state)
     {
         // make sure we reset the custom filters set by the map:
 
-        emit signalMapSoloItems(QList<qlonglong>(), QLatin1String("gpssearch"));
+        Q_EMIT signalMapSoloItems(QList<qlonglong>(), QLatin1String("gpssearch"));
         d->mapSearchWidget->setActive(false);
     }
     else
@@ -596,7 +596,7 @@ void GPSSearchView::slotRemoveCurrentFilter()
 {
     d->gpsMarkerTiler->setPositiveFilterIsActive(false);
     const QList<qlonglong> emptyIdList;
-    emit signalMapSoloItems(emptyIdList, QLatin1String("gpssearch"));
+    Q_EMIT signalMapSoloItems(emptyIdList, QLatin1String("gpssearch"));
     slotRefreshMap();
     d->mapSearchWidget->slotUpdateActionsEnabled();
 }
@@ -628,7 +628,7 @@ void GPSSearchView::slotCheckNameEditGPSConditions()
  */
 void GPSSearchView::slotMapSoloItems(const QList<qlonglong>& idList)
 {
-    emit signalMapSoloItems(idList, QLatin1String("gpssearch"));
+    Q_EMIT signalMapSoloItems(idList, QLatin1String("gpssearch"));
     d->mapSearchWidget->slotUpdateActionsEnabled();
 }
 

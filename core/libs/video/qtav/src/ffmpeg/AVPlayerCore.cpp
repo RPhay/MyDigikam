@@ -171,14 +171,14 @@ AVPlayerCore::~AVPlayerCore()
 
     QList<Filter*> filters(FilterManager::instance().videoFilters(this));
 
-    foreach (Filter* const f, filters)
+    Q_FOREACH (Filter* const f, filters)
     {
         uninstallFilter(reinterpret_cast<VideoFilter*>(f));
     }
 
     filters = FilterManager::instance().audioFilters(this);
 
-    foreach (Filter* const f, filters)
+    Q_FOREACH (Filter* const f, filters)
     {
         uninstallFilter(reinterpret_cast<AudioFilter*>(f));
     }
@@ -258,7 +258,7 @@ QList<VideoRenderer*> AVPlayerCore::videoOutputs()
     QList<VideoRenderer*> vos;
     vos.reserve(d->vos->outputs().size());
 
-    foreach (AVOutput* const out, d->vos->outputs())
+    Q_FOREACH (AVOutput* const out, d->vos->outputs())
     {
         vos.append(static_cast<VideoRenderer*>(out));
     }
@@ -479,7 +479,7 @@ void AVPlayerCore::setPriority(const QVector<VideoDecoderId> &ids)
             VideoDecoder* vd      = nullptr;
             AVCodecContext* avctx = player->d->demuxer.videoCodecContext();
 
-            foreach(VideoDecoderId vid, player->d->vc_ids)
+            Q_FOREACH (VideoDecoderId vid, player->d->vc_ids)
             {
                 qCDebug(DIGIKAM_QTAV_LOG).noquote()
                     << QString::asprintf("**********trying video decoder: %s...",
@@ -575,7 +575,7 @@ static QVector<ID> idsFromNames(const QStringList& names)
     {
         decs.reserve(names.size());
 
-        foreach (const QString& name, names)
+        Q_FOREACH (const QString& name, names)
         {
             if (name.isEmpty())
                 continue;
@@ -606,7 +606,7 @@ static QStringList idsToNames(QVector<ID> ids)
     {
         decs.reserve(ids.size());
 
-        foreach (ID id, ids)
+        Q_FOREACH (ID id, ids)
         {
             decs.append(QString::fromLatin1(T::name(id)));
         }

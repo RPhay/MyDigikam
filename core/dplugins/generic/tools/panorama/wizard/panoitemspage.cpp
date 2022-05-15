@@ -123,7 +123,7 @@ bool PanoItemsPage::validatePage()
 void PanoItemsPage::slotImageListChanged()
 {
     setComplete(d->list->imageUrls().count() > 1);
-    emit completeChanged();
+    Q_EMIT completeChanged();
 }
 
 } // namespace DigikamGenericPanoramaPlugin

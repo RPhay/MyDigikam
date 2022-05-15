@@ -66,7 +66,7 @@ QList<QImage> toImages(const QStringList& paths)
 {
     QList<QImage> images;
 
-    foreach (const QString& path, paths)
+    Q_FOREACH (const QString& path, paths)
     {
         images << QImage(path);
     }
@@ -169,7 +169,7 @@ QList<QImage*> retrieveFaces(const QList<QImage>& images, const QList<QRectF>& r
     QList<QImage*> faces;
     unsigned index = 0;
 
-    foreach (const QRectF& rect, rects)
+    Q_FOREACH (const QRectF& rect, rects)
     {
         DImg temp(images.at(index));
         QImage* croppedFace = new QImage();
@@ -330,7 +330,7 @@ int main(int argc, char* argv[])
 
         qCDebug(DIGIKAM_TESTS_LOG) << "Result for " << it.value().first() << " is identity " << results.first().id();
 
-        foreach (const Identity& foundId, results)
+        Q_FOREACH (const Identity& foundId, results)
         {
             if (foundId.isNull())
             {
@@ -369,7 +369,7 @@ int main(int argc, char* argv[])
         QList<QImage> rawImages = toImages(imagePaths);
         qCDebug(DIGIKAM_TESTS_LOG) << "Training directory " << it.key();
 
-        foreach (const QImage& image, rawImages)
+        Q_FOREACH (const QImage& image, rawImages)
         {
             QString imagePath = imagePaths.takeFirst();
 
@@ -416,7 +416,7 @@ int main(int argc, char* argv[])
         QList<QImage> detectedFaces;
         QList<QRectF> bboxes;
 
-        foreach (const QImage& image, rawImages)
+        Q_FOREACH (const QImage& image, rawImages)
         {
             QString imagePath = imagePaths.takeFirst();
 
@@ -454,7 +454,7 @@ int main(int argc, char* argv[])
 
         // qCDebug(DIGIKAM_TESTS_LOG) << "Result for " << it.value().first() << " is identity " << results.first().id();
 
-        foreach (const Identity& foundId, results)
+        Q_FOREACH (const Identity& foundId, results)
         {
             QString imagePath = imagePaths.takeFirst();
 
@@ -483,7 +483,7 @@ int main(int argc, char* argv[])
              << " (" << float(nbUndetectedTrainedFaces) / (totalTrained + nbUndetectedTrainedFaces) * 100 << "%)"
              << " faces cannot be detected for training";
 
-    foreach (const QString& path, undetectedTrainedFaces)
+    Q_FOREACH (const QString& path, undetectedTrainedFaces)
     {
         qCDebug(DIGIKAM_TESTS_LOG) << path;
     }
@@ -500,7 +500,7 @@ int main(int argc, char* argv[])
              << " (" << float(nbUndetectedTestedFaces) / (totalRecognized + nbUndetectedTestedFaces) * 100 << "%)"
              << " faces cannot be detected for testing";
 
-    foreach (const QString& path, undetectedTestedFaces)
+    Q_FOREACH (const QString& path, undetectedTestedFaces)
     {
         qCDebug(DIGIKAM_TESTS_LOG) << path;
     }
@@ -519,7 +519,7 @@ int main(int argc, char* argv[])
 
     qCDebug(DIGIKAM_TESTS_LOG) << "\nFalse positive faces";
 
-    foreach (const QString& path, falsePositiveFaces)
+    Q_FOREACH (const QString& path, falsePositiveFaces)
     {
         qCDebug(DIGIKAM_TESTS_LOG) << path;
     }

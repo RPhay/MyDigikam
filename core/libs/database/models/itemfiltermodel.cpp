@@ -171,7 +171,7 @@ QList<QModelIndex> ImageSortFilterModel::mapListToSource(const QList<QModelIndex
 {
     QList<QModelIndex> sourceIndexes;
 
-    foreach (const QModelIndex& index, indexes)
+    Q_FOREACH (const QModelIndex& index, indexes)
     {
         sourceIndexes << mapToSourceItemModel(index);
     }
@@ -183,7 +183,7 @@ QList<QModelIndex> ImageSortFilterModel::mapListFromSource(const QList<QModelInd
 {
     QList<QModelIndex> indexes;
 
-    foreach (const QModelIndex& index, sourceIndexes)
+    Q_FOREACH (const QModelIndex& index, sourceIndexes)
     {
         indexes << mapFromSourceItemModel(index);
     }
@@ -206,7 +206,7 @@ QList<ItemInfo> ImageSortFilterModel::imageInfos(const QList<QModelIndex>& index
     QList<ItemInfo> infos;
     ItemModel* const model = sourceItemModel();
 
-    foreach (const QModelIndex& index, indexes)
+    Q_FOREACH (const QModelIndex& index, indexes)
     {
         infos << model->imageInfo(mapToSourceItemModel(index));
     }
@@ -219,7 +219,7 @@ QList<qlonglong> ImageSortFilterModel::imageIds(const QList<QModelIndex>& indexe
     QList<qlonglong> ids;
     ItemModel* const model = sourceItemModel();
 
-    foreach (const QModelIndex& index, indexes)
+    Q_FOREACH (const QModelIndex& index, indexes)
     {
         ids << model->imageId(mapToSourceItemModel(index));
     }
@@ -538,7 +538,7 @@ void ItemFilterModel::setItemFilterSettings(const ItemFilterSettings& settings)
         d->infosToProcess(d->imageModel->imageInfos());
     }
 
-    emit filterSettingsChanged(settings);
+    Q_EMIT filterSettingsChanged(settings);
 }
 
 void ItemFilterModel::setVersionManagerSettings(const VersionManagerSettings& settings)
@@ -715,7 +715,7 @@ void ItemFilterModel::slotRowsInserted(const QModelIndex& /*parent*/, int start,
         infos << imageInfo(index(i, 0));
     }
 
-    emit imageInfosAdded(infos);
+    Q_EMIT imageInfosAdded(infos);
 }
 
 void ItemFilterModel::slotRowsAboutToBeRemoved(const QModelIndex& /*parent*/, int start, int end)
@@ -727,7 +727,7 @@ void ItemFilterModel::slotRowsAboutToBeRemoved(const QModelIndex& /*parent*/, in
         infos << imageInfo(index(i, 0));
     }
 
-    emit imageInfosAboutToBeRemoved(infos);
+    Q_EMIT imageInfosAboutToBeRemoved(infos);
 }
 
 // -------------- Threaded preparation & filtering --------------
@@ -750,7 +750,7 @@ void ItemFilterModelPreparer::process(ItemFilterModelTodoPackage package)
 {
     if (!checkVersion(package))
     {
-        emit discarded(package);
+        Q_EMIT discarded(package);
         return;
     }
 
@@ -771,7 +771,7 @@ void ItemFilterModelPreparer::process(ItemFilterModelTodoPackage package)
 
     if (needPrepareComments)
     {
-        foreach (const ItemInfo& info, package.infos)
+        Q_FOREACH (const ItemInfo& info, package.infos)
         {
             info.comment();
         }
@@ -779,7 +779,7 @@ void ItemFilterModelPreparer::process(ItemFilterModelTodoPackage package)
 
     if (!checkVersion(package))
     {
-        emit discarded(package);
+        Q_EMIT discarded(package);
         return;
     }
 
@@ -804,19 +804,19 @@ void ItemFilterModelPreparer::process(ItemFilterModelTodoPackage package)
         infoList.loadGroupImageIds();
     }
 
-    foreach (ItemFilterModelPrepareHook* const hook, prepareHooks)
+    Q_FOREACH (ItemFilterModelPrepareHook* const hook, prepareHooks)
     {
         hook->prepare(package.infos);
     }
 
-    emit processed(package);
+    Q_EMIT processed(package);
 }
 
 void ItemFilterModelFilterer::process(ItemFilterModelTodoPackage package)
 {
     if (!checkVersion(package))
     {
-        emit discarded(package);
+        Q_EMIT discarded(package);
         return;
     }
 
@@ -841,7 +841,7 @@ void ItemFilterModelFilterer::process(ItemFilterModelTodoPackage package)
 
     if      (hasOneMatch && hasOneMatchForText)
     {
-        foreach (const ItemInfo& info, package.infos)
+        Q_FOREACH (const ItemInfo& info, package.infos)
         {
             package.filterResults[info.id()] = (localFilter.matches(info)        &&
                                                 localVersionFilter.matches(info) &&
@@ -852,7 +852,7 @@ void ItemFilterModelFilterer::process(ItemFilterModelTodoPackage package)
     {
         bool matchForText;
 
-        foreach (const ItemInfo& info, package.infos)
+        Q_FOREACH (const ItemInfo& info, package.infos)
         {
             package.filterResults[info.id()] = (localFilter.matches(info, &matchForText) &&
                                                 localVersionFilter.matches(info)         &&
@@ -868,7 +868,7 @@ void ItemFilterModelFilterer::process(ItemFilterModelTodoPackage package)
     {
         bool result, matchForText;
 
-        foreach (const ItemInfo& info, package.infos)
+        Q_FOREACH (const ItemInfo& info, package.infos)
         {
             result                           = (localFilter.matches(info, &matchForText) &&
                                                 localVersionFilter.matches(info)         &&
@@ -895,7 +895,7 @@ void ItemFilterModelFilterer::process(ItemFilterModelTodoPackage package)
         d->hasOneMatchForText = hasOneMatchForText;
     }
 
-    emit processed(package);
+    Q_EMIT processed(package);
 }
 
 // -------------- Sorting and Categorization -------------------------------------------------------
@@ -1208,7 +1208,7 @@ void ItemFilterModel::slotImageTagChange(const ImageTagChangeset& changeset)
 
     // is one of our images affected?
 
-    foreach (const qlonglong& id, changeset.ids())
+    Q_FOREACH (const qlonglong& id, changeset.ids())
     {
         // if one matching image id is found, trigger a refresh
 
@@ -1252,7 +1252,7 @@ void ItemFilterModel::slotImageChange(const ImageChangeset& changeset)
 
     bool imageAffected = false;
 
-    foreach (const qlonglong& id, changeset.ids())
+    Q_FOREACH (const qlonglong& id, changeset.ids())
     {
         // if one matching image id is found, trigger a refresh
 

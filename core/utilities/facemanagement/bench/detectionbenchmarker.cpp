@@ -75,13 +75,13 @@ void DetectionBenchmarker::process(FacePipelineExtendedPackage::Ptr package)
         faces       += trueFaces;
         totalPixels += package->image.originalSize().width() * package->image.originalSize().height();
 
-        foreach (const FaceTagsIface& trueFace, groundTruth)
+        Q_FOREACH (const FaceTagsIface& trueFace, groundTruth)
         {
             ++faces;
             QRect rect  = trueFace.region().toRect();
             facePixels += rect.width() * rect.height();
 
-            foreach (const FaceTagsIface& testedFace, testedFaces)
+            Q_FOREACH (const FaceTagsIface& testedFace, testedFaces)
             {
                 if (trueFace.region().intersects(testedFace.region(), minOverlap))
                 {   // cppcheck-suppress useStlAlgorithm
@@ -92,9 +92,9 @@ void DetectionBenchmarker::process(FacePipelineExtendedPackage::Ptr package)
             }
         }
 
-        foreach (const FaceTagsIface& testedFace, testedFaces)
+        Q_FOREACH (const FaceTagsIface& testedFace, testedFaces)
         {
-            foreach (const FaceTagsIface& trueFace, groundTruth)
+            Q_FOREACH (const FaceTagsIface& trueFace, groundTruth)
             {
                 if (trueFace.region().intersects(testedFace.region(), minOverlap))
                 {   // cppcheck-suppress useStlAlgorithm
@@ -129,7 +129,7 @@ void DetectionBenchmarker::process(FacePipelineExtendedPackage::Ptr package)
     }
 
     package->processFlags  |= FacePipelinePackage::WrittenToDatabase;
-    emit processed(package);
+    Q_EMIT processed(package);
 }
 
 /**

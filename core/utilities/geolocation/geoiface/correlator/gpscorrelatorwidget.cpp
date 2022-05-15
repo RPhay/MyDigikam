@@ -294,7 +294,7 @@ void GPSCorrelatorWidget::slotLoadTrackFiles()
 
     QList<QUrl> list;
 
-    foreach (const QString& str, gpxFiles)
+    Q_FOREACH (const QString& str, gpxFiles)
     {
         list << QUrl::fromLocalFile(str);
     }
@@ -336,7 +336,7 @@ void GPSCorrelatorWidget::slotAllTrackFilesReady()
                                          invalidFiles);
     }
 
-    emit signalAllTrackFilesReady();
+    Q_EMIT signalAllTrackFilesReady();
 
     setUIEnabledInternal(true);
 }
@@ -370,7 +370,7 @@ void GPSCorrelatorWidget::slotCorrelate()
 {
     // disable the UI of the entire dialog:
 
-    emit signalSetUIEnabled(false, this, QString::fromUtf8(SLOT(slotCancelCorrelation())));
+    Q_EMIT signalSetUIEnabled(false, this, QString::fromUtf8(SLOT(slotCancelCorrelation())));
 
     // store the options:
 
@@ -417,7 +417,7 @@ void GPSCorrelatorWidget::slotCorrelate()
     d->correlationTriedCount      = 0;
     d->correlationUndoCommand     = new GPSUndoCommand;
 
-    emit signalProgressSetup(imageCount, i18n("Correlating images -"));
+    Q_EMIT signalProgressSetup(imageCount, i18n("Correlating images -"));
 
     d->trackCorrelator->correlate(itemList, options);
 
@@ -492,7 +492,7 @@ void GPSCorrelatorWidget::slotItemsCorrelated(const Digikam::TrackCorrelator::Co
         }
     }
 
-    emit signalProgressChanged(d->correlationTriedCount);
+    Q_EMIT signalProgressChanged(d->correlationTriedCount);
 }
 
 void GPSCorrelatorWidget::slotAllItemsCorrelated()
@@ -536,12 +536,12 @@ void GPSCorrelatorWidget::slotAllItemsCorrelated()
         d->correlationUndoCommand->setText(i18np("1 image correlated",
                                                  "%1 images correlated",
                                                  d->correlationCorrelatedCount));
-        emit signalUndoCommand(d->correlationUndoCommand);
+        Q_EMIT signalUndoCommand(d->correlationUndoCommand);
     }
 
     // enable the UI
 
-    emit signalSetUIEnabled(true);
+    Q_EMIT signalSetUIEnabled(true);
 }
 
 void GPSCorrelatorWidget::saveSettingsToGroup(KConfigGroup* const group)
@@ -582,7 +582,7 @@ void GPSCorrelatorWidget::slotCorrelationCanceled()
 
     delete d->correlationUndoCommand;
 
-    emit signalSetUIEnabled(true);
+    Q_EMIT signalSetUIEnabled(true);
 }
 
 QList<GeoCoordinates::List> GPSCorrelatorWidget::getTrackCoordinates() const
@@ -626,7 +626,7 @@ void GPSCorrelatorWidget::slotCurrentChanged(const QModelIndex& current, const Q
         if ((track.id != 0) && (track.points.size() > 0))
         {
             const GeoCoordinates& coordinates = track.points.at(0).coordinates;
-            emit signalTrackListChanged(coordinates);
+            Q_EMIT signalTrackListChanged(coordinates);
         }
     }
 }

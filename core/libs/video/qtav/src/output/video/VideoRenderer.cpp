@@ -644,7 +644,7 @@ void VideoRenderer::handlePaintEvent()
         {
             // vo filter will not modify video frame, no lock required
 
-            foreach(Filter* const filter, d.filters)
+            Q_FOREACH (Filter* const filter, d.filters)
             {
                 VideoFilter* const vf = static_cast<VideoFilter*>(filter);
 
@@ -708,7 +708,7 @@ void VideoRenderer::handlePaintEvent()
     {
         // vo filter will not modify video frame, no lock required
 
-        foreach(Filter* const filter, d.filters)
+        Q_FOREACH (Filter* const filter, d.filters)
         {
             VideoFilter* const vf = static_cast<VideoFilter*>(filter);
 

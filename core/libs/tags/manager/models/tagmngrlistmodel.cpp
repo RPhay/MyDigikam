@@ -73,7 +73,7 @@ TagMngrListModel::~TagMngrListModel()
 
 ListItem* TagMngrListModel::addItem(QList<QVariant> values)
 {
-    emit layoutAboutToBeChanged();
+    Q_EMIT layoutAboutToBeChanged();
     ListItem* const item = new ListItem(values, d->rootItem);
 
     /**
@@ -85,7 +85,7 @@ ListItem* TagMngrListModel::addItem(QList<QVariant> values)
     if (!existingItem)
     {
         d->rootItem->appendChild(item);
-        emit layoutChanged();
+        Q_EMIT layoutChanged();
 
         return item;
     }
@@ -114,9 +114,9 @@ void TagMngrListModel::deleteItem(ListItem* const item)
         return;
     }
 
-    emit layoutAboutToBeChanged();
+    Q_EMIT layoutAboutToBeChanged();
     d->rootItem->deleteChild(item);
-    emit layoutChanged();
+    Q_EMIT layoutChanged();
 
 }
 
@@ -165,7 +165,7 @@ QMimeData* TagMngrListModel::mimeData(const QModelIndexList& indexes) const
 
     QDataStream stream(&encodedData, QIODevice::WriteOnly);
 
-    foreach (const QModelIndex& index, indexes)
+    Q_FOREACH (const QModelIndex& index, indexes)
     {
         if (index.isValid())
         {
@@ -217,14 +217,14 @@ bool TagMngrListModel::dropMimeData(const QMimeData* data, Qt::DropAction action
     }
 
     row -= temp;
-    emit layoutAboutToBeChanged();
+    Q_EMIT layoutAboutToBeChanged();
 
     for (QList<int>::iterator itr = toRemove.end() -1 ; itr != toRemove.begin() -1 ; --itr)
     {
         d->rootItem->deleteChild(*itr);
     }
 
-    emit layoutChanged();
+    Q_EMIT layoutChanged();
 
     for (int it = 0 ; it < d->rootItem->childCount() ; ++it)
     {
@@ -247,7 +247,7 @@ bool TagMngrListModel::dropMimeData(const QMimeData* data, Qt::DropAction action
     d->rootItem->removeAll();
     d->rootItem->appendList(finalItems);
 
-    emit layoutChanged();
+    Q_EMIT layoutChanged();
 
     return true;
 }

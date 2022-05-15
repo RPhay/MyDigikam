@@ -43,7 +43,7 @@ DuplicatesProgressObserver::~DuplicatesProgressObserver()
 
 void DuplicatesProgressObserver::imageProcessed()
 {
-    emit m_job->signalImageProcessed();
+    Q_EMIT m_job->signalImageProcessed();
 }
 
 bool DuplicatesProgressObserver::isCanceled()

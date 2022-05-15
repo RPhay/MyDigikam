@@ -122,7 +122,7 @@ void QPainterRenderer::drawBackground()
 
     const QVector<QRect> bg(bgRegion.rects());
 
-    foreach (const QRect& r, bg)
+    Q_FOREACH (const QRect& r, bg)
     {
         d.painter->fillRect(r, backgroundColor());
 

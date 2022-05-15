@@ -112,7 +112,7 @@ VidSlideFinalPage::~VidSlideFinalPage()
 void VidSlideFinalPage::initializePage()
 {
     d->complete = false;
-    emit completeChanged();
+    Q_EMIT completeChanged();
     QTimer::singleShot(0, this, SLOT(slotProcess()));
 }
 
@@ -134,7 +134,7 @@ void VidSlideFinalPage::slotProcess()
     d->progressView->addEntry(i18n("%1 input images to process", d->settings->inputImages.count()),
                                   DHistoryView::ProgressEntry);
 
-    foreach (const QUrl& url, d->settings->inputImages)
+    Q_FOREACH (const QUrl& url, d->settings->inputImages)
     {
         d->progressView->addEntry(QDir::toNativeSeparators(url.toLocalFile()),
                                   DHistoryView::ProgressEntry);
@@ -146,7 +146,7 @@ void VidSlideFinalPage::slotProcess()
                                        d->settings->inputAudio.count()),
                                   DHistoryView::ProgressEntry);
 
-        foreach (const QUrl& url, d->settings->inputAudio)
+        Q_FOREACH (const QUrl& url, d->settings->inputAudio)
         {
             d->progressView->addEntry(QDir::toNativeSeparators(url.toLocalFile()),
                                       DHistoryView::ProgressEntry);
@@ -216,7 +216,7 @@ void VidSlideFinalPage::slotDone(bool completed)
         }
     }
 
-    emit completeChanged();
+    Q_EMIT completeChanged();
 }
 
 bool VidSlideFinalPage::isComplete() const

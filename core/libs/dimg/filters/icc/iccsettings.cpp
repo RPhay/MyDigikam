@@ -95,7 +95,7 @@ bool IccSettings::monitorProfileFromSystem() const
     {
         QMutexLocker lock(&d->mutex);
 
-        foreach (const IccProfile& profile, d->screenProfiles)
+        Q_FOREACH (const IccProfile& profile, d->screenProfiles)
         {
             if (!profile.isNull())
             {   // cppcheck-suppress useStlAlgorithm
@@ -108,7 +108,7 @@ bool IccSettings::monitorProfileFromSystem() const
 
     QList<QWidget*> topLevels = qApp->topLevelWidgets();
 
-    foreach (QWidget* const widget, topLevels)
+    Q_FOREACH (QWidget* const widget, topLevels)
     {
         if (!d->profileFromWindowSystem(widget).isNull())
         {
@@ -151,7 +151,7 @@ QList<IccProfile> IccSettings::profilesForDescription(const QString& description
         return profiles;
     }
 
-    foreach (IccProfile profile, allProfiles())  // krazy:exclude=foreach
+    Q_FOREACH (IccProfile profile, allProfiles())  // krazy:exclude=foreach
     {
         if (profile.description() == description)
         {
@@ -166,7 +166,7 @@ QList<IccProfile> IccSettings::outputProfiles()
 {
     QList<IccProfile> profiles;
 
-    foreach (IccProfile profile, allProfiles())  // krazy:exclude=foreach
+    Q_FOREACH (IccProfile profile, allProfiles())  // krazy:exclude=foreach
     {
         if (profile.type() == IccProfile::Output)
         {
@@ -181,7 +181,7 @@ QList<IccProfile> IccSettings::inputProfiles()
 {
     QList<IccProfile> profiles;
 
-    foreach (IccProfile profile, allProfiles())  // krazy:exclude=foreach
+    Q_FOREACH (IccProfile profile, allProfiles())  // krazy:exclude=foreach
     {
         switch (profile.type())
         {
@@ -202,7 +202,7 @@ QList<IccProfile> IccSettings::displayProfiles()
 {
     QList<IccProfile> profiles;
 
-    foreach (IccProfile profile, allProfiles())  // krazy:exclude=foreach
+    Q_FOREACH (IccProfile profile, allProfiles())  // krazy:exclude=foreach
     {
         if (profile.type() == IccProfile::Display)
         {
@@ -217,7 +217,7 @@ QList<IccProfile> IccSettings::workspaceProfiles()
 {
     QList<IccProfile> profiles;
 
-    foreach (IccProfile profile, allProfiles())  // krazy:exclude=foreach
+    Q_FOREACH (IccProfile profile, allProfiles())  // krazy:exclude=foreach
     {
         switch (profile.type())
         {
@@ -295,8 +295,8 @@ void IccSettings::setIccPath(const QString& path)
 
     d->writeManagedViewToConfig();
 
-    emit signalSettingsChanged();
-    emit signalICCSettingsChanged(current, old);
+    Q_EMIT signalSettingsChanged();
+    Q_EMIT signalICCSettingsChanged(current, old);
 }
 
 bool IccSettings::isEnabled() const
@@ -320,8 +320,8 @@ void IccSettings::readFromConfig()
         d->settings = s;
     }
 
-    emit signalSettingsChanged();
-    emit signalICCSettingsChanged(s, old);
+    Q_EMIT signalSettingsChanged();
+    Q_EMIT signalICCSettingsChanged(s, old);
 }
 
 void IccSettings::setSettings(const ICCSettingsContainer& settings)
@@ -341,8 +341,8 @@ void IccSettings::setSettings(const ICCSettingsContainer& settings)
     }
 
     d->writeToConfig();
-    emit signalSettingsChanged();
-    emit signalICCSettingsChanged(settings, old);
+    Q_EMIT signalSettingsChanged();
+    Q_EMIT signalICCSettingsChanged(settings, old);
 }
 
 void IccSettings::setUseManagedView(bool useManagedView)
@@ -358,8 +358,8 @@ void IccSettings::setUseManagedView(bool useManagedView)
 
     d->writeManagedViewToConfig();
 
-    emit signalSettingsChanged();
-    emit signalICCSettingsChanged(current, old);
+    Q_EMIT signalSettingsChanged();
+    Q_EMIT signalICCSettingsChanged(current, old);
 }
 
 void IccSettings::setUseManagedPreviews(bool useManagedPreviews)
@@ -375,8 +375,8 @@ void IccSettings::setUseManagedPreviews(bool useManagedPreviews)
 
     d->writeManagedPreviewsToConfig();
 
-    emit signalSettingsChanged();
-    emit signalICCSettingsChanged(current, old);
+    Q_EMIT signalSettingsChanged();
+    Q_EMIT signalICCSettingsChanged(current, old);
 }
 
 } // namespace Digikam

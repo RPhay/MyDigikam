@@ -683,12 +683,12 @@ Qt::ItemFlags RGTagModel::flags(const QModelIndex& index) const
 
 void RGTagModel::slotSourceDataChanged(const QModelIndex& topLeft, const QModelIndex& bottomRight)
 {
-    emit dataChanged(fromSourceIndex(topLeft),fromSourceIndex(bottomRight));
+    Q_EMIT dataChanged(fromSourceIndex(topLeft),fromSourceIndex(bottomRight));
 }
 
 void RGTagModel::slotSourceHeaderDataChanged(const Qt::Orientation orientation, int first, int last)
 {
-    emit headerDataChanged(orientation, first, last);
+    Q_EMIT headerDataChanged(orientation, first, last);
 }
 
 void RGTagModel::slotColumnsAboutToBeInserted(const QModelIndex& parent, int start, int end)
@@ -729,12 +729,12 @@ void RGTagModel::slotColumnsRemoved()
 
 void RGTagModel::slotLayoutAboutToBeChanged()
 {
-    emit layoutAboutToBeChanged();
+    Q_EMIT layoutAboutToBeChanged();
 }
 
 void RGTagModel::slotLayoutChanged()
 {
-    emit layoutChanged();
+    Q_EMIT layoutChanged();
 }
 
 void RGTagModel::slotModelAboutToBeReset()

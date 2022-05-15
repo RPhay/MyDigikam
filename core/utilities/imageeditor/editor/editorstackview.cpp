@@ -295,7 +295,7 @@ void EditorStackView::slotZoomChanged(double zoom)
         max = d->canvas->layout()->atMaxZoom();
         min = d->canvas->layout()->atMinZoom();
 
-        emit signalZoomChanged(max, min, zoom);
+        Q_EMIT signalZoomChanged(max, min, zoom);
     }
     else
     {
@@ -306,7 +306,7 @@ void EditorStackView::slotZoomChanged(double zoom)
             max = preview->layout()->atMaxZoom();
             min = preview->layout()->atMinZoom();
 
-            emit signalZoomChanged(max, min, zoom);
+            Q_EMIT signalZoomChanged(max, min, zoom);
         }
     }
 }
@@ -315,7 +315,7 @@ void EditorStackView::slotToggleOffFitToWindow(bool b)
 {
     if (b)
     {
-        emit signalToggleOffFitToWindow();
+        Q_EMIT signalToggleOffFitToWindow();
     }
 }
 

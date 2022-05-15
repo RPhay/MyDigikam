@@ -185,14 +185,14 @@ FFMpegProperties FFMpegConfigHelper::getExtensionsProperties()
 
     }
 
-    foreach (const QString& val, ext)
+    Q_FOREACH (const QString& val, ext)
     {
         exts.append(val.trimmed());
     }
 
     exts.removeDuplicates();
 
-    foreach (const QString& val, exts)
+    Q_FOREACH (const QString& val, exts)
     {
 
         outfmt = nullptr;

@@ -173,7 +173,7 @@ void WSImagesPage::initializePage()
     d->imageList->listView()->clear();
 
     // List current albums in user account
-    emit signalListAlbumsRequest();
+    Q_EMIT signalListAlbumsRequest();
 }
 
 bool WSImagesPage::validatePage()
@@ -215,7 +215,7 @@ void WSImagesPage::addChildToTreeView(QTreeWidgetItem* const parent,
         return;
     }
 
-    foreach (const QString& albumId, childrenAlbums)
+    Q_FOREACH (const QString& albumId, childrenAlbums)
     {
         QTreeWidgetItem* const item = new QTreeWidgetItem(parent);
         item->setText(0, albumTree[albumId].title);
@@ -273,7 +273,7 @@ void WSImagesPage::slotListAlbumsDone(const QMap<QString, AlbumSimplified>& albu
         d->currentAlbumId = currentAlbumId;
     }
 
-    foreach (const QString& albumId, rootAlbums)
+    Q_FOREACH (const QString& albumId, rootAlbums)
     {
         QTreeWidgetItem* const item = new QTreeWidgetItem(d->albumView);
         item->setText(0, albumTree[albumId].title);
@@ -324,7 +324,7 @@ void WSImagesPage::slotCreateAlbumDone(int errCode, const QString& errMsg, const
     setCurrentAlbumId(newAlbumId);
 
     // We need to refresh albums view
-    emit signalListAlbumsRequest();
+    Q_EMIT signalListAlbumsRequest();
 }
 
 } // namespace DigikamGenericUnifiedPlugin

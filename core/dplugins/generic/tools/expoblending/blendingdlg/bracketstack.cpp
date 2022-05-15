@@ -203,12 +203,12 @@ void BracketStackList::addItems(const QList<QUrl>& list)
         }
     }
 
-    foreach (const QUrl& url, urls)
+    Q_FOREACH (const QUrl& url, urls)
     {
         ThumbnailLoadThread::defaultThread()->find(ThumbnailIdentifier(url.toLocalFile()));
     }
 
-    emit signalAddItems(urls);
+    Q_EMIT signalAddItems(urls);
 }
 
 void BracketStackList::slotThumbnail(const LoadingDescription& desc, const QPixmap& pix)
@@ -243,7 +243,7 @@ void BracketStackList::slotItemClicked(QTreeWidgetItem* item, int column)
 
     if (cItem && (column == 1))
     {
-        emit signalItemClicked(cItem->url());
+        Q_EMIT signalItemClicked(cItem->url());
     }
 }
 

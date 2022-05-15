@@ -64,7 +64,7 @@ void AlbumsJob::run()
     {
         QMap<int, int> albumNumberMap = CoreDbAccess().db()->getNumberOfImagesInAlbums();
 
-        emit foldersData(albumNumberMap);
+        Q_EMIT foldersData(albumNumberMap);
     }
     else
     {
@@ -79,7 +79,7 @@ void AlbumsJob::run()
         receiver.sendData();
     }
 
-    emit signalDone();
+    Q_EMIT signalDone();
 }
 
 // ----------------------------------------------
@@ -103,7 +103,7 @@ void DatesJob::run()
         QHash<QDateTime, int> dateNumberHash;
         QHash<QDateTime, int>::iterator it;
 
-        foreach (const QVariant& value, values)
+        Q_FOREACH (const QVariant& value, values)
         {
             if (!value.isNull())
             {
@@ -127,7 +127,7 @@ void DatesJob::run()
             }
         }
 
-        emit foldersData(dateNumberHash);
+        Q_EMIT foldersData(dateNumberHash);
     }
     else
     {
@@ -144,7 +144,7 @@ void DatesJob::run()
         receiver.sendData();
     }
 
-    emit signalDone();
+    Q_EMIT signalDone();
 }
 
 // ----------------------------------------------
@@ -171,7 +171,7 @@ void GPSJob::run()
                                                          0,
                                                          QLatin1String("rating"));
 
-        emit directQueryData(imagesInfoFromArea);
+        Q_EMIT directQueryData(imagesInfoFromArea);
     }
     else
     {
@@ -191,7 +191,7 @@ void GPSJob::run()
         receiver.sendData();
     }
 
-    emit signalDone();
+    Q_EMIT signalDone();
 }
 
 // ----------------------------------------------
@@ -214,7 +214,7 @@ void TagsJob::run()
 
         //qCDebug(DIGIKAM_DBJOB_LOG) << tagNumberMap;
 
-        emit foldersData(tagNumberMap);
+        Q_EMIT foldersData(tagNumberMap);
     }
     else if (m_jobInfo.isFaceFoldersJob())
     {
@@ -245,7 +245,7 @@ void TagsJob::run()
         property = ImageTagPropertyName::tagRegion();
         counts   = CoreDbAccess().db()->getNumberOfImagesInTagProperties(property);
 
-        foreach (int tagId, FaceTags::allPersonTags())
+        Q_FOREACH (int tagId, FaceTags::allPersonTags())
         {
             if (!counts.contains(tagId))
             {
@@ -255,7 +255,7 @@ void TagsJob::run()
 
         facesNumberMap.insert(property, counts);
 
-        emit faceFoldersData(facesNumberMap);
+        Q_EMIT faceFoldersData(facesNumberMap);
     }
     else
     {
@@ -284,7 +284,7 @@ void TagsJob::run()
         receiver.sendData();
     }
 
-    emit signalDone();
+    Q_EMIT signalDone();
 }
 
 // ----------------------------------------------
@@ -321,7 +321,7 @@ void SearchesJob::runSearches()
 {
     QList<SearchInfo> infos;
 
-    foreach (int id, m_jobInfo.searchIds())
+    Q_FOREACH (int id, m_jobInfo.searchIds())
     {
         infos << CoreDbAccess().db()->getSearchInfo(id);
     }
@@ -333,7 +333,7 @@ void SearchesJob::runSearches()
 
     ItemListerJobPartsSendingReceiver receiver(this, 200);
 
-    foreach (const SearchInfo& info, infos)
+    Q_FOREACH (const SearchInfo& info, infos)
     {
         if (info.type == DatabaseSearch::HaarSearch)
         {
@@ -360,7 +360,7 @@ void SearchesJob::runSearches()
         }
     }
 
-    emit signalDone();
+    Q_EMIT signalDone();
 }
 
 void SearchesJob::runFindDuplicates()
@@ -369,7 +369,7 @@ void SearchesJob::runFindDuplicates()
     {
         qCDebug(DIGIKAM_DBJOB_LOG) << "No image ids passed for duplicates search";
 
-        emit signalDuplicatesResults(HaarIface::DuplicatesResultsMap());
+        Q_EMIT signalDuplicatesResults(HaarIface::DuplicatesResultsMap());
         return;
     }
 
@@ -379,7 +379,7 @@ void SearchesJob::runFindDuplicates()
     {
         qCDebug(DIGIKAM_DBJOB_LOG) << "Invalid HaarIface pointer";
 
-        emit signalDuplicatesResults(HaarIface::DuplicatesResultsMap());
+        Q_EMIT signalDuplicatesResults(HaarIface::DuplicatesResultsMap());
         return;
     }
 
@@ -392,7 +392,7 @@ void SearchesJob::runFindDuplicates()
                                                restriction,
                                                &observer);
 
-    emit signalDuplicatesResults(results);
+    Q_EMIT signalDuplicatesResults(results);
 }
 
 bool SearchesJob::isCanceled() const

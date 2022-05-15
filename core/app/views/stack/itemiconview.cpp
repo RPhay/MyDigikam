@@ -190,7 +190,7 @@ ItemIconView::ItemIconView(QWidget* const parent, DModelFactory* const modelColl
 
     d->leftSideBarWidgets << d->peopleSideBar;
 
-    foreach (SidebarWidget* const leftWidget, d->leftSideBarWidgets)
+    Q_FOREACH (SidebarWidget* const leftWidget, d->leftSideBarWidgets)
     {
         d->leftSideBar->appendTab(leftWidget, leftWidget->getIcon(), leftWidget->getCaption());
 
@@ -254,7 +254,7 @@ ItemIconView::~ItemIconView()
 
 void ItemIconView::applySettings()
 {
-    foreach (SidebarWidget* const sidebarWidget, d->leftSideBarWidgets)
+    Q_FOREACH (SidebarWidget* const sidebarWidget, d->leftSideBarWidgets)
     {
         sidebarWidget->applySettings();
     }
@@ -512,7 +512,7 @@ void ItemIconView::setupConnections()
 
 void ItemIconView::loadViewState()
 {
-    foreach (SidebarWidget* const widget, d->leftSideBarWidgets)
+    Q_FOREACH (SidebarWidget* const widget, d->leftSideBarWidgets)
     {
         widget->loadState();
     }
@@ -549,7 +549,7 @@ void ItemIconView::saveViewState()
     KSharedConfig::Ptr config = KSharedConfig::openConfig();
     KConfigGroup group        = config->group(QLatin1String("MainWindow"));
 
-    foreach (SidebarWidget* const widget, d->leftSideBarWidgets)
+    Q_FOREACH (SidebarWidget* const widget, d->leftSideBarWidgets)
     {
         widget->saveState();
     }

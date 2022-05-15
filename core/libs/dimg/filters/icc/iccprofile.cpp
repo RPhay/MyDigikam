@@ -529,7 +529,7 @@ QStringList IccProfile::defaultSearchPaths()
         dataDirs << macOSBundlePrefix() + QLatin1String("share");
     }
 
-    foreach (const QString& dataDir, dataDirs)
+    Q_FOREACH (const QString& dataDir, dataDirs)
     {
         candidates << dataDir + QLatin1String("/color/icc");
     }
@@ -566,7 +566,7 @@ QStringList IccProfile::defaultSearchPaths()
         dataDirs << QLatin1String("/usr/local/share");
     }
 
-    foreach (const QString& dataDir, dataDirs)
+    Q_FOREACH (const QString& dataDir, dataDirs)
     {
         candidates << dataDir + QLatin1String("/color/icc");
     }
@@ -589,7 +589,7 @@ QStringList IccProfile::defaultSearchPaths()
 
 #endif
 
-    foreach (const QString& candidate, candidates)
+    Q_FOREACH (const QString& candidate, candidates)
     {
         QDir dir(candidate);
 

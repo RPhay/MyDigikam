@@ -248,7 +248,7 @@ void SlideVideo::setCurrentUrl(const QUrl& url)
     else
     {
         d->player->setFile(QString());
-        emit signalVideoLoaded(false);
+        Q_EMIT signalVideoLoaded(false);
     }
 
     showIndicator(false);
@@ -283,15 +283,15 @@ void SlideVideo::slotMediaStatusChanged(QtAV::MediaStatus status)
     switch (status)
     {
         case EndOfMedia:
-            emit signalVideoFinished();
+            Q_EMIT signalVideoFinished();
             break;
 
         case LoadedMedia:
-            emit signalVideoLoaded(true);
+            Q_EMIT signalVideoLoaded(true);
             break;
 
         case InvalidMedia:
-            emit signalVideoLoaded(false);
+            Q_EMIT signalVideoLoaded(false);
             break;
 
         default:
@@ -329,7 +329,7 @@ void SlideVideo::slotPositionChanged(qint64 position)
                        .arg(QTime(0, 0, 0).addMSecs(position).toString(QLatin1String("HH:mm:ss")))
                        .arg(QTime(0, 0, 0).addMSecs(d->slider->maximum()).toString(QLatin1String("HH:mm:ss"))));
 
-    emit signalVideoPosition(position);
+    Q_EMIT signalVideoPosition(position);
 }
 
 void SlideVideo::slotVolumeChanged(int volume)
@@ -342,7 +342,7 @@ void SlideVideo::slotDurationChanged(qint64 duration)
     qint64 max = qMax((qint64)1, duration);
     d->slider->setRange(0, max);
 
-    emit signalVideoDuration(duration);
+    Q_EMIT signalVideoDuration(duration);
 }
 
 void SlideVideo::slotPosition(int position)

@@ -203,7 +203,7 @@ void AlbumManager::slotCollectionLocationPropertiesChanged(const CollectionLocat
         if (album->title() != newLabel)
         {
             album->setTitle(newLabel);
-            emit signalAlbumRenamed(album);
+            Q_EMIT signalAlbumRenamed(album);
         }
     }
 }

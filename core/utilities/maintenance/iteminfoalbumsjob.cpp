@@ -102,7 +102,7 @@ void ItemInfoAlbumsJob::slotComplete()
     if (d->albumIt == d->albumsList.end())
     {
         stop();
-        emit signalCompleted(d->itemsList);
+        Q_EMIT signalCompleted(d->itemsList);
         return;
     }
 

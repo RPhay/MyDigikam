@@ -183,7 +183,7 @@ void TagMngrListView::slotDeleteSelected()
         return;
     }
 
-    foreach (const QModelIndex& index, sel)
+    Q_FOREACH (const QModelIndex& index, sel)
     {
         ListItem* const item = static_cast<ListItem*>(index.internalPointer());
         tagmodel->deleteItem(item);

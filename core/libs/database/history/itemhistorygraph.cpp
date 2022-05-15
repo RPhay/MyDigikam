@@ -64,7 +64,7 @@ bool HistoryVertexProperties::markedAs(HistoryImageId::Type type) const
         return false;
     }
 
-    foreach (const HistoryImageId& ref, referredImages)
+    Q_FOREACH (const HistoryImageId& ref, referredImages)
     {
         if (ref.m_type == type)
         {   // cppcheck-suppress useStlAlgorithm
@@ -82,7 +82,7 @@ bool HistoryVertexProperties::alwaysMarkedAs(HistoryImageId::Type type) const
         return false;
     }
 
-    foreach (const HistoryImageId& ref, referredImages)
+    Q_FOREACH (const HistoryImageId& ref, referredImages)
     {
         if (ref.m_type != type)
         {   // cppcheck-suppress useStlAlgorithm
@@ -105,7 +105,7 @@ bool HistoryVertexProperties::operator==(const ItemInfo& info) const
 
 bool HistoryVertexProperties::operator==(qlonglong id) const
 {
-    foreach (const ItemInfo& info, infos)
+    Q_FOREACH (const ItemInfo& info, infos)
     {
         if (info.id() == id)
         {   // cppcheck-suppress useStlAlgorithm
@@ -123,7 +123,7 @@ bool HistoryVertexProperties::operator==(const HistoryImageId& other) const
         return (uuid == other.m_uuid);
     }
 
-    foreach (const HistoryImageId& id, referredImages)
+    Q_FOREACH (const HistoryImageId& id, referredImages)
     {
         if (ItemScanner::sameReferredImage(id, other))
         {   // cppcheck-suppress useStlAlgorithm
@@ -179,7 +179,7 @@ HistoryVertexProperties& HistoryVertexProperties::operator+=(const HistoryImageI
 
 QDebug operator<<(QDebug dbg, const HistoryVertexProperties& props)
 {
-    foreach (const ItemInfo& info, props.infos)
+    Q_FOREACH (const ItemInfo& info, props.infos)
     {
         dbg.space() << info.id();
     }
@@ -253,7 +253,7 @@ HistoryGraph::Vertex ItemHistoryGraphData::addVertex(const HistoryImageId& image
     {
         // Resolve HistoryImageId, find by ItemInfo
 
-        foreach (const qlonglong& id, ItemScanner::resolveHistoryImageId(imageId))
+        Q_FOREACH (const qlonglong& id, ItemScanner::resolveHistoryImageId(imageId))
         {
             ItemInfo info(id);
 /*
@@ -352,13 +352,13 @@ void ItemHistoryGraphData::applyProperties(Vertex& v,
 
     // adjust properties
 
-    foreach (const ItemInfo& info, infos)
+    Q_FOREACH (const ItemInfo& info, infos)
     {
         // cppcheck-suppress useStlAlgorithm
         props += info;
     }
 
-    foreach (const HistoryImageId& id, ids)
+    Q_FOREACH (const HistoryImageId& id, ids)
     {
         // cppcheck-suppress useStlAlgorithm
         props += id;
@@ -376,9 +376,9 @@ int ItemHistoryGraphData::removeNextUnresolvedVertex(int index)
 
         if (props.infos.isEmpty())
         {
-            foreach (const HistoryGraph::Edge& upperEdge, edges(v, HistoryGraph::EdgesToRoot))
+            Q_FOREACH (const HistoryGraph::Edge& upperEdge, edges(v, HistoryGraph::EdgesToRoot))
             {
-                foreach (const HistoryGraph::Edge& lowerEdge, edges(v, HistoryGraph::EdgesToLeaf))
+                Q_FOREACH (const HistoryGraph::Edge& lowerEdge, edges(v, HistoryGraph::EdgesToLeaf))
                 {
                     HistoryEdgeProperties combinedProps;
                     combinedProps.actions        += properties(upperEdge).actions;
@@ -401,7 +401,7 @@ QHash<HistoryGraph::Vertex, HistoryImageId::Types> ItemHistoryGraphData::categor
 {
     QHash<Vertex, HistoryImageId::Types> types;
 
-    foreach (const Vertex& v, vertices())
+    Q_FOREACH (const Vertex& v, vertices())
     {
         const HistoryVertexProperties& props = properties(v);
 
@@ -442,7 +442,7 @@ QHash<HistoryGraph::Vertex, HistoryImageId::Types> ItemHistoryGraphData::categor
 
             bool allBranches = true;
 
-            foreach (const Edge& e, edges(v, EdgesToLeaf))
+            Q_FOREACH (const Edge& e, edges(v, EdgesToLeaf))
             {
                 const HistoryEdgeProperties& props2 = properties(e);
 
@@ -546,7 +546,7 @@ ItemHistoryGraph ItemHistoryGraph::fromInfo(const ItemInfo& info,
 
     if (loadingMode & LoadLeavesHistory)
     {
-        foreach (const ItemInfo& leaf, graph.leafImages())
+        Q_FOREACH (const ItemInfo& leaf, graph.leafImages())
         {
             if (leaf != info)
             {
@@ -597,7 +597,7 @@ void ItemHistoryGraphData::addHistory(const DImageHistory& history, qlonglong ex
     HistoryGraph::Vertex  last;
     HistoryEdgeProperties edgeProps;
 
-    foreach (const DImageHistory::Entry& entry, history.entries())
+    Q_FOREACH (const DImageHistory::Entry& entry, history.entries())
     {
         if (!last.isNull())
         {
@@ -648,7 +648,7 @@ void ItemHistoryGraph::addRelations(const QList<QPair<qlonglong, qlonglong> >& p
     HistoryGraph::Vertex v1, v2;
     typedef QPair<qlonglong, qlonglong> IdPair;
 
-    foreach (const IdPair& pair, pairs)
+    Q_FOREACH (const IdPair& pair, pairs)
     {
         if ((pair.first < 1) || (pair.second < 1))
         {
@@ -684,7 +684,7 @@ void ItemHistoryGraph::reduceEdges()
         return;    // reduction failed, not a DAG
     }
 
-    foreach (const HistoryGraph::Edge& e, removedEgdes)
+    Q_FOREACH (const HistoryGraph::Edge& e, removedEgdes)
     {
         if (!d->properties(e).actions.isEmpty())
         {
@@ -699,7 +699,7 @@ void ItemHistoryGraph::reduceEdges()
 
 bool ItemHistoryGraph::hasUnresolvedEntries() const
 {
-    foreach (const HistoryGraph::Vertex& v, d->vertices())
+    Q_FOREACH (const HistoryGraph::Vertex& v, d->vertices())
     {
         if (d->properties(v).infos.isEmpty())
         {
@@ -729,7 +729,7 @@ void ItemHistoryGraph::sortForInfo(const ItemInfo& subject)
 
     QList<HistoryGraph::Vertex> toRemove;   // clazy:exclude=missing-typeinfo
 
-    foreach (const HistoryGraph::Vertex& v, d->vertices())
+    Q_FOREACH (const HistoryGraph::Vertex& v, d->vertices())
     {
         HistoryVertexProperties& props = d->properties(v);
         ItemScanner::sortByProximity(props.infos, subject);
@@ -749,11 +749,11 @@ QList<QPair<qlonglong, qlonglong> > ItemHistoryGraph::relationCloud() const
     ItemHistoryGraphData closure          = ItemHistoryGraphData(d->transitiveClosure());
     QList<HistoryGraph::VertexPair> edges = closure.edgePairs();
 
-    foreach (const HistoryGraph::VertexPair& edge, edges)
+    Q_FOREACH (const HistoryGraph::VertexPair& edge, edges)
     {
-        foreach (const ItemInfo& source, closure.properties(edge.first).infos)
+        Q_FOREACH (const ItemInfo& source, closure.properties(edge.first).infos)
         {
-            foreach (const ItemInfo& target, closure.properties(edge.second).infos)
+            Q_FOREACH (const ItemInfo& target, closure.properties(edge.second).infos)
             {
                 pairs << QPair<qlonglong, qlonglong>(source.id(), target.id());
             }
@@ -769,11 +769,11 @@ QPair<QList<qlonglong>, QList<qlonglong> > ItemHistoryGraph::relationCloudParall
     ItemHistoryGraphData closure          = ItemHistoryGraphData(d->transitiveClosure());
     QList<HistoryGraph::VertexPair> edges = closure.edgePairs();
 
-    foreach (const HistoryGraph::VertexPair& edge, edges)
+    Q_FOREACH (const HistoryGraph::VertexPair& edge, edges)
     {
-        foreach (const ItemInfo& source, closure.properties(edge.first).infos)
+        Q_FOREACH (const ItemInfo& source, closure.properties(edge.first).infos)
         {
-            foreach (const ItemInfo& target, closure.properties(edge.second).infos)
+            Q_FOREACH (const ItemInfo& target, closure.properties(edge.second).infos)
             {
                 subjects << source.id();
                 objects  << target.id();
@@ -793,9 +793,9 @@ QList<qlonglong> ItemHistoryGraph::allImageIds() const
 {
     QList<qlonglong> ids;
 
-    foreach (const HistoryGraph::Vertex& v, d->vertices())
+    Q_FOREACH (const HistoryGraph::Vertex& v, d->vertices())
     {
-        foreach (const ItemInfo& info, d->properties(v).infos)
+        Q_FOREACH (const ItemInfo& info, d->properties(v).infos)
         {
             ids << info.id();
         }
@@ -820,7 +820,7 @@ QHash<ItemInfo, HistoryImageId::Types> ItemHistoryGraph::categorize() const
 
     QHash<ItemInfo, HistoryImageId::Types> types;
 
-    foreach (const HistoryGraph::Vertex& v, d->vertices())
+    Q_FOREACH (const HistoryGraph::Vertex& v, d->vertices())
     {
         const HistoryVertexProperties& props = d->properties(v);
 
@@ -831,7 +831,7 @@ QHash<ItemInfo, HistoryImageId::Types> ItemHistoryGraph::categorize() const
 
         HistoryImageId::Types type = vertexType.value(v);
 
-        foreach (const ItemInfo& info, props.infos)
+        Q_FOREACH (const ItemInfo& info, props.infos)
         {
             types[info] = type;
         }
@@ -845,7 +845,7 @@ static QString toString(const HistoryVertexProperties& props)
     QString s = QLatin1String("Ids: ");
     QStringList ids;
 
-    foreach (const ItemInfo& info, props.infos)
+    Q_FOREACH (const ItemInfo& info, props.infos)
     {
         ids << QString::number(info.id());
     }
@@ -895,13 +895,13 @@ QDebug operator<<(QDebug dbg, const ItemHistoryGraph& g)
         dbg << "Graph with" << vertices.size() << "vertices:" << QT_ENDL;;
     }
 
-    foreach (const HistoryGraph::Vertex& target, vertices)
+    Q_FOREACH (const HistoryGraph::Vertex& target, vertices)
     {
         QString targetString = toString(g.data().properties(target));
 
         QStringList sourceVertexTexts;
 
-        foreach (const HistoryGraph::Vertex& source, g.data().adjacentVertices(target, HistoryGraph::InboundEdges))
+        Q_FOREACH (const HistoryGraph::Vertex& source, g.data().adjacentVertices(target, HistoryGraph::InboundEdges))
         {
             sourceVertexTexts << toString(g.data().properties(source));
         }

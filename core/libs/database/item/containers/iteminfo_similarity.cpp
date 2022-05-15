@@ -59,7 +59,7 @@ QList<ItemInfo> ItemInfo::fromUniqueHash(const QString& uniqueHash, qlonglong fi
     QList<ItemScanInfo> scanInfos = CoreDbAccess().db()->getIdenticalFiles(uniqueHash, fileSize);
     QList<ItemInfo> infos;
 
-    foreach (const ItemScanInfo& scanInfo, scanInfos)
+    Q_FOREACH (const ItemScanInfo& scanInfo, scanInfos)
     {
         infos << ItemInfo(scanInfo.id);
     }

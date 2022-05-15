@@ -81,7 +81,7 @@ cv::Mat DetectorDistortion::prepareForDetection(const DImg& inputImage)
 
 // void DetectorDistortion::run()
 // {
-//     emit resultReady(detect(m_image));
+//     Q_EMIT resultReady(detect(m_image));
 // }
 
 } // namespace Digikam

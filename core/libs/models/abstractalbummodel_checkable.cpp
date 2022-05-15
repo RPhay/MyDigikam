@@ -195,8 +195,8 @@ void AbstractCheckableAlbumModel::resetAllCheckedAlbums()
         if (it.value() != Qt::Unchecked)
         {
             QModelIndex index = indexForAlbum(it.key());
-            emit dataChanged(index, index, d->staticVectorContainingCheckStateRole);
-            emit checkStateChanged(it.key(), Qt::Unchecked);
+            Q_EMIT dataChanged(index, index, d->staticVectorContainingCheckStateRole);
+            Q_EMIT checkStateChanged(it.key(), Qt::Unchecked);
         }
     }
 }
@@ -355,8 +355,8 @@ bool AbstractCheckableAlbumModel::setData(const QModelIndex& index, const QVaria
         qCDebug(DIGIKAM_GENERAL_LOG) << "Updating check state for album" << album->title() << "to" << value;
 */
         d->checkedAlbums.insert(album, state);
-        emit dataChanged(index, index);
-        emit checkStateChanged(album, state);
+        Q_EMIT dataChanged(index, index);
+        Q_EMIT checkStateChanged(album, state);
 
         return true;
     }

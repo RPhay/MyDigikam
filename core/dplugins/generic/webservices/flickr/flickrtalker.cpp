@@ -199,7 +199,7 @@ FlickrTalker::~FlickrTalker()
 
 void FlickrTalker::link(const QString& userName)
 {
-    emit signalBusy(true);
+    Q_EMIT signalBusy(true);
 
     if (userName.isEmpty())
     {
@@ -251,7 +251,7 @@ void FlickrTalker::slotLinkingFailed()
 {
     qCDebug(DIGIKAM_WEBSERVICES_LOG) << "LINK to Flickr fail";
     d->username = QString();
-    emit signalBusy(false);
+    Q_EMIT signalBusy(false);
 }
 
 void FlickrTalker::slotLinkingSucceeded()
@@ -279,7 +279,7 @@ void FlickrTalker::slotLinkingSucceeded()
         QStringList keys = d->settings->allKeys();
         d->settings->endGroup();
 
-        foreach (const QString& key, keys)
+        Q_FOREACH (const QString& key, keys)
         {
             d->settings->beginGroup(d->serviceName);
             QVariant value = d->settings->value(key);
@@ -293,7 +293,7 @@ void FlickrTalker::slotLinkingSucceeded()
         removeUserName(d->serviceName);
     }
 
-    emit signalLinkingSucceeded();
+    Q_EMIT signalLinkingSucceeded();
 }
 
 void FlickrTalker::slotOpenBrowser(const QUrl& url)
@@ -349,7 +349,7 @@ void FlickrTalker::maxAllowedFileSize()
     m_authProgressDlg->setMaximum(4);
     m_authProgressDlg->setValue(1);
 
-    emit signalBusy(true);
+    Q_EMIT signalBusy(true);
 }
 
 void FlickrTalker::listPhotoSets()
@@ -380,7 +380,7 @@ void FlickrTalker::listPhotoSets()
     d->reply = d->requestor->post(netRequest, reqParams, postData);
 
     d->state = FE_LISTPHOTOSETS;
-    emit signalBusy(true);
+    Q_EMIT signalBusy(true);
 }
 
 void FlickrTalker::getPhotoProperty(const QString& method, const QStringList& argList)
@@ -415,7 +415,7 @@ void FlickrTalker::getPhotoProperty(const QString& method, const QStringList& ar
     d->reply = d->requestor->post(netRequest, reqParams, postData);
 
     d->state = FE_GETPHOTOPROPERTY;
-    emit signalBusy(true);
+    Q_EMIT signalBusy(true);
 }
 
 void FlickrTalker::listPhotos(const QString& /*albumName*/)
@@ -455,7 +455,7 @@ void FlickrTalker::createPhotoSet(const QString& /*albumName*/, const QString& a
     d->reply = d->requestor->post(netRequest, reqParams, postData);
 
     d->state = FE_CREATEPHOTOSET;
-    emit signalBusy(true);
+    Q_EMIT signalBusy(true);
 }
 
 void FlickrTalker::addPhotoToPhotoSet(const QString& photoId,
@@ -502,7 +502,7 @@ void FlickrTalker::addPhotoToPhotoSet(const QString& photoId,
         d->reply = d->requestor->post(netRequest, reqParams, postData);
 
         d->state = FE_ADDPHOTOTOPHOTOSET;
-        emit signalBusy(true);
+        Q_EMIT signalBusy(true);
     }
 }
 
@@ -520,7 +520,7 @@ bool FlickrTalker::addPhoto(const QString& photoPath, const FPhotoInfo& info,
         return false;
     }
 
-    emit signalBusy(true);
+    Q_EMIT signalBusy(true);
 
     QUrl url(d->uploadUrl);
     QNetworkRequest netRequest(url);
@@ -635,15 +635,15 @@ bool FlickrTalker::addPhoto(const QString& photoPath, const FPhotoInfo& info,
 
     if (tempFileInfo.size() > (getMaxAllowedFileSize().toLongLong()))
     {
-        emit signalAddPhotoFailed(i18n("File Size exceeds maximum allowed file size."));
-        emit signalBusy(false);
+        Q_EMIT signalAddPhotoFailed(i18n("File Size exceeds maximum allowed file size."));
+        Q_EMIT signalBusy(false);
 
         return false;
     }
 
     if (!form.addFile(QLatin1String("photo"), path))
     {
-        emit signalBusy(false);
+        Q_EMIT signalBusy(false);
 
         return false;
     }
@@ -686,7 +686,7 @@ void FlickrTalker::setGeoLocation(const QString& photoId, const QString& lat, co
     d->reply            = d->requestor->post(netRequest, reqParams, postData);
     d->state            = FE_SETGEO;
 
-    emit signalBusy(true);
+    Q_EMIT signalBusy(true);
 }
 
 QString FlickrTalker::getUserName() const
@@ -796,7 +796,7 @@ void FlickrTalker::slotError(const QString& error)
 
 void FlickrTalker::slotFinished(QNetworkReply* reply)
 {
-    emit signalBusy(false);
+    Q_EMIT signalBusy(false);
 
     if (reply != d->reply)
     {
@@ -809,7 +809,7 @@ void FlickrTalker::slotFinished(QNetworkReply* reply)
     {
         if (d->state == FE_ADDPHOTO)
         {
-            emit signalAddPhotoFailed(reply->errorString());
+            Q_EMIT signalAddPhotoFailed(reply->errorString());
         }
         else
         {
@@ -970,7 +970,7 @@ void FlickrTalker::parseResponseCreatePhotoSet(const QByteArray& data)
             m_selectedPhotoSet.id = new_id;
 
             qCDebug(DIGIKAM_WEBSERVICES_LOG) << "PhotoSet created successfully with id" << new_id;
-            emit signalAddPhotoSetSucceeded();
+            Q_EMIT signalAddPhotoSetSucceeded();
         }
 
         if (node.isElement() && (node.nodeName() == QLatin1String("err")))
@@ -1065,7 +1065,7 @@ void FlickrTalker::parseResponseListPhotoSets(const QByteArray& data)
             QString code = node.toElement().attribute(QLatin1String("code"));
             qCDebug(DIGIKAM_WEBSERVICES_LOG) << "Error code=" << code;
             qCDebug(DIGIKAM_WEBSERVICES_LOG) << "Msg=" << node.toElement().attribute(QLatin1String("msg"));
-            emit signalError(code);
+            Q_EMIT signalError(code);
         }
 
         node = node.nextSibling();
@@ -1075,11 +1075,11 @@ void FlickrTalker::parseResponseListPhotoSets(const QByteArray& data)
 
     if (!success)
     {
-        emit signalListPhotoSetsFailed(i18n("Failed to fetch list of photo sets."));
+        Q_EMIT signalListPhotoSetsFailed(i18n("Failed to fetch list of photo sets."));
     }
     else
     {
-        emit signalListPhotoSetsSucceeded();
+        Q_EMIT signalListPhotoSetsSucceeded();
         maxAllowedFileSize();
     }
 }
@@ -1148,7 +1148,7 @@ void FlickrTalker::parseResponseAddPhoto(const QByteArray& data)
             QString code = node.toElement().attribute(QLatin1String("code"));
             qCDebug(DIGIKAM_WEBSERVICES_LOG) << "Error code=" << code;
             qCDebug(DIGIKAM_WEBSERVICES_LOG) << "Msg=" << node.toElement().attribute(QLatin1String("msg"));
-            emit signalError(code);
+            Q_EMIT signalError(code);
         }
 
         node = node.nextSibling();
@@ -1156,7 +1156,7 @@ void FlickrTalker::parseResponseAddPhoto(const QByteArray& data)
 
     if (!success)
     {
-        emit signalAddPhotoFailed(i18n("Failed to upload photo"));
+        Q_EMIT signalAddPhotoFailed(i18n("Failed to upload photo"));
     }
     else
     {
@@ -1165,7 +1165,7 @@ void FlickrTalker::parseResponseAddPhoto(const QByteArray& data)
         if (photoSetId == QLatin1String("-1"))
         {
             qCDebug(DIGIKAM_WEBSERVICES_LOG) << "PhotoSet Id not set, not adding the photo to any photoset";
-            emit signalAddPhotoSucceeded(photoId);
+            Q_EMIT signalAddPhotoSucceeded(photoId);
         }
         else
         {
@@ -1205,7 +1205,7 @@ void FlickrTalker::parseResponsePhotoProperty(const QByteArray& data)
             QString code = node.toElement().attribute(QLatin1String("code"));
             qCDebug(DIGIKAM_WEBSERVICES_LOG) << "Error code=" << code;
             qCDebug(DIGIKAM_WEBSERVICES_LOG) << "Msg=" << node.toElement().attribute(QLatin1String("msg"));
-            emit signalError(code);
+            Q_EMIT signalError(code);
         }
 
         node = node.nextSibling();
@@ -1215,24 +1215,24 @@ void FlickrTalker::parseResponsePhotoProperty(const QByteArray& data)
 
     if (!success)
     {
-        emit signalAddPhotoFailed(i18n("Failed to query photo information"));
+        Q_EMIT signalAddPhotoFailed(i18n("Failed to query photo information"));
     }
     else
     {
-        emit signalAddPhotoSucceeded(QLatin1String(""));
+        Q_EMIT signalAddPhotoSucceeded(QLatin1String(""));
     }
 }
 
 void FlickrTalker::parseResponseAddPhotoToPhotoSet(const QByteArray& data)
 {
     qCDebug(DIGIKAM_WEBSERVICES_LOG) << "parseResponseListPhotosets" << data;
-    emit signalAddPhotoSucceeded(QLatin1String(""));
+    Q_EMIT signalAddPhotoSucceeded(QLatin1String(""));
 }
 
 void FlickrTalker::parseResponseSetGeoLocation(const QByteArray& data)
 {
     qCDebug(DIGIKAM_WEBSERVICES_LOG) << "parseResponseSetGeoLocation" << data;
-    emit signalAddPhotoSucceeded(QLatin1String(""));
+    Q_EMIT signalAddPhotoSucceeded(QLatin1String(""));
 }
 
 } // namespace DigikamGenericFlickrPlugin

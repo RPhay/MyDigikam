@@ -98,7 +98,7 @@ QList<RegionFrameItem*> FocusPointGroup::items() const
 {
     QList<RegionFrameItem*> items;
 
-    foreach (FocusPointItem* const item, d->items)
+    Q_FOREACH (FocusPointItem* const item, d->items)
     {
         items << item;
     }
@@ -189,7 +189,7 @@ void FocusPointGroup::load()
         d->view->setFocus();
     }
 
-    foreach (const auto& point, points)
+    Q_FOREACH (const auto& point, points)
     {
         d->addItem(point);
     }
@@ -209,7 +209,7 @@ void FocusPointGroup::clear()
     cancelAddItem();
     d->visibilityController->clear();
 
-    foreach (RegionFrameItem* const item, d->items)
+    Q_FOREACH (RegionFrameItem* const item, d->items)
     {
         delete item;
     }
@@ -242,7 +242,7 @@ void FocusPointGroup::slotAlbumRenamed(Album* const album)
         return;
     }
 
-    foreach (FocusPointItem* const item, d->items)
+    Q_FOREACH (FocusPointItem* const item, d->items)
     {
         if (!item->point().isNull() &&
             (item->point().tagId() == album->id()))

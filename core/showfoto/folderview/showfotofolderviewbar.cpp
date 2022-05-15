@@ -330,12 +330,12 @@ ShowfotoFolderViewBar::~ShowfotoFolderViewBar()
 
 void ShowfotoFolderViewBar::slotTypeMimesChanged(int index)
 {
-    emit signalTypeMimesChanged(d->typeMimesCombo->itemData(index).toString());
+    Q_EMIT signalTypeMimesChanged(d->typeMimesCombo->itemData(index).toString());
 }
 
 QAction* ShowfotoFolderViewBar::toolBarAction(const QString& name) const
 {
-    foreach (QAction* const act, d->actionsList)
+    Q_FOREACH (QAction* const act, d->actionsList)
     {
         if (act && (act->objectName() == name))
         {
@@ -350,7 +350,7 @@ QList<QAction*> ShowfotoFolderViewBar::pluginActions() const
 {
     QList<QAction*> lst;
 
-    foreach (QAction* const act, d->actionsList)
+    Q_FOREACH (QAction* const act, d->actionsList)
     {
         if (act && (act->data() == d->pluginFingerPrint))
         {
@@ -397,7 +397,7 @@ int ShowfotoFolderViewBar::folderViewMode() const
 void ShowfotoFolderViewBar::setBookmarksVisible(bool b)
 {
     d->showBookmarksAction->setChecked(b);
-    emit signalShowBookmarks(b);
+    Q_EMIT signalShowBookmarks(b);
 }
 
 bool ShowfotoFolderViewBar::bookmarksVisible() const
@@ -442,7 +442,7 @@ void ShowfotoFolderViewBar::slotCustomPathChanged()
         d->pathEdit->addItem(path);
     }
 
-    emit signalCustomPathChanged(path);
+    Q_EMIT signalCustomPathChanged(path);
 }
 
 void ShowfotoFolderViewBar::slotPreviousEnabled(bool b)
@@ -459,32 +459,32 @@ void ShowfotoFolderViewBar::slotIconSizeChanged(int size)
 {
     d->iconSizeSlider->setToolTip(i18nc("@info", "Icon Size: %1", size));
 
-    emit signalIconSizeChanged(size);
+    Q_EMIT signalIconSizeChanged(size);
 }
 
 void ShowfotoFolderViewBar::slotOptionsChanged(QAction* action)
 {
     if      (action == d->shortAction)
     {
-        emit signalViewModeChanged(ShowfotoFolderViewList::ShortView);
+        Q_EMIT signalViewModeChanged(ShowfotoFolderViewList::ShortView);
 
         return;
     }
     else if (action == d->detailedAction)
     {
-        emit signalViewModeChanged(ShowfotoFolderViewList::DetailledView);
+        Q_EMIT signalViewModeChanged(ShowfotoFolderViewList::DetailledView);
 
         return;
     }
     else if (action == d->showBookmarksAction)
     {
-        emit signalShowBookmarks(d->showBookmarksAction->isChecked());
+        Q_EMIT signalShowBookmarks(d->showBookmarksAction->isChecked());
 
         return;
     }
     else if (action == d->moreSettingsAction)
     {
-        emit signalSetup();
+        Q_EMIT signalSetup();
 
         return;
     }
@@ -499,7 +499,7 @@ void ShowfotoFolderViewBar::registerPluginActions(const QList<DPluginAction*>& a
         connect(d->runMenu, SIGNAL(triggered(QAction*)),
                 this, SIGNAL(signalPluginActionTriggered(QAction*)));
 
-        foreach (QAction* const dpact, actions)
+        Q_FOREACH (QAction* const dpact, actions)
         {
             QAction* const act = d->runMenu->addAction(dpact->text());
             act->setObjectName(dpact->objectName());

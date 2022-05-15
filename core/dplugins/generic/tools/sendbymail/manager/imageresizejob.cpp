@@ -56,11 +56,11 @@ ImageResizeJob::~ImageResizeJob()
 
 void ImageResizeJob::run()
 {
-    emit signalStarted();
+    Q_EMIT signalStarted();
 
     QString errString;
 
-    emit startingResize(m_orgUrl);
+    Q_EMIT startingResize(m_orgUrl);
 
     m_mutex.lock();
     (*m_count)++;
@@ -71,11 +71,11 @@ void ImageResizeJob::run()
     if (imageResize(m_settings, m_orgUrl, m_destName, errString))
     {
         QUrl emailUrl(QUrl::fromLocalFile(m_destName));
-        emit finishedResize(m_orgUrl, emailUrl, percent);
+        Q_EMIT finishedResize(m_orgUrl, emailUrl, percent);
     }
     else
     {
-        emit failedResize(m_orgUrl, errString, percent);
+        Q_EMIT failedResize(m_orgUrl, errString, percent);
     }
 
     if (m_settings->itemsList.count() == *m_count)
@@ -85,7 +85,7 @@ void ImageResizeJob::run()
         m_mutex.unlock();
     }
 
-    emit signalDone();
+    Q_EMIT signalDone();
 }
 
 bool ImageResizeJob::imageResize(MailSettings* const settings,

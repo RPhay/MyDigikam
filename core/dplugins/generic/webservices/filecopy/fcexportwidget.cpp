@@ -310,7 +310,7 @@ void FCExportWidget::slotLabelUrlChanged()
 {
     d->targetUrl = QUrl::fromLocalFile(d->selector->fileDlgPath());
 
-    emit signalTargetUrlChanged(d->targetUrl);
+    Q_EMIT signalTargetUrlChanged(d->targetUrl);
 }
 
 void FCExportWidget::slotFileCopyButtonChanged(bool enabled)

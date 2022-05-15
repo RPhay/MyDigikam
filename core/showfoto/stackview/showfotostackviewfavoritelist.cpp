@@ -119,7 +119,7 @@ void ShowfotoStackViewFavoriteList::slotLoadContents()
 
     if (fvitem)
     {
-        emit signalLoadContentsFromFiles(fvitem->urlsToPaths(), fvitem->currentUrl().toLocalFile());
+        Q_EMIT signalLoadContentsFromFiles(fvitem->urlsToPaths(), fvitem->currentUrl().toLocalFile());
     }
 }
 
@@ -220,7 +220,7 @@ void ShowfotoStackViewFavoriteList::dragMoveEvent(QDragMoveEvent* e)
         QList<QUrl> mimeurls = e->mimeData()->urls();
         QList<QUrl> urls;
 
-        foreach (const QUrl& url, mimeurls)
+        Q_FOREACH (const QUrl& url, mimeurls)
         {
             if (isReadableImageFile(url.toLocalFile()))
             {
@@ -286,7 +286,7 @@ void ShowfotoStackViewFavoriteList::dropEvent(QDropEvent* e)
         QList<QUrl> mimeurls = e->mimeData()->urls();
         QList<QUrl> urls;
 
-        foreach (const QUrl& url, mimeurls)
+        Q_FOREACH (const QUrl& url, mimeurls)
         {
             if (isReadableImageFile(url.toLocalFile()))
             {
@@ -298,7 +298,7 @@ void ShowfotoStackViewFavoriteList::dropEvent(QDropEvent* e)
         {
             QTreeWidget::dropEvent(e);
 
-            emit signalAddFavorite(urls, urls.first());
+            Q_EMIT signalAddFavorite(urls, urls.first());
 
             e->acceptProposedAction();
             return;
@@ -317,7 +317,7 @@ QMimeData* ShowfotoStackViewFavoriteList::mimeData(const QList<QTreeWidgetItem*>
 {
     QList<QUrl> urls;
 
-    foreach (QTreeWidgetItem* const itm, items)
+    Q_FOREACH (QTreeWidgetItem* const itm, items)
     {
         ShowfotoStackViewFavoriteItem* const vitem = dynamic_cast<ShowfotoStackViewFavoriteItem*>(itm);
 
@@ -409,7 +409,7 @@ void ShowfotoStackViewFavoriteList::setFilter(const QString& filter, Qt::CaseSen
         ++it;
     }
 
-    emit signalSearchResult(query);
+    Q_EMIT signalSearchResult(query);
 }
 
 QString ShowfotoStackViewFavoriteList::filter() const

@@ -234,7 +234,7 @@ SlideShowLoader::SlideShowLoader(SlideShowSettings* const settings)
 
 SlideShowLoader::~SlideShowLoader()
 {
-    emit signalLastItemUrl(currentItem());
+    Q_EMIT signalLastItemUrl(currentItem());
 
     d->mouseMoveTimer->stop();
 

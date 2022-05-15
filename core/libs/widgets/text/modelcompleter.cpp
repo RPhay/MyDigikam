@@ -296,7 +296,7 @@ void ModelCompleter::slotHighlighted(const QModelIndex& index)
 
         if (d->idToTextHash.values().count(itemName) == 1)
         {
-            emit signalHighlighted(d->idToTextHash.key(itemName));
+            Q_EMIT signalHighlighted(d->idToTextHash.key(itemName));
         }
     }
 }

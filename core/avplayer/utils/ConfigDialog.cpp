@@ -91,7 +91,7 @@ ConfigDialog::ConfigDialog(QWidget* const parent)
            << new ShaderPage()
     ;
 
-    foreach (ConfigPageBase* const page, mPages)
+    Q_FOREACH (ConfigPageBase* const page, mPages)
     {
         page->applyToUi();
         page->applyOnUiChange(false);
@@ -145,7 +145,7 @@ void ConfigDialog::onReset()
 
     // TODO: check change
 
-    foreach (ConfigPageBase* const page, mPages)
+    Q_FOREACH (ConfigPageBase* const page, mPages)
     {
         page->reset();
     }
@@ -155,7 +155,7 @@ void ConfigDialog::onApply()
 {
     // TODO: check change
 
-    foreach (ConfigPageBase* const page, mPages)
+    Q_FOREACH (ConfigPageBase* const page, mPages)
     {
         page->apply();
     }
@@ -167,7 +167,7 @@ void ConfigDialog::onCancel()
 {
     // TODO: check change
 
-    foreach (ConfigPageBase* const page, mPages)
+    Q_FOREACH (ConfigPageBase* const page, mPages)
     {
         page->cancel();
     }

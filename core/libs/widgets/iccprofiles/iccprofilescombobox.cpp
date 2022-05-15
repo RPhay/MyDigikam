@@ -87,7 +87,7 @@ static void formatProfiles(const QList<IccProfile>& givenProfiles, QList<IccProf
     QList<IccProfile> profiles;
     QSet<QString>     filePaths;
 
-    foreach (IccProfile profile, givenProfiles) // krazy:exclude=foreach
+    Q_FOREACH (IccProfile profile, givenProfiles) // krazy:exclude=foreach
     {
         QString filePath = profile.filePath();
 
@@ -100,7 +100,7 @@ static void formatProfiles(const QList<IccProfile>& givenProfiles, QList<IccProf
 
     std::sort(profiles.begin(), profiles.end(), iccProfileLessThan);
 
-    foreach (IccProfile profile, profiles) // krazy:exclude=foreach
+    Q_FOREACH (IccProfile profile, profiles) // krazy:exclude=foreach
     {
         QString description = profileUserString(profile);
 
@@ -248,7 +248,7 @@ void IccProfilesMenuAction::slotTriggered(QObject* obj)
 
     if (!profile.isNull())
     {
-        emit triggered(profile);
+        Q_EMIT triggered(profile);
     }
 }
 

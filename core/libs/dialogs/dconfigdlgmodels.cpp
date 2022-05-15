@@ -131,7 +131,7 @@ void DConfigDlgWdgItem::setEnabled(bool enabled)
         d->widget->setEnabled(enabled);
     }
 
-    emit changed();
+    Q_EMIT changed();
 }
 
 bool DConfigDlgWdgItem::isEnabled() const
@@ -148,7 +148,7 @@ void DConfigDlgWdgItem::setName(const QString& name)
 {
     d->name = name;
 
-    emit changed();
+    Q_EMIT changed();
 }
 
 QString DConfigDlgWdgItem::name() const
@@ -160,7 +160,7 @@ void DConfigDlgWdgItem::setHeader(const QString& header)
 {
     d->header = header;
 
-    emit changed();
+    Q_EMIT changed();
 }
 
 QString DConfigDlgWdgItem::header() const
@@ -172,7 +172,7 @@ void DConfigDlgWdgItem::setIcon(const QIcon& icon)
 {
     d->icon = icon;
 
-    emit changed();
+    Q_EMIT changed();
 }
 
 QIcon DConfigDlgWdgItem::icon() const
@@ -184,7 +184,7 @@ void DConfigDlgWdgItem::setCheckable(bool checkable)
 {
     d->checkable = checkable;
 
-    emit changed();
+    Q_EMIT changed();
 }
 
 bool DConfigDlgWdgItem::isCheckable() const
@@ -196,8 +196,8 @@ void DConfigDlgWdgItem::setChecked(bool checked)
 {
     d->checked = checked;
 
-    emit toggled(checked);
-    emit changed();
+    Q_EMIT toggled(checked);
+    Q_EMIT changed();
 }
 
 bool DConfigDlgWdgItem::isChecked() const
@@ -498,7 +498,7 @@ DConfigDlgWdgItem* DConfigDlgWdgModel::addPage(QWidget* widget, const QString& n
 
 void DConfigDlgWdgModel::addPage(DConfigDlgWdgItem* item)
 {
-    emit layoutAboutToBeChanged();
+    Q_EMIT layoutAboutToBeChanged();
 
     Q_D(DConfigDlgWdgModel);
 
@@ -519,7 +519,7 @@ void DConfigDlgWdgModel::addPage(DConfigDlgWdgItem* item)
 
     endInsertRows();
 
-    emit layoutChanged();
+    Q_EMIT layoutChanged();
 }
 
 DConfigDlgWdgItem* DConfigDlgWdgModel::insertPage(DConfigDlgWdgItem* before, QWidget* widget, const QString& name)
@@ -541,7 +541,7 @@ void DConfigDlgWdgModel::insertPage(DConfigDlgWdgItem* before, DConfigDlgWdgItem
         return;
     }
 
-    emit layoutAboutToBeChanged();
+    Q_EMIT layoutAboutToBeChanged();
 
     connect(item, SIGNAL(changed()),
             this, SLOT(_k_itemChanged()));
@@ -569,7 +569,7 @@ void DConfigDlgWdgModel::insertPage(DConfigDlgWdgItem* before, DConfigDlgWdgItem
 
     endInsertRows();
 
-    emit layoutChanged();
+    Q_EMIT layoutChanged();
 }
 
 DConfigDlgWdgItem* DConfigDlgWdgModel::addSubPage(DConfigDlgWdgItem* parent, QWidget* widget, const QString& name)
@@ -591,7 +591,7 @@ void DConfigDlgWdgModel::addSubPage(DConfigDlgWdgItem* parent, DConfigDlgWdgItem
         return;
     }
 
-    emit layoutAboutToBeChanged();
+    Q_EMIT layoutAboutToBeChanged();
 
     connect(item, SIGNAL(changed()),
             this, SLOT(_k_itemChanged()));
@@ -617,7 +617,7 @@ void DConfigDlgWdgModel::addSubPage(DConfigDlgWdgItem* parent, DConfigDlgWdgItem
 
     endInsertRows();
 
-    emit layoutChanged();
+    Q_EMIT layoutChanged();
 }
 
 void DConfigDlgWdgModel::removePage(DConfigDlgWdgItem* item)
@@ -637,7 +637,7 @@ void DConfigDlgWdgModel::removePage(DConfigDlgWdgItem* item)
         return;
     }
 
-    emit layoutAboutToBeChanged();
+    Q_EMIT layoutAboutToBeChanged();
 
     disconnect(item, SIGNAL(changed()),
                this, SLOT(_k_itemChanged()));
@@ -662,7 +662,7 @@ void DConfigDlgWdgModel::removePage(DConfigDlgWdgItem* item)
 
     endRemoveRows();
 
-    emit layoutChanged();
+    Q_EMIT layoutChanged();
 }
 
 DConfigDlgWdgItem* DConfigDlgWdgModel::item(const QModelIndex& index) const

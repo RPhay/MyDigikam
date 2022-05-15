@@ -61,7 +61,7 @@ protected:
 
 private Q_SLOTS:
 
-    // only emit Q_SIGNALS. no value stores.
+    // only emit signals. no value stores.
 
     void selectSaveDir();
     void browseCaptureDir();

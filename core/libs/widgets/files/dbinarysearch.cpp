@@ -158,14 +158,14 @@ void DBinarySearch::addBinary(DBinaryIface& binary)
 
 void DBinarySearch::addDirectory(const QString& dir)
 {
-    emit signalAddPossibleDirectory(dir);
+    Q_EMIT signalAddPossibleDirectory(dir);
 }
 
 bool DBinarySearch::allBinariesFound()
 {
     bool ret = true;
 
-    foreach (DBinaryIface* const binary, d->binaryIfaces)
+    Q_FOREACH (DBinaryIface* const binary, d->binaryIfaces)
     {
         int index = d->binaryIfaces.indexOf(binary);
 
@@ -209,7 +209,7 @@ bool DBinarySearch::allBinariesFound()
 void DBinarySearch::slotAreBinariesFound()
 {
     bool allFound = allBinariesFound();
-    emit signalBinariesFound(allFound);
+    Q_EMIT signalBinariesFound(allFound);
     qCDebug(DIGIKAM_GENERAL_LOG) << "All Binaries Found : " << allFound;
 }
 

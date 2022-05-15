@@ -578,7 +578,7 @@ void ImageGuideWidget::resizeEvent(QResizeEvent* e)
     updatePixmap();
 
     blockSignals(false);
-    emit signalResized();
+    Q_EMIT signalResized();
 }
 
 void ImageGuideWidget::mousePressEvent(QMouseEvent* e)
@@ -641,26 +641,26 @@ void ImageGuideWidget::mouseReleaseEvent(QMouseEvent* e)
             if      (d->renderingPreviewMode == PreviewToolBar::PreviewOriginalImage)
             {
                 color = getSpotColor(OriginalImage);
-                emit spotPositionChangedFromOriginal(color, d->spot);
+                Q_EMIT spotPositionChangedFromOriginal(color, d->spot);
             }
             else if ((d->renderingPreviewMode == PreviewToolBar::PreviewTargetImage) ||
                      (d->renderingPreviewMode == PreviewToolBar::NoPreviewMode))
             {
                 color = getSpotColor(TargetPreviewImage);
-                emit spotPositionChangedFromTarget(color, d->spot);
+                Q_EMIT spotPositionChangedFromTarget(color, d->spot);
             }
             else if (d->renderingPreviewMode == PreviewToolBar::PreviewBothImagesVert)
             {
                 if (d->spot.x() > (d->rect.width() / 2))
                 {
                     color = getSpotColor(TargetPreviewImage);
-                    emit spotPositionChangedFromTarget(color, QPoint(d->spot.x() - d->rect.width() / 2,
+                    Q_EMIT spotPositionChangedFromTarget(color, QPoint(d->spot.x() - d->rect.width() / 2,
                                                                      d->spot.y()));
                 }
                 else
                 {
                     color = getSpotColor(OriginalImage);
-                    emit spotPositionChangedFromOriginal(color, d->spot);
+                    Q_EMIT spotPositionChangedFromOriginal(color, d->spot);
                 }
             }
             else if (d->renderingPreviewMode == PreviewToolBar::PreviewBothImagesVertCont)
@@ -668,12 +668,12 @@ void ImageGuideWidget::mouseReleaseEvent(QMouseEvent* e)
                 if (d->spot.x() > (d->rect.width() / 2))
                 {
                     color = getSpotColor(TargetPreviewImage);
-                    emit spotPositionChangedFromTarget(color, d->spot);
+                    Q_EMIT spotPositionChangedFromTarget(color, d->spot);
                 }
                 else
                 {
                     color = getSpotColor(OriginalImage);
-                    emit spotPositionChangedFromOriginal(color, d->spot);
+                    Q_EMIT spotPositionChangedFromOriginal(color, d->spot);
                 }
             }
             else if (d->renderingPreviewMode == PreviewToolBar::PreviewBothImagesHorz)
@@ -681,13 +681,13 @@ void ImageGuideWidget::mouseReleaseEvent(QMouseEvent* e)
                 if (d->spot.y() > (d->rect.height() / 2))
                 {
                     color = getSpotColor(TargetPreviewImage);
-                    emit spotPositionChangedFromTarget(color, QPoint(d->spot.x(),
+                    Q_EMIT spotPositionChangedFromTarget(color, QPoint(d->spot.x(),
                                                                      d->spot.y() - d->rect.height() / 2));
                 }
                 else
                 {
                     color = getSpotColor(OriginalImage);
-                    emit spotPositionChangedFromOriginal(color, d->spot);
+                    Q_EMIT spotPositionChangedFromOriginal(color, d->spot);
                 }
             }
             else if (d->renderingPreviewMode == PreviewToolBar::PreviewBothImagesHorzCont)
@@ -695,12 +695,12 @@ void ImageGuideWidget::mouseReleaseEvent(QMouseEvent* e)
                 if (d->spot.y() > (d->rect.height() / 2))
                 {
                     color = getSpotColor(TargetPreviewImage);
-                    emit spotPositionChangedFromTarget(color, d->spot);
+                    Q_EMIT spotPositionChangedFromTarget(color, d->spot);
                 }
                 else
                 {
                     color = getSpotColor(OriginalImage);
-                    emit spotPositionChangedFromOriginal(color, d->spot);
+                    Q_EMIT spotPositionChangedFromOriginal(color, d->spot);
                 }
             }
         }

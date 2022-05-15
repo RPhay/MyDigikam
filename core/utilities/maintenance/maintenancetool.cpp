@@ -110,7 +110,7 @@ void MaintenanceTool::slotDone()
                              qApp->activeWindow(), label());
     }
 
-    emit signalComplete();
+    Q_EMIT signalComplete();
 
     setComplete();
 }
@@ -118,7 +118,7 @@ void MaintenanceTool::slotDone()
 void MaintenanceTool::slotCancel()
 {
     setComplete();
-    emit signalCanceled();
+    Q_EMIT signalCanceled();
 }
 
 } // namespace Digikam

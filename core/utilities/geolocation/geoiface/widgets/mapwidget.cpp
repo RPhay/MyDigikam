@@ -414,7 +414,7 @@ QStringList MapWidget::availableBackends() const
 {
     QStringList result;
 
-    foreach (MapBackend* const backend, d->loadedBackends)
+    Q_FOREACH (MapBackend* const backend, d->loadedBackends)
     {
         result.append(backend->backendName());
     }
@@ -468,7 +468,7 @@ bool MapWidget::setBackend(const QString& backendName)
 
     }
 
-    foreach (MapBackend* const backend, d->loadedBackends)
+    Q_FOREACH (MapBackend* const backend, d->loadedBackends)
     {
         if (backend->backendName() == backendName)
         {   // cppcheck-suppress useStlAlgorithm
@@ -981,7 +981,7 @@ void MapWidget::slotUpdateActionsEnabled()
 
     const QList<QAction*> mouseModeActions = d->mouseModeActionGroup->actions();
 
-    foreach (QAction* const action, mouseModeActions)
+    Q_FOREACH (QAction* const action, mouseModeActions)
     {
         if (action->data().value<GeoMouseModes>() == s->currentMouseMode)
         {   // cppcheck-suppress useStlAlgorithm
@@ -1361,7 +1361,7 @@ void MapWidget::addUngroupedModel(GeoModelHelper* const modelHelper)
                 this, SLOT(slotUngroupedModelChanged()));
     }
 
-    emit signalUngroupedModelChanged(s->ungroupedModels.count() - 1);
+    Q_EMIT signalUngroupedModelChanged(s->ungroupedModels.count() - 1);
 }
 
 void MapWidget::removeUngroupedModel(GeoModelHelper* const modelHelper)
@@ -1406,7 +1406,7 @@ void MapWidget::removeUngroupedModel(GeoModelHelper* const modelHelper)
 
     for (int i = modelIndex ; i <= s->ungroupedModels.count() ; ++i)
     {
-        emit signalUngroupedModelChanged(i);
+        Q_EMIT signalUngroupedModelChanged(i);
     }
 }
 
@@ -1578,7 +1578,7 @@ void MapWidget::slotClustersClicked(const QIntList& clusterIndices)
 
             s->selectionRectangle = newSelection;
             d->currentBackend->regionSelectionChanged();
-            emit signalRegionSelectionChanged();
+            Q_EMIT signalRegionSelectionChanged();
         }
     }
     else if (((s->currentMouseMode == MouseModeFilter) && s->selectionRectangle.first.hasCoordinates()) ||
@@ -2118,7 +2118,7 @@ void MapWidget::slotNewSelectionFromMap(const Digikam::GeoCoordinates::Pair& sel
 
     slotUpdateActionsEnabled();
 
-    emit signalRegionSelectionChanged();
+    Q_EMIT signalRegionSelectionChanged();
 }
 
 void MapWidget::slotRemoveCurrentRegionSelection()
@@ -2128,7 +2128,7 @@ void MapWidget::slotRemoveCurrentRegionSelection()
 
     slotUpdateActionsEnabled();
 
-    emit signalRegionSelectionChanged();
+    Q_EMIT signalRegionSelectionChanged();
 }
 
 void MapWidget::slotUngroupedModelChanged()
@@ -2144,7 +2144,7 @@ void MapWidget::slotUngroupedModelChanged()
         {
             if (s->ungroupedModels.at(i)->model() == senderModel)
             {
-                emit signalUngroupedModelChanged(i);
+                Q_EMIT signalUngroupedModelChanged(i);
 
                 break;
             }
@@ -2160,7 +2160,7 @@ void MapWidget::slotUngroupedModelChanged()
         {
             if (s->ungroupedModels.at(i) == senderHelper)
             {
-                emit signalUngroupedModelChanged(i);
+                Q_EMIT signalUngroupedModelChanged(i);
 
                 break;
             }
@@ -2175,7 +2175,7 @@ void MapWidget::slotUngroupedModelChanged()
         {
             if (s->ungroupedModels.at(i)->selectionModel() == senderSelectionModel)
             {
-                emit signalUngroupedModelChanged(i);
+                Q_EMIT signalUngroupedModelChanged(i);
 
                 break;
             }
@@ -2314,7 +2314,7 @@ void MapWidget::slotStickyModeChanged()
 {
     slotUpdateActionsEnabled();
 
-    emit signalStickyModeChanged();
+    Q_EMIT signalStickyModeChanged();
 }
 
 void MapWidget::setAllowModifications(const bool state)
@@ -2444,7 +2444,7 @@ void MapWidget::slotMouseModeChanged(QAction* triggeredAction)
         d->currentBackend->mouseModeChanged();
     }
 
-    emit signalMouseModeChanged(s->currentMouseMode);
+    Q_EMIT signalMouseModeChanged(s->currentMouseMode);
 
     /// @todo Update action availability?
 }
@@ -2478,7 +2478,7 @@ void MapWidget::setTrackManager(TrackManager* const trackManager)
     // Some backends track the track manager activity even when not active
     // therefore they have to be notified.
 
-    foreach (MapBackend* const backend, d->loadedBackends)
+    Q_FOREACH (MapBackend* const backend, d->loadedBackends)
     {
         backend->slotTrackManagerChanged();
     }

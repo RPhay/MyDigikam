@@ -269,7 +269,7 @@ QWidget* BackendMarble::mapWidget()
 
         applyCacheToWidget();
 
-        emit signalBackendReadyChanged(backendName());
+        Q_EMIT signalBackendReadyChanged(backendName());
     }
 
     return d->marbleWidget;
@@ -294,7 +294,7 @@ void BackendMarble::releaseWidget(GeoIfaceInternalWidgetInfo* const info)
     d->marbleWidget    = nullptr;
     d->bmLayer         = nullptr;
 
-    emit signalBackendReadyChanged(backendName());
+    Q_EMIT signalBackendReadyChanged(backendName());
 }
 
 GeoCoordinates BackendMarble::getCenter() const
@@ -1196,7 +1196,7 @@ void BackendMarble::slotMarbleZoomChanged()
     s->worldMapWidget->markClustersAsDirty();
     updateActionAvailability();
 
-    emit signalZoomChanged(newZoomString);
+    Q_EMIT signalZoomChanged(newZoomString);
 }
 
 void BackendMarble::setZoom(const QString& newZoom)
@@ -1438,7 +1438,7 @@ bool BackendMarble::eventFilter(QObject* object, QEvent* event)
                 d->firstSelectionPoint.clear();
                 d->displayedRectangle.first.clear();
 
-                emit signalSelectionHasBeenMade(selectionCoordinates);
+                Q_EMIT signalSelectionHasBeenMade(selectionCoordinates);
             }
 
             doFilterEvent = true;
@@ -1597,7 +1597,7 @@ bool BackendMarble::eventFilter(QObject* object, QEvent* event)
                 s->haveMovingCluster                = false;
                 doFilterEvent                       = true;
 
-                emit signalClustersClicked(QIntList() << mouseMoveClusterIndex);
+                Q_EMIT signalClustersClicked(QIntList() << mouseMoveClusterIndex);
             }
             else
             {
@@ -1639,9 +1639,9 @@ bool BackendMarble::eventFilter(QObject* object, QEvent* event)
                     QList<QPersistentModelIndex> markerIndices;
                     markerIndices << d->mouseMoveMarkerIndex;
 
-                    // also emit a signal that the marker was moved:
+                    // also Q_EMIT a signal that the marker was moved:
 
-                    emit signalSpecialMarkersMoved(markerIndices);
+                    Q_EMIT signalSpecialMarkersMoved(markerIndices);
 */
                 }
                 else
@@ -1649,7 +1649,7 @@ bool BackendMarble::eventFilter(QObject* object, QEvent* event)
                     // a cluster is being moved
 
                     s->clusterList[d->mouseMoveClusterIndex].coordinates = newCoordinates;
-                    emit signalClustersMoved(QIntList() << d->mouseMoveClusterIndex, snapTargetIndex);
+                    Q_EMIT signalClustersMoved(QIntList() << d->mouseMoveClusterIndex, snapTargetIndex);
                 }
             }
 
@@ -2065,7 +2065,7 @@ void BackendMarble::slotTracksChanged(const QList<TrackManager::TrackChanges>& t
 {
     // invalidate the cache for all changed tracks
 
-    foreach (const TrackManager::TrackChanges& tc, trackChanges)
+    Q_FOREACH (const TrackManager::TrackChanges& tc, trackChanges)
     {
         if (tc.second & (TrackManager::ChangeTrackPoints | TrackManager::ChangeRemoved))
         {

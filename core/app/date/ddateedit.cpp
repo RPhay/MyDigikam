@@ -289,7 +289,7 @@ void DDateEdit::dateSelected(const QDate& date)
     if (this->assignDate(date))
     {
         updateView();
-        emit dateChanged(date);
+        Q_EMIT dateChanged(date);
 
         if (date.isValid())
         {
@@ -303,7 +303,7 @@ void DDateEdit::dateEntered(const QDate& date)
     if (assignDate(date))
     {
         updateView();
-        emit dateChanged(date);
+        Q_EMIT dateChanged(date);
     }
 }
 
@@ -321,7 +321,7 @@ void DDateEdit::lineEnterPressed()
             updateView();
         }
 
-        emit dateChanged(date);
+        Q_EMIT dateChanged(date);
     }
 }
 
@@ -430,7 +430,7 @@ bool DDateEdit::eventFilter(QObject* object, QEvent* event)
                     {
                         updateView();
 
-                        emit dateChanged(date);
+                        Q_EMIT dateChanged(date);
 
                         return true;
                     }
@@ -494,7 +494,7 @@ void DDateEdit::slotTextChanged(const QString&)
 
     if (this->assignDate(date))
     {
-        emit dateChanged(date);
+        Q_EMIT dateChanged(date);
     }
 
     d->textChanged = true;

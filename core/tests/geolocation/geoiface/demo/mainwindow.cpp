@@ -123,7 +123,7 @@ void MarkerModelHelper::onIndicesMoved(const QList<QPersistentModelIndex>& moved
                              QVariant::fromValue(targetCoordinates), RoleCoordinates);
     }
 
-    emit signalMarkersMoved(movedIndices);
+    Q_EMIT signalMarkersMoved(movedIndices);
 }
 
 // ----------------------------------------------------------------------
@@ -175,7 +175,7 @@ void MyTrackModelHelper::slotTrackModelChanged()
 
     m_tracks << track;
 
-    emit signalModelChanged();
+    Q_EMIT signalModelChanged();
 }
 
 TrackManager::Track::List MyTrackModelHelper::getTracks() const

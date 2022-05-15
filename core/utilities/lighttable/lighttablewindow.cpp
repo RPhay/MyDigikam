@@ -958,7 +958,7 @@ void LightTableWindow::slotOnlineVersionCheck()
 void LightTableWindow::moveEvent(QMoveEvent* e)
 {
     Q_UNUSED(e)
-    emit signalWindowHasMoved();
+    Q_EMIT signalWindowHasMoved();
 }
 
 void LightTableWindow::toggleTag(int tagID)

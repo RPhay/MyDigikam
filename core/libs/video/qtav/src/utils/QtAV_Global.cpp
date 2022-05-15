@@ -454,7 +454,7 @@ const QStringList& supportedInputMimeTypes()
         i = av_oformat_next(i);
     }
 
-    foreach (const QString& v, list)
+    Q_FOREACH (const QString& v, list)
     {
         mimes.append(v.trimmed());
     }

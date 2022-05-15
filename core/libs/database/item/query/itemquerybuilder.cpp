@@ -192,7 +192,7 @@ bool ItemQueryBuilder::buildField(QString& sql, SearchXmlCachingReader& reader, 
                    "    FROM Albums WHERE ");
             bool firstCondition = true;
 
-            foreach (int albumID, ids)
+            Q_FOREACH (int albumID, ids)
             {
                 addSqlOperator(sql, SearchXml::Or, firstCondition);
                 firstCondition = false;
@@ -282,7 +282,7 @@ bool ItemQueryBuilder::buildField(QString& sql, SearchXmlCachingReader& reader, 
 
             bool firstCondition = true;
 
-            foreach (int tagID, ids)
+            Q_FOREACH (int tagID, ids)
             {
                 addSqlOperator(sql, SearchXml::Or, firstCondition);
                 firstCondition = false;
@@ -310,7 +310,7 @@ bool ItemQueryBuilder::buildField(QString& sql, SearchXmlCachingReader& reader, 
                 sql += QLatin1String("))) ");
             }
 
-            foreach (int tagID, values)
+            Q_FOREACH (int tagID, values)
             {
                 *boundValues << tagID;
             }
@@ -322,7 +322,7 @@ bool ItemQueryBuilder::buildField(QString& sql, SearchXmlCachingReader& reader, 
 
             bool firstCondition = true;
 
-            foreach (int tagID, ids)
+            Q_FOREACH (int tagID, ids)
             {
                 addSqlOperator(sql, SearchXml::And, firstCondition);
                 firstCondition = false;
@@ -526,7 +526,7 @@ bool ItemQueryBuilder::buildField(QString& sql, SearchXmlCachingReader& reader, 
 
             QList<double> ratioValues;
 
-            foreach (const QString& value, values)
+            Q_FOREACH (const QString& value, values)
             {
                  *boundValues << value;
 
@@ -544,7 +544,7 @@ bool ItemQueryBuilder::buildField(QString& sql, SearchXmlCachingReader& reader, 
             sql += QString::fromUtf8(") ");
             QString query = QString::fromUtf8("ABS((CAST(VideoMetadata.aspectRatio AS DOUBLE) - ?)  < 0.1) ");
 
-            foreach (double value, ratioValues)
+            Q_FOREACH (double value, ratioValues)
             {
                 *boundValues << value;
                 sql +=  QString::fromUtf8("OR ") + query;
@@ -601,7 +601,7 @@ bool ItemQueryBuilder::buildField(QString& sql, SearchXmlCachingReader& reader, 
                 return false;
             }
 
-            foreach (const QString& value, values)
+            Q_FOREACH (const QString& value, values)
             {
                  *boundValues << value;
 
@@ -695,7 +695,7 @@ bool ItemQueryBuilder::buildField(QString& sql, SearchXmlCachingReader& reader, 
                 return false;
             }
 
-            foreach (const QString& value, values)
+            Q_FOREACH (const QString& value, values)
             {
                 sql += QString::fromUtf8("( Upper(VideoMetadata.videoCodec) LIKE '%") + value.toUpper() + QString::fromUtf8("%' ");
 
@@ -898,7 +898,7 @@ bool ItemQueryBuilder::buildField(QString& sql, SearchXmlCachingReader& reader, 
                 sql += QString::fromUtf8(" (Images.id NOT IN "
                        " (SELECT imageid FROM ImageComments WHERE ");
 
-                foreach (const QString& value, values)
+                Q_FOREACH (const QString& value, values)
                 {
                     if      (value == QLatin1String("headline"))
                     {

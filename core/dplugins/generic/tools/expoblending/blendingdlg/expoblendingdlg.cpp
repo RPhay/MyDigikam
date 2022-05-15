@@ -448,7 +448,7 @@ void ExpoBlendingDlg::slotPreview()
     ExpoBlendingItemUrlsMap map = d->mngr->preProcessedMap();
     QList<QUrl> preprocessedList;
 
-    foreach (const QUrl& url, selectedUrl)
+    Q_FOREACH (const QUrl& url, selectedUrl)
     {
         ExpoBlendingItemPreprocessedUrls preprocessedUrls = map.value(url);
         preprocessedList.append(preprocessedUrls.previewUrl);
@@ -477,11 +477,11 @@ void ExpoBlendingDlg::slotProcess()
     ExpoBlendingItemUrlsMap map = d->mngr->preProcessedMap();
     QList<QUrl> preprocessedList;
 
-    foreach (const EnfuseSettings& settings, list)
+    Q_FOREACH (const EnfuseSettings& settings, list)
     {
         preprocessedList.clear();
 
-        foreach (const QUrl& url, settings.inputUrls)
+        Q_FOREACH (const QUrl& url, settings.inputUrls)
         {
             ExpoBlendingItemPreprocessedUrls preprocessedUrls = map.value(url);
             preprocessedList.append(preprocessedUrls.preprocessedUrl);
@@ -536,7 +536,7 @@ void ExpoBlendingDlg::saveItem(const QUrl& temp, const EnfuseSettings& settings)
         d->previewWidget->setBusy(false);
     }
 
-    emit d->mngr->updateHostApp(newUrl);
+    Q_EMIT d->mngr->updateHostApp(newUrl);
 }
 
 void ExpoBlendingDlg::slotExpoBlendingAction(const DigikamGenericExpoBlendingPlugin::ExpoBlendingActionData& ad)
@@ -704,7 +704,7 @@ void ExpoBlendingDlg::slotCloseClicked()
     }
     else
     {
-        emit cancelClicked();
+        Q_EMIT cancelClicked();
     }
 }
 

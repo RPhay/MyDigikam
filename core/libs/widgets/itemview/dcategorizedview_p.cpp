@@ -217,7 +217,7 @@ QRect DCategorizedView::Private::visualRectInViewport(const QModelIndex& index) 
         (void)column; // Remove clang warnings.
     }
 
-    foreach (const QString& category, categories)
+    Q_FOREACH (const QString& category, categories)
     {
         if (category == curCategory)
         {
@@ -332,7 +332,7 @@ QRect DCategorizedView::Private::visualCategoryRectInViewport(const QString& cat
     option = listView->viewOptions();
 #endif
 
-    foreach (const QString& itCategory, categories)
+    Q_FOREACH (const QString& itCategory, categories)
     {
         if (itCategory == category)
         {
@@ -520,7 +520,7 @@ void DCategorizedView::Private::drawDraggedItems(QPainter* painter)
 #endif
     option.state               &= ~QStyle::State_MouseOver;
 
-    foreach (const QModelIndex& index, listView->selectionModel()->selectedIndexes())
+    Q_FOREACH (const QModelIndex& index, listView->selectionModel()->selectedIndexes())
     {
         const int dx = mousePosition.x() - initialPressPosition.x() + listView->horizontalOffset();
         const int dy = mousePosition.y() - initialPressPosition.y() + listView->verticalOffset();
@@ -543,7 +543,7 @@ void DCategorizedView::Private::drawDraggedItems()
     QRect rectToUpdate;
     QRect currentRect;
 
-    foreach (const QModelIndex& index, listView->selectionModel()->selectedIndexes())
+    Q_FOREACH (const QModelIndex& index, listView->selectionModel()->selectedIndexes())
     {
         int dx      = mousePosition.x() - initialPressPosition.x() + listView->horizontalOffset();
         int dy      = mousePosition.y() - initialPressPosition.y() + listView->verticalOffset();

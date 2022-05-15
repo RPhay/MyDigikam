@@ -58,7 +58,7 @@ QString AbstractSpecificAlbumModel::columnHeader() const
 void AbstractSpecificAlbumModel::setColumnHeader(const QString& header)
 {
     m_columnHeader = header;
-    emit headerDataChanged(Qt::Horizontal, 0, 0);
+    Q_EMIT headerDataChanged(Qt::Horizontal, 0, 0);
 }
 
 void AbstractSpecificAlbumModel::slotGotThumbnailFromIcon(Album* album, const QPixmap&)
@@ -71,7 +71,7 @@ void AbstractSpecificAlbumModel::slotGotThumbnailFromIcon(Album* album, const QP
     }
 
     QModelIndex index = indexForAlbum(album);
-    emit dataChanged(index, index);
+    Q_EMIT dataChanged(index, index);
 }
 
 void AbstractSpecificAlbumModel::slotThumbnailLost(Album*)
@@ -81,7 +81,7 @@ void AbstractSpecificAlbumModel::slotThumbnailLost(Album*)
 
 void AbstractSpecificAlbumModel::slotReloadThumbnails()
 {
-    // emit dataChanged() for all albums
+    // Q_EMIT dataChanged() for all albums
 
     emitDataChangedForChildren(rootAlbum());
 }
@@ -101,10 +101,10 @@ void AbstractSpecificAlbumModel::emitDataChangedForChildren(Album* album)
 
             emitDataChangedForChildren(child);
 
-            // emit signal for child
+            // Q_EMIT signal for child
 
             QModelIndex index = indexForAlbum(child);
-            emit dataChanged(index, index);
+            Q_EMIT dataChanged(index, index);
         }
     }
 }

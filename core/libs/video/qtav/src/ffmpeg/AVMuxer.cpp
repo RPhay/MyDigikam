@@ -303,12 +303,12 @@ static void getFFmpegOutputFormats(QStringList* formats, QStringList* extensions
 
         }
 
-        foreach (const QString& v, e)
+        Q_FOREACH (const QString& v, e)
         {
             exts.append(v.trimmed());
         }
 
-        foreach (const QString& v, f)
+        Q_FOREACH (const QString& v, f)
         {
             fmts.append(v.trimmed());
         }

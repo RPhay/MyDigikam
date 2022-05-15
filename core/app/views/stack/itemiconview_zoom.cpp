@@ -51,7 +51,7 @@ void ItemIconView::slotZoomFactorChanged(double zoom)
 {
     toggleZoomActions();
 
-    emit signalZoomChanged(zoom);
+    Q_EMIT signalZoomChanged(zoom);
 }
 
 void ItemIconView::toggleZoomActions()
@@ -101,7 +101,7 @@ void ItemIconView::slotZoomIn()
     {
         setThumbSize(d->thumbSize + ThumbnailSize::Step);
         toggleZoomActions();
-        emit signalThumbSizeChanged(d->thumbSize);
+        Q_EMIT signalThumbSizeChanged(d->thumbSize);
     }
     else if (viewMode() == StackedView::PreviewImageMode)
     {
@@ -116,7 +116,7 @@ void ItemIconView::slotZoomOut()
     {
         setThumbSize(d->thumbSize - ThumbnailSize::Step);
         toggleZoomActions();
-        emit signalThumbSizeChanged(d->thumbSize);
+        Q_EMIT signalThumbSizeChanged(d->thumbSize);
     }
     else if (viewMode() == StackedView::PreviewImageMode)
     {
@@ -144,7 +144,7 @@ void ItemIconView::slotFitToWindow()
         qCDebug(DIGIKAM_GENERAL_LOG) << "new thumb size = " << nts;
         setThumbSize(nts);
         toggleZoomActions();
-        emit signalThumbSizeChanged(d->thumbSize);
+        Q_EMIT signalThumbSizeChanged(d->thumbSize);
     }
     else if (viewMode() == StackedView::PreviewImageMode)
     {
@@ -176,7 +176,7 @@ void ItemIconView::setThumbSize(int size)
             d->thumbSize = size;
         }
 
-        emit signalThumbSizeChanged(d->thumbSize);
+        Q_EMIT signalThumbSizeChanged(d->thumbSize);
 
         d->thumbSizeTimer->start();
     }

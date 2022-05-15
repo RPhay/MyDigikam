@@ -107,7 +107,7 @@ void RangeModifier::slotTokenTriggered(const QString& token)
 
     delete dlg;
 
-    emit signalTokenTriggered(result);
+    Q_EMIT signalTokenTriggered(result);
 }
 
 QString RangeModifier::parseOperation(ParseSettings& settings, const QRegularExpressionMatch& match)

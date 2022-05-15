@@ -441,7 +441,7 @@ void HealingCloneTool::updateLasso(const std::vector<QPoint>& points)
     uint radius              = 5;
     static uint colorCounter = 0;
 
-    foreach (const QPoint& p, points)
+    Q_FOREACH (const QPoint& p, points)
     {
         for (uint i = 0 ; i < radius ; ++i)
         {
@@ -560,7 +560,7 @@ void HealingCloneTool::slotContinuePolygon()
 
     QVector<QPoint> polygon;
 
-    foreach (const QPoint& point, d->lassoPoints)
+    Q_FOREACH (const QPoint& point, d->lassoPoints)
     {
         polygon.append(point);
     }

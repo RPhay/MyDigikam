@@ -743,7 +743,7 @@ void DFontProperties::Private::_d_family_chosen_slot(const QString& family)
     qtStyles.clear();
     styleIDs.clear();
 
-    foreach (const QString& style, styles)
+    Q_FOREACH (const QString& style, styles)
     {
         // Sometimes the font database will report an invalid style,
         // that falls back to another when set.
@@ -817,7 +817,7 @@ void DFontProperties::Private::_d_family_chosen_slot(const QString& family)
         selFont.setPointSizeF(currentSize);
     }
 
-    emit q->fontSelected(selFont);
+    Q_EMIT q->fontSelected(selFont);
 
     signalsAllowed = true;
 }
@@ -856,7 +856,7 @@ void DFontProperties::Private::_d_style_chosen_slot(const QString& style)
         selFont.setPointSizeF(currentSize);
     }
 
-    emit q->fontSelected(selFont);
+    Q_EMIT q->fontSelected(selFont);
 
     if (!style.isEmpty())
     {
@@ -896,7 +896,7 @@ void DFontProperties::Private::_d_size_chosen_slot(const QString& size)
 
     sizeOfFont->setValue(currentSize);
     selFont.setPointSizeF(currentSize);
-    emit q->fontSelected(selFont);
+    Q_EMIT q->fontSelected(selFont);
 
     if (!size.isEmpty())
     {
@@ -982,7 +982,7 @@ void DFontProperties::Private::_d_size_value_slot(double dval)
 
     selectedSize   = val;
     selFont.setPointSizeF(val);
-    emit q->fontSelected(selFont);
+    Q_EMIT q->fontSelected(selFont);
 
     signalsAllowed = true;
 }
@@ -1061,7 +1061,7 @@ qreal DFontProperties::Private::fillSizeList(const QList<qreal>& sizes_)
 
     std::sort(sizes.begin(), sizes.end());
 
-    foreach (qreal size, sizes)
+    Q_FOREACH (qreal size, sizes)
     {
         sizeListBox->addItem(formatFontSize(size));
     }
@@ -1095,7 +1095,7 @@ qreal DFontProperties::Private::setupSizeListBox(const QString& family, const QS
 
         QList<int> smoothSizes = dbase.smoothSizes(family, style);
 
-        foreach (int size, smoothSizes)
+        Q_FOREACH (int size, smoothSizes)
         {
             sizes.append(size);
         }
@@ -1416,7 +1416,7 @@ QStringList DFontProperties::Private::translateFontNameList(const QStringList& n
     QStringList             trNames;
     QHash<QString, QString> trMap;
 
-    foreach (const QString& name, names)
+    Q_FOREACH (const QString& name, names)
     {
         QString trName = translateFontName(name);
 
@@ -1434,7 +1434,7 @@ QStringList DFontProperties::Private::translateFontNameList(const QStringList& n
 
     // Prepend generic fonts, in the predefined order.
 
-    foreach (const QString& genericName, genericNames)
+    Q_FOREACH (const QString& genericName, genericNames)
     {
         QString trGenericName = translateFontName(genericName);
 

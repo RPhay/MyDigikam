@@ -403,7 +403,7 @@ int ImportView::downloadedCamItemInfos() const
     QList<CamItemInfo> infos = d->iconView->camItemInfos();
     int numberOfDownloaded   = 0;
 
-    foreach (const CamItemInfo& info, infos)
+    Q_FOREACH (const CamItemInfo& info, infos)
     {
         if (info.downloaded == CamItemInfo::DownloadedYes)
         {
@@ -418,7 +418,7 @@ bool ImportView::isSelected(const QUrl& url) const
 {
     QList<QUrl> urlsList = selectedUrls();
 
-    foreach (const QUrl& selected, urlsList)
+    Q_FOREACH (const QUrl& selected, urlsList)
     {
         if (url == selected)
         {   // cppcheck-suppress useStlAlgorithm
@@ -460,7 +460,7 @@ void ImportView::slotImageSelected()
 
     d->needDispatchSelection = true;
     d->selectionTimer->start();
-    emit signalSelectionChanged(d->iconView->numberOfSelectedIndexes());
+    Q_EMIT signalSelectionChanged(d->iconView->numberOfSelectedIndexes());
 }
 
 void ImportView::slotDispatchImageSelected()
@@ -478,9 +478,9 @@ void ImportView::slotDispatchImageSelected()
         if (list.isEmpty())
         {
             d->stackedView->setPreviewItem();
-            emit signalImageSelected(list, allImages);
-            emit signalNewSelection(false);
-            emit signalNoCurrentItem();
+            Q_EMIT signalImageSelected(list, allImages);
+            Q_EMIT signalNewSelection(false);
+            Q_EMIT signalNoCurrentItem();
         }
         else
         {
@@ -499,8 +499,8 @@ void ImportView::slotDispatchImageSelected()
                 d->stackedView->setPreviewItem(list.first(), previousInfo, nextInfo);
             }
 
-            emit signalImageSelected(list, allImages);
-            emit signalNewSelection(true);
+            Q_EMIT signalImageSelected(list, allImages);
+            Q_EMIT signalNewSelection(true);
         }
 
         d->needDispatchSelection = false;
@@ -525,7 +525,7 @@ void ImportView::setZoomFactor(double zoom)
 void ImportView::slotZoomFactorChanged(double zoom)
 {
     toggleZoomActions();
-    emit signalZoomChanged(zoom);
+    Q_EMIT signalZoomChanged(zoom);
 }
 
 void ImportView::setThumbSize(int size)
@@ -550,7 +550,7 @@ void ImportView::setThumbSize(int size)
             d->thumbSize = size;
         }
 
-        emit signalThumbSizeChanged(d->thumbSize);
+        Q_EMIT signalThumbSizeChanged(d->thumbSize);
 
         d->thumbSizeTimer->start();
     }
@@ -614,7 +614,7 @@ void ImportView::slotZoomIn()
     {
         setThumbSize(d->thumbSize + ThumbnailSize::Step);
         toggleZoomActions();
-        emit signalThumbSizeChanged(d->thumbSize);
+        Q_EMIT signalThumbSizeChanged(d->thumbSize);
     }
     else if (d->stackedView->viewMode() == ImportStackedView::PreviewImageMode)
     {
@@ -628,7 +628,7 @@ void ImportView::slotZoomOut()
     {
         setThumbSize(d->thumbSize - ThumbnailSize::Step);
         toggleZoomActions();
-        emit signalThumbSizeChanged(d->thumbSize);
+        Q_EMIT signalThumbSizeChanged(d->thumbSize);
     }
     else if (d->stackedView->viewMode() == ImportStackedView::PreviewImageMode)
     {
@@ -651,7 +651,7 @@ void ImportView::slotFitToWindow()
         int nts = d->iconView->fitToWidthIcons();
         setThumbSize(nts);
         toggleZoomActions();
-        emit signalThumbSizeChanged(d->thumbSize);
+        Q_EMIT signalThumbSizeChanged(d->thumbSize);
     }
     else if (d->stackedView->viewMode() == ImportStackedView::PreviewImageMode)
     {
@@ -685,7 +685,7 @@ void ImportView::slotIconView()
 {
     if (d->stackedView->viewMode() == ImportStackedView::PreviewImageMode)
     {
-        emit signalThumbSizeChanged(d->iconView->thumbnailSize().size());
+        Q_EMIT signalThumbSizeChanged(d->iconView->thumbnailSize().size());
     }
 
     // and switch to icon view
@@ -766,26 +766,26 @@ void ImportView::slotViewModeChanged()
     switch (d->stackedView->viewMode())
     {
         case ImportStackedView::PreviewCameraMode:
-            emit signalSwitchedToIconView();
-            emit signalThumbSizeChanged(d->iconView->thumbnailSize().size());
+            Q_EMIT signalSwitchedToIconView();
+            Q_EMIT signalThumbSizeChanged(d->iconView->thumbnailSize().size());
             break;
 
         case ImportStackedView::PreviewImageMode:
-            emit signalSwitchedToPreview();
+            Q_EMIT signalSwitchedToPreview();
             slotZoomFactorChanged(d->stackedView->zoomFactor());
             break;
 /* TODO
         case ImportStackedView::WelcomePageMode:
-            emit signalSwitchedToIconView();
+            Q_EMIT signalSwitchedToIconView();
             break;
 */
 
         case ImportStackedView::MediaPlayerMode:
-            emit signalSwitchedToPreview();
+            Q_EMIT signalSwitchedToPreview();
             break;
 
         case ImportStackedView::MapWidgetMode:
-            emit signalSwitchedToMapView();
+            Q_EMIT signalSwitchedToMapView();
 
             // TODO: connect map view's zoom buttons to main status bar zoom buttons
 

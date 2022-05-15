@@ -97,7 +97,7 @@ public:
             // do not set d->result here, because the popup
             // hides itself after leaving the event loop.
 
-            emit m_popup->leaveModality();
+            Q_EMIT m_popup->leaveModality();
         }
 
         return false;
@@ -140,7 +140,7 @@ void DPopupFrame::keyPressEvent(QKeyEvent* e)
     if (e->key() == Qt::Key_Escape)
     {
         d->result = 0; // rejected
-        emit leaveModality();
+        Q_EMIT leaveModality();
     }
 }
 
@@ -153,7 +153,7 @@ void DPopupFrame::close(int r)
 {
     d->result = r;
 
-    emit leaveModality();
+    Q_EMIT leaveModality();
 }
 
 void DPopupFrame::setMainWidget(QWidget* const m)

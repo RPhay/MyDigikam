@@ -258,7 +258,7 @@ QMimeData* ImportDragDropHandler::createMimeData(const QList<QModelIndex>& index
 
     QStringList lst;
 
-    foreach (const CamItemInfo& info, infos)
+    Q_FOREACH (const CamItemInfo& info, infos)
     {
         lst.append(info.folder + info.name);
     }

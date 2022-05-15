@@ -262,7 +262,7 @@ void DIO::processJob(IOJobData* const data)
         QStringList      filenames;
         QList<qlonglong> ids;
 
-        foreach (const ItemInfo& info, data->itemInfos())
+        Q_FOREACH (const ItemInfo& info, data->itemInfos())
         {
             filenames << info.name();
             ids << info.id();
@@ -344,7 +344,7 @@ void DIO::createJob(IOJobData* const data)
                                                    QDir::Files   |
                                                    QDir::NoDotAndDotDot);
 
-        foreach (const QUrl& url, data->sourceUrls())
+        Q_FOREACH (const QUrl& url, data->sourceUrls())
         {
             if (dirList.contains(url.adjusted(QUrl::StripTrailingSlash).fileName()))
             {
@@ -515,12 +515,12 @@ void DIO::slotOneProccessed(const QUrl& url)
 
             addAlbumChildrenToList(albumsToDelete, album);
 
-            foreach (int albumId, albumsToDelete)
+            Q_FOREACH (int albumId, albumsToDelete)
             {
                 imagesToRemove << access.db()->getItemIDsInAlbum(albumId);
             }
 
-            foreach (const qlonglong& imageId, imagesToRemove)
+            Q_FOREACH (const qlonglong& imageId, imagesToRemove)
             {
                 access.db()->removeAllImageRelationsFrom(imageId,
                                                          DatabaseRelation::Grouped);
@@ -540,7 +540,7 @@ void DIO::slotOneProccessed(const QUrl& url)
 
                 CoreDbAccess access;
 
-                foreach (const qlonglong& id, imageIds)
+                Q_FOREACH (const qlonglong& id, imageIds)
                 {
                     access.db()->removeItemTag(id, originalVersionTag);
                     access.db()->addItemTag(id, needTaggingTag);
@@ -566,7 +566,7 @@ void DIO::slotOneProccessed(const QUrl& url)
 
             CoreDbAccess access;
 
-            foreach (const qlonglong& id, imageIds)
+            Q_FOREACH (const qlonglong& id, imageIds)
             {
                 access.db()->removeItemTag(id, originalVersionTag);
                 access.db()->addItemTag(id, needTaggingTag);
@@ -656,7 +656,7 @@ void DIO::slotOneProccessed(const QUrl& url)
         scanPaths << url.adjusted(QUrl::RemoveFilename).toLocalFile();
     }
 
-    foreach (const QString& scanPath, scanPaths)
+    Q_FOREACH (const QString& scanPath, scanPaths)
     {
         ScanController::instance()->scheduleCollectionScanRelaxed(scanPath);
     }

@@ -191,7 +191,7 @@ void HSLSettings::slotHSChanged(int h, int s)
     d->hInput->blockSignals(false);
     d->sInput->blockSignals(false);
 
-    emit signalSettingsChanged();
+    Q_EMIT signalSettingsChanged();
 }
 
 void HSLSettings::slotHChanged(double h)

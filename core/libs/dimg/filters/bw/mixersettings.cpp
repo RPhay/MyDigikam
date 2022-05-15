@@ -259,7 +259,7 @@ void MixerSettings::slotOutChannelChanged()
     int index         = d->outChannelCB->currentIndex();
     d->currentChannel = (ChannelType)(d->outChannelCB->itemData(index).toInt());
     updateSettingsWidgets();
-    emit signalOutChannelChanged();
+    Q_EMIT signalOutChannelChanged();
 }
 
 int MixerSettings::currentChannel() const
@@ -307,7 +307,7 @@ void MixerSettings::slotResetCurrentChannel()
     }
 
     updateSettingsWidgets();
-    emit signalSettingsChanged();
+    Q_EMIT signalSettingsChanged();
 }
 
 void MixerSettings::slotGainsChanged()
@@ -350,7 +350,7 @@ void MixerSettings::slotGainsChanged()
     }
 
     updateTotalPercents();
-    emit signalSettingsChanged();
+    Q_EMIT signalSettingsChanged();
 }
 
 void MixerSettings::updateTotalPercents()
@@ -439,14 +439,14 @@ void MixerSettings::slotMonochromeActived(bool mono)
     d->outChannelCB->setCurrentIndex(id);
     slotOutChannelChanged();
 
-    emit signalMonochromeActived(mono);
-    emit signalSettingsChanged();
+    Q_EMIT signalMonochromeActived(mono);
+    Q_EMIT signalSettingsChanged();
 }
 
 void MixerSettings::slotLuminosityChanged(bool lum)
 {
     d->mixerSettings.bPreserveLum = lum;
-    emit signalSettingsChanged();
+    Q_EMIT signalSettingsChanged();
 }
 
 MixerContainer MixerSettings::settings() const

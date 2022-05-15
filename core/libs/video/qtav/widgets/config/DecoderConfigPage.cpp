@@ -228,7 +228,7 @@ DecoderConfigPage::DecoderConfigPage(QWidget* const parent, bool advOptVisible)
     QVector<QtAV::VideoDecoderId> vds_all   = VideoDecoder::registered();
     QVector<QtAV::VideoDecoderId> all       = vids;
 
-    foreach (QtAV::VideoDecoderId vid, vds_all)
+    Q_FOREACH (QtAV::VideoDecoderId vid, vds_all)
     {
         if (!vids.contains(vid))
         {
@@ -238,7 +238,7 @@ DecoderConfigPage::DecoderConfigPage(QWidget* const parent, bool advOptVisible)
 
     mpDecLayout                             = new QVBoxLayout;
 
-    foreach (QtAV::VideoDecoderId vid, all)
+    Q_FOREACH (QtAV::VideoDecoderId vid, all)
     {
         VideoDecoder* const vd      = VideoDecoder::create(vid);
         DecoderItemWidget* const iw = new DecoderItemWidget(scrollAreaWidgetContents, advOptVisible);
@@ -320,7 +320,7 @@ QVariantHash DecoderConfigPage::videoDecoderOptions() const
 {
     QVariantHash options;
 
-    foreach (DecoderItemWidget* const diw, mDecItems)
+    Q_FOREACH (DecoderItemWidget* const diw, mDecItems)
     {
         options[diw->name()] = diw->getOptions();
     }
@@ -333,7 +333,7 @@ void DecoderConfigPage::applyFromUi()
     QStringList decs_all;
     QStringList decs;
 
-    foreach (DecoderItemWidget* const w, mDecItems)
+    Q_FOREACH (DecoderItemWidget* const w, mDecItems)
     {
         decs_all.append(w->name());
 
@@ -356,7 +356,7 @@ void DecoderConfigPage::videoDecoderEnableChanged()
 {
     QStringList names;
 
-    foreach (DecoderItemWidget* const iw, mDecItems)
+    Q_FOREACH (DecoderItemWidget* const iw, mDecItems)
     {
         if (iw->isChecked())
         {
@@ -400,7 +400,7 @@ void DecoderConfigPage::priorityUp()
     QStringList decs_p          = AVPlayerConfigMngr::instance().decoderPriorityNames();
     QStringList decs;
 
-    foreach (DecoderItemWidget* const w, mDecItems)
+    Q_FOREACH (DecoderItemWidget* const w, mDecItems)
     {
         decs_all.append(w->name());
 
@@ -451,7 +451,7 @@ void DecoderConfigPage::priorityDown()
     QStringList decs_p          = AVPlayerConfigMngr::instance().decoderPriorityNames();
     QStringList decs;
 
-    foreach (DecoderItemWidget* const w, mDecItems)
+    Q_FOREACH (DecoderItemWidget* const w, mDecItems)
     {
         decs_all.append(w->name());
 
@@ -501,7 +501,7 @@ void DecoderConfigPage::updateDecodersUi()
 */
     int idx = 0;
 
-    foreach (const QString& nm, all_names)
+    Q_FOREACH (const QString& nm, all_names)
     {
         DecoderItemWidget* iw = nullptr;
 
@@ -554,7 +554,7 @@ QStringList DecoderConfigPage::idsToNames(QVector<VideoDecoderId> ids)
 {
     QStringList decs;
 
-    foreach (int id, ids)
+    Q_FOREACH (int id, ids)
     {
         decs.append(QString::fromLatin1(VideoDecoder::name(id)));
     }
@@ -566,7 +566,7 @@ QVector<VideoDecoderId> DecoderConfigPage::idsFromNames(const QStringList& names
 {
     QVector<VideoDecoderId> decs;
 
-    foreach (const QString& nm, names)
+    Q_FOREACH (const QString& nm, names)
     {
         if (nm.isEmpty())
         {

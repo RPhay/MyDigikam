@@ -332,7 +332,7 @@ bool CharcoalFilter::convolveImage(const unsigned int order, const double* kerne
         );
     }
 
-    foreach (QFuture<void> t, tasks)
+    Q_FOREACH (QFuture<void> t, tasks)
     {
         t.waitForFinished();
     }

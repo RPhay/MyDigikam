@@ -174,7 +174,7 @@ void SketchWidget::slotClear()
     d->drawEventList.clear();
     update();
 
-    emit signalUndoRedoStateChanged(false, false);
+    Q_EMIT signalUndoRedoStateChanged(false, false);
 }
 
 bool SketchWidget::isClear() const
@@ -220,15 +220,15 @@ void SketchWidget::slotUndo()
         d->isClear = true;
         d->pixmap.fill(qRgb(255, 255, 255));
         update();
-        emit signalUndoRedoStateChanged(false, true);
+        Q_EMIT signalUndoRedoStateChanged(false, true);
     }
     else
     {
         replayEvents(d->eventIndex);
 
-        emit signalSketchChanged(sketchImage());
+        Q_EMIT signalSketchChanged(sketchImage());
 
-        emit signalUndoRedoStateChanged(
+        Q_EMIT signalUndoRedoStateChanged(
                                         // cppcheck-suppress knownConditionTrueFalse
                                         (d->eventIndex != -1),
                                         (d->eventIndex != (d->drawEventList.count() - 1))
@@ -247,9 +247,9 @@ void SketchWidget::slotRedo()
     d->isClear = false;
     replayEvents(d->eventIndex);
 
-    emit signalSketchChanged(sketchImage());
+    Q_EMIT signalSketchChanged(sketchImage());
 
-    emit signalUndoRedoStateChanged(
+    Q_EMIT signalUndoRedoStateChanged(
                                     (d->eventIndex != -1),
                                     // cppcheck-suppress knownConditionTrueFalse
                                     (d->eventIndex != (d->drawEventList.count() - 1))
@@ -399,7 +399,7 @@ bool SketchWidget::setSketchImageFromXML(QXmlStreamReader& reader)
     // apply events to our pixmap
 
     replayEvents(d->eventIndex);
-    emit signalUndoRedoStateChanged(d->eventIndex != -1, false);
+    Q_EMIT signalUndoRedoStateChanged(d->eventIndex != -1, false);
 
     return true;
 }
@@ -493,7 +493,7 @@ void SketchWidget::setSketchImage(const QImage& image)
     d->eventIndex = -1;
     d->drawEventList.clear();
 
-    emit signalUndoRedoStateChanged(false, false);
+    Q_EMIT signalUndoRedoStateChanged(false, false);
 
     update();
 }
@@ -515,7 +515,7 @@ void SketchWidget::mousePressEvent(QMouseEvent* e)
         {
             QImage img = d->pixmap.toImage();
 
-            emit signalPenColorChanged((img.pixel(e->pos())));
+            Q_EMIT signalPenColorChanged((img.pixel(e->pos())));
 
             return;
         }
@@ -580,7 +580,7 @@ void SketchWidget::wheelEvent(QWheelEvent* e)
             size -= decr;
         }
 
-        emit signalPenSizeChanged(size);
+        Q_EMIT signalPenSizeChanged(size);
         setCursor(d->drawCursor);
     }
 }
@@ -592,8 +592,8 @@ void SketchWidget::mouseReleaseEvent(QMouseEvent* e)
         QPoint currentPos = e->pos();
         d->currentDrawEvent().lineTo(currentPos);
         d->drawing        = false;
-        emit signalSketchChanged(sketchImage());
-        emit signalUndoRedoStateChanged(true, false);
+        Q_EMIT signalSketchChanged(sketchImage());
+        Q_EMIT signalUndoRedoStateChanged(true, false);
     }
 }
 

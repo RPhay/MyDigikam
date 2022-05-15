@@ -37,7 +37,7 @@ ItemQueryPostHooks::ItemQueryPostHooks()
 
 ItemQueryPostHooks::~ItemQueryPostHooks()
 {
-    foreach (ItemQueryPostHook* const hook, m_postHooks)
+    Q_FOREACH (ItemQueryPostHook* const hook, m_postHooks)
     {
         delete hook;
     }
@@ -50,7 +50,7 @@ void ItemQueryPostHooks::addHook(ItemQueryPostHook* const hook)
 
 bool ItemQueryPostHooks::checkPosition(double latitudeNumber, double longitudeNumber)
 {
-    foreach (ItemQueryPostHook* const hook, m_postHooks)
+    Q_FOREACH (ItemQueryPostHook* const hook, m_postHooks)
     {
         if (!hook->checkPosition(latitudeNumber, longitudeNumber))
         {   // cppcheck-suppress useStlAlgorithm

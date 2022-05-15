@@ -148,7 +148,7 @@ void ItemsPage::setIdentity(const QUrl& url, const QString& identity)
 
 void ItemsPage::slotImageListChanged()
 {
-    emit signalItemsPageIsValid(d->list->imageUrls().count() > 1);
+    Q_EMIT signalItemsPageIsValid(d->list->imageUrls().count() > 1);
 }
 
 void ItemsPage::slotExpoBlendingAction(const DigikamGenericExpoBlendingPlugin::ExpoBlendingActionData& ad)

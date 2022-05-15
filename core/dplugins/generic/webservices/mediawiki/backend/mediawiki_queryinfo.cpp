@@ -223,8 +223,8 @@ void QueryInfo::doWorkProcessReply()
         if (!reader.hasError())
         {
             setError(KJob::NoError);
-            emit protection(protect);
-            emit page(d->page);
+            Q_EMIT protection(protect);
+            Q_EMIT page(d->page);
         }
         else
         {

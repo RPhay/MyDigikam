@@ -729,7 +729,7 @@ QList<int> CoreDB::getTagsWithProperty(const QString& property) const
 
     QList<int> tagIds;
 
-    foreach (const QVariant& var, values)
+    Q_FOREACH (const QVariant& var, values)
     {
         tagIds << var.toInt();
     }
@@ -877,7 +877,7 @@ static QStringList joinMainAndUserFilterString(const QChar& sep, const QString& 
     filterList     = filter.split(sep, QT_SKIP_EMPTY_PARTS);
     userFilterList = userFilter.split(sep, QT_SKIP_EMPTY_PARTS);
 
-    foreach (const QString& userFormat, userFilterList)
+    Q_FOREACH (const QString& userFormat, userFilterList)
     {
         if (userFormat.startsWith(QLatin1Char('-')))
         {
@@ -1080,7 +1080,7 @@ QList<qlonglong> CoreDB::getImageIds(DatabaseItem::Status status) const
 
     QList<qlonglong> imageIds;
 
-    foreach (const QVariant& object, values)
+    Q_FOREACH (const QVariant& object, values)
     {
         imageIds << object.toLongLong();
     }
@@ -1097,7 +1097,7 @@ QList<qlonglong> CoreDB::getImageIds(DatabaseItem::Status status, DatabaseItem::
 
     QList<qlonglong> imageIds;
 
-    foreach (const QVariant& object, values)
+    Q_FOREACH (const QVariant& object, values)
     {
         imageIds << object.toLongLong();
     }
@@ -1209,7 +1209,7 @@ QVector<QList<int> > CoreDB::getItemsTagIDs(const QList<qlonglong>& imageIds) co
         d->db->execSql(query, imageIds[i], &values);
         QList<int>& tagIds = results[i];
 
-        foreach (const QVariant& v, values)
+        Q_FOREACH (const QVariant& v, values)
         {
             tagIds << v.toInt();
         }
@@ -1612,7 +1612,7 @@ QVariantList CoreDB::getItemPositions(QList<qlonglong> imageIDs, DatabaseFields:
 
         DbEngineSqlQuery query = d->db->prepareQuery(sql);
 
-        foreach (const qlonglong& imageid, imageIDs)
+        Q_FOREACH (const qlonglong& imageid, imageIDs)
         {
             QVariantList singleValueList;
             d->db->execSql(query, imageid, &singleValueList);
@@ -2102,7 +2102,7 @@ QList<qlonglong> CoreDB::findByNameAndCreationDate(const QString& fileName, cons
 
     QList<qlonglong> ids;
 
-    foreach (const QVariant& var, values)
+    Q_FOREACH (const QVariant& var, values)
     {
         ids << var.toLongLong();
     }
@@ -2445,7 +2445,7 @@ QList<qlonglong> CoreDB::getOneRelatedImageEach(const QList<qlonglong>& ids, Dat
     QSet<qlonglong>  result;
     QList<QVariant>  values;
 
-    foreach (const qlonglong& id, ids)
+    Q_FOREACH (const qlonglong& id, ids)
     {
         if (type == DatabaseRelation::UndefinedType)
         {
@@ -3109,9 +3109,9 @@ void CoreDB::addTagsToItems(QList<qlonglong> imageIDs, QList<int> tagIDs)
     QVariantList images;
     QVariantList tags;
 
-    foreach (const qlonglong& imageid, imageIDs)
+    Q_FOREACH (const qlonglong& imageid, imageIDs)
     {
-        foreach (int tagid, tagIDs)
+        Q_FOREACH (int tagid, tagIDs)
         {
             images << imageid;
             tags   << tagid;
@@ -3158,9 +3158,9 @@ void CoreDB::removeTagsFromItems(QList<qlonglong> imageIDs, const QList<int>& ta
     QVariantList     images;
     QVariantList     tags;
 
-    foreach (const qlonglong& imageid, imageIDs)
+    Q_FOREACH (const qlonglong& imageid, imageIDs)
     {
-        foreach (int tagid, tagIDs)
+        Q_FOREACH (int tagid, tagIDs)
         {
             images << imageid;
             tags   << tagid;
@@ -3242,7 +3242,7 @@ QList<qlonglong> CoreDB::getObsoleteItemIds() const
 
     QList<qlonglong> imageIds;
 
-    foreach (const QVariant& object, values)
+    Q_FOREACH (const QVariant& object, values)
     {
         imageIds << object.toLongLong();
     }
@@ -3923,7 +3923,7 @@ QList<qlonglong> CoreDB::getAllItems() const
 
     QList<qlonglong> items;
 
-    foreach (const QVariant& item, values)
+    Q_FOREACH (const QVariant& item, values)
     {
         items << item.toLongLong();
     }
@@ -4179,7 +4179,7 @@ QDate CoreDB::getAlbumAverageDate(int albumID) const
 
     qint64 julianDays = 0;
 
-    foreach (const QDate& date, dates)
+    Q_FOREACH (const QDate& date, dates)
     {
         // cppcheck-suppress useStlAlgorithm
         julianDays += date.toJulianDay();
@@ -4230,7 +4230,7 @@ void CoreDB::removeItems(QList<qlonglong> itemIDs, const QList<int>& albumIDs)
     QVariantList imageIds;
     QVariantList status;
 
-    foreach (const qlonglong& id, itemIDs)
+    Q_FOREACH (const qlonglong& id, itemIDs)
     {
         status << (int)DatabaseItem::Trashed;
         imageIds << id;
@@ -4250,7 +4250,7 @@ void CoreDB::removeItemsPermanently(QList<qlonglong> itemIDs, const QList<int>& 
     QVariantList imageIds;
     QVariantList status;
 
-    foreach (const qlonglong& id, itemIDs)
+    Q_FOREACH (const qlonglong& id, itemIDs)
     {
         status   << (int)DatabaseItem::Obsolete;
         imageIds << id;
@@ -4588,7 +4588,7 @@ void CoreDB::clearMetadataFromImage(qlonglong imageID)
     {
         QList<int> tids;
 
-        foreach (const ImageTagProperty& property, properties)
+        Q_FOREACH (const ImageTagProperty& property, properties)
         {
             tids << property.tagId;
         }

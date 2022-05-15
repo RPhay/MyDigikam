@@ -543,7 +543,7 @@ void GPSMarkerTiler::slotMapImagesJobData(const QList<ItemListerRecord>& records
         return;
     }
 
-    foreach (const ItemListerRecord &record, records)
+    Q_FOREACH (const ItemListerRecord &record, records)
     {
         if (record.extraValues.count() < 2)
         {
@@ -644,7 +644,7 @@ void GPSMarkerTiler::slotMapImagesJobResult()
     // qCDebug(DIGIKAM_GENERAL_LOG) << "added" << returnedItemInfo.count()
     //                              << "markers in" << elapsedTimer.nsecsElapsed() / 1e9 << "seconds";
 
-    emit signalTilesOrSelectionChanged();
+    Q_EMIT signalTilesOrSelectionChanged();
 }
 
 /**
@@ -658,7 +658,7 @@ void GPSMarkerTiler::slotThumbnailLoaded(const LoadingDescription& loadingDescri
     QPair<TileIndex, int> indexForPixmap =
     index.value<QPair<TileIndex, int> >();
 */
-    emit signalThumbnailAvailableForIndex(index, thumbnail.copy(1, 1, thumbnail.size().width() - 2, thumbnail.size().height() - 2));
+    Q_EMIT signalThumbnailAvailableForIndex(index, thumbnail.copy(1, 1, thumbnail.size().width() - 2, thumbnail.size().height() - 2));
 }
 
 /**
@@ -689,7 +689,7 @@ void GPSMarkerTiler::slotImageChange(const ImageChangeset& changeset)
         return;
     }
 
-    foreach (const qlonglong& id, changeset.ids())
+    Q_FOREACH (const qlonglong& id, changeset.ids())
     {
         const ItemInfo newItemInfo(id);
 
@@ -759,7 +759,7 @@ void GPSMarkerTiler::slotImageChange(const ImageChangeset& changeset)
         }
     }
 
-    emit signalTilesOrSelectionChanged();
+    Q_EMIT signalTilesOrSelectionChanged();
 }
 
 /**
@@ -773,7 +773,7 @@ void GPSMarkerTiler::slotNewModelData(const QList<ItemInfo>& infoList)
 
     Q_UNUSED(infoList);
 
-    emit signalTilesOrSelectionChanged();
+    Q_EMIT signalTilesOrSelectionChanged();
 }
 
 void GPSMarkerTiler::setRegionSelection(const GeoCoordinates::Pair& sel)
@@ -789,7 +789,7 @@ void GPSMarkerTiler::setRegionSelection(const GeoCoordinates::Pair& sel)
         d->mapGlobalGroupState &= ~RegionSelectedMask;
     }
 
-    emit signalTilesOrSelectionChanged();
+    Q_EMIT signalTilesOrSelectionChanged();
 }
 
 void GPSMarkerTiler::removeCurrentRegionSelection()
@@ -798,7 +798,7 @@ void GPSMarkerTiler::removeCurrentRegionSelection()
 
     d->mapGlobalGroupState &= ~RegionSelectedMask;
 
-    emit signalTilesOrSelectionChanged();
+    Q_EMIT signalTilesOrSelectionChanged();
 }
 
 void GPSMarkerTiler::onIndicesClicked(const ClickInfo& clickInfo)
@@ -807,7 +807,7 @@ void GPSMarkerTiler::onIndicesClicked(const ClickInfo& clickInfo)
 
     QList<qlonglong> clickedImagesId;
 
-    foreach (const TileIndex& tileIndex, clickInfo.tileIndicesList)
+    Q_FOREACH (const TileIndex& tileIndex, clickInfo.tileIndicesList)
     {
         clickedImagesId << getTileMarkerIds(tileIndex);
     }
@@ -854,7 +854,7 @@ void GPSMarkerTiler::onIndicesClicked(const ClickInfo& clickInfo)
     else if (clickInfo.currentMouseMode == MouseModeFilter)
     {
         setPositiveFilterIsActive(true);
-        emit signalModelFilteredImages(clickedImagesId);
+        Q_EMIT signalModelFilteredImages(clickedImagesId);
     }
 }
 
@@ -962,7 +962,7 @@ void GPSMarkerTiler::setPositiveFilterIsActive(const bool state)
 
     QTimer::singleShot(100, this, SIGNAL(signalTilesOrSelectionChanged()));
 /*
-    emit signalTilesOrSelectionChanged();
+    Q_EMIT signalTilesOrSelectionChanged();
 */
 }
 
@@ -973,7 +973,7 @@ void GPSMarkerTiler::slotSelectionChanged(const QItemSelection& selected, const 
     Q_UNUSED(selected);
     Q_UNUSED(deselected);
 
-    emit signalTilesOrSelectionChanged();
+    Q_EMIT signalTilesOrSelectionChanged();
 }
 
 void GPSMarkerTiler::removeMarkerFromTileAndChildren(const qlonglong imageId, const TileIndex& markerTileIndex)

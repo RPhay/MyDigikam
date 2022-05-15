@@ -397,8 +397,8 @@ if(DIGIKAM_CAN_BE_COMPILED)
                     -DQT_NO_NARROWING_CONVERSIONS_IN_CONNECT
                     -DQT_DEPRECATED_WARNINGS_SINCE=0x060000
                     -DQT_DISABLE_DEPRECATED_BEFORE=0x050E00
+                    -DQT_NO_KEYWORDS
 #                    -DQT_NO_FOREACH
-#                    -DQT_NO_KEYWORDS
     )
 
     # ==========================================================================

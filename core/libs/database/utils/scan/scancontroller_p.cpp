@@ -149,7 +149,7 @@ ScanControllerLoadingCacheFileWatch::ScanControllerLoadingCacheFileWatch()
 
 void ScanControllerLoadingCacheFileWatch::slotImageChanged(const ImageChangeset& changeset)
 {
-    foreach (const qlonglong& imageId, changeset.ids())
+    Q_FOREACH (const qlonglong& imageId, changeset.ids())
     {
         DatabaseFields::Set changes = changeset.changes();
 

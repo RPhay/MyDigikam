@@ -234,7 +234,7 @@ void MetadataListView::setIfdList(const DMetadata::MetaDataMap& ifds, const QStr
         (filters.at(0) != QLatin1String("FULL")) &&
         filters.at(0).contains(QLatin1Char('.')))
     {
-        foreach (const QString& key, filters)
+        Q_FOREACH (const QString& key, filters)
         {
             MdKeyListViewItem* pitem = findMdKeyItem(key);
 
@@ -363,7 +363,7 @@ void MetadataListView::setIfdList(const DMetadata::MetaDataMap& ifds, const QStr
         (filters.at(0) != QLatin1String("FULL")) &&
         filters.at(0).contains(QLatin1Char('.')))
     {
-        foreach (const QString& key, filters)
+        Q_FOREACH (const QString& key, filters)
         {
             MdKeyListViewItem* pitem = findMdKeyItem(key);
 
@@ -429,7 +429,7 @@ void MetadataListView::slotSearchTextChanged(const SearchTextSettings& settings)
 
     cleanUpMdKeyItem();
 
-    emit signalTextFilterMatch(query);
+    Q_EMIT signalTextFilterMatch(query);
 }
 
 void MetadataListView::cleanUpMdKeyItem()

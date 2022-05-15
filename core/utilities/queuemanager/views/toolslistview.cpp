@@ -361,7 +361,7 @@ void ToolsListView::slotAssignTools()
 
     QMultiMap<int, QString> map = itemsToMap(items);
 
-    emit signalAssignTools(map);
+    Q_EMIT signalAssignTools(map);
 }
 
 #if (QT_VERSION > QT_VERSION_CHECK(5, 99, 0))
@@ -387,7 +387,7 @@ QMultiMap<int, QString> ToolsListView::itemsToMap(const QList<QTreeWidgetItem*>&
 {
     QMultiMap<int, QString> map;
 
-    foreach (QTreeWidgetItem* const itm, items)
+    Q_FOREACH (QTreeWidgetItem* const itm, items)
     {
         ToolListViewItem* const tlwi = dynamic_cast<ToolListViewItem*>(itm);
 

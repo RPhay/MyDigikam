@@ -255,7 +255,7 @@ void IPTCEditWidget::slotItemChanged()
                      !QFileInfo((*d->dlg->currentItem()).toLocalFile()).isWritable()
                     );
 
-    emit signalSetReadOnly(d->isReadOnly);
+    Q_EMIT signalSetReadOnly(d->isReadOnly);
 
     d->page_content->setEnabled(!d->isReadOnly);
     d->page_origin->setEnabled(!d->isReadOnly);
@@ -296,7 +296,7 @@ void IPTCEditWidget::slotModified()
     if (!d->isReadOnly)
     {
         d->modified = true;
-        emit signalModified();
+        Q_EMIT signalModified();
     }
 }
 

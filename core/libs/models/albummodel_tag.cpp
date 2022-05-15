@@ -136,7 +136,7 @@ void TagModel::activateFaceTagModel()
             setCountMap(faceCount);
             m_unconfirmedFaceCount = uFaceCount;
 
-            foreach (int id, toUpdatedFaces)
+            Q_FOREACH (int id, toUpdatedFaces)
             {
                 Album* const album = albumForId(id);
 
@@ -152,7 +152,7 @@ void TagModel::activateFaceTagModel()
                     continue;
                 }
 
-                emit dataChanged(index, index);
+                Q_EMIT dataChanged(index, index);
             }
         }
     );

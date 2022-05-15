@@ -570,7 +570,7 @@ void CurvesWidget::curveTypeChanged()
     }
 
     update();
-    emit signalCurvesChanged();
+    Q_EMIT signalCurvesChanged();
 }
 
 void CurvesWidget::slotCalculationStarted()
@@ -598,7 +598,7 @@ void CurvesWidget::slotCalculationFinished(bool success)
         d->progressTimer->stop();
         update();
         setCursor(Qt::ArrowCursor);
-        emit signalHistogramComputationFailed();
+        Q_EMIT signalHistogramComputationFailed();
     }
 }
 
@@ -749,7 +749,7 @@ void CurvesWidget::mousePressEvent(QMouseEvent* e)
     }
 
     d->curves->curvesCalculateCurve(d->channelType);
-    emit signalCurvesChanged();
+    Q_EMIT signalCurvesChanged();
     update();
 }
 
@@ -822,7 +822,7 @@ void CurvesWidget::mouseMoveEvent(QMouseEvent* e)
                 }
 
                 d->curves->curvesCalculateCurve(d->channelType);
-                emit signalCurvesChanged();
+                Q_EMIT signalCurvesChanged();
             }
 
             break;
@@ -863,7 +863,7 @@ void CurvesWidget::mouseMoveEvent(QMouseEvent* e)
                 d->grabPoint = x;
                 d->last      = y;
 
-                emit signalCurvesChanged();
+                Q_EMIT signalCurvesChanged();
             }
 
             break;
@@ -872,7 +872,7 @@ void CurvesWidget::mouseMoveEvent(QMouseEvent* e)
 
     d->xMouseOver = x;
     d->yMouseOver = d->imageHistogram->getMaxSegmentIndex() - y;
-    emit signalMouseMoved(d->xMouseOver, d->yMouseOver);
+    Q_EMIT signalMouseMoved(d->xMouseOver, d->yMouseOver);
     update();
 }
 
@@ -880,7 +880,7 @@ void CurvesWidget::leaveEvent(QEvent*)
 {
     d->xMouseOver = -1;
     d->yMouseOver = -1;
-    emit signalMouseMoved(d->xMouseOver, d->yMouseOver);
+    Q_EMIT signalMouseMoved(d->xMouseOver, d->yMouseOver);
     update();
 }
 

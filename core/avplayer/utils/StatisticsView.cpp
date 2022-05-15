@@ -196,7 +196,7 @@ void StatisticsView::setStatistics(const Statistics& s)
     QVariantList v = getBaseInfoValues(s);
     int i          = 0;
 
-    foreach (QTreeWidgetItem* const item, mBaseItems)
+    Q_FOREACH (QTreeWidgetItem* const item, mBaseItems)
     {
         if (item->data(1, Qt::DisplayRole) != v.at(i))
         {
@@ -209,7 +209,7 @@ void StatisticsView::setStatistics(const Statistics& s)
     v = getVideoInfoValues(s);
     i = 0;
 
-    foreach (QTreeWidgetItem* const item, mVideoItems)
+    Q_FOREACH (QTreeWidgetItem* const item, mVideoItems)
     {
         if (item->data(1, Qt::DisplayRole) != v.at(i))
         {
@@ -222,7 +222,7 @@ void StatisticsView::setStatistics(const Statistics& s)
     v = getAudioInfoValues(s);
     i = 0;
 
-    foreach (QTreeWidgetItem* const item, mAudioItems)
+    Q_FOREACH (QTreeWidgetItem* const item, mAudioItems)
     {
         if (item->data(1, Qt::DisplayRole) != v.at(i))
         {
@@ -264,7 +264,7 @@ void StatisticsView::initBaseItems(QList<QTreeWidgetItem*>* items)
 {
     QTreeWidgetItem* item = nullptr;
 
-    foreach (const QString& key, getBaseInfoKeys())
+    Q_FOREACH (const QString& key, getBaseInfoKeys())
     {
         item = new QTreeWidgetItem(0);
         item->setData(0, Qt::DisplayRole, key);
@@ -279,7 +279,7 @@ QTreeWidgetItem* StatisticsView::createNodeWithItems(QTreeWidget* view, const QS
     nodeItem->setData(0, Qt::DisplayRole, name);
     QTreeWidgetItem* item           = nullptr;
 
-    foreach (const QString& key, itemNames)
+    Q_FOREACH (const QString& key, itemNames)
     {
         item = new QTreeWidgetItem(nodeItem);
         item->setData(0, Qt::DisplayRole, key);

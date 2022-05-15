@@ -90,7 +90,7 @@ QList<Identity> FaceDb::identities() const
     d->db->execSql(QLatin1String("SELECT id FROM Identities;"),
                    &ids);
 
-    foreach (const QVariant& v, ids)
+    Q_FOREACH (const QVariant& v, ids)
     {
         QList<QVariant> values;
         Identity p;
@@ -122,7 +122,7 @@ QList<int> FaceDb::identityIds() const
 
     QList<int> results;
 
-    foreach (const QVariant& var, ids)
+    Q_FOREACH (const QVariant& var, ids)
     {
         results << var.toInt();
     }

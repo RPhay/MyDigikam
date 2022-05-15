@@ -85,7 +85,7 @@ void SearchFilterModel::setTypeFilter(int type)
     m_searchType = type;
     invalidateFilter();
 
-    emit signalFilterChanged();
+    Q_EMIT signalFilterChanged();
 }
 
 void SearchFilterModel::setListTemporarySearches(bool list)
@@ -93,7 +93,7 @@ void SearchFilterModel::setListTemporarySearches(bool list)
     m_listTemporary = list;
     invalidateFilter();
 
-    emit signalFilterChanged();
+    Q_EMIT signalFilterChanged();
 }
 
 bool SearchFilterModel::isFiltering() const

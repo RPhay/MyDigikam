@@ -402,13 +402,13 @@ void InsertTextTool::slotAlignModeChanged(int mode)
     }
 
     d->textEdit->textCursor().clearSelection();
-    emit signalUpdatePreview();
+    Q_EMIT signalUpdatePreview();
 }
 
 void InsertTextTool::slotFontPropertiesChanged(const QFont& font)
 {
     d->textFont = font;
-    emit signalUpdatePreview();
+    Q_EMIT signalUpdatePreview();
 }
 
 void InsertTextTool::setBackgroundColor(const QColor& bg)

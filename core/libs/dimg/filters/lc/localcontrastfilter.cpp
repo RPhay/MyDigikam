@@ -373,7 +373,7 @@ void LocalContrastFilter::processRgbImage(float* const img, int sizex, int sizey
                 );
             }
 
-            foreach (QFuture<void> t, tasks)
+            Q_FOREACH (QFuture<void> t, tasks)
             {
                 t.waitForFinished();
             }
@@ -405,7 +405,7 @@ void LocalContrastFilter::processRgbImage(float* const img, int sizex, int sizey
             );
         }
 
-        foreach (QFuture<void> t, tasks)
+        Q_FOREACH (QFuture<void> t, tasks)
         {
             t.waitForFinished();
         }
@@ -511,7 +511,7 @@ void LocalContrastFilter::inplaceBlur(float* const data, int sizex, int sizey, f
             );
         }
 
-        foreach (QFuture<void> t, tasks)
+        Q_FOREACH (QFuture<void> t, tasks)
         {
             t.waitForFinished();
         }
@@ -534,7 +534,7 @@ void LocalContrastFilter::inplaceBlur(float* const data, int sizex, int sizey, f
             );
         }
 
-        foreach (QFuture<void> t, tasks)
+        Q_FOREACH (QFuture<void> t, tasks)
         {
             t.waitForFinished();
         }

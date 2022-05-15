@@ -1082,7 +1082,7 @@ void DSliderSpinBox::setInternalValue(int _value, bool blockUpdateSignal)
 
     if (!blockUpdateSignal)
     {
-        emit valueChanged(value());
+        Q_EMIT valueChanged(value());
     }
 }
 
@@ -1209,7 +1209,7 @@ void DDoubleSliderSpinBox::setInternalValue(int _value, bool blockUpdateSignal)
 
     if (!blockUpdateSignal)
     {
-        emit valueChanged(value());
+        Q_EMIT valueChanged(value());
     }
 }
 

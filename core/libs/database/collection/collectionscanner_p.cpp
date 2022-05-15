@@ -125,7 +125,7 @@ void CollectionScannerHintContainerImplementation::recordHints(const QList<Album
 {
     QWriteLocker locker(&lock);
 
-    foreach (const AlbumCopyMoveHint& hint, hints)
+    Q_FOREACH (const AlbumCopyMoveHint& hint, hints)
     {
         // automagic casting to src and dst
 
@@ -137,7 +137,7 @@ void CollectionScannerHintContainerImplementation::recordHints(const QList<ItemC
 {
     QWriteLocker locker(&lock);
 
-    foreach (const ItemCopyMoveHint& hint, hints)
+    Q_FOREACH (const ItemCopyMoveHint& hint, hints)
     {
         QList<qlonglong> ids = hint.srcIds();
         QStringList dstNames = hint.dstNames();
@@ -153,7 +153,7 @@ void CollectionScannerHintContainerImplementation::recordHints(const QList<ItemC
 {
     QWriteLocker locker(&lock);
 
-    foreach (const ItemChangeHint& hint, hints)
+    Q_FOREACH (const ItemChangeHint& hint, hints)
     {
         const QList<qlonglong>& ids = hint.ids();
 

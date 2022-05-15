@@ -338,7 +338,7 @@ void ImportSettings::readSettings()
 
     // ---------------------------------------------------------------------
 
-    emit setupChanged();
+    Q_EMIT setupChanged();
 }
 
 void ImportSettings::saveSettings()
@@ -393,7 +393,7 @@ void ImportSettings::saveSettings()
 
 void ImportSettings::emitSetupChanged()
 {
-    emit setupChanged();
+    Q_EMIT setupChanged();
 }
 
 void ImportSettings::setImageSortOrder(int order)

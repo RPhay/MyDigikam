@@ -105,7 +105,7 @@ void AlbumManager::slotDatesJobResult()
 
     d->dateListJob = nullptr;
 
-    emit signalAllDAlbumsLoaded();
+    Q_EMIT signalAllDAlbumsLoaded();
 }
 
 void AlbumManager::slotDatesJobData(const QHash<QDateTime, int>& datesStatHash)
@@ -208,22 +208,22 @@ void AlbumManager::slotDatesJobData(const QHash<QDateTime, int>& datesStatHash)
         if (!yAlbum)
         {
             yAlbum = new DAlbum(QDate(year, 1, 1), false, DAlbum::Year);
-            emit signalAlbumAboutToBeAdded(yAlbum, d->rootDAlbum, d->rootDAlbum->lastChild());
+            Q_EMIT signalAlbumAboutToBeAdded(yAlbum, d->rootDAlbum, d->rootDAlbum->lastChild());
             yAlbum->setParent(d->rootDAlbum);
             d->allAlbumsIdHash.insert(yAlbum->globalID(), yAlbum);
-            emit signalAlbumAdded(yAlbum);
+            Q_EMIT signalAlbumAdded(yAlbum);
         }
 
         // Create Month album
 
         DAlbum* const mAlbum = new DAlbum(md);
 
-        emit signalAlbumAboutToBeAdded(mAlbum, yAlbum, yAlbum->lastChild());
+        Q_EMIT signalAlbumAboutToBeAdded(mAlbum, yAlbum, yAlbum->lastChild());
 
         mAlbum->setParent(yAlbum);
         d->allAlbumsIdHash.insert(mAlbum->globalID(), mAlbum);
 
-        emit signalAlbumAdded(mAlbum);
+        Q_EMIT signalAlbumAdded(mAlbum);
     }
 
     // Now the items contained in the maps are the ones which
@@ -233,36 +233,36 @@ void AlbumManager::slotDatesJobData(const QHash<QDateTime, int>& datesStatHash)
          it6 != mAlbumMap.constEnd() ; ++it6)
     {
         DAlbum* const album = it6.value();
-        emit signalAlbumAboutToBeDeleted(album);
+        Q_EMIT signalAlbumAboutToBeDeleted(album);
         d->allAlbumsIdHash.remove(album->globalID());
 
-        emit signalAlbumDeleted(album);
+        Q_EMIT signalAlbumDeleted(album);
 
         quintptr deletedAlbum = reinterpret_cast<quintptr>(album);
         delete album;
 
-        emit signalAlbumHasBeenDeleted(deletedAlbum);
+        Q_EMIT signalAlbumHasBeenDeleted(deletedAlbum);
     }
 
     for (QMap<int, DAlbum*>::const_iterator it7 = yAlbumMap.constBegin() ;
          it7 != yAlbumMap.constEnd() ; ++it7)
     {
         DAlbum* const album = it7.value();
-        emit signalAlbumAboutToBeDeleted(album);
+        Q_EMIT signalAlbumAboutToBeDeleted(album);
         d->allAlbumsIdHash.remove(album->globalID());
 
-        emit signalAlbumDeleted(album);
+        Q_EMIT signalAlbumDeleted(album);
 
         quintptr deletedAlbum = reinterpret_cast<quintptr>(album);
         delete album;
 
-        emit signalAlbumHasBeenDeleted(deletedAlbum);
+        Q_EMIT signalAlbumHasBeenDeleted(deletedAlbum);
     }
 
     d->dAlbumsCount = yearMonthMap;
 
-    emit signalDAlbumsDirty(yearMonthMap);
-    emit signalDatesHashDirty(datesStatHash);
+    Q_EMIT signalDAlbumsDirty(yearMonthMap);
+    Q_EMIT signalDatesHashDirty(datesStatHash);
 }
 
 void AlbumManager::scanDAlbumsScheduled()

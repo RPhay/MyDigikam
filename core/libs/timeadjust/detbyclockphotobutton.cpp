@@ -59,7 +59,7 @@ void DetByClockPhotoButton::dropEvent(QDropEvent* event)
 
         QUrl url = mimeData->urls().constFirst();
         qCDebug(DIGIKAM_GENERAL_LOG) << "Dropped clock photo:" << url;
-        emit signalClockPhotoDropped(url);
+        Q_EMIT signalClockPhotoDropped(url);
     }
 }
 

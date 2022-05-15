@@ -37,13 +37,13 @@ void TagsManagerFilterModel::setQuickListTags(const QList<int>& tags)
 {
     m_keywords.clear();
 
-    foreach (int tag, tags)
+    Q_FOREACH (int tag, tags)
     {
         m_keywords << tag;
     }
 
     invalidateFilter();
-    emit signalFilterChanged();
+    Q_EMIT signalFilterChanged();
 }
 
 bool TagsManagerFilterModel::matches(Album* album) const

@@ -215,7 +215,7 @@ void BlackFrameListViewItem::slotHotPixelsParsed(const QList<HotPixelProps>& hot
 
 void BlackFrameListViewItem::emitHotPixelsParsed()
 {
-    emit signalHotPixelsParsed(d->hotPixels, d->blackFrameUrl);
+    Q_EMIT signalHotPixelsParsed(d->hotPixels, d->blackFrameUrl);
 }
 
 } // namespace Digikam

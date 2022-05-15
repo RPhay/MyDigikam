@@ -320,7 +320,7 @@ QMimeData* AbstractAlbumModel::mimeData(const QModelIndexList& indexes) const
 
     QList<Album*> albums;
 
-    foreach (const QModelIndex& index, indexes)
+    Q_FOREACH (const QModelIndex& index, indexes)
     {
         Album* const a = albumForIndex(index);
 
@@ -513,7 +513,7 @@ void AbstractAlbumModel::slotAlbumAdded(Album* album)
 
         if (isRoot)
         {
-            emit rootAlbumAvailable();
+            Q_EMIT rootAlbumAvailable();
         }
     }
 }
@@ -569,7 +569,7 @@ void AbstractAlbumModel::slotAlbumIconChanged(Album* album)
     }
 
     QModelIndex index = indexForAlbum(album);
-    emit dataChanged(index, index);
+    Q_EMIT dataChanged(index, index);
 }
 
 void AbstractAlbumModel::slotAlbumRenamed(Album* album)
@@ -580,7 +580,7 @@ void AbstractAlbumModel::slotAlbumRenamed(Album* album)
     }
 
     QModelIndex index = indexForAlbum(album);
-    emit dataChanged(index, index);
+    Q_EMIT dataChanged(index, index);
 }
 
 } // namespace Digikam

@@ -223,8 +223,8 @@ void SinglePhotoPreviewLayout::setZoomFactor(double z, const QPoint& givenAnchor
     updateLayout();
     d->item->update();
 
-    emit fitToWindowToggled(d->isFitToWindow);
-    emit zoomFactorChanged(d->zoomSettings()->zoomFactor());
+    Q_EMIT fitToWindowToggled(d->isFitToWindow);
+    Q_EMIT zoomFactorChanged(d->zoomSettings()->zoomFactor());
 
     if (flags & CenterView)
     {
@@ -264,8 +264,8 @@ void SinglePhotoPreviewLayout::fitToWindow()
     updateLayout();
     d->item->update();
 
-    emit fitToWindowToggled(d->isFitToWindow);
-    emit zoomFactorChanged(d->zoomSettings()->zoomFactor());
+    Q_EMIT fitToWindowToggled(d->isFitToWindow);
+    Q_EMIT zoomFactorChanged(d->zoomSettings()->zoomFactor());
 }
 
 void SinglePhotoPreviewLayout::toggleFitToWindow()

@@ -71,7 +71,7 @@ static QList<A*> selectedAlbums(QItemSelectionModel* const selModel,
     const QList<QModelIndex> indexes = selModel->selectedIndexes();
     QList<A*> albums;
 
-    foreach (const QModelIndex& index, indexes)
+    Q_FOREACH (const QModelIndex& index, indexes)
     {
         albums << static_cast<A*>(filterModel->albumForIndex(index));
     }
@@ -142,7 +142,7 @@ public:
 
         m_height = height;
 
-        emit sizeHintChanged(QModelIndex());
+        Q_EMIT sizeHintChanged(QModelIndex());
     }
 
 protected:

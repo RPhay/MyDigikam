@@ -161,7 +161,7 @@ void ItemThumbnailModel::prepareThumbnails(const QList<QModelIndex>& indexesToPr
 
     QList<ThumbnailIdentifier> ids;
 
-    foreach (const QModelIndex& index, indexesToPrepare)
+    Q_FOREACH (const QModelIndex& index, indexesToPrepare)
     {
         ids << imageInfoRef(index).thumbnailIdentifier();
     }
@@ -178,7 +178,7 @@ void ItemThumbnailModel::preloadThumbnails(const QList<ItemInfo>& infos)
 
     QList<ThumbnailIdentifier> ids;
 
-    foreach (const ItemInfo& info, infos)
+    Q_FOREACH (const ItemInfo& info, infos)
     {
         ids << info.thumbnailIdentifier();
     }
@@ -196,7 +196,7 @@ void ItemThumbnailModel::preloadThumbnails(const QList<QModelIndex>& indexesToPr
 
     QList<ThumbnailIdentifier> ids;
 
-    foreach (const QModelIndex& index, indexesToPreload)
+    Q_FOREACH (const QModelIndex& index, indexesToPreload)
     {
         ids << imageInfoRef(index).thumbnailIdentifier();
     }
@@ -342,19 +342,19 @@ void ItemThumbnailModel::slotThumbnailLoaded(const LoadingDescription& loadingDe
         indexes = indexesForPath(thumbId.filePath);
     }
 
-    foreach (const QModelIndex& index, indexes)
+    Q_FOREACH (const QModelIndex& index, indexes)
     {
         if (thumb.isNull())
         {
-            emit thumbnailFailed(index, loadingDescription.previewParameters.size);
+            Q_EMIT thumbnailFailed(index, loadingDescription.previewParameters.size);
         }
         else
         {
-            emit thumbnailAvailable(index, loadingDescription.previewParameters.size);
+            Q_EMIT thumbnailAvailable(index, loadingDescription.previewParameters.size);
 
             if (d->emitDataChanged)
             {
-                emit dataChanged(index, index, d->staticListContainingThumbnailRole);
+                Q_EMIT dataChanged(index, index, d->staticListContainingThumbnailRole);
             }
         }
     }

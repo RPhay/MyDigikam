@@ -53,7 +53,7 @@ void ShowfotoInfoIface::openSetupPage(SetupPage page)
         {
             if (ShowfotoSetup::execExifTool(nullptr))
             {
-                emit signalSetupChanged();
+                Q_EMIT signalSetupChanged();
             }
         }
 

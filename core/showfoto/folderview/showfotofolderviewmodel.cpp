@@ -136,7 +136,7 @@ void ShowfotoFolderViewModel::refreshThumbnails(const LoadingDescription& desc, 
 
     if (current.isValid() && !pix.isNull())
     {
-        emit dataChanged(current, current);
+        Q_EMIT dataChanged(current, current);
     }
 }
 

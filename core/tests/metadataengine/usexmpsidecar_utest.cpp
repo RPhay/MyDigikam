@@ -123,7 +123,7 @@ void UseXmpSidecarTest::useXmpSidecar(const QString& file,
 
     int count = tags.count();
 
-    foreach (const QString& tag, newTags)
+    Q_FOREACH (const QString& tag, newTags)
     {
         if (tags.contains(tag))
         {

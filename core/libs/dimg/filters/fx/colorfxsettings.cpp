@@ -279,7 +279,7 @@ void ColorFXSettings::slotEffectTypeChanged(int type)
     d->iterationInput->blockSignals(false);
     d->levelInput->blockSignals(false);
 
-    emit signalSettingsChanged();
+    Q_EMIT signalSettingsChanged();
 }
 
 ColorFXContainer ColorFXSettings::settings() const
@@ -360,7 +360,7 @@ void ColorFXSettings::findLuts()
                                           QLatin1String("digikam/data/lut3d"),
                                           QStandardPaths::LocateDirectory);
 
-    foreach (const QString& dirpath, dirpaths)
+    Q_FOREACH (const QString& dirpath, dirpaths)
     {
         QDirIterator dirIt(dirpath, QDirIterator::Subdirectories);
 

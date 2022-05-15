@@ -66,7 +66,7 @@ void RecognitionWorker::process(FacePipelineExtendedPackage::Ptr package)
     package->recognitionResults  = recognizer.recognizeFaces(images);
     package->processFlags       |= FacePipelinePackage::ProcessedByRecognizer;
 
-    emit processed(package);
+    Q_EMIT processed(package);
 }
 
 void RecognitionWorker::setThreshold(double threshold, bool)

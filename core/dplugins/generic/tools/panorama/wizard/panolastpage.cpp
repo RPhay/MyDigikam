@@ -215,7 +215,7 @@ void PanoLastPage::checkFiles()
     if      (panoFile.exists() || (d->savePtoCheckBox->isChecked() && ptoFile.exists()))
     {
         setComplete(false);
-        emit completeChanged();
+        Q_EMIT completeChanged();
         d->warningLabel->setText(QString::fromUtf8("<qt><p><font color=\"red\"><b>%1:</b> %2.</font></p></qt>")
                                  .arg(i18nc("@title: dialog", "Warning"))
                                  .arg(i18nc("@label", "This file already exists")));
@@ -224,7 +224,7 @@ void PanoLastPage::checkFiles()
     else if (!rawsOk)
     {
         setComplete(true);
-        emit completeChanged();
+        Q_EMIT completeChanged();
         d->warningLabel->setText(QString::fromUtf8("<qt><p><font color=\"orange\"><b>:</b> %2.</font></p></qt>")
                                  .arg(i18nc("@title: dialog", "Warning"))
                                  .arg(i18nc("@label", "One or more converted raw files already exists (they will be skipped during the copying process)")));
@@ -233,7 +233,7 @@ void PanoLastPage::checkFiles()
     else
     {
         setComplete(true);
-        emit completeChanged();
+        Q_EMIT completeChanged();
         d->warningLabel->hide();
     }
 }
@@ -329,7 +329,7 @@ void PanoLastPage::slotPanoAction(const DigikamGenericPanoramaPlugin::PanoAction
                                this, SLOT(slotPanoAction(DigikamGenericPanoramaPlugin::PanoActionData)));
 
                     d->copyDone = true;
-                    emit signalCopyFinished();
+                    Q_EMIT signalCopyFinished();
                     break;
                 }
 

@@ -302,7 +302,7 @@ void RatingComboBoxWidget::setRatingValue(RatingComboBox::RatingValue value)
     blockSignals(false);
 
     update();
-    emit ratingValueChanged(m_value);
+    Q_EMIT ratingValueChanged(m_value);
 }
 
 void RatingComboBoxWidget::slotRatingChanged(int rating)
@@ -312,7 +312,7 @@ void RatingComboBoxWidget::slotRatingChanged(int rating)
     if (m_value != newValue)
     {
         m_value = newValue;
-        emit ratingValueChanged(m_value);
+        Q_EMIT ratingValueChanged(m_value);
     }
 }
 
@@ -445,7 +445,7 @@ void RatingComboBox::currentValueChanged(const QModelIndex& current, const QMode
     m_ratingWidget->setRatingValue(value);
     m_syncing         = false;
 
-    emit ratingValueChanged(value);
+    Q_EMIT ratingValueChanged(value);
 }
 
 void RatingComboBox::ratingWidgetChanged(int rv)
@@ -462,7 +462,7 @@ void RatingComboBox::ratingWidgetChanged(int rv)
     setCurrentIndex(index);
     m_syncing         = false;
 
-    emit ratingValueChanged(value);
+    Q_EMIT ratingValueChanged(value);
 }
 
 } // namespace Digikam

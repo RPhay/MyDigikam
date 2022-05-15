@@ -212,7 +212,7 @@ void DPointSelect::mouseMoveEvent(QMouseEvent* e)
     valuesFromPosition(e->pos().x() - w, e->pos().y() - w, xVal, yVal);
     setValues(xVal, yVal);
 
-    emit valueChanged(d->xPos, d->yPos);
+    Q_EMIT valueChanged(d->xPos, d->yPos);
 }
 
 void DPointSelect::wheelEvent(QWheelEvent* e)
@@ -228,7 +228,7 @@ void DPointSelect::wheelEvent(QWheelEvent* e)
         setValues(xValue(), yValue() + delta.y() / 120);
     }
 
-    emit valueChanged(d->xPos, d->yPos);
+    Q_EMIT valueChanged(d->xPos, d->yPos);
 }
 
 void DPointSelect::valuesFromPosition(int x, int y, int& xVal, int& yVal) const

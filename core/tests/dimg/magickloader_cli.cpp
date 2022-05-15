@@ -199,7 +199,7 @@ int main(int argc, char** argv)
 
     if (!list.isEmpty())
     {
-        foreach (const QString& path, list)
+        Q_FOREACH (const QString& path, list)
         {
             QImage qimg;
             bool ret = loadWithImageMagick(path, qimg);

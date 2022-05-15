@@ -161,7 +161,7 @@ bool DBinaryIface::versionIsRight(const float customVersion) const
 
 QString DBinaryIface::findHeader(const QStringList& output, const QString& header) const
 {
-    foreach (const QString& s, output)
+    Q_FOREACH (const QString& s, output)
     {
         if (s.startsWith(header))
         {   // cppcheck-suppress useStlAlgorithm
@@ -236,7 +236,7 @@ void DBinaryIface::slotNavigateAndCheck()
 
     if (checkDirForPath(dir))
     {
-        emit signalSearchDirectoryAdded(dir);
+        Q_EMIT signalSearchDirectoryAdded(dir);
     }
 }
 
@@ -382,7 +382,7 @@ bool DBinaryIface::checkDirForPath(const QString& possibleDir)
         }
     }
 
-    emit signalBinaryValid();
+    Q_EMIT signalBinaryValid();
 
     return ret;
 }
@@ -396,7 +396,7 @@ bool DBinaryIface::recheckDirectories()
         return true;
     }
 
-    foreach (const QString& dir, m_searchPaths)
+    Q_FOREACH (const QString& dir, m_searchPaths)
     {
         checkDirForPath(dir);
 

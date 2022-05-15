@@ -181,7 +181,7 @@ ThumbsDbInfo ThumbsDb::findByFilePath(const QString& path, const QString& unique
         return info;
     }
 
-    foreach (const QVariant& hash, values)
+    Q_FOREACH (const QVariant& hash, values)
     {
         if (hash == uniqueHash)
         {   // cppcheck-suppress useStlAlgorithm
@@ -212,7 +212,7 @@ QList<int> ThumbsDb::findAll()
 
     QList<int> thumbIds;
 
-    foreach (const QVariant& object, values)
+    Q_FOREACH (const QVariant& object, values)
     {
         thumbIds << object.toInt();
     }

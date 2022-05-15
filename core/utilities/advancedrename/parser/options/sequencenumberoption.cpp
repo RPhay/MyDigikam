@@ -130,7 +130,7 @@ void SequenceNumberOption::slotTokenTriggered(const QString& token)
 
     delete dlg;
 
-    emit signalTokenTriggered(result);
+    Q_EMIT signalTokenTriggered(result);
 }
 
 QString SequenceNumberOption::parseOperation(ParseSettings& settings, const QRegularExpressionMatch& match)

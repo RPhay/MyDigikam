@@ -55,7 +55,7 @@ void TagPropertiesFilterModel::listOnlyTagsWithProperty(const QString& property)
     m_propertiesWhiteList << property;
     invalidateFilter();
 
-    emit signalFilterChanged();
+    Q_EMIT signalFilterChanged();
 }
 
 void TagPropertiesFilterModel::removeListOnlyProperty(const QString& property)
@@ -68,7 +68,7 @@ void TagPropertiesFilterModel::removeListOnlyProperty(const QString& property)
     m_propertiesWhiteList.remove(property);
     invalidateFilter();
 
-    emit signalFilterChanged();
+    Q_EMIT signalFilterChanged();
 }
 
 void TagPropertiesFilterModel::doNotListTagsWithProperty(const QString& property)
@@ -81,7 +81,7 @@ void TagPropertiesFilterModel::doNotListTagsWithProperty(const QString& property
     m_propertiesBlackList << property;
     invalidateFilter();
 
-    emit signalFilterChanged();
+    Q_EMIT signalFilterChanged();
 }
 
 void TagPropertiesFilterModel::removeDoNotListProperty(const QString& property)
@@ -94,7 +94,7 @@ void TagPropertiesFilterModel::removeDoNotListProperty(const QString& property)
     m_propertiesBlackList.remove(property);
     invalidateFilter();
 
-    emit signalFilterChanged();
+    Q_EMIT signalFilterChanged();
 }
 
 bool TagPropertiesFilterModel::isFiltering() const
@@ -125,7 +125,7 @@ bool TagPropertiesFilterModel::matches(Album* album) const
 
     TAlbum* const talbum = static_cast<TAlbum*>(album);
 
-    foreach (const QString& prop, m_propertiesBlackList)
+    Q_FOREACH (const QString& prop, m_propertiesBlackList)
     {
         if (talbum->hasProperty(prop))
         {   // cppcheck-suppress useStlAlgorithm
@@ -133,7 +133,7 @@ bool TagPropertiesFilterModel::matches(Album* album) const
         }
     }
 
-    foreach (const QString& prop, m_propertiesWhiteList)
+    Q_FOREACH (const QString& prop, m_propertiesWhiteList)
     {
         if (!talbum->hasProperty(prop))
         {   // cppcheck-suppress useStlAlgorithm

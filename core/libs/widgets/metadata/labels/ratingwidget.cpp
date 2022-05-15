@@ -149,10 +149,10 @@ void RatingWidget::setRating(int val)
 
     if (d->tracking)
     {
-        emit signalRatingChanged(d->rating);
+        Q_EMIT signalRatingChanged(d->rating);
     }
 
-    emit signalRatingModified(d->rating);
+    Q_EMIT signalRatingModified(d->rating);
     update();
 }
 
@@ -308,10 +308,10 @@ void RatingWidget::mousePressEvent(QMouseEvent* e)
 
     if (d->tracking)
     {
-        emit signalRatingChanged(d->rating);
+        Q_EMIT signalRatingChanged(d->rating);
     }
 
-    emit signalRatingModified(d->rating);
+    Q_EMIT signalRatingModified(d->rating);
     update();
 }
 
@@ -349,10 +349,10 @@ void RatingWidget::mouseMoveEvent(QMouseEvent* e)
 
         if (d->tracking)
         {
-            emit signalRatingChanged(d->rating);
+            Q_EMIT signalRatingChanged(d->rating);
         }
 
-        emit signalRatingModified(d->rating);
+        Q_EMIT signalRatingModified(d->rating);
         update();
     }
 }
@@ -369,7 +369,7 @@ void RatingWidget::mouseReleaseEvent(QMouseEvent* e)
         return;
     }
 
-    emit signalRatingChanged(d->rating);
+    Q_EMIT signalRatingChanged(d->rating);
 }
 
 void RatingWidget::slotThemeChanged()

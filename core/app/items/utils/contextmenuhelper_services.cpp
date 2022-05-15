@@ -54,7 +54,7 @@ void ContextMenuHelper::addServicesMenu(const QList<QUrl>& selectedItems)
         QAction* const serviceAction = servicesMenu->menuAction();
         serviceAction->setText(i18nc("@action: context menu", "Open With"));
 
-        foreach (const QUrl& aurl, appUrls)
+        Q_FOREACH (const QUrl& aurl, appUrls)
         {
             QAction* const action = servicesMenu->addAction(DServiceMenu::MacApplicationBundleName(aurl));
             action->setIcon(DServiceMenu::MacApplicationBundleIcon(aurl));
@@ -79,7 +79,7 @@ void ContextMenuHelper::addServicesMenu(const QList<QUrl>& selectedItems)
         QAction* const serviceAction = servicesMenu->menuAction();
         serviceAction->setText(i18nc("@action: context menu", "Open With"));
 
-        foreach (const KService::Ptr& service, offers)
+        Q_FOREACH (const KService::Ptr& service, offers)
         {
             QString name          = service->name().replace(QLatin1Char('&'), QLatin1String("&&"));
             QAction* const action = servicesMenu->addAction(name);

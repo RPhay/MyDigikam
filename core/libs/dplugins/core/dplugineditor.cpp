@@ -87,7 +87,7 @@ int DPluginEditor::count() const
     int count       = 0;
     QObject* parent = nullptr;
 
-    foreach (DPluginAction* const ac, d->actions)
+    Q_FOREACH (DPluginAction* const ac, d->actions)
     {
         if (ac)
         {
@@ -111,7 +111,7 @@ int DPluginEditor::count() const
 
 void DPluginEditor::setVisible(bool b)
 {
-    foreach (DPluginAction* const ac, d->actions)
+    Q_FOREACH (DPluginAction* const ac, d->actions)
     {
         if (ac)
         {
@@ -124,7 +124,7 @@ QList<DPluginAction*> DPluginEditor::actions(QObject* const parent) const
 {
     QList<DPluginAction*> list;
 
-    foreach (DPluginAction* const ac, d->actions)
+    Q_FOREACH (DPluginAction* const ac, d->actions)
     {
         if (ac && (ac->parent() == parent))
         {
@@ -139,7 +139,7 @@ QList<DPluginAction*> DPluginEditor::actions(QObject* const parent) const
 
 DPluginAction* DPluginEditor::findActionByName(const QString& name, QObject* const parent) const
 {
-    foreach (DPluginAction* const ac, actions(parent))
+    Q_FOREACH (DPluginAction* const ac, actions(parent))
     {
         if (ac && (ac->objectName() == name))
         {    // cppcheck-suppress useStlAlgorithm
@@ -161,7 +161,7 @@ QStringList DPluginEditor::categories() const
 {
     QStringList list;
 
-    foreach (DPluginAction* const ac, d->actions)
+    Q_FOREACH (DPluginAction* const ac, d->actions)
     {
         QString cat = ac->actionCategoryToString();
 

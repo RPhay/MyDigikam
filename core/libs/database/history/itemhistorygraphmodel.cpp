@@ -416,7 +416,7 @@ void ItemHistoryGraphModel::Private::buildImagesList()
 {
     QList<HistoryGraph::Vertex> verticesOrdered = graph().verticesDepthFirstSorted(path.first(), sortBy(oldestInfoFirst));  // clazy:exclude=missing-typeinfo
 
-    foreach (const HistoryGraph::Vertex& v, verticesOrdered)
+    Q_FOREACH (const HistoryGraph::Vertex& v, verticesOrdered)
     {
         rootItem->addItem(createVertexItem(v));
     }
@@ -435,7 +435,7 @@ void ItemHistoryGraphModel::Private::buildImagesTree()
     VertexItem* item                            = nullptr;
     VertexItem* previousItem                    = nullptr;
 
-    foreach (const HistoryGraph::Vertex& v, verticesOrdered)
+    Q_FOREACH (const HistoryGraph::Vertex& v, verticesOrdered)
     {
         int currentLevel = distances.value(v);
 
@@ -521,7 +521,7 @@ void ItemHistoryGraphModel::Private::buildCombinedTree(const HistoryGraph::Verte
 
         QList<HistoryGraph::Vertex> sources = graph().adjacentVertices(item->vertex, HistoryGraph::EdgesToRoot);    // clazy:exclude=missing-typeinfo
 
-        foreach (const HistoryGraph::Vertex& source, sources)
+        Q_FOREACH (const HistoryGraph::Vertex& source, sources)
         {
             if (source != previous)
             {
@@ -535,7 +535,7 @@ void ItemHistoryGraphModel::Private::buildCombinedTree(const HistoryGraph::Verte
         QList<HistoryGraph::Vertex> branches = graph().adjacentVertices(v, HistoryGraph::EdgesToLeaf);
         QList<HistoryGraph::Vertex> subgraph;
 
-        foreach (const HistoryGraph::Vertex& branch, branches)
+        Q_FOREACH (const HistoryGraph::Vertex& branch, branches)
         {
             if (branch != next)
             {
@@ -550,7 +550,7 @@ void ItemHistoryGraphModel::Private::buildCombinedTree(const HistoryGraph::Verte
 
         HistoryEdgeProperties props = graph().properties(v, previous);
 
-        foreach (const FilterAction& action, props.actions)
+        Q_FOREACH (const FilterAction& action, props.actions)
         {
             rootItem->addItem(createFilterActionItem(action));
         }
@@ -568,7 +568,7 @@ void ItemHistoryGraphModel::Private::buildCombinedTree(const HistoryGraph::Verte
         }
     }
 
-    foreach (const HistoryGraph::Vertex& v, added)
+    Q_FOREACH (const HistoryGraph::Vertex& v, added)
     {
         leavesFromRef.removeOne(v);
     }
@@ -578,7 +578,7 @@ void ItemHistoryGraphModel::Private::buildCombinedTree(const HistoryGraph::Verte
         addCombinedItemCategory(rootItem, leavesFromRef, i18nc("@title", "Derived Images"), ref, added);
     }
 
-    foreach (const HistoryGraph::Vertex& v, added)
+    Q_FOREACH (const HistoryGraph::Vertex& v, added)
     {
         currentVersions.removeOne(v);
     }
@@ -608,7 +608,7 @@ void ItemHistoryGraphModel::Private::addCombinedItemCategory(HistoryTreeItem* pa
     bool isFirst     = true;
     VertexItem* item = nullptr;
 
-    foreach (const HistoryGraph::Vertex& v, vertices)
+    Q_FOREACH (const HistoryGraph::Vertex& v, vertices)
     {
         if (isFirst)
         {
@@ -629,7 +629,7 @@ void ItemHistoryGraphModel::Private::addCombinedItemCategory(HistoryTreeItem* pa
         {
             HistoryEdgeProperties props = graph().properties(shortestPath.at(i), shortestPath.at(i-1));
 
-            foreach (const FilterAction& action, props.actions)
+            Q_FOREACH (const FilterAction& action, props.actions)
             {
                 parentItem->addItem(createFilterActionItem(action));
             }
@@ -643,7 +643,7 @@ void ItemHistoryGraphModel::Private::addCombinedItemCategory(HistoryTreeItem* pa
         shortestPath.removeOne(showActionsFrom);
         shortestPath.removeOne(v);
 
-        foreach (const HistoryGraph::Vertex& addedVertex, added)
+        Q_FOREACH (const HistoryGraph::Vertex& addedVertex, added)
         {
             shortestPath.removeOne(addedVertex);
         }
@@ -666,7 +666,7 @@ void ItemHistoryGraphModel::Private::addItemSubgroup(VertexItem* parent,
     parent->addItem(header);
     HistoryTreeItem* const addToItem = flat ? static_cast<HistoryTreeItem*>(parent) : static_cast<HistoryTreeItem*>(header);
 
-    foreach (const HistoryGraph::Vertex& v, vertices)
+    Q_FOREACH (const HistoryGraph::Vertex& v, vertices)
     {
         addToItem->addItem(createVertexItem(v));
     }
@@ -809,7 +809,7 @@ QModelIndex ItemHistoryGraphModel::indexForInfo(const ItemInfo& info) const
 
     // try with primary info
 
-    foreach (VertexItem* const item, d->vertexItems)
+    Q_FOREACH (VertexItem* const item, d->vertexItems)
     {
         if (ItemModel::retrieveItemInfo(item->index) == info)
         {    // cppcheck-suppress useStlAlgorithm
@@ -819,7 +819,7 @@ QModelIndex ItemHistoryGraphModel::indexForInfo(const ItemInfo& info) const
 
     // try all associated infos
 
-    foreach (VertexItem* const item, d->vertexItems)
+    Q_FOREACH (VertexItem* const item, d->vertexItems)
     {
         if (d->graph().properties(item->vertex).infos.contains(info))
         {

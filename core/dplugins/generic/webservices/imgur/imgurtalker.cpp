@@ -177,23 +177,23 @@ void ImgurTalker::slotOauthAuthorized()
     }
     else
     {
-        emit signalBusy(false);
+        Q_EMIT signalBusy(false);
     }
 
-    emit signalAuthorized(success,
+    Q_EMIT signalAuthorized(success,
                           d->auth.extraTokens()[QLatin1String("account_username")].toString());
 }
 
 void ImgurTalker::slotOauthRequestPin(const QUrl& url)
 {
-    emit signalBusy(false);
-    emit signalRequestPin(url);
+    Q_EMIT signalBusy(false);
+    Q_EMIT signalRequestPin(url);
 }
 
 void ImgurTalker::slotOauthFailed()
 {
     cancelAllWork();
-    emit signalAuthError(i18n("Could not authorize"));
+    Q_EMIT signalAuthError(i18n("Could not authorize"));
 }
 
 void ImgurTalker::slotUploadProgress(qint64 sent, qint64 total)
@@ -202,7 +202,7 @@ void ImgurTalker::slotUploadProgress(qint64 sent, qint64 total)
 
     if (total > 0)
     {
-        emit signalProgress((sent * 100) / total, d->workQueue.first());
+        Q_EMIT signalProgress((sent * 100) / total, d->workQueue.first());
     }
 }
 
@@ -268,7 +268,7 @@ void ImgurTalker::slotReplyFinished()
                 break;
         }
 
-        emit signalSuccess(result);
+        Q_EMIT signalSuccess(result);
     }
     else
     {
@@ -276,7 +276,7 @@ void ImgurTalker::slotReplyFinished()
         {
             /**
              * HTTP 403 Forbidden -> Invalid token?
-             * That needs to be handled internally, so don't emit signalProgress
+             * That needs to be handled internally, so don't Q_EMIT signalProgress
              * and keep the action in the queue for later retries.
              */
             d->auth.refresh();
@@ -290,7 +290,7 @@ void ImgurTalker::slotReplyFinished()
                        .toObject()[QLatin1String("error")]
                        .toString(QLatin1String("Could not read response."));
 
-            emit signalError(msg, d->workQueue.first());
+            Q_EMIT signalError(msg, d->workQueue.first());
         }
     }
 
@@ -323,11 +323,11 @@ void ImgurTalker::startWorkTimer()
     if (!d->workQueue.isEmpty() && d->workTimer == 0)
     {
         d->workTimer = QObject::startTimer(0);
-        emit signalBusy(true);
+        Q_EMIT signalBusy(true);
     }
     else
     {
-        emit signalBusy(false);
+        Q_EMIT signalBusy(false);
     }
 }
 
@@ -390,7 +390,7 @@ void ImgurTalker::doWork()
                 d->image = nullptr;
 
                 // Failed.
-                emit signalError(i18n("Could not open file"), d->workQueue.first());
+                Q_EMIT signalError(i18n("Could not open file"), d->workQueue.first());
 
                 d->workQueue.dequeue();
                 doWork();

@@ -133,13 +133,13 @@ GSTalkerBase::~GSTalkerBase()
 
 void GSTalkerBase::link()
 {
-    emit signalBusy(true);
+    Q_EMIT signalBusy(true);
     d->o2->link();
 }
 
 void GSTalkerBase::unlink()
 {
-    emit signalBusy(true);
+    Q_EMIT signalBusy(true);
 
     d->o2->unlink();
 
@@ -155,8 +155,8 @@ void GSTalkerBase::slotLinkingFailed()
 {
     qCDebug(DIGIKAM_WEBSERVICES_LOG) << "LINK to " << m_serviceName << " fail";
 
-    emit signalBusy(false);
-    emit signalAuthenticationRefused();
+    Q_EMIT signalBusy(false);
+    Q_EMIT signalAuthenticationRefused();
 }
 
 void GSTalkerBase::slotLinkingSucceeded()
@@ -164,7 +164,7 @@ void GSTalkerBase::slotLinkingSucceeded()
     if (!d->o2->linked())
     {
         qCDebug(DIGIKAM_WEBSERVICES_LOG) << "UNLINK to " << m_serviceName << " ok";
-        emit signalBusy(false);
+        Q_EMIT signalBusy(false);
         return;
     }
 
@@ -173,7 +173,7 @@ void GSTalkerBase::slotLinkingSucceeded()
     m_accessToken       = d->o2->token();
     m_bearerAccessToken = QLatin1String("Bearer ") + m_accessToken;
 
-    emit signalAccessTokenObtained();
+    Q_EMIT signalAccessTokenObtained();
 }
 
 void GSTalkerBase::slotOpenBrowser(const QUrl& url)

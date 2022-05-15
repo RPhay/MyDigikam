@@ -259,7 +259,7 @@ void AbstractAlbumTreeView::slotSearchTextSettingsAboutToChange(bool searched, b
         // selection is ignored here because the user may have changed this
         // while searching
 
-        foreach (const int& expandedId, expansion)
+        Q_FOREACH (const int& expandedId, expansion)
         {
             d->searchBackup[expandedId].expanded = true;
         }
@@ -447,14 +447,14 @@ void AbstractAlbumTreeView::slotCurrentChanged()
         return;
     }
 
-    emit currentAlbumChanged(cAlbum);
+    Q_EMIT currentAlbumChanged(cAlbum);
 }
 
 void AbstractAlbumTreeView::slotSelectionChanged()
 {
     // FIXME: Dead signal? Nobody listens to it
 /*
-    emit selectedAlbumsChanged(selectedAlbums<Album>(selectionModel(), m_albumFilterModel));
+    Q_EMIT selectedAlbumsChanged(selectedAlbums<Album>(selectionModel(), m_albumFilterModel));
 */
     if (d->selectAlbumOnClick)
     {
@@ -644,7 +644,7 @@ void AbstractAlbumTreeView::doLoadState()
 /*
     qCDebug(DIGIKAM_GENERAL_LOG) << "selection: " << selection;
 */
-    foreach (const QString& key, selection)
+    Q_FOREACH (const QString& key, selection)
     {
         bool validId;
         const int id = key.toInt(&validId);
@@ -667,7 +667,7 @@ void AbstractAlbumTreeView::doLoadState()
     {
         QList<AlbumRootInfo> roots = CoreDbAccess().db()->getAlbumRoots();
 
-        foreach (const AlbumRootInfo& info, roots)
+        Q_FOREACH (const AlbumRootInfo& info, roots)
         {
             int albumId = CoreDbAccess().db()->getAlbumForPath(info.id, QLatin1String("/"), false);
 
@@ -679,7 +679,7 @@ void AbstractAlbumTreeView::doLoadState()
     }
     else
     {
-        foreach (const QString& key, expansion)
+        Q_FOREACH (const QString& key, expansion)
         {
             bool validId;
             const int id = key.toInt(&validId);
@@ -873,7 +873,7 @@ void AbstractAlbumTreeView::slotExpandNode()
     QItemSelectionModel* const model = selectionModel();
     QModelIndexList selected         = model->selectedIndexes();
 
-    foreach (const QModelIndex& index, selected)
+    Q_FOREACH (const QModelIndex& index, selected)
     {
         expandRecursively(index);
     }
@@ -886,7 +886,7 @@ void AbstractAlbumTreeView::slotCollapseNode()
 
     QQueue<QModelIndex> greyNodes;
 
-    foreach (const QModelIndex& index, selected)
+    Q_FOREACH (const QModelIndex& index, selected)
     {
         greyNodes.append(index);
         collapse(index);
@@ -1129,7 +1129,7 @@ void AbstractAlbumTreeView::contextMenuEvent(QContextMenuEvent* event)
 
     addCustomContextMenuActions(cmhelper, album);
 
-    foreach (ContextMenuElement* const element, d->contextMenuElements)
+    Q_FOREACH (ContextMenuElement* const element, d->contextMenuElements)
     {
         element->addActions(this, cmhelper, album);
     }

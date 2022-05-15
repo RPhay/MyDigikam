@@ -174,7 +174,7 @@ void DigikamApp::setupActions()
 
     // -----------------------------------------------------------------
 
-    foreach (SidebarWidget* const leftWidget, d->view->leftSidebarWidgets())
+    Q_FOREACH (SidebarWidget* const leftWidget, d->view->leftSidebarWidgets())
     {
         QString actionName = QLatin1String("browse_") + leftWidget->objectName()
                                                         .remove(QLatin1Char(' '))
@@ -1073,7 +1073,7 @@ void DigikamApp::initGui()
     d->openWithAction->setEnabled(false);
     d->imageAutoExifActionMenu->setEnabled(false);
 
-    foreach (DPluginAction* const ac, DPluginLoader::instance()->pluginsActions(DPluginAction::GenericMetadata, this))
+    Q_FOREACH (DPluginAction* const ac, DPluginLoader::instance()->pluginsActions(DPluginAction::GenericMetadata, this))
     {
         ac->setEnabled(false);
     }

@@ -219,7 +219,7 @@ void PanoPreProcessPage::initializePage()
     d->preprocessingDone = false;
 
     setComplete(true);
-    emit completeChanged();
+    Q_EMIT completeChanged();
 }
 
 bool PanoPreProcessPage::validatePage()
@@ -316,7 +316,7 @@ void PanoPreProcessPage::slotPanoAction(const DigikamGenericPanoramaPlugin::Pano
                         d->detailsText->setText(ad.message);
 
                         setComplete(false);
-                        emit completeChanged();
+                        Q_EMIT completeChanged();
 
                     }
                     break;
@@ -361,7 +361,7 @@ void PanoPreProcessPage::slotPanoAction(const DigikamGenericPanoramaPlugin::Pano
                     d->progressLabel->clear();
                     d->preprocessingDone = true;
 
-                    emit signalPreProcessed();
+                    Q_EMIT signalPreProcessed();
                     initializePage();
 
                     break;

@@ -152,7 +152,7 @@ void QueryImages::doWorkProcessReply()
 
         if (!reader.hasError())
         {
-            emit images(imagesReceived);
+            Q_EMIT images(imagesReceived);
 
             if (!d->imcontinue.isNull())
             {

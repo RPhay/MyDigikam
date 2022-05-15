@@ -337,11 +337,11 @@ void TableViewTreeView::wheelEvent(QWheelEvent* event)
 
         if      (delta > 0)
         {
-            emit signalZoomInStep();
+            Q_EMIT signalZoomInStep();
         }
         else if (delta < 0)
         {
-            emit signalZoomOutStep();
+            Q_EMIT signalZoomOutStep();
         }
 
         event->accept();

@@ -365,7 +365,7 @@ QVector<Uniform> ParseUniforms(const QByteArray &text, GLuint programId = 0)
     const QString exp(QStringLiteral("\\s*uniform\\s+([\\w\\d]+)\\s+([\\w\\d]+)\\s*"));
     const QString exp_array = exp + QStringLiteral("\\[(\\d+)\\]\\s*");
 
-    foreach (QString line, lines)
+    Q_FOREACH (QString line, lines)
     {
         line = line.trimmed();
 

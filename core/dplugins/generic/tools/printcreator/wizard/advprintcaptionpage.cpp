@@ -255,7 +255,7 @@ void AdvPrintCaptionPage::slotUpdateCaptions()
 {
     if (d->settings->photos.size())
     {
-        foreach (AdvPrintPhoto* const pPhoto, d->settings->photos)
+        Q_FOREACH (AdvPrintPhoto* const pPhoto, d->settings->photos)
         {
             updateCaption(pPhoto);
 

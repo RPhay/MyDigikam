@@ -354,7 +354,7 @@ void AssignNameOverlay::slotAssigned(const TaggingAction& action, const ItemInfo
 
     if (tagId)
     {
-        emit confirmFaces(affectedIndexes(index()), tagId);
+        Q_EMIT confirmFaces(affectedIndexes(index()), tagId);
     }
 
     hide();
@@ -365,7 +365,7 @@ void AssignNameOverlay::slotRejected(const ItemInfo& info, const QVariant& faceI
     Q_UNUSED(info);
     Q_UNUSED(faceIdentifier);
 
-    emit removeFaces(affectedIndexes(index()));
+    Q_EMIT removeFaces(affectedIndexes(index()));
     hide();
 }
 
@@ -374,7 +374,7 @@ void AssignNameOverlay::slotIgnored(const ItemInfo& info, const QVariant& faceId
     Q_UNUSED(info);
     Q_UNUSED(faceIdentifier);
 
-    emit ignoreFaces(affectedIndexes(index()));
+    Q_EMIT ignoreFaces(affectedIndexes(index()));
     hide();
 }
 
@@ -383,7 +383,7 @@ void AssignNameOverlay::slotUnknown(const ItemInfo& info, const QVariant& faceId
     Q_UNUSED(info);
     Q_UNUSED(faceIdentifier);
 
-    emit unknownFaces(affectedIndexes(index()));
+    Q_EMIT unknownFaces(affectedIndexes(index()));
     hide();
 }
 

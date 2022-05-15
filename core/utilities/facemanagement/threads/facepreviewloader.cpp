@@ -59,7 +59,7 @@ void FacePreviewLoader::process(FacePipelineExtendedPackage::Ptr package)
 {
     if (!package->image.isNull())
     {
-        emit processed(package);
+        Q_EMIT processed(package);
         return;
     }
 
@@ -107,7 +107,7 @@ void FacePreviewLoader::slotImageLoaded(const LoadingDescription& loadingDescrip
 
     package->processFlags |= FacePipelinePackage::PreviewImageLoaded;
 
-    emit processed(package);
+    Q_EMIT processed(package);
 }
 
 bool FacePreviewLoader::sentOutLimitReached()

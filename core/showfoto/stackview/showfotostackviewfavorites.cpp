@@ -227,7 +227,7 @@ ShowfotoStackViewFavorites::~ShowfotoStackViewFavorites()
 
 QAction* ShowfotoStackViewFavorites::toolBarAction(const QString& name) const
 {
-    foreach (QAction* const act, d->actionsList)
+    Q_FOREACH (QAction* const act, d->actionsList)
     {
         if (act && (act->objectName() == name))
         {
@@ -493,7 +493,7 @@ void ShowfotoStackViewFavorites::slotFavoriteDoubleClicked(QTreeWidgetItem* item
 
     if (fvitem && (fvitem->favoriteType() == ShowfotoStackViewFavoriteItem::FavoriteItem))
     {
-        emit signalLoadContentsFromFiles(fvitem->urlsToPaths(), fvitem->currentUrl().toLocalFile());
+        Q_EMIT signalLoadContentsFromFiles(fvitem->urlsToPaths(), fvitem->currentUrl().toLocalFile());
     }
 }
 
@@ -559,7 +559,7 @@ bool ShowfotoStackViewFavorites::saveSettings()
             QDomElement urls = doc.createElement(QLatin1String("UrlsList"));
             elem.appendChild(urls);
 
-            foreach (const QUrl& url, item->urls())
+            Q_FOREACH (const QUrl& url, item->urls())
             {
                 QDomElement e = doc.createElement(QLatin1String("Url"));
                 e.setAttribute(QLatin1String("value"), url.toLocalFile());

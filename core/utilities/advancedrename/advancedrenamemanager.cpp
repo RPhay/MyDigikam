@@ -136,12 +136,12 @@ void AdvancedRenameManager::setSortAction(SortAction action)
 
     QList<QUrl> list;
 
-    foreach (const QString& file, d->files)
+    Q_FOREACH (const QString& file, d->files)
     {
         list << QUrl::fromLocalFile(file);
     }
 
-    emit signalSortingChanged(list);
+    Q_EMIT signalSortingChanged(list);
 }
 
 AdvancedRenameManager::SortAction AdvancedRenameManager::sortAction() const
@@ -156,12 +156,12 @@ void AdvancedRenameManager::setSortDirection(SortDirection direction)
 
     QList<QUrl> list;
 
-    foreach (const QString& file, d->files)
+    Q_FOREACH (const QString& file, d->files)
     {
         list << QUrl::fromLocalFile(file);
     }
 
-    emit signalSortingChanged(list);
+    Q_EMIT signalSortingChanged(list);
 }
 
 AdvancedRenameManager::SortDirection AdvancedRenameManager::sortDirection() const
@@ -256,7 +256,7 @@ void AdvancedRenameManager::parseFiles(const QString& parseString)
 
     d->parser->reset();
 
-    foreach (const QString& file, d->files)
+    Q_FOREACH (const QString& file, d->files)
     {
         QUrl url              = QUrl::fromLocalFile(file);
         ParseSettings settings;
@@ -278,7 +278,7 @@ void AdvancedRenameManager::parseFiles(const QString& parseString, const ParseSe
 
     d->parser->reset();
 
-    foreach (const QString& file, d->files)
+    Q_FOREACH (const QString& file, d->files)
     {
         QUrl url               = QUrl::fromLocalFile(file);
         ParseSettings settings = _settings;
@@ -293,7 +293,7 @@ void AdvancedRenameManager::parseFiles(const QString& parseString, const ParseSe
 
 void AdvancedRenameManager::addFiles(const QList<ParseSettings>& files)
 {
-    foreach (const ParseSettings& ps, files)
+    Q_FOREACH (const ParseSettings& ps, files)
     {
         addFile(ps.fileUrl.toLocalFile(), ps.creationTime);
     }
@@ -375,7 +375,7 @@ QMap<QString, QString> AdvancedRenameManager::newFileList(bool checkFileSystem) 
     {
         QMap<QString, QString> renamedFiles;
 
-        foreach (const QString& fileName, d->renamedFiles.keys())
+        Q_FOREACH (const QString& fileName, d->renamedFiles.keys())
         {
             renamedFiles[fileName] = newName(fileName);
         }
@@ -406,7 +406,7 @@ bool AdvancedRenameManager::initialize()
     {
         int counter = 1;
 
-        foreach (const QString& file, d->files)
+        Q_FOREACH (const QString& file, d->files)
         {
             d->fileIndexMap[file] = counter++;
         }
@@ -417,7 +417,7 @@ bool AdvancedRenameManager::initialize()
     {
         int counter = 1;
 
-        foreach (const QString& file, d->files)
+        Q_FOREACH (const QString& file, d->files)
         {
             if (!d->fileGroupIndexMap.contains(fileGroupKey(file)))
             {
@@ -431,7 +431,7 @@ bool AdvancedRenameManager::initialize()
     {
         QMap<QString, QList<QString> > dirMap;
 
-        foreach (const QString& file, d->files)
+        Q_FOREACH (const QString& file, d->files)
         {
             QFileInfo fi(file);
             QString path = fi.absolutePath();
@@ -447,11 +447,11 @@ bool AdvancedRenameManager::initialize()
             }
         }
 
-        foreach (const QString& dir, dirMap.keys())
+        Q_FOREACH (const QString& dir, dirMap.keys())
         {
             int index = 0;
 
-            foreach (const QString& f, dirMap[dir])
+            Q_FOREACH (const QString& f, dirMap[dir])
             {
                 if (!d->folderIndexMap.contains(f))
                 {

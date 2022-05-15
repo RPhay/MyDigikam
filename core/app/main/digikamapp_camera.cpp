@@ -49,7 +49,7 @@ void DigikamApp::downloadFrom(const QString& cameraGuiPath)
             d->splashScreen->setMessage(i18n("Opening Download Dialog..."));
         }
 
-        emit queuedOpenCameraUiFromPath(cameraGuiPath);
+        Q_EMIT queuedOpenCameraUiFromPath(cameraGuiPath);
     }
 }
 
@@ -64,7 +64,7 @@ void DigikamApp::downloadFromUdi(const QString& udi)
             d->splashScreen->setMessage(i18n("Opening Download Dialog..."));
         }
 
-        emit queuedOpenSolidDevice(udi);
+        Q_EMIT queuedOpenSolidDevice(udi);
     }
 }
 
@@ -113,18 +113,18 @@ void DigikamApp::updateCameraMenu()
 {
     d->cameraMenu->clear();
 
-    foreach (QAction* const action, d->solidCameraActionGroup->actions())
+    Q_FOREACH (QAction* const action, d->solidCameraActionGroup->actions())
     {
         d->cameraMenu->addAction(action);
     }
 
     d->cameraMenu->addSeparator();
 
-    foreach (QAction* const action, d->manualCameraActionGroup->actions())
+    Q_FOREACH (QAction* const action, d->manualCameraActionGroup->actions())
     {
         // remove duplicate entries, prefer manually added cameras
 
-        foreach (QAction* const actionSolid, d->solidCameraActionGroup->actions())
+        Q_FOREACH (QAction* const actionSolid, d->solidCameraActionGroup->actions())
         {
             if (CameraNameHelper::sameDevices(actionSolid->iconText(), action->iconText()))
             {
@@ -257,7 +257,7 @@ void DigikamApp::downloadImages(const QString& folder)
 
         KWindowSystem::activateWindow(winId());
 
-        emit queuedOpenCameraUiFromPath(folder);
+        Q_EMIT queuedOpenCameraUiFromPath(folder);
     }
 }
 

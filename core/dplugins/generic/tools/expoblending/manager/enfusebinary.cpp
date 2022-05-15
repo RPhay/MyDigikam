@@ -50,7 +50,7 @@ bool EnfuseBinary::parseHeader(const QString& output)
         QStringList versionList = version().split(QLatin1Char('.'));
         versionList.removeLast();
         versionDouble = versionList.join(QLatin1Char('.')).toDouble();
-        emit signalEnfuseVersion(versionDouble);
+        Q_EMIT signalEnfuseVersion(versionDouble);
         qCDebug(DIGIKAM_DPLUGIN_GENERIC_LOG) << "Found " << path() << " version: " << version();
         return true;
     }
@@ -60,7 +60,7 @@ bool EnfuseBinary::parseHeader(const QString& output)
         QStringList versionList = version().split(QLatin1Char('.'));
         versionList.removeLast();
         versionDouble = versionList.join(QLatin1Char('.')).toDouble();
-        emit signalEnfuseVersion(versionDouble);
+        Q_EMIT signalEnfuseVersion(versionDouble);
         qCDebug(DIGIKAM_DPLUGIN_GENERIC_LOG) << "Found " << path() << " version: " << version();
         return true;
     }

@@ -132,7 +132,7 @@ void IpfsTalker::uploadProgress(qint64 sent, qint64 total)
 {
     if (total > 0) // Don't divide by 0
     {
-        emit progress((sent * 100) / total, d->workQueue.first());
+        Q_EMIT progress((sent * 100) / total, d->workQueue.first());
     }
 }
 
@@ -184,14 +184,14 @@ void IpfsTalker::replyFinished()
             }
         }
 
-        emit success(result);
+        Q_EMIT success(result);
     }
     else
     {
         if (netCode == 403)
         {
             /* HTTP 403 Forbidden -> Invalid token?
-             * That needs to be handled internally, so don't emit progress
+             * That needs to be handled internally, so don't Q_EMIT progress
              * and keep the action in the queue for later retries.
              */
             return;
@@ -205,7 +205,7 @@ void IpfsTalker::replyFinished()
                        .toObject()[QLatin1String("error")]
                        .toString(QLatin1String("Could not read response."));
 
-            emit error(msg, d->workQueue.first());
+            Q_EMIT error(msg, d->workQueue.first());
         }
     }
 
@@ -238,11 +238,11 @@ void IpfsTalker::startWorkTimer()
     if (!d->workQueue.empty() && (d->workTimer == 0))
     {
         d->workTimer = QObject::startTimer(0);
-        emit busy(true);
+        Q_EMIT busy(true);
     }
     else
     {
-        emit busy(false);
+        Q_EMIT busy(false);
     }
 }
 
@@ -277,7 +277,7 @@ void IpfsTalker::doWork()
 
                 /* Failed. */
 
-                emit error(i18n("Could not open file"), d->workQueue.first());
+                Q_EMIT error(i18n("Could not open file"), d->workQueue.first());
 
                 d->workQueue.dequeue();
                 doWork();

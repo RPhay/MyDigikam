@@ -107,8 +107,8 @@ void IpfsImagesList::slotAddImages(const QList<QUrl>& list)
         }
     }
 
-    emit signalImageListChanged();
-    emit signalAddItems(list);
+    Q_EMIT signalImageListChanged();
+    Q_EMIT signalAddItems(list);
 }
 
 void IpfsImagesList::slotSuccess(const IpfsTalkerResult& result)

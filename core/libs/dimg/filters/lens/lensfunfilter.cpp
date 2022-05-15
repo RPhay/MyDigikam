@@ -295,7 +295,7 @@ void LensFunFilter::filterImage()
             );
         }
 
-        foreach (QFuture<void> t, tasks)
+        Q_FOREACH (QFuture<void> t, tasks)
         {
             t.waitForFinished();
         }
@@ -324,7 +324,7 @@ void LensFunFilter::filterImage()
             );
         }
 
-        foreach (QFuture<void> t, tasks)
+        Q_FOREACH (QFuture<void> t, tasks)
         {
             t.waitForFinished();
         }
@@ -363,7 +363,7 @@ void LensFunFilter::filterImage()
             );
         }
 
-        foreach (QFuture<void> t, tasks)
+        Q_FOREACH (QFuture<void> t, tasks)
         {
             t.waitForFinished();
         }

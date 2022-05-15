@@ -54,13 +54,13 @@ protected:
 
     void run() override
     {
-        emit signalStarted();
+        Q_EMIT signalStarted();
 
         QImage image;
 
         if (m_cancel) return;
 
-        emit signalProgress(20);
+        Q_EMIT signalProgress(20);
 
         DRawDecoder* const rawProcessor = new DRawDecoder;
 
@@ -70,7 +70,7 @@ protected:
             return;
         }
 
-        emit signalProgress(30);
+        Q_EMIT signalProgress(30);
 
         QFileInfo input(fileUrl.toLocalFile());
         QString   fullFilePath(input.baseName() + QString::fromLatin1(".full.png"));
@@ -82,7 +82,7 @@ protected:
             return;
         }
 
-        emit signalProgress(40);
+        Q_EMIT signalProgress(40);
 
         if (!rawProcessor->loadFullImage(image, fileUrl.toLocalFile(), settings))
         {
@@ -97,7 +97,7 @@ protected:
             return;
         }
 
-        emit signalProgress(60);
+        Q_EMIT signalProgress(60);
 
         qCDebug(DIGIKAM_TESTS_LOG) << "raw2png: Saving full RAW image to "
                  << fullOutput.fileName() << " size ("
@@ -110,11 +110,11 @@ protected:
             return;
         }
 
-        emit signalProgress(80);
+        Q_EMIT signalProgress(80);
 
         image.save(fullFilePath, "PNG");
 
-        emit signalDone();
+        Q_EMIT signalDone();
 
         delete rawProcessor;
     }
@@ -136,7 +136,7 @@ void RAWToPNGConverterThread::convertRAWtoPNG(const QList<QUrl>& list, const DRa
 {
     ActionJobCollection collection;
 
-    foreach (const QUrl& url, list)
+    Q_FOREACH (const QUrl& url, list)
     {
         Mytask* const job = new Mytask();
         job->fileUrl      = url;
@@ -170,11 +170,11 @@ void RAWToPNGConverterThread::slotJobDone()
 
     if (task->errString.isEmpty())
     {
-        emit finished(task->fileUrl);
+        Q_EMIT finished(task->fileUrl);
     }
     else
     {
-        emit failed(task->fileUrl, task->errString);
+        Q_EMIT failed(task->fileUrl, task->errString);
     }
 }
 
@@ -187,7 +187,7 @@ void RAWToPNGConverterThread::slotJobProgress(int p)
         return;
     }
 
-    emit progress(task->fileUrl, p);
+    Q_EMIT progress(task->fileUrl, p);
 }
 
 void RAWToPNGConverterThread::slotJobStarted()
@@ -199,7 +199,7 @@ void RAWToPNGConverterThread::slotJobStarted()
         return;
     }
 
-    emit starting(task->fileUrl);
+    Q_EMIT starting(task->fileUrl);
 }
 
 #include "rawtopngconverterthread.moc"

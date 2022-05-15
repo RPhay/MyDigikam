@@ -431,7 +431,7 @@ void RawSettingsBox::resetSettings()
 void RawSettingsBox::slotResetCurve()
 {
     d->curveWidget->reset();
-    emit signalPostProcessingChanged();
+    Q_EMIT signalPostProcessingChanged();
 }
 
 CurvesWidget* RawSettingsBox::curvesWidget() const

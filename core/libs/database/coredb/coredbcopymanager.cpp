@@ -68,7 +68,7 @@ void CoreDbCopyManager::copyDatabases(const DbEngineParameters& fromDBParameters
 
     if (!fromDBbackend.open(fromDBParameters))
     {
-        emit finished(CoreDbCopyManager::failed, i18n("Error while opening the source database."));
+        Q_EMIT finished(CoreDbCopyManager::failed, i18n("Error while opening the source database."));
 
         return;
     }
@@ -78,7 +78,7 @@ void CoreDbCopyManager::copyDatabases(const DbEngineParameters& fromDBParameters
 
     if (!toDBbackend.open(toDBParameters))
     {
-        emit finished(CoreDbCopyManager::failed, i18n("Error while opening the target database."));
+        Q_EMIT finished(CoreDbCopyManager::failed, i18n("Error while opening the target database."));
 
         fromDBbackend.close();
 
@@ -127,7 +127,7 @@ void CoreDbCopyManager::copyDatabases(const DbEngineParameters& fromDBParameters
 
     if (queryStateResult == BdEngineBackend::ConnectionError)
     {
-        emit finished(CoreDbCopyManager::failed, i18n("Error while preparing the target database."));
+        Q_EMIT finished(CoreDbCopyManager::failed, i18n("Error while preparing the target database."));
     }
 
     // Delete all tables
@@ -138,7 +138,7 @@ void CoreDbCopyManager::copyDatabases(const DbEngineParameters& fromDBParameters
             (toDBbackend.execDirectSql(QString::fromUtf8("DROP TABLE IF EXISTS %1;").arg(tables[i])) != BdEngineBackend::NoErrors)
            )
         {
-            emit finished(CoreDbCopyManager::failed, i18n("Error while scrubbing the target database."));
+            Q_EMIT finished(CoreDbCopyManager::failed, i18n("Error while scrubbing the target database."));
             fromDBbackend.close();
             toDBbackend.close();
             return;
@@ -150,11 +150,11 @@ void CoreDbCopyManager::copyDatabases(const DbEngineParameters& fromDBParameters
     CoreDB              albumDB(&toDBbackend);
     CoreDbSchemaUpdater updater(&albumDB, &toDBbackend, toDBParameters);
 
-    emit stepStarted(i18n("Create Schema..."));
+    Q_EMIT stepStarted(i18n("Create Schema..."));
 
     if (m_isStopProcessing || !updater.update())
     {
-        emit finished(CoreDbCopyManager::failed, i18n("Error while creating the database schema."));
+        Q_EMIT finished(CoreDbCopyManager::failed, i18n("Error while creating the database schema."));
 
         fromDBbackend.close();
         toDBbackend.close();
@@ -166,7 +166,7 @@ void CoreDbCopyManager::copyDatabases(const DbEngineParameters& fromDBParameters
 
     for (int i = 0 ; i < tablesSize ; ++i)
     {
-        emit stepStarted(i18n(QString::fromUtf8("Copy %1...").arg(tables[i]).toLatin1().constData()));
+        Q_EMIT stepStarted(i18n(QString::fromUtf8("Copy %1...").arg(tables[i]).toLatin1().constData()));
 
         // Now perform the copy action
 
@@ -183,8 +183,8 @@ void CoreDbCopyManager::copyDatabases(const DbEngineParameters& fromDBParameters
     fromDBbackend.close();
     toDBbackend.close();
 
-    emit smallStepStarted(1, 1);
-    emit finished(CoreDbCopyManager::success, QString());
+    Q_EMIT smallStepStarted(1, 1);
+    Q_EMIT finished(CoreDbCopyManager::success, QString());
 }
 
 bool CoreDbCopyManager::copyTable(CoreDbBackend& fromDBbackend,
@@ -264,14 +264,14 @@ bool CoreDbCopyManager::copyTable(CoreDbBackend& fromDBbackend,
 
         // Send a signal to the GUI to entertain the user
 
-        emit smallStepStarted(resultCounter++, resultSize);
+        Q_EMIT smallStepStarted(resultCounter++, resultSize);
 
         // Read the values from the fromDB into a hash
 
         QMap<QString, QVariant> tempBindingMap;
         int i = 0;
 
-        foreach (QString columnName, columnNames) // krazy:exclude=foreach
+        Q_FOREACH (QString columnName, columnNames) // krazy:exclude=foreach
         {
             qCDebug(DIGIKAM_COREDB_LOG) << "Core database: column: ["
                                         << columnName << "] value ["
@@ -296,7 +296,7 @@ bool CoreDbCopyManager::copyTable(CoreDbBackend& fromDBbackend,
             QString errorMsg = i18n("Error while converting the database.\n Details: %1",
                                     toDBbackend.lastSQLError().databaseText());
 
-            emit finished(CoreDbCopyManager::failed, errorMsg);
+            Q_EMIT finished(CoreDbCopyManager::failed, errorMsg);
 
             return false;
         }
@@ -311,7 +311,7 @@ void CoreDbCopyManager::handleClosing(bool isStopThread,
 {
     if (isStopThread)
     {
-        emit finished(CoreDbCopyManager::canceled, QLatin1String(""));
+        Q_EMIT finished(CoreDbCopyManager::canceled, QLatin1String(""));
     }
 
     fromDBbackend.close();

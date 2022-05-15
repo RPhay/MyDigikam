@@ -138,7 +138,7 @@ int FaceTagsHelper::tagForName(const QString& name, int tagId, int parentId, con
 
     QList<int> candidates = TagsCache::instance()->tagsWithProperty(TagPropertyName::person(), fullName);
 
-    foreach (int id, candidates)
+    Q_FOREACH (int id, candidates)
     {
         qCDebug(DIGIKAM_DATABASE_LOG) << "Candidate with set full name:" << id << fullName;
 
@@ -169,7 +169,7 @@ int FaceTagsHelper::tagForName(const QString& name, int tagId, int parentId, con
         }
     }
 
-    foreach (int id, candidates)
+    Q_FOREACH (int id, candidates)
     {
         // Is this tag already a person tag?
 
@@ -429,7 +429,7 @@ int FaceTags::personParentTag()
         QMap<int, int> tiers;
         QMap<int, int>::const_iterator it;
 
-        foreach (int tid, personTags)
+        Q_FOREACH (int tid, personTags)
         {
             QList<int> parents = TagsCache::instance()->parentTags(tid);
 

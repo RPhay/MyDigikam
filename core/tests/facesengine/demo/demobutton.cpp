@@ -148,7 +148,7 @@ void Button::mouseReleaseEvent(QGraphicsSceneMouseEvent* event)
 
         if (contains(event->pos()))
         {
-            emit clicked();
+            Q_EMIT clicked();
         }
     }
 }

@@ -58,7 +58,7 @@ QStringList cleanUserFilterString(QString filterString,
 
     QStringList filterList;
 
-    foreach (const QString& filter, filterString.split(separator, QT_SKIP_EMPTY_PARTS))
+    Q_FOREACH (const QString& filter, filterString.split(separator, QT_SKIP_EMPTY_PARTS))
     {
         filterList << filter.trimmed();
     }

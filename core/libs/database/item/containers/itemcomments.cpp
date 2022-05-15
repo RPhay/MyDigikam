@@ -120,7 +120,7 @@ public:
     {
         QSet<int> newSet;
 
-        foreach (int index, set)
+        Q_FOREACH (int index, set)
         {
             if      (index > removedIndex)
             {
@@ -491,7 +491,7 @@ void ItemComments::replaceFrom(const ItemComments& source)
         return;
     }
 
-    foreach (const CommentInfo& info, source.d->infos)
+    Q_FOREACH (const CommentInfo& info, source.d->infos)
     {
         addComment(info.comment, info.language, info.author, info.date, info.type);
     }
@@ -572,7 +572,7 @@ void ItemComments::removeAll()
         return;
     }
 
-    foreach (const CommentInfo& info, d->infos)
+    Q_FOREACH (const CommentInfo& info, d->infos)
     {
         d->idsToRemove << info.id;
     }
@@ -655,14 +655,14 @@ void ItemComments::apply(CoreDbAccess& access)
         return;
     }
 
-    foreach (int commentId, d->idsToRemove)
+    Q_FOREACH (int commentId, d->idsToRemove)
     {
         access.db()->removeImageComment(commentId, d->id);
     }
 
     d->idsToRemove.clear();
 
-    foreach (int index, d->newIndices)
+    Q_FOREACH (int index, d->newIndices)
     {
         CommentInfo& info = d->infos[index];
         info.id           = access.db()->setImageComment(d->id, info.comment, info.type, info.language, info.author, info.date);
@@ -671,7 +671,7 @@ void ItemComments::apply(CoreDbAccess& access)
     d->dirtyIndices.subtract(d->newIndices);
     d->newIndices.clear();
 
-    foreach (int index, d->dirtyIndices)
+    Q_FOREACH (int index, d->dirtyIndices)
     {
         QVariantList values;
         CommentInfo& info = d->infos[index];
@@ -688,7 +688,7 @@ CaptionsMap ItemComments::toCaptionsMap(DatabaseComment::Type type) const
 
     if (d)
     {
-        foreach (const CommentInfo& info, d->infos)
+        Q_FOREACH (const CommentInfo& info, d->infos)
         {
             if (info.type == type)
             {

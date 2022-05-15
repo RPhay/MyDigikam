@@ -50,7 +50,7 @@ QString RecognitionBenchmarker::result() const
 {
     int totalImages = 0;
 
-    foreach (const Statistics& stat, results)
+    Q_FOREACH (const Statistics& stat, results)
     {
         // cppcheck-suppress useStlAlgorithm
         totalImages += stat.knownFaces;
@@ -94,7 +94,7 @@ void RecognitionBenchmarker::process(FacePipelineExtendedPackage::Ptr package)
         }
     }
 
-    emit processed(package);
+    Q_EMIT processed(package);
 }
 
 } // namespace Digikam

@@ -253,7 +253,7 @@ void RainDropFilter::rainDropsImage(DImg* const orgImage, DImg* const destImage,
             );
         }
 
-        foreach (QFuture<void> t, tasks)
+        Q_FOREACH (QFuture<void> t, tasks)
         {
             t.waitForFinished();
         }

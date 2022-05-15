@@ -325,7 +325,7 @@ void AntiVignettingSettings::slotSettingsChanged()
     pt.end();
     d->maskPreviewLabel->setPixmap(pix);
 
-    emit signalSettingsChanged();
+    Q_EMIT signalSettingsChanged();
 }
 
 } // namespace Digikam

@@ -411,7 +411,7 @@ void PanoActionThread::slotStarting(JobPointer j)
         ad.id                   = p->id;
     }
 
-    emit starting(ad);
+    Q_EMIT starting(ad);
 }
 
 void PanoActionThread::slotStepDone(JobPointer j)
@@ -444,7 +444,7 @@ void PanoActionThread::slotStepDone(JobPointer j)
         d->threadQueue->dequeue();
     }
 
-    emit stepFinished(ad);
+    Q_EMIT stepFinished(ad);
 }
 
 void PanoActionThread::slotDone(JobPointer j)
@@ -473,7 +473,7 @@ void PanoActionThread::slotDone(JobPointer j)
         ad.id                   = p->id;
     }
 
-    emit jobCollectionFinished(ad);
+    Q_EMIT jobCollectionFinished(ad);
 }
 
 void PanoActionThread::appendStitchingJobs(const QSharedPointer<Sequence>& js,

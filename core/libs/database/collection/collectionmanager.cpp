@@ -129,12 +129,12 @@ void CollectionManager::clearLocations()
     // Internal method: Called with write lock
     // Cave: Difficult recursions with CoreDbAccess constructor and setParameters
 
-    foreach (AlbumRootLocation* const location, d->locations)
+    Q_FOREACH (AlbumRootLocation* const location, d->locations)
     {
         CollectionLocation::Status oldStatus = location->status();
         location->setStatus(CollectionLocation::LocationDeleted);
         locker.unlock();
-        emit locationStatusChanged(*location, oldStatus);
+        Q_EMIT locationStatusChanged(*location, oldStatus);
         locker.relock();
         delete location;
     }

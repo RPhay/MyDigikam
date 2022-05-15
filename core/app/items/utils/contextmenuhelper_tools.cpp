@@ -86,7 +86,7 @@ void ContextMenuHelper::addImportMenu()
 
     if (!actions.isEmpty())
     {
-        foreach (DPluginAction* const ac, actions)
+        Q_FOREACH (DPluginAction* const ac, actions)
         {
             menuImport->addActions(QList<QAction*>() << ac);
         }
@@ -117,7 +117,7 @@ void ContextMenuHelper::addExportMenu()
 
     if (!actions.isEmpty())
     {
-        foreach (DPluginAction* const ac, actions)
+        Q_FOREACH (DPluginAction* const ac, actions)
         {
             menuExport->addActions(QList<QAction*>() << ac);
         }
@@ -147,7 +147,7 @@ void ContextMenuHelper::addQueueManagerMenu()
         QueueMgrWindow* const qmw = QueueMgrWindow::queueManagerWindow();
         QMenu* const queueMenu    = new QMenu(i18nc("@action: context menu", "Add to Existing Queue"), bqmMenu);
 
-        // queueActions is used by the exec() method to emit an appropriate signal.
+        // queueActions is used by the exec() method to Q_EMIT an appropriate signal.
         // Reset the map before filling in the actions.
 
         if (!d->queueActions.isEmpty())

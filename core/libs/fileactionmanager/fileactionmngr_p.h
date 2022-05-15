@@ -105,52 +105,52 @@ public:
 
     void assignTags(const FileActionItemInfoList& infos, const QList<int>& tagIDs)
     {
-        emit signalAddTags(infos, tagIDs);
+        Q_EMIT signalAddTags(infos, tagIDs);
     }
 
     void removeTags(const FileActionItemInfoList& infos, const QList<int>& tagIDs)
     {
-        emit signalRemoveTags(infos, tagIDs);
+        Q_EMIT signalRemoveTags(infos, tagIDs);
     }
 
     void assignPickLabel(const FileActionItemInfoList& infos, int pickId)
     {
-        emit signalAssignPickLabel(infos, pickId);
+        Q_EMIT signalAssignPickLabel(infos, pickId);
     }
 
     void assignColorLabel(const FileActionItemInfoList& infos, int colorId)
     {
-        emit signalAssignColorLabel(infos, colorId);
+        Q_EMIT signalAssignColorLabel(infos, colorId);
     }
 
     void assignRating(const FileActionItemInfoList& infos, int rating)
     {
-        emit signalAssignRating(infos, rating);
+        Q_EMIT signalAssignRating(infos, rating);
     }
 
     void editGroup(int groupAction, const ItemInfo& pick, const FileActionItemInfoList& infos)
     {
-        emit signalEditGroup(groupAction, pick, infos);
+        Q_EMIT signalEditGroup(groupAction, pick, infos);
     }
 
     void setExifOrientation(const FileActionItemInfoList& infos, int orientation)
     {
-        emit signalSetExifOrientation(infos, orientation);
+        Q_EMIT signalSetExifOrientation(infos, orientation);
     }
 
     void applyMetadata(const FileActionItemInfoList& infos, DisjointMetadata* hub)
     {
-        emit signalApplyMetadata(infos, hub);
+        Q_EMIT signalApplyMetadata(infos, hub);
     }
 
     void transform(const FileActionItemInfoList& infos, int orientation)
     {
-        emit signalTransform(infos, orientation);
+        Q_EMIT signalTransform(infos, orientation);
     }
 
     void copyAttributes(const FileActionItemInfoList& infos, const QStringList& derivedPaths)
     {
-        emit signalCopyAttributes(infos, derivedPaths);
+        Q_EMIT signalCopyAttributes(infos, derivedPaths);
     }
 
 public:

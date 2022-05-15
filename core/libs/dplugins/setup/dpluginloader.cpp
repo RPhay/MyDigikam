@@ -73,7 +73,7 @@ void DPluginLoader::init()
 
 void DPluginLoader::cleanUp()
 {
-    foreach (DPlugin* const p, d->allPlugins)
+    Q_FOREACH (DPlugin* const p, d->allPlugins)
     {
         p->cleanUp();
     }
@@ -95,13 +95,13 @@ QList<DPluginAction*> DPluginLoader::pluginsActions(DPluginAction::ActionType ty
 {
     QList<DPluginAction*> list;
 
-    foreach (DPlugin* const p, d->allPlugins)
+    Q_FOREACH (DPlugin* const p, d->allPlugins)
     {
         DPluginGeneric* const gene = dynamic_cast<DPluginGeneric*>(p);
 
         if (gene)
         {
-            foreach (DPluginAction* const ac, gene->actions(parent))
+            Q_FOREACH (DPluginAction* const ac, gene->actions(parent))
             {
                 if (ac && (ac->actionType() == type))
                 {
@@ -113,13 +113,13 @@ QList<DPluginAction*> DPluginLoader::pluginsActions(DPluginAction::ActionType ty
 
     if (list.isEmpty())
     {
-        foreach (DPlugin* const p, d->allPlugins)
+        Q_FOREACH (DPlugin* const p, d->allPlugins)
         {
             DPluginEditor* const edit = dynamic_cast<DPluginEditor*>(p);
 
             if (edit)
             {
-                foreach (DPluginAction* const ac, edit->actions(parent))
+                Q_FOREACH (DPluginAction* const ac, edit->actions(parent))
                 {
                     if (ac && (ac->actionType() == type))
                     {
@@ -139,13 +139,13 @@ QList<DPluginAction*> DPluginLoader::pluginsActions(DPluginAction::ActionCategor
 {
     QList<DPluginAction*> list;
 
-    foreach (DPlugin* const p, d->allPlugins)
+    Q_FOREACH (DPlugin* const p, d->allPlugins)
     {
         DPluginGeneric* const gene = dynamic_cast<DPluginGeneric*>(p);
 
         if (gene)
         {
-            foreach (DPluginAction* const ac, gene->actions(parent))
+            Q_FOREACH (DPluginAction* const ac, gene->actions(parent))
             {
                 if (ac && (ac->actionCategory() == cat))
                 {
@@ -157,13 +157,13 @@ QList<DPluginAction*> DPluginLoader::pluginsActions(DPluginAction::ActionCategor
 
     if (list.isEmpty())
     {
-        foreach (DPlugin* const p, d->allPlugins)
+        Q_FOREACH (DPlugin* const p, d->allPlugins)
         {
             DPluginEditor* const edit = dynamic_cast<DPluginEditor*>(p);
 
             if (edit)
             {
-                foreach (DPluginAction* const ac, edit->actions(parent))
+                Q_FOREACH (DPluginAction* const ac, edit->actions(parent))
                 {
                     if (ac && (ac->actionCategory() == cat))
                     {
@@ -182,7 +182,7 @@ QList<DPluginAction*> DPluginLoader::pluginActions(const QString& pluginIID, QOb
 {
     QList<DPluginAction*> list;
 
-    foreach (DPlugin* const p, d->allPlugins)
+    Q_FOREACH (DPlugin* const p, d->allPlugins)
     {
         DPluginGeneric* const gene = dynamic_cast<DPluginGeneric*>(p);
 
@@ -190,7 +190,7 @@ QList<DPluginAction*> DPluginLoader::pluginActions(const QString& pluginIID, QOb
         {
             if (p->iid() == pluginIID)
             {
-                foreach (DPluginAction* const ac, gene->actions(parent))
+                Q_FOREACH (DPluginAction* const ac, gene->actions(parent))
                 {
                     list << ac;
                 }
@@ -202,7 +202,7 @@ QList<DPluginAction*> DPluginLoader::pluginActions(const QString& pluginIID, QOb
 
     if (list.isEmpty())
     {
-        foreach (DPlugin* const p, d->allPlugins)
+        Q_FOREACH (DPlugin* const p, d->allPlugins)
         {
             DPluginEditor* const edit = dynamic_cast<DPluginEditor*>(p);
 
@@ -210,7 +210,7 @@ QList<DPluginAction*> DPluginLoader::pluginActions(const QString& pluginIID, QOb
             {
                 if (p->iid() == pluginIID)
                 {
-                    foreach (DPluginAction* const ac, edit->actions(parent))
+                    Q_FOREACH (DPluginAction* const ac, edit->actions(parent))
                     {
                         list << ac;
                     }
@@ -227,13 +227,13 @@ QList<DPluginAction*> DPluginLoader::pluginActions(const QString& pluginIID, QOb
 
 DPluginAction* DPluginLoader::pluginAction(const QString& actionName, QObject* const parent) const
 {
-    foreach (DPlugin* const p, d->allPlugins)
+    Q_FOREACH (DPlugin* const p, d->allPlugins)
     {
         DPluginGeneric* const gene = dynamic_cast<DPluginGeneric*>(p);
 
         if (gene)
         {
-            foreach (DPluginAction* const ac, gene->actions(parent))
+            Q_FOREACH (DPluginAction* const ac, gene->actions(parent))
             {
                 if (ac && (ac->objectName() == actionName))
                 {    // cppcheck-suppress useStlAlgorithm
@@ -246,7 +246,7 @@ DPluginAction* DPluginLoader::pluginAction(const QString& actionName, QObject* c
 
         if (edit)
         {
-            foreach (DPluginAction* const ac, edit->actions(parent))
+            Q_FOREACH (DPluginAction* const ac, edit->actions(parent))
             {
                 if (ac && (ac->objectName() == actionName))
                 {   // cppcheck-suppress useStlAlgorithm
@@ -267,7 +267,7 @@ QString DPluginLoader::pluginXmlSections(DPluginAction::ActionCategory cat, QObj
 {
     QString xml;
 
-    foreach (DPluginAction* const ac, pluginsActions(cat, parent))
+    Q_FOREACH (DPluginAction* const ac, pluginsActions(cat, parent))
     {
         xml.append(ac->xmlSection());
     }
@@ -287,7 +287,7 @@ void DPluginLoader::appendPluginToWhiteList(const QString& filename)
 
 void DPluginLoader::registerGenericPlugins(QObject* const parent)
 {
-    foreach (DPlugin* const plugin, d->allPlugins)
+    Q_FOREACH (DPlugin* const plugin, d->allPlugins)
     {
         DPluginGeneric* const gene = dynamic_cast<DPluginGeneric*>(plugin);
 
@@ -304,7 +304,7 @@ void DPluginLoader::registerGenericPlugins(QObject* const parent)
 
 void DPluginLoader::registerEditorPlugins(QObject* const parent)
 {
-    foreach (DPlugin* const plugin, d->allPlugins)
+    Q_FOREACH (DPlugin* const plugin, d->allPlugins)
     {
         DPluginEditor* const edit = dynamic_cast<DPluginEditor*>(plugin);
 
@@ -321,7 +321,7 @@ void DPluginLoader::registerEditorPlugins(QObject* const parent)
 
 void DPluginLoader::registerRawImportPlugins(QObject* const parent)
 {
-    foreach (DPlugin* const plugin, d->allPlugins)
+    Q_FOREACH (DPlugin* const plugin, d->allPlugins)
     {
         DPluginRawImport* const raw = dynamic_cast<DPluginRawImport*>(plugin);
 
@@ -336,7 +336,7 @@ void DPluginLoader::registerRawImportPlugins(QObject* const parent)
 
 DImgLoaderSettings* DPluginLoader::exportWidget(const QString& format) const
 {
-    foreach (DPlugin* const plugin, d->allPlugins)
+    Q_FOREACH (DPlugin* const plugin, d->allPlugins)
     {
         DPluginDImg* const dimg = dynamic_cast<DPluginDImg*>(plugin);
 
@@ -356,7 +356,7 @@ DImgLoaderSettings* DPluginLoader::exportWidget(const QString& format) const
 
 bool DPluginLoader::canImport(const QString& format) const
 {
-    foreach (DPlugin* const plugin, d->allPlugins)
+    Q_FOREACH (DPlugin* const plugin, d->allPlugins)
     {
         DPluginDImg* const dimg = dynamic_cast<DPluginDImg*>(plugin);
 
@@ -371,7 +371,7 @@ bool DPluginLoader::canImport(const QString& format) const
 
 bool DPluginLoader::canExport(const QString& format) const
 {
-    foreach (DPlugin* const plugin, d->allPlugins)
+    Q_FOREACH (DPlugin* const plugin, d->allPlugins)
     {
         DPluginDImg* const dimg = dynamic_cast<DPluginDImg*>(plugin);
 

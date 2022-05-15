@@ -232,7 +232,7 @@ void ScanController::run()
                 d->advice = ContinueWithoutDatabase;
             }
 
-            emit databaseInitialized(success);
+            Q_EMIT databaseInitialized(success);
         }
         else if (doScan)
         {
@@ -249,7 +249,7 @@ void ScanController::run()
 
             scanner.completeScan();
 
-            emit completeScanDone();
+            Q_EMIT completeScanDone();
 
             if (doScanDeferred)
             {
@@ -269,7 +269,7 @@ void ScanController::run()
             CollectionScanner scanner;
             connectCollectionScanner(&scanner);
 
-            emit collectionScanStarted(i18nc("@info:status", "Scanning collection"));
+            Q_EMIT collectionScanStarted(i18nc("@info:status", "Scanning collection"));
 
             //TODO: reconsider performance
 
@@ -283,8 +283,8 @@ void ScanController::run()
             scanner.finishCompleteScan(d->completeScanDeferredAlbums);
 
             d->completeScanDeferredAlbums.clear();
-            emit completeScanDone();
-            emit collectionScanFinished();
+            Q_EMIT completeScanDone();
+            Q_EMIT collectionScanFinished();
         }
         else if (doPartialScan)
         {
@@ -296,7 +296,7 @@ void ScanController::run()
             SimpleCollectionScannerObserver observer(&d->continuePartialScan);
             scanner.setObserver(&observer);
             scanner.partialScan(task);
-            emit partialScanDone(task);
+            Q_EMIT partialScanDone(task);
         }
         else if (doUpdateUniqueHash)
         {
@@ -305,7 +305,7 @@ void ScanController::run()
             updater.setCoreDbAccess(&access);
             updater.setObserver(this);
             updater.updateUniqueHash();
-            emit completeScanDone();
+            Q_EMIT completeScanDone();
         }
     }
 }

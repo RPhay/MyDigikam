@@ -274,7 +274,7 @@ public:
 
         demuxer.setStreamIndex(AVDemuxer::VideoStream, 0);
 
-        foreach (const QString& c, codecs)
+        Q_FOREACH (const QString& c, codecs)
         {
             VideoDecoder* vd = VideoDecoder::create(c.toUtf8().constData());
 

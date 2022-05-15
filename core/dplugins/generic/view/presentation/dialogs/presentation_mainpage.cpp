@@ -275,7 +275,7 @@ void PresentationMainPage::showNumberImages()
 
     // Notify total time is changed
 
-    emit signalTotalTimeChanged(d->totalTime);
+    Q_EMIT signalTotalTimeChanged(d->totalTime);
 
     if (m_offAutoDelayCheckBox->isChecked() == false)
     {
@@ -505,7 +505,7 @@ void PresentationMainPage::slotUseMillisecondsToggled()
 void PresentationMainPage::slotPortfolioDurationChanged(int)
 {
     showNumberImages();
-    emit signalTotalTimeChanged(d->totalTime);
+    Q_EMIT signalTotalTimeChanged(d->totalTime);
 }
 
 void PresentationMainPage::slotThumbnail(const LoadingDescription& /*desc*/, const QPixmap& pix)

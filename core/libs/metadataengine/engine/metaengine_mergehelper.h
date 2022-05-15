@@ -76,7 +76,7 @@ public:
      */
     void mergeFields(const Data& src, Data& dest)
     {
-        foreach (const KeyString& keyString, keys)
+        Q_FOREACH (const KeyString& keyString, keys)
         {
             Key key(keyString.latin1());
             typename Data::const_iterator it = src.findKey(key);
@@ -108,7 +108,7 @@ public:
      */
     void exclusiveMerge(const Data& src, Data& dest)
     {
-        foreach (const KeyString& keyString, keys)
+        Q_FOREACH (const KeyString& keyString, keys)
         {
             Key key(keyString.latin1());
             typename Data::const_iterator it = src.findKey(key);

@@ -169,7 +169,7 @@ void AnimatedClearButton::mouseReleaseEvent(QMouseEvent* event)
 {
     if (event->button() == Qt::LeftButton)
     {
-        emit clicked();
+        Q_EMIT clicked();
     }
 }
 

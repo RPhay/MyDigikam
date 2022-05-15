@@ -245,7 +245,7 @@ void AdvPrintWizard::setItemsList(const QList<QUrl>& fileList)
         d->cropPage->ui()->BtnCropNext->setEnabled(false);
     }
 
-    emit currentIdChanged(d->photoPage->id());
+    Q_EMIT currentIdChanged(d->photoPage->id());
 }
 
 void AdvPrintWizard::updateCropFrame(AdvPrintPhoto* const photo, int photoIndex)

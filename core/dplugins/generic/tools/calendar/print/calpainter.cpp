@@ -348,14 +348,14 @@ void CalPainter::paint(int month)
             meta->rotateExifQImage(d->image, (MetaEngine::ImageOrientation)d->orientation);
         }
 
-        emit signalProgress(0);
+        Q_EMIT signalProgress(0);
 
         d->image = d->image.scaled(rImage.width(),
                                    rImage.height(),
                                    Qt::KeepAspectRatio,
                                    Qt::SmoothTransformation);
 
-        emit signalTotal(d->image.height());
+        Q_EMIT signalTotal(d->image.height());
 
         int h         = d->image.height();
         int x         = rImage.bottomLeft().x() + (rImage.width() - d->image.width()) / 2;
@@ -372,10 +372,10 @@ void CalPainter::paint(int month)
 
             drawImage(x, y + block, d->image, 0, block, d->image.width(), blockSize);
             block += blockSize;
-            emit signalProgress(block);
+            Q_EMIT signalProgress(block);
         }
 
-        emit signalFinished();
+        Q_EMIT signalFinished();
     }
 }
 

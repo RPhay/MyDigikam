@@ -176,7 +176,7 @@ static void FixHuffTbl (HuffmanTable *htbl)
     // Figure C.3: generate encoding tables
     // These are code and size indexed by symbol value
     // Set any codeless symbols to have code length 0; this allows
-    // EmitBits to detect any attempt to emit such symbols.
+    // EmitBits to detect any attempt to Q_EMIT such symbols.
 
     memset (htbl->ehufsi, 0, sizeof (htbl->ehufsi));
 

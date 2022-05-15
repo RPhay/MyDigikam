@@ -283,7 +283,7 @@ bool ItemScanner::scanFromIdenticalFile()
 
         // Prefer item found in the same album
 
-        foreach (const ItemScanInfo& info, candidates)
+        Q_FOREACH (const ItemScanInfo& info, candidates)
         {
             if (info.albumID == d->scanInfo.albumID)
             {

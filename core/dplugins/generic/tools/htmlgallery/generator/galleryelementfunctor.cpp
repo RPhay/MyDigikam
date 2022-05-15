@@ -223,7 +223,7 @@ void GalleryElementFunctor::operator()(GalleryElement& element)
 
     if (!thumbnail.save(destPath, m_info->thumbnailFormatString().toLatin1().data(), m_info->thumbnailQuality()))
     {
-        emit m_generator->logWarningRequested(i18n("Could not save thumbnail for image '%1' to '%2'",
+        Q_EMIT m_generator->logWarningRequested(i18n("Could not save thumbnail for image '%1' to '%2'",
                                                    QDir::toNativeSeparators(path),
                                                    QDir::toNativeSeparators(destPath)));
         return;
@@ -531,7 +531,7 @@ bool GalleryElementFunctor::writeDataToFile(const QByteArray& data, const QStrin
 
 void GalleryElementFunctor::emitWarning(const QString& message)
 {
-    emit m_generator->logWarningRequested(message);
+    Q_EMIT m_generator->logWarningRequested(message);
 }
 
 } // namespace DigikamGenericHtmlGalleryPlugin

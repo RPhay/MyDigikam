@@ -288,7 +288,7 @@ bool PTOType::createFile(const QString& filepath)
     {
         const Image& image = images[id];
 
-        foreach (Optimization optim, image.optimizationParameters)
+        Q_FOREACH (Optimization optim, image.optimizationParameters)
         {
             if (optim.previousComments.size() > 0)
             {
@@ -409,7 +409,7 @@ bool PTOType::createFile(const QString& filepath)
     {
         const Image& image = images[id];
 
-        foreach (Mask mask, image.masks)
+        Q_FOREACH (Mask mask, image.masks)
         {
             if (mask.previousComments.size() > 0)
             {
@@ -432,7 +432,7 @@ bool PTOType::createFile(const QString& filepath)
 
     // Sixth, the control points
 
-    foreach (ControlPoint cp, controlPoints)
+    Q_FOREACH (ControlPoint cp, controlPoints)
     {
         if (cp.previousComments.size() > 0)
         {
@@ -464,7 +464,7 @@ QPair<double, int> PTOType::standardDeviation(int image1Id, int image2Id)
     double mean_x = 0, mean_y = 0;
     double n = 0;
 
-    foreach (ControlPoint cp, controlPoints)
+    Q_FOREACH (ControlPoint cp, controlPoints)
     {
         if ((cp.image1Id == image1Id && cp.image2Id == image2Id) || (cp.image1Id == image2Id && cp.image2Id == image1Id))
         {
@@ -483,7 +483,7 @@ QPair<double, int> PTOType::standardDeviation(int image1Id, int image2Id)
     mean_y /= n;
     double result = 0;
 
-    foreach (PTOType::ControlPoint cp, controlPoints)
+    Q_FOREACH (PTOType::ControlPoint cp, controlPoints)
     {
         if ((cp.image1Id == image1Id && cp.image2Id == image2Id) || (cp.image1Id == image2Id && cp.image2Id == image1Id))
         {

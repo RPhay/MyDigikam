@@ -274,7 +274,7 @@ void ModelMenu::slotTriggered(QAction* action)
     if (v.canConvert<QModelIndex>())
     {
         QModelIndex idx = qvariant_cast<QModelIndex>(v);
-        emit activated(idx);
+        Q_EMIT activated(idx);
     }
 }
 
@@ -289,7 +289,7 @@ void ModelMenu::slotHovered(QAction* action)
 
         if (!hoveredString.isEmpty())
         {
-            emit hovered(hoveredString);
+            Q_EMIT hovered(hoveredString);
         }
     }
 }
@@ -330,7 +330,7 @@ BookmarksMenu::~BookmarksMenu()
 
 void BookmarksMenu::slotActivated(const QModelIndex& index)
 {
-    emit openUrl(index.data(BookmarksModel::UrlRole).toUrl());
+    Q_EMIT openUrl(index.data(BookmarksModel::UrlRole).toUrl());
 }
 
 bool BookmarksMenu::prePopulated()
@@ -340,7 +340,7 @@ bool BookmarksMenu::prePopulated()
 
     // initial actions
 
-    foreach (QAction* const ac, d->initActions)
+    Q_FOREACH (QAction* const ac, d->initActions)
     {
         if (ac)
         {
@@ -362,7 +362,7 @@ void BookmarksMenu::setInitialActions(const QList<QAction*>& actions)
 {
     d->initActions = actions;
 
-    foreach (QAction* const ac, d->initActions)
+    Q_FOREACH (QAction* const ac, d->initActions)
     {
         if (ac)
         {

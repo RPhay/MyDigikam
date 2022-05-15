@@ -94,7 +94,7 @@ void DColorSelector::slotBtnClicked()
     if (color.isValid())
     {
         setColor(color);
-        emit signalColorSelected(color);
+        Q_EMIT signalColorSelected(color);
     }
 }
 

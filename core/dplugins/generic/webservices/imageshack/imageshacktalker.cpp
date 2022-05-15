@@ -136,7 +136,7 @@ void ImageShackTalker::cancel()
         d->reply = nullptr;
     }
 
-    emit signalBusy(false);
+    Q_EMIT signalBusy(false);
 }
 
 QString ImageShackTalker::getCallString(QMap<QString, QString>& args) const
@@ -174,17 +174,17 @@ void ImageShackTalker::slotFinished(QNetworkReply* reply)
         if      (d->state == Private::IMGHCK_AUTHENTICATING)
         {
             checkRegistrationCodeDone(reply->error(), reply->errorString());
-            emit signalBusy(false);
+            Q_EMIT signalBusy(false);
         }
         else if (d->state == Private::IMGHCK_GETGALLERIES)
         {
-            emit signalBusy(false);
-            emit signalGetGalleriesDone(reply->error(), reply->errorString());
+            Q_EMIT signalBusy(false);
+            Q_EMIT signalGetGalleriesDone(reply->error(), reply->errorString());
         }
         else if (d->state == Private::IMGHCK_ADDPHOTO || d->state == Private::IMGHCK_ADDPHOTOGALLERY)
         {
-            emit signalBusy(false);
-            emit signalAddPhotoDone(reply->error(), reply->errorString());
+            Q_EMIT signalBusy(false);
+            Q_EMIT signalAddPhotoDone(reply->error(), reply->errorString());
         }
 
         d->state = Private::IMGHCK_DONOTHING;
@@ -228,8 +228,8 @@ void ImageShackTalker::authenticate()
         d->reply = nullptr;
     }
 
-    emit signalBusy(true);
-    emit signalJobInProgress(1, 4, i18n("Authenticating the user"));
+    Q_EMIT signalBusy(true);
+    Q_EMIT signalJobInProgress(1, 4, i18n("Authenticating the user"));
 
     QUrl url(QLatin1String("https://api.imageshack.com/v2/user/login"));
     QUrlQuery q(url);
@@ -253,8 +253,8 @@ void ImageShackTalker::getGalleries()
         d->reply = nullptr;
     }
 
-    emit signalBusy(true);
-    emit signalJobInProgress(3, 4, i18n("Getting galleries from server"));
+    Q_EMIT signalBusy(true);
+    Q_EMIT signalJobInProgress(3, 4, i18n("Getting galleries from server"));
 
     QUrl gUrl(d->galleryUrl);
 
@@ -270,8 +270,8 @@ void ImageShackTalker::getGalleries()
 
 void ImageShackTalker::checkRegistrationCodeDone(int errCode, const QString& errMsg)
 {
-    emit signalBusy(false);
-    emit signalLoginDone(errCode, errMsg);
+    Q_EMIT signalBusy(false);
+    Q_EMIT signalLoginDone(errCode, errMsg);
     d->loginInProgress = false;
 }
 
@@ -284,7 +284,7 @@ void ImageShackTalker::parseAccessToken(const QByteArray &data)
 
     if (err.error != QJsonParseError::NoError)
     {
-        emit signalBusy(false);
+        Q_EMIT signalBusy(false);
         return;
     }
 
@@ -344,8 +344,8 @@ void ImageShackTalker::parseGetGalleries(const QByteArray &data)
 
     d->state = Private::IMGHCK_DONOTHING;
 
-    emit signalUpdateGalleries(gTexts, gNames);
-    emit signalGetGalleriesDone(0, i18n("Successfully retrieved galleries"));
+    Q_EMIT signalUpdateGalleries(gTexts, gNames);
+    Q_EMIT signalGetGalleriesDone(0, i18n("Successfully retrieved galleries"));
 }
 
 void ImageShackTalker::authenticationDone(int errCode, const QString& errMsg)
@@ -355,8 +355,8 @@ void ImageShackTalker::authenticationDone(int errCode, const QString& errMsg)
         d->session->logOut();
     }
 
-    emit signalBusy(false);
-    emit signalLoginDone(errCode, errMsg);
+    Q_EMIT signalBusy(false);
+    Q_EMIT signalLoginDone(errCode, errMsg);
     d->loginInProgress = false;
 }
 
@@ -369,7 +369,7 @@ void ImageShackTalker::logOut()
 void ImageShackTalker::cancelLogIn()
 {
     logOut();
-    emit signalLoginDone(-1, QLatin1String("Canceled by the user!"));
+    Q_EMIT signalLoginDone(-1, QLatin1String("Canceled by the user!"));
 }
 
 QString ImageShackTalker::mimeType(const QString& path) const
@@ -388,7 +388,7 @@ void ImageShackTalker::uploadItem(const QString& path, const QMap<QString, QStri
         d->reply = nullptr;
     }
 
-    emit signalBusy(true);
+    Q_EMIT signalBusy(true);
     QMap<QString, QString> args;
     args[QLatin1String("key")]        = d->appKey;
     args[QLatin1String("fileupload")] = QUrl(path).fileName();
@@ -411,7 +411,7 @@ void ImageShackTalker::uploadItem(const QString& path, const QMap<QString, QStri
 
     if (!form.addFile(QUrl(path).fileName(), path))
     {
-        emit signalBusy(false);
+        Q_EMIT signalBusy(false);
         return;
     }
 
@@ -439,7 +439,7 @@ void ImageShackTalker::uploadItemToGallery(const QString& path,
         d->reply = nullptr;
     }
 
-    emit signalBusy(true);
+    Q_EMIT signalBusy(true);
     QMap<QString, QString> args;
     args[QLatin1String("key")]        = d->appKey;
     args[QLatin1String("fileupload")] = QUrl(path).fileName();
@@ -462,7 +462,7 @@ void ImageShackTalker::uploadItemToGallery(const QString& path,
 
     if (!form.addFile(QUrl(path).fileName(), path))
     {
-        emit signalBusy(false);
+        Q_EMIT signalBusy(false);
         return;
     }
 
@@ -528,7 +528,7 @@ void ImageShackTalker::parseUploadPhotoDone(const QByteArray& data)
 
     if (err.error != QJsonParseError::NoError)
     {
-        emit signalBusy(false);
+        Q_EMIT signalBusy(false);
         return;
     }
 
@@ -540,14 +540,14 @@ void ImageShackTalker::parseUploadPhotoDone(const QByteArray& data)
     {
         if (jsonObject[QLatin1String("success")].toBool())
         {
-            emit signalBusy(false);
-            emit signalAddPhotoDone(0,QLatin1String(""));
+            Q_EMIT signalBusy(false);
+            Q_EMIT signalAddPhotoDone(0,QLatin1String(""));
         }
         else
         {
             QJsonObject obj = jsonObject[QLatin1String("error")].toObject();
-            emit signalAddPhotoDone(obj[QLatin1String("error_code")].toInt(), obj[QLatin1String("error_message")].toString());
-            emit signalBusy(false);
+            Q_EMIT signalAddPhotoDone(obj[QLatin1String("error_code")].toInt(), obj[QLatin1String("error_message")].toString());
+            Q_EMIT signalBusy(false);
         }
     }
 }
@@ -573,8 +573,8 @@ void ImageShackTalker::parseAddPhotoToGalleryDone(const QByteArray& data)
     }
     else
     {
-        emit signalBusy(false);
-        emit signalAddPhotoDone(0, QLatin1String(""));
+        Q_EMIT signalBusy(false);
+        Q_EMIT signalAddPhotoDone(0, QLatin1String(""));
     }
 }
 

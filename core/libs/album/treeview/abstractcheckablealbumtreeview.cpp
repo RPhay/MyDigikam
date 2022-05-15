@@ -156,7 +156,7 @@ void AbstractCheckableAlbumTreeView::doLoadState()
 
     d->checkedAlbumIds.clear();
 
-    foreach (const QString& albumId, checkedAlbums)
+    Q_FOREACH (const QString& albumId, checkedAlbums)
     {
         bool ok;
         const int id = albumId.toInt(&ok);
@@ -170,7 +170,7 @@ void AbstractCheckableAlbumTreeView::doLoadState()
     const QStringList partiallyCheckedAlbums = group.readEntry(entryName(d->configPartiallyCheckedAlbumsEntry), QStringList());
     d->partiallyCheckedAlbumIds.clear();
 
-    foreach (const QString& albumId, partiallyCheckedAlbums)
+    Q_FOREACH (const QString& albumId, partiallyCheckedAlbums)
     {
         bool ok;
         const int id = albumId.toInt(&ok);
@@ -251,7 +251,7 @@ void AbstractCheckableAlbumTreeView::doSaveState()
     const QList<Album*> checkedAlbums = checkableModel()->checkedAlbums();
     QStringList checkedIds;
 
-    foreach (Album* const album, checkedAlbums)
+    Q_FOREACH (Album* const album, checkedAlbums)
     {
         checkedIds << QString::number(album->id());
     }
@@ -266,7 +266,7 @@ void AbstractCheckableAlbumTreeView::doSaveState()
     const QList<Album*> partiallyCheckedAlbums = checkableModel()->partiallyCheckedAlbums();
     QStringList partiallyCheckedIds;
 
-    foreach (Album* const album, partiallyCheckedAlbums)
+    Q_FOREACH (Album* const album, partiallyCheckedAlbums)
     {
         partiallyCheckedIds << QString::number(album->id());
     }

@@ -193,7 +193,7 @@ void ItemCategorizedView::setModels(ItemModel* model, ImageSortFilterModel* filt
     connect(d->model, SIGNAL(imageInfosAdded(QList<ItemInfo>)),
             this, SLOT(slotItemInfosAdded()));
 
-    emit modelChanged();
+    Q_EMIT modelChanged();
 
     if (d->delegate)
     {
@@ -392,7 +392,7 @@ QModelIndex ItemCategorizedView::nextIndexHint(const QModelIndex& anchor, const 
             int minDiff                           = d->filterModel->rowCount();
             QList<QModelIndex> indexesForItemInfo = d->filterModel->mapListFromSource(d->model->indexesForItemInfo(info));
 
-            foreach (const QModelIndex& index, indexesForItemInfo)
+            Q_FOREACH (const QModelIndex& index, indexesForItemInfo)
             {
                 if ((index == anchor) || !index.isValid() || removed.contains(index))
                 {
@@ -543,7 +543,7 @@ void ItemCategorizedView::setSelectedItemInfos(const QList<ItemInfo>& infos)
 {
     QItemSelection mySelection;
 
-    foreach (const ItemInfo& info, infos)
+    Q_FOREACH (const ItemInfo& info, infos)
     {
         QModelIndex index = d->filterModel->indexForItemInfo(info);
         mySelection.select(index, index);
@@ -606,13 +606,13 @@ void ItemCategorizedView::updateGeometries()
 
 void ItemCategorizedView::slotDelayedEnter()
 {
-    // re-emit entered() for index under mouse (after layout).
+    // re-Q_EMIT entered() for index under mouse (after layout).
 
     QModelIndex mouseIndex = indexAt(mapFromGlobal(QCursor::pos()));
 
     if (mouseIndex.isValid())
     {
-        emit DCategorizedView::entered(mouseIndex);
+        Q_EMIT DCategorizedView::entered(mouseIndex);
     }
 }
 
@@ -670,7 +670,7 @@ void ItemCategorizedView::indexActivated(const QModelIndex& index, Qt::KeyboardM
     if (!info.isNull())
     {
         activated(info, modifiers);
-        emit imageActivated(info);
+        Q_EMIT imageActivated(info);
     }
 }
 
@@ -678,7 +678,7 @@ void ItemCategorizedView::currentChanged(const QModelIndex& index, const QModelI
 {
     ItemViewCategorized::currentChanged(index, previous);
 
-    emit currentChanged(imageInfo(index));
+    Q_EMIT currentChanged(imageInfo(index));
 }
 
 void ItemCategorizedView::selectionChanged(const QItemSelection& selectedItems, const QItemSelection& deselectedItems)
@@ -687,12 +687,12 @@ void ItemCategorizedView::selectionChanged(const QItemSelection& selectedItems, 
 
     if (!selectedItems.isEmpty())
     {
-        emit selected(imageInfos(selectedItems.indexes()));
+        Q_EMIT selected(imageInfos(selectedItems.indexes()));
     }
 
     if (!deselectedItems.isEmpty())
     {
-        emit deselected(imageInfos(deselectedItems.indexes()));
+        Q_EMIT deselected(imageInfos(deselectedItems.indexes()));
     }
 }
 

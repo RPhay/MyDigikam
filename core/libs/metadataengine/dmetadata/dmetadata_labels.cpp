@@ -75,7 +75,7 @@ int DMetadata::getItemColorLabel(const DMetadataSettingsContainer& settings) con
     bool xmpSupported  = hasXmp();
     bool exivSupported = hasExif();
 
-    foreach (const NamespaceEntry& entry, settings.getReadMapping(NamespaceEntry::DM_COLORLABEL_CONTAINER()))
+    Q_FOREACH (const NamespaceEntry& entry, settings.getReadMapping(NamespaceEntry::DM_COLORLABEL_CONTAINER()))
     {
         if (entry.isDisabled)
         {
@@ -172,7 +172,7 @@ int DMetadata::getItemRating(const DMetadataSettingsContainer& settings) const
     bool iptcSupported = hasIptc();
     bool exivSupported = hasExif();
 
-    foreach (const NamespaceEntry& entry, settings.getReadMapping(NamespaceEntry::DM_RATING_CONTAINER()))
+    Q_FOREACH (const NamespaceEntry& entry, settings.getReadMapping(NamespaceEntry::DM_RATING_CONTAINER()))
     {
         if (entry.isDisabled)
         {

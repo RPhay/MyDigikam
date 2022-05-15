@@ -187,7 +187,7 @@ void DPluginConfView::apply()
         KSharedConfigPtr config = KSharedConfig::openConfig();
         KConfigGroup group      = config->group(loader->configGroupName());
 
-        foreach (DPluginCB* const item, d->plugBoxes)
+        Q_FOREACH (DPluginCB* const item, d->plugBoxes)
         {
             if (item->m_plugin->hasVisibilityProperty())
             {
@@ -204,7 +204,7 @@ void DPluginConfView::apply()
 
 void DPluginConfView::selectAll()
 {
-    foreach (DPluginCB* const item, d->plugBoxes)
+    Q_FOREACH (DPluginCB* const item, d->plugBoxes)
     {
         item->setCheckState(0, Qt::Checked);
     }
@@ -212,7 +212,7 @@ void DPluginConfView::selectAll()
 
 void DPluginConfView::clearAll()
 {
-    foreach (DPluginCB* const item, d->plugBoxes)
+    Q_FOREACH (DPluginCB* const item, d->plugBoxes)
     {
         item->setCheckState(0, Qt::Unchecked);
     }
@@ -227,7 +227,7 @@ int DPluginConfView::actived() const
 {
     int actived = 0;
 
-    foreach (DPluginCB* const item, d->plugBoxes)
+    Q_FOREACH (DPluginCB* const item, d->plugBoxes)
     {
         if (item->checkState(0) == Qt::Checked)
         {
@@ -242,7 +242,7 @@ int DPluginConfView::itemsVisible() const
 {
     int visible = 0;
 
-    foreach (DPluginCB* const item, d->plugBoxes)
+    Q_FOREACH (DPluginCB* const item, d->plugBoxes)
     {
         if (!item->isHidden())
         {
@@ -257,7 +257,7 @@ int DPluginConfView::itemsWithVisiblyProperty() const
 {
     int vp = 0;
 
-    foreach (DPluginCB* const item, d->plugBoxes)
+    Q_FOREACH (DPluginCB* const item, d->plugBoxes)
     {
         if (!item->isHidden() && item->m_plugin->hasVisibilityProperty())
         {
@@ -273,7 +273,7 @@ void DPluginConfView::setFilter(const QString& filter, Qt::CaseSensitivity cs)
     d->filter = filter;
     int found = 0;
 
-    foreach (DPluginCB* const item, d->plugBoxes)
+    Q_FOREACH (DPluginCB* const item, d->plugBoxes)
     {
         if (item->contains(filter, cs))
         {
@@ -286,7 +286,7 @@ void DPluginConfView::setFilter(const QString& filter, Qt::CaseSensitivity cs)
         }
     }
 
-    emit signalSearchResult(found);
+    Q_EMIT signalSearchResult(found);
 }
 
 QString DPluginConfView::filter() const

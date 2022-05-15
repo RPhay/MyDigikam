@@ -234,7 +234,7 @@ NPT_HttpHeaders::Emit(NPT_OutputStream& stream) const
     // for each header in the list
     NPT_List<NPT_HttpHeader*>::Iterator header = m_Headers.GetFirstItem();
     while (header) {
-        // emit the header
+        // Q_EMIT the header
         NPT_CHECK_WARNING((*header)->Emit(stream));
         ++header;
     }
@@ -871,7 +871,7 @@ NPT_HttpRequest::Emit(NPT_OutputStream& stream, bool use_proxy) const
     stream.WriteString(m_Protocol);
     stream.WriteFully(NPT_HTTP_LINE_TERMINATOR, 2);
 
-    // emit headers
+    // Q_EMIT headers
     m_Headers.Emit(stream);
 
     // finish with an empty line
@@ -937,7 +937,7 @@ NPT_HttpResponse::Emit(NPT_OutputStream& stream) const
     stream.WriteString(m_ReasonPhrase);
     stream.WriteFully(NPT_HTTP_LINE_TERMINATOR, 2);
 
-    // emit headers
+    // Q_EMIT headers
     m_Headers.Emit(stream);
 
     // finish with an empty line
@@ -1885,7 +1885,7 @@ NPT_HttpClient::WriteRequest(NPT_OutputStream& output_stream,
     // create a memory stream to buffer the headers
     NPT_MemoryStream header_stream;
 
-    // emit the request headers into the header buffer
+    // Q_EMIT the request headers into the header buffer
     request.Emit(header_stream, use_proxy && request.GetUrl().GetSchemeId()==NPT_Url::SCHEME_ID_HTTP);
 
     // send the headers
@@ -2682,7 +2682,7 @@ NPT_HttpResponder::SendResponseHeaders(NPT_HttpResponse& response)
     // create a memory stream to buffer the response line and headers
     NPT_MemoryStream buffer;
 
-    // emit the response line
+    // Q_EMIT the response line
     NPT_CHECK_WARNING(response.Emit(buffer));
 
     // send the buffer

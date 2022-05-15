@@ -511,7 +511,7 @@ void AlbumHistory::slotAlbumSelected()
     if (d->historyPos.contains(albumList))
     {
         d->blockSelection = true;
-        emit signalSetCurrent(d->historyPos[albumList].current.id());
+        Q_EMIT signalSetCurrent(d->historyPos[albumList].current.id());
     }
 }
 
@@ -523,7 +523,7 @@ void AlbumHistory::slotAlbumCurrentChanged()
     {
         if (d->historyPos[albumList].select.size())
         {
-            emit signalSetSelectedInfos(d->historyPos[albumList].select);
+            Q_EMIT signalSetSelectedInfos(d->historyPos[albumList].select);
         }
     }
 

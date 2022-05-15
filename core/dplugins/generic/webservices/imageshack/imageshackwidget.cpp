@@ -110,7 +110,7 @@ void ImageShackWidget::slotGetGalleries(const QStringList& gTexts, const QString
 
 void ImageShackWidget::slotReloadGalleries()
 {
-    emit signalReloadGalleries();
+    Q_EMIT signalReloadGalleries();
 }
 
 } // namespace DigikamGenericImageShackPlugin

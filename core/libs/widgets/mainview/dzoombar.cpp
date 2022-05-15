@@ -134,7 +134,7 @@ DZoomBar::DZoomBar(QWidget* const parent)
     zoomLevels << 800.0;
     zoomLevels << 1200.0;
 
-    foreach (const double zoom, zoomLevels)
+    Q_FOREACH (const double zoom, zoomLevels)
     {
         d->zoomCombo->addItem(QString::fromLatin1("%1%").arg((int)zoom), QVariant(zoom));
     }
@@ -209,12 +209,12 @@ void DZoomBar::slotZoomSliderChanged(int)
 
 void DZoomBar::slotDelayedZoomSliderChanged()
 {
-    emit signalDelayedZoomSliderChanged(d->zoomSlider->value());
+    Q_EMIT signalDelayedZoomSliderChanged(d->zoomSlider->value());
 }
 
 void DZoomBar::slotZoomSliderReleased()
 {
-    emit signalZoomSliderReleased(d->zoomSlider->value());
+    Q_EMIT signalZoomSliderReleased(d->zoomSlider->value());
 }
 
 void DZoomBar::setZoom(double zoom, double zmin, double zmax)
@@ -282,7 +282,7 @@ void DZoomBar::slotZoomSelected(int index)
 
     if (ok && (zoom > 0.0))
     {
-        emit signalZoomValueEdited(zoom);
+        Q_EMIT signalZoomValueEdited(zoom);
     }
 }
 
@@ -294,7 +294,7 @@ void DZoomBar::slotZoomTextChanged()
 
     if (ok && (zoom > 0.0) && (zoom <= 48.0))
     {
-        emit signalZoomValueEdited(zoom);
+        Q_EMIT signalZoomValueEdited(zoom);
     }
 }
 

@@ -164,7 +164,7 @@ void RajceWidget::updateLabels(const QString&, const QString&)
     if (loggedIn != d->lastLoggedInState)
     {
         d->lastLoggedInState = loggedIn;
-        emit signalLoginStatusChanged(loggedIn);
+        Q_EMIT signalLoginStatusChanged(loggedIn);
     }
 
     QString username = loggedIn ? d->talker->session().username() : QLatin1String("");
@@ -191,7 +191,7 @@ void RajceWidget::updateLabels(const QString&, const QString&)
     int   selIdx = 0;
     int   i      = 0;
 
-    foreach (album, d->talker->session().albums())
+    Q_FOREACH (album, d->talker->session().albums())
     {
         d->albumsCoB->addItem(album.name, QVariant::fromValue(album));
 
@@ -373,7 +373,7 @@ void RajceWidget::slotStartUpload()
 
     d->uploadQueue.clear();
 
-    foreach (const QUrl& image, d->imgList->imageUrls(true))
+    Q_FOREACH (const QUrl& image, d->imgList->imageUrls(true))
     {
         QString imagePath = image.toLocalFile();
         d->uploadQueue.append(imagePath);
@@ -391,7 +391,7 @@ void RajceWidget::slotStartUpload()
     QString albumName = d->albumsCoB->currentText();
     RajceAlbum album;
 
-    foreach (RajceAlbum a, d->talker->session().albums())
+    Q_FOREACH (RajceAlbum a, d->talker->session().albums())
     {
         if (a.name == albumName)
         { // cppcheck-suppress useStlAlgorithm
@@ -494,7 +494,7 @@ void RajceWidget::setEnabledWidgets(bool enabled)
     d->dimensionSpB->setEnabled(enabled);
     d->imageQualitySpB->setEnabled(enabled);
 
-    emit signalLoginStatusChanged(enabled);
+    Q_EMIT signalLoginStatusChanged(enabled);
 }
 
 void RajceWidget::readSettings()

@@ -511,7 +511,7 @@ void DConfigDlgMngr::updateSettings()
     if (changed)
     {
         d->conf->save();
-        emit settingsChanged();
+        Q_EMIT settingsChanged();
     }
 }
 

@@ -103,7 +103,7 @@ void AdvPrintTask::run()
 
             qCDebug(DIGIKAM_DPLUGIN_GENERIC_LOG) << "Start prepare to print";
             preparePrint();
-            emit signalDone(!m_cancel);
+            Q_EMIT signalDone(!m_cancel);
             qCDebug(DIGIKAM_DPLUGIN_GENERIC_LOG) << "Prepare to print is done";
 
             break;
@@ -116,7 +116,7 @@ void AdvPrintTask::run()
                 (d->settings->printerName != d->settings->outputName(AdvPrintSettings::GIMP)))
             {
                 printPhotos();
-                emit signalDone(!m_cancel);
+                Q_EMIT signalDone(!m_cancel);
             }
             else
             {
@@ -127,7 +127,7 @@ void AdvPrintTask::run()
                     d->settings->gimpFiles << files;
                 }
 
-                emit signalDone(!m_cancel && !files.isEmpty());
+                Q_EMIT signalDone(!m_cancel && !files.isEmpty());
             }
 
             qCDebug(DIGIKAM_DPLUGIN_GENERIC_LOG) << "Print is done";
@@ -153,7 +153,7 @@ void AdvPrintTask::run()
 
             if (!m_cancel)
             {
-                emit signalPreview(img);
+                Q_EMIT signalPreview(img);
             }
 
             qCDebug(DIGIKAM_DPLUGIN_GENERIC_LOG) << "Preview computation is done";
@@ -181,11 +181,11 @@ void AdvPrintTask::preparePrint()
         }
 
         photoIndex++;
-        emit signalProgress(photoIndex);
+        Q_EMIT signalProgress(photoIndex);
 
         if (m_cancel)
         {
-            emit signalMessage(i18n("Printing canceled"), true);
+            Q_EMIT signalMessage(i18n("Printing canceled"), true);
             return;
         }
     }
@@ -210,7 +210,7 @@ void AdvPrintTask::printPhotos()
 
     while (printing)
     {
-        emit signalMessage(i18n("Processing page %1", pageCount), false);
+        Q_EMIT signalMessage(i18n("Processing page %1", pageCount), false);
 
         printing = paintOnePage(p,
                                 photos,
@@ -224,12 +224,12 @@ void AdvPrintTask::printPhotos()
         }
 
         pageCount++;
-        emit signalProgress(current);
+        Q_EMIT signalProgress(current);
 
         if (m_cancel)
         {
             printer->abort();
-            emit signalMessage(i18n("Printing canceled"), true);
+            Q_EMIT signalMessage(i18n("Printing canceled"), true);
             return;
         }
     }
@@ -287,7 +287,7 @@ QStringList AdvPrintTask::printPhotosToFile()
             filename = DFileOperations::getUniqueFileUrl(QUrl::fromLocalFile(filename)).toLocalFile();
         }
 
-        emit signalMessage(i18n("Processing page %1", pageCount), false);
+        Q_EMIT signalMessage(i18n("Processing page %1", pageCount), false);
 
         printing = paintOnePage(painter,
                                 photos,
@@ -299,21 +299,21 @@ QStringList AdvPrintTask::printPhotosToFile()
 
         if (!image.save(filename, nullptr, 100))
         {
-            emit signalMessage(i18n("Could not save file %1", filename), true);
+            Q_EMIT signalMessage(i18n("Could not save file %1", filename), true);
             break;
         }
         else
         {
             files.append(filename);
-            emit signalMessage(i18n("Page %1 saved as %2", pageCount, filename), false);
+            Q_EMIT signalMessage(i18n("Page %1 saved as %2", pageCount, filename), false);
         }
 
         pageCount++;
-        emit signalProgress(current);
+        Q_EMIT signalProgress(current);
 
         if (m_cancel)
         {
-            emit signalMessage(i18n("Printing canceled"), true);
+            Q_EMIT signalMessage(i18n("Printing canceled"), true);
             break;
         }
     }

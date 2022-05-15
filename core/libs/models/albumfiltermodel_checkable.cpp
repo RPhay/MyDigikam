@@ -55,7 +55,7 @@ void CheckableAlbumFilterModel::setFilterChecked(bool filter)
     m_filterChecked = filter;
     invalidateFilter();
 
-    emit signalFilterChanged();
+    Q_EMIT signalFilterChanged();
 }
 
 void CheckableAlbumFilterModel::setFilterPartiallyChecked(bool filter)
@@ -63,7 +63,7 @@ void CheckableAlbumFilterModel::setFilterPartiallyChecked(bool filter)
     m_filterPartiallyChecked = filter;
     invalidateFilter();
 
-    emit signalFilterChanged();
+    Q_EMIT signalFilterChanged();
 }
 
 bool CheckableAlbumFilterModel::isFiltering() const

@@ -104,7 +104,7 @@ void ApplyTagsTest::applyTags(const QString& file,
         ret = meta2->getItemTagsPath(newTags);
         QVERIFY(ret);
 
-        foreach (const QString& tag, tags)
+        Q_FOREACH (const QString& tag, tags)
         {
             ret = newTags.contains(tag);
             QVERIFY(ret);

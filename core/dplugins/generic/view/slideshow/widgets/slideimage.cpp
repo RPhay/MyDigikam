@@ -159,12 +159,12 @@ void SlideImage::slotGotImagePreview(const LoadingDescription& desc, const DImg&
         updatePixmap();
         update();
 
-        emit signalImageLoaded(true);
+        Q_EMIT signalImageLoaded(true);
 
         return;
     }
 
-    emit signalImageLoaded(false);
+    Q_EMIT signalImageLoaded(false);
 }
 
 void SlideImage::updatePixmap()

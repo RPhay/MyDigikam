@@ -99,7 +99,7 @@ QList<RegionFrameItem*> FaceGroup::items() const
 {
     QList<RegionFrameItem*> items;
 
-    foreach (FaceItem* const item, d->items)
+    Q_FOREACH (FaceItem* const item, d->items)
     {
         items << item;
     }
@@ -214,7 +214,7 @@ RegionFrameItem* FaceGroup::closestItem(const QPointF& p, qreal* const manhattan
     qreal minDistance            = 0;
     qreal minCenterDistance      = 0;
 
-    foreach (RegionFrameItem* const item, d->items)
+    Q_FOREACH (RegionFrameItem* const item, d->items)
     {
         QRectF r       = item->boundingRect().translated(item->pos());
         qreal distance = (p - closestPointOfRect(p, r)).manhattanLength();
@@ -270,9 +270,9 @@ void FaceGroup::itemHoverMoveEvent(QGraphicsSceneHoverEvent* e)
 
             QList<QObject*> visible      = d->visibilityController->visibleItems(ItemVisibilityController::ExcludeFadingOut);
 
-            foreach (QGraphicsItem* const item2, hItems)
+            Q_FOREACH (QGraphicsItem* const item2, hItems)
             {
-                foreach (QObject* const parent, visible)
+                Q_FOREACH (QObject* const parent, visible)
                 {
                     if (static_cast<QGraphicsObject*>(parent)->isAncestorOf(item2))
                     {   // cppcheck-suppress useStlAlgorithm
@@ -335,7 +335,7 @@ void FaceGroup::load()
         d->view->setFocus();
     }
 
-    foreach (const FaceTagsIface& face, faces)
+    Q_FOREACH (const FaceTagsIface& face, faces)
     {
         d->addItem(face);
     }
@@ -353,7 +353,7 @@ void FaceGroup::clear()
     cancelAddItem();
     d->visibilityController->clear();
 
-    foreach (RegionFrameItem* const item, d->items)
+    Q_FOREACH (RegionFrameItem* const item, d->items)
     {
         delete item;
     }
@@ -397,7 +397,7 @@ void FaceGroup::slotAlbumRenamed(Album* album)
         return;
     }
 
-    foreach (FaceItem* const item, d->items)
+    Q_FOREACH (FaceItem* const item, d->items)
     {
         if (!item->face().isNull() &&
             (item->face().tagId() == album->id()))
@@ -464,7 +464,7 @@ void FaceGroup::slotAssigned(const TaggingAction& action, const ItemInfo&, const
 
 void FaceGroup::focusRandomFace()
 {
-    foreach (FaceItem* const item, d->items)
+    Q_FOREACH (FaceItem* const item, d->items)
     {
         FaceTagsIface face = item->face();
         AddTagsComboBox* comboBox = item->widget()->comboBox();
@@ -662,7 +662,7 @@ void FaceGroup::applyItemGeometryChanges()
         preview.rotateAndFlip(d->info.orientation());
     }
 
-    foreach (FaceItem* const item, d->items)
+    Q_FOREACH (FaceItem* const item, d->items)
     {
         if (item->face().isNull())
         {
@@ -695,7 +695,7 @@ void ItemPreviewView::trainFaces()
 {
     QList<Face> trainList;
 
-    foreach (Face f, d->currentFaces)
+    Q_FOREACH (Face f, d->currentFaces)
     {
         if (f.name() != "" && !d->faceIface->isFaceTrained(getItemInfo().id(), f.toRect(), f.name()))
         {
@@ -718,7 +718,7 @@ void ItemPreviewView::suggestFaces()
 
     QList<Face> recogList;
 
-    foreach (Face f, d->currentFaces)
+    Q_FOREACH (Face f, d->currentFaces)
     {
         if (!d->faceIface->isFaceRecognized(getItemInfo().id(), f.toRect(), f.name()) && f.name().isEmpty())
         {

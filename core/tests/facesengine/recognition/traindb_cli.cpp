@@ -130,7 +130,7 @@ int main(int argc, char** argv)
 
     if (!list.isEmpty())
     {
-        foreach (const Identity& id, list)
+        Q_FOREACH (const Identity& id, list)
         {
             qCDebug(DIGIKAM_TESTS_LOG) << "Identity " << id.attribute(QString::fromLatin1("name")) << " recognized";
         }

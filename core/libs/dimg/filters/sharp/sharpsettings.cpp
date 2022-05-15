@@ -359,7 +359,7 @@ SharpSettings::~SharpSettings()
 void SharpSettings::slotSharpMethodChanged(int w)
 {
     d->stack->setCurrentWidget(d->stack->widget(w));
-    emit signalSettingsChanged();
+    Q_EMIT signalSettingsChanged();
 }
 
 SharpContainer SharpSettings::settings() const

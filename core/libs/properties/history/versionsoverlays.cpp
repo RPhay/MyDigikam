@@ -264,7 +264,7 @@ void ActionVersionsOverlay::slotClicked(bool checked)
 
     if (index.isValid())
     {
-        emit activated(ItemModel::retrieveItemInfo(index));
+        Q_EMIT activated(ItemModel::retrieveItemInfo(index));
     }
 }
 

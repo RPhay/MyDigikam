@@ -61,7 +61,7 @@ bool MjpegStreamDlg::setMjpegServerContents()
         DInfoInterface::DAlbumIDs albums = d->settings.iface->albumChooserItems();
         MjpegServerMap map;
 
-        foreach (int id, albums)
+        Q_FOREACH (int id, albums)
         {
             DAlbumInfo anf(d->settings.iface->albumInfo(id));
             map.insert(anf.title(), d->settings.iface->albumItems(id));

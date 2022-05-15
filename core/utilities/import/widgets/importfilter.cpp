@@ -91,7 +91,7 @@ bool Filter::match(const QStringList& wildcards, const QString& name)
 {
     bool match = false;
 
-    foreach (const QString& wildcard, wildcards)
+    Q_FOREACH (const QString& wildcard, wildcards)
     {
         match = regexp(wildcard).exactMatch(name);
 /*
@@ -113,7 +113,7 @@ const QStringList& Filter::mimeWildcards(const QString& mime)
         QStringList& wc  = mimeHash[mime];
         QStringList list = mime.split(QLatin1Char(';'));
 
-        foreach (const QString& m, list)
+        Q_FOREACH (const QString& m, list)
         {
             QMimeType mimet = QMimeDatabase().mimeTypeForName(m);
 
@@ -122,7 +122,7 @@ const QStringList& Filter::mimeWildcards(const QString& mime)
                 continue;
             }
 
-            foreach (const QString& pattern, mimet.globPatterns())
+            Q_FOREACH (const QString& pattern, mimet.globPatterns())
             {
                 wc.append(pattern);
             }

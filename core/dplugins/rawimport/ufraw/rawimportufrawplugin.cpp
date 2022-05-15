@@ -216,7 +216,7 @@ void UFRawRawImportPlugin::slotProcessFinished(int code, QProcess::ExitStatus st
         qCDebug(DIGIKAM_GENERAL_LOG) << "Decoded image is null! Load with Native tool...";
         qCDebug(DIGIKAM_GENERAL_LOG) << d->props.filePath;
 
-        emit signalLoadRaw(d->props);
+        Q_EMIT signalLoadRaw(d->props);
     }
     else
     {
@@ -224,7 +224,7 @@ void UFRawRawImportPlugin::slotProcessFinished(int code, QProcess::ExitStatus st
         qCDebug(DIGIKAM_GENERAL_LOG) << d->props.filePath;
         d->props = LoadingDescription(d->tempFile->fileName(), LoadingDescription::ConvertForEditor);
 
-        emit signalDecodedImage(d->props, d->decoded);
+        Q_EMIT signalDecodedImage(d->props, d->decoded);
     }
 
     delete d->tempFile;
@@ -236,7 +236,7 @@ void UFRawRawImportPlugin::slotProcessReadyRead()
     QByteArray data   = d->ufraw->readAllStandardError();
     QStringList lines = QString::fromUtf8(data).split(QLatin1Char('\n'), QT_SKIP_EMPTY_PARTS);
 
-    foreach (const QString& one, lines)
+    Q_FOREACH (const QString& one, lines)
     {
         qCDebug(DIGIKAM_GENERAL_LOG) << "UFRaw ::" << one;
     }

@@ -140,7 +140,7 @@ void DFileSelector::slotBtnClicked()
         fileDlg->setWindowTitle(d->fdTitle);
     }
 
-    emit signalOpenFileDialog();
+    Q_EMIT signalOpenFileDialog();
 
     fileDlg->exec();
 
@@ -149,7 +149,7 @@ void DFileSelector::slotBtnClicked()
         QStringList sel = fileDlg->selectedFiles();
         setFileDlgPath(sel.first());
 
-        emit signalUrlSelected(QUrl::fromLocalFile(sel.first()));
+        Q_EMIT signalUrlSelected(QUrl::fromLocalFile(sel.first()));
     }
 
     delete fileDlg;

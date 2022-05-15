@@ -144,7 +144,7 @@ QString AlbumLabelsSearchHandler::createXMLForCurrentSelection(const QHash<Label
     QList<int>      ratings;
     QList<int>      colorsAndPicks;
 
-    foreach (int rate, selectedLabels[LabelsTreeView::Ratings])
+    Q_FOREACH (int rate, selectedLabels[LabelsTreeView::Ratings])
     {
         if (rate == RatingMin)
         {
@@ -154,12 +154,12 @@ QString AlbumLabelsSearchHandler::createXMLForCurrentSelection(const QHash<Label
         ratings << rate;
     }
 
-    foreach (int color, selectedLabels[LabelsTreeView::Colors])
+    Q_FOREACH (int color, selectedLabels[LabelsTreeView::Colors])
     {
         colorsAndPicks << TagsCache::instance()->tagForColorLabel(color);
     }
 
-    foreach (int pick, selectedLabels[LabelsTreeView::Picks])
+    Q_FOREACH (int pick, selectedLabels[LabelsTreeView::Picks])
     {
         colorsAndPicks << TagsCache::instance()->tagForPickLabel(pick);
     }
@@ -173,7 +173,7 @@ QString AlbumLabelsSearchHandler::createXMLForCurrentSelection(const QHash<Label
 
     if (!ratings.isEmpty())
     {
-        foreach (int rate, ratings)
+        Q_FOREACH (int rate, ratings)
         {
             writer.writeGroup();
             writer.writeField(QLatin1String("rating"), SearchXml::Equal);
@@ -495,7 +495,7 @@ void AlbumLabelsSearchHandler::slotCheckStateChanged()
 
     if (d->albumForSelectedItems)
     {
-        emit checkStateChanged(d->albumForSelectedItems, Qt::Unchecked);
+        Q_EMIT checkStateChanged(d->albumForSelectedItems, Qt::Unchecked);
     }
 
     SAlbum* const album = search(currentXml);
@@ -512,7 +512,7 @@ void AlbumLabelsSearchHandler::slotCheckStateChanged()
             d->albumForSelectedItems = nullptr;
         }
 
-        emit checkStateChanged(album, Qt::Checked);
+        Q_EMIT checkStateChanged(album, Qt::Checked);
     }
 
     d->oldXml = currentXml;
@@ -552,7 +552,7 @@ void AlbumLabelsSearchHandler::slotData(const QList<ItemListerRecord>& data)
 
     QList<QUrl> urlList;
 
-    foreach (const ItemListerRecord& record, data)
+    Q_FOREACH (const ItemListerRecord& record, data)
     {
         ItemInfo info(record);
         urlList << info.fileUrl();

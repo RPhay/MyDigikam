@@ -137,13 +137,13 @@ void DIntNumInput::slotReset()
 {
     d->input->setValue(d->defaultValue);
     d->resetButton->setEnabled(false);
-    emit reset();
+    Q_EMIT reset();
 }
 
 void DIntNumInput::slotValueChanged(int v)
 {
     d->resetButton->setEnabled(v != d->defaultValue);
-    emit valueChanged(v);
+    Q_EMIT valueChanged(v);
 }
 
 // ----------------------------------------------------
@@ -243,13 +243,13 @@ void DDoubleNumInput::slotReset()
 {
     d->input->setValue(d->defaultValue);
     d->resetButton->setEnabled(false);
-    emit reset();
+    Q_EMIT reset();
 }
 
 void DDoubleNumInput::slotValueChanged(double v)
 {
     d->resetButton->setEnabled(v != d->defaultValue);
-    emit valueChanged(v);
+    Q_EMIT valueChanged(v);
 }
 
 } // namespace Digikam

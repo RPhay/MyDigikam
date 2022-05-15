@@ -81,9 +81,9 @@ void CalPrinter::run()
 
     int currPage = 0;
 
-    foreach (const int month, d->months.keys())
+    Q_FOREACH (const int month, d->months.keys())
     {
-        emit pageChanged(currPage);
+        Q_EMIT pageChanged(currPage);
 
         // cppcheck-suppress knownConditionTrueFalse
         if (currPage)
@@ -104,7 +104,7 @@ void CalPrinter::run()
 
     d->painter->end();
 
-    emit pageChanged(currPage);
+    Q_EMIT pageChanged(currPage);
 }
 
 void CalPrinter::cancel()

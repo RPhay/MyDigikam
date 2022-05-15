@@ -328,13 +328,13 @@ void LightTableView::slotLeftZoomFactorChanged(double zoom)
         d->rightPreview->blockSignals(true);
 
         setRightZoomFactor(zoom);
-        emit signalRightZoomFactorChanged(zoom);
+        Q_EMIT signalRightZoomFactorChanged(zoom);
 
         d->rightPreview->blockSignals(false);
         d->rightPreview->layout()->blockSignals(false);
     }
 
-    emit signalLeftZoomFactorChanged(zoom);
+    Q_EMIT signalLeftZoomFactorChanged(zoom);
 }
 
 void LightTableView::slotRightZoomFactorChanged(double zoom)
@@ -345,13 +345,13 @@ void LightTableView::slotRightZoomFactorChanged(double zoom)
         d->leftPreview->blockSignals(true);
 
         setLeftZoomFactor(zoom);
-        emit signalLeftZoomFactorChanged(zoom);
+        Q_EMIT signalLeftZoomFactorChanged(zoom);
 
         d->leftPreview->blockSignals(false);
         d->leftPreview->layout()->blockSignals(false);
     }
 
-    emit signalRightZoomFactorChanged(zoom);
+    Q_EMIT signalRightZoomFactorChanged(zoom);
 }
 
 ItemInfo LightTableView::leftItemInfo() const
@@ -389,7 +389,7 @@ void LightTableView::slotLeftPreviewLoaded(bool success)
     checkForSyncPreview();
     slotRightContentsMoved(d->rightPreview->contentsX(), d->rightPreview->contentsY());
 
-    emit signalLeftPreviewLoaded(success);
+    Q_EMIT signalLeftPreviewLoaded(success);
 }
 
 void LightTableView::slotRightPreviewLoaded(bool success)
@@ -397,7 +397,7 @@ void LightTableView::slotRightPreviewLoaded(bool success)
     checkForSyncPreview();
     slotLeftContentsMoved(d->leftPreview->contentsX(), d->leftPreview->contentsY());
 
-    emit signalRightPreviewLoaded(success);
+    Q_EMIT signalRightPreviewLoaded(success);
 }
 
 void LightTableView::checkForSyncPreview()
@@ -413,7 +413,7 @@ void LightTableView::checkForSyncPreview()
         d->syncPreview = false;
     }
 
-    emit signalToggleOnSyncPreview(d->syncPreview);
+    Q_EMIT signalToggleOnSyncPreview(d->syncPreview);
 }
 
 void LightTableView::checkForSelection(const ItemInfo& info)
@@ -447,12 +447,12 @@ void LightTableView::checkForSelection(const ItemInfo& info)
 
 void LightTableView::slotDeleteLeftItem()
 {
-    emit signalDeleteItem(d->leftPreview->getItemInfo());
+    Q_EMIT signalDeleteItem(d->leftPreview->getItemInfo());
 }
 
 void LightTableView::slotDeleteRightItem()
 {
-    emit signalDeleteItem(d->rightPreview->getItemInfo());
+    Q_EMIT signalDeleteItem(d->rightPreview->getItemInfo());
 }
 
 bool LightTableView::leftPreviewLoading() const

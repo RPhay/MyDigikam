@@ -152,7 +152,7 @@ void DFileOperations::openFilesWithDefaultApplication(const QList<QUrl>& urls)
         return;
     }
 
-    foreach (const QUrl& url, urls)
+    Q_FOREACH (const QUrl& url, urls)
     {
         QDesktopServices::openUrl(url);
     }
@@ -262,7 +262,7 @@ void DFileOperations::openInFileManager(const QList<QUrl>& urls)
     QUrl first   = urls.first();
     first        = first.adjusted(QUrl::RemoveFilename);
 
-    foreach (const QUrl& url, urls)
+    Q_FOREACH (const QUrl& url, urls)
     {
         if (first != url.adjusted(QUrl::RemoveFilename))
         {
@@ -331,7 +331,7 @@ void DFileOperations::openInFileManager(const QList<QUrl>& urls)
     {
         QStringList uris;
 
-        foreach (const QUrl& url, fileUrls)
+        Q_FOREACH (const QUrl& url, fileUrls)
         {
             uris << url.toString();
         }
@@ -385,7 +385,7 @@ bool DFileOperations::copyFolderRecursively(const QString& srcPath,
         }
     }
 
-    foreach (const QFileInfo& fileInfo, srcDir.entryInfoList(QDir::Files))
+    Q_FOREACH (const QFileInfo& fileInfo, srcDir.entryInfoList(QDir::Files))
     {
         QString copyPath = newCopyPath + QLatin1Char('/') + fileInfo.fileName();
 
@@ -410,7 +410,7 @@ bool DFileOperations::copyFolderRecursively(const QString& srcPath,
         }
     }
 
-    foreach (const QFileInfo& fileInfo, srcDir.entryInfoList(QDir::Dirs | QDir::NoDotAndDotDot))
+    Q_FOREACH (const QFileInfo& fileInfo, srcDir.entryInfoList(QDir::Dirs | QDir::NoDotAndDotDot))
     {
         if (!copyFolderRecursively(fileInfo.filePath(), newCopyPath, itemId, cancel, false))
         {   // cppcheck-suppress useStlAlgorithm
@@ -424,7 +424,7 @@ bool DFileOperations::copyFolderRecursively(const QString& srcPath,
 bool DFileOperations::copyFiles(const QStringList& srcPaths,
                                 const QString& dstPath)
 {
-    foreach (const QString& path, srcPaths)
+    Q_FOREACH (const QString& path, srcPaths)
     {
         QFileInfo fileInfo(path);
         QString copyPath = dstPath + QLatin1Char('/') + fileInfo.fileName();

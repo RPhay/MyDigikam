@@ -159,7 +159,7 @@ FilesDownloader::~FilesDownloader()
 
 bool FilesDownloader::checkDownloadFiles() const
 {
-    foreach (const DownloadInfo& info, d->files)
+    Q_FOREACH (const DownloadInfo& info, d->files)
     {
         if (!downloadExists(info))
         {   // cppcheck-suppress useStlAlgorithm
@@ -188,7 +188,7 @@ void FilesDownloader::startDownload()
     QString path = QDir::toNativeSeparators(getFacesEnginePath());
     qint64 size  = 0;
 
-    foreach (const DownloadInfo& info, d->files)
+    Q_FOREACH (const DownloadInfo& info, d->files)
     {
         if (!downloadExists(info))
         {

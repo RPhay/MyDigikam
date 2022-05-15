@@ -373,7 +373,7 @@ void AudioOutput::setBackends(const QStringList &backendNames)
 
     if (!d.backends.isEmpty())
     {
-        foreach (const QString& b, d.backends)
+        Q_FOREACH (const QString& b, d.backends)
         {
             d.backend = AudioOutputBackend::create(b.toLatin1().constData());
 

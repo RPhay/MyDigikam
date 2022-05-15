@@ -127,19 +127,19 @@ void RawImportNativePlugin::slotLoadRawFromTool()
     if (rawImport->hasPostProcessedImage())
     {
         // Image was previously decoded in Import tool: load pre-decoded image as well in editor.
-        emit signalDecodedImage(props, rawImport->postProcessedImage());
+        Q_EMIT signalDecodedImage(props, rawImport->postProcessedImage());
     }
     else
     {
         // Image was not previously decoded in Import tool: as to editor to post-process image and load it.
-        emit signalLoadRaw(props);
+        Q_EMIT signalLoadRaw(props);
     }
 }
 
 void RawImportNativePlugin::slotLoadRaw()
 {
     // Cancel pressed: we load Raw with image editor default Raw decoding settings.
-    emit signalLoadRaw(LoadingDescription(m_filePath,
+    Q_EMIT signalLoadRaw(LoadingDescription(m_filePath,
                                           m_defaultSettings,
                                           LoadingDescription::RawDecodingGlobalSettings,
                                           LoadingDescription::ConvertForEditor));

@@ -257,27 +257,27 @@ void AssignNameWidget::slotConfirm()
 {
     if      (d->comboBox)
     {
-        emit assigned(d->comboBox->currentTaggingAction(), d->info, d->faceIdentifier);
+        Q_EMIT assigned(d->comboBox->currentTaggingAction(), d->info, d->faceIdentifier);
     }
     else if (d->lineEdit)
     {
-        emit assigned(d->lineEdit->currentTaggingAction(), d->info, d->faceIdentifier);
+        Q_EMIT assigned(d->lineEdit->currentTaggingAction(), d->info, d->faceIdentifier);
     }
 }
 
 void AssignNameWidget::slotReject()
 {
-    emit rejected(d->info, d->faceIdentifier);
+    Q_EMIT rejected(d->info, d->faceIdentifier);
 }
 
 void AssignNameWidget::slotIgnore()
 {
-    emit ignored(d->info, d->faceIdentifier);
+    Q_EMIT ignored(d->info, d->faceIdentifier);
 }
 
 void AssignNameWidget::slotActionActivated(const TaggingAction& action)
 {
-    emit assigned(action, d->info, d->faceIdentifier);
+    Q_EMIT assigned(action, d->info, d->faceIdentifier);
 }
 
 void AssignNameWidget::slotActionSelected(const TaggingAction& action)
@@ -287,17 +287,17 @@ void AssignNameWidget::slotActionSelected(const TaggingAction& action)
         d->confirmButton->setEnabled(action.isValid());
     }
 
-    emit selected(action, d->info, d->faceIdentifier);
+    Q_EMIT selected(action, d->info, d->faceIdentifier);
 }
 
 void AssignNameWidget::slotIgnoredClicked()
 {
-    emit ignoredClicked(d->info, d->faceIdentifier);
+    Q_EMIT ignoredClicked(d->info, d->faceIdentifier);
 }
 
 void AssignNameWidget::slotLabelClicked()
 {
-    emit labelClicked(d->info, d->faceIdentifier);
+    Q_EMIT labelClicked(d->info, d->faceIdentifier);
 }
 
 void AssignNameWidget::keyPressEvent(QKeyEvent* e)

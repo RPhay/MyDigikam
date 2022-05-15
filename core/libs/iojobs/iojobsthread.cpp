@@ -221,7 +221,7 @@ void IOJobsThread::slotOneJobFinished()
 
     if (d->jobsCount == 0)
     {
-        emit signalFinished();
+        Q_EMIT signalFinished();
         qCDebug(DIGIKAM_IOJOB_LOG) << "Thread Finished";
     }
 }

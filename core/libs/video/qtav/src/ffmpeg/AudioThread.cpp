@@ -75,7 +75,7 @@ void AudioThread::applyFilters(AudioFrame &frame)
     {
         // sort filters by format. vo->defaultFormat() is the last
 
-        foreach (Filter* filter, d.filters)
+        Q_FOREACH (Filter* filter, d.filters)
         {
             AudioFilter* af = static_cast<AudioFilter*>(filter);
 

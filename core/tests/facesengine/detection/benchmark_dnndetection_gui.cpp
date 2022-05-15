@@ -221,7 +221,7 @@ void MainWindow::extractFaces(const QImage& img, QImage& imgScaled, const QList<
 
     qCDebug(DIGIKAM_TESTS_LOG) << "Coordinates of detected faces : ";
 
-    foreach (const QRectF& r, faces)
+    Q_FOREACH (const QRectF& r, faces)
     {
         qCDebug(DIGIKAM_TESTS_LOG) << r;
     }
@@ -231,7 +231,7 @@ void MainWindow::extractFaces(const QImage& img, QImage& imgScaled, const QList<
     paintPen.setWidth(1);
     painter.setPen(paintPen);
 
-    foreach (const QRectF& rr, faces)
+    Q_FOREACH (const QRectF& rr, faces)
     {
         QRect  rectDraw = FaceDetector::toAbsoluteRect(rr, imgScaled.size());
         QRect  rect     = FaceDetector::toAbsoluteRect(rr, img.size());

@@ -663,7 +663,7 @@ void DConfigDlgListViewProxy::rebuildMap()
         qDebug("%d:0 -> %d:%d", i, mList[ i ].row(), mList[ i ].column());
     }
 
-    emit layoutChanged();
+    Q_EMIT layoutChanged();
 }
 
 void DConfigDlgListViewProxy::addMapEntry(const QModelIndex& index)

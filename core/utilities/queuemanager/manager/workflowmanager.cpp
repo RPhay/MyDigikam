@@ -128,7 +128,7 @@ void WorkflowManager::insertPrivate(const Workflow& q)
         qCDebug(DIGIKAM_GENERAL_LOG) << "add : " << q.title;
     }
 
-    emit signalQueueSettingsAdded(q.title);
+    Q_EMIT signalQueueSettingsAdded(q.title);
 }
 
 void WorkflowManager::removePrivate(const Workflow& q)
@@ -152,14 +152,14 @@ void WorkflowManager::removePrivate(const Workflow& q)
         }
     }
 
-    emit signalQueueSettingsRemoved(q.title);
+    Q_EMIT signalQueueSettingsRemoved(q.title);
 }
 
 Workflow WorkflowManager::findByTitle(const QString& title) const
 {
     QMutexLocker lock(&d->mutex);
 
-    foreach (const Workflow& q, d->qList)
+    Q_FOREACH (const Workflow& q, d->qList)
     {
         if (q.title == title)
         {    // cppcheck-suppress useStlAlgorithm
@@ -179,9 +179,9 @@ void WorkflowManager::clear()
         d->qList.clear();
     }
 
-    foreach (const Workflow& q, d->qList)
+    Q_FOREACH (const Workflow& q, d->qList)
     {
-        emit signalQueueSettingsRemoved(q.title);
+        Q_EMIT signalQueueSettingsRemoved(q.title);
     }
 }
 
@@ -206,7 +206,7 @@ bool WorkflowManager::save()
     {
         QMutexLocker lock(&d->mutex);
 
-        foreach (const Workflow& q, d->qList)
+        Q_FOREACH (const Workflow& q, d->qList)
         {
             QDomElement elm = doc.createElement(QLatin1String("queue"));
             QDomElement data;
@@ -291,7 +291,7 @@ bool WorkflowManager::save()
 
             // ----------------------
 
-            foreach (const BatchToolSet& set, q.aTools)
+            Q_FOREACH (const BatchToolSet& set, q.aTools)
             {
                 QDomElement batchtool = doc.createElement(QLatin1String("tool"));
                 elm.appendChild(batchtool);

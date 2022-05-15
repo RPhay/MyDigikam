@@ -316,7 +316,7 @@ void ItemViewCategorized::setSelectedIndexes(const QList<QModelIndex>& indexes)
 
     QItemSelection mySelection;
 
-    foreach (const QModelIndex& index, indexes)
+    Q_FOREACH (const QModelIndex& index, indexes)
     {
         mySelection.select(index, index);
     }
@@ -432,7 +432,7 @@ void ItemViewCategorized::slotClicked(const QModelIndex& index)
 {
     if (d->currentMouseEvent)
     {
-        emit clicked(d->currentMouseEvent, index);
+        Q_EMIT clicked(d->currentMouseEvent, index);
     }
 }
 
@@ -440,7 +440,7 @@ void ItemViewCategorized::slotEntered(const QModelIndex& index)
 {
     if (d->currentMouseEvent)
     {
-        emit entered(d->currentMouseEvent, index);
+        Q_EMIT entered(d->currentMouseEvent, index);
     }
 }
 
@@ -451,8 +451,8 @@ void ItemViewCategorized::reset()
     // FIXME : Emitting this causes a crash importstackedview, because the model is not yet set.
     //         atm there's a check against null models though.
 
-    emit selectionChanged();
-    emit selectionCleared();
+    Q_EMIT selectionChanged();
+    Q_EMIT selectionCleared();
 
     d->ensureInitialSelectedItem = true;
     d->hintAtScrollPosition      = QModelIndex();
@@ -466,11 +466,11 @@ void ItemViewCategorized::selectionChanged(const QItemSelection& selectedItems, 
 {
     DCategorizedView::selectionChanged(selectedItems, deselectedItems);
 
-    emit selectionChanged();
+    Q_EMIT selectionChanged();
 
     if (!selectionModel()->hasSelection())
     {
-        emit selectionCleared();
+        Q_EMIT selectionCleared();
     }
 
     userInteraction();
@@ -867,7 +867,7 @@ void ItemViewCategorized::mousePressEvent(QMouseEvent* event)
 
     if (!index.isValid())
     {
-        emit viewportClicked(event);
+        Q_EMIT viewportClicked(event);
     }
 }
 
@@ -933,11 +933,11 @@ void ItemViewCategorized::wheelEvent(QWheelEvent* event)
 
         if      (delta > 0)
         {
-            emit zoomInStep();
+            Q_EMIT zoomInStep();
         }
         else if (delta < 0)
         {
-            emit zoomOutStep();
+            Q_EMIT zoomOutStep();
         }
 
         event->accept();
@@ -986,15 +986,15 @@ void ItemViewCategorized::keyPressEvent(QKeyEvent* event)
     if (trigger)
     {
         const QModelIndexList indexList = selModel->selectedIndexes();
-        foreach (const QModelIndex& index, indexList)
+        Q_FOREACH (const QModelIndex& index, indexList)
         {
-            emit itemTriggered(itemForIndex(index));
+            Q_EMIT itemTriggered(itemForIndex(index));
         }
     }
 */
     DCategorizedView::keyPressEvent(event);
 
-    emit keyPressed(event);
+    Q_EMIT keyPressed(event);
 }
 
 void ItemViewCategorized::resizeEvent(QResizeEvent* e)

@@ -110,14 +110,14 @@ SearchTextBar::SearchTextBar(QWidget* const parent, const QString& name, const Q
     connect(d->completer, QOverload<>::of(&ModelCompleter::signalActivated),
             this, [=]()
         {
-            emit completerActivated();
+            Q_EMIT completerActivated();
         }
     );
 
     connect(d->completer, QOverload<const int>::of(&ModelCompleter::signalHighlighted),
             this, [=](const int albumId)
         {
-            emit completerHighlighted(albumId);
+            Q_EMIT completerHighlighted(albumId);
         }
     );
 
@@ -208,11 +208,11 @@ void SearchTextBar::setCaseSensitive(bool b)
         d->settings.caseSensitive = Qt::CaseInsensitive;
     }
 
-    // Re-emit signal with changed settings
+    // Re-Q_EMIT signal with changed settings
 
     if (!text().isEmpty())
     {
-        emit signalSearchTextSettings(d->settings);
+        Q_EMIT signalSearchTextSettings(d->settings);
     }
 }
 
@@ -247,7 +247,7 @@ void SearchTextBar::slotTextChanged()
 
     d->settings.text = txt;
 
-    emit signalSearchTextSettings(d->settings);
+    Q_EMIT signalSearchTextSettings(d->settings);
 }
 
 void SearchTextBar::slotSearchResult(bool match)
@@ -311,7 +311,7 @@ void SearchTextBar::setIgnoreCase(bool ignore)
         d->settings.caseSensitive = Qt::CaseInsensitive;
     }
 
-    emit signalSearchTextSettings(d->settings);
+    Q_EMIT signalSearchTextSettings(d->settings);
 }
 
 } // namespace Digikam

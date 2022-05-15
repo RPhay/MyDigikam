@@ -49,9 +49,9 @@ QList<SolidVolumeInfo> CollectionManager::Private::listVolumes()
     }
     else
     {
-        // emit a blocking queued signal to move call to main thread
+        // Q_EMIT a blocking queued signal to move call to main thread
 
-        emit s->triggerUpdateVolumesList();
+        Q_EMIT s->triggerUpdateVolumesList();
 
         return volumesListCache;
     }
@@ -74,7 +74,7 @@ QList<SolidVolumeInfo> CollectionManager::Private::actuallyListVolumes()
 
     udisToWatch.clear();
 
-    foreach (const Solid::Device& accessDevice, devices)
+    Q_FOREACH (const Solid::Device& accessDevice, devices)
     {
         // check for StorageAccess
 
@@ -294,7 +294,7 @@ QString CollectionManager::Private::directoryHash(const QString& path)
         QStringList entries = dir.entryList(QDir::Files | QDir::Dirs | QDir::NoDotAndDotDot);
         QCryptographicHash md5(QCryptographicHash::Md5);
 
-        foreach (const QString& entry, entries)
+        Q_FOREACH (const QString& entry, entries)
         {
             md5.addData(entry.toUtf8());
         }
@@ -318,7 +318,7 @@ SolidVolumeInfo CollectionManager::Private::findVolumeForLocation(const AlbumRoo
 
     if      (!(queryItem = QUrlQuery(url).queryItemValue(QLatin1String("uuid"))).isNull())
     {
-        foreach (const SolidVolumeInfo& volume, volumes)
+        Q_FOREACH (const SolidVolumeInfo& volume, volumes)
         {
             if (volume.uuid.compare(queryItem, Qt::CaseInsensitive) == 0)
             {    // cppcheck-suppress useStlAlgorithm
@@ -336,7 +336,7 @@ SolidVolumeInfo CollectionManager::Private::findVolumeForLocation(const AlbumRoo
 
         QList<SolidVolumeInfo> candidateVolumes;
 
-        foreach (const SolidVolumeInfo& volume, volumes)
+        Q_FOREACH (const SolidVolumeInfo& volume, volumes)
         {
             if (volume.label == queryItem)
             {
@@ -353,7 +353,7 @@ SolidVolumeInfo CollectionManager::Private::findVolumeForLocation(const AlbumRoo
 
         bool hasOtherLocation = false;
 
-        foreach (AlbumRootLocation* const otherLocation, locations)
+        Q_FOREACH (AlbumRootLocation* const otherLocation, locations)
         {
             if (otherLocation == location)
             {
@@ -393,7 +393,7 @@ SolidVolumeInfo CollectionManager::Private::findVolumeForLocation(const AlbumRoo
 
             // match against directory hash
 
-            foreach (const SolidVolumeInfo& volume, candidateVolumes)
+            Q_FOREACH (const SolidVolumeInfo& volume, candidateVolumes)
             {
                 QString volumeDirHash = directoryHash(volume.path);
 
@@ -408,7 +408,7 @@ SolidVolumeInfo CollectionManager::Private::findVolumeForLocation(const AlbumRoo
     }
     else if (!(queryItem = QUrlQuery(url).queryItemValue(QLatin1String("mountpath"))).isNull())
     {
-        foreach (const SolidVolumeInfo& volume, volumes)
+        Q_FOREACH (const SolidVolumeInfo& volume, volumes)
         {
             if (volume.isMounted && (volume.path == queryItem))
             {    // cppcheck-suppress useStlAlgorithm
@@ -474,7 +474,7 @@ SolidVolumeInfo CollectionManager::Private::findVolumeForUrl(const QUrl& fileUrl
     //FIXME: Network shares! Here we get only the volume of the mount path...
     // This is probably not really clean. But Solid does not help us.
 
-    foreach (const SolidVolumeInfo& v, volumes)
+    Q_FOREACH (const SolidVolumeInfo& v, volumes)
     {
         if (v.isMounted && !v.path.isEmpty() && path.startsWith(v.path))
         {
@@ -502,7 +502,7 @@ bool CollectionManager::Private::checkIfExists(const QString& filePath, QList<Co
 
     QReadLocker locker(&lock);
 
-    foreach (AlbumRootLocation* const location, locations)
+    Q_FOREACH (AlbumRootLocation* const location, locations)
     {
         const QUrl locationPathUrl = QUrl::fromLocalFile(location->albumRootPath());
 /*
@@ -517,7 +517,7 @@ bool CollectionManager::Private::checkIfExists(const QString& filePath, QList<Co
         {
             bool isDeleted = false;
 
-            foreach (const CollectionLocation& deletedLoc, assumeDeleted)
+            Q_FOREACH (const CollectionLocation& deletedLoc, assumeDeleted)
             {
                 if (deletedLoc.id() == location->id())
                 {   // cppcheck-suppress useStlAlgorithm

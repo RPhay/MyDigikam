@@ -84,7 +84,7 @@ void Sidebar::doLoadState()
         setTab(d->activeTab, false);
         d->stack->setCurrentIndex(d->activeTab);
         shrink();
-        emit signalChangedTab(d->stack->currentWidget());
+        Q_EMIT signalChangedTab(d->stack->currentWidget());
 
         return;
     }
@@ -118,7 +118,7 @@ void Sidebar::backup(const QList<QWidget*>& thirdWidgetsToBackup, QList<int>* co
 {
     sizes->clear();
 
-    foreach (QWidget* const widget, thirdWidgetsToBackup)
+    Q_FOREACH (QWidget* const widget, thirdWidgetsToBackup)
     {
         *sizes << d->splitter->size(widget);
     }
@@ -214,7 +214,7 @@ void Sidebar::deleteTab(QWidget* const w)
             if (atab != -1)
             {
                 switchTabAndStackToTab(atab);
-                emit signalChangedTab(d->stack->currentWidget());
+                Q_EMIT signalChangedTab(d->stack->currentWidget());
 
                 if (state.size == 0)
                 {
@@ -262,7 +262,7 @@ void Sidebar::slotClicked(int tab)
             expand();
         }
 
-        emit signalChangedTab(d->stack->currentWidget());
+        Q_EMIT signalChangedTab(d->stack->currentWidget());
     }
 }
 
@@ -282,7 +282,7 @@ void Sidebar::setActiveTab(QWidget* const w)
         expand();
     }
 
-    emit signalChangedTab(d->stack->currentWidget());
+    Q_EMIT signalChangedTab(d->stack->currentWidget());
 }
 
 void Sidebar::activePreviousTab()
@@ -355,7 +355,7 @@ void Sidebar::shrink()
     }
 
     d->stack->hide();
-    emit signalViewChanged();
+    Q_EMIT signalViewChanged();
 }
 
 void Sidebar::expand()
@@ -377,7 +377,7 @@ void Sidebar::slotExpandTimer()
         d->splitter->setSize(this, d->restoreSize ? d->restoreSize : -1);
     }
 
-    emit signalViewChanged();
+    Q_EMIT signalViewChanged();
 }
 
 bool Sidebar::isExpanded() const

@@ -292,8 +292,8 @@ void DGradientSlider::setRightValue(double v)
         adjustMiddleValue(d->leftCursor, v);
         d->rightCursor = v;
         update();
-        emit rightValueChanged(v);
-        emit middleValueChanged(d->middleCursor);
+        Q_EMIT rightValueChanged(v);
+        Q_EMIT middleValueChanged(d->middleCursor);
     }
 }
 
@@ -306,8 +306,8 @@ void DGradientSlider::setLeftValue(double v)
         adjustMiddleValue(v, d->rightCursor);
         d->leftCursor = v;
         update();
-        emit leftValueChanged(v);
-        emit middleValueChanged(d->middleCursor);
+        Q_EMIT leftValueChanged(v);
+        Q_EMIT middleValueChanged(d->middleCursor);
     }
 }
 
@@ -317,7 +317,7 @@ void DGradientSlider::setMiddleValue(double v)
     {
         d->middleCursor = v;
         update();
-        emit middleValueChanged(v);
+        Q_EMIT middleValueChanged(v);
     }
 }
 

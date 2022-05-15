@@ -115,7 +115,7 @@ QStringList HotPixelProps::toStringList(const QList<HotPixelProps>& lst)
 {
     QStringList hplst;
 
-    foreach (const HotPixelProps& hp, lst)
+    Q_FOREACH (const HotPixelProps& hp, lst)
     {
         hplst << hp.toString();
     }
@@ -127,7 +127,7 @@ QList<HotPixelProps> HotPixelProps::fromStringList(const QStringList& hplst)
 {
     QList<HotPixelProps> lst;
 
-    foreach (const QString& str, hplst)
+    Q_FOREACH (const QString& str, hplst)
     {
         HotPixelProps hp;
 

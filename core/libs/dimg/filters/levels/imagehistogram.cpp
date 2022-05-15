@@ -134,12 +134,12 @@ void ImageHistogram::calculateInThread()
 
     if (!d->img.isNull())
     {
-        emit calculationAboutToStart();
+        Q_EMIT calculationAboutToStart();
         start();
     }
     else
     {
-        emit calculationFinished(false);
+        Q_EMIT calculationFinished(false);
     }
 }
 
@@ -172,7 +172,7 @@ void ImageHistogram::calculate()
 
     if (d->img.isNull())
     {
-        emit calculationFinished(false);
+        Q_EMIT calculationFinished(false);
         return;
     }
 
@@ -180,14 +180,14 @@ void ImageHistogram::calculate()
 
     if (d->histogram && d->valid)
     {
-        emit calculationFinished(true);
+        Q_EMIT calculationFinished(true);
         return;
     }
 
     uint i;
     int  max;
 
-    emit calculationStarted();
+    Q_EMIT calculationStarted();
 
     if (!d->histogram)
     {
@@ -197,7 +197,7 @@ void ImageHistogram::calculate()
     if (!d->histogram)
     {
         qCWarning(DIGIKAM_DIMG_LOG) << ("HistogramWidget::calcHistogramValues: Unable to allocate memory!");
-        emit calculationFinished(false);
+        Q_EMIT calculationFinished(false);
         return;
     }
 
@@ -271,7 +271,7 @@ void ImageHistogram::calculate()
     if (runningFlag())
     {
         d->valid = true;
-        emit calculationFinished(true);
+        Q_EMIT calculationFinished(true);
     }
 }
 

@@ -105,7 +105,7 @@ QList<FilterAction> FilterActionFilter::filterActions() const
 
 bool FilterActionFilter::isReproducible() const
 {
-    foreach (const FilterAction& action, d->actions)
+    Q_FOREACH (const FilterAction& action, d->actions)
     {
         if (!action.isNull() &&
             (action.category() != FilterAction::ReproducibleFilter))
@@ -119,7 +119,7 @@ bool FilterActionFilter::isReproducible() const
 
 bool FilterActionFilter::isComplexAction() const
 {
-    foreach (const FilterAction& action, d->actions)
+    Q_FOREACH (const FilterAction& action, d->actions)
     {
         if (!action.isNull()                                        &&
             (action.category() != FilterAction::ReproducibleFilter) &&
@@ -134,7 +134,7 @@ bool FilterActionFilter::isComplexAction() const
 
 bool FilterActionFilter::isSupported() const
 {
-    foreach (const FilterAction& action, d->actions)
+    Q_FOREACH (const FilterAction& action, d->actions)
     {
         if (!action.isNull() && !DImgFilterManager::instance()->isSupported(action.identifier(), action.version()))
         {   // cppcheck-suppress useStlAlgorithm
@@ -186,7 +186,7 @@ void FilterActionFilter::filterImage()
 
     DImg img = m_orgImage;
 
-    foreach (const FilterAction& action, d->actions)
+    Q_FOREACH (const FilterAction& action, d->actions)
     {
         qCDebug(DIGIKAM_DIMG_LOG) << "Replaying action" << action.identifier();
 

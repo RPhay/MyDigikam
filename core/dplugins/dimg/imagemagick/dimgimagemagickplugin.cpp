@@ -197,7 +197,7 @@ QString DImgImageMagickPlugin::typeMimes() const
 
     QString ret;
 
-    foreach (const QString& str, formats)
+    Q_FOREACH (const QString& str, formats)
     {
         if (!ret.contains(str))
         {

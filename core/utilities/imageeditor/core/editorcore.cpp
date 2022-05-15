@@ -118,7 +118,7 @@ void EditorCore::load(const QString& filePath, IOFileSettings* const iofileSetti
 
             if (!d->rawPlugin)
             {
-                foreach (DPlugin* const p, DPluginLoader::instance()->allPlugins())
+                Q_FOREACH (DPlugin* const p, DPluginLoader::instance()->allPlugins())
                 {
                     DPluginRawImport* const raw = dynamic_cast<DPluginRawImport*>(p);
 
@@ -162,11 +162,11 @@ void EditorCore::slotLoadRawFromTool(const LoadingDescription& props, const DImg
     d->resetValues();
     d->currentDescription = props;
 
-    emit signalLoadingStarted(d->currentDescription.filePath);
+    Q_EMIT signalLoadingStarted(d->currentDescription.filePath);
     slotImageLoaded(d->currentDescription, img);
     EditorToolIface::editorToolIface()->unLoadTool();
 /*
-    emit signalImageLoaded(d->currentDescription.filePath, true);
+    Q_EMIT signalImageLoaded(d->currentDescription.filePath, true);
 */
 }
 
@@ -294,7 +294,7 @@ void EditorCore::slotImageLoaded(const LoadingDescription& loadingDescription, c
         valRet = false;
     }
 
-    emit signalImageLoaded(d->currentDescription.filePath, valRet);
+    Q_EMIT signalImageLoaded(d->currentDescription.filePath, valRet);
     setModified();
 }
 
@@ -312,7 +312,7 @@ void EditorCore::slotLoadingProgress(const LoadingDescription& loadingDescriptio
 {
     if (loadingDescription == d->currentDescription)
     {
-        emit signalLoadingProgress(loadingDescription.filePath, progress);
+        Q_EMIT signalLoadingProgress(loadingDescription.filePath, progress);
     }
 }
 
@@ -330,30 +330,30 @@ void EditorCore::undo()
 {
     if (!d->undoMan->anyMoreUndo())
     {
-        emit signalUndoStateChanged();
+        Q_EMIT signalUndoStateChanged();
         return;
     }
 
     d->undoMan->undo();
-    emit signalUndoStateChanged();
+    Q_EMIT signalUndoStateChanged();
 }
 
 void EditorCore::redo()
 {
     if (!d->undoMan->anyMoreRedo())
     {
-        emit signalUndoStateChanged();
+        Q_EMIT signalUndoStateChanged();
         return;
     }
 
     d->undoMan->redo();
-    emit signalUndoStateChanged();
+    Q_EMIT signalUndoStateChanged();
 }
 
 void EditorCore::rollbackToOrigin()
 {
     d->undoMan->rollbackToOrigin();
-    emit signalUndoStateChanged();
+    Q_EMIT signalUndoStateChanged();
 }
 
 void EditorCore::saveAs(const QString& filePath, IOFileSettings* const iofileSettings,
@@ -412,7 +412,7 @@ void EditorCore::slotImageSaved(const QString& filePath, bool success)
     if (d->currentFileToSave == d->filesToSave.size())
     {
         d->filesToSave.clear();
-        emit signalImageSaved(filePath, success);
+        Q_EMIT signalImageSaved(filePath, success);
     }
     else
     {
@@ -424,7 +424,7 @@ void EditorCore::slotSavingProgress(const QString& filePath, float progress)
 {
     if (!d->filesToSave.isEmpty() && d->filesToSave.at(d->currentFileToSave).filePath == filePath)
     {
-        emit signalSavingProgress(filePath, progress);
+        Q_EMIT signalSavingProgress(filePath, progress);
     }
 }
 
@@ -519,8 +519,8 @@ void EditorCore::setHistoryIsBranch(bool isBranching)
 
 void EditorCore::setModified()
 {
-    emit signalModified();
-    emit signalUndoStateChanged();
+    Q_EMIT signalModified();
+    Q_EMIT signalUndoStateChanged();
 }
 
 void EditorCore::readMetadataFromFile(const QString& file)
@@ -547,14 +547,14 @@ void EditorCore::clearUndoManager()
 {
     d->undoMan->clear();
     d->undoMan->setOrigin();
-    emit signalUndoStateChanged();
+    Q_EMIT signalUndoStateChanged();
 }
 
 void EditorCore::setUndoManagerOrigin()
 {
     d->undoMan->setOrigin();
-    emit signalUndoStateChanged();
-    emit signalFileOriginChanged(getImageFilePath());
+    Q_EMIT signalUndoStateChanged();
+    Q_EMIT signalFileOriginChanged(getImageFilePath());
 }
 
 bool EditorCore::isValid() const
@@ -731,7 +731,7 @@ void EditorCore::imageUndoChanged(const UndoMetadataContainer& c)
 void EditorCore::setFileOriginData(const QVariant& data)
 {
     d->image.setFileOriginData(data);
-    emit signalFileOriginChanged(getImageFilePath());
+    Q_EMIT signalFileOriginChanged(getImageFilePath());
 }
 
 DImg EditorCore::getImgSelection() const

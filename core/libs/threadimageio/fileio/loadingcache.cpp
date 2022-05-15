@@ -368,14 +368,14 @@ void LoadingCache::notifyFileChanged(const QString& filePath, bool notify)
 {
     QList<QString> keys = d->imageFilePathMap.values(filePath);
 
-    foreach (const QString& cacheKey, keys)
+    Q_FOREACH (const QString& cacheKey, keys)
     {
         d->imageCache.remove(cacheKey);
     }
 
     keys = d->thumbnailFilePathMap.values(filePath);
 
-    foreach (const QString& cacheKey, keys)
+    Q_FOREACH (const QString& cacheKey, keys)
     {
         d->thumbnailImageCache.remove(cacheKey);
         d->thumbnailPixmapCache.remove(cacheKey);
@@ -383,7 +383,7 @@ void LoadingCache::notifyFileChanged(const QString& filePath, bool notify)
 
     if (notify)
     {
-        emit fileChanged(filePath);
+        Q_EMIT fileChanged(filePath);
     }
 }
 
@@ -430,7 +430,7 @@ void LoadingCacheFileWatch::addedImage(const QString& filePath)
 
     if (m_watchMap.size() > cachePaths.size())
     {
-        foreach (const QString& path, m_watchMap.keys())
+        Q_FOREACH (const QString& path, m_watchMap.keys())
         {
             if (!cachePaths.contains(path))
             {

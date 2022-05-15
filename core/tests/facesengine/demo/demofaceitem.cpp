@@ -325,7 +325,7 @@ void FaceItem::accepted()
     d->acceptButton->hide();
     d->faceName->setDefaultTextColor(QColor("white"));
     d->nameRect->setPen(QPen(QColor("white")));
-    emit acceptButtonClicked(this->text(), this->originalRect());
+    Q_EMIT acceptButtonClicked(this->text(), this->originalRect());
 }
 
 QRect FaceItem::originalRect() const
@@ -340,7 +340,7 @@ double FaceItem::originalScale() const
 
 void FaceItem::reject()
 {
-    emit rejectButtonClicked(this->text(), this->originalRect());
+    Q_EMIT rejectButtonClicked(this->text(), this->originalRect());
     clearAndHide();
 }
 
@@ -376,14 +376,14 @@ void FaceItem::slotSuggestionAccepted()
     switchToEditMode();
     d->faceName->setHtml(QLatin1String("<b>") + d->name + QLatin1String("</b>"));
     accepted();
-    emit suggestionAcceptButtonClicked(this->text(), this->originalRect());
+    Q_EMIT suggestionAcceptButtonClicked(this->text(), this->originalRect());
 }
 
 void FaceItem::slotSuggestionRejected()
 {
     switchToEditMode();
     d->faceName->setHtml(QLatin1String("<b>") + QString() + QLatin1String("</b>"));
-    emit suggestionRejectButtonClicked(this->text(), this->originalRect());
+    Q_EMIT suggestionRejectButtonClicked(this->text(), this->originalRect());
 }
 
 void FaceItem::paint(QPainter*, const QStyleOptionGraphicsItem*, QWidget*)

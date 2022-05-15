@@ -153,7 +153,7 @@ void EmbossFilter::filterImage()
                                           ));
         }
 
-        foreach (QFuture<void> t, tasks)
+        Q_FOREACH (QFuture<void> t, tasks)
         {
             t.waitForFinished();
         }

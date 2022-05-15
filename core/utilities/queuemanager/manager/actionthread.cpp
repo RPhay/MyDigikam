@@ -113,7 +113,7 @@ void ActionThread::cancel()
 {
     if (isRunning())
     {
-        emit signalCancelTask();
+        Q_EMIT signalCancelTask();
     }
 
     ActionThreadBase::cancel();
@@ -146,7 +146,7 @@ void ActionThread::slotUpdateItemInfo(const Digikam::ActionData& ad)
         }
     }
 
-    emit signalFinished(ad);
+    Q_EMIT signalFinished(ad);
 }
 
 void ActionThread::slotThreadFinished()
@@ -154,7 +154,7 @@ void ActionThread::slotThreadFinished()
     if (isEmpty())
     {
         qCDebug(DIGIKAM_GENERAL_LOG) << "List of Pending Jobs is empty";
-        emit signalQueueProcessed();
+        Q_EMIT signalQueueProcessed();
     }
 }
 

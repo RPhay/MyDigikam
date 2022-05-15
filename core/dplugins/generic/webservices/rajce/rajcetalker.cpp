@@ -112,7 +112,7 @@ void RajceTalker::startCommand(const QSharedPointer<RajceCommand>& command)
     connect(d->reply, SIGNAL(uploadProgress(qint64,qint64)),
             SLOT(slotUploadProgress(qint64,qint64)));
 
-    emit signalBusyStarted(command.data()->commandType());
+    Q_EMIT signalBusyStarted(command.data()->commandType());
 }
 
 void RajceTalker::login(const QString& username, const QString& password)
@@ -160,7 +160,7 @@ void RajceTalker::slotFinished(QNetworkReply* reply)
     // This enables the connected slots to read in
     // reliable values from the state and/or
     // clear the error state once it's handled.
-    emit signalBusyFinished(type);
+    Q_EMIT signalBusyFinished(type);
 
     reply->deleteLater();
 
@@ -201,7 +201,7 @@ void RajceTalker::closeAlbum()
     }
     else
     {
-        emit signalBusyFinished(CloseAlbum);
+        Q_EMIT signalBusyFinished(CloseAlbum);
     }
 }
 
@@ -229,7 +229,7 @@ void RajceTalker::slotUploadProgress(qint64 bytesSent, qint64 bytesTotal)
     qCDebug(DIGIKAM_WEBSERVICES_LOG) << "Percent signalled: " << percent;
 
     QSharedPointer<RajceCommand> command = d->commandQueue.head();
-    emit signalBusyProgress(command.data()->commandType(), percent);
+    Q_EMIT signalBusyProgress(command.data()->commandType(), percent);
 }
 
 void RajceTalker::enqueueCommand(const QSharedPointer<RajceCommand>& command)

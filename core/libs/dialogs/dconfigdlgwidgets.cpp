@@ -63,7 +63,7 @@ void DConfigDlgWdgPrivate::_k_slotCurrentPageChanged(const QModelIndex& current,
 
     Q_Q(DConfigDlgWdg);
 
-    emit q->currentPageChanged(currentItem, beforeItem);
+    Q_EMIT q->currentPageChanged(currentItem, beforeItem);
 }
 
 DConfigDlgWdg::DConfigDlgWdg(DConfigDlgWdgPrivate& dd, QWidget* const parent)
@@ -144,7 +144,7 @@ void DConfigDlgWdg::addSubPage(DConfigDlgWdgItem* parent, DConfigDlgWdgItem* ite
 
 void DConfigDlgWdg::removePage(DConfigDlgWdgItem* item)
 {
-    emit pageRemoved(item); // Emit signal before we remove it, because the item will be deleted in the model
+    Q_EMIT pageRemoved(item); // Emit signal before we remove it, because the item will be deleted in the model
     d_func()->model()->removePage(item);
 }
 

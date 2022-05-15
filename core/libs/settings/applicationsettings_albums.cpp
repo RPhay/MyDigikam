@@ -85,7 +85,7 @@ bool ApplicationSettings::getAlbumMonitoring() const
 void ApplicationSettings::setRecurseAlbums(bool val)
 {
     d->recursiveAlbums = val;
-    emit recurseSettingsChanged();
+    Q_EMIT recurseSettingsChanged();
 }
 
 bool ApplicationSettings::getRecurseAlbums() const
@@ -96,7 +96,7 @@ bool ApplicationSettings::getRecurseAlbums() const
 void ApplicationSettings::setRecurseTags(bool val)
 {
     d->recursiveTags = val;
-    emit recurseSettingsChanged();
+    Q_EMIT recurseSettingsChanged();
 }
 
 bool ApplicationSettings::getRecurseTags() const

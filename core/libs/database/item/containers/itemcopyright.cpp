@@ -124,7 +124,7 @@ void ItemCopyright::replaceFrom(const ItemCopyright& source)
 
     QList<CopyrightInfo> infos = access.db()->getItemCopyright(source.m_id, QString());
 
-    foreach (const CopyrightInfo& info, infos)
+    Q_FOREACH (const CopyrightInfo& info, infos)
     {
         access.db()->setItemCopyrightProperty(m_id, info.property, info.value,
                                               info.extraValue, CoreDB::PropertyNoConstraint);
@@ -136,7 +136,7 @@ QStringList ItemCopyright::creator() const
     QList<CopyrightInfo> infos = copyrightInfos(ItemScanner::iptcCorePropertyName(MetadataInfo::IptcCoreCreator));
     QStringList list;
 
-    foreach (const CopyrightInfo& info, infos)
+    Q_FOREACH (const CopyrightInfo& info, infos)
     {
         list << info.value;
     }
@@ -321,7 +321,7 @@ void ItemCopyright::fillTemplate(Template& t)
 
 void ItemCopyright::setFromTemplate(const Template& t)
 {
-    foreach (const QString& author, t.authors()) // krazy:exclude=foreach
+    Q_FOREACH (const QString& author, t.authors()) // krazy:exclude=foreach
     {
         setAuthor(author, ItemCopyright::AddEntryToExisting);
     }
@@ -368,7 +368,7 @@ CopyrightInfo ItemCopyright::copyrightInfo(const QString& property) const
 {
     if (m_cache)
     {
-        foreach (const CopyrightInfo& info, m_cache->infos)
+        Q_FOREACH (const CopyrightInfo& info, m_cache->infos)
         {
             if (info.property == property)
             {    // cppcheck-suppress useStlAlgorithm
@@ -395,7 +395,7 @@ QList<CopyrightInfo> ItemCopyright::copyrightInfos(const QString& property) cons
     {
         QList<CopyrightInfo> infos;
 
-        foreach (const CopyrightInfo& info, m_cache->infos)
+        Q_FOREACH (const CopyrightInfo& info, m_cache->infos)
         {
             if (info.property == property)
             {
@@ -441,7 +441,7 @@ MetaEngine::AltLangMap ItemCopyright::readLanguageProperties(const QString& prop
     MetaEngine::AltLangMap map;
     QList<CopyrightInfo> infos = copyrightInfos(property);
 
-    foreach (const CopyrightInfo& info, infos)
+    Q_FOREACH (const CopyrightInfo& info, infos)
     {
         map[info.extraValue] = info.value;
     }

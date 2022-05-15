@@ -246,7 +246,7 @@ void PanoOptimizePage::initializePage()
     d->optimisationDone = false;
 
     setComplete(true);
-    emit completeChanged();
+    Q_EMIT completeChanged();
 }
 
 bool PanoOptimizePage::validatePage()
@@ -344,7 +344,7 @@ void PanoOptimizePage::slotPanoAction(const DigikamGenericPanoramaPlugin::PanoAc
                         d->detailsText->setText(ad.message);
 
                         setComplete(false);
-                        emit completeChanged();
+                        Q_EMIT completeChanged();
                     }
 
                     break;
@@ -378,7 +378,7 @@ void PanoOptimizePage::slotPanoAction(const DigikamGenericPanoramaPlugin::PanoAc
                     d->progressLabel->clear();
                     d->optimisationDone = true;
 
-                    emit signalOptimized();
+                    Q_EMIT signalOptimized();
                     initializePage();
 
                     break;

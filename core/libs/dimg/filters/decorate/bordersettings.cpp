@@ -363,7 +363,7 @@ void BorderSettings::slotColorForegroundChanged(const QColor& color)
             break;
     }
 
-    emit signalSettingsChanged();
+    Q_EMIT signalSettingsChanged();
 }
 
 void BorderSettings::slotColorBackgroundChanged(const QColor& color)
@@ -402,7 +402,7 @@ void BorderSettings::slotColorBackgroundChanged(const QColor& color)
             break;
     }
 
-    emit signalSettingsChanged();
+    Q_EMIT signalSettingsChanged();
 }
 
 void BorderSettings::slotBorderTypeChanged(int borderType)
@@ -462,13 +462,13 @@ void BorderSettings::slotBorderTypeChanged(int borderType)
             break;
     }
 
-    emit signalSettingsChanged();
+    Q_EMIT signalSettingsChanged();
 }
 
 void BorderSettings::slotPreserveAspectRatioToggled(bool b)
 {
     toggleBorderSlider(b);
-    emit signalSettingsChanged();
+    Q_EMIT signalSettingsChanged();
 }
 
 void BorderSettings::toggleBorderSlider(bool b)

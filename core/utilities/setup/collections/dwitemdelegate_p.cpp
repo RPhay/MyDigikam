@@ -115,7 +115,7 @@ void DWItemDelegatePrivate::slotDWDataChanged(const QModelIndex& topLeft, const 
 
 void DWItemDelegatePrivate::slotDWLayoutChanged()
 {
-    foreach (QWidget* const widget, widgetPool->invalidIndexesWidgets())
+    Q_FOREACH (QWidget* const widget, widgetPool->invalidIndexesWidgets())
     {
         widget->setVisible(false);
     }
@@ -131,12 +131,12 @@ void DWItemDelegatePrivate::slotDWModelReset()
 
 void DWItemDelegatePrivate::slotDWSelectionChanged(const QItemSelection& selected, const QItemSelection& deselected)
 {
-    foreach (const QModelIndex& index, selected.indexes())
+    Q_FOREACH (const QModelIndex& index, selected.indexes())
     {
         widgetPool->findWidgets(index, optionView(index));
     }
 
-    foreach (const QModelIndex& index, deselected.indexes())
+    Q_FOREACH (const QModelIndex& index, deselected.indexes())
     {
         widgetPool->findWidgets(index, optionView(index));
     }
@@ -157,7 +157,7 @@ void DWItemDelegatePrivate::updateRowRange(const QModelIndex& parent, int start,
             {
                 widgetPool->d->allocatedWidgets.removeAll(widgetList);
 
-                foreach (QWidget* const widget, widgetList)
+                Q_FOREACH (QWidget* const widget, widgetList)
                 {
                     const QModelIndex idx = widgetPool->d->widgetInIndex[widget];
                     widgetPool->d->usedWidgets.remove(idx);
@@ -311,7 +311,7 @@ bool DWItemDelegatePrivate::eventFilter(QObject* watched, QEvent* event)
         {
             if (qobject_cast<QAbstractItemView*>(watched))
             {
-                foreach (const QModelIndex& index, selectionModel->selectedIndexes())
+                Q_FOREACH (const QModelIndex& index, selectionModel->selectedIndexes())
                 {
                     if (index.isValid())
                     {

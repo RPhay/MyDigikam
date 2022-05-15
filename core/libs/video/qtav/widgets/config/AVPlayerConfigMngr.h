@@ -42,8 +42,8 @@ namespace QtAV
 // TODO: use hash to simplify api
 
 /**
- * MVC model. Q_SIGNALS from AVPlayerConfigMngr notify ui update. Q_SIGNALS from ui does not change AVPlayerConfigMngr unless ui changes applyed by XXXPage.apply()
- * Q_SIGNALS from ui will emit AVPlayerConfigMngr::xxxChanged() with the value in ui. ui cancel the change also emit it with the value stores in AVPlayerConfigMngr.
+ * MVC model. Q_SIGNALS from AVPlayerConfigMngr notify ui update. Signals from ui does not change AVPlayerConfigMngr unless ui changes applyed by XXXPage.apply()
+ * Signals from ui will emit AVPlayerConfigMngr::xxxChanged() with the value in ui. ui cancel the change also emit it with the value stores in AVPlayerConfigMngr.
  * apply() will change the value in AVPlayerConfigMngr
  */
 

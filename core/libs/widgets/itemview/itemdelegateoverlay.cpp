@@ -167,7 +167,7 @@ int ItemDelegateOverlay::numberOfAffectedIndexes(const QModelIndex& index) const
 
     int count = 0;
 
-    foreach (const QItemSelectionRange& range, view()->selectionModel()->selection())
+    Q_FOREACH (const QItemSelectionRange& range, view()->selectionModel()->selection())
     {
         // cppcheck-suppress useStlAlgorithm
         count += range.height();
@@ -333,13 +333,13 @@ void AbstractWidgetDelegateOverlay::widgetEnterNotifyMultiple(const QModelIndex&
 {
     if (index.isValid() && affectsMultiple(index))
     {
-        emit requestNotification(index, notifyMultipleMessage(index, numberOfAffectedIndexes(index)));
+        Q_EMIT requestNotification(index, notifyMultipleMessage(index, numberOfAffectedIndexes(index)));
     }
 }
 
 void AbstractWidgetDelegateOverlay::widgetLeaveNotifyMultiple()
 {
-    emit hideNotification();
+    Q_EMIT hideNotification();
 }
 
 QString AbstractWidgetDelegateOverlay::notifyMultipleMessage(const QModelIndex&, int number)
@@ -724,7 +724,7 @@ void ItemDelegateOverlayContainer::removeOverlay(ItemDelegateOverlay* overlay)
 
 void ItemDelegateOverlayContainer::setAllOverlaysActive(bool active)
 {
-    foreach (ItemDelegateOverlay* const overlay, m_overlays)
+    Q_FOREACH (ItemDelegateOverlay* const overlay, m_overlays)
     {
         overlay->setActive(active);
     }
@@ -732,7 +732,7 @@ void ItemDelegateOverlayContainer::setAllOverlaysActive(bool active)
 
 void ItemDelegateOverlayContainer::setViewOnAllOverlays(QAbstractItemView* view)
 {
-    foreach (ItemDelegateOverlay* const overlay, m_overlays)
+    Q_FOREACH (ItemDelegateOverlay* const overlay, m_overlays)
     {
         overlay->setView(view);
     }
@@ -740,7 +740,7 @@ void ItemDelegateOverlayContainer::setViewOnAllOverlays(QAbstractItemView* view)
 
 void ItemDelegateOverlayContainer::removeAllOverlays()
 {
-    foreach (ItemDelegateOverlay* const overlay, m_overlays)
+    Q_FOREACH (ItemDelegateOverlay* const overlay, m_overlays)
     {
         overlay->setActive(false);
         overlay->setDelegate(nullptr);
@@ -764,7 +764,7 @@ void ItemDelegateOverlayContainer::mouseMoved(QMouseEvent* e,
                                               const QRect& visualRect,
                                               const QModelIndex& index)
 {
-    foreach (ItemDelegateOverlay* const overlay, m_overlays)
+    Q_FOREACH (ItemDelegateOverlay* const overlay, m_overlays)
     {
         overlay->mouseMoved(e, visualRect, index);
     }
@@ -774,7 +774,7 @@ void ItemDelegateOverlayContainer::drawOverlays(QPainter* p,
                                                 const QStyleOptionViewItem& option,
                                                 const QModelIndex& index) const
 {
-    foreach (ItemDelegateOverlay* const overlay, m_overlays)
+    Q_FOREACH (ItemDelegateOverlay* const overlay, m_overlays)
     {
         overlay->paint(p, option, index);
     }

@@ -95,7 +95,7 @@ void ItemInfo::setPickLabel(int pickId)
     {
         CoreDbAccess access;
 
-        foreach (int tagId, currentTagIds)
+        Q_FOREACH (int tagId, currentTagIds)
         {
             if (pickLabelTags.contains(tagId))
             {
@@ -127,7 +127,7 @@ void ItemInfo::setColorLabel(int colorId)
     {
         CoreDbAccess access;
 
-        foreach (int tagId, currentTagIds)
+        Q_FOREACH (int tagId, currentTagIds)
         {
             if (colorLabelTags.contains(tagId))
             {

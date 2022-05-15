@@ -155,7 +155,7 @@ ODTalker::~ODTalker()
 
 void ODTalker::link()
 {
-    emit signalBusy(true);
+    Q_EMIT signalBusy(true);
 
     QUrl url(d->authUrl);
     QUrlQuery query(url);
@@ -187,7 +187,7 @@ void ODTalker::unLink()
     d->settings->remove(QString());
     d->settings->endGroup();
 
-    emit oneDriveLinkingSucceeded();
+    Q_EMIT oneDriveLinkingSucceeded();
 }
 
 void ODTalker::slotCatchUrl(const QUrl& url)
@@ -206,18 +206,18 @@ void ODTalker::slotCatchUrl(const QUrl& url)
         writeSettings();
 
         qDebug(DIGIKAM_WEBSERVICES_LOG) << "Access token received";
-        emit oneDriveLinkingSucceeded();
+        Q_EMIT oneDriveLinkingSucceeded();
     }
     else
     {
-        emit oneDriveLinkingFailed();
+        Q_EMIT oneDriveLinkingFailed();
     }
 }
 
 void ODTalker::slotLinkingFailed()
 {
     qCDebug(DIGIKAM_WEBSERVICES_LOG) << "LINK to Onedrive fail";
-    emit signalBusy(false);
+    Q_EMIT signalBusy(false);
 }
 
 void ODTalker::slotLinkingSucceeded()
@@ -225,7 +225,7 @@ void ODTalker::slotLinkingSucceeded()
     if (d->accessToken.isEmpty())
     {
         qCDebug(DIGIKAM_WEBSERVICES_LOG) << "UNLINK to Onedrive";
-        emit signalBusy(false);
+        Q_EMIT signalBusy(false);
         return;
     }
 
@@ -236,7 +236,7 @@ void ODTalker::slotLinkingSucceeded()
         d->browser->close();
     }
 
-    emit signalLinkingSucceeded();
+    Q_EMIT signalLinkingSucceeded();
 }
 
 bool ODTalker::authenticated()
@@ -252,7 +252,7 @@ void ODTalker::cancel()
         d->reply = nullptr;
     }
 
-    emit signalBusy(false);
+    Q_EMIT signalBusy(false);
 }
 
 void ODTalker::createFolder(QString& path)
@@ -282,7 +282,7 @@ void ODTalker::createFolder(QString& path)
     d->reply = d->netMngr->post(netRequest, postData);
 
     d->state = Private::OD_CREATEFOLDER;
-    emit signalBusy(true);
+    Q_EMIT signalBusy(true);
 }
 
 void ODTalker::getUserName()
@@ -295,7 +295,7 @@ void ODTalker::getUserName()
 
     d->reply = d->netMngr->get(netRequest);
     d->state = Private::OD_USERNAME;
-    emit signalBusy(true);
+    Q_EMIT signalBusy(true);
 }
 
 /**
@@ -325,7 +325,7 @@ void ODTalker::listFolders(const QString& folder)
     d->reply = d->netMngr->get(netRequest);
 
     d->state = Private::OD_LISTFOLDERS;
-    emit signalBusy(true);
+    Q_EMIT signalBusy(true);
 }
 
 bool ODTalker::addPhoto(const QString& imgPath, const QString& uploadFolder, bool rescale, int maxDim, int imageQuality)
@@ -336,7 +336,7 @@ bool ODTalker::addPhoto(const QString& imgPath, const QString& uploadFolder, boo
         d->reply = nullptr;
     }
 
-    emit signalBusy(true);
+    Q_EMIT signalBusy(true);
 
     ODMPForm form;
     QString path = imgPath;
@@ -349,7 +349,7 @@ bool ODTalker::addPhoto(const QString& imgPath, const QString& uploadFolder, boo
 
         if (image.isNull())
         {
-            emit signalBusy(false);
+            Q_EMIT signalBusy(false);
             return false;
         }
 
@@ -376,7 +376,7 @@ bool ODTalker::addPhoto(const QString& imgPath, const QString& uploadFolder, boo
 
     if (!form.addFile(path))
     {
-        emit signalBusy(false);
+        Q_EMIT signalBusy(false);
         return false;
     }
 
@@ -407,7 +407,7 @@ void ODTalker::slotFinished(QNetworkReply* reply)
     {
         if (d->state != Private::OD_CREATEFOLDER)
         {
-            emit signalTransferCancel();
+            Q_EMIT signalTransferCancel();
             QMessageBox::critical(QApplication::activeWindow(),
                                   i18n("Error"), reply->errorString());
 
@@ -455,11 +455,11 @@ void ODTalker::parseResponseAddPhoto(const QByteArray& data)
 
     if (!success)
     {
-        emit signalAddPhotoFailed(i18n("Failed to upload photo"));
+        Q_EMIT signalAddPhotoFailed(i18n("Failed to upload photo"));
     }
     else
     {
-        emit signalAddPhotoSucceeded();
+        Q_EMIT signalAddPhotoSucceeded();
     }
 }
 
@@ -467,8 +467,8 @@ void ODTalker::parseResponseUserName(const QByteArray& data)
 {
     QJsonDocument doc = QJsonDocument::fromJson(data);
     QString name      = doc.object()[QLatin1String("displayName")].toString();
-    emit signalBusy(false);
-    emit signalSetUserName(name);
+    Q_EMIT signalBusy(false);
+    Q_EMIT signalSetUserName(name);
 }
 
 void ODTalker::parseResponseListFolders(const QByteArray& data)
@@ -478,8 +478,8 @@ void ODTalker::parseResponseListFolders(const QByteArray& data)
 
     if (err.error != QJsonParseError::NoError)
     {
-        emit signalBusy(false);
-        emit signalListAlbumsFailed(i18n("Failed to list folders"));
+        Q_EMIT signalBusy(false);
+        Q_EMIT signalListAlbumsFailed(i18n("Failed to list folders"));
         return;
     }
 
@@ -494,7 +494,7 @@ void ODTalker::parseResponseListFolders(const QByteArray& data)
         d->folderList.append(qMakePair(QLatin1String(""), QLatin1String("root")));
     }
 
-    foreach (const QJsonValue& value, jsonArray)
+    Q_FOREACH (const QJsonValue& value, jsonArray)
     {
         QString path;
         QString listName;
@@ -534,8 +534,8 @@ void ODTalker::parseResponseListFolders(const QByteArray& data)
     {
         std::sort(d->folderList.begin(), d->folderList.end());
 
-        emit signalBusy(false);
-        emit signalListAlbumsDone(d->folderList);
+        Q_EMIT signalBusy(false);
+        Q_EMIT signalListAlbumsDone(d->folderList);
     }
 }
 
@@ -545,17 +545,17 @@ void ODTalker::parseResponseCreateFolder(const QByteArray& data)
     QJsonObject jsonObject = doc1.object();
     bool fail              = jsonObject.contains(QLatin1String("error"));
 
-    emit signalBusy(false);
+    Q_EMIT signalBusy(false);
 
     if (fail)
     {
         QJsonParseError err;
         QJsonDocument doc2 = QJsonDocument::fromJson(data, &err);
-        emit signalCreateFolderFailed(jsonObject[QLatin1String("error_summary")].toString());
+        Q_EMIT signalCreateFolderFailed(jsonObject[QLatin1String("error_summary")].toString());
     }
     else
     {
-        emit signalCreateFolderSucceeded();
+        Q_EMIT signalCreateFolderSucceeded();
     }
 }
 
@@ -588,7 +588,7 @@ void ODTalker::readSettings()
     else
     {
         qCDebug(DIGIKAM_WEBSERVICES_LOG) << "Already Linked";
-        emit oneDriveLinkingSucceeded();
+        Q_EMIT oneDriveLinkingSucceeded();
     }
 }
 

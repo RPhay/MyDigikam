@@ -631,7 +631,7 @@ bool AVPlayerCore::Private::setupAudioThread(AVPlayerCore *player)
 
         if (filters.size() > 0)
         {
-            foreach (Filter* const filter, filters)
+            Q_FOREACH (Filter* const filter, filters)
             {
                 athread->installFilter(filter);
             }
@@ -680,7 +680,7 @@ QVariantList AVPlayerCore::Private::getTracksInfo(AVDemuxer *demuxer, AVDemuxer:
     if (streams.isEmpty())
         return info;
 
-    foreach (int s, streams)
+    Q_FOREACH (int s, streams)
     {
         QVariantMap t;
         t[QStringLiteral("id")]           = info.size();
@@ -765,7 +765,7 @@ bool AVPlayerCore::Private::tryApplyDecoderPriority(AVPlayerCore *player)
     VideoDecoder* vd      = nullptr;
     AVCodecContext* avctx = demuxer.videoCodecContext();
 
-    foreach(VideoDecoderId vid, vc_ids)
+    Q_FOREACH (VideoDecoderId vid, vc_ids)
     {
         qCDebug(DIGIKAM_QTAV_LOG).noquote()
             << QString::asprintf("**********trying video decoder: %s...",
@@ -858,7 +858,7 @@ bool AVPlayerCore::Private::setupVideoThread(AVPlayerCore* player)
         vdec = nullptr;
     }
 
-    foreach (VideoDecoderId vid, vc_ids)
+    Q_FOREACH (VideoDecoderId vid, vc_ids)
     {
         qCDebug(DIGIKAM_QTAV_LOG).noquote()
             << QString::asprintf("**********trying video decoder: %s...", VideoDecoder::name(vid));
@@ -916,7 +916,7 @@ bool AVPlayerCore::Private::setupVideoThread(AVPlayerCore* player)
 
         if (filters.size() > 0)
         {
-            foreach (Filter* const filter, filters)
+            Q_FOREACH (Filter* const filter, filters)
             {
                 vthread->installFilter(filter);
             }

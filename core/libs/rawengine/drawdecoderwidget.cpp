@@ -696,7 +696,7 @@ void DRawDecoderWidget::setup(int advSettings)
     connect(d->expoCorrectionShiftSpinBox, &DDoubleNumInput::valueChanged,
             this, &DRawDecoderWidget::slotExpoCorrectionShiftChanged);
 
-    // Wrapper to emit signal when something is changed in settings.
+    // Wrapper to Q_EMIT signal when something is changed in settings.
 
     connect(d->inIccUrlEdit->lineEdit(), &QLineEdit::textChanged,
             this, &DRawDecoderWidget::signalSettingsChanged);
@@ -809,7 +809,7 @@ void DRawDecoderWidget::resetToDefault()
 void DRawDecoderWidget::slotsixteenBitsImageToggled(bool b)
 {
     setEnabledBrightnessSettings(!b);
-    emit signalSixteenBitsImageToggled(d->sixteenBitsImage->isChecked());
+    Q_EMIT signalSixteenBitsImageToggled(d->sixteenBitsImage->isChecked());
 }
 
 void DRawDecoderWidget::slotWhiteBalanceToggled(int v)
@@ -869,7 +869,7 @@ void DRawDecoderWidget::slotNoiseReductionChanged(int item)
         }
     }
 
-    emit signalSettingsChanged();
+    Q_EMIT signalSettingsChanged();
 }
 
 void DRawDecoderWidget::slotExposureCorrectionToggled(bool b)
@@ -891,7 +891,7 @@ void DRawDecoderWidget::slotExpoCorrectionShiftChanged(double ev)
     d->expoCorrectionHighlightLabel->setEnabled(b);
     d->expoCorrectionHighlightSpinBox->setEnabled(b);
 
-    emit signalSettingsChanged();
+    Q_EMIT signalSettingsChanged();
 }
 
 void DRawDecoderWidget::slotInputColorSpaceChanged(int item)
@@ -925,7 +925,7 @@ void DRawDecoderWidget::slotRAWQualityChanged(int quality)
         }
     }
 
-    emit signalSettingsChanged();
+    Q_EMIT signalSettingsChanged();
 }
 
 void DRawDecoderWidget::setEnabledBrightnessSettings(bool b)

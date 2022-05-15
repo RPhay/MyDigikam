@@ -283,7 +283,7 @@ public:
     {
         QList<QScreen*> screens = QGuiApplication::screens();
 
-        foreach (const QScreen* screen, screens)
+        Q_FOREACH (const QScreen* screen, screens)
         {
             if (screen->geometry().contains(point))
             {   // cppcheck-suppress useStlAlgorithm
@@ -462,8 +462,8 @@ void DNotificationPopup::setAutoDelete(bool autoDelete)
 
 void DNotificationPopup::mouseReleaseEvent(QMouseEvent* e)
 {
-    emit clicked();
-    emit clicked(e->pos());
+    Q_EMIT clicked();
+    Q_EMIT clicked(e->pos());
 }
 
 void DNotificationPopup::setVisible(bool visible)

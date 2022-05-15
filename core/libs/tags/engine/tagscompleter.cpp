@@ -153,7 +153,7 @@ void TagCompleter::update(const QString& fragment)
     QList<TaggingAction> actions = d->factory.actions();
     QList<QStandardItem*> items;
 
-    foreach (const TaggingAction& action, actions)
+    Q_FOREACH (const TaggingAction& action, actions)
     {
         QStandardItem* const item = new QStandardItem;
 
@@ -202,12 +202,12 @@ void TagCompleter::update(const QString& fragment)
 
 void TagCompleter::slotActivated(const QModelIndex& index)
 {
-    emit signalActivated(index.data(TaggingActionRole).value<TaggingAction>());
+    Q_EMIT signalActivated(index.data(TaggingActionRole).value<TaggingAction>());
 }
 
 void TagCompleter::slotHighlighted(const QModelIndex& index)
 {
-    emit signalHighlighted(index.data(TaggingActionRole).value<TaggingAction>());
+    Q_EMIT signalHighlighted(index.data(TaggingActionRole).value<TaggingAction>());
 }
 
 } // namespace Digikam

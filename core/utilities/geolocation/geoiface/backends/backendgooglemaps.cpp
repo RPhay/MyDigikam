@@ -314,7 +314,7 @@ void BackendGoogleMaps::slotHTMLInitialized()
     setShowMapTypeControl(d->cacheShowMapTypeControl);
     setShowNavigationControl(d->cacheShowNavigationControl);
 
-    emit signalBackendReadyChanged(backendName());
+    Q_EMIT signalBackendReadyChanged(backendName());
 }
 
 void BackendGoogleMaps::zoomIn()
@@ -656,12 +656,12 @@ void BackendGoogleMaps::slotHTMLEvents(const QStringList& events)
                 continue;
             }
 
-            /// @todo emit signal here or later?
+            /// @todo Q_EMIT signal here or later?
 
             GeoModelHelper* const modelHelper  = s->ungroupedModels.at(snapModelId);
             QAbstractItemModel* const model    = modelHelper->model();
             QPair<int, QModelIndex> snapTargetIndex(snapModelId, model->index(snapMarkerId, 0));
-            emit signalClustersMoved(QIntList() << clusterIndex, snapTargetIndex);
+            Q_EMIT signalClustersMoved(QIntList() << clusterIndex, snapTargetIndex);
         }
         else if (eventCode == QLatin1String("cc"))
         {
@@ -745,7 +745,7 @@ void BackendGoogleMaps::slotHTMLEvents(const QStringList& events)
     {
         qCDebug(DIGIKAM_GEOIFACE_LOG) << movedClusters;
 
-        emit signalClustersMoved(movedClusters, QPair<int, QModelIndex>(-1, QModelIndex()));
+        Q_EMIT signalClustersMoved(movedClusters, QPair<int, QModelIndex>(-1, QModelIndex()));
     }
 
     // cppcheck-suppress knownConditionTrueFalse
@@ -753,13 +753,13 @@ void BackendGoogleMaps::slotHTMLEvents(const QStringList& events)
     {
         qCDebug(DIGIKAM_GEOIFACE_LOG) << movedMarkers;
 /*
-        emit signalSpecialMarkersMoved(movedMarkers);
+        Q_EMIT signalSpecialMarkersMoved(movedMarkers);
 */
     }
 
     if (!clickedClusters.isEmpty())
     {
-        emit signalClustersClicked(clickedClusters);
+        Q_EMIT signalClustersClicked(clickedClusters);
     }
 
     // now process the buffered events:
@@ -773,7 +773,7 @@ void BackendGoogleMaps::slotHTMLEvents(const QStringList& events)
     {
         d->cacheZoom = d->htmlWidget->runScript(QLatin1String("kgeomapGetZoom();"), false).toInt();
 
-        emit signalZoomChanged(QString::fromLatin1("googlemaps:%1").arg(d->cacheZoom));
+        Q_EMIT signalZoomChanged(QString::fromLatin1("googlemaps:%1").arg(d->cacheZoom));
     }
 
     if (centerProbablyChanged && !mapTypeChanged)
@@ -1296,7 +1296,7 @@ void BackendGoogleMaps::mouseModeChanged()
 
 void BackendGoogleMaps::slotSelectionHasBeenMade(const Digikam::GeoCoordinates::Pair& searchCoordinates)
 {
-    emit signalSelectionHasBeenMade(searchCoordinates);
+    Q_EMIT signalSelectionHasBeenMade(searchCoordinates);
 }
 
 void BackendGoogleMaps::centerOn( const Marble::GeoDataLatLonBox& latLonBox, const bool useSaneZoomLevel)
@@ -1393,7 +1393,7 @@ void BackendGoogleMaps::releaseWidget(GeoIfaceInternalWidgetInfo* const info)
     info->state          = GeoIfaceInternalWidgetInfo::InternalWidgetReleased;
     d->isReady           = false;
 
-    emit signalBackendReadyChanged(backendName());
+    Q_EMIT signalBackendReadyChanged(backendName());
 }
 
 void BackendGoogleMaps::mapWidgetDocked(const bool state)
@@ -1453,7 +1453,7 @@ void BackendGoogleMaps::slotTrackManagerChanged()
 
         const TrackManager::Track::List trackList = s->trackManager->getTrackList();
 
-        foreach (const TrackManager::Track& t, trackList)
+        Q_FOREACH (const TrackManager::Track& t, trackList)
         {
             storeTrackChanges(TrackManager::TrackChanges(t.id, TrackManager::ChangeAdd));
         }
@@ -1471,7 +1471,7 @@ void BackendGoogleMaps::slotTracksChanged(const QList<TrackManager::TrackChanges
 
     if (needToTrackChanges)
     {
-        foreach (const TrackManager::TrackChanges& tc, trackChanges)
+        Q_FOREACH (const TrackManager::TrackChanges& tc, trackChanges)
         {
             storeTrackChanges(tc);
         }
@@ -1494,7 +1494,7 @@ void BackendGoogleMaps::slotTracksChanged(const QList<TrackManager::TrackChanges
         return;
     }
 
-    foreach (const TrackManager::TrackChanges& tc, trackChanges)
+    Q_FOREACH (const TrackManager::TrackChanges& tc, trackChanges)
     {
         if (tc.second & TrackManager::ChangeRemoved)
         {
@@ -1581,7 +1581,7 @@ void BackendGoogleMaps::slotTrackVisibilityChanged(const bool newState)
         const TrackManager::Track::List trackList = s->trackManager->getTrackList();
         QList<TrackManager::TrackChanges> trackChanges;
 
-        foreach (const TrackManager::Track& t, trackList)
+        Q_FOREACH (const TrackManager::Track& t, trackList)
         {
             trackChanges << TrackManager::TrackChanges(t.id, TrackManager::ChangeAdd);
         }

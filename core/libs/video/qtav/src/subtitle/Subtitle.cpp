@@ -224,7 +224,7 @@ void Subtitle::setEngines(const QStringList& value)
 
     QList<SubtitleProcessor*> sps;
 
-    foreach (const QString& e, priv->engine_names)
+    Q_FOREACH (const QString& e, priv->engine_names)
     {
         qCDebug(DIGIKAM_QTAV_LOG) << "engine:" << e;
         QList<SubtitleProcessor*>::iterator it = priv->processors.begin();
@@ -273,7 +273,7 @@ void Subtitle::setEngines(const QStringList& value)
         return;
     }
 
-    foreach (SubtitleProcessor* sp, sps)
+    Q_FOREACH (SubtitleProcessor* sp, sps)
     {
         priv->supported_suffixes.append(sp->supportedTypes());
     }
@@ -573,7 +573,7 @@ void Subtitle::load()
         return;
     }
 
-    foreach (const QString& path, paths)
+    Q_FOREACH (const QString& path, paths)
     {
         if (path.isEmpty())
             continue;
@@ -751,7 +751,7 @@ bool Subtitle::processHeader(const QByteArray& codec, const QByteArray &data)
     if (priv->processors.isEmpty())
         return false;
 
-    foreach (SubtitleProcessor *sp, priv->processors)
+    Q_FOREACH (SubtitleProcessor *sp, priv->processors)
     {
         if (sp->supportedTypes().contains(QLatin1String(codec)))
         {
@@ -962,7 +962,7 @@ QStringList Subtitle::Private::find()
     QString base_name = fi.completeBaseName(); // a.mp4=>a, video suffix has only 1 dot
     QStringList filters, filters_base;
 
-    foreach (const QString& suf, sfx)
+    Q_FOREACH (const QString& suf, sfx)
     {
         filters.append(QStringLiteral("%1*.%2").arg(name).arg(suf));
 
@@ -974,7 +974,7 @@ QStringList Subtitle::Private::find()
     search_dirs.prepend(fi.absolutePath());
     QFileInfoList list;
 
-    foreach (const QString& d, search_dirs)
+    Q_FOREACH (const QString& d, search_dirs)
     {
         QDir dir(d);
 
@@ -1005,7 +1005,7 @@ QStringList Subtitle::Private::find()
 
     // sfx is not empty, sort to the given order (sfx's order)
 
-    foreach (const QString& suf, sfx)
+    Q_FOREACH (const QString& suf, sfx)
     {
         if (list.isEmpty())
             break;
@@ -1126,7 +1126,7 @@ bool Subtitle::Private::processRawData(const QByteArray &data)
     if (data.size() > kMaxSubtitleSize)
         return false;
 
-    foreach (SubtitleProcessor* sp, processors)
+    Q_FOREACH (SubtitleProcessor* sp, processors)
     {
         if (processRawData(sp, data))
         {
@@ -1146,7 +1146,7 @@ bool Subtitle::Private::processRawData(const QByteArray &data)
 
     std::sort(fs.begin(), fs.end());
 
-    foreach (const SubtitleFrame& f, fs)
+    Q_FOREACH (const SubtitleFrame& f, fs)
     {
        frames.push_back(f);
     }

@@ -159,10 +159,10 @@ TAlbum* TagModificationHelper::slotTagNew(TAlbum* parent, const QString& title, 
     {
         TAlbum* tag = nullptr;
 
-        foreach (Album* const album, tList)
+        Q_FOREACH (Album* const album, tList)
         {
             tag = static_cast<TAlbum*>(album);
-            emit tagCreated(tag);
+            Q_EMIT tagCreated(tag);
         }
 
         return tag;
@@ -233,7 +233,7 @@ void TagModificationHelper::slotTagEdit(TAlbum* t)
         TagsActionMngr::defaultManager()->updateTagShortcut(tag->id(), ks);
     }
 
-    emit tagEdited(tag);
+    Q_EMIT tagEdited(tag);
 }
 
 void TagModificationHelper::slotTagEdit()
@@ -306,7 +306,7 @@ void TagModificationHelper::slotTagDelete(TAlbum* t)
 
     if (result == QMessageBox::Yes && tag)
     {
-        emit aboutToDeleteTag(tag);
+        Q_EMIT aboutToDeleteTag(tag);
         QString errMsg;
 
         if (!AlbumManager::instance()->deleteTAlbum(tag, errMsg))
@@ -328,7 +328,7 @@ void TagModificationHelper::slotMultipleTagDel(const QList<TAlbum*>& tags)
     QString tagWithImages;
     QMultiMap<int, TAlbum*> sortedTags;
 
-    foreach (TAlbum* const t, tags)
+    Q_FOREACH (TAlbum* const t, tags)
     {
         if (!t || t->isRoot())
         {
@@ -428,7 +428,7 @@ void TagModificationHelper::slotMultipleTagDel(const QList<TAlbum*>& tags)
 
         for (it = std::prev(sortedTags.end(), 1) ; it != std::prev(sortedTags.begin(), 1) ; --it)
         {
-            emit aboutToDeleteTag(it.value());
+            Q_EMIT aboutToDeleteTag(it.value());
             QString errMsg;
 
             if (!AlbumManager::instance()->deleteTAlbum(it.value(), errMsg))
@@ -471,7 +471,7 @@ void TagModificationHelper::slotMultipleFaceTagDel(const QList<TAlbum*>& tags)
     QList<qlonglong> allAssignedItems;
     int tagsWithImagesCount   = 0;
 
-    foreach (TAlbum* const selectedTag, tags)
+    Q_FOREACH (TAlbum* const selectedTag, tags)
     {
         if (!selectedTag                                   ||
             selectedTag->isRoot()                          ||
@@ -505,7 +505,7 @@ void TagModificationHelper::slotMultipleFaceTagDel(const QList<TAlbum*>& tags)
 
         // Get the assigned faces for all person tags to delete
 
-        foreach (TAlbum* const tAlbum, personTagsToDelete)
+        Q_FOREACH (TAlbum* const tAlbum, personTagsToDelete)
         {
             // If the global set does not yet contain the tag
 
@@ -517,7 +517,7 @@ void TagModificationHelper::slotMultipleFaceTagDel(const QList<TAlbum*>& tags)
                 QList<qlonglong> autodetected  = CoreDbAccess().db()->getImagesWithImageTagProperty(
                     tAlbum->id(), ImageTagPropertyName::autodetectedFace());
 
-                foreach (const qlonglong& id1, autodetected)
+                Q_FOREACH (const qlonglong& id1, autodetected)
                 {
                     if (!assignedItems.contains(id1))
                     {
@@ -529,7 +529,7 @@ void TagModificationHelper::slotMultipleFaceTagDel(const QList<TAlbum*>& tags)
                 {
                     // Add the items to the global set for potential untagging
 
-                    foreach (const qlonglong& id2, assignedItems)
+                    Q_FOREACH (const qlonglong& id2, assignedItems)
                     {
                         if (!allAssignedItems.contains(id2))
                         {
@@ -550,7 +550,7 @@ void TagModificationHelper::slotMultipleFaceTagDel(const QList<TAlbum*>& tags)
 
         // Add the found tags to the global set.
 
-        foreach (TAlbum* const album, personTagsToDelete)
+        Q_FOREACH (TAlbum* const album, personTagsToDelete)
         {
             if (!allPersonTagsToDelete.contains(album))
             {
@@ -621,9 +621,9 @@ void TagModificationHelper::slotMultipleFaceTagDel(const QList<TAlbum*>& tags)
 
         // remove the face region from images and unassign the tag if wished
 
-        foreach (const qlonglong& imageId, allAssignedItems)
+        Q_FOREACH (const qlonglong& imageId, allAssignedItems)
         {
-            foreach (TAlbum* const tagToRemove, allPersonTagsToDelete)
+            Q_FOREACH (TAlbum* const tagToRemove, allPersonTagsToDelete)
             {
                 ItemTagPair imageTagAssociation(imageId, tagToRemove->id());
 
@@ -654,7 +654,7 @@ void TagModificationHelper::slotMultipleFaceTagDel(const QList<TAlbum*>& tags)
             }
         }
 
-        foreach (TAlbum* const tAlbum, allPersonTagsToDelete)
+        Q_FOREACH (TAlbum* const tAlbum, allPersonTagsToDelete)
         {
             TagProperties props(tAlbum->id());
 
@@ -719,7 +719,7 @@ void TagModificationHelper::slotTagToFaceTag()
 
 void TagModificationHelper::slotMultipleTagsToFaceTags(const QList<TAlbum*>& tags)
 {
-    foreach (TAlbum* const selectedTag, tags)
+    Q_FOREACH (TAlbum* const selectedTag, tags)
     {
         slotTagToFaceTag(selectedTag);
     }
@@ -749,7 +749,7 @@ QSet<TAlbum*> TagModificationHelper::getFaceTags(const QList<TAlbum*>& tags)
 {
     QSet<TAlbum*> faceTags;
 
-    foreach (TAlbum* const tAlbum, tags)
+    Q_FOREACH (TAlbum* const tAlbum, tags)
     {
         if (FaceTags::isPerson(tAlbum->id()))
         {

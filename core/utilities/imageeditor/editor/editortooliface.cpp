@@ -341,7 +341,7 @@ void EditorToolIface::setPreviewModeMask(int mask)
 
 void EditorToolIface::slotToolApplied()
 {
-    emit d->editor->signalToolApplied();
+    Q_EMIT d->editor->signalToolApplied();
 }
 
 } // namespace Digikam

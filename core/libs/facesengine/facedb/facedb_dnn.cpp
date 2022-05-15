@@ -114,7 +114,7 @@ void FaceDb::clearDNNTraining(const QString& context)
 
 void FaceDb::clearDNNTraining(const QList<int>& identities, const QString& context)
 {
-    foreach (int id, identities)
+    Q_FOREACH (int id, identities)
     {
         if (context.isNull())
         {

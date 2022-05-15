@@ -184,7 +184,7 @@ void PiwigoTalker::login(const QUrl& url, const QString& name, const QString& pa
 
     d->reply = d->netMngr->post(netRequest, buffer);
 
-    emit signalBusy(true);
+    Q_EMIT signalBusy(true);
 }
 
 void PiwigoTalker::listAlbums()
@@ -205,7 +205,7 @@ void PiwigoTalker::listAlbums()
 
     d->reply = d->netMngr->post(netRequest, buffer);
 
-    emit signalBusy(true);
+    Q_EMIT signalBusy(true);
 }
 
 bool PiwigoTalker::addPhoto(int   albumId,
@@ -341,9 +341,9 @@ bool PiwigoTalker::addPhoto(int   albumId,
 
     d->reply = d->netMngr->post(netRequest, buffer);
 
-    emit signalProgressInfo(i18n("Check if %1 already exists", QUrl(mediaPath).fileName()));
+    Q_EMIT signalProgressInfo(i18n("Check if %1 already exists", QUrl(mediaPath).fileName()));
 
-    emit signalBusy(true);
+    Q_EMIT signalBusy(true);
 
     return true;
 }
@@ -362,7 +362,7 @@ void PiwigoTalker::slotFinished(QNetworkReply* reply)
     {
         if      (state == GE_LOGIN)
         {
-            emit signalLoginFailed(reply->errorString());
+            Q_EMIT signalLoginFailed(reply->errorString());
             qCDebug(DIGIKAM_WEBSERVICES_LOG) << reply->errorString();
         }
         else if (state == GE_GETVERSION)
@@ -379,7 +379,7 @@ void PiwigoTalker::slotFinished(QNetworkReply* reply)
                  (state == GE_ADDPHOTOSUMMARY))
         {
             deleteTemporaryFile();
-            emit signalAddPhotoFailed(reply->errorString());
+            Q_EMIT signalAddPhotoFailed(reply->errorString());
         }
         else
         {
@@ -387,7 +387,7 @@ void PiwigoTalker::slotFinished(QNetworkReply* reply)
                                   i18n("Error"), reply->errorString());
         }
 
-        emit signalBusy(false);
+        Q_EMIT signalBusy(false);
         reply->deleteLater();
         return;
     }
@@ -438,7 +438,7 @@ void PiwigoTalker::slotFinished(QNetworkReply* reply)
         listAlbums();
     }
 
-    emit signalBusy(false);
+    Q_EMIT signalBusy(false);
     reply->deleteLater();
 }
 
@@ -478,7 +478,7 @@ void PiwigoTalker::parseResponseLogin(const QByteArray& data)
 
                 d->reply = d->netMngr->post(netRequest, buffer);
 
-                emit signalBusy(true);
+                Q_EMIT signalBusy(true);
 
                 return;
             }
@@ -487,13 +487,13 @@ void PiwigoTalker::parseResponseLogin(const QByteArray& data)
 
     if (!foundResponse)
     {
-        emit signalLoginFailed(i18n("Piwigo URL probably incorrect"));
+        Q_EMIT signalLoginFailed(i18n("Piwigo URL probably incorrect"));
         return;
     }
 
     if (!d->loggedIn)
     {
-        emit signalLoginFailed(i18n("Incorrect username or password specified"));
+        Q_EMIT signalLoginFailed(i18n("Incorrect username or password specified"));
     }
 }
 
@@ -536,7 +536,7 @@ void PiwigoTalker::parseResponseGetVersion(const QByteArray& data)
     if (d->version < PIWIGO_VER_2_4)
     {
         d->loggedIn = false;
-        emit signalLoginFailed(i18n("Upload to Piwigo version inferior to 2.4 is no longer supported"));
+        Q_EMIT signalLoginFailed(i18n("Upload to Piwigo version inferior to 2.4 is no longer supported"));
         return;
     }
 }
@@ -610,13 +610,13 @@ void PiwigoTalker::parseResponseListAlbums(const QByteArray& data)
 
     if (!foundResponse)
     {
-        emit signalError(i18n("Invalid response received from remote Piwigo"));
+        Q_EMIT signalError(i18n("Invalid response received from remote Piwigo"));
         return;
     }
 
     if (!success)
     {
-        emit signalError(i18n("Failed to list albums"));
+        Q_EMIT signalError(i18n("Failed to list albums"));
         return;
     }
 
@@ -624,7 +624,7 @@ void PiwigoTalker::parseResponseListAlbums(const QByteArray& data)
 
     std::sort(albumList.begin(), albumList.end());
 
-    emit signalAlbums(albumList);
+    Q_EMIT signalAlbums(albumList);
 }
 
 void PiwigoTalker::parseResponseDoesPhotoExist(const QByteArray& data)
@@ -666,7 +666,7 @@ void PiwigoTalker::parseResponseDoesPhotoExist(const QByteArray& data)
                     d->photoId = qsl1[2].toInt();
                     qCDebug(DIGIKAM_WEBSERVICES_LOG) << "d->photoId: " << d->photoId;
 
-                    emit signalProgressInfo(i18n("Photo '%1' already exists.", d->title));
+                    Q_EMIT signalProgressInfo(i18n("Photo '%1' already exists.", d->title));
 
                     d->state   = GE_GETINFO;
                     d->talker_buffer.resize(0);
@@ -692,13 +692,13 @@ void PiwigoTalker::parseResponseDoesPhotoExist(const QByteArray& data)
 
     if (!foundResponse)
     {
-        emit signalAddPhotoFailed(i18n("Invalid response received from remote Piwigo"));
+        Q_EMIT signalAddPhotoFailed(i18n("Invalid response received from remote Piwigo"));
         return;
     }
 
     if (!success)
     {
-        emit signalAddPhotoFailed(i18n("Failed to upload photo"));
+        Q_EMIT signalAddPhotoFailed(i18n("Failed to upload photo"));
         return;
     }
 
@@ -718,7 +718,7 @@ void PiwigoTalker::parseResponseDoesPhotoExist(const QByteArray& data)
     }
     else
     {
-        emit signalAddPhotoFailed(i18n("Upload to Piwigo version inferior to 2.4 is no longer supported"));
+        Q_EMIT signalAddPhotoFailed(i18n("Upload to Piwigo version inferior to 2.4 is no longer supported"));
         return;
     }
 }
@@ -765,13 +765,13 @@ void PiwigoTalker::parseResponseGetInfo(const QByteArray& data)
 
     if (!foundResponse)
     {
-        emit signalAddPhotoFailed(i18n("Invalid response received from remote Piwigo"));
+        Q_EMIT signalAddPhotoFailed(i18n("Invalid response received from remote Piwigo"));
         return;
     }
 
     if (categories.contains(d->albumId))
     {
-        emit signalAddPhotoFailed(i18n("Photo '%1' already exists in this album.", d->title));
+        Q_EMIT signalAddPhotoFailed(i18n("Photo '%1' already exists in this album.", d->title));
         return;
     }
     else
@@ -838,21 +838,21 @@ void PiwigoTalker::parseResponseSetInfo(const QByteArray& data)
 
     if (!foundResponse)
     {
-        emit signalAddPhotoFailed(i18n("Invalid response received from remote Piwigo"));
+        Q_EMIT signalAddPhotoFailed(i18n("Invalid response received from remote Piwigo"));
 
         return;
     }
 
     if (!success)
     {
-        emit signalAddPhotoFailed(i18n("Failed to upload photo"));
+        Q_EMIT signalAddPhotoFailed(i18n("Failed to upload photo"));
 
         return;
     }
 
     deleteTemporaryFile();
 
-    emit signalAddPhotoSucceeded();
+    Q_EMIT signalAddPhotoSucceeded();
 }
 
 void PiwigoTalker::addNextChunk()
@@ -861,7 +861,7 @@ void PiwigoTalker::addNextChunk()
 
     if (!imagefile.open(QIODevice::ReadOnly))
     {
-        emit signalProgressInfo(i18n("Error : Cannot open photo: %1", QUrl(d->path).fileName()));
+        Q_EMIT signalProgressInfo(i18n("Error : Cannot open photo: %1", QUrl(d->path).fileName()));
         return;
     }
 
@@ -888,7 +888,7 @@ void PiwigoTalker::addNextChunk()
 
     d->reply = d->netMngr->post(netRequest, buffer);
 
-    emit signalProgressInfo(i18n("Upload the chunk %1/%2 of %3", d->chunkId, d->nbOfChunks, QUrl(d->path).fileName()));
+    Q_EMIT signalProgressInfo(i18n("Upload the chunk %1/%2 of %3", d->chunkId, d->nbOfChunks, QUrl(d->path).fileName()));
 }
 
 void PiwigoTalker::parseResponseAddPhotoChunk(const QByteArray& data)
@@ -923,7 +923,7 @@ void PiwigoTalker::parseResponseAddPhotoChunk(const QByteArray& data)
 
     if (!foundResponse || !success)
     {
-        emit signalProgressInfo(i18n("Warning : The full size photo cannot be uploaded."));
+        Q_EMIT signalProgressInfo(i18n("Warning : The full size photo cannot be uploaded."));
     }
 
     if (d->chunkId < d->nbOfChunks)
@@ -974,7 +974,7 @@ void PiwigoTalker::addPhotoSummary()
 
     d->reply = d->netMngr->post(netRequest, buffer);
 
-    emit signalProgressInfo(i18n("Upload the metadata of %1", QUrl(d->path).fileName()));
+    Q_EMIT signalProgressInfo(i18n("Upload the metadata of %1", QUrl(d->path).fileName()));
 }
 
 void PiwigoTalker::parseResponseAddPhotoSummary(const QByteArray& data)
@@ -1009,21 +1009,21 @@ void PiwigoTalker::parseResponseAddPhotoSummary(const QByteArray& data)
 
     if (!foundResponse)
     {
-        emit signalAddPhotoFailed(i18n("Invalid response received from remote Piwigo (%1)", QString::fromUtf8(data)));
+        Q_EMIT signalAddPhotoFailed(i18n("Invalid response received from remote Piwigo (%1)", QString::fromUtf8(data)));
 
         return;
     }
 
     if (!success)
     {
-        emit signalAddPhotoFailed(i18n("Failed to upload photo"));
+        Q_EMIT signalAddPhotoFailed(i18n("Failed to upload photo"));
 
         return;
     }
 
     deleteTemporaryFile();
 
-    emit signalAddPhotoSucceeded();
+    Q_EMIT signalAddPhotoSucceeded();
 }
 
 void PiwigoTalker::deleteTemporaryFile()

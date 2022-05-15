@@ -141,7 +141,7 @@ void AlbumParser::slotParseItemInfoList(const ItemInfoList& list)
 
     if (!d->cancel)
     {
-        emit signalComplete(imageList);
+        Q_EMIT signalComplete(imageList);
     }
 
     setComplete();

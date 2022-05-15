@@ -167,7 +167,7 @@ void ShowfotoStackViewList::setThumbbar(ShowfotoThumbnailBar* const thumbbar)
 
 void ShowfotoStackViewList::slotItemsAdded(const QList<ShowfotoItemInfo>& items)
 {
-    foreach (const ShowfotoItemInfo& info, items)
+    Q_FOREACH (const ShowfotoItemInfo& info, items)
     {
         ShowfotoStackViewItem* const it = new ShowfotoStackViewItem(this);
         it->setInfo(info);
@@ -176,7 +176,7 @@ void ShowfotoStackViewList::slotItemsAdded(const QList<ShowfotoItemInfo>& items)
 
 void ShowfotoStackViewList::slotItemsListChanged()
 {
-    emit signalItemListChanged(topLevelItemCount());
+    Q_EMIT signalItemListChanged(topLevelItemCount());
 }
 
 void ShowfotoStackViewList::slotItemsRemoved(const QList<ShowfotoItemInfo>& items)
@@ -197,7 +197,7 @@ void ShowfotoStackViewList::slotItemsRemoved(const QList<ShowfotoItemInfo>& item
         ++iter;
     }
 
-    foreach (ShowfotoStackViewItem* const it, list)
+    Q_FOREACH (ShowfotoStackViewItem* const it, list)
     {
         delete it;
     }
@@ -262,7 +262,7 @@ void ShowfotoStackViewList::slotItemDoubleClicked(QTreeWidgetItem* item)
 
     if (sitem)
     {
-        emit signalShowfotoItemInfoActivated(sitem->info());
+        Q_EMIT signalShowfotoItemInfoActivated(sitem->info());
     }
 }
 
@@ -473,7 +473,7 @@ void ShowfotoStackViewList::slotRemoveItems()
 
     QList<ShowfotoItemInfo> infos;
 
-    foreach (QTreeWidgetItem* const item, sel)
+    Q_FOREACH (QTreeWidgetItem* const item, sel)
     {
         ShowfotoStackViewItem* const sitem = dynamic_cast<ShowfotoStackViewItem*>(item);
 
@@ -484,7 +484,7 @@ void ShowfotoStackViewList::slotRemoveItems()
         }
     }
 
-    emit signalRemoveItemInfos(infos);
+    Q_EMIT signalRemoveItemInfos(infos);
 }
 
 void ShowfotoStackViewList::hideToolTip()

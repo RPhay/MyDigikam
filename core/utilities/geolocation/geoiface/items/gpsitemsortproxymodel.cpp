@@ -117,7 +117,7 @@ public:
 
     bool assertSelectionValid(const QItemSelection& selection) const
     {
-        foreach (const QItemSelectionRange& range, selection)
+        Q_FOREACH (const QItemSelectionRange& range, selection)
         {
             if (!range.isValid())
             {
@@ -209,7 +209,7 @@ void GPSLinkItemSelectionModel::setLinkedItemSelectionModel(QItemSelectionModel*
         }
 
         d->reinitializeIndexMapper();
-        emit linkedItemSelectionModelChanged();
+        Q_EMIT linkedItemSelectionModelChanged();
     }
 }
 
@@ -328,7 +328,7 @@ public:
     // cppcheck-suppress unusedPrivateFunction
     bool assertSelectionValid(const QItemSelection& selection) const
     {
-        foreach (const QItemSelectionRange& range, selection)
+        Q_FOREACH (const QItemSelectionRange& range, selection)
         {
             if (!range.isValid())
             {
@@ -364,12 +364,12 @@ public:
  */
 void GPSModelIndexProxyMapperPrivate::createProxyChain()
 {
-    foreach (auto p, m_proxyChainUp)
+    Q_FOREACH (auto p, m_proxyChainUp)
     {
         p->disconnect(q_ptr);
     }
 
-    foreach (auto p, m_proxyChainDown)
+    Q_FOREACH (auto p, m_proxyChainDown)
     {
         p->disconnect(q_ptr);
     }
@@ -446,7 +446,7 @@ void GPSModelIndexProxyMapperPrivate::setConnected(bool connected)
     {
         Q_Q(GPSModelIndexProxyMapper);
         mConnected = connected;
-        emit q->isConnectedChanged();
+        Q_EMIT q->isConnectedChanged();
     }
 }
 

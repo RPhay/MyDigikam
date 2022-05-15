@@ -107,7 +107,7 @@ void DbEngineConnectionChecker::run()
             }
             else
             {
-                emit failedAttempt();
+                Q_EMIT failedAttempt();
                 d->success = false;
                 qCDebug(DIGIKAM_DBENGINE_LOG) << "Error while opening the database. Error details ["
                                               << databaseHandler.lastError() << "]";
@@ -124,7 +124,7 @@ void DbEngineConnectionChecker::run()
 
     QSqlDatabase::removeDatabase(databaseID);
 
-    emit done();
+    Q_EMIT done();
 }
 
 void DbEngineConnectionChecker::stopChecking()

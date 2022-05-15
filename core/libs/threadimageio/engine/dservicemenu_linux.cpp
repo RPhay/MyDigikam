@@ -118,13 +118,13 @@ bool DServiceMenu::runFiles(const QString& appCmd,
     QProcess* const process = new QProcess();
     QProcessEnvironment env = adjustedEnvironmentForAppImage();
 
-    foreach (const QUrl& url, urlList)
+    Q_FOREACH (const QUrl& url, urlList)
     {
         dirs  << url.adjusted(QUrl::RemoveFilename).toLocalFile();
         files << url.toLocalFile();
     }
 
-    foreach (const QString& cmdString, cmdList)
+    Q_FOREACH (const QString& cmdString, cmdList)
     {
         QString cmd = cmdString;
 
@@ -227,7 +227,7 @@ KService::List DServiceMenu::servicesForOpenWith(const QList<QUrl>& urls)
     QStringList    mimeTypes;
     KService::List offers;
 
-    foreach (const QUrl& item, urls)
+    Q_FOREACH (const QUrl& item, urls)
     {
         const QString mimeType = QMimeDatabase().mimeTypeForFile(item.toLocalFile(),
                                                                  QMimeDatabase::MatchExtension).name();
@@ -246,7 +246,7 @@ KService::List DServiceMenu::servicesForOpenWith(const QList<QUrl>& urls)
         const QString constraintTemplate = QLatin1String("'%1' in ServiceTypes");
         QStringList constraints;
 
-        foreach (const QString& mimeType, mimeTypes)
+        Q_FOREACH (const QString& mimeType, mimeTypes)
         {
             constraints << constraintTemplate.arg(mimeType);
         }

@@ -94,7 +94,7 @@ void CalSettings::setYear(int year)
 {
     params.year = year;
 
-    emit settingsChanged();
+    Q_EMIT settingsChanged();
 }
 
 int CalSettings::year() const
@@ -127,7 +127,7 @@ void CalSettings::setPaperSize(const QString& paperSize)
         params.pageSize    = QPageSize::Letter;
     }
 
-    emit settingsChanged();
+    Q_EMIT settingsChanged();
 }
 
 void CalSettings::setResolution(const QString& resolution)
@@ -141,7 +141,7 @@ void CalSettings::setResolution(const QString& resolution)
         params.printResolution = QPrinter::ScreenResolution;
     }
 
-    emit settingsChanged();
+    Q_EMIT settingsChanged();
 }
 
 void CalSettings::setImagePos(int pos)
@@ -184,7 +184,7 @@ void CalSettings::setImagePos(int pos)
         }
     }
 
-    emit settingsChanged();
+    Q_EMIT settingsChanged();
 }
 
 void CalSettings::setDrawLines(bool draw)
@@ -192,7 +192,7 @@ void CalSettings::setDrawLines(bool draw)
     if (params.drawLines != draw)
     {
         params.drawLines = draw;
-        emit settingsChanged();
+        Q_EMIT settingsChanged();
     }
 }
 
@@ -201,7 +201,7 @@ void CalSettings::setRatio(int ratio)
     if (params.ratio != ratio)
     {
         params.ratio = ratio;
-        emit settingsChanged();
+        Q_EMIT settingsChanged();
     }
 }
 
@@ -210,7 +210,7 @@ void CalSettings::setFont(const QString& font)
     if (params.baseFont.family() != font)
     {
         params.baseFont = QFont(font);
-        emit settingsChanged();
+        Q_EMIT settingsChanged();
     }
 }
 
@@ -336,7 +336,7 @@ void CalSettings::loadSpecial(const QUrl& url, const QColor& color)
         int counter                = 0;
         KCalCore::Event::List list = memCal->rawEvents(qFirst, qLast);
 
-        foreach (const KCalCore::Event::Ptr event, list)
+        Q_FOREACH (const KCalCore::Event::Ptr event, list)
         {
             qCDebug(DIGIKAM_DPLUGIN_GENERIC_LOG) << event->summary() << QT_ENDL << "--------";
             counter++;

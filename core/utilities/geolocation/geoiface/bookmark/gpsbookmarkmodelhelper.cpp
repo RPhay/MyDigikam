@@ -83,7 +83,7 @@ void GPSBookmarkModelHelper::Private::addBookmarkGroupToModel(BookmarkNode* cons
         return;
     }
 
-    foreach (BookmarkNode* const currentBookmark, list)
+    Q_FOREACH (BookmarkNode* const currentBookmark, list)
     {
         if (currentBookmark)
         {
@@ -204,7 +204,7 @@ void GPSBookmarkModelHelper::setVisible(const bool state)
 {
     d->visible = state;
 
-    emit signalVisibilityChanged();
+    Q_EMIT signalVisibilityChanged();
 }
 
 GeoModelHelper::PropertyFlags GPSBookmarkModelHelper::modelFlags() const
@@ -252,7 +252,7 @@ void GPSBookmarkModelHelper::snapItemsTo(const QModelIndex& targetIndex,
     undoCommand->setText(i18np("1 image snapped to '%2'",
                                "%1 images snapped to '%2'", snappedIndices.count(), targetIndex.data(Qt::DisplayRole).toString()));
 
-    emit signalUndoCommand(undoCommand);
+    Q_EMIT signalUndoCommand(undoCommand);
 }
 
 } // namespace Digikam

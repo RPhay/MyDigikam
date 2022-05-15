@@ -64,7 +64,7 @@ void CollectionScanner::safelyRemoveAlbums(const QList<int>& albumIds)
     CoreDbAccess access;
     CoreDbTransaction transaction(&access);
 
-    foreach (int albumId, albumIds)
+    Q_FOREACH (int albumId, albumIds)
     {
         QList<qlonglong> ids = access.db()->getItemIDsInAlbum(albumId);
         access.db()->removeItemsFromAlbum(albumId, ids);
@@ -138,7 +138,7 @@ void CollectionScanner::copyFileProperties(const ItemInfo& source, const ItemInf
 
     // Copy public tags
 
-    foreach (int tagId, TagsCache::instance()->publicTags(source.tagIds()))
+    Q_FOREACH (int tagId, TagsCache::instance()->publicTags(source.tagIds()))
     {
         dest.setTag(tagId);
     }
@@ -192,7 +192,7 @@ void CollectionScanner::itemsWereRemoved(const QList<qlonglong>& removedIds)
 
     if (d->recordHistoryIds)
     {
-        foreach (const qlonglong& id, relatedImages)
+        Q_FOREACH (const qlonglong& id, relatedImages)
         {
             d->needTaggingHistorySet << id;
         }
@@ -471,7 +471,7 @@ void CollectionScanner::scanAlbums()
         count += countItemsInFolder(*it);
     }
 
-    emit totalFilesToScan(count);
+    Q_EMIT totalFilesToScan(count);
 
     for (QStringList::const_iterator it = albumRootPaths.constBegin() ; it != albumRootPaths.constEnd() ; ++it)
     {
@@ -479,7 +479,7 @@ void CollectionScanner::scanAlbums()
         QStringList fileList(dir.entryList(QDir::Dirs | QDir::NoDotAndDotDot));
         CoreDbTransaction transaction;
 
-        foreach (const QString& dir, fileList)
+        Q_FOREACH (const QString& dir, fileList)
         {
             scanAlbum(*it, QLatin1Char('/') + dir);
         }
@@ -510,7 +510,7 @@ void CollectionScanner::scan(const QString& albumRoot, const QString& album)
     scanForStaleAlbums(albumRoot);
     removeStaleAlbums();
 
-    emit totalFilesToScan(countItemsInFolder(albumRoot + album));
+    Q_EMIT totalFilesToScan(countItemsInFolder(albumRoot + album));
 
     // Step two: Scan directories
 
@@ -563,7 +563,7 @@ void CollectionScanner::scanAlbum(const QString& albumRoot, const QString& album
         return;
     }
 
-    emit startScanningAlbum(albumRoot, album);
+    Q_EMIT startScanningAlbum(albumRoot, album);
 
     // get album id if album exists
 
@@ -631,14 +631,14 @@ void CollectionScanner::scanAlbum(const QString& albumRoot, const QString& album
         }
     }
 
-    emit finishedScanningAlbum(albumRoot, album, list.count());
+    Q_EMIT finishedScanningAlbum(albumRoot, album, list.count());
 }
 
 void CollectionScanner::updateItemsWithoutDate()
 {
     QStringList urls  = CoreDbAccess().db()->getAllItemURLsWithoutDate();
 
-    emit totalFilesToScan(urls.count());
+    Q_EMIT totalFilesToScan(urls.count());
 
     QString albumRoot = CoreDbAccess::albumRoot();
 
@@ -647,7 +647,7 @@ void CollectionScanner::updateItemsWithoutDate()
 
         for (QStringList::const_iterator it = urls.constBegin() ; it != urls.constEnd() ; ++it)
         {
-            emit scanningFile(*it);
+            Q_EMIT scanningFile(*it);
 
             QFileInfo fi(*it);
             QString albumURL = fi.path();

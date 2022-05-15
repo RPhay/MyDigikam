@@ -147,7 +147,7 @@ void Canvas::reset()
 
         if (d->core->isValid())
         {
-            emit signalSelected(false);
+            Q_EMIT signalSelected(false);
         }
     }
 
@@ -158,7 +158,7 @@ void Canvas::reset()
 void Canvas::load(const QString& filename, IOFileSettings* const IOFileSettings)
 {
     reset();
-    emit signalPrepareToLoad();
+    Q_EMIT signalPrepareToLoad();
     d->core->load(filename, IOFileSettings);
 }
 
@@ -183,7 +183,7 @@ void Canvas::slotImageLoaded(const QString& filePath, bool success)
 
     viewport()->update();
 
-    emit signalLoadingFinished(filePath, success);
+    Q_EMIT signalLoadingFinished(filePath, success);
 }
 
 void Canvas::fitToSelect()
@@ -203,7 +203,7 @@ void Canvas::fitToSelect()
         double dstHeight = contentsRect().height();
         double zoom      = qMin(dstWidth / srcWidth, dstHeight / srcHeight);
 
-        emit signalToggleOffFitToWindow();
+        Q_EMIT signalToggleOffFitToWindow();
 
         layout()->setZoomFactor(zoom);
 
@@ -235,7 +235,7 @@ void Canvas::preload(const QString& /*filename*/)
 
 void Canvas::slotImageSaved(const QString& filePath, bool success)
 {
-    emit signalSavingFinished(filePath, success);
+    Q_EMIT signalSavingFinished(filePath, success);
 }
 
 void Canvas::abortSaving()
@@ -357,7 +357,7 @@ void Canvas::slotCrop()
         d->rubber->setVisible(false);
     }
 
-    emit signalSelected(false);
+    Q_EMIT signalSelected(false);
     addRubber();
 }
 
@@ -397,7 +397,7 @@ void Canvas::slotRestore()
 
 void Canvas::slotUndo(int steps)
 {
-    emit signalUndoSteps(steps);
+    Q_EMIT signalUndoSteps(steps);
 
     d->canvasItem->clearCache();
 
@@ -410,7 +410,7 @@ void Canvas::slotUndo(int steps)
 
 void Canvas::slotRedo(int steps)
 {
-    emit signalRedoSteps(steps);
+    Q_EMIT signalRedoSteps(steps);
 
     d->canvasItem->clearCache();
 
@@ -457,7 +457,7 @@ void Canvas::slotSelected()
     }
 
     d->core->setSelectedArea(sel);
-    emit signalSelectionChanged(sel);
+    Q_EMIT signalSelectionChanged(sel);
 }
 
 void Canvas::slotSelectionMoved()
@@ -469,7 +469,7 @@ void Canvas::slotSelectionMoved()
         sel = calcSelectedArea();
     }
 
-    emit signalSelectionSetText(sel);
+    Q_EMIT signalSelectionSetText(sel);
 }
 
 QRect Canvas::calcSelectedArea() const
@@ -518,7 +518,7 @@ void Canvas::slotModified()
 {
     d->canvasItem->setImage(currentImage());
 
-    emit signalChanged();
+    Q_EMIT signalChanged();
 }
 
 void Canvas::slotSelectAll()
@@ -536,7 +536,7 @@ void Canvas::slotSelectAll()
 
     if (d->core->isValid())
     {
-        emit signalSelected(true);
+        Q_EMIT signalSelected(true);
     }
 }
 
@@ -656,7 +656,7 @@ void Canvas::cancelAddItem()
         d->wrapItem = nullptr;
     }
 
-    emit signalSelected(true);
+    Q_EMIT signalSelected(true);
 }
 
 void Canvas::mousePressEvent(QMouseEvent* event)
@@ -678,7 +678,7 @@ void Canvas::mousePressEvent(QMouseEvent* event)
                     d->rubber->setVisible(false);
                 }
 
-                emit signalSelected(false);
+                Q_EMIT signalSelected(false);
                 addRubber();
             }
         }
@@ -708,7 +708,7 @@ void Canvas::dragMoveEvent(QDragMoveEvent* e)
 void Canvas::dropEvent(QDropEvent* e)
 {
     QGraphicsView::dropEvent(e);
-    emit signalAddedDropedItems(e);
+    Q_EMIT signalAddedDropedItems(e);
 }
 
 } // namespace Digikam

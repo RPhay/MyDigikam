@@ -53,7 +53,7 @@ void FileActionMngrFileWorker::writeOrientationToFiles(const FileActionItemInfoL
 {
     QStringList failedItems;
 
-    foreach (const ItemInfo& info, infos)
+    Q_FOREACH (const ItemInfo& info, infos)
     {
         if (state() == WorkerObject::Deactivating)
         {
@@ -71,7 +71,7 @@ void FileActionMngrFileWorker::writeOrientationToFiles(const FileActionItemInfoL
         }
         else
         {
-            emit imageDataChanged(path, true, true);
+            Q_EMIT imageDataChanged(path, true, true);
             QUrl url = QUrl::fromLocalFile(path);
             ItemAttributesWatch::instance()->fileMetadataChanged(url);
         }
@@ -81,7 +81,7 @@ void FileActionMngrFileWorker::writeOrientationToFiles(const FileActionItemInfoL
 
     if (!failedItems.isEmpty())
     {
-        emit imageChangeFailed(i18n("Failed to revise Exif orientation these files:"), failedItems);
+        Q_EMIT imageChangeFailed(i18n("Failed to revise Exif orientation these files:"), failedItems);
     }
 
     infos.finishedWriting();
@@ -93,7 +93,7 @@ void FileActionMngrFileWorker::writeMetadataToFiles(const FileActionItemInfoList
 
     ScanController::instance()->suspendCollectionScan();
 
-    foreach (const ItemInfo& info, infos)
+    Q_FOREACH (const ItemInfo& info, infos)
     {
         MetadataHub hub;
 
@@ -131,7 +131,7 @@ void FileActionMngrFileWorker::writeMetadata(const FileActionItemInfoList& infos
 
     ScanController::instance()->suspendCollectionScan();
 
-    foreach (const ItemInfo& info, infos)
+    Q_FOREACH (const ItemInfo& info, infos)
     {
         MetadataHub hub;
 
@@ -171,7 +171,7 @@ void FileActionMngrFileWorker::transform(const FileActionItemInfoList& infos, in
     QStringList failedItems;
     ScanController::instance()->suspendCollectionScan();
 
-    foreach (const ItemInfo& info, infos)
+    Q_FOREACH (const ItemInfo& info, infos)
     {
         if (state() == WorkerObject::Deactivating)
         {
@@ -350,7 +350,7 @@ void FileActionMngrFileWorker::transform(const FileActionItemInfoList& infos, in
 
         if (!failedItems.contains(info.name()))
         {
-            emit imageDataChanged(path, true, true);
+            Q_EMIT imageDataChanged(path, true, true);
             ItemAttributesWatch::instance()->fileMetadataChanged(info.fileUrl());
         }
 
@@ -359,7 +359,7 @@ void FileActionMngrFileWorker::transform(const FileActionItemInfoList& infos, in
 
     if (!failedItems.isEmpty())
     {
-        emit imageChangeFailed(i18n("Failed to transform these files:"), failedItems);
+        Q_EMIT imageChangeFailed(i18n("Failed to transform these files:"), failedItems);
     }
 
     infos.finishedWriting();

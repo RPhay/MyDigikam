@@ -273,7 +273,7 @@ void MetadataEditDialog::slotApply()
     d->tabExif->apply();
     d->tabIptc->apply();
     d->tabXmp->apply();
-    emit signalMetadataChangedForUrl(*d->currItem);
+    Q_EMIT signalMetadataChangedForUrl(*d->currItem);
     slotItemChanged();
 }
 

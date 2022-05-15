@@ -160,7 +160,7 @@ void ItemInfoJob::slotResult()
 
     d->jobThread = nullptr;
 
-    emit signalCompleted();
+    Q_EMIT signalCompleted();
 }
 
 void ItemInfoJob::slotData(const QList<ItemListerRecord>& records)
@@ -172,7 +172,7 @@ void ItemInfoJob::slotData(const QList<ItemListerRecord>& records)
 
     ItemInfoList itemsList;
 
-    foreach (const ItemListerRecord& record, records)
+    Q_FOREACH (const ItemListerRecord& record, records)
     {
         ItemInfo info(record);
         itemsList.append(info);
@@ -182,7 +182,7 @@ void ItemInfoJob::slotData(const QList<ItemListerRecord>& records)
 
     std::sort(itemsList.begin(), itemsList.end(), ItemInfoList::namefileLessThan);
 
-    emit signalItemsInfo(itemsList);
+    Q_EMIT signalItemsInfo(itemsList);
 }
 
 } // namespace Digikam

@@ -111,14 +111,14 @@ MailFinalPage::~MailFinalPage()
 void MailFinalPage::initializePage()
 {
     d->complete = false;
-    emit completeChanged();
+    Q_EMIT completeChanged();
     QTimer::singleShot(0, this, SLOT(slotProcess()));
 }
 
 void MailFinalPage::slotDone()
 {
     d->complete = true;
-    emit completeChanged();
+    Q_EMIT completeChanged();
 }
 
 void MailFinalPage::slotProcess()
@@ -136,7 +136,7 @@ void MailFinalPage::slotProcess()
     d->progressView->addEntry(i18n("Preparing file to export by mail..."),
                               DHistoryView::ProgressEntry);
 
-    foreach (const QUrl& url, d->settings->inputImages)
+    Q_FOREACH (const QUrl& url, d->settings->inputImages)
     {
         d->settings->setMailUrl(url, QUrl());
     }

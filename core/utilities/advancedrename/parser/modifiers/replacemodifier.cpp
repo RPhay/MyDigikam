@@ -108,7 +108,7 @@ void ReplaceModifier::slotTokenTriggered(const QString& token)
 
     delete dlg;
 
-    emit signalTokenTriggered(result);
+    Q_EMIT signalTokenTriggered(result);
 }
 
 QString ReplaceModifier::parseOperation(ParseSettings& settings, const QRegularExpressionMatch& match)

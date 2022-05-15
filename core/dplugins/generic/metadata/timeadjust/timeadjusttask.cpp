@@ -87,15 +87,15 @@ void TimeAdjustTask::run()
         return;
     }
 
-    emit signalProcessStarted(d->url);
+    Q_EMIT signalProcessStarted(d->url);
 
     QDateTime org = d->thread->readTimestamp(d->url);
     QDateTime adj = d->settings.calculateAdjustedDate(org, d->thread->indexForUrl(d->url));
 
     if (!adj.isValid())
     {
-        emit signalProcessEnded(d->url, org, adj, TimeAdjustList::META_TIME_ERROR);
-        emit signalDone();
+        Q_EMIT signalProcessEnded(d->url, org, adj, TimeAdjustList::META_TIME_ERROR);
+        Q_EMIT signalDone();
         return;
     }
 
@@ -325,11 +325,11 @@ void TimeAdjustTask::run()
 
     if ((status & TimeAdjustList::META_TIME_ERROR) != TimeAdjustList::META_TIME_ERROR)
     {
-        emit signalDateTimeForUrl(d->url, adj, d->settings.updFileModDate);
+        Q_EMIT signalDateTimeForUrl(d->url, adj, d->settings.updFileModDate);
     }
 
-    emit signalProcessEnded(d->url, org, adj, status);
-    emit signalDone();
+    Q_EMIT signalProcessEnded(d->url, org, adj, status);
+    Q_EMIT signalDone();
 }
 
 // ------------------------------------------------------------------
@@ -381,8 +381,8 @@ void TimePreviewTask::run()
     QDateTime org = d->thread->readTimestamp(d->url);
     QDateTime adj = d->settings.calculateAdjustedDate(org, d->thread->indexForUrl(d->url));
 
-    emit signalPreviewReady(d->url, org, adj);
-    emit signalDone();
+    Q_EMIT signalPreviewReady(d->url, org, adj);
+    Q_EMIT signalDone();
 }
 
 } // namespace DigikamGenericTimeAdjustPlugin

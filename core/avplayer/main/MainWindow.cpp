@@ -530,7 +530,7 @@ void MainWindow::setupUi()
     subMenu->addAction(i18nc("@option: clock sync", "Audio"))->setData(AVClock::AudioClock);
     subMenu->addAction(i18nc("@option: clock sync", "Video"))->setData(AVClock::VideoClock);
 
-    foreach (QAction* const action, subMenu->actions())
+    Q_FOREACH (QAction* const action, subMenu->actions())
     {
         action->setActionGroup(ag);
         action->setCheckable(true);
@@ -588,7 +588,7 @@ void MainWindow::setupUi()
     box->addItem(i18nc("@option", "Auto detect"), QString::fromLatin1("AutoDetect"));
     box->addItem(i18nc("@option", "System"),      QString::fromLatin1("System"));
 
-    foreach (const QByteArray& cs, QTextCodec::availableCodecs())
+    Q_FOREACH (const QByteArray& cs, QTextCodec::availableCodecs())
     {
         box->addItem(QString::fromLatin1(cs), QString::fromLatin1(cs));
     }
@@ -623,7 +623,7 @@ void MainWindow::setupUi()
     ag                              = new QActionGroup(subMenu);
     ag->setExclusive(true);
 
-    foreach (QAction* const action, subMenu->actions())
+    Q_FOREACH (QAction* const action, subMenu->actions())
     {
         ag->addAction(action);
         action->setCheckable(true);
@@ -642,7 +642,7 @@ void MainWindow::setupUi()
     subMenu->addAction(QString::fromLatin1("16:9"))->setData(16.0 / 9.0);
     subMenu->addAction(i18nc("@action: video ratio", "Custom"))->setData(-2);
 
-    foreach (QAction* const action, subMenu->actions())
+    Q_FOREACH (QAction* const action, subMenu->actions())
     {
         action->setCheckable(true);
     }
@@ -950,7 +950,7 @@ bool MainWindow::setRenderer(QtAV::VideoRenderer* const renderer)
         mpVOAction->setChecked(false);
     }
 
-    foreach (QAction* const action, mVOActions)
+    Q_FOREACH (QAction* const action, mVOActions)
     {
         if (action->data() == renderer->id())
         {
@@ -1080,7 +1080,7 @@ void MainWindow::setVideoDecoderNames(const QStringList& vd)
 {
     QStringList vdnames;
 
-    foreach (const QString& v, vd)
+    Q_FOREACH (const QString& v, vd)
     {
         vdnames << v.toLower();
     }
@@ -1088,7 +1088,7 @@ void MainWindow::setVideoDecoderNames(const QStringList& vd)
     QStringList vidp;
     QStringList vids = DecoderConfigPage::idsToNames(VideoDecoder::registered());
 
-    foreach (const QString& v, vids)
+    Q_FOREACH (const QString& v, vids)
     {
         if (vdnames.contains(v.toLower()))
         {
@@ -1549,7 +1549,7 @@ void MainWindow::updateChannelMenu()
     AudioFormat::ChannelLayout cl = ao->audioFormat().channelLayout();
     QList<QAction*> as            = mpChannelMenu->actions();
 
-    foreach (QAction* const action, as)
+    Q_FOREACH (QAction* const action, as)
     {
         if (action->data().toInt() != (int)cl)
             continue;
@@ -1615,7 +1615,7 @@ void MainWindow::initAudioTrackMenu()
 
 end:
 
-    foreach (QAction* const ac, as)
+    Q_FOREACH (QAction* const ac, as)
     {
         if ((ac->data().toInt() == track) && (track >= 0))
         {

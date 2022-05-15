@@ -60,7 +60,7 @@ DPluginBqm::~DPluginBqm()
 
 void DPluginBqm::setVisible(bool b)
 {
-    emit signalVisible(b);
+    Q_EMIT signalVisible(b);
 }
 
 int DPluginBqm::count() const
@@ -72,7 +72,7 @@ QList<BatchTool*> DPluginBqm::tools(QObject* const parent) const
 {
     QList<BatchTool*> list;
 
-    foreach (BatchTool* const t, d->tools)
+    Q_FOREACH (BatchTool* const t, d->tools)
     {
         if (t && (t->parent() == parent))
         {
@@ -85,7 +85,7 @@ QList<BatchTool*> DPluginBqm::tools(QObject* const parent) const
 
 BatchTool* DPluginBqm::findToolByName(const QString& name, QObject* const parent) const
 {
-    foreach (BatchTool* const t, tools(parent))
+    Q_FOREACH (BatchTool* const t, tools(parent))
     {
         if (t && (t->objectName() == name))
         {   // cppcheck-suppress useStlAlgorithm
@@ -119,7 +119,7 @@ QStringList DPluginBqm::categories() const
 {
     QStringList list;
 
-    foreach (BatchTool* const t, d->tools)
+    Q_FOREACH (BatchTool* const t, d->tools)
     {
         QString cat = t->toolGroupToString();
 

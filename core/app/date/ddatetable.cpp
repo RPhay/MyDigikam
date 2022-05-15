@@ -510,7 +510,7 @@ void DDateTable::keyPressEvent(QKeyEvent *e)
         case Qt::Key_Return:
         case Qt::Key_Enter:
         {
-            emit tableClicked();
+            Q_EMIT tableClicked();
             break;
         }
 
@@ -690,13 +690,13 @@ void DDateTable::mousePressEvent(QMouseEvent *e)
 
     update();
 
-    emit tableClicked();
+    Q_EMIT tableClicked();
 
     if ((e->button() == Qt::RightButton) && d->popupMenuEnabled)
     {
         QMenu* const menu = new QMenu();
         menu->addSection(locale().toString(d->date));
-        emit aboutToShowContextMenu(menu, clickedDate);
+        Q_EMIT aboutToShowContextMenu(menu, clickedDate);
 #if (QT_VERSION > QT_VERSION_CHECK(5, 99, 0))
         menu->popup(e->globalPosition().toPoint());
 #else
@@ -720,8 +720,8 @@ bool DDateTable::setDate(const QDate& toDate)
     QDate oldDate = date();
     d->setDate(toDate);
 
-    emit dateChanged(date(), oldDate);
-    emit dateChanged(date());
+    Q_EMIT dateChanged(date(), oldDate);
+    Q_EMIT dateChanged(date());
 
     update();
 

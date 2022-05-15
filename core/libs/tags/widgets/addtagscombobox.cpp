@@ -171,21 +171,21 @@ void AddTagsComboBox::slotViewIndexActivated(const QModelIndex& index)
         d->viewTaggingAction = TaggingAction();
     }
 
-    emit taggingActionSelected(currentTaggingAction());
+    Q_EMIT taggingActionSelected(currentTaggingAction());
 }
 
 void AddTagsComboBox::slotLineEditActionActivated(const TaggingAction& action)
 {
     d->viewTaggingAction = TaggingAction();
 
-    emit taggingActionActivated(action);
+    Q_EMIT taggingActionActivated(action);
 }
 
 void AddTagsComboBox::slotLineEditActionSelected(const TaggingAction& action)
 {
     d->viewTaggingAction = TaggingAction();
 
-    emit taggingActionSelected(action);
+    Q_EMIT taggingActionSelected(action);
 }
 
 bool AddTagsComboBox::eventFilter(QObject* object, QEvent* event)

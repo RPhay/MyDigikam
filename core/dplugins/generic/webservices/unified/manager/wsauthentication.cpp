@@ -205,7 +205,7 @@ void WSAuthentication::parseTreeFromListAlbums(const QList <WSAlbum>& albumsList
                                                QMap<QString, AlbumSimplified>& albumTree,
                                                QStringList& rootAlbums)
 {
-    foreach (const WSAlbum& album, albumsList)
+    Q_FOREACH (const WSAlbum& album, albumsList)
     {
         if (albumTree.contains(album.id))
         {
@@ -257,7 +257,7 @@ void WSAuthentication::prepareForUpload()
 
     if (d->transferQueue.isEmpty())
     {
-        emit signalMessage(QLatin1String("transferQueue is empty"), true);
+        Q_EMIT signalMessage(QLatin1String("transferQueue is empty"), true);
         return;
     }
 
@@ -268,7 +268,7 @@ void WSAuthentication::prepareForUpload()
 
     if (d->wizard->settings()->imagesChangeProp)
     {
-        foreach (const QUrl& imgUrl, d->transferQueue)
+        Q_FOREACH (const QUrl& imgUrl, d->transferQueue)
         {
             QString imgPath = imgUrl.toLocalFile();
             QImage image = PreviewLoadThread::loadHighQualitySynchronously(imgPath).copyQImage();
@@ -280,7 +280,7 @@ void WSAuthentication::prepareForUpload()
 
             if (image.isNull())
             {
-                emit d->talker->signalAddPhotoDone(666, i18n("Cannot open image at %1\n", imgPath));
+                Q_EMIT d->talker->signalAddPhotoDone(666, i18n("Cannot open image at %1\n", imgPath));
                 return;
             }
 
@@ -327,7 +327,7 @@ void WSAuthentication::uploadNextPhoto()
 {
     if (d->transferQueue.isEmpty())
     {
-        emit signalDone();
+        Q_EMIT signalDone();
         return;
     }
 
@@ -366,7 +366,7 @@ void WSAuthentication::slotCancel()
         tmpDir.removeRecursively();
     }
 
-    emit signalProgress(0);
+    Q_EMIT signalProgress(0);
 }
 
 void WSAuthentication::slotNewAlbumRequest()
@@ -389,7 +389,7 @@ void WSAuthentication::slotListAlbumsDone(int errCode, const QString& errMsg, co
 {
     QString albumDebug = QLatin1String("");
 
-    foreach (const WSAlbum &album, albumsList)
+    Q_FOREACH (const WSAlbum &album, albumsList)
     {
         albumDebug.append(QString::fromLatin1("%1: %2\n").arg(album.id).arg(album.title));
     }
@@ -409,18 +409,18 @@ void WSAuthentication::slotListAlbumsDone(int errCode, const QString& errMsg, co
     QStringList rootAlbums;
     parseTreeFromListAlbums(albumsList, albumTree, rootAlbums);
 
-    emit signalListAlbumsDone(albumTree, rootAlbums, QLatin1String(""));
+    Q_EMIT signalListAlbumsDone(albumTree, rootAlbums, QLatin1String(""));
 }
 
 void WSAuthentication::slotAddPhotoDone(int errCode, const QString& errMsg)
 {
     if (errCode == 0)
     {
-        emit signalMessage(QDir::toNativeSeparators(d->transferQueue.first().toLocalFile()), false);
+        Q_EMIT signalMessage(QDir::toNativeSeparators(d->transferQueue.first().toLocalFile()), false);
         d->transferQueue.removeFirst();
 
         d->imagesCount++;
-        emit signalProgress(d->imagesCount);
+        Q_EMIT signalProgress(d->imagesCount);
     }
     else
     {

@@ -32,7 +32,7 @@ QStringList CollectionManager::allAvailableAlbumRootPaths()
 
     QStringList list;
 
-    foreach (AlbumRootLocation* const location, d->locations)
+    Q_FOREACH (AlbumRootLocation* const location, d->locations)
     {
         if (location->status() == CollectionLocation::LocationAvailable)
         {
@@ -84,7 +84,7 @@ QString CollectionManager::albumRootPath(const QString& givenPath)
 {
     QReadLocker locker(&d->lock);
 
-    foreach (AlbumRootLocation* const location, d->locations)
+    Q_FOREACH (AlbumRootLocation* const location, d->locations)
     {
         QString rootPath = location->albumRootPath();
         QString filePath = QDir::fromNativeSeparators(givenPath);
@@ -112,7 +112,7 @@ bool CollectionManager::isAlbumRoot(const QString& filePath)
 {
     QReadLocker locker(&d->lock);
 
-    foreach (AlbumRootLocation* const location, d->locations)
+    Q_FOREACH (AlbumRootLocation* const location, d->locations)
     {
         if (filePath == location->albumRootPath())
         {   // cppcheck-suppress useStlAlgorithm
@@ -132,7 +132,7 @@ QString CollectionManager::album(const QString& filePath)
 {
     QReadLocker locker(&d->lock);
 
-    foreach (AlbumRootLocation* const location, d->locations)
+    Q_FOREACH (AlbumRootLocation* const location, d->locations)
     {
         QString rootPath = location->albumRootPath();
 
@@ -201,7 +201,7 @@ QString CollectionManager::oneAlbumRootPath()
 {
     QReadLocker locker(&d->lock);
 
-    foreach (AlbumRootLocation* const location, d->locations)
+    Q_FOREACH (AlbumRootLocation* const location, d->locations)
     {
         if (location->status() == CollectionLocation::LocationAvailable)
         {   // cppcheck-suppress useStlAlgorithm
@@ -239,7 +239,7 @@ void CollectionManager::slotAlbumRootChange(const AlbumRootChangeset& changeset)
                 {
                     QList<AlbumRootInfo> infos = CoreDbAccess().db()->getAlbumRoots();
 
-                    foreach (const AlbumRootInfo& info, infos)
+                    Q_FOREACH (const AlbumRootInfo& info, infos)
                     {
                         if (info.id == location->id())
                         {    // cppcheck-suppress useStlAlgorithm
@@ -253,7 +253,7 @@ void CollectionManager::slotAlbumRootChange(const AlbumRootChangeset& changeset)
 
             if (!toBeEmitted.isNull())
             {
-                emit locationPropertiesChanged(toBeEmitted);
+                Q_EMIT locationPropertiesChanged(toBeEmitted);
             }
 
             break;

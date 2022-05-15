@@ -64,7 +64,7 @@ QString EnfuseSettings::inputImagesList() const
 {
     QString ret;
 
-    foreach (const QUrl& url, inputUrls)
+    Q_FOREACH (const QUrl& url, inputUrls)
     {
         ret.append(url.fileName() + QLatin1String(" ; "));
     }

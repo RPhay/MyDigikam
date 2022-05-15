@@ -215,7 +215,7 @@ bool SubImagesGeometry::generateVertexData(const QRect& rect, bool useIndecies, 
     VertexData* vd = (VertexData*)vertexData();
     int index      = 0;
 
-    foreach (const SubImage& i, m_images.images)
+    Q_FOREACH (const SubImage& i, m_images.images)
     {
         if (x + i.stride > maxWidth && maxWidth > 0)
         {
@@ -257,7 +257,7 @@ bool SubImagesGeometry::generateVertexData(const QRect& rect, bool useIndecies, 
     const float sy  = float(rect.height()) / float(m_images.height());
     vd              = (VertexData*)vertexData();
 
-    foreach (const SubImage& i, m_images.images)
+    Q_FOREACH (const SubImage& i, m_images.images)
     {
         //qCDebug(DIGIKAM_QTAV_LOG) << rect;
         //qCDebug(DIGIKAM_QTAV_LOG).noquote() << QString::asprintf("i: %d,%d", i.x, i.y);

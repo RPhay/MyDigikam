@@ -578,7 +578,7 @@ void GPSItemListContextMenu::setGPSDataForSelectedItems(const GPSDataContainer& 
     }
 
     undoCommand->setText(undoDescription);
-    emit signalUndoCommand(undoCommand);
+    Q_EMIT signalUndoCommand(undoCommand);
 }
 
 void GPSItemListContextMenu::slotBookmarkSelected(const GPSDataContainer& position)
@@ -684,7 +684,7 @@ void GPSItemListContextMenu::removeInformationFromSelectedImages(const GPSDataCo
     if (undoCommand->affectedItemCount() > 0)
     {
         undoCommand->setText(undoDescription);
-        emit signalUndoCommand(undoCommand);
+        Q_EMIT signalUndoCommand(undoCommand);
     }
     else
     {
@@ -730,7 +730,7 @@ void GPSItemListContextMenu::slotLookupMissingAltitudes()
 
     LookupAltitude::Request::List altitudeQueries;
 
-    foreach (const QModelIndex& currentIndex, selectedIndices)
+    Q_FOREACH (const QModelIndex& currentIndex, selectedIndices)
     {
         GPSItemContainer* const gpsItem = imageModel->itemFromIndex(currentIndex);
 
@@ -769,8 +769,8 @@ void GPSItemListContextMenu::slotLookupMissingAltitudes()
     connect(d->altitudeLookup, SIGNAL(signalDone()),
             this, SLOT(slotAltitudeLookupDone()));
 
-    emit signalSetUIEnabled(false, this, QString::fromUtf8(SLOT(slotAltitudeLookupCancel())));
-    emit signalProgressSetup(altitudeQueries.count(), i18n("Looking up altitudes"));
+    Q_EMIT signalSetUIEnabled(false, this, QString::fromUtf8(SLOT(slotAltitudeLookupCancel())));
+    Q_EMIT signalProgressSetup(altitudeQueries.count(), i18n("Looking up altitudes"));
 
     d->altitudeUndoCommand    = new GPSUndoCommand();
     d->altitudeRequestedCount = altitudeQueries.count();
@@ -783,7 +783,7 @@ void GPSItemListContextMenu::slotAltitudeLookupReady(const QList<int>& readyRequ
 {
     GPSItemModel* const imageModel = d->imagesList->getModel();
 
-    foreach (const int requestIndex, readyRequests)
+    Q_FOREACH (const int requestIndex, readyRequests)
     {
         const LookupAltitude::Request myLookup  = d->altitudeLookup->getRequest(requestIndex);
         const QPersistentModelIndex markerIndex = myLookup.data.value<QPersistentModelIndex>();
@@ -812,7 +812,7 @@ void GPSItemListContextMenu::slotAltitudeLookupReady(const QList<int>& readyRequ
         d->altitudeReceivedCount++;
     }
 
-    emit signalProgressChanged(d->altitudeReceivedCount);
+    Q_EMIT signalProgressChanged(d->altitudeReceivedCount);
 }
 
 void GPSItemListContextMenu::slotAltitudeLookupDone()
@@ -830,7 +830,7 @@ void GPSItemListContextMenu::slotAltitudeLookupDone()
         // at least some queries returned a result, save the undo command
 
         d->altitudeUndoCommand->setText(i18n("Altitude looked up"));
-        emit signalUndoCommand(d->altitudeUndoCommand);
+        Q_EMIT signalUndoCommand(d->altitudeUndoCommand);
     }
     else
     {
@@ -840,7 +840,7 @@ void GPSItemListContextMenu::slotAltitudeLookupDone()
     d->altitudeUndoCommand = nullptr;
     d->altitudeLookup->deleteLater();
 
-    emit signalSetUIEnabled(true);
+    Q_EMIT signalSetUIEnabled(true);
 }
 
 void GPSItemListContextMenu::slotAltitudeLookupCancel()

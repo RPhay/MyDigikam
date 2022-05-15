@@ -56,14 +56,14 @@ ItemListerJobReceiver::ItemListerJobReceiver(DBJob* const job)
 
 void ItemListerJobReceiver::sendData()
 {
-    emit m_job->data(records);
+    Q_EMIT m_job->data(records);
 
     records.clear();
 }
 
 void ItemListerJobReceiver::error(const QString& errMsg)
 {
-    emit m_job->error(errMsg);
+    Q_EMIT m_job->error(errMsg);
 
     ItemListerValueListReceiver::error(errMsg);
 }

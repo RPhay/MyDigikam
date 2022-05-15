@@ -154,7 +154,7 @@ void OnlineVersionDwnl::startDownload(const QString& version)
 
         if (!OnlineVersionChecker::bundleProperties(arch, bundle))
         {
-            emit signalDownloadError(i18n("Unsupported Architecture: %1", QSysInfo::buildAbi()));
+            Q_EMIT signalDownloadError(i18n("Unsupported Architecture: %1", QSysInfo::buildAbi()));
 
             qCDebug(DIGIKAM_GENERAL_LOG) << "Unsupported architecture";
 
@@ -218,7 +218,7 @@ void OnlineVersionDwnl::slotDownloaded(QNetworkReply* reply)
         (reply->error() != QNetworkReply::InsecureRedirectError))
     {
         qCDebug(DIGIKAM_GENERAL_LOG) << "Error: " << reply->errorString();
-        emit signalDownloadError(reply->errorString());
+        Q_EMIT signalDownloadError(reply->errorString());
 
         return;
     }
@@ -243,7 +243,7 @@ void OnlineVersionDwnl::slotDownloaded(QNetworkReply* reply)
         if (data.isEmpty())
         {
             qCDebug(DIGIKAM_GENERAL_LOG) << "Checksum file is empty";
-            emit signalDownloadError(i18n("Checksum file is empty."));
+            Q_EMIT signalDownloadError(i18n("Checksum file is empty."));
 
             return;
         }
@@ -255,7 +255,7 @@ void OnlineVersionDwnl::slotDownloaded(QNetworkReply* reply)
         if (sums.isEmpty())
         {
             qCDebug(DIGIKAM_GENERAL_LOG) << "Checksum is invalid";
-            emit signalDownloadError(i18n("Checksum is invalid."));
+            Q_EMIT signalDownloadError(i18n("Checksum is invalid."));
 
             return;
         }
@@ -276,14 +276,14 @@ void OnlineVersionDwnl::slotDownloaded(QNetworkReply* reply)
     if (data.isEmpty())
     {
         qCDebug(DIGIKAM_GENERAL_LOG) << "Downloaded file is empty";
-        emit signalDownloadError(i18n("Downloaded file is empty."));
+        Q_EMIT signalDownloadError(i18n("Downloaded file is empty."));
 
         return;
     }
 
     // Compute checksum in a separated thread
 
-    emit signalComputeChecksum();
+    Q_EMIT signalComputeChecksum();
 
     QString hash;
     QPointer<QEventLoop> loop = new QEventLoop(this);
@@ -308,7 +308,7 @@ void OnlineVersionDwnl::slotDownloaded(QNetworkReply* reply)
     if (d->checksums != hash)
     {
         qCDebug(DIGIKAM_GENERAL_LOG) << "Checksums error";
-        emit signalDownloadError(i18n("Checksums error."));
+        Q_EMIT signalDownloadError(i18n("Checksums error."));
 
         return;
     }
@@ -330,12 +330,12 @@ void OnlineVersionDwnl::slotDownloaded(QNetworkReply* reply)
 
         qCDebug(DIGIKAM_GENERAL_LOG) << "Download is complete: " << path;
 
-        emit signalDownloadError(QString());  // No error: download is complete.
+        Q_EMIT signalDownloadError(QString());  // No error: download is complete.
     }
     else
     {
         qCDebug(DIGIKAM_GENERAL_LOG) << "Cannot open " << path;
-        emit signalDownloadError(i18n("Cannot open target file."));
+        Q_EMIT signalDownloadError(i18n("Cannot open target file."));
     }
 }
 

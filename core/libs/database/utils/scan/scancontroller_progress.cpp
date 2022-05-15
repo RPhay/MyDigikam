@@ -36,7 +36,7 @@ void ScanController::slotTotalFilesToScan(int count)
     }
 
     d->totalFilesToScan += count;
-    emit totalFilesToScan(d->totalFilesToScan);
+    Q_EMIT totalFilesToScan(d->totalFilesToScan);
 }
 
 void ScanController::slotScannedFiles(int scanned)
@@ -48,8 +48,8 @@ void ScanController::slotScannedFiles(int scanned)
 
     if (d->totalFilesToScan)
     {
-        emit filesScanned(scanned);
-        emit scanningProgress(double(scanned) / double(d->totalFilesToScan));
+        Q_EMIT filesScanned(scanned);
+        Q_EMIT scanningProgress(double(scanned) / double(d->totalFilesToScan));
     }
 }
 
@@ -58,8 +58,8 @@ void ScanController::moreSchemaUpdateSteps(int numberOfSteps)
 {
     // not from main thread
 
-    emit triggerShowProgressDialog();
-    emit incrementProgressDialog(numberOfSteps);
+    Q_EMIT triggerShowProgressDialog();
+    Q_EMIT incrementProgressDialog(numberOfSteps);
 }
 
 /// implementing InitializationObserver
@@ -67,7 +67,7 @@ void ScanController::schemaUpdateProgress(const QString& message, int numberOfSt
 {
     // not from main thread
 
-    emit progressFromInitialization(message, numberOfSteps);
+    Q_EMIT progressFromInitialization(message, numberOfSteps);
 }
 
 void ScanController::slotProgressFromInitialization(const QString& message, int numberOfSteps)
@@ -86,7 +86,7 @@ void ScanController::error(const QString& errorMessage)
 {
     // not from main thread
 
-    emit errorFromInitialization(errorMessage);
+    Q_EMIT errorFromInitialization(errorMessage);
 }
 
 void ScanController::slotErrorFromInitialization(const QString& errorMessage)

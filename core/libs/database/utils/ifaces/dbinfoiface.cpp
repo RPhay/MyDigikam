@@ -189,7 +189,7 @@ public:
             QList<int> list;
             list << reader.valueToIntList();
 
-            foreach (int imageId, list)
+            Q_FOREACH (int imageId, list)
             {
                 ItemInfo imageInfo(imageId);
                 if (imageInfo.isVisible())
@@ -231,7 +231,7 @@ public:
             {
                 // if there were no error, fetch and process the results.
 
-                foreach (const ItemListerRecord &record, receiver.records)
+                Q_FOREACH (const ItemListerRecord &record, receiver.records)
                 {
                     ItemInfo imageInfo(record);
                     QUrl imageUrl = imageInfo.fileUrl();
@@ -259,7 +259,7 @@ public:
 
         if (!(withGroupedIsSet && withGrouped))
         {
-            foreach (const QUrl& url, urlList)
+            Q_FOREACH (const QUrl& url, urlList)
             {
                 ItemInfo info = ItemInfo::fromUrl(url);
 
@@ -276,7 +276,7 @@ public:
                         }
                     }
 
-                    foreach (const ItemInfo& i, info.groupedImages())
+                    Q_FOREACH (const ItemInfo& i, info.groupedImages())
                     {
                         lst.removeOne(i.fileUrl());
                     }
@@ -642,7 +642,7 @@ QList<QUrl> DBInfoIface::albumsItems(const DAlbumIDs& lst) const
 {
     QList<QUrl> imageList;
 
-    foreach (int gid, lst)
+    Q_FOREACH (int gid, lst)
     {
         imageList << albumItems(gid);
     }
@@ -673,7 +673,7 @@ DBInfoIface::DAlbumIDs DBInfoIface::albumChooserItems() const
     AlbumList lst = d->albumsChooser->selectedAlbums();
     DAlbumIDs ids;
 
-    foreach (Album* const a, lst)
+    Q_FOREACH (Album* const a, lst)
     {
         if (a)
         {
@@ -769,7 +769,7 @@ QList<GPSItemContainer*> DBInfoIface::currentGPSItems() const
 {
     QList<GPSItemContainer*> items;
 
-    foreach (const QUrl& url, currentSelectedItems())
+    Q_FOREACH (const QUrl& url, currentSelectedItems())
     {
         ItemInfo info = ItemInfo::fromUrl(url);
         items << new ItemGPS(info);
@@ -808,7 +808,7 @@ void DBInfoIface::openSetupPage(SetupPage page)
         {
             if (Setup::execExifTool(nullptr))
             {
-                emit signalSetupChanged();
+                Q_EMIT signalSetupChanged();
             }
         }
 

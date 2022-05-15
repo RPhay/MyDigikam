@@ -135,7 +135,7 @@ SetupRaw::SetupRaw(QTabWidget* const tab)
 
     d->rawImportTool = new QComboBox;
 
-    foreach (DPlugin* const p, DPluginLoader::instance()->allPlugins())
+    Q_FOREACH (DPlugin* const p, DPluginLoader::instance()->allPlugins())
     {
         DPluginRawImport* const raw = dynamic_cast<DPluginRawImport*>(p);
 
@@ -281,7 +281,7 @@ void SetupRaw::slotAboutRawImportPlugin()
 {
     QString iid = d->rawImportTool->itemData(d->rawImportTool->currentIndex()).toString();
 
-    foreach (DPlugin* const p, DPluginLoader::instance()->allPlugins())
+    Q_FOREACH (DPlugin* const p, DPluginLoader::instance()->allPlugins())
     {
         DPluginRawImport* const raw = dynamic_cast<DPluginRawImport*>(p);
 

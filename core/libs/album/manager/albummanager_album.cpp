@@ -40,7 +40,7 @@ void AlbumManager::setCurrentAlbums(const QList<Album*>& albums)
     /**
      * Filter out the null pointers
      */
-    foreach (Album* const album, albums)
+    Q_FOREACH (Album* const album, albums)
     {
         if (album)
         {
@@ -53,7 +53,7 @@ void AlbumManager::setCurrentAlbums(const QList<Album*>& albums)
      */
     std::sort(d->currentAlbums.begin(), d->currentAlbums.end());
 
-    emit signalAlbumCurrentChanged(d->currentAlbums);
+    Q_EMIT signalAlbumCurrentChanged(d->currentAlbums);
 }
 
 AlbumList AlbumManager::currentAlbums() const
@@ -65,7 +65,7 @@ void AlbumManager::clearCurrentAlbums()
 {
     d->currentAlbums.clear();
 
-    emit signalAlbumCurrentChanged(d->currentAlbums);
+    Q_EMIT signalAlbumCurrentChanged(d->currentAlbums);
 }
 
 Album* AlbumManager::findAlbum(int gid) const
@@ -149,7 +149,7 @@ void AlbumManager::slotAlbumsJobData(const QMap<int, int>& albumsStatMap)
 
     d->pAlbumsCount = albumsStatMap;
 
-    emit signalPAlbumsDirty(albumsStatMap);
+    Q_EMIT signalPAlbumsDirty(albumsStatMap);
 }
 
 void AlbumManager::updateAlbumPathHash()

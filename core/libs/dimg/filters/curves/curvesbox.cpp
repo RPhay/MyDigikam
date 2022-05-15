@@ -342,7 +342,7 @@ void CurvesBox::slotCurveTypeChanged(int type)
     }
 
     d->curvesWidget->curveTypeChanged();
-    emit signalCurveTypeChanged(type);
+    Q_EMIT signalCurveTypeChanged(type);
 }
 
 void CurvesBox::setScale(HistogramScale type)
@@ -398,7 +398,7 @@ void CurvesBox::resetPickers()
     d->pickGray->setChecked(false);
     d->pickWhite->setChecked(false);
     d->pickerType->setExclusive(true);
-    emit signalPickerChanged(NoPicker);
+    Q_EMIT signalPickerChanged(NoPicker);
 }
 
 void CurvesBox::resetChannel(int channel)
@@ -410,7 +410,7 @@ void CurvesBox::resetChannel(int channel)
 void CurvesBox::slotResetChannel()
 {
     resetChannel(d->channel);
-    emit signalChannelReset(d->channel);
+    Q_EMIT signalChannelReset(d->channel);
 }
 
 void CurvesBox::slotResetChannels()
@@ -426,7 +426,7 @@ void CurvesBox::resetChannels()
         resetChannel(channel);
     }
 
-    emit signalChannelReset(d->channel);
+    Q_EMIT signalChannelReset(d->channel);
     reset();
 }
 

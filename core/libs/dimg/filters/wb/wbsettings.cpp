@@ -409,7 +409,7 @@ void WBSettings::slotTemperatureChanged(double temperature)
 
     d->temperaturePresetCB->setCurrentIndex(index);
 
-    emit signalSettingsChanged();
+    Q_EMIT signalSettingsChanged();
 }
 
 void WBSettings::slotTemperaturePresetChanged(int tempPreset)
@@ -427,7 +427,7 @@ void WBSettings::slotTemperaturePresetChanged(int tempPreset)
         d->temperatureInput->setValue((double)temperature);
     }
 
-    emit signalSettingsChanged();
+    Q_EMIT signalSettingsChanged();
 }
 
 WBContainer WBSettings::settings() const

@@ -223,7 +223,7 @@ void TagFolderView::handleCustomContextMenuAction(QAction* action, const AlbumPo
     {
         QList<TAlbum*> selected = selectedTagAlbums();
 
-        emit signalFindDuplicates(selected);
+        Q_EMIT signalFindDuplicates(selected);
     }
 }
 
@@ -263,7 +263,7 @@ void TagFolderView::setContexMenuItems(ContextMenuHelper& cmh, const QList<TAlbu
 
         // If one of the selected tags is no face tag, add the action to mark them as face tags.
 
-        foreach (TAlbum* const tag, albums)
+        Q_FOREACH (TAlbum* const tag, albums)
         {
             if (!FaceTags::isPerson(tag->id()))
             {   // cppcheck-suppress useStlAlgorithm
@@ -308,7 +308,7 @@ void TagFolderView::contextMenuEvent(QContextMenuEvent* event)
     std::sort(selectedItems.begin(), selectedItems.end());
     QList<TAlbum*> items;
 
-    foreach (const QModelIndex& mIndex, selectedItems)
+    Q_FOREACH (const QModelIndex& mIndex, selectedItems)
     {
         TAlbum* const temp = static_cast<TAlbum*>(albumForIndex(mIndex));
         items.append(temp);
@@ -330,7 +330,7 @@ void TagFolderView::contextMenuEvent(QContextMenuEvent* event)
     setContexMenuItems(cmhelper, items);
 
 /*
-    foreach (ContextMenuElement* const element, d->contextMenuElements)
+    Q_FOREACH (ContextMenuElement* const element, d->contextMenuElements)
     {
         element->addActions(this, cmhelper, album);
     }

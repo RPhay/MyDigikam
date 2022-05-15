@@ -135,19 +135,19 @@ void DComboBox::slotReset()
     d->combo->setCurrentIndex(d->defaultIndex);
     d->resetButton->setEnabled(false);
     slotItemActivated(d->defaultIndex);
-    emit reset();
+    Q_EMIT reset();
 }
 
 void DComboBox::slotItemActivated(int v)
 {
     d->resetButton->setEnabled(v != d->defaultIndex);
-    emit activated(v);
+    Q_EMIT activated(v);
 }
 
 void DComboBox::slotCurrentIndexChanged(int v)
 {
     d->resetButton->setEnabled(v != d->defaultIndex);
-    emit currentIndexChanged(v);
+    Q_EMIT currentIndexChanged(v);
 }
 
 } // namespace Digikam

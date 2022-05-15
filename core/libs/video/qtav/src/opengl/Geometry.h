@@ -87,7 +87,7 @@ QTAV_EXPORT QDebug operator<<(QDebug debug, const Attribute &a);
 /*!
  * \brief The Geometry class
  * \code
- * foreach (const Attribute& a, g->attributes()) {
+ * Q_FOREACH (const Attribute& a, g->attributes()) {
  *     program()->setAttributeBuffer(a.name(), a.type(), a.offset(), a.tupleSize(), g->stride());
  * }
  * \endcode

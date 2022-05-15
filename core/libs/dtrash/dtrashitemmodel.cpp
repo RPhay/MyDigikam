@@ -230,7 +230,7 @@ void DTrashItemModel::sort(int column, Qt::SortOrder order)
     const QModelIndex bottomRight = index(rowCount(QModelIndex())    - 1,
                                           columnCount(QModelIndex()) - 1);
 
-    emit dataChanged(topLeft, bottomRight);
+    Q_EMIT dataChanged(topLeft, bottomRight);
 }
 
 bool DTrashItemModel::pixmapForItem(const QString& path, QPixmap& pix) const
@@ -293,21 +293,21 @@ void DTrashItemModel::append(const DTrashItemInfo& itemInfo)
 
     sort(d->sortColumn, d->sortOrder);
 
-    emit dataChange();
+    Q_EMIT dataChange();
 }
 
 void DTrashItemModel::removeItems(const QModelIndexList& indexes)
 {
     QList<QPersistentModelIndex> persistentIndexes;
 
-    foreach (const QModelIndex& index, indexes)
+    Q_FOREACH (const QModelIndex& index, indexes)
     {
         persistentIndexes << index;
     }
 
-    emit layoutAboutToBeChanged();
+    Q_EMIT layoutAboutToBeChanged();
 
-    foreach (const QPersistentModelIndex& index, persistentIndexes)
+    Q_FOREACH (const QPersistentModelIndex& index, persistentIndexes)
     {
         if (!index.isValid())
         {
@@ -325,8 +325,8 @@ void DTrashItemModel::removeItems(const QModelIndexList& indexes)
         endRemoveRows();
     }
 
-    emit layoutChanged();
-    emit dataChange();
+    Q_EMIT layoutChanged();
+    Q_EMIT dataChange();
 }
 
 void DTrashItemModel::refreshLayout()
@@ -334,9 +334,9 @@ void DTrashItemModel::refreshLayout()
     const QModelIndex topLeft     = index(0, 0);
     const QModelIndex bottomRight = index(rowCount(QModelIndex()) - 1, 0);
 
-    emit dataChanged(topLeft, bottomRight);
-    emit layoutAboutToBeChanged();
-    emit layoutChanged();
+    Q_EMIT dataChanged(topLeft, bottomRight);
+    Q_EMIT layoutAboutToBeChanged();
+    Q_EMIT layoutChanged();
 }
 
 void DTrashItemModel::refreshThumbnails(const LoadingDescription& desc, const QPixmap& pix)
@@ -358,7 +358,7 @@ void DTrashItemModel::refreshThumbnails(const LoadingDescription& desc, const QP
     const QModelIndex topLeft     = index(0, 0);
     const QModelIndex bottomRight = index(rowCount(QModelIndex()) - 1, 0);
 
-    emit dataChanged(topLeft, bottomRight);
+    Q_EMIT dataChanged(topLeft, bottomRight);
 }
 
 void DTrashItemModel::clearCurrentData()
@@ -368,7 +368,7 @@ void DTrashItemModel::clearCurrentData()
     d->data.clear();
     endResetModel();
 
-    emit dataChange();
+    Q_EMIT dataChange();
 }
 
 void DTrashItemModel::loadItemsForCollection(const QString& colPath)
@@ -396,7 +396,7 @@ DTrashItemInfoList DTrashItemModel::itemsForIndexes(const QList<QModelIndex>& in
 {
     DTrashItemInfoList items;
 
-    foreach (const QModelIndex& index, indexes)
+    Q_FOREACH (const QModelIndex& index, indexes)
     {
         if (!index.isValid())
         {

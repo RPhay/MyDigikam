@@ -171,7 +171,7 @@ public:
     {
         QMultiMap<int, DPluginDImg*> pluginMap;
 
-        foreach (DPlugin* const p, DPluginLoader::instance()->allPlugins())
+        Q_FOREACH (DPlugin* const p, DPluginLoader::instance()->allPlugins())
         {
             int prio;
             DPluginDImg* const plug = dynamic_cast<DPluginDImg*>(p);
@@ -201,7 +201,7 @@ public:
 
         if (!format.isNull())
         {
-            foreach (DPlugin* const p, DPluginLoader::instance()->allPlugins())
+            Q_FOREACH (DPlugin* const p, DPluginLoader::instance()->allPlugins())
             {
                 int prio;
                 DPluginDImg* const plug = dynamic_cast<DPluginDImg*>(p);

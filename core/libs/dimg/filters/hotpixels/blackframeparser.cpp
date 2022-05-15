@@ -112,14 +112,14 @@ void BlackFrameParser::parseBlackFrame(const QUrl& url)
 
 void BlackFrameParser::slotLoadingProgress(const LoadingDescription&, float v)
 {
-    emit signalLoadingProgress(v);
+    Q_EMIT signalLoadingProgress(v);
 }
 
 void BlackFrameParser::slotLoadImageFromUrlComplete(const LoadingDescription&, const DImg& img)
 {
     parseBlackFrame(img);
 
-    emit signalLoadingComplete();
+    Q_EMIT signalLoadingComplete();
 }
 
 void BlackFrameParser::parseBlackFrame(const DImg& img)
@@ -199,7 +199,7 @@ void BlackFrameParser::blackFrameParsing()
 
     // And notify
 
-    emit signalHotPixelsParsed(hpList);
+    Q_EMIT signalHotPixelsParsed(hpList);
 }
 
 /**

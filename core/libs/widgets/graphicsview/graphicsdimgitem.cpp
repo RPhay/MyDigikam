@@ -58,7 +58,7 @@ void CachedPixmaps::setMaxCount(int count)
 
 void CachedPixmaps::clear()
 {
-    foreach (const CachedPixmapKey& key, keys)
+    Q_FOREACH (const CachedPixmapKey& key, keys)
     {
         QPixmapCache::remove(key.key);
     }
@@ -157,7 +157,7 @@ void GraphicsDImgItem::setImage(const DImg& img)
     d->cachedPixmaps.clear();
     sizeHasChanged();
 
-    emit imageChanged();
+    Q_EMIT imageChanged();
 }
 
 DImg GraphicsDImgItem::image() const
@@ -174,7 +174,7 @@ void GraphicsDImgItem::sizeHasChanged()
     QGraphicsItem::prepareGeometryChange();
     d->cachedPixmaps.clear();
 
-    emit imageSizeChanged(d->zoomSettings.zoomedSize());
+    Q_EMIT imageSizeChanged(d->zoomSettings.zoomedSize());
 }
 
 void GraphicsDImgItem::clearCache()
@@ -273,7 +273,7 @@ void GraphicsDImgItem::paint(QPainter* painter, const QStyleOptionGraphicsItem* 
 
 void GraphicsDImgItem::contextMenuEvent(QGraphicsSceneContextMenuEvent* e)
 {
-    emit showContextMenu(e);
+    Q_EMIT showContextMenu(e);
 }
 
 } // namespace Digikam

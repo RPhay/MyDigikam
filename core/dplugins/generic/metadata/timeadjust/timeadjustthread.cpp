@@ -83,7 +83,7 @@ void TimeAdjustThread::setUpdatedDates(const QMap<QUrl, int>& itemsMap)
 
     ActionJobCollection collection;
 
-    foreach (const QUrl& url, itemsMap.keys())
+    Q_FOREACH (const QUrl& url, itemsMap.keys())
     {
         TimeAdjustTask* const t = new TimeAdjustTask(url, this);
         t->setSettings(d->settings);
@@ -109,7 +109,7 @@ void TimeAdjustThread::setPreviewDates(const QMap<QUrl, int>& itemsMap)
 
     ActionJobCollection collection;
 
-    foreach (const QUrl& url, itemsMap.keys())
+    Q_FOREACH (const QUrl& url, itemsMap.keys())
     {
         TimePreviewTask* const t = new TimePreviewTask(url, this);
         t->setSettings(d->settings);

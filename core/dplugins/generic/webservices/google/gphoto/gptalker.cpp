@@ -214,7 +214,7 @@ void GPTalker::listAlbums(const QString& nextPageToken)
     m_reply = d->netMngr->get(netRequest);
 
     d->state = Private::GP_LISTALBUMS;
-    emit signalBusy(true);
+    Q_EMIT signalBusy(true);
 }
 
 /**
@@ -243,7 +243,7 @@ void GPTalker::getLoggedInUser()
     m_reply = d->netMngr->get(netRequest);
 
     d->state = Private::GP_GETUSER;
-    emit signalBusy(true);
+    Q_EMIT signalBusy(true);
 }
 
 void GPTalker::listPhotos(const QString& albumId, const QString& nextPageToken)
@@ -285,7 +285,7 @@ void GPTalker::listPhotos(const QString& albumId, const QString& nextPageToken)
     m_reply = d->netMngr->post(netRequest, data);
 
     d->state = Private::GP_LISTPHOTOS;
-    emit signalBusy(true);
+    Q_EMIT signalBusy(true);
 }
 
 void GPTalker::createAlbum(const GSFolder& album)
@@ -313,7 +313,7 @@ void GPTalker::createAlbum(const GSFolder& album)
     m_reply = d->netMngr->post(netRequest, data);
 
     d->state = Private::GP_CREATEALBUM;
-    emit signalBusy(true);
+    Q_EMIT signalBusy(true);
 }
 
 /**
@@ -403,7 +403,7 @@ bool GPTalker::addPhoto(const QString& photoPath,
     m_reply = d->netMngr->post(netRequest, data);
 
     d->state = Private::GP_ADDPHOTO;
-    emit signalBusy(true);
+    Q_EMIT signalBusy(true);
     return true;
 }
 
@@ -417,7 +417,7 @@ bool GPTalker::updatePhoto(const QString& /*photoPath*/, GSPhoto& /*info*/,
         m_reply = nullptr;
     }
 
-    emit signalBusy(true);
+    Q_EMIT signalBusy(true);
 
     GPMPForm form;
     QString path = photoPath;
@@ -435,7 +435,7 @@ bool GPTalker::updatePhoto(const QString& /*photoPath*/, GSPhoto& /*info*/,
 
         if (image.isNull())
         {
-            emit signalBusy(false);
+            Q_EMIT signalBusy(false);
             return false;
         }
 
@@ -479,7 +479,7 @@ void GPTalker::getPhoto(const QString& imgPath)
         m_reply = nullptr;
     }
 
-    emit signalBusy(true);
+    Q_EMIT signalBusy(true);
 
     QUrl url(imgPath);
     // qCDebug(DIGIKAM_WEBSERVICES_LOG) << "link to get photo" << url;
@@ -501,7 +501,7 @@ void GPTalker::cancel()
     d->descriptionList.clear();
     d->uploadTokenList.clear();
 
-    emit signalBusy(false);
+    Q_EMIT signalBusy(false);
 }
 
 void GPTalker::slotError(const QString& error)
@@ -572,7 +572,7 @@ void GPTalker::slotError(const QString& error)
 
 void GPTalker::slotFinished(QNetworkReply* reply)
 {
-    emit signalBusy(false);
+    Q_EMIT signalBusy(false);
 
     if (reply != m_reply)
     {
@@ -588,7 +588,7 @@ void GPTalker::slotFinished(QNetworkReply* reply)
     {
         if (d->state == Private::GP_ADDPHOTO)
         {
-            emit signalAddPhotoDone(reply->error(), reply->errorString());
+            Q_EMIT signalAddPhotoDone(reply->error(), reply->errorString());
         }
         else if (reply->error() != QNetworkReply::OperationCanceledError)
         {
@@ -622,7 +622,7 @@ void GPTalker::slotFinished(QNetworkReply* reply)
             parseResponseAddPhoto(buffer);
             break;
         case (Private::GP_UPDATEPHOTO):
-            emit signalAddPhotoDone(1, QString());
+            Q_EMIT signalAddPhotoDone(1, QString());
             break;
         case (Private::GP_UPLOADPHOTO):
             parseResponseUploadPhoto(buffer);
@@ -654,7 +654,7 @@ void GPTalker::slotFinished(QNetworkReply* reply)
                     fileName = headerList.at(1).section(QLatin1Char('"'), 1, 1);
                 }
 
-                emit signalGetPhotoDone(1, QString(), buffer, fileName);
+                Q_EMIT signalGetPhotoDone(1, QString(), buffer, fileName);
             }
 
             break;
@@ -746,7 +746,7 @@ void GPTalker::slotUploadPhoto()
     m_reply = d->netMngr->post(netRequest, data);
 
     d->state = Private::GP_UPLOADPHOTO;
-    emit signalBusy(true);
+    Q_EMIT signalBusy(true);
 }
 
 void GPTalker::parseResponseListAlbums(const QByteArray& data)
@@ -758,8 +758,8 @@ void GPTalker::parseResponseListAlbums(const QByteArray& data)
 
     if (err.error != QJsonParseError::NoError)
     {
-        emit signalBusy(false);
-        emit signalListAlbumsDone(0, QString::fromLatin1("Code: %1 - %2").arg(err.error)
+        Q_EMIT signalBusy(false);
+        Q_EMIT signalListAlbumsDone(0, QString::fromLatin1("Code: %1 - %2").arg(err.error)
                                                                          .arg(err.errorString()),
                                   QList<GSFolder>());
         return;
@@ -780,7 +780,7 @@ void GPTalker::parseResponseListAlbums(const QByteArray& data)
         d->albumList.append(mainPage);
     }
 
-    foreach (const QJsonValue& value, jsonArray)
+    Q_FOREACH (const QJsonValue& value, jsonArray)
     {
         GSFolder album;
 
@@ -802,7 +802,7 @@ void GPTalker::parseResponseListAlbums(const QByteArray& data)
     }
 
     std::sort(d->albumList.begin(), d->albumList.end(), gphotoLessThan);
-    emit signalListAlbumsDone(1, QLatin1String(""), d->albumList);
+    Q_EMIT signalListAlbumsDone(1, QLatin1String(""), d->albumList);
 }
 
 void GPTalker::parseResponseListPhotos(const QByteArray& data)
@@ -814,8 +814,8 @@ void GPTalker::parseResponseListPhotos(const QByteArray& data)
 
     if (err.error != QJsonParseError::NoError)
     {
-        emit signalBusy(false);
-        emit signalListPhotosDone(0, i18n("Failed to fetch photo-set list"), QList<GSPhoto>());
+        Q_EMIT signalBusy(false);
+        Q_EMIT signalListPhotosDone(0, i18n("Failed to fetch photo-set list"), QList<GSPhoto>());
         qCDebug(DIGIKAM_WEBSERVICES_LOG) << "error code:" << err.error
                                          << ", msg:" << err.errorString();
         return;
@@ -824,7 +824,7 @@ void GPTalker::parseResponseListPhotos(const QByteArray& data)
     QJsonObject jsonObject  = doc.object();
     QJsonArray jsonArray    = jsonObject[QLatin1String("mediaItems")].toArray();
 
-    foreach (const QJsonValue& value, jsonArray)
+    Q_FOREACH (const QJsonValue& value, jsonArray)
     {
         QJsonObject obj = value.toObject();
 
@@ -863,7 +863,7 @@ void GPTalker::parseResponseListPhotos(const QByteArray& data)
         return;
     }
 
-    emit signalListPhotosDone(1, QLatin1String(""), d->photoList);
+    Q_EMIT signalListPhotosDone(1, QLatin1String(""), d->photoList);
 }
 
 void GPTalker::parseResponseCreateAlbum(const QByteArray& data)
@@ -875,8 +875,8 @@ void GPTalker::parseResponseCreateAlbum(const QByteArray& data)
 
     if (err.error != QJsonParseError::NoError)
     {
-        emit signalBusy(false);
-        emit signalCreateAlbumDone(0, QString::fromLatin1("Code: %1 - %2").arg(err.error)
+        Q_EMIT signalBusy(false);
+        Q_EMIT signalCreateAlbumDone(0, QString::fromLatin1("Code: %1 - %2").arg(err.error)
                                                                           .arg(err.errorString()),
                                    QString());
         return;
@@ -886,7 +886,7 @@ void GPTalker::parseResponseCreateAlbum(const QByteArray& data)
     QString albumId         = jsonObject[QLatin1String("id")].toString();
     qCDebug(DIGIKAM_WEBSERVICES_LOG) << "album Id"  << doc;
 
-    emit signalCreateAlbumDone(1, QLatin1String(""), albumId);
+    Q_EMIT signalCreateAlbumDone(1, QLatin1String(""), albumId);
 }
 
 void GPTalker::parseResponseAddPhoto(const QByteArray& data)
@@ -895,7 +895,7 @@ void GPTalker::parseResponseAddPhoto(const QByteArray& data)
     qCDebug(DIGIKAM_WEBSERVICES_LOG) << "response" << data;
 
     d->uploadTokenList << QString::fromUtf8(data);
-    emit signalAddPhotoDone(1, QString());
+    Q_EMIT signalAddPhotoDone(1, QString());
 }
 
 void GPTalker::parseResponseGetLoggedInUser(const QByteArray& data)
@@ -907,14 +907,14 @@ void GPTalker::parseResponseGetLoggedInUser(const QByteArray& data)
 
     if (err.error != QJsonParseError::NoError)
     {
-        emit signalBusy(false);
+        Q_EMIT signalBusy(false);
         return;
     }
 
     QJsonObject jsonObject = doc.object();
     QString userName       = jsonObject[QLatin1String("displayName")].toString();
 
-    emit signalSetUserName(userName);
+    Q_EMIT signalSetUserName(userName);
 
     listAlbums();
 }
@@ -931,8 +931,8 @@ void GPTalker::parseResponseUploadPhoto(const QByteArray& data)
 
     if (err.error != QJsonParseError::NoError)
     {
-        emit signalBusy(false);
-        emit signalUploadPhotoDone(0, err.errorString(), QStringList());
+        Q_EMIT signalBusy(false);
+        Q_EMIT signalUploadPhotoDone(0, err.errorString(), QStringList());
         return;
     }
 
@@ -941,7 +941,7 @@ void GPTalker::parseResponseUploadPhoto(const QByteArray& data)
 
     QStringList listPhotoId;
 
-    foreach (const QJsonValue& value, jsonArray)
+    Q_FOREACH (const QJsonValue& value, jsonArray)
     {
         QJsonObject obj = value.toObject();
 
@@ -953,8 +953,8 @@ void GPTalker::parseResponseUploadPhoto(const QByteArray& data)
 
     qCDebug(DIGIKAM_WEBSERVICES_LOG) << "list photo Id" << listPhotoId.join(QLatin1String(", "));
 
-    emit signalBusy(false);
-    emit signalUploadPhotoDone(1, QString(), listPhotoId);
+    Q_EMIT signalBusy(false);
+    Q_EMIT signalUploadPhotoDone(1, QString(), listPhotoId);
 }
 
 } // namespace DigikamGenericGoogleServicesPlugin

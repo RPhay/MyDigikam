@@ -156,7 +156,7 @@ void FindDuplicatesAlbum::slotThumbnailLoaded(const LoadingDescription& desc,
 void FindDuplicatesAlbum::updateDuplicatesAlbumItems(const QList<SAlbum*>& sAlbumsToRebuild,
                                                      const QList<qlonglong>& deletedImages)
 {
-    foreach (QTreeWidgetItem* const selectedItem, selectedItems())
+    Q_FOREACH (QTreeWidgetItem* const selectedItem, selectedItems())
     {
         FindDuplicatesAlbumItem* const item = dynamic_cast<FindDuplicatesAlbumItem*>(selectedItem);
 
@@ -206,7 +206,7 @@ void FindDuplicatesAlbum::removeDuplicates()
     // Buffer the urls for deletion and imageids
     // for notification of the AlbumManager
 
-    foreach (const ItemInfo& info, duplicatedItems)
+    Q_FOREACH (const ItemInfo& info, duplicatedItems)
     {
         urlList  << info.fileUrl();
     }

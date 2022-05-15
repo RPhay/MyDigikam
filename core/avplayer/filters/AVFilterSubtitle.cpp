@@ -198,7 +198,7 @@ void AVFilterSubtitle::findAndSetFile(const QString& path)
     QStringList list = dir.entryList(QStringList() << name + QString::fromLatin1("*.ass") << name + QString::fromLatin1("*.ssa"), QDir::Files);
     list.append(dir.entryList(QStringList() << QString::fromLatin1("*.srt"), QDir::Files));
 
-    foreach (const QString& f, list)
+    Q_FOREACH (const QString& f, list)
     {
         // why it happens?
 

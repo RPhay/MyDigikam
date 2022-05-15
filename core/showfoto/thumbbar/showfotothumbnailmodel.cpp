@@ -178,7 +178,7 @@ QVariant ShowfotoThumbnailModel::data(const QModelIndex& index, int role) const
             thumbnailImage = thumbnailImage.scaled(thumbSize, thumbSize,
                                                    Qt::KeepAspectRatio,
                                                    Qt::SmoothTransformation);
-            emit signalThumbInfo(info, thumbnailImage);
+            Q_EMIT signalThumbInfo(info, thumbnailImage);
 
             return thumbnailImage;
         }
@@ -259,22 +259,22 @@ void ShowfotoThumbnailModel::slotThumbnailLoaded(const LoadingDescription& loadi
 
     // In case of multiple occurrence, we currently do not know which thumbnail is this. Signal change on all.
 
-    foreach (const QModelIndex& index, indexesForUrl(QUrl::fromLocalFile(loadingDescription.filePath)))
+    Q_FOREACH (const QModelIndex& index, indexesForUrl(QUrl::fromLocalFile(loadingDescription.filePath)))
     {
         if (thumb.isNull())
         {
-            emit thumbnailFailed(index, loadingDescription.previewParameters.size);
+            Q_EMIT thumbnailFailed(index, loadingDescription.previewParameters.size);
         }
         else
         {
-            emit thumbnailAvailable(index, loadingDescription.previewParameters.size);
+            Q_EMIT thumbnailAvailable(index, loadingDescription.previewParameters.size);
 
             if (d->emitDataChanged)
             {
-                emit dataChanged(index, index);
+                Q_EMIT dataChanged(index, index);
             }
 
-            emit signalItemThumbnail(showfotoItemInfo(index), thumb);
+            Q_EMIT signalItemThumbnail(showfotoItemInfo(index), thumb);
         }
     }
 }
@@ -399,19 +399,19 @@ void ShowfotoThumbnailModel::slotThumbInfoLoaded(const ShowfotoItemInfo& info, c
         thumbnail = QImage();
     }
 
-    foreach (const QModelIndex& index, indexesForUrl(info.url))
+    Q_FOREACH (const QModelIndex& index, indexesForUrl(info.url))
     {
         if (thumbnail.isNull())
         {
-            emit thumbnailFailed(index, d->thumbSize.size());
+            Q_EMIT thumbnailFailed(index, d->thumbSize.size());
         }
         else
         {
-            emit thumbnailAvailable(index, d->thumbSize.size());
+            Q_EMIT thumbnailAvailable(index, d->thumbSize.size());
 
             if (d->emitDataChanged)
             {
-                emit dataChanged(index, index);
+                Q_EMIT dataChanged(index, index);
             }
         }
     }

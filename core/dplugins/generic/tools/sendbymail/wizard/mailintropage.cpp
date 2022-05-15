@@ -221,7 +221,7 @@ void MailIntroPage::slotBinariesFound()
     d->wizard->settings()->binPaths.insert(MailSettings::THUNDERBIRD, d->thundBin.isValid() ?
                                            d->thundBin.path() : QString());
 
-    emit completeChanged();
+    Q_EMIT completeChanged();
 }
 
 bool MailIntroPage::isComplete() const

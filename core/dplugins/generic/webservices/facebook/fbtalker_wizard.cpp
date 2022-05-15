@@ -166,7 +166,7 @@ FbTalker::~FbTalker()
 // ----------------------------------------------------------------------------------------------
 void FbTalker::link()
 {
-    emit signalBusy(true);
+    Q_EMIT signalBusy(true);
 
     d->loginInProgress = true;
     d->o2->link();
@@ -174,7 +174,7 @@ void FbTalker::link()
 
 void FbTalker::unlink()
 {
-    emit signalBusy(true);
+    Q_EMIT signalBusy(true);
     d->o2->unlink();
 }
 
@@ -204,7 +204,7 @@ FbUser FbTalker::getUser() const
 void FbTalker::authenticate()
 {
     d->loginInProgress = true;
-    emit signalLoginProgress(2, 9, i18n("Validate previous session..."));
+    Q_EMIT signalLoginProgress(2, 9, i18n("Validate previous session..."));
 
     WSTalker::authenticate();
 }
@@ -219,8 +219,8 @@ void FbTalker::getLoggedInUser()
         m_reply = 0;
     }
 
-    emit signalBusy(true);
-    emit signalLoginProgress(3);
+    Q_EMIT signalBusy(true);
+    Q_EMIT signalLoginProgress(3);
 
     QUrl url(d->apiURL.arg(QLatin1String("me"))
                       .arg(QString()));
@@ -289,7 +289,7 @@ void FbTalker::logout()
     qCDebug(DIGIKAM_WEBSERVICES_LOG) << "Logout URL: " << url;
     QDesktopServices::openUrl(url);
 
-    emit signalBusy(false);
+    Q_EMIT signalBusy(false);
 }
 
 //TODO: Ported to O2
@@ -305,7 +305,7 @@ void FbTalker::listAlbums(long long userID)
         m_reply = 0;
     }
 
-    emit signalBusy(true);
+    Q_EMIT signalBusy(true);
 
     QUrl url;
 
@@ -347,7 +347,7 @@ void FbTalker::createAlbum(const FbAlbum& album)
         m_reply = 0;
     }
 
-    emit signalBusy(true);
+    Q_EMIT signalBusy(true);
 
     QUrlQuery params;
     params.addQueryItem(QLatin1String("access_token"), d->o2->token());
@@ -415,7 +415,7 @@ void FbTalker::addPhoto(const QString& imgPath, const QString& albumID, const QS
         m_reply = 0;
     }
 
-    emit signalBusy(true);
+    Q_EMIT signalBusy(true);
 
     QMap<QString, QString> args;
     args[QLatin1String("access_token")] = d->o2->token();
@@ -435,8 +435,8 @@ void FbTalker::addPhoto(const QString& imgPath, const QString& albumID, const QS
 
     if (!form.addFile(QUrl::fromLocalFile(imgPath).fileName(), imgPath))
     {
-        emit signalAddPhotoDone(666, i18n("Cannot open file"));
-        emit signalBusy(false);
+        Q_EMIT signalAddPhotoDone(666, i18n("Cannot open file"));
+        Q_EMIT signalBusy(false);
         return;
     }
 
@@ -522,12 +522,12 @@ void FbTalker::slotFinished(QNetworkReply* reply)
         }
         else if (d->state == Private::FB_ADDPHOTO)
         {
-            emit signalBusy(false);
-            emit signalAddPhotoDone(reply->error(), reply->errorString());
+            Q_EMIT signalBusy(false);
+            Q_EMIT signalAddPhotoDone(reply->error(), reply->errorString());
         }
         else
         {
-            emit signalBusy(false);
+            Q_EMIT signalBusy(false);
             QMessageBox::critical(QApplication::activeWindow(),
                                   i18n("Error"), reply->errorString());
         }
@@ -571,7 +571,7 @@ void FbTalker::authenticationDone(int errCode, const QString& errMsg)
         saveUserAccount(d->user.name, d->user.id, d->o2->expires(), d->o2->token(), d->o2->refreshToken());
     }
 
-    emit signalLoginDone(errCode, errMsg);
+    Q_EMIT signalLoginDone(errCode, errMsg);
     d->loginInProgress = false;
 
     WSTalker::authenticationDone(errCode, errMsg);
@@ -613,7 +613,7 @@ void FbTalker::parseResponseGetLoggedInUser(const QByteArray& data)
 
     if (err.error != QJsonParseError::NoError)
     {
-        emit signalBusy(false);
+        Q_EMIT signalBusy(false);
         return;
     }
 
@@ -641,7 +641,7 @@ void FbTalker::parseResponseAddPhoto(const QByteArray& data)
 
     if (err.error != QJsonParseError::NoError)
     {
-        emit signalBusy(false);
+        Q_EMIT signalBusy(false);
         return;
     }
 
@@ -662,8 +662,8 @@ void FbTalker::parseResponseAddPhoto(const QByteArray& data)
 
     qCDebug(DIGIKAM_WEBSERVICES_LOG) << "add photo : " << doc;
 
-    emit signalBusy(false);
-    emit signalAddPhotoDone(errCode, errorToText(errCode, errMsg));
+    Q_EMIT signalBusy(false);
+    Q_EMIT signalAddPhotoDone(errCode, errorToText(errCode, errMsg));
 }
 
 void FbTalker::parseResponseCreateAlbum(const QByteArray& data)
@@ -677,7 +677,7 @@ void FbTalker::parseResponseCreateAlbum(const QByteArray& data)
 
     if (err.error != QJsonParseError::NoError)
     {
-        emit signalBusy(false);
+        Q_EMIT signalBusy(false);
         return;
     }
 
@@ -699,8 +699,8 @@ void FbTalker::parseResponseCreateAlbum(const QByteArray& data)
 
     qCDebug(DIGIKAM_WEBSERVICES_LOG) << "error create photo : " << doc;
 
-    emit signalBusy(false);
-    emit signalCreateAlbumDone(errCode, errorToText(errCode, errMsg),
+    Q_EMIT signalBusy(false);
+    Q_EMIT signalCreateAlbumDone(errCode, errorToText(errCode, errMsg),
                                newAlbumID);
 }
 
@@ -714,7 +714,7 @@ void FbTalker::parseResponseListAlbums(const QByteArray& data)
 
     if (err.error != QJsonParseError::NoError)
     {
-        emit signalBusy(false);
+        Q_EMIT signalBusy(false);
         return;
     }
 
@@ -724,7 +724,7 @@ void FbTalker::parseResponseListAlbums(const QByteArray& data)
     {
         QJsonArray jsonArray = jsonObject[QLatin1String("data")].toArray();
 
-        foreach (const QJsonValue& value, jsonArray)
+        Q_FOREACH (const QJsonValue& value, jsonArray)
         {
             QJsonObject obj   = value.toObject();
             WSAlbum album; //FbAlbum album;
@@ -781,8 +781,8 @@ void FbTalker::parseResponseListAlbums(const QByteArray& data)
      */
     sortAlbumsList(albumsList);
 
-    emit signalBusy(false);
-    emit signalListAlbumsDone(errCode, errorToText(errCode, errMsg),
+    Q_EMIT signalBusy(false);
+    Q_EMIT signalListAlbumsDone(errCode, errorToText(errCode, errMsg),
                               albumsList);
 }
 

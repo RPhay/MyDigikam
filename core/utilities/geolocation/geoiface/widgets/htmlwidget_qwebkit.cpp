@@ -108,7 +108,7 @@ void HTMLWidget::slotHTMLCompleted(bool ok)
     qCDebug(DIGIKAM_GEOIFACE_LOG) << "Map Loading Completed: " << ok;
     d->isReady = ok;
 
-    emit signalJavaScriptReady();
+    Q_EMIT signalJavaScriptReady();
 }
 
 void HTMLWidget::mousePressEvent(QMouseEvent* e)
@@ -177,7 +177,7 @@ void HTMLWidget::mouseReleaseEvent(QMouseEvent* e)
             d->firstSelectionPoint.clear();
             d->intermediateSelectionPoint.clear();
 
-            emit selectionHasBeenMade(selectionCoordinates);
+            Q_EMIT selectionHasBeenMade(selectionCoordinates);
         }
     }
 
@@ -252,7 +252,7 @@ void HTMLWidget::slotScanForJSMessages(const QString& message)
 
     const QStringList events = eventBufferString.split(QLatin1Char('|'));
 
-    emit signalHTMLEvents(events);
+    Q_EMIT signalHTMLEvents(events);
 }
 
 /**

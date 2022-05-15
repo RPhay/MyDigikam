@@ -281,7 +281,7 @@ void AlbumSelectors::slotUpdateClearButtons()
 
     if (selectionChanged)
     {
-        emit signalSelectionChanged();
+        Q_EMIT signalSelectionChanged();
     }
 
     updateTabText();
@@ -313,7 +313,7 @@ QList<int> AlbumSelectors::selectedAlbumIds() const
     QList<int> albumIds;
     AlbumList  albums = selectedAlbums();
 
-    foreach (Album* const album, albums)
+    Q_FOREACH (Album* const album, albums)
     {
         albumIds << album->id();
     }
@@ -347,7 +347,7 @@ QList<int> AlbumSelectors::selectedTagIds() const
     QList<int> tagIds;
     AlbumList  tags = selectedTags();
 
-    foreach (Album* const tag, tags)
+    Q_FOREACH (Album* const tag, tags)
     {
         tagIds << tag->id();
     }

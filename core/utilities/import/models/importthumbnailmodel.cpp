@@ -167,19 +167,19 @@ void ImportThumbnailModel::slotThumbInfoReady(const CamItemInfo& info)
 
     // In case of multiple occurrence, we currently do not know which thumbnail is this. Signal change on all.
 
-    foreach (const QModelIndex& index, indexesForUrl(info.url()))
+    Q_FOREACH (const QModelIndex& index, indexesForUrl(info.url()))
     {
         if (item.second.isNull())
         {
-            emit thumbnailFailed(index, d->thumbSize.size());
+            Q_EMIT thumbnailFailed(index, d->thumbSize.size());
         }
         else
         {
-            emit thumbnailAvailable(index, d->thumbSize.size());
+            Q_EMIT thumbnailAvailable(index, d->thumbSize.size());
 
             if (d->emitDataChanged)
             {
-                emit dataChanged(index, index);
+                Q_EMIT dataChanged(index, index);
             }
         }
     }

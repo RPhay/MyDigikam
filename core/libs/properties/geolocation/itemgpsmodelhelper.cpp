@@ -157,7 +157,7 @@ void ItemGPSModelHelper::slotThumbnailLoaded(const LoadingDescription& loadingDe
         {
             const QPersistentModelIndex goodIndex(d->itemModel->index(i, 0));
 
-            emit signalThumbnailAvailableForIndex(goodIndex, thumb);
+            Q_EMIT signalThumbnailAvailableForIndex(goodIndex, thumb);
         }
     }
 }

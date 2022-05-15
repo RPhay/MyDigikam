@@ -73,7 +73,7 @@ QStringList DItemDrag::mimeTypes()
 
 bool DItemDrag::canDecode(const QMimeData* e)
 {
-    foreach (const QString& mimeType, mimeTypes())
+    Q_FOREACH (const QString& mimeType, mimeTypes())
     {
         if (!e->hasFormat(mimeType))
         {
@@ -169,7 +169,7 @@ bool DAlbumDrag::canDecode(const QMimeData* e)
         return false;
     }
 
-    foreach (const QString& mimeType, mimeTypes())
+    Q_FOREACH (const QString& mimeType, mimeTypes())
     {
         if (!e->hasFormat(mimeType))
         {

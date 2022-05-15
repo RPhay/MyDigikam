@@ -81,7 +81,7 @@ void PreviewLoadingTask::execute()
 
         lookupKeys.prepend(m_loadingDescription.cacheKey());
 
-        foreach (const QString& key, lookupKeys)
+        Q_FOREACH (const QString& key, lookupKeys)
         {
             if ((cachedImg = cache->retrieveImage(key)))
             {

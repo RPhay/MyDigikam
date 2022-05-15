@@ -69,7 +69,7 @@ void ExifToolParser::slotCmdCompleted(int cmdId,
             {
                 d->manageEventLoop(cmdAction);
 
-                emit signalExifToolDataAvailable();
+                Q_EMIT signalExifToolDataAvailable();
 
                 return;
             }
@@ -221,7 +221,7 @@ void ExifToolParser::slotCmdCompleted(int cmdId,
             QStringList lst;
             QString s;
 
-            foreach (const QString& ln, lines)
+            Q_FOREACH (const QString& ln, lines)
             {
                 s            = ln.simplified();
                 QString ext  = s.section(QLatin1Char(' '), 0, 0);
@@ -246,7 +246,7 @@ void ExifToolParser::slotCmdCompleted(int cmdId,
             QStringList lst;
             QString s;
 
-            foreach (const QString& ln, lines)
+            Q_FOREACH (const QString& ln, lines)
             {
                 s            = ln.simplified();
                 QString ext  = s.section(QLatin1Char(' '), 0, 0);
@@ -269,7 +269,7 @@ void ExifToolParser::slotCmdCompleted(int cmdId,
             QStringList lines = out.split(QLatin1Char('\n'), QT_SKIP_EMPTY_PARTS);
             QStringList lst;
 
-            foreach (const QString& ln, lines)
+            Q_FOREACH (const QString& ln, lines)
             {
                 lst << ln.simplified().section(QLatin1String(" - "), 0, 0);
             }
@@ -385,7 +385,7 @@ void ExifToolParser::slotCmdCompleted(int cmdId,
 
     d->manageEventLoop(cmdAction);
 
-    emit signalExifToolDataAvailable();
+    Q_EMIT signalExifToolDataAvailable();
 
     qCDebug(DIGIKAM_METAENGINE_LOG) << "ExifTool parsed command for action" << d->actionString(cmdAction);
     qCDebug(DIGIKAM_METAENGINE_LOG) << d->exifToolData.count() << "properties decoded";
@@ -405,7 +405,7 @@ void ExifToolParser::slotErrorOccurred(int cmdId,
 
     d->manageEventLoop(cmdAction);
 
-    emit signalExifToolDataAvailable();
+    Q_EMIT signalExifToolDataAvailable();
 }
 
 void ExifToolParser::slotFinished(int cmdId,
@@ -424,7 +424,7 @@ void ExifToolParser::slotFinished(int cmdId,
 
     d->manageEventLoop(cmdAction);
 
-    emit signalExifToolDataAvailable();
+    Q_EMIT signalExifToolDataAvailable();
 }
 
 void ExifToolParser::setOutputStream(int cmdAction,

@@ -135,7 +135,7 @@ void VideoEQConfigPage::setEngines(const QVector<Engine>& engines)
     std::sort(es.begin(), es.end());
     mEngines = es;
 
-    foreach (Engine e, es)
+    Q_FOREACH (Engine e, es)
     {
         if      (e == SWScale)
         {

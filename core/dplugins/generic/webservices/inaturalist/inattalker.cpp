@@ -463,7 +463,7 @@ void INatTalker::slotApiToken(const QString& apiToken,
 
     if (apiToken.isEmpty())
     {
-        emit signalLinkingFailed(QLatin1String("no api token"));
+        Q_EMIT signalLinkingFailed(QLatin1String("no api token"));
         return;
     }
     else
@@ -497,7 +497,7 @@ public:
         qCDebug(DIGIKAM_WEBSERVICES_LOG) << "users/me error" << errorString
                                          << "after" << durationMilliSecs() << "msecs.";
 
-        emit talker.signalLinkingFailed(QLatin1String("user-info request "
+        Q_EMIT talker.signalLinkingFailed(QLatin1String("user-info request "
                                                       "failed"));
     }
 
@@ -510,7 +510,7 @@ public:
         {
             QJsonObject result = json[RESULTS].toArray()[0].toObject();
             QString username(result[LOGIN].toString());
-            emit talker.signalLinkingSucceeded(username,
+            Q_EMIT talker.signalLinkingSucceeded(username,
                                                result[NAME].toString(),
                                                QUrl(result[ICON].toString()));
             talker.d->store->setGroupKey(talker.d->serviceName + username);
@@ -548,7 +548,7 @@ public:
         }
         else
         {
-            emit talker.signalLinkingFailed(QLatin1String("user-info request "
+            Q_EMIT talker.signalLinkingFailed(QLatin1String("user-info request "
                                             "failed"));
         }
 
@@ -558,7 +558,7 @@ public:
             talker.m_authProgressDlg->hide();
         }
 
-        emit talker.signalBusy(false);
+        Q_EMIT talker.signalBusy(false);
     }
 
 private:
@@ -573,7 +573,7 @@ void INatTalker::userInfo(const QList<QNetworkCookie>& cookies)
         return;
     }
 
-    emit signalBusy(true);
+    Q_EMIT signalBusy(true);
 
     if (m_authProgressDlg)
     {
@@ -637,7 +637,7 @@ public:
 
         talker.d->cachedLoadUrls.insert(m_url, data);
 
-        emit talker.signalLoadUrlSucceeded(m_url, data);
+        Q_EMIT talker.signalLoadUrlSucceeded(m_url, data);
     }
 
 private:
@@ -670,7 +670,7 @@ void INatTalker::loadUrl(const QUrl& imgUrl, int retries)
             qCDebug(DIGIKAM_WEBSERVICES_LOG) << "Url" << imgUrl
                                              << "found in cache.";
 
-            emit signalLoadUrlSucceeded(imgUrl, result);
+            Q_EMIT signalLoadUrlSucceeded(imgUrl, result);
         }
         else
         {
@@ -730,7 +730,7 @@ public:
             QPair<QString, QList<Taxon> > result(m_partialName, taxa);
             talker.d->cachedAutoCompletions.insert(m_partialName, result);
 
-            emit talker.signalTaxonAutoCompletions(result);
+            Q_EMIT talker.signalTaxonAutoCompletions(result);
         }
     }
 
@@ -753,7 +753,7 @@ void INatTalker::taxonAutoCompletions(const QString& partialName)
         qCDebug(DIGIKAM_WEBSERVICES_LOG) << "Taxon auto-completions for"
                                          <<  partialName << "found in cache.";
 
-        emit signalTaxonAutoCompletions(d->cachedAutoCompletions.
+        Q_EMIT signalTaxonAutoCompletions(d->cachedAutoCompletions.
                                         value(partialName));
         return;
     }
@@ -825,7 +825,7 @@ public:
 
             talker.d->cachedNearbyPlaces.insert(m_query, placesStrList);
 
-            emit talker.signalNearbyPlaces(placesStrList);
+            Q_EMIT talker.signalNearbyPlaces(placesStrList);
         }
     }
 
@@ -893,7 +893,7 @@ void INatTalker::nearbyPlaces(double latitude, double longitude)
         qCDebug(DIGIKAM_WEBSERVICES_LOG) << "Nearby places for lat" << lat
                                          << "lon" << lng << "found in cache.";
 
-        emit signalNearbyPlaces(d->cachedNearbyPlaces.value(query.query()));
+        Q_EMIT signalNearbyPlaces(d->cachedNearbyPlaces.value(query.query()));
 
         return;
     }
@@ -955,7 +955,7 @@ public:
                     talker.d->cachedNearbyObservations.insert(m_query,
                             INatTalker::NearbyObservation());
 
-                    emit talker.signalNearbyObservation(INatTalker::
+                    Q_EMIT talker.signalNearbyObservation(INatTalker::
                                                         NearbyObservation());
                 }
             }
@@ -1043,7 +1043,7 @@ public:
                             closestOpen.isValid() ? closestOpen
                                                   : closestObscured);
 
-                    emit talker.signalNearbyObservation(closestOpen.isValid()
+                    Q_EMIT talker.signalNearbyObservation(closestOpen.isValid()
                                                         ? closestOpen
                                                         : closestObscured);
                 }
@@ -1103,7 +1103,7 @@ void INatTalker::closestObservation(uint taxon, double latitude,
                                          << longitude << "with radius"
                                          << radiusKm << "km found in cache.";
 
-        emit signalNearbyObservation(d->cachedNearbyObservations.value(
+        Q_EMIT signalNearbyObservation(d->cachedNearbyObservations.value(
                                          query.query()));
         return;
     }
@@ -1203,7 +1203,7 @@ public:
 
         ImageScores result(m_imagePath, scores);
         talker.d->cachedImageScores.insert(m_imagePath, result);
-        emit talker.signalComputerVisionResults(result);
+        Q_EMIT talker.signalComputerVisionResults(result);
     }
 
     void reportError(INatTalker&, QNetworkReply::NetworkError,
@@ -1247,7 +1247,7 @@ void INatTalker::computerVision(const QUrl& localImage)
                                          << localImage.toLocalFile()
                                          << "found in cache.";
 
-        emit signalComputerVisionResults(d->cachedImageScores.value(path));
+        Q_EMIT signalComputerVisionResults(d->cachedImageScores.value(path));
 
         return;
     }
@@ -1415,7 +1415,7 @@ public:
             INatTalker::PhotoUploadRequest request(m_uploadRequest);
             request.m_observationId = observationId;
 
-            emit talker.signalObservationCreated(request);
+            Q_EMIT talker.signalObservationCreated(request);
         }
         else
         {
@@ -1536,7 +1536,7 @@ public:
             INatTalker::PhotoUploadRequest request(m_uploadRequest);
             request.m_observationId = json[ID].toInt();
 
-            emit talker.signalObservationCreated(request);
+            Q_EMIT talker.signalObservationCreated(request);
         }
     }
 
@@ -1645,7 +1645,7 @@ public:
                 INatTalker::PhotoUploadResult uploadResult(m_request,
                                                            lastObservationPhotoId,
                                                            lastPhotoId);
-                emit talker.signalPhotoUploaded(uploadResult);
+                Q_EMIT talker.signalPhotoUploaded(uploadResult);
             }
         }
         else
@@ -1733,7 +1733,7 @@ public:
         {
             INatTalker::PhotoUploadResult result(m_request, json[ID].toInt(),
                                                  json[PHOTO_ID].toInt());
-            emit talker.signalPhotoUploaded(result);
+            Q_EMIT talker.signalPhotoUploaded(result);
         }
     }
 
@@ -1836,7 +1836,7 @@ public:
         qCDebug(DIGIKAM_WEBSERVICES_LOG) << "Observation" << m_observationId
                                          << "deleted in" << durationMilliSecs() << "msecs.";
 
-        emit talker.signalObservationDeleted(m_observationId);
+        Q_EMIT talker.signalObservationDeleted(m_observationId);
     }
 
 private:
@@ -1873,7 +1873,7 @@ void INatTalker::cancel()
     }
 
     d->clear();
-    emit signalBusy(false);
+    Q_EMIT signalBusy(false);
 }
 
 void INatTalker::slotFinished(QNetworkReply* reply)

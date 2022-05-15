@@ -106,10 +106,10 @@ void ThumbsTask::run()
         d->catcher->thread()->find(ThumbnailIdentifier(path));
         d->catcher->enqueue();
         QList<QImage> images = d->catcher->waitForThumbnails();
-        emit signalFinished(images.first());
+        Q_EMIT signalFinished(images.first());
     }
 
-    emit signalDone();
+    Q_EMIT signalDone();
 
     d->catcher->setActive(false);
 }

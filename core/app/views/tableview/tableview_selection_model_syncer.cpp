@@ -166,7 +166,7 @@ QItemSelection TableViewSelectionModelSyncer::itemSelectionToSource(const QItemS
 {
     QItemSelection sourceSelection;
 
-    foreach (const QItemSelectionRange& range, selection)
+    Q_FOREACH (const QItemSelectionRange& range, selection)
     {
         const int firstRow = range.top();
         const int lastRow  = range.bottom();
@@ -191,7 +191,7 @@ QItemSelection TableViewSelectionModelSyncer::itemSelectionToTarget(const QItemS
     const int      targetColumnCount = targetModelColumnCount();
     QItemSelection targetSelection;
 
-    foreach (const QItemSelectionRange& range, selection)
+    Q_FOREACH (const QItemSelectionRange& range, selection)
     {
         const int firstRow = range.top();
         const int lastRow  = range.bottom();

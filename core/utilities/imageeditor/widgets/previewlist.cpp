@@ -101,7 +101,7 @@ void PreviewThreadWrapper::slotFilterStarted()
         return;
     }
 
-    emit signalFilterStarted(d->map.key(filter));
+    Q_EMIT signalFilterStarted(d->map.key(filter));
 }
 
 void PreviewThreadWrapper::slotFilterFinished(bool success)
@@ -117,7 +117,7 @@ void PreviewThreadWrapper::slotFilterFinished(bool success)
     {
         int key     = d->map.key(filter);
         QPixmap pix = filter->getTargetImage().smoothScale(128, 128, Qt::KeepAspectRatio).convertToPixmap();
-        emit signalFilterFinished(key, pix);
+        Q_EMIT signalFilterFinished(key, pix);
     }
 }
 
@@ -136,7 +136,7 @@ void PreviewThreadWrapper::slotFilterProgress(int /*progress*/)
 
 void PreviewThreadWrapper::startFilters()
 {
-    foreach (DImgThreadedFilter* const filter, d->map)
+    Q_FOREACH (DImgThreadedFilter* const filter, d->map)
     {
         filter->startFilter();
     }
@@ -144,7 +144,7 @@ void PreviewThreadWrapper::startFilters()
 
 void PreviewThreadWrapper::stopFilters()
 {
-    foreach (DImgThreadedFilter* const filter, d->map)
+    Q_FOREACH (DImgThreadedFilter* const filter, d->map)
     {
         filter->cancelFilter();
         filter->deleteLater();

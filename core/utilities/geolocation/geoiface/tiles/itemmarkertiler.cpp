@@ -197,7 +197,7 @@ void ItemMarkerTiler::slotSelectionChanged(const QItemSelection& selected, const
     }
 /*
     d->isDirty=true;
-    emit signalTilesOrSelectionChanged();
+    Q_EMIT signalTilesOrSelectionChanged();
     return;
 */
 
@@ -276,7 +276,7 @@ void ItemMarkerTiler::slotSelectionChanged(const QItemSelection& selected, const
         }
     }
 
-    emit signalTilesOrSelectionChanged();
+    Q_EMIT signalTilesOrSelectionChanged();
 }
 
 void ItemMarkerTiler::slotSourceModelDataChanged(const QModelIndex& topLeft, const QModelIndex& bottomRight)
@@ -286,7 +286,7 @@ void ItemMarkerTiler::slotSourceModelDataChanged(const QModelIndex& topLeft, con
 
     if (d->activeState)
     {
-        emit signalTilesOrSelectionChanged();
+        Q_EMIT signalTilesOrSelectionChanged();
     }
 
     // TODO: if only a few items were changed, try to see whether they are still in the right tiles
@@ -308,12 +308,12 @@ void ItemMarkerTiler::slotSourceModelRowsInserted(const QModelIndex& parentIndex
         addMarkerIndexToGrid(QPersistentModelIndex(d->markerModel->index(i, 0, parentIndex)));
     }
 
-    emit signalTilesOrSelectionChanged();
+    Q_EMIT signalTilesOrSelectionChanged();
 }
 
 void ItemMarkerTiler::slotSourceModelRowsAboutToBeRemoved(const QModelIndex& parentIndex, int start, int end)
 {
-    // TODO: emit signalTilesOrSelectionChanged(); in rowsWereRemoved
+    // TODO: Q_EMIT signalTilesOrSelectionChanged(); in rowsWereRemoved
 
     if (isDirty())
     {
@@ -335,7 +335,7 @@ void ItemMarkerTiler::slotSourceModelRowsAboutToBeRemoved(const QModelIndex& par
 
 void ItemMarkerTiler::slotThumbnailAvailableForIndex(const QPersistentModelIndex& index, const QPixmap& pixmap)
 {
-    emit signalThumbnailAvailableForIndex(QVariant::fromValue(index), pixmap);
+    Q_EMIT signalThumbnailAvailableForIndex(QVariant::fromValue(index), pixmap);
 }
 
 void ItemMarkerTiler::slotSourceModelReset()

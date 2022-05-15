@@ -55,7 +55,7 @@ WebWidget::WebWidget(QWidget* const parent)
 
 void WebWidget::closeEvent(QCloseEvent *event)
 {
-    emit closeView(false);
+    Q_EMIT closeView(false);
     event->accept();
 }
 

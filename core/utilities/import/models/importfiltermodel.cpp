@@ -134,7 +134,7 @@ QList<QModelIndex> ImportSortFilterModel::mapListToSource(const QList<QModelInde
 {
     QList<QModelIndex> sourceIndexes;
 
-    foreach (const QModelIndex& index, indexes)
+    Q_FOREACH (const QModelIndex& index, indexes)
     {
         sourceIndexes << mapToSourceImportModel(index);
     }
@@ -146,7 +146,7 @@ QList<QModelIndex> ImportSortFilterModel::mapListFromSource(const QList<QModelIn
 {
     QList<QModelIndex> indexes;
 
-    foreach (const QModelIndex& index, sourceIndexes)
+    Q_FOREACH (const QModelIndex& index, sourceIndexes)
     {
         indexes << mapFromSourceImportModel(index);
     }
@@ -168,7 +168,7 @@ QList<CamItemInfo> ImportSortFilterModel::camItemInfos(const QList<QModelIndex>&
 {
     QList<CamItemInfo> infos;
 
-    foreach (const QModelIndex& index, indexes)
+    Q_FOREACH (const QModelIndex& index, indexes)
     {
         infos << camItemInfo(index);
     }
@@ -180,7 +180,7 @@ QList<qlonglong> ImportSortFilterModel::camItemIds(const QList<QModelIndex>& ind
 {
     QList<qlonglong> ids;
 
-    foreach (const QModelIndex& index, indexes)
+    Q_FOREACH (const QModelIndex& index, indexes)
     {
         ids << camItemId(index);
     }
@@ -409,7 +409,7 @@ void ImportFilterModel::slotRowsInserted(const QModelIndex& /*parent*/, int star
         infos << camItemInfo(index(i, 0));
     }
 
-    emit camItemInfosAdded(infos);
+    Q_EMIT camItemInfosAdded(infos);
 }
 
 void ImportFilterModel::slotRowsAboutToBeRemoved(const QModelIndex& /*parent*/, int start, int end)
@@ -421,7 +421,7 @@ void ImportFilterModel::slotRowsAboutToBeRemoved(const QModelIndex& /*parent*/, 
         infos << camItemInfo(index(i, 0));
     }
 
-    emit camItemInfosAboutToBeRemoved(infos);
+    Q_EMIT camItemInfosAboutToBeRemoved(infos);
 }
 
 void ImportFilterModel::setDirectSourceImportModel(ImportItemModel* const sourceModel)

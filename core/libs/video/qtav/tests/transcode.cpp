@@ -83,7 +83,7 @@ int main(int argc, char *argv[])
         QStringList opts(opt.split(QString::fromLatin1(";")));
         QVariantHash subopt;
 
-        foreach (const QString& o, opts)
+        Q_FOREACH (const QString& o, opts)
         {
             idx                 = o.indexOf(QLatin1String(":"));
             subopt[o.left(idx)] = o.right(o.size() - idx - 1);

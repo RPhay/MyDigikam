@@ -107,7 +107,7 @@ void DatabaseTask::run()
         return;
     }
 
-    emit signalStarted();
+    Q_EMIT signalStarted();
 
     QThread::sleep(1);
 
@@ -125,12 +125,12 @@ void DatabaseTask::run()
 
                 // Signal that the database was vacuumed but failed the integrity check afterwards.
 
-                emit signalFinished(true, false);
+                Q_EMIT signalFinished(true, false);
             }
             else
             {
                 qCDebug(DIGIKAM_DATABASE_LOG) << "Finished vacuuming of core DB. Integrity check after vacuuming was positive.";
-                emit signalFinished(true, true);
+                Q_EMIT signalFinished(true, true);
             }
         }
         else
@@ -139,7 +139,7 @@ void DatabaseTask::run()
 
             // Signal that the integrity check failed and thus the vacuum was skipped
 
-            emit signalFinished(false, false);
+            Q_EMIT signalFinished(false, false);
         }
 
         QThread::sleep(1);
@@ -161,12 +161,12 @@ void DatabaseTask::run()
 
                     // Signal that the database was vacuumed but failed the integrity check afterwards.
 
-                    emit signalFinished(true, false);
+                    Q_EMIT signalFinished(true, false);
                 }
                 else
                 {
                     qCDebug(DIGIKAM_DATABASE_LOG) << "Finished vacuuming of thumbnails DB. Integrity check after vacuuming was positive.";
-                    emit signalFinished(true, true);
+                    Q_EMIT signalFinished(true, true);
                 }
             }
             else
@@ -175,13 +175,13 @@ void DatabaseTask::run()
 
                 // Signal that the integrity check failed and thus the vacuum was skipped
 
-                emit signalFinished(false, false);
+                Q_EMIT signalFinished(false, false);
             }
         }
         else
         {
             qCWarning(DIGIKAM_DATABASE_LOG) << "Thumbnails DB is not initialised. Will not vacuum.";
-            emit signalFinished(false, false);
+            Q_EMIT signalFinished(false, false);
         }
 
         QThread::sleep(1);
@@ -201,12 +201,12 @@ void DatabaseTask::run()
 
                 // Signal that the database was vacuumed but failed the integrity check afterwards.
 
-                emit signalFinished(true, false);
+                Q_EMIT signalFinished(true, false);
             }
             else
             {
                 qCDebug(DIGIKAM_DATABASE_LOG) << "Finished vacuuming of recognition DB. Integrity check after vacuuming was positive.";
-                emit signalFinished(true, true);
+                Q_EMIT signalFinished(true, true);
             }
         }
         else
@@ -215,7 +215,7 @@ void DatabaseTask::run()
 
             // Signal that the integrity check failed and thus the vacuum was skipped
 
-            emit signalFinished(false, false);
+            Q_EMIT signalFinished(false, false);
         }
 
         QThread::sleep(1);
@@ -237,12 +237,12 @@ void DatabaseTask::run()
 
                     // Signal that the database was vacuumed but failed the integrity check afterwards.
 
-                    emit signalFinished(true, false);
+                    Q_EMIT signalFinished(true, false);
                 }
                 else
                 {
                     qCDebug(DIGIKAM_DATABASE_LOG) << "Finished vacuuming of similarity DB. Integrity check after vacuuming was positive.";
-                    emit signalFinished(true, true);
+                    Q_EMIT signalFinished(true, true);
                 }
             }
             else
@@ -251,7 +251,7 @@ void DatabaseTask::run()
 
                 // Signal that the integrity check failed and thus the vacuum was skipped
 
-                emit signalFinished(false, false);
+                Q_EMIT signalFinished(false, false);
             }
         }
 
@@ -271,7 +271,7 @@ void DatabaseTask::run()
 
         // Remove item ids to be deleted from the core DB.
 
-        foreach (const qlonglong& item, CoreDbAccess().db()->getAllItems())
+        Q_FOREACH (const qlonglong& item, CoreDbAccess().db()->getAllItems())
         {
             if (!staleImageIds.contains(item))
             {
@@ -300,10 +300,10 @@ void DatabaseTask::run()
 
         if (additionalItemsToProcess > 0)
         {
-            emit signalAddItemsToProcess(additionalItemsToProcess);
+            Q_EMIT signalAddItemsToProcess(additionalItemsToProcess);
         }
 
-        emit signalFinished();
+        Q_EMIT signalFinished();
 
         // Get the stale thumbnail paths.
 
@@ -321,7 +321,7 @@ void DatabaseTask::run()
 
             FaceTagsEditor editor;
 
-            foreach (const qlonglong& item, coredbItems)
+            Q_FOREACH (const qlonglong& item, coredbItems)
             {
                 if (m_cancel)
                 {
@@ -351,7 +351,7 @@ void DatabaseTask::run()
 
                     QList<FaceTagsIface> faces = editor.databaseFaces(item);
 
-                    foreach (const FaceTagsIface& face, faces)
+                    Q_FOREACH (const FaceTagsIface& face, faces)
                     {
                         QList<QRect> rects;
                         QRect orgRect    = face.region().toRect();
@@ -360,7 +360,7 @@ void DatabaseTask::run()
                         rects << orgRect;
                         rects << orgRect.adjusted(-margin, -margin, margin, margin);
 
-                        foreach (const QRect& rect, rects)
+                        Q_FOREACH (const QRect& rect, rects)
                         {
                             QString r = QString::fromLatin1("%1,%2-%3x%4").arg(rect.x())
                                                                           .arg(rect.y())
@@ -385,7 +385,7 @@ void DatabaseTask::run()
 
                 // Signal that this item was processed.
 
-                emit signalFinished();
+                Q_EMIT signalFinished();
             }
 
             // The remaining thumbnail ids should be used to remove them since they are stale.
@@ -394,7 +394,7 @@ void DatabaseTask::run()
 
             // Signal that the database was processed.
 
-            emit signalFinished();
+            Q_EMIT signalFinished();
         }
 
         if (m_cancel)
@@ -409,7 +409,7 @@ void DatabaseTask::run()
             QList<TagProperty> properties = CoreDbAccess().db()->getTagProperties(TagPropertyName::faceEngineUuid());
             QSet<QString> uuidSet;
 
-            foreach (const TagProperty& prop, properties)
+            Q_FOREACH (const TagProperty& prop, properties)
             {
                 uuidSet << prop.value;
             }
@@ -418,7 +418,7 @@ void DatabaseTask::run()
 
             // Get all identities to remove. Don't remove now in order to make sure no side effects occur.
 
-            foreach (const Identity& identity, identities)
+            Q_FOREACH (const Identity& identity, identities)
             {
                 QString value = identity.attribute(QLatin1String("uuid"));
 
@@ -429,12 +429,12 @@ void DatabaseTask::run()
 
                 // Signal that this identity was processed.
 
-                emit signalFinished();
+                Q_EMIT signalFinished();
             }
 
             // Signal that the database was processed.
 
-            emit signalFinished();
+            Q_EMIT signalFinished();
         }
 
         if (m_cancel)
@@ -450,13 +450,13 @@ void DatabaseTask::run()
 
             // Remove all image ids that are existent in the core db
 
-            foreach (const qlonglong& imageId, coredbItems)
+            Q_FOREACH (const qlonglong& imageId, coredbItems)
             {
                 similarityDbItems.remove(imageId);
 
                 // Signal that this image id was processed.
 
-                emit signalFinished();
+                Q_EMIT signalFinished();
             }
 
             // The remaining image ids should be removed from the similarity db.
@@ -465,10 +465,10 @@ void DatabaseTask::run()
 
             // Signal that the database was processed.
 
-            emit signalFinished();
+            Q_EMIT signalFinished();
         }
 
-        emit signalData(staleImageIds, staleThumbIds, staleIdentities, staleSimilarityImageIds);
+        Q_EMIT signalData(staleImageIds, staleThumbIds, staleIdentities, staleSimilarityImageIds);
     }
     else if (d->mode == Mode::CleanCoreDb)
     {
@@ -490,7 +490,7 @@ void DatabaseTask::run()
 
             CoreDbAccess().db()->deleteObsoleteItem(imageId);
 
-            emit signalFinished();
+            Q_EMIT signalFinished();
         }
     }
     else if (d->mode == Mode::CleanThumbsDb)
@@ -523,7 +523,7 @@ void DatabaseTask::run()
                 }
 
                 lastQueryState = ThumbsDbAccess().db()->remove(thumbId);
-                emit signalFinished();
+                Q_EMIT signalFinished();
             }
 
             // Check for errors.
@@ -574,7 +574,7 @@ void DatabaseTask::run()
             }
 
             FacialRecognitionWrapper().deleteIdentity(identity);
-            emit signalFinished();
+            Q_EMIT signalFinished();
         }
     }
     else if (d->mode == Mode::CleanSimilarityDb)
@@ -598,11 +598,11 @@ void DatabaseTask::run()
             SimilarityDbAccess().db()->removeImageFingerprint(imageId, FuzzyAlgorithm::Haar);
             SimilarityDbAccess().db()->removeImageFingerprint(imageId, FuzzyAlgorithm::TfIdf);
 
-            emit signalFinished();
+            Q_EMIT signalFinished();
         }
     }
 
-    emit signalDone();
+    Q_EMIT signalDone();
 }
 
 } // namespace Digikam

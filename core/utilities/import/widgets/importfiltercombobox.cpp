@@ -151,7 +151,7 @@ void ImportFilterComboBox::fillCombo()
 {
     clear();
 
-    foreach (Filter* const f, d->filters)
+    Q_FOREACH (Filter* const f, d->filters)
     {
         addItem(f->name);
     }
@@ -165,7 +165,7 @@ void ImportFilterComboBox::indexChanged(int index)
     {
         d->currentFilter     = index;
         Filter* const filter = d->filters.value(d->currentFilter);
-        emit signalFilterChanged(filter);
+        Q_EMIT signalFilterChanged(filter);
     }
 }
 

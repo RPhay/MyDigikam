@@ -158,7 +158,7 @@ void AdvancedRenameLineEdit::keyPressEvent(QKeyEvent* e)
         case Qt::Key_Return:
         {
             slotParseTimer();
-            emit signalReturnPressed();
+            Q_EMIT signalReturnPressed();
             break;
         }
 
@@ -209,7 +209,7 @@ void AdvancedRenameLineEdit::slotParseTimer()
     {
         d->lastPlainText = toPlainText();
 
-        emit signalTextChanged(d->lastPlainText);
+        Q_EMIT signalTextChanged(d->lastPlainText);
     }
 }
 
@@ -241,7 +241,7 @@ void AdvancedRenameLineEdit::slotCursorPositionChanged()
         found                = found && ((start + length) == pos);
     }
 
-    emit signalTokenMarked(found);
+    Q_EMIT signalTokenMarked(found);
 }
 
 void AdvancedRenameLineEdit::slotSetText(const QString& text)
@@ -408,7 +408,7 @@ void AdvancedRenameInput::slotClearButtonPressed()
 void AdvancedRenameInput::slotTextChanged(const QString& text)
 {
     d->proxy->setText(text);
-    emit signalTextChanged(text);
+    Q_EMIT signalTextChanged(text);
 }
 
 QString AdvancedRenameInput::text() const

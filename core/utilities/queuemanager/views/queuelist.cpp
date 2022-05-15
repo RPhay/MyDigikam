@@ -397,7 +397,7 @@ QMimeData* QueueListView::mimeData(const QList<QTreeWidgetItem*> items) const   
     QList<int> albumIDs;
     QList<qlonglong> imageIDs;
 
-    foreach (QTreeWidgetItem* const itm, items)
+    Q_FOREACH (QTreeWidgetItem* const itm, items)
     {
         QueueListViewItem* const vitem = dynamic_cast<QueueListViewItem*>(itm);
 
@@ -533,7 +533,7 @@ void QueueListView::dropEvent(QDropEvent* e)
 
             if (vitem && vitem != this)
             {
-                foreach (const ItemInfo& info, imageInfoList)
+                Q_FOREACH (const ItemInfo& info, imageInfoList)
                 {
                     vitem->removeItemByInfo(info);
                 }
@@ -610,7 +610,7 @@ void QueueListView::dropEvent(QDropEvent* e)
         e->ignore();
     }
 
-    emit signalQueueContentsChanged();
+    Q_EMIT signalQueueContentsChanged();
 }
 
 void QueueListView::setEnableToolTips(bool val)
@@ -746,7 +746,7 @@ void QueueListView::slotAddItems(const ItemInfoList& list)
 
     updateDestFileNames();
 
-    emit signalQueueContentsChanged();
+    Q_EMIT signalQueueContentsChanged();
 }
 
 void QueueListView::drawRow(QPainter* p, const QStyleOptionViewItem& opt, const QModelIndex& index) const
@@ -792,21 +792,21 @@ void QueueListView::slotClearList()
 {
     removeItems(Private::ItemsAll);
 
-    emit signalQueueContentsChanged();
+    Q_EMIT signalQueueContentsChanged();
 }
 
 void QueueListView::slotRemoveSelectedItems()
 {
     removeItems(Private::ItemsSelected);
 
-    emit signalQueueContentsChanged();
+    Q_EMIT signalQueueContentsChanged();
 }
 
 void QueueListView::slotRemoveItemsDone()
 {
     removeItems(Private::ItemsDone);
 
-    emit signalQueueContentsChanged();
+    Q_EMIT signalQueueContentsChanged();
 }
 
 void QueueListView::removeItems(int removeType)
@@ -864,7 +864,7 @@ void QueueListView::removeItems(int removeType)
     }
     while (find);
 
-    emit signalQueueContentsChanged();
+    Q_EMIT signalQueueContentsChanged();
 }
 
 void QueueListView::removeItemByInfo(const ItemInfo& info)
@@ -899,7 +899,7 @@ void QueueListView::removeItemById(qlonglong id)
     }
     while (find);
 
-    emit signalQueueContentsChanged();
+    Q_EMIT signalQueueContentsChanged();
 }
 
 bool QueueListView::findItemByInfo(const ItemInfo& info)
@@ -1185,7 +1185,7 @@ void QueueListView::slotCollectionImageChange(const CollectionImageChangeset& ch
         case CollectionImageChangeset::Removed:
         case CollectionImageChangeset::RemovedAll:
         {
-            foreach (const qlonglong& id, changeset.ids())
+            Q_FOREACH (const qlonglong& id, changeset.ids())
             {
                 removeItemById(id);
             }

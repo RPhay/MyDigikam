@@ -284,7 +284,7 @@ void DarkTableRawImportPlugin::slotProcessFinished(int code, QProcess::ExitStatu
         qCDebug(DIGIKAM_GENERAL_LOG) << "Decoded image is null! Load with Native tool...";
         qCDebug(DIGIKAM_GENERAL_LOG) << d->props.filePath;
 
-        emit signalLoadRaw(d->props);
+        Q_EMIT signalLoadRaw(d->props);
     }
     else
     {
@@ -292,7 +292,7 @@ void DarkTableRawImportPlugin::slotProcessFinished(int code, QProcess::ExitStatu
         qCDebug(DIGIKAM_GENERAL_LOG) << d->props.filePath;
         d->props = LoadingDescription(d->tempName, LoadingDescription::ConvertForEditor);
 
-        emit signalDecodedImage(d->props, d->decoded);
+        Q_EMIT signalDecodedImage(d->props, d->decoded);
     }
 
     QFile::remove(d->tempName);
@@ -303,7 +303,7 @@ void DarkTableRawImportPlugin::slotProcessReadyRead()
     QByteArray data   = d->darktable->readAllStandardError();
     QStringList lines = QString::fromUtf8(data).split(QLatin1Char('\n'), QT_SKIP_EMPTY_PARTS);
 
-    foreach (const QString& one, lines)
+    Q_FOREACH (const QString& one, lines)
     {
         qCDebug(DIGIKAM_GENERAL_LOG) << "DarkTable ::" << one;
     }

@@ -76,7 +76,7 @@ BatchToolsFactory::BatchToolsFactory()
     bool hasWEBPSupport      = dpl->canExport(QLatin1String("WEBP"));
     bool hasAVIFSupport      = dpl->canExport(QLatin1String("AVIF"));
 
-    foreach (DPlugin* const p, dpl->allPlugins())
+    Q_FOREACH (DPlugin* const p, dpl->allPlugins())
     {
         DPluginBqm* const bqm = dynamic_cast<DPluginBqm*>(p);
 
@@ -113,7 +113,7 @@ BatchToolsFactory::BatchToolsFactory()
             qCDebug(DIGIKAM_GENERAL_LOG) << "BQM plugin named" << bqm->name()
                                          << "registered to" << this;
 
-            foreach (BatchTool* const t, bqm->tools(this))
+            Q_FOREACH (BatchTool* const t, bqm->tools(this))
             {
                 registerTool(t);
             }
@@ -148,7 +148,7 @@ void BatchToolsFactory::registerTool(BatchTool* const tool)
 
 BatchTool* BatchToolsFactory::findTool(const QString& name, BatchTool::BatchToolGroup group) const
 {
-    foreach (BatchTool* const tool, d->toolsList)
+    Q_FOREACH (BatchTool* const tool, d->toolsList)
     {
         if ((tool->objectName() == name) && (tool->toolGroup() == group))
         {   // cppcheck-suppress useStlAlgorithm

@@ -208,7 +208,7 @@ void EXIFEditWidget::slotItemChanged()
                      !QFileInfo((*d->dlg->currentItem()).toLocalFile()).isWritable()
                     );
 
-    emit signalSetReadOnly(d->isReadOnly);
+    Q_EMIT signalSetReadOnly(d->isReadOnly);
 
     d->page_caption->setEnabled(!d->isReadOnly);
     d->page_datetime->setEnabled(!d->isReadOnly);
@@ -243,7 +243,7 @@ void EXIFEditWidget::slotModified()
     if (!d->isReadOnly)
     {
         d->modified = true;
-        emit signalModified();
+        Q_EMIT signalModified();
     }
 }
 

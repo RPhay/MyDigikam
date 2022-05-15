@@ -119,9 +119,9 @@ void MailProcess::firstStage()
 
     if (!tempPath.isValid())
     {
-        emit signalMessage(i18n("Cannot create a temporary directory"), true);
+        Q_EMIT signalMessage(i18n("Cannot create a temporary directory"), true);
         slotCancel();
-        emit signalDone(false);
+        Q_EMIT signalDone(false);
 
         return;
     }
@@ -150,7 +150,7 @@ void MailProcess::firstStage()
             d->settings->setMailUrl(it.key(), it.key());
         }
 
-        emit signalProgress(50);
+        Q_EMIT signalProgress(50);
         secondStage();
     }
 }
@@ -165,7 +165,7 @@ void MailProcess::slotCancel()
         d->threadImgResize->wait();
     }
 
-    emit signalProgress(0);
+    Q_EMIT signalProgress(0);
 
     slotCleanUp();
 }
@@ -178,7 +178,7 @@ void MailProcess::slotStartingResize(const QUrl& orgUrl)
     }
 
     QString text = i18n("Resizing %1", orgUrl.fileName());
-    emit signalMessage(text, false);
+    Q_EMIT signalMessage(text, false);
 }
 
 void MailProcess::slotFinishedResize(const QUrl& orgUrl, const QUrl& emailUrl, int percent)
@@ -188,13 +188,13 @@ void MailProcess::slotFinishedResize(const QUrl& orgUrl, const QUrl& emailUrl, i
         return;
     }
 
-    emit signalProgress((int)(80.0*(percent/100.0)));
+    Q_EMIT signalProgress((int)(80.0*(percent/100.0)));
     qCDebug(DIGIKAM_DPLUGIN_GENERIC_LOG) << emailUrl;
     d->attachementFiles.append(emailUrl);
     d->settings->setMailUrl(orgUrl, emailUrl);
 
     QString text = i18n("%1 resized successfully", orgUrl.fileName());
-    emit signalMessage(text, false);
+    Q_EMIT signalMessage(text, false);
 }
 
 void MailProcess::slotFailedResize(const QUrl& orgUrl, const QString& error, int percent)
@@ -204,9 +204,9 @@ void MailProcess::slotFailedResize(const QUrl& orgUrl, const QString& error, int
         return;
     }
 
-    emit signalProgress((int)(80.0*(percent/100.0)));
+    Q_EMIT signalProgress((int)(80.0*(percent/100.0)));
     QString text = i18n("Failed to resize %1: %2", orgUrl.fileName(), error);
-    emit signalMessage(text, true);
+    Q_EMIT signalMessage(text, true);
 
     d->failedResizedImages.append(orgUrl);
 }
@@ -241,16 +241,16 @@ void MailProcess::secondStage()
 
     if (d->attachementFiles.isEmpty())
     {
-        emit signalMessage(i18n("There are no files to send"), false);
-        emit signalProgress(0);
+        Q_EMIT signalMessage(i18n("There are no files to send"), false);
+        Q_EMIT signalProgress(0);
 
         return;
     }
 
     buildPropertiesFile();
-    emit signalProgress(90);
+    Q_EMIT signalProgress(90);
     invokeMailAgent();
-    emit signalProgress(100);
+    Q_EMIT signalProgress(100);
 }
 
 void MailProcess::buildPropertiesFile()
@@ -262,7 +262,7 @@ void MailProcess::buildPropertiesFile()
 
     if (d->iface && d->settings->addFileProperties)
     {
-        emit signalMessage(i18n("Build images properties file"), false);
+        Q_EMIT signalMessage(i18n("Build images properties file"), false);
 
         QString propertiesText;
 
@@ -307,7 +307,7 @@ void MailProcess::buildPropertiesFile()
 
         if (!propertiesFile.open(QIODevice::WriteOnly))
         {
-            emit signalMessage(i18n("Image properties file cannot be opened"), true);
+            Q_EMIT signalMessage(i18n("Image properties file cannot be opened"), true);
             qCDebug(DIGIKAM_DPLUGIN_GENERIC_LOG) << "File open error:" << propertiesFile.fileName();
 
             return;
@@ -319,7 +319,7 @@ void MailProcess::buildPropertiesFile()
 
         qCDebug(DIGIKAM_DPLUGIN_GENERIC_LOG) << "Image properties file done" << propertiesFile.fileName();
 
-        emit signalMessage(i18n("Image properties file done"), false);
+        Q_EMIT signalMessage(i18n("Image properties file done"), false);
     }
 }
 
@@ -413,7 +413,7 @@ QList<QUrl> MailProcess::divideEmails()
                 QString mess = i18n("The file \"%1\" is too big to be sent, "
                                     "please reduce its size or change your settings",
                                     file.fileName());
-                emit signalMessage(mess, true);
+                Q_EMIT signalMessage(mess, true);
             }
             else
             {
@@ -640,21 +640,21 @@ void MailProcess::invokeMailAgentError(const QString& prog, const QStringList& a
 {
     qCDebug(DIGIKAM_DPLUGIN_GENERIC_LOG) << "Command Line: " << prog << args;
     QString text = i18n("Failed to start \"%1\" program. Check your system.", prog);
-    emit signalMessage(text, true);
+    Q_EMIT signalMessage(text, true);
     slotCleanUp();
 
-    emit signalDone(false);
+    Q_EMIT signalDone(false);
 }
 
 void MailProcess::invokeMailAgentDone(const QString& prog, const QStringList& args)
 {
     qCDebug(DIGIKAM_DPLUGIN_GENERIC_LOG) << "Command Line: " << prog << args;
     QString text = i18n("Starting \"%1\" program...", prog);
-    emit signalMessage(text, false);
+    Q_EMIT signalMessage(text, false);
 
-    emit signalMessage(i18n("After having sent your images by email..."), false);
-    emit signalMessage(i18n("Press 'Finish' button to clean up temporary files"), false);
-    emit signalDone(true);
+    Q_EMIT signalMessage(i18n("After having sent your images by email..."), false);
+    Q_EMIT signalMessage(i18n("Press 'Finish' button to clean up temporary files"), false);
+    Q_EMIT signalDone(true);
 }
 
 void MailProcess::slotCleanUp()

@@ -168,7 +168,7 @@ void DNGConverterActionThread::cancel()
 {
     if (isRunning())
     {
-        emit signalCancelDNGConverterTask();
+        Q_EMIT signalCancelDNGConverterTask();
     }
 
     ActionThreadBase::cancel();

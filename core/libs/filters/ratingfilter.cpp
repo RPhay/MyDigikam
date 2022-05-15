@@ -88,7 +88,7 @@ RatingFilterWidget::~RatingFilterWidget()
 
 void RatingFilterWidget::slotRatingChanged()
 {
-    emit signalRatingFilterChanged(rating(), d->filterCond, d->excludeUnrated);
+    Q_EMIT signalRatingFilterChanged(rating(), d->filterCond, d->excludeUnrated);
 }
 
 void RatingFilterWidget::setRatingFilterCondition(ItemFilterSettings::RatingCondition cond)

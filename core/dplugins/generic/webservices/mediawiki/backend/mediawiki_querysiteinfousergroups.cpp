@@ -166,7 +166,7 @@ void QuerySiteinfoUsergroups::doWorkProcessReply()
         if (!reader.hasError())
         {
             setError(Job::NoError);
-            emit usergroups(results);
+            Q_EMIT usergroups(results);
         }
         else
         {

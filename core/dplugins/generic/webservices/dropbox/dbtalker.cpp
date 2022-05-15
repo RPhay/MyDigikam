@@ -161,7 +161,7 @@ DBTalker::~DBTalker()
 
 void DBTalker::link()
 {
-    emit signalBusy(true);
+    Q_EMIT signalBusy(true);
     d->o2->link();
 }
 
@@ -187,7 +187,7 @@ void DBTalker::reauthenticate()
 void DBTalker::slotLinkingFailed()
 {
     qCDebug(DIGIKAM_WEBSERVICES_LOG) << "LINK to Dropbox fail";
-    emit signalBusy(false);
+    Q_EMIT signalBusy(false);
 }
 
 void DBTalker::slotLinkingSucceeded()
@@ -195,12 +195,12 @@ void DBTalker::slotLinkingSucceeded()
     if (!d->o2->linked())
     {
         qCDebug(DIGIKAM_WEBSERVICES_LOG) << "UNLINK to Dropbox ok";
-        emit signalBusy(false);
+        Q_EMIT signalBusy(false);
         return;
     }
 
     qCDebug(DIGIKAM_WEBSERVICES_LOG) << "LINK to Dropbox ok";
-    emit signalLinkingSucceeded();
+    Q_EMIT signalLinkingSucceeded();
 }
 
 void DBTalker::slotOpenBrowser(const QUrl& url)
@@ -232,7 +232,7 @@ void DBTalker::createFolder(const QString& path)
     d->reply = d->netMngr->post(netRequest, postData);
 
     d->state = Private::DB_CREATEFOLDER;
-    emit signalBusy(true);
+    Q_EMIT signalBusy(true);
 }
 
 /** Get username of dropbox user
@@ -247,7 +247,7 @@ void DBTalker::getUserName()
     d->reply = d->netMngr->post(netRequest, QByteArray());
 
     d->state = Private::DB_USERNAME;
-    emit signalBusy(true);
+    Q_EMIT signalBusy(true);
 }
 
 /** Get list of folders by parsing json sent by dropbox
@@ -275,7 +275,7 @@ void DBTalker::listFolders(const QString& cursor)
     d->reply = d->netMngr->post(netRequest, postData);
 
     d->state = Private::DB_LISTFOLDERS;
-    emit signalBusy(true);
+    Q_EMIT signalBusy(true);
 }
 
 bool DBTalker::addPhoto(const QString& imgPath, const QString& uploadFolder,
@@ -287,7 +287,7 @@ bool DBTalker::addPhoto(const QString& imgPath, const QString& uploadFolder,
         d->reply = nullptr;
     }
 
-    emit signalBusy(true);
+    Q_EMIT signalBusy(true);
 
     QString path = imgPath;
 
@@ -304,7 +304,7 @@ bool DBTalker::addPhoto(const QString& imgPath, const QString& uploadFolder,
 
         if (image.isNull())
         {
-            emit signalBusy(false);
+            Q_EMIT signalBusy(false);
             return false;
         }
 
@@ -333,7 +333,7 @@ bool DBTalker::addPhoto(const QString& imgPath, const QString& uploadFolder,
 
     if (!form.addFile(path))
     {
-        emit signalBusy(false);
+        Q_EMIT signalBusy(false);
         return false;
     }
 
@@ -361,7 +361,7 @@ void DBTalker::cancel()
         d->reply = nullptr;
     }
 
-    emit signalBusy(false);
+    Q_EMIT signalBusy(false);
 }
 
 void DBTalker::slotFinished(QNetworkReply* reply)
@@ -377,7 +377,7 @@ void DBTalker::slotFinished(QNetworkReply* reply)
     {
         if (d->state != Private::DB_CREATEFOLDER)
         {
-            emit signalBusy(false);
+            Q_EMIT signalBusy(false);
             QMessageBox::critical(QApplication::activeWindow(),
                                   i18n("Error"), reply->errorString());
 
@@ -418,15 +418,15 @@ void DBTalker::parseResponseAddPhoto(const QByteArray& data)
     QJsonDocument doc      = QJsonDocument::fromJson(data);
     QJsonObject jsonObject = doc.object();
     bool success           = jsonObject.contains(QLatin1String("size"));
-    emit signalBusy(false);
+    Q_EMIT signalBusy(false);
 
     if (!success)
     {
-        emit signalAddPhotoFailed(i18n("Failed to upload photo"));
+        Q_EMIT signalAddPhotoFailed(i18n("Failed to upload photo"));
     }
     else
     {
-        emit signalAddPhotoSucceeded();
+        Q_EMIT signalAddPhotoSucceeded();
     }
 }
 
@@ -437,8 +437,8 @@ void DBTalker::parseResponseUserName(const QByteArray& data)
 
     QString name           = jsonObject[QLatin1String("display_name")].toString();
 
-    emit signalBusy(false);
-    emit signalSetUserName(name);
+    Q_EMIT signalBusy(false);
+    Q_EMIT signalSetUserName(name);
 }
 
 void DBTalker::parseResponseListFolders(const QByteArray& data)
@@ -448,8 +448,8 @@ void DBTalker::parseResponseListFolders(const QByteArray& data)
 
     if (err.error != QJsonParseError::NoError)
     {
-        emit signalBusy(false);
-        emit signalListAlbumsFailed(i18n("Failed to list folders"));
+        Q_EMIT signalBusy(false);
+        Q_EMIT signalListAlbumsFailed(i18n("Failed to list folders"));
         return;
     }
 
@@ -461,7 +461,7 @@ void DBTalker::parseResponseListFolders(const QByteArray& data)
         d->folderList.append(qMakePair(QLatin1String(""), QLatin1String("root")));
     }
 
-    foreach (const QJsonValue& value, jsonArray)
+    Q_FOREACH (const QJsonValue& value, jsonArray)
     {
         QString path;
         QString folder;
@@ -491,8 +491,8 @@ void DBTalker::parseResponseListFolders(const QByteArray& data)
 
     std::sort(d->folderList.begin(), d->folderList.end());
 
-    emit signalBusy(false);
-    emit signalListAlbumsDone(d->folderList);
+    Q_EMIT signalBusy(false);
+    Q_EMIT signalListAlbumsDone(d->folderList);
 }
 
 void DBTalker::parseResponseCreateFolder(const QByteArray& data)
@@ -501,15 +501,15 @@ void DBTalker::parseResponseCreateFolder(const QByteArray& data)
     QJsonObject jsonObject = doc.object();
     bool fail              = jsonObject.contains(QLatin1String("error"));
 
-    emit signalBusy(false);
+    Q_EMIT signalBusy(false);
 
     if (fail)
     {
-        emit signalCreateFolderFailed(jsonObject[QLatin1String("error_summary")].toString());
+        Q_EMIT signalCreateFolderFailed(jsonObject[QLatin1String("error_summary")].toString());
     }
     else
     {
-        emit signalCreateFolderSucceeded();
+        Q_EMIT signalCreateFolderSucceeded();
     }
 }
 

@@ -315,7 +315,7 @@ void DConfigDlgViewPrivate::_k_pageSelected(const QItemSelection& index, const Q
 
     Q_Q(DConfigDlgView);
 
-    emit q->currentPageChanged(currentIndex, previousIndex);
+    Q_EMIT q->currentPageChanged(currentIndex, previousIndex);
 }
 
 void DConfigDlgViewPrivate::updateTitleWidget(const QModelIndex& index)

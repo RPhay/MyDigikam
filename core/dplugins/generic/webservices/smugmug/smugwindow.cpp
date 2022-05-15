@@ -979,7 +979,7 @@ void SmugWindow::slotGetPhotoDone(int errCode,
         else
         {
             imgFile.close();
-            emit updateHostApp(QUrl::fromLocalFile(imgPath));
+            Q_EMIT updateHostApp(QUrl::fromLocalFile(imgPath));
         }
 
         if (errText.isEmpty())

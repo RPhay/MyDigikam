@@ -282,13 +282,13 @@ void PresentationAudioWidget::slotPlay()
         }
 
         d->canHide = true;
-        emit signalPlay();
+        Q_EMIT signalPlay();
     }
     else
     {
         d->mediaObject->pause();
         d->canHide = false;
-        emit signalPause();
+        Q_EMIT signalPause();
     }
 }
 

@@ -241,11 +241,11 @@ void DigikamItemView::dragDropSort(const ItemInfo& pick, const QList<ItemInfo>& 
     CoreDbOperationGroup group;
     group.setMaximumTime(200);
 
-    foreach (ItemInfo info, infoList)
+    Q_FOREACH (ItemInfo info, infoList)
     {
         if      (!found && info.id() == pick.id())
         {
-            foreach (ItemInfo dropInfo, infos)
+            Q_FOREACH (ItemInfo dropInfo, infos)
             {
                 dropInfo.setManualOrder(counter);
                 counter += (order ? 1 : -1);
@@ -344,7 +344,7 @@ void DigikamItemView::setFaceMode(bool on)
 
         imageFilterModel()->setCategorizationMode(ItemSortSettings::CategoryByFaces);
 
-        emit signalSeparationModeChanged((int)ItemSortSettings::CategoryByFaces);
+        Q_EMIT signalSeparationModeChanged((int)ItemSortSettings::CategoryByFaces);
     }
     else
     {
@@ -357,7 +357,7 @@ void DigikamItemView::setFaceMode(bool on)
         imageFilterModel()->setAllGroupsOpen(open);
         imageFilterModel()->setCategorizationMode((ItemSortSettings::CategorizationMode)separationMode);
 
-        emit signalSeparationModeChanged((int)separationMode);
+        Q_EMIT signalSeparationModeChanged((int)separationMode);
     }
 }
 
@@ -428,7 +428,7 @@ void DigikamItemView::confirmFaces(const QList<QModelIndex>& indexes, int tagId)
         needFastRemove = (d->faceMode && (tagId != album->id()));
     }
 
-    foreach (const QModelIndex& index, indexes)
+    Q_FOREACH (const QModelIndex& index, indexes)
     {
         faces << d->faceDelegate->face(index);
         infos << ItemModel::retrieveItemInfo(index);
@@ -455,7 +455,7 @@ void DigikamItemView::removeFaces(const QList<QModelIndex>& indexes)
     QList<FaceTagsIface> faces;
     QList<QModelIndex> sourceIndexes;
 
-    foreach (const QModelIndex& index, indexes)
+    Q_FOREACH (const QModelIndex& index, indexes)
     {
         faces         << d->faceDelegate->face(index);
         infos         << ItemModel::retrieveItemInfo(index);
@@ -478,7 +478,7 @@ void DigikamItemView::unknownFaces(const QList<QModelIndex>& indexes)
     QList<FaceTagsIface> faces;
     QList<QModelIndex> sourceIndexes;
 
-    foreach (const QModelIndex& index, indexes)
+    Q_FOREACH (const QModelIndex& index, indexes)
     {
         faces         << d->faceDelegate->face(index);
         infos         << ItemModel::retrieveItemInfo(index);
@@ -502,7 +502,7 @@ void DigikamItemView::rejectFaces(const QList<QModelIndex>& indexes)
     QList<FaceTagsIface> faces;
     QList<QModelIndex> sourceIndexes;
 
-    foreach (const QModelIndex& index, indexes)
+    Q_FOREACH (const QModelIndex& index, indexes)
     {
         faces         << d->faceDelegate->face(index);
         infos         << ItemModel::retrieveItemInfo(index);
@@ -536,7 +536,7 @@ void DigikamItemView::ignoreFaces(const QList<QModelIndex>& indexes)
     QList<FaceTagsIface> faces;
     QList<QModelIndex> sourceIndexes;
 
-    foreach (const QModelIndex& index, indexes)
+    Q_FOREACH (const QModelIndex& index, indexes)
     {
         faces         << d->faceDelegate->face(index);
         infos         << ItemModel::retrieveItemInfo(index);
@@ -558,7 +558,7 @@ QList<int> DigikamItemView::getFaceIds(const QList<QModelIndex>& indexes) const
 {
     QList<int> ids;
 
-    foreach (const QModelIndex& index, indexes)
+    Q_FOREACH (const QModelIndex& index, indexes)
     {
         ids << d->faceDelegate->face(index).tagId();
     }
@@ -579,7 +579,7 @@ void DigikamItemView::activated(const ItemInfo& info, Qt::KeyboardModifiers modi
 
         if      (leftClickAction == ApplicationSettings::ShowPreview)
         {
-            emit previewRequested(info);
+            Q_EMIT previewRequested(info);
         }
         else if (leftClickAction == ApplicationSettings::StartEditor)
         {
@@ -602,18 +602,18 @@ void DigikamItemView::activated(const ItemInfo& info, Qt::KeyboardModifiers modi
 
 void DigikamItemView::showContextMenuOnInfo(QContextMenuEvent* event, const ItemInfo& info)
 {
-    emit signalShowContextMenuOnInfo(event, info, QList<QAction*>(), imageFilterModel());
+    Q_EMIT signalShowContextMenuOnInfo(event, info, QList<QAction*>(), imageFilterModel());
 }
 
 void DigikamItemView::showGroupContextMenu(const QModelIndex& index, QContextMenuEvent* event)
 {
     Q_UNUSED(index);
-    emit signalShowGroupContextMenu(event, selectedItemInfosCurrentFirst(), imageFilterModel());
+    Q_EMIT signalShowGroupContextMenu(event, selectedItemInfosCurrentFirst(), imageFilterModel());
 }
 
 void DigikamItemView::showContextMenu(QContextMenuEvent* event)
 {
-    emit signalShowContextMenu(event);
+    Q_EMIT signalShowContextMenu(event);
 }
 
 void DigikamItemView::openFile(const ItemInfo& info)

@@ -651,11 +651,11 @@ void GSWindow::uploadNextPhoto()
          */
         if (d->service == GoogleService::GPhotoExport)
         {
-            emit d->gphotoTalker->signalReadyToUpload();
+            Q_EMIT d->gphotoTalker->signalReadyToUpload();
         }
         else
         {
-            emit d->talker->signalReadyToUpload();
+            Q_EMIT d->talker->signalReadyToUpload();
         }
 
         return;
@@ -996,7 +996,7 @@ void GSWindow::slotGetPhotoDone(int errCode, const QString& errMsg,
                                    newUrl.toLocalFile()));
     }
 
-    emit updateHostApp(newUrl);
+    Q_EMIT updateHostApp(newUrl);
     downloadNextPhoto();
 }
 
@@ -1077,7 +1077,7 @@ void GSWindow::slotUploadPhotoDone(int err, const QString& msg, const QStringLis
     }
     else
     {
-        foreach (const QString& photoId, listPhotoId)
+        Q_FOREACH (const QString& photoId, listPhotoId)
         {
             // Remove image from upload list and from UI
 
@@ -1104,7 +1104,7 @@ void GSWindow::slotUploadPhotoDone(int err, const QString& msg, const QStringLis
         if (!d->widget->imagesList()->imageUrls().isEmpty())
         {
             qCDebug(DIGIKAM_WEBSERVICES_LOG) << "continue to upload";
-            emit d->gphotoTalker->signalReadyToUpload();
+            Q_EMIT d->gphotoTalker->signalReadyToUpload();
         }
     }
 }

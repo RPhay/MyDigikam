@@ -106,7 +106,7 @@ QList<QWidget*> SetupCollectionDelegate::createItemWidgets(const QModelIndex& /*
     list << pushButton;
 
     connect(pushButton, &QPushButton::clicked,
-            this, [this, pushButton]() { emit categoryButtonPressed(pushButton->property("id").toInt()); });
+            this, [this, pushButton]() { Q_EMIT categoryButtonPressed(pushButton->property("id").toInt()); });
 
     QToolButton* const updateButton = new QToolButton();
     updateButton->setToolTip(i18nc("@info:tooltip", "Updates the path of the collection."));
@@ -114,7 +114,7 @@ QList<QWidget*> SetupCollectionDelegate::createItemWidgets(const QModelIndex& /*
     list << updateButton;
 
     connect(updateButton, &QToolButton::clicked,
-            this, [this, updateButton]() { emit updatePressed(updateButton->property("id").toInt()); });
+            this, [this, updateButton]() { Q_EMIT updatePressed(updateButton->property("id").toInt()); });
 
     QToolButton* const deleteButton = new QToolButton();
     deleteButton->setToolTip(i18nc("@info:tooltip", "Removes the collection from digiKam."));
@@ -122,7 +122,7 @@ QList<QWidget*> SetupCollectionDelegate::createItemWidgets(const QModelIndex& /*
     list << deleteButton;
 
     connect(deleteButton, &QToolButton::clicked,
-            this, [this, deleteButton]() { emit deletePressed(deleteButton->property("id").toInt()); });
+            this, [this, deleteButton]() { Q_EMIT deletePressed(deleteButton->property("id").toInt()); });
 
     return list;
 }
@@ -141,7 +141,7 @@ QSize SetupCollectionDelegate::sizeHint(const QStyleOptionViewItem& option, cons
 
         int maxStyledWidth = 0;
 
-        foreach (const QModelIndex& catIndex, static_cast<const SetupCollectionModel*>(index.model())->categoryIndexes())
+        Q_FOREACH (const QModelIndex& catIndex, static_cast<const SetupCollectionModel*>(index.model())->categoryIndexes())
         {
             maxStyledWidth = qMax(maxStyledWidth, m_styledDelegate->sizeHint(option, catIndex).width());
         }
@@ -416,13 +416,13 @@ void SetupCollectionModel::loadCollections()
     m_collections.clear();
     QList<CollectionLocation> locations = CollectionManager::instance()->allLocations();
 
-    foreach (const CollectionLocation& location, locations)
+    Q_FOREACH (const CollectionLocation& location, locations)
     {
         m_collections << Item(location);
     }
 
     endResetModel();
-    emit collectionsLoaded();
+    Q_EMIT collectionsLoaded();
 }
 
 void SetupCollectionModel::apply()
@@ -462,7 +462,7 @@ void SetupCollectionModel::apply()
 
     // Delete deleted items
 
-    foreach (int i, deletedItems)
+    Q_FOREACH (int i, deletedItems)
     {
         Item& item    = m_collections[i];
         CollectionManager::instance()->removeLocation(item.location);
@@ -473,7 +473,7 @@ void SetupCollectionModel::apply()
 
     QList<Item> failedItems;
 
-    foreach (int i, newItems)
+    Q_FOREACH (int i, newItems)
     {
         Item& item = m_collections[i];
         CollectionLocation location;
@@ -501,7 +501,7 @@ void SetupCollectionModel::apply()
 
     // Update collections
 
-    foreach (int i, updatedItems)
+    Q_FOREACH (int i, updatedItems)
     {
         Item& item  = m_collections[i];
         CollectionLocation location;
@@ -534,7 +534,7 @@ void SetupCollectionModel::apply()
 
     // Rename collections
 
-    foreach (int i, renamedItems)
+    Q_FOREACH (int i, renamedItems)
     {
         Item& item = m_collections[i];
         CollectionManager::instance()->setLabel(item.location, item.label);
@@ -547,7 +547,7 @@ void SetupCollectionModel::apply()
     {
         QStringList failedPaths;
 
-        foreach (const Item& item, failedItems)
+        Q_FOREACH (const Item& item, failedItems)
         {
             failedPaths << QDir::toNativeSeparators(item.path);
         }
@@ -611,7 +611,7 @@ void SetupCollectionModel::addCollection(int category)
 
         // only workaround for bug 182753
 
-        emit layoutChanged();
+        Q_EMIT layoutChanged();
     }
 }
 
@@ -621,7 +621,7 @@ void SetupCollectionModel::emitDataChangedForChildren(const QModelIndex& parent)
 {
     int rows    = rowCount(parent);
     int columns = columnCount(parent);
-    emit dataChanged(index(0, 0, parent), index(rows, columns, parent));
+    Q_EMIT dataChanged(index(0, 0, parent), index(rows, columns, parent));
 
     for (int r = 0 ; r < rows ; ++r)
     {
@@ -674,7 +674,7 @@ void SetupCollectionModel::updateCollection(int internalId)
 
             // only workaround for bug 182753
 
-            emit layoutChanged();
+            Q_EMIT layoutChanged();
         }
 
         item.deleted = false;
@@ -711,7 +711,7 @@ void SetupCollectionModel::deleteCollection(int internalId)
 
         // only workaround for bug 182753
 
-        emit layoutChanged();
+        Q_EMIT layoutChanged();
     }
 }
 
@@ -1049,7 +1049,7 @@ int SetupCollectionModel::rowCount(const QModelIndex& parent) const
     int parentId = parent.row();
     int rowCount = 0;
 
-    foreach (const Item& item, m_collections)
+    Q_FOREACH (const Item& item, m_collections)
     {
         if (!item.deleted && item.parentId == parentId)
         {
@@ -1101,7 +1101,7 @@ bool SetupCollectionModel::setData(const QModelIndex& index, const QVariant& val
     {
         Item& item = m_collections[index.internalId()];
         item.label = value.toString();
-        emit dataChanged(index, index);
+        Q_EMIT dataChanged(index, index);
     }
 
     return false;
@@ -1244,7 +1244,7 @@ bool SetupCollectionModel::askForNewCollectionPath(int category, QString* const 
     QString messageFromManager, deviceIcon;
     QList<CollectionLocation> assumeDeleted;
 
-    foreach (const Item& item, m_collections)
+    Q_FOREACH (const Item& item, m_collections)
     {
         if (item.deleted && !item.location.isNull())
         {
@@ -1269,7 +1269,7 @@ bool SetupCollectionModel::askForNewCollectionPath(int category, QString* const 
 
     // If there are other added collections then CollectionManager does not know about them. Check here.
 
-    foreach (const Item& item, m_collections)
+    Q_FOREACH (const Item& item, m_collections)
     {
         if (!item.deleted && item.location.isNull())
         {

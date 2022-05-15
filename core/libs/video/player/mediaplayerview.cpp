@@ -434,7 +434,7 @@ void MediaPlayerView::slotThemeChanged()
 void MediaPlayerView::slotEscapePressed()
 {
     escapePreview();
-    emit signalEscapePreview();
+    Q_EMIT signalEscapePreview();
 }
 
 void MediaPlayerView::slotRotateVideo()

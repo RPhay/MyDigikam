@@ -130,7 +130,7 @@ void DNGConverterTask::run()
             ad.fileUrl       = d->url;
             ad.message       = identify;
             ad.result        = DNGWriter::PROCESS_COMPLETE;
-            emit signalFinished(ad);
+            Q_EMIT signalFinished(ad);
             break;
         }
 
@@ -140,7 +140,7 @@ void DNGConverterTask::run()
             ad1.action   = PROCESS;
             ad1.fileUrl  = d->url;
             ad1.starting = true;
-            emit signalStarting(ad1);
+            Q_EMIT signalStarting(ad1);
 
             QString destPath;
 
@@ -162,7 +162,7 @@ void DNGConverterTask::run()
             ad2.fileUrl  = d->url;
             ad2.destPath = destPath;
             ad2.result   = ret;
-            emit signalFinished(ad2);
+            Q_EMIT signalFinished(ad2);
             break;
         }
 
@@ -173,7 +173,7 @@ void DNGConverterTask::run()
         }
     }
 
-    emit signalDone();
+    Q_EMIT signalDone();
 }
 
 void DNGConverterTask::slotCancel()

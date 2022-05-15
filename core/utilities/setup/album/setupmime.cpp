@@ -245,7 +245,7 @@ void SetupMime::applySettings()
 
     QString imageFilter = d->imageFileFilterEdit->text();
 
-    foreach (const QString& format, coreImageFormats)
+    Q_FOREACH (const QString& format, coreImageFormats)
     {
         if (imageFilter.contains(QLatin1Char('-')     + format) ||
             imageFilter.contains(QLatin1String("-*.") + format))

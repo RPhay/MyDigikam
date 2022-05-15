@@ -432,7 +432,7 @@ void FlickrWindow::slotLinkingSucceeded()
 
     KSharedConfigPtr config = KSharedConfig::openConfig();
 
-    foreach (const QString& group, config->groupList())
+    Q_FOREACH (const QString& group, config->groupList())
     {
         if (!(group.contains(d->serviceName)))
         {
@@ -512,7 +512,7 @@ QString FlickrWindow::guessSensibleSetName(const QList<QUrl>& urlList) const
 
     // Extract last component of directory
 
-    foreach (const QUrl& url, urlList)
+    Q_FOREACH (const QUrl& url, urlList)
     {
         QString dir      = url.adjusted(QUrl::RemoveFilename | QUrl::StripTrailingSlash).toLocalFile();
         QStringList list = dir.split(QLatin1Char('/'));

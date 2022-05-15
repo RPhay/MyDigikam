@@ -60,7 +60,7 @@ AVOutput::~AVOutput()
         d.filter_context = nullptr;
     }
 
-    foreach (Filter* f, d.pending_uninstall_filters)
+    Q_FOREACH (Filter* f, d.pending_uninstall_filters)
     {
         d.filters.removeAll(f);
     }
@@ -152,7 +152,7 @@ void AVOutput::detach(OutputSet* set)
         return;
     }
 
-    foreach (OutputSet* set2, d.output_sets)
+    Q_FOREACH (OutputSet* set2, d.output_sets)
     {
         set2->removeOutput(this);
     }
@@ -221,7 +221,7 @@ bool AVOutput::onHanlePendingTasks()
     if (d.pending_uninstall_filters.isEmpty())
         return false;
 
-    foreach (Filter *filter, d.pending_uninstall_filters)
+    Q_FOREACH (Filter *filter, d.pending_uninstall_filters)
     {
         d.filters.removeAll(filter);
     }

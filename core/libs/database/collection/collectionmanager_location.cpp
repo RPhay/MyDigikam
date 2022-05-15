@@ -82,7 +82,7 @@ CollectionLocation CollectionManager::addLocation(const QUrl& fileUrl, const QSt
                                           d->volumeIdentifier(path), QLatin1String("/"), label);
     }
 
-    // Do not emit the locationAdded signal here, it is done in updateLocations()
+    // Do not Q_EMIT the locationAdded signal here, it is done in updateLocations()
 
     updateLocations();
 
@@ -103,7 +103,7 @@ CollectionLocation CollectionManager::addNetworkLocation(const QUrl& fileUrl, co
     CoreDbAccess().db()->addAlbumRoot(AlbumRoot::Network,
                                       d->networkShareIdentifier(path), QLatin1String("/"), label);
 
-    // Do not emit the locationAdded signal here, it is done in updateLocations()
+    // Do not Q_EMIT the locationAdded signal here, it is done in updateLocations()
 
     updateLocations();
 
@@ -173,7 +173,7 @@ CollectionLocation CollectionManager::refreshLocation(const CollectionLocation& 
         albumLoc->setType((CollectionLocation::Type)type);
 
         locker.unlock();
-        emit locationPropertiesChanged(*albumLoc);
+        Q_EMIT locationPropertiesChanged(*albumLoc);
     }
     else
     {
@@ -208,10 +208,10 @@ CollectionLocation CollectionManager::refreshLocation(const CollectionLocation& 
         albumLoc->identifier   = d->volumeIdentifier(path);
 
         locker.unlock();
-        emit locationPropertiesChanged(*albumLoc);
+        Q_EMIT locationPropertiesChanged(*albumLoc);
     }
 
-    // Do not emit the locationAdded signal here, it is done in updateLocations()
+    // Do not Q_EMIT the locationAdded signal here, it is done in updateLocations()
 
     updateLocations();
 
@@ -311,7 +311,7 @@ CollectionManager::LocationCheckResult CollectionManager::checkLocation(const QU
             {
                 bool hasOtherLocation = false;
 
-                foreach (AlbumRootLocation* const otherLocation, d->locations)
+                Q_FOREACH (AlbumRootLocation* const otherLocation, d->locations)
                 {
                     QUrl otherUrl(otherLocation->identifier);
 
@@ -512,7 +512,7 @@ void CollectionManager::removeLocation(const CollectionLocation& location)
         access.db()->deleteAlbumRoot(albumLoc->id());
     }
 
-    // Do not emit the locationRemoved signal here, it is done in updateLocations()
+    // Do not Q_EMIT the locationRemoved signal here, it is done in updateLocations()
 
     updateLocations();
 }
@@ -524,7 +524,7 @@ QList<CollectionLocation> CollectionManager::checkHardWiredLocations()
 
     QReadLocker locker(&d->lock);
 
-    foreach (AlbumRootLocation* const location, d->locations)
+    Q_FOREACH (AlbumRootLocation* const location, d->locations)
     {
         // Hardwired and unavailable?
 
@@ -562,7 +562,7 @@ void CollectionManager::migrationCandidates(const CollectionLocation& location,
 
     // Find possible new volumes where the specific path is found.
 
-    foreach (const SolidVolumeInfo& info, volumes)
+    Q_FOREACH (const SolidVolumeInfo& info, volumes)
     {
         if (info.isMounted && !info.path.isEmpty())
         {
@@ -623,7 +623,7 @@ void CollectionManager::setLabel(const CollectionLocation& location, const QStri
 
     locker.unlock();
 
-    emit locationPropertiesChanged(*albumLoc);
+    Q_EMIT locationPropertiesChanged(*albumLoc);
 }
 
 void CollectionManager::changeType(const CollectionLocation& location, int type)
@@ -648,7 +648,7 @@ void CollectionManager::changeType(const CollectionLocation& location, int type)
 
     locker.unlock();
 
-    emit locationPropertiesChanged(*albumLoc);
+    Q_EMIT locationPropertiesChanged(*albumLoc);
 }
 
 QList<CollectionLocation> CollectionManager::allLocations()
@@ -657,7 +657,7 @@ QList<CollectionLocation> CollectionManager::allLocations()
 
     QList<CollectionLocation> list;
 
-    foreach (AlbumRootLocation* const location, d->locations)
+    Q_FOREACH (AlbumRootLocation* const location, d->locations)
     {
         list << *location;
     }
@@ -671,7 +671,7 @@ QList<CollectionLocation> CollectionManager::allAvailableLocations()
 
     QList<CollectionLocation> list;
 
-    foreach (AlbumRootLocation* const location, d->locations)
+    Q_FOREACH (AlbumRootLocation* const location, d->locations)
     {
         if (location->status() == CollectionLocation::LocationAvailable)
         {
@@ -717,7 +717,7 @@ CollectionLocation CollectionManager::locationForAlbumRootPath(const QString& al
 
     QReadLocker locker(&d->lock);
 
-    foreach (AlbumRootLocation* const location, d->locations)
+    Q_FOREACH (AlbumRootLocation* const location, d->locations)
     {
         if (location->albumRootPath() == albumRootPath)
         {   // cppcheck-suppress useStlAlgorithm
@@ -737,7 +737,7 @@ CollectionLocation CollectionManager::locationForPath(const QString& givenPath)
 {
     QReadLocker locker(&d->lock);
 
-    foreach (AlbumRootLocation* const location, d->locations)
+    Q_FOREACH (AlbumRootLocation* const location, d->locations)
     {
         QString rootPath = location->albumRootPath();
         QString filePath = QDir::fromNativeSeparators(givenPath);
@@ -775,7 +775,7 @@ void CollectionManager::updateLocations()
     QMap<int, AlbumRootLocation*> locs = d->locations;
     d->locations.clear();
 
-    foreach (const AlbumRootInfo& info, infos)
+    Q_FOREACH (const AlbumRootInfo& info, infos)
     {
         if (locs.contains(info.id))
         {
@@ -790,12 +790,12 @@ void CollectionManager::updateLocations()
 
     // delete old locations
 
-    foreach (AlbumRootLocation* const location, locs)
+    Q_FOREACH (AlbumRootLocation* const location, locs)
     {
         CollectionLocation::Status oldStatus = location->status();
         location->setStatus(CollectionLocation::LocationDeleted);
         locker.unlock();
-        emit locationStatusChanged(*location, oldStatus);
+        Q_EMIT locationStatusChanged(*location, oldStatus);
         locker.relock();
         delete location;
     }
@@ -804,7 +804,7 @@ void CollectionManager::updateLocations()
 
     QList<CollectionLocation::Status> oldStatus;
 
-    foreach (AlbumRootLocation* const location, d->locations)
+    Q_FOREACH (AlbumRootLocation* const location, d->locations)
     {
         oldStatus << location->status();
         bool available = false;
@@ -812,7 +812,7 @@ void CollectionManager::updateLocations()
 
         if (location->type() == CollectionLocation::TypeNetwork)
         {
-            foreach (const QString& path, d->networkShareMountPathsFromIdentifier(location))
+            Q_FOREACH (const QString& path, d->networkShareMountPathsFromIdentifier(location))
             {
                 QFileInfo fileInfo(path);
                 available    = (fileInfo.isReadable() &&
@@ -873,16 +873,16 @@ void CollectionManager::updateLocations()
         location->setStatusFromFlags();
     }
 
-    // emit status changes (and new locations)
+    // Q_EMIT status changes (and new locations)
 
     int i = 0;
 
-    foreach (AlbumRootLocation* const location, d->locations)
+    Q_FOREACH (AlbumRootLocation* const location, d->locations)
     {
         if (oldStatus.at(i) != location->status())
         {
             locker.unlock();
-            emit locationStatusChanged(*location, oldStatus.at(i));
+            Q_EMIT locationStatusChanged(*location, oldStatus.at(i));
             locker.relock();
         }
 

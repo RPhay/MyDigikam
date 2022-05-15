@@ -100,7 +100,7 @@ bool WSAuthenticationPage::slotUrlChanged(const QUrl& url)
         urlString.length() >= m_callbackUrl.length() &&
         urlString.left(m_callbackUrl.length()) == m_callbackUrl)
     {
-        emit callbackCatched(urlString);
+        Q_EMIT callbackCatched(urlString);
         return false;
     }
 
@@ -176,7 +176,7 @@ QMap<QString, QString> WSAuthenticationPageView::parseUrlFragment(const QString&
     QMap<QString, QString> result;
     QStringList listArgs = urlFragment.split(QLatin1Char('&'));
 
-    foreach (const QString& arg, listArgs)
+    Q_FOREACH (const QString& arg, listArgs)
     {
         QStringList pair = arg.split(QLatin1Char('='));
         result.insert(pair.first(), pair.last());
@@ -219,7 +219,7 @@ void WSAuthenticationPageView::slotCallbackCatched(const QString& callbackUrl)
     qCDebug(DIGIKAM_WEBSERVICES_LOG) << "url fragment: " << url.fragment();
 
     QMap<QString, QString> res = parseUrlFragment(url.fragment());
-    emit m_WSAuthentication->signalResponseTokenReceived(res);
+    Q_EMIT m_WSAuthentication->signalResponseTokenReceived(res);
 }
 
 // ----------------------------------------------------------------------------
@@ -345,7 +345,7 @@ void WSAuthenticationWizard::slotAuthenticationComplete(bool isLinked)
                               "</qt>"));
     }
 
-    emit completeChanged();
+    Q_EMIT completeChanged();
 }
 
 } // namespace DigikamGenericUnifiedPlugin

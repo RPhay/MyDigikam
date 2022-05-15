@@ -127,7 +127,7 @@ void WSSelectUserDlg::reactivate()
 
     d->userComboBox->clear();
 
-    foreach (const QString& group, config->groupList())
+    Q_FOREACH (const QString& group, config->groupList())
     {
         if (!(group.contains(d->serviceName)))
         {

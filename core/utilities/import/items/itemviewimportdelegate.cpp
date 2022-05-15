@@ -253,13 +253,13 @@ void ItemViewImportDelegate::invalidatePaintingCache()
 
     if (oldGridSize != d->gridSize)
     {
-        emit gridSizeChanged(d->gridSize);
+        Q_EMIT gridSizeChanged(d->gridSize);
 /*
-        emit sizeHintChanged(QModelIndex());
+        Q_EMIT sizeHintChanged(QModelIndex());
 */
     }
 
-    emit visualChange();
+    Q_EMIT visualChange();
 }
 
 QRect ItemViewImportDelegate::drawThumbnail(QPainter* p, const QRect& thumbRect, const QPixmap& background,

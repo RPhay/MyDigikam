@@ -96,7 +96,7 @@ void TrackManager::setVisibility(const bool value)
 
     d->visibility = value;
 
-    emit signalVisibilityChanged(value);
+    Q_EMIT signalVisibilityChanged(value);
 }
 
 void TrackManager::clear()
@@ -160,15 +160,15 @@ void TrackManager::slotTrackFilesFinished()
     d->trackList << d->trackPendingList;
     QList<TrackChanges> trackChanges;
 
-    foreach (const Track& track, d->trackPendingList)
+    Q_FOREACH (const Track& track, d->trackPendingList)
     {
         trackChanges << TrackChanges(track.id, ChangeAdd);
     }
 
     d->trackPendingList.clear();
 
-    emit signalAllTrackFilesReady();
-    emit signalTracksChanged(trackChanges);
+    Q_EMIT signalAllTrackFilesReady();
+    Q_EMIT signalTracksChanged(trackChanges);
 }
 
 TrackManager::Track::List TrackManager::getTrackList() const
@@ -199,7 +199,7 @@ quint64 TrackManager::getNextFreeTrackId()
 
 TrackManager::Track TrackManager::getTrackById(const quint64 trackId) const
 {
-    foreach (const Track& track, d->trackList)
+    Q_FOREACH (const Track& track, d->trackList)
     {
         if (track.id == trackId)
         {   // cppcheck-suppress useStlAlgorithm

@@ -42,7 +42,7 @@ void ItemIconView::toggleTag(int tagID)
     ItemInfoList tagToRemove, tagToAssign;
     const ItemInfoList selectedList = selectedInfoList(ApplicationSettings::Metadata);
 
-    foreach (const ItemInfo& info, selectedList)
+    Q_FOREACH (const ItemInfo& info, selectedList)
     {
         if (info.tagIds().contains(tagID))
         {
@@ -68,7 +68,7 @@ void ItemIconView::slotAssignPickLabel(int pickId)
     const ItemInfoList& itemInfos = selectedInfoList(ApplicationSettings::Metadata);
     int applyPickId               = NoPickLabel;
 
-    foreach (const ItemInfo& info, itemInfos)
+    Q_FOREACH (const ItemInfo& info, itemInfos)
     {
         if (info.pickLabel() != pickId)
         {
@@ -85,7 +85,7 @@ void ItemIconView::slotAssignColorLabel(int colorId)
     const ItemInfoList& itemInfos = selectedInfoList(ApplicationSettings::Metadata);
     int applyColorId              = NoColorLabel;
 
-    foreach (const ItemInfo& info, itemInfos)
+    Q_FOREACH (const ItemInfo& info, itemInfos)
     {
         if (info.colorLabel() != colorId)
         {
@@ -102,7 +102,7 @@ void ItemIconView::slotAssignRating(int rating)
     const ItemInfoList& itemInfos = selectedInfoList(ApplicationSettings::Metadata);
     int applyRating               = NoRating;
 
-    foreach (const ItemInfo& info, itemInfos)
+    Q_FOREACH (const ItemInfo& info, itemInfos)
     {
         if (info.rating() != rating)
         {

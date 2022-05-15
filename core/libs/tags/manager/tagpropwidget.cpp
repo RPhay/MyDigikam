@@ -447,7 +447,7 @@ void TagPropWidget::slotDiscardChanges()
 void TagPropWidget::slotReturnPressed()
 {
     slotSaveChanges();
-    emit signalTitleEditReady();
+    Q_EMIT signalTitleEditReady();
 }
 
 void TagPropWidget::enableItems(TagPropWidget::ItemsEnable value)

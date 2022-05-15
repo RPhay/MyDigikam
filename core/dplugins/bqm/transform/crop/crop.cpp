@@ -177,7 +177,7 @@ void Crop::slotDisableParameters(bool b)
 
     if (b)
     {
-        emit signalAutoCrop();
+        Q_EMIT signalAutoCrop();
     }
 }
 

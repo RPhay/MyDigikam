@@ -146,7 +146,7 @@ void DatabaseServer::run()
     while (databaseServerStateEnum != stopped);
 
     qCDebug(DIGIKAM_DATABASESERVER_LOG) << "Shutting down database server";
-    emit done();
+    Q_EMIT done();
 }
 
 DatabaseServerError DatabaseServer::startDatabaseProcess()

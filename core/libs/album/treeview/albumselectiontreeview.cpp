@@ -311,7 +311,7 @@ void AlbumSelectionTreeView::setEnableToolTips(bool enable)
 
 void AlbumSelectionTreeView::slotFindDuplicates()
 {
-    emit signalFindDuplicates(QList<PAlbum*> { d->albumModificationHelper->boundAlbum(sender()) });
+    Q_EMIT signalFindDuplicates(QList<PAlbum*> { d->albumModificationHelper->boundAlbum(sender()) });
 }
 
 void AlbumSelectionTreeView::slotScanForFaces()
@@ -360,7 +360,7 @@ void AlbumSelectionTreeView::slotRepairHiddenItems()
     int needTaggingTag     = TagsCache::instance()->getOrCreateInternalTag(InternalTagName::needTaggingHistoryGraph());
     int originalVersionTag = TagsCache::instance()->getOrCreateInternalTag(InternalTagName::originalVersion());
 
-    foreach (const qlonglong& id, CoreDbAccess().db()->getItemIDsInAlbum(album->id()))
+    Q_FOREACH (const qlonglong& id, CoreDbAccess().db()->getItemIDsInAlbum(album->id()))
     {
         ItemInfo info(id);
 

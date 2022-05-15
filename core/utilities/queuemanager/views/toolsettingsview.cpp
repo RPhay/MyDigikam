@@ -172,7 +172,7 @@ ToolSettingsView::ToolSettingsView(QWidget* const parent)
 
 ToolSettingsView::~ToolSettingsView()
 {
-    foreach (BatchTool* const tool, BatchToolsFactory::instance()->toolsList())
+    Q_FOREACH (BatchTool* const tool, BatchToolsFactory::instance()->toolsList())
     {
         tool->deleteSettingsWidget();
     }
@@ -301,7 +301,7 @@ void ToolSettingsView::slotSettingsChanged(const BatchToolSettings& settings)
 {
     d->set.settings = settings;
 
-    emit signalSettingsChanged(d->set);
+    Q_EMIT signalSettingsChanged(d->set);
 }
 
 } // namespace Digikam

@@ -58,7 +58,7 @@ void DetectionWorker::process(FacePipelineExtendedPackage::Ptr package)
 
     package->processFlags |= FacePipelinePackage::ProcessedByDetector;
 
-    emit processed(package);
+    Q_EMIT processed(package);
 }
 
 QImage DetectionWorker::scaleForDetection(const DImg& image) const

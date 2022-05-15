@@ -284,7 +284,7 @@ void NRSettings::slotDisableParameters(bool b)
 
     if (b)
     {
-        emit signalEstimateNoise();
+        Q_EMIT signalEstimateNoise();
     }
 }
 

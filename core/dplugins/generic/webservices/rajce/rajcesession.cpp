@@ -212,7 +212,7 @@ QDebug operator<<(QDebug d, const DigikamGenericRajcePlugin::RajceSession& s)
 
     DigikamGenericRajcePlugin::RajceAlbum a;
 
-    foreach (a, s.albums())
+    Q_FOREACH (a, s.albums())
     {
         str << a << ", ";
     }

@@ -163,14 +163,14 @@ void DFontSelect::slotOpenFontDialog()
     if (ok)
     {
         setFont(f);
-        emit signalFontChanged();
+        Q_EMIT signalFontChanged();
     }
 }
 
 void DFontSelect::slotChangeMode(int index)
 {
     setMode((index == CustomFont) ? CustomFont : SystemFont);
-    emit signalFontChanged();
+    Q_EMIT signalFontChanged();
 }
 
 } // namespace Digikam

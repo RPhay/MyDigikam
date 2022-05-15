@@ -519,7 +519,7 @@ void TimeAdjustSettings::detAdjustmentByClockPhotoUrl(const QUrl& url)
         deltaTime.setHMS(dvalues.deltaHours, dvalues.deltaMinutes, dvalues.deltaSeconds);
         d->adjTimeInput->setTime(deltaTime);
 
-        emit signalSettingsChanged();
+        Q_EMIT signalSettingsChanged();
     }
 
     delete dlg;
@@ -548,7 +548,7 @@ void TimeAdjustSettings::slotSrcTimestampChanged()
         d->useCustomDateTodayBtn->setEnabled(true);
     }
 
-    emit signalSettingsChanged();
+    Q_EMIT signalSettingsChanged();
 }
 
 void TimeAdjustSettings::slotResetDateToCurrent()
@@ -557,7 +557,7 @@ void TimeAdjustSettings::slotResetDateToCurrent()
     d->useCustDateInput->setDateTime(currentDateTime);
     d->useCustTimeInput->setDateTime(currentDateTime);
 
-    emit signalSettingsChanged();
+    Q_EMIT signalSettingsChanged();
 }
 
 void TimeAdjustSettings::slotAdjustmentTypeChanged()
@@ -569,7 +569,7 @@ void TimeAdjustSettings::slotAdjustmentTypeChanged()
     d->adjDaysLabel->setEnabled(isAdjustment);
     d->adjTimeInput->setEnabled(isAdjustment);
 
-    emit signalSettingsChanged();
+    Q_EMIT signalSettingsChanged();
 }
 
 void TimeAdjustSettings::slotDetAdjustmentByClockPhotoUrl(const QUrl& url)

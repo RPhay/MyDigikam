@@ -338,7 +338,7 @@ SetupMisc::SetupMisc(QWidget* const parent)
     d->applicationStyle       = new QComboBox(appStyleHbox);
     d->applicationStyle->setToolTip(i18n("Set this option to choose the default window decoration and looks."));
 
-    foreach (const QString& style, QStyleFactory::keys())
+    Q_FOREACH (const QString& style, QStyleFactory::keys())
     {
         QString sitem = style;
         sitem[0]      = sitem[0].toUpper();
@@ -367,7 +367,7 @@ SetupMisc::SetupMisc(QWidget* const parent)
     themeWhiteList.insert(QLatin1String("humanity"),        i18nc("icon theme", "Humanity"));
     themeWhiteList.insert(QLatin1String("oxygen"),          i18nc("icon theme", "Oxygen"));
 
-    foreach (const QString& path, QIcon::themeSearchPaths())
+    Q_FOREACH (const QString& path, QIcon::themeSearchPaths())
     {
         QDirIterator it(path, QDir::Dirs       |
                               QDir::NoSymLinks |

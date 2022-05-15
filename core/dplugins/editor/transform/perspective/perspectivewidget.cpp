@@ -522,7 +522,7 @@ void PerspectiveWidget::updatePixmap()
 
     p.end();
 
-    emit signalPerspectiveChanged(getTargetSize(), getAngleTopLeft(), getAngleTopRight(),
+    Q_EMIT signalPerspectiveChanged(getTargetSize(), getAngleTopLeft(), getAngleTopRight(),
                                   getAngleBottomLeft(), getAngleBottomRight(), d->validPerspective);
 }
 

@@ -99,7 +99,7 @@ void PresentationAdvPage::slotUseMillisecondsToggled()
 {
     m_sharedData->useMilliseconds = m_useMillisecondsCheckBox->isChecked();
 
-    emit useMillisecondsToggled();
+    Q_EMIT useMillisecondsToggled();
 }
 
 } // namespace DigikamGenericPresentationPlugin

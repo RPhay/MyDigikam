@@ -108,7 +108,7 @@ TagProperties::TagProperties(int tagId)
     d->tagId                      = tagId;
     QList<TagProperty> properties = CoreDbAccess().db()->getTagProperties(tagId);
 
-    foreach (const TagProperty& p, properties)
+    Q_FOREACH (const TagProperty& p, properties)
     {
         d->properties.insert(p.property, p.value);
     }

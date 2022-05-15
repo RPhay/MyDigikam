@@ -499,7 +499,7 @@ void ColumnPhotoProperties::setConfiguration(const TableViewColumnConfiguration&
 {
     configuration = newConfiguration;
 
-    emit signalAllDataChanged();
+    Q_EMIT signalAllDataChanged();
 }
 
 void ColumnPhotoConfigurationWidget::slotUpdateUI()

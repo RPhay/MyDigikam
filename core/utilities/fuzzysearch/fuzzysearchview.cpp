@@ -291,7 +291,7 @@ void FuzzySearchView::setActive(bool val)
                                "The Similarity Search Tools will not be operational "
                                "without pre-generated fingerprints. Please generate "
                                "the fingerprints first.");
-            emit signalNotificationError(msg, DNotificationWidget::Warning);
+            Q_EMIT signalNotificationError(msg, DNotificationWidget::Warning);
         }
 
         d->fingerprintsChecked = true;
@@ -334,7 +334,7 @@ void FuzzySearchView::slotTabChanged(int tab)
         {
             QList<SAlbum*> sAlbums = d->findDuplicatesPanel->currentFindDuplicatesAlbums();
 
-            foreach (SAlbum* const album, sAlbums)
+            Q_FOREACH (SAlbum* const album, sAlbums)
             {
                 albums << album;
             }

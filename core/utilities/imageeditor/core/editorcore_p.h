@@ -355,7 +355,7 @@ void EditorCore::Private::saveAs(const QString& filePath, IOFileSettings* const 
     // No need to toggle off undo, redo or save action during saving using
     // signalUndoStateChanged(), this is will done by GUI implementation directly.
 
-    emit EditorCore::defaultInstance()->signalSavingStarted(filePath);
+    Q_EMIT EditorCore::defaultInstance()->signalSavingStarted(filePath);
 
     filesToSave.clear();
     currentFileToSave = 0;
@@ -427,7 +427,7 @@ void EditorCore::Private::loadCurrent()
                  SharedLoadSaveThread::AccessModeReadWrite,
                  SharedLoadSaveThread::LoadingPolicyFirstRemovePrevious);
 
-    emit EditorCore::defaultInstance()->signalLoadingStarted(currentDescription.filePath);
+    Q_EMIT EditorCore::defaultInstance()->signalLoadingStarted(currentDescription.filePath);
 }
 
 void EditorCore::Private::load(const LoadingDescription& description)
@@ -445,8 +445,8 @@ void EditorCore::Private::load(const LoadingDescription& description)
     }
     else
     {
-        emit EditorCore::defaultInstance()->signalLoadingStarted(currentDescription.filePath);
-        emit EditorCore::defaultInstance()->signalImageLoaded(currentDescription.filePath, true);
+        Q_EMIT EditorCore::defaultInstance()->signalLoadingStarted(currentDescription.filePath);
+        Q_EMIT EditorCore::defaultInstance()->signalImageLoaded(currentDescription.filePath, true);
     }
 }
 

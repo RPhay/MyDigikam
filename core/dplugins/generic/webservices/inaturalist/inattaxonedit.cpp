@@ -43,7 +43,7 @@ void TaxonEdit::focusInEvent(QFocusEvent* e)
 
     if ((e->reason() == Qt::MouseFocusReason) && text().isEmpty())
     {
-        emit inFocus();
+        Q_EMIT inFocus();
     }
 }
 

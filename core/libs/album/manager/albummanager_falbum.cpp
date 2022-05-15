@@ -102,7 +102,7 @@ void AlbumManager::slotPeopleJobData(const QMap<QString, QMap<int, int> >& faces
     {
         typedef QMap<int, int> IntIntMap;
 
-        foreach (const IntIntMap& counts, facesStatMap)
+        Q_FOREACH (const IntIntMap& counts, facesStatMap)
         {
             QMap<int, int>::const_iterator it;
 
@@ -113,7 +113,7 @@ void AlbumManager::slotPeopleJobData(const QMap<QString, QMap<int, int> >& faces
         }
     }
 
-    emit signalFaceCountsDirty(d->fAlbumsCount, d->uAlbumsCount, d->toUpdatedFaces);
+    Q_EMIT signalFaceCountsDirty(d->fAlbumsCount, d->uAlbumsCount, d->toUpdatedFaces);
 
     d->toUpdatedFaces.clear();
 }

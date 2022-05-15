@@ -65,7 +65,7 @@ void FileActionProgress::slotProgressStatus(const QString& st)
 
 void FileActionProgress::slotCompleted()
 {
-    emit signalComplete();
+    Q_EMIT signalComplete();
 
     setComplete();
 }

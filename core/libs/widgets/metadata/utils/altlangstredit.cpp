@@ -355,7 +355,7 @@ void AltLangStrEdit::slotDeleteValue()
 {
     d->values.remove(d->currentLanguage);
     setValues(d->values);
-    emit signalValueDeleted(d->currentLanguage);
+    Q_EMIT signalValueDeleted(d->currentLanguage);
 }
 
 void AltLangStrEdit::slotSelectionChanged()
@@ -375,7 +375,7 @@ void AltLangStrEdit::slotSelectionChanged()
 
     d->languageCB->setToolTip(d->languageCodeMap.value(d->currentLanguage));
 
-    emit signalSelectionChanged(d->currentLanguage);
+    Q_EMIT signalSelectionChanged(d->currentLanguage);
 }
 
 void AltLangStrEdit::setValues(const MetaEngine::AltLangMap& values)
@@ -409,7 +409,7 @@ void AltLangStrEdit::loadLangAltListEntries()
 
     if (!list.isEmpty())
     {
-        foreach (const QString& item, list)
+        Q_FOREACH (const QString& item, list)
         {
               d->languageCB->addItem(item);
               d->languageCB->setItemIcon(d->languageCB->count()-1, QIcon::fromTheme(QLatin1String("dialog-ok-apply")).pixmap(16, 16));
@@ -464,7 +464,7 @@ void AltLangStrEdit::slotTextChanged()
         // so we have to check before marking the metadata as modified.
 
         d->values.insert(d->currentLanguage, editedText);
-        emit signalModified(d->currentLanguage, editedText);
+        Q_EMIT signalModified(d->currentLanguage, editedText);
     }
 }
 
@@ -475,7 +475,7 @@ void AltLangStrEdit::addCurrent()
     d->values.insert(d->currentLanguage, text);
     loadLangAltListEntries();
     d->delValueButton->setEnabled(true);
-    emit signalValueAdded(d->currentLanguage, text);
+    Q_EMIT signalValueAdded(d->currentLanguage, text);
 }
 
 void AltLangStrEdit::setLinesVisible(uint lines)

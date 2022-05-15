@@ -82,22 +82,22 @@ void ItemAttributesWatch::slotImageChange(const ImageChangeset& changeset)
         (set & DatabaseFields::ModificationDate) ||
         (set & DatabaseFields::Rating))
     {
-        foreach (const qlonglong& imageId, changeset.ids())
+        Q_FOREACH (const qlonglong& imageId, changeset.ids())
         {
             if (set & DatabaseFields::ItemCommentsAll)
             {
-                emit signalImageCaptionChanged(imageId);
+                Q_EMIT signalImageCaptionChanged(imageId);
             }
 
             if ((set & DatabaseFields::CreationDate) ||
                 (set & DatabaseFields::ModificationDate))
             {
-                emit signalImageDateChanged(imageId);
+                Q_EMIT signalImageDateChanged(imageId);
             }
 
             if (set & DatabaseFields::Rating)
             {
-                emit signalImageRatingChanged(imageId);
+                Q_EMIT signalImageRatingChanged(imageId);
             }
         }
     }
@@ -105,15 +105,15 @@ void ItemAttributesWatch::slotImageChange(const ImageChangeset& changeset)
 
 void ItemAttributesWatch::slotImageTagChange(const ImageTagChangeset& changeset)
 {
-    foreach (const qlonglong& imageId, changeset.ids())
+    Q_FOREACH (const qlonglong& imageId, changeset.ids())
     {
-        emit signalImageTagsChanged(imageId);
+        Q_EMIT signalImageTagsChanged(imageId);
     }
 }
 
 void ItemAttributesWatch::fileMetadataChanged(const QUrl& url)
 {
-    emit signalFileMetadataChanged(url);
+    Q_EMIT signalFileMetadataChanged(url);
 }
 
 /*
@@ -128,43 +128,43 @@ void ItemAttributesWatch::slotImageFieldChanged(qlonglong imageId, int field)
     switch (field)
     {
         case DatabaseAttributesWatch::ImageComment:
-            emit signalImageCaptionChanged(imageId);
+            Q_EMIT signalImageCaptionChanged(imageId);
             break;
         case DatabaseAttributesWatch::ImageDate:
-            emit signalImageDateChanged(imageId);
+            Q_EMIT signalImageDateChanged(imageId);
             break;
         case DatabaseAttributesWatch::ImageRating:
-            emit signalImageRatingChanged(imageId);
+            Q_EMIT signalImageRatingChanged(imageId);
             break;
         case DatabaseAttributesWatch::ImageTags:
-            emit signalImageTagsChanged(imageId);
+            Q_EMIT signalImageTagsChanged(imageId);
             break;
     }
 }
 
 void ItemAttributesWatch::imageTagsChanged(qint64 imageId)
 {
-    emit signalImageTagsChanged(imageId);
+    Q_EMIT signalImageTagsChanged(imageId);
 }
 
 void ItemAttributesWatch::imagesChanged(int albumId)
 {
-    emit signalImagesChanged(albumId);
+    Q_EMIT signalImagesChanged(albumId);
 }
 
 void ItemAttributesWatch::imageRatingChanged(qint64 imageId)
 {
-    emit signalImageRatingChanged(imageId);
+    Q_EMIT signalImageRatingChanged(imageId);
 }
 
 void ItemAttributesWatch::imageDateChanged(qint64 imageId)
 {
-    emit signalImageDateChanged(imageId);
+    Q_EMIT signalImageDateChanged(imageId);
 }
 
 void ItemAttributesWatch::imageCaptionChanged(qint64 imageId)
 {
-    emit signalImageCaptionChanged(imageId);
+    Q_EMIT signalImageCaptionChanged(imageId);
 }
 
 */

@@ -80,7 +80,7 @@ void ItemIconView::slotIconView()
 {
     if (viewMode() == StackedView::PreviewImageMode)
     {
-        emit signalThumbSizeChanged(d->thumbSize);
+        Q_EMIT signalThumbSizeChanged(d->thumbSize);
     }
 
     // and switch to icon view
@@ -146,41 +146,41 @@ void ItemIconView::slotViewModeChanged()
     {
         case StackedView::IconViewMode:
         {
-            emit signalSwitchedToIconView();
-            emit signalThumbSizeChanged(d->thumbSize);
+            Q_EMIT signalSwitchedToIconView();
+            Q_EMIT signalThumbSizeChanged(d->thumbSize);
             break;
         }
 
         case StackedView::PreviewImageMode:
         {
-            emit signalSwitchedToPreview();
+            Q_EMIT signalSwitchedToPreview();
             slotZoomFactorChanged(d->stackedview->zoomFactor());
             break;
         }
 
         case StackedView::WelcomePageMode:
         {
-            emit signalSwitchedToIconView();
+            Q_EMIT signalSwitchedToIconView();
             break;
         }
 
         case StackedView::MediaPlayerMode:
         {
-            emit signalSwitchedToPreview();
+            Q_EMIT signalSwitchedToPreview();
             break;
         }
 
         case StackedView::MapWidgetMode:
         {
-            emit signalSwitchedToMapView();
+            Q_EMIT signalSwitchedToMapView();
             // TODO: connect map view's zoom buttons to main status bar zoom buttons
             break;
         }
 
         case StackedView::TableViewMode:
         {
-            emit signalSwitchedToTableView();
-            emit signalThumbSizeChanged(d->thumbSize);
+            Q_EMIT signalSwitchedToTableView();
+            Q_EMIT signalThumbSizeChanged(d->thumbSize);
             break;
         }
 
@@ -189,7 +189,7 @@ void ItemIconView::slotViewModeChanged()
             d->msgNotifyTimer->stop();
             d->errorWidget->animatedHide();
 
-            emit signalSwitchedToTrashView();
+            Q_EMIT signalSwitchedToTrashView();
             break;
         }
     }
@@ -403,7 +403,7 @@ void ItemIconView::slotShowGroupContextMenu(QContextMenuEvent* event,
 {
     QList<qlonglong> selectedImageIDs;
 
-    foreach (const ItemInfo& info, selectedInfos)
+    Q_FOREACH (const ItemInfo& info, selectedInfos)
     {
         selectedImageIDs << info.id();
     }

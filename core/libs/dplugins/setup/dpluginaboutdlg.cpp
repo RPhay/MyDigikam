@@ -112,7 +112,7 @@ DPluginAboutDlg::DPluginAboutDlg(DPlugin* const tool, QWidget* const parent)
 
     QString alist;
 
-    foreach (const DPluginAuthor& auth, tool->authors())
+    Q_FOREACH (const DPluginAuthor& auth, tool->authors())
     {
         alist += QString::fromUtf8("<b>%1</b><ul>"
                                    "<li><i>%2</i></li>"

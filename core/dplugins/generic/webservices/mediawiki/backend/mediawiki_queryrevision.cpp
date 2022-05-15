@@ -424,7 +424,7 @@ void QueryRevision::doWorkProcessReply()
 
                         d->reply->close();
                         d->reply->deleteLater();
-                        //emit revision(QList<Revision>());
+                        //Q_EMIT revision(QList<Revision>());
                         emitResult();
                         return;
                     }
@@ -440,7 +440,7 @@ void QueryRevision::doWorkProcessReply()
                 results[i].setParseTree(results[i].parseTree().replace(QChar(255), QStringLiteral("<")));
             }
 
-            emit revision(results);
+            Q_EMIT revision(results);
             setPercent(100); // Response parsed successfully.
         }
         else
@@ -449,7 +449,7 @@ void QueryRevision::doWorkProcessReply()
             d->reply->close();
             d->reply->deleteLater();
 
-            //emit revision(QList<Revision>());
+            //Q_EMIT revision(QList<Revision>());
         }
     }
     else
@@ -458,7 +458,7 @@ void QueryRevision::doWorkProcessReply()
         d->reply->close();
         d->reply->deleteLater();
 
-        //emit revision(QList<Revision>());
+        //Q_EMIT revision(QList<Revision>());
     }
 
     emitResult();

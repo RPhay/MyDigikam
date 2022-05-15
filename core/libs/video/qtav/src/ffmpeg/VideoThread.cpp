@@ -261,7 +261,7 @@ void VideoThread::applyFilters(VideoFrame& frame)
     {
         // sort filters by format. vo->defaultFormat() is the last
 
-        foreach (Filter* const filter, d.filters)
+        Q_FOREACH (Filter* const filter, d.filters)
         {
             VideoFilter* const vf = static_cast<VideoFilter*>(filter);
 

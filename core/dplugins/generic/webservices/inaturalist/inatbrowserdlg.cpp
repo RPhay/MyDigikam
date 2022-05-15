@@ -240,7 +240,7 @@ void INatBrowserDlg::closeEvent(QCloseEvent* e)
 {
     if (!d->apiKeyFound)
     {
-        emit signalApiToken(QString(), QList<QNetworkCookie>());
+        Q_EMIT signalApiToken(QString(), QList<QNetworkCookie>());
     }
 
     e->accept();
@@ -265,13 +265,13 @@ void INatBrowserDlg::slotLoadingFinished(bool status)
         d->browser->page()->toPlainText(
             [this](const QString& text)
                 {
-                    emit signalWebText(text);
+                    Q_EMIT signalWebText(text);
                 }
         );
 
 #else
 
-        emit signalWebText(d->browser->page()->mainFrame()->toPlainText());
+        Q_EMIT signalWebText(d->browser->page()->mainFrame()->toPlainText());
 
 #endif
 
@@ -309,7 +309,7 @@ void INatBrowserDlg::slotWebText(const QString& text)
 
 #ifdef HAVE_QWEBENGINE
 
-        emit signalApiToken(doc.object()[key].toString(),
+        Q_EMIT signalApiToken(doc.object()[key].toString(),
                             filterCookies(d->cookies.values(), false));
 
 #else
@@ -317,7 +317,7 @@ void INatBrowserDlg::slotWebText(const QString& text)
         const InatBrowserCookieJar* jar = dynamic_cast<const InatBrowserCookieJar*>
             (d->browser->page()->networkAccessManager()->cookieJar());
 
-        emit signalApiToken(doc.object()[key].toString(),
+        Q_EMIT signalApiToken(doc.object()[key].toString(),
                             filterCookies(jar->getAllCookies(), false));
 
 #endif

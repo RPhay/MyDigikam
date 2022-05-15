@@ -284,9 +284,9 @@ void VidSlideTask::run()
 
     if (!venc->open())
     {
-        emit signalMessage(i18n("Failed to open video encoder"), true);
+        Q_EMIT signalMessage(i18n("Failed to open video encoder"), true);
         qCWarning(DIGIKAM_GENERAL_LOG) << "Failed to open video encoder";
-        emit signalDone(false);
+        Q_EMIT signalDone(false);
 
         return;
     }
@@ -300,9 +300,9 @@ void VidSlideTask::run()
 
     if (!aenc->open())
     {
-        emit signalMessage(i18n("Failed to open audio encoder"), true);
+        Q_EMIT signalMessage(i18n("Failed to open audio encoder"), true);
         qCWarning(DIGIKAM_GENERAL_LOG) << "Failed to open audio encoder";
-        emit signalDone(false);
+        Q_EMIT signalDone(false);
 
         return;
     }
@@ -330,9 +330,9 @@ void VidSlideTask::run()
 */
     if (!mux.open())
     {
-        emit signalMessage(i18n("Failed to open muxer"), true);
+        Q_EMIT signalMessage(i18n("Failed to open muxer"), true);
         qCWarning(DIGIKAM_GENERAL_LOG) << "Failed to open muxer";
-        emit signalDone(false);
+        Q_EMIT signalDone(false);
 
         return;
     }
@@ -416,8 +416,8 @@ void VidSlideTask::run()
 
         qCDebug(DIGIKAM_GENERAL_LOG) << "Encoded image" << i << "done";
 
-        emit signalMessage(i18n("Encoding %1 Done", ofile), false);
-        emit signalProgress(i);
+        Q_EMIT signalMessage(i18n("Encoding %1 Done", ofile), false);
+        Q_EMIT signalProgress(i);
     }
 
     // ---------------------------------------------
@@ -451,11 +451,11 @@ void VidSlideTask::run()
 
     if (!m_cancel)
     {
-        emit signalMessage(i18n("Output video is %1", outFile), false);
+        Q_EMIT signalMessage(i18n("Output video is %1", outFile), false);
         d->settings->outputVideo = outFile;
     }
 
-    emit signalDone(!m_cancel);
+    Q_EMIT signalDone(!m_cancel);
 }
 
 } // namespace Digikam

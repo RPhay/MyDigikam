@@ -124,7 +124,7 @@ DProgressDlg::~DProgressDlg()
 
 void DProgressDlg::slotCancel()
 {
-    emit signalCancelPressed();
+    Q_EMIT signalCancelPressed();
 
     close();
 }

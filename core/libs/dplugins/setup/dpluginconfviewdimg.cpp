@@ -59,7 +59,7 @@ void DPluginConfViewDImg::loadPlugins()
 
     if (loader)
     {
-        foreach (DPlugin* const tool, loader->allPlugins())
+        Q_FOREACH (DPlugin* const tool, loader->allPlugins())
         {
             DPluginDImg* const plug = dynamic_cast<DPluginDImg*>(tool);
 

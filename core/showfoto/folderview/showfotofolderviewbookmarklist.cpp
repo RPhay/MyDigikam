@@ -114,7 +114,7 @@ void ShowfotoFolderViewBookmarkList::slotLoadContents()
 
     if (fvitem)
     {
-        emit signalLoadContents(fvitem->path());
+        Q_EMIT signalLoadContents(fvitem->path());
     }
 }
 
@@ -222,7 +222,7 @@ void ShowfotoFolderViewBookmarkList::dropEvent(QDropEvent* e)
                     path.append(QDir::separator());
                 }
 
-                emit signalAddBookmark(path);
+                Q_EMIT signalAddBookmark(path);
 
                 e->acceptProposedAction();
                 return;
@@ -242,7 +242,7 @@ QMimeData* ShowfotoFolderViewBookmarkList::mimeData(const QList<QTreeWidgetItem*
 {
     QList<QUrl> urls;
 
-    foreach (QTreeWidgetItem* const itm, items)
+    Q_FOREACH (QTreeWidgetItem* const itm, items)
     {
         ShowfotoFolderViewBookmarkItem* const vitem = dynamic_cast<ShowfotoFolderViewBookmarkItem*>(itm);
 

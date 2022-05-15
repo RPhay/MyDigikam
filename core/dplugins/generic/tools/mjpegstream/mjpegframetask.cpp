@@ -180,7 +180,7 @@ void MjpegFrameTask::run()
 
                 qtimg = transmngr.currentFrame(ttmout);
 
-                emit signalFrameChanged(imageToJPEGArray(qtimg));
+                Q_EMIT signalFrameChanged(imageToJPEGArray(qtimg));
 
                 QThread::msleep(lround(1000.0 / d->settings.rate));
             }
@@ -219,7 +219,7 @@ void MjpegFrameTask::run()
                                                 QLatin1String("Failed to load image"));
                 }
 
-                emit signalFrameChanged(imageToJPEGArray(qiimg));
+                Q_EMIT signalFrameChanged(imageToJPEGArray(qiimg));
 
                 count++;
 
@@ -237,10 +237,10 @@ void MjpegFrameTask::run()
                                 JPEGsize,
                                 QLatin1String("End of stream"));
 
-    emit signalFrameChanged(imageToJPEGArray(d->endImg));
+    Q_EMIT signalFrameChanged(imageToJPEGArray(d->endImg));
     qCDebug(DIGIKAM_GENERAL_LOG) << "MjpegStream: end of stream";
 
-    emit signalDone();
+    Q_EMIT signalDone();
 }
 
 } // namespace DigikamGenericMjpegStreamPlugin

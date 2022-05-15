@@ -68,7 +68,7 @@ bool JalbumJar::checkDirForPath(const QString& possibleDir)
         qCDebug(DIGIKAM_GENERAL_LOG) << "Found " << path();
     }
 
-    emit signalBinaryValid();
+    Q_EMIT signalBinaryValid();
     return ret;
 }
 

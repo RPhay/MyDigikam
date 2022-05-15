@@ -417,7 +417,7 @@ void ItemScanner::commitTags()
     QVector<int> pickTags  = TagsCache::instance()->pickLabelTags();
     QList<int> removeTags;
 
-    foreach (int cTag, currentTags)
+    Q_FOREACH (int cTag, currentTags)
     {
         if ((d->commit.hasColorTag && colorTags.contains(cTag)) ||
             (d->commit.hasPickTag && pickTags.contains(cTag)))
@@ -463,7 +463,7 @@ void ItemScanner::commitFaces()
     QSize size                         = d->img.size();
     int orientation                    = d->img.orientation();
 
-    foreach (const FaceTagsIface& face, editor.databaseFaces(d->scanInfo.id))
+    Q_FOREACH (const FaceTagsIface& face, editor.databaseFaces(d->scanInfo.id))
     {
         databaseRects << face.region().toRect();
     }

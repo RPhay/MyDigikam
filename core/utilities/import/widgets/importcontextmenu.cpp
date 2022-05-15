@@ -203,7 +203,7 @@ void ImportContextMenuHelper::addServicesMenu(const QList<QUrl>& selectedItems)
     QStringList    mimeTypes;
     KService::List offers;
 
-    foreach (const QUrl& item, d->selectedItems)
+    Q_FOREACH (const QUrl& item, d->selectedItems)
     {
         const QString mimeType = QMimeDatabase().mimeTypeForFile(item.toLocalFile(), QMimeDatabase::MatchExtension).name();
 
@@ -221,7 +221,7 @@ void ImportContextMenuHelper::addServicesMenu(const QList<QUrl>& selectedItems)
         const QString constraintTemplate = QString::fromUtf8("'%1' in ServiceTypes");
         QStringList   constraints;
 
-        foreach (const QString& mimeType, mimeTypes)
+        Q_FOREACH (const QString& mimeType, mimeTypes)
         {
             constraints << constraintTemplate.arg(mimeType);
         }
@@ -262,7 +262,7 @@ void ImportContextMenuHelper::addServicesMenu(const QList<QUrl>& selectedItems)
         QAction* const serviceAction = servicesMenu->menuAction();
         serviceAction->setText(i18nc("@title:menu open with desktop application", "Open With"));
 
-        foreach (KService::Ptr service, offers)
+        Q_FOREACH (KService::Ptr service, offers)
         {
             QString name          = service->name().replace(QLatin1Char('&'), QLatin1String("&&"));
             QAction* const action = servicesMenu->addAction(name);
@@ -447,7 +447,7 @@ void ImportContextMenuHelper::addLabelsAction()
 void ImportContextMenuHelper::slotABCMenuTriggered(QAction* action)
 {
     QString name = action->iconText();
-    emit signalAddNewTagFromABCMenu(name);
+    Q_EMIT signalAddNewTagFromABCMenu(name);
 }
 
 void ImportContextMenuHelper::setImportFilterModel(ImportFilterModel* model)
@@ -469,7 +469,7 @@ QAction* ImportContextMenuHelper::exec(const QPoint& pos, QAction* at)
             if (choice == it.value())
             {
 /*
-                emit signalAddToExistingQueue(it.key());
+                Q_EMIT signalAddToExistingQueue(it.key());
 */
                 return choice;
             }

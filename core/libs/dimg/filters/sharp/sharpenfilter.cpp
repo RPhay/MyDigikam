@@ -262,7 +262,7 @@ bool SharpenFilter::convolveImage(const unsigned int order, const double* const 
             );
         }
 
-        foreach (QFuture<void> t, tasks)
+        Q_FOREACH (QFuture<void> t, tasks)
         {
             t.waitForFinished();
         }

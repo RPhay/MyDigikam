@@ -675,7 +675,7 @@ void OnlineVersionDlg::slotHelp()
 void OnlineVersionDlg::slotSetupUpdate()
 {
     close();
-    emit signalSetupUpdate();
+    Q_EMIT signalSetupUpdate();
 }
 
 } // namespace Digikam

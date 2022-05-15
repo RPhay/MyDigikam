@@ -279,7 +279,7 @@ void TagsManager::slotDeleteAction()
     QStringList tagsWithImages;
     QMultiMap<int, TAlbum*> sortedTags;
 
-    foreach (const QModelIndex& index, selected)
+    Q_FOREACH (const QModelIndex& index, selected)
     {
         if (!index.isValid())
         {
@@ -629,7 +629,7 @@ void TagsManager::slotRemoveTagsFromImgs()
         return;
     }
 
-    foreach (const QModelIndex& index, selList)
+    Q_FOREACH (const QModelIndex& index, selList)
     {
         TAlbum* const t = static_cast<TAlbum*>(d->tagMngrView->albumForIndex(index));
 
@@ -870,7 +870,7 @@ void TagsManager::setHelpText(QAction* const action, const QString& text)
 
 void TagsManager::enableRootTagActions(bool value)
 {
-    foreach (QAction* const action, d->rootDisabledOptions)
+    Q_FOREACH (QAction* const action, d->rootDisabledOptions)
     {
         if (value)
         {
@@ -962,7 +962,7 @@ void TagsManager::slotMarkNotAssignedTags()
     model->clearSelection();
     QList<int> toMark;
 
-    foreach (const QModelIndex& index, redNodes)
+    Q_FOREACH (const QModelIndex& index, redNodes)
     {
         QModelIndex current = index;
 

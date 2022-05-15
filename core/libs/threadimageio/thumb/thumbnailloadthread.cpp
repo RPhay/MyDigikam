@@ -272,7 +272,7 @@ bool ThumbnailLoadThread::find(const ThumbnailIdentifier& identifier,
         if (emitSignal)
         {
             load(description);
-            emit signalThumbnailLoaded(description, QPixmap(*pix));
+            Q_EMIT signalThumbnailLoaded(description, QPixmap(*pix));
         }
 
         return true;
@@ -505,7 +505,7 @@ void ThumbnailLoadThread::thumbnailLoaded(const LoadingDescription& loadingDescr
     if (!d->notifiedForResults)
     {
         d->notifiedForResults = true;
-        emit thumbnailsAvailable();
+        Q_EMIT thumbnailsAvailable();
     }
 }
 
@@ -524,7 +524,7 @@ void ThumbnailLoadThread::slotThumbnailsAvailable()
         d->notifiedForResults = false;
     }
 
-    foreach (const ThumbnailResult& result, results)
+    Q_FOREACH (const ThumbnailResult& result, results)
     {
         slotThumbnailLoaded(result.loadingDescription, result.image);
     }
@@ -569,7 +569,7 @@ void ThumbnailLoadThread::slotThumbnailLoaded(const LoadingDescription& descript
         cache->putThumbnail(description.cacheKey(), pix, description.filePath);
     }
 
-    emit signalThumbnailLoaded(description, pix);
+    Q_EMIT signalThumbnailLoaded(description, pix);
 }
 
 QPixmap ThumbnailLoadThread::surrogatePixmap(const LoadingDescription& description)
@@ -635,7 +635,7 @@ void ThumbnailLoadThread::deleteThumbnail(const QString& filePath)
         LoadingCache::CacheLock lock(cache);
         QStringList possibleKeys  = LoadingDescription::possibleThumbnailCacheKeys(filePath);
 
-        foreach (const QString& cacheKey, possibleKeys)
+        Q_FOREACH (const QString& cacheKey, possibleKeys)
         {
             cache->removeThumbnail(cacheKey);
         }
@@ -770,7 +770,7 @@ int ThumbnailImageCatcher::enqueue()
 
     QMutexLocker lock(&d->mutex);
 
-    foreach (const LoadingDescription& description, descriptions)
+    Q_FOREACH (const LoadingDescription& description, descriptions)
     {
         d->tasks << Private::CatcherResult(description);
     }
@@ -790,7 +790,7 @@ QList<QImage> ThumbnailImageCatcher::waitForThumbnails()
 
     // first, handle results received between request and calling this method
 
-    foreach (const Private::CatcherResult& result, d->intermediate)
+    Q_FOREACH (const Private::CatcherResult& result, d->intermediate)
     {
         d->harvest(result.description, result.image);
     }
@@ -806,7 +806,7 @@ QList<QImage> ThumbnailImageCatcher::waitForThumbnails()
 
     QList<QImage> result;
 
-    foreach (const Private::CatcherResult& task, d->tasks)
+    Q_FOREACH (const Private::CatcherResult& task, d->tasks)
     {
         result << task.image;
     }

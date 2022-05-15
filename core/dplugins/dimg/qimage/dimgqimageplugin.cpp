@@ -112,7 +112,7 @@ QString DImgQImagePlugin::typeMimes() const
 {
     QString ret;
 
-    foreach (const QByteArray& ba, QImageReader::supportedImageFormats())
+    Q_FOREACH (const QByteArray& ba, QImageReader::supportedImageFormats())
     {
         ret += QString::fromUtf8("%1 ").arg(QString::fromUtf8(ba).toUpper());
     }
@@ -139,7 +139,7 @@ int DImgQImagePlugin::canRead(const QFileInfo& fileInfo, bool magic) const
             return 0;
         }
 
-        foreach (const QByteArray& ba, QImageReader::supportedImageFormats())
+        Q_FOREACH (const QByteArray& ba, QImageReader::supportedImageFormats())
         {
             if (QString::fromUtf8(ba).toUpper() == format)
             {
@@ -153,7 +153,7 @@ int DImgQImagePlugin::canRead(const QFileInfo& fileInfo, bool magic) const
 
 int DImgQImagePlugin::canWrite(const QString& format) const
 {
-    foreach (const QByteArray& ba, QImageWriter::supportedImageFormats())
+    Q_FOREACH (const QByteArray& ba, QImageWriter::supportedImageFormats())
     {
         if (QString::fromUtf8(ba).toUpper() == format.toUpper())
         {

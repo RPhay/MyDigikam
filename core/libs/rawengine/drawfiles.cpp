@@ -35,7 +35,7 @@ QString s_rawFileExtensions()
     QList<QString> list = s_rawFileExtensionsdWithDesc().keys();
     QString ret;
 
-    foreach (const QString& mime, list)
+    Q_FOREACH (const QString& mime, list)
     {
         ret.append(QString::fromLatin1("*.%1 ").arg(mime));
     }

@@ -144,7 +144,7 @@ void TransactionItemView::slotLayoutFirstItem()
     }
     else
     {
-        emit signalTransactionViewIsEmpty();
+        Q_EMIT signalTransactionViewIsEmpty();
     }
 }
 
@@ -532,7 +532,7 @@ void ProgressView::slotClose()
 void ProgressView::setVisible(bool b)
 {
     OverlayWidget::setVisible(b);
-    emit visibilityChanged(b);
+    Q_EMIT visibilityChanged(b);
 }
 
 void ProgressView::slotToggleVisibility()

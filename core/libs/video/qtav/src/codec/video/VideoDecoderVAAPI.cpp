@@ -611,7 +611,7 @@ void VideoDecoderVAAPI::setDisplayPriority(const QStringList &priority)
     int idx = staticMetaObject.indexOfEnumerator("DisplayType");
     const QMetaEnum me = staticMetaObject.enumerator(idx);
 
-    foreach (const QString& disp, priority)
+    Q_FOREACH (const QString& disp, priority)
     {
         d.display_priority.push_back((DisplayType)me.keyToValue(disp.toUtf8().constData()));
     }
@@ -623,7 +623,7 @@ QStringList VideoDecoderVAAPI::displayPriority() const
     int idx = staticMetaObject.indexOfEnumerator("DisplayType");
     const QMetaEnum me = staticMetaObject.enumerator(idx);
 
-    foreach (DisplayType disp, d_func().display_priority)
+    Q_FOREACH (DisplayType disp, d_func().display_priority)
     {
         names.append(QString::fromLatin1(me.valueToKey(disp)));
     }
@@ -650,7 +650,7 @@ bool VideoDecoderVAAPIPrivate::open()
 
     /* Create a VA display */
 
-    foreach (VideoDecoderVAAPI::DisplayType dt, display_priority)
+    Q_FOREACH (VideoDecoderVAAPI::DisplayType dt, display_priority)
     {
         NativeDisplay nd;
 

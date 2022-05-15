@@ -233,7 +233,7 @@ void unloadQtTranslationFiles(QApplication& app)
 
     QList<QTranslator*> translators = app.findChildren<QTranslator*>(QString(), Qt::FindDirectChildrenOnly);
 
-    foreach (const auto& translator, translators)
+    Q_FOREACH (const auto& translator, translators)
     {
         app.removeTranslator(translator);
     }
@@ -294,7 +294,7 @@ void loadStdQtTranslationFiles(QApplication& app)
 
         };
 
-        foreach (const QString& catalog, qtCatalogs)
+        Q_FOREACH (const QString& catalog, qtCatalogs)
         {
             QTranslator* const translator = new QTranslator(&app);
 
@@ -385,7 +385,7 @@ void loadEcmQtTranslationFiles(QApplication& app)
     {
         const QString& localeDirName = it.previous();
 
-        foreach (const auto& catalog, ecmCatalogs)
+        Q_FOREACH (const auto& catalog, ecmCatalogs)
         {
             QString subPath    = QLatin1String("locale/")       %
                                  localeDirName                  %

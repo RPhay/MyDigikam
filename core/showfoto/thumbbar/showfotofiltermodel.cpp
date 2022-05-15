@@ -132,7 +132,7 @@ QList<QModelIndex> ShowfotoSortFilterModel::mapListToSource(const QList<QModelIn
 {
     QList<QModelIndex> sourceIndexes;
 
-    foreach (const QModelIndex& index, indexes)
+    Q_FOREACH (const QModelIndex& index, indexes)
     {
         sourceIndexes << mapToSourceShowfotoModel(index);
     }
@@ -144,7 +144,7 @@ QList<QModelIndex> ShowfotoSortFilterModel::mapListFromSource(const QList<QModel
 {
     QList<QModelIndex> indexes;
 
-    foreach (const QModelIndex& index, sourceIndexes)
+    Q_FOREACH (const QModelIndex& index, sourceIndexes)
     {
         indexes << mapFromSourceShowfotoModel(index);
     }
@@ -161,7 +161,7 @@ QList<ShowfotoItemInfo> ShowfotoSortFilterModel::showfotoItemInfos(const QList<Q
 {
     QList<ShowfotoItemInfo> infos;
 
-    foreach (const QModelIndex& index, indexes)
+    Q_FOREACH (const QModelIndex& index, indexes)
     {
         infos << showfotoItemInfo(index);
     }
@@ -373,7 +373,7 @@ void ShowfotoFilterModel::slotRowsInserted(const QModelIndex& /*parent*/, int st
         infos << showfotoItemInfo(index(i, 0));
     }
 
-    emit showfotoItemInfosAdded(infos);
+    Q_EMIT showfotoItemInfosAdded(infos);
 }
 
 void ShowfotoFilterModel::slotRowsAboutToBeRemoved(const QModelIndex& /*parent*/, int start, int end)
@@ -385,7 +385,7 @@ void ShowfotoFilterModel::slotRowsAboutToBeRemoved(const QModelIndex& /*parent*/
         infos << showfotoItemInfo(index(i, 0));
     }
 
-    emit showfotoItemInfosAboutToBeRemoved(infos);
+    Q_EMIT showfotoItemInfosAboutToBeRemoved(infos);
 }
 
 void ShowfotoFilterModel::setDirectSourceShowfotoModel(ShowfotoItemModel* const sourceModel)

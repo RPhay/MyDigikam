@@ -207,7 +207,7 @@ void TrashView::slotSelectionChanged()
         d->deleteAction->setEnabled(false);
     }
 
-    emit selectionChanged();
+    Q_EMIT selectionChanged();
 }
 
 void TrashView::slotUndoLastDeletedItems()
@@ -218,7 +218,7 @@ void TrashView::slotUndoLastDeletedItems()
     d->selectedIndexesToRemove.clear();
     QDateTime lastDateTime = QDateTime::fromMSecsSinceEpoch(0);
 
-    foreach (const DTrashItemInfo& item, d->model->allItems())
+    Q_FOREACH (const DTrashItemInfo& item, d->model->allItems())
     {
         if (item.deletionTimestamp > lastDateTime)
         {
@@ -227,7 +227,7 @@ void TrashView::slotUndoLastDeletedItems()
         }
     }
 
-    foreach (const DTrashItemInfo& item, d->model->allItems())
+    Q_FOREACH (const DTrashItemInfo& item, d->model->allItems())
     {
         if (item.deletionTimestamp == lastDateTime)
         {
@@ -387,7 +387,7 @@ void TrashView::slotChangeLastSelectedItem(const QModelIndex& curr, const QModel
 {
     d->lastSelectedIndex = curr;
     d->lastSelectedItem  = d->model->itemForIndex(curr);
-    emit selectionChanged();
+    Q_EMIT selectionChanged();
 }
 
 void TrashView::setThumbnailSize(const ThumbnailSize& thumbSize)
@@ -420,7 +420,7 @@ void TrashView::selectLastSelected()
         d->tableView->scrollTo(d->lastSelectedIndex, QAbstractItemView::EnsureVisible);
     }
 
-    emit selectionChanged();
+    Q_EMIT selectionChanged();
 }
 
 QString TrashView::statusBarText() const

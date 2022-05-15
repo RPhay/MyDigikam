@@ -710,12 +710,12 @@ void MediaWikiWidget::slotRemoveMetaChecked()
 
 void MediaWikiWidget::slotChangeUserClicked()
 {
-    emit signalChangeUserRequest();
+    Q_EMIT signalChangeUserRequest();
 }
 
 void MediaWikiWidget::slotLoginClicked()
 {
-     emit signalLoginRequest(d->nameEdit->text(), d->passwdEdit->text(),
+     Q_EMIT signalLoginRequest(d->nameEdit->text(), d->passwdEdit->text(),
                              d->wikiSelect->itemText(d->wikiSelect->currentIndex()),
                              d->wikiSelect->itemData(d->wikiSelect->currentIndex()).toUrl());
 }
@@ -855,7 +855,7 @@ void MediaWikiWidget::slotRemoveImagesDesc()
         }
     }
 
-    foreach (const QString& path, toRemove)
+    Q_FOREACH (const QString& path, toRemove)
     {
         d->imagesDescInfo.remove(path);
         qCDebug(DIGIKAM_WEBSERVICES_LOG) << "Remove" << path << "; new length:" << d->imagesDescInfo.size();

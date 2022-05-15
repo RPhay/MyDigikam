@@ -109,7 +109,7 @@ QString PropertyEditor::buildOptions()
 {
     QString result;
 
-    foreach (const QMetaProperty& mp, mMetaProperties)
+    Q_FOREACH (const QMetaProperty& mp, mMetaProperties)
     {
         if (qstrcmp(mp.name(), "objectName") == 0)
             continue;
@@ -175,7 +175,7 @@ QWidget* PropertyEditor::buildUi(QObject* const obj)
     int row = 0;
     QVariant value;
 
-    foreach (const QMetaProperty& mp, mMetaProperties)
+    Q_FOREACH (const QMetaProperty& mp, mMetaProperties)
     {
         if (qstrcmp(mp.name(), "objectName") == 0)
             continue;

@@ -91,7 +91,7 @@ void ThumbnailLoadingTask::execute()
 
         m_thread->taskHasFinished();
 
-        // do not emit any signal
+        // do not Q_EMIT any signal
 
         return;
     }

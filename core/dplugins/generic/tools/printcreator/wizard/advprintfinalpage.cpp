@@ -131,7 +131,7 @@ void AdvPrintFinalPage::initializePage()
 {
     d->complete = false;
 
-    emit completeChanged();
+    Q_EMIT completeChanged();
 
     QTimer::singleShot(0, this, SLOT(slotProcess()));
 }
@@ -279,7 +279,7 @@ void AdvPrintFinalPage::slotDone(bool completed)
         }
     }
 
-    emit completeChanged();
+    Q_EMIT completeChanged();
 }
 
 bool AdvPrintFinalPage::isComplete() const

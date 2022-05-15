@@ -121,7 +121,7 @@ void DItemsListView::slotItemClicked(QTreeWidgetItem* item, int column)
         return;
     }
 
-    emit signalItemClicked(item);
+    Q_EMIT signalItemClicked(item);
 }
 
 void DItemsListView::setColumnLabel(ColumnType column, const QString& label)
@@ -175,7 +175,7 @@ void DItemsListView::contextMenuEvent(QContextMenuEvent* e)
 {
     QTreeWidget::contextMenuEvent(e);
 
-    emit signalContextMenuRequested();
+    Q_EMIT signalContextMenuRequested();
 }
 
 void DItemsListView::dragEnterEvent(QDragEnterEvent* e)
@@ -206,7 +206,7 @@ void DItemsListView::dropEvent(QDropEvent* e)
     QList<QUrl> list = e->mimeData()->urls();
     QList<QUrl> urls;
 
-    foreach (const QUrl& url, list)
+    Q_FOREACH (const QUrl& url, list)
     {
         QFileInfo fi(url.toLocalFile());
 
@@ -218,7 +218,7 @@ void DItemsListView::dropEvent(QDropEvent* e)
 
     if (!urls.isEmpty())
     {
-        emit signalAddedDropedItems(urls);
+        Q_EMIT signalAddedDropedItems(urls);
     }
 
     scrollToItem(m_itemDraged);

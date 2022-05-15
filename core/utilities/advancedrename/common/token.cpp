@@ -49,7 +49,7 @@ Token::~Token()
 
 void Token::slotTriggered()
 {
-    emit signalTokenTriggered(m_id);
+    Q_EMIT signalTokenTriggered(m_id);
 }
 
 } // namespace Digikam

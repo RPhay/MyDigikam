@@ -53,7 +53,7 @@ int main(int argc, char* argv[])
                                                          QStandardPaths::standardLocations(QStandardPaths::PicturesLocation).first(),
                                                          filter);
 
-        foreach (const QString& f, files)
+        Q_FOREACH (const QString& f, files)
         {
             list.append(QUrl::fromLocalFile(f));
         }

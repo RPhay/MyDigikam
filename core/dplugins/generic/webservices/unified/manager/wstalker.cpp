@@ -115,7 +115,7 @@ void WSTalker::cancel()
         m_reply = 0;
     }
 
-    emit signalBusy(false);
+    Q_EMIT signalBusy(false);
 }
 
 QString WSTalker::getUserID(const QString& userName)
@@ -195,7 +195,7 @@ QMap<QString, QVariant> WSTalker::getUserAccountInfo(const QString& userName)
     m_settings->beginGroup(userID);
     QStringList keys = m_settings->allKeys();
 
-    foreach (const QString& key, keys)
+    Q_FOREACH (const QString& key, keys)
     {
         QVariant value = m_settings->value(key);
         map.insert(key, value);
@@ -357,7 +357,7 @@ void WSTalker::authenticationDone(int errCode, const QString& errMsg)
                               i18n("Code: %1. %2", errCode, errMsg));
     }
 
-    emit signalBusy(false);
+    Q_EMIT signalBusy(false);
 }
 
 void WSTalker::parseResponseGetLoggedInUser(const QByteArray& /*data*/)
@@ -421,13 +421,13 @@ void WSTalker::slotFinished(QNetworkReply* reply)
 void WSTalker::slotOpenBrowser(const QUrl& url)
 {
     qCDebug(DIGIKAM_WEBSERVICES_LOG) << "Open Browser...";
-    emit signalOpenBrowser(url);
+    Q_EMIT signalOpenBrowser(url);
 }
 
 void WSTalker::slotCloseBrowser()
 {
     qCDebug(DIGIKAM_WEBSERVICES_LOG) << "Close Browser...";
-    emit signalCloseBrowser();
+    Q_EMIT signalCloseBrowser();
 }
 
 void WSTalker::slotLinkingFailed()
@@ -435,15 +435,15 @@ void WSTalker::slotLinkingFailed()
     qCDebug(DIGIKAM_WEBSERVICES_LOG) << "LINK fail";
     authenticationDone(-1, QLatin1String("Account link failed."));
 
-    emit signalBusy(false);
-    emit signalAuthenticationComplete(linked());
+    Q_EMIT signalBusy(false);
+    Q_EMIT signalAuthenticationComplete(linked());
 }
 
 void WSTalker::slotLinkingSucceeded()
 {
     if (!linked())
     {
-        emit signalBusy(false);
+        Q_EMIT signalBusy(false);
         qCDebug(DIGIKAM_WEBSERVICES_LOG) << "UNLINK ok";
 
         return;
@@ -452,7 +452,7 @@ void WSTalker::slotLinkingSucceeded()
     // Get user account information
     getLoggedInUser();
 
-    emit signalAuthenticationComplete(linked());
+    Q_EMIT signalAuthenticationComplete(linked());
     qCDebug(DIGIKAM_WEBSERVICES_LOG) << "LINK ok";
 }
 

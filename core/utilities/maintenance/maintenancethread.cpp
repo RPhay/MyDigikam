@@ -310,7 +310,7 @@ void MaintenanceThread::cancel()
 {
     if (isRunning())
     {
-        emit signalCanceled();
+        Q_EMIT signalCanceled();
     }
 
     ActionThreadBase::cancel();
@@ -321,7 +321,7 @@ void MaintenanceThread::slotThreadFinished()
     if (isEmpty())
     {
         qCDebug(DIGIKAM_GENERAL_LOG) << "List of Pending Jobs is empty";
-        emit signalCompleted();
+        Q_EMIT signalCompleted();
     }
 }
 

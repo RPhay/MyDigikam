@@ -143,7 +143,7 @@ QPushButton* Rule::registerButton(QWidget* parent)
     {
         QMenu* const menu = new QMenu(button);
 
-        foreach (Token* const token, d->tokens)
+        Q_FOREACH (Token* const token, d->tokens)
         {
             actions << token->action();
         }
@@ -173,7 +173,7 @@ QAction* Rule::registerMenu(QMenu* parent)
         QMenu* const menu = new QMenu(parent);
         QList<QAction*> actions;
 
-        foreach (Token* const token, d->tokens)
+        Q_FOREACH (Token* const token, d->tokens)
         {
             actions << token->action();
         }
@@ -235,7 +235,7 @@ TokenList& Rule::tokens() const
 
 void Rule::slotTokenTriggered(const QString& token)
 {
-    emit signalTokenTriggered(token);
+    Q_EMIT signalTokenTriggered(token);
 }
 
 bool Rule::isValid() const

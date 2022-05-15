@@ -485,7 +485,7 @@ void RatioCropWidget::setSelectionOrientation(int orient)
     d->currentOrientation = orient;
     reverseRatioValues();
     applyAspectRatio(true);
-    emit signalSelectionOrientationChanged(d->currentOrientation);
+    Q_EMIT signalSelectionOrientationChanged(d->currentOrientation);
 }
 
 void RatioCropWidget::setSelectionAspectRatioType(int aspectRatioType)
@@ -595,13 +595,13 @@ void RatioCropWidget::setSelectionAspectRatioValue(int widthRatioValue, int heig
                  (d->currentOrientation == Landscape))
         {
             d->currentOrientation = Portrait;
-            emit signalSelectionOrientationChanged(d->currentOrientation);
+            Q_EMIT signalSelectionOrientationChanged(d->currentOrientation);
         }
         else if ((widthRatioValue > heightRatioValue) &&
                  (d->currentOrientation == Portrait))
         {
             d->currentOrientation = Landscape;
-            emit signalSelectionOrientationChanged(d->currentOrientation);
+            Q_EMIT signalSelectionOrientationChanged(d->currentOrientation);
         }
     }
     else
@@ -834,7 +834,7 @@ void RatioCropWidget::regionSelectionMoved()
     updatePixmap();
     update();
 
-    emit signalSelectionMoved(d->regionSelection);
+    Q_EMIT signalSelectionMoved(d->regionSelection);
 }
 
 void RatioCropWidget::regionSelectionChanged()
@@ -857,7 +857,7 @@ void RatioCropWidget::regionSelectionChanged()
         applyAspectRatio(true);
     }
 
-    emit signalSelectionChanged(d->regionSelection);
+    Q_EMIT signalSelectionChanged(d->regionSelection);
 }
 
 void RatioCropWidget::drawRulesOfThirds(QPainter& p, const int& xThird, const int& yThird)
@@ -1270,7 +1270,7 @@ void RatioCropWidget::placeSelection(const QPoint& pm, bool symmetric, const QPo
             {
                 d->currentOrientation = Landscape;
                 reverseRatioValues();
-                emit signalSelectionOrientationChanged(d->currentOrientation);
+                Q_EMIT signalSelectionOrientationChanged(d->currentOrientation);
             }
         }
         else
@@ -1279,7 +1279,7 @@ void RatioCropWidget::placeSelection(const QPoint& pm, bool symmetric, const QPo
             {
                 d->currentOrientation = Portrait;
                 reverseRatioValues();
-                emit signalSelectionOrientationChanged(d->currentOrientation);
+                Q_EMIT signalSelectionOrientationChanged(d->currentOrientation);
             }
         }
     }

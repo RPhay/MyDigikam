@@ -189,7 +189,7 @@ void TableView::slotItemActivated(const QModelIndex& tableViewIndex)
 
         if      (leftClickAction == ApplicationSettings::ShowPreview)
         {
-            emit signalPreviewRequested(info);
+            Q_EMIT signalPreviewRequested(info);
         }
         else if (leftClickAction == ApplicationSettings::StartEditor)
         {
@@ -223,13 +223,13 @@ bool TableView::eventFilter(QObject* watched, QEvent* event)
 
         if (contextMenuIndex.isValid())
         {
-            emit signalShowContextMenuOnInfo(e,
+            Q_EMIT signalShowContextMenuOnInfo(e,
                                              s->tableViewModel->imageInfo(contextMenuIndex),
                                              getExtraGroupingActions());
         }
         else
         {
-            emit signalShowContextMenu(e, getExtraGroupingActions());
+            Q_EMIT signalShowContextMenu(e, getExtraGroupingActions());
         }
 
         // event has been filtered by us
@@ -245,7 +245,7 @@ void TableView::setThumbnailSize(const ThumbnailSize& size)
     d->thumbnailSize                            = size;
     const QList<TableViewColumn*> columnObjects = s->tableViewModel->getColumnObjects();
 
-    foreach (TableViewColumn* const iColumn, columnObjects)
+    Q_FOREACH (TableViewColumn* const iColumn, columnObjects)
     {
         iColumn->updateThumbnailSize();
     }
@@ -460,7 +460,7 @@ ItemInfo TableView::previousInfo() const
 
 void TableView::slotSetCurrentUrlWhenAvailable(const QUrl& url)
 {
-    foreach (const ItemInfo& info, allItemInfos())
+    Q_FOREACH (const ItemInfo& info, allItemInfos())
     {
         if (info.fileUrl() == url)
         {    // cppcheck-suppress useStlAlgorithm
@@ -580,7 +580,7 @@ void TableView::invertSelection()
 
     s->tableViewSelectionModel->clearSelection();
 
-    foreach (const int i, rowsToSelect)
+    Q_FOREACH (const int i, rowsToSelect)
     {
         const QModelIndex iIndex = s->tableViewModel->deepRowIndex(i);
         const QItemSelection is  = s->tableViewSelectionModelSyncer->targetIndexToRowItemSelection(iIndex);

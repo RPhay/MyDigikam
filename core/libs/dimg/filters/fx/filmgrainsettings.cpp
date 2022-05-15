@@ -452,7 +452,7 @@ void FilmGrainSettings::slotItemToggled(int index, bool b)
         }
     }
 
-    emit signalSettingsChanged();
+    Q_EMIT signalSettingsChanged();
 }
 
 FilmGrainContainer FilmGrainSettings::settings() const

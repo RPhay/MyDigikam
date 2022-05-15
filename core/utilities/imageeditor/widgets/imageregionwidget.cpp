@@ -210,7 +210,7 @@ void ImageRegionWidget::slotOriginalImageRegionChanged(bool targetDone)
 {
     if (targetDone)
     {
-        emit signalOriginalClipFocusChanged(); // For Image Edit Tools
+        Q_EMIT signalOriginalClipFocusChanged(); // For Image Edit Tools
     }
 }
 
@@ -257,7 +257,7 @@ void ImageRegionWidget::emitCapturedPointFromOriginal(const QPointF& pt)
     QPoint imgPt(x, y);
     DColor color = d_ptr->item->image().getPixelColor(x, y);
     qCDebug(DIGIKAM_GENERAL_LOG) << "Captured point from image : " << imgPt;
-    emit signalCapturedPointFromOriginal(color, imgPt);
+    Q_EMIT signalCapturedPointFromOriginal(color, imgPt);
 }
 
 void ImageRegionWidget::updateImage(const DImg& img)

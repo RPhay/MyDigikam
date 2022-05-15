@@ -57,7 +57,7 @@ QString RemoveDoublesModifier::parseOperation(ParseSettings& settings, const QRe
     QStringList words = result.split(QLatin1Char(' '));
     QStringList newString;
 
-    foreach (const QString& word, words)
+    Q_FOREACH (const QString& word, words)
     {
         if (!knownWords.contains(word))
         {

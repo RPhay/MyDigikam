@@ -207,7 +207,7 @@ void TextFilter::slotSearchTextFieldsChanged()
     SearchTextFilterSettings settings(d->searchTextBar->searchTextSettings());
     settings.textFields = searchTextFields();
 
-    emit signalSearchTextFilterSettings(settings);
+    Q_EMIT signalSearchTextFilterSettings(settings);
 }
 
 void TextFilter::reset()

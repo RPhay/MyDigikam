@@ -416,7 +416,7 @@ void LensFunCameraSelector::slotUseMetadata(bool b)
             d->focal->setEnabled(false);
             d->aperture->setEnabled(false);
             d->distance->setEnabled(false);
-            emit signalLensSettingsChanged();
+            Q_EMIT signalLensSettingsChanged();
         }
         else
         {
@@ -784,7 +784,7 @@ void LensFunCameraSelector::slotModelSelected()
     QVariant v = d->model->itemData(d->model->currentIndex());
     d->iface->setUsedCamera((d->metadataUsage->isChecked() && d->passiveMetadataUsage) ? nullptr
                                                                                        : v.value<LensFunIface::DevicePtr>());
-    emit signalLensSettingsChanged();
+    Q_EMIT signalLensSettingsChanged();
 }
 
 void LensFunCameraSelector::slotLensSelected()
@@ -804,7 +804,7 @@ void LensFunCameraSelector::slotLensSelected()
     }
 
     d->iface->setSettings(settings);
-    emit signalLensSettingsChanged();
+    Q_EMIT signalLensSettingsChanged();
 }
 
 void LensFunCameraSelector::slotFocalChanged()
@@ -813,7 +813,7 @@ void LensFunCameraSelector::slotFocalChanged()
     settings.focalLength      = d->metadataUsage->isChecked() && d->passiveMetadataUsage ? -1.0
                                                                                          : d->focal->value();
     d->iface->setSettings(settings);
-    emit signalLensSettingsChanged();
+    Q_EMIT signalLensSettingsChanged();
 }
 
 void LensFunCameraSelector::slotApertureChanged()
@@ -822,7 +822,7 @@ void LensFunCameraSelector::slotApertureChanged()
     settings.aperture         = d->metadataUsage->isChecked() && d->passiveMetadataUsage ? -1.0
                                                                                          : d->aperture->value();
     d->iface->setSettings(settings);
-    emit signalLensSettingsChanged();
+    Q_EMIT signalLensSettingsChanged();
 }
 
 void LensFunCameraSelector::slotDistanceChanged()
@@ -831,7 +831,7 @@ void LensFunCameraSelector::slotDistanceChanged()
     settings.subjectDistance  = d->metadataUsage->isChecked() && d->passiveMetadataUsage ? -1.0
                                                                                          : d->distance->value();
     d->iface->setSettings(settings);
-    emit signalLensSettingsChanged();
+    Q_EMIT signalLensSettingsChanged();
 }
 
 } // namespace Digikam

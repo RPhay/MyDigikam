@@ -291,7 +291,7 @@ void ExifToolProcess::slotStarted()
 {
     qCDebug(DIGIKAM_METAENGINE_LOG) << "ExifTool process started";
 
-    emit signalStarted(d->cmdRunning, d->cmdAction);
+    Q_EMIT signalStarted(d->cmdRunning, d->cmdAction);
 }
 
 void ExifToolProcess::slotFinished(int exitCode, QProcess::ExitStatus exitStatus)
@@ -300,7 +300,7 @@ void ExifToolProcess::slotFinished(int exitCode, QProcess::ExitStatus exitStatus
 
     if (d->cmdRunning)
     {
-        emit signalFinished(d->cmdRunning, d->cmdAction, exitCode, exitStatus);
+        Q_EMIT signalFinished(d->cmdRunning, d->cmdAction, exitCode, exitStatus);
     }
 
     d->cmdRunning = 0;
@@ -309,7 +309,7 @@ void ExifToolProcess::slotFinished(int exitCode, QProcess::ExitStatus exitStatus
 
 void ExifToolProcess::slotStateChanged(QProcess::ProcessState newState)
 {
-    emit signalStateChanged(d->cmdRunning, d->cmdAction, newState);
+    Q_EMIT signalStateChanged(d->cmdRunning, d->cmdAction, newState);
 }
 
 void ExifToolProcess::slotErrorOccurred(QProcess::ProcessError error)

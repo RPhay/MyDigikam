@@ -61,7 +61,7 @@ void FileActionMngrDatabaseWorker::changeTags(const FileActionItemInfoList& info
         CoreDbOperationGroup group;
         group.setMaximumTime(200);
 
-        foreach (const ItemInfo& info, infos)
+        Q_FOREACH (const ItemInfo& info, infos)
         {
             if (state() == WorkerObject::Deactivating)
             {
@@ -106,7 +106,7 @@ void FileActionMngrDatabaseWorker::changeTags(const FileActionItemInfoList& info
 
         for (ItemInfoTaskSplitter splitter(forWritingTaskList) ; splitter.hasNext() ; )
         {
-            emit writeMetadata(FileActionItemInfoList(splitter.next()), MetadataHub::WRITE_TAGS);
+            Q_EMIT writeMetadata(FileActionItemInfoList(splitter.next()), MetadataHub::WRITE_TAGS);
         }
     }
 
@@ -122,7 +122,7 @@ void FileActionMngrDatabaseWorker::assignPickLabel(const FileActionItemInfoList&
         CoreDbOperationGroup group;
         group.setMaximumTime(200);
 
-        foreach (const ItemInfo& info, infos)
+        Q_FOREACH (const ItemInfo& info, infos)
         {
             if (state() == WorkerObject::Deactivating)
             {
@@ -153,7 +153,7 @@ void FileActionMngrDatabaseWorker::assignPickLabel(const FileActionItemInfoList&
 
         for (ItemInfoTaskSplitter splitter(forWritingTaskList) ; splitter.hasNext() ; )
         {
-            emit writeMetadata(FileActionItemInfoList(splitter.next()), MetadataHub::WRITE_PICKLABEL);
+            Q_EMIT writeMetadata(FileActionItemInfoList(splitter.next()), MetadataHub::WRITE_PICKLABEL);
         }
     }
 
@@ -169,7 +169,7 @@ void FileActionMngrDatabaseWorker::assignColorLabel(const FileActionItemInfoList
         CoreDbOperationGroup group;
         group.setMaximumTime(200);
 
-        foreach (const ItemInfo& info, infos)
+        Q_FOREACH (const ItemInfo& info, infos)
         {
             if (state() == WorkerObject::Deactivating)
             {
@@ -200,7 +200,7 @@ void FileActionMngrDatabaseWorker::assignColorLabel(const FileActionItemInfoList
 
         for (ItemInfoTaskSplitter splitter(forWritingTaskList) ; splitter.hasNext() ; )
         {
-            emit writeMetadata(FileActionItemInfoList(splitter.next()), MetadataHub::WRITE_COLORLABEL);
+            Q_EMIT writeMetadata(FileActionItemInfoList(splitter.next()), MetadataHub::WRITE_COLORLABEL);
         }
     }
 
@@ -217,7 +217,7 @@ void FileActionMngrDatabaseWorker::assignRating(const FileActionItemInfoList& in
         CoreDbOperationGroup group;
         group.setMaximumTime(200);
 
-        foreach (const ItemInfo& info, infos)
+        Q_FOREACH (const ItemInfo& info, infos)
         {
             if (state() == WorkerObject::Deactivating)
             {
@@ -248,7 +248,7 @@ void FileActionMngrDatabaseWorker::assignRating(const FileActionItemInfoList& in
 
         for (ItemInfoTaskSplitter splitter(forWritingTaskList) ; splitter.hasNext() ; )
         {
-            emit writeMetadata(FileActionItemInfoList(splitter.next()), MetadataHub::WRITE_RATING);
+            Q_EMIT writeMetadata(FileActionItemInfoList(splitter.next()), MetadataHub::WRITE_RATING);
         }
     }
 
@@ -261,7 +261,7 @@ void FileActionMngrDatabaseWorker::editGroup(int groupAction, const ItemInfo& pi
         CoreDbOperationGroup group;
         group.setMaximumTime(200);
 
-        foreach (const ItemInfo& constInfo, infos)
+        Q_FOREACH (const ItemInfo& constInfo, infos)
         {
             if (state() == WorkerObject::Deactivating)
             {
@@ -305,7 +305,7 @@ void FileActionMngrDatabaseWorker::setExifOrientation(const FileActionItemInfoLi
         CoreDbOperationGroup group;
         group.setMaximumTime(200);
 
-        foreach (ItemInfo info, infos)
+        Q_FOREACH (ItemInfo info, infos)
         {
             if (state() == WorkerObject::Deactivating)
             {
@@ -326,7 +326,7 @@ void FileActionMngrDatabaseWorker::setExifOrientation(const FileActionItemInfoLi
 
     for (ItemInfoTaskSplitter splitter(infos) ; splitter.hasNext() ; )
     {
-        emit writeOrientationToFiles(FileActionItemInfoList(splitter.next()), orientation);
+        Q_EMIT writeOrientationToFiles(FileActionItemInfoList(splitter.next()), orientation);
     }
 
     infos.dbFinished();
@@ -339,7 +339,7 @@ void FileActionMngrDatabaseWorker::applyMetadata(const FileActionItemInfoList& i
         CoreDbOperationGroup group;
         group.setMaximumTime(200);
 
-        foreach (const ItemInfo& info, infos)
+        Q_FOREACH (const ItemInfo& info, infos)
         {
             if (state() == WorkerObject::Deactivating)
             {
@@ -364,7 +364,7 @@ void FileActionMngrDatabaseWorker::applyMetadata(const FileActionItemInfoList& i
 
         for (ItemInfoTaskSplitter splitter(infos) ; splitter.hasNext() ; )
         {
-            emit writeMetadata(FileActionItemInfoList(splitter.next()), flags);
+            Q_EMIT writeMetadata(FileActionItemInfoList(splitter.next()), flags);
         }
     }
 
@@ -376,7 +376,7 @@ void FileActionMngrDatabaseWorker::copyAttributes(const FileActionItemInfoList& 
 {
     if (infos.size() == 1)
     {
-        foreach (const QString& path, derivedPaths)
+        Q_FOREACH (const QString& path, derivedPaths)
         {
             if (state() == WorkerObject::Deactivating)
             {

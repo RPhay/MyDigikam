@@ -136,7 +136,7 @@ void SearchBackend::slotFinished(QNetworkReply* reply)
     if (reply->error() != QNetworkReply::NoError)
     {
         d->errorMessage = reply->errorString();
-        emit signalSearchCompleted();
+        Q_EMIT signalSearchCompleted();
         reply->deleteLater();
         return;
     }
@@ -296,7 +296,7 @@ void SearchBackend::slotFinished(QNetworkReply* reply)
         }
     }
 
-    emit signalSearchCompleted();
+    Q_EMIT signalSearchCompleted();
 
     reply->deleteLater();
 }

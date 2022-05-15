@@ -73,7 +73,7 @@ void AlbumManager::scanSAlbums()
 
     // go through all the Albums and see which ones are already present
 
-    foreach (const SearchInfo& info, currentSearches)
+    Q_FOREACH (const SearchInfo& info, currentSearches)
     {
         if (oldSearches.contains(info.id))
         {
@@ -90,10 +90,10 @@ void AlbumManager::scanSAlbums()
 
                 if (oldName != album->title())
                 {
-                    emit signalAlbumRenamed(album);
+                    Q_EMIT signalAlbumRenamed(album);
                 }
 
-                emit signalSearchUpdated(album);
+                Q_EMIT signalSearchUpdated(album);
             }
 
             oldSearches.remove(info.id);
@@ -106,32 +106,32 @@ void AlbumManager::scanSAlbums()
 
     // remove old albums that have been deleted
 
-    foreach (SAlbum* const album, oldSearches)
+    Q_FOREACH (SAlbum* const album, oldSearches)
     {
-        emit signalAlbumAboutToBeDeleted(album);
+        Q_EMIT signalAlbumAboutToBeDeleted(album);
         d->allAlbumsIdHash.remove(album->globalID());
 
-        emit signalAlbumDeleted(album);
+        Q_EMIT signalAlbumDeleted(album);
 
         quintptr deletedAlbum = reinterpret_cast<quintptr>(album);
         delete album;
 
-        emit signalAlbumHasBeenDeleted(deletedAlbum);
+        Q_EMIT signalAlbumHasBeenDeleted(deletedAlbum);
     }
 
     // add new albums
 
-    foreach (const SearchInfo& info, newSearches)
+    Q_FOREACH (const SearchInfo& info, newSearches)
     {
         SAlbum* const album                   = new SAlbum(info.name, info.id);
         album->setSearch(info.type, info.query);
 
-        emit signalAlbumAboutToBeAdded(album, d->rootSAlbum, d->rootSAlbum->lastChild());
+        Q_EMIT signalAlbumAboutToBeAdded(album, d->rootSAlbum, d->rootSAlbum->lastChild());
 
         album->setParent(d->rootSAlbum);
         d->allAlbumsIdHash[album->globalID()] = album;
 
-        emit signalAlbumAdded(album);
+        Q_EMIT signalAlbumAdded(album);
     }
 }
 
@@ -203,13 +203,13 @@ SAlbum* AlbumManager::createSAlbum(const QString& name,
     }
 
     album = new SAlbum(name, id);
-    emit signalAlbumAboutToBeAdded(album, d->rootSAlbum, d->rootSAlbum->lastChild());
+    Q_EMIT signalAlbumAboutToBeAdded(album, d->rootSAlbum, d->rootSAlbum->lastChild());
     album->setSearch(type, query);
     album->setParent(d->rootSAlbum);
 
     d->allAlbumsIdHash.insert(album->globalID(), album);
 
-    emit signalAlbumAdded(album);
+    Q_EMIT signalAlbumAdded(album);
 
     return album;
 }
@@ -237,14 +237,14 @@ bool AlbumManager::updateSAlbum(SAlbum* album,
 
     if (oldName != album->title())
     {
-        emit signalAlbumRenamed(album);
+        Q_EMIT signalAlbumRenamed(album);
     }
 
     if (!d->currentAlbums.isEmpty())
     {
         if (d->currentAlbums.first() == album)
         {
-            emit signalAlbumCurrentChanged(d->currentAlbums);
+            Q_EMIT signalAlbumCurrentChanged(d->currentAlbums);
         }
     }
 
@@ -258,19 +258,19 @@ bool AlbumManager::deleteSAlbum(SAlbum* album)
         return false;
     }
 
-    emit signalAlbumAboutToBeDeleted(album);
+    Q_EMIT signalAlbumAboutToBeDeleted(album);
 
     ChangingDB changing(d);
     CoreDbAccess().db()->deleteSearch(album->id());
 
     d->allAlbumsIdHash.remove(album->globalID());
 
-    emit signalAlbumDeleted(album);
+    Q_EMIT signalAlbumDeleted(album);
 
     quintptr deletedAlbum = reinterpret_cast<quintptr>(album);
     delete album;
 
-    emit signalAlbumHasBeenDeleted(deletedAlbum);
+    Q_EMIT signalAlbumHasBeenDeleted(deletedAlbum);
 
     return true;
 }
@@ -308,7 +308,7 @@ void AlbumManager::slotSearchChange(const SearchChangeset& changeset)
                 {
                     // the pointer is the same, but the contents changed
 
-                    emit signalAlbumCurrentChanged(d->currentAlbums);
+                    Q_EMIT signalAlbumCurrentChanged(d->currentAlbums);
                 }
             }
 

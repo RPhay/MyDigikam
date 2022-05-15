@@ -612,7 +612,7 @@ void QueueMgrWindow::populateToolsList()
 {
     BatchToolsList list = BatchToolsFactory::instance()->toolsList();
 
-    foreach (BatchTool* const tool, list)
+    Q_FOREACH (BatchTool* const tool, list)
     {
         d->toolsView->addTool(tool);
     }
@@ -731,7 +731,7 @@ void QueueMgrWindow::processOneQueue()
 
     QList<AssignedBatchTools> tools4Items;
 
-    foreach (const ItemInfoSet& item, itemsList)
+    Q_FOREACH (const ItemInfoSet& item, itemsList)
     {
         AssignedBatchTools one         = d->queuePool->currentQueue()->assignedTools();
         one.m_itemUrl                  = item.info.fileUrl();
@@ -779,7 +779,7 @@ void QueueMgrWindow::busy(bool busy)
     d->busy ? d->queuePool->setCursor(Qt::WaitCursor) : d->queuePool->unsetCursor();
     d->busy ? m_animLogo->start() : m_animLogo->stop();
 
-    emit signalBqmIsBusy(d->busy);
+    Q_EMIT signalBqmIsBusy(d->busy);
 }
 
 void QueueMgrWindow::slotAssignedToolsChanged(const AssignedBatchTools& tools)
@@ -868,7 +868,7 @@ bool QueueMgrWindow::checkTargetAlbum(int queueId)
 void QueueMgrWindow::moveEvent(QMoveEvent* e)
 {
     Q_UNUSED(e)
-    emit signalWindowHasMoved();
+    Q_EMIT signalWindowHasMoved();
 }
 
 void QueueMgrWindow::slotHistoryEntryClicked(int queueId, qlonglong itemId)

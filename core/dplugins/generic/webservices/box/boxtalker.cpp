@@ -163,7 +163,7 @@ BOXTalker::~BOXTalker()
 
 void BOXTalker::link()
 {
-    emit signalBusy(true);
+    Q_EMIT signalBusy(true);
     d->o2->link();
 }
 
@@ -178,7 +178,7 @@ void BOXTalker::unLink()
 void BOXTalker::slotLinkingFailed()
 {
     qCDebug(DIGIKAM_WEBSERVICES_LOG) << "LINK to Box fail";
-    emit signalBusy(false);
+    Q_EMIT signalBusy(false);
 }
 
 void BOXTalker::slotLinkingSucceeded()
@@ -186,12 +186,12 @@ void BOXTalker::slotLinkingSucceeded()
     if (!d->o2->linked())
     {
         qCDebug(DIGIKAM_WEBSERVICES_LOG) << "UNLINK to Box ok";
-        emit signalBusy(false);
+        Q_EMIT signalBusy(false);
         return;
     }
 
     qCDebug(DIGIKAM_WEBSERVICES_LOG) << "LINK to Box ok";
-    emit signalLinkingSucceeded();
+    Q_EMIT signalLinkingSucceeded();
 }
 
 bool BOXTalker::authenticated()
@@ -207,7 +207,7 @@ void BOXTalker::cancel()
         d->reply = nullptr;
     }
 
-    emit signalBusy(false);
+    Q_EMIT signalBusy(false);
 }
 
 void BOXTalker::slotOpenBrowser(const QUrl& url)
@@ -241,7 +241,7 @@ void BOXTalker::createFolder(QString& path)
     d->reply = d->netMngr->post(netRequest, postData);
     d->state = Private::BOX_CREATEFOLDER;
 
-    emit signalBusy(true);
+    Q_EMIT signalBusy(true);
 }
 
 void BOXTalker::getUserName()
@@ -255,7 +255,7 @@ void BOXTalker::getUserName()
     d->reply = d->netMngr->get(netRequest);
     d->state = Private::BOX_USERNAME;
 
-    emit signalBusy(true);
+    Q_EMIT signalBusy(true);
 }
 
 void BOXTalker::listFolders(const QString& /*path*/)
@@ -269,7 +269,7 @@ void BOXTalker::listFolders(const QString& /*path*/)
     d->reply = d->netMngr->get(netRequest);
     d->state = Private::BOX_LISTFOLDERS;
 
-    emit signalBusy(true);
+    Q_EMIT signalBusy(true);
 }
 
 bool BOXTalker::addPhoto(const QString& imgPath, const QString& uploadFolder, bool rescale, int maxDim, int imageQuality)
@@ -280,7 +280,7 @@ bool BOXTalker::addPhoto(const QString& imgPath, const QString& uploadFolder, bo
         d->reply = nullptr;
     }
 
-    emit signalBusy(true);
+    Q_EMIT signalBusy(true);
 
     QMimeDatabase mimeDB;
     QString path     = imgPath;
@@ -292,7 +292,7 @@ bool BOXTalker::addPhoto(const QString& imgPath, const QString& uploadFolder, bo
 
         if (image.isNull())
         {
-            emit signalBusy(false);
+            Q_EMIT signalBusy(false);
             return false;
         }
 
@@ -389,7 +389,7 @@ void BOXTalker::slotFinished(QNetworkReply* reply)
     {
         if (d->state != Private::BOX_CREATEFOLDER)
         {
-            emit signalBusy(false);
+            Q_EMIT signalBusy(false);
             QMessageBox::critical(QApplication::activeWindow(),
                                   i18n("Error"), reply->errorString());
             reply->deleteLater();
@@ -433,15 +433,15 @@ void BOXTalker::parseResponseAddPhoto(const QByteArray& data)
     QJsonDocument doc      = QJsonDocument::fromJson(data);
     QJsonObject jsonObject = doc.object();
     bool success           = jsonObject.contains(QLatin1String("total_count"));
-    emit signalBusy(false);
+    Q_EMIT signalBusy(false);
 
     if (!success)
     {
-        emit signalAddPhotoFailed(i18n("Failed to upload photo"));
+        Q_EMIT signalAddPhotoFailed(i18n("Failed to upload photo"));
     }
     else
     {
-        emit signalAddPhotoSucceeded();
+        Q_EMIT signalAddPhotoSucceeded();
     }
 }
 
@@ -449,8 +449,8 @@ void BOXTalker::parseResponseUserName(const QByteArray& data)
 {
     QJsonDocument doc = QJsonDocument::fromJson(data);
     QString name      = doc.object()[QLatin1String("name")].toString();
-    emit signalBusy(false);
-    emit signalSetUserName(name);
+    Q_EMIT signalBusy(false);
+    Q_EMIT signalSetUserName(name);
 }
 
 void BOXTalker::parseResponseListFolders(const QByteArray& data)
@@ -460,8 +460,8 @@ void BOXTalker::parseResponseListFolders(const QByteArray& data)
 
     if (err.error != QJsonParseError::NoError)
     {
-        emit signalBusy(false);
-        emit signalListAlbumsFailed(i18n("Failed to list folders"));
+        Q_EMIT signalBusy(false);
+        Q_EMIT signalListAlbumsFailed(i18n("Failed to list folders"));
         return;
     }
 
@@ -471,7 +471,7 @@ void BOXTalker::parseResponseListFolders(const QByteArray& data)
     d->foldersList.clear();
     d->foldersList.append(qMakePair(QLatin1String("0"), QLatin1String("root")));
 
-    foreach (const QJsonValue& value, jsonArray)
+    Q_FOREACH (const QJsonValue& value, jsonArray)
     {
         QString folderName;
         QString type;
@@ -488,8 +488,8 @@ void BOXTalker::parseResponseListFolders(const QByteArray& data)
         }
     }
 
-    emit signalBusy(false);
-    emit signalListAlbumsDone(d->foldersList);
+    Q_EMIT signalBusy(false);
+    Q_EMIT signalListAlbumsDone(d->foldersList);
 }
 
 void BOXTalker::parseResponseCreateFolder(const QByteArray& data)
@@ -498,17 +498,17 @@ void BOXTalker::parseResponseCreateFolder(const QByteArray& data)
     QJsonObject jsonObject = doc1.object();
     bool fail              = jsonObject.contains(QLatin1String("error"));
 
-    emit signalBusy(false);
+    Q_EMIT signalBusy(false);
 
     if (fail)
     {
         QJsonParseError err;
         QJsonDocument doc2 = QJsonDocument::fromJson(data, &err);
-        emit signalCreateFolderFailed(jsonObject[QLatin1String("error_summary")].toString());
+        Q_EMIT signalCreateFolderFailed(jsonObject[QLatin1String("error_summary")].toString());
     }
     else
     {
-        emit signalCreateFolderSucceeded();
+        Q_EMIT signalCreateFolderSucceeded();
     }
 }
 

@@ -176,7 +176,7 @@ void OnlineVersionChecker::download(const QUrl& url)
 
     if (d->reply->error())
     {
-        emit signalNewVersionCheckError(d->reply->errorString());
+        Q_EMIT signalNewVersionCheckError(d->reply->errorString());
     }
 }
 
@@ -196,7 +196,7 @@ void OnlineVersionChecker::slotDownloadFinished(QNetworkReply* reply)
         (reply->error() != QNetworkReply::InsecureRedirectError))
     {
         qCDebug(DIGIKAM_GENERAL_LOG) << "Error: " << reply->errorString();
-        emit signalNewVersionCheckError(reply->errorString());
+        Q_EMIT signalNewVersionCheckError(reply->errorString());
 
         return;
     }
@@ -217,14 +217,14 @@ void OnlineVersionChecker::slotDownloadFinished(QNetworkReply* reply)
     if (data.isEmpty())
     {
         qCWarning(DIGIKAM_GENERAL_LOG) << "No data returned from the remote connection.";
-        emit signalNewVersionCheckError(i18n("No data returned from the remote connection."));
+        Q_EMIT signalNewVersionCheckError(i18n("No data returned from the remote connection."));
 
         return;
     }
 
     if (d->releaseNotes)
     {
-        emit signalReleaseNotesData(data);
+        Q_EMIT signalReleaseNotesData(data);
         d->releaseNotes = false;
 
         return;
@@ -240,7 +240,7 @@ void OnlineVersionChecker::slotDownloadFinished(QNetworkReply* reply)
 
         if (!OnlineVersionChecker::bundleProperties(arch, ext))
         {
-            emit signalNewVersionCheckError(i18n("Unsupported Architecture: %1", QSysInfo::buildAbi()));
+            Q_EMIT signalNewVersionCheckError(i18n("Unsupported Architecture: %1", QSysInfo::buildAbi()));
 
             qCDebug(DIGIKAM_GENERAL_LOG) << "Unsupported architecture";
 
@@ -267,7 +267,7 @@ void OnlineVersionChecker::slotDownloadFinished(QNetworkReply* reply)
         if (sections.size() < 4)
         {
             qCWarning(DIGIKAM_GENERAL_LOG) << "Invalid file name format returned from the remote connection.";
-            emit signalNewVersionCheckError(i18n("Invalid file name format returned from the remote connection."));
+            Q_EMIT signalNewVersionCheckError(i18n("Invalid file name format returned from the remote connection."));
 
             return;
         }
@@ -292,7 +292,7 @@ void OnlineVersionChecker::slotDownloadFinished(QNetworkReply* reply)
         if (!onlineDt.isValid())
         {
             qCWarning(DIGIKAM_GENERAL_LOG) << "Invalid pre-release date from the remote list.";
-            emit signalNewVersionCheckError(i18n("Invalid pre-release date from the remote list."));
+            Q_EMIT signalNewVersionCheckError(i18n("Invalid pre-release date from the remote list."));
 
             return;
         }
@@ -303,11 +303,11 @@ void OnlineVersionChecker::slotDownloadFinished(QNetworkReply* reply)
 
         if (onlineDt > d->curBuildDt)
         {
-            emit signalNewVersionAvailable(dtStr);            // Forward pre-release build date from remote file.
+            Q_EMIT signalNewVersionAvailable(dtStr);            // Forward pre-release build date from remote file.
         }
         else
         {
-            emit signalNewVersionCheckError(QString());             // Report error to GUI
+            Q_EMIT signalNewVersionCheckError(QString());             // Report error to GUI
         }
     }
     else
@@ -324,7 +324,7 @@ void OnlineVersionChecker::slotDownloadFinished(QNetworkReply* reply)
         if (onlineVals.size() != 3)
         {
             qCWarning(DIGIKAM_GENERAL_LOG) << "Invalid format returned from the remote connection.";
-            emit signalNewVersionCheckError(i18n("Invalid format returned from the remote connection."));
+            Q_EMIT signalNewVersionCheckError(i18n("Invalid format returned from the remote connection."));
 
             return;
         }
@@ -340,11 +340,11 @@ void OnlineVersionChecker::slotDownloadFinished(QNetworkReply* reply)
                                       currVals[1].toInt(),
                                       currVals[2].toInt()))
         {
-            emit signalNewVersionAvailable(onlineVer);
+            Q_EMIT signalNewVersionAvailable(onlineVer);
         }
         else
         {
-            emit signalNewVersionCheckError(QString());
+            Q_EMIT signalNewVersionCheckError(QString());
         }
     }
 }

@@ -44,7 +44,7 @@ QList<QImage*> FaceItemRetriever::getDetails(const DImg& src, const QList<QRectF
 {
     QList<QImage*> images;
 
-    foreach (const QRectF& rect, rects)
+    Q_FOREACH (const QRectF& rect, rects)
     {
         QImage* const croppedFace = new QImage();
         (*croppedFace)            = src.copyQImage(rect);
@@ -59,7 +59,7 @@ QList<QImage*> FaceItemRetriever::getDetails(const DImg& src, const QList<FaceTa
 {
     QList<QImage*> images;
 
-    foreach (const FaceTagsIface& face, faces)
+    Q_FOREACH (const FaceTagsIface& face, faces)
     {
         QRect rect                = TagRegion::mapFromOriginalSize(src, face.region().toRect());
 
@@ -77,7 +77,7 @@ QList<QImage*> FaceItemRetriever::getThumbnails(const QString& filePath, const Q
     Q_UNUSED(filePath)
     catcher->setActive(true);
 
-    foreach (const FaceTagsIface& face, faces)
+    Q_FOREACH (const FaceTagsIface& face, faces)
     {
         QRect rect = face.region().toRect();
         catcher->thread()->find(ItemInfo::thumbnailIdentifier(face.imageId()), rect);

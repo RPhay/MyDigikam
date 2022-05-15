@@ -715,7 +715,7 @@ BdEngineBackend::QueryState BdEngineBackend::execDBAction(const DbEngineAction& 
         beginTransaction();
     }
 
-    foreach (const DbEngineActionElement& actionElement, action.dbActionElements)
+    Q_FOREACH (const DbEngineActionElement& actionElement, action.dbActionElements)
     {
         BdEngineBackend::QueryState result;
 
@@ -782,7 +782,7 @@ QSqlQuery BdEngineBackend::execDBActionQuery(const DbEngineAction& action, const
 */
     QSqlQuery result;
 
-    foreach (const DbEngineActionElement& actionElement, action.dbActionElements)
+    Q_FOREACH (const DbEngineActionElement& actionElement, action.dbActionElements)
     {
         if (actionElement.mode == QLatin1String("query"))
         {
@@ -830,7 +830,7 @@ bool BdEngineBackend::open(const DbEngineParameters& parameters)
 
     int retries = 0;
 
-    forever
+    Q_FOREVER
     {
         QSqlDatabase database = d->databaseForThread();
 
@@ -1509,7 +1509,7 @@ BdEngineBackend::QueryState BdEngineBackend::execDirectSql(const QString& sql)
     DbEngineSqlQuery query = getQuery();
     int retries            = 0;
 
-    forever
+    Q_FOREVER
     {
         if (query.exec(sql))
         {
@@ -1545,7 +1545,7 @@ BdEngineBackend::QueryState BdEngineBackend::execDirectSqlWithResult(const QStri
     DbEngineSqlQuery query = getQuery();
     int retries            = 0;
 
-    forever
+    Q_FOREVER
     {
         if (query.exec(sql))
         {
@@ -1579,7 +1579,7 @@ bool BdEngineBackend::exec(DbEngineSqlQuery& query)
 
     int retries = 0;
 
-    forever
+    Q_FOREVER
     {
 /*
         qCDebug(DIGIKAM_DBENGINE_LOG) << "Trying to query ["
@@ -1620,7 +1620,7 @@ bool BdEngineBackend::execBatch(DbEngineSqlQuery& query)
 
     int retries = 0;
 
-    forever
+    Q_FOREVER
     {
         if (query.execBatch())
         {
@@ -1646,7 +1646,7 @@ DbEngineSqlQuery BdEngineBackend::prepareQuery(const QString& sql)
 {
     int retries = 0;
 
-    forever
+    Q_FOREVER
     {
         DbEngineSqlQuery query = getQuery();
 
@@ -1687,7 +1687,7 @@ DbEngineSqlQuery BdEngineBackend::copyQuery(const DbEngineSqlQuery& old)
     QList<QVariant> boundValues = old.boundValues().values();
 #endif
 
-    foreach (const QVariant& value, boundValues)
+    Q_FOREACH (const QVariant& value, boundValues)
     {
 /*
         qCDebug(DIGIKAM_DBENGINE_LOG) << "Bind value to query ["<<value<<"]";
@@ -1721,7 +1721,7 @@ BdEngineBackend::QueryState BdEngineBackend::beginTransaction()
     {
         int retries = 0;
 
-        forever
+        Q_FOREVER
         {
             if (db.transaction())
             {
@@ -1764,7 +1764,7 @@ BdEngineBackend::QueryState BdEngineBackend::commitTransaction()
         QSqlDatabase db = d->databaseForThread();
         int retries     = 0;
 
-        forever
+        Q_FOREVER
         {
             if (db.commit())
             {

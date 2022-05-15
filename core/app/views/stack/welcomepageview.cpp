@@ -70,7 +70,7 @@ bool WelcomePageViewPage::acceptNavigationRequest(const QUrl& url, QWebEnginePag
 {
     if (type == QWebEnginePage::NavigationTypeLinkClicked)
     {
-        emit linkClicked(url);
+        Q_EMIT linkClicked(url);
 
         return false;
     }

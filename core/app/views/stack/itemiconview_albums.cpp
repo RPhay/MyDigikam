@@ -96,7 +96,7 @@ void ItemIconView::slotRenameAlbum()
 
 void ItemIconView::slotAlbumsCleared()
 {
-    emit signalAlbumSelected(nullptr);
+    Q_EMIT signalAlbumSelected(nullptr);
 }
 
 void ItemIconView::slotAlbumHistoryBack(int steps)
@@ -162,8 +162,8 @@ void ItemIconView::slotSelectAlbum(const QUrl& url)
 
 void ItemIconView::slotAlbumSelected(const QList<Album*>& albums)
 {
-    emit signalNoCurrentItem();
-    emit signalAlbumSelected(nullptr);
+    Q_EMIT signalNoCurrentItem();
+    Q_EMIT signalAlbumSelected(nullptr);
 
     if (albums.isEmpty() || !albums.first())
     {
@@ -174,7 +174,7 @@ void ItemIconView::slotAlbumSelected(const QList<Album*>& albums)
     }
 
     Album* const album = albums.first();
-    emit signalAlbumSelected(album);
+    Q_EMIT signalAlbumSelected(album);
 
     if (d->useAlbumHistory && !d->labelsSearchHandler->isRestoringSelectionFromHistory())
     {
@@ -236,7 +236,7 @@ void ItemIconView::slotGotoAlbumAndItem(const ItemInfo& imageInfo)
 {
     qCDebug(DIGIKAM_GENERAL_LOG) << "going to " << imageInfo;
 
-    emit signalNoCurrentItem();
+    Q_EMIT signalNoCurrentItem();
 
     PAlbum* const album = AlbumManager::instance()->findPAlbum(imageInfo.albumId());
 
@@ -258,7 +258,7 @@ void ItemIconView::slotGotoDateAndItem(const ItemInfo& imageInfo)
 {
     QDate date = imageInfo.dateTime().date();
 
-    emit signalNoCurrentItem();
+    Q_EMIT signalNoCurrentItem();
 
     // Change to Date Album view.
     // Note, that this also opens the side bar if it is closed; this is
@@ -283,7 +283,7 @@ void ItemIconView::slotGotoTagAndItem(int tagID)
     //  KURL url(iconItem->imageInfo()->kurl());
     //  url.cleanPath();
 
-    emit signalNoCurrentItem();
+    Q_EMIT signalNoCurrentItem();
 
     // Change to Tag Folder view.
     // Note, that this also opens the side bar if it is closed; this is

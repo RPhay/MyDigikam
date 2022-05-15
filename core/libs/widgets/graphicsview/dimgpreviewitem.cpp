@@ -143,14 +143,14 @@ void DImgPreviewItem::setPath(const QString& path, bool rePreview)
     if (d->path.isNull())
     {
         d->state = NoImage;
-        emit stateChanged(d->state);
+        Q_EMIT stateChanged(d->state);
     }
     else
     {
         d->state = Loading;
         d->previewThread->load(d->path, d->previewSettings, d->previewSize);
 
-        emit stateChanged(d->state);
+        Q_EMIT stateChanged(d->state);
     }
 
     d->preloadThread->stopLoading();
@@ -279,16 +279,16 @@ void DImgPreviewItem::slotGotImagePreview(const LoadingDescription& description,
         setImage(DImg());
 
         d->state = ImageLoadingFailed;
-        emit stateChanged(d->state);
-        emit loadingFailed();
+        Q_EMIT stateChanged(d->state);
+        Q_EMIT loadingFailed();
     }
     else
     {
         setImage(image);
 
         d->state = ImageLoaded;
-        emit stateChanged(d->state);
-        emit loaded();
+        Q_EMIT stateChanged(d->state);
+        Q_EMIT loaded();
     }
 
     preloadNext();

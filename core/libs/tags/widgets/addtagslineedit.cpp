@@ -176,11 +176,11 @@ void AddTagsLineEdit::slotReturnPressed()
     {
         //focus back to mainview
 
-        emit taggingActionFinished();
+        Q_EMIT taggingActionFinished();
     }
     else
     {
-        emit taggingActionActivated(currentTaggingAction());
+        Q_EMIT taggingActionActivated(currentTaggingAction());
     }
 }
 
@@ -195,11 +195,11 @@ void AddTagsLineEdit::slotTextEdited(const QString& text)
 
     if (text.isEmpty())
     {
-        emit taggingActionSelected(TaggingAction());
+        Q_EMIT taggingActionSelected(TaggingAction());
     }
     else
     {
-        emit taggingActionSelected(TaggingActionFactory::defaultTaggingAction(text, d->parentTagId));
+        Q_EMIT taggingActionSelected(TaggingActionFactory::defaultTaggingAction(text, d->parentTagId));
     }
 
     d->completer->update(text);
@@ -209,7 +209,7 @@ void AddTagsLineEdit::completerActivated(const TaggingAction& action)
 {
     setCurrentTaggingAction(action);
 
-    emit taggingActionActivated(action);
+    Q_EMIT taggingActionActivated(action);
 }
 
 void AddTagsLineEdit::completerHighlighted(const TaggingAction& action)
@@ -221,7 +221,7 @@ void AddTagsLineEdit::setCurrentTaggingAction(const TaggingAction& action)
 {
     d->currentTaggingAction = action;
 
-    emit taggingActionSelected(action);
+    Q_EMIT taggingActionSelected(action);
 }
 
 TaggingAction AddTagsLineEdit::currentTaggingAction() const

@@ -252,13 +252,13 @@ void SlideToolBar::slotPlayBtnToggled()
     {
         d->playBtn->setIcon(QIcon::fromTheme(QLatin1String("media-playback-start")));
 
-        emit signalPause();
+        Q_EMIT signalPause();
     }
     else
     {
         d->playBtn->setIcon(QIcon::fromTheme(QLatin1String("media-playback-pause")));
 
-        emit signalPlay();
+        Q_EMIT signalPlay();
     }
 }
 
@@ -294,7 +294,7 @@ void SlideToolBar::slotNexPrevClicked()
         d->playBtn->setChecked(true);
         d->playBtn->setIcon(QIcon::fromTheme(QLatin1String("media-playback-start")));
 
-        emit signalPause();
+        Q_EMIT signalPause();
     }
 }
 
@@ -420,7 +420,7 @@ void SlideToolBar::slotScreenSelected(QAction* act)
         return;
     }
 
-    emit signalScreenSelected(act->data().toInt());
+    Q_EMIT signalScreenSelected(act->data().toInt());
 }
 
 void SlideToolBar::slotRemoveImage()
@@ -444,7 +444,7 @@ void SlideToolBar::slotRemoveImage()
 
     if (ret == QMessageBox::Yes)
     {
-        emit signalRemoveImageFromList();
+        Q_EMIT signalRemoveImageFromList();
     }
 
     if (running)

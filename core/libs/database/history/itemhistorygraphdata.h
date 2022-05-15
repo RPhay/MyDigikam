@@ -137,7 +137,7 @@ public:
     {
         QList<ItemInfo> infos;
 
-        foreach (const HistoryGraph::Vertex& v, vertices)
+        Q_FOREACH (const HistoryGraph::Vertex& v, vertices)
         {
             infos << properties(v).infos;
         }

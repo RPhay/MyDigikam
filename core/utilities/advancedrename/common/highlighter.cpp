@@ -48,7 +48,7 @@ Highlighter::~Highlighter()
 
 void Highlighter::highlightBlock(const QString& text)
 {
-    foreach (const HighlightingRule& rule, highlightingRules)
+    Q_FOREACH (const HighlightingRule& rule, highlightingRules)
     {
         QRegularExpression      expression(rule.pattern);
         QRegularExpressionMatch match;
@@ -108,7 +108,7 @@ void Highlighter::highlightBlock(const QString& text)
     settings.parseString = text;
     ParseResults invalid = parser->invalidModifiers(settings);
 
-    foreach (const ParseResults::ResultsKey& key, invalid.keys())
+    Q_FOREACH (const ParseResults::ResultsKey& key, invalid.keys())
     {
         setFormat(key.first, key.second, errorFormat);
     }
@@ -143,7 +143,7 @@ void Highlighter::setupHighlightingGrammar()
 
     optionFormat.setForeground(Qt::red);
 
-    foreach (Rule* const option, parser->options())
+    Q_FOREACH (Rule* const option, parser->options())
     {
         QRegularExpression r    = option->regExp();
         rule.type               = OptionPattern;
@@ -156,7 +156,7 @@ void Highlighter::setupHighlightingGrammar()
 
     modifierFormat.setForeground(Qt::darkGreen);
 
-    foreach (Rule* const modifier, parser->modifiers())
+    Q_FOREACH (Rule* const modifier, parser->modifiers())
     {
         QRegularExpression r    = modifier->regExp();
         rule.type               = ModifierPattern;

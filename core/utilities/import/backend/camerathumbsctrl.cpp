@@ -157,7 +157,7 @@ void CameraThumbsCtrl::slotThumbInfo(const QString&, const QString& file, const 
 
     putItemToCache(info.url(), info, QPixmap::fromImage(thumbnail));
     d->pendingItems.remove(info.url());
-    emit signalThumbInfoReady(info);
+    Q_EMIT signalThumbInfoReady(info);
 }
 
 void CameraThumbsCtrl::slotThumbInfoFailed(const QString& /*folder*/, const QString& file, const CamItemInfo& info)
@@ -165,7 +165,7 @@ void CameraThumbsCtrl::slotThumbInfoFailed(const QString& /*folder*/, const QStr
     QPixmap pix = d->controller->mimeTypeThumbnail(file).pixmap(ThumbnailSize::maxThumbsSize());
     putItemToCache(info.url(), info, pix);
     d->pendingItems.remove(info.url());
-    emit signalThumbInfoReady(info);
+    Q_EMIT signalThumbInfoReady(info);
 }
 
 // -- Cache management methods ------------------------------------------------------------

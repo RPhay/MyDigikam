@@ -922,7 +922,7 @@ static QStringList cleanUserFilterString(const QString& filterString)
 
     QStringList sepList = filterString.split(sep, QT_SKIP_EMPTY_PARTS);
 
-    foreach (const QString& f, sepList)
+    Q_FOREACH (const QString& f, sepList)
     {
         if (f.startsWith(wildcard))
         {

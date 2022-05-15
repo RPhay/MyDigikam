@@ -433,7 +433,7 @@ void FacePipeline::process(const QList<ItemInfo>& infos)
 
 void FacePipeline::setAccuracyAndModel(double value, bool yolo)
 {
-    emit d->accuracyAndModel(value, yolo);
+    Q_EMIT d->accuracyAndModel(value, yolo);
 }
 
 } // namespace Digikam

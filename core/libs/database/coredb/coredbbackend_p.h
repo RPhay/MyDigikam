@@ -117,7 +117,7 @@ public:
 
         void sendOut()
         {
-            foreach (const T& changeset, changesets)
+            Q_FOREACH (const T& changeset, changesets)
             {
                 d->sendToWatch(changeset);
             }

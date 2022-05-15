@@ -468,8 +468,8 @@ void RGWidget::slotButtonRGSelected()
         d->receivedRGCount  = 0;
         d->requestedRGCount = photoList.count();
 
-        emit signalSetUIEnabled(false, this, QString::fromUtf8(SLOT(slotRGCanceled())));
-        emit signalProgressSetup(d->requestedRGCount, i18n("Retrieving RG info -"));
+        Q_EMIT signalSetUIEnabled(false, this, QString::fromUtf8(SLOT(slotRGCanceled())));
+        Q_EMIT signalProgressSetup(d->requestedRGCount, i18n("Retrieving RG info -"));
 
         d->currentBackend->callRGBackend(photoList, wantedLanguage);
     }
@@ -510,7 +510,7 @@ void RGWidget::slotRGReady(QList<RGInfo>& returnedRGList)
 
         d->receivedRGCount+=returnedRGList.count();
 
-        emit signalSetUIEnabled(true);
+        Q_EMIT signalSetUIEnabled(true);
 
         return;
     }
@@ -586,20 +586,20 @@ void RGWidget::slotRGReady(QList<RGInfo>& returnedRGList)
         {
             // if the user is currently answering the cancel question, do nothing, only report progress
 
-            emit signalProgressChanged(d->receivedRGCount);
+            Q_EMIT signalProgressChanged(d->receivedRGCount);
         }
         else
         {
-            emit signalUndoCommand(d->undoCommand);
+            Q_EMIT signalUndoCommand(d->undoCommand);
 
             d->undoCommand = nullptr;
 
-            emit signalSetUIEnabled(true);
+            Q_EMIT signalSetUIEnabled(true);
         }
     }
     else
     {
-        emit signalProgressChanged(d->receivedRGCount);
+        Q_EMIT signalProgressChanged(d->receivedRGCount);
     }
 }
 
@@ -1002,13 +1002,13 @@ void RGWidget::slotRGCanceled()
 
                 if (d->undoCommand)
                 {
-                    emit signalUndoCommand(d->undoCommand);
+                    Q_EMIT signalUndoCommand(d->undoCommand);
                     d->undoCommand = nullptr;
                 }
 
                 // unlock the UI
 
-                emit signalSetUIEnabled(true);
+                Q_EMIT signalSetUIEnabled(true);
             }
 
             return;
@@ -1025,7 +1025,7 @@ void RGWidget::slotRGCanceled()
         {
             if (d->undoCommand)
             {
-                emit signalUndoCommand(d->undoCommand);
+                Q_EMIT signalUndoCommand(d->undoCommand);
                 d->undoCommand = nullptr;
             }
         }
@@ -1041,7 +1041,7 @@ void RGWidget::slotRGCanceled()
         d->undoCommand = nullptr;
     }
 
-    emit signalSetUIEnabled(true);
+    Q_EMIT signalSetUIEnabled(true);
 }
 
 } // namespace Digikam

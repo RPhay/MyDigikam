@@ -203,11 +203,11 @@ void GraphicsDImgView::mouseDoubleClickEvent(QMouseEvent* e)
 
     if (e->button() == Qt::LeftButton)
     {
-        emit leftButtonDoubleClicked();
+        Q_EMIT leftButtonDoubleClicked();
 
         if (!qApp->style()->styleHint(QStyle::SH_ItemView_ActivateItemOnSingleClick))
         {
-            emit activated();
+            Q_EMIT activated();
         }
     }
 }
@@ -226,7 +226,7 @@ void GraphicsDImgView::mousePressEvent(QMouseEvent* e)
 
     if (e->button() == Qt::LeftButton)
     {
-        emit leftButtonClicked();
+        Q_EMIT leftButtonClicked();
     }
 
     if ((e->button() == Qt::LeftButton) || (e->button() == Qt::MiddleButton))
@@ -243,7 +243,7 @@ void GraphicsDImgView::mousePressEvent(QMouseEvent* e)
 
     if (e->button() == Qt::RightButton)
     {
-        emit rightButtonClicked();
+        Q_EMIT rightButtonClicked();
     }
 }
 
@@ -280,7 +280,7 @@ void GraphicsDImgView::mouseReleaseEvent(QMouseEvent* e)
         {
             if (qApp->style()->styleHint(QStyle::SH_ItemView_ActivateItemOnSingleClick))
             {
-                emit activated();
+                Q_EMIT activated();
             }
         }
         else
@@ -309,14 +309,14 @@ void GraphicsDImgView::resizeEvent(QResizeEvent* e)
 {
     QGraphicsView::resizeEvent(e);
     d->layout->updateZoomAndSize();
-    emit resized();
-    emit viewportRectChanged(mapToScene(viewport()->rect()).boundingRect());
+    Q_EMIT resized();
+    Q_EMIT viewportRectChanged(mapToScene(viewport()->rect()).boundingRect());
 }
 
 void GraphicsDImgView::scrollContentsBy(int dx, int dy)
 {
     QGraphicsView::scrollContentsBy(dx, dy);
-    emit viewportRectChanged(mapToScene(viewport()->rect()).boundingRect());
+    Q_EMIT viewportRectChanged(mapToScene(viewport()->rect()).boundingRect());
 }
 
 void GraphicsDImgView::startPanning(const QPoint& pos)
@@ -336,13 +336,13 @@ void GraphicsDImgView::continuePanning(const QPoint& pos)
     QPoint delta = pos - d->mousePressPos;
     horizontalScrollBar()->setValue(d->panningScrollPos.x() + (isRightToLeft() ? delta.x() : -delta.x()));
     verticalScrollBar()->setValue(d->panningScrollPos.y() - delta.y());
-    emit contentsMoved(false);
+    Q_EMIT contentsMoved(false);
     viewport()->update();
 }
 
 void GraphicsDImgView::finishPanning()
 {
-    emit contentsMoved(true);
+    Q_EMIT contentsMoved(true);
     viewport()->unsetCursor();
 }
 
@@ -385,11 +385,11 @@ void GraphicsDImgView::wheelEvent(QWheelEvent* e)
 
         if      (e->angleDelta().y() < 0)
         {
-            emit toNextImage();
+            Q_EMIT toNextImage();
         }
         else if (e->angleDelta().y() > 0)
         {
-            emit toPreviousImage();
+            Q_EMIT toPreviousImage();
         }
 
         return;
@@ -494,7 +494,7 @@ void GraphicsDImgView::slotPanIconSelectionMoved(const QRect& imageRect, bool b)
 
 void GraphicsDImgView::slotContentsMoved()
 {
-    emit contentsMoving(horizontalScrollBar()->value(),
+    Q_EMIT contentsMoving(horizontalScrollBar()->value(),
                         verticalScrollBar()->value());
     viewport()->update();
 }

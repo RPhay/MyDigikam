@@ -277,7 +277,7 @@ void TrackCorrelatorThread::run()
             TrackCorrelator::Correlation::List readyItems;
             readyItems << correlatedData;
 
-            emit signalItemsCorrelated(readyItems);
+            Q_EMIT signalItemsCorrelated(readyItems);
         }
     }
 }

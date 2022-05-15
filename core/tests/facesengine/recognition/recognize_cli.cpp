@@ -58,7 +58,7 @@ QList<QImage*> toImages(const QStringList& paths)
 {
     QList<QImage*> images;
 
-    foreach (const QString& path, paths)
+    Q_FOREACH (const QString& path, paths)
     {
         images << new QImage(path);
     }
@@ -246,7 +246,7 @@ int main(int argc, char** argv)
             qCDebug(DIGIKAM_TESTS_LOG) << "Result for " << it.value().first()
                      << " is identity " << results.first().id();
 
-            foreach (const Identity& foundId, results)
+            Q_FOREACH (const Identity& foundId, results)
             {
                 if (foundId.isNull())
                 {

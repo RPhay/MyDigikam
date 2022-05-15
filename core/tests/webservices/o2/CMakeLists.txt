@@ -6,6 +6,16 @@
 
 DISABLE_CLANG_COMPILER_WARNINGS("4.99.99" "-Wno-extra-semi")
 
+# The o2 library does not adhere to the flags we use
+remove_definitions(
+    -DQT_NO_CAST_FROM_ASCII
+    -DQT_NO_CAST_TO_ASCII
+    -DQT_NO_URL_CAST_FROM_STRING
+    -DQT_NO_CAST_FROM_BYTEARRAY
+    -DQT_DISABLE_DEPRECATED_BEFORE=0x050E00
+    -DQT_NO_KEYWORDS
+)
+
 if(NOT APPLE)
 
     add_subdirectory(fbdemo)

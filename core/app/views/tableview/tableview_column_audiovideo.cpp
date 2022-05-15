@@ -319,7 +319,7 @@ void ColumnAudioVideoProperties::setConfiguration(const TableViewColumnConfigura
 {
     configuration = newConfiguration;
 
-    emit signalAllDataChanged();
+    Q_EMIT signalAllDataChanged();
 }
 
 } // namespace TableViewColumns

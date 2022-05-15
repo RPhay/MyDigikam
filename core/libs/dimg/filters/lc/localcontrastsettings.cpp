@@ -457,7 +457,7 @@ void LocalContrastSettings::slotStageEnabled(int index, bool b)
         }
     }
 
-    emit signalSettingsChanged();
+    Q_EMIT signalSettingsChanged();
 }
 
 LocalContrastContainer LocalContrastSettings::settings() const

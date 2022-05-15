@@ -720,7 +720,7 @@ QString ToolTipFiller::filterActionTipContents(const FilterAction& action)
         QList<QString> keys                    = params.keys();
         std::sort(keys.begin(), keys.end());
 
-        foreach (const QString& rootKey, keys)
+        Q_FOREACH (const QString& rootKey, keys)
         {
             QHash<QString, QVariant>::const_iterator it;
 

@@ -151,7 +151,7 @@ void FTExportWidget::setHistory(const QList<QUrl>& urls)
 {
     d->targetLabel->comboBox()->clear();
 
-    foreach (const QUrl& url, urls)
+    Q_FOREACH (const QUrl& url, urls)
     {
         d->targetLabel->comboBox()->addUrl(url);
     }
@@ -179,7 +179,7 @@ void FTExportWidget::slotShowTargetDialogClicked(bool checked)
         d->targetUrl = targetDialog->selectedUrls().first();
         updateTargetLabel();
 
-        emit signalTargetUrlChanged(d->targetUrl);
+        Q_EMIT signalTargetUrlChanged(d->targetUrl);
     }
 
     delete targetDialog;
@@ -210,7 +210,7 @@ void FTExportWidget::slotLabelUrlChanged()
 {
     d->targetUrl = d->targetLabel->url();
 
-    emit signalTargetUrlChanged(d->targetUrl);
+    Q_EMIT signalTargetUrlChanged(d->targetUrl);
 }
 
 } // namespace DigikamGenericFileTransferPlugin

@@ -298,7 +298,7 @@ void MapWidgetView::slotModelChanged()
         {
             QList<QUrl> fileUrls;
 
-            foreach (const ItemInfo& info, d->imageModel->imageInfos())
+            Q_FOREACH (const ItemInfo& info, d->imageModel->imageInfos())
             {
                 if (info.hasCoordinates())
                 {
@@ -321,12 +321,12 @@ void MapWidgetView::slotModelChanged()
 
             QList<QUrl> gpxList;
 
-            foreach (const QUrl& url, fileUrls)
+            Q_FOREACH (const QUrl& url, fileUrls)
             {
                 QDir dir(url.toLocalFile());
                 const QFileInfoList infoList = dir.entryInfoList(QStringList() << QLatin1String("*.gpx"), QDir::Files);
 
-                foreach (const QFileInfo& finfo, infoList)
+                Q_FOREACH (const QFileInfo& finfo, infoList)
                 {
                     gpxList << QUrl::fromLocalFile(finfo.filePath());
                 }
@@ -343,7 +343,7 @@ void MapWidgetView::slotModelChanged()
 
         case ApplicationImportUI:
         {
-            foreach (const CamItemInfo& info, d->importModel->camItemInfos())
+            Q_FOREACH (const CamItemInfo& info, d->importModel->camItemInfos())
             {
                 QScopedPointer<DMetadata> meta(new DMetadata(info.url().toLocalFile()));
                 double lat, lng;
@@ -616,7 +616,7 @@ QPersistentModelIndex MapViewModelHelper::bestRepresentativeIndexFromList(const 
             const QList<ItemInfo> imageInfoList = d->model->imageInfos(indexList);
             GPSItemInfo::List gpsItemInfoList;
 
-            foreach (const ItemInfo& imageInfo, imageInfoList)
+            Q_FOREACH (const ItemInfo& imageInfo, imageInfoList)
             {
                 GPSItemInfo gpsItemInfo;
 
@@ -661,7 +661,7 @@ QPersistentModelIndex MapViewModelHelper::bestRepresentativeIndexFromList(const 
             const QList<CamItemInfo> imageInfoList =  d->importModel->camItemInfos(indexList);
             GPSItemInfo::List gpsItemInfoList;
 
-            foreach (const CamItemInfo& imageInfo, imageInfoList)
+            Q_FOREACH (const CamItemInfo& imageInfo, imageInfoList)
             {
                 QScopedPointer<DMetadata> meta(new DMetadata(imageInfo.url().toLocalFile()));
                 double          lat, lng;
@@ -742,7 +742,7 @@ void MapViewModelHelper::slotThumbnailLoaded(const LoadingDescription& loadingDe
     if (currentIndex.isValid())
     {
         QPersistentModelIndex goodIndex(currentIndex);
-        emit signalThumbnailAvailableForIndex(goodIndex, thumb.copy(1, 1, thumb.size().width()-2, thumb.size().height()-2));
+        Q_EMIT signalThumbnailAvailableForIndex(goodIndex, thumb.copy(1, 1, thumb.size().width()-2, thumb.size().height()-2));
     }
 }
 
@@ -769,7 +769,7 @@ void MapViewModelHelper::slotThumbnailLoaded(const CamItemInfo& info)
     if (currentIndex.isValid())
     {
         QPersistentModelIndex goodIndex(currentIndex);
-        emit signalThumbnailAvailableForIndex(goodIndex, pix.copy(1, 1, pix.size().width()-2, pix.size().height()-2));
+        Q_EMIT signalThumbnailAvailableForIndex(goodIndex, pix.copy(1, 1, pix.size().width()-2, pix.size().height()-2));
     }
 }
 
@@ -800,7 +800,7 @@ void MapViewModelHelper::onIndicesClicked(const QList<QPersistentModelIndex>& cl
         imagesIdList.append(imageInfoList[i].id());
     }
 
-    emit signalFilteredImages(imagesIdList);
+    Q_EMIT signalFilteredImages(imagesIdList);
 
 #else
 
@@ -821,13 +821,13 @@ void MapViewModelHelper::slotImageChange(const ImageChangeset& changeset)
         (changes & DatabaseFields::LongitudeNumber) ||
         (changes & DatabaseFields::Altitude))
     {
-        foreach (const qlonglong& id, changeset.ids())
+        Q_FOREACH (const qlonglong& id, changeset.ids())
         {
             const QModelIndex index = d->model->indexForImageId(id);
 
             if (index.isValid())
             {
-                emit signalModelChangedDrastically();
+                Q_EMIT signalModelChangedDrastically();
                 break;
             }
         }

@@ -174,7 +174,7 @@ void MetadataHub::loadTags(const QList<int>& loadedTags)
 {
     d->tags.clear();
 
-    foreach (int tagId, loadedTags)
+    Q_FOREACH (int tagId, loadedTags)
     {
         if (TagsCache::instance()->isInternalTag(tagId))
         {
@@ -516,7 +516,7 @@ bool MetadataHub::writeTags(const DMetadata& metadata, bool saveTags)
 
         QList<int> keys = d->tags.keys();
 
-        foreach (int tagId, keys)
+        Q_FOREACH (int tagId, keys)
         {
             if (!TagsCache::instance()->canBeWrittenToMetadata(tagId))
             {
@@ -576,7 +576,7 @@ bool MetadataHub::writeFaceTagsMap(const DMetadata& metadata, bool saveFaces)
 {
     // add person tags to which no region is assigned to Microsoft Photo Region schema
 
-    foreach (int tagId, d->tags.keys())
+    Q_FOREACH (int tagId, d->tags.keys())
     {
         if ((d->tags.value(tagId) == MetadataAvailable) && FaceTags::isPerson(tagId))
         {
@@ -730,7 +730,7 @@ void MetadataHub::loadFaceTags(const ItemInfo& info, const QSize& size)
 
     if (!facesList.isEmpty())
     {
-        foreach (const FaceTagsIface& dface, facesList)
+        Q_FOREACH (const FaceTagsIface& dface, facesList)
         {
             QString faceName = FaceTags::faceNameForTag(dface.tagId());
 

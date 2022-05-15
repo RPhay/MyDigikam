@@ -242,7 +242,7 @@ void GPSItemList::slotInternalTreeViewImageActivated(const QModelIndex& current,
 {
     // qCDebug(DIGIKAM_GENERAL_LOG) << current;
 
-    emit signalImageActivated(current);
+    Q_EMIT signalImageActivated(current);
 }
 
 GPSItemSortProxyModel* GPSItemList::getSortProxyModel() const

@@ -116,7 +116,7 @@ protected:
             return;
         }
 
-        emit q->dataChanged(index, index);
+        Q_EMIT q->dataChanged(index, index);
     }
 
     void _k_itemToggled(bool checked)
@@ -129,7 +129,7 @@ protected:
             return;
         }
 
-        emit q->toggled(item, checked);
+        Q_EMIT q->toggled(item, checked);
     }
 
 protected:

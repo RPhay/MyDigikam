@@ -167,7 +167,7 @@ void AbstractCountingAlbumModel::updateCount(Album* album)
 
     if (changed)
     {
-        emit dataChanged(index, index);
+        Q_EMIT dataChanged(index, index);
     }
 }
 
@@ -207,7 +207,7 @@ void AbstractCountingAlbumModel::setCount(Album* album, int count)
 
     if (changed)
     {
-        emit dataChanged(index, index);
+        Q_EMIT dataChanged(index, index);
     }
 }
 

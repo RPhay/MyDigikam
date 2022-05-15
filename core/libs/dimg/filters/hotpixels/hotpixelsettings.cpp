@@ -206,7 +206,7 @@ void HotPixelSettings::readSettings(KConfigGroup& group)
 
     setSettings(prm);
 
-    foreach (const QUrl& url, d->allBlackFrameUrls)
+    Q_FOREACH (const QUrl& url, d->allBlackFrameUrls)
     {
         if (url.isValid() && !d->blackFrameListView->contains(url))
         {
@@ -277,7 +277,7 @@ void HotPixelSettings::slotBlackFrameSelected(const QList<HotPixelProps>& hpList
             pointList.setPoint(i, (*it).rect.center());
         }
 
-        emit signalHotPixels(pointList);
+        Q_EMIT signalHotPixels(pointList);
     }
 }
 

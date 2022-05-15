@@ -379,7 +379,7 @@ void ImportRatingOverlay::slotRatingChanged(int rating)
 {
     if (m_widget && m_widget->isVisible() && m_index.isValid())
     {
-        emit ratingEdited(affectedIndexes(m_index), rating);
+        Q_EMIT ratingEdited(affectedIndexes(m_index), rating);
     }
 }
 
@@ -490,7 +490,7 @@ void ImportRotateOverlay::slotClicked()
 
     if (index.isValid())
     {
-        emit signalRotate(affectedIndexes(index));
+        Q_EMIT signalRotate(affectedIndexes(index));
     }
 }
 

@@ -246,7 +246,7 @@ QList<QUrl> AdvancedRenameProcessDialog::failedUrls() const
 {
     QList<QUrl> failedUrls;
 
-    foreach (const NewNameInfo& info, d->failedList)
+    Q_FOREACH (const NewNameInfo& info, d->failedList)
     {
         failedUrls << info.first;
     }

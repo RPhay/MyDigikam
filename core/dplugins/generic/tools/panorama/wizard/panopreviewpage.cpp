@@ -265,7 +265,7 @@ void PanoPreviewPage::preInitializePage()
 
     setComplete(true);
 
-    emit completeChanged();
+    Q_EMIT completeChanged();
 }
 
 void PanoPreviewPage::initializePage()
@@ -356,7 +356,7 @@ void PanoPreviewPage::slotPanoAction(const DigikamGenericPanoramaPlugin::PanoAct
                     if (!d->previewBusy)
                     {
                         lock.unlock();
-                        emit signalPreviewFinished();
+                        Q_EMIT signalPreviewFinished();
                         return;
                     }
 
@@ -377,10 +377,10 @@ void PanoPreviewPage::slotPanoAction(const DigikamGenericPanoramaPlugin::PanoAct
                     d->previewWidget->setSelectionAreaPossible(false);
 
                     setComplete(false);
-                    emit completeChanged();
+                    Q_EMIT completeChanged();
 
                     lock.unlock();
-                    emit signalPreviewFinished();
+                    Q_EMIT signalPreviewFinished();
 
                     break;
                 }
@@ -409,7 +409,7 @@ void PanoPreviewPage::slotPanoAction(const DigikamGenericPanoramaPlugin::PanoAct
                     d->postProcessing->addEntry(message, DHistoryView::ErrorEntry);
 
                     setComplete(false);
-                    emit completeChanged();
+                    Q_EMIT completeChanged();
 
                     break;
                 }
@@ -438,7 +438,7 @@ void PanoPreviewPage::slotPanoAction(const DigikamGenericPanoramaPlugin::PanoAct
                     d->postProcessing->addEntry(message, DHistoryView::ErrorEntry);
 
                     setComplete(false);
-                    emit completeChanged();
+                    Q_EMIT completeChanged();
 
                     break;
                 }
@@ -469,7 +469,7 @@ void PanoPreviewPage::slotPanoAction(const DigikamGenericPanoramaPlugin::PanoAct
                     d->postProcessing->addEntry(message, DHistoryView::ErrorEntry);
 
                     setComplete(false);
-                    emit completeChanged();
+                    Q_EMIT completeChanged();
 
                     break;
                 }
@@ -498,7 +498,7 @@ void PanoPreviewPage::slotPanoAction(const DigikamGenericPanoramaPlugin::PanoAct
                     qCWarning(DIGIKAM_DPLUGIN_GENERIC_LOG) << "Enblend call failed";
 
                     setComplete(false);
-                    emit completeChanged();
+                    Q_EMIT completeChanged();
 
                     break;
                 }
@@ -540,7 +540,7 @@ void PanoPreviewPage::slotPanoAction(const DigikamGenericPanoramaPlugin::PanoAct
                     d->previewDone = true;
 
                     lock.unlock();
-                    emit signalPreviewFinished();
+                    Q_EMIT signalPreviewFinished();
 
                     d->title->setText(i18n("<qt>"
                                            "<h1>Panorama Preview</h1>"
@@ -607,7 +607,7 @@ void PanoPreviewPage::slotPanoAction(const DigikamGenericPanoramaPlugin::PanoAct
                     d->postProcessing->hide();
                     d->stitchingDone = true;
 
-                    emit signalStitchingFinished();
+                    Q_EMIT signalStitchingFinished();
                     preInitializePage();
 
                     break;

@@ -2027,7 +2027,7 @@ public:
             m_Serializer.StartElement(prefix, tag);
             element->GetAttributes().Apply(m_AttributeWriter);
 
-            // emit namespace attributes
+            // Q_EMIT namespace attributes
             if (element->m_NamespaceMap) {
                 NPT_List<NPT_XmlNamespaceMap::Entry*>::Iterator item =
                     element->m_NamespaceMap->m_Entries.GetFirstItem();

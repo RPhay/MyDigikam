@@ -148,23 +148,23 @@ void ItemPropertiesMetadataTab::slotSetupMetadataFilters()
 {
     if      (sender() == d->exifWidget)
     {
-        emit signalSetupMetadataFilters(Private::EXIF);
+        Q_EMIT signalSetupMetadataFilters(Private::EXIF);
     }
     else if (sender() == d->makernoteWidget)
     {
-        emit signalSetupMetadataFilters(Private::MAKERNOTE);
+        Q_EMIT signalSetupMetadataFilters(Private::MAKERNOTE);
     }
     else if (sender() == d->iptcWidget)
     {
-        emit signalSetupMetadataFilters(Private::IPTC);
+        Q_EMIT signalSetupMetadataFilters(Private::IPTC);
     }
     else if (sender() == d->xmpWidget)
     {
-        emit signalSetupMetadataFilters(Private::XMP);
+        Q_EMIT signalSetupMetadataFilters(Private::XMP);
     }
     else if (sender() == d->exifToolWidget)
     {
-        emit signalSetupMetadataFilters(Private::EXIFTOOL);
+        Q_EMIT signalSetupMetadataFilters(Private::EXIFTOOL);
     }
 }
 

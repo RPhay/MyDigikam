@@ -366,7 +366,7 @@ NPT_Log::FormatRecordToStream(const NPT_LogRecord& record,
     const char* level_name = GetLogLevelName(record.m_Level);
     NPT_String  level_string;
 
-    /* format and emit the record */
+    /* format and Q_EMIT the record */
     if (level_name[0] == '\0') {
         level_string = NPT_String::FromInteger(record.m_Level);
         level_name = level_string;
@@ -1358,7 +1358,7 @@ NPT_LogTcpHandler::FormatRecord(const NPT_LogRecord& record, NPT_String& msg)
     const char* level_name = NPT_Log::GetLogLevelName(record.m_Level);
     NPT_String  level_string;
 
-    /* format and emit the record */
+    /* format and Q_EMIT the record */
     if (level_name[0] == '\0') {
         level_string = NPT_String::FromIntegerU(record.m_Level);
         level_name = level_string;

@@ -598,7 +598,7 @@ void GeolocationEdit::setImages(const QList<QUrl>& images)
 {
     QList<GPSItemContainer*> items;
 
-    foreach (const QUrl& u, images)
+    Q_FOREACH (const QUrl& u, images)
     {
         items << new GPSItemContainer(u);
     }
@@ -608,7 +608,7 @@ void GeolocationEdit::setImages(const QList<QUrl>& images)
 
 void GeolocationEdit::setItems(const QList<GPSItemContainer*>& items)
 {
-    foreach (GPSItemContainer* const newItem, items)
+    Q_FOREACH (GPSItemContainer* const newItem, items)
     {
         newItem->loadImageData();
         d->imageModel->addItem(newItem);
@@ -979,7 +979,7 @@ void GeolocationEdit::slotFileChangesSaved(int beginIndex, int endIndex)
             {
                 // To rescan item metadata from host.
 
-                emit signalMetadataChangedForUrl(d->fileIOFuture.resultAt(i).first);
+                Q_EMIT signalMetadataChangedForUrl(d->fileIOFuture.resultAt(i).first);
             }
         }
 

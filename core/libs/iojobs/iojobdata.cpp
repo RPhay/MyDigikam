@@ -170,7 +170,7 @@ IOJobData::IOJobData(int operation,
 
     // We need source URLs as dummy.
 
-    foreach (const DTrashItemInfo& item, d->trashItemList)
+    Q_FOREACH (const DTrashItemInfo& item, d->trashItemList)
     {
         d->sourceUrlList << QUrl::fromLocalFile(item.trashPath);
     }
@@ -187,7 +187,7 @@ void IOJobData::setItemInfos(const QList<ItemInfo>& infos)
 
     d->sourceUrlList.clear();
 
-    foreach (const ItemInfo& info, d->itemInfosList)
+    Q_FOREACH (const ItemInfo& info, d->itemInfosList)
     {
         d->sourceUrlList << info.fileUrl();
     }
@@ -272,7 +272,7 @@ QDateTime IOJobData::jobTime() const
 
 ItemInfo IOJobData::findItemInfo(const QUrl& url) const
 {
-    foreach (const ItemInfo& info, d->itemInfosList)
+    Q_FOREACH (const ItemInfo& info, d->itemInfosList)
     {
         if (info.fileUrl() == url)
         {    // cppcheck-suppress useStlAlgorithm

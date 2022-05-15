@@ -151,7 +151,7 @@ PTalker::~PTalker()
 
 void PTalker::link()
 {
-    emit signalBusy(true);
+    Q_EMIT signalBusy(true);
 
     QUrl url(d->authUrl);
     QUrlQuery query(url);
@@ -181,7 +181,7 @@ void PTalker::unLink()
     d->settings->remove(QString());
     d->settings->endGroup();
 
-    emit pinterestLinkingSucceeded();
+    Q_EMIT pinterestLinkingSucceeded();
 }
 
 void PTalker::slotCatchUrl(const QUrl& url)
@@ -195,7 +195,7 @@ void PTalker::slotCatchUrl(const QUrl& url)
         qCDebug(DIGIKAM_WEBSERVICES_LOG) << "CODE Received";
         d->browser->close();
         getToken(code);
-        emit signalBusy(false);
+        Q_EMIT signalBusy(false);
     }
 }
 
@@ -249,7 +249,7 @@ QMap<QString, QString> PTalker::ParseUrlParameters(const QString& url)
 void PTalker::slotLinkingFailed()
 {
     qCDebug(DIGIKAM_WEBSERVICES_LOG) << "LINK to Pinterest fail";
-    emit signalBusy(false);
+    Q_EMIT signalBusy(false);
 }
 
 void PTalker::slotLinkingSucceeded()
@@ -257,13 +257,13 @@ void PTalker::slotLinkingSucceeded()
     if (d->accessToken.isEmpty())
     {
         qCDebug(DIGIKAM_WEBSERVICES_LOG) << "UNLINK to Pinterest ok";
-        emit signalBusy(false);
+        Q_EMIT signalBusy(false);
         return;
     }
 
     qCDebug(DIGIKAM_WEBSERVICES_LOG) << "LINK to Pinterest ok";
     writeSettings();
-    emit signalLinkingSucceeded();
+    Q_EMIT signalLinkingSucceeded();
 }
 
 bool PTalker::authenticated()
@@ -279,7 +279,7 @@ void PTalker::cancel()
         d->reply = nullptr;
     }
 
-    emit signalBusy(false);
+    Q_EMIT signalBusy(false);
 }
 
 void PTalker::createBoard(QString& boardName)
@@ -296,7 +296,7 @@ void PTalker::createBoard(QString& boardName)
     d->reply = d->netMngr->post(netRequest, postData);
 
     d->state = Private::P_CREATEBOARD;
-    emit signalBusy(true);
+    Q_EMIT signalBusy(true);
 }
 
 void PTalker::getUserName()
@@ -308,7 +308,7 @@ void PTalker::getUserName()
 
     d->reply = d->netMngr->get(netRequest);
     d->state = Private::P_USERNAME;
-    emit signalBusy(true);
+    Q_EMIT signalBusy(true);
 }
 
 /**
@@ -324,7 +324,7 @@ void PTalker::listBoards(const QString& /*path*/)
     d->reply = d->netMngr->get(netRequest);
 
     d->state = Private::P_LISTBOARDS;
-    emit signalBusy(true);
+    Q_EMIT signalBusy(true);
 }
 
 bool PTalker::addPin(const QString& imgPath,
@@ -339,13 +339,13 @@ bool PTalker::addPin(const QString& imgPath,
         d->reply = nullptr;
     }
 
-    emit signalBusy(true);
+    Q_EMIT signalBusy(true);
 
     QImage image = PreviewLoadThread::loadHighQualitySynchronously(imgPath).copyQImage();
 
     if (image.isNull())
     {
-        emit signalBusy(false);
+        Q_EMIT signalBusy(false);
         return false;
     }
 
@@ -414,13 +414,13 @@ void PTalker::slotFinished(QNetworkReply* reply)
     {
         if (d->state != Private::P_CREATEBOARD)
         {
-            emit signalBusy(false);
+            Q_EMIT signalBusy(false);
             QMessageBox::critical(QApplication::activeWindow(),
                                   i18n("Error"), reply->errorString());
 /*
             qCDebug(DIGIKAM_WEBSERVICES_LOG) << "Error content: " << reply->readAll();
 */
-            emit signalNetworkError();
+            Q_EMIT signalNetworkError();
 
             reply->deleteLater();
             return;
@@ -484,14 +484,14 @@ void PTalker::parseResponseAccessToken(const QByteArray& data)
     if (!d->accessToken.isEmpty())
     {
         qDebug(DIGIKAM_WEBSERVICES_LOG) << "Access token Received:" << d->accessToken;
-        emit pinterestLinkingSucceeded();
+        Q_EMIT pinterestLinkingSucceeded();
     }
     else
     {
-        emit pinterestLinkingFailed();
+        Q_EMIT pinterestLinkingFailed();
     }
 
-    emit signalBusy(false);
+    Q_EMIT signalBusy(false);
 }
 
 void PTalker::parseResponseAddPin(const QByteArray& data)
@@ -499,15 +499,15 @@ void PTalker::parseResponseAddPin(const QByteArray& data)
     QJsonDocument doc      = QJsonDocument::fromJson(data);
     QJsonObject jsonObject = doc.object();
     bool success           = jsonObject.contains(QLatin1String("id"));
-    emit signalBusy(false);
+    Q_EMIT signalBusy(false);
 
     if (!success)
     {
-        emit signalAddPinFailed(i18n("Failed to upload Pin"));
+        Q_EMIT signalAddPinFailed(i18n("Failed to upload Pin"));
     }
     else
     {
-        emit signalAddPinSucceeded();
+        Q_EMIT signalAddPinSucceeded();
     }
 }
 
@@ -517,8 +517,8 @@ void PTalker::parseResponseUserName(const QByteArray& data)
     QJsonObject jsonObject = doc.object();
     d->userName            = jsonObject[QLatin1String("username")].toString();
 
-    emit signalBusy(false);
-    emit signalSetUserName(d->userName);
+    Q_EMIT signalBusy(false);
+    Q_EMIT signalSetUserName(d->userName);
 }
 
 void PTalker::parseResponseListBoards(const QByteArray& data)
@@ -528,8 +528,8 @@ void PTalker::parseResponseListBoards(const QByteArray& data)
 
     if (err.error != QJsonParseError::NoError)
     {
-        emit signalBusy(false);
-        emit signalListBoardsFailed(i18n("Failed to list boards"));
+        Q_EMIT signalBusy(false);
+        Q_EMIT signalListBoardsFailed(i18n("Failed to list boards"));
         return;
     }
 
@@ -541,7 +541,7 @@ void PTalker::parseResponseListBoards(const QByteArray& data)
 
     QList<QPair<QString, QString> > list;
 
-    foreach (const QJsonValue& value, jsonArray)
+    Q_FOREACH (const QJsonValue& value, jsonArray)
     {
         QString boardID;
         QString boardName;
@@ -552,8 +552,8 @@ void PTalker::parseResponseListBoards(const QByteArray& data)
         list.append(qMakePair(boardID, boardName));
     }
 
-    emit signalBusy(false);
-    emit signalListBoardsDone(list);
+    Q_EMIT signalBusy(false);
+    Q_EMIT signalListBoardsDone(list);
 }
 
 void PTalker::parseResponseCreateBoard(const QByteArray& data)
@@ -562,17 +562,17 @@ void PTalker::parseResponseCreateBoard(const QByteArray& data)
     QJsonObject jsonObject = doc1.object();
     bool fail              = jsonObject.contains(QLatin1String("code"));
 
-    emit signalBusy(false);
+    Q_EMIT signalBusy(false);
 
     if (fail)
     {
         QJsonParseError err;
         QJsonDocument doc2 = QJsonDocument::fromJson(data, &err);
-        emit signalCreateBoardFailed(jsonObject[QLatin1String("message")].toString());
+        Q_EMIT signalCreateBoardFailed(jsonObject[QLatin1String("message")].toString());
     }
     else
     {
-        emit signalCreateBoardSucceeded();
+        Q_EMIT signalCreateBoardSucceeded();
     }
 }
 
@@ -597,7 +597,7 @@ void PTalker::readSettings()
     else
     {
         qCDebug(DIGIKAM_WEBSERVICES_LOG) << "Already Linked";
-        emit pinterestLinkingSucceeded();
+        Q_EMIT pinterestLinkingSucceeded();
     }
 }
 

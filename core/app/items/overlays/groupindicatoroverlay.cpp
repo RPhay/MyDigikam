@@ -47,7 +47,7 @@ GroupIndicatorOverlayWidget::GroupIndicatorOverlayWidget(QWidget* const parent)
 
 void GroupIndicatorOverlayWidget::contextMenuEvent(QContextMenuEvent* event)
 {
-    emit contextMenu(event);
+    Q_EMIT contextMenu(event);
 }
 
 void GroupIndicatorOverlayWidget::paintEvent(QPaintEvent*)
@@ -145,12 +145,12 @@ bool GroupIndicatorOverlay::checkIndex(const QModelIndex& index) const
 
 void GroupIndicatorOverlay::slotButtonClicked()
 {
-    emit toggleGroupOpen(m_index);
+    Q_EMIT toggleGroupOpen(m_index);
 }
 
 void GroupIndicatorOverlay::slotButtonContextMenu(QContextMenuEvent* event)
 {
-    emit showButtonContextMenu(m_index, event);
+    Q_EMIT showButtonContextMenu(m_index, event);
 }
 
 void GroupIndicatorOverlay::slotEntered(const QModelIndex& index)

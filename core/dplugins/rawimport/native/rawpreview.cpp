@@ -141,7 +141,7 @@ void RawPreview::setDecodingSettings(const DRawDecoding& settings)
 
     d->loadingDesc                  = LoadingDescription(d->url.toLocalFile(), demosaisedSettings);
     d->thread->load(d->loadingDesc, ManagedLoadSaveThread::LoadingPolicyFirstRemovePrevious);
-    emit signalLoadingStarted();
+    Q_EMIT signalLoadingStarted();
 }
 
 void RawPreview::exposureSettingsChanged()
@@ -166,7 +166,7 @@ void RawPreview::slotLoadingProgress(const LoadingDescription& description, floa
         return;
     }
 
-    emit signalLoadingProgress(progress);
+    Q_EMIT signalLoadingProgress(progress);
 }
 
 void RawPreview::slotImageLoaded(const LoadingDescription& description, const DImg& image)
@@ -192,12 +192,12 @@ void RawPreview::slotImageLoaded(const LoadingDescription& description, const DI
         // three copies - but the image is small
 
         setPostProcessedImage(DImg(pix.toImage()));
-        emit signalLoadingFailed();
+        Q_EMIT signalLoadingFailed();
     }
     else
     {
         d->demosaicedImg = image;
-        emit signalDemosaicedImage();
+        Q_EMIT signalDemosaicedImage();
 
         // NOTE: we will apply all Raw post processing corrections in RawImport class.
     }

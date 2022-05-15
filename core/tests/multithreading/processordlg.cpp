@@ -121,7 +121,7 @@ ProcessorDlg::ProcessorDlg(const QList<QUrl>& list, QWidget* const parent)
     grid->addWidget(d->items,        3, 0, 1, 1);
     grid->addWidget(d->progressView, 4, 0, 1, 1);
 
-    foreach (const QUrl& url, d->list)
+    Q_FOREACH (const QUrl& url, d->list)
     {
         QProgressBar* const bar = new QProgressBar(progressbox);
         QString file            = url.toLocalFile();
@@ -193,7 +193,7 @@ QProgressBar* ProcessorDlg::findProgressBar(const QUrl& url) const
 {
     QList<QProgressBar*> bars = findChildren<QProgressBar*>();
 
-    foreach (QProgressBar* const b, bars)
+    Q_FOREACH (QProgressBar* const b, bars)
     {
         if (b->objectName() == url.toLocalFile())
         {   // cppcheck-suppress useStlAlgorithm

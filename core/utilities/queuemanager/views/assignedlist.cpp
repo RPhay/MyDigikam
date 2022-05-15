@@ -199,20 +199,20 @@ void AssignedListView::slotRemoveCurrentTool()
     {
         delete item;
         refreshIndex();
-        emit signalAssignedToolsChanged(assignedList());
+        Q_EMIT signalAssignedToolsChanged(assignedList());
     }
 
     if (assignedCount() == 0)
     {
-        emit signalToolSelected(BatchToolSet());
+        Q_EMIT signalToolSelected(BatchToolSet());
     }
 }
 
 void AssignedListView::slotClearToolsList()
 {
     clear();
-    emit signalAssignedToolsChanged(assignedList());
-    emit signalToolSelected(BatchToolSet());
+    Q_EMIT signalAssignedToolsChanged(assignedList());
+    Q_EMIT signalToolSelected(BatchToolSet());
 }
 
 void AssignedListView::slotMoveCurrentToolUp()
@@ -260,7 +260,7 @@ AssignedListViewItem* AssignedListView::moveTool(AssignedListViewItem* const pre
     AssignedListViewItem* const item = insertTool(preceding, set);
     refreshIndex();
 
-    emit signalAssignedToolsChanged(assignedList());
+    Q_EMIT signalAssignedToolsChanged(assignedList());
 
     return item;
 }
@@ -290,7 +290,7 @@ AssignedListViewItem* AssignedListView::insertTool(AssignedListViewItem* const p
     item->setToolSet(set);
     refreshIndex();
 
-    emit signalAssignedToolsChanged(assignedList());
+    Q_EMIT signalAssignedToolsChanged(assignedList());
 
     return item;
 }
@@ -366,7 +366,7 @@ QMimeData* AssignedListView::mimeData(const QList<QTreeWidgetItem*> items) const
     QDataStream stream(&encodedData, QIODevice::WriteOnly);
     stream << items.count();
 
-    foreach (QTreeWidgetItem* const itm, items)
+    Q_FOREACH (QTreeWidgetItem* const itm, items)
     {
         AssignedListViewItem* const alwi = dynamic_cast<AssignedListViewItem*>(itm);
 
@@ -488,11 +488,11 @@ void AssignedListView::slotSelectionChanged()
     if (item)
     {
         BatchToolSet set = item->toolSet();
-        emit signalToolSelected(set);
+        Q_EMIT signalToolSelected(set);
     }
     else
     {
-        emit signalToolSelected(BatchToolSet());
+        Q_EMIT signalToolSelected(BatchToolSet());
     }
 }
 
@@ -501,13 +501,13 @@ void AssignedListView::slotQueueSelected(int, const QueueSettings&, const Assign
     // Clear assigned tools list and tool settings view.
 
     clear();
-    emit signalToolSelected(BatchToolSet());
+    Q_EMIT signalToolSelected(BatchToolSet());
 
     if (!tools.m_toolsList.isEmpty())
     {
         blockSignals(true);
 
-        foreach (const BatchToolSet& set, tools.m_toolsList)
+        Q_FOREACH (const BatchToolSet& set, tools.m_toolsList)
         {
             addTool(set);
         }
@@ -523,7 +523,7 @@ void AssignedListView::slotSettingsChanged(const BatchToolSet& set)
     if (item)
     {
         item->setToolSet(set);
-        emit signalAssignedToolsChanged(assignedList());
+        Q_EMIT signalAssignedToolsChanged(assignedList());
     }
 }
 

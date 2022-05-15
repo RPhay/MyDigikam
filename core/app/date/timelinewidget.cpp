@@ -293,7 +293,7 @@ void TimeLineWidget::setCursorDateTime(const QDateTime& dateTime)
 
     d->cursorDateTime = dt;
 
-    emit signalCursorPositionChanged();
+    Q_EMIT signalCursorPositionChanged();
 }
 
 QDateTime TimeLineWidget::cursorDateTime() const
@@ -390,7 +390,7 @@ void TimeLineWidget::setRefDateTime(const QDateTime& dateTime)
     d->refDateTime = dt;
     update();
 
-    emit signalRefDateTimeChanged();
+    Q_EMIT signalRefDateTimeChanged();
 }
 
 void TimeLineWidget::slotResetSelection()
@@ -719,7 +719,7 @@ void TimeLineWidget::slotDatesHash(const QHash<QDateTime, int>& datesStatHash)
     }
 
     update();
-    emit signalDateMapChanged();
+    Q_EMIT signalDateMapChanged();
 }
 
 int TimeLineWidget::calculateTop(int& val) const
@@ -982,7 +982,7 @@ void TimeLineWidget::keyPressEvent(QKeyEvent *e)
 void TimeLineWidget::keyReleaseEvent(QKeyEvent *)
 {
     updateAllSelection();
-    emit signalSelectionChanged();
+    Q_EMIT signalSelectionChanged();
     update();
 }
 
@@ -1953,7 +1953,7 @@ void TimeLineWidget::mouseReleaseEvent(QMouseEvent*)
     if (d->selMouseEvent)
     {
         updateAllSelection();
-        emit signalSelectionChanged();
+        Q_EMIT signalSelectionChanged();
     }
 
     d->selMouseEvent = false;

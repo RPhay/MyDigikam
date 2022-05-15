@@ -112,7 +112,7 @@ public:
 
 #if QTAV_HAVE(AVBUFREF)
 
-        foreach (AVBufferRef* b, buf)
+        Q_FOREACH (AVBufferRef* b, buf)
         {
             av_buffer_unref(&b);
         }

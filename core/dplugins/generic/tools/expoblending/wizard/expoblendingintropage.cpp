@@ -143,7 +143,7 @@ bool ExpoBlendingIntroPage::binariesFound()
 
 void ExpoBlendingIntroPage::slotExpoBlendingIntroPageIsValid()
 {
-    emit signalExpoBlendingIntroPageIsValid(binariesFound());
+    Q_EMIT signalExpoBlendingIntroPageIsValid(binariesFound());
 }
 
 } // namespace DigikamGenericExpoBlendingPlugin

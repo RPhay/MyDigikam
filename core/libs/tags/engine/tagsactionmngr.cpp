@@ -164,7 +164,7 @@ void TagsActionMngr::registerTagsActionCollections()
 
     QList<int> tagIds = TagsCache::instance()->tagsWithProperty(TagPropertyName::tagKeyboardShortcut());
 
-    foreach (int tagId, tagIds)
+    Q_FOREACH (int tagId, tagIds)
     {
         createTagActionShortcut(tagId);
     }
@@ -205,7 +205,7 @@ void TagsActionMngr::registerActionsToWidget(QWidget* const wdg)
 
     if (win)
     {
-        foreach (QAction* const ac, win->actionCollection()->actions())
+        Q_FOREACH (QAction* const ac, win->actionCollection()->actions())
         {
             if (ac->objectName().startsWith(d->ratingShortcutPrefix) ||
                 ac->objectName().startsWith(d->tagShortcutPrefix)    ||
@@ -306,7 +306,7 @@ bool TagsActionMngr::createTagActionShortcut(int tagId)
                                  << " to Tag " << talbum->title()
                                  << " (" << tagId << ")";
 
-    foreach (KActionCollection* const ac, d->actionCollectionList)
+    Q_FOREACH (KActionCollection* const ac, d->actionCollectionList)
     {
         QAction* const action = ac->addAction(QString::fromUtf8("%1-%2").arg(d->tagShortcutPrefix).arg(tagId));
         action->setText(i18n("Assign Tag \"%1\"", talbum->title()));
@@ -400,7 +400,7 @@ bool TagsActionMngr::removeTagActionShortcut(int tagId, bool delAction)
         return false;
     }
 
-    foreach (QAction* const act, d->tagsActionMap.values(tagId))
+    Q_FOREACH (QAction* const act, d->tagsActionMap.values(tagId))
     {
         if (act)
         {
@@ -514,9 +514,9 @@ void TagsActionMngr::slotAssignFromShortcut()
         return;
     }
 
-    // emit signal to DInfoInterface to broadcast to another component:
+    // Q_EMIT signal to DInfoInterface to broadcast to another component:
 
-    emit signalShortcutPressed(action->objectName(), val);
+    Q_EMIT signalShortcutPressed(action->objectName(), val);
 }
 
 } // namespace Digikam

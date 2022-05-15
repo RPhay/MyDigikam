@@ -70,7 +70,7 @@ void detectFaces(const QString& imagePath)
 
     qCDebug(DIGIKAM_TESTS_LOG) << "Coordinates of detected faces : ";
 
-    foreach (const QRectF& r, faces)
+    Q_FOREACH (const QRectF& r, faces)
     {
         qCDebug(DIGIKAM_TESTS_LOG) << r;
     }
@@ -91,7 +91,7 @@ void detectFaces(const QString& imagePath)
     paintPen.setWidth(1);
     painter.setPen(paintPen);
 
-    foreach (const QRectF& rr, faces)
+    Q_FOREACH (const QRectF& rr, faces)
     {
         QLabel* const label = new QLabel;
         label->setScaledContents(false);

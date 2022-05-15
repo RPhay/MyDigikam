@@ -434,7 +434,7 @@ void FilterSideBarWidget::checkFilterChanges()
 
     if (!showUntagged || (d->tagMatchCond == ItemFilterSettings::OrCondition))
     {
-        foreach (TAlbum* const tag, d->tagFilterView->getCheckedTags())
+        Q_FOREACH (TAlbum* const tag, d->tagFilterView->getCheckedTags())
         {
             if (tag)
             {
@@ -442,7 +442,7 @@ void FilterSideBarWidget::checkFilterChanges()
             }
         }
 
-        foreach (TAlbum* const tag, d->tagFilterView->getPartiallyCheckedTags())
+        Q_FOREACH (TAlbum* const tag, d->tagFilterView->getPartiallyCheckedTags())
         {
             if (tag)
             {
@@ -450,7 +450,7 @@ void FilterSideBarWidget::checkFilterChanges()
             }
         }
 
-        foreach (TAlbum* const tag, d->colorLabelFilter->getCheckedColorLabelTags())
+        Q_FOREACH (TAlbum* const tag, d->colorLabelFilter->getCheckedColorLabelTags())
         {
             if (tag)
             {
@@ -458,7 +458,7 @@ void FilterSideBarWidget::checkFilterChanges()
             }
         }
 
-        foreach (TAlbum* const tag, d->pickLabelFilter->getCheckedPickLabelTags())
+        Q_FOREACH (TAlbum* const tag, d->pickLabelFilter->getCheckedPickLabelTags())
         {
             if (tag)
             {
@@ -472,7 +472,7 @@ void FilterSideBarWidget::checkFilterChanges()
         }
     }
 
-    emit signalTagFilterChanged(includedTagIds,
+    Q_EMIT signalTagFilterChanged(includedTagIds,
                                 excludedTagIds,
                                 d->tagMatchCond,
                                 showUntagged,

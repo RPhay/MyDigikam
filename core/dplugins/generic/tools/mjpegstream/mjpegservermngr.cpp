@@ -203,7 +203,7 @@ QList<QUrl> MjpegServerMngr::itemsList() const
     {
         QList<QList<QUrl> > ulst = d->collectionMap.values();
 
-        foreach (const QList<QUrl>& urls, ulst)
+        Q_FOREACH (const QList<QUrl>& urls, ulst)
         {
             ret << urls;
         }
@@ -296,7 +296,7 @@ bool MjpegServerMngr::save()
 
         QDomElement data;
 
-        foreach (const QUrl& url, it.value())
+        Q_FOREACH (const QUrl& url, it.value())
         {
             data = doc.createElement(QLatin1String("path"));
             data.setAttribute(QLatin1String("value"), url.toLocalFile());

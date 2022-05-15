@@ -131,7 +131,7 @@ void VideoGroup::setSingleWindow(bool s)
         if (!view)
             return;
 
-        foreach (VideoRenderer* const vo, mRenderers)
+        Q_FOREACH (VideoRenderer* const vo, mRenderers)
         {
             view->layout()->removeWidget(vo->widget());
             vo->widget()->setParent(0);
@@ -206,7 +206,7 @@ void VideoGroup::toggleFrameless(bool f)
         wf |= Qt::FramelessWindowHint;
     }
 
-    foreach (VideoRenderer* const rd, mRenderers)
+    Q_FOREACH (VideoRenderer* const rd, mRenderers)
     {
         rd->widget()->setWindowFlags(wf);
     }
@@ -341,7 +341,7 @@ void VideoGroup::updateROI()
 
     if (!m1Frame)
     {
-        foreach (VideoRenderer* const renderer, mRenderers)
+        Q_FOREACH (VideoRenderer* const renderer, mRenderers)
         {
             renderer->setRegionOfInterest(0, 0, 0, 0);
         }

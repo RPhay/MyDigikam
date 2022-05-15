@@ -42,7 +42,7 @@ void SearchFieldKeyword::write(SearchXmlWriter& writer)
 {
     QStringList keywordList = KeywordSearch::split(m_edit->text());
 
-    foreach (const QString& keyword, keywordList)
+    Q_FOREACH (const QString& keyword, keywordList)
     {
         if (!keyword.isEmpty())
         {

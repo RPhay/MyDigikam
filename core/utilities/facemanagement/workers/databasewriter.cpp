@@ -164,7 +164,7 @@ void DatabaseWriter::process(FacePipelineExtendedPackage::Ptr package)
 
     package->processFlags |= FacePipelinePackage::WrittenToDatabase;
 
-    emit processed(package);
+    Q_EMIT processed(package);
 }
 
 } // namespace Digikam

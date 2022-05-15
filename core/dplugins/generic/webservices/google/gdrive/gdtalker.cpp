@@ -150,7 +150,7 @@ void GDTalker::getUserName()
 
     m_reply  = d->netMngr->get(netRequest);
     d->state = Private::GD_USERNAME;
-    emit signalBusy(true);
+    Q_EMIT signalBusy(true);
 }
 
 /**
@@ -171,7 +171,7 @@ void GDTalker::listFolders()
 
     m_reply  = d->netMngr->get(netRequest);
     d->state = Private::GD_LISTFOLDERS;
-    emit signalBusy(true);
+    Q_EMIT signalBusy(true);
 }
 
 /**
@@ -207,7 +207,7 @@ void GDTalker::createFolder(const QString& title, const QString& id)
 
     m_reply  = d->netMngr->post(netRequest, data);
     d->state = Private::GD_CREATEFOLDER;
-    emit signalBusy(true);
+    Q_EMIT signalBusy(true);
 }
 
 bool GDTalker::addPhoto(const QString& imgPath, const GSPhoto& info,
@@ -219,7 +219,7 @@ bool GDTalker::addPhoto(const QString& imgPath, const GSPhoto& info,
         m_reply = nullptr;
     }
 
-    emit signalBusy(true);
+    Q_EMIT signalBusy(true);
 
     QString path = imgPath;
 
@@ -236,7 +236,7 @@ bool GDTalker::addPhoto(const QString& imgPath, const GSPhoto& info,
 
         if (image.isNull())
         {
-            emit signalBusy(false);
+            Q_EMIT signalBusy(false);
             return false;
         }
 
@@ -266,7 +266,7 @@ bool GDTalker::addPhoto(const QString& imgPath, const GSPhoto& info,
 
     if (!form.addFile(path))
     {
-        emit signalBusy(false);
+        Q_EMIT signalBusy(false);
         return false;
     }
 
@@ -302,7 +302,7 @@ void GDTalker::slotFinished(QNetworkReply* reply)
 
     if (reply->error() != QNetworkReply::NoError)
     {
-        emit signalBusy(false);
+        Q_EMIT signalBusy(false);
         QMessageBox::critical(QApplication::activeWindow(),
                               i18n("Error"), reply->errorString());
 
@@ -342,7 +342,7 @@ void GDTalker::slotFinished(QNetworkReply* reply)
 void GDTalker::slotUploadPhoto()
 {
     qCDebug(DIGIKAM_WEBSERVICES_LOG) << d->listPhotoId.join(QLatin1String(", "));
-    emit signalUploadPhotoDone(1, QString(), d->listPhotoId);
+    Q_EMIT signalUploadPhotoDone(1, QString(), d->listPhotoId);
 }
 
 void GDTalker::parseResponseUserName(const QByteArray& data)
@@ -352,7 +352,7 @@ void GDTalker::parseResponseUserName(const QByteArray& data)
 
     if (err.error != QJsonParseError::NoError)
     {
-        emit signalBusy(false);
+        Q_EMIT signalBusy(false);
         return;
     }
 
@@ -362,8 +362,8 @@ void GDTalker::parseResponseUserName(const QByteArray& data)
 
     qCDebug(DIGIKAM_WEBSERVICES_LOG) << "in parseResponseUserName";
 
-    emit signalBusy(false);
-    emit signalSetUserName(temp);
+    Q_EMIT signalBusy(false);
+    Q_EMIT signalSetUserName(temp);
 }
 
 void GDTalker::parseResponseListFolders(const QByteArray& data)
@@ -375,8 +375,8 @@ void GDTalker::parseResponseListFolders(const QByteArray& data)
 
     if (err.error != QJsonParseError::NoError)
     {
-        emit signalBusy(false);
-        emit signalListAlbumsDone(0,i18n("Failed to list folders"),QList<GSFolder>());
+        Q_EMIT signalBusy(false);
+        Q_EMIT signalListAlbumsDone(0,i18n("Failed to list folders"),QList<GSFolder>());
         return;
     }
 
@@ -389,7 +389,7 @@ void GDTalker::parseResponseListFolders(const QByteArray& data)
     fps.title = d->rootfoldername;
     albumList.append(fps);
 
-    foreach (const QJsonValue& value, jsonArray)
+    Q_FOREACH (const QJsonValue& value, jsonArray)
     {
         QJsonObject obj      = value.toObject();
 
@@ -416,8 +416,8 @@ void GDTalker::parseResponseListFolders(const QByteArray& data)
 
     std::sort(albumList.begin(), albumList.end(), gdriveLessThan);
 
-    emit signalBusy(false);
-    emit signalListAlbumsDone(1, QString(), albumList);
+    Q_EMIT signalBusy(false);
+    Q_EMIT signalListAlbumsDone(1, QString(), albumList);
 }
 
 void GDTalker::parseResponseCreateFolder(const QByteArray& data)
@@ -427,7 +427,7 @@ void GDTalker::parseResponseCreateFolder(const QByteArray& data)
 
     if (err.error != QJsonParseError::NoError)
     {
-        emit signalBusy(false);
+        Q_EMIT signalBusy(false);
         return;
     }
 
@@ -438,15 +438,15 @@ void GDTalker::parseResponseCreateFolder(const QByteArray& data)
     if (!(QString::compare(temp, QLatin1String(""), Qt::CaseInsensitive) == 0))
         success = true;
 
-    emit signalBusy(false);
+    Q_EMIT signalBusy(false);
 
     if (!success)
     {
-        emit signalCreateFolderDone(0,i18n("Failed to create folder"));
+        Q_EMIT signalCreateFolderDone(0,i18n("Failed to create folder"));
     }
     else
     {
-        emit signalCreateFolderDone(1,QString());
+        Q_EMIT signalCreateFolderDone(1,QString());
     }
 }
 
@@ -457,7 +457,7 @@ void GDTalker::parseResponseAddPhoto(const QByteArray& data)
 
     if (err.error != QJsonParseError::NoError)
     {
-        emit signalBusy(false);
+        Q_EMIT signalBusy(false);
         return;
     }
 
@@ -469,16 +469,16 @@ void GDTalker::parseResponseAddPhoto(const QByteArray& data)
     if (!(QString::compare(altLink, QLatin1String(""), Qt::CaseInsensitive) == 0))
         success = true;
 
-    emit signalBusy(false);
+    Q_EMIT signalBusy(false);
 
     if (!success)
     {
-        emit signalAddPhotoDone(0, i18n("Failed to upload photo"));
+        Q_EMIT signalAddPhotoDone(0, i18n("Failed to upload photo"));
     }
     else
     {
         d->listPhotoId << photoId;
-        emit signalAddPhotoDone(1, QString());
+        Q_EMIT signalAddPhotoDone(1, QString());
     }
 }
 
@@ -490,7 +490,7 @@ void GDTalker::cancel()
         m_reply = nullptr;
     }
 
-    emit signalBusy(false);
+    Q_EMIT signalBusy(false);
 }
 
 } // namespace DigikamGenericGoogleServicesPlugin

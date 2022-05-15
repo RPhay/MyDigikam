@@ -149,8 +149,8 @@ void ChoiceSearchModel::setChecked(int i, bool checked)
     m_entries[i].m_checkState = checked;
     QModelIndex modelIndex    = index(i);
 
-    emit dataChanged(modelIndex, modelIndex);
-    emit checkStateChanged(m_entries.at(i).m_key, checked);
+    Q_EMIT dataChanged(modelIndex, modelIndex);
+    Q_EMIT checkStateChanged(m_entries.at(i).m_key, checked);
 }
 
 void ChoiceSearchModel::resetChecked()

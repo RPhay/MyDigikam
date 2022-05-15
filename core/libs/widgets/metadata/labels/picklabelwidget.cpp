@@ -175,7 +175,7 @@ void PickLabelWidget::setDescriptionBoxVisible(bool b)
 
     if (!b)
     {
-        foreach (QAbstractButton* const btn, d->pickBtns->buttons())
+        Q_FOREACH (QAbstractButton* const btn, d->pickBtns->buttons())
         {
             PickLabel id = (PickLabel)(d->pickBtns->id(btn));
             btn->setToolTip(labelPickName(id));
@@ -250,7 +250,7 @@ bool PickLabelWidget::eventFilter(QObject* obj, QEvent* ev)
 
 void PickLabelWidget::setPickLabels(const QList<PickLabel>& list)
 {
-    foreach (QAbstractButton* const btn, d->pickBtns->buttons())
+    Q_FOREACH (QAbstractButton* const btn, d->pickBtns->buttons())
     {
         PickLabel id = (PickLabel)(d->pickBtns->id(btn));
         btn->setChecked(list.contains(id));
@@ -262,7 +262,7 @@ QList<PickLabel> PickLabelWidget::colorLabels() const
 {
     QList<PickLabel> list;
 
-    foreach (QAbstractButton* const btn, d->pickBtns->buttons())
+    Q_FOREACH (QAbstractButton* const btn, d->pickBtns->buttons())
     {
         if (btn && btn->isChecked())
             list.append((PickLabel)(d->pickBtns->id(btn)));
@@ -389,7 +389,7 @@ void PickLabelSelector::slotPickLabelChanged(int id)
     setToolTip(i18nc("@info: pick lablel selector", "Pick Label: %1", d->plw->labelPickName((PickLabel)id)));
     menu()->close();
 
-    emit signalPickLabelChanged(id);
+    Q_EMIT signalPickLabelChanged(id);
 }
 
 // -----------------------------------------------------------------------------

@@ -79,8 +79,8 @@ bool AlbumManager::setDatabase(const DbEngineParameters& params, bool priority, 
     cleanUp();
 
     d->currentAlbums.clear();
-    emit signalAlbumCurrentChanged(d->currentAlbums);
-    emit signalAlbumsCleared();
+    Q_EMIT signalAlbumCurrentChanged(d->currentAlbums);
+    Q_EMIT signalAlbumsCleared();
 
     d->albumPathHash.clear();
     d->allAlbumsIdHash.clear();
@@ -340,7 +340,7 @@ bool AlbumManager::setDatabase(const DbEngineParameters& params, bool priority, 
 
     QList<CollectionLocation> disappearedLocations = CollectionManager::instance()->checkHardWiredLocations();
 
-    foreach (const CollectionLocation& loc, disappearedLocations)
+    Q_FOREACH (const CollectionLocation& loc, disappearedLocations)
     {
         QString locDescription;
         QStringList candidateIds, candidateDescriptions;

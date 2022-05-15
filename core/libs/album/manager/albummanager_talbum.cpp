@@ -174,7 +174,7 @@ void AlbumManager::scanTAlbums()
 
     if (!tList.isEmpty())
     {
-        emit signalAlbumsUpdated(Album::TAG);
+        Q_EMIT signalAlbumsUpdated(Album::TAG);
     }
 
     getTagItemsCount();
@@ -342,7 +342,7 @@ TAlbum* AlbumManager::createTAlbum(TAlbum* parent, const QString& name,
         FaceTags::ensureIsPerson(album->id());
     }
 
-    emit signalAlbumsUpdated(Album::TAG);
+    Q_EMIT signalAlbumsUpdated(Album::TAG);
 
     return album;
 }
@@ -410,17 +410,17 @@ bool AlbumManager::deleteTAlbum(TAlbum* album, QString& errMsg, bool askUser)
         imageIds = CoreDbAccess().db()->getItemIDsInTag(album->id(), true);
     }
 
-    foreach (int tagId, toBeDeletedTagIds)
+    Q_FOREACH (int tagId, toBeDeletedTagIds)
     {
         if (FaceTags::isPerson(tagId))
         {
             const QList<qlonglong>& imgListIds = CoreDbAccess().db()->getItemIDsInTag(tagId);
 
-            foreach (const qlonglong& imageId, imgListIds)
+            Q_FOREACH (const qlonglong& imageId, imgListIds)
             {
                 const QList<FaceTagsIface>& facesList = FaceTagsEditor().databaseFaces(imageId);
 
-                foreach (const FaceTagsIface& face, facesList)
+                Q_FOREACH (const FaceTagsIface& face, facesList)
                 {
                     if (face.tagId() == tagId)
                     {
@@ -441,14 +441,14 @@ bool AlbumManager::deleteTAlbum(TAlbum* album, QString& errMsg, bool askUser)
         CoreDbAccess access;
         ChangingDB changing(d);
 
-        foreach (int tagId, toBeDeletedTagIds)
+        Q_FOREACH (int tagId, toBeDeletedTagIds)
         {
             access.db()->deleteTag(tagId);
         }
     }
 
     removeTAlbum(album);
-    emit signalAlbumsUpdated(Album::TAG);
+    Q_EMIT signalAlbumsUpdated(Album::TAG);
 
     if (askUser)
     {
@@ -492,7 +492,7 @@ bool AlbumManager::renameTAlbum(TAlbum* album,
     ChangingDB changing(d);
     CoreDbAccess().db()->setTagName(album->id(), name);
     album->setTitle(name);
-    emit signalAlbumRenamed(album);
+    Q_EMIT signalAlbumRenamed(album);
 
     askUserForWriteChangedTAlbumToFiles(album);
 
@@ -559,9 +559,9 @@ bool AlbumManager::moveTAlbum(TAlbum* album, TAlbum* newParent, QString& errMsg)
     }
 
     d->currentlyMovingAlbum = album;
-    emit signalAlbumAboutToBeMoved(album);
+    Q_EMIT signalAlbumAboutToBeMoved(album);
 
-    emit signalAlbumAboutToBeDeleted(album);
+    Q_EMIT signalAlbumAboutToBeDeleted(album);
 
     if (album->parent())
     {
@@ -569,17 +569,17 @@ bool AlbumManager::moveTAlbum(TAlbum* album, TAlbum* newParent, QString& errMsg)
     }
 
     album->setParent(nullptr);
-    emit signalAlbumDeleted(album);
-    emit signalAlbumHasBeenDeleted(reinterpret_cast<quintptr>(album));
+    Q_EMIT signalAlbumDeleted(album);
+    Q_EMIT signalAlbumHasBeenDeleted(reinterpret_cast<quintptr>(album));
 
-    emit signalAlbumAboutToBeAdded(album, newParent, newParent->lastChild());
+    Q_EMIT signalAlbumAboutToBeAdded(album, newParent, newParent->lastChild());
     ChangingDB changing(d);
     CoreDbAccess().db()->setTagParentID(album->id(), newParent->id());
     album->setParent(newParent);
-    emit signalAlbumAdded(album);
+    Q_EMIT signalAlbumAdded(album);
 
-    emit signalAlbumMoved(album);
-    emit signalAlbumsUpdated(Album::TAG);
+    Q_EMIT signalAlbumMoved(album);
+    Q_EMIT signalAlbumsUpdated(Album::TAG);
 
     d->currentlyMovingAlbum       = nullptr;
     TAlbum* const personParentTag = findTAlbum(FaceTags::personParentTag());
@@ -673,12 +673,12 @@ bool AlbumManager::mergeTAlbum(TAlbum* album, TAlbum* destAlbum, bool dialog, QS
         CoreDbOperationGroup group;
         group.setMaximumTime(200);
 
-        foreach (const qlonglong& imageId, imageIds)
+        Q_FOREACH (const qlonglong& imageId, imageIds)
         {
             QList<FaceTagsIface> facesList = FaceTagsEditor().databaseFaces(imageId);
             bool foundFace                 = false;
 
-            foreach (const FaceTagsIface& face, facesList)
+            Q_FOREACH (const FaceTagsIface& face, facesList)
             {
                 if (face.tagId() == oldId)
                 {
@@ -733,7 +733,7 @@ bool AlbumManager::updateTAlbumIcon(TAlbum* album, const QString& iconKDE,
         album->m_iconId = iconID;
     }
 
-    emit signalAlbumIconChanged(album);
+    Q_EMIT signalAlbumIconChanged(album);
 
     return true;
 }
@@ -790,7 +790,7 @@ QStringList AlbumManager::tagNames(const QList<int>& tagIDs, bool includeInterna
 {
     QStringList tagNames;
 
-    foreach (int id, tagIDs)
+    Q_FOREACH (int id, tagIDs)
     {
         TAlbum* const album = findTAlbum(id);
 
@@ -861,7 +861,7 @@ AlbumList AlbumManager::findTagsWithProperty(const QString& property)
 
     QList<int> ids = TagsCache::instance()->tagsWithProperty(property);
 
-    foreach (int id, ids)
+    Q_FOREACH (int id, ids)
     {
         TAlbum* const album = findTAlbum(id);
 
@@ -905,7 +905,7 @@ void AlbumManager::insertTAlbum(TAlbum* album, TAlbum* parent)
         return;
     }
 
-    emit signalAlbumAboutToBeAdded(album, parent, parent ? parent->lastChild() : nullptr);
+    Q_EMIT signalAlbumAboutToBeAdded(album, parent, parent ? parent->lastChild() : nullptr);
 
     if (parent)
     {
@@ -914,7 +914,7 @@ void AlbumManager::insertTAlbum(TAlbum* album, TAlbum* parent)
 
     d->allAlbumsIdHash.insert(album->globalID(), album);
 
-    emit signalAlbumAdded(album);
+    Q_EMIT signalAlbumAdded(album);
 }
 
 void AlbumManager::removeTAlbum(TAlbum* album)
@@ -943,7 +943,7 @@ void AlbumManager::removeTAlbum(TAlbum* album)
         child             = next;
     }
 
-    emit signalAlbumAboutToBeDeleted(album);
+    Q_EMIT signalAlbumAboutToBeDeleted(album);
     d->allAlbumsIdHash.remove(album->globalID());
 
     if (!d->currentAlbums.isEmpty())
@@ -951,16 +951,16 @@ void AlbumManager::removeTAlbum(TAlbum* album)
         if (album == d->currentAlbums.first())
         {
             d->currentAlbums.clear();
-            emit signalAlbumCurrentChanged(d->currentAlbums);
+            Q_EMIT signalAlbumCurrentChanged(d->currentAlbums);
         }
     }
 
-    emit signalAlbumDeleted(album);
+    Q_EMIT signalAlbumDeleted(album);
 
     quintptr deletedAlbum = reinterpret_cast<quintptr>(album);
     delete album;
 
-    emit signalAlbumHasBeenDeleted(deletedAlbum);
+    Q_EMIT signalAlbumHasBeenDeleted(deletedAlbum);
 }
 
 void AlbumManager::slotTagsJobResult()
@@ -991,7 +991,7 @@ void AlbumManager::slotTagsJobData(const QMap<int, int>& tagsStatMap)
     }
 
     d->tAlbumsCount = tagsStatMap;
-    emit signalTAlbumsDirty(tagsStatMap);
+    Q_EMIT signalTAlbumsDirty(tagsStatMap);
 }
 
 void AlbumManager::slotTagChange(const TagChangeset& changeset)
@@ -1031,7 +1031,7 @@ void AlbumManager::slotTagChange(const TagChangeset& changeset)
 
             if (tag)
             {
-                emit signalTagPropertiesChanged(tag);
+                Q_EMIT signalTagPropertiesChanged(tag);
             }
 
             break;
@@ -1066,7 +1066,7 @@ void AlbumManager::slotImageTagChange(const ImageTagChangeset& changeset)
 
         case ImageTagChangeset::PropertiesChanged:
         {
-            foreach (int id, changeset.tags())
+            Q_FOREACH (int id, changeset.tags())
             {
                 if (!d->toUpdatedFaces.contains(id))
                 {

@@ -183,7 +183,7 @@ void DImgThreadedFilter::startFilter()
     }
     else  // No image data
     {
-        emit finished(false);
+        Q_EMIT finished(false);
         qCDebug(DIGIKAM_DIMG_LOG) << m_name << "::No valid image data !!! ...";
     }
 }
@@ -192,7 +192,7 @@ void DImgThreadedFilter::startFilterDirectly()
 {
     if (m_orgImage.width() && m_orgImage.height())
     {
-        emit started();
+        Q_EMIT started();
 
         m_wasCancelled = false;
 
@@ -207,16 +207,16 @@ void DImgThreadedFilter::startFilterDirectly()
             // TODO: User notification
             qCCritical(DIGIKAM_DIMG_LOG) << "Caught out-of-memory exception! Aborting operation" << ex.what();
 
-            emit finished(false);
+            Q_EMIT finished(false);
 
             return;
         }
 
-        emit finished(!m_wasCancelled);
+        Q_EMIT finished(!m_wasCancelled);
     }
     else  // No image data
     {
-        emit finished(false);
+        Q_EMIT finished(false);
         qCDebug(DIGIKAM_DIMG_LOG) << m_name << "::No valid image data !!! ...";
     }
 }
@@ -256,7 +256,7 @@ void DImgThreadedFilter::postProgress(int progr)
     }
     else if (m_progressCurrent != progr)
     {
-        emit progress(progr);
+        Q_EMIT progress(progr);
         m_progressCurrent = progr;
     }
 }

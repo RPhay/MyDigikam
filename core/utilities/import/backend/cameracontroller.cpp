@@ -390,16 +390,16 @@ void CameraController::run()
             if      (!d->commands.isEmpty())
             {
                 command = d->commands.takeFirst();
-                emit signalBusy(true);
+                Q_EMIT signalBusy(true);
             }
             else if (!d->cmdThumbs.isEmpty())
             {
                 command = d->cmdThumbs.takeFirst();
-                emit signalBusy(false);
+                Q_EMIT signalBusy(false);
             }
             else
             {
-                emit signalBusy(false);
+                Q_EMIT signalBusy(false);
                 d->condVar.wait(&d->mutex);
                 continue;
             }
@@ -412,7 +412,7 @@ void CameraController::run()
         }
     }
 
-    emit signalBusy(false);
+    Q_EMIT signalBusy(false);
 }
 
 void CameraController::executeCommand(CameraCommand* const cmd)
@@ -430,7 +430,7 @@ void CameraController::executeCommand(CameraCommand* const cmd)
 
             bool result = d->camera->doConnect();
 
-            emit signalConnected(result);
+            Q_EMIT signalConnected(result);
 
             if (result)
             {
@@ -453,7 +453,7 @@ void CameraController::executeCommand(CameraCommand* const cmd)
             d->camera->cameraManual(manual);
             d->camera->cameraAbout(about);
 
-            emit signalCameraInformation(summary, manual, about);
+            Q_EMIT signalCameraInformation(summary, manual, about);
             break;
         }
 
@@ -468,7 +468,7 @@ void CameraController::executeCommand(CameraCommand* const cmd)
                            DHistoryView::ErrorEntry);
             }
 
-            emit signalFreeSpace(kBSize, kBAvail);
+            Q_EMIT signalFreeSpace(kBSize, kBAvail);
             break;
         }
 
@@ -482,7 +482,7 @@ void CameraController::executeCommand(CameraCommand* const cmd)
                            DHistoryView::ErrorEntry);
             }
 
-            emit signalPreview(preview);
+            Q_EMIT signalPreview(preview);
             break;
         }
 
@@ -496,7 +496,7 @@ void CameraController::executeCommand(CameraCommand* const cmd)
                            DHistoryView::ErrorEntry);
             }
 
-            emit signalUploaded(itemInfo);
+            Q_EMIT signalUploaded(itemInfo);
             break;
         }
 
@@ -541,7 +541,7 @@ void CameraController::executeCommand(CameraCommand* const cmd)
                 ++it;
             }
 
-            emit signalFileList(itemsList);
+            Q_EMIT signalFileList(itemsList);
 
             break;
         }
@@ -570,13 +570,13 @@ void CameraController::executeCommand(CameraCommand* const cmd)
                 {
                     thumbnail = thumbnail.scaled(thumbSize, thumbSize, Qt::KeepAspectRatio,
                                                                        Qt::SmoothTransformation);
-                    emit signalThumbInfo(folder, file, info, thumbnail);
+                    Q_EMIT signalThumbInfo(folder, file, info, thumbnail);
                 }
                 else
                 {
                     sendLogMsg(xi18n("Failed to get thumbnail for <filename>%1</filename>", file),
                                DHistoryView::ErrorEntry, folder, file);
-                    emit signalThumbInfoFailed(folder, file, info);
+                    Q_EMIT signalThumbInfoFailed(folder, file, info);
                 }
             }
 
@@ -596,7 +596,7 @@ void CameraController::executeCommand(CameraCommand* const cmd)
                            DHistoryView::ErrorEntry, folder, file);
             }
 
-            emit signalMetadata(folder, file, meta.data()->data());
+            Q_EMIT signalMetadata(folder, file, meta.data()->data());
 
             break;
         }
@@ -624,7 +624,7 @@ void CameraController::executeCommand(CameraCommand* const cmd)
 
             // download to a temp file
 
-            emit signalDownloaded(folder, file, CamItemInfo::DownloadStarted);
+            Q_EMIT signalDownloaded(folder, file, CamItemInfo::DownloadStarted);
 
             QString tempFile = QLatin1String("/Camera-tmp%1-") +
                                QString::number(QCoreApplication::applicationPid()) +
@@ -642,7 +642,7 @@ void CameraController::executeCommand(CameraCommand* const cmd)
                 QFile::remove(temp);
                 sendLogMsg(xi18n("Failed to download <filename>%1</filename>", file),
                            DHistoryView::ErrorEntry, folder, file);
-                emit signalDownloaded(folder, file, CamItemInfo::DownloadFailed);
+                Q_EMIT signalDownloaded(folder, file, CamItemInfo::DownloadFailed);
                 break;
             }
             else if (mime == QLatin1String("image/jpeg"))
@@ -791,7 +791,7 @@ void CameraController::executeCommand(CameraCommand* const cmd)
             // Now we need to move from temp file to destination file.
             // This possibly involves UI operation, do it from main thread
 
-            emit signalInternalCheckRename(folder, file, dest, temp, script);
+            Q_EMIT signalInternalCheckRename(folder, file, dest, temp, script);
             break;
         }
 
@@ -814,11 +814,11 @@ void CameraController::executeCommand(CameraCommand* const cmd)
 
             if (result)
             {
-                emit signalUploaded(itemsInfo);
+                Q_EMIT signalUploaded(itemsInfo);
             }
             else
             {
-                emit signalInternalUploadFailed(folder, file, src);
+                Q_EMIT signalInternalUploadFailed(folder, file, src);
             }
 
             break;
@@ -832,11 +832,11 @@ void CameraController::executeCommand(CameraCommand* const cmd)
 
             if (result)
             {
-                emit signalDeleted(folder, file, true);
+                Q_EMIT signalDeleted(folder, file, true);
             }
             else
             {
-                emit signalInternalDeleteFailed(folder, file);
+                Q_EMIT signalInternalDeleteFailed(folder, file);
             }
 
             break;
@@ -851,11 +851,11 @@ void CameraController::executeCommand(CameraCommand* const cmd)
 
             if (result)
             {
-                emit signalLocked(folder, file, true);
+                Q_EMIT signalLocked(folder, file, true);
             }
             else
             {
-                emit signalInternalLockFailed(folder, file);
+                Q_EMIT signalInternalLockFailed(folder, file);
             }
 
             break;
@@ -876,7 +876,7 @@ void CameraController::sendLogMsg(const QString& msg, DHistoryView::EntryType ty
 
     if (!d->canceled)
     {
-        emit signalLogMsg(msg, type, folder, file);
+        Q_EMIT signalLogMsg(msg, type, folder, file);
     }
 }
 
@@ -894,7 +894,7 @@ void CameraController::slotCheckRename(const QString& folder, const QString& fil
         QFile::remove(temp);
         sendLogMsg(xi18n("Skipped file <filename>%1</filename>", file),
                    DHistoryView::WarningEntry, folder, file);
-        emit signalSkipped(folder, file);
+        Q_EMIT signalSkipped(folder, file);
         return;
     }
     else if (d->conflictRule != SetupCamera::OVERWRITE)
@@ -947,7 +947,7 @@ void CameraController::slotCheckRename(const QString& folder, const QString& fil
         // rename failed. delete the temp file
 
         QFile::remove(temp);
-        emit signalDownloaded(folder, file, CamItemInfo::DownloadFailed);
+        Q_EMIT signalDownloaded(folder, file, CamItemInfo::DownloadFailed);
         sendLogMsg(xi18n("Failed to download <filename>%1</filename>", file),
                    DHistoryView::ErrorEntry,  folder, file);
     }
@@ -957,8 +957,8 @@ void CameraController::slotCheckRename(const QString& folder, const QString& fil
                                       << file << " info.filename: " << info.fileName();
         // TODO why two signals??
 
-        emit signalDownloaded(folder, file, CamItemInfo::DownloadedYes);
-        emit signalDownloadComplete(folder, file, info.path(), info.fileName());
+        Q_EMIT signalDownloaded(folder, file, CamItemInfo::DownloadedYes);
+        Q_EMIT signalDownloadComplete(folder, file, info.path(), info.fileName());
 
         // Run script
 
@@ -1080,7 +1080,7 @@ void CameraController::slotUploadFailed(const QString& folder, const QString& fi
 
 void CameraController::slotDeleteFailed(const QString& folder, const QString& file)
 {
-    emit signalDeleted(folder, file, false);
+    Q_EMIT signalDeleted(folder, file, false);
     sendLogMsg(xi18n("Failed to delete <filename>%1</filename>", file),
                DHistoryView::ErrorEntry, folder, file);
 
@@ -1107,7 +1107,7 @@ void CameraController::slotDeleteFailed(const QString& folder, const QString& fi
 
 void CameraController::slotLockFailed(const QString& folder, const QString& file)
 {
-    emit signalLocked(folder, file, false);
+    Q_EMIT signalLocked(folder, file, false);
     sendLogMsg(xi18n("Failed to lock <filename>%1</filename>", file),
                DHistoryView::ErrorEntry, folder, file);
 
@@ -1209,7 +1209,7 @@ CameraCommand* CameraController::getThumbsInfo(const CamItemInfoList& list, int 
 
     QList<QVariant> itemsList;
 
-    foreach (const CamItemInfo& info, list)
+    Q_FOREACH (const CamItemInfo& info, list)
     {
         itemsList.append(QStringList() << info.folder << info.name);
     }
@@ -1284,7 +1284,7 @@ void CameraController::downloadPrep(const SetupCamera::ConflictRule& rule)
 
 void CameraController::download(const DownloadSettingsList& list)
 {
-    foreach (const DownloadSettings& downloadSettings, list)
+    Q_FOREACH (const DownloadSettings& downloadSettings, list)
     {
         download(downloadSettings);
     }

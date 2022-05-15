@@ -300,7 +300,7 @@ void PanoIntroPage::slotChangeFileFormat(QAbstractButton* button)
 void PanoIntroPage::slotBinariesChanged(bool found)
 {
     setComplete(found);
-    emit completeChanged();
+    Q_EMIT completeChanged();
 }
 
 /*
@@ -323,7 +323,7 @@ void PanoIntroPage::slotShowFileFormat(int state)
 void PanoIntroPage::initializePage()
 {
     setComplete(d->binariesWidget->allBinariesFound());
-    emit completeChanged();
+    Q_EMIT completeChanged();
 }
 
 } // namespace DigikamGenericPanoramaPlugin

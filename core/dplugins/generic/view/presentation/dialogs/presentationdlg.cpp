@@ -212,7 +212,7 @@ void PresentationDlg::readSettings()
 
         QList<QUrl> playlistFiles = soundGrp.readEntry("Tracks", QList<QUrl>());
 
-        foreach (const QUrl& playlistFile, playlistFiles)
+        Q_FOREACH (const QUrl& playlistFile, playlistFiles)
         {
             QUrl file(playlistFile);
             QFileInfo fi(file.toLocalFile());
@@ -319,7 +319,7 @@ void PresentationDlg::slotStartClicked()
 
     if (d->sharedData->mainPage->updateUrlList())
     {
-        emit buttonStartClicked();
+        Q_EMIT buttonStartClicked();
     }
 
     return;

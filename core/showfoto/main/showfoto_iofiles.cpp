@@ -224,7 +224,7 @@ void Showfoto::slotDeleteCurrentItem()
             slotUpdateItemInfo();
             toggleActions(false);
             m_canvas->load(QString(), m_IOFileSettings);
-            emit signalNoCurrentItem();
+            Q_EMIT signalNoCurrentItem();
         }
         else
         {
@@ -280,7 +280,7 @@ void Showfoto::slotRemoveImageFromAlbum(const QUrl& url)
         slotUpdateItemInfo();
         toggleActions(false);
         m_canvas->load(QString(), m_IOFileSettings);
-        emit signalNoCurrentItem();
+        Q_EMIT signalNoCurrentItem();
     }
 }
 

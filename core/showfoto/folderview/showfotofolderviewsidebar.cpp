@@ -231,11 +231,11 @@ void ShowfotoFolderViewSideBar::loadContents(const QModelIndex& index, bool appe
     {
         if (!append)
         {
-            emit signalLoadContentsFromFiles(lst, currentFile);
+            Q_EMIT signalLoadContentsFromFiles(lst, currentFile);
         }
         else
         {
-            emit signalAppendContentsFromFiles(lst, currentFile);
+            Q_EMIT signalAppendContentsFromFiles(lst, currentFile);
         }
     }
 }
@@ -482,7 +482,7 @@ void ShowfotoFolderViewSideBar::registerPluginActions(const QList<DPluginAction*
 
 void ShowfotoFolderViewSideBar::slotPluginActionTriggered(QAction* act)
 {
-    foreach (QAction* const dpact, d->pluginActions)
+    Q_FOREACH (QAction* const dpact, d->pluginActions)
     {
         if (act->objectName() == dpact->objectName())
         {

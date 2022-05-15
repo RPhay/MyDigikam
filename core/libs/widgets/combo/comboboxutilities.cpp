@@ -88,7 +88,7 @@ void ProxyLineEdit::slotTextChanged(const QString& text)
 {
     if (text.isEmpty() && isClearButtonEnabled())
     {
-        emit signalClearButtonPressed();
+        Q_EMIT signalClearButtonPressed();
     }
 }
 
@@ -198,7 +198,7 @@ void ProxyClickLineEdit::mouseReleaseEvent(QMouseEvent* event)
 
     if (event->button() == Qt::LeftButton)
     {
-        emit leftClicked();
+        Q_EMIT leftClicked();
         event->accept();
     }
 }

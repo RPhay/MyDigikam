@@ -103,7 +103,7 @@ void TrainerWorker::process(FacePipelineExtendedPackage::Ptr package)
     QList<Identity>      identitySet;
     FaceUtils            utils;
 
-    foreach (const FacePipelineFaceTagsIface& face, package->databaseFaces)
+    Q_FOREACH (const FacePipelineFaceTagsIface& face, package->databaseFaces)
     {
         if (face.roles & FacePipelineFaceTagsIface::ForTraining)
         {
@@ -155,7 +155,7 @@ void TrainerWorker::process(FacePipelineExtendedPackage::Ptr package)
     package->databaseFaces.replaceRole(FacePipelineFaceTagsIface::ForTraining, FacePipelineFaceTagsIface::Trained);
     package->processFlags |= FacePipelinePackage::ProcessedByTrainer;
 
-    emit processed(package);
+    Q_EMIT processed(package);
 }
 
 void TrainerWorker::aboutToDeactivate()

@@ -170,7 +170,7 @@ void DAdjustableLabel::adjustTextToLabel()
     int lblW      = size().width();
     bool adjusted = false;
 
-    foreach (const QString& line, d->ajdText.split(QLatin1Char('\n')))
+    Q_FOREACH (const QString& line, d->ajdText.split(QLatin1Char('\n')))
     {
         int lineW = fm.horizontalAdvance(line);
 
@@ -235,8 +235,8 @@ void DClickLabel::mouseReleaseEvent(QMouseEvent* event)
 
     if (event->button() == Qt::LeftButton)
     {
-        emit leftClicked();
-        emit activated();
+        Q_EMIT leftClicked();
+        Q_EMIT activated();
         event->accept();
     }
 }
@@ -248,7 +248,7 @@ void DClickLabel::keyPressEvent(QKeyEvent* e)
         case Qt::Key_Down:
         case Qt::Key_Right:
         case Qt::Key_Space:
-            emit activated();
+            Q_EMIT activated();
             return;
 
         default:
@@ -283,8 +283,8 @@ void DSqueezedClickLabel::mouseReleaseEvent(QMouseEvent* event)
 
     if (event->button() == Qt::LeftButton)
     {
-        emit leftClicked();
-        emit activated();
+        Q_EMIT leftClicked();
+        Q_EMIT activated();
         event->accept();
     }
 }
@@ -310,7 +310,7 @@ void DSqueezedClickLabel::keyPressEvent(QKeyEvent* e)
         case Qt::Key_Down:
         case Qt::Key_Right:
         case Qt::Key_Space:
-            emit activated();
+            Q_EMIT activated();
             return;
 
         default:
@@ -363,7 +363,7 @@ void DArrowClickLabel::mouseReleaseEvent(QMouseEvent* event)
 {
     if (event->button() == Qt::LeftButton)
     {
-        emit leftClicked();
+        Q_EMIT leftClicked();
     }
 }
 
@@ -641,7 +641,7 @@ void DLabelExpander::setExpanded(bool b)
         }
     }
 
-    emit signalExpanded(b);
+    Q_EMIT signalExpanded(b);
 }
 
 bool DLabelExpander::isExpanded() const
@@ -823,7 +823,7 @@ void DExpanderBox::slotItemExpanded(bool b)
     if (exp)
     {
         int index = indexOf(exp);
-        emit signalItemExpanded(index, b);
+        Q_EMIT signalItemExpanded(index, b);
     }
 }
 
@@ -834,7 +834,7 @@ void DExpanderBox::slotItemToggled(bool b)
     if (exp)
     {
         int index = indexOf(exp);
-        emit signalItemToggled(index, b);
+        Q_EMIT signalItemToggled(index, b);
     }
 }
 
@@ -1066,7 +1066,7 @@ void DExpanderBoxExclusive::slotItemExpanded(bool b)
         }
     }
 
-    emit signalItemExpanded(indexOf(exp), b);
+    Q_EMIT signalItemExpanded(indexOf(exp), b);
 }
 
 void DExpanderBoxExclusive::setIsToolBox(bool b)

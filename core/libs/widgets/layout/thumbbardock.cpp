@@ -172,7 +172,7 @@ void ThumbBarDock::reInitialize()
     // orientation and size.
 
     QMainWindow* const parent = qobject_cast<QMainWindow*>(parentWidget());
-    emit dockLocationChanged(parent->dockWidgetArea(this));
+    Q_EMIT dockLocationChanged(parent->dockWidgetArea(this));
     widget()->resize(size());
     update();
 }

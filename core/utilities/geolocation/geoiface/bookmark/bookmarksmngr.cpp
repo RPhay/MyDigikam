@@ -72,14 +72,14 @@ RemoveBookmarksCommand::~RemoveBookmarksCommand()
 void RemoveBookmarksCommand::undo()
 {
     m_parent->add(m_node, m_row);
-    emit m_bookmarkManager->entryAdded(m_node);
+    Q_EMIT m_bookmarkManager->entryAdded(m_node);
     m_done = false;
 }
 
 void RemoveBookmarksCommand::redo()
 {
     m_parent->remove(m_node);
-    emit m_bookmarkManager->entryRemoved(m_parent, m_row, m_node);
+    Q_EMIT m_bookmarkManager->entryRemoved(m_parent, m_row, m_node);
     m_done = true;
 }
 
@@ -190,7 +190,7 @@ void ChangeBookmarkCommand::undo()
         }
     }
 
-    emit d->manager->entryChanged(d->node);
+    Q_EMIT d->manager->entryChanged(d->node);
 }
 
 void ChangeBookmarkCommand::redo()
@@ -216,7 +216,7 @@ void ChangeBookmarkCommand::redo()
         }
     }
 
-    emit d->manager->entryChanged(d->node);
+    Q_EMIT d->manager->entryChanged(d->node);
 }
 
 // --------------------------------------------------------------
@@ -301,7 +301,7 @@ void BookmarksModel::entryRemoved(BookmarkNode* parent, int row, BookmarkNode* i
 void BookmarksModel::entryChanged(BookmarkNode* item)
 {
     QModelIndex idx = index(item);
-    emit dataChanged(idx, idx);
+    Q_EMIT dataChanged(idx, idx);
 }
 
 bool BookmarksModel::removeRows(int row, int count, const QModelIndex& parent)
@@ -561,7 +561,7 @@ QMimeData* BookmarksModel::mimeData(const QModelIndexList& indexes) const
     QByteArray data;
     QDataStream stream(&data, QIODevice::WriteOnly);
 
-    foreach (QModelIndex index, indexes)
+    Q_FOREACH (QModelIndex index, indexes)
     {
         if ((index.column() != 0) || !index.isValid())
         {
@@ -759,7 +759,7 @@ bool TreeProxyModel::filterAcceptsRow(int srow, const QModelIndex& sparent) cons
 
 void TreeProxyModel::emitResult(bool v)
 {
-    emit signalFilterAccepts(v);
+    Q_EMIT signalFilterAccepts(v);
 }
 
 // --------------------------------------------------------------

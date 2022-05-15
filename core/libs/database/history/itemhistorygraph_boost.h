@@ -982,7 +982,7 @@ public:
 
         QList<Vertex> orderedTree;
 
-        foreach (const Vertex& vv, presortedVertices)
+        Q_FOREACH (const Vertex& vv, presortedVertices)
         {
             if (dominatedTree.contains(vv))
             {
@@ -1024,7 +1024,7 @@ public:
         search.breadthFirstSearch(graph, verticesLst.first(), direction == ChildToParent);
         QList<Vertex> bfs = search.verticesLst;
 
-        foreach (const Vertex& v, verticesLst)
+        Q_FOREACH (const Vertex& v, verticesLst)
         {
             bfs.removeOne(v);
         }
@@ -1053,7 +1053,7 @@ public:
 
                 int minIndex = verticesLst.size();
 
-                foreach (const Vertex& c, childBfs)
+                Q_FOREACH (const Vertex& c, childBfs)
                 {
                     int foundAt = verticesLst.indexOf(c);
 
@@ -1067,7 +1067,7 @@ public:
                     }
                 }
 
-                foreach (const Vertex& c, toInsert)
+                Q_FOREACH (const Vertex& c, toInsert)
                 {
                     verticesLst.insert(minIndex++, c);
                 }
@@ -1110,7 +1110,7 @@ public:
         search.depthFirstSearchSorted(graph, verticesLst.first(), direction == ChildToParent, lessThan);
         QList<Vertex> dfs = search.vertices;
 
-        foreach (const Vertex& v, verticesLst)
+        Q_FOREACH (const Vertex& v, verticesLst)
         {
             dfs.removeOne(v);
         }
@@ -1138,7 +1138,7 @@ protected:
         QList<Vertex> children = predecessors.keys(v);
         vertices << children;
 
-        foreach (const Vertex& child, children)
+        Q_FOREACH (const Vertex& child, children)
         {
             treeFromPredecessorsRecursive(child, vertices, predecessors);
         }
@@ -1297,7 +1297,7 @@ protected:
 
         QList<Vertex> verticesLst;
 
-        foreach (const Vertex& candidate, search.vertices)
+        Q_FOREACH (const Vertex& candidate, search.vertices)
         {
             if ((inOrOut ? in_degree(candidate, graph)
                          : out_degree(candidate, graph)) == 0)
@@ -1588,7 +1588,7 @@ protected:
                       outEdges.end(),
                       lessThanMapEdgeToTarget<IncidenceGraph, LessThan>(g, lessThan));
 
-            foreach (const edge_descriptor& e, outEdges)
+            Q_FOREACH (const edge_descriptor& e, outEdges)
             {
                 Vertex v                          = boost::target(e, g);
                 vis.examine_edge(e, g);

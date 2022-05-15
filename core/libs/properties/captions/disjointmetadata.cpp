@@ -409,7 +409,7 @@ bool DisjointMetadata::write(ItemInfo info, WriteMode writeMode)
     {
         QList<int> keys = d->tags.keys();
 
-        foreach (int key, keys)
+        Q_FOREACH (int key, keys)
         {
             if (d->tags.value(key) == DisjointMetadataDataFields::DisjointMetadataDataFields::MetadataAvailable)
             {
@@ -552,7 +552,7 @@ void DisjointMetadata::loadTags(const QList<int>& tagIds)
 {
     QList<int> loadedTagIds;
 
-    foreach (int tagId, tagIds)
+    Q_FOREACH (int tagId, tagIds)
     {
         if (!TagsCache::instance()->isInternalTag(tagId))
         {
@@ -581,7 +581,7 @@ void DisjointMetadata::loadTags(const QList<int>& tagIds)
 
     if (d->tags.isEmpty())
     {
-        foreach (int tagId, loadedTagIds)
+        Q_FOREACH (int tagId, loadedTagIds)
         {
             if (d->withoutTags)
             {
@@ -618,7 +618,7 @@ void DisjointMetadata::loadTags(const QList<int>& tagIds)
     // new tags which are not yet in the set,
     // are added as Disjoint
 
-    foreach (int tagId, loadedTagIds)
+    Q_FOREACH (int tagId, loadedTagIds)
     {
         if (!d->tags.contains(tagId))
         {
@@ -658,7 +658,7 @@ void DisjointMetadata::applyChangeNotifications()
         d->tagIds.clear();
     }
 
-    foreach (int tagId, tagIds)
+    Q_FOREACH (int tagId, tagIds)
     {
         notifyTagDeleted(tagId);
     }
@@ -813,7 +813,7 @@ QStringList DisjointMetadata::keywords() const
 
     QList<int> keys = d->tags.keys();
 
-    foreach (int key, keys)
+    Q_FOREACH (int key, keys)
     {
         if (d->tags.value(key) == DisjointMetadataDataFields::MetadataAvailable)
         {

@@ -182,38 +182,38 @@ int DDatePickerPopup::items() const
 
 void DDatePickerPopup::slotDateChanged(const QDate& date)
 {
-    emit dateChanged(date);
+    Q_EMIT dateChanged(date);
     hide();
 }
 
 void DDatePickerPopup::slotToday()
 {
-    emit dateChanged(QDate::currentDate());
+    Q_EMIT dateChanged(QDate::currentDate());
 }
 
 void DDatePickerPopup::slotTomorrow()
 {
-    emit dateChanged(QDate::currentDate().addDays(1));
+    Q_EMIT dateChanged(QDate::currentDate().addDays(1));
 }
 
 void DDatePickerPopup::slotNoDate()
 {
-    emit dateChanged(QDate());
+    Q_EMIT dateChanged(QDate());
 }
 
 void DDatePickerPopup::slotNextWeek()
 {
-    emit dateChanged(QDate::currentDate().addDays(7));
+    Q_EMIT dateChanged(QDate::currentDate().addDays(7));
 }
 
 void DDatePickerPopup::slotNextMonth()
 {
-    emit dateChanged(QDate::currentDate().addMonths(1));
+    Q_EMIT dateChanged(QDate::currentDate().addMonths(1));
 }
 
 void DDatePickerPopup::slotYesterday()
 {
-    emit dateChanged(QDate::currentDate().addDays(-1));
+    Q_EMIT dateChanged(QDate::currentDate().addDays(-1));
 }
 
 void DDatePickerPopup::slotPrevFriday()
@@ -230,23 +230,23 @@ void DDatePickerPopup::slotPrevFriday()
         date = date.addDays(5 - day);
     }
 
-    emit dateChanged(date);
+    Q_EMIT dateChanged(date);
 }
 
 void DDatePickerPopup::slotPrevMonday()
 {
     QDate date = QDate::currentDate();
-    emit dateChanged(date.addDays(1 - date.dayOfWeek()));
+    Q_EMIT dateChanged(date.addDays(1 - date.dayOfWeek()));
 }
 
 void DDatePickerPopup::slotPrevWeek()
 {
-    emit dateChanged(QDate::currentDate().addDays(-7));
+    Q_EMIT dateChanged(QDate::currentDate().addDays(-7));
 }
 
 void DDatePickerPopup::slotPrevMonth()
 {
-    emit dateChanged(QDate::currentDate().addMonths(-1));
+    Q_EMIT dateChanged(QDate::currentDate().addMonths(-1));
 }
 
 } // namespace Digikam

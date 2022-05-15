@@ -175,7 +175,7 @@ void Marquee::placeHandles()
 
 void Marquee::mousePressEvent(QGraphicsSceneMouseEvent* e)
 {
-    emit selected(this);
+    Q_EMIT selected(this);
 
     // Check for some resize handles under the mouse
 
@@ -213,7 +213,7 @@ void Marquee::mousePressEvent(QGraphicsSceneMouseEvent* e)
     d->moving     = true;
     d->moveOffset = e->pos();
 
-    emit changed();
+    Q_EMIT changed();
 }
 
 void Marquee::mouseMoveEvent(QGraphicsSceneMouseEvent* e)
@@ -270,7 +270,7 @@ void Marquee::mouseMoveEvent(QGraphicsSceneMouseEvent* e)
         setPos(e->scenePos() - d->moveOffset);
     }
 
-    emit changed();
+    Q_EMIT changed();
 }
 
 void Marquee::mouseReleaseEvent(QGraphicsSceneMouseEvent* e)
@@ -279,7 +279,7 @@ void Marquee::mouseReleaseEvent(QGraphicsSceneMouseEvent* e)
     d->resizing = false;
     d->moving   = false;
 
-    emit changed();
+    Q_EMIT changed();
 }
 
 } // namespace FaceEngineDemo

@@ -228,7 +228,7 @@ LightTableThumbBar::~LightTableThumbBar()
 
 void LightTableThumbBar::setItems(const ItemInfoList& list)
 {
-    foreach (const ItemInfo& info, list)
+    Q_FOREACH (const ItemInfo& info, list)
     {
         if (!d->imageInfoModel->hasImage(info))
         {
@@ -254,7 +254,7 @@ void LightTableThumbBar::slotDockLocationChanged(Qt::DockWidgetArea area)
 void LightTableThumbBar::clear()
 {
     d->imageInfoModel->clearItemInfos();
-    emit signalContentChanged();
+    Q_EMIT signalContentChanged();
 }
 
 void LightTableThumbBar::setNavigateByPair(bool b)
@@ -308,23 +308,23 @@ void LightTableThumbBar::showContextMenuOnInfo(QContextMenuEvent* e, const ItemI
     {
         if      (choice == leftPanelAction)
         {
-            emit signalSetItemOnLeftPanel(info);
+            Q_EMIT signalSetItemOnLeftPanel(info);
         }
         else if (choice == rightPanelAction)
         {
-            emit signalSetItemOnRightPanel(info);
+            Q_EMIT signalSetItemOnRightPanel(info);
         }
         else if (choice == editAction)
         {
-            emit signalEditItem(info);
+            Q_EMIT signalEditItem(info);
         }
         else if (choice == removeAction)
         {
-            emit signalRemoveItem(info);
+            Q_EMIT signalRemoveItem(info);
         }
         else if (choice == clearAllAction)
         {
-            emit signalClearAll();
+            Q_EMIT signalClearAll();
         }
     }
 }

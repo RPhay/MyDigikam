@@ -171,7 +171,7 @@ void BlackFrameListView::slotHotPixelsParsed(const QList<HotPixelProps>& hotPixe
 {
     if (isSelected(url))
     {
-        emit signalBlackFrameSelected(hotPixels, url);
+        Q_EMIT signalBlackFrameSelected(hotPixels, url);
     }
 }
 
@@ -288,14 +288,14 @@ void BlackFrameListView::slotContextMenu()
             {
                 QUrl url = item->frameUrl();
                 delete item;
-                emit signalBlackFrameRemoved(url);
+                Q_EMIT signalBlackFrameRemoved(url);
             }
         }
     }
     else if (choice == clearAction)
     {
         clear();
-        emit signalClearBlackFrameList();
+        Q_EMIT signalClearBlackFrameList();
     }
 }
 

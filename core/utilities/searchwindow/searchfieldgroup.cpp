@@ -89,7 +89,7 @@ void SearchFieldGroup::setLabel(SearchFieldGroupLabel* const label)
 
 SearchField* SearchFieldGroup::fieldForName(const QString& fieldName) const
 {
-    foreach (SearchField* const field, m_fields)
+    Q_FOREACH (SearchField* const field, m_fields)
     {
         if (field->supportsField(fieldName))
         {    // cppcheck-suppress useStlAlgorithm
@@ -102,7 +102,7 @@ SearchField* SearchFieldGroup::fieldForName(const QString& fieldName) const
 
 void SearchFieldGroup::write(SearchXmlWriter& writer)
 {
-    foreach (SearchField* const field, m_fields)
+    Q_FOREACH (SearchField* const field, m_fields)
     {
         field->write(writer);
     }
@@ -112,7 +112,7 @@ void SearchFieldGroup::reset()
 {
     clearMarkedFields();
 
-    foreach (SearchField* const field, m_fields)
+    Q_FOREACH (SearchField* const field, m_fields)
     {
         field->reset();
     }
@@ -147,7 +147,7 @@ QList<QRect> SearchFieldGroup::areaOfMarkedFields() const
         return rects;
     }
 
-    foreach (SearchField* const field, m_markedFields)
+    Q_FOREACH (SearchField* const field, m_markedFields)
     {
         if (field->isVisible())
         {

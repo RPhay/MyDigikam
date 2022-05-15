@@ -136,7 +136,7 @@ SuggestTaxonCompletion::~SuggestTaxonCompletion()
 
 void SuggestTaxonCompletion::slotTextEdited(const QString&)
 {
-    emit signalTaxonDeselected();
+    Q_EMIT signalTaxonDeselected();
     d->timer.start();
 }
 
@@ -159,7 +159,7 @@ void SuggestTaxonCompletion::setTalker(INatTalker* const inatTalker)
 
 void SuggestTaxonCompletion::slotInFocus()
 {
-    emit signalTaxonDeselected();
+    Q_EMIT signalTaxonDeselected();
     d->timer.start();
 }
 
@@ -350,7 +350,7 @@ void SuggestTaxonCompletion::slotDoneCompletion()
 
             QMetaObject::invokeMethod(d->editor, "returnPressed");
 
-            emit signalTaxonSelected(taxon, d->fromVision);
+            Q_EMIT signalTaxonSelected(taxon, d->fromVision);
         }
     }
 }
@@ -382,7 +382,7 @@ void SuggestTaxonCompletion::slotAutoSuggest()
     }
     else
     {
-        emit signalComputerVision();
+        Q_EMIT signalComputerVision();
     }
 }
 

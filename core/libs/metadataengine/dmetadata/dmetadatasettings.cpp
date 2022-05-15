@@ -132,8 +132,8 @@ DMetadataSettingsContainer DMetadataSettings::settings() const
 void DMetadataSettings::setSettings(const DMetadataSettingsContainer& settings)
 {
     DMetadataSettingsContainer old = d->setSettings(settings);
-    emit signalDMetadataSettingsChanged(settings, old);
-    emit signalSettingsChanged();
+    Q_EMIT signalDMetadataSettingsChanged(settings, old);
+    Q_EMIT signalSettingsChanged();
     d->writeToConfig();
 }
 
@@ -141,8 +141,8 @@ void DMetadataSettings::readFromConfig()
 {
     DMetadataSettingsContainer s   = d->readFromConfig();
     DMetadataSettingsContainer old = d->setSettings(s);
-    emit signalDMetadataSettingsChanged(s, old);
-    emit signalSettingsChanged();
+    Q_EMIT signalDMetadataSettingsChanged(s, old);
+    Q_EMIT signalSettingsChanged();
 }
 
 } // namespace Digikam

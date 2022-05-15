@@ -361,7 +361,7 @@ void RefocusFilter::convolveImage(const Args& prm)
             );
         }
 
-        foreach (QFuture<void> t, tasks)
+        Q_FOREACH (QFuture<void> t, tasks)
         {
             t.waitForFinished();
         }

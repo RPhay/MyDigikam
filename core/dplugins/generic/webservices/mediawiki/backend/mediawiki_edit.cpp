@@ -442,7 +442,7 @@ void Edit::finishedEdit()
 
     d->reply->close();
     d->reply->deleteLater();
-    emit resultCaptcha(d->result.m_captchaQuestion);
+    Q_EMIT resultCaptcha(d->result.m_captchaQuestion);
 }
 
 void Edit::finishedCaptcha(const QString& captcha)

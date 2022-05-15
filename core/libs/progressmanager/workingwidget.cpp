@@ -85,7 +85,7 @@ void WorkingWidget::slotChangeImage()
 
     d->currentPixmap++;
 
-    emit animationStep();
+    Q_EMIT animationStep();
 }
 
 void WorkingWidget::toggleTimer(bool turnOn)

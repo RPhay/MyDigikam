@@ -124,7 +124,7 @@ DWizardPage::~DWizardPage()
 void DWizardPage::setComplete(bool b)
 {
     d->isComplete = b;
-    emit completeChanged();
+    Q_EMIT completeChanged();
 }
 
 bool DWizardPage::isComplete() const

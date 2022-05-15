@@ -70,7 +70,7 @@ void OutputSet::sendVideoFrame(const VideoFrame &frame)
 
     VideoFrame f(frame);
 
-    foreach(AVOutput *output, mOutputs)
+    Q_FOREACH (AVOutput *output, mOutputs)
     {
         if (!output->isAvailable())
             continue;
@@ -94,7 +94,7 @@ void OutputSet::clearOutputs()
     if (mOutputs.isEmpty())
         return;
 
-    foreach(AVOutput *output, mOutputs)
+    Q_FOREACH (AVOutput *output, mOutputs)
     {
         output->removeOutputSet(this);
     }

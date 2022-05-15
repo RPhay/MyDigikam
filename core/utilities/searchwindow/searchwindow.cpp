@@ -166,7 +166,7 @@ QString SearchWindow::search() const
 void SearchWindow::searchOk()
 {
     d->hasTouchedXml = true;
-    emit searchEdited(d->currentId, search());
+    Q_EMIT searchEdited(d->currentId, search());
     hide();
 }
 
@@ -176,7 +176,7 @@ void SearchWindow::searchCancel()
 
     if (d->hasTouchedXml)
     {
-        emit searchEdited(d->currentId, d->oldXml);
+        Q_EMIT searchEdited(d->currentId, d->oldXml);
         d->hasTouchedXml = false;
     }
 
@@ -186,7 +186,7 @@ void SearchWindow::searchCancel()
 void SearchWindow::searchTryout()
 {
     d->hasTouchedXml = true;
-    emit searchEdited(d->currentId, search());
+    Q_EMIT searchEdited(d->currentId, search());
 }
 
 void SearchWindow::keyPressEvent(QKeyEvent* e)

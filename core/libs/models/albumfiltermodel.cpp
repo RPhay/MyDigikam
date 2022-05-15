@@ -79,14 +79,14 @@ void AlbumFilterModel::setSearchTextSettings(const SearchTextSettings& settings)
     bool wasSearching = settingsFilter(m_settings);
     bool willSearch   = settingsFilter(settings);
 
-    emit searchTextSettingsAboutToChange(wasSearching, willSearch);
+    Q_EMIT searchTextSettingsAboutToChange(wasSearching, willSearch);
 
     m_settings = settings;
     invalidateFilter();
 
-    emit signalFilterChanged();
+    Q_EMIT signalFilterChanged();
 
-    emit searchTextSettingsChanged(wasSearching, willSearch);
+    Q_EMIT searchTextSettingsChanged(wasSearching, willSearch);
 
     if (sourceAlbumModel()->albumType() == Album::PHYSICAL)
     {
@@ -110,13 +110,13 @@ void AlbumFilterModel::setSearchTextSettings(const SearchTextSettings& settings)
                                      << ": hasResult =" << hasResult
                                      << ", validRows =" << validRows;
 
-        emit hasSearchResult(hasResult);
+        Q_EMIT hasSearchResult(hasResult);
     }
     else
     {
         QModelIndex head = rootAlbumIndex(); // either root, or invalid, thus toplevel
 
-        emit hasSearchResult(rowCount(head));
+        Q_EMIT hasSearchResult(rowCount(head));
     }
 }
 

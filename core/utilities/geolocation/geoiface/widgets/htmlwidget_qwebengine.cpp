@@ -84,7 +84,7 @@ void HTMLWidgetPage::javaScriptConsoleMessage(JavaScriptConsoleMessageLevel /*le
 
 void HTMLWidgetPage::slotSendHTMLEvents()
 {
-    emit signalHTMLEvents(m_events);
+    Q_EMIT signalHTMLEvents(m_events);
 
     m_events.clear();
 }
@@ -171,7 +171,7 @@ void HTMLWidget::slotHTMLCompleted(bool ok)
     qCDebug(DIGIKAM_GEOIFACE_LOG) << "Map Loading Completed: " << ok;
     d->isReady = ok;
 
-    emit signalJavaScriptReady();
+    Q_EMIT signalJavaScriptReady();
 }
 
 /**
@@ -318,7 +318,7 @@ bool HTMLWidget::eventFilter(QObject* object, QEvent* event)
                     d->firstSelectionPoint.clear();
                     d->intermediateSelectionPoint.clear();
 
-                    emit selectionHasBeenMade(selectionCoordinates);
+                    Q_EMIT selectionHasBeenMade(selectionCoordinates);
                 }
             }
         }

@@ -152,7 +152,7 @@ void FileActionMngr::Private::startingToWrite(const QList<ItemInfo>& infos)
 {
     QMutexLocker lock(&mutex);
 
-    foreach (const ItemInfo& info, infos)
+    Q_FOREACH (const ItemInfo& info, infos)
     {
         scheduledToWrite.remove(info.id());
     }
@@ -175,7 +175,7 @@ void FileActionMngr::Private::slotLastProgressItemCompleted()
 {
     if (!isActive())
     {
-        emit signalTasksFinished();
+        Q_EMIT signalTasksFinished();
     }
 
     sleepTimer->start();
@@ -230,7 +230,7 @@ void PrivateProgressItemCreator::slotProgressItemCompleted()
 {
     if (!activeProgressItems.deref())
     {
-        emit lastItemCompleted();
+        Q_EMIT lastItemCompleted();
     }
 }
 

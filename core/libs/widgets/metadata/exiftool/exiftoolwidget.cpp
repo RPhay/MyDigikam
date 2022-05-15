@@ -365,7 +365,7 @@ void ExifToolWidget::slotFilterChanged(QAction* action)
 {
     if      (action == d->settingsAction)
     {
-        emit signalSetupMetadataFilters();
+        Q_EMIT signalSetupMetadataFilters();
     }
     else if ((action == d->noneAction)  ||
              (action == d->photoAction) ||

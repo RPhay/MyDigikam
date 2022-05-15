@@ -117,7 +117,7 @@ public:
             // do not set d->result here, because the popup
             // hides itself after leaving the event loop.
 
-            emit m_popup->leaveModality();
+            Q_EMIT m_popup->leaveModality();
         }
 
         return false;
@@ -164,14 +164,14 @@ void PanIconFrame::keyPressEvent(QKeyEvent* e)
     if (e->key() == Qt::Key_Escape)
     {
         d->result = 0; // rejected
-        emit leaveModality();
+        Q_EMIT leaveModality();
     }
 }
 
 void PanIconFrame::close(int r)
 {
     d->result = r;
-    emit leaveModality();
+    Q_EMIT leaveModality();
 }
 
 void PanIconFrame::setMainWidget(QWidget* const main)
@@ -448,7 +448,7 @@ void PanIconWidget::regionSelectionMoved(bool targetDone)
     d->regionSelection.setWidth(w);
     d->regionSelection.setHeight(h);
 
-    emit signalSelectionMoved(d->regionSelection, targetDone);
+    Q_EMIT signalSelectionMoved(d->regionSelection, targetDone);
 }
 
 void PanIconWidget::paintEvent(QPaintEvent*)
@@ -513,7 +513,7 @@ void PanIconWidget::setMouseFocus()
     d->ypos          = d->localRegionSelection.center().y();
     d->moveSelection = true;
     setCursor(Qt::SizeAllCursor);
-    emit signalSelectionTakeFocus();
+    Q_EMIT signalSelectionTakeFocus();
 }
 
 void PanIconWidget::showEvent(QShowEvent* e)
@@ -533,7 +533,7 @@ void PanIconWidget::hideEvent(QHideEvent* e)
     {
         d->moveSelection = false;
         setCursor(Qt::ArrowCursor);
-        emit signalHidden();
+        Q_EMIT signalHidden();
     }
 }
 
@@ -557,7 +557,7 @@ void PanIconWidget::mousePressEvent(QMouseEvent* e)
 #endif
         d->moveSelection = true;
         setCursor(Qt::SizeAllCursor);
-        emit signalSelectionTakeFocus();
+        Q_EMIT signalSelectionTakeFocus();
     }
 }
 

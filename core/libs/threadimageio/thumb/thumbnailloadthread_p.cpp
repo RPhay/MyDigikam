@@ -87,7 +87,7 @@ QList<LoadingDescription> ThumbnailLoadThread::Private::makeDescriptions(const Q
     {
         LoadingDescription description = createLoadingDescription(ThumbnailIdentifier(), size, false);
 
-        foreach (const ThumbnailIdentifier& identifier, identifiers)
+        Q_FOREACH (const ThumbnailIdentifier& identifier, identifiers)
         {
             description.filePath = identifier.filePath;
             description.previewParameters.storageReference = identifier.id;
@@ -113,7 +113,7 @@ QList<LoadingDescription> ThumbnailLoadThread::Private::makeDescriptions(const Q
         LoadingDescription description = createLoadingDescription(ThumbnailIdentifier(), size, QRect(1, 1, 1, 1), false);
         typedef QPair<ThumbnailIdentifier, QRect> IdRectPair;
 
-        foreach (const IdRectPair& pair, identifiersAndRects)
+        Q_FOREACH (const IdRectPair& pair, identifiersAndRects)
         {
             description.filePath                           = pair.first.filePath;
             description.previewParameters.storageReference = pair.first.id;

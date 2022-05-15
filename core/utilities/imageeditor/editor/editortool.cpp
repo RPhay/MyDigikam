@@ -188,7 +188,7 @@ void EditorTool::setToolView(QWidget* const view)
     d->view = view;
 
     // Will be unblocked in slotInit()
-    // This will prevent resize event signals emit during tool init.
+    // This will prevent resize event signals Q_EMIT during tool init.
 
     d->view->blockSignals(true);
 
@@ -239,7 +239,7 @@ void EditorTool::setToolSettings(EditorToolSettings* const settings)
             this, SLOT(slotScaleChanged()));
 
     // Will be unblocked in slotInit()
-    // This will prevent signals emit during tool init.
+    // This will prevent signals Q_EMIT during tool init.
 
     d->settings->blockSignals(true);
 }
@@ -319,14 +319,14 @@ void EditorTool::slotOk()
     writeSettings();
     finalRendering();
 
-    emit okClicked();
+    Q_EMIT okClicked();
 }
 
 void EditorTool::slotCancel()
 {
     writeSettings();
 
-    emit cancelClicked();
+    Q_EMIT cancelClicked();
 }
 
 void EditorTool::slotCloseTool()
@@ -604,7 +604,7 @@ void EditorToolThreaded::slotFilterFinished(bool success)
                 setFinalImage();
                 EditorToolIface::editorToolIface()->setToolStopProgress();
                 qApp->restoreOverrideCursor();
-                emit okClicked();
+                Q_EMIT okClicked();
                 break;
             }
 
@@ -727,7 +727,7 @@ void EditorToolThreaded::slotCancel()
 {
     writeSettings();
     slotAbort();
-    emit cancelClicked();
+    Q_EMIT cancelClicked();
 }
 
 void EditorToolThreaded::deleteFilterInstance(bool b)

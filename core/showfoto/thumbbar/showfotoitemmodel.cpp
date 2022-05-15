@@ -110,7 +110,7 @@ QList<ShowfotoItemInfo> ShowfotoItemModel::showfotoItemInfos(const QList<QModelI
 {
     QList<ShowfotoItemInfo> infos;
 
-    foreach (const QModelIndex& index, indexes)
+    Q_FOREACH (const QModelIndex& index, indexes)
     {
         infos << showfotoItemInfo(index);
     }
@@ -207,7 +207,7 @@ QList<QModelIndex> ShowfotoItemModel::indexesForUrl(const QUrl& fileUrl) const
 
 ShowfotoItemInfo ShowfotoItemModel::showfotoItemInfo(const QUrl& fileUrl) const
 {
-    foreach (const ShowfotoItemInfo& info, d->infos)
+    Q_FOREACH (const ShowfotoItemInfo& info, d->infos)
     {
         if (info.url == fileUrl)
         {   // cppcheck-suppress useStlAlgorithm
@@ -222,7 +222,7 @@ QList<ShowfotoItemInfo> ShowfotoItemModel::showfotoItemInfos(const QUrl& fileUrl
 {
     QList<ShowfotoItemInfo> infos;
 
-    foreach (const ShowfotoItemInfo& info, d->infos)
+    Q_FOREACH (const ShowfotoItemInfo& info, d->infos)
     {
         if (info.url == fileUrl)
         {
@@ -262,7 +262,7 @@ void ShowfotoItemModel::addShowfotoItemInfosSynchronously(const QList<ShowfotoIt
 
     publiciseInfos(infos);
 
-    emit processAdded(infos);
+    Q_EMIT processAdded(infos);
 }
 
 void ShowfotoItemModel::clearShowfotoItemInfos()
@@ -271,7 +271,7 @@ void ShowfotoItemModel::clearShowfotoItemInfos()
 
     if (d->sendRemovalSignals)
     {
-        emit itemInfosAboutToBeRemoved(list);
+        Q_EMIT itemInfosAboutToBeRemoved(list);
     }
 
     beginResetModel();
@@ -287,7 +287,7 @@ void ShowfotoItemModel::clearShowfotoItemInfos()
 
     if (d->sendRemovalSignals)
     {
-        emit itemInfosRemoved(list);
+        Q_EMIT itemInfosRemoved(list);
     }
 }
 
@@ -316,16 +316,16 @@ void ShowfotoItemModel::emitDataChangedForAll()
 
     QModelIndex first = createIndex(0, 0);
     QModelIndex last  = createIndex(d->infos.size() - 1, 0);
-    emit dataChanged(first, last);
+    Q_EMIT dataChanged(first, last);
 }
 
 void ShowfotoItemModel::emitDataChangedForSelections(const QItemSelection& selection)
 {
     if (!selection.isEmpty())
     {
-        foreach (const QItemSelectionRange& range, selection)
+        Q_FOREACH (const QItemSelectionRange& range, selection)
         {
-            emit dataChanged(range.topLeft(), range.bottomRight());
+            Q_EMIT dataChanged(range.topLeft(), range.bottomRight());
         }
     }
 }
@@ -375,7 +375,7 @@ void ShowfotoItemModel::publiciseInfos(const QList<ShowfotoItemInfo>& infos)
         return;
     }
 
-    emit itemInfosAboutToBeAdded(infos);
+    Q_EMIT itemInfosAboutToBeAdded(infos);
 
     const int firstNewIndex = d->infos.size();
     const int lastNewIndex  = d->infos.size() + infos.size() -1;
@@ -395,7 +395,7 @@ void ShowfotoItemModel::publiciseInfos(const QList<ShowfotoItemInfo>& infos)
     }
 
     endInsertRows();
-    emit itemInfosAdded(infos);
+    Q_EMIT itemInfosAdded(infos);
 }
 /*
 template <class List, typename T>
@@ -438,7 +438,7 @@ void ShowfotoItemModel::removeShowfotoItemInfo(const ShowfotoItemInfo& info)
 
 void ShowfotoItemModel::removeShowfotoItemInfos(const QList<ShowfotoItemInfo>& infos)
 {
-    foreach (const ShowfotoItemInfo& inf, infos)
+    Q_FOREACH (const ShowfotoItemInfo& inf, infos)
     {
         removeIndex(indexForShowfotoItemInfo(inf));
     }
@@ -453,7 +453,7 @@ void ShowfotoItemModel::removeIndexs(const QList<QModelIndex>& indexes)
 {
     QList<int> indexesList;
 
-    foreach (const QModelIndex& index, indexes)
+    Q_FOREACH (const QModelIndex& index, indexes)
     {
         if (d->isValid(index))
         {
@@ -490,7 +490,7 @@ void ShowfotoItemModel::removeRowPairs(const QList<QPair<int, int> >& toRemove)
     QList<qlonglong>        removeFilePaths;
     typedef QPair<int, int> IntPair;
 
-    foreach (const IntPair& pair, toRemove)
+    Q_FOREACH (const IntPair& pair, toRemove)
     {
         const int begin = pair.first  - offset;
         const int end   = pair.second - offset;
@@ -506,7 +506,7 @@ void ShowfotoItemModel::removeRowPairs(const QList<QPair<int, int> >& toRemove)
         {
             // cppcheck-suppress knownEmptyContainer
             std::copy(d->infos.begin() + begin, d->infos.begin() + end, removedInfos.begin());
-            emit itemInfosAboutToBeRemoved(removedInfos);
+            Q_EMIT itemInfosAboutToBeRemoved(removedInfos);
         }
 
         showfotoItemInfosAboutToBeRemoved(begin, end);
@@ -548,7 +548,7 @@ void ShowfotoItemModel::removeRowPairs(const QList<QPair<int, int> >& toRemove)
 
         if (d->sendRemovalSignals)
         {
-            emit itemInfosRemoved(removedInfos);
+            Q_EMIT itemInfosRemoved(removedInfos);
         }
     }
 

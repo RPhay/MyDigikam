@@ -123,7 +123,7 @@ bool ItemViewUtilities::deleteImages(const QList<ItemInfo>& infos,
 
     // Buffer the urls for deletion and imageids for notification of the AlbumManager
 
-    foreach (const ItemInfo& info, deleteInfos)
+    Q_FOREACH (const ItemInfo& info, deleteInfos)
     {
         urlList  << info.fileUrl();
         imageIds << info.id();
@@ -149,7 +149,7 @@ bool ItemViewUtilities::deleteImages(const QList<ItemInfo>& infos,
 
     // Signal the Albummanager about the ids of the deleted images.
 
-    emit signalImagesDeleted(imageIds);
+    Q_EMIT signalImagesDeleted(imageIds);
 
     return true;
 }
@@ -167,7 +167,7 @@ void ItemViewUtilities::deleteImagesDirectly(const QList<ItemInfo>& infos,
 
     QList<qlonglong> imageIds;
 
-    foreach (const ItemInfo& info, infos)
+    Q_FOREACH (const ItemInfo& info, infos)
     {
         imageIds << info.id();
     }
@@ -178,12 +178,12 @@ void ItemViewUtilities::deleteImagesDirectly(const QList<ItemInfo>& infos,
 
     // Signal the Albummanager about the ids of the deleted images.
 
-    emit signalImagesDeleted(imageIds);
+    Q_EMIT signalImagesDeleted(imageIds);
 }
 
 void ItemViewUtilities::notifyFileContentChanged(const QList<QUrl>& urls)
 {
-    foreach (const QUrl& url, urls)
+    Q_FOREACH (const QUrl& url, urls)
     {
         QString path = url.toLocalFile();
         ThumbnailLoadThread::deleteThumbnail(path);
@@ -395,7 +395,7 @@ void ItemViewUtilities::openInfosWithDefaultApplication(const QList<ItemInfo>& i
 
     QList<QUrl> urls;
 
-    foreach (const ItemInfo& inf, infos)
+    Q_FOREACH (const ItemInfo& inf, infos)
     {
         urls << inf.fileUrl();
     }

@@ -116,15 +116,15 @@ void FingerprintsTask::run()
             }
 
             QImage qimg = dimg.smoothScale(22, 22, Qt::KeepAspectRatio).copyQImage();
-            emit signalFinished(qimg);
+            Q_EMIT signalFinished(qimg);
         }
         else
         {
-            emit signalFinished(d->okImage);
+            Q_EMIT signalFinished(d->okImage);
         }
     }
 
-    emit signalDone();
+    Q_EMIT signalDone();
 }
 
 } // namespace Digikam

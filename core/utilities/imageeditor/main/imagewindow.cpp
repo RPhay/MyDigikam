@@ -119,7 +119,7 @@ void ImageWindow::closeEvent(QCloseEvent* e)
 
     // put right side bar in a defined state
 
-    emit signalNoCurrentItem();
+    Q_EMIT signalNoCurrentItem();
 
     m_canvas->resetImage();
 
@@ -258,7 +258,7 @@ void ImageWindow::slotLoadCurrent()
 
 void ImageWindow::setViewToURL(const QUrl& url)
 {
-    emit signalURLChanged(url);
+    Q_EMIT signalURLChanged(url);
 }
 
 void ImageWindow::slotThumbBarImageSelected(const ItemInfo& info)
@@ -290,7 +290,7 @@ void ImageWindow::slotDroppedOnThumbbar(const QList<ItemInfo>& infos)
 
     QList<ItemInfo> toAdd;
 
-    foreach (const ItemInfo& it, infos)
+    Q_FOREACH (const ItemInfo& it, infos)
     {
         QModelIndex index(d->imageFilterModel->indexForItemInfo(it));
 
@@ -933,7 +933,7 @@ void ImageWindow::deleteCurrentItem(bool ask, bool permanently)
 
     // bring all (sidebar) to a defined state without letting them sit on the deleted file
 
-    emit signalNoCurrentItem();
+    Q_EMIT signalNoCurrentItem();
 
     // We have database information, which means information will get through
     // everywhere. Just do it asynchronously.
@@ -1239,7 +1239,7 @@ void ImageWindow::slotOpenOriginal()
 
     QList<ItemInfo> imageInfos;
 
-    foreach (const HistoryImageId& id, originals)
+    Q_FOREACH (const HistoryImageId& id, originals)
     {
         QUrl url = QUrl::fromLocalFile(id.m_filePath);
         url      = url.adjusted(QUrl::StripTrailingSlash);

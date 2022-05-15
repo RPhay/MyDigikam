@@ -838,7 +838,7 @@ void TagsPopupMenu::slotToggleTag(QAction* action)
 {
     int tagID = action->data().toInt();
 
-    emit signalTagActivated(tagID);
+    Q_EMIT signalTagActivated(tagID);
 }
 
 void TagsPopupMenu::slotAddTag(QAction* action)
@@ -848,7 +848,7 @@ void TagsPopupMenu::slotAddTag(QAction* action)
 
     if (tagID == -1)
     {
-        emit signalPopupTagsView();
+        Q_EMIT signalPopupTagsView();
         return;
     }
 
@@ -875,7 +875,7 @@ void TagsPopupMenu::slotAddTag(QAction* action)
     for (AlbumList::const_iterator it = tList.constBegin() ;
          it != tList.constEnd() ; ++it)
     {
-        emit signalTagActivated((*it)->id());
+        Q_EMIT signalTagActivated((*it)->id());
     }
 }
 
@@ -883,7 +883,7 @@ void TagsPopupMenu::slotTagThumbnail(Album* album, const QPixmap& pix)
 {
     QList<QAction*> actionList = actions();
 
-    foreach (QAction* const action, actionList)
+    Q_FOREACH (QAction* const action, actionList)
     {
         if (action->data().toInt() == album->id())
         {    // cppcheck-suppress useStlAlgorithm

@@ -540,7 +540,7 @@ void ItemPropertiesSideBarDB::refreshTagsView()
 
 void ItemPropertiesSideBarDB::setImagePropertiesInformation(const QUrl& url)
 {
-    foreach (const ItemInfo& info, d->currentInfos)
+    Q_FOREACH (const ItemInfo& info, d->currentInfos)
     {
         if (info.fileUrl() == url)
         {   // cppcheck-suppress useStlAlgorithm
@@ -688,7 +688,7 @@ void ItemPropertiesSideBarDB::setImageSelectionPropertiesInformation()
 
     qint64 selectionFileSize = 0;
 
-    foreach (const ItemInfo& info, d->currentInfos)
+    Q_FOREACH (const ItemInfo& info, d->currentInfos)
     {
         // cppcheck-suppress useStlAlgorithm
         selectionFileSize += info.fileSize();
@@ -702,7 +702,7 @@ void ItemPropertiesSideBarDB::setImageSelectionPropertiesInformation()
 
     qint64 totalFileSize = 0;
 
-    foreach (const ItemInfo& info, d->allInfos)
+    Q_FOREACH (const ItemInfo& info, d->allInfos)
     {
         // cppcheck-suppress useStlAlgorithm
         totalFileSize += info.fileSize();

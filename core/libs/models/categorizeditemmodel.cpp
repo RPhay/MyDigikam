@@ -119,7 +119,7 @@ public:
     {
         int categorySortStartIndex = model->rowCount();
 
-        foreach (QAction* const a, actions)
+        Q_FOREACH (QAction* const a, actions)
         {
             QAction* categoryAction = nullptr;
 
@@ -160,7 +160,7 @@ protected:
 
     void enumerateActions(const QWidget* const w, QAction* const widgetAction)
     {
-        foreach (QAction* const a, w->actions())
+        Q_FOREACH (QAction* const a, w->actions())
         {
             if (a->menu())
             {

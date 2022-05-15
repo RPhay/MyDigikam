@@ -569,7 +569,7 @@ void ImportUI::updateActions()
         // selected image has not been downloaded
         bool haveNotDownloadedItem = false;
 
-        foreach (const CamItemInfo& info, list)
+        Q_FOREACH (const CamItemInfo& info, list)
         {
             haveNotDownloadedItem = !(info.downloaded == CamItemInfo::DownloadedYes);
 
@@ -898,7 +898,7 @@ void ImportUI::closeEvent(QCloseEvent* e)
 void ImportUI::moveEvent(QMoveEvent* e)
 {
     Q_UNUSED(e)
-    emit signalWindowHasMoved();
+    Q_EMIT signalWindowHasMoved();
 }
 
 void ImportUI::slotClose()
@@ -965,7 +965,7 @@ void ImportUI::finishDialog()
 
     if (!d->lastDestURL.isEmpty())
     {
-        emit signalLastDestination(d->lastDestURL);
+        Q_EMIT signalLastDestination(d->lastDestURL);
     }
 
     saveSettings();
@@ -1435,7 +1435,7 @@ void ImportUI::slotDownloaded(const QString& folder, const QString& file, int st
 
         if (status == CamItemInfo::DownloadStarted && previewItems)
         {
-            emit signalPreviewRequested(info, true);
+            Q_EMIT signalPreviewRequested(info, true);
         }
 
         if (d->rightSideBar->url() == info.url())
@@ -1513,7 +1513,7 @@ void ImportUI::slotSkipped(const QString& folder, const QString& file)
 
 void ImportUI::slotMarkAsDownloaded()
 {
-    foreach (const CamItemInfo& info, d->view->selectedCamItemInfos())
+    Q_FOREACH (const CamItemInfo& info, d->view->selectedCamItemInfos())
     {
         setDownloaded(d->view->camItemInfoRef(info.folder, info.name), CamItemInfo::DownloadedYes);
 
@@ -1536,7 +1536,7 @@ void ImportUI::slotToggleLock()
         d->statusProgressBar->setProgressBarMode(StatusProgressBar::ProgressBarMode);
     }
 
-    foreach (const CamItemInfo& info, list)
+    Q_FOREACH (const CamItemInfo& info, list)
     {
         QString folder = info.folder;
         QString file   = info.name;
@@ -1581,7 +1581,7 @@ void ImportUI::slotUpdateDownloadName()
     const bool hasNoSelection   = selected.isEmpty();
     DownloadSettings settings   = downloadSettings();
 
-    foreach (const CamItemInfo& info, d->view->allItems())
+    Q_FOREACH (const CamItemInfo& info, d->view->allItems())
     {
         CamItemInfo& refInfo = d->view->camItemInfoRef(info.folder, info.name);
 
@@ -1683,7 +1683,7 @@ void ImportUI::slotSelectNew()
 {
     CamItemInfoList toBeSelected;
 
-    foreach (const CamItemInfo& info, d->view->allItems())
+    Q_FOREACH (const CamItemInfo& info, d->view->allItems())
     {
         if (info.downloaded == CamItemInfo::DownloadedNo)
         {
@@ -1698,7 +1698,7 @@ void ImportUI::slotSelectLocked()
 {
     CamItemInfoList toBeSelected;
 
-    foreach (const CamItemInfo& info, d->view->allItems())
+    Q_FOREACH (const CamItemInfo& info, d->view->allItems())
     {
         if (info.writePermissions == 0)
         {
@@ -1732,7 +1732,7 @@ QMap<QString, int> ImportUI::countItemsByFolders() const
     QMap<QString, int>           map;
     QMap<QString, int>::iterator it;
 
-    foreach (const CamItemInfo& info, d->view->allItems())
+    Q_FOREACH (const CamItemInfo& info, d->view->allItems())
     {
         path = info.folder;
 
@@ -1784,7 +1784,7 @@ void ImportUI::itemsSelectionSizeInfo(unsigned long& fSizeKB, unsigned long& dSi
     const QList<QUrl>& selected = d->view->selectedUrls();
     DownloadSettings settings   = downloadSettings();
 
-    foreach (const CamItemInfo& info, d->view->allItems())
+    Q_FOREACH (const CamItemInfo& info, d->view->allItems())
     {
         if (selected.contains(info.url()))
         {
@@ -1861,7 +1861,7 @@ void ImportUI::deleteItems(bool onlySelected, bool onlyDownloaded)
     CamItemInfoList lockedList;
     const CamItemInfoList& list = onlySelected ? d->view->selectedCamItemInfos() : d->view->allItems();
 
-    foreach (const CamItemInfo& info, list)
+    Q_FOREACH (const CamItemInfo& info, list)
     {
         if (onlyDownloaded)
         {
@@ -1984,7 +1984,7 @@ bool ImportUI::downloadCameraItems(PAlbum* pAlbum, bool onlySelected, bool delet
     const QList<QUrl>& selected = d->view->selectedUrls();
     QSet<QString> usedDownloadPaths;
 
-    foreach (const CamItemInfo& info, d->view->allItems())
+    Q_FOREACH (const CamItemInfo& info, d->view->allItems())
     {
         if (onlySelected && !(selected.contains(info.url())))
         {
@@ -2238,7 +2238,7 @@ void ImportUI::slotNewSelection(bool hasSelection)
     QList<ParseSettings> renameFiles;
     const CamItemInfoList& list = hasSelection ? d->view->selectedCamItemInfos() : d->view->allItems();
 
-    foreach (const CamItemInfo& info, list)
+    Q_FOREACH (const CamItemInfo& info, list)
     {
         ParseSettings parseSettings;
 
@@ -2350,7 +2350,7 @@ void ImportUI::autoRotateItems()
 
     ItemInfoList list;
 
-    foreach (const QString& downloadPath, d->autoRotateItemsList)
+    Q_FOREACH (const QString& downloadPath, d->autoRotateItemsList)
     {
         list << ItemInfo::fromLocalFile(downloadPath);
     }
@@ -2402,7 +2402,7 @@ bool ImportUI::createAutoAlbum(const QUrl& parentURL, const QString& sub,
 
     QUrl albumUrl(parentURL);
 
-    foreach (const QString& folder, sub.split(QLatin1Char('/'), QT_SKIP_EMPTY_PARTS))
+    Q_FOREACH (const QString& folder, sub.split(QLatin1Char('/'), QT_SKIP_EMPTY_PARTS))
     {
         albumUrl      = albumUrl.adjusted(QUrl::StripTrailingSlash);
         albumUrl.setPath(albumUrl.path() + QLatin1Char('/') + folder);

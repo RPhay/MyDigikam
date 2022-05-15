@@ -379,7 +379,7 @@ bool ItemDragDropHandler::dropEvent(QAbstractItemView* abstractview, const QDrop
 
         if      (m_readOnly)
         {
-            emit itemInfosDropped(ItemInfoList(imageIDs));
+            Q_EMIT itemInfosDropped(ItemInfoList(imageIDs));
             return true;
         }
         else if (palbum)
@@ -498,7 +498,7 @@ bool ItemDragDropHandler::dropEvent(QAbstractItemView* abstractview, const QDrop
 
             if (action == AssignTagAction)
             {
-                emit assignTags(ItemInfoList(imageIDs), QList<int>() << talbum->id());
+                Q_EMIT assignTags(ItemInfoList(imageIDs), QList<int>() << talbum->id());
                 return true;
             }
         }
@@ -519,7 +519,7 @@ bool ItemDragDropHandler::dropEvent(QAbstractItemView* abstractview, const QDrop
                 return false;
             }
 
-            emit addToGroup(droppedOnInfo, ItemInfoList(imageIDs));
+            Q_EMIT addToGroup(droppedOnInfo, ItemInfoList(imageIDs));
             return true;
         }
 
@@ -530,7 +530,7 @@ bool ItemDragDropHandler::dropEvent(QAbstractItemView* abstractview, const QDrop
                 return false;
             }
 
-            emit dragDropSort(droppedOnInfo, ItemInfoList(imageIDs));
+            Q_EMIT dragDropSort(droppedOnInfo, ItemInfoList(imageIDs));
             return true;
         }
 
@@ -541,7 +541,7 @@ bool ItemDragDropHandler::dropEvent(QAbstractItemView* abstractview, const QDrop
                 return false;
             }
 
-            emit addToGroup(droppedOnInfo, ItemInfoList(imageIDs));
+            Q_EMIT addToGroup(droppedOnInfo, ItemInfoList(imageIDs));
             DIO::move(ItemInfoList(imageIDs), palbum);
             return true;
         }
@@ -561,7 +561,7 @@ bool ItemDragDropHandler::dropEvent(QAbstractItemView* abstractview, const QDrop
 
         if (m_readOnly)
         {
-            emit urlsDropped(srcURLs);
+            Q_EMIT urlsDropped(srcURLs);
             return true;
         }
 
@@ -691,11 +691,11 @@ bool ItemDragDropHandler::dropEvent(QAbstractItemView* abstractview, const QDrop
         {
             if      (choice == assignToSelectedAction)    // Selected Items
             {
-                emit assignTags(selectedInfos, tagIDs);
+                Q_EMIT assignTags(selectedInfos, tagIDs);
             }
             else if (choice == assignToAllAction)    // All Items
             {
-                emit assignTags(view->allItemInfos(), tagIDs);
+                Q_EMIT assignTags(view->allItemInfos(), tagIDs);
             }
             else if (choice == assignToThisAction)    // Dropped item only.
             {
@@ -707,7 +707,7 @@ bool ItemDragDropHandler::dropEvent(QAbstractItemView* abstractview, const QDrop
                     dropIndex = thumbBar->imageFilterModel()->mapToSourceItemModel(droppedOn);
                 }
 
-                emit assignTags(QList<ItemInfo>() << model()->imageInfo(dropIndex), tagIDs);
+                Q_EMIT assignTags(QList<ItemInfo>() << model()->imageInfo(dropIndex), tagIDs);
             }
         }
 
@@ -821,7 +821,7 @@ QMimeData* ItemDragDropHandler::createMimeData(const QList<QModelIndex>& indexes
     QList<int>       albumIDs;
     QList<qlonglong> imageIDs;
 
-    foreach (const ItemInfo& info, infos)
+    Q_FOREACH (const ItemInfo& info, infos)
     {
         urls.append(info.fileUrl());
         albumIDs.append(info.albumId());

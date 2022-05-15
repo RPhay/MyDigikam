@@ -90,7 +90,7 @@ void SearchFieldAlbum::read(SearchXmlCachingReader& reader)
 
     if      (m_type == TypeAlbum)
     {
-        foreach (int id, ids)
+        Q_FOREACH (int id, ids)
         {
             a = AlbumManager::instance()->findPAlbum(id);
 
@@ -118,7 +118,7 @@ void SearchFieldAlbum::read(SearchXmlCachingReader& reader)
             m_operation->setCurrentIndex(Operation::InTree);
         }
 
-        foreach (int id, ids)
+        Q_FOREACH (int id, ids)
         {
             a = AlbumManager::instance()->findTAlbum(id);
 
@@ -151,7 +151,7 @@ void SearchFieldAlbum::write(SearchXmlWriter& writer)
 
     QList<int> albumIds;
 
-    foreach (Album* const album, checkedAlbums)
+    Q_FOREACH (Album* const album, checkedAlbums)
     {
         albumIds << album->id();
     }

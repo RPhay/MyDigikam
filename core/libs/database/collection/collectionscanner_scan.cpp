@@ -33,7 +33,7 @@ void CollectionScanner::completeScan()
     QElapsedTimer timer;
     timer.start();
 
-    emit startCompleteScan();
+    Q_EMIT startCompleteScan();
 
     {
         // lock database
@@ -54,18 +54,18 @@ void CollectionScanner::completeScan()
 
         int count = 0;
 
-        foreach (const CollectionLocation& location, allLocations)
+        Q_FOREACH (const CollectionLocation& location, allLocations)
         {
             // cppcheck-suppress useStlAlgorithm
             count += countItemsInFolder(location.albumRootPath());
         }
 
-        emit totalFilesToScan(count);
+        Q_EMIT totalFilesToScan(count);
     }
 
     if (!d->checkObserver())
     {
-        emit cancelled();
+        Q_EMIT cancelled();
 
         return;
     }
@@ -81,17 +81,17 @@ void CollectionScanner::completeScan()
 
     if (!d->checkObserver())
     {
-        emit cancelled();
+        Q_EMIT cancelled();
 
         return;
     }
 
     if (d->wantSignals)
     {
-        emit startScanningAlbumRoots();
+        Q_EMIT startScanningAlbumRoots();
     }
 
-    foreach (const CollectionLocation& location, allLocations)
+    Q_FOREACH (const CollectionLocation& location, allLocations)
     {
         scanAlbumRoot(location);
     }
@@ -100,7 +100,7 @@ void CollectionScanner::completeScan()
 
     if (!d->checkObserver())
     {
-        emit cancelled();
+        Q_EMIT cancelled();
 
         return;
     }
@@ -109,7 +109,7 @@ void CollectionScanner::completeScan()
     {
         qCDebug(DIGIKAM_DATABASE_LOG) << "Complete scan (file scanning deferred) took:" << timer.elapsed() << "msecs.";
 
-        emit finishedCompleteScan();
+        Q_EMIT finishedCompleteScan();
 
         return;
     }
@@ -122,7 +122,7 @@ void CollectionScanner::completeScan()
 
 void CollectionScanner::finishCompleteScan(const QStringList& albumPaths)
 {
-    emit startCompleteScan();
+    Q_EMIT startCompleteScan();
 
     {
         // lock database
@@ -135,14 +135,14 @@ void CollectionScanner::finishCompleteScan(const QStringList& albumPaths)
 
     if (!d->checkObserver())
     {
-        emit cancelled();
+        Q_EMIT cancelled();
 
         return;
     }
 
     if (d->wantSignals)
     {
-        emit startScanningAlbumRoots();
+        Q_EMIT startScanningAlbumRoots();
     }
 
     // remove subalbums from list if parent album is already contained
@@ -169,16 +169,16 @@ void CollectionScanner::finishCompleteScan(const QStringList& albumPaths)
 
         int count = 0;
 
-        foreach (const QString& path, sortedPaths)
+        Q_FOREACH (const QString& path, sortedPaths)
         {
             // cppcheck-suppress useStlAlgorithm
             count += countItemsInFolder(path);
         }
 
-        emit totalFilesToScan(count);
+        Q_EMIT totalFilesToScan(count);
     }
 
-    foreach (const QString& path, sortedPaths)
+    Q_FOREACH (const QString& path, sortedPaths)
     {
         CollectionLocation location = CollectionManager::instance()->locationForPath(path);
         QString album               = CollectionManager::instance()->album(path);
@@ -197,7 +197,7 @@ void CollectionScanner::finishCompleteScan(const QStringList& albumPaths)
 
     if (!d->checkObserver())
     {
-        emit cancelled();
+        Q_EMIT cancelled();
 
         return;
     }
@@ -223,7 +223,7 @@ void CollectionScanner::completeScanCleanupPart()
         CoreDbAccess access;
         QList<qlonglong> trashedItems = access.db()->getImageIds(DatabaseItem::Status::Trashed);
 
-        foreach (const qlonglong& item, trashedItems)
+        Q_FOREACH (const qlonglong& item, trashedItems)
         {
             access.db()->setItemStatus(item, DatabaseItem::Status::Obsolete);
         }
@@ -239,7 +239,7 @@ void CollectionScanner::completeScanCleanupPart()
 
     markDatabaseAsScanned();
 
-    emit finishedCompleteScan();
+    Q_EMIT finishedCompleteScan();
 }
 
 void CollectionScanner::partialScan(const QString& filePath)
@@ -317,7 +317,7 @@ void CollectionScanner::partialScan(const QString& albumRoot, const QString& alb
 
     if (!d->checkObserver())
     {
-        emit cancelled();
+        Q_EMIT cancelled();
 
         return;
     }
@@ -335,7 +335,7 @@ void CollectionScanner::partialScan(const QString& albumRoot, const QString& alb
 
     if (!d->checkObserver())
     {
-        emit cancelled();
+        Q_EMIT cancelled();
 
         return;
     }
@@ -453,7 +453,7 @@ void CollectionScanner::scanAlbumRoot(const CollectionLocation& location)
 {
     if (d->wantSignals)
     {
-        emit startScanningAlbumRoot(location.albumRootPath());
+        Q_EMIT startScanningAlbumRoot(location.albumRootPath());
     }
 
     QMap<QString, QDateTime>::const_iterator it;
@@ -490,7 +490,7 @@ void CollectionScanner::scanAlbumRoot(const CollectionLocation& location)
 
                 if (d->wantSignals)
                 {
-                    emit scannedFiles(counter + 1);
+                    Q_EMIT scannedFiles(counter + 1);
                 }
             }
             else
@@ -502,7 +502,7 @@ void CollectionScanner::scanAlbumRoot(const CollectionLocation& location)
 
     if (d->wantSignals)
     {
-        emit finishedScanningAlbumRoot(location.albumRootPath());
+        Q_EMIT finishedScanningAlbumRoot(location.albumRootPath());
     }
 }
 
@@ -510,7 +510,7 @@ void CollectionScanner::scanForStaleAlbums(const QList<CollectionLocation>& loca
 {
     QList<int> locationIdsToScan;
 
-    foreach (const CollectionLocation& location, locations)
+    Q_FOREACH (const CollectionLocation& location, locations)
     {
         locationIdsToScan << location.id();
     }
@@ -522,7 +522,7 @@ void CollectionScanner::scanForStaleAlbums(const QList<int>& locationIdsToScan)
 {
     if (d->wantSignals)
     {
-        emit startScanningForStaleAlbums();
+        Q_EMIT startScanningForStaleAlbums();
     }
 
     QList<AlbumShortInfo> albumList = CoreDbAccess().db()->getAlbumShortInfos();
@@ -531,7 +531,7 @@ void CollectionScanner::scanForStaleAlbums(const QList<int>& locationIdsToScan)
 
     if (d->wantSignals && d->needTotalFiles)
     {
-        emit totalFilesToScan(albumList.count());
+        Q_EMIT totalFilesToScan(albumList.count());
     }
 
     QList<AlbumShortInfo>::const_iterator it3;
@@ -542,7 +542,7 @@ void CollectionScanner::scanForStaleAlbums(const QList<int>& locationIdsToScan)
 
         if (d->wantSignals && counter && (counter % 10 == 0))
         {
-            emit scannedFiles(counter);
+            Q_EMIT scannedFiles(counter);
             counter = 0;
         }
 
@@ -676,7 +676,7 @@ void CollectionScanner::scanForStaleAlbums(const QList<int>& locationIdsToScan)
 
     if (d->wantSignals)
     {
-        emit finishedScanningForStaleAlbums();
+        Q_EMIT finishedScanningForStaleAlbums();
     }
 }
 
@@ -698,7 +698,7 @@ void CollectionScanner::scanAlbum(const CollectionLocation& location, const QStr
 
     if (d->wantSignals)
     {
-        emit startScanningAlbum(location.albumRootPath(), album);
+        Q_EMIT startScanningAlbum(location.albumRootPath(), album);
     }
 
     int albumID                          = checkAlbum(location, album);
@@ -713,7 +713,7 @@ void CollectionScanner::scanAlbum(const CollectionLocation& location, const QStr
 
         if (d->wantSignals)
         {
-            emit finishedScanningAlbum(location.albumRootPath(), album, 1);
+            Q_EMIT finishedScanningAlbum(location.albumRootPath(), album, 1);
         }
 
         return;
@@ -743,7 +743,7 @@ void CollectionScanner::scanAlbum(const CollectionLocation& location, const QStr
     QDate albumDateNew   = albumDateTime.date();
     const QString xmpExt(QLatin1String(".xmp"));
 
-    foreach (const QString& entry, list)
+    Q_FOREACH (const QString& entry, list)
     {
         if (!d->checkObserver())
         {
@@ -765,7 +765,7 @@ void CollectionScanner::scanAlbum(const CollectionLocation& location, const QStr
 
             if (d->wantSignals && counter && (counter % 100 == 0))
             {
-                emit scannedFiles(counter);
+                Q_EMIT scannedFiles(counter);
                 counter = 0;
             }
 
@@ -825,11 +825,11 @@ void CollectionScanner::scanAlbum(const CollectionLocation& location, const QStr
                     }
                 }
 
-                // emit signals for scanned files with much higher granularity
+                // Q_EMIT signals for scanned files with much higher granularity
 
                 if (d->wantSignals && counter && (counter % 2 == 0))
                 {
-                    emit scannedFiles(counter);
+                    Q_EMIT scannedFiles(counter);
                     counter = 0;
                 }
             }
@@ -898,7 +898,7 @@ void CollectionScanner::scanAlbum(const CollectionLocation& location, const QStr
 
     if (d->wantSignals && counter)
     {
-        emit scannedFiles(counter);
+        Q_EMIT scannedFiles(counter);
     }
 
     // Mark items in the db which we did not see on disk.
@@ -917,7 +917,7 @@ void CollectionScanner::scanAlbum(const CollectionLocation& location, const QStr
 
     if (d->wantSignals)
     {
-        emit finishedScanningAlbum(location.albumRootPath(), album, list.count());
+        Q_EMIT finishedScanningAlbum(location.albumRootPath(), album, list.count());
     }
 }
 
@@ -1194,7 +1194,7 @@ void CollectionScanner::finishHistoryScanning()
 
 void CollectionScanner::historyScanningStage2(const QList<qlonglong>& ids)
 {
-    foreach (const qlonglong& id, ids)
+    Q_FOREACH (const qlonglong& id, ids)
     {
         if (!d->checkObserver())
         {
@@ -1208,7 +1208,7 @@ void CollectionScanner::historyScanningStage2(const QList<qlonglong>& ids)
             QList<qlonglong> needTaggingIds;
             ItemScanner::resolveImageHistory(id, &needTaggingIds);
 
-            foreach (const qlonglong& needTag, needTaggingIds)
+            Q_FOREACH (const qlonglong& needTag, needTaggingIds)
             {
                 d->needTaggingHistorySet << needTag;
             }
@@ -1222,7 +1222,7 @@ void CollectionScanner::historyScanningStage2(const QList<qlonglong>& ids)
 
 void CollectionScanner::historyScanningStage3(const QList<qlonglong>& ids)
 {
-    foreach (const qlonglong& id, ids)
+    Q_FOREACH (const qlonglong& id, ids)
     {
         if (!d->checkObserver())
         {

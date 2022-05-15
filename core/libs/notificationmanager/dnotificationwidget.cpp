@@ -280,7 +280,7 @@ void DNotificationWidget::removeAction(QAction* action)
 
 void DNotificationWidget::clearAllActions()
 {
-    foreach (QAction* const action, actions())
+    Q_FOREACH (QAction* const action, actions())
     {
         QFrame::removeAction(action);
     }
@@ -291,7 +291,7 @@ void DNotificationWidget::animatedShow()
     if (!style()->styleHint(QStyle::SH_Widget_Animate, nullptr, this))
     {
         show();
-        emit showAnimationFinished();
+        Q_EMIT showAnimationFinished();
 
         return;
     }
@@ -319,7 +319,7 @@ void DNotificationWidget::animatedHide()
     if (!style()->styleHint(QStyle::SH_Widget_Animate, nullptr, this))
     {
         hide();
-        emit hideAnimationFinished();
+        Q_EMIT hideAnimationFinished();
 
         return;
     }

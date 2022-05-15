@@ -275,7 +275,7 @@ void EnfuseStackList::clearSelected()
         ++it;
     }
 
-    foreach (QTreeWidgetItem* const item, list)
+    Q_FOREACH (QTreeWidgetItem* const item, list)
     {
         delete item;
     }
@@ -318,7 +318,7 @@ void EnfuseStackList::addItem(const QUrl& url, const EnfuseSettings& settings)
         setCurrentItem(item);
         setTemplateFileName(d->outputFormat, d->templateFileName);
 
-        emit signalItemClicked(url);
+        Q_EMIT signalItemClicked(url);
     }
 }
 
@@ -343,7 +343,7 @@ void EnfuseStackList::slotItemClicked(QTreeWidgetItem* item)
 
     if (eItem)
     {
-        emit signalItemClicked(eItem->url());
+        Q_EMIT signalItemClicked(eItem->url());
     }
 }
 

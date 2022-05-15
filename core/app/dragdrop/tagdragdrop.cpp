@@ -203,7 +203,7 @@ bool TagDragDropHandler::dropEvent(QAbstractItemView* view,
 
                 QStringList faceNames;
 
-                foreach (const int& faceId, faceIds)
+                Q_FOREACH (const int& faceId, faceIds)
                 {
                     // check that all selected faces are the same person
 
@@ -412,7 +412,7 @@ bool TagDragDropHandler::dropEvent(QAbstractItemView* view,
 
         if (assign)
         {
-            emit assignTags(imageIDs, tagIdList);
+            Q_EMIT assignTags(imageIDs, tagIdList);
         }
 
         return true;
@@ -516,7 +516,7 @@ QMimeData* TagDragDropHandler::createMimeData(const QList<Album*>& albums)
 
     QList<int> ids;
 
-    foreach (Album* const album, albums)
+    Q_FOREACH (Album* const album, albums)
     {
         ids << album->id();
     }

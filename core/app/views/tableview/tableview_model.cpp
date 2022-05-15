@@ -94,7 +94,7 @@ TableViewModel::Item* TableViewModel::Item::findChildWithImageId(const qlonglong
         return this;
     }
 
-    foreach (Item* const item, children)
+    Q_FOREACH (Item* const item, children)
     {
         Item* const iItem = item->findChildWithImageId(searchImageId);
 
@@ -396,7 +396,7 @@ void TableViewModel::addColumnAt(const TableViewColumnConfiguration& configurati
     const QModelIndex changedIndexBottomRight = index(rowCount(QModelIndex())-1,
                                                       columnCount(QModelIndex())-1, QModelIndex());
 
-    emit dataChanged(changedIndexTopLeft, changedIndexBottomRight);
+    Q_EMIT dataChanged(changedIndexTopLeft, changedIndexBottomRight);
 }
 
 void TableViewModel::slotColumnDataChanged(const qlonglong imageId)
@@ -418,7 +418,7 @@ void TableViewModel::slotColumnDataChanged(const qlonglong imageId)
     const QModelIndex changedIndexLeft  = index(rowIndex, 0, QModelIndex());
     const QModelIndex changedIndexRight = index(rowIndex, columnIndex, QModelIndex());
 
-    emit dataChanged(changedIndexLeft, changedIndexRight);
+    Q_EMIT dataChanged(changedIndexLeft, changedIndexRight);
 }
 
 void TableViewModel::slotColumnAllDataChanged()
@@ -437,7 +437,7 @@ void TableViewModel::slotColumnAllDataChanged()
     const QModelIndex changedIndexTopLeft     = index(0, iColumn, QModelIndex());
     const QModelIndex changedIndexBottomRight = index(rowCount(QModelIndex())-1, iColumn, QModelIndex());
 
-    emit dataChanged(changedIndexTopLeft, changedIndexBottomRight);
+    Q_EMIT dataChanged(changedIndexTopLeft, changedIndexBottomRight);
 }
 
 void TableViewModel::removeColumnAt(const int columnIndex)
@@ -452,7 +452,7 @@ void TableViewModel::removeColumnAt(const int columnIndex)
     const QModelIndex changedIndexBottomRight = index(rowCount(QModelIndex())-1,
                                                       columnCount(QModelIndex())-1, QModelIndex());
 
-    emit dataChanged(changedIndexTopLeft, changedIndexBottomRight);
+    Q_EMIT dataChanged(changedIndexTopLeft, changedIndexBottomRight);
 }
 
 TableViewColumn* TableViewModel::getColumnObject(const int columnIndex)
@@ -626,7 +626,7 @@ void TableViewModel::slotSourceLayoutAboutToBeChanged()
     ///       even when the resulting dataset will be empty, and ModelTest does not like that.
     ///       For now, the easiest workaround is resetting the model
 /*
-    emit layoutAboutToBeChanged();
+    Q_EMIT layoutAboutToBeChanged();
 */
     beginResetModel();
 }
@@ -670,7 +670,7 @@ void TableViewModel::slotDatabaseImageChanged(const ImageChangeset& imageChanges
         needToResort                            = sortColumnObject->columnAffectedByChangeset(imageChangeset);
     }
 
-    foreach (const qlonglong& id, imageChangeset.ids())
+    Q_FOREACH (const qlonglong& id, imageChangeset.ids())
     {
         // first clear the item's cached values
         /// @todo Clear only the fields which were changed
@@ -737,7 +737,7 @@ void TableViewModel::slotDatabaseImageChanged(const ImageChangeset& imageChanges
 
             if (changedIndexBottomRight.isValid())
             {
-                emit dataChanged(changedIndexTopLeft, changedIndexBottomRight);
+                Q_EMIT dataChanged(changedIndexTopLeft, changedIndexBottomRight);
             }
         }
     }
@@ -928,7 +928,7 @@ void TableViewModel::addSourceModelIndex(const QModelIndex& imageModelIndex, con
             beginInsertRows(groupLeaderIndex, 0, groupedImages.count()-1);
         }
 
-        foreach (const ItemInfo& groupedInfo, groupedImages)
+        Q_FOREACH (const ItemInfo& groupedInfo, groupedImages)
         {
             /// @todo Grouped items are currently not filtered. Should they?
 
@@ -1017,7 +1017,7 @@ ItemInfoList TableViewModel::infosFromItems(const QList<TableViewModel::Item*>& 
 {
     ItemInfoList infos;
 
-    foreach (TableViewModel::Item* const item, items)
+    Q_FOREACH (TableViewModel::Item* const item, items)
     {
         infos << infoFromItem(item);
     }
@@ -1080,7 +1080,7 @@ QList<qlonglong> TableViewModel::imageIds(const QModelIndexList& indexList) cons
 {
     QList<qlonglong> idList;
 
-    foreach (const QModelIndex& index, indexList)
+    Q_FOREACH (const QModelIndex& index, indexList)
     {
         ASSERT_MODEL(index, this);
 
@@ -1106,7 +1106,7 @@ QList<ItemInfo> TableViewModel::imageInfos(const QModelIndexList& indexList) con
 {
     QList<ItemInfo> infoList;
 
-    foreach (const QModelIndex& index, indexList)
+    Q_FOREACH (const QModelIndex& index, indexList)
     {
         ASSERT_MODEL(index, this);
 
@@ -1202,7 +1202,7 @@ void TableViewModel::sort(int column, Qt::SortOrder order)
     {
         Item* const itemToSort = itemsRequiringSorting.takeFirst();
 
-        foreach (Item* const itemToCheck, itemToSort->children)
+        Q_FOREACH (Item* const itemToCheck, itemToSort->children)
         {
             if (!itemToCheck->children.isEmpty())
             {
@@ -1261,7 +1261,7 @@ QMimeData* TableViewModel::mimeData(const QModelIndexList& indexes) const
 
     QModelIndexList imageModelIndexList;
 
-    foreach (const QModelIndex& i, indexes)
+    Q_FOREACH (const QModelIndex& i, indexes)
     {
         if (i.column() > 0)
         {
@@ -1400,7 +1400,7 @@ void TableViewModel::setGroupingMode(const TableViewModel::GroupingMode newGroup
         d->groupingMode = newGroupingMode;
         QTimer::singleShot(100, this, SLOT(slotPopulateModelWithNotifications()));
 
-        emit signalGroupingModeChanged();
+        Q_EMIT signalGroupingModeChanged();
     }
 }
 

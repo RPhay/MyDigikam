@@ -89,7 +89,7 @@ Digikam::FilterAction HotPixelFixer::filterAction()
     DefaultFilterAction<HotPixelFixer> action;
     action.addParameter(QLatin1String("interpolationMethod"), m_settings.filterMethod);
 
-    foreach (const HotPixelProps& hp, m_settings.hotPixelsList)
+    Q_FOREACH (const HotPixelProps& hp, m_settings.hotPixelsList)
     {
         action.addParameter(QLatin1String("hotPixel"), hp.toString());
     }
