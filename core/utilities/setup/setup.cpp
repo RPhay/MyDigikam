@@ -179,7 +179,7 @@ Setup::Setup(QWidget* const parent)
     d->metadataPage  = new SetupMetadata();
     d->page_metadata = addPage(d->metadataPage, i18nc("@title: settings section", "Metadata"));
     d->page_metadata->setHeader(i18nc("@title", "<qt>Embedded Image Information Management<br/>"
-                                      "<i>Setup relations between images and metadta</i></qt>"));
+                                      "<i>Setup relations between images and metadata</i></qt>"));
     d->page_metadata->setIcon(QIcon::fromTheme(QLatin1String("format-text-code")));
 
     d->templatePage  = new SetupTemplate();
