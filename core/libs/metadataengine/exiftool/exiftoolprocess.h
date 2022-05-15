@@ -225,7 +225,6 @@ Q_SIGNALS:
 private Q_SLOTS:
 
     void slotStarted();
-    void slotExecNextCmd();
     void slotApplySettingsAndStart();
     void slotReadyReadStandardError();
     void slotReadyReadStandardOutput();

@@ -282,11 +282,6 @@ int ExifToolProcess::command(const QByteArrayList& args, Action ac)
     return cmdId;
 }
 
-void ExifToolProcess::slotExecNextCmd()
-{
-    d->execNextCmd();
-}
-
 void ExifToolProcess::slotStarted()
 {
     qCDebug(DIGIKAM_METAENGINE_LOG) << "ExifTool process started";
@@ -405,7 +400,7 @@ void ExifToolProcess::initExifTool()
             this, &ExifToolProcess::slotReadyReadStandardError);
 
     connect(this, &ExifToolProcess::signalExecNextCmd,
-            this, &ExifToolProcess::slotExecNextCmd,
+            d,    &ExifToolProcess::Private::slotExecNextCmd,
             Qt::QueuedConnection);
 
     connect(this, &ExifToolProcess::signalChangeProgram,

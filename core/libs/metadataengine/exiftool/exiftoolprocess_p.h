@@ -50,8 +50,10 @@
 namespace Digikam
 {
 
-class Q_DECL_HIDDEN ExifToolProcess::Private
+class Q_DECL_HIDDEN ExifToolProcess::Private : public QObject
 {
+    Q_OBJECT
+
 public:
 
     class Q_DECL_HIDDEN Command
@@ -73,10 +75,13 @@ public:
 
     explicit Private(ExifToolProcess* const q);
 
-    void execNextCmd();
     void readOutput(const QProcess::ProcessChannel channel);
     void setProcessErrorAndEmit(QProcess::ProcessError error,
                                 const QString& description);
+
+public Q_SLOTS:
+
+    void slotExecNextCmd();
 
 public:
 
