@@ -1,17 +1,21 @@
 [Desktop Entry]
 Name=AVPlayer
 Name[ca]=AVPlayer
+Name[ca@valencia]=AVPlayer
 Name[es]=AVPlayer
 Name[fr]=AVPlayer
 Name[nl]=AVPlayer
+Name[sl]=AVPlayer
 Name[sv]=AVPlayer
 Name[uk]=AVPlayer
 Name[x-test]=xxAVPlayerxx
 GenericName=Audio and Video Player
 GenericName[ca]=Reproductor d'àudio i vídeo
+GenericName[ca@valencia]=Reproductor d'àudio i vídeo
 GenericName[es]=Reproductor de sonido y vídeo
 GenericName[fr]=Lecteur audio et vidéo
 GenericName[nl]=Audio- en videospeler
+GenericName[sl]=Avdio in video predvajalnik
 GenericName[sv]=Ljud- och videospelare
 GenericName[uk]=Програвач аудіо/відео
 GenericName[x-test]=xxAudio and Video Playerxx
