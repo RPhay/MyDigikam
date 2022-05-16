@@ -113,11 +113,11 @@ public:
 
 private:
 
-    AVFrame*            m_frame;
+    AVFrame*            m_frame = nullptr;
 
 #if !QTAV_HAVE_av_buffersink_get_frame
 
-    AVFilterBufferRef*  picref;
+    AVFilterBufferRef*  picref  = nullptr;
 
 #endif
 
@@ -133,8 +133,8 @@ class Q_DECL_HIDDEN LibAVFilter::Private
 public:
 
     Private()
-        : avframe(nullptr)
-        , status(LibAVFilter::NotConfigured)
+        : avframe(nullptr),
+          status(LibAVFilter::NotConfigured)
     {
 
 #if QTAV_HAVE(AVFILTER)
@@ -209,7 +209,7 @@ public:
 
 #endif
 
-        AVFilter* buffersrc = avfilter_get_by_name(video ? "buffer" : "abuffer");
+        AVFilter* const buffersrc = avfilter_get_by_name(video ? "buffer" : "abuffer");
 
         Q_ASSERT(buffersrc);
         AV_ENSURE_OK(avfilter_graph_create_filter(&in_filter_ctx,
@@ -226,7 +226,7 @@ public:
 
 #endif
 
-        AVFilter* buffersink = avfilter_get_by_name(video ? "buffersink" : "abuffersink");
+        AVFilter* const buffersink = avfilter_get_by_name(video ? "buffersink" : "abuffersink");
 
         Q_ASSERT(buffersink);
         AV_ENSURE_OK(avfilter_graph_create_filter(&out_filter_ctx, buffersink, "out",
@@ -235,8 +235,8 @@ public:
 
         /* Endpoints for the filter graph. */
 
-        AVFilterInOut *outputs = avfilter_inout_alloc();
-        AVFilterInOut *inputs  = avfilter_inout_alloc();
+        AVFilterInOut* outputs = avfilter_inout_alloc();
+        AVFilterInOut* inputs  = avfilter_inout_alloc();
         outputs->name          = av_strdup("in");
         outputs->filter_ctx    = in_filter_ctx;
         outputs->pad_idx       = 0;
@@ -249,9 +249,9 @@ public:
 
         struct Q_DECL_HIDDEN delete_helper
         {
-            AVFilterInOut **x;
+            AVFilterInOut** x;
 
-            delete_helper(AVFilterInOut **io)
+            delete_helper(AVFilterInOut** io)
                 : x(io)
             {
             }
@@ -298,13 +298,13 @@ public:
 
 #if QTAV_HAVE(AVFILTER)
 
-    AVFilterGraph*   filter_graph;
-    AVFilterContext* in_filter_ctx;
-    AVFilterContext* out_filter_ctx;
+    AVFilterGraph*   filter_graph   = nullptr;
+    AVFilterContext* in_filter_ctx  = nullptr;
+    AVFilterContext* out_filter_ctx = nullptr;
 
 #endif // QTAV_HAVE(AVFILTER)
 
-    AVFrame*            avframe;
+    AVFrame*            avframe     = nullptr;
     QString             options;
     LibAVFilter::Status status;
 };
@@ -380,12 +380,12 @@ LibAVFilter::Status LibAVFilter::status() const
     return priv->status;
 }
 
-bool LibAVFilter::pushVideoFrame(Frame *frame, bool changed)
+bool LibAVFilter::pushVideoFrame(Frame* frame, bool changed)
 {
     return priv->pushVideoFrame(frame, changed, sourceArguments());
 }
 
-bool LibAVFilter::pushAudioFrame(Frame *frame, bool changed)
+bool LibAVFilter::pushAudioFrame(Frame* frame, bool changed)
 {
     return priv->pushAudioFrame(frame, changed, sourceArguments());
 }
@@ -410,7 +410,9 @@ void* LibAVFilter::pullFrameHolder()
 
     if (ret < 0)
     {
-        qCWarning(DIGIKAM_QTAV_LOG_WARN).noquote() << QString::asprintf("av_buffersink_get_frame error: %s", av_err2str(ret));
+        qCWarning(DIGIKAM_QTAV_LOG_WARN).noquote()
+            << QString::asprintf("av_buffersink_get_frame error: %s", av_err2str(ret));
+
         delete holder;
 
         return nullptr;
@@ -458,14 +460,14 @@ QStringList LibAVFilter::registeredFilters(int type)
 
         // only check the 1st pad
 
-        if (!fp || !avfilter_pad_get_name(fp, 0) || avfilter_pad_get_type(fp, 0) != (AVMediaType)type)
+        if (!fp || !avfilter_pad_get_name(fp, 0) || (avfilter_pad_get_type(fp, 0) != (AVMediaType)type))
             continue;
 
         fp = (AVFilterPad*)f->outputs;
 
         // only check the 1st pad
 
-        if (!fp || !avfilter_pad_get_name(fp, 0) || avfilter_pad_get_type(fp, 0) != (AVMediaType)type)
+        if (!fp || !avfilter_pad_get_name(fp, 0) || (avfilter_pad_get_type(fp, 0) != (AVMediaType)type))
             continue;
 
         filters.append(QLatin1String(f->name));
@@ -481,20 +483,25 @@ class Q_DECL_HIDDEN LibAVFilterVideoPrivate : public VideoFilterPrivate
 public:
 
     LibAVFilterVideoPrivate()
-        : VideoFilterPrivate()
-        , pixfmt(QTAV_PIX_FMT_C(NONE))
-        , width(0)
-        , height(0)
+        : VideoFilterPrivate(),
+          pixfmt(QTAV_PIX_FMT_C(NONE)),
+          width(0),
+          height(0)
     {
     }
 
     AVPixelFormat pixfmt;
-    int width, height;
+    int           width;
+    int           height;
+
+private:
+
+    Q_DISABLE_COPY(LibAVFilterVideoPrivate);
 };
 
-LibAVFilterVideo::LibAVFilterVideo(QObject *parent)
-    : VideoFilter(*new LibAVFilterVideoPrivate(), parent)
-    , LibAVFilter()
+LibAVFilterVideo::LibAVFilterVideo(QObject* const parent)
+    : VideoFilter(*new LibAVFilterVideoPrivate(), parent),
+      LibAVFilter()
 {
 }
 
@@ -518,7 +525,7 @@ void LibAVFilterVideo::process(Statistics *statistics, VideoFrame *frame)
 
     bool changed = false;
 
-    if (d.width != frame->width() || d.height != frame->height() || d.pixfmt != frame->pixelFormatFFmpeg())
+    if ((d.width != frame->width()) || (d.height != frame->height()) || (d.pixfmt != frame->pixelFormatFFmpeg()))
     {
         changed  = true;
         d.width  = frame->width();
@@ -527,10 +534,10 @@ void LibAVFilterVideo::process(Statistics *statistics, VideoFrame *frame)
     }
 
     bool ok = pushVideoFrame(frame, changed);
-
-    //if (old != status())
-      //  Q_EMIT statusChanged();
-
+/*
+    if (old != status())
+        Q_EMIT statusChanged();
+*/
     if (!ok)
         return;
 
@@ -583,21 +590,25 @@ class Q_DECL_HIDDEN LibAVFilterAudioPrivate : public AudioFilterPrivate
 public:
 
     LibAVFilterAudioPrivate()
-        : AudioFilterPrivate()
-        , sample_rate(0)
-        , sample_fmt(AV_SAMPLE_FMT_NONE)
-        , channel_layout(0)
+        : AudioFilterPrivate(),
+          sample_rate(0),
+          sample_fmt(AV_SAMPLE_FMT_NONE),
+          channel_layout(0)
     {
     }
 
     int            sample_rate;
     AVSampleFormat sample_fmt;
     qint64         channel_layout;
+
+private:
+
+    Q_DISABLE_COPY(LibAVFilterAudioPrivate);
 };
 
-LibAVFilterAudio::LibAVFilterAudio(QObject *parent)
-    : AudioFilter(*new LibAVFilterAudioPrivate(), parent)
-    , LibAVFilter()
+LibAVFilterAudio::LibAVFilterAudio(QObject* const parent)
+    : AudioFilter(*new LibAVFilterAudioPrivate(), parent),
+      LibAVFilter()
 {
 }
 
@@ -639,9 +650,9 @@ void LibAVFilterAudio::process(Statistics *statistics, AudioFrame *frame)
     bool changed = false;
     const AudioFormat afmt(frame->format());
 
-    if (d.sample_rate    != afmt.sampleRate()         ||
-        d.sample_fmt     != afmt.sampleFormatFFmpeg() ||
-        d.channel_layout != afmt.channelLayoutFFmpeg())
+    if ((d.sample_rate    != afmt.sampleRate())         ||
+        (d.sample_fmt     != afmt.sampleFormatFFmpeg()) ||
+        (d.channel_layout != afmt.channelLayoutFFmpeg()))
     {
         changed          = true;
         d.sample_rate    = afmt.sampleRate();
@@ -703,9 +714,9 @@ bool LibAVFilter::Private::pushVideoFrame(Frame* frame, bool changed, const QStr
 
 #if QTAV_HAVE(AVFILTER)
 
-    VideoFrame* vf = static_cast<VideoFrame*>(frame);
+    VideoFrame* const vf = static_cast<VideoFrame*>(frame);
 
-    if (status == LibAVFilter::NotConfigured || !avframe || changed)
+    if ((status == LibAVFilter::NotConfigured) || !avframe || changed)
     {
         if (!setup(args, true))
         {
@@ -756,12 +767,12 @@ bool LibAVFilter::Private::pushVideoFrame(Frame* frame, bool changed, const QStr
 }
 
 
-bool LibAVFilter::Private::pushAudioFrame(Frame *frame, bool changed, const QString &args)
+bool LibAVFilter::Private::pushAudioFrame(Frame* frame, bool changed, const QString& args)
 {
 
 #if QTAV_HAVE(AVFILTER)
 
-    if (status == LibAVFilter::NotConfigured || !avframe || changed)
+    if ((status == LibAVFilter::NotConfigured) || !avframe || changed)
     {
         if (!setup(args, false))
         {
@@ -773,7 +784,7 @@ bool LibAVFilter::Private::pushAudioFrame(Frame *frame, bool changed, const QStr
         }
     }
 
-    AudioFrame* af          = static_cast<AudioFrame*>(frame);
+    AudioFrame* const af    = static_cast<AudioFrame*>(frame);
     const AudioFormat afmt(af->format());
     avframe->pts            = frame->timestamp() * 1000000.0; // time_base is 1/1000000
     avframe->sample_rate    = afmt.sampleRate();

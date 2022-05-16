@@ -56,6 +56,10 @@ public:
     int                 buffer_size;
     MediaIO::AccessMode mode;
     QString             url;
+
+private:
+
+    Q_DISABLE_COPY(MediaIOPrivate);
 };
 
 // -------------------------------------------------------------------

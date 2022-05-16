@@ -99,7 +99,7 @@ public:
      * 2. Set QObject properties for AVEncoder. Use AVEncoder::name() or lower case as a key to set properties. If key not found, assume key is "avcodec"
      * 3. If no ket AVEncoder::name() found in the option, set key-value pairs as QObject property-value pairs.
      */
-    void setOptions(const QVariantHash &dict);
+    void setOptions(const QVariantHash& dict);
     QVariantHash options() const;
 
 Q_SIGNALS:

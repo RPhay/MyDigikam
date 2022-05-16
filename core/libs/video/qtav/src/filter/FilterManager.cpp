@@ -49,10 +49,14 @@ public:
     {
     }
 
-    QList<Filter*>                    pending_release_filters;
-    QHash<AVOutput*, QList<Filter*> > filter_out_map;
+    QList<Filter*>                        pending_release_filters;
+    QHash<AVOutput*, QList<Filter*> >     filter_out_map;
     QHash<AVPlayerCore*, QList<Filter*> > afilter_player_map;
     QHash<AVPlayerCore*, QList<Filter*> > vfilter_player_map;
+
+private:
+
+    Q_DISABLE_COPY(FilterManagerPrivate);
 };
 
 FilterManager::FilterManager()
@@ -70,7 +74,7 @@ FilterManager& FilterManager::instance()
     return sMgr;
 }
 
-bool FilterManager::insert(Filter *filter, QList<Filter *> &filters, int pos)
+bool FilterManager::insert(Filter* filter, QList<Filter*>& filters, int pos)
 {
     int p = pos;
 
@@ -98,7 +102,7 @@ bool FilterManager::insert(Filter *filter, QList<Filter *> &filters, int pos)
     return true;
 }
 
-bool FilterManager::registerFilter(Filter *filter, AVOutput *output, int pos)
+bool FilterManager::registerFilter(Filter* filter, AVOutput* output, int pos)
 {
     DPTR_D(FilterManager);
     d.pending_release_filters.removeAll(filter);    // erase?
@@ -107,14 +111,14 @@ bool FilterManager::registerFilter(Filter *filter, AVOutput *output, int pos)
     return insert(filter, fs, pos);
 }
 
-QList<Filter*> FilterManager::outputFilters(AVOutput *output) const
+QList<Filter*> FilterManager::outputFilters(AVOutput* output) const
 {
     DPTR_D(const FilterManager);
 
     return d.filter_out_map.value(output);
 }
 
-bool FilterManager::registerAudioFilter(Filter *filter, AVPlayerCore *player, int pos)
+bool FilterManager::registerAudioFilter(Filter* filter, AVPlayerCore* player, int pos)
 {
     DPTR_D(FilterManager);
 
@@ -124,14 +128,14 @@ bool FilterManager::registerAudioFilter(Filter *filter, AVPlayerCore *player, in
     return insert(filter, fs, pos);
 }
 
-QList<Filter*> FilterManager::audioFilters(AVPlayerCore *player) const
+QList<Filter*> FilterManager::audioFilters(AVPlayerCore* player) const
 {
     DPTR_D(const FilterManager);
 
     return d.afilter_player_map.value(player);
 }
 
-bool FilterManager::registerVideoFilter(Filter *filter, AVPlayerCore *player, int pos)
+bool FilterManager::registerVideoFilter(Filter* filter, AVPlayerCore* player, int pos)
 {
     DPTR_D(FilterManager);
 
@@ -141,7 +145,7 @@ bool FilterManager::registerVideoFilter(Filter *filter, AVPlayerCore *player, in
     return insert(filter, fs, pos);
 }
 
-QList<Filter *> FilterManager::videoFilters(AVPlayerCore *player) const
+QList<Filter*> FilterManager::videoFilters(AVPlayerCore* player) const
 {
     DPTR_D(const FilterManager);
 
@@ -150,7 +154,7 @@ QList<Filter *> FilterManager::videoFilters(AVPlayerCore *player) const
 
 // called by AVOutput/AVPlayerCore.uninstall imediatly
 
-bool FilterManager::unregisterAudioFilter(Filter *filter, AVPlayerCore *player)
+bool FilterManager::unregisterAudioFilter(Filter* filter, AVPlayerCore* player)
 {
     DPTR_D(FilterManager);
 
@@ -168,7 +172,7 @@ bool FilterManager::unregisterAudioFilter(Filter *filter, AVPlayerCore *player)
     return ret;
 }
 
-bool FilterManager::unregisterVideoFilter(Filter *filter, AVPlayerCore *player)
+bool FilterManager::unregisterVideoFilter(Filter* filter, AVPlayerCore* player)
 {
     DPTR_D(FilterManager);
 
@@ -186,7 +190,7 @@ bool FilterManager::unregisterVideoFilter(Filter *filter, AVPlayerCore *player)
     return ret;
 }
 
-bool FilterManager::unregisterFilter(Filter *filter, AVOutput *output)
+bool FilterManager::unregisterFilter(Filter* filter, AVOutput* output)
 {
     DPTR_D(FilterManager);
 
@@ -199,7 +203,7 @@ bool FilterManager::unregisterFilter(Filter *filter, AVOutput *output)
     return ret;
 }
 
-bool FilterManager::uninstallFilter(Filter *filter)
+bool FilterManager::uninstallFilter(Filter* filter)
 {
     DPTR_D(FilterManager);
     QHash<AVPlayerCore*, QList<Filter*> > map1(d.vfilter_player_map); // NB: copy it for iteration because called code may modify map -- which caused crashes
@@ -238,7 +242,7 @@ bool FilterManager::uninstallFilter(Filter *filter)
     return false;
 }
 
-bool FilterManager::uninstallAudioFilter(Filter *filter, AVPlayerCore *player)
+bool FilterManager::uninstallAudioFilter(Filter* filter, AVPlayerCore* player)
 {
     if (unregisterAudioFilter(filter, player))
         return player->uninstallFilter(reinterpret_cast<AudioFilter*>(filter));
@@ -246,7 +250,7 @@ bool FilterManager::uninstallAudioFilter(Filter *filter, AVPlayerCore *player)
     return false;
 }
 
-bool FilterManager::uninstallVideoFilter(Filter *filter, AVPlayerCore *player)
+bool FilterManager::uninstallVideoFilter(Filter* filter, AVPlayerCore* player)
 {
     if (unregisterVideoFilter(filter, player))
         return player->uninstallFilter(reinterpret_cast<VideoFilter*>(filter));
@@ -254,7 +258,7 @@ bool FilterManager::uninstallVideoFilter(Filter *filter, AVPlayerCore *player)
     return false;
 }
 
-bool FilterManager::uninstallFilter(Filter *filter, AVOutput *output)
+bool FilterManager::uninstallFilter(Filter* filter, AVOutput* output)
 {
     if (unregisterFilter(filter, output))
         return output->uninstallFilter(filter);

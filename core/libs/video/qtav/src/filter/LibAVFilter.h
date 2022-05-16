@@ -105,7 +105,7 @@ class QTAV_EXPORT LibAVFilterVideo : public VideoFilter,
 
 public:
 
-    explicit LibAVFilterVideo(QObject* parent = nullptr);
+    explicit LibAVFilterVideo(QObject* const parent = nullptr);
 
     bool isSupported(VideoFilterContext::Type t) const override
     {
@@ -135,7 +135,7 @@ class QTAV_EXPORT LibAVFilterAudio : public AudioFilter,
 
 public:
 
-    explicit LibAVFilterAudio(QObject* parent = nullptr);
+    explicit LibAVFilterAudio(QObject* const parent = nullptr);
 
     QStringList filters() const; // the same as LibAVFilter::audioFilters
 

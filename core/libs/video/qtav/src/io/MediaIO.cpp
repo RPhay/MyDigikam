@@ -130,7 +130,7 @@ static int av_write(void* opaque, unsigned char* buf, int buf_size)
 
 static int64_t av_seek(void* opaque, int64_t offset, int whence)    // krazy:exclude=typedefs
 {
-    if (whence == SEEK_SET && offset < 0)
+    if ((whence == SEEK_SET) && (offset < 0))
         return -1;
 
     MediaIO* const io = static_cast<MediaIO*>(opaque);

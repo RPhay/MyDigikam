@@ -48,7 +48,7 @@ static AVCodec* get_codec(const QString& name, const QString& hwa, AVCodecID cid
         fullname = QStringLiteral("%1_%2").arg(QString::fromLatin1(avcodec_get_name(cid))).arg(hwa);
     }
 
-    AVCodec* codec = avcodec_find_decoder_by_name(fullname.toUtf8().constData());
+    AVCodec* const codec = avcodec_find_decoder_by_name(fullname.toUtf8().constData());
 
     if (codec)
         return codec;
@@ -103,7 +103,7 @@ bool AVDecoder::open()
     }
 
     const QString hwa = property("hwaccel").toString();
-    AVCodec* codec    = get_codec(codecName(), hwa, d.codec_ctx->codec_id);
+    AVCodec* const codec    = get_codec(codecName(), hwa, d.codec_ctx->codec_id);
 
     if (!codec)
     {
@@ -228,10 +228,10 @@ void AVDecoder::flush()
  * do nothing if equal
  * close the old one. the codec context can not be shared in more than 1 decoder.
  */
-void AVDecoder::setCodecContext(void *codecCtx)
+void AVDecoder::setCodecContext(void* codecCtx)
 {
     DPTR_D(AVDecoder);
-    AVCodecContext *ctx = (AVCodecContext*)codecCtx;
+    AVCodecContext* const ctx = (AVCodecContext*)codecCtx;
 
     if (d.codec_ctx == ctx)
         return;
@@ -296,7 +296,7 @@ QString AVDecoder::codecName() const
 
 bool AVDecoder::isAvailable() const
 {
-    return d_func().codec_ctx != nullptr;
+    return (d_func().codec_ctx != nullptr);
 }
 
 int AVDecoder::undecodedSize() const

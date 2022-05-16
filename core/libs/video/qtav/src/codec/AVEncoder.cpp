@@ -47,7 +47,7 @@ QString AVEncoder::description() const
     return QString();
 }
 
-void AVEncoder::setCodecName(const QString &name)
+void AVEncoder::setCodecName(const QString& name)
 {
     DPTR_D(AVEncoder);
 
@@ -188,7 +188,7 @@ void AVEncoder::copyAVCodecContext(void* ctx)
     }
 }
 
-void AVEncoder::setOptions(const QVariantHash &dict)
+void AVEncoder::setOptions(const QVariantHash& dict)
 {
     DPTR_D(AVEncoder);
 

@@ -153,11 +153,11 @@ public:
     }
 
     AVDecoderPrivate()
-      : codec_ctx(nullptr),
-        available(true),
-        is_open(false),
+      : codec_ctx     (nullptr),
+        available     (true),
+        is_open       (false),
         undecoded_size(0),
-        dict(nullptr)
+        dict          (nullptr)
     {
         codec_ctx = avcodec_alloc_context3(nullptr);
     }

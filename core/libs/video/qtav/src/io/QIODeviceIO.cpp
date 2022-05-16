@@ -49,7 +49,11 @@ public:
     {
     }
 
-    QIODevice *dev;
+    QIODevice* dev;
+
+private:
+
+    Q_DISABLE_COPY(QIODeviceIOPrivate);
 };
 
 QIODeviceIO::QIODeviceIO() : MediaIO(*new QIODeviceIOPrivate()) {                                    }
@@ -84,7 +88,7 @@ bool QIODeviceIO::isWritable() const
 {
     DPTR_D(const QIODeviceIO);
 
-    return d.dev && d.dev->isWritable();
+    return (d.dev && d.dev->isWritable());
 }
 
 qint64 QIODeviceIO::read(char *data, qint64 maxSize)
@@ -182,7 +186,7 @@ static const MediaIOId MediaIOId_QFile = mkid::id32base36_5<'Q','F','i','l','e'>
 
 FACTORY_REGISTER(MediaIO, QFile, kQFileName)
 
-class Q_DECL_HIDDEN QFileIOPrivate final: public QIODeviceIOPrivate
+class Q_DECL_HIDDEN QFileIOPrivate final : public QIODeviceIOPrivate
 {
 public:
 

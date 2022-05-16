@@ -45,11 +45,11 @@ class QTAV_PRIVATE_EXPORT AVEncoderPrivate : public DPtrPrivate<AVEncoder>
 public:
 
     AVEncoderPrivate()
-      : avctx(nullptr)
-      , is_open(false)
-      , bit_rate(0)
+      : avctx         (nullptr)
+      , is_open       (false)
+      , bit_rate      (0)
       , timestamp_mode(0)
-      , dict(nullptr)
+      , dict          (nullptr)
     {
     }
 
@@ -81,6 +81,8 @@ public:
     void applyOptionsForDict();
     void applyOptionsForContext();
 
+public:
+
     AVCodecContext* avctx;    // null if not avcodec. allocated in ffmpeg based encoders
     bool            is_open;
     int             bit_rate;
@@ -89,6 +91,10 @@ public:
     QVariantHash    options;
     AVDictionary*   dict;     // null if not avcodec
     Packet          packet;
+
+private:
+
+    Q_DISABLE_COPY(AVEncoderPrivate);
 };
 
 class AudioResampler;
@@ -99,7 +105,7 @@ public:
 
     AudioEncoderPrivate()
         : AVEncoderPrivate(),
-          resampler(nullptr),
+          resampler (nullptr),
           frame_size(0)
     {
         bit_rate = 64000;
@@ -110,9 +116,14 @@ public:
     }
 
     AudioResampler* resampler;
-    AudioFormat     format, format_used;
+    AudioFormat     format;
+    AudioFormat     format_used;
 
     int             frame_size; // used if avctx->frame_size == 0
+
+private:
+
+    Q_DISABLE_COPY(AudioEncoderPrivate);
 };
 
 class QTAV_PRIVATE_EXPORT VideoEncoderPrivate : public AVEncoderPrivate
@@ -121,11 +132,11 @@ public:
 
     VideoEncoderPrivate()
       : AVEncoderPrivate()
-      , width(0)
-      , height(0)
-      , frame_rate(-1)
+      , width      (0)
+      , height     (0)
+      , frame_rate (-1)
       , format_used(VideoFormat::Format_Invalid)
-      , format(format_used)
+      , format     (format_used)
     {
         bit_rate = 400000;
     }
@@ -134,10 +145,15 @@ public:
     {
     }
 
-    int                      width, height;
+    int                      width;
+    int                      height;
     qreal                    frame_rate;
     VideoFormat::PixelFormat format_used;
     VideoFormat              format;
+
+private:
+
+    Q_DISABLE_COPY(VideoEncoderPrivate);
 };
 
 } // namespace QtAV

@@ -87,7 +87,7 @@ public:
      *  "avcodec": {"vismv":"pf"}, "vaapi":{"display":"DRM"}, "copyMode": "ZeroCopy"
      *  means set avcodec context option vismv=>pf, VA-API display (qt property) to DRM when using VA-API, set copyMode (GPU decoders) property to ZeroCopy
      */
-    void setOptions(const QVariantHash &dict);
+    void setOptions(const QVariantHash& dict);
     QVariantHash options() const;
 
 Q_SIGNALS:

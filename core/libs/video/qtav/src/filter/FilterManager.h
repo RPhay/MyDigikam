@@ -54,22 +54,22 @@ public:
      * record the filter in manager
      * target.installXXXFilter/filter.installTo(target) must call registerXXXFilter
      */
-    bool registerFilter(Filter *filter, AVOutput *output, int pos = 0x7FFFFFFF);
+    bool registerFilter(Filter* filter, AVOutput* output, int pos = 0x7FFFFFFF);
     QList<Filter*> outputFilters(AVOutput* output) const;
-    bool registerAudioFilter(Filter *filter, AVPlayerCore *player, int pos = 0x7FFFFFFF);
-    QList<Filter *> audioFilters(AVPlayerCore* player) const;
-    bool registerVideoFilter(Filter *filter, AVPlayerCore *player, int pos = 0x7FFFFFFF);
+    bool registerAudioFilter(Filter* filter, AVPlayerCore* player, int pos = 0x7FFFFFFF);
+    QList<Filter*> audioFilters(AVPlayerCore* player) const;
+    bool registerVideoFilter(Filter* filter, AVPlayerCore* player, int pos = 0x7FFFFFFF);
     QList<Filter*> videoFilters(AVPlayerCore* player) const;
-    bool unregisterAudioFilter(Filter *filter, AVPlayerCore *player);
-    bool unregisterVideoFilter(Filter *filter, AVPlayerCore *player);
-    bool unregisterFilter(Filter *filter, AVOutput *output);
+    bool unregisterAudioFilter(Filter* filter, AVPlayerCore* player);
+    bool unregisterVideoFilter(Filter* filter, AVPlayerCore* player);
+    bool unregisterFilter(Filter* filter, AVOutput* output);
 
     // unregister and call target.uninstall
 
-    bool uninstallFilter(Filter *filter);                           // called by filter.uninstall
-    bool uninstallAudioFilter(Filter *filter, AVPlayerCore* player);
-    bool uninstallVideoFilter(Filter *filter, AVPlayerCore* player);
-    bool uninstallFilter(Filter *filter, AVOutput* output);
+    bool uninstallFilter(Filter* filter);                           // called by filter.uninstall
+    bool uninstallAudioFilter(Filter* filter, AVPlayerCore* player);
+    bool uninstallVideoFilter(Filter* filter, AVPlayerCore* player);
+    bool uninstallFilter(Filter* filter, AVOutput* output);
 
 private:
 

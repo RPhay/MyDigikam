@@ -587,7 +587,7 @@ QPointF VideoRenderer::onMapToFrame(const QPointF &p) const
 {
     QRectF roi    = realROI();
 
-    // zoom=roi.w/roi.h>vo.w/vo.h?roi.w/vo.w:roi.h/vo.h
+    // zoom = roi.w / roi.h > vo.w / vo.h ? roi.w / vo.w : roi.h / vo.h
 
     qreal zoom    = qMax(roi.width() / rendererWidth(), roi.height() / rendererHeight());
     QPointF delta = p - QPointF(rendererWidth() / 2, rendererHeight() / 2);
@@ -604,7 +604,7 @@ QPointF VideoRenderer::onMapFromFrame(const QPointF& p) const
 {
     QRectF roi    = realROI();
 
-    // zoom=roi.w/roi.h>vo.w/vo.h?roi.w/vo.w:roi.h/vo.h
+    // zoom = roi.w / roi.h > vo.w / vo.h ? roi.w / vo.w : roi.h / vo.h
 
     qreal zoom    = qMax(roi.width() / rendererWidth(), roi.height() / rendererHeight());
 
@@ -661,10 +661,11 @@ void VideoRenderer::handlePaintEvent()
 
                 // qpainter on video frame always runs on video thread. qpainter on renderer's paint device can work on rendering thread
                 // Here apply filters on frame on video thread, for example, GPU filters
+/*
+                vf->prepareContext(d.filter_context, d.statistics, 0);
 
-                //vf->prepareContext(d.filter_context, d.statistics, 0);
-                //if (!vf->context() || (vf->context()->type() != VideoFilterContext::OpenGL))
-
+                if (!vf->context() || (vf->context()->type() != VideoFilterContext::OpenGL))
+*/
                 if (!vf->isSupported(VideoFilterContext::OpenGL))
                     continue;
 
@@ -905,7 +906,7 @@ void VideoRenderer::updateUi()
         public:
 
             explicit QUpdateLaterEvent(const QRegion& paintRegion)
-                : QEvent(UpdateLater),
+                : QEvent  (UpdateLater),
                   m_region(paintRegion)
             {
             }
@@ -914,7 +915,7 @@ void VideoRenderer::updateUi()
             {
             }
 
-            inline const QRegion &region() const
+            inline const QRegion& region() const
             {
                 return m_region;
             }
@@ -922,6 +923,10 @@ void VideoRenderer::updateUi()
         protected:
 
             QRegion m_region;
+
+        private:
+
+            Q_DISABLE_COPY(QUpdateLaterEvent);
         };
 
         QCoreApplication::instance()->postEvent(obj,
