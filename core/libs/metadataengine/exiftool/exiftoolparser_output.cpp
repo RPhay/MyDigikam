@@ -161,11 +161,20 @@ void ExifToolParser::slotCmdCompleted(int cmdId,
                     data.remove(QLatin1Char('('));
                 }
 
-                d->exifToolData.insert(tagNameExifTool, QVariantList()
-                                                         << data        // ExifTool Raw data as string.
-                                                         << tagType     // ExifTool data type.
-                                                         << desc        // ExifTool tag description.
-                                                         << num);       // ExifTool numeral value if any.
+                if (d->exifToolData.contains(tagNameExifTool))
+                {
+                    QString existData = d->exifToolData[tagNameExifTool][0].toString();
+                    existData        += QLatin1String(", ") + data;
+                    d->exifToolData[tagNameExifTool][0] = existData;
+                }
+                else
+                {
+                    d->exifToolData.insert(tagNameExifTool, QVariantList()
+                                                            << data        // ExifTool Raw data as string.
+                                                            << tagType     // ExifTool data type.
+                                                            << desc        // ExifTool tag description.
+                                                            << num);       // ExifTool numeral value if any.
+                }
             }
 
             break;
