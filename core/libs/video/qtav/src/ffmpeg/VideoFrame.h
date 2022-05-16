@@ -42,7 +42,7 @@ namespace QtAV
 
 class VideoFramePrivate;
 
-class QTAV_EXPORT VideoFrame : public Frame             // clazy:exclude=clazy-copyable-polymorphic
+class QTAV_EXPORT VideoFrame : public Frame             // clazy:exclude=copyable-polymorphic
 {
     Q_DECLARE_PRIVATE(VideoFrame)
 
