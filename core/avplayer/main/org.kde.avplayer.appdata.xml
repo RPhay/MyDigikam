@@ -15,6 +15,7 @@
   <name xml:lang="sv">AVPlayer</name>
   <name xml:lang="uk">AVPlayer</name>
   <name xml:lang="x-test">xxAVPlayerxx</name>
+  <name xml:lang="zh-CN">AVPlayer</name>
   <summary>Audio and Video Player</summary>
   <summary xml:lang="ca">Reproductor d'àudio i vídeo</summary>
   <summary xml:lang="ca-valencia">Reproductor d'àudio i vídeo</summary>
@@ -25,6 +26,7 @@
   <summary xml:lang="sv">Ljud- och videospelare</summary>
   <summary xml:lang="uk">Програвач аудіо/відео</summary>
   <summary xml:lang="x-test">xxAudio and Video Playerxx</summary>
+  <summary xml:lang="zh-CN">音频/视频播放器</summary>
   <description>
     <p>
       AVPlayer is the standalone and powerful audio and video player of the digiKam project.
@@ -38,6 +40,7 @@
     <p xml:lang="sv">AVPlayer är den fristående och kraftfulla ljud- och videospelaren i Digikam-projektet.</p>
     <p xml:lang="uk">AVPlayer — окремий і потужний програвач звукових і відеоданих проєкту digiKam.</p>
     <p xml:lang="x-test">xxAVPlayer is the standalone and powerful audio and video player of the digiKam project.xx</p>
+    <p xml:lang="zh-CN">AVPlayer 是 digiKam 项目的功能强大的独立音频/视频播放器。</p>
   </description>
   <url type="homepage">https://www.digikam.org/</url>
   <url type="bugtracker">https://bugs.kde.org/enter_bug.cgi?format=guided&amp;product=digikam</url>
@@ -135,6 +138,7 @@
   <developer_name xml:lang="sv">Digikam-projektet</developer_name>
   <developer_name xml:lang="uk">Проєкт digiKam</developer_name>
   <developer_name xml:lang="x-test">xxdigiKam Projectxx</developer_name>
+  <developer_name xml:lang="zh-CN">digiKam 项目</developer_name>
   <provides>
     <binary>avplayer</binary>
   </provides>
