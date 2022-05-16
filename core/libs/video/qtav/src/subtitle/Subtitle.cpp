@@ -625,7 +625,7 @@ void Subtitle::loadAsync()
     {
     public:
 
-        explicit Loader(Subtitle* sub)
+        explicit Loader(Subtitle* const sub)
             : m_sub(sub)
         {
         }
@@ -638,7 +638,11 @@ void Subtitle::loadAsync()
 
     private:
 
-        Subtitle* m_sub;
+        Subtitle* m_sub = nullptr;
+
+    private:
+
+        Q_DISABLE_COPY(Loader);
     };
 
     QThreadPool::globalInstance()->start(new Loader(this));
@@ -646,7 +650,7 @@ void Subtitle::loadAsync()
 
 bool Subtitle::canRender() const
 {
-    return priv->processor && priv->processor->canRender();
+    return (priv->processor && priv->processor->canRender());
 }
 
 QString Subtitle::getText() const
@@ -666,7 +670,8 @@ QString Subtitle::getText() const
     priv->update_text                 = false;
     priv->current_text.clear();
     const int count                   = qAbs(priv->current_count);
-    QList<SubtitleFrame>::iterator it = priv->current_count > 0 ? priv->itf : priv->itf + (priv->current_count+1);
+    QList<SubtitleFrame>::iterator it = (priv->current_count > 0) ? priv->itf
+                                                                  : priv->itf + (priv->current_count+1);
 
     for (int i = 0 ; i < count ; ++i)
     {
@@ -687,7 +692,7 @@ QImage Subtitle::getImage(int width, int height, QRect* boundingRect)
     if (!isLoaded())
         return QImage();
 
-    if (width == 0 || height == 0)
+    if ((width == 0) || (height == 0))
         return QImage();
 
 #if 0
@@ -716,7 +721,7 @@ QImage Subtitle::getImage(int width, int height, QRect* boundingRect)
     return priv->current_image;
 }
 
-SubImageSet Subtitle::getSubImages(int width, int height, QRect *boundingRect)
+SubImageSet Subtitle::getSubImages(int width, int height, QRect* boundingRect)
 {
     QMutexLocker lock(&priv->mutex);
     Q_UNUSED(lock);
@@ -724,7 +729,7 @@ SubImageSet Subtitle::getSubImages(int width, int height, QRect *boundingRect)
     if (!isLoaded())
         return SubImageSet();
 
-    if (width == 0 || height == 0)
+    if ((width == 0) || (height == 0))
         return SubImageSet();
 
     priv->update_image = false;
@@ -745,13 +750,14 @@ bool Subtitle::processHeader(const QByteArray& codec, const QByteArray &data)
 {
     qCDebug(DIGIKAM_QTAV_LOG) << "codec: " << codec;
     qCDebug(DIGIKAM_QTAV_LOG) << "header: " << data;
-    SubtitleProcessor* old_processor = priv->processor;
+
+    SubtitleProcessor* const old_processor = priv->processor;
     priv->reset(); // reset for the new subtitle stream (internal)
 
     if (priv->processors.isEmpty())
         return false;
 
-    Q_FOREACH (SubtitleProcessor *sp, priv->processors)
+    Q_FOREACH (SubtitleProcessor* const sp, priv->processors)
     {
         if (sp->supportedTypes().contains(QLatin1String(codec)))
         {
@@ -794,7 +800,7 @@ bool Subtitle::processLine(const QByteArray &data, qreal pts, qreal duration)
     if (!f.isValid())
         return false; // TODO: if seek to previous position, an invalid frame is returned.
 
-    if (priv->frames.isEmpty() || priv->frames.last() < f)
+    if (priv->frames.isEmpty() || (priv->frames.last() < f))
     {
         priv->frames.append(f);
         priv->itf = priv->frames.begin();
@@ -809,7 +815,7 @@ bool Subtitle::processLine(const QByteArray &data, qreal pts, qreal duration)
     if (it != priv->frames.begin())
         --it;
 
-    while (it != priv->frames.begin() && f < (*it))
+    while ((it != priv->frames.begin()) && (f < (*it)))
     {
         --it;
     }
@@ -925,7 +931,7 @@ bool Subtitle::Private::prepareCurrentFrame()
     current_count = found;
 
     if (found > 0)
-        return it_changed || current_count != old_current_count;
+        return (it_changed || (current_count != old_current_count));
 
     // no subtitle at that time, it == end(). check previous text
 
@@ -944,7 +950,7 @@ QStringList Subtitle::Private::find()
 
     if (!fuzzy_match)
     {
-        return QStringList() << file_name;
+        return (QStringList() << file_name);
     }
 
     // found files will be sorted by extensions in sfx order
@@ -1079,6 +1085,7 @@ QByteArray Subtitle::Private::readFromFile(const QString &path)
     if (!f.open(QIODevice::ReadOnly))
     {
         qCDebug(DIGIKAM_QTAV_LOG) << "Failed to open subtitle [" << path << "]: " << f.errorString();
+
         return QByteArray();
     }
 
@@ -1126,7 +1133,7 @@ bool Subtitle::Private::processRawData(const QByteArray &data)
     if (data.size() > kMaxSubtitleSize)
         return false;
 
-    Q_FOREACH (SubtitleProcessor* sp, processors)
+    Q_FOREACH (SubtitleProcessor* const sp, processors)
     {
         if (processRawData(sp, data))
         {
@@ -1205,13 +1212,13 @@ bool Subtitle::Private::processRawData(SubtitleProcessor* sp, const QByteArray& 
 }
 
 
-SubtitleAPIProxy::SubtitleAPIProxy(QObject* obj)
+SubtitleAPIProxy::SubtitleAPIProxy(QObject* const obj)
     : m_obj(obj),
       m_s(nullptr)
 {
 }
 
-void SubtitleAPIProxy::setSubtitle(Subtitle *sub)
+void SubtitleAPIProxy::setSubtitle(Subtitle* const sub)
 {
     m_s = sub;
 
@@ -1279,7 +1286,7 @@ QByteArray SubtitleAPIProxy::codec() const
 
 bool SubtitleAPIProxy::isLoaded() const
 {
-    return m_s && m_s->isLoaded();
+    return (m_s && m_s->isLoaded());
 }
 
 void SubtitleAPIProxy::setEngines(const QStringList& value)
@@ -1338,7 +1345,7 @@ QString SubtitleAPIProxy::fileName() const
 
 #endif
 
-void SubtitleAPIProxy::setDirs(const QStringList &value)
+void SubtitleAPIProxy::setDirs(const QStringList& value)
 {
     if (!m_s)
         return;
@@ -1380,7 +1387,7 @@ QStringList SubtitleAPIProxy::suffixes() const
 
 bool SubtitleAPIProxy::canRender() const
 {
-    return m_s && m_s->canRender();
+    return (m_s && m_s->canRender());
 }
 
 void SubtitleAPIProxy::setDelay(qreal value)
@@ -1393,12 +1400,12 @@ void SubtitleAPIProxy::setDelay(qreal value)
 
 qreal SubtitleAPIProxy::delay() const
 {
-    return m_s ? m_s->delay() : 0;
+    return (m_s ? m_s->delay() : 0);
 }
 
 QString SubtitleAPIProxy::fontFile() const
 {
-    return m_s ? m_s->fontFile() : QString();
+    return (m_s ? m_s->fontFile() : QString());
 }
 
 void SubtitleAPIProxy::setFontFile(const QString &value)
@@ -1411,10 +1418,10 @@ void SubtitleAPIProxy::setFontFile(const QString &value)
 
 QString SubtitleAPIProxy::fontsDir() const
 {
-    return m_s ? m_s->fontsDir() : QString();
+    return (m_s ? m_s->fontsDir() : QString());
 }
 
-void SubtitleAPIProxy::setFontsDir(const QString &value)
+void SubtitleAPIProxy::setFontsDir(const QString& value)
 {
     if (!m_s)
         return;
@@ -1424,7 +1431,7 @@ void SubtitleAPIProxy::setFontsDir(const QString &value)
 
 bool SubtitleAPIProxy::isFontFileForced() const
 {
-    return m_s && m_s->isFontFileForced();
+    return (m_s && m_s->isFontFileForced());
 }
 
 void SubtitleAPIProxy::setFontFileForced(bool value)

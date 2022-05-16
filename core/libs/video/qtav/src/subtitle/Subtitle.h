@@ -54,11 +54,11 @@ public:
 
     // valide: begin < end
 
-    bool isValid() const                                 { return begin < end; }
-    operator bool() const                                { return isValid();   }
-    bool operator !() const                              { return !isValid();  }
-    inline bool operator <(const SubtitleFrame& f) const { return end < f.end; }
-    inline bool operator <(qreal t) const                { return end < t;     }
+    bool isValid() const                                 { return (begin < end); }
+    operator bool() const                                { return isValid();     }
+    bool operator !() const                              { return !isValid();    }
+    inline bool operator <(const SubtitleFrame& f) const { return (end < f.end); }
+    inline bool operator <(qreal t) const                { return (end < t);     }
 
     qreal   begin;
     qreal   end;
@@ -94,7 +94,7 @@ class QTAV_EXPORT Subtitle : public QObject
 
 public:
 
-    explicit Subtitle(QObject* parent = nullptr);
+    explicit Subtitle(QObject* const parent = nullptr);
     virtual ~Subtitle();
 
     /*!
@@ -275,9 +275,9 @@ class QTAV_EXPORT SubtitleAPIProxy
 {
 public:
 
-    explicit SubtitleAPIProxy(QObject* obj);
+    explicit SubtitleAPIProxy(QObject* const obj);
 
-    void setSubtitle(Subtitle* sub);
+    void setSubtitle(Subtitle* const sub);
 
     // API from Subtitle
 
@@ -330,8 +330,8 @@ public:
 
 private:
 
-    QObject*  m_obj;
-    Subtitle* m_s;
+    QObject*  m_obj = nullptr;
+    Subtitle* m_s   = nullptr;
 };
 
 } // namespace QtAV

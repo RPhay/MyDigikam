@@ -168,7 +168,12 @@ protected:
 
 private:
 
-    int m_width, m_height;
+    int m_width  = 0;
+    int m_height = 0;
+
+private:
+
+    Q_DISABLE_COPY(SubtitleProcessor);
 };
 
 } // namespace QtAV
