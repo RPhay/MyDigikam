@@ -35,11 +35,11 @@ class Q_DECL_HIDDEN ConvolutionShaderPrivate : public VideoShaderPrivate
 public:
 
     ConvolutionShaderPrivate()
-        : VideoShaderPrivate()
-        , u_Kernel(-1)
-        , radius(1)
+        : VideoShaderPrivate(),
+          u_Kernel(-1),
+          radius(1)
     {
-        kernel.resize((2*radius+1)*(2*radius+1));
+        kernel.resize((2 * radius + 1) * (2 * radius + 1));
         updateShaderCode();
     }
 
@@ -64,10 +64,15 @@ public:
         sample_func = s.toUtf8();
     }
 
-    int u_Kernel;
-    int radius;
+    int            u_Kernel;
+    int            radius;
     QVector<float> kernel;
-    QByteArray header, sample_func;
+    QByteArray     header;
+    QByteArray     sample_func;
+
+private:
+
+    Q_DISABLE_COPY(ConvolutionShaderPrivate);
 };
 
 ConvolutionShader::ConvolutionShader()
@@ -75,7 +80,7 @@ ConvolutionShader::ConvolutionShader()
 {
 }
 
-ConvolutionShader::ConvolutionShader(ConvolutionShaderPrivate &d)
+ConvolutionShader::ConvolutionShader(ConvolutionShaderPrivate& d)
     : VideoShader(d)
 {
 }

@@ -110,7 +110,7 @@ public:
     bool                    owns_program; // shader program is not created by this. e.g. scene graph create it's own program and we store it here
     bool                    rebuild_program;
     bool                    update_builtin_uniforms; // builtin uniforms are static, set the values once is enough if no change
-    QOpenGLShaderProgram*   program;
+    QOpenGLShaderProgram*   program = nullptr;
     int                     u_Matrix;
     int                     u_colorMatrix;
     int                     u_to8;
@@ -122,9 +122,14 @@ public:
     QVector<int>            u_Texture;
     GLenum                  texture_target;
     VideoFormat             video_format;
-    mutable QByteArray      planar_frag, packed_frag;
+    mutable QByteArray      planar_frag;
+    mutable QByteArray      packed_frag;
     mutable QByteArray      vert;
     QVector<Uniform>        user_uniforms[ShaderTypeCount];
+
+private:
+
+    Q_DISABLE_COPY(VideoShaderPrivate);
 };
 
 // ---------------------------------------------------------------------
@@ -136,17 +141,17 @@ class VideoMaterialPrivate : public DPtrPrivate<VideoMaterial>
 public:
 
     VideoMaterialPrivate()
-        : update_texure(true)
-        , init_textures_required(true)
-        , bpc(0)
-        , width(0)
-        , height(0)
-        , video_format(VideoFormat::Format_Invalid)
-        , plane1_linesize(0)
-        , effective_tex_width_ratio(1.0)
-        , target(GL_TEXTURE_2D)
-        , dirty(true)
-        , try_pbo(true)
+        : update_texure(true),
+          init_textures_required(true),
+          bpc(0),
+          width(0),
+          height(0),
+          video_format(VideoFormat::Format_Invalid),
+          plane1_linesize(0),
+          effective_tex_width_ratio(1.0),
+          target(GL_TEXTURE_2D),
+          dirty(true),
+          try_pbo(true)
     {
         v_texel_size.reserve(4);
         textures.reserve(4);
@@ -155,7 +160,7 @@ public:
         internal_format.reserve(4);
         data_format.reserve(4);
         data_type.reserve(4);
-        static bool enable_pbo = qEnvironmentVariableIntValue("QTAV_PBO") > 0;
+        static bool enable_pbo = (qEnvironmentVariableIntValue("QTAV_PBO") > 0);
 
         if (try_pbo)
             try_pbo = enable_pbo;
@@ -179,7 +184,8 @@ public:
     bool                    update_texure;          // reduce upload/map times. true: new frame not bound. false: current frame is bound
     bool                    init_textures_required; // e.g. target changed
     int                     bpc;
-    int                     width, height;          // avoid accessing frame(need lock)
+    int                     width;                  // avoid accessing frame(need lock)
+    int                     height;                 // avoid accessing frame(need lock)
     VideoFrame              frame;
 
     /*
@@ -216,6 +222,10 @@ public:
     QMatrix4x4              channel_map;
     QVector<QVector2D>      v_texel_size;
     QVector<QVector2D>      v_texture_size;
+
+private:
+
+    Q_DISABLE_COPY(VideoMaterialPrivate);
 };
 
 } // namespace QtAV

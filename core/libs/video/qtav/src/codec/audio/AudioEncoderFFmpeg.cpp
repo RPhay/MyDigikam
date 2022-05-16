@@ -53,7 +53,7 @@ public:
 
     AudioEncoderFFmpeg();
     AudioEncoderId id() const                           override;
-    bool encode(const AudioFrame &frame = AudioFrame()) override;
+    bool encode(const AudioFrame& frame = AudioFrame()) override;
 };
 
 static const AudioEncoderId AudioEncoderId_FFmpeg = mkid::id32base36_6<'F', 'F', 'm', 'p', 'e', 'g'>::value;
@@ -77,7 +77,13 @@ public:
     bool open()  override;
     bool close() override;
 
+public:
+
     QByteArray buffer;
+
+private:
+
+    Q_DISABLE_COPY(AudioEncoderFFmpegPrivate);
 };
 
 bool AudioEncoderFFmpegPrivate::open()

@@ -77,7 +77,7 @@ QStringList AudioEncoder::supportedCodecs()
     {
 
 #endif
-        if (!av_codec_is_encoder(c) || c->type != AVMEDIA_TYPE_AUDIO)
+        if (!av_codec_is_encoder(c) || (c->type != AVMEDIA_TYPE_AUDIO))
             continue;
 
         codecs.append(QString::fromLatin1(c->name));

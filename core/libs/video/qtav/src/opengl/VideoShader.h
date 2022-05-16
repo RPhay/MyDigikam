@@ -77,7 +77,7 @@ public:
      * Array must end with null. { position, texcoord, ..., 0}, location is bound to 0, 1, ...
      * \return
      */
-    virtual char const *const* attributeNames() const;
+    virtual char const* const* attributeNames() const;
 
     /*!
      * \brief vertexShader

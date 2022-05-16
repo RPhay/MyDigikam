@@ -115,7 +115,7 @@ private:
 
     typedef AudioEncoder* (*AudioEncoderCreator)();
 
-    static bool Register(AudioEncoderId id, AudioEncoderCreator, const char *name);
+    static bool Register(AudioEncoderId id, AudioEncoderCreator, const char* name);
 
 protected:
 
