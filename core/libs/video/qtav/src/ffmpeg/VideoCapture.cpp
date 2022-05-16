@@ -53,13 +53,13 @@ class Q_DECL_HIDDEN CaptureTask : public QRunnable
 {
 public:
 
-    explicit CaptureTask(VideoCapture* c)
-        : cap(c)
-        , save(true)
-        , original_fmt(false)
-        , quality(-1)
-        , format(QStringLiteral("PNG"))
-        , qfmt(QImage::Format_ARGB32)
+    explicit CaptureTask(VideoCapture* const c)
+        : cap(c),
+          save(true),
+          original_fmt(false),
+          quality(-1),
+          format(QStringLiteral("PNG")),
+          qfmt(QImage::Format_ARGB32)
     {
         setAutoDelete(true);
     }
@@ -88,14 +88,19 @@ public:
         if (!save)
             return;
 
-        bool main_thread = QThread::currentThread() == qApp->thread();
-        qCDebug(DIGIKAM_QTAV_LOG).noquote() << QString::asprintf("capture task running in thread %p [main thread=%d]", QThread::currentThreadId(), main_thread);
+        bool main_thread = (QThread::currentThread() == qApp->thread());
+
+        qCDebug(DIGIKAM_QTAV_LOG).noquote()
+            << QString::asprintf("capture task running in thread %p [main thread=%d]",
+                QThread::currentThreadId(), main_thread);
 
         if (!QDir(dir).exists())
         {
             if (!QDir().mkpath(dir))
             {
-                qCWarning(DIGIKAM_QTAV_LOG_WARN).noquote() << QString::asprintf("Failed to create capture dir [%s]", qPrintable(dir));
+                qCWarning(DIGIKAM_QTAV_LOG_WARN).noquote()
+                    << QString::asprintf("Failed to create capture dir [%s]", qPrintable(dir));
+
                 QMetaObject::invokeMethod(cap, "failed");
 
                 return;
@@ -118,7 +123,9 @@ public:
 
             if (!file.open(QIODevice::WriteOnly))
             {
-                qCWarning(DIGIKAM_QTAV_LOG_WARN).noquote() << QString::asprintf("VideoCapture is failed to open file %s", qPrintable(path));
+                qCWarning(DIGIKAM_QTAV_LOG_WARN).noquote()
+                    << QString::asprintf("VideoCapture is failed to open file %s", qPrintable(path));
+
                 QMetaObject::invokeMethod(cap, "failed");
 
                 return;
@@ -129,7 +136,9 @@ public:
 
             if (file.write(data, sz) <= 0)
             {
-                qCWarning(DIGIKAM_QTAV_LOG_WARN).noquote() << QString::asprintf("VideoCapture is failed to write captured frame with original format");
+                qCWarning(DIGIKAM_QTAV_LOG_WARN).noquote()
+                    << QString::asprintf("VideoCapture is failed to write captured frame with original format");
+
                 QMetaObject::invokeMethod(cap, "failed");
                 file.close();
 
@@ -158,32 +167,27 @@ public:
         QMetaObject::invokeMethod(cap, "saved", Q_ARG(QString, path));
     }
 
-    VideoCapture*   cap;
+    VideoCapture*   cap = nullptr;
     bool            save;
     bool            original_fmt;
     int             quality;
     QString         format, dir, name;
     QImage::Format  qfmt;
     VideoFrame      frame;
+
+private:
+
+    Q_DISABLE_COPY(CaptureTask);
 };
 
-VideoCapture::VideoCapture(QObject* parent)
-    : QObject(parent)
-    , async(true)
-    , auto_save(true)
-    , original_fmt(false)
-    , qfmt(QImage::Format_ARGB32)
+VideoCapture::VideoCapture(QObject* const parent)
+    : QObject(parent),
+      async(true),
+      auto_save(true),
+      original_fmt(false),
+      qfmt(QImage::Format_ARGB32)
 {
-
-#if QT_VERSION < QT_VERSION_CHECK(5, 0, 0)
-
-    dir = QDesktopServices::storageLocation(QDesktopServices::PicturesLocation);    // cppcheck-suppress useInitializationList
-
-#else
-
     dir = QStandardPaths::writableLocation(QStandardPaths::PicturesLocation);       // cppcheck-suppress useInitializationList
-
-#endif
 
     if (dir.isEmpty())
         dir = qApp->applicationDirPath() + QStringLiteral("/capture");
@@ -249,12 +253,7 @@ void VideoCapture::handleAppQuit()
 
     // TODO: how to cancel? since qt5.2, we can use clear()
 
-#if QT_VERSION >= QT_VERSION_CHECK(5, 2, 0)
-
     videoCaptureThreadPool()->clear();
-
-#endif
-
     videoCaptureThreadPool()->setExpiryTimeout(0);
     videoCaptureThreadPool()->waitForDone();
 }
@@ -275,7 +274,7 @@ void VideoCapture::start()
         qCDebug(DIGIKAM_QTAV_LOG).noquote() << QString::asprintf("Captured frame from hardware decoder surface.");
     }
 
-    CaptureTask* task = new CaptureTask(this);
+    CaptureTask* const task = new CaptureTask(this);
 
     // copy properties so the task will not be affect even if VideoCapture properties changed
 

@@ -118,7 +118,7 @@ public:
         {
         public:
 
-            StopTask(ExtractThread* t)
+            StopTask(ExtractThread* const t)
                 : thread(t)
             {
             }
@@ -130,7 +130,11 @@ public:
 
         private:
 
-            ExtractThread* thread;
+            ExtractThread* thread = nullptr;
+
+        private:
+
+            Q_DISABLE_COPY(StopTask);
         };
 
         addTask(new StopTask(this));
@@ -142,7 +146,7 @@ protected:
     {
         while (!stop)
         {
-            QRunnable* task = tasks.take();
+            QRunnable* const task = tasks.take();
 
             if (task)
             {
@@ -573,11 +577,11 @@ public:
     {
         class Q_DECL_HIDDEN Cleaner : public QRunnable
         {
-            VideoFrameExtractorPrivate* p;
+            VideoFrameExtractorPrivate* p = nullptr;
 
         public:
 
-            Cleaner(VideoFrameExtractorPrivate* pri)
+            Cleaner(VideoFrameExtractorPrivate* const pri)
                 : p(pri)
             {
             }
@@ -586,6 +590,10 @@ public:
             {
                 p->releaseResourceInternal();
             }
+
+        private:
+
+            Q_DISABLE_COPY(Cleaner);
         };
 
         thread.addTask(new Cleaner(this));
@@ -742,7 +750,7 @@ void VideoFrameExtractor::extract()
     {
     public:
 
-        ExtractTask(VideoFrameExtractor* e, qint64 t)
+        ExtractTask(VideoFrameExtractor* const e, qint64 t)
             : extractor(e),
               position(t)
         {
@@ -755,8 +763,12 @@ void VideoFrameExtractor::extract()
 
     private:
 
-        VideoFrameExtractor *extractor;
-        qint64 position;
+        VideoFrameExtractor* extractor = nullptr;
+        qint64 position                = 0;
+
+    private:
+
+        Q_DISABLE_COPY(ExtractTask);
     };
 
     // We want to abort the previous extract() since we are

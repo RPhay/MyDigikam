@@ -42,8 +42,8 @@ class Q_DECL_HIDDEN ImageConverterFFPrivate final : public ImageConverterPrivate
 public:
 
     ImageConverterFFPrivate()
-        : sws_ctx(nullptr)
-        , update_eq(true)
+        : sws_ctx(nullptr),
+          update_eq(true)
     {
     }
 
@@ -60,6 +60,10 @@ public:
 
     SwsContext* sws_ctx;
     bool        update_eq;
+
+private:
+
+    Q_DISABLE_COPY(ImageConverterFFPrivate);
 };
 
 ImageConverterFF::ImageConverterFF()
@@ -99,9 +103,9 @@ bool ImageConverterFF::convert(const quint8 *const src[], const int srcStride[],
 
     // Check out dimension. equals to in dimension if not set. TODO: move to another common function
 
-    if (d.w_out == 0 || d.h_out == 0)
+    if ((d.w_out == 0) || (d.h_out == 0))
     {
-        if (d.w_in == 0 || d.h_in == 0)
+        if ((d.w_in == 0) || (d.h_in == 0))
             return false;
 
         setOutSize(d.w_in, d.h_in);
@@ -112,7 +116,7 @@ bool ImageConverterFF::convert(const quint8 *const src[], const int srcStride[],
     d.sws_ctx = sws_getCachedContext(d.sws_ctx
             , d.w_in, d.h_in, (AVPixelFormat)d.fmt_in
             , d.w_out, d.h_out, (AVPixelFormat)d.fmt_out
-            , (d.w_in == d.w_out && d.h_in == d.h_out) ? SWS_POINT : SWS_FAST_BILINEAR // SWS_BICUBIC
+            , ((d.w_in == d.w_out) && (d.h_in == d.h_out)) ? SWS_POINT : SWS_FAST_BILINEAR // SWS_BICUBIC
             , nullptr, nullptr, nullptr
     );
 
@@ -149,6 +153,7 @@ bool ImageConverterFFPrivate::setupColorspaceDetails(bool force)
     if (!sws_ctx)
     {
         update_eq = true;
+
         return false;
     }
 
@@ -168,9 +173,9 @@ bool ImageConverterFFPrivate::setupColorspaceDetails(bool force)
     bool supported = sws_setColorspaceDetails(sws_ctx, sws_getCoefficients(SWS_CS_DEFAULT)
                                               , srcRange, sws_getCoefficients(SWS_CS_DEFAULT)
                                               , dstRange
-                                              , ((brightness << 16) + 50)/100
-                                              , (((contrast + 100) << 16) + 50)/100
-                                              , (((saturation + 100) << 16) + 50)/100
+                                              , ((brightness << 16) + 50) / 100
+                                              , (((contrast + 100) << 16) + 50) / 100
+                                              , (((saturation + 100) << 16) + 50) / 100
                                              ) >= 0;
 
     // sws_init_context(d.sws_ctx, nullptr, nullptr);

@@ -52,7 +52,7 @@ class QTAV_EXPORT VideoCapture : public QObject
 
 public:
 
-    explicit VideoCapture(QObject* parent = nullptr);
+    explicit VideoCapture(QObject* const parent = nullptr);
 
     // TODO: if async is true, the cloned hw frame shares the same interop object with original frame, so interop obj may do 2 map() at the same time. It's not safe
 
@@ -156,6 +156,8 @@ private:
     friend class CaptureTask;
     friend class VideoThread;
 
+private:
+
     bool            async;
     bool            auto_save;
     bool            original_fmt;
@@ -166,7 +168,8 @@ private:
     int             qual;
     QImage::Format  qfmt;
     QString         fmt;
-    QString         name, dir;
+    QString         name;
+    QString         dir;
     VideoFrame      frame;
 };
 

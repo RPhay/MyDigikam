@@ -44,17 +44,19 @@ class ImageConverterPrivate : public DPtrPrivate<ImageConverter>
 public:
 
     ImageConverterPrivate()
-        : w_in(0),h_in(0)
-        , w_out(0),h_out(0)
-        , fmt_in(QTAV_PIX_FMT_C(YUV420P))
-        , fmt_out(QTAV_PIX_FMT_C(RGB32))
-        , range_in(ColorRange_Unknown)
-        , range_out(ColorRange_Unknown)
-        , brightness(0)
-        , contrast(0)
-        , saturation(0)
-        , update_data(true)
-        , out_offset(0)
+        : w_in(0),
+          h_in(0),
+          w_out(0),
+          h_out(0),
+          fmt_in(QTAV_PIX_FMT_C(YUV420P)),
+          fmt_out(QTAV_PIX_FMT_C(RGB32)),
+          range_in(ColorRange_Unknown),
+          range_out(ColorRange_Unknown),
+          brightness(0),
+          contrast(0),
+          saturation(0),
+          update_data(true),
+          out_offset(0)
     {
         bits.reserve(8);
         pitchs.reserve(8);
@@ -67,15 +69,26 @@ public:
         return true;
     }
 
-    int              w_in, h_in, w_out, h_out;
-    AVPixelFormat    fmt_in, fmt_out;
-    ColorRange       range_in, range_out;
-    int              brightness, contrast, saturation;
+    int              w_in;
+    int              h_in;
+    int              w_out;
+    int              h_out;
+    AVPixelFormat    fmt_in;
+    AVPixelFormat    fmt_out;
+    ColorRange       range_in;
+    ColorRange       range_out;
+    int              brightness;
+    int              contrast;
+    int              saturation;
     bool             update_data;
     int              out_offset;
     QByteArray       data_out;
     QVector<quint8*> bits;
     QVector<int>     pitchs;
+
+private:
+
+    Q_DISABLE_COPY(ImageConverterPrivate);
 };
 
 } // namespace QtAV

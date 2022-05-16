@@ -96,7 +96,10 @@ VideoFilterContext::~VideoFilterContext()
 
         if (own_painter)
         {
-            qCDebug(DIGIKAM_QTAV_LOG).noquote() << QString::asprintf("VideoFilterContext %p delete painter %p", this, painter);
+            qCDebug(DIGIKAM_QTAV_LOG).noquote()
+                << QString::asprintf("VideoFilterContext %p delete painter %p",
+                    this, painter);
+
             delete painter;
             painter = nullptr;
         }
@@ -104,7 +107,9 @@ VideoFilterContext::~VideoFilterContext()
 
     if (paint_device)
     {
-        qCDebug(DIGIKAM_QTAV_LOG).noquote() << QString::asprintf("VideoFilterContext %p delete paint device in %p", this, paint_device);
+        qCDebug(DIGIKAM_QTAV_LOG).noquote()
+            << QString::asprintf("VideoFilterContext %p delete paint device in %p",
+                this, paint_device);
 
         if (own_paint_device)
             delete paint_device; // delete recursively for widget
@@ -113,7 +118,8 @@ VideoFilterContext::~VideoFilterContext()
     }
 }
 
-void VideoFilterContext::drawImage(const QPointF& pos, const QImage& image, const QRectF& source, Qt::ImageConversionFlags flags)
+void VideoFilterContext::drawImage(const QPointF& pos, const QImage& image,
+                                   const QRectF& source, Qt::ImageConversionFlags flags)
 {
     Q_UNUSED(pos);
     Q_UNUSED(image);
@@ -121,7 +127,8 @@ void VideoFilterContext::drawImage(const QPointF& pos, const QImage& image, cons
     Q_UNUSED(flags);
 }
 
-void VideoFilterContext::drawImage(const QRectF& target, const QImage& image, const QRectF &source, Qt::ImageConversionFlags flags)
+void VideoFilterContext::drawImage(const QRectF& target, const QImage& image,
+                                   const QRectF &source, Qt::ImageConversionFlags flags)
 {
     Q_UNUSED(target);
     Q_UNUSED(image);
@@ -190,7 +197,8 @@ QPainterFilterContext::~QPainterFilterContext()
 
 // TODO: use drawPixmap?
 
-void QPainterFilterContext::drawImage(const QPointF& pos, const QImage& image, const QRectF& source, Qt::ImageConversionFlags flags)
+void QPainterFilterContext::drawImage(const QPointF& pos, const QImage& image,
+                                      const QRectF& source, Qt::ImageConversionFlags flags)
 {
     if (!prepare())
         return;
@@ -203,7 +211,8 @@ void QPainterFilterContext::drawImage(const QPointF& pos, const QImage& image, c
     painter->restore();
 }
 
-void QPainterFilterContext::drawImage(const QRectF& target, const QImage& image, const QRectF& source, Qt::ImageConversionFlags flags)
+void QPainterFilterContext::drawImage(const QRectF& target, const QImage& image,
+                                      const QRectF& source, Qt::ImageConversionFlags flags)
 {
     if (!prepare())
         return;
@@ -226,7 +235,7 @@ void QPainterFilterContext::drawPlainText(const QPointF& pos, const QString& tex
     painter->restore();
 }
 
-void QPainterFilterContext::drawPlainText(const QRectF &rect, int flags, const QString &text)
+void QPainterFilterContext::drawPlainText(const QRectF& rect, int flags, const QString& text)
 {
     if (!prepare())
         return;

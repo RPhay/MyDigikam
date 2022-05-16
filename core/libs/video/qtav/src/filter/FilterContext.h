@@ -175,6 +175,10 @@ protected:
 
     QTextDocument*       doc = nullptr;
     VideoFrameConverter* cvt = nullptr;
+
+private:
+
+    Q_DISABLE_COPY(QPainterFilterContext);
 };
 
 #if QTAV_HAVE(X11)
