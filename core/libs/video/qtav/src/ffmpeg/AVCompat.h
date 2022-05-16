@@ -196,7 +196,7 @@ int avformat_alloc_output_context2(AVFormatContext **avctx, AVOutputFormat *ofor
  * @return the buffer in input, filled with the error description
  * @see av_strerror()
  */
-static av_always_inline char *av_make_error_string(char *errbuf, size_t errbuf_size, int errnum)
+static av_always_inline char* av_make_error_string(char* errbuf, size_t errbuf_size, int errnum)
 {
     av_strerror(errnum, errbuf, errbuf_size);
 
@@ -382,14 +382,14 @@ typedef enum AVPixelFormat AVPixelFormat;
 // used by av_pix_fmt_count_planes
 
 #if !AV_MODULE_CHECK(LIBAVUTIL, 52, 3, 0, 13, 100)
-const AVPixFmtDescriptor *av_pix_fmt_desc_get(AVPixelFormat pix_fmt);
-const AVPixFmtDescriptor *av_pix_fmt_desc_next(const AVPixFmtDescriptor *prev);
-AVPixelFormat av_pix_fmt_desc_get_id(const AVPixFmtDescriptor *desc);
+const AVPixFmtDescriptor* av_pix_fmt_desc_get(AVPixelFormat pix_fmt);
+const AVPixFmtDescriptor* av_pix_fmt_desc_next(const AVPixFmtDescriptor* prev);
+AVPixelFormat av_pix_fmt_desc_get_id(const AVPixFmtDescriptor* desc);
 #endif
 
 #if !FFMPEG_MODULE_CHECK(LIBAVUTIL, 52, 48, 101) // since ffmpeg2.1, libavutil53.16.0 (FF_API_AVFRAME_COLORSPACE), git 8c02adc
-enum AVColorSpace av_frame_get_colorspace(const AVFrame *frame);
-enum AVColorRange av_frame_get_color_range(const AVFrame *frame);
+enum AVColorSpace av_frame_get_colorspace(const AVFrame* frame);
+enum AVColorRange av_frame_get_color_range(const AVFrame* frame);
 #endif
 
 /**
@@ -416,7 +416,7 @@ int av_pix_fmt_count_planes(AVPixelFormat pix_fmt);
  * @param nb_channels number of audio channels
  * @param sample_fmt audio sample format
  */
-int av_samples_copy(uint8_t **dst, uint8_t * const *src, int dst_offset,
+int av_samples_copy(uint8_t** dst, uint8_t* const* src, int dst_offset,
                     int src_offset, int nb_samples, int nb_channels,
                     enum AVSampleFormat sample_fmt);
 #endif
@@ -451,30 +451,30 @@ const char *avcodec_get_name(enum AVCodecID id);
 #endif
 
 #if !AV_MODULE_CHECK(LIBAVCODEC, 55, 55, 0, 68, 100)
-void av_packet_rescale_ts(AVPacket *pkt, AVRational src_tb, AVRational dst_tb);
+void av_packet_rescale_ts(AVPacket* pkt, AVRational src_tb, AVRational dst_tb);
 #endif
 
 // since libav-11, ffmpeg-2.1
 
 #if !LIBAV_MODULE_CHECK(LIBAVCODEC, 56, 1, 0) && !FFMPEG_MODULE_CHECK(LIBAVCODEC, 55, 39, 100)
-int av_packet_copy_props(AVPacket *dst, const AVPacket *src);
+int av_packet_copy_props(AVPacket* dst, const AVPacket* src);
 #endif
 
 // since libav-10, ffmpeg-2.1
 
 #if !LIBAV_MODULE_CHECK(LIBAVCODEC, 55, 34, 1) && !FFMPEG_MODULE_CHECK(LIBAVCODEC, 55, 39, 100)
-void av_packet_free_side_data(AVPacket *pkt);
+void av_packet_free_side_data(AVPacket* pkt);
 #endif
 
 // ffmpeg2.1 libav10
 
 #if !AV_MODULE_CHECK(LIBAVCODEC, 55, 34, 1, 39, 101)
-int av_packet_ref(AVPacket *dst, const AVPacket *src);
+int av_packet_ref(AVPacket* dst, const AVPacket* src);
 #   define av_packet_unref(pkt) av_free_packet(pkt)
 #endif
 
 #if !AV_MODULE_CHECK(LIBAVCODEC, 55, 52, 0, 63, 100)
-void avcodec_free_context(AVCodecContext **pavctx);
+void avcodec_free_context(AVCodecContext** pavctx);
 #endif
 
 #if QTAV_HAVE(AVFILTER)
@@ -490,8 +490,8 @@ void avcodec_free_context(AVCodecContext **pavctx);
 // ffmpeg1.0 2012-06-12 - c7b9eab / 84b9fbe - lavfi 2.79.100 / 2.22.0 - avfilter.h
 
 #   if !AV_MODULE_CHECK(LIBAVFILTER, 2, 22, 0, 79, 100) //FF_API_AVFILTERPAD_PUBLIC
-const char *avfilter_pad_get_name(const AVFilterPad *pads, int pad_idx);
-enum AVMediaType avfilter_pad_get_type(const AVFilterPad *pads, int pad_idx);
+const char *avfilter_pad_get_name(const AVFilterPad* pads, int pad_idx);
+enum AVMediaType avfilter_pad_get_type(const AVFilterPad* pads, int pad_idx);
 #   endif
 
 // ffmpeg1.0 lavfi 2.74.100 / 2.17.0. was in ffmpeg <libavfilter/avcodec.h> in old ffmpeg and now are in avfilter.h and deprecated. declare here to avoid version check
@@ -504,7 +504,7 @@ extern "C" {
 #       endif
 
 struct AVFilterBufferRef;
-int avfilter_copy_buf_props(AVFrame *dst, const AVFilterBufferRef *src);
+int avfilter_copy_buf_props(AVFrame* dst, const AVFilterBufferRef* src);
 
 #       ifdef __cplusplus
 }
@@ -515,7 +515,7 @@ int avfilter_copy_buf_props(AVFrame *dst, const AVFilterBufferRef *src);
 
 /* helper functions */
 
-const char *get_codec_long_name(AVCodecID id);
+const char* get_codec_long_name(AVCodecID id);
 
 // AV_CODEC_ID_H265 is a macro defined as AV_CODEC_ID_HEVC in ffmpeg but not in libav. so we can use FF_PROFILE_HEVC_MAIN to avoid libavcodec version check. (from ffmpeg 2.1)
 

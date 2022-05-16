@@ -29,7 +29,7 @@
 
 #if !FFMPEG_MODULE_CHECK(LIBAVFORMAT, 56, 4, 101)
 
-int avio_feof(AVIOContext *s)
+int avio_feof(AVIOContext* s)
 {
 
 #   if QTAV_USE_FFMPEG(LIBAVFORMAT)
@@ -38,7 +38,7 @@ int avio_feof(AVIOContext *s)
 
 #   else
 
-    return s && s->eof_reached;
+    return (s && s->eof_reached);
 
 #   endif
 
@@ -48,7 +48,8 @@ int avio_feof(AVIOContext *s)
 
 #if QTAV_USE_LIBAV(LIBAVFORMAT)
 
-int avformat_alloc_output_context2(AVFormatContext **avctx, AVOutputFormat *oformat, const char *format, const char *filename)
+int avformat_alloc_output_context2(AVFormatContext** avctx, AVOutputFormat* oformat,
+                                   const char* format, const char* filename)
 {
     AVFormatContext* s = avformat_alloc_context();
     int ret            = 0;
@@ -96,7 +97,7 @@ int avformat_alloc_output_context2(AVFormatContext **avctx, AVOutputFormat *ofor
 
         if (s->oformat->priv_class)
         {
-            *(const AVClass**)s->priv_data= s->oformat->priv_class;
+            *(const AVClass**)s->priv_data = s->oformat->priv_class;
             av_opt_set_defaults(s->priv_data);
         }
     }
@@ -153,8 +154,12 @@ int64_t av_get_default_channel_layout(int nb_channels)      // krazy:exclude=typ
     int i;
 
     for (i = 0 ; i < FF_ARRAY_ELEMS(channel_layout_map) ; i++)
+    {
         if (nb_channels == channel_layout_map[i].nb_channels)
+        {
             return channel_layout_map[i].layout;
+        }
+    }
 
     return 0;
 }
@@ -205,7 +210,7 @@ extern const AVPixFmtDescriptor av_pix_fmt_descriptors[];
 
 const AVPixFmtDescriptor* av_pix_fmt_desc_get(AVPixelFormat pix_fmt)
 {
-    if (pix_fmt < 0 || pix_fmt >= QTAV_PIX_FMT_C(NB))
+    if ((pix_fmt < 0) || (pix_fmt >= QTAV_PIX_FMT_C(NB)))
         return nullptr;
 
     return &av_pix_fmt_descriptors[pix_fmt];
@@ -218,7 +223,7 @@ const AVPixFmtDescriptor* av_pix_fmt_desc_next(const AVPixFmtDescriptor* prev)
 
     // can not use sizeof(av_pix_fmt_descriptors)
 
-    while (prev - av_pix_fmt_descriptors < QTAV_PIX_FMT_C(NB) - 1)
+    while ((prev - av_pix_fmt_descriptors) < (QTAV_PIX_FMT_C(NB) - 1))
     {
         prev++;
 
@@ -231,9 +236,11 @@ const AVPixFmtDescriptor* av_pix_fmt_desc_next(const AVPixFmtDescriptor* prev)
 
 AVPixelFormat av_pix_fmt_desc_get_id(const AVPixFmtDescriptor* desc)
 {
-    if (desc < av_pix_fmt_descriptors ||
-        desc >= av_pix_fmt_descriptors + QTAV_PIX_FMT_C(NB))
+    if ((desc < av_pix_fmt_descriptors) ||
+        (desc >= (av_pix_fmt_descriptors + QTAV_PIX_FMT_C(NB))))
+    {
         return QTAV_PIX_FMT_C(NONE);
+    }
 
     return AVPixelFormat(desc - av_pix_fmt_descriptors);
 }
@@ -277,7 +284,9 @@ enum AVColorRange av_frame_get_color_range(const AVFrame* frame)
 int av_pix_fmt_count_planes(AVPixelFormat pix_fmt)
 {
     const AVPixFmtDescriptor* desc = av_pix_fmt_desc_get(pix_fmt);
-    int i, planes[4] = { 0 }, ret = 0;
+    int i;
+    int planes[4]                  = { 0 };
+    int ret                        = 0;
 
     if (!desc)
         return AVERROR(EINVAL);
@@ -295,7 +304,7 @@ int av_pix_fmt_count_planes(AVPixelFormat pix_fmt)
 
 #if LIBAVUTIL_VERSION_INT < AV_VERSION_INT(51, 73, 101)
 
-int av_samples_copy(uint8_t** dst, uint8_t* const *src, int dst_offset,
+int av_samples_copy(uint8_t** dst, uint8_t* const* src, int dst_offset,
                     int src_offset, int nb_samples, int nb_channels,
                     enum AVSampleFormat sample_fmt)
 {
@@ -308,7 +317,7 @@ int av_samples_copy(uint8_t** dst, uint8_t* const *src, int dst_offset,
     dst_offset *= block_align;
     src_offset *= block_align;
 
-    if ((dst[0] < src[0] ? src[0] - dst[0] : dst[0] - src[0]) >= data_size)
+    if (((dst[0] < src[0]) ? (src[0] - dst[0]) : (dst[0] - src[0])) >= data_size)
     {
         for (i = 0 ; i < planes ; ++i)
             memcpy(dst[i] + dst_offset, src[i] + src_offset, data_size);
@@ -328,8 +337,8 @@ int av_samples_copy(uint8_t** dst, uint8_t* const *src, int dst_offset,
 
 const char *avcodec_get_name(enum AVCodecID id)
 {
-    const AVCodecDescriptor *cd;
-    AVCodec *codec;
+    const AVCodecDescriptor* cd;
+    AVCodec* codec = nullptr;
 
     if (id == AV_CODEC_ID_NONE)
         return "none";
@@ -391,9 +400,9 @@ int av_packet_copy_props(AVPacket* dst, const AVPacket* src)
     for (int i = 0 ; i < src->side_data_elems ; i++)
     {
          enum AVPacketSideDataType type = src->side_data[i].type;
-         int size          = src->side_data[i].size;
-         uint8_t* src_data = src->side_data[i].data;
-         uint8_t* dst_data = av_packet_new_side_data(dst, type, size);
+         int size                       = src->side_data[i].size;
+         uint8_t* src_data              = src->side_data[i].data;
+         uint8_t* dst_data              = av_packet_new_side_data(dst, type, size);
 
         if (!dst_data)
         {
@@ -520,7 +529,7 @@ const char *get_codec_long_name(enum AVCodecID id)
     if (id == AV_CODEC_ID_NONE)
         return "none";
 
-    const AVCodecDescriptor *cd = avcodec_descriptor_get(id);
+    const AVCodecDescriptor* cd = avcodec_descriptor_get(id);
 
     if (cd)
         return cd->long_name;
