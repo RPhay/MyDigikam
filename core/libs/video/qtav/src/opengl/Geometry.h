@@ -71,16 +71,16 @@ public:
 
     bool operator==(const Attribute& other) const
     {
-        return    tupleSize() == other.tupleSize()
-               && offset()    == other.offset()
-               && type()      == other.type()
-               && normalize() == other.normalize();
+        return ((tupleSize() == other.tupleSize()) &&
+                (offset()    == other.offset())    &&
+                (type()      == other.type())      &&
+                (normalize() == other.normalize()));
     }
 };
 
 #ifndef QT_NO_DEBUG_STREAM
 
-QTAV_EXPORT QDebug operator<<(QDebug debug, const Attribute &a);
+QTAV_EXPORT QDebug operator<<(QDebug debug, const Attribute& a);
 
 #endif
 
@@ -111,7 +111,7 @@ public:
     }
 
     Primitive primitive() const         { return m_primitive;   }
-    void setPrimitive(Primitive value)  {  m_primitive = value; }
+    void setPrimitive(Primitive value)  { m_primitive = value;  }
     int vertexCount() const             { return m_vcount;      }
     void setVertexCount(int value)      { m_vcount = value;     } // TODO: remove, or allocate data here
 
@@ -156,7 +156,7 @@ public:
      * Compare each attribute and stride that used in glVertexAttribPointer
      * \return true if equal
      */
-    bool compare(const Geometry *other) const;
+    bool compare(const Geometry* other) const;
 
 protected:
 
@@ -166,6 +166,10 @@ protected:
     int         m_icount;
     QByteArray  m_vdata;
     QByteArray  m_idata;
+
+private:
+
+    Q_DISABLE_COPY(Geometry);
 };
 
 // ----------------------------------------------------------------------
@@ -188,7 +192,7 @@ public:
     void setGeometryRect(const QRectF& r);
     void setTextureRect(const QRectF& tr, int texIndex = 0);
 
-    int stride() const override { return 2*sizeof(float)*(textureCount()+1); }
+    int stride() const override { return 2 * sizeof(float) * (textureCount() + 1); }
 
     const QVector<Attribute>& attributes() const override;
     virtual void create();
@@ -205,6 +209,10 @@ protected:
     QRectF              geo_rect;
     QVector<QRectF>     texRect;
     QVector<Attribute>  a;
+
+private:
+
+    Q_DISABLE_COPY(TexturedGeometry);
 };
 
 // -----------------------------------------------------------------------------------
@@ -218,11 +226,11 @@ public:
     void setResolution(int w, int h); // >= 2x2
     void setRadius(float value);
     float radius() const;
-    void create() override;
+    void create()      override;
 
-    int stride() const override
+    int stride()   const override
     {
-        return 3*sizeof(float)+2*sizeof(float)*textureCount();
+        return (3 * sizeof(float) + 2 * sizeof(float) * textureCount());
     }
 
 protected:
@@ -231,8 +239,13 @@ protected:
 
 private:
 
-    int   ru, rv;
+    int   ru;
+    int   rv;
     float r;
+
+private:
+
+    Q_DISABLE_COPY(Sphere);
 };
 
 } // namespace QtAV

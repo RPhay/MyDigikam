@@ -24,6 +24,8 @@
 #ifndef QTAV_OPENGL_VIDEO_H
 #define QTAV_OPENGL_VIDEO_H
 
+// Qt includes
+
 #ifndef QT_NO_OPENGL
 #   include <QHash>
 #   include <QMatrix4x4>
@@ -67,6 +69,8 @@ public:
         SphereMesh
     };
 
+public:
+
     static bool isSupported(VideoFormat::PixelFormat pixfmt);
     OpenGLVideo();
 
@@ -80,7 +84,7 @@ public:
      * Viewport is also set here using context surface/paintDevice size and devicePixelRatio.
      * devicePixelRatio may be wrong for multi-screen with 5.0<qt<5.5, so you should call setProjectionMatrixToRect later in this case
      */
-    void setOpenGLContext(QOpenGLContext *ctx);
+    void setOpenGLContext(QOpenGLContext* ctx);
     QOpenGLContext* openGLContext();
     void setCurrentFrame(const VideoFrame& frame);
     void fill(const QColor& color);

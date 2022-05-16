@@ -87,6 +87,10 @@ private:
     QVector<Attribute> m_attributes;
     SubImageSet        m_images;        ///< for texture upload parameters
     QVector<QRect>     m_rects_upload;
+
+private:
+
+    Q_DISABLE_COPY(SubImagesGeometry);
 };
 
 } // namespace QtAV

@@ -24,6 +24,8 @@
 #ifndef QTAV_GL_API_H
 #define QTAV_GL_API_H
 
+// Qt includes
+
 #ifndef QT_NO_OPENGL
 #   include <qglobal.h>
 #   if QT_VERSION >= QT_VERSION_CHECK(5, 0, 0)

@@ -70,16 +70,16 @@ static VertexData* SetUnnormalizedVertexData(VertexData* v, int tx, int ty, int 
 
     r = color  >> 24;
     g = (color >> 16) & 0xff;
-    b = (color >> 8) & 0xff;
+    b = (color >> 8)  & 0xff;
     a = 255 - (color & 0xff);
 
 #else
 
     float r, g, b, a;
-    r = (float)(color  >> 24)/255.0;
-    g = (float)((color >> 16) & 0xff)/255.0;
-    b = (float)((color >> 8) & 0xff)/255.0;
-    a = (float)(255 - (color & 0xff))/255.0;
+    r = (float)(color  >> 24) / 255.0;
+    g = (float)((color >> 16) & 0xff) / 255.0;
+    b = (float)((color >> 8)  & 0xff) / 255.0;
+    a = (float)(255 - (color & 0xff)) / 255.0;
 
 #endif
 
@@ -156,10 +156,10 @@ static VertexData* SetVertexPositionAndNormalize(VertexData* v, float x, float y
 }
 
 SubImagesGeometry::SubImagesGeometry()
-    : Geometry()
-    , m_normalized(false)
-    , m_w(0)
-    , m_h(0)
+    : Geometry(),
+      m_normalized(false),
+      m_w(0),
+      m_h(0)
 {
     setPrimitive(Geometry::Triangles);
     m_attributes << Attribute(TypeF32, 2)
@@ -235,7 +235,7 @@ bool SubImagesGeometry::generateVertexData(const QRect& rect, bool useIndecies, 
             // TODO: set only once because it never changes, use IBO
 
             const int v0 = index * 4 / 6;
-            setIndexValue(index, v0, v0+1, v0+2);
+            setIndexValue(index,   v0,   v0+1, v0+2);
             setIndexValue(index+3, v0+1, v0+2, v0+3);
             index       += 6;
         }

@@ -36,19 +36,19 @@ namespace QtAV
 {
 
 Attribute::Attribute(DataType type, int tupleSize, int offset, bool normalize)
-    : m_normalize(normalize)
-    , m_type(type)
-    , m_tupleSize(tupleSize)
-    , m_offset(offset)
+    : m_normalize(normalize),
+      m_type(type),
+      m_tupleSize(tupleSize),
+      m_offset(offset)
 {
 }
 
 Attribute::Attribute(const QByteArray& name, DataType type, int tupleSize, int offset, bool normalize)
-    : m_normalize(normalize)
-    , m_type(type)
-    , m_tupleSize(tupleSize)
-    , m_offset(offset)
-    , m_name(name)
+    : m_normalize(normalize),
+      m_type(type),
+      m_tupleSize(tupleSize),
+      m_offset(offset),
+      m_name(name)
 {
 }
 
@@ -68,10 +68,10 @@ QDebug operator<<(QDebug dbg, const Attribute &a)
 #endif
 
 Geometry::Geometry(int vertexCount, int indexCount, DataType indexType)
-    : m_primitive(TriangleStrip)
-    , m_itype(indexType)
-    , m_vcount(vertexCount)
-    , m_icount(indexCount)
+    : m_primitive(TriangleStrip),
+      m_itype(indexType),
+      m_vcount(vertexCount),
+      m_icount(indexCount)
 {
 }
 
@@ -80,10 +80,10 @@ int Geometry::indexDataSize() const
     switch (indexType())
     {
         case TypeU16:
-            return indexCount()*2;
+            return indexCount() * 2;
 
         case TypeU32:
-            return indexCount()*4;
+            return indexCount() * 4;
 
         default:
             return indexCount();
@@ -269,19 +269,19 @@ bool Geometry::compare(const Geometry *other) const
     if (stride() != other->stride())
         return false;
 
-    return attributes() == other->attributes();
+    return (attributes() == other->attributes());
 }
 
 TexturedGeometry::TexturedGeometry()
-    : Geometry()
-    , nb_tex(0)
-    , geo_rect(-1, 1, 2, -2) // (-1, -1, 2, 2) flip y
+    : Geometry(),
+      nb_tex(0),
+      geo_rect(-1, 1, 2, -2) // (-1, -1, 2, 2) flip y
 {
     setVertexCount(4);
 
     a = QVector<Attribute>()
             << Attribute(TypeF32, 2, 0)
-            << Attribute(TypeF32, 2, 2*sizeof(float))
+            << Attribute(TypeF32, 2, 2 * sizeof(float))
     ;
 
     setTextureCount(1);
@@ -368,11 +368,11 @@ void TexturedGeometry::create()
 {
     allocate(vertexCount());
 
-    if (a.size()-1 < textureCount())
+    if ((a.size() - 1) < textureCount())
     {
         // the first is position
 
-        for (int i = a.size()-1 ; i < textureCount() ; ++i)
+        for (int i = (a.size() - 1) ; i < textureCount() ; ++i)
             a << Attribute(TypeF32, 2, int((i+1)* 2*sizeof(float)));
     }
     else
@@ -447,7 +447,7 @@ void Sphere::setResolution(int w, int h)
 {
     ru = w;
     rv = h;
-    setVertexCount((ru+1)*(rv+1));
+    setVertexCount((ru + 1) * (rv + 1));
 }
 
 void Sphere::setRadius(float value)
@@ -462,13 +462,13 @@ float Sphere::radius() const
 
 void Sphere::create()
 {
-    allocate(vertexCount(), ru*rv*3*2); // quads * 2 triangles,
+    allocate(vertexCount(), ru * rv * 3 * 2); // quads * 2 triangles,
 
-    if (a.size()-1 < nb_tex)
+    if ((a.size() - 1) < nb_tex)
     {
         // the first is position
 
-        for (int i = a.size()-1 ; i < nb_tex ; ++i)
+        for (int i = (a.size() - 1) ; i < nb_tex ; ++i)
             a << Attribute(TypeF32, 2, 3*sizeof(float) + int(i* 2*sizeof(float)));
     }
     else
@@ -480,7 +480,7 @@ void Sphere::create()
 
     float* vd          = reinterpret_cast<float*>(m_vdata.data());
     const float dTheta = M_PI*2.0 / float(ru);
-    const float dPhi   = M_PI / float(rv);
+    const float dPhi   = M_PI     / float(rv);
 
     //const float du = 1.0f/float(ru);
     //const float dv = 1.0f/float(rv);

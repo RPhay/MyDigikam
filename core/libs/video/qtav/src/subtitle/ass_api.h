@@ -67,7 +67,7 @@ class api_dll;
 
 class api
 {
-    api_dll *dll;
+    api_dll* dll = nullptr;
 
 public:
 
@@ -125,6 +125,11 @@ public:
 
 #endif
 
+private:
+
+    // Disable.
+    api(const api&)            = delete;
+    api& operator=(const api&) = delete;
 };
 
 } // namespace ass

@@ -63,7 +63,7 @@ class api_dll;
 
 class api
 {
-    api_dll *dll;
+    api_dll* dll = nullptr;
 
 public:
 
@@ -143,6 +143,10 @@ public:
 
 #endif
 
+private:
+
+    api(const api&)            = delete;
+    api& operator=(const api&) = delete;
 };
 
 } // namespace egl

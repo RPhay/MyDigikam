@@ -132,13 +132,17 @@ public:
     QRectF                  rect;
     QMatrix4x4              matrix;
     VideoShader*            user_shader;
+
+private:
+
+    Q_DISABLE_COPY(OpenGLVideoPrivate);
 };
 
-void OpenGLVideoPrivate::updateGeometry(VideoShader* shader, const QRectF &t, const QRectF &r)
+void OpenGLVideoPrivate::updateGeometry(VideoShader* shader, const QRectF& t, const QRectF& r)
 {
     // also check size change for normalizedROI computation if roi is not normalized
 
-    const bool roi_changed = valiad_tex_width != material->validTextureWidth() || roi != r || video_size != material->frameSize();
+    const bool roi_changed = ((valiad_tex_width != material->validTextureWidth()) || (roi != r) || (video_size != material->frameSize()));
     const int tc           = shader->textureLocationCount();
 
     if (roi_changed)
@@ -166,10 +170,10 @@ void OpenGLVideoPrivate::updateGeometry(VideoShader* shader, const QRectF &t, co
     {
         // TODO: only update VAO, not the whole GeometryRenderer
 
-        update_geo               = true;
+        update_geo                     = true;
         new_thread.setLocalData(false);
-        GeometryRenderer* geordr = new GeometryRenderer(); // local var is captured by lambda
-        gr                       = geordr;
+        GeometryRenderer* const geordr = new GeometryRenderer(); // local var is captured by lambda
+        gr                             = geordr;
 
 #if QT_VERSION >= QT_VERSION_CHECK(5, 0, 0) && defined(Q_COMPILER_LAMBDA)
 
@@ -187,11 +191,11 @@ void OpenGLVideoPrivate::updateGeometry(VideoShader* shader, const QRectF &t, co
 
     // (-1, -1, 2, 2) must flip y
 
-    QRectF target_rect = norm_viewport ? QRectF(-1, 1, 2, -2) : rect;
+    QRectF target_rect = (norm_viewport ? QRectF(-1, 1, 2, -2) : rect);
 
     if (target.isValid())
     {
-        if (roi_changed || target != t)
+        if (roi_changed || (target != t))
         {
             target     = t;
             update_geo = true;
@@ -223,7 +227,7 @@ void OpenGLVideoPrivate::updateGeometry(VideoShader* shader, const QRectF &t, co
     // setTextureCount may change the vertex data. Call it before setRect()
 
     qCDebug(DIGIKAM_QTAV_LOG) << "target rect: " << target_rect ;
-    geometry->setTextureCount(shader->textureTarget() == GL_TEXTURE_RECTANGLE ? tc : 1);
+    geometry->setTextureCount((shader->textureTarget() == GL_TEXTURE_RECTANGLE) ? tc : 1);
     geometry->setGeometryRect(target_rect);
     geometry->setTextureRect(material->mapToTexture(0, roi));
 
@@ -258,7 +262,7 @@ OpenGLVideo::OpenGLVideo()
 
 bool OpenGLVideo::isSupported(VideoFormat::PixelFormat pixfmt)
 {
-    return pixfmt != VideoFormat::Format_RGB48BE && pixfmt != VideoFormat::Format_Invalid;
+    return ((pixfmt != VideoFormat::Format_RGB48BE) && (pixfmt != VideoFormat::Format_Invalid));
 }
 
 void OpenGLVideo::setOpenGLContext(QOpenGLContext *ctx)
@@ -400,7 +404,7 @@ void OpenGLVideo::setViewport(const QRectF &r)
 
     //mirrored = mat(0, 0) * mat(1, 1) - mat(0, 1) * mat(1, 0) > 0;
 
-    if (d.ctx && d.ctx == QOpenGLContext::currentContext())
+    if (d.ctx && (d.ctx == QOpenGLContext::currentContext()))
     {
         DYGL(glViewport(d.rect.x(), d.rect.y(), d.rect.width(), d.rect.height()));
     }
@@ -446,7 +450,7 @@ void OpenGLVideo::setMeshType(MeshType value)
     d.mesh_type  = value;
     d.update_geo = true;
 
-    if (d.mesh_type == SphereMesh && d.norm_viewport)
+    if ((d.mesh_type == SphereMesh) && d.norm_viewport)
     {
         d.matrix.setToIdentity();
         d.matrix.perspective(45, 1, 0.1, 100); // for sphere
@@ -458,7 +462,7 @@ OpenGLVideo::MeshType OpenGLVideo::meshType() const
     return d_func().mesh_type;
 }
 
-void OpenGLVideo::fill(const QColor &color)
+void OpenGLVideo::fill(const QColor& color)
 {
     DYGL(glClearColor(color.redF(), color.greenF(), color.blueF(), color.alphaF()));
     DYGL(glClear(GL_COLOR_BUFFER_BIT | GL_DEPTH_BUFFER_BIT));
