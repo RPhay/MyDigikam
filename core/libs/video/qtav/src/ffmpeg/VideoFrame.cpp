@@ -230,7 +230,7 @@ VideoFrame::VideoFrame(const QImage& image)
     Constructs a shallow copy of \a other.  Since VideoFrame is
     explicitly shared, these two instances will reflect the same frame.
  */
-VideoFrame::VideoFrame(const VideoFrame &other)
+VideoFrame::VideoFrame(const VideoFrame& other)
     : Frame(other)
 {
 }
@@ -239,7 +239,7 @@ VideoFrame::VideoFrame(const VideoFrame &other)
     Assigns the contents of \a other to this video frame.  Since VideoFrame is
     explicitly shared, these two instances will reflect the same frame.
  */
-VideoFrame &VideoFrame::operator =(const VideoFrame &other)
+VideoFrame &VideoFrame::operator =(const VideoFrame& other)
 {
     d_ptr = other.d_ptr;
 
@@ -275,7 +275,8 @@ VideoFrame VideoFrame::clone() const
 
         // maybe in gpu memory, then bits() is not set
 
-        qCDebug(DIGIKAM_QTAV_LOG).noquote() << QString::asprintf("frame data not valid. size: %d", d->data.size());
+        qCDebug(DIGIKAM_QTAV_LOG).noquote()
+            << QString::asprintf("frame data not valid. size: %d", d->data.size());
 
         VideoFrame f(width(), height(), d->format);
         f.d_ptr->metadata = d->metadata; // need metadata?
@@ -339,7 +340,7 @@ bool VideoFrame::isValid() const
 {
     Q_D(const VideoFrame);
 
-    return d->width > 0 && d->height > 0 && d->format.isValid(); // data not empty?
+    return ((d->width > 0) && (d->height > 0) && d->format.isValid()); // data not empty?
 }
 
 QSize VideoFrame::size() const
@@ -362,6 +363,7 @@ int VideoFrame::height() const
 int VideoFrame::planeWidth(int plane) const
 {
     Q_D(const VideoFrame);
+
     return d->format.width(width(), plane);
 }
 
@@ -382,10 +384,10 @@ float VideoFrame::displayAspectRatio() const
     if (d->displayAspectRatio > 0)
         return d->displayAspectRatio;
 
-    if (d->width > 0 && d->height > 0)
-        return (float)d->width / (float)d->height;
+    if ((d->width > 0) && (d->height > 0))
+        return ((float)d->width / (float)d->height);
 
-    return 0;
+    return 0.0;
 }
 
 void VideoFrame::setDisplayAspectRatio(float displayAspectRatio)
@@ -424,10 +426,10 @@ QImage VideoFrame::toImage(QImage::Format fmt, const QSize& dstSize, const QRect
 {
     Q_D(const VideoFrame);
 
-    if (   !d->qt_image.isNull()
-        && fmt == d->qt_image->format()
-        && dstSize == d->qt_image->size()
-        && (!roi.isValid() || roi == d->qt_image->rect()))
+    if (!d->qt_image.isNull()               &&
+        (fmt == d->qt_image->format())      &&
+        (dstSize == d->qt_image->size())    &&
+        (!roi.isValid() || (roi == d->qt_image->rect())))
     {
         return *d->qt_image.data();
     }
@@ -466,8 +468,8 @@ VideoFrame VideoFrame::to(const VideoFormat &fmt, const QSize& dstSize, const QR
 
         if (si->map(HostMemorySurface, fmt, &f))
         {
-            if ((!dstSize.isValid() || dstSize == QSize(width(), height())) &&
-                (!roi.isValid() || roi == QRectF(0, 0, width(), height())))         // roi is not supported now
+            if ((!dstSize.isValid() || (dstSize == QSize(width(), height()))) &&
+                (!roi.isValid()     || (roi == QRectF(0, 0, width(), height()))))         // roi is not supported now
                 return f;
 
             return f.to(fmt, dstSize, roi);
@@ -476,11 +478,13 @@ VideoFrame VideoFrame::to(const VideoFormat &fmt, const QSize& dstSize, const QR
         return VideoFrame();
     }
 
-    const int w = dstSize.width()  > 0 ? dstSize.width()  : width();
-    const int h = dstSize.height() > 0 ? dstSize.height() : height();
+    const int w = (dstSize.width()  > 0) ? dstSize.width()  : width();
+    const int h = (dstSize.height() > 0) ? dstSize.height() : height();
 
-    if (   fmt.pixelFormatFFmpeg() == pixelFormatFFmpeg()
-        && w == width() && h == height()
+    if (
+        (fmt.pixelFormatFFmpeg() == pixelFormatFFmpeg()) &&
+        (w == width())                                   &&
+        (h == height())
         // TODO: roi check.
        )
         return *this;
@@ -528,12 +532,12 @@ VideoFrame VideoFrame::to(VideoFormat::PixelFormat pixfmt, const QSize& dstSize,
     return to(VideoFormat(pixfmt), dstSize, roi);
 }
 
-void *VideoFrame::map(SurfaceType type, void *handle, int plane)
+void *VideoFrame::map(SurfaceType type, void* handle, int plane)
 {
     return map(type, handle, format(), plane);
 }
 
-void *VideoFrame::map(SurfaceType type, void *handle, const VideoFormat& fmt, int plane)
+void* VideoFrame::map(SurfaceType type, void* handle, const VideoFormat& fmt, int plane)
 {
     Q_D(VideoFrame);
 
@@ -553,7 +557,7 @@ void *VideoFrame::map(SurfaceType type, void *handle, const VideoFormat& fmt, in
     return d->surface_interop->map(type, fmt, handle, plane);
 }
 
-void VideoFrame::unmap(void *handle)
+void VideoFrame::unmap(void* handle)
 {
     Q_D(VideoFrame);
 
@@ -600,13 +604,13 @@ VideoFrameConverter::~VideoFrameConverter()
 
 void VideoFrameConverter::setEq(int brightness, int contrast, int saturation)
 {
-    if (brightness >= -100 && brightness <= 100)
+    if ((brightness >= -100) && (brightness <= 100))
         m_eq[0] = brightness;
 
-    if (contrast >= -100 && contrast <= 100)
+    if ((contrast >= -100) && (contrast <= 100))
         m_eq[1] = contrast;
 
-    if (saturation >= -100 && saturation <= 100)
+    if ((saturation >= -100) && (saturation <= 100))
         m_eq[2] = saturation;
 }
 
@@ -627,7 +631,7 @@ VideoFrame VideoFrameConverter::convert(const VideoFrame& frame, QImage::Format 
 
 VideoFrame VideoFrameConverter::convert(const VideoFrame &frame, int fffmt) const
 {
-    if (!frame.isValid() || fffmt == QTAV_PIX_FMT_C(NONE))
+    if (!frame.isValid() || (fffmt == QTAV_PIX_FMT_C(NONE)))
         return VideoFrame();
 
     if (!frame.constBits(0)) // hw surface

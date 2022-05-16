@@ -60,8 +60,11 @@ public:
      * \param optimized try to use SIMD to copy from GPU. otherwise use memcpy
      * \param swapUV it's required if u/v src are null
      */
-    static VideoFrame fromGPU(const VideoFormat& fmt, int width, int height, int surface_h, quint8 *src[], int pitch[], bool optimized = true, bool swapUV = false);
-    static void copyPlane(quint8 *dst, size_t dst_stride, const quint8 *src, size_t src_stride, unsigned byteWidth, unsigned height);
+    static VideoFrame fromGPU(const VideoFormat& fmt, int width, int height,
+                              int surface_h, quint8* src[], int pitch[],
+                              bool optimized = true, bool swapUV = false);
+    static void copyPlane(quint8* dst, size_t dst_stride, const quint8* src,
+                          size_t src_stride, unsigned byteWidth, unsigned height);
 
     VideoFrame();
 
@@ -69,10 +72,11 @@ public:
     // must set planes and linesize manually
     // alignment: data ptr alignment
 
-    VideoFrame(int width, int height, const VideoFormat& format, const QByteArray& data = QByteArray(), int alignment = 1);
+    VideoFrame(int width, int height, const VideoFormat& format,
+               const QByteArray& data = QByteArray(), int alignment = 1);
     explicit VideoFrame(const QImage& image);
     VideoFrame(const VideoFrame& other);
-    ~VideoFrame();
+    virtual ~VideoFrame();
 
     VideoFrame& operator =(const VideoFrame& other);
 
@@ -151,13 +155,13 @@ public:
                   const QRectF& roi = QRect())              const;
 
     bool to(VideoFormat::PixelFormat pixfmt,
-            quint8 *const dst[],
+            quint8* const dst[],
             const int dstStride[],
             const QSize& dstSize = QSize(),
             const QRectF& roi = QRect())                    const;
 
     bool to(const VideoFormat& fmt,
-            quint8 *const dst[],
+            quint8* const dst[],
             const int dstStride[],
             const QSize& dstSize = QSize(),
             const QRectF& roi = QRect())                    const;

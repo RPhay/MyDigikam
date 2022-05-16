@@ -47,7 +47,7 @@ class QTAV_EXPORT Frame
 public:
 
     Frame(const Frame& other);
-    virtual ~Frame() = 0;
+    virtual ~Frame();
 
     Frame& operator =(const Frame& other);
 
@@ -86,13 +86,13 @@ public:
     uchar* frameDataPtr(int* size = nullptr) const
     {
         const int a      = dataAlignment();
-        uchar* p         = (uchar*)frameData().constData();
+        uchar* const p   = (uchar*)frameData().constData();
         const int offset = (a - ((quintptr)p & (a-1))) & (a-1);
 
         if (size)
             *size = frameData().size() - offset;
 
-        return p+offset;
+        return p + offset;
     }
 
     // deep copy 1 plane data
@@ -138,7 +138,7 @@ public:
 
 protected:
 
-    Frame(FramePrivate* d);
+    Frame(FramePrivate* const d);
 
 protected:
 

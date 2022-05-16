@@ -34,13 +34,13 @@
 namespace QtAV
 {
 
-Frame::Frame(const Frame &other)
+Frame::Frame(const Frame& other)
     : d_ptr(other.d_ptr)
 {
 }
 
-Frame::Frame(FramePrivate *d):
-    d_ptr(d)
+Frame::Frame(FramePrivate* const d)
+    : d_ptr(d)
 {
 }
 
@@ -48,7 +48,7 @@ Frame::~Frame()
 {
 }
 
-Frame &Frame::operator =(const Frame &other)
+Frame& Frame::operator =(const Frame& other)
 {
     d_ptr = other.d_ptr;
 
@@ -57,9 +57,10 @@ Frame &Frame::operator =(const Frame &other)
 
 int Frame::bytesPerLine(int plane) const
 {
-    if (plane < 0 || plane >= planeCount())
+    if ((plane < 0) || (plane >= planeCount()))
     {
-        qCWarning(DIGIKAM_QTAV_LOG_WARN).noquote() << QString::asprintf("Invalid plane! Valid range is [0, %d)", planeCount());
+        qCWarning(DIGIKAM_QTAV_LOG_WARN).noquote()
+            << QString::asprintf("Invalid plane! Valid range is [0, %d)", planeCount());
 
         return 0;
     }
@@ -79,9 +80,10 @@ int Frame::dataAlignment() const
 
 QByteArray Frame::data(int plane) const
 {
-    if (plane < 0 || plane >= planeCount())
+    if ((plane < 0) || (plane >= planeCount()))
     {
-        qCWarning(DIGIKAM_QTAV_LOG_WARN).noquote() << QString::asprintf("Invalid plane! Valid range is [0, %d)", planeCount());
+        qCWarning(DIGIKAM_QTAV_LOG_WARN).noquote()
+            << QString::asprintf("Invalid plane! Valid range is [0, %d)", planeCount());
 
         return QByteArray();
     }
@@ -91,9 +93,10 @@ QByteArray Frame::data(int plane) const
 
 uchar* Frame::bits(int plane)
 {
-    if (plane < 0 || plane >= planeCount())
+    if ((plane < 0) || (plane >= planeCount()))
     {
-        qCWarning(DIGIKAM_QTAV_LOG_WARN).noquote() << QString::asprintf("Invalid plane! Valid range is [0, %d)", planeCount());
+        qCWarning(DIGIKAM_QTAV_LOG_WARN).noquote()
+            << QString::asprintf("Invalid plane! Valid range is [0, %d)", planeCount());
 
         return nullptr;
     }
@@ -103,9 +106,10 @@ uchar* Frame::bits(int plane)
 
 const uchar* Frame::constBits(int plane) const
 {
-    if (plane < 0 || plane >= planeCount())
+    if ((plane < 0) || (plane >= planeCount()))
     {
-        qCWarning(DIGIKAM_QTAV_LOG_WARN).noquote() << QString::asprintf("Invalid plane! Valid range is [0, %d)", planeCount());
+        qCWarning(DIGIKAM_QTAV_LOG_WARN).noquote()
+            << QString::asprintf("Invalid plane! Valid range is [0, %d)", planeCount());
 
         return nullptr;
     }
@@ -113,11 +117,12 @@ const uchar* Frame::constBits(int plane) const
     return d_func()->planes[plane];
 }
 
-void Frame::setBits(uchar *b, int plane)
+void Frame::setBits(uchar* b, int plane)
 {
-    if (plane < 0 || plane >= planeCount())
+    if ((plane < 0) || (plane >= planeCount()))
     {
-        qCWarning(DIGIKAM_QTAV_LOG_WARN).noquote() << QString::asprintf("Invalid plane! Valid range is [0, %d)", planeCount());
+        qCWarning(DIGIKAM_QTAV_LOG_WARN).noquote()
+            << QString::asprintf("Invalid plane! Valid range is [0, %d)", planeCount());
 
         return;
     }
@@ -127,7 +132,7 @@ void Frame::setBits(uchar *b, int plane)
     d->planes[plane] = b;
 }
 
-void Frame::setBits(const QVector<uchar *> &b)
+void Frame::setBits(const QVector<uchar*>& b)
 {
     Q_D(Frame);
 
@@ -141,9 +146,9 @@ void Frame::setBits(const QVector<uchar *> &b)
     }
 }
 
-void Frame::setBits(quint8 *slice[])
+void Frame::setBits(quint8* slice[])
 {
-    for (int i = 0; i < planeCount(); ++i )
+    for (int i = 0 ; i < planeCount() ; ++i )
     {
         setBits(slice[i], i);
     }
@@ -151,9 +156,10 @@ void Frame::setBits(quint8 *slice[])
 
 void Frame::setBytesPerLine(int lineSize, int plane)
 {
-    if (plane < 0 || plane >= planeCount())
+    if ((plane < 0) || (plane >= planeCount()))
     {
-        qCWarning(DIGIKAM_QTAV_LOG_WARN).noquote() << QString::asprintf("Invalid plane! Valid range is [0, %d)", planeCount());
+        qCWarning(DIGIKAM_QTAV_LOG_WARN).noquote()
+            << QString::asprintf("Invalid plane! Valid range is [0, %d)", planeCount());
 
         return;
     }
@@ -163,7 +169,7 @@ void Frame::setBytesPerLine(int lineSize, int plane)
     d->line_sizes[plane] = lineSize;
 }
 
-void Frame::setBytesPerLine(const QVector<int> &lineSize)
+void Frame::setBytesPerLine(const QVector<int>& lineSize)
 {
     Q_D(Frame);
 
@@ -216,7 +222,7 @@ QVariantMap Frame::availableMetaData() const
     See the documentation for the relevant video frame
     producer for further information about available metadata.
  */
-QVariant Frame::metaData(const QString &key) const
+QVariant Frame::metaData(const QString& key) const
 {
     Q_D(const Frame);
 
@@ -232,7 +238,7 @@ QVariant Frame::metaData(const QString &key) const
     certain data with this frame, or for an intermediate processor
     to add information for a consumer of this frame.
  */
-void Frame::setMetaData(const QString &key, const QVariant &value)
+void Frame::setMetaData(const QString& key, const QVariant& value)
 {
     Q_D(Frame);
 
