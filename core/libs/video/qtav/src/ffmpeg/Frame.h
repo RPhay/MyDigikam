@@ -40,14 +40,14 @@ namespace QtAV
 
 class FramePrivate;
 
-class QTAV_EXPORT Frame
+class QTAV_EXPORT Frame                 // clazy:exclude=clazy-copyable-polymorphic
 {
     Q_DECLARE_PRIVATE(Frame)
 
 public:
 
     Frame(const Frame& other);
-    virtual ~Frame();
+    virtual ~Frame() = 0;
 
     Frame& operator =(const Frame& other);
 
@@ -116,9 +116,9 @@ public:
 
     // TODO: const?
 
-    void setBits(uchar *b, int plane = 0);
+    void setBits(uchar* b, int plane = 0);
     void setBits(const QVector<uchar*>& b);
-    void setBits(quint8 *slice[]);
+    void setBits(quint8* slice[]);
 
     /*!
      * \brief setBytesPerLine
@@ -130,7 +130,7 @@ public:
 
     QVariantMap availableMetaData() const;
     QVariant metaData(const QString& key) const;
-    void setMetaData(const QString &key, const QVariant &value);
+    void setMetaData(const QString& key, const QVariant& value);
     void setTimestamp(qreal ts);
     qreal timestamp() const;
 

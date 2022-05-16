@@ -51,10 +51,10 @@ class Q_DECL_HIDDEN AudioFramePrivate : public FramePrivate
 public:
 
     explicit AudioFramePrivate(const AudioFormat& fmt)
-        : FramePrivate()
-        , format(fmt)
-        , samples_per_ch(0)
-        , conv(nullptr)
+        : FramePrivate(),
+          format(fmt),
+          samples_per_ch(0),
+          conv(nullptr)
     {
         if (!format.isValid())
             return;
@@ -76,12 +76,12 @@ public:
     explicitly shared, these two instances will reflect the same frame.
 
 */
-AudioFrame::AudioFrame(const AudioFrame &other)
+AudioFrame::AudioFrame(const AudioFrame& other)
     : Frame(other)
 {
 }
 
-AudioFrame::AudioFrame(const AudioFormat &format, const QByteArray& data)
+AudioFrame::AudioFrame(const AudioFormat& format, const QByteArray& data)
     : Frame(new AudioFramePrivate(format))
 {
     if (data.isEmpty())
@@ -90,7 +90,7 @@ AudioFrame::AudioFrame(const AudioFormat &format, const QByteArray& data)
     Q_D(AudioFrame);
 
     d->format = format;
-    d->data = data;
+    d->data   = data;
 
     if (!d->format.isValid())
         return;
@@ -100,12 +100,12 @@ AudioFrame::AudioFrame(const AudioFormat &format, const QByteArray& data)
 
     d->samples_per_ch = data.size() / d->format.channels() / d->format.bytesPerSample();
     const int nb_planes(d->format.planeCount());
-    const int bpl(d->data.size()/nb_planes);
+    const int bpl(d->data.size() / nb_planes);
 
     for (int i = 0 ; i < nb_planes ; ++i)
     {
         setBytesPerLine(bpl, i);
-        setBits((uchar*)d->data.constData() + i*bpl, i);
+        setBits((uchar*)d->data.constData() + i * bpl, i);
     }
 
     //init();
@@ -131,7 +131,7 @@ bool AudioFrame::isValid() const
 {
     Q_D(const AudioFrame);
 
-    return d->samples_per_ch > 0 && d->format.isValid();
+    return ((d->samples_per_ch > 0) && d->format.isValid());
 }
 
 QByteArray AudioFrame::data()
@@ -169,13 +169,13 @@ AudioFrame AudioFrame::mid(int pos, int len) const
 {
     Q_D(const AudioFrame);
 
-    if (   d->format.sampleFormatFFmpeg() == AV_SAMPLE_FMT_NONE
-        || d->format.channels() <= 0)
+    if ((d->format.sampleFormatFFmpeg() == AV_SAMPLE_FMT_NONE) ||
+        (d->format.channels() <= 0))
     {
         return AudioFrame();
     }
 
-    if (d->samples_per_ch <= 0 || bytesPerLine(0) <= 0 || len == 0)
+    if ((d->samples_per_ch <= 0) || (bytesPerLine(0) <= 0) || (len == 0))
     {
         return AudioFrame(format());
     }
@@ -197,7 +197,7 @@ AudioFrame AudioFrame::mid(int pos, int len) const
 
     int lenBytes = len * d->format.bytesPerSample();
 
-    if (len > 0 && lenBytes < bufSize)
+    if (len > 0 && (lenBytes < bufSize))
     {
         bufSize = lenBytes;
     }

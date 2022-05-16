@@ -42,7 +42,7 @@ namespace QtAV
 
 class VideoFramePrivate;
 
-class QTAV_EXPORT VideoFrame : public Frame
+class QTAV_EXPORT VideoFrame : public Frame             // clazy:exclude=clazy-copyable-polymorphic
 {
     Q_DECLARE_PRIVATE(VideoFrame)
 
@@ -63,6 +63,7 @@ public:
     static VideoFrame fromGPU(const VideoFormat& fmt, int width, int height,
                               int surface_h, quint8* src[], int pitch[],
                               bool optimized = true, bool swapUV = false);
+
     static void copyPlane(quint8* dst, size_t dst_stride, const quint8* src,
                           size_t src_stride, unsigned byteWidth, unsigned height);
 

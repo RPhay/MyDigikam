@@ -55,13 +55,14 @@ static const struct RegisterMetaTypes
 
 } // namespace
 
-VideoFrame VideoFrame::fromGPU(const VideoFormat& fmt, int width, int height, int surface_h, quint8 *src[], int pitch[], bool optimized, bool swapUV)
+VideoFrame VideoFrame::fromGPU(const VideoFormat& fmt, int width, int height, int surface_h,
+                               quint8* src[], int pitch[], bool optimized, bool swapUV)
 {
-    Q_ASSERT(src[0] && pitch[0] > 0 && "VideoFrame::fromGPU: src[0] and pitch[0] must be set");
+    Q_ASSERT(src[0] && (pitch[0] > 0) && "VideoFrame::fromGPU: src[0] and pitch[0] must be set");
 
-    const int nb_planes = fmt.planeCount();
+    const int nb_planes    = fmt.planeCount();
     const int chroma_pitch = nb_planes > 1 ? fmt.bytesPerLine(pitch[0], 1) : 0;
-    const int chroma_h = fmt.chromaHeight(surface_h);
+    const int chroma_h     = fmt.chromaHeight(surface_h);
 
     int h[] = { surface_h, 0, 0 };
 
@@ -135,12 +136,13 @@ VideoFrame VideoFrame::fromGPU(const VideoFormat& fmt, int width, int height, in
     return frame;
 }
 
-void VideoFrame::copyPlane(quint8 *dst, size_t dst_stride, const quint8 *src, size_t src_stride, unsigned byteWidth, unsigned height)
+void VideoFrame::copyPlane(quint8* dst, size_t dst_stride, const quint8* src,
+                           size_t src_stride, unsigned byteWidth, unsigned height)
 {
     if (!dst || !src)
         return;
 
-    if (dst_stride == src_stride && src_stride == byteWidth && height)
+    if ((dst_stride == src_stride) && (src_stride == byteWidth) && height)
     {
         memcpy(dst, src, byteWidth*height);
         return;
@@ -210,7 +212,7 @@ VideoFrame::VideoFrame()
 {
 }
 
-VideoFrame::VideoFrame(int width, int height, const VideoFormat &format, const QByteArray& data, int alignment)
+VideoFrame::VideoFrame(int width, int height, const VideoFormat& format, const QByteArray& data, int alignment)
     : Frame(new VideoFramePrivate(width, height, format))
 {
     Q_D(VideoFrame);
@@ -527,7 +529,7 @@ VideoFrame VideoFrame::to(const VideoFormat &fmt, const QSize& dstSize, const QR
     return f;
 }
 
-VideoFrame VideoFrame::to(VideoFormat::PixelFormat pixfmt, const QSize& dstSize, const QRectF &roi) const
+VideoFrame VideoFrame::to(VideoFormat::PixelFormat pixfmt, const QSize& dstSize, const QRectF& roi) const
 {
     return to(VideoFormat(pixfmt), dstSize, roi);
 }
@@ -614,12 +616,12 @@ void VideoFrameConverter::setEq(int brightness, int contrast, int saturation)
         m_eq[2] = saturation;
 }
 
-VideoFrame VideoFrameConverter::convert(const VideoFrame& frame, const VideoFormat &fmt) const
+VideoFrame VideoFrameConverter::convert(const VideoFrame& frame, const VideoFormat& fmt) const
 {
     return convert(frame, fmt.pixelFormatFFmpeg());
 }
 
-VideoFrame VideoFrameConverter::convert(const VideoFrame &frame, VideoFormat::PixelFormat fmt) const
+VideoFrame VideoFrameConverter::convert(const VideoFrame& frame, VideoFormat::PixelFormat fmt) const
 {
     return convert(frame, VideoFormat::pixelFormatToFFmpeg(fmt));
 }
@@ -629,7 +631,7 @@ VideoFrame VideoFrameConverter::convert(const VideoFrame& frame, QImage::Format 
     return convert(frame, VideoFormat::pixelFormatFromImageFormat(fmt));
 }
 
-VideoFrame VideoFrameConverter::convert(const VideoFrame &frame, int fffmt) const
+VideoFrame VideoFrameConverter::convert(const VideoFrame& frame, int fffmt) const
 {
     if (!frame.isValid() || (fffmt == QTAV_PIX_FMT_C(NONE)))
         return VideoFrame();
