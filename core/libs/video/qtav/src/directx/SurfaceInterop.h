@@ -35,7 +35,7 @@
 namespace QtAV
 {
 
-class QTAV_EXPORT VideoSurfaceInterop
+class QTAV_EXPORT VideoSurfaceInterop              // clazy:exclude=copyable-polymorphic
 {
 public:
 

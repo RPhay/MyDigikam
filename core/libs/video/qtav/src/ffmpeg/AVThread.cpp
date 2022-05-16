@@ -49,7 +49,7 @@ AVThreadPrivate::~AVThreadPrivate()
     if (!paused)
     {
         qCDebug(DIGIKAM_QTAV_LOG).noquote() << QString::asprintf("~AVThreadPrivate wake up paused thread");
-        paused = false;
+        paused     = false;
         next_pause = false;
         cond.wakeAll();
     }
@@ -69,7 +69,7 @@ AVThreadPrivate::~AVThreadPrivate()
     filters.clear();
 }
 
-AVThread::AVThread(QObject *parent)
+AVThread::AVThread(QObject* const parent)
     : QThread(parent)
 {
     connect(this, SIGNAL(started()),
@@ -81,7 +81,7 @@ AVThread::AVThread(QObject *parent)
             Qt::DirectConnection);
 }
 
-AVThread::AVThread(AVThreadPrivate &d, QObject *parent)
+AVThread::AVThread(AVThreadPrivate& d, QObject* const parent)
     : QThread(parent),
       DPTR_INIT(&d)
 {
@@ -150,7 +150,7 @@ bool AVThread::installFilter(Filter* filter, int index, bool lock)
     return true;
 }
 
-bool AVThread::uninstallFilter(Filter *filter, bool lock)
+bool AVThread::uninstallFilter(Filter* filter, bool lock)
 {
     DPTR_D(AVThread);
 
@@ -169,7 +169,7 @@ const QList<Filter*>& AVThread::filters() const
     return d_func().filters;
 }
 
-void AVThread::scheduleTask(QRunnable *task)
+void AVThread::scheduleTask(QRunnable* task)
 {
     d_func().tasks.put(task);
 }
@@ -178,11 +178,11 @@ void AVThread::requestSeek()
 {
     class Q_DECL_HIDDEN SeekPTS : public QRunnable
     {
-        AVThread *self;
+        AVThread* self = nullptr;
 
     public:
 
-        SeekPTS(AVThread* thread)
+        SeekPTS(AVThread* const thread)
             : self(thread)
         {
         }
@@ -191,6 +191,10 @@ void AVThread::requestSeek()
         {
             self->d_func().seek_requested = true;
         }
+
+    private:
+
+        Q_DISABLE_COPY(SeekPTS);
     };
 
     scheduleTask(new SeekPTS(this));
@@ -200,12 +204,14 @@ void AVThread::scheduleFrameDrop(bool value)
 {
     class Q_DECL_HIDDEN FrameDropTask : public QRunnable
     {
-        AVDecoder* decoder;
-        bool       drop;
+        AVDecoder* decoder = nullptr;
+        bool       drop    = false;
 
     public:
 
-        FrameDropTask(AVDecoder *dec, bool value) : decoder(dec), drop(value)
+        FrameDropTask(AVDecoder* const dec, bool value)
+            : decoder(dec),
+              drop(value)
         {
         }
 
@@ -219,6 +225,10 @@ void AVThread::scheduleFrameDrop(bool value)
             else
                 decoder->setOptions(AVThreadPrivate::dec_opt_normal);
         }
+
+    private:
+
+        Q_DISABLE_COPY(FrameDropTask);
     };
 
     scheduleTask(new FrameDropTask(decoder(), value));
@@ -235,7 +245,7 @@ qreal AVThread::previousHistoryPts() const
     }
 
     if (d.pts_history.size() == 1)
-        return -d.pts_history.back();
+        return (-d.pts_history.back());
 
     const qreal current_pts = d.pts_history.back();
 
@@ -306,7 +316,7 @@ void AVThread::nextAndPause()
 {
     DPTR_D(AVThread);
     d.next_pause = true;
-    d.paused = true;
+    d.paused     = true;
     d.cond.wakeAll();
 }
 
@@ -320,7 +330,7 @@ void AVThread::unlock()
     d_func().mutex.unlock();
 }
 
-void AVThread::setClock(AVClock *clock)
+void AVThread::setClock(AVClock* clock)
 {
     d_func().clock = clock;
 }
@@ -348,7 +358,7 @@ AVDecoder* AVThread::decoder() const
     return d_func().dec;
 }
 
-void AVThread::setOutput(AVOutput *out)
+void AVThread::setOutput(AVOutput* out)
 {
     DPTR_D(AVThread);
     QMutexLocker lock(&d.mutex);
@@ -378,7 +388,7 @@ AVOutput* AVThread::output() const
 
 // TODO: remove?
 
-void AVThread::setOutputSet(OutputSet *set)
+void AVThread::setOutputSet(OutputSet* set)
 {
     d_func().outputSet = set;
 }
@@ -406,10 +416,10 @@ void AVThread::resetState()
     d.pts_history = ring<qreal>(d.pts_history.capacity());
     d.tasks.clear();
     d.render_pts0 = -1;
-    d.stop = false;
+    d.stop        = false;
     d.packets.setBlocking(true);
     d.packets.clear();
-    d.wait_err = 0;
+    d.wait_err    = 0;
     d.wait_timer.invalidate();
 }
 
@@ -437,7 +447,7 @@ bool AVThread::processNextTask()
     if (d.tasks.isEmpty())
         return true;
 
-    QRunnable *task = d.tasks.take();
+    QRunnable* const task = d.tasks.take();
     task->run();
 
     if (task->autoDelete())
@@ -456,7 +466,7 @@ void AVThread::setStatistics(Statistics *statistics)
 
 bool AVThread::waitForStarted(int msec)
 {
-    if (!d_func().sem.tryAcquire(1, msec > 0 ? msec : std::numeric_limits<int>::max()))
+    if (!d_func().sem.tryAcquire(1, (msec > 0) ? msec : std::numeric_limits<int>::max()))
         return false;
 
     d_func().sem.release(1); // ensure another waitForStarted() continues
@@ -468,7 +478,7 @@ void AVThread::waitAndCheck(ulong value, qreal pts)
 {
     DPTR_D(AVThread);
 
-    if (value <= 0 || pts < 0)
+    if ((value <= 0) || (pts < 0))
         return;
 
     value += d.wait_err;
@@ -476,8 +486,8 @@ void AVThread::waitAndCheck(ulong value, qreal pts)
 
     //qCDebug(DIGIKAM_QTAV_LOG).noquote() << QString::asprintf("wating for %lu msecs", value);
 
-    ulong us = value * 1000UL;
-    const ulong ms = value;
+    ulong us                      = value * 1000UL;
+    const ulong ms                = value;
     static const ulong kWaitSlice = 20 * 1000UL; //20ms
 
     while (us > kWaitSlice) 
@@ -490,7 +500,7 @@ void AVThread::waitAndCheck(ulong value, qreal pts)
             us -= kWaitSlice;
 
         if (pts > 0)
-            us = qMin(us, ulong((double)(qMax<qreal>(0, pts - d.clock->value()))*1000000.0));
+            us = qMin(us, ulong((double)(qMax<qreal>(0, pts - d.clock->value())) * 1000000.0));
 
         //qCDebug(DIGIKAM_QTAV_LOG).noquote() << QString::asprintf("us: %lu/%lu, pts: %f, clock: %f", us, ms-et.elapsed(), pts, d.clock->value());
 
@@ -503,7 +513,7 @@ void AVThread::waitAndCheck(ulong value, qreal pts)
             break;
         }
 
-        us = qMin<ulong>(us, left*1000);
+        us = qMin<ulong>(us, left * 1000);
     }
 
     if (us > 0)
@@ -513,10 +523,10 @@ void AVThread::waitAndCheck(ulong value, qreal pts)
 
     const int de = ((ms-d.wait_timer.elapsed()) - d.wait_err);
 
-    if (de > -3 && de < 3)
+    if ((de > -3) && (de < 3))
         d.wait_err += de;
     else
-        d.wait_err += de > 0 ? 1 : -1;
+        d.wait_err += (de > 0 ? 1 : -1);
 
     //qCDebug(DIGIKAM_QTAV_LOG).noquote() << QString::asprintf("err: %lld", d.wait_err);
 }
