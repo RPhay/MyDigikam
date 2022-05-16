@@ -105,10 +105,10 @@ bool AVThread::isPaused() const
 
     //if d.next_pause is true, the thread will pause soon, may happens before you can handle the result
 
-    return d.paused || d.next_pause;
+    return (d.paused || d.next_pause);
 }
 
-bool AVThread::installFilter(Filter *filter, int index, bool lock)
+bool AVThread::installFilter(Filter* filter, int index, bool lock)
 {
     DPTR_D(AVThread);
 

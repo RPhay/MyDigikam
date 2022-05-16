@@ -49,11 +49,11 @@ namespace QtAV
 
 class Q_DECL_HIDDEN AutoSem
 {
-    QSemaphore* s;
+    QSemaphore* s = nullptr;
 
 public:
 
-    AutoSem(QSemaphore* sem)
+    AutoSem(QSemaphore* const sem)
         : s(sem)
     {
         s->release();
@@ -70,7 +70,7 @@ class Q_DECL_HIDDEN QueueEmptyCall : public PacketBuffer::StateChangeCallback
 {
 public:
 
-    QueueEmptyCall(AVDemuxThread* thread)
+    QueueEmptyCall(AVDemuxThread* const thread)
         : mDemuxThread(thread)
     {
     }
@@ -104,7 +104,11 @@ public:
 
 private:
 
-    AVDemuxThread* mDemuxThread;
+    AVDemuxThread* mDemuxThread = nullptr;
+
+private:
+
+    Q_DISABLE_COPY(QueueEmptyCall);
 };
 
 class Q_DECL_HIDDEN stepBackwardTask : public QObject,
@@ -116,7 +120,7 @@ public:
 
     QTimer timeout_timer;
 
-    stepBackwardTask(AVDemuxThread* dt, qreal t)
+    stepBackwardTask(AVDemuxThread* const dt, qreal t)
         : demux_thread(dt),
           pts(t)
     {
@@ -138,7 +142,7 @@ public:
 
         if (pts <= 0)
         {
-            demux_thread->demuxer->seek(qint64(-pts*1000.0) - 500LL);
+            demux_thread->demuxer->seek(qint64(-pts * 1000.0) - 500LL);
             QVector<qreal> ts;
             qreal t = -1.0;
 
@@ -161,7 +165,7 @@ public:
             // FIXME: sometimes can not seek to the previous pts,
             //  the result pts is always current pts, so let the target pts a little earlier
 
-            pts            -= dt/2.0;
+            pts            -= dt / 2.0;
         }
 
         qCDebug(DIGIKAM_QTAV_LOG).noquote()
@@ -173,13 +177,13 @@ public:
 
 private:
 
-    AVDemuxThread* demux_thread;
-    qreal          pts;
+    AVDemuxThread* demux_thread = nullptr;
+    qreal          pts          = 0.0;
 };
 
 // ------------------------------------------------------------------------------------------
 
-AVDemuxThread::AVDemuxThread(QObject* parent)
+AVDemuxThread::AVDemuxThread(QObject* const parent)
     : QThread(parent)
     , paused(false)
     , user_paused(false)
@@ -203,7 +207,7 @@ AVDemuxThread::AVDemuxThread(QObject* parent)
     seek_tasks.blockFull(false);
 }
 
-AVDemuxThread::AVDemuxThread(AVDemuxer* dmx, QObject* parent)
+AVDemuxThread::AVDemuxThread(AVDemuxer* const dmx, QObject* const parent)
     : QThread(parent)
     , paused(false)
     , user_paused(false)
@@ -228,20 +232,21 @@ AVDemuxThread::AVDemuxThread(AVDemuxer* dmx, QObject* parent)
     seek_tasks.blockFull(false);
 }
 
-void AVDemuxThread::setDemuxer(AVDemuxer *dmx)
+void AVDemuxThread::setDemuxer(AVDemuxer* const dmx)
 {
     demuxer = dmx;
 }
 
-void AVDemuxThread::setAudioDemuxer(AVDemuxer *demuxer)
+void AVDemuxThread::setAudioDemuxer(AVDemuxer* const demuxer)
 {
-    //QMutexLocker locker(&buffer_mutex);
-    //Q_UNUSED(locker);
-
+/*
+    QMutexLocker locker(&buffer_mutex);
+    Q_UNUSED(locker);
+*/
     ademuxer = demuxer;
 }
 
-void AVDemuxThread::setAVThread(AVThread*& pOld, AVThread *pNew)
+void AVDemuxThread::setAVThread(AVThread*& pOld, AVThread* const pNew)
 {
     if (pOld == pNew)
         return;
@@ -265,12 +270,12 @@ void AVDemuxThread::setAVThread(AVThread*& pOld, AVThread *pNew)
             this, SLOT(onAVThreadQuit()));
 }
 
-void AVDemuxThread::setAudioThread(AVThread *thread)
+void AVDemuxThread::setAudioThread(AVThread* const thread)
 {
     setAVThread(audio_thread, thread);
 }
 
-void AVDemuxThread::setVideoThread(AVThread *thread)
+void AVDemuxThread::setVideoThread(AVThread* const thread)
 {
     setAVThread(video_thread, thread);
 }
@@ -293,7 +298,7 @@ void AVDemuxThread::stepBackward()
     if (hasSeekTasks())
         return;
 
-    AVThread* t         = video_thread;
+    AVThread* const t   = video_thread;
     const qreal pre_pts = video_thread->previousHistoryPts();
 
     if (pre_pts == 0.0)
@@ -342,11 +347,11 @@ void AVDemuxThread::seek(qint64 external_pos, qint64 pos, SeekType type)
     {
     public:
 
-        SeekTask(AVDemuxThread *dt, qint64 external_pos, qint64 t, SeekType st)
-            : demux_thread(dt)
-            , type(st)
-            , position(t)
-            , external_pos(external_pos)
+        SeekTask(AVDemuxThread* const dt, qint64 external_pos, qint64 t, SeekType st)
+            : demux_thread(dt),
+              type(st),
+              position(t),
+              external_pos(external_pos)
         {
         }
 
@@ -372,10 +377,14 @@ void AVDemuxThread::seek(qint64 external_pos, qint64 pos, SeekType type)
 
     private:
 
-        AVDemuxThread* demux_thread;
+        AVDemuxThread* demux_thread     = nullptr;
         SeekType       type;
-        qint64         position;
-        qint64         external_pos;
+        qint64         position         = 0;
+        qint64         external_pos     = 0;
+
+    private:
+
+        Q_DISABLE_COPY(SeekTask);
     };
 
     end = false;
@@ -398,7 +407,7 @@ void AVDemuxThread::seek(qint64 external_pos, qint64 pos, SeekType type)
 
 void AVDemuxThread::seekInternal(qint64 pos, SeekType type, qint64 external_pos)
 {
-    AVThread* av[] = { audio_thread, video_thread };
+    AVThread* const av[] = { audio_thread, video_thread };
 
     qCDebug(DIGIKAM_QTAV_LOG).noquote()
         << QString::asprintf("seek to %s %lld ms (%f%%)",
@@ -422,7 +431,7 @@ void AVDemuxThread::seekInternal(qint64 pos, SeekType type, qint64 external_pos)
 
     for (size_t i = 0 ; i < sizeof(av)/sizeof(av[0]) ; ++i)
     {
-        AVThread* t = av[i];
+        AVThread* const t = av[i];
 
         if (!t)
             continue;
@@ -449,7 +458,7 @@ void AVDemuxThread::seekInternal(qint64 pos, SeekType type, qint64 external_pos)
 
         t->packetQueue()->setBlocking(false); // aqueue bufferValue can be small (1), we can not put and take
         Packet pkt;
-        pkt.pts      = qreal(pos)/1000.0;
+        pkt.pts      = qreal(pos) / 1000.0;
         pkt.position = sync_id;
         t->packetQueue()->put(pkt);
         t->packetQueue()->setBlocking(true); // blockEmpty was false when eof is read.
@@ -477,14 +486,14 @@ void AVDemuxThread::seekInternal(qint64 pos, SeekType type, qint64 external_pos)
     }
 }
 
-void AVDemuxThread::newSeekRequest(QRunnable *r)
+void AVDemuxThread::newSeekRequest(QRunnable* const r)
 {
     if (seek_tasks.size() >= seek_tasks.capacity())
     {
-        QRunnable* r = seek_tasks.take();
+        QRunnable* const r2 = seek_tasks.take();
 
-        if (r && r->autoDelete())
-            delete r;
+        if (r2 && r2->autoDelete())
+            delete r2;
     }
 
     seek_tasks.put(r);
@@ -512,14 +521,16 @@ bool AVDemuxThread::hasSeekTasks()
 {
     // This is not great. But I couldn't figure out how to get QTimers and stepBackwardTask working
 
-    if (stepping                  &&
-        stepping_timeout_time > 0 &&
-        stepping_timeout_time < QDateTime::currentMSecsSinceEpoch())
+    if (
+        stepping                    &&
+        (stepping_timeout_time > 0) &&
+        (stepping_timeout_time < QDateTime::currentMSecsSinceEpoch())
+       )
     {
         finishedStepBackward();
     }
 
-    return !seek_tasks.isEmpty() || current_seek_task || stepping;
+    return (!seek_tasks.isEmpty() || current_seek_task || stepping);
 }
 
 qint64 AVDemuxThread::lastSeekPos()
@@ -586,15 +597,15 @@ void AVDemuxThread::stop()
     // this will not affect the pause state if we pause the output
     // TODO: why remove blockFull(false) can not play another file?
 
-    AVThread* av[] =
+    AVThread* const av[] =
     {
         audio_thread,
         video_thread
     };
 
-    for (size_t i = 0 ; i < sizeof(av)/sizeof(av[0]) ; ++i)
+    for (size_t i = 0 ; i < sizeof(av) / sizeof(av[0]) ; ++i)
     {
-        AVThread* t = av[i];
+        AVThread* const t = av[i];
 
         if (!t)
             continue;
@@ -664,12 +675,13 @@ void AVDemuxThread::stepForward()
     // clock type will be wrong if no lock because slot frameDeliveredOnStepForward() is in video thread
 
     QMutexLocker locker(&next_frame_mutex);
+
     Q_UNUSED(locker);
     pause(true);                                    // must pause AVDemuxThread (set user_paused true)
-    AVThread* av[] = { video_thread, audio_thread };
-    bool connected = false;
+    AVThread* const av[] = { video_thread, audio_thread };
+    bool connected       = false;
 
-    for (size_t i = 0 ; i < sizeof(av)/sizeof(av[0]) ; ++i)
+    for (size_t i = 0 ; i < sizeof(av) / sizeof(av[0]) ; ++i)
     {
         AVThread* t = av[i];
 
@@ -705,7 +717,7 @@ void AVDemuxThread::stepForward()
 
 void AVDemuxThread::seekOnPauseFinished()
 {
-    AVThread* thread = video_thread ? video_thread : audio_thread;
+    AVThread* const thread = video_thread ? video_thread : audio_thread;
     Q_ASSERT(thread);
 
     disconnect(thread, SIGNAL(seekFinished(qint64)),
@@ -729,7 +741,7 @@ void AVDemuxThread::seekOnPauseFinished()
 
 void AVDemuxThread::frameDeliveredOnStepForward()
 {
-    AVThread* thread = video_thread ? video_thread : audio_thread;
+    AVThread* const thread = video_thread ? video_thread : audio_thread;
     Q_ASSERT(thread);
 
     QMutexLocker locker(&next_frame_mutex);
@@ -759,14 +771,14 @@ void AVDemuxThread::frameDeliveredOnStepForward()
     if (clock_type >= 0)
     {
         thread->clock()->setClockAuto(clock_type & 1);
-        thread->clock()->setClockType(AVClock::ClockType(clock_type/2));
+        thread->clock()->setClockType(AVClock::ClockType(clock_type / 2));
         clock_type = -1;
-        thread->clock()->updateExternalClock((thread->previousHistoryPts() - thread->clock()->initialValue())*1000.0);
+        thread->clock()->updateExternalClock((thread->previousHistoryPts() - thread->clock()->initialValue()) * 1000.0);
     }
 
     // Fudge the bit at the end + 33ms so that step forward and step backwards present different values
 
-    last_seek_pos = (thread->previousHistoryPts() - thread->clock()->initialValue())*1000.0 + 33;
+    last_seek_pos = (thread->previousHistoryPts() - thread->clock()->initialValue()) * 1000.0 + 33;
 
     stepping = false;
 
@@ -775,7 +787,7 @@ void AVDemuxThread::frameDeliveredOnStepForward()
 
 void AVDemuxThread::eofDecodedOnStepForward()
 {
-    AVThread* thread = video_thread ? video_thread : audio_thread;
+    AVThread* const thread = video_thread ? video_thread : audio_thread;
     Q_ASSERT(thread);
 
     QMutexLocker locker(&next_frame_mutex);
@@ -808,7 +820,7 @@ void AVDemuxThread::stepForwardDone()
 
 void AVDemuxThread::onAVThreadQuit()
 {
-    AVThread* av[] =
+    AVThread* const av[] =
     {
         audio_thread,
         video_thread
@@ -828,7 +840,7 @@ void AVDemuxThread::onAVThreadQuit()
 
 bool AVDemuxThread::waitForStarted(int msec)
 {
-    if (!sem.tryAcquire(1, msec > 0 ? msec : std::numeric_limits<int>::max()))
+    if (!sem.tryAcquire(1, (msec > 0) ? msec : std::numeric_limits<int>::max()))
         return false;
 
     sem.release(1); // ensure other waitForStarted() calls continue
@@ -860,7 +872,7 @@ void AVDemuxThread::run()
 
     // aqueue as a primary buffer: music with/without cover
 
-    AVThread* thread     = !video_thread || (audio_thread && demuxer->hasAttacedPicture()) ? audio_thread : video_thread;
+    AVThread* const thread     = !video_thread || (audio_thread && demuxer->hasAttacedPicture()) ? audio_thread : video_thread;
 
     if (!thread)
     {
@@ -1060,7 +1072,7 @@ void AVDemuxThread::run()
 
         // TODO: use cache queue, take from cache queue if not empty?
 
-        const bool a_internal = stream == demuxer->audioStream();
+        const bool a_internal = (stream == demuxer->audioStream());
 
         if (a_internal || a_ext > 0)
         {

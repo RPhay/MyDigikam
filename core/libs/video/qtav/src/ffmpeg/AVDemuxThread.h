@@ -48,14 +48,14 @@ class AVDemuxThread : public QThread
 
 public:
 
-    explicit AVDemuxThread(QObject* parent = nullptr);
-    explicit AVDemuxThread(AVDemuxer* dmx, QObject* parent = nullptr);
+    explicit AVDemuxThread(QObject* const parent = nullptr);
+    explicit AVDemuxThread(AVDemuxer* const dmx, QObject* const parent = nullptr);
 
-    void setDemuxer(AVDemuxer* dmx);
-    void setAudioDemuxer(AVDemuxer* demuxer);   ///< not thread safe
-    void setAudioThread(AVThread* thread);
+    void setDemuxer(AVDemuxer* const dmx);
+    void setAudioDemuxer(AVDemuxer* const demuxer);   ///< not thread safe
+    void setAudioThread(AVThread* const thread);
     AVThread* audioThread();
-    void setVideoThread(AVThread* thread);
+    void setVideoThread(AVThread* const thread);
     AVThread* videoThread();
     void stepForward();                         ///< show next video frame and pause
     void stepBackward();
@@ -108,8 +108,8 @@ protected:
 
 private:
 
-    void setAVThread(AVThread*& pOld, AVThread* pNew);
-    void newSeekRequest(QRunnable* r);
+    void setAVThread(AVThread*& pOld, AVThread* const pNew);
+    void newSeekRequest(QRunnable* const r);
     void processNextSeekTask();
     void seekInternal(qint64 pos, SeekType type, qint64 external_pos = std::numeric_limits<qint64>::min()); // must call in AVDemuxThread
     void pauseInternal(bool value);
@@ -121,17 +121,19 @@ private:
     volatile bool               end;
     MediaEndAction              end_action;
     bool                        m_buffering;
-    PacketBuffer*               m_buffer;
-    AVDemuxer*                  demuxer;
-    AVDemuxer*                  ademuxer;
-    AVThread*                   audio_thread, *video_thread;
+    PacketBuffer*               m_buffer            = nullptr;
+    AVDemuxer*                  demuxer             = nullptr;
+    AVDemuxer*                  ademuxer            = nullptr;
+    AVThread*                   audio_thread        = nullptr;
+    AVThread*                   video_thread        = nullptr;
     int                         clock_type;                     ///< change happens in different threads(direct connection)
     qint64                      last_seek_pos;
-    QRunnable*                  current_seek_task;
+    QRunnable*                  current_seek_task   = nullptr;
     bool                        stepping;
     qint64                      stepping_timeout_time;
 
-    int                         audio_stream, video_stream;
+    int                         audio_stream;
+    int                         video_stream;
     QMutex                      buffer_mutex;
     QWaitCondition              cond;
     BlockingQueue<QRunnable*>   seek_tasks;

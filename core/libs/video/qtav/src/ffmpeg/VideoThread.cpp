@@ -49,8 +49,8 @@ class Q_DECL_HIDDEN VideoThreadPrivate : public AVThreadPrivate
 {
 public:
 
-    VideoThreadPrivate():
-        AVThreadPrivate()
+    VideoThreadPrivate()
+        : AVThreadPrivate()
     {
     }
 
@@ -79,7 +79,7 @@ public:
     VideoFrame          displayed_frame;
 };
 
-VideoThread::VideoThread(QObject* parent)
+VideoThread::VideoThread(QObject* const parent)
     : AVThread(*new VideoThreadPrivate(), parent)
 {
 }
@@ -92,8 +92,8 @@ VideoCapture* VideoThread::setVideoCapture(VideoCapture* const cap)
     DPTR_D(VideoThread);
 
     QMutexLocker locker(&d.mutex);
-    VideoCapture* old = d.capture;
-    d.capture         = cap;
+    VideoCapture* const old = d.capture;
+    d.capture               = cap;
 
     if (old)
     {
@@ -154,6 +154,10 @@ void VideoThread::addCaptureTask()
     private:
 
         VideoThread* vthread = nullptr;
+
+    private:
+
+        Q_DISABLE_COPY(CaptureTask);
     };
 
     scheduleTask(new CaptureTask(this));
@@ -207,10 +211,10 @@ void VideoThread::setEQ(int b, int c, int s)
     public:
 
         EQTask(VideoFrameConverter* const c)
-            : brightness(0)
-            , contrast(0)
-            , saturation(0)
-            , conv(c)
+            : brightness(0),
+              contrast(0),
+              saturation(0),
+              conv(c)
         {
             //qCDebug(DIGIKAM_QTAV_LOG).noquote() << QString::asprintf("EQTask tid=%p", QThread::currentThread());
         }
@@ -229,11 +233,15 @@ void VideoThread::setEQ(int b, int c, int s)
     private:
 
         VideoFrameConverter* conv = nullptr;
+
+    private:
+
+        Q_DISABLE_COPY(EQTask);
     };
 
     DPTR_D(VideoThread);
 
-    EQTask *task     = new EQTask(&d.conv);
+    EQTask* const task     = new EQTask(&d.conv);
     task->brightness = b;
     task->contrast   = c;
     task->saturation = s;
@@ -292,9 +300,10 @@ bool VideoThread::deliverVideoFrame(VideoFrame &frame)
     if (!outputs.isEmpty())
         vo = static_cast<VideoRenderer*>(outputs.first());
 
-    if (   vo && (!vo->isSupported(frame.pixelFormat())
-        || (vo->isPreferredPixelFormatForced() && vo->preferredPixelFormat() != frame.pixelFormat())
-       ))
+    if (
+        vo && (!vo->isSupported(frame.pixelFormat()) ||
+        (vo->isPreferredPixelFormatForced() && (vo->preferredPixelFormat() != frame.pixelFormat())))
+       )
     {
         VideoFormat fmt(frame.format());
 
@@ -367,8 +376,8 @@ void VideoThread::run()
     // kNbSlowFrameDrop: if video frame slow count > kNbSlowFrameDrop, skip decoding nonref frames. only some of ffmpeg based decoders support it.
 
     const int kNbSlowFrameDrop = 10;
-    bool sync_audio            = d.clock->clockType() == AVClock::AudioClock;
-    bool sync_video            = d.clock->clockType() == AVClock::VideoClock; // no frame drop
+    bool sync_audio            = (d.clock->clockType() == AVClock::AudioClock);
+    bool sync_video            = (d.clock->clockType() == AVClock::VideoClock); // no frame drop
     const qint64 start_time    = QDateTime::currentMSecsSinceEpoch();
     qreal v_a                  = 0;
     int nb_no_pts              = 0;
@@ -420,7 +429,8 @@ void VideoThread::run()
 
             if (d.clock->syncId() > 0)
             {
-                qCDebug(DIGIKAM_QTAV_LOG).noquote() << QString::asprintf("video thread wait to sync end for sync id: %d", d.clock->syncId());
+                qCDebug(DIGIKAM_QTAV_LOG).noquote() 
+                    << QString::asprintf("video thread wait to sync end for sync id: %d", d.clock->syncId());
 
                 if ((d.render_pts0 < 0) && (sync_id > 0))
                 {
@@ -543,7 +553,7 @@ void VideoThread::run()
             nb_dec_fast /= 2;
         }
 
-        bool seeking = d.render_pts0 >= 0.0;
+        bool seeking = (d.render_pts0 >= 0.0);
 
         if (seeking)
         {
@@ -685,7 +695,7 @@ void VideoThread::run()
 
         QVariantHash* dec_opt_old = dec_opt;
 
-        if (!seeking || pkt.pts - d.render_pts0 >= -0.05)
+        if (!seeking || ((pkt.pts - d.render_pts0) >= -0.05))
         {
             // MAYBE not seeking. We should not drop the frames near the seek target. FIXME: use packet pts distance instead of -0.05 (20fps)
 
@@ -847,7 +857,7 @@ void VideoThread::run()
 
             d.clock->syncEndOnce(sync_id);
 
-            Q_EMIT seekFinished(qint64(pts*1000.0));
+            Q_EMIT seekFinished(qint64(pts * 1000.0));
 
             if      (seek_count == -1)
                 seek_count = 1;
@@ -918,7 +928,7 @@ void VideoThread::run()
                 //qCDebug(DIGIKAM_QTAV_LOG).noquote() << QString::asprintf("wait %f to display for pts %f-%f", display_wait, pts, clock()->value());
 
                 if (display_wait < 1.0)
-                    waitAndCheck(display_wait*1000UL, pts); // TODO: count decoding and filter time
+                    waitAndCheck(display_wait * 1000UL, pts); // TODO: count decoding and filter time
             }
         }
 
