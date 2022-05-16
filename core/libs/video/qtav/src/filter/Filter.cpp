@@ -44,9 +44,9 @@
 namespace QtAV
 {
 
-Filter::Filter(FilterPrivate &d, QObject *parent)
-    : QObject(parent)
-    , DPTR_INIT(&d)
+Filter::Filter(FilterPrivate &d, QObject* const parent)
+    : QObject(parent),
+      DPTR_INIT(&d)
 {
     if (parent)
         setOwnedByTarget(false);
@@ -91,12 +91,12 @@ bool Filter::uninstall()
     return FilterManager::instance().uninstallFilter(this); // TODO: target
 }
 
-AudioFilter::AudioFilter(QObject *parent)
+AudioFilter::AudioFilter(QObject* const parent)
     : Filter(*new AudioFilterPrivate(), parent)
 {
 }
 
-AudioFilter::AudioFilter(AudioFilterPrivate& d, QObject *parent)
+AudioFilter::AudioFilter(AudioFilterPrivate& d, QObject* const parent)
     : Filter(d, parent)
 {
 }
@@ -105,27 +105,27 @@ AudioFilter::AudioFilter(AudioFilterPrivate& d, QObject *parent)
  * TODO: move to AVPlayerCore.cpp to reduce dependency?
  */
 
-bool AudioFilter::installTo(AVPlayerCore *player)
+bool AudioFilter::installTo(AVPlayerCore* player)
 {
     return player->installFilter(this);
 }
 
-void AudioFilter::apply(Statistics* statistics, AudioFrame *frame)
+void AudioFilter::apply(Statistics* statistics, AudioFrame* frame)
 {
     process(statistics, frame);
 }
 
-VideoFilter::VideoFilter(QObject *parent)
+VideoFilter::VideoFilter(QObject* const parent)
     : Filter(*new VideoFilterPrivate(), parent)
 {
 }
 
-VideoFilter::VideoFilter(VideoFilterPrivate &d, QObject *parent)
+VideoFilter::VideoFilter(VideoFilterPrivate &d, QObject* const parent)
     : Filter(d, parent)
 {
 }
 
-VideoFilterContext *VideoFilter::context()
+VideoFilterContext* VideoFilter::context()
 {
     DPTR_D(VideoFilter);
 
@@ -178,7 +178,7 @@ bool VideoFilter::prepareContext(VideoFilterContext*& ctx, Statistics* statistic
 
     if (!d.context || d.context->type() != ctx->type())
     {
-        VideoFilterContext* c = VideoFilterContext::create(ctx->type());//each filter has it's own context instance, but share the common parameters
+        VideoFilterContext* const c = VideoFilterContext::create(ctx->type());//each filter has it's own context instance, but share the common parameters
 
         if (d.context)
         {

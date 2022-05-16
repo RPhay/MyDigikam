@@ -42,8 +42,8 @@ class QTAV_PRIVATE_EXPORT FilterPrivate : public DPtrPrivate<Filter>
 public:
 
     FilterPrivate()
-      : enabled(true)
-      , owned_by_target(false)
+      : enabled        (true),
+        owned_by_target(false)
     {
     }
 
@@ -53,6 +53,10 @@ public:
 
     bool enabled;
     bool owned_by_target;
+
+private:
+
+    Q_DISABLE_COPY(FilterPrivate);
 };
 
 class QTAV_PRIVATE_EXPORT VideoFilterPrivate : public FilterPrivate
@@ -64,11 +68,32 @@ public:
     {
     }
 
+    virtual ~VideoFilterPrivate()
+    {
+    }
+
     VideoFilterContext* context; ///< used only when is necessary
+
+private:
+
+    Q_DISABLE_COPY(VideoFilterPrivate);
 };
 
 class QTAV_PRIVATE_EXPORT AudioFilterPrivate : public FilterPrivate
 {
+public:
+
+    AudioFilterPrivate()
+    {
+    }
+
+    virtual ~AudioFilterPrivate()
+    {
+    }
+
+private:
+
+    Q_DISABLE_COPY(AudioFilterPrivate);
 };
 
 } // namespace QtAV

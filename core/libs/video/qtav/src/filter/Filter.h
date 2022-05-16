@@ -93,7 +93,7 @@ protected:
     /**
      * If the filter is in AVThread, it's safe to operate on ref.
      */
-    Filter(FilterPrivate& d, QObject* parent = nullptr);
+    Filter(FilterPrivate& d, QObject* const parent = nullptr);
 
     DPTR_DECLARE(Filter)
 };
@@ -109,7 +109,7 @@ class QTAV_EXPORT VideoFilter : public Filter
 
 public:
 
-    explicit VideoFilter(QObject* parent = nullptr);
+    explicit VideoFilter(QObject* const parent = nullptr);
 
     VideoFilterContext* context();
     virtual bool isSupported(VideoFilterContext::Type ct) const;
@@ -129,7 +129,7 @@ public:
 
 protected:
 
-    VideoFilter(VideoFilterPrivate& d, QObject* parent = nullptr);
+    VideoFilter(VideoFilterPrivate& d, QObject* const parent = nullptr);
     virtual void process(Statistics* statistics, VideoFrame* frame = nullptr) = 0;
 };
 
@@ -145,13 +145,14 @@ class QTAV_EXPORT AudioFilter : public Filter
 
 public:
 
-    explicit AudioFilter(QObject* parent = nullptr);
+    explicit AudioFilter(QObject* const parent = nullptr);
+
     bool installTo(AVPlayerCore* player) override;
     void apply(Statistics* statistics, AudioFrame* frame = nullptr);
 
 protected:
 
-    AudioFilter(AudioFilterPrivate& d, QObject* parent = nullptr);
+    AudioFilter(AudioFilterPrivate& d, QObject* const parent = nullptr);
     virtual void process(Statistics* statistics, AudioFrame* frame = nullptr) = 0;
 };
 
