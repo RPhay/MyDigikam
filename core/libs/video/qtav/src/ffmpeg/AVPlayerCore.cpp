@@ -90,7 +90,7 @@ const QStringList& AVPlayerCore::supportedProtocols()
     return AVDemuxer::supportedProtocols();
 }
 
-AVPlayerCore::AVPlayerCore(QObject* parent)
+AVPlayerCore::AVPlayerCore(QObject* const parent)
     : QObject(parent),
       d(new Private())
 {
@@ -214,7 +214,7 @@ void AVPlayerCore::clearVideoRenderers()
 
 void AVPlayerCore::setRenderer(VideoRenderer* r)
 {
-    VideoRenderer* vo = renderer();
+    VideoRenderer* const vo = renderer();
 
     if (vo && r)
     {
@@ -380,7 +380,7 @@ bool AVPlayerCore::installFilter(VideoFilter* filter, int index)
 bool AVPlayerCore::uninstallFilter(AudioFilter* filter)
 {
     FilterManager::instance().unregisterAudioFilter(filter, this);
-    AVThread* avthread = d->athread;
+    AVThread* const avthread = d->athread;
 
     if (!avthread)
         return false;
@@ -469,11 +469,11 @@ void AVPlayerCore::setPriority(const QVector<VideoDecoderId> &ids)
 
     class Q_DECL_HIDDEN NewDecoderTask : public QRunnable
     {
-        AVPlayerCore* player;
+        AVPlayerCore* player = nullptr;
 
     public:
 
-        NewDecoderTask(AVPlayerCore* p)
+        NewDecoderTask(AVPlayerCore* const p)
             : player(p)
         {
         }
@@ -525,12 +525,12 @@ void AVPlayerCore::setPriority(const QVector<VideoDecoderId> &ids)
 
             class Q_DECL_HIDDEN ApplyNewDecoderTask : public QRunnable 
             {
-                AVPlayerCore*     player;
-                VideoDecoder* dec;
+                AVPlayerCore* player = nullptr;
+                VideoDecoder* dec    = nullptr;
 
             public:
 
-                ApplyNewDecoderTask(AVPlayerCore* p, VideoDecoder* d)
+                ApplyNewDecoderTask(AVPlayerCore* const p, VideoDecoder* const d)
                     : player(p),
                       dec(d)
                 {

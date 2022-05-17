@@ -111,11 +111,13 @@ public:
     };
     Q_ENUM(State)
 
+public:
+
     /// Supported input protocols. A static string list
 
     static const QStringList& supportedProtocols();
 
-    explicit AVPlayerCore(QObject* parent = nullptr);
+    explicit AVPlayerCore(QObject* const parent = nullptr);
     ~AVPlayerCore();
 
     /*!
@@ -471,7 +473,7 @@ public:
 
     // QVariantHash deprecated, use QVariantMap to get better js compatibility
 
-    void setOptionsForAudioCodec(const QVariantHash &dict);
+    void setOptionsForAudioCodec(const QVariantHash& dict);
     QVariantHash optionsForAudioCodec() const;
     void setOptionsForVideoCodec(const QVariantHash& dict);
     QVariantHash optionsForVideoCodec() const;
@@ -562,7 +564,6 @@ public Q_SLOTS:
      */
     void setTimeRange(qint64 start, qint64 stop = std::numeric_limits<qint64>::max());
 
-    bool isSeekable() const;
 
     /*!
      * \brief setPosition equals to seek(qreal)
@@ -577,29 +578,8 @@ public Q_SLOTS:
     void seekNextChapter();
     void seekPreviousChapter();
     void setSeekType(SeekType type);
-    SeekType seekType() const;
 
-    /*!
-     * \brief bufferProgress
-     * How much the data buffer is currently filled. From 0.0 to 1.0.
-     * Playback can start or resume only when the buffer is entirely filled.
-     */
-    qreal bufferProgress() const;
-
-    /*!
-     * \brief bufferSpeed
-     * Bytes/s
-     * \return 0 if not buffering. >= 0 if buffering
-     */
-    qreal bufferSpeed() const;
-
-    /*!
-     * \brief buffered
-     * Current buffered value in msecs, bytes or packet count depending on bufferMode()
-     */
-    qint64 buffered() const;
     void setBufferMode(BufferMode mode);
-    BufferMode bufferMode() const;
 
     /*!
      * \brief setBufferValue
@@ -608,7 +588,6 @@ public Q_SLOTS:
      * \param value <0: auto; BufferBytes: bytes, BufferTime: msecs, BufferPackets: packets count
      */
     void setBufferValue(qint64 value);
-    int bufferValue() const;
 
     /*!
      * \brief setNotifyInterval
@@ -617,9 +596,6 @@ public Q_SLOTS:
      */
     void setNotifyInterval(int msec);
 
-    /// The real notify interval. Always > 0
-
-    int notifyInterval() const;
     void updateClock(qint64 msecs); // update AVClock's external clock
 
     // for all renderers. val: [-100, 100]. other value changes nothing
@@ -628,6 +604,38 @@ public Q_SLOTS:
     void setContrast(int val);
     void setHue(int val);           // not implemented
     void setSaturation(int val);
+
+public:
+
+    bool isSeekable()       const;
+    SeekType seekType()     const;
+
+    /*!
+     * \brief bufferProgress
+     * How much the data buffer is currently filled. From 0.0 to 1.0.
+     * Playback can start or resume only when the buffer is entirely filled.
+     */
+    qreal bufferProgress()  const;
+
+    /*!
+     * \brief bufferSpeed
+     * Bytes/s
+     * \return 0 if not buffering. >= 0 if buffering
+     */
+    qreal bufferSpeed()     const;
+
+    /*!
+     * \brief buffered
+     * Current buffered value in msecs, bytes or packet count depending on bufferMode()
+     */
+    qint64 buffered()       const;
+    BufferMode bufferMode() const;
+
+    int bufferValue()       const;
+
+    /// The real notify interval. Always > 0
+
+    int notifyInterval()    const;
 
 Q_SIGNALS:
 
