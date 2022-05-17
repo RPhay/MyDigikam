@@ -36,17 +36,17 @@ class QTAV_PRIVATE_EXPORT OpenGLRendererBasePrivate : public VideoRendererPrivat
 {
 public:
 
-    explicit OpenGLRendererBasePrivate(QPaintDevice* pd);
+    explicit OpenGLRendererBasePrivate(QPaintDevice* const pd);
     virtual ~OpenGLRendererBasePrivate();
 
     void setupAspectRatio();
 
 public:
 
-    QPainter*   painter;
+    QPainter*   painter       = nullptr;
     OpenGLVideo glv;
     QMatrix4x4  matrix;
-    bool        frame_changed;
+    bool        frame_changed = false;
 };
 
 } // namespace QtAV

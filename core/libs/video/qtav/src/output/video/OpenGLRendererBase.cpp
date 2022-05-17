@@ -32,9 +32,9 @@
 namespace QtAV
 {
 
-OpenGLRendererBasePrivate::OpenGLRendererBasePrivate(QPaintDevice* pd)
-    : painter(new QPainter())
-    , frame_changed(false)
+OpenGLRendererBasePrivate::OpenGLRendererBasePrivate(QPaintDevice* const pd)
+    : painter(new QPainter()),
+      frame_changed(false)
 {
     filter_context               = VideoFilterContext::create(VideoFilterContext::QtPainter);
     filter_context->paint_device = pd;
