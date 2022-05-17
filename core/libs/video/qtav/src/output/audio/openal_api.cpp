@@ -188,99 +188,99 @@ CAPI_DEFINE_DLL             // cppcheck-suppress[noOperatorEq,noCopyConstructor]
 
 // CAPI_DEFINE(argc, return_type, name, argv_no_name)
 
-CAPI_DEFINE(void, alDopplerFactor, CAPI_ARG1(ALfloat))
-CAPI_DEFINE(void, alDopplerVelocity, CAPI_ARG1(ALfloat))
-CAPI_DEFINE(void, alSpeedOfSound, CAPI_ARG1(ALfloat))
-CAPI_DEFINE(void, alDistanceModel, CAPI_ARG1(ALenum))
-CAPI_DEFINE(void, alEnable, CAPI_ARG1(ALenum))
-CAPI_DEFINE(void, alDisable, CAPI_ARG1(ALenum))
-CAPI_DEFINE(ALboolean, alIsEnabled, CAPI_ARG1(ALenum))
-CAPI_DEFINE(const ALchar *, alGetString, CAPI_ARG1(ALenum))
-CAPI_DEFINE(void, alGetBooleanv, CAPI_ARG2(ALenum, ALboolean *))
-CAPI_DEFINE(void, alGetIntegerv, CAPI_ARG2(ALenum, ALint *))
-CAPI_DEFINE(void, alGetFloatv, CAPI_ARG2(ALenum, ALfloat *))
-CAPI_DEFINE(void, alGetDoublev, CAPI_ARG2(ALenum, ALdouble *))
-CAPI_DEFINE(ALboolean, alGetBoolean, CAPI_ARG1(ALenum))
-CAPI_DEFINE(ALint, alGetInteger, CAPI_ARG1(ALenum))
-CAPI_DEFINE(ALfloat, alGetFloat, CAPI_ARG1(ALenum))
-CAPI_DEFINE(ALdouble, alGetDouble, CAPI_ARG1(ALenum))
-CAPI_DEFINE(ALenum, alGetError, CAPI_ARG0())
-CAPI_DEFINE(ALboolean, alIsExtensionPresent, CAPI_ARG1(const ALchar *))
-CAPI_DEFINE(void *, alGetProcAddress, CAPI_ARG1(const ALchar *))
-CAPI_DEFINE(ALenum, alGetEnumValue, CAPI_ARG1(const ALchar *))
-CAPI_DEFINE(void, alListenerf, CAPI_ARG2(ALenum, ALfloat))
-CAPI_DEFINE(void, alListener3f, CAPI_ARG4(ALenum, ALfloat, ALfloat, ALfloat))
-CAPI_DEFINE(void, alListenerfv, CAPI_ARG2(ALenum, const ALfloat *))
-CAPI_DEFINE(void, alListeneri, CAPI_ARG2(ALenum, ALint))
-CAPI_DEFINE(void, alListener3i, CAPI_ARG4(ALenum, ALint, ALint, ALint))
-CAPI_DEFINE(void, alListeneriv, CAPI_ARG2(ALenum, const ALint *))
-CAPI_DEFINE(void, alGetListenerf, CAPI_ARG2(ALenum, ALfloat *))
-CAPI_DEFINE(void, alGetListener3f, CAPI_ARG4(ALenum, ALfloat *, ALfloat *, ALfloat *))
-CAPI_DEFINE(void, alGetListenerfv, CAPI_ARG2(ALenum, ALfloat *))
-CAPI_DEFINE(void, alGetListeneri, CAPI_ARG2(ALenum, ALint *))
-CAPI_DEFINE(void, alGetListener3i, CAPI_ARG4(ALenum, ALint *, ALint *, ALint *))
-CAPI_DEFINE(void, alGetListeneriv, CAPI_ARG2(ALenum, ALint *))
-CAPI_DEFINE(void, alGenSources, CAPI_ARG2(ALsizei, ALuint *))
-CAPI_DEFINE(void, alDeleteSources, CAPI_ARG2(ALsizei, const ALuint *))
-CAPI_DEFINE(ALboolean, alIsSource, CAPI_ARG1(ALuint))
-CAPI_DEFINE(void, alSourcef, CAPI_ARG3(ALuint, ALenum, ALfloat))
-CAPI_DEFINE(void, alSource3f, CAPI_ARG5(ALuint, ALenum, ALfloat, ALfloat, ALfloat))
-CAPI_DEFINE(void, alSourcefv, CAPI_ARG3(ALuint, ALenum, const ALfloat *))
-CAPI_DEFINE(void, alSourcei, CAPI_ARG3(ALuint, ALenum, ALint))
-CAPI_DEFINE(void, alSource3i, CAPI_ARG5(ALuint, ALenum, ALint, ALint, ALint))
-CAPI_DEFINE(void, alSourceiv, CAPI_ARG3(ALuint, ALenum, const ALint *))
-CAPI_DEFINE(void, alGetSourcef, CAPI_ARG3(ALuint, ALenum, ALfloat *))
-CAPI_DEFINE(void, alGetSource3f, CAPI_ARG5(ALuint, ALenum, ALfloat *, ALfloat *, ALfloat *))
-CAPI_DEFINE(void, alGetSourcefv, CAPI_ARG3(ALuint, ALenum, ALfloat *))
-CAPI_DEFINE(void, alGetSourcei, CAPI_ARG3(ALuint, ALenum, ALint *))
-CAPI_DEFINE(void, alGetSource3i, CAPI_ARG5(ALuint, ALenum, ALint *, ALint *, ALint *))
-CAPI_DEFINE(void, alGetSourceiv, CAPI_ARG3(ALuint, ALenum, ALint *))
-CAPI_DEFINE(void, alSourcePlayv, CAPI_ARG2(ALsizei, const ALuint *))
-CAPI_DEFINE(void, alSourceStopv, CAPI_ARG2(ALsizei, const ALuint *))
-CAPI_DEFINE(void, alSourceRewindv, CAPI_ARG2(ALsizei, const ALuint *))
-CAPI_DEFINE(void, alSourcePausev, CAPI_ARG2(ALsizei, const ALuint *))
-CAPI_DEFINE(void, alSourcePlay, CAPI_ARG1(ALuint))
-CAPI_DEFINE(void, alSourceStop, CAPI_ARG1(ALuint))
-CAPI_DEFINE(void, alSourceRewind, CAPI_ARG1(ALuint))
-CAPI_DEFINE(void, alSourcePause, CAPI_ARG1(ALuint))
-CAPI_DEFINE(void, alSourceQueueBuffers, CAPI_ARG3(ALuint, ALsizei, const ALuint *))
-CAPI_DEFINE(void, alSourceUnqueueBuffers, CAPI_ARG3(ALuint, ALsizei, ALuint *))
-CAPI_DEFINE(void, alGenBuffers, CAPI_ARG2(ALsizei, ALuint *))
-CAPI_DEFINE(void, alDeleteBuffers, CAPI_ARG2(ALsizei, const ALuint *))
-CAPI_DEFINE(ALboolean, alIsBuffer, CAPI_ARG1(ALuint))
-CAPI_DEFINE(void, alBufferData, CAPI_ARG5(ALuint, ALenum, const ALvoid *, ALsizei, ALsizei))
-CAPI_DEFINE(void, alBufferf, CAPI_ARG3(ALuint, ALenum, ALfloat))
-CAPI_DEFINE(void, alBuffer3f, CAPI_ARG5(ALuint, ALenum, ALfloat, ALfloat, ALfloat))
-CAPI_DEFINE(void, alBufferfv, CAPI_ARG3(ALuint, ALenum, const ALfloat *))
-CAPI_DEFINE(void, alBufferi, CAPI_ARG3(ALuint, ALenum, ALint))
-CAPI_DEFINE(void, alBuffer3i, CAPI_ARG5(ALuint, ALenum, ALint, ALint, ALint))
-CAPI_DEFINE(void, alBufferiv, CAPI_ARG3(ALuint, ALenum, const ALint *))
-CAPI_DEFINE(void, alGetBufferf, CAPI_ARG3(ALuint, ALenum, ALfloat *))
-CAPI_DEFINE(void, alGetBuffer3f, CAPI_ARG5(ALuint, ALenum, ALfloat *, ALfloat *, ALfloat *))
-CAPI_DEFINE(void, alGetBufferfv, CAPI_ARG3(ALuint, ALenum, ALfloat *))
-CAPI_DEFINE(void, alGetBufferi, CAPI_ARG3(ALuint, ALenum, ALint *))
-CAPI_DEFINE(void, alGetBuffer3i, CAPI_ARG5(ALuint, ALenum, ALint *, ALint *, ALint *))
-CAPI_DEFINE(void, alGetBufferiv, CAPI_ARG3(ALuint, ALenum, ALint *))
-CAPI_DEFINE(ALCcontext *, alcCreateContext, CAPI_ARG2(ALCdevice *, const ALCint*))
-CAPI_DEFINE(ALCboolean, alcMakeContextCurrent, CAPI_ARG1(ALCcontext *))
-CAPI_DEFINE(void, alcProcessContext, CAPI_ARG1(ALCcontext *))
-CAPI_DEFINE(void, alcSuspendContext, CAPI_ARG1(ALCcontext *))
-CAPI_DEFINE(void, alcDestroyContext, CAPI_ARG1(ALCcontext *))
-CAPI_DEFINE(ALCcontext *, alcGetCurrentContext, CAPI_ARG0())
-CAPI_DEFINE(ALCdevice *, alcGetContextsDevice, CAPI_ARG1(ALCcontext *))
-CAPI_DEFINE(ALCdevice *, alcOpenDevice, CAPI_ARG1(const ALCchar *))
-CAPI_DEFINE(ALCboolean, alcCloseDevice, CAPI_ARG1(ALCdevice *))
-CAPI_DEFINE(ALCenum, alcGetError, CAPI_ARG1(ALCdevice *))
-CAPI_DEFINE(ALCboolean, alcIsExtensionPresent, CAPI_ARG2(ALCdevice *, const ALCchar *))
-CAPI_DEFINE(void *, alcGetProcAddress, CAPI_ARG2(ALCdevice *, const ALCchar *))
-CAPI_DEFINE(ALCenum, alcGetEnumValue, CAPI_ARG2(ALCdevice *, const ALCchar *))
-CAPI_DEFINE(const ALCchar *, alcGetString, CAPI_ARG2(ALCdevice *, ALCenum))
-CAPI_DEFINE(void, alcGetIntegerv, CAPI_ARG4(ALCdevice *, ALCenum, ALCsizei, ALCint *))
-CAPI_DEFINE(ALCdevice *, alcCaptureOpenDevice, CAPI_ARG4(const ALCchar *, ALCuint, ALCenum, ALCsizei))
-CAPI_DEFINE(ALCboolean, alcCaptureCloseDevice, CAPI_ARG1(ALCdevice *))
-CAPI_DEFINE(void, alcCaptureStart, CAPI_ARG1(ALCdevice *))
-CAPI_DEFINE(void, alcCaptureStop, CAPI_ARG1(ALCdevice *))
-CAPI_DEFINE(void, alcCaptureSamples, CAPI_ARG3(ALCdevice *, ALCvoid *, ALCsizei))
+CAPI_DEFINE(void, alDopplerFactor, CAPI_ARG1(ALfloat))                                                  //  clazy:exclude=returning-void-expression
+CAPI_DEFINE(void, alDopplerVelocity, CAPI_ARG1(ALfloat))                                                //  clazy:exclude=returning-void-expression
+CAPI_DEFINE(void, alSpeedOfSound, CAPI_ARG1(ALfloat))                                                   //  clazy:exclude=returning-void-expression
+CAPI_DEFINE(void, alDistanceModel, CAPI_ARG1(ALenum))                                                   //  clazy:exclude=returning-void-expression
+CAPI_DEFINE(void, alEnable, CAPI_ARG1(ALenum))                                                          //  clazy:exclude=returning-void-expression
+CAPI_DEFINE(void, alDisable, CAPI_ARG1(ALenum))                                                         //  clazy:exclude=returning-void-expression
+CAPI_DEFINE(ALboolean, alIsEnabled, CAPI_ARG1(ALenum))                                                  //  clazy:exclude=returning-void-expression
+CAPI_DEFINE(const ALchar *, alGetString, CAPI_ARG1(ALenum))                                             //  clazy:exclude=returning-void-expression
+CAPI_DEFINE(void, alGetBooleanv, CAPI_ARG2(ALenum, ALboolean *))                                        //  clazy:exclude=returning-void-expression
+CAPI_DEFINE(void, alGetIntegerv, CAPI_ARG2(ALenum, ALint *))                                            //  clazy:exclude=returning-void-expression
+CAPI_DEFINE(void, alGetFloatv, CAPI_ARG2(ALenum, ALfloat *))                                            //  clazy:exclude=returning-void-expression
+CAPI_DEFINE(void, alGetDoublev, CAPI_ARG2(ALenum, ALdouble *))                                          //  clazy:exclude=returning-void-expression
+CAPI_DEFINE(ALboolean, alGetBoolean, CAPI_ARG1(ALenum))                                                 //  clazy:exclude=returning-void-expression
+CAPI_DEFINE(ALint, alGetInteger, CAPI_ARG1(ALenum))                                                     //  clazy:exclude=returning-void-expression
+CAPI_DEFINE(ALfloat, alGetFloat, CAPI_ARG1(ALenum))                                                     //  clazy:exclude=returning-void-expression
+CAPI_DEFINE(ALdouble, alGetDouble, CAPI_ARG1(ALenum))                                                   //  clazy:exclude=returning-void-expression
+CAPI_DEFINE(ALenum, alGetError, CAPI_ARG0())                                                            //  clazy:exclude=returning-void-expression
+CAPI_DEFINE(ALboolean, alIsExtensionPresent, CAPI_ARG1(const ALchar *))                                 //  clazy:exclude=returning-void-expression
+CAPI_DEFINE(void *, alGetProcAddress, CAPI_ARG1(const ALchar *))                                        //  clazy:exclude=returning-void-expression
+CAPI_DEFINE(ALenum, alGetEnumValue, CAPI_ARG1(const ALchar *))                                          //  clazy:exclude=returning-void-expression
+CAPI_DEFINE(void, alListenerf, CAPI_ARG2(ALenum, ALfloat))                                              //  clazy:exclude=returning-void-expression
+CAPI_DEFINE(void, alListener3f, CAPI_ARG4(ALenum, ALfloat, ALfloat, ALfloat))                           //  clazy:exclude=returning-void-expression
+CAPI_DEFINE(void, alListenerfv, CAPI_ARG2(ALenum, const ALfloat *))                                     //  clazy:exclude=returning-void-expression
+CAPI_DEFINE(void, alListeneri, CAPI_ARG2(ALenum, ALint))                                                //  clazy:exclude=returning-void-expression
+CAPI_DEFINE(void, alListener3i, CAPI_ARG4(ALenum, ALint, ALint, ALint))                                 //  clazy:exclude=returning-void-expression
+CAPI_DEFINE(void, alListeneriv, CAPI_ARG2(ALenum, const ALint *))                                       //  clazy:exclude=returning-void-expression
+CAPI_DEFINE(void, alGetListenerf, CAPI_ARG2(ALenum, ALfloat *))                                         //  clazy:exclude=returning-void-expression
+CAPI_DEFINE(void, alGetListener3f, CAPI_ARG4(ALenum, ALfloat *, ALfloat *, ALfloat *))                  //  clazy:exclude=returning-void-expression
+CAPI_DEFINE(void, alGetListenerfv, CAPI_ARG2(ALenum, ALfloat *))                                        //  clazy:exclude=returning-void-expression
+CAPI_DEFINE(void, alGetListeneri, CAPI_ARG2(ALenum, ALint *))                                           //  clazy:exclude=returning-void-expression
+CAPI_DEFINE(void, alGetListener3i, CAPI_ARG4(ALenum, ALint *, ALint *, ALint *))                        //  clazy:exclude=returning-void-expression
+CAPI_DEFINE(void, alGetListeneriv, CAPI_ARG2(ALenum, ALint *))                                          //  clazy:exclude=returning-void-expression
+CAPI_DEFINE(void, alGenSources, CAPI_ARG2(ALsizei, ALuint *))                                           //  clazy:exclude=returning-void-expression
+CAPI_DEFINE(void, alDeleteSources, CAPI_ARG2(ALsizei, const ALuint *))                                  //  clazy:exclude=returning-void-expression
+CAPI_DEFINE(ALboolean, alIsSource, CAPI_ARG1(ALuint))                                                   //  clazy:exclude=returning-void-expression
+CAPI_DEFINE(void, alSourcef, CAPI_ARG3(ALuint, ALenum, ALfloat))                                        //  clazy:exclude=returning-void-expression
+CAPI_DEFINE(void, alSource3f, CAPI_ARG5(ALuint, ALenum, ALfloat, ALfloat, ALfloat))                     //  clazy:exclude=returning-void-expression
+CAPI_DEFINE(void, alSourcefv, CAPI_ARG3(ALuint, ALenum, const ALfloat *))                               //  clazy:exclude=returning-void-expression
+CAPI_DEFINE(void, alSourcei, CAPI_ARG3(ALuint, ALenum, ALint))                                          //  clazy:exclude=returning-void-expression
+CAPI_DEFINE(void, alSource3i, CAPI_ARG5(ALuint, ALenum, ALint, ALint, ALint))                           //  clazy:exclude=returning-void-expression
+CAPI_DEFINE(void, alSourceiv, CAPI_ARG3(ALuint, ALenum, const ALint *))                                 //  clazy:exclude=returning-void-expression
+CAPI_DEFINE(void, alGetSourcef, CAPI_ARG3(ALuint, ALenum, ALfloat *))                                   //  clazy:exclude=returning-void-expression
+CAPI_DEFINE(void, alGetSource3f, CAPI_ARG5(ALuint, ALenum, ALfloat *, ALfloat *, ALfloat *))            //  clazy:exclude=returning-void-expression
+CAPI_DEFINE(void, alGetSourcefv, CAPI_ARG3(ALuint, ALenum, ALfloat *))                                  //  clazy:exclude=returning-void-expression
+CAPI_DEFINE(void, alGetSourcei, CAPI_ARG3(ALuint, ALenum, ALint *))                                     //  clazy:exclude=returning-void-expression
+CAPI_DEFINE(void, alGetSource3i, CAPI_ARG5(ALuint, ALenum, ALint *, ALint *, ALint *))                  //  clazy:exclude=returning-void-expression
+CAPI_DEFINE(void, alGetSourceiv, CAPI_ARG3(ALuint, ALenum, ALint *))                                    //  clazy:exclude=returning-void-expression
+CAPI_DEFINE(void, alSourcePlayv, CAPI_ARG2(ALsizei, const ALuint *))                                    //  clazy:exclude=returning-void-expression
+CAPI_DEFINE(void, alSourceStopv, CAPI_ARG2(ALsizei, const ALuint *))                                    //  clazy:exclude=returning-void-expression
+CAPI_DEFINE(void, alSourceRewindv, CAPI_ARG2(ALsizei, const ALuint *))                                  //  clazy:exclude=returning-void-expression
+CAPI_DEFINE(void, alSourcePausev, CAPI_ARG2(ALsizei, const ALuint *))                                   //  clazy:exclude=returning-void-expression
+CAPI_DEFINE(void, alSourcePlay, CAPI_ARG1(ALuint))                                                      //  clazy:exclude=returning-void-expression
+CAPI_DEFINE(void, alSourceStop, CAPI_ARG1(ALuint))                                                      //  clazy:exclude=returning-void-expression
+CAPI_DEFINE(void, alSourceRewind, CAPI_ARG1(ALuint))                                                    //  clazy:exclude=returning-void-expression
+CAPI_DEFINE(void, alSourcePause, CAPI_ARG1(ALuint))                                                     //  clazy:exclude=returning-void-expression
+CAPI_DEFINE(void, alSourceQueueBuffers, CAPI_ARG3(ALuint, ALsizei, const ALuint *))                     //  clazy:exclude=returning-void-expression
+CAPI_DEFINE(void, alSourceUnqueueBuffers, CAPI_ARG3(ALuint, ALsizei, ALuint *))                         //  clazy:exclude=returning-void-expression
+CAPI_DEFINE(void, alGenBuffers, CAPI_ARG2(ALsizei, ALuint *))                                           //  clazy:exclude=returning-void-expression
+CAPI_DEFINE(void, alDeleteBuffers, CAPI_ARG2(ALsizei, const ALuint *))                                  //  clazy:exclude=returning-void-expression
+CAPI_DEFINE(ALboolean, alIsBuffer, CAPI_ARG1(ALuint))                                                   //  clazy:exclude=returning-void-expression
+CAPI_DEFINE(void, alBufferData, CAPI_ARG5(ALuint, ALenum, const ALvoid *, ALsizei, ALsizei))            //  clazy:exclude=returning-void-expression
+CAPI_DEFINE(void, alBufferf, CAPI_ARG3(ALuint, ALenum, ALfloat))                                        //  clazy:exclude=returning-void-expression
+CAPI_DEFINE(void, alBuffer3f, CAPI_ARG5(ALuint, ALenum, ALfloat, ALfloat, ALfloat))                     //  clazy:exclude=returning-void-expression
+CAPI_DEFINE(void, alBufferfv, CAPI_ARG3(ALuint, ALenum, const ALfloat *))                               //  clazy:exclude=returning-void-expression
+CAPI_DEFINE(void, alBufferi, CAPI_ARG3(ALuint, ALenum, ALint))                                          //  clazy:exclude=returning-void-expression
+CAPI_DEFINE(void, alBuffer3i, CAPI_ARG5(ALuint, ALenum, ALint, ALint, ALint))                           //  clazy:exclude=returning-void-expression
+CAPI_DEFINE(void, alBufferiv, CAPI_ARG3(ALuint, ALenum, const ALint *))                                 //  clazy:exclude=returning-void-expression
+CAPI_DEFINE(void, alGetBufferf, CAPI_ARG3(ALuint, ALenum, ALfloat *))                                   //  clazy:exclude=returning-void-expression
+CAPI_DEFINE(void, alGetBuffer3f, CAPI_ARG5(ALuint, ALenum, ALfloat *, ALfloat *, ALfloat *))            //  clazy:exclude=returning-void-expression
+CAPI_DEFINE(void, alGetBufferfv, CAPI_ARG3(ALuint, ALenum, ALfloat *))                                  //  clazy:exclude=returning-void-expression
+CAPI_DEFINE(void, alGetBufferi, CAPI_ARG3(ALuint, ALenum, ALint *))                                     //  clazy:exclude=returning-void-expression
+CAPI_DEFINE(void, alGetBuffer3i, CAPI_ARG5(ALuint, ALenum, ALint *, ALint *, ALint *))                  //  clazy:exclude=returning-void-expression
+CAPI_DEFINE(void, alGetBufferiv, CAPI_ARG3(ALuint, ALenum, ALint *))                                    //  clazy:exclude=returning-void-expression
+CAPI_DEFINE(ALCcontext *, alcCreateContext, CAPI_ARG2(ALCdevice *, const ALCint*))                      //  clazy:exclude=returning-void-expression
+CAPI_DEFINE(ALCboolean, alcMakeContextCurrent, CAPI_ARG1(ALCcontext *))                                 //  clazy:exclude=returning-void-expression
+CAPI_DEFINE(void, alcProcessContext, CAPI_ARG1(ALCcontext *))                                           //  clazy:exclude=returning-void-expression
+CAPI_DEFINE(void, alcSuspendContext, CAPI_ARG1(ALCcontext *))                                           //  clazy:exclude=returning-void-expression
+CAPI_DEFINE(void, alcDestroyContext, CAPI_ARG1(ALCcontext *))                                           //  clazy:exclude=returning-void-expression
+CAPI_DEFINE(ALCcontext *, alcGetCurrentContext, CAPI_ARG0())                                            //  clazy:exclude=returning-void-expression
+CAPI_DEFINE(ALCdevice *, alcGetContextsDevice, CAPI_ARG1(ALCcontext *))                                 //  clazy:exclude=returning-void-expression
+CAPI_DEFINE(ALCdevice *, alcOpenDevice, CAPI_ARG1(const ALCchar *))                                     //  clazy:exclude=returning-void-expression
+CAPI_DEFINE(ALCboolean, alcCloseDevice, CAPI_ARG1(ALCdevice *))                                         //  clazy:exclude=returning-void-expression
+CAPI_DEFINE(ALCenum, alcGetError, CAPI_ARG1(ALCdevice *))                                               //  clazy:exclude=returning-void-expression
+CAPI_DEFINE(ALCboolean, alcIsExtensionPresent, CAPI_ARG2(ALCdevice *, const ALCchar *))                 //  clazy:exclude=returning-void-expression
+CAPI_DEFINE(void *, alcGetProcAddress, CAPI_ARG2(ALCdevice *, const ALCchar *))                         //  clazy:exclude=returning-void-expression
+CAPI_DEFINE(ALCenum, alcGetEnumValue, CAPI_ARG2(ALCdevice *, const ALCchar *))                          //  clazy:exclude=returning-void-expression
+CAPI_DEFINE(const ALCchar *, alcGetString, CAPI_ARG2(ALCdevice *, ALCenum))                             //  clazy:exclude=returning-void-expression
+CAPI_DEFINE(void, alcGetIntegerv, CAPI_ARG4(ALCdevice *, ALCenum, ALCsizei, ALCint *))                  //  clazy:exclude=returning-void-expression
+CAPI_DEFINE(ALCdevice *, alcCaptureOpenDevice, CAPI_ARG4(const ALCchar *, ALCuint, ALCenum, ALCsizei))  //  clazy:exclude=returning-void-expression
+CAPI_DEFINE(ALCboolean, alcCaptureCloseDevice, CAPI_ARG1(ALCdevice *))                                  //  clazy:exclude=returning-void-expression
+CAPI_DEFINE(void, alcCaptureStart, CAPI_ARG1(ALCdevice *))                                              //  clazy:exclude=returning-void-expression
+CAPI_DEFINE(void, alcCaptureStop, CAPI_ARG1(ALCdevice *))                                               //  clazy:exclude=returning-void-expression
+CAPI_DEFINE(void, alcCaptureSamples, CAPI_ARG3(ALCdevice *, ALCvoid *, ALCsizei))                       //  clazy:exclude=returning-void-expression
 
 #endif
 
