@@ -45,7 +45,7 @@ class QTAV_WIDGETS_EXPORT MiscPage : public ConfigPageBase
 
 public:
 
-    MiscPage(bool previewOpt = true);
+    explicit MiscPage(bool previewOpt = true);
 
     virtual QString name() const override;
 
