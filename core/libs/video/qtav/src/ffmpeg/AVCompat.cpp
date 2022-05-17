@@ -29,7 +29,7 @@
 
 #if !FFMPEG_MODULE_CHECK(LIBAVFORMAT, 56, 4, 101)
 
-int avio_feof(AVIOContext* s)
+int avio_feof(AVIOContext* const s)
 {
 
 #   if QTAV_USE_FFMPEG(LIBAVFORMAT)
@@ -51,9 +51,9 @@ int avio_feof(AVIOContext* s)
 int avformat_alloc_output_context2(AVFormatContext** avctx, AVOutputFormat* oformat,
                                    const char* format, const char* filename)
 {
-    AVFormatContext* s = avformat_alloc_context();
-    int ret            = 0;
-    *avctx             = nullptr;
+    AVFormatContext* const s = avformat_alloc_context();
+    int ret                  = 0;
+    *avctx                   = nullptr;
 
     if (!s)
         goto nomem;
@@ -153,7 +153,7 @@ int64_t av_get_default_channel_layout(int nb_channels)      // krazy:exclude=typ
 {
     int i;
 
-    for (i = 0 ; i < FF_ARRAY_ELEMS(channel_layout_map) ; i++)
+    for (i = 0 ; i < FF_ARRAY_ELEMS(channel_layout_map) ; ++i)
     {
         if (nb_channels == channel_layout_map[i].nb_channels)
         {
@@ -173,14 +173,14 @@ int64_t av_get_default_channel_layout(int nb_channels)      // krazy:exclude=typ
 
 #if QTAV_HAVE(AVRESAMPLE)
 
-AVAudioResampleContext* swr_alloc_set_opts(AVAudioResampleContext* s
-                                         , int64_t out_ch_layout                // krazy:exclude=typedefs
-                                         , enum AVSampleFormat out_sample_fmt
-                                         , int out_sample_rate
-                                         , int64_t in_ch_layout                 // krazy:exclude=typedefs
-                                         , enum AVSampleFormat in_sample_fmt
-                                         , int in_sample_rate
-                                         , int log_offset, void* log_ctx)
+AVAudioResampleContext* swr_alloc_set_opts(AVAudioResampleContext* s,
+                                           int64_t out_ch_layout,                // krazy:exclude=typedefs
+                                           enum AVSampleFormat out_sample_fmt,
+                                           int out_sample_rate,
+                                           int64_t in_ch_layout,                 // krazy:exclude=typedefs
+                                           enum AVSampleFormat in_sample_fmt,
+                                           int in_sample_rate,
+                                           int log_offset, void* log_ctx)
 {
     // DO NOT use swr_alloc() because it's not defined as a macro in QtAV_Compat.h
     if (!s)
@@ -291,7 +291,7 @@ int av_pix_fmt_count_planes(AVPixelFormat pix_fmt)
     if (!desc)
         return AVERROR(EINVAL);
 
-    for (i = 0 ; i < desc->nb_components ; i++)
+    for (i = 0 ; i < desc->nb_components ; ++i)
         planes[desc->comp[i].plane] = 1;
 
     for (i = 0 ; i < (int)FF_ARRAY_ELEMS(planes) ; ++i)
@@ -314,8 +314,8 @@ int av_samples_copy(uint8_t** dst, uint8_t* const* src, int dst_offset,
     int data_size   = nb_samples * block_align;
     int i;
 
-    dst_offset *= block_align;
-    src_offset *= block_align;
+    dst_offset     *= block_align;
+    src_offset     *= block_align;
 
     if (((dst[0] < src[0]) ? (src[0] - dst[0]) : (dst[0] - src[0])) >= data_size)
     {
@@ -335,7 +335,7 @@ int av_samples_copy(uint8_t** dst, uint8_t* const* src, int dst_offset,
 
 #if QTAV_USE_LIBAV(LIBAVCODEC)
 
-const char *avcodec_get_name(enum AVCodecID id)
+const char* avcodec_get_name(enum AVCodecID id)
 {
     const AVCodecDescriptor* cd;
     AVCodec* codec = nullptr;
@@ -397,7 +397,7 @@ int av_packet_copy_props(AVPacket* dst, const AVPacket* src)
     dst->flags                = src->flags;
     dst->stream_index         = src->stream_index;
 
-    for (int i = 0 ; i < src->side_data_elems ; i++)
+    for (int i = 0 ; i < src->side_data_elems ; ++i)
     {
          enum AVPacketSideDataType type = src->side_data[i].type;
          int size                       = src->side_data[i].size;

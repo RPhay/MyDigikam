@@ -152,11 +152,11 @@ extern "C"
 void ffmpeg_version_print();
 
 #if !FFMPEG_MODULE_CHECK(LIBAVFORMAT, 56, 4, 101)
-int avio_feof(AVIOContext *s);
+int avio_feof(AVIOContext* const s);
 #endif
 
 #if QTAV_USE_LIBAV(LIBAVFORMAT)
-int avformat_alloc_output_context2(AVFormatContext **avctx, AVOutputFormat *oformat, const char *format, const char *filename);
+int avformat_alloc_output_context2(AVFormatContext** avctx, AVOutputFormat* oformat, const char* format, const char* filename);
 #endif
 
 // TODO: always inline
@@ -323,15 +323,15 @@ typedef enum AVPixelFormat AVPixelFormat;
 // AV_PIX_FMT_FLAG_XXX was PIX_FMT_XXX before FFmpeg 2.0
 // AV_PIX_FMT_FLAG_ALPHA was added at 52.2.0. but version.h not changed
 
-#if LIBAVUTIL_VERSION_INT < AV_VERSION_INT(52, 2, 1)         // git cbe5a60c9d495df0fb4775b064f06719b70b9952
-#   if LIBAVUTIL_VERSION_INT < AV_VERSION_INT(51, 22, 1)     // git 38d553322891c8e47182f05199d19888422167dc
-#       if LIBAVUTIL_VERSION_INT < AV_VERSION_INT(51, 19, 0) // git 6b0768e2021b90215a2ab55ed427bce91d148148
-#           define PIX_FMT_PLANAR   16 ///< At least one pixel component is not in the first data plane
-#           define PIX_FMT_RGB      32 ///< The pixel format contains RGB-like data (as opposed to YUV/grayscale)
+#if LIBAVUTIL_VERSION_INT < AV_VERSION_INT(52, 2, 1)         ///< git cbe5a60c9d495df0fb4775b064f06719b70b9952
+#   if LIBAVUTIL_VERSION_INT < AV_VERSION_INT(51, 22, 1)     ///< git 38d553322891c8e47182f05199d19888422167dc
+#       if LIBAVUTIL_VERSION_INT < AV_VERSION_INT(51, 19, 0) ///< git 6b0768e2021b90215a2ab55ed427bce91d148148
+#           define PIX_FMT_PLANAR   16                       ///< At least one pixel component is not in the first data plane
+#           define PIX_FMT_RGB      32                       ///< The pixel format contains RGB-like data (as opposed to YUV/grayscale)
 #       endif
-#       define PIX_FMT_PSEUDOPAL 64    // why not defined in FFmpeg 0.9 lavu51.32.0 but git log says 51.22.1 defined it?
+#       define PIX_FMT_PSEUDOPAL 64                          // why not defined in FFmpeg 0.9 lavu51.32.0 but git log says 51.22.1 defined it?
 #   endif
-#   define PIX_FMT_ALPHA   128         ///< The pixel format has an alpha channel
+#   define PIX_FMT_ALPHA   128                               ///< The pixel format has an alpha channel
 #endif
 
 #ifndef PIX_FMT_PLANAR
