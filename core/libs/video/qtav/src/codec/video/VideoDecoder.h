@@ -125,6 +125,7 @@ protected:
 private:
 
     VideoDecoder();
+    VideoDecoder(QObject*);
 };
 
 extern QTAV_EXPORT VideoDecoderId VideoDecoderId_FFmpeg;

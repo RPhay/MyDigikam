@@ -114,6 +114,7 @@ private:
 
     Q_DISABLE_COPY(AVDecoder)
     AVDecoder();                        // base class, not direct create. only final class has is enough
+    AVDecoder(QObject*);
 };
 
 } // namespace QtAV

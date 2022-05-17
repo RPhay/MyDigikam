@@ -118,6 +118,7 @@ private:
 
     Q_DISABLE_COPY(AVEncoder)
     AVEncoder(); // base class, not direct create. only final class has is enough
+    AVEncoder(QObject*);
 };
 
 } // namespace QtAV

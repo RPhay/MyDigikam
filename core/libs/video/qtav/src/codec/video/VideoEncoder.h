@@ -153,6 +153,7 @@ protected:
 private:
 
     VideoEncoder();
+    VideoEncoder(QObject*);
 };
 
 } // namespace QtAV
