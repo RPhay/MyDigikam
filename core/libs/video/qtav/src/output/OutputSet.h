@@ -51,7 +51,7 @@ class OutputSet : public QObject
 
 public:
 
-    explicit OutputSet(AVPlayerCore *player);
+    explicit OutputSet(AVPlayerCore* const player);
     virtual ~OutputSet();
 
     // required when accessing renderers
@@ -73,7 +73,7 @@ public:
     void clearOutputs();
     void addOutput(AVOutput* output);
 
-    void notifyPauseChange(AVOutput *output);
+    void notifyPauseChange(AVOutput* output);
     bool canPauseThread() const;
 
     // in AVThread
@@ -91,12 +91,16 @@ public Q_SLOTS:
 
     // connect to renderer->aboutToClose(). test whether delete on close
 
-    void removeOutput(AVOutput *output);
+    void removeOutput(AVOutput* output);
+
+private:
+
+    OutputSet(QObject*);
 
 private:
 
     volatile bool    mCanPauseThread;
-    AVPlayerCore*        mpPlayer;
+    AVPlayerCore*    mpPlayer;
     int              mPauseCount;   // pause AVThread if equals to mOutputs.size()
     QList<AVOutput*> mOutputs;
     QMutex           mMutex;

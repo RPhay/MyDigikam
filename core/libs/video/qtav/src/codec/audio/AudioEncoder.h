@@ -124,6 +124,7 @@ protected:
 private:
 
     AudioEncoder();
+    AudioEncoder(QObject*);
 };
 
 } // namespace QtAV

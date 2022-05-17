@@ -31,11 +31,11 @@
 namespace QtAV
 {
 
-OutputSet::OutputSet(AVPlayerCore *player)
-    : QObject(player)
-    , mCanPauseThread(false)
-    , mpPlayer(player)
-    , mPauseCount(0)
+OutputSet::OutputSet(AVPlayerCore* const player)
+    : QObject(player),
+      mCanPauseThread(false),
+      mpPlayer(player),
+      mPauseCount(0)
 {
 }
 
@@ -58,24 +58,24 @@ void OutputSet::unlock()
     mMutex.unlock();
 }
 
-QList<AVOutput *> OutputSet::outputs()
+QList<AVOutput*> OutputSet::outputs()
 {
     return mOutputs;
 }
 
-void OutputSet::sendVideoFrame(const VideoFrame &frame)
+void OutputSet::sendVideoFrame(const VideoFrame& frame)
 {
     if (mOutputs.isEmpty())
         return;
 
     VideoFrame f(frame);
 
-    Q_FOREACH (AVOutput *output, mOutputs)
+    Q_FOREACH (AVOutput* const output, mOutputs)
     {
         if (!output->isAvailable())
             continue;
 
-        VideoRenderer *vo = static_cast<VideoRenderer*>(output);
+        VideoRenderer* const vo = static_cast<VideoRenderer*>(output);
 
         // TODO: sort vo by supported formats when a new vo is added to reduce convertion
 
@@ -94,7 +94,7 @@ void OutputSet::clearOutputs()
     if (mOutputs.isEmpty())
         return;
 
-    Q_FOREACH (AVOutput *output, mOutputs)
+    Q_FOREACH (AVOutput* const output, mOutputs)
     {
         output->removeOutputSet(this);
     }
@@ -102,7 +102,7 @@ void OutputSet::clearOutputs()
     mOutputs.clear();
 }
 
-void OutputSet::addOutput(AVOutput *output)
+void OutputSet::addOutput(AVOutput* output)
 {
     QMutexLocker lock(&mMutex);
     Q_UNUSED(lock);
@@ -111,7 +111,7 @@ void OutputSet::addOutput(AVOutput *output)
     output->addOutputSet(this);
 }
 
-void OutputSet::removeOutput(AVOutput *output)
+void OutputSet::removeOutput(AVOutput* output)
 {
     QMutexLocker lock(&mMutex);
     Q_UNUSED(lock);
@@ -120,7 +120,7 @@ void OutputSet::removeOutput(AVOutput *output)
     output->removeOutputSet(this);
 }
 
-void OutputSet::notifyPauseChange(AVOutput *output)
+void OutputSet::notifyPauseChange(AVOutput* output)
 {
     if (output->isPaused())
     {
