@@ -61,14 +61,14 @@ public:
     {
         switch (quality)
         {
-            case VideoRenderer::QualityFastest:
+            case QualityFastest:
                 painter->setRenderHint(QPainter::Antialiasing, false);
                 painter->setRenderHint(QPainter::TextAntialiasing, false);
                 painter->setRenderHint(QPainter::SmoothPixmapTransform, false);
                 painter->setRenderHint(QPainter::Antialiasing, false);
                 break;
 
-            case VideoRenderer::QualityBest:
+            case QualityBest:
             default:
                 painter->setRenderHint(QPainter::Antialiasing, true);
                 painter->setRenderHint(QPainter::TextAntialiasing, true);
@@ -80,8 +80,10 @@ public:
 
     // drawPixmap() is faster for on screen painting
 
+public:
+
     QPixmap   pixmap;
-    QPainter* painter;
+    QPainter* painter = nullptr;
 };
 
 } // namespace QtAV

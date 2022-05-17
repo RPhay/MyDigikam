@@ -50,7 +50,7 @@ VideoPlayer::VideoPlayer(QWidget* const parent)
 {
     videoItem                   = new GraphicsItemRenderer;
     videoItem->resizeRenderer(640, 360);
-    videoItem->setOutAspectRatioMode(VideoRenderer::VideoAspectRatio);
+    videoItem->setOutAspectRatioMode(QtAV::VideoAspectRatio);
 
     QGraphicsScene* const scene = new QGraphicsScene(this);
     scene->addItem(videoItem);
@@ -152,7 +152,7 @@ void VideoPlayer::rotateVideo(int angle)
 
 void VideoPlayer::scaleVideo(int value)
 {
-    qreal v = (qreal)value/100.0;
+    qreal v = (qreal)value / 100.0;
     videoItem->setTransform(QTransform().scale(v, v));
 }
 

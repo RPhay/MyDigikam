@@ -218,13 +218,13 @@ void AVPlayerCore::setRenderer(VideoRenderer* r)
 
     if (vo && r)
     {
-        VideoRenderer::OutAspectRatioMode oar = vo->outAspectRatioMode();
+        OutAspectRatioMode oar = vo->outAspectRatioMode();
 
         //r->resizeRenderer(vo->rendererSize());
 
         r->setOutAspectRatioMode(oar);
 
-        if (oar == VideoRenderer::CustomAspectRation)
+        if (oar == CustomAspectRation)
         {
             r->setOutAspectRatio(vo->outAspectRatio());
         }

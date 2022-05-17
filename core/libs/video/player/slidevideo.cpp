@@ -118,7 +118,7 @@ SlideVideo::SlideVideo(QWidget* const parent)
 
     d->videoWidget    = new WidgetRenderer(this);
     d->videoWidget->setSizePolicy(QSizePolicy::Expanding, QSizePolicy::Expanding);
-    d->videoWidget->setOutAspectRatioMode(VideoRenderer::VideoAspectRatio);
+    d->videoWidget->setOutAspectRatioMode(QtAV::VideoAspectRatio);
     d->videoWidget->setMouseTracking(true);
 
     d->player         = new AVPlayerCore(this);

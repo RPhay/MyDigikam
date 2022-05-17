@@ -60,11 +60,9 @@ class QTAV_WIDGETS_EXPORT GLWidgetRenderer2 : public QGLWidget,
     // TODO: how to use enums in base class as property or Q_ENUM
 
     Q_PROPERTY(OutAspectRatioMode outAspectRatioMode READ outAspectRatioMode WRITE setOutAspectRatioMode NOTIFY outAspectRatioModeChanged)
-    Q_ENUM(OutAspectRatioMode)
     Q_PROPERTY(int orientation READ orientation WRITE setOrientation NOTIFY orientationChanged)
     Q_PROPERTY(QRect videoRect READ videoRect NOTIFY videoRectChanged)
     Q_PROPERTY(QSize videoFrameSize READ videoFrameSize NOTIFY videoFrameSizeChanged)
-    Q_ENUM(Quality)
 
 public:
 

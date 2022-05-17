@@ -1654,18 +1654,18 @@ void MainWindow::switchAspectRatio(QAction *action)
 
     if      (r == 0)
     {
-        mpPlayer->renderer()->setOutAspectRatioMode(VideoRenderer::VideoAspectRatio);
+        mpPlayer->renderer()->setOutAspectRatioMode(QtAV::VideoAspectRatio);
     }
     else if (r == -1)
     {
-        mpPlayer->renderer()->setOutAspectRatioMode(VideoRenderer::RendererAspectRatio);
+        mpPlayer->renderer()->setOutAspectRatioMode(QtAV::RendererAspectRatio);
     }
     else
     {
         if (r == -2)
             r = QInputDialog::getDouble(0, i18nc("@option", "Aspect ratio"), QString(), 1.0);
 
-        mpPlayer->renderer()->setOutAspectRatioMode(VideoRenderer::CustomAspectRation);
+        mpPlayer->renderer()->setOutAspectRatioMode(QtAV::CustomAspectRation);
         mpPlayer->renderer()->setOutAspectRatio(r);
     }
 

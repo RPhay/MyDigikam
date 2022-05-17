@@ -197,7 +197,7 @@ void VideoRenderer::onSetOutAspectRatioMode(OutAspectRatioMode mode)
     Q_UNUSED(mode);
 }
 
-VideoRenderer::OutAspectRatioMode VideoRenderer::outAspectRatioMode() const
+OutAspectRatioMode VideoRenderer::outAspectRatioMode() const
 {
     return d_func().out_aspect_ratio_mode;
 }
@@ -283,7 +283,7 @@ bool VideoRenderer::onSetQuality(Quality q)
     return true;
 }
 
-VideoRenderer::Quality VideoRenderer::quality() const
+Quality VideoRenderer::quality() const
 {
     return d_func().quality;
 }

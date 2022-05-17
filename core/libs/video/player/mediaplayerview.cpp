@@ -268,7 +268,7 @@ MediaPlayerView::MediaPlayerView(QWidget* const parent)
     hbox->setStretchFactor(d->slider, 10);
     hbox->setSpacing(4);
 
-    d->videoWidget->setOutAspectRatioMode(VideoRenderer::VideoAspectRatio);
+    d->videoWidget->setOutAspectRatioMode(QtAV::VideoAspectRatio);
     d->videoWidget->setMouseTracking(true);
     d->player->setRenderer(d->videoWidget);
 

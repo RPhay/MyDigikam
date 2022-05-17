@@ -41,7 +41,7 @@
 #include "QtAVWidgets.h"
 #include "SimpleFilter.h"
 
-int main(int argc, char *argv[])
+int main(int argc, char* argv[])
 {
     QApplication a(argc, argv);
 
@@ -63,7 +63,7 @@ int main(int argc, char *argv[])
 
     if (idx > 0)
     {
-        vo = a.arguments().at(idx+1);
+        vo = a.arguments().at(idx + 1);
     }
     else
     {
@@ -73,7 +73,7 @@ int main(int argc, char *argv[])
 
         if (i > 0)
         {
-            vo = exe.mid(i+1, exe.indexOf(QLatin1Char('.')) - i - 1);
+            vo = exe.mid(i + 1, exe.indexOf(QLatin1Char('.')) - i - 1);
         }
     }
 
@@ -132,11 +132,10 @@ int main(int argc, char *argv[])
 
     renderer->widget()->setAttribute(Qt::WA_DeleteOnClose);
     renderer->widget()->setWindowTitle(title);
-
-    renderer->setOutAspectRatioMode(VideoRenderer::VideoAspectRatio);
-
-    renderer->widget()->resize(renderer->widget()->width(), renderer->widget()->width()*9/16);
+    renderer->setOutAspectRatioMode(QtAV::VideoAspectRatio);
+    renderer->widget()->resize(renderer->widget()->width(), renderer->widget()->width() * 9 / 16);
     renderer->widget()->show();
+
     AVPlayerCore player;
     player.addVideoRenderer(renderer);
 

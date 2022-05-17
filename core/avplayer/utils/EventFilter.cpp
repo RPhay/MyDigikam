@@ -61,7 +61,7 @@ namespace AVPlayer
 
 EventFilter::EventFilter(QtAV::AVPlayerCore* const player)
     : QObject(player),
-      menu(nullptr)
+      menu   (nullptr)
 {
 }
 
@@ -391,8 +391,8 @@ bool EventFilter::eventFilter(QObject* watched, QEvent* event)
                 case Qt::Key_A:
                 {
                     VideoRenderer* const renderer       = player->renderer();
-                    VideoRenderer::OutAspectRatioMode r = renderer->outAspectRatioMode();
-                    renderer->setOutAspectRatioMode(VideoRenderer::OutAspectRatioMode(((int)r+1)%2));
+                    QtAV::OutAspectRatioMode r          = renderer->outAspectRatioMode();
+                    renderer->setOutAspectRatioMode(QtAV::OutAspectRatioMode(((int)r + 1) % 2));
 
                     break;
                 }

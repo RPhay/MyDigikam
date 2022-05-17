@@ -66,9 +66,9 @@ public:
         src_width(0),
         src_height(0),
         aspect_ratio_changed(true), // to set the initial parameters
-        out_aspect_ratio_mode(VideoRenderer::VideoAspectRatio),
+        out_aspect_ratio_mode(VideoAspectRatio),
         out_aspect_ratio(0),
-        quality(VideoRenderer::QualityBest),
+        quality(QualityBest),
         preferred_format(VideoFormat::Format_RGB32),
         force_preferred(false),
         brightness(0),
@@ -93,7 +93,7 @@ public:
         qreal rendererAspectRatio = qreal(renderer_width) / qreal(renderer_height);
         const QRect out_rect0(out_rect);
 
-        if (out_aspect_ratio_mode == VideoRenderer::RendererAspectRatio)
+        if (out_aspect_ratio_mode == RendererAspectRatio)
         {
             out_aspect_ratio = rendererAspectRatio;
             out_rect         = QRect(0, 0, renderer_width, renderer_height);
@@ -169,9 +169,9 @@ public:
     // for both source, out aspect ratio. because source change may result in out change if mode is VideoAspectRatio
 
     bool                                aspect_ratio_changed;
-    VideoRenderer::OutAspectRatioMode   out_aspect_ratio_mode;
+    OutAspectRatioMode                  out_aspect_ratio_mode;
     qreal                               out_aspect_ratio;
-    VideoRenderer::Quality              quality;
+    Quality                             quality;
 
     // out_rect: the displayed video frame out_rect in the renderer
 

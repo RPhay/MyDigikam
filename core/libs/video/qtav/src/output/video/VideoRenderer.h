@@ -61,6 +61,30 @@ class OpenGLVideo;
 class VideoFormat;
 class VideoRendererPrivate;
 
+Q_NAMESPACE
+
+enum OutAspectRatioMode
+{
+    RendererAspectRatio, ///< Use renderer's aspect ratio, i.e. stretch to fit the renderer rect
+    VideoAspectRatio,    ///< Use video's aspect ratio and align center in renderer.
+    CustomAspectRation   ///< Use the ratio set by setOutAspectRatio(qreal). Mode will be set to this if that function is called
+/*
+    AspectRatio4_3,
+    AspectRatio16_9
+*/
+};
+Q_ENUM_NS(OutAspectRatioMode)
+
+enum Quality
+{
+     // TODO: deprecated. simpily use int 0~100
+
+     QualityDefault,      ///< good
+     QualityBest,
+     QualityFastest
+};
+Q_ENUM_NS(Quality)
+
 class QTAV_EXPORT VideoRenderer : public AVOutput
 {
     DPTR_DECLARE_PRIVATE(VideoRenderer)
@@ -70,26 +94,6 @@ public:
     // TODO: original video size mode
 
     // fillmode: keepsize
-
-    enum OutAspectRatioMode
-    {
-        RendererAspectRatio, ///< Use renderer's aspect ratio, i.e. stretch to fit the renderer rect
-        VideoAspectRatio,    ///< Use video's aspect ratio and align center in renderer.
-        CustomAspectRation   ///< Use the ratio set by setOutAspectRatio(qreal). Mode will be set to this if that function is called
-/*
-        AspectRatio4_3,
-        AspectRatio16_9
-*/
-    };
-
-    enum Quality
-    {
-         // TODO: deprecated. simpily use int 0~100
-
-        QualityDefault,      ///< good
-        QualityBest,
-        QualityFastest
-    };
 
     template<class C>
     static bool Register(VideoRendererId id, const char* name)
