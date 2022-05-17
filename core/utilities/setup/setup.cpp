@@ -149,73 +149,62 @@ Setup::Setup(QWidget* const parent)
 
     d->databasePage     = new SetupDatabase();
     d->page_database    = addPage(d->databasePage, i18nc("@title: settings section", "Database"));
-    d->page_database->setHeader(i18nc("@title", "<qt>Database Settings<br/><i>Customize database settings</i></qt>"));
+    d->page_database->setHeader(i18nc("@title", "Database Settings\nCustomize database settings"));
     d->page_database->setIcon(QIcon::fromTheme(QLatin1String("network-server-database")));
 
     d->collectionsPage  = new SetupCollections();
     d->page_collections = addPage(d->collectionsPage, i18nc("@title: settings section", "Collections"));
-    d->page_collections->setHeader(i18nc("@title", "<qt>Collections Settings<br/>"
-                                         "<i>Set root albums locations</i></qt>"));
+    d->page_collections->setHeader(i18nc("@title", "Collections Settings\nSet root albums locations"));
     d->page_collections->setIcon(QIcon::fromTheme(QLatin1String("folder-pictures")));
 
     d->albumViewPage  = new SetupAlbumView();
     d->page_albumView = addPage(d->albumViewPage, i18nc("@title: settings section", "Views"));
-    d->page_albumView->setHeader(i18nc("@title", "<qt>Application Views Settings<br/>"
-                                       "<i>Customize the look of the views</i></qt>"));
+    d->page_albumView->setHeader(i18nc("@title", "Application Views Settings\nCustomize the look of the views"));
     d->page_albumView->setIcon(QIcon::fromTheme(QLatin1String("view-list-icons")));
 
     d->tooltipPage  = new SetupToolTip();
     d->page_tooltip = addPage(d->tooltipPage, i18nc("@title: settings section", "Tool-Tip"));
-    d->page_tooltip->setHeader(i18nc("@title", "<qt>Items Tool-Tip Settings<br/>"
-                                     "<i>Customize information in item tool-tips</i></qt>"));
+    d->page_tooltip->setHeader(i18nc("@title", "Items Tool-Tip Settings\nCustomize information in item tool-tips"));
     d->page_tooltip->setIcon(QIcon::fromTheme(QLatin1String("dialog-information")));
 
     d->videoPage  = new SetupVideo();
     d->page_video = addPage(d->videoPage, i18nc("@title: settings section", "Video"));
-    d->page_video->setHeader(i18nc("@title", "<qt>Video Preview Settings<br/>"
-                                   "<i>Customize settings to play video media</i></qt>"));
+    d->page_video->setHeader(i18nc("@title", "Video Preview Settings\nCustomize settings to play video media"));
     d->page_video->setIcon(QIcon::fromTheme(QLatin1String("video-x-generic")));
 
     d->metadataPage  = new SetupMetadata();
     d->page_metadata = addPage(d->metadataPage, i18nc("@title: settings section", "Metadata"));
-    d->page_metadata->setHeader(i18nc("@title", "<qt>Embedded Image Information Management<br/>"
-                                      "<i>Setup relations between images and metadata</i></qt>"));
+    d->page_metadata->setHeader(i18nc("@title", "Embedded Image Information Management\nSetup relations between images and metadata"));
     d->page_metadata->setIcon(QIcon::fromTheme(QLatin1String("format-text-code")));
 
     d->templatePage  = new SetupTemplate();
     d->page_template = addPage(d->templatePage, i18nc("@title: settings section", "Templates"));
-    d->page_template->setHeader(i18nc("@title", "<qt>Metadata templates<br/>"
-                                      "<i>Manage your collection of metadata templates</i></qt>"));
+    d->page_template->setHeader(i18nc("@title", "Metadata templates\nManage your collection of metadata templates"));
     d->page_template->setIcon(QIcon::fromTheme(QLatin1String("im-user")));
 
     d->editorPage  = new SetupEditor();
     d->page_editor = addPage(d->editorPage, i18nc("@title: settings section", "Image Editor"));
-    d->page_editor->setHeader(i18nc("@title", "<qt>Image Editor Settings<br/>"
-                                    "<i>Customize the image editor settings</i></qt>"));
+    d->page_editor->setHeader(i18nc("@title", "Image Editor Settings\nCustomize the image editor settings"));
     d->page_editor->setIcon(QIcon::fromTheme(QLatin1String("document-edit")));
 
     d->iccPage  = new SetupICC(buttonBox());
     d->page_icc = addPage(d->iccPage, i18nc("@title: settings section", "Color Management"));
-    d->page_icc->setHeader(i18nc("@title", "<qt>Settings for Color Management<br/>"
-                                 "<i>Customize the color management settings</i></qt>"));
+    d->page_icc->setHeader(i18nc("@title", "Settings for Color Management\nCustomize the color management settings"));
     d->page_icc->setIcon(QIcon::fromTheme(QLatin1String("preferences-desktop-display-color")));
 
     d->lighttablePage  = new SetupLightTable();
     d->page_lighttable = addPage(d->lighttablePage, i18nc("@title: settings section", "Light Table"));
-    d->page_lighttable->setHeader(i18nc("@title", "<qt>Light Table Settings<br/>"
-                                        "<i>Customize tool used to compare images</i></qt>"));
+    d->page_lighttable->setHeader(i18nc("@title", "Light Table Settings\nCustomize tool used to compare images"));
     d->page_lighttable->setIcon(QIcon::fromTheme(QLatin1String("lighttable")));
 
     d->imageQualitySorterPage = new SetupImageQualitySorter();
     d->page_imagequalitysorter = addPage(d->imageQualitySorterPage, i18nc("@title: settings section", "Image Quality Sorter"));
-    d->page_imagequalitysorter->setHeader(i18nc("@title", "<qt>Image Quality Sorter Settings<br/>"
-                                                "<i>Customize settings to perform image triaging by quality</i></qt>"));
+    d->page_imagequalitysorter->setHeader(i18nc("@title", "Image Quality Sorter Settings\nCustomize settings to perform image triaging by quality"));
     d->page_imagequalitysorter->setIcon(QIcon::fromTheme(QLatin1String("flag-green")));
 
     d->cameraPage  = new SetupCamera();
     d->page_camera = addPage(d->cameraPage, i18nc("@title: settings section", "Cameras"));
-    d->page_camera->setHeader(i18nc("@title", "<qt>Camera Settings<br/>"
-                                    "<i>Manage your camera devices</i></qt>"));
+    d->page_camera->setHeader(i18nc("@title", "Camera Settings\nManage your camera devices"));
     d->page_camera->setIcon(QIcon::fromTheme(QLatin1String("camera-photo")));
 
     connect(d->cameraPage, SIGNAL(signalUseFileMetadataChanged(bool)),
@@ -223,14 +212,12 @@ Setup::Setup(QWidget* const parent)
 
     d->pluginsPage  = new SetupPlugins();
     d->page_plugins = addPage(d->pluginsPage, i18nc("@title: settings section", "Plugins"));
-    d->page_plugins->setHeader(i18nc("@title", "<qt>Plug-in Settings<br/>"
-                                     "<i>Set which plugins will be accessible from application</i></qt>"));
+    d->page_plugins->setHeader(i18nc("@title", "Plug-in Settings\nSet which plugins will be accessible from application"));
     d->page_plugins->setIcon(QIcon::fromTheme(QLatin1String("preferences-plugin")));
 
     d->miscPage  = new SetupMisc(this);
     d->page_misc = addPage(d->miscPage, i18nc("@title: settings section", "Miscellaneous"));
-    d->page_misc->setHeader(i18nc("@title", "<qt>Miscellaneous Settings<br/>"
-                                  "<i>Customize behavior of the other parts of digiKam</i></qt>"));
+    d->page_misc->setHeader(i18nc("@title", "Miscellaneous Settings\nCustomize behavior of the other parts of digiKam"));
     d->page_misc->setIcon(QIcon::fromTheme(QLatin1String("preferences-other")));
 
     for (int i = 0 ; i != SetupPageEnumLast ; ++i)
