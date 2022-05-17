@@ -57,12 +57,12 @@ public:
     OpenGLVideo               glv;
 };
 
-GLSLFilter::GLSLFilter(QObject *parent)
+GLSLFilter::GLSLFilter(QObject* const parent)
     : VideoFilter(*new GLSLFilterPrivate(), parent)
 {
 }
 
-GLSLFilter::GLSLFilter(GLSLFilterPrivate &d, QObject *parent)
+GLSLFilter::GLSLFilter(GLSLFilterPrivate& d, QObject* const parent)
     : VideoFilter(d, parent)
 {
 }
@@ -82,7 +82,7 @@ QSize GLSLFilter::outputSize() const
     return d_func().size;
 }
 
-void GLSLFilter::setOutputSize(const QSize &value)
+void GLSLFilter::setOutputSize(const QSize& value)
 {
     DPTR_D(GLSLFilter);
 
@@ -99,7 +99,7 @@ void GLSLFilter::setOutputSize(int width, int height)
     setOutputSize(QSize(width, height));
 }
 
-void GLSLFilter::process(Statistics *statistics, VideoFrame *frame)
+void GLSLFilter::process(Statistics* statistics, VideoFrame* frame)
 {
     Q_UNUSED(statistics);
 
@@ -142,8 +142,8 @@ void GLSLFilter::process(Statistics *statistics, VideoFrame *frame)
 
     if (!d.fbo)
     {
-        d.fbo               = new QOpenGLFramebufferObject(outputSize().isEmpty() ? frame->size() : outputSize(), GL_TEXTURE_2D); //TODO: prefer 16bit rgb
-        QOpenGLContext* ctx = const_cast<QOpenGLContext*>(QOpenGLContext::currentContext()); // qt4 returns const
+        d.fbo                     = new QOpenGLFramebufferObject(outputSize().isEmpty() ? frame->size() : outputSize(), GL_TEXTURE_2D); //TODO: prefer 16bit rgb
+        QOpenGLContext* const ctx = const_cast<QOpenGLContext*>(QOpenGLContext::currentContext()); // qt4 returns const
         d.glv.setOpenGLContext(ctx);
         d.glv.setProjectionMatrixToRect(QRectF(0, 0, d.fbo->width(), d.fbo->height()));
 
@@ -185,11 +185,15 @@ void GLSLFilter::process(Statistics *statistics, VideoFrame *frame)
 
             return t;
         }
+
+    private:
+
+        Q_DISABLE_COPY(GLTextureInterop);
     };
 
-    GLTextureInterop* interop = new GLTextureInterop(d.fbo->texture());
+    GLTextureInterop* const interop = new GLTextureInterop(d.fbo->texture());
     f.setMetaData(QStringLiteral("surface_interop"), QVariant::fromValue(VideoSurfaceInteropPtr((interop))));
-    *frame                    = f;
+    *frame                          = f;
 }
 
 } // namespace QtAV

@@ -171,9 +171,9 @@ public:
     void unmap(void *handle)                                                     override;
 
 private:
-
-    // CUdeviceptr                  m_surface; // invalid in a different context
-
+/*
+    CUdeviceptr                   m_surface; // invalid in a different context
+*/
     int                           m_index;
     CUVIDPROCPARAMS               m_param;
 
@@ -181,6 +181,10 @@ private:
 
     QWeakPointer<InteropResource> m_resource;
     int                           w, h, H;
+
+private:
+
+    Q_DISABLE_COPY(SurfaceInteropCUDA);
 };
 
 #ifndef QT_NO_OPENGL

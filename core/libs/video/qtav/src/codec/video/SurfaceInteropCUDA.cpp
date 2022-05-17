@@ -162,7 +162,7 @@ bool HostInteropResource::map(int picIndex, const CUVIDPROCPARAMS& param, GLuint
 {
     Q_UNUSED(w);
 
-    if (host_mem.index != picIndex || !host_mem.data)
+    if ((host_mem.index != picIndex) || !host_mem.data)
     {
         AutoCtxLock locker(reinterpret_cast<cuda_api*>(this), lock);
         Q_UNUSED(locker);
@@ -181,7 +181,7 @@ bool HostInteropResource::map(int picIndex, const CUVIDPROCPARAMS& param, GLuint
 
         // the same thread (context) as cuMemAllocHost, so no ccontext switch is needed
 
-        CUDA_ENSURE(cuMemcpyDtoH(host_mem.data, devptr, pitch*H*3/2), false);
+        CUDA_ENSURE(cuMemcpyDtoH(host_mem.data, devptr, pitch * H * 3 / 2), false);
         host_mem.index = picIndex;
     }
 
@@ -200,7 +200,7 @@ bool HostInteropResource::map(int picIndex, const CUVIDPROCPARAMS& param, GLuint
 
     DYGL(glTexSubImage2D(GL_TEXTURE_2D, 0, 0, 0, host_mem.pitch>>chroma,
                          h >> chroma, format[plane], dtype[plane],
-                         host_mem.data + chroma*host_mem.pitch*host_mem.height));
+                         host_mem.data + chroma * host_mem.pitch * host_mem.height));
 
     //DYGL(glTexImage2D(GL_TEXTURE_2D, 0, iformat[plane], host_mem.pitch>>chroma, h>>chroma, 0, format[plane], dtype[plane], host_mem.data + chroma*host_mem.pitch*host_mem.height));
 
@@ -359,16 +359,16 @@ public:
 };
 
 EGLInteropResource::EGLInteropResource()
-    : InteropResource()
-    , egl(new EGL())
-    , dll9(nullptr)
-    , d3d9(nullptr)
-    , device9(nullptr)
-    , texture9(nullptr)
-    , surface9(nullptr)
-    , texture9_nv12(nullptr)
-    , surface9_nv12(nullptr)
-    , query9(nullptr)
+    : InteropResource(),
+      egl(new EGL()),
+      dll9(nullptr),
+      d3d9(nullptr),
+      device9(nullptr),
+      texture9(nullptr),
+      surface9(nullptr),
+      texture9_nv12(nullptr),
+      surface9_nv12(nullptr),
+      query9(nullptr)
 {
     ctx       = nullptr; // need a context created with d3d (TODO: check it?)
     share_ctx = false;
@@ -451,7 +451,7 @@ void EGLInteropResource::releaseEGL()
 
 bool EGLInteropResource::ensureResource(int w, int h, int W, int H, GLuint tex)
 {
-    TexRes &r = res[0]; // 1 NV12 texture
+    TexRes& r = res[0]; // 1 NV12 texture
 
     if (ensureD3D9CUDA(w, h, W, H) && ensureD3D9EGL(w, h))
     {
@@ -479,7 +479,7 @@ bool EGLInteropResource::ensureResource(int w, int h, int W, int H, GLuint tex)
 
 bool EGLInteropResource::ensureD3D9CUDA(int w, int h, int W, int H)
 {
-    TexRes &r = res[0];     // 1 NV12 texture
+    TexRes& r = res[0];     // 1 NV12 texture
 
     if ((r.w == w) && (r.h == h) && (r.W == W) && (r.H == H) && r.cuRes)
         return true;
@@ -529,7 +529,7 @@ bool EGLInteropResource::ensureD3D9CUDA(int w, int h, int W, int H)
         DX_ENSURE(device9->CreateTexture(W
                                          //, H
 
-                                         , H*3/2
+                                         , H * 3 / 2
                                          , 1
                                          , D3DUSAGE_DYNAMIC // D3DUSAGE_DYNAMIC is lockable // 0 is from NV example. cudaD3D9.h says The primary rendertarget may not be registered with CUDA. So can not be D3DUSAGE_RENDERTARGET?
 
@@ -591,7 +591,7 @@ bool EGLInteropResource::ensureD3D9EGL(int w, int h)
 
     // check extensions
 
-    QList<QByteArray> extensions = QByteArray(eglQueryString(egl->dpy, EGL_EXTENSIONS)).split(' ');
+    QList<QByteArray> extensions                         = QByteArray(eglQueryString(egl->dpy, EGL_EXTENSIONS)).split(' ');
 
     // ANGLE_d3d_share_handle_client_buffer will be used if possible
 
@@ -752,7 +752,7 @@ bool EGLInteropResource::map(int picIndex, const CUVIDPROCPARAMS &param, GLuint 
     D3DLOCKED_RECT rect_src, rect_dst;
     DX_ENSURE(texture9_nv12->LockRect(0, &rect_src, nullptr, D3DLOCK_READONLY), false);
     DX_ENSURE(surface9_nv12->LockRect(&rect_dst, nullptr, D3DLOCK_DISCARD), false);
-    memcpy(rect_dst.pBits, rect_src.pBits, res[plane].W*H*3 / 2); // exactly w and h
+    memcpy(rect_dst.pBits, rect_src.pBits, res[plane].W * H * 3 / 2); // exactly w and h
     DX_ENSURE(surface9_nv12->UnlockRect(), false);
     DX_ENSURE(texture9_nv12->UnlockRect(0), false);
 
@@ -761,7 +761,7 @@ bool EGLInteropResource::map(int picIndex, const CUVIDPROCPARAMS &param, GLuint 
     //IDirect3DSurface9 *raw_surface = nullptr;
     //DX_ENSURE(texture9_nv12->GetSurfaceLevel(0, &raw_surface), false);
 
-    const RECT src = { 0, 0, (~0-1)&w, (~0-1)&(h*3 / 2) };
+    const RECT src = { 0, 0, (~0-1)&w, (~0-1)&(h * 3 / 2) };
     DX_ENSURE(device9->StretchRect(raw_surface, &src, surface9_nv12, nullptr, D3DTEXF_NONE), false);
 
 #endif
@@ -949,7 +949,7 @@ bool GLInteropResource::ensureResource(int w, int h, int H, GLuint tex, int plan
 {
     Q_ASSERT(plane < 2 && "plane number must be 0 or 1 for NV12");
 
-    TexRes &r = res[plane];
+    TexRes& r = res[plane];
 
     if ((r.texture == tex) && (r.w == w) && (r.h == h) && (r.H == H) && r.cuRes)
         return true;

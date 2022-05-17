@@ -52,11 +52,11 @@ class QTAV_EXPORT GLSLFilter : public VideoFilter
 
 public:
 
-    explicit GLSLFilter(QObject* parent = nullptr);
+    explicit GLSLFilter(QObject* const parent = nullptr);
 
     bool isSupported(VideoFilterContext::Type ct)   const override
     {
-        return ct == VideoFilterContext::OpenGL;
+        return (ct == VideoFilterContext::OpenGL);
     }
 
     /*!
@@ -81,7 +81,7 @@ Q_SIGNALS:
 
 protected:
 
-    explicit GLSLFilter(GLSLFilterPrivate& d, QObject* parent = nullptr);
+    explicit GLSLFilter(GLSLFilterPrivate& d, QObject* const parent = nullptr);
 
     /*!
      * \brief process

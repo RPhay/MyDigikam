@@ -48,7 +48,7 @@ namespace vaapi
 bool checkEGL_DMA();
 bool checkEGL_Pixmap();
 
-class InteropResource
+class InteropResource                  // clazy:exclude=copyable-polymorphic
 {
 public:
 
@@ -67,9 +67,9 @@ public:
      * \param plane useless now
      * \return true if success
      */
-    virtual bool map(const surface_ptr &surface, GLuint tex, int w, int h, int plane) = 0;
+    virtual bool map(const surface_ptr& surface, GLuint tex, int w, int h, int plane) = 0;
 
-    virtual bool unmap(const surface_ptr &surface, GLuint tex)
+    virtual bool unmap(const surface_ptr& surface, GLuint tex)
     {
         Q_UNUSED(surface);
         Q_UNUSED(tex);
@@ -95,15 +95,16 @@ public:
 
     void setSurface(const surface_ptr& surface, int w, int h);      // use surface->width/height if w/h is 0
     void* map(SurfaceType type, const VideoFormat& fmt, void* handle, int plane) override;
-    void unmap(void *handle) override;
+    void unmap(void* handle) override;
 
 protected:
 
-    void* mapToHost(const VideoFormat &format, void *handle, int plane);
+    void* mapToHost(const VideoFormat& format, void* handle, int plane);
 
 private:
 
-    int                frame_width, frame_height;
+    int                frame_width  = 0;
+    int                frame_height = 0;
 
     // NOTE: must ensure va-x11/va-glx is unloaded after all va calls(don't know why, but it's true), for example vaTerminate(), to avoid crash
     // so declare InteropResourcePtr first then surface_ptr. InteropResource (va-xxx.so) will be destroyed later than surface_t (vaTerminate())
@@ -111,6 +112,10 @@ private:
 
     InteropResourcePtr m_resource;
     surface_ptr        m_surface;
+
+private:
+
+    Q_DISABLE_COPY(SurfaceInteropVAAPI);
 };
 
 // load/resolve symbols only once in decoder and pass a VAAPI_XXX ptr or use pool
@@ -120,12 +125,15 @@ class GLXInteropResource final: public InteropResource,
 {
 public:
 
-    bool map(const surface_ptr &surface, GLuint tex, int w, int h, int) override;
+    bool map(const surface_ptr& surface, GLuint tex, int w, int h, int) override;
 
 private:
 
     surface_glx_ptr surfaceGLX(const display_ptr& dpy, GLuint tex);
-    QMap<GLuint,surface_glx_ptr> glx_surfaces; // render to different texture. surface_glx_ptr is created with texture
+
+private:
+
+    QMap<GLuint, surface_glx_ptr> glx_surfaces; // render to different texture. surface_glx_ptr is created with texture
 };
 
 class X11;
@@ -147,9 +155,10 @@ private:
 
 private:
 
-    Display* xdisplay;
-    int      width, height;
-    X11*     x11;
+    Display* xdisplay = nullptr;
+    int      width    = 0;
+    int      height   = 0;
+    X11*     x11      = nullptr;
 };
 
 #   if QTAV_HAVE(EGL_CAPI)
@@ -178,7 +187,11 @@ private:
     uintptr_t         vabuf_handle;
     VAImage           va_image;
     QMap<GLuint, int> mapped;
-    EGL*              egl;
+    EGL*              egl = nullptr;
+
+private:
+
+    Q_DISABLE_COPY(EGLInteropResource);
 };
 
 #   endif // QTAV_HAVE(EGL_CAPI)

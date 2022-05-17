@@ -72,7 +72,7 @@ bool checkEGL_DMA()
 
 #   ifndef QT_NO_OPENGL
 
-    static const char* eglexts[] = { "EGL_EXT_image_dma_buf_import", nullptr};
+    static const char* eglexts[] = { "EGL_EXT_image_dma_buf_import", nullptr };
 
     return OpenGLHelper::hasExtensionEGL(eglexts);
 
@@ -88,7 +88,7 @@ bool checkEGL_Pixmap()
 
 #   ifndef QT_NO_OPENGL
 
-    static const char* eglexts[] = { "EGL_KHR_image_pixmap", nullptr};
+    static const char* eglexts[] = { "EGL_KHR_image_pixmap", nullptr };
 
     return OpenGLHelper::hasExtensionEGL(eglexts);
 
@@ -97,14 +97,14 @@ bool checkEGL_Pixmap()
     return false;
 }
 
-void SurfaceInteropVAAPI::setSurface(const surface_ptr& surface,  int w, int h)
+void SurfaceInteropVAAPI::setSurface(const surface_ptr& surface, int w, int h)
 {
     m_surface    = surface;
     frame_width  = (w ? w : surface->width());
     frame_height = (h ? h : surface->height());
 }
 
-void* SurfaceInteropVAAPI::map(SurfaceType type, const VideoFormat &fmt, void *handle, int plane)
+void* SurfaceInteropVAAPI::map(SurfaceType type, const VideoFormat& fmt, void* handle, int plane)
 {
     if (!handle)
         return nullptr;
@@ -130,12 +130,12 @@ void* SurfaceInteropVAAPI::map(SurfaceType type, const VideoFormat &fmt, void *h
     return nullptr;
 }
 
-void SurfaceInteropVAAPI::unmap(void *handle)
+void SurfaceInteropVAAPI::unmap(void* handle)
 {
     m_resource->unmap(m_surface, *((GLuint*)handle));
 }
 
-void* SurfaceInteropVAAPI::mapToHost(const VideoFormat &format, void *handle, int plane)
+void* SurfaceInteropVAAPI::mapToHost(const VideoFormat& format, void* handle, int plane)
 {
     Q_UNUSED(plane);
     VAImage image;
@@ -153,7 +153,7 @@ void* SurfaceInteropVAAPI::mapToHost(const VideoFormat &format, void *handle, in
     if (image.image_id == VA_INVALID_ID)
         return nullptr;
 
-    void* p_base;
+    void* p_base = nullptr;
     VA_ENSURE(vaGetImage(m_surface->vadisplay(), m_surface->get(), 0, 0, m_surface->width(), m_surface->height(), image.image_id), nullptr);
     VA_ENSURE(vaMapBuffer(m_surface->vadisplay(), image.buf, &p_base), nullptr); // TODO: destroy image before return
     VideoFormat::PixelFormat pixfmt = pixelFormatFromVA(image.format.fourcc);
@@ -194,7 +194,7 @@ void* SurfaceInteropVAAPI::mapToHost(const VideoFormat &format, void *handle, in
 
 #   ifndef QT_NO_OPENGL
 
-surface_glx_ptr GLXInteropResource::surfaceGLX(const display_ptr &dpy, GLuint tex)
+surface_glx_ptr GLXInteropResource::surfaceGLX(const display_ptr& dpy, GLuint tex)
 {
     surface_glx_ptr glx = glx_surfaces[tex];
 
@@ -240,7 +240,7 @@ class Q_DECL_HIDDEN X11
 {
 protected:
 
-    Display* display;
+    Display* display = nullptr;
 
 public:
 
@@ -261,7 +261,10 @@ public:
     virtual Display* ensureGL()           = 0;
     virtual bool bindPixmap(int w, int h) = 0;
     virtual void bindTexture()            = 0;
-    Pixmap pixmap;
+
+public:
+
+    Pixmap pixmap = 0;
 
 protected:
 
@@ -291,6 +294,10 @@ protected:
 
         return xwa.depth;
     }
+
+private:
+
+    Q_DISABLE_COPY(X11);
 };
 
 #   define RESOLVE_FUNC(func, resolver, st) do {\
@@ -329,7 +336,8 @@ class Q_DECL_HIDDEN X11_EGL final: public X11
 {
 public:
 
-    X11_EGL() : dpy(EGL_NO_DISPLAY)
+    X11_EGL()
+        : dpy(EGL_NO_DISPLAY)
     {
         for (unsigned i = 0 ; i < sizeof(image)/sizeof(image[0]) ; ++i)
             image[i] = EGL_NO_IMAGE_KHR;
@@ -389,16 +397,22 @@ public:
         glEGLImageTargetTexture2DOES(GL_TEXTURE_2D, image[0]);
     }
 
+public:
+
     EGLDisplay  dpy;
     EGLImageKHR image[4];
+
+private:
+
+    Q_DISABLE_COPY(X11_EGL);
 };
 
 #   endif // QTAV_HAVE(EGL_CAPI)
 
 #   if !defined(QT_OPENGL_ES_2)
 
-typedef void (*glXBindTexImageEXT_t)(Display *dpy, GLXDrawable draw, int buffer, int *a);
-typedef void (*glXReleaseTexImageEXT_t)(Display *dpy, GLXDrawable draw, int buffer);
+typedef void (*glXBindTexImageEXT_t)(Display* dpy, GLXDrawable draw, int buffer, int *a);
+typedef void (*glXReleaseTexImageEXT_t)(Display* dpy, GLXDrawable draw, int buffer);
 
 static glXReleaseTexImageEXT_t glXReleaseTexImageEXT = nullptr;
 static glXBindTexImageEXT_t glXBindTexImageEXT       = nullptr;
@@ -452,26 +466,27 @@ public:
 
         int attribs[] =
         {
-            GLX_RENDER_TYPE, GLX_RGBA_BIT,  // xbmc
-            GLX_X_RENDERABLE, True,         // xbmc
-            GLX_BIND_TO_TEXTURE_RGBA_EXT, True,
-            GLX_DRAWABLE_TYPE, GLX_PIXMAP_BIT,
+            GLX_RENDER_TYPE,                 GLX_RGBA_BIT,  // xbmc
+            GLX_X_RENDERABLE,                True,          // xbmc
+            GLX_BIND_TO_TEXTURE_RGBA_EXT,    True,
+            GLX_DRAWABLE_TYPE,               GLX_PIXMAP_BIT,
             GLX_BIND_TO_TEXTURE_TARGETS_EXT, GLX_TEXTURE_2D_BIT_EXT,
-            GLX_Y_INVERTED_EXT, True,
-            GLX_DOUBLEBUFFER, False,
-            GLX_RED_SIZE, 8,
-            GLX_GREEN_SIZE, 8,
-            GLX_BLUE_SIZE, 8,
-            GLX_ALPHA_SIZE, 8,              // 0 for 24 bpp(vdpau)? mpv is 0
+            GLX_Y_INVERTED_EXT,              True,
+            GLX_DOUBLEBUFFER,                False,
+            GLX_RED_SIZE,                    8,
+            GLX_GREEN_SIZE,                  8,
+            GLX_BLUE_SIZE,                   8,
+            GLX_ALPHA_SIZE,                  8,             // 0 for 24 bpp(vdpau)? mpv is 0
             None
         };
 
         int fbcount;
-        GLXFBConfig* fbcs = glXChooseFBConfig((::Display*)display, xscr, attribs, &fbcount);
+        GLXFBConfig* const fbcs = glXChooseFBConfig((::Display*)display, xscr, attribs, &fbcount);
 
         if (!fbcount)
         {
             qCWarning(DIGIKAM_QTAV_LOG_WARN).noquote() << QString::asprintf("No texture-from-pixmap support");
+
             return nullptr;
         }
 
@@ -493,7 +508,7 @@ public:
         const int attribs[] =
         {
             GLX_TEXTURE_TARGET_EXT, GLX_TEXTURE_2D_EXT,
-            GLX_TEXTURE_FORMAT_EXT, depth == 32 ? GLX_TEXTURE_FORMAT_RGBA_EXT : GLX_TEXTURE_FORMAT_RGB_EXT,
+            GLX_TEXTURE_FORMAT_EXT, (depth == 32) ? GLX_TEXTURE_FORMAT_RGBA_EXT : GLX_TEXTURE_FORMAT_RGB_EXT,
             GLX_MIPMAP_TEXTURE_EXT, False,
             None,
         };
@@ -508,19 +523,25 @@ public:
         glXBindTexImageEXT(display, glxpixmap, GLX_FRONT_EXT, nullptr);
     }
 
+public:
+
     GLXFBConfig fbc;
-    GLXPixmap glxpixmap;
+    GLXPixmap    glxpixmap;
+
+private:
+
+    Q_DISABLE_COPY(X11_GLX);
 };
 
 #   endif // !defined(QT_OPENGL_ES_2)
 
 X11InteropResource::X11InteropResource()
-    : InteropResource()
-    , VAAPI_X11()
-    , xdisplay(nullptr)
-    , width(0)
-    , height(0)
-    , x11(nullptr)
+    : InteropResource(),
+      VAAPI_X11(),
+      xdisplay(nullptr),
+      width(0),
+      height(0),
+      x11(nullptr)
 {
     qCDebug(DIGIKAM_QTAV_LOG).noquote() << QString::asprintf("X11InteropResource");
 }
@@ -532,7 +553,7 @@ X11InteropResource::~X11InteropResource()
 
 bool X11InteropResource::ensurePixmaps(int w, int h)
 {
-    if (width == w && height == h)
+    if ((width == w) && (height == h))
         return true;
 
     if (!x11)
@@ -563,7 +584,8 @@ bool X11InteropResource::ensurePixmaps(int w, int h)
 
     if (!x11)
     {
-        qCWarning(DIGIKAM_QTAV_LOG_WARN).noquote() << QString::asprintf("no EGL and GLX interop (TFP) support");
+        qCWarning(DIGIKAM_QTAV_LOG_WARN).noquote()
+            << QString::asprintf("no EGL and GLX interop (TFP) support");
 
         return false;
     }
@@ -584,7 +606,7 @@ bool X11InteropResource::ensurePixmaps(int w, int h)
 
 bool X11InteropResource::map(const surface_ptr& surface, GLuint tex, int w, int h, int)
 {
-    if (surface->width() <= 0 || surface->height() <= 0)
+    if ((surface->width() <= 0) || (surface->height() <= 0))
     {
         qCWarning(DIGIKAM_QTAV_LOG_WARN).noquote() << QString::asprintf("invalid surface size");
 
@@ -612,7 +634,7 @@ bool X11InteropResource::map(const surface_ptr& surface, GLuint tex, int w, int 
     return true;
 }
 
-bool X11InteropResource::unmap(const surface_ptr &surface, GLuint tex)
+bool X11InteropResource::unmap(const surface_ptr& surface, GLuint tex)
 {
     Q_UNUSED(surface);
     Q_UNUSED(tex);
@@ -639,7 +661,8 @@ class Q_DECL_HIDDEN EGL
 {
 public:
 
-    EGL() : dpy(EGL_NO_DISPLAY)
+    EGL()
+        : dpy(EGL_NO_DISPLAY)
     {
         for (unsigned i = 0 ; i < sizeof(image)/sizeof(image[0]) ; ++i)
             image[i] = EGL_NO_IMAGE_KHR;
@@ -673,7 +696,7 @@ public:
         RESOLVE_EGL(eglCreateImageKHR);
         RESOLVE_EGL(eglDestroyImageKHR);
 
-        return eglCreateImageKHR && eglDestroyImageKHR && glEGLImageTargetTexture2DOES;
+        return (eglCreateImageKHR && eglDestroyImageKHR && glEGLImageTargetTexture2DOES);
     }
 
     bool bindImage(int plane, const EGLint *attrib_list)
@@ -699,9 +722,9 @@ public:
 };
 
 EGLInteropResource::EGLInteropResource()
-    : InteropResource()
-    , vabuf_handle(0)
-    , egl(nullptr)
+    : InteropResource(),
+      vabuf_handle(0),
+      egl(nullptr)
 {
     va_image.buf = va_image.image_id = VA_INVALID_ID;
 }
@@ -711,7 +734,7 @@ EGLInteropResource::~EGLInteropResource()
     delete egl; // TODO: thread
 }
 
-bool EGLInteropResource::map(const surface_ptr &surface, GLuint tex, int w, int h, int plane)
+bool EGLInteropResource::map(const surface_ptr& surface, GLuint tex, int w, int h, int plane)
 {
     if (!ensure())
         return false;
@@ -752,12 +775,12 @@ bool EGLInteropResource::map(const surface_ptr &surface, GLuint tex, int w, int 
 
     const EGLint attribs[] =
     {
-        EGL_LINUX_DRM_FOURCC_EXT, drm_fmts[fmt.bytesPerPixel(plane) - 1],
-        EGL_WIDTH, fmt.width(w, plane),
-        EGL_HEIGHT, fmt.height(h, plane),
-        EGL_DMA_BUF_PLANE0_FD_EXT, (EGLint)vabuf_handle,
-        EGL_DMA_BUF_PLANE0_OFFSET_EXT, (EGLint)va_image.offsets[plane],
-        EGL_DMA_BUF_PLANE0_PITCH_EXT, (EGLint)va_image.pitches[plane],
+        EGL_LINUX_DRM_FOURCC_EXT,       drm_fmts[fmt.bytesPerPixel(plane) - 1],
+        EGL_WIDTH,                      fmt.width(w, plane),
+        EGL_HEIGHT,                     fmt.height(h, plane),
+        EGL_DMA_BUF_PLANE0_FD_EXT,      (EGLint)vabuf_handle,
+        EGL_DMA_BUF_PLANE0_OFFSET_EXT,  (EGLint)va_image.offsets[plane],
+        EGL_DMA_BUF_PLANE0_PITCH_EXT,   (EGLint)va_image.pitches[plane],
         EGL_NONE
     };
 
@@ -772,7 +795,7 @@ bool EGLInteropResource::map(const surface_ptr &surface, GLuint tex, int w, int 
     return true;
 }
 
-bool EGLInteropResource::unmap(const surface_ptr &surface, GLuint tex)
+bool EGLInteropResource::unmap(const surface_ptr& surface, GLuint tex)
 {
     if (!egl)
         return false;
@@ -854,6 +877,7 @@ bool EGLInteropResource::ensure()
         if (!OpenGLHelper::hasExtension(glexts))
         {
             qCWarning(DIGIKAM_QTAV_LOG_WARN).noquote() << QString::asprintf("missing extension: GL_OES_EGL_image");
+
             return false;
         }
 

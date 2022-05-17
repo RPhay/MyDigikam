@@ -37,7 +37,7 @@
 namespace QtAV
 {
 
-class Q_DECL_HIDDEN VideoShaderObjectPrivate : public VideoShaderPrivate
+class Q_DECL_HIDDEN VideoShaderObjectPrivate : public VideoShaderPrivate    // clazy:exclude=copyable-polymorphic
 {
 public:
 
@@ -64,7 +64,7 @@ VideoShaderObject::VideoShaderObject(VideoShaderObjectPrivate& d, QObject* const
 {
 }
 
-bool VideoShaderObject::event(QEvent *event)
+bool VideoShaderObject::event(QEvent* event)
 {
     DPTR_D(VideoShaderObject);
 
@@ -137,7 +137,7 @@ void VideoShaderObject::programReady()
             {
                 qCWarning(DIGIKAM_QTAV_LOG_WARN).noquote()
                      << QString::asprintf("VideoShaderObject property '%s' has no signal",
-                                          mp.name());
+                        mp.name());
 
                 continue;
             }
@@ -165,7 +165,7 @@ void VideoShaderObject::programReady()
 */
 }
 
-class Q_DECL_HIDDEN DynamicShaderObjectPrivate : public VideoShaderObjectPrivate
+class Q_DECL_HIDDEN DynamicShaderObjectPrivate : public VideoShaderObjectPrivate    // clazy:exclude=copyable-polymorphic
 {
 public:
 
