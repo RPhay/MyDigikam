@@ -21,8 +21,8 @@
  *
  * ============================================================ */
 
-#ifndef QTAV_WIDGETS_AVCONFIG_MNGR_H
-#define QTAV_WIDGETS_AVCONFIG_MNGR_H
+#ifndef QTAV_WIDGETS_AVPLAYER_CONFIG_MNGR_H
+#define QTAV_WIDGETS_AVPLAYER_CONFIG_MNGR_H
 
 // Qt includes
 
@@ -324,4 +324,4 @@ private:
 
 } // namespace QtAV
 
-#endif // QTAV_WIDGETS_AVCONFIG_MNGR_H
+#endif // QTAV_WIDGETS_AVPLAYER_CONFIG_MNGR_H
