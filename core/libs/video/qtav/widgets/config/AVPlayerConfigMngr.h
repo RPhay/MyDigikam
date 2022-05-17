@@ -85,7 +85,6 @@ class QTAV_WIDGETS_EXPORT AVPlayerConfigMngr : public QObject
     Q_PROPERTY(bool avformatOptionsEnabled READ avformatOptionsEnabled WRITE setAvformatOptionsEnabled NOTIFY avformatOptionsEnabledChanged)
     Q_PROPERTY(qreal timeout READ timeout WRITE setTimeout NOTIFY timeoutChanged)
     Q_PROPERTY(int bufferValue READ bufferValue WRITE setBufferValue NOTIFY bufferValueChanged)
-    Q_ENUMS(OpenGLType)
 
     Q_PROPERTY(bool userShaderEnabled READ userShaderEnabled WRITE setUserShaderEnabled NOTIFY userShaderEnabledChanged)
     Q_PROPERTY(bool intermediateFBO READ intermediateFBO WRITE setIntermediateFBO NOTIFY intermediateFBOChanged)
@@ -104,6 +103,7 @@ public:
         OpenGLES,
         Software
     };
+    Q_ENUM(OpenGLType)
 
 public:
 
@@ -230,7 +230,7 @@ public:
     AVPlayerConfigMngr& setOpenGLType(OpenGLType value);
 
     QString getANGLEPlatform()                          const;
-    AVPlayerConfigMngr& setANGLEPlatform(const QString &value);
+    AVPlayerConfigMngr& setANGLEPlatform(const QString& value);
 
     // ms >0. default 30000ms
     qreal timeout()                                     const;
