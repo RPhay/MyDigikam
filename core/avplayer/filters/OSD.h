@@ -39,7 +39,6 @@ using namespace QtAV;
 namespace AVPlayer
 {
 
-
 class OSD
 {
 public:
@@ -68,6 +67,10 @@ protected:
 
     ShowType mShowType;
     int      mSecsTotal;
+
+private:
+
+    Q_DISABLE_COPY(OSD);
 };
 
 } // namespace AVPlayer

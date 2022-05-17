@@ -51,12 +51,14 @@ void OSD::useNextShowType()
     if (mShowType == ShowNone)
     {
         mShowType = (ShowType)1;
+
         return;
     }
 
-    if (mShowType + 1 == ShowNone)
+    if ((mShowType + 1) == ShowNone)
     {
         mShowType = ShowNone;
+
         return;
     }
 
@@ -65,13 +67,13 @@ void OSD::useNextShowType()
 
 bool OSD::hasShowType(ShowType t) const
 {
-    return (t&mShowType) == t;
+    return ((t & mShowType) == t);
 }
 
-QString OSD::text(Statistics *statistics)
+QString OSD::text(Statistics* statistics)
 {
     QString text;
-    Statistics::Common *av = &statistics->video;
+    Statistics::Common* av = &statistics->video;
 
     if (!av->available)
         av = &statistics->audio;
