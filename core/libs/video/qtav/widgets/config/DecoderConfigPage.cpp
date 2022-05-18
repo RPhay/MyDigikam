@@ -136,7 +136,19 @@ public:
     void setChecked(bool c)                     { mpCheck->setChecked(c);       }
     bool isChecked()        const               { return mpCheck->isChecked();  }
     void setName(const QString& name)           { mpCheck->setText(name);       }
-    QString name()          const               { return mpCheck->text();       }
+
+    QString name()          const
+    {
+        QString text = mpCheck->text();
+
+        if (text.startsWith(QLatin1Char('&')))
+        {
+            text.remove(0, 1);
+        }
+
+        return text;
+    }
+
     void setDescription(const QString& desc)    { mpDesc->setText(desc);        }
     QString description()   const               { return mpDesc->text();        }
 
