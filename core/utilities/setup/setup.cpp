@@ -46,7 +46,6 @@
 #include "setupcollections.h"
 #include "setupeditor.h"
 #include "setupicc.h"
-#include "setupvideo.h"
 #include "setuplighttable.h"
 #include "setupmetadata.h"
 #include "setupmisc.h"
@@ -57,6 +56,10 @@
 #include "importsettings.h"
 #include "dxmlguiwindow.h"
 #include "onlineversiondlg.h"
+
+#ifdef HAVE_MEDIAPLAYER
+#   include "setupvideo.h"
+#endif
 
 namespace Digikam
 {
@@ -84,7 +87,9 @@ public:
         collectionsPage         (nullptr),
         albumViewPage           (nullptr),
         tooltipPage             (nullptr),
+#ifdef HAVE_MEDIAPLAYER
         videoPage               (nullptr),
+#endif
         metadataPage            (nullptr),
         templatePage            (nullptr),
         lighttablePage          (nullptr),
@@ -116,7 +121,9 @@ public:
     SetupCollections*        collectionsPage;
     SetupAlbumView*          albumViewPage;
     SetupToolTip*            tooltipPage;
+#ifdef HAVE_MEDIAPLAYER
     SetupVideo*              videoPage;
+#endif
     SetupMetadata*           metadataPage;
     SetupTemplate*           templatePage;
     SetupLightTable*         lighttablePage;
@@ -167,10 +174,12 @@ Setup::Setup(QWidget* const parent)
     d->page_tooltip->setHeader(i18nc("@title", "Items Tool-Tip Settings\nCustomize information in item tool-tips"));
     d->page_tooltip->setIcon(QIcon::fromTheme(QLatin1String("dialog-information")));
 
+#ifdef HAVE_MEDIAPLAYER
     d->videoPage  = new SetupVideo();
     d->page_video = addPage(d->videoPage, i18nc("@title: settings section", "Video"));
     d->page_video->setHeader(i18nc("@title", "Video Preview Settings\nCustomize settings to play video media"));
     d->page_video->setIcon(QIcon::fromTheme(QLatin1String("video-x-generic")));
+#endif
 
     d->metadataPage  = new SetupMetadata();
     d->page_metadata = addPage(d->metadataPage, i18nc("@title: settings section", "Metadata"));
@@ -455,7 +464,9 @@ void Setup::slotOkClicked()
     d->collectionsPage->applySettings();
     d->albumViewPage->applySettings();
     d->tooltipPage->applySettings();
+#ifdef HAVE_MEDIAPLAYER
     d->videoPage->applySettings();
+#endif
     d->metadataPage->applySettings();
     d->templatePage->applySettings();
     d->lighttablePage->applySettings();
@@ -480,7 +491,9 @@ void Setup::slotOkClicked()
 
 void Setup::slotCancelClicked()
 {
+#ifdef HAVE_MEDIAPLAYER
     d->videoPage->cancel();
+#endif
 }
 
 void Setup::showPage(Setup::Page page)
@@ -526,10 +539,12 @@ Setup::Page Setup::activePageIndex() const
         return ToolTipPage;
     }
 
+#ifdef HAVE_MEDIAPLAYER
     if (cur == d->page_video)
     {
         return VideoPage;
     }
+#endif
 
     if (cur == d->page_metadata)
     {
@@ -595,8 +610,10 @@ DConfigDlgWdgItem* Setup::Private::pageItem(Setup::Page page) const
         case Setup::ToolTipPage:
             return page_tooltip;
 
+#ifdef HAVE_MEDIAPLAYER
         case Setup::VideoPage:
             return page_video;
+#endif
 
         case Setup::MetadataPage:
             return page_metadata;
