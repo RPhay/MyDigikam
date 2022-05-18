@@ -78,7 +78,7 @@ class Q_DECL_HIDDEN GDIRenderer : public QWidget,
 
 public:
 
-    GDIRenderer(QWidget* parent = 0, Qt::WindowFlags f = Qt::WindowFlags(Qt::Widget)); // offscreen?
+    GDIRenderer(QWidget* const parent = nullptr, Qt::WindowFlags f = Qt::WindowFlags(Qt::Widget)); // offscreen?
 
     VideoRendererId id()                              const override;
     bool isSupported(VideoFormat::PixelFormat pixfmt) const override;
@@ -148,14 +148,14 @@ public:
     DPTR_DECLARE_PUBLIC(GDIRenderer)
 
     GDIRendererPrivate()
-      : VideoRendererPrivate()
-      , support_bitblt(true)
-      , gdiplus_token(0)
-      , device_context(0)
+      : VideoRendererPrivate(),
+        support_bitblt(true),
+        gdiplus_token(0),
+        device_context(0)
 
 #if USE_GRAPHICS
 
-      , graphics(0)
+        graphics(nullptr)
 
 #endif
 
@@ -223,9 +223,9 @@ public:
         bih.biYPelsPerMeter = 0;
 
         off_bitmap = CreateDIBSection(device_context,
-                                      , (BITMAPINFO*)&bih
-                                      , DIB_RGB_COLORS
-                                      , &p_pic_buffer, nullptr, 0);
+                                      (BITMAPINFO*)&bih,
+                                      DIB_RGB_COLORS,
+                                      &p_pic_buffer, nullptr, 0);
 #endif
 
 #if !USE_GRAPHICS
@@ -253,31 +253,39 @@ public:
 
         switch (quality)
         {
-            case VideoRenderer::QualityBest:
+            case QtAV::QualityBest:
+            {
                 graphics->SetInterpolationMode(InterpolationModeHighQualityBicubic);
                 break;
+            }
 
-            case VideoRenderer::QualityFastest:
+            case QtAV::QualityFastest:
+            {
                 graphics->SetInterpolationMode(InterpolationModeNearestNeighbor);
                 break;
+            }
 
             default:
+            {
                 graphics->SetInterpolationMode(InterpolationModeDefault);
                 break;
+            }
         }
 
 #endif
 
     }
 
-    bool support_bitblt;
+public:
+
+    bool      support_bitblt;
     ULONG_PTR gdiplus_token;
 
     /*
      * GetDC(winID()): will flick
      * QPainter.paintEngine()->getDC() in paintEvent: doc says it's for internal use
      */
-    HDC device_context;
+    HDC       device_context;
 
     /* Our offscreen bitmap and its framebuffer */
 
@@ -291,9 +299,10 @@ public:
     HBITMAP   off_bitmap;
 
 #endif
+
 };
 
-GDIRenderer::GDIRenderer(QWidget* parent, Qt::WindowFlags f)
+GDIRenderer::GDIRenderer(QWidget* const parent, Qt::WindowFlags f)
     : QWidget(parent, f),
       VideoRenderer(*new GDIRendererPrivate())
 {
@@ -308,13 +317,13 @@ GDIRenderer::GDIRenderer(QWidget* parent, Qt::WindowFlags f)
      * widget's background
      */
     setAttribute(Qt::WA_OpaquePaintEvent);
-
-    //setAttribute(Qt::WA_NoSystemBackground);
-
+/*
+    setAttribute(Qt::WA_NoSystemBackground);
+*/
     setAutoFillBackground(false);
-
-    //setDCFromPainter(false); //changeEvent will be called on show()
-
+/*
+    setDCFromPainter(false); //changeEvent will be called on show()
+*/
     setAttribute(Qt::WA_PaintOnScreen, true);
 }
 
@@ -352,9 +361,9 @@ void GDIRenderer::drawBackground()
     const QColor bc(backgroundColor());
 
     DPTR_D(GDIRenderer);
-
-    //HDC hdc = d.device_context;
-
+/*
+    HDC hdc = d.device_context;
+*/
     Graphics g(d.device_context);
     SolidBrush brush(Color(bc.alpha(), bc.red(), bc.green(), bc.blue())); // argb
 
@@ -375,8 +384,8 @@ void GDIRenderer::drawFrame()
 
     // steps to use BitBlt: http://bbs.csdn.net/topics/60183502                                 // krazy:exclude=insecurenet
 
-    Bitmap bitmap(d.video_frame.width(), d.video_frame.height(), d.video_frame.bytesPerLine(0)
-                  , PixelFormat32bppRGB, (BYTE*)d.video_frame.constBits(0));
+    Bitmap bitmap(d.video_frame.width(), d.video_frame.height(), d.video_frame.bytesPerLine(0),
+                  PixelFormat32bppRGB, (BYTE*)d.video_frame.constBits(0));
 
 #if USE_GRAPHICS
 
@@ -399,13 +408,13 @@ void GDIRenderer::drawFrame()
     // && image.size() != size()
     // assume that the image data is already scaled to out_size(NOT renderer size!)
 
-    StretchBlt(hdc
-               , d.out_rect.left(), d.out_rect.top()
-               , d.out_rect.width(), d.out_rect.height()
-               , d.off_dc
-               , roi.x(), roi.y()
-               , roi.width(), roi.height()
-               , SRCCOPY);
+    StretchBlt(hdc,
+               d.out_rect.left(), d.out_rect.top(),
+               d.out_rect.width(), d.out_rect.height(),
+               d.off_dc,
+               roi.x(), roi.y(),
+               roi.width(), roi.height(),
+               SRCCOPY);
 
     SelectObject(d.off_dc, hbmp_old);
     DeleteObject(d.off_bitmap);         // avoid mem leak

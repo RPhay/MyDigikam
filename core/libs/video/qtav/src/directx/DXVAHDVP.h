@@ -64,7 +64,7 @@ public:
 
     void setColorSpace(ColorSpace value);
     void setColorRange(ColorRange value);
-    bool process(IDirect3DSurface9 *surface);
+    bool process(IDirect3DSurface9* surface);
 
 private:
 
@@ -77,7 +77,8 @@ private:
     ComPtr<IDXVAHD_VideoProcessor>  m_vp;
     ComPtr<IDirect3DSurface9>       m_out;
 
-    UINT                            m_w, m_h;      // enumerator
+    UINT                            m_w;
+    UINT                            m_h;      // enumerator
     ColorSpace                      m_cs;
     ColorRange                      m_range;
     QRect                           m_srcRect;

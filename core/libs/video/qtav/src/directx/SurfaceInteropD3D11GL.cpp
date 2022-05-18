@@ -73,6 +73,8 @@ private:
 
     bool ensureResource(DXGI_FORMAT fmt, int w, int h, GLuint tex, int plane);
 
+private:
+
     HANDLE                            interop_dev;
     HANDLE                            interop_obj[2];
     DXGI_FORMAT                       tex_format;
@@ -87,9 +89,9 @@ InteropResource* CreateInteropGL()
 }
 
 GLInteropResource::GLInteropResource()
-    : interop_dev(nullptr)
-    , tex_format(DXGI_FORMAT_UNKNOWN)
-    , mapped(0)
+    : interop_dev(nullptr),
+      tex_format(DXGI_FORMAT_UNKNOWN),
+      mapped(0)
 {
     d3dtex.reserve(3);
     d3dtex.resize(2);
@@ -132,16 +134,16 @@ bool GLInteropResource::map(ComPtr<ID3D11Texture2D> surface, int index, GLuint t
     }
     else
     {
-        box.top = desc.Height; // maybe > h
-        box.bottom = box.top + h/2;
+        box.top    = desc.Height; // maybe > h
+        box.bottom = box.top + h / 2;
     }
 
     ComPtr<ID3D11DeviceContext> ctx;
     d3ddev->GetImmediateContext(&ctx);
-    ctx->CopySubresourceRegion(d3dtex[plane].Get(), 0, 0, 0, 0
-                               , surface.Get()
-                               , index
-                               , &box);
+    ctx->CopySubresourceRegion(d3dtex[plane].Get(), 0, 0, 0, 0,
+                               surface.Get(),
+                               index,
+                               &box);
     // lock dx resources
 
     WGL_ENSURE(gl().DXLockObjectsNV(interop_dev, 1, &interop_obj[plane]), false);
@@ -180,15 +182,15 @@ static const struct
     DXGI_FORMAT plane_fmt[2];
 } plane_formats[] =
 {
-    { DXGI_FORMAT_R8G8B8A8_UNORM, {DXGI_FORMAT_R8G8B8A8_UNORM, DXGI_FORMAT_UNKNOWN}},
-    { DXGI_FORMAT_NV12, {DXGI_FORMAT_R8_UNORM, DXGI_FORMAT_R8G8_UNORM}},
-    { DXGI_FORMAT_P010, {DXGI_FORMAT_R16_UNORM, DXGI_FORMAT_R16G16_UNORM}},
-    { DXGI_FORMAT_P016, {DXGI_FORMAT_R16_UNORM, DXGI_FORMAT_R16G16_UNORM}},
+    { DXGI_FORMAT_R8G8B8A8_UNORM, { DXGI_FORMAT_R8G8B8A8_UNORM, DXGI_FORMAT_UNKNOWN      } },
+    { DXGI_FORMAT_NV12,           { DXGI_FORMAT_R8_UNORM,       DXGI_FORMAT_R8G8_UNORM   } },
+    { DXGI_FORMAT_P010,           { DXGI_FORMAT_R16_UNORM,      DXGI_FORMAT_R16G16_UNORM } },
+    { DXGI_FORMAT_P016,           { DXGI_FORMAT_R16_UNORM,      DXGI_FORMAT_R16G16_UNORM } },
 };
 
 static DXGI_FORMAT GetPlaneFormat(DXGI_FORMAT fmt, int plane)
 {
-    for (size_t i = 0; i < sizeof(plane_formats)/sizeof(plane_formats[0]); ++i)
+    for (size_t i = 0 ; i < sizeof(plane_formats) / sizeof(plane_formats[0]) ; ++i)
     {
         if (plane_formats[i].fmt == fmt)
             return plane_formats[i].plane_fmt[plane];
@@ -204,7 +206,7 @@ bool GLInteropResource::ensureResource(DXGI_FORMAT fmt, int w, int h, GLuint tex
     Q_UNUSED(tex);
     Q_ASSERT(gl().DXRegisterObjectNV && "WGL_NV_DX_interop is required");
 
-    if (fmt == tex_format && d3dtex[plane].Get() && width == w && height == h)
+    if ((fmt == tex_format) && d3dtex[plane].Get() && (width == w) && (height == h))
         return true;
 
     if (mapped == 2)
@@ -216,7 +218,7 @@ bool GLInteropResource::ensureResource(DXGI_FORMAT fmt, int w, int h, GLuint tex
 
     CD3D11_TEXTURE2D_DESC desc(GetPlaneFormat(fmt, plane), w, h, 1, 1);
     desc.BindFlags |= D3D11_BIND_RENDER_TARGET;
-    desc.MiscFlags = D3D11_RESOURCE_MISC_SHARED;
+    desc.MiscFlags  = D3D11_RESOURCE_MISC_SHARED;
     DX_ENSURE(d3ddev->CreateTexture2D(&desc, nullptr, &d3dtex[plane]), false);
 
 #if 0
@@ -232,8 +234,8 @@ bool GLInteropResource::ensureResource(DXGI_FORMAT fmt, int w, int h, GLuint tex
 
 #endif
 
-    width = w;
-    height = h;
+    width      = w;
+    height     = h;
     tex_format = fmt;
     mapped++;
 

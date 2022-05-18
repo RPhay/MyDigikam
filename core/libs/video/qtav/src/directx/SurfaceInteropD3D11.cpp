@@ -59,7 +59,7 @@ namespace d3d11
 
 bool InteropResource::isSupported(InteropType type)
 {
-    if (type == InteropAuto || type == InteropEGL)
+    if ((type == InteropAuto) || (type == InteropEGL))
     {
 
 #if QTAV_HAVE(D3D11_EGL)
@@ -71,7 +71,7 @@ bool InteropResource::isSupported(InteropType type)
 
     }
 
-    if (type == InteropAuto || type == InteropGL)
+    if ((type == InteropAuto) || (type == InteropGL))
     {
 
 #if QTAV_HAVE(D3D11_GL)
@@ -91,7 +91,7 @@ extern InteropResource* CreateInteropGL();
 
 InteropResource* InteropResource::create(InteropType type)
 {
-    if (type == InteropAuto || type == InteropEGL)
+    if ((type == InteropAuto) || (type == InteropEGL))
     {
 
 #if QTAV_HAVE(D3D11_EGL)
@@ -103,7 +103,7 @@ InteropResource* InteropResource::create(InteropType type)
 
     }
 
-    if (type == InteropAuto || type == InteropGL)
+    if ((type == InteropAuto) || (type == InteropGL))
     {
 
 #if QTAV_HAVE(D3D11_GL)
@@ -164,25 +164,25 @@ void* SurfaceInterop::mapToHost(const VideoFormat &format, void *handle, int pla
     m_surface->GetDevice(&dev);
     D3D11_TEXTURE2D_DESC desc;
     m_surface->GetDesc(&desc);
-    desc.MipLevels = 1;
-    desc.MiscFlags = 0;
-    desc.ArraySize = 1;
-    desc.Usage     = D3D11_USAGE_STAGING;
+    desc.MipLevels      = 1;
+    desc.MiscFlags      = 0;
+    desc.ArraySize      = 1;
+    desc.Usage          = D3D11_USAGE_STAGING;
     desc.CPUAccessFlags = D3D11_CPU_ACCESS_READ;
-    desc.BindFlags = 0; //?
+    desc.BindFlags      = 0; // ?
     ComPtr<ID3D11Texture2D> tex;
     DX_ENSURE(dev->CreateTexture2D(&desc, nullptr, &tex), nullptr);
     ComPtr<ID3D11DeviceContext> ctx;
     dev->GetImmediateContext(&ctx);
 
-    ctx->CopySubresourceRegion(tex.Get(), 0, 0, 0, 0
-                               , m_surface.Get()
-                               , m_index
-                               , nullptr);
+    ctx->CopySubresourceRegion(tex.Get(), 0, 0, 0, 0,
+                               m_surface.Get(),
+                               m_index,
+                               nullptr);
 
     struct Q_DECL_HIDDEN ScopedMap
     {
-        ScopedMap(ComPtr<ID3D11DeviceContext> ctx, ComPtr<ID3D11Texture2D> res, D3D11_MAPPED_SUBRESOURCE *mapped)
+        ScopedMap(ComPtr<ID3D11DeviceContext> ctx, ComPtr<ID3D11Texture2D> res, D3D11_MAPPED_SUBRESOURCE* mapped)
             : c(ctx),
               r(res)
         {
@@ -203,7 +203,7 @@ void* SurfaceInterop::mapToHost(const VideoFormat &format, void *handle, int pla
     Q_UNUSED(sm);
 
     int pitch[3]   = { (int)mapped.RowPitch,   0, 0 }; // compute chroma later
-    uint8_t *src[] = { (uint8_t*)mapped.pData, 0, 0 }; // compute chroma later
+    uint8_t* src[] = { (uint8_t*)mapped.pData, 0, 0 }; // compute chroma later
 
     const VideoFormat fmt = VideoDecoderD3D::pixelFormatFromFourcc(fourccFromDXGI(desc.Format));
     VideoFrame frame      = VideoFrame::fromGPU(fmt, frame_width, frame_height, desc.Height, src, pitch);
@@ -211,7 +211,7 @@ void* SurfaceInterop::mapToHost(const VideoFormat &format, void *handle, int pla
     if (fmt != format)
         frame = frame.to(format);
 
-    VideoFrame *f = reinterpret_cast<VideoFrame*>(handle);
+    VideoFrame* f = reinterpret_cast<VideoFrame*>(handle);
     frame.setTimestamp(f->timestamp());
     *f            = frame;
 

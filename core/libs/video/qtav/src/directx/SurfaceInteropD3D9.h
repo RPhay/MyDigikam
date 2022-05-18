@@ -70,6 +70,7 @@ public:
     virtual bool unmap(GLuint tex)
     {
         Q_UNUSED(tex);
+
         return true;
     }
 
@@ -81,8 +82,8 @@ protected:
 
     IDirect3DDevice9*   d3ddev;
     IDirect3DTexture9*  dx_texture;
-    IDirect3DSurface9*  dx_surface;     // size is frame size(visual size) for display
-    int                 width, height;  // video frame width and dx_surface width without alignment, not dxva decoded surface width
+    IDirect3DSurface9*  dx_surface;     ///< size is frame size(visual size) for display
+    int                 width, height;  ///< video frame width and dx_surface width without alignment, not dxva decoded surface width
 };
 
 typedef QSharedPointer<InteropResource> InteropResourcePtr;
@@ -92,7 +93,7 @@ class SurfaceInterop final: public VideoSurfaceInterop
 public:
 
     explicit SurfaceInterop(const InteropResourcePtr& res)
-        : m_surface(0),
+        : m_surface(nullptr),
           m_resource(res),
           frame_width(0),
           frame_height(0)

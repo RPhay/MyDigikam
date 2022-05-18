@@ -60,7 +60,7 @@ public:
 
     void setColorSpace(ColorSpace value);
     void setColorRange(ColorRange value);
-    bool process(ID3D11Texture2D *texture, int index);
+    bool process(ID3D11Texture2D* texture, int index);
 
 private:
 
@@ -75,7 +75,8 @@ private:
     ComPtr<ID3D11VideoProcessor>            m_vp;
     ComPtr<ID3D11VideoProcessorOutputView>  m_outview;
 
-    UINT                                    m_w, m_h;      // enumerator
+    UINT                                    m_w;
+    UINT                                    m_h;      // enumerator
     ColorSpace                              m_cs;
     ColorRange                              m_range;
     QRect                                   m_srcRect;

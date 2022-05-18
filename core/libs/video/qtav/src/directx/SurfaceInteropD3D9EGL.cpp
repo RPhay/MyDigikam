@@ -79,6 +79,8 @@ private:
     void releaseEGL();
     bool ensureSurface(int w, int h);
 
+private:
+
     EGL*             egl;
     IDirect3DQuery9* dx_query;
 
@@ -129,11 +131,12 @@ void EGLInteropResource::releaseEGL()
 
 bool EGLInteropResource::ensureSurface(int w, int h)
 {
-    if (egl->surface && width == w && height == h)
+    if (egl->surface && (width == w) && (height == h))
         return true;
 
     releaseEGL();
     egl->dpy = eglGetCurrentDisplay();
+
     qCDebug(DIGIKAM_QTAV_LOG).noquote()
         << QString::asprintf("EGL version: %s, client api: %s",
             eglQueryString(egl->dpy, EGL_VERSION), eglQueryString(egl->dpy, EGL_CLIENT_APIS));
@@ -167,7 +170,7 @@ bool EGLInteropResource::ensureSurface(int w, int h)
     // TODO: strstr is enough
 
     const bool kEGL_ANGLE_d3d_share_handle_client_buffer = extensions.contains("EGL_ANGLE_d3d_share_handle_client_buffer");
-    const bool kEGL_ANGLE_query_surface_pointer = extensions.contains("EGL_ANGLE_query_surface_pointer");
+    const bool kEGL_ANGLE_query_surface_pointer          = extensions.contains("EGL_ANGLE_query_surface_pointer");
 
     if (!kEGL_ANGLE_d3d_share_handle_client_buffer && !kEGL_ANGLE_query_surface_pointer)
     {
@@ -178,12 +181,15 @@ bool EGLInteropResource::ensureSurface(int w, int h)
 
     GLint has_alpha = 1; // QOpenGLContext::currentContext()->format().hasAlpha()
     eglGetConfigAttrib(egl->dpy, egl_cfg, EGL_BIND_TO_TEXTURE_RGBA, &has_alpha); //EGL_ALPHA_SIZE
-    qCDebug(DIGIKAM_QTAV_LOG).noquote() << QString::asprintf("choose egl display:%p config: %p/%d, has alpha: %d", egl->dpy, egl_cfg, nb_cfgs, has_alpha);
+
+    qCDebug(DIGIKAM_QTAV_LOG).noquote()
+        << QString::asprintf("choose egl display:%p config: %p/%d, has alpha: %d",
+            egl->dpy, egl_cfg, nb_cfgs, has_alpha);
 
     EGLint attribs[] =
     {
-        EGL_WIDTH, w,
-        EGL_HEIGHT, h,
+        EGL_WIDTH,          w,
+        EGL_HEIGHT,         h,
         EGL_TEXTURE_FORMAT, has_alpha ? EGL_TEXTURE_RGBA : EGL_TEXTURE_RGB,
         EGL_TEXTURE_TARGET, EGL_TEXTURE_2D,
         EGL_NONE
@@ -194,12 +200,15 @@ bool EGLInteropResource::ensureSurface(int w, int h)
     if (!kEGL_ANGLE_d3d_share_handle_client_buffer && kEGL_ANGLE_query_surface_pointer)
     {
         EGL_ENSURE((egl->surface = eglCreatePbufferSurface(egl->dpy, egl_cfg, attribs)) != EGL_NO_SURFACE, false);
+
         qCDebug(DIGIKAM_QTAV_LOG).noquote() << QString::asprintf("pbuffer surface: %p", egl->surface);
+
         PFNEGLQUERYSURFACEPOINTERANGLEPROC eglQuerySurfacePointerANGLE = reinterpret_cast<PFNEGLQUERYSURFACEPOINTERANGLEPROC>(eglGetProcAddress("eglQuerySurfacePointerANGLE"));
 
         if (!eglQuerySurfacePointerANGLE)
         {
-            qCWarning(DIGIKAM_QTAV_LOG_WARN).noquote() << QString::asprintf("EGL_ANGLE_query_surface_pointer is not supported");
+            qCWarning(DIGIKAM_QTAV_LOG_WARN).noquote()
+                << QString::asprintf("EGL_ANGLE_query_surface_pointer is not supported");
 
             return false;
         }
@@ -218,11 +227,11 @@ bool EGLInteropResource::ensureSurface(int w, int h)
      * d3d9ex or d3d10:
      */
     DX_ENSURE_OK(d3ddev->CreateTexture(w, h, 1,
-                                        D3DUSAGE_RENDERTARGET,
-                                        has_alpha ? D3DFMT_A8R8G8B8 : D3DFMT_X8R8G8B8,
-                                        D3DPOOL_DEFAULT,
-                                        &dx_texture,
-                                        &share_handle) , false);
+                                       D3DUSAGE_RENDERTARGET,
+                                       has_alpha ? D3DFMT_A8R8G8B8 : D3DFMT_X8R8G8B8,
+                                       D3DPOOL_DEFAULT,
+                                       &dx_texture,
+                                       &share_handle) , false);
     DX_ENSURE_OK(dx_texture->GetSurfaceLevel(0, &dx_surface), false);
 
     if (kEGL_ANGLE_d3d_share_handle_client_buffer)
@@ -278,7 +287,7 @@ bool EGLInteropResource::map(IDirect3DSurface9* surface, GLuint tex, int w, int 
 
         int k = 0;
 
-        while ((dx_query->GetData(nullptr, 0, D3DGETDATA_FLUSH) == FALSE) && ++k < 10) 
+        while ((dx_query->GetData(nullptr, 0, D3DGETDATA_FLUSH) == FALSE) && (++k < 10))
         {
             Sleep(1);
         }

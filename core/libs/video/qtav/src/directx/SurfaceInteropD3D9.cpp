@@ -62,7 +62,7 @@ bool InteropResource::isSupported(InteropType type)
 
 #if QTAV_HAVE(D3D9_EGL)
 
-    if (type == InteropAuto || type == InteropEGL)
+    if ((type == InteropAuto) || (type == InteropEGL))
     {
         if (OpenGLHelper::isOpenGLES())
             return true;
@@ -72,7 +72,7 @@ bool InteropResource::isSupported(InteropType type)
 
 #if QTAV_HAVE(D3D9_GL)
 
-    if (type == InteropAuto || type == InteropGL)
+    if ((type == InteropAuto) || (type == InteropGL))
     {
         if (!OpenGLHelper::isOpenGLES())
             return true;
@@ -83,22 +83,23 @@ bool InteropResource::isSupported(InteropType type)
     return false;
 }
 
-extern InteropResource* CreateInteropEGL(IDirect3DDevice9 *dev);
-extern InteropResource* CreateInteropGL(IDirect3DDevice9 *dev);
+extern InteropResource* CreateInteropEGL(IDirect3DDevice9* dev);
+extern InteropResource* CreateInteropGL(IDirect3DDevice9* dev);
 
-InteropResource* InteropResource::create(IDirect3DDevice9 *dev, InteropType type)
+InteropResource* InteropResource::create(IDirect3DDevice9* dev, InteropType type)
 {
     Q_UNUSED(dev);
 
-    if (type == InteropAuto || type == InteropEGL)
+    if ((type == InteropAuto) || (type == InteropEGL))
     {
-        IDirect3DDevice9Ex* devEx;
+        IDirect3DDevice9Ex* devEx = nullptr;
         dev->QueryInterface(IID_IDirect3DDevice9Ex, (void**)&devEx);
         qCDebug(DIGIKAM_QTAV_LOG).noquote() << QString::asprintf("using D3D9Ex: %d", !!devEx);
 
         if (!devEx)
         {
-            qCWarning(DIGIKAM_QTAV_LOG_WARN).noquote() << QString::asprintf("IDirect3DDevice9Ex is required to share d3d resource. It's available in vista and later. d3d9 can not CreateTexture with shared handle");
+            qCWarning(DIGIKAM_QTAV_LOG_WARN).noquote()
+                << QString::asprintf("IDirect3DDevice9Ex is required to share d3d resource. It's available in vista and later. d3d9 can not CreateTexture with shared handle");
         }
 
         SafeRelease(&devEx);
@@ -112,7 +113,7 @@ InteropResource* InteropResource::create(IDirect3DDevice9 *dev, InteropType type
 
     }
 
-    if (type == InteropAuto || type == InteropGL)
+    if ((type == InteropAuto) || (type == InteropGL))
     {
 
 #if QTAV_HAVE(D3D9_GL)
@@ -127,12 +128,12 @@ InteropResource* InteropResource::create(IDirect3DDevice9 *dev, InteropType type
     return nullptr;
 }
 
-InteropResource::InteropResource(IDirect3DDevice9 *d3device)
-    : d3ddev(d3device)
-    , dx_texture(nullptr)
-    , dx_surface(nullptr)
-    , width(0)
-    , height(0)
+InteropResource::InteropResource(IDirect3DDevice9* d3device)
+    : d3ddev(d3device),
+      dx_texture(nullptr),
+      dx_surface(nullptr),
+      width(0),
+      height(0)
 {
     d3ddev->AddRef();
 }
@@ -154,15 +155,15 @@ SurfaceInterop::~SurfaceInterop()
     SafeRelease(&m_surface);
 }
 
-void SurfaceInterop::setSurface(IDirect3DSurface9 *surface, int frame_w, int frame_h)
+void SurfaceInterop::setSurface(IDirect3DSurface9* surface, int frame_w, int frame_h)
 {
-    m_surface = surface;
+    m_surface    = surface;
     m_surface->AddRef();
-    frame_width = frame_w;
+    frame_width  = frame_w;
     frame_height = frame_h;
 }
 
-void* SurfaceInterop::map(SurfaceType type, const VideoFormat &fmt, void *handle, int plane)
+void* SurfaceInterop::map(SurfaceType type, const VideoFormat& fmt, void* handle, int plane)
 {
     if (!handle)
         return nullptr;
@@ -186,12 +187,12 @@ void* SurfaceInterop::map(SurfaceType type, const VideoFormat &fmt, void *handle
     return nullptr;
 }
 
-void SurfaceInterop::unmap(void *handle)
+void SurfaceInterop::unmap(void* handle)
 {
     m_resource->unmap(*((GLuint*)handle));
 }
 
-void* SurfaceInterop::mapToHost(const VideoFormat &format, void *handle, int plane)
+void* SurfaceInterop::mapToHost(const VideoFormat& format, void* handle, int plane)
 {
     Q_UNUSED(plane);
 
@@ -201,7 +202,7 @@ void* SurfaceInterop::mapToHost(const VideoFormat &format, void *handle, int pla
 
     public:
 
-        ScopedD3DLock(IDirect3DSurface9* d3d, D3DLOCKED_RECT *rect)
+        ScopedD3DLock(IDirect3DSurface9* d3d, D3DLOCKED_RECT* rect)
             : mpD3D(d3d)
         {
             if (FAILED(mpD3D->LockRect(rect, nullptr, D3DLOCK_READONLY)))
@@ -233,7 +234,9 @@ void* SurfaceInterop::mapToHost(const VideoFormat &format, void *handle, int pla
 
     if (!fmt.isValid())
     {
-        qCWarning(DIGIKAM_QTAV_LOG_WARN).noquote() << QString::asprintf("unsupported D3D9 pixel format: %#x", desc.Format);
+        qCWarning(DIGIKAM_QTAV_LOG_WARN).noquote()
+            << QString::asprintf("unsupported D3D9 pixel format: %#x", desc.Format);
+
         return nullptr;
     }
 
@@ -242,12 +245,12 @@ void* SurfaceInterop::mapToHost(const VideoFormat &format, void *handle, int pla
     // nv12 bpp(1)==1
     // 3rd plane is not used for nv12
 
-    int pitch[3]  = { lock.Pitch, 0, 0 };           // compute chroma later
-    quint8 *src[] = { (quint8*)lock.pBits, 0, 0 };  // compute chroma later
+    int pitch[3]  = { lock.Pitch,          0, 0 };  // compute chroma later
+    quint8* src[] = { (quint8*)lock.pBits, 0, 0 };  // compute chroma later
 
-    Q_ASSERT(src[0] && pitch[0] > 0);
+    Q_ASSERT(src[0] && (pitch[0] > 0));
 
-    const bool swap_uv = desc.Format ==  MAKEFOURCC('I','M','C','3');
+    const bool swap_uv = (desc.Format == MAKEFOURCC('I','M','C','3'));
 
     // try to use SSE. fallback to normal copy if SSE is not supported
 

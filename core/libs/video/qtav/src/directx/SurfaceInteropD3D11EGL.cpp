@@ -74,9 +74,9 @@ class Q_DECL_HIDDEN EGLInteropResource final : public InteropResource
 public:
 
     EGLInteropResource()
-        : egl(new EGL())
-        , vp(0)
-        , boundTex(0)
+        : egl(new EGL()),
+          vp(0),
+          boundTex(0)
     {
     }
 
@@ -142,7 +142,7 @@ void EGLInteropResource::releaseEGL()
 
 bool EGLInteropResource::ensureSurface(int w, int h)
 {
-    if (egl->surface && width == w && height == h)
+    if (egl->surface && (width == w) && (height == h))
         return true;
 
     qCDebug(DIGIKAM_QTAV_LOG).noquote() << QString::asprintf("update egl and dx");
@@ -154,7 +154,9 @@ bool EGLInteropResource::ensureSurface(int w, int h)
         return false;
     }
 
-    qCDebug(DIGIKAM_QTAV_LOG).noquote() << QString::asprintf("EGL version: %s, client api: %s", eglQueryString(egl->dpy, EGL_VERSION), eglQueryString(egl->dpy, EGL_CLIENT_APIS));
+    qCDebug(DIGIKAM_QTAV_LOG).noquote()
+        << QString::asprintf("EGL version: %s, client api: %s",
+            eglQueryString(egl->dpy, EGL_VERSION), eglQueryString(egl->dpy, EGL_CLIENT_APIS));
 
     // TODO: check runtime egl>=1.4 for eglGetCurrentContext()
     // check extensions
@@ -167,7 +169,9 @@ bool EGLInteropResource::ensureSurface(int w, int h)
 
     if (!kEGL_ANGLE_d3d_share_handle_client_buffer)
     {
-        qCWarning(DIGIKAM_QTAV_LOG_WARN).noquote() << QString::asprintf("EGL extension 'ANGLE_d3d_share_handle_client_buffer' is required!");
+        qCWarning(DIGIKAM_QTAV_LOG_WARN).noquote()
+            << QString::asprintf("EGL extension 'ANGLE_d3d_share_handle_client_buffer' is required!");
+
         return false;
     }
 
@@ -175,12 +179,12 @@ bool EGLInteropResource::ensureSurface(int w, int h)
 
     EGLint cfg_attribs[] =
     {
-        EGL_RED_SIZE, 8,
-        EGL_GREEN_SIZE, 8,
-        EGL_BLUE_SIZE, 8,
-        EGL_ALPHA_SIZE, 8,
-        EGL_BIND_TO_TEXTURE_RGBA, EGL_TRUE,
-        EGL_SURFACE_TYPE, EGL_PBUFFER_BIT,
+        EGL_RED_SIZE,               8,
+        EGL_GREEN_SIZE,             8,
+        EGL_BLUE_SIZE,              8,
+        EGL_ALPHA_SIZE,             8,
+        EGL_BIND_TO_TEXTURE_RGBA,   EGL_TRUE,
+        EGL_SURFACE_TYPE,           EGL_PBUFFER_BIT,
         EGL_NONE
     };
 
@@ -190,6 +194,7 @@ bool EGLInteropResource::ensureSurface(int w, int h)
     if (!eglChooseConfig(egl->dpy, cfg_attribs, &egl_cfg, 1, &nb_cfgs))
     {
         qCWarning(DIGIKAM_QTAV_LOG_WARN).noquote() << QString::asprintf("Failed to create EGL configuration");
+
         return false;
     }
 
@@ -199,8 +204,8 @@ bool EGLInteropResource::ensureSurface(int w, int h)
 
     // why crash if only set D3D11_BIND_RENDER_TARGET?
 
-    desc.BindFlags |= D3D11_BIND_RENDER_TARGET; // also required by VideoProcessorOutputView https://msdn.microsoft.com/en-us/library/windows/desktop/hh447791(v=vs.85).aspx
-    desc.MiscFlags = D3D11_RESOURCE_MISC_SHARED;
+    desc.BindFlags     |= D3D11_BIND_RENDER_TARGET; // also required by VideoProcessorOutputView https://msdn.microsoft.com/en-us/library/windows/desktop/hh447791(v=vs.85).aspx
+    desc.MiscFlags      = D3D11_RESOURCE_MISC_SHARED;
     DX_ENSURE(d3ddev->CreateTexture2D(&desc, nullptr, &d3dtex), false);
     ComPtr<IDXGIResource> resource;
     DX_ENSURE(d3dtex.As(&resource), false);
@@ -216,8 +221,8 @@ bool EGLInteropResource::ensureSurface(int w, int h)
 
     EGLint attribs[] =
     {
-        EGL_WIDTH, w,
-        EGL_HEIGHT, h,
+        EGL_WIDTH,          w,
+        EGL_HEIGHT,         h,
         EGL_TEXTURE_FORMAT, EGL_TEXTURE_RGBA,
         EGL_TEXTURE_TARGET, EGL_TEXTURE_2D,
         EGL_NONE
@@ -228,7 +233,7 @@ bool EGLInteropResource::ensureSurface(int w, int h)
     EGL_ENSURE((egl->surface = eglCreatePbufferFromClientBuffer(egl->dpy, EGL_D3D_TEXTURE_2D_SHARE_HANDLE_ANGLE, share_handle, egl_cfg, attribs)), false);
     qCDebug(DIGIKAM_QTAV_LOG).noquote() << QString::asprintf("pbuffer surface from client buffer: %p", egl->surface);
 
-    width = w;
+    width  = w;
     height = h;
 
     return true;
@@ -239,6 +244,7 @@ bool EGLInteropResource::map(ComPtr<ID3D11Texture2D> surface, int index, GLuint 
     if (!ensureSurface(w, h))
     {
         releaseEGL();
+
         return false;
     }
 

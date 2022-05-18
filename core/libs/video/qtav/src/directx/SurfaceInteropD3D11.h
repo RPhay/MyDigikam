@@ -123,13 +123,13 @@ public:
     /// GLTextureSurface only supports rgb32
 
     void* map(SurfaceType type, const VideoFormat& fmt, void* handle, int plane) override;
-    void  unmap(void *handle)                                                    override;
+    void  unmap(void* handle)                                                    override;
 
 protected:
 
     /// copy from gpu (optimized if possible) and convert to target format if necessary
 
-    void* mapToHost(const VideoFormat &format, void *handle, int plane);
+    void* mapToHost(const VideoFormat& format, void* handle, int plane);
 
 private:
 

@@ -48,7 +48,7 @@ const char* vendorName(unsigned id)
 
     const char* vendor = "Unknown";
 
-    for (int i = 0 ; vendors[i].id != 0 ; i++)
+    for (int i = 0 ; vendors[i].id != 0 ; ++i)
     {
         if (vendors[i].id == id)
         {
@@ -92,7 +92,7 @@ IDirect3DDevice9* CreateDevice9Ex(HINSTANCE dll, IDirect3D9Ex** d3d9ex, D3DADAPT
 
     // http://msdn.microsoft.com/en-us/library/windows/desktop/bb219676(v=vs.85).aspx   // krazy:exclude=insecurenet
 
-    typedef HRESULT (WINAPI *Create9ExFunc)(UINT SDKVersion, IDirect3D9Ex **ppD3D);     // IDirect3D9Ex: void is ok
+    typedef HRESULT (WINAPI* Create9ExFunc)(UINT SDKVersion, IDirect3D9Ex** ppD3D);     // IDirect3D9Ex: void is ok
 
     Create9ExFunc Create9Ex = (Create9ExFunc)GetProcAddress(dll, "Direct3DCreate9Ex");
 
@@ -141,7 +141,7 @@ IDirect3DDevice9* CreateDevice9(HINSTANCE dll, IDirect3D9** d3d9, D3DADAPTER_IDE
 {
     qCDebug(DIGIKAM_QTAV_LOG).noquote() << QString::asprintf("creating d3d9 device...");
 
-    typedef IDirect3D9* (WINAPI *Create9Func)(UINT SDKVersion);
+    typedef IDirect3D9* (WINAPI* Create9Func)(UINT SDKVersion);
 
     Create9Func Create9 = (Create9Func)GetProcAddress(dll, "Direct3DCreate9");
 

@@ -58,15 +58,15 @@ private:
     HANDLE interop_obj;
 };
 
-InteropResource* CreateInteropGL(IDirect3DDevice9 *dev)
+InteropResource* CreateInteropGL(IDirect3DDevice9* dev)
 {
     return new GLInteropResource(dev);
 }
 
-GLInteropResource::GLInteropResource(IDirect3DDevice9 *d3device)
-    : InteropResource(d3device)
-    , interop_dev(nullptr)
-    , interop_obj(nullptr)
+GLInteropResource::GLInteropResource(IDirect3DDevice9* d3device)
+    : InteropResource(d3device),
+      interop_dev(nullptr),
+      interop_obj(nullptr)
 {
 }
 
@@ -75,7 +75,7 @@ GLInteropResource::~GLInteropResource()
     // FIXME: why unregister/close interop obj/dev here will crash(tested on intel driver)? must be in current opengl context?
 }
 
-bool GLInteropResource::map(IDirect3DSurface9 *surface, GLuint tex, int w, int h, int)
+bool GLInteropResource::map(IDirect3DSurface9* surface, GLuint tex, int w, int h, int)
 {
     if (!ensureResource(w, h, tex))
     {
@@ -95,7 +95,7 @@ bool GLInteropResource::map(IDirect3DSurface9 *surface, GLuint tex, int w, int h
 
     // prepare dx resources for gl
 
-    const RECT src = { 0, 0, (~0-1)&w, (~0-1)&h}; // StretchRect does not supports odd values
+    const RECT src = { 0, 0, (~0-1)&w, (~0-1)&h }; // StretchRect does not supports odd values
     DX_ENSURE_OK(d3ddev->StretchRect(surface, &src, dx_surface, nullptr, D3DTEXF_NONE), false);
 
     // lock dx resources
@@ -134,7 +134,7 @@ bool GLInteropResource::ensureResource(int w, int h, GLuint tex)
     Q_UNUSED(tex);
     Q_ASSERT(gl().DXRegisterObjectNV && "WGL_NV_DX_interop is required");
 
-    if (dx_surface && width == w && height == h)
+    if (dx_surface && (width == w) && (height == h))
         return true;
 
     releaseDX();
