@@ -66,4 +66,5 @@ BUGFIXES:
 049 ==> 173828 - Geolocation do not except Canon EOS 1D Mark III CR2-files with Exiv2 - Use ExifTool instead.
 050 ==> 447371 - Date of videos seems incorrect.
 051 ==> 453180 - "not valid" dates for video in "Adjust Time & Date".
-052 ==> 
+052 ==> 453992 - Build error in digiKam Setup.
+053 ==> 
