@@ -64,8 +64,8 @@ class Q_DECL_HIDDEN GraphicsItemRendererPrivate : public QPainterRendererPrivate
 public:
 
     GraphicsItemRendererPrivate()
-        : frame_changed(false)
-        , opengl(false)
+        : frame_changed(false),
+          opengl       (false)
     {
     }
 
@@ -76,7 +76,8 @@ public:
     void setupAspectRatio()
     {
         matrix.setToIdentity();
-        matrix.scale((GLfloat)out_rect.width()/(GLfloat)renderer_width, (GLfloat)out_rect.height()/(GLfloat)renderer_height, 1);
+        matrix.scale((GLfloat)out_rect.width()  / (GLfloat)renderer_width,
+                     (GLfloat)out_rect.height() / (GLfloat)renderer_height, 1);
 
         if (rotation())
             matrix.rotate(rotation(), 0, 0, 1); // Z axis
@@ -102,7 +103,7 @@ public:
 
             // null if not called from renderering thread;
 
-            QOpenGLContext* ctx = const_cast<QOpenGLContext*>(QOpenGLContext::currentContext());
+            QOpenGLContext* const ctx = const_cast<QOpenGLContext*>(QOpenGLContext::currentContext());
 
             if (!ctx)
                 return false;
@@ -117,8 +118,10 @@ public:
         return false;
     }
 
-    bool frame_changed;
-    bool opengl;
+public:
+
+    bool        frame_changed;
+    bool        opengl;
 
 #if QTAV_HAVE(OPENGL)
 
@@ -126,7 +129,7 @@ public:
 
 #endif
 
-    QMatrix4x4 matrix;
+    QMatrix4x4  matrix;
 };
 
 VideoRendererId GraphicsItemRenderer::id() const
@@ -134,7 +137,7 @@ VideoRendererId GraphicsItemRenderer::id() const
     return VideoRendererId_GraphicsItem;
 }
 
-GraphicsItemRenderer::GraphicsItemRenderer(QGraphicsItem* parent)
+GraphicsItemRenderer::GraphicsItemRenderer(QGraphicsItem* const parent)
     : GraphicsWidget(parent),
       QPainterRenderer(*new GraphicsItemRendererPrivate())
 {
@@ -150,7 +153,7 @@ GraphicsItemRenderer::GraphicsItemRenderer(QGraphicsItem* parent)
 
 }
 
-GraphicsItemRenderer::GraphicsItemRenderer(GraphicsItemRendererPrivate &d, QGraphicsItem *parent)
+GraphicsItemRenderer::GraphicsItemRenderer(GraphicsItemRendererPrivate& d, QGraphicsItem* parent)
     : GraphicsWidget(parent),
       QPainterRenderer(d)
 {
@@ -245,14 +248,14 @@ OpenGLVideo* GraphicsItemRenderer::opengl() const
     return nullptr;
 }
 
-void GraphicsItemRenderer::paint(QPainter *painter, const QStyleOptionGraphicsItem *option, QWidget *widget)
+void GraphicsItemRenderer::paint(QPainter* painter, const QStyleOptionGraphicsItem* option, QWidget* widget)
 {
     Q_UNUSED(option);
     Q_UNUSED(widget);
     DPTR_D(GraphicsItemRenderer);
 
-    d.painter = painter;
-    QPainterFilterContext *ctx = static_cast<QPainterFilterContext*>(d.filter_context);
+    d.painter                        = painter;
+    QPainterFilterContext* const ctx = static_cast<QPainterFilterContext*>(d.filter_context);
 
     if (ctx)
     {
@@ -319,7 +322,7 @@ void GraphicsItemRenderer::drawFrame()
             d.frame_changed = false;
         }
 
-        d.glv.render(boundingRect(), realROI(), d.matrix*sceneTransform());
+        d.glv.render(boundingRect(), realROI(), d.matrix * sceneTransform());
 
         return;
     }
@@ -435,7 +438,7 @@ bool GraphicsItemRenderer::onSetSaturation(qreal s)
 
 #if CONFIG_GRAPHICSWIDGET
 
-bool GraphicsItemRenderer::event(QEvent *event)
+bool GraphicsItemRenderer::event(QEvent* event)
 {
     if (e->type() == QEvent::User)
     {
@@ -445,11 +448,15 @@ bool GraphicsItemRenderer::event(QEvent *event)
     {
         setFocus(); // WHY: Force focus
         QEvent::Type type = event->type();
-        qCDebug(DIGIKAM_QTAVWIDGETS_LOG).noquote() << QString::asprintf("GraphicsItemRenderer event type = %d", type);
+
+        qCDebug(DIGIKAM_QTAVWIDGETS_LOG).noquote()
+            << QString::asprintf("GraphicsItemRenderer event type = %d", type);
 
         if (type == QEvent::KeyPress)
         {
-            qCDebug(DIGIKAM_QTAVWIDGETS_LOG).noquote() << QString::asprintf("KeyPress Event. key=%d", static_cast<QKeyEvent*>(event)->key());
+            qCDebug(DIGIKAM_QTAVWIDGETS_LOG).noquote()
+                << QString::asprintf("KeyPress Event. key=%d",
+                    static_cast<QKeyEvent*>(event)->key());
         }
     }
 

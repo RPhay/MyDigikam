@@ -70,13 +70,17 @@ public:
 Q_SIGNALS:
 
     void codecNameChanged()               override final;
+
+private:
+
+    AudioDecoderFFmpeg(QObject*);
 };
 
 AudioDecoderId AudioDecoderId_FFmpeg = mkid::id32base36_6<'F','F','m','p','e','g'>::value;
 
 FACTORY_REGISTER(AudioDecoder, FFmpeg, "FFmpeg")
 
-class Q_DECL_HIDDEN AudioDecoderFFmpegPrivate final: public AudioDecoderPrivate
+class Q_DECL_HIDDEN AudioDecoderFFmpegPrivate final : public AudioDecoderPrivate
 {
 public:
 
@@ -102,7 +106,7 @@ public:
         }
     }
 
-    AVFrame* frame; // set once and not change
+    AVFrame* frame = nullptr; // set once and not change
 };
 
 AudioDecoderId AudioDecoderFFmpeg::id() const
@@ -115,7 +119,7 @@ AudioDecoderFFmpeg::AudioDecoderFFmpeg()
 {
 }
 
-bool AudioDecoderFFmpeg::decode(const Packet &packet)
+bool AudioDecoderFFmpeg::decode(const Packet& packet)
 {
     if (!isAvailable())
         return false;
@@ -216,7 +220,7 @@ AudioFrame AudioDecoderFFmpeg::frame()
 
     // TODO: ffplay check AVFrame.pts, pkt_pts, last_pts+nb_samples. move to AudioFrame::from(AVFrame*)
 
-    f.setTimestamp((double)d.frame->pkt_pts/1000.0);
+    f.setTimestamp((double)d.frame->pkt_pts / 1000.0);
     f.setAudioResampler(d.resampler);               // TODO: remove. it's not safe if frame is shared. use a pool or detach if ref >1
 
     return f;

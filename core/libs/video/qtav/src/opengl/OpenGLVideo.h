@@ -141,6 +141,10 @@ private Q_SLOTS:
      */
     void resetGL();
     void updateViewport();
+
+private:
+
+    OpenGLVideo(QObject*);
 };
 
 } // namespace QtAV

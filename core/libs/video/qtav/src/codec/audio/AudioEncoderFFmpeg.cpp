@@ -54,6 +54,10 @@ public:
     AudioEncoderFFmpeg();
     AudioEncoderId id() const                           override;
     bool encode(const AudioFrame& frame = AudioFrame()) override;
+
+private:
+
+    AudioEncoderFFmpeg(QObject*);
 };
 
 static const AudioEncoderId AudioEncoderId_FFmpeg = mkid::id32base36_6<'F', 'F', 'm', 'p', 'e', 'g'>::value;
@@ -170,7 +174,7 @@ bool AudioEncoderFFmpegPrivate::open()
     {
         if (codec->channel_layouts)
         {
-            char cl[128];
+            char cl[128] = { 0 };
             av_get_channel_layout_string(cl, sizeof(cl), -1, codec->channel_layouts[0]); // TODO: ff version
 
             qCDebug(DIGIKAM_QTAV_LOG).noquote() << QString::asprintf("use first supported channel layout: %s", cl);
@@ -190,7 +194,7 @@ bool AudioEncoderFFmpegPrivate::open()
     avctx->channel_layout        = format_used.channelLayoutFFmpeg();
     avctx->channels              = format_used.channels();
     avctx->sample_rate           = format_used.sampleRate();
-    avctx->bits_per_raw_sample   = format_used.bytesPerSample()*8;
+    avctx->bits_per_raw_sample   = format_used.bytesPerSample() * 8;
 
     /// set the time base. TODO
 
@@ -254,7 +258,7 @@ AudioEncoderId AudioEncoderFFmpeg::id() const
     return AudioEncoderId_FFmpeg;
 }
 
-bool AudioEncoderFFmpeg::encode(const AudioFrame &frame)
+bool AudioEncoderFFmpeg::encode(const AudioFrame& frame)
 {
     DPTR_D(AudioEncoderFFmpeg);
     AVFrame* f = nullptr;

@@ -92,7 +92,7 @@ public:
 
     VideoEncoderFFmpeg();
     VideoEncoderId id() const                           override;
-    bool encode(const VideoFrame &frame = VideoFrame()) override;
+    bool encode(const VideoFrame& frame = VideoFrame()) override;
 
     void setHWDevice(const QString& name);
     QString hwDevice() const;
@@ -100,6 +100,10 @@ public:
 Q_SIGNALS:
 
     void hwDeviceChanged();
+
+private:
+
+    VideoEncoderFFmpeg(QObject*);
 };
 
 static const VideoEncoderId VideoEncoderId_FFmpeg = mkid::id32base36_6<'F', 'F', 'm', 'p', 'e', 'g'>::value;
@@ -138,10 +142,10 @@ public:
 
 #ifdef HAVE_AVHWCTX
 
-    AVBufferRef*            hw_device_ctx;
+    AVBufferRef*            hw_device_ctx = nullptr;
 
-    AVBufferRef*            hwframes_ref;
-    AVHWFramesContext*      hwframes;
+    AVBufferRef*            hwframes_ref  = nullptr;
+    AVHWFramesContext*      hwframes      = nullptr;
     QVector<AVPixelFormat>  sw_fmts;
 
 #endif
@@ -156,13 +160,13 @@ bool VideoEncoderFFmpegPrivate::open()
     {
         // copy ctx from muxer by copyAVCodecContext
 
-        AVCodec* codec = avcodec_find_encoder(avctx->codec_id);
+        AVCodec* const codec = avcodec_find_encoder(avctx->codec_id);
         AV_ENSURE_OK(avcodec_open2(avctx, codec, &dict), false);
 
         return true;
     }
 
-    AVCodec *codec = avcodec_find_encoder_by_name(codec_name.toUtf8().constData());
+    AVCodec* codec = avcodec_find_encoder_by_name(codec_name.toUtf8().constData());
 
     if (!codec)
     {
@@ -269,17 +273,17 @@ bool VideoEncoderFFmpegPrivate::open()
             }
 
             av_hwframe_constraints_free(&constraints);
-            format_used = VideoFormat::pixelFormatFromFFmpeg(sw_fmt);
+            format_used                   = VideoFormat::pixelFormatFromFFmpeg(sw_fmt);
 
             // encoder surface pool parameters
 
-            AVHWFramesContext* hwfs = reinterpret_cast<AVHWFramesContext*>(avctx->hw_frames_ctx->data);
-            hwfs->format            = hwfmt;       // must the same as avctx->pix_fmt
-            hwfs->sw_format         = sw_fmt;      // if it's not set, vaapi will choose the last valid_sw_formats, but that's wrong for vaGetImage/DeriveImage. nvenc always need sw_format
+            AVHWFramesContext* const hwfs = reinterpret_cast<AVHWFramesContext*>(avctx->hw_frames_ctx->data);
+            hwfs->format                  = hwfmt;       // must the same as avctx->pix_fmt
+            hwfs->sw_format               = sw_fmt;      // if it's not set, vaapi will choose the last valid_sw_formats, but that's wrong for vaGetImage/DeriveImage. nvenc always need sw_format
 
             // hw upload parameters. encoder's hwframes is just for parameter checking, will never be initialized, so we allocate an individual one.
 
-            hwframes_ref = av_hwframe_ctx_alloc(hw_device_ctx);
+            hwframes_ref                  = av_hwframe_ctx_alloc(hw_device_ctx);
 
             if (!hwframes_ref)
             {
@@ -364,13 +368,14 @@ bool VideoEncoderFFmpegPrivate::open()
     if (avctx->codec_id == QTAV_CODEC_ID(H264))
     {
         avctx->gop_size = 10;
-
-        //avctx->max_b_frames = 3; // h264
-
+/*
+        avctx->max_b_frames = 3;                        // h264
+*/
         av_dict_set(&dict, "preset", "fast", 0);        // x264
         av_dict_set(&dict, "tune", "zerolatency", 0);   // x264
-
-        //av_dict_set(&dict, "profile", "main", 0);     // conflict with vaapi (int values)
+/*
+        av_dict_set(&dict, "profile", "main", 0);       // conflict with vaapi (int values)
+*/
     }
 
     if (avctx->codec_id == AV_CODEC_ID_HEVC)
@@ -390,7 +395,9 @@ bool VideoEncoderFFmpegPrivate::open()
 
     // from mpv ao_lavc
 
-    const int buffer_size = qMax<int>(qMax<int>(width * height * 6 + 200, AV_INPUT_BUFFER_MIN_SIZE), sizeof(AVPicture)); // ??
+    const int buffer_size = qMax<int>(qMax<int>(width * height * 6 + 200,
+                                                AV_INPUT_BUFFER_MIN_SIZE),
+                                      sizeof(AVPicture)); // ??
     buffer.resize(buffer_size);
 
     return true;
@@ -413,7 +420,7 @@ VideoEncoderId VideoEncoderFFmpeg::id() const
     return VideoEncoderId_FFmpeg;
 }
 
-void VideoEncoderFFmpeg::setHWDevice(const QString &name)
+void VideoEncoderFFmpeg::setHWDevice(const QString& name)
 {
     DPTR_D(VideoEncoderFFmpeg);
 
@@ -432,7 +439,7 @@ QString VideoEncoderFFmpeg::hwDevice() const
 
 struct Q_DECL_HIDDEN ScopedAVFrameDeleter
 {
-    static inline void cleanup(void *pointer)
+    static inline void cleanup(void* const pointer)
     {
         av_frame_free((AVFrame**)&pointer);
     }
@@ -460,15 +467,21 @@ bool VideoEncoderFFmpeg::encode(const VideoFrame &frame)
         switch (timestampMode())
         {
             case TimestampCopy:
-                f->pts = int64_t(frame.timestamp()*frameRate()); // TODO: check monotically increase and fix if not. or another mode?
+            {
+                f->pts = int64_t(frame.timestamp() * frameRate()); // TODO: check monotically increase and fix if not. or another mode?
                 break;
+            }
 
             case TimestampMonotonic:
-                f->pts = d.nb_encoded+1;
+            {
+                f->pts = d.nb_encoded + 1;
                 break;
+            }
 
             default:
+            {
                 break;
+            }
         }
 
         // pts is set in muxer

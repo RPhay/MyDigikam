@@ -53,19 +53,19 @@ class Q_DECL_HIDDEN OpenGLVideoPrivate : public DPtrPrivate<OpenGLVideo>
 public:
 
     OpenGLVideoPrivate()
-        : ctx(nullptr),
-          manager(nullptr),
-          material(new VideoMaterial()),
-          material_type(0),
-          norm_viewport(true),
-          has_a(false),
-          update_geo(true),
-          tex_target(0),
-          valiad_tex_width(1.0),
-          mesh_type(OpenGLVideo::RectMesh),
-          geometry(nullptr),
-          gr(nullptr),
-          user_shader(nullptr)
+        : ctx               (nullptr),
+          manager           (nullptr),
+          material          (new VideoMaterial()),
+          material_type     (0),
+          norm_viewport     (true),
+          has_a             (false),
+          update_geo        (true),
+          tex_target        (0),
+          valiad_tex_width  (1.0),
+          mesh_type         (OpenGLVideo::RectMesh),
+          geometry          (nullptr),
+          gr                (nullptr),
+          user_shader       (nullptr)
     {
     }
 
@@ -272,7 +272,7 @@ void OpenGLVideo::setOpenGLContext(QOpenGLContext *ctx)
     if (d.ctx == ctx)
         return;
 
-    qreal b = 0, c = 0, h = 0, s = 0;
+    qreal b = 0.0, c = 0.0, h = 0.0, s = 0.0;
 
     if (d.material)
     {
@@ -553,7 +553,7 @@ void OpenGLVideo::updateViewport()
 
 #   else
 
-    surfaceSize *= qApp->devicePixelRatio(); // TODO: window()->devicePixelRatio() is the window screen's
+    surfaceSize       *= qApp->devicePixelRatio(); // TODO: window()->devicePixelRatio() is the window screen's
 
 #   endif
 

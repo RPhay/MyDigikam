@@ -73,7 +73,7 @@ class QTAV_WIDGETS_EXPORT GraphicsItemRenderer : public GraphicsWidget,
 
 public:
 
-    explicit GraphicsItemRenderer(QGraphicsItem* parent = nullptr);
+    explicit GraphicsItemRenderer(QGraphicsItem* const parent = nullptr);
 
     VideoRendererId id()                              const override;
     bool isSupported(VideoFormat::PixelFormat pixfmt) const override;
@@ -81,7 +81,7 @@ public:
     QRectF boundingRect()                             const override;
 
     void paint(QPainter* painter,
-               const QStyleOptionGraphicsItem *option,
+               const QStyleOptionGraphicsItem* option,
                QWidget* widget)                             override;
 
     QGraphicsItem* graphicsItem()                           override
@@ -147,6 +147,8 @@ private:
     bool onSetContrast(qreal c)                             override;
     bool onSetHue(qreal h)                                  override;
     bool onSetSaturation(qreal s)                           override;
+
+    GraphicsItemRenderer(QObject*);
 };
 
 typedef GraphicsItemRenderer VideoRendererGraphicsItem;
