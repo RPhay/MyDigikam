@@ -1105,6 +1105,8 @@ void DigikamApp::slotColorManagementOptionsChanged()
 {
     ICCSettingsContainer settings = IccSettings::instance()->settings();
 
+    ThumbnailLoadThread::setDisplayingWidget(this);
+
     d->viewCMViewAction->blockSignals(true);
     d->viewCMViewAction->setEnabled(settings.enableCM);
     d->viewCMViewAction->setChecked(settings.useManagedPreviews);
