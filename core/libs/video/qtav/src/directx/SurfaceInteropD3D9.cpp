@@ -129,11 +129,11 @@ InteropResource* InteropResource::create(IDirect3DDevice9* dev, InteropType type
 }
 
 InteropResource::InteropResource(IDirect3DDevice9* d3device)
-    : d3ddev(d3device),
+    : d3ddev    (d3device),
       dx_texture(nullptr),
       dx_surface(nullptr),
-      width(0),
-      height(0)
+      width     (0),
+      height    (0)
 {
     d3ddev->AddRef();
 }
@@ -198,11 +198,11 @@ void* SurfaceInterop::mapToHost(const VideoFormat& format, void* handle, int pla
 
     class Q_DECL_HIDDEN ScopedD3DLock
     {
-        IDirect3DSurface9 *mpD3D;
+        IDirect3DSurface9* mpD3D = nullptr;
 
     public:
 
-        ScopedD3DLock(IDirect3DSurface9* d3d, D3DLOCKED_RECT* rect)
+        ScopedD3DLock(IDirect3DSurface9* const d3d, D3DLOCKED_RECT* const rect)
             : mpD3D(d3d)
         {
             if (FAILED(mpD3D->LockRect(rect, nullptr, D3DLOCK_READONLY)))

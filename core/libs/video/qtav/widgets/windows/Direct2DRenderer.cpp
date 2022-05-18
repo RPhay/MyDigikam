@@ -140,7 +140,7 @@ public:
 
     Direct2DRendererPrivate()
       : VideoRendererPrivate(),
-        d2d_factory         (bullptr),
+        d2d_factory         (nullptr),
         render_target       (nullptr),
         bitmap              (nullptr),
         bitmap_width        (0),
@@ -531,9 +531,9 @@ void Direct2DRenderer::drawFrame()
         (FLOAT)(d.out_rect.y() + d.out_rect.height())
     };
 
-    QRect roi = realROI();
+    QRect roi            = realROI();
 
-    D2D1_RECT_F roi_d2d =
+    D2D1_RECT_F roi_d2d  =
     {
         (FLOAT)roi.x(),
         (FLOAT)roi.y(),
@@ -550,13 +550,14 @@ void Direct2DRenderer::drawFrame()
                                 &roi_d2d);
 }
 
-void Direct2DRenderer::paintEvent(QPaintEvent *)
+void Direct2DRenderer::paintEvent(QPaintEvent*)
 {
     DPTR_D(Direct2DRenderer);
 
     if (!d.render_target)
     {
-        qCWarning(DIGIKAM_QTAVWIDGETS_LOG_WARN).noquote() << QString::asprintf("No render target!!!");
+        qCWarning(DIGIKAM_QTAVWIDGETS_LOG_WARN).noquote()
+            << QString::asprintf("No render target!!!");
 
         return;
     }

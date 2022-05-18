@@ -83,7 +83,8 @@ protected:
     IDirect3DDevice9*   d3ddev;
     IDirect3DTexture9*  dx_texture;
     IDirect3DSurface9*  dx_surface;     ///< size is frame size(visual size) for display
-    int                 width, height;  ///< video frame width and dx_surface width without alignment, not dxva decoded surface width
+    int                 width;
+    int                 height;         ///< video frame width and dx_surface width without alignment, not dxva decoded surface width
 };
 
 typedef QSharedPointer<InteropResource> InteropResourcePtr;
@@ -93,9 +94,9 @@ class SurfaceInterop final: public VideoSurfaceInterop
 public:
 
     explicit SurfaceInterop(const InteropResourcePtr& res)
-        : m_surface(nullptr),
-          m_resource(res),
-          frame_width(0),
+        : m_surface   (nullptr),
+          m_resource  (res),
+          frame_width (0),
           frame_height(0)
     {
     }
@@ -125,7 +126,8 @@ private:
 
     IDirect3DSurface9* m_surface;
     InteropResourcePtr m_resource;
-    int                frame_width, frame_height;
+    int                frame_width;
+    int                frame_height;
 };
 
 } // namespace d3d9

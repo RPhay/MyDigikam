@@ -104,9 +104,9 @@ class SurfaceInterop final : public VideoSurfaceInterop
 public:
 
     explicit SurfaceInterop(const InteropResourcePtr& res)
-        : m_index(0),
-          m_resource(res),
-          frame_width(0),
+        : m_index     (0),
+          m_resource  (res),
+          frame_width (0),
           frame_height(0)
     {
     }

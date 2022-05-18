@@ -150,7 +150,7 @@ public:
     GDIRendererPrivate()
       : VideoRendererPrivate(),
         support_bitblt(true),
-        gdiplus_token(0),
+        gdiplus_token (0),
         device_context(0)
 
 #if USE_GRAPHICS
@@ -169,7 +169,7 @@ public:
         if (device_context)
         {
             DPTR_P(GDIRenderer);
-            ReleaseDC((HWND)p.winId(), device_context); /* Qt5: must cast WID to HWND */
+            ReleaseDC((HWND)p.winId(), device_context); // Qt5: must cast WID to HWND
 
 #if !USE_GRAPHICS
 
@@ -334,7 +334,7 @@ bool GDIRenderer::isSupported(VideoFormat::PixelFormat pixfmt) const
 
 QPaintEngine* GDIRenderer::paintEngine() const
 {
-    return 0;
+    return nullptr;
 }
 
 bool GDIRenderer::receiveFrame(const VideoFrame& frame)

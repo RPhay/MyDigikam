@@ -90,8 +90,8 @@ InteropResource* CreateInteropGL()
 
 GLInteropResource::GLInteropResource()
     : interop_dev(nullptr),
-      tex_format(DXGI_FORMAT_UNKNOWN),
-      mapped(0)
+      tex_format (DXGI_FORMAT_UNKNOWN),
+      mapped     (0)
 {
     d3dtex.reserve(3);
     d3dtex.resize(2);
@@ -190,7 +190,7 @@ static const struct
 
 static DXGI_FORMAT GetPlaneFormat(DXGI_FORMAT fmt, int plane)
 {
-    for (size_t i = 0 ; i < sizeof(plane_formats) / sizeof(plane_formats[0]) ; ++i)
+    for (size_t i = 0 ; i < (sizeof(plane_formats) / sizeof(plane_formats[0])) ; ++i)
     {
         if (plane_formats[i].fmt == fmt)
             return plane_formats[i].plane_fmt[plane];

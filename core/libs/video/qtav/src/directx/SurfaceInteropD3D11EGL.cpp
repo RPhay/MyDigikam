@@ -74,8 +74,8 @@ class Q_DECL_HIDDEN EGLInteropResource final : public InteropResource
 public:
 
     EGLInteropResource()
-        : egl(new EGL()),
-          vp(0),
+        : egl     (new EGL()),
+          vp      (0),
           boundTex(0)
     {
     }
@@ -150,7 +150,9 @@ bool EGLInteropResource::ensureSurface(int w, int h)
 
     if (!egl->dpy)
     {
-        qCWarning(DIGIKAM_QTAV_LOG_WARN).noquote() << QString::asprintf("Failed to get current EGL display");
+        qCWarning(DIGIKAM_QTAV_LOG_WARN).noquote()
+            << QString::asprintf("Failed to get current EGL display");
+
         return false;
     }
 
@@ -193,7 +195,8 @@ bool EGLInteropResource::ensureSurface(int w, int h)
 
     if (!eglChooseConfig(egl->dpy, cfg_attribs, &egl_cfg, 1, &nb_cfgs))
     {
-        qCWarning(DIGIKAM_QTAV_LOG_WARN).noquote() << QString::asprintf("Failed to create EGL configuration");
+        qCWarning(DIGIKAM_QTAV_LOG_WARN).noquote()
+            << QString::asprintf("Failed to create EGL configuration");
 
         return false;
     }
@@ -231,7 +234,10 @@ bool EGLInteropResource::ensureSurface(int w, int h)
     // egl surface size must match d3d texture's
 
     EGL_ENSURE((egl->surface = eglCreatePbufferFromClientBuffer(egl->dpy, EGL_D3D_TEXTURE_2D_SHARE_HANDLE_ANGLE, share_handle, egl_cfg, attribs)), false);
-    qCDebug(DIGIKAM_QTAV_LOG).noquote() << QString::asprintf("pbuffer surface from client buffer: %p", egl->surface);
+
+    qCDebug(DIGIKAM_QTAV_LOG).noquote()
+        << QString::asprintf("pbuffer surface from client buffer: %p",
+            egl->surface);
 
     width  = w;
     height = h;

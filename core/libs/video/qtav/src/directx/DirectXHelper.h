@@ -60,7 +60,7 @@ namespace QtAV
     } while (0)
 
 template <class T>
-void SafeRelease(T **ppT)
+void SafeRelease(T** ppT)
 {
     if (*ppT)
     {
