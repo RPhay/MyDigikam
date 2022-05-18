@@ -37,23 +37,22 @@
 namespace QtAV
 {
 
-class VideoDecoderFFmpegHWPrivate
-    : public VideoDecoderFFmpegBasePrivate
+class VideoDecoderFFmpegHWPrivate : public VideoDecoderFFmpegBasePrivate
 {
 public:
 
     VideoDecoderFFmpegHWPrivate()
-        : VideoDecoderFFmpegBasePrivate()
-        , get_format(nullptr)
-        , get_buffer(nullptr)
-        , release_buffer(nullptr)
-        , reget_buffer(nullptr)
-        , get_buffer2(nullptr)
-        , threads(0)
-        , copy_mode(VideoDecoderFFmpegHW::OptimizedCopy)
-        , hw_w(0)
-        , hw_h(0)
-        , hw_profile(0)
+        : VideoDecoderFFmpegBasePrivate(),
+          get_format(nullptr),
+          get_buffer(nullptr),
+          release_buffer(nullptr),
+          reget_buffer(nullptr),
+          get_buffer2(nullptr),
+          threads(0),
+          copy_mode(VideoDecoderFFmpegHW::OptimizedCopy),
+          hw_w(0),
+          hw_h(0),
+          hw_profile(0)
     {
     }
 
@@ -102,16 +101,16 @@ public:
 
     virtual void* setup(AVCodecContext* avctx) = 0;
 
-    AVPixelFormat getFormat(struct AVCodecContext *p_context, const AVPixelFormat *pi_fmt);
+    AVPixelFormat getFormat(struct AVCodecContext* p_context, const AVPixelFormat* pi_fmt);
 
     // TODO: remove opaque
 
-    virtual bool getBuffer(void **opaque, uint8_t **data)         = 0;
-    virtual void releaseBuffer(void *opaque, uint8_t *data)       = 0;
+    virtual bool getBuffer(void** opaque, uint8_t** data)         = 0;
+    virtual void releaseBuffer(void* opaque, uint8_t* data)       = 0;
     virtual AVPixelFormat vaPixelFormat()                   const = 0;
 
-    int codedWidth(AVCodecContext *avctx)                   const;  // TODO: virtual int surfaceWidth(AVCodecContext*) const;
-    int codedHeight(AVCodecContext *avctx)                  const;
+    int codedWidth(AVCodecContext* avctx)                   const;  // TODO: virtual int surfaceWidth(AVCodecContext*) const;
+    int codedHeight(AVCodecContext* avctx)                  const;
     bool initUSWC(int lineSize);
     void releaseUSWC();
 
@@ -119,24 +118,28 @@ public:
 
     // store old values because it does not own AVCodecContext
 
-    AVPixelFormat (*get_format)(struct AVCodecContext *s, const AVPixelFormat * fmt);
-    int (*get_buffer)(struct AVCodecContext *c, AVFrame *pic);
-    void (*release_buffer)(struct AVCodecContext *c, AVFrame *pic);
-    int (*reget_buffer)(struct AVCodecContext *c, AVFrame *pic);
-    int (*get_buffer2)(struct AVCodecContext *s, AVFrame *frame, int flags);
+    AVPixelFormat (*get_format)(struct AVCodecContext* s, const AVPixelFormat* fmt);
+    int (*get_buffer)(struct AVCodecContext* c, AVFrame* pic);
+    void (*release_buffer)(struct AVCodecContext* c, AVFrame* pic);
+    int (*reget_buffer)(struct AVCodecContext* c, AVFrame* pic);
+    int (*get_buffer2)(struct AVCodecContext* s, AVFrame* frame, int flags);
 
-    QString description;
-    int threads; // multithread decoding may crash for some decoders (dxva, videotoolbox)
+public:
+
+    QString                         description;
+    int                             threads; ///< multithread decoding may crash for some decoders (dxva, videotoolbox)
 
     // false for not intel gpu. my test result is intel gpu is supper fast and lower cpu usage if use optimized uswc copy. but nv is worse.
     // TODO: flag enable, disable, auto
 
-    VideoDecoderFFmpegHW::CopyMode copy_mode;
-    GPUMemCopy gpu_mem;
+    VideoDecoderFFmpegHW::CopyMode  copy_mode;
+    GPUMemCopy                      gpu_mem;
 
 private:
 
-    int hw_w, hw_h, hw_profile;
+    int                             hw_w;
+    int                             hw_h;
+    int                             hw_profile;
 };
 
 } // namespace QtAV

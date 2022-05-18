@@ -44,7 +44,7 @@ namespace QtAV
 
 static AVPixelFormat ffmpeg_get_va_format(struct AVCodecContext* c, const AVPixelFormat* ff)
 {
-    VideoDecoderFFmpegHWPrivate* va = reinterpret_cast<VideoDecoderFFmpegHWPrivate*>(c->opaque);
+    VideoDecoderFFmpegHWPrivate* const va = reinterpret_cast<VideoDecoderFFmpegHWPrivate*>(c->opaque);
 
     return va->getFormat(c, ff);
 }
@@ -53,13 +53,13 @@ static AVPixelFormat ffmpeg_get_va_format(struct AVCodecContext* c, const AVPixe
 
 typedef struct ffmpeg_va_ref_t
 {
-    VideoDecoderFFmpegHWPrivate* va;
-    void*                        opaque;           // va surface from AVFrame.opaque
+    VideoDecoderFFmpegHWPrivate* va     = nullptr;
+    void*                        opaque = nullptr;           // va surface from AVFrame.opaque
 } ffmpeg_va_ref_t;
 
 static void ffmpeg_release_va_buffer2(void* opaque, uint8_t *data)
 {
-    ffmpeg_va_ref_t* ref = (ffmpeg_va_ref_t*)opaque;
+    ffmpeg_va_ref_t* const ref = (ffmpeg_va_ref_t*)opaque;
     ref->va->releaseBuffer(ref->opaque, data);
 
     delete ref;
@@ -80,7 +80,7 @@ static int ffmpeg_get_va_buffer2(struct AVCodecContext* ctx, AVFrame* frame, int
 
     // va must be available here
 
-    VideoDecoderFFmpegHWPrivate* va = (VideoDecoderFFmpegHWPrivate*)ctx->opaque;
+    VideoDecoderFFmpegHWPrivate* const va = (VideoDecoderFFmpegHWPrivate*)ctx->opaque;
 
     if (!va->getBuffer(&frame->opaque, &frame->data[0]))
     {
@@ -89,14 +89,14 @@ static int ffmpeg_get_va_buffer2(struct AVCodecContext* ctx, AVFrame* frame, int
         return -1;
     }
 
-    ffmpeg_va_ref_t* ref = new ffmpeg_va_ref_t;
-    ref->va              = va;
-    ref->opaque          = frame->opaque;
+    ffmpeg_va_ref_t* const ref = new ffmpeg_va_ref_t;
+    ref->va                    = va;
+    ref->opaque                = frame->opaque;
 
     /* data[0] must be non-nullptr for libavcodec internal checks. data[3] actually contains the format-specific surface handle. */
 
-    frame->data[3] = frame->data[0];
-    frame->buf[0]  = av_buffer_create(frame->data[0], 0, ffmpeg_release_va_buffer2, ref, 0);
+    frame->data[3]             = frame->data[0];
+    frame->buf[0]              = av_buffer_create(frame->data[0], 0, ffmpeg_release_va_buffer2, ref, 0);
 
     if (Q_UNLIKELY(!frame->buf[0]))
     {
@@ -114,7 +114,7 @@ static int ffmpeg_get_va_buffer2(struct AVCodecContext* ctx, AVFrame* frame, int
 
 static int ffmpeg_get_va_buffer(struct AVCodecContext* c, AVFrame* ff) // vlc_va_t *external, AVFrame *ff)
 {
-    VideoDecoderFFmpegHWPrivate* va = reinterpret_cast<VideoDecoderFFmpegHWPrivate*>(c->opaque);
+    VideoDecoderFFmpegHWPrivate* const va = reinterpret_cast<VideoDecoderFFmpegHWPrivate*>(c->opaque);
 
     //ff->reordered_opaque = c->reordered_opaque; // TODO: dxva?
 
@@ -147,9 +147,9 @@ static int ffmpeg_get_va_buffer(struct AVCodecContext* c, AVFrame* ff) // vlc_va
     return 0;
 }
 
-static void ffmpeg_release_va_buffer(struct AVCodecContext *c, AVFrame *ff)
+static void ffmpeg_release_va_buffer(struct AVCodecContext* c, AVFrame* ff)
 {
-    VideoDecoderFFmpegHWPrivate* va = reinterpret_cast<VideoDecoderFFmpegHWPrivate*>(c->opaque);
+    VideoDecoderFFmpegHWPrivate* const va = reinterpret_cast<VideoDecoderFFmpegHWPrivate*>(c->opaque);
     va->releaseBuffer(ff->opaque, ff->data[0]);
     memset(ff->data, 0, sizeof(ff->data));
     memset(ff->linesize, 0, sizeof(ff->linesize));
@@ -178,11 +178,16 @@ bool VideoDecoderFFmpegHWPrivate::prepare()
         case QTAV_CODEC_ID(H264):
         case QTAV_CODEC_ID(VC1):
         case QTAV_CODEC_ID(WMV3):
+        {
             codec_ctx->thread_type &= ~FF_THREAD_FRAME;
+            break;
+        }
 # endif
 
         default:
+        {
             break;
+        }
     }
 
     // From vlc end
@@ -223,7 +228,7 @@ bool VideoDecoderFFmpegHWPrivate::prepare()
     return true;
 }
 
-AVPixelFormat VideoDecoderFFmpegHWPrivate::getFormat(struct AVCodecContext *avctx, const AVPixelFormat *pi_fmt)
+AVPixelFormat VideoDecoderFFmpegHWPrivate::getFormat(struct AVCodecContext* avctx, const AVPixelFormat* pi_fmt)
 {
 
 #ifdef AV_HWACCEL_FLAG_ALLOW_SOFTWARE
@@ -232,19 +237,20 @@ AVPixelFormat VideoDecoderFFmpegHWPrivate::getFormat(struct AVCodecContext *avct
 
 #endif
 
-    bool can_hwaccel = false;
+    bool can_hwaccel      = false;
 
-    for (size_t i = 0 ; pi_fmt[i] != QTAV_PIX_FMT_C(NONE) ; i++)
+    for (size_t i = 0 ; pi_fmt[i] != QTAV_PIX_FMT_C(NONE) ; ++i)
     {
         const AVPixFmtDescriptor* dsc = av_pix_fmt_desc_get(pi_fmt[i]);
 
         if (dsc == nullptr)
             continue;
 
-        bool hwaccel = (dsc->flags & AV_PIX_FMT_FLAG_HWACCEL) != 0;
+        bool hwaccel = ((dsc->flags & AV_PIX_FMT_FLAG_HWACCEL) != 0);
 
-        qCDebug(DIGIKAM_QTAV_LOG).noquote() << QString::asprintf("available %sware decoder output format %d (%s)",
-                                                   hwaccel ? "hard" : "soft", pi_fmt[i], dsc->name);
+        qCDebug(DIGIKAM_QTAV_LOG).noquote()
+            << QString::asprintf("available %sware decoder output format %d (%s)",
+                hwaccel ? "hard" : "soft", pi_fmt[i], dsc->name);
 
         if (hwaccel)
             can_hwaccel = true;
@@ -253,14 +259,15 @@ AVPixelFormat VideoDecoderFFmpegHWPrivate::getFormat(struct AVCodecContext *avct
     if (!can_hwaccel)
         goto end;
 
-    for (size_t i = 0 ; pi_fmt[i] != QTAV_PIX_FMT_C(NONE) ; i++)
+    for (size_t i = 0 ; pi_fmt[i] != QTAV_PIX_FMT_C(NONE) ; ++i)
     {
         if (vaPixelFormat() != pi_fmt[i])
             continue;
 
-        if (   hw_w == codedWidth((avctx)) && hw_h == codedHeight(avctx)
-            && hw_profile == avctx->profile // update decoder if profile changed. but now only surfaces are updated
-            && avctx->hwaccel_context)
+        if ((hw_w == codedWidth((avctx)))  &&
+            (hw_h == codedHeight(avctx))   &&
+            (hw_profile == avctx->profile) && // update decoder if profile changed. but now only surfaces are updated
+            avctx->hwaccel_context)
         {
             return pi_fmt[i];
         }
@@ -280,8 +287,9 @@ AVPixelFormat VideoDecoderFFmpegHWPrivate::getFormat(struct AVCodecContext *avct
         hw_h       = codedHeight(avctx);
         hw_profile = avctx->profile;
 
-        qCDebug(DIGIKAM_QTAV_LOG).noquote() << QString::asprintf("Using %s for hardware decoding.",
-                                                   qPrintable(description));
+        qCDebug(DIGIKAM_QTAV_LOG).noquote()
+            << QString::asprintf("Using %s for hardware decoding.",
+                qPrintable(description));
 
         return pi_fmt[i];
     }
@@ -290,7 +298,8 @@ AVPixelFormat VideoDecoderFFmpegHWPrivate::getFormat(struct AVCodecContext *avct
 
 end:
 
-    qCWarning(DIGIKAM_QTAV_LOG_WARN).noquote() << QString::asprintf("hardware acceleration is not available" );
+    qCWarning(DIGIKAM_QTAV_LOG_WARN).noquote()
+        << QString::asprintf("hardware acceleration is not available" );
 
     /* Fallback to default behaviour */
 
@@ -303,7 +312,7 @@ end:
     return avcodec_default_get_format(avctx, pi_fmt);
 }
 
-int VideoDecoderFFmpegHWPrivate::codedWidth(AVCodecContext *avctx) const
+int VideoDecoderFFmpegHWPrivate::codedWidth(AVCodecContext* avctx) const
 {
     if (avctx->coded_width > 0)
         return avctx->coded_width;
@@ -311,7 +320,7 @@ int VideoDecoderFFmpegHWPrivate::codedWidth(AVCodecContext *avctx) const
     return avctx->width;
 }
 
-int VideoDecoderFFmpegHWPrivate::codedHeight(AVCodecContext *avctx) const
+int VideoDecoderFFmpegHWPrivate::codedHeight(AVCodecContext* avctx) const
 {
     if (avctx->coded_height > 0)
         return avctx->coded_height;
@@ -333,7 +342,7 @@ void VideoDecoderFFmpegHWPrivate::releaseUSWC()
         gpu_mem.cleanCache();
 }
 
-VideoDecoderFFmpegHW::VideoDecoderFFmpegHW(VideoDecoderFFmpegHWPrivate &d):
+VideoDecoderFFmpegHW::VideoDecoderFFmpegHW(VideoDecoderFFmpegHWPrivate& d):
     VideoDecoderFFmpegBase(d)
 {
     setProperty("detail_copyMode", QStringLiteral("%1. %2\n%3. %4\n%5\n%6")
@@ -392,14 +401,14 @@ VideoDecoderFFmpegHW::CopyMode VideoDecoderFFmpegHW::copyMode() const
     return d_func().copy_mode;
 }
 
-VideoFrame VideoDecoderFFmpegHW::copyToFrame(const VideoFormat& fmt, int surface_h, quint8 *src[], int pitch[], bool swapUV)
+VideoFrame VideoDecoderFFmpegHW::copyToFrame(const VideoFormat& fmt, int surface_h, quint8* src[], int pitch[], bool swapUV)
 {
     DPTR_D(VideoDecoderFFmpegHW);
 
-    Q_ASSERT_X(src[0] && pitch[0] > 0, "VideoDecoderFFmpegHW::copyToFrame", "src[0] and pitch[0] must be set");
+    Q_ASSERT_X(src[0] && (pitch[0] > 0), "VideoDecoderFFmpegHW::copyToFrame", "src[0] and pitch[0] must be set");
 
     const int nb_planes    = fmt.planeCount();
-    const int chroma_pitch = nb_planes > 1 ? fmt.bytesPerLine(pitch[0], 1) : 0;
+    const int chroma_pitch = (nb_planes > 1) ? fmt.bytesPerLine(pitch[0], 1) : 0;
     const int chroma_h     = fmt.chromaHeight(surface_h);
 
     int h[] =
@@ -419,18 +428,18 @@ VideoFrame VideoDecoderFFmpegHW::copyToFrame(const VideoFormat& fmt, int surface
             pitch[i] = chroma_pitch;
 
         if (!src[i])
-            src[i] = src[i-1] + pitch[i-1]*h[i-1];
+            src[i] = src[i-1] + pitch[i-1] * h[i-1];
     }
 
-    if (swapUV && nb_planes > 2)
+    if (swapUV && (nb_planes > 2))
     {
-        std::swap(src[1], src[2]);
+        std::swap(src[1],   src[2]);
         std::swap(pitch[1], pitch[2]);
     }
 
     VideoFrame frame;
 
-    if (copyMode() == VideoDecoderFFmpegHW::OptimizedCopy && d.gpu_mem.isReady())
+    if ((copyMode() == VideoDecoderFFmpegHW::OptimizedCopy) && d.gpu_mem.isReady())
     {
         int yuv_size = 0;
 
@@ -451,7 +460,7 @@ VideoFrame VideoDecoderFFmpegHW::copyToFrame(const VideoFormat& fmt, int surface
 
         for (int i = 0 ; i < nb_planes ; ++i)
         {
-            dst[i] = plane_ptr;
+            dst[i]     = plane_ptr;
 
             // TODO: add VideoFormat::planeWidth/Height() ?
 

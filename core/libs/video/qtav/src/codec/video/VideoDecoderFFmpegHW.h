@@ -74,6 +74,7 @@ protected:
 private:
 
     VideoDecoderFFmpegHW();
+    VideoDecoderFFmpegHW(QObject*);
 };
 
 } // namespace QtAV
