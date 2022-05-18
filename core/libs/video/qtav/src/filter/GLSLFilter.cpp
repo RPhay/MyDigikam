@@ -176,7 +176,7 @@ void GLSLFilter::process(Statistics* statistics, VideoFrame* frame)
         {
         }
 
-        void* map(SurfaceType, const VideoFormat&, void* handle, int plane)
+        void* map(SurfaceType, const VideoFormat&, void* const handle, int plane)
         {
             Q_UNUSED(plane);
 

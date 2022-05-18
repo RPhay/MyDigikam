@@ -46,16 +46,16 @@ namespace QtAV
 {
 
 X11FilterContext::X11FilterContext()
-    : VideoFilterContext()
-    , doc(nullptr)
-    , cvt(nullptr)
-    , display(nullptr)
-    , gc(nullptr)
-    , drawable(0)
-    , text_img(nullptr)
-    , mask_img(nullptr)
-    , mask_pix(0)
-    , plain(0)
+    : VideoFilterContext(),
+      doc(nullptr),
+      cvt(nullptr),
+      display(nullptr),
+      gc(nullptr),
+      drawable(0),
+      text_img(nullptr),
+      mask_img(nullptr),
+      mask_pix(0),
+      plain(0)
 {
     painter = new QPainter();
 }
@@ -102,7 +102,7 @@ void X11FilterContext::destroyX11Resources()
 
 void X11FilterContext::resetX11(Display* dpy, GC g, Drawable d)
 {
-    if (dpy != display || g != gc || d != drawable)
+    if ((dpy != display) || (g != gc) || (d != drawable))
     {
         destroyX11Resources();
         display  = dpy;
@@ -115,7 +115,7 @@ void X11FilterContext::resetX11(Display* dpy, GC g, Drawable d)
         << QString::fromLatin1("drawable:%1").arg(d);
 }
 
-void X11FilterContext::renderTextImageX11(QImage *img, const QPointF &pos)
+void X11FilterContext::renderTextImageX11(QImage* img, const QPointF& pos)
 {
     if (img)
     {
@@ -134,7 +134,11 @@ void X11FilterContext::renderTextImageX11(QImage *img, const QPointF &pos)
 
         // force the stride to ensure we can safely set ximage data ptr to qimage data ptr
 
-        mask_img = (XImage*)XCreateImage((::Display*)display, xwa.visual, 1, ZPixmap, 0, nullptr, mask_q.width(), mask_q.height(), 8, mask_q.bytesPerLine());
+        mask_img = (XImage*)XCreateImage((::Display*)display, 
+                                         xwa.visual, 1, ZPixmap, 0,
+                                         nullptr,
+                                         mask_q.width(), mask_q.height(),
+                                         8, mask_q.bytesPerLine());
 
         if (!mask_img)
         {
@@ -147,17 +151,36 @@ void X11FilterContext::renderTextImageX11(QImage *img, const QPointF &pos)
 
         // force the stride to ensure we can safely set ximage data ptr to qimage data ptr
 
-        text_img     = (XImage*)XCreateImage((::Display*)display, xwa.visual, xwa.depth, ZPixmap, 0, nullptr, img->width(), img->height(), 8, img->bytesPerLine());
+        text_img     = (XImage*)XCreateImage((::Display*)display,
+                                             xwa.visual, xwa.depth, ZPixmap,
+                                             0, nullptr,
+                                             img->width(), img->height(),
+                                             8, img->bytesPerLine());
+
         ((::XImage*)text_img)->data = (char*)img->constBits();
 
-        mask_pix     = XCreatePixmap((::Display*)display, drawable, ((::XImage*)mask_img)->width, ((::XImage*)mask_img)->height, ((::XImage*)mask_img)->depth);
+        mask_pix     = XCreatePixmap((::Display*)display,
+                                     drawable,
+                                     ((::XImage*)mask_img)->width, ((::XImage*)mask_img)->height,
+                                     ((::XImage*)mask_img)->depth);
+
         ::GC mask_gc = XCreateGC((::Display*)display, (::Pixmap)mask_pix, 0, nullptr);
-        XPutImage((::Display*)display, mask_pix, mask_gc, (::XImage*)mask_img, 0,0,0,0, ((::XImage*)mask_img)->width, ((::XImage*)mask_img)->height);
+
+        XPutImage((::Display*)display,
+                  mask_pix, mask_gc,
+                  (::XImage*)mask_img,
+                  0, 0, 0, 0,
+                  ((::XImage*)mask_img)->width, ((::XImage*)mask_img)->height);
     }
 
     XSetClipMask((::Display*)display, (::GC)gc, (::Pixmap)mask_pix);
     XSetClipOrigin((::Display*)display, (::GC)gc, pos.x(), pos.y());
-    XPutImage((::Display*)display, drawable, (::GC)gc, (::XImage*)text_img, 0, 0, pos.x(), pos.y(), ((::XImage*)text_img)->width, ((::XImage*)text_img)->height);
+
+    XPutImage((::Display*)display,
+              drawable, (::GC)gc,
+              (::XImage*)text_img, 0, 0, pos.x(), pos.y(),
+              ((::XImage*)text_img)->width, ((::XImage*)text_img)->height);
+
     XSetClipMask((::Display*)display, (::GC)gc, None);
     XSync((::Display*)display, False);
 }
@@ -195,34 +218,40 @@ bool X11FilterContext::prepare()
     return true;
 }
 
-void X11FilterContext::initializeOnFrame(VideoFrame *vframe)
+void X11FilterContext::initializeOnFrame(VideoFrame* vframe)
 {
     Q_UNUSED(vframe);
 }
 
-void X11FilterContext::shareFrom(VideoFilterContext *vctx)
+void X11FilterContext::shareFrom(VideoFilterContext* vctx)
 {
     VideoFilterContext::shareFrom(vctx);
-    X11FilterContext* c = static_cast<X11FilterContext*>(vctx);
-    display             = c->display;
-    gc                  = c->gc;
-    drawable            = c->drawable;
+    X11FilterContext* const c = static_cast<X11FilterContext*>(vctx);
+    display                   = c->display;
+    gc                        = c->gc;
+    drawable                  = c->drawable;
 
     // can not set other filter's context text
 }
 
-void X11FilterContext::drawImage(const QPointF& /*pos*/, const QImage& /*image*/, const QRectF& /*source*/, Qt::ImageConversionFlags /*flags*/)
+void X11FilterContext::drawImage(const QPointF& /*pos*/,
+                                 const QImage& /*image*/,
+                                 const QRectF& /*source*/,
+                                 Qt::ImageConversionFlags /*flags*/)
 {
     // qpainter transform etc
 }
 
-void X11FilterContext::drawImage(const QRectF& /*target*/, const QImage& /*image*/, const QRectF& /*source*/, Qt::ImageConversionFlags /*flags*/)
+void X11FilterContext::drawImage(const QRectF& /*target*/,
+                                 const QImage& /*image*/,
+                                 const QRectF& /*source*/,
+                                 Qt::ImageConversionFlags /*flags*/)
 {
 }
 
-void X11FilterContext::drawPlainText(const QPointF &pos, const QString &text)
+void X11FilterContext::drawPlainText(const QPointF& pos, const QString& text)
 {
-    if (text == this->text && plain && mask_pix)
+    if ((text == this->text) && plain && mask_pix)
     {
         renderTextImageX11(nullptr, pos);
 
@@ -243,7 +272,7 @@ void X11FilterContext::drawPlainText(const QPointF &pos, const QString &text)
     renderTextImageX11(&text_q, pos);
 }
 
-void X11FilterContext::drawPlainText(const QRectF &rect, int flags, const QString &text)
+void X11FilterContext::drawPlainText(const QRectF& rect, int flags, const QString& text)
 {
      if (text.isEmpty())
          return;
@@ -267,7 +296,7 @@ void X11FilterContext::drawPlainText(const QRectF &rect, int flags, const QStrin
      if (br.isEmpty())
          return;
 
-    if (text == this->text && plain && mask_pix)
+    if ((text == this->text) && plain && mask_pix)
     {
         renderTextImageX11(nullptr, br.topLeft());
         return;
@@ -285,14 +314,15 @@ void X11FilterContext::drawPlainText(const QRectF &rect, int flags, const QStrin
     renderTextImageX11(&text_q, br.topLeft());
 }
 
-void X11FilterContext::drawRichText(const QRectF &rect, const QString &text, bool wordWrap)
+void X11FilterContext::drawRichText(const QRectF& rect, const QString& text, bool wordWrap)
 {
     Q_UNUSED(rect);
     Q_UNUSED(text);
 
-    if (text == this->text && plain && mask_pix)
+    if ((text == this->text) && plain && mask_pix)
     {
         renderTextImageX11(nullptr, rect.topLeft());
+
         return;
     }
 

@@ -298,13 +298,13 @@ public:
 
 #if QTAV_HAVE(AVFILTER)
 
-    AVFilterGraph*   filter_graph   = nullptr;
-    AVFilterContext* in_filter_ctx  = nullptr;
-    AVFilterContext* out_filter_ctx = nullptr;
+    AVFilterGraph*      filter_graph   = nullptr;
+    AVFilterContext*    in_filter_ctx  = nullptr;
+    AVFilterContext*    out_filter_ctx = nullptr;
 
 #endif // QTAV_HAVE(AVFILTER)
 
-    AVFrame*            avframe     = nullptr;
+    AVFrame*            avframe        = nullptr;
     QString             options;
     LibAVFilter::Status status;
 };
@@ -485,7 +485,7 @@ public:
     LibAVFilterVideoPrivate()
         : VideoFilterPrivate(),
           pixfmt(QTAV_PIX_FMT_C(NONE)),
-          width(0),
+          width (0),
           height(0)
     {
     }
@@ -510,7 +510,7 @@ QStringList LibAVFilterVideo::filters() const
     return LibAVFilter::videoFilters();
 }
 
-void LibAVFilterVideo::process(Statistics *statistics, VideoFrame *frame)
+void LibAVFilterVideo::process(Statistics* statistics, VideoFrame* frame)
 {
     Q_UNUSED(statistics);
 
@@ -551,7 +551,7 @@ void LibAVFilterVideo::process(Statistics *statistics, VideoFrame *frame)
     vf.setBits((quint8**)f->data);
     vf.setBytesPerLine((int*)f->linesize);
     vf.setMetaData(QStringLiteral("avframe_hoder_ref"), QVariant::fromValue(ref));
-    vf.setTimestamp(ref->frame()->pts/1000000.0); //pkt_pts?
+    vf.setTimestamp(ref->frame()->pts / 1000000.0); //pkt_pts?
 
     //vf.setMetaData(frame->availableMetaData());
 
@@ -591,9 +591,9 @@ public:
 
     LibAVFilterAudioPrivate()
         : AudioFilterPrivate(),
-          sample_rate(0),
-          sample_fmt(AV_SAMPLE_FMT_NONE),
-          channel_layout(0)
+          sample_rate       (0),
+          sample_fmt        (AV_SAMPLE_FMT_NONE),
+          channel_layout    (0)
     {
     }
 

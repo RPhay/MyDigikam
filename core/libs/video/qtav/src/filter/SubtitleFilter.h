@@ -74,13 +74,13 @@ class QTAV_EXPORT SubtitleFilter : public VideoFilter,
 
 public:
 
-    explicit SubtitleFilter(QObject* parent = nullptr);
+    explicit SubtitleFilter(QObject* const parent = nullptr);
 
     void setPlayer(AVPlayerCore* player);
 
     bool isSupported(VideoFilterContext::Type ct) const override
     {
-        return ct == VideoFilterContext::QtPainter || ct == VideoFilterContext::X11;
+        return (ct == VideoFilterContext::QtPainter || ct == VideoFilterContext::X11);
     }
 
     /*!
@@ -88,26 +88,26 @@ public:
      * Load user selected subtitle. The subtitle will not change unless you manually setFile(QString()).
      */
     void setFile(const QString& file);
-    QString file()      const;
+    QString file()                  const;
 
     /*!
      * \brief autoLoad
      * Auto find and load a suitable external subtitle if file() is not empty.
      */
-    bool autoLoad()     const;
+    bool autoLoad()                 const;
 
     // <1 means normalized. not valid means the whole target rect. default is (0, 0, 1, 0.9) and align bottom
 
     void setRect(const QRectF& r);
-    QRectF rect()       const;
+    QRectF rect()                   const;
 
     void setFont(const QFont& f);
-    QFont font()        const;
+    QFont font()                    const;
 
     void setColor(const QColor& c);
-    QColor color()      const;
+    QColor color()                  const;
 
-    QString subtitleText(qreal t) const;
+    QString subtitleText(qreal t)   const;
 
 public Q_SLOTS:
 
