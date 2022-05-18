@@ -947,6 +947,10 @@ public:
 private:
 
     SubtitleProcessorLibASS* sp = nullptr;
+
+private:
+
+    FontCacheUpdater(QObject*);
 };
 
 void SubtitleProcessorLibASS::updateFontCacheAsync()

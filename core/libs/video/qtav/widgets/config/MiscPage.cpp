@@ -39,7 +39,8 @@
 namespace QtAV
 {
 
-MiscPage::MiscPage(bool previewOpt)
+MiscPage::MiscPage(QWidget* const parent, bool previewOpt)
+    : ConfigPageBase(parent)
 {
     QGridLayout* const gl = new QGridLayout();
     setLayout(gl);

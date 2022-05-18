@@ -90,7 +90,7 @@ SetupVideo::SetupVideo(QWidget* const parent)
 
     d->pages << new DecoderConfigPage(nullptr, false)
              << new AVFormatConfigPage()
-             << new MiscPage(false)
+             << new MiscPage(nullptr, false)
     ;
 
     readSettings();
