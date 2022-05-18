@@ -99,11 +99,11 @@ Code review with plenty of fixes and improvements. See the list of tasks below.
     - Port GLWidgetRenderer class to QOpenGLWidget for Qt5 and Qt6 
       GLWidgetRenderer2 still based on Qt5::QGLWidget and is disabled for Qt6.
 
+    - Apply fixes for Coverity-Scan static analyzer.
+
 * Under Progress:
 
     - Apply fixes for Clazy static analyzer.
-
-    - Apply fixes for Coverity-Scan static analyzer.
 
 * TODO:
 
@@ -125,3 +125,6 @@ Code review with plenty of fixes and improvements. See the list of tasks below.
 
     - Compilation are processed with Continuous deployement : MacOS CLang, Windows MinGW (MXE), Linux GCC.
 
+    - Stand alone media player originaly located from examples/player are move and compiled to core/avplayer.
+
+    - Codes from tests sub-directory are compiled into core/tests/video/qtav.
