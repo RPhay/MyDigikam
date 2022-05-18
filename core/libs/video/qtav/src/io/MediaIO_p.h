@@ -46,9 +46,9 @@ class QTAV_PRIVATE_EXPORT MediaIOPrivate : public DPtrPrivate<MediaIO>
 public:
 
     MediaIOPrivate()
-        : ctx(nullptr),
+        : ctx        (nullptr),
           buffer_size(-1),
-          mode(MediaIO::Read)
+          mode       (MediaIO::Read)
     {
     }
 
@@ -102,6 +102,10 @@ Q_SIGNALS:
 protected:
 
     explicit QIODeviceIO(QIODeviceIOPrivate& d);
+
+private:
+
+    QIODeviceIO(QObject*);
 };
 
 // -------------------------------------------------------------------
@@ -126,6 +130,8 @@ protected:
     void onUrlChanged()                   override;
 
 private:
+
+    QFileIO(QObject*);
 
     using QIODeviceIO::setDevice;
 };

@@ -34,7 +34,7 @@ namespace QtAV
 extern ColorSpace colorSpaceFromFFmpeg(AVColorSpace cs);
 extern ColorRange colorRangeFromFFmpeg(AVColorRange cr);
 
-static void SetColorDetailsByFFmpeg(VideoFrame *f, AVFrame* frame, AVCodecContext* codec_ctx)
+static void SetColorDetailsByFFmpeg(VideoFrame* f, AVFrame* frame, AVCodecContext* codec_ctx)
 {
     ColorSpace cs = colorSpaceFromFFmpeg(av_frame_get_colorspace(frame));
 
@@ -49,6 +49,7 @@ static void SetColorDetailsByFFmpeg(VideoFrame *f, AVFrame* frame, AVCodecContex
         // check yuvj format. TODO: deprecated, check only for old ffmpeg?
 
         const AVPixelFormat pixfmt = (AVPixelFormat)frame->format;
+
         switch (pixfmt)
         {
             //case QTAV_PIX_FMT_C(YUVJ411P): // not in ffmpeg<2 and libav
@@ -57,11 +58,15 @@ static void SetColorDetailsByFFmpeg(VideoFrame *f, AVFrame* frame, AVCodecContex
             case QTAV_PIX_FMT_C(YUVJ422P):
             case QTAV_PIX_FMT_C(YUVJ440P):
             case QTAV_PIX_FMT_C(YUVJ444P):
+            {
                 cr = ColorRange_Full;
                 break;
+            }
 
-        default:
-            break;
+            default:
+            {
+                break;
+            }
         }
     }
 
@@ -90,7 +95,7 @@ static void SetColorDetailsByFFmpeg(VideoFrame *f, AVFrame* frame, AVCodecContex
     f->setColorRange(cr);
 }
 
-void VideoDecoderFFmpegBasePrivate::updateColorDetails(VideoFrame *f)
+void VideoDecoderFFmpegBasePrivate::updateColorDetails(VideoFrame* f)
 {
     if (f->format().pixelFormatFFmpeg() == frame->format)
     {
@@ -115,11 +120,11 @@ void VideoDecoderFFmpegBasePrivate::updateColorDetails(VideoFrame *f)
 
     // yuv frame. When happens?
 
-    const bool rgb_coded = (av_pix_fmt_desc_get(codec_ctx->pix_fmt)->flags & AV_PIX_FMT_FLAG_RGB) == AV_PIX_FMT_FLAG_RGB;
+    const bool rgb_coded = ((av_pix_fmt_desc_get(codec_ctx->pix_fmt)->flags & AV_PIX_FMT_FLAG_RGB) == AV_PIX_FMT_FLAG_RGB);
 
     if (rgb_coded)
     {
-        if (f->width() >= 1280 && f->height() >= 576)
+        if ((f->width() >= 1280) && (f->height() >= 576))
             f->setColorSpace(ColorSpace_BT709);
         else
             f->setColorSpace(ColorSpace_BT601);
@@ -139,7 +144,7 @@ qreal VideoDecoderFFmpegBasePrivate::getDAR(AVFrame *f)
     qreal dar = 0;
 
     if (f->height > 0)
-        dar = (qreal)f->width/(qreal)f->height;
+        dar = (qreal)f->width / (qreal)f->height;
 
     // prefer sar from AVFrame if sar != 1/1
 
@@ -151,8 +156,8 @@ qreal VideoDecoderFFmpegBasePrivate::getDAR(AVFrame *f)
     return dar;
 }
 
-VideoDecoderFFmpegBase::VideoDecoderFFmpegBase(VideoDecoderFFmpegBasePrivate &d):
-    VideoDecoder(d)
+VideoDecoderFFmpegBase::VideoDecoderFFmpegBase(VideoDecoderFFmpegBasePrivate& d)
+    : VideoDecoder(d)
 {
 }
 
@@ -167,7 +172,7 @@ bool VideoDecoderFFmpegBase::decode(const Packet &packet)
     // const AVPacket*: ffmpeg >= 1.0. no libav
 
     int got_frame_ptr = 0;
-    int ret = 0;
+    int ret           = 0;
 
     if (packet.isEOF())
     {
@@ -175,10 +180,10 @@ bool VideoDecoderFFmpegBase::decode(const Packet &packet)
         av_init_packet(&eofpkt);
         eofpkt.data = nullptr;
         eofpkt.size = 0;
-        ret = avcodec_decode_video2(d.codec_ctx,
-                                    d.frame,
-                                    &got_frame_ptr,
-                                    &eofpkt);
+        ret         = avcodec_decode_video2(d.codec_ctx,
+                                            d.frame,
+                                            &got_frame_ptr,
+                                            &eofpkt);
     }
     else
     {
@@ -201,7 +206,9 @@ bool VideoDecoderFFmpegBase::decode(const Packet &packet)
 
     if (!got_frame_ptr)
     {
-        qCWarning(DIGIKAM_QTAV_LOG_WARN).noquote() << QString::asprintf("no frame could be decompressed: %s %d/%d", av_err2str(ret), d.undecoded_size, packet.data.size());
+        qCWarning(DIGIKAM_QTAV_LOG_WARN).noquote()
+            << QString::asprintf("no frame could be decompressed: %s %d/%d",
+                av_err2str(ret), d.undecoded_size, packet.data.size());
 
         return !packet.isEOF();
     }
@@ -223,7 +230,7 @@ VideoFrame VideoDecoderFFmpegBase::frame()
 {
     DPTR_D(VideoDecoderFFmpegBase);
 
-    if (d.frame->width <= 0 || d.frame->height <= 0 || !d.codec_ctx)
+    if ((d.frame->width <= 0) || (d.frame->height <= 0) || !d.codec_ctx)
         return VideoFrame();
 
     // it's safe if width, height, pixfmt will not change, only data change
@@ -235,7 +242,7 @@ VideoFrame VideoDecoderFFmpegBase::frame()
 
     // in s. TODO: what about AVFrame.pts? av_frame_get_best_effort_timestamp? move to VideoFrame::from(AVFrame*)
 
-    frame.setTimestamp((double)d.frame->pkt_pts/1000.0);
+    frame.setTimestamp((double)d.frame->pkt_pts / 1000.0);
     frame.setMetaData(QStringLiteral("avbuf"), QVariant::fromValue(AVFrameBuffersRef(new AVFrameBuffers(d.frame))));
     d.updateColorDetails(&frame);
 

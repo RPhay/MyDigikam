@@ -102,7 +102,7 @@ public:
     };
     Q_DECLARE_FLAGS(ThreadFlags, ThreadFlag)
     Q_ENUM(ThreadFlag)
-    
+
     // flags. visualize motion vectors (MVs)
 
     enum MotionVectorVisFlag
@@ -150,7 +150,7 @@ public:
 
     static VideoDecoder* createMMAL()
     {
-        VideoDecoderFFmpeg *vd = new VideoDecoderFFmpeg();
+        VideoDecoderFFmpeg* const vd = new VideoDecoderFFmpeg();
         vd->setProperty("hwaccel", QLatin1String("mmal"));
 
         return vd;
@@ -158,7 +158,7 @@ public:
 
     static VideoDecoder* createQSV()
     {
-        VideoDecoderFFmpeg *vd = new VideoDecoderFFmpeg();
+        VideoDecoderFFmpeg* const vd = new VideoDecoderFFmpeg();
         vd->setProperty("hwaccel", QLatin1String("qsv"));
 
         return vd;
@@ -166,7 +166,7 @@ public:
 
     static VideoDecoder* createCrystalHD()
     {
-        VideoDecoderFFmpeg *vd = new VideoDecoderFFmpeg();
+        VideoDecoderFFmpeg* const vd = new VideoDecoderFFmpeg();
         vd->setProperty("hwaccel", QLatin1String("crystalhd"));
 
         return vd;
@@ -196,9 +196,9 @@ public:
     }
 
     VideoDecoderFFmpeg();
-    VideoDecoderId id() const override final;
+    VideoDecoderId id()                         const override final;
 
-    QString description() const override final
+    QString description()                       const override final
     {
         const int patch = QTAV_VERSION_PATCH(avcodec_version());
 
@@ -210,28 +210,40 @@ public:
     // TODO: av_opt_set in setter
 
     void setSkipLoopFilter(DiscardType value);
-    DiscardType skipLoopFilter() const;
+    DiscardType skipLoopFilter()                const;
+
     void setSkipIDCT(DiscardType value);
-    DiscardType skipIDCT() const;
+    DiscardType skipIDCT()                      const;
+
     void setStrict(StrictType value);
-    StrictType strict() const;
+    StrictType strict()                         const;
+
     void setSkipFrame(DiscardType value);
-    DiscardType skipFrame() const;
+    DiscardType skipFrame()                     const;
+
     void setThreads(int value);
-    int threads() const;
+    int threads()                               const;
+
     void setThreadFlags(ThreadFlags value);
-    ThreadFlags threadFlags() const;
+    ThreadFlags threadFlags()                   const;
+
     void setMotionVectorVisFlags(MotionVectorVisFlags value);
     MotionVectorVisFlags motionVectorVisFlags() const;
+
     void setBugFlags(BugFlags value);
-    BugFlags bugFlags() const;
+    BugFlags bugFlags()                         const;
+
     void setHwaccel(const QString& value);
-    QString hwaccel() const;
+    QString hwaccel()                           const;
 
 Q_SIGNALS:
 
     void codecNameChanged() override;
     void hwaccelChanged();
+
+private:
+
+    VideoDecoderFFmpeg(QObject*);
 };
 
 extern VideoDecoderId VideoDecoderId_FFmpeg;
@@ -259,15 +271,15 @@ class Q_DECL_HIDDEN VideoDecoderFFmpegPrivate final : public VideoDecoderFFmpegB
 public:
 
     VideoDecoderFFmpegPrivate()
-      : VideoDecoderFFmpegBasePrivate()
-      , skip_loop_filter(VideoDecoderFFmpeg::Default)
-      , skip_idct(VideoDecoderFFmpeg::Default)
-      , strict(VideoDecoderFFmpeg::Normal)
-      , skip_frame(VideoDecoderFFmpeg::Default)
-      , thread_type(VideoDecoderFFmpeg::DefaultType)
-      , threads(0)
-      , debug_mv(VideoDecoderFFmpeg::No)
-      , bug(VideoDecoderFFmpeg::autodetect)
+      : VideoDecoderFFmpegBasePrivate(),
+        skip_loop_filter(VideoDecoderFFmpeg::Default),
+        skip_idct(VideoDecoderFFmpeg::Default),
+        strict(VideoDecoderFFmpeg::Normal),
+        skip_frame(VideoDecoderFFmpeg::Default),
+        thread_type(VideoDecoderFFmpeg::DefaultType),
+        threads(0),
+        debug_mv(VideoDecoderFFmpeg::No),
+        bug(VideoDecoderFFmpeg::autodetect)
     {
     }
 
@@ -306,26 +318,36 @@ public:
         {
             case QTAV_CODEC_ID(MPEG4):
             case QTAV_CODEC_ID(H263):
+            {
                 codec_ctx->thread_type = 0;
                 break;
+            }
 
             case QTAV_CODEC_ID(MPEG1VIDEO):
             case QTAV_CODEC_ID(MPEG2VIDEO):
+            {
                 codec_ctx->thread_type &= ~FF_THREAD_SLICE;
+                break;
+            }
 
-                /* fall through */
+            /* fall through */
 
 #   if (LIBAVCODEC_VERSION_INT < AV_VERSION_INT(55, 1, 0))
 
             case QTAV_CODEC_ID(H264):
             case QTAV_CODEC_ID(VC1):
             case QTAV_CODEC_ID(WMV3):
+            {
                 codec_ctx->thread_type &= ~FF_THREAD_FRAME;
+                break;
+            }
 
 #   endif
 
             default:
+            {
                 break;
+            }
         }
 
 #endif
@@ -333,14 +355,16 @@ public:
         return true;
     }
 
-    int skip_loop_filter;
-    int skip_idct;
-    int strict;
-    int skip_frame;
-    int thread_type;
-    int threads;
-    int debug_mv;
-    int bug;
+public:
+
+    int     skip_loop_filter;
+    int     skip_idct;
+    int     strict;
+    int     skip_frame;
+    int     thread_type;
+    int     threads;
+    int     debug_mv;
+    int     bug;
     QString hwa;
 };
 

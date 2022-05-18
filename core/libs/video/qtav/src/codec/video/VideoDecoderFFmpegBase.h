@@ -53,6 +53,7 @@ protected:
 private:
 
     VideoDecoderFFmpegBase(); // it's a base class
+    VideoDecoderFFmpegBase(QObject*);
 };
 
 // -----------------------------------------------------------------
@@ -63,9 +64,9 @@ public:
 
     VideoDecoderFFmpegBasePrivate()
         : VideoDecoderPrivate(),
-          frame(nullptr),
-          width(0),
-          height(0)
+          frame              (nullptr),
+          width              (0),
+          height             (0)
     {
 
 #if !AVCODEC_STATIC_REGISTER
