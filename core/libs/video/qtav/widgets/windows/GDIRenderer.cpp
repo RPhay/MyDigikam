@@ -100,6 +100,8 @@ public:
         return this;
     }
 
+    DECLARE_VIDEO_RENDERER_SIGNALS
+
 protected:
 
     bool receiveFrame(const VideoFrame& frame)              override;
@@ -117,6 +119,8 @@ protected:
     // stay on top will change parent, hide then show(windows). we need GetDC() again
 
     void showEvent(QShowEvent*)                             override;
+
+    DECLARE_VIDEO_RENDERER_EMIT_METHODS
 };
 
 typedef GDIRenderer VideoRendererGDI;
@@ -441,6 +445,76 @@ void GDIRenderer::showEvent(QShowEvent*)
 
     d.update_background = true;
     d_func().prepare();
+}
+
+void GDIRenderer::emitSourceAspectRatioChanged(qreal v)
+{
+   Q_EMIT sourceAspectRatioChanged(v); 
+}
+
+void GDIRenderer::emitOutAspectRatioChanged()        
+{
+   Q_EMIT outAspectRatioChanged(); 
+}
+
+void GDIRenderer::emitOutAspectRatioModeChanged()    
+{
+   Q_EMIT outAspectRatioModeChanged(); 
+}
+
+void GDIRenderer::emitOrientationChanged()           
+{
+   Q_EMIT orientationChanged(); 
+}
+
+void GDIRenderer::emitVideoRectChanged()             
+{
+   Q_EMIT videoRectChanged(); 
+}
+
+void GDIRenderer::emitContentRectChanged()           
+{
+   Q_EMIT contentRectChanged(); 
+}
+
+void GDIRenderer::emitRegionOfInterestChanged()      
+{
+   Q_EMIT regionOfInterestChanged(); 
+}
+
+void GDIRenderer::emitVideoFrameSizeChanged()        
+{
+   Q_EMIT videoFrameSizeChanged(); 
+}
+
+void GDIRenderer::emitRendererSizeChanged()          
+{
+   Q_EMIT rendererSizeChanged(); 
+}
+
+void GDIRenderer::emitBrightnessChanged(qreal v)       
+{
+   Q_EMIT brightnessChanged(v); 
+}
+
+void GDIRenderer::emitContrastChanged(qreal v)         
+{
+   Q_EMIT contrastChanged(v); 
+}
+
+void GDIRenderer::emitHueChanged(qreal v)              
+{
+   Q_EMIT hueChanged(v); 
+}
+
+void GDIRenderer::emitSaturationChanged(qreal v)       
+{
+   Q_EMIT saturationChanged(v); 
+}
+
+void GDIRenderer::emitBackgroundColorChanged()       
+{
+   Q_EMIT backgroundColorChanged();
 }
 
 } // namespace QtAV

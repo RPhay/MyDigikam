@@ -91,6 +91,8 @@ public:
         return this;
     }
 
+    DECLARE_VIDEO_RENDERER_SIGNALS
+
 protected:
 
     bool receiveFrame(const VideoFrame& frame)              override;
@@ -108,6 +110,8 @@ protected:
     // stay on top will change parent, hide then show(windows)
 
     void showEvent(QShowEvent*)                             override;
+
+    DECLARE_VIDEO_RENDERER_EMIT_METHODS
 };
 
 typedef Direct2DRenderer VideoRendererDirect2D;
@@ -613,6 +617,76 @@ void Direct2DRenderer::showEvent(QShowEvent*)
     DPTR_D(Direct2DRenderer);
 
     d.recreateDeviceResource();
+}
+
+void Direct2DRenderer::emitSourceAspectRatioChanged(qreal v)
+{
+   Q_EMIT sourceAspectRatioChanged(v); 
+}
+
+void Direct2DRenderer::emitOutAspectRatioChanged()        
+{
+   Q_EMIT outAspectRatioChanged(); 
+}
+
+void Direct2DRenderer::emitOutAspectRatioModeChanged()    
+{
+   Q_EMIT outAspectRatioModeChanged(); 
+}
+
+void Direct2DRenderer::emitOrientationChanged()           
+{
+   Q_EMIT orientationChanged(); 
+}
+
+void Direct2DRenderer::emitVideoRectChanged()             
+{
+   Q_EMIT videoRectChanged(); 
+}
+
+void Direct2DRenderer::emitContentRectChanged()           
+{
+   Q_EMIT contentRectChanged(); 
+}
+
+void Direct2DRenderer::emitRegionOfInterestChanged()      
+{
+   Q_EMIT regionOfInterestChanged(); 
+}
+
+void Direct2DRenderer::emitVideoFrameSizeChanged()        
+{
+   Q_EMIT videoFrameSizeChanged(); 
+}
+
+void Direct2DRenderer::emitRendererSizeChanged()          
+{
+   Q_EMIT rendererSizeChanged(); 
+}
+
+void Direct2DRenderer::emitBrightnessChanged(qreal v)       
+{
+   Q_EMIT brightnessChanged(v); 
+}
+
+void Direct2DRenderer::emitContrastChanged(qreal v)         
+{
+   Q_EMIT contrastChanged(v); 
+}
+
+void Direct2DRenderer::emitHueChanged(qreal v)              
+{
+   Q_EMIT hueChanged(v); 
+}
+
+void Direct2DRenderer::emitSaturationChanged(qreal v)       
+{
+   Q_EMIT saturationChanged(v); 
+}
+
+void Direct2DRenderer::emitBackgroundColorChanged()       
+{
+   Q_EMIT backgroundColorChanged();
 }
 
 } // namespace QtAV

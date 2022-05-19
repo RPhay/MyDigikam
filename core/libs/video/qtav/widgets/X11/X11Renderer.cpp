@@ -832,7 +832,7 @@ void X11Renderer::emitSaturationChanged(qreal v)
 
 void X11Renderer::emitBackgroundColorChanged()       
 {
-   Q_EMIT backgroundColorChanged(); 
+   Q_EMIT backgroundColorChanged();
 }
 
 } // namespace QtAV
