@@ -447,75 +447,7 @@ void GDIRenderer::showEvent(QShowEvent*)
     d_func().prepare();
 }
 
-void GDIRenderer::emitSourceAspectRatioChanged(qreal v)
-{
-   Q_EMIT sourceAspectRatioChanged(v);
-}
-
-void GDIRenderer::emitOutAspectRatioChanged()
-{
-   Q_EMIT outAspectRatioChanged();
-}
-
-void GDIRenderer::emitOutAspectRatioModeChanged()
-{
-   Q_EMIT outAspectRatioModeChanged();
-}
-
-void GDIRenderer::emitOrientationChanged()
-{
-   Q_EMIT orientationChanged();
-}
-
-void GDIRenderer::emitVideoRectChanged()
-{
-   Q_EMIT videoRectChanged();
-}
-
-void GDIRenderer::emitContentRectChanged()
-{
-   Q_EMIT contentRectChanged();
-}
-
-void GDIRenderer::emitRegionOfInterestChanged()
-{
-   Q_EMIT regionOfInterestChanged();
-}
-
-void GDIRenderer::emitVideoFrameSizeChanged()
-{
-   Q_EMIT videoFrameSizeChanged();
-}
-
-void GDIRenderer::emitRendererSizeChanged()
-{
-   Q_EMIT rendererSizeChanged();
-}
-
-void GDIRenderer::emitBrightnessChanged(qreal v)
-{
-   Q_EMIT brightnessChanged(v);
-}
-
-void GDIRenderer::emitContrastChanged(qreal v)
-{
-   Q_EMIT contrastChanged(v);
-}
-
-void GDIRenderer::emitHueChanged(qreal v)
-{
-   Q_EMIT hueChanged(v);
-}
-
-void GDIRenderer::emitSaturationChanged(qreal v)
-{
-   Q_EMIT saturationChanged(v);
-}
-
-void GDIRenderer::emitBackgroundColorChanged()
-{
-   Q_EMIT backgroundColorChanged();
-}
+IMPLEMENT_VIDEO_RENDERER_EMIT_METHODS(GDIRenderer)
 
 } // namespace QtAV
 

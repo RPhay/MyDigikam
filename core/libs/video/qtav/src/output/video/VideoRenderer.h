@@ -71,6 +71,22 @@ private:                                                \
     void emitSaturationChanged(qreal)        override;  \
     void emitBackgroundColorChanged()        override;
 
+#define IMPLEMENT_VIDEO_RENDERER_EMIT_METHODS(ClassName) \
+void ClassName::emitSourceAspectRatioChanged(qreal v) { Q_EMIT sourceAspectRatioChanged(v);   }   \
+void ClassName::emitOutAspectRatioChanged()           { Q_EMIT outAspectRatioChanged();       }   \
+void ClassName::emitOutAspectRatioModeChanged()       { Q_EMIT outAspectRatioModeChanged();   }   \
+void ClassName::emitOrientationChanged()              { Q_EMIT orientationChanged();          }   \
+void ClassName::emitVideoRectChanged()                { Q_EMIT videoRectChanged();            }   \
+void ClassName::emitContentRectChanged()              { Q_EMIT contentRectChanged();          }   \
+void ClassName::emitRegionOfInterestChanged()         { Q_EMIT regionOfInterestChanged();     }   \
+void ClassName::emitVideoFrameSizeChanged()           { Q_EMIT videoFrameSizeChanged();       }   \
+void ClassName::emitRendererSizeChanged()             { Q_EMIT rendererSizeChanged();         }   \
+void ClassName::emitBrightnessChanged(qreal v)        { Q_EMIT brightnessChanged(v);          }   \
+void ClassName::emitContrastChanged(qreal v)          { Q_EMIT contrastChanged(v);            }   \
+void ClassName::emitHueChanged(qreal v)               { Q_EMIT hueChanged(v);                 }   \
+void ClassName::emitSaturationChanged(qreal v)        { Q_EMIT saturationChanged(v);          }   \
+void ClassName::emitBackgroundColorChanged()          { Q_EMIT backgroundColorChanged();      }
+
 /*!
  * A bridge for VideoOutput(QObject based) and video renderer backend classes
  * Every public setter call it's virtual onSetXXX(...) which has default behavior.

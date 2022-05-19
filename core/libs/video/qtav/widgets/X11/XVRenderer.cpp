@@ -800,75 +800,7 @@ bool XVRenderer::onSetSaturation(qreal s)
     return d.XvSetPortAttributeIfExists("XV_SATURATION", s*100);
 }
 
-void XVRenderer::emitSourceAspectRatioChanged(qreal v)
-{
-   Q_EMIT sourceAspectRatioChanged(v);
-}
-
-void XVRenderer::emitOutAspectRatioChanged()
-{
-   Q_EMIT outAspectRatioChanged();
-}
-
-void XVRenderer::emitOutAspectRatioModeChanged()
-{
-   Q_EMIT outAspectRatioModeChanged();
-}
-
-void XVRenderer::emitOrientationChanged()
-{
-   Q_EMIT orientationChanged();
-}
-
-void XVRenderer::emitVideoRectChanged()
-{
-   Q_EMIT videoRectChanged();
-}
-
-void XVRenderer::emitContentRectChanged()
-{
-   Q_EMIT contentRectChanged();
-}
-
-void XVRenderer::emitRegionOfInterestChanged()
-{
-   Q_EMIT regionOfInterestChanged();
-}
-
-void XVRenderer::emitVideoFrameSizeChanged()
-{
-   Q_EMIT videoFrameSizeChanged();
-}
-
-void XVRenderer::emitRendererSizeChanged()
-{
-   Q_EMIT rendererSizeChanged();
-}
-
-void XVRenderer::emitBrightnessChanged(qreal v)
-{
-   Q_EMIT brightnessChanged(v);
-}
-
-void XVRenderer::emitContrastChanged(qreal v)
-{
-   Q_EMIT contrastChanged(v);
-}
-
-void XVRenderer::emitHueChanged(qreal v)
-{
-   Q_EMIT hueChanged(v);
-}
-
-void XVRenderer::emitSaturationChanged(qreal v)
-{
-   Q_EMIT saturationChanged(v);
-}
-
-void XVRenderer::emitBackgroundColorChanged()
-{
-   Q_EMIT backgroundColorChanged();
-}
+IMPLEMENT_VIDEO_RENDERER_EMIT_METHODS(XVRenderer)
 
 } // namespace QtAV
 

@@ -765,75 +765,7 @@ void X11Renderer::showEvent(QShowEvent* event)
     d.prepareDeviceResource();
 }
 
-void X11Renderer::emitSourceAspectRatioChanged(qreal v)
-{
-   Q_EMIT sourceAspectRatioChanged(v);
-}
-
-void X11Renderer::emitOutAspectRatioChanged()
-{
-   Q_EMIT outAspectRatioChanged();
-}
-
-void X11Renderer::emitOutAspectRatioModeChanged()
-{
-   Q_EMIT outAspectRatioModeChanged();
-}
-
-void X11Renderer::emitOrientationChanged()
-{
-   Q_EMIT orientationChanged();
-}
-
-void X11Renderer::emitVideoRectChanged()
-{
-   Q_EMIT videoRectChanged();
-}
-
-void X11Renderer::emitContentRectChanged()
-{
-   Q_EMIT contentRectChanged();
-}
-
-void X11Renderer::emitRegionOfInterestChanged()
-{
-   Q_EMIT regionOfInterestChanged();
-}
-
-void X11Renderer::emitVideoFrameSizeChanged()
-{
-   Q_EMIT videoFrameSizeChanged();
-}
-
-void X11Renderer::emitRendererSizeChanged()
-{
-   Q_EMIT rendererSizeChanged();
-}
-
-void X11Renderer::emitBrightnessChanged(qreal v)
-{
-   Q_EMIT brightnessChanged(v);
-}
-
-void X11Renderer::emitContrastChanged(qreal v)
-{
-   Q_EMIT contrastChanged(v);
-}
-
-void X11Renderer::emitHueChanged(qreal v)
-{
-   Q_EMIT hueChanged(v);
-}
-
-void X11Renderer::emitSaturationChanged(qreal v)
-{
-   Q_EMIT saturationChanged(v);
-}
-
-void X11Renderer::emitBackgroundColorChanged()
-{
-   Q_EMIT backgroundColorChanged();
-}
+IMPLEMENT_VIDEO_RENDERER_EMIT_METHODS(X11Renderer)
 
 } // namespace QtAV
 
