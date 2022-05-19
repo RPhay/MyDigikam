@@ -70,13 +70,13 @@ public:
      * \brief VideoOutput
      * Create a QWidget based renderer. Result can be a QOpenGLWidget or QGLWidget based renderer if possible. Otherwise fallback to a software renderer
      */
-    explicit VideoOutput(QObject *parent = nullptr);
+    explicit VideoOutput(QObject* const parent = nullptr);
 
     /*!
      * \brief VideoOutput
      * Create a renderer with given rendererId. MUST check VideoOutput::isAvailable() later!
      */
-    explicit VideoOutput(VideoRendererId rendererId, QObject *parent = nullptr);
+    explicit VideoOutput(VideoRendererId rendererId, QObject* const parent = nullptr);
     ~VideoOutput();
 
     VideoRendererId id() const                                              override;
@@ -88,26 +88,11 @@ public:
     QGraphicsItem* graphicsItem()                                           override final;
     OpenGLVideo* opengl() const                                             override;
 
-Q_SIGNALS:
-
-    void sourceAspectRatioChanged(qreal value);
-    void regionOfInterestChanged();            
-    void outAspectRatioChanged();              
-    void outAspectRatioModeChanged();          
-    void brightnessChanged(qreal value);       
-    void contrastChanged(qreal);               
-    void hueChanged(qreal);                    
-    void saturationChanged(qreal);             
-    void backgroundColorChanged();             
-    void orientationChanged();                 
-    void videoRectChanged();                   
-    void videoFrameSizeChanged();
-    void contentRectChanged();
-    void rendererSizeChanged();
+    DECLARE_VIDEO_RENDERER_SIGNALS
 
 protected:
 
-    bool eventFilter(QObject *obj, QEvent *event)                           override;
+    bool eventFilter(QObject* obj, QEvent* event)                           override;
     bool receiveFrame(const VideoFrame& frame)                              override;
     void drawBackground()                                                   override;
     void drawFrame()                                                        override;
@@ -135,26 +120,11 @@ private:
     // from AVOutput
 
     virtual void setStatistics(Statistics* statistics)                      override; // called by friend AVPlayerCore
-    virtual bool onInstallFilter(Filter *filter, int index)                 override;
-    virtual bool onUninstallFilter(Filter *filter)                          override;
+    virtual bool onInstallFilter(Filter* filter, int index)                 override;
+    virtual bool onUninstallFilter(Filter* filter)                          override;
     virtual bool onHanlePendingTasks()                                      override;
 
-private:
-    
-    void emitSourceAspectRatioChanged(qreal)                override;
-    void emitOutAspectRatioChanged()                        override;
-    void emitOutAspectRatioModeChanged()                    override;
-    void emitOrientationChanged()                           override;
-    void emitVideoRectChanged()                             override;
-    void emitContentRectChanged()                           override;
-    void emitRegionOfInterestChanged()                      override;
-    void emitVideoFrameSizeChanged()                        override;
-    void emitRendererSizeChanged()                          override;
-    void emitBrightnessChanged(qreal)                       override;
-    void emitContrastChanged(qreal)                         override;
-    void emitHueChanged(qreal)                              override;
-    void emitSaturationChanged(qreal)                       override;
-    void emitBackgroundColorChanged()                       override;
+    DECLARE_VIDEO_RENDERER_EMIT_METHODS
 };
 
 } // namespace QtAV

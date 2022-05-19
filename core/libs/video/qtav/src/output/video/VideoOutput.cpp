@@ -87,7 +87,7 @@ public:
 
         if (!impl && !force)
         {
-            VideoRendererId *vid = nullptr;
+            VideoRendererId* vid = nullptr;
 
             while ((vid = VideoRenderer::next(vid)))
             {
@@ -118,7 +118,7 @@ public:
         renderer_height         = impl->rendererHeight();
         src_width               = impl->videoFrameSize().width();
         src_height              = impl->videoFrameSize().height();
-        source_aspect_ratio     = qreal(src_width)/qreal(src_height);
+        source_aspect_ratio     = qreal(src_width) / qreal(src_height);
         out_aspect_ratio_mode   = impl->outAspectRatioMode();
         out_aspect_ratio        = impl->outAspectRatio();
         quality                 = impl->quality();
@@ -149,9 +149,9 @@ public:
     QLibrary       avwidgets;
 };
 
-VideoOutput::VideoOutput(QObject *parent)
-    : QObject(parent)
-    , VideoRenderer(*new VideoOutputPrivate(0, false))
+VideoOutput::VideoOutput(QObject* const parent)
+    : QObject(parent),
+      VideoRenderer(*new VideoOutputPrivate(0, false))
 {
     if (d_func().impl && d_func().impl->widget())
     {
@@ -159,9 +159,9 @@ VideoOutput::VideoOutput(QObject *parent)
     }
 }
 
-VideoOutput::VideoOutput(VideoRendererId rendererId, QObject *parent)
-    : QObject(parent)
-    , VideoRenderer(*new VideoOutputPrivate(rendererId, true))
+VideoOutput::VideoOutput(VideoRendererId rendererId, QObject* const parent)
+    : QObject(parent),
+      VideoRenderer(*new VideoOutputPrivate(rendererId, true))
 {
     if (d_func().impl && d_func().impl->widget())
     {
@@ -250,12 +250,12 @@ bool VideoOutput::eventFilter(QObject* obj, QEvent* event)
 {
     DPTR_D(VideoOutput);
 
-    if (!d.impl || dynamic_cast<QObject*>(d.impl->widget()) != obj)
+    if (!d.impl || (dynamic_cast<QObject*>(d.impl->widget()) != obj))
         return QObject::eventFilter(obj, event);
 
     if (event->type() == QEvent::Resize)
     {
-        QResizeEvent* re = static_cast<QResizeEvent*>(event);
+        QResizeEvent* const re = static_cast<QResizeEvent*>(event);
         resizeRenderer(re->size());
     }
 
@@ -318,7 +318,7 @@ bool VideoOutput::onForcePreferredPixelFormat(bool force)
 
     d.impl->forcePreferredPixelFormat(force);
 
-    return d.impl->isPreferredPixelFormatForced() == force;
+    return (d.impl->isPreferredPixelFormatForced() == force);
 }
 
 void VideoOutput::onSetOutAspectRatioMode(OutAspectRatioMode mode)
@@ -350,7 +350,7 @@ bool VideoOutput::onSetQuality(Quality q)
 
     d.impl->setQuality(q);
 
-    return d.impl->quality() == q;
+    return (d.impl->quality() == q);
 }
 
 bool VideoOutput::onSetOrientation(int value)
@@ -489,7 +489,7 @@ bool VideoOutput::onSetSaturation(qreal saturation)
     return true;
 }
 
-void VideoOutput::onSetBackgroundColor(const QColor &color)
+void VideoOutput::onSetBackgroundColor(const QColor& color)
 {
     if (!isAvailable())
         return;
@@ -511,7 +511,7 @@ void VideoOutput::setStatistics(Statistics* statistics)
     //d.statistics =
 }
 
-bool VideoOutput::onInstallFilter(Filter *filter, int index)
+bool VideoOutput::onInstallFilter(Filter* filter, int index)
 {
     if (!isAvailable())
         return false;
@@ -524,7 +524,7 @@ bool VideoOutput::onInstallFilter(Filter *filter, int index)
     return ret;
 }
 
-bool VideoOutput::onUninstallFilter(Filter *filter)
+bool VideoOutput::onUninstallFilter(Filter* filter)
 {
     if (!isAvailable())
         return false;
@@ -556,22 +556,22 @@ bool VideoOutput::onHanlePendingTasks()
 
 void VideoOutput::emitSourceAspectRatioChanged(qreal v)
 {
-   Q_EMIT sourceAspectRatioChanged(v); 
+   Q_EMIT sourceAspectRatioChanged(v);
 }
 
-void VideoOutput::emitOutAspectRatioChanged()        
+void VideoOutput::emitOutAspectRatioChanged()
 {
    Q_EMIT outAspectRatioChanged(); 
 }
 
-void VideoOutput::emitOutAspectRatioModeChanged()    
+void VideoOutput::emitOutAspectRatioModeChanged()
 {
-   Q_EMIT outAspectRatioModeChanged(); 
+   Q_EMIT outAspectRatioModeChanged();
 }
 
-void VideoOutput::emitOrientationChanged()           
+void VideoOutput::emitOrientationChanged()
 {
-   Q_EMIT orientationChanged(); 
+   Q_EMIT orientationChanged();
 }
 
 void VideoOutput::emitVideoRectChanged()             

@@ -37,6 +37,40 @@
 #include "AVOutput.h"
 #include "VideoFrame.h"
 
+#define DECLARE_VIDEO_RENDERER_SIGNALS          \
+Q_SIGNALS:                                      \
+    void sourceAspectRatioChanged(qreal value); \
+    void regionOfInterestChanged();             \
+    void outAspectRatioChanged();               \
+    void outAspectRatioModeChanged();           \
+    void brightnessChanged(qreal value);        \
+    void contrastChanged(qreal);                \
+    void hueChanged(qreal);                     \
+    void saturationChanged(qreal);              \
+    void backgroundColorChanged();              \
+    void orientationChanged();                  \
+    void videoRectChanged();                    \
+    void videoFrameSizeChanged();               \
+    void contentRectChanged();                  \
+    void rendererSizeChanged();
+
+#define DECLARE_VIDEO_RENDERER_EMIT_METHODS             \
+private:                                                \
+    void emitSourceAspectRatioChanged(qreal) override;  \
+    void emitOutAspectRatioChanged()         override;  \
+    void emitOutAspectRatioModeChanged()     override;  \
+    void emitOrientationChanged()            override;  \
+    void emitVideoRectChanged()              override;  \
+    void emitContentRectChanged()            override;  \
+    void emitRegionOfInterestChanged()       override;  \
+    void emitVideoFrameSizeChanged()         override;  \
+    void emitRendererSizeChanged()           override;  \
+    void emitBrightnessChanged(qreal)        override;  \
+    void emitContrastChanged(qreal)          override;  \
+    void emitHueChanged(qreal)               override;  \
+    void emitSaturationChanged(qreal)        override;  \
+    void emitBackgroundColorChanged()        override;
+
 /*!
  * A bridge for VideoOutput(QObject based) and video renderer backend classes
  * Every public setter call it's virtual onSetXXX(...) which has default behavior.

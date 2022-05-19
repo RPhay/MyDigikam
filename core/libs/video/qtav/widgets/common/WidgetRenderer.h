@@ -68,23 +68,10 @@ public:
         return this;
     }
 
+    DECLARE_VIDEO_RENDERER_SIGNALS
+
 Q_SIGNALS:
 
-    void sourceAspectRatioChanged(qreal value);
-    void regionOfInterestChanged();            
-    void outAspectRatioChanged();              
-    void outAspectRatioModeChanged();          
-    void brightnessChanged(qreal value);       
-    void contrastChanged(qreal);               
-    void hueChanged(qreal);                    
-    void saturationChanged(qreal);             
-    void backgroundColorChanged();             
-    void orientationChanged();                 
-    void videoRectChanged();                   
-    void videoFrameSizeChanged();              
-    void contentRectChanged();
-    void rendererSizeChanged();
-    
     void imageReady();
 
 protected:
@@ -104,22 +91,7 @@ protected:
 
     WidgetRenderer(WidgetRendererPrivate& d, QWidget* parent, Qt::WindowFlags f);
 
-private:
-    
-    void emitSourceAspectRatioChanged(qreal)                override;
-    void emitOutAspectRatioChanged()                        override;
-    void emitOutAspectRatioModeChanged()                    override;
-    void emitOrientationChanged()                           override;
-    void emitVideoRectChanged()                             override;
-    void emitContentRectChanged()                           override;
-    void emitRegionOfInterestChanged()                      override;
-    void emitVideoFrameSizeChanged()                        override;
-    void emitRendererSizeChanged()                          override;
-    void emitBrightnessChanged(qreal)                       override;
-    void emitContrastChanged(qreal)                         override;
-    void emitHueChanged(qreal)                              override;
-    void emitSaturationChanged(qreal)                       override;
-    void emitBackgroundColorChanged()                       override;
+    DECLARE_VIDEO_RENDERER_EMIT_METHODS
 };
 
 typedef WidgetRenderer VideoRendererWidget;
