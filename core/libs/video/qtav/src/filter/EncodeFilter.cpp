@@ -270,7 +270,7 @@ void AudioEncodeFilter::encode(const AudioFrame& frame)
         }
     }
 
-    for (int i = 0 ; i < audioFrames.length() ; i++)
+    for (int i = 0 ; i < audioFrames.length() ; ++i)
     {
         if (!d.enc->encode(audioFrames.at(i)))
         {

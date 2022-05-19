@@ -239,7 +239,7 @@ void AudioFrame::prepend(AudioFrame &other)
     d->samples_per_ch += other.samplesPerChannel();
     d->timestamp       = other.timestamp();
 
-    for (int i = 0 ; i < planeCount() ; i++)
+    for (int i = 0 ; i < planeCount() ; ++i)
     {
         d->line_sizes[i] += other.bytesPerLine(i);
     }

@@ -553,7 +553,7 @@ bool VideoDecoderD3DPrivate::getBuffer(void **opaque, uint8_t **data) // vlc_va_
 
     int i, old;
 
-    for (i = 0, old = 0 ; i < surfaces.size() ; i++)
+    for (i = 0, old = 0 ; i < surfaces.size() ; ++i)
     {
         const va_surface_t* s = surfaces[i];
 

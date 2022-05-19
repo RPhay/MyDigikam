@@ -541,7 +541,7 @@ bool VideoDecoderDXVAPrivate::createDecoder(AVCodecID codec_id, int w, int h, QV
                                  nullptr)
             , false);
 
-    for (int i = 0 ; i < nb_surfaces ; i++)
+    for (int i = 0 ; i < nb_surfaces ; ++i)
     {
         d3d9_surface_t* s = new d3d9_surface_t();
         s->setSurface(surface_list[i]);

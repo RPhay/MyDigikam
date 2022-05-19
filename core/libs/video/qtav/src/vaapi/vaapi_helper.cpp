@@ -147,7 +147,7 @@ VAImageFormat va_new_image(VADisplay display, const unsigned int *fourccs, VAIma
         return fmt;
     }
 
-    for (int i = 0 ; fourccs[i] ; i++)
+    for (int i = 0 ; fourccs[i] ; ++i)
     {
         // TODO: loop fourccs
 
