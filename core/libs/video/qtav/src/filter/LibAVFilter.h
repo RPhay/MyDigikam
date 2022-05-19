@@ -39,10 +39,6 @@ class QTAV_EXPORT LibAVFilter
 {
 public:
 
-    static QString filterDescription(const QString& filterName);
-    static QStringList videoFilters();
-    static QStringList audioFilters();
-
     /*!
      * \brief The Status enum
      * Status of filter graph.
@@ -56,6 +52,12 @@ public:
         ConfigureFailed,
         ConfigureOk
     };
+
+public:
+
+    static QString filterDescription(const QString& filterName);
+    static QStringList videoFilters();
+    static QStringList audioFilters();
 
     LibAVFilter();
     virtual ~LibAVFilter();
@@ -78,9 +80,7 @@ protected:
     void* pullFrameHolder();
     static QStringList registeredFilters(int type); // filters whose input/output type matches
 
-    virtual void optionsChanged()
-    {
-    };
+    virtual void emitOptionsChanged() = 0;
 
 protected:
 
@@ -116,12 +116,16 @@ public:
 
 Q_SIGNALS:
 
-    void optionsChanged() override;
+    void optionsChanged();
 
 protected:
 
     void process(Statistics* statistics, VideoFrame* frame) override;
     QString sourceArguments() const override;
+
+private:
+
+    void emitOptionsChanged() override;
 };
 
 // ---------------------------------------------------------------------------------
@@ -141,12 +145,16 @@ public:
 
 Q_SIGNALS:
 
-    void optionsChanged() override;
+    void optionsChanged();
 
 protected:
 
     void process(Statistics* statistics, AudioFrame* frame) override;
     QString sourceArguments()                         const override;
+
+private:
+
+    void emitOptionsChanged() override;
 };
 
 } // namespace QtAV

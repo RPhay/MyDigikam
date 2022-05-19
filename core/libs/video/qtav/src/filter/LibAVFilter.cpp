@@ -72,7 +72,7 @@ public:
 
 #if !QTAV_HAVE_av_buffersink_get_frame
 
-        picref = 0;
+        picref  = 0;
 
 #endif
 
@@ -134,7 +134,7 @@ public:
 
     Private()
         : avframe(nullptr),
-          status(LibAVFilter::NotConfigured)
+          status (LibAVFilter::NotConfigured)
     {
 
 #if QTAV_HAVE(AVFILTER)
@@ -283,7 +283,10 @@ public:
         const char* g = avfilter_graph_dump(filter_graph, nullptr);
 
         if (g)
-            qCDebug(DIGIKAM_QTAV_LOG).nospace() << "filter graph:\n" << g; // use << to not print special chars in qt5.5
+        {
+            qCDebug(DIGIKAM_QTAV_LOG).nospace()
+                << "filter graph:\n" << g; // use << to not print special chars in qt5.5
+        }
 
         av_freep(&g);
 
@@ -340,8 +343,8 @@ QString LibAVFilter::filterDescription(const QString &filterName)
 
 #if AV_MODULE_CHECK(LIBAVFILTER, 3, 7, 0, 8, 100)
 
-    return s.append(QLatin1String("\n")).append(i18n("Options:"))
-            .append(Internal::optionsToString((void*)&f->priv_class));
+    return (s.append(QLatin1String("\n")).append(i18n("Options:"))
+             .append(Internal::optionsToString((void*)&f->priv_class)));
 
 #endif
 
@@ -362,12 +365,12 @@ LibAVFilter::~LibAVFilter()
     delete priv;
 }
 
-void LibAVFilter::setOptions(const QString &options)
+void LibAVFilter::setOptions(const QString& options)
 {
     if (!priv->setOptions(options))
         return;
 
-    Q_EMIT optionsChanged();
+    emitOptionsChanged();
 }
 
 QString LibAVFilter::options() const
@@ -478,15 +481,17 @@ QStringList LibAVFilter::registeredFilters(int type)
     return filters;
 }
 
+// ------------------------------------------------------------------------------
+
 class Q_DECL_HIDDEN LibAVFilterVideoPrivate : public VideoFilterPrivate
 {
 public:
 
     LibAVFilterVideoPrivate()
         : VideoFilterPrivate(),
-          pixfmt(QTAV_PIX_FMT_C(NONE)),
-          width (0),
-          height(0)
+          pixfmt            (QTAV_PIX_FMT_C(NONE)),
+          width             (0),
+          height            (0)
     {
     }
 
@@ -551,10 +556,10 @@ void LibAVFilterVideo::process(Statistics* statistics, VideoFrame* frame)
     vf.setBits((quint8**)f->data);
     vf.setBytesPerLine((int*)f->linesize);
     vf.setMetaData(QStringLiteral("avframe_hoder_ref"), QVariant::fromValue(ref));
-    vf.setTimestamp(ref->frame()->pts / 1000000.0); //pkt_pts?
-
-    //vf.setMetaData(frame->availableMetaData());
-
+    vf.setTimestamp(ref->frame()->pts / 1000000.0); // pkt_pts?
+/*
+    vf.setMetaData(frame->availableMetaData());
+*/
     *frame = vf;
 
 #else
@@ -584,6 +589,13 @@ QString LibAVFilterVideo::sourceArguments() const
             .arg(1).arg(1)              // sar
     ;
 }
+
+void LibAVFilterVideo::emitOptionsChanged()
+{
+    Q_EMIT optionsChanged();
+}
+
+// ------------------------------------------------------------------------------
 
 class Q_DECL_HIDDEN LibAVFilterAudioPrivate : public AudioFilterPrivate
 {
@@ -626,15 +638,15 @@ QString LibAVFilterAudio::sourceArguments() const
             .arg(AV_TIME_BASE)
             .arg(d.sample_rate)
 
-            //ffmpeg new: AV_OPT_TYPE_SAMPLE_FMT
-            //libav, ffmpeg old: AV_OPT_TYPE_STRING
+            // ffmpeg new: AV_OPT_TYPE_SAMPLE_FMT
+            // libav, ffmpeg old: AV_OPT_TYPE_STRING
 
             .arg(QLatin1String(av_get_sample_fmt_name(d.sample_fmt)))
             .arg(d.channel_layout, 0, 16) // AV_OPT_TYPE_STRING
     ;
 }
 
-void LibAVFilterAudio::process(Statistics *statistics, AudioFrame *frame)
+void LibAVFilterAudio::process(Statistics* statistics, AudioFrame* frame)
 {
     Q_UNUSED(statistics);
 
@@ -644,9 +656,9 @@ void LibAVFilterAudio::process(Statistics *statistics, AudioFrame *frame)
         return;
 
     DPTR_D(LibAVFilterAudio);
-
-    //Status old = status();
-
+/*
+    Status old   = status();
+*/
     bool changed = false;
     const AudioFormat afmt(frame->format());
 
@@ -660,7 +672,7 @@ void LibAVFilterAudio::process(Statistics *statistics, AudioFrame *frame)
         d.channel_layout = afmt.channelLayoutFFmpeg();
     }
 
-    bool ok = pushAudioFrame(frame, changed);
+    bool ok      = pushAudioFrame(frame, changed);
 
     //if (old != status())
       //  Q_EMIT statusChanged();
@@ -691,8 +703,8 @@ void LibAVFilterAudio::process(Statistics *statistics, AudioFrame *frame)
     //af.setBits((quint8**)f->extended_data);
     //af.setBytesPerLine((int*)f->linesize);
 
-    af.setBits(f->extended_data);                   // TODO: ref
-    af.setBytesPerLine(f->linesize[0], 0);          // for correct alignment
+    af.setBits(f->extended_data);                     // TODO: ref
+    af.setBytesPerLine(f->linesize[0], 0);            // for correct alignment
     af.setSamplesPerChannel(f->nb_samples);
     af.setMetaData(QStringLiteral("avframe_hoder_ref"), QVariant::fromValue(ref));
     af.setTimestamp(ref->frame()->pts / 1000000.0);   // pkt_pts?
@@ -709,6 +721,13 @@ void LibAVFilterAudio::process(Statistics *statistics, AudioFrame *frame)
 
 }
 
+void LibAVFilterAudio::emitOptionsChanged()
+{
+    Q_EMIT optionsChanged();
+}
+
+// ------------------------------------------------------------------------------
+
 bool LibAVFilter::Private::pushVideoFrame(Frame* frame, bool changed, const QString& args)
 {
 
@@ -720,7 +739,8 @@ bool LibAVFilter::Private::pushVideoFrame(Frame* frame, bool changed, const QStr
     {
         if (!setup(args, true))
         {
-            qCWarning(DIGIKAM_QTAV_LOG_WARN).noquote() << QString::asprintf("setup video filter graph error");
+            qCWarning(DIGIKAM_QTAV_LOG_WARN).noquote()
+                << QString::asprintf("setup video filter graph error");
 
             //enabled = false; // skip this filter and avoid crash
 
@@ -745,9 +765,9 @@ bool LibAVFilter::Private::pushVideoFrame(Frame* frame, bool changed, const QStr
     }
 
     // TODO: side data for vf_codecview etc
-
-    //int ret = av_buffersrc_add_frame_flags(in_filter_ctx, avframe, AV_BUFFERSRC_FLAG_KEEP_REF);
-
+/*
+    int ret = av_buffersrc_add_frame_flags(in_filter_ctx, avframe, AV_BUFFERSRC_FLAG_KEEP_REF);
+*/
     /*
      * av_buffersrc_write_frame equals to av_buffersrc_add_frame_flags with AV_BUFFERSRC_FLAG_KEEP_REF.
      * av_buffersrc_write_frame is more compatible, while av_buffersrc_add_frame_flags only exists in ffmpeg >=2.0
@@ -765,7 +785,6 @@ bool LibAVFilter::Private::pushVideoFrame(Frame* frame, bool changed, const QStr
 
     return false;
 }
-
 
 bool LibAVFilter::Private::pushAudioFrame(Frame* frame, bool changed, const QString& args)
 {
