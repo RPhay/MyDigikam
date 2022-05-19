@@ -67,10 +67,6 @@ public:
     bool decode(const Packet& packet)     override final;
     AudioFrame frame()                    override final;
 
-Q_SIGNALS:
-
-    void codecNameChanged()               override final;
-
 private:
 
     AudioDecoderFFmpeg(QObject*);

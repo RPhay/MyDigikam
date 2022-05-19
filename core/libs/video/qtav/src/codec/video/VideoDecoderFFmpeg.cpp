@@ -238,7 +238,6 @@ public:
 
 Q_SIGNALS:
 
-    void codecNameChanged() override;
     void hwaccelChanged();
 
 private:

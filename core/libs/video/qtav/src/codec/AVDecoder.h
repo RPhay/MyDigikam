@@ -94,6 +94,7 @@ Q_SIGNALS:
 
     void error(const QtAV::AVError& e); // explictly use QtAV::AVError in connection for Qt4 syntax
     void descriptionChanged();
+    void codecNameChanged();
 
 protected:
 
@@ -105,10 +106,6 @@ protected:
      */
     void setCodecName(const QString& name);
     QString codecName() const;
-
-    virtual void codecNameChanged()   // signals can not be decared virtual (winrt)
-    {
-    }
 
 private:
 
