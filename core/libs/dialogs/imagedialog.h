@@ -99,6 +99,8 @@ private:
     QRect   repositionRect()              override;
     QString tipContents()                 override;
 
+    ImageDialogToolTip(QWidget*);
+
 private:
 
     class Private;

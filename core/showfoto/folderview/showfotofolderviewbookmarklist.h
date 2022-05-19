@@ -71,13 +71,21 @@ private:
     void dropEvent(QDropEvent*);
 
 #if (QT_VERSION > QT_VERSION_CHECK(5, 99, 0))
+
     QMimeData* mimeData(const QList<QTreeWidgetItem*>& items)           const override;
+
 #else
+
     // cppcheck-suppress passedByValue
     QMimeData* mimeData(const QList<QTreeWidgetItem*> items)            const override;     // clazy:exclude=function-args-by-ref
+
 #endif
 
     void       startDrag(Qt::DropActions supportedActions)                    override;
+
+private:
+
+    ShowfotoFolderViewBookmarkList(QWidget*);
 
 private:
 

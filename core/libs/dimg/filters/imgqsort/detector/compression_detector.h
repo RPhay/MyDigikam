@@ -55,6 +55,8 @@ private:
 
     float normalize(const float number);
 
+    CompressionDetector(QObject*);
+
 private:
 
     class Private;

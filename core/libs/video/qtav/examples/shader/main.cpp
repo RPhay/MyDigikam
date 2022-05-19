@@ -95,6 +95,10 @@ private:
                     gl_FragColor = m * gl_FragColor + bs.r;
                    );
     }
+
+private:
+
+    MyShader(QObject*);
 };
 
 class MediumBlurShader : public ConvolutionShader
@@ -222,8 +226,8 @@ int main(int argc, char* argv[])
 
     struct
     {
-        QByteArray title;
-        VideoShader *shader;
+        QByteArray   title;
+        VideoShader* shader;
     } shader_list[] =
     {
         {"No shader",                                                     nullptr                 },

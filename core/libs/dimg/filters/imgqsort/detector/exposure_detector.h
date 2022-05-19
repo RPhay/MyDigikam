@@ -53,6 +53,8 @@ private:
     int count_by_condition(const cv::Mat& image,
                            int minVal, int maxVal)      const;
 
+    ExposureDetector(QObject*);
+
 private:
 
     class Private;

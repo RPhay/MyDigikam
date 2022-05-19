@@ -56,6 +56,8 @@ private:
     cv::Mat detectBackgroundRegion(const cv::Mat& image)        const;
     cv::Mat getWeightMap(const cv::Mat& image)                  const;
 
+    BlurDetector(QObject*);
+
 private:
 
     class Private;

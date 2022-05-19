@@ -47,6 +47,10 @@ public:
 protected Q_SLOTS:
 
     void slotStateChanged();
+
+private:
+
+    AssignNameWidgetStates(QObject*);
 };
 
 } // namespace Digikam

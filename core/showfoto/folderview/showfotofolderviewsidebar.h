@@ -103,6 +103,10 @@ Q_SIGNALS:
 
 private:
 
+    ShowfotoFolderViewSideBar(QWidget*);
+
+private:
+
     class Private;
     Private* const d;
 };

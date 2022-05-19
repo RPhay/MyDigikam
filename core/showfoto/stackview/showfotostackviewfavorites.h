@@ -87,6 +87,10 @@ private Q_SLOTS:
 
 private:
 
+    ShowfotoStackViewFavorites(QWidget*);
+
+private:
+
     class Private;
     Private* const d;
 };

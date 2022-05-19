@@ -43,9 +43,9 @@
 struct _XDisplay;
 typedef struct _XDisplay Display;
 
-typedef Display*(*fXOpenDisplay) (const char* /* display_name */);
+typedef Display*(*fXOpenDisplay) (const char*    /* display_name */);
 
-typedef int (*fXCloseDisplay)    (Display* /* display */);
+typedef int (*fXCloseDisplay)    (Display*       /* display */);
 typedef int (*fXSetScreenSaver)  (Display*, int  /* timeout */,
                                             int  /* interval */,
                                             int  /* prefer_blanking */,
@@ -54,7 +54,7 @@ typedef int (*fXGetScreenSaver)  (Display*, int* /* timeout_return */,
                                             int* /* interval_return */,
                                             int* /* prefer_blanking_return */,
                                             int* /* allow_exposures_return */);
-typedef int (*fXResetScreenSaver)(Display* /* display */);
+typedef int (*fXResetScreenSaver)(Display*       /* display */);
 
 static fXOpenDisplay      XOpenDisplay      = 0;
 static fXCloseDisplay     XCloseDisplay     = 0;

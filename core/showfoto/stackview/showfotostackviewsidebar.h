@@ -95,6 +95,10 @@ Q_SIGNALS:
 
 private:
 
+    ShowfotoStackViewSideBar(QWidget*);
+
+private:
+
     class Private;
     Private* const d;
 };

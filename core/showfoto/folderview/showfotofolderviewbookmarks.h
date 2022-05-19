@@ -72,6 +72,10 @@ private Q_SLOTS:
 
 private:
 
+    ShowfotoFolderViewBookmarks(QWidget*);
+
+private:
+
     class Private;
     Private* const d;
 };

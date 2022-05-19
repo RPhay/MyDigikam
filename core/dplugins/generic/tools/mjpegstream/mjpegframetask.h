@@ -81,6 +81,8 @@ private:
      */
     void run();
 
+    MjpegFrameTask(QObject*);
+
 private:
 
     class Private;
