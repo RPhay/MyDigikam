@@ -96,6 +96,23 @@ public:
         return this;
     }
 
+Q_SIGNALS:
+
+    void sourceAspectRatioChanged(qreal value);
+    void regionOfInterestChanged();            
+    void outAspectRatioChanged();              
+    void outAspectRatioModeChanged();          
+    void brightnessChanged(qreal value);       
+    void contrastChanged(qreal);               
+    void hueChanged(qreal);                    
+    void saturationChanged(qreal);             
+    void backgroundColorChanged();             
+    void orientationChanged();                 
+    void videoRectChanged();                   
+    void videoFrameSizeChanged();
+    void contentRectChanged();
+    void rendererSizeChanged();
+
 protected:
 
     bool receiveFrame(const VideoFrame& frame)              override;
@@ -113,6 +130,23 @@ protected:
     // stay on top will change parent, hide then show(windows)
 
     void showEvent(QShowEvent *)                            override;
+
+private:
+    
+    void emitSourceAspectRatioChanged(qreal)                override;
+    void emitOutAspectRatioChanged()                        override;
+    void emitOutAspectRatioModeChanged()                    override;
+    void emitOrientationChanged()                           override;
+    void emitVideoRectChanged()                             override;
+    void emitContentRectChanged()                           override;
+    void emitRegionOfInterestChanged()                      override;
+    void emitVideoFrameSizeChanged()                        override;
+    void emitRendererSizeChanged()                          override;
+    void emitBrightnessChanged(qreal)                       override;
+    void emitContrastChanged(qreal)                         override;
+    void emitHueChanged(qreal)                              override;
+    void emitSaturationChanged(qreal)                       override;
+    void emitBackgroundColorChanged()                       override;
 };
 
 typedef X11Renderer VideoRendererX11;
@@ -759,6 +793,76 @@ void X11Renderer::showEvent(QShowEvent* event)
      * don't do anything here, the widget content will never be updated.
      */
     d.prepareDeviceResource();
+}
+
+void X11Renderer::emitSourceAspectRatioChanged(qreal v)
+{
+   Q_EMIT sourceAspectRatioChanged(v); 
+}
+
+void X11Renderer::emitOutAspectRatioChanged()        
+{
+   Q_EMIT outAspectRatioChanged(); 
+}
+
+void X11Renderer::emitOutAspectRatioModeChanged()    
+{
+   Q_EMIT outAspectRatioModeChanged(); 
+}
+
+void X11Renderer::emitOrientationChanged()           
+{
+   Q_EMIT orientationChanged(); 
+}
+
+void X11Renderer::emitVideoRectChanged()             
+{
+   Q_EMIT videoRectChanged(); 
+}
+
+void X11Renderer::emitContentRectChanged()           
+{
+   Q_EMIT contentRectChanged(); 
+}
+
+void X11Renderer::emitRegionOfInterestChanged()      
+{
+   Q_EMIT regionOfInterestChanged(); 
+}
+
+void X11Renderer::emitVideoFrameSizeChanged()        
+{
+   Q_EMIT videoFrameSizeChanged(); 
+}
+
+void X11Renderer::emitRendererSizeChanged()          
+{
+   Q_EMIT rendererSizeChanged(); 
+}
+
+void X11Renderer::emitBrightnessChanged(qreal v)       
+{
+   Q_EMIT brightnessChanged(v); 
+}
+
+void X11Renderer::emitContrastChanged(qreal v)         
+{
+   Q_EMIT contrastChanged(v); 
+}
+
+void X11Renderer::emitHueChanged(qreal v)              
+{
+   Q_EMIT hueChanged(v); 
+}
+
+void X11Renderer::emitSaturationChanged(qreal v)       
+{
+   Q_EMIT saturationChanged(v); 
+}
+
+void X11Renderer::emitBackgroundColorChanged()       
+{
+   Q_EMIT backgroundColorChanged(); 
 }
 
 } // namespace QtAV

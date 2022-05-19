@@ -90,18 +90,20 @@ public:
 
 Q_SIGNALS:
 
-    void sourceAspectRatioChanged(qreal value)                              override final;
-    void regionOfInterestChanged()                                          override;
-    void outAspectRatioChanged()                                            override;
-    void outAspectRatioModeChanged()                                        override;
-    void brightnessChanged(qreal value)                                     override;
-    void contrastChanged(qreal)                                             override;
-    void hueChanged(qreal)                                                  override;
-    void saturationChanged(qreal)                                           override;
-    void backgroundColorChanged()                                           override;
-    void orientationChanged()                                               override;
-    void videoRectChanged()                                                 override;
-    void videoFrameSizeChanged()                                            override;
+    void sourceAspectRatioChanged(qreal value);
+    void regionOfInterestChanged();            
+    void outAspectRatioChanged();              
+    void outAspectRatioModeChanged();          
+    void brightnessChanged(qreal value);       
+    void contrastChanged(qreal);               
+    void hueChanged(qreal);                    
+    void saturationChanged(qreal);             
+    void backgroundColorChanged();             
+    void orientationChanged();                 
+    void videoRectChanged();                   
+    void videoFrameSizeChanged();
+    void contentRectChanged();
+    void rendererSizeChanged();
 
 protected:
 
@@ -136,6 +138,23 @@ private:
     virtual bool onInstallFilter(Filter *filter, int index)                 override;
     virtual bool onUninstallFilter(Filter *filter)                          override;
     virtual bool onHanlePendingTasks()                                      override;
+
+private:
+    
+    void emitSourceAspectRatioChanged(qreal)                override;
+    void emitOutAspectRatioChanged()                        override;
+    void emitOutAspectRatioModeChanged()                    override;
+    void emitOrientationChanged()                           override;
+    void emitVideoRectChanged()                             override;
+    void emitContentRectChanged()                           override;
+    void emitRegionOfInterestChanged()                      override;
+    void emitVideoFrameSizeChanged()                        override;
+    void emitRendererSizeChanged()                          override;
+    void emitBrightnessChanged(qreal)                       override;
+    void emitContrastChanged(qreal)                         override;
+    void emitHueChanged(qreal)                              override;
+    void emitSaturationChanged(qreal)                       override;
+    void emitBackgroundColorChanged()                       override;
 };
 
 } // namespace QtAV

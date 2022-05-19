@@ -95,6 +95,23 @@ public:
         return this;
     }
 
+Q_SIGNALS:
+
+    void sourceAspectRatioChanged(qreal value);
+    void regionOfInterestChanged();            
+    void outAspectRatioChanged();              
+    void outAspectRatioModeChanged();          
+    void brightnessChanged(qreal value);       
+    void contrastChanged(qreal);               
+    void hueChanged(qreal);                    
+    void saturationChanged(qreal);             
+    void backgroundColorChanged();             
+    void orientationChanged();                 
+    void videoRectChanged();                   
+    void videoFrameSizeChanged();
+    void contentRectChanged();
+    void rendererSizeChanged();
+
 protected:
 
     virtual bool receiveFrame(const VideoFrame& frame)              override;
@@ -113,6 +130,23 @@ private:
     virtual bool onSetContrast(qreal c)                             override;
     virtual bool onSetHue(qreal h)                                  override;
     virtual bool onSetSaturation(qreal s)                           override;
+
+private:
+    
+    void emitSourceAspectRatioChanged(qreal)                override;
+    void emitOutAspectRatioChanged()                        override;
+    void emitOutAspectRatioModeChanged()                    override;
+    void emitOrientationChanged()                           override;
+    void emitVideoRectChanged()                             override;
+    void emitContentRectChanged()                           override;
+    void emitRegionOfInterestChanged()                      override;
+    void emitVideoFrameSizeChanged()                        override;
+    void emitRendererSizeChanged()                          override;
+    void emitBrightnessChanged(qreal)                       override;
+    void emitContrastChanged(qreal)                         override;
+    void emitHueChanged(qreal)                              override;
+    void emitSaturationChanged(qreal)                       override;
+    void emitBackgroundColorChanged()                       override;
 };
 
 typedef XVRenderer VideoRendererXV;
@@ -794,6 +828,76 @@ bool XVRenderer::onSetSaturation(qreal s)
     DPTR_D(XVRenderer);
 
     return d.XvSetPortAttributeIfExists("XV_SATURATION", s*100);
+}
+
+void XVRenderer::emitSourceAspectRatioChanged(qreal v)
+{
+   Q_EMIT sourceAspectRatioChanged(v); 
+}
+
+void XVRenderer::emitOutAspectRatioChanged()        
+{
+   Q_EMIT outAspectRatioChanged(); 
+}
+
+void XVRenderer::emitOutAspectRatioModeChanged()    
+{
+   Q_EMIT outAspectRatioModeChanged(); 
+}
+
+void XVRenderer::emitOrientationChanged()           
+{
+   Q_EMIT orientationChanged(); 
+}
+
+void XVRenderer::emitVideoRectChanged()             
+{
+   Q_EMIT videoRectChanged(); 
+}
+
+void XVRenderer::emitContentRectChanged()           
+{
+   Q_EMIT contentRectChanged(); 
+}
+
+void XVRenderer::emitRegionOfInterestChanged()      
+{
+   Q_EMIT regionOfInterestChanged(); 
+}
+
+void XVRenderer::emitVideoFrameSizeChanged()        
+{
+   Q_EMIT videoFrameSizeChanged(); 
+}
+
+void XVRenderer::emitRendererSizeChanged()          
+{
+   Q_EMIT rendererSizeChanged(); 
+}
+
+void XVRenderer::emitBrightnessChanged(qreal v)       
+{
+   Q_EMIT brightnessChanged(v); 
+}
+
+void XVRenderer::emitContrastChanged(qreal v)         
+{
+   Q_EMIT contrastChanged(v); 
+}
+
+void XVRenderer::emitHueChanged(qreal v)              
+{
+   Q_EMIT hueChanged(v); 
+}
+
+void XVRenderer::emitSaturationChanged(qreal v)       
+{
+   Q_EMIT saturationChanged(v); 
+}
+
+void XVRenderer::emitBackgroundColorChanged()       
+{
+   Q_EMIT backgroundColorChanged(); 
 }
 
 } // namespace QtAV

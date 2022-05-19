@@ -68,7 +68,7 @@ bool VideoRenderer::receive(const VideoFrame& frame)
     d.source_aspect_ratio = frame.displayAspectRatio();
 
     if (dar_old != d.source_aspect_ratio)
-        sourceAspectRatioChanged(d.source_aspect_ratio);
+        emitSourceAspectRatioChanged(d.source_aspect_ratio);
 
     setInSize(frame.width(), frame.height());
     QMutexLocker locker(&d.img_mutex);
@@ -176,8 +176,8 @@ void VideoRenderer::setOutAspectRatioMode(OutAspectRatioMode mode)
 
         if (out_rect0 != d.out_rect)
         {
-            Q_EMIT videoRectChanged();
-            Q_EMIT contentRectChanged();
+            emitVideoRectChanged();
+            emitContentRectChanged();
         }
 
         // is that thread safe?
@@ -189,7 +189,7 @@ void VideoRenderer::setOutAspectRatioMode(OutAspectRatioMode mode)
 
     onSetOutAspectRatioMode(mode);
 
-    Q_EMIT outAspectRatioModeChanged();
+    emitOutAspectRatioModeChanged();
 }
 
 void VideoRenderer::onSetOutAspectRatioMode(OutAspectRatioMode mode)
@@ -217,7 +217,7 @@ void VideoRenderer::setOutAspectRatio(qreal ratio)
         {
             d.out_aspect_ratio_mode = CustomAspectRation;
 
-            Q_EMIT outAspectRatioModeChanged();
+            emitOutAspectRatioModeChanged();
         }
     }
 
@@ -232,15 +232,15 @@ void VideoRenderer::setOutAspectRatio(qreal ratio)
 
     if (d.computeOutParameters(ratio))
     {
-        Q_EMIT videoRectChanged();
-        Q_EMIT contentRectChanged();
+        emitVideoRectChanged();
+        emitContentRectChanged();
     }
 
     if (ratio_changed)
     {
         onSetOutAspectRatio(ratio);
 
-        Q_EMIT outAspectRatioChanged();
+        emitOutAspectRatioChanged();
     }
 
     updateUi();
@@ -303,7 +303,7 @@ void VideoRenderer::setInSize(int width, int height)
         d.src_width            = width;
         d.src_height           = height;
 
-        Q_EMIT videoFrameSizeChanged();
+        emitVideoFrameSizeChanged();
     }
 
     if (!d.aspect_ratio_changed)// && (d.src_width == width && d.src_height == height))
@@ -343,12 +343,12 @@ void VideoRenderer::resizeRenderer(int width, int height)
     d.renderer_height = height;
 
     if (d.out_aspect_ratio_mode == RendererAspectRatio)
-        Q_EMIT outAspectRatioChanged();
+        emitOutAspectRatioChanged();
 
     if (d.computeOutParameters(d.out_aspect_ratio))
     {
-        Q_EMIT videoRectChanged();
-        Q_EMIT contentRectChanged();
+        emitVideoRectChanged();
+        emitContentRectChanged();
     }
 
     onResizeRenderer(width, height); // TODO: resize widget
@@ -400,12 +400,12 @@ void VideoRenderer::setOrientation(int value)
     }
     else
     {
-        orientationChanged();
+        emitOrientationChanged();
 
         if (d.computeOutParameters(d.out_aspect_ratio))
         {
-            Q_EMIT videoRectChanged();
-            Q_EMIT contentRectChanged();
+            emitVideoRectChanged();
+            emitContentRectChanged();
         }
 
         onSetOutAspectRatio(outAspectRatio());
@@ -467,7 +467,7 @@ void VideoRenderer::setRegionOfInterest(const QRectF &roi)
     }
     else
     {
-        Q_EMIT regionOfInterestChanged();
+        emitRegionOfInterestChanged();
 
         updateUi();
     }
@@ -760,7 +760,7 @@ bool VideoRenderer::setBrightness(qreal brightness)
 
     d.brightness = brightness;
 
-    Q_EMIT brightnessChanged(brightness);
+    emitBrightnessChanged(brightness);
 
     updateUi();
 
@@ -784,7 +784,7 @@ bool VideoRenderer::setContrast(qreal contrast)
 
     d.contrast = contrast;
 
-    Q_EMIT contrastChanged(contrast);
+    emitContrastChanged(contrast);
 
     updateUi();
 
@@ -808,7 +808,7 @@ bool VideoRenderer::setHue(qreal hue)
 
     d.hue = hue;
 
-    Q_EMIT hueChanged(hue);
+    emitHueChanged(hue);
 
     updateUi();
 
@@ -832,7 +832,7 @@ bool VideoRenderer::setSaturation(qreal saturation)
 
     d.saturation = saturation;
 
-    Q_EMIT saturationChanged(saturation);
+    emitSaturationChanged(saturation);
 
     updateUi();
 
@@ -887,7 +887,7 @@ void VideoRenderer::setBackgroundColor(const QColor &c)
     onSetBackgroundColor(c);
     d.bg_color = c;
 
-    Q_EMIT backgroundColorChanged();
+    emitBackgroundColorChanged();
 
     updateUi();
 }

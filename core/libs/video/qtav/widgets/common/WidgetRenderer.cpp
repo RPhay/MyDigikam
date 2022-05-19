@@ -145,4 +145,74 @@ bool WidgetRenderer::onSetOrientation(int value)
     return true;
 }
 
+void WidgetRenderer::emitSourceAspectRatioChanged(qreal v)
+{
+   Q_EMIT sourceAspectRatioChanged(v); 
+}
+
+void WidgetRenderer::emitOutAspectRatioChanged()        
+{
+   Q_EMIT outAspectRatioChanged(); 
+}
+
+void WidgetRenderer::emitOutAspectRatioModeChanged()    
+{
+   Q_EMIT outAspectRatioModeChanged(); 
+}
+
+void WidgetRenderer::emitOrientationChanged()           
+{
+   Q_EMIT orientationChanged(); 
+}
+
+void WidgetRenderer::emitVideoRectChanged()             
+{
+   Q_EMIT videoRectChanged(); 
+}
+
+void WidgetRenderer::emitContentRectChanged()           
+{
+   Q_EMIT contentRectChanged(); 
+}
+
+void WidgetRenderer::emitRegionOfInterestChanged()      
+{
+   Q_EMIT regionOfInterestChanged(); 
+}
+
+void WidgetRenderer::emitVideoFrameSizeChanged()        
+{
+   Q_EMIT videoFrameSizeChanged(); 
+}
+
+void WidgetRenderer::emitRendererSizeChanged()          
+{
+   Q_EMIT rendererSizeChanged(); 
+}
+
+void WidgetRenderer::emitBrightnessChanged(qreal v)       
+{
+   Q_EMIT brightnessChanged(v); 
+}
+
+void WidgetRenderer::emitContrastChanged(qreal v)         
+{
+   Q_EMIT contrastChanged(v); 
+}
+
+void WidgetRenderer::emitHueChanged(qreal v)              
+{
+   Q_EMIT hueChanged(v); 
+}
+
+void WidgetRenderer::emitSaturationChanged(qreal v)       
+{
+   Q_EMIT saturationChanged(v); 
+}
+
+void WidgetRenderer::emitBackgroundColorChanged()       
+{
+   Q_EMIT backgroundColorChanged(); 
+}
+
 } // namespace QtAV

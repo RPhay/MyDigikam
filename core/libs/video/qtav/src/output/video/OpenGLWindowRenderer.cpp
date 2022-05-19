@@ -88,4 +88,74 @@ void OpenGLWindowRenderer::showEvent(QShowEvent*)
     resizeGL(width(), height());
 }
 
+void OpenGLWindowRenderer::emitSourceAspectRatioChanged(qreal v)
+{
+   Q_EMIT sourceAspectRatioChanged(v); 
+}
+
+void OpenGLWindowRenderer::emitOutAspectRatioChanged()        
+{
+   Q_EMIT outAspectRatioChanged(); 
+}
+
+void OpenGLWindowRenderer::emitOutAspectRatioModeChanged()    
+{
+   Q_EMIT outAspectRatioModeChanged(); 
+}
+
+void OpenGLWindowRenderer::emitOrientationChanged()           
+{
+   Q_EMIT orientationChanged(); 
+}
+
+void OpenGLWindowRenderer::emitVideoRectChanged()             
+{
+   Q_EMIT videoRectChanged(); 
+}
+
+void OpenGLWindowRenderer::emitContentRectChanged()           
+{
+   Q_EMIT contentRectChanged(); 
+}
+
+void OpenGLWindowRenderer::emitRegionOfInterestChanged()      
+{
+   Q_EMIT regionOfInterestChanged(); 
+}
+
+void OpenGLWindowRenderer::emitVideoFrameSizeChanged()        
+{
+   Q_EMIT videoFrameSizeChanged(); 
+}
+
+void OpenGLWindowRenderer::emitRendererSizeChanged()          
+{
+   Q_EMIT rendererSizeChanged(); 
+}
+
+void OpenGLWindowRenderer::emitBrightnessChanged(qreal v)       
+{
+   Q_EMIT brightnessChanged(v); 
+}
+
+void OpenGLWindowRenderer::emitContrastChanged(qreal v)         
+{
+   Q_EMIT contrastChanged(v); 
+}
+
+void OpenGLWindowRenderer::emitHueChanged(qreal v)              
+{
+   Q_EMIT hueChanged(v); 
+}
+
+void OpenGLWindowRenderer::emitSaturationChanged(qreal v)       
+{
+   Q_EMIT saturationChanged(v); 
+}
+
+void OpenGLWindowRenderer::emitBackgroundColorChanged()       
+{
+   Q_EMIT backgroundColorChanged(); 
+}
+
 } // namespace QtAV

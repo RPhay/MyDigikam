@@ -290,22 +290,22 @@ protected:
     virtual void handlePaintEvent(); // has default. User don't have to implement it
     virtual void updateUi();         // by default post an UpdateRequest event for window and UpdateLater event for widget to ensure ui update
 
-private: // property change. used as signals in subclasses. implemented by moc
+private: // property change. send signals in subclasses.
 
-    virtual void sourceAspectRatioChanged(qreal)    {}
-    virtual void outAspectRatioChanged()            {}
-    virtual void outAspectRatioModeChanged()        {}
-    virtual void orientationChanged()               {}
-    virtual void videoRectChanged()                 {}
-    virtual void contentRectChanged()               {}
-    virtual void regionOfInterestChanged()          {}
-    virtual void videoFrameSizeChanged()            {}
-    virtual void rendererSizeChanged()              {}
-    virtual void brightnessChanged(qreal)           {}
-    virtual void contrastChanged(qreal)             {}
-    virtual void hueChanged(qreal)                  {}
-    virtual void saturationChanged(qreal)           {}
-    virtual void backgroundColorChanged()           {}
+    virtual void emitSourceAspectRatioChanged(qreal) = 0;
+    virtual void emitOutAspectRatioChanged()         = 0;
+    virtual void emitOutAspectRatioModeChanged()     = 0;
+    virtual void emitOrientationChanged()            = 0;
+    virtual void emitVideoRectChanged()              = 0;
+    virtual void emitContentRectChanged()            = 0;
+    virtual void emitRegionOfInterestChanged()       = 0;
+    virtual void emitVideoFrameSizeChanged()         = 0;
+    virtual void emitRendererSizeChanged()           = 0;
+    virtual void emitBrightnessChanged(qreal)        = 0;
+    virtual void emitContrastChanged(qreal)          = 0;
+    virtual void emitHueChanged(qreal)               = 0;
+    virtual void emitSaturationChanged(qreal)        = 0;
+    virtual void emitBackgroundColorChanged()        = 0;
 
 private: // mainly used by VideoOutput class
 
