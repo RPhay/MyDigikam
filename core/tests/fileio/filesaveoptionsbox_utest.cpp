@@ -25,10 +25,12 @@
 // Qt includes
 
 #include <QTest>
+#include <QDir>
 
 // Local includes
 
 #include "filesaveoptionsbox.h"
+#include "dpluginloader.h"
 
 using namespace Digikam;
 
@@ -80,4 +82,16 @@ void FileSaveOptionsBoxTest::testDiscoverFormatDefault()
     FileSaveOptionsBox box;
     QCOMPARE(box.discoverFormat(QLatin1String("unknown")), FileSaveOptionsBox::NONE);
     QCOMPARE(box.discoverFormat(QLatin1String("unknown"), FileSaveOptionsBox::PGF), FileSaveOptionsBox::PGF);
+}
+
+void FileSaveOptionsBoxTest::initTestCase()
+{
+    QDir dir(qApp->applicationDirPath());
+    qputenv("DK_PLUGIN_PATH", dir.canonicalPath().toUtf8());
+    DPluginLoader::instance()->init();
+}
+
+void FileSaveOptionsBoxTest::cleanupTestCase()
+{
+    DPluginLoader::instance()->cleanUp();
 }

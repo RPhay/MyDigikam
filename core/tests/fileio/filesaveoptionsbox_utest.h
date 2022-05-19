@@ -41,6 +41,11 @@ private Q_SLOTS:
     void testDiscoverFormat();
 
     void testDiscoverFormatDefault();
+
+protected Q_SLOTS:
+
+    void initTestCase();
+    void cleanupTestCase();
 };
 
 #endif // DIGIKAM_FILE_SAVE_OPTIONS_BOX_UTEST_H
