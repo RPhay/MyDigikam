@@ -334,7 +334,7 @@ bool VideoDecoderD3D11Private::createDevice()
 
     fCreateDevice = (PFN_D3D11_CREATE_DEVICE)GetProcAddress(dll, "D3D11CreateDevice");
 
-    if (!fCreateDevice) 
+    if (!fCreateDevice)
     {
         qCWarning(DIGIKAM_QTAV_LOG_WARN).noquote() << QString::asprintf("Can not resolve symbol D3D11CreateDevice");
     }

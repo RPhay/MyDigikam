@@ -180,7 +180,7 @@ bool AVDecoder::open()
         << QString::asprintf("%s thread type: %s, count: %d",
             metaObject()->className(), thread_name[d.codec_ctx->active_thread_type], d.codec_ctx->thread_count);
 
-    return true; 
+    return true;
 }
 
 bool AVDecoder::close()

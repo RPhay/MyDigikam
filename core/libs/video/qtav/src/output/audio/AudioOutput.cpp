@@ -396,7 +396,7 @@ void AudioOutput::setBackends(const QStringList &backendNames)
 
         // connect volumeReported
 
-        connect(d.backend, SIGNAL(volumeReported(qreal)), 
+        connect(d.backend, SIGNAL(volumeReported(qreal)),
                 this, SLOT(reportVolume(qreal)));
 
         connect(d.backend, SIGNAL(muteReported(bool)),

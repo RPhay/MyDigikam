@@ -110,72 +110,72 @@ void OpenGLWidgetRenderer::showEvent(QShowEvent* /*e*/)
 
 void OpenGLWidgetRenderer::emitSourceAspectRatioChanged(qreal v)
 {
-   Q_EMIT sourceAspectRatioChanged(v); 
+   Q_EMIT sourceAspectRatioChanged(v);
 }
 
-void OpenGLWidgetRenderer::emitOutAspectRatioChanged()        
+void OpenGLWidgetRenderer::emitOutAspectRatioChanged()
 {
-   Q_EMIT outAspectRatioChanged(); 
+   Q_EMIT outAspectRatioChanged();
 }
 
-void OpenGLWidgetRenderer::emitOutAspectRatioModeChanged()    
+void OpenGLWidgetRenderer::emitOutAspectRatioModeChanged()
 {
-   Q_EMIT outAspectRatioModeChanged(); 
+   Q_EMIT outAspectRatioModeChanged();
 }
 
-void OpenGLWidgetRenderer::emitOrientationChanged()           
+void OpenGLWidgetRenderer::emitOrientationChanged()
 {
-   Q_EMIT orientationChanged(); 
+   Q_EMIT orientationChanged();
 }
 
-void OpenGLWidgetRenderer::emitVideoRectChanged()             
+void OpenGLWidgetRenderer::emitVideoRectChanged()
 {
-   Q_EMIT videoRectChanged(); 
+   Q_EMIT videoRectChanged();
 }
 
-void OpenGLWidgetRenderer::emitContentRectChanged()           
+void OpenGLWidgetRenderer::emitContentRectChanged()
 {
-   Q_EMIT contentRectChanged(); 
+   Q_EMIT contentRectChanged();
 }
 
-void OpenGLWidgetRenderer::emitRegionOfInterestChanged()      
+void OpenGLWidgetRenderer::emitRegionOfInterestChanged()
 {
-   Q_EMIT regionOfInterestChanged(); 
+   Q_EMIT regionOfInterestChanged();
 }
 
-void OpenGLWidgetRenderer::emitVideoFrameSizeChanged()        
+void OpenGLWidgetRenderer::emitVideoFrameSizeChanged()
 {
-   Q_EMIT videoFrameSizeChanged(); 
+   Q_EMIT videoFrameSizeChanged();
 }
 
-void OpenGLWidgetRenderer::emitRendererSizeChanged()          
+void OpenGLWidgetRenderer::emitRendererSizeChanged()
 {
-   Q_EMIT rendererSizeChanged(); 
+   Q_EMIT rendererSizeChanged();
 }
 
-void OpenGLWidgetRenderer::emitBrightnessChanged(qreal v)       
+void OpenGLWidgetRenderer::emitBrightnessChanged(qreal v)
 {
-   Q_EMIT brightnessChanged(v); 
+   Q_EMIT brightnessChanged(v);
 }
 
-void OpenGLWidgetRenderer::emitContrastChanged(qreal v)         
+void OpenGLWidgetRenderer::emitContrastChanged(qreal v)
 {
-   Q_EMIT contrastChanged(v); 
+   Q_EMIT contrastChanged(v);
 }
 
-void OpenGLWidgetRenderer::emitHueChanged(qreal v)              
+void OpenGLWidgetRenderer::emitHueChanged(qreal v)
 {
-   Q_EMIT hueChanged(v); 
+   Q_EMIT hueChanged(v);
 }
 
-void OpenGLWidgetRenderer::emitSaturationChanged(qreal v)       
+void OpenGLWidgetRenderer::emitSaturationChanged(qreal v)
 {
-   Q_EMIT saturationChanged(v); 
+   Q_EMIT saturationChanged(v);
 }
 
-void OpenGLWidgetRenderer::emitBackgroundColorChanged()       
+void OpenGLWidgetRenderer::emitBackgroundColorChanged()
 {
-   Q_EMIT backgroundColorChanged(); 
+   Q_EMIT backgroundColorChanged();
 }
 
 } // namespace QtAV

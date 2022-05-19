@@ -90,7 +90,7 @@ public:
         mTimer.start();
     }
 
-    void end() 
+    void end()
     {
         mTimer.invalidate();
 
@@ -1403,7 +1403,7 @@ bool AVDemuxer::setStreamIndex(StreamType st, int index)
         return false;
     }
 
-    if (index >= streams->size()) 
+    if (index >= streams->size())
     {
         // || index < 0) { //TODO: disable if <0
 

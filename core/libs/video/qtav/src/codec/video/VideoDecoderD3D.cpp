@@ -503,7 +503,7 @@ void* VideoDecoderD3DPrivate::setup(AVCodecContext *avctx)
             surface_count += avctx->thread_count;
     }
 
-    qCDebug(DIGIKAM_QTAV_LOG).noquote() 
+    qCDebug(DIGIKAM_QTAV_LOG).noquote()
         << QString::asprintf(">>> surfaces: %d, active_thread_type: %d, threads: %d, refs: %d",
             surface_count,
             avctx->active_thread_type,

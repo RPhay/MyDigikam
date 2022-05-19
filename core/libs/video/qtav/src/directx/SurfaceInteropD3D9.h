@@ -38,7 +38,7 @@ namespace QtAV
 namespace d3d9
 {
 
-enum InteropType 
+enum InteropType
 {
     InteropAuto,
     InteropEGL,

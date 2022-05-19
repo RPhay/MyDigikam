@@ -449,70 +449,70 @@ void GDIRenderer::showEvent(QShowEvent*)
 
 void GDIRenderer::emitSourceAspectRatioChanged(qreal v)
 {
-   Q_EMIT sourceAspectRatioChanged(v); 
+   Q_EMIT sourceAspectRatioChanged(v);
 }
 
-void GDIRenderer::emitOutAspectRatioChanged()        
+void GDIRenderer::emitOutAspectRatioChanged()
 {
-   Q_EMIT outAspectRatioChanged(); 
+   Q_EMIT outAspectRatioChanged();
 }
 
-void GDIRenderer::emitOutAspectRatioModeChanged()    
+void GDIRenderer::emitOutAspectRatioModeChanged()
 {
-   Q_EMIT outAspectRatioModeChanged(); 
+   Q_EMIT outAspectRatioModeChanged();
 }
 
-void GDIRenderer::emitOrientationChanged()           
+void GDIRenderer::emitOrientationChanged()
 {
-   Q_EMIT orientationChanged(); 
+   Q_EMIT orientationChanged();
 }
 
-void GDIRenderer::emitVideoRectChanged()             
+void GDIRenderer::emitVideoRectChanged()
 {
-   Q_EMIT videoRectChanged(); 
+   Q_EMIT videoRectChanged();
 }
 
-void GDIRenderer::emitContentRectChanged()           
+void GDIRenderer::emitContentRectChanged()
 {
-   Q_EMIT contentRectChanged(); 
+   Q_EMIT contentRectChanged();
 }
 
-void GDIRenderer::emitRegionOfInterestChanged()      
+void GDIRenderer::emitRegionOfInterestChanged()
 {
-   Q_EMIT regionOfInterestChanged(); 
+   Q_EMIT regionOfInterestChanged();
 }
 
-void GDIRenderer::emitVideoFrameSizeChanged()        
+void GDIRenderer::emitVideoFrameSizeChanged()
 {
-   Q_EMIT videoFrameSizeChanged(); 
+   Q_EMIT videoFrameSizeChanged();
 }
 
-void GDIRenderer::emitRendererSizeChanged()          
+void GDIRenderer::emitRendererSizeChanged()
 {
-   Q_EMIT rendererSizeChanged(); 
+   Q_EMIT rendererSizeChanged();
 }
 
-void GDIRenderer::emitBrightnessChanged(qreal v)       
+void GDIRenderer::emitBrightnessChanged(qreal v)
 {
-   Q_EMIT brightnessChanged(v); 
+   Q_EMIT brightnessChanged(v);
 }
 
-void GDIRenderer::emitContrastChanged(qreal v)         
+void GDIRenderer::emitContrastChanged(qreal v)
 {
-   Q_EMIT contrastChanged(v); 
+   Q_EMIT contrastChanged(v);
 }
 
-void GDIRenderer::emitHueChanged(qreal v)              
+void GDIRenderer::emitHueChanged(qreal v)
 {
-   Q_EMIT hueChanged(v); 
+   Q_EMIT hueChanged(v);
 }
 
-void GDIRenderer::emitSaturationChanged(qreal v)       
+void GDIRenderer::emitSaturationChanged(qreal v)
 {
-   Q_EMIT saturationChanged(v); 
+   Q_EMIT saturationChanged(v);
 }
 
-void GDIRenderer::emitBackgroundColorChanged()       
+void GDIRenderer::emitBackgroundColorChanged()
 {
    Q_EMIT backgroundColorChanged();
 }

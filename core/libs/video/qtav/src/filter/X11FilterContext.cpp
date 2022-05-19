@@ -134,7 +134,7 @@ void X11FilterContext::renderTextImageX11(QImage* img, const QPointF& pos)
 
         // force the stride to ensure we can safely set ximage data ptr to qimage data ptr
 
-        mask_img = (XImage*)XCreateImage((::Display*)display, 
+        mask_img = (XImage*)XCreateImage((::Display*)display,
                                          xwa.visual, 1, ZPixmap, 0,
                                          nullptr,
                                          mask_q.width(), mask_q.height(),

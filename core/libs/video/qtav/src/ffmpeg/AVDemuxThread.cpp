@@ -266,7 +266,7 @@ void AVDemuxThread::setAVThread(AVThread*& pOld, AVThread* const pNew)
 
     pOld->packetQueue()->setEmptyCallback(new QueueEmptyCall(this));
 
-    connect(pOld, SIGNAL(finished()), 
+    connect(pOld, SIGNAL(finished()),
             this, SLOT(onAVThreadQuit()));
 }
 

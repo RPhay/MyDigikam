@@ -490,7 +490,7 @@ void AVThread::waitAndCheck(ulong value, qreal pts)
     const ulong ms                = value;
     static const ulong kWaitSlice = 20 * 1000UL; //20ms
 
-    while (us > kWaitSlice) 
+    while (us > kWaitSlice)
     {
         usleep(kWaitSlice);
 

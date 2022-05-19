@@ -561,7 +561,7 @@ void VideoOutput::emitSourceAspectRatioChanged(qreal v)
 
 void VideoOutput::emitOutAspectRatioChanged()
 {
-   Q_EMIT outAspectRatioChanged(); 
+   Q_EMIT outAspectRatioChanged();
 }
 
 void VideoOutput::emitOutAspectRatioModeChanged()
@@ -574,54 +574,54 @@ void VideoOutput::emitOrientationChanged()
    Q_EMIT orientationChanged();
 }
 
-void VideoOutput::emitVideoRectChanged()             
+void VideoOutput::emitVideoRectChanged()
 {
-   Q_EMIT videoRectChanged(); 
+   Q_EMIT videoRectChanged();
 }
 
-void VideoOutput::emitContentRectChanged()           
+void VideoOutput::emitContentRectChanged()
 {
-   Q_EMIT contentRectChanged(); 
+   Q_EMIT contentRectChanged();
 }
 
-void VideoOutput::emitRegionOfInterestChanged()      
+void VideoOutput::emitRegionOfInterestChanged()
 {
-   Q_EMIT regionOfInterestChanged(); 
+   Q_EMIT regionOfInterestChanged();
 }
 
-void VideoOutput::emitVideoFrameSizeChanged()        
+void VideoOutput::emitVideoFrameSizeChanged()
 {
-   Q_EMIT videoFrameSizeChanged(); 
+   Q_EMIT videoFrameSizeChanged();
 }
 
-void VideoOutput::emitRendererSizeChanged()          
+void VideoOutput::emitRendererSizeChanged()
 {
-   Q_EMIT rendererSizeChanged(); 
+   Q_EMIT rendererSizeChanged();
 }
 
-void VideoOutput::emitBrightnessChanged(qreal v)       
+void VideoOutput::emitBrightnessChanged(qreal v)
 {
-   Q_EMIT brightnessChanged(v); 
+   Q_EMIT brightnessChanged(v);
 }
 
-void VideoOutput::emitContrastChanged(qreal v)         
+void VideoOutput::emitContrastChanged(qreal v)
 {
-   Q_EMIT contrastChanged(v); 
+   Q_EMIT contrastChanged(v);
 }
 
-void VideoOutput::emitHueChanged(qreal v)              
+void VideoOutput::emitHueChanged(qreal v)
 {
-   Q_EMIT hueChanged(v); 
+   Q_EMIT hueChanged(v);
 }
 
-void VideoOutput::emitSaturationChanged(qreal v)       
+void VideoOutput::emitSaturationChanged(qreal v)
 {
-   Q_EMIT saturationChanged(v); 
+   Q_EMIT saturationChanged(v);
 }
 
-void VideoOutput::emitBackgroundColorChanged()       
+void VideoOutput::emitBackgroundColorChanged()
 {
-   Q_EMIT backgroundColorChanged(); 
+   Q_EMIT backgroundColorChanged();
 }
 
 } // namespace QtAV

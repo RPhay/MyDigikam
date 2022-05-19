@@ -621,70 +621,70 @@ void Direct2DRenderer::showEvent(QShowEvent*)
 
 void Direct2DRenderer::emitSourceAspectRatioChanged(qreal v)
 {
-   Q_EMIT sourceAspectRatioChanged(v); 
+   Q_EMIT sourceAspectRatioChanged(v);
 }
 
-void Direct2DRenderer::emitOutAspectRatioChanged()        
+void Direct2DRenderer::emitOutAspectRatioChanged()
 {
-   Q_EMIT outAspectRatioChanged(); 
+   Q_EMIT outAspectRatioChanged();
 }
 
-void Direct2DRenderer::emitOutAspectRatioModeChanged()    
+void Direct2DRenderer::emitOutAspectRatioModeChanged()
 {
-   Q_EMIT outAspectRatioModeChanged(); 
+   Q_EMIT outAspectRatioModeChanged();
 }
 
-void Direct2DRenderer::emitOrientationChanged()           
+void Direct2DRenderer::emitOrientationChanged()
 {
-   Q_EMIT orientationChanged(); 
+   Q_EMIT orientationChanged();
 }
 
-void Direct2DRenderer::emitVideoRectChanged()             
+void Direct2DRenderer::emitVideoRectChanged()
 {
-   Q_EMIT videoRectChanged(); 
+   Q_EMIT videoRectChanged();
 }
 
-void Direct2DRenderer::emitContentRectChanged()           
+void Direct2DRenderer::emitContentRectChanged()
 {
-   Q_EMIT contentRectChanged(); 
+   Q_EMIT contentRectChanged();
 }
 
-void Direct2DRenderer::emitRegionOfInterestChanged()      
+void Direct2DRenderer::emitRegionOfInterestChanged()
 {
-   Q_EMIT regionOfInterestChanged(); 
+   Q_EMIT regionOfInterestChanged();
 }
 
-void Direct2DRenderer::emitVideoFrameSizeChanged()        
+void Direct2DRenderer::emitVideoFrameSizeChanged()
 {
-   Q_EMIT videoFrameSizeChanged(); 
+   Q_EMIT videoFrameSizeChanged();
 }
 
-void Direct2DRenderer::emitRendererSizeChanged()          
+void Direct2DRenderer::emitRendererSizeChanged()
 {
-   Q_EMIT rendererSizeChanged(); 
+   Q_EMIT rendererSizeChanged();
 }
 
-void Direct2DRenderer::emitBrightnessChanged(qreal v)       
+void Direct2DRenderer::emitBrightnessChanged(qreal v)
 {
-   Q_EMIT brightnessChanged(v); 
+   Q_EMIT brightnessChanged(v);
 }
 
-void Direct2DRenderer::emitContrastChanged(qreal v)         
+void Direct2DRenderer::emitContrastChanged(qreal v)
 {
-   Q_EMIT contrastChanged(v); 
+   Q_EMIT contrastChanged(v);
 }
 
-void Direct2DRenderer::emitHueChanged(qreal v)              
+void Direct2DRenderer::emitHueChanged(qreal v)
 {
-   Q_EMIT hueChanged(v); 
+   Q_EMIT hueChanged(v);
 }
 
-void Direct2DRenderer::emitSaturationChanged(qreal v)       
+void Direct2DRenderer::emitSaturationChanged(qreal v)
 {
-   Q_EMIT saturationChanged(v); 
+   Q_EMIT saturationChanged(v);
 }
 
-void Direct2DRenderer::emitBackgroundColorChanged()       
+void Direct2DRenderer::emitBackgroundColorChanged()
 {
    Q_EMIT backgroundColorChanged();
 }

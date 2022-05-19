@@ -254,7 +254,7 @@ bool isEGL()
     }
 
     if (eglGetCurrentDisplay() != EGL_NO_DISPLAY)
-    { 
+    {
         // egl can be loaded but glx is used
 
         is_egl = 1;

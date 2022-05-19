@@ -85,7 +85,7 @@ protected:
     virtual void resizeEvent(QResizeEvent*)     override;
     virtual void showEvent(QShowEvent*)         override;
 
-    DECLARE_VIDEO_RENDERER_EMIT_METHODS    
+    DECLARE_VIDEO_RENDERER_EMIT_METHODS
 };
 
 typedef GLWidgetRenderer VideoRendererGLWidget;

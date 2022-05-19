@@ -102,7 +102,7 @@ public:
     DECLARE_VIDEO_RENDERER_SIGNALS
 
 Q_SIGNALS:
-    
+
     void openGLChanged();
 
 protected:
@@ -139,7 +139,7 @@ private:
     bool onSetSaturation(qreal s)                           override;
 
     DECLARE_VIDEO_RENDERER_EMIT_METHODS
-    
+
     GraphicsItemRenderer(QObject*);
 };
 

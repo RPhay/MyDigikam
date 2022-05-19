@@ -802,72 +802,72 @@ bool XVRenderer::onSetSaturation(qreal s)
 
 void XVRenderer::emitSourceAspectRatioChanged(qreal v)
 {
-   Q_EMIT sourceAspectRatioChanged(v); 
+   Q_EMIT sourceAspectRatioChanged(v);
 }
 
-void XVRenderer::emitOutAspectRatioChanged()        
+void XVRenderer::emitOutAspectRatioChanged()
 {
-   Q_EMIT outAspectRatioChanged(); 
+   Q_EMIT outAspectRatioChanged();
 }
 
-void XVRenderer::emitOutAspectRatioModeChanged()    
+void XVRenderer::emitOutAspectRatioModeChanged()
 {
-   Q_EMIT outAspectRatioModeChanged(); 
+   Q_EMIT outAspectRatioModeChanged();
 }
 
-void XVRenderer::emitOrientationChanged()           
+void XVRenderer::emitOrientationChanged()
 {
-   Q_EMIT orientationChanged(); 
+   Q_EMIT orientationChanged();
 }
 
-void XVRenderer::emitVideoRectChanged()             
+void XVRenderer::emitVideoRectChanged()
 {
-   Q_EMIT videoRectChanged(); 
+   Q_EMIT videoRectChanged();
 }
 
-void XVRenderer::emitContentRectChanged()           
+void XVRenderer::emitContentRectChanged()
 {
-   Q_EMIT contentRectChanged(); 
+   Q_EMIT contentRectChanged();
 }
 
-void XVRenderer::emitRegionOfInterestChanged()      
+void XVRenderer::emitRegionOfInterestChanged()
 {
-   Q_EMIT regionOfInterestChanged(); 
+   Q_EMIT regionOfInterestChanged();
 }
 
-void XVRenderer::emitVideoFrameSizeChanged()        
+void XVRenderer::emitVideoFrameSizeChanged()
 {
-   Q_EMIT videoFrameSizeChanged(); 
+   Q_EMIT videoFrameSizeChanged();
 }
 
-void XVRenderer::emitRendererSizeChanged()          
+void XVRenderer::emitRendererSizeChanged()
 {
-   Q_EMIT rendererSizeChanged(); 
+   Q_EMIT rendererSizeChanged();
 }
 
-void XVRenderer::emitBrightnessChanged(qreal v)       
+void XVRenderer::emitBrightnessChanged(qreal v)
 {
-   Q_EMIT brightnessChanged(v); 
+   Q_EMIT brightnessChanged(v);
 }
 
-void XVRenderer::emitContrastChanged(qreal v)         
+void XVRenderer::emitContrastChanged(qreal v)
 {
-   Q_EMIT contrastChanged(v); 
+   Q_EMIT contrastChanged(v);
 }
 
-void XVRenderer::emitHueChanged(qreal v)              
+void XVRenderer::emitHueChanged(qreal v)
 {
-   Q_EMIT hueChanged(v); 
+   Q_EMIT hueChanged(v);
 }
 
-void XVRenderer::emitSaturationChanged(qreal v)       
+void XVRenderer::emitSaturationChanged(qreal v)
 {
-   Q_EMIT saturationChanged(v); 
+   Q_EMIT saturationChanged(v);
 }
 
-void XVRenderer::emitBackgroundColorChanged()       
+void XVRenderer::emitBackgroundColorChanged()
 {
-   Q_EMIT backgroundColorChanged(); 
+   Q_EMIT backgroundColorChanged();
 }
 
 } // namespace QtAV

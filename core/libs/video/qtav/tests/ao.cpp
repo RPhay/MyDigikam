@@ -58,7 +58,7 @@ int main(int argc, char** argv)
 
     for (int i = 0 ; i < kTableSize ; ++i)
     {
-        sin_table[i] = (qint16)((double)std::numeric_limits<qint16>::max() * 
+        sin_table[i] = (qint16)((double)std::numeric_limits<qint16>::max() *
                         sin(((double)i / (double)kTableSize) * M_PI * 2.0));
     }
 

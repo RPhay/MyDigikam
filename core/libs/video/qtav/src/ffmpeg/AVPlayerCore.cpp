@@ -523,7 +523,7 @@ void AVPlayerCore::setPriority(const QVector<VideoDecoderId> &ids)
                 return;
             }
 
-            class Q_DECL_HIDDEN ApplyNewDecoderTask : public QRunnable 
+            class Q_DECL_HIDDEN ApplyNewDecoderTask : public QRunnable
             {
                 AVPlayerCore* player = nullptr;
                 VideoDecoder* dec    = nullptr;

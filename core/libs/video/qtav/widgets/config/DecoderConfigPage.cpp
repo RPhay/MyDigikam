@@ -496,7 +496,7 @@ void DecoderConfigPage::onDecSelected(DecoderItemWidget* iw)
         return;
     }
 
-    if (mpSelectedDec) 
+    if (mpSelectedDec)
     {
         mpSelectedDec->select(false);
     }

@@ -178,7 +178,7 @@ bool AudioOutputPortAudio::write(const QByteArray& data)
 
 static int toPaSampleFormat(AudioFormat::SampleFormat format)
 {
-    switch (format) 
+    switch (format)
     {
         case AudioFormat::SampleFormat_Unsigned8:
             return paUInt8;

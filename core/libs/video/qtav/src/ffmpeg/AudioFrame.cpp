@@ -265,7 +265,7 @@ void AudioFrame::setSamplesPerChannel(int samples)
     const int nb_planes = d->format.planeCount();
 
     const int bpl(d->line_sizes[0] > 0 ? d->line_sizes[0]
-                                       : d->samples_per_ch*d->format.bytesPerSample() * (d->format.isPlanar() ? 1 
+                                       : d->samples_per_ch*d->format.bytesPerSample() * (d->format.isPlanar() ? 1
                                                                                                               : d->format.channels()));
 
     for (int i = 0 ; i < nb_planes ; ++i)

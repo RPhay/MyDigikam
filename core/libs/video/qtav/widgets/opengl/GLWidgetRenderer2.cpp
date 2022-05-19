@@ -114,72 +114,72 @@ void GLWidgetRenderer2::showEvent(QShowEvent *)
 
 void GLWidgetRenderer2::emitSourceAspectRatioChanged(qreal v)
 {
-   Q_EMIT sourceAspectRatioChanged(v); 
+   Q_EMIT sourceAspectRatioChanged(v);
 }
 
-void GLWidgetRenderer2::emitOutAspectRatioChanged()        
+void GLWidgetRenderer2::emitOutAspectRatioChanged()
 {
-   Q_EMIT outAspectRatioChanged(); 
+   Q_EMIT outAspectRatioChanged();
 }
 
-void GLWidgetRenderer2::emitOutAspectRatioModeChanged()    
+void GLWidgetRenderer2::emitOutAspectRatioModeChanged()
 {
-   Q_EMIT outAspectRatioModeChanged(); 
+   Q_EMIT outAspectRatioModeChanged();
 }
 
-void GLWidgetRenderer2::emitOrientationChanged()           
+void GLWidgetRenderer2::emitOrientationChanged()
 {
-   Q_EMIT orientationChanged(); 
+   Q_EMIT orientationChanged();
 }
 
-void GLWidgetRenderer2::emitVideoRectChanged()             
+void GLWidgetRenderer2::emitVideoRectChanged()
 {
-   Q_EMIT videoRectChanged(); 
+   Q_EMIT videoRectChanged();
 }
 
-void GLWidgetRenderer2::emitContentRectChanged()           
+void GLWidgetRenderer2::emitContentRectChanged()
 {
-   Q_EMIT contentRectChanged(); 
+   Q_EMIT contentRectChanged();
 }
 
-void GLWidgetRenderer2::emitRegionOfInterestChanged()      
+void GLWidgetRenderer2::emitRegionOfInterestChanged()
 {
-   Q_EMIT regionOfInterestChanged(); 
+   Q_EMIT regionOfInterestChanged();
 }
 
-void GLWidgetRenderer2::emitVideoFrameSizeChanged()        
+void GLWidgetRenderer2::emitVideoFrameSizeChanged()
 {
-   Q_EMIT videoFrameSizeChanged(); 
+   Q_EMIT videoFrameSizeChanged();
 }
 
-void GLWidgetRenderer2::emitRendererSizeChanged()          
+void GLWidgetRenderer2::emitRendererSizeChanged()
 {
-   Q_EMIT rendererSizeChanged(); 
+   Q_EMIT rendererSizeChanged();
 }
 
-void GLWidgetRenderer2::emitBrightnessChanged(qreal v)       
+void GLWidgetRenderer2::emitBrightnessChanged(qreal v)
 {
-   Q_EMIT brightnessChanged(v); 
+   Q_EMIT brightnessChanged(v);
 }
 
-void GLWidgetRenderer2::emitContrastChanged(qreal v)         
+void GLWidgetRenderer2::emitContrastChanged(qreal v)
 {
-   Q_EMIT contrastChanged(v); 
+   Q_EMIT contrastChanged(v);
 }
 
-void GLWidgetRenderer2::emitHueChanged(qreal v)              
+void GLWidgetRenderer2::emitHueChanged(qreal v)
 {
-   Q_EMIT hueChanged(v); 
+   Q_EMIT hueChanged(v);
 }
 
-void GLWidgetRenderer2::emitSaturationChanged(qreal v)       
+void GLWidgetRenderer2::emitSaturationChanged(qreal v)
 {
-   Q_EMIT saturationChanged(v); 
+   Q_EMIT saturationChanged(v);
 }
 
-void GLWidgetRenderer2::emitBackgroundColorChanged()       
+void GLWidgetRenderer2::emitBackgroundColorChanged()
 {
-   Q_EMIT backgroundColorChanged(); 
+   Q_EMIT backgroundColorChanged();
 }
 
 } // namespace QtAV

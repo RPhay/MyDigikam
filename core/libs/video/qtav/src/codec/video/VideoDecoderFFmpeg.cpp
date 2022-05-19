@@ -93,7 +93,7 @@ public:
         All     = AVDISCARD_ALL
     };
     Q_ENUM(DiscardType)
-    
+
     enum ThreadFlag
     {
         DefaultType = FF_THREAD_SLICE | FF_THREAD_FRAME, // default

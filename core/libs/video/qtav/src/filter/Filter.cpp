@@ -40,7 +40,7 @@
  * if delete filter first, filter must notify FilterManager (uninstall in dtor here) to uninstall to avoid target to access it (in ~target())
  * if delete target first, target remove the filter but not delete it (parent not null now).
  */
- 
+
 namespace QtAV
 {
 

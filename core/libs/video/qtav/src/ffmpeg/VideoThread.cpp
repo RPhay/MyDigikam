@@ -429,7 +429,7 @@ void VideoThread::run()
 
             if (d.clock->syncId() > 0)
             {
-                qCDebug(DIGIKAM_QTAV_LOG).noquote() 
+                qCDebug(DIGIKAM_QTAV_LOG).noquote()
                     << QString::asprintf("video thread wait to sync end for sync id: %d", d.clock->syncId());
 
                 if ((d.render_pts0 < 0) && (sync_id > 0))
