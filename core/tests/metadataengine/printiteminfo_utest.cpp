@@ -62,7 +62,7 @@ void PrintItemInfoTest::testPrintItemInfo()
 
     if ((MetaEngine::Exiv2Version().section(QLatin1Char('.'), 0, 1).toDouble(&ok) > 0.26) && ok)
     {
-        printItemInfo(m_originalImageFolder + QLatin1String("20160821035715.jpg"), true,        false,
+        printItemInfo(m_originalImageFolder + QLatin1String("20160821035715.jpg"), false,       false,
                                                                                    false,       false,        false,
                                                                                    true,        true,
                                                                                    false,       false,        false,            true);
