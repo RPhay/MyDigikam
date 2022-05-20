@@ -174,7 +174,7 @@ private Q_SLOTS:
         QTest::addColumn< QList<Revision> >("results");
 
         QTest::newRow("All rvprop enable")
-            << QStringFromFile(QCoreApplication::applicationFilePath() + QStringLiteral(".rc"))
+            << QStringFromFile(queryrevisiontestBasePath() + QStringLiteral(".rc"))
                 << FakeServer::Request(QStringLiteral("GET"),
                                        QString(),
                                        QStringLiteral("/?format=xml&action=query&prop=revisions&rvprop=ids%7Cflags%7Ctimestamp%7Cuser%7Ccomment%7Csize%7Ccontent&titles=API%7CMain%20Page"))
@@ -192,10 +192,10 @@ private Q_SLOTS:
                                                  QDateTime::fromString(QStringLiteral("2010-09-28T15:21:07Z"),
                                                                        QStringLiteral("yyyy-MM-ddThh:mm:ssZ")),
                                                  QStringLiteral("[[Help:Reverting|Reverted]] edits by [[Special:Contributions/Rich Farmbrough|Rich Farmbrough]] ([[User talk:Rich Farmbrough|talk]]) to last version by David Levy"),
-                                                 QStringFromFile(QCoreApplication::applicationFilePath() + QStringLiteral("_content.rc")),QString(),QString()));
+                                                 QStringFromFile(queryrevisiontestBasePath() + QStringLiteral("_content.rc")),QString(),QString()));
 
         QTest::newRow("One title")
-                << QStringFromFile(QCoreApplication::applicationFilePath() + QStringLiteral("_onetitle.rc"))
+                << QStringFromFile(queryrevisiontestBasePath() + QStringLiteral("_onetitle.rc"))
                 << FakeServer::Request(QStringLiteral("GET"),
                                        QString(),
                                        QStringLiteral("/?format=xml&action=query&prop=revisions&rvprop=ids%7Cflags%7Ctimestamp%7Cuser%7Ccomment%7Csize%7Ccontent&titles=API"))
@@ -211,7 +211,7 @@ private Q_SLOTS:
                                                  QStringLiteral("#REDIRECT [[Application programming interface]]{{R from abbreviation}}"),QString(),QString()));
 
         QTest::newRow("Timestamp only")
-                << QStringFromFile(QCoreApplication::applicationFilePath() + QStringLiteral("_timestamponly.rc"))
+                << QStringFromFile(queryrevisiontestBasePath() + QStringLiteral("_timestamponly.rc"))
                 << FakeServer::Request(QStringLiteral("GET"),
                                        QString(),
                                        QStringLiteral("/?format=xml&action=query&prop=revisions&rvprop=timestamp&titles=API%7CMain%20Page"))
@@ -231,7 +231,7 @@ private Q_SLOTS:
                                              QString(),
                                              QString(),QString(),QString()));
         QTest::newRow("User only")
-                << QStringFromFile(QCoreApplication::applicationFilePath() + QStringLiteral("_useronly.rc"))
+                << QStringFromFile(queryrevisiontestBasePath() + QStringLiteral("_useronly.rc"))
                 << FakeServer::Request(QStringLiteral("GET"),
                                        QString(),
                                        QStringLiteral("/?format=xml&action=query&prop=revisions&rvprop=user&titles=API%7CMain%20Page"))
@@ -295,7 +295,7 @@ private Q_SLOTS:
         QTest::addColumn<int>("error");
 
         QTest::newRow("XML")
-                << QStringFromFile(QCoreApplication::applicationFilePath() + QStringLiteral("_cuted.rc"))
+                << QStringFromFile(queryrevisiontestBasePath() + QStringLiteral("_cuted.rc"))
                 << int(QueryRevision::XmlError);
 
         QTest::newRow("Network")
@@ -552,7 +552,7 @@ private Q_SLOTS:
 
     void testGenerateXML()
     {
-        QString scenario = QStringFromFile(QCoreApplication::applicationFilePath() + QStringLiteral("_parsetree.rc"));
+        QString scenario = QStringFromFile(queryrevisiontestBasePath() + QStringLiteral("_parsetree.rc"));
         FakeServer::Request requestTrue(QStringLiteral("GET"),
                                         QString(),
                                         QStringLiteral("/?format=xml&action=query&prop=revisions&rvgeneratexml=on&rvprop=timestamp%7Cuser%7Ccomment%7Ccontent&titles=API"));
@@ -636,7 +636,7 @@ private Q_SLOTS:
 
     void testRvToken()
     {
-        QString scenario = QStringFromFile(QCoreApplication::applicationFilePath() + QStringLiteral("_rollback.rc"));
+        QString scenario = QStringFromFile(queryrevisiontestBasePath() + QStringLiteral("_rollback.rc"));
         FakeServer::Request requestTrue(QStringLiteral("GET"),
                                         QString(),
                                         QStringLiteral("/?format=xml&action=query&prop=revisions&rvtoken=rollback&titles=API"));
@@ -772,6 +772,13 @@ private Q_SLOTS:
         QCOMPARE(requestTrue.value, request.value);
 
         QVERIFY(fakeserver.isAllScenarioDone());
+    }
+
+private:
+
+    QString queryrevisiontestBasePath()
+    {
+        return QFINDTESTDATA("data/") + QLatin1String("queryrevisiontest");
     }
 
 private:

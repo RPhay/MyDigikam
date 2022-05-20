@@ -72,7 +72,7 @@ private Q_SLOTS:
         uploadCount          = 0;
         this->m_mediaWiki    = new Iface(QUrl(QStringLiteral("http://127.0.0.1:12566")));       // krazy:exclude=insecurenet
         this->m_infoScenario = QStringLiteral("<api><query><pages><page pageid=\"27697087\" ns=\"0\" title=\"API\" touched=\"2010-11-25T13:59:03Z\" lastrevid=\"367741756\" counter=\"0\" length=\"70\" redirect=\"\" starttimestamp=\"2010-11-25T16:14:51Z\" edittoken=\"cecded1f35005d22904a35cc7b736e18%2B\" talkid=\"5477418\" fullurl=\"https://en.wikipedia.org/wiki/API\" editurl=\"https://en.wikipedia.org/w/index.php?title=API&action=edit\" ><protection /></page></pages></query></api>");
-        this->m_file         = new QFile(QCoreApplication::applicationFilePath() + QStringLiteral("_image.jpg"));
+        this->m_file         = new QFile(QFINDTESTDATA("data/") + QLatin1String("uploadtest") + QStringLiteral("_image.jpg"));
         this->m_file->open(QIODevice::ReadOnly);
     }
 
