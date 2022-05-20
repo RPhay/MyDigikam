@@ -239,14 +239,14 @@ void AVEncoderPrivate::applyOptionsForDict()
 
     // TODO: use QVariantMap only
 
-    if (!options.contains(QStringLiteral("avcodec")))
+    if (!options.contains(QLatin1String("avcodec")))
         return;
 
     // workaround for VideoDecoderFFmpeg. now it does not call av_opt_set_xxx, so set here in dict
 
     // TODO: wrong if opt is empty
 
-    Internal::setOptionsToDict(options.value(QStringLiteral("avcodec")), &dict);
+    Internal::setOptionsToDict(options.value(QLatin1String("avcodec")), &dict);
 }
 
 void AVEncoderPrivate::applyOptionsForContext()
@@ -263,14 +263,14 @@ void AVEncoderPrivate::applyOptionsForContext()
 
     // TODO: use QVariantMap only
 
-    if (!options.contains(QStringLiteral("avcodec")))
+    if (!options.contains(QLatin1String("avcodec")))
         return;
 
     // workaround for VideoDecoderFFmpeg. now it does not call av_opt_set_xxx, so set here in dict
 
     // TODO: wrong if opt is empty
 
-    Internal::setOptionsToFFmpegObj(options.value(QStringLiteral("avcodec")), avctx);
+    Internal::setOptionsToFFmpegObj(options.value(QLatin1String("avcodec")), avctx);
 }
 
 } // namespace QtAV
