@@ -78,7 +78,6 @@ unexpected-flag-enumerator-value,\
 signal-with-return-value,\
 raw-environment-function,\
 qt-keywords,\
-isempty-vs-count,\
 missing-qobject-macro\
 "
 
