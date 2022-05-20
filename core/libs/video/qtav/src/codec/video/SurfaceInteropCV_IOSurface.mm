@@ -73,7 +73,7 @@ public:
         return false;
     }
 
-    bool map(CVPixelBufferRef buf, GLuint *tex, int w, int h, int plane)                       Q_DECL_OVERRIDE;
+    bool map(CVPixelBufferRef buf, GLuint* tex, int w, int h, int plane)                       Q_DECL_OVERRIDE;
 
     GLuint createTexture(CVPixelBufferRef, const VideoFormat &fmt,
                          int plane, int planeWidth,
@@ -95,7 +95,7 @@ InteropResource* CreateInteropIOSurface()
     return new InteropResourceIOSurface();
 }
 
-bool InteropResourceIOSurface::stridesForWidth(int cvfmt, int width, int *strides, VideoFormat::PixelFormat* outFmt)
+bool InteropResourceIOSurface::stridesForWidth(int cvfmt, int width, int* strides, VideoFormat::PixelFormat* outFmt)
 {
     switch (cvfmt)
     {
@@ -113,13 +113,15 @@ bool InteropResourceIOSurface::stridesForWidth(int cvfmt, int width, int *stride
         }
 
         default:
+        {
             return InteropResource::stridesForWidth(cvfmt, width, strides, outFmt);
+        }
     }
 
     return true;
 }
 
-bool InteropResourceIOSurface::map(CVPixelBufferRef buf, GLuint *tex, int w, int h, int plane)
+bool InteropResourceIOSurface::map(CVPixelBufferRef buf, GLuint* tex, int w, int h, int plane)
 {
     Q_UNUSED(w);
     Q_UNUSED(h);
@@ -149,7 +151,7 @@ bool InteropResourceIOSurface::map(CVPixelBufferRef buf, GLuint *tex, int w, int
 #endif
 
             format = GL_RGB_422_APPLE;
-            dtype = pixfmt == '2vuy' ? GL_UNSIGNED_SHORT_8_8_APPLE : GL_UNSIGNED_SHORT_8_8_REV_APPLE;
+            dtype  = (pixfmt == '2vuy' ? GL_UNSIGNED_SHORT_8_8_APPLE : GL_UNSIGNED_SHORT_8_8_REV_APPLE);
             break;
 
         // macOS: GL_RGBA8, GL_BGRA, GL_UNSIGNED_INT_8_8_8_8_REV
@@ -167,7 +169,7 @@ bool InteropResourceIOSurface::map(CVPixelBufferRef buf, GLuint *tex, int w, int
 
             iformat = GL_RGBA8;
             format  = GL_BGRA;
-            dtype  = GL_UNSIGNED_INT_8_8_8_8_REV;
+            dtype   = GL_UNSIGNED_INT_8_8_8_8_REV;
 
 #endif
 
@@ -181,9 +183,10 @@ bool InteropResourceIOSurface::map(CVPixelBufferRef buf, GLuint *tex, int w, int
     DYGL(glBindTexture(target, *tex));
     const int planeW    = CVPixelBufferGetWidthOfPlane(buf, plane);
     const int planeH    = CVPixelBufferGetHeightOfPlane(buf, plane);
-
-    //qCDebug(DIGIKAM_QTAV_LOG).noquote() << QString::asprintf("map plane%d. %dx%d, gl %d %d %d", plane, planeW, planeH, iformat, format, dtype);
-
+/*
+    qCDebug(DIGIKAM_QTAV_LOG).noquote()
+        << QString::asprintf("map plane%d. %dx%d, gl %d %d %d", plane, planeW, planeH, iformat, format, dtype);
+*/
     const IOSurfaceRef surface  = CVPixelBufferGetIOSurface(buf);             // available in ios11 sdk, ios4 runtime
 
 #ifdef Q_OS_IOS
@@ -202,6 +205,7 @@ bool InteropResourceIOSurface::map(CVPixelBufferRef buf, GLuint *tex, int w, int
 #  endif // __has_builtin(__builtin_available)
 
         ok = [[EAGLContext currentContext] texImageIOSurface:surface target:target internalFormat:iformat width:planeW height:planeH format:format type:dtype plane:plane];
+
     else // fallback to old private api if runtime version < 11
 
 # endif // __IPHONE_11_0
@@ -218,7 +222,8 @@ bool InteropResourceIOSurface::map(CVPixelBufferRef buf, GLuint *tex, int w, int
 
     if (!ok)
     {
-         qCWarning(DIGIKAM_QTAV_LOG_WARN).noquote() << QString::asprintf("error creating IOSurface texture at plane %d", plane);
+         qCWarning(DIGIKAM_QTAV_LOG_WARN).noquote()
+            << QString::asprintf("error creating IOSurface texture at plane %d", plane);
     }
 
 #else
@@ -227,7 +232,9 @@ bool InteropResourceIOSurface::map(CVPixelBufferRef buf, GLuint *tex, int w, int
 
     if (err != kCGLNoError)
     {
-        qCWarning(DIGIKAM_QTAV_LOG_WARN).noquote() << QString::asprintf("error creating IOSurface texture at plane %d: %s", plane, CGLErrorString(err));
+        qCWarning(DIGIKAM_QTAV_LOG_WARN).noquote()
+            << QString::asprintf("error creating IOSurface texture at plane %d: %s",
+                plane, CGLErrorString(err));
     }
 
 #endif // Q_OS_IOS

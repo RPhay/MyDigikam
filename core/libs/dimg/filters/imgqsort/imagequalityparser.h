@@ -61,7 +61,7 @@ private:
     // Disable
     ImageQualityParser(const ImageQualityParser&)            = delete;
     ImageQualityParser& operator=(const ImageQualityParser&) = delete;
-    ImageQualityParser(QObject*);
+    explicit ImageQualityParser(QObject*);
 
 private:
 

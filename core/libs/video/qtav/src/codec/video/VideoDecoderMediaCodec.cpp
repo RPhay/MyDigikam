@@ -62,18 +62,15 @@ public:
 
     VideoDecoderMediaCodec();
 
-    VideoDecoderId id() const override;
-    QString description() const override;
-    VideoFrame frame() override;
+    VideoDecoderId id()     const override;
+    QString description()   const override;
+    VideoFrame frame()            override;
 
-    void flush() override
+    void flush()                  override
     {
         // workaroudn for EAGAIN error in avcodec_receive_frame
 
-        if (copyMode() == ZeroCopy)
-        {
-        }
-        else
+        if (copyMode() != ZeroCopy)
         {
             VideoDecoderFFmpegHW::flush();
         }
@@ -118,7 +115,7 @@ public:
         return true;
     }
 
-    void* setup(AVCodecContext *avctx) override
+    void* setup(AVCodecContext* avctx) override
     {
         if (copy_mode != VideoDecoderFFmpegHW::ZeroCopy)
             return nullptr;
@@ -131,7 +128,7 @@ public:
             pool_ = api_->texture_pool_create();
 
         av_mediacodec_default_free(avctx);
-        AVMediaCodecContext *mc = av_mediacodec_alloc_context();
+        AVMediaCodecContext* const mc = av_mediacodec_alloc_context();
         AV_ENSURE(av_mediacodec_default_init(avctx, mc, api_->texture_pool_ensure_surface(pool_)), nullptr);
 
 #   endif
@@ -139,12 +136,12 @@ public:
         return avctx->hwaccel_context; // set in av_mediacodec_default_init
     }
 
-    bool getBuffer(void **, uint8_t **data)
+    bool getBuffer(void**, uint8_t**data)
     {
         return true;
     }
 
-    void releaseBuffer(void *, uint8_t *)
+    void releaseBuffer(void*, uint8_t*)
     {
     }
 
@@ -158,8 +155,8 @@ public:
 
 #   ifdef MEDIACODEC_TEXTURE
 
-    const MdkMediaCodecTextureAPI* api_ = mdk_mediacodec_get_api("qtav.nonfree.mediacodec");
-    MdkMediaCodecTextureAPI::TexturePool *pool_ = nullptr;
+    const MdkMediaCodecTextureAPI* api_         = mdk_mediacodec_get_api("qtav.nonfree.mediacodec");
+    MdkMediaCodecTextureAPI::TexturePool* pool_ = nullptr;
 
 #   endif
 
@@ -189,7 +186,7 @@ QString VideoDecoderMediaCodec::description() const
     return QStringLiteral("MediaCodec");
 }
 
-static void av_mediacodec_render_buffer(void *buf)
+static void av_mediacodec_render_buffer(void* buf)
 {
     av_mediacodec_release_buffer((AVMediaCodecBuffer*)buf, 1);
 }
@@ -203,7 +200,7 @@ VideoFrame VideoDecoderMediaCodec::frame()
 {
     DPTR_D(VideoDecoderMediaCodec);
 
-    if (d.frame->width <= 0 || d.frame->height <= 0 || !d.codec_ctx)
+    if ((d.frame->width <= 0) || (d.frame->height <= 0) || !d.codec_ctx)
         return VideoFrame();
 
     // it's safe if width, height, pixfmt will not change, only data change
@@ -217,7 +214,7 @@ VideoFrame VideoDecoderMediaCodec::frame()
 
         // in s. TODO: what about AVFrame.pts? av_frame_get_best_effort_timestamp? move to VideoFrame::from(AVFrame*)
 
-        frame.setTimestamp((double)d.frame->pkt_pts/1000.0);
+        frame.setTimestamp((double)d.frame->pkt_pts / 1000.0);
         frame.setMetaData(QStringLiteral("avbuf"), QVariant::fromValue(AVFrameBuffersRef(new AVFrameBuffers(d.frame))));
         d.updateColorDetails(&frame);
 
@@ -227,20 +224,20 @@ VideoFrame VideoDecoderMediaCodec::frame()
     // print width height
 
     VideoFrame frame(d.frame->width, d.frame->height, VideoFormat::Format_RGB32);
-    frame.setBytesPerLine(d.frame->width*4);
+    frame.setBytesPerLine(d.frame->width * 4);
     frame.setDisplayAspectRatio(d.getDAR(d.frame));
-    frame.setTimestamp(d.frame->pkt_pts/1000.0);
+    frame.setTimestamp(d.frame->pkt_pts / 1000.0);
 
 #   ifdef MEDIACODEC_TEXTURE
 
     class Q_DECL_HIDDEN MediaCodecTextureInterop : public VideoSurfaceInterop
     {
-        const MdkMediaCodecTextureAPI* api_ = nullptr;
-        MdkMediaCodecTextureAPI::Texture *tex_ = nullptr;
+        const MdkMediaCodecTextureAPI* api_    = nullptr;
+        MdkMediaCodecTextureAPI::Texture* tex_ = nullptr;
 
     public:
 
-        MediaCodecTextureInterop(const MdkMediaCodecTextureAPI *api, MdkMediaCodecTextureAPI::Texture *mt)
+        MediaCodecTextureInterop(const MdkMediaCodecTextureAPI* api, MdkMediaCodecTextureAPI::Texture* mt)
             : api_(api),
               tex_(mt)
         {
@@ -251,11 +248,11 @@ VideoFrame VideoDecoderMediaCodec::frame()
             api_->texture_release(&tex_);
         }
 
-        void* map(SurfaceType, const VideoFormat &, void *handle, int plane)
+        void* map(SurfaceType, const VideoFormat&, void* handle, int plane)
         {
             Q_UNUSED(plane);
             GLuint* t = reinterpret_cast<GLuint*>(handle);
-            *t = api_->texture_to_gl(tex_, nullptr, nullptr);
+            *t        = api_->texture_to_gl(tex_, nullptr, nullptr);
 
             return t;
         }
@@ -263,11 +260,11 @@ VideoFrame VideoDecoderMediaCodec::frame()
 
     assert(d.frame->buf[0] && d.frame->data[3] && "No AVMediaCodecBuffer or ref in AVFrame");
 
-    AVBufferRef* bufref = av_buffer_ref(d.frame->buf[0]);
-    AVMediaCodecBuffer *mcbuf = (AVMediaCodecBuffer*)d.frame->data[3];
+    AVBufferRef* bufref                  = av_buffer_ref(d.frame->buf[0]);
+    AVMediaCodecBuffer* mcbuf            = (AVMediaCodecBuffer*)d.frame->data[3];
     MdkMediaCodecTextureAPI::Texture* mt = d.api_->texture_pool_feed_avbuffer(d.pool_, d.frame->width, d.frame->height, av_mediacodec_buffer_unref, bufref, av_mediacodec_render_buffer, mcbuf);
 
-    MediaCodecTextureInterop *interop = new MediaCodecTextureInterop(d.api_, mt);
+    MediaCodecTextureInterop* interop    = new MediaCodecTextureInterop(d.api_, mt);
     frame.setMetaData(QStringLiteral("surface_interop"), QVariant::fromValue(VideoSurfaceInteropPtr((interop))));
 
 #   endif

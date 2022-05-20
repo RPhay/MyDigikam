@@ -93,7 +93,7 @@ public:
      * \param plane useless now
      * \return true if success
      */
-    virtual bool map(CVPixelBufferRef buf, GLuint *texInOut, int w, int h, int plane) = 0;
+    virtual bool map(CVPixelBufferRef buf, GLuint* texInOut, int w, int h, int plane) = 0;
 
     virtual bool unmap(CVPixelBufferRef buf, GLuint tex)
     {
@@ -103,7 +103,7 @@ public:
         return true;
     }
 
-    virtual GLuint createTexture(CVPixelBufferRef, const VideoFormat &fmt,
+    virtual GLuint createTexture(CVPixelBufferRef, const VideoFormat& fmt,
                                  int plane, int planeWidth, int planeHeight)
     {
         Q_UNUSED(fmt);
@@ -131,9 +131,9 @@ class SurfaceInteropCV final : public VideoSurfaceInterop
 public:
 
     explicit SurfaceInteropCV(const InteropResourcePtr& res)
-        : frame_width(0),
+        : frame_width (0),
           frame_height(0),
-          m_resource(res)
+          m_resource  (res)
     {
     }
 
@@ -145,12 +145,12 @@ public:
               void* handle, int plane)                              override;
     void unmap(void *handle)                                        override;
     virtual void* createHandle(void* handle, SurfaceType type,
-                               const VideoFormat &fmt, int plane,
+                               const VideoFormat& fmt, int plane,
                                int planeWidth, int planeHeight)     override;
 
 protected:
 
-    void* mapToHost(const VideoFormat &format, void *handle, int plane);
+    void* mapToHost(const VideoFormat& format, void* handle, int plane);
 
 private:
 

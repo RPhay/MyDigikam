@@ -50,7 +50,7 @@ protected Q_SLOTS:
 
 private:
 
-    AssignNameWidgetStates(QObject*);
+    explicit AssignNameWidgetStates(QObject*);
 };
 
 } // namespace Digikam

@@ -266,7 +266,7 @@ class Q_DECL_HIDDEN VideoDecoderVAAPIPrivate final : public VideoDecoderFFmpegHW
 
                                                    , protected VAAPI_GLX
 
-#endif //QT_NO_OPENGL
+#endif // QT_NO_OPENGL
 
 {
     DPTR_DECLARE_PUBLIC(VideoDecoderVAAPI)
@@ -291,7 +291,7 @@ public:
 
             copy_mode = VideoDecoderFFmpegHW::ZeroCopy; // TFP if va<0.38
 
-#endif //VA_X11_INTEROP
+#endif // VA_X11_INTEROP
 
         }
 
@@ -404,7 +404,7 @@ QString VideoDecoderVAAPI::description() const
     if (!d_func().description.isEmpty())
         return d_func().description;
 
-    return QStringLiteral("Video Acceleration API");
+    return QLatin1String("Video Acceleration API");
 }
 
 void VideoDecoderVAAPI::setDerive(bool y)
@@ -450,6 +450,7 @@ void VideoDecoderVAAPI::setDisplay(DisplayType disp)
 }
 
 extern ColorSpace colorSpaceFromFFmpeg(AVColorSpace cs);
+
 VideoFrame VideoDecoderVAAPI::frame()
 {
     DPTR_D(VideoDecoderVAAPI);
@@ -469,7 +470,7 @@ VideoFrame VideoDecoderVAAPI::frame()
 
         for ( ; (it != d.surfaces_used.end() && !p) ; ++it)
         {
-            if((*it)->get() == surface_id)
+            if ((*it)->get() == surface_id)
             {
                 p = *it;
 
@@ -506,7 +507,7 @@ VideoFrame VideoDecoderVAAPI::frame()
 
         // TODO: derive/get image only once and pass to interop object
 
-        const bool test_format = OpenGLHelper::isEGL() && vaapi::checkEGL_DMA() && va_0_38::isValid();
+        const bool test_format             = OpenGLHelper::isEGL() && vaapi::checkEGL_DMA() && va_0_38::isValid();
 
         if (test_format)
         {
@@ -568,6 +569,7 @@ VideoFrame VideoDecoderVAAPI::frame()
                 d.display, d.context_id, surface_id, status);
 
 #endif
+
         return VideoFrame();
     }
 
@@ -806,7 +808,7 @@ bool VideoDecoderVAAPIPrivate::open()
 
     VAConfigAttrib attrib;
     memset(&attrib, 0, sizeof(attrib));
-    attrib.type = VAConfigAttribRTFormat;
+    attrib.type     = VAConfigAttribRTFormat;
     VA_ENSURE_TRUE(vaGetConfigAttributes(display->get(), pe->va_profile, VAEntrypointVLD, &attrib, 1), false);
 
     /* Not sure what to do if not, I don't have a way to test */
@@ -895,14 +897,14 @@ bool VideoDecoderVAAPIPrivate::ensureSurfaces(int count, int w, int h, bool disc
 
 bool VideoDecoderVAAPIPrivate::prepareVAImage(int w, int h)
 {
-    image.image_id = VA_INVALID_ID;
+    image.image_id                  = VA_INVALID_ID;
     static const unsigned int fcc[] = { VA_FOURCC_NV12, VA_FOURCC_YV12, VA_FOURCC_IYUV, 0 };
     va_new_image(display->get(), fcc, &image, w, h, surfaces[0]);
 
     if (image.image_id == VA_INVALID_ID)
         return false;
 
-    image_fmt = pixelFormatFromVA(image.format.fourcc);
+    image_fmt                       = pixelFormatFromVA(image.format.fourcc);
     VAImage test_image;
 
     if (!disable_derive || (copy_mode == VideoDecoderVAAPI::ZeroCopy))
@@ -918,7 +920,9 @@ bool VideoDecoderVAAPIPrivate::prepareVAImage(int w, int h)
             if (image.format.fourcc == test_image.format.fourcc)
             {
                 qCDebug(DIGIKAM_QTAV_LOG).noquote() << QString::asprintf("vaDerive is ok");
-//                supports_derive = true;
+/*
+                supports_derive = true;
+*/
             }
 
             VAWARN(vaDestroyImage(display->get(), test_image.image_id));
@@ -938,7 +942,7 @@ void* VideoDecoderVAAPIPrivate::setup(AVCodecContext *avctx)
 {
     Q_UNUSED(avctx);
 
-    if (!display || config_id == VA_INVALID_ID)
+    if (!display || (config_id == VA_INVALID_ID))
     {
         qCWarning(DIGIKAM_QTAV_LOG_WARN).noquote()
             << QString::asprintf("va-api is not initialized. display: %p, config_id: %#x",
@@ -947,7 +951,7 @@ void* VideoDecoderVAAPIPrivate::setup(AVCodecContext *avctx)
         return nullptr;
     }
 
-    int surface_count =  nb_surfaces;
+    int surface_count = nb_surfaces;
 
     if (surface_count <= 0)
     {
@@ -969,6 +973,7 @@ void* VideoDecoderVAAPIPrivate::setup(AVCodecContext *avctx)
         if (codec_ctx->active_thread_type & FF_THREAD_FRAME)
             surface_count += codec_ctx->thread_count;
     }
+
     releaseUSWC();
 
     if (image.image_id != VA_INVALID_ID)
@@ -988,7 +993,7 @@ void* VideoDecoderVAAPIPrivate::setup(AVCodecContext *avctx)
     if (!ensureSurfaces(surface_count, surface_width, surface_height, true))
         return nullptr;
 
-    if (copy_mode != VideoDecoderFFmpegHW::ZeroCopy || OpenGLHelper::isEGL())
+    if ((copy_mode != VideoDecoderFFmpegHW::ZeroCopy) || OpenGLHelper::isEGL())
     {
         // egl_dma && va_0_38
 
@@ -1083,13 +1088,18 @@ bool VideoDecoderVAAPIPrivate::getBuffer(void** opaque, uint8_t** data)
         if (it == surfaces_free.end())
         {
             if (!surfaces_free.empty())
-                qCWarning(DIGIKAM_QTAV_LOG_WARN).noquote() << QString::asprintf("VAAPI - renderer still using all freed up surfaces by decoder. unable to find free surface, trying to allocate a new one");
+            {
+                qCWarning(DIGIKAM_QTAV_LOG_WARN).noquote()
+                    << QString::asprintf("VAAPI - renderer still using all freed up surfaces by decoder. unable to find free surface, trying to allocate a new one");
+            }
 
             const int kMaxSurfaces = 32;
 
             if (surfaces.size() + 1 > kMaxSurfaces)
             {
-                qCWarning(DIGIKAM_QTAV_LOG_WARN).noquote() << QString::asprintf("VAAPI- Too many surfaces. requested: %d, maximun: %d", surfaces.size() + 1, kMaxSurfaces);
+                qCWarning(DIGIKAM_QTAV_LOG_WARN).noquote()
+                    << QString::asprintf("VAAPI- Too many surfaces. requested: %d, maximun: %d",
+                        surfaces.size() + 1, kMaxSurfaces);
             }
 
             // Set itarator position to the newly allocated surface (end-1)
@@ -1119,8 +1129,8 @@ bool VideoDecoderVAAPIPrivate::getBuffer(void** opaque, uint8_t** data)
     // TODO: why QList may erase an invalid iterator(first iterator)at the same position?
 
     surfaces_free.erase(it); // ref not increased, but can not be used.
-    *data   = (uint8_t*)(quintptr)id;
-    *opaque = s;
+    *data              = (uint8_t*)(quintptr)id;
+    *opaque            = s;
 
     return true;
 }

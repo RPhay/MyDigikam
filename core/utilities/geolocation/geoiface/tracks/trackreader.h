@@ -74,7 +74,7 @@ public:
 private:
 
     void parseTrack(QXmlStreamReader& xml);
-    TrackReader(QObject*);
+    explicit TrackReader(QObject*);
 
 private:
 

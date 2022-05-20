@@ -42,10 +42,10 @@ namespace cuda
 InteropResource::InteropResource()
     : cuda_api(),
       share_ctx(false),
-      dev(0),
-      ctx(nullptr),
-      dec(nullptr),
-      lock(nullptr)
+      dev      (0),
+      ctx      (nullptr),
+      dec      (nullptr),
+      lock     (nullptr)
 {
     memset(res, 0, sizeof(res));
 }
@@ -72,7 +72,7 @@ InteropResource::~InteropResource()
         CUDA_ENSURE(cuCtxDestroy(ctx));
 }
 
-void* InteropResource::mapToHost(const VideoFormat& format, void *handle, int picIndex,
+void* InteropResource::mapToHost(const VideoFormat& format, void* handle, int picIndex,
                                  const CUVIDPROCPARAMS& param, int width, int height, int coded_height)
 {
     AutoCtxLock locker(reinterpret_cast<cuda_api*>(this), lock);
@@ -223,7 +223,10 @@ bool HostInteropResource::ensureResource(int pitch, int height)
         host_mem.data = nullptr;
     }
 
-    qCDebug(DIGIKAM_QTAV_LOG).noquote() << QString::asprintf("allocate cuda host mem. %dx%d=>%dx%d", host_mem.pitch, host_mem.height, pitch, height);
+    qCDebug(DIGIKAM_QTAV_LOG).noquote()
+        << QString::asprintf("allocate cuda host mem. %dx%d=>%dx%d",
+            host_mem.pitch, host_mem.height, pitch, height);
+
     host_mem.pitch  = pitch;
     host_mem.height = height;
 
@@ -360,15 +363,15 @@ public:
 
 EGLInteropResource::EGLInteropResource()
     : InteropResource(),
-      egl(new EGL()),
-      dll9(nullptr),
-      d3d9(nullptr),
-      device9(nullptr),
-      texture9(nullptr),
-      surface9(nullptr),
-      texture9_nv12(nullptr),
-      surface9_nv12(nullptr),
-      query9(nullptr)
+      egl           (new EGL()),
+      dll9          (nullptr),
+      d3d9          (nullptr),
+      device9       (nullptr),
+      texture9      (nullptr),
+      surface9      (nullptr),
+      texture9_nv12 (nullptr),
+      surface9_nv12 (nullptr),
+      query9        (nullptr)
 {
     ctx       = nullptr; // need a context created with d3d (TODO: check it?)
     share_ctx = false;
@@ -566,7 +569,10 @@ bool EGLInteropResource::ensureD3D9EGL(int w, int h)
     releaseEGL();
 
     egl->dpy = eglGetCurrentDisplay();
-    qCDebug(DIGIKAM_QTAV_LOG).noquote() << QString::asprintf("EGL version: %s, client api: %s", eglQueryString(egl->dpy, EGL_VERSION), eglQueryString(egl->dpy, EGL_CLIENT_APIS));
+
+    qCDebug(DIGIKAM_QTAV_LOG).noquote()
+        << QString::asprintf("EGL version: %s, client api: %s",
+            eglQueryString(egl->dpy, EGL_VERSION), eglQueryString(egl->dpy, EGL_CLIENT_APIS));
 
     EGLint cfg_attribs[] =
     {
@@ -600,14 +606,18 @@ bool EGLInteropResource::ensureD3D9EGL(int w, int h)
 
     if (!kEGL_ANGLE_d3d_share_handle_client_buffer && !kEGL_ANGLE_query_surface_pointer)
     {
-        qCWarning(DIGIKAM_QTAV_LOG_WARN).noquote() << QString::asprintf("EGL extension 'kEGL_ANGLE_query_surface_pointer' or 'ANGLE_d3d_share_handle_client_buffer' is required!");
+        qCWarning(DIGIKAM_QTAV_LOG_WARN).noquote()
+            << QString::asprintf("EGL extension 'kEGL_ANGLE_query_surface_pointer' or 'ANGLE_d3d_share_handle_client_buffer' is required!");
 
         return false;
     }
 
     GLint has_alpha = 1; // QOpenGLContext::currentContext()->format().hasAlpha()
     eglGetConfigAttrib(egl->dpy, egl_cfg, EGL_BIND_TO_TEXTURE_RGBA, &has_alpha); // EGL_ALPHA_SIZE
-    qCDebug(DIGIKAM_QTAV_LOG).noquote() << QString::asprintf("choose egl display:%p config: %p/%d, has alpha: %d", egl->dpy, egl_cfg, nb_cfgs, has_alpha);
+
+    qCDebug(DIGIKAM_QTAV_LOG).noquote()
+        << QString::asprintf("choose egl display:%p config: %p/%d, has alpha: %d",
+            egl->dpy, egl_cfg, nb_cfgs, has_alpha);
 
     EGLint attribs[] =
     {
@@ -656,7 +666,7 @@ bool EGLInteropResource::ensureD3D9EGL(int w, int h)
                                      has_alpha ? D3DFMT_A8R8G8B8 : D3DFMT_X8R8G8B8,
                                      D3DPOOL_DEFAULT,
                                      &texture9,
-                                     &share_handle) , false);
+                                     &share_handle), false);
 
     DX_ENSURE(texture9->GetSurfaceLevel(0, &surface9), false);
 
@@ -716,7 +726,7 @@ bool EGLInteropResource::map(int picIndex, const CUVIDPROCPARAMS &param, GLuint 
     // the whole size or copy size?
 
     cu2d.WidthInBytes  = res[plane].W; // the same value as texture9_nv12
-    cu2d.Height        = H*3 / 2;
+    cu2d.Height        = H * 3 / 2;
 
     if (res[plane].stream)
         CUDA_ENSURE(cuMemcpy2DAsync(&cu2d, res[plane].stream), false);
@@ -832,7 +842,7 @@ namespace cuda
 
 // TODO: cuGLMapBufferObject: get cudeviceptr from pbo, then memcpy2d
 
-bool GLInteropResource::map(int picIndex, const CUVIDPROCPARAMS &param, GLuint tex, int w, int h, int H, int plane)
+bool GLInteropResource::map(int picIndex, const CUVIDPROCPARAMS& param, GLuint tex, int w, int h, int H, int plane)
 {
     AutoCtxLock locker(reinterpret_cast<cuda_api*>(this), lock);
     Q_UNUSED(locker);

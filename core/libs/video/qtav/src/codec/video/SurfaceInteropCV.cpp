@@ -44,20 +44,14 @@ typedef struct
  */
 static const cv_format cv_formats[] =
 {
-    { 'y420', VideoFormat::Format_YUV420P }, // kCVPixelFormatType_420YpCbCr8Planar
-    { '2vuy', VideoFormat::Format_UYVY },    // kCVPixelFormatType_422YpCbCr8
-
-//#ifdef OSX_TARGET_MIN_LION
-
-    { '420f' , VideoFormat::Format_NV12 }, // kCVPixelFormatType_420YpCbCr8BiPlanarFullRange
-    { '420v', VideoFormat::Format_NV12 },  // kCVPixelFormatType_420YpCbCr8BiPlanarVideoRange
-    { 'yuvs', VideoFormat::Format_YUYV },  // kCVPixelFormatType_422YpCbCr8_yuvs
-
-//#endif
-
-    { 'BGRA', VideoFormat::Format_BGRA32 },
-    { kCVPixelFormatType_24RGB, VideoFormat::Format_RGB24 },
-    { 0, VideoFormat::Format_Invalid }
+    { 'y420', VideoFormat::Format_YUV420P                   }, ///< kCVPixelFormatType_420YpCbCr8Planar
+    { '2vuy', VideoFormat::Format_UYVY                      }, ///< kCVPixelFormatType_422YpCbCr8
+    { '420f' , VideoFormat::Format_NV12                     }, ///< kCVPixelFormatType_420YpCbCr8BiPlanarFullRange
+    { '420v', VideoFormat::Format_NV12                      }, ///< kCVPixelFormatType_420YpCbCr8BiPlanarVideoRange
+    { 'yuvs', VideoFormat::Format_YUYV                      }, ///< kCVPixelFormatType_422YpCbCr8_yuvs
+    { 'BGRA', VideoFormat::Format_BGRA32                    },
+    { kCVPixelFormatType_24RGB, VideoFormat::Format_RGB24   },
+    { 0, VideoFormat::Format_Invalid                        }
 };
 
 namespace cv
@@ -129,7 +123,7 @@ InteropResource::InteropResource()
     memset(m_dtype,   0, sizeof(m_dtype));
 }
 
-bool InteropResource::stridesForWidth(int cvfmt, int width, int *strides, VideoFormat::PixelFormat *outFmt)
+bool InteropResource::stridesForWidth(int cvfmt, int width, int *strides, VideoFormat::PixelFormat* outFmt)
 {
     *outFmt = format_from_cv(cvfmt);
 
@@ -162,7 +156,9 @@ bool InteropResource::stridesForWidth(int cvfmt, int width, int *strides, VideoF
         }
 
         default:
+        {
             return false;
+        }
     }
 
     if (strides[0] <= 0)
@@ -171,7 +167,7 @@ bool InteropResource::stridesForWidth(int cvfmt, int width, int *strides, VideoF
     return true;
 }
 
-void InteropResource::getParametersGL(OSType cvpixfmt, GLint *internalFormat, GLenum *format, GLenum *dataType, int plane)
+void InteropResource::getParametersGL(OSType cvpixfmt, GLint* internalFormat, GLenum* format, GLenum* dataType, int plane)
 {
     if (cvpixfmt != m_cvfmt)
     {
@@ -218,8 +214,8 @@ void* SurfaceInteropCV::map(SurfaceType type, const VideoFormat &fmt, void *hand
     }
     else if (type == SourceSurface)
     {
-        CVPixelBufferRef *b = reinterpret_cast<CVPixelBufferRef*>(handle);
-        *b = m_surface;
+        CVPixelBufferRef* b = reinterpret_cast<CVPixelBufferRef*>(handle);
+        *b                  = m_surface;
 
         return handle;
     }
@@ -227,19 +223,19 @@ void* SurfaceInteropCV::map(SurfaceType type, const VideoFormat &fmt, void *hand
     return nullptr;
 }
 
-void SurfaceInteropCV::unmap(void *handle)
+void SurfaceInteropCV::unmap(void* handle)
 {
     // TODO: surface type
 
     m_resource->unmap(m_surface, *((GLuint*)handle));
 }
 
-void* SurfaceInteropCV::createHandle(void *handle, SurfaceType type, const VideoFormat &fmt, int plane, int planeWidth, int planeHeight)
+void* SurfaceInteropCV::createHandle(void* handle, SurfaceType type, const VideoFormat& fmt, int plane, int planeWidth, int planeHeight)
 {
     if (type != GLTextureSurface)
         return nullptr;
 
-    GLuint tex = m_resource->createTexture(m_surface, fmt, plane, planeWidth, planeHeight);
+    GLuint tex         = m_resource->createTexture(m_surface, fmt, plane, planeWidth, planeHeight);
 
     if (tex == 0)
         return nullptr;
@@ -263,10 +259,10 @@ void* SurfaceInteropCV::mapToHost(const VideoFormat &format, void *handle, int p
         return nullptr;
     }
 
-    const int w = CVPixelBufferGetWidth(m_surface);
-    const int h = CVPixelBufferGetHeight(m_surface);
-    uint8_t *src[3];
-    int pitch[3];
+    const int w     = CVPixelBufferGetWidth(m_surface);
+    const int h     = CVPixelBufferGetHeight(m_surface);
+    uint8_t* src[3] = { nullptr };
+    int pitch[3]    = { 0 };
 
     for (int i = 0 ; i < fmt.planeCount() ; ++i)
     {
@@ -285,10 +281,10 @@ void* SurfaceInteropCV::mapToHost(const VideoFormat &format, void *handle, int p
     if (fmt != format)
         frame = frame.to(format);
 
-    VideoFrame *f = reinterpret_cast<VideoFrame*>(handle);
+    VideoFrame* f = reinterpret_cast<VideoFrame*>(handle);
     frame.setTimestamp(f->timestamp());
     frame.setDisplayAspectRatio(f->displayAspectRatio());
-    *f = frame;
+    *f            = frame;
 
     return f;
 }
@@ -301,7 +297,7 @@ class Q_DECL_HIDDEN InteropResourceCVPixelBuffer final : public InteropResource
 {
 public:
 
-    bool map(CVPixelBufferRef buf, GLuint *tex, int w, int h, int plane) override;
+    bool map(CVPixelBufferRef buf, GLuint* tex, int w, int h, int plane) override;
 };
 
 InteropResource* CreateInteropCVPixelbuffer()
@@ -309,7 +305,7 @@ InteropResource* CreateInteropCVPixelbuffer()
     return new InteropResourceCVPixelBuffer();
 }
 
-bool InteropResourceCVPixelBuffer::map(CVPixelBufferRef buf, GLuint *tex, int w, int h, int plane)
+bool InteropResourceCVPixelBuffer::map(CVPixelBufferRef buf, GLuint* tex, int w, int h, int plane)
 {
     Q_UNUSED(h);
     Q_UNUSED(w);
@@ -325,12 +321,12 @@ bool InteropResourceCVPixelBuffer::map(CVPixelBufferRef buf, GLuint *tex, int w,
     // get address results in internal copy
 
     DYGL(glBindTexture(GL_TEXTURE_2D, *tex));
-    DYGL(glTexSubImage2D(GL_TEXTURE_2D, 0, 0, 0
-                         , texture_w
-                         , CVPixelBufferGetHeightOfPlane(buf, plane)
-                         , format
-                         , dtype
-                         , (uint8_t*)CVPixelBufferGetBaseAddressOfPlane(buf, plane)));
+    DYGL(glTexSubImage2D(GL_TEXTURE_2D, 0, 0, 0,
+                         texture_w,
+                         CVPixelBufferGetHeightOfPlane(buf, plane),
+                         format,
+                         dtype,
+                         (uint8_t*)CVPixelBufferGetBaseAddressOfPlane(buf, plane)));
     CVPixelBufferUnlockBaseAddress(buf, kCVPixelBufferLock_ReadOnly);
 
     return true;

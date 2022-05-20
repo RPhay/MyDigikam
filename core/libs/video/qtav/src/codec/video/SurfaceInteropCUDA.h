@@ -141,11 +141,11 @@ class SurfaceInteropCUDA final : public VideoSurfaceInterop
 public:
 
     explicit SurfaceInteropCUDA(const QWeakPointer<InteropResource>& res) // cppcheck-suppress uninitMemberVar
-        : m_index(-1),
+        : m_index   (-1),
           m_resource(res),
-          w(0),
-          h(0),
-          H(0)
+          w         (0),
+          h         (0),
+          H         (0)
     {
     }
 
@@ -235,7 +235,7 @@ public:
 
 private:
 
-    bool map(IDirect3DSurface9 *surface, GLuint tex, int w, int h, int H);
+    bool map(IDirect3DSurface9* surface, GLuint tex, int w, int h, int H);
     bool ensureD3DDevice();
     void releaseEGL();
     bool ensureResource(int w, int h, int W, int H, GLuint tex);
@@ -254,8 +254,8 @@ private:
 
     // If size is coded size, crop when StretchRect. If frame size, crop in cuMemcpy2D for each plane
 
-    IDirect3DSurface9 *surface9_nv12;
-    IDirect3DQuery9 *query9;
+    IDirect3DSurface9*  surface9_nv12;
+    IDirect3DQuery9*    query9;
 };
 
 #endif // QTAV_HAVE(CUDA_EGL)
