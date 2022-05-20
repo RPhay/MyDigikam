@@ -192,7 +192,7 @@ void GLSLFilter::process(Statistics* statistics, VideoFrame* frame)
     };
 
     GLTextureInterop* const interop = new GLTextureInterop(d.fbo->texture());
-    f.setMetaData(QStringLiteral("surface_interop"), QVariant::fromValue(VideoSurfaceInteropPtr((interop))));
+    f.setMetaData(QLatin1String("surface_interop"), QVariant::fromValue(VideoSurfaceInteropPtr((interop))));
     *frame                          = f;
 }
 

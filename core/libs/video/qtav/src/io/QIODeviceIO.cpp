@@ -163,17 +163,17 @@ QString QFileIO::name() const
 
 const QStringList& QFileIO::protocols() const
 {
-    static QStringList p = QStringList() << QLatin1String("") << QStringLiteral("qrc") << QStringLiteral("qfile")
+    static QStringList p = QStringList() << QLatin1String("") << QLatin1String("qrc") << QLatin1String("qfile")
 
 #ifdef Q_OS_ANDROID
 
-                                         << QStringLiteral("assets")
+                                         << QLatin1String("assets")
 
 #endif
 
 #ifdef Q_OS_IOS
 
-                                         << QStringLiteral("assets-library")
+                                         << QLatin1String("assets-library")
 
 #endif
                                                 ;

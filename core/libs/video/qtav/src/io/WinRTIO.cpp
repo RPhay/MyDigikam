@@ -246,14 +246,14 @@ void WinRTIO::onUrlChanged()
     // winrt:@ptr_address:path
     // winrt:path
 
-    if      (url().startsWith(name().append(QStringLiteral(":@")), Qt::CaseInsensitive))
+    if      (url().startsWith(name().append(QLatin1String(":@")), Qt::CaseInsensitive))
     {
         const int addr_begin = name().size() + 2;
         const int addr_end   = url().indexOf(QLatin1Char(':'), addr_begin);
         QString addr(url().mid(addr_begin, addr_end - addr_begin));
         openFromStorage((IStorageItem*)(qptrdiff)addr.toULongLong());
     }
-    else if (url().startsWith(name().append(QStringLiteral(":")), Qt::CaseInsensitive))
+    else if (url().startsWith(name().append(QLatin1String(":")), Qt::CaseInsensitive))
     {
         openFromPath(url().mid(name().size() + 1));
     }

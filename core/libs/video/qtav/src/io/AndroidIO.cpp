@@ -65,8 +65,8 @@ public:
 
     const QStringList& protocols()                      const override
     {
-        static QStringList p = QStringList() << QStringLiteral("content")
-                                             << QStringLiteral("android.resource");
+        static QStringList p = QStringList() << QLatin1String("content")
+                                             << QLatin1String("android.resource");
 
         // "file:" is supported too but we use QFile
 

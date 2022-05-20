@@ -104,14 +104,14 @@ public:
 
         loaded = false;
         memset(&api, 0, sizeof(api));
-        cuda_dll.setFileName(QStringLiteral("cuda"));
+        cuda_dll.setFileName(QLatin1String("cuda"));
 
         if (!cuda_dll.isLoaded())
             cuda_dll.load();
 
         if (!cuda_dll.isLoaded())
         {
-            cuda_dll.setFileName(QStringLiteral("nvcuda"));
+            cuda_dll.setFileName(QLatin1String("nvcuda"));
             cuda_dll.load();
         }
 
@@ -122,7 +122,7 @@ public:
             return;
         }
 
-        cuvid_dll.setFileName(QStringLiteral("nvcuvid"));
+        cuvid_dll.setFileName(QLatin1String("nvcuvid"));
         cuvid_dll.load();
 
         if (!cuvid_dll.isLoaded())
