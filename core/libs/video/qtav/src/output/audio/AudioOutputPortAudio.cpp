@@ -105,7 +105,7 @@ AudioOutputPortAudio::AudioOutputPortAudio(QObject* parent)
         if (deviceInfo)
         {
             const PaHostApiInfo* hostApiInfo = Pa_GetHostApiInfo(deviceInfo->hostApi);
-            QString pname                    = QString::fromUtf8(hostApiInfo->name) + QStringLiteral(": ") + QString::fromLocal8Bit(deviceInfo->name);
+            QString pname                    = QString::fromUtf8(hostApiInfo->name) + QLatin1String(": ") + QString::fromLocal8Bit(deviceInfo->name);
 
             qCDebug(DIGIKAM_QTAV_LOG).noquote()
                 << QString::asprintf("audio device %d: %s", i, pname.toUtf8().constData());

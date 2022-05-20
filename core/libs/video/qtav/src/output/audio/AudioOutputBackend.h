@@ -56,25 +56,35 @@ public:
      * \brief AudioOutputBackend
      * Specify supported features by the backend. Use this for new backends.
      */
-    AudioOutputBackend(AudioOutput::DeviceFeatures f, QObject *parent);
+    AudioOutputBackend(AudioOutput::DeviceFeatures f, QObject* const parent);
 
     virtual ~AudioOutputBackend() {}
-    virtual QString name() const = 0;
-    virtual bool open() = 0;
-    virtual bool close() = 0;
-    virtual bool write(const QByteArray& data) = 0; // MUST
-    virtual bool play() = 0;                        // MUST
+    virtual QString name() const                = 0;
+    virtual bool open()                         = 0;
+    virtual bool close()                        = 0;
+    virtual bool write(const QByteArray& data)  = 0; // MUST
+    virtual bool play()                         = 0; // MUST
     virtual bool flush() { return false;}
     virtual bool clear() { return false;}
-    virtual bool isSupported(const AudioFormat& format) const { return isSupported(format.sampleFormat()) && isSupported(format.channelLayout());}
+
+    virtual bool isSupported(const AudioFormat& format) const
+    {
+        return (isSupported(format.sampleFormat()) && isSupported(format.channelLayout()));
+    }
 
     // FIXME: workaround. planar convertion crash now!
 
-    virtual bool isSupported(AudioFormat::SampleFormat f) const { return !IsPlanar(f);}
+    virtual bool isSupported(AudioFormat::SampleFormat f) const
+    {
+        return !IsPlanar(f);
+    }
 
     // 5, 6, 7 channels may not play
 
-    virtual bool isSupported(AudioFormat::ChannelLayout cl) const { return int(cl) < int(AudioFormat::ChannelLayout_Unsupported);}
+    virtual bool isSupported(AudioFormat::ChannelLayout cl) const
+    {
+        return (int(cl) < int(AudioFormat::ChannelLayout_Unsupported));
+    }
 
     /*!
      * \brief The BufferControl enum
@@ -102,20 +112,24 @@ public:
 
     // default return -1. means not the control
 
-    virtual int getPlayedCount() {return -1;} //PlayedCount
+    virtual int getPlayedCount()   { return -1; }    // PlayedCount
 
     /*!
      * \brief getPlayedBytes
      * reimplement this if bufferControl() is PlayedBytes.
      * \return the bytes played since last dequeue the buffer queue
      */
-    virtual int getPlayedBytes() {return -1;}       // PlayedBytes
-    virtual int getOffset() {return -1;}            // OffsetIndex
-    virtual int getOffsetByBytes()  {return -1;}    // OffsetBytes
-    virtual int getWritableBytes() {return -1;}     // WritableBytes
+    virtual int getPlayedBytes()   { return -1; }    // PlayedBytes
+    virtual int getOffset()        { return -1; }    // OffsetIndex
+    virtual int getOffsetByBytes() { return -1; }    // OffsetBytes
+    virtual int getWritableBytes() { return -1; }    // WritableBytes
 
     // not virtual. called in ctor
-    AudioOutput::DeviceFeatures supportedFeatures() { return m_features;}
+
+    AudioOutput::DeviceFeatures supportedFeatures()
+    {
+        return m_features;
+    }
 
     /*!
      * \brief setVolume
@@ -123,10 +137,29 @@ public:
      * \param value >=0
      * \return true if success
      */
-    virtual bool setVolume(qreal value) { Q_UNUSED(value); return false;}
-    virtual qreal getVolume() const { return 1.0;}
-    virtual bool setMute(bool value = true) { Q_UNUSED(value); return false;}
-    virtual bool getMute() const { return false;}
+    virtual bool setVolume(qreal value)
+    {
+        Q_UNUSED(value);
+
+        return false;
+    }
+
+    virtual qreal getVolume() const
+    {
+        return 1.0;
+    }
+
+    virtual bool setMute(bool value = true)
+    {
+        Q_UNUSED(value);
+
+        return false;
+    }
+
+    virtual bool getMute() const
+    {
+        return false;
+    }
 
 Q_SIGNALS:
 
@@ -142,7 +175,11 @@ Q_SIGNALS:
 
 public:
 
-    template<class C> static bool Register(AudioOutputBackendId id, const char* name) { return Register(id, create<C>, name);}
+    template<class C> static bool Register(AudioOutputBackendId id, const char* name)
+    {
+        return Register(id, create<C>, name);
+    }
+
     static AudioOutputBackend* create(AudioOutputBackendId id);
     static AudioOutputBackend* create(const char* name);
 
@@ -157,9 +194,14 @@ public:
 
 private:
 
-    template<class C> static AudioOutputBackend* create() { return new C();}
+    template<class C> static AudioOutputBackend* create()
+    {
+        return new C();
+    }
+
     typedef AudioOutputBackend* (*AudioOutputBackendCreator)();
-    static bool Register(AudioOutputBackendId id, AudioOutputBackendCreator, const char *name);
+
+    static bool Register(AudioOutputBackendId id, AudioOutputBackendCreator, const char* name);
 
 private:
 

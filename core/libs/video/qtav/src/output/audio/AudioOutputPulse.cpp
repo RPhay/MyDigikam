@@ -82,16 +82,16 @@ protected:
 private:
 
     bool init(const AudioFormat& format);
-    static void contextStateCallback(pa_context *c, void *userdata);
-    static void contextSubscribeCallback(pa_context *c, pa_subscription_event_type_t t, uint32_t idx, void *userdata);
-    static void stateCallback(pa_stream *s, void *userdata);
-    static void latencyUpdateCallback(pa_stream *s, void *userdata);
-    static void underflowCallback(pa_stream *s, void *userdata);
-    static void writeCallback(pa_stream *s, size_t length, void *userdata);
-    static void  successCallback(pa_stream*s, int success, void *userdata);
-    static void sinkInfoCallback(struct pa_context *c, const struct pa_sink_input_info *i, int is_last, void *userdata);
+    static void contextStateCallback(pa_context* c, void* userdata);
+    static void contextSubscribeCallback(pa_context* c, pa_subscription_event_type_t t, uint32_t idx, void* userdata);
+    static void stateCallback(pa_stream* s, void* userdata);
+    static void latencyUpdateCallback(pa_stream* s, void* userdata);
+    static void underflowCallback(pa_stream* s, void* userdata);
+    static void writeCallback(pa_stream* s, size_t length, void* userdata);
+    static void  successCallback(pa_stream* s, int success, void* userdata);
+    static void sinkInfoCallback(struct pa_context* c, const struct pa_sink_input_info* i, int is_last, void* userdata);
 
-    bool waitPAOperation(pa_operation *op) const
+    bool waitPAOperation(pa_operation* op) const
     {
         if (!op)
         {
@@ -108,7 +108,7 @@ private:
 
         pa_operation_unref(op);
 
-        return state == PA_OPERATION_DONE;
+        return (state == PA_OPERATION_DONE);
     }
 
 private:
@@ -137,15 +137,15 @@ FACTORY_REGISTER(AudioOutputBackend, Pulse, kName)
 static const struct format_entry
 {
     AudioFormat::SampleFormat spformat;
-    pa_sample_format_t pa;
+    pa_sample_format_t        pa;
 }
 format_map[] =
 {
-    { AudioFormat::SampleFormat_Signed16, PA_SAMPLE_S16NE  },
-    { AudioFormat::SampleFormat_Signed32, PA_SAMPLE_S32NE  },
-    { AudioFormat::SampleFormat_Float, PA_SAMPLE_FLOAT32NE },
-    { AudioFormat::SampleFormat_Unsigned8, PA_SAMPLE_U8    },
-    { AudioFormat::SampleFormat_Unknown, PA_SAMPLE_INVALID }
+    { AudioFormat::SampleFormat_Signed16,  PA_SAMPLE_S16NE     },
+    { AudioFormat::SampleFormat_Signed32,  PA_SAMPLE_S32NE     },
+    { AudioFormat::SampleFormat_Float,     PA_SAMPLE_FLOAT32NE },
+    { AudioFormat::SampleFormat_Unsigned8, PA_SAMPLE_U8        },
+    { AudioFormat::SampleFormat_Unknown,   PA_SAMPLE_INVALID   }
 };
 
 AudioFormat::SampleFormat sampleFormatFromPulse(pa_sample_format pa)
@@ -172,7 +172,7 @@ static pa_sample_format sampleFormatToPulse(AudioFormat::SampleFormat format)
 
 class Q_DECL_HIDDEN ScopedPALocker
 {
-    pa_threaded_mainloop* ml;
+    pa_threaded_mainloop* ml = nullptr;
 
 public:
 
@@ -190,7 +190,7 @@ public:
 
 void AudioOutputPulse::contextStateCallback(pa_context* c, void* userdata)
 {
-    AudioOutputPulse* p = reinterpret_cast<AudioOutputPulse*>(userdata);
+    AudioOutputPulse* const p = reinterpret_cast<AudioOutputPulse*>(userdata);
 
     switch (pa_context_get_state(c))
     {
@@ -205,16 +205,16 @@ void AudioOutputPulse::contextStateCallback(pa_context* c, void* userdata)
     }
 }
 
-static void sink_input_info_cb(pa_context *c, const pa_sink_input_info *i, int eol, void *userdata)
+static void sink_input_info_cb(pa_context* c, const pa_sink_input_info* i, int eol, void* userdata)
 {
     Q_UNUSED(c);
 
     if (eol)
         return;
 
-    AudioOutputPulse *ao = reinterpret_cast<AudioOutputPulse*>(userdata);
-    QMetaObject::invokeMethod(ao,  "volumeReported", Q_ARG(qreal, (qreal)pa_cvolume_avg(&i->volume)/qreal(PA_VOLUME_NORM)));
-    QMetaObject::invokeMethod(ao, "muteReported", Q_ARG(bool, i->mute));
+    AudioOutputPulse* const ao = reinterpret_cast<AudioOutputPulse*>(userdata);
+    QMetaObject::invokeMethod(ao, "volumeReported", Q_ARG(qreal, (qreal)pa_cvolume_avg(&i->volume) / qreal(PA_VOLUME_NORM)));
+    QMetaObject::invokeMethod(ao, "muteReported",   Q_ARG(bool, i->mute));
 }
 
 static void sink_input_event(pa_context* c, pa_subscription_event_type_t t, uint32_t idx, AudioOutputPulse* ao)
@@ -226,7 +226,7 @@ static void sink_input_event(pa_context* c, pa_subscription_event_type_t t, uint
             break;
 
         default:
-            pa_operation* op = pa_context_get_sink_input_info(c, idx, sink_input_info_cb, ao);
+            pa_operation* const op = pa_context_get_sink_input_info(c, idx, sink_input_info_cb, ao);
 
             if (Q_LIKELY(!!op))
                 pa_operation_unref(op);
@@ -235,9 +235,12 @@ static void sink_input_event(pa_context* c, pa_subscription_event_type_t t, uint
     }
 }
 
-void AudioOutputPulse::contextSubscribeCallback(pa_context *c, pa_subscription_event_type_t type, uint32_t idx, void *userdata)
+void AudioOutputPulse::contextSubscribeCallback(pa_context* c,
+                                                pa_subscription_event_type_t type,
+                                                uint32_t idx,
+                                                void* userdata)
 {
-    AudioOutputPulse* p            = reinterpret_cast<AudioOutputPulse*>(userdata);
+    AudioOutputPulse* const p      = reinterpret_cast<AudioOutputPulse*>(userdata);
     unsigned facility              = type & PA_SUBSCRIPTION_EVENT_FACILITY_MASK;
     pa_subscription_event_type_t t = pa_subscription_event_type_t(type & PA_SUBSCRIPTION_EVENT_TYPE_MASK);
 
@@ -264,7 +267,7 @@ void AudioOutputPulse::contextSubscribeCallback(pa_context *c, pa_subscription_e
 
 void AudioOutputPulse::stateCallback(pa_stream* s, void* userdata)
 {
-    AudioOutputPulse* p = reinterpret_cast<AudioOutputPulse*>(userdata);
+    AudioOutputPulse* const p = reinterpret_cast<AudioOutputPulse*>(userdata);
 
     switch (pa_stream_get_state(s))
     {
@@ -283,44 +286,48 @@ void AudioOutputPulse::stateCallback(pa_stream* s, void* userdata)
     }
 }
 
-void AudioOutputPulse::latencyUpdateCallback(pa_stream *s, void *userdata)
+void AudioOutputPulse::latencyUpdateCallback(pa_stream* s, void* userdata)
 {
     Q_UNUSED(s);
-    AudioOutputPulse* p = reinterpret_cast<AudioOutputPulse*>(userdata);
+    AudioOutputPulse* const p = reinterpret_cast<AudioOutputPulse*>(userdata);
     pa_threaded_mainloop_signal(p->loop, 0);
 }
 
-void AudioOutputPulse::writeCallback(pa_stream *s, size_t length, void *userdata)
+void AudioOutputPulse::writeCallback(pa_stream* s, size_t length, void* userdata)
 {
     Q_UNUSED(s);
 
     // length: writable bytes. callback is called pirioddically
 
-    AudioOutputPulse* p = reinterpret_cast<AudioOutputPulse*>(userdata);
+    AudioOutputPulse* const p = reinterpret_cast<AudioOutputPulse*>(userdata);
 
     //qCDebug(DIGIKAM_QTAV_LOG).noquote() << QString::asprintf("write callback: %d + %d", p->writable_size, length);
 
-    p->writable_size = length;
+    p->writable_size          = length;
     p->onCallback();
 }
 
-void AudioOutputPulse::successCallback(pa_stream *s, int success, void *userdata)
+void AudioOutputPulse::successCallback(pa_stream* s, int success, void* userdata)
 {
     Q_UNUSED(s);
     Q_UNUSED(success); // ?
 
-    AudioOutputPulse* p = reinterpret_cast<AudioOutputPulse*>(userdata);
+    AudioOutputPulse* const p = reinterpret_cast<AudioOutputPulse*>(userdata);
     pa_threaded_mainloop_signal(p->loop, 0);
 }
 
-void AudioOutputPulse::sinkInfoCallback(pa_context *c, const pa_sink_input_info *i, int is_last, void *userdata)
+void AudioOutputPulse::sinkInfoCallback(pa_context* c,
+                                        const pa_sink_input_info* i,
+                                        int is_last,
+                                        void* userdata)
 {
     Q_UNUSED(c);
-    AudioOutputPulse* p = reinterpret_cast<AudioOutputPulse*>(userdata);
+    AudioOutputPulse* const  p = reinterpret_cast<AudioOutputPulse*>(userdata);
 
     if (is_last < 0)
     {
-        qCWarning(DIGIKAM_QTAV_LOG_WARN).noquote() << QString::asprintf("Failed to get sink input info");
+        qCWarning(DIGIKAM_QTAV_LOG_WARN).noquote()
+            << QString::asprintf("Failed to get sink input info");
 
         return;
     }
@@ -332,14 +339,15 @@ void AudioOutputPulse::sinkInfoCallback(pa_context *c, const pa_sink_input_info 
     pa_threaded_mainloop_signal(p->loop, 0);
 }
 
-bool AudioOutputPulse::init(const AudioFormat &format)
+bool AudioOutputPulse::init(const AudioFormat& format)
 {
     writable_size = 0;
     loop          = pa_threaded_mainloop_new();
 
     if (pa_threaded_mainloop_start(loop) < 0)
     {
-        qCWarning(DIGIKAM_QTAV_LOG_WARN).noquote() << QString::asprintf("PulseAudio failed to start mainloop");
+        qCWarning(DIGIKAM_QTAV_LOG_WARN).noquote()
+            << QString::asprintf("PulseAudio failed to start mainloop");
 
         return false;
     }
@@ -348,20 +356,24 @@ bool AudioOutputPulse::init(const AudioFormat &format)
 
     Q_UNUSED(lock);
 
-    pa_mainloop_api* api = pa_threaded_mainloop_get_api(loop);
-    ctx                  = pa_context_new(api, qApp->applicationName().append(QLatin1String(" @%1 (QtAV)")).arg((quintptr)this).toUtf8().constData());
+    pa_mainloop_api* const api = pa_threaded_mainloop_get_api(loop);
+    ctx                        = pa_context_new(api,
+                                                qApp->applicationName()
+                                                    .append(QLatin1String(" @%1 (QtAV)"))
+                                                    .arg((quintptr)this).toUtf8().constData());
 
     if (!ctx)
     {
-        qCWarning(DIGIKAM_QTAV_LOG_WARN).noquote() << QString::asprintf("PulseAudio failed to allocate a context");
+        qCWarning(DIGIKAM_QTAV_LOG_WARN).noquote()
+            << QString::asprintf("PulseAudio failed to allocate a context");
 
         return false;
     }
 
-    qCDebug(DIGIKAM_QTAV_LOG) << i18n("PulseAudio %1, protocol: %2, server protocol: %3",
-                                      QString::fromLatin1(pa_get_library_version()),
-                                      pa_context_get_protocol_version(ctx),
-                                      pa_context_get_server_protocol_version(ctx));
+    qCDebug(DIGIKAM_QTAV_LOG) << QString::fromUtf8("PulseAudio %1, protocol: %2, server protocol: %3")
+                                                   .arg(QString::fromLatin1(pa_get_library_version()))
+                                                   .arg(pa_context_get_protocol_version(ctx))
+                                                   .arg(pa_context_get_server_protocol_version(ctx));
 
     // TODO: host property
 
@@ -377,7 +389,8 @@ bool AudioOutputPulse::init(const AudioFormat &format)
 
         if (!PA_CONTEXT_IS_GOOD(st))
         {
-            qCWarning(DIGIKAM_QTAV_LOG_WARN).noquote() << QString::asprintf("PulseAudio context init failed");
+            qCWarning(DIGIKAM_QTAV_LOG_WARN).noquote()
+                << QString::asprintf("PulseAudio context init failed");
 
             return false;
         }
@@ -394,8 +407,8 @@ bool AudioOutputPulse::init(const AudioFormat &format)
     // pa_sample_spec
     // setup format
 
-    pa_format_info* fi = pa_format_info_new();
-    fi->encoding       = PA_ENCODING_PCM;
+    pa_format_info* const fi = pa_format_info_new();
+    fi->encoding             = PA_ENCODING_PCM;
     pa_format_info_set_sample_format(fi, sampleFormatToPulse(format.sampleFormat()));
     pa_format_info_set_channels(fi, format.channels());
     pa_format_info_set_rate(fi, format.sampleRate());
@@ -404,17 +417,20 @@ bool AudioOutputPulse::init(const AudioFormat &format)
 
     if (!pa_format_info_valid(fi))
     {
-        qCWarning(DIGIKAM_QTAV_LOG_WARN).noquote() << QString::asprintf("PulseAudio: invalid format");
+        qCWarning(DIGIKAM_QTAV_LOG_WARN).noquote()
+            << QString::asprintf("PulseAudio: invalid format");
 
         return false;
     }
 
-    pa_proplist* pl = pa_proplist_new();
+    pa_proplist* const pl = pa_proplist_new();
 
     if (pl)
     {
         pa_proplist_sets(pl, PA_PROP_MEDIA_ROLE, "video");
-        pa_proplist_sets(pl, PA_PROP_MEDIA_ICON_NAME, qApp->applicationName().append(QLatin1String(" (QtAV)")).toUtf8().constData());
+        pa_proplist_sets(pl, PA_PROP_MEDIA_ICON_NAME,
+                         qApp->applicationName()
+                            .append(QLatin1String(" (QtAV)")).toUtf8().constData());
     }
 
     stream = pa_stream_new_extended(ctx, "audio stream", &fi, 1, pl);
@@ -440,15 +456,18 @@ bool AudioOutputPulse::init(const AudioFormat &format)
     ba.prebuf    = 1;                        // (uint32_t)-1; // play as soon as possible
     ba.minreq    = (uint32_t)-1;
 
-    //ba.fragsize = (uint32_t)-1; //latency
+    //ba.fragsize = (uint32_t)-1; // latency
 
     // PA_STREAM_NOT_MONOTONIC?
 
-    pa_stream_flags_t flags = pa_stream_flags_t(PA_STREAM_NOT_MONOTONIC|PA_STREAM_INTERPOLATE_TIMING|PA_STREAM_AUTO_TIMING_UPDATE);
+    pa_stream_flags_t flags = pa_stream_flags_t(PA_STREAM_NOT_MONOTONIC      |
+                                                PA_STREAM_INTERPOLATE_TIMING |
+                                                PA_STREAM_AUTO_TIMING_UPDATE);
 
     if (pa_stream_connect_playback(stream, nullptr /*sink*/, &ba, flags, nullptr, nullptr) < 0)
     {
-        qCWarning(DIGIKAM_QTAV_LOG_WARN).noquote() << QString::asprintf("PulseAudio failed: pa_stream_connect_playback");
+        qCWarning(DIGIKAM_QTAV_LOG_WARN).noquote()
+            << QString::asprintf("PulseAudio failed: pa_stream_connect_playback");
 
         return false;
     }
@@ -462,7 +481,8 @@ bool AudioOutputPulse::init(const AudioFormat &format)
 
         if (!PA_STREAM_IS_GOOD(st))
         {
-            qCWarning(DIGIKAM_QTAV_LOG_WARN).noquote() << QString::asprintf("PulseAudio stream init failed");
+            qCWarning(DIGIKAM_QTAV_LOG_WARN).noquote()
+                << QString::asprintf("PulseAudio stream init failed");
 
             return false;
         }
@@ -472,7 +492,8 @@ bool AudioOutputPulse::init(const AudioFormat &format)
 
     if (pa_stream_is_suspended(stream))
     {
-        qCWarning(DIGIKAM_QTAV_LOG_WARN).noquote() << QString::asprintf("PulseAudio stream is suspende");
+        qCWarning(DIGIKAM_QTAV_LOG_WARN).noquote()
+            << QString::asprintf("PulseAudio stream is suspende");
 
         return false;
     }
@@ -480,15 +501,15 @@ bool AudioOutputPulse::init(const AudioFormat &format)
     return true;
 }
 
-AudioOutputPulse::AudioOutputPulse(QObject *parent)
-    : AudioOutputBackend(AudioOutput::DeviceFeatures()
-                         | AudioOutput::SetVolume
-                         | AudioOutput::SetMute
-                         | AudioOutput::SetSampleRate, parent)
-    , loop(nullptr)
-    , ctx(nullptr)
-    , stream(nullptr)
-    , writable_size(0)
+AudioOutputPulse::AudioOutputPulse(QObject* const parent)
+    : AudioOutputBackend(AudioOutput::DeviceFeatures() |
+                         AudioOutput::SetVolume        |
+                         AudioOutput::SetMute          |
+                         AudioOutput::SetSampleRate, parent),
+      loop(nullptr),
+      ctx(nullptr),
+      stream(nullptr),
+      writable_size(0)
 {
     //setDeviceFeatures(DeviceFeatures()|SetVolume|SetMute);
 }
@@ -509,7 +530,8 @@ bool AudioOutputPulse::open()
     if (!init(format))
     {
         if (ctx)
-            qCWarning(DIGIKAM_QTAV_LOG_WARN).noquote() << QString::asprintf("%s", pa_strerror(pa_context_errno(ctx)));
+            qCWarning(DIGIKAM_QTAV_LOG_WARN).noquote()
+                << QString::asprintf("%s", pa_strerror(pa_context_errno(ctx)));
 
         close();
 
@@ -527,7 +549,7 @@ bool AudioOutputPulse::close()
 
         Q_UNUSED(palock);
 
-        PA_ENSURE_TRUE(waitPAOperation(pa_stream_drain(stream,  AudioOutputPulse::successCallback, this)), false);
+        PA_ENSURE_TRUE(waitPAOperation(pa_stream_drain(stream, AudioOutputPulse::successCallback, this)), false);
     }
 
     if (loop)
@@ -581,7 +603,7 @@ int AudioOutputPulse::getWritableBytes()
     return pa_stream_writable_size(stream);
 }
 
-bool AudioOutputPulse::write(const QByteArray &data)
+bool AudioOutputPulse::write(const QByteArray& data)
 {
     ScopedPALocker palock(loop);
 
@@ -609,7 +631,7 @@ bool AudioOutputPulse::setVolume(qreal value)
     struct pa_cvolume vol; // TODO: per-channel volume
     pa_cvolume_reset(&vol, format.channels());
     pa_cvolume_set(&vol, format.channels(), pa_volume_t(value*qreal(PA_VOLUME_NORM)));
-    pa_operation *o     = nullptr;
+    pa_operation* o     = nullptr;
     PA_ENSURE_TRUE((o = pa_context_set_sink_input_volume(ctx, stream_idx, &vol, nullptr, nullptr)) != nullptr, false);
     pa_operation_unref(o);
 
@@ -623,7 +645,10 @@ qreal AudioOutputPulse::getVolume() const
     Q_UNUSED(palock);
 
     uint32_t stream_idx = pa_stream_get_index(stream);
-    PA_ENSURE_TRUE(waitPAOperation(pa_context_get_sink_input_info(ctx, stream_idx, AudioOutputPulse::sinkInfoCallback, (void*)this)), 0.0);
+    PA_ENSURE_TRUE(waitPAOperation(pa_context_get_sink_input_info(ctx,
+                                                                  stream_idx,
+                                                                  AudioOutputPulse::sinkInfoCallback,
+                                                                  (void*)this)), 0.0);
 
     return (qreal)pa_cvolume_avg(&info.volume) / qreal(PA_VOLUME_NORM);
 }

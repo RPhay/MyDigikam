@@ -71,69 +71,69 @@ class Q_DECL_HIDDEN AudioOutputOpenSL final : public AudioOutputBackend
 {
 public:
 
-    AudioOutputOpenSL(QObject *parent = 0);
+    AudioOutputOpenSL(QObject* const parent = nullptr);
     ~AudioOutputOpenSL();
 
-    int engineVersion() const     { return m_sl_major*100+m_sl_minor*10+m_sl_step; }
-    QString name() const override { return QLatin1String(kName);                   }
+    int engineVersion() const     { return m_sl_major * 100 + m_sl_minor * 10 + m_sl_step; }
+    QString name() const override { return QLatin1String(kName);                           }
 
-    bool isSupported(const AudioFormat& format) const override;
-    bool isSupported(AudioFormat::SampleFormat sampleFormat) const override;
-    bool isSupported(AudioFormat::ChannelLayout channelLayout) const override;
-    bool open() override;
-    bool close() override;
-    BufferControl bufferControl() const override;
-    void onCallback() override;
-    void acquireNextBuffer() override;
-    bool write(const QByteArray& data) override;
-    bool play() override;
+    bool isSupported(const AudioFormat& format)                 const override;
+    bool isSupported(AudioFormat::SampleFormat sampleFormat)    const override;
+    bool isSupported(AudioFormat::ChannelLayout channelLayout)  const override;
+    bool open()                                                       override;
+    bool close()                                                      override;
+    BufferControl bufferControl()                               const override;
+    void onCallback()                                                 override;
+    void acquireNextBuffer()                                          override;
+    bool write(const QByteArray& data)                                override;
+    bool play()                                                       override;
 
     // default return -1. means not the control
 
-    int getPlayedCount() override;
-    bool setVolume(qreal value) override;
-    qreal getVolume() const override;
-    bool setMute(bool value = true) override;
+    int getPlayedCount()                                              override;
+    bool setVolume(qreal value)                                       override;
+    qreal getVolume()                                           const override;
+    bool setMute(bool value = true)                                   override;
 
 #ifdef Q_OS_ANDROID
 
-    static void bufferQueueCallbackAndroid(SLAndroidSimpleBufferQueueItf bufferQueue, void *context);
+    static void bufferQueueCallbackAndroid(SLAndroidSimpleBufferQueueItf bufferQueue, void* context);
 
 #endif
 
-    static void bufferQueueCallback(SLBufferQueueItf bufferQueue, void *context);
-    static void playCallback(SLPlayItf player, void *ctx, SLuint32 event);
+    static void bufferQueueCallback(SLBufferQueueItf bufferQueue, void* context);
+    static void playCallback(SLPlayItf player, void* ctx, SLuint32 event);
 
 private:
 
-    SLDataFormat_PCM_EX audioFormatToSL(const AudioFormat &format);
+    SLDataFormat_PCM_EX audioFormatToSL(const AudioFormat& format);
 
-    SLObjectItf engineObject;
-    SLEngineItf engine;
-    SLEngineCapabilitiesItf m_cap;
-    SLObjectItf m_outputMixObject;
-    SLObjectItf m_playerObject;
-    SLPlayItf m_playItf;
-    SLVolumeItf m_volumeItf;
-    SLBufferQueueItf m_bufferQueueItf;
+    SLObjectItf                     engineObject;
+    SLEngineItf                     engine;
+    SLEngineCapabilitiesItf         m_cap;
+    SLObjectItf                     m_outputMixObject;
+    SLObjectItf                     m_playerObject;
+    SLPlayItf                       m_playItf;
+    SLVolumeItf                     m_volumeItf;
+    SLBufferQueueItf                m_bufferQueueItf;
 
 #ifdef Q_OS_ANDROID
 
-    SLAndroidSimpleBufferQueueItf m_bufferQueueItf_android; // supports decoding, recording
+    SLAndroidSimpleBufferQueueItf   m_bufferQueueItf_android; // supports decoding, recording
 
 #endif
 
-    bool m_android;
-    int m_android_api_level;
-    SLint16 m_sl_major, m_sl_minor, m_sl_step;
-    SLint32 m_streamType;
-    quint32 buffers_queued;
-    QSemaphore sem;
+    bool                            m_android;
+    int                             m_android_api_level;
+    SLint16                         m_sl_major, m_sl_minor, m_sl_step;
+    SLint32                         m_streamType;
+    quint32                         buffers_queued;
+    QSemaphore                      sem;
 
     // Enqueue does not copy data. We MUST keep the data until it is played out
 
-    int queue_data_write;
-    QByteArray queue_data;
+    int                             queue_data_write;
+    QByteArray                      queue_data;
 };
 
 typedef AudioOutputOpenSL AudioOutputBackendOpenSL;
@@ -169,15 +169,15 @@ SLDataFormat_PCM_EX AudioOutputOpenSL::audioFormatToSL(const AudioFormat &format
         format_pcm.representation = SL_PCM_REPRESENTATION_SIGNED_INT;
     }
 
-    format_pcm.formatType = m_android_api_level >= 21 || engineVersion() >= 110 ? SL_DATAFORMAT_PCM_EX : SL_DATAFORMAT_PCM;
-    format_pcm.numChannels = format.channels();
+    format_pcm.formatType    = (((m_android_api_level >= 21) || (engineVersion() >= 110)) ? SL_DATAFORMAT_PCM_EX : SL_DATAFORMAT_PCM);
+    format_pcm.numChannels   = format.channels();
     format_pcm.samplesPerSec = format.sampleRate() * 1000;
-    format_pcm.bitsPerSample = format.bytesPerSample()*8; // raw sample size, e.g. s24 is 24. currently we do not support such formats
+    format_pcm.bitsPerSample = format.bytesPerSample() * 8; // raw sample size, e.g. s24 is 24. currently we do not support such formats
     format_pcm.containerSize = format_pcm.bitsPerSample;
 
     // TODO: more layouts
 
-    format_pcm.channelMask = format.channels() == 1 ? SL_SPEAKER_FRONT_CENTER : SL_SPEAKER_FRONT_LEFT | SL_SPEAKER_FRONT_RIGHT;
+    format_pcm.channelMask = ((format.channels() == 1) ? SL_SPEAKER_FRONT_CENTER : SL_SPEAKER_FRONT_LEFT | SL_SPEAKER_FRONT_RIGHT);
 
 #ifdef SL_BYTEORDER_NATIVE
 
@@ -187,8 +187,8 @@ SLDataFormat_PCM_EX AudioOutputOpenSL::audioFormatToSL(const AudioFormat &format
 
     union { unsigned short num; char buf[sizeof(unsigned short)]; } endianness;
 
-    endianness.num = 1;
-    format_pcm.endianness = endianness.buf[0] ? SL_BYTEORDER_LITTLEENDIAN : SL_BYTEORDER_BIGENDIAN;
+    endianness.num        = 1;
+    format_pcm.endianness = (endianness.buf[0] ? SL_BYTEORDER_LITTLEENDIAN : SL_BYTEORDER_BIGENDIAN);
 
 #endif
 
@@ -208,7 +208,7 @@ void AudioOutputOpenSL::bufferQueueCallbackAndroid(SLAndroidSimpleBufferQueueItf
 
 #endif
 
-    AudioOutputOpenSL *ao = reinterpret_cast<AudioOutputOpenSL*>(context);
+    AudioOutputOpenSL* ao = reinterpret_cast<AudioOutputOpenSL*>(context);
 
     if (ao->bufferControl() & AudioOutputBackend::CountCallback)
     {
@@ -230,7 +230,7 @@ void AudioOutputOpenSL::bufferQueueCallback(SLBufferQueueItf bufferQueue, void *
 
 #endif
 
-    AudioOutputOpenSL *ao = reinterpret_cast<AudioOutputOpenSL*>(context);
+    AudioOutputOpenSL* ao = reinterpret_cast<AudioOutputOpenSL*>(context);
 
     if (ao->bufferControl() & AudioOutputBackend::CountCallback)
     {
@@ -247,24 +247,24 @@ void AudioOutputOpenSL::playCallback(SLPlayItf player, void *ctx, SLuint32 event
     //qCDebug(DIGIKAM_QTAV_LOG).noquote() << QString::asprintf("---------%s  event=%lu", __FUNCTION__, event);
 }
 
-AudioOutputOpenSL::AudioOutputOpenSL(QObject *parent)
-    : AudioOutputBackend(  AudioOutput::DeviceFeatures()
-                         | AudioOutput::SetVolume
-                         | AudioOutput::SetMute, parent)
-    , m_outputMixObject(0)
-    , m_playerObject(0)
-    , m_playItf(0)
-    , m_volumeItf(0)
-    , m_bufferQueueItf(0)
-    , m_bufferQueueItf_android(0)
-    , m_android(false)
-    , m_android_api_level(0)
-    , m_sl_major(0)
-    , m_sl_minor(0)
-    , m_sl_step(0)
-    , m_streamType(-1)
-    , buffers_queued(0)
-    , queue_data_write(0)
+AudioOutputOpenSL::AudioOutputOpenSL(QObject* const parent)
+    : AudioOutputBackend(AudioOutput::DeviceFeatures() |
+                         AudioOutput::SetVolume        |
+                         AudioOutput::SetMute, parent),
+      m_outputMixObject(0),
+      m_playerObject(0),
+      m_playItf(0),
+      m_volumeItf(0),
+      m_bufferQueueItf(0),
+      m_bufferQueueItf_android(0),
+      m_android(false),
+      m_android_api_level(0),
+      m_sl_major(0),
+      m_sl_minor(0),
+      m_sl_step(0),
+      m_streamType(-1),
+      buffers_queued(0),
+      queue_data_write(0)
 {
 
 #ifdef Q_OS_ANDROID
@@ -302,24 +302,26 @@ AudioOutputOpenSL::~AudioOutputOpenSL()
 
 bool AudioOutputOpenSL::isSupported(const AudioFormat& format) const
 {
-    return isSupported(format.sampleFormat()) && isSupported(format.channelLayout());
+    return (isSupported(format.sampleFormat()) && isSupported(format.channelLayout()));
 }
 
 bool AudioOutputOpenSL::isSupported(AudioFormat::SampleFormat sampleFormat) const
 {
-    if (sampleFormat == AudioFormat::SampleFormat_Unsigned8 || sampleFormat == AudioFormat::SampleFormat_Signed16) // TODO: android api 21 supports s32?
+    if ((sampleFormat == AudioFormat::SampleFormat_Unsigned8) || (sampleFormat == AudioFormat::SampleFormat_Signed16)) // TODO: android api 21 supports s32?
         return true;
-    if (m_android_api_level < 21 || (engineVersion() > 0 && engineVersion() < 110))
+
+    if ((m_android_api_level < 21) || ((engineVersion() > 0) && (engineVersion() < 110)))
         return false;
+
     if (!IsFloat(sampleFormat) || IsPlanar(sampleFormat))
         return false;
 
-    return RawSampleSize(sampleFormat) == sizeof(float); // TODO: test s32 etc
+    return (RawSampleSize(sampleFormat) == sizeof(float)); // TODO: test s32 etc
 }
 
 bool AudioOutputOpenSL::isSupported(AudioFormat::ChannelLayout channelLayout) const
 {
-    return channelLayout == AudioFormat::ChannelLayout_Mono || channelLayout == AudioFormat::ChannelLayout_Stereo;
+    return ((channelLayout == AudioFormat::ChannelLayout_Mono) || (channelLayout == AudioFormat::ChannelLayout_Stereo));
 }
 
 AudioOutputBackend::BufferControl AudioOutputOpenSL::bufferControl() const
@@ -360,7 +362,7 @@ bool AudioOutputOpenSL::open()
     SL_ENSURE((*engine)->CreateOutputMix(engine, &m_outputMixObject, 0, nullptr, nullptr), false);
     SL_ENSURE((*m_outputMixObject)->Realize(m_outputMixObject, SL_BOOLEAN_FALSE), false);
     SLDataLocator_OutputMix outputMixLocator = { SL_DATALOCATOR_OUTPUTMIX, m_outputMixObject };
-    SLDataSink audioSink                     = { &outputMixLocator, nullptr };
+    SLDataSink audioSink                     = { &outputMixLocator, nullptr                  };
 
     const SLInterfaceID ids[] = { SL_IID_BUFFERQUEUE, SL_IID_VOLUME
 
@@ -486,8 +488,8 @@ bool AudioOutputOpenSL::close()
         m_outputMixObject = nullptr;
     }
 
-    m_playItf = nullptr;
-    m_volumeItf = nullptr;
+    m_playItf        = nullptr;
+    m_volumeItf      = nullptr;
     m_bufferQueueItf = nullptr;
     queue_data.clear();
     queue_data_write = 0;
@@ -543,7 +545,7 @@ bool AudioOutputOpenSL::play()
 
 int AudioOutputOpenSL::getPlayedCount()
 {
-    int processed = buffers_queued;
+    int processed  = buffers_queued;
     SLuint32 count = 0;
 
 #ifdef Q_OS_ANDROID
@@ -565,7 +567,7 @@ int AudioOutputOpenSL::getPlayedCount()
     }
 
     buffers_queued = count;
-    processed -= count;
+    processed     -= count;
 
     return processed;
 }
@@ -580,14 +582,16 @@ bool AudioOutputOpenSL::setVolume(qreal value)
     if      (qFuzzyIsNull(value))
         v = SL_MILLIBEL_MIN;
     else if (!qFuzzyCompare(value, 1.0))
-        v = 20.0*log10(value)*100.0;
+        v = 20.0 * log10(value) * 100.0;
 
     SLmillibel vmax = SL_MILLIBEL_MAX;
     SL_ENSURE((*m_volumeItf)->GetMaxVolumeLevel(m_volumeItf, &vmax), false);
 
     if (vmax < v)
     {
-        qCDebug(DIGIKAM_QTAV_LOG).noquote() << QString::asprintf("OpenSL does not support volume: %f %d/%d. sw scale will be used", value, v, vmax);
+        qCDebug(DIGIKAM_QTAV_LOG).noquote()
+            << QString::asprintf("OpenSL does not support volume: %f %d/%d. sw scale will be used",
+                value, v, vmax);
 
         return false;
     }
@@ -608,7 +612,7 @@ qreal AudioOutputOpenSL::getVolume() const
     if (v == SL_MILLIBEL_MIN)
         return 0;
 
-    return pow(10.0, qreal(v)/2000.0);
+    return pow(10.0, qreal(v) / 2000.0);
 }
 
 bool AudioOutputOpenSL::setMute(bool value)

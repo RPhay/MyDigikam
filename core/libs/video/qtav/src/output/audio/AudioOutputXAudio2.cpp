@@ -52,7 +52,7 @@ class Q_DECL_HIDDEN AudioOutputXAudio2 final : public AudioOutputBackend,
 {
 public:
 
-    AudioOutputXAudio2(QObject* parent = 0);
+    AudioOutputXAudio2(QObject* const parent = nullptr);
     ~AudioOutputXAudio2();
 
     QString name() const                                                        override
@@ -98,7 +98,7 @@ public:
 
     STDMETHOD_(void, OnBufferEnd)(THIS_ void* bufferContext)                    override
     {
-        AudioOutputXAudio2 *ao = reinterpret_cast<AudioOutputXAudio2*>(bufferContext);
+        AudioOutputXAudio2* const ao = reinterpret_cast<AudioOutputXAudio2*>(bufferContext);
 
         if (ao->bufferControl() & AudioOutputBackend::CountCallback)
         {
@@ -120,32 +120,32 @@ public:
 
 private:
 
-    bool xaudio2_winsdk;
-    bool uninit_com;
+    bool                 xaudio2_winsdk     = false;
+    bool                 uninit_com         = false;
 
     // TODO: com ptr
 
-    IXAudio2SourceVoice* source_voice;
+    IXAudio2SourceVoice* source_voice       = nullptr;
 
     union
     {
         struct
         {
-            DXSDK::IXAudio2* xaudio;
-            DXSDK::IXAudio2MasteringVoice* master;
+            DXSDK::IXAudio2*                xaudio;
+            DXSDK::IXAudio2MasteringVoice*  master;
         } dxsdk;
 
         struct
         {
-            WinSDK::IXAudio2* xaudio;
+            WinSDK::IXAudio2*               xaudio;
             WinSDK::IXAudio2MasteringVoice* master;
         } winsdk;
     };
 
-    QSemaphore sem;
-    int        queue_data_write;
-    QByteArray queue_data;
-    QLibrary   dll;
+    QSemaphore           sem;
+    int                  queue_data_write   = 0;
+    QByteArray           queue_data;
+    QLibrary             dll;
 };
 
 typedef AudioOutputXAudio2 AudioOutputBackendXAudio2;
@@ -154,12 +154,12 @@ static const AudioOutputBackendId AudioOutputBackendId_XAudio2 = mkid::id32base3
 
 FACTORY_REGISTER(AudioOutputBackend, XAudio2, kName)
 
-AudioOutputXAudio2::AudioOutputXAudio2(QObject *parent)
-    : AudioOutputBackend(AudioOutput::DeviceFeatures()|AudioOutput::SetVolume, parent)
-    , xaudio2_winsdk(true)
-    , uninit_com(false)
-    , source_voice(nullptr)
-    , queue_data_write(0)
+AudioOutputXAudio2::AudioOutputXAudio2(QObject* const parent)
+    : AudioOutputBackend(AudioOutput::DeviceFeatures()|AudioOutput::SetVolume, parent),
+      xaudio2_winsdk    (true),
+      uninit_com        (false),
+      source_voice      (nullptr),
+      queue_data_write  (0)
 {
     memset(&dxsdk, 0, sizeof(dxsdk));
     available = false;
@@ -179,7 +179,7 @@ AudioOutputXAudio2::AudioOutputXAudio2(QObject *parent)
     // https://github.com/wang-bin/QtAV/issues/518
     // already initialized in qtcore for main thread. If RPC_E_CHANGED_MODE no ref is added, CoUninitialize can lead to crash
 
-    uninit_com = CoInitializeEx(nullptr, COINIT_MULTITHREADED) != RPC_E_CHANGED_MODE;
+    uninit_com = (CoInitializeEx(nullptr, COINIT_MULTITHREADED) != RPC_E_CHANGED_MODE);
 
     // load dll. < win8: XAudio2_7.DLL, <win10: XAudio2_8.DLL, win10: XAudio2_9.DLL. also defined by XAUDIO2_DLL_A in xaudio2.h
 
@@ -187,13 +187,14 @@ AudioOutputXAudio2::AudioOutputXAudio2(QObject *parent)
 
     for ( ; ver >= 7 ; ver--)
     {
-        dll.setFileName(QStringLiteral("XAudio2_%1").arg(ver));
+        dll.setFileName(QLatin1String("XAudio2_%1").arg(ver));
 
         qCDebug(DIGIKAM_QTAV_LOG) << dll.fileName();
 
         if (!dll.load())
         {
             qCWarning(DIGIKAM_QTAV_LOG_WARN) << dll.errorString();
+
             continue;
         }
 
@@ -211,12 +212,14 @@ AudioOutputXAudio2::AudioOutputXAudio2(QObject *parent)
 
         bool ready = false;
 
-        if (!ready && ver >= 8)     // cppcheck-suppress knownConditionTrueFalse
+        if (!ready && (ver >= 8))     // cppcheck-suppress knownConditionTrueFalse
         {
             xaudio2_winsdk = true;
-            qCDebug(DIGIKAM_QTAV_LOG).noquote() << QString::asprintf("Try symbol 'XAudio2Create' from WinSDK dll");
 
-            typedef HRESULT (__stdcall *XAudio2Create_t)(WinSDK::IXAudio2** ppXAudio2, UINT32 Flags, XAUDIO2_PROCESSOR XAudio2Processor);
+            qCDebug(DIGIKAM_QTAV_LOG).noquote()
+                << QString::asprintf("Try symbol 'XAudio2Create' from WinSDK dll");
+
+            typedef HRESULT (__stdcall* XAudio2Create_t)(WinSDK::IXAudio2** ppXAudio2, UINT32 Flags, XAUDIO2_PROCESSOR XAudio2Processor);
 
             XAudio2Create_t XAudio2Create = (XAudio2Create_t)dll.resolve("XAudio2Create");
 
@@ -224,15 +227,16 @@ AudioOutputXAudio2::AudioOutputXAudio2(QObject *parent)
                 ready = SUCCEEDED(XAudio2Create(&winsdk.xaudio, 0, XAUDIO2_DEFAULT_PROCESSOR));
         }
 
-        if (!ready && ver < 8)
+        if (!ready && (ver < 8))
         {
             xaudio2_winsdk = false;
 
 #ifdef _XBOX // xbox < win8 is inline XAudio2Create
 
-            qCDebug(DIGIKAM_QTAV_LOG).noquote() << QString::asprintf("Try symbol 'XAudio2Create' from DXSDK dll (XBOX)");
+            qCDebug(DIGIKAM_QTAV_LOG).noquote()
+                << QString::asprintf("Try symbol 'XAudio2Create' from DXSDK dll (XBOX)");
 
-            typedef HRESULT (__stdcall *XAudio2Create_t)(DXSDK::IXAudio2** ppXAudio2, UINT32 Flags, XAUDIO2_PROCESSOR XAudio2Processor);
+            typedef HRESULT (__stdcall* XAudio2Create_t)(DXSDK::IXAudio2** ppXAudio2, UINT32 Flags, XAUDIO2_PROCESSOR XAudio2Processor);
 
             XAudio2Create_t XAudio2Create = (XAudio2Create_t)dll.resolve("XAudio2Create");
 
@@ -243,9 +247,11 @@ AudioOutputXAudio2::AudioOutputXAudio2(QObject *parent)
 
             // try xaudio2 from dxsdk without symbol
 
-            qCDebug(DIGIKAM_QTAV_LOG).noquote() << QString::asprintf("Try inline function 'XAudio2Create' from DXSDK");
+            qCDebug(DIGIKAM_QTAV_LOG).noquote()
+                << QString::asprintf("Try inline function 'XAudio2Create' from DXSDK");
 
             ready = SUCCEEDED(DXSDK::XAudio2Create(&dxsdk.xaudio, 0, XAUDIO2_DEFAULT_PROCESSOR));
+
 #endif
 
         }
@@ -258,7 +264,9 @@ AudioOutputXAudio2::AudioOutputXAudio2(QObject *parent)
 
 #endif // Q_OS_WINRT
 
-    qCDebug(DIGIKAM_QTAV_LOG).noquote() << QString::asprintf("xaudio2: %p", winsdk.xaudio);
+    qCDebug(DIGIKAM_QTAV_LOG).noquote()
+        << QString::asprintf("xaudio2: %p", winsdk.xaudio);
+
     available = !!(winsdk.xaudio);
 }
 
@@ -337,7 +345,8 @@ bool AudioOutputXAudio2::open()
 
 bool AudioOutputXAudio2::close()
 {
-    qCDebug(DIGIKAM_QTAV_LOG).noquote() << QString::asprintf("source_voice: %p, master: %p", source_voice, winsdk.master);
+    qCDebug(DIGIKAM_QTAV_LOG).noquote()
+        << QString::asprintf("source_voice: %p, master: %p", source_voice, winsdk.master);
 
     if (source_voice)
     {
@@ -377,19 +386,19 @@ bool AudioOutputXAudio2::close()
 
 bool AudioOutputXAudio2::isSupported(const AudioFormat& format) const
 {
-    return isSupported(format.sampleFormat()) && isSupported(format.channelLayout());
+    return (isSupported(format.sampleFormat()) && isSupported(format.channelLayout()));
 }
 
 bool AudioOutputXAudio2::isSupported(AudioFormat::SampleFormat sampleFormat) const
 {
-    return !IsPlanar(sampleFormat) && RawSampleSize(sampleFormat) < sizeof(double); // TODO: what about s64?
+    return (!IsPlanar(sampleFormat) && (RawSampleSize(sampleFormat) < sizeof(double))); // TODO: what about s64?
 }
 
 // FIXME:
 
 bool AudioOutputXAudio2::isSupported(AudioFormat::ChannelLayout channelLayout) const
 {
-    return channelLayout == AudioFormat::ChannelLayout_Mono || channelLayout == AudioFormat::ChannelLayout_Stereo;
+    return ((channelLayout == AudioFormat::ChannelLayout_Mono) || (channelLayout == AudioFormat::ChannelLayout_Stereo));
 }
 
 AudioOutputBackend::BufferControl AudioOutputXAudio2::bufferControl() const
@@ -422,7 +431,7 @@ bool AudioOutputXAudio2::write(const QByteArray &data)
     XAUDIO2_BUFFER xb; // IMPORTANT! wrong value(playbegin/length, loopbegin/length) will result in commit sourcebuffer fail
 
     memset(&xb, 0, sizeof(XAUDIO2_BUFFER));
-    xb.AudioBytes = data.size();
+    xb.AudioBytes     = data.size();
 
     //xb.Flags = XAUDIO2_END_OF_STREAM;
 

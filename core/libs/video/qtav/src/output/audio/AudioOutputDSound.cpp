@@ -52,11 +52,11 @@ namespace QtAV
 
 static const char kName[] = "DirectSound";
 
-class Q_DECL_HIDDEN AudioOutputDSound final: public AudioOutputBackend
+class Q_DECL_HIDDEN AudioOutputDSound final : public AudioOutputBackend
 {
 public:
 
-    AudioOutputDSound(QObject* parent = 0);
+    AudioOutputDSound(QObject* const parent = nullptr);
 
     QString name()                                           const override
     {
@@ -231,16 +231,16 @@ static int channelLayoutToMS(qint64 av)
     return channelMaskToMS(av);
 }
 
-AudioOutputDSound::AudioOutputDSound(QObject *parent)
+AudioOutputDSound::AudioOutputDSound(QObject* const parent)
     : AudioOutputBackend(AudioOutput::DeviceFeatures()|AudioOutput::SetVolume, parent)
-    , dll(nullptr)
-    , dsound(nullptr)
-    , prim_buf(nullptr)
-    , stream_buf(nullptr)
-    , notify(nullptr)
-    , notify_event(nullptr)
-    , write_offset(0)
-    , watcher(this)
+      dll               (nullptr),
+      dsound            (nullptr),
+      prim_buf          (nullptr),
+      stream_buf        (nullptr),
+      notify            (nullptr),
+      notify_event      (nullptr),
+      write_offset      (0),
+      watcher           (this)
 {
     //setDeviceFeatures(AudioOutput::DeviceFeatures()|AudioOutput::SetVolume);
 }
@@ -328,7 +328,7 @@ void AudioOutputDSound::onCallback()
 */
 }
 
-bool AudioOutputDSound::write(const QByteArray &data)
+bool AudioOutputDSound::write(const QByteArray& data)
 {
     //qCDebug(DIGIKAM_QTAV_LOG).noquote() << QString::asprintf("sem %d %d", sem.available(), buffers_free.load());
 
@@ -409,7 +409,7 @@ bool AudioOutputDSound::setVolume(qreal value)
 {
     // dsound supports [0, 1]
 
-    const LONG vol = value <= 0 ? DSBVOLUME_MIN : LONG(log10(value*100.0) * 5000.0) + DSBVOLUME_MIN;
+    const LONG vol = ((value <= 0) ? DSBVOLUME_MIN : LONG(log10(value * 100.0) * 5000.0) + DSBVOLUME_MIN);
 
     // +DSBVOLUME_MIN == -100dB
 
@@ -561,14 +561,14 @@ bool AudioOutputDSound::createDSoundBuffers()
 
     DSBUFFERDESC dsbdesc;
     memset(&dsbdesc, 0, sizeof(DSBUFFERDESC));
-    dsbdesc.dwSize  = sizeof(DSBUFFERDESC);
+    dsbdesc.dwSize        = sizeof(DSBUFFERDESC);
 
-    dsbdesc.dwFlags =   DSBCAPS_GETCURRENTPOSITION2 /** Better position accuracy */
-                      | DSBCAPS_GLOBALFOCUS         /** Allows background playing */
-                      | DSBCAPS_CTRLVOLUME          /** volume control enabled */
-                      | DSBCAPS_CTRLPOSITIONNOTIFY;
+    dsbdesc.dwFlags       = DSBCAPS_GETCURRENTPOSITION2 | /** Better position accuracy */
+                            DSBCAPS_GLOBALFOCUS         | /** Allows background playing */
+                            DSBCAPS_CTRLVOLUME          | /** volume control enabled */
+                            DSBCAPS_CTRLPOSITIONNOTIFY;
 
-    dsbdesc.dwBufferBytes = buffer_size*buffer_count;
+    dsbdesc.dwBufferBytes = buffer_size * buffer_count;
     dsbdesc.lpwfxFormat   = (WAVEFORMATEX *)&wformat;
 
     // Needed for 5.1 on emu101k - shit soundblaster

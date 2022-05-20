@@ -91,7 +91,7 @@ public:
      * \brief AudioOutput
      * Audio format set to preferred sample format and channel layout
      */
-    explicit AudioOutput(QObject* parent = nullptr);
+    explicit AudioOutput(QObject* const parent = nullptr);
     ~AudioOutput();
 
     /*!
@@ -99,7 +99,7 @@ public:
      * set the given backends. Old backend instance and backend() is updated soon if backendsChanged.
      * It is called internally with a default backend names when AudioOutput is created.
      */
-    void setBackends(const QStringList &backendNames = QStringList());
+    void setBackends(const QStringList& backendNames = QStringList());
     QStringList backends() const;
 
     /*!
@@ -253,7 +253,7 @@ protected:
 
     // Store and fill data to audio buffers
 
-    bool receiveData(const QByteArray &data, qreal pts = 0.0);
+    bool receiveData(const QByteArray& data, qreal pts = 0.0);
 
     /*!
      * \brief waitForNextBuffer

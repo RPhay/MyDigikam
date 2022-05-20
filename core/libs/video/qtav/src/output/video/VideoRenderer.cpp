@@ -640,7 +640,7 @@ void VideoRenderer::handlePaintEvent()
 
         // do not apply filters if d.video_frame is already filtered. e.g. rendering an image and resize window to repaint
 
-        if (!d.video_frame.metaData(QStringLiteral("gpu_filtered")).toBool() && !d.filters.isEmpty() && d.statistics)
+        if (!d.video_frame.metaData(QLatin1String("gpu_filtered")).toBool() && !d.filters.isEmpty() && d.statistics)
         {
             // vo filter will not modify video frame, no lock required
 
@@ -670,7 +670,7 @@ void VideoRenderer::handlePaintEvent()
                     continue;
 
                 vf->apply(d.statistics, &d.video_frame); // painter and paint device are ready, pass video frame is ok.
-                d.video_frame.setMetaData(QStringLiteral("gpu_filtered"), true);
+                d.video_frame.setMetaData(QLatin1String("gpu_filtered"), true);
             }
         }
 

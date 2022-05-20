@@ -55,11 +55,11 @@ public:
 
 #if defined(Q_OS_DARWIN)
 
-            avwidgets.setFileName(QStringLiteral("QtAVWidgets.framework/QtAVWidgets")); //no dylib check
+            avwidgets.setFileName(QLatin1String("QtAVWidgets.framework/QtAVWidgets")); // no dylib check
 
 #elif defined(Q_OS_WIN)
 
-            avwidgets.setFileName(QStringLiteral("QtAVWidgets")
+            avwidgets.setFileName(QLatin1String("QtAVWidgets")
 
 # ifndef QT_NO_DEBUG
 
@@ -71,7 +71,7 @@ public:
 
 #else
 
-            avwidgets.setFileNameAndVersion(QStringLiteral("QtAVWidgets"), QTAV_VERSION_MAJOR(QtAV_Version()));
+            avwidgets.setFileNameAndVersion(QLatin1String("QtAVWidgets"), QTAV_VERSION_MAJOR(QtAV_Version()));
 
 #endif
 

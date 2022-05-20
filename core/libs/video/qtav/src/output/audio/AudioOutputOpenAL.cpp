@@ -268,19 +268,24 @@ static ALenum audioFormatToAL(const AudioFormat& fmt)
     if (err != AL_NO_ERROR)
     {
         if (ctx)
-            qCWarning(DIGIKAM_QTAV_LOG_WARN).noquote() << QString::asprintf("OpenAL audioFormatToAL error: %s", alGetString(err));
+            qCWarning(DIGIKAM_QTAV_LOG_WARN).noquote()
+                << QString::asprintf("OpenAL audioFormatToAL error: %s", alGetString(err));
         else
-            qCWarning(DIGIKAM_QTAV_LOG_WARN).noquote() << QString::asprintf("OpenAL audioFormatToAL error (null context): %#x", err);
+            qCWarning(DIGIKAM_QTAV_LOG_WARN).noquote()
+                << QString::asprintf("OpenAL audioFormatToAL error (null context): %#x", err);
     }
 
     if (format == 0)
     {
-        qCWarning(DIGIKAM_QTAV_LOG_WARN).noquote() << QString::asprintf("AudioOutputOpenAL Error: No OpenAL format available for audio data format %s %s."
-                 , qPrintable(fmt.sampleFormatName())
-                 , qPrintable(fmt.channelLayoutName()));
+        qCWarning(DIGIKAM_QTAV_LOG_WARN).noquote()
+            << QString::asprintf("AudioOutputOpenAL Error: No OpenAL format available for audio data format %s %s.",
+                 qPrintable(fmt.sampleFormatName()),
+                 qPrintable(fmt.channelLayoutName()));
     }
 
-    qCDebug(DIGIKAM_QTAV_LOG).noquote() << QString::asprintf("OpenAL audio format: %#x ch:%d, sample format: %s", format, fmt.channels(), qPrintable(fmt.sampleFormatName()));
+    qCDebug(DIGIKAM_QTAV_LOG).noquote()
+        << QString::asprintf("OpenAL audio format: %#x ch:%d, sample format: %s",
+            format, fmt.channels(), qPrintable(fmt.sampleFormatName()));
 
     return format;
 }
@@ -289,10 +294,10 @@ QMutex AudioOutputOpenAL::global_mutex;
 
 AudioOutputOpenAL::AudioOutputOpenAL(QObject* const parent)
     : AudioOutputBackend(AudioOutput::SetVolume, parent),
-      device(nullptr),
-      context(nullptr),
-      format_al(AL_FORMAT_STEREO16),
-      state(0)
+      device            (nullptr),
+      context           (nullptr),
+      format_al         (AL_FORMAT_STEREO16),
+      state             (0)
 {
 
 #if QTAV_HAVE(CAPI)

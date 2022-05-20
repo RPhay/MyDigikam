@@ -37,43 +37,43 @@ QStringList AudioOutputBackend::defaultPriority()
 
 #ifdef Q_OS_MAC
 
-            << QStringLiteral("AudioToolbox")
+            << QLatin1String("AudioToolbox")
 
 #endif
 
 #if QTAV_HAVE(XAUDIO2)
 
-            << QStringLiteral("XAudio2")
+            << QLatin1String("XAudio2")
 
 #endif
 
 #if QTAV_HAVE(OPENSL)
 
-            << QStringLiteral("OpenSL")
+            << QLatin1String("OpenSL")
 
 #endif
 
 #if QTAV_HAVE(OPENAL)
 
-            << QStringLiteral("OpenAL")
+            << QLatin1String("OpenAL")
 
 #endif
 
 #if QTAV_HAVE(PORTAUDIO)
 
-            << QStringLiteral("PortAudio")
+            << QLatin1String("PortAudio")
 
 #endif
 
 #if QTAV_HAVE(PULSEAUDIO)&& !defined(Q_OS_MAC)
 
-            << QStringLiteral("Pulse")
+            << QLatin1String("Pulse")
 
 #endif
 
 #if QTAV_HAVE(DSOUND)
 
-            << QStringLiteral("DirectSound")
+            << QLatin1String("DirectSound")
 
 #endif
 
@@ -82,13 +82,13 @@ QStringList AudioOutputBackend::defaultPriority()
     return sBackends;
 }
 
-AudioOutputBackend::AudioOutputBackend(AudioOutput::DeviceFeatures f, QObject *parent)
-    : QObject(parent)
-    , audio(nullptr)
-    , available(true)
-    , buffer_size(0)
-    , buffer_count(0)
-    , m_features(f)
+AudioOutputBackend::AudioOutputBackend(AudioOutput::DeviceFeatures f, QObject* const parent)
+    : QObject     (parent),
+      audio       (nullptr),
+      available   (true),
+      buffer_size (0),
+      buffer_count(0),
+      m_features  (f)
 {
 }
 
@@ -133,7 +133,7 @@ void AudioOutput_RegisterAll()
     extern bool RegisterAudioOutputBackendOpenSL_Man();
     RegisterAudioOutputBackendOpenSL_Man();
 
-#endif //QTAV_HAVE(OPENSL)
+#endif // QTAV_HAVE(OPENSL)
 
 #if QTAV_HAVE(XAUDIO2)
 
@@ -147,7 +147,7 @@ void AudioOutput_RegisterAll()
     extern bool RegisterAudioOutputBackendOpenAL_Man();
     RegisterAudioOutputBackendOpenAL_Man();
 
-#endif //QTAV_HAVE(OPENAL)
+#endif // QTAV_HAVE(OPENAL)
 
 #if QTAV_HAVE(PULSEAUDIO)
 
@@ -161,7 +161,7 @@ void AudioOutput_RegisterAll()
     extern bool RegisterAudioOutputBackendPortAudio_Man();
     RegisterAudioOutputBackendPortAudio_Man();
 
-#endif //QTAV_HAVE(PORTAUDIO)
+#endif // QTAV_HAVE(PORTAUDIO)
 
 #if QTAV_HAVE(DSOUND)
 

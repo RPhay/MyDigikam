@@ -52,7 +52,7 @@ class Q_DECL_HIDDEN AudioOutputAudioToolbox final : public AudioOutputBackend
 {
 public:
 
-    AudioOutputAudioToolbox(QObject *parent = 0);
+    AudioOutputAudioToolbox(QObject* const parent = 0);
 
     QString name()                                     const override
     {
@@ -131,7 +131,7 @@ static AudioStreamBasicDescription audioFormatToAT(const AudioFormat &format)
 void AudioOutputAudioToolbox::outCallback(void* inUserData, AudioQueueRef inAQ, AudioQueueBufferRef inBuffer)
 {
     Q_UNUSED(inAQ);
-    AudioOutputAudioToolbox *ao = reinterpret_cast<AudioOutputAudioToolbox*>(inUserData);
+    AudioOutputAudioToolbox* ao = reinterpret_cast<AudioOutputAudioToolbox*>(inUserData);
 
     if (ao->bufferControl() & AudioOutputBackend::CountCallback)
     {
@@ -156,10 +156,10 @@ void AudioOutputAudioToolbox::outCallback(void* inUserData, AudioQueueRef inAQ, 
     ao->tryPauseTimeline();
 }
 
-AudioOutputAudioToolbox::AudioOutputAudioToolbox(QObject *parent)
-    : AudioOutputBackend(AudioOutput::DeviceFeatures() | AudioOutput::SetVolume, parent)
-    , m_queue(nullptr)
-    , m_waiting(false)
+AudioOutputAudioToolbox::AudioOutputAudioToolbox(QObject* const parent)
+    : AudioOutputBackend(AudioOutput::DeviceFeatures() | AudioOutput::SetVolume, parent),
+      m_queue           (nullptr),
+      m_waiting         (false)
 {
     available = false;
     available = true;
@@ -186,7 +186,11 @@ void AudioOutputAudioToolbox::tryPauseTimeline()
     {
         AudioTimeStamp t;
         AudioQueueGetCurrentTime(m_queue, nullptr, &t, nullptr);
-        qCDebug(DIGIKAM_QTAV_LOG).noquote() << QString::asprintf("pause audio queue timeline @%.3f (sample time)/%lld (host time)", t.mSampleTime, t.mHostTime);
+
+        qCDebug(DIGIKAM_QTAV_LOG).noquote()
+            << QString::asprintf("pause audio queue timeline @%.3f (sample time)/%lld (host time)",
+                t.mSampleTime, t.mHostTime);
+
         AT_ENSURE(AudioQueuePause(m_queue));
     }
 }
@@ -285,7 +289,8 @@ bool AudioOutputAudioToolbox::play()
     {
         // AVAudioSessionErrorCodeCannotStartPlaying
 
-        qCWarning(DIGIKAM_QTAV_LOG_WARN).noquote() << QString::asprintf("AudioQueueStart error: AVAudioSessionErrorCodeCannotStartPlaying. May play in background");
+        qCWarning(DIGIKAM_QTAV_LOG_WARN).noquote()
+            << QString::asprintf("AudioQueueStart error: AVAudioSessionErrorCodeCannotStartPlaying. May play in background");
         close();
         open();
 
@@ -294,7 +299,8 @@ bool AudioOutputAudioToolbox::play()
 
     if (err != noErr)
     {
-        qCWarning(DIGIKAM_QTAV_LOG_WARN).noquote() << QString::asprintf("AudioQueueStart error: %#x", noErr);
+        qCWarning(DIGIKAM_QTAV_LOG_WARN).noquote()
+            << QString::asprintf("AudioQueueStart error: %#x", noErr);
 
         return false;
     }
