@@ -151,7 +151,7 @@ public:
         bitmap_height       (0),
         interpolation       (D2D1_BITMAP_INTERPOLATION_MODE_LINEAR)
     {
-        dll.setFileName(QStringLiteral("d2d1"));
+        dll.setFileName(QLatin1String("d2d1"));
 
         if (!dll.load())
         {
@@ -164,7 +164,10 @@ public:
             return;
         }
 
-        typedef HRESULT(WINAPI* D2D1CreateFactory_t)(D2D1_FACTORY_TYPE, REFIID, const D2D1_FACTORY_OPTIONS*, void** ppIFactory);
+        typedef HRESULT(WINAPI* D2D1CreateFactory_t)(D2D1_FACTORY_TYPE, REFIID,
+                                                     const D2D1_FACTORY_OPTIONS*,
+                                                     void** ppIFactory);
+
         D2D1CreateFactory_t D2D1CreateFactory;
         D2D1CreateFactory = (D2D1CreateFactory_t)dll.resolve("D2D1CreateFactory");
 
@@ -195,7 +198,7 @@ public:
         HRESULT hr = D2D1CreateFactory(D2D1_FACTORY_TYPE_MULTI_THREADED,
                                        (REFIID)IID_ID2D1Factory,
                                        &factory_opt,
-                                       (void**)&d2d_factory);
+                                       (void**)& d2d_factory);
         if (FAILED(hr))
         {
             available = false;
@@ -381,6 +384,7 @@ public:
                 interpolation = D2D1_BITMAP_INTERPOLATION_MODE_NEAREST_NEIGHBOR;
                 render_target->SetAntialiasMode(D2D1_ANTIALIAS_MODE_ALIASED);
                 render_target->SetTextAntialiasMode(D2D1_TEXT_ANTIALIAS_MODE_ALIASED);
+
                 break;
             }
 
@@ -389,6 +393,7 @@ public:
                 interpolation = D2D1_BITMAP_INTERPOLATION_MODE_LINEAR;
                 render_target->SetAntialiasMode(D2D1_ANTIALIAS_MODE_PER_PRIMITIVE);
                 render_target->SetTextAntialiasMode(D2D1_TEXT_ANTIALIAS_MODE_CLEARTYPE);
+
                 break;
             }
 
@@ -397,6 +402,7 @@ public:
                 interpolation = D2D1_BITMAP_INTERPOLATION_MODE_LINEAR;
                 render_target->SetAntialiasMode(D2D1_ANTIALIAS_MODE_PER_PRIMITIVE);
                 render_target->SetTextAntialiasMode(D2D1_TEXT_ANTIALIAS_MODE_DEFAULT);
+
                 break;
             }
         }

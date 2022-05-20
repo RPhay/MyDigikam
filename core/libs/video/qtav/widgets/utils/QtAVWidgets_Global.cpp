@@ -184,25 +184,25 @@ void about()
 {
     // we should use new because a qobject will delete it's children
 
-    QTextBrowser *viewQtAV   = new QTextBrowser;
-    QTextBrowser *viewFFmpeg = new QTextBrowser;
+    QTextBrowser* const viewQtAV   = new QTextBrowser;
+    QTextBrowser* const viewFFmpeg = new QTextBrowser;
     viewQtAV->setOpenExternalLinks(true);
     viewFFmpeg->setOpenExternalLinks(true);
     viewQtAV->setHtml(aboutQtAV_HTML());
     viewFFmpeg->setHtml(aboutFFmpeg_HTML());
-    QTabWidget* tab         = new QTabWidget;
-    tab->addTab(viewQtAV, QStringLiteral("QtAV"));
-    tab->addTab(viewFFmpeg, QStringLiteral("FFmpeg"));
-    QPushButton* qbtn       = new QPushButton(i18n("About Qt"));
-    QPushButton* btn        = new QPushButton(i18n("Ok"));
-    QHBoxLayout* btnLayout  = new QHBoxLayout;
+    QTabWidget* const tab          = new QTabWidget;
+    tab->addTab(viewQtAV,   QLatin1String("QtAV"));
+    tab->addTab(viewFFmpeg, QLatin1String("FFmpeg"));
+    QPushButton* const qbtn        = new QPushButton(i18n("About Qt"));
+    QPushButton* const btn         = new QPushButton(i18n("Ok"));
+    QHBoxLayout* const btnLayout   = new QHBoxLayout;
     btnLayout->addWidget(btn);
     btnLayout->addStretch();
     btnLayout->addWidget(qbtn);
     btn->setFocus();
     QDialog dialog;
-    dialog.setWindowTitle(i18n("About") + QStringLiteral("  QtAV"));
-    QVBoxLayout* layout     = new QVBoxLayout;
+    dialog.setWindowTitle(i18n("About QtAV"));
+    QVBoxLayout* const layout      = new QVBoxLayout;
     dialog.setLayout(layout);
     layout->addWidget(tab);
     layout->addLayout(btnLayout);
