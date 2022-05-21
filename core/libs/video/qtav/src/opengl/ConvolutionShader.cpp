@@ -36,8 +36,8 @@ public:
 
     ConvolutionShaderPrivate()
         : VideoShaderPrivate(),
-          u_Kernel(-1),
-          radius(1)
+          u_Kernel          (-1),
+          radius            (1)
     {
         kernel.resize((2 * radius + 1) * (2 * radius + 1));
         updateShaderCode();
@@ -45,20 +45,20 @@ public:
 
     void updateShaderCode()
     {
-        const int ks = (2*radius+1)*(2*radius+1);
-        header       = QStringLiteral("uniform float u_Kernel[%1];").arg(ks).toUtf8();
-        QString s    = QStringLiteral("vec4 sample2d(sampler2D tex, vec2 pos, int p) { vec4 c = vec4(0.0);");
-        const int kd = 2*radius+1;
+        const int ks = (2 * radius + 1) * (2 * radius + 1);
+        header       = QString::fromUtf8("uniform float u_Kernel[%1];").arg(ks).toUtf8();
+        QString s    = QLatin1String("vec4 sample2d(sampler2D tex, vec2 pos, int p) { vec4 c = vec4(0.0);");
+        const int kd = 2 * radius + 1;
 
-        for (int i = 0; i < ks; ++i)
+        for (int i = 0 ; i < ks ; ++i)
         {
             const int x = i % kd - radius;
             const int y = i / kd - radius;
-            s += QStringLiteral("c += texture(tex, pos + u_texelSize[p]*vec2(%1.0,%2.0))*u_Kernel[%3];")
-                    .arg(x).arg(y).arg(i);
+            s          += QString::fromUtf8("c += texture(tex, pos + u_texelSize[p]*vec2(%1.0,%2.0))*u_Kernel[%3];")
+                             .arg(x).arg(y).arg(i);
         }
 
-        s += QStringLiteral("c.a = texture(tex, pos).a;"
+        s += QLatin1String("c.a = texture(tex, pos).a;"
              "return c;}\n");
 
         sample_func = s.toUtf8();
@@ -105,7 +105,7 @@ void ConvolutionShader::setKernelRadius(int value)
 
 int ConvolutionShader::kernelSize() const
 {
-    return (2*kernelRadius() + 1)*(2*kernelRadius() + 1);
+    return (2 * kernelRadius() + 1) * (2 * kernelRadius() + 1);
 }
 
 const char* ConvolutionShader::userShaderHeader(QOpenGLShader::ShaderType t) const

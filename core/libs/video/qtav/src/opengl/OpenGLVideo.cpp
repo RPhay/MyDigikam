@@ -300,7 +300,7 @@ void OpenGLVideo::setOpenGLContext(QOpenGLContext *ctx)
 
 #if QT_VERSION >= QT_VERSION_CHECK(5, 0, 0)
 
-    d.manager = ctx->findChild<ShaderManager*>(QStringLiteral("__qtav_shader_manager"));
+    d.manager = ctx->findChild<ShaderManager*>(QLatin1String("__qtav_shader_manager"));
 
 #endif
 
@@ -315,9 +315,11 @@ void OpenGLVideo::setOpenGLContext(QOpenGLContext *ctx)
 
     d.manager = new ShaderManager(ctx);
 
+    // NOTE: direct connection to make sure there is a valid context. makeCurrent in window.aboutToBeDestroyed()?
+
     QObject::connect(ctx, SIGNAL(aboutToBeDestroyed()),
                      this, SLOT(resetGL()),
-                     Qt::DirectConnection); // direct to make sure there is a valid context. makeCurrent in window.aboutToBeDestroyed()?
+                     Qt::DirectConnection);
 
 #else
 
@@ -325,12 +327,12 @@ void OpenGLVideo::setOpenGLContext(QOpenGLContext *ctx)
 
 #endif
 
-    d.manager->setObjectName(QStringLiteral("__qtav_shader_manager"));
+    d.manager->setObjectName(QLatin1String("__qtav_shader_manager"));
 
     /// get gl info here because context is current(qt ensure it)
-
-    //const QByteArray extensions(reinterpret_cast<const char *>(glGetString(GL_EXTENSIONS)));
-
+/*
+    const QByteArray extensions(reinterpret_cast<const char*>(glGetString(GL_EXTENSIONS)));
+*/
     bool hasGLSL      = QOpenGLShaderProgram::hasOpenGLShaderPrograms();
 
     qCDebug(DIGIKAM_QTAV_LOG).noquote()
@@ -342,25 +344,51 @@ void OpenGLVideo::setOpenGLContext(QOpenGLContext *ctx)
     if (sInfo)
     {
         sInfo = false;
-        qCDebug(DIGIKAM_QTAV_LOG).noquote() << QString::asprintf("GL_VERSION: %s", DYGL(glGetString(GL_VERSION)));
-        qCDebug(DIGIKAM_QTAV_LOG).noquote() << QString::asprintf("GL_VENDOR: %s", DYGL(glGetString(GL_VENDOR)));
-        qCDebug(DIGIKAM_QTAV_LOG).noquote() << QString::asprintf("GL_RENDERER: %s", DYGL(glGetString(GL_RENDERER)));
-        qCDebug(DIGIKAM_QTAV_LOG).noquote() << QString::asprintf("GL_SHADING_LANGUAGE_VERSION: %s", DYGL(glGetString(GL_SHADING_LANGUAGE_VERSION)));
 
-        /// check here with current context can ensure the right result. If the first check is in VideoShader/VideoMaterial/decoder or somewhere else, the context can be null
+        qCDebug(DIGIKAM_QTAV_LOG).noquote()
+            << QString::asprintf("GL_VERSION: %s",
+                DYGL(glGetString(GL_VERSION)));
+
+        qCDebug(DIGIKAM_QTAV_LOG).noquote()
+            << QString::asprintf("GL_VENDOR: %s",
+                DYGL(glGetString(GL_VENDOR)));
+
+        qCDebug(DIGIKAM_QTAV_LOG).noquote()
+            << QString::asprintf("GL_RENDERER: %s",
+                DYGL(glGetString(GL_RENDERER)));
+
+        qCDebug(DIGIKAM_QTAV_LOG).noquote()
+            << QString::asprintf("GL_SHADING_LANGUAGE_VERSION: %s",
+                DYGL(glGetString(GL_SHADING_LANGUAGE_VERSION)));
+
+        // Check here with current context can ensure the right result.
+        // If the first check is in VideoShader/VideoMaterial/decoder or somewhere else,
+        // the context can be null
 
         bool v = OpenGLHelper::isOpenGLES();
+
         qCDebug(DIGIKAM_QTAV_LOG).noquote() << QString::asprintf("Is OpenGLES: %d", v);
+
         v      = OpenGLHelper::isEGL();
+
         qCDebug(DIGIKAM_QTAV_LOG).noquote() << QString::asprintf("Is EGL: %d", v);
+
         const int glsl_ver = OpenGLHelper::GLSLVersion();
+
         qCDebug(DIGIKAM_QTAV_LOG).noquote() << QString::asprintf("GLSL version: %d", glsl_ver);
+
         v      = OpenGLHelper::isPBOSupported();
+
         qCDebug(DIGIKAM_QTAV_LOG).noquote() << QString::asprintf("Has PBO: %d", v);
+
         v      = OpenGLHelper::has16BitTexture();
+
         qCDebug(DIGIKAM_QTAV_LOG).noquote() << QString::asprintf("Has 16bit texture: %d", v);
+
         v      = OpenGLHelper::hasRG();
+
         qCDebug(DIGIKAM_QTAV_LOG).noquote() << QString::asprintf("Has RG texture: %d", v);
+
         qCDebug(DIGIKAM_QTAV_LOG) << ctx->format();
     }
 }

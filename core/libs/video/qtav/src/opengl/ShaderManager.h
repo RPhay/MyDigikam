@@ -47,10 +47,10 @@ class ShaderManager : public QObject
 
 public:
 
-    explicit ShaderManager(QObject* parent = nullptr);
+    explicit ShaderManager(QObject* const parent = nullptr);
     ~ShaderManager();
 
-    VideoShader* prepareMaterial(VideoMaterial* material, qint32 materialType = -1);
+    VideoShader* prepareMaterial(VideoMaterial* material, qint32 materialType = -1) const;
 
 //    void setCacheSize(int value);
 

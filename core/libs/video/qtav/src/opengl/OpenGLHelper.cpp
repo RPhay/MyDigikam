@@ -88,7 +88,7 @@ bool useDeprecatedFormats()
 QString removeComments(const QString &code)
 {
     QString c(code);
-    c.remove(QRegExp(QStringLiteral("(/\\*([^*]|(\\*+[^*/]))*\\*+/)|(//[^\r^\n]*)")));
+    c.remove(QRegExp(QString::fromUtf8("(/\\*([^*]|(\\*+[^*/]))*\\*+/)|(//[^\r^\n]*)")));
 
     return c;
 }
@@ -147,7 +147,7 @@ QByteArray compatibleShaderHeader(QOpenGLShader::ShaderType type)
 
     h.append("#version ").append(QByteArray::number(GLSLVersion()));
 
-    if (isOpenGLES() && QOpenGLContext::currentContext()->format().majorVersion() > 2)
+    if (isOpenGLES() && (QOpenGLContext::currentContext()->format().majorVersion() > 2))
         h += " es";
 
     h += '\n';
@@ -194,8 +194,9 @@ int GLSLVersion()
     int major      = 0, minor = 0;
 
     // es: "OpenGL ES GLSL ES 1.00 (ANGLE 2.1.99...)" can use ""%*[ a-zA-Z] %d.%d" in sscanf, desktop: "2.1"
-    //QRegExp rx("(\\d+)\\.(\\d+)");
-
+/*
+    QRegExp rx(QString::fromUtf8("(\\d+)\\.(\\d+)"));
+*/
     if (strncmp(vs, "OpenGL ES GLSL ES ", 18) == 0)
         vs += 18;
 
@@ -235,6 +236,7 @@ bool isEGL()
     if (isOpenGLES())
     {
         // TODO: ios has no egl
+
         is_egl = 1;
 
         return true;
@@ -277,7 +279,8 @@ bool isEGL()
 
     if (QGuiApplication::platformName().contains(QLatin1String("xcb")))
     {
-        is_egl = qgetenv("QT_XCB_GL_INTEGRATION") == "xcb_egl";
+        is_egl = (qgetenv("QT_XCB_GL_INTEGRATION") == "xcb_egl");
+
         qCDebug(DIGIKAM_QTAV_LOG).noquote() << QString::asprintf("xcb_egl=%d", is_egl);
 
         return !!is_egl;
@@ -305,13 +308,15 @@ bool isOpenGLES()
     if (ctx)
         return ctx->isOpenGLES();
 
-    if (qstrcmp(qApp->metaObject()->className(), "QCoreApplication") == 0) // QGuiApplication is required by QOpenGLContext::openGLModuleType
+    // QGuiApplication is required by QOpenGLContext::openGLModuleType
+
+    if (qstrcmp(qApp->metaObject()->className(), "QCoreApplication") == 0)
         return false;
 
-    // desktop openGLModuleType() can create es compatible context, so prefer QOpenGLContext::isOpenGLES().
+    // Desktop openGLModuleType() can create es compatible context, so prefer QOpenGLContext::isOpenGLES().
     // qApp->testAttribute(Qt::AA_UseOpenGLES) is what user requested, but not  the result can be different. reproduce: dygl set AA_ShareOpenGLContexts|AA_UseOpenGLES, fallback to desktop (why?)
 
-    return QOpenGLContext::openGLModuleType() != QOpenGLContext::LibGL;
+    return (QOpenGLContext::openGLModuleType() != QOpenGLContext::LibGL);
 
 #endif
 
@@ -369,9 +374,9 @@ bool hasExtensionEGL(const char *exts[])
     return false;
 }
 
-bool hasExtension(const char *exts[])
+bool hasExtension(const char* exts[])
 {
-    const QOpenGLContext *ctx = QOpenGLContext::currentContext();
+    const QOpenGLContext* ctx = QOpenGLContext::currentContext();
 
     if (!ctx)
     {
@@ -401,6 +406,7 @@ bool hasExtension(const char *exts[])
         if (strstr(ext, exts[i]))
 
 #endif
+
             return true;
     }
 
@@ -468,6 +474,7 @@ static const gl_param_t gl_param_compat[] =
     { GL_LUMINANCE_ALPHA, GL_LUMINANCE_ALPHA, GL_UNSIGNED_BYTE  }, // 2 x 8 fallback to ra
     { 0,                  0,                  0                 },
 };
+
 static const gl_param_t gl_param_3r16[] =
 {
     { GL_R8,      GL_RED,     GL_UNSIGNED_BYTE  },     // 1 x 8
@@ -518,7 +525,8 @@ bool test_gl_param(const gl_param_t& gp, bool* has_16 = nullptr)
 {
     if (!QOpenGLContext::currentContext())
     {
-        qCWarning(DIGIKAM_QTAV_LOG_WARN).noquote() << QString::asprintf("%s: current context is null", __FUNCTION__);
+        qCWarning(DIGIKAM_QTAV_LOG_WARN).noquote()
+            << QString::asprintf("%s: current context is null", __FUNCTION__);
 
         return false;
     }
@@ -592,14 +600,16 @@ bool test_gl_param(const gl_param_t& gp, bool* has_16 = nullptr)
     switch (gp.format)
     {
         case GL_RED:
+        {
             pname = GL_TEXTURE_RED_SIZE;
-
             break;
+        }
 
         case GL_LUMINANCE:
+        {
             pname = GL_TEXTURE_LUMINANCE_SIZE;
-
             break;
+        }
     }
 
     param = 0;
@@ -609,8 +619,10 @@ bool test_gl_param(const gl_param_t& gp, bool* has_16 = nullptr)
 
     if (param)
     {
-        qCDebug(DIGIKAM_QTAV_LOG).noquote() << QString::asprintf("16 bit texture depth: %d.\n", (int)param);
-        *has_16 = (int)param == 16;
+        qCDebug(DIGIKAM_QTAV_LOG).noquote()
+            << QString::asprintf("16 bit texture depth: %d.\n", (int)param);
+
+        *has_16 = ((int)param == 16);
     }
 
     DYGL(glDeleteTextures(1, &tex));
@@ -625,7 +637,8 @@ bool hasRG()
     if (has_rg >= 0)
         return !!has_rg;
 
-    qCDebug(DIGIKAM_QTAV_LOG).noquote() << QString::asprintf("check gl3 rg: %#X", gl_param_3r16[1].internal_format);
+    qCDebug(DIGIKAM_QTAV_LOG).noquote()
+        << QString::asprintf("check gl3 rg: %#X", gl_param_3r16[1].internal_format);
 
     if (test_gl_param(gl_param_3r16[1]))
     {
@@ -634,7 +647,8 @@ bool hasRG()
         return true;
     }
 
-    qCDebug(DIGIKAM_QTAV_LOG).noquote() << QString::asprintf("check es3 rg: %#X", gl_param_es3rg8[1].internal_format);
+    qCDebug(DIGIKAM_QTAV_LOG).noquote()
+        << QString::asprintf("check es3 rg: %#X", gl_param_es3rg8[1].internal_format);
 
     if (test_gl_param(gl_param_es3rg8[1]))
     {
@@ -643,7 +657,8 @@ bool hasRG()
         return true;
     }
 
-    qCDebug(DIGIKAM_QTAV_LOG).noquote() << QString::asprintf("check GL_EXT_texture_rg");
+    qCDebug(DIGIKAM_QTAV_LOG).noquote()
+        << QString::asprintf("check GL_EXT_texture_rg");
 
     static const char* ext[] =
     {
@@ -653,7 +668,9 @@ bool hasRG()
 
     if (hasExtension(ext))
     {
-        qCDebug(DIGIKAM_QTAV_LOG).noquote() << QString::asprintf("has extension GL_EXT_texture_rg");
+        qCDebug(DIGIKAM_QTAV_LOG).noquote()
+            << QString::asprintf("has extension GL_EXT_texture_rg");
+
         has_rg = 1;
 
         return true;
@@ -662,7 +679,11 @@ bool hasRG()
     qCDebug(DIGIKAM_QTAV_LOG).noquote() << QString::asprintf("check gl es>=3 rg");
 
     if (QOpenGLContext::currentContext())
-        has_rg = isOpenGLES() && QOpenGLContext::currentContext()->format().majorVersion() > 2; // Mesa GLES3 does not support (from qt)
+    {
+        // Mesa GLES3 does not support (from qt)
+
+        has_rg = (isOpenGLES() && (QOpenGLContext::currentContext()->format().majorVersion() > 2));
+    }
 
     return has_rg;
 }
@@ -673,7 +694,8 @@ static const gl_param_t* get_gl_param()
 {
     if (!QOpenGLContext::currentContext())
     {
-        qCWarning(DIGIKAM_QTAV_LOG_WARN).noquote() << QString::asprintf("%s: current context is null", __FUNCTION__);
+        qCWarning(DIGIKAM_QTAV_LOG_WARN).noquote()
+            << QString::asprintf("%s: current context is null", __FUNCTION__);
 
         return gl_param_compat;
     }
@@ -698,7 +720,8 @@ static const gl_param_t* get_gl_param()
 
         if (!useDeprecatedFormats())
         {
-            qCDebug(DIGIKAM_QTAV_LOG).noquote() << QString::asprintf("using gl_param_%s", gp == gl_param_3r16? "3r16" : "desktop_fallback");
+            qCDebug(DIGIKAM_QTAV_LOG).noquote()
+                << QString::asprintf("using gl_param_%s", (gp == gl_param_3r16) ? "3r16" : "desktop_fallback");
 
             return gp;
         }
@@ -712,7 +735,8 @@ static const gl_param_t* get_gl_param()
 
         if (!useDeprecatedFormats())
         {
-            qCDebug(DIGIKAM_QTAV_LOG).noquote() << QString::asprintf("using gl_param_es3rg8");
+            qCDebug(DIGIKAM_QTAV_LOG).noquote()
+                << QString::asprintf("using gl_param_es3rg8");
 
             return gp;
         }
@@ -720,7 +744,7 @@ static const gl_param_t* get_gl_param()
     else if (isOpenGLES())
     {
         if      (QOpenGLContext::currentContext()->format().majorVersion() > 2)
-            gp = (gl_param_t*)gl_param_es3rg8; //for 3.0
+            gp = (gl_param_t*)gl_param_es3rg8; // for 3.0
         else if (hasRG())
             gp = (gl_param_t*)gl_param_es2rg;
 
@@ -728,13 +752,15 @@ static const gl_param_t* get_gl_param()
 
         if (gp && !useDeprecatedFormats())
         {
-            qCDebug(DIGIKAM_QTAV_LOG).noquote() << QString::asprintf("using gl_param_%s", gp == gl_param_es3rg8 ? "es3rg8" : "es2rg");
+            qCDebug(DIGIKAM_QTAV_LOG).noquote()
+                << QString::asprintf("using gl_param_%s", (gp == gl_param_es3rg8) ? "es3rg8" : "es2rg");
 
             return gp;
         }
     }
 
-    qCDebug(DIGIKAM_QTAV_LOG).noquote() << QString::asprintf("fallback to gl_param_compat");
+    qCDebug(DIGIKAM_QTAV_LOG).noquote()
+        << QString::asprintf("fallback to gl_param_compat");
 
     gp         = (gl_param_t*)gl_param_compat;
     has_16_tex = false;
@@ -749,7 +775,8 @@ bool has16BitTexture()
 
     if (!QOpenGLContext::currentContext())
     {
-        qCWarning(DIGIKAM_QTAV_LOG_WARN).noquote() << QString::asprintf("%s: current context is null", __FUNCTION__);
+        qCWarning(DIGIKAM_QTAV_LOG_WARN).noquote()
+            << QString::asprintf("%s: current context is null", __FUNCTION__);
 
         return false;
     }
@@ -769,64 +796,76 @@ typedef struct
 
 static const reorder_t gl_channel_maps[] =
 {
-    { VideoFormat::Format_ARGB32, {1, 2, 3, 0} },
-    { VideoFormat::Format_ABGR32, {3, 2, 1, 0} }, // R->gl.?(a)->R
-    { VideoFormat::Format_BGR24,  {2, 1, 0, 3} },
-    { VideoFormat::Format_BGR565, {2, 1, 0, 3} },
-    { VideoFormat::Format_BGRA32, {2, 1, 0, 3} },
-    { VideoFormat::Format_BGR32,  {2, 1, 0, 3} },
-    { VideoFormat::Format_BGR48LE,{2, 1, 0, 3} },
-    { VideoFormat::Format_BGR48BE,{2, 1, 0, 3} },
-    { VideoFormat::Format_BGR48,  {2, 1, 0, 3} },
-    { VideoFormat::Format_BGR555, {2, 1, 0, 3} },
+    { VideoFormat::Format_ARGB32,  { 1, 2, 3, 0 } },
+    { VideoFormat::Format_ABGR32,  { 3, 2, 1, 0 } }, // R->gl.?(a)->R
+    { VideoFormat::Format_BGR24,   { 2, 1, 0, 3 } },
+    { VideoFormat::Format_BGR565,  { 2, 1, 0, 3 } },
+    { VideoFormat::Format_BGRA32,  { 2, 1, 0, 3 } },
+    { VideoFormat::Format_BGR32,   { 2, 1, 0, 3 } },
+    { VideoFormat::Format_BGR48LE, { 2, 1, 0, 3 } },
+    { VideoFormat::Format_BGR48BE, { 2, 1, 0, 3 } },
+    { VideoFormat::Format_BGR48,   { 2, 1, 0, 3 } },
+    { VideoFormat::Format_BGR555,  { 2, 1, 0, 3 } },
 
     // TODO: rgb444le/be etc
 
-    { VideoFormat::Format_Invalid,{1, 2, 3   } }
+    { VideoFormat::Format_Invalid, { 1, 2, 3    } }
 };
 
 static QMatrix4x4 channelMap(const VideoFormat& fmt)
 {
-    if (fmt.isPlanar()) //currently only for planar
+    if (fmt.isPlanar())         // currently only for planar
         return QMatrix4x4();
 
     switch (fmt.pixelFormat())
     {
         case VideoFormat::Format_UYVY:
+        {
             return QMatrix4x4(0.0f, 0.5f, 0.0f, 0.5f,
                               1.0f, 0.0f, 0.0f, 0.0f,
                               0.0f, 0.0f, 1.0f, 0.0f,
                               0.0f, 0.0f, 0.0f, 1.0f);
+        }
 
         case VideoFormat::Format_YUYV:
+        {
             return QMatrix4x4(0.5f, 0.0f, 0.5f, 0.0f,
                               0.0f, 1.0f, 0.0f, 0.0f,
                               0.0f, 0.0f, 0.0f, 1.0f,
                               0.0f, 0.0f, 0.0f, 1.0f);
+        }
 
         case VideoFormat::Format_VYUY:
+        {
             return QMatrix4x4(0.0f, 0.5f, 0.0f, 0.5f,
                               0.0f, 0.0f, 1.0f, 0.0f,
                               1.0f, 0.0f, 0.0f, 0.0f,
                               0.0f, 0.0f, 0.0f, 1.0f);
+        }
 
         case VideoFormat::Format_YVYU:
+        {
             return QMatrix4x4(0.5f, 0.0f, 0.5f, 0.0f,
                               0.0f, 0.0f, 0.0f, 1.0f,
                               0.0f, 1.0f, 0.0f, 0.0f,
                               0.0f, 0.0f, 0.0f, 1.0f);
+        }
 
         case VideoFormat::Format_VYU:
+        {
             return QMatrix4x4(0.0f, 1.0f, 0.0f, 0.0f,
                               0.0f, 0.0f, 1.0f, 0.0f,
                               1.0f, 0.0f, 0.0f, 0.0f,
                               0.0f, 0.0f, 0.0f, 1.0f);
+        }
 
         default:
+        {
             break;
+        }
     }
 
-    const quint8* channels = nullptr; // { 0, 1, 2, 3};
+    const quint8* channels = nullptr; // { 0, 1, 2, 3 };
 
     for (int i = 0 ; gl_channel_maps[i].pixfmt != VideoFormat::Format_Invalid ; ++i)
     {
@@ -872,36 +911,36 @@ bool videoFormatToGL(const VideoFormat& fmt, GLint* internal_format, GLenum* dat
 
     static const fmt_entry pixfmt_to_gles[] =
     {
-        { VideoFormat::Format_BGRA32,  GL_BGRA, GL_BGRA, GL_UNSIGNED_BYTE }, // tested for angle
-        { VideoFormat::Format_RGB32,   GL_BGRA, GL_BGRA, GL_UNSIGNED_BYTE },
-        { VideoFormat::Format_Invalid, 0,       0,       0                }
+        { VideoFormat::Format_BGRA32,  GL_BGRA, GL_BGRA, GL_UNSIGNED_BYTE               }, // tested for angle
+        { VideoFormat::Format_RGB32,   GL_BGRA, GL_BGRA, GL_UNSIGNED_BYTE               },
+        { VideoFormat::Format_Invalid, 0,       0,       0                              }
     };
 
     Q_UNUSED(pixfmt_to_gles);
 
     static const fmt_entry pixfmt_to_desktop[] =
     {
-        { VideoFormat::Format_BGRA32, GL_RGBA, GL_BGRA, GL_UNSIGNED_BYTE }, // bgra works on win but not macOS
-        { VideoFormat::Format_RGB32,  GL_RGBA, GL_BGRA, GL_UNSIGNED_BYTE }, // FIXME: endian check
+        { VideoFormat::Format_BGRA32,  GL_RGBA, GL_BGRA, GL_UNSIGNED_BYTE               }, // bgra works on win but not macOS
+        { VideoFormat::Format_RGB32,   GL_RGBA, GL_BGRA, GL_UNSIGNED_BYTE               }, // FIXME: endian check
 /*
-        { VideoFormat::Format_BGRA32, GL_RGBA, GL_RGBA, GL_UNSIGNED_BYTE }, // { 2, 1, 0, 3 }
-        { VideoFormat::Format_BGR24,  GL_RGB,  GL_BGR,  GL_UNSIGNED_BYTE }, // { 0, 1, 2, 3 }
+        { VideoFormat::Format_BGRA32,  GL_RGBA, GL_RGBA, GL_UNSIGNED_BYTE               }, // { 2, 1, 0, 3 }
+        { VideoFormat::Format_BGR24,   GL_RGB,  GL_BGR,  GL_UNSIGNED_BYTE               }, // { 0, 1, 2, 3 }
 */
 #ifdef GL_UNSIGNED_SHORT_5_6_5_REV
 
-        { VideoFormat::Format_BGR565, GL_RGB,  GL_RGB,  GL_UNSIGNED_SHORT_5_6_5_REV     }, // es error, use channel map
+        { VideoFormat::Format_BGR565,  GL_RGB,  GL_RGB,  GL_UNSIGNED_SHORT_5_6_5_REV    }, // es error, use channel map
 
 #endif
 
 #ifdef GL_UNSIGNED_SHORT_1_5_5_5_REV
 
-        { VideoFormat::Format_RGB555, GL_RGBA, GL_BGRA, GL_UNSIGNED_SHORT_1_5_5_5_REV   },
+        { VideoFormat::Format_RGB555,  GL_RGBA, GL_BGRA, GL_UNSIGNED_SHORT_1_5_5_5_REV  },
 
 #endif
 
 #ifdef GL_UNSIGNED_SHORT_1_5_5_5_REV
 
-        { VideoFormat::Format_BGR555, GL_RGBA, GL_RGBA, GL_UNSIGNED_SHORT_1_5_5_5_REV   },
+        { VideoFormat::Format_BGR555,  GL_RGBA, GL_RGBA, GL_UNSIGNED_SHORT_1_5_5_5_REV  },
 
 #endif
 
@@ -1002,16 +1041,16 @@ bool videoFormatToGL(const VideoFormat& fmt, GLint* internal_format, GLenum* dat
         }
     }
 
-    GLint *i_f          = internal_format;
-    GLenum *d_f         = data_format;
-    GLenum *d_t         = data_type;
+    GLint* i_f          = internal_format;
+    GLenum* d_f         = data_format;
+    GLenum* d_t         = data_type;
     gl_param_t* gp      = (gl_param_t*)get_gl_param();
     const int nb_planes = fmt.planeCount();
 
-    if (gp == gl_param_3r16 &&
+    if ((gp == gl_param_3r16) &&
         (
          // nb_planes == 2 || // nv12 UV plane is 16bit, but we use rg
-         (OpenGLHelper::depth16BitTexture() == 16 && OpenGLHelper::has16BitTexture() && fmt.isBigEndian() && fmt.bitsPerComponent() > 8) // 16bit texture does not support be channel now
+         ((OpenGLHelper::depth16BitTexture() == 16 && OpenGLHelper::has16BitTexture()) && fmt.isBigEndian() && fmt.bitsPerComponent() > 8) // 16bit texture does not support be channel now
         )
        )
     {
@@ -1038,7 +1077,7 @@ bool videoFormatToGL(const VideoFormat& fmt, GLint* internal_format, GLenum* dat
         *(d_t++) = f.type;
     }
 
-    if (nb_planes > 2 && data_format[2] == GL_LUMINANCE && fmt.bytesPerPixel(1) == 1)
+    if ((nb_planes > 2) && (data_format[2] == GL_LUMINANCE) && (fmt.bytesPerPixel(1) == 1))
     {
         // QtAV uses the same shader for planar and semi-planar yuv format
 
@@ -1138,7 +1177,7 @@ int bytesOfGLFormat(GLenum format, GLenum dataType) // TODO: rename bytesOfTexel
 
         case GL_RG:
         case GL_LUMINANCE_ALPHA:
-            return 2*component_size;
+            return 2 * component_size;
 
 #ifdef GL_YCBCR_422_APPLE
 
@@ -1161,7 +1200,7 @@ int bytesOfGLFormat(GLenum format, GLenum dataType) // TODO: rename bytesOfTexel
 #endif
 
         case GL_RGB:
-            return 3*component_size;
+            return 3 * component_size;
 
 #ifdef GL_BGRA // ifndef GL_ES
 
@@ -1170,7 +1209,7 @@ int bytesOfGLFormat(GLenum format, GLenum dataType) // TODO: rename bytesOfTexel
 #endif
 
         case GL_RGBA:
-            return 4*component_size;
+            return 4 * component_size;
 
         default:
             qCWarning(DIGIKAM_QTAV_LOG_WARN).noquote()

@@ -357,19 +357,19 @@ QTAV_EXPORT QDebug operator<<(QDebug dbg, Uniform::Type ut);
 QVector<Uniform> ParseUniforms(const QByteArray &text, GLuint programId = 0)
 {
     QVector<Uniform> uniforms;
-    const QString code = OpenGLHelper::removeComments(QString::fromLatin1(text));
+    const QString code      = OpenGLHelper::removeComments(QString::fromLatin1(text));
     const QStringList lines = code.split(QLatin1Char(';'));
 
     // TODO: highp lowp etc.
 
-    const QString exp(QStringLiteral("\\s*uniform\\s+([\\w\\d]+)\\s+([\\w\\d]+)\\s*"));
-    const QString exp_array = exp + QStringLiteral("\\[(\\d+)\\]\\s*");
+    const QString exp(QString::fromUtf8("\\s*uniform\\s+([\\w\\d]+)\\s+([\\w\\d]+)\\s*"));
+    const QString exp_array = exp + QString::fromUtf8("\\[(\\d+)\\]\\s*");
 
     Q_FOREACH (QString line, lines)
     {
         line = line.trimmed();
 
-        if (!line.startsWith(QStringLiteral("uniform ")))
+        if (!line.startsWith(QLatin1String("uniform ")))
             continue;
 
 #if QT_VERSION >= QT_VERSION_CHECK(6, 0, 0)
