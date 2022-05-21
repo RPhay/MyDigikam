@@ -132,7 +132,8 @@ void VideoRenderer::forcePreferredPixelFormat(bool force)
 
     if (!onForcePreferredPixelFormat(force))
     {
-        qCWarning(DIGIKAM_QTAV_LOG_WARN).noquote() << QString::asprintf("onForcePreferredPixelFormat failed");
+        qCWarning(DIGIKAM_QTAV_LOG_WARN).noquote()
+            << QString::asprintf("onForcePreferredPixelFormat failed");
 
         d.force_preferred = old;
     }

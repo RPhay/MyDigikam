@@ -38,7 +38,7 @@ QPainterRenderer::QPainterRenderer()
     d.filter_context = VideoFilterContext::create(VideoFilterContext::QtPainter);
 }
 
-QPainterRenderer::QPainterRenderer(QPainterRendererPrivate &d)
+QPainterRenderer::QPainterRenderer(QPainterRendererPrivate& d)
     : VideoRenderer(d)
 {
     d.filter_context = VideoFilterContext::create(VideoFilterContext::QtPainter);
@@ -46,10 +46,10 @@ QPainterRenderer::QPainterRenderer(QPainterRendererPrivate &d)
 
 bool QPainterRenderer::isSupported(VideoFormat::PixelFormat pixfmt) const
 {
-    return VideoFormat::imageFormatFromPixelFormat(pixfmt) != QImage::Format_Invalid;
+    return (VideoFormat::imageFormatFromPixelFormat(pixfmt) != QImage::Format_Invalid);
 }
 
-bool QPainterRenderer::preparePixmap(const VideoFrame &frame)
+bool QPainterRenderer::preparePixmap(const VideoFrame& frame)
 {
     DPTR_D(QPainterRenderer);
 
@@ -74,7 +74,7 @@ bool QPainterRenderer::preparePixmap(const VideoFrame &frame)
         }
     }
 
-    const bool swapRGB = (int)imgfmt < 0;
+    const bool swapRGB = ((int)imgfmt < 0);
 
     if (swapRGB)
     {

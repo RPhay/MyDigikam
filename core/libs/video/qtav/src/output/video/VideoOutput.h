@@ -79,14 +79,14 @@ public:
     explicit VideoOutput(VideoRendererId rendererId, QObject* const parent = nullptr);
     ~VideoOutput();
 
-    VideoRendererId id() const                                              override;
+    VideoRendererId id()                                              const override;
 
-    VideoFormat::PixelFormat preferredPixelFormat() const                   override;
-    bool isSupported(VideoFormat::PixelFormat pixfmt) const                 override;
+    VideoFormat::PixelFormat preferredPixelFormat()                   const override;
+    bool isSupported(VideoFormat::PixelFormat pixfmt)                 const override;
     QWindow* qwindow()                                                      override final;
     QWidget* widget()                                                       override final;
     QGraphicsItem* graphicsItem()                                           override final;
-    OpenGLVideo* opengl() const                                             override;
+    OpenGLVideo* opengl()                                             const override;
 
     DECLARE_VIDEO_RENDERER_SIGNALS
 
@@ -108,8 +108,8 @@ private:
     virtual bool onSetOrientation(int value)                                override;
     virtual void onResizeRenderer(int width, int height)                    override;
     virtual bool onSetRegionOfInterest(const QRectF& roi)                   override;
-    virtual QPointF onMapToFrame(const QPointF& p) const                    override;
-    virtual QPointF onMapFromFrame(const QPointF& p) const                  override;
+    virtual QPointF onMapToFrame(const QPointF& p)                    const override;
+    virtual QPointF onMapFromFrame(const QPointF& p)                  const override;
 
     virtual bool onSetBrightness(qreal brightness)                          override;
     virtual bool onSetContrast(qreal contrast)                              override;

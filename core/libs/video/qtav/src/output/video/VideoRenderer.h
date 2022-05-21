@@ -37,6 +37,9 @@
 #include "AVOutput.h"
 #include "VideoFrame.h"
 
+/**
+ " property change: helper macro to declare signals in subclasses.
+ */
 #define DECLARE_VIDEO_RENDERER_SIGNALS          \
 Q_SIGNALS:                                      \
     void sourceAspectRatioChanged(qreal value); \
@@ -54,6 +57,9 @@ Q_SIGNALS:                                      \
     void contentRectChanged();                  \
     void rendererSizeChanged();
 
+/**
+ " property change: helper macro to declare pure virtual emit methods in subclasses.
+ */
 #define DECLARE_VIDEO_RENDERER_EMIT_METHODS             \
 private:                                                \
     void emitSourceAspectRatioChanged(qreal) override;  \
@@ -71,7 +77,10 @@ private:                                                \
     void emitSaturationChanged(qreal)        override;  \
     void emitBackgroundColorChanged()        override;
 
-#define IMPLEMENT_VIDEO_RENDERER_EMIT_METHODS(ClassName) \
+/**
+ " property change: helper macro to re-implement pure virtual emit methods in subclasses.
+ */
+#define IMPLEMENT_VIDEO_RENDERER_EMIT_METHODS(ClassName)                                          \
 void ClassName::emitSourceAspectRatioChanged(qreal v) { Q_EMIT sourceAspectRatioChanged(v);   }   \
 void ClassName::emitOutAspectRatioChanged()           { Q_EMIT outAspectRatioChanged();       }   \
 void ClassName::emitOutAspectRatioModeChanged()       { Q_EMIT outAspectRatioModeChanged();   }   \

@@ -122,11 +122,7 @@ void OpenGLRendererBase::onInitializeGL()
 
     //makeCurrent();
 
-#if QT_VERSION >= QT_VERSION_CHECK(4, 8, 0)
-
     initializeOpenGLFunctions();
-
-#endif
 
     QOpenGLContext* ctx = const_cast<QOpenGLContext*>(QOpenGLContext::currentContext()); //qt4 returns const
     d.glv.setOpenGLContext(ctx);

@@ -58,7 +58,7 @@ class QTAV_EXPORT OpenGLWindowRenderer : public QOpenGLWindow,
 
 public:
 
-    explicit OpenGLWindowRenderer(UpdateBehavior updateBehavior = NoPartialUpdate, QWindow *parent = nullptr);
+    explicit OpenGLWindowRenderer(UpdateBehavior updateBehavior = NoPartialUpdate, QWindow* const parent = nullptr);
     virtual VideoRendererId id() const              override;
 
     QWindow* qwindow()                              override final
@@ -73,8 +73,8 @@ protected:
     virtual void initializeGL()                     override;
     virtual void paintGL()                          override;
     virtual void resizeGL(int w, int h)             override;
-    virtual void resizeEvent(QResizeEvent *)        override;
-    virtual void showEvent(QShowEvent *)            override;
+    virtual void resizeEvent(QResizeEvent*)         override;
+    virtual void showEvent(QShowEvent*)             override;
 
     DECLARE_VIDEO_RENDERER_EMIT_METHODS
 };

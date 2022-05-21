@@ -42,13 +42,13 @@ class Q_DECL_HIDDEN OpenGLWindowRendererPrivate : public OpenGLRendererBasePriva
 {
 public:
 
-    explicit OpenGLWindowRendererPrivate(QPaintDevice* pd)
+    explicit OpenGLWindowRendererPrivate(QPaintDevice* const pd)
         : OpenGLRendererBasePrivate(pd)
     {
     }
 };
 
-OpenGLWindowRenderer::OpenGLWindowRenderer(UpdateBehavior updateBehavior, QWindow* parent)
+OpenGLWindowRenderer::OpenGLWindowRenderer(UpdateBehavior updateBehavior, QWindow* const parent)
     : QOpenGLWindow(updateBehavior, parent)
     , OpenGLRendererBase(*new OpenGLWindowRendererPrivate(this))
 {

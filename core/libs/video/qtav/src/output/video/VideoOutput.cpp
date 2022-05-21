@@ -59,7 +59,7 @@ public:
 
 #elif defined(Q_OS_WIN)
 
-            avwidgets.setFileName(String::fromLatin1("QtAVWidgets")
+            avwidgets.setFileName(QString::fromLatin1("QtAVWidgets")
 
 #   ifndef QT_NO_DEBUG
 
@@ -77,7 +77,7 @@ public:
 
             qCDebug(DIGIKAM_QTAV_LOG)
                 << "Loading QtAVWidgets module: "
-                    << avwidgets.fileName();
+                << avwidgets.fileName();
 
             if (!avwidgets.load())
             {
@@ -150,7 +150,7 @@ public:
         }
     }
 
-    VideoRenderer* impl;
+    VideoRenderer* impl = nullptr;
     QLibrary       avwidgets;
 };
 
