@@ -43,8 +43,8 @@ AVOutput::AVOutput()
 {
 }
 
-AVOutput::AVOutput(AVOutputPrivate &d)
-    :DPTR_INIT(&d)
+AVOutput::AVOutput(AVOutputPrivate& d)
+    : DPTR_INIT(&d)
 {
 }
 
@@ -60,7 +60,7 @@ AVOutput::~AVOutput()
         d.filter_context = nullptr;
     }
 
-    Q_FOREACH (Filter* f, d.pending_uninstall_filters)
+    Q_FOREACH (Filter* const f, d.pending_uninstall_filters)
     {
         d.filters.removeAll(f);
     }
@@ -126,17 +126,17 @@ bool AVOutput::tryPause()
     return true;
 }
 
-void AVOutput::addOutputSet(OutputSet *set)
+void AVOutput::addOutputSet(OutputSet* set)
 {
     d_func().output_sets.append(set);
 }
 
-void AVOutput::removeOutputSet(OutputSet *set)
+void AVOutput::removeOutputSet(OutputSet* set)
 {
     d_func().output_sets.removeAll(set);
 }
 
-void AVOutput::attach(OutputSet *set)
+void AVOutput::attach(OutputSet* set)
 {
     set->addOutput(this);
 }
@@ -152,7 +152,7 @@ void AVOutput::detach(OutputSet* set)
         return;
     }
 
-    Q_FOREACH (OutputSet* set2, d.output_sets)
+    Q_FOREACH (OutputSet* const set2, d.output_sets)
     {
         set2->removeOutput(this);
     }
@@ -170,12 +170,12 @@ void AVOutput::setStatistics(Statistics *statistics)
     d.statistics = statistics;
 }
 
-bool AVOutput::installFilter(Filter *filter, int index)
+bool AVOutput::installFilter(Filter* filter, int index)
 {
     return onInstallFilter(filter, index);
 }
 
-bool AVOutput::onInstallFilter(Filter *filter, int index)
+bool AVOutput::onInstallFilter(Filter* filter, int index)
 {
     if (!FilterManager::instance().registerFilter(filter, this, index))
     {
@@ -194,12 +194,12 @@ bool AVOutput::onInstallFilter(Filter *filter, int index)
  * an audio filter on audio output may be in audio thread
  */
 
-bool AVOutput::uninstallFilter(Filter *filter)
+bool AVOutput::uninstallFilter(Filter* filter)
 {
     return onUninstallFilter(filter);
 }
 
-bool AVOutput::onUninstallFilter(Filter *filter)
+bool AVOutput::onUninstallFilter(Filter* filter)
 {
     DPTR_D(AVOutput);
 
@@ -221,7 +221,7 @@ bool AVOutput::onHanlePendingTasks()
     if (d.pending_uninstall_filters.isEmpty())
         return false;
 
-    Q_FOREACH (Filter *filter, d.pending_uninstall_filters)
+    Q_FOREACH (Filter* const filter, d.pending_uninstall_filters)
     {
         d.filters.removeAll(filter);
     }

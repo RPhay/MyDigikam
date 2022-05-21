@@ -51,10 +51,10 @@ class QTAV_PRIVATE_EXPORT AVOutputPrivate : public DPtrPrivate<AVOutput>
 public:
 
     AVOutputPrivate()
-      : paused(false)
-      , available(true)
-      , statistics(nullptr)
-      , filter_context(nullptr)
+      : paused        (false),
+        available     (true),
+        statistics    (nullptr),
+        filter_context(nullptr)
     {
     }
 

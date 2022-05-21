@@ -75,8 +75,8 @@ public:
      * \param index A nagative index == size() + index. If index >= size(), append at last
      * \return false if already installed
      */
-    bool installFilter(Filter *filter, int index = 0x7fffffff);
-    bool uninstallFilter(Filter *filter);
+    bool installFilter(Filter* filter, int index = 0x7fffffff);
+    bool uninstallFilter(Filter* filter);
 
 protected:
 
@@ -90,10 +90,10 @@ protected:
 
     // TODO: we need an active set
 
-    void addOutputSet(OutputSet *set);
-    void removeOutputSet(OutputSet *set);
-    void attach(OutputSet *set);                // add this to set
-    void detach(OutputSet *set = nullptr);      // detatch from (all, if 0) output set(s)
+    void addOutputSet(OutputSet* set);
+    void removeOutputSet(OutputSet* set);
+    void attach(OutputSet* set);                // add this to set
+    void detach(OutputSet* set = nullptr);      // detatch from (all, if 0) output set(s)
 
     // for thread safe
 
@@ -106,8 +106,8 @@ private:
     // for proxy VideoOutput
 
     virtual void setStatistics(Statistics* statistics); // called by friend AVPlayerCore
-    virtual bool onInstallFilter(Filter *filter, int index);
-    virtual bool onUninstallFilter(Filter *filter);
+    virtual bool onInstallFilter(Filter* filter, int index);
+    virtual bool onUninstallFilter(Filter* filter);
 
     // only called in handlePaintEvent. But filters may change. so required by proxy to update it's filters
 

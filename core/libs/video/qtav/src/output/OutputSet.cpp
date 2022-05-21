@@ -32,10 +32,10 @@ namespace QtAV
 {
 
 OutputSet::OutputSet(AVPlayerCore* const player)
-    : QObject(player),
+    : QObject        (player),
       mCanPauseThread(false),
-      mpPlayer(player),
-      mPauseCount(0)
+      mpPlayer       (player),
+      mPauseCount    (0)
 {
 }
 

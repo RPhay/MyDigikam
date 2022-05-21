@@ -101,7 +101,7 @@ private:
 
     volatile bool    mCanPauseThread;
     AVPlayerCore*    mpPlayer;
-    int              mPauseCount;   // pause AVThread if equals to mOutputs.size()
+    int              mPauseCount;   ///< pause AVThread if equals to mOutputs.size()
     QList<AVOutput*> mOutputs;
     QMutex           mMutex;
     QWaitCondition   mCond;         // pause
