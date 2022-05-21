@@ -137,14 +137,14 @@ public:
 
     VideoDecoderVideoToolboxPrivate()
         : VideoDecoderFFmpegHWPrivate(),
-          out_fmt(VideoDecoderVideoToolbox::NV12),
+          out_fmt     (VideoDecoderVideoToolbox::NV12),
           interop_type(cv::InteropAuto)
     {
         if (kCFCoreFoundationVersionNumber < kCFCoreFoundationVersionNumber10_7)
             out_fmt = VideoDecoderVideoToolbox::UYVY;
 
         copy_mode   = VideoDecoderFFmpegHW::ZeroCopy;
-        description = QStringLiteral("VideoToolbox");
+        description = QLatin1String("VideoToolbox");
     }
 
     ~VideoDecoderVideoToolboxPrivate()
@@ -170,8 +170,8 @@ public:
 
 typedef struct
 {
-    int         code;
-    const char* str;
+    int         code = 0;
+    const char* str  = nullptr;
 } cv_error;
 
 static const cv_error cv_errors[] =
@@ -244,7 +244,7 @@ VideoDecoderId VideoDecoderVideoToolbox::id() const
 
 QString VideoDecoderVideoToolbox::description() const
 {
-    return QStringLiteral("Apple VideoToolbox");
+    return QLatin1String("Apple VideoToolbox");
 }
 
 VideoFrame VideoDecoderVideoToolbox::frame()
@@ -333,10 +333,10 @@ VideoFrame VideoDecoderVideoToolbox::frame()
 
             cv::SurfaceInteropCV* const interop = new cv::SurfaceInteropCV(d.interop_res);
             interop->setSurface(cv_buffer, d.width, d.height);
-            f.setMetaData(QStringLiteral("surface_interop"), QVariant::fromValue(VideoSurfaceInteropPtr(interop)));
+            f.setMetaData(QLatin1String("surface_interop"), QVariant::fromValue(VideoSurfaceInteropPtr(interop)));
 
             if (!d.interop_res->mapToTexture2D())
-                f.setMetaData(QStringLiteral("target"), QByteArrayLiteral("rect"));
+                f.setMetaData(QLatin1String("target"), QByteArray("rect"));
         }
         else
         {
@@ -395,10 +395,11 @@ void* VideoDecoderVideoToolboxPrivate::setup(AVCodecContext* avctx)
 {
     releaseUSWC();
     av_videotoolbox_default_free(avctx);
-    AVVideotoolboxContext* vtctx = av_videotoolbox_alloc_context();
-    vtctx->cv_pix_fmt_type       = out_fmt;
+    AVVideotoolboxContext* const vtctx = av_videotoolbox_alloc_context();
+    vtctx->cv_pix_fmt_type             = out_fmt;
 
     qCDebug(DIGIKAM_QTAV_LOG).noquote() << QString::asprintf("AVVideotoolboxContext: %p", vtctx);
+
     int err = av_videotoolbox_default_init2(avctx, vtctx); // ios h264 crashes when processing extra data. null H264Context
 
     if (err < 0)

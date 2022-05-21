@@ -444,7 +444,7 @@ bool SubtitleProcessorFFmpeg::processHeader(const QByteArray& codec, const QByte
         return false;
     }
 
-    return true; // codec != QByteArrayLiteral("ass") && codec != QByteArrayLiteral("ssa");
+    return true; // codec != QByteArray("ass") && codec != QByteArray("ssa");
 }
 
 SubtitleFrame SubtitleProcessorFFmpeg::processLine(const QByteArray& data, qreal pts, qreal duration)

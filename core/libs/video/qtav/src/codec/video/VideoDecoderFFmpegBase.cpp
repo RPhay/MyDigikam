@@ -137,11 +137,11 @@ void VideoDecoderFFmpegBasePrivate::updateColorDetails(VideoFrame* f)
     }
 }
 
-qreal VideoDecoderFFmpegBasePrivate::getDAR(AVFrame *f)
+qreal VideoDecoderFFmpegBasePrivate::getDAR(AVFrame* f)
 {
     // lavf 54.5.100 av_guess_sample_aspect_ratio: stream.sar > frame.sar
 
-    qreal dar = 0;
+    qreal dar = 0.0;
 
     if (f->height > 0)
         dar = (qreal)f->width / (qreal)f->height;
@@ -150,7 +150,7 @@ qreal VideoDecoderFFmpegBasePrivate::getDAR(AVFrame *f)
 
     if      (f->sample_aspect_ratio.num > 1)
         dar *= av_q2d(f->sample_aspect_ratio);
-    else if (codec_ctx && codec_ctx->sample_aspect_ratio.num > 1) // skip 1/1
+    else if (codec_ctx && (codec_ctx->sample_aspect_ratio.num > 1)) // skip 1/1
         dar *= av_q2d(codec_ctx->sample_aspect_ratio);
 
     return dar;
@@ -243,12 +243,12 @@ VideoFrame VideoDecoderFFmpegBase::frame()
     // in s. TODO: what about AVFrame.pts? av_frame_get_best_effort_timestamp? move to VideoFrame::from(AVFrame*)
 
     frame.setTimestamp((double)d.frame->pkt_pts / 1000.0);
-    frame.setMetaData(QStringLiteral("avbuf"), QVariant::fromValue(AVFrameBuffersRef(new AVFrameBuffers(d.frame))));
+    frame.setMetaData(QLatin1String("avbuf"), QVariant::fromValue(AVFrameBuffersRef(new AVFrameBuffers(d.frame))));
     d.updateColorDetails(&frame);
 
     if (frame.format().hasPalette())
     {
-        frame.setMetaData(QStringLiteral("pallete"), QByteArray((const char*)d.frame->data[1], 256*4));
+        frame.setMetaData(QLatin1String("pallete"), QByteArray((const char*)d.frame->data[1], 256 * 4));
     }
 
     return frame;

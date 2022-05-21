@@ -309,7 +309,7 @@ void setOptionsToFFmpegObj(const QVariant& opt, void* obj)
     if (c)
     {
         qCDebug(DIGIKAM_QTAV_LOG)
-            << QStringLiteral("%1.%2 options:")
+            << QString::fromUtf8("%1.%2 options:")
                 .arg(QLatin1String(c->class_name))
                 .arg(QLatin1String(c->item_name(obj)));
     }

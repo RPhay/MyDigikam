@@ -57,7 +57,7 @@ typedef struct ffmpeg_va_ref_t
     void*                        opaque = nullptr;           // va surface from AVFrame.opaque
 } ffmpeg_va_ref_t;
 
-static void ffmpeg_release_va_buffer2(void* opaque, uint8_t *data)
+static void ffmpeg_release_va_buffer2(void* opaque, uint8_t* data)
 {
     ffmpeg_va_ref_t* const ref = (ffmpeg_va_ref_t*)opaque;
     ref->va->releaseBuffer(ref->opaque, data);
@@ -345,14 +345,14 @@ void VideoDecoderFFmpegHWPrivate::releaseUSWC()
 VideoDecoderFFmpegHW::VideoDecoderFFmpegHW(VideoDecoderFFmpegHWPrivate& d):
     VideoDecoderFFmpegBase(d)
 {
-    setProperty("detail_copyMode", QStringLiteral("%1. %2\n%3. %4\n%5\n%6")
+    setProperty("detail_copyMode", QString::fromUtf8("%1. %2\n%3. %4\n%5\n%6")
                 .arg(i18n("ZeroCopy: fastest. Direct rendering without data copy between CPU and GPU"))
                 .arg(i18n("Not implemented for all codecs"))
                 .arg(i18n("Not implemented for all codecs"))
                 .arg(i18n("OptimizedCopy: copy from USWC memory optimized by SSE4.1"))
                 .arg(i18n("GenericCopy: slowest. Generic cpu copy")));
 
-    setProperty("detail_threads", QStringLiteral("%1\n%2\n%3\n%4")
+    setProperty("detail_threads", QString::fromUtf8("%1\n%2\n%3\n%4")
                 .arg(i18n("Number of decoding threads. Set before open. Maybe no effect for some decoders"))
                 .arg(i18n("Multithread decoding may crash"))
                 .arg(i18n("0: auto"))
@@ -401,7 +401,8 @@ VideoDecoderFFmpegHW::CopyMode VideoDecoderFFmpegHW::copyMode() const
     return d_func().copy_mode;
 }
 
-VideoFrame VideoDecoderFFmpegHW::copyToFrame(const VideoFormat& fmt, int surface_h, quint8* src[], int pitch[], bool swapUV)
+VideoFrame VideoDecoderFFmpegHW::copyToFrame(const VideoFormat& fmt, int surface_h,
+                                             quint8* src[], int pitch[], bool swapUV)
 {
     DPTR_D(VideoDecoderFFmpegHW);
 
@@ -455,7 +456,7 @@ VideoFrame VideoDecoderFFmpegHW::copyToFrame(const VideoFormat& fmt, int surface
 
         // plane 1, 2... is aligned?
 
-        uchar* plane_ptr = (uchar*)buf.data() + offset_16;
+        uchar* plane_ptr    = (uchar*)buf.data() + offset_16;
         QVector<uchar*> dst(nb_planes, 0);
 
         for (int i = 0 ; i < nb_planes ; ++i)

@@ -183,7 +183,7 @@ VideoDecoderId VideoDecoderMediaCodec::id() const
 
 QString VideoDecoderMediaCodec::description() const
 {
-    return QStringLiteral("MediaCodec");
+    return QLatin1String("MediaCodec");
 }
 
 static void av_mediacodec_render_buffer(void* buf)
@@ -215,7 +215,7 @@ VideoFrame VideoDecoderMediaCodec::frame()
         // in s. TODO: what about AVFrame.pts? av_frame_get_best_effort_timestamp? move to VideoFrame::from(AVFrame*)
 
         frame.setTimestamp((double)d.frame->pkt_pts / 1000.0);
-        frame.setMetaData(QStringLiteral("avbuf"), QVariant::fromValue(AVFrameBuffersRef(new AVFrameBuffers(d.frame))));
+        frame.setMetaData(QLatin1String("avbuf"), QVariant::fromValue(AVFrameBuffersRef(new AVFrameBuffers(d.frame))));
         d.updateColorDetails(&frame);
 
         return frame;
@@ -260,12 +260,12 @@ VideoFrame VideoDecoderMediaCodec::frame()
 
     assert(d.frame->buf[0] && d.frame->data[3] && "No AVMediaCodecBuffer or ref in AVFrame");
 
-    AVBufferRef* bufref                  = av_buffer_ref(d.frame->buf[0]);
-    AVMediaCodecBuffer* mcbuf            = (AVMediaCodecBuffer*)d.frame->data[3];
-    MdkMediaCodecTextureAPI::Texture* mt = d.api_->texture_pool_feed_avbuffer(d.pool_, d.frame->width, d.frame->height, av_mediacodec_buffer_unref, bufref, av_mediacodec_render_buffer, mcbuf);
+    AVBufferRef* const bufref                  = av_buffer_ref(d.frame->buf[0]);
+    AVMediaCodecBuffer* const mcbuf            = (AVMediaCodecBuffer*)d.frame->data[3];
+    MdkMediaCodecTextureAPI::Texture* const mt = d.api_->texture_pool_feed_avbuffer(d.pool_, d.frame->width, d.frame->height, av_mediacodec_buffer_unref, bufref, av_mediacodec_render_buffer, mcbuf);
 
-    MediaCodecTextureInterop* interop    = new MediaCodecTextureInterop(d.api_, mt);
-    frame.setMetaData(QStringLiteral("surface_interop"), QVariant::fromValue(VideoSurfaceInteropPtr((interop))));
+    MediaCodecTextureInterop* const interop    = new MediaCodecTextureInterop(d.api_, mt);
+    frame.setMetaData(QLatin1String("surface_interop"), QVariant::fromValue(VideoSurfaceInteropPtr((interop))));
 
 #   endif
 

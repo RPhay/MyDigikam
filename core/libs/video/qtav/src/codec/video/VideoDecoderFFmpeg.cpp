@@ -97,8 +97,8 @@ public:
     enum ThreadFlag
     {
         DefaultType = FF_THREAD_SLICE | FF_THREAD_FRAME, // default
-        Slice = FF_THREAD_SLICE,
-        Frame = FF_THREAD_FRAME
+        Slice       = FF_THREAD_SLICE,
+        Frame       = FF_THREAD_FRAME
     };
     Q_DECLARE_FLAGS(ThreadFlags, ThreadFlag)
     Q_ENUM(ThreadFlag)
@@ -202,8 +202,8 @@ public:
     {
         const int patch = QTAV_VERSION_PATCH(avcodec_version());
 
-        return QStringLiteral("%1 avcodec %2.%3.%4")
-                .arg(patch>=100?QStringLiteral("FFmpeg"):QStringLiteral("Libav"))
+        return QString::fromUtf8("%1 avcodec %2.%3.%4")
+                .arg(patch >= 100 ? QLatin1String("FFmpeg") : QLatin1String("Libav"))
                 .arg(QTAV_VERSION_MAJOR(avcodec_version())).arg(QTAV_VERSION_MINOR(avcodec_version())).arg(patch);
     }
 
@@ -272,13 +272,13 @@ public:
     VideoDecoderFFmpegPrivate()
       : VideoDecoderFFmpegBasePrivate(),
         skip_loop_filter(VideoDecoderFFmpeg::Default),
-        skip_idct(VideoDecoderFFmpeg::Default),
-        strict(VideoDecoderFFmpeg::Normal),
-        skip_frame(VideoDecoderFFmpeg::Default),
-        thread_type(VideoDecoderFFmpeg::DefaultType),
-        threads(0),
-        debug_mv(VideoDecoderFFmpeg::No),
-        bug(VideoDecoderFFmpeg::autodetect)
+        skip_idct       (VideoDecoderFFmpeg::Default),
+        strict          (VideoDecoderFFmpeg::Normal),
+        skip_frame      (VideoDecoderFFmpeg::Default),
+        thread_type     (VideoDecoderFFmpeg::DefaultType),
+        threads         (0),
+        debug_mv        (VideoDecoderFFmpeg::No),
+        bug             (VideoDecoderFFmpeg::autodetect)
     {
     }
 
@@ -380,7 +380,7 @@ VideoDecoderFFmpeg::VideoDecoderFFmpeg()
     setProperty("detail_skip_idct", i18n("Force skipping of idct to speed up decoding for frame types (-1=None, "
                                          "0=Default, 1=B-frames, 2=P-frames, 3=B+P frames, 4=all frames)"));
     setProperty("detail_skip_frame", i18n("Force skipping frames for speed up decoding."));
-    setProperty("detail_threads", QStringLiteral("%1\n%2\n%3")
+    setProperty("detail_threads", QString::fromUtf8("%1\n%2\n%3")
                 .arg(i18n("Number of decoding threads. Set before open. Maybe no effect for some decoders"))
                 .arg(i18n("0: auto"))
                 .arg(i18n("1: single thread decoding")));

@@ -218,7 +218,7 @@ void print_library_info()
 
 QString aboutFFmpeg_HTML()
 {
-    QString text                           = QStringLiteral("<h3>FFmpeg/Libav</h3>\n");
+    QString text                           = QLatin1String("<h3>FFmpeg/Libav</h3>\n");
     const Internal::depend_component* info = Internal::get_depend_component(nullptr);
 
     while (info)
