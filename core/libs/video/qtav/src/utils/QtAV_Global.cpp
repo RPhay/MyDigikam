@@ -53,8 +53,6 @@ unsigned QtAV_Version()
 
 QString QtAV_Version_String()
 {
-    // vs<2015: C2308: concatenating mismatched strings for QStringLiteral("a" "b")
-
     return QString::fromLatin1(QTAV_VERSION_STR);
 }
 
@@ -79,7 +77,7 @@ static int gAVLogLevel = AV_LOG_INFO;
 
 QString aboutFFmpeg_PlainText()
 {
-    return aboutFFmpeg_HTML().remove(QRegExp(QStringLiteral("<[^>]*>")));
+    return aboutFFmpeg_HTML().remove(QRegExp(QString::fromUtf8("<[^>]*>")));
 }
 
 namespace Internal
@@ -106,11 +104,10 @@ static unsigned get_qt_version()
 
 static const depend_component* get_depend_component(const depend_component* info = nullptr)
 {
-    // DO NOT use QStringLiteral here because the install script use strings to search "Qt-" in the library. QStringLiteral will place it in .ro and strings can not find it
 
 #if QT_VERSION >= QT_VERSION_CHECK(5, 3, 0)
 
-    static const char* qt_build_info = get_qt_version() >= QT_VERSION_CHECK(5, 3, 0) ? QLibraryInfo::build() : "";
+    static const char* qt_build_info = (get_qt_version() >= QT_VERSION_CHECK(5, 3, 0)) ? QLibraryInfo::build() : "";
 
 #else
 
@@ -187,24 +184,29 @@ void print_library_info()
     while (info)
     {
         if (!qstrcmp(info->lib, "avutil"))
-            qCDebug(DIGIKAM_QTAV_LOG).noquote() << QString::asprintf("FFmpeg/Libav configuration: %s", info->config);
+        {
+            qCDebug(DIGIKAM_QTAV_LOG).noquote()
+                << QString::asprintf("FFmpeg/Libav configuration: %s", info->config);
+        }
 
-        qCDebug(DIGIKAM_QTAV_LOG).noquote() << QString::asprintf("Build with %s-%u.%u.%u"
-               , info->lib
-               , QTAV_VERSION_MAJOR(info->build_version)
-               , QTAV_VERSION_MINOR(info->build_version)
-               , QTAV_VERSION_PATCH(info->build_version)
+        qCDebug(DIGIKAM_QTAV_LOG).noquote()
+            << QString::asprintf("Build with %s-%u.%u.%u",
+               info->lib,
+               QTAV_VERSION_MAJOR(info->build_version),
+               QTAV_VERSION_MINOR(info->build_version),
+               QTAV_VERSION_PATCH(info->build_version)
         );
 
         unsigned rt_version = info->rt_version;
 
         if (info->build_version != rt_version)
         {
-            qCWarning(DIGIKAM_QTAV_LOG_WARN).noquote() << QString::asprintf("Warning: %s runtime version %u.%u.%u mismatch!"
-                    , info->lib
-                    , QTAV_VERSION_MAJOR(rt_version)
-                    , QTAV_VERSION_MINOR(rt_version)
-                    , QTAV_VERSION_PATCH(rt_version)
+            qCWarning(DIGIKAM_QTAV_LOG_WARN).noquote()
+                << QString::asprintf("Warning: %s runtime version %u.%u.%u mismatch!",
+                    info->lib,
+                    QTAV_VERSION_MAJOR(rt_version),
+                    QTAV_VERSION_MINOR(rt_version),
+                    QTAV_VERSION_PATCH(rt_version)
             );
         }
 
@@ -221,7 +223,7 @@ QString aboutFFmpeg_HTML()
 
     while (info)
     {
-        text += QStringLiteral("<h4>%1: %2-%3.%4.%5</h4>\n")
+        text += QString::fromUtf8("<h4>%1: %2-%3.%4.%5</h4>\n")
                 .arg(i18n("Build version"))
                 .arg(QLatin1String(info->lib))
                 .arg(QTAV_VERSION_MAJOR(info->build_version))
@@ -233,7 +235,7 @@ QString aboutFFmpeg_HTML()
 
         if (info->build_version != rt_version)
         {
-            text += QStringLiteral("<h4 style='color:#ff0000;'>%1: %2.%3.%4</h4>\n")
+            text += QString::fromUtf8("<h4 style='color:#ff0000;'>%1: %2.%3.%4</h4>\n")
                     .arg(i18n("Runtime version"))
                     .arg(QTAV_VERSION_MAJOR(rt_version))
                     .arg(QTAV_VERSION_MINOR(rt_version))
@@ -241,7 +243,10 @@ QString aboutFFmpeg_HTML()
             ;
         }
 
-        text += QStringLiteral("<p>%1</p>\n<p>%2</p>\n").arg(QString::fromUtf8(info->config)).arg(QString::fromUtf8(info->license));
+        text += QString::fromUtf8("<p>%1</p>\n<p>%2</p>\n")
+            .arg(QString::fromUtf8(info->config))
+            .arg(QString::fromUtf8(info->license));
+
         info  = Internal::get_depend_component(info);
     }
 
@@ -250,7 +255,7 @@ QString aboutFFmpeg_HTML()
 
 QString aboutQtAV_PlainText()
 {
-    return aboutQtAV_HTML().remove(QRegExp(QStringLiteral("<[^>]*>")));
+    return aboutQtAV_HTML().remove(QRegExp(QString::fromUtf8("<[^>]*>")));
 }
 
 QString aboutQtAV_HTML()
@@ -347,7 +352,7 @@ QString avformatOptions()
 
 #else
 
-    AVInputFormat *i = nullptr;
+    AVInputFormat* i = nullptr;
     av_register_all();          // MUST register all input/output formats
 
     while ((i = av_iformat_next(i)))
@@ -360,7 +365,7 @@ QString avformatOptions()
         if (opt.isEmpty())
             continue;
 
-        opts.append(QStringLiteral("options for input format %1:\n%2\n\n")
+        opts.append(QString::fromUtf8("options for input format %1:\n%2\n\n")
                     .arg(QLatin1String(i->name))
                     .arg(opt));
     }
@@ -388,7 +393,7 @@ QString avformatOptions()
         if (opt.isEmpty())
             continue;
 
-        opts.append(QStringLiteral("options for output format %1:\n%2\n\n")
+        opts.append(QString::fromUtf8("options for output format %1:\n%2\n\n")
                     .arg(QLatin1String(o->name))
                     .arg(opt));
     }
@@ -429,7 +434,9 @@ QString avcodecOptions()
         if (opt.isEmpty())
             continue;
 
-        opts.append(QStringLiteral("Options for codec %1:\n%2\n\n").arg(QLatin1String(c->name)).arg(opt));
+        opts.append(QString::fromUtf8("Options for codec %1:\n%2\n\n")
+            .arg(QLatin1String(c->name))
+            .arg(opt));
     }
 
     return opts;
@@ -485,17 +492,27 @@ static void init_supported_codec_info()
         switch (cd->type)
         {
             case AVMEDIA_TYPE_AUDIO:
+            {
                 s_audio_mimes << list;
                 break;
+            }
 
             case AVMEDIA_TYPE_VIDEO:
+            {
                 s_video_mimes << list;
+                break;
+            }
 
             case AVMEDIA_TYPE_SUBTITLE:
+            {
                 s_subtitle_mimes << list;
+                break;
+            }
 
             default:
+            {
                 break;
+            }
         }
 
         cd = avcodec_descriptor_next(cd);

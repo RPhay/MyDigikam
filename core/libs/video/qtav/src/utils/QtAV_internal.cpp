@@ -25,11 +25,7 @@
 
 // Qt includes
 
-#if QT_VERSION < QT_VERSION_CHECK(5, 0, 0)
-#   include <QDesktopServices>
-#else
-#   include <QStandardPaths>
-#endif
+#include <QStandardPaths>
 
 #ifdef Q_OS_MAC
 #   include <CoreFoundation/CoreFoundation.h>
@@ -61,17 +57,17 @@ static QString fromCFString(CFStringRef string)
     if (!string)
         return QString();
 
-    CFIndex length = CFStringGetLength(string);
+    CFIndex length       = CFStringGetLength(string);
 
     // Fast path: CFStringGetCharactersPtr does not copy but may return null for any and no reason.
 
-    const UniChar *chars = CFStringGetCharactersPtr(string);
+    const UniChar* chars = CFStringGetCharactersPtr(string);
 
     if (chars)
-        return QString(reinterpret_cast<const QChar *>(chars), length);
+        return QString(reinterpret_cast<const QChar*>(chars), length);
 
     QString ret(length, Qt::Uninitialized);
-    CFStringGetCharacters(string, CFRangeMake(0, length), reinterpret_cast<UniChar *>(ret.data()));
+    CFStringGetCharacters(string, CFRangeMake(0, length), reinterpret_cast<UniChar*>(ret.data()));
 
     return ret;
 
@@ -85,7 +81,7 @@ QString absolutePathFromOSX(const QString& s)
 
 #   if !(__ENVIRONMENT_MAC_OS_X_VERSION_MIN_REQUIRED__ < 1060)
 
-    CFStringRef cfStr = CFStringCreateWithCString(kCFAllocatorDefault, s.toUtf8().constData(),  kCFStringEncodingUTF8);
+    CFStringRef cfStr = CFStringCreateWithCString(kCFAllocatorDefault, s.toUtf8().constData(), kCFStringEncodingUTF8);
 
     if (cfStr)
     {
@@ -141,7 +137,7 @@ QString getLocalPath(const QString& fullPath)
 
     if (pos >= 0)
     {
-        pos += CHAR_COUNT(kFileScheme);
+        pos           += CHAR_COUNT(kFileScheme);
         bool has_slash = false;
 
         while (fullPath.at(pos) == QLatin1Char('/'))
@@ -190,42 +186,22 @@ QString toLocal(const QString &fullPath)
 
 QString appDataDir()
 {
-
-#if QT_VERSION < QT_VERSION_CHECK(5, 0, 0)
-
-    return QDesktopServices::storageLocation(QDesktopServices::DataLocation);
-
-#else
-#   if QT_VERSION < QT_VERSION_CHECK(5, 4, 0)
-
-    return QStandardPaths::writableLocation(QStandardPaths::DataLocation);
-
-#   else
-
     return QStandardPaths::writableLocation(QStandardPaths::AppDataLocation);
-
-#   endif   // 5.4.0
-
-#endif      // 5.0.0
-
 }
 
 QString appFontsDir()
 {
 
-#if 0 //qt may return an read only path, for example OSX /System/Library/Fonts
+#if 0 // qt may return an read only path, for example OSX /System/Library/Fonts
 
-#   if QT_VERSION >= QT_VERSION_CHECK(5, 0, 0)
     const QString dir(QStandardPaths::writableLocation(QStandardPaths::FontsLocation));
 
     if (!dir.isEmpty())
         return dir;
 
-#   endif
-
 #endif
 
-    return appDataDir() + QStringLiteral("/fonts");
+    return appDataDir() + QLatin1String("/fonts");
 }
 
 QString fontsDir()
@@ -248,6 +224,7 @@ QString fontsDir()
 QString options2StringHelper(void* obj, const char* unit)
 {
     qCDebug(DIGIKAM_QTAV_LOG).noquote() << QString::asprintf("obj: %p", obj);
+
     QString s;
     const AVOption* opt = nullptr;
 
@@ -259,7 +236,7 @@ QString options2StringHelper(void* obj, const char* unit)
                 continue;
 
             if (!qstrcmp(unit, opt->unit))
-                s.append(QStringLiteral(" %1=%2").arg(QLatin1String(opt->name)).arg(opt->default_val.i64));
+                s.append(QString::fromUtf8(" %1=%2").arg(QLatin1String(opt->name)).arg(opt->default_val.i64));
 
             continue;
         }
@@ -269,37 +246,48 @@ QString options2StringHelper(void* obj, const char* unit)
                 continue;
         }
 
-        s.append(QStringLiteral("\n%1: ").arg(QLatin1String(opt->name)));
+        s.append(QString::fromUtf8("\n%1: ").arg(QLatin1String(opt->name)));
+
         switch (opt->type)
         {
             case AV_OPT_TYPE_FLAGS:
             case AV_OPT_TYPE_INT:
             case AV_OPT_TYPE_INT64:
-                s.append(QStringLiteral("(%1)").arg(opt->default_val.i64));
+            {
+                s.append(QString::fromUtf8("(%1)").arg(opt->default_val.i64));
                 break;
+            }
 
             case AV_OPT_TYPE_DOUBLE:
             case AV_OPT_TYPE_FLOAT:
-                s.append(QStringLiteral("(%1)").arg(opt->default_val.dbl, 0, 'f'));
+            {
+                s.append(QString::fromUtf8("(%1)").arg(opt->default_val.dbl, 0, 'f'));
                 break;
+            }
 
             case AV_OPT_TYPE_STRING:
+            {
                 if (opt->default_val.str)
-                    s.append(QStringLiteral("(%1)").arg(QString::fromUtf8(opt->default_val.str)));
+                    s.append(QString::fromUtf8("(%1)").arg(QString::fromUtf8(opt->default_val.str)));
                 break;
+            }
 
             case AV_OPT_TYPE_RATIONAL:
-                s.append(QStringLiteral("(%1/%2)").arg(opt->default_val.q.num).arg(opt->default_val.q.den));
+            {
+                s.append(QString::fromUtf8("(%1/%2)").arg(opt->default_val.q.num).arg(opt->default_val.q.den));
                 break;
+            }
 
             default:
+            {
                 break;
+            }
         }
 
         if (opt->help)
             s.append(QLatin1String(" ")).append(QString::fromUtf8(opt->help));
 
-        if (opt->unit && opt->type != AV_OPT_TYPE_CONST)
+        if (opt->unit && (opt->type != AV_OPT_TYPE_CONST))
             s.append(QLatin1String("\n ")).append(options2StringHelper(obj, opt->unit));
     }
 
@@ -316,12 +304,19 @@ void setOptionsToFFmpegObj(const QVariant& opt, void* obj)
     if (!opt.isValid())
         return;
 
-    AVClass *c = obj ? *(AVClass**)obj : nullptr;
+    AVClass* c = obj ? *(AVClass**)obj : nullptr;
 
     if (c)
-        qCDebug(DIGIKAM_QTAV_LOG) << QStringLiteral("%1.%2 options:").arg(QLatin1String(c->class_name)).arg(QLatin1String(c->item_name(obj)));
+    {
+        qCDebug(DIGIKAM_QTAV_LOG)
+            << QStringLiteral("%1.%2 options:")
+                .arg(QLatin1String(c->class_name))
+                .arg(QLatin1String(c->item_name(obj)));
+    }
     else
+    {
         qCDebug(DIGIKAM_QTAV_LOG) << "options:";
+    }
 
     if (opt.type() == QVariant::Map)
     {
@@ -341,15 +336,17 @@ void setOptionsToFFmpegObj(const QVariant& opt, void* obj)
                 continue;
 
             const QByteArray key(i.key().toUtf8());
-            qCDebug(DIGIKAM_QTAV_LOG).noquote() << QString::asprintf("%s=>%s", i.key().toUtf8().constData(), i.value().toByteArray().constData());
 
-            if (vt == QVariant::Int || vt == QVariant::UInt || vt == QVariant::Bool)
+            qCDebug(DIGIKAM_QTAV_LOG).noquote()
+                << QString::asprintf("%s=>%s", i.key().toUtf8().constData(), i.value().toByteArray().constData());
+
+            if      ((vt == QVariant::Int) || (vt == QVariant::UInt) || (vt == QVariant::Bool))
             {
                 // QVariant.toByteArray(): "true" or "false", can not recognized by avcodec
 
                 av_opt_set_int(obj, key.constData(), i.value().toInt(), AV_OPT_SEARCH_CHILDREN);
             }
-            else if (vt == QVariant::LongLong || vt == QVariant::ULongLong)
+            else if ((vt == QVariant::LongLong) || (vt == QVariant::ULongLong))
             {
                 av_opt_set_int(obj, key.constData(), i.value().toLongLong(), AV_OPT_SEARCH_CHILDREN);
             }
@@ -378,13 +375,15 @@ void setOptionsToFFmpegObj(const QVariant& opt, void* obj)
             continue;
 
         const QByteArray key(i.key().toUtf8());
-        qCDebug(DIGIKAM_QTAV_LOG).noquote() << QString::asprintf("%s=>%s", i.key().toUtf8().constData(), i.value().toByteArray().constData());
 
-        if (vt == QVariant::Int || vt == QVariant::UInt || vt == QVariant::Bool)
+        qCDebug(DIGIKAM_QTAV_LOG).noquote()
+            << QString::asprintf("%s=>%s", i.key().toUtf8().constData(), i.value().toByteArray().constData());
+
+        if      ((vt == QVariant::Int) || (vt == QVariant::UInt) || (vt == QVariant::Bool))
         {
             av_opt_set_int(obj, key.constData(), i.value().toInt(), AV_OPT_SEARCH_CHILDREN);
         }
-        else if (vt == QVariant::LongLong || vt == QVariant::ULongLong)
+        else if ((vt == QVariant::LongLong) || (vt == QVariant::ULongLong))
         {
             av_opt_set_int(obj, key.constData(), i.value().toLongLong(), AV_OPT_SEARCH_CHILDREN);
         }
@@ -436,7 +435,8 @@ void setOptionsToDict(const QVariant& opt, AVDictionary** dict)
                 }
             }
 
-            qCDebug(DIGIKAM_QTAV_LOG).noquote() << QString::asprintf("dict: %s=>%s", i.key().toUtf8().constData(), i.value().toByteArray().constData());
+            qCDebug(DIGIKAM_QTAV_LOG).noquote()
+                << QString::asprintf("dict: %s=>%s", i.key().toUtf8().constData(), i.value().toByteArray().constData());
         }
 
         return;
@@ -478,7 +478,8 @@ void setOptionsToDict(const QVariant& opt, AVDictionary** dict)
             }
         }
 
-        qCDebug(DIGIKAM_QTAV_LOG).noquote() << QString::asprintf("dict: %s=>%s", i.key().toUtf8().constData(), i.value().toByteArray().constData());
+        qCDebug(DIGIKAM_QTAV_LOG).noquote()
+            << QString::asprintf("dict: %s=>%s", i.key().toUtf8().constData(), i.value().toByteArray().constData());
     }
 }
 
@@ -487,7 +488,9 @@ void setOptionsForQObject(const QVariant& opt, QObject *obj)
     if (!opt.isValid())
         return;
 
-    qCDebug(DIGIKAM_QTAV_LOG) << QStringLiteral("set %1(%2) meta properties:").arg(QLatin1String(obj->metaObject()->className())).arg(obj->objectName());
+    qCDebug(DIGIKAM_QTAV_LOG) << QString::fromUtf8("set %1(%2) meta properties:")
+                                    .arg(QLatin1String(obj->metaObject()->className()))
+                                    .arg(obj->objectName());
 
     if (opt.type() == QVariant::Hash)
     {
@@ -506,7 +509,9 @@ void setOptionsForQObject(const QVariant& opt, QObject *obj)
                 continue;
 
             obj->setProperty(i.key().toUtf8().constData(), i.value());
-            qCDebug(DIGIKAM_QTAV_LOG).noquote() << QString::asprintf("%s=>%s", i.key().toUtf8().constData(), i.value().toByteArray().constData());
+
+            qCDebug(DIGIKAM_QTAV_LOG).noquote()
+                << QString::asprintf("%s=>%s", i.key().toUtf8().constData(), i.value().toByteArray().constData());
         }
     }
 
@@ -528,7 +533,9 @@ void setOptionsForQObject(const QVariant& opt, QObject *obj)
             continue;
 
         obj->setProperty(i.key().toUtf8().constData(), i.value());
-        qCDebug(DIGIKAM_QTAV_LOG).noquote() << QString::asprintf("%s=>%s", i.key().toUtf8().constData(), i.value().toByteArray().constData());
+
+        qCDebug(DIGIKAM_QTAV_LOG).noquote()
+            << QString::asprintf("%s=>%s", i.key().toUtf8().constData(), i.value().toByteArray().constData());
     }
 }
 
