@@ -68,4 +68,5 @@ BUGFIXES:
 051 ==> 453180 - "not valid" dates for video in "Adjust Time & Date".
 052 ==> 453992 - Build error in digiKam Setup.
 053 ==> 453630 - Metadata doesn 't always keep it's hierarchy when written with exiftool.
-054 ==> 
+054 ==> 426951 - digiKam audio issue.
+055 ==> 
