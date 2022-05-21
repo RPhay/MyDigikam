@@ -64,7 +64,7 @@ void CopyFrame_SSE2(void* pSrc, void* pDest, void* pCacheBlock, UINT width, UINT
     //assert(((intptr_t)pCacheBlock & 0x0f) == 0 && (dst_pitch & 0x0f) == 0);
 
     __m128i     x0, x1, x2, x3;
-    __m128i*    pCache;
+    __m128i*    pCache = nullptr;
     UINT        x, y, yLoad, yStore;
 
     UINT rowsPerBlock        = CACHED_BUFFER_SIZE / pitch;

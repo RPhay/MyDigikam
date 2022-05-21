@@ -213,7 +213,7 @@ bool Factory<Id, T, Class>::unregisterCreator(const ID& id)
     ids.erase(std::remove(ids.begin(), ids.end(), id), ids.end());
     name_map.erase(id);
 
-    return creators.erase(id) == 1;
+    return (creators.erase(id) == 1);
 }
 
 template<typename Id, typename T, class Class>
@@ -230,7 +230,7 @@ typename Factory<Id, T, Class>::ID Factory<Id, T, Class>::id(const char* name, b
     {
         if (caseSensitive)
         {
-            if (it->second == name || !strcmp(it->second, name))
+            if ((it->second == name) || (!strcmp(it->second, name)))
                 return it->first;
         }
         else
@@ -269,7 +269,7 @@ std::vector<const char*> Factory<Id, T, Class>::registeredNames() const
 {
     std::vector<const char*> names;
 
-    for (typename NameMap::const_iterator it = name_map.begin(); it != name_map.end(); ++it)
+    for (typename NameMap::const_iterator it = name_map.begin() ; it != name_map.end() ; ++it)
     {
         names.push_back((*it).second);
     }

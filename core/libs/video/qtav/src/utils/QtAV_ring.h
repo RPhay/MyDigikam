@@ -89,7 +89,7 @@ public:
     {
         assert(i < m_s);
 
-        return m_data[index(m_0+i)];
+        return m_data[index(m_0 + i)];
     }
 
     const T& operator[](size_t i) const
@@ -101,7 +101,7 @@ public:
     {
         assert(i < m_s);
 
-        return m_data[index(m_0+i)];
+        return m_data[index(m_0 + i)];
     }
 
 protected:

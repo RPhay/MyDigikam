@@ -51,12 +51,12 @@ public:
 
 private:
 
-    bool mInitialized;
+    bool mInitialized = false;
 
     typedef struct
     {
-        unsigned char* buffer;
-        size_t         size;
+        unsigned char* buffer = nullptr;
+        size_t         size   = 0;
     } cache_t;
 
     cache_t mCache;

@@ -195,7 +195,7 @@ namespace version
     enum
     {
         Major = 0, Minor = 6, Patch = 0,
-        Value = ((Major&0xff)<<16) | ((Minor&0xff)<<8) | (Patch&0xff)
+        Value = ((Major&0xff) << 16) | ((Minor&0xff) << 8) | (Patch&0xff)
     };
 
     static const char name[] = { Major + '0', '.', Minor + '0', '.', Patch + '0', 0 };
@@ -231,7 +231,7 @@ enum
   */
 class dso
 {
-    void* handle;
+    void* handle         = nullptr;
     char  full_name[256] = { 0 };
 
     dso(const dso&);
@@ -303,7 +303,7 @@ protected:
     api::~api(){delete dll;}                            \
     bool api::loaded() const { return dll->isLoaded();} \
     namespace capi {                                    \
-        static api_dll* dll = nullptr;                     \
+        static api_dll* dll = nullptr;                  \
         bool loaded() {                                 \
             if (!dll) dll = new api_dll();              \
             return dll->isLoaded();                     \
@@ -498,13 +498,13 @@ namespace internal
 
 struct qstr_wrap
 {
-    static const char* fromLatin1(const char* s) {return s;}
+    static const char* fromLatin1(const char* s) { return s; }
 };
 
 template<class T> struct dso_trait
 {
     typedef const char* str_t;
-    typedef qstr_wrap qstr_t;
+    typedef qstr_wrap   qstr_t;
 };
 
 //can not explicit specialization of 'trait' in class scope
@@ -521,7 +521,7 @@ template<> struct dso_trait<QLibrary>
 
 // base ctor dll_helper("name")=>derived members in decl order(resolvers)=>derived ctor
 
-static const int kDefaultVersions[] = {::capi::NoVersion, ::capi::EndVersion};
+static const int kDefaultVersions[] = { ::capi::NoVersion, ::capi::EndVersion };
 template <class DLL> class dll_helper
 {
     // no CAPI_EXPORT required
@@ -558,6 +558,7 @@ public:
                 if (m_lib.load())
                 {
                     CAPI_DBG_LOAD("capi loaded {library name: %s, version: %d}", names[i], versions[j]);
+
                     return;
                 }
 
@@ -576,21 +577,29 @@ public:
         return m_lib.isLoaded();
     }
 
-    void* resolve(const char *symbol)
+    void* resolve(const char* symbol)
     {
         return (void*)m_lib.resolve(symbol);
     }
 };
 
 #ifdef CAPI_TARGET_OS_WIN
+
     static const char kPre[] = "";
     static const char kExt[] = ".dll";
+
 #else
+
     static const char kPre[] = "lib";
+
 #   ifdef CAPI_TARGET_OS_MAC
+
     static const char kExt[] = ".dylib";
+
 #   else
+
     static const char kExt[] = ".so";
+
 #   endif
 #endif
 

@@ -72,7 +72,7 @@ public:
         QTime                   current_time, total_time, start_time;
         int                     bit_rate;
         qint64                  frames;
-        qreal                   frame_rate; // average fps stored in media stream information
+        qreal                   frame_rate; ///< average fps stored in media stream information
 
         // union member with ctor, dtor, copy ctor only works in c++11
 
@@ -129,7 +129,7 @@ public:
         // compute from pts history
 
         qreal currentDisplayFPS() const;
-        qreal pts() const;              // last pts
+        qreal pts() const;              ///< last pts
 
         int     width, height;
 
@@ -148,7 +148,7 @@ public:
 
         /// return current absolute time (seconds since epcho
 
-        qint64 frameDisplayed(qreal pts); // used to compute currentDisplayFPS()
+        qint64 frameDisplayed(qreal pts); ///< used to compute currentDisplayFPS()
 
     private:
 

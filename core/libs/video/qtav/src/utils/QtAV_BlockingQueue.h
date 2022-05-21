@@ -80,7 +80,7 @@ public:
      * \param isValid a pointer to a bool (optional).  If isValid is set to true after a call, the returned item is valid. False means the queue was empty or the timeout expired.
      * \return the item taken.  It may not be valid if the queue was empty and timeout expired. Check optional isValid flag to determine if that is the case.
      */
-    T take(unsigned long wait_timeout_ms = ULONG_MAX, bool *isValid = nullptr);
+    T take(unsigned long wait_timeout_ms = ULONG_MAX, bool* isValid = nullptr);
 
     void setBlocking(bool block); // will wake if false. called when no more data can enqueue
     void blockEmpty(bool block);
@@ -92,12 +92,12 @@ public:
 
     // TODO: checkEmpty, Enough, Full?
 
-    inline bool isEmpty() const;
-    inline bool isEnough() const;   // size > thres
-    inline bool isFull() const;     // size >= cap
-    inline int size() const;
-    inline int threshold() const;
-    inline int capacity() const;
+    inline bool isEmpty()   const;
+    inline bool isEnough()  const;      // size > thres
+    inline bool isFull()    const;      // size >= cap
+    inline int size()       const;
+    inline int threshold()  const;
+    inline int capacity()   const;
 
     class StateChangeCallback
     {
@@ -119,22 +119,24 @@ protected:
      * Full is now a more generic notion. You can implement it as checking queued bytes etc.
      * \return true if queue is full
      */
-    virtual bool checkFull() const;
-    virtual bool checkEmpty() const;
-    virtual bool checkEnough() const;
+    virtual bool checkFull()    const;
+    virtual bool checkEmpty()   const;
+    virtual bool checkEnough()  const;
 
-    virtual void onPut(const T&) {}
-    virtual void onTake(const T&) {}
+    virtual void onPut(const T&)    {}
+    virtual void onTake(const T&)   {}
 
-    bool block_empty, block_full;
-    int cap, thres;
-    Container<T> queue;
+protected:
+
+    bool                                block_empty, block_full;
+    int                                 cap, thres;
+    Container<T>                        queue;
 
 private:
 
-    mutable QReadWriteLock lock;    // locker in const func
-    QReadWriteLock block_change_lock;
-    QWaitCondition cond_full, cond_empty;
+    mutable QReadWriteLock              lock;               ///< locker in const func
+    QReadWriteLock                      block_change_lock;
+    QWaitCondition                      cond_full, cond_empty;
 
     // upto_threshold_callback, downto_threshold_callback
 
@@ -146,13 +148,13 @@ private:
  */
 template <typename T, template <typename> class Container>
 BlockingQueue<T, Container>::BlockingQueue()
-    : block_empty(true)
-    , block_full(true)
-    , cap(48)
-    , thres(32)
-    , empty_callback(nullptr)
-    , threshold_callback(nullptr)
-    , full_callback(nullptr)
+    : block_empty       (true),
+      block_full        (true),
+      cap               (48),
+      thres             (32),
+      empty_callback    (nullptr),
+      threshold_callback(nullptr),
+      full_callback     (nullptr)
 {
 }
 
@@ -226,7 +228,7 @@ bool BlockingQueue<T, Container>::put(const T& t, unsigned long timeout_ms)
 }
 
 template <typename T, template <typename> class Container>
-T BlockingQueue<T, Container>::take(unsigned long timeout_ms, bool *isValid)
+T BlockingQueue<T, Container>::take(unsigned long timeout_ms, bool* isValid)
 {
     if (isValid)
         *isValid = false;
@@ -346,7 +348,7 @@ bool BlockingQueue<T, Container>::isEnough() const
     QReadLocker locker(&lock);
     Q_UNUSED(locker);
 
-    return queue.size() >= thres;
+    return (queue.size() >= thres);
 }
 
 template <typename T, template <typename> class Container>
@@ -355,7 +357,7 @@ bool BlockingQueue<T, Container>::isFull() const
     QReadLocker locker(&lock);
     Q_UNUSED(locker);
 
-    return queue.size() >= cap;
+    return (queue.size() >= cap);
 }
 
 template <typename T, template <typename> class Container>
@@ -386,7 +388,7 @@ int BlockingQueue<T, Container>::capacity() const
 }
 
 template <typename T, template <typename> class Container>
-void BlockingQueue<T, Container>::setEmptyCallback(StateChangeCallback *call)
+void BlockingQueue<T, Container>::setEmptyCallback(StateChangeCallback* call)
 {
     QWriteLocker locker(&lock);
     Q_UNUSED(locker);
@@ -394,7 +396,7 @@ void BlockingQueue<T, Container>::setEmptyCallback(StateChangeCallback *call)
 }
 
 template <typename T, template <typename> class Container>
-void BlockingQueue<T, Container>::setThresholdCallback(StateChangeCallback *call)
+void BlockingQueue<T, Container>::setThresholdCallback(StateChangeCallback* call)
 {
     QWriteLocker locker(&lock);
     Q_UNUSED(locker);
@@ -402,7 +404,7 @@ void BlockingQueue<T, Container>::setThresholdCallback(StateChangeCallback *call
 }
 
 template <typename T, template <typename> class Container>
-void BlockingQueue<T, Container>::setFullCallback(StateChangeCallback *call)
+void BlockingQueue<T, Container>::setFullCallback(StateChangeCallback* call)
 {
     QWriteLocker locker(&lock);
     Q_UNUSED(locker);
@@ -412,7 +414,7 @@ void BlockingQueue<T, Container>::setFullCallback(StateChangeCallback *call)
 template <typename T, template <typename> class Container>
 bool BlockingQueue<T, Container>::checkFull() const
 {
-    return queue.size() >= cap;
+    return (queue.size() >= cap);
 }
 
 template <typename T, template <typename> class Container>
@@ -424,7 +426,7 @@ bool BlockingQueue<T, Container>::checkEmpty() const
 template <typename T, template <typename> class Container>
 bool BlockingQueue<T, Container>::checkEnough() const
 {
-    return queue.size() >= thres && !checkEmpty();
+    return (queue.size() >= thres && !checkEmpty());
 }
 
 } // namespace QtAV

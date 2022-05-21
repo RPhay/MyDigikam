@@ -66,6 +66,7 @@ static const QMatrix4x4 yuv2rgb_bt601 =
                 0.0f, 0.0f, 1.0f, -0.5f,
                 0.0f, 0.0f, 0.0f, 1.0f)
         ;
+
 static const QMatrix4x4 yuv2rgb_bt709 =
            QMatrix4x4(
                 1.0f,  0.000f,  1.5701f, 0.0f,
@@ -85,13 +86,19 @@ const QMatrix4x4& ColorTransform::YUV2RGB(ColorSpace cs)
     switch (cs)
     {
         case ColorSpace_BT601:
+        {
             return yuv2rgb_bt601;
+        }
 
         case ColorSpace_BT709:
+        {
             return yuv2rgb_bt709;
+        }
 
         default:
+        {
             return yuv2rgb_bt601;
+        }
     }
 
     return yuv2rgb_bt601;
@@ -178,33 +185,33 @@ class Q_DECL_HIDDEN ColorTransform::Private : public QSharedData
 public:
 
     Private()
-        : recompute(true)
-        , cs_in(ColorSpace_RGB)
-        , cs_out(ColorSpace_RGB)
-        , range_in(ColorRange_Limited)
-        , range_out(ColorRange_Full)
-        , hue(0)
-        , saturation(0)
-        , contrast(0)
-        , brightness(0)
-        , bpc_scale(1.0)
-        , a_bpc_scale(false)
+        : recompute  (true),
+          cs_in      (ColorSpace_RGB),
+          cs_out     (ColorSpace_RGB),
+          range_in   (ColorRange_Limited),
+          range_out  (ColorRange_Full),
+          hue        (0),
+          saturation (0),
+          contrast   (0),
+          brightness (0),
+          bpc_scale  (1.0),
+          a_bpc_scale(false)
     {
     }
 
     Private(const Private& other)
-        : QSharedData(other)
-        , recompute(true)
-        , cs_in(ColorSpace_RGB)
-        , cs_out(ColorSpace_RGB)
-        , range_in(ColorRange_Limited)
-        , range_out(ColorRange_Full)
-        , hue(0)
-        , saturation(0)
-        , contrast(0)
-        , brightness(0)
-        , bpc_scale(1.0)
-        , a_bpc_scale(false)
+        : QSharedData(other),
+          recompute  (true),
+          cs_in      (ColorSpace_RGB),
+          cs_out     (ColorSpace_RGB),
+          range_in   (ColorRange_Limited),
+          range_out  (ColorRange_Full),
+          hue        (0),
+          saturation (0),
+          contrast   (0),
+          brightness (0),
+          bpc_scale  (1.0),
+          a_bpc_scale(false)
     {
     }
     ~Private()
@@ -272,7 +279,7 @@ public:
         // Hue
 
         const float n  = 1.0f / sqrtf(3.0f);       // normalized hue rotation axis: sqrt(3)*(1 1 1)
-        const float h  = hue*M_PI;                 // hue rotation angle
+        const float h  = hue * M_PI;               // hue rotation angle
         const float hc = cosf(h);
         const float hs = sinf(h);
 
@@ -295,42 +302,58 @@ public:
         switch (cs_out)
         {
             case ColorSpace_XYZ:
+            {
                 M = kXYZ2sRGB.inverted() * M;
                 break;
+            }
 
             case ColorSpace_RGB:
+            {
                 M *= ColorRangeRGB(ColorRange_Full, range_out);
                 break;
+            }
 
             case ColorSpace_GBR:
+            {
                 M *= ColorRangeRGB(ColorRange_Full, range_out);
                 M = kGBR2RGB.inverted() * M;
                 break;
+            }
 
             default:
+            {
                 M = YUV2RGB(cs_out).inverted() * M;
                 break;
+            }
         }
 
         switch (cs_in)
         {
             case ColorSpace_XYZ:
+            {
                 M *= kXYZ2sRGB;
                 break;
+            }
 
             case ColorSpace_RGB:
+            {
                 break;
+            }
 
             case ColorSpace_GBR:
+            {
                 M *= kGBR2RGB;
                 break;
+            }
 
             default:
-                M *= YUV2RGB(cs_in)*ColorRangeYUV(range_in, ColorRange_Full);
+            {
+                M *= YUV2RGB(cs_in) * ColorRangeYUV(range_in, ColorRange_Full);
                 break;
+            }
         }
 
-        if (bpc_scale != 1.0 && cs_in != ColorSpace_XYZ)
+        if ((bpc_scale != 1.0) && (cs_in != ColorSpace_XYZ))
         {
             // why no range correction for xyz?
 
@@ -401,7 +424,7 @@ void ColorTransform::setInputColorRange(ColorRange value)
     if (d->range_in == value)
         return;
 
-    d->range_in = value;
+    d->range_in  = value;
     d->recompute = true;
 }
 

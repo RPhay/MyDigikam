@@ -46,8 +46,8 @@ class SharedPtrImpl
 
 public:
 
-    explicit SharedPtrImpl(T* ptr = 0)
-        : m_ptr(ptr),
+    explicit SharedPtrImpl(T* const ptr = nullptr)
+        : m_ptr    (ptr),
           m_counter(1)
     {
     }
@@ -64,7 +64,7 @@ public:
 
     T& operator*() const
     {
-        return* m_ptr;
+        return *m_ptr;
     }
 
     T* get() const
@@ -106,7 +106,7 @@ public:
 
 private:
 
-    T*         m_ptr;
+    T*         m_ptr        = nullptr;
     QAtomicInt m_counter;
 };
 
@@ -117,13 +117,13 @@ class SharedPtr
 {
 public:
 
-    explicit SharedPtr(T* ptr = nullptr)
+    explicit SharedPtr(T* const ptr = nullptr)
         : m_impl(new impl::SharedPtrImpl<T>(ptr))
     {
     }
 
     template <typename U>
-    explicit SharedPtr(U* ptr = 0)
+    explicit SharedPtr(U* const ptr = nullptr)
         : m_impl(new impl::SharedPtrImpl<T>(ptr))
     {
     }
@@ -180,7 +180,7 @@ public:
     }
 
     template <typename U>
-    bool operator<(const SharedPtr<U> &other)
+    bool operator<(const SharedPtr<U>& other)
     {
         return m_impl->get() < other.get();
     }
