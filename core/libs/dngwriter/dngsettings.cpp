@@ -173,11 +173,9 @@ bool DNGSettings::backupOriginalRawFile() const
 
 void DNGSettings::slotSetupChanged()
 {
-    ExifToolParser* const parser = new ExifToolParser(this);
+    QScopedPointer<ExifToolParser> const parser(new ExifToolParser(this));
 
     d->errorView->setVisible(!parser->exifToolAvailable());
-
-    delete parser;
 }
 
 } // namespace Digikam

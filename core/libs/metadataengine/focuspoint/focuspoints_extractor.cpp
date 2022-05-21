@@ -58,12 +58,12 @@ FocusPointsExtractor::FocusPointsExtractor(QObject* const parent,const QString& 
     : QObject(parent),
       d      (new Private)
 {
-    QScopedPointer<ExifToolParser> const exiftool(new ExifToolParser(this));
+    QScopedPointer<ExifToolParser> const parser(new ExifToolParser(this));
 
-    exiftool->load(image_path);
+    parser->load(image_path);
 
-    d->exifToolAvailable = exiftool->exifToolAvailable();
-    d->metadata          = exiftool->currentData();
+    d->exifToolAvailable = parser->exifToolAvailable();
+    d->metadata          = parser->currentData();
     d->make              = findValue(QLatin1String("EXIF.IFD0.Camera.Make")).toString();
     d->make              = d->make.split(QLatin1String(" "))[0].toUpper();
     d->model             = findValue(QLatin1String("EXIF.IFD0.Camera.Model")).toString();

@@ -363,12 +363,11 @@ void MetadataPanel::slotTabChanged(int)
     {
         if (!d->exifToolViewerConfig->itemsCount())
         {
-            ExifToolParser* const parser = new ExifToolParser(this);
-            ExifToolParser::ExifToolData parsed;
+            QScopedPointer<ExifToolParser> const parser(new ExifToolParser(this));
 
             if (parser->tagsDatabase())
             {
-                parsed = parser->currentData();
+                ExifToolParser::ExifToolData parsed = parser->currentData();
 
                 d->exifToolViewerConfig->setTagsMap(parser->tagsDbToOrderedMap(parsed));
                 d->exifToolViewerConfig->setcheckedTagsList(group.readEntry("EXIFTOOL Tags Filter", d->exifToolViewerConfig->defaultFilter()));

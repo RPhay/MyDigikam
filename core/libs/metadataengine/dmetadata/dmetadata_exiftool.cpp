@@ -43,7 +43,7 @@ namespace Digikam
 
 bool DMetadata::loadUsingExifTool(const QString& filePath, bool fromVideo)
 {
-    ExifToolParser* const parser = new ExifToolParser(nullptr);
+    QScopedPointer<ExifToolParser> const parser(new ExifToolParser(nullptr));
 
     if (parser->exifToolAvailable())
     {
@@ -52,7 +52,6 @@ bool DMetadata::loadUsingExifTool(const QString& filePath, bool fromVideo)
         if (!ret)
         {
             qCCritical(DIGIKAM_METAENGINE_LOG) << "Load metadata using ExifTool failed...";
-            delete parser;
 
             return false;
         }
@@ -66,7 +65,6 @@ bool DMetadata::loadUsingExifTool(const QString& filePath, bool fromVideo)
         if (it == chunk.end())
         {
             qCWarning(DIGIKAM_METAENGINE_LOG) << "Metadata chunk loaded with ExifTool is empty";
-            delete parser;
 
             return false;
         }
@@ -85,12 +83,9 @@ bool DMetadata::loadUsingExifTool(const QString& filePath, bool fromVideo)
     else
     {
         qCWarning(DIGIKAM_METAENGINE_LOG) << "ExifTool is not available to load metadata...";
-        delete parser;
 
         return false;
     }
-
-    delete parser;
 
     return true;
 }

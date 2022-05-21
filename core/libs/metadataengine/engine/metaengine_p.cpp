@@ -530,7 +530,7 @@ bool MetaEngine::Private::saveUsingExifTool(const QFileInfo& finfo) const
         return false;
     }
 
-    ExifToolParser* const parser = new ExifToolParser(nullptr);
+    QScopedPointer<ExifToolParser> const parser(new ExifToolParser(nullptr));
 
     if (parser->exifToolAvailable())
     {
@@ -583,7 +583,6 @@ bool MetaEngine::Private::saveUsingExifTool(const QFileInfo& finfo) const
             if (!parser->applyChanges(finfo.filePath(), exvPath))
             {
                 qCWarning(DIGIKAM_METAENGINE_LOG) << "Cannot apply changes with ExifTool on" << finfo.filePath();
-                delete parser;
                 QFile::remove(exvPath);
 
                 return false;
@@ -615,7 +614,6 @@ bool MetaEngine::Private::saveUsingExifTool(const QFileInfo& finfo) const
             if (!parser->applyChanges(finfo.filePath(), exvPath))
             {
                 qCWarning(DIGIKAM_METAENGINE_LOG) << "Cannot apply changes with ExifTool on" << finfo.filePath();
-                delete parser;
                 QFile::remove(exvPath);
 
                 return false;
@@ -627,12 +625,9 @@ bool MetaEngine::Private::saveUsingExifTool(const QFileInfo& finfo) const
     else
     {
         qCWarning(DIGIKAM_METAENGINE_LOG) << "ExifTool is not available to save metadata...";
-        delete parser;
 
         return false;
     }
-
-    delete parser;
 
     return true;
 }

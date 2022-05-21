@@ -43,14 +43,13 @@ using namespace Digikam;
 
 bool s_exifToolParseThreaded(const QString& file)
 {
-    ExifToolParser* const parser = new ExifToolParser(nullptr);
+    QScopedPointer<ExifToolParser> const parser(new ExifToolParser(nullptr));
 
     // Read metadata from the file. Start ExifToolParser
 
     if (!parser->load(file))
     {
         qCWarning(DIGIKAM_TESTS_LOG) << "Cannot process" << file;
-        delete parser;
 
         return false;
     }
@@ -68,7 +67,6 @@ bool s_exifToolParseThreaded(const QString& file)
     if (!output.open(QIODevice::WriteOnly))
     {
         qCDebug(DIGIKAM_TESTS_LOG) << "Cannot open ExifTool output file to write...";
-        delete parser;
 
         return false;
     }
@@ -123,7 +121,6 @@ bool s_exifToolParseThreaded(const QString& file)
     output.close();
 
     qCDebug(DIGIKAM_TESTS_LOG).noquote() << "Processed source file:" << path;
-    delete parser;
 
     return true;
 }

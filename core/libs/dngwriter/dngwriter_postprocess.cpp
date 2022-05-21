@@ -27,7 +27,7 @@ namespace Digikam
 
 int DNGWriter::Private::exifToolPostProcess()
 {
-    ExifToolParser* const parser = new ExifToolParser(nullptr);
+    QScopedPointer<ExifToolParser> const parser(new ExifToolParser(nullptr));
 
     if (parser->exifToolAvailable())
     {
@@ -45,7 +45,6 @@ int DNGWriter::Private::exifToolPostProcess()
         if (!ret)
         {
             qCCritical(DIGIKAM_GENERAL_LOG) << "DNGWriter: Copy Iptc and Xmp tags with ExifTool failed. Aborted...";
-            delete parser;
 
             return PROCESS_FAILED;
         }
@@ -63,7 +62,6 @@ int DNGWriter::Private::exifToolPostProcess()
         if (!ret)
         {
             qCCritical(DIGIKAM_GENERAL_LOG) << "DNGWriter: Copy markernotes with ExifTool failed. Aborted...";
-            delete parser;
 
             return PROCESS_FAILED;
         }
@@ -80,7 +78,6 @@ int DNGWriter::Private::exifToolPostProcess()
         if (!ret)
         {
             qCCritical(DIGIKAM_GENERAL_LOG) << "DNGWriter: Populate Xmp tags with ExifTool failed. Aborted...";
-            delete parser;
 
             return PROCESS_FAILED;
         }
@@ -97,7 +94,6 @@ int DNGWriter::Private::exifToolPostProcess()
         if (!ret)
         {
             qCCritical(DIGIKAM_GENERAL_LOG) << "DNGWriter: Populate Iptc tags with ExifTool failed. Aborted...";
-            delete parser;
 
             return PROCESS_FAILED;
         }
@@ -106,8 +102,6 @@ int DNGWriter::Private::exifToolPostProcess()
     {
         qCWarning(DIGIKAM_GENERAL_LOG) << "DNGWriter: ExifTool is not available to post-process metadata...";
     }
-
-    delete parser;
 
     return PROCESS_CONTINUE;
 }

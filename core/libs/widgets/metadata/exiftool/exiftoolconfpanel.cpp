@@ -163,7 +163,7 @@ void ExifToolConfPanel::slotExifToolBinaryFound(bool found)
 
     if (found)
     {
-        ExifToolParser* const parser = new ExifToolParser(this);
+        QScopedPointer<ExifToolParser> const parser(new ExifToolParser(this));
         parser->setExifToolProgram(exifToolDirectory());
         ExifToolParser::ExifToolData parsed;
         QStringList read;
