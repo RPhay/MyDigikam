@@ -55,17 +55,17 @@ public:
 
 #if defined(Q_OS_DARWIN)
 
-            avwidgets.setFileName(QLatin1String("QtAVWidgets.framework/QtAVWidgets")); // no dylib check
+            avwidgets.setFileName(QString::fromLatin1("QtAVWidgets.framework/QtAVWidgets")); // no dylib check
 
 #elif defined(Q_OS_WIN)
 
-            avwidgets.setFileName(QLatin1String("QtAVWidgets")
+            avwidgets.setFileName(String::fromLatin1("QtAVWidgets")
 
-# ifndef QT_NO_DEBUG
+#   ifndef QT_NO_DEBUG
 
             .append(QLatin1String("d"))
 
-# endif
+#   endif
 
             .append(QString::number(QTAV_VERSION_MAJOR(QtAV_Version()))));
 
@@ -75,11 +75,14 @@ public:
 
 #endif
 
-            qCDebug(DIGIKAM_QTAV_LOG) << "Loading QtAVWidgets module: " << avwidgets.fileName();
+            qCDebug(DIGIKAM_QTAV_LOG)
+                << "Loading QtAVWidgets module: "
+                    << avwidgets.fileName();
 
             if (!avwidgets.load())
             {
-                qCWarning(DIGIKAM_QTAV_LOG_WARN).noquote() << QString::asprintf("Failed to load QtAVWidgets module");
+                qCWarning(DIGIKAM_QTAV_LOG_WARN).noquote()
+                    << QString::asprintf("Failed to load QtAVWidgets module");
             }
         }
 
@@ -91,7 +94,9 @@ public:
 
             while ((vid = VideoRenderer::next(vid)))
             {
-                qCDebug(DIGIKAM_QTAV_LOG).noquote() << QString::asprintf("next id: %d, name: %s", *vid, VideoRenderer::name(*vid));
+                qCDebug(DIGIKAM_QTAV_LOG).noquote()
+                    << QString::asprintf("next id: %d, name: %s",
+                        *vid, VideoRenderer::name(*vid));
 
                 if (impl)
                 {
@@ -307,7 +312,6 @@ void VideoOutput::handlePaintEvent()
 
     d.impl->handlePaintEvent();
 }
-
 
 bool VideoOutput::onForcePreferredPixelFormat(bool force)
 {
