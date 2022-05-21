@@ -118,7 +118,7 @@ private:
     mutable QMutex       m_mutex;
 };
 
-static const SubtitleProcessorId SubtitleProcessorId_LibASS = QStringLiteral("qtav.subtitle.processor.libass");
+static const SubtitleProcessorId SubtitleProcessorId_LibASS = QLatin1String("qtav.subtitle.processor.libass");
 
 namespace
 {
@@ -157,7 +157,7 @@ static void ass_msg_cb(int level, const char* fmt, va_list va, void* data)
     qCDebug(DIGIKAM_QTAV_LOG).noquote() << "[libass]: " << QString::vasprintf(fmt, va);
 
 /*
-    QString msg(QStringLiteral("{libass} ") + QString().vasprintf(fmt, va));
+    QString msg(QLatin1String("{libass} ") + QString().vasprintf(fmt, va));
 
     if      (level == MSGL_FATAL)
         qFatal("%s", msg.toUtf8().constData());
@@ -169,11 +169,11 @@ static void ass_msg_cb(int level, const char* fmt, va_list va, void* data)
 }
 
 SubtitleProcessorLibASS::SubtitleProcessorLibASS()
-    : m_update_cache(true),
+    : m_update_cache (true),
       force_font_file(true),
-      m_ass(nullptr),
-      m_renderer(nullptr),
-      m_track(nullptr)
+      m_ass          (nullptr),
+      m_renderer     (nullptr),
+      m_track        (nullptr)
 {
     if (!ass::api::loaded())
         return;
@@ -230,7 +230,8 @@ QStringList SubtitleProcessorLibASS::supportedTypes() const
     // from LibASS/tests/fate/subtitles.mak
     // TODO: mp4
 
-    static const QStringList sSuffixes = QStringList() << QStringLiteral("ass") << QStringLiteral("ssa");
+    static const QStringList sSuffixes = QStringList() << QLatin1String("ass")
+                                                       << QLatin1String("ssa");
 
     return sSuffixes;
 }
@@ -240,7 +241,7 @@ QList<SubtitleFrame> SubtitleProcessorLibASS::frames() const
     return m_frames;
 }
 
-bool SubtitleProcessorLibASS::process(QIODevice *dev)
+bool SubtitleProcessorLibASS::process(QIODevice* dev)
 {
     if (!ass::api::loaded())
         return false;
@@ -356,7 +357,7 @@ SubtitleFrame SubtitleProcessorLibASS::processLine(const QByteArray &data, qreal
 
     // TODO: confirm. ass/ssa path from mpv
 
-    if (m_codec == QByteArrayLiteral("ass"))
+    if (m_codec == QByteArray("ass"))
     {
         ass_process_chunk(m_track, (char*)data.constData(), data.size(), pts*1000.0, duration*1000.0);
     }
@@ -380,7 +381,7 @@ SubtitleFrame SubtitleProcessorLibASS::processLine(const QByteArray &data, qreal
 
         //packet.duration can be 0
 
-        if (ae.Start == (long long)(pts*1000.0))
+        if (ae.Start == (long long)(pts * 1000.0))
         {
             // && ae.Duration == (long long)(duration*1000.0)) {
 
@@ -406,7 +407,7 @@ QString SubtitleProcessorLibASS::getText(qreal pts) const
     {
         if ((m_frames[i].begin <= pts) && (m_frames[i].end >= pts))
         {
-            text += m_frames[i].text + QStringLiteral("\n");
+            text += m_frames[i].text + QLatin1String("\n");
 
             continue;
         }
@@ -418,9 +419,9 @@ QString SubtitleProcessorLibASS::getText(qreal pts) const
     return text.trimmed();
 }
 
-void renderASS32(QImage *image, ASS_Image *img, int dstX, int dstY);
+void renderASS32(QImage* image, ASS_Image* img, int dstX, int dstY);
 
-QImage SubtitleProcessorLibASS::getImage(qreal pts, QRect *boundingRect)
+QImage SubtitleProcessorLibASS::getImage(qreal pts, QRect* boundingRect)
 {
     // ass dll is loaded if ass library is available
 
@@ -430,14 +431,14 @@ QImage SubtitleProcessorLibASS::getImage(qreal pts, QRect *boundingRect)
     return m_image;
 }
 
-SubImageSet SubtitleProcessorLibASS::getSubImages(qreal pts, QRect *boundingRect)
+SubImageSet SubtitleProcessorLibASS::getSubImages(qreal pts, QRect* boundingRect)
 {
     m_assimages = getSubImages(pts, boundingRect, nullptr, true);
 
     return m_assimages;
 }
 
-SubImageSet SubtitleProcessorLibASS::getSubImages(qreal pts, QRect *boundingRect, QImage *qimg, bool copy)
+SubImageSet SubtitleProcessorLibASS::getSubImages(qreal pts, QRect* boundingRect, QImage* qimg, bool copy)
 {
     // ass dll is loaded if ass library is available
 
@@ -611,7 +612,7 @@ void SubtitleProcessorLibASS::setFontFileForced(bool force)
     }
 }
 
-void SubtitleProcessorLibASS::setFontsDir(const QString &dir)
+void SubtitleProcessorLibASS::setFontsDir(const QString& dir)
 {
     if (fonts_dir == dir)
         return;
@@ -672,8 +673,8 @@ void SubtitleProcessorLibASS::updateFontCache()
     static const QStringList kFontsDirs = QStringList()
             << qApp->applicationDirPath().append(QLatin1String("/fonts"))
             << qApp->applicationDirPath() // for winrt
-            << QStringLiteral("assets:/fonts")
-            << QStringLiteral(":/fonts")
+            << QLatin1String("assets:/fonts")
+            << QLatin1String(":/fonts")
             << Internal::Path::appFontsDir()
 
 #ifndef Q_OS_WINRT
@@ -690,25 +691,25 @@ void SubtitleProcessorLibASS::updateFontCache()
 
     if (conf.isEmpty() && !conf.isNull())
     {
-        static const QString kFontCfg(QStringLiteral("fonts.conf"));
+        static const QString kFontCfg(QLatin1String("fonts.conf"));
 
         Q_FOREACH (const QString& fdir, kFontsDirs)
         {
             qCDebug(DIGIKAM_QTAV_LOG) << "looking up " << kFontCfg << " in: " << fdir;
-            QFile cfg(QStringLiteral("%1/%2").arg(fdir).arg(kFontCfg));
+            QFile cfg(QString::fromUtf8("%1/%2").arg(fdir).arg(kFontCfg));
 
             if (!cfg.exists())
                 continue;
 
             conf = cfg.fileName();
 
-            if (   fdir.isEmpty()
-                || fdir.startsWith(QLatin1String("assets:"), Qt::CaseInsensitive)
-                || fdir.startsWith(QLatin1String(":"), Qt::CaseInsensitive)
-                || fdir.startsWith(QLatin1String("qrc:"), Qt::CaseInsensitive)
+            if (fdir.isEmpty()                                                 ||
+                fdir.startsWith(QLatin1String("assets:"), Qt::CaseInsensitive) ||
+                fdir.startsWith(QLatin1String(":"),       Qt::CaseInsensitive) ||
+                fdir.startsWith(QLatin1String("qrc:"),    Qt::CaseInsensitive)
                )
             {
-                conf = QStringLiteral("%1/%2").arg(Internal::Path::appFontsDir()).arg(kFontCfg);
+                conf = QString::fromUtf8("%1/%2").arg(Internal::Path::appFontsDir()).arg(kFontCfg);
 
                 qCDebug(DIGIKAM_QTAV_LOG)
                     << "Fonts dir (for config) is not supported by libass. Copy fonts to app fonts dir: "
@@ -768,8 +769,11 @@ void SubtitleProcessorLibASS::updateFontCache()
 
     if (sFontsDir.isEmpty() && !sFontsDir.isNull())
     {
-        static const QString kDefaultFontName(QStringLiteral("default.ttf"));
-        static const QStringList ft_filters = QStringList() << QStringLiteral("*.ttf") << QStringLiteral("*.otf") << QStringLiteral("*.ttc");
+        static const QString kDefaultFontName(QLatin1String("default.ttf"));
+        static const QStringList ft_filters = QStringList() << QLatin1String("*.ttf")
+                                                            << QLatin1String("*.otf")
+                                                            << QLatin1String("*.ttc");
+
         QStringList fonts;
 
         Q_FOREACH (const QString& fdir, kFontsDirs)
@@ -787,7 +791,7 @@ void SubtitleProcessorLibASS::updateFontCache()
 
             if (fonts.contains(kDefaultFontName))
             {
-                QFile ff(QStringLiteral("%1/%2").arg(fdir).arg(kDefaultFontName));
+                QFile ff(QString::fromUtf8("%1/%2").arg(fdir).arg(kDefaultFontName));
 
                 if (ff.exists() && (ff.size() == 0))
                 {
@@ -811,10 +815,10 @@ void SubtitleProcessorLibASS::updateFontCache()
         {
             qCDebug(DIGIKAM_QTAV_LOG) << "fonts dir: " << sFontsDir << "  font files: " << fonts;
 
-            if (   sFontsDir.isEmpty()
-                || sFontsDir.startsWith(QLatin1String("assets:"), Qt::CaseInsensitive)
-                || sFontsDir.startsWith(QLatin1String(":"), Qt::CaseInsensitive)
-                || sFontsDir.startsWith(QLatin1String("qrc:"), Qt::CaseInsensitive)
+            if (sFontsDir.isEmpty()                                                 ||
+                sFontsDir.startsWith(QLatin1String("assets:"), Qt::CaseInsensitive) ||
+                sFontsDir.startsWith(QLatin1String(":"),       Qt::CaseInsensitive) ||
+                sFontsDir.startsWith(QLatin1String("qrc:"),    Qt::CaseInsensitive)
                )
             {
                 const QString fontsdir_in(sFontsDir);
@@ -832,8 +836,8 @@ void SubtitleProcessorLibASS::updateFontCache()
 
                 Q_FOREACH (const QString& f, fonts)
                 {
-                    QFile ff(QStringLiteral("%1/%2").arg(fontsdir_in).arg(f));
-                    const QString kOut(QStringLiteral("%1/%2").arg(sFontsDir).arg(f));
+                    QFile ff(QString::fromUtf8("%1/%2").arg(fontsdir_in).arg(f));
+                    const QString kOut(QString::fromUtf8("%1/%2").arg(sFontsDir).arg(f));
                     QFile ffout(kOut);
 
                     if (ffout.exists() && (ffout.size() != ff.size()))
@@ -845,14 +849,20 @@ void SubtitleProcessorLibASS::updateFontCache()
                     }
 
                     if (!ffout.exists() && !ff.copy(kOut))
-                        qCWarning(DIGIKAM_QTAV_LOG_WARN) << "Copy font file [" << ff.fileName() <<  "] error: " << ff.errorString();
+                        qCWarning(DIGIKAM_QTAV_LOG_WARN) << "Copy font file ["
+                                                         << ff.fileName()
+                                                         <<  "] error: "
+                                                         << ff.errorString();
                 }
             }
 
             if (fonts.contains(kDefaultFontName))
             {
-                sFont = QStringLiteral("%1/%2").arg(sFontsDir).arg(kDefaultFontName);
-                qCDebug(DIGIKAM_QTAV_LOG) << "default font file: " << sFont << "; fonts dir: " << sFontsDir;
+                sFont = QString::fromUtf8("%1/%2").arg(sFontsDir).arg(kDefaultFontName);
+                qCDebug(DIGIKAM_QTAV_LOG) << "default font file: "
+                                          << sFont
+                                          << "; fonts dir: "
+                                          << sFontsDir;
             }
         }
     }
@@ -866,7 +876,7 @@ void SubtitleProcessorLibASS::updateFontCache()
         // Setting default font to the Arial from default.ttf (used if FontConfig fails)
 
         if (family.isEmpty())
-            family = QByteArrayLiteral("Arial");
+            family = QByteArray("Arial");
     }
 
     // prefer user settings
@@ -974,7 +984,7 @@ void SubtitleProcessorLibASS::updateFontCacheAsync()
 */
 }
 
-void SubtitleProcessorLibASS::processTrack(ASS_Track *track)
+void SubtitleProcessorLibASS::processTrack(ASS_Track* track)
 {
     // language, track type
 

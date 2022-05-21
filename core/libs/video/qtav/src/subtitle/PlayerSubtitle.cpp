@@ -76,12 +76,12 @@ static QString getSubtitleBasePath(const QString& fullPath)
     return path;
 }
 
-PlayerSubtitle::PlayerSubtitle(QObject *parent)
-    : QObject(parent)
-    , m_auto(true)
-    , m_enabled(true)
-    , m_player(nullptr)
-    , m_sub(new Subtitle(this))
+PlayerSubtitle::PlayerSubtitle(QObject* const parent)
+    : QObject  (parent),
+      m_auto   (true),
+      m_enabled(true),
+      m_player (nullptr),
+      m_sub    (new Subtitle(this))
 {
 }
 
@@ -90,7 +90,7 @@ Subtitle* PlayerSubtitle::subtitle()
     return m_sub;
 }
 
-void PlayerSubtitle::setPlayer(AVPlayerCore *player)
+void PlayerSubtitle::setPlayer(AVPlayerCore* player)
 {
     if (m_player == player)
         return;
@@ -108,7 +108,7 @@ void PlayerSubtitle::setPlayer(AVPlayerCore *player)
     connectSignals();
 }
 
-void PlayerSubtitle::setFile(const QString &file)
+void PlayerSubtitle::setFile(const QString& file)
 {
     if (m_file != file)
         Q_EMIT fileChanged();
@@ -156,7 +156,7 @@ void PlayerSubtitle::onPlayerSourceChanged()
     if (!m_enabled)
         return;
 
-    AVPlayerCore *p = qobject_cast<AVPlayerCore*>(sender());
+    AVPlayerCore* const p = qobject_cast<AVPlayerCore*>(sender());
 
     if (!p)
         return;
@@ -168,12 +168,12 @@ void PlayerSubtitle::onPlayerSourceChanged()
 
 void PlayerSubtitle::onPlayerPositionChanged()
 {
-    AVPlayerCore *p = qobject_cast<AVPlayerCore*>(sender());
+    AVPlayerCore* const p = qobject_cast<AVPlayerCore*>(sender());
 
     if (!p)
         return;
 
-    m_sub->setTimestamp(qreal(p->position())/1000.0);
+    m_sub->setTimestamp(qreal(p->position()) / 1000.0);
 }
 
 void PlayerSubtitle::onPlayerStart()
@@ -202,7 +202,7 @@ void PlayerSubtitle::onPlayerStart()
 
     const int n = m_player->currentSubtitleStream();
 
-    if (n < 0 || m_tracks.isEmpty() || m_tracks.size() <= n)
+    if ((n < 0) || m_tracks.isEmpty() || (m_tracks.size() <= n))
     {
         m_sub->processHeader(QByteArray(), QByteArray()); // reset
 
@@ -210,8 +210,8 @@ void PlayerSubtitle::onPlayerStart()
     }
 
     QVariantMap track = m_tracks[n].toMap();
-    QByteArray codec(track.value(QStringLiteral("codec")).toByteArray());
-    QByteArray data(track.value(QStringLiteral("extra")).toByteArray());
+    QByteArray codec(track.value(QLatin1String("codec")).toByteArray());
+    QByteArray data(track.value(QLatin1String("extra")).toByteArray());
     m_sub->processHeader(codec, data);
 
     return;
@@ -234,7 +234,7 @@ void PlayerSubtitle::onEnabledChanged(bool value)
 
     if (!m_file.isEmpty())
     {
-        if (m_sub->fileName() == m_file && m_sub->isLoaded())
+        if ((m_sub->fileName() == m_file) && m_sub->isLoaded())
             return;
 
         m_sub->setFileName(m_file);
@@ -273,7 +273,7 @@ void PlayerSubtitle::tryReload(int flag)
     if (!m_player->isPlaying())
         return;
 
-    const int kReloadExternal = 1 << 1;
+    const int kReloadExternal = (1 << 1);
 
     if (flag & kReloadExternal)
     {
@@ -290,7 +290,7 @@ void PlayerSubtitle::tryReload(int flag)
 
     const int n = m_player->currentSubtitleStream();
 
-    if (n < 0 || m_tracks.isEmpty() || m_tracks.size() <= n)
+    if (n < 0 || m_tracks.isEmpty() || (m_tracks.size() <= n))
     {
         m_sub->processHeader(QByteArray(), QByteArray()); // reset, null processor
         m_sub->loadAsync();
@@ -301,8 +301,8 @@ void PlayerSubtitle::tryReload(int flag)
     // try internal subtitles
 
     QVariantMap track = m_tracks[n].toMap();
-    QByteArray codec(track.value(QStringLiteral("codec")).toByteArray());
-    QByteArray data(track.value(QStringLiteral("extra")).toByteArray());
+    QByteArray codec(track.value(QLatin1String("codec")).toByteArray());
+    QByteArray data(track.value(QLatin1String("extra")).toByteArray());
     m_sub->processHeader(codec, data);
     Packet pkt(m_current_pkt[n]);
 
@@ -312,19 +312,19 @@ void PlayerSubtitle::tryReload(int flag)
     }
 }
 
-void  PlayerSubtitle::updateInternalSubtitleTracks(const QVariantList &tracks)
+void  PlayerSubtitle::updateInternalSubtitleTracks(const QVariantList& tracks)
 {
     m_tracks = tracks;
     m_current_pkt.resize(tracks.size());
 }
 
-void PlayerSubtitle::processInternalSubtitlePacket(int track, const QtAV::Packet &packet)
+void PlayerSubtitle::processInternalSubtitlePacket(int track, const QtAV::Packet& packet)
 {
     m_sub->processLine(packet.data, packet.pts, packet.duration);
     m_current_pkt[track] = packet;
 }
 
-void PlayerSubtitle::processInternalSubtitleHeader(const QByteArray& codec, const QByteArray &data)
+void PlayerSubtitle::processInternalSubtitleHeader(const QByteArray& codec, const QByteArray& data)
 {
     m_sub->processHeader(codec, data);
 }

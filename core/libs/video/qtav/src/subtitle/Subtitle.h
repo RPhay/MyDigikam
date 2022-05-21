@@ -46,9 +46,9 @@ class QTAV_EXPORT SubtitleFrame
 {
 public:
 
-    SubtitleFrame() :
-        begin(0),
-        end(0)
+    SubtitleFrame()
+      : begin(0),
+        end  (0)
     {
     }
 
@@ -206,7 +206,7 @@ public:
      * Always called if switch to a new internal subtitle stream. But header data can be empty
      * Used by libass to set style etc.
      */
-    bool processHeader(const QByteArray &codec, const QByteArray& data);
+    bool processHeader(const QByteArray& codec, const QByteArray& data);
 
     // ffmpeg decodes subtitle lines and call processLine. if AVPacket contains plain text, no decoding is ok
 
@@ -321,12 +321,12 @@ public:
 
     // API from PlayerSubtitle
 
-    /*
+/*
     void setFile(const QString& file);
     QString file() const;
     void setAutoLoad(bool value);
     bool autoLoad() const;
-    */
+*/
 
 private:
 

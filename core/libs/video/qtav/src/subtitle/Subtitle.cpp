@@ -69,18 +69,18 @@ class Q_DECL_HIDDEN Subtitle::Private
 public:
 
     Private()
-        : loaded(false),
-          fuzzy_match(true),
-          update_text(true),
-          update_image(true),
-          last_can_render(false),
-          processor(nullptr),
-          codec("AutoDetect"),
-          dev(nullptr),
-          t(0),
-          delay(0),
-          current_count(0),
-          force_font_file(false)
+        : loaded            (false),
+          fuzzy_match       (true),
+          update_text       (true),
+          update_image      (true),
+          last_can_render   (false),
+          processor         (nullptr),
+          codec             ("AutoDetect"),
+          dev               (nullptr),
+          t                 (0),
+          delay             (0),
+          current_count     (0),
+          force_font_file   (false)
     {
     }
 
@@ -166,13 +166,13 @@ public:
     QString                         fonts_dir;
 };
 
-Subtitle::Subtitle(QObject* parent)
+Subtitle::Subtitle(QObject* const parent)
     : QObject(parent),
-      priv(new Private())
+      priv   (new Private())
 {
     // TODO: use factory.registedNames() and the order
 
-    setEngines(QStringList() << QStringLiteral("LibASS") << QStringLiteral("FFmpeg"));
+    setEngines(QStringList() << QLatin1String("LibASS") << QLatin1String("FFmpeg"));
 }
 
 Subtitle::~Subtitle()
@@ -273,7 +273,7 @@ void Subtitle::setEngines(const QStringList& value)
         return;
     }
 
-    Q_FOREACH (SubtitleProcessor* sp, sps)
+    Q_FOREACH (SubtitleProcessor* const sp, sps)
     {
         priv->supported_suffixes.append(sp->supportedTypes());
     }
@@ -316,7 +316,7 @@ bool Subtitle::fuzzyMatch() const
     return priv->fuzzy_match;
 }
 
-void Subtitle::setRawData(const QByteArray &data)
+void Subtitle::setRawData(const QByteArray& data)
 {
     // compare the whole content is not a good idea
 
@@ -358,7 +358,7 @@ QString Subtitle::fileName() const
     return priv->file_name;
 }
 
-void Subtitle::setDirs(const QStringList &value)
+void Subtitle::setDirs(const QStringList& value)
 {
     if (priv->dirs == value)
         return;
@@ -378,7 +378,7 @@ QStringList Subtitle::supportedSuffixes() const
     return priv->supported_suffixes;
 }
 
-void Subtitle::setSuffixes(const QStringList &value)
+void Subtitle::setSuffixes(const QStringList& value)
 {
     if (priv->suffixes == value)
         return;
@@ -442,7 +442,7 @@ QString Subtitle::fontFile() const
     return priv->font_file;
 }
 
-void Subtitle::setFontFile(const QString &value)
+void Subtitle::setFontFile(const QString& value)
 {
     if (priv->font_file == value)
         return;
@@ -462,7 +462,7 @@ QString Subtitle::fontsDir() const
     return priv->fonts_dir;
 }
 
-void Subtitle::setFontsDir(const QString &value)
+void Subtitle::setFontsDir(const QString& value)
 {
     if (priv->fonts_dir == value)
         return;
@@ -675,7 +675,7 @@ QString Subtitle::getText() const
 
     for (int i = 0 ; i < count ; ++i)
     {
-        priv->current_text.append(it->text).append(QStringLiteral("\n"));
+        priv->current_text.append(it->text).append(QLatin1Char('\n'));
         ++it;
     }
 
@@ -702,7 +702,7 @@ QImage Subtitle::getImage(int width, int height, QRect* boundingRect)
 
     // always render the image to support animations
 
-    if (!priv->update_image && width == priv->current_image.width() && height == priv->current_image.height())
+    if (!priv->update_image && (width == priv->current_image.width()) && (height == priv->current_image.height()))
         return priv->current_image;
 
 #endif
@@ -773,7 +773,8 @@ bool Subtitle::processHeader(const QByteArray& codec, const QByteArray &data)
 
     if (!priv->processor)
     {
-        qCWarning(DIGIKAM_QTAV_LOG_WARN).noquote() << QString::asprintf("No subtitle processor supports the codec '%s'", codec.constData());
+        qCWarning(DIGIKAM_QTAV_LOG_WARN).noquote()
+            << QString::asprintf("No subtitle processor supports the codec '%s'", codec.constData());
 
         return false;
     }
@@ -790,7 +791,7 @@ bool Subtitle::processHeader(const QByteArray& codec, const QByteArray &data)
     return true;
 }
 
-bool Subtitle::processLine(const QByteArray &data, qreal pts, qreal duration)
+bool Subtitle::processLine(const QByteArray& data, qreal pts, qreal duration)
 {
     if (!priv->processor)
         return false;
@@ -970,10 +971,10 @@ QStringList Subtitle::Private::find()
 
     Q_FOREACH (const QString& suf, sfx)
     {
-        filters.append(QStringLiteral("%1*.%2").arg(name).arg(suf));
+        filters.append(QString::fromUtf8("%1*.%2").arg(name).arg(suf));
 
         if (name != base_name)
-            filters_base.append(QStringLiteral("%1*.%2").arg(base_name).arg(suf));
+            filters_base.append(QString::fromUtf8("%1*.%2").arg(base_name).arg(suf));
     }
 
     QStringList search_dirs(dirs);
@@ -1022,7 +1023,7 @@ QStringList Subtitle::Private::find()
 
 #else
 
-        QRegExp rx(QStringLiteral("*.") + suf);
+        QRegExp rx(QLatin1String("*.") + suf);
         rx.setPatternSyntax(QRegExp::Wildcard);
 
 #endif
@@ -1192,9 +1193,9 @@ bool Subtitle::Private::processRawData(SubtitleProcessor* sp, const QByteArray& 
         name = QFileInfo(file_name).fileName(); //priv->name.section('/', -1); // if no separator ?
 
     if (name.isEmpty())
-        name = QStringLiteral("QtAV_u8_sub_cache");
+        name = QLatin1String("QtAV_u8_sub_cache");
 
-    name.append(QStringLiteral("_%1").arg((quintptr)this));
+    name.append(QString::fromUtf8("_%1").arg((quintptr)this));
     QFile w(QDir::temp().absoluteFilePath(name));
 
     if (w.open(QIODevice::WriteOnly))
@@ -1214,7 +1215,7 @@ bool Subtitle::Private::processRawData(SubtitleProcessor* sp, const QByteArray& 
 
 SubtitleAPIProxy::SubtitleAPIProxy(QObject* const obj)
     : m_obj(obj),
-      m_s(nullptr)
+      m_s  (nullptr)
 {
 }
 

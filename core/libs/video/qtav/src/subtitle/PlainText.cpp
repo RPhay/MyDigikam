@@ -45,12 +45,12 @@ namespace PlainText
 
 struct Q_DECL_HIDDEN buf
 {
-    char *start;
-    int size;
-    int len;
+    char* start = nullptr;
+    int   size  = 0;
+    int   len   = 0;
 };
 
-static void append(struct buf *b, char c)
+static void append(struct buf* b, char c)
 {
     if (b->len < b->size)
     {
@@ -59,10 +59,10 @@ static void append(struct buf *b, char c)
     }
 }
 
-static void ass_to_plaintext(struct buf *b, const char *in)
+static void ass_to_plaintext(struct buf* b, const char* in)
 {
     bool in_tag              = false;
-    const char *open_tag_pos = nullptr;
+    const char* open_tag_pos = nullptr;
     bool in_drawing          = false;
 
     while (*in)
@@ -74,7 +74,7 @@ static void ass_to_plaintext(struct buf *b, const char *in)
                 in += 1;
                 in_tag = false;
             }
-            else if (in[0] == '\\' && in[1] == 'p')
+            else if ((in[0] == '\\') && (in[1] == 'p'))
             {
                 in += 2;
 
@@ -83,7 +83,7 @@ static void ass_to_plaintext(struct buf *b, const char *in)
 
                 in_drawing = false;
 
-                while (in[0] >= '0' && in[0] <= '9')
+                while ((in[0] >= '0') && (in[0] <= '9'))
                 {
                     if (in[0] != '0')
                         in_drawing = true;
@@ -98,12 +98,12 @@ static void ass_to_plaintext(struct buf *b, const char *in)
         }
         else
         {
-            if      (in[0] == '\\' && (in[1] == 'N' || in[1] == 'n'))
+            if      ((in[0] == '\\') && ((in[1] == 'N') || (in[1] == 'n')))
             {
                 in += 2;
                 append(b, '\n');
             }
-            else if (in[0] == '\\' && in[1] == 'h')
+            else if ((in[0] == '\\') && (in[1] == 'h'))
             {
                 in += 2;
                 append(b, ' ');
@@ -111,8 +111,8 @@ static void ass_to_plaintext(struct buf *b, const char *in)
             else if (in[0] == '{')
             {
                 open_tag_pos = in;
-                in += 1;
-                in_tag = true;
+                in          += 1;
+                in_tag       = true;
             }
             else
             {
@@ -135,15 +135,14 @@ static void ass_to_plaintext(struct buf *b, const char *in)
 
 QString fromAss(const char* ass)
 {
-    char text[512];
-    memset(text, 0, sizeof(text));
+    char text[512] = { 0 };
     struct buf b;
     b.start = text;
-    b.size = sizeof(text) - 1;
-    b.len = 0;
+    b.size  = sizeof(text) - 1;
+    b.len   = 0;
     ass_to_plaintext(&b, ass);
     int hour1, min1, sec1, hunsec1, hour2, min2, sec2, hunsec2;
-    char line[512], *ret;
+    char line[512] = { 0 }, *ret = nullptr;
 
     // fixme: "\0" maybe not allowed
 
@@ -176,7 +175,7 @@ QString fromAss(const char* ass)
 
     static const char kDefaultStyle[] = "Default,";
 
-    for (int comma = 0 ; comma < 6 ; comma++)
+    for (int comma = 0 ; comma < 6 ; ++comma)
     {
         if (!(ret = strchr(++ret, ',')))
         {
@@ -207,7 +206,7 @@ QString fromAss(const char* ass)
     if (line2.isEmpty())
         return QString::fromUtf8(ret);
 
-    return QString::fromUtf8(ret) + QStringLiteral("\n") + line2;
+    return QString::fromUtf8(ret) + QLatin1Char('\n') + line2;
 }
 
 } // namespace PlainText

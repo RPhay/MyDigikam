@@ -158,7 +158,7 @@ private:
 
     typedef SubtitleProcessor* (*SubtitleProcessorCreator)();
 
-    static bool Register(SubtitleProcessorId id, SubtitleProcessorCreator, const char *name);
+    static bool Register(SubtitleProcessorId id, SubtitleProcessorCreator, const char* name);
 
 protected:
 

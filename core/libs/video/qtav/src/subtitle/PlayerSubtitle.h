@@ -52,7 +52,7 @@ class QTAV_PRIVATE_EXPORT PlayerSubtitle : public QObject
 
 public:
 
-    explicit PlayerSubtitle(QObject* parent = nullptr);
+    explicit PlayerSubtitle(QObject* const parent = nullptr);
 
     void setPlayer(AVPlayerCore* player);
     Subtitle* subtitle();
@@ -89,7 +89,7 @@ private Q_SLOTS:
     void tryReloadInternalSub();
     void updateInternalSubtitleTracks(const QVariantList& tracks);
     void processInternalSubtitlePacket(int track, const QtAV::Packet& packet);
-    void processInternalSubtitleHeader(const QByteArray &codec, const QByteArray& data); // TODO: remove
+    void processInternalSubtitleHeader(const QByteArray& codec, const QByteArray& data); // TODO: remove
 
 private:
 
@@ -101,8 +101,8 @@ private:
 
     bool            m_auto;
     bool            m_enabled;  // TODO: m_enable_external
-    AVPlayerCore*       m_player;
-    Subtitle*       m_sub;
+    AVPlayerCore*   m_player = nullptr;
+    Subtitle*       m_sub    = nullptr;
     QString         m_file;
     QVariantList    m_tracks;
     QVector<Packet> m_current_pkt;
