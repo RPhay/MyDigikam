@@ -153,8 +153,8 @@ SlideVideo::SlideVideo(QWidget* const parent)
     KConfigGroup group        = config->group("Media Player Settings");
     int volume                = group.readEntry("Volume", 50);
 
-    d->volume->setValue(volume);
     d->player->audio()->setVolume((qreal)volume / 100.0);
+    d->volume->setValue(volume);
 
     // --------------------------------------------------------------------------
 
