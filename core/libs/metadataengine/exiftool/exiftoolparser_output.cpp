@@ -182,7 +182,7 @@ void ExifToolParser::slotCmdCompleted(int cmdId,
 
         case ExifToolProcess::LOAD_CHUNKS:
         {
-            qCDebug(DIGIKAM_METAENGINE_LOG) << "EXV" << stdOut.size();
+            qCDebug(DIGIKAM_METAENGINE_LOG) << "EXV chunk size:" << stdOut.size();
 
             d->exifToolData.insert(QLatin1String("EXV"), QVariantList() << stdOut);     // Exv chunk as bytearray.
             break;

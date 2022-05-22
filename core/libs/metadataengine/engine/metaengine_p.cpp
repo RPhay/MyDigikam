@@ -532,102 +532,100 @@ bool MetaEngine::Private::saveUsingExifTool(const QFileInfo& finfo) const
 
     QScopedPointer<ExifToolParser> const parser(new ExifToolParser(nullptr));
 
-    if (parser->exifToolAvailable())
+    if (!parser->exifToolAvailable())
     {
-        QString dir                   = QDir::temp().path();
-        QString random                = QUuid::createUuid().toString().mid(1, 8);
-        SafeTemporaryFile* const temp = new SafeTemporaryFile(dir + QLatin1String("/digikam-XXXXXX-") +
-                                                              random + QLatin1String("-metaengine.exv"));
-        temp->setAutoRemove(false);
-        temp->open();
-        QString exvPath = temp->safeFilePath();
-
-        // Crash fix: a QTemporaryFile is not properly closed until its destructor is called.
-
-        delete temp;
-
-        // ---
-
-        parent->exportChanges(exvPath);
-
-        if (!updateFileTimeStamp)
-        {
-            // Don't touch access and modification timestamp of file.
-
-#ifdef Q_OS_WIN64
-
-            struct __utimbuf64 ut;
-            struct __stat64    st;
-            int ret = _wstat64((const wchar_t*)finfo.filePath().utf16(), &st);
-
-#elif defined Q_OS_WIN
-
-            struct _utimbuf    ut;
-            struct _stat       st;
-            int ret = _wstat((const wchar_t*)finfo.filePath().utf16(), &st);
-
-#else
-
-            struct utimbuf     ut;
-            QT_STATBUF         st;
-            int ret = QT_STAT(finfo.filePath().toUtf8().constData(), &st);
-
-#endif
-
-            if (ret == 0)
-            {
-                ut.modtime = st.st_mtime;
-                ut.actime  = st.st_atime;
-            }
-
-            if (!parser->applyChanges(finfo.filePath(), exvPath))
-            {
-                qCWarning(DIGIKAM_METAENGINE_LOG) << "Cannot apply changes with ExifTool on" << finfo.filePath();
-                QFile::remove(exvPath);
-
-                return false;
-            }
-
-            if (ret == 0)
-            {
-
-#ifdef Q_OS_WIN64
-
-                _wutime64((const wchar_t*)finfo.filePath().utf16(), &ut);
-
-#elif defined Q_OS_WIN
-
-                _wutime((const wchar_t*)finfo.filePath().utf16(), &ut);
-
-#else
-
-                ::utime(finfo.filePath().toUtf8().constData(), &ut);
-
-#endif
-
-            }
-
-            qCDebug(DIGIKAM_METAENGINE_LOG) << "File time stamp restored";
-        }
-        else
-        {
-            if (!parser->applyChanges(finfo.filePath(), exvPath))
-            {
-                qCWarning(DIGIKAM_METAENGINE_LOG) << "Cannot apply changes with ExifTool on" << finfo.filePath();
-                QFile::remove(exvPath);
-
-                return false;
-            }
-        }
-
-        QFile::remove(exvPath);
-    }
-    else
-    {
-        qCWarning(DIGIKAM_METAENGINE_LOG) << "ExifTool is not available to save metadata...";
+       qCWarning(DIGIKAM_METAENGINE_LOG) << "ExifTool is not available to save metadata...";
 
         return false;
     }
+
+    QString dir                   = QDir::temp().path();
+    QString random                = QUuid::createUuid().toString().mid(1, 8);
+    SafeTemporaryFile* const temp = new SafeTemporaryFile(dir + QLatin1String("/digikam-XXXXXX-") +
+                                                          random + QLatin1String("-metaengine.exv"));
+    temp->setAutoRemove(false);
+    temp->open();
+    QString exvPath = temp->safeFilePath();
+
+    // Crash fix: a QTemporaryFile is not properly closed until its destructor is called.
+
+    delete temp;
+
+    // ---
+
+    parent->exportChanges(exvPath);
+
+    if (!updateFileTimeStamp)
+    {
+        // Don't touch access and modification timestamp of file.
+
+#ifdef Q_OS_WIN64
+
+        struct __utimbuf64 ut;
+        struct __stat64    st;
+        int ret = _wstat64((const wchar_t*)finfo.filePath().utf16(), &st);
+
+#elif defined Q_OS_WIN
+
+        struct _utimbuf    ut;
+        struct _stat       st;
+        int ret = _wstat((const wchar_t*)finfo.filePath().utf16(), &st);
+
+#else
+
+        struct utimbuf     ut;
+        QT_STATBUF         st;
+        int ret = QT_STAT(finfo.filePath().toUtf8().constData(), &st);
+
+#endif
+
+        if (ret == 0)
+        {
+            ut.modtime = st.st_mtime;
+            ut.actime  = st.st_atime;
+        }
+
+        if (!parser->applyChanges(finfo.filePath(), exvPath))
+        {
+            qCWarning(DIGIKAM_METAENGINE_LOG) << "Cannot apply changes with ExifTool on" << finfo.filePath();
+            QFile::remove(exvPath);
+
+            return false;
+        }
+
+        if (ret == 0)
+        {
+
+#ifdef Q_OS_WIN64
+
+            _wutime64((const wchar_t*)finfo.filePath().utf16(), &ut);
+
+#elif defined Q_OS_WIN
+
+            _wutime((const wchar_t*)finfo.filePath().utf16(), &ut);
+
+#else
+
+            ::utime(finfo.filePath().toUtf8().constData(), &ut);
+
+#endif
+
+        }
+
+        qCDebug(DIGIKAM_METAENGINE_LOG) << "File time stamp restored";
+    }
+    else
+    {
+        if (!parser->applyChanges(finfo.filePath(), exvPath))
+        {
+            qCWarning(DIGIKAM_METAENGINE_LOG) << "Cannot apply changes with ExifTool on" << finfo.filePath();
+            QFile::remove(exvPath);
+
+            return false;
+        }
+    }
+
+    QFile::remove(exvPath);
 
     return true;
 }

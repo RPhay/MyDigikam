@@ -45,46 +45,46 @@ bool DMetadata::loadUsingExifTool(const QString& filePath, bool fromVideo)
 {
     QScopedPointer<ExifToolParser> const parser(new ExifToolParser(nullptr));
 
-    if (parser->exifToolAvailable())
-    {
-        bool ret = parser->loadChunk(filePath, fromVideo);
-
-        if (!ret)
-        {
-            qCCritical(DIGIKAM_METAENGINE_LOG) << "Load metadata using ExifTool failed...";
-
-            return false;
-        }
-
-        ExifToolParser::ExifToolData chunk = parser->currentData();
-
-        qCDebug(DIGIKAM_METAENGINE_LOG) << "Metadata chunk loaded with ExifTool";
-
-        ExifToolParser::ExifToolData::iterator it = chunk.find(QLatin1String("EXV"));
-
-        if (it == chunk.end())
-        {
-            qCWarning(DIGIKAM_METAENGINE_LOG) << "Metadata chunk loaded with ExifTool is empty";
-
-            return false;
-        }
-
-        QVariantList varLst = it.value();
-        QByteArray exv      = varLst[0].toByteArray();
-
-        if (!exv.isEmpty())
-        {
-            qCDebug(DIGIKAM_METAENGINE_LOG) << "EXV chunk size loaded with ExifTool:" << exv.size();
-            loadFromData(exv);
-            setFilePath(filePath);
-            loadFromSidecarAndMerge(filePath);
-        }
-    }
-    else
+    if (!parser->exifToolAvailable())
     {
         qCWarning(DIGIKAM_METAENGINE_LOG) << "ExifTool is not available to load metadata...";
 
         return false;
+    }
+
+    bool ret = parser->loadChunk(filePath, fromVideo);
+
+    if (!ret)
+    {
+        qCCritical(DIGIKAM_METAENGINE_LOG) << "Load metadata using ExifTool failed...";
+
+        return false;
+    }
+
+    ExifToolParser::ExifToolData chunk = parser->currentData();
+
+    qCDebug(DIGIKAM_METAENGINE_LOG) << "Metadata chunk loaded with ExifTool";
+
+    ExifToolParser::ExifToolData::iterator it = chunk.find(QLatin1String("EXV"));
+
+    if (it == chunk.end())
+    {
+        qCWarning(DIGIKAM_METAENGINE_LOG) << "Metadata chunk loaded with ExifTool is empty";
+
+        return false;
+    }
+
+    QVariantList varLst = it.value();
+    QByteArray exv      = varLst[0].toByteArray();
+
+    if (!exv.isEmpty())
+    {
+        loadFromData(exv);
+
+        // Restore file path.
+
+        setFilePath(filePath);
+        loadFromSidecarAndMerge(filePath);
     }
 
     return true;
