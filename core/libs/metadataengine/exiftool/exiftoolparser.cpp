@@ -47,13 +47,16 @@ ExifToolParser::ExifToolParser(QObject* const parent)
     }
 
     d->hdls << connect(d->proc, &ExifToolProcess::signalCmdCompleted,
-                       this, &ExifToolParser::slotCmdCompleted);
+                       this, &ExifToolParser::slotCmdCompleted,
+                       Qt::QueuedConnection);
 
     d->hdls << connect(d->proc, &ExifToolProcess::signalErrorOccurred,
-                       this, &ExifToolParser::slotErrorOccurred);
+                       this, &ExifToolParser::slotErrorOccurred,
+                       Qt::QueuedConnection);
 
     d->hdls << connect(d->proc, &ExifToolProcess::signalFinished,
-                       this, &ExifToolParser::slotFinished);
+                       this, &ExifToolParser::slotFinished,
+                       Qt::QueuedConnection);
 }
 
 ExifToolParser::~ExifToolParser()
@@ -102,12 +105,12 @@ ExifToolParser::ExifToolData ExifToolParser::currentData() const
 
 QString ExifToolParser::currentErrorString() const
 {
-    return d->proc->errorString();
+    return d->proc->exifToolErrorString();
 }
 
 bool ExifToolParser::exifToolAvailable() const
 {
-    bool ret = d->proc->checkExifToolProgram();
+    bool ret = d->proc->exifToolAvailable();
 
     qCDebug(DIGIKAM_METAENGINE_LOG) << "Check ExifTool availability:" << ret;
 
