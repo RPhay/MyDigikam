@@ -203,22 +203,22 @@ void ExifToolProcess::killExifTool()
     kill();
 }
 
-bool ExifToolProcess::isRunning() const
+bool ExifToolProcess::exifToolAvailable() const
 {
     return (state() == QProcess::Running);
 }
 
-bool ExifToolProcess::isBusy() const
+bool ExifToolProcess::exifToolIsBusy() const
 {
     return (d->cmdRunning ? true : false);
 }
 
-QProcess::ProcessError ExifToolProcess::error() const
+QProcess::ProcessError ExifToolProcess::exifToolError() const
 {
     return d->processError;
 }
 
-QString ExifToolProcess::errorString() const
+QString ExifToolProcess::exifToolErrorString() const
 {
     return d->errorString;
 }
@@ -350,7 +350,7 @@ QString ExifToolProcess::exifToolBin() const
 
 }
 
-bool ExifToolProcess::checkExifToolProgram()
+bool ExifToolProcess::checkExifToolProgram() const
 {
     // Check if Exiftool program exists and have execution permissions
 
@@ -362,8 +362,9 @@ bool ExifToolProcess::checkExifToolProgram()
         !(QFile::permissions(d->etExePath) & QFile::ExeUser))
        )
     {
-        d->setProcessErrorAndEmit(QProcess::FailedToStart,
-                                  QString::fromLatin1("ExifTool does not exists or exec permission is missing"));
+        d->processError = QProcess::FailedToStart;
+        d->errorString  = i18n("ExifTool does not exists or exec permission is missing");
+
         return false;
     }
 
@@ -375,8 +376,9 @@ bool ExifToolProcess::checkExifToolProgram()
         !(QFile::permissions(d->perlExePath) & QFile::ExeUser))
        )
     {
-        d->setProcessErrorAndEmit(QProcess::FailedToStart,
-                                  QString::fromLatin1("Perl does not exists or exec permission is missing"));
+        d->processError = QProcess::FailedToStart;
+        d->errorString  = i18n("Perl does not exists or exec permission is missing");
+
         return false;
     }
 
@@ -452,7 +454,7 @@ void ExifToolProcess::slotChangeProgram(const QString& etExePath)
 
     changeExifToolProgram(etExePath);
 
-    if (isRunning()                &&
+    if (exifToolAvailable()        &&
         (et == getExifToolProgram()))
     {
         return;

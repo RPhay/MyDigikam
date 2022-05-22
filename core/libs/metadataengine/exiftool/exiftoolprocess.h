@@ -137,31 +137,29 @@ public:
      */
     void setExifToolProgram(const QString& etExePath);
 
-    QString getExifToolProgram() const;
-
-    bool checkExifToolProgram();
+    QString getExifToolProgram()                 const;
 
 public:
 
     /**
-     * Returns true if ExifToolProcess is running (process state == Running)
+     * Returns true if ExifToolProcess is available (process state == Running)
      */
-    bool                   isRunning()                  const;
+    bool                   exifToolAvailable()   const;
 
     /**
      * Returns true if a command is running.
      */
-    bool                   isBusy()                     const;
+    bool                   exifToolIsBusy()      const;
 
     /**
      * Returns the type of error that occurred last.
      */
-    QProcess::ProcessError error()                      const;
+    QProcess::ProcessError exifToolError()       const;
 
     /**
      * Returns an error message.
      */
-    QString                errorString()                const;
+    QString                exifToolErrorString() const;
 
     /**
      * Send a command to exiftool process.
@@ -218,7 +216,9 @@ private:
      */
     void killExifTool();
 
-    QString exifToolBin()                               const;
+    QString exifToolBin()                        const;
+
+    bool checkExifToolProgram()                  const;
 
     void changeExifToolProgram(const QString& etExePath);
 
