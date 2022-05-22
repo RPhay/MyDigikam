@@ -80,7 +80,7 @@ struct dxgi_fcc
 
 DXGI_FORMAT fourccToDXGI(int fourcc)
 {
-    for (size_t i = 0 ; i < sizeof(dxgi_formats)/sizeof(dxgi_formats[0]) ; ++i)
+    for (size_t i = 0 ; (i < sizeof(dxgi_formats) / sizeof(dxgi_formats[0])) ; ++i)
     {
         if (dxgi_formats[i].fourcc == fourcc)
             return dxgi_formats[i].dxgi;
@@ -91,7 +91,7 @@ DXGI_FORMAT fourccToDXGI(int fourcc)
 
 int fourccFromDXGI(DXGI_FORMAT fmt)
 {
-    for (const dxgi_fcc* f = dxgi_formats ; f < dxgi_formats + sizeof(dxgi_formats)/sizeof(dxgi_formats[0]) ; ++f)
+    for (const dxgi_fcc* f = dxgi_formats ; (f < dxgi_formats + sizeof(dxgi_formats) / sizeof(dxgi_formats[0])) ; ++f)
     {
         if (f->dxgi == fmt)
             return f->fourcc;
@@ -128,7 +128,7 @@ QString VideoDecoderD3D11::description() const
     if (!sD3D11Description.isEmpty())
         return sD3D11Description;
 
-    return QStringLiteral("D3D11 Video Acceleration");
+    return QLatin1String("D3D11 Video Acceleration");
 }
 
 struct Q_DECL_HIDDEN d3d11_surface_t
@@ -136,7 +136,7 @@ struct Q_DECL_HIDDEN d3d11_surface_t
 {
     d3d11_surface_t()
         : va_surface_t(),
-          view(0)
+          view        (0)
     {
     }
 
@@ -235,10 +235,10 @@ VideoFrame VideoDecoderD3D11::frame()
     if (!d.frame->opaque || !d.frame->data[0])
         return VideoFrame();
 
-    if (d.frame->width <= 0 || d.frame->height <= 0 || !d.codec_ctx)
+    if ((d.frame->width <= 0) || (d.frame->height <= 0) || !d.codec_ctx)
         return VideoFrame();
 
-    ID3D11VideoDecoderOutputView *surface = (ID3D11VideoDecoderOutputView*)(uintptr_t)d.frame->data[3];
+    ID3D11VideoDecoderOutputView* const surface = (ID3D11VideoDecoderOutputView*)(uintptr_t)d.frame->data[3];
 
     if (!surface)
     {
@@ -253,6 +253,7 @@ VideoFrame VideoDecoderD3D11::frame()
     if (!texture)
     {
         qCWarning(DIGIKAM_QTAV_LOG_WARN).noquote() << QString::asprintf("Get D3D11 texture error");
+
         return VideoFrame();
     }
 
@@ -261,9 +262,9 @@ VideoFrame VideoDecoderD3D11::frame()
     D3D11_TEXTURE2D_DESC tex_desc;
     texture->GetDesc(&tex_desc);
 
-    if (copyMode() == VideoDecoderFFmpegHW::ZeroCopy && d.interop_res)
+    if ((copyMode() == VideoDecoderFFmpegHW::ZeroCopy) && d.interop_res)
     {
-        d3d11::SurfaceInterop* interop = new d3d11::SurfaceInterop(d.interop_res);
+        d3d11::SurfaceInterop* const interop = new d3d11::SurfaceInterop(d.interop_res);
         interop->setSurface(texture, view_desc.Texture2D.ArraySlice, d.width, d.height);
         VideoFormat fmt(d.interop_res->format(tex_desc.Format));
         VideoFrame f(d.width, d.height, fmt);
@@ -273,7 +274,7 @@ VideoFrame VideoDecoderD3D11::frame()
             f.setBytesPerLine(fmt.bytesPerLine(d.width, i), i); //used by gl to compute texture size
         }
 
-        f.setMetaData(QStringLiteral("surface_interop"), QVariant::fromValue(VideoSurfaceInteropPtr(interop)));
+        f.setMetaData(QLatin1String("surface_interop"), QVariant::fromValue(VideoSurfaceInteropPtr(interop)));
         f.setTimestamp(d.frame->pkt_pts/1000.0);
         f.setDisplayAspectRatio(d.getDAR(d.frame));
 
@@ -283,13 +284,13 @@ VideoFrame VideoDecoderD3D11::frame()
 //    qCDebug(DIGIKAM_QTAV_LOG).noquote() << QString::asprintf("process for view: %p, texture: %p", surface, texture.Get());
 
     d.d3dctx->CopySubresourceRegion(d.texture_cpu.Get(), 0, 0, 0, 0,
-                                    texture.Get()
-                                    , view_desc.Texture2D.ArraySlice
-                                    , nullptr);
+                                    texture.Get(),
+                                    view_desc.Texture2D.ArraySlice,
+                                    nullptr);
 
     struct Q_DECL_HIDDEN ScopedMap
     {
-        ScopedMap(ComPtr<ID3D11DeviceContext> ctx, ComPtr<ID3D11Texture2D> res, D3D11_MAPPED_SUBRESOURCE *mapped)
+        ScopedMap(ComPtr<ID3D11DeviceContext> ctx, ComPtr<ID3D11Texture2D> res, D3D11_MAPPED_SUBRESOURCE* mapped)
             : c(ctx),
               r(res)
         {
@@ -328,15 +329,16 @@ bool VideoDecoderD3D11Private::createDevice()
 
 #if defined(Q_OS_WINRT)
 
-    fCreateDevice = ::D3D11CreateDevice;
+    fCreateDevice                         = ::D3D11CreateDevice;
 
 #else
 
-    fCreateDevice = (PFN_D3D11_CREATE_DEVICE)GetProcAddress(dll, "D3D11CreateDevice");
+    fCreateDevice                         = (PFN_D3D11_CREATE_DEVICE)GetProcAddress(dll, "D3D11CreateDevice");
 
     if (!fCreateDevice)
     {
-        qCWarning(DIGIKAM_QTAV_LOG_WARN).noquote() << QString::asprintf("Can not resolve symbol D3D11CreateDevice");
+        qCWarning(DIGIKAM_QTAV_LOG_WARN).noquote()
+            << QString::asprintf("Can not resolve symbol D3D11CreateDevice");
     }
 
 #endif
@@ -361,13 +363,13 @@ bool VideoDecoderD3D11Private::createDevice()
     DXGI_ADAPTER_DESC desc;
     DX_ENSURE(dxgi_adapter->GetDesc(&desc), false);
 
-    sD3D11Description = QStringLiteral("D3D11 Video Acceleration (%1, vendor %2(%3), device %4, revision %5)")
+    sD3D11Description = QString::fromUtf8("D3D11 Video Acceleration (%1, vendor %2(%3), device %4, revision %5)")
             .arg(QString::fromWCharArray(desc.Description))
             .arg(desc.VendorId)
             .arg(QString::fromUtf8(DXHelper::vendorName(desc.VendorId)))
             .arg(desc.DeviceId)
             .arg(desc.Revision)
-            ;
+    ;
 
     qCDebug(DIGIKAM_QTAV_LOG) << sD3D11Description;
     description = sD3D11Description;
@@ -383,11 +385,11 @@ void VideoDecoderD3D11Private::destroyDevice()
     d3ddev.Reset();
 }
 
-int VideoDecoderD3D11Private::fourccFor(const GUID *guid) const
+int VideoDecoderD3D11Private::fourccFor(const GUID* guid) const
 {
     BOOL is_supported = FALSE;
 
-    for (size_t i = 0 ; i < sizeof(dxgi_formats)/sizeof(dxgi_formats[i]) ; ++i)
+    for (size_t i = 0 ; i < sizeof(dxgi_formats) / sizeof(dxgi_formats[i]) ; ++i)
     {
         const dxgi_fcc& f = dxgi_formats[i];
         DX_ENSURE(d3dviddev->CheckVideoDecoderFormat(guid, f.dxgi, &is_supported), 0);
@@ -412,7 +414,7 @@ QVector<GUID> VideoDecoderD3D11Private::getSupportedCodecs() const
     return guids;
 }
 
-bool VideoDecoderD3D11Private::createDecoder(AVCodecID codec_id, int w, int h, QVector<va_surface_t *> &surf)
+bool VideoDecoderD3D11Private::createDecoder(AVCodecID codec_id, int w, int h, QVector<va_surface_t*> &surf)
 {
     const int nb_surfaces    = surf.size();
     D3D11_TEXTURE2D_DESC texDesc;
@@ -430,7 +432,7 @@ bool VideoDecoderD3D11Private::createDecoder(AVCodecID codec_id, int w, int h, Q
     ComPtr<ID3D11Texture2D> tex;
     DX_ENSURE(d3ddev->CreateTexture2D(&texDesc, nullptr, tex.GetAddressOf()), false);
 
-    if (copy_mode != VideoDecoderFFmpegHW::ZeroCopy || !interop_res)
+    if ((copy_mode != VideoDecoderFFmpegHW::ZeroCopy) || !interop_res)
     {
         // copy
 
@@ -454,12 +456,14 @@ bool VideoDecoderD3D11Private::createDecoder(AVCodecID codec_id, int w, int h, Q
         viewDesc.Texture2D.ArraySlice = i;
         ComPtr<ID3D11VideoDecoderOutputView> view;
         DX_ENSURE(d3dviddev->CreateVideoDecoderOutputView(tex.Get(), &viewDesc, &view), false);
-        d3d11_surface_t* s = new d3d11_surface_t();
+        d3d11_surface_t* const s      = new d3d11_surface_t();
         s->setSurface(view.Get());
-        surf[i]            = s;
+        surf[i]                       = s;
     }
 
-    qCDebug(DIGIKAM_QTAV_LOG).noquote() << QString::asprintf("ID3D11VideoDecoderOutputView %d surfaces (%dx%d)", nb_surfaces, aligned(w), aligned(h));
+    qCDebug(DIGIKAM_QTAV_LOG).noquote()
+        << QString::asprintf("ID3D11VideoDecoderOutputView %d surfaces (%dx%d)",
+            nb_surfaces, aligned(w), aligned(h));
 
     D3D11_VIDEO_DECODER_DESC decoderDesc;
     ZeroMemory(&decoderDesc, sizeof(decoderDesc));

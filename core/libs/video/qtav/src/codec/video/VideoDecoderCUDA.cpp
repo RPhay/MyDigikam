@@ -195,37 +195,37 @@ public:
 
     VideoDecoderCUDAPrivate()
       : VideoDecoderPrivate(),
-        can_load(true),
-        host_data(nullptr),
-        host_data_size(0),
-        create_flags(cudaVideoCreate_Default),
-        deinterlace(cudaVideoDeinterlaceMode_Adaptive),
-        yuv_range(ColorRange_Limited),
-        nb_dec_surface(kMaxDecodeSurfaces),
-        copy_mode(VideoDecoderCUDA::DirectCopy)
+        can_load        (true),
+        host_data       (nullptr),
+        host_data_size  (0),
+        create_flags    (cudaVideoCreate_Default),
+        deinterlace     (cudaVideoDeinterlaceMode_Adaptive),
+        yuv_range       (ColorRange_Limited),
+        nb_dec_surface  (kMaxDecodeSurfaces),
+        copy_mode       (VideoDecoderCUDA::DirectCopy)
     {
 
 #ifndef Q_OS_WIN
 
         // CUDA+GL/D3D interop requires NV GPU is used for rendering. Windows can use CUDA with intel GPU, I don't know how to detect this, so 0-copy interop can fail in this case. But linux always requires nvidia GPU to use CUDA, so interop works.
 
-        copy_mode    = VideoDecoderCUDA::ZeroCopy;
+        copy_mode             = VideoDecoderCUDA::ZeroCopy;
 
 #endif
 
 #if QTAV_HAVE(DLLAPI_CUDA)
 
-        can_load     = dllapi::testLoad("nvcuvid");
+        can_load              = dllapi::testLoad("nvcuvid");
 
 #endif
-        available    = false;
-        bsf          = nullptr;
-        cuctx        = nullptr;
-        cudev        = 0;
-        dec          = nullptr;
-        vid_ctx_lock = nullptr;
-        parser       = nullptr;
-        stream       = nullptr;
+        available             = false;
+        bsf                   = nullptr;
+        cuctx                 = nullptr;
+        cudev                 = 0;
+        dec                   = nullptr;
+        vid_ctx_lock          = nullptr;
+        parser                = nullptr;
+        stream                = nullptr;
         force_sequence_update = false;
         frame_queue.setCapacity(20);
         frame_queue.setThreshold(10);
@@ -238,7 +238,7 @@ public:
         if (!isLoaded()) // cuda_api
             return;
 
-        interop_res = cuda::InteropResourcePtr();
+        interop_res           = cuda::InteropResourcePtr();
     }
 
     ~VideoDecoderCUDAPrivate()
@@ -282,7 +282,9 @@ public:
                 interop_res = cuda::InteropResourcePtr(new cuda::EGLInteropResource());
 
 #endif
+
         }
+
 #ifndef QT_NO_OPENGL
 
         else if (copy_mode == VideoDecoderCUDA::DirectCopy)
@@ -352,9 +354,9 @@ public:
         VideoDecoderCUDAPrivate* const p = reinterpret_cast<VideoDecoderCUDAPrivate*>(obj);
         CUVIDDECODECREATEINFO* const dci = &p->dec_create_info;
 
-        if ((cuvidfmt->codec != dci->CodecType)             ||
-            (cuvidfmt->coded_width != dci->ulWidth)         ||
-            (cuvidfmt->coded_height != dci->ulHeight)       ||
+        if ((cuvidfmt->codec         != dci->CodecType)     ||
+            (cuvidfmt->coded_width   != dci->ulWidth)       ||
+            (cuvidfmt->coded_height  != dci->ulHeight)      ||
             (cuvidfmt->chroma_format != dci->ChromaFormat)  ||
             p->force_sequence_update)
         {
@@ -416,7 +418,7 @@ public:
 
     bool                                can_load;
 
-    uchar*                              host_data;
+    uchar*                              host_data = nullptr;
     int                                 host_data_size;
     CUcontext                           cuctx;
     CUdevice                            cudev;
@@ -452,7 +454,7 @@ public:
     int                                 nb_dec_surface;
     QString                             description;
 
-    AVBitStreamFilterContext*           bsf;            // TODO: rename bsf_ctx
+    AVBitStreamFilterContext*           bsf = nullptr;  // TODO: rename bsf_ctx
 
     VideoDecoderCUDA::CopyMode          copy_mode;
     cuda::InteropResourcePtr            interop_res;    // may be still used in video frames when decoder is destroyed
@@ -465,8 +467,8 @@ VideoDecoderCUDA::VideoDecoderCUDA()
     // format: detail_property
 
     setProperty("detail_surfaces", i18n("Decoding surfaces"));
-    setProperty("detail_flags", i18n("Decoder flags"));
-    setProperty("detail_copyMode", QStringLiteral("%1\n%2\n%3\n%4")
+    setProperty("detail_flags",    i18n("Decoder flags"));
+    setProperty("detail_copyMode", QString::fromUtf8("%1\n%2\n%3\n%4")
                 .arg(i18n("Performance: ZeroCopy > DirectCopy > GenericCopy"))
                 .arg(i18n("ZeroCopy: no copy back from GPU to System memory. Directly render the decoded data on GPU"))
                 .arg(i18n("DirectCopy: copy back to host memory but video frames and map to GL texture"))
@@ -495,7 +497,7 @@ QString VideoDecoderCUDA::description() const
     if (!d.description.isEmpty())
         return d.description;
 
-    return QStringLiteral("NVIDIA CUVID");
+    return QLatin1String("NVIDIA CUVID");
 }
 
 void VideoDecoderCUDA::flush()
@@ -506,7 +508,7 @@ void VideoDecoderCUDA::flush()
     d.surface_in_use.fill(false);
 }
 
-bool VideoDecoderCUDA::decode(const Packet &packet)
+bool VideoDecoderCUDA::decode(const Packet& packet)
 {
     if (!isAvailable())
         return false;
@@ -709,11 +711,11 @@ bool VideoDecoderCUDAPrivate::initCuda()
     CUDA_WARN(cuDeviceComputeCapability(&major, &minor, cudev));
     char devname[256];
     CUDA_WARN(cuDeviceGetName(devname, 256, cudev));
-    description = QStringLiteral("CUDA device: %1 %2.%3 %4 MHz @%5")
+    description = QString::fromUtf8("CUDA device: %1 %2.%3 %4 MHz @%5")
                   .arg(QLatin1String((const char*)devname))
                   .arg(major)
                   .arg(minor)
-                  .arg(clockRate/1000)
+                  .arg(clockRate / 1000)
                   .arg(cudev);
 
     // cuD3DCtxCreate > cuGLCtxCreate(deprecated) > cuCtxCreate (fallback if d3d and gl return status is failed)
@@ -905,20 +907,20 @@ bool VideoDecoderCUDAPrivate::createCUVIDParser()
 
     //parser_params.ulMaxDisplayDelay = 4; // ?
 
-    parser_params.pUserData = this;
+    parser_params.pUserData              = this;
 
     // Parser callbacks
     // The parser will call these synchronously from within cuvidParseVideoData(), whenever a picture is ready to
     // be decoded and/or displayed.
 
-    parser_params.pfnSequenceCallback = VideoDecoderCUDAPrivate::HandleVideoSequence;
-    parser_params.pfnDecodePicture    = VideoDecoderCUDAPrivate::HandlePictureDecode;
-    parser_params.pfnDisplayPicture   = VideoDecoderCUDAPrivate::HandlePictureDisplay;
-    parser_params.ulErrorThreshold    = 0;     // !wait for key frame
+    parser_params.pfnSequenceCallback    = VideoDecoderCUDAPrivate::HandleVideoSequence;
+    parser_params.pfnDecodePicture       = VideoDecoderCUDAPrivate::HandlePictureDecode;
+    parser_params.pfnDisplayPicture      = VideoDecoderCUDAPrivate::HandlePictureDisplay;
+    parser_params.ulErrorThreshold       = 0;     // !wait for key frame
 
     //parser_params.pExtVideoInfo
 
-    qCDebug(DIGIKAM_QTAV_LOG).noquote() << QString::asprintf("~~~~~~~~~~~~~~~~extradata: %p %d",
+    qCDebug(DIGIKAM_QTAV_LOG).noquote() << QString::asprintf("~~~ extradata: %p %d",
                                            codec_ctx->extradata, codec_ctx->extradata_size);
 
     memset(&extra_parser_info, 0, sizeof(CUVIDEOFORMATEX));
@@ -974,10 +976,10 @@ bool VideoDecoderCUDAPrivate::processDecodedData(CUVIDPARSERDISPINFO* cuviddisp,
     {
         CUVIDPROCPARAMS proc_params;
         memset(&proc_params, 0, sizeof(CUVIDPROCPARAMS));
-        proc_params.progressive_frame = cuviddisp->progressive_frame;   // check user config
-        proc_params.second_field      = active_field == 1;              // check user config
+        proc_params.progressive_frame = cuviddisp->progressive_frame;     // check user config
+        proc_params.second_field      = (active_field == 1);              // check user config
         proc_params.top_field_first   = cuviddisp->top_field_first;
-        proc_params.unpaired_field    = cuviddisp->progressive_frame == 1;
+        proc_params.unpaired_field    = (cuviddisp->progressive_frame == 1);
 
         //const uint cw = dec_create_info.ulWidth;//PAD_ALIGN(dec_create_info.ulWidth, 0x3F);
 
@@ -1040,7 +1042,7 @@ bool VideoDecoderCUDAPrivate::processDecodedData(CUVIDPARSERDISPINFO* cuviddisp,
 
             cuda::SurfaceInteropCUDA* const interop = new cuda::SurfaceInteropCUDA(interop_res);
             interop->setSurface(cuviddisp->picture_index, proc_params, codec_ctx->width, codec_ctx->height, ch); // TODO: both surface size(for copy 2d) and frame size(for map host)
-            frame.setMetaData(QStringLiteral("surface_interop"), QVariant::fromValue(VideoSurfaceInteropPtr(interop)));
+            frame.setMetaData(QLatin1String("surface_interop"), QVariant::fromValue(VideoSurfaceInteropPtr(interop)));
         }
         else
         {

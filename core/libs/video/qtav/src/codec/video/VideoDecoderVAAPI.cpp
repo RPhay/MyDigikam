@@ -185,7 +185,7 @@ static const  codec_profile_t va_profiles[] =
     { QTAV_CODEC_ID(NONE),       FF_PROFILE_UNKNOWN,                   VAProfileNone                    }
 };
 
-static bool isProfileSupportedByRuntime(const VAProfile *profiles, int count, VAProfile p)
+static bool isProfileSupportedByRuntime(const VAProfile* profiles, int count, VAProfile p)
 {
     for (int i = 0 ; i < count ; ++i)
     {
@@ -287,27 +287,27 @@ public:
         if (display_type == VideoDecoderVAAPI::X11)
         {
 
-#if VA_X11_INTEROP
+#   if VA_X11_INTEROP
 
             copy_mode = VideoDecoderFFmpegHW::ZeroCopy; // TFP if va<0.38
 
-#endif // VA_X11_INTEROP
+#   endif // VA_X11_INTEROP
 
         }
 
-#if QTAV_HAVE(EGL_CAPI)
+#   if QTAV_HAVE(EGL_CAPI)
 
         if (OpenGLHelper::isEGL())
         {
             if      (vaapi::checkEGL_DMA() && va_0_38::isValid())
-                copy_mode = VideoDecoderFFmpegHW::ZeroCopy; // for x11, drm, glx
+                copy_mode = VideoDecoderFFmpegHW::ZeroCopy;         // for x11, drm, glx
             else if (vaapi::checkEGL_Pixmap() && (display_type == VideoDecoderVAAPI::X11))
                 copy_mode = VideoDecoderFFmpegHW::ZeroCopy;
             else
                 copy_mode = VideoDecoderFFmpegHW::OptimizedCopy;
         }
 
-#endif // QTAV_HAVE(EGL_CAPI)
+#   endif // QTAV_HAVE(EGL_CAPI)
 
 #endif // QT_NO_OPENGL
 
@@ -380,14 +380,16 @@ public:
 VideoDecoderVAAPI::VideoDecoderVAAPI()
     : VideoDecoderFFmpegHW(*new VideoDecoderVAAPIPrivate())
 {
-    setDisplayPriority(QStringList() << QStringLiteral("X11") <<  QStringLiteral("DRM") << QStringLiteral("GLX"));
+    setDisplayPriority(QStringList() << QLatin1String("X11")
+                                     << QLatin1String("DRM")
+                                     << QLatin1String("GLX"));
 
     // dynamic properties about static property details. used by UI
     // format: detail_property
 
     setProperty("detail_surfaces", i18n("Decoding surfaces 0: auto"));
     setProperty("detail_derive",   i18n("Maybe faster"));
-    setProperty("detail_display",  QStringLiteral("%1\n%2\n%3")
+    setProperty("detail_display",  QString::fromUtf8("%1\n%2\n%3")
                 .arg(QLatin1String("X11: libva-x11.so is required"))
                 .arg(QLatin1String("GLX: libva-glx.so is required"))
                 .arg(QLatin1String("DRM: Support 0-copy only with EGL. May work without X11. libva-drm.so is required"))
@@ -521,7 +523,7 @@ VideoFrame VideoDecoderVAAPI::frame()
 
         // img.pitches[i] is 16 aligned
 
-        f.setBytesPerLine(d.width*fmt.bytesPerPixel(0), 0); // used by gl to compute texture size
+        f.setBytesPerLine(d.width * fmt.bytesPerPixel(0), 0); // used by gl to compute texture size
 
         if (test_format)
         {
@@ -537,7 +539,7 @@ VideoFrame VideoDecoderVAAPI::frame()
             VAWARN(vaDestroyImage(d.display->get(), img.image_id));
         }
 
-        f.setMetaData(QStringLiteral("surface_interop"), QVariant::fromValue(VideoSurfaceInteropPtr(interop)));
+        f.setMetaData(QLatin1String("surface_interop"), QVariant::fromValue(VideoSurfaceInteropPtr(interop)));
         f.setTimestamp(double(d.frame->pkt_pts) / 1000.0);
         f.setDisplayAspectRatio(d.getDAR(d.frame));
         d.updateColorDetails(&f);
@@ -731,7 +733,7 @@ bool VideoDecoderVAAPIPrivate::open()
     DPTR_P(VideoDecoderVAAPI);
     int idx            = p.staticMetaObject.indexOfEnumerator("DisplayType");
     const QMetaEnum me = p.staticMetaObject.enumerator(idx);
-    description       += QStringLiteral(" Display: ") + QString::fromLatin1(me.valueToKey(display_type));
+    description       += QLatin1String(" Display: ") + QString::fromLatin1(me.valueToKey(display_type));
 
     // check 4k support. from xbmc
 
@@ -872,7 +874,9 @@ bool VideoDecoderVAAPIPrivate::ensureSurfaces(int count, int w, int h, bool disc
         return false;
     }
 
-    qCDebug(DIGIKAM_QTAV_LOG).noquote() << QString::asprintf("ensureSurfaces %d->%d %dx%d. discard old surfaces: %d", surfaces.size(), count, w, h, discard_old);
+    qCDebug(DIGIKAM_QTAV_LOG).noquote()
+        << QString::asprintf("ensureSurfaces %d->%d %dx%d. discard old surfaces: %d",
+            surfaces.size(), count, w, h, discard_old);
 
     Q_ASSERT((w > 0) && (h > 0));
 
@@ -885,7 +889,7 @@ bool VideoDecoderVAAPIPrivate::ensureSurfaces(int count, int w, int h, bool disc
     surfaces.resize(count);
     VA_ENSURE_TRUE(vaCreateSurfaces(display->get(), VA_RT_FORMAT_YUV420, w, h,  surfaces.data() + old_size, count - old_size, nullptr, 0), false);
 
-    for (int i = old_size; i < surfaces.size(); ++i)
+    for (int i = old_size ; i < surfaces.size() ; ++i)
     {
         //qCDebug(DIGIKAM_QTAV_LOG).noquote() << QString::asprintf("surface id: %p %dx%d", surfaces.at(i), w, height);
 
@@ -938,7 +942,7 @@ bool VideoDecoderVAAPIPrivate::prepareVAImage(int w, int h)
     return true;
 }
 
-void* VideoDecoderVAAPIPrivate::setup(AVCodecContext *avctx)
+void* VideoDecoderVAAPIPrivate::setup(AVCodecContext* avctx)
 {
     Q_UNUSED(avctx);
 
@@ -1074,7 +1078,7 @@ bool VideoDecoderVAAPIPrivate::getBuffer(void** opaque, uint8_t** data)
 
         if (!found)
         {
-            qCWarning(DIGIKAM_QTAV_LOG_WARN).noquote() << QString::asprintf("surface not found!!!!!!!!!!!!!");
+            qCWarning(DIGIKAM_QTAV_LOG_WARN).noquote() << QString::asprintf("surface not found!");
 
             return false;
         }
@@ -1090,12 +1094,13 @@ bool VideoDecoderVAAPIPrivate::getBuffer(void** opaque, uint8_t** data)
             if (!surfaces_free.empty())
             {
                 qCWarning(DIGIKAM_QTAV_LOG_WARN).noquote()
-                    << QString::asprintf("VAAPI - renderer still using all freed up surfaces by decoder. unable to find free surface, trying to allocate a new one");
+                    << QString::asprintf("VAAPI - renderer still using all freed up surfaces by decoder. "
+                                         "Unable to find free surface, trying to allocate a new one");
             }
 
             const int kMaxSurfaces = 32;
 
-            if (surfaces.size() + 1 > kMaxSurfaces)
+            if ((surfaces.size() + 1) > kMaxSurfaces)
             {
                 qCWarning(DIGIKAM_QTAV_LOG_WARN).noquote()
                     << QString::asprintf("VAAPI- Too many surfaces. requested: %d, maximun: %d",

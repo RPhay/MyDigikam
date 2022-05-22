@@ -38,14 +38,14 @@ FACTORY_DEFINE(VideoDecoder)
 VideoDecoderId VideoDecoderId_FFmpeg        = mkid::id32base36_6<'F', 'F', 'm', 'p', 'e', 'g'>::value;
 VideoDecoderId VideoDecoderId_CUDA          = mkid::id32base36_4<'C', 'U', 'D', 'A'>::value;
 VideoDecoderId VideoDecoderId_DXVA          = mkid::id32base36_4<'D', 'X', 'V', 'A'>::value;
-VideoDecoderId VideoDecoderId_D3D11         = mkid::id32base36_5<'D','3','D','1','1'>::value;
+VideoDecoderId VideoDecoderId_D3D11         = mkid::id32base36_5<'D', '3', 'D', '1', '1'>::value;
 VideoDecoderId VideoDecoderId_VAAPI         = mkid::id32base36_5<'V', 'A', 'A', 'P', 'I'>::value;
 VideoDecoderId VideoDecoderId_VDA           = mkid::id32base36_3<'V', 'D', 'A'>::value;
 VideoDecoderId VideoDecoderId_VideoToolbox  = mkid::id32base36_5<'V', 'T', 'B', 'o', 'x'>::value;
-VideoDecoderId VideoDecoderId_MediaCodec    = mkid::id32base36_4<'F','F','M','C'>::value;
-VideoDecoderId VideoDecoderId_MMAL          = mkid::id32base36_6<'F','F','M', 'M','A', 'L'>::value;
-VideoDecoderId VideoDecoderId_QSV           = mkid::id32base36_5<'F','F','Q','S', 'V'>::value;
-VideoDecoderId VideoDecoderId_CrystalHD     = mkid::id32base36_5<'F','F','C','H', 'D'>::value;
+VideoDecoderId VideoDecoderId_MediaCodec    = mkid::id32base36_4<'F', 'F', 'M', 'C'>::value;
+VideoDecoderId VideoDecoderId_MMAL          = mkid::id32base36_6<'F', 'F', 'M', 'M', 'A', 'L'>::value;
+VideoDecoderId VideoDecoderId_QSV           = mkid::id32base36_5<'F', 'F', 'Q', 'S', 'V'>::value;
+VideoDecoderId VideoDecoderId_CrystalHD     = mkid::id32base36_5<'F', 'F', 'C', 'H', 'D'>::value;
 
 static void VideoDecoder_RegisterAll()
 {
@@ -152,7 +152,7 @@ QStringList VideoDecoder::supportedCodecs()
     {
 
 #endif
-        if (!av_codec_is_decoder(c) || c->type != AVMEDIA_TYPE_VIDEO)
+        if (!av_codec_is_decoder(c) || (c->type != AVMEDIA_TYPE_VIDEO))
             continue;
 
         codecs.append(QString::fromLatin1(c->name));

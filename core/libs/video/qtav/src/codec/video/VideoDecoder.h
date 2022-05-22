@@ -83,7 +83,7 @@ public:
     static VideoDecoder* create(const char* name = "FFmpeg");
     virtual VideoDecoderId id() const = 0;
     QString name() const override;                   // name from factory
-    virtual VideoFrame frame() = 0;
+    virtual VideoFrame frame()        = 0;
 
 public:
 
@@ -116,7 +116,7 @@ private:
 
 protected:
 
-    static bool Register(VideoDecoderId id, VideoDecoderCreator, const char *name);
+    static bool Register(VideoDecoderId id, VideoDecoderCreator, const char* name);
 
 protected:
 

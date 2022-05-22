@@ -532,7 +532,7 @@ QString VideoDecoderFFmpeg::hwaccel() const
 }
 
 // namespace {
-
+/*
 void QtAV_i18n()
 {
     i18n("codecName");
@@ -545,7 +545,7 @@ void QtAV_i18n()
     i18n("vismv");
     i18n("bug");
 }
-
+*/
 // } namespace
 
 } // namespace QtAV

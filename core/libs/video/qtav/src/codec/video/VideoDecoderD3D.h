@@ -41,8 +41,8 @@ namespace QtAV
 
 struct d3d_format_t
 {
-    const char*              name;
-    int                      fourcc;
+    const char*              name   = nullptr;
+    int                      fourcc = 0;
     VideoFormat::PixelFormat pixfmt;
 };
 
@@ -61,9 +61,9 @@ public:
     void setSurfaces(int num);
     int surfaces() const;
 
-    static bool isIntelClearVideo(const GUID *guid);
+    static bool isIntelClearVideo(const GUID* guid);
     static bool isNoEncrypt(const GUID* guid);
-    static int getSupportedFourcc(int *formats, UINT nb_formats);
+    static int getSupportedFourcc(int* formats, UINT nb_formats);
     static VideoFormat::PixelFormat pixelFormatFromFourcc(int format);
 
 Q_SIGNALS:
@@ -78,7 +78,7 @@ protected:
 struct va_surface_t
 {
     va_surface_t()
-        : ref(0),
+        : ref  (0),
           order(0)
     {
     }
@@ -102,9 +102,9 @@ public:
 
     bool  open()                                     override;
     void  close()                                    override;
-    void* setup(AVCodecContext *avctx)               override;
-    bool  getBuffer(void **opaque, uint8_t **data)   override;
-    void  releaseBuffer(void *opaque, uint8_t *data) override;
+    void* setup(AVCodecContext* avctx)               override;
+    bool  getBuffer(void** opaque, uint8_t** data)   override;
+    void  releaseBuffer(void* opaque, uint8_t* data) override;
 
     int aligned(int x);
 
@@ -132,8 +132,8 @@ private:
 
     virtual bool createDecoder(AVCodecID codec, int width, int height, QVector<va_surface_t*>& surf) = 0;
     virtual void destroyDecoder()                                                                    = 0;
-    virtual int fourccFor(const GUID *guid) const                                                    = 0;
-    const d3d_format_t* getFormat(const AVCodecContext* avctx, const QVector<GUID>& guids, GUID *selected) const;
+    virtual int fourccFor(const GUID* guid) const                                                    = 0;
+    const d3d_format_t* getFormat(const AVCodecContext* avctx, const QVector<GUID>& guids, GUID* selected) const;
 
 public:
 
@@ -162,11 +162,12 @@ int SelectConfig(AVCodecID codec_id, const T* cfgs, int nb_cfgs, T* cfg)
 
     int cfg_score = 0;
 
-    for (int i = 0 ; i < nb_cfgs ; i++)
+    for (int i = 0 ; i < nb_cfgs ; ++i)
     {
-        const T &c = cfgs[i];
+        const T& c = cfgs[i];
 
-        qCDebug(DIGIKAM_QTAV_LOG).noquote() << QString::asprintf("configuration[%d] ConfigBitstreamRaw %d", i, c.ConfigBitstreamRaw);
+        qCDebug(DIGIKAM_QTAV_LOG).noquote()
+            << QString::asprintf("configuration[%d] ConfigBitstreamRaw %d", i, c.ConfigBitstreamRaw);
 
         /* */
 
@@ -174,7 +175,7 @@ int SelectConfig(AVCodecID codec_id, const T* cfgs, int nb_cfgs, T* cfg)
 
         if      (c.ConfigBitstreamRaw == 1)
             score = 1;
-        else if (codec_id == QTAV_CODEC_ID(H264) && c.ConfigBitstreamRaw == 2)
+        else if ((codec_id == QTAV_CODEC_ID(H264)) && (c.ConfigBitstreamRaw == 2))
             score = 2;
         else
             continue;
@@ -184,7 +185,7 @@ int SelectConfig(AVCodecID codec_id, const T* cfgs, int nb_cfgs, T* cfg)
 
         if (cfg_score < score)
         {
-            *cfg = c;
+            *cfg      = c;
             cfg_score = score;
         }
     }

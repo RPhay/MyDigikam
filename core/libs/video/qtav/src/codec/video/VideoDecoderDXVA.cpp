@@ -112,7 +112,7 @@ struct Q_DECL_HIDDEN d3d9_surface_t : public va_surface_t
 {
     d3d9_surface_t()
         : va_surface_t(),
-          d3d(0)
+          d3d         (nullptr)
     {
     }
 
@@ -155,13 +155,13 @@ public:
 
         hd3d9_dll   = 0;
         hdxva2_dll  = 0;
-        d3dobj      = 0;
-        d3ddev      = 0;
+        d3dobj      = nullptr;
+        d3ddev      = nullptr;
         token       = 0;
-        devmng      = 0;
+        devmng      = nullptr;
         device      = 0;
-        vs          = 0;
-        decoder     = 0;
+        vs          = nullptr;
+        decoder     = nullptr;
         available   = loadDll();
     }
 
@@ -246,7 +246,7 @@ QString VideoDecoderDXVA::description() const
     if (!d.description.isEmpty())
         return d.description;
 
-    return QStringLiteral("DirectX Video Acceleration");
+    return QLatin1String("DirectX Video Acceleration");
 }
 
 VideoFrame VideoDecoderDXVA::frame()
@@ -261,16 +261,16 @@ VideoFrame VideoDecoderDXVA::frame()
     if ((d.frame->width <= 0) || (d.frame->height <= 0) || !d.codec_ctx)
         return VideoFrame();
 
-    IDirect3DSurface9* d3d = (IDirect3DSurface9*)(uintptr_t)d.frame->data[3];
+    IDirect3DSurface9* const d3d = (IDirect3DSurface9*)(uintptr_t)d.frame->data[3];
 
-    if (copyMode() == ZeroCopy && d.interop_res)
+    if ((copyMode() == ZeroCopy) && d.interop_res)
     {
-        d3d9::SurfaceInterop* interop = new d3d9::SurfaceInterop(d.interop_res);
+        d3d9::SurfaceInterop* const interop = new d3d9::SurfaceInterop(d.interop_res);
         interop->setSurface(d3d, d.width, d.height);
         VideoFrame f(d.width, d.height, VideoFormat::Format_RGB32);
 
         f.setBytesPerLine(d.width * 4);             // used by gl to compute texture size
-        f.setMetaData(QStringLiteral("surface_interop"), QVariant::fromValue(VideoSurfaceInteropPtr(interop)));
+        f.setMetaData(QLatin1String("surface_interop"), QVariant::fromValue(VideoSurfaceInteropPtr(interop)));
         f.setTimestamp(d.frame->pkt_pts / 1000.0);
         f.setDisplayAspectRatio(d.getDAR(d.frame));
 
@@ -279,7 +279,7 @@ VideoFrame VideoDecoderDXVA::frame()
 
     class Q_DECL_HIDDEN ScopedD3DLock
     {
-        IDirect3DSurface9* mpD3D;
+        IDirect3DSurface9* mpD3D = nullptr;
 
     public:
 
@@ -329,7 +329,7 @@ VideoFrame VideoDecoderDXVA::frame()
 
     int pitch[3]        = { lock.Pitch,           0, 0 };   // compute chroma later
     uint8_t* src[]      = { (uint8_t*)lock.pBits, 0, 0 };   // compute chroma later
-    const bool swap_uv  = desc.Format ==  MAKEFOURCC('I','M','C','3');
+    const bool swap_uv  = (desc.Format == MAKEFOURCC('I','M','C','3'));
 
     return copyToFrame(fmt, desc.Height, src, pitch, swap_uv);
 }
@@ -440,7 +440,7 @@ void VideoDecoderDXVAPrivate::destroyDevice()
 {
     SafeRelease(&vs);
 
-    if (devmng && device && device != INVALID_HANDLE_VALUE)
+    if (devmng && device && (device != INVALID_HANDLE_VALUE))
     {
         devmng->CloseDeviceHandle(device);
         device = 0;
@@ -517,40 +517,42 @@ bool VideoDecoderDXVAPrivate::createDecoder(AVCodecID codec_id, int w, int h, QV
 {
     if (!vs || !d3ddev)
     {
-        qCWarning(DIGIKAM_QTAV_LOG_WARN).noquote() << QString::asprintf("dx video surface is not ready. IDirectXVideoService: %p, IDirect3DDevice9: %p", vs, d3ddev);
+        qCWarning(DIGIKAM_QTAV_LOG_WARN).noquote()
+            << QString::asprintf("dx video surface is not ready. IDirectXVideoService: %p, IDirect3DDevice9: %p",
+                vs, d3ddev);
 
         return false;
     }
 
-    const int nb_surfaces             = surf.size();
-    static const int kMaxSurfaceCount = 64;
-    IDirect3DSurface9* surface_list[kMaxSurfaceCount];
+    const int nb_surfaces                             = surf.size();
+    static const int kMaxSurfaceCount                 = 64;
+    IDirect3DSurface9* surface_list[kMaxSurfaceCount] = { nullptr };
 
     qCDebug(DIGIKAM_QTAV_LOG).noquote()
         << QString::asprintf("IDirectXVideoDecoderService=%p nb_surfaces=%d surface %dx%d",
                              vs, nb_surfaces, aligned(w), aligned(h));
 
     DX_ENSURE_OK(vs->CreateSurface(aligned(w),
-                                 aligned(h),
-                                 nb_surfaces - 1, //The number of back buffers. The method creates BackBuffers + 1 surfaces.
-                                 fourccToD3D(format_fcc),
-                                 D3DPOOL_DEFAULT,
-                                 0,
-                                 DXVA2_VideoDecoderRenderTarget,
-                                 surface_list,
-                                 nullptr)
-            , false);
+                                   aligned(h),
+                                   nb_surfaces - 1, //The number of back buffers. The method creates BackBuffers + 1 surfaces.
+                                   fourccToD3D(format_fcc),
+                                   D3DPOOL_DEFAULT,
+                                   0,
+                                   DXVA2_VideoDecoderRenderTarget,
+                                   surface_list,
+                                   nullptr)
+               , false);
 
     for (int i = 0 ; i < nb_surfaces ; ++i)
     {
-        d3d9_surface_t* s = new d3d9_surface_t();
+        d3d9_surface_t* const s = new d3d9_surface_t();
         s->setSurface(surface_list[i]);
-        surf[i]           = s;
+        surf[i]                 = s;
     }
 
     qCDebug(DIGIKAM_QTAV_LOG).noquote()
         << QString::asprintf("IDirectXVideoAccelerationService_CreateSurface succeed with %d surfaces (%dx%d)",
-                             nb_surfaces, w, h);
+            nb_surfaces, w, h);
 
     /* */
 
@@ -569,18 +571,18 @@ bool VideoDecoderDXVAPrivate::createDecoder(AVCodecID codec_id, int w, int h, QV
 
     /* FIXME I am unsure we can let unknown everywhere */
 
-    DXVA2_ExtendedFormat* ext   = &dsc.SampleFormat;
-    ext->SampleFormat           = 0;                // DXVA2_SampleProgressiveFrame;//xbmc. DXVA2_SampleUnknown;
-    ext->VideoChromaSubsampling = 0;                // DXVA2_VideoChromaSubsampling_Unknown;
-    ext->NominalRange           = 0;                // DXVA2_NominalRange_Unknown;
-    ext->VideoTransferMatrix    = 0;                // DXVA2_VideoTransferMatrix_Unknown;
-    ext->VideoLighting          = 0;                // DXVA2_VideoLighting_dim;//xbmc. DXVA2_VideoLighting_Unknown;
-    ext->VideoPrimaries         = 0;                // DXVA2_VideoPrimaries_Unknown;
-    ext->VideoTransferFunction  = 0;                // DXVA2_VideoTransFunc_Unknown;
+    DXVA2_ExtendedFormat* const ext = &dsc.SampleFormat;
+    ext->SampleFormat               = 0;                // DXVA2_SampleProgressiveFrame;//xbmc. DXVA2_SampleUnknown;
+    ext->VideoChromaSubsampling     = 0;                // DXVA2_VideoChromaSubsampling_Unknown;
+    ext->NominalRange               = 0;                // DXVA2_NominalRange_Unknown;
+    ext->VideoTransferMatrix        = 0;                // DXVA2_VideoTransferMatrix_Unknown;
+    ext->VideoLighting              = 0;                // DXVA2_VideoLighting_dim;//xbmc. DXVA2_VideoLighting_Unknown;
+    ext->VideoPrimaries             = 0;                // DXVA2_VideoPrimaries_Unknown;
+    ext->VideoTransferFunction      = 0;                // DXVA2_VideoTransFunc_Unknown;
 
     /* List all configurations available for the decoder */
 
-    UINT                      cfg_count = 0;
+    UINT cfg_count                      = 0;
     DXVA2_ConfigPictureDecode* cfg_list = nullptr;
 
     DX_ENSURE_OK(vs->GetDecoderConfigurations(codec_guid,
@@ -602,7 +604,7 @@ bool VideoDecoderDXVAPrivate::createDecoder(AVCodecID codec_id, int w, int h, QV
 
     qCDebug(DIGIKAM_QTAV_LOG).noquote()
         << QString::asprintf("IDirectXVideoDecoderService.CreateVideoDecoder succeed. decoder=%p",
-                             decoder);
+            decoder);
 
     return true;
 }
