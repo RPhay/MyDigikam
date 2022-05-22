@@ -25,13 +25,12 @@
 
 // Qt includes
 
-#include <QDataStream>
-#include <QDateTime>
-#include <QFileInfo>
-#include <QPolygon>
-#include <QWidget>
 #include <QLabel>
-#include <QUuid>
+#include <QWidget>
+#include <QPolygon>
+#include <QFileInfo>
+#include <QDateTime>
+#include <QDataStream>
 #include <QScopedPointer>
 
 // KDE includes
@@ -426,9 +425,8 @@ void BatchTool::setOutputUrlFromInputUrl()
         suffix = fi.suffix();
     }
 
-    QString random = QUuid::createUuid().toString().mid(1, 8);
-    SafeTemporaryFile temp(path + QLatin1String("/BatchTool-XXXXXX-") +
-                           random + QLatin1String(".digikamtempfile.") + suffix);
+    SafeTemporaryFile temp(path + QLatin1String("/BatchTool-XXXXXX"
+                                                ".digikamtempfile.") + suffix);
 
     temp.setAutoRemove(false);
     temp.open();

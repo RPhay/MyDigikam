@@ -44,9 +44,8 @@ extern "C"
 #   include <QTextCodec>
 #endif
 
-#include <qplatformdefs.h>
-#include <QUuid>
 #include <QFile>
+#include <qplatformdefs.h>
 
 // Local includes
 
@@ -540,9 +539,7 @@ bool MetaEngine::Private::saveUsingExifTool(const QFileInfo& finfo) const
     }
 
     QString dir                   = QDir::temp().path();
-    QString random                = QUuid::createUuid().toString().mid(1, 8);
-    SafeTemporaryFile* const temp = new SafeTemporaryFile(dir + QLatin1String("/digikam-XXXXXX-") +
-                                                          random + QLatin1String("-metaengine.exv"));
+    SafeTemporaryFile* const temp = new SafeTemporaryFile(dir + QLatin1String("/MetaEngine-XXXXXX.exv"));
     temp->setAutoRemove(false);
     temp->open();
     QString exvPath = temp->safeFilePath();

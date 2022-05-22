@@ -1758,7 +1758,8 @@ void EditorWindow::setupTempSaveFile(const QUrl& url)
 
     // use magic file extension which tells the digikamalbums ioslave to ignore the file
 
-    m_savingContext.saveTempFile = new SafeTemporaryFile(tempDir + QLatin1String("/EditorWindow-XXXXXX.digikamtempfile.") + suffix);
+    m_savingContext.saveTempFile = new SafeTemporaryFile(tempDir + QLatin1String("/EditorWindow-XXXXXX"
+                                                                                 ".digikamtempfile.") + suffix);
     m_savingContext.saveTempFile->setAutoRemove(false);
 
     if (!m_savingContext.saveTempFile->open())

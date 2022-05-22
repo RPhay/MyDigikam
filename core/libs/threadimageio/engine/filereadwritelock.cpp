@@ -29,11 +29,12 @@
 // Qt includes
 
 #include <QHash>
+#include <QUuid>
 #include <QMutex>
-#include <QMutexLocker>
 #include <QThread>
-#include <QWaitCondition>
 #include <QFileInfo>
+#include <QMutexLocker>
+#include <QWaitCondition>
 
 // Local includes
 
@@ -497,9 +498,13 @@ SafeTemporaryFile::SafeTemporaryFile()
 }
 
 SafeTemporaryFile::SafeTemporaryFile(const QString& templ)
-    : QTemporaryFile(templ),
-      m_templ       (templ)
+    : QTemporaryFile(nullptr)
 {
+    m_templ        = templ;
+    QString random = QUuid::createUuid().toString().mid(1, 8);
+    m_templ.replace(QLatin1String("XXXXXX"),
+                    QLatin1String("XXXXXX-") + random);
+    setFileTemplate(m_templ);
 }
 
 bool SafeTemporaryFile::open()
