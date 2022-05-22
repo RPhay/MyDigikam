@@ -62,7 +62,7 @@ public:
 
         AudioStream,
         VideoStream,
-        SubtitleStream,
+        SubtitleStream
     };
 
     static const QStringList& supportedFormats();
@@ -72,7 +72,7 @@ public:
 
     static const QStringList& supportedProtocols();
 
-    explicit AVDemuxer(QObject* parent = nullptr);
+    explicit AVDemuxer(QObject* const parent = nullptr);
     ~AVDemuxer();
 
     MediaStatus mediaStatus() const;
@@ -189,8 +189,10 @@ public:
 
     int audioStream()            const;
     QList<int> audioStreams()    const;
+
     int videoStream()            const;
     QList<int> videoStreams()    const;
+
     int subtitleStream()         const;
     QList<int> subtitleStreams() const;
 
@@ -235,7 +237,7 @@ public:
      * AVDictionary is used in avformat_open_input() and will not change unless user call setOptions()
      * If an option is not found
      */
-    void setOptions(const QVariantHash &dict);
+    void setOptions(const QVariantHash& dict);
     QVariantHash options() const;
 
 Q_SIGNALS:
