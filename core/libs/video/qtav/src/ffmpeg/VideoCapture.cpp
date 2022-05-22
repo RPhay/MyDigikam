@@ -54,12 +54,12 @@ class Q_DECL_HIDDEN CaptureTask : public QRunnable
 public:
 
     explicit CaptureTask(VideoCapture* const c)
-        : cap(c),
-          save(true),
-          original_fmt(false),
-          quality(-1),
-          format(QStringLiteral("PNG")),
-          qfmt(QImage::Format_ARGB32)
+        : cap           (c),
+          save          (true),
+          original_fmt  (false),
+          quality       (-1),
+          format        (QLatin1String("PNG")),
+          qfmt          (QImage::Format_ARGB32)
     {
         setAutoDelete(true);
     }
@@ -68,7 +68,8 @@ public:
     {
         if (app_is_dieing)
         {
-            qCDebug(DIGIKAM_QTAV_LOG).noquote() << QString::asprintf("app is dieing. cancel capture task %p", this);
+            qCDebug(DIGIKAM_QTAV_LOG).noquote()
+                << QString::asprintf("app is dieing. cancel capture task %p", this);
 
             return;
         }
@@ -77,7 +78,9 @@ public:
 
         if (image.isNull())
         {
-            qCWarning(DIGIKAM_QTAV_LOG_WARN).noquote() << QString::asprintf("Failed to convert to QImage");
+            qCWarning(DIGIKAM_QTAV_LOG_WARN).noquote()
+                << QString::asprintf("Failed to convert to QImage");
+
             QMetaObject::invokeMethod(cap, "failed");
 
             return;
@@ -108,7 +111,7 @@ public:
         }
 
         name += QString::number(frame.timestamp(), 'f', 3);
-        QString path(dir + QStringLiteral("/") + name + QStringLiteral("."));
+        QString path(dir + QLatin1Char('/') + name + QLatin1Char('.'));
 
         if (original_fmt)
         {
@@ -118,7 +121,10 @@ public:
             }
 
             path.append(frame.format().name());
-            qCDebug(DIGIKAM_QTAV_LOG).noquote() << QString::asprintf("Saving capture to %s", qPrintable(path));
+
+            qCDebug(DIGIKAM_QTAV_LOG).noquote()
+                << QString::asprintf("Saving capture to %s", qPrintable(path));
+
             QFile file(path);
 
             if (!file.open(QIODevice::WriteOnly))
@@ -181,18 +187,18 @@ private:
 };
 
 VideoCapture::VideoCapture(QObject* const parent)
-    : QObject(parent),
-      async(true),
-      auto_save(true),
-      original_fmt(false),
-      qfmt(QImage::Format_ARGB32)
+    : QObject       (parent),
+      async         (true),
+      auto_save     (true),
+      original_fmt  (false),
+      qfmt          (QImage::Format_ARGB32)
 {
     dir = QStandardPaths::writableLocation(QStandardPaths::PicturesLocation);       // cppcheck-suppress useInitializationList
 
     if (dir.isEmpty())
-        dir = qApp->applicationDirPath() + QStringLiteral("/capture");
+        dir = qApp->applicationDirPath() + QLatin1String("/capture");
 
-    fmt  = QStringLiteral("PNG");
+    fmt  = QLatin1String("PNG");
     qual = -1;
 
     // seems no direct connection is fine too
@@ -271,7 +277,8 @@ void VideoCapture::start()
     {
         // if frame is always cloned, then size is at least width*height
 
-        qCDebug(DIGIKAM_QTAV_LOG).noquote() << QString::asprintf("Captured frame from hardware decoder surface.");
+        qCDebug(DIGIKAM_QTAV_LOG).noquote()
+            << QString::asprintf("Captured frame from hardware decoder surface.");
     }
 
     CaptureTask* const task = new CaptureTask(this);

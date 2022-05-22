@@ -126,6 +126,7 @@ public:
 
     ColorSpace colorSpace()                                 const;
     void setColorSpace(ColorSpace value);
+
     ColorRange colorRange()                                 const;
     void setColorRange(ColorRange value);
 
@@ -210,8 +211,8 @@ public:
 
 private:
 
-    mutable ImageConverter* m_cvt;
-    int                     m_eq[3];
+    mutable ImageConverter* m_cvt   = nullptr;
+    int                     m_eq[3] = { 0 };
 };
 
 } // namespace QtAV

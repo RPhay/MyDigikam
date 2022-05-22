@@ -103,7 +103,7 @@ VideoFrame VideoFrame::fromGPU(const VideoFormat& fmt, int width, int height, in
 
         // plane 1, 2... is aligned?
 
-        uchar* plane_ptr = (uchar*)buf.constData() + offset_16;
+        uchar* plane_ptr    = (uchar*)buf.constData() + offset_16;
         QVector<uchar*> dst(nb_planes, 0);
 
         for (int i = 0 ; i < nb_planes ; ++i)
@@ -114,7 +114,7 @@ VideoFrame VideoFrame::fromGPU(const VideoFormat& fmt, int width, int height, in
             // pitch instead of surface_width
 
             plane_ptr += pitch[i] * h[i];
-            gpu_memcpy(dst[i], src[i], pitch[i]*h[i]);
+            gpu_memcpy(dst[i], src[i], pitch[i] * h[i]);
         }
 
         frame = VideoFrame(width, height, fmt, buf);
@@ -144,11 +144,11 @@ void VideoFrame::copyPlane(quint8* dst, size_t dst_stride, const quint8* src,
 
     if ((dst_stride == src_stride) && (src_stride == byteWidth) && height)
     {
-        memcpy(dst, src, byteWidth*height);
+        memcpy(dst, src, byteWidth * height);
         return;
     }
 
-    for ( ; height > 0 ; --height)
+    for ( ; (height > 0) ; --height)
     {
         memcpy(dst, src, byteWidth);
         src += src_stride;
@@ -163,24 +163,24 @@ class Q_DECL_HIDDEN VideoFramePrivate : public FramePrivate
 public:
 
     VideoFramePrivate()
-        : FramePrivate()
-        , width(0)
-        , height(0)
-        , color_space(ColorSpace_Unknown)
-        , color_range(ColorRange_Unknown)
-        , displayAspectRatio(0)
-        , format(VideoFormat::Format_Invalid)
+        : FramePrivate(),
+          width             (0),
+          height            (0),
+          color_space       (ColorSpace_Unknown),
+          color_range       (ColorRange_Unknown),
+          displayAspectRatio(0),
+          format            (VideoFormat::Format_Invalid)
     {
     }
 
     VideoFramePrivate(int w, int h, const VideoFormat& fmt)
-        : FramePrivate()
-        , width(w)
-        , height(h)
-        , color_space(ColorSpace_Unknown)
-        , color_range(ColorRange_Unknown)
-        , displayAspectRatio(0)
-        , format(fmt)
+        : FramePrivate(),
+          width             (w),
+          height            (h),
+          color_space       (ColorSpace_Unknown),
+          color_range       (ColorRange_Unknown),
+          displayAspectRatio(0),
+          format            (fmt)
     {
         if (!format.isValid())
             return;
@@ -454,7 +454,7 @@ VideoFrame VideoFrame::to(const VideoFormat &fmt, const QSize& dstSize, const QR
 
         Q_D(const VideoFrame);
 
-        const QVariant v = d->metadata.value(QStringLiteral("surface_interop"));
+        const QVariant v = d->metadata.value(QLatin1String("surface_interop"));
 
         if (!v.isValid())
             return VideoFrame();
@@ -470,9 +470,11 @@ VideoFrame VideoFrame::to(const VideoFormat &fmt, const QSize& dstSize, const QR
 
         if (si->map(HostMemorySurface, fmt, &f))
         {
-            if ((!dstSize.isValid() || (dstSize == QSize(width(), height()))) &&
-                (!roi.isValid()     || (roi == QRectF(0, 0, width(), height()))))         // roi is not supported now
+            if ((!dstSize.isValid() || (dstSize == QSize(width(), height())))           &&
+                (!roi.isValid()     || (roi     == QRectF(0, 0, width(), height()))))      // roi is not supported now
+            {
                 return f;
+            }
 
             return f.to(fmt, dstSize, roi);
         }
@@ -480,8 +482,8 @@ VideoFrame VideoFrame::to(const VideoFormat &fmt, const QSize& dstSize, const QR
         return VideoFrame();
     }
 
-    const int w = (dstSize.width()  > 0) ? dstSize.width()  : width();
-    const int h = (dstSize.height() > 0) ? dstSize.height() : height();
+    const int w = ((dstSize.width()  > 0) ? dstSize.width()  : width());
+    const int h = ((dstSize.height() > 0) ? dstSize.height() : height());
 
     if (
         (fmt.pixelFormatFFmpeg() == pixelFormatFFmpeg()) &&
@@ -489,7 +491,9 @@ VideoFrame VideoFrame::to(const VideoFormat &fmt, const QSize& dstSize, const QR
         (h == height())
         // TODO: roi check.
        )
+    {
         return *this;
+    }
 
     Q_D(const VideoFrame);
 
@@ -543,7 +547,7 @@ void* VideoFrame::map(SurfaceType type, void* handle, const VideoFormat& fmt, in
 {
     Q_D(VideoFrame);
 
-    const QVariant v = d->metadata.value(QStringLiteral("surface_interop"));
+    const QVariant v   = d->metadata.value(QLatin1String("surface_interop"));
 
     if (!v.isValid())
         return nullptr;
@@ -573,7 +577,7 @@ void* VideoFrame::createInteropHandle(void* handle, SurfaceType type, int plane)
 {
     Q_D(VideoFrame);
 
-    const QVariant v = d->metadata.value(QStringLiteral("surface_interop"));
+    const QVariant v   = d->metadata.value(QLatin1String("surface_interop"));
 
     if (!v.isValid())
         return nullptr;
@@ -667,7 +671,7 @@ VideoFrame VideoFrameConverter::convert(const VideoFrame& frame, int fffmt) cons
         stride[i] = frame.bytesPerLine(i);
     }
 
-    const QByteArray paldata(frame.metaData(QStringLiteral("pallete")).toByteArray());
+    const QByteArray paldata(frame.metaData(QLatin1String("pallete")).toByteArray());
 
     if (pal > 0)
     {

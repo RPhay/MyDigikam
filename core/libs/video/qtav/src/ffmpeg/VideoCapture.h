@@ -100,6 +100,7 @@ public:
      */
     void setCaptureName(const QString& value);
     QString captureName() const;
+
     void setCaptureDir(const QString& value);
     QString captureDir() const;
 
